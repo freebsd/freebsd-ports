@@ -40,6 +40,7 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org
 #					regarding run dependencies.
 #
 # USE_JIKES			Whether the port should or should not use jikes(1) to build.
+#					See Stage 6 header for further detail.
 #
 # USE_ANT			Should be defined when the port uses Apache Ant. Ant is thus
 #					considered to be the sub-make command. When no 'do-build'
@@ -113,6 +114,9 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org
 #
 # JAVALIBDIR        The directory where JAR files installed by other ports
 #                   are located.
+#
+# HAVE_JIKES		Defined and set to "yes" whenever the port will effectively
+#					use Jikes. See stage 6 header for further detail.
 #
 #-------------------------------------------------------------------------------
 # Porter's hints
@@ -267,9 +271,9 @@ JAVA_RUN=		jdk
 .			endif
 # NEED_JAVAC --> JAVA_{BUILD|RUN}={jdk|jre}
 .			if defined(NEED_JAVAC)
-.				if (${NEED_JAVAC} == "YES") || (${NEED_JAVAC} == "yes")
+.				if (${NEED_JAVAC:U} == "YES")
 JAVA_BUILD=		jdk
-.				elif (${NEED_JAVAC} == "NO") || (${NEED_JAVAC} == "no")
+.				elif (${NEED_JAVAC:U} == "NO")
 JAVA_BUILD=		jre
 .				else
 check-makevars::
@@ -396,6 +400,34 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # Stage 6: Add any dependencies if necessary
 #
 
+# Jikes support: If USE_JIKES is set to YES, then use Jikes. If USE_JIKES is
+# set to NO, then don't use it. If it is set to a different value, then fail
+# with an error message. Otherwise USE_JIKES is not set, in which case it is
+# checked if Jikes is already installed. If it is, then it will be used,
+# otherwise it will not be used.
+#
+# As a result, HAVE_JIKES is defined and set to "yes" when Jikes is used by the
+# port according to the above policy.
+
+.		undef HAVE_JIKES
+
+# First test if USE_JIKES has a valid value
+.		if defined(USE_JIKES) && !(${USE_JIKES:U} == "YES") && !(${USE_JIKES:U} == "NO")
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
+	@${FALSE}
+.		endif
+# Then test if jikes is needed or available: -> HAVE_JIKES=yes
+.		if (exists(${_JIKES_PATH}) && (!defined(USE_JIKES) || (${USE_JIKES:U} == "YES"))) \
+			|| (defined(USE_JIKES) && (${USE_JIKES:U} == "YES"))
+HAVE_JIKES=		yes
+.		endif
+
+# Add jikes port to the dependencies if needed
+.		if !defined(NO_BUILD) && defined(HAVE_JIKES)
+BUILD_DEPENDS+=	${DEPEND_JIKES}
+.		endif
+
 # Ant Support: USE_ANT --> JAVA_BUILD=jdk
 .		if defined(USE_ANT)
 JAVA_BUILD=		jdk
@@ -444,33 +476,18 @@ do-build:
 #
 # At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 #
-# Define the location of the Java compiler. If USE_JIKES is set to YES, then
-# use Jikes. If USE_JIKES is set to NO, then don't use it. If it is set to a
-# different value, then fail with an error message. Otherwise USE_JIKES is not
-# set, in which case it is checked if Jikes is already installed. If it is,
-# then it will be used, otherwise it will not be used.
+# Define the location of the Java compiler. If HAVE_JIKES is defined, then
+# use Jikes.
 
 # Only define JAVAC if a JDK is needed or USE_JIKES=yes
 .		undef JAVAC
 
-# First test if jikes is needed (and if USE_JIKES has a correct value)
-.		if defined(USE_JIKES)
-.			if (${USE_JIKES} == "YES") || (${USE_JIKES} == "yes")
-JAVAC?=		${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
-BUILD_DEPENDS+=	${DEPEND_JIKES}
-.			elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
-check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
-	@${FALSE}
-.			endif
-.		endif
 # Then test if a JAVAC has to be set (JAVA_BUILD==jdk)
 .		if defined(JAVA_BUILD)
-.			if (${JAVA_BUILD} == "jdk" || ${JAVA_BUILD} == "JDK") && !defined(JAVAC)
-# Use jikes if available and not explicitly forbidden
-.				if exists(${_JIKES_PATH}) && !defined(USE_JIKES)
+.			if (${JAVA_BUILD:U} == "JDK") && !defined(JAVAC)
+# Use jikes if available and not explicitly forbidden (see Stage 6)
+.				if defined(HAVE_JIKES)
 JAVAC?=			${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
-BUILD_DEPENDS+=	${DEPEND_JIKES}
 # Otherwise use 'javac'
 .				else
 JAVAC?=			${JAVA_HOME}/bin/javac
