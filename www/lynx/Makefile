@@ -23,7 +23,7 @@ SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.asc
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
+CONFIGURE_ARGS+=--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-persistent-cookies \
 		--enable-ipv6
 MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
