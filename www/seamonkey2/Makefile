@@ -84,6 +84,7 @@ MOZ_EXTENSIONS=	default
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 \
 		LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 
@@ -246,12 +247,14 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libfreetype.so.6|${FREETYPE_LIB}|g' \
 		${WRKSRC}/modules/libpref/src/init/all.js
 	@for pcfile in ${PKGCONFIG_FILES}; do \
-		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}${PKGNAMESUFFIX}|g ; \
-			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
+		${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}|g ; \
+			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -268,6 +271,9 @@ pre-install:
 	${TOUCH} -f ${PLIST}
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
+	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+		${FAKEDIR}/bin/mozilla \
+		${FAKEDIR}/bin/mozilla-config
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 		${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
@@ -289,7 +295,7 @@ pre-install:
 			${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 	for pcfile in ${PKGCONFIG_FILES}; do \
-		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc >> ${PLIST} ; \
+		${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc >> ${PLIST} ; \
 	done
 	cd ${FAKEDIR}/include/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:include/${MOZILLA}/:' >> ${PLIST} \
@@ -302,9 +308,6 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${FAKEDIR}/bin/mozilla-config ${PREFIX}/lib/${MOZILLA}
-	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-		${PREFIX}/lib/${MOZILLA}/mozilla \
-		${PREFIX}/lib/${MOZILLA}/mozilla-config
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} . | \
 		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
 	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
@@ -327,7 +330,7 @@ do-install:
 		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc; \
 		${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}${PKGNAMESUFFIX}.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
 	done
 	-${RM} -fr ${PREFIX}/include/${MOZILLA}
 	${MKDIR} ${PREFIX}/include/${MOZILLA}
