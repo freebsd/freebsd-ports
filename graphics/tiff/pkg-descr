@@ -15,3 +15,10 @@ SGI has also added html-documentation in addition to man-pages.
 
   TIFF web site: http://www-mipl.jpl.nasa.gov/~ndr/tiff
 Master FTP site: ftp://ftp.sgi.com/graphics/tiff
+
+
+NOTE: Since it is suspected that there's incompatibility between
+libtiff 3.4 and previous releases, we install this kit as follows.
+	/usr/local/include/tiff34.h
+	/usr/local/include/tiffio34.h
+	/usr/local/lib/libtiff34.a
