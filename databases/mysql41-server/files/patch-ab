@@ -1,17 +1,15 @@
---- scripts/mysql_install_db.sh.orig	Sat Aug 28 13:10:54 1999
-+++ scripts/mysql_install_db.sh	Mon Sep 13 00:13:04 1999
-@@ -15,10 +15,6 @@
+--- scripts/mysql_install_db.sh.orig	Wed Jan 12 21:06:30 2000
++++ scripts/mysql_install_db.sh	Sun Mar 26 23:20:27 2000
+@@ -15,8 +15,6 @@
  force=0
  IN_RPM=0
  
 -# Are we doing an rpm install?
 -if test "$1" = "-IN-RPM"; then IN_RPM=1; shift; fi
--if test "$1" = "--force"; then force=1; shift; fi
--
+ if test "$1" = "--force"; then force=1; shift; fi
+ 
  # Get mysqld/safe_mysqld options from /etc/my.cnf or ~/.my.cnf
- if test -w /
- then
-@@ -60,8 +56,6 @@
+@@ -60,8 +58,6 @@
    fi
  fi
  
@@ -20,7 +18,7 @@
  hostname=`hostname`		# Install this too in the user table
  
  # Check if hostname is valid
-@@ -255,12 +249,6 @@
+@@ -255,12 +251,6 @@
  END_OF_DATA
  then
    echo ""
