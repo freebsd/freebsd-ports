@@ -152,6 +152,7 @@ info/terminology
 @exec install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).			Another Japanese Inputting Method. (Japanese)" %D/info/canna-jp %D/info/dir
 @comment
 @exec [ -f %D/share/mule/%%EMACS_VERSION%%/info/dir ] || mkdir -p %D/share/mule/%%EMACS_VERSION%%/info
+@unexec rmdir %D/share/mule/%%EMACS_VERSION%%/info 2>/dev/null || true
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/cvtmail
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/digest-doc
 libexec/mule/%%EMACS_VERSION%%/%%EMACS_ARCH%%/emacsserver
@@ -1254,3 +1255,5 @@ share/mule/%%EMACS_VERSION%%/lisp/busyu.el
 share/mule/%%EMACS_VERSION%%/lisp/arabic.elc
 share/mule/%%EMACS_VERSION%%/lisp/arabic.el
 @dirrm share/mule/%%EMACS_VERSION%%/lisp
+@dirrm share/mule/%%EMACS_VERSION%%
+@dirrm share/mule
