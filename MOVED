@@ -1284,3 +1284,4 @@ games/hlserver-pvk||2004-10-23|current version no longer available
 games/hlserver-snow||2004-10-23|current version does not work with FreeBSD
 games/hlserver-svencoop||2004-10-23|current version does not work with FreeBSD
 games/hlserver-trainhunters||2004-10-23|current version no longer available
+games/utserver-asu||2004-10-23|checksum failure
