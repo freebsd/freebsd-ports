@@ -1,0 +1,17 @@
+@unexec if cmp -s %D/%%ETCDIR%%/clients_fqdn_whitelist.dist %D/%%ETCDIR%%/clients_fqdn_whitelist; then rm -f %D/%%ETCDIR%%/clients_fqdn_whitelist; fi
+@unexec [ -e %D/%%ETCDIR%%/clients_fqdn_whitelist.local -a ! -s %D/%%ETCDIR%%/clients_fqdn_whitelist.local ] && rm -f %D/%%ETCDIR%%/clients_fqdn_whitelist.local
+@unexec if cmp -s %D/%%ETCDIR%%/clients_ip_whitelist.dist %D/%%ETCDIR%%/clients_ip_whitelist; then rm -f %D/%%ETCDIR%%/clients_ip_whitelist; fi
+@unexec [ -e %D/%%ETCDIR%%/clients_ip_whitelist.local -a ! -s %D/%%ETCDIR%%/clients_ip_whitelist.local ] && rm -f %D/%%ETCDIR%%/clients_ip_whitelist.local
+@unexec if cmp -s %D/%%ETCDIR%%/sqlgrey.conf.dist %D/%%ETCDIR%%/sqlgrey.conf; then rm -f %D/%%ETCDIR%%/sqlgrey.conf; fi
+%%ETCDIR%%/clients_fqdn_whitelist.dist
+@exec [ -f %B/clients_fqdn_whitelist ] || cp %B/%f %B/clients_fqdn_whitelist
+@exec [ -f %B/clients_fqdn_whitelist.local ] || %%TOUCH%% %B/clients_fqdn_whitelist.local
+%%ETCDIR%%/clients_ip_whitelist.dist
+@exec [ -f %B/clients_ip_whitelist ] || cp %B/%f %B/clients_ip_whitelist
+@exec [ -f %B/clients_ip_whitelist.local ] || %%TOUCH%% %B/clients_ip_whitelist.local
+%%ETCDIR%%/sqlgrey.conf.dist
+@exec [ -f %B/sqlgrey.conf ] || cp %B/%f %B/sqlgrey.conf
+sbin/sqlgrey
+sbin/update_sqlgrey_whitelists
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
+@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || true

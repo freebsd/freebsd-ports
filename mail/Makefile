@@ -454,6 +454,7 @@
     SUBDIR += spamprobe
     SUBDIR += spamstats
     SUBDIR += spruce
+    SUBDIR += sqlgrey
     SUBDIR += squirrelmail
     SUBDIR += sqwebmail
     SUBDIR += ssmtp

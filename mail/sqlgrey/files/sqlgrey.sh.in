@@ -1,0 +1,46 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+# PROVIDE: sqlgrey
+# REQUIRE: LOGIN
+# BEFORE: mail
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable sqlgrey:
+#
+# sqlgrey_enable="YES"
+#
+# See man sqlgrey for flags or the config file.
+#
+
+. %%RC_SUBR%%
+
+name=sqlgrey
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/sbin/sqlgrey
+extra_commands=reload
+
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+  rm -f $pidfile
+}
+
+# set defaults
+
+sqlgrey_enable=${sqlgrey_enable:-"NO"}
+sqlgrey_pidfile=${sqlgrey_pidfile:-"/var/run/sqlgrey.pid"}
+sqlgrey_listen=${sqlgrey_listen:-"2501"}
+sqlgrey_config=${sqlgrey_config:-"/usr/local/etc/sqlgrey.conf"}
+sqlgrey_flags=${sqlgrey_flags:-"--pidfile=${sqlgrey_pidfile} \
+	--inet=${sqlgrey_listen} --daemonize --user=sqlgrey --group=sqlgrey \
+	--configfile=${sqlgrey_config}"}
+
+pidfile="${sqlgrey_pidfile}"
+
+load_rc_config $name
+run_rc_command "$1"
