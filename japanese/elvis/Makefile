@@ -3,7 +3,7 @@
 # Date created:         5 October 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.2 1996/10/22 12:12:31 max Exp $
+# $Id: Makefile,v 1.3 1996/11/11 10:11:52 max Exp $
 #
 
 DISTNAME=       elv18src
@@ -23,13 +23,12 @@ LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
 NO_WRKSUBDIR=	yes
 
 STARTUP_SCRIPT= ${PREFIX}/etc/rc.d/jp-elvis.sh
+
 do-configure:
-	@cp ${WRKSRC}/Makefile.mix ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/Makefile.mix ${WRKSRC}/Makefile
 
 post-install:
-	if [ ! -d ${PREFIX}/share/doc/jp-elvis ]; then \
-		mkdir -p ${PREFIX}/share/doc/jp-elvis; \
-	fi
+	@${MKDIR} ${PREFIX}/share/doc/jp-elvis
 	${INSTALL_DATA} ${WRKSRC}/README.j18 ${PREFIX}/share/doc/jp-elvis
 	@/bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\

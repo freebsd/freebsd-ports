@@ -3,7 +3,7 @@
 # Date created:		02 May 1996
 # Whom:			Masafumi
 #
-# $Id: Makefile,v 1.5 1996/11/11 10:11:58 max Exp $
+# $Id: Makefile,v 1.6 1996/11/13 12:40:58 asami Exp $
 #
 
 DISTNAME=	ircii-2.8.2
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 MAN1=		irc.1
 
 post-install:
-	cp -R ${WRKDIR}/help ${PREFIX}/lib/irc/
+	${CP} -R ${WRKDIR}/help ${PREFIX}/lib/irc/
 	${INSTALL_MAN} ${WRKSRC}/doc/ircII.1 ${PREFIX}/man/man1/irc.1
 
 .include <bsd.port.mk>
