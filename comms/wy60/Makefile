@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	wy60
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.6
 CATEGORIES=	comms
 MASTER_SITES=	http://gutschke.com/wy60/html/archive/
 
