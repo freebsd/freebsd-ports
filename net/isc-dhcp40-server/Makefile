@@ -262,7 +262,9 @@ create-data-files:
 .endfor
 
 configure-package:
+.if ${SUBSYS} == server
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 
 display-message:
 .if ${SUBSYS} != devel
