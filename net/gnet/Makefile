@@ -14,7 +14,7 @@ MAINTAINER=	nakai@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	glib12
+USE_GNOME=	gnomehack glib12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
@@ -35,10 +35,6 @@ post-patch:
 		${WRKSRC}/doc/Makefile.in
 # install configincludedir correctly
 	@${REINPLACE_CMD} -E -e 's|^(configincludedir).+$$|\1=\$$\(pkgincludedir\)|' \
-		${WRKSRC}/Makefile.in
-# install *.pc files in correct FreeBSD dir
-	@${REINPLACE_CMD} -E -e \
-		's|^(pkgconfigdir[ ]+=[ ]+)\$$\(libdir\)/(pkgconfig)|\1${PREFIX}/libdata/\2|' \
 		${WRKSRC}/Makefile.in
 
 post-install:
