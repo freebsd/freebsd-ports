@@ -1,6 +1,6 @@
---- configure.orig	Sat Sep 13 15:34:27 2003
-+++ configure	Sun Sep 14 02:26:51 2003
-@@ -18769,6 +18769,7 @@
+--- configure.orig	Fri Dec  5 21:51:16 2003
++++ configure	Sat Dec  6 12:56:19 2003
+@@ -19318,6 +19318,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,14 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -25330,8 +25331,8 @@
+ # The directory where all files are installed by running "make install". We
+ # cannot use AC_DEFINE_UNQUOTED here because ${prefix} is not set until the
+ # end of the configure script. Thanks to Phillip Rulon for spotting that.
+-CPPFLAGS="${CPPFLAGS} -DSCM_DIR=\\\"\$(prefix)/share/elk\\\""
+-CPPFLAGS="${CPPFLAGS} -DLIB_DIR=\\\"\$(prefix)/lib/elk\\\""
++CPPFLAGS="${CPPFLAGS} -DSCM_DIR=\"\\\"\$(prefix)/share/elk\\\"\""
++CPPFLAGS="${CPPFLAGS} -DLIB_DIR=\"\\\"\$(prefix)/lib/elk\\\"\""
+ 
+ #define FIND_AOUT defined(USE_LD) || defined(CAN_DUMP) || defined(INIT_OBJECTS)
+ 

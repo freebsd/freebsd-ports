@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elk
-PORTVERSION=	3.99.5
+PORTVERSION=	3.99.6
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://sam.zoy.org/projects/elk/
 
@@ -26,8 +26,7 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		elk.1
 
-CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include \
-		-DHAVE_SYS_TIMES_H
+CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
 post-install:
