@@ -1,0 +1,22 @@
+--- src/Makefile.in.orig	Thu Jun 11 15:02:07 1998
++++ src/Makefile.in	Fri Apr  2 17:29:21 1999
+@@ -130,7 +130,7 @@
+ 
+ ####### This part is very khexdit specific
+ # you can add here more. This one gets installed 
+-bin_PROGRAMS = 	ktelnet
++bin_PROGRAMS = 	kdetelnet
+ 
+ # Which sources should be compiled for khexdit.
+ ktelnet_SOURCES	= mywidget.cc mainwidget.cc configtab.cc startupwidget.cc exitwidget.cc sessiondata.cc panelwindow.cc kcmdlineargs.cc main.cc appearance.cc linkdirselect.cc
+@@ -228,8 +228,8 @@
+ 
+ maintainer-clean-compile:
+ 
+-ktelnet: $(ktelnet_OBJECTS) $(ktelnet_DEPENDENCIES)
+-	@rm -f ktelnet
++kdetelnet: $(ktelnet_OBJECTS) $(ktelnet_DEPENDENCIES)
++	@rm -f kdetelnet
+ 	$(CXXLINK) $(ktelnet_LDFLAGS) $(ktelnet_OBJECTS) $(ktelnet_LDADD) $(LIBS)
+ .cc.o:
+ 	$(CXXCOMPILE) -c $<
