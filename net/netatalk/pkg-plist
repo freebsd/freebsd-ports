@@ -1,6 +1,5 @@
 bin/achfile
 bin/acleandir.rc
-bin/add_netatalk_printer
 bin/adv1tov2
 bin/aecho
 bin/afile
