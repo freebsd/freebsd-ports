@@ -1,7 +1,6 @@
 %%RUBY_SITEARCHLIBDIR%%/gconf2.so
 %%RUBY_SITELIBDIR%%/gconf2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/basic-gconf-app.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/notify.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simple-controller.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/simple-view.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
