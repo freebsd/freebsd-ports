@@ -42,6 +42,7 @@
     SUBDIR += css-mode.el
     SUBDIR += decss
     SUBDIR += demoroniser
+    SUBDIR += dillo
     SUBDIR += djvuplugin
     SUBDIR += eddie
     SUBDIR += encompass
