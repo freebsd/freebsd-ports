@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	1.81
-PORTREVISION=	2
+PORTVERSION=	1.90
 CATEGORIES=	mail
 MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
@@ -37,12 +36,12 @@ do-install:
 .for file in openwebmail-abook.pl openwebmail-advsearch.pl openwebmail-cal.pl \
 	openwebmail-folder.pl openwebmail-main.pl openwebmail-prefs.pl \
 	openwebmail-read.pl openwebmail-send.pl openwebmail-spell.pl \
-	openwebmail-tool.pl openwebmail-viewatt.pl openwebmail.pl
+	openwebmail-tool.pl openwebmail-viewatt.pl openwebmail-webdisk.pl openwebmail.pl
 	@${REINPLACE_CMD} -e 's,suidperl,perl,g' ${OWCGIDIR}/${file}
 	@${CHMOD} 4555 ${OWCGIDIR}/${file}
 .endfor
 	@${PERL5} ${WRKSRC}/cgi-bin/openwebmail/uty/wrapsuid.pl ${OWCGIDIR}
-	@${OWCGIDIR}/openwebmail-tool.pl --init -y
-	@${RM} ${OWCGIDIR}/*orig ${OWCGIDIR}/*bak
+	@${OWCGIDIR}/openwebmail-tool.pl --init --no
+	@${RM} ${OWCGIDIR}/*bak
 
 .include <bsd.port.mk>
