@@ -29,7 +29,8 @@ do-install:
 	@${SETUP_CMD} install
 
 .if !defined(NOPORTDOCS)
-DOCSDIR=${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+PLIST_SUB+=	DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 post-install:
 	@${MKDIR} ${DOCSDIR}/test
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
