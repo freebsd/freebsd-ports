@@ -1,0 +1,8 @@
+================================================================================
+
+LMon is now installed in /usr/local/lmon. You need to create configuration and
+rulesets. See documentation under /usr/local/share/doc/lmon and examples under
+/usr/local/share/examples/lmon. Particularly, you need to set SMTP servers in
+in lmon.pl (plan to improve this soon).
+
+================================================================================

@@ -1,0 +1,13 @@
+etc/rc.d/lmon.sh.sample
+lmon/control.cfg.sample
+lmon/control.pl
+lmon/lmon.pl
+%%EXAMPLESDIR%%/ciss-messages.rules
+%%EXAMPLESDIR%%/squid-times.rules
+%%EXAMPLESDIR%%/jboss.rules
+%%EXAMPLESDIR%%/messages.rules
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

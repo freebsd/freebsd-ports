@@ -1,0 +1,9 @@
+LMon is a package for near real-time monitoring of logs, sending email alerts
+upon known (rule hits) or unknown data (rule misses). It features buffering of
+multiple rule hits within a given interval, cap at a given maximum number of
+lines, wait for a given interval before sending next alert, and auto- discovery
+of log rotation. It can be run from the command line without configuration, or
+be controlled from a central configuration file with multiple instances
+monitoring different log files/sending alerts to different people.
+
+WWW: http://www.bsdconsulting.no/tools/
