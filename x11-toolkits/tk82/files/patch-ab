@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Feb 23 20:11:34 1998
-+++ Makefile.in	Sat Oct  3 16:48:40 1998
+--- Makefile.in.orig	Fri Dec 11 18:38:40 1998
++++ Makefile.in	Sat Jan  2 16:11:27 1999
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -11,21 +11,25 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -95,11 +97,11 @@
+@@ -98,7 +100,7 @@
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+ #CFLAGS = 		$(CFLAGS_OPTIMIZE)
+ #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS = 		$(@CFLAGS_DEFAULT@)
++CFLAGS = 		@CFLAGS@
+ 
+ # A "-I" switch that can be used when compiling to make all of the
+ # X11 include files accessible (the configure script will try to
+@@ -113,7 +115,7 @@
  
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
 -LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
 +LIBS = -L${PREFIX}/lib -ltcl81 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
- # To change the compiler switches, for example to change from -O
- # to -g, change the following line:
--CFLAGS = -O
-+CFLAGS = @CFLAGS@
- 
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the
-@@ -141,7 +143,7 @@
+@@ -155,7 +157,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -34,12 +38,12 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -299,8 +301,14 @@
- @TK_LIB_FILE@: ${OBJS}
- 	rm -f @TK_LIB_FILE@
+@@ -320,8 +322,14 @@
+ ${TK_LIB_FILE}: ${OBJS}
+ 	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
 +	ln -sf @TK_LIB_FILE@ libtk81.so
- 	$(RANLIB) @TK_LIB_FILE@
+ 	$(RANLIB) ${TK_LIB_FILE}
  
 +libtk81.a: ${OBJS}
 +	rm -f libtk81.a
@@ -49,7 +53,7 @@
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -355,7 +363,7 @@
+@@ -376,7 +384,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -58,7 +62,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -367,15 +375,22 @@
+@@ -388,15 +396,22 @@
  	    done;
  	@echo "Installing $(TK_LIB_FILE)"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -82,7 +86,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -385,8 +400,18 @@
+@@ -406,8 +421,18 @@
  		else true; \
  		fi; \
  	    done;
@@ -103,7 +107,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -445,28 +470,28 @@
+@@ -466,28 +491,28 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
