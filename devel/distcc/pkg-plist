@@ -1,9 +1,21 @@
 bin/distcc
 sbin/distccd
-%%PORTDOCS%%share/doc/distcc/AUTHORS
-%%PORTDOCS%%share/doc/distcc/COPYING
-%%PORTDOCS%%share/doc/distcc/COPYING.FDL
-%%PORTDOCS%%share/doc/distcc/NEWS
-%%PORTDOCS%%share/doc/distcc/OLDNEWS
-%%PORTDOCS%%share/doc/distcc/README
-%%PORTDOCS%%@dirrm share/doc/distcc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.FDL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/OLDNEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/distcc.info.gz
+%%PORTDOCS%%%%DOCSDIR%%/distcc.pdf
+%%PORTDOCS%%%%DOCSDIR%%/distcc.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/distcc-7.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
