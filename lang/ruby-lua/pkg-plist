@@ -7,3 +7,4 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/lua/test_ssi_lua3_2.html
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/lua/test_ssi_lua_2.html
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/lua/test_ssi_lua_2.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/lua
