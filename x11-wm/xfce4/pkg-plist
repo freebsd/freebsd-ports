@@ -6,6 +6,7 @@ bin/xfce_setup
 bin/xfclock
 bin/xfgnome
 bin/xfhelp
+bin/xflock
 bin/xfmouse
 bin/xfpager
 bin/xfplay
@@ -304,6 +305,7 @@ share/xfce/icons/Xmix.xpm
 share/xfce/icons/Xterm.xpm
 share/xfce/icons/Xv.xpm
 share/xfce/locale/ca/LC_MESSAGES/xfce.mo
+share/xfce/locale/da/LC_MESSAGES/xfce.mo
 share/xfce/locale/de/LC_MESSAGES/xfce.mo
 share/xfce/locale/es/LC_MESSAGES/xfce.mo
 share/xfce/locale/fi/LC_MESSAGES/xfce.mo
@@ -313,21 +315,30 @@ share/xfce/locale/it/LC_MESSAGES/xfce.mo
 share/xfce/locale/ja/LC_MESSAGES/xfce.mo
 share/xfce/locale/pl/LC_MESSAGES/xfce.mo
 share/xfce/locale/ru/LC_MESSAGES/xfce.mo
+share/xfce/locale/sv/LC_MESSAGES/xfce.mo
+share/xfce/locale/zh/LC_MESSAGES/xfce.mo
 share/xfce/palettes/Alpine
 share/xfce/palettes/Anthracite
 share/xfce/palettes/Bahamas
+share/xfce/palettes/Cheese
 share/xfce/palettes/Citrouille
 share/xfce/palettes/Clinky
+share/xfce/palettes/Craters
 share/xfce/palettes/Dolly
 share/xfce/palettes/Dust
 share/xfce/palettes/Fall
 share/xfce/palettes/Golden
 share/xfce/palettes/Grayscale
+share/xfce/palettes/Ground
 share/xfce/palettes/HiContrast
 share/xfce/palettes/Iceland
 share/xfce/palettes/Mauve
+share/xfce/palettes/Metal
+share/xfce/palettes/Military
 share/xfce/palettes/Nature
 share/xfce/palettes/Netsy
+share/xfce/palettes/OldWood
+share/xfce/palettes/Paper
 share/xfce/palettes/Plum
 share/xfce/palettes/Prairie
 share/xfce/palettes/Salmon
@@ -336,6 +347,7 @@ share/xfce/palettes/Sand
 share/xfce/palettes/Spring
 share/xfce/palettes/Stellar
 share/xfce/palettes/Sunny
+share/xfce/palettes/Symbiose
 share/xfce/palettes/TBlue
 share/xfce/palettes/Teal
 share/xfce/palettes/Tommy
@@ -412,12 +424,21 @@ share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
 share/xfce/system.xfwmrc
+share/xfce/textures/cheese.xpm
+share/xfce/textures/craters.xpm
+share/xfce/textures/ground.xpm
+share/xfce/textures/metal.xpm
+share/xfce/textures/military.xpm
+share/xfce/textures/oldwood.xpm
+share/xfce/textures/paper.xpm
 share/xfce/xfdefs.py
 @dirrm share/xfce/backdrops
 @dirrm share/xfce/help
 @dirrm share/xfce/icons
 @dirrm share/xfce/locale/ca/LC_MESSAGES
 @dirrm share/xfce/locale/ca
+@dirrm share/xfce/locale/da/LC_MESSAGES
+@dirrm share/xfce/locale/da
 @dirrm share/xfce/locale/de/LC_MESSAGES
 @dirrm share/xfce/locale/de
 @dirrm share/xfce/locale/es/LC_MESSAGES
@@ -436,7 +457,12 @@ share/xfce/xfdefs.py
 @dirrm share/xfce/locale/pl
 @dirrm share/xfce/locale/ru/LC_MESSAGES
 @dirrm share/xfce/locale/ru
+@dirrm share/xfce/locale/sv/LC_MESSAGES
+@dirrm share/xfce/locale/sv
+@dirrm share/xfce/locale/zh/LC_MESSAGES
+@dirrm share/xfce/locale/zh
 @dirrm share/xfce/locale
 @dirrm share/xfce/palettes
 @dirrm share/xfce/sounds
+@dirrm share/xfce/textures
 @dirrm share/xfce
