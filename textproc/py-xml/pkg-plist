@@ -252,6 +252,7 @@
 %%PORTDOCS%%share/examples/py-xml/test/test_sax2_xmlproc.py
 %%PORTDOCS%%share/examples/py-xml/test/test_sax_xmlproc.py
 %%PORTDOCS%%share/examples/py-xml/test/test_saxdrivers.py
+%%PORTDOCS%%share/examples/py-xml/test/test_support.py
 %%PORTDOCS%%share/examples/py-xml/test/test_utils.py
 %%PORTDOCS%%share/examples/py-xml/test/test_xmlbuilder.py
 %%PORTDOCS%%share/examples/py-xml/test/test_xmlproc.py
