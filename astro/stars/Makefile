@@ -3,7 +3,7 @@
 # Date created:		10 Jul 1996
 # Whom:			searle
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/03 22:42:46 chuckr Exp $
 #
 
 DISTNAME=	stars-1.0-ss-9.03
@@ -23,6 +23,6 @@ do-build:
 	cc $(WRKSRC)/main.o $(WRKSRC)/xwin.o -L$(PREFIX)/lib -lX11 -lm -o $(WRKSRC)/stars
 
 do-install:
-	install -c $(WRKSRC)/stars $(PREFIX)/bin/stars
+	$(INSTALL_PROGRAM) $(WRKSRC)/stars $(PREFIX)/bin/stars
 
 .include <bsd.port.mk>
