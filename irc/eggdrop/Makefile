@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	eggdrop
-PORTVERSION=	1.6.15
-PORTREVISION=	4
-CATEGORIES=	irc tcl84 ipv6
+PORTVERSION=	1.6.17
+CATEGORIES=	irc tcl84
 MASTER_SITES=	ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/
-DISTNAME=	${PORTNAME:S/-//}${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
-PATCHFILES=	eggdrop1.6.15-ssl.fixed.diff.gz
+PATCHFILES=	${PORTNAME}${PORTVERSION}-ssl.diff.gz
 PATCH_SITES=	http://www.egghelp.org/files/patches/
 PATCH_WRKSRC=	${WRKDIR}
 
 MAINTAINER=	q@uni.de
 COMMENT=	The most popular open source Internet Relay Chat bot
 
+USE_BZIP2=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(WITHOUT_TCL)
@@ -36,22 +36,12 @@ CONFIGURE_ARGS+=	--without-ssl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014 && defined(WITH_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-PLIST_SUB+=		IPV6="@comment "
-.else
-PLIST_SUB+=		IPV6=""
-.endif
-
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=		eggdrop.1
 
 pre-everything::
-.if ${OSVERSION} >= 400014 && !defined(WITH_IPV6)
-	@${ECHO_MSG} 'Define WITH_IPV6 to enable IPv6 support'
-.endif
 .if !defined(WITH_SSL)
 	@${ECHO_MSG} 'Define WITH_SSL to enable SSL support'
 .endif
@@ -60,8 +50,8 @@ post-configure:
 	@(cd ${WRKSRC}; ${MAKE} config)
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKSRC}/eggdrop.conf \
 		> ${WRKSRC}/eggdrop.conf.sample
-	# Workaround broken relative path in SSL-patch
-	@(cd ${WRKSRC}/src && ${LN} -s ../config.h)
+# Workaround broken relative path in SSL-patch
+	@(cd ${WRKSRC}/src && ${LN} -fs ../config.h)
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/eggdrop ${PREFIX}/bin
@@ -71,23 +61,24 @@ do-install:
 		${DATADIR}/language ${DATADIR}/text ${PREFIX}/lib/eggdrop
 	@${INSTALL_DATA} ${WRKSRC}/language/core.*.lang ${DATADIR}/language
 	@cd ${WRKSRC} && ${INSTALL_DATA} assoc.so blowfish.so channels.so \
-	compress.so console.so ctcp.so filesys.so irc.so notes.so seen.so \
-	server.so share.so transfer.so uptime.so wire.so ${PREFIX}/lib/eggdrop
-.if !defined(WITH_IPV6)
-	@cd ${WRKSRC} && ${INSTALL_DATA} dns.so ${PREFIX}/lib/eggdrop
-.endif
+	compress.so console.so ctcp.so dns.so filesys.so irc.so notes.so \
+	seen.so server.so share.so transfer.so uptime.so wire.so \
+	${PREFIX}/lib/eggdrop
 .for f in assoc.mod/help/assoc.help channels.mod/help/chaninfo.help \
 	channels.mod/help/channels.help console.mod/help/console.help \
+	compress.mod/help/compress.help ctcp.mod/help/ctcp.help \
 	filesys.mod/help/filesys.help irc.mod/help/irc.help \
 	notes.mod/help/notes.help seen.mod/help/seen.help \
-	server.mod/help/server.help share.mod/help/share.help
+	server.mod/help/server.help share.mod/help/share.help \
+	transfer.mod/help/transfer.help uptime.mod/help/uptime.help \
+	wire.mod/help/wire.help
 	@${INSTALL_DATA} ${WRKSRC}/src/mod/$f ${DATADIR}/help
 .endfor
 .for f in channels.mod/help/set/channels.help compress.mod/help/set/compress.help \
 	console.mod/help/set/console.help ctcp.mod/help/set/ctcp.help \
 	filesys.mod/help/set/filesys.help irc.mod/help/set/irc.help \
 	notes.mod/help/set/notes.help server.mod/help/set/server.help \
-	transfer.mod/help/set/transfer.help
+	share.mod/help/set/share.help transfer.mod/help/set/transfer.help
 	@${INSTALL_DATA} ${WRKSRC}/src/mod/$f ${DATADIR}/help/set
 .endfor
 .for f in irc.mod/help/msg/irc.help notes.mod/help/msg/notes.help \
@@ -107,14 +98,15 @@ do-install:
 	@cd ${WRKSRC}/text && ${INSTALL_DATA} banner motd ${DATADIR}/text
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/settings ${DOCSDIR}/html
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} BOTNET tcl-commands.doc tricks \
-		BUG-REPORT first_script.txt KNOWN-PROBLEMS MODULES PARTYLINE \
-		text-substitutions.doc UPDATES1.5 UPDATES1.6 ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ABOUT AUTHORS BANS BOTNET BUG-REPORT \
+		COMPILE-GUIDE CONTENTS FIRST-SCRIPT KNOWN-PROBLEMS MODULES \
+		PARTYLINE PATCH-HOWTO TEXT-SUBSTITUTIONS TRICKS UPDATES1.6 USERS \
+		WEIRD-MESSAGES tcl-commands.doc ${DOCSDIR}
 	@cd ${WRKSRC}/doc/html && ${INSTALL_DATA} *.html ${DOCSDIR}/html
 	@cd ${WRKSRC}/doc/settings && ${INSTALL_DATA} * ${DOCSDIR}/settings
 .endif
 
 post-install:
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE} | fmt
 
 .include <bsd.port.post.mk>
