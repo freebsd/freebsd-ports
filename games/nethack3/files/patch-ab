@@ -1,0 +1,12 @@
+diff -ruN ./sys/unix/Makefile.src ../nethack-3.2.2/sys/unix//Makefile.src
+--- ./sys/unix/Makefile.src	Sat Nov 21 01:23:57 1998
++++ ../nethack-3.2.2/sys/unix/Makefile.src	Sat Nov 21 01:15:41 1998
+@@ -204,7 +204,7 @@
+ #
+ # LIBS = -lxpg4
+ #
+-LIBS =
++LIBS = -lSM -lICE
+ 
+ # make NetHack
+ #JP by issei(96/5/27)
