@@ -6,12 +6,22 @@
 #
 
 PORTNAME=	pxtools
-PORTVERSION=	0.0.16
+PORTVERSION=	0.0.19
 CATEGORIES=	databases
 MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--with-included-gettext
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' \
+		${WRKSRC}/configure ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
