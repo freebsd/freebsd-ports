@@ -3,4 +3,3 @@ include/videolan/dvdcss.h
 lib/libdvdcss.a
 lib/libdvdcss.so
 lib/libdvdcss.so.1
-lib/libdvdcss.so.1.0.1
