@@ -7,6 +7,7 @@
     SUBDIR += dgpsip
     SUBDIR += ephem
     SUBDIR += fooseti
+    SUBDIR += gdesklets-goodweather
     SUBDIR += gkrellmearth
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmseti
