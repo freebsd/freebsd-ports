@@ -1,0 +1,33 @@
+--- modules/mod_auth.c.orig	Tue Nov 11 09:17:23 1997
++++ modules/mod_auth.c	Fri Feb 20 00:38:05 1998
+@@ -177,7 +177,7 @@
+   /* Is this the proper behavior when timing out? */
+   send_response_async(R_421,"Login Timeout (%d seconds): closing control connection.",
+                       TimeoutLogin);
+-  schedule(main_exit,0,(void*)LOG_NOTICE,"FTP login timed out, disconnected.",
++  schedule(main_exit,0,(void*)LOG_INFO,"FTP login timed out, disconnected.",
+            (void*)0,NULL);
+   remove_timer(TIMER_IDLE,ANY_MODULE);
+   remove_timer(TIMER_NOXFER,ANY_MODULE);
+@@ -731,10 +731,10 @@
+   }
+ 
+   if(c)
+-    log_auth(LOG_NOTICE,"ANONYMOUS FTP login as '%s' from %s [%s]",
++    log_auth(LOG_INFO,"ANONYMOUS FTP login as '%s' from %s [%s]",
+     origuser,session.c->remote_name,inet_ntoa(*session.c->remote_ipaddr));
+   else
+-    log_auth(LOG_NOTICE,"FTP login as '%s' from %s [%s]",
++    log_auth(LOG_INFO,"FTP login as '%s' from %s [%s]",
+     origuser,session.c->remote_name,inet_ntoa(*session.c->remote_ipaddr));
+ 
+   session.user = pstrdup(permanent_pool,auth_map_uid(pw->pw_uid));
+@@ -955,7 +955,7 @@
+       send_response(R_530,"%s",
+                     sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
+ 
+-      log_auth(LOG_NOTICE,"connection refused (max clients %d)",
++      log_auth(LOG_INFO,"connection refused (max clients %d)",
+                max);
+       end_login(0);
+     }
