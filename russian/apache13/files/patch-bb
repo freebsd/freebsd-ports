@@ -1,0 +1,75 @@
+--- src/support/suexec.c.orig	Thu Mar 14 00:05:37 2002
++++ src/support/suexec.c	Wed Sep 25 00:22:18 2002
+@@ -90,6 +90,9 @@
+ #include <sys/types.h>
+ 
+ #include <stdarg.h>
++#ifdef LOGIN_CAP
++#include <login_cap.h>
++#endif
+ 
+ #include "suexec.h"
+ 
+@@ -296,11 +299,14 @@
+         fprintf(stderr, " -D DOC_ROOT=\"%s\"\n", DOC_ROOT);
+ #endif
+ #ifdef GID_MIN
+-        fprintf(stderr, " -D GID_MID=%d\n", GID_MIN);
++        fprintf(stderr, " -D GID_MIN=%d\n", GID_MIN);
+ #endif
+ #ifdef HTTPD_USER
+         fprintf(stderr, " -D HTTPD_USER=\"%s\"\n", HTTPD_USER);
+ #endif
++#ifdef LOGIN_CAP
++        fprintf(stderr, " -D LOGIN_CAP\n");
++#endif
+ #ifdef LOG_EXEC
+         fprintf(stderr, " -D LOG_EXEC=\"%s\"\n", LOG_EXEC);
+ #endif
+@@ -311,7 +317,7 @@
+         fprintf(stderr, " -D SUEXEC_UMASK=%03o\n", SUEXEC_UMASK);
+ #endif
+ #ifdef UID_MIN
+-        fprintf(stderr, " -D UID_MID=%d\n", UID_MIN);
++        fprintf(stderr, " -D UID_MIN=%d\n", UID_MIN);
+ #endif
+ #ifdef USERDIR_SUFFIX
+         fprintf(stderr, " -D USERDIR_SUFFIX=\"%s\"\n", USERDIR_SUFFIX);
+@@ -461,7 +467,28 @@
+ 
+     /*
+      * Change UID/GID here so that the following tests work over NFS.
+-     *
++     */
++
++#ifdef LOGIN_CAP
++    /*
++     * Set user context (resources, priority and grouplist).
++     * If unsuccessful, error out.
++     */
++    if (setusercontext(NULL, pw, uid, LOGIN_SETRESOURCES | LOGIN_SETPRIORITY |
++      LOGIN_SETGROUP | LOGIN_SETLOGIN) == -1) {
++	log_err("emerg: failed to set user context (%ld: %s)\n", uid, cmd);
++	exit(108);
++    }
++
++    /*
++     * Set gid to the target group. If unsuccessful, error out.
++     */
++    if ((setgid(gid)) != 0) {
++	log_err("emerg: failed to setgid (%ld: %s)\n", gid, cmd);
++	exit(109);
++    }
++#else /* !LOGIN_CAP */
++    /*
+      * Initialize the group access list for the target user,
+      * and setgid() to the target group. If unsuccessful, error out.
+      */
+@@ -469,6 +496,7 @@
+ 	log_err("emerg: failed to setgid (%ld: %s)\n", gid, cmd);
+ 	exit(109);
+     }
++#endif /* LOGIN_CAP */
+ 
+     /*
+      * setuid() to the target user.  Error out on fail.

@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	${APACHE_VERSION}.${RA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	russian www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -54,15 +55,16 @@ DEFAULT_PATH?=/bin:/usr/bin:${PREFIX}/bin
 .if defined(WITH_APACHE_SUEXEC)
 
 APACHE_SUEXEC_DOCROOT?=${DOCUMENT_ROOT}
+APACHE_SUEXEC_LOG?=/var/log/httpd-suexec.log
 APACHE_SUEXEC_USERDIR?=public_html
 
-SUEXEC_CONF= \
+SUEXEC_CONF=\
 	 --enable-suexec \
 	 --suexec-docroot=${APACHE_SUEXEC_DOCROOT} \
 	 --suexec-caller=www \
 	 --suexec-uidmin=1000 \
 	 --suexec-gidmin=1000 \
-	 --suexec-logfile=/var/log/httpd-suexec.log \
+	 --suexec-logfile=${APACHE_SUEXEC_LOG} \
 	 --suexec-userdir=${APACHE_SUEXEC_USERDIR} \
 	 --suexec-safepath=${DEFAULT_PATH}
 
@@ -81,14 +83,13 @@ SUEXEC_MAN=
 
 .endif # WITH_APACHE_SUEXEC
 
-
 #
 # Configutre parameters
 #
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	\
+CONFIGURE_ARGS=\
 		 --prefix=${PREFIX} \
 		 --server-uid=www \
 		 --server-gid=www \
@@ -97,7 +98,7 @@ CONFIGURE_ARGS=	\
 		 --without-confadjust
 
 .if defined(WITH_DSO_MODULES)
-CONFIGURE_ARGS+= \
+CONFIGURE_ARGS+=\
 		 --enable-shared=max \
 		 --disable-shared=so \
 		 --disable-shared=charset \
@@ -109,7 +110,7 @@ CONFIGURE_ARGS+= \
 
 PLIST_SUB+=	 DSO_MOD=""
 .else
-CONFIGURE_ARGS+= \
+CONFIGURE_ARGS+=\
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \
@@ -124,12 +125,11 @@ OPTIM=		 -DDOCUMENT_LOCATION=\\"${DOCUMENT_ROOT}\\" \
 		 -DDEFAULT_PATH=\\"${DEFAULT_PATH}\\" \
 		 -DACCEPT_FILTER_NAME=\\"httpready\\"
 
-.if defined(APACHE_HARD_SERVER_LIMIT)                                                                                   
+.if defined(APACHE_HARD_SERVER_LIMIT)
 OPTIM+=		 -DHARD_SERVER_LIMIT=${APACHE_HARD_SERVER_LIMIT}
 .else
 OPTIM+=		 -DHARD_SERVER_LIMIT=512
 .endif
-
 
 .if defined(APACHE_PERF_TUNING)
 OPTIM+=		-DBUFFERED_LOGS
@@ -164,7 +164,8 @@ pre-fetch:
 	@${ECHO_MSG} "   suexec docroot:  ${APACHE_SUEXEC_DOCROOT}"
 	@${ECHO_MSG} "   suexec userdir:  ${APACHE_SUEXEC_USERDIR}"
 	@${ECHO_MSG} "   suexec safepath: ${DEFAULT_PATH}"
-	@${ECHO_MSG} "   These values could be defined as APACHE_SUEXEC_DOCROOT, APACHE_SUEXEC_USERDIR and DEFAULT_PATH."
+	@${ECHO_MSG} "   suexec log:      ${APACHE_SUEXEC_LOG}"
+	@${ECHO_MSG} "   These values could be defined as APACHE_SUEXEC_DOCROOT, APACHE_SUEXEC_USERDIR, DEFAULT_PATH and APACHE_SUEXEC_LOG."
 .else
 	@${ECHO_MSG} "You could define WITH_APACHE_SUEXEC to build suexec support."
 .endif
