@@ -38,6 +38,7 @@ lib/X11/Cards
 lib/X11/Options
 lib/X11/XF86Config.98
 lib/X11/XF86Config.eg
+lib/X11/app-defaults/XF86Cfg
 lib/X11/doc/BUILD
 lib/X11/doc/BugReport
 lib/X11/doc/DESIGN
@@ -76,6 +77,7 @@ lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
 lib/X11/getconfig/cfg.sample
 lib/X11/getconfig/xfree86.cfg
+lib/X11/xserver/SecurityPolicy
 lib/modules/codeconv/libARABIC.a
 lib/modules/codeconv/libARMSCII8.a
 lib/modules/codeconv/libBIG5.a
@@ -108,15 +110,6 @@ lib/modules/codeconv/libKSCJOHAB.a
 lib/modules/codeconv/libMULEENCODING.a
 lib/modules/codeconv/libTCVN.a
 lib/modules/codeconv/libVISCII.a
-%%DRI%%lib/modules/dri/gamma_dri.so
-%%I386%%%%DRI%%lib/modules/dri/i810_dri.so
-%%I386%%%%DRI%%lib/modules/dri/i830_dri.so
-%%DRI%%lib/modules/dri/mga_dri.so
-%%DRI%%lib/modules/dri/r128_dri.so
-%%DRI%%lib/modules/dri/r200_dri.so
-%%DRI%%lib/modules/dri/radeon_dri.so
-%%DRI%%lib/modules/dri/sis_dri.so
-%%DRI%%lib/modules/dri/tdfx_dri.so
 %%I386%%lib/modules/drivers/apm_drv.o
 %%I386%%lib/modules/drivers/ark_drv.o
 lib/modules/drivers/ati_drv.o
