@@ -1,9 +1,7 @@
 bin/gnmm
-share/locale/de/LC_MESSAGES/gnmm.mo
-share/locale/locale.alias
+share/gnome/apps/Games/gnmm.desktop
 share/gnome/pixmaps/gnmm-logo.png
 share/gnome/pixmaps/gnmm/board.png
 share/gnome/pixmaps/gnmm/pieces.png
-share/gnome/apps/Games/gnmm.desktop
-lib/charset.alias
+share/locale/de/LC_MESSAGES/gnmm.mo
 @dirrm share/gnome/pixmaps/gnmm
