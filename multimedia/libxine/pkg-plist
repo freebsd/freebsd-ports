@@ -8,6 +8,7 @@ include/xine/buffer.h
 include/xine/compat.h
 include/xine/configfile.h
 include/xine/demux.h
+include/xine/info_helper.h
 include/xine/input_plugin.h
 include/xine/io_helper.h
 include/xine/metronom.h
@@ -30,13 +31,21 @@ include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.so
-lib/libxine.so.7
+lib/libxine.so.8
 lib/xine/plugins/1.0.0/post/xineplug_post_goom.so
 lib/xine/plugins/1.0.0/post/xineplug_post_mosaico.so
 lib/xine/plugins/1.0.0/post/xineplug_post_planar.so
 lib/xine/plugins/1.0.0/post/xineplug_post_switch.so
 lib/xine/plugins/1.0.0/post/xineplug_post_tvtime.so
 lib/xine/plugins/1.0.0/post/xineplug_post_visualizations.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/cyberblade_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/mach64_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/mga_crtc2_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/mga_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/pm2_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/pm3_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/radeon_vid.so
+%%VIDIX%%lib/xine/plugins/1.0.0/vidix/rage128_vid.so
 %%HAVE_ARTS%%lib/xine/plugins/1.0.0/xineplug_ao_out_arts.so
 %%HAVE_ESOUND%%lib/xine/plugins/1.0.0/xineplug_ao_out_esd.so
 lib/xine/plugins/1.0.0/xineplug_ao_out_none.so
@@ -119,13 +128,16 @@ lib/xine/plugins/1.0.0/xineplug_inp_rtp.so
 lib/xine/plugins/1.0.0/xineplug_inp_rtsp.so
 lib/xine/plugins/1.0.0/xineplug_inp_stdin_fifo.so
 lib/xine/plugins/1.0.0/xineplug_inp_vcd.so
+lib/xine/plugins/1.0.0/xineplug_inp_vcdo.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_aa.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_none.so
-lib/xine/plugins/1.0.0/xineplug_vo_out_pgx64.so
+%%PGX64%%lib/xine/plugins/1.0.0/xineplug_vo_out_pgx64.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_sdl.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_syncfb.so
-%%HAVE_LIBXV%%lib/xine/plugins/1.0.0/xineplug_vo_out_xv.so
+%%VIDIX%%lib/xine/plugins/1.0.0/xineplug_vo_out_vidix.so
 lib/xine/plugins/1.0.0/xineplug_vo_out_xshm.so
+%%HAVE_LIBXV%%lib/xine/plugins/1.0.0/xineplug_vo_out_xv.so
+%%XVMC%%lib/xine/plugins/1.0.0/xineplug_vo_out_xvmc.so
 libdata/pkgconfig/libxine.pc
 share/aclocal/xine.m4
 share/doc/xine/README
@@ -135,16 +147,16 @@ share/doc/xine/README.dxr3
 share/doc/xine/README.dxr3_pl
 share/doc/xine/README.freebsd
 share/doc/xine/README.irix
-share/doc/xine/README.mrl
 share/doc/xine/README.network_dvd
 share/doc/xine/README.opengl
-share/doc/xine/README.plugins
 share/doc/xine/README.solaris
 share/doc/xine/README.syncfb
-share/doc/xine/README.tvmode
-share/doc/xine/dataflow.dia
 share/doc/xine/faq/faq.html
 share/doc/xine/faq/faq.txt
+share/doc/xine/hackersguide/architecture.png
+share/doc/xine/hackersguide/hackersguide.html
+share/doc/xine/hackersguide/library.png
+share/doc/xine/hackersguide/overlays.png
 share/locale/cs/LC_MESSAGES/libxine1.mo
 share/locale/de/LC_MESSAGES/libxine1.mo
 share/locale/es/LC_MESSAGES/libxine1.mo
@@ -188,6 +200,7 @@ share/xine/libxine1/fonts/serif-32.xinefont.gz
 @dirrm lib/xine/plugins
 @dirrm lib/xine
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+@dirrm share/doc/xine/hackersguide
 @dirrm share/doc/xine/faq
 @dirrm share/doc/xine
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
