@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeutils2
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 PORTEPOCH=	1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -25,7 +25,7 @@ GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomepanel
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gnome-calculator.1 \
 	gnome-character-map.1 gnome-dictionary.1 \
