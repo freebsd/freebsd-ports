@@ -1,15 +1,15 @@
---- ../sablot/Sablot-0.52.patch.orig	Mon Mar  4 22:04:27 2002
-+++ ../sablot/Sablot-0.52.patch	Mon Mar  4 22:05:40 2002
+--- ../sablot/Sablot-0.52.patch.orig	Mon Oct 29 19:18:40 2001
++++ ../sablot/Sablot-0.52.patch	Tue Mar  5 18:16:07 2002
 @@ -3,7 +3,7 @@
  ***************
  *** 1 ****
  ! dummy
----- 1,157 ----
+---- 1,147 ----
 +--- 1,157 ----
  ! #*************************************************************************
  ! #
  ! #   $RCSfile: makefile.mk,v $
-@@ -85,12 +85,17 @@
+@@ -85,12 +85,22 @@
  ! CFLAGS+=     -DHAVE_IEEEFP_H
  ! .ENDIF
  ! 
