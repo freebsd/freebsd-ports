@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.6.10
-PORTREVISION=	5
+PORTVERSION=	0.6.11
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,6 +47,7 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 .endif
 .if defined(WITH_ICONV)
 USE_ICONV=	yes
+CONFIGURE_ENV+=	CFLAGS="-DICONV_CONV=yes"
 .endif
 .if defined(WITH_IMAGEMAGICK)
 LIB_DEPENDS+=	Magick.8:${PORTSDIR}/graphics/ImageMagick
@@ -78,11 +78,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/dvdauthor
-	${INSTALL_DATA} ${WRKSRC}/lib.txt ${PREFIX}/share/doc/dvdauthor
-	${INSTALL_DATA} ${WRKSRC}/menu.txt ${PREFIX}/share/doc/dvdauthor
-	for i in dvdauthor ex-title examples index languages manpages spumux; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$$i.html ${PREFIX}/share/doc/dvdauthor; \
-	done
 .endif
 
 .include <bsd.port.post.mk>
