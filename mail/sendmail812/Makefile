@@ -222,7 +222,7 @@ ${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
 
 # create basics for smtp-auth
 #
-root-sasldb:
+install-sasldb:
 	@${ECHO_CMD} "# Links:"
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# http://www.sendmail.org/~gshapiro/
@@ -231,14 +231,6 @@ root-sasldb:
 	@${ECHO_CMD} "# http://blue-labs.org/clue/sendmail.php"
 	@${ECHO_CMD} "# http://www.digitalanswers.org/sendmail/"
 	@${ECHO_CMD} "#"
-.if defined(SASLPWD)
-	-@${ECHO_CMD} ${SASLPWD} | \
-	${LOCALBASE}/sbin/saslpasswd -p -c -u ${REALM} "sendmail"
-.else
-	@${ECHO_CMD} "make SASLPWD=passwort owner-sasldb"
-.endif
-	${CHOWN} root:wheel ${DESTDIR}${PREFIX}/etc/sasldb.db
-	${CHMOD} 0600 ${DESTDIR}${PREFIX}/etc/sasldb.db
 
 # create certificates for TLS/SSL
 #
