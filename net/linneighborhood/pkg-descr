@@ -1,0 +1,11 @@
+LinNeighborhood is a Xwindow graphical port of Network Neighborhood,
+running over Samba utilities and the smbfs.
+
+It permits to browse an SMB (CIFS) network consisting of Samba,
+Windows (WfWg, 95, 98, NT) and probably (not tested) OS/2, LanManager
+for DOS and others. It also offers an interface to mount the found shares.
+
+WWW: http://www.bnro.de/~schmidjo/index.html
+
+--
+h.eichmann@gmx.de

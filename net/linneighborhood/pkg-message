@@ -1,0 +1,9 @@
+To mount shares with LinNeighborhood, there are the following possibilities:
+  - run it as root. (not recommended)
+  - give LinNeighborhood the suid flag (not recommended)
+  - give mount_smbfs and umount the suid flag (very bad!)
+  - install and configure sudo correctly and replace mount_smbfs and umount
+    in the preferences by "sudo mount_smbfs" and "sudo umount" (recommended).
+    Make sure, that all sudo rules concerning mount and umount have the
+    NOPASSWD flag. Otherwise two password questions might occur (one
+    from sudo and one from mount_smbfs) which will definitely go wrong.

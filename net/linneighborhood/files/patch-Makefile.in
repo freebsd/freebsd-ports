@@ -1,0 +1,29 @@
+--- src/Makefile.in.orig	Sun Jun  9 09:58:47 2002
++++ src/Makefile.in	Thu Feb 13 09:05:55 2003
+@@ -88,14 +88,14 @@
+ localedir = @localedir@
+ 
+ bin_PROGRAMS = LinNeighborhood
+-LinNeighborhood_SOURCES = browsewrap.c data.c filesystem.c gtk_dialog.c gtk_gui.c gtk_mountdlg.c gtk_sharewindow.c gtk_tree.c guiwrap.c io.c libsmb.c lmhosts.c main.c preferences.c smbbrowse.c smbmount.c utility.c
++LinNeighborhood_SOURCES = browsewrap.c data.c filesystem.c gtk_dialog.c gtk_gui.c gtk_mountdlg.c gtk_sharewindow.c gtk_tree.c guiwrap.c io.c libsmb.c lmhosts.c main.c preferences.c smbbrowse.c smbmount.c utility.c mntent_compat.c
+ 
+-noinst_HEADERS = browsewrap.h data.h define.h filesystem.h gtk_dialog.h gtk_gui.h gtk_mountdlg.h gtk_sharewindow.h gtk_tree.h guiwrap.h io.h libsmb.h preferences.h samba.h smbif.h utility.h
++noinst_HEADERS = browsewrap.h data.h define.h filesystem.h gtk_dialog.h gtk_gui.h gtk_mountdlg.h gtk_sharewindow.h gtk_tree.h guiwrap.h io.h libsmb.h preferences.h samba.h smbif.h utility.h mntent.h
+ 
+ 
+ LinNeighborhood_LDADD = @GTK_LIBS@
+ INCLUDES = @GTK_CFLAGS@ -DLIBDIR=\"$(libdir)\" -DDATADIR=\"$(datadir)\"
+-LIBS = @GTK_LIBS@ -lpthread
++LIBS = @GTK_LIBS@ -lc_r -lutil
+ 
+ EXTRA_DIST = picture
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -110,7 +110,7 @@
+ LinNeighborhood_OBJECTS =  browsewrap.o data.o filesystem.o gtk_dialog.o \
+ gtk_gui.o gtk_mountdlg.o gtk_sharewindow.o gtk_tree.o guiwrap.o io.o \
+ libsmb.o lmhosts.o main.o preferences.o smbbrowse.o smbmount.o \
+-utility.o
++utility.o mntent_compat.o
+ LinNeighborhood_DEPENDENCIES = 
+ LinNeighborhood_LDFLAGS = 
+ CFLAGS = @CFLAGS@
