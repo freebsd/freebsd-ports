@@ -3922,6 +3922,7 @@ merlinmon	ports/net/merlinmon
 mesg		src/usr.bin/mesg
 mess822		ports/mail/mess822
 messarge	ports/russian/messarge
+metacity	ports/x11-wm/metacity
 metakit		ports/databases/metakit
 metamail	ports/mail/metamail
 metatheme	ports/misc/metatheme
