@@ -1,0 +1,6 @@
+@comment $FreeBSD$
+sbin/mopd
+sbin/mopprobe
+sbin/moptrace
+sbin/mopchk
+sbin/mopa.out
