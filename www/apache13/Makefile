@@ -32,7 +32,8 @@ DISTNAME=	apache_${PORTVERSION}
 MAINTAINER=	ache@freebsd.org
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	\
+# += for child ports
+CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} \
 		--server-uid=www \
 		--server-gid=www \
