@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	LOCAL_PORTS
 
 MAINTAINER=	ports@FreeBSD.org
 
+FORBIDDEN=	"unconfirmed report of security bug--see <URL:http://www.openbsd.org/errata.html\#isakmpd>"
+
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
 BROKEN=		"requires IPsec support"
