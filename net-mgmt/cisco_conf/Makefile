@@ -8,8 +8,9 @@
 PORTNAME=	cisco_conf
 PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/files/
+MASTER_SITES=	http://www.chelcom.ru/~anton/projects/files/
 DISTNAME=	ciscoconf-${PORTVERSION}
+DIST_SUBDIR=	cisco_conf
 
 MAINTAINER=	anton@urc.ac.ru
 
