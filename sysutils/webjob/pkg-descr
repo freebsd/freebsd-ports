@@ -1,9 +1,14 @@
-WebJob downloads a program over HTTP/HTTPS and executes it in one
-unified operation. The output, if any, may be directed to stdout/stderr
-or a Web resource. WebJob may be useful in incident response and
-intrusion analysis as it provides a mechanism to run known good
-diagnostic programs on a potentially compromised system. It can
-also support a variety of centralized management and host-based
-monitoring solutions.
+WebJob downloads a program or script from a remote WebJob server
+over HTTP/HTTPS and executes it in one unified operation. Any output
+produced by the program/script is packaged up and sent to a remote,
+possibly different, WebJob server. WebJob is useful because it
+provides a mechanism for running known good programs on damaged or
+potentially compromised systems. This makes it ideal for remote
+diagnostics, incident response, and evidence collection. WebJob
+also provides a framework that is conducive to centralized management.
+Therefore, it can support and help automate a large number of common
+administrative tasks and host-based monitoring scenarios such as
+periodic system checks, file updates, integrity monitoring,
+patch/package management, and so on.
 
 WWW: http://webjob.sourceforge.net/WebJob/
