@@ -30,4 +30,7 @@ MODULE_NAME=	Kakasi
 
 NO_BUILD=	yes
 
+do-install:
+	@${DO_NADA}
+
 .include <bsd.port.mk>
