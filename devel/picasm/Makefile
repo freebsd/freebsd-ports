@@ -6,29 +6,30 @@
 #
 
 PORTNAME=	picasm
-PORTVERSION=	1.05
+PORTVERSION=	1.12b
 CATEGORIES=	devel
-MASTER_SITES=	http://www.iki.fi/hyvatti/pic/	\
+MASTER_SITES=	http://www.co.jyu.fi/~trossi/pic/ \
+		http://www.iki.fi/hyvatti/pic/	\
 		http://hyvatti.iki.fi/~jaakko/pic/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	bms@spc.org
 COMMENT=	Portable assembler for 16C84 series PICs
 
-NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile.uni
+WRKSRC=         ${WRKDIR}/${PORTNAME}
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=
 
-EXAMPLE_FILES=	example.asm morse.asm morse.h pic16c84.h picmac.h
+EXAMPLE_FILES=	example.asm morse.asm morse.i pic16f84.i picmac.i
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/picasm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/picasm ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/picasm.doc ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/picasm.txt ${DOCSDIR}
 .for EXAMPLE in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKDIR}/examples/${EXAMPLE} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${EXAMPLE} ${EXAMPLESDIR}
 .endfor
 .endif
 
