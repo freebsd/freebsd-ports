@@ -1,0 +1,12 @@
+Konwert is a package for conversion between various character encodings.        
+
+By encodings author imply not only different charsets like Windows-1252,
+KOI8-R or UTF-8 but also the different representations of characters like
+TeX escaping, quoted-printable and even RFC 1345 mnemonics.
+
+There are also filter filterm which allow to make separate input and output
+conversions of the encodings for the given command. It can help e.g. when
+our terminal is unable to display non-ASCII characters or to enter them
+from the keyboard.
+
+Maintains: Alex Semenyaka <alexs@snark.rinet.ru>

@@ -1,0 +1,54 @@
+--- konwert-1.8/Makefile.old	Thu Jul 30 20:43:04 1998
++++ konwert-1.8/Makefile	Sat Apr  5 02:33:30 2003
+@@ -14,3 +14,3 @@
+ 
+-prefix = /usr/local
++prefix = ${PREFIX}
+ exec_prefix = $(prefix)
+@@ -48,3 +48,3 @@
+ 
+-mydocdir = $(prefix)/doc/konwert-$(version)
++mydocdir = $(prefix)/share/konwert/doc
+ srcdocdir = doc
+@@ -257,3 +257,3 @@
+ 	{ \
+-		echo '#!/bin/bash -'; \
++		echo '#!/usr/local/bin/bash -'; \
+ 		echo; \
+@@ -274,3 +274,3 @@
+ 	{ \
+-		echo '#!/bin/bash -'; \
++		echo '#!/usr/local/bin/bash -'; \
+ 		echo; \
+@@ -294,3 +294,3 @@
+ 	{ \
+-		echo '#!/bin/bash -'; \
++		echo '#!/usr/local/bin/bash -'; \
+ 		echo; \
+@@ -337,13 +337,12 @@
+ 	$(INSTALL) -m755 -s $(installbindir)/filterm $(bindir)
+-	cp -dRf $(installfiltersdir)/* $(filtersdir)
++	cp -Rf $(installfiltersdir)/* $(filtersdir)
+ 	$(perl) $(srcdeveldir)/mkaliases $(srcdeveldir)/aliases \
+ 		$(installfiltersdir) $(filtersdir)
+-	cp -dRf $(installauxdir)/* $(auxdir)
++	cp -Rf $(installauxdir)/* $(auxdir)
+ 	$(perl) $(srcdeveldir)/mkaliases $(srcdeveldir)/aliases \
+ 		$(installauxdir)/charsets $(auxdir)/charsets
+-	cp -dRf $(installlibauxdir)/* $(libauxdir)
+-	cp -dRf $(installdeveldir)/* $(develdir)
+-	cp -dRf $(installdocdir)/* $(mydocdir)
+-	cp -dRf $(installmandir)/* $(mandir)
+-	if [ -z "$(nofixmanconfig)" ]; then $(srcauxdir)/fixmanconfig; fi
++	cp -Rf $(installlibauxdir)/* $(libauxdir)
++	cp -Rf $(installdeveldir)/* $(develdir)
++	cp -Rf $(installdocdir)/* $(mydocdir)
++	cp -Rf $(installmandir)/* $(mandir)
+ 
+@@ -352,3 +351,5 @@
+ uninstall:
+-	rm -f $(bindir)/{trs,konwert,filterm}
++	rm -f $(bindir)/trs
++	rm -f $(bindir)/konwert
++	rm -f $(bindir)/filterm
+ 	rm -rf $(mylibdir) $(mysharedir) $(mydocdir)

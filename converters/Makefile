@@ -17,6 +17,7 @@
     SUBDIR += iconv-extra
     SUBDIR += iconv-rfc1345
     SUBDIR += ish
+    SUBDIR += konwert
     SUBDIR += libiconv
     SUBDIR += libutf-8
     SUBDIR += mimelib
