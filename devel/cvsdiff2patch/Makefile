@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsdiff2patch
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~alfred/sources/cvsdiff2patch/
 DISTNAME=	cvsdiff2patch-${PORTVERSION}
