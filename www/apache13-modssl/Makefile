@@ -41,7 +41,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	rse@engelschall.com
 
-USE_OPENSSL=	NORSA
+USE_OPENSSL=	RSA
 
 .include <bsd.port.pre.mk>
 
