@@ -1,33 +1,6 @@
 *** appl/gssftp/ftpd/logwtmp.c.ORIG	Fri Feb  6 19:41:25 1998
 --- appl/gssftp/ftpd/logwtmp.c	Tue Jun 30 19:46:01 1998
 ***************
-*** 44,55 ****
-  #include <unistd.h>
-  #include <string.h>
-  
-! #ifdef WTMP_FILE
-! #define WTMPFILE WTMP_FILE
-  #endif
-  
-! #ifndef WTMPFILE
-! #define	WTMPFILE	"/usr/adm/wtmp"
-  #endif
-  
-  static int fd = -1;
---- 44,55 ----
-  #include <unistd.h>
-  #include <string.h>
-  
-! #if !defined(WTMP_FILE) && defined(_PATH_WTMP)
-! #define WTMP_FILE _PATH_WTMP
-  #endif
-  
-! #ifndef WTMP_FILE
-! #define	WTMP_FILE "/usr/adm/wtmp"
-  #endif
-  
-  static int fd = -1;
-***************
 *** 66,72 ****
   	struct stat buf;
   	time_t time();
