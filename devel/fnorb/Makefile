@@ -7,12 +7,14 @@
 
 PORTNAME=	fnorb
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.fnorb.org/download/ \
 		ftp://ftp.dstc.edu.au/DSTC/fnorb/
 
 MAINTAINER=	wjv@FreeBSD.org
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 NO_CDROM=	Free for academic, research and non-commercial purposes only
 WRKSRC=		${WRKDIR}/Fnorb-${PORTVERSION}
@@ -22,15 +24,14 @@ USE_PYTHON=	yes
 ALL_TARGET=
 
 CPIO=		cpio --quiet -pdum -R
-FNORB_DIR=	${PYTHON_SITELIBDIR}/Fnorb
-FNORB_EGDIR=	${PREFIX}/share/examples/fnorb
-FNORB_DOCDIR=	${PREFIX}/share/doc/fnorb
+FNORB_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Fnorb
+EXAMPLESDIR=	${PREFIX}/share/examples/fnorb
 FNORB_BINS=	fnaming fnendian fnfeed fngen fnidl fnifr fnior fnlogger \
 		fnmetrics fnmkior fnoptions fnping
 
 do-configure:
-	@ (cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
-	  Makefile.pre.in boot)
+	@ cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+	  Makefile.pre.in boot
 
 post-build:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -f ${WRKSRC}
@@ -38,25 +39,25 @@ post-build:
 
 post-install:
 	@ ${MKDIR} ${FNORB_DIR}/script
-	@ (cd ${WRKSRC} && find *.py *.pyc *.pyo compiler cos orb parser \
+	@ cd ${WRKSRC} && find *.py *.pyc *.pyo compiler cos orb parser \
 	  script/*.py script/*.pyc script/*.pyo \! -name \*.orig \
-	  | ${CPIO} ${BINOWN}:${BINGRP} ${FNORB_DIR})
+	  | ${CPIO} ${BINOWN}:${BINGRP} ${FNORB_DIR}
 	@ ${MKDIR} ${PREFIX}/bin
 .for fnscript in ${FNORB_BINS}
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/script/${fnscript} ${PREFIX}/bin
 .endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/etc/fnorb.cfg \
 	  ${PREFIX}/etc/fnorb.cfg.sample
-	@ ${MKDIR} ${FNORB_EGDIR}
-	@ (cd ${WRKSRC}/examples && find * \
-	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${FNORB_EGDIR})
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${FNORB_DOCDIR}
-	@ (cd ${WRKSRC}/doc && find . \
-	  | ${CPIO} ${MANOWN}:${MANGRP} ${FNORB_DOCDIR})
-	@ (${CHMOD} -R u-x ${FNORB_DOCDIR} && ${CHMOD} -R u+X ${FNORB_DOCDIR})
+	@ ${MKDIR} ${EXAMPLESDIR}
+	@ cd ${WRKSRC}/examples && find * \
+	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+	@ ${MKDIR} ${DOCSDIR}
+	@ cd ${WRKSRC}/doc && find . \
+	  | ${CPIO} ${MANOWN}:${MANGRP} ${DOCSDIR}
+	@ ${CHMOD} -R u-x ${DOCSDIR} && ${CHMOD} -R u+X ${DOCSDIR}
 .for file in ANNOUNCE CHANGES README LICENSE.HTML
-	@ ${INSTALL_MAN} ${WRKSRC}/${file} ${FNORB_DOCDIR}
+	@ ${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 

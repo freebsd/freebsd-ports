@@ -80,6 +80,54 @@
 %%PORTDOCS%%share/doc/fnorb/Fnorb-Guide/up_motif_gr.gif
 %%PORTDOCS%%share/doc/fnorb/LICENSE.HTML
 %%PORTDOCS%%share/doc/fnorb/README
+%%PORTDOCS%%share/examples/fnorb/hello-world/HelloWorld.idl
+%%PORTDOCS%%share/examples/fnorb/hello-world/README
+%%PORTDOCS%%share/examples/fnorb/hello-world/client.py
+%%PORTDOCS%%share/examples/fnorb/hello-world/client.pyc
+%%PORTDOCS%%share/examples/fnorb/hello-world/client.pyo
+%%PORTDOCS%%share/examples/fnorb/hello-world/server.py
+%%PORTDOCS%%share/examples/fnorb/hello-world/server.pyc
+%%PORTDOCS%%share/examples/fnorb/hello-world/server.pyo
+%%PORTDOCS%%share/examples/fnorb/misc/Example.idl
+%%PORTDOCS%%share/examples/fnorb/misc/README
+%%PORTDOCS%%share/examples/fnorb/misc/client.py
+%%PORTDOCS%%share/examples/fnorb/misc/client.pyc
+%%PORTDOCS%%share/examples/fnorb/misc/client.pyo
+%%PORTDOCS%%share/examples/fnorb/misc/server.py
+%%PORTDOCS%%share/examples/fnorb/misc/server.pyc
+%%PORTDOCS%%share/examples/fnorb/misc/server.pyo
+%%PORTDOCS%%share/examples/fnorb/naming/README
+%%PORTDOCS%%share/examples/fnorb/naming/Thermometer.idl
+%%PORTDOCS%%share/examples/fnorb/naming/client.py
+%%PORTDOCS%%share/examples/fnorb/naming/client.pyc
+%%PORTDOCS%%share/examples/fnorb/naming/client.pyo
+%%PORTDOCS%%share/examples/fnorb/naming/server.py
+%%PORTDOCS%%share/examples/fnorb/naming/server.pyc
+%%PORTDOCS%%share/examples/fnorb/naming/server.pyo
+%%PORTDOCS%%share/examples/fnorb/threaded/HelloWorld.idl
+%%PORTDOCS%%share/examples/fnorb/threaded/README
+%%PORTDOCS%%share/examples/fnorb/threaded/client.py
+%%PORTDOCS%%share/examples/fnorb/threaded/client.pyc
+%%PORTDOCS%%share/examples/fnorb/threaded/client.pyo
+%%PORTDOCS%%share/examples/fnorb/threaded/server.py
+%%PORTDOCS%%share/examples/fnorb/threaded/server.pyc
+%%PORTDOCS%%share/examples/fnorb/threaded/server.pyo
+%%PORTDOCS%%share/examples/fnorb/tkinter/README
+%%PORTDOCS%%share/examples/fnorb/tkinter/TicToc.idl
+%%PORTDOCS%%share/examples/fnorb/tkinter/client.py
+%%PORTDOCS%%share/examples/fnorb/tkinter/client.pyc
+%%PORTDOCS%%share/examples/fnorb/tkinter/client.pyo
+%%PORTDOCS%%share/examples/fnorb/tkinter/server.py
+%%PORTDOCS%%share/examples/fnorb/tkinter/server.pyc
+%%PORTDOCS%%share/examples/fnorb/tkinter/server.pyo
+%%PORTDOCS%%share/examples/fnorb/unions/README
+%%PORTDOCS%%share/examples/fnorb/unions/Unions.idl
+%%PORTDOCS%%share/examples/fnorb/unions/client.py
+%%PORTDOCS%%share/examples/fnorb/unions/client.pyc
+%%PORTDOCS%%share/examples/fnorb/unions/client.pyo
+%%PORTDOCS%%share/examples/fnorb/unions/server.py
+%%PORTDOCS%%share/examples/fnorb/unions/server.pyc
+%%PORTDOCS%%share/examples/fnorb/unions/server.pyo
 bin/fnaming
 bin/fnendian
 bin/fnfeed
@@ -304,61 +352,6 @@ lib/%%PYTHON_VERSION%%/site-packages/Fnorb/script/fnidl.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Fnorb/script/fnidl.pyo
 lib/%%PYTHON_VERSION%%/site-packages/bisonmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/cdrmodule.so
-share/examples/fnorb/hello-world/HelloWorld.idl
-share/examples/fnorb/hello-world/README
-share/examples/fnorb/hello-world/client.py
-share/examples/fnorb/hello-world/client.pyc
-share/examples/fnorb/hello-world/client.pyo
-share/examples/fnorb/hello-world/server.py
-share/examples/fnorb/hello-world/server.pyc
-share/examples/fnorb/hello-world/server.pyo
-share/examples/fnorb/misc/Example.idl
-share/examples/fnorb/misc/README
-share/examples/fnorb/misc/client.py
-share/examples/fnorb/misc/client.pyc
-share/examples/fnorb/misc/client.pyo
-share/examples/fnorb/misc/server.py
-share/examples/fnorb/misc/server.pyc
-share/examples/fnorb/misc/server.pyo
-share/examples/fnorb/naming/README
-share/examples/fnorb/naming/Thermometer.idl
-share/examples/fnorb/naming/client.py
-share/examples/fnorb/naming/client.pyc
-share/examples/fnorb/naming/client.pyo
-share/examples/fnorb/naming/server.py
-share/examples/fnorb/naming/server.pyc
-share/examples/fnorb/naming/server.pyo
-share/examples/fnorb/threaded/HelloWorld.idl
-share/examples/fnorb/threaded/README
-share/examples/fnorb/threaded/client.py
-share/examples/fnorb/threaded/client.pyc
-share/examples/fnorb/threaded/client.pyo
-share/examples/fnorb/threaded/server.py
-share/examples/fnorb/threaded/server.pyc
-share/examples/fnorb/threaded/server.pyo
-share/examples/fnorb/tkinter/README
-share/examples/fnorb/tkinter/TicToc.idl
-share/examples/fnorb/tkinter/client.py
-share/examples/fnorb/tkinter/client.pyc
-share/examples/fnorb/tkinter/client.pyo
-share/examples/fnorb/tkinter/server.py
-share/examples/fnorb/tkinter/server.pyc
-share/examples/fnorb/tkinter/server.pyo
-share/examples/fnorb/unions/README
-share/examples/fnorb/unions/Unions.idl
-share/examples/fnorb/unions/client.py
-share/examples/fnorb/unions/client.pyc
-share/examples/fnorb/unions/client.pyo
-share/examples/fnorb/unions/server.py
-share/examples/fnorb/unions/server.pyc
-share/examples/fnorb/unions/server.pyo
-@dirrm share/examples/fnorb/unions
-@dirrm share/examples/fnorb/tkinter
-@dirrm share/examples/fnorb/threaded
-@dirrm share/examples/fnorb/naming
-@dirrm share/examples/fnorb/misc
-@dirrm share/examples/fnorb/hello-world
-@dirrm share/examples/fnorb
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/script
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/parser
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/orb
@@ -371,5 +364,12 @@ share/examples/fnorb/unions/server.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/cos
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb/compiler
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Fnorb
+%%PORTDOCS%%@dirrm share/examples/fnorb/unions
+%%PORTDOCS%%@dirrm share/examples/fnorb/tkinter
+%%PORTDOCS%%@dirrm share/examples/fnorb/threaded
+%%PORTDOCS%%@dirrm share/examples/fnorb/naming
+%%PORTDOCS%%@dirrm share/examples/fnorb/misc
+%%PORTDOCS%%@dirrm share/examples/fnorb/hello-world
+%%PORTDOCS%%@dirrm share/examples/fnorb
 %%PORTDOCS%%@dirrm share/doc/fnorb/Fnorb-Guide
 %%PORTDOCS%%@dirrm share/doc/fnorb
