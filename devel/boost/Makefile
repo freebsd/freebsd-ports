@@ -75,6 +75,9 @@ BJAM_BUILD+=	<optimization>off
 
 .if ${ARCH} == alpha
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdaxp/bjam
+# temporary work around for GCC bug on alpha
+# ("-mcpu=ev4 -mtune=ev5 -mieee" makes gcc consume all virtual memory)
+CXXFLAGS=-O -pipe
 .elif ${ARCH} == sparc64
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdsparc/bjam
 .elif ${ARCH} == ia64
