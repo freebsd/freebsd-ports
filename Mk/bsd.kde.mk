@@ -1,4 +1,4 @@
-#-*- mode: Fundamental; tab-width: 4; -*-
+#-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4
 #
 # $FreeBSD$
@@ -32,65 +32,52 @@ KDE_MAINTAINER=		will@FreeBSD.org
 USE_QT_VER=		2
 pre-everything::
 	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT variable!"
-.endif
+.endif # defined(USE_QT)
 .if defined(USE_QT2)
 USE_QT_VER=		2
 pre-everything::
 	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT2 variable!"
-.endif
+.endif # defined(USE_QT2)
 
 # tagged MASTER_SITE_KDE_kde
-
 kmaster=				${MASTER_SITE_KDE:S@%/@%/:kde@g}
 .if !defined(MASTER_SITE_SUBDIR)
 MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@@g}
 .else
 ksub=${MASTER_SITE_SUBDIR}
 MASTER_SITE_KDE_kde=	${kmaster:S@%SUBDIR%/@${ksub}/@g}
-.endif
+.endif # !defined(MASTER_SITE_SUBDIR)
 
 # USE_KDEBASE_VER section
 .if defined(USE_KDEBASE_VER)
-
 .if ${USE_KDEBASE_VER} == 3
-
 # kdebase 3.x common stuff
 LIB_DEPENDS+=	konq:${PORTSDIR}/x11/kdebase3
 USE_KDELIBS_VER=3
-
 .else
-
 # kdebase 2.x common stuff -- DEFAULT
 USE_KDELIBS_VER=2
-
-.endif
-.endif
-# End of USE_KDEBASE_VER
+.endif # ${USE_KDEBASE_VER} == 3
+.endif # defined(USE_KDEBASE_VER)
 
 # USE_KDELIBS_VER section
 .if defined(USE_KDELIBS_VER)
-
 .if ${USE_KDELIBS_VER} == 3
-
 # kdelibs 3.x common stuff
 LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
 PREFIX=			${KDE_PREFIX}
-
 .else
-
 BROKEN=			"KDE2 is gone. This port needs to be updated or deleted!"
-
 # kdelibs 2.x common stuff -- DEFAULT
 USE_QT_VER=		2
+.endif # ${USE_KDELIBS_VER} == 3
+.endif # defined(USE_KDELIBS_VER)
 
-.endif
-.endif
 # End of USE_KDELIBS_VER section
 
 # USE_QT_VER section
 .if defined(USE_QT_VER)
-
 # Qt 1.x common stuff
 .if ${USE_QT_VER} == 1
 LIB_DEPENDS+=  qt1.3:${PORTSDIR}/x11-toolkits/qt145
@@ -99,15 +86,15 @@ MOC?=                  ${X11BASE}/bin/moc1
 QTDIR=                 ${PREFIX}
 .else
 QTDIR=                 ${X11BASE}
-.endif
+.endif # defined(PREFIX)
 CONFIGURE_ENV+=        MOC="${MOC}" QTDIR="${QTDIR}"
 
 .elif ${USE_QT_VER} == 3
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff since arts/kdelibs use it.
-KDE_VERSION=	3.0.4
-KDE_ORIGVER=	3.0.1
+KDE_VERSION=	3.1
+KDE_ORIGVER=	${KDE_VERSION}
 KDE_PREFIX?=	${LOCALBASE}
 
 QTCPPFLAGS?=
@@ -116,9 +103,9 @@ QTCGFLIBS?=
 # Qt 3.x common stuff
 QT_PREFIX?=		${X11BASE}
 MOC?=			${QT_PREFIX}/bin/moc
-#LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt30
-BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
-RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
+#LIB_DEPENDS+=	qt-mt.3:${PORTSDIR}/x11-toolkits/qt31
+BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt31
+RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt31
 QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${QT_PREFIX}/include -D_GETOPT_H
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
@@ -128,9 +115,9 @@ CONFIGURE_ARGS+=--with-qt-includes=${QT_PREFIX}/include \
 				--with-qt-libraries=${QT_PREFIX}/lib \
 				--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	MOC="${MOC}" CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
-.endif
+.endif # !defined(QT_NONSTANDARD)
 
-.else
+.else # QT2
 
 QTCPPFLAGS?=
 QTCGFLIBS?=
@@ -148,9 +135,26 @@ CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 				--with-extra-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
 				CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
-.endif
-.endif
-.endif
+.endif # !defined(QT_NONSTANDARD)
+
+.endif # USE_QT_VER == ???
+.endif # defined(USE_QT_VER)
+
 # End of USE_QT_VER section
 
-# End of use part.
+# Assemble plist from parts
+# <alane@freebsd.org> 2002-12-06
+.if defined(KDE_BUILD_PLIST)
+PLIST?=			${WRKDIR}/plist
+PLIST_BASE?=	plist.base
+PLIST_APPEND?=
+plist_base=${FILESDIR}/${PLIST_BASE}
+plist_base_rm=${FILESDIR}/${PLIST_BASE}.rm
+plist_append=${PLIST_APPEND:C:([A-Za-z0-9._]+):${FILESDIR}/\1:}
+plist_append_rm=${PLIST_APPEND:C:([A-Za-z0-9._]+):${FILESDIR}/\1.rm:}
+kde-plist:
+	${CAT} ${plist_base} ${plist_append} 2>/dev/null >${PLIST}
+	-${CAT} ${plist_append_rm} ${plist_base_rm} 2>/dev/null >>${PLIST};true
+.PHONY: kde-plist
+pre-build: kde-plist
+.endif # defined(KDE_BUILD_PLIST)

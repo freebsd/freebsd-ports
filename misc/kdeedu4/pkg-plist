@@ -1,27 +1,63 @@
+bin/flashkard
+bin/kalzium
 bin/keduca
 bin/kgeo
+bin/khangman
+bin/kiten
+bin/kitengen
 bin/klettres
 bin/kmessedwords
+bin/kmplot
+bin/kpercentage
 bin/kstars
 bin/ktouch
+bin/kverbos
 bin/kvoctrain
 bin/langen2kvtml
 bin/spotlight2kvtml
-share/applnk/Edutainment/French/klettres.desktop
-share/applnk/Edutainment/keduca.desktop
-share/applnk/Edutainment/kgeo.desktop
-share/applnk/Edutainment/kmessedwords.desktop
-share/applnk/Edutainment/kstars.desktop
-share/applnk/Edutainment/ktouch.desktop
-share/applnk/Edutainment/kvoctrain.desktop
-share/apps/keduca/icons/hicolor/16x16/actions/addquestion.png
-share/apps/keduca/icons/hicolor/16x16/actions/delquestion.png
-share/apps/keduca/icons/hicolor/16x16/actions/editquestion.png
-share/apps/keduca/icons/hicolor/16x16/actions/keducacontrol.png
-share/apps/keduca/icons/hicolor/22x22/actions/addquestion.png
-share/apps/keduca/icons/hicolor/22x22/actions/delquestion.png
-share/apps/keduca/icons/hicolor/22x22/actions/editquestion.png
-share/apps/keduca/icons/hicolor/22x22/actions/keducacontrol.png
+include/kstarsinterface.h
+include/simclockinterface.h
+lib/kiten.la
+lib/kiten.so
+lib/libkdeeducore.la
+lib/libkdeeducore.so
+lib/libkdeeducore.so.1
+share/applnk/Edutainment/Languages/.directory
+share/applnk/Edutainment/Languages/khangman.desktop
+share/applnk/Edutainment/Languages/kiten.desktop
+share/applnk/Edutainment/Languages/klettres.desktop
+share/applnk/Edutainment/Languages/kmessedwords.desktop
+share/applnk/Edutainment/Languages/kverbos.desktop
+share/applnk/Edutainment/Languages/kvoctrain.desktop
+share/applnk/Edutainment/Mathematics/.directory
+share/applnk/Edutainment/Mathematics/kgeo.desktop
+share/applnk/Edutainment/Mathematics/kmplot.desktop
+share/applnk/Edutainment/Mathematics/kpercentage.desktop
+share/applnk/Edutainment/Miscellanous/.directory
+share/applnk/Edutainment/Miscellanous/flashkard.desktop
+share/applnk/Edutainment/Miscellanous/ktouch.desktop
+share/applnk/Edutainment/Science/.directory
+share/applnk/Edutainment/Science/kalzium.desktop
+share/applnk/Edutainment/Science/kstars.desktop
+share/applnk/Edutainment/Tools/.directory
+share/applnk/Edutainment/Tools/keduca.desktop
+share/applnk/Edutainment/Tools/keducaeditor.desktop
+share/apps/flashkard/flashkardui.rc
+share/apps/flashkard/icons/crystalsvg/16x16/actions/quiz.png
+share/apps/flashkard/icons/crystalsvg/22x22/actions/quiz.png
+share/apps/flashkard/icons/crystalsvg/32x32/actions/quiz.png
+share/apps/kalzium/kalziumrc
+share/apps/kalzium/kalziumui.rc
+share/apps/kalzium/kmolweights
+share/apps/kalzium/pics/timeline.png
+share/apps/keduca/icons/crystalsvg/16x16/actions/addquestion.png
+share/apps/keduca/icons/crystalsvg/16x16/actions/control.png
+share/apps/keduca/icons/crystalsvg/16x16/actions/delquestion.png
+share/apps/keduca/icons/crystalsvg/16x16/actions/editquestion.png
+share/apps/keduca/icons/crystalsvg/22x22/actions/addquestion.png
+share/apps/keduca/icons/crystalsvg/22x22/actions/control.png
+share/apps/keduca/icons/crystalsvg/22x22/actions/delquestion.png
+share/apps/keduca/icons/crystalsvg/22x22/actions/editquestion.png
 share/apps/keduca/keducacontrolui.rc
 share/apps/keduca/keducaui.rc
 share/apps/keduca/pics/bk_frame.png
@@ -88,62 +124,206 @@ share/apps/kgeo/toolbar/tracer.png
 share/apps/kgeo/toolbar/triangle.png
 share/apps/kgeo/toolbar/vector.png
 share/apps/kgeo/toolbar/window_fullscreen.png
+share/apps/khangman/data/animals.txt
+share/apps/khangman/data/easy.txt
+share/apps/khangman/data/hard.txt
+share/apps/khangman/data/medium.txt
+share/apps/khangman/pics/c_bg.png
+share/apps/khangman/pics/hg1.jpg
+share/apps/khangman/pics/hg10.jpg
+share/apps/khangman/pics/hg12.jpg
+share/apps/khangman/pics/hg13.jpg
+share/apps/khangman/pics/hg14.jpg
+share/apps/khangman/pics/hg2.jpg
+share/apps/khangman/pics/hg3.jpg
+share/apps/khangman/pics/hg4.jpg
+share/apps/khangman/pics/hg5.jpg
+share/apps/khangman/pics/hg6.jpg
+share/apps/khangman/pics/hg7.jpg
+share/apps/khangman/pics/hg8.jpg
+share/apps/khangman/pics/hg9.jpg
+share/apps/khangman/pics/khm_splash.png
+share/apps/khangman/sounds/new_game.ogg
+share/apps/khangman/sounds/new_game.wav
+share/apps/khangman/sounds/splash.ogg
+share/apps/khangman/sounds/splash.wav
+share/apps/kiten/edict
+share/apps/kiten/eeditui.rc
+share/apps/kiten/kanjidic
+share/apps/kiten/kitenui.rc
+share/apps/kiten/learnui.rc
+share/apps/kiten/radkfile
+share/apps/kiten/romkana.cnv
+share/apps/kiten/vconj
+share/apps/klettres/Danish/alpha/a-0.mp3
+share/apps/klettres/Danish/alpha/a-1.mp3
+share/apps/klettres/Danish/alpha/a-10.mp3
+share/apps/klettres/Danish/alpha/a-11.mp3
+share/apps/klettres/Danish/alpha/a-12.mp3
+share/apps/klettres/Danish/alpha/a-13.mp3
+share/apps/klettres/Danish/alpha/a-14.mp3
+share/apps/klettres/Danish/alpha/a-15.mp3
+share/apps/klettres/Danish/alpha/a-16.mp3
+share/apps/klettres/Danish/alpha/a-17.mp3
+share/apps/klettres/Danish/alpha/a-18.mp3
+share/apps/klettres/Danish/alpha/a-19.mp3
+share/apps/klettres/Danish/alpha/a-2.mp3
+share/apps/klettres/Danish/alpha/a-20.mp3
+share/apps/klettres/Danish/alpha/a-21.mp3
+share/apps/klettres/Danish/alpha/a-22.mp3
+share/apps/klettres/Danish/alpha/a-23.mp3
+share/apps/klettres/Danish/alpha/a-24.mp3
+share/apps/klettres/Danish/alpha/a-25.mp3
+share/apps/klettres/Danish/alpha/a-26.mp3
+share/apps/klettres/Danish/alpha/a-27.mp3
+share/apps/klettres/Danish/alpha/a-28.mp3
+share/apps/klettres/Danish/alpha/a-3.mp3
+share/apps/klettres/Danish/alpha/a-4.mp3
+share/apps/klettres/Danish/alpha/a-5.mp3
+share/apps/klettres/Danish/alpha/a-6.mp3
+share/apps/klettres/Danish/alpha/a-7.mp3
+share/apps/klettres/Danish/alpha/a-8.mp3
+share/apps/klettres/Danish/alpha/a-9.mp3
+share/apps/klettres/Danish/data/level1.txt
+share/apps/klettres/Danish/data/level3.txt
+share/apps/klettres/Danish/syllab/ad-0.mp3
+share/apps/klettres/Danish/syllab/ad-1.mp3
+share/apps/klettres/Danish/syllab/ad-10.mp3
+share/apps/klettres/Danish/syllab/ad-11.mp3
+share/apps/klettres/Danish/syllab/ad-12.mp3
+share/apps/klettres/Danish/syllab/ad-13.mp3
+share/apps/klettres/Danish/syllab/ad-14.mp3
+share/apps/klettres/Danish/syllab/ad-15.mp3
+share/apps/klettres/Danish/syllab/ad-16.mp3
+share/apps/klettres/Danish/syllab/ad-17.mp3
+share/apps/klettres/Danish/syllab/ad-18.mp3
+share/apps/klettres/Danish/syllab/ad-19.mp3
+share/apps/klettres/Danish/syllab/ad-2.mp3
+share/apps/klettres/Danish/syllab/ad-20.mp3
+share/apps/klettres/Danish/syllab/ad-21.mp3
+share/apps/klettres/Danish/syllab/ad-22.mp3
+share/apps/klettres/Danish/syllab/ad-23.mp3
+share/apps/klettres/Danish/syllab/ad-24.mp3
+share/apps/klettres/Danish/syllab/ad-25.mp3
+share/apps/klettres/Danish/syllab/ad-26.mp3
+share/apps/klettres/Danish/syllab/ad-27.mp3
+share/apps/klettres/Danish/syllab/ad-3.mp3
+share/apps/klettres/Danish/syllab/ad-4.mp3
+share/apps/klettres/Danish/syllab/ad-5.mp3
+share/apps/klettres/Danish/syllab/ad-6.mp3
+share/apps/klettres/Danish/syllab/ad-7.mp3
+share/apps/klettres/Danish/syllab/ad-8.mp3
+share/apps/klettres/Danish/syllab/ad-9.mp3
+share/apps/klettres/Dutch/alpha/a-0.mp3
+share/apps/klettres/Dutch/alpha/a-1.mp3
+share/apps/klettres/Dutch/alpha/a-10.mp3
+share/apps/klettres/Dutch/alpha/a-11.mp3
+share/apps/klettres/Dutch/alpha/a-12.mp3
+share/apps/klettres/Dutch/alpha/a-13.mp3
+share/apps/klettres/Dutch/alpha/a-14.mp3
+share/apps/klettres/Dutch/alpha/a-15.mp3
+share/apps/klettres/Dutch/alpha/a-16.mp3
+share/apps/klettres/Dutch/alpha/a-17.mp3
+share/apps/klettres/Dutch/alpha/a-18.mp3
+share/apps/klettres/Dutch/alpha/a-19.mp3
+share/apps/klettres/Dutch/alpha/a-2.mp3
+share/apps/klettres/Dutch/alpha/a-20.mp3
+share/apps/klettres/Dutch/alpha/a-21.mp3
+share/apps/klettres/Dutch/alpha/a-3.mp3
+share/apps/klettres/Dutch/alpha/a-4.mp3
+share/apps/klettres/Dutch/alpha/a-5.mp3
+share/apps/klettres/Dutch/alpha/a-6.mp3
+share/apps/klettres/Dutch/alpha/a-7.mp3
+share/apps/klettres/Dutch/alpha/a-8.mp3
+share/apps/klettres/Dutch/alpha/a-9.mp3
+share/apps/klettres/Dutch/data/level1.txt
+share/apps/klettres/Dutch/data/level3.txt
+share/apps/klettres/Dutch/syllab/ad-0.mp3
+share/apps/klettres/Dutch/syllab/ad-1.mp3
+share/apps/klettres/Dutch/syllab/ad-10.mp3
+share/apps/klettres/Dutch/syllab/ad-11.mp3
+share/apps/klettres/Dutch/syllab/ad-12.mp3
+share/apps/klettres/Dutch/syllab/ad-13.mp3
+share/apps/klettres/Dutch/syllab/ad-14.mp3
+share/apps/klettres/Dutch/syllab/ad-15.mp3
+share/apps/klettres/Dutch/syllab/ad-16.mp3
+share/apps/klettres/Dutch/syllab/ad-17.mp3
+share/apps/klettres/Dutch/syllab/ad-18.mp3
+share/apps/klettres/Dutch/syllab/ad-19.mp3
+share/apps/klettres/Dutch/syllab/ad-2.mp3
+share/apps/klettres/Dutch/syllab/ad-20.mp3
+share/apps/klettres/Dutch/syllab/ad-21.mp3
+share/apps/klettres/Dutch/syllab/ad-22.mp3
+share/apps/klettres/Dutch/syllab/ad-23.mp3
+share/apps/klettres/Dutch/syllab/ad-24.mp3
+share/apps/klettres/Dutch/syllab/ad-25.mp3
+share/apps/klettres/Dutch/syllab/ad-3.mp3
+share/apps/klettres/Dutch/syllab/ad-4.mp3
+share/apps/klettres/Dutch/syllab/ad-5.mp3
+share/apps/klettres/Dutch/syllab/ad-6.mp3
+share/apps/klettres/Dutch/syllab/ad-7.mp3
+share/apps/klettres/Dutch/syllab/ad-8.mp3
+share/apps/klettres/Dutch/syllab/ad-9.mp3
+share/apps/klettres/French/alpha/a-0.mp3
+share/apps/klettres/French/alpha/a-1.mp3
+share/apps/klettres/French/alpha/a-10.mp3
+share/apps/klettres/French/alpha/a-11.mp3
+share/apps/klettres/French/alpha/a-12.mp3
+share/apps/klettres/French/alpha/a-13.mp3
+share/apps/klettres/French/alpha/a-14.mp3
+share/apps/klettres/French/alpha/a-15.mp3
+share/apps/klettres/French/alpha/a-16.mp3
+share/apps/klettres/French/alpha/a-17.mp3
+share/apps/klettres/French/alpha/a-18.mp3
+share/apps/klettres/French/alpha/a-19.mp3
+share/apps/klettres/French/alpha/a-2.mp3
+share/apps/klettres/French/alpha/a-20.mp3
+share/apps/klettres/French/alpha/a-21.mp3
+share/apps/klettres/French/alpha/a-22.mp3
+share/apps/klettres/French/alpha/a-23.mp3
+share/apps/klettres/French/alpha/a-24.mp3
+share/apps/klettres/French/alpha/a-25.mp3
+share/apps/klettres/French/alpha/a-3.mp3
+share/apps/klettres/French/alpha/a-4.mp3
+share/apps/klettres/French/alpha/a-5.mp3
+share/apps/klettres/French/alpha/a-6.mp3
+share/apps/klettres/French/alpha/a-7.mp3
+share/apps/klettres/French/alpha/a-8.mp3
+share/apps/klettres/French/alpha/a-9.mp3
+share/apps/klettres/French/data/level1.txt
+share/apps/klettres/French/data/level3.txt
+share/apps/klettres/French/syllab/ad-0.mp3
+share/apps/klettres/French/syllab/ad-1.mp3
+share/apps/klettres/French/syllab/ad-10.mp3
+share/apps/klettres/French/syllab/ad-11.mp3
+share/apps/klettres/French/syllab/ad-12.mp3
+share/apps/klettres/French/syllab/ad-13.mp3
+share/apps/klettres/French/syllab/ad-14.mp3
+share/apps/klettres/French/syllab/ad-15.mp3
+share/apps/klettres/French/syllab/ad-16.mp3
+share/apps/klettres/French/syllab/ad-17.mp3
+share/apps/klettres/French/syllab/ad-18.mp3
+share/apps/klettres/French/syllab/ad-19.mp3
+share/apps/klettres/French/syllab/ad-2.mp3
+share/apps/klettres/French/syllab/ad-20.mp3
+share/apps/klettres/French/syllab/ad-21.mp3
+share/apps/klettres/French/syllab/ad-22.mp3
+share/apps/klettres/French/syllab/ad-23.mp3
+share/apps/klettres/French/syllab/ad-24.mp3
+share/apps/klettres/French/syllab/ad-25.mp3
+share/apps/klettres/French/syllab/ad-26.mp3
+share/apps/klettres/French/syllab/ad-27.mp3
+share/apps/klettres/French/syllab/ad-3.mp3
+share/apps/klettres/French/syllab/ad-4.mp3
+share/apps/klettres/French/syllab/ad-5.mp3
+share/apps/klettres/French/syllab/ad-6.mp3
+share/apps/klettres/French/syllab/ad-7.mp3
+share/apps/klettres/French/syllab/ad-8.mp3
+share/apps/klettres/French/syllab/ad-9.mp3
+share/apps/klettres/klettresui.rc
+share/apps/klettres/pics/background1.png
 share/apps/klettres/pics/klettres_back.jpeg
-share/apps/klettres/pics/klettres_splash.png
-share/apps/klettres/sons/a-0.wav
-share/apps/klettres/sons/a-1.wav
-share/apps/klettres/sons/a-10.wav
-share/apps/klettres/sons/a-11.wav
-share/apps/klettres/sons/a-12.wav
-share/apps/klettres/sons/a-13.wav
-share/apps/klettres/sons/a-14.wav
-share/apps/klettres/sons/a-15.wav
-share/apps/klettres/sons/a-16.wav
-share/apps/klettres/sons/a-17.wav
-share/apps/klettres/sons/a-18.wav
-share/apps/klettres/sons/a-19.wav
-share/apps/klettres/sons/a-2.wav
-share/apps/klettres/sons/a-20.wav
-share/apps/klettres/sons/a-21.wav
-share/apps/klettres/sons/a-22.wav
-share/apps/klettres/sons/a-23.wav
-share/apps/klettres/sons/a-24.wav
-share/apps/klettres/sons/a-25.wav
-share/apps/klettres/sons/a-3.wav
-share/apps/klettres/sons/a-4.wav
-share/apps/klettres/sons/a-5.wav
-share/apps/klettres/sons/a-6.wav
-share/apps/klettres/sons/a-7.wav
-share/apps/klettres/sons/a-8.wav
-share/apps/klettres/sons/a-9.wav
-share/apps/klettres/sons2/ad-0.wav
-share/apps/klettres/sons2/ad-1.wav
-share/apps/klettres/sons2/ad-10.wav
-share/apps/klettres/sons2/ad-11.wav
-share/apps/klettres/sons2/ad-12.wav
-share/apps/klettres/sons2/ad-13.wav
-share/apps/klettres/sons2/ad-14.wav
-share/apps/klettres/sons2/ad-15.wav
-share/apps/klettres/sons2/ad-16.wav
-share/apps/klettres/sons2/ad-17.wav
-share/apps/klettres/sons2/ad-18.wav
-share/apps/klettres/sons2/ad-19.wav
-share/apps/klettres/sons2/ad-2.wav
-share/apps/klettres/sons2/ad-20.wav
-share/apps/klettres/sons2/ad-21.wav
-share/apps/klettres/sons2/ad-22.wav
-share/apps/klettres/sons2/ad-23.wav
-share/apps/klettres/sons2/ad-24.wav
-share/apps/klettres/sons2/ad-25.wav
-share/apps/klettres/sons2/ad-26.wav
-share/apps/klettres/sons2/ad-27.wav
-share/apps/klettres/sons2/ad-3.wav
-share/apps/klettres/sons2/ad-4.wav
-share/apps/klettres/sons2/ad-5.wav
-share/apps/klettres/sons2/ad-6.wav
-share/apps/klettres/sons2/ad-7.wav
-share/apps/klettres/sons2/ad-8.wav
-share/apps/klettres/sons2/ad-9.wav
+share/apps/klettres/pics/klsplash.jpeg
 share/apps/kmessedwords/book.png
 share/apps/kmessedwords/dict.png
 share/apps/kmessedwords/dudeoh.png
@@ -167,7 +347,39 @@ share/apps/kmessedwords/themes/default/btnscore.png
 share/apps/kmessedwords/themes/default/btntry.png
 share/apps/kmessedwords/themes/default/kmessedbg.png
 share/apps/kmessedwords/wrench_small.png
+share/apps/kmplot/kmplotui.rc
+share/apps/kmplot/toolbar/coords.png
+share/apps/kmplot/toolbar/kfkt.png
+share/apps/kmplot/toolbar/ksys1.png
+share/apps/kmplot/toolbar/ksys2.png
+share/apps/kmplot/toolbar/ksys3.png
+share/apps/kmplot/toolbar/scaling.png
+share/apps/kpercentage/icons/crystalsvg/32x32/actions/button_accept.png
+share/apps/kpercentage/icons/crystalsvg/32x32/actions/button_cancel.png
+share/apps/kpercentage/icons/locolor/32x32/actions/button_accept.png
+share/apps/kpercentage/icons/locolor/32x32/actions/button_cancel.png
+share/apps/kpercentage/pics/kanswer_bg.png
+share/apps/kpercentage/pics/kpercentage_bg.png
+share/apps/kpercentage/pics/kpercentage_bg_rtl.png
+share/apps/kpercentage/pics/kpercentmain_bg.png
+share/apps/kpercentage/pics/kpercentmain_bg_rtl.png
+share/apps/kpercentage/pics/smily0000.png
+share/apps/kpercentage/pics/smily0001.png
+share/apps/kpercentage/pics/smily0002.png
+share/apps/kpercentage/pics/smily0003.png
+share/apps/kpercentage/pics/smily0004.png
+share/apps/kpercentage/pics/smily0005.png
+share/apps/kpercentage/pics/smily0006.png
+share/apps/kpercentage/pics/smily_medium.png
+share/apps/kpercentage/pics/smily_right.png
+share/apps/kpercentage/pics/smily_wrong.png
+share/apps/kpercentage/pics/splash.png
+share/apps/kpercentage/right.txt
+share/apps/kpercentage/story/right.story
+share/apps/kpercentage/story/wrong.story
+share/apps/kpercentage/wrong.txt
 share/apps/kstars/Cities.dat
+share/apps/kstars/TZrules.dat
 share/apps/kstars/chart.colors
 share/apps/kstars/clines.dat
 share/apps/kstars/cnames.dat
@@ -214,6 +426,7 @@ share/apps/kstars/jupiter.R4.vsop
 share/apps/kstars/jupiter.R5.vsop
 share/apps/kstars/jupiter.png
 share/apps/kstars/kstars.png
+share/apps/kstars/kstarsui.rc
 share/apps/kstars/m1.png
 share/apps/kstars/m10.png
 share/apps/kstars/m100.png
@@ -395,7 +608,7 @@ share/apps/kstars/neptune.R2.vsop
 share/apps/kstars/neptune.R3.vsop
 share/apps/kstars/neptune.R4.vsop
 share/apps/kstars/neptune.png
-share/apps/kstars/ngc2000.dat
+share/apps/kstars/ngcic.dat
 share/apps/kstars/night.colors
 share/apps/kstars/pluto.freq
 share/apps/kstars/pluto.png
@@ -422,7 +635,16 @@ share/apps/kstars/saturn.R3.vsop
 share/apps/kstars/saturn.R4.vsop
 share/apps/kstars/saturn.R5.vsop
 share/apps/kstars/saturn.png
+share/apps/kstars/show_clines.png
+share/apps/kstars/show_cnames.png
+share/apps/kstars/show_deepsky.png
+share/apps/kstars/show_grid.png
+share/apps/kstars/show_horiz.png
+share/apps/kstars/show_mw.png
+share/apps/kstars/show_planets.png
+share/apps/kstars/show_stars.png
 share/apps/kstars/sun.png
+share/apps/kstars/tips
 share/apps/kstars/uranus.B0.vsop
 share/apps/kstars/uranus.B1.vsop
 share/apps/kstars/uranus.B2.vsop
@@ -459,27 +681,34 @@ share/apps/kstars/venus.R3.vsop
 share/apps/kstars/venus.R4.vsop
 share/apps/kstars/venus.R5.vsop
 share/apps/kstars/venus.png
+share/apps/ktouch/danish.ktouch
+share/apps/ktouch/de-ch.keyboard
+share/apps/ktouch/de.keyboard
+share/apps/ktouch/dk.keyboard
 share/apps/ktouch/down.wav
+share/apps/ktouch/dvorak.keyboard
+share/apps/ktouch/dvorak.ktouch
+share/apps/ktouch/en.keyboard
 share/apps/ktouch/english.ktouch
+share/apps/ktouch/es.keyboard
+share/apps/ktouch/fi.keyboard
+share/apps/ktouch/fr.keyboard
 share/apps/ktouch/french-2.ktouch
 share/apps/ktouch/french.ktouch
 share/apps/ktouch/german.ktouch
-share/apps/ktouch/keyboard.de
-share/apps/ktouch/keyboard.dk
-share/apps/ktouch/keyboard.en
-share/apps/ktouch/keyboard.fi
-share/apps/ktouch/keyboard.fr
-share/apps/ktouch/keyboard.it
-share/apps/ktouch/keyboard.la
-share/apps/ktouch/keyboard.no
-share/apps/ktouch/keyboard.number
-share/apps/ktouch/keyboard.pt
-share/apps/ktouch/keyboard.se
+share/apps/ktouch/it.keyboard
 share/apps/ktouch/ktouchui.rc
+share/apps/ktouch/la.keyboard
+share/apps/ktouch/no.keyboard
 share/apps/ktouch/norwegian.ktouch
+share/apps/ktouch/number.keyboard
 share/apps/ktouch/number.ktouch
+share/apps/ktouch/pt.keyboard
+share/apps/ktouch/se.keyboard
 share/apps/ktouch/splash.png
 share/apps/ktouch/up.wav
+share/apps/kverbos/kverbosui.rc
+share/apps/kverbos/pics/startuplogo.png
 share/apps/kvoctrain/16x16-kvoctrain.xpm
 share/apps/kvoctrain/append-col.xpm
 share/apps/kvoctrain/append-row.xpm
@@ -513,6 +742,24 @@ share/apps/kvoctrain/run-verb.xpm
 share/apps/kvoctrain/sort_alpha.xpm
 share/apps/kvoctrain/sort_num.xpm
 share/apps/kvoctrain/statist.xpm
+share/doc/HTML/en/flashkard/common
+share/doc/HTML/en/flashkard/flashkard1.png
+share/doc/HTML/en/flashkard/flashkard2.png
+share/doc/HTML/en/flashkard/flashkard3.png
+share/doc/HTML/en/flashkard/flashkard4.png
+share/doc/HTML/en/flashkard/index.cache.bz2
+share/doc/HTML/en/flashkard/index.docbook
+share/doc/HTML/en/kalzium/common
+share/doc/HTML/en/kalzium/index.cache.bz2
+share/doc/HTML/en/kalzium/index.docbook
+share/doc/HTML/en/kalzium/screenshot1.png
+share/doc/HTML/en/kalzium/screenshot2.png
+share/doc/HTML/en/kalzium/screenshot3.png
+share/doc/HTML/en/kalzium/settings.png
+share/doc/HTML/en/keduca/common
+share/doc/HTML/en/keduca/index.cache.bz2
+share/doc/HTML/en/keduca/index.docbook
+share/doc/HTML/en/keduca/screenshot.png
 share/doc/HTML/en/kgeo/angle.png
 share/doc/HTML/en/kgeo/arc.png
 share/doc/HTML/en/kgeo/areaCircle.png
@@ -552,11 +799,19 @@ share/doc/HTML/en/khangman/common
 share/doc/HTML/en/khangman/index.cache.bz2
 share/doc/HTML/en/khangman/index.docbook
 share/doc/HTML/en/khangman/khangman1.png
+share/doc/HTML/en/kiten/common
+share/doc/HTML/en/kiten/index.cache.bz2
+share/doc/HTML/en/kiten/index.docbook
 share/doc/HTML/en/klettres/common
 share/doc/HTML/en/klettres/index.cache.bz2
 share/doc/HTML/en/klettres/index.docbook
 share/doc/HTML/en/klettres/klettres1.png
+share/doc/HTML/en/klettres/klettres2.png
 share/doc/HTML/en/klettres/klettres3.png
+share/doc/HTML/en/klettres/klettres4.png
+share/doc/HTML/en/kmathtool/common
+share/doc/HTML/en/kmathtool/index.cache.bz2
+share/doc/HTML/en/kmathtool/index.docbook
 share/doc/HTML/en/kmessedwords/common
 share/doc/HTML/en/kmessedwords/index.cache.bz2
 share/doc/HTML/en/kmessedwords/index.docbook
@@ -564,18 +819,67 @@ share/doc/HTML/en/kmessedwords/kmw1.png
 share/doc/HTML/en/kmessedwords/kmw2.png
 share/doc/HTML/en/kmessedwords/kmw3.png
 share/doc/HTML/en/kmessedwords/kmw4.png
+share/doc/HTML/en/kmplot/axesdlg.png
+share/doc/HTML/en/kmplot/axesopt.png
+share/doc/HTML/en/kmplot/commands.docbook
+share/doc/HTML/en/kmplot/common
+share/doc/HTML/en/kmplot/credits.docbook
+share/doc/HTML/en/kmplot/developer.docbook
+share/doc/HTML/en/kmplot/edu-logo.png
+share/doc/HTML/en/kmplot/functionsdlg.png
+share/doc/HTML/en/kmplot/griddlg.png
+share/doc/HTML/en/kmplot/index.cache.bz2
+share/doc/HTML/en/kmplot/index.docbook
+share/doc/HTML/en/kmplot/install.docbook
+share/doc/HTML/en/kmplot/introduction.docbook
+share/doc/HTML/en/kmplot/kfkt.png
+share/doc/HTML/en/kmplot/ksys1.png
+share/doc/HTML/en/kmplot/ksys2.png
+share/doc/HTML/en/kmplot/ksys3.png
+share/doc/HTML/en/kmplot/lo32-app-kmplot.png
+share/doc/HTML/en/kmplot/main.png
+share/doc/HTML/en/kmplot/menu.docbook
+share/doc/HTML/en/kmplot/namesdlg.png
+share/doc/HTML/en/kmplot/scaledlg.png
+share/doc/HTML/en/kmplot/settingsdlg.png
+share/doc/HTML/en/kmplot/stepdlg.png
+share/doc/HTML/en/kmplot/threeplots.png
+share/doc/HTML/en/kmplot/toolbar.png
+share/doc/HTML/en/kmplot/using.docbook
+share/doc/HTML/en/kpercentage/answer.png
+share/doc/HTML/en/kpercentage/commands.docbook
+share/doc/HTML/en/kpercentage/common
+share/doc/HTML/en/kpercentage/credits.docbook
+share/doc/HTML/en/kpercentage/devel.docbook
+share/doc/HTML/en/kpercentage/edu-logo.png
+share/doc/HTML/en/kpercentage/faq.docbook
+share/doc/HTML/en/kpercentage/help.png
+share/doc/HTML/en/kpercentage/index.cache.bz2
+share/doc/HTML/en/kpercentage/index.docbook
+share/doc/HTML/en/kpercentage/install.docbook
+share/doc/HTML/en/kpercentage/introduction.docbook
+share/doc/HTML/en/kpercentage/main.png
+share/doc/HTML/en/kpercentage/using.docbook
+share/doc/HTML/en/kpercentage/welcome.png
 share/doc/HTML/en/kstars/ai-contents.docbook
 share/doc/HTML/en/kstars/astroinfo.docbook
+share/doc/HTML/en/kstars/blackbody.docbook
+share/doc/HTML/en/kstars/colorandtemp.docbook
 share/doc/HTML/en/kstars/commands.docbook
 share/doc/HTML/en/kstars/common
 share/doc/HTML/en/kstars/config.docbook
 share/doc/HTML/en/kstars/cpoles.docbook
 share/doc/HTML/en/kstars/credits.docbook
 share/doc/HTML/en/kstars/csphere.docbook
+share/doc/HTML/en/kstars/darkmatter.docbook
 share/doc/HTML/en/kstars/ecliptic.docbook
+share/doc/HTML/en/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/en/kstars/equinox.docbook
 share/doc/HTML/en/kstars/faq.docbook
 share/doc/HTML/en/kstars/geocoords.docbook
+share/doc/HTML/en/kstars/graph1.png
+share/doc/HTML/en/kstars/graph2.png
+share/doc/HTML/en/kstars/graph3.png
 share/doc/HTML/en/kstars/greatcircle.docbook
 share/doc/HTML/en/kstars/horizon.docbook
 share/doc/HTML/en/kstars/hourangle.docbook
@@ -584,15 +888,19 @@ share/doc/HTML/en/kstars/index.docbook
 share/doc/HTML/en/kstars/install.docbook
 share/doc/HTML/en/kstars/julianday.docbook
 share/doc/HTML/en/kstars/leapyear.docbook
+share/doc/HTML/en/kstars/magnitude.docbook
 share/doc/HTML/en/kstars/meridian.docbook
+share/doc/HTML/en/kstars/parallax.docbook
 share/doc/HTML/en/kstars/precession.docbook
 share/doc/HTML/en/kstars/quicktour.docbook
 share/doc/HTML/en/kstars/retrograde.docbook
 share/doc/HTML/en/kstars/screen1.png
 share/doc/HTML/en/kstars/screen2.png
 share/doc/HTML/en/kstars/screen3.png
+share/doc/HTML/en/kstars/screen4.png
 share/doc/HTML/en/kstars/sidereal.docbook
 share/doc/HTML/en/kstars/skycoords.docbook
+share/doc/HTML/en/kstars/stars.docbook
 share/doc/HTML/en/kstars/timezones.docbook
 share/doc/HTML/en/kstars/utime.docbook
 share/doc/HTML/en/kstars/zenith.docbook
@@ -602,6 +910,31 @@ share/doc/HTML/en/ktouch/index.docbook
 share/doc/HTML/en/ktouch/screenshot1.png
 share/doc/HTML/en/ktouch/screenshot2.png
 share/doc/HTML/en/ktouch/screenshot3.png
+share/doc/HTML/en/kverbos/anterior.png
+share/doc/HTML/en/kverbos/borrar.png
+share/doc/HTML/en/kverbos/cancelar.png
+share/doc/HTML/en/kverbos/cerrar.png
+share/doc/HTML/en/kverbos/common
+share/doc/HTML/en/kverbos/continuar.png
+share/doc/HTML/en/kverbos/corregir.png
+share/doc/HTML/en/kverbos/editar.png
+share/doc/HTML/en/kverbos/index.cache.bz2
+share/doc/HTML/en/kverbos/index.docbook
+share/doc/HTML/en/kverbos/input.png
+share/doc/HTML/en/kverbos/letters.png
+share/doc/HTML/en/kverbos/limpiar.png
+share/doc/HTML/en/kverbos/limpiarpagina.png
+share/doc/HTML/en/kverbos/mainscreen-leer.png
+share/doc/HTML/en/kverbos/mainscreen1.png
+share/doc/HTML/en/kverbos/newverb.png
+share/doc/HTML/en/kverbos/options.png
+share/doc/HTML/en/kverbos/result.png
+share/doc/HTML/en/kverbos/siguiente.png
+share/doc/HTML/en/kverbos/solucion.png
+share/doc/HTML/en/kverbos/times.png
+share/doc/HTML/en/kverbos/type.png
+share/doc/HTML/en/kverbos/username.png
+share/doc/HTML/en/kverbos/verblist.png
 share/doc/HTML/en/kvoctrain/art-query-dlg.png
 share/doc/HTML/en/kvoctrain/common
 share/doc/HTML/en/kvoctrain/comp-query-dlg.png
@@ -634,30 +967,71 @@ share/doc/HTML/en/kvoctrain/stat1-dlg.png
 share/doc/HTML/en/kvoctrain/stat2-dlg.png
 share/doc/HTML/en/kvoctrain/syn-query-dlg.png
 share/doc/HTML/en/kvoctrain/verb-query-dlg.png
-share/icons/hicolor/16x16/apps/keduca.png
-share/icons/hicolor/16x16/apps/kgeo.png
-share/icons/hicolor/16x16/apps/klettres.png
-share/icons/hicolor/16x16/apps/kmessedwords.png
-share/icons/hicolor/16x16/apps/kstars.png
-share/icons/hicolor/16x16/apps/ktouch.png
+share/icons/crystalsvg/16x16/actions/kanjidic.png
+share/icons/crystalsvg/16x16/actions/kverbosuser.png
+share/icons/crystalsvg/16x16/apps/edu_languages.png
+share/icons/crystalsvg/16x16/apps/edu_mathematics.png
+share/icons/crystalsvg/16x16/apps/edu_miscellanous.png
+share/icons/crystalsvg/16x16/apps/edu_science.png
+share/icons/crystalsvg/16x16/apps/flashkard.png
+share/icons/crystalsvg/16x16/apps/kalzium.png
+share/icons/crystalsvg/16x16/apps/keduca.png
+share/icons/crystalsvg/16x16/apps/kgeo.png
+share/icons/crystalsvg/16x16/apps/khangman.png
+share/icons/crystalsvg/16x16/apps/kiten.png
+share/icons/crystalsvg/16x16/apps/klettres.png
+share/icons/crystalsvg/16x16/apps/kmessedwords.png
+share/icons/crystalsvg/16x16/apps/kmplot.png
+share/icons/crystalsvg/16x16/apps/kpercentage.png
+share/icons/crystalsvg/16x16/apps/kstars.png
+share/icons/crystalsvg/16x16/apps/ktouch.png
+share/icons/crystalsvg/16x16/apps/kverbos.png
+share/icons/crystalsvg/22x22/actions/edit_add.png
+share/icons/crystalsvg/22x22/actions/edit_remove.png
+share/icons/crystalsvg/22x22/actions/kanjidic.png
+share/icons/crystalsvg/32x32/apps/edu_languages.png
+share/icons/crystalsvg/32x32/apps/edu_mathematics.png
+share/icons/crystalsvg/32x32/apps/edu_miscellanous.png
+share/icons/crystalsvg/32x32/apps/edu_science.png
+share/icons/crystalsvg/32x32/apps/flashkard.png
+share/icons/crystalsvg/32x32/apps/kalzium.png
+share/icons/crystalsvg/32x32/apps/keduca.png
+share/icons/crystalsvg/32x32/apps/kgeo.png
+share/icons/crystalsvg/32x32/apps/khangman.png
+share/icons/crystalsvg/32x32/apps/klettres.png
+share/icons/crystalsvg/32x32/apps/kmessedwords.png
+share/icons/crystalsvg/32x32/apps/kmplot.png
+share/icons/crystalsvg/32x32/apps/kpercentage.png
+share/icons/crystalsvg/32x32/apps/kstars.png
+share/icons/crystalsvg/32x32/apps/ktouch.png
+share/icons/crystalsvg/48x48/apps/edu_languages.png
+share/icons/crystalsvg/48x48/apps/flashkard.png
+share/icons/crystalsvg/48x48/apps/keduca.png
+share/icons/crystalsvg/48x48/apps/kstars.png
 share/icons/hicolor/22x22/apps/kvoctrain.xpm
-share/icons/hicolor/32x32/apps/keduca.png
-share/icons/hicolor/32x32/apps/kgeo.png
-share/icons/hicolor/32x32/apps/klettres.png
-share/icons/hicolor/32x32/apps/kmessedwords.png
-share/icons/hicolor/32x32/apps/kstars.png
-share/icons/hicolor/32x32/apps/ktouch.png
 share/icons/hicolor/32x32/apps/kvoctrain.xpm
-share/icons/hicolor/48x48/apps/keduca.png
-share/icons/hicolor/48x48/apps/kstars.png
+share/icons/hicolor/48x48/apps/grownup.png
+share/icons/hicolor/48x48/apps/kids.png
 share/icons/hicolor/48x48/apps/kvoctrain.xpm
-share/icons/kvoctrain.xpm
+share/icons/hicolor/48x48/apps/menubar.png
+share/icons/locolor/16x16/actions/edit_add.png
+share/icons/locolor/16x16/actions/edit_remove.png
+share/icons/locolor/16x16/apps/kalzium.png
+share/icons/locolor/16x16/apps/kgeo.png
+share/icons/locolor/16x16/apps/khangman.png
 share/icons/locolor/16x16/apps/klettres.png
 share/icons/locolor/16x16/apps/kmessedwords.png
+share/icons/locolor/16x16/apps/kmplot.png
+share/icons/locolor/16x16/apps/kpercentage.png
 share/icons/locolor/16x16/apps/kstars.png
 share/icons/locolor/16x16/apps/kvoctrain.xpm
+share/icons/locolor/32x32/apps/kalzium.png
+share/icons/locolor/32x32/apps/kgeo.png
+share/icons/locolor/32x32/apps/khangman.png
 share/icons/locolor/32x32/apps/klettres.png
 share/icons/locolor/32x32/apps/kmessedwords.png
+share/icons/locolor/32x32/apps/kmplot.png
+share/icons/locolor/32x32/apps/kpercentage.png
 share/icons/locolor/32x32/apps/kstars.png
 share/icons/locolor/48x48/apps/kstars.png
 share/mimelnk/application/x-edu.desktop
@@ -668,6 +1042,7 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16/actions
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
@@ -676,40 +1051,104 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/apps
 @dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/22x22/actions
+@dirrm share/icons/crystalsvg/22x22
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16/actions
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
 @dirrm share/doc/HTML/en/kvoctrain
+@dirrm share/doc/HTML/en/kverbos
 @dirrm share/doc/HTML/en/ktouch
 @dirrm share/doc/HTML/en/kstars
+@dirrm share/doc/HTML/en/kpercentage
+@dirrm share/doc/HTML/en/kmplot
 @dirrm share/doc/HTML/en/kmessedwords
+@dirrm share/doc/HTML/en/kmathtool
 @dirrm share/doc/HTML/en/klettres
+@dirrm share/doc/HTML/en/kiten
 @dirrm share/doc/HTML/en/khangman
 @dirrm share/doc/HTML/en/kgeo
+@dirrm share/doc/HTML/en/keduca
+@dirrm share/doc/HTML/en/kalzium
+@dirrm share/doc/HTML/en/flashkard
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/apps/kvoctrain/examples
 @dirrm share/apps/kvoctrain
+@dirrm share/apps/kverbos/pics
+@dirrm share/apps/kverbos
 @dirrm share/apps/ktouch
 @dirrm share/apps/kstars
+@dirrm share/apps/kpercentage/story
+@dirrm share/apps/kpercentage/pics
+@dirrm share/apps/kpercentage/icons/locolor/32x32/actions
+@dirrm share/apps/kpercentage/icons/locolor/32x32
+@dirrm share/apps/kpercentage/icons/locolor
+@dirrm share/apps/kpercentage/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kpercentage/icons/crystalsvg/32x32
+@dirrm share/apps/kpercentage/icons/crystalsvg
+@dirrm share/apps/kpercentage/icons
+@dirrm share/apps/kpercentage
+@dirrm share/apps/kmplot/toolbar
+@dirrm share/apps/kmplot
 @dirrm share/apps/kmessedwords/themes/default
 @dirrm share/apps/kmessedwords/themes/bubbly_crystal
 @dirrm share/apps/kmessedwords/themes
 @dirrm share/apps/kmessedwords
-@dirrm share/apps/klettres/sons2
-@dirrm share/apps/klettres/sons
 @dirrm share/apps/klettres/pics
+@dirrm share/apps/klettres/French/syllab
+@dirrm share/apps/klettres/French/data
+@dirrm share/apps/klettres/French/alpha
+@dirrm share/apps/klettres/French
+@dirrm share/apps/klettres/Dutch/syllab
+@dirrm share/apps/klettres/Dutch/data
+@dirrm share/apps/klettres/Dutch/alpha
+@dirrm share/apps/klettres/Dutch
+@dirrm share/apps/klettres/Danish/syllab
+@dirrm share/apps/klettres/Danish/data
+@dirrm share/apps/klettres/Danish/alpha
+@dirrm share/apps/klettres/Danish
 @dirrm share/apps/klettres
+@dirrm share/apps/kiten
+@dirrm share/apps/khangman/sounds
+@dirrm share/apps/khangman/pics
+@dirrm share/apps/khangman/data
+@dirrm share/apps/khangman
 @dirrm share/apps/kgeo/toolbar
 @dirrm share/apps/kgeo/pics
 @dirrm share/apps/kgeo
 @dirrm share/apps/keduca/pics
-@dirrm share/apps/keduca/icons/hicolor/22x22/actions
-@dirrm share/apps/keduca/icons/hicolor/22x22
-@dirrm share/apps/keduca/icons/hicolor/16x16/actions
-@dirrm share/apps/keduca/icons/hicolor/16x16
-@dirrm share/apps/keduca/icons/hicolor
+@dirrm share/apps/keduca/icons/crystalsvg/22x22/actions
+@dirrm share/apps/keduca/icons/crystalsvg/22x22
+@dirrm share/apps/keduca/icons/crystalsvg/16x16/actions
+@dirrm share/apps/keduca/icons/crystalsvg/16x16
+@dirrm share/apps/keduca/icons/crystalsvg
 @dirrm share/apps/keduca/icons
 @dirrm share/apps/keduca
-@dirrm share/applnk/Edutainment/French
+@dirrm share/apps/kalzium/pics
+@dirrm share/apps/kalzium
+@dirrm share/apps/flashkard/icons/crystalsvg/32x32/actions
+@dirrm share/apps/flashkard/icons/crystalsvg/32x32
+@dirrm share/apps/flashkard/icons/crystalsvg/22x22/actions
+@dirrm share/apps/flashkard/icons/crystalsvg/22x22
+@dirrm share/apps/flashkard/icons/crystalsvg/16x16/actions
+@dirrm share/apps/flashkard/icons/crystalsvg/16x16
+@dirrm share/apps/flashkard/icons/crystalsvg
+@dirrm share/apps/flashkard/icons
+@dirrm share/apps/flashkard
+@dirrm share/apps
+@dirrm share/applnk/Edutainment/Tools
+@dirrm share/applnk/Edutainment/Science
+@dirrm share/applnk/Edutainment/Miscellanous
+@dirrm share/applnk/Edutainment/Mathematics
+@dirrm share/applnk/Edutainment/Languages
 @dirrm share/applnk/Edutainment
+@dirrm share/applnk

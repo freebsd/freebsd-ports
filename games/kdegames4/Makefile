@@ -15,14 +15,16 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 
 USE_KDELIBS_VER=3
+PREFIX=		${KDE_PREFIX}
+
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
-post-patch:
-	@${PERL} -pi -e 's@(defined\(__sgi\))$$@\1 || defined(__FreeBSD__)@' \
-		${WRKSRC}/ksirtet/lib/wizard.cpp
-
 .include <bsd.port.mk>
+

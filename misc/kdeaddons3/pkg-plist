@@ -1,27 +1,45 @@
-bin/dcop_kate
+bin/atlantikdesigner
 bin/noatunsynaescope.bin
 bin/noatuntippecanoe.bin
 bin/noatuntyler.bin
-bin/testor
+lib/kde3/katefll_initplugin.la
+lib/kde3/katefll_initplugin.so
+lib/kde3/katefll_plugin.la
+lib/kde3/katefll_plugin.so
 lib/kde3/katehtmltoolsplugin.la
 lib/kde3/katehtmltoolsplugin.so
 lib/kde3/kateinsertcommandplugin.la
 lib/kde3/kateinsertcommandplugin.so
+lib/kde3/katemodelineplugin.la
+lib/kde3/katemodelineplugin.so
 lib/kde3/kateopenheaderplugin.la
 lib/kde3/kateopenheaderplugin.so
-lib/kde3/kateprojectmanagerplugin.la
-lib/kde3/kateprojectmanagerplugin.so
+lib/kde3/katepybrowseplugin.la
+lib/kde3/katepybrowseplugin.so
+lib/kde3/katespellplugin.la
+lib/kde3/katespellplugin.so
 lib/kde3/katetextfilterplugin.la
 lib/kde3/katetextfilterplugin.so
+lib/kde3/katexmlcheckplugin.la
+lib/kde3/katexmlcheckplugin.so
 lib/kde3/katexmltoolsplugin.la
 lib/kde3/katexmltoolsplugin.so
+lib/kde3/kfile_desktop.la
+lib/kde3/kfile_desktop.so
+lib/kde3/kfile_folder.la
+lib/kde3/kfile_folder.so
+lib/kde3/kfile_html.la
+lib/kde3/kfile_html.so
+lib/kde3/kfile_txt.la
+lib/kde3/kfile_txt.so
 lib/kde3/kolourpicker_panelapplet.la
 lib/kde3/kolourpicker_panelapplet.so
+lib/kde3/konq_smbmounterplugin.la
+lib/kde3/konq_smbmounterplugin.so
 lib/kde3/konqsidebar_mediaplayer.la
 lib/kde3/konqsidebar_mediaplayer.so
 lib/kde3/ktimemon_panelapplet.la
 lib/kde3/ktimemon_panelapplet.so
-lib/kde3/ktimemon_panelapplet.so.1
 lib/kde3/libbabelfishplugin.la
 lib/kde3/libbabelfishplugin.so
 lib/kde3/libdirfilterplugin.la
@@ -42,6 +60,10 @@ lib/kde3/libvalidatorsplugin.la
 lib/kde3/libvalidatorsplugin.so
 lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
+lib/kde3/mediacontrol_panelapplet.la
+lib/kde3/mediacontrol_panelapplet.so
+lib/kde3/noatun_ffrs.la
+lib/kde3/noatun_ffrs.so
 lib/kde3/noatunalsaplayer.la
 lib/kde3/noatunalsaplayer.so
 lib/kde3/noatunblurscope.la
@@ -50,6 +72,8 @@ lib/kde3/noatuncharlatan.la
 lib/kde3/noatuncharlatan.so
 lib/kde3/noatunluckytag.la
 lib/kde3/noatunluckytag.so
+lib/kde3/noatunlyrics.la
+lib/kde3/noatunlyrics.so
 lib/kde3/noatunmadness.la
 lib/kde3/noatunmadness.so
 lib/kde3/noatunpitchablespeed.la
@@ -66,22 +90,36 @@ lib/kde3/noatunwavecapture.la
 lib/kde3/noatunwavecapture.so
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
-share/applnk/Settings/FileBrowsing/kcmkuick.desktop
-share/apps/kate/plugins/katehtmltools.desktop
+share/applnk/.hidden/babelfishplugin.desktop
+share/applnk/.hidden/dirfilterplugin.desktop
+share/applnk/.hidden/domtreeviewerplugin.desktop
+share/applnk/.hidden/kcmkuick.desktop
+share/applnk/.hidden/khtmlsettingsplugin.desktop
+share/applnk/.hidden/kimgalleryplugin.desktop
+share/applnk/.hidden/kuickplugin.desktop
+share/applnk/.hidden/mediaplayerplugin.desktop
+share/applnk/.hidden/smbmounterplugin.desktop
+share/applnk/.hidden/uachangerplugin.desktop
+share/applnk/.hidden/validatorsplugin.desktop
+share/applnk/.hidden/webarchiverplugin.desktop
+share/applnk/Editors/katefll.desktop
+share/applnk/Games/Board/atlantikdesigner.desktop
+share/apps/atlantikdesigner/atlantikdesignerui.rc
+share/apps/kate/plugins/katefll/ui.rc
 share/apps/kate/plugins/katehtmltools/ui.rc
-share/apps/kate/plugins/kateinsertcommand.desktop
 share/apps/kate/plugins/kateinsertcommand/ui.rc
-share/apps/kate/plugins/kateopenheader.desktop
+share/apps/kate/plugins/katemodeline/ui.rc
 share/apps/kate/plugins/kateopenheader/ui.rc
-share/apps/kate/plugins/kateprojectmanager.desktop
-share/apps/kate/plugins/kateprojectmanager/ui.rc
-share/apps/kate/plugins/katetextfilter.desktop
+share/apps/kate/plugins/katepybrowse/ui.rc
+share/apps/kate/plugins/katespell/ui.rc
 share/apps/kate/plugins/katetextfilter/ui.rc
-share/apps/kate/plugins/katexmltools.desktop
+share/apps/kate/plugins/katexmlcheck/ui.rc
 share/apps/kate/plugins/katexmltools/ui.rc
 share/apps/katexmltools/html4-loose.dtd.xml
 share/apps/katexmltools/html4-strict.dtd.xml
 share/apps/katexmltools/kde-docbook.dtd.xml
+share/apps/katexmltools/kpartgui.dtd.xml
+share/apps/katexmltools/language.dtd.xml
 share/apps/katexmltools/simplify_dtd.xsl
 share/apps/katexmltools/testcases.xml
 share/apps/katexmltools/xhtml1-frameset.dtd.xml
@@ -96,6 +134,7 @@ share/apps/khtml/kpartplugins/plugin_webarchiver.rc
 share/apps/khtml/kpartplugins/uachangerplugin.rc
 share/apps/kicker/applets/kolourpicker.desktop
 share/apps/kicker/applets/ktimemon.desktop
+share/apps/kicker/applets/mediacontrol.desktop
 share/apps/knewsticker/scripts/Generic.Newsticker.Error
 share/apps/knewsticker/scripts/Readme.ErrorHandling
 share/apps/knewsticker/scripts/Readme.newsrss
@@ -106,14 +145,29 @@ share/apps/knewsticker/scripts/newsrss.pl
 share/apps/knewsticker/scripts/stock.pl
 share/apps/konqiconview/kpartplugins/dirfilterplugin.rc
 share/apps/konqiconview/kpartplugins/kimgalleryplugin.rc
+share/apps/konqiconview/kpartplugins/smbmounterplugin.rc
 share/apps/konqlistview/kpartplugins/dirfilterplugin.rc
 share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
+share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/entries/mplayer.desktop
+share/apps/mediacontrol/blueish/next.png
+share/apps/mediacontrol/blueish/pause.png
+share/apps/mediacontrol/blueish/play.png
+share/apps/mediacontrol/blueish/prev.png
+share/apps/mediacontrol/blueish/stop.png
+share/apps/mediacontrol/default/next.png
+share/apps/mediacontrol/default/pause.png
+share/apps/mediacontrol/default/play.png
+share/apps/mediacontrol/default/prev.png
+share/apps/mediacontrol/default/stop.png
 share/apps/noatun/alsaplayerui.plugin
 share/apps/noatun/blurscope.plugin
 share/apps/noatun/charlatanui.plugin
+share/apps/noatun/ffrs.plugin
 share/apps/noatun/luckytag.plugin
+share/apps/noatun/lyrics.plugin
+share/apps/noatun/lyricsui.rc
 share/apps/noatun/madness.plugin
 share/apps/noatun/pitchablespeed.plugin
 share/apps/noatun/synaescope.plugin
@@ -123,7 +177,6 @@ share/apps/noatun/tylerstates
 share/apps/noatun/wakeup.plugin
 share/apps/noatun/wavecapture.plugin
 share/doc/HTML/en/kate-plugins/common
-share/doc/HTML/en/kate-plugins/helloworld.docbook
 share/doc/HTML/en/kate-plugins/htmltools.docbook
 share/doc/HTML/en/kate-plugins/index.cache.bz2
 share/doc/HTML/en/kate-plugins/index.docbook
@@ -131,50 +184,97 @@ share/doc/HTML/en/kate-plugins/insertcommand.docbook
 share/doc/HTML/en/kate-plugins/openheader.docbook
 share/doc/HTML/en/kate-plugins/projectmanager.docbook
 share/doc/HTML/en/kate-plugins/textfilter.docbook
+share/doc/HTML/en/kate-plugins/xmlcheck.docbook
 share/doc/HTML/en/kate-plugins/xmltools.docbook
 share/doc/HTML/en/kicker-applets/common
 share/doc/HTML/en/kicker-applets/index.cache.bz2
 share/doc/HTML/en/kicker-applets/index.docbook
 share/doc/HTML/en/kicker-applets/kolourpicker.docbook
 share/doc/HTML/en/kicker-applets/ktimemon.docbook
-share/doc/HTML/en/konq-plugins/archiver.docbook
-share/doc/HTML/en/konq-plugins/babel.docbook
+share/doc/HTML/en/konq-plugins/babel/common
+share/doc/HTML/en/konq-plugins/babel/cr16-action-babelfish.png
+share/doc/HTML/en/konq-plugins/babel/index.cache.bz2
+share/doc/HTML/en/konq-plugins/babel/index.docbook
 share/doc/HTML/en/konq-plugins/common
-share/doc/HTML/en/konq-plugins/dirfilter.docbook
-share/doc/HTML/en/konq-plugins/domtree.docbook
-share/doc/HTML/en/konq-plugins/hi16-action-babelfish.png
-share/doc/HTML/en/konq-plugins/imgallery.docbook
+share/doc/HTML/en/konq-plugins/crashes/common
+share/doc/HTML/en/konq-plugins/crashes/index.cache.bz2
+share/doc/HTML/en/konq-plugins/crashes/index.docbook
+share/doc/HTML/en/konq-plugins/dirfilter/common
+share/doc/HTML/en/konq-plugins/dirfilter/index.cache.bz2
+share/doc/HTML/en/konq-plugins/dirfilter/index.docbook
+share/doc/HTML/en/konq-plugins/domtreeviewer/common
+share/doc/HTML/en/konq-plugins/domtreeviewer/index.cache.bz2
+share/doc/HTML/en/konq-plugins/domtreeviewer/index.docbook
+share/doc/HTML/en/konq-plugins/imgallery/common
+share/doc/HTML/en/konq-plugins/imgallery/index.cache.bz2
+share/doc/HTML/en/konq-plugins/imgallery/index.docbook
 share/doc/HTML/en/konq-plugins/index.cache.bz2
 share/doc/HTML/en/konq-plugins/index.docbook
-share/doc/HTML/en/konq-plugins/kuick.docbook
-share/doc/HTML/en/konq-plugins/mediaplayer.docbook
-share/doc/HTML/en/konq-plugins/settings.docbook
-share/doc/HTML/en/konq-plugins/uachanger.docbook
-share/doc/HTML/en/konq-plugins/validators.docbook
-share/icons/hicolor/16x16/actions/babelfish.png
-share/icons/hicolor/16x16/actions/cssvalidator.png
-share/icons/hicolor/16x16/actions/domtreeviewer.png
-share/icons/hicolor/16x16/actions/htmlvalidator.png
-share/icons/hicolor/16x16/actions/imagegallery.png
-share/icons/hicolor/16x16/actions/validators.png
-share/icons/hicolor/16x16/actions/webarchiver.png
-share/icons/hicolor/16x16/apps/konqsidebar_mediaplayer.png
-share/icons/hicolor/22x22/actions/babelfish.png
-share/icons/hicolor/22x22/actions/cssvalidator.png
-share/icons/hicolor/22x22/actions/domtreeviewer.png
-share/icons/hicolor/22x22/actions/htmlvalidator.png
-share/icons/hicolor/22x22/actions/imagegallery.png
-share/icons/hicolor/22x22/actions/validators.png
-share/icons/hicolor/22x22/actions/webarchiver.png
-share/icons/hicolor/22x22/apps/konqsidebar_mediaplayer.png
-share/icons/hicolor/32x32/apps/konqsidebar_mediaplayer.png
-share/icons/hicolor/48x48/apps/konqsidebar_mediaplayer.png
+share/doc/HTML/en/konq-plugins/khtmlsettings/common
+share/doc/HTML/en/konq-plugins/khtmlsettings/index.cache.bz2
+share/doc/HTML/en/konq-plugins/khtmlsettings/index.docbook
+share/doc/HTML/en/konq-plugins/kuick/common
+share/doc/HTML/en/konq-plugins/kuick/index.cache.bz2
+share/doc/HTML/en/konq-plugins/kuick/index.docbook
+share/doc/HTML/en/konq-plugins/mediaplayer/common
+share/doc/HTML/en/konq-plugins/mediaplayer/index.cache.bz2
+share/doc/HTML/en/konq-plugins/mediaplayer/index.docbook
+share/doc/HTML/en/konq-plugins/smbmounter/common
+share/doc/HTML/en/konq-plugins/smbmounter/index.cache.bz2
+share/doc/HTML/en/konq-plugins/smbmounter/index.docbook
+share/doc/HTML/en/konq-plugins/uachanger/common
+share/doc/HTML/en/konq-plugins/uachanger/index.cache.bz2
+share/doc/HTML/en/konq-plugins/uachanger/index.docbook
+share/doc/HTML/en/konq-plugins/validators/common
+share/doc/HTML/en/konq-plugins/validators/index.cache.bz2
+share/doc/HTML/en/konq-plugins/validators/index.docbook
+share/doc/HTML/en/konq-plugins/webarchiver/common
+share/doc/HTML/en/konq-plugins/webarchiver/index.cache.bz2
+share/doc/HTML/en/konq-plugins/webarchiver/index.docbook
+share/icons/crystalsvg/16x16/actions/babelfish.png
+share/icons/crystalsvg/16x16/actions/cssvalidator.png
+share/icons/crystalsvg/16x16/actions/domtreeviewer.png
+share/icons/crystalsvg/16x16/actions/htmlvalidator.png
+share/icons/crystalsvg/16x16/actions/imagegallery.png
+share/icons/crystalsvg/16x16/actions/validators.png
+share/icons/crystalsvg/16x16/actions/webarchiver.png
+share/icons/crystalsvg/16x16/apps/atlantikdesigner.png
+share/icons/crystalsvg/16x16/apps/konqsidebar_mediaplayer.png
+share/icons/crystalsvg/16x16/apps/ktimemon.png
+share/icons/crystalsvg/22x22/actions/babelfish.png
+share/icons/crystalsvg/22x22/actions/cssvalidator.png
+share/icons/crystalsvg/22x22/actions/domtreeviewer.png
+share/icons/crystalsvg/22x22/actions/htmlvalidator.png
+share/icons/crystalsvg/22x22/actions/imagegallery.png
+share/icons/crystalsvg/22x22/actions/validators.png
+share/icons/crystalsvg/22x22/actions/webarchiver.png
+share/icons/crystalsvg/22x22/apps/konqsidebar_mediaplayer.png
+share/icons/crystalsvg/32x32/apps/atlantikdesigner.png
+share/icons/crystalsvg/32x32/apps/konqsidebar_mediaplayer.png
+share/icons/crystalsvg/32x32/apps/ktimemon.png
+share/icons/crystalsvg/48x48/apps/konqsidebar_mediaplayer.png
 share/icons/locolor/16x16/apps/ktimemon.png
 share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/locolor/32x32/apps/ktimemon.png
 share/mimelnk/application/x-webarchive.desktop
-share/services/kuickplugin.desktop
+share/services/katefll_initplugin.desktop
+share/services/katefll_plugin.desktop
+share/services/katehtmltools.desktop
+share/services/kateinsertcommand.desktop
+share/services/katemodeline.desktop
+share/services/kateopenheader.desktop
+share/services/katepybrowse.desktop
+share/services/katespell.desktop
+share/services/katetextfilter.desktop
+share/services/katexmlcheck.desktop
+share/services/katexmltools.desktop
+share/services/kfile_desktop.desktop
+share/services/kfile_folder.desktop
+share/services/kfile_html.desktop
+share/services/kfile_txt.desktop
+share/services/kuick_plugin.desktop
 share/services/webarchivethumbnail.desktop
+@dirrm share/services
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/apps
@@ -182,23 +282,40 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/22x22/apps
+@dirrm share/icons/crystalsvg/22x22/actions
+@dirrm share/icons/crystalsvg/22x22
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16/actions
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
+@dirrm share/doc/HTML/en/konq-plugins/webarchiver
+@dirrm share/doc/HTML/en/konq-plugins/validators
+@dirrm share/doc/HTML/en/konq-plugins/uachanger
+@dirrm share/doc/HTML/en/konq-plugins/smbmounter
+@dirrm share/doc/HTML/en/konq-plugins/mediaplayer
+@dirrm share/doc/HTML/en/konq-plugins/kuick
+@dirrm share/doc/HTML/en/konq-plugins/khtmlsettings
+@dirrm share/doc/HTML/en/konq-plugins/imgallery
+@dirrm share/doc/HTML/en/konq-plugins/domtreeviewer
+@dirrm share/doc/HTML/en/konq-plugins/dirfilter
+@dirrm share/doc/HTML/en/konq-plugins/crashes
+@dirrm share/doc/HTML/en/konq-plugins/babel
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/apps/noatun
+@dirrm share/apps/mediacontrol/default
+@dirrm share/apps/mediacontrol/blueish
+@dirrm share/apps/mediacontrol
 @dirrm share/apps/konqsidebartng/entries
 @dirrm share/apps/konqsidebartng/add
 @dirrm share/apps/konqsidebartng
@@ -214,12 +331,22 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/apps/khtml
 @dirrm share/apps/katexmltools
 @dirrm share/apps/kate/plugins/katexmltools
+@dirrm share/apps/kate/plugins/katexmlcheck
 @dirrm share/apps/kate/plugins/katetextfilter
-@dirrm share/apps/kate/plugins/kateprojectmanager
+@dirrm share/apps/kate/plugins/katespell
+@dirrm share/apps/kate/plugins/katepybrowse
 @dirrm share/apps/kate/plugins/kateopenheader
+@dirrm share/apps/kate/plugins/katemodeline
 @dirrm share/apps/kate/plugins/kateinsertcommand
 @dirrm share/apps/kate/plugins/katehtmltools
+@dirrm share/apps/kate/plugins/katefll
 @dirrm share/apps/kate/plugins
 @dirrm share/apps/kate
-@dirrm share/applnk/Settings/FileBrowsing
-@dirrm share/applnk/Settings
+@dirrm share/apps/atlantikdesigner
+@dirrm share/apps
+@dirrm share/applnk/Games/Board
+@dirrm share/applnk/Games
+@dirrm share/applnk/Editors
+@dirrm share/applnk/.hidden
+@dirrm share/applnk
+@dirrm lib/kde3

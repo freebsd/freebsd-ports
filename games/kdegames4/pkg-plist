@@ -1,3 +1,4 @@
+bin/atlantik
 bin/kasteroids
 bin/katomic
 bin/kbackgammon
@@ -7,9 +8,11 @@ bin/kbounce
 bin/kenolaba
 bin/kfouleggs
 bin/kjumpingcube
+bin/klickety
 bin/klines
 bin/kmahjongg
 bin/kmines
+bin/kolf
 bin/konquest
 bin/kpat
 bin/kpoker
@@ -27,6 +30,23 @@ bin/kwin4
 bin/kwin4proc
 bin/lskat
 bin/lskatproc
+bin/megami
+include/atlantic/atlantic_core.h
+include/atlantic/auction.h
+include/atlantic/estate.h
+include/atlantic/estategroup.h
+include/atlantic/player.h
+include/atlantic/trade.h
+include/atlantik/ui/auction_widget.h
+include/atlantik/ui/board.h
+include/atlantik/ui/display_widget.h
+include/atlantik/ui/estatedetails.h
+include/atlantik/ui/estateview.h
+include/atlantik/ui/portfolioestate.h
+include/atlantik/ui/portfolioview.h
+include/atlantik/ui/token.h
+include/atlantik/ui/trade_widget.h
+include/kcanvasrootpixmap.h
 include/kcarddialog.h
 include/kchat.h
 include/kchatbase.h
@@ -54,30 +74,48 @@ include/kgame/kplayer.h
 include/kgamemisc.h
 include/kgameprogress.h
 include/khighscore.h
+include/kolf/ball.h
+include/kolf/canvasitem.h
+include/kolf/config.h
+include/kolf/floater.h
+include/kolf/game.h
+include/kolf/object.h
+include/kolf/rtti.h
+include/kolf/slope.h
+include/kolf/statedb.h
+include/kolf/vector.h
 include/kscoredialog.h
 include/kstdgameaction.h
-lib/kbackgammon.la
-lib/kbackgammon.so
+lib/kde3/kio_atlantik.la
+lib/kde3/kio_atlantik.so
+lib/kde3/kolf.la
+lib/kde3/kolf.so
+lib/libatlantic.la
+lib/libatlantic.so
+lib/libatlantic.so.2
+lib/libatlantikclient.la
+lib/libatlantikclient.so
+lib/libatlantikclient.so.2
+lib/libatlantikui.la
+lib/libatlantikui.so
+lib/libatlantikui.so.2
 lib/libkdegames.la
 lib/libkdegames.so
-lib/libkdegames.so.1
-lib/libkdehighscores.la
-lib/libkdehighscores.so
-lib/libkdehighscores.so.0
-lib/libksirtetbase.la
-lib/libksirtetbase.so
-lib/libksirtetbase.so.0
-lib/libksirtetcommon.la
-lib/libksirtetcommon.so
-lib/libksirtetcommon.so.0
+lib/libkdegames.so.2
+lib/libkolf.la
+lib/libkolf.so
+lib/libkolf.so.0
 share/applnk/Games/Arcade/kasteroids.desktop
 share/applnk/Games/Arcade/kbounce.desktop
 share/applnk/Games/Arcade/kfouleggs.desktop
+share/applnk/Games/Arcade/klickety.desktop
+share/applnk/Games/Arcade/kolf.desktop
 share/applnk/Games/Arcade/ksirtet.desktop
 share/applnk/Games/Arcade/ksmiletris.desktop
 share/applnk/Games/Arcade/ksnake.desktop
 share/applnk/Games/Arcade/kspaceduel.desktop
 share/applnk/Games/Arcade/ktron.desktop
+share/applnk/Games/Board/atlantik.desktop
 share/applnk/Games/Board/kbackgammon.desktop
 share/applnk/Games/Board/kbattleship.desktop
 share/applnk/Games/Board/kblackbox.desktop
@@ -89,6 +127,8 @@ share/applnk/Games/Board/kwin4.desktop
 share/applnk/Games/Card/kpat.desktop
 share/applnk/Games/Card/kpoker.desktop
 share/applnk/Games/Card/lskat.desktop
+share/applnk/Games/Card/megami.desktop
+share/applnk/Games/Kidsgames/ktuberling.desktop
 share/applnk/Games/TacticStrategy/katomic.desktop
 share/applnk/Games/TacticStrategy/kjumpingcube.desktop
 share/applnk/Games/TacticStrategy/klines.desktop
@@ -97,6 +137,20 @@ share/applnk/Games/TacticStrategy/konquest.desktop
 share/applnk/Games/TacticStrategy/ksame.desktop
 share/applnk/Games/TacticStrategy/ksokoban.desktop
 share/applnk/Toys/ktuberling.desktop
+share/apps/atlantik/atlantikui.rc
+share/apps/atlantik/icons/crystalsvg/16x16/actions/jail_pay.png
+share/apps/atlantik/icons/crystalsvg/22x22/actions/atlantik_buy_estate.png
+share/apps/atlantik/icons/crystalsvg/22x22/actions/jail_pay.png
+share/apps/atlantik/icons/crystalsvg/32x32/actions/atlantik_buy_estate.png
+share/apps/atlantik/icons/crystalsvg/32x32/actions/auction.png
+share/apps/atlantik/icons/crystalsvg/32x32/actions/jail_pay.png
+share/apps/atlantik/icons/crystalsvg/32x32/actions/monop_board.png
+share/apps/atlantik/icons/locolor/16x16/actions/atlantik_buy_estate.png
+share/apps/atlantik/pics/arrow.png
+share/apps/atlantik/pics/qmark-blue.png
+share/apps/atlantik/pics/qmark-red.png
+share/apps/atlantik/pics/token.png
+share/apps/atlantik/pics/train.png
 share/apps/carddecks/cards-aisleriot/1.png
 share/apps/carddecks/cards-aisleriot/10.png
 share/apps/carddecks/cards-aisleriot/11.png
@@ -979,18 +1033,12 @@ share/apps/kbackgammon/eventsrc
 share/apps/kbackgammon/kbackgammonui.rc
 share/apps/kbackgammon/pics/kbackgammon-chat.png
 share/apps/kbackgammon/pics/kbackgammon-double.xpm
-share/apps/kbackgammon/pics/kbackgammon-fonts.xpm
-share/apps/kbackgammon/pics/kbackgammon-hint.xpm
-share/apps/kbackgammon/pics/kbackgammon-redo.xpm
-share/apps/kbackgammon/pics/kbackgammon-reload.xpm
-share/apps/kbackgammon/pics/kbackgammon-roll.xpm
-share/apps/kbackgammon/pics/kbackgammon-send.xpm
-share/apps/kbackgammon/pics/kbackgammon-undo.xpm
 share/apps/kbackgammon/sounds/kbackgammon-lost.wav
 share/apps/kbackgammon/sounds/kbackgammon-move.wav
 share/apps/kbackgammon/sounds/kbackgammon-roll.wav
 share/apps/kbackgammon/sounds/kbackgammon-won.wav
 share/apps/kbattleship/kbattleshipui.rc
+share/apps/kbattleship/pictures/border.png
 share/apps/kbattleship/pictures/death.png
 share/apps/kbattleship/pictures/hit.png
 share/apps/kbattleship/pictures/sea.png
@@ -1080,11 +1128,16 @@ share/apps/kenolaba/toolbar/stop.xpm
 share/apps/kenolaba/toolbar/undo.xpm
 share/apps/kenolaba/toolbar/warning.xpm
 share/apps/kenolaba/toolbar/yellowball.xpm
+share/apps/kfouleggs/kfouleggsconfig.rc
 share/apps/kfouleggs/kfouleggsui.rc
 share/apps/kjumpingcube/kjumpingcubeui.rc
+share/apps/klickety/klicketyconfig.rc
+share/apps/klickety/klicketyui.rc
 share/apps/klines/balls.jpg
 share/apps/klines/field.jpg
 share/apps/klines/fire.jpg
+share/apps/klines/klinesui.rc
+share/apps/kmahjongg/kmahjonggui.rc
 share/apps/kmahjongg/pics/cross.layout
 share/apps/kmahjongg/pics/default.bgnd
 share/apps/kmahjongg/pics/default.layout
@@ -1108,9 +1161,31 @@ share/apps/kmahjongg/pics/traditional.tileset
 share/apps/kmahjongg/pics/triangle.layout
 share/apps/kmahjongg/pics/wood.bgnd
 share/apps/kmahjongg/toolbar/newnum.xpm
-share/apps/kmahjongg/toolbar/pause.xpm
-share/apps/kmahjongg/toolbar/play.xpm
+share/apps/kmines/kminesconfig.rc
 share/apps/kmines/kminesui.rc
+share/apps/kolf/courses/Classic.kolf
+share/apps/kolf/courses/Easy.kolf
+share/apps/kolf/courses/Hard.kolf
+share/apps/kolf/courses/Impossible
+share/apps/kolf/courses/Medium.kolf
+share/apps/kolf/courses/Practice
+share/apps/kolf/courses/ReallyEasy
+share/apps/kolf/intro
+share/apps/kolf/kolfui.rc
+share/apps/kolf/pics/cup.png
+share/apps/kolf/pics/grass.png
+share/apps/kolf/pics/puddle.png
+share/apps/kolf/pics/sand.png
+share/apps/kolf/sounds/blackhole.wav
+share/apps/kolf/sounds/blackholeeject.wav
+share/apps/kolf/sounds/blackholeputin.wav
+share/apps/kolf/sounds/hit.wav
+share/apps/kolf/sounds/holed.wav
+share/apps/kolf/sounds/holeinone.wav
+share/apps/kolf/sounds/puddle.wav
+share/apps/kolf/sounds/wall.wav
+share/apps/kolf/tutorial.kolf
+share/apps/kolf/tutorial.kolfgame
 share/apps/konquest/konquestui.rc
 share/apps/konquest/pics/konquest-splash.png
 share/apps/konquest/pics/planet1.xpm
@@ -1139,8 +1214,8 @@ share/apps/kreversi/pics/background/Ocean.xpm
 share/apps/kreversi/pics/background/Pipes.xpm
 share/apps/kreversi/pics/background/Puzzle.xpm
 share/apps/kreversi/pics/background/Stones.xpm
-share/apps/kreversi/pics/chips.xpm
-share/apps/kreversi/pics/chips_mono.xpm
+share/apps/kreversi/pics/chips.png
+share/apps/kreversi/pics/chips_mono.png
 share/apps/kreversi/pics/help.xpm
 share/apps/kreversi/pics/hint.xpm
 share/apps/kreversi/pics/logo.xpm
@@ -1157,8 +1232,8 @@ share/apps/ksame/stones.png
 share/apps/kshisen/kshisen.xpm
 share/apps/kshisen/kshisen_bgnd.xpm
 share/apps/kshisen/kshisenui.rc
-share/apps/kshisen/mask.xpm
 share/apps/kshisen/paused.xpm
+share/apps/ksirtet/ksirtetconfig.rc
 share/apps/ksirtet/ksirtetui.rc
 share/apps/ksmiletris/data/bg1.bmp
 share/apps/ksmiletris/data/bg10.bmp
@@ -1255,15 +1330,15 @@ share/apps/ksnake/pics/samy.png
 share/apps/ksnake/pics/snake1.png
 share/apps/ksnake/pics/snake2.png
 share/apps/ksnake/pics/up.png
-share/apps/kspaceduel/icons/hicolor/16x16/actions/spnewgame.png
-share/apps/kspaceduel/icons/hicolor/16x16/actions/spnewround.png
-share/apps/kspaceduel/icons/hicolor/16x16/actions/sppausegame.png
-share/apps/kspaceduel/icons/hicolor/22x22/actions/spnewgame.png
-share/apps/kspaceduel/icons/hicolor/22x22/actions/spnewround.png
-share/apps/kspaceduel/icons/hicolor/22x22/actions/sppausegame.png
-share/apps/kspaceduel/icons/hicolor/32x32/actions/spnewgame.png
-share/apps/kspaceduel/icons/hicolor/32x32/actions/spnewround.png
-share/apps/kspaceduel/icons/hicolor/32x32/actions/sppausegame.png
+share/apps/kspaceduel/icons/crystalsvg/16x16/actions/spnewgame.png
+share/apps/kspaceduel/icons/crystalsvg/16x16/actions/spnewround.png
+share/apps/kspaceduel/icons/crystalsvg/16x16/actions/sppausegame.png
+share/apps/kspaceduel/icons/crystalsvg/22x22/actions/spnewgame.png
+share/apps/kspaceduel/icons/crystalsvg/22x22/actions/spnewround.png
+share/apps/kspaceduel/icons/crystalsvg/22x22/actions/sppausegame.png
+share/apps/kspaceduel/icons/crystalsvg/32x32/actions/spnewgame.png
+share/apps/kspaceduel/icons/crystalsvg/32x32/actions/spnewround.png
+share/apps/kspaceduel/icons/crystalsvg/32x32/actions/sppausegame.png
 share/apps/kspaceduel/icons/locolor/16x16/actions/spnewgame.png
 share/apps/kspaceduel/icons/locolor/16x16/actions/spnewround.png
 share/apps/kspaceduel/icons/locolor/16x16/actions/sppausegame.png
@@ -1670,11 +1745,16 @@ share/apps/ktuberling/museum/dali.tuberling
 share/apps/ktuberling/museum/einstein.tuberling
 share/apps/ktuberling/museum/fly.tuberling
 share/apps/ktuberling/museum/grandpa.tuberling
+share/apps/ktuberling/museum/happy.tuberling
 share/apps/ktuberling/museum/hippie.tuberling
 share/apps/ktuberling/museum/idiot.tuberling
 share/apps/ktuberling/museum/miss.tuberling
+share/apps/ktuberling/museum/mouse.tuberling
 share/apps/ktuberling/museum/picasso.tuberling
+share/apps/ktuberling/museum/sea.tuberling
 share/apps/ktuberling/museum/serious.tuberling
+share/apps/ktuberling/pics/aquarium-game.png
+share/apps/ktuberling/pics/aquarium-mask.png
 share/apps/ktuberling/pics/layout.xml
 share/apps/ktuberling/pics/penguin-game.png
 share/apps/ktuberling/pics/penguin-mask.png
@@ -1702,6 +1782,7 @@ share/apps/kwin4/grafix/default/arrow2.png
 share/apps/kwin4/grafix/default/arrow_mask.png
 share/apps/kwin4/grafix/default/background.png
 share/apps/kwin4/grafix/default/board.png
+share/apps/kwin4/grafix/default/crnt.png
 share/apps/kwin4/grafix/default/empty.png
 share/apps/kwin4/grafix/default/empty2.png
 share/apps/kwin4/grafix/default/empty2_mask.png
@@ -1709,7 +1790,6 @@ share/apps/kwin4/grafix/default/empty_mask.png
 share/apps/kwin4/grafix/default/game_over.png
 share/apps/kwin4/grafix/default/game_over_mask.png
 share/apps/kwin4/grafix/default/grafix.rc
-share/apps/kwin4/grafix/default/hint.png
 share/apps/kwin4/grafix/default/introabout.png
 share/apps/kwin4/grafix/default/introabout_mask.png
 share/apps/kwin4/grafix/default/piece0.png
@@ -1767,6 +1847,11 @@ share/apps/lskat/grafix/type1.png
 share/apps/lskat/grafix/type2.png
 share/apps/lskat/grafix/type3.png
 share/apps/lskat/lskatui.rc
+share/apps/megami/megamiui.rc
+share/config/magic/kolf.magic
+share/doc/HTML/en/atlantik/common
+share/doc/HTML/en/atlantik/index.cache.bz2
+share/doc/HTML/en/atlantik/index.docbook
 share/doc/HTML/en/kasteroids/common
 share/doc/HTML/en/kasteroids/fuel.png
 share/doc/HTML/en/kasteroids/index.cache.bz2
@@ -1802,6 +1887,9 @@ share/doc/HTML/en/kfouleggs/index.docbook
 share/doc/HTML/en/kjumpingcube/common
 share/doc/HTML/en/kjumpingcube/index.cache.bz2
 share/doc/HTML/en/kjumpingcube/index.docbook
+share/doc/HTML/en/klickety/common
+share/doc/HTML/en/klickety/index.cache.bz2
+share/doc/HTML/en/klickety/index.docbook
 share/doc/HTML/en/klines/common
 share/doc/HTML/en/klines/index.cache.bz2
 share/doc/HTML/en/klines/index.docbook
@@ -1810,6 +1898,9 @@ share/doc/HTML/en/kmines/index.cache.bz2
 share/doc/HTML/en/kmines/index.docbook
 share/doc/HTML/en/kmines/kmines1.png
 share/doc/HTML/en/kmines/kmines2.png
+share/doc/HTML/en/kolf/common
+share/doc/HTML/en/kolf/index.cache.bz2
+share/doc/HTML/en/kolf/index.docbook
 share/doc/HTML/en/konquest/common
 share/doc/HTML/en/konquest/index.cache.bz2
 share/doc/HTML/en/konquest/index.docbook
@@ -1837,6 +1928,8 @@ share/doc/HTML/en/ksame/index.docbook
 share/doc/HTML/en/kshisen/common
 share/doc/HTML/en/kshisen/index.cache.bz2
 share/doc/HTML/en/kshisen/index.docbook
+share/doc/HTML/en/kshisen/score-formula.png
+share/doc/HTML/en/kshisen/score-formula.tex
 share/doc/HTML/en/ksirtet/common
 share/doc/HTML/en/ksirtet/index.cache.bz2
 share/doc/HTML/en/ksirtet/index.docbook
@@ -1865,11 +1958,13 @@ share/doc/HTML/en/ktuberling/common
 share/doc/HTML/en/ktuberling/gameboard.png
 share/doc/HTML/en/ktuberling/index.cache.bz2
 share/doc/HTML/en/ktuberling/index.docbook
+share/doc/HTML/en/ktuberling/ktuberling.png
 share/doc/HTML/en/ktuberling/menu.edit.png
-share/doc/HTML/en/ktuberling/menu.file.png
+share/doc/HTML/en/ktuberling/menu.game.png
 share/doc/HTML/en/ktuberling/menu.help.png
-share/doc/HTML/en/ktuberling/menu.option.png
+share/doc/HTML/en/ktuberling/menu.playground.png
 share/doc/HTML/en/ktuberling/menu.raw.png
+share/doc/HTML/en/ktuberling/menu.speech.png
 share/doc/HTML/en/ktuberling/technical-reference.docbook
 share/doc/HTML/en/ktuberling/toolbar.png
 share/doc/HTML/en/kwin4/common
@@ -1878,94 +1973,127 @@ share/doc/HTML/en/kwin4/index.docbook
 share/doc/HTML/en/lskat/common
 share/doc/HTML/en/lskat/index.cache.bz2
 share/doc/HTML/en/lskat/index.docbook
-share/icons/hicolor/16x16/actions/highscore.png
-share/icons/hicolor/16x16/actions/roll.png
-share/icons/hicolor/16x16/apps/kasteroids.png
-share/icons/hicolor/16x16/apps/kbackgammon.png
-share/icons/hicolor/16x16/apps/kbackgammon_engine.png
-share/icons/hicolor/16x16/apps/kbattleship.png
-share/icons/hicolor/16x16/apps/kblackbox.png
-share/icons/hicolor/16x16/apps/kbounce.png
-share/icons/hicolor/16x16/apps/kenolaba.png
-share/icons/hicolor/16x16/apps/kjumpingcube.png
-share/icons/hicolor/16x16/apps/klines.png
-share/icons/hicolor/16x16/apps/kmahjongg.png
-share/icons/hicolor/16x16/apps/kmines.png
-share/icons/hicolor/16x16/apps/konquest.png
-share/icons/hicolor/16x16/apps/kpat.png
-share/icons/hicolor/16x16/apps/kpoker.png
-share/icons/hicolor/16x16/apps/kreversi.png
-share/icons/hicolor/16x16/apps/ksame.png
-share/icons/hicolor/16x16/apps/kshisen.png
-share/icons/hicolor/16x16/apps/ksirtet.png
-share/icons/hicolor/16x16/apps/ksmiletris.png
-share/icons/hicolor/16x16/apps/ksnake.png
-share/icons/hicolor/16x16/apps/ksokoban.png
-share/icons/hicolor/16x16/apps/kspaceduel.png
-share/icons/hicolor/16x16/apps/ktron.png
-share/icons/hicolor/16x16/apps/kwin4.png
-share/icons/hicolor/22x22/actions/roll.png
-share/icons/hicolor/32x32/actions/highscore.png
-share/icons/hicolor/32x32/actions/roll.png
-share/icons/hicolor/32x32/apps/kasteroids.png
-share/icons/hicolor/32x32/apps/katomic.png
-share/icons/hicolor/32x32/apps/kbackgammon.png
-share/icons/hicolor/32x32/apps/kbackgammon_engine.png
-share/icons/hicolor/32x32/apps/kbattleship.png
-share/icons/hicolor/32x32/apps/kblackbox.png
-share/icons/hicolor/32x32/apps/kbounce.png
-share/icons/hicolor/32x32/apps/kenolaba.png
-share/icons/hicolor/32x32/apps/kjumpingcube.png
-share/icons/hicolor/32x32/apps/klines.png
-share/icons/hicolor/32x32/apps/kmahjongg.png
-share/icons/hicolor/32x32/apps/kmines.png
-share/icons/hicolor/32x32/apps/konquest.png
-share/icons/hicolor/32x32/apps/kpat.png
-share/icons/hicolor/32x32/apps/kpoker.png
-share/icons/hicolor/32x32/apps/kreversi.png
-share/icons/hicolor/32x32/apps/ksame.png
-share/icons/hicolor/32x32/apps/kshisen.png
-share/icons/hicolor/32x32/apps/ksirtet.png
-share/icons/hicolor/32x32/apps/ksmiletris.png
-share/icons/hicolor/32x32/apps/ksnake.png
-share/icons/hicolor/32x32/apps/ksokoban.png
-share/icons/hicolor/32x32/apps/kspaceduel.png
-share/icons/hicolor/32x32/apps/ktron.png
-share/icons/hicolor/32x32/apps/ktuberling.png
-share/icons/hicolor/32x32/apps/kwin4.png
-share/icons/hicolor/32x32/apps/lskat.png
-share/icons/hicolor/48x48/apps/kasteroids.png
-share/icons/hicolor/48x48/apps/kbackgammon.png
-share/icons/hicolor/48x48/apps/kbackgammon_engine.png
-share/icons/hicolor/48x48/apps/kblackbox.png
-share/icons/hicolor/48x48/apps/kenolaba.png
-share/icons/hicolor/48x48/apps/kmahjongg.png
-share/icons/hicolor/48x48/apps/kmines.png
-share/icons/hicolor/48x48/apps/konquest.png
-share/icons/hicolor/48x48/apps/kpat.png
-share/icons/hicolor/48x48/apps/kpoker.png
-share/icons/hicolor/48x48/apps/kreversi.png
-share/icons/hicolor/48x48/apps/ksame.png
-share/icons/hicolor/48x48/apps/kshisen.png
-share/icons/hicolor/48x48/apps/ksirtet.png
-share/icons/hicolor/48x48/apps/ksmiletris.png
-share/icons/hicolor/48x48/apps/ksnake.png
-share/icons/hicolor/48x48/apps/ksokoban.png
-share/icons/hicolor/48x48/apps/kwin4.png
-share/icons/hicolor/48x48/apps/lskat.png
+share/doc/HTML/en/megami/common
+share/doc/HTML/en/megami/index.cache.bz2
+share/doc/HTML/en/megami/index.docbook
+share/icons/crystalsvg/16x16/actions/endturn.png
+share/icons/crystalsvg/16x16/actions/highscore.png
+share/icons/crystalsvg/16x16/actions/roll.png
+share/icons/crystalsvg/16x16/apps/atlantik.png
+share/icons/crystalsvg/16x16/apps/kasteroids.png
+share/icons/crystalsvg/16x16/apps/kbackgammon.png
+share/icons/crystalsvg/16x16/apps/kbackgammon_engine.png
+share/icons/crystalsvg/16x16/apps/kbattleship.png
+share/icons/crystalsvg/16x16/apps/kblackbox.png
+share/icons/crystalsvg/16x16/apps/kbounce.png
+share/icons/crystalsvg/16x16/apps/kenolaba.png
+share/icons/crystalsvg/16x16/apps/kjumpingcube.png
+share/icons/crystalsvg/16x16/apps/klines.png
+share/icons/crystalsvg/16x16/apps/kmahjongg.png
+share/icons/crystalsvg/16x16/apps/kmines.png
+share/icons/crystalsvg/16x16/apps/kolf.png
+share/icons/crystalsvg/16x16/apps/konquest.png
+share/icons/crystalsvg/16x16/apps/kpat.png
+share/icons/crystalsvg/16x16/apps/kpoker.png
+share/icons/crystalsvg/16x16/apps/kreversi.png
+share/icons/crystalsvg/16x16/apps/ksame.png
+share/icons/crystalsvg/16x16/apps/kshisen.png
+share/icons/crystalsvg/16x16/apps/ksirtet.png
+share/icons/crystalsvg/16x16/apps/ksmiletris.png
+share/icons/crystalsvg/16x16/apps/ksnake.png
+share/icons/crystalsvg/16x16/apps/ksokoban.png
+share/icons/crystalsvg/16x16/apps/kspaceduel.png
+share/icons/crystalsvg/16x16/apps/ktron.png
+share/icons/crystalsvg/16x16/apps/kwin4.png
+share/icons/crystalsvg/22x22/actions/roll.png
+share/icons/crystalsvg/32x32/actions/endturn.png
+share/icons/crystalsvg/32x32/actions/highscore.png
+share/icons/crystalsvg/32x32/actions/roll.png
+share/icons/crystalsvg/32x32/apps/atlantik.png
+share/icons/crystalsvg/32x32/apps/kasteroids.png
+share/icons/crystalsvg/32x32/apps/katomic.png
+share/icons/crystalsvg/32x32/apps/kbackgammon.png
+share/icons/crystalsvg/32x32/apps/kbackgammon_engine.png
+share/icons/crystalsvg/32x32/apps/kbattleship.png
+share/icons/crystalsvg/32x32/apps/kblackbox.png
+share/icons/crystalsvg/32x32/apps/kbounce.png
+share/icons/crystalsvg/32x32/apps/kenolaba.png
+share/icons/crystalsvg/32x32/apps/kjumpingcube.png
+share/icons/crystalsvg/32x32/apps/klines.png
+share/icons/crystalsvg/32x32/apps/kmahjongg.png
+share/icons/crystalsvg/32x32/apps/kmines.png
+share/icons/crystalsvg/32x32/apps/kolf.png
+share/icons/crystalsvg/32x32/apps/konquest.png
+share/icons/crystalsvg/32x32/apps/kpat.png
+share/icons/crystalsvg/32x32/apps/kpoker.png
+share/icons/crystalsvg/32x32/apps/kreversi.png
+share/icons/crystalsvg/32x32/apps/ksame.png
+share/icons/crystalsvg/32x32/apps/kshisen.png
+share/icons/crystalsvg/32x32/apps/ksirtet.png
+share/icons/crystalsvg/32x32/apps/ksmiletris.png
+share/icons/crystalsvg/32x32/apps/ksnake.png
+share/icons/crystalsvg/32x32/apps/ksokoban.png
+share/icons/crystalsvg/32x32/apps/kspaceduel.png
+share/icons/crystalsvg/32x32/apps/ktron.png
+share/icons/crystalsvg/32x32/apps/ktuberling.png
+share/icons/crystalsvg/32x32/apps/kwin4.png
+share/icons/crystalsvg/32x32/apps/lskat.png
+share/icons/crystalsvg/32x32/apps/megami.png
+share/icons/crystalsvg/48x48/apps/atlantik.png
+share/icons/crystalsvg/48x48/apps/kasteroids.png
+share/icons/crystalsvg/48x48/apps/kbackgammon.png
+share/icons/crystalsvg/48x48/apps/kbackgammon_engine.png
+share/icons/crystalsvg/48x48/apps/kblackbox.png
+share/icons/crystalsvg/48x48/apps/kenolaba.png
+share/icons/crystalsvg/48x48/apps/kmahjongg.png
+share/icons/crystalsvg/48x48/apps/kmines.png
+share/icons/crystalsvg/48x48/apps/kolf.png
+share/icons/crystalsvg/48x48/apps/konquest.png
+share/icons/crystalsvg/48x48/apps/kpat.png
+share/icons/crystalsvg/48x48/apps/kpoker.png
+share/icons/crystalsvg/48x48/apps/kreversi.png
+share/icons/crystalsvg/48x48/apps/ksame.png
+share/icons/crystalsvg/48x48/apps/kshisen.png
+share/icons/crystalsvg/48x48/apps/ksirtet.png
+share/icons/crystalsvg/48x48/apps/ksmiletris.png
+share/icons/crystalsvg/48x48/apps/ksnake.png
+share/icons/crystalsvg/48x48/apps/ksokoban.png
+share/icons/crystalsvg/48x48/apps/kwin4.png
+share/icons/crystalsvg/48x48/apps/lskat.png
+share/icons/hicolor/32x32/apps/megami.png
 share/icons/locolor/16x16/apps/kbounce.png
 share/icons/locolor/16x16/apps/kspaceduel.png
 share/icons/locolor/16x16/apps/lskat.png
 share/icons/locolor/32x32/apps/kbounce.png
 share/icons/locolor/32x32/apps/kspaceduel.png
 share/icons/locolor/32x32/apps/lskat.png
+share/mimelnk/application/x-kolf.desktop
+share/mimelnk/application/x-kourse.desktop
+share/services/atlantik.protocol
+@dirrm share/services
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32/actions
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/22x22/actions
+@dirrm share/icons/crystalsvg/22x22
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16/actions
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
+@dirrm share/doc/HTML/en/megami
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
 @dirrm share/doc/HTML/en/ktuberling
@@ -1980,8 +2108,10 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kpoker
 @dirrm share/doc/HTML/en/kpat
 @dirrm share/doc/HTML/en/konquest
+@dirrm share/doc/HTML/en/kolf
 @dirrm share/doc/HTML/en/kmines
 @dirrm share/doc/HTML/en/klines
+@dirrm share/doc/HTML/en/klickety
 @dirrm share/doc/HTML/en/kjumpingcube
 @dirrm share/doc/HTML/en/kfouleggs
 @dirrm share/doc/HTML/en/kenolaba
@@ -1991,6 +2121,13 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/doc/HTML/en/kbackgammon
 @dirrm share/doc/HTML/en/katomic
 @dirrm share/doc/HTML/en/kasteroids
+@dirrm share/doc/HTML/en/atlantik
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/doc
+@dirrm share/config/magic
+@dirrm share/config
+@dirrm share/apps/megami
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kwin4/grafix/default
@@ -2012,13 +2149,13 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/kspaceduel/icons/locolor/16x16/actions
 @dirrm share/apps/kspaceduel/icons/locolor/16x16
 @dirrm share/apps/kspaceduel/icons/locolor
-@dirrm share/apps/kspaceduel/icons/hicolor/32x32/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/32x32
-@dirrm share/apps/kspaceduel/icons/hicolor/22x22/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/22x22
-@dirrm share/apps/kspaceduel/icons/hicolor/16x16/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/16x16
-@dirrm share/apps/kspaceduel/icons/hicolor
+@dirrm share/apps/kspaceduel/icons/crystalsvg/32x32/actions
+@dirrm share/apps/kspaceduel/icons/crystalsvg/32x32
+@dirrm share/apps/kspaceduel/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kspaceduel/icons/crystalsvg/22x22
+@dirrm share/apps/kspaceduel/icons/crystalsvg/16x16/actions
+@dirrm share/apps/kspaceduel/icons/crystalsvg/16x16
+@dirrm share/apps/kspaceduel/icons/crystalsvg
 @dirrm share/apps/kspaceduel/icons
 @dirrm share/apps/kspaceduel
 @dirrm share/apps/ksnake/pics
@@ -2040,11 +2177,16 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/kpat
 @dirrm share/apps/konquest/pics
 @dirrm share/apps/konquest
+@dirrm share/apps/kolf/sounds
+@dirrm share/apps/kolf/pics
+@dirrm share/apps/kolf/courses
+@dirrm share/apps/kolf
 @dirrm share/apps/kmines
 @dirrm share/apps/kmahjongg/toolbar
 @dirrm share/apps/kmahjongg/pics
 @dirrm share/apps/kmahjongg
 @dirrm share/apps/klines
+@dirrm share/apps/klickety
 @dirrm share/apps/kjumpingcube
 @dirrm share/apps/kfouleggs
 @dirrm share/apps/kenolaba/toolbar
@@ -2089,11 +2231,31 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/carddecks/cards-default
 @dirrm share/apps/carddecks/cards-aisleriot
 @dirrm share/apps/carddecks
+@dirrm share/apps/atlantik/pics
+@dirrm share/apps/atlantik/icons/locolor/16x16/actions
+@dirrm share/apps/atlantik/icons/locolor/16x16
+@dirrm share/apps/atlantik/icons/locolor
+@dirrm share/apps/atlantik/icons/crystalsvg/32x32/actions
+@dirrm share/apps/atlantik/icons/crystalsvg/32x32
+@dirrm share/apps/atlantik/icons/crystalsvg/22x22/actions
+@dirrm share/apps/atlantik/icons/crystalsvg/22x22
+@dirrm share/apps/atlantik/icons/crystalsvg/16x16/actions
+@dirrm share/apps/atlantik/icons/crystalsvg/16x16
+@dirrm share/apps/atlantik/icons/crystalsvg
+@dirrm share/apps/atlantik/icons
+@dirrm share/apps/atlantik
+@dirrm share/apps
 @dirrm share/applnk/Toys
 @dirrm share/applnk/Games/TacticStrategy
+@dirrm share/applnk/Games/Kidsgames
 @dirrm share/applnk/Games/Card
 @dirrm share/applnk/Games/Board
 @dirrm share/applnk/Games/Arcade
 @dirrm share/applnk/Games
 @dirrm share/applnk
+@dirrm lib/kde3
+@dirrm include/kolf
 @dirrm include/kgame
+@dirrm include/atlantik/ui
+@dirrm include/atlantik
+@dirrm include/atlantic

@@ -2,7 +2,14 @@ bin/kcron
 bin/kpackage
 bin/kuser
 bin/kwuftpd
+bin/kxconfig
 bin/secpolicy
+lib/kde3/kfile_deb.la
+lib/kde3/kfile_deb.so
+lib/kde3/kfile_rpm.la
+lib/kde3/kfile_rpm.so
+share/applnk/Settings/Peripherals/kxconfig.desktop
+share/applnk/System/More/kwuftpd.desktop
 share/applnk/System/kcron.desktop
 share/applnk/System/kpackage.desktop
 share/applnk/System/kuser.desktop
@@ -31,15 +38,39 @@ share/apps/kpackage/pics/supdated.png
 share/apps/kpackage/pics/tick.png
 share/apps/kpackage/toolbar/ftin.xpm
 share/apps/kpackage/toolbar/ftout.xpm
-share/apps/kuser/icons/hicolor/22x22/actions/add_group.png
-share/apps/kuser/icons/hicolor/22x22/actions/add_user.png
-share/apps/kuser/icons/hicolor/22x22/actions/delete_group.png
-share/apps/kuser/icons/hicolor/22x22/actions/delete_user.png
-share/apps/kuser/icons/hicolor/22x22/actions/edit_group.png
-share/apps/kuser/icons/hicolor/22x22/actions/edit_user.png
+share/apps/kuser/icons/crystalsvg/22x22/actions/add_group.png
+share/apps/kuser/icons/crystalsvg/22x22/actions/add_user.png
+share/apps/kuser/icons/crystalsvg/22x22/actions/delete_group.png
+share/apps/kuser/icons/crystalsvg/22x22/actions/delete_user.png
+share/apps/kuser/icons/crystalsvg/22x22/actions/edit_group.png
+share/apps/kuser/icons/crystalsvg/22x22/actions/edit_user.png
 share/apps/kuser/kuserui.rc
 share/apps/kuser/pics/group.png
 share/apps/kuser/pics/user.png
+share/apps/kxconfig/XF86Config-4.default
+share/apps/kxconfig/XF86Config-4.template
+share/apps/kxconfig/hwdata/Monitors
+share/apps/kxconfig/hwdata/VideoCards
+share/apps/kxconfig/pics/ati.png
+share/apps/kxconfig/pics/decreaseX.png
+share/apps/kxconfig/pics/decreaseY.png
+share/apps/kxconfig/pics/down.png
+share/apps/kxconfig/pics/fonts.png
+share/apps/kxconfig/pics/general.png
+share/apps/kxconfig/pics/increaseX.png
+share/apps/kxconfig/pics/increaseY.png
+share/apps/kxconfig/pics/keyboard.png
+share/apps/kxconfig/pics/layout.png
+share/apps/kxconfig/pics/left.png
+share/apps/kxconfig/pics/matrox.png
+share/apps/kxconfig/pics/monitor.png
+share/apps/kxconfig/pics/pointer.png
+share/apps/kxconfig/pics/resolution.png
+share/apps/kxconfig/pics/right.png
+share/apps/kxconfig/pics/threed.png
+share/apps/kxconfig/pics/up.png
+share/apps/kxconfig/pics/videocard.png
+share/apps/kxconfig/pics/xlogo_small.png
 share/doc/HTML/en/kcron/common
 share/doc/HTML/en/kcron/index.cache.bz2
 share/doc/HTML/en/kcron/index.docbook
@@ -72,24 +103,45 @@ share/doc/HTML/en/kwuftpd/security.png
 share/doc/HTML/en/kwuftpd/uploads.png
 share/doc/HTML/en/kwuftpd/user_classes.png
 share/doc/HTML/en/kwuftpd/virtual.png
-share/icons/hicolor/16x16/apps/kcron.png
-share/icons/hicolor/16x16/apps/kpackage.png
-share/icons/hicolor/16x16/apps/kuser.png
-share/icons/hicolor/32x32/apps/kcron.png
-share/icons/hicolor/32x32/apps/kpackage.png
-share/icons/hicolor/32x32/apps/kuser.png
-share/icons/hicolor/48x48/apps/kpackage.png
-share/icons/hicolor/48x48/apps/kuser.png
+share/doc/HTML/en/kxconfig/common
+share/doc/HTML/en/kxconfig/index.cache.bz2
+share/doc/HTML/en/kxconfig/index.docbook
+share/icons/crystalsvg/128x128/apps/kpackage.png
+share/icons/crystalsvg/128x128/apps/kuser.png
+share/icons/crystalsvg/16x16/apps/kcron.png
+share/icons/crystalsvg/16x16/apps/kpackage.png
+share/icons/crystalsvg/16x16/apps/kuser.png
+share/icons/crystalsvg/32x32/apps/kcron.png
+share/icons/crystalsvg/32x32/apps/kpackage.png
+share/icons/crystalsvg/32x32/apps/kuser.png
+share/icons/crystalsvg/32x32/apps/kxconfig.png
+share/icons/crystalsvg/48x48/apps/kpackage.png
+share/icons/crystalsvg/48x48/apps/kuser.png
+share/icons/crystalsvg/64x64/apps/kpackage.png
+share/icons/crystalsvg/64x64/apps/kuser.png
+share/icons/locolor/16x16/apps/kxconfig.png
 share/mimelnk/application/x-debian-package.desktop
+share/services/kfile_deb.desktop
+share/services/kfile_rpm.desktop
+@dirrm share/services
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
+@dirrm share/icons/crystalsvg/64x64/apps
+@dirrm share/icons/crystalsvg/64x64
+@dirrm share/icons/crystalsvg/48x48/apps
+@dirrm share/icons/crystalsvg/48x48
+@dirrm share/icons/crystalsvg/32x32/apps
+@dirrm share/icons/crystalsvg/32x32
+@dirrm share/icons/crystalsvg/16x16/apps
+@dirrm share/icons/crystalsvg/16x16
+@dirrm share/icons/crystalsvg/128x128/apps
+@dirrm share/icons/crystalsvg/128x128
+@dirrm share/icons/crystalsvg
+@dirrm share/icons
+@dirrm share/doc/HTML/en/kxconfig
 @dirrm share/doc/HTML/en/kwuftpd
 @dirrm share/doc/HTML/en/kuser
 @dirrm share/doc/HTML/en/ksysv
@@ -98,13 +150,23 @@ share/mimelnk/application/x-debian-package.desktop
 @dirrm share/doc/HTML/en/kcron
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
+@dirrm share/apps/kxconfig/pics
+@dirrm share/apps/kxconfig/hwdata
+@dirrm share/apps/kxconfig
 @dirrm share/apps/kuser/pics
-@dirrm share/apps/kuser/icons/hicolor/22x22/actions
-@dirrm share/apps/kuser/icons/hicolor/22x22
-@dirrm share/apps/kuser/icons/hicolor
+@dirrm share/apps/kuser/icons/crystalsvg/22x22/actions
+@dirrm share/apps/kuser/icons/crystalsvg/22x22
+@dirrm share/apps/kuser/icons/crystalsvg
 @dirrm share/apps/kuser/icons
 @dirrm share/apps/kuser
 @dirrm share/apps/kpackage/toolbar
 @dirrm share/apps/kpackage/pics
 @dirrm share/apps/kpackage
+@dirrm share/apps
+@dirrm share/applnk/System/More
 @dirrm share/applnk/System
+@dirrm share/applnk/Settings/Peripherals
+@dirrm share/applnk/Settings
+@dirrm share/applnk
+@dirrm lib/kde3

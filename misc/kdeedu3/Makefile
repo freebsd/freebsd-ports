@@ -15,12 +15,15 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 
 USE_KDELIBS_VER=3
-USE_XPM=	yes
+PREFIX=		${KDE_PREFIX}
+
 USE_BZIP2=	yes
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_XPM=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
 .include <bsd.port.mk>

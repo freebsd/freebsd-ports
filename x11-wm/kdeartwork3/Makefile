@@ -1,3 +1,4 @@
+# -*-mode: makefile-*-
 # New ports collection makefile for:	KDE artwork
 # Date created:				20 August 2001
 # Whom:					Dmitry Sivachenko <demon@FreeBSD.org>
@@ -15,14 +16,15 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 
 USE_KDEBASE_VER=3
+PREFIX=		${KDE_PREFIX}
+
 USE_MESA=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

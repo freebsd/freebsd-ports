@@ -1,0 +1,14 @@
+
+======================================================================
+In order to run the kscd program properly, please run as root:
+
+	ln -sf <cdrom_device> /dev/cdrom
+	chmod 666 <cdrom_device>
+
+to link and give permission to access the CD-ROM device.
+
+For example, if you have an IDE/ATAPI CD-ROM device:
+
+	ln -sf /dev/racd0c /dev/cdrom
+	chmod 666 /dev/racd0c
+======================================================================
