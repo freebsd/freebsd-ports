@@ -1,15 +1,26 @@
 bin/xmps
 bin/xmps-config
-include/xmps/plugin.h
-include/xmps/types.h
-include/xmps/xmps_config.h
-include/xmps/xmps_message.h
-include/xmps/xmps_support.h
+include/libxmps/libxmps.h
+include/libxmps/libxmps_config.h
 lib/libxmps.so
-lib/xmps/Codecs/libflx.so
-lib/xmps/Codecs/libsmpeg.so
-lib/xmps/Renderers/libSDL.so
-lib/xmps/Renderers/libX11.so
+lib/libxmps.so.0
+lib/libxmpsutils.so
+lib/libxmpsutils.so.0
+lib/xmps/addons/video/libvob.so
+lib/xmps/codecs/audio/libac3.so
+lib/xmps/codecs/audio/libmpeg.so
+lib/xmps/codecs/audio/libwav.so
+lib/xmps/codecs/video/libflx.so
+lib/xmps/codecs/video/libmpeg3.so
+lib/xmps/gui/libgnome.so
+lib/xmps/gui/libskinned.so
+lib/xmps/media/libfile.so
+lib/xmps/media/libhttp.so
+lib/xmps/renderers/audio/libsdl.so
+lib/xmps/renderers/video/libsdl.so
+lib/xmps/system/libavi.so
+lib/xmps/system/libdummy.so
+lib/xmps/system/libmpeg3.so
 share/aclocal/xmps.m4
 share/gnome/apps/Multimedia/XMPS.desktop
 share/gnome/xmps/fast_forward.xpm
@@ -43,7 +54,16 @@ share/locale/sv/LC_MESSAGES/xmps.mo
 @dirrm share/gnome/xmps/skins/DarkDepth
 @dirrm share/gnome/xmps/skins
 @dirrm share/gnome/xmps
-@dirrm lib/xmps/Renderers
-@dirrm lib/xmps/Codecs
+@dirrm lib/xmps/system
+@dirrm lib/xmps/renderers/video
+@dirrm lib/xmps/renderers/audio
+@dirrm lib/xmps/renderers
+@dirrm lib/xmps/media
+@dirrm lib/xmps/gui
+@dirrm lib/xmps/codecs/video
+@dirrm lib/xmps/codecs/audio
+@dirrm lib/xmps/codecs
+@dirrm lib/xmps/addons/video
+@dirrm lib/xmps/addons
 @dirrm lib/xmps
-@dirrm include/xmps
+@dirrm include/libxmps

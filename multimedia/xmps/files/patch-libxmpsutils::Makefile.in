@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- libxmpsutils/Makefile.in	2001/02/04 21:00:58	1.1
++++ libxmpsutils/Makefile.in	2001/02/04 21:01:11
+@@ -118,7 +118,7 @@
+ 
+ lib_LTLIBRARIES = libxmpsutils.la
+ 
+-libxmpsutils_la_LDFLAGS = -module -avoid-version
++libxmpsutils_la_LDFLAGS = -module
+ libxmpsutils_la_LIBADD = @GTK_LIBS@
+ 
+ libxmpsutils_la_SOURCES =  xmps_support.c xmps_support.h xmps_i18n.h xmps_message.h xmps_message.c xmps_item.h xmps_item.c xmps_menu.h xmps_menu.c xmps_playlist.h xmps_playlist.c xmps_file_info.h xmps_file_info.c xmps_gtk_config.h xmps_gtk_config.c xmps_about.c xmps_utils.h xmps_utils.c libxmpsutils.h
