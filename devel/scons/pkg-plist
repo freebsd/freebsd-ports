@@ -197,6 +197,9 @@ lib/scons/SCons/Tool/hplink.pyo
 lib/scons/SCons/Tool/icc.py
 lib/scons/SCons/Tool/icc.pyc
 lib/scons/SCons/Tool/icc.pyo
+lib/scons/SCons/Tool/icl.py
+lib/scons/SCons/Tool/icl.pyc
+lib/scons/SCons/Tool/icl.pyo
 lib/scons/SCons/Tool/ifl.py
 lib/scons/SCons/Tool/ifl.pyc
 lib/scons/SCons/Tool/ifl.pyo
@@ -224,6 +227,9 @@ lib/scons/SCons/Tool/link.pyo
 lib/scons/SCons/Tool/linkloc.py
 lib/scons/SCons/Tool/linkloc.pyc
 lib/scons/SCons/Tool/linkloc.pyo
+lib/scons/SCons/Tool/m4.py
+lib/scons/SCons/Tool/m4.pyc
+lib/scons/SCons/Tool/m4.pyo
 lib/scons/SCons/Tool/masm.py
 lib/scons/SCons/Tool/masm.pyc
 lib/scons/SCons/Tool/masm.pyo
@@ -242,6 +248,9 @@ lib/scons/SCons/Tool/mslink.pyo
 lib/scons/SCons/Tool/msvc.py
 lib/scons/SCons/Tool/msvc.pyc
 lib/scons/SCons/Tool/msvc.pyo
+lib/scons/SCons/Tool/msvs.py
+lib/scons/SCons/Tool/msvs.pyc
+lib/scons/SCons/Tool/msvs.pyo
 lib/scons/SCons/Tool/nasm.py
 lib/scons/SCons/Tool/nasm.pyc
 lib/scons/SCons/Tool/nasm.pyo
