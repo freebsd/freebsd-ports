@@ -7772,6 +7772,7 @@ webcrawl	ports/www/webcrawl
 webfonts	ports/x11-fonts/webfonts
 webfs		ports/www/webfs
 webglimpse	ports/www/webglimpse
+webjob		ports/sysutils/webjob
 weblint		ports/www/weblint
 webmin		ports/sysutils/webmin
 webredirect	ports/www/webredirect
