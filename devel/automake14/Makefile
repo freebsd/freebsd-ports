@@ -7,7 +7,7 @@
 
 PORTNAME=	automake14
 PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
@@ -16,9 +16,10 @@ DISTNAME=	automake-1.4-p5
 MAINTAINER=	ports@geeksrus.net
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL=${PERL5}
+CONFIGURE_ENV=	PERL=${PERL5:C/[0-9.]//g}
 CONFIGURE_ARGS=	--program-suffix=14 --datadir=${PREFIX}/share/automake14
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
@@ -29,10 +30,11 @@ STRIP=		# none
 
 post-patch:
 	@-${RM} ${WRKSRC}/*.info* ${WRKSRC}/*.dvi
-	${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake14.texi
+	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake14.texi
 
 pre-configure:
-	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
+	@${REINPLACE_CMD} -i -e "s,%%X11BASE%%,${X11BASE}," \
+		${WRKSRC}/aclocal.in
 
 post-install:
 	@-${RM} -fr ${PREFIX}/libexec/automake14
