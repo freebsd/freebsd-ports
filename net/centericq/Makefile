@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 DISTNAME=	center-${PORTVERSION}
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400010

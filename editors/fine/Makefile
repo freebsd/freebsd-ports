@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://dccnet.linux.tucows.com/files/x11/office/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
