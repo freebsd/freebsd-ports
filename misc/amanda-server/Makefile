@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.4p4
-PORTREVISION?=	1
+PORTREVISION?=	2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -34,8 +34,9 @@ PATCH_STRIP=
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-AMANDA_USER?=	operator
-AMANDA_GROUP?=	operator
+AMANDA_USER?=		operator
+AMANDA_GROUP?=		operator
+AMANDA_GNUTAR_LISTDIR?=	${PREFIX}/var/amanda/gnutar-lists
 
 # amanda-server part
 .if !defined(CLIENT_ONLY)
@@ -76,7 +77,8 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--without-client --disable-libtool --prefix=${PREFIX} \
-		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
+		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
+		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
 		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
@@ -172,8 +174,8 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
 		--without-server --disable-libtool --prefix=${PREFIX} \
-		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
-
+		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP} \
+		--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
@@ -184,8 +186,8 @@ post-install:
 		${WRKSRC}/example/chg-scsi.conf \
 		${WRKSRC}/example/disklist \
 		${PREFIX}/share/examples/amanda
-	${MKDIR} ${PREFIX}/var/amanda/gnutar-lists
-	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} ${PREFIX}/var/amanda/gnutar-lists
+	${MKDIR} ${AMANDA_GNUTAR_LISTDIR}
+	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} ${AMANDA_GNUTAR_LISTDIR}
 	${TOUCH} /etc/amandates
 	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} /etc/amandates
 
@@ -196,10 +198,6 @@ CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
 
 .if defined (AMANDA_CONFIG)
 CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
-.endif
-
-.if defined (AMANDA_GNUTAR_LISTDIR)
-CONFIGURE_ARGS+=	--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
 .endif
 
 .if defined (AMANDA_UDPPORTRANGE)
