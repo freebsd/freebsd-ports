@@ -119,8 +119,6 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/textonly.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/website.xml
 %%PORTDOCS%%%%EXAMPLESDIR%%/wslayout.xml
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 share/xsl/website/VERSION
 share/xsl/website/catalog
 share/xsl/website/extensions/ChangeLog
