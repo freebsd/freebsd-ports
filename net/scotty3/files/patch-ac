@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Thu Jun  4 12:15:55 1998
++++ Makefile.in	Thu Jun  4 12:22:39 1998
+@@ -490,7 +490,7 @@
+ 	@$(INSTALL_PROGRAM) scotty $(BIN_INSTALL_DIR)/scotty$(TNM_VERSION)
+ 	@$(INSTALL_DATA) tnm$(SHLIB_SUFFIX) $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
+ 	@chmod 555 $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
+-	@echo 'package ifneeded Tnm $(TNM_VERSION) "load $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)[info sharedlibextension]"' > $(TNM_INSTALL_DIR)/pkgIndex.tcl
++	@echo 'package ifneeded Tnm $(TNM_VERSION) "load $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION).so"' > $(TNM_INSTALL_DIR)/pkgIndex.tcl
+ 
+ tnm-install-mibs:
+ 	@for i in $(TNM_INSTALL_DIR)/mibs ; \
+@@ -589,10 +589,14 @@
+ 		fi; \
+ 	    done;
+ 	@echo "Installing tkined$(TNM_VERSION) and tkined$(TNM_VERSION)$(SHLIB_SUFFIX)"
+-	@$(INSTALL_PROGRAM) $(UNIX_DIR)/tkined $(BIN_INSTALL_DIR)/tkined$(TKI_VERSION)
++	@sed s,@PREFIX@,${prefix},g tkined.sh.in >tkined.sh
++	@$(INSTALL) -m 555 ${UNIX_DIR}/tkined.sh ${BIN_INSTALL_DIR}/tkined
++	@$(INSTALL) -m 555 $(UNIX_DIR)/tkined $(BIN_INSTALL_DIR)/tkined$(TKI_VERSION)
++	@sed s,@PREFIX@,${prefix},g scotty.sh.in >scotty.sh
++	@$(INSTALL) -m 555 ${UNIX_DIR}/scotty.sh ${BIN_INSTALL_DIR}/scotty
+ 	@$(INSTALL_DATA) tkined$(SHLIB_SUFFIX) $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION)$(SHLIB_SUFFIX)
+ 	@chmod 555 $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION)$(SHLIB_SUFFIX)
+-	@echo 'package ifneeded Tkined $(TKI_VERSION) "load $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION)[info sharedlibextension]"' > $(TKI_INSTALL_DIR)/pkgIndex.tcl
++	@echo 'package ifneeded Tkined $(TKI_VERSION) "load $(LIB_RUNTIME_DIR)/tkined$(TKI_VERSION).so"' > $(TKI_INSTALL_DIR)/pkgIndex.tcl
+ 	@$(INSTALL_DATA) $(TKI_DIR)/tkined.defaults $(TKI_INSTALL_DIR)
+ 
+ tki-install-library:
