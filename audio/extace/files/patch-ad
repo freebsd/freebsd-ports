@@ -1,0 +1,12 @@
+--- extace/sound.c	2001/01/02 09:31:56	1.1
++++ extace/sound.c	2001/01/02 09:32:16
+@@ -24,7 +24,9 @@
+ #include <fcntl.h>
+ #include <gtk/gtk.h>
+ #include <esd.h>
++#ifndef __FreeBSD__
+ #include <asm/errno.h>
++#endif
+ #ifdef HAVE_PTHREAD_H
+ #include <pthread.h>
+ #endif

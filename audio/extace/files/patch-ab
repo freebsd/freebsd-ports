@@ -1,6 +1,15 @@
---- extace/Makefile.in.orig	Fri Jun  2 23:30:29 2000
-+++ extace/Makefile.in	Fri Jun  2 23:32:26 2000
-@@ -108,7 +108,9 @@
+--- extace/Makefile.in.orig	Tue Jan  2 11:26:24 2001
++++ extace/Makefile.in	Tue Jan  2 11:33:29 2001
+@@ -101,7 +101,7 @@
+ extace_LDADD = @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ -lgdk_imlib 
+ #extace_LDADD = -lefence @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ -lgdk_imlib 
+ 
+-LIBS = -lpthread
++LIBS = #-lpthread
+ 
+ COMMON_FLAGS = @PFLAGS@ @DFLAGS@ 
+ 
+@@ -109,7 +109,9 @@
  
  EXTRA_DIST = extace.desktop README NEWS TODO
  
@@ -10,7 +19,7 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
  CONFIG_CLEAN_FILES = 
-@@ -237,7 +239,6 @@
+@@ -239,7 +241,6 @@
  
  install-MultimediaDATA: $(Multimedia_DATA)
  	@$(NORMAL_INSTALL)
@@ -18,7 +27,7 @@
  	@list='$(Multimedia_DATA)'; for p in $$list; do \
  	  if test -f $(srcdir)/$$p; then \
  	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(Multimediadir)/$$p"; \
-@@ -340,7 +341,7 @@
+@@ -325,7 +326,7 @@
  install-strip:
  	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
  installdirs:
