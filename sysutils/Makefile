@@ -122,6 +122,7 @@
     SUBDIR += libchk
     SUBDIR += libretto-config
     SUBDIR += linux-acu
+    SUBDIR += linux-e2fsprogs
     SUBDIR += lire
     SUBDIR += livecd
     SUBDIR += lmmon
