@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../spooles/
+MASTERDIR=	${.CURDIR}/../spooles/
 USE_MPI=	YES
 
 .include "${MASTERDIR}/Makefile"
 
-PKGNAMESUFFIX=  -mpich
+PKGNAMESUFFIX=	-mpich

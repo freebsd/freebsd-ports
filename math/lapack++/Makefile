@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	math
 MASTER_SITES=	http://math.nist.gov/lapack++/
 DISTNAME=	Lapackpp1_1a
-EXTRACT_SUFX=  .tgz
+EXTRACT_SUFX=	.tgz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} lapack++.ps.gz lapackpp1_1.ps.gz \
 		lapackppman1_1.ps.gz lapack++_install.ps.gz

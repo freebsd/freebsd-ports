@@ -13,12 +13,12 @@ MASTER_SITES=	http://www.netlib.org/linalg/spooles/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 .ifndef NOPORTDOCS
-DISTFILES+=     ${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
+DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
 	 	Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
 		PP99.ps.gz ReferenceManual.ps.gz
 .endif
-DIST_SUBDIR=    spooles
-EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	spooles
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SParse Object Oriented Linear Equations Solver
@@ -34,15 +34,15 @@ MAKEFILE=	makefile
 ALL_TARGET=	global
 
 .if defined(USE_THREADS)
-PLIST_SUB+=     MT=""
-CFLAGS+= ${PTHREAD_CFLAGS}
+PLIST_SUB+=	MT=""
+CFLAGS+=	${PTHREAD_CFLAGS}
 .else
-PLIST_SUB+=     MT="@comment "
+PLIST_SUB+=	MT="@comment "
 .endif
 .if defined(USE_MPI)
-PLIST_SUB+=     MPI=""
+PLIST_SUB+=	MPI=""
 .else
-PLIST_SUB+=     MPI="@comment "
+PLIST_SUB+=	MPI="@comment "
 .endif
 
 .SILENT:
@@ -56,7 +56,7 @@ pre-everything::
 .endif
 
 .if defined (USE_THREADS) && (USE_MPI)
-BROKEN= mpich is *NOT* threadsafe at the moment
+BROKEN=	mpich is *NOT* threadsafe at the moment
 .endif
 
 post-patch:

@@ -28,7 +28,7 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-PICFLAG!= ${MAKE} -f bsd.lib.mk -V PICFLAG 
+PICFLAG!=	${MAKE} -f bsd.lib.mk -V PICFLAG
 
 pre-patch:
 	@${INSTALL_DATA} ${WRKSRC}/setup/Rules.linux ${WRKSRC}/Rules.make

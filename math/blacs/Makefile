@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/blacs/
 DISTNAME=	BLACS
 DISTFILES=	mpiblacs.tgz blacstester.tgz mpiblacs-patch03.tgz
 .if !defined(NOPORTDOCS)
-DISTFILES+=     blacs_install.ps f77blacsqref.ps lawn94.ps \
+DISTFILES+=	blacs_install.ps f77blacsqref.ps lawn94.ps \
 		cblacsqref.ps  mpi_prop.ps mpiblacs_issues.ps
 .endif
 DIST_SUBDIR=	blacs
@@ -34,9 +34,9 @@ pre-fetch:
 
 F77?=	f77
 .if !defined(NO_GNUF77)
-F77EXTRAFLAGS=  -w -fno-globals -fugly-complex
+F77EXTRAFLAGS=	-w -fno-globals -fugly-complex
 .endif
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 DEBUG_LEVEL=	0
 
 pre-patch:

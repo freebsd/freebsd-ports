@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.netlib.org/scalapack/
 DISTNAME=	SCALAPACK
 DISTFILES=	scalapack.tgz manpages.tgz
 .if !defined(NOPORTDOCS)
-DISTFILES+=     scalapack_install.ps scalapackqref.ps  \
+DISTFILES+=	scalapack_install.ps scalapackqref.ps  \
 		lawn100.ps pblasqref.ps manual.ps design.ps \
 		pumma_refmanual.ps trans.ps
 .endif
@@ -30,7 +30,7 @@ LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
 F77?=	f77
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 
 .include "files/manpages"
 

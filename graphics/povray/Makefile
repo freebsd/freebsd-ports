@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/povray/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	Official/Unix
 DISTNAME=	povuni_s
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	povray35
 
 MAINTAINER=	maho@FreeBSD.org
@@ -31,9 +31,9 @@ LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.50c
 USE_XLIB=	yes
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 LATEST_LINK=	${PORTNAME}35
 
 .if defined(WITH_OPTIMIZED_FLAGS)
@@ -45,7 +45,7 @@ CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
 .endif
 
-CONFIGURE_TARGET= --target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib -I${LOCALBASE}/include"

@@ -8,17 +8,17 @@ PORTNAME=	chemtool
 PORTVERSION=	1.6.1
 PORTREVISION=	1
 CATEGORIES=	science
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 #		http://ruby.chemie.uni-freiburg.de/~martin/chemtool/
-MASTER_SITE_SUBDIR=     maho/chemtool
+MASTER_SITE_SUBDIR=	maho/chemtool
 
 DISTNAME=	ct161gtk2
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Drawing organic molecules easily and store them (developer version)
 
-LIB_DEPENDS=    EMF.1:${PORTSDIR}/graphics/libemf
+LIB_DEPENDS=	EMF.1:${PORTSDIR}/graphics/libemf
 RUN_DEPENDS=	transfig:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-gtk2/
@@ -27,8 +27,8 @@ USE_GTK=	yes
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS= --enable-emf=yes
-PKGNAMESUFFIX=  -devel
+CONFIGURE_ARGS=	--enable-emf=yes
+PKGNAMESUFFIX=	-devel
 MAN1=	chemtool.1 cht.1
 
 post-patch:

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unix_s
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
@@ -22,11 +22,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \
 		vga:${PORTSDIR}/graphics/svgalib
 
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=     # empty
+ALL_TARGET=	# empty
 
 .if defined(WITH_OPTIMIZED_FLAGS)
 CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double -Wunused-variable

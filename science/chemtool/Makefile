@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libEMF
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS+="${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --enable-emf=yes
+CONFIGURE_ARGS=	--enable-emf=yes
 
 MAN1=	chemtool.1 cht.1
 
