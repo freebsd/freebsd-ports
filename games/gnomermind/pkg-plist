@@ -172,8 +172,8 @@ share/gnome/help/gnomermind/C/stylesheet-images/up.gif
 share/gnome/help/gnomermind/C/stylesheet-images/warning.gif
 share/gnome/help/gnomermind/C/topic.dat
 share/gnome/help/gnomermind/C/usage.html
-share/gnome/help/gnomermind/C/x160.html
-share/gnome/help/gnomermind/C/x387.html
+share/gnome/help/gnomermind/C/x167.html
+share/gnome/help/gnomermind/C/x394.html
 share/gnome/pixmaps/gnomermind.png
 share/gnome/sounds/gnomermind/gm-fail.wav
 share/gnome/sounds/gnomermind/gm-guess.wav
@@ -185,12 +185,14 @@ share/locale/de/LC_MESSAGES/gnomermind.mo
 share/locale/es/LC_MESSAGES/gnomermind.mo
 share/locale/fr/LC_MESSAGES/gnomermind.mo
 share/locale/it/LC_MESSAGES/gnomermind.mo
+share/locale/ja/LC_MESSAGES/gnomermind.mo
 share/locale/nl/LC_MESSAGES/gnomermind.mo
 share/locale/pt/LC_MESSAGES/gnomermind.mo
 share/locale/ru/LC_MESSAGES/gnomermind.mo
 share/locale/sk/LC_MESSAGES/gnomermind.mo
 share/locale/sv/LC_MESSAGES/gnomermind.mo
 share/locale/tr/LC_MESSAGES/gnomermind.mo
+share/locale/zh_TW/LC_MESSAGES/gnomermind.mo
 @dirrm share/gnome/sounds/gnomermind
 @dirrm share/gnome/help/gnomermind/C/stylesheet-images
 @dirrm share/gnome/help/gnomermind/C
