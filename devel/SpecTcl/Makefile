@@ -7,8 +7,8 @@
 
 PORTNAME=	SpecTcl
 PORTVERSION=	1.1
-PORTREVISION=	2
-CATEGORIES=	devel tk83
+PORTREVISION=	3
+CATEGORIES=	devel tk84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,12 +16,12 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free drag-and-drop GUI builder for Tk and Java from Sun
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-WISH=		${LOCALBASE}/bin/wish8.3
+WISH=		${LOCALBASE}/bin/wish8.4
 
 post-patch:
 .for file in specJava specTcl
