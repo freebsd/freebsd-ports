@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	rat
-PORTVERSION=	4.2.22
+PORTVERSION=	4.2.25
 PORTREVISION=	0
-CATEGORIES=	mbone audio ipv6
+CATEGORIES=	mbone audio ipv6 tk83
 MASTER_SITES=								      \
-	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/4.2.22/ \
+	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/${PORTVERSION}/ \
 	http://www.icir.org/hodson/ucl-mirror/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
-TCLTK_VERSION=  8.2
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+TCLTK_VERSION=  8.3
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
@@ -27,6 +27,7 @@ MANCOMPRESSED=	no
 RAT_BUILD_DIRS=	common rat
 RAT=		${PORTNAME}-${PORTVERSION}
 RAT_SCRIPT=	${PORTNAME}
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
