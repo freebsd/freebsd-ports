@@ -13,8 +13,6 @@ SHLIB_MINOR	= 3
 
 LIBDIR		= ${PREFIX}/lib
 
-# uncomment the line below to avoid building static libraries
-#INTERNALLIB	= Yes
 # comment out the line below to build the profile libs
 NOPROFILE=yes
 
