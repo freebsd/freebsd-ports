@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.6
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://hadess.free.fr/files/
+MASTER_SITES=	http://hadess.net/files/
 
 MAINTAINER=	eric@osd.bsdi.com
 
