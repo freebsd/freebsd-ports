@@ -29,7 +29,7 @@ GAMEDIR=	${PREFIX}/usr/games/quake3/
 .include <bsd.port.pre.mk>
 
 .for file in ${DISTFILES}
-.if !exists(${DISTDIR}/rtcw-paks/${file})
+.if !exists(${DISTDIR}/q3-paks/${file})
 IGNORE=You must manually copy all the .pk3 files from the baseq3/ directory of an installed version of the game to the ${DISTDIR}/q3-paks directory and then run make again.
 .endif
 .endfor
