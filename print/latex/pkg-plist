@@ -44,7 +44,6 @@ share/texmf/documentation/ltpar.dtx
 share/texmf/documentation/ltpictur.dtx
 share/texmf/documentation/ltplain.dtx
 share/texmf/documentation/ltsect.dtx
-share/texmf/documentation/xr.dtx
 share/texmf/documentation/ltspace.dtx
 share/texmf/documentation/lttab.dtx
 share/texmf/documentation/ltthm.dtx
@@ -69,6 +68,7 @@ share/texmf/documentation/ltnews03.tex
 share/texmf/documentation/ltnews04.tex
 share/texmf/documentation/ltnews05.tex
 share/texmf/documentation/ltnews06.tex
+share/texmf/documentation/ltnews07.tex
 share/texmf/documentation/cfgguide.tex
 share/texmf/documentation/clsguide.tex
 share/texmf/documentation/fntguide.tex
@@ -76,6 +76,7 @@ share/texmf/documentation/modguide.tex
 share/texmf/documentation/usrguide.tex
 share/texmf/documentation/afterpage.dtx
 share/texmf/documentation/array.dtx
+share/texmf/documentation/bm.dtx
 share/texmf/documentation/dcolumn.dtx
 share/texmf/documentation/delarray.dtx
 share/texmf/documentation/enumerate.dtx
@@ -95,6 +96,7 @@ share/texmf/documentation/theorem.dtx
 share/texmf/documentation/varioref.dtx
 share/texmf/documentation/verbatim.dtx
 share/texmf/documentation/xspace.dtx
+share/texmf/documentation/xr.dtx
 share/texmf/makeindx/gglo.ist
 share/texmf/makeindx/gind.ist
 share/texmf/tex/latex/latexbug.tex
@@ -144,7 +146,6 @@ share/texmf/tex/latex/oldlfont.sty
 share/texmf/tex/latex/openbib.sty
 share/texmf/tex/latex/pict2e.sty
 share/texmf/tex/latex/proc.sty
-share/texmf/tex/latex/ucmr.fd
 share/texmf/tex/latex/report.sty
 share/texmf/tex/latex/shortvrb.sty
 share/texmf/tex/latex/showidx.sty
@@ -180,6 +181,7 @@ share/texmf/tex/latex/ts1cmr.fd
 share/texmf/tex/latex/ts1cmss.fd
 share/texmf/tex/latex/ts1cmtt.fd
 share/texmf/tex/latex/ts1cmvtt.fd
+share/texmf/tex/latex/ucmr.fd
 share/texmf/tex/latex/ucmss.fd
 share/texmf/tex/latex/ucmtt.fd
 share/texmf/tex/latex/ulasy.fd
@@ -195,6 +197,8 @@ share/texmf/tex/latex/cp865.def
 share/texmf/tex/latex/latex209.def
 share/texmf/tex/latex/latin1.def
 share/texmf/tex/latex/latin2.def
+share/texmf/tex/latex/latin3.def
+share/texmf/tex/latex/latin5.def
 share/texmf/tex/latex/next.def
 share/texmf/tex/latex/omlenc.def
 share/texmf/tex/latex/omsenc.def
@@ -204,6 +208,7 @@ share/texmf/tex/latex/slides.def
 share/texmf/tex/latex/t1enc.def
 share/texmf/tex/latex/afterpage.sty
 share/texmf/tex/latex/array.sty
+share/texmf/tex/latex/bm.sty
 share/texmf/tex/latex/dcolumn.sty
 share/texmf/tex/latex/delarray.sty
 share/texmf/tex/latex/enumerate.sty
