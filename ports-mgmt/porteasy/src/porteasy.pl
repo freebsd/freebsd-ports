@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.9";
+my $VERSION	= "2.7.10";
 my $COPYRIGHT	= "Copyright (c) 2000-2003 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -1118,6 +1118,15 @@ MAIN:{
     }
     if (!$cvsroot) {
 	$cvsroot = $ENV{'CVSROOT'};
+    }
+    if (!$cvsroot && -f "$portsdir/CVS/Root") {
+	local *FILE;
+
+	if (sysopen(FILE, "$portsdir/CVS/Root", O_RDONLY)) {
+	    $cvsroot = <FILE>;
+	    chomp($cvsroot);
+	    close(FILE);
+	}
     }
     if ($update && !$cvsroot) {
 	bsd::errx(1, "No CVS root, please use the -r option or set \$CVSROOT");
