@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mecab
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/src/ \
-		http://chasen.aist-nara.ac.jp/stable/ipadic/:dic
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${IPADIC_DISTNAME}${EXTRACT_SUFX}:dic
+MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/src/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
-IPADIC_DISTNAME=	ipadic-2.5.0
+EXTRACT_DEPENDS=	${NONEXISTENT}:${IPADIC_PORTDIR}:patch
+
+IPADIC_PORTDIR=	${PORTSDIR}/japanese/ipadic
 
 USE_PERL=	yes
 
@@ -29,7 +29,7 @@ EXAMPLES=	example/*
 DOCS=		AUTHORS README doc/*.html doc/*.css
 
 post-extract:
-	${LN} -s ${WRKDIR}/${IPADIC_DISTNAME} ${WRKSRC}/dic/
+	${LN} -s `cd ${IPADIC_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/dic/
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libmecab.la
