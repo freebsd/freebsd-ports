@@ -65,6 +65,7 @@ USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
+USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
@@ -124,7 +125,7 @@ PLIST_SUB+=	CLI=""
 SAPI_FILE=	"bin/php"
 .endif
 
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX \
+ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DIO \
 		DOMXML DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT \
 		GMP HYPERWAVE ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE \
 		MCRYPT MHASH MIME MING MNOGOSEARCH MSSQL MYSQL NCURSES \
@@ -241,7 +242,12 @@ CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
 .endif
 
 .if defined(WITH_DB4)
+WITH_DB4_VER?=	41
+.if ${WITH_DB4_VER} == 4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.else
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.endif
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 .endif
 
@@ -255,6 +261,10 @@ CONFIGURE_ARGS+=--enable-dbase
 
 .if defined(WITH_DBX)
 CONFIGURE_ARGS+=--enable-dbx
+.endif
+
+.if defined(WITH_DIO)
+CONFIGURE_ARGS+=--enable-dio
 .endif
 
 .if defined(WITH_DOMXML)
@@ -433,7 +443,8 @@ CONFIGURE_ARGS+=--enable-posix
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
+POSTGRESQL_PORT?=	databases/postgresql-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .endif
 
@@ -595,7 +606,7 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .endif
 
 .if defined(WITH_SNMP)
-.if exists(${LOCALBASE}/lib/libsnmp.so.4)
+.if exists(${LOCALBASE}/lib/libsnmp.so.4) || defined(WITH_SNMP4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
 .else
 LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net/net-snmp
@@ -607,6 +618,8 @@ pre-patch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
 post-patch:
+	@${REINPLACE_CMD} -e "s|orainst/unix.rgs|ocommon/install/partial.prd|g" \
+		${WRKSRC}/configure
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/pear/scripts/pearcmd.php > ${WRKSRC}/pear/scripts/pear
 
