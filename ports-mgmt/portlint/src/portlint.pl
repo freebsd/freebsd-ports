@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.47 2004/05/30 19:54:47 marcus Exp $
+# $Id: portlint.pl,v 1.48 2004/06/06 01:04:42 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -62,6 +62,7 @@ my $newxdef = 1;
 my $automan = 1;
 my $autoinfo = 1;
 my $use_no_size = 0;
+my $use_no_checksum = 0;
 my $manchapters = '123456789ln';
 my $localbase = '/usr/local';
 
@@ -174,8 +175,8 @@ my @varlist =  qw(
 	PKGNAMESUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
 	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
-	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL
-	USE_LIBTOOL_VER INDEXFILE PKGORIGIN
+	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL_VER
+	INDEXFILE PKGORIGIN
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -500,16 +501,27 @@ exit $err;
 sub checkdistinfo {
 		my($file) = @_;
 		my($sizefound) = 0;
+		my(@distinfo) = ();
+		my(@distfiles) = ();
+
 		open(IN, "< $file") || return 0;
-		while (<IN>) {
-				if ($_ =~ /^SIZE/) {
-						$sizefound = 1;
-				}
-		}
-		if (!$sizefound && !$use_no_size) {
-				&perror("WARN: $file: does not contain SIZE.");
-		}
+		@distinfo = <IN>;
 		close(IN);
+
+		@distfiles = split(/\s+/, $makevar{DISTFILES});
+
+		foreach my $distfile (@distfiles) {
+			if (!(grep /^SIZE \(([^\)]*\/)?$distfile\)/, @distinfo) &&
+				!$use_no_size) {
+				&perror("WARN: $file: no SIZE entry found for $distfile.");
+			}
+			if (!(grep /^MD5 \(([^\)]*\/)?$distfile\)/, @distinfo) &&
+				!$use_no_checksum) {
+				&perror("WARN: $file: no MD5 entry found for $distfile.");
+			}
+		}
+
+		1;
 }
 
 #
@@ -680,9 +692,8 @@ sub checkplist {
 				"disallowed.");
 		}
 
-		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL} eq '' &&
-				$makevar{USE_LIBTOOL_VER} eq '') {
-			&perror("WARN: $file [$.]: installing libtool archives, ".
+		if ($_ =~ /\.la$/ && $makevar{USE_LIBTOOL_VER} eq '') {
+				&perror("WARN: $file [$.]: installing libtool archives, ".
 				"please use USE_LIBTOOL_VER in Makefile if possible.  ".
 				"See http://www.FreeBSD.org/gnome/docs/portlint.html ".
 				"for a way to completely eliminate .la files.");
@@ -957,6 +968,7 @@ sub checkmakefile {
 	my(@mman, @pman);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
+	my %deprecated = ();
 
 	open(IN, "< $file") || return 0;
 	$rawwhole = '';
@@ -1110,6 +1122,7 @@ sub checkmakefile {
 	#$whole =~ s/\n\n+/\n/g;
 	print "OK: checking NO_CHECKSUM.\n" if ($verbose);
 	if ($whole =~ /\nNO_CHECKSUM/) {
+		$use_no_checksum = 1;
 		my $lineno = &linenumber($`);
 		&perror("FATAL: $file [$lineno]: use of NO_CHECKSUM discouraged. ".
 			"it is intended to be a user variable.");
@@ -1177,6 +1190,27 @@ sub checkmakefile {
 	if ($whole =~ /\nUSE_GETTEXT/ && $whole !~ /def(?:ined)?\s*\(?WITHOUT_NLS\)?/) {
 			&perror("WARN: $file: Consider adding support for a WITHOUT_NLS ".
 					"knob to conditionally disable gettext support.");
+	}
+
+	#
+	# whole file: check for deprecated commands
+	#
+	print "OK: checking for deprecated macros.\n" if $verbose;
+	%deprecated = (
+			USE_LIBTOOL		=> 'USE_LIBTOOL_VER',
+			USE_AUTOCONF	=> 'USE_AUTOHEADER_VER',
+			USE_AUTOMAKE	=> 'USE_AUTOMAKE_VER',
+			WANT_LIBTOOL	=> 'WANT_LIBTOOL_VER',
+			WANT_AUTOCONF	=> 'WANT_AUTOCONF_VER',
+			WANT_AUTOMAKE	=> 'WANT_AUTOMAKE_VER',
+			USE_MESA		=> 'USE_GL',
+	);
+
+	for my $depmacro (keys %deprecated) {
+		if ($whole =~ /\n($depmacro)[+?:!]?=/) {
+			&perror("FATAL: $file: $depmacro is ".
+				"deprecated, use $deprecated{$1} instead");
+		}
 	}
 
 	#
@@ -1336,15 +1370,6 @@ pax perl printf rm rmdir ruby sed sh sort touch tr which xargs xmkmf
 	#
 	if ($whole =~ /^NO_SIZE[?:]?=/m) {
 		$use_no_size = 1;
-	}
-
-	#
-	# whole file: check for deprecated USE_MESA
-	#
-	if ($whole =~ /^USE_MESA[?:]?=/m) {
-		my $lineno = &linenumber($`);
-		&perror("WARN: $file [$lineno]: USE_MESA is deprecated".
-			". use USE_GL instead.");
 	}
 
 	#
@@ -1966,6 +1991,13 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 					&perror("WARN: $file: dependency to $1 ".
 							"listed in $j.  consider using ".
 							"USE_GETOPT_LONG.");
+				}
+
+				# check LIBLTDL
+				if ($m{'dep'} =~ /^(ltdl\.\d)+$/) {
+					&perror("WARN: $file: dependency to $1 ".
+						"listed in $j.  consider using ".
+						"USE_LIBLTDL.");
 				}
 
 				# check backslash in LIB_DEPENDS
