@@ -21,7 +21,7 @@ NO_WRKSUBDIR=	yes
 PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||} PORTNAME=${PORTNAME}
 
 do-build:
-	${JAVAC} -classpath ${WRKSRC} ${WRKSRC}/java_cup/*.java \
+	${SETENV} CLASSPATH=${WRKSRC} ${JAVAC} ${WRKSRC}/java_cup/*.java \
 		${WRKSRC}/java_cup/runtime/*.java
 	cd ${WRKSRC} && \
 		${JAR} cf ${PORTNAME}.jar java_cup/*.class \
