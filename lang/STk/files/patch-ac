@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Sep  4 05:21:32 1999
++++ Makefile.in	Wed Mar 15 23:46:41 2000
+@@ -118,7 +118,7 @@
+ 	(cd Extensions; $(MAKE) install prefix=$(root)$(prefix))
+ 	(cd Demos;   	$(MAKE) install root=$(root))
+ 	(cd Help;	$(MAKE) install prefix=$(root)$(prefix))
+-	(cd Doc;	$(MAKE) install prefix=$(root)$(prefix))
++	(cd Doc;	$(MAKE) install.man prefix=$(root)$(prefix))
+ 	(cd Stack;	$(MAKE) install prefix=$(root)$(prefix))
+ 
+ install.libs:
