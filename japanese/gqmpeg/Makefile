@@ -9,15 +9,11 @@ CATEGORIES=	japanese
 
 MAINTAINER=	katsu@iec.hiroshima-u.ac.jp
 
-PATCH_SITES=	http://www.gmkun.org/patches/
-PATCHFILES=	gqmpeg-0.15.0-jp_title.patch
-
 .if defined(WITH_SJIS_TAG)
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-*
 .endif
 
 MASTERDIR=	${.CURDIR}/../../audio/gqmpeg
-MD5_FILE=	${.CURDIR}/distinfo
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
@@ -32,5 +28,9 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and execute \"make WITH_SJIS_TAG=yes\""
 	@${ECHO_MSG}
 .endif
+
+pre-install:
+	@${REINPLACE_CMD} -Ee 's/(helvetica|lucida)-bold/mincho-medium/g ; \
+		s/helvetica|lucida/mincho/g;' ${WRKSRC}/skins/mrclean/skindata*
 
 .include "${MASTERDIR}/Makefile"
