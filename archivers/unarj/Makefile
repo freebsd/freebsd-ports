@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	unarj
-PORTVERSION=	2.43
-PORTREVISION=	1
+PORTVERSION=	2.65
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ache
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ache@FreeBSD.org
@@ -19,7 +19,7 @@ do-install:
 	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
 		${PREFIX}/share/doc/unarj
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} unarj ${PREFIX}/bin
-	cd ${WRKSRC}; ${INSTALL_DATA} unarj.doc technote.doc \
+	cd ${WRKSRC}; ${INSTALL_DATA} unarj.txt technote.txt \
 		${PREFIX}/share/doc/unarj
 
 .include <bsd.port.mk>

@@ -1,20 +1,7 @@
-This is an extract-only program which allows access to the contents of ARJ
-archives.
+This is an extract-only program which allows access to the contents of ARJ 
+archives. You cannot specify a base directory or select individual files 
+to extract.  UNARJ does not support empty directories or volume labels.  
+UNARJ is much slower than ARJ because ARJ is highly optimized using 
+assembly language.
 
-     COMMAND SYNTAX:
-
-     UNARJ has been modified to support the four commands: "e", "l", "t",
-     and "x".  These are similar to the ARJ version of these commands.
-     However, UNARJ does not create directories when using the "x" command.
-
-     Usage:  UNARJ archive[.arj]    (list archive)
-             UNARJ e archive        (extract archive)
-             UNARJ l archive        (list archive)
-             UNARJ t archive        (test archive)
-             UNARJ x archive        (extract with pathnames)
-
-     UNARJ does not accept any other commands or options.  You cannot
-     specify a base directory or select individual files to extract.  UNARJ
-     does not support empty directories or volume labels.  UNARJ is much
-     slower than ARJ because ARJ is highly optimized using assembly
-     language.
+WWW: http://www.arjsoftware.com/
