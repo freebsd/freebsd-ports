@@ -9,7 +9,7 @@
  
  
  /**************************************************************************
-@@ -263,6 +263,9 @@
+@@ -268,6 +268,9 @@
  /* Or if you prefer a more minimal setup, you could try something like: */
  /* OPTION_DEFINES = -DSHAPE -DVECTOR_BUTTONS */
  
@@ -19,7 +19,7 @@
  
  /***************************************************************************
   * The following section only needs to be changed if you do not want
-@@ -383,7 +386,7 @@
+@@ -388,7 +391,7 @@
  #endif
  
  #ifndef FvwmIconPath
@@ -34,9 +34,8 @@
  NullMake()
  
  #if InstallSample
--InstallNonExecFile(system.fvwmrc,$(FVWMDIR))
 +/* FreeBSD ports -- maybe a bug(typo?). reported. */
-+InstallNonExecFile(system$(FVWMRC),$(FVWMDIR))
+ InstallNonExecFile(system$(FVWMRC),$(FVWMDIR))
 +/* FreeBSD ports */
 +/* FreeBSD ports -- More informations are welcomed :-) */
 +InstallNonExecFile(decor_examples,$(FVWMDIR))
