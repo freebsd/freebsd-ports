@@ -10,3 +10,6 @@ avail||doc
 avail||ports
 avail||src
 avail||www
+unavail||src/sys/nfsclient
+unavail||src/sys/nfsserver
+avail|peter|src/sys
