@@ -2,6 +2,7 @@
 #
 
     SUBDIR += adns
+    SUBDIR += ares
     SUBDIR += bind8
     SUBDIR += bind84
     SUBDIR += bind9

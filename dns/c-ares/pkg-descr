@@ -1,0 +1,8 @@
+This is ares, an asynchronous resolver library.  It is intended for
+applications which need to perform DNS queries without blocking, or
+need to perform multiple DNS queries in parallel.  The primary
+examples of such applications are servers which communicate with
+multiple clients and programs with graphical user interfaces.
+
+FTP:	ftp://athena-dist.mit.edu/pub/ATHENA/ares/
+Author:	Greg Hudson <ghudson@mit.edu>
