@@ -32,6 +32,52 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cb470368-94d2-11d9-a9e0-0001020eed82">
+    <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ethereal</name>
+	<name>ethereal-lite</name>
+	<name>tethereal</name>
+	<name>tethereal-lite</name>
+	<range><ge>0.9.1</ge><lt>0.10.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An Ethreal Security Advisories reports:</p>
+	<blockquote cite="http://www.ethereal.com/appnotes/enpa-sa-00018.html">
+	  <p>Issues have been discovered in the following protocol
+	    dissectors:</p>
+	  <ul>
+	    <li>Matevz Pustisek discovered a buffer overflow in the
+	      Etheric dissector. CVE: CAN-2005-0704</li>
+	    <li>The GPRS-LLC dissector could crash if the "ignore
+	      cipher bit" option was enabled. CVE: CAN-2005-0705</li>
+	    <li>Diego Giago discovered a buffer overflow in the 3GPP2
+	      A11 dissector. This flaw was later reported by Leon
+	      Juranic. CVE: CAN-2005-0699</li>
+	    <li>Leon Juranic discovered a buffer overflow in the IAPP dissector.
+	      CVE: CAN-2005-0739</li>
+	    <li>A bug in the JXTA dissector could make Ethereal crash.</li>
+	    <li>A bug in the sFlow dissector could make Ethereal crash.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0699</cvename>
+      <cvename>CAN-2005-0704</cvename>
+      <cvename>CAN-2005-0705</cvename>
+      <cvename>CAN-2005-0739</cvename>
+      <url>http://www.ethereal.com/appnotes/enpa-sa-00018.html</url>
+    </references>
+    <dates>
+      <discovery>2005-03-09</discovery>
+      <entry>2005-03-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bcf27002-94c3-11d9-a9e0-0001020eed82">
     <topic>grip -- CDDB response multiple matches buffer overflow
       vulnerability</topic>
