@@ -1,0 +1,52 @@
+###
+### This file provides quick and dirty indications on how
+### to set up the mod_dav module with apache.
+###
+### Please refer to the main web site for more information
+### http://www.webdav.org/mod_dav/
+###
+
+
+###
+### This goes in the Global Environment section (Section 1)
+###
+### This should have been added automatically during the install process
+###
+
+LoadModule dav_module         libexec/apache/libdav.so
+
+AddModule mod_dav.c
+
+
+
+
+###
+### This goes in the main server configuration section (section 2)
+###
+### The lock database will have to be created in the /var/db directory
+### to do so, just do (as root):
+### # touch /var/db/DAVLock.dir
+### # touch /var/db/DAVLock.pag
+### # chown nobody.nobody /var/db/DAVLock.*
+### # chmod 640 /var/db/DAVLock.*
+###
+
+DAVLockDB /var/db/DAVLock
+DAVMinTimeout 600
+
+
+
+###
+### This is an example of per location/directory configuration
+###
+
+<Location />
+  DAV On
+  AuthType Basic
+  AuthName DAV
+  AuthUserFile dav.passwd
+  <LimitExcept GET HEAD OPTIONS>
+    require user webadmin
+  </LimitExcept>
+</Location>
+
