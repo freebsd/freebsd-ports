@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cdrom.com/pub/png/src/ \
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		png.3:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png
 
 MAKE_ARGS=	-E INSTALL
 MAKE_ENV=	INSTALL="${PREFIX}"
