@@ -30,7 +30,7 @@
   	echo Begin build for "${SYS_NAME}" on "${BUILD_DATE}":
   	$EXEC cat ${FILES0} "${TOP0}/${DIR}/${SUBDIR}/makedefs" \
   		"${TMP_TRAILER}" "${SKEL_DIR}/make_std.bd" \
-! 	| /usr/bin/make ${VERBOSE} -f - bootstrap DIR="${DIR}" SUBDIR="${SUBDIR}" \
+! 	| make ${VERBOSE} -f - bootstrap DIR="${DIR}" SUBDIR="${SUBDIR}" \
   		VPATH="${TOP0}/${DIR}/${SUBDIR}" CWD="${CWD}"
   	echo Done with build at `date`
   else

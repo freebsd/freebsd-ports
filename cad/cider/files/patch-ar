@@ -1,5 +1,5 @@
 --- spice/common/src/include/os_bsd.h.orig	Sat Jan 29 19:14:37 1994
-+++ spice/common/src/include/os_bsd.h	Sun Dec 26 19:05:36 1999
++++ spice/common/src/include/os_bsd.h	Thu Jan  6 12:33:20 2000
 @@ -6,14 +6,22 @@
   *	BSD and derivative systems
   */
@@ -25,7 +25,7 @@
  #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
  #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
  #define HAS_BSDTTY		/* <sgtty.h>				*/
-@@ -22,4 +30,10 @@
+@@ -22,4 +30,12 @@
  #define HAS_BSDRLIMIT		/* getrlimit( )				*/
  #define HAS_DUP2
  #define HAS_GETWD		/* getwd(buf)				*/
@@ -36,4 +36,6 @@
 +#define HAS_BSDTIME		/* gettimeofday( ) return time		*/
 +#define HAS_FLOAT_H		/* float.h				*/
 +#define HAS_STRCHR		/* strchr( ) instead of index( )	*/
++#define HAS_INTWAITSTATUS	/* wait(3)  takes an int *, not a union */
++#undef HAS_UNIX_SEGMENT_HACK
 +#endif

@@ -27,22 +27,3 @@
   S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
   
   #	INSTALL_DIRS lists the directories that need to be created before
-*** spice/common/util/build.orig	Sat Jan 29 19:16:26 1994
---- spice/common/util/build	Sun Dec 12 14:38:33 1999
-***************
-*** 96,102 ****
-  
-  TMP_LEADER="${TMP_DIR}/buildl$$"
-  TMP_TRAILER="${TMP_DIR}/buildt$$"
-! trap 'rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1' 1 2 3 4 6 7 8 9 10 12 13 14 15
-  echo > "${TMP_TRAILER}"
-  BAD=false
-  DEBUG=
---- 96,102 ----
-  
-  TMP_LEADER="${TMP_DIR}/buildl$$"
-  TMP_TRAILER="${TMP_DIR}/buildt$$"
-! trap 'rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1' 1 2 3 4 6 7 8 10 12 13 14 15
-  echo > "${TMP_TRAILER}"
-  BAD=false
-  DEBUG=

@@ -25,8 +25,8 @@ pre-patch:
 	@${CP} -f ${WRKSRC}/spice/common/lib/helpdir/spice.txt ${WRKSRC}/cider/common/lib/helpdir/spice.txt
 
 post-patch:
-	@${LN} -fs ${WRKSRC}/spice/common/util/makelib.sh ${WRKSRC}/cider/common/util
-	@${LN} -fs ${WRKSRC}/spice/common/src/lib/sparse/spdefs.h ${WRKSRC}/cider/common/src/include
+	@${LN} -fs ../../../spice/common/util/makelib.sh ${WRKSRC}/cider/common/util
+	@${LN} -fs ../../../../spice/common/src/lib/sparse/spdefs.h ${WRKSRC}/cider/common/src/include
 	@${CP} -f ${FILESDIR}/Makefile.spice ${WRKSRC}/spice/common/Makefile
 	@${CP} -f ${FILESDIR}/Makefile.cider ${WRKSRC}/cider/common/Makefile
 	@${CP} -f ${FILESDIR}/FreeBSD ${WRKSRC}/spice/common/conf
