@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jun 13 10:53:27 2001
-+++ Makefile	Sat Jul  7 11:33:58 2001
+--- Makefile.orig	Fri Jun 13 05:06:46 2003
++++ Makefile	Wed Jul 16 12:53:25 2003
 @@ -11,19 +11,19 @@
  #AR = ar
  #RANLIB = ranlib
@@ -31,7 +31,12 @@
  #
  # If you want to build with debugging, use below.
  #CFLAGS += -g -Wall -Wformat -Wstrict-prototypes -Wmissing-prototypes 
-@@ -68,11 +68,11 @@
+@@ -64,15 +64,15 @@
+ #CFLAGS += -DDONTSTRICTDATEFORMAT
+ #
+ # If you want to use IPv6, use below.  It may work.
+-#CFLAGS += -DINET6
++CFLAGS += -DINET6
  #LIBS += -L/usr/local/v6/lib -linet6
  #
  # This is the directory where the news is stored.

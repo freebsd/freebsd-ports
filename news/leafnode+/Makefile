@@ -7,7 +7,7 @@
 
 PORTNAME=	leafnode+
 PORTVERSION=	2.15
-CATEGORIES=	news
+CATEGORIES=	news ipv6
 MASTER_SITES=	http://www.io.com/~kazushi/leafnode+/ \
 		ftp://ftp.io.com/pub/usr/kazushi/leafnode+/
 
