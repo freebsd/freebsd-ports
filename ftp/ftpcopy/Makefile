@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpcopy
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.7
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
@@ -17,6 +17,7 @@ USE_PERL5_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/web/${DISTNAME}
 
+NO_SIZE=	yes
 MAN1=		ftpcopy.1 ftpcp.1 ftpls.1
 
 pre-build:
