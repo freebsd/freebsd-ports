@@ -7,35 +7,47 @@
 #
 
 PORTNAME=	goblin
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graph Object Library for Network Programming Problems
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
+CONFLICTS=	ImageMagick-[0-9]* display-*
+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" \
+		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		LD="${CXX}" LIBS="-lm ${LDFLAGS}" LISShared="-lm ${LDFLAGS}" \
+		libtcl=83 libtk=83 prefix=${PREFIX}
+ALL_TARGET=	all goblin.a glpk.a
 PLIST_SUB+=	VERSION=${PORTVERSION:R}
 
 CFLAGS+=	-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 \
 		-I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
+WISH=		${LOCALBASE}/bin/wish8.3
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500035
+CXXFLAGS+=	-fhuge-objects
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|g++ -c .* -Iinclude|$$(CXX) -c $$(CXXFLAGS) -Iinclude|g ; \
-		 s|g++ -lm|$$(CXX) -lm $$(LDFLAGS)|g ; \
-		 s|8\.3|83|g ; \
-		 s|/usr/include|$$(PREFIX)/include|g ; \
-		 s|/usr/lib|$$(PREFIX)/lib|g ; \
-		 s|/usr/bin|$$(PREFIX)/bin|g ; \
-		 s|-lpthread||g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-lpthread||g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/bin/wish|${WISH}|g' ${WRKSRC}/display
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
-.include <bsd.port.mk>
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/gosh
+
+.include <bsd.port.post.mk>
