@@ -3,11 +3,13 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.22 1997/12/24 01:21:37 alex Exp $
+# $Id: Makefile,v 1.23 1998/03/22 16:45:18 andreas Exp $
 
-DISTNAME=	postgresql-6.2.1
+PATCH_DEBUG=	yes
+
+DISTNAME=	postgresql-6.3.2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.freebsd.org/~andreas/download/
+MASTER_SITES=	ftp://ftp.postgresql.org/pub/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
@@ -16,6 +18,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 .if defined(USE_TCL)
 MAKE_ENV=	USE_TCL=true TCL_INCDIR=${PREFIX}/include/tcl8.0
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
+WITH_TCL=	--with-tcl
 .endif
 
 NO_PACKAGE=	"Requires pgsql uid"
@@ -26,26 +29,28 @@ MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		--enable-locale \
-		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'`
+		--with-template=`uname -s | ${TR} '[A-Z]' '[a-z]'` \
+		--with-includes=/usr/local/include ${WITH_TCL} \
+		--with-libraries=/usr/local/lib
 
 MAN1=		cleardbdir.1 createdb.1 createuser.1 destroydb.1 \
-		destroyuser.1 initdb.1 ipcclean.1 monitor.1 pg_dump.1 \
-		pg_dumpall.1 pg_passwd.1 pgintro.1 postgres.1 \
+		destroyuser.1 ecpg.1 initdb.1 ipcclean.1 initlocation.1 \
+		pg_dump.1 pg_dumpall.1 pg_passwd.1 pgintro.1 postgres.1 \
 		postmaster.1 psql.1
 MAN3=		catalogs.3 large_objects.3 libpq.3 oracle_compat.3 pgbuiltin.3
 MAN5=		bki.5 page.5 pg_hba.conf.5
-MANL=		abort.l alter_table.l begin.l close.l cluster.l \
+MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 		commit.l copy.l create_aggregate.l create_database.l \
-		create_function.l create_index.l create_operator.l \
-		create_rule.l create_sequence.l create_table.l \
-		create_trigger.l create_type.l create_version.l \
-		create_view.l declare.l delete.l drop.l drop_aggregate.l \
-		drop_database.l drop_function.l drop_index.l drop_operator.l \
-		drop_rule.l drop_sequence.l drop_table.l drop_trigger.l \
-		drop_type.l drop_view.l end.l explain.l fetch.l grant.l \
-		insert.l listen.l load.l move.l notify.l purge.l rename.l \
-		reset.l revoke.l rollback.l select.l set.l show.l sql.l \
-		update.l vacuum.l
+		create_function.l create_index.l create_language.l \
+		create_operator.l create_rule.l create_sequence.l \
+		create_table.l create_trigger.l create_type.l create_user.l \
+		create_version.l create_view.l declare.l delete.l drop.l \
+		drop_aggregate.l drop_database.l drop_function.l drop_index.l \
+		drop_language.l drop_operator.l drop_rule.l drop_sequence.l \
+		drop_table.l drop_trigger.l drop_type.l drop_user.l \
+		drop_view.l end.l explain.l fetch.l grant.l insert.l listen.l \
+		load.l lock.l move.l notify.l reset.l revoke.l \
+		rollback.l select.l set.l show.l sql.l update.l vacuum.l
 
 MANPREFIX=	${PREFIX}/pgsql
 
