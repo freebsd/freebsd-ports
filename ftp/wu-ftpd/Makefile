@@ -8,7 +8,7 @@
 # it is changed from previous versions
 
 PORTNAME=	wu-ftpd
-PORTVERSION=	2.6.0
+PORTVERSION=	2.6.1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 
