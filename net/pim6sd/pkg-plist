@@ -1,2 +1,3 @@
+etc/pim6sd.conf
 sbin/pim6sd
 sbin/pim6stat
