@@ -5163,6 +5163,7 @@ logsurfer	ports/misc/logsurfer
 logtool		ports/sysutils/logtool
 logtool-devel	ports/sysutils/logtool-devel
 logtools	ports/www/logtools
+long-exposure-tools	ports/graphics/long-exposure-tools
 lookat		ports/sysutils/lookat
 lookout		ports/mail/lookout
 lookupd		ports/sysutils/lookupd
