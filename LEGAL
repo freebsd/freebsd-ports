@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.125 1999/01/10 15:49:33 dirk Exp $
+# $Id: LEGAL,v 1.126 1999/01/28 08:28:08 fenner Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -86,6 +86,7 @@ rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 rman-2.4.tar.Z		ports/misc/rman		Restrictive copyright
 rman-3.*		ports/textproc/rman	Don't sell for profit
 rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
+rv50_linux20.tar.gz	ports/audio/linux-realplayer	Redistribution not allowed.
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 sdr-2.5*		ports/mbone/sdr25	Crypto; export-controlled
