@@ -21,12 +21,14 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
 MAN1=		junkbuster.1
 
 post-patch:
-	@${PERL} -pi -e 's:\r::' ${WRKSRC}/*
+	@${REINPLACE_CMD} -e "s:`/usr/bin/printf '\r'`::" ${WRKSRC}/*
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin/junkbuster

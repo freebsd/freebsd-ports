@@ -15,13 +15,14 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_QT_VER=	1
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 pre-patch:
-	@find ${WRKSRC} -type f | xargs ${PERL} -pi -e "s|\r\n|\n|g"
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|`/usr/bin/printf '\r'`||g"
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cpp
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xlines ${PREFIX}/bin

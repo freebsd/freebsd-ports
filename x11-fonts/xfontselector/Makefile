@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-4
 
 MAINTAINER=	kde@freebsd.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
 MAKE_ENV=	CXX="${CXX} ${QTCPPFLAGS} -I${X11BASE}/include" \
@@ -24,9 +25,9 @@ ALL_TARGET=	# empty
 MAN1=	xfontselector.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CXX,#CXX,g ; s,^CXXFLAGS,#CXXFLAGS,g ; \
+	@${REINPLACE_CMD} -e "s,^CXX,#CXX,g ; s,^CXXFLAGS,#CXXFLAGS,g ; \
 		s,^LIBS=,LIBS+=,g ; s,-lqt,-lqt2,g ; \
-		s,\tmoc,\t${MOC},g" ${WRKSRC}/Makefile
+		s,moc ,${MOC} ,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin

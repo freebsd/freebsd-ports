@@ -29,6 +29,7 @@ CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${DB_INC}"
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 MAN1=	dbtool.1
 
@@ -42,8 +43,8 @@ post-extract:
 
 post-patch:
 .for file in dbtool.cc engine.cc engine.h
-	@${PERL} -pi -e "s,stdin,input,g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s,stdin,input,g" ${WRKSRC}/${file}
 .endfor
-	@${PERL} -pi -e "s,==,=,g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,==,=,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

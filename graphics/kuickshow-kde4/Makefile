@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
+USE_REINPLACE=	yes
 USE_IMLIB=	yes
 USE_KDELIBS_VER=	2
 USE_GMAKE=	yes
@@ -24,7 +25,7 @@ CONFIGURE_ENV+=	KDEDIR="${LOCALBASE}"
 CONFIGURE_ARGS+=	--with-imlib-config=${X11BASE}/bin
 
 post-patch:
-	@${PERL} -pi -e 's,-O2,,g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-O2,,g' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:

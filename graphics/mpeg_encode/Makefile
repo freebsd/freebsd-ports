@@ -15,11 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 MAN1=		mpeg_encode.1
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
 	@(${GREP} -R -l "malloc.h" ${WRKSRC}/* | \
-	    ${XARGS} ${PERL} -pi -e "s/malloc.h/stdlib.h/")
+	    ${XARGS} ${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/")
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mpeg_encode ${PREFIX}/bin

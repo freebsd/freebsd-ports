@@ -20,6 +20,7 @@ USE_MESA=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 LIBTOOLFILES=	configure vx68k-gtk/configure
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -31,6 +32,6 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib -lGL -lGLU -lglut \
 		${PTHREAD_LIBS}
 
 post-patch:
-	@${PERL} -pi -e "s,Bison ,Bison,g" ${WRKSRC}/vx68k-gtk/configure
+	@${REINPLACE_CMD} -e "s,Bison ,Bison,g" ${WRKSRC}/vx68k-gtk/configure
 
 .include <bsd.port.mk>

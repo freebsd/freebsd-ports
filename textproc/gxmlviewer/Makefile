@@ -16,11 +16,12 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

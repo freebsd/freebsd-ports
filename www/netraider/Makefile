@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	kde@freebsd.org
 
 USE_QT_VER=	2
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -23,14 +24,14 @@ CFLAGS+=	-DBSD
 SUBST=		${WRKSRC}/konq-embed/src/Makefile.in
 
 pre-configure:
-	find ${WRKSRC} -name Makefile.am | xargs ${PERL} -pi -e \
+	${FIND} ${WRKSRC} -name Makefile.am | ${XARGS} ${REINPLACE_CMD} -e \
 		"s@-lqt@-lqt @g; s@ -lqt @ -lqt2@g"
 	${CP} ${WRKSRC}/konq-embed/src/konqueror ${WRKSRC}/konq-embed/src/konq-embedded
-	${CP} ${SUBST} ${SUBST}.bak && ${SED} \
-		-e 's,^bindir = $$(prefix),bindir= ${PREFIX}/bin,g' \
+	${REINPLACE_CMD} \
+		-e 's,^bindir = \$$(prefix),bindir= ${PREFIX}/bin,g' \
 		-e 's,bin_SCRIPTS = konqueror,bin_SCRIPTS= konq-embedded,g' \
 		-e 's,-lqt,-lqt ,g' \
 		-e 's, -lqt , -lqt2,g' \
-		${SUBST}.bak > ${SUBST}
+		${WRKSRC}/konq-embed/src/Makefile.in
 
 .include <bsd.port.mk>

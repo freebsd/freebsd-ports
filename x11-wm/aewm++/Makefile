@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sapphire
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 CXXFLAGS+=	-I${X11BASE}/include
@@ -22,7 +23,7 @@ LIBS+=		-L${X11BASE}/lib
 MAN1=	aewm++.1x
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,^prefix,#prefix,g ; s,prefix,PREFIX,g ; \
 		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" ${WRKSRC}/Makefile
 

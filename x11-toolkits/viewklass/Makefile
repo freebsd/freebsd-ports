@@ -15,11 +15,12 @@ DISTNAME=	ViewKlass-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s/^CFLAGS=/CFLAGS+=/g ; s/^CXXFLAGS=/CXXFLAGS+=/g ; \
+	@${REINPLACE_CMD} -e "s/^CFLAGS=/CFLAGS+=/g ; s/^CXXFLAGS=/CXXFLAGS+=/g ; \
 		s/-g -Wall//g" ${WRKSRC}/Makefile.in
 
 post-install:

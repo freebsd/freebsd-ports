@@ -17,10 +17,12 @@ DISTFILES=	w3c-libwww-4.0D.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/WWW
 
 post-patch:
-	@${PERL} -pi -e 's,strcasestr,strcasestr_,' \
+	@${REINPLACE_CMD} -e 's,strcasestr,strcasestr_,' \
 		${WRKSRC}/Library/Implementation/HTString.*
 
 do-build:

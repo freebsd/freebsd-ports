@@ -19,6 +19,8 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 		tex:${PORTSDIR}/print/teTeX
 .endif
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		hyphen_show.1 xtem.1
@@ -30,7 +32,7 @@ post-extract:
 	@${CP} ${FILESDIR}/Makefile ${FILESDIR}/exclude-list ${WRKSRC}
 
 post-patch:
-	@${PERL} -pi.bak -e \
+	@${REINPLACE_CMD} -e \
 		"s|%%TCLSH%%|${PREFIX}/bin/tclsh8.2|g; \
 		 s|%%WISH%%|${PREFIX}/bin/wish8.2|g; \
 		 s|%%XTEMPATH%%|${PREFIX}/share/xtem|g" ${WRKSRC}/xtem

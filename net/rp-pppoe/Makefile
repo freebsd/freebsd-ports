@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 BROKEN=	Does not work well with FreeBSD\'s pppd, yet.\
 	Need help to be fixed
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/src
@@ -33,18 +34,18 @@ SCRIPT_FILES=	adsl-connect adsl-init adsl-setup adsl-start \
 		adsl-status adsl-stop
 
 post-patch:
-	@${PERL} -pi -ne "s!/etc/ppp!${PREFIX}/etc/ppp!g" ${WRKSRC}/man/*
-	@${PERL} -pi -ne 's!/etc/ppp!\$$\(prefix)/etc/ppp!g' \
+	@${REINPLACE_CMD} -e "s!/etc/ppp!${PREFIX}/etc/ppp!g" ${WRKSRC}/man/*
+	@${REINPLACE_CMD} -e 's!/etc/ppp!$$(prefix)/etc/ppp!g' \
 		${WRKSRC}/src/Makefile.in
 .for file in adsl-connect adsl-init adsl-setup adsl-start
-	@${PERL} -pi -ne 's!/etc/+ppp!\$$\{prefix}/etc/ppp!g' \
+	@${REINPLACE_CMD} -e 's!/etc/+ppp!$${prefix}/etc/ppp!g' \
 		${WRKSRC}/scripts/${file}.in
 .endfor
-	@${PERL} -pi -ne 's!pty!tty!g' ${WRKSRC}/scripts/adsl-connect.in
-	@${PERL} -pi -ne 's!/var/lock/subsys/adsl!/var/tmp/rp_pppoe_adsl!g' \
+	@${REINPLACE_CMD} -e 's!pty!tty!g' ${WRKSRC}/scripts/adsl-connect.in
+	@${REINPLACE_CMD} -e 's!/var/lock/subsys/adsl!/var/tmp/rp_pppoe_adsl!g' \
 		${WRKSRC}/scripts/adsl-init.in
 .for file in adsl-status adsl-stop.in
-	@${PERL} -pi -ne "s!/etc/ppp!${PREFIX}/etc/ppp!g" \
+	@${REINPLACE_CMD} -e "s!/etc/ppp!${PREFIX}/etc/ppp!g" \
 		${WRKSRC}/scripts/${file}
 .endfor
 

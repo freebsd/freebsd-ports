@@ -19,10 +19,11 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e "s|xml-config|xml2-config|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|xml-config|xml2-config|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -47,6 +47,7 @@ APACHE_VERSION=		1.3.12
 APACHE_SSL_VERSION=	1.40
 
 USE_OPENSSL=	YES
+USE_PERL5=	YES
 
 .include <bsd.port.pre.mk>
 

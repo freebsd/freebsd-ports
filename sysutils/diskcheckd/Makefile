@@ -20,6 +20,7 @@ STARTUP=	diskcheckd.sh
 MAN8=		diskcheckd.8
 MLINKS=		diskcheckd.8 diskcheckd.conf.5
 
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 
 CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
@@ -38,8 +39,8 @@ do-extract:
 .endfor
 
 do-patch:
-	@${PERL} -pi.fbsd -e 's|/usr/local/sbin|${PREFIX}/sbin|g' ${WRKSRC}/Makefile
-	@${PERL} -pi.fbsd -e 's|/usr/local/etc/diskcheckd.conf|${PREFIX}/etc/diskcheckd.conf|g' ${WRKSRC}/diskcheckd.8
+	@${REINPLACE_CMD} -e 's|/usr/local/sbin|${PREFIX}/sbin|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/local/etc/diskcheckd.conf|${PREFIX}/etc/diskcheckd.conf|g' ${WRKSRC}/diskcheckd.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diskcheckd ${PREFIX}/sbin

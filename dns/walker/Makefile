@@ -15,10 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/net/bind9
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,\`dig,\`${LOCALBASE}/bin/dig,g" ${WRKSRC}/walker
+	@${REINPLACE_CMD} -e 's,`dig,`${LOCALBASE}/bin/dig,g' ${WRKSRC}/walker
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/walker ${PREFIX}/bin

@@ -24,10 +24,11 @@ MAINTAINER=	ports@FreeBSD.org
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 
 pre-configure:
 .for file in jnames.c xklock.h
-	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:" ${WRKSRC}/${file}
 .endfor
 
 do-install:

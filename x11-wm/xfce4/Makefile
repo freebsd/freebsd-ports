@@ -18,6 +18,7 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 USE_XPM=	yes
@@ -56,13 +57,13 @@ pre-everything::
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|=aclocal|=${TRUE}|g ; \
+	@${REINPLACE_CMD} -e 's|=aclocal|=${TRUE}|g ; \
 		 s|=autoconf|=${TRUE}|g ; \
 		 s|=automake|=${TRUE}|g ; \
 		 s|=autoheader|=${TRUE}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
-	@${PERL} -pi -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
+	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
+	@${REINPLACE_CMD} -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
 
 post-install:
 	@${LN} -sf ${PREFIX}/share/xfce/help/html/images \

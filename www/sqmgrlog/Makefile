@@ -12,12 +12,13 @@ MASTER_SITES=	http://web.onda.com.br/orso/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-prefix=${PREFIX} --with-gcc
 
 post-patch:
-	@${PERL} -pi -e 's,LDFLAGS="-g",LDFLAGS="",' ${WRKSRC}/configure
-	@${PERL} -pi -e 's,/usr/local/etc/httpd/htdocs/,${PREFIX}/www/data/,; \
+	@${REINPLACE_CMD} -e 's,LDFLAGS="-g",LDFLAGS="",' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,/usr/local/etc/httpd/htdocs/,${PREFIX}/www/data/,; \
 		s,mailx,mail,' ${WRKSRC}/sqmgrlog.conf ${WRKSRC}/log.c
 
 post-install:

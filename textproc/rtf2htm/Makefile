@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.geocities.com/tuorfa/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile
 
@@ -20,8 +22,8 @@ MANCOMPRESSED=	no
 MAN1=	rtf2htm.1
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/${MAKEFILE}
-	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/malloc.c
+	@${REINPLACE_CMD} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/malloc.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rtf2htm ${PREFIX}/bin

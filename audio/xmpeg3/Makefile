@@ -17,11 +17,13 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|\@\@PREFIX\@\@|${PREFIX}|;" ${WRKSRC}/xmpeg3
+	@${REINPLACE_CMD} -e 's|@@PREFIX@@|${PREFIX}|' ${WRKSRC}/xmpeg3
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/xmpeg3 ${PREFIX}/bin

@@ -12,6 +12,7 @@ MASTER_SITES=	http://plib.sourceforge.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
@@ -20,6 +21,6 @@ CONFIGURE_ENV=	LIBS="-L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-GL=${X11BASE} --with-x
 
 post-patch:
-	@${PERL} -pi -e "s| -O6 -Wall||g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s| -O6 -Wall||g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -22,6 +22,7 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
 DIST_SUBDIR=	wdm
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_AUTOMAKE_VER=14
 AUTOMAKE_ARGS=	--include-deps
@@ -62,7 +63,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/*.man
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/*.man
 
 pre-install:
 	@if [ -e ${PREFIX}/lib/X11/wdm/wdm-config ]; then \

@@ -18,13 +18,14 @@ RUN_DEPENDS=	${X11BASE}/lib/libXaw3d.a:${PORTSDIR}/x11-toolkits/Xaw3d
 
 WRKSRC=		${WRKDIR}/acfax
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|setup_fax\(120, 288|setup_fax(120, 576|' \
+	@${REINPLACE_CMD} -e 's|setup_fax(120, 288|setup_fax(120, 576|' \
 		${WRKSRC}/acfax.c
-	@${PERL} -pi -e 's|ixoc = 288|ixoc = 576|' ${WRKSRC}/fax_funcs.c
-	@${PERL} -pi -e 's|regex.h|gnuregex.h|' ${WRKSRC}/RegExp.h
-	@${PERL} -pi -e 's|-lm|-lm -lgnuregex|' ${WRKSRC}/Imakefile
+	@${REINPLACE_CMD} -e 's|ixoc = 288|ixoc = 576|' ${WRKSRC}/fax_funcs.c
+	@${REINPLACE_CMD} -e 's|regex.h|gnuregex.h|' ${WRKSRC}/RegExp.h
+	@${REINPLACE_CMD} -e 's|-lm|-lm -lgnuregex|' ${WRKSRC}/Imakefile
 
 post-configure:
 		${TOUCH} ${WRKSRC}/acfax.man

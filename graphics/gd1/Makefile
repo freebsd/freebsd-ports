@@ -29,6 +29,7 @@ BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 
 FREETYPE_CONFIG?=       ${LOCALBASE}/bin/freetype-config
 
+USE_REINPLACE=	yes
 MAKE_ENV=	FREETYPE_CONFIG="${FREETYPE_CONFIG}"
 INSTALLS_SHLIB=	yes
 
@@ -49,7 +50,7 @@ post-extract:
 		> ${WRKSRC}/gd_gif_in.c
 
 post-patch:
-	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/gdcache.h
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/gdcache.h
 
 post-install:
 .if !defined(NOPORTDOCS)

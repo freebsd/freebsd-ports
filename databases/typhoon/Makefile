@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	ddlp.1
@@ -25,7 +26,7 @@ MAN3=	d_close.3 d_crget.3 d_crread.3 d_crset.3 d_dbdpath.3 d_dbfpath.3 \
 	d_recread.3 d_recwrite.3 d_setfiles.3
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/util/dbdview.c
 
 post-install:

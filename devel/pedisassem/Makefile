@@ -16,10 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 
 post-patch:
-	@${PERL} -pi -e "s|\x0D|| ; s|malloc\.h|stdlib.h|" \
+	@${REINPLACE_CMD} -e "s|`/usr/bin/printf '\r'`|| ; s|malloc\.h|stdlib.h|" \
 		${WRKSRC}/*.[ch] ${WRKSRC}/readme.txt
 
 post-install:

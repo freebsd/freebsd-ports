@@ -17,8 +17,10 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/src/configure ${WRKSRC}/src/broker/broker.h \
 		${WRKSRC}/src/gatherer/essence/main.c \
 		${WRKSRC}/src/gatherer/include/essence.h \

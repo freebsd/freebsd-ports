@@ -18,15 +18,16 @@ MAINTAINER=	ports@FreeBSD.org
 FORBIDDEN=	"Installs 88 setuid root applications; disaster waiting to happen"
 
 USE_MOTIF=	yes
+USE_REINPLACE=	yes
 MAKE_ENV=	BINMODE=${BINMODE} \
 		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 post-patch:
-	@find ${WRKSRC} -name Makefile | xargs \
-		${PERL} -pi -e "s,^(INST(ALL)?DIR *)= .*,\1= ${PREFIX}/bin,g ; \
-				s,cp -p,cp,g"
-	@${PERL} -pi -e "s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/Include.mk.freebsd
-	@${PERL} -pi -e "s,^SBINDIR  = .*,SBINDIR  = ${PREFIX}/sbin,g" ${WRKSRC}/afd_mon/Makefile
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -E -e 's,^(INST(ALL)?DIR *)= .*,\1= ${PREFIX}/bin,g ; \
+				s,cp -p,cp,g'
+	@${REINPLACE_CMD} -e "s,%%CFLAGS%%,${CFLAGS},g" ${WRKSRC}/Include.mk.freebsd
+	@${REINPLACE_CMD} -e "s,^SBINDIR  = .*,SBINDIR  = ${PREFIX}/sbin,g" ${WRKSRC}/afd_mon/Makefile
 
 pre-build:
 	@(cd ${WRKSRC} ; ${RM} -f Include.mk ; \
