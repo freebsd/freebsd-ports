@@ -3,12 +3,12 @@
 # Date created:				15 Jan 1999
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/17 20:19:18 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/27 08:31:52 fenner Exp $
 #
 
 DISTNAME=	gnome-print-0.0.3
 PKGNAME=	gnomeprint-0.0.3
-CATEGORIES=	print
+CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-print
 
@@ -23,10 +23,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include \
-		-I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		GTK_CONFIG="${X11BASE}/bin/gtk11d-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib11d-config" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
 
 post-install:
