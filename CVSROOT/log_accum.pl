@@ -654,6 +654,8 @@ foreach my $tag ( keys %removed_files ) {
 
 #
 # Check whether this is the last directory.  If not, quit.
+# The last directory name was written by commit_prep.pl on
+# the way in.
 #
 if (-e "$LAST_FILE.$PID") {
 	$_ = &read_line("$LAST_FILE.$PID");
