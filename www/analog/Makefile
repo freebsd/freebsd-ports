@@ -30,8 +30,8 @@ ALL_TARGET=	analog
 
 do-install:
 	${MKDIR} ${PREFIX}/share/analog/lang
-	${MKDIR} ${PREFIX}/www/data/images
-	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/www/data/images
+	${MKDIR} ${PREFIX}/share/analog/images
+	${INSTALL_DATA} ${WRKSRC}/images/* ${PREFIX}/share/analog/images
 	${INSTALL_DATA} ${WRKSRC}/lang/* ${PREFIX}/share/analog/lang
 	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
 .if !exists(${PREFIX}/etc/analog.cfg)
