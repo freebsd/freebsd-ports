@@ -325,7 +325,7 @@ lib/mule/19.28/lisp/egg-keymap.el
 lib/mule/19.28/lisp/egg.el
 lib/mule/19.28/lisp/egg.elc
 lib/mule/19.28/lisp/eggrc-sj3
-lib/mule/19.28/lisp/eggrc-v41
+lib/mule/19.28/lisp/eggrc-wnn
 lib/mule/19.28/lisp/ehelp.el
 lib/mule/19.28/lisp/ehelp.elc
 lib/mule/19.28/lisp/electric.el
@@ -478,6 +478,7 @@ lib/mule/19.28/lisp/lisp.elc
 lib/mule/19.28/lisp/lmenu.el
 lib/mule/19.28/lisp/lmenu.elc
 lib/mule/19.28/lisp/loaddefs.el
+lib/mule/19.28/lisp/loaddefs.elc
 lib/mule/19.28/lisp/loadhist.el
 lib/mule/19.28/lisp/loadhist.elc
 lib/mule/19.28/lisp/loadup.el
@@ -807,8 +808,8 @@ lib/mule/19.28/lisp/vt100-led.elc
 lib/mule/19.28/lisp/window.el
 lib/mule/19.28/lisp/window.elc
 lib/mule/19.28/lisp/wnn-client.el
-lib/mule/19.28/lisp/wnn4-egg.el
-lib/mule/19.28/lisp/wnn4-egg.elc
+lib/mule/19.28/lisp/wnn-egg.el
+lib/mule/19.28/lisp/wnn-egg.elc
 lib/mule/19.28/lisp/ws-mode.el
 lib/mule/19.28/lisp/ws-mode.elc
 lib/mule/19.28/lisp/x-menu.el

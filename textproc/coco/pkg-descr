@@ -1,4 +1,4 @@
-This is mule-2.2.2, a multilingual editor based on emacs-19.28.
+This is mule-2.3, a multilingual editor based on emacs-19.28.
 
 This package is not built with any particular language support.  If
 you want a built-in input method, look into the mule ports in language-
