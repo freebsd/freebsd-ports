@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,11 +15,6 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4
-
-FORBIDDEN=	"Multiple security vulnerabilities in current version: " \
-		http://online.securityfocus.com/archive/1/307212 \
-		http://online.securityfocus.com/bid/6634 \
-		http://online.securityfocus.com/archive/1/302199
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
@@ -43,13 +38,15 @@ PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 #
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
-EXCEPTFILES=	install.php upgrade.php update_to_${PORTVERSION:S/.//g}.php
+EXCEPTFILES=	${PREFIX}/${PHPBBDIR}/install/install.php \
+		${PREFIX}/${PHPBBDIR}/install/upgrade.php \
+		${PREFIX}/${PHPBBDIR}/install/update_to_${PORTVERSION:S/.//g}.php
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
 	@ ${CAT} ${PKGOPTS}
 
-post-extract:
+pre-everything::
 .if !defined(BATCH)
 	@ ${TEST} -r ${PKGOPTS} && \
 	  (${ECHO_MSG} '-------------------------------------------------------------------------'; \
@@ -81,8 +78,8 @@ do-install:
 	@ cd ${WRKSRC}/contrib && ${INSTALL_DATA} * ${DATADIR}/contrib
 
 post-install:
-	@ cd ${DATADIR} && ${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
-	  ${EXCEPTFILES} ${PREFIX}/${PHPBBDIR}
+#	@ cd ${DATADIR} && ${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
+#	  ${EXCEPTFILES} ${PREFIX}/${PHPBBDIR}
 .if !defined(NOPORTOCS)
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC}/docs && ${FIND} * -type f -maxdepth 0 \! -name \*.bak \
