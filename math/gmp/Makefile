@@ -17,6 +17,7 @@ DISTNAME=	gmp-${PORTVERSION}
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A free library for arbitrary precision arithmetic
 
+CONFLICTS=	libgmp-2*
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -28,6 +29,6 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
-		${XARGS} ${REINPLACE_CMD} -e 's|--tag=CC||g' 
+		${XARGS} ${REINPLACE_CMD} -e 's|--tag=CC||g'
 
 .include <bsd.port.mk>
