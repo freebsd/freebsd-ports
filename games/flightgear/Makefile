@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	FlightGear
-PORTVERSION=	0.9.1
-PORTREVISION=	3
-BASEVERSION=	0.9.1a
+PORTVERSION=	0.9.2
+BASEVERSION=	${PORTVERSION}
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 		ftp://ftp.flightgear.org/pub/fgfs/Shared/
 BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
@@ -39,9 +37,14 @@ CONFIGURE_ARGS=	--with-threads
 
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
-pre-install:
-	(cd ${PREFIX}/share && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	    ${DISTDIR}/${BASEFILE} ${EXTRACT_AFTER_ARGS})
-	(cd ${PREFIX}/share/${PORTNAME} && ${MV} data/* . && ${RMDIR} data)
+do-install:
+	@${ECHO} ">> Installing program"
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
+	@${ECHO} ">> Installing data"
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755 ${DATADIR}
+	@(cd ${WRKSRC}/data && ${FIND} . -type d | (cd ${DATADIR} &&\
+		${XARGS} ${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0755))
+	@(cd ${WRKSRC}/data && ${FIND} . -type f |\
+		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR})
 
 .include <bsd.port.mk>
