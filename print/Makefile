@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.68 1998/10/30 14:17:49 kuriyama Exp $
+# $Id: Makefile,v 1.69 1998/11/06 08:13:30 tg Exp $
 #
 
     SUBDIR += a2ps
@@ -41,7 +41,12 @@
     SUBDIR += offix-printer
     SUBDIR += p5-FreeType
     SUBDIR += p5-FreeTypeWrapper
-    SUBDIR += pkfonts
+    SUBDIR += pkfonts118
+    SUBDIR += pkfonts240
+    SUBDIR += pkfonts300
+    SUBDIR += pkfonts360
+    SUBDIR += pkfonts400
+    SUBDIR += pkfonts600
     SUBDIR += psutils
     SUBDIR += rtf2latex
     SUBDIR += teTeX
