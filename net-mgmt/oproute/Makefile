@@ -9,7 +9,8 @@
 PORTNAME=	oproute
 PORTVERSION=	0.7
 CATEGORIES=	net-mgmt
-MASTER_SITES=	ftp://ftp.opnix.com/oproute/
+MASTER_SITES=	http://www.mirrors.wiretapped.net/security/network-monitoring/oproute/ \
+		ftp://ftp.opnix.com/oproute/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
