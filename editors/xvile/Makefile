@@ -18,7 +18,7 @@ PATCHFILES=	vile-9.3a.patch.gz \
 		vile-9.3b.patch.gz \
 		vile-9.3c.patch.gz
 
-MAINTAINER=	gj@freeBSD.org
+MAINTAINER=	gj@FreeBSD.org
 
 USE_XLIB=	yes
 MAKEFILE=	makefile
