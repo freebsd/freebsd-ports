@@ -51,5 +51,6 @@ post-install:
 	${MKDIR} ${PREFIX}/libexec/apache2
 	${INSTALL_PROGRAM} ${WRKSRC}/src/modules/perl/mod_perl.so \
 		${PREFIX}/libexec/apache2/mod_perl.so
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
