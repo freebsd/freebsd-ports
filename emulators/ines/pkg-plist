@@ -1,5 +1,5 @@
 bin/ines
 bin/ines-debug
-share/ines/iNES.html
-share/ines/CART.NES
-@dirrm share/ines
+%%DATADIR%%/iNES.html
+%%DATADIR%%/CART.NES
+@dirrm %%DATADIR%%
