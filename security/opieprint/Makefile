@@ -1,0 +1,28 @@
+# New ports collection makefile for:	keyprint
+# Version required:     1.0
+# Date created:		Sat May 29 02:05:00 PDT 1999
+# Whom:			mharo@FreeBSD.org
+#
+# $Id$
+#
+
+DISTNAME=       keyprint-1.0
+CATEGORIES=	security
+MASTER_SITES=	http://www.freebsd.org/~mharo/distfiles/
+
+MAINTAINER=	mharo@FreeBSD.org
+
+NO_BUILD=	yes
+
+post-patch:
+	/usr/bin/perl -pi -e 's,__PREFIX__,${PREFIX},' ${WRKSRC}/keyprint
+
+do-install:
+	${MKDIR} ${PREFIX}/share/keyprint
+	${INSTALL_DATA} ${WRKSRC}/keyblank.ps ${PREFIX}/share/keyprint
+	${INSTALL_SCRIPT} ${WRKSRC}/keyprint ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/keyprint
+.endif
+
+.include <bsd.port.mk>
