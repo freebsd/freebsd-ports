@@ -95,8 +95,17 @@ post-patch:
 		-e 's:/usr/lib/news:${PREFIX}/news/lib:' \
 		<${WRKSRC}/doc/tin.1.dist >${WRKSRC}/doc/tin.1
 
+.if defined(WITH_TIN_CANLOCK)
+	${PATCH} ${PATCH_ARGS} ${WRKSRC}/src/Makefile.in -i ${FILESDIR}/canlock.patch
+.endif
+
 pre-configure:
 	${CP} ${FILESDIR}/pcre.h ${WRKSRC}/pcre
+
+pre-build:
+.if defined(WITH_TIN_CANLOCK)
+	cd ${WRKSRC}/src; ${GMAKE} canlock
+.endif
 
 post-build:
 	cd ${WRKSRC}/po; ${GMAKE}
