@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	20040513
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webonaut.com/distfiles/${PORTNAME}${PKGNAMESUFFIX}/
 PKGNAMESUFFIX=	-remote
@@ -27,6 +28,6 @@ do-build:
 		${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.mk>
