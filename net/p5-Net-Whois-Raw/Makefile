@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Net-Whois-Raw
-PORTVERSION=	0.20
+PORTVERSION=	0.34
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kappa@freebsd.org.ua
 COMMENT=	Very simple Perl interface to query raw whois data
@@ -20,6 +21,5 @@ INSTALL_TARGET=	pure_install
 
 MAN3=		Net::Whois::Raw.3
 MAN1=		pwhois.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
