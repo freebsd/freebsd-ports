@@ -45,6 +45,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/conf/catalina.policy
 %%T%%/conf/catalina.properties
 %%T%%/conf/jk2.properties
+%%T%%/conf/server-minimal.xml
 %%T%%/conf/server.xml
 %%T%%/conf/tomcat-users.xml
 %%T%%/conf/web.xml
@@ -521,6 +522,18 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
 %%T%%/webapps/tomcat-docs/appdev/source.html
 %%T%%/webapps/tomcat-docs/appdev/web.xml.txt
+%%T%%/webapps/tomcat-docs/architecture/index.html
+%%T%%/webapps/tomcat-docs/architecture/overview.html
+%%T%%/webapps/tomcat-docs/architecture/printer/index.html
+%%T%%/webapps/tomcat-docs/architecture/printer/overview.html
+%%T%%/webapps/tomcat-docs/architecture/printer/requestProcess.html
+%%T%%/webapps/tomcat-docs/architecture/printer/startup.html
+%%T%%/webapps/tomcat-docs/architecture/requestProcess.html
+%%T%%/webapps/tomcat-docs/architecture/requestProcess/requestProcess.pdf
+%%T%%/webapps/tomcat-docs/architecture/requestProcess/roseModel.mdl
+%%T%%/webapps/tomcat-docs/architecture/startup.html
+%%T%%/webapps/tomcat-docs/architecture/startup/serverStartup.pdf
+%%T%%/webapps/tomcat-docs/architecture/startup/serverStartup.txt
 %%T%%/webapps/tomcat-docs/balancer-howto.html
 %%T%%/webapps/tomcat-docs/build.xml
 %%T%%/webapps/tomcat-docs/building.html
@@ -1005,9 +1018,13 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/common/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/common/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/common/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/ApacheConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/BaseJkConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/GeneratorApache2.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/GeneratorJk1.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/GeneratorJk2.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/IISConfig.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/NSConfig.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/WebXml2Jk.MappingGenerator.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/WebXml2Jk.NullResolver.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/jk/config/WebXml2Jk.html
@@ -1247,25 +1264,25 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/changelog.html
 %%T%%/webapps/tomcat-docs/class-loader-howto.html
 %%T%%/webapps/tomcat-docs/cluster-howto.html
+%%T%%/webapps/tomcat-docs/config/ajp.html
 %%T%%/webapps/tomcat-docs/config/context.html
-%%T%%/webapps/tomcat-docs/config/coyote.html
 %%T%%/webapps/tomcat-docs/config/defaultcontext.html
 %%T%%/webapps/tomcat-docs/config/engine.html
 %%T%%/webapps/tomcat-docs/config/globalresources.html
 %%T%%/webapps/tomcat-docs/config/host.html
+%%T%%/webapps/tomcat-docs/config/http.html
 %%T%%/webapps/tomcat-docs/config/index.html
-%%T%%/webapps/tomcat-docs/config/jk2.html
 %%T%%/webapps/tomcat-docs/config/loader.html
 %%T%%/webapps/tomcat-docs/config/logger.html
 %%T%%/webapps/tomcat-docs/config/manager.html
+%%T%%/webapps/tomcat-docs/config/printer/ajp.html
 %%T%%/webapps/tomcat-docs/config/printer/context.html
-%%T%%/webapps/tomcat-docs/config/printer/coyote.html
 %%T%%/webapps/tomcat-docs/config/printer/defaultcontext.html
 %%T%%/webapps/tomcat-docs/config/printer/engine.html
 %%T%%/webapps/tomcat-docs/config/printer/globalresources.html
 %%T%%/webapps/tomcat-docs/config/printer/host.html
+%%T%%/webapps/tomcat-docs/config/printer/http.html
 %%T%%/webapps/tomcat-docs/config/printer/index.html
-%%T%%/webapps/tomcat-docs/config/printer/jk2.html
 %%T%%/webapps/tomcat-docs/config/printer/loader.html
 %%T%%/webapps/tomcat-docs/config/printer/logger.html
 %%T%%/webapps/tomcat-docs/config/printer/manager.html
@@ -1806,6 +1823,10 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs
 @dirrm %%T%%/webapps/tomcat-docs/catalina
+@dirrm %%T%%/webapps/tomcat-docs/architecture/startup
+@dirrm %%T%%/webapps/tomcat-docs/architecture/requestProcess
+@dirrm %%T%%/webapps/tomcat-docs/architecture/printer
+@dirrm %%T%%/webapps/tomcat-docs/architecture
 @dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/images
 @dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF
 @dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web
