@@ -1,0 +1,38 @@
+--- lib/Makefile.in.orig	Mon Sep 26 14:46:55 2003
++++ lib/Makefile.in	Mon Sep 26 14:54:07 2003
+@@ -10,7 +10,7 @@
+ # incerased with ABI changes
+ VERSION_MAJOR=1
+ # incerased with API changes
+-VERSION_MINOR=5
++#VERSION_MINOR=5
+ 
+ CC = @CC@
+ CFLAGS = @CFLAGS_LIBTLEN@ -I.. -fPIC -Wall -ggdb
+@@ -27,7 +27,7 @@
+ 
+ SHAREDMM = libtlen.so
+ SHAREDM = $(SHAREDMM).$(VERSION_MAJOR)
+-SHARED = $(SHAREDM).$(VERSION_MINOR)
++SHARED = $(SHAREDMM).$(VERSION_MAJOR)
+ STATIC = libtlen.a
+ 
+ HEADERS = *.h
+@@ -54,7 +54,7 @@
+ 
+ $(SHARED): $(OBJS)
+ 	$(CC) -g -O2 -shared -Wl,-soname,libtlen.so.$(VERSION_MAJOR) -o $(SHARED) $(OBJS) $(LIBS) -lc
+-	$(LN_S) -f $(SHARED) $(SHAREDM)
++#	$(LN_S) -f $(SHARED) $(SHAREDM)
+ 	$(LN_S) -f $(SHARED) $(SHAREDMM)
+ 
+ install: install-shared install-static install-devel
+@@ -62,7 +62,7 @@
+ install-shared:
+ 	$(INSTALL) -d $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(SHARED) $(DESTDIR)$(libdir)
+-	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDM)
++#	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDM)
+ 	cd $(DESTDIR)$(libdir) && $(LN_S) -f $(SHARED) $(SHAREDMM)
+ 
+ install-static:

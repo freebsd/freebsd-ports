@@ -8,6 +8,7 @@
     SUBDIR += kadu
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
+    SUBDIR += libtlen
     SUBDIR += ooodict_PL
     SUBDIR += openoffice
     SUBDIR += sms
