@@ -1,0 +1,11 @@
+--- ODBCConfig/Makefile.in.orig	Fri Aug 23 21:15:14 2002
++++ ODBCConfig/Makefile.in	Tue Oct  1 06:47:26 2002
+@@ -188,7 +188,7 @@
+ 
+ @QT_TRUE@bin_PROGRAMS = ODBCConfig
+ 
+-@QT_TRUE@INCLUDES = -I../include @QT_INCLUDES@     -DSYSTEM_FILE_PATH=\"@sysconfdir@\" -DDEFLIB_PATH=\"@libdir@\" $(INCLTDL)
++@QT_TRUE@INCLUDES = -I../include @X_INCLUDES@	@QT_INCLUDES@	@USER_INCLUDES@     -DSYSTEM_FILE_PATH=\"@sysconfdir@\" -DDEFLIB_PATH=\"@libdir@\" $(INCLTDL)
+ 
+ @QT_TRUE@ODBCConfig_LDADD = @X_LDFLAGS@ 	@QT_LDFLAGS@ 	@USER_LDFLAGS@ 	@LIB_QT@ 	../odbcinst/libodbcinst.la 	../extras/libodbcextraslc.la 	../DriverManager/libodbc.la 
+ 

@@ -1,0 +1,11 @@
+--- DataManagerII/Makefile.in.orig	Fri Aug 23 21:15:18 2002
++++ DataManagerII/Makefile.in	Tue Oct  1 06:49:39 2002
+@@ -188,7 +188,7 @@
+ 
+ @QT_TRUE@bin_PROGRAMS = DataManagerII
+ 
+-@QT_TRUE@INCLUDES = -I../include @QT_INCLUDES@
++@QT_TRUE@INCLUDES = -I../include @X_INCLUDES@	@QT_INCLUDES@	@USER_INCLUDES@
+ 
+ @QT_TRUE@DataManagerII_LDADD = @X_LDFLAGS@ 	@QT_LDFLAGS@ 	@USER_LDFLAGS@ 	@LIB_QT@ 	../odbcinst/libodbcinst.la 	../DriverManager/libodbc.la 
+ 

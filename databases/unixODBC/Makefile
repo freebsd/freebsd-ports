@@ -21,11 +21,11 @@ CONFIGURE_ARGS=	--enable-static --enable-shared \
 INSTALLS_SHLIB=	yes
 
 .if defined(WITH_GUI)
-USE_QT_VER=	2
+USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	MOC="${MOC}" \
-		QTINC="${X11BASE}/include/qt2" \
-		QTLIB="${X11BASE}/lib" \
+		QTINC="${QT_PREFIX}/include" \
+		QTLIB="${QT_PREFIX}/lib" \
 		USER_INCLUDES="${QTCPPFLAGS}" \
 		USER_LDFLAGS="${QTCFGLIBS}"
 CONFIGURE_ARGS+=	--enable-gui
@@ -35,18 +35,14 @@ CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB=	GUI:="@comment "
 .endif
 
-.if defined(WITH_PTHREAD)
+.if defined(WITH_PTHREAD) || defined(WITH_GUI)
 CONFIGURE_ARGS+=	--enable-threads=yes
-QT_NAME=		qt2-mt
 .else
 CONFIGURE_ARGS+=	--enable-threads=no
-QT_NAME=		qt2
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|"-lqt"|"-l${QT_NAME}"|g ; \
-		 s|"-lqt-mt"|"-l${QT_NAME}"|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

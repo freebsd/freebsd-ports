@@ -1,0 +1,11 @@
+--- odbcinstQ/Makefile.in.orig	Fri Aug 23 21:14:25 2002
++++ odbcinstQ/Makefile.in	Tue Oct  1 06:45:53 2002
+@@ -191,7 +191,7 @@
+ 
+ @QT_TRUE@lib_LTLIBRARIES = libodbcinstQ.la
+ 
+-@QT_TRUE@INCLUDES = -I../include @QT_INCLUDES@     -DSYSTEM_FILE_PATH=\"@sysconfdir@\" -DDEFLIB_PATH=\"@libdir@\" $(INCLTDL)
++@QT_TRUE@INCLUDES = -I../include @X_INCLUDES@	@QT_INCLUDES@	@USER_INCLUDES@     -DSYSTEM_FILE_PATH=\"@sysconfdir@\" -DDEFLIB_PATH=\"@libdir@\" $(INCLTDL)
+ 
+ @QT_TRUE@libodbcinstQ_la_LIBADD = @X_LDFLAGS@ 	@QT_LDFLAGS@ 	@USER_LDFLAGS@ 	@LIB_QT@ 	../odbcinst/libodbcinst.la 	../extras/libodbcextraslc.la 	../DriverManager/libodbc.la 
+ 
