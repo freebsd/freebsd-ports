@@ -1,0 +1,9 @@
+--- configure.orig	Mon Jul 10 10:37:02 2000
++++ configure	Thu Aug 24 15:31:47 2000
+@@ -2801,4 +2801,4 @@
+   if test "x$no_bonobo" = x ; then
+-     echo "$ac_t""yes" 1>&6
+-     have_bonobo=true     
++     echo "$ac_t""yes - but I'm ignoring it" 1>&6
++     have_bonobo=false
+   else
