@@ -7104,6 +7104,7 @@ py-bittorrent	ports/net/py-bittorrent
 py-bittorrent-core	ports/net/py-bittorrent-core
 py-bsddb	ports/databases/py-bsddb
 py-bsddb3	ports/databases/py-bsddb3
+py-bulksms	ports/comms/py-bulksms
 py-bzip2	ports/archivers/py-bzip2
 py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
