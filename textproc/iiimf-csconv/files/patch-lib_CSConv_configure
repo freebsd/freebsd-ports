@@ -1,0 +1,10 @@
+--- configure.orig	Sat Dec  6 01:28:41 2003
++++ configure	Sat Dec  6 01:28:43 2003
+@@ -6220,6 +6220,7 @@
+ case "${host}" in
+ 	*solaris*) 	platform=SOLARIS ;;
+ 	*linux*) 	platform=LINUX ;;
++	*freebsd*)	platform=FREEBSD ;;
+ esac
+ 
+ 

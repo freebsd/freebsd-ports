@@ -1,0 +1,11 @@
+--- unit/ctim/Makefile.in.orig	Sat Dec  6 03:03:08 2003
++++ unit/ctim/Makefile.in	Sat Dec  6 03:03:24 2003
+@@ -72,7 +72,7 @@
+ AS = @AS@
+ AWK = @AWK@
+ CC = @CC@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @X_CFLAGS@
+ CPP = @CPP@
+ CSCONV_DIR = @CSCONV_DIR@
+ CXX = @CXX@

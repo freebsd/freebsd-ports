@@ -1,0 +1,11 @@
+--- unit/codetable/Makefile.in.orig	Sat Dec  6 03:05:27 2003
++++ unit/codetable/Makefile.in	Sat Dec  6 03:05:52 2003
+@@ -98,7 +98,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ LE_TARGETS = @LE_TARGETS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -L/usr/local/lib -liconv
+ LIBTOOL = @LIBTOOL@
+ LINKER = @LINKER@
+ LN_S = @LN_S@

@@ -1,0 +1,42 @@
+lib/im/leif/indicle.so
+lib/im/locale/in_IN/common/ctim.so
+lib/im/locale/in_IN/common/ctim.so.0
+lib/im/locale/in_IN/common/ctim.la
+lib/im/locale/in_IN/common/ctim.a
+lib/im/locale/in_IN/common/txt2bin
+lib/im/locale/in_IN/common/bin2txt
+lib/im/locale/in_IN/common/search
+lib/im/locale/in_IN/HINDI/data/inscript.data
+lib/im/locale/in_IN/HINDI/data/trans.data
+lib/im/locale/in_IN/TAMIL/data/inscript.data
+lib/im/locale/in_IN/TAMIL/data/trans.data
+lib/im/locale/in_IN/KANNADA/data/inscript.data
+lib/im/locale/in_IN/KANNADA/data/kgp.data
+lib/im/locale/in_IN/MALAYALAM/data/inscript.data
+lib/im/locale/in_IN/MALAYALAM/data/trans.data
+lib/im/locale/in_IN/TELUGU/data/inscript.data
+lib/im/locale/in_IN/GUJARATI/data/inscript.data
+lib/im/locale/in_IN/BENGALI/data/inscript.data
+lib/im/locale/in_IN/GURMUKHI/data/inscript.data
+lib/im/locale/in_IN/sysime.cfg
+@dirrm lib/im/locale/in_IN/common
+@dirrm lib/im/locale/in_IN/TELUGU/data
+@dirrm lib/im/locale/in_IN/TELUGU
+@dirrm lib/im/locale/in_IN/TAMIL/data
+@dirrm lib/im/locale/in_IN/TAMIL
+@dirrm lib/im/locale/in_IN/MALAYALAM/data
+@dirrm lib/im/locale/in_IN/MALAYALAM
+@dirrm lib/im/locale/in_IN/KANNADA/data
+@dirrm lib/im/locale/in_IN/KANNADA
+@dirrm lib/im/locale/in_IN/HINDI/data
+@dirrm lib/im/locale/in_IN/HINDI
+@dirrm lib/im/locale/in_IN/GURMUKHI/data
+@dirrm lib/im/locale/in_IN/GURMUKHI
+@dirrm lib/im/locale/in_IN/GUJARATI/data
+@dirrm lib/im/locale/in_IN/GUJARATI
+@dirrm lib/im/locale/in_IN/BENGALI/data
+@dirrm lib/im/locale/in_IN/BENGALI
+@dirrm lib/im/locale/in_IN
+@dirrm lib/im/locale
+@dirrm lib/im/leif
+@unexec rmdir %D/lib/im 2>/dev/null || true

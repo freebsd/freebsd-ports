@@ -49,6 +49,7 @@
     SUBDIR += hanzim
     SUBDIR += hc
     SUBDIR += hztty
+    SUBDIR += iiimf-le-newpy
     SUBDIR += irssi
     SUBDIR += jis2gb
     SUBDIR += joe
