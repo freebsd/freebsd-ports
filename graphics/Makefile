@@ -22,6 +22,7 @@
     SUBDIR += ayam
     SUBDIR += backfract
     SUBDIR += barcode
+    SUBDIR += batik
     SUBDIR += bbrb
     SUBDIR += blender
     SUBDIR += blender-devel
