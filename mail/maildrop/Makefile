@@ -1,12 +1,12 @@
 # New ports collection makefile for:	maildrop
-# Version required:	0.63
+# Version required:	0.64
 # Date created:		16 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	maildrop-0.63
+DISTNAME=	maildrop-0.64
 CATEGORIES=	mail
 MASTER_SITES=	http://www.flounder.net/~mrsam/maildrop/ \
 		${MASTER_SITE_SUNSITE}
@@ -21,7 +21,8 @@ MAINTAINER=	tom@eborcom.com
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 .endif
 
-ALL_TARGET=	autoconf.h config.h all
+ALL_TARGET=	config.h xconfig.h all
+INSTALL_TARGET=	install-strip
 
 # Maildrop will be installed with suid permissions for MAILDROP_SUID,
 # and sgid permissions for MAILDROP_SGID. If undefined, these values
