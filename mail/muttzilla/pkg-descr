@@ -1,0 +1,5 @@
+Do you want to use an alternate e-mail client for "mailto:" links in
+Netscape Communicator?  Muttzilla allows you to do this.  With this port
+the Mutt MUA is used on "mailto:" URL's rather than Communicator's built-in
+mail client.  Muttzilla works with Communicator 4.04 or greater, and
+Navigator 4.6 or greater.

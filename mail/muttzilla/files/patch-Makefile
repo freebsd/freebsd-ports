@@ -1,0 +1,35 @@
+--- Makefile.orig	Wed Jan 26 23:11:08 2000
++++ Makefile	Fri Feb  4 15:52:52 2000
+@@ -1,12 +1,11 @@
+-CFLAGS = -O2 -Wall
+ LDFLAGS = -G -lc
+ 
+ OBJS = muttzilla.o mzargs.o mzbase.o mzmail.o mznews.o nsapi.o
+ TARGET = muttzilla.so
+ 
+-BINDIR = /usr/local/bin
+-LIBDIR = /usr/local/lib
+-ETCDIR = /etc
++BINDIR = ${PREFIX}/bin
++LIBDIR = ${PREFIX}/lib
++ETCDIR = ${PREFIX}/etc
+ 
+ MZLIBDIR = $(LIBDIR)/muttzilla
+ MAILERLIBS = mutt pine dtmail VM tin
+@@ -24,11 +23,11 @@
+ 	rm -f $(TARGET)
+ 
+ install: $(TARGET)
+-	install --mode=0755 muttzilla.so $(LIBDIR)
+-	install --mode=0755 -d $(MZLIBDIR)
+-	install --mode=0755 mzmail.sh mzmail.py mznews.sh mznews.py $(BINDIR)
+-	install --mode=0644 $(MAILERLIBS) $(MZLIBDIR)
+-	install --mode=0644 -b muttzilla.conf $(ETCDIR)
++	install -m 0755 -c muttzilla.so $(LIBDIR)
++	install -m 0755 -d $(MZLIBDIR)
++	install -m 0755 -c mzmail.sh mzmail.py mznews.sh mznews.py $(BINDIR)
++	install -m 0644 -c $(MAILERLIBS) $(MZLIBDIR)
++	install -m 0644 -c muttzilla.conf $(ETCDIR)
+ 
+ muttzilla.o: muttzilla.c
+ mzargs.o: mzargs.c muttzilla.h
