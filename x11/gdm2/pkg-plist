@@ -7,15 +7,21 @@ bin/gdmlogin
 bin/gdmmktemp
 bin/gdmphotosetup
 etc/gdm/Init/Default
+@unexec rm -f %D/etc/gdm/Init/Default.orig :: true
 etc/gdm/PostSession/Default
+@unexec rm -f %D/etc/gdm/PostSession/Default.orig :: true
 etc/gdm/PreSession/Default
+@unexec rm -f %D/etc/gdm/PreSession/Default.orig :: true
 etc/gdm/Sessions/Gnome
+@unexec rm -f %D/etc/gdm/Sessions/Gnome.orig :: true
 etc/gdm/Sessions/Xsession
+@unexec rm -f %D/etc/gdm/Sessions/Xsession.orig :: true
 etc/gdm/XKeepsCrashing
 etc/gdm/factory-gdm.conf
 etc/gdm/gdm.conf
 etc/gdm/gnomerc
 etc/gdm/locale.alias
+@unexec rm -f %D/etc/gdm/locale.alias.orig :: true
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdmaskpass
