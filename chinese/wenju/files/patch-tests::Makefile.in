@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	Sat Oct 18 05:18:58 2003
++++ tests/Makefile.in	Sat Oct 18 05:19:06 2003
+@@ -116,7 +116,7 @@
+ noinst_PROGRAMS = wenju
+ 
+ wenju_SOURCES = wenju.c
+-wenju_LDADD = -lrt
++wenju_LDADD = #-lrt
+ subdir = tests
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h

@@ -105,6 +105,7 @@
     SUBDIR += ve
     SUBDIR += vflib
     SUBDIR += wangttf
+    SUBDIR += wenju
     SUBDIR += xcin25
     SUBDIR += xemacs
     SUBDIR += xemacs21

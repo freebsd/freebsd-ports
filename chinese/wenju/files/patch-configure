@@ -1,0 +1,11 @@
+--- configure.orig	Sat Oct 18 04:38:19 2003
++++ configure	Sat Oct 18 04:38:42 2003
+@@ -7889,7 +7889,7 @@
+ 
+ 
+ GTK2_CFLAGS="`pkg-config --cflags gtk+-2.0`"
+-GTK2_LIBS="`pkg-config --libs gtk+-2.0`"
++GTK2_LIBS="`pkg-config --libs gtk+-2.0` -lgnugetopt"
+ GTK2_BINARY_VERSION="`pkg-config --variable=gtk_binary_version gtk+-2.0`"
+ 
+ 
