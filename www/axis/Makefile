@@ -13,13 +13,12 @@ PORTNAME=		axis
 PORTVERSION=		1.1
 PORTREVISION=		2
 CATEGORIES=		www java
-MASTER_SITES=		http://ws.apache.org/axis/dist/1_1/
+MASTER_SITES=		${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	ws/axis/${PORTVERSION:S,.,_,g}
 DISTNAME=		axis-${PORTVERSION:S,.,_,g}
 
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	SOAP implementation by APACHE project
-
-BROKEN=		"Unfetchable"
 
 #
 # Change webapp directory by TOMCAT version
