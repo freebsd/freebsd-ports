@@ -1,0 +1,47 @@
+*** src/pathnames.h.orig	Wed Apr 13 22:46:48 1994
+--- src/pathnames.h	Tue Oct 18 18:26:26 1994
+***************
+*** 29,41 ****
+   *
+   * @(#)pathnames.h 5.2 (Berkeley) 6/1/90 */
+  
+! #define _PATH_FTPUSERS  "/etc/ftpusers"
+! #define _PATH_FTPACCESS "/usr/local/etc/ftpaccess"
+  #define _PATH_EXECPATH  "/bin/ftp-exec"
+! #define _PATH_PIDNAMES  "/usr/local/daemon/ftpd/ftp.pids-%s"
+! #define _PATH_CVT       "/usr/local/etc/ftpconversions"
+! #define _PATH_XFERLOG   "/usr/adm/xferlog"
+! #define _PATH_PRIVATE   "/etc/ftpgroups"
+  
+  #ifndef _PATH_UTMP
+  #define _PATH_UTMP      "/etc/utmp"
+--- 29,41 ----
+   *
+   * @(#)pathnames.h 5.2 (Berkeley) 6/1/90 */
+  
+! #define _PATH_FTPUSERS  "!!PREFIX!!/etc/ftpusers"
+! #define _PATH_FTPACCESS "!!PREFIX!!/etc/ftpaccess"
+  #define _PATH_EXECPATH  "/bin/ftp-exec"
+! #define _PATH_PIDNAMES  "!!PREFIX!!/daemon/ftpd/ftp.pids-%s"
+! #define _PATH_CVT       "!!PREFIX!!/etc/ftpconversions"
+! #define _PATH_XFERLOG   "/var/log/xferlog"
+! #define _PATH_PRIVATE   "!!PREFIX!!/etc/ftpgroups"
+  
+  #ifndef _PATH_UTMP
+  #define _PATH_UTMP      "/etc/utmp"
+***************
+*** 47,52 ****
+  #define _PATH_DEVNULL   "/dev/null"
+  
+  #ifdef  HOST_ACCESS
+! #define _PATH_FTPHOSTS  "/usr/local/etc/ftphosts"
+  #endif
+  
+--- 47,53 ----
+  #define _PATH_DEVNULL   "/dev/null"
+  
+  #ifdef  HOST_ACCESS
+! #define _PATH_FTPHOSTS  "!!PREFIX!!/etc/ftphosts"
+! #else
+  #endif
+  
