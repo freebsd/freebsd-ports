@@ -172,7 +172,15 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/kurs.tex
 %%PORTDOCS%%share/doc/samba/textdocs/logo.ps
 %%PORTDOCS%%share/doc/samba/textdocs/security_level.txt
-share/examples/samba/LDAP
+share/examples/samba/LDAP/README
+share/examples/samba/LDAP/export2_smbpasswd.pl
+share/examples/samba/LDAP/export_smbpasswd.pl
+share/examples/samba/LDAP/import2_smbpasswd.pl
+share/examples/samba/LDAP/import_smbpasswd.pl
+share/examples/samba/LDAP/ldapchpasswd
+share/examples/samba/LDAP/ldapsync.pl
+share/examples/samba/LDAP/samba.schema
+
 share/examples/samba/README
 share/examples/samba/VFS/.cvsignore
 share/examples/samba/VFS/Makefile
@@ -191,7 +199,8 @@ share/examples/samba/appliance/smb.conf-appliance
 share/examples/samba/autofs/auto.a
 share/examples/samba/dce-dfs/README
 share/examples/samba/dce-dfs/smb.conf
-share/examples/samba/libsmbclient
+share/examples/samba/libsmbclient/testsmbc.c
+share/examples/samba/libsmbclient/tree.c
 share/examples/samba/misc/extra_smbstatus
 share/examples/samba/misc/modify_samba_config.pl
 share/examples/samba/misc/swat.pl
@@ -450,9 +459,11 @@ share/swat/using_samba/this_edition.html
 @dirrm share/examples/samba/printing
 @dirrm share/examples/samba/printer-accounting
 @dirrm share/examples/samba/misc
+@dirrm share/examples/samba/libsmbclient
 @dirrm share/examples/samba/dce-dfs
 @dirrm share/examples/samba/autofs
 @dirrm share/examples/samba/appliance
+@dirrm share/examples/samba/LDAP
 @dirrm share/examples/samba/VFS/block
 @dirrm share/examples/samba/VFS
 @dirrm share/examples/samba
