@@ -3,12 +3,15 @@
 %%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes1999.rb
 %%RUBY_SITELIBDIR%%/soap/baseData.rb
 %%RUBY_SITELIBDIR%%/soap/cgistub.rb
+%%RUBY_SITELIBDIR%%/soap/charset.rb
 %%RUBY_SITELIBDIR%%/soap/driver.rb
 %%RUBY_SITELIBDIR%%/soap/element.rb
 %%RUBY_SITELIBDIR%%/soap/encoding.rb
 %%RUBY_SITELIBDIR%%/soap/encodingStyleHandlerDynamic.rb
+%%RUBY_SITELIBDIR%%/soap/marshal.rb
 %%RUBY_SITELIBDIR%%/soap/namespace.rb
 %%RUBY_SITELIBDIR%%/soap/nqxmlDocument.rb
+%%RUBY_SITELIBDIR%%/soap/nqxmlparser.rb
 %%RUBY_SITELIBDIR%%/soap/parser.rb
 %%RUBY_SITELIBDIR%%/soap/processor.rb
 %%RUBY_SITELIBDIR%%/soap/proxy.rb
@@ -17,7 +20,6 @@
 %%RUBY_SITELIBDIR%%/soap/saxdriver.rb
 %%RUBY_SITELIBDIR%%/soap/soap.rb
 %%RUBY_SITELIBDIR%%/soap/streamHandler.rb
-%%RUBY_SITELIBDIR%%/soap/streamHandler_http-access.rb
 %%RUBY_SITELIBDIR%%/soap/xmlparser.rb
 @dirrm %%RUBY_SITELIBDIR%%/soap
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/apacheClient.rb
