@@ -1,0 +1,11 @@
+--- security/manager/Makefile.in.orig	Mon Apr 16 00:50:16 2001
++++ security/manager/Makefile.in	Tue May 22 10:10:27 2001
+@@ -44,7 +44,7 @@
+ include $(CORE_DEPTH)/coreconf/$(OS_CONFIG).mk
+ endif
+ include $(CORE_DEPTH)/coreconf/prefix.mk
+-CPU_TAG := _$(CPU_ARCH)
++#CPU_TAG := _$(CPU_ARCH)
+ LOADABLE_ROOT_MODULE := $(DLL_PREFIX)nssckbi.$(DLL_SUFFIX)
+ CORECONF_OBJDIR:=$(OBJDIR_NAME)
+ 
