@@ -1,6 +1,6 @@
---- makefile.orig	Thu Feb 28 12:44:12 2002
-+++ makefile	Wed Mar 13 11:50:31 2002
-@@ -10,14 +10,12 @@
+--- makefile.orig	Fri May 31 05:31:34 2002
++++ makefile	Sat Jun  1 13:33:20 2002
+@@ -10,7 +10,6 @@
  # Set this for where to store the man pages and executables.
  # If you want to store this as part of an official distribution,
  # change this to "/usr":
@@ -8,14 +8,15 @@
  
  # Set "EXE_SUFFIX" to ".exe" if you're running on Windows, like this:
  # EXE_SUFFIX=.exe
- EXE_SUFFIX=
- 
- # Set this to your C compiler, if it's not "gcc"; a likely alternative is "cc":
--CC=gcc
+@@ -19,7 +18,6 @@
+ # Set this to your C compiler, if it's not "gcc"; a likely alternative is "cc".
+ # The "-Wall" option turns on warnings in gcc.  gcc users might also want
+ # to consider using "-Werror", which turns warnings into errors.
+-CC=gcc -Wall
  
  # Set this to the name of your "install" program.  On some systems,
  # "install -C" would be useful (so unchanged files won't be modified),
-@@ -41,7 +39,7 @@
+@@ -47,7 +45,7 @@
  ARCH=i386
  VERSIONEDNAME=$(NAME)-$(VERSION)
  INSTALL_DIR=$(PREFIX)/bin
@@ -24,7 +25,7 @@
  MAN_DIR_MAN1=$(MAN_DIR)/man1
  DOC_DIR=$(PREFIX)/share/doc/$(VERSIONEDNAME)-$(RPM_VERSION)
  POSTED_DIR=/home/dwheeler/dwheeler.com/sloccount
-@@ -86,7 +84,7 @@
+@@ -92,7 +90,7 @@
     sql_count \
     tcl_count
  
@@ -33,7 +34,7 @@
  
  MYDOCS=sloccount.html README TODO ChangeLog
  
-@@ -94,13 +92,13 @@
+@@ -100,13 +98,13 @@
  all: lexcount1$(EXE_SUFFIX) c_count$(EXE_SUFFIX) java_count$(EXE_SUFFIX) php_count$(EXE_SUFFIX)
  
  lexcount1$(EXE_SUFFIX): lexcount1.c
@@ -50,7 +51,7 @@
  
  sloccount.1.gz: sloccount.1
  	gzip -c sloccount.1 > sloccount.1.gz
-@@ -111,25 +109,23 @@
+@@ -117,25 +115,23 @@
  
  # This is USC's code counter, not built by default:
  c_lines: C_LINES.C
