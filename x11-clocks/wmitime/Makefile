@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmitime
-# Version required:	0.2
+# Version required:	0.3
 # Date created:		14 March 1999
 # Whom:			Jim Mock <jim@phrantic.phear.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/16 09:46:15 kris Exp $
 #
 
-DISTNAME=	wmitime-0.2
+DISTNAME=	wmitime-0.3
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.neotokyo.org/illusion/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
-WRKSRC=		${WRKDIR}/wmitime.app/wmitime
+WRKSRC=		${WRKDIR}/wmitime/wmitime
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmitime ${PREFIX}/bin
