@@ -58,7 +58,7 @@ $predir = "$tmpdir/prefix";
 $hmake = "env WRKDIRPREFIX=$wdpdir PREFIX=$predir NO_PKG_REGISTER=1 ";
 foreach (qw"SHARE MAN LIB BIN") {
 	$hmake .= $_ . "OWN=$user ";
-	$hmake .= $_ . "GRP=$user ";
+	$hmake .= $_ . "GRP=$group ";
 }
 $hmake .= "PREFIX=$predir NO_PKG_REGISTER=1 make";
 
