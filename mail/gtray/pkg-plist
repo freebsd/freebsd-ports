@@ -1,0 +1,10 @@
+bin/gtray
+lib/gtray/AboutDialog.rb
+lib/gtray/GMailConnection.rb
+lib/gtray/PreferencesDialog.rb
+lib/gtray/TrayIcon.rb
+lib/gtray/gmail-connecting.png
+lib/gtray/gmail-idle.png
+lib/gtray/gmail.png
+lib/gtray/gtray
+@dirrm lib/gtray
