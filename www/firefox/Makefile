@@ -166,12 +166,12 @@ post-install:
 .for ii in f F
 	${RM} -f ${PREFIX}/bin/${ii}irefox
 	${LN} -sf ${LOCAL_PREFIX}/bin/firefox ${PREFIX}/bin/${ii}irefox
-	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/${ii}irefox
 .endfor
+	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox
 	${RM} -f ${PREFIX}/bin/firefox-config
 	${LN} -sf ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/firefox-config
-	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox-config
+	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/mozilla-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} ${PERL} -pi -e \
 		's|${FAKEDIR}|${PREFIX}|g'
 	-if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
