@@ -48,10 +48,11 @@ if [ x"$2" = xPRE-INSTALL ]; then
 
     if /usr/sbin/pw user show "${user}" 2>/dev/null; then
         echo "You already have a user \"${user}\", so I will use it."
+	pw usermod "${user}" -d %%LOCALSTATEDIR%%/nullmailer
     else
         echo "You need a user \"${user}\"."
         if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
-            /usr/sbin/pw useradd ${user} -u 522 -g ${group} -h - -d ${NMH_PREFIX}/var/${SPOOL}nullmailer \
+            /usr/sbin/pw useradd ${user} -u 522 -g ${group} -h - -d %%LOCALSTATEDIR%%/nullmailer \
                 -s /bin/sh -c "Nullmailer Mail System" || exit
             echo "Done."
         else
@@ -94,4 +95,11 @@ EOF
 	fi
     fi
 
+fi
+
+if [ x"$2" = xPOST-INSTALL ]; then
+    if [ ! -f ${PKG_PREFIX}/etc/nullmailer/me.sample ]; then
+	echo "Creating \"${PKG_PREFIX}/etc/nullmailer/me.sample\"."
+	echo `/bin/hostname` > ${PKG_PREFIX}/etc/nullmailer/me.sample
+    fi
 fi
