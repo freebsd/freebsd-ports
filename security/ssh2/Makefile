@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.45 1997/09/16 00:13:23 torstenb Exp $
+# $Id: Makefile,v 1.46 1997/10/10 14:29:12 rse Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -23,7 +23,7 @@ MASTER_SITES=	\
 	ftp://ftp.funet.fi/pub/unix/security/login/ssh/ \
 	ftp://nic.funet.fi/pub/crypt/mirrors/ftp.dsi.unimi.it/applied-crypto/ \
 	ftp://rzsun2.informatik.uni-hamburg.de/pub/virus/crypt/ripem/ \
-	ftp://ftp.dsi.unimi.it/pub/security/crypt/math/ \
+	ftp://idea.sec.dsi.unimi.it/pub/security/crypt/math/ \
 	ftp://ftp.univie.ac.at/security/crypt/cryptography/asymmetric/rsa/ \
 	ftp://isdec.vc.cvut.cz/pub/security/unimi/crypt/applied-crypto/
 .endif
