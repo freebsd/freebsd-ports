@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcpreplay
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,12 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	smace@FreeBSD.org
 COMMENT=	A tool to replay saved packet capture files
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-libnet=${PREFIX} --with-libredblack=${PREFIX}
+CONFIGURE_ARGS+= --with-libnet=${LOCALBASE}
 
-MAN1=		capinfo.1 tcpprep.1
+MAN1=		capinfo.1 tcpprep.1 pcapmerge.1
 MAN8=		tcpreplay.8
 
 .include <bsd.port.mk>
