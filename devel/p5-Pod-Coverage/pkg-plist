@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage/CountParents.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage/ExportOnly.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage/Overloader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Coverage.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage/Coverage.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Coverage
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Pod/Coverage
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Pod 2>/dev/null || true
