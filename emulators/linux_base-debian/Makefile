@@ -20,7 +20,7 @@ COMMENT=	Debian base set for the Linux mode
 
 BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
 
-CONFLICTS=	linux_base-*
+CONFLICTS=cle_base-* linux_base-6* linux_base-7* linux_base-8* linux_base-gento*
 DIST_SUBDIR=	debian-${PORTVERSION}-${DISTDATE}
 DISTDATE=	2002-07-18
 WRKSRC=		${WRKDIR}/var/cache/apt/archives
