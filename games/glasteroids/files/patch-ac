@@ -1,5 +1,5 @@
---- Glasteroids.cxx	Thu Aug 12 04:48:58 1999
-+++ /home/andy/tmp/wrk/Glasteroids.cxx	Tue Aug 17 15:11:12 1999
+--- Glasteroids.cxx.orig	Wed Aug 11 19:48:58 1999
++++ Glasteroids.cxx	Sun Aug  6 19:33:33 2000
 @@ -1,5 +1,8 @@
  #include <stdlib.h>
  #include <time.h>
@@ -13,7 +13,7 @@
  {
      BCworld *world;
      
-+#ifdef __FreeBSD__
++#if defined(__FreeBSD__) && !defined(__alpha__)
 +    fpsetmask(0);
 +#endif
      world = BCgetWorld ( );
