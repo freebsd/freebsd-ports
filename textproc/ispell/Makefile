@@ -1,16 +1,16 @@
 # New ports collection makefile for:    ispell
-# Version required:     3.1.18
+# Version required:     3.1.20
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1995/07/21 13:22:04 jmz Exp $
+# $Id: Makefile,v 1.10 1995/09/23 20:48:02 jmz Exp $
 #
 
 DISTNAME=	ispell-3.1
-PKGNAME=	ispell-3.1.18
+PKGNAME=	ispell-3.1.20
 CATEGORIES+=	utilities
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
-DISTFILES=	ispell-3.1.18.tar.gz
+DISTFILES=	ispell-3.1.20.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
