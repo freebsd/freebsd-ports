@@ -58,5 +58,5 @@ share/cows/wtf-pony.cow
 share/cows/wtf.cow
 share/cows/wtf2.cow
 share/cows/zig.cow
-@dirrm share/cows
+@unexec rmdir %D/share/cows 2>/dev/null || true
 share/irssi/scripts/insub.pl
