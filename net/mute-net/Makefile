@@ -14,7 +14,7 @@ PKGNAMESUFFIX=	-net
 DISTNAME=	MUTE_fileSharing-${PORTVERSION}_UnixSource
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	Peer-to-peer client with privacy protection and easy search/download
+COMMENT?=	Peer-to-peer client with privacy protection and easy search/download
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
