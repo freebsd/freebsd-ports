@@ -13,7 +13,7 @@ This voice can be activated via (voice_rab_diphone).
 It is sampled at 8 kHz and conflicts with the festvox-rab16 package
 (16 kHz samples).
 
-WWW:  http://www.cstr.ed.ac.uk/projects/festival.html
+WWW:  http://www.cstr.ed.ac.uk/projects/festival/
 
 Trevor Johnson
-trevor@jpj.net
+trevor@FreeBSD.org
