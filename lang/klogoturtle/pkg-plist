@@ -1,10 +1,43 @@
 bin/klogoturtle
-share/applnk/Utilities/klogoturtle.desktop
+share/applnk/Applications/klogoturtle.desktop
+share/applnk/Edutainment/Miscellaneous/klogoturtle.desktop
 share/apps/klogoturtle/klogoturtleui.rc
+share/apps/klogoturtle/turtle.png
+share/doc/HTML/de/klogoturtle/common
+share/doc/HTML/de/klogoturtle/index.cache.bz2
+share/doc/HTML/de/klogoturtle/index.docbook
+share/doc/HTML/en/klogoturtle/common
+share/doc/HTML/en/klogoturtle/index.cache.bz2
+share/doc/HTML/en/klogoturtle/index.docbook
+share/doc/HTML/pt_BR/klogoturtle/common
+share/doc/HTML/pt_BR/klogoturtle/index.cache.bz2
+share/doc/HTML/pt_BR/klogoturtle/index.docbook
+share/icons/hicolor/16x16/apps/klogoturtle.png
+share/icons/hicolor/32x32/apps/klogoturtle.png
 share/icons/locolor/16x16/apps/klogoturtle.png
 share/icons/locolor/32x32/apps/klogoturtle.png
+share/locale/de/LC_MESSAGES/klogoturtle.mo
 share/locale/pt_BR/LC_MESSAGES/klogoturtle.mo
-share/doc/HTML/en/klogoturtle/index.docbook
-share/doc/HTML/en/klogoturtle/common
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@dirrm share/doc/HTML/pt_BR/klogoturtle
+@unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
 @dirrm share/doc/HTML/en/klogoturtle
-@dirrm share/apps/klogoturtle/
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/klogoturtle
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/klogoturtle
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Edutainment/Miscellaneous 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Edutainment 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
