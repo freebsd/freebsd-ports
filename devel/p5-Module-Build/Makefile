@@ -16,7 +16,6 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/Module/Info.pm:${PORTSDIR}/devel/p5-Module-Info \
-		${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -25,8 +24,8 @@ PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} <= 500600
-IGNORE=                Needs perl 5.6 or higher
+.if ${PERL_LEVEL} > 500600
+BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
 .endif
 
 .include <bsd.port.post.mk>
