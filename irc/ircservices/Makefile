@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircservices
-PATCHLEVEL=	21
+PATCHLEVEL=	22
 PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
