@@ -7,29 +7,28 @@
 
 PORTNAME=	connect4
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.gu.kiev.ua/pub/cdrom5/games/volume6/ \
-		ftp://scitsc.wlv.ac.uk/pub/infomagic/usenet/games/volume6/
+MASTER_SITES=	${MASTER_SITE_COMP_SOURCES}
+MASTER_SITE_SUBDIR=	games/volume6
 DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	""
+EXTRACT_SUFX=	.Z
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
+BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
-EXTRACT_CMD=		gunshar
+EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	| gunshar
+
 NO_WRKSUBDIR=	yes
 MAN6=		connect4.6
 
-MANDIR=		${PREFIX}/man/man
-LIBDIR=		${PREFIX}/lib
-
 do-install:
-		${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/c4 ${PREFIX}/bin/connect4
-		${MKDIR} ${LIBDIR}/connect4
-		${INSTALL_DATA} -m 664 -o root -g games /dev/null ${LIBDIR}/connect4/scores
-		${INSTALL_MAN} ${FILESDIR}/connect4.6 ${MANDIR}6/
+	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/c4 ${PREFIX}/bin/connect4
+	@${MKDIR} ${PREFIX}/share/connect4
+	${INSTALL_DATA} -m 664 -o root -g games /dev/null ${PREFIX}/share/connect4/scores
+	${INSTALL_MAN} ${FILESDIR}/connect4.6 ${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>
