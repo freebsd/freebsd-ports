@@ -6226,6 +6226,7 @@ regexx		ports/devel/regexx
 register	src/eBones/register
 registerd	src/eBones/registerd
 regm		ports/mail/regm
+regression	src/tools/regression
 relate		ports/mbone/relate
 relay		ports/net/relay
 release		src/release
