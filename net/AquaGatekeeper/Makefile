@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	AquaGatekeeper
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.aqua.comptek.ru/pub/GateKeeper/ \
 		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
-DISTNAME=	AquaGatekeeper119FreeBSD
+DISTNAME=	AquaGatekeeper120FreeBSD
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eugen@grosbein.pp.ru
@@ -28,7 +28,7 @@ IS_INTERACTIVE=	yes
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/AquaGatekeeper ${PREFIX}/bin/
+	@${INSTALL_PROGRAM} ${WRKSRC}/AquaGatekeeper ${PREFIX}/sbin/
 	@${INSTALL_SCRIPT} ${FILESDIR}/agk.sh.sample ${PREFIX}/etc/rc.d/
 	@${INSTALL_DATA} ${WRKSRC}/Config/AquaGatekeeper.cfg ${PREFIX}/etc/AquaGatekeeper.cfg.sample
 	@${MKDIR} ${EXAMPLESDIR}
@@ -51,7 +51,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400000
-BROKEN=		"Supported only on 4.x systems"
+BROKEN=		"Supported only on 4.x systems and later"
 .elif ${OSVERSION} >= 500000
 LIB_DEPENDS=	c.4:${PORTSDIR}/misc/compat4x
 .endif

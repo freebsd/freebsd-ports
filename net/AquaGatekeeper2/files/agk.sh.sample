@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PREFIX=$(expr `realpath $0` : "\(/.*\)/etc/rc\.d/`basename $0`\$")
-PROG=$PREFIX/bin/AquaGatekeeper
+PROG=$PREFIX/sbin/AquaGatekeeper
 CFG=$PREFIX/etc/agk.cfg
 TIMEOUT=30
 
