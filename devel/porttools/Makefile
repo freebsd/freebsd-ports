@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	porttools
-PORTVERSION=	0.50
+PORTVERSION=	0.63
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,8 +15,11 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
 
 RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \
-		sudo:${PORTSDIR}/security/sudo \
-		newfile:${PORTSDIR}/devel/newfile
+		sudo:${PORTSDIR}/security/sudo
+
+.if defined(WITH_NEWFILE) || exists(${LOCALBASE}/bin/newfile)
+RUN_DEPENDS+=	${LOCALBASE}/bin/newfile:${PORTSDIR}/devel/newfile
+.endif
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install-docs
