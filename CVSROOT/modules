@@ -8025,6 +8025,7 @@ vdesk		ports/x11/vdesk
 vdk		ports/x11-toolkits/vdk
 vdkbuilder	ports/x11-toolkits/vdkbuilder
 vecfem		ports/math/vecfem
+vectoroids	ports/games/vectoroids
 ved		ports/editors/ved
 veepee		ports/devel/veepee
 vera		ports/misc/vera
