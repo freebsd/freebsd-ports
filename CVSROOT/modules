@@ -6006,6 +6006,7 @@ p5-Sledge-Plugin-Download	ports/www/p5-Sledge-Plugin-Download
 p5-Sledge-Plugin-Dumper	ports/www/p5-Sledge-Plugin-Dumper
 p5-Sledge-Plugin-Log	ports/www/p5-Sledge-Plugin-Log
 p5-Sledge-Plugin-NoCache	ports/www/p5-Sledge-Plugin-NoCache
+p5-Sledge-Plugin-SaveUpload	ports/www/p5-Sledge-Plugin-SaveUpload
 p5-Sledge-Plugin-ScratchPad	ports/www/p5-Sledge-Plugin-ScratchPad
 p5-Sledge-Plugin-SessionAutoCleanup	ports/www/p5-Sledge-Plugin-SessionAutoCleanup
 p5-Sledge-SessionManager-CookieStore	ports/www/p5-Sledge-SessionManager-CookieStore
