@@ -355,3 +355,4 @@ x11-servers/XttXF98srv-TGUI||2003-05-23|obsoleted by x11-servers/XFree86-4-Serve
 x11-servers/XttXF98srv-WABEP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 x11-servers/XttXF98srv-WABS||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 x11-servers/XttXF98srv-WSNA||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
+www/phoenix|www/mozilla-firebird|2003-06-02|project changed names
