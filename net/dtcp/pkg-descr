@@ -1,0 +1,8 @@
+Dynamic Tunnel Configuration Protocol daemon and client
+
+dtcpc and dtcps implement Dynamic Tunnel Configuration Protocol (DTCP
+for short) proposed by Trumpet:
+
+	http://jazz-1.trumpet.com.au/ipv6-draft/dtcp-draft-prt-13-may-1999.htm
+
+- Hajimu UMEMOTO <ume@FreeBSD.org>
