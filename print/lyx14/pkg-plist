@@ -87,6 +87,7 @@ share/lyx/doc/hu_TOC.lyx
 share/lyx/doc/it_Intro.lyx
 share/lyx/doc/it_TOC.lyx
 share/lyx/doc/it_Tutorial.lyx
+share/lyx/doc/it_UserGuide.lyx
 share/lyx/doc/mobius.eps
 share/lyx/doc/nl_Intro.lyx
 share/lyx/doc/nl_TOC.lyx
@@ -114,12 +115,12 @@ share/lyx/examples/MathLabeling.lyx
 share/lyx/examples/Math_macros.lyx
 share/lyx/examples/Minipage.lyx
 share/lyx/examples/TableExamples.lyx
-share/lyx/examples/aa_head.lyx
-share/lyx/examples/aa_paper.lyx
+share/lyx/examples/aa_sample.lyx
 share/lyx/examples/aas_sample.lyx
 share/lyx/examples/amsart-test.lyx
 share/lyx/examples/amsbook-test.lyx
 share/lyx/examples/ca_splash.lyx
+share/lyx/examples/cv.lyx
 share/lyx/examples/de_beispiel_gelyxt.lyx
 share/lyx/examples/de_beispiel_roh.lyx
 share/lyx/examples/de_splash.lyx
@@ -143,10 +144,13 @@ share/lyx/examples/fr_MultiColonnes.lyx
 share/lyx/examples/fr_exemple_brut.lyx
 share/lyx/examples/fr_exemple_lyxifie.lyx
 share/lyx/examples/fr_splash.lyx
+share/lyx/examples/hu_splash.lyx
 share/lyx/examples/it_ItemizeBullets.lyx
 share/lyx/examples/it_splash.lyx
 share/lyx/examples/landslide.lyx
 share/lyx/examples/multicol.lyx
+share/lyx/examples/nl_MathLabeling.lyx
+share/lyx/examples/nl_multicol.lyx
 share/lyx/examples/nl_opsommingstekens.lyx
 share/lyx/examples/nl_splash.lyx
 share/lyx/examples/nl_voorbeeld_ruw.lyx
@@ -249,6 +253,7 @@ share/lyx/kbd/turkish-f.kmap
 share/lyx/kbd/turkish.kmap
 share/lyx/languages
 share/lyx/layouts/IEEEtran.layout
+share/lyx/layouts/aa.layout
 share/lyx/layouts/aapaper.inc
 share/lyx/layouts/aapaper.layout
 share/lyx/layouts/aastex.layout
@@ -264,6 +269,7 @@ share/lyx/layouts/apa.layout
 share/lyx/layouts/article.layout
 share/lyx/layouts/book.layout
 share/lyx/layouts/broadway.layout
+share/lyx/layouts/cv.layout
 share/lyx/layouts/db_lyxmacros.inc
 share/lyx/layouts/db_stdclass.inc
 share/lyx/layouts/db_stdlayouts.inc
@@ -279,6 +285,11 @@ share/lyx/layouts/docbook-section.layout
 share/lyx/layouts/docbook.layout
 share/lyx/layouts/egs.layout
 share/lyx/layouts/ejour2.layout
+share/lyx/layouts/encts.layout
+share/lyx/layouts/extarticle.layout
+share/lyx/layouts/extbook.layout
+share/lyx/layouts/extletter.layout
+share/lyx/layouts/extreport.layout
 share/lyx/layouts/foils.layout
 share/lyx/layouts/g-brief-de.layout
 share/lyx/layouts/g-brief-en.layout
@@ -345,7 +356,7 @@ share/lyx/scripts/pic2ascii.py
 share/lyx/scripts/pic2png_eps.py
 share/lyx/scripts/pic2png_eps.sh
 share/lyx/templates/IEEEtran.lyx
-share/lyx/templates/aapaper.lyx
+share/lyx/templates/aa.lyx
 share/lyx/templates/aastex.lyx
 share/lyx/templates/dinbrief.lyx
 share/lyx/templates/docbook_template.lyx
@@ -360,6 +371,7 @@ share/lyx/templates/revtex.lyx
 share/lyx/templates/revtex4.lyx
 share/lyx/templates/slides.lyx
 share/lyx/tex/broadway.cls
+share/lyx/tex/cv.cls
 share/lyx/tex/ejour2.cls
 share/lyx/tex/hollywood.cls
 share/lyx/tex/iletter.cls
