@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmail
-PORTVERSION= 	${QMAIL_VERSION}.${TLS_PATCH_DATE}
+PORTVERSION=	${QMAIL_VERSION}.${TLS_PATCH_DATE}
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tls
 
@@ -20,17 +20,23 @@ USE_OPENSSL=	YES
 
 TLS_PATCH_DATE=	20000823
 
+# Using default from master port, i.e., /var/qmail
+PREFIX?=	${QMAIL_PORT_PREFIX}
+#PREFIX=		/var/qmail-tls
+
 .if !defined(PRE_MK_INCLUDED)
 .include <bsd.port.pre.mk>
 .endif
 
-MAKE_ARGS+=     TLS=yes
+MAKE_ARGS+=	TLS=yes
 
 .if defined(WITH_TLS_DEBUG)
 MAKE_ARGS+=	DEBUG=yes
 .endif # WITH_TLS_DEBUG
 
-#PREFIX=		/var/qmail-tls
+#QMAIL_PORT=	${PORTSDIR}/mail/qmail
+QMAIL_PORT=	${.CURDIR}/../qmail
+QMAIL_PORT_PREFIX!=	cd ${QMAIL_PORT} && ${MAKE} -V PREFIX
 
 DOCFILES+=	${WRKDIR}/TLS.readme
 
@@ -89,8 +95,7 @@ certificate-req:
 	fi
 
 # Local overrides
-MASTERDIR=	${PORTSDIR}/mail/qmail
-#MASTERDIR=	${.CURDIR}/../qmail
+MASTERDIR=	${QMAIL_PORT}
 PKGDIR_LOCAL=	${.CURDIR}
 COMMENT=	${PKGDIR_LOCAL}/pkg-comment
 DESCR=		${PKGDIR_LOCAL}/pkg-descr
