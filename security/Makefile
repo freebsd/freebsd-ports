@@ -186,7 +186,6 @@
     SUBDIR += ruby-mcrypt
     SUBDIR += ruby-openssl
     SUBDIR += ruby-pam
-    SUBDIR += ruby-ssl
     SUBDIR += ruby-tcpwrap
     SUBDIR += saferpay
     SUBDIR += saint
