@@ -1,0 +1,9 @@
+xdvi is a program which runs under the X window system. It is used to
+preview files, such as are produced by TeX. This program has the
+capability of showing the file shrunken by various (integer) factors,
+and also has a ``magnifying glass'' which allows one to see a small
+part of the unshrunk image momentarily.  In addition to using
+keystrokes to move within the file, xdvi provides buttons on the right
+side of the window, which are synonymous with various sequences of
+keystrokes.  xdvi is also able to show PostScript<tm> specials if
+Ghostscript is installed on your system.
