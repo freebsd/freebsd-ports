@@ -1,0 +1,170 @@
+--- common/dbl1it.ent.orig	Wed Sep 18 10:40:16 2002
++++ common/dbl1it.ent	Wed Sep 18 10:40:36 2002
+@@ -11,15 +11,13 @@
+ <!ENTITY appendix        "appendice">
+ <!ENTITY Article         "Articolo">
+ <!ENTITY article         "Articolo">
+-<!ENTITY Audience        "Pubblico">
+-<!ENTITY audience        "Pubblico">
+ <!ENTITY Bibliography    "Bibliografia">
+ <!ENTITY bibliography    "Bibliografia">
+ <!ENTITY Book            "Libro">
+ <!ENTITY book            "Libro">
+-<!ENTITY Caution         "Cautela">
+-<!ENTITY caution         "Cautela">
+-<!ENTITY CAUTION         "CAUTELA">
++<!ENTITY CAUTION         "ATTENZIONE">
++<!ENTITY Caution         "Attenzione">
++<!ENTITY caution         "Attenzione">
+ <!ENTITY Chapter         "Capitolo">
+ <!ENTITY chapter         "capitolo">
+ <!ENTITY Colophon        "Colophon">
+@@ -40,84 +38,81 @@
+ <!ENTITY glossary        "Glossario">
+ <!ENTITY GlossSee        "Vedi">
+ <!ENTITY glosssee        "Vedi">
+-<!ENTITY glossseealso    "Vedi anche">
+-<!ENTITY GlossSeeAlso    "Vedi anche">
+-<!ENTITY History         "Diario">
+-<!ENTITY history         "Diario">
+-<!ENTITY Important       "Importante">
+-<!ENTITY important       "Importante">
++<!ENTITY GlossSeeAlso    "Vedi Anche">
++<!ENTITY glossseealso    "Vedi Anche">
+ <!ENTITY IMPORTANT       "IMPORTANTE">
++<!ENTITY important       "Importante">
++<!ENTITY Important       "Importante">
+ <!ENTITY Index           "Indice">
+ <!ENTITY index           "Indice">
+ <!ENTITY ISBN            "ISBN">
+ <!ENTITY isbn            "ISBN">
+-<!ENTITY LegalNotice     "Note legali">
+-<!ENTITY legalnotice     "Note legali">
+-<!ENTITY Level           "Livello">
+-<!ENTITY level           "Livello">
++<!ENTITY LegalNotice     "Note Legali">
++<!ENTITY legalnotice     "Note Legali">
+ <!ENTITY MsgAud          "Pubblico">
+ <!ENTITY msgaud          "Pubblico">
+ <!ENTITY MsgLevel        "Livello">
+ <!ENTITY msglevel        "Livello">
+ <!ENTITY MsgOrig         "Origine">
+ <!ENTITY msgorig         "Origine">
+-<!ENTITY name            "Nome">
+-<!ENTITY Name            "Nome">
+-<!ENTITY Note            "Nota">
+ <!ENTITY NOTE            "NOTA">
++<!ENTITY Note            "Nota">
+ <!ENTITY note            "Nota">
+-<!ENTITY origin          "Origine">
+-<!ENTITY Origin          "Origine">
+ <!ENTITY Part            "Parte">
+ <!ENTITY part            "Parte">
+ <!ENTITY Preface         "Prefazione">
+ <!ENTITY preface         "Prefazione">
+-<!ENTITY procedure       "Procedura">
+ <!ENTITY Procedure       "Procedura">
+-<!ENTITY published       "Pubblicato">
++<!ENTITY procedure       "Procedura">
++<!ENTITY ProductionSet   "Produzione">
+ <!ENTITY Published       "Pubblicato">
++<!ENTITY published       "Pubblicato">
+ <!ENTITY Question        "D:">
+ <!ENTITY question        "D:">
+ <!ENTITY RefEntry        "">
+ <!ENTITY refentry        "">
+-<!ENTITY reference       "Riferimento">
+ <!ENTITY Reference       "Riferimento">
++<!ENTITY reference       "Riferimento">
+ <!ENTITY RefName         "Nome">
+ <!ENTITY refname         "Nome">
+ <!ENTITY RefSection      "">
+ <!ENTITY refsection      "">
+ <!ENTITY RefSynopsisDiv  "Sinossi">
+ <!ENTITY refsynopsisdiv  "Sinossi">
+-<!ENTITY RevHistory      "Diario delle revisioni">
+-<!ENTITY revhistory      "Diario delle revisioni">
+-<!ENTITY Revision        "Revisione">
++<!ENTITY RevHistory      "Diario delle Revisioni">
++<!ENTITY revhistory      "Diario delle Revisioni">
+ <!ENTITY revision        "Revisione">
++<!ENTITY Revision        "Revisione">
++<!ENTITY sect1           "Sezione">
++<!ENTITY sect2           "Sezione">
++<!ENTITY sect3           "Sezione">
++<!ENTITY sect4           "Sezione">
++<!ENTITY sect5           "Sezione">
++<!ENTITY section         "Sezione">
+ <!ENTITY Section         "Sezione">
+-<!ENTITY section         "sezione">
+ <!ENTITY See             "Vd.">
+ <!ENTITY see             "Vd.">
++<!ENTITY SeeAlso         "Vd. Anche">
+ <!ENTITY seealso         "Vd. Anche">
+ <!ENTITY Seealso         "Vd. anche">
+-<!ENTITY SeeAlso         "Vd. Anche">
+ <!ENTITY set             "Raccolta">
+ <!ENTITY Set             "Raccolta">
+ <!ENTITY setindex        "Indice Raccolta">
+ <!ENTITY SetIndex        "Indice Raccolta">
++<!ENTITY Sidebar         "">
+ <!ENTITY sidebar         "nota a margine">
+-<!ENTITY Sidebar         "Nota a margine">
+-<!ENTITY Step            "Passaggio">
+-<!ENTITY step            "passaggio">
+-<!ENTITY table           "Tabella">
++<!ENTITY step            "passo">
++<!ENTITY Step            "Passo">
+ <!ENTITY Table           "Tabella">
++<!ENTITY table           "Tabella">
++<!ENTITY tip             "Suggerimento">
+ <!ENTITY TIP             "SUGGERIMENTO">
+ <!ENTITY Tip             "Suggerimento">
+-<!ENTITY tip             "Suggerimento">
+-<!ENTITY Warning         "Attenzione">
+-<!ENTITY warning         "Attenzione">
+-<!ENTITY WARNING         "ATTENZIONE">
++<!ENTITY Warning         "Avvertimento">
++<!ENTITY warning         "avvertimento">
++<!ENTITY WARNING         "AVVERTIMENTO">
+ <!ENTITY and             "e">
+ <!ENTITY by              "di">
+-<!ENTITY called          "intitolato">
+ <!ENTITY Edited          "A cura">
+ <!ENTITY edited          "A cura">
+ <!ENTITY Editedby        "A cura di">
+@@ -130,13 +125,12 @@
+ <!ENTITY Notes           "Note">
+ <!ENTITY Pgs             "pp.">
+ <!ENTITY pgs             "pp.">
+-<!ENTITY Revisedby       "Corretto da: ">
+-<!ENTITY revisedby       "Corretto da: ">
++<!ENTITY Revisedby       "Revisionato da: ">
++<!ENTITY revisedby       "Revisionato da: ">
+ <!ENTITY TableNotes      "Note">
+ <!ENTITY tablenotes      "Note">
+ <!ENTITY TableofContents "Sommario">
+ <!ENTITY tableofcontents "Sommario">
+-<!ENTITY the             "il">
+ <!ENTITY unexpectedelementname "Nome elemento inaspettato">
+ <!ENTITY unsupported     "non supportato">
+ <!ENTITY xrefto          "riferimento a">
+@@ -148,11 +142,14 @@
+ <!ENTITY listoffigures   "Lista delle Figure">
+ <!ENTITY listoftables    "Lista delle Tabelle">
+ <!ENTITY ListofTables    "Lista delle Tabelle">
+-<!ENTITY ListofUnknown   "Lista Sconosciuti">
+-<!ENTITY listofunknown   "Lista Sconosciuti">
++<!ENTITY ListofUnknown   "Lista degli Sconosciuti">
++<!ENTITY listofunknown   "Lista degli Sconosciuti">
+ <!ENTITY nav-home        "Partenza">
+ <!ENTITY nav-next        "Avanti">
+-<!ENTITY nav-next-sibling "Salta avanti">
++<!ENTITY nav-next-sibling "Salta Avanti">
+ <!ENTITY nav-prev        "Indietro">
+-<!ENTITY nav-prev-sibling "Salta indietro">
++<!ENTITY nav-prev-sibling "Salta Indietro">
+ <!ENTITY nav-up          "Risali">
++<!ENTITY sectioncalled   "la sezione chiamata">
++<!ENTITY lowercase.alpha "abcdefghijklmnopqrstuvwxyz">
++<!ENTITY uppercase.alpha "ABCDEFGHIJKLMNOPQRSTUVWXYZ">
