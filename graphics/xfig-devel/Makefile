@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xfig
-PORTVERSION=	3.2.3d
+PORTVERSION=	3.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xfig.org/xfigdist/ \
-		ftp://www-epb.lbl.gov/xfig/
-MASTER_SITE_SUBDIR=	applications/drawing_tools/xfig
+		ftp://www-epb.lbl.gov/xfig/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. previous_versions
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
 MAINTAINER=	ports@FreeBSD.org
