@@ -2722,6 +2722,7 @@ ja-foldoc-fpw	ports/japanese/foldoc-fpw
 ja-freepwing	ports/japanese/freepwing
 ja-fumeikai-fpw	ports/japanese/fumeikai-fpw
 ja-gal		ports/japanese/gal
+ja-gauche-kakasi	ports/japanese/gauche-kakasi
 ja-gawk		ports/japanese/gawk
 ja-gd		ports/japanese/gd
 ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
