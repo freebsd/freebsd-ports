@@ -22,6 +22,8 @@ PATCH_SITES=	http://downloads.sourceforge.jp/jnethack/606/
 PATCHFILES=	jnethack-${PORTVERSION}-0.6.diff.gz
 PATCH_DIST_STRIP=	-p1
 
+USE_BISON=	yes
+
 post-install: jnethack-post-install
 
 jnethack-post-install:
