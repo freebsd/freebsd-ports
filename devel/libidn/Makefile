@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA} \
 		http://josefsson.org/libidn/releases/
