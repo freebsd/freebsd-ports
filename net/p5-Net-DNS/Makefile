@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-DNS
 PORTVERSION=	0.12
+PORTREVISION=   1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -28,5 +29,8 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::MB.3 Net::DNS::RR::NAPTR.3 Net::DNS::RR::NIMLOC.3 \
 		Net::DNS::RR::NSAP.3 Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 \
 		Net::DNS::Update.3
+
+post-patch:
+		find ${WRKSRC} -name "*.orig" -exec ${RM} "{}" ";"
 
 .include <bsd.port.mk>
