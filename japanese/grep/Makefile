@@ -12,16 +12,21 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	grep
 
+PATCH_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1994/jun/ \
+		ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/
+PATCHFILES=	grep-2.0-mb1.04.diff.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-PATCH_STRIP=	-p1
+
 MAN1=		grep.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja-grep
-	${INSTALL_DATA} ${WRKSRC}/README.MB ${PREFIX}/share/doc/ja-grep
+	@${MKDIR} ${PREFIX}/share/doc/ja/grep
+	${INSTALL_DATA} ${WRKSRC}/README.MB ${PREFIX}/share/doc/ja/grep
 .endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 bin/grep
 bin/egrep
 bin/fgrep
-share/doc/ja-grep/README.MB
-@dirrm share/doc/ja-grep
+share/doc/ja/grep/README.MB
+@dirrm share/doc/ja/grep
