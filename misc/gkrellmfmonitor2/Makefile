@@ -20,6 +20,8 @@ COMMENT=	GKrellM FMonitor plugin
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
+LATEST_LINK=	gkrellmfmonitor2
+
 PLIST_FILES=	libexec/gkrellm2/plugins/fmonitor.so
 USE_X_PREFIX=	yes
 
