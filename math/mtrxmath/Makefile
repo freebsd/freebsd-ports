@@ -5,21 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=		mtrxmath
-PORTVERSION=		0.9.3
-PORTREVISION=	1
-CATEGORIES=		math
-MASTER_SITES=		http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
+PORTNAME=	mtrxmath
+PORTVERSION=	1.0.2
+CATEGORIES=	math
+MASTER_SITES=	http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small tool for matrix mathemetics
 
-USE_GETOPT_LONG=yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+USE_GETOPT_LONG=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+PORTDOCS=	README
+PLIST_FILES=	bin/mtrxmath
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtrxmath ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/README.mtrxmath
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
