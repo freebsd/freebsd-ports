@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-netscape-${BROWSER}
+PORTNAME=	linux-netscape-${BROWSER_NAME}
 PORTVERSION=	4.78
 CATEGORIES=	www linux
 
@@ -20,7 +20,7 @@ NETSCAPE_DIST_ARCH=	supported/linux22
 NETSCAPE_DIST_TAG=	x86-unknown-linux2.2
 
 # don't overwrite the native FreeBSD port's shell script wrapper in ${PREFIX}/bin
-BROWSER_ARC=	${BROWSER}-linux
+BROWSER_ARC=	${BROWSER_NAME}-linux
 
 USE_LINUX_LIB=	yes
 

@@ -17,17 +17,17 @@ MAINTAINER=	keith@FreeBSD.org
 # We need Arphic because there's no font with all sizes to deal with Java.
 RUN_DEPENDS?=	\
 		/compat/linux/CLE-0.9p1:${PORTSDIR}/chinese/cle_base \
-		${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/linux-netscape47-${BROWSER} \
+		${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/linux-netscape47-${BROWSER_NAME} \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
 # These variables can be defined in ports that include this Makefile.
 PKGNAMEPREFIX?=		zh_TW-
 LOCALE?=		zh_TW.Big5
 REGION?=		tw
-BROWSER?=		communicator
+BROWSER_NAME?=		communicator
 BROWSER_VER?=		47
 BROWSER_VERSION?=	4.77
-BROWSER_ARC?=		${BROWSER}-linux
+BROWSER_ARC?=		${BROWSER_NAME}-linux
 BROWSER_BIN?=		${BROWSER_ARC}-${BROWSER_VERSION}.bin
 BROWSER_CMD?=		${REGION}-${BROWSER_ARC}-${BROWSER_VER}
 NSUBDIR?=		lib/netscape-linux
@@ -56,7 +56,7 @@ post-extract:
 	${MAKESCRIPT} ${FILESDIR}/INSTALL.in > ${WRKDIR}/pkg-install
 	${MAKESCRIPT} ${FILESDIR}/MESSAGE.in > ${WRKDIR}/pkg-message
 	${MAKESCRIPT} ${FILESDIR}/DEINSTALL.in > ${WRKDIR}/pkg-deinstall
-.if (${BROWSER} == navigator)
+.if (${BROWSER_NAME} == navigator)
 	${SED} "s/Communicator/Navigator/g" ${NSKITDIR}/Netscape.ad \
 	 > ${NSKITDIR}/Netscape
 .else

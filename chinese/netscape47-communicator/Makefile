@@ -2,7 +2,7 @@
 # Date created:		11 Mar 2000
 # Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.5 2001-06-22 13:05:50 keith Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.6 2001-08-19 08:33:22 knu Exp $
 #
 
 PORTNAME=	netscape-${BROWSER_ARC}
@@ -16,7 +16,7 @@ MAINTAINER=	keith@FreeBSD.org
 # ?= is for ports that include this Makefile.
 # We need Arphic because there's no font with all sizes to deal with Java.
 RUN_DEPENDS?=	\
-		${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER} \
+		${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER_NAME} \
 		${LOCALBASE}/lib/aout/libxpg4-ns.so.2.0:${PORTSDIR}/www/libxpg4-ns \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
 
@@ -24,10 +24,10 @@ RUN_DEPENDS?=	\
 PKGNAMEPREFIX?=		zh_TW-
 LOCALE?=		zh_TW.Big5
 REGION?=		tw
-BROWSER?=		communicator
+BROWSER_NAME?=		communicator
 BROWSER_VER?=		47
 BROWSER_VERSION?=	4.76
-BROWSER_ARC?=		${BROWSER}
+BROWSER_ARC?=		${BROWSER_NAME}
 BROWSER_BIN?=		${BROWSER_ARC}-${BROWSER_VERSION}.bin
 BROWSER_CMD?=		${REGION}-${BROWSER_ARC}-${BROWSER_VER}
 NSUBDIR?=		lib/netscape
@@ -55,7 +55,7 @@ do-configure:
 	${MAKESCRIPT} ${FILESDIR}/INSTALL.in > ${WRKDIR}/pkg-install
 	${MAKESCRIPT} ${FILESDIR}/MESSAGE.in > ${WRKDIR}/pkg-message
 	${MAKESCRIPT} ${FILESDIR}/DEINSTALL.in > ${WRKDIR}/pkg-deinstall
-.if (${BROWSER} == navigator)
+.if (${BROWSER_NAME} == navigator)
 	${SED} "s/Communicator/Navigator/g" ${WRKSRC}/Netscape.ad \
 	 > ${WRKSRC}/Netscape
 .else

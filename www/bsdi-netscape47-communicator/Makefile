@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bsdi-netscape-${BROWSER}
+PORTNAME=	bsdi-netscape-${BROWSER_NAME}
 PORTVERSION=	4.75
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -19,16 +19,16 @@ FORBIDDEN=	"buffer overflow in password field of HTML forms,\
 
 ONLY_FOR_ARCHS=	i386
 
-DISTFILES=	${BROWSER}-v475-us.${NETSCAPE_DIST_TAG}.tar.gz
+DISTFILES=	${BROWSER_NAME}-v475-us.${NETSCAPE_DIST_TAG}.tar.gz
 INFILE_HEAD=	'Communicator,4.75.0.20000814'
 BROWSER_VER=	4.75
-WRKSRC=		${WRKDIR}/${BROWSER}-v475.${NETSCAPE_DIST_TAG}
+WRKSRC=		${WRKDIR}/${BROWSER_NAME}-v475.${NETSCAPE_DIST_TAG}
 
 NETSCAPE_DIST_ARCH=	unsupported/bsdi21
 NETSCAPE_DIST_TAG=	x86-bsdi-bsd2
 
 # don't overwrite the FreeBSD port's shell script wrapper in ${PREFIX}/bin
-BROWSER_ARC=	${BROWSER}-bsdi
+BROWSER_ARC=	${BROWSER_NAME}-bsdi
 
 MAILCAP=	${.CURDIR}/../bsdi-netscape47-communicator/files/mailcap
 NSUBDIR=	lib/netscape-bsdi

@@ -11,7 +11,7 @@ DISTFILES=	navigator-v408-export.x86-unknown-freebsd.tar.gz
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
 NO_LATEST_LINK=	yes
 
-BROWSER=	navigator
+BROWSER_NAME=	navigator
 INFILE_HEAD=	'Navigator,4.08.0.98306'
 
 .include "${MASTERDIR}/Makefile"

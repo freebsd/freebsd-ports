@@ -15,7 +15,7 @@ DISTNAME?=	communicator-ja-euc-v407-export.generic-generic-generic
 MAINTAINER?=	sada@FreeBSD.org
 
 # ?= for ports that include this Makefile
-RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
+RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER_NAME}
 RUN_DEPENDS+=	${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
 .if (!defined(BROWSER_VERSION) || ${PORTVERSION} == "4.76")
@@ -29,8 +29,8 @@ PKGINSTALL=	${WRKDIR}/INSTALL
 PLIST_SUB=	BROWSER=${BROWSER_ARC} NSUBDIR=${NSUBDIR} LANG=${LANG} VER=${BROWSER_VER}
 WRKSRC=		${WRKDIR}/netscape-ja_euc
 
-BROWSER?=	communicator
-BROWSER_ARC?=	${BROWSER}
+BROWSER_NAME?=	communicator
+BROWSER_ARC?=	${BROWSER_NAME}
 BROWSER_BIN?=	${BROWSER_ARC}-${BROWSER_VERSION}.bin
 BROWSER_CMD?=	ja-${BROWSER_ARC}-${BROWSER_VER}
 BROWSER_VER?=	4
@@ -58,7 +58,7 @@ do-configure:
 	 >${WRKDIR}/Netscape
 	${MAKESCRIPT} ${MASTERDIR}/files/INSTALL >${PKGINSTALL}
 	${CP} ${WRKSRC}/about ${WRKDIR}/about
-.if (${BROWSER} == navigator)
+.if (${BROWSER_NAME} == navigator)
 	${CP} ${WRKDIR}/Netscape ${WRKDIR}/Netscape.orig
 	${SED} "s/Communicator/Navigator/g" ${WRKDIR}/Netscape.orig \
 	 > ${WRKDIR}/Netscape

@@ -45,13 +45,13 @@ MASTER_SITES+=	ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST
 		ftp://ftp.nsu.ru/pub/mirrors/ftp-de.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.curtin.edu.au/pub/internet/netscape/${NETSCAPE_DIST_SUBDIR}/
 .endif
-DISTFILES=	${BROWSER}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
+DISTFILES=	${BROWSER_NAME}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
 MASTERDIR=	${.CURDIR}/../netscape4-communicator
-WRKSRC=		${WRKDIR}/${BROWSER}-v${BROWSER_V}.${NETSCAPE_DIST_TAG}
+WRKSRC=		${WRKDIR}/${BROWSER_NAME}-v${BROWSER_V}.${NETSCAPE_DIST_TAG}
 ONLY_FOR_ARCHS?=	i386 alpha
 
-.if ${ARCH} == "alpha" && !defined(BROWSER)
+.if ${ARCH} == "alpha" && !defined(BROWSER_NAME)
 PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
@@ -60,7 +60,7 @@ NETSCAPE_DIST_ARCH=	supported/dec_unix40
 NETSCAPE_DIST_TAG=	alpha-dec-osf4.0
 .endif
 
-.if defined(BROWSER) && ${BROWSER} == "navigator"
+.if defined(BROWSER_NAME) && ${BROWSER_NAME} == "navigator"
 NETSCAPE_DIST_GRADE=	navigator_standalone
 .endif
 

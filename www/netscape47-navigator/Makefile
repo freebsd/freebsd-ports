@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-BROWSER=	navigator
+BROWSER_NAME=	navigator
 INFILE_HEAD=	'Navigator,4.76.0.20001006'
 
 .include "${.CURDIR}/../netscape47-communicator/Makefile"
