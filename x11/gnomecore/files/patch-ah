@@ -1,13 +1,13 @@
---- gmenu/gmenu.c.orig	Tue Mar  2 21:19:55 1999
-+++ gmenu/gmenu.c	Tue Mar  2 21:20:25 1999
-@@ -137,7 +137,7 @@
+--- gmenu/main.c.orig	Thu May  6 11:44:25 1999
++++ gmenu/main.c	Thu May  6 11:44:43 1999
+@@ -271,7 +271,7 @@
  
  	gnome_init ("GNOME menu editor", VERSION, argc, argv);
  
--	SYSTEM_APPS = gnome_unconditional_datadir_file("gnome/apps");
-+	SYSTEM_APPS = gnome_unconditional_datadir_file("apps");
- 	SYSTEM_PIXMAPS = gnome_unconditional_datadir_file("pixmaps");
- 	if (!g_file_exists(SYSTEM_APPS) || !g_file_exists(SYSTEM_PIXMAPS))
+-	system_apps_dir = gnome_unconditional_datadir_file("gnome/apps");
++	system_apps_dir = gnome_unconditional_datadir_file("apps");
+ 	system_pixmap_dir = gnome_unconditional_datadir_file("pixmaps");
+ 	if (!g_file_exists(system_apps_dir) || !g_file_exists(system_pixmap_dir))
  		{
 --- panel/menu.c.orig	Tue Mar  2 21:21:00 1999
 +++ panel/menu.c	Tue Mar  2 21:21:46 1999

@@ -1,22 +1,22 @@
---- applets/Makefile.in.orig	Tue Mar  2 01:53:28 1999
-+++ applets/Makefile.in	Sat Mar  6 17:59:43 1999
+--- applets/Makefile.in.orig	Sat Apr 10 01:10:57 1999
++++ applets/Makefile.in	Thu May  6 07:43:27 1999
 @@ -154,7 +154,7 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
  
--always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	 drivemount clockmail fifteen battery charpick 	 gnome-pager mini-commander gkb jbc
-+always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	clockmail fifteen battery charpick 	 gnome-pager mini-commander gkb jbc
+-always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	 drivemount clockmail fifteen life battery charpick 	 gnome-pager mini-commander gkb jbc another_clock
++always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	 clockmail fifteen life battery charpick 	 gnome-pager mini-commander gkb jbc another_clock
  
  @FALSE_TRUE@@HAVE_LIBESD_TRUE@esdmanager = esd-manager
  @FALSE_TRUE@@HAVE_LIBESD_FALSE@esdmanager = 
---- applets/asclock/Makefile.in.orig	Tue Mar  2 01:53:34 1999
-+++ applets/asclock/Makefile.in	Sat Mar  6 17:59:42 1999
-@@ -154,7 +154,7 @@
- cxxflags_set = @cxxflags_set@
- l = @l@
+--- applets/asclock/Makefile.in.orig	Sat Apr 10 01:11:04 1999
++++ applets/asclock/Makefile.in	Thu May  6 07:47:12 1999
+@@ -156,7 +156,7 @@
  
--INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
-+INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DVERSION=\""$(VERSION)"\"
+ SUBDIRS = themes default_theme
+ 
+-INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DASCLOCK_THEMES_DIR=\""$(datadir)/asclock/"\"   	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DASCLOCK_GNOME -DVERSION=\""$(VERSION)"\"
++INCLUDES = -I. -I$(srcdir) 					-I$(top_srcdir)/intl -I$(top_builddir)/intl		-I$(srcdir)/../../panel					-I$(top_builddir)/panel					-DASCLOCK_THEMES_DIR=\""$(datadir)/asclock/"\"   	-DGNOMELOCALEDIR=\""$(prefix)share/locale"\"		-I$(includedir) $(GNOME_INCLUDEDIR)			-DASCLOCK_GNOME -DVERSION=\""$(VERSION)"\"
  
  
  bin_PROGRAMS = asclock_applet
