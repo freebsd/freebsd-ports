@@ -1,7 +1,8 @@
 bin/pygopherd
 etc/pygopherd/mime.types
-etc/pygopherd/pygopherd.conf
-@dirrm etc/pygopherd
+@unexec if cmp -s %D/etc/pygopherd/pygopherd.conf %D/etc/pygopherd/pygopherd.conf-dist; then rm -f %D/etc/pygopherd/pygopherd.conf; fi
+etc/pygopherd/pygopherd.conf-dist
+@exec [ -f %B/pygopherd.conf ] || cp %B/%f %B/pygopherd.conf
 %%PYTHON_SITELIBDIR%%/pygopherd/GopherExceptions.py
 %%PYTHON_SITELIBDIR%%/pygopherd/GopherExceptions.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/GopherExceptions.pyo
@@ -62,6 +63,9 @@ etc/pygopherd/pygopherd.conf
 %%PYTHON_SITELIBDIR%%/pygopherd/handlers/virtual.py
 %%PYTHON_SITELIBDIR%%/pygopherd/handlers/virtual.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/handlers/virtual.pyo
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/ZIP.py
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/ZIP.pyc
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/ZIP.pyo
 %%PYTHON_SITELIBDIR%%/pygopherd/initialization.py
 %%PYTHON_SITELIBDIR%%/pygopherd/initialization.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/initialization.pyo
@@ -110,6 +114,9 @@ etc/pygopherd/pygopherd.conf
 %%PYTHON_SITELIBDIR%%/pygopherd/protocols/rfc1436Test.py
 %%PYTHON_SITELIBDIR%%/pygopherd/protocols/rfc1436Test.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/protocols/rfc1436Test.pyo
+%%PYTHON_SITELIBDIR%%/pygopherd/protocols/wap.py
+%%PYTHON_SITELIBDIR%%/pygopherd/protocols/wap.pyc
+%%PYTHON_SITELIBDIR%%/pygopherd/protocols/wap.pyo
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.py
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.pyo
@@ -119,6 +126,11 @@ etc/pygopherd/pygopherd.conf
 %%PYTHON_SITELIBDIR%%/pygopherd/version.py
 %%PYTHON_SITELIBDIR%%/pygopherd/version.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/version.pyo
+%%PYTHON_SITELIBDIR%%/pygopherd/zipfile.py
+%%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyc
+%%PYTHON_SITELIBDIR%%/pygopherd/zipfile.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd/handlers
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd/protocols
 @dirrm %%PYTHON_SITELIBDIR%%/pygopherd
+@unexec rmdir %D/etc/pygopherd 2> /dev/null || echo "If you do not plan on reinstalling pygopherd, you can safely remove %D/etc/pygopherd"
+

@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	pygopherd
-PORTVERSION=	1.1.0
+PORTVERSION=	2.0.3
 CATEGORIES=	net python
-MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/old/
+MASTER_SITES=	http://gopher.quux.org:70/devel/gopher/Downloads/pygopherd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,7 @@ COMMENT=	Multiprotocol Information Server
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN8=	pygopherd.8
 
@@ -30,8 +30,11 @@ post-patch:
 		${WRKSRC}/bin/pygopherd
 	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} \
 		-e "s|/usr/bin/python2.2|${SETENV} python|g"
+	@${MV} ${WRKSRC}/conf/pygopherd.conf ${WRKSRC}/conf/pygopherd.conf-dist
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
+	@[ -f ${PREFIX}/etc/pygopherd/pygopherd.conf ] || \
+			${CP} ${PREFIX}/etc/pygopherd/pygopherd.conf-dist ${PREFIX}/etc/pygopherd/pygopherd.conf
 
 .include <bsd.port.mk>
