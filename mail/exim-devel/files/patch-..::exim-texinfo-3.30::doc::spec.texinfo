@@ -1,0 +1,22 @@
+--- ../exim-texinfo-3.951/doc/spec.texinfo.orig	Tue Jun 12 12:20:49 2001
++++ ../exim-texinfo-3.951/doc/spec.texinfo	Tue Jan 15 17:19:46 2002
+@@ -20785,6 +20785,19 @@
+ may be adequate for all your requirements if you are mainly interested in
+ encrypting transfers, and not in secure identification.
+ 
++However, many clients require that the certificate presented by Exim be a user
++(also called "leaf" or "site") certificate, and not a self-signed certificate.
++In this case, the self-signed certificate described above must be installed on
++the client host as a trusted root certification authority and the certificate
++used by Exim must be a user certificate signed with that self-signed
++certificate.
++
++For information on creating self-signed CA certificates and using them to sign
++user certificates, see the "General implementation overview" chapter of the
++Open-source PKI Book, available online at:
++
++http://ospkibook.sourceforge.net/
++
+ 
+ 
+ 
