@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# This script can be used as an alternative method of starting up Exim.
+# Most installations should simply edit /etc/mail/mailer.conf and then
+# allow the system startup scripts to start Exim as sendmail.
+#
+# However, if Exim is linked against 3rd-party libraries that are not in
+# the standard library search path (such as MySQL), then it should be
+# started here, after said library support is enabled through its own
+# startup script.
+#
+# $Id$
+#
+args='-bd -q30m'
+
+case "$1" in
+start)
+        [ -x /usr/local/sbin/exim ] && /usr/local/sbin/exim $args && echo -n ' e
+xim'
+        ;;
+stop)
+        kill `cat /var/run/exim.pid` && echo -n ' exim'
+        ;;
+*)
+        echo "Usage: `basename $0` {start|stop}" >&2
+        exit 64
+        ;;
+esac
+
+exit 0
+
