@@ -20,11 +20,12 @@ LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
 USE_GTK=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 post-patch:
 	@${GREP} -lR "heapsort" ${WRKSRC}/src | ${XARGS} \
-		${PERL} -pi -e "s/heapsort/hsort/g"
+		${REINPLACE_CMD} -e "s/heapsort/hsort/g"
 
 .if !defined(NOPORTDOCS)
 post-install:
