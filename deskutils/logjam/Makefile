@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
-MAINTAINER=	alanp@unixpower.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK interface to user journals on www.livejournal.com
 
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
