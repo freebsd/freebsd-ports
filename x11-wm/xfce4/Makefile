@@ -12,8 +12,10 @@ MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	nakai@FreeBSD.org
 
+LIB_DEPENDS=	gdk_pibxuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GTK=	yes
 USE_XPM=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
