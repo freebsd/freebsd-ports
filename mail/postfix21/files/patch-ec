@@ -7,7 +7,7 @@
   #endif
 --- 155,157 ----
   #ifndef DEF_PROGRAM_DIR
-! #define DEF_PROGRAM_DIR		"!!PREFIX!!/usr/libexec/postfix"
+! #define DEF_PROGRAM_DIR		"!!PREFIX!!/libexec/postfix"
   #endif
 ***************
 *** 189,191 ****
