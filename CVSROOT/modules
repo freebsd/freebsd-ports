@@ -8213,7 +8213,6 @@ xemacs		ports/editors/xemacs
 xemacs-devel	ports/editors/xemacs-devel
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
-xemacs-oa-packages	ports/editors/xemacs-oa-packages
 xemacs-packages		ports/editors/xemacs-packages
 xemacs-prog-packages	ports/editors/xemacs-prog-packages
 xemacs-wp-packages	ports/editors/xemacs-wp-packages
