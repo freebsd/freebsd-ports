@@ -74,9 +74,9 @@ CONFIGURE_ARGS+=	--with-dbm=db4 \
 LIB_DEPENDS+=		db41:${PORTSDIR}/databases/db41
 CONFIGURE_ARGS+=	--with-dbm=db41 \
 			--with-berkeley-db=${LOCALBASE}
-#.       elif ${WITH_BERKELEYDB} == "db42"
-#LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
-#CONFIGURE_ARGS+=	--with-dbm=db42
+.       elif ${WITH_BERKELEYDB} == "db42"
+LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
+CONFIGURE_ARGS+=	--with-dbm=db42
 .       else
 BROKEN=		"Unknown Berkeley DB version"
 .       endif
