@@ -17,7 +17,6 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ChangeLog.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.en.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.rlog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/rmi.html
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse/ja
