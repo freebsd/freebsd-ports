@@ -60,12 +60,6 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinSystem.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinTesting.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinTesting.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/DarwinTesting.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/FileMarking.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/Finder_Std_Suite.pyo
@@ -75,9 +69,6 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacSystem.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacTesting.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacTesting.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacTesting.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacUtils.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacUtils.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/MacUtils.pyo
@@ -93,15 +84,49 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Mac/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Pyrex/Testing.py
-%%PYTHON_SITELIBDIR%%/Pyrex/Testing.pyc
-%%PYTHON_SITELIBDIR%%/Pyrex/Testing.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Actions.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Actions.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Actions.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/DFA.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/DFA.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/DFA.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Errors.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Errors.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Errors.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Lexicons.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Lexicons.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Lexicons.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Machines.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Machines.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Machines.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Regexps.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Scanners.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Timing.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Timing.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Timing.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Traditional.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Traditional.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Traditional.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Transitions.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Transitions.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/Transitions.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/test_tm.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/test_tm.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Plex/test_tm.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Utils.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Utils.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Utils.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyrex/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Plex
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Mac
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Distutils
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Compiler
@@ -138,7 +163,7 @@ bin/pyrexc
 %%PORTDOCS%%share/examples/pyrex/run_primes.py
 %%PORTDOCS%%share/examples/pyrex/run_spam.py
 %%PORTDOCS%%share/examples/pyrex/spam.pyx
-%%PORTDOCS%%@dirrm share/examples/pyrex/callback
 %%PORTDOCS%%@dirrm share/examples/pyrex/embed
+%%PORTDOCS%%@dirrm share/examples/pyrex/callback
 %%PORTDOCS%%@dirrm share/examples/pyrex
 %%PORTDOCS%%@dirrm share/doc/pyrex
