@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 SHLIB_MAJOR=	1
 
 MAKEFILES=	Makefile.lib Makefile.prog
