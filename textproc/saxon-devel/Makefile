@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	8.2
+PORTVERSION=	8.1.1
+PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	saxon
@@ -29,7 +30,7 @@ CONFLICTS=	saxon-6.*
 JARFILES=	saxon8-sql.jar saxon8-jdom.jar saxon8.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
 .if !defined(NOPORTDOCS)
-PORTDOCS=	background documentation img
+PORTDOCS=	background documentation img javadoc
 .endif
 
 SUB_FILES=	saxon.sh
@@ -56,9 +57,9 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing scripts in ${PREFIX}/bin..."
-.for file in saxon saxon-xquery
-	@${ECHO_MSG} -n " ${file}"
-	@${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${PREFIX}/bin/${file}
+.for scriptfile in saxon saxon-xquery
+	@${ECHO_MSG} -n " ${scriptfile}"
+	@${INSTALL_SCRIPT} ${WRKSRC}/saxon.sh ${PREFIX}/bin/${scriptfile}
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 
