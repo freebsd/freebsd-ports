@@ -1,4 +1,0 @@
-include/mpeg.h
-lib/libmpeg.a
-lib/libmpeg.so
-lib/libmpeg.so.1

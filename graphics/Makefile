@@ -218,7 +218,6 @@
     SUBDIR += mmsclient
     SUBDIR += morpheus
     SUBDIR += mpeg
-    SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
     SUBDIR += mpeg2play
     SUBDIR += mpeg4ip
