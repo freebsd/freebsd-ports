@@ -3,11 +3,11 @@
 # Date created:         8 May 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/09 11:07:06 asami Exp $
+# $Id: Makefile,v 1.2 1995/10/02 07:58:41 asami Exp $
 #
 
 DISTNAME=       kp-0.95
-CATEGORIES+=	utilities
+CATEGORIES+=	misc
 MASTER_SITES=   ftp://forgery.cs.berkeley.edu/pub/
 
 MAINTAINER=	asami@FreeBSD.org

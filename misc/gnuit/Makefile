@@ -3,11 +3,11 @@
 # Date created:		12 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/07/15 23:26:38 torstenb Exp $
 #
 
 DISTNAME=	git-4.3.6
-CATEGORIES=	utilities
+CATEGORIES=	misc
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 GNU_CONFIGURE=	YES

@@ -3,12 +3,12 @@
 # Date created:         24 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1995/04/15 03:45:46 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/23 13:02:33 asami Exp $
 #
 
 DISTNAME=	mshell
 PKGNAME=	mshell-1.0
-CATEGORIES+=	utilities
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
 DISTFILES=	7432.Z
 

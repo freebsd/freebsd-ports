@@ -3,11 +3,11 @@
 # Date created:		1 July 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.1.1.1 1995/07/01 17:57:54 joerg Exp $
+# $Id: Makefile,v 1.2 1995/07/02 01:10:11 asami Exp $
 #
 
 DISTNAME=	team-3.1
-CATEGORIES+=	utilities
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	joerg@FreeBSD.org

@@ -3,11 +3,11 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.2 1995/08/23 09:59:16 asami Exp $
+# $Id: Makefile,v 1.3 1995/10/28 20:33:18 erich Exp $
 #
 
 DISTNAME=	ical-1.9
-CATEGORIES+=	utilities
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.sterling.com/programming/languages/tcl/code/ical/
 
 MAINTAINER=	erich@FreeBSD.org
