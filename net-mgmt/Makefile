@@ -9,6 +9,7 @@
     SUBDIR += annextools
     SUBDIR += ap-utils
     SUBDIR += argus
+    SUBDIR += arpscan
     SUBDIR += arpwatch
     SUBDIR += arpwatch-devel
     SUBDIR += arts++
