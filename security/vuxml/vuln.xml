@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f8536143-9bc4-11d9-b8b3-000a95bc6fae">
+    <topic>sylpheed -- buffer overflow in header processing</topic>
+    <affects>
+      <package>
+	<name>sylpheed</name>
+	<name>sylpheed-claws</name>
+	<name>sylpheed-gtk2</name>
+	<range><ge>0.8.*</ge><lt>1.0.3</lt></range>
+	<range><ge>1.9.*</ge><lt>1.9.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Sylpheed web site states:</p>
+	<blockquote cite="http://sylpheed.good-day.net/index.cgi.en#changes">
+	  <p>A buffer overflow which occurred when replying to a
+	  message with certain headers which contain non-ascii
+	  characters was fixed.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0667</cvename>
+      <url>http://sylpheed.good-day.net/index.cgi.en#changes</url>
+    </references>
+    <dates>
+      <discovery>2005-03-07</discovery>
+      <entry>2005-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4bd3039-9a48-11d9-a256-0001020eed82">
     <topic>xv -- filename handling format string vulnerability</topic>
     <affects>
