@@ -150,6 +150,7 @@
     SUBDIR += instant-workstation
     SUBDIR += iselect
     SUBDIR += jargon
+    SUBDIR += jbidwatcher
     SUBDIR += jive
     SUBDIR += k3b-i18n
     SUBDIR += kaddressbook-plugins
