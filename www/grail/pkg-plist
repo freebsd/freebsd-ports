@@ -22,7 +22,6 @@ share/grail/Cursors.py
 share/grail/Cursors.pyc
 share/grail/FileReader.py
 share/grail/FileReader.pyc
-share/grail/Grail.ad
 share/grail/GrailHTMLParser.py
 share/grail/GrailHTMLParser.pyc
 share/grail/ImageCache.py
@@ -35,24 +34,17 @@ share/grail/LICENSE
 share/grail/README
 share/grail/Reader.py
 share/grail/Reader.pyc
-share/grail/SampleGrailDir/LICENSE
 share/grail/SampleGrailDir/custom.ps
-share/grail/SampleGrailDir/icons/LICENSE
 share/grail/SampleGrailDir/icons/alert.black.gif
 share/grail/SampleGrailDir/icons/alert.red.gif
-@dirrm share/grail/SampleGrailDir/icons
-share/grail/SampleGrailDir/user/LICENSE
 share/grail/SampleGrailDir/user/grailrc.py
 share/grail/SampleGrailDir/user/grailrc.pyc
 share/grail/SampleGrailDir/user/rcgrail.py
 share/grail/SampleGrailDir/user/rcgrail.pyc
-@dirrm share/grail/SampleGrailDir/user
-@dirrm share/grail/SampleGrailDir
 share/grail/Stylesheet.py
 share/grail/Stylesheet.pyc
 share/grail/Viewer.py
 share/grail/Viewer.pyc
-share/grail/about.html
 share/grail/ancillary/BookmarksGUI.py
 share/grail/ancillary/BookmarksGUI.pyc
 share/grail/ancillary/BookmarksParser.py
@@ -61,15 +53,12 @@ share/grail/ancillary/DocumentInfo.py
 share/grail/ancillary/DocumentInfo.pyc
 share/grail/ancillary/GlobalHistory.py
 share/grail/ancillary/GlobalHistory.pyc
-share/grail/ancillary/GrailPrefs.py
-share/grail/ancillary/GrailPrefs.pyc
 share/grail/ancillary/Greek.py
 share/grail/ancillary/Greek.pyc
 share/grail/ancillary/History.py
 share/grail/ancillary/History.pyc
 share/grail/ancillary/IOStatusPanel.py
 share/grail/ancillary/IOStatusPanel.pyc
-share/grail/ancillary/LICENSE
 share/grail/ancillary/MailDialog.py
 share/grail/ancillary/MailDialog.py.orig
 share/grail/ancillary/MailDialog.pyc
@@ -87,16 +76,12 @@ share/grail/ancillary/SearchMenu.py
 share/grail/ancillary/SearchMenu.pyc
 share/grail/ancillary/TbDialog.py
 share/grail/ancillary/TbDialog.pyc
-@dirrm share/grail/ancillary
 share/grail/applets/Animator.py
 share/grail/applets/Animator.pyc
 share/grail/applets/ImageLoopItem.py
 share/grail/applets/ImageLoopItem.pyc
-share/grail/applets/LICENSE
 share/grail/applets/popup.py
 share/grail/applets/popup.pyc
-@dirrm share/grail/applets
-share/grail/biglogo.gif
 share/grail/bkmktool.py
 share/grail/bkmktool.pyc
 share/grail/bookmarks/__init__.py
@@ -121,7 +106,6 @@ share/grail/bookmarks/formats/xbel_parser.py
 share/grail/bookmarks/formats/xbel_parser.pyc
 share/grail/bookmarks/formats/xbel_writer.py
 share/grail/bookmarks/formats/xbel_writer.pyc
-@dirrm share/grail/bookmarks/formats
 share/grail/bookmarks/iso8601.py
 share/grail/bookmarks/iso8601.pyc
 share/grail/bookmarks/main.py
@@ -132,19 +116,26 @@ share/grail/bookmarks/search/KeywordSearch.py
 share/grail/bookmarks/search/KeywordSearch.pyc
 share/grail/bookmarks/search/__init__.py
 share/grail/bookmarks/search/__init__.pyc
-@dirrm share/grail/bookmarks/search
 share/grail/bookmarks/walker.py
 share/grail/bookmarks/walker.pyc
-@dirrm share/grail/bookmarks
-share/grail/dummies.py
-share/grail/dummies.pyc
+share/grail/bookmarks/xmlinfo.py
+share/grail/bookmarks/xmlinfo.pyc
+share/grail/data/Grail.ad
+share/grail/data/about.html
+share/grail/data/biglogo.gif
+share/grail/data/grail-defaults
+share/grail/data/icon.xbm
+share/grail/data/iconmask.xbm
+share/grail/embed.py
+share/grail/embed.pyc
 share/grail/filetypes/FlowingText.py
 share/grail/filetypes/FlowingText.pyc
-share/grail/filetypes/LICENSE
 share/grail/filetypes/__init__.py
 share/grail/filetypes/__init__.pyc
 share/grail/filetypes/audio_basic.py
 share/grail/filetypes/audio_basic.pyc
+share/grail/filetypes/image.py
+share/grail/filetypes/image.pyc
 share/grail/filetypes/image_gif.py
 share/grail/filetypes/image_gif.pyc
 share/grail/filetypes/image_jpeg.py
@@ -155,14 +146,28 @@ share/grail/filetypes/text_paragraph.py
 share/grail/filetypes/text_paragraph.pyc
 share/grail/filetypes/text_plain.py
 share/grail/filetypes/text_plain.pyc
-@dirrm share/grail/filetypes
-share/grail/grail-defaults
+share/grail/filetypes/text_x_python.py
+share/grail/filetypes/text_x_python.pyc
 share/grail/grail.py
 share/grail/grail.pyc
+share/grail/grailbase/GrailPrefs.py
+share/grail/grailbase/GrailPrefs.pyc
+share/grail/grailbase/__init__.py
+share/grail/grailbase/__init__.pyc
+share/grail/grailbase/app.py
+share/grail/grailbase/app.pyc
+share/grail/grailbase/extloader.py
+share/grail/grailbase/extloader.pyc
+share/grail/grailbase/mtloader.py
+share/grail/grailbase/mtloader.pyc
+share/grail/grailbase/parseprefs.py
+share/grail/grailbase/parseprefs.pyc
+share/grail/grailbase/uricontext.py
+share/grail/grailbase/uricontext.pyc
+share/grail/grailbase/utils.py
+share/grail/grailbase/utils.pyc
 share/grail/grsh.py
 share/grail/grsh.pyc
-share/grail/header.ps
-share/grail/html/LICENSE
 share/grail/html/__init__.py
 share/grail/html/__init__.pyc
 share/grail/html/fn.py
@@ -175,12 +180,8 @@ share/grail/html/isindex.py
 share/grail/html/isindex.pyc
 share/grail/html/table.py
 share/grail/html/table.pyc
-@dirrm share/grail/html
 share/grail/html2ps.py
 share/grail/html2ps.pyc
-share/grail/icon.xbm
-share/grail/iconmask.xbm
-share/grail/icons/LICENSE
 share/grail/icons/archive.gif
 share/grail/icons/audio.gif
 share/grail/icons/binary.document.gif
@@ -197,10 +198,6 @@ share/grail/icons/disk.drive.gif
 share/grail/icons/diskette.gif
 share/grail/icons/display.gif
 share/grail/icons/document.gif
-share/grail/icons/eps.color/LICENSE
-@dirrm share/grail/icons/eps.color
-share/grail/icons/eps.grey/LICENSE
-@dirrm share/grail/icons/eps.grey
 share/grail/icons/fax.gif
 share/grail/icons/filing.cabinet.gif
 share/grail/icons/film.gif
@@ -283,19 +280,6 @@ share/grail/icons/unknown.document.gif
 share/grail/icons/uuencoded.document.gif
 share/grail/icons/work.gif
 share/grail/icons/www.gif
-@dirrm share/grail/icons
-share/grail/obj_postscript/__init__.py
-share/grail/obj_postscript/__init__.pyc
-share/grail/obj_postscript/application_postscript.py
-share/grail/obj_postscript/application_postscript.pyc
-@dirrm share/grail/obj_postscript
-share/grail/obj_viewer/__init__.py
-share/grail/obj_viewer/__init__.pyc
-share/grail/obj_viewer/image.py
-share/grail/obj_viewer/image.pyc
-share/grail/obj_viewer/text_x_python.py
-share/grail/obj_viewer/text_x_python.pyc
-@dirrm share/grail/obj_viewer
 share/grail/pinfo.py
 share/grail/pinfo.pyc
 share/grail/prefpanels/AppletsPanel.py
@@ -306,14 +290,12 @@ share/grail/prefpanels/CachePanel.py
 share/grail/prefpanels/CachePanel.pyc
 share/grail/prefpanels/GeneralPanel.py
 share/grail/prefpanels/GeneralPanel.pyc
-share/grail/prefpanels/LICENSE
 share/grail/prefpanels/PrintingPanel.py
 share/grail/prefpanels/PrintingPanel.pyc
 share/grail/prefpanels/ProxiesPanel.py
 share/grail/prefpanels/ProxiesPanel.pyc
 share/grail/prefpanels/StylePanel.py
 share/grail/prefpanels/StylePanel.pyc
-@dirrm share/grail/prefpanels
 share/grail/printing/PSFont.py
 share/grail/printing/PSFont.pyc
 share/grail/printing/PSParser.py
@@ -324,16 +306,17 @@ share/grail/printing/PSWriter.py
 share/grail/printing/PSWriter.pyc
 share/grail/printing/__init__.py
 share/grail/printing/__init__.pyc
+share/grail/printing/data/header.ps
 share/grail/printing/epstools.py
 share/grail/printing/epstools.pyc
 share/grail/printing/filetypes/__init__.py
 share/grail/printing/filetypes/__init__.pyc
+share/grail/printing/filetypes/application_postscript.py
+share/grail/printing/filetypes/application_postscript.pyc
 share/grail/printing/filetypes/text.py
 share/grail/printing/filetypes/text.pyc
 share/grail/printing/filetypes/text_html.py
 share/grail/printing/filetypes/text_html.pyc
-@dirrm share/grail/printing/filetypes
-share/grail/printing/fonts/LICENSE
 share/grail/printing/fonts/PSFont.py
 share/grail/printing/fonts/PSFont.pyc
 share/grail/printing/fonts/PSFont_Courier.py
@@ -360,7 +343,8 @@ share/grail/printing/fonts/__init__.py
 share/grail/printing/fonts/__init__.pyc
 share/grail/printing/fonts/afm2py.py
 share/grail/printing/fonts/afm2py.pyc
-@dirrm share/grail/printing/fonts
+share/grail/printing/htmltags/__init__.py
+share/grail/printing/htmltags/__init__.pyc
 share/grail/printing/main.py
 share/grail/printing/main.pyc
 share/grail/printing/paper.py
@@ -369,8 +353,6 @@ share/grail/printing/settings.py
 share/grail/printing/settings.pyc
 share/grail/printing/utils.py
 share/grail/printing/utils.pyc
-@dirrm share/grail/printing
-share/grail/protocols/LICENSE
 share/grail/protocols/ProtocolAPI.py
 share/grail/protocols/ProtocolAPI.pyc
 share/grail/protocols/__init__.py
@@ -401,47 +383,98 @@ share/grail/protocols/telnetAPI.py
 share/grail/protocols/telnetAPI.pyc
 share/grail/protocols/urnAPI.py
 share/grail/protocols/urnAPI.pyc
-@dirrm share/grail/protocols
-share/grail/pythonlib/LICENSE
 share/grail/pythonlib/ihooks.py
 share/grail/pythonlib/ihooks.pyc
 share/grail/pythonlib/keyword.py
 share/grail/pythonlib/keyword.pyc
-@dirrm share/grail/pythonlib
-share/grail/session.py
-share/grail/session.pyc
-share/grail/sgml_lex/HTMLParser.py
-share/grail/sgml_lex/HTMLParser.pyc
-share/grail/sgml_lex/LICENSE
-share/grail/sgml_lex/SGMLGatherer.py
-share/grail/sgml_lex/SGMLGatherer.pyc
-share/grail/sgml_lex/SGMLLexer.py
-share/grail/sgml_lex/SGMLLexer.pyc
-share/grail/sgml_lex/SGMLParser.py
-share/grail/sgml_lex/SGMLParser.pyc
-share/grail/sgml_lex/SGMLReplacer.py
-share/grail/sgml_lex/SGMLReplacer.pyc
-@dirrm share/grail/sgml_lex
+share/grail/sgml/HTMLParser.py
+share/grail/sgml/HTMLParser.pyc
+share/grail/sgml/SGMLHandler.py
+share/grail/sgml/SGMLHandler.pyc
+share/grail/sgml/SGMLLexer.py
+share/grail/sgml/SGMLLexer.pyc
+share/grail/sgml/SGMLParser.py
+share/grail/sgml/SGMLParser.pyc
+share/grail/sgml/SGMLReplacer.py
+share/grail/sgml/SGMLReplacer.pyc
+share/grail/sgml/__init__.py
+share/grail/sgml/__init__.pyc
+share/grail/sgml/extloader.py
+share/grail/sgml/extloader.pyc
+share/grail/sgml/utils.py
+share/grail/sgml/utils.pyc
 share/grail/utils/Assert.py
 share/grail/utils/Assert.pyc
-share/grail/utils/LICENSE
 share/grail/utils/SafeDialog.py
 share/grail/utils/SafeDialog.pyc
 share/grail/utils/SafeTkinter.py
 share/grail/utils/SafeTkinter.pyc
+share/grail/utils/cookielib.py
+share/grail/utils/cookielib.pyc
 share/grail/utils/grailutil.py
 share/grail/utils/grailutil.pyc
 share/grail/utils/hdllib.py
 share/grail/utils/hdllib.pyc
 share/grail/utils/ht_time.py
 share/grail/utils/ht_time.pyc
-share/grail/utils/parseprefs.py
-share/grail/utils/parseprefs.pyc
+share/grail/utils/pynche/ChipViewer.py
+share/grail/utils/pynche/ChipViewer.pyc
+share/grail/utils/pynche/ColorDB.py
+share/grail/utils/pynche/ColorDB.pyc
+share/grail/utils/pynche/DetailsViewer.py
+share/grail/utils/pynche/DetailsViewer.pyc
+share/grail/utils/pynche/ListViewer.py
+share/grail/utils/pynche/ListViewer.pyc
+share/grail/utils/pynche/Main.py
+share/grail/utils/pynche/Main.pyc
+share/grail/utils/pynche/PyncheWidget.py
+share/grail/utils/pynche/PyncheWidget.pyc
+share/grail/utils/pynche/README
+share/grail/utils/pynche/StripViewer.py
+share/grail/utils/pynche/StripViewer.pyc
+share/grail/utils/pynche/Switchboard.py
+share/grail/utils/pynche/Switchboard.pyc
+share/grail/utils/pynche/TextViewer.py
+share/grail/utils/pynche/TextViewer.pyc
+share/grail/utils/pynche/TypeinViewer.py
+share/grail/utils/pynche/TypeinViewer.pyc
+share/grail/utils/pynche/X/rgb.txt
+share/grail/utils/pynche/X/xlicense.txt
+share/grail/utils/pynche/__init__.py
+share/grail/utils/pynche/__init__.pyc
+share/grail/utils/pynche/pyColorChooser.py
+share/grail/utils/pynche/pyColorChooser.pyc
+share/grail/utils/pynche/pynche
+share/grail/utils/pynche/pynche.pyw
 share/grail/utils/supertextbox.py
 share/grail/utils/supertextbox.pyc
 share/grail/utils/testing.py
 share/grail/utils/testing.pyc
 share/grail/utils/tktools.py
 share/grail/utils/tktools.pyc
+@dirrm share/grail/SampleGrailDir/icons
+@dirrm share/grail/SampleGrailDir/user
+@dirrm share/grail/SampleGrailDir
+@dirrm share/grail/ancillary
+@dirrm share/grail/applets
+@dirrm share/grail/bookmarks/formats
+@dirrm share/grail/bookmarks/search
+@dirrm share/grail/bookmarks
+@dirrm share/grail/data
+@dirrm share/grail/filetypes
+@dirrm share/grail/grailbase
+@dirrm share/grail/html
+@dirrm share/grail/icons
+@dirrm share/grail/prefpanels
+@dirrm share/grail/printing/data
+@dirrm share/grail/printing/filetypes
+@dirrm share/grail/printing/fonts
+@dirrm share/grail/printing/htmltags
+@dirrm share/grail/printing
+@dirrm share/grail/protocols
+@dirrm share/grail/pythonlib
+@dirrm share/grail/sgml
+@dirrm share/grail/utils/pynche/X
+@dirrm share/grail/utils/pynche
 @dirrm share/grail/utils
 @dirrm share/grail
