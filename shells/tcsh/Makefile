@@ -14,7 +14,7 @@ DISTNAME=	tcsh-6.09
 MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500001
+.if ${OSVERSION} >= 400021
 FORBIDDEN=	"tcsh is already in the base system"
 .endif
 
