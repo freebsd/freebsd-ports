@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Feb  2 21:19:24 1999
++++ src/Makefile.in	Tue Feb  2 21:19:34 1999
+@@ -164,7 +164,7 @@
+ SOURCES = $(libffi_la_SOURCES) $(ffitest_SOURCES)
+ OBJECTS = $(libffi_la_OBJECTS) $(ffitest_OBJECTS)
+ 
+-all: Makefile $(LTLIBRARIES) $(PROGRAMS)
++all: Makefile $(LTLIBRARIES)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
