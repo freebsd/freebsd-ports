@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	winfingerprint
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Generates packets to match a list of Cisco PIX access lists
 
+BROKEN=		Does not configure
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
 
 WRKSRC=		${WRKDIR}/pixilate
