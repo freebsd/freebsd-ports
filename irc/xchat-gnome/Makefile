@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xchat
-# Version required:		1.3.5
+# Version required:		1.3.6
 # Date created:			17 Nov 1998
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xchat-1.3.5
+DISTNAME=	xchat-1.3.6
 CATEGORIES=	irc
 MASTER_SITES=	http://xchat.org/files/v1.3/ \
 		http://xchat.linuxpower.org/files/v1.3/
@@ -26,7 +26,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls --disable-debug
+CONFIGURE_ARGS=	--disable-nls --disable-python
 
 .if defined(USE_GNOME)
 CONFIGURE_ARGS+= --enable-gnome
@@ -40,6 +40,9 @@ CONFIGURE_ARGS+= --disable-gnome
 .endif
 
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+
+post-extract:
+	@(cd ${WRKSRC} && find . -exec ${TOUCH} {} \;)
 
 post-install:
 	@strip ${PREFIX}/bin/xchat
