@@ -2,10 +2,10 @@
 
 PTlink IRC daemon is now installed.
 
-Please copy the sample files %%PREFIX%%/etc/*.conf.sample,*.dconf.sample
-to %%PREFIX%%/etc/*.conf,*.dconf.
+Please copy the sample files %%SYSCONFDIR%%/*.conf.sample,*.dconf.sample
+to %%SYSCONFDIR%%/*.conf,*.dconf.
 
-Edit the configuration files %%PREFIX%%/etc/*.conf,*.dconf to suit your
+Edit the configuration files %%SYSCONFDIR%%/*.conf,*.dconf to suit your
 needs.
 
 ======================================================================
