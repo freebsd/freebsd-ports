@@ -50,6 +50,7 @@
     SUBDIR += ruby-dcl-gtk
     SUBDIR += ruby-gphys
     SUBDIR += simlib
+    SUBDIR += udunits
     SUBDIR += vis5d+
     SUBDIR += vmd
     SUBDIR += x11iraf

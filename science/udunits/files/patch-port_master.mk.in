@@ -1,0 +1,34 @@
+$FreeBSD$
+
+--- port/master.mk.in.orig	Tue Sep 30 12:39:28 2003
++++ port/master.mk.in	Mon Jan  3 10:38:26 2005
+@@ -433,21 +433,6 @@
+      -e '/^\.TH/s/$$D\ate: \([0-9]*\)\/\([0-9]*\)\/\([0-9]*\).*\$$/\1-\2-\3/'\
+ 		 $(MANUAL) | $(TBL) | $(NEQN) > $@;; \
+ 	esac
+-	extension=`echo $(MANUAL) | sed 's/[^.]*\.//'`; \
+-	subchapter=`echo $$extension | sed 's/.//'`; \
+-	case "$$subchapter" in \
+-	    '') ;; \
+-	    *)  chapter=`echo $$extension | sed 's/\(.\).*/\1/'`; \
+-		if test -d $(MANDIR)$$subchapter; then \
+-		    : true; \
+-		else \
+-		    mkdir $(MANDIR)$$subchapter; \
+-		fi; \
+-		rm -f $(MANDIR)$$subchapter/$(MANUAL); \
+-		ln -s ../`basename $(MANDIR)`/$(MANUAL) \
+-		    $(MANDIR)$$subchapter/$(MANUAL); \
+-		;; \
+-	esac
+ 
+ dummy_mandir $(MANDIR):
+ 	mkdir -p $@
+@@ -455,7 +440,6 @@
+ 
+ whatis:		$(MANDIR)/$(WHATIS)
+ $(MANDIR)/$(WHATIS):	$(MANDIR)
+-	$(MAKEWHATIS_CMD)
+ 
+ 
+ ############################################################################

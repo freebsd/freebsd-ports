@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- lib/Makefile.in.orig	Sat Jan  1 00:03:38 2005
++++ lib/Makefile.in	Sat Jan  1 00:04:39 2005
+@@ -6,7 +6,7 @@
+ 
+ LIBRARY		= udunits
+ 
+-FLEX		= /usr/local/gnu/bin/flex
++FLEX		= /usr/bin/flex
+ cpp_path	= -DUT_DEFAULT_PATH='"$(prefix)/etc/udunits.dat"'
+ CPPFLAGS	= -I../port/misc -I../port/cfortran $(cpp_path) @CPPFLAGS@
+ CFLAGS		= @CFLAGS@

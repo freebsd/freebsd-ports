@@ -1,0 +1,12 @@
+$FreeBSD$
+
+--- CUSTOMIZE.orig      2004-05-08 14:04:53.199958510 -0700
++++ CUSTOMIZE   2004-05-08 13:58:48.843900138 -0700
+@@ -33,3 +33,7 @@
+ # Ancillary libraries.  SunOS 4 user's might need something like the
+ # following in order to resolve strerror() in the perl/ subdirectory.
+ # LIBS='-L/usr/lang/SC3.0.1/lib -lansi'
++
++FC=g77
++CPPFLAGS=-Df2cFortran
++LD_MATH=-lm
