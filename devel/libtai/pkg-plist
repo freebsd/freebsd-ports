@@ -14,3 +14,4 @@ lib/%%LIBFILE%%.so.%%LIBVERSION%%
 @mode 0644
 etc/leapsecs.dat
 @mode
+@dirrm include/libtai
