@@ -6,6 +6,7 @@
     SUBDIR += br-ispell
     SUBDIR += c2html
     SUBDIR += catdoc
+    SUBDIR += chpp
     SUBDIR += cocoon
     SUBDIR += code2html
     SUBDIR += cole
