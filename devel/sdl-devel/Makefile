@@ -33,7 +33,7 @@ CONFIGURE_ARGS+=--enable-video-vgl
 DISPLAY_MSG=	${CAT} ${PKGMESSAGE}
 .else
 CONFIGURE_ARGS+=--disable-video-vgl
-PKGMESSAGE=
+PKGMESSAGE=	/I/hate/ports/Mk/bsd.port.mk
 DISPLAY_MSG=	${DO_NADA}
 .endif
 
