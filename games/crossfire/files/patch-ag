@@ -1,0 +1,14 @@
+--- server/main.c.orig	Fri Nov  1 14:02:00 1996
++++ server/main.c	Fri Nov  1 14:06:15 1996
+@@ -153,7 +153,11 @@
+ }
+ 
+ int check_password(char *typed,char *crypted) {
++#ifdef UGLY_PASSWORD_HACK
++  return(1);
++#else
+   return !strcmp(crypt_string(typed,crypted),crypted);
++#endif
+ }
+ 
+ char *normalize_path (char *src, char *dst) {
