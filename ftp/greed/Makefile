@@ -8,7 +8,7 @@
 PORTNAME=	greed
 PORTVERSION=	0.81p
 CATEGORIES=	ftp www
-MASTER_SITES=	http://ftp.ceat.net/pub/linux/internet/ftp/mirroring/
+MASTER_SITES=	http://sheepkiller.nerim.net/ports/$(PORTNAME)/
 DISTNAME=	greed.81p
 
 MAINTAINER=	ports@FreeBSD.org
