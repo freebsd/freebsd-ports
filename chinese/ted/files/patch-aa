@@ -1,13 +1,28 @@
---- Makefile.orig	Mon Jun 15 21:46:49 1998
-+++ Makefile	Wed Jun 24 22:37:10 1998
-@@ -1,5 +1,5 @@
+--- Makefile.orig	Wed Jul 29 10:19:03 1998
++++ Makefile	Fri Aug 14 18:29:35 1998
+@@ -1,14 +1,14 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
 +CHINESE=1
 +TEDDIR=/usr/X11R6/lib/X11/ted
  ########## GCC/Linux ......  ############
- CC=gcc
- XINC=-I/usr/X11R6/include
+-#CC=gcc
+-#XINC=-I/usr/X11R6/include
+-#LDFLAGS=-L/usr/X11R6/lib
++CC=gcc
++XINC=-I/usr/X11R6/include
++LDFLAGS=-L/usr/X11R6/lib
+ ###########################
+ ###### HP-UX's ansi cc ####
+-CC=cc -Ae
+-LDFLAGS=-L/usr/lib/X11R5
+-XINC=
++#CC=cc -Ae
++#LDFLAGS=-L/usr/lib/X11R5
++#XINC=
+ ###########################
+ ########## IRIX ############
+ #CC=cc -cckr
 @@ -30,20 +30,20 @@
  #CC=cc
  #XINC=-I/usr/openwin/include
