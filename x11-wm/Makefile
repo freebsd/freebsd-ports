@@ -75,7 +75,6 @@
     SUBDIR += tvtwm
     SUBDIR += ude
     SUBDIR += uwm
-    SUBDIR += vdesk
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += windowmaker
