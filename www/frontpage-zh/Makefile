@@ -9,7 +9,7 @@ PORTNAME=	frontpage
 CATEGORIES=	www chinese
 PKGNAMEPREFIX=	zh-
 
-MAINTAINER=	freebsd-maintainer@westbend.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Chinese Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

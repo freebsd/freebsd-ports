@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	_fp
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${APACHE} powerlogo.gif:powerlogo createdwFP.gif:fplogo
 
-MAINTAINER=	freebsd-maintainer@westbend.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Apache webserver with MS Frontpage Module
 
 BROKEN=		"Checksum mismatch"

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.microsoft.com/products/frontpage/ \
 		ftp://www.westbend.net/pub/microsoft/frontpage/
 DISTFILES=	${FRONTPAGE}
 
-MAINTAINER=	freebsd-maintainer@westbend.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage 2002 Extensions
 
 .include <bsd.port.pre.mk>

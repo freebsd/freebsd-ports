@@ -8,7 +8,7 @@
 PORTNAME=	frontpage
 PKGNAMEPREFIX=	nl-
 
-MAINTAINER=	freebsd-maintainer@westbend.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Dutch Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo

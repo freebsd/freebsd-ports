@@ -9,7 +9,7 @@ PORTNAME=	frontpage
 CATEGORIES=	portuguese www
 PKGNAMEPREFIX=	pt_BR-
 
-MAINTAINER=	freebsd-maintainer@westbend.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft Frontpage Brazilian Web Administration
 
 MD5_FILE=	${.CURDIR}/distinfo
