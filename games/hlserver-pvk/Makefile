@@ -7,8 +7,8 @@
 
 PORTNAME=	pvk
 PORTVERSION=	2.2.b
-MASTER_SITES=	ftp://fileplanet.ngi.it/fileplanet2/planethalflife/ \
-		http://www.pvkmod.net/files/
+MASTER_SITES=	ftp://ftp2.extreme-players.de/hosting/pvk/ \
+		http://ftp.gamesweb.com/pub/pvk/
 
 DISTFILES=	pvk_2.1_full.tar.gz pvkb22so.gz
 EXTRACT_ONLY=	pvk_2.1_full.tar.gz
