@@ -9,7 +9,8 @@
 PORTNAME=	libsndfile
 PORTVERSION=	1.0.6
 CATEGORIES=	audio
-MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/
+MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/ \
+		http://www.mega-nerd.com/libsndfile/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
