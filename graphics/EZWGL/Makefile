@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
 .include "${FILESDIR}/manpages"
 
 post-extract:
@@ -46,4 +48,4 @@ post-install:
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
