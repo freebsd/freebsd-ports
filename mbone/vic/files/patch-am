@@ -1,6 +1,6 @@
---- grabber-x11.cc	Sat May 30 14:55:30 1998
-+++ /home/old_wd0f/ports/mbone/vic/work.luigi/vic-2.8-luigi/grabber-x11.cc	Fri Apr 10 21:32:11 1998
-@@ -0,0 +1,1332 @@
+--- grabber-x11.cc.orig	Thu Sep  9 06:57:14 1999
++++ grabber-x11.cc	Wed Sep  8 21:31:27 1999
+@@ -0,0 +1,1398 @@
 +/*
 + * Copyright (c) 1998 Luigi Rizzo
 + * grabber-x11.cc for vic
@@ -144,9 +144,22 @@
 +	int X11Grab_Pseudo8(void);
 +	int X11Grab_RGB16(void);
 +	int X11Grab_TrueXBGR24(void);
++	int X11Grab_TrueXRGB24(void);
 +
 +    	int X11Grab_Initialize(Window rw, int w, int h);
-+        int (X11Grabber::*c_grab)(void);
++	typedef enum {
++		grab_none,
++		grab_X11Grab_LSBWhite1,
++		grab_X11Grab_MSBWhite1,
++		grab_X11Grab_LSBBlack1,
++		grab_X11Grab_MSBBlack1,
++		grab_X11Grab_Pseudo8,
++		grab_X11Grab_RGB16,
++		grab_X11Grab_TrueXBGR24,
++		grab_X11Grab_TrueXRGB24
++		} c_grab_type;
++	c_grab_type c_grab;
++
 +
 +	uint8 *rgb2y_ ;
 +	int8 *rgb2u_ ;
@@ -506,11 +519,11 @@
 +    for (y=0; y<height_; y += 2) {
 +        for (x=0; x<width_; x+=2) {
 +            d = *data++ ;
-+            p0 = ((d<<8) & 0xf100) | ((p0>>5) & 0x7e0) | ((p0>>19) & 0x1f);
++            p0 = ((d<<8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>19) & 0x1f);
 +	    *yp++ = rgb2y_[ p0 ];
 +
 +            d = *data++ ;
-+            p1 = ((d<<8) & 0xf100) | ((p0>>5) & 0x7e0) | ((p0>>19) & 0x1f);
++            p1 = ((d<<8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>19) & 0x1f);
 +	    *yp++ = rgb2y_[ p1 ];
 +
 +	    /* average the two pixels... */
@@ -519,11 +532,54 @@
 +        }
 +        for (x=0; x<width_; x+=2) {
 +            d = *data++ ;
-+            p0 = ((d<<8) & 0xf100) | ((p0>>5) & 0x7e0) | ((p0>>19) & 0x1f);
++            p0 = ((d<<8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>19) & 0x1f);
 +	    *yp++ = rgb2y_[ p0 ];
 +
 +            d = *data++ ;
-+            p1 = ((d<<8) & 0xf100) | ((p0>>5) & 0x7e0) | ((p0>>19) & 0x1f);
++            p1 = ((d<<8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>19) & 0x1f);
++	    *yp++ = rgb2y_[ p1 ];
++
++	    /* average the two pixels... */
++  	    p0 = ( (p0 >> 1) & 0x7bef ) + ( (p1 >> 1) & 0x7bef ) ;
++	    *vp++ = rgb2v_[ p0 ];
++        }
++    }
++
++    return 1;
++}
++
++int
++X11Grabber::X11Grab_TrueXRGB24()
++{
++    int x, y;
++    uint8 *yp= (uint8 *)frame_ ;
++    uint8 *up= (uint8 *)yp + framesize_ ;
++    uint8 *vp= up + (framesize_ >> 2) ;
++    uint16 p0, p1 ;
++    uint32 *data=(uint32 *)ximage_->image->data, d ;
++
++    for (y=0; y<height_; y += 2) {
++        for (x=0; x<width_; x+=2) {
++            d = *data++ ;
++	    /*   -- RED --            -- GREEN --        -- BLUE -- */
++            p0 = ((d>>8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>3) & 0x1f);
++	    *yp++ = rgb2y_[ p0 ];
++
++            d = *data++ ;
++            p1 = ((d>>8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>3) & 0x1f);
++	    *yp++ = rgb2y_[ p1 ];
++
++	    /* average the two pixels... */
++  	    p0 = ( (p0 >> 1) & 0x7bef ) + ( (p1 >> 1) & 0x7bef ) ;
++	    *up++ = rgb2u_[ p0 ];
++        }
++        for (x=0; x<width_; x+=2) {
++            d = *data++ ;
++            p0 = ((d>>8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>3) & 0x1f);
++	    *yp++ = rgb2y_[ p0 ];
++
++            d = *data++ ;
++            p1 = ((d>>8) & 0xf100) | ((d>>5) & 0x7e0) | ((d>>3) & 0x1f);
 +	    *yp++ = rgb2y_[ p1 ];
 +
 +	    /* average the two pixels... */
@@ -572,9 +628,9 @@
 +        switch (root_depth_) {
 +        case 1:
 +            if (white == 1) {
-+                c_grab = (LITTLEENDIAN) ? X11Grab_LSBWhite1 : X11Grab_MSBWhite1;
++                c_grab = (LITTLEENDIAN) ? grab_X11Grab_LSBWhite1 : grab_X11Grab_MSBWhite1;
 +            } else {
-+                c_grab = (LITTLEENDIAN) ? X11Grab_LSBBlack1 : X11Grab_MSBBlack1;
++                c_grab = (LITTLEENDIAN) ? grab_X11Grab_LSBBlack1 : grab_X11Grab_MSBBlack1;
 +            }
 +            config = VID_GREYSCALE;
 +            break;
@@ -585,40 +641,40 @@
 +            case GrayScale:
 +            case StaticColor:
 +            case StaticGray:
-+                c_grab = X11Grab_Pseudo8;
++                c_grab = grab_X11Grab_Pseudo8;
 +                break;
 +            default:
-+                c_grab = NULL;
++                c_grab = grab_none;
 +                break;
 +            }
 +            config = VID_GREYSCALE|VID_COLOR;
 +            break;
 +
 +        case 16:
-+	    c_grab = X11Grab_RGB16;
++	    c_grab = grab_X11Grab_RGB16;
 +	    break ;
 +
 +        case 24:
 +            if ((root_visinfo.c_class == TrueColor) &&
 +                (root_visinfo.green_mask = 0xff00) &&
-+#ifdef __FreeBSD__
-+                (root_visinfo.red_mask == 0xff0000) &&
-+                (root_visinfo.blue_mask == 0xff))
-+#else
 +                (root_visinfo.red_mask == 0xff) &&
-+                (root_visinfo.blue_mask == 0xff0000))
-+#endif
-+                {
-+                c_grab = X11Grab_TrueXBGR24;
++                (root_visinfo.blue_mask == 0xff0000)) {
++                c_grab = grab_X11Grab_TrueXBGR24;
++
++	    } else if ((root_visinfo.c_class == TrueColor) &&
++                (root_visinfo.green_mask = 0xff00) &&
++                (root_visinfo.red_mask == 0xff0000) &&
++                (root_visinfo.blue_mask == 0xff)) {
++                c_grab = grab_X11Grab_TrueXRGB24;
 +            } else
-+                c_grab = NULL;
++                c_grab = grab_none;
 +            config = VID_GREYSCALE|VID_COLOR;
 +            break;
 +
 +        default:
 +	    fprintf(stderr, "don't know how to grab %d bits\n",
 +		root_depth_);
-+            c_grab = NULL;
++            c_grab = grab_none;
 +            break;
 +        }
 +    }
@@ -630,7 +686,7 @@
 +	    VidUtil_DestroyXImage(dpy_, ximage_);
 +        ximage_ = VidUtil_AllocXImage(dpy_, root_vis, root_depth_, w, h, False);
 +    }
-+    return (c_grab == NULL) ? 0 : config|VID_SMALL|VID_MEDIUM|VID_LARGE;
++    return (c_grab == grab_none) ? 0 : config|VID_SMALL|VID_MEDIUM|VID_LARGE;
 +}
 +
 +extern "C" {
@@ -986,7 +1042,7 @@
 +
 +X11Grabber::X11Grabber(const char* name, const char* format)
 +{
-+	c_grab = NULL ; /* XXX */
++	c_grab = grab_none ; /* XXX */
 +	theroot_ = None ; /* XXX */
 +	ximage_ = NULL ;
 +	color = NULL ;
@@ -1194,7 +1250,17 @@
 +	    XGetSubImage(dpy_, theroot_, x_origin_, y_origin_,
 +		image->width, image->height, AllPlanes,
 +		     ZPixmap, image, 0, 0);
-+        c_grab();
++        switch (c_grab) {
++	case grab_none: break;
++	case grab_X11Grab_LSBWhite1:	X11Grab_LSBWhite1(); break;
++	case grab_X11Grab_MSBWhite1:	X11Grab_MSBWhite1(); break;
++	case grab_X11Grab_LSBBlack1:	X11Grab_LSBBlack1(); break;
++	case grab_X11Grab_MSBBlack1:	X11Grab_MSBBlack1(); break;
++	case grab_X11Grab_Pseudo8:	X11Grab_Pseudo8(); break;
++	case grab_X11Grab_RGB16:	X11Grab_RGB16(); break;
++	case grab_X11Grab_TrueXBGR24:	X11Grab_TrueXBGR24(); break;
++	case grab_X11Grab_TrueXRGB24:	X11Grab_TrueXRGB24(); break;
++	}
 +	return 1 ;
 +    } else
 +        return 0;
