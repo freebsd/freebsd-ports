@@ -6,36 +6,40 @@
 #
 
 PORTNAME=	geonext
-PORTVERSION=	1.0
-CATEGORIES=	french math
-MASTER_SITES=	http://geonext.uni-bayreuth.de/content/fr/download/ \
-		http://btmdx8.mat.uni-bayreuth.de/~andi/geonext/fr/
-DISTNAME=	geonext_fr
+PORTVERSION=	1.11
+CATEGORIES=	french
+MASTER_SITES=	http://geonext.uni-bayreuth.de/data/download/
+DISTNAME=	geonext.${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Interactive (dynamic) elementary Geometry Software
 
+WRKSRC=		${WRKDIR}/geonext_install
 NO_BUILD=	yes
 USE_ZIP=	yes
-WRKSRC=		${WRKDIR}
 USE_JAVA=	1.4
 JAVA=		${JAVA_HOME}/bin/java
 GNAME=		geonext-fr
-GLOCATE=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
-DATA=		cacerts didmat.crt geonext.html geonext.jar license.txt
-GIF=		pixel.gif gx.gif gni.gif gn.gif g.gif x.ico
+GLOCATE=	${PREFIX}/share/${GNAME}
+DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html
+IMG=	g.gif gn.gif gni.gif geoint.png pixel.gif gx.gif gxt.gif ubt.gif x.ico
 
 do-install:
-	${MKDIR} ${GLOCATE}
+	${MKDIR} ${PREFIX}/share/${GNAME}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${GLOCATE}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${IMG} ${GLOCATE}
 	@${ECHO_MSG} '#!/bin/sh' > ${GLOCATE}/${GNAME}
-	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext&'\
+	@${ECHO_MSG} '${JAVA} -cp ${GLOCATE}/geonext.jar geonext/Geonext language=fr&'\
 	>>${GLOCATE}/${GNAME}
 	${CHMOD} a+x ${GLOCATE}/${GNAME}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DATA} ${GLOCATE}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${GIF} ${GLOCATE}
+	${LN} ${GLOCATE}/${GNAME} ${GLOCATE}/geonext
 	${INSTALL_SCRIPT} ${GLOCATE}/${GNAME} ${PREFIX}/bin
-
-post-install:
-	${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG} "---------------------------------------------------------"
+	@${ECHO_MSG} "Application:	${GLOCATE}/geonext or ${GNAME}"
+	@${ECHO_MSG} "Browser-Applet:	${GLOCATE}/geonext.html"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " WWW: http://www.geonext.de"
+	@${ECHO_MSG} "------------------------------------------------------"
 
 .include <bsd.port.mk>

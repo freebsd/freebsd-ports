@@ -1,14 +1,19 @@
 bin/geonext-fr
-share/fr-geonext/geonext-fr
-share/fr-geonext/cacerts
-share/fr-geonext/didmat.crt
-share/fr-geonext/g.gif
-share/fr-geonext/geonext.html
-share/fr-geonext/geonext.jar
-share/fr-geonext/gn.gif
-share/fr-geonext/gni.gif
-share/fr-geonext/gx.gif
-share/fr-geonext/license.txt
-share/fr-geonext/pixel.gif
-share/fr-geonext/x.ico
-@dirrm share/fr-geonext
+share/geonext-fr/geonext-fr
+share/geonext-fr/geonext
+share/geonext-fr/cacerts
+share/geonext-fr/didmat.crt
+share/geonext-fr/g.gif
+share/geonext-fr/geonext.html
+share/geonext-fr/geonext.jar
+share/geonext-fr/gn.gif
+share/geonext-fr/gni.gif
+share/geonext-fr/geoint.png
+share/geonext-fr/gx.gif
+share/geonext-fr/gxt.gif
+share/geonext-fr/index.html
+share/geonext-fr/license.txt
+share/geonext-fr/pixel.gif
+share/geonext-fr/x.ico
+share/geonext-fr/ubt.gif
+@dirrm share/geonext-fr
