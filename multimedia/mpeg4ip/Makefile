@@ -16,10 +16,10 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
+USE_SDL=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
@@ -29,8 +29,6 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 DOC_FILES=	COPYING README doc/MPEG4IP_Guide.pdf
 
@@ -93,7 +91,7 @@ post-extract:
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} -n 10 \
+	@${FIND} ${WRKSRC} -type f -name "*.[ch]" -or -name "*.cpp" | ${XARGS} -n 10 \
 		${REINPLACE_CMD} -e \
 		's|stdint\.h|inttypes.h|;s|malloc\.h|stdlib.h|'
 # replacing distfile's libs with ports' versions
