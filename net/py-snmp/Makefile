@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	2.0.5
+PORTVERSION=	3.1.3
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysnmp
@@ -25,7 +25,7 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 .endif
 
 .include <bsd.port.mk>
