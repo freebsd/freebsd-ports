@@ -15,9 +15,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
 
-RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
-		galeon:${PORTSDIR}/www/galeon \
-		gabber:${PORTSDIR}/net/gabber \
+RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
 		pan:${PORTSDIR}/news/pan \
 		gnumeric:${PORTSDIR}/math/gnumeric \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
@@ -47,6 +45,13 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 
 NO_BUILD=	yes
 USE_PYTHON=	yes
+
+.if defined(WITH_MOZILLA_DEVEL)
+RUN_DEPENDS+=	${X11BASE}/lib/mozilla-devel/run-mozilla.sh:${PORTSDIR}/www/mozilla-devel
+.else
+RUN_DEPENDS+=	${X11BASE}/lib/mozilla/run-mozilla.sh:${PORTSDIR}/www/mozilla \
+		galeon:${PORTSDIR}/www/galeon
+.endif
 
 do-install:	# empty
 
