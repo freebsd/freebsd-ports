@@ -1,15 +1,14 @@
 # New ports collection makefile for:	PCB
-# Version required:	1.6.3
+# Version required:	1.7
 # Date created:		19 October 1994
 # Whom:			mr
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pcb-1.6.3
+DISTNAME=	pcb-1.7
 CATEGORIES=	cad
-MASTER_SITES=	ftp://ftp.linuxppc.org/pub/linuxppc/users/harry/PCB/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://ftp.netlab.is.tsukuba.ac.jp/pub/linux/Plamo/Plamo-current/contrib/Electronic/sources/
 
 MAINTAINER=	jseger@FreeBSD.org
 
