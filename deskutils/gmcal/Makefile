@@ -20,16 +20,11 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GTK=	yes
 
-STRIP=		/usr/bin/strip
-
 post-extract:
 	${CHMOD} a-x ${WRKSRC}/*
 
-post-build:
-	${STRIP} ${WRKSRC}/gmcal
-
 do-install:
-	${CP} ${WRKSRC}/gmcal ${PREFIX}/gmcal
+	${INSTALL_PROGRAM} ${WRKSRC}/gmcal ${PREFIX}/gmcal
 
 post-install:
 	@${ECHO} "*****************************************************************************"
