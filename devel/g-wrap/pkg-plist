@@ -2,9 +2,9 @@ bin/g-scan
 bin/g-wrap
 bin/g-wrap-config
 include/g-wrap.h
-@exec install-info --section "Scheme Programming" --entry "* g-wrap: (g-wrap).      A tool for exporting C libraries into Scheme interpreters." %D/info/g-wrap.info %D/info/dir
-info/g-wrap.info
 @unexec install-info --delete %D/info/g-wrap.info %D/info/dir
+info/g-wrap.info
+@exec install-info %D/info/g-wrap.info %D/info/dir
 lib/libgwrapguile.a
 lib/libgwrapguile.so
 lib/libgwrapguile.so.0

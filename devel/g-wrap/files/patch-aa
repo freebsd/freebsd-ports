@@ -1,0 +1,11 @@
+--- configure.orig	Wed Jun 28 14:13:30 2000
++++ configure	Wed Jun 28 14:13:56 2000
+@@ -1594,7 +1594,7 @@
+ fi
+ 
+ # Extract the first word of "rs", so it can be a program name with args.
+-set dummy rs; ac_word=$2
++set dummy rscheme; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1600: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_RSCHEME'+set}'`\" = set"; then
