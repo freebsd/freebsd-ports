@@ -6,9 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	aumix-1.27.1
+DISTNAME=	aumix-1.27.3
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
+		http://jpj.net/~trevor/aumix/old/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
@@ -23,8 +24,5 @@ CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=	aumix.1
-
-post-patch:
-	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:' ${WRKSRC}/src/xaumix
 
 .include <bsd.port.mk>
