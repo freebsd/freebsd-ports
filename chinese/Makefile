@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.6 1996/11/26 08:18:57 asami Exp $
+# $Id: Makefile,v 1.7 1997/02/11 04:46:54 obrien Exp $
 #
 
     SUBDIR += Wnn
+    SUBDIR += big5con
     SUBDIR += c2t
     SUBDIR += celvis
     SUBDIR += cless
