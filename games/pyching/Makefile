@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyching
-PORTVERSION=	1.0.4
+PORTVERSION=	1.2.1
 CATEGORIES=	games python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ PLIST_SUB+=	LIB_TARGET=${LIB_TARGET:S,^${PREFIX}/,,g} \
 		DOC_TARGET=${DOC_TARGET:S,^${PREFIX}/,,g}
 
 EXEC_FILENAME=	${PORTNAME}
-LIB_FILES=	pyching_*.py* smgTkLib/smg*.py* icon.xbm
+LIB_FILES=	pyching_*.py* smg*.py* icon.xbm
 DOC_FILES=	[A-Z]*
 LIB_TARGET=	${PREFIX}/lib/${PORTNAME}
 DOC_TARGET=	${PREFIX}/share/doc/${PORTNAME}
@@ -35,6 +35,7 @@ post-patch:
 
 do-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${EXEC_FILENAME} ${PREFIX}/bin
