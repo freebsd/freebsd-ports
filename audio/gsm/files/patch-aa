@@ -1,0 +1,21 @@
+*** inc/config.h	Fri Jan  6 01:35:41 1995
+--- inc/config.h	Fri Jan  6 01:35:51 1995
+***************
+*** 25,32 ****
+  /*efine	HAS_STRINGS_H	1		/* /usr/include/strings.h 	*/
+  
+  #define	HAS_UNISTD_H	1		/* /usr/include/unistd.h	*/
+! #define	HAS_UTIME	1		/* POSIX utime(path, times)	*/
+! /*efine	HAS_UTIMES	1		/* use utimes()	syscall instead	*/
+  #define	HAS_UTIME_H	1		/* UTIME header file		*/
+  /*efine	HAS_UTIMBUF	1		/* struct utimbuf		*/
+  /*efine	HAS_UTIMEUSEC   1		/* microseconds in utimbuf?	*/
+--- 25,32 ----
+  /*efine	HAS_STRINGS_H	1		/* /usr/include/strings.h 	*/
+  
+  #define	HAS_UNISTD_H	1		/* /usr/include/unistd.h	*/
+! /*efine	HAS_UTIME	1		/* POSIX utime(path, times)	*/
+! #define	HAS_UTIMES	1		/* use utimes()	syscall instead	*/
+  #define	HAS_UTIME_H	1		/* UTIME header file		*/
+  /*efine	HAS_UTIMBUF	1		/* struct utimbuf		*/
+  /*efine	HAS_UTIMEUSEC   1		/* microseconds in utimbuf?	*/

@@ -1,0 +1,13 @@
+@cwd /usr/local
+bin/toast
+@exec ln -s %f %B/untoast
+@exec ln -s %f %B/untoastt
+man/man1/toast.1
+@exec ln -s %f %B/untoast.1
+@exec ln -s %f %B/tcat.1
+man/man3/gsm.3
+man/man3/gsm_explode.3
+man/man3/gsm_option.3
+man/man3/gsm_print.3
+lib/libgsm.a
+include/gsm.h
