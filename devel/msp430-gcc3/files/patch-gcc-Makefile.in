@@ -1,30 +1,12 @@
---- gcc/Makefile.in.orig	Fri Oct 17 16:22:44 2003
-+++ gcc/Makefile.in	Fri Oct 17 16:24:38 2003
-@@ -2685,21 +2685,12 @@
- 	  $(INSTALL_DATA) $(docdir)/gcc.1 $(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext); \
- 	  chmod a-x $(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext); \
- 	fi
--	-rm -f $(DESTDIR)$(man1dir)/cpp$(man1ext)
--	-$(INSTALL_DATA) $(docdir)/cpp.1 $(DESTDIR)$(man1dir)/cpp$(man1ext)
--	-chmod a-x $(DESTDIR)$(man1dir)/cpp$(man1ext)
--	-rm -f $(DESTDIR)$(man1dir)/gcov$(man1ext)
--	-$(INSTALL_DATA) $(docdir)/gcov.1 $(DESTDIR)$(man1dir)/gcov$(man1ext)
--	-chmod a-x $(DESTDIR)$(man1dir)/gcov$(man1ext)
--	-rm -f $(DESTDIR)$(man7dir)/fsf-funding$(man7ext)
--	-$(INSTALL_DATA) $(docdir)/fsf-funding.7 $(DESTDIR)$(man7dir)/fsf-funding$(man7ext)
--	-chmod a-x $(DESTDIR)$(man7dir)/fsf-funding$(man7ext)
--	-rm -f $(DESTDIR)$(man7dir)/gfdl$(man7ext)
--	-$(INSTALL_DATA) $(docdir)/gfdl.7 $(DESTDIR)$(man7dir)/gfdl$(man7ext)
--	-chmod a-x $(DESTDIR)$(man7dir)/gfdl$(man7ext)
--	-rm -f $(DESTDIR)$(man7dir)/gpl$(man7ext)
--	-$(INSTALL_DATA) $(docdir)/gpl.7 $(DESTDIR)$(man7dir)/gpl$(man7ext)
--	-chmod a-x $(DESTDIR)$(man7dir)/gpl$(man7ext)
-+	-rm -f $(DESTDIR)$(man1dir)/$(CPP_CROSS_NAME)$(man1ext)
-+	-$(INSTALL_DATA) $(docdir)/cpp.1 $(DESTDIR)$(man1dir)/$(CPP_CROSS_NAME)$(man1ext)
-+	-chmod a-x $(DESTDIR)$(man1dir)/$(CPP_CROSS_NAME)$(man1ext)
-+	-rm -f $(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
-+	-$(INSTALL_DATA) $(docdir)/gcov.1 $(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
-+	-chmod a-x $(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext)
+--- gcc/Makefile.in.orig	Tue Aug  3 13:57:27 2004
++++ gcc/Makefile.in	Tue Aug  3 13:57:39 2004
+@@ -2963,9 +2963,6 @@
+ 	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \
+ 	$(DESTDIR)$(man1dir)/$(GCOV_INSTALL_NAME)$(man1ext) \
+-	$(DESTDIR)$(man7dir)/fsf-funding$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gfdl$(man7ext) \
+-	$(DESTDIR)$(man7dir)/gpl$(man7ext)
  
- # Install the library.
- install-libgcc: libgcc.mk libgcc.a installdirs
+ $(DESTDIR)$(man7dir)/%$(man7ext): doc/%.7
+ 	-rm -f $@

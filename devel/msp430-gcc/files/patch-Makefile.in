@@ -1,10 +1,17 @@
---- Makefile.in.orig	Wed Oct 15 18:17:00 2003
-+++ Makefile.in	Wed Oct 15 18:17:28 2003
-@@ -715,7 +715,6 @@
- 	install-itcl \
- 	install-ld \
- 	install-libgui \
--	install-libiberty \
- 	install-libtool \
- 	install-m4 \
- 	install-make \
+--- Makefile.in.orig	Tue Aug  3 13:53:30 2004
++++ Makefile.in	Tue Aug  3 13:53:56 2004
+@@ -19885,10 +19885,10 @@
+ maybe-install-libiberty:
+ 
+ install-libiberty: installdirs
+-	@r=`${PWD_COMMAND}`; export r; \
+-	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
+-	$(SET_LIB_PATH) \
+-	(cd libiberty && $(MAKE) $(FLAGS_TO_PASS) install)
++#	@r=`${PWD_COMMAND}`; export r; \
++#	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
++#	$(SET_LIB_PATH) \
++#	(cd libiberty && $(MAKE) $(FLAGS_TO_PASS) install)
+ 
+ 
+ .PHONY: configure-libtool maybe-configure-libtool
