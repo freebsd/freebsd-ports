@@ -8,6 +8,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/advanced.features.postfilters.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/advanced.features.prefilters.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/api.append.by.ref.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/api.append.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/api.assign.by.ref.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/api.assign.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/api.clear.all.assign.html
@@ -54,12 +55,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/caching.multiple.caches.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/chapter.debugging.console.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/config.files.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/default.template.handler.function.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/foreach.property.first.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/foreach.property.iteration.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/foreach.property.last.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/foreach.property.show.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/foreach.property.total.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/getting.started.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/installation.html
@@ -124,19 +119,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.functions.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.syntax.quotes.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.array.indexes.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.assoc.arrays.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.objects.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.capture.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.config.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.const.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.loops.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.now.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.request.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.template.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.version.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.block.functions.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.compiler.functions.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.functions.html
@@ -150,36 +134,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.writing.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/preface.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/resources.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.first.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.index.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.index.next.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.index.prev.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.iteration.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.last.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.loop.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.rownum.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.show.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/section.property.total.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/section.template.cache.handler.func.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/smarty.constants.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/smarty.for.designers.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/smarty.for.programmers.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/caution.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/home.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/important.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/next.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/note.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/prev.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/tip.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/toc-blank.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/toc-minus.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/toc-plus.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/up.gif
-%%PORTDOCS%%%%DOCSDIR%%/manual/stylesheet-images/warning.gif
 %%PORTDOCS%%%%DOCSDIR%%/manual/template.resources.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/templates.from.any.dir.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/templates.from.elsewhere.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/templates.from.template.dir.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/tips.componentized.templates.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/tips.dates.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/tips.default.var.handling.html
@@ -300,7 +259,6 @@
 %%DATADIR%%/plugins/outputfilter.trimwhitespace.php
 %%DATADIR%%/plugins/shared.escape_special_chars.php
 %%DATADIR%%/plugins/shared.make_timestamp.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/stylesheet-images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/cache
