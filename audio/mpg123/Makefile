@@ -54,6 +54,7 @@ MAKE_ENV+=	USE_INET6=yes
 USE_GNOME+=	esound
 ALL_TARGET=	freebsd-esd
 PKGNAMESUFFIX=	-esound
+MAKE_ENV=	HAVE_ESOUND=yes
 .elif defined(HAVE_NAS)
 PKGNAMESUFFIX=	-nas
 ALL_TARGET=	freebsd-nas
