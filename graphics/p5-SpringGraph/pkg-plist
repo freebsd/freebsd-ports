@@ -1,0 +1,4 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SpringGraph/.packlist
+%%SITE_PERL%%/SpringGraph.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SpringGraph
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true

@@ -341,6 +341,7 @@
     SUBDIR += p5-SVG-Graph
     SUBDIR += p5-SWF-Builder
     SUBDIR += p5-SWF-File
+    SUBDIR += p5-SpringGraph
     SUBDIR += p5-Tk-JPEG-Lite
     SUBDIR += p5-VCG
     SUBDIR += p5-chart
