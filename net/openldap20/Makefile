@@ -10,14 +10,19 @@ PORTVERSION=	2.0.25
 PORTREVISION=	3
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
-		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
-		ftp://mirror.aarnet.edu.au/pub/OpenLDAP/%SUBDIR%/ \
+		http://www.PlanetMirror.com/pub/openldap/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/ \
-		http://www.unibase.cz/ldapcz/Programy/Free/OpenLDAP/%SUBDIR%/ \
+		ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/ \
+		ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/mirror/OpenLDAP/%SUBDIR%/ \
-		ftp://ftp.loxinfo.co.th/pub/unix/LDAP/OpenLDAP/%SUBDIR%/ \
-		ftp://ftp.zcu.cz/pub/network/openldap/%SUBDIR%/
+		ftp://ftp.dti.ad.jp/pub/net/OpenLDAP/%SUBDIR%/ \
+		ftp://ftp.u-aizu.ac.jp/pub/net/openldap/%SUBDIR%/ \
+		ftp://ftp.holywar.net/pub/OpenLDAP/%SUBDIR%/ \
+		ftp://ftp.nl.uu.net/pub/unix/db/openldap/%SUBDIR%/ \
+		ftp://ftp.linux.pt/pub/mirrors/OpenLDAP/%SUBDIR%/ \
+		ftp://ftp.si.uniovi.es/mirror/OpenLDAP/%SUBDIR%/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/ \
+		ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
 DISTNAME=	openldap-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
