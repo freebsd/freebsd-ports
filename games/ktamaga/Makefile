@@ -3,12 +3,13 @@
 # Date created:        13 November 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/03 00:31:43 se Exp $
+# $Id: Makefile,v 1.2 1997/12/03 00:39:43 se Exp $
 #
 
 DISTNAME=	ktamaga-0.2
 CATEGORIES=	games kde
-MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/apps/games/
+MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/unstable/apps/games/ \
+		ftp://ftp.kde.org/pub/kde/unstable/apps/games/
 
 MAINTAINER=	se@freebsd.org
 
