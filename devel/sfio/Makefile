@@ -3,7 +3,7 @@
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.4 1997/12/11 01:09:53 jraynard Exp $
+# $Id: Makefile,v 1.5 1998/11/07 18:04:04 jraynard Exp $
 #
 
 DISTNAME=	sfio_1998
@@ -36,7 +36,8 @@ do-fetch:
 
 # Remove a test that's too clever for its own good
 post-extract:
-	@${RM} ${WRKDIR}/src/lib/sfio/Sfio_t/tmmap2read.c
+	@${MV} ${WRKDIR}/src/lib/sfio/Sfio_t/tmmap2read.c \
+		${WRKDIR}/src/lib/sfio/Sfio_t/.tmmap2read.c
 
 do-build:
 	@cd ${WRKDIR}/src/lib/sfio && ${MAKE} all -f makefile
