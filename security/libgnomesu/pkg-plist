@@ -29,6 +29,7 @@ share/locale/fr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/gu/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/hr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/hu/LC_MESSAGES/libgnomesu-1.0.mo
+share/locale/ja/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/ko/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/lt/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/ms/LC_MESSAGES/libgnomesu-1.0.mo
@@ -39,6 +40,7 @@ share/locale/pl/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/pt/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sk/LC_MESSAGES/libgnomesu-1.0.mo
+share/locale/sq/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sr/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sr@Latn/LC_MESSAGES/libgnomesu-1.0.mo
 share/locale/sv/LC_MESSAGES/libgnomesu-1.0.mo
