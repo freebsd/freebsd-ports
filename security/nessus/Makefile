@@ -11,7 +11,7 @@
 #  WITHOUT_NESSUS_GTK
 
 PORTNAME=	nessus
-PORTVERSION=	2.2.2a
+PORTVERSION=	2.2.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -32,7 +32,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall.sh
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 USE_REINPLACE=	YES
 USE_RC_SUBR=	YES
 WANT_GNOME=	yes

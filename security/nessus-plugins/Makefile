@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus-plugins
-PORTVERSION=	2.2.2a
+PORTVERSION=	2.2.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.au.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.ayamura.org/pub/nessus/nessus-${PORTVERSION}/src/
-DISTNAME=	nessus-plugins-${PORTVERSION}
+DISTNAME=	nessus-plugins-GPL-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 COMMENT=	Plugins for Nessus, the security scanner
