@@ -396,6 +396,7 @@
     SUBDIR += povray
     SUBDIR += povray31
     SUBDIR += ppmcaption
+    SUBDIR += preview
     SUBDIR += proj
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
