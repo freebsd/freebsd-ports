@@ -8,14 +8,12 @@
 PORTNAME=	quat
 PORTVERSION=	1.20
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.physcip.uni-stuttgart.de/phy11733/download/
+MASTER_SITES=	http://www.physcip.uni-stuttgart.de/phy11733/download/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	quat-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A Three-dimensional fractal creator (X11 GUI)
-
-BROKEN=		"Does not build, will be removed after Feb 2"
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
@@ -24,7 +22,7 @@ USE_MESA=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -L${X11BASE}/lib" \
-		LIBS="-lXext -lGL"
+		LIBS="-lXext -lGL" FLUID="${X11BASE}/bin/fluid}"
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math
@@ -37,7 +35,9 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -E -e 's,-(march=pentium|O3|ffast-math),,g' \
+	@${REINPLACE_CMD} -E -e \
+		's|^...CFLAGS=|#CFLAGS=|; \
+		s|^...CXXFLAGS=|#CXXFLAGS=|' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e 's|-I\.[[:space:]]+-I\$$\(srcdir\)[[:space:]]+||' \
 		${WRKSRC}/gui/Makefile.in
