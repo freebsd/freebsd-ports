@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	firearms
-PORTVERSION=	2.6
-MASTER_SITES=	http://www.doomsdaywarriors.com/files/ \
-		ftp://ftp.nofrag.com/nofrag/ \
-		http://downloads.firearms-hl.com/ \
-		http://lamas.counter-strike.hu:8080/letolt/extra/firearms/
-DISTNAME=	firearms_rc${PORTVERSION}
+PORTVERSION=	2.65
+MASTER_SITES=	ftp://tdsfa.org/fafiles/ \
+		ftp://64.191.71.76/files/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_linux_full
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
