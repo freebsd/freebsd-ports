@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue Sep 22 11:47:07 1998
-+++ Makefile.in	Tue Sep 22 22:32:20 1998
+--- Makefile.in.orig	Sat Oct 31 18:05:09 1998
++++ Makefile.in	Mon Nov  2 23:45:35 1998
 @@ -97,7 +97,7 @@
  SRC_SUBDIRS = gdk gtk
  SUBDIRS = $(SRC_SUBDIRS) docs
@@ -48,18 +48,18 @@
  	@:
  
  uninstall: uninstall-recursive uninstall-am
---- docs/Makefile.in.orig	Tue Sep 22 11:47:19 1998
-+++ docs/Makefile.in	Tue Sep 22 22:29:10 1998
+--- docs/Makefile.in.orig	Sat Oct 31 18:05:18 1998
++++ docs/Makefile.in	Mon Nov  2 23:45:35 1998
 @@ -96,7 +96,7 @@
  
- info_TEXINFOS = gdk.texi gtk.texi glib.texi
+ info_TEXINFOS = gdk.texi gtk.texi 
  
 -man_MANS = gtk-config.1
 +man_MANS = gtk11-config.1
  
  EXTRA_DIST =	\
  	texinfo.tex 		\
-@@ -137,7 +137,7 @@
+@@ -237,7 +237,7 @@
  
  TAR = tar
  GZIP = --best
@@ -68,7 +68,7 @@
  
  .SUFFIXES:
  .SUFFIXES: .dvi .info .ps .texi .texinfo .txi
-@@ -163,10 +163,13 @@
+@@ -259,10 +259,13 @@
  
  DVIPS = dvips
  
@@ -83,7 +83,7 @@
  
  .texi.dvi:
  	TEXINPUTS=$(srcdir):$$TEXINPUTS \
-@@ -365,7 +368,7 @@
+@@ -459,7 +462,7 @@
  	-test -z "$(BUILT_SOURCES)" || rm -f $(BUILT_SOURCES)
  mostlyclean:  mostlyclean-aminfo mostlyclean-generic
  
@@ -92,86 +92,8 @@
  
  distclean:  distclean-aminfo distclean-generic clean
  	-rm -f config.status
---- gtk/Makefile.in.orig	Tue Sep 22 11:47:15 1998
-+++ gtk/Makefile.in	Tue Sep 22 22:35:50 1998
-@@ -98,9 +98,9 @@
- 
- gtkincludedir = $(includedir)/gtk
- 
--lib_LTLIBRARIES = libgtk.la
-+lib_LTLIBRARIES = libgtk11.la
- 
--libgtk_la_SOURCES = \
-+libgtk11_la_SOURCES = \
- 	gtkaccelgroup.c		\
- 	gtkaccellabel.c		\
- 	gtkadjustment.c		\
-@@ -329,8 +329,8 @@
- # special remake rules
- # makeenums.h: @REBUILD@ gtk.h gtkprivate.h
- 
--libgtk_la_LDFLAGS = \
--	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
-+libgtk11_la_LDFLAGS = \
-+	-version-info 1:0:0
- 
- EXTRA_DIST = \
- 	line-arrow.xbm 		\
-@@ -367,12 +367,12 @@
- noinst_PROGRAMS = testgtk testinput testselection testthreads testrgb simple 
- 
- DEPS =	\
--	libgtk.la					\
--	$(top_builddir)/gdk/libgdk.la
-+	libgtk11.la					\
-+	$(top_builddir)/gdk/libgdk11.la
- 
- LDADDS = \
--	libgtk.la					\
--	$(top_builddir)/gdk/libgdk.la			\
-+	libgtk11.la					\
-+	$(top_builddir)/gdk/libgdk11.la			\
- 	@x_ldflags@					\
- 	@x_libs@					\
- 	@GLIB_LIBS@                                     \
-@@ -405,8 +405,8 @@
- X_LIBS = @X_LIBS@
- X_EXTRA_LIBS = @X_EXTRA_LIBS@
- X_PRE_LIBS = @X_PRE_LIBS@
--libgtk_la_LIBADD = 
--libgtk_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
-+libgtk11_la_LIBADD = 
-+libgtk11_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
- gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
- gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcheckbutton.lo \
- gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo gtkcombo.lo \
-@@ -461,10 +461,10 @@
- 
- TAR = tar
- GZIP = --best
--SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c simple.c
--OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o simple.o
-+SOURCES = $(libgtk11_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c simple.c
-+OBJECTS = $(libgtk11_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o simple.o
- 
--all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
-+all: Makefile $(LTLIBRARIES) $(HEADERS)
- 
- .SUFFIXES:
- .SUFFIXES: .S .c .lo .o .s
-@@ -541,8 +541,8 @@
- 
- maintainer-clean-libtool:
- 
--libgtk.la: $(libgtk_la_OBJECTS) $(libgtk_la_DEPENDENCIES)
--	$(LINK) -rpath $(libdir) $(libgtk_la_LDFLAGS) $(libgtk_la_OBJECTS) $(libgtk_la_LIBADD) $(LIBS)
-+libgtk11.la: $(libgtk11_la_OBJECTS) $(libgtk11_la_DEPENDENCIES)
-+	$(LINK) -rpath $(libdir) $(libgtk11_la_LDFLAGS) $(libgtk11_la_OBJECTS) $(libgtk11_la_LIBADD) $(LIBS)
- 
- mostlyclean-noinstPROGRAMS:
- 
---- gdk/Makefile.in.orig	Tue Sep 22 11:47:10 1998
-+++ gdk/Makefile.in	Tue Sep 22 22:37:27 1998
+--- gdk/Makefile.in.orig	Sat Oct 31 18:05:12 1998
++++ gdk/Makefile.in	Mon Nov  2 23:46:22 1998
 @@ -96,9 +96,9 @@
  
  gdkincludedir = $(includedir)/gdk
@@ -191,7 +113,7 @@
 -libgdk_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) \
 +libgdk11_la_LDFLAGS = \
-+	-version-info 1:0:0 \
++	-version-info 1:3:0 \
           @x_ldflags@ @x_libs@
  
  INCLUDES = -I$(top_srcdir) @GLIB_CFLAGS@ @x_cflags@ 
@@ -206,6 +128,15 @@
  gdkdraw.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkimage.lo gdkinput.lo \
  gdkpixmap.lo gdkproperty.lo gdkrgb.lo gdkrectangle.lo gdkregion.lo \
  gdkselection.lo gdkthreads.lo gdkvisual.lo gdkwindow.lo gdkxid.lo \
+@@ -185,7 +185,7 @@
+ gxid_OBJECTS =  gxid.o
+ gxid_DEPENDENCIES = 
+ gxid_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -DX_LOCALE
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
 @@ -198,8 +198,8 @@
  
  TAR = tar
@@ -227,4 +158,91 @@
 +	$(LINK) -rpath $(libdir) $(libgdk11_la_LDFLAGS) $(libgdk11_la_OBJECTS) $(libgdk11_la_LIBADD) $(LIBS)
  
  mostlyclean-binPROGRAMS:
+ 
+--- gtk/Makefile.in.orig	Sat Oct 31 18:05:14 1998
++++ gtk/Makefile.in	Tue Nov  3 00:08:14 1998
+@@ -98,9 +98,9 @@
+ 
+ gtkincludedir = $(includedir)/gtk
+ 
+-lib_LTLIBRARIES = libgtk.la
++lib_LTLIBRARIES = libgtk11.la
+ 
+-libgtk_la_SOURCES = \
++libgtk11_la_SOURCES = \
+ 	gtkaccelgroup.c		\
+ 	gtkaccellabel.c		\
+ 	gtkadjustment.c		\
+@@ -331,8 +331,8 @@
+ 	../gdk/gdktypes.h \
+ 	../gdk/gdkrgb.h
+ 
+-libgtk_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
++libgtk11_la_LDFLAGS = \
++	-version-info 1:3:0
+ 
+ EXTRA_DIST = \
+ 	line-arrow.xbm 		\
+@@ -371,12 +371,12 @@
+ # FIXME, we currently rely on linking against libglib-1.1
+ 
+ DEPS =	\
+-	libgtk.la					\
+-	$(top_builddir)/gdk/libgdk.la
++	libgtk11.la					\
++	$(top_builddir)/gdk/libgdk11.la
+ 
+ LDADDS = \
+-	libgtk.la					\
+-	$(top_builddir)/gdk/libgdk.la			\
++	libgtk11.la					\
++	$(top_builddir)/gdk/libgdk11.la			\
+ 	@x_ldflags@					\
+ 	@x_libs@					\
+ 	@GLIB_LIBS@                                     \
+@@ -411,8 +411,8 @@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+-libgtk_la_LIBADD = 
+-libgtk_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
++libgtk11_la_LIBADD = 
++libgtk11_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
+ gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
+ gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcalendar.lo \
+ gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo \
+@@ -458,7 +458,7 @@
+ simple_SOURCES = simple.c
+ simple_OBJECTS =  simple.o
+ simple_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -DX_LOCALE
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
+ LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
+@@ -471,10 +471,10 @@
+ 
+ TAR = tar
+ GZIP = --best
+-SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c testdnd.c simple.c
+-OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o testdnd.o simple.o
++SOURCES = $(libgtk11_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c testdnd.c simple.c
++OBJECTS = $(libgtk11_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o testdnd.o simple.o
+ 
+-all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
++all: Makefile $(LTLIBRARIES) $(HEADERS)
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
+@@ -551,8 +551,8 @@
+ 
+ maintainer-clean-libtool:
+ 
+-libgtk.la: $(libgtk_la_OBJECTS) $(libgtk_la_DEPENDENCIES)
+-	$(LINK) -rpath $(libdir) $(libgtk_la_LDFLAGS) $(libgtk_la_OBJECTS) $(libgtk_la_LIBADD) $(LIBS)
++libgtk11.la: $(libgtk11_la_OBJECTS) $(libgtk11_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgtk11_la_LDFLAGS) $(libgtk11_la_OBJECTS) $(libgtk11_la_LIBADD) $(LIBS)
+ 
+ mostlyclean-noinstPROGRAMS:
  
