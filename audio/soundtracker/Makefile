@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	soundtracker
-PORTVERSION=	0.5.7
+PORTVERSION=	0.6.2
 CATEGORIES=	audio gnome
-MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.5/
+MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.6/
 
 MAINTAINER=	kzentner@u.washington.edu
 

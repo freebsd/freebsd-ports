@@ -1,10 +1,27 @@
---- app/drivers/oss-input.c.orig	Sun Nov 28 20:02:10 1999
-+++ app/drivers/oss-input.c	Sun Nov 28 20:03:03 1999
-@@ -33,6 +33,6 @@
- #include <sys/types.h>
- #include <unistd.h>
--#include <sys/soundcard.h>
-+#include <machine/soundcard.h>
- #include <sys/time.h>
+--- app/Makefile.in.orig	Wed Jan 17 00:15:19 2001
++++ app/Makefile.in	Wed Jan 17 00:25:59 2001
+@@ -501,15 +501,15 @@
+ 
+ 
+ install-exec-local:
+-	chown root.root $(bindir)/soundtracker
+-	chmod +s $(bindir)/soundtracker
+-	@echo ""
+-	@echo "***"
+-	@echo "*** Installing SoundTracker suid root."
+-	@echo "*** This improves sound responsivity, but may be a security risk"
+-	@echo "*** if this is a multi-user machine. See file INSTALL."
+-	@echo "***"
++	chown root.wheel $(bindir)/soundtracker
++#	chmod +s $(bindir)/soundtracker
+ 	@echo ""
++#	@echo "***"
++#	@echo "*** Installing SoundTracker suid root."
++#	@echo "*** This improves sound responsivity, but may be a security risk"
++#	@echo "*** if this is a multi-user machine. See file INSTALL."
++#	@echo "***"
++#	@echo ""
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
 
- #include <glib.h>

@@ -1,8 +1,11 @@
---- app/sample-editor.c.orig	Sun Nov 28 20:05:23 1999
-+++ app/sample-editor.c	Sun Nov 28 20:04:51 1999
-@@ -28,4 +28,4 @@
- #include <fcntl.h>
- #include <stdlib.h>
--#include <sys/soundcard.h>
-+#include <machine/soundcard.h>
- #include <sys/ioctl.h>
+--- configure.orig	Wed Jan 17 00:11:18 2001
++++ configure	Wed Jan 17 00:11:54 2001
+@@ -3667,7 +3667,7 @@
+ echo "configure:3668: checking for Gnome compile flags" >&5
+   GNOME_CFLAGS=`$gnomepath gnomeui --cflags 2>/dev/null`
+   GNOME_VER=`$gnomepath --version |$sedpath 's/gnome-libs //'`
+-  GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([0-9]**\).\([0-9]**\).\([0-9]**\)/\1/'`
++  GNOME_MAJOR=`echo $GNOME_VER |$sedpath 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+   if test "_$GNOME_MAJOR" = "_0"; then
+     gnome=no
+     echo "$ac_t""old Gnome found, building without it." 1>&6
