@@ -28,6 +28,12 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		quantlib-config.1 quantlib-test-suite.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "alpha"
+BROKEN=		"Does not build on ia64 or alpha"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|: install-dist_lispLISP|:|g ; \
@@ -37,4 +43,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/quantlib.el ${PREFIX}/share/emacs/site-lisp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
