@@ -1,0 +1,41 @@
+--- Makefile	Fri Dec  3 17:22:38 1993
++++ /home/andy/tmp/wrk/Makefile	Wed Aug 18 13:51:45 1999
+@@ -3,20 +3,20 @@
+ #
+ # make clean	removes all temporary files.
+ 
+-CFLAGS = -O
+-CC = gcc
+-INCLUDE = /usr/X386/include
+-LIBRARY = /usr/X386/lib
+-BIN = /usr/X386/bin
+-SCOREFILES = /usr/X386/lib/X11/games
++#CFLAGS = -O
++CC ?= gcc
++INCLUDE = ${X11BASE}/include
++LIBRARY = ${X11BASE}/lib
++BIN = ${X11BASE}/bin
++SCOREFILES = ${X11BASE}/share/xmines
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -I $(INCLUDE) -c $<
+  
+-all: xbombs
++all: xmines
+ 
+-xbombs: xmines.o X11.o score.o
+-	$(CC) -L $(LIBRARY) -o xbombs xmines.o score.o X11.o -lX11
++xmines: xmines.o X11.o score.o
++	$(CC) -L $(LIBRARY) -o xmines xmines.o score.o X11.o -lX11
+ 
+ X11.o: covered.pat flag.pat gray.pat highlight.pat marked.pat mine.pat ohno.pat shades.pat smiley.pat uncovered.pat uncoveredcolor.pat
+ 
+@@ -24,5 +24,6 @@
+ 	rm -f *.o
+ 
+ install:
+-	install -g games -o games -m 0664  scores/scores $(SCOREFILES)/xbomb-scores
+-	install -g games -o games -m 2755 xbombs $(BIN) 
++	mkdir -p $(SCOREFILES)
++	install -g games -o games -m 0666 scores/scores $(SCOREFILES)/scores
++	install -g games -o games -m 0755 xmines $(BIN)

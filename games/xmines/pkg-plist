@@ -1,0 +1,7 @@
+bin/xmines
+@mode 666
+share/xmines/scores
+@mode
+share/doc/xmines/README
+@dirrm share/doc/xmines
+@dirrm share/xmines
