@@ -24,6 +24,7 @@ pgcluster_flags="-w -s"
 load_rc_config pgcluster
 
 name=pgcluster
+rcvar=`set_rcvar`
 command=%%PREFIX%%/bin/pg_ctl
 pgcluster_user=pgsql
 extra_commands="initdb recover"
