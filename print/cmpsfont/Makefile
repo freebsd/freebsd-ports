@@ -3,7 +3,7 @@
 # Date created:		11 September 1998
 # Whom:			giffunip
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/13 16:15:33 taoka Exp $
 #
 
 DISTNAME=	cmps
@@ -27,8 +27,8 @@ do-install:
 	$(INSTALL_DATA) ${WRKSRC}/pfb/* $(TEXDIR)/fonts/type1
 	@${MKDIR} $(TEXDIR)/dvips/mapfiles
 	$(INSTALL_DATA) ${WRKSRC}/mapfiles/* $(TEXDIR)/dvips/mapfiles
-	@${MKDIR} $(TEXDIR)/fonts/afm
-	$(INSTALL_DATA) ${WRKSRC}/afm/* $(TEXDIR)/fonts/afm
+	@${MKDIR} $(PREFIX)/lib/afm
+	$(INSTALL_DATA) ${WRKSRC}/afm/* $(PREFIX)/lib/afm
 
 .if !defined(NOPORTSDOC)
 	@${MKDIR} $(PREFIX)/share/doc/cmpsfont
