@@ -1,5 +1,15 @@
---- Imakefile.orig	Sun Sep 29 02:46:02 1991
-+++ Imakefile	Wed Jan 18 00:00:00 2000
+--- Imakefile.orig	Sat Sep 28 19:46:02 1991
++++ Imakefile	Wed Oct 15 15:15:06 2003
+@@ -1,6 +1,6 @@
+-/**/# Run imake -DUseInstalled -I/usr/lib/X11/config to make a Makefile.
+-/**/# This is an R5 style Imakefile, so will need the R5 config files to
+-/**/# to make a Makefile.  It also assume that X11 is installed in /usr/lib.
++# Run imake -DUseInstalled -I/usr/lib/X11/config to make a Makefile.
++# This is an R5 style Imakefile, so will need the R5 config files to
++# to make a Makefile.  It also assume that X11 is installed in /usr/lib.
+ 
+         SHAR = shar
+         COMPRESS = compress
 @@ -8,7 +8,7 @@
          SPLIT = split
          CAT = cat
@@ -18,3 +28,23 @@
  #endif
  
  #if OverrideDefs
+@@ -94,8 +94,8 @@
+ #endif
+ 
+ #if CompileXView
+-/**/# If these are not defined in the site.def file, define them now.
+-/**/# set up compile time dependencies for XView clients.
++# If these are not defined in the site.def file, define them now.
++# set up compile time dependencies for XView clients.
+         XVTOP = $(XVIEWHOME)
+         XVLIBSRC = $(XVTOP)/lib
+ # if UseInstalled
+@@ -253,7 +253,7 @@
+ ComplexProgramTarget($(TARGET))
+ 
+ #ifdef SparcArchitecture
+-/**/# SunOS4.0.3 sparc optimizer slimes this file
++# SunOS4.0.3 sparc optimizer slimes this file
+ util.o:	util.c
+ 	$(CC) $(CPPFLAGS) $(DEFINES) $(INCLUDES) -c util.c
+ #endif
