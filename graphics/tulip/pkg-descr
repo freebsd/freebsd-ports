@@ -1,0 +1,14 @@
+Tulip software is a system dedicated to the visualization of huge graphs. It
+manages graphs with a number of elements(node and edges) up to 500.000 on a
+personal computer(PIII 600, with 256mo). Its SuperGraph technology architecture
+enables to do the following things :
+   * 3D visualizations
+   * 3D modifications
+   * Plug-in support for easy evolution
+   * Building of clusters and navigation into it
+   * Automatic drawing of graphs
+   * Automatic clustering of graphs
+   * Automatic selection of elements
+   * Automatic Metric coloration of graphs
+
+WWW: http://www.tulip-software.org/
