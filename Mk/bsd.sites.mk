@@ -1288,7 +1288,7 @@ MASTER_SITE_XFREE+= \
 	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
 
 MASTER_SITE_XORG+= \
-	ftp://ftp.x.org/pub/%SUBDIR%/ \
+	http://xorg.freedesktop.org/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/pub/%SUBDIR%/ \
 	ftp://ftp.cica.es/pub/X/pub/%SUBDIR%/ \
 	ftp://ftp.cs.cuhk.edu.hk/pub/X11/%SUBDIR%/ \
@@ -1299,7 +1299,8 @@ MASTER_SITE_XORG+= \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.x.org/pub/%SUBDIR%/ \
 	ftp://sunsite.uio.no/pub/X11/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/X/x/%SUBDIR%/
+	ftp://ftp.cs.tu-berlin.de/pub/X/x/%SUBDIR%/ \
+	ftp://ftp.x.org/pub/%SUBDIR%/
 
 MASTER_SITE_GNUSTEP+= \
 	http://python.planetmirror.com/pub/gnustep/gnustep/%SUBDIR%/ \
