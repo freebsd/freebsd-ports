@@ -675,6 +675,7 @@
     SUBDIR += tcpdump
     SUBDIR += tcpflow
     SUBDIR += tcpillust
+    SUBDIR += tcping
     SUBDIR += tcpmssd
     SUBDIR += tcpreen
     SUBDIR += tcpreplay
