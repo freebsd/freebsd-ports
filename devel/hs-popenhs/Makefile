@@ -12,7 +12,7 @@ CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/~petersen/haskell/popenhs/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A popen-like library for Haskell
 
 BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5

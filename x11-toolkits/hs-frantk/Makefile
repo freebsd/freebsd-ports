@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/FranTk/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	FranTk${PORTVERSION:S/./_/}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A GUI library for Haskell on top of Tcl-Tk
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84

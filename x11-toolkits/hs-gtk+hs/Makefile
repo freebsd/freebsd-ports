@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits haskell
 MASTER_SITES=	http://www.cse.unsw.edu.au/~chak/haskell/gtk/
 PKGNAMEPREFIX=	hs-
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A GTK+ Binding for Haskell
 
 OPTIONS=	GHC5 "Build for ghc5" off \

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	htoolkit
 PKGNAMEPREFIX=	hs-
 DISTNAME=	HSQL-${PORTVERSION}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell access to SQL
 
 BUILD_DEPENDS=	psql:${PORTSDIR}/databases/postgresql7 \

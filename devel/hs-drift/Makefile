@@ -11,7 +11,7 @@ MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/drop/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	DrIFT-${PORTVERSION}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A type sensitive preprocessor for Haskell
 
 .if !defined(WITH_NHC98)

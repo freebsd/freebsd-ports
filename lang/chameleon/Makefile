@@ -10,7 +10,7 @@ CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.comp.nus.edu.sg/~sulzmann/chameleon/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell-style language
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \

@@ -11,7 +11,7 @@ CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.cs.uu.nl/helium/distr/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Functional programming compiler for a subset of Haskell
 
 .if defined(WITH_HINT)

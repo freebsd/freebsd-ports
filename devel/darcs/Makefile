@@ -10,7 +10,7 @@ PORTVERSION=	0.9.17
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Yet another replacement for CVS, written in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc

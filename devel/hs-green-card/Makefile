@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.galois.com/~sof/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	gc-${PORTVERSION}-src
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A foreign function interface preprocessor for Haskell
 
 BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5

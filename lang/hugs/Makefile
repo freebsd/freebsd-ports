@@ -12,7 +12,7 @@ CATEGORIES=	lang haskell
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An interpreter for the functional programming language Haskell 98
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
