@@ -1,6 +1,15 @@
 bin/newsx
 bin/newsq
 bin/testfilter
+%%PORTDOCS%%share/doc/newsx/AUTHORS
+%%PORTDOCS%%share/doc/newsx/COPYING
+%%PORTDOCS%%share/doc/newsx/ChangeLog
+%%PORTDOCS%%share/doc/newsx/FAQ
+%%PORTDOCS%%share/doc/newsx/INSTALL
+%%PORTDOCS%%share/doc/newsx/NEWS
+%%PORTDOCS%%share/doc/newsx/README
+%%PORTDOCS%%share/doc/newsx/TODO
+%%PORTDOCS%%@dirrm share/doc/newsx
 @dirrm news/spool/inhosts
 @dirrm news/spool
 @dirrm news
