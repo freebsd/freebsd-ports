@@ -19,17 +19,23 @@ USE_IMAKE=	yes
 
 MAN1=		xearth.1
 
+# Always prep the joint marker list for every new install
+pre-install:
+	@${ECHO} "# All of FreeBSD's committers, including core :)" > \
+		${WRKDIR}/freebsd.core_and_committers.markers
+	@${GREP} -hv '^[[:space:]]*#' ${FILESDIR}/freebsd.core.markers \
+	    ${FILESDIR}/freebsd.committers.markers >> \
+		${WRKDIR}/freebsd.core_and_committers.markers
+
 # Copy the list of FreeBSD sites
 post-install:
-	${MKDIR} ${PREFIX}/lib/X11/xearth
-	${INSTALL_DATA} ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
-	${INSTALL_DATA} ${FILESDIR}/freebsd.committers.markers ${PREFIX}/lib/X11/xearth
-	${INSTALL_DATA} ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
-	${ECHO} "# All of FreeBSD's committers, including core :)" > \
-	    ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
-	${GREP} -hv '^[[:space:]]*#' ${FILESDIR}/freebsd.core.markers \
-	    ${FILESDIR}/freebsd.committers.markers >> \
-	    ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
-	${CHMOD} 0444 ${PREFIX}/lib/X11/xearth/freebsd.core_and_committers.markers
+	@${MKDIR} ${PREFIX}/lib/X11/xearth
+.for file in freebsd.core.markers freebsd.committers.markers \
+	freebsd.ftp.markers
+	@${INSTALL_DATA} ${FILESDIR}/${file} ${PREFIX}/lib/X11/xearth
+.endfor
+	@${INSTALL_DATA} \
+		${WRKDIR}/freebsd.core_and_committers.markers \
+			${PREFIX}/lib/X11/xearth
 
 .include <bsd.port.mk>
