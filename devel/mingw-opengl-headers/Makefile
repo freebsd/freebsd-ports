@@ -10,7 +10,7 @@ CATEGORIES=	devel graphics
 MASTER_SITES=	ftp://ftp.microsoft.com/Softlib/MSLFILES/
 PKGNAMEPREFIX=	mingw-
 PKGNAMESUFFIX=	-headers
-DISTNAME=	OpenGL95
+DISTNAME=	OPENGL95
 EXTRACT_SUFX=	.EXE
 DIST_SUBDIR=	mingw
 
@@ -24,6 +24,7 @@ RESTRICTED=	"Not sure if we can redistribute it"
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+FETCH_ENV=	FTP_PASSIVE_MODE=no
 
 do-install:
 	${MKDIR} ${PREFIX}/i386-mingw32msvc/include/GL
