@@ -7,19 +7,28 @@
 
 PORTNAME=	amaya
 PORTVERSION=	4.3.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
+
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.4:${PORTSDIR}/graphics/png
+
+DIST_SUBDIR=	amaya
+WRKSRC=		${WRKDIR}/Amaya/obj
 
 USE_MOTIF=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
-DIST_SUBDIR=	amaya
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	../configure
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-more-shared
 
 DICT?=		none
 
@@ -37,12 +46,6 @@ DISTFILES+=	${DICT:S/$/.tgz/g}
 .endif
 .endif
 
-WRKSRC=		${WRKDIR}/Amaya/obj
-
-GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ARGS=	--with-amaya
-
 pre-fetch:
 .if ${DICT} == "none"
 	@${ECHO_MSG} Several spellchecking dictionaries are available.  To use
@@ -56,16 +59,12 @@ post-configure:
 	${CP} ${WRKSRC}/Options.orig ${WRKSRC}/Options
 
 post-install:
-.for file in amaya print
-	strip ${PREFIX}/Amaya/applis/bin/${file}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html\
-	${PREFIX}/Amaya/amaya/
+	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/Amaya/amaya
 .if ${DICT} != "none"
-	${INSTALL_DATA} ${WRKDIR}/*.dic ${PREFIX}/Amaya/dicopar/
+	${INSTALL_DATA} ${WRKDIR}/*.dic ${PREFIX}/Amaya/dicopar
 	${MV} ${TMPPLIST} ${TMPPLIST}.new
-	cd ${WRKDIR} && ls -1 *.dic | perl -pi -e 's|^|Amaya/dicopar/|'\
-	> ${TMPPLIST}
+	cd ${WRKDIR} && ls -1 *.dic | \
+		${PERL} -pi -e 's|^|Amaya/dicopar/|' > ${TMPPLIST}
 	${CAT} ${TMPPLIST}.new >> ${TMPPLIST}
 	${RM} ${TMPPLIST}.new
 .endif

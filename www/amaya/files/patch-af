@@ -1,0 +1,11 @@
+--- ../amaya/Makefile.libwww.orig	Fri Sep 15 23:24:40 2000
++++ ../amaya/Makefile.libwww	Mon Mar 19 22:20:31 2001
+@@ -50,7 +50,7 @@
+ 		-I$(THOTDIR)../libwww/modules/expat/xmltok
+ 
+ # this dependency calls the ../Makefile rule that compiles libwww
+-AMAYA_LIBWWW_SRC= ../libz.a amaya_comp_libwww
++AMAYA_LIBWWW_SRC= amaya_comp_libwww
+ 
+ amaya_comp_libwww : force
+ 		@(cd .. ; $(MAKE) libwww)

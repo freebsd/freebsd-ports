@@ -1,0 +1,11 @@
+--- ../Makefile.in.orig	Wed Feb 28 19:34:16 2001
++++ ../Makefile.in	Tue Mar 20 01:40:14 2001
+@@ -187,7 +187,7 @@
+ 	  if [ ! -f Makefile -o ! -f wwwconf.h ] ; then \
+ 	  	$$libwwwdir/configure \
+ 			--disable-shared \
+-			--with-zlib="$$localdir/libz.a"; \
++			--with-zlib; \
+ 		$(ECHO) "libwww is configured" ; \
+ 	  fi)
+ 

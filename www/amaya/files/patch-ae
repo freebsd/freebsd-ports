@@ -1,0 +1,11 @@
+--- ../configure.orig	Wed Feb 28 19:34:16 2001
++++ ../configure	Mon Mar 19 22:16:50 2001
+@@ -1651,7 +1651,7 @@
+   :
+ fi
+ 
+-if test "$with_graphic-libs" = "no" ; then
++if test "$with_more_shared" = "yes" ; then
+     echo $ac_n "checking for libjpeg version = 6b""... $ac_c" 1>&6
+ echo "configure:1657: checking for libjpeg version = 6b" >&5
+     cat > conftest.$ac_ext <<EOF
