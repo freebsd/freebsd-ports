@@ -713,6 +713,7 @@
     SUBDIR += tund
     SUBDIR += tvark
     SUBDIR += udptunnel
+    SUBDIR += ulxmlrpcpp
     SUBDIR += unison
     SUBDIR += unix2tcp
     SUBDIR += uplog
