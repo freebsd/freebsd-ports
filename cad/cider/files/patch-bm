@@ -1,0 +1,16 @@
+--- cider/common/src/lib/support/erfc.c.orig	Sat Jan 29 19:29:27 1994
++++ cider/common/src/lib/support/erfc.c	Tue Oct 24 12:23:09 2000
+@@ -10,6 +10,7 @@
+ 
+ /* erfc computes the erfc(x) the code is from sedan's derfc.f */
+ 
++#ifdef HAS_NO_ERFC
+ double erfc ( x )
+ double x;
+ {
+@@ -46,4 +47,4 @@
+         return( 1.0 - sum2 );
+     }
+ }
+-
++#endif

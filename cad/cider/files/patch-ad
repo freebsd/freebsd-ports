@@ -1,5 +1,5 @@
 *** spice/common/src/bin/main.c.orig	Sat Mar 12 08:22:28 1994
---- spice/common/src/bin/main.c	Sun Dec 12 14:58:04 1999
+--- spice/common/src/bin/main.c	Tue Oct 24 03:32:20 2000
 ***************
 *** 25,30 ****
 --- 25,37 ----
@@ -46,7 +46,7 @@
   #ifdef BATCH
 ***************
 *** 185,190 ****
---- 202,291 ----
+--- 202,294 ----
   
   #endif
   
@@ -56,6 +56,7 @@
 + prompt()
 + {
 +     static char pbuf[128];
++     int n = sizeof(pbuf);
 +     char *p = pbuf, *s;
 + 
 +     if (cp_interactive == false)
@@ -66,16 +67,18 @@
 +         s = cp_promptstring;
 +     if (cp_altprompt)
 +         s = cp_altprompt;
-+     while (*s) {
++     while (*s && (n > 1)) {
++ 	int w;
 +         switch (strip(*s)) {
 + 	case '!':
-+ 	    p += sprintf(p, "%d", where_history() + 1);
++ 	    w = snprintf(p, n, "%d", where_history() + 1);
++ 	    w = (w >= n) ? n - 1 : w;
++ 	    p += w;
++ 	    n -= w;
 + 	    break;
-+ 	case '\\':
-+ 	    if (*(s + 1)) 
-+ 		p += sprintf(p, "%c", strip(*++s));
 + 	default:
 + 	    *p = strip(*s); ++p;
++ 	    --n;
 + 	    break;
 +         }
 +         s++;
@@ -139,7 +142,7 @@
   void
 ***************
 *** 216,221 ****
---- 317,326 ----
+--- 320,329 ----
   
   #endif
   
@@ -152,7 +155,7 @@
           fprintf(cp_err, "main: Internal Error: jump to zero\n");
 ***************
 *** 236,241 ****
---- 341,353 ----
+--- 344,356 ----
       ARCHsize = 1;
   #endif /* PARALLEL_ARCH */
   
@@ -168,7 +171,7 @@
   #endif
 ***************
 *** 472,478 ****
---- 584,594 ----
+--- 587,597 ----
   #  ifdef HAS_UNIX_SIGS
       /* Set up (void) signal handling */
       if (!ft_batchmode) {
@@ -182,7 +185,7 @@
           (void) signal(SIGTSTP, sigstop);
 ***************
 *** 668,674 ****
---- 784,794 ----
+--- 787,797 ----
       } else {
           (void) setjmp(jbuf);
           cp_interactive = true;
@@ -196,7 +199,7 @@
   #  else /* if BATCH */
 ***************
 *** 708,714 ****
---- 828,838 ----
+--- 831,841 ----
       /* Nutmeg "main" */
       (void) setjmp(jbuf);
       cp_interactive = true;
