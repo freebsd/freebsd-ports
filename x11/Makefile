@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.124 1997/02/16 22:34:06 andreas Exp $
+# $Id: Makefile,v 1.125 1997/02/17 09:55:14 tg Exp $
 #
 
     SUBDIR += FWF
@@ -20,6 +20,7 @@
     SUBDIR += freefonts
     SUBDIR += fvwm
     SUBDIR += fvwm2
+    SUBDIR += fvwm2-english
     SUBDIR += fvwm95
     SUBDIR += getbdf
     SUBDIR += gwm
