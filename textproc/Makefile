@@ -166,6 +166,7 @@
     SUBDIR += iiimf-x
     SUBDIR += iiimf-x-lib
     SUBDIR += info2html
+    SUBDIR += info2man
     SUBDIR += info_to_html
     SUBDIR += intltool
     SUBDIR += ipdf

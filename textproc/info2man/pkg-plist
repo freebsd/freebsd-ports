@@ -1,0 +1,15 @@
+bin/info2man
+bin/info2pod
+%%DATADIR%%/cs/DEBUG.pm
+%%DATADIR%%/cs/GNUInfo.pm
+%%DATADIR%%/cs/GNUInfo/Node.pm
+%%DATADIR%%/cs/IO.pm
+%%DATADIR%%/cs/Math.pm
+%%DATADIR%%/cs/Misc.pm
+%%DATADIR%%/cs/Object.pm
+%%DATADIR%%/cs/Pathname.pm
+%%DATADIR%%/cs/Sink.pm
+%%DATADIR%%/cs/Source.pm
+@dirrm %%DATADIR%%/cs/GNUInfo
+@dirrm %%DATADIR%%/cs
+@dirrm %%DATADIR%%
