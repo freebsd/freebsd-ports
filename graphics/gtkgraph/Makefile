@@ -1,16 +1,16 @@
 # New ports collection makefile for:	gtkgraph
-# Version required:			0.5.1
+# Version required:			0.5.2
 # Date created:				12 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gtkgraph-0.5.1
+DISTNAME=	gtkgraph-0.5.2
 CATEGORIES=	math
 MASTER_SITES=	http://gtkgraph.linuxbox.com/
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		intl.1:${PORTSDIR}/devel/gettext \
