@@ -688,6 +688,7 @@
     SUBDIR += wmnd
     SUBDIR += wmnet
     SUBDIR += wmnet2
+    SUBDIR += wmnetload
     SUBDIR += wmnetmon
     SUBDIR += wmq3
     SUBDIR += wmwave

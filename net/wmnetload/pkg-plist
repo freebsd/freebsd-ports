@@ -1,0 +1,3 @@
+bin/wmnetload
+%%PORTDOCS%%share/doc/wmnetload/README
+%%PORTDOCS%%@dirrm share/doc/wmnetload
