@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libapreq
-PORTVERSION=	1.3
+PORTVERSION=	1.33
 CATEGORIES=	www perl5 devel
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     Apache
@@ -29,7 +29,8 @@ MAN3=		Apache::Cookie.3 Apache::Request.3 Apache::libapreq.3 \
 		libapreq.3
 
 post-patch:
-	@${PERL} -pi~ -e '$$_="" if $$. >32 && $$. <50' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi~ -e '$$_="" if ($$.>37 && $$.<63) || /PREREQ_PM/' \
+		${WRKSRC}/Makefile.PL
 
 post-install:
 .ifndef(NOPORTDOCS)
