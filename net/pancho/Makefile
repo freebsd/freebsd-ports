@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	6.0.0
+PORTVERSION=	7.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
@@ -20,6 +20,7 @@ USE_PERL5=	YES
 NO_BUILD=	YES
 
 pre-patch:
+	@${CHMOD} u+w ${WRKSRC}/pancho
 	@${MV} ${WRKSRC}/pancho ${WRKSRC}/pancho.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
 		< ${WRKSRC}/pancho.old > ${WRKSRC}/pancho
