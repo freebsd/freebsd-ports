@@ -1,0 +1,17 @@
+--- Makefile.orig	Fri Oct 30 15:43:07 1998
++++ Makefile	Thu Dec 24 23:21:55 1998
+@@ -1,4 +1,4 @@
+-XMANGEKYOU_PREFIX = /usr/X11R6
++XMANGEKYOU_PREFIX = ${X11BASE}
+ XMANGEKYOU_BIN = ${XMANGEKYOU_PREFIX}/bin
+ XMANGEKYOU_LIB = ${XMANGEKYOU_PREFIX}/lib/X11/XMangekyou
+ XMANGEKYOU_MAN = ${XMANGEKYOU_PREFIX}/man/man1
+@@ -8,7 +8,7 @@
+ 		gcc -o xmangekyou \
+ 		xm_anime.o xm_cal.o xm_graph.o xm_init.o \
+ 		xm_main.o xm_quit.o xm_str.o xm_time.o \
+-		-O -L/usr/X11R6/lib -lm -lX11 -lXt -lXmu -lXaw -lXpm
++		-O -L${X11BASE}/lib -lm -lX11 -lXt -lXmu -lXaw -lXpm -Wl,-rpath,${X11BASE}/lib
+ xm_anime.o :	xm_anime.c
+ 		gcc -c xm_anime.c -O -I/usr/X11R6/include \
+ 		-DXMANGEKYOU_LIB=\"${XMANGEKYOU_LIB}/\"
