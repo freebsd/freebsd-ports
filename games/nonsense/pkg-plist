@@ -1,23 +1,30 @@
 bin/nonsense
+%%PORTDOCS%%share/doc/nonsense/README
+%%PORTDOCS%%@dirrm share/doc/nonsense
 share/nonsense/data/college.data
 share/nonsense/data/cookie.data
 share/nonsense/data/default.data
+share/nonsense/data/humorix.data
 share/nonsense/data/insults.data
 share/nonsense/data/linux.data
 share/nonsense/data/mission.data
 share/nonsense/data/newspaper.data
+share/nonsense/data/poetry.data
 share/nonsense/data/ratherism.data
 share/nonsense/data/resume.data
 share/nonsense/data/shows.data
 share/nonsense/data/slashdot.data
 share/nonsense/data/stupidlaws.data
+share/nonsense/data/techdirt.data
 share/nonsense/template/bingo.html.template
 share/nonsense/template/bizplan.html.template
 share/nonsense/template/freshmeat.rdf.template
+share/nonsense/template/humorix.html.template
 share/nonsense/template/newspaper.html.template
 share/nonsense/template/resume.html.template
 share/nonsense/template/slashdot.html.template
 share/nonsense/template/slashdot.rdf.template
+share/nonsense/template/techdirt.html.template
 @dirrm share/nonsense/data
 @dirrm share/nonsense/template
 @dirrm share/nonsense
