@@ -1,0 +1,8 @@
+mySQL is a multithreaded (using MIT pthreads) SQL database with a command
+syntax very similar to mSQL. For more information see http://www.tcx.se
+
+Note: This port does *not* build the perl5 module. To do so, refer to the
+file ${WRKSRC}/INSTALL-SOURCE, in particular, the notes on FreeBSD systems.
+
+josh
+josh@ican.net
