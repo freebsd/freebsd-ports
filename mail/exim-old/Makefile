@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	3.33
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim3/ \
 		http://www.exim.org/ftp/exim3/ \
@@ -194,6 +194,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/oview.txt ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim
 .endif
 	@${CAT} ${PKGMESSAGE}
 

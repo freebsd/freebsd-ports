@@ -15,6 +15,9 @@ sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
 %%PORTDOCS%%share/doc/exim/POST-INSTALL-NOTES
+%%PORTDOCS%%share/doc/exim/filter.txt
+%%PORTDOCS%%share/doc/exim/oview.txt
+%%PORTDOCS%%share/doc/exim/spec.txt
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir
 @unexec install-info --delete %D/info/exim_filter.info %D/info/dir
