@@ -29,11 +29,11 @@ o Boot DSS Administration Tool
 o Set up DSS Administration Tool with MSIE(Microsoft Internet Explorer)
 
     Mozilla, Netscape4/7 are not useful.  DSS Administration Tool requires
-    MSIE(perhaps 5.0 or later) J-Script feature.
+    MSIE(4.5 or later) J-Script feature.
 
 	http://YOUR.STREAMING.SERVER:1220/
 
-    If you need SSL, select 'Secure Administration (SSL)' in setup.
+    If you need SSL, select 'Secure Administration (SSL)' in this setup.
     After setup, you can access to
 
 	https://YOUR.STREAMING.SERVER:1240/

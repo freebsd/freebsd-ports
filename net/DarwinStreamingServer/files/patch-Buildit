@@ -1,8 +1,11 @@
---- Buildit.orig	Sat Jun 15 11:11:37 2002
-+++ Buildit	Mon Sep 23 01:05:07 2002
-@@ -80,18 +80,18 @@
+--- Buildit.orig	Sat Nov  2 10:08:06 2002
++++ Buildit	Tue Jan  7 10:56:12 2003
+@@ -78,20 +78,20 @@
+ 		fi
+ 		;;
  
- 	FreeBSD.i386)
+-	FreeBSD.i386)
++	FreeBSD.*)
          echo "Configuring for the "$OSNAME" "$HARDWARENAME" platform"
 -		CPLUS=gcc
 -		CCOMP=gcc

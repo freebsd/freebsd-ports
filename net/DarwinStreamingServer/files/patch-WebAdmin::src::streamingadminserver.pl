@@ -23,7 +23,7 @@
  	  "qtssAdmin", "streamingadmin",
  	  "cacheMessageFiles", "0",
 -	  #"pidfile", "/var/streaming/streamingadminserver.pid"
-+	  "pidfile", "/var/streaming/streamingadminserver.pid"
++	  "pidfile", "/var/run/streamingadminserver.pid"
  	  );
  }
  
