@@ -7,7 +7,7 @@
 
 PORTNAME=	amphetamine
 PORTVERSION=	0.8.8
-CATEGORIES=	graphics
+CATEGORIES=	games
 MASTER_SITES=	http://www.dataway.ch/~lukasl/amph/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
