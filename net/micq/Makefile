@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.9.4
+PORTVERSION=	0.4.10
 CATEGORIES=	net
 MASTER_SITES=	http://micq.org/source/ \
 		http://micq.alpha345.com/source/ \
@@ -15,12 +15,21 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		micq.1
 MAN5=		micqrc.5
 MAN7=		micq.7
+
+.if !defined(WITHOUT_LIBICONV)
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+CONFIGURE_ARGS+=	--enable-iconv
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.1 ${MANPREFIX}/man/man1
@@ -28,8 +37,9 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.7 ${MANPREFIX}/man/man7
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/icq091.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/icqv7.txt ${DOCSDIR}
+.for ext in i18n logformat png txt xpm 
+	${INSTALL_DATA} ${WRKSRC}/doc/*.${ext} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
