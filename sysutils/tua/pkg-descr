@@ -1,0 +1,20 @@
+This is TUA - "The Uucp Analyzer".
+
+Its purpose is to collect all the information that the Honey Dan Ber
+or the Taylor versions of the UUCP package put in their various logs,
+tipically located in a few subdirectories on /usr/spool/uucp. It then
+builds up a clear report, showing data from several different points of
+view. It may even become an interactive customizable application by
+linking in the TCL support.
+
+It is fast, because all the data are maintained in binary trees; and
+it has no arbitrary restriction on the size of the logs it can eat.
+Very large sites can use the SoftChip Btree Library for faster searches.
+
+It can maintains an history of the connections with the various sites
+your machine is connected to, and a last-year summary of the amount of
+data you received and transmitted, month-by-month.
+
+You can get, in a chart form, the status of the usage of all your
+serial port, so you can easily say when your modem is available for a
+new link.
