@@ -27,6 +27,7 @@ COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
+NO_LATEST_LINK=		yes
 KERBEROSV_URL=		http://web.mit.edu/network/kerberos-form.html
 USE_REINPLACE=		yes
 USE_GMAKE=		yes
