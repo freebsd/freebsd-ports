@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	DarwinStreamingServer
-PORTVERSION=	5.0.1.1
-PORTREVISION=	2
+PORTVERSION=	5.0.3.2
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	#http://developer.apple.com/darwin/projects/streaming/source/
 #		You must accept APSL (Apple Public Source License),  and get
-#		DarwinStreamingSrc5.0.zip.
-DISTNAME=	DarwinStreamingSrc${PORTVERSION}
+#		DSS-v5_0_3_2.zip.
+DISTNAME=	DSS-v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Darwin Streaming Server, a MP3, MPEG4 and QuickTime streaming server
@@ -55,37 +55,66 @@ pre-fetch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/WebAdminHtml/adminprotocol-lib.pl
 	@${REINPLACE_CMD} -e 's,${PREFIX}/sbin/StreamingServerModules,${PREFIX}/libexec/StreamingServerModules,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
 		${WRKSRC}/streamingserver.xml-POSIX
 	@${REINPLACE_CMD} -e 's,${PREFIX}/movies,${DATADIR}/movies,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/WebAdminHtml/adminprotocol-lib.pl
 	@${REINPLACE_CMD} -e 's,/etc/streaming,${PREFIX}/etc/streaming,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/qtaccess							\
 		${WRKSRC}/defaultPaths.h						\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/logs,/var/log/streaming,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/defaultPaths.h						\
 		${WRKSRC}/streamingserver.xml-POSIX					\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/AdminHtml,${DATADIR}/AdminHtml,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/playlists,/var/spool/streaming.playlists,' \
+		${WRKSRC}/Install							\
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
 	@${REINPLACE_CMD} -e 's,/var/streaming/streamingadminserver.pid,/var/run/streamingadminserver.pid,' \
 		${WRKSRC}/WebAdmin/src/streamingadminserver.pl				\
 		${WRKSRC}/WebAdmin/streamingadminserver_Darwin.conf
+	@${REINPLACE_CMD} -e '/-O[23]/d' \
+		${WRKSRC}/Makefile.POSIX						\
+		${WRKSRC}/QTFileLib/Makefile.POSIX					\
+		${WRKSRC}/qtpasswd.tproj/Makefile.POSIX					\
+		${WRKSRC}/MP3Broadcaster/Makefile.POSIX					\
+		${WRKSRC}/HTTPUtilitiesLib/Makefile.POSIX				\
+		${WRKSRC}/CommonUtilitiesLib/Makefile.POSIX				\
+		${WRKSRC}/StreamingProxy.tproj/Makefile.POSIX				\
+		${WRKSRC}/StreamingServer.pbproj/project.pbxproj			\
+		${WRKSRC}/PlaylistBroadcaster.tproj/Makefile.POSIX			\
+		${WRKSRC}/QTFileTools/QTRTPGen.tproj/Makefile.POSIX			\
+		${WRKSRC}/QTFileTools/QTSDPGen.tproj/Makefile.POSIX			\
+		${WRKSRC}/QTFileTools/QTFileInfo.tproj/Makefile.POSIX			\
+		${WRKSRC}/QTFileTools/QTFileTest.tproj/Makefile.POSIX			\
+		${WRKSRC}/APIModules/QTSSRefMovieModule/Makefile.POSIX			\
+		${WRKSRC}/QTFileTools/QTTrackInfo.tproj/Makefile.POSIX			\
+		${WRKSRC}/QTFileTools/QTBroadcaster.tproj/Makefile.POSIX		\
+		${WRKSRC}/QTFileTools/QTRTPFileTest.tproj/Makefile.POSIX		\
+		${WRKSRC}/QTFileTools/QTSampleLister.tproj/Makefile.POSIX		\
+		${WRKSRC}/APIModules/QTSSRawFileModule.bproj/Makefile.POSIX		\
+		${WRKSRC}/APIModules/QTSSSpamDefenseModule.bproj/Makefile.POSIX		\
+		${WRKSRC}/APIModules/QTSSDemoAuthorizationModule.bproj/Makefile.POSIX
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./Buildit)
@@ -93,7 +122,7 @@ do-build:
 post-build:
 	@${CP} ${.CURDIR}/pkg-message ${WRKDIR}/pkg-message
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKDIR}/pkg-message
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./DSS_MakeRoot -f ${OPSYS} dss)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./DSS_MakeRoot -f ${OPSYS})
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \

@@ -1,0 +1,24 @@
+--- DSS_MakeRoot.orig	Tue Mar 11 12:13:25 2003
++++ DSS_MakeRoot	Sat Jan 22 05:08:36 2005
+@@ -249,21 +249,6 @@
+ 	cp -f WebAdmin/WebAdminHtml/html_en/messages $INSTALLROOT/AdminHtml/html_en/
+ 	cp -f WebAdmin/WebAdminHtml/html_en/genres $INSTALLROOT/AdminHtml/html_en/
+ 	
+-	echo creating "$INSTALLROOT/AdminHtml/html_de/" directory
+-	mkdir -p $INSTALLROOT/AdminHtml/html_de/
+-	cp -f WebAdmin/WebAdminHtml/html_de/messages $INSTALLROOT/AdminHtml/html_de/
+-	cp -f WebAdmin/WebAdminHtml/html_de/genres $INSTALLROOT/AdminHtml/html_de/
+-
+-	echo creating "$INSTALLROOT/AdminHtml/html_fr/" directory
+-	mkdir -p $INSTALLROOT/AdminHtml/html_fr/
+-	cp -f WebAdmin/WebAdminHtml/html_fr/messages $INSTALLROOT/AdminHtml/html_fr/
+-	cp -f WebAdmin/WebAdminHtml/html_fr/genres $INSTALLROOT/AdminHtml/html_fr/
+-
+-	echo creating "$INSTALLROOT/AdminHtml/html_ja/" directory
+-	mkdir -p $INSTALLROOT/AdminHtml/html_ja/
+-	cp -f WebAdmin/WebAdminHtml/html_ja/messages $INSTALLROOT/AdminHtml/html_ja/
+-	cp -f WebAdmin/WebAdminHtml/html_ja/genres $INSTALLROOT/AdminHtml/html_ja/
+-
+ fi
+ 
+ 

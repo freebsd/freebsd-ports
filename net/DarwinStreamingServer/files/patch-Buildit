@@ -1,6 +1,6 @@
---- Buildit.orig	Thu Nov 13 10:02:58 2003
-+++ Buildit	Sun Jan 18 07:23:31 2004
-@@ -81,20 +81,20 @@ case $PLAT in
+--- Buildit.orig	Thu Jun 10 09:03:33 2004
++++ Buildit	Sun Feb 20 17:19:01 2005
+@@ -78,20 +78,20 @@
  		fi
  		;;
  
