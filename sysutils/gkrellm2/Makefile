@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	2.1.12
+PORTVERSION=	2.1.12a
 #PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	A GTK based system monitor
+
+WRKSRC=		${WRKDIR}/${DISTNAME:C/[a-z]$//}
 
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
@@ -47,7 +49,7 @@ ALL_TARGET=	freebsd2
 .else
 ALL_TARGET=	freebsd
 .endif
-INSTALL_TARGET=	install_netbsd
+INSTALL_TARGET=	install_freebsd
 
 MAKE_ENV+=	INSTALLROOT=${X11BASE} SINSTALLDIR=${PREFIX}/sbin \
 		PKGCONFIGDIR=${X11BASE}/libdata/pkgconfig \
