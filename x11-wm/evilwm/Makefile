@@ -15,9 +15,7 @@ MAINTAINER=		trevor@FreeBSD.org
 
 DOCDIR=			share/doc/${PORTNAME}
 DOCS=			Changes.kja3 README
-.if !defined(NOPORTDOCS)
 MAN1=			evilwm.1
-.endif
 PLIST=			${WRKDIR}/pkg-plist
 USE_X_PREFIX=		yes
 
@@ -27,20 +25,20 @@ do-build:
 pre-install:
 	${ECHO} bin/evilwm > ${PLIST}
 .if !defined(NOPORTDOCS)
-	for i in ${DOCS}; \
-		do ${ECHO} ${DOCDIR}/$${i} >> ${PLIST}; \
-	done
+.for i in ${DOCS}
+	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
+.endfor
 	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/evilwm ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/evilwm.man ${PREFIX}/man/man1/evilwm.1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
-	for i in ${DOCS}; \
-		do ${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${DOCDIR}; \
-	done
-	${INSTALL_MAN} ${WRKSRC}/evilwm.man ${PREFIX}/man/man1/evilwm.1
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
