@@ -4111,6 +4111,7 @@ juke		ports/audio/juke
 jump		ports/java/jump
 jumpgate	ports/net/jumpgate
 jumpgis		ports/graphics/jumpgis
+jumpgis-postgis	ports/graphics/jumpgis-postgis
 jumpnbump	ports/games/jumpnbump
 junglemonkey	ports/ftp/junglemonkey
 junipoll	ports/net-mgmt/junipoll
