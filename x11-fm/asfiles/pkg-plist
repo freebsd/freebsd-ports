@@ -222,6 +222,4 @@ include/pixmaps/interface.xpm
 include/pixmaps/PDFOmni.xpm
 share/OffiX/FilesMagic
 share/OffiX/Filesrc
-@dirrm include/bitmaps
-@dirrm include/pixmaps
 @dirrm share/OffiX
