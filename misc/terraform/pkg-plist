@@ -1,8 +1,9 @@
 bin/terraform
-%%DOCSDIR%%/FAQ.sgml
-%%DOCSDIR%%/README.sgml
-%%DOCSDIR%%/UsersGuide.sgml
-%%DOCSDIR%%/i18n.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.sgml
+%%PORTDOCS%%%%DOCSDIR%%/README.sgml
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.sgml
+%%PORTDOCS%%%%DOCSDIR%%/i18n.txt
+share/gnome/apps/Graphics/Terraform.desktop
 share/gnome/help/terraform/C/faq.html
 share/gnome/help/terraform/C/hacking.html
 share/gnome/help/terraform/C/index.html
@@ -19,65 +20,79 @@ share/gnome/help/terraform/fr/index.html
 share/gnome/help/terraform/fr/templates.html
 share/gnome/help/terraform/fr/topic.dat
 share/gnome/help/terraform/fr/tutorial.html
+share/gnome/pixmaps/terraform.png
+share/gnome/pixmaps/terraform/add.xpm
+share/gnome/pixmaps/terraform/arrow.xpm
+share/gnome/pixmaps/terraform/circle.xpm
+share/gnome/pixmaps/terraform/crop.xpm
+share/gnome/pixmaps/terraform/die.xpm
+share/gnome/pixmaps/terraform/gnome-question.png
+share/gnome/pixmaps/terraform/rectangle.xpm
+share/gnome/pixmaps/terraform/replace.xpm
+share/gnome/pixmaps/terraform/seed.xpm
+share/gnome/pixmaps/terraform/subtract.xpm
+share/gnome/pixmaps/terraform/terraform_logo.xpm
+share/gnome/pixmaps/terraform/zoom.xpm
+share/gnome/terraform/image_maps/moon_moon.png
+share/gnome/terraform/image_maps/sky_test_320x180.tga
+share/gnome/terraform/include/atmospheres/earth_fog.inc
+share/gnome/terraform/include/atmospheres/earth_haze_fast.inc
+share/gnome/terraform/include/atmospheres/earth_haze_slow.inc
+share/gnome/terraform/include/atmospheres/fog_ground.inc
+share/gnome/terraform/include/atmospheres/rainbow.inc
+share/gnome/terraform/include/defaults.inc
+share/gnome/terraform/include/earth_textures/earth_canyon_landscape.inc
+share/gnome/terraform/include/earth_textures/earth_desert_landscape.inc
+share/gnome/terraform/include/earth_textures/earth_green_landscape.inc
+share/gnome/terraform/include/earth_textures/earth_mountain_landscape.inc
+share/gnome/terraform/include/generic_land.inc
+share/gnome/terraform/include/generic_river.inc
+share/gnome/terraform/include/river_texture.inc
+share/gnome/terraform/include/skies/earth_regular_sky.inc
+share/gnome/terraform/include/skies/earth_static_sky.inc
+share/gnome/terraform/include/skies/include/clouds_01.inc
+share/gnome/terraform/include/skies/include/clouds_02.inc
+share/gnome/terraform/include/skies/include/clouds_03.inc
+share/gnome/terraform/include/skies/include/clouds_04.inc
+share/gnome/terraform/include/skies/include/clouds_05.inc
+share/gnome/terraform/include/skies/include/clouds_06.inc
+share/gnome/terraform/include/skies/include/clouds_07.inc
+share/gnome/terraform/include/skies/include/lights_standard.inc
+share/gnome/terraform/include/skies/include/lights_toymodel.inc
+share/gnome/terraform/include/skies/include/skycolor_earth.inc
+share/gnome/terraform/include/skies/include/stars_01.inc
+share/gnome/terraform/include/skies/include/stars_02.inc
+share/gnome/terraform/include/skies/include/stars_03.inc
+share/gnome/terraform/include/skies/include/stars_04.inc
+share/gnome/terraform/include/skies/include/stars_05.inc
+share/gnome/terraform/include/skies/include/stars_06.inc
+share/gnome/terraform/include/skies/mapped_sky.inc
+share/gnome/terraform/include/water/earth_water.inc
+share/gnome/terraform/objects/fern.gif
+share/gnome/terraform/objects/fern.inc
+share/gnome/terraform/objects/monolith.inc
+share/gnome/terraform/objects/tree_1.inc
+share/gnome/terraform/objects/tree_2.inc
+share/gnome/terraform/objects/tree_3.inc
+share/gnome/terraform/objects/tree_4.gif
+share/gnome/terraform/objects/tree_4.inc
+share/gnome/terraform/objects/tree_5.gif
+share/gnome/terraform/objects/tree_5.inc
+share/gnome/terraform/objects/tree_6.gif
+share/gnome/terraform/objects/tree_6.inc
 share/locale/fr/LC_MESSAGES/terraform.mo
 share/locale/nl/LC_MESSAGES/terraform.mo
-%%DATADIR%%/image_maps/moon_moon.png
-%%DATADIR%%/image_maps/sky_test_320x180.tga
-%%DATADIR%%/include/atmospheres/earth_fog.inc
-%%DATADIR%%/include/atmospheres/earth_haze_fast.inc
-%%DATADIR%%/include/atmospheres/earth_haze_slow.inc
-%%DATADIR%%/include/atmospheres/fog_ground.inc
-%%DATADIR%%/include/atmospheres/rainbow.inc
-%%DATADIR%%/include/defaults.inc
-%%DATADIR%%/include/earth_textures/earth_canyon_landscape.inc
-%%DATADIR%%/include/earth_textures/earth_desert_landscape.inc
-%%DATADIR%%/include/earth_textures/earth_green_landscape.inc
-%%DATADIR%%/include/earth_textures/earth_mountain_landscape.inc
-%%DATADIR%%/include/generic_land.inc
-%%DATADIR%%/include/generic_river.inc
-%%DATADIR%%/include/river_texture.inc
-%%DATADIR%%/include/skies/earth_regular_sky.inc
-%%DATADIR%%/include/skies/earth_static_sky.inc
-%%DATADIR%%/include/skies/include/clouds_01.inc
-%%DATADIR%%/include/skies/include/clouds_02.inc
-%%DATADIR%%/include/skies/include/clouds_03.inc
-%%DATADIR%%/include/skies/include/clouds_04.inc
-%%DATADIR%%/include/skies/include/clouds_05.inc
-%%DATADIR%%/include/skies/include/clouds_06.inc
-%%DATADIR%%/include/skies/include/clouds_07.inc
-%%DATADIR%%/include/skies/include/lights_standard.inc
-%%DATADIR%%/include/skies/include/lights_toymodel.inc
-%%DATADIR%%/include/skies/include/skycolor_earth.inc
-%%DATADIR%%/include/skies/include/stars_01.inc
-%%DATADIR%%/include/skies/include/stars_02.inc
-%%DATADIR%%/include/skies/include/stars_03.inc
-%%DATADIR%%/include/skies/include/stars_04.inc
-%%DATADIR%%/include/skies/include/stars_05.inc
-%%DATADIR%%/include/skies/include/stars_06.inc
-%%DATADIR%%/include/skies/mapped_sky.inc
-%%DATADIR%%/include/water/earth_water.inc
-%%DATADIR%%/objects/fern.gif
-%%DATADIR%%/objects/fern.inc
-%%DATADIR%%/objects/monolith.inc
-%%DATADIR%%/objects/tree_1.inc
-%%DATADIR%%/objects/tree_2.inc
-%%DATADIR%%/objects/tree_3.inc
-%%DATADIR%%/objects/tree_4.gif
-%%DATADIR%%/objects/tree_4.inc
-%%DATADIR%%/objects/tree_5.gif
-%%DATADIR%%/objects/tree_5.inc
-%%DATADIR%%/objects/tree_6.gif
-%%DATADIR%%/objects/tree_6.inc
-@dirrm %%DOCSDIR%%
-@dirrm share/gnome/help/terraform/C
+@dirrm share/gnome/terraform/objects
+@dirrm share/gnome/terraform/include/water
+@dirrm share/gnome/terraform/include/skies/include
+@dirrm share/gnome/terraform/include/skies
+@dirrm share/gnome/terraform/include/earth_textures
+@dirrm share/gnome/terraform/include/atmospheres
+@dirrm share/gnome/terraform/include
+@dirrm share/gnome/terraform/image_maps
+@dirrm share/gnome/terraform
+@dirrm share/gnome/pixmaps/terraform
 @dirrm share/gnome/help/terraform/fr
+@dirrm share/gnome/help/terraform/C
 @dirrm share/gnome/help/terraform
-@dirrm %%DATADIR%%/image_maps
-@dirrm %%DATADIR%%/include/atmospheres
-@dirrm %%DATADIR%%/include/earth_textures
-@dirrm %%DATADIR%%/include/skies/include
-@dirrm %%DATADIR%%/include/skies
-@dirrm %%DATADIR%%/include/water
-@dirrm %%DATADIR%%/include
-@dirrm %%DATADIR%%/objects
-@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,15 @@
+--- desktop-links/Makefile.in.orig	Thu Apr 25 01:16:49 2002
++++ desktop-links/Makefile.in	Tue May  6 00:23:34 2003
+@@ -232,10 +232,8 @@
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
+ 	if test -n "@datadir@"; then \
+-		$(mkinstalldirs) $(GNOME_DATADIR)/gnome/apps/Graphics; \
+-		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/gnome/apps/Graphics; \
+-		$(mkinstalldirs) $(GNOME_DATADIR)/gnome/ximian/Programs/Graphics; \
+-		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/gnome/ximian/Programs/Graphics; \
++		$(mkinstalldirs) $(GNOME_DATADIR)/apps/Graphics; \
++		$(INSTALL_DATA) Terraform.desktop $(GNOME_DATADIR)/apps/Graphics; \
+ 		$(mkinstalldirs) $(GNOME_DATADIR)/pixmaps; \
+ 		$(INSTALL_DATA) terraform.png $(GNOME_DATADIR)/pixmaps; \
+ 	fi
