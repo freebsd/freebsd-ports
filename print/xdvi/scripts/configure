@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# paper size, default is no nor A4
+# paper size, default is not A4
 A4=n
 #default font cache directory: must be world writable
 CACHE=/tmp
@@ -20,6 +20,9 @@ for i in $RES; do
   echo -n "mode for $i dpi [$1]: ";
   read answ; if [ "$answ" = "" ]; then answ=$1; fi
   SUBST="$SUBST -e s/MODE=$1/MODE=$answ/"
+  if [ $i = 600 -a $answ != imagen ]; then
+    SUBST="$SUBST -e s/MAG=\"/_MAG=\"/"
+  fi
   shift
 done
 
@@ -27,7 +30,7 @@ echo "Choose a font cache directory for automatic font generation"
 echo -n "(this directory must be world writable) [$CACHE]: "
 read answ; if [ "$answ" != "" ]; then CACHE=$answ; fi
   
-sed -e s:/usr/lib/tex:/usr/local/lib/texmf: \
+sed -e s:/usr/lib/tex:$PREFIX/lib/texmf: \
     -e s:/LocalLibrary/Fonts/TeXFonts:$CACHE: \
      $SUBST <${WRKSRC}/MakeTeXPK.orig >${WRKSRC}/MakeTeXPK
 
@@ -36,6 +39,6 @@ sed -e s:/usr/lib/tex:/usr/local/lib/texmf: \
 chmod +w  ${WRKSRC}/Imakefile 
 echo "OSDEFS=" >> ${WRKSRC}/Imakefile || exit 1;
 echo "OPTIONDEFS=-DUSE_PK -DGREY -DPS_GS -DMAKEPK -DBUTTONS" >> ${WRKSRC}/Imakefile
-echo "DEFAULT_FONT_PATH=/usr/local/lib/texmf/fonts/pk:$CACHE/pk"  >> ${WRKSRC}/Imakefile
-echo "DEFAULT_VF_PATH=/usr/local/lib/texmf/fonts/vf" >> ${WRKSRC}/Imakefile
+echo "DEFAULT_FONT_PATH=$PREFIX/lib/texmf/fonts/pk:$CACHE/pk"  >> ${WRKSRC}/Imakefile
+echo "DEFAULT_VF_PATH=$PREFIX/lib/texmf/fonts/vf" >> ${WRKSRC}/Imakefile
 exit 0;
