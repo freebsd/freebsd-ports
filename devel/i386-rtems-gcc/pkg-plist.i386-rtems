@@ -2,6 +2,7 @@ bin/i386-rtems-c++filt
 bin/i386-rtems-c++
 bin/i386-rtems-g++
 bin/i386-rtems-gcc
+bin/i386-rtems-gccbug
 bin/i386-rtems-cpp
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
