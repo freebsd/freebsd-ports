@@ -1,0 +1,6 @@
+Net::Gnats provides a perl interface to the gnatsd command set. Although most
+of the gnatsd command are present and can be explicitly called through
+Net::Gnats, common gnats tasks can be accompished through some methods which
+simplify the process (especially querying the database, editing bugs, etc).
+
+WWW: http://gnatsperl.sourceforge.net/
