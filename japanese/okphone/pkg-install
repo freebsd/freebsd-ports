@@ -16,6 +16,6 @@ if ! grep -qw ^phone /etc/inetd.conf; then
   echo "I don't see \"phone\" in your /etc/inetd.conf file."
   echo "You may want to add the following to your /etc/inetd.conf."
   echo ""
-  echo "phone   dgram   udp     wait    root    /usr/local/libexec/in.phoned in.phoned"
+  echo "phone   dgram   udp     wait    root    /usr/local/libexec/phoned phoned"
   echo ""
 fi
