@@ -1,13 +1,13 @@
 # New ports collection makefile for:	eb
-# Version required:		2.3.2
+# Version required:		2.3.3
 # Date created:			20 Jan 1999
 # Whom:				Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	eb-2.3.2
-PKGNAME=	ja-eb-2.3.2
+DISTNAME=	eb-2.3.3
+PKGNAME=	ja-eb-2.3.3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/appendix/ \
 		ftp://ftp.sra.co.jp/pub/misc/eb/appendix/old/ \
