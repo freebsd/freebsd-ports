@@ -3,7 +3,7 @@
 # Date created:        20 Apr 1998
 # Whom:                J Han <hjh@best.com>
 #
-# $Id: Makefile,v 1.2 1998/08/07 22:28:04 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/22 22:32:10 asami Exp $
 #
 
 DISTNAME= 	t3d
@@ -12,7 +12,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwdt.com/~paysan/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	hjh@best.com
+MAINTAINER=	ports@freebsd.org
 
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
