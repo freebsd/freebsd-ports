@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	E-Weather
-PORTVERSION=	0.2
+PORTVERSION=	0.4a
 CATEGORIES=	x11
-MASTER_SITES=	http://pfnet.org/~cy/
+MASTER_SITES=	http://streiff.net/software/
 
-MAINTAINER=	jhb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Weather epplet for Enlightenment similar to wmWeather
 
 RUN_DEPENDS=	GrabWeather:${PORTSDIR}/misc/wmweather
