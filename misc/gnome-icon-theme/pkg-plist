@@ -98,6 +98,7 @@ share/icons/gnome/36x36/filesystems/gnome-fs-directory-visiting.icon
 share/icons/gnome/36x36/filesystems/gnome-fs-directory-visiting.png
 share/icons/gnome/36x36/filesystems/gnome-fs-directory.icon
 share/icons/gnome/36x36/filesystems/gnome-fs-directory.png
+@exec mkdir -p %D/share/icons/gnome/48x48/apps
 share/icons/gnome/48x48/devices/gnome-dev-battery.png
 share/icons/gnome/48x48/devices/gnome-dev-cdrom-audio.png
 share/icons/gnome/48x48/devices/gnome-dev-cdrom.png
