@@ -72,6 +72,7 @@
     SUBDIR += finfo
     SUBDIR += flasher
     SUBDIR += flexbackup
+    SUBDIR += flock
     SUBDIR += flog
     SUBDIR += fontedit
     SUBDIR += fortunelock
