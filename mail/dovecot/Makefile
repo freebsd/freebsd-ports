@@ -76,7 +76,7 @@ CONFIGURE_ARGS+=	--with-vpopmail
 # user database.
 #
 .if WITH_LDAP2
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
