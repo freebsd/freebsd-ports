@@ -1,27 +1,37 @@
-# New ports collection makefile for:	mikmod
-# Version required:	3.0.3
-# Date created:		20 April 1997
-# Whom:			doconnor@gsoft.com.au
+# ports collection makefile for:   mikmod304
+# Version required:    3.0.4
+# Date created:        16 November 1998
+# Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.4 1998/01/22 00:20:17 msmith Exp $
+# $Id$
 #
 
-DISTNAME=	mikmod-3.0.3
+DISTNAME=	mikmod-3.0.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.freenet.tlh.fl.us/~amstpi/
+MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
-do-build:
-	(cd $(WRKSRC); /bin/sh build-mikmod.freebsd.sh)
+pre-patch:
+	@(cd ${WRKSRC} ;\
+	 ${CP} ${FILESDIR}/config.sh ${WRKSRC}; \
+	 ${PATCH} ${PATCH_ARGS} -p1  < ${FILESDIR}/patch-s3mvolslides.diff )
+
+pre-build:
+	(cd ${WRKSRC}; ${SH} config.sh )
 
 do-install:
-	( cd ${WRKSRC}/usercode ; ${INSTALL_PROGRAM} mikmod ${PREFIX}/bin )
+	( cd ${WRKSRC}; ${INSTALL_PROGRAM} mikmod ${PREFIX}/bin )
+	( cd ${WRKSRC}/playercode ; ${INSTALL_DATA} libmikmod.a ${PREFIX}/lib )
+	( cd ${WRKSRC}/mmio ; ${INSTALL_DATA} libmmio.a ${PREFIX}/lib )
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mikmod
-.for f in bugs.txt changes.txt future.txt mikmod.txt tips.txt
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/docs/$f ${PREFIX}/share/doc/mikmod
+.for f in  AUTHORS COPYING.LIB ChangeLog README*
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/$f ${PREFIX}/share/doc/mikmod
 .endfor
 .endif
+
+post-install:
+	@strip ${PREFIX}/bin/mikmod
 
 .include <bsd.port.mk>
