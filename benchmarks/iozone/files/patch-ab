@@ -1,23 +1,23 @@
---- makefile~	Tue Mar  5 00:09:11 2002
-+++ makefile	Tue Mar  5 15:44:53 2002
-@@ -253,7 +253,7 @@
+--- makefile.orig	Thu Oct 31 18:41:26 2002
++++ makefile	Sun Nov  3 23:51:04 2002
+@@ -304,7 +304,7 @@
  #
  
- freebsd: iozone_freebsd.o libbif.o
+ freebsd:	iozone_freebsd.o libbif.o
 -	cc -O -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
 +	cc ${CFLAGS} -Dunix -DHAVE_ANSIC_C -DNO_THREADS -DSHARED_MEM \
  		iozone_freebsd.o libbif.o -o iozone
+ 
  #
- # GNU C compiler OpenBSD build with no threads, no largefiles, no async I/O
-@@ -601,9 +601,9 @@
+@@ -730,9 +730,9 @@
  	@echo ""
  	@echo "Build iozone for FreeBSD"
  	@echo ""
 -	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
-+	cc -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
++	cc -c ${CFLAGS} -Dunix -DHAVE_ANSIC_C -DNO_THREADS \
  		-DSHARED_MEM iozone.c -o iozone_freebsd.o
 -	cc -c -O -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
-+	cc -c ${CFLAGS} -Dunix -Dbsd4_2 -DHAVE_ANSIC_C -DNO_THREADS \
++	cc -c ${CFLAGS} -Dunix -DHAVE_ANSIC_C -DNO_THREADS \
  		-DSHARED_MEM libbif.c -o libbif.o
  
- iozone_openbsd.o: iozone.c libbif.c
+ iozone_macosx.o:	iozone.c libbif.c
