@@ -49,7 +49,7 @@ pre-install:
 
 post-install:
 .for i in aclocal automake
-	${LN} -s ../../bin/${i}14 \
+	${LN} -sf ${PREFIX}/bin/${i}14 \
 		${PREFIX}/libexec/automake14/${i}
 .endfor
 	@install-info ${PREFIX}/info/automake14.info \
