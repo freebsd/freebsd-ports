@@ -46,4 +46,4 @@ post-patch:
 pre-build:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
