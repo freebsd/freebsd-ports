@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	log4cpp
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.4b
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +17,12 @@ COMMENT=	A library of C++ classes for flexible logging
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-pthreads
+CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
