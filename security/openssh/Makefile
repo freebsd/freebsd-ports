@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
 
 MAINTAINER=	green@FreeBSD.org
 
+RESTRICTED=	"One file calls external cryptographic routines."
+
 LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl
 
 .include <bsd.port.pre.mk>
