@@ -1,31 +1,30 @@
 #!/bin/sh
 
-# usage: $0 BRANCH [-noclean] [-norestr] [-noplistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
+# usage: $0 BRANCH [-noclean] [-norestr] [-plistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
 # configurable variables
 pb=/var/portbuild
 
 . ${pb}/portbuild.conf
 
-buildroot=${pb}
+buildroot=${scratchdir}
 
 export BATCH=t
-export BATCH=t
-#export NO_RESTRICTED=t
-#export FOR_CDROM=t
 export USA_RESIDENT=YES
-#export FORCE_PKG_REGISTER=t
-#export FORCE_PACKAGE=t
 export PARALLEL_PACKAGE_BUILD=t
 export PACKAGE_BUILDING=t
-export WRKDIRPREFIX=/tmp
+export WRKDIRPREFIX=${scratchdir}
+#export NO_RESTRICTED=t
+#export FOR_CDROM=t
+#export FORCE_PKG_REGISTER=t
+#export FORCE_PACKAGE=t
 #export PKG_NOCOMPRESS=t
 # to catch missing dependencies
 #export DEPENDS_TARGET=/usr/bin/true
 # don't pass -j, -k etc. to sub-makes
 unset MAKEFLAGS
 unset PORTSDIR
-# wait 3600 seconds before killing build with no output
+# wait 1 hour before killing build with no output
 export TIMEOUT=3600
 # to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
 ulimit -f 524288
@@ -58,10 +57,10 @@ if [ "x$1" = "x-norestr" ]; then
   export NO_RESTRICTED=t
   shift
 fi
-noplistcheck=0
-if [ "x$1" = "x-noplistcheck" ]; then
-  noplistcheck=1
-  export NOPLISTCHECK=t
+plistcheck=0
+if [ "x$1" = "x-plistcheck" ]; then
+  plistcheck=1
+  export PLISTCHECK=t
   shift
 fi
 nodummy=0
@@ -107,9 +106,9 @@ shift 2
 echo "building $pkgname"
 
 chrootdir=${buildroot}/${branch}/chroot
-bakdir=${buildroot}/${branch}/tarballs
+bakdir=${pb}/${branch}/tarballs
 bindist=${bakdir}/bindist.tar
-packages=${buildroot}/${branch}/packages
+packages=${pb}/${branch}/packages
 
 found=0
 for dir in ${chrootdir}/*; do
@@ -142,6 +141,9 @@ if [ ${found} != 1 ]; then
   cp -p /bin/ps ${chroot}/bin
   cp -p /usr/bin/killall ${chroot}/usr/bin
 
+  # Set up desired uname version
+  cp ${bakdir}/UNAME_VERSION ${chroot}/usr/bin
+
 fi
 
 rm -rf ${chroot}/tmp/*
@@ -155,13 +157,13 @@ echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 # intentionally set up ${PORTSDIR} with symlink to catch broken ports
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
-mount -o -2 -r ${master}:${buildroot}/${branch}/ports ${chroot}/a/ports
+mount -o -2 -r ${master}:${pb}/${branch}/ports ${chroot}/a/ports
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 
-mount -o -2 -r ${master}:${buildroot}/${branch}/src ${chroot}/usr/src
-mount -o -2 -r ${master}:${buildroot}/usr/opt/doc ${chroot}/usr/opt/doc
+mount -o -2 -r ${master}:${pb}/${branch}/src ${chroot}/usr/src
+mount -o -2 -r ${master}:${pb}/usr/opt/doc ${chroot}/usr/opt/doc
 
 mtree -deU -f ${chroot}/usr/src/etc/mtree/BSD.root.dist -p ${chroot} \
   >/dev/null 2>&1
@@ -198,7 +200,7 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-scp -p ${master}:${buildroot}/scripts/{buildscript,pnohang} ${chroot}
+scp -p ${master}:${pb}/scripts/{buildscript,pnohang} ${chroot}
 
 #mount_procfs procfs ${chroot}/proc
 
@@ -208,10 +210,10 @@ error=$(cat ${chroot}/tmp/status)
 
 if [ "${error}" = 0 ]; then
 # make checksum succeeded
-  ssh -a -x $master mkdir -p ${buildroot}/${branch}/distfiles/.pbtmp/${pkgname}
+  ssh -a -x $master mkdir -p ${pb}/${branch}/distfiles/.pbtmp/${pkgname}
   tar -C ${chroot}/tmp/distfiles -cf - . | \
-    ssh -a -x $master tar --unlink -C ${buildroot}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
-  ssh -a -x $master touch ${buildroot}/${branch}/distfiles/.pbtmp/${pkgname}/.done
+    ssh -a -x $master tar --unlink -C ${pb}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
+  ssh -a -x $master touch ${pb}/${branch}/distfiles/.pbtmp/${pkgname}/.done
 
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
@@ -220,21 +222,21 @@ if [ "${error}" = 0 ]; then
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
   rm ${chroot}/tmp/${pkgname}.log2
 ###  chroot ${chroot} /buildscript ${dirname} 2 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/logs/${pkgname}.log
   error=$(cat ${chroot}/tmp/status)
 
   if [ "${error}" = 0 ]; then
     tar -C ${chroot}/tmp -cf - packages | \
-      ssh -a -x $master tar --unlink -C ${buildroot}/${branch} -xvf -
-    ssh -a -x $master [ -f ${buildroot}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${buildroot}/${branch}/packages/All/${pkgname}.tgz
-    ssh $master rm -f ${buildroot}/${branch}/errors/${pkgname}.log
+      ssh -a -x $master tar --unlink -C ${pb}/${branch} -xvf -
+    ssh -a -x $master [ -f ${pb}/${branch}/packages/All/${pkgname}.tgz ] '&&' touch ${pb}/${branch}/packages/All/${pkgname}.tgz
+    ssh $master rm -f ${pb}/${branch}/errors/${pkgname}.log
   else
-    scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
+    scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/errors/${pkgname}.log
   fi
 
 else
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/errors/${pkgname}.log
-  scp ${chroot}/tmp/${pkgname}.log ${master}:${buildroot}/${branch}/logs/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/errors/${pkgname}.log
+  scp ${chroot}/tmp/${pkgname}.log ${master}:${pb}/${branch}/logs/${pkgname}.log
 fi
 
 #umount ${chroot}/proc
