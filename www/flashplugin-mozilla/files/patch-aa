@@ -10,7 +10,7 @@ $FreeBSD$
 -CFLAGS=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I$(FLASH) -I/usr/X11R6/include
 -LDFLAGS= $(FLASH)/libflash.a $(LIBCXX) ../Jpeg/libjpeg.a ../Zlib/libz.a
 +CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I$(FLASH) -I/usr/X11R6/include
-+LDFLAGS= -L${LOCALBASE}/lib -lflash -ljpeg -lz
++LDFLAGS= -L${LOCALBASE}/lib -lflash -ljpeg -lz -L$(X11BASE)/lib -lXt
  
  SRC= plugin.c npunix.c
  OBJ= plugin.o npunix.o
