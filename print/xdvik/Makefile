@@ -7,7 +7,7 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.84.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
@@ -17,10 +17,10 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
@@ -38,15 +38,18 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 
-PLIST_SUB=	TEXMF=${TEXMF}
-CONFLICTS=	xdvi-* *-xdvi*
+PLIST_SUB=	TEXMFDIR=${TEXMFDIR} TEXMFCONFIGDIR=${TEXMFDIR}-config
+CONFLICTS=	xdvi-[0-9]* xdvi-*-[0-9]* \
+		*-xdvi-[0-9]* xdvi-*-[0-9]* \
+		*-xdvik-[0-9]* ja-ptex-tetex-[0-9]*
 
 MAN1=		xdvi.1 xdvizilla.1
 
-TEXMF?=		share/texmf
-TEXMFLOCAL?=	share/texmf-local
-TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCAL}/ls-R
-TEXCONFIG?=	${LOCALBASE}/bin/texconfig
+TEXMFDIR=	share/texmf
+TEXMFDISTDIR=	share/texmf-dist
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFLOCAL_LSR?=${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
+TEXCONFIGBIN=	${LOCALBASE}/bin/texconfig-sys
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 LIBT1_PREFIX?=	${LOCALBASE}
 DOC_FILES=	BUGS CHANGES INSTALL \
@@ -62,13 +65,13 @@ PAPERSIZE=      a4
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 PKGINSTALL_SUB=	MKTEXLSR=${MKTEXLSR} \
-		XDVIDIR=${PREFIX}/${TEXMF}/xdvi \
-		XDVIVARDIR=${PREFIX}/${TEXMF}-var/xdvi \
+		XDVIDIR=${PREFIX}/${TEXMFDIR}/xdvi \
+		XDVICONFDIR=${PREFIX}/${TEXMFDIR}-config/xdvi \
 		PAPERSIZE=${PAPERSIZE} \
-		TEXCONFIG=${TEXCONFIG} \
+		TEXCONFIGBIN=${TEXCONFIGBIN} \
 		LOCALBASE=${LOCALBASE}
 
-pre-build:
+pre-install:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
