@@ -6,3 +6,5 @@ lib/ircd/ircd.m4
 lib/ircd/example.conf
 sbin/ircd
 sbin/chkconf
+sbin/iauth
+sbin/ircd-mkpasswd

@@ -1,134 +1,80 @@
-*** support/config.h.dist.orig	Sun Jan 25 16:22:33 1998
---- support/config.h.dist	Sun Jan 25 16:36:00 1998
-***************
-*** 129,142 ****
-   * The 'LOCOP_' #defines are for making the respective commands available
-   * to 'local' operators.
-   */
-! #undef	OPER_KILL
-  #define	OPER_REHASH
-! #undef	OPER_RESTART
-! #undef	OPER_DIE
-! #undef	OPER_REMOTE
-! #undef	LOCOP_REHASH
-! #undef	LOCOP_RESTART
-! #undef	LOCOP_DIE
-  
-  /*
-   * Maximum number of network connections your server will allow.  This should
---- 129,142 ----
-   * The 'LOCOP_' #defines are for making the respective commands available
-   * to 'local' operators.
-   */
-! #define OPER_KILL
-  #define	OPER_REHASH
-! #define	OPER_RESTART
-! #define OPER_DIE
-! #define	OPER_REMOTE
-! #define	LOCOP_REHASH
-! #define	LOCOP_RESTART
-! #define	LOCOP_DIE
-  
-  /*
-   * Maximum number of network connections your server will allow.  This should
-***************
-*** 254,285 ****
-   * this option is used unless you tell the system administrator beforehand
-   * and obtain their permission to send messages to the system log files.
-   */
-! #undef	USE_SYSLOG
-  
-  #ifdef	USE_SYSLOG
-  /*
-   * If you use syslog above, you may want to turn some (none) of the
-   * spurious log messages for KILL/SQUIT off.
-   */
-! #undef	SYSLOG_KILL	/* log all operator kills to syslog */
-! #undef	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
-! #undef	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
-! #undef	SYSLOG_USERS	/* send userlog stuff to syslog */
-! #undef	SYSLOG_OPER	/* log all users who successfully become an Op */
-! #undef	SYSLOG_CONN	/* log all uncomplete/rejected connections */
-  
-  /*
-   * If you want to log to a different facility than DAEMON, change
-   * this define.
-   */
-! #define LOG_FACILITY LOG_DAEMON
-  #endif /* USE_SYSLOG */
-  
-  /*
-   * define this if you want to use crypted passwords for operators in your
-   * ircd.conf file. See ircd/crypt/README for more details on this.
-   */
-! #undef	CRYPT_OPER_PASSWORD
-  
-  /*
-   * If you want to store encrypted passwords in N-lines for server links,
---- 254,285 ----
-   * this option is used unless you tell the system administrator beforehand
-   * and obtain their permission to send messages to the system log files.
-   */
-! #define	USE_SYSLOG
-  
-  #ifdef	USE_SYSLOG
-  /*
-   * If you use syslog above, you may want to turn some (none) of the
-   * spurious log messages for KILL/SQUIT off.
-   */
-! #define SYSLOG_KILL	/* log all operator kills to syslog */
-! #define	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
-! #define	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
-! #define SYSLOG_USERS	/* send userlog stuff to syslog */
-! #define SYSLOG_OPER	/* log all users who successfully become an Op */
-! #define SYSLOG_CONN	/* log all uncomplete/rejected connections */
-  
-  /*
-   * If you want to log to a different facility than DAEMON, change
-   * this define.
-   */
-! #define LOG_FACILITY !!SYSLOG_FACILITY!!
-  #endif /* USE_SYSLOG */
-  
-  /*
-   * define this if you want to use crypted passwords for operators in your
-   * ircd.conf file. See ircd/crypt/README for more details on this.
-   */
-! #define	CRYPT_OPER_PASSWORD
-  
-  /*
-   * If you want to store encrypted passwords in N-lines for server links,
-***************
-*** 331,337 ****
-   * send to the server without processing before disconnecting the client for
-   * flooding it.  Values greater than 8000 make no difference to the server.
-   */
-! #define	CLIENT_FLOOD	1000
-  
-  /* Remote query flood protection. */
-  #define	CHREPLLEN	8192
---- 331,337 ----
-   * send to the server without processing before disconnecting the client for
-   * flooding it.  Values greater than 8000 make no difference to the server.
-   */
-! #define	CLIENT_FLOOD	4000
-  
-  /* Remote query flood protection. */
-  #define	CHREPLLEN	8192
-***************
-*** 367,373 ****
-   * Defining this will enable the use of compressed server-server links.
-   * In order to have it work, you must have the zlib version 1.0 or higher.
-   */
-! #undef ZIP_LINKS
-  
-  /*
-   * Defining this will add an artificial 2 seconds delay for accepting
---- 367,373 ----
-   * Defining this will enable the use of compressed server-server links.
-   * In order to have it work, you must have the zlib version 1.0 or higher.
-   */
-! #define ZIP_LINKS
-  
-  /*
-   * Defining this will add an artificial 2 seconds delay for accepting
+--- support/config.h.dist.old	Wed Dec  9 15:05:45 1998
++++ support/config.h.dist	Wed Dec  9 15:09:34 1998
+@@ -168,13 +168,13 @@
+  * if 'OPER_x' is undefined so you can't give local operators more rights
+  * than global ones.
+  */
+-#undef	OPER_KILL
++#define	OPER_KILL
+ #define	OPER_REHASH
+ #undef	OPER_RESTART
+-#define	OPER_DIE
++#undef	OPER_DIE
+ #undef	OPER_REMOTE
+-#undef	LOCOP_REHASH
+-#undef	LOCOP_RESTART
++#define	LOCOP_REHASH
++#define	LOCOP_RESTART
+ #undef	LOCOP_DIE
+ 
+ /*
+@@ -299,32 +299,32 @@
+  * this option is used unless you tell the system administrator beforehand
+  * and obtain their permission to send messages to the system log files.
+  */
+-#undef	USE_SYSLOG
++#define	USE_SYSLOG
+ 
+ #ifdef	USE_SYSLOG
+ /*
+  * If you use syslog above, you may want to turn some (none) of the
+  * spurious log messages for KILL/SQUIT off.
+  */
+-#undef	SYSLOG_KILL	/* log all operator kills to syslog */
+-#undef	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
+-#undef	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
+-#undef	SYSLOG_USERS	/* send userlog stuff to syslog */
+-#undef	SYSLOG_OPER	/* log all users who successfully become an Op */
+-#undef	SYSLOG_CONN	/* log all uncomplete/rejected connections */
++#define	SYSLOG_KILL	/* log all operator kills to syslog */
++#define	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
++#define	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
++#define	SYSLOG_USERS	/* send userlog stuff to syslog */
++#define	SYSLOG_OPER	/* log all users who successfully become an Op */
++#define	SYSLOG_CONN	/* log all uncomplete/rejected connections */
+ 
+ /*
+  * If you want to log to a different facility than DAEMON, change
+  * this define.
+  */
+-#define LOG_FACILITY LOG_DAEMON
++#define LOG_FACILITY !!SYSLOG_FACILITY!!
+ #endif /* USE_SYSLOG */
+ 
+ /*
+  * define this if you want to use crypted passwords for operators in your
+  * ircd.conf file. See contrib/mkpasswd/README for more details on this.
+  */
+-#undef	CRYPT_OPER_PASSWORD
++#define	CRYPT_OPER_PASSWORD
+ 
+ /*
+  * If you want to store encrypted passwords in N-lines for server links,
+@@ -376,7 +376,7 @@
+  * send to the server without processing before disconnecting the client for
+  * flooding it.  Values greater than 8000 make no difference to the server.
+  */
+-#define	CLIENT_FLOOD	1000
++#define	CLIENT_FLOOD	4000
+ 
+ /* Remote query flood protection. */
+ #define	CHREPLLEN	8192
+@@ -414,7 +414,7 @@
+  * The library and the include files must have been found by configure,
+  * if you have installed the zlib after running configure, run it again.
+  */
+-#undef ZIP_LINKS
++#define ZIP_LINKS
+ 
+ /*
+  * Defining this will add an artificial 2 seconds delay for accepting
