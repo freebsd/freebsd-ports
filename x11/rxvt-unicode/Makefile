@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	5.1
+PORTVERSION=	5.2
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -20,13 +20,11 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=		yes
 USE_XPM=		yes
-USE_LIBTOOL_VER=	15
+GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-INSTALLS_SHLIB=		yes
 USE_BZIP2=		yes
-
-CONFLICTS=	rxvt-devel-2*
+USE_GMAKE=		yes
 
 MAN1=		urxvt.1 urxvtc.1 urxvtd.1
 MAN7=		urxvt.7

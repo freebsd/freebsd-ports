@@ -1,10 +1,6 @@
 bin/urxvt
 bin/urxvtc
 bin/urxvtd
-include/rxvtlib.h
-lib/librxvt.a
-lib/librxvt.so
-lib/librxvt.so.1
 %%PORTDOCS%%%%EXAMPLESDIR%%/example.menu
 %%PORTDOCS%%%%EXAMPLESDIR%%/jedmenu.sl
 %%PORTDOCS%%%%EXAMPLESDIR%%/menu
