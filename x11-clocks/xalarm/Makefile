@@ -1,0 +1,23 @@
+# New ports collection makefile for:	xalarm
+# Version required:	3.06
+# Date created:		4 December 1996
+# Whom:			desmo@bandwidth.org
+#
+# $Id$
+#
+
+DISTNAME=	xalarm-3.06
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	utilities
+
+MAINTAINER=	desmo@bandwidth.org
+
+USE_IMAKE=	yes
+IS_INTERACTIVE=	yes
+
+pre-install:	
+	cd ${WRKSRC} ; cp XAlarm.ad XAlarm-color.ad
+
+.include <bsd.port.mk>
+

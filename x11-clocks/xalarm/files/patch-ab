@@ -1,0 +1,19 @@
+*** file.c.orig	Wed Dec  4 08:19:13 1996
+--- file.c	Wed Dec  4 08:25:00 1996
+***************
+*** 229,235 ****
+  	lock.l_type = F_WRLCK;
+  	lock.l_whence = SEEK_SET;
+  	lock.l_start = lock.l_len = (long) 0;
+! 	fcntl (fileno (file), F_SETFL, O_SYNC);
+  	fcntl (fileno (file), F_SETLKW, &lock);
+  #endif
+  
+--- 229,235 ----
+  	lock.l_type = F_WRLCK;
+  	lock.l_whence = SEEK_SET;
+  	lock.l_start = lock.l_len = (long) 0;
+! 	fcntl (fileno (file), F_SETFL, O_FSYNC);
+  	fcntl (fileno (file), F_SETLKW, &lock);
+  #endif
+  
