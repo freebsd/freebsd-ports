@@ -151,6 +151,7 @@
     SUBDIR += mod_python
     SUBDIR += mod_roaming
     SUBDIR += mod_ruby
+    SUBDIR += mod_sed
     SUBDIR += mod_sequester
     SUBDIR += mod_snake
     SUBDIR += mod_throttle
