@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mmix
-PORTVERSION=	20020216
+PORTVERSION=	20021126
 CATEGORIES=	lang
 MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/
-DISTNAME=	mmix
 
 MAINTAINER=	keith@FreeBSD.org
 
@@ -17,9 +16,10 @@ BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
 NO_WRKSUBDIR=	yes
 FILES=		mmix.1 mmix.mp silly.out silly.run
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mmix ${PREFIX}/bin
