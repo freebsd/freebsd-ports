@@ -1,0 +1,6 @@
+Qt Architect is a graphical dialog editor for the Qt widget set.
+It allows for the graphical creation and placement of widgets onto a
+dialog.  Various properties for the widget can also be set.  Widgets
+may be mapped to variables so that you can control them once the
+dialog is launched.  After the dialog is created on the screen, the
+files for the dialog are created.  
