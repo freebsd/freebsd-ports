@@ -1,25 +1,22 @@
 # New ports collection makefile for:    psutils
-# Version required:     1.13
+# Version required:     1.16
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.9 1996/05/13 15:41:00 jmz Exp $
+# $Id: Makefile,v 1.10 1996/07/31 01:06:39 jmz Exp $
 #
 
-DISTNAME=	psutils-1.13
-PKGNAME=	psutils-${PAPERSIZE}-1.13
+DISTNAME=	psutils
+PKGNAME=	psutils-${PAPERSIZE}-1.16
 CATEGORIES+=	print
-MASTER_SITES=	ftp://nic.switch.ch/software/sources/psutils-1.8/ \
-		ftp://ftp.imag.fr/pub1/postscript/
+MASTER_SITES=	ftp://colonsay.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-WRKSRC=		$(WRKDIR)/src-1.3
-
-MAKE_FLAGS?=	PAPERSIZE=${PAPERSIZE} -f
+MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
 
 ##package::	letter  a4
-	
+
 letter::
 	${MAKE} PAPERSIZE=letter
 
@@ -59,15 +56,12 @@ pre-fetch:
 	@/usr/bin/false
 .endif
 
-pre-install:
-	@mkdir -p ${PREFIX}/share/psutils
-
 post-install:
 .if !defined(NOMANCOMPRESS)
 	@for f in psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
 	 getafm.1 fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1 fixpspps.1 \
-	 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 extractres.1 includeres.1; do \
-	 gzip -nf ${PREFIX}/man/man1/$$f; done
+	 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 extractres.1 includeres.1 \
+	 fixscribeps.1 psmerge.1 ; do gzip -nf ${PREFIX}/man/man1/$$f; done
 .endif
 
 .include <bsd.port.mk>
