@@ -1,0 +1,23 @@
+*** recplay.c.orig	Sat Jan 15 12:56:46 2000
+--- recplay.c	Sat Jan 15 13:16:42 2000
+***************
+*** 52,63 ****
+--- 52,69 ----
+  #include <stdio.h>
+  #include <stdarg.h>
+  #include <stdlib.h>
++ #ifndef FREEBSD
+  #include <malloc.h>
++ #endif
+  #include <string.h>
+  #include <fcntl.h>
+  #include <errno.h>
+  #include <sys/stat.h>
++ #ifndef FREEBSD
+  #include <linux/soundcard.h>
++ #else
++ #include <machine/soundcard.h>
++ #endif
+  #include "wavplay.h"
+  #include "server.h"
+  
