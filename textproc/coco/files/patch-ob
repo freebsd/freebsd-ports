@@ -1,0 +1,12 @@
+--- lisp/wnn-egg.el.bak	Mon Jul 16 04:37:50 2001
++++ lisp/wnn-egg.el	Mon Jul 16 04:42:05 2001
+@@ -606,6 +606,9 @@
+ (defun is-wnn6-server ()
+   (= (wnn-server-version) 61697))
+ 
++(defun is-wnn7-server ()
++  (= (wnn-server-version) 61698))
++
+ (defun add-wnn-dict (dfile hfile priority dmode hmode &optional dpaswd hpaswd)
+ ;  (open-wnn-if-disconnected)
+   (if (null (wnn-server-dict-add

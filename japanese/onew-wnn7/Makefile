@@ -1,11 +1,11 @@
-# New ports collection makefile for:	ONEW for Wnn6
-# Date created:		5 Sep 1997
+# New ports collection makefile for:	ONEW for Wnn7
+# Date created:		01/07/11
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-WNN6=		yes
+WNN7=		yes
 
 MASTERDIR=	${.CURDIR}/../onew-freewnn
 PKGDIR=		${.CURDIR}

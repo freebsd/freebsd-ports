@@ -7,6 +7,7 @@
 
 PORTNAME=	mule-common
 PORTVERSION=	${MULE_VERSION}
+PORTREVISION=	1
 CATEGORIES=	editors japanese
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
 		ftp://ftp.mei.co.jp/archive/free/gnu/emacs/Mule/ \

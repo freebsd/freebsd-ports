@@ -1,0 +1,117 @@
+--- lisp/eggrc-wnn.orig	Mon Jul 16 04:31:14 2001
++++ lisp/eggrc-wnn	Mon Jul 16 04:33:22 2001
+@@ -86,6 +86,99 @@
+ 
+        )
+ 
++(defun wnn7-jserver-setup ()
++  (set-wnn-reverse nil)
++  (set-wnn-fuzokugo "system/kougo.fzk")
++  (add-wnn-fisys-dict "system/fisd"
++		       (concat wnn-usr-dic-dir "/fisd.h") t)
++  (add-wnn-fiusr-dict (concat wnn-usr-dic-dir "/fiud") "" t nil)
++  (add-wnn-dict "system/kihon.dic"
++		 (concat wnn-usr-dic-dir "/kihon.h") 6 nil t)
++  (add-wnn-dict "system/symbol.dic"
++		 (concat wnn-usr-dic-dir "/symbol.h") 1 nil t)
++;;  (add-wnn-dict "system/symbol_noat.dic"
++;;		 (concat wnn-usr-dic-dir "/symbol_noat.h") 1 nil t)
++  (add-wnn-dict "system/tel.dic"
++		 (concat wnn-usr-dic-dir "/tel.h") 1 nil t)
++  (add-wnn-dict "system/zip.dic"
++		 (concat wnn-usr-dic-dir "/zip.h") 1 nil t)
++  (add-wnn-dict "system/tankan.dic" "" 1 nil nil)
++  (add-wnn-dict "system/tankan2.dic" "" 1 nil nil)
++  (add-wnn-dict "system/ikeiji.dic" "" 1 nil nil)
++  (add-wnn-dict "system/rensou.dic" "" 1 nil nil)
++  (add-wnn-dict (concat wnn-usr-dic-dir "/ud") "" 15 t t)
++
++;  (add-wnn-dict "option/jinmei.dic"
++;		  (concat wnn-usr-dic-dir "/jinmei.h") 1 nil t)
++;  (add-wnn-dict "option/chimei.dic"
++;		  (concat wnn-usr-dic-dir "/chimei.h") 1 nil t)
++;  (add-wnn-dict "option/address.dic"
++;		  (concat wnn-usr-dic-dir "/address.h") 1 nil t)
++;  (add-wnn-dict "option/station.dic"
++;		  (concat wnn-usr-dic-dir "/station.h") 1 nil t)
++;  (add-wnn-dict "option/kana_english.dic"
++;		  (concat wnn-usr-dic-dir "/kana_english.h") 1 nil t)
++;  (add-wnn-dict "option/enterprise.dic"
++;		  (concat wnn-usr-dic-dir "/enterprise.h") 1 nil t)
++;  (add-wnn-dict "option/airport.dic"
++;		  (concat wnn-usr-dic-dir "/airport.h") 1 nil t)
++;  (add-wnn-dict "option/university.dic"
++;		  (concat wnn-usr-dic-dir "/university.h") 1 nil t)
++;  (add-wnn-dict "option/zoo.dic"
++;		  (concat wnn-usr-dic-dir "/zoo.h") 1 nil t)
++;  (add-wnn-dict "option/botanical_garden.dic"
++;		  (concat wnn-usr-dic-dir "/botanical_garden.h") 1 nil t)
++;  (add-wnn-dict "option/aquarium.dic"
++;		  (concat wnn-usr-dic-dir "/aquarium.h") 1 nil t)
++;  (add-wnn-dict "option/conveni.dic"
++;		  (concat wnn-usr-dic-dir "/conveni.h") 1 nil t)
++;  (add-wnn-dict "option/amusement.dic"
++;		  (concat wnn-usr-dic-dir "/amusement.h") 1 nil t)
++
++  (set-wnn-param  5 10 2 45 0  80 5 1 20  0 400 -100 400   80 200 2 200)
++  
++  (add-wnn-notrans-dict (concat wnn-usr-dic-dir "/katakana") 15 t)
++  (add-wnn-bmodify-dict (concat wnn-usr-dic-dir "/bunsetsu") 15 t)
++
++  (set-last-is-first-mode t)
++  (set-complex-conv-mode nil)
++;  (set-okuri-flag -1)
++  (set-prefix-flag 0)
++       
++  (set-okuri-learn-mode t)
++  (set-prefix-learn-mode t)
++  (set-suffix-learn-mode t)
++  (set-common-learn-mode t)
++  (set-yuragi-mode nil)
++
++  (set-freq-func-mode 4)
++
++;  (set-numeric-mode -12)
++;  (set-alphabet-mode -30)
++;  (set-symbol-mode -40)
++       
++  (set-wnn-reverse t)
++  (set-wnn-fuzokugo "system/kougo.fzk")
++  (add-wnn-dict "system/kihonR.dic" "" 1 nil nil)
++  (add-wnn-dict "system/telR.dic" "" 1 nil nil)
++  (add-wnn-dict "system/zipR.dic" "" 1 nil nil)
++  (add-wnn-dict "system/tankanR.dic" "" 1 nil nil)
++  (add-wnn-dict "system/tankan2R.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/stationR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/kana_englishR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/enterpriseR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/airportR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/universityR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/zooR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/botanical_gardenR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/aquariumR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/conveniR.dic" "" 1 nil nil)
++  ;;(add-wnn-dict "option/amusementR.dic" "" 1 nil nil)
++
++  (add-wnn-dict (concat wnn-usr-dic-dir "/ud") "" 15 t t)
++  (set-wnn-param  2 10 2 45 1 80 5 1 50 -20 400 -10  100  -100 200 0 200)
++  )
++
+ 
+ (defun wnn4-jserver-setup ()
+        (set-wnn-reverse nil)
+@@ -126,9 +219,11 @@
+ )
+ 
+ (cond ((eq wnn-server-type 'jserver)
+-       (if (is-wnn6-server)
+-	   (wnn6-jserver-setup)
+-	 (wnn4-jserver-setup)))
++       (if (is-wnn7-server)
++	   (wnn7-jserver-setup)
++	 (if (is-wnn6-server)
++	     (wnn6-jserver-setup)
++	   (wnn4-jserver-setup))))
+       ((eq wnn-server-type 'cserver)
+        (set-wnn-reverse nil)
+        (set-wnn-fuzokugo "sys/full.con")

@@ -1,14 +1,12 @@
-# New ports collection makefile for:	mule with Wnn6
-# Date created:		7 July 1997
-# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
+# New ports collection makefile for: mule with Wnn7
+# Date created:        01/07/18
+# Whom:                Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-wnn6
 CATEGORIES=	japanese
-
-WNN6=		yes
+WNN7=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
 PKGDIR=		${.CURDIR}

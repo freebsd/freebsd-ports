@@ -1,17 +1,15 @@
-# New ports collection makefile for:	mule with Canna and Wnn6
-# Date created:		7 July 1997
+# New ports collection makefile for:	mule with Canna and Wnn7
+# Date created:		01/07/18
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-canna+wnn6
 CATEGORIES=	japanese
-
 CANNA=		yes
-WNN6=		yes
+WNN7=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
 PKGDIR=		${.CURDIR}
 
-.include	"${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile"
