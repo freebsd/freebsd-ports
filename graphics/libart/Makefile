@@ -17,4 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+CONFLICTS=	libart_lgpl2-*
+
 .include <bsd.port.mk>
