@@ -1,5 +1,5 @@
 # New ports collection makefile for:    AbiWord
-# Version required:     0.7.5
+# Version required:     0.7.6
 # Date created:         3 Mar 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
@@ -37,6 +37,7 @@ post-patch:
 	@${CP} 	${WRKSRC}/config/platforms/freebsd.mk \
 		${WRKSRC}/config/platforms/freebsd.mk.version
 	@${SED} -e s,3.1-RELEASE,`uname -r`,g \
+		-e s,-D_POSIX_SOURCE,,g \
 		${WRKSRC}/config/platforms/freebsd.mk.version > \
 		${WRKSRC}/config/platforms/freebsd.mk
 .endif
@@ -65,5 +66,5 @@ do-install:
 	@${CAT} ${PKGDIR}/MESSAGE | ${SED} s,/usr/local,${PREFIX},
 	@(${WRKSRC}/pkg/common/unix/scripts/makewrapper.sh \
 		AbiWord ${PREFIX}/AbiSuite)
-	
+
 .include <bsd.port.post.mk>
