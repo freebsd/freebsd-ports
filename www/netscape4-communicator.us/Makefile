@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_base
 
-FORBIDDEN=	"Has a serious security hole, use 4.77 or later instead.
+FORBIDDEN=	"Has a serious security hole, use 4.77 or later instead."
 NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 
