@@ -1,13 +1,12 @@
 # New ports collection makefile for:    Mesa
-# Version required:     1.1beta
+# Version required:     1.1.2beta
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.1.1.1 1995/02/07 21:58:09 hsu Exp $
+# $Id: Makefile,v 1.2 1995/03/06 04:35:27 hsu Exp $
 #
 
-DISTNAME=       Mesa-1.1beta
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=       Mesa-1.1.2beta
 MASTER_SITES=   ftp://iris.ssec.wisc.edu/pub/misc/
 WRKSRC=		${WRKDIR}/Mesa
 ALL_TARGET=	freebsd
