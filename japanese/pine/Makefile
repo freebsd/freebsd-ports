@@ -3,7 +3,7 @@
 # Date created:		14 Apr 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.11 1995/08/14 11:52:36 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/04/30 05:59:28 asami Exp $
 #
 
 DISTNAME=	pine3.91
@@ -16,7 +16,7 @@ DISTFILES=	pine3.91.tar.Z pine3.91j1.0.tar.gz
 PATCHFILES=	pine3.91j1.0-1.0.1.gz pine3.91j1.0.1-1.0.2.gz
 PATCH_SITES=	ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/pine/
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 EXTRACT_ONLY=	pine3.91.tar.Z
 

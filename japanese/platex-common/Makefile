@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/04/26 08:18:24 asami Exp $
+# $Id: Makefile,v 1.5 1996/07/07 09:48:44 asami Exp $
 #
 
 DISTNAME=	platex2e
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/platex2e/1996-03-05/ \
 DISTFILES=	base-9512.tar.gz hyphen.tex.gz
 EXTRACT_ONLY=	base-9512.tar.gz
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
 RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2

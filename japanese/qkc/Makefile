@@ -1,9 +1,9 @@
 # New ports collection makefile for:	qkcc
 # Version required:		1.0
 # Date created:			03 May 1996
-# Whom:				Masafumi NAKANE <max@sfc.wide.ad.jp>
+# Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: porting.sgml,v 1.16 1996/03/21 14:15:01 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/05/04 08:56:57 asami Exp $
 #
 
 DISTNAME=	qkcc100
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/oct/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/pub1/unix/Kanji/
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

@@ -3,7 +3,7 @@
 # Date created:		13 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1996/08/30 11:06:58 asami Exp $
+# $Id: Makefile,v 1.6 1996/09/17 08:44:10 max Exp $
 #
 
 DISTNAME=	nethack-3.2.1
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.games/
 PATCH_SITES=	ftp://mitsuko.jaist.ac.jp/pub/jnethack/
 PATCHFILES=	jnethack-1.0.5.2.gz
 
-MAINTAINER=	max@sfc.wide.ad.jp
+MAINTAINER=	max@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
