@@ -9,8 +9,7 @@
 DISTNAME=       Net-IRC-0.62
 PKGNAME=        p5-IRC-0.62
 CATEGORIES=     irc perl5
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN} \
-		http://www.funkplanet.com/irc/
+MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 
 MAINTAINER=	jedgar@fxp.org
