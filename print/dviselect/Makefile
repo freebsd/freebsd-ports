@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dviselect 
-PORTVERSION=	1.3 
+PORTNAME=	dviselect
+PORTVERSION=	1.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ee.duke.edu/archives/
 DISTNAME=	${PORTNAME}

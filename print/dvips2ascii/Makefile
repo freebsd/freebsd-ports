@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dvips2ascii 
-PORTVERSION=	1.3 
+PORTNAME=	dvips2ascii
+PORTVERSION=	1.3
 CATEGORIES=	print
 MASTER_SITES=	http://www.de.freebsd.org/~eserte/distfiles/
 

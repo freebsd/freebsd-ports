@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	html2ps-${PAPERSIZE} 
+PORTNAME=	html2ps-${PAPERSIZE}
 PORTVERSION=	1.0
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://www.tdb.uu.se/~jan/

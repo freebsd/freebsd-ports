@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	offix-printer 
-PORTVERSION=	2.4 
+PORTNAME=	offix-printer
+PORTVERSION=	2.4
 CATEGORIES=	print offix
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX

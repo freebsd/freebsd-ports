@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mgv 
-PORTVERSION=	3.1.5 
+PORTNAME=	mgv
+PORTVERSION=	3.1.5
 CATEGORIES=	print
 MASTER_SITES=	http://www.trends.net/~mu/srcs/
 

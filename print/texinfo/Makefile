@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	texinfo 
-PORTVERSION=	2.218 
+PORTNAME=	texinfo
+PORTVERSION=	2.218
 CATEGORIES=	print
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/eplain/doc/ \

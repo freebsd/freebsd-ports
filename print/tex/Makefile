@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tex 
-PORTVERSION=	3.14159 
+PORTNAME=	tex
+PORTVERSION=	3.14159
 CATEGORIES=	print
 MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/
 DISTFILES=	web2c-7.2b.tar.gz web-7.2a.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
-		mf_lib.tar.gz cm_mf.tar.gz modes.mf 
+		mf_lib.tar.gz cm_mf.tar.gz modes.mf
 
 MAINTAINER=	jmz@FreeBSD.org
 

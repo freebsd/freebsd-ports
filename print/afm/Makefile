@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	afm 
-PORTVERSION=	1.0 
+PORTNAME=	afm
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://sgi.com/sgi/fax/source/
 DISTNAME=	afm

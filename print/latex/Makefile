@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	latex2e 
-PORTVERSION=	99.12 
+PORTNAME=	latex2e
+PORTVERSION=	99.12
 CATEGORIES=     print
 MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/
 DISTFILES=	latex_mf-${PORTVERSION}.tar.gz latex_tfm-${PORTVERSION}.tar.gz \

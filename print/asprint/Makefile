@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	asprint 
-PORTVERSION=	1.0 
+PORTNAME=	asprint
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asprint/
 DISTNAME=	asprint

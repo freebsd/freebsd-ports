@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	a2ps-${PAPERSIZE} 
-PORTVERSION=	4.12 
+PORTNAME=	a2ps-${PAPERSIZE}
+PORTVERSION=	4.12
 CATEGORIES=	print
 MASTER_SITES=	http://people.FreeBSD.org/~chuckr/ \
 		ftp://ftp.enst.fr/pub/unix/a2ps/

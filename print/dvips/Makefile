@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dvips 
-PORTVERSION=	5.76 
+PORTNAME=	dvips
+PORTVERSION=	5.76
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/dvips/
 DISTNAME=	dvips576

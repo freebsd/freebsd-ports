@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnomeprint 
-PORTVERSION=	0.16 
+PORTNAME=	gnomeprint
+PORTVERSION=	0.16
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-print

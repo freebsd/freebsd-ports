@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xdvik 
-PORTVERSION=	20a 
+PORTNAME=	xdvik
+PORTVERSION=	20a
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-20/ \
 		${MASTER_SITE_LOCAL}

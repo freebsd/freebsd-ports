@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pdflib 
-PORTVERSION=	2.01 
+PORTNAME=	pdflib
+PORTVERSION=	2.01
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/

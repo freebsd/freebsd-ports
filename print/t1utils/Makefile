@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	t1utils 
-PORTVERSION=	1.14 
+PORTNAME=	t1utils
+PORTVERSION=	1.14
 CATEGORIES=	print
 MASTER_SITES=	http://www.lcdf.org/~eddietwo/type/
 

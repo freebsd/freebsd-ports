@@ -4,9 +4,9 @@
 #
 # $FreeBSD$
 #
-      
-PORTNAME=	dvi2tty 
-PORTVERSION=	1.0 
+     
+PORTNAME=	dvi2tty
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ctan.unsw.edu.au/ctan/tex-archive/dviware/
 DISTNAME=	dvi2tty

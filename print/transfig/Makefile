@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	transfig 
-PORTVERSION=	3.2.3 
+PORTNAME=	transfig
+PORTVERSION=	3.2.3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://www-epb.lbl.gov/xfig/

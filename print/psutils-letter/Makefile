@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	psutils-${PAPERSIZE} 
-PORTVERSION=	1.17 
+PORTNAME=	psutils-${PAPERSIZE}
+PORTVERSION=	1.17
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 DISTNAME=	psutils-p17

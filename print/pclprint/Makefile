@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pclprint 
-PORTVERSION=	1.0 
+PORTNAME=	pclprint
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://andrsn.stanford.edu/pub/print/ \
 		http://www.psn.net/~andrews/dist/

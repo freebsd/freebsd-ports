@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	musixtex 
-PORTVERSION=	T98 
+PORTNAME=	musixtex
+PORTVERSION=	T98
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/musixtex/taupin/
 DISTFILES=      musixtex-T98.tar.gz musixexa-T90.tar.gz

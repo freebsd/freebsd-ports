@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	enscriptfonts 
-PORTVERSION=	0.75 
+PORTNAME=	enscriptfonts
+PORTVERSION=	0.75
 CATEGORIES=	print
 MASTER_SITES=	ftp://magnesium.net/pub/FreeBSD/xenscript/
 DISTNAME=	enscript_fonts-0.75

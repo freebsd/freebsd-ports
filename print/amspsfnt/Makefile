@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	amspsfnt 
-PORTVERSION=	1.0 
+PORTNAME=	amspsfnt
+PORTVERSION=	1.0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/ams/
 DISTNAME=	amsps

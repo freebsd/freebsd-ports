@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	freetype 
-PORTVERSION=	1.3 
+PORTNAME=	freetype
+PORTVERSION=	1.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tux.org/pub/devel/freetype/ \
 		ftp://ftp.lerc.nasa.gov/ImageMagick/delegates/ \

@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bibview 
-PORTVERSION=	2.2 
+PORTNAME=	bibview
+PORTVERSION=	2.2
 CATEGORIES=	databases print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR= biblio/bibtex/utils/bibview-2.0

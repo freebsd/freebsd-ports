@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rtf2latex 
-PORTVERSION=	1.5 
+PORTNAME=	rtf2latex
+PORTVERSION=	1.5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dante.de/pub/tex/support/rtf2latex/
 DISTNAME=	rtf2LaTeX.1.5

@@ -11,8 +11,8 @@
 # EXTRACT_SUFX, EXTRACT_AFTER_ARGS, and NO_WRKSUBDIR.
 #
 
-PORTNAME=		jadetex 
-PORTVERSION=		2.3 
+PORTNAME=		jadetex
+PORTVERSION=		2.3
 CATEGORIES=		print
 MASTER_SITES=		http://people.FreeBSD.org/~nik/distfiles/jadetex/
 DISTFILES=		Makefile.jadetex jadetex.dtx jadetex.ini jadetex.ins \

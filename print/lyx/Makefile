@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lyx 
-PORTVERSION=	1.1.4.2 
+PORTNAME=	lyx
+PORTVERSION=	1.1.4.2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \

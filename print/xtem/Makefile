@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xtem 
-PORTVERSION=	7.00 
+PORTNAME=	xtem
+PORTVERSION=	7.00
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem.v7/
 DISTNAME=	xtem_texmenu.7.00

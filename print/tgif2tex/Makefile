@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tgif2tex 
-PORTVERSION=	1.46 
+PORTNAME=	tgif2tex
+PORTVERSION=	1.46
 CATEGORIES=	print
 MASTER_SITES=	http://camphor.elcom.nitech.ac.jp/~nakano/tgif2tex/
 DISTNAME=	${PORTNAME}

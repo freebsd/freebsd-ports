@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pstotext 
-PORTVERSION=	2.1 
+PORTNAME=	pstotext
+PORTVERSION=	2.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.research.digital.com/SRC/virtualpaper/cgi-bin/nph-download.tcl/pstotext.tar.Z?object=pstotext
 DISTNAME=	pstotext

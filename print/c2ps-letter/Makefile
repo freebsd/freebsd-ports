@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	c2ps-${PAPERSIZE} 
-PORTVERSION=	4.0 
+PORTNAME=	c2ps-${PAPERSIZE}
+PORTVERSION=	4.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.cs.technion.ac.il/users/c2ps/
 DISTNAME=	c2ps-${PORTVERSION}

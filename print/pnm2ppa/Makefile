@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pbm2ppa 
-PORTVERSION=	0.8.6 
+PORTNAME=	pbm2ppa
+PORTVERSION=	0.8.6
 CATEGORIES=	print
 MASTER_SITES=	http://www.httptech.com/ppa/files/
 DISTNAME=	ppa-0.8.6

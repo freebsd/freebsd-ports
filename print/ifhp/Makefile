@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ifhp 
-PORTVERSION=	3.3.10 
+PORTNAME=	ifhp
+PORTVERSION=	3.3.10
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.astart.com/pub/LPRng/FILTERS/
 EXTRACT_SUFX=	.tgz

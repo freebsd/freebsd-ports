@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ghostscript 
-PORTVERSION=	6.01 
+PORTNAME=	ghostscript
+PORTVERSION=	6.01
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
