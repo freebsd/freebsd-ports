@@ -12,6 +12,7 @@ share/dctc/GDLjoiner
 %%PORTDOCS%%share/doc/dctc/Documentation/GDL
 %%PORTDOCS%%share/doc/dctc/Documentation/GDL.nl
 %%PORTDOCS%%share/doc/dctc/Documentation/LS_cache
+%%PORTDOCS%%share/doc/dctc/Documentation/LS_cache.nl
 %%PORTDOCS%%share/doc/dctc/Documentation/UNODE
 %%PORTDOCS%%share/doc/dctc/Documentation/UNODE.nl
 %%PORTDOCS%%share/doc/dctc/Documentation/VAR
