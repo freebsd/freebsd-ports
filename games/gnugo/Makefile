@@ -3,14 +3,14 @@
 # Date created:		29 December 1996
 # Whom:			jseger@scds.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/02 07:23:50 tg Exp $
 #
 
 DISTNAME=	gnugo-1.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 
-MAINTAINER=	jseger@scds.com
+MAINTAINER=	jseger@freebsd.org
 
 WRKSRC=		${WRKDIR}/gnugo
 ALL_TARGET=	gnugo
