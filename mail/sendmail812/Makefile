@@ -83,12 +83,16 @@ SITE+=	${FILESDIR}/site.config.m4.milter
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
 PREFIX?=	${DESTDIR}/usr
 MANPREFIX?=	${DESTDIR}/usr/share
+PLIST_SUB+=	ETCPORT="@comment "
+.else
+PLIST_SUB+=	ETCPORT=""
 .endif
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
 		> ${WRKSRC}/sm-client.sh
-	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
+	NSTALL
+@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sendmail.sh \
 		> ${WRKSRC}/sendmail.sh
 
 do-configure:
@@ -149,10 +153,12 @@ post-install:
 	 ${WRKSRC}/obj.`${WRKSRC}/devtools/bin/Build -A`/libsmdb/libsmdb.a \
 	 ${PREFIX}/lib/
 .endif
+.if exists(${DESTDIR}/etc/mail/mailer.conf)
 	${INSTALL_SCRIPT} ${WRKSRC}/sm-client.sh \
-		${PREFIX}/etc/rc.d/sm-client.sh.sample
+		${LOCALBASE}/etc/rc.d/sm-client.sh.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/sendmail.sh \
-		${PREFIX}/etc/rc.d/sendmail.sh.sample
+		${LOCALBASE}/etc/rc.d/sendmail.sh.sample
+.endif
 	${CHOWN} smmsp:smmsp /var/spool/clientmqueue
 	${CHMOD} 770 /var/spool/clientmqueue
 .for i in ${MAN8}

@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/Attic/pkg-plist,v 1.14 2002-07-03 16:01:00 dinoex Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/Attic/pkg-plist,v 1.15 2002-09-16 03:17:13 dinoex Exp $
 @exec if ! pw groupshow smmsp 2>/dev/null; then pw groupadd smmsp -g 25; fi
 @exec if ! pw usershow smmsp 2>/dev/null; then pw useradd smmsp -g smmsp -u 25 -h - -d /nonexistent -s /nonexistent -c "Sendmail Queue"; fi
 @exec mkdir -p /var/spool/clientmqueue
@@ -12,8 +12,8 @@ bin/newaliases
 bin/purgestat
 bin/rmail
 bin/vacation
-etc/rc.d/sm-client.sh.sample
-etc/rc.d/sendmail.sh.sample
+%%ETCPORT%%etc/rc.d/sm-client.sh.sample
+%%ETCPORT%%etc/rc.d/sendmail.sh.sample
 libexec/mail.local
 libexec/smrsh
 sbin/editmap
