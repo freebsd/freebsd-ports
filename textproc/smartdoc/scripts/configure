@@ -1,5 +1,5 @@
 #!/bin/sh
 
-export JAVADIR JDKDIR
+export JAVALIBDIR
 
-perl -pi -e 's|%%JAVADIR%%|$ENV{JAVADIR}|g;s|%%JDKDIR%%|$ENV{JDKDIR}|g;' ${WRKSRC}/bin/sdoc
+perl -pi -e 's|%%JAVALIBDIR%%|$ENV{JAVALIBDIR}|g;s|%%LOCALBASE%%|$ENV{LOCALBASE}|g;' ${WRKSRC}/bin/sdoc
