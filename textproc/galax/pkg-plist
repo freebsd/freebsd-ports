@@ -283,6 +283,51 @@
 %%GALAX%%/lib/caml-devel/datamodel_api.mli
 %%GALAX%%/lib/caml-devel/galapi.cmi
 %%GALAX%%/lib/caml-devel/datamodel_api.cmi
+%%GALAX%%/lib/java/doc/allclasses-frame.html
+%%GALAX%%/lib/java/doc/deprecated-list.html
+%%GALAX%%/lib/java/doc/galapi/Atomic.html
+%%GALAX%%/lib/java/doc/galapi/AtomicList.html
+%%GALAX%%/lib/java/doc/galapi/Attribute.html
+%%GALAX%%/lib/java/doc/galapi/AttributeList.html
+%%GALAX%%/lib/java/doc/galapi/Comment.html
+%%GALAX%%/lib/java/doc/galapi/Context.html
+%%GALAX%%/lib/java/doc/galapi/Document.html
+%%GALAX%%/lib/java/doc/galapi/Element.html
+%%GALAX%%/lib/java/doc/galapi/ExternalContext.html
+%%GALAX%%/lib/java/doc/galapi/GalapiException.html
+%%GALAX%%/lib/java/doc/galapi/Galax.html
+%%GALAX%%/lib/java/doc/galapi/GalaxInternalException.html
+%%GALAX%%/lib/java/doc/galapi/Item.html
+%%GALAX%%/lib/java/doc/galapi/ItemList.html
+%%GALAX%%/lib/java/doc/galapi/ModuleContext.html
+%%GALAX%%/lib/java/doc/galapi/NameValuePair.html
+%%GALAX%%/lib/java/doc/galapi/Node.html
+%%GALAX%%/lib/java/doc/galapi/NodeList.html
+%%GALAX%%/lib/java/doc/galapi/ProcessingContext.html
+%%GALAX%%/lib/java/doc/galapi/ProcessingInstruction.html
+%%GALAX%%/lib/java/doc/galapi/QueryContext.html
+%%GALAX%%/lib/java/doc/galapi/Text.html
+%%GALAX%%/lib/java/doc/galapi/xsAnyURI.html
+%%GALAX%%/lib/java/doc/galapi/xsBoolean.html
+%%GALAX%%/lib/java/doc/galapi/xsDecimal.html
+%%GALAX%%/lib/java/doc/galapi/xsDouble.html
+%%GALAX%%/lib/java/doc/galapi/xsFloat.html
+%%GALAX%%/lib/java/doc/galapi/xsInt.html
+%%GALAX%%/lib/java/doc/galapi/xsInteger.html
+%%GALAX%%/lib/java/doc/galapi/xsQName.html
+%%GALAX%%/lib/java/doc/galapi/xsString.html
+%%GALAX%%/lib/java/doc/galapi/xsUntyped.html
+%%GALAX%%/lib/java/doc/help-doc.html
+%%GALAX%%/lib/java/doc/index-all.html
+%%GALAX%%/lib/java/doc/index.html
+%%GALAX%%/lib/java/doc/overview-tree.html
+%%GALAX%%/lib/java/doc/package-list
+%%GALAX%%/lib/java/doc/packages.html
+%%GALAX%%/lib/java/doc/serialized-form.html
+%%GALAX%%/lib/java/doc/stylesheet.css
+%%GALAX%%/lib/java/galapi.jar
+%%GALAX%%/lib/java/libglxj.so
+%%GALAX%%/lib/java/libglxoptj.so
 %%GALAX%%/LICENSE
 %%GALAX%%/README
 %%GALAX%%/RELEASE_NOTES
@@ -403,6 +448,9 @@
 @dirrm %%GALAX%%/examples/c_api
 @dirrm %%GALAX%%/examples/caml_api
 @dirrm %%GALAX%%/examples
+@dirrm %%GALAX%%/lib/java/doc/galapi
+@dirrm %%GALAX%%/lib/java/doc
+@dirrm %%GALAX%%/lib/java
 @dirrm %%GALAX%%/lib/caml-devel
 @dirrm %%GALAX%%/lib/c
 @dirrm %%GALAX%%/lib/caml
