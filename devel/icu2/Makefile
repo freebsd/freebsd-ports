@@ -12,7 +12,7 @@ MASTER_SITES=	http://oss.software.ibm.com/icu/download/${PORTVERSION}/
 DISTNAME=	icu-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER?=	andrew@ids.pl
+MAINTAINER=	andrew@ids.pl
 COMMENT=	International Components for Unicode
 
 INSTALLS_SHLIB=		yes
