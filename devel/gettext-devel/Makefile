@@ -34,11 +34,29 @@ post-patch:
 pre-configure:
 	${RM} ${WRKSRC}/doc/gettext.info*
 
+.if !defined(WANT_FULL_GETTEXT)
+BINFILES=	gettext msgcmp msgcomm msgfmt msgmerge msgunfmt \
+		ngettext xgettext
+PLIST=		${WRKDIR}/PLIST
+LIBTOOLFLAGS=	--disable-ltlibs --disable-shared
+.undef MAN3
+.undef INSTALLS_SHLIB
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/misc/gettextize \
+		${PREFIX}/bin/gettextize-new
+	@${ECHO} bin/gettextize-new > ${WRKDIR}/PLIST
+.for file in ${BINFILES}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/bin/${file}-new
+	@${ECHO} bin/${file}-new >> ${WRKDIR}/PLIST
+.endfor
+.else
 post-install:
 	@install-info ${PREFIX}/info/gettext.info ${PREFIX}/info/dir
 	${MKDIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/misc/po-mode.el \
 		${PREFIX}/share/emacs/site-lisp/po-mode.el
 	${MKDIR} ${X11BASE}/share/locale
+.endif
 
 .include <bsd.port.mk>
