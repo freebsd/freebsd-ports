@@ -18,9 +18,7 @@ include/pvm++/task.hh
 include/pvm++/task.ii
 include/pvm++/taskset.hh
 include/pvm++/types.hh
-@dirrm include/pvm++
 lib/libpvm++.a
-lib/libpvm++.la
 lib/libpvm++.so
 lib/libpvm++.so.1
 share/aclocal/pvm++.m4
@@ -42,3 +40,4 @@ share/aclocal/pvm++.m4
 %%PORTDOCS%%share/doc/pvm++/icon1.png
 %%PORTDOCS%%share/doc/pvm++/icon2.png
 %%PORTDOCS%%@dirrm share/doc/pvm++
+@dirrm include/pvm++
