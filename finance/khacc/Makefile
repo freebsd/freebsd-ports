@@ -6,6 +6,7 @@
 
 PORTNAME=	khacc
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qhacc
@@ -30,7 +31,7 @@ STRIP=		# none
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#! /bin/sh|#!${LOCALBASE}/bin/bash|g ; \
-		 s|/usr/local/|${X11BASE}/lib/|g' ${WRKSRC}/src/khacc.orig
+		 s|/usr/local/q|${X11BASE}/lib/q|g' ${WRKSRC}/khacc/khacc.orig
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/khacc-*
