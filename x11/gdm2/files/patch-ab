@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Tue Oct 26 23:18:21 2004
-+++ config/gdm.conf.in	Tue Oct 26 23:20:49 2004
+--- config/gdm.conf.in.orig
++++ config/gdm.conf.in
 @@ -76,7 +76,7 @@
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
@@ -9,16 +9,17 @@
  # You should probably never change this value unless you have a weird setup
  PidFile=/var/run/gdm.pid
  # Note that a post login script is run before a PreSession script.
-@@ -96,7 +96,7 @@
+@@ -96,7 +96,8 @@
  # Reboot, Halt and suspend commands, you can add different commands
  # separated by a semicolon and gdm will use the first one it can find
  #RebootCommand=/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now
 -#HaltCommand=/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now
++RebootCommand=/sbin/shutdown -r now;/usr/sbin/shutdown -r now
 +HaltCommand=/sbin/shutdown -p now;/usr/sbin/shutdown -p now
  #SuspendCommand=
  # Probably should not touch the below this is the standard setup
  ServAuthDir=@EXPANDED_AUTHDIR@
-@@ -131,11 +131,11 @@
+@@ -131,11 +132,11 @@
  #FlexiReapDelayMinutes=5
  # the X nest command
  Xnest=@X_XNEST_PATH@/Xnest @X_XNEST_CONFIG_OPTIONS@
@@ -33,7 +34,7 @@
  # Should double login be treated with a warning (and possibility to change
  # vts on linux and freebsd systems for console logins)
  #DoubleLoginWarning=true
-@@ -240,7 +240,7 @@
+@@ -240,7 +241,7 @@
  # The specific gtkrc file we use.  It should be the full path to the gtkrc
  # that we need.  Unless you need a specific gtkrc that doesn't correspond to
  # a specific theme, then just use the GtkTheme key
