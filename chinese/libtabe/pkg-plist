@@ -10,19 +10,19 @@ lib/libbims.so.0
 lib/libtabe.a
 lib/libtabe.so
 lib/libtabe.so.0
-share/doc/tabe/BoPoMoFo.shtml
-share/doc/tabe/Changes
-share/doc/tabe/Changes.pre-0.1
-share/doc/tabe/README.bims
-share/doc/tabe/README.tsi
-share/doc/tabe/TODO
-share/doc/tabe/ZuYinCode.txt
-share/doc/tabe/et26.txt
-share/doc/tabe/libtabe.sgml
+%%PORTDOCS%%share/doc/tabe/BoPoMoFo.shtml
+%%PORTDOCS%%share/doc/tabe/Changes
+%%PORTDOCS%%share/doc/tabe/Changes.pre-0.1
+%%PORTDOCS%%share/doc/tabe/README.bims
+%%PORTDOCS%%share/doc/tabe/README.tsi
+%%PORTDOCS%%share/doc/tabe/TODO
+%%PORTDOCS%%share/doc/tabe/ZuYinCode.txt
+%%PORTDOCS%%share/doc/tabe/et26.txt
+%%PORTDOCS%%share/doc/tabe/libtabe.sgml
 share/tabe/libtabe-0.2.2
 share/tabe/tsiyin/tsi.db
 share/tabe/tsiyin/yin.db
 @dirrm include/tabe
-@dirrm share/doc/tabe
+%%PORTDOCS%%@dirrm share/doc/tabe
 @dirrm share/tabe/tsiyin
 @dirrm share/tabe
