@@ -8,7 +8,7 @@
 
 DISTNAME=       tua-4.0
 CATEGORIES=	sysutils
-MASTER_SITES=   ftp://itnsg1.cineca.it/pub/local/tua/
+MASTER_SITES=   ftp://ftp.vmunix.org/pub/misc/tua/
 
 MAINTAINER=	torstenb@FreeBSD.org
 
