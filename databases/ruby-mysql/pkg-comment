@@ -1,1 +1,1 @@
-Ruby module for accessing MySQL databases, which has the same functions as C API
+Ruby module for accessing MySQL databases with a C API like interface
