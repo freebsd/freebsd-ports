@@ -1,0 +1,25 @@
+--- arpwatch.8.orig	Sun Oct  8 21:31:28 2000
++++ arpwatch.8	Thu Feb 22 22:47:29 2001
+@@ -38,6 +38,9 @@
+ .br
+ .ti +8
+ [
++.B -m
++.I email
++] [
+ .B -n
+ .IR net [/ width
+ ]] [
+@@ -69,6 +72,12 @@
+ The
+ .B -i
+ flag is used to override the default interface.
++.LP
++The
++.B -m
++flag specifies the address that will receive the emails.
++The default is
++.IR root .
+ .LP
+ The
+ .B -n

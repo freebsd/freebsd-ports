@@ -7,6 +7,7 @@
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
