@@ -13,16 +13,12 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	karlj000@unbc.ca
 
-BROKEN=		"Does not compile"
-
+NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
 ALL_TARGET=	x
 
-WRKSRC=		${WRKDIR}
-
 PROGDIR=	${PREFIX}/${PORTNAME}
-DOCDIR=		${PREFIX}/share/doc/${PORTNAME}
 
 do-install:
 	${MKDIR} ${PROGDIR}
@@ -33,8 +29,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/WP.rom ${PROGDIR}
 	${INSTALL_DATA} ${WRKSRC}/EOS.rom ${PROGDIR}
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/adamem.txt ${DOCDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/adamem.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
