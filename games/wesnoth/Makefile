@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.wesnoth.org/files/
@@ -19,6 +19,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
+LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++
+
 USE_GCC=	3.4
 USE_SDL=	image mixer net
 USE_GNOME=	gnometarget
@@ -28,15 +30,16 @@ USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-sdltest \
-		--with-libiconv-prefix=${LOCALBASE} \
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-freetype-prefix=${LOCALBASE} \
 		--with-localedir=${PREFIX}/share/locale
-CONFIGURE_ENV=	CPPFLAGS="-ftemplate-depth-45" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CXXFLAGS="-I${LOCALBASE}/include ${CXXFLAGS} -ftemplate-depth-45" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN6=		wesnoth.6 wesnoth_editor.6 wesnothd.6
+MANLANG=	"" de
 
 .if defined(LITE)
 CONFIGURE_ARGS+=	--enable-lite
@@ -121,5 +124,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|[$$][(]datadir[)]/applications|${X11BASE}/share/gnome/apps/Games|g ; \
 		s|[$$][(]datadir[)]/icons|${X11BASE}/share/gnome/pixmaps|g' \
 			${WRKSRC}/icons/Makefile.in
+	@${REINPLACE_CMD} -e 's|@SDL_CFLAGS@|@SDL_CFLAGS@ -I../sdl_ttf|g' \
+		${WRKSRC}/src/tools/Makefile.in
 
 .include <bsd.port.post.mk>

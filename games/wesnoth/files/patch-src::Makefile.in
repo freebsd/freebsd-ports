@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Mon Dec  6 01:07:40 2004
-+++ src/Makefile.in	Mon Dec  6 01:08:16 2004
-@@ -693,10 +693,10 @@
+--- src/Makefile.in.orig	Wed Jan 26 18:36:37 2005
++++ src/Makefile.in	Wed Jan 26 18:37:47 2005
+@@ -661,10 +661,10 @@
  			 sdl_ttf/SDL_ttf.h \
  			 wesconfig.h
  
