@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnstracer
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.mavetju.org/download/
 
@@ -14,6 +14,7 @@ MAINTAINER=	edwin@mavetju.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+USE_GMAKE=	yes
 
 MAN8=		dnstracer.8
 
