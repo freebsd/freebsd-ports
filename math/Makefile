@@ -80,6 +80,7 @@
     SUBDIR += itl
     SUBDIR += jacal
     SUBDIR += jags
+    SUBDIR += jakarta-commons-math
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += kaskade
