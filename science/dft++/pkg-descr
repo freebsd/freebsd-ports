@@ -1,0 +1,20 @@
+DFT++ is a density functional package,
+The software is fully cache and register optimized,
+and runs in serial, threaded, MPI and mixed threaded-MPI parallel
+environments.
+
+For academic users, authors request that publications using results
+obtained with this software reference
+"New algebraic formulation of density functional calculation,"
+by Sohrab Ismail-Beigi and T.A. Arias, Computer Physics Communications
+128:1-2, 1-45 (June 2000). and, if using the wavelet basis, further reference
+"Multiresolution analysis of electronic structure: semicardinal
+and wavelet bases,"
+T.A. Arias, Reviews of Modern Physics 71:1, 267-311 (January 1999).
+and "Robust ab initio calculation of condensed matter: transparent
+convergence through semicardinal multiresolution analysis,'' I.P. Daykov,
+T.A. Arias, and Torkel D. Engeness, Physical Review Letters,
+90:21, 216402 (May 2003).
+
+documents are available at http://dft.physics.cornell.edu/doc/
+WWW: http://dft.physics.cornell.edu/
