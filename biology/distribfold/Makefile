@@ -7,7 +7,7 @@
 
 PORTNAME=	distribfold
 PORTVERSION=	0.1.${RELEASE_DATE}
-CATEGORIES=	misc net
+CATEGORIES=	biology net
 MASTER_SITES=	ftp://ftp.mshri.on.ca/pub/distribfold/download/
 DISTNAME=	distribfold-current-FreeBSD
 
@@ -44,7 +44,7 @@ pre-install:
 		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 do-install:
-# remove any patch scrap files 
+# remove any patch scrap files
 .for ext in bak orig
 	@${RM} -f ${WRKSRC}/*.${ext}
 .endfor
