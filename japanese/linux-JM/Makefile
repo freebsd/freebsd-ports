@@ -14,6 +14,8 @@ DISTFILES=	${DISTFILES_GNU} ${DISTFILES_OTHERS}
 MAINTAINER=	sada@FreeBSD.org
 COMMENT=	Japanese translated man pages by JM Project
 
+CONFLICTS=	ja-samba-2.*
+
 DIST_SUBDIR=	${PORTNAME}
 MANSECS=	1 3 4 5 8
 NO_MTREE=	yes

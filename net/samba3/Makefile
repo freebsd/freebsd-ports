@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	. rc
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
+CONFLICTS=	ja-samba-2.* samba-3.* samba-libsmbclient-3.* sharity-light-1.*
+
 USE_BZIP2="YES"
 
 .if !defined(WITHOUT_CUPS)
