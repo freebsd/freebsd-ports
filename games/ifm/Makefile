@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/mapping-tools/ \
 		ftp://wuarchive.wustl.edu/doc/misc/if-archive/mapping-tools/
 DISTFILES=	ifm41.tgz
 
-MAINTAINER=	bsdport@ddm.wox.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Fiction mapper and walkthrough generator
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
