@@ -1,10 +1,10 @@
 # ex:ts=8
-# Ports collection makefile for:  foo
-# Version required:     	  2.1
+# Ports collection makefile for:  gnucash
+# Version required:     	  1.0.18
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.4 1998/08/12 19:00:46 obrien Exp $
+# $Id: Makefile,v 1.5 1998/12/25 20:10:50 obrien Exp $
 #
 
 DISTNAME=	xacc-1.0.18
