@@ -1,0 +1,6 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/tkman
+@mode 644
+man/man1/tkman.1
