@@ -29,7 +29,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/kaffe-${PORTVERSION}
 
-NOT_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	i386
 
 USE_GNOME=	esound
 USE_LIBTOOL=	yes
