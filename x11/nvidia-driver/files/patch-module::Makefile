@@ -1,0 +1,11 @@
+--- module/Makefile.orig	Wed May 28 23:51:52 2003
++++ module/Makefile	Sun Jan 25 11:47:48 2004
+@@ -14,6 +14,8 @@
+ BUILD_DONE=	${.CURDIR}/.build_done
+ CLEANFILES+=	${BUILD_DONE}
+ 
++KMODDIR?=	/boot/modules
++
+ #
+ # To enable debugging see nvidia_debug.h
+ # uncomment the following line and change the 'debug'
