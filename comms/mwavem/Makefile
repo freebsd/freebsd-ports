@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 STARTUP=	mwavem.sh
 USE_GMAKE=	yes
 SLEEP=		/bin/sleep
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -40,8 +41,9 @@ LTHREADVERSION=	3
 LIB_DEPENDS=	lthread.${LTHREADVERSION}:${PORTSDIR}/devel/linuxthreads
 
 pre-build:
-	${PERL} -pi.orig -e "s@ /modules@ ${PREFIX}/share/mwavem@g" ${WRKSRC}/src/drivers/Makefile
-	${PERL} -pi.orig -e "s@#include <malloc.h>\n@@g" \
+	${REINPACE_CMD} -e "s@ /modules@ ${PREFIX}/share/mwavem@g" \
+		${WRKSRC}/src/drivers/Makefile
+	${REINPLACE_CMD} -e "s@#include .malloc.h.@@g" \
 		${WRKSRC}/src/mwmbl/mwblapi.c \
 		${WRKSRC}/src/mwwtt32/mwwttbl.c
 
