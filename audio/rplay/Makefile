@@ -7,6 +7,7 @@
 
 PORTNAME=	rplay
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
