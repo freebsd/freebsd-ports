@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.6 1997/08/15 15:02:07 jmz Exp $
+# $Id: Makefile,v 1.7 1998/01/27 02:25:21 jmz Exp $
 #
 
 DISTNAME=       PGPLOT-2.08
@@ -17,6 +17,9 @@ LIB_DEPENDS=    pgplot\\.5\\.:${PORTSDIR}/graphics/pgplot
 
 USE_PERL5=	yes
 ALL_TARGET=	dynamic
+
+MAN3=	ExtUtils::F77.3 PGPLOT.3
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@cd ${WRKSRC} && ${PREFIX}/bin/perl Makefile.PL
