@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.15.3
+PORTVERSION=	0.17.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 USE_OPENSSL=	yes
 .endif
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--enable-xml \
 		--enable-shared \
