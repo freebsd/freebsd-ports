@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl -w
+#!/usr/bin/perl -w
 #
 # $FreeBSD$
 #
@@ -322,7 +322,6 @@ while (<STDIN>) {
     if (/^Added Files/)    { $state = $STATE_ADDED;   next; }
     if (/^Removed Files/)  { $state = $STATE_REMOVED; next; }
     if (/^Log Message/)    { $state = $STATE_LOG;     next; }
-    s/^[ \t\n]+//;		# delete leading space
     s/[ \t\n]+$//;		# delete trailing space
     
     push (@changed_files, split) if ($state == $STATE_CHANGED);

@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl --  # -*-Perl-*-
+#!/usr/bin/perl --  # -*-Perl-*-
 #
 # cvs_acls.pl,v 1.2 1992/04/11 16:01:24 berliner Exp
 # $FreeBSD$

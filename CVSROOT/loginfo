@@ -21,4 +21,4 @@
 # ever appear.  If you want to do something extra to the log output, learn
 # Perl.
 #
-DEFAULT		perl $CVSROOT/CVSROOT/log_accum.pl %s
+DEFAULT		/usr/bin/perl $CVSROOT/CVSROOT/log_accum.pl %s
