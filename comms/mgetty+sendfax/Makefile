@@ -15,7 +15,9 @@ MAINTAINER=	jmz@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/mgetty-1.1.28
 MAKE_FLAGS=	prefix=${PREFIX} -f
-MAN1=		coverpg.1 \
+MAN1=		autopvf.1 \
+		basictopvf.1 \
+		coverpg.1 \
 		fax.1 \
 		faxq.1 \
 		faxrm.1 \
