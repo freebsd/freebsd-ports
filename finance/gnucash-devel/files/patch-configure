@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Mar 11 00:50:12 2002
-+++ configure	Thu Jul 11 11:16:21 2002
-@@ -5229,6 +5229,7 @@
+--- configure.orig	Thu Aug 15 08:18:45 2002
++++ configure	Sun Aug 18 09:35:54 2002
+@@ -5523,6 +5523,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,7 +11,25 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9608,7 +9609,7 @@
+@@ -10138,7 +10139,7 @@
+ #include "confdefs.h"
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
+-extern int *_nl_domain_bindings;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+@@ -10146,7 +10147,7 @@
+ const char *_nl_expand_alias ();
+ int main() {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
+ ; return 0; }
+ EOF
+ if { (eval echo configure:10153: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -10614,7 +10615,7 @@
    withval="$with_help_prefix"
    GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
  else
@@ -20,7 +38,7 @@ $FreeBSD$
  fi
  
  
-@@ -10128,7 +10129,7 @@
+@@ -11134,7 +11135,7 @@
  
  
  if test "$prefer_db1" = "yes"; then
@@ -29,7 +47,7 @@ $FreeBSD$
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -10168,7 +10169,7 @@
+@@ -11174,7 +11175,7 @@
  fi
  done
  
