@@ -21,8 +21,6 @@ lib/xemacs/site-lisp/rd-mode.el
 @exec ln -sf %D/%F %D/share/emacs/site-lisp/
 @unexec rm -f %D/share/emacs/site-lisp/rd-mode.el 2>/dev/null || true
 %%PORTDOCS%%@comment %%RUBY_DOCDIR%%/amstd/ja/amstd-ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/ja/optparse.ja.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/optparse/optparse.en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/README.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rd/rd-draft.rd

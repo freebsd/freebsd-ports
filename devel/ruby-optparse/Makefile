@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	optparse
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,25 +18,36 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+DOCS_EN=	ChangeLog.html \
+		README.en \
+		optparse.en.rd \
+		optparse.html \
+		optparse.rlog \
+		rmi.html
+DOCS_JA=	FIRSTSTEP.ja.html \
+		FIRSTSTEP.ja.rd \
+		README.ja \
+		optparse.ja.html \
+		optparse.ja.rd
+
 do-install:
-	${MKDIR} ${RUBY_SITELIBDIR}/optparse
-.for f in optparse.rb optparse/shellwords.rb optparse/time.rb optparse/uri.rb
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}/${f}
-.endfor
+	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/optparse.rb ${RUBY_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/optparse/*.rb${f} ${RUBY_SITELIBDIR}/${PORTNAME}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/optparse/ja
-	${MKDIR} ${RUBY_DOCDIR}/optparse/ja
-.for f in ChangeLog README.en optparse.en.rd optparse.rlog
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/optparse/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
-.for f in README.ja optparse.ja.rd
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/optparse/ja/
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor
 .for f in cmd-ls.rb cmd.rb getopts.test.en opttest.rb
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/optparse/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endfor
 .for f in getopts.test
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/optparse/ja
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/ja
 .endfor
 .endif
 
