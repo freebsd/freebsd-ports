@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.12 1998/02/01 02:03:44 vanilla Exp $
+# $Id: Makefile,v 1.13 1998/02/18 16:08:13 vanilla Exp $
 #
 
 DISTNAME=	enl_BETA-0.13.3
@@ -16,6 +16,8 @@ DISTFILES=	enl_BETA-0.13.3.tar.gz \
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=	Imlib\\.1\\.:${PORTSDIR}/graphics/imlib
+
+BROKEN=		"The distfile can't be fetch now, waiting next version now."
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
