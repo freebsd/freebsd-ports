@@ -43,6 +43,12 @@ INSTALL_TARGET=	install-strip prefix=${PREFIX}
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+IGNORE=		"Does not compile on alpha 5.x \(infinite loop in build\)"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
 		${WRKSRC}/contrib/randomtrain \
@@ -94,4 +100,4 @@ post-install::
 	${INSTALL_MAN} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
