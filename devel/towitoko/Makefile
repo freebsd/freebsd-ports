@@ -15,6 +15,9 @@ MAINTAINER=	king@v2project.com
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-MAN3=	ctapi.3 ctbcs.3 CT_init.3 CT_data.3 CT_close.3
+MAN3=	ctapi.3 ctbcs.3
+MLINKS=	ctapi.3 CT_close.3 \
+	ctapi.3 CT_data.3 \
+	ctapi.3 CT_init.3
 
 .include <bsd.port.mk>
