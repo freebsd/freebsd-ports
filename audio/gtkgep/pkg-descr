@@ -4,3 +4,5 @@ example. It has a modular plugin structure, with standard plugins including
 distortion, overdrive, delay, reverb, equalizers, and a flanger. It works
 in 16-bit resolution, in mono mode, and with frequencies from 11khz to
 44khz. The sound quality is very good.
+
+WWW: http://gtkgep.prv.pl/
