@@ -1,0 +1,12 @@
+--- Makefile.orig	Mon Jan 10 13:13:12 2000
++++ Makefile	Sun Feb 13 17:41:35 2000
+@@ -1,7 +1,7 @@
+-CFLAGS=
++#CFLAGS=
+ 
+ # For Solaris 2.5.1 and above, uncomment the following line.
+-LIBS=-lresolv -lsocket -lnsl
++#LIBS=-lresolv -lsocket -lnsl
+ 
+ default:
+ 	@clear

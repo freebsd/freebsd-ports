@@ -1,0 +1,13 @@
+"gag" is a program to scan for "stacheldraht" agents, which are part
+of an active "stacheldraht" network.  It will not detect trinoo,
+the original Tribe Flood Network (TFN), or TFN2K agents.  For methods
+of detecting trinoo and Tribe Flood Network, see:
+
+	http://staff.washington.edu/dittrich/misc/trinoo.analysis
+	http://staff.washington.edu/dittrich/misc/tfn.analysis
+
+(Why "gag"?  Its supposed to be a running joke I started in the trinoo
+analysis.  trinoo/trinot, "tribe"/civilize, gag/sicken&gesundheit!.
+Read the ddos trilogy to find out!)
+
+WWW:	http://www.washington.edu/People/dad/
