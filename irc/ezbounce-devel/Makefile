@@ -6,15 +6,10 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	1.04.a
-PORTREVISION=	1
+PORTVERSION=	1.04.b
 CATEGORIES=	irc
 MASTER_SITES=	http://druglord.freelsd.org/ezbounce/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
-
-PATCH_SITES=	http://druglord.freelsd.org/ezbounce/
-PATCHFILES=	ezb-1.04a-crash-fix-patch
-PATCH_DIST_STRIP= -p1
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	ab@astralblue.com
 COMMENT=	A highly configurable IRC Proxy
