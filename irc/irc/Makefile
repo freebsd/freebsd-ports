@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.12 1996/12/01 01:22:50 obrien Exp $
+# $Id: Makefile,v 1.13 1996/12/08 01:44:58 max Exp $
 #
 
 DISTNAME=	irc2.8.21
@@ -21,6 +21,6 @@ RESTRICTED=	"No redistribution allowed"
 MAN8=		ircd.8
 
 pre-install:
-	@{MKDIR} ${PREFIX}/lib/ircd
+	@${MKDIR} ${PREFIX}/lib/ircd
 
 .include <bsd.port.mk>
