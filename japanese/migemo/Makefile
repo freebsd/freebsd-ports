@@ -14,6 +14,8 @@ MASTER_SITES=   http://migemo.namazu.org/stable/
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT?=	Japanese incremental search tool
 
+BROKEN=		"Unfetchable"
+
 .if !defined(EMACS_PORT_NAME)
 USE_AUTOMAKE_VER=	14
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am ${FILESDIR}/extra-patch-configure.in
