@@ -1,0 +1,36 @@
+*** gofer.0	Thu Jun 23 16:00:00 1994
+--- gofer	Wed Feb  8 01:16:55 1995
+***************
+*** 9,18 ****
+  # Edited by Jonathan Bowen, Oxford University, August 1993
+  
+  # Location of gofer files - site specific
+! ROOT=/usr/local/gofer
+  
+  # first, the location of your prelude file:
+! GOFER=${GOFER-$ROOT/lib/standard.prelude}
+  export GOFER
+  
+  # next, command line argument settings.  One example might be:
+--- 9,18 ----
+  # Edited by Jonathan Bowen, Oxford University, August 1993
+  
+  # Location of gofer files - site specific
+! ROOT=/usr/local/lib/Gofer
+  
+  # first, the location of your prelude file:
+! GOFER=${GOFER-$ROOT/standard.prelude}
+  export GOFER
+  
+  # next, command line argument settings.  One example might be:
+***************
+*** 34,37 ****
+  
+  # Finally, start the interpreter running:
+  # exec /usr/local/lib/Gofer/gofer $GOFERARGS $*
+! exec $ROOT/bin/Gofer $GOFERARGS $*
+--- 34,37 ----
+  
+  # Finally, start the interpreter running:
+  # exec /usr/local/lib/Gofer/gofer $GOFERARGS $*
+! exec $ROOT/gofer $GOFERARGS $*
