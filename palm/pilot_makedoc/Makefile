@@ -10,8 +10,7 @@ PORTVERSION=	0.7a
 PORTREVISION=	1
 CATEGORIES=	palm textproc
 MASTER_SITES=	ftp://ftp.forth.org/pub/PalmOS/ \
-		ftp://ftp.cs.tu-berlin.de/pub/palmtops/pilot/ \
-		ftp://ftp.cso.uiuc.edu/pub/systems/PalmOS/
+		ftp://ftp.cs.tu-berlin.de/pub/palmtops/pilot/
 DISTNAME=	makedoc7
 EXTRACT_SUFX=	.cpp
 
