@@ -20,7 +20,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		gimp-2.2:${PORTSDIR}/graphics/gimp \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
 		gnomeicu:${PORTSDIR}/net/gnomeicu2 \
-		gthumb:${PORTSDIR}/graphics/gthumb2 \
+		gthumb:${PORTSDIR}/graphics/gthumb \
 		${X11BASE}/lib/gaim/docklet.so:${PORTSDIR}/net/gaim \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon \
