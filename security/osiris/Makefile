@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osiris
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.8
 CATEGORIES=	security
 MASTER_SITES=	http://osiris.shmoo.com/data/
 
