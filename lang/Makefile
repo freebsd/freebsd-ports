@@ -151,6 +151,7 @@
     SUBDIR += php3
     SUBDIR += php4
     SUBDIR += php4-cli
+    SUBDIR += php4-nms
     SUBDIR += php5
     SUBDIR += php5-cli
     SUBDIR += php_doc
