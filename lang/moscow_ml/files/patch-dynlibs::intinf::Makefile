@@ -1,5 +1,5 @@
 --- dynlibs/intinf/Makefile.orig	Wed Feb 16 16:36:57 2000
-+++ dynlibs/intinf/Makefile	Fri Apr 12 02:21:26 2002
++++ dynlibs/intinf/Makefile	Sun Jun 15 15:15:38 2003
 @@ -10,10 +10,11 @@
  include ../../Makefile.inc
  
@@ -26,7 +26,7 @@
  
  libmgmp.so: intinf.o
 -	$(DYNLD) -o libmgmp.so intinf.o ${GMPDIR}/libgmp.a
-+	$(DYNLD) -o libmgmp.so intinf.o -lgmp
++	$(DYNLD) ${LDFLAGS} -o libmgmp.so intinf.o -lgmp
  
  test:
  	mosml testintinf.sml
