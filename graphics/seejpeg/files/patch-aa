@@ -1,0 +1,52 @@
+--- Makefile.orig	Sun Nov  7 00:55:19 1999
++++ Makefile	Thu Oct 19 10:31:56 2000
+@@ -6,19 +6,19 @@
+ # $Id: Makefile,v 1.8 1999/11/07 05:55:19 evan Exp $	
+ 
+ # The installation directories.
+-BIN=	/usr/local/bin
+-MAN=	/usr/local/man/man1
++BIN=	${LOCALBASE}/bin
++MAN=	${LOCALBASE}/man/man1
+ 
+ # See the README for a description of these options.
+ #OPTIONS= -DNO_32K_CASCADE -DTESTMODE=G640x480x32K -DBUG_WORKAROUND -DONLY_1_8_MODES
+ OPTIONS= -DBUG_WORKAROUND
+ 
+ # This should be the location of the JPEG v6 header files.
+-JPEG_HEADERS=	-I /usr/local/include
++JPEG_HEADERS=	-I ${LOCALBASE}/include
+ #JPEG_HEADERS=	-I /usr/X11R6/include
+ 
+ # This should be the location of the JPEG v6 libraries.
+-JPEG_LIBS=	-L /usr/local/lib
++JPEG_LIBS=	-L ${LOCALBASE}/lib
+ #JPEG_LIBS=	-L /usr/X11R6/lib
+ 
+ # These may be changed, if desired.
+@@ -29,13 +29,13 @@
+ # Editing of the rest of this Makefile shouldn't be necessary.
+ 
+ CFLAGS=		$(JPEG_HEADERS) -I jpeglib $(CCOPTS) $(OPTIONS)
+-LIBS=		-lvga $(JPEG_LIBS) -ljpeg -lm
++LIBS=		-lvga $(JPEG_LIBS) -ljpeg -lgnugetopt -lm
+ LDOPTS=		-s
+ 
+ SEEJPEG=	seejpeg.o jpeg.o image.o display.o cmap.o \
+ 		jpeglib/rdbmp.o jpeglib/rdgif.o jpeglib/rdppm.o \
+ 		jpeglib/rdtarga.o
+-
++		
+ default:
+ 	@echo "To build seejpeg, first obtain the library for v6 of libjpeg.  This ought"
+ 	@echo "to be available from the same place that you obtained seejpeg.  Having"
+@@ -54,7 +54,8 @@
+ 
+ install:
+ 		install -s -o root -g bin -m 4711 seejpeg $(BIN)
+-		install -o root -g root -m 644 seejpeg.1 $(MAN)
++		install -o root -g wheel -m 644 seejpeg.1 $(MAN)
++		gzip ${LOCALBASE}/man/man1/seejpeg.1
+ 
+ clean:
+ 		rm -f *.o jpeglib/*.o *~ core seejpeg
