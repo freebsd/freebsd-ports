@@ -1,0 +1,9 @@
+--- src/qfDES.c	Thu Nov 18 17:49:09 1999
++++ src/qfDES.c	Thu Mar 24 13:36:07 2005
+@@ -13,5 +13,5 @@
+ #include "crypt_random.h"
+ 
+-typedef unsigned long Word;
++typedef uint32_t Word;
+ 
+ #define B00 0x80000000
