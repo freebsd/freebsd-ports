@@ -731,3 +731,11 @@ lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
 lib/X11/xsm/system.xsm
+
+# xterm workaround
+bin/resize
+bin/uxterm
+bin/xterm
+lib/X11/app-defaults/UXTerm
+lib/X11/app-defaults/XTerm
+lib/X11/app-defaults/XTerm
