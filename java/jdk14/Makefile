@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -109,6 +109,13 @@ pre-patch:
 		${MKDIR} -p hotspot1.3.1/src/os_cpu/bsd_i486/vm && \
 			${PATCH} < ${WRKDIR}/jdk131.patches
 
+post-build:
+	# Prune empty dirs
+	${FIND} ${JDKIMAGEDIR} -type d | /usr/bin/sort -r | \
+		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
+	${FIND} ${JDKIMAGEDIR_G} -type d | /usr/bin/sort -r | \
+		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
+
 .if !defined(NODEBUG)
 pre-install:
 	@${ECHO_MSG}
@@ -127,7 +134,7 @@ do-install:
 .endif
 
 post-install:
-	${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
+	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
 .if !defined(WITHOUT_PLUGIN)
 	@${ECHO_MSG}
 	@${ECHO_MSG} The use the Java plugin with Mozilla you must create a
