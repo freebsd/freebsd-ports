@@ -14,6 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library to parse mime data
 
 GNU_CONFIGURE=	yes
+CFLAGS+="-fPIC"
 
 post-install:
 	@${LDCONFIG} -m ${PREFIX}/lib
