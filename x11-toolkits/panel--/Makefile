@@ -19,7 +19,7 @@ LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
+GNOME_DESKTOP_VERSION=1
 USE_GNOME=	gnomelibs libpanel
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

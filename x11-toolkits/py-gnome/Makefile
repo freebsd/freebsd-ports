@@ -23,14 +23,13 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_GNOMENG=	yes
+GNOME_DESKTOP_VERSION=1
 USE_GNOME=	gtkhtml libpanel
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure pygtk/configure
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
 		--with-gnome-config=${X11BASE}/bin/gnome-config		\
 		--with-gtkhtml
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 EG_SRC_DIR=	${WRKSRC}/pygnome/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gnome
