@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xhippo
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xhippo
@@ -21,8 +21,8 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.info.gz \
-		xhippo.ps.gz xhippo.sgml xhippo.txt.gz
+DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
+		xhippo.info.gz xhippo.ps.gz xhippo.sgml xhippo.txt.gz
 
 .include <bsd.port.pre.mk>
 

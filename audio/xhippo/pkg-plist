@@ -5,6 +5,7 @@ etc/xhippo.config.default
 %%PORTDOCS%%share/doc/xhippo/ChangeLog
 %%PORTDOCS%%share/doc/xhippo/gnu-xhippo.html
 %%PORTDOCS%%share/doc/xhippo/screenshot.jpeg
+%%PORTDOCS%%share/doc/xhippo/xhippo.html.gz
 %%PORTDOCS%%share/doc/xhippo/xhippo.info.gz
 %%PORTDOCS%%share/doc/xhippo/xhippo.ps.gz
 %%PORTDOCS%%share/doc/xhippo/xhippo.sgml
