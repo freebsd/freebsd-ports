@@ -1,8 +1,8 @@
 jakarta-tomcat4.1/webapps/jetspeed.war
-share/doc/jetspeed/INSTALL
-share/doc/jetspeed/LICENSE
-share/doc/jetspeed/README
-share/doc/jetspeed/NOTES
-share/doc/jetspeed/jetspeed.war
-share/doc/jetspeed/WARNING
-@dirrm share/doc/jetspeed/
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/jetspeed.war
+%%PORTDOCS%%%%DOCSDIR%%/WARNING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
