@@ -29,4 +29,8 @@ pre-configure:
 			s@-O2@${CFLAGS}@g" ${WRKSRC}/*/Makefile.in \
 			${WRKSRC}/configure ${WRKSRC}/*/*/Makefile.in
 
+pre-patch:
+	@${PERL} -pi -e "s|\@prefix\@/doc/|\@prefix\@/share/doc/|g" \
+		${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
