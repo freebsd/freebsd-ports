@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.i.his.fukui-u.ac.jp/~funakami/software/netype/src/
 DISTNAME=	netypesv-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	tmutoh@mx10.freecom.ne.jp
+MAINTAINER=	utoh@openedu.org
 COMMENT=	Network Type Trainer server program
 
 RUN_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12
