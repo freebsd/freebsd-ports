@@ -1,3 +1,5 @@
-lib/perl5/site_perl/PGP/Pipe.pm
-lib/perl5/site_perl/i386-freebsd/auto/PGP/Pipe/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/PGP/Pipe
+lib/perl5/site_perl/%%PERL_VER%%/PGP/Pipe.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP/Pipe/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP/Pipe
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PGP
