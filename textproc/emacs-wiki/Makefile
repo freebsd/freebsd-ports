@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-wiki
-PORTVERSION=	2.67.1
+PORTVERSION=	2.68
 CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.mwolson.org/static/dist/emacs-wiki/ \
 		http://bsdchat.com/dist/dryice/
@@ -15,6 +15,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 EMACS_PORT_NAME?=	emacs21
 
 .if ${EMACS_PORT_NAME} != "emacs21"
