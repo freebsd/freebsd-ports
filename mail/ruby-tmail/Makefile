@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.8.12
-PORTREVISION=	1
+PORTVERSION=	0.8.13
 CATEGORIES=	mail ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www1.u-netsurf.ne.jp/~brew/mine/soft/
