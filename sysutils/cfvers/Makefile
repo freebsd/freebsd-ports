@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration versioning system
 
-RUN_DEPENDS=	${PYTHON_SIELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQLite
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/sqlite/main.py:${PORTSDIR}/databases/py-PySQLite
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
