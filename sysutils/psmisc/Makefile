@@ -8,8 +8,7 @@
 PORTNAME=	psmisc
 PORTVERSION=	17
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/system/status/ps/ \
-		ftp://ftp.tu-darmstadt.de/pub/os/Linux/distributions/slackware/slackware-3.6/source/a/procps/
+MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/system/status/ps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A port of the Linux pstree, killall and pidof commands
