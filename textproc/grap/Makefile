@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	grap
-PORTVERSION= 	1.05
+PORTVERSION= 	1.10
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
 MAINTAINER=	faber@lunabase.org
 
-GNU_CONFIGURE=yes
+GNU_CONFIGURE=	yes
 
 MAN1=		grap.1
 
