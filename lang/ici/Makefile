@@ -32,7 +32,7 @@ ICIDOCS=	doc/ici-a4.ps doc/ici-ltr.ps doc/ici.txt doc/ici.pdf
 .include <bsd.port.pre.mk>
 
 post-patch:
-	${REINPLACE_CMD} -e 's/float_t/floats_t/g' ${WRKSRC}/*
+	${REINPLACE_CMD} -e 's/float_t/floats_t/g' ${WRKSRC}/*.[ch]
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} -f ${MAKEFILE} libici3.a
