@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040321
+PORTVERSION=	20040404
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -108,8 +108,12 @@ post-patch:
 post-build:
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
 		> ${BUILD_WRKSRC}/etc/clamav.conf.default
+	@${CP} ${BUILD_WRKSRC}/etc/clamav.conf.default \
+		${BUILD_WRKSRC}/etc/clamav.conf
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/freshclam.conf \
 		> ${BUILD_WRKSRC}/etc/freshclam.conf.default
+	@${CP} ${BUILD_WRKSRC}/etc/freshclam.conf.default \
+		${BUILD_WRKSRC}/etc/freshclam.conf
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
 		> ${WRKDIR}/clamav-clamd.sh
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-milter.sh \
