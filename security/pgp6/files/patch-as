@@ -1,0 +1,13 @@
+--- libs/pfl/common/lthread/pgpSemaphore.c.old  Tue Mar 17 21:08:17 1998
++++ libs/pfl/common/lthread/pgpSemaphore.c      Thu Jan 22 13:00:16 2004
+@@ -41,7 +41,9 @@
+ #endif /* end PGP_UNIX_SOLARIS */
+ 
+ /* Linux has sem_init function but no headers ?? */
+-#if HAVE_SEM_INIT && !PGP_UNIX_LINUX
++/* #if HAVE_SEM_INIT && !PGP_UNIX_LINUX
++   commented out for FreeBSD */
++#if 0
+ 
+ PGPSemAttr_t PGPSemAttr_def = {0, 0};
+ 

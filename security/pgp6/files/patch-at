@@ -1,0 +1,11 @@
+--- libs/pgpcdk/priv/networklib/pgpsockets/common/pgpSockets.c.orig	Fri Jan 23 19:46:45 2004
++++ libs/pgpcdk/priv/networklib/pgpsockets/common/pgpSockets.c	Fri Jan 23 19:47:10 2004
+@@ -41,8 +41,6 @@
+ typedef int		SOCKET;
+ #if PGP_UNIX_LINUX || PGP_UNIX_HPUX || PGP_UNIX_AIX
+ int gethostname (char * name, size_t namelen);
+-#else
+-int gethostname (char * name, int namelen);
+ #endif /* PGP_UNIX_LINUX */
+ #endif
+ 

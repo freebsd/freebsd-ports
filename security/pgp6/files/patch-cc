@@ -1,0 +1,19 @@
+--- clients/pgp/cmdline/doencode.c Thu Sep 30 20:10:21 1999
++++ clients/pgp/cmdline/doencode.c Thu Jan 11 20:50:20 2001
+@@ -283,6 +283,7 @@
+     PGPBoolean batchmode = pgpenvGetInt( env, PGPENV_BATCHMODE, &pri, &err );
+     PGPBoolean verbose = pgpenvGetInt( env, PGPENV_VERBOSE, &pri, &err );
+     PGPBoolean quietmode = pgpenvGetInt( env, PGPENV_NOOUT, &pri, &err);
++    PGPBoolean force = pgpenvGetInt( env, PGPENV_FORCE, &pri, &err);
+     PGPKeySetRef tmpset;
+ 
+     err = PGPNewEmptyKeySet( toSet, &tmpset );
+@@ -317,7 +318,7 @@
+         if(verbose)
+             pgpShowKeyValidity( filebPtr, key );
+ 
+-        if( validity < kPGPValidity_Marginal ) {
++        if( validity < kPGPValidity_Marginal && !force) {
+             char useridstr[ kPGPMaxUserIDSize ];
+             PGPBoolean answer;
+             err = pgpGetUserIDStringFromKey( key, useridstr );
