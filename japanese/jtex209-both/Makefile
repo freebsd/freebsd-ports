@@ -22,7 +22,7 @@ MAINTAINER=	mita@jp.FreeBSD.org
 ASCII_VERSION=	1.7
 NTT_VERSION=	1.52
 
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*
+#MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	jtex-${NTT_VERSION}.tar.gz
