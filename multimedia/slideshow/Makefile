@@ -31,6 +31,9 @@ CONFIGURE_ENV+=	LDFLAGS="-lstdc++"
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 # The default resolution is 640x480
 .if defined(WITH_RES_1024)
 CONFIGURE_ARGS+=	--with-res=1024
