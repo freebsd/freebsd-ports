@@ -1,7 +1,13 @@
 #!/bin/sh
-if [ -f /usr/local/include/kfm.h ]; then
+if [ -f $PKG_PREFIX/include/kfm.h ]; then
 echo <<EOF
 You have KDE1 headers installed!  Installing this package
-will result in conflicts between KDE2 and KDE1.
+will result in conflicts between KDE3 and KDE1.
+EOF
+fi
+if [ -f $PKG_PREFIX/include/addressbook.h ]; then
+echo <<EOF
+You have KDE2 headers installed!  Installing this package
+will result in conflicts between KDE3 and KDE2.
 EOF
 fi
