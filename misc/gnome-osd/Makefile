@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		gnome-osd
-PORTVERSION=		0.4.0
+PORTVERSION=		0.6.0
 CATEGORIES=		misc
-MASTER_SITES=		http://yang.inescn.pt/~gjc/
+MASTER_SITES=		http://yang.inescn.pt/~gjc/gnome-osd/
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		An On-Screen-Display infrastructure using Pango text rendering
@@ -24,7 +24,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|share/pixmaps|share/gnome/pixmaps|' ${WRKSRC}/gnome-osd-properties
+	@${REINPLACE_CMD} -e 's/^Icon=gnome-osd$$/&.png/' \
+		${WRKSRC}/gnome-osd-properties.desktop.in
 
 post-install:
 .if !defined(NOPORTDOCS)
