@@ -1,5 +1,4 @@
 bin/rar
-bin/unrar
 lib/default.sfx
 etc/rarfiles.lst
 %%PORTDOCS%%%%DOCSDIR%%/technote.txt
