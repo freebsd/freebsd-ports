@@ -1,6 +1,5 @@
 share/apps/bibletime/tips
 @unexec rmdir %D/share/apps/bibletime 2>/dev/null || true
-share/doc/HTML/de/bibletime/handbook/hdbk-bars-toolbar-Configtoolbar.png
 share/doc/HTML/de/bibletime/handbook/hdbk-bars-toolbar-action-cascade-auto.png
 share/doc/HTML/de/bibletime/handbook/hdbk-bars-toolbar-action-cascade.png
 share/doc/HTML/de/bibletime/handbook/hdbk-bars-toolbar-action-exit.png
@@ -15,7 +14,6 @@ share/doc/HTML/de/bibletime/handbook/hdbk-conf-optdialog-fonts.png
 share/doc/HTML/de/bibletime/handbook/hdbk-conf-optdialog-start.png
 share/doc/HTML/de/bibletime/handbook/hdbk-conf-optdialog-sword.png
 share/doc/HTML/de/bibletime/handbook/hdbk-config-toolbar.png
-share/doc/HTML/de/bibletime/handbook/hdbk-inst-sources-installmgr.png
 share/doc/HTML/de/bibletime/handbook/hdbk-op-change-range.png
 share/doc/HTML/de/bibletime/handbook/hdbk-op-crch-dia-choose.png
 share/doc/HTML/de/bibletime/handbook/hdbk-op-delete-verse.png
@@ -72,7 +70,6 @@ share/doc/HTML/de/bibletime/install/inst-user.docbook
 @dirrm share/doc/HTML/de/bibletime/install/common
 @dirrm share/doc/HTML/de/bibletime/install
 @dirrm share/doc/HTML/de/bibletime
-share/doc/HTML/en/bibletime/handbook/hdbk-bars-toolbar-Configtoolbar.png
 share/doc/HTML/en/bibletime/handbook/hdbk-bars-toolbar-action-cascade-auto.png
 share/doc/HTML/en/bibletime/handbook/hdbk-bars-toolbar-action-cascade.png
 share/doc/HTML/en/bibletime/handbook/hdbk-bars-toolbar-action-exit.png
@@ -87,7 +84,6 @@ share/doc/HTML/en/bibletime/handbook/hdbk-conf-optdialog-fonts.png
 share/doc/HTML/en/bibletime/handbook/hdbk-conf-optdialog-start.png
 share/doc/HTML/en/bibletime/handbook/hdbk-conf-optdialog-sword.png
 share/doc/HTML/en/bibletime/handbook/hdbk-config-toolbar.png
-share/doc/HTML/en/bibletime/handbook/hdbk-inst-sources-installmgr.png
 share/doc/HTML/en/bibletime/handbook/hdbk-op-change-range.png
 share/doc/HTML/en/bibletime/handbook/hdbk-op-crch-dia-choose.png
 share/doc/HTML/en/bibletime/handbook/hdbk-op-delete-verse.png
@@ -144,7 +140,12 @@ share/doc/HTML/en/bibletime/install/inst-user.docbook
 @dirrm share/doc/HTML/en/bibletime/install/common
 @dirrm share/doc/HTML/en/bibletime/install
 @dirrm share/doc/HTML/en/bibletime
+share/locale/cs/LC_MESSAGES/bibletime.mo
 share/locale/de/LC_MESSAGES/bibletime.mo
 share/locale/fr/LC_MESSAGES/bibletime.mo
+share/locale/it/LC_MESSAGES/bibletime.mo
+share/locale/nl/LC_MESSAGES/bibletime.mo
+share/locale/no/LC_MESSAGES/bibletime.mo
+share/locale/pl/LC_MESSAGES/bibletime.mo
 share/locale/ru/LC_MESSAGES/bibletime.mo
 share/locale/sk/LC_MESSAGES/bibletime.mo
