@@ -39,7 +39,7 @@ PARI_VERSION=	`${GREP} PORTVERSION ${PARI_DIR}/Makefile | cut -f 2`
 LIB_DEPENDS+=	pari.1:${OLD_PARI_DIR}
 PARI=	-oldpari
 .else
-LIB_DEPENDS+=	pari-2.2.0:${PARI_DIR}
+LIB_DEPENDS+=	pari-2.2.3:${PARI_DIR}
 PARI=	-pari
 .endif
 
