@@ -208,6 +208,7 @@
     SUBDIR += sgf2tex
     SUBDIR += t1utils
     SUBDIR += teTeX
+    SUBDIR += teTeX-base
     SUBDIR += teTeX-texmf
     SUBDIR += tex
     SUBDIR += tex-texmflocal
