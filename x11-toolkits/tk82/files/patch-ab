@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 13 18:06:14 1999
-+++ Makefile.in	Sat Sep  4 19:47:43 1999
+--- Makefile.in.orig	Tue Dec 14 23:00:19 1999
++++ Makefile.in	Mon Apr 24 09:41:33 2000
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -11,6 +11,15 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -99,7 +101,7 @@
+ #CFLAGS = 		$(CFLAGS_DEBUG)
+ #CFLAGS = 		$(CFLAGS_OPTIMIZE)
+ #CFLAGS = 		$(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS = 		@CFLAGS@
++CFLAGS ?= 		@CFLAGS@
+ 
+ # A "-I" switch that can be used when compiling to make all of the
+ # X11 include files accessible (the configure script will try to
 @@ -153,7 +155,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
@@ -29,7 +38,7 @@
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
-@@ -356,8 +358,14 @@
+@@ -361,8 +363,14 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -44,7 +53,7 @@
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
  	@MAKE_STUB_LIB@
-@@ -418,7 +426,7 @@
+@@ -425,7 +433,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -53,7 +62,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -432,12 +440,18 @@
+@@ -439,12 +447,18 @@
  	chmod +x $(UNIX_DIR)/install-sh
  	chmod +x $(UNIX_DIR)/mkLinks
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -73,7 +82,7 @@
  	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TK_EXP_FILE)"; \
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
-@@ -451,6 +465,7 @@
+@@ -458,6 +472,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
@@ -81,7 +90,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -461,11 +476,19 @@
+@@ -468,11 +483,19 @@
  		fi; \
  	    done;
  	chmod +x $(UNIX_DIR)/install-sh
@@ -103,7 +112,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
  	        $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
  	    do \
-@@ -530,16 +553,14 @@
+@@ -537,7 +560,6 @@
  		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
@@ -111,9 +120,7 @@
  	@cd $(SRC_DIR)/doc; for i in *.3; \
  	    do \
  	    echo "Installing doc/$$i"; \
--	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
-+	    rm -f $(MAN3_INSTALL_DIR)/$$i ; \
- 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+@@ -546,7 +568,6 @@
  		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
@@ -121,7 +128,7 @@
  	@cd $(SRC_DIR)/doc; for i in *.n; \
  	    do \
  	    echo "Installing doc/$$i"; \
-@@ -548,7 +569,6 @@
+@@ -555,7 +576,6 @@
  		    $$i > $(MANN_INSTALL_DIR)/$$i; \
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
