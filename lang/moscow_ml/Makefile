@@ -3,7 +3,7 @@
 # Date created:         26 July 1996
 # Whom:                 chuckr
 #
-# $Id
+# $Id$
 #
 
 DISTNAME=       mos14src
