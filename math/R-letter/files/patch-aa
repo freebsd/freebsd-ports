@@ -1,0 +1,12 @@
+*** share/sh/help-links.sh	Thu Sep  6 11:00:11 2001
+--- share/sh/help-links.sh.orig	Thu Sep  6 11:00:30 2001
+***************
+*** 35,40 ****
+--- 35,41 ----
+  rm -f ${PKGLIST}
+  rm -f ${SEARCHINDEX}
+  cp ${R_HOME}/doc/html/packages-head.html ${PKGLIST}
++ chmod u+w ${PKGLIST}
+  
+  get_unique () {
+    if test -r ${1}; then
