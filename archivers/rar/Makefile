@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=    3.0
-PORTEPOCH=      1
+PORTVERSION=    3.10
 CATEGORIES=	archivers
 MASTER_SITES=   http://files10.rarlab.com/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
-DISTNAME=       rarbsd-3.0
+DISTNAME=       rarbsd-3.1.0
 
 MAINTAINER=	ache@FreeBSD.org
 
