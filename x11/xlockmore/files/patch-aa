@@ -1,48 +1,56 @@
---- Imakefile.orig	Wed Dec 11 18:36:32 1996
-+++ Imakefile	Thu Jan  9 18:17:25 1997
-@@ -17,13 +17,13 @@
+--- Imakefile.orig	Mon Feb 10 18:13:32 1997
++++ Imakefile	Wed Feb 19 18:08:29 1997
+@@ -35,7 +35,7 @@
  
- XCOMM If you get an error "Cannot find xpm.h" while compiling, set
- XCOMM XPMINC to the directory X11/xpm.h is in.  Below is a guess.
--          XPMINC = -I/usr/local/include
-+XCOMM          XPMINC = -I/usr/local/include
- XCOMM SGI's ViewKit (use with -DHAS_XPMINC)
- XCOMM     XPMINC = -I/usr/include/Vk
+ XCOMM Only the image.c and bat.c modes use this.
+ XCOMM If your system has libXpm, remove the 'XCOMM ' from the next line.
+-XCOMM #define XpmLibrary
++#define XpmLibrary
  
- XCOMM If you get an error "Connot find libXpm" while linking, set XPMLIBPATH
+ #ifdef XpmLibrary
+           XPMDEF = -DUSE_XPM
+@@ -50,7 +50,7 @@
+ 
+ XCOMM If you get an error "Cannot find libXpm" while linking, set XPMLIBPATH
  XCOMM to the directory libXpm.* is in.  Below is a guess.
 -          XPMLIB = -L/usr/local/lib -lXpm
 +          XPMLIB = -lXpm
  
  #endif
  
-@@ -255,7 +255,12 @@
-      PIXMAPTYPE = x11
-        FLAGTYPE = sysv
- #else
--#if defined(FreeBSDArchitecture) || defined(NetBSDArchitecture) || defined(i386BsdArchitecture)
-+#if defined(FreeBSDArchitecture) 
-+       SLEEPDEF = -DHAS_USLEEP
-+     BITMAPTYPE = bsd
-+     PIXMAPTYPE = bsd
-+       FLAGTYPE = freebsd
-+#elif defined(NetBSDArchitecture) || defined(i386BsdArchitecture)
-        SLEEPDEF = -DHAS_USLEEP
-      BITMAPTYPE = bsd
-      PIXMAPTYPE = bsd
-@@ -329,9 +334,9 @@
- XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  netgroup that is exempt
+@@ -164,8 +164,8 @@
+ XCOMM SRANDDEF = -DSRAND=srand48
+ XCOMM LRANDDEF = -DLRAND=lrand48
+ 
+-XCOMM SRANDDEF = -DSRAND=srandom
+-XCOMM LRANDDEF = -DLRAND=random
++SRANDDEF = -DSRAND=srandom
++LRANDDEF = -DLRAND=random
+ 
+ XCOMM Least desirable RNG
+ XCOMM SRANDDEF = -DSRAND=srand
+@@ -363,9 +363,9 @@
+ XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  Netgroup that is exempt
  
  XCOMM May have to combine in one long line if "+=" does not work
--        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT
-+XCOMM        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT
- XCOMM        OPTDEF += -DSYSLOG
--XCOMM        OPTDEF += -DMOUSE_MOTION
-+        OPTDEF += -DMOUSE_MOTION
- XCOMM        OPTDEF += -DMULTIPLE_ROOT
- XCOMM        OPTDEF += -DOLD_EVENT_LOOP
- XCOMM        0PTDEF += -DUSE_XLOCKRC
-@@ -357,8 +362,8 @@
+-        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT -DUSE_BOMB
++XCOMM        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT -DUSE_BOMB
+ XCOMM        OPTDEF += -DUSE_SYSLOG
+-XCOMM        OPTDEF += -DUSE_MOUSE_MOTION
++        OPTDEF += -DUSE_MOUSE_MOTION
+ XCOMM        OPTDEF += -DUSE_MULTIPLE_ROOT
+ XCOMM        OPTDEF += -DUSE_OLD_EVENT_LOOP
+ XCOMM        OPTDEF += -DUSE_XLOCKRC
+@@ -377,7 +377,7 @@
+ XCOMM        OPTDEF += -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"
+ 
+ XCOMM Here is your chance to override the default icon:
+-       FLAGBITS = $(FLAGTYPE)
++       FLAGBITS = freebsd
+ XCOMM     TINYBITMAP = $(BITMAPTYPE)
+      TINYBITMAP = t-x11
+     SMALLBITMAP = s-$(BITMAPTYPE)
+@@ -390,8 +390,8 @@
      IMAGEBITMAP = $(MEDIUMBITMAP)
  XCOMM    IMAGEBITMAP = l-bob
  XCOMM    IMAGEBITMAP = m-xlock
