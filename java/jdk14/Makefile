@@ -160,7 +160,7 @@ pre-build:
 		${ECHO_MSG} "This is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
-	@if [ `sysctl -n compat.linux.osname` != "Linux" ]; \
+	@if [ `/sbin/sysctl -n compat.linux.osname` != "Linux" ]; \
 	then \
 		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
 		${ECHO_MSG} "to 'Linux' with the command:"; \

@@ -162,7 +162,7 @@ post-patch:
 
 pre-configure:
 	@(cd ${WRKSRC}/config/${ARCH}/ ; \
-	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	MAJ=`/sbin/sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd.h freebsd.h.in ; \
 	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd.h.in \
 		>freebsd.h)
