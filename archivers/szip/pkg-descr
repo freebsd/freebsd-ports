@@ -1,0 +1,10 @@
+Szip performs data compression/decompression. It uses a limited order
+sort transform. This transformation is related to the Burrows-Wheeler
+transformation used in blocksorting compression methods.  The
+difference is a fast, deterministic behaviour in time at some
+compression loss.
+
+WWW:	http://www.compressconsult.com/szip/
+
+- Igor Pokrovsky
+tiamat@telegraph.spb.ru

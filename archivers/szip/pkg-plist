@@ -1,0 +1,5 @@
+bin/szip
+%%PORTDOCS%%share/doc/szip/history.txt
+%%PORTDOCS%%share/doc/szip/readme.txt
+%%PORTDOCS%%share/doc/szip/techinfo.txt
+%%PORTDOCS%%@dirrm share/doc/szip
