@@ -116,7 +116,7 @@ _PYTHON_PORTBRANCH=		2.3
 _PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
 
 .if defined(PYTHON_VERSION)
-_PYTHON_VERSION!=	echo "${PYTHON_VERSION}" | ${SED} 's/^python//'
+_PYTHON_VERSION!=	${ECHO_CMD} "${PYTHON_VERSION}" | ${SED} 's/^python//'
 _PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
 .else
 # Determine the currently installed version. If Python is not installed, a
@@ -129,15 +129,15 @@ _PYTHON_CMD=		${LOCALBASE}/bin/python
 .endif
 _PYTHON_VERSION!=	${_PYTHON_CMD} -c \
 					'import sys; print sys.version[:3]' 2> /dev/null \
-					|| echo ${_PYTHON_PORTBRANCH}
+					|| ${ECHO_CMD} ${_PYTHON_PORTBRANCH}
 .endif	# defined(PYTHON_VERSION)
 
 # Validate Python version whether it meets USE_PYTHON version restriction.
-_PYTHON_VERSION_CHECK!=		echo "${USE_PYTHON}" | \
+_PYTHON_VERSION_CHECK!=		${ECHO_CMD} "${USE_PYTHON}" | \
 							${SED} 's/^\([1-9]\.[0-9]\)$$/\1-\1/'
-_PYTHON_VERSION_MINIMUM!=   echo "${_PYTHON_VERSION_CHECK}" | \
+_PYTHON_VERSION_MINIMUM!=   ${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
 							${SED} -n 's/.*\([1-9]\.[0-9]\)[-+].*/\1/p'
-_PYTHON_VERSION_MAXIMUM!=   echo "${_PYTHON_VERSION_CHECK}" | \
+_PYTHON_VERSION_MAXIMUM!=   ${ECHO_CMD} "${_PYTHON_VERSION_CHECK}" | \
 							${SED} -n 's/.*-\([1-9]\.[0-9]\).*/\1/p'
 .if !empty(_PYTHON_VERSION_MINIMUM) && ( \
 		${_PYTHON_VERSION} < ${_PYTHON_VERSION_MINIMUM})
@@ -175,7 +175,7 @@ _PYTHON_VERSION=	${_PYTHON_PORTBRANCH} # just to avoid version sanity checking.
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
 PYTHON_CMD?=		${_PYTHON_CMD}
 PYTHONBASE!=		(${PYTHON_CMD} -c 'import sys; print sys.prefix') \
-						2> /dev/null || echo ${LOCALBASE}
+						2> /dev/null || ${ECHO_CMD} ${LOCALBASE}
 DEPENDS_ARGS+=		PYTHON_VERSION=${PYTHON_VERSION}
 _PYTHON_PORTVERSION!=	(${PYTHON_CMD} -c 'import string, sys; \
 							print string.split(sys.version)[0]') 2> /dev/null || ${TRUE}
@@ -278,7 +278,7 @@ PYTHON_INCLUDEDIR=		${PYTHONBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${PYTHONBASE}/lib/${PYTHON_VERSION}
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
 PYTHON_PKGNAMESUFFIX=	-py${PYTHON_SUFFIX}
-PYTHON_PLATFORM!=		expr ${OPSYS:L}${OSREL} : '\(.*\)\.'
+PYTHON_PLATFORM!=		${EXPR} ${OPSYS:L}${OSREL} : '\(.*\)\.'
 PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
 
 PYTHONPREFIX_INCLUDEDIR=	${PYTHON_INCLUDEDIR:S;${PYTHONBASE};${PREFIX};}
