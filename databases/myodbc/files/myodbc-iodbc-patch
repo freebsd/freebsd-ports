@@ -1,0 +1,430 @@
+--- driver/cursor.c.orig	Tue Nov  2 06:03:57 2004
++++ driver/cursor.c	Sun Jan  2 18:43:32 2005
+@@ -410,7 +410,7 @@
+   MYSQL_ROW   row_data= result->data_cursor->data + nSrcCol;
+   NET	      *net=&stmt->dbc->mysql.net;
+   SQLCHAR     *to= net->buff;
+-  SQLINTEGER  length;
++  SQLLEN      length;
+ 
+   /* Copy row buffer data to statement */
+   param.used= 1;
+@@ -722,14 +722,14 @@
+ 				  DYNAMIC_STRING *dynQuery)
+ {
+   PARAM_BIND  param;
+-  SQLUINTEGER transfer_length,precision,display_size;
+-  SQLINTEGER  length;
++  SQLULEN     transfer_length,precision,display_size;
++  SQLLEN      length;
+   uint	      ncol, ignore_count= 0;
+   MYSQL_FIELD *field;
+   MYSQL_RES   *result= stmt->result;
+   BIND	      *bind;
+   NET	      *net=&stmt->dbc->mysql.net;
+-  SQLINTEGER  *pcbValue;
++  SQLLEN      *pcbValue;
+ 
+   dynstr_append_mem(dynQuery," SET ",5);
+ 
+@@ -997,7 +997,7 @@
+   MYSQL_RES    *result= stmt->result;
+   SQLUINTEGER  insert_count= 1;
+   SQLUINTEGER  count= 0;
+-  SQLINTEGER   length;
++  SQLLEN       length;
+   NET	       *net;
+   SQLUSMALLINT ncol;
+   SQLCHAR      *to;
+@@ -1031,7 +1031,7 @@
+ 
+       for (ncol= 0; ncol < result->field_count; ncol++)
+       {
+-	SQLUINTEGER transfer_length,precision,display_size;
++	SQLULEN      transfer_length,precision,display_size;
+ 	MYSQL_FIELD *field= mysql_fetch_field_direct(result,ncol);
+ 	BIND	    *bind= stmt->bind+ncol;
+ 
+--- driver/execute.c.orig	Tue Nov  2 06:03:57 2004
++++ driver/execute.c	Mon Jan 10 22:17:10 2005
+@@ -664,15 +664,15 @@
+ 
+ SQLRETURN SQL_API SQLNativeSql(SQLHDBC hdbc,
+ 			       SQLCHAR FAR *szSqlStrIn,
+-			       SQLINTEGER cbSqlStrIn,
++			       SQLINTEGER  cbSqlStrIn,
+ 			       SQLCHAR FAR *szSqlStr,
+-			       SQLINTEGER cbSqlStrMax,
++			       SQLINTEGER  cbSqlStrMax,
+ 			       SQLINTEGER FAR *pcbSqlStr)
+ {
+   ulong offset= 0;
+   DBUG_ENTER("SQLNativeSql");
+   DBUG_RETURN_STATUS(copy_lresult(SQL_HANDLE_DBC, hdbc,
+-				  szSqlStr,cbSqlStrMax,pcbSqlStr,
++				  szSqlStr,(SQLLEN)cbSqlStrMax,(SQLLEN FAR *)pcbSqlStr,
+ 				  (char*) szSqlStrIn, cbSqlStrIn,0L,0L,
+ 				  &offset,0));
+ }
+@@ -717,7 +717,7 @@
+ */
+ 
+ SQLRETURN SQL_API SQLPutData(SQLHSTMT hstmt, SQLPOINTER rgbValue,
+-			     SQLINTEGER cbValue)
++			     SQLLEN cbValue)
+ {
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+   PARAM_BIND *param;
+--- driver/myodbc3.h.orig	Tue Nov  2 06:03:57 2004
++++ driver/myodbc3.h	Sun Jan  2 18:05:53 2005
+@@ -227,11 +227,11 @@
+ 
+ typedef struct stmt_options
+ {
+-  SQLUINTEGER	   bind_type,rows_in_set,cursor_type;
+-  SQLUINTEGER	   *paramProcessedPtr;
+-  SQLUINTEGER	   *rowsFetchedPtr;
+-  SQLUINTEGER	   simulateCursor;
+-  SQLINTEGER	   max_length,max_rows, *bind_offset;
++  SQLULEN	   bind_type,rows_in_set,cursor_type;
++  SQLULEN	   *paramProcessedPtr;
++  SQLULEN	   *rowsFetchedPtr;
++  SQLULEN	   simulateCursor;
++  SQLLEN	   max_length,max_rows, *bind_offset;
+   SQLUSMALLINT	   *paramStatusPtr;
+   SQLUSMALLINT	   *rowStatusPtr;
+   SQLUSMALLINT	   *rowOperationPtr;
+@@ -284,8 +284,8 @@
+   MYSQL_FIELD	  *field;
+   SQLSMALLINT	  fCType;
+   SQLPOINTER	  rgbValue;
+-  SQLINTEGER	  cbValueMax;
+-  SQLINTEGER FAR  *pcbValue;
++  SQLLEN	  cbValueMax;
++  SQLLEN FAR  *pcbValue;
+   LIST		  list;
+ } BIND;
+ 
+@@ -297,7 +297,7 @@
+   SQLSMALLINT SqlType,CType;
+   gptr	      buffer;
+   char	      *pos_in_query,*value;
+-  SQLINTEGER  ValueMax,*actual_len,value_length;
++  SQLLEN      ValueMax,*actual_len,value_length;
+   bool	      alloced,used;
+   bool	      real_param_done;
+ } PARAM_BIND;
+--- driver/myutil.h.orig	Tue Nov  2 06:03:57 2004
++++ driver/myutil.h	Sun Jan  2 18:25:14 2005
+@@ -94,13 +94,13 @@
+ char *insert_param(MYSQL *mysql, char *to,PARAM_BIND *param);
+ char *add_to_buffer(NET *net,char *to,char *from,ulong length);
+ SQLRETURN copy_lresult(SQLSMALLINT HandleType, SQLHANDLE handle,
+-		       SQLCHAR FAR *rgbValue, SQLINTEGER cbValueMax,
+-		       SQLINTEGER FAR *pcbValue, char *src,
++		       SQLCHAR FAR *rgbValue, SQLLEN cbValueMax,
++		       SQLLEN FAR *pcbValue, char *src,
+ 		       long src_length, long max_length,
+ 		       long fill_length,ulong *offset,my_bool binary_data);
+ SQLRETURN copy_binary_result(SQLSMALLINT HandleType, SQLHANDLE handle,
+-			     SQLCHAR FAR *rgbValue, SQLINTEGER cbValueMax,
+-			     SQLINTEGER FAR *pcbValue, char *src,
++			     SQLCHAR FAR *rgbValue, SQLLEN cbValueMax,
++			     SQLLEN FAR *pcbValue, char *src,
+ 			     ulong src_length, ulong max_length,
+ 			     ulong *offset);
+ SQLRETURN set_dbc_error(DBC FAR *dbc, char *state,const char *message,uint errcode);
+@@ -112,13 +112,13 @@
+ SQLRETURN SQL_API my_SQLBindParameter(SQLHSTMT hstmt,SQLUSMALLINT ipar,
+ 				      SQLSMALLINT fParamType,
+ 				      SQLSMALLINT fCType, SQLSMALLINT fSqlType,
+-				      SQLUINTEGER cbColDef,
++				      SQLULEN cbColDef,
+ 				      SQLSMALLINT ibScale,
+ 				      SQLPOINTER  rgbValue,
+-				      SQLINTEGER cbValueMax,
+-				      SQLINTEGER FAR *pcbValue);
++				      SQLLEN cbValueMax,
++				      SQLLEN FAR *pcbValue);
+ SQLRETURN SQL_API my_SQLExtendedFetch(SQLHSTMT hstmt, SQLUSMALLINT fFetchType,
+-				      SQLINTEGER irow, SQLUINTEGER FAR *pcrow,
++				      SQLLEN irow, SQLULEN FAR *pcrow,
+ 				      SQLUSMALLINT FAR *rgfRowStatus, bool upd_status);
+ SQLRETURN copy_stmt_error(STMT FAR *src, STMT FAR *dst);
+ int unireg_to_c_datatype(MYSQL_FIELD *field);
+--- driver/options.c.orig	Sat Dec  4 15:17:25 2004
++++ driver/options.c	Mon Jan 10 22:17:44 2005
+@@ -140,7 +140,7 @@
+     break;
+ 
+   case SQL_ATTR_ROW_BIND_OFFSET_PTR:
+-    options->bind_offset= (SQLINTEGER *)ValuePtr;
++    options->bind_offset= (SQLLEN *)ValuePtr;
+     break;
+ 
+   case 1226:/* MS SQL Server Extension */
+@@ -572,7 +572,7 @@
+     break;
+ 
+   case SQL_ATTR_PARAMS_PROCESSED_PTR: /* need to support this ....*/
+-    options->paramProcessedPtr= (SQLUINTEGER *)ValuePtr;
++    options->paramProcessedPtr= (SQLULEN *)ValuePtr;
+     break;
+ 
+   case SQL_ATTR_PARAMSET_SIZE:
+@@ -601,11 +601,11 @@
+     break;
+ 
+   case SQL_ATTR_ROWS_FETCHED_PTR:
+-    options->rowsFetchedPtr= (SQLUINTEGER *)ValuePtr;
++    options->rowsFetchedPtr= (SQLULEN *)ValuePtr;
+     break;
+ 
+   case SQL_ATTR_SIMULATE_CURSOR:
+-    options->simulateCursor= (SQLUINTEGER)ValuePtr;
++    options->simulateCursor= (SQLULEN)ValuePtr;
+     break;
+ 
+     /*
+@@ -670,7 +670,7 @@
+     break;
+ 
+   case SQL_ATTR_PARAMSET_SIZE:
+-    *(SQLUINTEGER *)ValuePtr= 1;
++    *(SQLULEN *)ValuePtr= 1;
+     break;
+ 
+   case SQL_ATTR_ROW_ARRAY_SIZE:
+@@ -744,7 +744,7 @@
+ */
+ 
+ SQLRETURN SQL_API SQLSetConnectOption(SQLHDBC hdbc, SQLUSMALLINT fOption,
+-				      SQLUINTEGER  vParam)
++				      SQLULEN  vParam)
+ {
+   SQLRETURN result= SQL_SUCCESS;
+   DBUG_ENTER("SQLSetConnectOption");
+@@ -776,7 +776,7 @@
+ */
+ 
+ SQLRETURN SQL_API SQLSetStmtOption(SQLHSTMT hstmt,SQLUSMALLINT fOption,
+-				   SQLUINTEGER vParam)
++				   SQLULEN vParam)
+ {
+   SQLRETURN result= SQL_SUCCESS;
+   DBUG_ENTER("SQLSetStmtOption");
+--- driver/prepare.c.orig	Tue Nov  2 06:03:57 2004
++++ driver/prepare.c	Sun Jan  2 17:22:27 2005
+@@ -168,11 +168,11 @@
+ 		    SQLSMALLINT fParamType __attribute__((unused)),
+ 		    SQLSMALLINT fCType,
+ 		    SQLSMALLINT fSqlType,
+-		    SQLUINTEGER cbColDef __attribute__((unused)),
++		    SQLULEN cbColDef __attribute__((unused)),
+ 		    SQLSMALLINT ibScale __attribute__((unused)),
+ 		    SQLPOINTER	rgbValue,
+-		    SQLINTEGER cbValueMax,
+-		    SQLINTEGER FAR *pcbValue)
++		    SQLLEN cbValueMax,
++		    SQLLEN FAR *pcbValue)
+ {
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+   PARAM_BIND param;
+@@ -234,9 +234,9 @@
+ SQLRETURN SQL_API
+ SQLBindParameter(SQLHSTMT hstmt,SQLUSMALLINT ipar, SQLSMALLINT fParamType,
+ 		 SQLSMALLINT fCType, SQLSMALLINT fSqlType,
+-		 SQLUINTEGER cbColDef, SQLSMALLINT ibScale,
+-		 SQLPOINTER rgbValue, SQLINTEGER cbValueMax,
+-		 SQLINTEGER FAR *pcbValue)
++		 SQLULEN cbColDef, SQLSMALLINT ibScale,
++		 SQLPOINTER rgbValue, SQLLEN cbValueMax,
++		 SQLLEN FAR *pcbValue)
+ {
+   return my_SQLBindParameter(hstmt, ipar, fParamType, fCType, fSqlType,
+ 			     cbColDef, ibScale, rgbValue, cbValueMax,
+@@ -254,7 +254,7 @@
+ SQLDescribeParam(SQLHSTMT hstmt,
+ 		 SQLUSMALLINT ipar __attribute__((unused)),
+ 		 SQLSMALLINT FAR *pfSqlType,
+-		 SQLUINTEGER FAR *pcbColDef,
++		 SQLULEN FAR *pcbColDef,
+ 		 SQLSMALLINT FAR *pibScale __attribute__((unused)),
+ 		 SQLSMALLINT FAR *pfNullable)
+ {
+@@ -276,8 +276,8 @@
+ */
+ 
+ SQLRETURN SQL_API
+-SQLParamOptions(SQLHSTMT hstmt, SQLUINTEGER crow,
+-		SQLUINTEGER FAR *pirow __attribute__((unused)))
++SQLParamOptions(SQLHSTMT hstmt, SQLULEN crow,
++		SQLULEN FAR *pirow __attribute__((unused)))
+ {
+   DBUG_ENTER("SQLParamOptions");
+ 
+@@ -317,7 +317,7 @@
+ SQLRETURN SQL_API
+ SQLSetScrollOptions(SQLHSTMT hstmt,
+ 		    SQLUSMALLINT fConcurrency __attribute__((unused)),
+-		    SQLINTEGER crowKeyset __attribute__((unused)),
++		    SQLLEN crowKeyset __attribute__((unused)),
+ 		    SQLUSMALLINT crowRowset)
+ {
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+--- driver/results.c.orig	Thu Nov  4 00:22:23 2004
++++ driver/results.c	Sun Jan  2 18:18:44 2005
+@@ -54,8 +54,8 @@
+ 
+ SQLRETURN SQL_API sql_get_data(STMT *stm,SQLSMALLINT fCType,MYSQL_FIELD *field,
+ 			       SQLPOINTER rgbValue,
+-			       SQLINTEGER  cbValueMax,
+-			       SQLINTEGER FAR *pcbValue,
++			       SQLLEN     cbValueMax,
++			       SQLULEN FAR *pcbValue,
+ 			       char *value,uint length);
+ 
+ /*!
+@@ -215,7 +215,7 @@
+ 	       SQLSMALLINT cbColNameMax,
+ 	       SQLSMALLINT FAR *pcbColName,
+ 	       SQLSMALLINT FAR *pfSqlType,
+-	       SQLUINTEGER FAR *pcbColDef,
++	       SQLULEN FAR *pcbColDef,
+ 	       SQLSMALLINT FAR *pibScale,
+ 	       SQLSMALLINT FAR *pfNullable)
+ {
+@@ -544,7 +544,7 @@
+ 		SQLPOINTER  CharacterAttributePtr,
+ 		SQLSMALLINT BufferLength,
+ 		SQLSMALLINT *StringLengthPtr,
+-		SQLPOINTER  NumericAttributePtr)
++		SQLLEN *NumericAttributePtr)
+ {
+   return get_col_attr(StatementHandle, ColumnNumber,
+ 		      FieldIdentifier, CharacterAttributePtr,
+@@ -563,7 +563,7 @@
+ 		 SQLUSMALLINT fDescType,
+ 		 SQLPOINTER rgbDesc, SQLSMALLINT cbDescMax,
+ 		 SQLSMALLINT FAR *pcbDesc,
+-		 SQLINTEGER FAR *pfDesc)
++		 SQLLEN FAR *pfDesc)
+ {
+   DBUG_ENTER("SQLColAttributes");
+   DBUG_RETURN_STATUS(get_col_attr(hstmt, icol, fDescType, rgbDesc,
+@@ -579,7 +579,7 @@
+ SQLRETURN SQL_API
+ SQLBindCol(SQLHSTMT hstmt, SQLUSMALLINT icol,
+ 	   SQLSMALLINT fCType, SQLPOINTER rgbValue,
+-	   SQLINTEGER  cbValueMax, SQLINTEGER FAR *pcbValue)
++	   SQLLEN  cbValueMax, SQLLEN FAR *pcbValue)
+ {
+   BIND *bind;
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+@@ -708,7 +708,7 @@
+ SQLRETURN SQL_API
+ SQLGetData(SQLHSTMT hstmt,SQLUSMALLINT icol,
+ 	   SQLSMALLINT fCType,SQLPOINTER rgbValue,
+-	   SQLINTEGER cbValueMax, SQLINTEGER FAR *pcbValue)
++	   SQLLEN cbValueMax, SQLLEN FAR *pcbValue)
+ {
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+   SQLRETURN result;
+@@ -774,8 +774,8 @@
+ 	     SQLSMALLINT    fCType,
+ 	     MYSQL_FIELD    *field,
+ 	     SQLPOINTER     rgbValue,
+-	     SQLINTEGER     cbValueMax,
+-	     SQLINTEGER FAR *pcbValue,
++	     SQLLEN         cbValueMax,
++	     SQLULEN FAR    *pcbValue,
+ 	     char	    *value,
+ 	     uint	    length)
+ {
+@@ -1017,7 +1017,7 @@
+   or an SQL_UPDATE or SQL_DELETE operation in SQLSetPos
+ */
+ 
+-SQLRETURN SQL_API SQLRowCount(SQLHSTMT hstmt, SQLINTEGER FAR *pcrow)
++SQLRETURN SQL_API SQLRowCount(SQLHSTMT hstmt, SQLLEN FAR *pcrow)
+ {
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+   DBUG_ENTER("SQLRowCount");
+@@ -1043,7 +1043,7 @@
+ */
+ SQLRETURN SQL_API
+ my_SQLExtendedFetch(SQLHSTMT hstmt, SQLUSMALLINT fFetchType,
+-		    SQLINTEGER irow, SQLUINTEGER FAR *pcrow,
++		    SQLLEN irow, SQLULEN FAR *pcrow,
+ 		    SQLUSMALLINT FAR *rgfRowStatus, bool upd_status)
+ {
+   ulong rows_to_fetch;
+@@ -1053,7 +1053,7 @@
+   STMT FAR *stmt= (STMT FAR*) hstmt;
+   MYSQL_ROW values= 0;
+   MYSQL_ROW_OFFSET save_position;
+-  SQLUINTEGER dummy_pcrow;
++  SQLULEN dummy_pcrow;
+   DBUG_ENTER("SQLExtendedFetch");
+ 
+   LINT_INIT(save_position);
+@@ -1229,7 +1229,7 @@
+ 				      (char*) bind->rgbValue + offset : 0),
+ 				     bind->cbValueMax,
+ 				     (bind->pcbValue ?
+-				      (SQLINTEGER*) ((char*) bind->pcbValue +
++				      (SQLLEN*) ((char*) bind->pcbValue +
+ 						     pcb_offset) : 0),
+ 				     *values,
+ 				     (lengths ? *lengths : *values ?
+@@ -1293,8 +1293,8 @@
+ 
+ SQLRETURN SQL_API
+ SQLExtendedFetch(SQLHSTMT hstmt,SQLUSMALLINT fFetchType,
+-		 SQLINTEGER irow,
+-		 SQLUINTEGER FAR *pcrow,
++		 SQLLEN irow,
++		 SQLULEN FAR *pcrow,
+ 		 SQLUSMALLINT FAR *rgfRowStatus)
+ {
+   return my_SQLExtendedFetch(hstmt, fFetchType, irow,
+@@ -1312,7 +1312,7 @@
+ SQLRETURN SQL_API
+ SQLFetchScroll(SQLHSTMT    StatementHandle,
+ 	       SQLSMALLINT FetchOrientation,
+-	       SQLINTEGER  FetchOffset)
++	       SQLLEN  FetchOffset)
+ {
+   SQLRETURN result;
+   STMT_OPTIONS *options= &((STMT FAR *)StatementHandle)->stmt_options;
+--- driver/utility.c.orig	Sat Dec  4 15:17:25 2004
++++ driver/utility.c	Sun Jan  2 18:33:17 2005
+@@ -231,14 +231,14 @@
+ 
+ SQLRETURN
+ copy_lresult(SQLSMALLINT HandleType, SQLHANDLE Handle,
+-	     SQLCHAR FAR *rgbValue, SQLINTEGER cbValueMax,
+-	     SQLINTEGER FAR *pcbValue,char *src,long src_length,
++	     SQLCHAR FAR *rgbValue, SQLLEN cbValueMax,
++	     SQLLEN FAR *pcbValue,char *src,long src_length,
+ 	     long max_length,long fill_length,ulong *offset,
+ 	     my_bool binary_data)
+ {
+   char *dst= (char*) rgbValue;
+   ulong length;
+-  SQLINTEGER arg_length;
++  SQLLEN arg_length;
+ 
+   if (src && src_length == SQL_NTS)
+     src_length= strlen(src);
+@@ -304,8 +304,8 @@
+ 
+ SQLRETURN
+ copy_binary_result(SQLSMALLINT HandleType, SQLHANDLE Handle,
+-		   SQLCHAR FAR *rgbValue,SQLINTEGER cbValueMax,
+-		   SQLINTEGER FAR *pcbValue,char *src,ulong src_length,
++		   SQLCHAR FAR *rgbValue,SQLLEN cbValueMax,
++		   SQLLEN FAR *pcbValue,char *src,ulong src_length,
+ 		   ulong max_length,ulong *offset)
+ {
+   char *dst= (char*) rgbValue;
