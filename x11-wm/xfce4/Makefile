@@ -3,7 +3,7 @@
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.13 1999/01/12 16:51:20 vanilla Exp $
+# $Id: Makefile,v 1.14 1999/03/31 14:26:01 flathill Exp $
 #
 
 DISTNAME=	xfce-2.4.0
@@ -18,7 +18,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 # depends on xforms
 ONLY_FOR_ARCHS=	i386
 
-USE_GMAKE=	yes
 USE_IMAKE=	yes
+
+MAN1=	xfce.1 xfmouse.1 xfpager.1 xfsound.1 xfwm.1
 
 .include <bsd.port.mk>
