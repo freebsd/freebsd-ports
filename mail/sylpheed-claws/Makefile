@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -15,6 +15,7 @@ DISTNAME=	sylpheed-${PORTVERSION}claws
 DISTFILES=	${EXTRACT_ONLY} \
 		${THEMEFILE}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
@@ -159,6 +160,7 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|src manual faq tools|src tools|' ${WRKSRC}/Makefile.in
 .endif
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -189,5 +191,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/sylprint.rc ${PREFIX}/etc/sylprint.rc.example
 	@${MKDIR} ${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/sylpheed-claws.png
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
