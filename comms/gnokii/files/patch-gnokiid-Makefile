@@ -1,0 +1,15 @@
+--- gnokiid/Makefile.orig	Fri Sep 28 02:07:58 2001
++++ gnokiid/Makefile	Mon Oct 15 01:48:39 2001
+@@ -37,9 +37,9 @@
+ 	@echo "done"
+ 
+ install-suid: all
+-	@if [ -z "/bin/grep -e '^gnokii:' /etc/group" ]; then \
+-		/usr/sbin/groupadd gnokii; \
+-	fi
++	@if (/usr/sbin/pw groupshow gnokii >/dev/null 2>&1); \
++	then echo "Group gnokii exists. Fine.";\
++	else /usr/sbin/pw groupadd gnokii; fi
+ 	$(INSTALL) -d $(sbindir)
+ 	$(INSTALL) -o root -g gnokii -m 4750 gnokiid $(sbindir)
+ 	@echo "done"

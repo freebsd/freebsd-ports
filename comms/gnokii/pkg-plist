@@ -1,22 +1,38 @@
 bin/gnokii
+bin/todologo
 %%X11%%bin/xgnokii
-%%X11%%bin/xlogos
+etc/gnokiirc.sample
 sbin/gnokiid
 sbin/mgnokiidev
-bin/todologo
-etc/gnokiirc
-share/locale/it/LC_MESSAGES/gnokii.mo
-share/locale/pl/LC_MESSAGES/gnokii.mo
-share/locale/de/LC_MESSAGES/gnokii.mo
-share/locale/nl/LC_MESSAGES/gnokii.mo
-share/locale/sk/LC_MESSAGES/gnokii.mo
+%%PORTDOCS%%share/doc/gnokii/CREDITS
+%%PORTDOCS%%share/doc/gnokii/DataCalls-QuickStart
+%%PORTDOCS%%share/doc/gnokii/README
+%%PORTDOCS%%share/doc/gnokii/README-3810
+%%PORTDOCS%%share/doc/gnokii/README-6110
+%%PORTDOCS%%share/doc/gnokii/README-WIN32
+%%PORTDOCS%%share/doc/gnokii/gettext-howto
+%%PORTDOCS%%share/doc/gnokii/gnokii-ir-howto
+%%PORTDOCS%%share/doc/gnokii/gnokii.nol
+%%PORTDOCS%%share/doc/gnokii/packaging-howto
+%%PORTDOCS%%@dirrm share/doc/gnokii
 share/locale/cs/LC_MESSAGES/gnokii.mo
+share/locale/de/LC_MESSAGES/gnokii.mo
 share/locale/et/LC_MESSAGES/gnokii.mo
 share/locale/fi/LC_MESSAGES/gnokii.mo
+share/locale/it/LC_MESSAGES/gnokii.mo
+share/locale/nl/LC_MESSAGES/gnokii.mo
+share/locale/pl/LC_MESSAGES/gnokii.mo
+share/locale/sk/LC_MESSAGES/gnokii.mo
+share/locale/sl/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/C
 %%X11%%share/xgnokii/help/POSIX
+%%X11%%share/xgnokii/help/en_US/COPYING
+%%X11%%share/xgnokii/help/en_US/CREDITS
 %%X11%%share/xgnokii/help/en_US/cables/cables.html
+%%X11%%share/xgnokii/help/en_US/config.html
+%%X11%%share/xgnokii/help/en_US/faq.html
 %%X11%%share/xgnokii/help/en_US/firmware/firmware.html
+%%X11%%share/xgnokii/help/en_US/index.html
 %%X11%%share/xgnokii/help/en_US/irda/irda.html
 %%X11%%share/xgnokii/help/en_US/netmon/faq_net0.html
 %%X11%%share/xgnokii/help/en_US/netmon/faq_net1.html
@@ -33,6 +49,8 @@ share/locale/fi/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/en_US/netmon/nm_5110.gif
 %%X11%%share/xgnokii/help/en_US/netmon/nm_9110.gif
 %%X11%%share/xgnokii/help/en_US/netmon/tip.gif
+%%X11%%share/xgnokii/help/en_US/sample/gnokiirc
+%%X11%%share/xgnokii/help/en_US/styl.css
 %%X11%%share/xgnokii/help/en_US/windows/calendar/index.html
 %%X11%%share/xgnokii/help/en_US/windows/contacts/index.html
 %%X11%%share/xgnokii/help/en_US/windows/dtmf/index.html
@@ -41,13 +59,14 @@ share/locale/fi/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/en_US/windows/sms/index.html
 %%X11%%share/xgnokii/help/en_US/windows/speeddial/index.html
 %%X11%%share/xgnokii/help/en_US/windows/xkeyb/index.html
-%%X11%%share/xgnokii/help/en_US/sample/gnokiirc
-%%X11%%share/xgnokii/help/en_US/config.html
-%%X11%%share/xgnokii/help/en_US/faq.html
-%%X11%%share/xgnokii/help/en_US/index.html
-%%X11%%share/xgnokii/help/en_US/styl.css
-%%X11%%share/xgnokii/help/en_US/CREDITS
-%%X11%%share/xgnokii/help/en_US/COPYING
+%%X11%%share/xgnokii/help/pl_PL/calendar.html
+%%X11%%share/xgnokii/help/pl_PL/contacts.html
+%%X11%%share/xgnokii/help/pl_PL/dtmf.html
+%%X11%%share/xgnokii/help/pl_PL/index.html
+%%X11%%share/xgnokii/help/pl_PL/netmon.html
+%%X11%%share/xgnokii/help/pl_PL/netmon/dir0.gif
+%%X11%%share/xgnokii/help/pl_PL/netmon/dir1.gif
+%%X11%%share/xgnokii/help/pl_PL/netmon/glowna.htm
 %%X11%%share/xgnokii/help/pl_PL/netmon/gsm/f2mbus.gif
 %%X11%%share/xgnokii/help/pl_PL/netmon/gsm/f2mbus2.gif
 %%X11%%share/xgnokii/help/pl_PL/netmon/gsm/faq_loga.htm
@@ -70,9 +89,6 @@ share/locale/fi/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/pl_PL/netmon/gsm/nm_5110.gif
 %%X11%%share/xgnokii/help/pl_PL/netmon/gsm/nm_9110.gif
 %%X11%%share/xgnokii/help/pl_PL/netmon/gsm/tip.gif
-%%X11%%share/xgnokii/help/pl_PL/netmon/dir0.gif
-%%X11%%share/xgnokii/help/pl_PL/netmon/dir1.gif
-%%X11%%share/xgnokii/help/pl_PL/netmon/glowna.htm
 %%X11%%share/xgnokii/help/pl_PL/netmon/htm.gif
 %%X11%%share/xgnokii/help/pl_PL/netmon/index.htm
 %%X11%%share/xgnokii/help/pl_PL/netmon/konw.js
@@ -81,20 +97,20 @@ share/locale/fi/LC_MESSAGES/gnokii.mo
 %%X11%%share/xgnokii/help/pl_PL/netmon/spis_d2.htm
 %%X11%%share/xgnokii/help/pl_PL/netmon/spis_g.htm
 %%X11%%share/xgnokii/help/pl_PL/netmon/styl.css
-%%X11%%share/xgnokii/help/pl_PL/calendar.html
-%%X11%%share/xgnokii/help/pl_PL/contacts.html
-%%X11%%share/xgnokii/help/pl_PL/dtmf.html
-%%X11%%share/xgnokii/help/pl_PL/index.html
-%%X11%%share/xgnokii/help/pl_PL/netmon.html
 %%X11%%share/xgnokii/help/pl_PL/sms.html
 %%X11%%share/xgnokii/help/pl_PL/speeddial.html
 %%X11%%share/xgnokii/help/pl_PL/xkeyb.html
+%%X11%%share/xgnokii/xpm/5110.xpm
 %%X11%%share/xgnokii/xpm/6110.xpm
 %%X11%%share/xgnokii/xpm/6150.xpm
-%%X11%%share/xgnokii/xpm/5110.xpm
+%%X11%%share/xgnokii/xpm/Preview_3210.xpm
+%%X11%%share/xgnokii/xpm/Preview_3310.xpm
+%%X11%%share/xgnokii/xpm/Preview_5110.xpm
 %%X11%%share/xgnokii/xpm/Preview_6110.xpm
 %%X11%%share/xgnokii/xpm/Preview_6150.xpm
 %%X11%%share/xgnokii/xpm/Preview_6210.xpm
+%%X11%%share/xgnokii/xpm/Preview_6250.xpm
+%%X11%%share/xgnokii/xpm/Preview_7110.xpm
 %%X11%%@dirrm share/xgnokii/help/en_US/cables
 %%X11%%@dirrm share/xgnokii/help/en_US/calendar
 %%X11%%@dirrm share/xgnokii/help/en_US/contacts
@@ -114,38 +130,13 @@ share/locale/fi/LC_MESSAGES/gnokii.mo
 %%X11%%@dirrm share/xgnokii/help/en_US/windows/sms
 %%X11%%@dirrm share/xgnokii/help/en_US/windows/speeddial
 %%X11%%@dirrm share/xgnokii/help/en_US/windows/xkeyb
-%%X11%%@dirrm share/xgnokii/help/en_US/xkeyb
 %%X11%%@dirrm share/xgnokii/help/en_US/windows
+%%X11%%@dirrm share/xgnokii/help/en_US/xkeyb
 %%X11%%@dirrm share/xgnokii/help/en_US/sample
+%%X11%%@dirrm share/xgnokii/help/en_US
 %%X11%%@dirrm share/xgnokii/help/pl_PL/netmon/gsm
 %%X11%%@dirrm share/xgnokii/help/pl_PL/netmon
 %%X11%%@dirrm share/xgnokii/help/pl_PL
-%%X11%%@dirrm share/xgnokii/help/en_US
 %%X11%%@dirrm share/xgnokii/help
 %%X11%%@dirrm share/xgnokii/xpm
 %%X11%%@dirrm share/xgnokii
-%%PORTDOCS%%share/doc/gnokii/test.vcs
-%%PORTDOCS%%share/doc/gnokii/sample/ppp-on
-%%PORTDOCS%%share/doc/gnokii/sample/ppp-gnokii
-%%PORTDOCS%%share/doc/gnokii/sample/pap-secrets
-%%PORTDOCS%%share/doc/gnokii/sample/options
-%%PORTDOCS%%share/doc/gnokii/protocol/7110.txt
-%%PORTDOCS%%share/doc/gnokii/protocol/6110.txt
-%%PORTDOCS%%share/doc/gnokii/packaging-howto
-%%PORTDOCS%%share/doc/gnokii/gnokii.nol
-%%PORTDOCS%%share/doc/gnokii/gnokii-ir-howto
-%%PORTDOCS%%share/doc/gnokii/gettext-howto
-%%PORTDOCS%%share/doc/gnokii/README-WIN32
-%%PORTDOCS%%share/doc/gnokii/README-6110
-%%PORTDOCS%%share/doc/gnokii/README-3810
-%%PORTDOCS%%share/doc/gnokii/README-2110
-%%PORTDOCS%%share/doc/gnokii/README
-%%PORTDOCS%%share/doc/gnokii/FAQ
-%%PORTDOCS%%share/doc/gnokii/DataCalls-QuickStart
-%%PORTDOCS%%share/doc/gnokii/ChangeLog
-%%PORTDOCS%%share/doc/gnokii/CodingStyle
-%%PORTDOCS%%share/doc/gnokii/CREDITS
-%%PORTDOCS%%share/doc/gnokii/Bugs
-%%PORTDOCS%%@dirrm share/doc/gnokii/sample
-%%PORTDOCS%%@dirrm share/doc/gnokii/protocol
-%%PORTDOCS%%@dirrm share/doc/gnokii

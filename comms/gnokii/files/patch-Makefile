@@ -1,0 +1,15 @@
+--- Makefile.orig	Fri Sep 28 02:07:58 2001
++++ Makefile	Mon Oct 15 02:07:01 2001
+@@ -153,8 +153,11 @@
+ 			$(MAKE) -C $$dir install-suid; \
+ 		fi; \
+ 	done
++	@if [ "x$(USE_NLS)" = xyes ]; then \
++		$(MAKE) -C $(PO_DIR) install; \
++	fi
+ 	@if [ "$(GTK_LIBS)" ]; then \
+-		@for dir in $(GTK_DIRS); do \
++		for dir in $(GTK_DIRS); do \
+ 			if [ -e $$dir/Makefile ]; then \
+ 				$(MAKE) -C $$dir install-suid; \
+ 			fi; \
