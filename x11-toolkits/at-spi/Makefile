@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	at-spi
-PORTVERSION=	0.10.0
-PORTREVISION=	1
+PORTVERSION=	0.12.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
@@ -15,14 +14,14 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gailutil.11:${PORTSDIR}/x11-toolkits/gail \
+LIB_DEPENDS=	gailutil.13:${PORTSDIR}/x11-toolkits/gail \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
 		--datadir=${PREFIX}/share/gnome2 \
 		--with-html-dir=${PREFIX}/share/doc \
