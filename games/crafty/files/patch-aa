@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jul 28 16:54:47 1999
-+++ Makefile	Fri Aug  6 10:52:33 1999
+--- Makefile.orig	Fri Aug  6 11:38:11 1999
++++ Makefile	Mon Aug 23 13:13:58 1999
 @@ -23,7 +23,7 @@
  #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
  #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
@@ -9,7 +9,7 @@
  #   
  #   The next options are optimizations inside Crafty that you will have
  #   test to see if they help.  on some machines, these will slow things
-@@ -75,14 +75,16 @@
+@@ -72,13 +72,15 @@
  # asm     = X86.o
  
  # FreeBSD (gcc 2.6.3)
@@ -18,35 +18,36 @@
  #CC      = gcc
  #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
  #CXX	 = $(CC)
- #CXXFLAGS= $(CFLAGS)
 -#LDFLAGS = 
 -#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
 +LDFLAGS = 
 +opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS
 +.if ${MACHINE_ARCH} == "i386"
-+opt	+= -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
++opt     +=-DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
 +.endif
  
  # FreeBSD (pgcc)
  #target  = FreeBSD
-@@ -106,20 +108,25 @@
+@@ -100,23 +102,28 @@
   
  # LINUX (pgcc)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
 -target  = LINUX
 -CC      = gcc
--CFLAGS  = -Wall -pipe -D_REENTRANT -mpentium -O
 -CXX	= $(CC)
--CXXFLAGS= -pipe -D_REENTRANT -mpentium -O 
++#target  = LINUX
++#CC      = gcc
++#CXX	= $(CC)
+ #CFLAGS = -Wall -pipe -D_REENTRANT -march=i686 -O \
+ #         -malign-double -malign-loops=4 -malign-jumps=4 -malign-functions=4\
+ #         -mpreferred-stack-boundary=4
+-CFLAGS = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem -fomit-frame-pointer
++#CFLAGS = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem -fomit-frame-pointer
+ 
 -LDFLAGS = -lpthread
 -opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
-+#target  = LINUX
-+#CC      = gcc
-+#CFLAGS  = -Wall -pipe -D_REENTRANT -mpentium -O
-+#CXX	= $(CC)
-+#CXXFLAGS= -pipe -D_REENTRANT -mpentium -O 
 +#LDFLAGS = -lpthread
 +#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 +#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
@@ -55,18 +56,17 @@
  # Uncomment the SECOND `asm' line for ELF systems.
  #
 -#asm     = X86-aout.o
--asm     = X86-elf.o
 +.if ${MACHINE_ARCH} == "i386"
 +.if ${PORTOBJFORMAT} == "aout"
-+asm	= X86-aout.o
++asm     = X86-aout.o
 +.else
-+asm	= X86-elf.o
+ asm     = X86-elf.o
 +.endif
 +.endif
   
  # LINUX (gcc)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
-@@ -185,7 +192,7 @@
+@@ -177,7 +184,7 @@
  
  # Do not change anything below this line!
  
