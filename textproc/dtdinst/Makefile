@@ -10,23 +10,23 @@ PORTVERSION=	2001.12.03
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.thaiopensource.com/dtdinst/
 DISTNAME=	${PORTNAME}
-DISTFILES=	${JAR} dtdinst2rng.xsl index.html copying.txt
+DISTFILES=	${JARFILE} dtdinst2rng.xsl index.html copying.txt
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=
 
 MAINTAINER=	fuyuki@mj.0038.net
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
-
+USE_JAVA=	1.1+
+NO_BUILD_DEPENDS_JAVA=	yes
 NO_BUILD=	yes
 
-JAR=		${DISTNAME}.jar
+JARFILE=	${DISTNAME}.jar
 JAVALIBDIR=	${PREFIX}/share/java/classes
 XMLDIR=		${PREFIX}/share/xml/${PORTNAME}
 
 do-install:
 	${MKDIR} ${JAVALIBDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${JAR} ${JAVALIBDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${JARFILE} ${JAVALIBDIR}
 	${MKDIR} ${XMLDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.xsl ${XMLDIR}
 
