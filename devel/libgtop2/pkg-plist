@@ -44,10 +44,6 @@ include/libgtop-2.0/glibtop/xmalloc.h
 include/libgtop-2.0/glibtop_machine.h
 include/libgtop-2.0/glibtop_server.h
 include/libgtop-2.0/glibtop_suid.h
-include/libgtop-2.0/gnomesupport.h
-lib/libgnomesupport-2.0.a
-lib/libgnomesupport-2.0.so
-lib/libgnomesupport-2.0.so.0
 lib/libgtop-2.0.a
 lib/libgtop-2.0.so
 lib/libgtop-2.0.so.2
@@ -66,7 +62,6 @@ lib/libgtop_sysdeps-2.0.so.2
 lib/libgtop_sysdeps_suid-2.0.a
 lib/libgtop_sysdeps_suid-2.0.so
 lib/libgtop_sysdeps_suid-2.0.so.2
-libdata/pkgconfig/gnome-support-2.0.pc
 libdata/pkgconfig/libgtop-2.0.pc
 share/locale/am/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ar/LC_MESSAGES/libgtop-2.0.mo
