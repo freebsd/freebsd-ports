@@ -12,7 +12,7 @@ CATEGORIES=	irc russian
 MASTER_SITES=	ftp://ftp.ircd.ru/pub/ircd-RU/ ftp://ftp.ircd.ru/pub/ircd-RU/old/
 DISTNAME=	ircd-RU-${PORTVERSION}-02-stable
 
-MAINTAINER=	ilya@ircd.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc daemon with translation schemes and other useful features
 
 USE_BZIP2=	yes
