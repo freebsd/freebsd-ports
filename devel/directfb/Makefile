@@ -47,8 +47,14 @@ PLIST_SUB+=	WITH_FREETYPE2="@comment "
 MAN1=		directfb-csource.1 dfbg.1
 MAN5=		directfbrc.5
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
