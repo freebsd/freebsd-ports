@@ -800,7 +800,6 @@ MASTER_SITE_VIM+= \
 
 MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/hci/windowmaker/%SUBDIR%/ \
 	ftp://ftp.zcu.cz/pub/X11/windowmaker/%SUBDIR%/ \
