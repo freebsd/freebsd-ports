@@ -106,7 +106,6 @@ configure () {
 #endif
 END
 
-    echo "#define BuildThreadStubLibrary YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXxserv YES" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
