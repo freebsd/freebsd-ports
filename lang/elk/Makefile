@@ -5,7 +5,7 @@
 #
 
 DISTNAME=       elk-2.2
-MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools
+MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools/
 PATCH_STRIP=	-p1
 
 #
