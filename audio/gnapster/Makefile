@@ -1,19 +1,20 @@
 # New ports collection makefile for:	gnapster	
-# Version required:	1.3.6
+# Version required:	1.3.7
 # Date created:		24 December 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnapster-1.3.6
+DISTNAME=	gnapster-1.3.7
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gotlinux.org/~jasta/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		Xpm.4:${PORTSDIR}/graphics/xpm \
+		ungif.5:${PORTSDIR}/graphics/libungif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
