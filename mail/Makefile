@@ -199,7 +199,6 @@
     SUBDIR += stuphead
     SUBDIR += sylpheed
     SUBDIR += teapop
-    SUBDIR += tkrat
     SUBDIR += tkrat2
     SUBDIR += tlb
     SUBDIR += tmda
