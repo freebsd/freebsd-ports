@@ -67,6 +67,8 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/dcm.so
 %%MODULES%%lib/ImageMagick/modules/coders/dps.la
 %%MODULES%%lib/ImageMagick/modules/coders/dps.so
+%%MODULES%%lib/ImageMagick/modules/coders/dpx.la
+%%MODULES%%lib/ImageMagick/modules/coders/dpx.so
 %%MODULES%%lib/ImageMagick/modules/coders/ept.la
 %%MODULES%%lib/ImageMagick/modules/coders/ept.so
 %%MODULES%%lib/ImageMagick/modules/coders/fax.la
@@ -226,10 +228,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
 share/ImageMagick/Copyright.txt
 share/ImageMagick/ImageMagick.html
 share/ImageMagick/QuickStart.txt
+share/ImageMagick/images/appligent.jpg
 share/ImageMagick/images/authentica.jpg
 share/ImageMagick/images/ball.png
 share/ImageMagick/images/corbis.png
-share/ImageMagick/images/digital-applications.png
 share/ImageMagick/images/examples.jpg
 share/ImageMagick/images/home.png
 share/ImageMagick/images/logo.png
@@ -241,6 +243,42 @@ share/ImageMagick/images/right_triangle_option.png
 share/ImageMagick/images/screen.png
 share/ImageMagick/magic.mgk
 share/ImageMagick/www/Changelog.html
+share/ImageMagick/www/Magick++/Blob.html
+share/ImageMagick/www/Magick++/Cache.fig
+share/ImageMagick/www/Magick++/Cache.png
+share/ImageMagick/www/Magick++/Cache.svg
+share/ImageMagick/www/Magick++/Color.html
+share/ImageMagick/www/Magick++/Documentation.html
+share/ImageMagick/www/Magick++/Drawable.html
+share/ImageMagick/www/Magick++/Drawable_example_1.png
+share/ImageMagick/www/Magick++/Enumerations.html
+share/ImageMagick/www/Magick++/Exception.html
+share/ImageMagick/www/Magick++/FormatCharacters.html
+share/ImageMagick/www/Magick++/Future.html
+share/ImageMagick/www/Magick++/Geometry.html
+share/ImageMagick/www/Magick++/Image.fig
+share/ImageMagick/www/Magick++/Image.html
+share/ImageMagick/www/Magick++/Image.png
+share/ImageMagick/www/Magick++/Image.svg
+share/ImageMagick/www/Magick++/ImageDesign.html
+share/ImageMagick/www/Magick++/ImageMagick.png
+share/ImageMagick/www/Magick++/Install.html
+share/ImageMagick/www/Magick++/Magick++.png
+share/ImageMagick/www/Magick++/Montage.html
+share/ImageMagick/www/Magick++/NEWS.html
+share/ImageMagick/www/Magick++/PixelPacket.html
+share/ImageMagick/www/Magick++/Pixels.html
+share/ImageMagick/www/Magick++/README.txt
+share/ImageMagick/www/Magick++/STL.html
+share/ImageMagick/www/Magick++/index.html
+share/ImageMagick/www/Magick++/montage-sample-framed.jpg
+share/ImageMagick/www/Magick++/right_triangle.png
+share/ImageMagick/www/Magick++/thumbnail-anatomy-framed.fig
+share/ImageMagick/www/Magick++/thumbnail-anatomy-framed.jpg
+share/ImageMagick/www/Magick++/thumbnail-anatomy-plain.fig
+share/ImageMagick/www/Magick++/thumbnail-anatomy-plain.jpg
+share/ImageMagick/www/Magick++/thumbnail-sample-framed.jpg
+share/ImageMagick/www/Magick++/thumbnail-sample-plain.jpg
 share/ImageMagick/www/Magick.html
 share/ImageMagick/www/animate.html
 share/ImageMagick/www/api/animate.html
@@ -319,6 +357,7 @@ share/ImageMagick/www/sponsor.html
 share/ImageMagick/www/tools.html
 @dirrm share/ImageMagick/www/api/types
 @dirrm share/ImageMagick/www/api
+@dirrm share/ImageMagick/www/Magick++
 @dirrm share/ImageMagick/www
 @dirrm share/ImageMagick/images
 @dirrm share/ImageMagick
