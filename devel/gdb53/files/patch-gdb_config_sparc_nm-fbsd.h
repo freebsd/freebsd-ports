@@ -1,6 +1,6 @@
 --- gdb/config/sparc/nm-fbsd.h.orig	Fri Mar  1 18:35:24 2002
-+++ gdb/config/sparc/nm-fbsd.h	Thu Oct 17 06:00:39 2002
-@@ -32,36 +32,27 @@
++++ gdb/config/sparc/nm-fbsd.h	Tue Oct 22 16:33:14 2002
+@@ -32,36 +32,45 @@
  #define ATTACH_DETACH
  
  
@@ -23,8 +23,26 @@
 +
 +#define CHILD_PREPARE_TO_STORE() read_register_bytes (0, NULL, REGISTER_BYTES)
 +
-+#define	reg32	reg
-+#define	reg64	reg
++#define REG32_OFFSET_GLOBAL	(0)
++#define REG32_OFFSET_OUT	(32)
++#define REG32_OFFSET_NPC	(96)
++#define REG32_OFFSET_PC		(100)
++#define REG32_OFFSET_PSR	(104)
++#define REG32_OFFSET_Y		(112)
++#define REG32_SIZE		(128)
++#define FPREG32_SIZE		(136)
++
++#define REG64_OFFSET_GLOBAL	(0)
++#define REG64_OFFSET_OUT	(64)
++#define REG64_OFFSET_NPC	(192)
++#define REG64_OFFSET_PC		(200)
++#define REG64_OFFSET_TSTATE	(208)
++#define REG64_OFFSET_Y		(224)
++#define REG64_SIZE		(256)
++#define FPREG64_SIZE		(272)
++
++#define	JB32_OFFSET_PC		REG32_OFFSET_PC
++#define	JB64_OFFSET_PC		REG64_OFFSET_PC
  
 -#define PTRACE_GETREGS	 PT_GETREGS
 -#define PTRACE_SETREGS	 PT_SETREGS
@@ -48,7 +66,7 @@
 -#define fpu_fr		fr_regs		/* a union w/in struct fpu on Solaris */
 -#define fpu_fsr		fr_fsr
 -#define Fpu_fsr		fr_fsr
-+#define	fpreg32	fpreg
++#define	reg64	reg
 +#define	fpreg64	fpreg
  
  #endif /* NM_FBSD_H */
