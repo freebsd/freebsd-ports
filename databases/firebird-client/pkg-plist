@@ -25,6 +25,7 @@ firebird/doc/README.NTSecurity
 firebird/doc/README.Win32LibraryInstallation.txt
 firebird/doc/README.build.mingw.html
 firebird/doc/README.build.msvc.html
+firebird/doc/README.install.Solaris_on_Intel
 firebird/doc/README.instsvc
 firebird/doc/README.makefiles
 firebird/doc/README.user
