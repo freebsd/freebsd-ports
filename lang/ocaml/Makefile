@@ -3,7 +3,7 @@
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.5 1999/03/24 17:52:16 steve Exp $
+# $Id: Makefile,v 1.6 1999/03/27 22:15:53 asami Exp $
 #
 
 DISTNAME=	ocaml-2.02
@@ -17,13 +17,12 @@ MAINTAINER=	ortmann@isl.net
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-ALL_TARGET=	world bootstrap opt
-# targets not yet working (due to Elf) ==> ocamlc.opt ocamlopt.opt
+#USE_GMAKE=	yes
+ALL_TARGET=	world bootstrap opt ocamlc.opt ocamlopt.opt
 
 MAN1=		ocaml.1 ocamlc.1 ocamlcp.1 ocamldep.1 ocamllex.1 \
-		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1 ocamlmktop.1
-# manpages not yet installing (due to Elf) ==> ocamlc.opt.1 ocamlopt.opt.1
+		ocamlopt.1 ocamlprof.1 ocamlrun.1 ocamlyacc.1 ocamlmktop.1 \
+		ocamlc.opt.1 ocamlopt.opt.1
 
 CONFIGURE_ENV=	PREFIX=${PREFIX} X11BASE=${X11BASE} BATCH=${BATCH}
 
