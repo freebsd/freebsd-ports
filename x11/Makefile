@@ -73,6 +73,7 @@
     SUBDIR += keylaunch
     SUBDIR += kgamma
     SUBDIR += libICE
+    SUBDIR += libSM
     SUBDIR += libX11
     SUBDIR += libXau
     SUBDIR += libXtrans
