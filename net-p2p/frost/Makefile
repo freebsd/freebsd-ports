@@ -7,7 +7,7 @@
 
 PORTNAME=	frost
 PORTVERSION=	1.2.0.20040225
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jtcfrost
@@ -27,7 +27,7 @@ PLIST_SUB=	JAR_DIR=${JAR_DIR}
 
 VERSION_DATE=	090603
 
-JAVAVM=		${LOCALBASE}/bin/javavm
+JAVAVM=		${LOCALBASE}/bin/java
 SHARE_DIR=	share/${PORTNAME}
 JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_FILE=	frost.jar
@@ -48,6 +48,7 @@ SHARE_FILES=	config/boards.xml.default \
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
+		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
 		s|%%JAVAVM%%|${JAVAVM}|; \
 		s|%%JAR_DIR%%|${JAR_DIR}|; \
 		s|%%JAR_FILE%%|${JAR_FILE}|; \

@@ -7,7 +7,7 @@
 
 PORTNAME=	edonkey
 PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net java
 MASTER_SITES=	http://www.edonkey2000.com/files/
 PKGNAMESUFFIX=	-gui-java
@@ -28,11 +28,12 @@ PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE} \
 		WRAPPER=${PORTNAME}${PKGNAMESUFFIX}
 
-JAVAVM=		${LOCALBASE}/bin/javavm
+JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	share/java/jar/${PORTNAME}
 
 post-patch:
 	@${SED} -e "s|%%JAR_DIR%%|${JAR_DIR}|;s|%%JAR_FILE%%|${JAR_FILE}|; \
+		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
