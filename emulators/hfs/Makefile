@@ -7,8 +7,3 @@ USE_GMAKE=	yes
 pre-install:
 	@mkdir -p ${PREFIX}/bin
 	@mkdir -p ${PREFIX}/man/man1
-
-install:
-	@chown root ${PREFIX}/bin/hfs
-	@chmod u+s  ${PREFIX}/bin/hfs
-
