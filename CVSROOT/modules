@@ -3394,6 +3394,7 @@ llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 lmbench		ports/benchmarks/lmbench
 lmmon		ports/sysutils/lmmon
+lmtp2nntp	ports/mail/lmtp2nntp
 ln		src/bin/ln
 locate		src/usr.bin/locate
 lock		src/usr.bin/lock
