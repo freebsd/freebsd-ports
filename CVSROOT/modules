@@ -457,6 +457,7 @@ beecrypt	ports/security/beecrypt
 bfbtester	ports/security/bfbtester
 bfe		ports/emulators/bfe
 bftpd		ports/ftp/bftpd
+bgpq		ports/net/bgpq
 bgrab		ports/news/bgrab
 bgrot		ports/x11/bgrot
 biabam		ports/mail/biabam
