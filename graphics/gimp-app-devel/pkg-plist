@@ -18,17 +18,19 @@ include/libgimp/gimpui.h
 lib/libgck.a
 lib/libgck.la
 lib/libgck.so
-lib/libgck.so.1.0
+lib/libgck.so.1
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.1.0
+lib/libgimp.so.1
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.1.0
+lib/libgimpui.so.1
 lib/libgpc.a
 lib/libmegawidget.a
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/gimp/1.0/plug-ins/AlienMap
 libexec/gimp/1.0/plug-ins/CEL
 libexec/gimp/1.0/plug-ins/CML_explorer
@@ -149,6 +151,7 @@ libexec/gimp/1.0/plug-ins/vpropagate
 libexec/gimp/1.0/plug-ins/waves
 libexec/gimp/1.0/plug-ins/webbrowser
 libexec/gimp/1.0/plug-ins/whirlpinch
+libexec/gimp/1.0/plug-ins/xd
 libexec/gimp/1.0/plug-ins/xpm
 libexec/gimp/1.0/plug-ins/xwd
 libexec/gimp/1.0/plug-ins/zealouscrop
