@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1997/10/12 14:00:35 itojun Exp $
+# $Id: Makefile,v 1.13 1997/10/13 11:11:32 itojun Exp $
 #
 
     SUBDIR += agrep
@@ -18,6 +18,7 @@
     SUBDIR += rman
     SUBDIR += sgmlformat
     SUBDIR += sp
+    SUBDIR += texi2html
     SUBDIR += unroff
     SUBDIR += wdiff
 
