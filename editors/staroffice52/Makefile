@@ -34,6 +34,7 @@ COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
+NO_LATEST_LINK=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be downloaded direct from Sun via www interface'
 CD_MOUNTPT=	'/cdrom'
