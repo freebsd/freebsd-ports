@@ -7,9 +7,10 @@
 
 PORTNAME=		regexxer
 PORTVERSION=		0.4
+PORTREVISION=		1
 CATEGORIES=		devel textproc gnome
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
-	       		${MASTER_SITE_SOURCEFORGE:S/$/:pcre/}
+			${MASTER_SITE_SOURCEFORGE:S/$/:pcre/}
 MASTER_SITE_SUBDIR=	${PORTNAME} \
 			${PCRE_NAME}/:pcre
 DISTFILES=		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -23,17 +24,16 @@ LIB_DEPENDS=		gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_GNOME=		gnomehack gnomeprefix
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=		gnomehack gnomeprefix gnometarget
 CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"
 
 PCRE_NAME=		pcre
-PCRE_VERSION=		3.9
+PCRE_VERSION=		4.3
 PCRE_WRKDIR=		${WRKDIR}/${PCRE_NAME}-${PCRE_VERSION}
 
 pre-configure:
 	@(cd ${PCRE_WRKDIR} && \
-		$(ECHO) "Configuring PCRE... " && \
+		$(ECHO_CMD) "Configuring PCRE... " && \
 		${SETENV} CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
 		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
