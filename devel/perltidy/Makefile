@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	perltidy
-PORTVERSION=	20010731
+PORTVERSION=	20010903
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,7 +27,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog perl2web perltidy tutorial
+.for file in BUGS ChangeLog perl2web perltidy tutorial
 .for ext in html txt
 	${INSTALL_DATA} ${WRKSRC}/docs/${file}.${ext} ${DOCSDIR}
 .endfor
