@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_devtools
 PORTVERSION=		8.0
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		devel emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -22,7 +22,8 @@ DISTFILES=		glibc-devel-2.2.93-5.i386.rpm \
 			gcc-g77-3.2-7.i386.rpm \
 			gdb-5.2.1-4.i386.rpm \
 			rpm-build-4.1-1.06.i386.rpm \
-			rpm-devel-4.1-1.06.i386.rpm
+			rpm-devel-4.1-1.06.i386.rpm \
+			glibc-kernheaders-2.4-7.20.i386.rpm
 EXTRACT_ONLY=
 
 PATCH_SITES=		${MASTER_SITE_REDHAT_LINUX}
