@@ -8,4 +8,4 @@ crontab(5) is a concept of duration. Each schedule has its own duration,
 and clash detection can be done upon that.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

@@ -8,4 +8,4 @@ However, there are problems with locales; cf. the perllocale manpage.
 This module is meant to provide an alternative to locale-based sorting.
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>

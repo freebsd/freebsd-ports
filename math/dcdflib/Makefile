@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://odin.mda.uth.tmc.edu/pub/source/
 
-MAINTAINER=	tobez@plab.ku.dk
+MAINTAINER=	tobez@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/dcdflib.c/src
 

@@ -10,4 +10,4 @@ The module also supplies a re-entrant, highly configurable replacement
 for the built-in Perl format() mechanism. 
 
 -Anton
-<tobez@tobez.org>
+<tobez@FreeBSD.org>
