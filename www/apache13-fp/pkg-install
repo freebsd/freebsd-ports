@@ -5,6 +5,8 @@
 # Created by: hetzels@westbend.net
 
 PKG_BATCH=${BATCH:=NO}
+PKG_USER=${PKG_USER:=apache}
+PKG_GROUP=${PKG_GROUP:=apache}
 
 PKG_PREFIX=${PKG_PREFIX}
 HOST_NAME=`/bin/hostname`
@@ -20,14 +22,56 @@ FPDOCDIR=${AP_SHARE}/manual/mod/mod_frontpage
 IMAGES_DIR=${AP_SHARE}/manual/images
 IMAGES_VTI=${PKG_PREFIX}/www/data/images/_vti_cnf
 
+create_user()
+{
+	if [ ! -x /usr/sbin/pw ]; then
+		echo "*** Please add a user and a group name \`${PKG_GROUP}' before installing this package."
+		exit 69
+	fi
+
+	if ! pw show group ${PKG_GROUP} -q > /dev/null; then
+		gid=80
+		while pw show group -g ${gid} -q > /dev/null; do
+			gid=`expr ${gid} + 1`
+		done
+		if ! pw add group ${PKG_GROUP} -g ${gid}; then
+			e=$?
+			echo "*** Failed to add group \`${PKG_GROUP}'.  Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added group \`${PKG_GROUP}' (id ${gid})."
+	else
+		gid=`pw show group ${PKG_GROUP} 2> /dev/null | cut -d: -f3`
+	fi
+
+	if [ -x /sbin/nologin ]; then
+		shell="/sbin/nologin"
+	else
+		shell="/nonexistent"
+	fi
+
+	if ! pw show user ${PKG_USER} -q > /dev/null; then
+		uid=80
+		while pw show user -u ${uid} -q > /dev/null; do
+			uid=`expr ${uid} + 1`
+		done
+		if ! pw add user ${PKG_USER} -u ${uid} -g ${gid} \
+				-d "${PKG_PREFIX}/www/data" \
+				-c "The Apache Web Server" \
+				-s "${shell}" -p "*" ; then
+			e=$?
+			echo "*** Failed to add user \`${PKG_USER}'. Please add it manually."
+			exit ${e}
+		fi
+		echo "*** Added user \`${PKG_USER}' (id ${uid})"
+	fi
+}
+		
 create_apache_lang_doc ()
 {
-    for lang in ca cz de dk ee en es fr it ja.jis lu nl po.iso-pl pt pt-br se
-    {
-	/bin/cat ${AP_SHARE}/index.html.${lang}-dist | \
+	/bin/cat ${AP_SHARE}/index.html.en-dist | \
 	   /usr/bin/sed -e 's;@@HOSTNAME@@;'${HOST_NAME}';' \
-	   > ${AP_SHARE}/index.html.${lang}
-    }
+	   > ${AP_SHARE}/index.html.en
 }
 
 create_apache_doc_root ()
@@ -42,12 +86,7 @@ create_apache_doc_root ()
 	{
 	    /bin/cp -rp ${IMAGES_DIR}/${file} ${AP_DATA}/images
 	}
-
-	for lang in ca cz de dk ee en es fr it ja.jis lu nl po.iso-pl pt pt-br se
-	{
-	    /bin/cp -rp ${AP_SHARE}/index.html.${lang} \
-		${AP_DATA}/index.html.${lang}
-	}
+	/bin/cp -rp ${AP_SHARE}/index.html.en ${AP_DATA}/index.html.en
     fi
 }
 
@@ -101,6 +140,7 @@ comment_files ()
 
 case $2 in
     PRE-INSTALL)
+	create_user
 	;;
     POST-INSTALL)
 	# If we are not in batch mode then run the FP install script.
