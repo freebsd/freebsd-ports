@@ -1089,5 +1089,5 @@ jdk%%VERSION%%/docs/tooldocs/win32/serialver.html
 @dirrm jdk%%VERSION%%/docs/tooldocs/solaris
 @dirrm jdk%%VERSION%%/docs/tooldocs/win32
 @dirrm jdk%%VERSION%%/docs/tooldocs
-@dirrm jdk%%VERSION%%/docs
-@dirrm jdk%%VERSION%%
+@unexec rmdir %D/jdk%%VERSION%%/docs > /dev/null 2>&1 || true
+@unexec rmdir %D/jdk%%VERSION%% > /dev/null 2>&1 || true

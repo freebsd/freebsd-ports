@@ -2,16 +2,16 @@ Here are some useful bookmark entries for your Web browser:
 
 JDK 1.1.8 Documentation:
 ------------------------
-file:!!PREFIX!!/jdk1.1.8/docs/index.html
+file:${PREFIX}/jdk1.1.8/docs/index.html
 
 JDK 1.1 Package Index:
 ----------------------
-file:!!PREFIX!!/jdk1.1.8/docs/api/packages.html
+file:${PREFIX}/jdk1.1.8/docs/api/packages.html
 
 JDK 1.1 Class Hierarchy:
 ------------------------
-file:!!PREFIX!!/jdk1.1.8/docs/api/tree.html
+file:${PREFIX}/jdk1.1.8/docs/api/tree.html
 
 JDK 1.1 Index:
 --------------
-file:!!PREFIX!!/jdk1.1.8/docs/api/a-names.html
+file:${PREFIX}/jdk1.1.8/docs/api/a-names.html
