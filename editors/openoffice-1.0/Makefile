@@ -35,7 +35,6 @@ TCSH?=	/bin/tcsh
 
 .include <bsd.port.pre.mk>
 
-PROCFS!=		${MOUNT} | ${GREP} ^procfs | ${AWK} '{print $1}'
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
@@ -166,20 +165,6 @@ CONFIGURE_ARGS+=	--enable-gcc3
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "REQUIREMENTS:"
-.if ${PROCFS}
-	@${ECHO}
-	@${ECHO} Check if procfs is running: YES
-.else
-	@${ECHO} -----------------------------------------------------------
-	@${ECHO}
-	@${ECHO} OpenOffice setup still needs a running procfs, which may
-	@${ECHO} not be activated. Please read the procfs\(5\) manpage and
-	@${ECHO} ensure the the following line is in /etc/fstab:
-	@${ECHO}
-	@${ECHO} proc /proc procfs rw 0 0
-	@${ECHO}
-	@${ECHO} -----------------------------------------------------------
-.endif
 .if !defined(USE_GCC) || !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} "OPTIONS:"
