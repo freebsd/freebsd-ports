@@ -7,8 +7,11 @@
 
 PORTNAME=	BitTornado
 PORTVERSION=	0.2.0
+PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
-MASTER_SITES=	http://e.scarywater.net/bt/download/
+MASTER_SITES=	http://e.scarywater.net/bt/download/ \
+		http://mediahost.inetsalestech.com/shadow/ \
+		http://www.hypermax.net.au/~gamr/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sw@gegenunendlich.de
@@ -41,7 +44,7 @@ PLIST_SUB+=	GUI='@comment '
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 post-patch:
 	@${REINPLACE_CMD} -e "s/^psyco = 0/psyco = 1/g" \
-		${WRKSRC}/BitTorrent/PSYCO.py
+		${WRKSRC}/BitTornado/PSYCO.py
 .endif
 
 pre-everything::
