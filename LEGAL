@@ -27,6 +27,7 @@ avifile			ports/graphics/avifile	The program is under GPL but
 						unknown. 
 bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
+blender			ports/graphics/blender	Can't distribute commercially.
 bro-*			ports/security/bro	No distribution due to
 						alpha status
 bzip-*			ports/archivers/bzip	Some algorithms used may
@@ -95,6 +96,7 @@ freefonts		ports/x11-fonts/freefonts	Some of the fonts are
 						tempoita.license say "placed
 						into the public domain and may
 						[not be] sold").
+ftree			ports/misc/ftree	Can't distribute commercially.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
 glimpse-*		ports/textproc/glimpse	Don't sell for profit
