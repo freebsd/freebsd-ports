@@ -5526,6 +5526,7 @@ netcat		ports/net/netcat
 netcdf		ports/math/netcdf
 netcomponents	ports/java/netcomponents
 netdude		ports/net/netdude
+netgen		ports/cad/netgen
 nethack32	ports/games/nethack32
 nethack33	ports/games/nethack33
 nethack33-gnome	ports/games/nethack33-gnome
