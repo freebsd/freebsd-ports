@@ -1,5 +1,4 @@
 bin/amiwm
-man/man1/amiwm.1.gz
 lib/amiwm/requestchoice
 lib/amiwm/executecmd
 lib/amiwm/Background

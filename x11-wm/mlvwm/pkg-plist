@@ -112,6 +112,5 @@ lib/X11/mlvwm/pixmap/mini.xpaint.xpm
 lib/X11/mlvwm/pixmap/mini.xpm
 lib/X11/mlvwm/pixmap/mini.xterm.xpm
 lib/X11/mlvwm/pixmap/mini.zircon.xpm
-man/man1/mlvwm.1.gz
 @dirrm lib/X11/mlvwm/pixmap
 @dirrm lib/X11/mlvwm

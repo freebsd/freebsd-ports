@@ -151,26 +151,5 @@ lib/X11/fvwm2/pixmaps/xterm-sun.xpm
 lib/X11/fvwm2/pixmaps/xterm.xpm
 lib/X11/fvwm2/pixmaps/xv.xpm
 lib/X11/fvwm2/pixmaps/xv2.xpm
-man/man1/fvwm2.1.gz
-man/man1/xpmroot.1.gz
-man/man1/FvwmAudio.1.gz
-man/man1/FvwmAuto.1.gz
-man/man1/FvwmBacker.1.gz
-man/man1/FvwmBanner.1.gz
-man/man1/FvwmButtons.1.gz
-man/man1/FvwmCascade.1.gz
-man/man1/FvwmCpp.1.gz
-man/man1/FvwmForm.1.gz
-man/man1/FvwmIconBox.1.gz
-man/man1/FvwmIconMan.1.gz
-man/man1/FvwmIdent.1.gz
-man/man1/FvwmM4.1.gz
-man/man1/FvwmPager.1.gz
-man/man1/FvwmSave.1.gz
-man/man1/FvwmSaveDesk.1.gz
-man/man1/FvwmScroll.1.gz
-man/man1/FvwmTalk.1.gz
-man/man1/FvwmTile.1.gz
-man/man1/FvwmWinList.1.gz
 @dirrm lib/X11/fvwm2/pixmaps
 @dirrm lib/X11/fvwm2
