@@ -1,0 +1,13 @@
+--- configure.ac.orig	Sat Sep 11 14:32:25 2004
++++ configure.ac	Mon Feb 28 08:46:24 2005
+@@ -114,9 +114,8 @@
+ fi
+ 
+ 
+-if expr match "$target_cpu" 'i.86' > /dev/null; then
++if echo ${target_cpu} | grep -q 'i.86' > /dev/null; then
+ 	AC_DEFINE([C80x86])
+-	AM_CONDITIONAL(C80x86, true)
+ fi
+ 
+ AC_C_BIGENDIAN([], [AC_DEFINE([LSB_FIRST])])
