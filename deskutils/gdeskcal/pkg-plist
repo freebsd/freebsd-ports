@@ -1,0 +1,52 @@
+bin/gdeskcal
+share/gnome/gdeskcal/code/BGWatcher.py
+share/gnome/gdeskcal/code/Cal.py
+share/gnome/gdeskcal/code/CalLabel.py
+share/gnome/gdeskcal/code/CalMediator.py
+share/gnome/gdeskcal/code/CalWindow.py
+share/gnome/gdeskcal/code/Config.py
+share/gnome/gdeskcal/code/ConfigFormatLoader.py
+share/gnome/gdeskcal/code/ConfigLoader.py
+share/gnome/gdeskcal/code/Menu.py
+share/gnome/gdeskcal/code/Navigation.py
+share/gnome/gdeskcal/code/Observable.py
+share/gnome/gdeskcal/code/SkinBrowser.py
+share/gnome/gdeskcal/code/TimeWatcher.py
+share/gnome/gdeskcal/code/__init__.py
+share/gnome/gdeskcal/code/cmdlineparser.py
+share/gnome/gdeskcal/code/configvalues.py
+share/gnome/gdeskcal/code/desktop.py
+share/gnome/gdeskcal/code/errormessage.py
+share/gnome/gdeskcal/code/i18n.py
+share/gnome/gdeskcal/code/values.py
+share/gnome/gdeskcal/data/config.xml
+share/gnome/gdeskcal/data/format.xml
+share/gnome/gdeskcal/gdeskcal
+share/gnome/gdeskcal/skins/default/bg.png
+share/gnome/gdeskcal/skins/default/bg.xcf
+share/gnome/gdeskcal/skins/default/home.png
+share/gnome/gdeskcal/skins/default/next.png
+share/gnome/gdeskcal/skins/default/prev.png
+share/gnome/gdeskcal/skins/default/skin.xml
+share/gnome/gdeskcal/skins/default/today.png
+share/gnome/gdeskcal/skins/big_and_simple/skin.xml
+share/locale/ar/LC_MESSAGES/gdeskcal.mo
+share/locale/cs/LC_MESSAGES/gdeskcal.mo
+share/locale/de/LC_MESSAGES/gdeskcal.mo
+share/locale/el/LC_MESSAGES/gdeskcal.mo
+share/locale/es/LC_MESSAGES/gdeskcal.mo
+share/locale/fr/LC_MESSAGES/gdeskcal.mo
+share/locale/he/LC_MESSAGES/gdeskcal.mo
+share/locale/hu/LC_MESSAGES/gdeskcal.mo
+share/locale/it/LC_MESSAGES/gdeskcal.mo
+share/locale/ja/LC_MESSAGES/gdeskcal.mo
+share/locale/nl/LC_MESSAGES/gdeskcal.mo
+share/locale/ru/LC_MESSAGES/gdeskcal.mo
+share/locale/tr/LC_MESSAGES/gdeskcal.mo
+share/locale/zh_CN/LC_MESSAGES/gdeskcal.mo
+@dirrm share/gnome/gdeskcal/skins/default
+@dirrm share/gnome/gdeskcal/skins/big_and_simple
+@dirrm share/gnome/gdeskcal/skins
+@dirrm share/gnome/gdeskcal/data
+@dirrm share/gnome/gdeskcal/code
+@dirrm share/gnome/gdeskcal
