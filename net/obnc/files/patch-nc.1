@@ -1,0 +1,36 @@
+--- nc.1.orig	Fri Oct 19 07:42:18 2001
++++ nc.1	Fri Oct 19 07:52:16 2001
+@@ -33,7 +33,8 @@
+ .Nd "arbitrary TCP and UDP connections and listens"
+ .Sh SYNOPSIS
+ .Nm nc
+-.Op Fl 46hklnrtuvz
++.Op Fl 46Ehklnrtuvz
++.Op Fl e Ar IPsec policy
+ .Op Fl i Ar interval
+ .Op Fl p Ar source port
+ .Op Fl s Ar source ip address
+@@ -90,6 +91,12 @@
+ Prints out
+ .Nm
+ help.
++.It Fl E
++Shortcut for "-e 'in ipsec esp/transport//require' -e 'out ipsec esp/transport//require'", which enables IPsec ESP transport mode in both directions.
++.It Fl e
++If IPsec support is available, then one can specify the IPsec policies to be used using the syntax described in
++.Xr ipsec_set_policy 3 .
++This flag can be specified up to two times, as typically one policy for each direction is needed.
+ .It Fl i Ar interval
+ Specifies a delay time interval between lines of text sent and received.
+ Also causes a delay time between connections to multiple ports.
+@@ -149,6 +156,10 @@
+ .It Li "nc -s 10.1.2.3 example.host 42"
+ Open a TCP connection to port 42 of example.host using 10.1.2.3 as the
+ IP for the local end of the connection.
++.It Li "nc -E example.host 42"
++Open a TCP connection to port 42 of example.host using IPsec ESP for incoming and outgoing traffic.
++.It Li "nc -e 'out ipsec esp/transport//require' example.host 42"
++Open a TCP connection to port 42 of example.host using IPsec ESP for outgoing traffic only.
+ .It Li "nc -v hostname 42"
+ Open a TCP connection to port 42 of hostname, displaying some
+ diagnostic messages on stderr.
