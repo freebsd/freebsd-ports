@@ -1,9 +1,11 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/DBIx/DBSchema.pm
 %%SITE_PERL%%/DBIx/DBSchema/ColGroup.pm
 %%SITE_PERL%%/DBIx/DBSchema/ColGroup/Index.pm
 %%SITE_PERL%%/DBIx/DBSchema/ColGroup/Unique.pm
 %%SITE_PERL%%/DBIx/DBSchema/Column.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD.pm
+%%SITE_PERL%%/DBIx/DBSchema/DBD/Oracle.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Pg.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/Sybase.pm
 %%SITE_PERL%%/DBIx/DBSchema/DBD/mysql.pm
