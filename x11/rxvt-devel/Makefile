@@ -26,7 +26,6 @@ USE_INC_LIBTOOL_VER=13
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \

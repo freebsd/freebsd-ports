@@ -19,7 +19,6 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
 USE_X_PREFIX=	yes
-USE_SIZE=	yes
 NO_BUILD=	yes
 STRIP=
 WRKSRC=		${WRKDIR}/divx-player-installer

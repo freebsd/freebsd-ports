@@ -19,7 +19,6 @@ BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 ALL_TARGET=	all opt
 
 DATA_FILES=	liber_mimetypes

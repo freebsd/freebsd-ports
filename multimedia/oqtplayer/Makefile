@@ -19,7 +19,6 @@ COMMENT=	A very very small, not functionnal, video OpenQuicktime (TM) player
 
 LIB_DEPENDS=    openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 
-USE_SIZE=	yes
 USE_SDL=	sdl
 MAKE_ENV=	SDL_CONFIG=${SDL_CONFIG}
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

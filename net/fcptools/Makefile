@@ -17,7 +17,6 @@ COMMENT=	FreeNet client library and command-line tools for shell scripting
 
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME:L}
 INSTALLS_SHLIB=	yes

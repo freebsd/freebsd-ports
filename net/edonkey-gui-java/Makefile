@@ -21,7 +21,6 @@ COMMENT=	Java GUI to eDonkey2000 'core' command line client
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 
 USE_JAVA=	1.3+
-USE_SIZE=	yes
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
