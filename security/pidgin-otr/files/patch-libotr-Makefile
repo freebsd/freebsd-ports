@@ -1,0 +1,9 @@
+--- libotr/Makefile.bak	Fri Dec 17 16:31:14 2004
++++ libotr/Makefile	Fri Dec 17 16:31:53 2004
+@@ -1,5 +1,5 @@
+ CC ?= gcc
+-override CFLAGS += -g -Wall -fPIC
++CFLAGS += -g -Wall -fPIC -I %%LOCALBASE%%/include
+ LDFLAGS ?= -lgcrypt -g
+  
+ all: libotr.a

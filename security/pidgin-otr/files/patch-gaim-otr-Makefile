@@ -1,0 +1,22 @@
+--- gaim-otr/Makefile.bak	Fri Dec 17 17:11:49 2004
++++ gaim-otr/Makefile	Fri Dec 17 17:12:57 2004
+@@ -1,5 +1,5 @@
+ # Replace this with the path to the GAIM headers
+-GAIM_SOURCE ?= /usr/include/gaim
++GAIM_SOURCE ?= %%X11BASE%%/include/gaim
+ 
+ # If you don't have pkg-config, put the appropriate -I entry on the next line
+ GTK_HDRS ?= `pkg-config --cflags glib-2.0 gtk+-2.0`
+@@ -19,10 +19,10 @@
+ all: $(TARGET)
+ 
+ $(TARGET): otr-plugin.o ui.o dialogs.o $(LIBOTR_DIR)/libotr.a
+-	$(CC) -g -shared -module -avoid-version $^ -o $@ -lgcrypt
++	$(CC) -g -shared -module -avoid-version -L %%LOCALBASE%%/lib $^ -o $@ -lgcrypt
+ 
+ $(LIBOTR_DIR)/libotr.a: FORCE
+-	make -C $(LIBOTR_DIR) libotr.a
++	gmake -C $(LIBOTR_DIR) libotr.a
+ 
+ install: all
+ 	install -d $(INSTALLDIR)

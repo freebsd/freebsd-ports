@@ -1,0 +1,7 @@
+lib/gaim/gaim-otr.so
+bin/otr_parse
+bin/otr_sesskeys
+bin/otr_mackey
+bin/otr_readforge
+bin/otr_modify
+bin/otr_remac

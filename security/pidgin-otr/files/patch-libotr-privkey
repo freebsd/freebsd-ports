@@ -1,0 +1,11 @@
+--- libotr/privkey.c.bak	Fri Dec 17 16:24:41 2004
++++ libotr/privkey.c	Fri Dec 17 16:24:54 2004
+@@ -24,7 +24,7 @@
+ #include <sys/stat.h>
+ 
+ /* libgcrypt headers */
+-#include "gcrypt.h"
++#include <gcrypt.h>
+ 
+ /* libotr headers */
+ #include "proto.h"

@@ -108,6 +108,7 @@
     SUBDIR += fwtk
     SUBDIR += gag
     SUBDIR += gaim-encryption
+    SUBDIR += gaim-otr
     SUBDIR += gcipher
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass

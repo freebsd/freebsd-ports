@@ -1,0 +1,10 @@
+--- Makefile.bak	Fri Dec 17 16:19:08 2004
++++ Makefile	Fri Dec 17 16:19:16 2004
+@@ -1,4 +1,4 @@
+ all install clean distclean:
+-	make -C libotr $@
+-	make -C gaim-otr $@
+-	make -C tools $@
++	gmake -C libotr $@
++	gmake -C gaim-otr $@
++	gmake -C tools $@
