@@ -1,0 +1,17 @@
+Ray's Mail Filter, Copyright (C) 2000 South Bank University, London
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+   The configuration files, header-list.conf and string-list.conf control
+   which message headers the filter examines and what strings it looks
+   for in those headers. The filter will look for all of the specified
+   strings in all of the specified headers.
+   
+   The configuration files can be changed while the filter is running.
+   The mail-filter reset command is then used to signal the program to
+   re-read the files.
+     
+WWW: http://www.sendmail-filter.sbu.ac.uk/

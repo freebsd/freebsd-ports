@@ -180,6 +180,7 @@
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += qtools
+    SUBDIR += raysfilter
     SUBDIR += razor-agents
     SUBDIR += rblcheck
     SUBDIR += regm

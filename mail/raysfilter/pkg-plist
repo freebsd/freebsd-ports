@@ -1,0 +1,22 @@
+@comment $FreeBSD$
+libexec/rays-filter
+bin/mf-reset
+bin/mf-start
+bin/mf-stop
+bin/mf-archive
+bin/mf-analyze
+bin/mf-memory
+etc/rc.d/raysfilter.sh.sample
+etc/mail-filter/header-list.conf-dist
+etc/mail-filter/mail-filter.conf-dist
+etc/mail-filter/string-list.conf-dist
+@dirrm etc/mail-filter
+%%PORTDOCS%%share/doc/raysfilter/rays-filter.html
+%%PORTDOCS%%share/doc/raysfilter/install.html
+%%PORTDOCS%%share/doc/raysfilter/configure.html
+%%PORTDOCS%%share/doc/raysfilter/operate.html
+%%PORTDOCS%%share/doc/raysfilter/utilities.html
+%%PORTDOCS%%share/doc/raysfilter/GNU-public-licence.txt
+%%PORTDOCS%%share/doc/raysfilter/copyright.txt
+%%PORTDOCS%%share/doc/raysfilter/README
+%%PORTDOCS%%@dirrm share/doc/raysfilter
