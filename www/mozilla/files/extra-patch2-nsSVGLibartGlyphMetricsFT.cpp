@@ -1,66 +1,28 @@
---- layout/svg/renderer/src/libart/nsSVGLibartGlyphMetricsFT.cpp.orig	Wed Mar  2 12:36:59 2005
-+++ layout/svg/renderer/src/libart/nsSVGLibartGlyphMetricsFT.cpp	Wed Mar  2 12:36:37 2005
-@@ -56,6 +56,13 @@
- #include "nsArray.h"
- #include "nsDataHashtable.h"
- 
-+
-+#ifdef HAVE_CPP_2BYTE_WCHAR_T
-+  typedef nsDependentString nsLiteralString;
-+#else
-+  typedef NS_ConvertASCIItoUTF16 nsLiteralString;
-+#endif
-+
- /**
-  * \addtogroup libart_renderer Libart Rendering Engine
-  * @{
-@@ -112,7 +119,7 @@
-   nsCOMPtr<nsISVGGlyphMetricsSource> mSource;
-     
- public:
--  static nsDataHashtable<nsStringHashKey,nsDependentString*> sFontAliases;  
-+  static nsDataHashtable<nsStringHashKey,nsLiteralString*> sFontAliases;  
- };
- 
- /** @} */
-@@ -120,7 +127,7 @@
- //----------------------------------------------------------------------
- // nsSVGLibartGlyphMetricsFT implementation:
- 
--nsDataHashtable<nsStringHashKey,nsDependentString*>
-+nsDataHashtable<nsStringHashKey,nsLiteralString*>
- nsSVGLibartGlyphMetricsFT::sFontAliases;
- 
- 
-@@ -155,15 +162,15 @@
+$NetBSD: patch-by,v 1.2 2004/07/05 14:22:42 taya Exp $
+
+diff -ru ../Orig/mozilla/layout/svg/renderer/src/libart/nsSVGLibartGlyphMetricsFT.cpp ./layout/svg/renderer/src/libart/nsSVGLibartGlyphMetricsFT.cpp
+--- ../Orig/mozilla/layout/svg/renderer/src/libart/nsSVGLibartGlyphMetricsFT.cpp	2004-03-19 10:36:16.000000000 +0900
++++ ./layout/svg/renderer/src/libart/nsSVGLibartGlyphMetricsFT.cpp	2004-07-04 22:59:19.000000000 +0900
+@@ -155,15 +155,15 @@
  
    static NS_NAMED_LITERAL_STRING(arial, "arial");
    nsSVGLibartGlyphMetricsFT::sFontAliases.Put(NS_LITERAL_STRING("helvetica"),
 -                                              &arial);
-+                                              (nsLiteralString *)&arial);
++                                              (nsDependentString *)&arial);
  
    static NS_NAMED_LITERAL_STRING(courier, "courier new");
    nsSVGLibartGlyphMetricsFT::sFontAliases.Put(NS_LITERAL_STRING("courier"),
 -                                              &courier);
-+                                              (nsLiteralString *)&courier);
++                                              (nsDependentString *)&courier);
  
    static NS_NAMED_LITERAL_STRING(times, "times new roman");
    nsSVGLibartGlyphMetricsFT::sFontAliases.Put(NS_LITERAL_STRING("times"),
 -                                              &times);
-+                                              (nsLiteralString *)&times);
++                                              (nsDependentString *)&times);
  }
  
  void NS_FreeSVGLibartGlyphMetricsFTGlobals()
-@@ -406,7 +413,7 @@
-   }
-   else {
-     // try alias if there is one:
--    nsDependentString *alias = nsnull;
-+    nsLiteralString *alias = nsnull;
-     nsSVGLibartGlyphMetricsFT::sFontAliases.Get(NS_ConvertUTF8toUCS2(family_name),
-                                                 &alias);
-     if (alias) {
-@@ -440,19 +447,19 @@
+@@ -440,19 +440,19 @@
      return;
    }
  

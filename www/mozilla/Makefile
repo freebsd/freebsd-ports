@@ -197,6 +197,8 @@ FAKEDIR=	${WRKDIR}/fake
 
 .if ${OSVERSION} < 500035 && !defined(WITH_CAIRO_RENDER)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch2-nsSVGLibartGlyphMetricsFT.cpp
 .endif
 
 .if defined(WITH_SMB)
