@@ -19,9 +19,23 @@ bin/ant
 %%T%%/docs/images/ant_logo_large.gif
 %%T%%/docs/images/ant_logo_medium.gif
 %%T%%/docs/images/ant_logo_small.gif
-%%T%%/docs/images/jakarta-logo.gif
+%%T%%/docs/images/current.gif
+%%T%%/docs/images/group-logo.gif
 %%T%%/docs/images/jw_ec_logo_winner2002.gif
+%%T%%/docs/images/label.gif
+%%T%%/docs/images/menu-left.gif
+%%T%%/docs/images/menu-right.gif
+%%T%%/docs/images/page.gif
+%%T%%/docs/images/printer.gif
+%%T%%/docs/images/project-logo.gif
 %%T%%/docs/images/sdm_productivity_award.gif
+%%T%%/docs/images/search-left.gif
+%%T%%/docs/images/search-right.gif
+%%T%%/docs/images/spacer.gif
+%%T%%/docs/images/tab-left.gif
+%%T%%/docs/images/tab-right.gif
+%%T%%/docs/images/tabSel-left.gif
+%%T%%/docs/images/tabSel-right.gif
 %%T%%/docs/manual/api/org/apache/tools/ant/filters/util/ChainReaderHelper.html
 %%T%%/docs/manual/api/org/apache/tools/ant/filters/util/JavaClassHelper.html
 %%T%%/docs/manual/api/org/apache/tools/ant/filters/util/package-frame.html
@@ -267,6 +281,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-frame.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-summary.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/compilers/package-tree.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/Jasper41Mangler.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspC.WebAppParameter.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/jsp/JspMangler.html
@@ -332,6 +347,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Edit.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Handler.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4HandlerAdapter.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4HandlerAdapter.Reader.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Have.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4Label.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/perforce/P4OutputHandler.html
@@ -417,6 +433,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamList.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/StarTeamTask.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/TreeBasedTask.html
+%%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/starteam/TreeBasedTask.UnmatchedFileMap.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSS.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSADD.html
 %%T%%/docs/manual/api/org/apache/tools/ant/taskdefs/optional/vss/MSVSSCHECKIN.html
@@ -681,6 +698,8 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/types/PatternSet.NameEntry.html
 %%T%%/docs/manual/api/org/apache/tools/ant/types/Reference.html
 %%T%%/docs/manual/api/org/apache/tools/ant/types/RegularExpression.html
+%%T%%/docs/manual/api/org/apache/tools/ant/types/Resource.html
+%%T%%/docs/manual/api/org/apache/tools/ant/types/ResourceFactory.html
 %%T%%/docs/manual/api/org/apache/tools/ant/types/Substitution.html
 %%T%%/docs/manual/api/org/apache/tools/ant/types/XMLCatalog.html
 %%T%%/docs/manual/api/org/apache/tools/ant/types/ZipFileSet.html
@@ -737,6 +756,7 @@ bin/ant
 %%T%%/docs/manual/api/org/apache/tools/ant/util/package-tree.html
 %%T%%/docs/manual/api/org/apache/tools/ant/util/PackageNameMapper.html
 %%T%%/docs/manual/api/org/apache/tools/ant/util/RegexpPatternMapper.html
+%%T%%/docs/manual/api/org/apache/tools/ant/util/ResourceUtils.html
 %%T%%/docs/manual/api/org/apache/tools/ant/util/SourceFileScanner.html
 %%T%%/docs/manual/api/org/apache/tools/ant/util/StringUtils.html
 %%T%%/docs/manual/api/org/apache/tools/ant/util/TaskLogger.html
@@ -861,7 +881,6 @@ bin/ant
 %%T%%/docs/manual/CoreTasks/loadfile.html
 %%T%%/docs/manual/CoreTasks/loadproperties.html
 %%T%%/docs/manual/CoreTasks/mail.html
-%%T%%/docs/manual/CoreTasks/mail.html.orig
 %%T%%/docs/manual/CoreTasks/manifest.html
 %%T%%/docs/manual/CoreTasks/mkdir.html
 %%T%%/docs/manual/CoreTasks/move.html
@@ -993,15 +1012,30 @@ bin/ant
 %%T%%/docs/manual/toc.html
 %%T%%/docs/manual/using.html
 %%T%%/docs/manual/usinglist.html
+%%T%%/docs/projects/antidote/images/screenshot.jpg
+%%T%%/docs/projects/antidote/design.html
+%%T%%/docs/projects/antidote/index.html
+%%T%%/docs/projects/antidote/module.html
+%%T%%/docs/projects/index.html
 %%T%%/docs/ant15_todo.html
 %%T%%/docs/antnews.html
 %%T%%/docs/ant_in_anger.html
 %%T%%/docs/ant_task_guidelines.html
 %%T%%/docs/appendix_e.pdf
+%%T%%/docs/breadcrumbs.js
+%%T%%/docs/contributors.html
+%%T%%/docs/cvs.html
 %%T%%/docs/external.html
 %%T%%/docs/faq.html
+%%T%%/docs/guidelines.html
 %%T%%/docs/index.html
+%%T%%/docs/legal.html
+%%T%%/docs/LICENSE
+%%T%%/docs/license.html
 %%T%%/docs/logocontest.html
+%%T%%/docs/mail.html
+%%T%%/docs/mission.html
+%%T%%/docs/page.css
 %%T%%/docs/problems.html
 %%T%%/docs/projects.html
 %%T%%/docs/resources.html
@@ -1076,5 +1110,8 @@ bin/ant
 @dirrm %%T%%/docs/manual/OptionalTasks
 @dirrm %%T%%/docs/manual/OptionalTypes
 @dirrm %%T%%/docs/manual
+@dirrm %%T%%/docs/projects/antidote/images
+@dirrm %%T%%/docs/projects/antidote
+@dirrm %%T%%/docs/projects
 @dirrm %%T%%/docs
 @dirrm %%T%%

@@ -1,26 +1,25 @@
-# New ports collection makefile for:	jakarta-ant
+# New ports collection makefile for:	apache-ant
 # Date created:		21 February 2001
 # Whom:			znerd@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	jakarta-ant
-PORTVERSION=	1.5.1
-PORTREVISION=	5
+PORTNAME=	apache-ant
+PORTVERSION=	1.5.2
 CATEGORIES=	devel java
-MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/ \
+		http://apache.proserve.nl/dist/ant/binaries/ \
+		http://apache.cs.uu.nl/dist/ant/binaries/ \
+		http://dist.apache.easynet.nl/ant/binaries/
 DISTNAME=	${PORTNAME}-${ANT_VERSION}-bin
-DIST_SUBDIR=	jakarta
 
 MAINTAINER=	znerd@FreeBSD.org
-COMMENT=	Java-based build tool, conceptually similar to make
+COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
 
+USE_BZIP2=	yes
 USE_JAVA=	1.2+
 
 NO_BUILD=	YES
