@@ -1,6 +1,6 @@
---- seti.c.orig	Sat Oct 20 16:24:45 2001
-+++ seti.c	Sat Oct 20 16:25:59 2001
-@@ -1106,10 +1106,10 @@
+--- seti.c.orig	Tue Apr 30 20:51:31 2002
++++ seti.c	Tue Apr 30 20:53:50 2002
+@@ -1029,10 +1029,10 @@
  	style_id = gkrellm_add_meter_style(&plugin_mon, STYLE_NAME);
  
  	g_free(client_info.seti_file_path) ;

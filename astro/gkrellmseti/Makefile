@@ -1,17 +1,18 @@
 # New ports collection makefile for:	gkrellmseti
 # Date created:		Sat Oct 13 01:27:47 BRT 2001
-# Whom:         Hammurabi Mendes <hmendes_br@yahoo.com> et al
+# Whom:         Hammurabi Mendes <hmendes@brturbo.com> et al
 #
 # $FreeBSD$
 #
 
 PORTNAME=       seti
-PORTVERSION=    0.6.5
+PORTVERSION=    0.7.0
 CATEGORIES=     astro
 MASTER_SITES=   http://xavier.serpaggi.free.fr/seti/
 PKGNAMEPREFIX=	gkrellm
+DISTNAME=	${PORTNAME}-${PORTVERSION}b
 
-MAINTAINER=     hmendes_br@yahoo.com
+MAINTAINER=     hmendes@brturbo.com
 
 BUILD_DEPENDS=  ${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
@@ -25,6 +26,10 @@ USE_XPM=	yes
 DOC_FILES=	AUTHORS README TODO
 
 post-patch:
+	@${PERL} -pi -e "s|gtk-config|${GTK_CONFIG}|; s|imlib-config|${IMLIB_CONFIG}|; \
+		s|DBGFLAGS= -O3||; s|gcc|${CC}|; s|(CFLAGS)=|\1+=|; \
+		s|(LDFLAGS)=|\1+=|; s|/usr/X11R6|${PREFIX}|" \
+		${WRKSRC}/Makefile
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|" ${WRKSRC}/seti.c
 
 do-install:
