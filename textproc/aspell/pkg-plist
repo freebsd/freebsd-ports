@@ -89,11 +89,9 @@ include/aspell/vector_hash-t.hh
 include/aspell/vector_hash.hh
 include/aspell/weights.hh
 lib/libaspell.a
-lib/libaspell.la
 lib/libaspell.so
 lib/libaspell.so.11
 lib/libpspell_aspell.a
-lib/libpspell_aspell.la
 lib/libpspell_aspell.so
 lib/libpspell_aspell.so.2
 share/aspell/ASCII.dat
