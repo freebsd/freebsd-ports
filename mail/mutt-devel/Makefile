@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/10 09:37:23 obrien Exp $
+# $Id: Makefile,v 1.2 1996/11/10 20:19:54 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.49
@@ -30,7 +30,7 @@ PATCHFILES=	03.typo.PATCH  \
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
-DIST_SUBDIR=	Mutt_${PKGNAME:S/^mutt-//}
+DIST_SUBDIR=	Mutt
 WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
