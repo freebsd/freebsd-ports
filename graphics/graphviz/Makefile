@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3 -I
 		ACLOCAL=${LOCALBASE}/bin/aclocal14
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/graphviz
+MAKE_ENV=	EXPR_COMPAT=yes
 
 MAN1=		acyclic.1 ccomps.1 colorize.1 dot.1 dotty.1 gc.1 gpr.1 \
 		lefty.1 neato.1 nop.1 prune.1 sccmap.1 tred.1 \
@@ -48,12 +49,6 @@ PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
 LIB_DEPENDS+=   iconv.3:${PORTSDIR}/converters/libiconv
 CONFIGURE_ARGS=	--with-iconvlibdir=${LOCALBASE}/lib
 .endif
-
-post-patch:
-.if ${OSVERSION} >= 500032
-	@${PERL} -pi.orig -e 's|expr |expr -- |' ${WRKSRC}/libtool
-.endif
-
 
 post-install:
 .if !defined(NOPORTDOCS)

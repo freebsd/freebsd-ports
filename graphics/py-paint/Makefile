@@ -32,8 +32,13 @@ EXAMPLES=	test_bar.py test_paint.py testpie.py
 .include <bsd.port.pre.mk>
 
 post-patch:
+.if ${OSVERSION} < 500036
 	${PERL} -pi -e 's@^(.*libraries.*)$$@\1include_dirs=${INC_DIRS},library_dirs=${LIB_DIRS},@g' \
 		${WRKSRC}/setup.py
+.else
+	${SED} -i.orig -e 's@^\(.*libraries.*\)$$@\1include_dirs=${INC_DIRS},library_dirs=${LIB_DIRS},@g' \
+		${WRKSRC}/setup.py
+.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
