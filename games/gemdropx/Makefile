@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gemdropx
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 
@@ -24,13 +23,13 @@ MAKE_ENV=	JOY=NO \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gemdropx ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/gemdropx/images
-	${INSTALL_DATA} ${WRKSRC}/data/images/* ${PREFIX}/share/gemdropx/images
-	@${MKDIR} ${PREFIX}/share/gemdropx/sounds
-	${INSTALL_DATA} ${WRKSRC}/data/sounds/* ${PREFIX}/share/gemdropx/sounds
+	@${MKDIR} ${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/data/images/* ${DATADIR}/images
+	@${MKDIR} ${DATADIR}/sounds
+	${INSTALL_DATA} ${WRKSRC}/data/sounds/* ${DATADIR}/sounds
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gemdropx
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/gemdropx
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
