@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	dillo
-PORTVERSION=	0.8.3
-PORTREVISION=	1
+PORTVERSION=	0.8.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/
 
