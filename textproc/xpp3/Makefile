@@ -1,6 +1,6 @@
 # New ports collection makefile for:	xpp3
 # Date created:		2004-04-02
-# Whom:			Herve Quiroz <root@arabica.esil.univ-mrs.fr>
+# Whom:			Herve Quiroz <herve.quiroz@esil.univ-mrs.fr>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.extreme.indiana.edu/dist/java-repository/xpp3/distribut
 DISTNAME=	${DISTNAME_PREFX}_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	XML Pull Parser 3rd Edition (XPP3)
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant

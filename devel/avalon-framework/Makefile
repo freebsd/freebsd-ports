@@ -11,7 +11,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	avalon/avalon-framework/binaries/
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Apache Avalon core framework for component programming
 
 USE_JAVA=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	trove4j
 DISTNAME=	trove-${PORTVERSION}
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	GNU Trove: High performance collections for Java
 
 USE_JAVA=	yes

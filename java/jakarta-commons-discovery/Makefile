@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/binaries
 PKGNAMEPREFIX=	jakarta-
 
-MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A Java library for locating resources (including classes)
 
 USE_JAVA=	YES
