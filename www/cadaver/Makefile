@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cadaver
-PORTVERSION=	0.17.0
+PORTVERSION=	0.18.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/cadaver/
 
 MAINTAINER=	tarkhil@over.ru
 
-LIB_DEPENDS=	neon.15:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.17:${PORTSDIR}/www/neon \
 		intl.1:${PORTSDIR}/devel/gettext
 
 .ifndef NO_OPENSSL
