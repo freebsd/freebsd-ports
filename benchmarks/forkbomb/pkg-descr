@@ -1,5 +1,5 @@
 forkbomb is tool for stress testing. It can create many processes using fork(),
-eats all available memory using realloc() and accesses this memory. It has
+allocate memory using realloc() and accesses this memory. It has
 different switches for fine-tuning operation. While classic fork() bomb is good
 only for fun, running multiple memory-eaters can be useful for determining
 maximum memory which can be given to servers (bind or squid) without taking
