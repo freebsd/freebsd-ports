@@ -1,0 +1,11 @@
+--- ./Imakefile.org	Thu Nov 17 11:16:08 1994
++++ ./Imakefile	Thu Nov 17 11:32:01 1994
+@@ -16,7 +16,7 @@
+ 
+        LINTLIBS = $(LINTXLIB) $(LINTXTOOL)
+ 
+-#  EXTRA_DEFINES = -DARROW_SCROLLBAR
++  EXTRA_DEFINES = -DARROW_SCROLLBAR -I.
+ 
+ HEADERS = \
+ 	AllWidgets.h \
