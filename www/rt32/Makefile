@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION=	3.0.4
+PORTVERSION?=	3.0.4
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		http://www.fsck.com/pub/rt/devel/ \
@@ -17,7 +17,7 @@ DISTFILES?=	rt-${PORTVERSION:S/./-/g}.tar.gz
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
-BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
+BUILD_DEPENDS+=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache \
@@ -53,7 +53,7 @@ BUILD_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/rt-${PORTVERSION:S/./-/g}
+WRKSRC?=	${WRKDIR}/rt-${PORTVERSION:S/./-/g}
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
