@@ -1,4 +1,4 @@
 MD5 (logrotate_3.7.orig.tar.gz) = bf0de3a495294300f32e71f136119c41
 SIZE (logrotate_3.7.orig.tar.gz) = 35737
-MD5 (logrotate_3.7-1.diff.gz) = 3d74ebcb63731d2afa4f97438af5f4bb
-SIZE (logrotate_3.7-1.diff.gz) 12739
+MD5 (logrotate_3.7-2.diff.gz) = 2d476de60efd31df01d769355cb7b457
+SIZE (logrotate_3.7-2.diff.gz) = 13203

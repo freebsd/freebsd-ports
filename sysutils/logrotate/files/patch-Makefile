@@ -1,7 +1,12 @@
-diff -ruN logrotate-3.7-orig/Makefile logrotate-3.7/Makefile
---- logrotate-3.7-orig/Makefile	Mon Oct 27 10:36:37 2003
-+++ logrotate-3.7/Makefile	Mon May 24 08:10:46 2004
-@@ -50,6 +50,12 @@
+--- logrotate-3.7-orig/Makefile	Wed Oct 20 19:07:27 2004
++++ logrotate-3.7/Makefile	Wed Oct 20 19:07:42 2004
+@@ -1,5 +1,4 @@
+ VERSION = $(shell awk '/Version:/ { print $$2 }' logrotate.spec)
+-CVSROOT = $(shell cat CVS/Root)
+ CVSTAG = r$(subst .,-,$(VERSION))
+ OS_NAME = $(shell uname -s)
+ LFS = $(shell echo `getconf LFS_CFLAGS 2>/dev/null`)
+@@ -50,6 +49,12 @@
      BASEDIR = /usr
  endif
  
@@ -14,7 +19,7 @@ diff -ruN logrotate-3.7-orig/Makefile logrotate-3.7/Makefile
  ifneq ($(POPT_DIR),)
      CFLAGS += -I$(POPT_DIR)
      LOADLIBES += -L$(POPT_DIR)
-@@ -102,10 +108,13 @@
+@@ -102,10 +107,13 @@
  	if [ "$(OS_NAME)" = HP-UX ]; then \
  	$(INSTALL) $(PROG) $(PREFIX)/$(BINDIR) 0755 bin bin; \
  	$(INSTALL) $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"` 0644 bin bin; \
