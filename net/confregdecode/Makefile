@@ -15,6 +15,7 @@ DISTNAME=	confregdecode-src-${PORTVERSION}
 MAINTAINER=	marcus@FreeBSD.org
 
 USE_JAVA=	1.1+
+NEED_JAVAC=	YES
 ALL_TARGET=	jar
 MAKE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
 
