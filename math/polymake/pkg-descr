@@ -1,0 +1,11 @@
+Polymake is a versatile tool for the algorithmic treatment of
+polytopes and polyhedra, and finite simplicial complexes.
+It offers an unified interface to a wide variety of algorithms
+and free software packages from the computational geometry field,
+such as convex hull computation or visualization tools.
+
+Polymake is highly adaptable to individual needs.  In particular, it
+has a C++/perl interface which allows the user to bind his/her own
+algorithms into the common framework.
+
+WWW: http://www.math.tu-berlin.de/polymake/
