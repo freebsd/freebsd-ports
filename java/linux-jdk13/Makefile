@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
@@ -37,13 +38,13 @@ USE_LINUX=	yes
 JDK_VERSION=	1.3.1
 JDK_REVISION=	01
 ONLY_FOR_ARCHS=	i386
-TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
 DOWNLOAD_URL?=	http://java.sun.com/j2se/1.3/download-linux.html
 
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	You must manually fetch the Java 2 Development Kit ${JDK_VERSION} \
+IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION} \
 	for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, \
 	choose the "GUNZIP Tar shell script" one and place it in ${DISTDIR} \
 	and then run make again
@@ -56,8 +57,8 @@ post-patch:
 	@find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${PORTVERSION}
-	@${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${PORTVERSION} -xpf-
-	@${LOCALBASE}/bin/registervm "${PREFIX}/linux-jdk${PORTVERSION}/bin/java # Linux-JDK${PORTVERSION}"
+	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
+	@${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION} -xpf-
+	@${LOCALBASE}/bin/registervm "${PREFIX}/linux-jdk${JDK_VERSION}/bin/java # Linux-JDK${JDK_VERSION}"
 
 .include <bsd.port.post.mk>
