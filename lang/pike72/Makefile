@@ -52,6 +52,10 @@ CONFIGURE_ARGS+= --without-debug \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not build on alpha, amd64 or ia64"
+.endif
+
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--with-long-double-precision
 .endif
