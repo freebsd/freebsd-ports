@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.8 1995/06/05 13:45:02 asami Exp $
+# $Id: Makefile,v 1.9 1995/07/02 10:08:13 torstenb Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 # to many compile-time options
 NO_PACKAGE=	yes
 
-PATCH_SITES=	ftp://ftp.math.psu.edu/pub/INN/patches/
+PATCH_SITES=	ftp://ftp.math.psu.edu/pub/INN/patches/OLD/
 PATCHFILES=	select-loop-bug.patch innxmit-long-lines
 
 MAINTAINER=	torstenb@FreeBSD.ORG
