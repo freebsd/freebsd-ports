@@ -1,0 +1,10 @@
+scim-uim is the SCIM IMEngine module using the uim input method library.
+
+Smart Common Input Method platform, in short SCIM, is a development platform to
+make Input Method developers live easier.
+
+WWW: http://scim.freedesktop.org
+
+Uim is a multilingual input method library.
+
+WWW: http://uim.freedesktop.org
