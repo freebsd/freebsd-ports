@@ -45,6 +45,10 @@ INSTALL_TARGET=	node
 FORBIDDEN=	"X-Bone ${PORTVERSION} does not support FreeBSD prior to 4.7"
 .endif
 
+.if ${PERL_LEVEL} < 500601
+IGNORE= "X-Bone requires Perl version 5.6.1 or higher. Install lang/perl5.8 and try again."
+.endif
+
 MAN5=		XB_Params.pm.5 xbone.conf.5 xbone-gui.conf.5
 MAN8=		X-Bone.8 xb-node-daemon.8 xb-config.8 xb-gui-config.8 xbonectl.8
 
