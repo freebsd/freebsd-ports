@@ -3027,6 +3027,7 @@ jam		ports/devel/jam
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
 jasper		ports/graphics/jasper
+java-commapi	ports/comms/java-commapi
 java-cup	ports/java/java-cup
 java-sqlrelay	ports/databases/java-sqlrelay
 java-tutorial	ports/java/java-tutorial
