@@ -1,0 +1,14 @@
+Decore [excerpt from OpenDivX Project Mayo site]
+
+"Decore" is our decoder core - that part of the codec that decodes
+video from DivX video bitstream into uncompressed RGB bitmaps. Its
+API is defined in decore.h. The API is another frame-in, frame-out
+scheme, you give it a chunk of OpenDivX bitstream and it comes back
+to you with an uncompressed RGB frame. Like "encore", "decore" is
+truly independent of any other code, making no system calls.
+
+"Decore" is a decoder compliant with MPEG-4 natural video, simple
+profile. It also incorporates a video postprocessor which postprocessor,
+which hides many of the artifacts inherent in low bit-rate video.
+
+WWW: http://www.projectmayo.com/
