@@ -1,2 +1,4 @@
 bin/rat
 etc/sdr/plugins/sdr2.plugin.S02.audio.rtp.-.rat-4.0.4
+@dirrm etc/sdr/plugins
+@dirrm etc/sdr
