@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	netrik
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ COMMENT=	A text web browser, very ambitious, in active development
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_GMAKE=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -27,11 +28,6 @@ MAN5=		netrikrc.5
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
-.endif
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
