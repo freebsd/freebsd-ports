@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vmware2
-#PORTVERSION=	2.0.1.559	# 2.0.1 RC2
-PORTVERSION=	2.0.476
+PORTVERSION=	2.0.1.570
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
@@ -23,8 +22,7 @@ PATCH_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/ \
 		http://www.mindspring.com/~vsilyaev/vmware/files/ \
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
 		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
-#PATCHFILES=	vmmon-freebsd-0.95.1.tar.gz \
-PATCHFILES=	vmmon-freebsd-0.95.tar.gz \
+PATCHFILES=	vmmon-freebsd-0.95.1.tar.gz \
 		vmnet-freebsd-0.11.tar.gz
 
 # Feel free to post your questions/reports/suggestions on this port to
