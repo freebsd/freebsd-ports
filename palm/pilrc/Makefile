@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pilrc
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resource compiler for Pilot applications
 
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}/unix
@@ -22,5 +22,9 @@ GNU_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pilrc ${WRKSRC}/pilrcui ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/../doc/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
