@@ -1,16 +1,16 @@
---- Config.orig	Wed May 23 11:50:37 2001
-+++ Config	Wed May 23 11:53:08 2001
-@@ -223,7 +223,7 @@
- # CFLAGS32+=	-DAOUT_IMAGE -DIMAGE_MULTIBOOT -DIMAGE_FREEBSD
- 
+--- Config.orig	Sun Feb 22 17:26:09 2004
++++ Config	Mon Jun 21 08:23:55 2004
+@@ -300,7 +300,7 @@
+ # Download files via TFTP
+ CFLAGS+=	-DDOWNLOAD_PROTO_TFTP
  # Change download protocol to NFS, default is TFTP
--# CFLAGS32+=	-DDOWNLOAD_PROTO_NFS
-+CFLAGS32+=	-DDOWNLOAD_PROTO_NFS
+-# CFLAGS+=	-DDOWNLOAD_PROTO_NFS
++CFLAGS+=	-DDOWNLOAD_PROTO_NFS
  
- # These flags affect the loader that is prepended to the Etherboot image
- LCONFIG+=	-DMOVEROM
---- boot1a.s.orig	Sat Jun 23 10:56:25 2001
-+++ boot1a.s	Mon Mar 11 09:06:00 2002
+ # Multicast Support
+ # CFLAGS+=-DALLMULTI -DMULTICAST_LEVEL1 -DMULTICAST_LEVEL2 -DDOWNLOAD_PROTO_TFTM
+--- arch/i386/prefix/boot1a.s.orig	Sat Jun 23 10:56:25 2001
++++ arch/i386/prefix/boot1a.s	Mon Mar 11 09:06:00 2002
 @@ -56,7 +56,7 @@
  # Partition Constants 
  		.set PRT_OFF,0x1be		# Partition offset
@@ -29,36 +29,14 @@
  		.byte 0xff	# end head
  		.byte 0xff	# end sect (6) + end_cyl(2)
  		.byte 0xff	# end cyl
---- makerom.c.orig	Thu Aug  2 00:27:48 2001
-+++ makerom.c	Mon Feb  4 15:05:00 2002
-@@ -67,7 +67,7 @@
- 		fprintf(stderr, "BIOS extension ROM Image did not start with 0x55 0xAA\n");
- 	size = buffer[2] * 512L;
- 	/* sizes are usually powers of two, warn if not */
--	for (i = MINROMSIZE; i < MAXROMSIZE && i < size; i *= 2)
-+	for (i = MINROMSIZE; i < MAXROMSIZE && i < size; i += MINROMSIZE)
- 		;
- 	if (size > 0 && i > size)
- 		fprintf(stderr, "%ld is a strange size for a boot ROM\n",
-@@ -192,8 +192,8 @@
- 		exit(1);
- 	}
- 	/* shrink it down to the smallest size that will do */
--	for (romsize = MAXROMSIZE; romsize > MINROMSIZE && romsize >= 2*fs; )
--		romsize /= 2L;
-+	for (romsize = MINROMSIZE; romsize < MAXROMSIZE && romsize <fs;
-+		romsize += MINROMSIZE );
- 	rom[2] = romsize / 512L;
- 	rom[5] = 0;
- 	if (verbose)
---- Makefile.orig	Sun Feb 17 18:59:52 2002
-+++ Makefile	Sun Feb 17 19:00:04 2002
-@@ -166,7 +166,7 @@
- BOBJS32+=	bin32/serial.o bin32/timer.o
- BLIB32=		bin32/bootlib.a
- LIBS32=		$(BLIB32) $(LIBC32)
--UTILS+=		bin/makerom bin/lzhuf
-+UTILS+=		bin/makerom bin/lzhuf $(DISKLOADER)
- STDDEPS32=	$(START32) $(BLIB32) $(UTILS)
- UBE_DEPS32=	$(UBE_START32) $(BLIB32)
- # MAKEDEPS is the one target that is depended by all ROMs, so we check gcc here
+--- arch/i386/Makefile.orig	Sun Feb 22 17:26:09 2004
++++ arch/i386/Makefile	Mon Jun 21 08:35:05 2004
+@@ -84,7 +84,7 @@
+ 
+ include		$(BIN)/Roms
+ 
+-allroms:	$(BUILD_ROMS)
++allroms:	$(BUILD_ROMS) $(DISKLOADER)
+ allelfs:	$(BUILD_ELFS)
+ allpxes:	$(BUILD_PXES)
+ allcoms:	$(BUILD_COMS)
