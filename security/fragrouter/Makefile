@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.anzen.com/research/nidsbench/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes
