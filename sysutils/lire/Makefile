@@ -13,7 +13,7 @@
 
 PORTNAME=	lire
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.logreport.org/pub/archive/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	\
 	xml2.5:${PORTSDIR}/textproc/libxml2 \
 	xslt.1:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS=	\
-	${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
+	${LOCALBASE}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-xml \
 	${LOCALBASE}/share/sgml/docbook/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
 	${LOCALBASE}/share/xsl/docbook/fo/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 	${ARCH_PERL}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
@@ -38,9 +38,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+="--with-docbookdir=${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd"
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-ARCH_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+ARCH_PERL=	${SITE_PERL}/${PERL_ARCH}
 
 MAN1=		\
 		lr_archive_log.1 lr_check_errlines.1	\
