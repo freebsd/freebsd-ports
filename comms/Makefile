@@ -4,6 +4,7 @@
     SUBDIR += asmodem
     SUBDIR += bayonne
     SUBDIR += bpl+
+    SUBDIR += comserv
     SUBDIR += conserver
     SUBDIR += ecu
     SUBDIR += gkermit
