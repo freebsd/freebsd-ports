@@ -1,5 +1,5 @@
---- src/makjunix.mak.orig	Mon Sep 27 23:22:24 1999
-+++ src/makjunix.mak	Mon Sep 27 23:27:05 1999
+--- src/makjunix.mak.orig	Sat Jun 30 18:14:16 2001
++++ src/makjunix.mak	Sat Jun 30 18:16:14 2001
 @@ -61,8 +61,8 @@
  #X11LIBDIR = /usr/lib/X11R5
  #X11INCDIR = /usr/include/X11R5
@@ -43,10 +43,10 @@
 -		-DVIM_HLP=\"$(HELPLOC)/vim.hlp\" \
 +		-DVIM_HLP=\"$(HELPLOC)/jvim3.hlp\" \
 +		-DDEFVIMRC_FILE=\"$(PREFIX)/etc/jvim3rc\" \
- 		-DKANJI -DUCODE -DTRACK -DCRMARK -DFEXRC -DUSE_GREP -DUSE_OPT $(FEPOPT)
+ 		-DKANJI -DUCODE -DTRACK -DCRMARK -DFEXRC -DUSE_GREP -DUSE_TAGEX -DUSE_OPT $(FEPOPT)
  
  #
-@@ -458,11 +459,11 @@
+@@ -460,11 +461,11 @@
  	chmod $(BINMOD) $(BINLOC)/$(TARGET)
  	$(STRIP) $(BINLOC)/$(TARGET)
  	-mkdir $(MANLOC)
@@ -62,7 +62,7 @@
  
  clean:
  	-rm -f $(OBJ) mkcmdtab.o version.o core $(TARGET) mkcmdtab cmdtab.h
-@@ -617,7 +618,7 @@
+@@ -619,7 +620,7 @@
  	$(CC) $(CFLAGS) fepbow.c
  
  fepcanna.o: fepcanna.c
