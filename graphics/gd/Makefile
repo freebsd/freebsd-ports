@@ -7,12 +7,17 @@
 
 PORTNAME=	gd
 PORTVERSION=	2.0.28
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
 PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
+
+PATCH_SITES+=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	dinoex
+PATCHFILES+=	gd-patch-2.0.28-2.0.33.gz
 
 MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT?=	A graphics library for fast creation of images
@@ -25,25 +30,14 @@ MAKE_ENV=	WRKSRC="${WRKSRC}" CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 INSTALLS_SHLIB=	yes
 SCRIPTDIR=	${FILESDIR}
+CPPFLAGS+=	-DHAVE_FT2BUILD_H
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XPM)
-.if defined(WITHOUT_X11)
-NOX11_SUFFIX?=	-nox11
-LIB_DEPENDS+=	Xpm:${PORTSDIR}/graphics/xpm
-CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM -DXPM_NOX
-LDFLAGS+=	-L${X11BASE}/lib -lXpm
-.else
+.if defined(WITH_XPM) && !defined(WITHOUT_X11)
 USE_XPM=	yes
 CPPFLAGS+=	-I${X11BASE}/include/X11 -I${X11BASE}/include -DHAVE_LIBXPM
 LDFLAGS+=	-L${X11BASE}/lib -lXpm -lX11
-.endif
-.endif
-
-.if defined(WITH_LZW) || defined(HAVE_UNISYS_LICENSE) || \
-    (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
-CPPFLAGS+=	-DLZW_LICENSED
 .endif
 
 .if defined(GD_FONTS)
@@ -56,10 +50,6 @@ pre-everything::
 	@${ECHO_MSG} "gd has the following tunables:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITH_XPM=yes			Turns on Xpm support"
-	@${ECHO_MSG} "	WITH_XPM=yes WITHOUT_X11=yes	Turns on X-less Xpm support"
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != "YES"
-	@${ECHO_MSG} "	WITH_LZW=yes			Turns on GIF compression support"
-.endif
 	@${ECHO_MSG} ""
 
 post-extract:
