@@ -1,0 +1,14 @@
+PIDDLE - Plug-In Drawing, Does Little Else
+------------------------------------------
+
+PIDDLE is a Python module for creating two-dimensional graphics in a
+manner that is both cross-platform and cross-media; that is, it can
+support screen graphics (e.g.  QuickDraw, Windows, Tk) as well as file
+output (PostScript, PDF, GIF, etc.). It makes use of the native 2D
+drawing calls of each backend, for maximum efficiency and quality. It
+works by defining a base class (piddle.Canvas) with methods for all
+supported drawing primitives. A particular drawing context is provided
+in the form of a derived class. PIDDLE applications will be able to
+automatically select an appropriate backend for the user's environment. 
+
+WWW: http://piddle.sourceforge.net/
