@@ -4048,6 +4048,7 @@ kbiff		ports/mail/kbiff
 kbilliards	ports/games/kbilliards
 kbirthday	ports/deskutils/kbirthday
 kblticker	ports/deskutils/kblticker
+kcachegrind	ports/devel/kcachegrind
 kcd		ports/misc/kcd
 kcdlabel	ports/print/kcdlabel
 kcheckers	ports/games/kcheckers
