@@ -1,0 +1,36 @@
+--- mpmf20.cpp.orig	Wed Sep 22 22:55:50 1999
++++ mpmf20.cpp	Wed Sep 22 22:47:45 1999
+@@ -23,6 +23,17 @@
+ 	#define		DELETEARRAY				delete[]
+ 	#define		STRICMP					stricmp
+ 
++#elif defined(__FreeBSD__)
++	// FreeBSD g++
++	#include	<fcntl.h>
++	#include	<unistd.h>
++	#include	<machine/cpufunc.h>
++	#define		OUTPORT(p,v)			outb( (p), (v) )
++	#define		INPORT(p)				inb( p )
++	#define		CLOCK_SECOND			CLOCKS_PER_SEC
++	#define		DELETEARRAY				delete[]
++	#define		STRICMP					strcasecmp
++
+ #elif defined(__linux__)
+ 	// linux g++
+ 	#include	<unistd.h>
+@@ -237,6 +248,15 @@
+ 	// init error
+ 	m_szError[ 0 ] = 0;
+ 	m_iIDError = CMPMF20_ERROR_NONE;
++
++	// if FreeBSD
++	#if defined(__FreeBSD__)
++		// request access to required ports
++		if (open("/dev/io", O_RDONLY) < 0) {
++			LogError( CMPMF20_ERROR_IOPRERM, "open(\"/dev/io\") failed, reason '%s'", SZERROR );
++			return FALSE;
++		}
++	#endif
+ 
+ 	// if linux
+ 	#if defined(__linux__)

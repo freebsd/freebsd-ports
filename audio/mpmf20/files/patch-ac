@@ -1,0 +1,12 @@
+--- makefile.orig	Mon Apr 12 06:49:40 1999
++++ makefile	Mon Sep 27 10:48:08 1999
+@@ -9,8 +9,7 @@
+ all: 		mpmf20
+ 
+ mpmf20:		app.cpp mpmf20.cpp
+-		g++ -O1 -o mpmf20 app.cpp mpmf20.cpp
+-		chmod +s mpmf20
++		${CXX} ${CXXFLAGS} -o mpmf20 app.cpp mpmf20.cpp
+ 
+ clean:
+ 		rm -f mpmf20
