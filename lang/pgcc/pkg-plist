@@ -238,6 +238,7 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/collect2
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/f771
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/README
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/assert.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/curses.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/exception
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/float.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g2c.h
