@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skk-jisyo
-PORTVERSION=	200206
+PORTVERSION=	200207
 CATEGORIES=	japanese
 MASTER_SITES?=	http://www.tkd.ne.jp/~toru/skk/
 DISTFILES?=	SKK-JISYO.L.${PORTVERSION}.gz \
