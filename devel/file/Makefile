@@ -22,6 +22,9 @@ MAN3=		libmagic.3
 MAN4=		magic.4
 
 post-install:
+# This is way too ugly!  I need to get USE_LIBTOOL working.
 	${RM} -f ${PREFIX}/lib/libmagic.la
+	${RM} -f ${PREFIX}/lib/libmagic.so.1
+	${MV} -f ${PREFIX}/lib/libmagic.so.1.0 ${PREFIX}/lib/libmagic.so.1
 
 .include <bsd.port.mk>
