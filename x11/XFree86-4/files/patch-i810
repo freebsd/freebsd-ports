@@ -1,0 +1,26 @@
+--- programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c.orig	Tue May 29 17:51:29 2001
++++ programs/Xserver/hw/xfree86/drivers/i810/i810_driver.c	Thu Jun  7 00:12:25 2001
+@@ -2006,9 +2006,10 @@
+    if (I810_DEBUG & DEBUG_VERBOSE_DRI)
+       ErrorF("\n\nENTER VT\n");
+ 
++/*********BUGGY*********************
+    if (! I810BindGARTMemory(pScrn))
+        return FALSE;
+-
++***********************************/
+ #ifdef XF86DRI
+    if (pI810->directRenderingEnabled) {
+       if (I810_DEBUG & DEBUG_VERBOSE_DRI)
+@@ -2047,9 +2048,10 @@
+    }
+    I810Restore(pScrn);
+ 
++/*********BUGGY***********************
+    if (! I810UnbindGARTMemory(pScrn))
+        return;
+-
++*************************************/
+    vgaHWLock(hwp);
+ }
+ 
