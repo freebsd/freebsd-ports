@@ -19,7 +19,7 @@ NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400012
-MAKE_ENV=	COPT="-fpermissive"
+MAKE_ENV=	COPT="${CXXFLAGS} -fpermissive"
 .endif
 
 post-extract:

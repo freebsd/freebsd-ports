@@ -1,0 +1,26 @@
+--- Makefile.orig	Sun Sep  8 17:09:50 2002
++++ Makefile	Sun Sep  8 17:10:42 2002
+@@ -1,18 +1,19 @@
+ I  = -I${X11BASE}/include -I${LOCALBASE}/include
+ L  = -L${LOCALBASE}/lib -L${X11BASE}/lib -L/usr/lib -lXpm -lX11 -lXext
+ 
+-CC+= ${CFLAGS} ${COPT} $I -DXLIB_ILLEGAL_ACCESS
++CXX?= c++
++CXXFLAGS=${COPT} $I -DXLIB_ILLEGAL_ACCESS
+ 
+ all:	xcyrBGR
+ 
+ xcyrBGR:	xcyrBGR.o cyrmapper.o
+-	$(CC) xcyrBGR.o  cyrmapper.o -o xcyrBGR $L
++	$(CXX) $(CXXFLAGS) xcyrBGR.o  cyrmapper.o -o xcyrBGR $L
+ 
+ xcyrBGR.o:	xcyrBGR.cc
+-	$(CC) xcyrBGR.cc -c -o xcyrBGR.o
++	$(CXX) $(CXXFLAGS) xcyrBGR.cc -c -o xcyrBGR.o
+ 
+ cyrmapper.o: cyrmapper.cc cyrmapper.h
+-	$(CC) cyrmapper.cc -c -o cyrmapper.o
++	$(CXX) $(CXXFLAGS) cyrmapper.cc -c -o cyrmapper.o
+ 
+ clean:
+ 	rm *.o xcyrBGR 
