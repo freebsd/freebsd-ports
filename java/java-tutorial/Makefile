@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jdk-tutorial
-PORTVERSION=	2002.03.04
+PORTVERSION=	2003.05.30
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.javasoft.com/docs/ \
 		http://java.sun.com/docs/books/tutorial/download/
