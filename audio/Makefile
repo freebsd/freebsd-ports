@@ -26,6 +26,7 @@
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += denemo
+    SUBDIR += easytag
     SUBDIR += ecasound
     SUBDIR += esound
     SUBDIR += extace
