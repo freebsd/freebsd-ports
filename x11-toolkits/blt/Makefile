@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.24 1998/11/14 09:43:29 asami Exp $
+# $Id: Makefile,v 1.25 1999/04/12 10:16:38 kjc Exp $
 #
 
 DISTNAME=	BLT2.4h
@@ -31,7 +31,7 @@ SO_VERSION=	2.4
 .endif
 
 post-install:
-        ${LN} -sf libBLT24.so.${SO_VERSION} ${PREFIX}/lib/libBLT24.so
+	${LN} -sf libBLT24.so.${SO_VERSION} ${PREFIX}/lib/libBLT24.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
