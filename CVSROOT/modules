@@ -622,6 +622,7 @@ bedic-data	ports/textproc/bedic-data
 beecrypt	ports/security/beecrypt
 beep		ports/audio/beep
 beep-media-player	ports/multimedia/beep-media-player
+berkeley-db	ports/java/berkeley-db
 bestfit		ports/misc/bestfit
 bf2c		ports/lang/bf2c
 bfbtester	ports/security/bfbtester
