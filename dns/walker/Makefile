@@ -7,28 +7,26 @@
 #
 
 PORTNAME=	walker
-PORTVERSION=	1.0
+PORTVERSION=	3.2
 CATEGORIES=	dns
 MASTER_SITES=	http://josefsson.org/walker/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Recover zone file information from servers that use DNSSEC
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dig:${PORTSDIR}/dns/bind9
+RUN_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
+		${SITE_PERL}/Net/DNS/SEC.pm:${PORTSDIR}/dns/p5-Net-DNS-SEC
 
-USE_REINPLACE=	yes
 NO_BUILD=	yes
 
-CONFLICTS=	dnssecwalker-2.*
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,`dig,`${LOCALBASE}/bin/dig,g' ${WRKSRC}/walker
+MAN1=		walker.1
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/walker ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/walker ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/walker
-	${INSTALL_DATA} ${WRKSRC}/walker.html ${PREFIX}/share/doc/walker
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
