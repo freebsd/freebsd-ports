@@ -1,0 +1,8 @@
+This is GNU Bash, version 1.14.2.  Bash is the GNU Project's Bourne
+Again SHell, an interactive shell with Bourne shell syntax (/bin/sh);
+but also with interactive command line editing, job control on
+architectures that support it, Csh-like history features and brace
+expansion, and a slew of other stuff.  For more information on the
+features of Bash that are new to this type of shell, see the file
+`documentation/features.texi'.  There is also a processed DVI file
+there, as well as a large man page.
