@@ -1,5 +1,5 @@
---- examples/init-script.in.orig	Wed May 29 22:34:24 2002
-+++ examples/init-script.in	Sun Jun  2 22:50:49 2002
+--- examples/init-script.in.orig	Sat Jun 15 19:27:26 2002
++++ examples/init-script.in	Sat Jun 15 19:28:03 2002
 @@ -37,7 +37,7 @@
  MULTIPLEXOR=yes
  
@@ -9,3 +9,17 @@
  
  # If you want to keep spool directories around if the filter fails,
  # set the next one to yes
+@@ -99,11 +99,11 @@
+ 
+ # Limit slave processes' resident-set size to this many kilobytes.  Default
+ # is unlimited.
+-# MX_MAX_RSS=10000
++MX_MAX_RSS=10000
+ 
+ # Limit total size of slave processes' memory space to this many kilobytes.
+ # Default is unlimited.
+-# MX_MAX_AS=30000
++MX_MAX_AS=30000
+ 
+ # Number of seconds a process should be idle before checking for
+ # minimum number and killed

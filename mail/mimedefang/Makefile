@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.13
+PORTVERSION=	2.15
 CATEGORIES=	mail
 MASTER_SITES=	http://www.roaringpenguin.com/mimedefang/
 
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	\
 USE_PERL5=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/mimedefang --with-confsubdir=
 
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-protocol.7
@@ -32,12 +32,6 @@ MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8
 .if !exists( /usr/include/libmilter/mfapi.h )
 BUILD_DEPENDS+=	${LOCALBASE}/include/libmilter/mfapi.h:${PORTSDIR}/mail/sendmail
 .endif
-
-post-extract:
-	@${MV} ${WRKSRC}/mimedefang-filter.5 ${WRKSRC}/mimedefang-filter.5.in
-	@${MV} ${WRKSRC}/mimedefang-multiplexor.8 ${WRKSRC}/mimedefang-multiplexor.8.in
-	@${MV} ${WRKSRC}/mimedefang.8 ${WRKSRC}/mimedefang.8.in
-	@${MV} ${WRKSRC}/mimedefang.pl.8 ${WRKSRC}/mimedefang.pl.8.in
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/init-script ${PREFIX}/etc/rc.d/mimedefang.sh-dist
