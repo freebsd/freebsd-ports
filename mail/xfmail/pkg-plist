@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xfmail
+man/man1/xfmail.1.gz
