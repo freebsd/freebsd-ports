@@ -8,12 +8,10 @@
 PORTNAME=	xchadance
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://home.jp.FreeBSD.org/~issei/LOCAL_PORTS/
+MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/
 DISTFILES=	xchada01.lzh
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"Does not fetch"
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
