@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtodo
-PORTVERSION=	0.13
+PORTVERSION=	0.13.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://qball.no-ip.com/
 

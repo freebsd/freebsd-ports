@@ -1,6 +1,6 @@
---- src/mcategory.c.orig	Mon Sep 29 01:41:35 2003
-+++ src/mcategory.c	Mon Sep 29 01:41:41 2003
-@@ -99,8 +99,8 @@
+--- src/mcategory.c.orig	Mon Sep 29 10:33:31 2003
++++ src/mcategory.c	Mon Sep 29 10:33:54 2003
+@@ -98,8 +98,8 @@
  	    if(xmlStrEqual(temp, (const xmlChar *)category))
   		{
  		g_signal_handler_block(mw.option, shand);
