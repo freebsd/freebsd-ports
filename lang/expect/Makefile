@@ -3,7 +3,7 @@
 # Date created:		20 November 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.15 1996/12/16 12:12:59 peter Exp $
+# $Id: Makefile,v 1.16 1997/01/06 10:56:02 max Exp $
 #
 
 DISTNAME=	expect-5.21
@@ -17,7 +17,8 @@ LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared --with-tclconfig=/usr/libdata/tcl \
-		--with-tclinclude=/usr/include/tcl
+		--with-tclinclude=/usr/include/tcl \
+		--with-tkinclude=${PREFIX}/include/tk4.1
 MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 		expect.1 expectk.1 kibitz.1 mkpasswd.1 passmass.1 \
 		tknewsbiff.1 unbuffer.1 xkibitz.1
@@ -26,12 +27,7 @@ MAN3=		libexpect.3
 test:
 	@(cd ${WRKSRC}; make test)
 
-# Sigh, all this just to get tkInt.h..
-post-extract:
-	(cd ${PORTSDIR}/x11/tk41 && make extract)
-	ln -s ${PORTSDIR}/x11/tk41/work/tk* ${WRKDIR}
-
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
