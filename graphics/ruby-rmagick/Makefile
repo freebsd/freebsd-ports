@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://home.nc.rr.com/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -27,11 +27,9 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		RUBY="${RUBY}"
+CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}"
 
-DOCS=		ChangeLog README.txt
-
-post-patch:
-	${REINPLACE_CMD} 's:/RMagick:/doc/${RUBY_NAME}/${RUBY_MODNAME}&:' ${WRKSRC}/post-install.rb
+DOCS=		ChangeLog README.html
 
 pre-configure:
 	cd ${CONFIGURE_WRKSRC}; \
@@ -43,6 +41,8 @@ post-install:
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
