@@ -279,6 +279,7 @@ alephone-data	ports/games/alephone-data
 alevt		ports/misc/alevt
 alf		ports/devel/alf
 algae		ports/math/algae
+algotutor	ports/math/algotutor
 alienwah	ports/audio/alienwah
 align		ports/textproc/align
 alisp		ports/lang/alisp
