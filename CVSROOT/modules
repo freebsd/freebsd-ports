@@ -4037,6 +4037,7 @@ larswm		ports/x11-wm/larswm
 latd		ports/net/latd
 latex		ports/print/latex
 latex-beamer	ports/print/latex-beamer
+latex-biblist	ports/print/latex-biblist
 latex-bibtopic	ports/print/latex-bibtopic
 latex-bibunits	ports/print/latex-bibunits
 latex-caption	ports/print/latex-caption
