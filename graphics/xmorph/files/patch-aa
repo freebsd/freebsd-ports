@@ -1,24 +1,75 @@
---- Makefile.orig	Thu Sep 11 20:37:55 1997
-+++ Makefile	Sat Oct  3 23:33:33 1998
-@@ -132,7 +132,7 @@
+--- Makefile.orig	Sat Apr 29 08:26:30 2000
++++ Makefile	Sat Aug  5 04:52:50 2000
+@@ -121,7 +121,6 @@
+ #CC=gcc
+ #CC=/bin/cc
+ #CC=cc
+-CC=cc
+ 
+ 
+ 
+@@ -142,7 +141,7 @@
  #
  
  #INCLUDE=-I/usr/local/include -I/usr/openwin/include
 -INCLUDE=-I/usr/local/include
-+INCLUDE=-I/usr/local/include -I$(X11BASE)/include
++INCLUDE=-I${X11BASE}/include
  
  
  
-@@ -167,7 +167,7 @@
+@@ -179,7 +178,7 @@
+ #DEBUG=-O -g -Wall -DVERBOSE -DDEBUG
+ #DEBUG=-O
+ #DEBUG=-g3 -O -fullwarn -DVERBOSE -DDEBUG
+-DEBUG=-g3 -O -fullwarn
++#DEBUG=-g3 -O -fullwarn
+ 
+ 
+ 
+@@ -268,7 +267,10 @@
+ #XLIBS=-L/usr/X11R6/lib -lXaw -lXmu -lXext -lXt -lX11
+ 
+ # SGI IRIX:
+-XLIBS=              -lXaw -lXmu -lXext -lXt -lcvt -lX11
++#XLIBS=              -lXaw -lXmu -lXext -lXt -lcvt -lX11
++
++# FreeBSD:
++XLIBS=-L${X11BASE}/lib -lXaw -lXmu -lXext -lXt -lX11
+ 
+ 
+ 
+@@ -313,10 +315,10 @@
+ #
+ #   -lmalloc_cv has more robust memory checking
+ 
+-#NON_GUI_LIBS = -lm
++NON_GUI_LIBS = -lm
+ #NON_GUI_LIBS = -lm -ldl
+ #NON_GUI_LIBS = -lm /usr/lib/debug/malloc.o
+-NON_GUI_LIBS = -lm -lmalloc
++#NON_GUI_LIBS = -lm -lmalloc
+ 
+ 
+ 
+@@ -344,7 +346,7 @@
+ 
+ # SHLIB_EXT: filename extension for shared libraries
+ # --------------------------------------------------
+-SHLIB_EXT=so
++SHLIB_EXT=so.1
+ 
+ 
+ 
+@@ -353,7 +355,7 @@
+ ## -----------------------
  #
  
- #DEBUG=-O
--DEBUG=-O -g -Wall -DDEBUG
-+#DEBUG=-O -g -Wall -DDEBUG
- #DEBUG=-g3 -O -fullwarn -woff 1233 -DVERBOSE -DDEBUG
+-LDFLAGS=-L/usr/local/lib
++LDFLAGS=
  
  
-@@ -225,7 +225,7 @@
+ 
+@@ -378,14 +380,14 @@
  
  #CFLAGS=$(DEBUG) $(DEFINES) $(INCLUDE) -DSUNOS
  
@@ -27,36 +78,73 @@
  
  
  
-@@ -248,7 +248,10 @@
- #   The cvt library is available in the goldengate.sw.goldengate package
  
- #XLIBS=-L/usr/openwin/lib -lXaw -lXmu -lXext -lXt -lX11
--XLIBS=-L/usr/X11/lib -lXaw -lXmu -lXext -lXt -lX11
-+XLIBS=-L$(X11BASE)/lib -lXaw -lXmu -lXext -lXt -lX11
-+.if $(PORTOBJFORMAT) == "elf"
-+XLIBS+=-Wl,-rpath,$(X11BASE)/lib
-+.endif
- #XLIBS=              -lXaw -lXmu -lXext -lXt -lcvt -lX11
+ ## INSTALL_BASE: Directory base to install files
+ ## ---------------------------------------------
+-INSTALL_BASE=/usr/local
++INSTALL_BASE=${PREFIX}
  
  
-@@ -289,7 +292,7 @@
  
- #LIBS = -lm
- #LIBS = $(XLIBS) -lm
--LIBS = $(XLIBS) -lm -ldl
-+LIBS = $(XLIBS) -lm
- #LIBS = $(XLIBS) -lm /usr/lib/debug/malloc.o
- #LIBS = $(XLIBS) -lm -lmalloc
+@@ -450,15 +452,19 @@
+      xmorph.o
  
-@@ -370,6 +373,11 @@
  #all: morph.$(SHLIB_EXT)
- all: xmorph xmorph.man
+-all: xmorph morph xmorph.man xmorph.info
++#all: xmorph morph xmorph.man xmorph.info
++all: libmorph.a libmorph.so xmorph
  
-+install:
-+	install -cs xmorph ${PREFIX}/bin
-+	install -c -m 644 xmorph ${PREFIX}/man/man1/xmorph.1
-+	gzip -9nf ${PREFIX}/man/man1/xmorph.1
+ libmorph.a: $(LIB_OBJS)
+ 	ar cr $@ $(LIB_OBJS)
+ 
+ libmorph.$(SHLIB_EXT): $(LIB_OBJS)
+-	ld $(SHLIB_FLAG) $(LDFLAGS) $(LIB_OBJS) -o $@
++	$(CC) $(SHLIB_FLAG) -Wl,-soname,$@ $(LDFLAGS) $(LIB_OBJS) -o $@
 +
- xmorph:   $(OBJS)
++libmorph.so: libmorph.$(SHLIB_EXT)
++	ln -sf libmorph.$(SHLIB_EXT) libmorph.so
+ 
+-xmorph: main-x.o libmorph.a $(GUI_OBJS)
++xmorph: main-x.o libmorph.so $(GUI_OBJS)
  	@echo ""
  	@echo ""
+ 	@echo ""
+@@ -471,14 +477,17 @@
+ 	@echo ""
+ 	@echo ""
+ 	@echo ""
+-	$(CC) $(CFLAGS) -o $@ main-x.o $(GUI_OBJS) libmorph.a $(LIBS)
++	$(CC) $(CFLAGS) -o $@ main-x.o $(GUI_OBJS) -L. -lmorph $(LIBS)
+ 
+-morph: main-cl.o libmorph.a
+-	$(CC) $(CFLAGS) -o $@ main-cl.o libmorph.a $(NON_GUI_LIBS)
++morph: main-cl.o libmorph.so
++	$(CC) $(CFLAGS) -o $@ main-cl.o -L. -lmorph $(NON_GUI_LIBS)
+ 
+ .c$(OBJ): $(SRCS) Makefile
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
+ 
++$(LIB_OBJS): $(LIB_OBJS:.o=.c) Makefile
++	$(CC) $(CFLAGS) $(CPPFLAGS) -fpic -DPIC -c $<
++
+ main-x.o: main.c
+ 	$(CC) $(CFLAGS) $(CPPFLAGS) -c -DX_GUI main.c -o $@
+ 
+@@ -498,11 +507,12 @@
+ 
+ 
+ 
+-install: xmorph xmorph.man libmorph.a libmorph.$(SHLIB_EXT)
+-	cp xmorph $(INSTALL_BASE)/bin
+-	cp xmorph.1 $(INSTALL_BASE)/man/man1
+-	cp libmorph.a $(INSTALL_BASE)/lib
+-	cp libmorph.$(SHLIB_EXT) $(INSTALL_BASE)/lib
++install: xmorph xmorph.man libmorph.a libmorph.so
++	${BSD_INSTALL_PROGRAM} xmorph $(INSTALL_BASE)/bin
++	${BSD_INSTALL_MAN} xmorph.1 $(INSTALL_BASE)/man/man1
++	${BSD_INSTALL_DATA} libmorph.a $(INSTALL_BASE)/lib
++	${BSD_INSTALL_DATA} libmorph.$(SHLIB_EXT) $(INSTALL_BASE)/lib
++	ln -sf libmorph.$(SHLIB_EXT) $(INSTALL_BASE)/lib/libmorph.so
+ 
+ 
+ 

@@ -1,1 +1,4 @@
 bin/xmorph
+lib/libmorph.a
+lib/libmorph.so
+lib/libmorph.so.1

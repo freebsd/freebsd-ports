@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	xmorph
-PORTVERSION=	97.09.11
+PORTVERSION=	2000.04.28
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	graphics
-DISTNAME=	xmorph-11sep97
+MASTER_SITES=	http://www.colorado-research.com/~gourlay/software/Graphics/Xmorph/pub/
+DISTNAME=	${PORTNAME}-2000apr28
 
 MAINTAINER=	ports@FreeBSD.org
 
-MAN1=		xmorph.1
-MANCOMPRESSED=	yes
-
 USE_X_PREFIX=	yes
+INSTALLS_SHLIB=	yes
 
-post-patch:
-	(cd ${WRKSRC}; makedepend)
+MAN1=		xmorph.1
 
 .include <bsd.port.mk>
