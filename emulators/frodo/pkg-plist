@@ -20,25 +20,25 @@ libexec/frodo/64prgs/tech-tech
 libexec/frodo/64prgs/text26
 @dirrm libexec/frodo/64prgs
 @dirrm libexec/frodo
-share/doc/frodo/CHANGES
-share/doc/frodo/Main.html
-share/doc/frodo/author.html
-share/doc/frodo/bugreports.html
-share/doc/frodo/demoprograms.html
-share/doc/frodo/emulwindow.html
-share/doc/frodo/files.html
-share/doc/frodo/flavours.html
-share/doc/frodo/future.html
-share/doc/frodo/history.html
-share/doc/frodo/installation.html
-share/doc/frodo/kernal.html
-share/doc/frodo/keyboard.html
-share/doc/frodo/legalmush.html
-share/doc/frodo/overview.html
-share/doc/frodo/sam.html
-share/doc/frodo/settings.html
-share/doc/frodo/systemspecific.html
-share/doc/frodo/technicalinfo.html
-share/doc/frodo/thanks.html
-share/doc/frodo/whatsnew.html
-@dirrm share/doc/frodo
+%%PORTDOCS%%share/doc/frodo/CHANGES
+%%PORTDOCS%%share/doc/frodo/Main.html
+%%PORTDOCS%%share/doc/frodo/author.html
+%%PORTDOCS%%share/doc/frodo/bugreports.html
+%%PORTDOCS%%share/doc/frodo/demoprograms.html
+%%PORTDOCS%%share/doc/frodo/emulwindow.html
+%%PORTDOCS%%share/doc/frodo/files.html
+%%PORTDOCS%%share/doc/frodo/flavours.html
+%%PORTDOCS%%share/doc/frodo/future.html
+%%PORTDOCS%%share/doc/frodo/history.html
+%%PORTDOCS%%share/doc/frodo/installation.html
+%%PORTDOCS%%share/doc/frodo/kernal.html
+%%PORTDOCS%%share/doc/frodo/keyboard.html
+%%PORTDOCS%%share/doc/frodo/legalmush.html
+%%PORTDOCS%%share/doc/frodo/overview.html
+%%PORTDOCS%%share/doc/frodo/sam.html
+%%PORTDOCS%%share/doc/frodo/settings.html
+%%PORTDOCS%%share/doc/frodo/systemspecific.html
+%%PORTDOCS%%share/doc/frodo/technicalinfo.html
+%%PORTDOCS%%share/doc/frodo/thanks.html
+%%PORTDOCS%%share/doc/frodo/whatsnew.html
+%%PORTDOCS%%@dirrm share/doc/frodo

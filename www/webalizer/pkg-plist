@@ -1,16 +1,16 @@
 bin/webalizer
 @unexec rm -f %B/webazolver
 etc/webalizer.conf-dist
-share/doc/webalizer/CHANGES
-share/doc/webalizer/COPYING
-share/doc/webalizer/Copyright
-share/doc/webalizer/INSTALL
-share/doc/webalizer/DNS.README
-share/doc/webalizer/README
-share/doc/webalizer/README.FIRST
-share/doc/webalizer/country-codes.txt
-@dirrm share/doc/webalizer
-share/examples/webalizer/msfree.png
-share/examples/webalizer/sample.conf
-share/examples/webalizer/webalizer.png
-@dirrm share/examples/webalizer
+%%PORTDOCS%%share/doc/webalizer/CHANGES
+%%PORTDOCS%%share/doc/webalizer/COPYING
+%%PORTDOCS%%share/doc/webalizer/Copyright
+%%PORTDOCS%%share/doc/webalizer/INSTALL
+%%PORTDOCS%%share/doc/webalizer/DNS.README
+%%PORTDOCS%%share/doc/webalizer/README
+%%PORTDOCS%%share/doc/webalizer/README.FIRST
+%%PORTDOCS%%share/doc/webalizer/country-codes.txt
+%%PORTDOCS%%@dirrm share/doc/webalizer
+%%PORTDOCS%%share/examples/webalizer/msfree.png
+%%PORTDOCS%%share/examples/webalizer/sample.conf
+%%PORTDOCS%%share/examples/webalizer/webalizer.png
+%%PORTDOCS%%@dirrm share/examples/webalizer
