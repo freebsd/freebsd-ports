@@ -1,2 +1,4 @@
-MD5 (bind-8.4.3/bind-src.tar.gz) = e78610fc1663cfe8c2db6a2d132d902b
-MD5 (bind-8.4.3/bind-doc.tar.gz) = fcfdaaa2fc7d6485b0e3d08299948bd3
+MD5 (bind-8.4.4/bind-src.tar.gz) = 493bb9fe98468ce49306bf713fd6206b
+SIZE (bind-8.4.4/bind-src.tar.gz) = 1439423
+MD5 (bind-8.4.4/bind-doc.tar.gz) = 8a4b805b7f4aa6a7b1e1a1d1b2a02d51
+SIZE (bind-8.4.4/bind-doc.tar.gz) = 1493345
