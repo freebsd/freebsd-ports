@@ -1,0 +1,12 @@
+diff -ruN /usr/ports/www/ijb/work/ijb20/win32.c ./win32.c
+--- /usr/ports/www/ijb/work/ijb20/win32.c	Mon Feb 28 02:35:10 2000
++++ ./win32.c	Mon Feb 28 02:31:06 2000
+@@ -7,7 +7,7 @@
+ 
+ #include <stdio.h>
+ #ifdef REGEX
+-#include "gnu_regex.h"
++#include "gnuregex.h"
+ #endif
+ #include "jcc.h"
+ #include <windows.h>

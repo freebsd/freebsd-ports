@@ -1,0 +1,12 @@
+diff -ruN /usr/ports/www/ijb/work/ijb20/gnu_regex.c ./gnu_regex.c
+--- /usr/ports/www/ijb/work/ijb20/gnu_regex.c	Mon Feb 28 02:35:10 2000
++++ ./gnu_regex.c	Mon Feb 28 02:31:06 2000
+@@ -131,7 +131,7 @@
+ #endif /* not emacs */
+ 
+ /* Get the interface, including the syntax bits.  */
+-#include "gnu_regex.h"
++#include "gnuregex.h"
+ 
+ /* isalpha etc. are used for the character classes.  */
+ #include <ctype.h>
