@@ -4744,6 +4744,7 @@ nnap		ports/news/nnap
 nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
+no-aspell	ports/textproc/no-aspell
 no-ispell	ports/textproc/no-ispell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
