@@ -70,21 +70,12 @@ post-patch:
 
 pre-install:
 .if !defined(WITHOUT_LDAP)
-.if exists(${LOCALBASE}/lib/libldap.so.1)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.1"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-.else
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so.2"; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure PHP with OpenLDAP2 support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-.endif
 .endif
 
 do-install:
