@@ -7,11 +7,10 @@
 
 PORTNAME=	gkrelltop
 PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://psychology.rutgers.edu/~zaimi/html/gkrelltop/
 DISTNAME=	${PORTNAME}_2.2-6
-#EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@pinko.net
 COMMENT=	Plugin for gkrellm 2.x shows top three processes, requires procfs
