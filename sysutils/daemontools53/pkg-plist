@@ -1,0 +1,11 @@
+bin/supervise
+bin/svc
+bin/svstat
+bin/testfilelock
+bin/fifo
+bin/cyclog
+bin/errorsto
+bin/usually
+bin/accustamp
+bin/tailocal
+bin/setuser
