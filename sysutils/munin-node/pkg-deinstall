@@ -1,13 +1,4 @@
 #! /bin/sh
-#
-# $Log: pkg-deinstall,v $
-# Revision 1.2.2.1  2004/11/21 10:52:27  lupe
-# make stop_process use old or new start-stop script.
-#
-# Revision 1.2  2004/02/06 18:49:58  lupe
-# Fixes for pkg_add compatibility.
-#
-#
 
 ask() {
     local question default answer
@@ -39,6 +30,8 @@ yesno() {
 }
 
 stop_process() {
+    STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node.sh
+
     if [ -x $STARTSTOP ]; then
 	$STARTSTOP stop
     fi
@@ -54,17 +47,45 @@ delete_group() {
     fi
 }
 
-OSVERSION=`/sbin/sysctl -n kern.osreldate`
-if [ $OSVERSION -lt 500000 ]; then
-    STARTSTOP=${PKG_PREFIX}/etc/rc.d/munin-node.sh
-else
-    STARTSTOP=/etc/rc.d/munin_node
-fi
+delete_crontab_entries() {
+    local prog
+    prog=$1
+
+    if grep -q "^[^#]*$prog" /etc/crontab; then
+	TMPFILE=`mktemp -t munin` || exit 1
+	grep -v $prog /etc/crontab > $TMPFILE
+	cat $TMPFILE > /etc/crontab
+	rm $/etc/crontab
+    fi
+}
+
+delnewsyslog() {
+    tmp="/etc/#munin-node$$"
+    sed -e '/^\/var\/log\/munin-node.log[ 	]/d' /etc/newsyslog.conf >${tmp}
+    cat ${tmp} > /etc/newsyslog.conf
+    rm ${tmp}
+}
+
+newsyslog() {
+    ENTRY=`grep /var/log/munin-node.log /etc/newsyslog.conf`
+    DEFAULT='/var/log/munin-node.log			644  7	   *	@T00  Z	/var/run/munin/munin-node.pid'
+    if [ -z "$ENTRY" ]; then
+	exit 0
+    elif [ "$ENTRY" = "$DEFAULT" ]; then
+	delnewsyslog
+    elif yesno "You have changed the default munin-node entry in \"/etc/newsyslog.conf\".
+Do you want me to delete it?" y; then
+	delnewsyslog
+	echo "Done."
+    fi
+}
+
 
 case $2 in
     DEINSTALL)
+	delete_crontab_entries ${PKG_PREFIX}/bin/munin-node-revive
 	stop_process
-	exit 0 # ignore error
+	newsyslog
 	;;
     POST-DEINSTALL)
 	delete_group munin

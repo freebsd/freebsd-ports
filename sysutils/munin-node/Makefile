@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	munin
-PORTVERSION=	1.0.4
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	munin
 PKGNAMESUFFIX=	-node
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	lupe@lupe-christoph.de
 COMMENT=	Node-specific part of Munin
@@ -27,36 +27,31 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 
 USE_GMAKE=	yes
 PATCH_STRIP=	-p1
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.p/pre/}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.r/rc/}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-ALL_TARGET=	DATADIR=${DATADIR} build build-man
-INSTALL_TARGET=	DATADIR=${DATADIR} install-node install-node-plugins
+ALL_TARGET=	DATADIR=${DATADIR} PERL=${PERL} build build-man
+INSTALL_TARGET=	DATADIR=${DATADIR} PERL=${PERL} install-node install-node-plugins
 MAKE_ENV=	LANG=C
-NOPRECIOUSMAKEVARS=yes
 
 MAN5=		munin-node.conf.5
 MAN8=		munin-node-configure.8 munin-node.8 munin-run.8
 
-.if ${OSVERSION} < 500000
-PKGMSG=${FILESDIR}/pkg-message.4
-STARTSTOP_SRC=${FILESDIR}/munin-node.sh
-.else
-PKGMSG=${FILESDIR}/pkg-message
-STARTSTOP_SRC=${FILESDIR}/munin_node.sh
-.endif
-STARTSTOP_DST=${PREFIX}/etc/rc.d/munin-node.sh
+SUB_FILES=	pkg-message munin-node.sh munin-node-revive.sh
+SUB_LIST=	RC_SUBR=${RC_SUBR}
+USE_RC_SUBR=	YES
 
 pre-install:
-	@${SED} 's@%%PREFIX%%@${PREFIX}@g' ${PKGMSG} > ${PKGMESSAGE}
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SED} 's@%PREFIX%@${PREFIX}@g' ${STARTSTOP_SRC} > ${STARTSTOP_DST}
-	@${CHMOD} +x ${STARTSTOP_DST}
+	${INSTALL_SCRIPT} ${WRKDIR}/munin-node.sh ${PREFIX}/etc/rc.d/munin-node.sh
+.if ${PERL_LEVEL} < 500800
+	${INSTALL_SCRIPT} ${WRKDIR}/munin-node-revive.sh ${PREFIX}/bin/munin-node-revive
+.endif
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf ${PREFIX}/etc/munin/munin-node.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample
+	${INSTALL_DATA} files/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample
 	@if [ ! -f ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/plugins.conf ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf; \
+		${INSTALL_DATA} ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf.sample ${PREFIX}/etc/munin/plugin-conf.d/plugins.conf; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 	@${INSTALL_MAN} -C ${WRKSRC}/build/doc/munin-node.conf.5 ${PREFIX}/man/man5
