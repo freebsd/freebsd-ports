@@ -512,6 +512,7 @@
     SUBDIR += wmminichess
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
+    SUBDIR += wmquake
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
