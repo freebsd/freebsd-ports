@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	autocd
-PORTVERSION=	3.01.02a
+PORTVERSION=	3.02.03a
 CATEGORIES=	audio sysutils
 MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 
 MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
 
-USE_REINPLACE=	yes
-MAN1=		autocd.1 cdctl.1
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+MAN1=		cdctl.1 acdplay.1
+MAN8=		autocd.8
+MLINKS=		cdctl.1 eject.1 cdctl.1 pause.1
 
-post-patch:
-.for file in Makefile
-	@${REINPLACE_CMD} -e \
-		's|/usr/local|${PREFIX}|g ; \
-		s|CFLAGS=-Wall -O2 -pipe|CFLAGS?=${CFLAGS}|g' \
-		${WRKSRC}/${file}
-.endfor
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400010
+LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in README.rus.html
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README.rus.html ${DOCSDIR}
 .endif
 
-.include	<bsd.port.mk>
+.include <bsd.port.post.mk>
