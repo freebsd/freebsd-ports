@@ -28,7 +28,6 @@ PLIST_SUB=	HLDSDIR="${HLDSDIR:S/^\///}" LDCONFIG="${LDCONFIG_LINUX}"
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
-STRIP_LINUX=	${LINUXBASE}/usr/bin/strip
 
 HLDSDIR=	/usr/games/hlds_l/
 HL_DIRS=	valve/maps valve/events valve/dlls valve/cl_dlls \
@@ -66,7 +65,6 @@ install-files:
 	done
 # trim/set permissions
 	@${CHMOD} ${BINMODE} ${PREFIX}${HLDSDIR}${HL_PROGRAM}
-	@${STRIP_LINUX} ${PREFIX}${HLDSDIR}${HL_PROGRAM}
 # libraries
 # this should go in a pkg-install, should be checked later
 	@if ! (${GREP} -E \"^${HLDSDIR}$$\" ${PREFIX}/etc/ld.so.conf >/dev/null 2>/dev/null) ;\
