@@ -45,8 +45,6 @@
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
     SUBDIR += kde3-i18n
-    SUBDIR += linux-netscape47-communicator
-    SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale
     SUBDIR += linuxdoc-sgml
     SUBDIR += mizifont
@@ -56,11 +54,6 @@
     SUBDIR += msdosfs
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
-    SUBDIR += netscape3
-    SUBDIR += netscape4-communicator
-    SUBDIR += netscape4-navigator
-    SUBDIR += netscape47-communicator
-    SUBDIR += netscape47-navigator
     SUBDIR += nh2ps
     SUBDIR += nhpf
     SUBDIR += nhppf

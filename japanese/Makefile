@@ -180,8 +180,6 @@
     SUBDIR += libjconv
     SUBDIR += libslang
     SUBDIR += linux-JM
-    SUBDIR += linux-netscape47-communicator
-    SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale
     SUBDIR += lipsf
     SUBDIR += lookup
@@ -246,12 +244,6 @@
     SUBDIR += ne
     SUBDIR += nethack32
     SUBDIR += nethack34
-    SUBDIR += netscape-fonts
-    SUBDIR += netscape3.language
-    SUBDIR += netscape4-communicator
-    SUBDIR += netscape4-navigator
-    SUBDIR += netscape47-communicator
-    SUBDIR += netscape47-navigator
     SUBDIR += netscape48-communicator
     SUBDIR += netscape48-navigator
     SUBDIR += netscape7

@@ -1,9 +1,0 @@
---------------------------------------------------------------------
-Check the following files if you want to modify some X resources to
-suit your personal settings, like a wheel mouse or XIM input styles:
-@NDIR@/@LOCALE@/Netscape.WheelMouse
-@NDIR@/@LOCALE@/Netscape
-
-If your want to modify and redistriute this program, see
-@NDIR@/@LOCALE@/BDP_LICENSE.
---------------------------------------------------------------------
