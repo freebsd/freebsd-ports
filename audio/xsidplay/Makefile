@@ -15,13 +15,20 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	coop9211@uidaho.edu
 
+.if defined(WITH_SIDPLAY2)
+LIB_DEPENDS=	sidplay2.0:${PORTSDIR}/audio/libsidplay2
+.else
 LIB_DEPENDS=	sidplay.1:${PORTSDIR}/audio/libsidplay
+.endif
 
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-qt3 --with-qt-binaries=${X11BASE}/bin
+CONFIGURE_ARGS+=	--with-qt3 --with-qt-binaries=${X11BASE}/bin
+.if defined(WITH_SIDPLAY2)
+CONFIGURE_ARGS+=	--with-sidplay2
+.endif
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 USE_REINPLACE=	yes
