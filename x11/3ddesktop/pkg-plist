@@ -3,6 +3,6 @@ bin/3ddeskd
 etc/3ddesktop.conf
 share/3ddesktop/digits.bmp
 %%PORTDOCS%%share/doc/3ddesktop/README
-%%PORTDOCS%%share/doc/3ddesktop/README-windowmanagers
+%%PORTDOCS%%share/doc/3ddesktop/README.windowmanagers
 %%PORTDOCS%%@dirrm share/doc/3ddesktop
 @dirrm share/3ddesktop
