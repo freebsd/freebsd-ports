@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix libgnomeui gstreamerplugins
 USE_LIBTOOL_VER=	15
 
-post-extract:
+pre-configure:
 	@${RM} -f \
 		${WRKSRC}/intltool-extract.in \
 		${WRKSRC}/intltool-merge.in \
