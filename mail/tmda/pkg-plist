@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/tmda-gui
 bin/tmda-manager
 bin/tmda-address
@@ -53,6 +54,8 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/base64MIME.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quopriMIME.py
 %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email/quopriMIME.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email
+@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib
 %%PYTHON_SITELIBDIR%%/TMDA/Address.py
 %%PYTHON_SITELIBDIR%%/TMDA/Address.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/Auth.py
@@ -85,56 +88,48 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/Version.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/__init__.py
 %%PYTHON_SITELIBDIR%%/TMDA/__init__.pyc
-%%PORTDOCS%%share/doc/tmda/CODENAMES
-%%PORTDOCS%%share/doc/tmda/COPYING
-%%PORTDOCS%%share/doc/tmda/CRYPTO
-%%PORTDOCS%%share/doc/tmda/ChangeLog
-%%PORTDOCS%%share/doc/tmda/INSTALL
-%%PORTDOCS%%share/doc/tmda/README
-%%PORTDOCS%%share/doc/tmda/THANKS
-%%PORTDOCS%%share/doc/tmda/UPGRADE
-%%PORTDOCS%%share/doc/tmda/contrib/ChangeLog
-%%PORTDOCS%%share/doc/tmda/contrib/collectaddys
-%%PORTDOCS%%share/doc/tmda/contrib/printcdb
-%%PORTDOCS%%share/doc/tmda/contrib/printdbm
-%%PORTDOCS%%share/doc/tmda/contrib/sample.config
-%%PORTDOCS%%share/doc/tmda/contrib/sendit.sh
-%%PORTDOCS%%share/doc/tmda/contrib/tmda.el
-%%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
-%%PORTDOCS%%share/doc/tmda/contrib/def2html
-%%PORTDOCS%%share/doc/tmda/contrib/vadduser-tmda
-%%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
-%%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
-%%PORTDOCS%%share/doc/tmda/htdocs/config-filter.html
-%%PORTDOCS%%share/doc/tmda/htdocs/config-pre.html
-%%PORTDOCS%%share/doc/tmda/htdocs/config-server.html
-%%PORTDOCS%%share/doc/tmda/htdocs/config-vars.html
-%%PORTDOCS%%share/doc/tmda/htdocs/config.html
-%%PORTDOCS%%share/doc/tmda/htdocs/download.html
-%%PORTDOCS%%share/doc/tmda/htdocs/features.html
-%%PORTDOCS%%share/doc/tmda/htdocs/filter-sources.html
-%%PORTDOCS%%share/doc/tmda/htdocs/history.html
-%%PORTDOCS%%share/doc/tmda/htdocs/howto-template.html
-%%PORTDOCS%%share/doc/tmda/htdocs/howtos.html
-%%PORTDOCS%%share/doc/tmda/htdocs/index.html
-%%PORTDOCS%%share/doc/tmda/htdocs/install.html
-%%PORTDOCS%%share/doc/tmda/htdocs/inuse.html
-%%PORTDOCS%%share/doc/tmda/htdocs/mirrors.html
-%%PORTDOCS%%share/doc/tmda/htdocs/press.html
-%%PORTDOCS%%share/doc/tmda/htdocs/requirements.html
-%%PORTDOCS%%share/doc/tmda/htdocs/resources.html
-%%PORTDOCS%%share/doc/tmda/htdocs/results.html
-%%PORTDOCS%%share/doc/tmda/htdocs/support-commercial.html
-%%PORTDOCS%%share/doc/tmda/htdocs/tmda-ofmipd.html
-%%PORTDOCS%%share/doc/tmda/htdocs/tmda-vdomains.html
-%%PORTDOCS%%share/doc/tmda/htdocs/trouble.html
-share/tmda/bounce.txt
-share/tmda/confirm_accept.txt
-share/tmda/confirm_request.txt
-@dirrm share/tmda
-%%PORTDOCS%%@dirrm share/doc/tmda/contrib
-%%PORTDOCS%%@dirrm share/doc/tmda/htdocs
-%%PORTDOCS%%@dirrm share/doc/tmda
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib/email
-@dirrm %%PYTHON_SITELIBDIR%%/TMDA/pythonlib
 @dirrm %%PYTHON_SITELIBDIR%%/TMDA
+%%PORTDOCS%%%%DOCSDIR%%/CODENAMES
+%%PORTDOCS%%%%DOCSDIR%%/CRYPTO
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE
+%%PORTDOCS%%%%DOCSDIR%%/bugs.html
+%%PORTDOCS%%%%DOCSDIR%%/config-client.html
+%%PORTDOCS%%%%DOCSDIR%%/config-filter.html
+%%PORTDOCS%%%%DOCSDIR%%/config-pre.html
+%%PORTDOCS%%%%DOCSDIR%%/config-server.html
+%%PORTDOCS%%%%DOCSDIR%%/config-vars.html
+%%PORTDOCS%%%%DOCSDIR%%/config.html
+%%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/features.html
+%%PORTDOCS%%%%DOCSDIR%%/filter-sources.html
+%%PORTDOCS%%%%DOCSDIR%%/history.html
+%%PORTDOCS%%%%DOCSDIR%%/howto-template.html
+%%PORTDOCS%%%%DOCSDIR%%/howtos.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/install.html
+%%PORTDOCS%%%%DOCSDIR%%/inuse.html
+%%PORTDOCS%%%%DOCSDIR%%/mirrors.html
+%%PORTDOCS%%%%DOCSDIR%%/press.html
+%%PORTDOCS%%%%DOCSDIR%%/requirements.html
+%%PORTDOCS%%%%DOCSDIR%%/resources.html
+%%PORTDOCS%%%%DOCSDIR%%/results.html
+%%PORTDOCS%%%%DOCSDIR%%/support-commercial.html
+%%PORTDOCS%%%%DOCSDIR%%/tmda-ofmipd.html
+%%PORTDOCS%%%%DOCSDIR%%/tmda-vdomains.html
+%%PORTDOCS%%%%DOCSDIR%%/trouble.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/contrib/collectaddys
+%%EXAMPLESDIR%%/contrib/def2html
+%%EXAMPLESDIR%%/contrib/printcdb
+%%EXAMPLESDIR%%/contrib/printdbm
+%%EXAMPLESDIR%%/contrib/sendit.sh
+%%EXAMPLESDIR%%/contrib/tmda.el
+%%EXAMPLESDIR%%/contrib/vadduser-tmda
+@dirrm %%EXAMPLESDIR%%/contrib
+%%EXAMPLESDIR%%/sample.config
+@dirrm %%EXAMPLESDIR%%
+%%DATADIR%%/bounce.txt
+%%DATADIR%%/confirm_accept.txt
+%%DATADIR%%/confirm_request.txt
+@dirrm %%DATADIR%%

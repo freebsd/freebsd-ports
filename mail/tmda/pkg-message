@@ -1,0 +1,6 @@
+
+	All TMDA programs have been installed in PREFIX/bin.
+	Documentation is located in DOCSDIR.
+	See DOCSDIR/UPGRADE if upgrading from a previous release.
+	Sample config file: EXAMPLESDIR/sample.config
+

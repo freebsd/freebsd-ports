@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.76
+PORTVERSION=	0.78
 CATEGORIES=	mail python
-MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
+MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
+		http://www.us.tmda.net/releases/%SUBDIR%/ \
+		http://tmda.mirrors.summersault.com/releases/%SUBDIR%/ \
+		http://mirrors.standblue.net/tmda.net/releases/%SUBDIR%/ \
+		http://www.au.tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
 
@@ -17,37 +21,40 @@ COMMENT=	Python-based SPAM reduction system
 
 USE_PYTHON=	yes
 
-do-build:
-	(cd ${WRKSRC}; ${PYTHON_CMD} ./compileall)
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
-pre-install:
-	@${SH} ${PKGREQ} INSTALL
+DOCS=		CODENAMES CRYPTO THANKS UPGRADE htdocs/*.html
+CONTRIB=	collectaddys def2html printcdb printdbm \
+		sendit.sh tmda.el vadduser-tmda
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 210
+BROKEN=		"TMDA requries Python 2.1 or greater"
+.endif
+
+do-build:
+	cd ${WRKSRC} && ${PYTHON_CMD} ./compileall
 
 do-install:
-	${MKDIR} ${PYTHON_SITELIBDIR}/TMDA/pythonlib/email
-	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHON_SITELIBDIR}/TMDA
+	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHONPREFIX_SITELIBDIR}/TMDA
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/*.py* \
-		${PYTHON_SITELIBDIR}/TMDA/pythonlib/email
-	${MKDIR} ${DATADIR}
+		${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
+	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
-
-post-install:
+	@${MKDIR} ${EXAMPLESDIR}/contrib
+	cd ${WRKSRC}/contrib && \
+		${INSTALL_DATA} sample.config ${EXAMPLESDIR} && \
+		${INSTALL_DATA} ${CONTRIB} ${EXAMPLESDIR}/contrib
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
-.for f in CODENAMES COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
-.endfor
-.for f in ChangeLog collectaddys printcdb sample.config sendit.sh tmda.spec \
-		def2html printdbm tmda.el vadduser-tmda
-	@${INSTALL_DATA} ${WRKSRC}/contrib/$f ${DOCSDIR}/contrib
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/htdocs/*.html ${DOCSDIR}/htdocs
-	@${ECHO_MSG}
-	@${ECHO_MSG} See ${DOCSDIR}/INSTALL for configuration instructions
-	@${ECHO_MSG} See ${DOCSDIR}/UPGRADE if upgrading from a previous release
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${ECHO_MSG} All related programs have been installed in ${PREFIX}/bin
-	@${ECHO_MSG}
+	@${SED} -e 's!PREFIX!${PREFIX}!; s!DOCSDIR!${DOCSDIR}!;' \
+	       -e 's!EXAMPLESDIR!${EXAMPLESDIR}!' ${.CURDIR}/pkg-message \
+	       > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
