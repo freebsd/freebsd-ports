@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	1.5
+PORTVERSION=	2.01
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
@@ -30,9 +30,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample-nonspam.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample-spam.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/spamassassin.cf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/spamassassin.prefs ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/spamd/README ${DOCSDIR}/spamd.README
+	${INSTALL_DATA} ${WRKSRC}/spamproxy/README ${DOCSDIR}/spamproxy.README
+	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/sql.README
+	${INSTALL_DATA} ${WRKSRC}/sql/spamassassin.sql ${DOCSDIR}/spamassassin.sql
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
