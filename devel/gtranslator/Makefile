@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME application for developing ".pot" files used with GNU Gettext
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 libbonobo libbonoboui libgnome libgnomeui libxml2
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 libgnomeui 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
