@@ -1,22 +1,22 @@
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
-share/locale/es/LC_MESSAGES/fetchmail.mo
+%%PORTDOCS%%share/doc/fetchmail/COPYING
+%%PORTDOCS%%share/doc/fetchmail/FAQ
+%%PORTDOCS%%share/doc/fetchmail/FEATURES
+%%PORTDOCS%%share/doc/fetchmail/NOTES
+%%PORTDOCS%%share/doc/fetchmail/README
+%%PORTDOCS%%share/doc/fetchmail/design-notes.html
+%%PORTDOCS%%share/doc/fetchmail/fetchmail-FAQ.html
+%%PORTDOCS%%share/doc/fetchmail/fetchmail-features.html
+%%PORTDOCS%%@dirrm share/doc/fetchmail
+share/locale/cs/LC_MESSAGES/fetchmail.mo
 share/locale/da/LC_MESSAGES/fetchmail.mo
+share/locale/es/LC_MESSAGES/fetchmail.mo
 share/locale/fr/LC_MESSAGES/fetchmail.mo
+share/locale/gl/LC_MESSAGES/fetchmail.mo
 share/locale/pl/LC_MESSAGES/fetchmail.mo
 share/locale/pt_BR/LC_MESSAGES/fetchmail.mo
-share/locale/cs/LC_MESSAGES/fetchmail.mo
-share/locale/gl/LC_MESSAGES/fetchmail.mo
-share/doc/fetchmail/COPYING
-share/doc/fetchmail/FAQ
-share/doc/fetchmail/FEATURES
-share/doc/fetchmail/NOTES
-share/doc/fetchmail/README
-share/doc/fetchmail/design-notes.html
-share/doc/fetchmail/fetchmail-FAQ.html
-share/doc/fetchmail/fetchmail-features.html
-@dirrm share/doc/fetchmail
 @unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/* 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
