@@ -4,14 +4,13 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.16 1997/07/17 15:12:45 max Exp $
+# $Id: Makefile,v 1.17 1997/09/14 21:34:28 max Exp $
 #
 
 DISTNAME=	Canna32p2
 PKGNAME=	ja-Canna-3.2.2
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/Canna32/ \
-		ftp://ftp.cdrom.com/pub/japanese/titech/Canna32/
+MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna32/
 
 MAINTAINER=	max@FreeBSD.ORG
 
@@ -34,6 +33,10 @@ MAN3= 	RkRgnBun.3 RkDefineDic.3 RkDeleteDic.3 RkEndBun.3 \
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 
+pre-install:
+	${MKDIR} /var/run/canna
+	chown bin.bin /var/run/canna
+
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
@@ -42,7 +45,7 @@ post-install:
 		echo 'canna=${PREFIX}/sbin/cannaserver' 		\
 		  >> ${STARTUP_SCRIPT} ;				\
 		echo 'if [ -f $$canna ]; then' >> ${STARTUP_SCRIPT} ;	\
-		echo '    rm -f /var/run/Canna.pid' >> ${STARTUP_SCRIPT};\
+		echo '    rm -f /var/run/canna/Canna.pid' >> ${STARTUP_SCRIPT};\
 		echo "    echo -n ' Canna'" >> ${STARTUP_SCRIPT};	\
 		echo '     $$canna' >> ${STARTUP_SCRIPT} ;		\
 		echo "fi" >> ${STARTUP_SCRIPT} ;			\
