@@ -17,6 +17,23 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Parser/Parser.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Parser/Parser.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Parser/autosplit.ix
+%%PORTDOCS%%%%EXAMPLESDIR%%/Dict/DecimalDict.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Dict/EngStem.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Dict/IntegerDict.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Dict/StemSnowball.pm
+%%PORTDOCS%%%%EXAMPLESDIR%%/Dict/english.stop
+%%PORTDOCS%%%%EXAMPLESDIR%%/Dict/russian.stop
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/README.INSIDE
+%%PORTDOCS%%%%EXAMPLESDIR%%/index.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/init-custom.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/init.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/parser/parser-test-1.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/parser/parser-test-2.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/parser/test.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/search.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple_parser.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/testdict.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Dict/PorterEng
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Dict
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/OpenFTS/Morph/ISpell
@@ -28,3 +45,6 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Search/OpenFTS
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Search 2>/dev/null
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search 2>/dev/null
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Dict
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/parser
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
