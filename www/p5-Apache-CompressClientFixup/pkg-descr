@@ -1,0 +1,2 @@
+Apache::CompressClientFixup - Perl extension for Apache-1.3.X to avoid
+gzip compression for known buggy browsers.
