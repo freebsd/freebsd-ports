@@ -3,14 +3,14 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1997/03/12 06:47:56 jfitz Exp $
+# $Id: Makefile,v 1.8 1997/03/19 02:56:20 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.01
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.gamesdomain.com/pub/idsoftware/quake/ \
-		ftp://ftp.cssweb.com/pub/games/idstuff/quake/
-		ftp://ftp.feist.com/pub/pc/games/quake/ \
+		ftp://ftp.cssweb.com/pub/games/idstuff/quake/ \
+		ftp://ftp.feist.com/pub/pc/games/quake/
 DISTFILES=	quake101.zip \
 		quake-FreeBSD.tar.gz \
 		intel_linux_quake101.tgz
