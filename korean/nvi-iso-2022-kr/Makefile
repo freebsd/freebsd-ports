@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.9 1998/02/19 16:50:18 itojun Exp $
+# $Id: Makefile,v 1.10 1998/03/04 19:35:07 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -20,4 +20,4 @@ CATEGORIES=	korean editors
 
 MAINTAINER=	itojun@itojun.org
 
-CONFIGURE_ARGS=	--enable-multibyte=iso-2022-kr --program-prefix=n
+CONFIGURE_ARGS+=	--enable-multibyte=iso-2022-kr --program-prefix=n

@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.10 1998/02/19 16:50:14 itojun Exp $
+# $Id: Makefile,v 1.11 1998/03/04 19:35:06 asami Exp $
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk
@@ -22,4 +22,4 @@ CATEGORIES=	japanese editors
 
 MAINTAINER=	itojun@itojun.org
 
-CONFIGURE_ARGS=	--enable-multibyte=sjis --program-prefix=n --enable-canna
+CONFIGURE_ARGS+=	--enable-multibyte=sjis --program-prefix=n --enable-canna
