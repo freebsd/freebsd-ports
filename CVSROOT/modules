@@ -3077,6 +3077,7 @@ jabber		ports/net/jabber
 jabber-aim	ports/net/jabber-aim
 jabber-conference	ports/net/jabber-conference
 jabber-jud	ports/net/jabber-jud
+jabber-msn	ports/net/jabber-msn
 jabber-yahoo	ports/net/jabber-yahoo
 jacal		ports/math/jacal
 jad		ports/java/jad
