@@ -3707,6 +3707,7 @@ lcdproc		ports/sysutils/lcdproc
 lcms		ports/graphics/lcms
 lcrzo		ports/security/lcrzo
 lcrzoex		ports/security/lcrzoex
+ldap-account-manager	ports/sysutils/ldap-account-manager
 ldap2dns	ports/net/ldap2dns
 ldapdiff	ports/net/ldapdiff
 ldapsdk		ports/net/ldapsdk
