@@ -25,6 +25,7 @@ etc/rc.d/snort.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
+%%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
 %%PORTDOCS%%%%DOCSDIR%%/README.http_inspect
 %%PORTDOCS%%%%DOCSDIR%%/README.thresholding
