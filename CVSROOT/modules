@@ -1580,6 +1580,7 @@ eweather	ports/x11/eweather
 ewipe		ports/misc/ewipe
 exact		ports/mail/exact
 exctags		ports/devel/ctags
+execline	ports/lang/execline
 exiftags	ports/graphics/exiftags
 exim		ports/mail/exim
 exim-doc-html	ports/mail/exim-doc-html
