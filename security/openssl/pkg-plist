@@ -74,11 +74,6 @@ openssl/openssl.cnf.sample
 @dirrm include/openssl
 @dirrm openssl/certs
 @dirrm openssl/lib
-@dirrm openssl/man/man1
-@dirrm openssl/man/man3
-@dirrm openssl/man/man5
-@dirrm openssl/man/man7
-@dirrm openssl/man
 @dirrm openssl/misc
 @dirrm openssl/private
 @dirrm openssl
