@@ -16,7 +16,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}  \
 MASTER_SITE_SUBDIR=	gcc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libg++-2.7.2${EXTRACT_SUFX}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_CDROM=	'old version, not worth the cost in real estate'
 

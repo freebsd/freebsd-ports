@@ -17,7 +17,7 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LATEST_LINK=	gcc30
 

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://alph.dera.gov.uk/pub/TenDRA/ \
 		ftp://ftp.fh-wiesbaden.de/pub/Languages/C/TenDRA/ \
 		ftp://ftp.mayn.de/pub/unix/devel/compiler/tendra/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

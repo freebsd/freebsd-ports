@@ -17,7 +17,7 @@ PATCH_SITES=	http://web.inter.nl.net/hcc/Haj.Ten.Brugge/
 PATCHFILES=	bounds-checking-2.8.1-1.01.tar.gz
 .endif
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_CDROM=	'old version, not worth the cost in real estate'
 
