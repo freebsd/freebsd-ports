@@ -1,12 +1,12 @@
 # New ports collection makefile for:	suck
-# Version required:	3.9.0
+# Version required:	3.9.1
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.8 1997/11/25 11:44:18 jseger Exp $
+# $Id: Makefile,v 1.9 1998/02/08 13:13:52 jseger Exp $
 #
 
-DISTNAME=	suck-3.9.0
+DISTNAME=	suck-3.9.1
 CATEGORIES=	news
 MASTER_SITES=	http://www.pixi.com/~boby/
 
