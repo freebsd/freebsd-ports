@@ -2,6 +2,12 @@ bin/easter
 bin/leapsecs
 bin/nowutc
 bin/yearcal
+include/libtai/caldate.h
+include/libtai/caltime.h
+include/libtai/leapsecs.h
+include/libtai/tai.h
+include/libtai/taia.h
+include/libtai/uint64.h
 lib/%%LIBFILE%%.a
 lib/%%LIBFILE%%.so
 lib/%%LIBFILE%%.so.%%LIBVERSION%%

@@ -7,12 +7,15 @@
 
 PORTNAME=	libtai
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://mirror.pipex.net/pub/qmail/ \
 		ftp://ftp.rifkin.technion.ac.il/pub/qmail/
 
 MAINTAINER=	lioux@FreeBSD.org
+
+USE_REINPLACE=	yes
 
 ALL_TARGET=	it
 INSTALLS_SHLIB=	yes
@@ -28,6 +31,7 @@ MAN3=		caldate.3 caldate_mjd.3 caltime.3 caltime_tai.3 leapsecs.3 \
 LIBVERSION=	1
 LIBFILE=	libtai
 PROGRAM_FILES=	easter nowutc leapsecs yearcal
+HEADER_FILES=	caldate.h caltime.h leapsecs.h tai.h taia.h uint64.h
 
 do-configure:
 	@${PERL} -pi -e "s!%%PREFIX%%!${PREFIX}!g" \
@@ -35,6 +39,13 @@ do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} -fPIC -DPIC > ${WRKSRC}/conf-ccso
+
+pre-install:
+# correct header locations inside files
+.for file in ${HEADER_FILES}
+	@${REINPLACE_CMD} -E -e 's|(#include[[:space:]]+)"([^"]+)"|\1<libtai/\2>|' \
+		${WRKSRC}/${file}
+.endfor
 
 do-install:
 	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${BINGRP} -m 644 \
@@ -49,5 +60,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${LIBFILE}.so.${LIBVERSION} ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/${LIBFILE}.so.${LIBVERSION} \
 		${PREFIX}/lib/${LIBFILE}.so
+	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+.for file in ${HEADER_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/${PORTNAME}
+.endfor
 
 .include <bsd.port.mk>
