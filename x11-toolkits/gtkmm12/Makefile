@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/09/15 09:39:00 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/22 22:55:55 asami Exp $
 #
 
 DISTNAME=	Gtk---0.9.14
@@ -12,6 +12,8 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/gtk--/
 
 MAINTAINER=	Nakai@technologist.com
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
