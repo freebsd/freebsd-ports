@@ -18,7 +18,7 @@ USE_REINPLACE=	yes
 MAN1=	mdw.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's!quite!quiet!ig; s!.BR md5sum \(1\),\n!!' \
+	@${REINPLACE_CMD} -e 's!quite!quiet!g; s!.BR md5sum (1),!!' \
 		${WRKSRC}/doc/mdw.1
 
 post-install:
