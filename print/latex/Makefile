@@ -3,9 +3,9 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.20 1995/11/22 13:18:11 asami Exp $
+# $Id: Makefile,v 1.21 1995/12/18 00:27:43 jmz Exp $
 #
-VERSION=	95.12
+VERSION=	96.06
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
 CATEGORIES+=	print
@@ -17,23 +17,18 @@ MAINTAINER=	jmz@FreeBSD.org
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
-FTPGET=		${FILESDIR}/ftpget
-
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN?=		ftp.tex.ac.uk
 
 
 latex_base-${VERSION}.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/macros latex/base.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/macros -f latex/base.tar.gz -o ${DISTDIR}/$@
 latex_mf-${VERSION}.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts latex/mf.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/fonts -f latex/mf.tar.gz -o ${DISTDIR}/$@
 latex_tfm-${VERSION}.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/fonts latex/tfm.tar.gz ${DISTDIR}/$@
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/fonts -f latex/tfm.tar.gz -o ${DISTDIR}/$@
 latex_tools-${VERSION}.tar.gz:
-	@${FTPGET} ${CTAN} /tex-archive/macros latex/packages/tools.tar.gz ${DISTDIR}/$@
-
-pre-fetch:
-	@chmod +x ${FTPGET}
+	@${FETCH_CMD} -h ${CTAN} -c /tex-archive/macros -f latex/packages/tools.tar.gz -o ${DISTDIR}/$@
 
 do-build:
 	@(cd ${WRKSRC}/base; yes | initex unpack.ins)
