@@ -75,3 +75,5 @@ share/wmclockmon/new.pwcs
 share/wmclockmon/parts.xpm
 share/wmclockmon/parts_color.xpm
 share/wmclockmon/parts_new.xpm
+@dirrm %%EXAMPLESDIR%%
+@dirrm share/wmclockmon
