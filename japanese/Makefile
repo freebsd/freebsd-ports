@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.158 1998/11/09 14:48:40 kuriyama Exp $
+# $Id: Makefile,v 1.159 1998/11/10 15:45:50 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -30,11 +30,13 @@
     SUBDIR += gawk
     SUBDIR += gd
     SUBDIR += ghostscript
+    SUBDIR += gicq
     SUBDIR += gn-gnspool
     SUBDIR += gn-mnews
     SUBDIR += gp
     SUBDIR += grep
     SUBDIR += groff
+    SUBDIR += gtk
     SUBDIR += gxditview
     SUBDIR += handbook
     SUBDIR += hex
@@ -77,6 +79,7 @@
     SUBDIR += kon
     SUBDIR += kterm
     SUBDIR += less
+    SUBDIR += libicq
     SUBDIR += libslang
     SUBDIR += lipsf
     SUBDIR += lynx
