@@ -14,6 +14,8 @@ PATCH_SITES=	http://www.sinica.edu.tw/~jihuang/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 PATCHFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}.diff.gz
 
+BROKEN=		"Diff for 8.3.4 is not available"
+
 .include "${MASTERDIR}/Makefile"
 
 MD5_FILE=	${.CURDIR}/distinfo
