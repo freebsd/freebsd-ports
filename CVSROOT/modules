@@ -7797,6 +7797,7 @@ viewfax		ports/comms/viewfax
 viewkit		ports/x11-toolkits/viewkit
 viewklass	ports/x11-toolkits/viewklass
 viewml		ports/www/viewml
+vifm		ports/misc/vifm
 vigor		ports/editors/vigor
 vile		ports/editors/vile
 vilearn		ports/editors/vilearn
