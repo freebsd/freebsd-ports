@@ -6,9 +6,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=	shujit-0.3.8
+DISTNAME=	shujit-0.3.13
 CATEGORIES=	java
-MASTER_SITES=	http://www.shudo.net/jit/dist/old/
+MASTER_SITES=	http://www.shudo.net/jit/dist/
 
 MAINTAINER=	jake@checker.org
 
