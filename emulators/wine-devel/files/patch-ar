@@ -1,0 +1,11 @@
+*** configure~	Wed Dec 24 11:12:03 1997
+--- configure	Wed Dec 24 11:18:45 1997
+***************
+*** 2462,2465 ****
+--- 2462,2467 ----
+  trap 'rm -f $CONFIG_STATUS conftest*; exit 1' 1 2 15
+  
++ LDLIBS="$LDLIBS -lxpg4"
++ 
+  DEFS=-DHAVE_CONFIG_H
+  
