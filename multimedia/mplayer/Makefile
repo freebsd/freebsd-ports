@@ -38,10 +38,11 @@
 # (if not available) and then link mplayer against it. Then you'll
 # be able to use gmplayer, the graphical version of mplayer
 #
-# WITH_FREETYPE
+# WITHOUT_FREETYPE
 # default: undefined
-# defining this will change mplayer's font display ability from bitmap
-# fonts to truetype fonts
+# since freetype is installed on almost any system people might want
+# to run mplayer on, this port now defaults to freetype unless not
+# defined otherwise
 #
 #
 # CPU features:
@@ -166,7 +167,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.92.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -306,6 +307,10 @@ WITH_XMMS=	yes
 WITH_LZO=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libfreetype.so.9) && !defined(WITHOUT_FREETYPE)
+WITH_FREETYPE=	yes
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
@@ -319,6 +324,7 @@ PLIST_SUB+=	GMPLAYER="@comment "
 
 .if defined(WITH_GUI)
 USE_GNOME+=	gtk12
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
 .else
@@ -454,6 +460,7 @@ CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
 .else
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/multimedia/mplayer-fonts
+CONFIGURE_ARGS+=	--disable-freetype
 .endif
 
 .if defined(WITH_XANIM)
