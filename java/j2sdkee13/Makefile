@@ -22,8 +22,9 @@ NO_BUILD=	YES
 RESTRICTED=	"Redistribution is not permitted"
 NO_CDROM=	"Redistribution is not permitted"
 
-J2SDKEEVERSION=${PORTVERSION}_02
-DOWNLOAD_URL=	http://java.sun.com/j2ee/sdk_1.3/
+J2SDKEEVERSION=	${PORTVERSION}_02
+SUN_BUNDLE_ID?=	9405
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}
 
 .include <bsd.port.pre.mk>
 
