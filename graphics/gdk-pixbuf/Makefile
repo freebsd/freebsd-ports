@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/gdk-pixbuf
+MASTER_SITE_SUBDIR=	unstable/sources/gdk-pixbuf
 
 MAINTAINER=	ade@FreeBSD.org
 
