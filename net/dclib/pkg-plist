@@ -43,6 +43,8 @@ include/dclib/core/types.h
 include/dclib/cpluginmanager.h
 include/dclib/cquerymanager.h
 include/dclib/csearchindex.h
+include/dclib/csearchmanager.h
+include/dclib/csearchsocket.h
 include/dclib/csharelist.h
 include/dclib/ctransfer.h
 include/dclib/cuserlist.h
