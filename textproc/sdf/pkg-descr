@@ -1,0 +1,11 @@
+SDF is a freely available documentation system designed and developed by Ian
+Clatworthy, with help from many others. Based on a simple, readable markup
+language, SDF generates high quality output in multiple formats, all derived
+from a single document source. Supported output formats include HTML,
+PostScript, PDF, man pages, POD, LaTeX, SGML, MIMS HTX and F6 help, MIF, RTF,
+Windows help and plain text.
+
+WWW: http://www.mincom.com/mtr/sdf/
+
+- dannyman
+dannyman@tellme.com
