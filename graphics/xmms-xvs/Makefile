@@ -9,31 +9,24 @@ PORTNAME=	xmms-xvs
 PORTVERSION=	0.1.0b1
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://jgregor.ps.pl/xvs/download/
+MASTER_SITES=	http://jgregor.ps.pl/software/xvs/download/
 DISTNAME=	xvs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Visualization System, a plugin for XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
-XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
-WANT_GNOME=	yes
+USE_BISON=	yes
+USE_GNOME=	gtk12 libxml2
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_BISON=	yes
-CONFIGURE_ENV=	XML2_CONFIG="${XML2_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
-
-.include <bsd.port.pre.mk>
-
-PLIST_SUB+=	DATADIR="share"
+CONFIGURE_ENV=	XMMS_CONFIG="${XMMS_CONFIG}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<xml|<libxml/xml|g' ${WRKSRC}/configure
@@ -46,4 +39,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
