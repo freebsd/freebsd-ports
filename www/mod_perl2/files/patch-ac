@@ -1,0 +1,11 @@
+--- c	Sat Nov 27 13:42:59 2004
++++ ./ModPerl-Registry/lib/ModPerl/RegistryCooker.pm	Sat Nov 27 13:43:11 2004
+@@ -558,7 +558,7 @@
+ 
+ my %switches = (
+    'T' => sub {
+-       Apache::warn("-T switch is ignored, " .
++       Apache::ServerRec::warn("-T switch is ignored, " .
+                     "enable with 'PerlSwitches -T' in httpd.conf\n")
+              unless ${^TAINT};
+        "";

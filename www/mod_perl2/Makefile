@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	1.99r16
+PORTVERSION=	1.99r17
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
@@ -38,7 +38,7 @@ MAN3=		Apache::Build.3 Apache::Test.3 Apache::TestConfig.3 \
 IGNORE=		requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
-# no idea why r16 requires this - the perl build should do this copy
+# no idea why r16 and r17 require this - the perl build should do this copy
 pre-install:
 	${CP} ${WRKSRC}/WrapXS/APR/ThreadMutex/ThreadMutex.pm \
 		${WRKSRC}/blib/lib/Apache2/APR/
