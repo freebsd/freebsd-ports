@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Krb4-1.1
 
-MAINTAINER=	ajk@iu.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for Kerberos 4
 
 BROKEN=		"Does not compile"
