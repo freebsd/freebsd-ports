@@ -7,14 +7,17 @@
 #
 
 PORTNAME=	gtkwave
-PORTVERSION=	2.0.0p1
+PORTVERSION=	2.0.0.p1
+PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/amulet/gtkwave/2.0/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	bz2:${PORTSDIR}/archivers/bzip2
+.if !exists(/usr/bin/bzip2)
+LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
