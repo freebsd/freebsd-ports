@@ -43,37 +43,33 @@ INSTALL_TARGET=	install-pkgconfigDATA install-libLTLIBRARIES install-exec
 .endif
 
 OPTIONS=	OPTIMIZED_CFLAGS "Enable optimized CFLAGS" off \
-		SMP_THREADS "Enable FFTW SMP threads library" off \
-		SSE "Enable SSE optimized routines" off
+		SMP_THREADS "Enable FFTW SMP threads library" off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2 -ffast-math -fomit-frame-pointer"
+.if ${FFTW3_FLAVOR}=="default" && ${MACHINE_CPU:Msse}
+# !!Detect SSE and not SSE2!!
+CONFIGURE_ARGS+=--enable-sse2
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4
 .endif
-
-.if ${ARCH}=="i386"
+.else
+.if ${FFTW3_FLAVOR}=="float" && ${MACHINE_CPU:Msse}
+CONFIGURE_ARGS+=--enable-sse
+.if ${OSVERSION} < 500000
+USE_GCC=	3.4
+.endif
+.endif
+.endif
 .if ${MACHINE_CPU:M3dnow}
 CONFIGURE_ARGS+=--enable-k7
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedule-insns \
 		-malign-double -fstrict-aliasing -mpreferred-stack-boundary=4 \
 		-ffast-math"
 .endif
-
-.if defined(WITH_SSE)
-.if ${OSVERSION} < 500000
-USE_GCC=	3.4
-.endif
-.if ${FFTW3_FLAVOR}=="default"
-CONFIGURE_ARGS+=--enable-sse2
-.else
-.if ${FFTW3_FLAVOR}=="float"
-CONFIGURE_ARGS+=--enable-sse
-.endif
-.endif
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2"
-.endif
-.endif #end i386 only options
+.endif # end WITH_OPTIMIZED_CFLAGS
 
 .if defined(WITH_SMP_THREADS)
 CONFIGURE_ARGS+=--enable-threads
