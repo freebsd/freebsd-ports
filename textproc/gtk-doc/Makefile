@@ -9,7 +9,7 @@ PORTNAME=	gtk-doc
 PORTVERSION=	1.1
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk/v1.1/docs/rdp/
+MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk-doc/
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
