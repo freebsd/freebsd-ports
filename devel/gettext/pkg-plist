@@ -12,11 +12,6 @@ info/gettext.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/gettext.info %D/info/dir
 lib/libintl.a
-lib/locale/de/LC_MESSAGES/gettext.cat
-lib/locale/fr/LC_MESSAGES/gettext.cat
-lib/locale/no/LC_MESSAGES/gettext.cat
-lib/locale/no@nynorsk/LC_MESSAGES/gettext.cat
-lib/locale/sv/LC_MESSAGES/gettext.cat
 share/gettext/aclocal.m4
 share/gettext/intl-ChangeLog
 share/gettext/intl-Makefile.in
@@ -40,15 +35,20 @@ share/gettext/intl-textdomain.c
 share/gettext/intl-xopen-msg.sed
 share/gettext/po-Makefile.in.in
 share/gettext/root-ABOUT-NLS
+share/locale/de/LC_MESSAGES/gettext.mo
+share/locale/fr/LC_MESSAGES/gettext.mo
 share/locale/locale.alias
-@dirrm lib/locale/de/LC_MESSAGES
-@dirrm lib/locale/de
-@dirrm lib/locale/fr/LC_MESSAGES
-@dirrm lib/locale/fr
-@dirrm lib/locale/no/LC_MESSAGES
-@dirrm lib/locale/no
-@dirrm lib/locale/no@nynorsk/LC_MESSAGES
-@dirrm lib/locale/no@nynorsk
-@dirrm lib/locale/sv/LC_MESSAGES
-@dirrm lib/locale/sv
+share/locale/no/LC_MESSAGES/gettext.mo
+share/locale/no@nynorsk/LC_MESSAGES/gettext.mo
+share/locale/sv/LC_MESSAGES/gettext.mo
 @dirrm share/gettext
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/no@nynorsk/LC_MESSAGES
+@dirrm share/locale/no@nynorsk
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
