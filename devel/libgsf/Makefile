@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.5
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,7 +23,7 @@ INSTALLS_SHLIB=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/gsf \
 		--disable-gtk-doc --with-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
