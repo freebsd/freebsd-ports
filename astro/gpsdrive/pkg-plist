@@ -1,18 +1,25 @@
 bin/friendsd
-bin/garble
 bin/gpsd
 bin/gpsdrive
 bin/gpsfetchmap
+bin/gpsfetchmap.pl
+bin/mb2gpsdrive.pl
 bin/wpcvt
 bin/wpget
 lib/libfly.a
 lib/libfly.so
-lib/libfly.so.1
+lib/libfly.so.2
+lib/libnautic.a
+lib/libnautic.so
+lib/libnautic.so.2
 share/gpsdrive/friendsicon.png
 share/gpsdrive/gpsdrive/AUTHORS
 share/gpsdrive/gpsdrive/GPS-receivers
 share/gpsdrive/gpsdrive/LEEME
+share/gpsdrive/gpsdrive/LISEZMOI
 share/gpsdrive/gpsdrive/README
+share/gpsdrive/gpsdrive/README.FreeBSD
+share/gpsdrive/gpsdrive/README.mb2gpsdrive
 share/gpsdrive/gpsdrive/TODO
 share/gpsdrive/gpsdrivesplash.png
 share/locale/da/LC_MESSAGES/gpsdrive.mo
@@ -25,6 +32,8 @@ share/locale/it/LC_MESSAGES/gpsdrive.mo
 share/locale/nl/LC_MESSAGES/gpsdrive.mo
 share/locale/pt/LC_MESSAGES/gpsdrive.mo
 share/locale/ru/LC_MESSAGES/gpsdrive.mo
+share/locale/sk/LC_MESSAGES/gpsdrive.mo
+share/locale/sv/LC_MESSAGES/gpsdrive.mo
 share/locale/tr/LC_MESSAGES/gpsdrive.mo
 share/locale/xx/LC_MESSAGES/gpsdrive.mo
 @dirrm share/gpsdrive/gpsdrive
