@@ -1,0 +1,11 @@
+--- Info.c.orig	Sat Aug 30 18:05:45 2003
++++ Info.c	Sat Aug 30 18:07:29 2003
+@@ -163,7 +163,7 @@
+ {
+   WMAppendTextStream(tPtr,  
+ "<htmL><p><i><b>Aileron</b></i> is a WINGs email client that has been \
+-designed for speed, simplicity, and above all, beauty 
++designed for speed, simplicity, and above all, beauty \
+ copyright (C) 1999 - 2001 : <u>nwanua@windowmaker.org</u>  <html>");
+ }
+ 

@@ -1,0 +1,13 @@
+--- Mailboxes.c.orig	Sat Aug 30 18:08:05 2003
++++ Mailboxes.c	Sat Aug 30 18:10:00 2003
+@@ -1713,8 +1713,8 @@
+   WMButton *b;
+   char *path;
+ 
+-printf("\n\ndelet NM does not... add severl nm's at once breaks:
+- WMGetPLDictionaryKeys (pl=0x40ae5fe0) at getting.c:354
++printf("\n\ndelet NM does not... add severl nm's at once breaks:\n\
++ WMGetPLDictionaryKeys (pl=0x40ae5fe0) at getting.c:354\n\
+ 354     getting.c: No such file or directory.\n\n\n");
+ 
+   if (!WMGetUDStringForKey(Aileron.defaultsDB, "MailDir")) {
