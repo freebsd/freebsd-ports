@@ -525,7 +525,6 @@
     SUBDIR += mm
     SUBDIR += mob
     SUBDIR += monotone
-    SUBDIR += moonshine
     SUBDIR += motor
     SUBDIR += mpatrol
     SUBDIR += mprof
@@ -1156,7 +1155,6 @@
     SUBDIR += qextmdi
     SUBDIR += qmake
     SUBDIR += qssl
-    SUBDIR += qtez
     SUBDIR += qtk
     SUBDIR += ragel
     SUBDIR += re2c

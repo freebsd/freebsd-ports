@@ -1,9 +1,0 @@
-Moonshine Open Source Edition is a customizable integrated software development
-enviropment that supports a wide variety of languages. It is designed in a
-modular fashion so that specific language support is not built directly into
-the application but into plug-ins or modules. The application provides a source
-tree browser, a configurable text editor, and a captured commands interface.
-The individual modules provide icons, menus, help files, context highlighting
-rules for text, and utilities specific to the module.
-
-WWW: http://public.planetmirror.com/pub/moonshine/

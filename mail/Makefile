@@ -127,7 +127,6 @@
     SUBDIR += kiltdown
     SUBDIR += kshowmail
     SUBDIR += lbdb
-    SUBDIR += liamail
     SUBDIR += libesmtp
     SUBDIR += libetpan
     SUBDIR += libnewmail

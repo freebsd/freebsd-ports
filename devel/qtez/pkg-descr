@@ -1,6 +1,0 @@
-This is a beta release of a development environment for c++
-using and writing source code for the Qt library. The
-environment is a gui dialog editor, as well as integrating
-source code editor, and signals and slots connections.
-
-WWW: http://qtez.ibl.sk/
