@@ -1,6 +1,3 @@
 lib/%%PYTHON_VERSION%%/site-packages/tarfile.py
 lib/%%PYTHON_VERSION%%/site-packages/tarfile.pyc
 lib/%%PYTHON_VERSION%%/site-packages/tarfile.pyo
-%%UNDERPY22%%lib/%%PYTHON_VERSION%%/site-packages/gzip22.py
-%%UNDERPY22%%lib/%%PYTHON_VERSION%%/site-packages/gzip22.pyc
-%%UNDERPY22%%lib/%%PYTHON_VERSION%%/site-packages/gzip22.pyo
