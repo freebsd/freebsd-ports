@@ -1,6 +1,6 @@
---- Configure.ORIG	Fri Aug  7 23:38:53 1998
-+++ Configure	Mon Aug 17 12:03:07 1998
-@@ -306,7 +306,7 @@
+--- Configure.ORIG	Mon Mar 19 05:03:33 2001
++++ Configure	Tue Apr 10 20:31:56 2001
+@@ -296,7 +296,7 @@
  ldflags=''
  lkflags=''
  locincpth=''

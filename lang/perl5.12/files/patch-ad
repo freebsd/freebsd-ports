@@ -1,8 +1,8 @@
---- perl.h.ORIG	Thu Jul 30 17:04:42 1998
-+++ perl.h	Thu Jul 30 17:06:34 1998
-@@ -361,6 +361,15 @@
- #   include <sys/param.h>
- #endif
+--- perl.h.ORIG	Thu Mar 22 07:05:02 2001
++++ perl.h	Tue Apr 10 20:29:46 2001
+@@ -151,6 +151,15 @@
+ 
+ */
  
 +/* needed for IAMSUID case for 4.4BSD systems 
 + * XXX there should probably be a Configure variable
@@ -14,5 +14,5 @@
 +#endif /* !BSD */
 +#endif /* !I_SYS_PARAM */
  
- /* Use all the "standard" definitions? */
- #if defined(STANDARD_C) && defined(I_STDLIB)
+ class CPerlObj;
+ 
