@@ -1,0 +1,10 @@
+`Mingw' refers to the "Minimalist" GNU-Win32 project.
+
+Mingw is a compiler system based on the GNU gcc/egcs projects
+that compiles code to be run on Win32 (Windows) systems.
+It provides C, C++ and Fortran compilers plus other related tools.
+
+This package is a meta port that depends on other packages:
+  mingw-binutils, mingw-bin-msvcrt, mingw-gcc
+
+WWW: http://www.geocities.com/Tokyo/Towers/6162/gcc.html
