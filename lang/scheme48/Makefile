@@ -3,12 +3,13 @@
 # Date created:         2 Jan 1995
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.1.1.1 1995/01/07 20:53:32 swallace Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:47:05 jkh Exp $
 #
 
 DISTNAME=	scheme48-0.36
-MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/s48/
 CATEGORIES+=	languages
+MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/s48/
+
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
 ALL_TARGET = 	enough

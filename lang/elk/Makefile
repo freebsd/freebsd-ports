@@ -5,11 +5,13 @@
 #
 
 DISTNAME=       elk-2.2
-MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools/
 CATEGORIES+=	languages
+MASTER_SITES=	ftp://ftp.x.org/contrib/devel_tools/
+
+MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
+
 PATCH_STRIP=	-p1
 ALL_TARGET=	default
-MAINTAINER=	thomas@ghpc8.ihf.rwth-aachen.de
 
 #
 # /usr/local/lib/elk is built into the port.

@@ -5,10 +5,12 @@
 # Date created:         Sat Mar 18 02:16:45 1995
 # Porter:               nils@guru.ims.uni-stuttgart.de
 #
+# $Id$
 
 DISTNAME=       gnat-2.03-src
-MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
+PKGNAME=        gnat-2.03
 CATEGORIES+=	languages
+MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
 EXTRACT_SUFX=	.tar.gz
 
 # You need a compiler who calls an existing gnat compiler:
