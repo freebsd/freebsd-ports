@@ -21,7 +21,7 @@
 +#    will run on the target platform.  This is usually the same
 +#    as BCC, unless you are cross-compiling.
 +#
-+TCC = gcc -g -O0 -Wall -I$(LOCALBASE)/include
++TCC = gcc -g -O0 -Wall -I$(LOCALBASE)/include -lm
 +
 +#### Extra arguments for linking against SQLite
 +#

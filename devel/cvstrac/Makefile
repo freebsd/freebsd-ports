@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	cvstrac
-PORTVERSION=	1.1.2
-PORTREVISION=	3
+PORTVERSION=	1.1.5
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.cvstrac.org/cvstrac/
+MASTER_SITES=	http://www.cvstrac.org/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Web-Based Bug And Patch-Set Tracking System For CVS
 
