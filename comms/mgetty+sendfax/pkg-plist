@@ -1,22 +1,24 @@
 bin/autopvf
 bin/basictopvf
-bin/faxspool
 bin/faxq
 bin/faxrm
 bin/faxrunq
-bin/g3cat
+bin/faxspool
 bin/g32pbm
+bin/g3cat
 bin/g3topbm
-bin/newslock
 bin/lintopvf
 bin/mg.echo
+bin/newslock
 bin/pbm2g3
 bin/pvfamp
 bin/pvfcut
 bin/pvfecho
 bin/pvffft
 bin/pvffile
+bin/pvffilter
 bin/pvfmix
+bin/pvfnoise
 bin/pvfreverse
 bin/pvfsine
 bin/pvfspeed
@@ -38,10 +40,6 @@ etc/mgetty+sendfax/login.config
 @unexec rm -f %D/etc/mgetty+sendfax/faxheader %D/etc/mgetty+sendfax/mgetty.config* %D/etc/mgetty+sendfax/sendfax.config*
 @unexec install-info --delete %D/info/mgetty.info %D/info/dir
 info/mgetty.info
-info/mgetty.info-1
-info/mgetty.info-2
-info/mgetty.info-3
-info/mgetty.info-4
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/mgetty.info %D/info/dir
 lib/mgetty+sendfax/cour25.pbm

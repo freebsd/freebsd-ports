@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jul  6 05:24:36 1998
-+++ Makefile	Thu Jul 16 14:04:54 1998
+--- Makefile.orig	Sun Nov 22 07:19:06 1998
++++ Makefile	Tue Dec  1 02:11:01 1998
 @@ -4,8 +4,8 @@
  #
  # this is the C compiler to use (on SunOS, the standard "cc" does not
@@ -29,7 +29,17 @@
  #LIBS=-lprot -lsocket				# SCO Unix
  #LIBS=-lsocket
  #LIBS=-lbsd					# OSF/1
-@@ -247,7 +247,7 @@
+@@ -169,7 +169,8 @@
+ #
+ # if your systems doesn't have one, use the shell script that I provide
+ # in "inst.sh" (taken from X11R5). Needed on IRIX5.2
+-INSTALL=install -c -o bin -g bin
++INSTALL=install -c -o root -g wheel
++INSTALL_PROGRAM=install -s -c -o root -g wheel
+ #INSTALL=install -c -o root -g wheel		# NeXT/BSD
+ #INSTALL=/usr/ucb/install -c -o bin -g bin	# AIX, Solaris 2.x
+ #INSTALL=installbsd -c -o bin -g bin		# OSF/1, AIX 4.1, 4.2
+@@ -247,7 +248,7 @@
  # If you have Perl with TK extentions, define it here. This may be the
  # same as PERL=... above, or different, if you have TkPerl statically
  # linked.
@@ -38,7 +48,7 @@
  #
  #
  # An echo program that understands escapes like "\n" for newline or
-@@ -259,9 +259,9 @@
+@@ -259,9 +260,9 @@
  # please use the "mg.echo" program provided in the compat/ subdirectory.
  # Set ECHO="mg.echo" and INSTALL_MECHO to mg.echo
  #
@@ -50,16 +60,7 @@
  
  #
  # for mgetty, that's it. If you want to use the voice
-@@ -269,7 +269,7 @@
- 
- # To maintain security, I recommend creating a new group for
- # users who are allowed to manipulate the recorded voice messages.
--PHONE_GROUP=phone
-+PHONE_GROUP=uucp
- PHONE_PERMS=770
- 
- # Add -DNO_STRSTR to CFLAGS if you don't have strstr().
-@@ -301,7 +301,7 @@
+@@ -301,7 +302,7 @@
  
  all:	bin-all doc-all
  
@@ -68,7 +69,7 @@
  
  # a few C files need extra compiler arguments
  
-@@ -560,15 +560,15 @@
+@@ -560,21 +561,21 @@
  	cd bindist; gtar cvvfz mgetty$(MR).$(SR)-bin.tgz *
  
  
@@ -83,11 +84,19 @@
  #
  	-test -d $(BINDIR)  || ( ./mkidirs $(BINDIR)  ; chmod 755 $(BINDIR)  )
 -	$(INSTALL) -m 755 newslock $(BINDIR)
-+	$(INSTALL) -s -m 755 newslock $(BINDIR)
++	$(INSTALL_PROGRAM) -m 755 newslock $(BINDIR)
  
  	-test -d $(SBINDIR) || ( ./mkidirs $(SBINDIR) ; chmod 755 $(SBINDIR) )
  	-mv -f $(SBINDIR)/mgetty $(SBINDIR)/mgetty.old
-@@ -584,10 +584,10 @@
+ 	-mv -f $(SBINDIR)/sendfax $(SBINDIR)/sendfax.old
+-	$(INSTALL) -s -m 700 mgetty $(SBINDIR)
+-	$(INSTALL) -s -m 700 sendfax $(SBINDIR)
++	$(INSTALL_PROGRAM) -m 700 mgetty $(SBINDIR)
++	$(INSTALL_PROGRAM) -m 700 sendfax $(SBINDIR)
+ #
+ # data files + directories
+ #
+@@ -584,10 +585,10 @@
  		( ./mkidirs $(CONFDIR); chmod 755 $(CONFDIR))
  	test -f $(CONFDIR)/login.config || \
  		$(INSTALL) -o root -m 600 login.config $(CONFDIR)/
@@ -102,3 +111,21 @@
  	test -f $(CONFDIR)/dialin.config || \
  		$(INSTALL) -o root -m 600 dialin.config $(CONFDIR)/
  	test -f $(CONFDIR)/faxrunq.config || \
+@@ -618,7 +619,7 @@
+ #
+ # g3 tool programs
+ #
+-	cd g3 ; $(MAKE) install INSTALL="$(INSTALL)" \
++	cd g3 ; $(MAKE) install INSTALL="$(INSTALL_PROGRAM)" \
+ 				BINDIR=$(BINDIR) \
+ 				LIBDIR=$(LIBDIR) CONFDIR=$(CONFDIR)
+ #
+@@ -633,7 +634,7 @@
+ 	if [ ! -z "$(INSTALL_MECHO)" ] ; then \
+ 	    cd compat ; \
+ 	    $(CC) $(CFLAGS) -o mg.echo mg.echo.c && \
+-	    $(INSTALL) -s -m 755 mg.echo $(BINDIR) ; \
++	    $(INSTALL_PROGRAM) -m 755 mg.echo $(BINDIR) ; \
+ 	fi
+ 
+ #
