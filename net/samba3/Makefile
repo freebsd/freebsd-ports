@@ -3,11 +3,11 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.34 1999/02/10 00:26:02 hosokawa Exp $
+# $Id: Makefile,v 1.35 1999/03/03 15:48:33 hosokawa Exp $
 #
 
-DISTNAME=	samba-2.0.3
-#PKGNAME=	samba-2.0.3
+DISTNAME=	samba-2.0.4b
+PKGNAME=	samba-2.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 		ftp://ring.asahi-net.or.jp/pub/net/samba/ \
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --libdir=${SAMBA_CONFDIR} \
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		nmblookup.1 smbstatus.1 smbclient.1 smbrun.1 smbtar.1 \
-		testparm.1 testprns.1 make_smbcodepage.1
+		testparm.1 testprns.1 make_smbcodepage.1 smbsh.1
 MAN5=		smb.conf.5 smbpasswd.5 lmhosts.5
 MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 \
