@@ -6334,6 +6334,7 @@ p5-CGI-SSI	ports/www/p5-CGI-SSI
 p5-CGI-Session	ports/www/p5-CGI-Session
 p5-CGI-SpeedyCGI	ports/www/p5-CGI-SpeedyCGI
 p5-CGI-Untaint	ports/www/p5-CGI-Untaint
+p5-CGI-Untaint-email	ports/www/p5-CGI-Untaint-email
 p5-CGI-Upload	ports/www/p5-CGI-Upload
 p5-CGI-XMLApplication	ports/www/p5-CGI-XMLApplication
 p5-CGI-modules	ports/www/p5-CGI-modules
