@@ -8,7 +8,7 @@
 
 PORTNAME=	swfdec
 PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.schleef.org/swfdec/download/
 
@@ -31,8 +31,12 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-.if exists(${X11BASE}/bin/gimp-2.2) || defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp.200:${PORTSDIR}/graphics/gimp
+.if exists(${X11BASE}/bin/gimp-2.2)
+WITH_GIMP=yes
+.endif
+
+.if defined(WITH_GIMP)
+LIB_DEPENDS+=	gimp-2.0.200:${PORTSDIR}/graphics/gimp
 PLIST_SUB+=	GIMP=""
 .else
 PLIST_SUB+=	GIMP="@comment "
@@ -44,6 +48,9 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
+.if !defined(WITH_GIMP)
+	@${REINPLACE_CMD} -e 's|gimp-loader||g' ${WRKSRC}/Makefile.in
+.endif
 	@${REINPLACE_CMD} -e "s,int16_t,__int16_t," ${WRKSRC}/libswfdec/swfdec_shape.c
 	@${REINPLACE_CMD} -e 's|libdir)/gimp/1.3|prefix)/libexec/gimp/2.2|g' ${WRKSRC}/gimp-loader/Makefile.in
 	@${REINPLACE_CMD} -e 's|plugin||g' ${WRKSRC}/Makefile.in
