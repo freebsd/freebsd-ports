@@ -7,7 +7,7 @@
 
 PORTNAME=	wxgtk
 PORTVERSION=	2.4.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
@@ -48,6 +48,16 @@ USE_GNOME=	gtk12
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_UNICODE)
+WITH_GTK2=	yes
+
+.if ${OSVERSION} < 500000
+BROKEN=		Unicode mode is not supported on your system
+.else
+CONFIGURE_ARGS+=--enable-unicode
+.endif
+.endif # WITH_UNICODE
 
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=--enable-gtk2 ${MACHINE_ARCH}-portbld-freebsd${OSREL}
