@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.23 1997/09/02 15:10:38 andreas Exp $
+# $Id: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
     SUBDIR += db
     SUBDIR += gdbm
@@ -8,6 +8,7 @@
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-mysql
     SUBDIR += p5-DBI
+    SUBDIR += p5-MLDBM
     SUBDIR += p5-Msql
     SUBDIR += p5-Mysql
     SUBDIR += p5-Pg
