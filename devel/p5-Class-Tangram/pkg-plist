@@ -1,5 +1,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Tangram/.packlist
 %%SITE_PERL%%/Class/Tangram.pm
+%%SITE_PERL%%/Class/Tangram/Containers.pod
+%%SITE_PERL%%/Class/Tangram/Generator.pm
+%%SITE_PERL%%/Class/Tangram/Generator/Stub.pm
+@dirrm %%SITE_PERL%%/Class/Tangram/Generator
+@dirrm %%SITE_PERL%%/Class/Tangram
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Tangram
 @unexec rmdir %D/%%SITE_PERL%%/Class 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true
