@@ -1,4 +1,4 @@
-#-*- mode: Fundamental; tab-width: 4; -*-
+#-*- mode: makefile; tab-width: 4; -*-
 # ex:ts=4
 #
 # $FreeBSD$
@@ -145,54 +145,74 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
-# USE_AUTOMAKE		- Says that the port uses automake.  Implies
-#			USE_AUTOCONF and USE_AUTOMAKE_VER?=14.
-# USE_AUTOMAKE_VER	- Says that the port uses automake. Possible
-#				values: 14, 15;
-#				each specify a version of automake to use
-#				and appropriatly set both AUTOMAKE{,_DIR}
-#				and ACLOCAL{,_DIR} variables.
-#				Implies USE_AUTOMAKE.  If set with
-#				unknown value, defaults to 14.
-# AUTOMAKE		- Set to path of GNU automake if not in $PATH (default:
-#				according to USE_AUTOMAKE_VER value)
-# AUTOMAKE_ARGS	- Pass these args to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} is set.
-# AUTOMAKE_ENV	- Pass these env (shell-like) to ${AUTOMAKE} if
-#				${USE_AUTOMAKE_VER} is set.
-# ACLOCAL	- Set to path of GNU automake aclocal if not in $PATH (default:
-#				according to USE_AUTOMAKE_VER value)
-# ACLOCAL_DIR	- Set to path of GNU automake aclocal shared directory (default:
-#				according to USE_AUTOMAKE_VER value)
-# AUTOMAKE_DIR	- Set to path of GNU automake shared directory (default:
-#				according to USE_AUTOMAKE_VER value)
-# USE_AUTOCONF_VER	- Says that the port uses autoconf. Possible
-#				values: 213;
-#				each specify a version of autoconf to use
-#				and appropriatly set both AUTOCONF{,_DIR}
-#				and ACLOCAL{,_DIR} variables.
-#				Implies USE_AUTOCONF.  If set with
-#				unknown value, defaults to 213.
-# USE_AUTOCONF	- Says that the port uses autoconf.  Implies
-#				GNU_CONFIGURE and USE_AUTOCONF_VER?=213.
-# AUTOCONF	- Set to path of GNU autoconf if not in $PATH (default:
-#				according to USE_AUTOCONF_VER value)
-# AUTOCONF_ARGS	- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF} is set.
-# AUTOCONF_ENV	- Pass these env (shell-like) to ${AUTOCONF} if
-#				${USE_AUTOCONF} is set.
-# AUTOHEADER	- Set to path of GNU autoconf autoheader
-#				if not in $PATH (default: according
-#				to USE_AUTOCONF_VER value)
-# AUTORECONF	- Set to path of GNU autoconf autoreconf
-#				if not in $PATH (default: according
-#				to USE_AUTOCONF_VER value)
-# AUTOSCAN	- Set to path of GNU autoconf autoscan
-#				if not in $PATH (default: according
-#				to USE_AUTOCONF_VER value)
-# AUTOIFNAMES	- Set to path of GNU autoconf autoifnames
-#				if not in $PATH (default: according
-#				to USE_AUTOCONF_VER value)
-# AUTOCONF_DIR	- Set to path of GNU autoconf shared directory (default:
-#				according to USE_AUTOCONF_VER value)
+# USE_AUTOMAKE (PORT MAY SET THIS VALUE)	
+#				- Says that the port uses automake.  
+#				- Implies USE_AUTOCONF and USE_AUTOMAKE_VER?=14.
+#				- Causes automake execution prior to configure step.
+# USE_AUTOMAKE_VER (PORT MAY SET THIS VALUE)
+#				- Says that the port uses automake; legal values
+#				  are: 14, 15, 17.
+#				- Each specify a version of automake to use
+#				  and appropriatly set both AUTOMAKE{,_DIR}
+#				  and ACLOCAL{,_DIR} variables.
+#				- Implies USE_AUTOMAKE. 
+#				- If set with an unknown value, the port is marked BROKEN.
+# AUTOMAKE_ARGS (PORT MAY ALTER THIS VALUE)
+#				- Pass these args to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} 
+#				  is set. If an application sets this value, it should
+#				  use the += form of assignment to append, not overwrite.
+# USE_AUTOCONF (PORT MAY SET THIS VALUE)
+#				- Says that the port uses autoconf.
+#				- Implies GNU_CONFIGURE=yes and USE_AUTOCONF_VER?=213.
+#				- Causes autoconf execution prior to configure step.
+# USE_AUTOCONF_VER (PORT MAY SET THIS VALUE)
+#				- Says that the port uses autoconf; legal values
+#				  are: 213, 253, 254.
+#				- Each specify a version of autoconf to use
+#				  and appropriatly set AUTOCONF{,_DIR} and other
+#				  autoconf-related program paths.
+#				- Implies USE_AUTOCONF.
+#				- If set with an unknown value, the port is marked BROKEN.
+# AUTOCONF_ARGS (PORT MAY ALTER THIS VALUE)
+#				- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF_VER} 
+#				  is set. If an application sets this value, it should
+#				  use the += form of assignment to append, not overwrite.
+# AUTOMAKE (READ-ONLY)
+#				- Set to path of GNU automake (default:
+#				  according to USE_AUTOMAKE_VER value)
+# AUTOMAKE_ENV (READ-ONLY)
+#				- Pass these env var=value pairs (shell-like) 
+#				  to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} is set.
+# ACLOCAL (READ-ONLY)
+#				- Set to path of GNU automake aclocal (default:
+#				  according to USE_AUTOMAKE_VER value)
+# ACLOCAL_DIR (READ-ONLY)
+#				- Set to path of GNU automake aclocal shared directory 
+#                 (default:	according to USE_AUTOMAKE_VER value)
+# AUTOMAKE_DIR (READ-ONLY)
+#				- Set to path of GNU automake shared directory (default:
+#				  according to USE_AUTOMAKE_VER value)
+# AUTOCONF (READ-ONLY)
+#				- Set to path of GNU autoconf (default:
+#				  according to USE_AUTOCONF_VER value)
+# AUTOCONF_ENV (READ-ONLY)
+#				- Pass these env var=value pairs (shell-like) 
+#				  to ${AUTOCONF} if ${USE_AUTOCONF_VER} is set.
+# AUTOHEADER (READ-ONLY)
+#				- Set to path of GNU autoconf autoheader
+#				  (default: according to USE_AUTOCONF_VER value)
+# AUTORECONF (READ-ONLY)
+#				- Set to path of GNU autoconf autoreconf
+#				  (default: according to USE_AUTOCONF_VER value)
+# AUTOSCAN (READ-ONLY)
+#				- Set to path of GNU autoconf autoscan
+#				  (default: according to USE_AUTOCONF_VER value)
+# AUTOIFNAMES (READ-ONLY)
+#				- Set to path of GNU autoconf autoifnames
+#				  (default: according to USE_AUTOCONF_VER value)
+# AUTOCONF_DIR (READ-ONLY)
+#				- Set to path of GNU autoconf shared directory (default:
+#				  according to USE_AUTOCONF_VER value)
 # USE_LIBTOOL	- Says that the port uses Libtool.  Implies GNU_CONFIGURE.
 # LIBTOOL		- Set to path of libtool (default: libtool).
 # LIBTOOLFILES	- Files to patch for libtool (defaults: "aclocal.m4" if
@@ -209,8 +229,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Use this if you need to replace "#!" lines in scripts.
 # PERL_VERSION	- Full version of perl5 (see below for current value).
 # PERL_VER		- Short version of perl5 (see below for current value).
+# PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
+#					M is major version, N is minor version, and P is
+#					the patch level. E.g., PERL_VERSION=5.6.1 would give
+#					a PERL_LEVEL of 500601. This can be used in comparisons
+#					to determine if the version of perl is high enough,
+#					whether a particular dependency is needed, etc.
 # PERL_ARCH		- Directory name of architecture dependent libraries
 #				  (value: ${ARCH}-freebsd).
+# SITE_PERL		- Directory name where site specific perl packages go.
+#					This value is added to PLIST_SUB.
 # USE_BISON		- Says that the port uses bison for building.
 # USE_IMAKE		- Says that the port uses imake.  Implies USE_X_PREFIX.
 # XMKMF			- Set to path of `xmkmf' if not in $PATH (default: xmkmf -a ).
@@ -878,36 +906,146 @@ BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 CONFIGURE_ENV+=	MAKE=${GMAKE}
 .endif
+
+######################################################################
+# AUTOMAKE/AUTOCONF
+# current => non-renamed, non-relocated version
+
+########## private variables
+#	old_{am,ac}ver		==>	numeric version of "old" port[*]
+#	cur_{am,ac}ver		==>	numeric version of "current" port
+#	dev_{am,ac}ver		==>	numeric version of "devel" port
+#	use_{am,ac}path		==> numeric version we are using here
+#	{am,ac}path			==> path to non-suffixed binary, if any
+#	autotools_path		==> string to prepend to PATH, if any
+#
+# [*] "default" version in case of USE_AUTOMAKE or USE_AUTOCONF w/o version
+
+##########
+#.if defined(AUTOMAKE) || defined(AUTOCONF)
+#BROKEN="AUTOMAKE and AUTOCONF are read-only values. \
+#	You may not assign to them"
+#.endif # defined(AUTOMAKE) || defined(AUTOCONF)
+
+########## versions
+old_amver=	14
+cur_amver=	15
+dev_amver=	17
+old_acver=	213
+cur_acver=	253
+dev_acver=	254
+
+########## automake setup
 .if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-USE_AUTOMAKE?=	yes
-USE_AUTOMAKE_VER?=	14
-
-USE_AUTOCONF=	yes
-.endif
-.if defined(USE_AUTOMAKE_VER)
-.if ${USE_AUTOMAKE_VER} == 15
+USE_AUTOMAKE?=		yes
+USE_AUTOMAKE_VER?=	${old_amver}
+use_amver=			${USE_AUTOMAKE_VER:L}
+.if ${use_amver} == ${cur_amver}
+ACLOCAL_DIR=		${LOCALBASE}/share/aclocal
+AUTOMAKE_DIR=		${LOCALBASE}/share/automake
 BUILD_DEPENDS+=		automake:${PORTSDIR}/devel/automake
-
-ACLOCAL?=		aclocal
-AUTOMAKE?=		automake
-ACLOCAL_DIR?=		${LOCALBASE}/share/aclocal
-AUTOMAKE_DIR?=		${LOCALBASE}/share/automake
+USE_AUTOCONF_VER=	${cur_acver}
+.elif ${use_amver} == ${old_amver} || ${use_amver} == ${dev_amver}
+ACLOCAL_DIR=	${LOCALBASE}/share/aclocal${use_amver}
+AUTOMAKE_DIR=	${LOCALBASE}/share/automake${use_amver}
+BUILD_DEPENDS+=	automake${use_amver}:${PORTSDIR}/devel/automake${use_amver}
+ampath=			${LOCALBASE}/libexec/automake${use_amver}:
+.if ${use_amver} == ${old_amver}
+AUTOMAKE_ARGS+=	-i
+USE_AUTOCONF_VER=${old_acver}
 .else
-BUILD_DEPENDS+=		automake14:${PORTSDIR}/devel/automake14
+USE_AUTOCONF_VER=${dev_acver}
+.endif # ${use_amver} == ${old_amver}
+.else # bad automake version
+BROKEN="unknown AUTOMAKE version: ${USE_AUTOMAKE_VER}"
+.endif # ${use_amver} == ${cur_amver}
+.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
-AUTOMAKE_ARGS+=		-i
-USE_AUTOCONF_VER?=	213
-.endif
-.endif
+########## autoconf setup
 .if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-USE_AUTOCONF?=	yes
-USE_AUTOCONF_VER?=	213
+USE_AUTOCONF?=		yes
+USE_AUTOCONF_VER?=	${old_acver}
+use_acver=			${USE_AUTOCONF_VER:L}
+.if ${use_acver} == ${cur_acver}
+AUTOCONF_DIR=		${LOCALBASE}/share/autoconf
+BUILD_DEPENDS+=		autoconf:${PORTSDIR}/devel/autoconf
+USE_AUTOCONF_VER=	${cur_acver}
+.elif ${use_acver} == ${old_acver} || ${use_acver} == ${dev_acver}
+AUTOCONF_DIR=	${LOCALBASE}/share/autoconf${use_acver}
+BUILD_DEPENDS+=	autoconf${use_acver}:${PORTSDIR}/devel/autoconf${use_acver}
+acpath=			${LOCALBASE}/libexec/autoconf${use_acver}
+.else # bad autoconf version
+BROKEN="unknown AUTOCONF version: ${USE_AUTOCONF_VER}"
+.endif # ${use_acver} == ${cur_acver}
+.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 
+########## auto* ==> GNU 'configure'
+.if defined(USE_AUTOMAKE_VER) || defined(USE_AUTOCONF_VER)
 GNU_CONFIGURE=	yes
-.endif
-.if defined(USE_AUTOCONF_VER)
-BUILD_DEPENDS+=		autoconf213:${PORTSDIR}/devel/autoconf213
-.endif
+.endif # defined(USE_AUTOMAKE_VER) || defined(USE_AUTOCONF_VER)
+
+########## set up paths to tools
+.if defined(ampath)
+autotools_path=${ampath}${acpath}
+.elif defined(acpath)
+autotools_path=${acpath}
+.endif # defined(ampath)
+
+########## prefix to path, add to env vars
+.if defined(autotools_path)
+MAKE_ENV+=	PATH=${autotools_path}:${PATH}
+CONFIGURE_ENV+=	PATH=${autotools_path}:${PATH}
+SCRIPTS_ENV+=	PATH=${autotools_path}:${PATH}
+AUTOCONF_ENV+=	PATH=${autotools_path}:${PATH}
+AUTOMAKE_ENV+=	PATH=${autotools_path}:${PATH}
+AUTOTOOLS_ENV+=	PATH=${autotools_path}:${PATH}
+.endif # defined(autotools_path)
+
+########## set up automake "names"
+.if defined(use_amver)
+.if !defined(ampath)
+ACLOCAL?=	aclocal
+AUTOMAKE?=	automake
+.else # defined(ampath)
+ACLOCAL?=	${ampath:S/://}/aclocal
+AUTOMAKE?=	${ampath:S/://}/automake
+.endif # !defined(ampath)
+.endif # defined(use_amver)
+
+########## set up autoconf "names"
+.if defined(use_acver)
+.if !defined(acpath)
+AUTOCONF?=		autoconf
+AUTOHEADER?=	autoheader
+AUTOIFNAMES?=	ifnames
+AUTORECONF?=	autoreconf
+AUTOSCAN?=		autoscan
+AUTOUPDATE?=	autoupdate
+.else # defined(acpath)
+AUTOCONF?=		${acpath}/autoconf
+AUTOHEADER?=	${acpath}/autoheader
+AUTOIFNAMES?=	${acpath}/ifnames
+AUTORECONF?=	${acpath}/autoreconf
+AUTOSCAN?=		${acpath}/autoscan
+AUTOUPDATE?=	${acpath}/autoupdate
+.endif # !defined(acpath)
+.endif # defined(use_acver)
+
+########## stupid port error checking
+# Set all unset vars for the programs to ${FALSE}. This way
+# we can catch a certain class of port Makefile errors quickly.
+ACLOCAL?=	${FALSE}
+AUTOMAKE?=	${FALSE}
+AUTOCONF?=	${FALSE}
+AUTOHEADER?=${FALSE}
+AUTOIFNAMES?=${FALSE}
+AUTORECONF?=${FALSE}
+AUTOSCAN?=	${FALSE}
+AUTOUPDATE?=${FALSE}
+
+# END AUTOMAKE/AUTOCONF
+######################################################################
+
 .if defined(USE_LIBTOOL)
 GNU_CONFIGURE=	yes
 BUILD_DEPENDS+=		libtool:${PORTSDIR}/devel/libtool
@@ -1004,9 +1142,27 @@ PERL_VER?=		5.005
 PERL_ARCH?=		${ARCH}-freebsd
 .endif
 .endif
+
+.if !defined(PERL_LEVEL)
+perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
+_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
+perl_minor=		${_perl_minor:C|^.*(...)|\1|}
+.if ${perl_minor} >= 100
+perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
+perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
+.else # ${perl_minor} < 100
+_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
+perl_patch=		${_perl_patch:C|^.*(..)|\1|}
+.endif # ${perl_minor} < 100
+PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
+.endif # !defined(PERL_LEVEL)
+
+SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 				PERL_VER=${PERL_VER} \
-				PERL_ARCH=${PERL_ARCH}
+				PERL_ARCH=${PERL_ARCH} \
+				SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
 
 .if defined(PERL_CONFIGURE)
 USE_PERL5=	yes
@@ -1869,17 +2025,21 @@ XFREE86_HTML_MAN?=	no
 .endif
 .endif
 
-# Put this for down as possible so it will catch all PLIST_SUB definitions.
+DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
+EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
+DATADIR?=	${PREFIX}/share/${PORTNAME}
+
+PLIST_SUB+=	DOCSDIR="${DOCSDIR:S,^${PREFIX}/,,}" \
+		EXAMPLESDIR="${EXAMPLESDIR:S,^${PREFIX}/,,}" \
+		DATADIR="${DATADIR:S,^${PREFIX}/,,}"
+
+# Put this as far down as possible so it will catch all PLIST_SUB definitions.
 
 .if defined(INSTALLS_SHLIB)
 LDCONFIG_DIRS?=	%%PREFIX%%/lib
 LDCONFIG_PLIST!=	${ECHO_CMD} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 .endif
-
-DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
-EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
-DATADIR?=	${PREFIX}/share/${PORTNAME}
 
 .MAIN: all
 
