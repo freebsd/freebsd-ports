@@ -8,7 +8,7 @@
 PORTNAME=	menushki
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	misc x11
+CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -18,21 +18,16 @@ COMMENT=	Menu converter between varieties of Window Managers
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_XLIB=	yes
+USE_GCC=	2.95
 
-DOCS=	AUTHORS ChangeLog README TODO
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+PLIST_FILES=	bin/menushki
+PORTDOCS=	AUTHORS ChangeLog README TODO
 
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for files in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${files} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
