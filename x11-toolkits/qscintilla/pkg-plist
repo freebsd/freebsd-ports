@@ -1,0 +1,22 @@
+include/qextscintilla.h
+include/qextscintillaapis.h
+include/qextscintillabase.h
+include/qextscintillacommand.h
+include/qextscintillacommandset.h
+include/qextscintillaglobal.h
+include/qextscintillalexer.h
+include/qextscintillalexercpp.h
+include/qextscintillalexercsharp.h
+include/qextscintillalexerhtml.h
+include/qextscintillalexeridl.h
+include/qextscintillalexerjava.h
+include/qextscintillalexerjavascript.h
+include/qextscintillalexerpython.h
+include/qextscintillalexersql.h
+include/qextscintillamacro.h
+include/qextscintillaprinter.h
+lib/libqscintilla.so.2
+lib/libqscintilla.so
+share/qscintilla/translations/qscintilla_de.qm
+@dirrm share/qscintilla/translations
+@dirrm share/qscintilla
