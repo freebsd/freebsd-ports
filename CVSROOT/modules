@@ -659,6 +659,7 @@ bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
 bzip2		ports/archivers/bzip2
 c-nocem		ports/news/c-nocem
+c2hs		ports/devel/c2hs
 c2html		ports/textproc/c2html
 c2lib		ports/devel/c2lib
 c2man		ports/devel/c2man
