@@ -649,6 +649,7 @@
     SUBDIR += silky
     SUBDIR += simicq
     SUBDIR += sipp
+    SUBDIR += siproxd
     SUBDIR += sipsak
     SUBDIR += sixxs-heartbeatd
     SUBDIR += skype

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+SIPROXD_HOME=${PKG_PREFIX}/siproxd
+SIPROXD_PID=${SIPROXD_HOME}/siproxd.pid
+
+case $2 in
+    DEINSTALL)
+    [ -r ${SIPROXD_PID} ] && kill `cat ${SIPROXD_PID}`
+    rm -f ${SIPROXD_HOME}/* && rmdir ${SIPROXD_HOME}
+    ;;
+esac

@@ -1,0 +1,37 @@
+--- doc/siproxd.conf.example.orig	Sun May  9 14:53:06 2004
++++ doc/siproxd.conf.example	Mon Oct 11 21:25:41 2004
+@@ -9,8 +9,8 @@
+ ######################################################################
+ # The interface names of INBOUND and OUTBOUND interface.
+ #
+-if_inbound  = eth0
+-if_outbound = ppp0
++if_inbound  = ed0
++if_outbound = tun0
+ 
+ 
+ ######################################################################
+@@ -70,20 +70,20 @@
+ #   user:	uid/gid to switch to after startup
+ #   chrootjail:	path to chroot to (chroot jail)
+ user = nobody
+-#chrootjail = /var/lib/siproxd/
++chrootjail = /usr/local/siproxd/
+ 
+ ######################################################################
+ # Registration file:
+ #   Where to store the current registrations.
+ #   An empty value means we do not save registrations. Make sure that
+ #   the specified directory path does exist!
+-registration_file = /var/lib/siproxd/siproxd_registrations
++registration_file = siproxd_registrations
+ 
+ ######################################################################
+ # PID file:
+ #   Where to create the PID file.
+ #   This file holds the PID of the main thread of siproxd.
+-pid_file = /var/run/siproxd/siproxd.pid
++pid_file = siproxd.pid
+ 
+ ######################################################################
+ # global switch to control the RTP proxy behaviour
