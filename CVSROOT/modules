@@ -10170,6 +10170,7 @@ suck-cnews	ports/news/suck-cnews
 suckblow	ports/net/suckblow
 sudo		ports/security/sudo
 sudoscript	ports/security/sudoscript
+sudosh		ports/security/sudosh
 sun-wtk		ports/java/sun-wtk
 sunclock	ports/astro/sunclock
 sunterlib	ports/devel/sunterlib
