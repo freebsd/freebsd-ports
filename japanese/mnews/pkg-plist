@@ -1,6 +1,8 @@
 bin/mnews
+@unexec if cmp -s %D/etc/mnews/jnames %D/etc/mnews/jnames.default; then rm -f %D/etc/mnews/jnames; fi
 etc/mnews/jnames.default
 @exec test -f %B/jnames || cp %B/%f %B/jnames
+@unexec if cmp -s %D/etc/mnews/default-domain %D/etc/mnews/default-domain.default; then rm -f %D/etc/mnews/default-domain; fi
 etc/mnews/default-domain.default
 @exec test -f %B/default-domain || cp %B/%f %B/default-domain
 share/doc/mnews/FAQ.doc
