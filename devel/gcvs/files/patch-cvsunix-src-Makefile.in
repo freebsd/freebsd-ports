@@ -1,19 +1,11 @@
---- cvsunix/src/Makefile.in.orig	Thu Nov  7 19:29:06 2002
-+++ cvsunix/src/Makefile.in	Fri Dec 20 19:56:41 2002
-@@ -34,6 +34,7 @@
- INSTALL = @INSTALL@
- INSTALL_DATA = @INSTALL_DATA@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
-+INSTALL_SCRIPT = @INSTALL_SCRIPT@
- 
- LIBS = @LIBS@
- 
-@@ -89,7 +90,7 @@
+--- cvsunix/src/Makefile.in.orig	Sun Dec 22 16:59:11 2002
++++ cvsunix/src/Makefile.in	Wed Jan 15 04:57:13 2003
+@@ -91,7 +91,7 @@
  install: installdirs
  	@for prog in $(PROGS); do \
  	  echo Installing $$prog in $(bindir); \
 -	  $(INSTALL) $$prog $(bindir)/$$prog ; \
-+	  $(INSTALL_SCRIPT) $$prog $(bindir)/$$prog ; \
++	  $(INSTALL_PROGRAM) $$prog $(bindir)/$$prog ; \
  	done
- 
- installdirs:
+ 	@for script in $(SCRIPTS); do \
+ 	  echo Installing $$script in $(bindir); \
