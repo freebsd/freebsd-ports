@@ -96,6 +96,8 @@ include/fox/FXMessageBox.h
 include/fox/FXObject.h
 include/fox/FXObjectList.h
 include/fox/FXOptionMenu.h
+%%NEWFILE%%include/fox/FXPCXIcon.h
+%%NEWFILE%%include/fox/FXPCXImage.h
 include/fox/FXPNGIcon.h
 include/fox/FXPNGImage.h
 include/fox/FXPacker.h
@@ -118,6 +120,7 @@ include/fox/FXScrollWindow.h
 include/fox/FXScrollbar.h
 include/fox/FXSearchDialog.h
 include/fox/FXSeparator.h
+%%NEWFILE%%include/fox/FXSettings.h
 include/fox/FXShell.h
 include/fox/FXShutter.h
 include/fox/FXSize.h
