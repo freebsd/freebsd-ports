@@ -6068,6 +6068,7 @@ p5-Pod-Coverage	ports/devel/p5-Pod-Coverage
 p5-Pod-Escapes	ports/textproc/p5-Pod-Escapes
 p5-Pod-POM	ports/textproc/p5-Pod-POM
 p5-Pod-Simple	ports/textproc/p5-Pod-Simple
+p5-Pod-Stripper	ports/textproc/p5-Pod-Stripper
 p5-PodParser	ports/textproc/p5-PodParser
 p5-PostScript-Simple	ports/print/p5-PostScript-Simple
 p5-Prima	ports/x11-toolkits/p5-Prima
