@@ -1,0 +1,496 @@
+share/locale/az/LC_MESSAGES/csvfilter.mo
+share/locale/az/LC_MESSAGES/example.mo
+share/locale/az/LC_MESSAGES/graphite.mo
+share/locale/az/LC_MESSAGES/kchart.mo
+share/locale/az/LC_MESSAGES/kformula.mo
+share/locale/az/LC_MESSAGES/kivio.mo
+share/locale/az/LC_MESSAGES/koffice.mo
+share/locale/az/LC_MESSAGES/kontour.mo
+share/locale/az/LC_MESSAGES/koshell.mo
+share/locale/az/LC_MESSAGES/kpresenter.mo
+share/locale/az/LC_MESSAGES/krayon.mo
+share/locale/az/LC_MESSAGES/kscan_plugin.mo
+share/locale/az/LC_MESSAGES/kspread.mo
+share/locale/az/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/az/LC_MESSAGES/kugar.mo
+share/locale/az/LC_MESSAGES/kword.mo
+share/locale/bg/LC_MESSAGES/example.mo
+share/locale/bg/LC_MESSAGES/graphite.mo
+share/locale/bg/LC_MESSAGES/kchart.mo
+share/locale/bg/LC_MESSAGES/kformula.mo
+share/locale/bg/LC_MESSAGES/kivio.mo
+share/locale/bg/LC_MESSAGES/koffice.mo
+share/locale/bg/LC_MESSAGES/kontour.mo
+share/locale/bg/LC_MESSAGES/koshell.mo
+share/locale/bg/LC_MESSAGES/kpresenter.mo
+share/locale/bg/LC_MESSAGES/krayon.mo
+share/locale/bg/LC_MESSAGES/kspread.mo
+share/locale/bg/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/bg/LC_MESSAGES/kugar.mo
+share/locale/bg/LC_MESSAGES/kword.mo
+share/locale/cs/LC_MESSAGES/csvfilter.mo
+share/locale/cs/LC_MESSAGES/kchart.mo
+share/locale/cs/LC_MESSAGES/kivio.mo
+share/locale/cs/LC_MESSAGES/koffice.mo
+share/locale/cs/LC_MESSAGES/kontour.mo
+share/locale/cs/LC_MESSAGES/koshell.mo
+share/locale/cs/LC_MESSAGES/kpresenter.mo
+share/locale/cs/LC_MESSAGES/krayon.mo
+share/locale/cs/LC_MESSAGES/kscan_plugin.mo
+share/locale/cs/LC_MESSAGES/kspread.mo
+share/locale/cs/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/cs/LC_MESSAGES/kugar.mo
+share/locale/cs/LC_MESSAGES/kword.mo
+share/locale/da/LC_MESSAGES/csvfilter.mo
+share/locale/da/LC_MESSAGES/example.mo
+share/locale/da/LC_MESSAGES/graphite.mo
+share/locale/da/LC_MESSAGES/kchart.mo
+share/locale/da/LC_MESSAGES/kformula.mo
+share/locale/da/LC_MESSAGES/kivio.mo
+share/locale/da/LC_MESSAGES/koffice.mo
+share/locale/da/LC_MESSAGES/kontour.mo
+share/locale/da/LC_MESSAGES/koshell.mo
+share/locale/da/LC_MESSAGES/kpresenter.mo
+share/locale/da/LC_MESSAGES/krayon.mo
+share/locale/da/LC_MESSAGES/kscan_plugin.mo
+share/locale/da/LC_MESSAGES/kspread.mo
+share/locale/da/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/da/LC_MESSAGES/kugar.mo
+share/locale/da/LC_MESSAGES/kword.mo
+share/locale/de/LC_MESSAGES/csvfilter.mo
+share/locale/de/LC_MESSAGES/example.mo
+share/locale/de/LC_MESSAGES/graphite.mo
+share/locale/de/LC_MESSAGES/kchart.mo
+share/locale/de/LC_MESSAGES/kformula.mo
+share/locale/de/LC_MESSAGES/kivio.mo
+share/locale/de/LC_MESSAGES/koffice.mo
+share/locale/de/LC_MESSAGES/kontour.mo
+share/locale/de/LC_MESSAGES/koshell.mo
+share/locale/de/LC_MESSAGES/kpresenter.mo
+share/locale/de/LC_MESSAGES/krayon.mo
+share/locale/de/LC_MESSAGES/kscan_plugin.mo
+share/locale/de/LC_MESSAGES/kspread.mo
+share/locale/de/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/de/LC_MESSAGES/kugar.mo
+share/locale/de/LC_MESSAGES/kword.mo
+share/locale/en_GB/LC_MESSAGES/csvfilter.mo
+share/locale/en_GB/LC_MESSAGES/example.mo
+share/locale/en_GB/LC_MESSAGES/graphite.mo
+share/locale/en_GB/LC_MESSAGES/kchart.mo
+share/locale/en_GB/LC_MESSAGES/kformula.mo
+share/locale/en_GB/LC_MESSAGES/kivio.mo
+share/locale/en_GB/LC_MESSAGES/koffice.mo
+share/locale/en_GB/LC_MESSAGES/kontour.mo
+share/locale/en_GB/LC_MESSAGES/koshell.mo
+share/locale/en_GB/LC_MESSAGES/kpresenter.mo
+share/locale/en_GB/LC_MESSAGES/krayon.mo
+share/locale/en_GB/LC_MESSAGES/kscan_plugin.mo
+share/locale/en_GB/LC_MESSAGES/kspread.mo
+share/locale/en_GB/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/en_GB/LC_MESSAGES/kugar.mo
+share/locale/en_GB/LC_MESSAGES/kword.mo
+share/locale/eo/LC_MESSAGES/csvfilter.mo
+share/locale/eo/LC_MESSAGES/example.mo
+share/locale/eo/LC_MESSAGES/graphite.mo
+share/locale/eo/LC_MESSAGES/kchart.mo
+share/locale/eo/LC_MESSAGES/kformula.mo
+share/locale/eo/LC_MESSAGES/kivio.mo
+share/locale/eo/LC_MESSAGES/koffice.mo
+share/locale/eo/LC_MESSAGES/kontour.mo
+share/locale/eo/LC_MESSAGES/koshell.mo
+share/locale/eo/LC_MESSAGES/kpresenter.mo
+share/locale/eo/LC_MESSAGES/krayon.mo
+share/locale/eo/LC_MESSAGES/kscan_plugin.mo
+share/locale/eo/LC_MESSAGES/kspread.mo
+share/locale/eo/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/eo/LC_MESSAGES/kugar.mo
+share/locale/eo/LC_MESSAGES/kword.mo
+share/locale/es/LC_MESSAGES/csvfilter.mo
+share/locale/es/LC_MESSAGES/example.mo
+share/locale/es/LC_MESSAGES/graphite.mo
+share/locale/es/LC_MESSAGES/kchart.mo
+share/locale/es/LC_MESSAGES/kformula.mo
+share/locale/es/LC_MESSAGES/kivio.mo
+share/locale/es/LC_MESSAGES/koffice.mo
+share/locale/es/LC_MESSAGES/kontour.mo
+share/locale/es/LC_MESSAGES/koshell.mo
+share/locale/es/LC_MESSAGES/kpresenter.mo
+share/locale/es/LC_MESSAGES/krayon.mo
+share/locale/es/LC_MESSAGES/kscan_plugin.mo
+share/locale/es/LC_MESSAGES/kspread.mo
+share/locale/es/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/es/LC_MESSAGES/kugar.mo
+share/locale/es/LC_MESSAGES/kword.mo
+share/locale/et/LC_MESSAGES/csvfilter.mo
+share/locale/et/LC_MESSAGES/example.mo
+share/locale/et/LC_MESSAGES/graphite.mo
+share/locale/et/LC_MESSAGES/kchart.mo
+share/locale/et/LC_MESSAGES/kformula.mo
+share/locale/et/LC_MESSAGES/kivio.mo
+share/locale/et/LC_MESSAGES/koffice.mo
+share/locale/et/LC_MESSAGES/kontour.mo
+share/locale/et/LC_MESSAGES/koshell.mo
+share/locale/et/LC_MESSAGES/kpresenter.mo
+share/locale/et/LC_MESSAGES/krayon.mo
+share/locale/et/LC_MESSAGES/kscan_plugin.mo
+share/locale/et/LC_MESSAGES/kspread.mo
+share/locale/et/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/et/LC_MESSAGES/kugar.mo
+share/locale/et/LC_MESSAGES/kword.mo
+share/locale/fr/LC_MESSAGES/kchart.mo
+share/locale/fr/LC_MESSAGES/kformula.mo
+share/locale/fr/LC_MESSAGES/kivio.mo
+share/locale/fr/LC_MESSAGES/koffice.mo
+share/locale/fr/LC_MESSAGES/kontour.mo
+share/locale/fr/LC_MESSAGES/koshell.mo
+share/locale/fr/LC_MESSAGES/kpresenter.mo
+share/locale/fr/LC_MESSAGES/krayon.mo
+share/locale/fr/LC_MESSAGES/kspread.mo
+share/locale/fr/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/fr/LC_MESSAGES/kword.mo
+share/locale/hu/LC_MESSAGES/csvfilter.mo
+share/locale/hu/LC_MESSAGES/example.mo
+share/locale/hu/LC_MESSAGES/graphite.mo
+share/locale/hu/LC_MESSAGES/kchart.mo
+share/locale/hu/LC_MESSAGES/kformula.mo
+share/locale/hu/LC_MESSAGES/kivio.mo
+share/locale/hu/LC_MESSAGES/koffice.mo
+share/locale/hu/LC_MESSAGES/kontour.mo
+share/locale/hu/LC_MESSAGES/koshell.mo
+share/locale/hu/LC_MESSAGES/kpresenter.mo
+share/locale/hu/LC_MESSAGES/krayon.mo
+share/locale/hu/LC_MESSAGES/kscan_plugin.mo
+share/locale/hu/LC_MESSAGES/kspread.mo
+share/locale/hu/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/hu/LC_MESSAGES/kugar.mo
+share/locale/hu/LC_MESSAGES/kword.mo
+share/locale/it/LC_MESSAGES/csvfilter.mo
+share/locale/it/LC_MESSAGES/example.mo
+share/locale/it/LC_MESSAGES/graphite.mo
+share/locale/it/LC_MESSAGES/kchart.mo
+share/locale/it/LC_MESSAGES/kformula.mo
+share/locale/it/LC_MESSAGES/kformviewer.mo
+share/locale/it/LC_MESSAGES/kivio.mo
+share/locale/it/LC_MESSAGES/koffice.mo
+share/locale/it/LC_MESSAGES/kontour.mo
+share/locale/it/LC_MESSAGES/koshell.mo
+share/locale/it/LC_MESSAGES/kpresenter.mo
+share/locale/it/LC_MESSAGES/krayon.mo
+share/locale/it/LC_MESSAGES/kscan_plugin.mo
+share/locale/it/LC_MESSAGES/kspread.mo
+share/locale/it/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/it/LC_MESSAGES/kugar.mo
+share/locale/it/LC_MESSAGES/kword.mo
+share/locale/it/LC_MESSAGES/spell_tool.mo
+share/locale/ja/LC_MESSAGES/csvfilter.mo
+share/locale/ja/LC_MESSAGES/example.mo
+share/locale/ja/LC_MESSAGES/graphite.mo
+share/locale/ja/LC_MESSAGES/kchart.mo
+share/locale/ja/LC_MESSAGES/kformula.mo
+share/locale/ja/LC_MESSAGES/kivio.mo
+share/locale/ja/LC_MESSAGES/koffice.mo
+share/locale/ja/LC_MESSAGES/kontour.mo
+share/locale/ja/LC_MESSAGES/koshell.mo
+share/locale/ja/LC_MESSAGES/kpresenter.mo
+share/locale/ja/LC_MESSAGES/krayon.mo
+share/locale/ja/LC_MESSAGES/kscan_plugin.mo
+share/locale/ja/LC_MESSAGES/kspread.mo
+share/locale/ja/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/ja/LC_MESSAGES/kugar.mo
+share/locale/ja/LC_MESSAGES/kword.mo
+share/locale/lt/LC_MESSAGES/csvfilter.mo
+share/locale/lt/LC_MESSAGES/example.mo
+share/locale/lt/LC_MESSAGES/graphite.mo
+share/locale/lt/LC_MESSAGES/kchart.mo
+share/locale/lt/LC_MESSAGES/kformula.mo
+share/locale/lt/LC_MESSAGES/kimageshop.mo
+share/locale/lt/LC_MESSAGES/kivio.mo
+share/locale/lt/LC_MESSAGES/koffice.mo
+share/locale/lt/LC_MESSAGES/kontour.mo
+share/locale/lt/LC_MESSAGES/koshell.mo
+share/locale/lt/LC_MESSAGES/kpresenter.mo
+share/locale/lt/LC_MESSAGES/krayon.mo
+share/locale/lt/LC_MESSAGES/kscan_plugin.mo
+share/locale/lt/LC_MESSAGES/kspread.mo
+share/locale/lt/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/lt/LC_MESSAGES/kugar.mo
+share/locale/lt/LC_MESSAGES/kword.mo
+share/locale/mt/LC_MESSAGES/csvfilter.mo
+share/locale/mt/LC_MESSAGES/example.mo
+share/locale/mt/LC_MESSAGES/graphite.mo
+share/locale/mt/LC_MESSAGES/kchart.mo
+share/locale/mt/LC_MESSAGES/kformula.mo
+share/locale/mt/LC_MESSAGES/kivio.mo
+share/locale/mt/LC_MESSAGES/koffice.mo
+share/locale/mt/LC_MESSAGES/kontour.mo
+share/locale/mt/LC_MESSAGES/koshell.mo
+share/locale/mt/LC_MESSAGES/kpresenter.mo
+share/locale/mt/LC_MESSAGES/krayon.mo
+share/locale/mt/LC_MESSAGES/kscan_plugin.mo
+share/locale/mt/LC_MESSAGES/kspread.mo
+share/locale/mt/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/mt/LC_MESSAGES/kugar.mo
+share/locale/mt/LC_MESSAGES/kword.mo
+share/locale/nl/LC_MESSAGES/csvfilter.mo
+share/locale/nl/LC_MESSAGES/example.mo
+share/locale/nl/LC_MESSAGES/graphite.mo
+share/locale/nl/LC_MESSAGES/kchart.mo
+share/locale/nl/LC_MESSAGES/kformula.mo
+share/locale/nl/LC_MESSAGES/kivio.mo
+share/locale/nl/LC_MESSAGES/koffice.mo
+share/locale/nl/LC_MESSAGES/kontour.mo
+share/locale/nl/LC_MESSAGES/koshell.mo
+share/locale/nl/LC_MESSAGES/kpresenter.mo
+share/locale/nl/LC_MESSAGES/krayon.mo
+share/locale/nl/LC_MESSAGES/kscan_plugin.mo
+share/locale/nl/LC_MESSAGES/kspread.mo
+share/locale/nl/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/nl/LC_MESSAGES/kugar.mo
+share/locale/nl/LC_MESSAGES/kword.mo
+share/locale/no/LC_MESSAGES/graphite.mo
+share/locale/no/LC_MESSAGES/kchart.mo
+share/locale/no/LC_MESSAGES/kformula.mo
+share/locale/no/LC_MESSAGES/kivio.mo
+share/locale/no/LC_MESSAGES/koffice.mo
+share/locale/no/LC_MESSAGES/kontour.mo
+share/locale/no/LC_MESSAGES/koshell.mo
+share/locale/no/LC_MESSAGES/kpresenter.mo
+share/locale/no/LC_MESSAGES/krayon.mo
+share/locale/no/LC_MESSAGES/kscan_plugin.mo
+share/locale/no/LC_MESSAGES/kspread.mo
+share/locale/no/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/no/LC_MESSAGES/kword.mo
+share/locale/no_NY/LC_MESSAGES/csvfilter.mo
+share/locale/no_NY/LC_MESSAGES/example.mo
+share/locale/no_NY/LC_MESSAGES/graphite.mo
+share/locale/no_NY/LC_MESSAGES/kchart.mo
+share/locale/no_NY/LC_MESSAGES/kformula.mo
+share/locale/no_NY/LC_MESSAGES/kivio.mo
+share/locale/no_NY/LC_MESSAGES/koffice.mo
+share/locale/no_NY/LC_MESSAGES/kontour.mo
+share/locale/no_NY/LC_MESSAGES/koshell.mo
+share/locale/no_NY/LC_MESSAGES/kpresenter.mo
+share/locale/no_NY/LC_MESSAGES/krayon.mo
+share/locale/no_NY/LC_MESSAGES/kscan_plugin.mo
+share/locale/no_NY/LC_MESSAGES/kspread.mo
+share/locale/no_NY/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/no_NY/LC_MESSAGES/kugar.mo
+share/locale/no_NY/LC_MESSAGES/kword.mo
+share/locale/pl/LC_MESSAGES/csvfilter.mo
+share/locale/pl/LC_MESSAGES/example.mo
+share/locale/pl/LC_MESSAGES/graphite.mo
+share/locale/pl/LC_MESSAGES/kchart.mo
+share/locale/pl/LC_MESSAGES/kformula.mo
+share/locale/pl/LC_MESSAGES/kivio.mo
+share/locale/pl/LC_MESSAGES/koffice.mo
+share/locale/pl/LC_MESSAGES/kontour.mo
+share/locale/pl/LC_MESSAGES/koshell.mo
+share/locale/pl/LC_MESSAGES/kpresenter.mo
+share/locale/pl/LC_MESSAGES/krayon.mo
+share/locale/pl/LC_MESSAGES/kscan_plugin.mo
+share/locale/pl/LC_MESSAGES/kspread.mo
+share/locale/pl/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/pl/LC_MESSAGES/kugar.mo
+share/locale/pl/LC_MESSAGES/kword.mo
+share/locale/pt/LC_MESSAGES/csvfilter.mo
+share/locale/pt/LC_MESSAGES/example.mo
+share/locale/pt/LC_MESSAGES/graphite.mo
+share/locale/pt/LC_MESSAGES/kchart.mo
+share/locale/pt/LC_MESSAGES/kformula.mo
+share/locale/pt/LC_MESSAGES/kivio.mo
+share/locale/pt/LC_MESSAGES/koffice.mo
+share/locale/pt/LC_MESSAGES/kontour.mo
+share/locale/pt/LC_MESSAGES/koshell.mo
+share/locale/pt/LC_MESSAGES/kpresenter.mo
+share/locale/pt/LC_MESSAGES/krayon.mo
+share/locale/pt/LC_MESSAGES/kscan_plugin.mo
+share/locale/pt/LC_MESSAGES/kspread.mo
+share/locale/pt/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/pt/LC_MESSAGES/kugar.mo
+share/locale/pt/LC_MESSAGES/kword.mo
+share/locale/pt_BR/LC_MESSAGES/example.mo
+share/locale/pt_BR/LC_MESSAGES/graphite.mo
+share/locale/pt_BR/LC_MESSAGES/kchart.mo
+share/locale/pt_BR/LC_MESSAGES/kdiagramm.mo
+share/locale/pt_BR/LC_MESSAGES/kformula.mo
+share/locale/pt_BR/LC_MESSAGES/kimage.mo
+share/locale/pt_BR/LC_MESSAGES/kimageshop.mo
+share/locale/pt_BR/LC_MESSAGES/kivio.mo
+share/locale/pt_BR/LC_MESSAGES/koffice.mo
+share/locale/pt_BR/LC_MESSAGES/kohtml.mo
+share/locale/pt_BR/LC_MESSAGES/kontour.mo
+share/locale/pt_BR/LC_MESSAGES/koshell.mo
+share/locale/pt_BR/LC_MESSAGES/kpresenter.mo
+share/locale/pt_BR/LC_MESSAGES/krayon.mo
+share/locale/pt_BR/LC_MESSAGES/kspread.mo
+share/locale/pt_BR/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/pt_BR/LC_MESSAGES/kugar.mo
+share/locale/pt_BR/LC_MESSAGES/kword.mo
+share/locale/pt_BR/LC_MESSAGES/spell_tool.mo
+share/locale/ro/LC_MESSAGES/example.mo
+share/locale/ro/LC_MESSAGES/graphite.mo
+share/locale/ro/LC_MESSAGES/kchart.mo
+share/locale/ro/LC_MESSAGES/kformula.mo
+share/locale/ro/LC_MESSAGES/kivio.mo
+share/locale/ro/LC_MESSAGES/koffice.mo
+share/locale/ro/LC_MESSAGES/kontour.mo
+share/locale/ro/LC_MESSAGES/koshell.mo
+share/locale/ro/LC_MESSAGES/kpresenter.mo
+share/locale/ro/LC_MESSAGES/krayon.mo
+share/locale/ro/LC_MESSAGES/kspread.mo
+share/locale/ro/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/ro/LC_MESSAGES/kugar.mo
+share/locale/ro/LC_MESSAGES/kword.mo
+share/locale/ru/LC_MESSAGES/csvfilter.mo
+share/locale/ru/LC_MESSAGES/example.mo
+share/locale/ru/LC_MESSAGES/graphite.mo
+share/locale/ru/LC_MESSAGES/kchart.mo
+share/locale/ru/LC_MESSAGES/kformula.mo
+share/locale/ru/LC_MESSAGES/kivio.mo
+share/locale/ru/LC_MESSAGES/koffice.mo
+share/locale/ru/LC_MESSAGES/kontour.mo
+share/locale/ru/LC_MESSAGES/koshell.mo
+share/locale/ru/LC_MESSAGES/kpresenter.mo
+share/locale/ru/LC_MESSAGES/krayon.mo
+share/locale/ru/LC_MESSAGES/kscan_plugin.mo
+share/locale/ru/LC_MESSAGES/kspread.mo
+share/locale/ru/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/ru/LC_MESSAGES/kugar.mo
+share/locale/ru/LC_MESSAGES/kword.mo
+share/locale/sk/LC_MESSAGES/csvfilter.mo
+share/locale/sk/LC_MESSAGES/example.mo
+share/locale/sk/LC_MESSAGES/graphite.mo
+share/locale/sk/LC_MESSAGES/kchart.mo
+share/locale/sk/LC_MESSAGES/kformula.mo
+share/locale/sk/LC_MESSAGES/kivio.mo
+share/locale/sk/LC_MESSAGES/koffice.mo
+share/locale/sk/LC_MESSAGES/kontour.mo
+share/locale/sk/LC_MESSAGES/koshell.mo
+share/locale/sk/LC_MESSAGES/kpresenter.mo
+share/locale/sk/LC_MESSAGES/krayon.mo
+share/locale/sk/LC_MESSAGES/kscan_plugin.mo
+share/locale/sk/LC_MESSAGES/kspread.mo
+share/locale/sk/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/sk/LC_MESSAGES/kugar.mo
+share/locale/sk/LC_MESSAGES/kword.mo
+share/locale/sl/LC_MESSAGES/csvfilter.mo
+share/locale/sl/LC_MESSAGES/example.mo
+share/locale/sl/LC_MESSAGES/graphite.mo
+share/locale/sl/LC_MESSAGES/kchart.mo
+share/locale/sl/LC_MESSAGES/kformula.mo
+share/locale/sl/LC_MESSAGES/kivio.mo
+share/locale/sl/LC_MESSAGES/koffice.mo
+share/locale/sl/LC_MESSAGES/kontour.mo
+share/locale/sl/LC_MESSAGES/koshell.mo
+share/locale/sl/LC_MESSAGES/kpresenter.mo
+share/locale/sl/LC_MESSAGES/krayon.mo
+share/locale/sl/LC_MESSAGES/kscan_plugin.mo
+share/locale/sl/LC_MESSAGES/kspread.mo
+share/locale/sl/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/sl/LC_MESSAGES/kugar.mo
+share/locale/sl/LC_MESSAGES/kword.mo
+share/locale/sv/LC_MESSAGES/csvfilter.mo
+share/locale/sv/LC_MESSAGES/example.mo
+share/locale/sv/LC_MESSAGES/graphite.mo
+share/locale/sv/LC_MESSAGES/kchart.mo
+share/locale/sv/LC_MESSAGES/kformula.mo
+share/locale/sv/LC_MESSAGES/kivio.mo
+share/locale/sv/LC_MESSAGES/koffice.mo
+share/locale/sv/LC_MESSAGES/kontour.mo
+share/locale/sv/LC_MESSAGES/koshell.mo
+share/locale/sv/LC_MESSAGES/kpresenter.mo
+share/locale/sv/LC_MESSAGES/krayon.mo
+share/locale/sv/LC_MESSAGES/kscan_plugin.mo
+share/locale/sv/LC_MESSAGES/kspread.mo
+share/locale/sv/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/sv/LC_MESSAGES/kugar.mo
+share/locale/sv/LC_MESSAGES/kword.mo
+share/locale/ta/LC_MESSAGES/csvfilter.mo
+share/locale/ta/LC_MESSAGES/example.mo
+share/locale/ta/LC_MESSAGES/graphite.mo
+share/locale/ta/LC_MESSAGES/kchart.mo
+share/locale/ta/LC_MESSAGES/kformula.mo
+share/locale/ta/LC_MESSAGES/kivio.mo
+share/locale/ta/LC_MESSAGES/koffice.mo
+share/locale/ta/LC_MESSAGES/kontour.mo
+share/locale/ta/LC_MESSAGES/koshell.mo
+share/locale/ta/LC_MESSAGES/kpresenter.mo
+share/locale/ta/LC_MESSAGES/krayon.mo
+share/locale/ta/LC_MESSAGES/kscan_plugin.mo
+share/locale/ta/LC_MESSAGES/kspread.mo
+share/locale/ta/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/ta/LC_MESSAGES/kugar.mo
+share/locale/ta/LC_MESSAGES/kword.mo
+share/locale/tr/LC_MESSAGES/csvfilter.mo
+share/locale/tr/LC_MESSAGES/example.mo
+share/locale/tr/LC_MESSAGES/graphite.mo
+share/locale/tr/LC_MESSAGES/kchart.mo
+share/locale/tr/LC_MESSAGES/kformula.mo
+share/locale/tr/LC_MESSAGES/kimage.mo
+share/locale/tr/LC_MESSAGES/kivio.mo
+share/locale/tr/LC_MESSAGES/koffice.mo
+share/locale/tr/LC_MESSAGES/kontour.mo
+share/locale/tr/LC_MESSAGES/koshell.mo
+share/locale/tr/LC_MESSAGES/kpresenter.mo
+share/locale/tr/LC_MESSAGES/krayon.mo
+share/locale/tr/LC_MESSAGES/kscan_plugin.mo
+share/locale/tr/LC_MESSAGES/kspread.mo
+share/locale/tr/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/tr/LC_MESSAGES/kugar.mo
+share/locale/tr/LC_MESSAGES/kword.mo
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
+@dirrm share/locale/ta/LC_MESSAGES
+@dirrm share/locale/ta
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sk/LC_MESSAGES
+@dirrm share/locale/sk
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/no_NY/LC_MESSAGES
+@dirrm share/locale/no_NY
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/mt/LC_MESSAGES
+@dirrm share/locale/mt
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/ja
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/et
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/en_GB
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/da/LC_MESSAGES
+@dirrm share/locale/da
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/bg/LC_MESSAGES
+@dirrm share/locale/bg
+@dirrm share/locale/az/LC_MESSAGES
+@dirrm share/locale/az

@@ -1,0 +1,76 @@
+#! /bin/sh
+# $FreeBSD$
+
+/bin/rm -f ${PLIST} ${PLIST}.dirs
+
+if [ "${LINGUAS}" ]; then
+	set `echo $LINGUAS`
+else
+if [ "${BATCH}" ]; then
+	set \"az\" \"bg\" \"cs\" \"da\" \"en_GB\" \"eo\" \"es\" \"et\" \"hu\" \"it\" \"lt\" \"mt\" \"nl\" \"no\" \"no_NY\" \"pl\" \"pt\" \"pt_BR\" \"ro\" \"sk\" \"sl\" \"sv\" \"ta\" \"tr\"
+else
+	/usr/bin/dialog --title "Select languages" --clear \
+		--checklist "\n\
+Please select desired languages:" -1 -1 16 \
+az		"Afrikaans" OFF \
+bg		"Bulgarisch" OFF \
+cs		"Czech" OFF \
+da		"Danish" OFF \
+de		"German" ON \
+en_GB		"UK English" OFF \
+eo		"Esperanto" OFF \
+es		"Spanish" OFF \
+et		"Estonian" OFF \
+fr		"French" ON \
+hu		"Hungarian" OFF \
+it		"Italian" OFF \
+ja		"Japanese" ON \
+lt		"Lithuanian" OFF \
+mt		"Maltese" OFF \
+nl		"Dutch" OFF \
+no		"Norwegian" OFF \
+no_NY		"Norwegian (Nynorsk)" OFF \
+pl		"Polish" OFF \
+pt		"Portuguese" OFF \
+pt_BR		"Portuguese (Brazil)" OFF \
+ro		"Romanian" OFF \
+ru		"Russian" ON \
+sk		"Slovak" OFF \
+sl		"Slovenian" OFF \
+sv		"Swedish" OFF \
+ta		"Tamil" OFF \
+tr		"Turkish" OFF \
+2> /tmp/chklist.tmp.$$
+
+	retval=$?
+
+	if [ -s /tmp/chklist.tmp.$$ ]; then
+		set `cat /tmp/chklist.tmp.$$`
+	fi
+	rm -f /tmp/chklist.tmp.$$
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+fi
+
+/bin/rm -f ${WRKSRC}/subdirs
+
+while [ "$1" ]; do
+	a=`echo -n $1 | /usr/bin/sed -e 's#\"##g'`
+	echo $a >> ${WRKSRC}/subdirs
+	/usr/bin/grep "^[^@].*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}
+	/usr/bin/grep "^[^@].*-$a\$" ${CURDIR}/pkg-plist >> ${PLIST}
+	/usr/bin/grep "^@.*/$a/.*" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	/usr/bin/grep "^@.*/$a$" ${CURDIR}/pkg-plist >> ${PLIST}.dirs
+	shift
+done
+
+/bin/cat ${PLIST}.dirs >> ${PLIST}
