@@ -1,0 +1,4 @@
+PHPiCalendar post-install instructions
+--------------------------------------
+Go to %%PREFIX%%/www/phpicalendar and copy
+config.inc.php-default to config.inc.php.

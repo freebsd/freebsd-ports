@@ -1,0 +1,7 @@
+PHP iCalendar is a php-based iCal file parser. Its based on v2.0
+of the IETF spec. It displays iCal files in a nice logical, clean
+manner with day, week, month, and year navigation, printer view,
+RSS-enabled, and searchable. It supports 12 languages, is fully
+theme-able, and has complete timezone support.
+
+WWW: http://phpicalendar.sourceforge.net/

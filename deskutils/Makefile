@@ -86,6 +86,7 @@
     SUBDIR += offix-trash
     SUBDIR += pal
     SUBDIR += phpgroupware
+    SUBDIR += phpicalendar
     SUBDIR += plan
     SUBDIR += planner
     SUBDIR += preferences.app
