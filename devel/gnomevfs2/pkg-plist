@@ -146,7 +146,6 @@ share/doc/gnome-vfs-2.0/right.png
 share/doc/gnome-vfs-2.0/style.css
 share/doc/gnome-vfs-2.0/up.png
 share/doc/gnome-vfs-2.0/volumes.html
-@exec mkdir -p %D/share/gnome/vfolders
 %%KDEMENUS%%share/gnome/vfolders/KDE.directory
 share/locale/af/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-vfs-2.0.mo
@@ -218,7 +217,6 @@ share/locale/wa/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/yi/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-vfs-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs-2.0.mo
-@dirrm share/gnome/vfolders
 @dirrm share/doc/gnome-vfs-2.0
 @dirrm include/gnome-vfs-module-2.0/libgnomevfs
 @dirrm include/gnome-vfs-module-2.0
