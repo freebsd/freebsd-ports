@@ -6,13 +6,14 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=   http://www.prelude-ids.org/download/releases/
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
-LIB_DEPENDS+=	prelude.0:${PORTSDIR}/security/libprelude \
+LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
 		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=		yes

@@ -5,15 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
-LIB_DEPENDS+=		prelude.0:${PORTSDIR}/security/libprelude \
-			xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -37,7 +37,7 @@ PLIST_SUB+=		MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql-client
 CONFIGURE_ARGS+=	--enable-pgsql
 PLIST_SUB+=		PGSQL=""
 .else
