@@ -24,7 +24,7 @@ do-install:
 	(cd ${WRKSRC}; tar cf - .) | \
 		(cd ${PREFIX}/share/solarwolf; tar --unlink -xf -)
 	@printf "#!/bin/sh\ncd ${PREFIX}/share/solarwolf && \
-		${PYTHON_CMD} ${PREFIX}/share/solarwolf/solarwolf.py\n" > ${WRKDIR}/solarwolf.sh
+		exec ${PYTHON_CMD} ${PREFIX}/share/solarwolf/solarwolf.py\n" > ${WRKDIR}/solarwolf.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/solarwolf.sh ${PREFIX}/bin/solarwolf
 
 .include <bsd.port.mk>
