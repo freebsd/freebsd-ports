@@ -21,7 +21,9 @@ CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib \
 		--without-libjpeg --without-libgif \
-		--without-libgdbm --without-libuulib
+		--without-libgdbm --without-libuulib \
+		--without-odbc --without-audiofile
 CONFIGURE_ENV+=	MOC="${MOC}"
+USE_GMAKE=	yes
 
 .include <bsd.port.mk>
