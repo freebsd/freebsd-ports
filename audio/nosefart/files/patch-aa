@@ -34,7 +34,7 @@
  OBJS = $(addsuffix .o, $(FILES))
  OBJECTS = $(addprefix $(BUILDDIR)/, $(OBJS))
  
-+LDLIBS = -L$(LOCALBASE)/lib -lm -lgnugetopt
++LDLIBS = -lm
 +
  ################################
  # Rules
