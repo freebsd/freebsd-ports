@@ -4,7 +4,7 @@
  how to configure DSPAM with your MTA. Examples are provided for
  sendmail, exim and other popular MTAs.
 %%MYSQL%%
-%%MYSQL%% See %%DOCSDIR%%/mysql/README
+%%MYSQL%% See %%EXAMPLESDIR%%/README
 %%MYSQL%% for instructions on how to configure MySQL
 %%MYSQL%% for use with DSPAM.
 %%MYSQL%%
