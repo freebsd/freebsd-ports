@@ -1,0 +1,9 @@
+From the magictun README file:
+
+  This is simple LD_PRELOAD module let you transparently redirect
+  ANY tcp connections from ANY programs through https proxy (RFC2817) without
+  modifications to source code. This is done by substituting libc connect(2)
+  function with a special wrapper.
+
+Author:	Andrei Nigmatulin <root@anight.org>
+WWW:	http://anight.org/magictun/
