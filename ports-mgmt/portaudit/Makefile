@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.3.3
+PORTVERSION=	0.4
 CATEGORIES=	security
 DISTFILES=
 
@@ -18,19 +18,27 @@ MAN1=		portaudit.1
 PERIODICDIR?=	${PREFIX}/etc/periodic
 DATABASEDIR?=	/var/db/portaudit
 
+PKGREQ=		${WRKDIR}/pkg-req
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}" \
 		DATABASEDIR="${DATABASEDIR}"
 
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DATABASEDIR%%,${DATABASEDIR},g'
+REQPKGVER=	20040623
+
+SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e "s|%%DATADIR%%|${DATADIR}|g" \
+		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g" \
+		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
+		-e "s|%%REQPKGVER%%|${REQPKGVER}|g" \
+		-e "s|%%BZIP2_CMD%%|${BZIP2_CMD}|g" \
 
 PKG_INFO_BASE?=	/usr/sbin/pkg_info
 BASEPKGVER!=	${PKG_INFO_BASE} -qP 2>/dev/null || ${TRUE}
 
-.if ${BASEPKGVER} < 20040125
+.if ${BASEPKGVER} < ${REQPKGVER}
 RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
 .endif
 
@@ -42,21 +50,23 @@ RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 
 do-build:
 .for f in portaudit-cmd.sh portaudit.sh fetchaudit.sh portaudit.functions portaudit.1 portaudit.conf
-	@${SED} -e "s|%%DATADIR%%|${DATADIR}|g" \
-		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g" \
-		-e "s|%%PREFIX%%|${PREFIX}|g" \
-		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
-		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
-		-e "s|%%BZIP2_CMD%%|${BZIP2_CMD}|g" \
-		${FILESDIR}/${f} > ${WRKDIR}/${f}
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/${f} > ${WRKDIR}/${f}
 .endfor
 
 post-build:
-.for text in pkg-install pkg-deinstall
+.for text in pkg-req pkg-install pkg-deinstall
 	@if [ -f ${PKGDIR}/${text} ]; then \
 		${SED} ${SED_SCRIPT} ${PKGDIR}/${text} >${WRKDIR}/${text}; \
 	fi
 .endfor
+
+pre-install:
+	@if [ -f ${PKGREQ} ]; then \
+		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGREQ} ${PKGNAME} INSTALL; \
+	fi
+	@if [ -f ${PKGINSTALL} ]; then \
+		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
+	fi
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit-cmd.sh ${PREFIX}/bin/portaudit

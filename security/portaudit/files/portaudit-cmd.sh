@@ -37,17 +37,18 @@ portaudit_confs
 opt_audit=false
 opt_auditcwd=false
 opt_audittree=false
-opt_verbose=false
-opt_version=false
 opt_dbversion=false
 opt_fetch=false
+opt_file=
 opt_quiet=false
+opt_verbose=false
+opt_version=false
 
 if [ $# -eq 0 ] ; then
 	opt_audit=true
 fi
 
-while getopts aACvVdFq opt; do
+while getopts aACdf:FqvV opt; do
 	case "$opt" in
 	a)
 		opt_audit=true;;
@@ -57,6 +58,8 @@ while getopts aACvVdFq opt; do
 		opt_auditcwd=true;;
 	d)
 		opt_dbversion=true;;
+	f)
+		opt_file=$OPTARG;;
 	F)
 		opt_fetch=true;;
 	q)
@@ -66,7 +69,7 @@ while getopts aACvVdFq opt; do
 	V)
 		opt_version=true;;
 	?)
-		echo "Usage: $0 -aACvVdFq"
+		echo "Usage: $0 -aACvVdFq [-f file]"
 		exit 2;;
 	esac
 done
@@ -142,4 +145,9 @@ if $opt_audittree; then
 	done
 
 	echo "${VULCNT} ports with unmarked vulnerabilities."
+fi
+
+if [ -n "$opt_file" ]; then
+	portaudit_prerequisites
+	audit_file "$opt_file"
 fi
