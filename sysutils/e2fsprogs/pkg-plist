@@ -48,7 +48,6 @@ sbin/blkid
 sbin/debugfs
 sbin/dumpe2fs
 sbin/e2fsck
-sbin/e2fsck.static
 sbin/e2image
 sbin/e2label
 sbin/findfs

@@ -8,7 +8,7 @@ create links for the fsck utilities installed by this port in /sbin, e.g.
 
 ln -f %%PREFIX%%/sbin/fsck_ext2fs /sbin/ 2>/dev/null \
   || install -m755 %%PREFIX%%/sbin/fsck_ext2fs /sbin/
-ln -f %%PREFIX%%/sbin/e2fsck.static /sbin/e2fsck 2>/dev/null \
-  || install -m755 %%PREFIX%%/sbin/e2fsck.static /sbin/e2fsck
+ln -f %%PREFIX%%/sbin/e2fsck /sbin/e2fsck 2>/dev/null \
+  || install -m755 %%PREFIX%%/sbin/e2fsck /sbin/e2fsck
 
 IMPORTANT: you also need to repeat the above steps after a port upgrade!
