@@ -1,0 +1,4 @@
+An efficient C++ WSDL library which parses a WSDL file & provides APIs to
+access WSDL elements. It has a library for parsing xml schemas and
+validating instances. It uses xml pull parsing methodology,and is meant to
+be semantically equivalent to WSDL4J.
