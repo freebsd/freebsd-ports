@@ -8,7 +8,7 @@
 PORTNAME=	jove
 PORTVERSION=	4.16
 CATEGORIES=	editors
-MASTER_SITES=	ftp://relay.cs.toronto.edu/pub/moraes/jove/
+MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/
 
 MAINTAINER=	ports@FreeBSD.org
 
