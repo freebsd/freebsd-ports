@@ -38,6 +38,7 @@
     SUBDIR += libodbc++
     SUBDIR += libsdb
     SUBDIR += libudbc
+    SUBDIR += lsdb
     SUBDIR += mdbtools
     SUBDIR += metakit
     SUBDIR += mird
