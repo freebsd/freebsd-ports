@@ -40,6 +40,7 @@
     SUBDIR += ngircd
     SUBDIR += ninja
     SUBDIR += olirc
+    SUBDIR += onis
     SUBDIR += p5-IRC
     SUBDIR += p5-POE-Component-IRC
     SUBDIR += p5-POE-Component-IRC-Object

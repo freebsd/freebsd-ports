@@ -1,0 +1,41 @@
+share/onis/CHANGELOG
+share/onis/COPYING
+share/onis/Config.pm
+share/onis/README
+share/onis/config
+share/onis/html.pm
+share/onis/images/hor0n.png
+share/onis/images/hor1n.png
+share/onis/images/hor2n.png
+share/onis/images/hor3n.png
+share/onis/images/ver0n.png
+share/onis/images/ver1n.png
+share/onis/images/ver2n.png
+share/onis/images/ver3n.png
+share/onis/onis
+share/onis/parser/dancer.pm
+share/onis/parser/dircproxy.pm
+share/onis/parser/eggdrop.pm
+share/onis/parser/ircii.pm
+share/onis/parser/mirc.pm
+share/onis/parser/perlbot.pm
+share/onis/parser/tools.pm
+share/onis/plugins/actions.pm
+share/onis/plugins/channel.pm
+share/onis/plugins/core.pm
+share/onis/plugins/extensions.pm
+share/onis/plugins/kicks.pm
+share/onis/plugins/longlines.pm
+share/onis/plugins/nicks.pm
+share/onis/plugins/questions.pm
+share/onis/plugins/quits.pm
+share/onis/plugins/soliloquies.pm
+share/onis/plugins/topics.pm
+share/onis/plugins/urls.pm
+share/onis/plugins/words.pm
+share/onis/plugins/yells.pm
+share/onis/timestamp
+@dirrm share/onis/images
+@dirrm share/onis/parser
+@dirrm share/onis/plugins
+@dirrm share/onis
