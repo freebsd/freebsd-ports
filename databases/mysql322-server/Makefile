@@ -16,7 +16,7 @@ DISTNAME=	mysql-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
-Y2K=		http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2000_compliance
+Y2K=		http://www.mysql.com/documentation/mysql/bychapter/manual_Introduction.html#Year_2000_compliance
 
 SLAVEDIRS=	databases/mysql322-client
 MASTERPORTNAME=	mysql-server
