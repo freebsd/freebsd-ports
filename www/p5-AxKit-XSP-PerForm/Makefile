@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	AxKit-XSP-PerForm
-PORTVERSION=	1.7
+PORTVERSION=	1.83
 CATEGORIES=	www
 MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dom@happygiraffe.net
+MAINTAINER=	adam@migus.org
 COMMENT=	XSP Taglib for making complex forms easy
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit \
