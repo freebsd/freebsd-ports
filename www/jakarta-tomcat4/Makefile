@@ -12,7 +12,7 @@ MASTER_SITES=	http://jakarta.apache.org/builds/tomcat/release/v${PORTVERSION}/bi
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	jakarta/tomcat/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dirk@FreeBSD.org
 
 BUILD_DEPENDS=	pinstall:${PORTSDIR}/devel/pinstall
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
