@@ -8,11 +8,14 @@
 
 PORTNAME=	tcpblast
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	benchmarks net ipv6
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Measures the throughput of a tcp connection
+
+PLIST_FILES=	bin/tcpblast
 
 WRKSRC=		${WRKDIR}/src
 
