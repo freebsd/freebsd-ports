@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.6 1996/04/26 08:47:37 asami Exp $
+# $Id: Makefile,v 1.7 1996/08/22 00:57:24 asami Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -26,6 +26,8 @@ EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		xdvik-18f.tar.gz
 
 MAINTAINER=	max@sfc.wide.ad.jp
+
+BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/kpathsea-2.6
