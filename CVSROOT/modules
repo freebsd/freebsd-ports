@@ -800,6 +800,7 @@ cheatah		ports/misc/cheatah
 checkbot	ports/www/checkbot
 checknr		src/usr.bin/checknr
 checkpassword	ports/security/checkpassword
+checkrdf	ports/deskutils/checkrdf
 checkservice	ports/sysutils/checkservice
 cheesetracker	ports/audio/cheesetracker
 cheetah		ports/www/cheetah
