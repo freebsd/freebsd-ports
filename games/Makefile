@@ -30,6 +30,7 @@
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += antipolix
+    SUBDIR += aop
     SUBDIR += asc
     SUBDIR += atitd
     SUBDIR += atlantikdesigner

@@ -1,0 +1,10 @@
+Aop (Ambassador Of Pain) is a curses based arcade game for UNIX with only 64
+lines of sourcecode. The goal is to drive the hoovercraft (O) trough the level
+into the 'at' sign (@) and reach as much points as possible by reducing the
+number of moves and don't losing any time. Lost lifes (0) can easily be picked
+up by simply drive over them.
+
+WWW:	http://aop.raffi.at/
+
+- Aaron Zauner
+az_mail@gmx.at
