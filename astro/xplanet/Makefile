@@ -1,14 +1,14 @@
 # New ports collection makefile for:    xplanet
-# Version required:	0.45
+# Version required:	0.50
 # Date created:		22 Feb 2000
 # Whom:			darius@dons.net.au
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xplanet-0.45
+DISTNAME=	xplanet-0.50
 CATEGORIES=	astro x11
-MASTER_SITES=	http://www.wrightflyer.org/~hari/xplanet/ \
+MASTER_SITES=	http://www.alumni.caltech.edu/~hari/xplanet/ \
 		http://www.radcyberzine.com/xglobe/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} photo_1600.jpg
 
@@ -69,6 +69,9 @@ pre-fetch:
 	@${ECHO} ${TKVERMSG}
 	@${ECHO} "Define USE_TK80, USE_TK81, USE_TK82, or USE_Tk83"
 	@${ECHO} "To use a different version of TK"
+
+pre-configure:
+	@${PERL} -pi -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
 
 pre-build:
 	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/auxfiles.h
