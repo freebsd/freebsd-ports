@@ -193,6 +193,7 @@
     SUBDIR += userlist
     SUBDIR += uwatch
     SUBDIR += videogen
+    SUBDIR += vobcopy
     SUBDIR += webmin
     SUBDIR += whowatch
     SUBDIR += wmapm
