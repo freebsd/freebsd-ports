@@ -23,6 +23,7 @@
     SUBDIR += mpack
     SUBDIR += mule-ucs-emacs20
     SUBDIR += p5-Boulder
+    SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
     SUBDIR += p5-Convert-Morse
