@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+This port revision fixes a sound problem (distortion) many have been 
+experiencing with ZSNES on FreeBSD.
+
+With this revision comes a new bug. You will have to restart ZSNES each 
+time you modify the sound settings within the sound menu for them to work 
+properly. 
+
+Please let me know if you experience any other problems or if you have 
+any information regarding this issue! 
+
+- Travis Poppe
+tlp@LiquidX.org
+-------------------------------------------------------------------------------
