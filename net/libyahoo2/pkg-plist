@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/libyahoo2/yahoo2.h
 include/libyahoo2/yahoo2_callbacks.h
 include/libyahoo2/yahoo2_types.h
@@ -5,6 +6,6 @@ include/libyahoo2/yahoo_httplib.h
 include/libyahoo2/yahoo_list.h
 lib/libyahoo2.a
 lib/libyahoo2.so
-lib/libyahoo2.so.3
+lib/libyahoo2.so.4
 libdata/pkgconfig/libyahoo2.pc
 @dirrm include/libyahoo2
