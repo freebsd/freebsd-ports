@@ -1,0 +1,16 @@
+@cwd /usr/local
+bin/ctags
+bin/b2m
+bin/rcs-checkin
+bin/emacs-19.25
+@exec ln -s %D/%F %B/emacs
+@unexec rm %B/emacs
+bin/etags
+bin/emacsclient
+lib/emacs/lisp
+lib/emacs/site-lisp
+lib/emacs/19.25
+man/man1/emacs.1
+man/man1/etags.1
+man/man1/ctags.1
+info
