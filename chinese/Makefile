@@ -44,6 +44,7 @@
     SUBDIR += gb2ps
     SUBDIR += gbfs
     SUBDIR += gbscript
+    SUBDIR += gcin
     SUBDIR += gnumeric
     SUBDIR += gugod-clean
     SUBDIR += hanzim
