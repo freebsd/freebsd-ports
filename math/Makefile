@@ -55,6 +55,7 @@
     SUBDIR += p5-Math-BigIntFast
     SUBDIR += p5-Math-Currency
     SUBDIR += p5-Math-Expr
+    SUBDIR += p5-Math-FFT
     SUBDIR += p5-Math-Financial
     SUBDIR += p5-Math-FixedPrecision
     SUBDIR += p5-Math-GMP

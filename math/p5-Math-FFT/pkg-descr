@@ -1,0 +1,22 @@
+The Math::FFT module provides an interface to various Fast Fourier
+Transform (FFT) routines of the C routine of fft4g.c; The one-dimensional
+data sets, of size 2^n, are assumed to be sampled at a constant
+rate.
+
+The FFT methods available are
+- cdft: Complex Discrete Fourier Transform
+- rdft: Real Discrete Fourier Transform
+- ddct: Discrete Cosine Transform
+- ddst: Discrete Sine Transform
+- dfct:  Cosine Transform of RDFT (Real Symmetric DFT)
+- dfst:  Sine Transform of RDFT (Real Symmetric DFT)
+as well as their inverses.
+
+The C code for the FFT routines of fft4g.c is copyrighted 1996-99
+by Takuya OOURA. The file arrays.c included here to handle passing
+arrays to and from C comes from the PGPLOT module of Karl Glazebrook
+<kgb@aaoepp.aao.gov.au>. The perl interface of the Math::FTT module
+is Copyright 2000 by Randy Kobes <randy@theoryx5.uwinnipeg.ca>,
+and may be distributed under the same terms as Perl itself.
+
+WWW: http://momonga.t.u-tokyo.ac.jp/~ooura/fft.html.
