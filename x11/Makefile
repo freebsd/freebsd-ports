@@ -95,6 +95,7 @@
     SUBDIR += ruby-panel-applet
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
+    SUBDIR += settitle
     SUBDIR += startup-notification
     SUBDIR += stockticker_applet
     SUBDIR += sxpc
