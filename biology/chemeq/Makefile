@@ -12,6 +12,8 @@ DISTNAME=	chemeq-V110
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
+BROKEN=		"Does not build"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BISON=	yes
