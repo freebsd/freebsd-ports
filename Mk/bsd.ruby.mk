@@ -15,7 +15,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # [variables that a user may define]
 #
 # RUBY_VER		- (See below)
-# RUBY_DEFAULT_VER	- Set to (e.g.) "1.7" if you want to refer to "ruby17" just as "ruby".
+# RUBY_DEFAULT_VER	- Set to (e.g.) "1.8" if you want to refer to "ruby18" just as "ruby".
 # RUBY_ARCH		- (See below)
 # RUBY_NO_RD_HTML	- Define if you don't want HTML files generated from RD files.
 #
@@ -97,7 +97,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 #
 
 #.if ${ARCH} == alpha || ${ARCH} == sparc64
-#RUBY_VER?=		1.7
+#RUBY_VER?=		1.8
 #.endif
 
 .if defined(RUBY)
@@ -123,22 +123,25 @@ _RUBY_SITEDIR!=		${_RUBY_CONFIG} 'puts C["sitedir"]'
 .else
 RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
-.if defined(RUBY_VER) && ${RUBY_VER} == 1.7
-RUBY_VERSION?=		1.7.3
+.if defined(RUBY_VER) && ${RUBY_VER} == 1.8
+RUBY_VERSION?=		1.8.0
 RUBY_PORT?=		lang/ruby${RUBY_R}-devel
-RUBY_DISTVERSION?=	${RUBY_VERSION}-2002.12.12
-#RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
-RUBY_PORTVERSION?=	${RUBY_VERSION}.2002.12.12
-MASTER_SITE_SUBDIR_RUBY=	snapshots
+RUBY_DISTVERSION?=	${RUBY_VERSION}-preview1
+RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-errata.diff
+RUBY_PORTVERSION?=	${RUBY_VERSION}.p1
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
+#MASTER_SITE_SUBDIR_RUBY=	snapshots
+.elif defined(RUBY_VER) && ${RUBY_VER} == 1.7
+.error "Ruby 1.7 is obsolete; set RUBY_VER to 1.8 instead."
 .else
 RUBY_VERSION?=		1.6.8
-RUBY_DISTVERSION?=	${RUBY_VERSION}-preview3
+#RUBY_DISTVERSION?=	${RUBY_VERSION}
 #RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
-RUBY_PORTVERSION?=	${RUBY_VERSION}.p3
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
-MASTER_SITE_SUBDIR_RUBY=	${RUBY_VER}
+#RUBY_PORTVERSION?=	${RUBY_VERSION}
+#RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_VERSION}
+#MASTER_SITE_SUBDIR_RUBY=	snapshots
 .endif
-#      defined(RUBY_VER) && ${RUBY_VER} == 1.7
+#      defined(RUBY_VER) && ${RUBY_VER} == 1.8
 
 RUBY_ARCH?=		${ARCH}-freebsd${OSREL:C/\..*//}${RUBY_R}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
@@ -149,7 +152,7 @@ _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 #      defined(RUBY)
 
 #.if ${ARCH} == alpha || ${ARCH} == sparc64
-#RUBY_DEFAULT_VER?=	1.7
+#RUBY_DEFAULT_VER?=	1.8
 #.else
 RUBY_DEFAULT_VER?=	1.6
 #.endif
@@ -157,6 +160,7 @@ RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
 RUBY_DISTVERSION?=	${RUBY_VERSION}
 RUBY_PORTVERSION?=	${RUBY_VERSION}
+MASTER_SITE_SUBDIR_RUBY?=	${RUBY_VER}
 RUBY_DISTNAME?=		ruby-${RUBY_DISTVERSION}
 
 RUBY_WRKSRC?=		${WRKDIR}/${RUBY_DISTNAME}
@@ -383,7 +387,7 @@ shim=	${USE_RUBY_FEATURES:Mbenchmark} \
 	${USE_RUBY_FEATURES:Mstringio} \
 	${USE_RUBY_FEATURES:Mstrscan} \
 	${USE_RUBY_FEATURES:Mtsort}
-.if !empty(shim) && ${RUBY_VER} < 1.7
+.if !empty(shim) && ${RUBY_VER} <= 1.6
 BUILD_DEPENDS+=		${DEPEND_RUBY_SHIM18}
 RUN_DEPENDS+=		${DEPEND_RUBY_SHIM18}
 .endif

@@ -64,15 +64,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/eregex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/expect.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/fileutils.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/final.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/finalize.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/find.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/forwardable.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ftools.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/ftplib.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/getoptlong.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/getopts.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/importenv.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/ipaddr.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/irb.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/jcode.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/kconv.rb
@@ -84,6 +83,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/monitor.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/mutex_m.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/observer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/open-uri.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/open3.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ostruct.rb
@@ -104,7 +104,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/shellwords.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/singleton.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/sync.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/telnet.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/tempfile.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/thread.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/thwait.rb
@@ -222,8 +221,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb-tools.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/irb/irb.rd.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/net/http.rd.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/net/smtp.rd.ja 
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
@@ -235,7 +232,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/net
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syslog
