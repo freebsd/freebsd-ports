@@ -1,0 +1,11 @@
+This module's purpose is to provide an already implemented ACL logic for 
+programmers. Most of the time writing access control list scripts is long 
+and boring. This set of modules has all the convenient logic behind access 
+control lists and provide an easy interface to it. It allows you to build 
+custom ACL's, and provide the mechanisms to run the ACL against data.
+
+WWW: http://search.cpan.org/dist/Decision-ACL/
+Author: Benoit Beausejour <bbeausej@pobox.com>
+
+- Aaron Dalton
+aaron@daltons.ca
