@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mc
-# Version required:	4.1.24
+# Version required:	4.1.27
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.16 1997/11/30 19:37:48 vanilla Exp $
+# $Id: Makefile,v 1.17 1998/02/01 02:01:25 vanilla Exp $
 #
 
-DISTNAME=	mc-4.1.24
+DISTNAME=	mc-4.1.27
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/devel
