@@ -1,0 +1,11 @@
+This is a port of Leaf Rogue.
+Leaf Rogue as message file for Rogue-clone: Version II.
+
+You have to Leaf message file to play rogue like this:
+	% rogue_s leaf.msg
+    or
+	% leafrogue
+
+Welcome to the Dungeons of Leaf...
+
+WWW: http://www.lab3.kuis.kyoto-u.ac.jp/~roguelike/leaf/
