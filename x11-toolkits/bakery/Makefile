@@ -23,10 +23,14 @@ LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intltool gnometarget
+USE_GNOME=	gnomeprefix gnomehack lthack intltool gnometarget
 USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
