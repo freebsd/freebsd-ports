@@ -21,7 +21,7 @@ LIB_DEPENDS=	AfterBase.0:${PORTSDIR}/devel/libafterbase \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.8:${PORTSDIR}/print/freetype2
+		freetype.9:${PORTSDIR}/print/freetype2
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
+		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 .ifndef (WITHOUT_X11)
