@@ -22,6 +22,7 @@
     SUBDIR += gdesklets-psi_displaypackage
     SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
+    SUBDIR += gdesklets-sensor-displayconstraints
     SUBDIR += gdesklets-sensor-psi_externalinterval
     SUBDIR += gdesklets-sensor-psi_iconbutton
     SUBDIR += gdesklets-sensor-psi_memo
