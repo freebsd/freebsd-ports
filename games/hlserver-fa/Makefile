@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	firearms
-PORTVERSION=	2.5
-MASTER_SITES=	http://absurd.ranney.com/fa/ \
-		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/modifications/firearms/ \
-		http://ftp1download.gamespy.com/fileplanet/action/half-life/modifications/firearms/
-DISTNAME=	fa_rc25_linux_full
+PORTVERSION=	2.6
+MASTER_SITES=	http://www.doomsdaywarriors.com/files/ \
+		ftp://ftp.nofrag.com/nofrag/ \
+		http://downloads.firearms-hl.com/ \
+		http://lamas.counter-strike.hu:8080/letolt/extra/firearms/
+DISTNAME=	firearms_rc${PORTVERSION}
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
