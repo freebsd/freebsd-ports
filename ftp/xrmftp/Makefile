@@ -8,8 +8,7 @@
 PORTNAME=	xrmftp
 PORTVERSION=	1.2.4
 CATEGORIES=	ftp
-MASTER_SITES=	http://www.mat.uni.torun.pl/~rafmet/ \
-		ftp://ftp.netspring.net/pub/people/rafal-metkowski/
+MASTER_SITES=	http://www.mat.uni.torun.pl/~rafmet/xrmftp/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	matt@LUCIDA.CA
