@@ -1,0 +1,7 @@
+Object-oriented interface to the session_* family functions
+it provides extra features such as database storage for
+session data using DB package. It introduces new methods
+like isNew(), useCookies(), setExpire(), setIdle(),
+isExpired(), isIdled() and others.
+
+WWW: http://pear.php.net/package-info.php?package=HTTP_Session
