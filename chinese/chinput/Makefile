@@ -6,14 +6,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=      chinput
-PORTVERSION=   2.1
-CATEGORIES=    chinese x11
-MASTER_SITES=  ftp://ftp.cn.freebsd.org/pub/ported/
-DISTNAME=      zh-chinput-2.1
+PKGNAMEPREFIX=	zh-
+PORTNAME=	chinput
+PORTVERSION=	2.1
+CATEGORIES=	chinese x11
+MASTER_SITES=	ftp://ftp.cn.freebsd.org/pub/ported/
+DISTNAME=	zh-chinput-2.1
 
-MAINTAINER=    phj@cn.FreeBSD.org
+MAINTAINER=	phj@cn.FreeBSD.org
 
-WRKSRC=                ${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-extract:
+	find ${WRKSRC} -name CVS | xargs ${RM} -rf
 
 .include <bsd.port.mk>
