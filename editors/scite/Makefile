@@ -22,7 +22,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}/gtk
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehier gtk12
 MAKEFILE=	makefile
 MAKE_ENV=	MKDIR="${MKDIR}"
 
