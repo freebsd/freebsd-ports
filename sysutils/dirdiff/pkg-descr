@@ -1,0 +1,100 @@
+			Dirdiff-1.2.
+
+			Paul Mackerras
+			Linuxcare, Inc.
+			<paulus@linuxcare.com.au>
+
+Dirdiff is a graphical tool for displaying the differences between
+directory trees and for merging changes from one tree into another.
+Dirdiff can handle up to 5 trees.  It displays a main window with a
+list of the files which are different between the trees, with colored
+squares to indicate the relative ages of the versions.  A menu allows
+you to display the differences between any two of the versions in
+another window.  Another menu allows you to copy the file from one
+tree to another.
+
+The differences window basically displays the output of `diff -u' with
+colored backgrounds to indicate which version each line comes from.
+The differences window also has a series of checkboxes which allow you
+to selectively apply changes from one version to another.  You apply
+the selected changes using the merge menu.  Dirdiff will then pop up
+another window containing the merged file.  You can then edit the
+merged version and save it back into file.
+
+
+What's new in dirdiff-1.2.
+--------------------------
+
+* The help text and Makefile have been updated, thanks to Martin Pool.
+
+
+What was new in dirdiff-1.1.
+----------------------------
+
+* Dirdiff can now generate a patch containing the differences in a
+  selected set of files between any two directory trees.  See the
+  File -> Make patch submenu in the main window.
+
+* Some key bindings have been fixed.
+
+* The results of a merge are now put into a window where it can be
+  inspected and edited, rather than immediately replacing the original
+  file.
+
+* There is now a find function which can be used in the differences
+  window, the merge window and the patch window.
+
+* Various bugs have been fixed.
+
+
+Installation.
+-------------
+
+Dirdiff is a Tcl/TK script, so no compilation is required.  Dirdiff
+however can make use of a shared library called filecmp.so.0.0 for
+comparing files.  This is optional, but it has two benefits: (a)
+comparing files is faster with filecmp.so.0.0 (without it, dirdiff has
+to start an external process running `cmp'), and (b) filecmp.so.0.0
+can optionally ignore RCS strings when it is comparing two files.
+
+The Makefile in this directory will compile filecmp.so.0.0, and
+install it and dirdiff.  By default dirdiff is installed in
+/usr/local/bin and filecmp.so.0.0 is installed in /usr/local/lib.
+Doing `make' will compile filecmp.so.0.0; `make install' will install
+dirdiff and filecmp.so.0.0.
+
+However, on many systems, Tcl/Tk does not look in /usr/local/lib for
+shared libraries, and so it will not find filecmp.so.0.0.  This is not
+fatal; the consequences are that it will be a bit slower and that the
+`ignore RCS strings' option is not available.  One solution is to
+install in /usr/bin or /usr/lib.  To do this, you can do `make install
+DESTDIR=/usr'.  Under Linux, you can alternatively edit your
+/etc/ld.so.conf to add /usr/local/lib and re-run ldconfig (after
+installing filecmp.so.0.0 in /usr/local/lib).
+
+
+Usage.
+------
+
+To use dirdiff, you invoke it from the command line with a list of
+directories (between 2 and 5).  For example, suppose I have 3 copies
+of the Linux kernel source code, in directories called linux, bk, and
+pmac.  I can see the differences between these 3 trees with a command
+like:
+
+$ dirdiff linux bk pmac
+
+This will display the file list window and start comparing the trees,
+displaying files which differ as they are found.  To see the
+differences between two versions, click on the file name and then
+select the versions to compare from the Diff menu.  To copy from one
+tree to another, click on the file name and select the copy operation
+from the Copy menu.
+
+In the differences window, there are checkboxes to the left of all the
+sections which are different.  You can use button 1 to select an
+individual checkbox, or shift-button 1 or button 3 to select a whole
+group.  Selecting a line means that you are asking for that change to
+be made when you update either of the files using the Merge menu.  The
+line will be removed if it is already present or added if it is not
+present.
