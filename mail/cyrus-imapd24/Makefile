@@ -258,6 +258,9 @@ post-patch:
 		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${SITE_PERL} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
 .endif
+.if defined(WITH_DRAC)
+		@${RM} -rf ${WRKSRC}/autom4te.cache
+.endif
 
 post-install:
 .for f in ${CYRUS_MAN3}
