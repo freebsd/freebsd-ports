@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.192 1999/06/10 08:11:28 steve Exp $
+# $Id: Makefile,v 1.193 1999/06/11 00:10:41 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -156,6 +156,7 @@
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts
+    SUBDIR += templ
     SUBDIR += tkcvs
     SUBDIR += tkref
     SUBDIR += tvision
