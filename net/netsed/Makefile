@@ -7,6 +7,7 @@
 
 PORTNAME=	netsed
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	net security
 MASTER_SITES=	http://dione.ids.pl/~lcamtuf/ \
 		http://lcamtuf.na.export.pl/
