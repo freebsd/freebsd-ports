@@ -112,6 +112,23 @@ sub check_version {
 	# not present - either removed or let cvs deal with it.
 	return 0 unless -f $filename;
 
+	# Only check this file if it doesn't match an exclusion.
+	my $exclude = $cvsroot . "/CVSROOT/exclude";
+	my $path = $directory . "/" . $filename;
+	open(EX, "<$exclude") || die("cannot open $exclude: $!");
+	while (<EX>) {
+		chomp;
+		my $ex_entry = $_;
+
+		next if $ex_entry =~ /^#/;
+
+		if ($path =~ /$ex_entry/) {
+			close(EX);
+			return(0);
+		}
+	}
+	close(EX);
+
 	# Search the file for a $$HEADER$.
 	my $pos;
 	my $line;
@@ -123,25 +140,6 @@ sub check_version {
 	}
 	close FILE;
 
-	# A $HEADER wasn't found.  Look in the exclude
-	# file to see whether this is ok.
-	if ($pos == -1) {
-		my $exclude = $cvsroot . "/CVSROOT/exclude";
-		my $path = $directory . "/" . $filename;
-		open(EX, "<$exclude") || die("cannot open $exclude: $!");
-		while (<EX>) {
-			chomp;
-			my $ex_entry = $_;
-
-			next if $ex_entry =~ /^#/;
-
-			if ($path =~ /$ex_entry/) {
-				close(EX);
-				return(0);
-			}
-		}
-		close(EX);
-	}
 	if ($pos == -1) {
 		printf($NoId, $filename);
 		return(1);
