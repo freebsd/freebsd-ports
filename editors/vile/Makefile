@@ -1,12 +1,12 @@
 # New ports collection makefile for:    vile
-# Version required:     6.0
+# Version required:     6.1
 # Date created:         Fri Jun 21, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.5 1995/04/24 03:38:04 asami Exp $
+# $Id: Makefile,v 1.6 1996/06/25 03:44:52 gpalmer Exp $
 #
 
-DISTNAME=       vile-6.0
+DISTNAME=       vile-6.1
 CATEGORIES+=	editors
 MASTER_SITES=   ftp://id.wing.net/pub/pgf/vile/
 
