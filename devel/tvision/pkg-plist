@@ -1,5 +1,4 @@
 include/tvision/app.h
-include/tvision/buffers.h
 include/tvision/colorsel.h
 include/tvision/dialogs.h
 include/tvision/drawbuf.h

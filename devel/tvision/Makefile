@@ -7,7 +7,7 @@
 
 PORTNAME=	tvision
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.sigala.it/sergio/tvision/mysource/
@@ -20,7 +20,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-USE_GCC=	3.1
+USE_GCC=	3.2
 
 .include <bsd.port.pre.mk>
 
