@@ -2127,6 +2127,7 @@ gai		ports/x11-toolkits/gai
 gail		ports/accessibility/gail
 gaim		ports/net/gaim
 gaim-encryption	ports/security/gaim-encryption
+gaim-guifications	ports/misc/gaim-guifications
 gal		ports/x11-toolkits/gal
 gal2		ports/x11-toolkits/gal2
 galax		ports/textproc/galax
