@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.187 1999/03/06 16:43:23 billf Exp $
+# $Id: Makefile,v 1.188 1999/03/08 09:07:20 asami Exp $
 #
 
     SUBDIR += 221upgrade
@@ -57,7 +57,6 @@
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Locale-Codes
-    SUBDIR += p5-Search
     SUBDIR += pdmenu
     SUBDIR += qclock
     SUBDIR += quotes
