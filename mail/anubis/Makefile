@@ -19,7 +19,7 @@
 
 PORTNAME=		anubis
 PORTVERSION=		3.6.2
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -33,6 +33,15 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split" LDFLAGS="${LDFLAGS}"
 LDFLAGS+=		-L${LOCALBASE}/lib
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.else
+USE_ICONV=		yes
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.endif
 
 # Select TLS/SSL API: either OpenSSL (default), GnuTLS, or none
 .if defined(WITH_GNUTLS)
