@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Tk
-PORTVERSION=	804.025.b6
+PORTVERSION=	804.025.b16
 CATEGORIES=	x11-toolkits tk84 perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tk
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}_beta6
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}_beta16
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A re-port of a perl5 interface to Tk8.4
@@ -134,7 +134,11 @@ MAN3=		Tie::Watch.3 \
 		Tk::send.3 \
 		Tk::tixWm.3 \
 		Tk::tkvars.3 \
-		Tk::widgets.3
+		Tk::widgets.3 \
+		Tk::804delta.3 \
+		Tk::demos::widget_lib::slide.3 \
+		Tk::demos::widget_lib::trace2.3
+
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
