@@ -1,5 +1,5 @@
 bin/gqview
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%NLS%%share/locale/ar/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gqview.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gqview.mo
@@ -29,4 +29,3 @@ bin/gqview
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gqview.mo
 share/gnome/apps/Graphics/gqview.desktop
 share/gnome/pixmaps/gqview.png
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
