@@ -1,0 +1,11 @@
+--- mkanthydic/Makefile.in.orig	Sun Aug 31 02:27:28 2003
++++ mkanthydic/Makefile.in	Sun Aug 31 02:27:47 2003
+@@ -91,7 +91,7 @@
+ 
+ # Files
+ noinst_SCRIPTS = mkanthydic
+-EXTRA_DICS = base.t extra.t
++EXTRA_DICS = base.t extra.t 2ch.t
+ CANNADIC_DIST = gcanna.t gcannaf.t
+ INCLUDES = -I$(top_srcdir)/include
+ # HOKUTODIC_DIST = hokuto.t
