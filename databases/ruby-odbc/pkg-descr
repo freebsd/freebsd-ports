@@ -1,0 +1,4 @@
+This is an extension library to use ODBC data sources from Ruby.
+
+Author:	Christian Werner <chw@ch-werner.de>
+WWW:	http://www.ch-werner.de/rubyodbc/
