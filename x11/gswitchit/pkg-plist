@@ -17,6 +17,7 @@ share/gnome/gswitchit/interfaces/xkb-properties.glade
 share/gnome/help/gswitchit/C/III.applet.png
 share/gnome/help/gswitchit/C/applet.gif
 share/gnome/help/gswitchit/C/applet.popup.png
+share/gnome/help/gswitchit/C/de.applet.png
 share/gnome/help/gswitchit/C/gb.applet.png
 share/gnome/help/gswitchit/C/gc.png
 share/gnome/help/gswitchit/C/gswitchit-applet.xml
@@ -33,7 +34,6 @@ share/gnome/help/gswitchit/C/xpc.1.png
 share/gnome/help/gswitchit/C/xpc.2.png
 share/gnome/help/gswitchit/C/xpc.3.png
 share/gnome/help/gswitchit/C/xpc.4.png
-share/gnome/help/gswitchit/C/xpc.5.png
 share/gnome/help/gswitchit/C/xpc.layout_tree.png
 share/gnome/help/gswitchit/ru/III.applet.png
 share/gnome/help/gswitchit/ru/applet.gif
