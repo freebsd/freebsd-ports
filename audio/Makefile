@@ -251,6 +251,7 @@
     SUBDIR += shorten
     SUBDIR += shout
     SUBDIR += sidplay
+    SUBDIR += simplemod
     SUBDIR += snack
     SUBDIR += snd
     SUBDIR += snowstar
