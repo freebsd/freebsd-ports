@@ -138,12 +138,14 @@ pre-patch:
 	@${ECHO} "===>  Making way for FreeBSD GNAT support files"
 	-( ${RM} -f ${WRKSRC}/ada/[45]f* )
 
-# Copy any additional files required into the correct locations.
+# Copy any additional files required into the correct locations, and also
+# remove .orig files leftover from patching so they won't get installed.
 post-patch:
 	(cd ${FILESDIR}; \
 	    for i in *.adb *.ads ; do \
 		${CP} $$i ${WRKSRC}/ada; \
 	    done )
+	${RM} ${WRKDIR}/gnat-3.14p-src/examples/*.orig
 
 pre-configure:
 	@(cd ${WRKSRC}/config/${ARCH}/ ; \
@@ -188,9 +190,6 @@ do-build:
 	${RM} ${WRKSRC}/stamp-gnatlib2
 	(cd ${WRKSRC}; \
 	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="${GNATLIBCFLAGS}" gnatlib )
-.ifndef(NOPORTDOCS)
-	${RM} ${WRKDIR}/gnat-3.14p-src/examples/*.orig
-.endif
 
 do-install:
 	(cd ${WRKSRC}; \
