@@ -12,7 +12,7 @@ MASTER_SITES=	# none
 PKGNAMEPREFIX=	gauche-
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	GDBM interface for Gauche
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/${GAUCHE_PORT} \
