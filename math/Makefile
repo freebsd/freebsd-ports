@@ -66,6 +66,7 @@
     SUBDIR += jacal
     SUBDIR += jama
     SUBDIR += javanns
+    SUBDIR += kaskade
     SUBDIR += kseg
     SUBDIR += lapack
     SUBDIR += lapack++

@@ -7,7 +7,7 @@
 
 PORTNAME=	kaskade
 PORTVERSION=	3.1.1
-CATEGORIES=	cad
+CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 DISTNAME=	${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
