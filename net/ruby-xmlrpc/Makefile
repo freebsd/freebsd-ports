@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.fantasy-coders.de/ruby/xmlrpc4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,7 +24,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	ChangeLog README ToDo doc/*
+DOCS_EN=	ChangeLog README ToDo doc/*.css doc/*.html doc/*.rd
 
 post-extract:
 	${RM} -rf ${WRKSRC}/samples/monitor
