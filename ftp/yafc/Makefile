@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	yafc-0.4.9
+DISTNAME=	yafc-0.5.0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://mayer.physto.se/pub/yafc/
 
