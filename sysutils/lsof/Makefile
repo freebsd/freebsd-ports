@@ -4,14 +4,13 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.27 1998/12/01 09:41:59 obrien Exp $
+# $Id: Makefile,v 1.28 1998/12/02 07:01:08 obrien Exp $
 #
 
 DISTNAME=	lsof_4.38_W
 PKGNAME=	lsof-4.38
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
-		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/patches/4.37/ \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
@@ -46,11 +45,11 @@ post-extract:
 	)
 	@( cd ${WRKSRC} ; echo "y" | ./Inventory || exit 1 )
 
-pre-patch:
-	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@${SED} -e "s|^--- d|--- dialects/freebsd/d|"  \
-		${DISTDIR}/freebsd_3.0_patch > ${WRKDIR}/p
-	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/p
+#pre-patch:
+#	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
+#	@${SED} -e "s|^--- d|--- dialects/freebsd/d|"  \
+#		${DISTDIR}/freebsd_3.0_patch > ${WRKDIR}/p
+#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/p
 
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
