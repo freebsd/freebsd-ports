@@ -29,6 +29,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	@(cd ${WRKSRC}/docs/api && ${TAR} -c -f - .) \
 		| (cd ${PREFIX}/share/doc/${PORTNAME} && ${TAR} --unlink -x -f -)
+	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/${PORTNAME} 
 	@(cd ${PREFIX} \
 		&& find share/doc/${PORTNAME} -type f -print >> ${TMPPLIST})
 .endif
