@@ -447,6 +447,7 @@
     SUBDIR += rpc2
     SUBDIR += rtems-gcc
     SUBDIR += ruby-amstd
+    SUBDIR += ruby-bsearch
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
