@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2000.08.01
+PORTVERSION=	2000.08.21
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -60,8 +60,6 @@ post-configure:
 post-build:
 	cd ${WRKSRC}/programs/regapi && ${MAKE}
 	${SED} '1s/bash/sh/;s-\./\(reg.*\.pl\)-'${PREFIX}/lib/wine/reg/'\1-' <${WRKSRC}/programs/regapi/regSet.sh >${WRKDIR}/regSet.sh
-	${SED} 's-\(Change directory to \)<dirs to wine>/tools$$-\1your program'"'"'s dir (or wherever you need to be to run it)-;s-\./\(bug_report\.pl\)-'${PREFIX}/lib/wine/'\1-' <${WRKSRC}/documentation/bugreports >${WRKDIR}/bugreports
-	${SED} 's-\(look at the file \)<dirs to wine>/wine.ini-\1'${PREFIX}/etc/wine.conf.sample- <${WRKSRC}/documentation/config >${WRKDIR}/config
 
 do-install:
 	cd ${WRKSRC} && ${MAKE} install
@@ -72,22 +70,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
 	${INSTALL_DATA} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 	-@${MKDIR} ${PREFIX}/lib/wine/documentation ${PREFIX}/lib/wine/reg 2>/dev/null
-	${INSTALL_DATA} ${WRKDIR}/bugreports ${WRKDIR}/config \
+	${INSTALL_DATA} \
 		${WRKSRC}/README \
 		${WRKSRC}/ANNOUNCE \
 		${WRKSRC}/AUTHORS \
 		${WRKSRC}/LICENSE \
 		${WRKSRC}/WARRANTY \
-		${WRKSRC}/documentation/cdrom-labels \
-		${WRKSRC}/documentation/debugging \
-		${WRKSRC}/documentation/dlls \
-		${WRKSRC}/documentation/fonts \
-		${WRKSRC}/documentation/ioport-trace-hints \
-		${WRKSRC}/documentation/no-windows \
-		${WRKSRC}/documentation/printing \
-		${WRKSRC}/documentation/psdriver \
 		${WRKSRC}/documentation/psdrv.reg \
-		${WRKSRC}/documentation/ttfserver \
 		${PREFIX}/lib/wine/documentation
 	${INSTALL_DATA} ${WRKSRC}/debugger/README \
 		${PREFIX}/lib/wine/documentation/README.debugger
