@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	morpheus
-PORTVERSION= 	0.3
+PORTVERSION=	0.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://wine.sexcity.pl/morpheus/meat/
 

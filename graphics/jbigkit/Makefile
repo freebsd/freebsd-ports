@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.informatik.uni-erlangen.de/pub/doc/ISO/JBIG/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-WRKSRC= ${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/${PORTNAME}
 
 INSTALLS_SHLIB=	yes
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	backfract
-PORTVERSION= 	1.1.2
+PORTVERSION=	1.1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inetarena.com/~wms/comp/backfract/
 
