@@ -10,6 +10,7 @@ bin/xtp
 include/magick/PreRvIcccm.h
 include/magick/X.h
 include/magick/compress.h
+include/magick/config.h
 include/magick/error.h
 include/magick/gems.h
 include/magick/image.h
@@ -21,7 +22,7 @@ include/magick/widget.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
-lib/libMagick.so.4.0
+lib/libMagick.so.4.1
 @exec ldconfig -m %D/lib
 man/man1/ImageMagick.1.gz
 man/man1/animate.1.gz
