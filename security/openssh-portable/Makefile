@@ -23,7 +23,6 @@ MAN8=	sftp-server.8 sshd.8 ssh-keysign.8
 USE_OPENSSL=	yes
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=		LDFLAGS=${LDFLAGS}
 USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
 PRECIOUS=	ssh_config sshd_config \
@@ -145,6 +144,8 @@ test:
 CONFIGURE_ARGS+=	--without-rpath
 LDFLAGS=
 .endif
+.else
+CONFIGURE_ARGS+=	--with-rpath=${OPENSSLRPATH}
 .endif
 CONFIGURE_ARGS+=	--with-ssl-dir=${OPENSSLBASE}
 
