@@ -40,6 +40,7 @@ CONFIGURE_ARGS+=	--with-x
 CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/include
 CONFIGURE_ARGS+=	--with-x-include=${X11BASE}/lib
 USE_XLIB=	yes
+EXTRA_PATCHES+=		${FILESDIR}/GNUmakefile.patch
 .endif
 USE_GMAKE=	yes
 USE_GNUSTEP=	yes
