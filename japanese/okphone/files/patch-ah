@@ -1,0 +1,16 @@
+--- ./master/daemon.c.orig	Mon Dec  2 22:27:23 2002
++++ ./master/daemon.c	Mon Dec  2 22:27:31 2002
+@@ -111,11 +111,11 @@
+ char *
+ error ()
+ {
+-	extern int  errno;
+ #ifndef __FreeBSD__
++	extern int  errno;
+ 	extern char *sys_errlist[];
+-#endif
+ 	extern int  sys_nerr;
++#endif
+ 
+ 	if (errno > sys_nerr)
+ 		return ("Unknown error.");
