@@ -1,0 +1,7 @@
+%%PKGNAME%% has been installed in %%APP_HOME%%.
+
+If a user should be able to use %%CONTROL_SCRIPT_NAME%%, put it in the group '%%GROUP%%'.
+
+Use 'man %%CONTROL_SCRIPT_NAME%%' for information about starting and stopping %%APP_TITLE%%.
+
+To run the %%APP_TITLE%% server from startup, add %%APP_SHORTNAME%%_enable="YES" in your /etc/rc.conf. Extra options can be found in the startup script.
