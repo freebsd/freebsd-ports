@@ -7,13 +7,13 @@
 
 PORTNAME=	dhisd
 PORTVERSION=	5.1
+PORTREVISION=	1
+
 CATEGORIES=	net
 MASTER_SITES=	http://bsltwr.dhis.org/ftp/pub/dhis/ \
 		ftp://ftp.dhis.org/pub/dhis/
 
-MAINTAINER=	baskruit@bsltwr.dhis.org
-
-LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
+MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
@@ -25,12 +25,12 @@ post-patch:
 do-install:
 
 post-install:
-	@${ECHO_MSG} "===>   Installing ${PREFIX}/bin/dhisd."
-	@${INSTALL_PROGRAM} ${WRKSRC}/dhisd ${PREFIX}/bin
-	@${ECHO_CMD} "bin/dhisd" >> ${TMPPLIST}
-	@${ECHO_MSG} "===>   Installing ${PREFIX}/bin/genkeys."
-	@${INSTALL_PROGRAM} ${WRKSRC}/genkeys ${PREFIX}/bin
-	@${ECHO_CMD} "bin/genkeys" >> ${TMPPLIST}
+	@${ECHO_MSG} "===>   Installing ${PREFIX}/sbin/dhisd."
+	@${INSTALL_PROGRAM} ${WRKSRC}/dhisd ${PREFIX}/sbin
+	@${ECHO_CMD} "sbin/dhisd" >> ${TMPPLIST}
+	@${ECHO_MSG} "===>   Installing ${PREFIX}/sbin/sgenkeys."
+	@${INSTALL_PROGRAM} ${WRKSRC}/genkeys ${PREFIX}/sbin
+	@${ECHO_CMD} "sbin/genkeys" >> ${TMPPLIST}
 	@${ECHO_MSG} "===>   Creating ${PREFIX}/etc/dhis and installing sample db files."
 	@${MKDIR} ${PREFIX}/etc/dhis
 	@${CHMOD} 700 ${PREFIX}/etc/dhis

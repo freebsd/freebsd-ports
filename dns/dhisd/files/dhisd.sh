@@ -2,7 +2,7 @@
 
 case "$1" in
 start)
-	[ -x "__PREFIX__/bin/dhisd" ] && __PREFIX__/bin/dhisd > /dev/null && echo -n ' dhisd'
+	[ -x "__PREFIX__/sbin/dhisd" ] && __PREFIX__/sbin/dhisd > /dev/null && echo -n ' dhisd'
 	;;
 restart)
 	killall -HUP dhisd && echo -n 'dhisd restarted'
