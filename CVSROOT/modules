@@ -4233,6 +4233,7 @@ linux-understand_ada	ports/devel/linux-understand_ada
 linux-understand_c	ports/devel/linux-understand_c
 linux-understand_java	ports/devel/linux-understand_java
 linux-ungif	ports/graphics/linux-ungif
+linux-urw-fonts	ports/x11-fonts/linux-urw-fonts
 linux-vmware-toolbox2 ports/emulators/linux-vmware-toolbox2
 linux-vmware-toolbox4 ports/emulators/linux-vmware-toolbox4
 linux-vsound	ports/audio/linux-vsound
