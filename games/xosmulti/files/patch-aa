@@ -1,0 +1,35 @@
+--- Makefile.orig	Sat Nov 28 17:59:36 1998
++++ Makefile	Fri Feb 19 00:24:44 1999
+@@ -4,17 +4,17 @@
+ 
+ TARGET	= xosmulti
+ 
+-CC			= cc
+-LINKER		= cc
++CC			?= cc
++LINKER		= $(CC)
+ 
+ #
+ # Set MAIL_SPOOL to moderate value for your environment.
+ #
+-MAIL_SPOOL	= '"/usr/spool/mail"'
++# MAIL_SPOOL	= '"/usr/spool/mail"'
+ # MAIL_SPOOL	= '"/usr/mail"'
+-# MAIL_SPOOL	= '"/var/mail"'
++MAIL_SPOOL	= '"/var/mail"'
+ 
+-CFLAGS	= -O -DMAILBOX_DIRECTORY=$(MAIL_SPOOL)
++CFLAGS	+= -DMAILBOX_DIRECTORY=$(MAIL_SPOOL)
+ 
+ SRCS	= $(TARGET).c image.c biff.c message.c
+ OBJS	= $(SRCS:.c=.o)
+@@ -22,8 +22,8 @@
+ LIBS	= -lX11 -lXext
+ # LIBS	= -lX11 -lXext -lsocket -lnsl 	# for Sun-OS
+ 
+-# INC_DIR	= -I/usr/X11R6/include
+-# LIB_DIR	= -L/usr/X11R6/lib
++INC_DIR	= -I/usr/X11R6/include
++LIB_DIR	= -L/usr/X11R6/lib
+ 
+ all:	$(TARGET)
