@@ -5143,7 +5143,8 @@ ps		src/bin/ps
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 psd		src/share/doc/psd
-psgml-emacs	ports/editors/psgml-emacs
+psgml		ports/editors/psgml
+psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
 psgml-mule	ports/editors/psgml-mule
 psgml-xemacs-mule	ports/editors/psgml-xemacs-mule
