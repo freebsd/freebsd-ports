@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	uvscan_dat
-PORTVERSION=	4249
+PORTVERSION=	4250
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 DISTNAME=	dat-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	AntiVirus DAT file for uvscan
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
