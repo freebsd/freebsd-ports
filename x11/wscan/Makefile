@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/mobile/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
