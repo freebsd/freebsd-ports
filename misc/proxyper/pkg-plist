@@ -6,4 +6,4 @@ distributed.net/proxy/proxyper.ini.sample
 @exec [ -f %B/proxyper.ini ] || cp %B/%f %B/proxyper.ini
 etc/rc.d/proxyper.sh
 @dirrm distributed.net/proxy
-@dirrm distributed.net
+@unexec rmdir %D/distributed.net 2>/dev/null || true
