@@ -1,0 +1,7 @@
+Blackbox is Yet Another Window Manager for X11R6 that arose primarily
+out of the curiosity of the authors.  It's small (around 8700 lines at
+the time of writing), fast, built-in rendering code, image dithering 
+at 8, 15 and 16 bits per pixel and color icon support.  Blackbox is 
+[mostly] ICCCM compliant.  
+
+Homepage:  http://linux.wiw.org/blackbox/
