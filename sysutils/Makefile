@@ -228,6 +228,7 @@
     SUBDIR += pyfind
     SUBDIR += qlogtools
     SUBDIR += qtpkg
+    SUBDIR += rc_subr
     SUBDIR += rclean
     SUBDIR += rdate
     SUBDIR += rdiff-backup

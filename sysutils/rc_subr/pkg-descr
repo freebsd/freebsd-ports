@@ -1,0 +1,7 @@
+With the change to a new rc system in FreeBSD 5.x, common routines for
+starting, stopping, and restarting daemons was placed into /etc/rc.subr.
+this makes it easier to write new startup/shutdown scripts and to have
+them ordered correctly with rcorder.
+
+While FreeBSD < 5.x won't be able to take advantage of rcorder.  We can
+take advantage of the simplified startup/shutdown scripts by using rc.subr.
