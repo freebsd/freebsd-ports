@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
-LIB_DEPENDS=	cln.1:${PORTSDIR}/math/cln
+LIB_DEPENDS=	cln:${PORTSDIR}/math/cln
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
