@@ -1,0 +1,14 @@
+[sniped from readme]
+
+ This lets you browse the "network neighbourhood" like in windows
+ by entering the location smb:// in Nautilus. This lists the
+ workgroups on your local network, and you can browse around servers
+ and shares.
+
+ You can also go directly to smb servers by entering the location
+ smb://server/, where server is the NMB (windows) name, the dns name
+ or the ip address. By using ip you can reach machines outside your
+ local subnet.
+
+ If the password popup doesn't appear you can use:
+ smb://user:password@server/share/ notation.

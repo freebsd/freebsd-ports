@@ -1,0 +1,9 @@
+--- smb.desktop.in.orig	Wed Dec 11 12:09:03 2002
++++ smb.desktop.in	Wed Feb  5 19:23:23 2003
+@@ -3,5 +3,5 @@
+ Type=Link
+ Name=Network neighborhood
+ Comment=Window Shares in you local network
+-URL=smb:
++URL=smb:///
+ Icon=gnome-fs-smb
