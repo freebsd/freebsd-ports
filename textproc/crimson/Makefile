@@ -34,7 +34,7 @@ do-install:
 	@ ${MKDIR} ${DOCSDIR}; \
 	  cd ${INSTALL_WRKSRC}; \
 	  ${INSTALL_DATA} ${READMES} ${DOCSDIR}; \
-	  pax -rw docs examples ${DOCSDIR}
+	  ${PAX} -rw docs examples ${DOCSDIR}
 .endif
 
 post-install:

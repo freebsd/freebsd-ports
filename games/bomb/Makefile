@@ -64,7 +64,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/${DATADIR}
-	cd ${WRKSRC} && pax -r -w *-data suck title.tif ${PREFIX}/${DATADIR}
+	cd ${WRKSRC} && ${PAX} -r -w *-data suck title.tif ${PREFIX}/${DATADIR}
 	${INSTALL} -c -g wheel -o root -m 4755 ${WRKSRC}/bomb ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}

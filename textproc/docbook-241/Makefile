@@ -41,7 +41,8 @@ pre-install:
 	@[ -d ${INSTDIR}/${DTD_VERSION} ] || ${MKDIR} ${INSTDIR}/${DTD_VERSION}
 
 do-install:
-	@zcat ${DISTDIR}/docbk241.tar.Z |(cd ${INSTDIR}/${DTD_VERSION}; pax -r)
+	@zcat ${DISTDIR}/docbk241.tar.Z | \
+		(cd ${INSTDIR}/${DTD_VERSION}; ${PAX} -r)
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/${DTD_VERSION}/catalog
 	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/${DTD_VERSION}/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/${DTD_VERSION}/*

@@ -30,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mangclient ${PREFIX}/bin
 	@${MKDIR} ${MALIB}/file
 	@${TOUCH} ${MALIB}/file/wizards.txt
-	cd ${WRKSRC}/../lib && pax -rw * ${MALIB}
+	cd ${WRKSRC}/../lib && ${PAX} -rw * ${MALIB}
 	${CHMOD} 750 ${MALIB}/*
 	${CHMOD} 755 ${MALIB}/user
 	${CHOWN} -R root:games ${MALIB}/*

@@ -34,6 +34,6 @@ pre-install:
 		&& ${FIND} -d * -type d | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
 
 do-install:
-	cd ${WRKSRC} && pax -r -w * ${PREFIX}
+	cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}
 
 .include <bsd.port.mk>

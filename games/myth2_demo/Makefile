@@ -59,7 +59,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/README ${DOCSDIR}
 .endif
-	cd ${WRKSRC} && pax -r -w * ${PREFIX}/lib/myth2_demo
+	cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}/lib/myth2_demo
 	cd ${PREFIX}/bin && ${LN} -s ../lib/myth2_demo/myth2_demo.x86
 
 .include <bsd.port.mk>

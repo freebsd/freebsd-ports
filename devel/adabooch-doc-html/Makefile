@@ -29,6 +29,6 @@ pre-extract:
 do-install:
 	@${MKDIR} ${PREFIX}/adabooch
 	@${MKDIR} ${PREFIX}/adabooch/html
-	@(cd ${WRKSRC} && pax -r -w * ${PREFIX}/adabooch/html)
+	@(cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}/adabooch/html)
 
 .include <bsd.port.mk>

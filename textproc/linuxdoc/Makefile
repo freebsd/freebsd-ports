@@ -33,7 +33,7 @@ pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 
 do-install:
-	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
+	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; ${PAX} -r)
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 

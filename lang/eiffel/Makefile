@@ -29,6 +29,6 @@ do-configure:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ecc.sh ${PREFIX}/bin/ecc
 	@${MKDIR} ${PREFIX}/eiffel
-	cd ${WRKSRC} && pax -rw ${FILES} ${PREFIX}/eiffel
+	cd ${WRKSRC} && ${PAX} -rw ${FILES} ${PREFIX}/eiffel
 
 .include <bsd.port.mk>

@@ -110,7 +110,7 @@ do-install:
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/themeupdate/themeupdate.py \
 		${PREFIX}/bin
-	cd ${WRKSRC} && pax -r -w data themes ${PREFIX}/share/openbox/
+	cd ${WRKSRC} && ${PAX} -r -w data themes ${PREFIX}/share/openbox/
 	cd ${WRKSRC} && ${INSTALL_DATA} data/* ${PREFIX}/share/openbox/
 	cd ${WRKSRC} && ${INSTALL_DATA} data/openbox.desktop \
 		${PREFIX}/share/gnome/wm-properties/

@@ -27,6 +27,6 @@ NO_WRKSUBDIR=	yes
 NO_FILTER_SHLIBS=	yes
 
 do-install:
-	@zcat ${DISTDIR}/${DISTNAME}.tar.gz |(cd ${PREFIX}; pax -r)
+	@zcat ${DISTDIR}/${DISTNAME}.tar.gz |(cd ${PREFIX}; ${PAX} -r)
 
 .include <bsd.port.mk>

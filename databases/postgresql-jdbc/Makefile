@@ -33,7 +33,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} -m 0555 ${EXAMPLESDIR} ;\
 	  cd ${WRKSRC}/src/interfaces/jdbc/example ;\
-	  pax -rw . ${EXAMPLESDIR}
+	  ${PAX} -rw . ${EXAMPLESDIR}
 .for i in README
 	@ ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/$i \
 			  ${EXAMPLESDIR}
