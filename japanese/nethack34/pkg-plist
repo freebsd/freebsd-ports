@@ -80,14 +80,12 @@ bin/%%HACKNAME%%
 %%HACKDIR%%/bigrm-4.lev
 %%HACKDIR%%/bigrm-5.lev
 %%HACKDIR%%/castle.lev
-%%HACKDIR%%/credit.xpm
 %%HACKDIR%%/data
 %%HACKDIR%%/dungeon
 %%HACKDIR%%/earth.lev
 %%HACKDIR%%/fakewiz1.lev
 %%HACKDIR%%/fakewiz2.lev
 %%HACKDIR%%/fire.lev
-%%HACKDIR%%/floor.xpm
 %%HACKDIR%%/jcmdhelp
 %%HACKDIR%%/jhelp
 %%HACKDIR%%/jhh
@@ -129,7 +127,6 @@ bin/%%HACKNAME%%
 %%HACKDIR%%/soko3-2.lev
 %%HACKDIR%%/soko4-1.lev
 %%HACKDIR%%/soko4-2.lev
-%%HACKDIR%%/t32-1024.xpm
 %%HACKDIR%%/tower1.lev
 %%HACKDIR%%/tower2.lev
 %%HACKDIR%%/tower3.lev

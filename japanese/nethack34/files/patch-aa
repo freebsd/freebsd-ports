@@ -1,15 +1,6 @@
---- include/config.h.orig	Tue Aug 13 06:38:29 2002
-+++ include/config.h	Tue Aug 13 06:39:09 2002
-@@ -216,7 +216,7 @@
- /* #define COMPRESS "/usr/bin/compress"	*/ /* Lempel-Ziv compression */
- /* #define COMPRESS_EXTENSION ".Z" */		/* compress's extension */
- /* An example of one alternative you might want to use: */
-- #define COMPRESS "/usr/local/bin/gzip" 	/* FSF gzip compression */
-+ #define COMPRESS "/usr/bin/gzip"	 	/* FSF gzip compression */
-  #define COMPRESS_EXTENSION ".gz" 		/* normal gzip extension */
- #endif
- 
-@@ -251,7 +251,7 @@
+--- include/config.h.orig	Fri Dec 20 02:09:41 2002
++++ include/config.h	Fri Dec 20 02:09:42 2002
+@@ -248,7 +248,7 @@
  #  ifdef __APPLE__
  #    define HACKDIR "jnethackdir"	/* nethack directory */
  #  else
