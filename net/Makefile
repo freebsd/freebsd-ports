@@ -159,6 +159,7 @@
     SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless
+    SUBDIR += gkrellmwireless2
     SUBDIR += gnet
     SUBDIR += gnet-glib2
     SUBDIR += gnet2
