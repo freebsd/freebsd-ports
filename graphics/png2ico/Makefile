@@ -20,6 +20,10 @@ MAN1=		png2ico.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
