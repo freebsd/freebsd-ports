@@ -19,6 +19,7 @@ COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/lib/X11/doc/ddx.txt:${PORTSDIR}/x11/XFree86-4-documents \
+	${X11BASE}/lib/X11/doc/html/X.7.html:${PORTSDIR}/x11/XFree86-4-manuals \
 	${FONT100DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font100dpi \
 	${FONT75DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font75dpi \
 	${FONTCYR}:${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic \
@@ -26,6 +27,9 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 	${X11BASE}/bin/xfs:${PORTSDIR}/x11-servers/XFree86-4-FontServer \
 	${X11BASE}/bin/xf86cfg:${PORTSDIR}/x11-servers/XFree86-4-Server \
+	${X11BASE}/bin/Xnest:${PORTSDIR}/x11-servers/XFree86-4-NestServer \
+	${X11BASE}/bin/Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer \
+	${X11BASE}/bin/Xprt:${PORTSDIR}/x11-servers/XFree86-4-PrintServer \
 	${X11BASE}/bin/Xwrapper-4:${PORTSDIR}/x11/wrapper
 
 NO_BUILD=	yes
