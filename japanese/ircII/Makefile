@@ -7,6 +7,7 @@
 
 PORTNAME=	ircii
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	japanese irc
 MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/clients/ \
 		ftp://ftp.kyoto.wide.ad.jp/IRC/ircII/
