@@ -41,7 +41,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>samba</name>
-	<range><lt>2.2.10</lt></range>
+	<range><le>2.2.9</le></range>
       </package>
     </affects>
     <description>
