@@ -6,8 +6,8 @@
  C2FLAGS = -Wall $(DEFS) -shared -Wl,-soname,libupnp.so
 -INCLUDES = -I ../inc -I ../../inc -I ../../inc/upnpdom  -I ../inc/tools
 -LIBS = -lpthread -luuid
-+INCLUDES = -I ../inc -I ../../inc -I ../../inc/upnpdom  -I ../inc/tools -I $(PREFIX)/include
-+LIBS = ${PTHREAD_LIBS} -luuid -L$(PREFIX)/lib
++INCLUDES = -I ../inc -I ../../inc -I ../../inc/upnpdom  -I ../inc/tools -I $(LOCALBASE)/include
++LIBS = ${PTHREAD_LIBS} -luuid -L$(LOCALBASE)/lib
  
  ifeq ($(DEBUG),1)
  CFLAGS += -g -O -DDEBUG
