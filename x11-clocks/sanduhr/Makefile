@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sanduhr
-PORTVERSION=	0.3.50
+PORTVERSION=	0.3.52
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://www.mathematik.uni-kl.de/~wwwstoch/voss/
 
@@ -18,6 +18,7 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		sanduhr.1
 
