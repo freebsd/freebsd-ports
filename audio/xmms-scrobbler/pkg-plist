@@ -1,4 +1,2 @@
-lib/bmp/General/libbmp_scrobbler.la
 lib/bmp/General/libbmp_scrobbler.so
 lib/xmms/General/libxmms_scrobbler.so
-lib/xmms/General/libxmms_scrobbler.la
