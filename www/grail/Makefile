@@ -18,7 +18,7 @@ COMMENT=	An extensible Internet browser written entirely in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
-IGNORE=		"Doesn't seem to work with Python 2.x"
+IGNORE=		"Doesn\'t seem to work with Python 2.x"
 
 USE_PYTHON=	yes
 GRAILSUBDIR=	share/grail
