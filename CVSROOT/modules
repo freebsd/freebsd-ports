@@ -7163,6 +7163,7 @@ ruby_static	ports/lang/ruby_static
 ruby_static-devel	ports/lang/ruby_static-devel
 rubyphoto	ports/graphics/rubyphoto
 rudiments	ports/devel/rudiments
+runit		ports/sysutils/runit
 rvi		ports/devel/rvi
 rvm		ports/devel/rvm
 rwhois		ports/net/rwhois
