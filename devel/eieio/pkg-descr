@@ -1,0 +1,9 @@
+EIEIO is an Emacs lisp program which implements a controlled
+object-oriented programming methodology following the CLOS
+standard. EIEIO also has object browsing functions, and custom widget
+types.
+
+WWW: http://cedet.sourceforge.net/eieio.shtml
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net

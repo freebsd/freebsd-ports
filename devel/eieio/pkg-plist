@@ -1,0 +1,27 @@
+@unexec install-info --delete %D/info/eieio.info %D/info/dir
+info/eieio.info
+@exec install-info %D/info/eieio.info %D/info/dir
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/call-tree.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/call-tree.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/chart.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/chart.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/compare-strings.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/compare-strings.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-base.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-base.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-comp.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-comp.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-custom.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-custom.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-doc.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-doc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-opt.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-opt.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-speedbar.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-speedbar.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio-tests.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/eieio.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/tree.el
+%%EMACS_VERSION_SITE_LISPDIR%%/eieio/tree.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/eieio
