@@ -1,0 +1,11 @@
+The ideal way to learn about the software is from the book it is designed to
+support.  You should be able to get the book from any local bookstore or from
+our web page. The web page also contains some html reference pages for the
+objects in vtk as well as a FAQ.
+
+  The Visualization Toolkit, An Object-Oriented Approach to 3D Graphics
+  by Will Schroeder, Ken Martin and Bill Lorensen.
+  Prentice Hall, ISBN 013199837-4
+
+For more information and a FAQ see our web page at
+http://www.kitware.com/~martink/

@@ -1,0 +1,74 @@
+*** configure.orig	Mon Nov  2 13:23:46 1998
+--- configure	Sun Jan 31 18:45:59 1999
+***************
+*** 2744,2753 ****
+  	# Not available on all versions:  check for include file.
+  	if test -f /usr/include/dlfcn.h; then
+  	    SHLIB_CFLAGS="-fpic"
+! 	    SHLIB_LD_LIBS=""
+  	    SHLIB_SUFFIX=".so"
+  	    DL_LIBS=""
+! 	    VTK_SHLIB_LINK_FLAGS="-shared"
+  	else
+  	    SHLIB_CFLAGS=""
+  	    SHLIB_LD_LIBS=""
+--- 2744,2753 ----
+  	# Not available on all versions:  check for include file.
+  	if test -f /usr/include/dlfcn.h; then
+  	    SHLIB_CFLAGS="-fpic"
+! 	    SHLIB_LD_LIBS="${LIBS}"
+  	    SHLIB_SUFFIX=".so"
+  	    DL_LIBS=""
+! 	    VTK_SHLIB_BUILD_FLAGS="-shared"
+  	else
+  	    SHLIB_CFLAGS=""
+  	    SHLIB_LD_LIBS=""
+***************
+*** 3084,3089 ****
+--- 3084,3129 ----
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+    THREAD_LIBS="-lpthread"
++ else
++   echo "$ac_t""no" 1>&6
++ fi
++ 
++     echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
++ echo "configure:3191: checking for pthread_create in -lc_r" >&5
++ ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
++ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
++   echo $ac_n "(cached) $ac_c" 1>&6
++ else
++   ac_save_LIBS="$LIBS"
++ LIBS="-lc_r  $LIBS"
++ cat > conftest.$ac_ext <<EOF
++ #line 3199 "configure"
++ #include "confdefs.h"
++ /* Override any gcc2 internal prototype to avoid an error.  */
++ /* We use char because int might match the return type of a gcc2
++     builtin and then its argument prototype would still apply.  */
++ char pthread_create();
++ 
++ int main() {
++ pthread_create()
++ ; return 0; }
++ EOF
++ if { (eval echo configure:3210: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++   rm -rf conftest*
++   eval "ac_cv_lib_$ac_lib_var=yes"
++ else
++   echo "configure: failed program was:" >&5
++   cat conftest.$ac_ext >&5
++   rm -rf conftest*
++   eval "ac_cv_lib_$ac_lib_var=no"
++ fi
++ rm -f conftest*
++ LIBS="$ac_save_LIBS"
++ 
++ fi
++ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
++   echo "$ac_t""yes" 1>&6
++   THREAD_LIBS="-lc_r"
+  else
+    echo "$ac_t""no" 1>&6
+  fi

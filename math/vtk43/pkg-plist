@@ -1,0 +1,9 @@
+bin/vtk
+lib/libVTKCommon.so
+lib/libVTKCommonTcl.so
+lib/libVTKGraphics.so
+lib/libVTKGraphicsTcl.so
+lib/libVTKImaging.so
+lib/libVTKImagingTcl.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
