@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/html/docbook.dsl:${PORTSDIR}/textproc/dsssl-docbook-modular
 RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade
 
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dsssl-dir=${LOCALBASE}/share/sgml/docbook/dsssl/modular
 
