@@ -1,12 +1,12 @@
 # New ports collection makefile for:	Ftplocate
-# Version required:			1.50
+# Version required:			2.00
 # Date created:				7 December 1999
 # Whom:					tung@turtle.ee.ncku.edu.tw
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ftplocate-1.50
+DISTNAME=	ftplocate-2.00
 CATEGORIES=	ftp www
 MASTER_SITES=	ftp://ftp.ee.ncku.edu.tw/pub/
 
@@ -17,8 +17,11 @@ RUN_DEPENDS+=	glimpse:${PORTSDIR}/textproc/glimpse
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-PL_FILES=	dcollect.pl dindex.pl dsearch.pl flcollect.pl flfilter.pl \
-		flhistory.pl flindex.pl flsearch.pl flserv.pl fltrain.pl
+PL_FILES=	install.pl bin/dcollect.pl bin/dindex.pl bin/dsearch.pl \
+		bin/flcollect.pl bin/flfilter.pl bin/flhistory.pl \
+		bin/flindex.pl bin/flmap.pl bin/flsearch.pl \
+		bin/flserv.pl bin/flsummary.pl bin/fltop.pl \
+		bin/fltrain.pl bin/flcatsite.pl template/ftplocate
 
 post-extract:
 .for f in ${PL_FILES}
@@ -26,26 +29,6 @@ post-extract:
 .endfor
 
 do-install:
-	${INSTALL} -d ${PREFIX}/www/cgi-bin/ftplocate \
-		${PREFIX}/www/cgi-bin/ftplocate/index \
-		${PREFIX}/www/cgi-bin/ftplocate/desc \
-		${PREFIX}/www/data
-	${INSTALL} -o nobody -g nobody -m 755 -d ${PREFIX}/www/cgi-bin/ftplocate/cache
-	cd ${WRKSRC}; \
-	${INSTALL_DATA} \
-		README README.zhtw fl.english fl.zhtw \
-		${PREFIX}/www/cgi-bin/ftplocate ;\
-	${INSTALL} -c -m 644 \
-		fl.config fl.share \
-		${PREFIX}/www/cgi-bin/ftplocate ;\
-	${INSTALL_SCRIPT} indexer.sh ${PREFIX}/www/cgi-bin/ftplocate; \
-	${INSTALL_DATA} \
-		flhelp.html flhelp.zhtw.html \
-		${PREFIX}/www/data ;\
-	${INSTALL_SCRIPT}  ftplocate ${PREFIX}/bin/
-.for f in ${PL_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/www/cgi-bin/ftplocate
-.endfor
-	@${CAT} ${PKGMESSAGE}
+	cd ${WRKSRC}; install.pl -y
 
 .include <bsd.port.mk>
