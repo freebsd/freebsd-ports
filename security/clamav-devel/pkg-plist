@@ -3,6 +3,8 @@ bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
+etc/rc.d/clamav-clamd.sh.sample
+%%CLAMAV-MILTER:%%etc/rc.d/clamav-milter.sh.sample
 %%CLAMAV-MILTER:%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h

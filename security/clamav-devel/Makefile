@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20030829
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -22,6 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -46,12 +48,22 @@ LDFLAGS+=	-lcipher
 .endif
 
 .if defined(WITH_MILTER)
-USE_GCC=	3.2
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER:=""
 .else
 PLIST_SUB+=	CLAMAV-MILTER:="@comment "
 .endif
+
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/clamav-milter.sh \
+		> ${WRKSRC}/clamav-milter.sh
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/clamav-clamd.sh \
+		> ${WRKSRC}/clamav-clamd.sh
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
+		${WRKSRC}/clamav-milter/clamav-milter.c
 
 pre-install:
 	@${ECHO} "===>  Creating custom user to run clamav..."
@@ -59,7 +71,13 @@ pre-install:
 
 post-install:
 	@${ECHO} "===>  Setting permissions..."
-	@${SETENV} PKG_PREFIX=${PREFIX} ${sh} \
+	@${SETENV} PKG_PREFIX=${PREFIX} \
 	${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
+	${INSTALL_SCRIPT} ${WRKSRC}/clamav-clamd.sh \
+		${LOCALBASE}/etc/rc.d/clamav-clamd.sh.sample
+.if defined(WITH_MILTER)
+	${INSTALL_SCRIPT} ${WRKSRC}/clamav-milter.sh \
+		${LOCALBASE}/etc/rc.d/clamav-milter.sh.sample
+.endif
 
 .include <bsd.port.post.mk>
