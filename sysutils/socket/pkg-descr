@@ -1,0 +1,146 @@
+This is the README file for Socket-1.1.  
+
+What is it?
+
+The program Socket implements access to TCP sockets from shell level.
+First written for the need to open a server socket and read and write
+to the socket interactively for testing purposes, it quickly evolved
+into a generic tool providing the socket interface for shell script
+and interactive use.
+
+
+Client mode
+
+In client mode (which is the default) it connects to a given port at a
+given host.  Data read from the socket is written to stdout, data read
+from stdin is written to the socket.  When the peer closes the
+connection or a signal is received, the program terminates.  An
+example for this is the following command:
+
+	% socket coma.cs.tu-berlin.de nntp
+
+This connects to the host coma.cs.tu-berlin.de at the nntp port
+(provided these two names can be resolved through gethostbyname(3) and
+getservbyname(3)).  The user can now issue commands to the NNTP
+server, any output from the server is written to the user's terminal.
+
+
+Server mode
+
+In server mode (indicated by the "-s" command line switch) it binds a
+server socket to the given port on the local host and accepts a
+connection.  When a client connects to this socket, all data read from
+the socket is written to stdout, data read from stdin is written to
+the socket.  For example, the command
+
+	% socket -s 3917
+
+accepts a connection on port 3917.  
+
+
+Restricting data flow
+
+It is not always desirable to have data flow in both directions, e.g.
+when the program is running in the background, it would be stopped if
+it tried to read from the terminal.  So the user can advise the program
+only to read from the socket ("-r") or only to write to the socket
+("-w").  Especially when Socket executes a program (see below), it is
+important *not* to write to the program's stdin if the program doesn't
+read it.  This is the main reason why I added this option.
+
+
+Closing connection on EOF
+
+For non-interactive use it is not always clear when to close the
+network connection; this is still an unsolved problem.  But often it
+will be enough to close the connection when some data has been written
+to the socket.  In this case the "quit" switch ("-q") can be used:
+when an end-of-file condition on stdin occurs, Socket closes the
+connection.
+
+
+Executing a program
+
+An interesting use of a server socket is to execute a program when a
+client connects to it.  This done with the "-p" switch.  Stdin,
+stdout, and stderr of the program are read from resp. written to the
+socket.  Since the server is usually expected to accept another
+connection after a connection has been closed, the "loop" switch
+("-l") makes it do exactly that.
+
+
+CRLF conversion
+
+The Internet protocols specify a CRLF sequence (Carriage Return
+Linefeed) to terminate a line, whereas UNIX uses only a single LF.  If
+the user specifies the "crlf" switch ("-c"), all CRLF sequences that
+are read from the socket are converted to a single LF on output.  All
+single LFs on input are converted to a CRLF sequence when written to
+the socket.
+
+
+Background mode
+
+It may be desirable for a server program to run in background. For
+that purpose the "background" switch ("-b") is provided.  If it is
+set, Socket runs in background, detaches itself from the controlling
+tty, closes the file descriptors associated with the tty, and changes
+it current directory to the root directory.  It is still possible to
+redirect the standard file descriptors to a file.
+
+
+Forking child to handle connection
+
+Often one wants the server to be able to respond to another client
+immediately, even before the connection to the previous client has
+been closed.  For this case, Socket can fork a client to handle a
+connection while the father process already accepts the next
+connection.  To get this behaviour, specify the "-f" option.
+
+
+With all these options, a typical server call would look like
+
+	% socket -bcfslqp program port
+
+Gee, I know that's a lot of options for the standard case, but I
+really want to make all these things *optional*.
+
+
+Verbose
+
+At last, there is also a "verbose" option ("-v"). If this option is
+specified, a message is given for each opening and closing of a
+connection.  This is convenient especially in interactive use, but can
+also provide some kind of logging.  See fingerd.sh for an example.
+
+
+WARNING
+
+Nothing prevents you from using Socket like this:
+
+	% socket -slqp sh 5678
+
+THIS IS DANGEROUS! If your machine is connected to the Internet,
+*anyone* on the Internet can connect to this server and issue shell
+commands to your shell.  These commands are executed with your user
+ID.  Some people may think of this program as a BAD THING, because it
+allows its user to open his machine for world-wide access to all kinds
+of malicious crackers, crashers, etc.  I don't know if I should
+consider this as a real security risk or not.  Anyway, it is not my
+program which is so dangerous -- anyone with moderate programming
+skill can write a something like this.
+
+Another problem is that any server program that uses Socket may not be
+secure.  I tried to avoid any holes -- especially that one that made
+fingerd vulnerable to the attack of Morris' Internet Worm, but I don't
+give any warranty.  Also the program run by Socket may have security
+holes.
+
+I would like to hear your opinion about this topic.  Do you consider it
+a security risk to have a program like Socket around?
+
+Comments
+
+Please send any comments, suggestions, bug reports etc. to me:
+
+Juergen Nickelsen <jn@berlin.snafu.de>
