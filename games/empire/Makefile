@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	empire
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	games
-MASTER_SITES=	http://www.tuxedo.org/~esr/vms-empire/
-DISTNAME=	vms-empire-${PORTVERSION}
+MASTER_SITES=	http://www.catb.org/~esr/vms-empire/
+DISTNAME=	vms-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -20,8 +20,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/vms-empire.6 ${MANPREFIX}/man/man6/empire.6
 .if !defined(NOPORTDOCS)
 .for file in BUGS READ.ME
-	@${MKDIR} ${PREFIX}/share/doc/empire
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/empire
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
