@@ -17,7 +17,7 @@ pkg_deinstall:	Wraps pkg_delete(1) and provides extra features.
 pkg_fetch:	Fetches packages from a remote site.
 pkg_glob:	Expands package globs.
 pkg_which:	Checks which package a file came from quickly.
-pkgdb:		Creates packages database from /var/db/pkg.
-pkgdepfix:	Fixes the /var/db/pkg registry interactively.
+pkgdb:		Manipulate the package database and interactively
+		fixes most problems in the /var/db/pkg registry.
 
 Author: Akinori MUSHA <knu@FreeBSD.org>
