@@ -1,0 +1,12 @@
+Wget4web allows to add downloads to server, to view information
+about download status and to  control it in browser. The program's
+interface is look like interfaces of ReGet and Downloader for X,
+what allow to control download of many files without review Wget
+logs (but if you want to do it, you may watch them in browser window).
+Wget4web writes logs and can generate reports including name and size
+of downloaded files. You can control traffic which was got by each
+user. Users can download files without using shell (Wget4web
+use own user list) what decrease possibility of undesirable
+server usage.
+
+WWW: http://irodov.nm.ru/wget4web/
