@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
+PORTCOMMENT=	An image viewer that utilizes Imlib2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
