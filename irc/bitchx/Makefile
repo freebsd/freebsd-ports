@@ -83,6 +83,9 @@ CONFIGURE_ARGS+=--with-tcl \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
 ONLY_FOR_ARCHS=	i386
+.if ${OSVERSION} > 500017
+BROKEN=	"WITH_TCL is not available on 5.X, try to install without TCL"
+.endif
 .endif
 
 .if defined(WITH_SOCKS5)
