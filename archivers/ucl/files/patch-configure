@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- configure	2001/01/29 19:11:52	1.1
++++ configure	2001/01/29 19:12:24
+@@ -1256,7 +1256,7 @@
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++#    CFLAGS="-O2"
+   else
+     CFLAGS=
+   fi
+@@ -3168,7 +3168,7 @@
+   if test "$enable_debug" = yes; then
+     CFLAGS_O="$CFLAGS_O -O0"
+   else
+-    CFLAGS_O="$CFLAGS_O -O2"
++#    CFLAGS_O="$CFLAGS_O -O2"
+   fi
+   CFLAGS_W="$CFLAGS_W -Wall -Wcast-align -Wwrite-strings"
+   case $host in
