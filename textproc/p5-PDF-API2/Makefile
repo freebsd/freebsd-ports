@@ -25,4 +25,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
+post-patch:
+	@${RM} -f  ${WRKSRC}/lib/Text/PDF/FileAPI.pm.orig
+
 .include <bsd.port.mk>
