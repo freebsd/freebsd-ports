@@ -284,7 +284,6 @@
     SUBDIR += kdbg
     SUBDIR += kdesdk3
     SUBDIR += kdevelop
-    SUBDIR += kelp
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
     SUBDIR += korelib
