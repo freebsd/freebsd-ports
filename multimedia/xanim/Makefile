@@ -8,9 +8,9 @@
 PORTNAME=	xanim
 PORTVERSION=	2.92.0
 CATEGORIES=	multimedia graphics
-MASTER_SITES=	ftp://xanim.va.pubnix.com/:main \
-		http://www.go.dlr.de/fresh/unix/src/misc/:main \
-		ftp://xanim.va.pubnix.com/dlls/ \
+MASTER_SITES=	http://www.go.dlr.de/fresh/unix/src/misc/:main \
+		ftp://ftp.ut.ee/pub/graphics/xanim/:main \
+		ftp://ftp.ut.ee/pub/graphics/xanim/dlls/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	xanim2920
