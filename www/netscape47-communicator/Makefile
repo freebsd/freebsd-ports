@@ -73,8 +73,8 @@ post-install:
 	    ${FIND} ${NSUBDIR} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.ns-lib
 	cd ${PREFIX} ;\
-	    ${FIND} ${NSUBDIR} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.ns-lib
+	    ${FIND} ${NSUBDIR} -type d | \
+	    	${SORT} -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.ns-lib
 	${ECHO_CMD} "@unexec rmdir %D/${NSUBDIR} 2>&1 || true" >> ${WRKDIR}/PLIST.ns-lib
 	${CAT} ${DESCR}
 
