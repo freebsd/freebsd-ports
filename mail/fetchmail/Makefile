@@ -17,6 +17,8 @@ MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 
 MAINTAINER=	ve@sci.fi
 
+FORBIDDEN=	"Yet another remote buffer overflow. http://security.e-matters.de/advisories/032002.html"
+
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
 USE_PYTHON=	yes
