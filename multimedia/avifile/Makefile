@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.11.20020711
+PORTVERSION=	0.7.16.20020913
 PORTEPOCH=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://avifile.sourceforge.net/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	holger@eit.uni-kl.de
+MAINTAINER=	holger@e-gitt.net
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
@@ -34,10 +34,12 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib `${ECHO_CMD} ${PTHREAD_LIBS}`"
 CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
-		--program-transform-name='' \
 		--disable-divx4
+CONFIGURE_TARGET=
 
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}" VERSION="${VERSION}"
+
+MAN1=		aviplay.1
 
 #CODEC_PORT=	${PORTSDIR}/graphics/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs
@@ -48,6 +50,13 @@ VERSION=	0.7
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DIFF?=		/usr/bin/diff
 FMT?=		/usr/bin/fmt
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+WITHOUT_A52=yes
+WITHOUT_XVID=yes
+.endif
 
 # compilation optimizations
 .if !defined(WITHOUT_OPTIMIZED_CFLAGS)
@@ -185,6 +194,9 @@ post-patch:
 .if !defined(WITHOUT_A52)
 	@${REINPLACE_CMD} -e 's|-la52|${LIBA52_DEP_LIBS} -la52|' \
 		${WRKSRC}/configure
+# linux/ioctl.h -> sys/ioctl.h
+	@${REINPLACE_CMD} -e 's|linux/ioctl.h|sys/ioctl.h|' \
+		${WRKSRC}/drivers/libdha/kernelhelper/dhahelper.h
 # XXX - fool ffmpeg to use ports' version of liba52, revise this
 # at EVERY avifile update
 	@${REINPLACE_CMD} -e 's|liba52/liba52.la|${LOCALBASE}/lib/liba52.la|; \
@@ -232,16 +244,11 @@ post-patch:
 	@${FIND} ${WRKSRC} \( -name Makefile.in -o -name configure \) | \
 		${XARGS} -n 10 ${REINPLACE_CMD} -E -e \
 		's|INSTALL = \@INSTALL\@|INSTALL = ${INSTALL}|; \
-		s!-release[[:space:]]+\$$\(LT_RELEASE\)!!; \
+		s!-release[[:space:]]+\$$\([^\)]+\)!!; \
 		s!ACLOCAL =!ACLOCAL = ${TRUE} || !; \
 		s!AUTOCONF =!AUTOCONF = ${TRUE} || !; \
 		s!AUTOHEADER =!AUTOHEADER = ${TRUE} || !; \
 		s!AUTOMAKE =!AUTOMAKE = ${TRUE} || !'
-# XXX - fix simple bugs in version.sh script, revise this
-# at EVERY avifile update
-	@${REINPLACE_CMD} -E -e 's|^(last_cvs_update=).+$$|\1|; \
-		s|cp[[:space:]]+-a|cp|' \
-		${WRKSRC}/admin/version.sh
 
 post-configure:
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
@@ -256,8 +263,6 @@ post-install:
 	@${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README
 .endif
 	@${FMT} < ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
