@@ -7,7 +7,7 @@
 
 PORTNAME=	HTML-Mason
 PORTVERSION=	1.19
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -16,11 +16,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	High-performance, dynamic web site authoring system
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
+
+.if !defined(WITHOUT_MODPERL)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+.endif
+
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
