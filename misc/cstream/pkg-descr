@@ -5,7 +5,7 @@ usually used in commandline-constructed pipes.
 - Exact throughput limiting, on the incoming side.
 - Precise throughput reporting. Either at the end of the
   transmission or everytime SIGUSR1 is received. Quite useful to ask
-  lengthy opertions how much data has been transferred yet, i.e. when
+  lengthy operations how much data has been transferred yet, i.e. when
   writing tapes. Reports are done in bytes/sec and if appropriate in
   KB/sec or MB/sec, where 1K = 1024.
 - SIGHUP causes a clean shutdown before EOF on input.
@@ -15,7 +15,7 @@ usually used in commandline-constructed pipes.
   looks like a file, i.e. if you test soundcard software.
 - Built-in data creation and sink, no more redirection of
   /dev/null and /dev/zero. These special devices speed varies greatly
-  amoung operating systems, redirecting from it isn't appropriate
+  among operating systems, redirecting from it isn't appropriate
   benchmarking and a waste of resources anyway.
 -  "gcc -Wall" clean source code, serious effort taken to avoid
   undefined behavior in ANSI C or POSIX, except long long
