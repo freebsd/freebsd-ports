@@ -61,6 +61,17 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
+@@ -12678,8 +12644,8 @@
+ # Some system specific hacks
+ #
+ 
+-MAX_C_OPTIMIZE="-O3"
+-MAX_CXX_OPTIMIZE="-O3"
++MAX_C_OPTIMIZE=""
++MAX_CXX_OPTIMIZE=""
+ 
+ case $SYSTEM_TYPE in
+   *solaris2.7*)
 @@ -23893,7 +23859,7 @@
  	/* ) rel_srcdir="$srcdir" ;;
  	* )  rel_srcdir="../$srcdir" ;;
