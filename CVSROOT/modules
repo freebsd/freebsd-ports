@@ -3942,6 +3942,7 @@ nana		ports/devel/nana
 nano		ports/editors/nano
 napshare	ports/net/napshare
 napster		ports/audio/napster
+narval		ports/deskutils/narval
 nas		ports/audio/nas
 nasm		ports/devel/nasm
 nat		ports/net/nat
