@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.yahoo.com/dl/unix/fbsd4/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cj@vallcom.net
+MAINTAINER=	LoRd_CJ@dalusers.com
 
 USE_GTK=	yes
 NO_BUILD=	yes
