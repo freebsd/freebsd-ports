@@ -3,10 +3,10 @@ It is important to follow them in sequence.
 
 *  Install security/clamav from the ports tree.
 
-*  Add user clamav to the mail group in /etc/group.
+*  Confirm that user clamav was added to the mail group in /etc/group.
 
-*  Create /var/log/clamav and /var/run/clamav, and change the ownership
-   of both to clamav:clamav.
+*  Confirm that /var/log/clamav and /var/run/clamav exist and are owned
+   by clamav:clamav.
 
 *  In Exim's configure file, set av_scanner=clamd:/var/run/clamav/clamd
 
@@ -28,47 +28,18 @@ It is important to follow them in sequence.
 
    You may wish to make other changes as well.
 
-*  Install the shell script included at the end of these instructions as
-   /usr/local/etc/rc.d/clamd.sh, taking care to make it executable.
+*  Make sure clamd_enable="YES" has been added to /etc/rc.conf; this is
+   required by the clamav port's startup script,
+   %%RC_DIR%%/clamd%%RC_SUFX%% .
 
 *  Run freshclam.
 
 *  Add a cron job that runs freshclam --daemon-notify --quiet at least
    once a day.
 
-*  Start clamd with /usr/local/etc/rc.d/clamd.sh start .
+*  Start clamd with %%RC_DIR%%/clamd%%RC_SUFX%% start .
 
 *  Start Exim with %%RC_DIR%%/exim%%RC_SUFX%% start .
 
 Sheldon Hearn <sheldonh@FreeBSD.org>
 
-#!/bin/sh
-#
-PREFIX=/usr/local
-CLAMAV_BIN=${PREFIX}/sbin
-
-case $1 in
-start)
-    [ -x ${CLAMAV_BIN}/clamd ] && {
-	${CLAMAV_BIN}/clamd
-	echo -n ' clamd'
-    }
-    ;;
-
-stop)
-	kill `cat /var/run/clamav/clamd.pid`
-	if [ $? = 0 ] ; then
-		echo -n ' clamd'
-	fi
-    ;;
-
-restart)
-	/usr/local/etc/rc.d/clamd.sh stop && \
-		/usr/local/etc/rc.d/clamd.sh start
-    ;;
-
-*)
-    echo "usage: `basename $0` {start|stop|restart}" >&2
-    exit 64
-    ;;
-esac
