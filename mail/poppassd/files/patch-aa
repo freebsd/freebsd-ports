@@ -1,18 +1,29 @@
---- Makefile.orig	Mon Jul  7 15:20:49 2003
-+++ Makefile	Mon Jul  7 15:23:01 2003
-@@ -1,11 +1,11 @@
+--- Makefile.orig	Fri Dec  5 13:12:35 2003
++++ Makefile	Fri Dec  5 13:13:13 2003
+@@ -1,14 +1,14 @@
 -BINDIR = /usr/etc
 +BINDIR = ${PREFIX}/libexec
  LIBDIR = 
 -CFLAGS = -g
 -LFLAGS = -g
+-CCM = cc -Em
 +CFLAGS?= -O
 +LFLAGS?= ${LDFLAGS}
- CCM = cc -Em
++CCM = $(CC) -Em
  
  OBJECTS = poppassd.o
 -LIBS =
 +LIBS = -lcrypt -lutil
  
  poppassd: $(OBJECTS)
- 	cc -o poppassd $(LFLAGS) $(OBJECTS) $(LIBS)
+-	cc -o poppassd $(LFLAGS) $(OBJECTS) $(LIBS)
++	$(CC) -o poppassd $(LFLAGS) $(OBJECTS) $(LIBS)
+ 
+ install: poppassd
+ 	install -g bin -o root -m 500 poppassd $(BINDIR)
+@@ -17,4 +17,4 @@
+ 	rm -f *.o *~* core Makefile.new Makefile.bak poppassd
+ 
+ poppassd.o: poppassd.c
+-	cc -c $(CFLAGS) poppassd.c
++	$(CC) -c $(CFLAGS) poppassd.c

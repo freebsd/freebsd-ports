@@ -11,26 +11,20 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 DISTNAME=	pwserve-4
+EXTRACT_SUFX=
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	A server to allow users to change their password from within Eudora
 
-EXTRACT_CMD=	/bin/cat
-EXTRACT_SUFX=	
-EXTRACT_BEFORE_ARGS=	
+EXTRACT_CMD=	${CAT}
+EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SED} -e '1,16d' | ${SH}
 WRKSRC=			${WRKDIR}/poppassd
 ALL_TARGET=	poppassd
 MAN8=		poppassd.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-post-install:
-	@ ${STRIP_CMD} ${PREFIX}/libexec/poppassd
+do-install:
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/poppassd ${PREFIX}/libexec
 	@ ${INSTALL_MAN} ${FILESDIR}/poppassd.8 ${PREFIX}/man/man8/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
