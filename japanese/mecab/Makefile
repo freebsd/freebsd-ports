@@ -30,6 +30,12 @@ MAN1=		mecab.1
 EXAMPLES=	example/*
 DOCS=		AUTHORS README doc/*.html doc/*.css
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 	${LN} -s `cd ${IPADIC_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/dic/
 
@@ -46,4 +52,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
