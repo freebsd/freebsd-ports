@@ -1,3 +1,1 @@
-@unexec install-info --delete %D/info/vera.info %D/info/dir
-info/vera.info
-@exec install-info %D/info/vera.info %D/info/dir
+@comment We do not utilize this file
