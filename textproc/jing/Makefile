@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jing
-PORTVERSION=	2001.12.03
+PORTVERSION=	2002.02.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.thaiopensource.com/relaxng/
 DISTNAME=	${PORTNAME}
