@@ -8,7 +8,7 @@
 PORTNAME=	openoffice
 PORTVERSION=	1.1.2.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=	http://people.freebsd.org/~maho/ \
+MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
