@@ -510,6 +510,7 @@
     SUBDIR += phpwiki
     SUBDIR += plone
     SUBDIR += plugger
+    SUBDIR += plugger-plugins-hubbe
     SUBDIR += pnews
     SUBDIR += postnuke
     SUBDIR += pound
