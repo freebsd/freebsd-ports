@@ -6,13 +6,15 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.60.1
+PORTVERSION?=	0.61.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://x.mame.net/download/ \
-		http://www.mame.net/zips/ \
-		http://cheat.retrogames.com/ \
-		http://www.win.tue.nl/~stijn/xmame/
-DISTNAME=	xmame-${XMAMEVERSION:S/p/pre/}
+MASTER_SITES=	http://x.mame.net/download/:xmame \
+		http://www.sys2064.com/files/util/:history \
+		http://www.sys2064.com/files/mame/:highscore \
+		http://cheat.retrogames.com/:cheat \
+		http://www.win.tue.nl/~stijn/xmame/:history,highscore,cheat
+DISTNAME=	xmame-${XMAMEVERSION:S/.p/-pr/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
 MAINTAINER?=	stijn@win.tue.nl
@@ -48,7 +50,10 @@ SPOOLGAMES?=	/var/games
 
 # Docs list
 GENERALDOCS=	changes.unix \
+		ctrlr.txt \
+		dga2.txt \
 		liesmich.unix \
+		listinfo.txt \
 		multiplayer-readme.txt \
 		xmame-doc-1.html \
 		xmame-doc-2.html \
@@ -57,7 +62,10 @@ GENERALDOCS=	changes.unix \
 		xmame-doc-5.html \
 		xmame-doc-6.html \
 		xmame-doc-7.html \
+		xmame-doc-8.html \
 		xmame-doc.html \
+		xmame-doc.lyx \
+		xmame-doc.txt \
 		xmame-gdoc-1.html \
 		xmame-gdoc-2.html \
 		xmame-gdoc-3.html \
@@ -65,28 +73,19 @@ GENERALDOCS=	changes.unix \
 		xmame-gdoc-5.html \
 		xmame-gdoc-6.html \
 		xmame-gdoc-7.html \
-		xmame-gdoc.html \
-		xmame-doc.lyx \
-		xmame-doc.txt
-XMAMEDOCS=	changes.mame \
-		ctrlr.txt \
-		gamelist.mame \
-		readme.mame \
-		xmame-doc-8.html \
 		xmame-gdoc-8.html \
-		xmame.css \
-		dga2.txt
+		xmame-gdoc.html \
+		xmame.css
+XMAMEDOCS=	changes.mame \
+		gamelist.mame \
+		readme.mame
 XMESSDOCS=	changes.mess \
 		credits.mess \
 		gamelist.mess \
-		readme.mess \
-		messroms.txt \
 		imgtool.txt \
+		messhelp.txt \
 		messroms.txt \
-		xmame-doc-8.html \
-		xmame-gdoc-8.html \
-		xmame.css \
-		dga2.txt
+		old-changes.mess
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
@@ -122,17 +121,18 @@ PLIST_SUB+=	DATFILES=""
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-HIVER=		7
+HIVER=		795
 
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-			hsdat${HIVER}.zip history.zip cheat.zip
+DISTFILES+=	uhsdat${HIVER}.zip:highscore history.dat.zip:history \
+			cheat.zip:cheat
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 post-extract:
 	cd ${WRKDIR} && \
-		unzip -q ${DISTDIR}/${DIST_SUBDIR}/hsdat${HIVER}.zip hiscore.dat
+		unzip -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
+			hiscore.dat
 	cd ${WRKDIR} && \
-		unzip -q ${DISTDIR}/${DIST_SUBDIR}/history.zip history.dat
+		unzip -q ${DISTDIR}/${DIST_SUBDIR}/history.dat.zip history.dat
 	cd ${WRKDIR} && \
 		unzip -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
 .else
@@ -248,16 +248,6 @@ pre-everything::
 	  ${ECHO_MSG} '-------------------------------------------------------------------------';)
 .endif
 
-# Some simple patches that don't warrant a separate patch
-post-patch:
-	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
-	${PERL} -pi -e 's@png.h@../../png.h@' \
-				${WRKSRC}/src/unix/video-drivers/glexport.c
-	${PERL} -pi -e 's@malloc.h@stdlib.h@' \
-				${WRKSRC}/src/unix/video-drivers/gljpg.c
-	${PERL} -pi -e 's@asm/io.h@machine/cpufunc.h@' \
-				${WRKSRC}/src/unix/video-drivers/twkuser.c
-
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
 do-configure:
@@ -267,6 +257,7 @@ do-configure:
 		-e "s@/usr/X11R6@${X11BASE}@g" \
 		-e "s@-g bin@-g wheel@g" \
 		-e "s@^ARCH  = linux@ARCH  = freebsd@g" \
+		-e "s@# X11_XV@X11_XV@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
