@@ -1,8 +1,74 @@
---- ../MailScanner-4.27.7.orig/docs/man/MailScanner.conf.5	Mon Mar  1 15:25:07 2004
-+++ docs/man/MailScanner.conf.5	Mon Mar  1 15:28:04 2004
+--- ../MailScanner-4.28.5.orig/docs/man/MailScanner.conf.5	Mon Mar  8 10:41:05 2004
++++ docs/man/MailScanner.conf.5	Mon Mar  8 10:42:01 2004
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.27.4" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.27.7" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.28.5" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
+@@ -383,6 +383,14 @@
+ This is intended for use with a ruleset to ensure that mail is always encrypted before being sent. This could be used to ensure that mail to your business partners is sent securely. 
+ 
+ .TP 
++\fBAllow Password\-Protected Archives\fR
++Default: no
++.br 
++
++.br 
++Should archives which contain any password\-protected files be allowed? Leaving this set to "no" is a good way of protecting against all the protected zip files used by viruses at the moment. This can also be the filename of a ruleset.
++
++.TP 
+ \fBMaximum Message Size\fR
+ Default: 0
+ .br 
+@@ -397,6 +405,14 @@
+ 
+ .br 
+ The maximum size, in bytes, of any attachment in a message. If this is set to zero, effectively no attachments are allowed. If this is set less than zero, then no size checking is done. This can also be the filename of a ruleset, so you can have different settings for different users. You might want to set this quite small for large mailing lists so they don't get deluged by large attachments.
++
++.TP 
++\fBMaximum Archive Depth\fR
++Default: 3
++.br 
++
++.br 
++The maximum depth to which zip archives will be unpacked to allow for checking filenames and filetypes within zip archives. Setting this to 0 will disable filename/\-type checks within zip files while still allowing to block password protected zip files.
+ .SH "Options specific to Sophos Anti-Virus"
+ .TP 
+ \fBAllowed Sophos Error Messages\fR
+@@ -457,7 +473,7 @@
+ .br 
+ 
+ .br 
+-Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, onoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, trend, bitdefender, none (no virus scanning at all)
++Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, onoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, bitdefender, none (no virus scanning at all)
+ .br 
+ 
+ .br 
+@@ -489,13 +505,15 @@
+ .br 
+ 
+ .br 
+-Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. Other words that can be put in this list are the 3 special keywords
++Messages whose virus reports contain any of the words listed here will be treated as "silent" viruses. No messages will be sent back to the senders of these viruses, and the delivery to the recipient of the message can be controlled by the next option "Still Deliver Silent Viruses". This is primarily designed for viruses such as "Klez" and "Bugbear" which put fake addresses on messages they send, so there is no point informing the sender of the message, as it won't actually be them who sent it anyway. Other words that can be put in this list are the 5 special keywords
+ .br 
+ HTML\-IFrame: inserting this will stop senders being warned about HTML Iframe tags, when they are not allowed.
+ .br 
+ HTML\-Codebase: inserting this will stop senders being warned about HTML Object Codebase tags, when they are not allowed.
+ .br 
+-All\-Viruses: inserting this will stop senders being warned about any virus, while still allowing you to warn senders about HTML\-based attacks.
++Zip\-Password: inserting this will stop senders being warned about password\-protected zip files when they are not allowd. This keyword is not needed if you include All\-Viruses.
++.br 
++All\-Viruses: inserting this will stop senders being warned about any virus, while still allowing you to warn senders about HTML\-based attacks. This includes Zip\-Password so you don't need to include both.
+ .br 
+ 
+ .br 
+@@ -517,7 +535,7 @@
+ .br 
+ 
+ .br 
+-Strings listed here will be searched for in the output of the virus scanners. It works to achieve the opposite effect of the "Silent Viruses" listed above. If a string here is found in the output of the virus scanners, then the message will be treated as if it were not infected with a "Silent Virus". If a message is detected as both a silent virus and a non\-forging virus, then the non\-forging status will override the silent status. In simple terms, you should list virus names (or parts of them) that you know do *not* forge the From address. A good example of this is a document macro virus or a Joke program.
++Strings listed here will be searched for in the output of the virus scanners. It works to achieve the opposite effect of the "Silent Viruses" listed above. If a string here is found in the output of the virus scanners, then the message will be treated as if it were not infected with a "Silent Virus". If a message is detected as both a silent virus and a non\-forging virus, then the non\-forging status will override the silent status. In simple terms, you should list virus names (or parts of them) that you know do *not* forge the From address. A good example of this is a document macro virus or a Joke program. Another word that can be put in this list is the special keyword "Zip\-.Password". Inserting this will cause senders to be warned about password\-protected zip files, whey they are not allowed.
+ 
+ .SH "Options specific to ClamAV Anti-Virus"
+ .TP 

@@ -1,0 +1,117 @@
+--- ../MailScanner-4.28.5.orig/docs/man/MailScanner.conf.5.html	Mon Mar  8 10:41:05 2004
++++ docs/man/MailScanner.conf.5.html	Mon Mar  8 10:42:01 2004
+@@ -1,5 +1,5 @@
+ <!-- Creator     : groff version 1.19 -->
+-<!-- CreationDate: Mon Feb 23 12:00:39 2004 -->
++<!-- CreationDate: Mon Mar  8 10:33:06 2004 -->
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+ <html>
+@@ -1048,6 +1048,29 @@
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="89%">
++<p><b>Allow Password&minus;Protected Archives</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>Should archives which contain any
++password&minus;protected files be allowed? Leaving this set
++to &quot;no&quot; is a good way of protecting against all
++the protected zip files used by viruses at the moment. This
++can also be the filename of a ruleset.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p><b>Maximum Message Size</b></p></td>
+ </table>
+ <!-- INDENTATION -->
+@@ -1093,6 +1116,29 @@
+ attachments.</p>
+ </td>
+ </table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Maximum Archive Depth</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: 3</p>
++<!-- INDENTATION -->
++<p>The maximum depth to which zip archives will be unpacked
++to allow for checking filenames and filetypes within zip
++archives. Setting this to 0 will disable
++filename/&minus;type checks within zip files while still
++allowing to block password protected zip files.</p>
++</td>
++</table>
+ <a name="Options specific to Sophos Anti-Virus"></a>
+ <h2>Options specific to Sophos Anti-Virus</h2>
+ <!-- INDENTATION -->
+@@ -1247,7 +1293,7 @@
+ kaspersky&minus;4.5, kavdaemonclient, inoculate, inoculan,
+ onoculan, nod32, nod32&minus;1.99, f&minus;secure,
+ f&minus;prot, panda, rav, antivir, clamav, clamavmodule,
+-trend, bitdefender, none (no virus scanning at all)</p>
++css, trend, bitdefender, none (no virus scanning at all)</p>
+ <!-- INDENTATION -->
+ <p>Note for McAfee users: Do NOT use any symlinks with
+ McAfee at all. It is very strange but McAfee may not detect
+@@ -1329,16 +1375,22 @@
+ fake addresses on messages they send, so there is no point
+ informing the sender of the message, as it won&rsquo;t
+ actually be them who sent it anyway. Other words that can be
+-put in this list are the 3 special keywords<br>
++put in this list are the 5 special keywords<br>
+ HTML&minus;IFrame: inserting this will stop senders being
+ warned about HTML Iframe tags, when they are not
+ allowed.<br>
+ HTML&minus;Codebase: inserting this will stop senders being
+ warned about HTML Object Codebase tags, when they are not
+ allowed.<br>
++Zip&minus;Password: inserting this will stop senders being
++warned about password&minus;protected zip files when they
++are not allowd. This keyword is not needed if you include
++All&minus;Viruses.<br>
+ All&minus;Viruses: inserting this will stop senders being
+ warned about any virus, while still allowing you to warn
+-senders about HTML&minus;based attacks.</p>
++senders about HTML&minus;based attacks. This includes
++Zip&minus;Password so you don&rsquo;t need to include
++both.</p>
+ <!-- INDENTATION -->
+ <p>The default of &quot;All&minus;Viruses&quot; means that
+ no senders of viruses will be notified (as the sender
+@@ -1400,8 +1452,11 @@
+ non&minus;forging status will override the silent status. In
+ simple terms, you should list virus names (or parts of them)
+ that you know do *not* forge the From address. A good
+-example of this is a document macro virus or a Joke
+-program.</p>
++example of this is a document macro virus or a Joke program.
++Another word that can be put in this list is the special
++keyword &quot;Zip&minus;.Password&quot;. Inserting this will
++cause senders to be warned about password&minus;protected
++zip files, whey they are not allowed.</p>
+ </td>
+ </table>
+ <a name="Options specific to ClamAV Anti-Virus"></a>
