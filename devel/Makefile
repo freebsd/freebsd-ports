@@ -115,7 +115,6 @@
     SUBDIR += crossgo32
     SUBDIR += crossgo32-djgpp2
     SUBDIR += crossgo32-djgpp2-pdcurses
-    SUBDIR += crystal
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += cssc
