@@ -1,6 +1,4 @@
 bin/gcal
-bin/gcal-ddiffdrv
-bin/gcal-gcalltx.pl
 bin/gcal2txt
 bin/tcal
 bin/txt2gcal
@@ -28,15 +26,17 @@ share/locale/pl/LC_MESSAGES/gcal.mo
 share/locale/ru/LC_MESSAGES/gcal.mo
 share/locale/sv/LC_MESSAGES/gcal.mo
 share/gcal/misc/daily/daily
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/daily/daily.awk
 share/gcal/misc/daily/daily.pl
 share/gcal/misc/daily/daily.rc
 share/gcal/misc/ddiff/ddiff
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/ddiff/ddiffdrv
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/ddiff/ddiff1.awk
 share/gcal/misc/ddiff/ddiff1.pl
 share/gcal/misc/ddiff/ddiff2.awk
@@ -45,32 +45,34 @@ share/gcal/misc/ddiff/ddiffdrv.awk
 share/gcal/misc/ddiff/ddiffdrv.pl
 share/gcal/misc/ddiff/zone.tab
 share/gcal/misc/dst/dst
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/dst/dst.awk
 share/gcal/misc/dst/dst.pl
 share/gcal/misc/gcalltx/gcalltx
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/gcalltx/gcalltx.pl
+@exec ln -fs ../%F %D/bin/gcal-%f
+@unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/gcalltx/gcalltx.sed
 share/gcal/misc/moon/moon
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/mrms/mrms
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/mrms/mrms.awk
 share/gcal/misc/mrms/mrms.pl
 share/gcal/misc/mrms/mrms.rc
 share/gcal/misc/srss/srss
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/srss/srss.awk
 share/gcal/misc/srss/srss.pl
 share/gcal/misc/srss/srss.rc
 share/gcal/misc/wloc/wlocdrv
-@exec ln -fs %D/%F %D/bin/gcal-%f
+@exec ln -fs ../%F %D/bin/gcal-%f
 @unexec rm -f %D/bin/gcal-%f
 share/gcal/misc/wloc/wlocdrv1.awk
 share/gcal/misc/wloc/wlocdrv1.pl
