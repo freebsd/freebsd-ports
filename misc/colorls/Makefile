@@ -16,7 +16,7 @@ DISTFILES=	ls-${PORTVERSION}.tar.gz
 MAINTAINER=	asami@FreeBSD.org
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 500004
+.if ${OSVERSION} >= 500004 || ${OSVERSION} < 500000 && ${OSVERSION} >= 400020
 FORBIDDEN=      "colour support is already in the base system"
 .endif
 
