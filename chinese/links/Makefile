@@ -26,4 +26,3 @@ pre-configure:
 .include "${MASTERDIR}/Makefile"
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
