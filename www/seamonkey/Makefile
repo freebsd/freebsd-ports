@@ -30,6 +30,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MOZILLA?=	mozilla-devel
+MOZ_SUFX=	-devel
 
 .if defined(WITH_GTK2)
 PKGNAMESUFFIX=	-gtk2
@@ -41,7 +42,7 @@ USE_GNOME=	gtk12 orbit
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
-BROKEN=		Mozilla-devel and Xft2 render the mozilla-fonts \
+BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 	 	illegibly. Please remove the mozilla-fonts package.
 .endif
 .endif
@@ -136,7 +137,7 @@ CONFIGURE_ARGS+=	--disable-composer
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
-			mozilla-nspr mozilla-nss
+			mozilla-nspr mozilla-nss mozilla-plugin
 EXTRA_PATCHES=		${FILESDIR}/xim_dekita2.patch
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
@@ -193,10 +194,17 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
-		-e 's|%%HEADERS_SUFX%%|-devel|g' \
+		-e 's|%%HEADERS_SUFX%%|${MOZ_SUFX}|g' \
 			${WRKSRC}/config/autoconf.mk.in
 	@${FIND} ${WRKSRC}/other-licenses/libical -name "*.c" | ${XARGS} \
 		${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g'
+.if defined(WITH_GTK2)
+	@for pcfile in ${PKGCONFIG_FILES}; do \
+	    ${REINPLACE_CMD} -e 's|mozilla-xpcom|mozilla-xpcom${MOZ_SUFX}|g ; \
+	    	s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}|g' \
+		${WRKSRC}/build/unix/$${pcfile}.pc.in; \
+	done
+.endif
 
 post-build:
 	${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%MOZILLA%%|${MOZILLA}|g" \
@@ -226,7 +234,7 @@ pre-install:
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 .if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}-devel.pc >> ${PLIST} ; \
+	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc >> ${PLIST} ; \
 	done
 .endif
 
@@ -249,7 +257,7 @@ do-install:
 .if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
 	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
-			${PREFIX}/libdata/pkgconfig/$${pcfile}-devel.pc ; \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}${MOZ_SUFX}.pc ; \
 	done
 .endif
 
