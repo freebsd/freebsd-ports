@@ -1,22 +1,25 @@
 # New ports collection makefile for:	R (letter)
-# Date created:			Fri Aug 11 16:17:34 EST 2000
+# Date created:			Fri Feb  9 10:50:25 EST 2001
 # Whom:				Maurice Castro <maurice@serc.rmit.edu.au>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	R
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.1
 CATEGORIES=	math
-MASTER_SITES=	http://lib.stat.cmu.edu/R/CRAN/src/base/ \
-		ftp://ftp.biostat.washington.edu/mirrors/R/CRAN/src/base/ \
-		http://cran.stat.wisc.edu/src/base/ \
-		ftp://ftp.ci.tuwien.ac.at/R/src/base/ \
-		http://SunSITE.auc.dk/R/src/base/ \
-		http://www.stat.unipg.it/pub/stat/statlib/R/CRAN/src/base/ \
+MASTER_SITES=	http://cran.r-project.org/src/base/ \
+		ftp://cran.r-project.org/pub/R/src/base/ \
+		http://cran.at.r-project.org/src/base/ \
+		http://cran.ch.r-project.or/src/base/ \
+		http://cran.dk.r-project.org/src/base/ \
+		http://cran.hu.r-project.org/src/base/ \
+		http://cran.uk.r-project.org/src/base/ \
+		http://cran.us.r-project.org/src/base/ \
+		http://mirror.aarnet.edu.au/CRAN/src/base/ \
 		ftp://ftp.u-aizu.ac.jp/pub/lang/R/CRAN/src/base/ \
 		ftp://dola.snu.ac.kr/pub/R/CRAN/src/base/ \
-		http://www.stat.math.ethz.ch/R-CRAN/src/base/
+		http://lib.stat.cmu.edu/R/CRAN/src/base/
 PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTNAME=	R-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
