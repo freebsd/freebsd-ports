@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 MASTER_SITE_SUBDIR=	dt
 DISTNAME=	Sharity-Light.1.2
 
-MAINTAINER=	dt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN8=		smbmount.8
 
