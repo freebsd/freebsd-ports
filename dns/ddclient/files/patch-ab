@@ -1,0 +1,50 @@
+--- sample-etc_cron.d_ddclient.orig	Sun Jun 15 03:39:16 2003
++++ sample-etc_cron.d_ddclient	Thu Aug  7 14:31:15 2003
+@@ -10,8 +10,8 @@
+ ######################################################################
+ ## force an update twice a month (only if you are not using daemon-mode)
+ ##
+-## 30 23 1,15 * *	root    /usr/sbin/ddclient -daemon=0 -syslog -quiet -force
++## 30 23 1,15 * *	root    %%PREFIX%%/sbin/ddclient -daemon=0 -syslog -quiet -force
+ ######################################################################
+ ## retry failed updates every hour (only if you are not using daemon-mode)
+ ##
+-##0 * * * *	root    /usr/sbin/ddclient -daemon=0 -syslog -quiet retry
++##0 * * * *	root    %%PREFIX%%/sbin/ddclient -daemon=0 -syslog -quiet retry
+--- sample-etc_dhclient-exit-hooks.orig	Sun Jun 15 03:39:16 2003
++++ sample-etc_dhclient-exit-hooks	Thu Aug  7 14:38:38 2003
+@@ -2,10 +2,10 @@
+ ######################################################################
+ ## $Header: /home/paul/src/ddclient/RCS/sample-etc_dhclient-exit-hooks,v 1.1 2002/11/03 20:20:16 root Exp $
+ ######################################################################
+-# The /etc/dhclient-enter-hooks script is run by the ISC DHCP client's standard
++# The /etc/dhclient-exit-hooks script is run by the ISC DHCP client's standard
+ # update script whenever dhclient obtains or renews an address. 
+ 
+-PATH=/usr/sbin:${PATH}
++PATH=%%PREFIX%%/sbin:${PATH}
+ case "$new_ip_address" in
+ 10.*)   	;;
+ 172.1[6-9].* | 172.2[0-9].* | 172.3[0-1].*)	;;
+--- sample-etc_dhcpc_dhcpcd-eth0.exe.orig	Sun Jun 15 03:39:16 2003
++++ sample-etc_dhcpc_dhcpcd-eth0.exe	Thu Aug  7 14:33:00 2003
+@@ -2,7 +2,7 @@
+ ######################################################################
+ ## $Header: /home/paul/src/ddclient/RCS/sample-etc_dhcpc_dhcpcd-eth0.exe,v 3.6 2002/11/03 20:20:16 root Exp $
+ ######################################################################
+-PATH=/usr/sbin:${PATH}
++PATH=%%PREFIX%%/sbin:${PATH}
+ 
+ ## update the DNS server unless the IP address is a private address
+ ## that may be used as a internal LAN address. This may be true if
+--- sample-etc_ppp_ip-up.local.orig	Sun Jun 15 03:39:16 2003
++++ sample-etc_ppp_ip-up.local	Thu Aug  7 14:33:32 2003
+@@ -16,7 +16,7 @@
+ ## in the environment as either PPP_LOCAL or IPLOCAL.
+ ##
+ ######################################################################
+-PATH=/usr/sbin:${PATH}
++PATH=%%PREFIX%%/sbin:${PATH}
+ IP=
+ IP=${IP:-$PPP_LOCAL}
+ IP=${IP:-$IPLOCAL}
