@@ -14,7 +14,7 @@ CATEGORIES=	www editors
 MASTER_SITES=	http://www.bostream.nu/johanb/august/
 DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML editor for the experienced Web author
 
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint \
