@@ -2,7 +2,7 @@
 
 PATH=/bin:/usr/sbin
 
-SANDBOX_DIR="/disabled"
+SANDBOX_DIR="${PKG_PREFIX}/bigsister"
 
 if [ -z "${BS_USER}" ]; then
     BS_USER=bs
@@ -38,7 +38,7 @@ case $2 in
 		fi
 	else
 		if pw useradd ${BS_USER} -u ${UID} -g ${BS_GROUP} -h - \
-			-d ${SANDBOX_DIR} -s /sbin/nologin -c "Big Sister"
+			-d ${SANDBOX_DIR} -s /bin/sh -c "Big Sister"
 		then
 			echo "Added user \"${BS_USER}\"."
 		else
