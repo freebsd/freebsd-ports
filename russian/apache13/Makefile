@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	1.3.23
+PORTVERSION=	${APACHE_VERSION}.${RA_VERSION}
 CATEGORIES=	russian www
 MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -23,15 +23,16 @@ MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
 		ftp://apache.nextpath.com/pub/apache/dist/httpd/
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${APACHE_VERSION}
 
 PATCH_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/ \
 		ftp://ftp.lexa.ru/pub/apache-rus/old-versions/
-PATCHFILES=	patches_${PORTVERSION}rusPL${RA_VERSION}.tar.gz
+PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 
 MAINTAINER=	lev@serebryakov.spb.ru
 
-RA_VERSION=	30.10
+RA_VERSION=	30.11
+APACHE_VERSION=	1.3.23
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
 
 #
