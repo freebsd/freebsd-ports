@@ -4,7 +4,7 @@ earth (or another planet). Orthographic and mercator projections can be
 rendered to the root window or saved to a file. An image that the user can
 rotate interactively can be popped up in a window using OpenGL or Mesa. 
 
-WWW: http://www.alumni.caltech.edu/~hari/xplanet/
+WWW: http://xplanet.sourceforge.net/
 Author: Hari Nair <hari@almuni.caltech.edu>
 
 --Will <andrews@technologist.com>
