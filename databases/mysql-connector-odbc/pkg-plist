@@ -1,2 +1,5 @@
-lib/libmyodbc-2.50.34.so
+%%PORTDOCS%%share/doc/myodbc/INSTALL
+%%PORTDOCS%%share/doc/myodbc/README
+lib/libmyodbc-2.50.39.so
 lib/libmyodbc.so
+%%PORTDOCS%%@dirrm share/doc/myodbc

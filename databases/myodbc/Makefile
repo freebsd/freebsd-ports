@@ -5,19 +5,48 @@
 # $FreeBSD$
 #
 
-PORTNAME=	MyODBC
-PORTVERSION=	2.50.34
+PORTNAME=	myodbc
+PORTVERSION=	2.50.39
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyODBC/
+MASTER_SITES=	http://www.mysql.com/Downloads/MyODBC/ \
+		ftp://sunsite.dk/mirrors/mysql/Downloads/MyODBC/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyODBC/
+DISTNAME=	MyODBC-${PORTVERSION}
 
 MAINTAINER=	ebakke@trolltech.com
 
-LIB_DEPENDS=	iodbc.2:${PORTSDIR}/databases/libiodbc \
-		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-mysql-libs=${PREFIX}/lib/mysql \
-		--with-mysql-includes=${PREFIX}/include/mysql
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-mysql-libs=${LOCALBASE}/lib/mysql \
+		--with-mysql-includes=${LOCALBASE}/include/mysql
+
+# MyODBC needs an ODBC driver manager to be installed, and it supports both
+# iODBC and unixODBC.  The following variable may be set at built-time to
+# either "iodbc" or "unixodbc", with the former being the default:
+DRIVER_MANAGER?=	iodbc
+
+.if ${DRIVER_MANAGER} == "unixodbc"
+CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/odbc.ini
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+.else	# assume we're using iodbc
+LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/libiodbc/odbc.ini
+.endif
+
+# XXX untested
+.if defined(STATIC)
+CONFIGURE_ARGS+=	--enable-shared=no \
+			--enable-static=yes
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@ ${MKDIR} ${DOCSDIR}
+# Install the INSTALL file as well, since it describes how to set up odbc.ini
+	@ ${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
