@@ -1,0 +1,44 @@
+--- Makefile.orig	Sat Apr 10 12:40:57 1999
++++ Makefile	Sat Apr 10 23:26:31 1999
+@@ -1,7 +1,7 @@
+ #
+ #  Set these variables
+ #
+-INIT_DIR="/mp3"
++INIT_DIR="$(PREFIX)/share/mp3"
+ MPG123_LOC="mpg123"
+ #INSTALL_DIR=/usr/local/bin
+ INSTALL_DIR=$(HOME)/bin
+@@ -11,7 +11,7 @@
+ #
+ 
+ ## An ass repository is a nice thing to have. See README
+-ASSREPOSITORY="$(HOME)/.cmp3ass"
++#ASSREPOSITORY="$(HOME)/.cmp3ass"
+ 
+ ## Define this for bufferring or add other parameters to mpg123
+ #EXEC_PARAMS=-DEXEC_PARAMS="\"-b\",\"320\""
+@@ -30,8 +30,9 @@
+ # stands. Change the code to do something else you want it to do...
+ #PARAMS +=-DMY_CD
+ LIBS= -lncurses
+-CFLAGS= -Wall -O2 -g
+-CC= gcc
++CFLAGS?= -O2
++CFLAGS+= -Wall
++CC?= gcc
+ OBJS= llist.o cmp3fileio.o cmp3manager.o cmp3curses.o cmp3llist.o \
+       cmp3main.o cmp3listfiles.o cmp3playlist.o
+ 
+@@ -43,7 +44,6 @@
+ endif
+ 
+ all: rnmp3 cmp3
+-	@echo -e "\n\nCmp3 is ready! Please read the README before proceeding.\n"
+ 
+ clean: 
+ 	rm -f *.o *~ DEADJOE core cmp3 rnmp3
+@@ -75,4 +75,4 @@
+ 	    fi;
+ endif
+ 
