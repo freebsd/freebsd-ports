@@ -1,0 +1,18 @@
+
+NOTE: If you wish to make easier use of the rlytest program from within
+scripts, you might want to modify the exit codes it uses.  Line 122 of
+the script contains the exit code used if the relay was accepted (bad),
+and line 165 contains the exit code used if the relay was rejected
+(good).  The original author has expressed a wish that his code not be
+modified automatically in this way by this distribution, but if you wish
+to modify your local copy, you should feel free to do so.
+
+If you just change the "0" line line 122 to a "1", then in shell scripts
+you'll be able to use constructs like:
+
+  if /usr/local/bin/rlytest $hostname >/dev/null 2>/dev/null ; then
+    echo "$hostname is good"
+  else
+    echo "$hostname is evil"
+  fi
+
