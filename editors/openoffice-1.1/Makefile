@@ -25,6 +25,8 @@ DISTFILES+=	OOo_${PORTVERSION}_source.tar.gz gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
 
+MAINTAINER=	openoffice@FreeBSD.org
+
 USE_GNOME=	orbit gtk12 gtk20
 USE_PERL5=	yes
 USE_BISON=	yes
@@ -43,7 +45,7 @@ DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_86_unix.tgz:help helpcontent_88_unix.tgz:help
 L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_34_unix.tgz helpcontent_39_unix.tgz \
-		helpcontent_55_unix.tgz \
+		helpcontent_55_unix.tgz	\
 		helpcontent_46_unix.tgz helpcontent_49_unix.tgz \
 		helpcontent_81_unix.tgz helpcontent_82_unix.tgz \
 		helpcontent_86_unix.tgz helpcontent_88_unix.tgz
@@ -53,7 +55,6 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 BROKEN=		"Does not compile on 5-current"
 .endif
 
-MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 BUILD_NR=		645
