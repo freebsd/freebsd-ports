@@ -1,5 +1,5 @@
 # New ports collection makefile for:	wemi-current for emacs
-# Version required:	1.13.6
+# Version required:	1.13.7
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -16,7 +16,7 @@ PORTCLASS?=	master
 
 # distfile version
 FLIM_VER=	1.13.2
-WEMI_VER=	1.13.6
+WEMI_VER=	1.13.7
 # setupel filename
 WEMI_SETUPEL=	wemi-setupel.el
 # document install directory by install-doc target
