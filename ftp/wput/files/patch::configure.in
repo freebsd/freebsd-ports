@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Dec  2 03:49:48 2003
++++ configure.in	Tue Dec  2 03:50:00 2003
+@@ -9,7 +9,7 @@
+     [AC_MSG_ERROR("You need to get libgnugetopt or a newer GNU libc.")]
+     )]
+ )
+-AC_SEARCH_LIBS(getopt_long, gnugetopt, [],
++AC_SEARCH_LIBS(getopt_long, gnugetopt, [LIBS="-lgnugetopt"],
+     [AC_MSG_ERROR("You need to get libgnugetopt or a newer GNU libc.")]
+ )
+ AC_CONFIG_FILES([Makefile src/Makefile])
