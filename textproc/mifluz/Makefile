@@ -17,7 +17,7 @@ COMMENT=	C++ library to build and query a full text inverted index
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--without-unac
 INSTALLS_SHLIB=	yes

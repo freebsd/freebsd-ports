@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_GNOME=	gnomeprefix gnomehack intlhack lthack gnomehier \
 		libgnomeprintui libgnomeui eel2 gtksourceview
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@ahze.net
 COMMENT=	A library to access data on a CDDB server
 
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 USE_GNOME=	gnometarget lthack gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
 

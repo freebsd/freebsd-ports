@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for playing audio CDs
 
 USE_GNOME=	gnomehack gnometarget lthack
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

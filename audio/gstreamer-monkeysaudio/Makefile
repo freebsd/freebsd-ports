@@ -19,7 +19,7 @@ COMMENT=	GStreamer plugin for monkeysaudio files
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_GNOME=	lthack gnomehack gnomeprefix gstreamerplugins
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

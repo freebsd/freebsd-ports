@@ -23,7 +23,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_ICONV=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-sse --enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \

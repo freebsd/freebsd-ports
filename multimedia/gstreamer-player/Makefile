@@ -25,7 +25,7 @@ USE_GNOME=	gnomehack \
 		gnomeprefix \
 		gnomedesktop \
 		gstreamerplugins
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 GNOME_DESKTOP_VERSION=2
 WANT_GNOME=	yes
 PLIST_SUB=	\

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
 USE_GPG=	yes
-USE_LIBTOOL_VER=	15
+USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

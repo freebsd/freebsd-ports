@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_GNOME=	gnomehack libxml2 gtk20
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

@@ -18,7 +18,7 @@ COMMENT=	A GNOME accessibility toolkit (ATK)
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_GNOME=	gnomehack lthack glib20
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \

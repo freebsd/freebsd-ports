@@ -61,7 +61,7 @@ OPTIONS+=	BROKEN_MTA "Enable if MTA pases ^M to dspam" off
 OPTIONS+=	CGI "Install CGI (pulls in apache)" off
 
 USE_GNOME=	pkgconfig
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

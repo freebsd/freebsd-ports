@@ -24,7 +24,7 @@ LATEST_LINK=	glib20
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack lthack gnometarget pkgconfig

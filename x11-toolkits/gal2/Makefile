@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libgnomeui libgnomeprintui
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal2
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--enable-static --with-libiconv
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

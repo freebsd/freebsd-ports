@@ -22,7 +22,7 @@ USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libbonobo libartlgpl2 \
 		gtk20 lthack
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -19,7 +19,7 @@ USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnometarget glib20 lthack
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 			LIBS="-L${LOCALBASE}/lib"

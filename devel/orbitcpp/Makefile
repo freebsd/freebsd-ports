@@ -17,7 +17,7 @@ COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomehack lthack orbit2
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 
 post-patch:

@@ -20,7 +20,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm \
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_SDL=	sdl
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \

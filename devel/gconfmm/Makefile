@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack lthack gconf2
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
