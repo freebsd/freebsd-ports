@@ -5,9 +5,9 @@
  
  DEFS = @DEFS@ @TCL_DEFS@
 -CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et @CPPFLAGS@ @TCL_CPPFLAGS@
--LIBS =  @TCL_LIBS@ @LIBS@
-+CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et @CPPFLAGS@ -I$(prefix)/include/tcl8.2
-+LIBS =  -L$(prefix)/lib -ltcl82 -lm @LIBS@
+-LIBS =  @TCL_LIBS@ @IMAP_LIBS@
++CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../et @CPPFLAGS@ @TCL_CPPFLAGS@ @SASLFLAGS@
++LIBS =  @TCL_LIBS@ -lm @IMAP_LIBS@
  DEPLIBS = ../lib/libcyrus.a @DEPLIBS@ 
  
  CFLAGS = @CFLAGS@

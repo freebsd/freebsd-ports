@@ -6,6 +6,7 @@
  MAN8 = $(srcdir)/arbitron.8 $(srcdir)/collectnews.8 $(srcdir)/deliver.8 \
 -	$(srcdir)/fud.8 $(srcdir)/imapd.8 $(srcdir)/pop3d.8 $(srcdir)/quota.8 \
 +	$(srcdir)/fud.8 $(srcdir)/imapd.8 $(srcdir)/pop3d.8 $(srcdir)/cyrquota.8 \
- 	$(srcdir)/reconstruct.8 $(srcdir)/rmnews.8 $(srcdir)/syncnews.8 
+ 	$(srcdir)/reconstruct.8 $(srcdir)/rmnews.8 $(srcdir)/syncnews.8 \
+	$(srcdir)/mbpath.8 $(srcdir)/timsieved.8
  
  

@@ -1,0 +1,11 @@
+--- timsieved/Makefile.in.orig	Sun Apr  9 01:52:10 2000
++++ timsieved/Makefile.in	Sun Apr  9 01:52:37 2000
+@@ -34,7 +34,7 @@
+ CYRUS_GROUP=@cyrus_group@
+ 
+ DEFS = @DEFS@ @LOCALDEFS@
+-CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../sieve -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @CPPFLAGS@
++CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../sieve -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
+ CFLAGS = @CFLAGS@
+ LDFLAGS = @LDFLAGS@
+ 

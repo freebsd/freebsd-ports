@@ -1,0 +1,11 @@
+--- installsieve/Makefile.in.orig	Sun Apr  9 01:58:03 2000
++++ installsieve/Makefile.in	Sun Apr  9 01:58:35 2000
+@@ -28,7 +28,7 @@
+ CC = @CC@
+ 
+ DEFS = @DEFS@
+-CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib @CPPFLAGS@
++CPPFLAGS = -I. -I$(srcdir) -I$(srcdir)/../lib @CPPFLAGS@ @SASLFLAGS@
+ CFLAGS = @CFLAGS@
+ LDFLAGS = @LDFLAGS@
+ 
