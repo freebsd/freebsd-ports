@@ -714,6 +714,7 @@ british-ispell	ports/textproc/british-ispell
 bro		ports/security/bro
 brs		ports/misc/brs
 bsd-airtools	ports/net/bsd-airtools
+bsdbktr_tvtune	ports/multimedia/bsdbktr_tvtune
 bsdftpd-ssl	ports/ftp/bsdftpd-ssl
 bsdiff		ports/misc/bsdiff
 bsdproxy	ports/net/bsdproxy
