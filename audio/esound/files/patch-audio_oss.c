@@ -11,7 +11,7 @@
 +#endif
  
  /* FreeBSD uses a different identifier? what other BSDs? */
--#ifdef __FreeBSD__
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
 +#ifndef SNDCTL_DSP_SETDUPLEX
  #define SNDCTL_DSP_SETDUPLEX DSP_CAP_DUPLEX
  #endif
