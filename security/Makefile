@@ -30,6 +30,7 @@
     SUBDIR += keyprint
     SUBDIR += kmap
     SUBDIR += krb5
+    SUBDIR += kssh
     SUBDIR += l0pht-watch
     SUBDIR += libident
     SUBDIR += libmcrypt
