@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.18 1995/05/01 11:55:37 ache Exp $
+# $Id: Makefile,v 1.19 1995/07/01 07:58:11 asami Exp $
 #
 
 SUBDIR += archivers
 SUBDIR += audio
+SUBDIR += benchmarks
 SUBDIR += cad
 SUBDIR += comms
 SUBDIR += databases
@@ -20,6 +21,8 @@ SUBDIR += news
 SUBDIR += print
 SUBDIR += russian
 SUBDIR += shells
+SUBDIR += security
+SUBDIR += sysutils
 SUBDIR += utils
 SUBDIR += x11
 
