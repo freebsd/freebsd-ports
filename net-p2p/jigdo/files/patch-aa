@@ -1,0 +1,18 @@
+--- src.orig/mktemplate.cc
++++ src/mktemplate.cc
+@@ -1,4 +1,4 @@
+-/* $Id: mktemplate.cc,v 1.92 2003/04/27 15:57:21 richard Exp $ -*- C++ -*-
++/* $Id: mktemplate.cc,v 1.93 2003/05/06 19:12:14 richard Exp $ -*- C++ -*-
+   __   _
+   |_) /|  Copyright (C) 2001-2002 Richard Atterer
+   | \/¯|  <richard at atterer.net>
+@@ -643,7 +643,7 @@
+     Paranoid(*data + len <= bufferLength);
+     rsum->addBack(buf + *data, len);
+     *data += len; off += len; *n -= len;
+-    *rsumBack = modAdd(*rsumBack, len, bufferLength);
++    *rsumBack = modAdd(*rsumBack, implicit_cast<size_t>(len), bufferLength);
+     Paranoid(off == nextEvent || off == nextAlignedOff);
+ #   if DEBUG
+     for (unsigned i = 0; i < len; ++i) {
+
