@@ -43,6 +43,19 @@ MASTER_SITE_XFREE+= \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,} \
 	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
 
+MASTER_SITE_NETBSD+=	\
+	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.planix.com/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://sunsite.cnlab-switch.ch/mirror/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.sunsite.org.uk/Mirrors/ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.jaist.ac.jp/.arc07/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.tokyonet.ad.jp/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.sra.co.jp/pub/os/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.nectec.or.th/pub/bsd-distributions/NetBSD/packages/distfiles/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
