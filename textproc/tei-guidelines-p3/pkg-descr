@@ -1,0 +1,11 @@
+The DTD of the Text Encoding Initiative allows encoding of a wide range
+of document types in the domain of humanities. If focuses on, but is not 
+restricted to, the needs of the scholarly research and education community.
+
+This port contains the TEI P3 Guidelines for Electronic Text Encoding
+and Interchange.
+
+WWW: http://www.tei-c.org/
+
+-- Henrik Motakef
+   <henrik.motakef@web.de>
