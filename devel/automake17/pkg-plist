@@ -9,11 +9,14 @@ share/aclocal/cond.m4
 share/aclocal/cygwin.m4
 share/aclocal/dmalloc.m4
 share/aclocal/error.m4
+share/aclocal/exeext.m4
 share/aclocal/header.m4
 share/aclocal/init.m4
 share/aclocal/install.m4
+share/aclocal/lex.m4
 share/aclocal/lispdir.m4
 share/aclocal/maintainer.m4
+share/aclocal/mingw.m4
 share/aclocal/missing.m4
 share/aclocal/mktime.m4
 share/aclocal/obstack.m4
@@ -47,6 +50,8 @@ share/automake/footer.am
 share/automake/header-vars.am
 share/automake/header.am
 share/automake/install-sh
+share/automake/java-clean.am
+share/automake/java.am
 share/automake/kr-extra.am
 share/automake/library.am
 share/automake/libs-clean.am
@@ -58,6 +63,7 @@ share/automake/ltlib-clean.am
 share/automake/ltlib.am
 share/automake/ltlibrary.am
 share/automake/mans-vars.am
+share/automake/mans.am
 share/automake/mdate-sh
 share/automake/missing
 share/automake/mkinstalldirs
@@ -74,5 +80,4 @@ share/automake/texi-vers.am
 share/automake/texinfo.tex
 share/automake/texinfos.am
 share/automake/ylwrap
-@dirrm share/aclocal
 @dirrm share/automake

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Jun 23 11:25:50 1997
-+++ Makefile.in	Fri Sep 19 18:19:19 1997
-@@ -196,7 +196,7 @@
+--- Makefile.in.orig	Mon May  4 10:42:08 1998
++++ Makefile.in	Mon May  4 10:42:34 1998
+@@ -204,7 +204,7 @@
  .texi.info:
  	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
  	cd $(srcdir) \
