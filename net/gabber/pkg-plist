@@ -58,6 +58,10 @@ share/gnome/gabber/glade-sendasnormal.xpm
 share/gnome/gabber/glade-sendasooo.xpm
 share/gnome/gabber/glade-unlock-key.xpm
 share/gnome/gabber/glade-users.xpm
+share/gnome/gabber/gnome-globe.png
+share/gnome/gabber/gnome-info.png
+share/gnome/gabber/gnome-locksreen.png
+share/gnome/gabber/gnome-modem.png
 share/gnome/gabber/gpg-badsigned.xpm
 share/gnome/gabber/gpg-encrypted.xpm
 share/gnome/gabber/gpg-signed.xpm
@@ -137,16 +141,17 @@ share/gnome/pixmaps/gabber/offline.xpm
 share/gnome/pixmaps/gabber/online.xpm
 share/gnome/pixmaps/gabber/stalker.xpm
 share/gnome/pixmaps/gabber/xa.xpm   
-share/gnome/sounds/Gabber/gabber_connected.wav
-share/gnome/sounds/Gabber/gabber_encrypted.wav
-share/gnome/sounds/Gabber/gabber_message_queue.wav
-share/gnome/sounds/Gabber/gabber_message_recv.wav
-share/gnome/sounds/Gabber/gabber_offline.wav
-share/gnome/sounds/Gabber/gabber_online.wav
-share/gnome/sounds/Gabber/gabber_ooochat_queue.wav
-share/gnome/sounds/Gabber/gabber_ooochat_recv.wav
-share/gnome/sounds/Gabber/gabber_startup.wav
-share/gnome/sounds/Gabber/gabber_subrequest.wav
+share/gnome/sounds/gabber/gabber_connected.wav
+share/gnome/sounds/gabber/gabber_encrypted.wav
+share/gnome/sounds/gabber/gabber_message_queue.wav
+share/gnome/sounds/gabber/gabber_message_recv.wav
+share/gnome/sounds/gabber/gabber_offline.wav
+share/gnome/sounds/gabber/gabber_online.wav
+share/gnome/sounds/gabber/gabber_ooochat_queue.wav
+share/gnome/sounds/gabber/gabber_ooochat_recv.wav
+share/gnome/sounds/gabber/gabber_startup.wav
+share/gnome/sounds/gabber/gabber_subrequest.wav
+share/locale/az/LC_MESSAGES/gabber.mo
 share/locale/da/LC_MESSAGES/gabber.mo
 share/locale/de/LC_MESSAGES/gabber.mo
 share/locale/es/LC_MESSAGES/gabber.mo
@@ -157,9 +162,10 @@ share/locale/no/LC_MESSAGES/gabber.mo
 share/locale/ru/LC_MESSAGES/gabber.mo
 share/locale/sv/LC_MESSAGES/gabber.mo
 share/locale/tr/LC_MESSAGES/gabber.mo
+share/locale/uk/LC_MESSAGES/gabber.mo
 @unexec rmdir %D/etc/sound/events 2>/dev/null || true
 @unexec rmdir %D/etc/sound 2>/dev/null || true
-@dirrm share/gnome/sounds/Gabber
+@dirrm share/gnome/sounds/gabber
 @dirrm share/gnome/pixmaps/gabber
 @dirrm share/gnome/omf/gabber
 @dirrm share/gnome/help/gabber/C/stylesheet-images
