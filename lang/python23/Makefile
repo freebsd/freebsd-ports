@@ -108,7 +108,7 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 .elif ${OSVERSION} >= 500000
 PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd6
 .elif ${OSVERSION} >= 400000
-PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
+PLATFORMS=plat-freebsd3 plat-freebsd5 plat-freebsd6
 .else
 PLATFORMS=plat-freebsd4 plat-freebsd5 plat-freebsd6
 .endif
