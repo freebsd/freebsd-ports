@@ -28,6 +28,11 @@ MAKE_ENV=	CXX="${CXX}" \
 
 ALL_TARGET=	freebsd
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/src/osgPlugins/flt/Input.cpp \
+		${WRKSRC}/src/osgPlugins/flt/Record.cpp
+
 post-patch:
 .for suf in defs rules
 	@${LN} -sf ${WRKSRC}/Make/make${suf}.linux \

@@ -33,6 +33,10 @@ CONFIGURE_ENV+=	LIBS="-L${X11BASE}/lib -lxpg4"
 
 MAN1=		scwm.1 scwmexec.1 scwmrepl.1
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/utilities/libscwmexec/libmain.c
+
 post-install:
 	${RM} -rf ${PREFIX}/share/scwm/ViaVoice
 
