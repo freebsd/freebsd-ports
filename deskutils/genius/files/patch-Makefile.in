@@ -1,0 +1,14 @@
+--- Makefile.in.bak	Tue Jun 15 02:58:05 2004
++++ Makefile.in	Wed Jun 16 11:45:48 2004
+@@ -450,10 +450,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-appregDATA install-mimeinfoDATA \
+-		install-packagesDATA
+-	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++install-data-am: install-appregDATA install-mimeinfoDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am

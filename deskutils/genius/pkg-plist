@@ -16,6 +16,7 @@ include/genius/structs.h
 include/genius/utype.h
 lib/genius/libtestplugin.so
 libexec/genius-readline-helper-fifo
+share/gnome/application-registry/genius.applications
 share/gnome/applications/gnome-genius.desktop
 share/gnome/genius/gel/calculus/differentiation.gel
 share/gnome/genius/gel/calculus/integration.gel
@@ -28,6 +29,7 @@ share/gnome/genius/gel/combinatorics/misc.gel
 share/gnome/genius/gel/combinatorics/recursive_sequences.gel
 share/gnome/genius/gel/equation_solving/find_root.gel
 share/gnome/genius/gel/equation_solving/loader.gel
+share/gnome/genius/gel/functions/complex_numbers.gel
 share/gnome/genius/gel/functions/delta.gel
 share/gnome/genius/gel/functions/elementary.gel
 share/gnome/genius/gel/functions/kernels.gel
@@ -57,11 +59,15 @@ share/gnome/genius/gel/statistics/loader.gel
 share/gnome/genius/gtksourceview/genius.lang
 share/gnome/genius/manual.txt
 share/gnome/genius/plugins/test.plugin
+share/gnome/mime-info/genius.keys
+share/gnome/mime-info/genius.mime
 share/locale/az/LC_MESSAGES/genius.mo
 share/locale/ca/LC_MESSAGES/genius.mo
 share/locale/cs/LC_MESSAGES/genius.mo
 share/locale/de/LC_MESSAGES/genius.mo
 share/locale/el/LC_MESSAGES/genius.mo
+share/locale/en_CA/LC_MESSAGES/genius.mo
+share/locale/en_GB/LC_MESSAGES/genius.mo
 share/locale/es/LC_MESSAGES/genius.mo
 share/locale/fr/LC_MESSAGES/genius.mo
 share/locale/ga/LC_MESSAGES/genius.mo
@@ -73,6 +79,7 @@ share/locale/nl/LC_MESSAGES/genius.mo
 share/locale/no/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
+share/locale/pt_BR/LC_MESSAGES/genius.mo
 share/locale/sr/LC_MESSAGES/genius.mo
 share/locale/sr@Latn/LC_MESSAGES/genius.mo
 share/locale/sv/LC_MESSAGES/genius.mo
