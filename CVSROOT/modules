@@ -2201,6 +2201,7 @@ gsl		ports/math/gsl
 gsm		ports/audio/gsm
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
+gstreamer	ports/graphics/gstreamer
 gsubedit	ports/graphics/gsubedit
 gswitchit_applet ports/x11/gswitchit_applet
 gtar		ports/archivers/gtar
