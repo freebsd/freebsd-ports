@@ -32,6 +32,9 @@ jstring		"jstring module" OFF \
 YP		"YP/NIS support" OFF \
 BCMath		"BCMath support" OFF \
 ming		"ming library support" OFF \
+sockets		"sockets support" OFF \
+sysvsem		"System V semaphore support" OFF \
+sysvshm		"System V shared memory support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -201,6 +204,15 @@ post-extract-ming:
 	 ./buildconf)
 
 EOF
+			;;
+		\"sockets\")
+			echo "CONFIGURE_ARGS+=--enable-sockets"
+			;;
+		\"sysvsem\")
+			echo "CONFIGURE_ARGS+=--enable-sysvsem"
+			;;
+		\"sysvshm\")
+			echo "CONFIGURE_ARGS+=--enable-sysvshm"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
