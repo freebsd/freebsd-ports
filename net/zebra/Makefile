@@ -3,7 +3,7 @@
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1998/06/04 17:03:12 itojun Exp $
+# $Id: Makefile,v 1.6 1998/06/06 22:32:42 asami Exp $
 #
 
 DISTNAME=	zebra-980604
@@ -11,8 +11,6 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 MAINTAINER=	andreas@FreeBSD.org
-
-BROKEN=		package
 
 # you might need debugging, it's a developer release !
 #CFLAGS+=	-g

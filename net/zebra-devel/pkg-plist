@@ -1,10 +1,8 @@
 sbin/bgpd
 sbin/ripd
-sbin/ripngd
 sbin/zebra
 etc/zebra/bgpd.conf.sample
 etc/zebra/ripd.conf.sample
-etc/zebra/ripngd.conf.sample
 etc/zebra/zebra.conf.sample
 info/zebra.info
 @unexec rmdir %D/etc/zebra 2>/dev/null
