@@ -1,0 +1,116 @@
+*** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
+--- ./XPerfmon++.ad	Sun Oct 25 11:49:15 1998
+***************
+*** 1,27 ****
+  ! the following specification would set all highAlarm values to 99998.
+  ! this will turn on a green color background for all graphs, even if no other
+! ! resources are set for that graph. Note that if this specification is 
+  ! commented out, the "NFS Server" graph background will be the application
+  ! default color, unless some other resource file has specified it.
+  ! *PerfChart.highAlarm:		99998
+! *perfChartIdle.lowWarn:		10
+! *perfChartIdle.lowAlarm:	5
+! *perfChartUser.highAlarm:	90
+! *perfChartUser.highWarn:	75
+! *perfChartSystem.highAlarm:	90
+! *perfChartSystem.highWarn:	75
+! *perfChartFree.lowWarn:		2000
+! *perfChartFree.lowAlarm:	1000
+! *perfChartDisk.highWarn:	25
+! *perfChartDisk.highAlarm:	50
+! *perfChartIntrpts.highWarn:	500
+! *perfChartIntrpts.highAlarm:	750
+! *perfChartInput.highWarn:	300
+! *perfChartInput.highAlarm:	500
+! *perfChartOutput.highWarn:	300
+! *perfChartOutput.highAlarm:	500
+! *perfChartCollision.highWarn:	20
+! *perfChartCollision.highAlarm:	50
+! *perfChartNFSClient.highWarn:	200
+! *perfChartNFSClient.highAlarm:	400
+  *font:				6x13
+--- 1,84 ----
+  ! the following specification would set all highAlarm values to 99998.
+  ! this will turn on a green color background for all graphs, even if no other
+! ! resources are set for that graph. Note that if this specification is
+  ! commented out, the "NFS Server" graph background will be the application
+  ! default color, unless some other resource file has specified it.
+  ! *PerfChart.highAlarm:		99998
+! 
+  *font:				6x13
++ 
++ ! Remember Load*100 is shown in the graph!
++ *perfChartLoad.highAlarm:	800
++ *perfChartLoad.highWarn:	400
++ 
++ *perfChartUser.highAlarm:	95
++ *perfChartUser.highWarn:	75
++ 
++ *perfChartNice.highAlarm:	75
++ *perfChartNice.highWarn:	55
++ 
++ *perfChartSystem.highAlarm:	40
++ *perfChartSystem.highWarn:	25
++ 
++ *perfChartInter.highAlarm:	40
++ *perfChartInter.highWarn:	25
++ 
++ *perfChartIdle.lowWarn:			  10
++ *perfChartIdle.lowAlarm:		   5
++ 
++ *perfChartTtyin.highWarn:		2000
++ *perfChartTtyin.highAlarm:	        5000
++ 
++ *perfChartTtyout.highWarn:	       20000
++ *perfChartTtyout.highAlarm:	       30000
++ 
++ *perfChartIntrpts.highWarn:		 400
++ *perfChartIntrpts.highAlarm:		 600
++ 
++ *perfChartSwap.lowWarn:			  20
++ *perfChartSwap.lowAlarm:		  10
++ 
++ *perfChartDiskXfr.highWarn:		 500
++ *perfChartDiskXfr.highAlarm:		1000
++ 
++ *perfChartDiskMB.highWarn:		  10
++ *perfChartDiskMB.highAlarm:		  20
++ 
++ *perfChartTapeXfr.highWarn:		 500
++ *perfChartTapeXfr.highAlarm:		1000
++ 
++ *perfChartTapeMB.highWarn:		  10
++ *perfChartTapeMB.highAlarm:		  20
++ 
++ *perfChartCDRomXfr.highWarn:		 500
++ *perfChartCDRomXfr.highAlarm:		1000
++ 
++ *perfChartCDRomMB.highWarn:		  10
++ *perfChartCDRomMB.highAlarm:		  20
++ 
++ *perfChartInput.highWarn:		2000
++ *perfChartInput.highAlarm:		5000
++ 
++ *perfChartOutput.highWarn:		2000
++ *perfChartOutput.highAlarm:		5000
++ 
++ *perfChartCollision.highWarn:		  50
++ *perfChartCollision.highAlarm:		 100
++ 
++ *perfChartNFSServerCalls.highWarn:	 500
++ *perfChartNFSServerCalls.highAlarm:	1000
++ 
++ *perfChartNFSServerHits.lowWarn:	  -1
++ *perfChartNFSServerHits.lowAlarm:	  -1
++ 
++ *perfChartNFSServerMisses.highWarn:	 400
++ *perfChartNFSServerMisses.highAlarm:	 600
++ 
++ *perfChartNFSClientCalls.highWarn:	 500
++ *perfChartNFSClientCalls.highAlarm:	1000
++ 
++ *perfChartNFSClientHits.lowWarn:	  -1
++ *perfChartNFSClientHits.lowAlarm:	  -1
++ 
++ *perfChartNFSClientMisses.highWarn:	 400
++ *perfChartNFSClientMisses.highAlarm:	 600

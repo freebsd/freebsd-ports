@@ -1,50 +1,142 @@
 *** ../xperfmon++/StripChart.c	Wed Jul 27 22:29:30 1994
---- ./StripChart.c	Thu Apr 30 15:03:27 1998
+--- ./StripChart.c	Sun Jan 10 21:14:40 1999
 ***************
-*** 53,58 ****
---- 53,70 ----
+*** 1,4 ****
+! /* $XConsortium: StripChart.c,v 1.20 91/05/24 17:20:42 converse Exp $ */
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+--- 1,9 ----
+! /*
+!  * Enhancement and error correction for FreeBSD-3.X
+!  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
+!  *
+!  *      $Id: StripChart.c,v 3.8 1999/01/10 20:14:30 lkoeller Exp lkoeller $
+!  */
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+***************
+*** 6,18 ****
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its 
+! documentation for any purpose and without fee is hereby granted, 
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in 
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.  
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+--- 11,23 ----
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its
+! documentation for any purpose and without fee is hereby granted,
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+***************
+*** 28,34 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 33,39 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 39,45 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 44,50 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 48,58 ****
+--- 53,71 ----
+  
+  ******************************************************************/
+  
++ #ifndef LINT
++ static char rcsid[] = "$Id: StripChart.c,v 3.8 1999/01/10 20:14:30 lkoeller Exp lkoeller $";
++ #endif
++ 
++ #include "fbsd_vers.h"
++ 
+  #include <stdio.h>
+  #include <X11/IntrinsicP.h>
   #include <X11/StringDefs.h>
   #include <X11/Xaw/XawInit.h>
   #include "StripCharP.h"
 + 
-+ #ifdef HAVE_SYS_PARAM_H
-+ #include <sys/param.h>
-+ #endif
-+ 
-+ #if (defined(BSD) && (BSD >= 199506))
-+ # include <osreldate.h>
-+ #else
-+ # error You have to use at least a FreeBSD 2.2.X system
-+ #endif
-+ 
-+ # include "system.h"
++ #include "system.h"
   #include <X11/Xfuncs.h>
   
   #define MS_PER_SEC 100
 ***************
-*** 108,114 ****
-  };
+*** 109,114 ****
+--- 122,128 ----
   
   #undef offset
-! #define LABEL_ROOM 100
-  static void Initialize(), Destroy(), Redisplay(), MoveChart(), SetPoints();
-  static Boolean SetValues();
-  static int repaint_window();
---- 120,130 ----
-  };
-  
-  #undef offset
-! #if (defined(BSD) && (BSD >= 199306))
-! # define LABEL_ROOM 80
-! #else
-! # define LABEL_ROOM 100
-! #endif
+  #define LABEL_ROOM 100
++ 
   static void Initialize(), Destroy(), Redisplay(), MoveChart(), SetPoints();
   static Boolean SetValues();
   static int repaint_window();
 ***************
+*** 204,213 ****
+  PerfChartWidget w;
+  unsigned int which;
+  {
+!   if (which & FOREGROUND) 
+      XtReleaseGC((Widget) w, w->strip_chart.fgGC);
+  
+!   if (which & HIGHLIGHT) 
+      XtReleaseGC((Widget) w, w->strip_chart.hiGC);
+  }
+  
+--- 218,227 ----
+  PerfChartWidget w;
+  unsigned int which;
+  {
+!   if (which & FOREGROUND)
+      XtReleaseGC((Widget) w, w->strip_chart.fgGC);
+  
+!   if (which & HIGHLIGHT)
+      XtReleaseGC((Widget) w, w->strip_chart.hiGC);
+  }
+  
+***************
 *** 215,222 ****
---- 231,253 ----
+--- 229,251 ----
   static void Initialize (greq, gnew)
       Widget greq, gnew;
   {
@@ -69,7 +161,121 @@
   
       if ( mono_screen ) {
 ***************
-*** 343,361 ****
+*** 247,257 ****
+      w->strip_chart.currentBG = w->core.background_pixel;
+      w->strip_chart.interval = LABEL_ROOM;
+      w->strip_chart.max_value = 0.0;
+!     w->strip_chart.min_value = 99999.99;
+      w->strip_chart.points = NULL;
+      SetPoints(w);
+  }
+!  
+  static void Destroy (gw)
+       Widget gw;
+  {
+--- 276,286 ----
+      w->strip_chart.currentBG = w->core.background_pixel;
+      w->strip_chart.interval = LABEL_ROOM;
+      w->strip_chart.max_value = 0.0;
+!     w->strip_chart.min_value = 99999;
+      w->strip_chart.points = NULL;
+      SetPoints(w);
+  }
+! 
+  static void Destroy (gw)
+       Widget gw;
+  {
+***************
+*** 265,271 ****
+  }
+  
+  /*
+!  * NOTE: This function really needs to recieve graphics exposure 
+   *       events, but since this is not easily supported until R4 I am
+   *       going to hold off until then.
+   */
+--- 294,300 ----
+  }
+  
+  /*
+!  * NOTE: This function really needs to recieve graphics exposure
+   *       events, but since this is not easily supported until R4 I am
+   *       going to hold off until then.
+   */
+***************
+*** 295,301 ****
+     double value, checkValue;
+     Display *dpy = XtDisplay(w);
+     Window win = XtWindow(w);
+!    
+  /*   if (w->strip_chart.update > 0)
+         w->strip_chart.interval_id =
+         XtAppAddTimeOut(XtWidgetToApplicationContext( (Widget) w),
+--- 324,330 ----
+     double value, checkValue;
+     Display *dpy = XtDisplay(w);
+     Window win = XtWindow(w);
+! 
+  /*   if (w->strip_chart.update > 0)
+         w->strip_chart.interval_id =
+         XtAppAddTimeOut(XtWidgetToApplicationContext( (Widget) w),
+***************
+*** 311,321 ****
+  
+     XtCallCallbacks( (Widget)w, XtNgetValue, (XtPointer)&value );
+  
+!    /* 
+!     * Keep w->strip_chart.max_value up to date, and if this data 
+!     * point is off the graph, change the scale to make it fit. 
+      */
+!    
+     if (value > w->strip_chart.max_value) {
+         w->strip_chart.max_value = value;
+         if (w->strip_chart.max_value > w->strip_chart.scale) {
+--- 340,350 ----
+  
+     XtCallCallbacks( (Widget)w, XtNgetValue, (XtPointer)&value );
+  
+!    /*
+!     * Keep w->strip_chart.max_value up to date, and if this data
+!     * point is off the graph, change the scale to make it fit.
+      */
+! 
+     if (value > w->strip_chart.max_value) {
+         w->strip_chart.max_value = value;
+         if (w->strip_chart.max_value > w->strip_chart.scale) {
+***************
+*** 323,330 ****
+  	   w->strip_chart.interval = repaint_window(w, 0, (int) w->core.width);
+         }
+     }
+!    if (value < w->strip_chart.min_value) 
+!        w->strip_chart.min_value = value;
+  
+     w->strip_chart.valuedata[w->strip_chart.interval] = value;
+     if (XtIsRealized((Widget)w)) {
+--- 352,359 ----
+  	   w->strip_chart.interval = repaint_window(w, 0, (int) w->core.width);
+         }
+     }
+!    if (value < w->strip_chart.min_value)
+!      w->strip_chart.min_value = value;
+  
+     w->strip_chart.valuedata[w->strip_chart.interval] = value;
+     if (XtIsRealized((Widget)w)) {
+***************
+*** 332,391 ****
+  		       (int)(w->core.height * value) / w->strip_chart.scale);
+  
+  /* Check for high warnings and alarms */
+!    
+         if ( w->strip_chart.highWarn != 99999 ||
+  	   w->strip_chart.highAlarm != 99999 ) {
+  
+  	   if ( w->strip_chart.immediate )
+! 	       checkValue = value;
+  	   else
+! 	       checkValue = w->strip_chart.max_value;
   
   	   if ( checkValue >= w->strip_chart.highAlarm ) { /* check for high alarm */
   	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
@@ -89,7 +295,48 @@
   		   w->strip_chart.currentBG = w->strip_chart.okColor;
   	       }
   	   }
---- 374,392 ----
+         }
+! 	   
+  /* Check for low warnings and alarms */
+!    
+         else if ( w->strip_chart.lowWarn != 0 ||
+  	   w->strip_chart.lowAlarm != 0 ) {
+  
+  	   if ( w->strip_chart.immediate )
+! 	       checkValue = value;
+  	   else
+! 	       checkValue = w->strip_chart.min_value;
+  
+  	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
+  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
+! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.alarmColor, NULL );
+  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
+  	       }
+  	   }
+  	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
+  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
+! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.warnColor, NULL );
+  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
+  	       }
+  	   }
+  	   else {
+  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
+! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.okColor, NULL );
+  		   w->strip_chart.currentBG = w->strip_chart.okColor;
+  	       }
+  	   }
+--- 361,420 ----
+  		       (int)(w->core.height * value) / w->strip_chart.scale);
+  
+  /* Check for high warnings and alarms */
+! 
+         if ( w->strip_chart.highWarn != 99999 ||
+  	   w->strip_chart.highAlarm != 99999 ) {
+  
+  	   if ( w->strip_chart.immediate )
+! 	       checkValue = value / SCALE_HACK;
+  	   else
+! 	       checkValue = w->strip_chart.max_value / SCALE_HACK;
   
   	   if ( checkValue >= w->strip_chart.highAlarm ) { /* check for high alarm */
   	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
@@ -98,6 +345,36 @@
   	       }
   	   }
   	   else if ( checkValue >= w->strip_chart.highWarn ) { /* check for high warning */
+  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
+! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
+  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
+  	       }
+  	   }
+  	   else {
+  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
+! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.okColor, NULL );
+  		   w->strip_chart.currentBG = w->strip_chart.okColor;
+  	       }
+  	   }
+         }
+! 
+  /* Check for low warnings and alarms */
+! 
+         else if ( w->strip_chart.lowWarn != 0 ||
+  	   w->strip_chart.lowAlarm != 0 ) {
+  
+  	   if ( w->strip_chart.immediate )
+! 	       checkValue = value / SCALE_HACK;
+  	   else
+! 	       checkValue = w->strip_chart.min_value / SCALE_HACK;
+  
+  	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
+  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
+! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.alarmColor, NULL );
+  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
+  	       }
+  	   }
+  	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
   	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
 ! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
   		   w->strip_chart.currentBG = w->strip_chart.warnColor;
@@ -110,46 +387,67 @@
   	       }
   	   }
 ***************
-*** 373,391 ****
+*** 393,413 ****
   
-  	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.alarmColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
-  	       }
-  	   }
-  	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.warnColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
-  	       }
-  	   }
-  	   else {
-  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
-! 		   XtVaSetValues(w, XtNbackground, w->strip_chart.okColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.okColor;
-  	       }
-  	   }
---- 404,422 ----
+         if ( !w->strip_chart.fillRect ) {			  /* draw line graph */
+  	   int y = (int) (w->core.height -
+! 			  (int)(w->core.height * 
+! 				w->strip_chart.valuedata[w->strip_chart.interval-1] ) / 
+  			  w->strip_chart.scale);
+  	   XDrawLine(dpy, win, w->strip_chart.fgGC,
+! 		     w->strip_chart.interval-1, y, 
+  		     w->strip_chart.interval, y1);
+         }
+         else							  /* draw filled graph */
+  	   XFillRectangle(dpy, win, w->strip_chart.fgGC,
+! 			  w->strip_chart.interval, y1, 
+  			  (unsigned int) 1, w->core.height - y1);
   
-  	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.alarmColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
-  	       }
-  	   }
-  	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
-  	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.warnColor;
-  	       }
-  	   }
-  	   else {
-  	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
-! 		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.okColor, NULL );
-  		   w->strip_chart.currentBG = w->strip_chart.okColor;
-  	       }
-  	   }
+         /*
+  	* Fill in the graph lines we just painted over.
+! 	
+  
+  	if (w->strip_chart.points != NULL) {
+  	w->strip_chart.points[0].x = w->strip_chart.interval;
+--- 422,442 ----
+  
+         if ( !w->strip_chart.fillRect ) {			  /* draw line graph */
+  	   int y = (int) (w->core.height -
+! 			  (int)(w->core.height *
+! 				w->strip_chart.valuedata[w->strip_chart.interval-1] ) /
+  			  w->strip_chart.scale);
+  	   XDrawLine(dpy, win, w->strip_chart.fgGC,
+! 		     w->strip_chart.interval-1, y,
+  		     w->strip_chart.interval, y1);
+         }
+         else							  /* draw filled graph */
+  	   XFillRectangle(dpy, win, w->strip_chart.fgGC,
+! 			  w->strip_chart.interval, y1,
+  			  (unsigned int) 1, w->core.height - y1);
+  
+         /*
+  	* Fill in the graph lines we just painted over.
+! 
+  
+  	if (w->strip_chart.points != NULL) {
+  	w->strip_chart.points[0].x = w->strip_chart.interval;
+***************
+*** 434,440 ****
+  #define XDS(s) XDrawString(XtDisplay(w), XtWindow(w), \
+  			   w->strip_chart.hiGC, x, y, s, strlen(s))
+  
+! static int 
+  repaint_window(w, left, width)
+  PerfChartWidget w;
+  int left, width;
+--- 463,469 ----
+  #define XDS(s) XDrawString(XtDisplay(w), XtWindow(w), \
+  			   w->strip_chart.hiGC, x, y, s, strlen(s))
+  
+! static int
+  repaint_window(w, left, width)
+  PerfChartWidget w;
+  int left, width;
 ***************
 *** 448,455 ****
   
@@ -160,24 +458,36 @@
       if (scale < w->strip_chart.min_scale)
         scale = w->strip_chart.min_scale;
   
---- 479,493 ----
+--- 477,486 ----
   
       /* Compute the minimum scale required to graph the data, but don't go
          lower than min_scale. */
 ! 
 !     if (w->strip_chart.interval != 0 || scale <= (int)w->strip_chart.max_value) {
-! #if (defined(BSD) && (BSD >= 199306))
-!       if (strcmp(w->strip_chart.botLabel, botNames[FREE_MEM]) != 0 || w->strip_chart.max_value == 100)
-  	scale = ((int) (w->strip_chart.max_value)) + 1;
-+ #else
-+       scale = ((int) (w->strip_chart.max_value)) + 1;
-+ #endif
+        scale = ((int) (w->strip_chart.max_value)) + 1;
 +     }
       if (scale < w->strip_chart.min_scale)
         scale = w->strip_chart.min_scale;
   
 ***************
-*** 479,490 ****
+*** 461,467 ****
+  
+        SetPoints(w);
+  
+!       if (XtIsRealized ((Widget) w)) 
+  	XClearWindow (XtDisplay (w), XtWindow (w));
+  
+      }
+--- 492,498 ----
+  
+        SetPoints(w);
+  
+!       if (XtIsRealized ((Widget) w))
+  	XClearWindow (XtDisplay (w), XtWindow (w));
+  
+      }
+***************
+*** 479,502 ****
   /* draw titles */
   
   	if ( w->strip_chart.topLabel ) {
@@ -190,7 +500,19 @@
   	    x = 4;
   	    XDS(w->strip_chart.botLabel);
   	}
---- 517,528 ----
+  
+  /* draw scale labels */
+! 
+  	(void) sprintf(numstring, "%d ", 0);
+  	x = LABEL_ROOM - XTW(numstring);
+  	y = w->core.height - 1;
+  	XDS(numstring);		/* draw min value */
+  
+  	(void) sprintf(numstring, "%d ", (int)w->strip_chart.max_value );
+  	x = LABEL_ROOM - XTW(numstring);
+  	y = w->strip_chart.font_height - 4;
+  	XDS(numstring);		/* draw max value */
+--- 510,540 ----
   /* draw titles */
   
   	if ( w->strip_chart.topLabel ) {
@@ -203,748 +525,243 @@
   	    x = 4;
   	    XDS(w->strip_chart.botLabel);
   	}
-*** ../xperfmon++/TimeChart.c	Wed Jul 27 22:29:31 1994
---- ./TimeChart.c	Thu Apr 30 15:03:27 1998
-***************
-*** 47,52 ****
---- 47,62 ----
-   *                   Moffett Field, California, rsmith@proteus.arc.nasa.gov
-  ******************************************************************/
   
-+ #ifdef HAVE_SYS_PARAM_H
-+ #include <sys/param.h>
-+ #endif
-+ 
-+ #if (defined(BSD) && (BSD >= 199506))
-+ # include <osreldate.h>
-+ #else
-+ # error You have to use at least a FreeBSD 2.2.X system
-+ #endif
-+ 
-  #include <stdio.h>
-  #include <X11/IntrinsicP.h>
-  #include <X11/StringDefs.h>
-*** ../xperfmon++/misc.c	Wed Jul 27 22:29:33 1994
---- ./misc.c	Thu Apr 30 15:03:27 1998
-***************
-*** 22,27 ****
---- 22,38 ----
-   * Author:           Roger Smith, Sterling Software @ NASA-Ames Research Center
-   *                   Moffett Field, California, rsmith@proteus.arc.nasa.gov
-   */
-+ 
-+ #ifdef HAVE_SYS_PARAM_H
-+ #include <sys/param.h>
-+ #endif
-+ 
-+ #if (defined(BSD) && (BSD >= 199506))
-+ # include <osreldate.h>
-+ #else
-+ # error You have to use at least a FreeBSD 2.2.X system
-+ #endif
-+ 
-  #include <stdio.h>
-  
-  #include <X11/IntrinsicP.h>
-***************
-*** 58,64 ****
-      int i, keycode, length = 0;
-  /*    PerfmonWidget pw = (PerfmonWidget) w;*/
-  
-!     length = XLookupString(event, strbuf, STRBUFSIZE, &keycode, NULL);
-      switch (keycode) {
-      case 'Q':
-      case 'q':
---- 69,75 ----
-      int i, keycode, length = 0;
-  /*    PerfmonWidget pw = (PerfmonWidget) w;*/
-  
-!     length = XLookupString((XKeyEvent *)event, strbuf, STRBUFSIZE, (KeySym *)&keycode, NULL);
-      switch (keycode) {
-      case 'Q':
-      case 'q':
-*** ../xperfmon++/xperfmon.c	Wed Jul 27 22:29:39 1994
---- ./xperfmon.c	Thu Aug 13 18:59:02 1998
-***************
-*** 58,63 ****
---- 58,73 ----
-   *
-   */
-  
-+ #ifdef HAVE_SYS_PARAM_H
-+ #include <sys/param.h>
-+ #endif
-+ 
-+ #if (defined(BSD) && (BSD >= 199506))
-+ # include <osreldate.h>
-+ #else
-+ # error You have to use at least a FreeBSD 2.2.X system
-+ #endif
-+ 
-  #include <stdio.h>
-  #include <X11/IntrinsicP.h>
-  #include <X11/StringDefs.h>
-***************
-*** 76,82 ****
---- 86,97 ----
-  extern void start_graphs();
-  extern time_t timeStamp;
-  extern Dimension oldHeight, oldWidth;
-+ 
-+ #if __FreeBSD_version >= 220000
-+ extern float current_values[NUM_GRAPHS];
-+ #else
-  extern int current_values[NUM_GRAPHS];
-+ #endif
-  
-  char *gprogname;
-  double testValue;
-***************
-*** 94,99 ****
---- 109,119 ----
-       { NULL,           NULL      },
-  };
-  
-+ /* LK!!! */
-+ int  MIN_HEIGHT=420;
-+ #define MIN_WIDTH 185
-+ #define GRAPH_MIN_HEIGHT 28
-+ 
-  #define XtNinterval "interval"
-  #define XtNcount "count"
-  #define XtCCount "Count"
-***************
-*** 101,120 ****
-  #define XtCFill "Fill"
-  #define XtNfast "fast"
-  #define XtCFast "Fast"
-- #define XtNstufAdd "stufAdd"
-- #define XtCStufAdd "StufAdd"
-- #define XtNstufSub "stufSub"
-- #define XtCStufSub "StufSub"
-  #define XtNdebug "debug"
-  #define XtCDebug "Debug"
-  #define XtNusercpuAdd "usercpuAdd"
-  #define XtCUsercpuAdd "UsercpuAdd"
-  #define XtNusercpuSub "usercpuSub"
-  #define XtCUsercpuSub "UsercpuSub"
-  #define XtNsystemcpuAdd "systemcpuAdd"
-  #define XtCSystemcpuAdd "SystemcpuAdd"
-  #define XtNsystemcpuSub "systemcpuSub"
-  #define XtCSystemcpuSub "SystemcpuSub"
-  #define XtNidlecpuAdd "idlecpuAdd"
-  #define XtCIdlecpuAdd "IdlecpuAdd"
-  #define XtNidlecpuSub "idlecpuSub"
---- 121,154 ----
-  #define XtCFill "Fill"
-  #define XtNfast "fast"
-  #define XtCFast "Fast"
-  #define XtNdebug "debug"
-  #define XtCDebug "Debug"
-+ #if __FreeBSD_version >= 220000
-+ #define XtNsysloadAdd "sysloadAdd"
-+ #define XtCSysloadAdd "SysloadAdd"
-+ #define XtNsysloadSub "sysloadSub"
-+ #define XtCSysloadSub "SysloadSub"
-+ #endif
-  #define XtNusercpuAdd "usercpuAdd"
-  #define XtCUsercpuAdd "UsercpuAdd"
-  #define XtNusercpuSub "usercpuSub"
-  #define XtCUsercpuSub "UsercpuSub"
-+ #if __FreeBSD_version >= 220000
-+ #define XtNnicecpuAdd "nicecpuAdd"
-+ #define XtCNicecpuAdd "NicecpuAdd"
-+ #define XtNnicecpuSub "nicecpuSub"
-+ #define XtCNicecpuSub "NicecpuSub"
-+ #endif
-  #define XtNsystemcpuAdd "systemcpuAdd"
-  #define XtCSystemcpuAdd "SystemcpuAdd"
-  #define XtNsystemcpuSub "systemcpuSub"
-  #define XtCSystemcpuSub "SystemcpuSub"
-+ #if __FreeBSD_version >= 220000
-+ #define XtNintercpuAdd "intercpuAdd"
-+ #define XtCIntercpuAdd "IntercpuAdd"
-+ #define XtNintercpuSub "intercpuSub"
-+ #define XtCIntercpuSub "IntercpuSub"
-+ #endif
-  #define XtNidlecpuAdd "idlecpuAdd"
-  #define XtCIdlecpuAdd "IdlecpuAdd"
-  #define XtNidlecpuSub "idlecpuSub"
-***************
-*** 171,192 ****
-  static XrmOptionDescRec optionDescList[] = {
-      { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
-      { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
-! 
-      { "-lowmemAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowmemWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
-      { "-highmemAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
-      { "-highmemWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
-! 
-      { "-lowuserAlarm", "*perfChartUser.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowuserWarn", "*perfChartUser.lowWarn", XrmoptionSepArg, NULL },
-      { "-highuserAlarm", "*perfChartUser.highAlarm", XrmoptionSepArg, NULL },
-      { "-highuserWarn", "*perfChartUser.highWarn", XrmoptionSepArg, NULL },
-  
-      { "-lowsysAlarm", "*perfChartSystem.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowsysWarn", "*perfChartSystem.lowWarn", XrmoptionSepArg, NULL },
-      { "-highsysAlarm", "*perfChartSystem.highAlarm", XrmoptionSepArg, NULL },
-      { "-highsysWarn", "*perfChartSystem.highWarn", XrmoptionSepArg, NULL },
-  
-      { "-lowidleAlarm", "*perfChartIdle.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowidleWarn", "*perfChartIdle.lowWarn", XrmoptionSepArg, NULL },
-      { "-highidleAlarm", "*perfChartIdle.highAlarm", XrmoptionSepArg, NULL },
---- 205,250 ----
-  static XrmOptionDescRec optionDescList[] = {
-      { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
-      { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
-! #if __FreeBSD_version >= 220000
-!     { "-lowloadAlarm", "*perfChartLoad.lowAlarm", XrmoptionSepArg, NULL },
-!     { "-lowloadWarn", "*perfChartLoad.lowWarn", XrmoptionSepArg, NULL },
-!     { "-highloadAlarm", "*perfChartLoad.highAlarm", XrmoptionSepArg, NULL },
-!     { "-highloadWarn", "*perfChartLoad.highWarn", XrmoptionSepArg, NULL },
-! 
-!     { "-lowswapAlarm", "*perfChartSwap.lowAlarm", XrmoptionSepArg, NULL },
-!     { "-lowswapWarn", "*perfChartSwap.lowWarn", XrmoptionSepArg, NULL },
-!     { "-highswapAlarm", "*perfChartSwap.highAlarm", XrmoptionSepArg, NULL },
-!     { "-highswapWarn", "*perfChartSwap.highWarn", XrmoptionSepArg, NULL },
+  /* draw scale labels */
+! #ifdef __FreeBSD__
+! 	(void) sprintf(numstring, "%1.1f ", 0.0);
 ! #else
-      { "-lowmemAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowmemWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
-      { "-highmemAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
-      { "-highmemWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
-! #endif
-      { "-lowuserAlarm", "*perfChartUser.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowuserWarn", "*perfChartUser.lowWarn", XrmoptionSepArg, NULL },
-      { "-highuserAlarm", "*perfChartUser.highAlarm", XrmoptionSepArg, NULL },
-      { "-highuserWarn", "*perfChartUser.highWarn", XrmoptionSepArg, NULL },
+  	(void) sprintf(numstring, "%d ", 0);
++ #endif
+  	x = LABEL_ROOM - XTW(numstring);
+  	y = w->core.height - 1;
+  	XDS(numstring);		/* draw min value */
   
-+ #if __FreeBSD_version >= 220000
-+     { "-lowniceAlarm", "*perfChartNice.lowAlarm", XrmoptionSepArg, NULL },
-+     { "-lowniceWarn", "*perfChartNice.lowWarn", XrmoptionSepArg, NULL },
-+     { "-highniceAlarm", "*perfChartNice.highAlarm", XrmoptionSepArg, NULL },
-+     { "-highniceWarn", "*perfChartNice.highWarn", XrmoptionSepArg, NULL },
-+ #endif
-+ 
-      { "-lowsysAlarm", "*perfChartSystem.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowsysWarn", "*perfChartSystem.lowWarn", XrmoptionSepArg, NULL },
-      { "-highsysAlarm", "*perfChartSystem.highAlarm", XrmoptionSepArg, NULL },
-      { "-highsysWarn", "*perfChartSystem.highWarn", XrmoptionSepArg, NULL },
-  
-+ #if __FreeBSD_version >= 220000
-+     { "-lowinterAlarm", "*perfChartInter.lowAlarm", XrmoptionSepArg, NULL },
-+     { "-lowinterWarn", "*perfChartInter.lowWarn", XrmoptionSepArg, NULL },
-+     { "-highinterAlarm", "*perfChartInter.highAlarm", XrmoptionSepArg, NULL },
-+     { "-highinterWarn", "*perfChartInter.highWarn", XrmoptionSepArg, NULL },
-+ #endif
-+ 
-      { "-lowidleAlarm", "*perfChartIdle.lowAlarm", XrmoptionSepArg, NULL },
-      { "-lowidleWarn", "*perfChartIdle.lowWarn", XrmoptionSepArg, NULL },
-      { "-highidleAlarm", "*perfChartIdle.highAlarm", XrmoptionSepArg, NULL },
-***************
-*** 231,244 ****
---- 289,319 ----
-      { "-fill",      "*fill",        XrmoptionNoArg,     "True" },
-      { "-debug",     "*debug",       XrmoptionNoArg,     "True" },
-      { "-fast",      "*fast",        XrmoptionNoArg,     (XtPointer)"True" },
-+ #if __FreeBSD_version >= 220000
-+     { "-sysload",   XtNsysloadSub,     XrmoptionNoArg,     "True" },
-+     { "+sysload",   XtNsysloadAdd,     XrmoptionNoArg,     "TRUE" },
-+ #endif
-      { "-usercpu",   XtNusercpuSub,     XrmoptionNoArg,     "True" },
-      { "+usercpu",   XtNusercpuAdd,     XrmoptionNoArg,     "TRUE" },
-+ #if __FreeBSD_version >= 220000
-+     { "-nicecpu",   XtNnicecpuSub,     XrmoptionNoArg,     "True" },
-+     { "+nicecpu",   XtNnicecpuAdd,     XrmoptionNoArg,     "TRUE" },
-+ #endif
-      { "-systemcpu", XtNsystemcpuSub,     XrmoptionNoArg,     "True" },
-      { "+systemcpu", XtNsystemcpuAdd,     XrmoptionNoArg,     "TRUE" },
-+ #if __FreeBSD_version >= 220000
-+     { "-intercpu",   XtNintercpuSub,     XrmoptionNoArg,     "True" },
-+     { "+intercpu",   XtNintercpuAdd,     XrmoptionNoArg,     "TRUE" },
-+ #endif
-      { "-idlecpu",   XtNidlecpuSub,     XrmoptionNoArg,     "True" },
-      { "+idlecpu",   XtNidlecpuAdd,     XrmoptionNoArg,     "TRUE" },
-+ #if __FreeBSD_version >= 220000
-+     { "-freeswap",  XtNfreememSub,     XrmoptionNoArg,     "True" },
-+     { "+freeswap",  XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
++ #ifdef __FreeBSD__
++ 	(void) sprintf(numstring, "%01.1f ", w->strip_chart.max_value / SCALE_HACK );
 + #else
-      { "-freemem",   XtNfreememSub,     XrmoptionNoArg,     "True" },
-      { "+freemem",   XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
+  	(void) sprintf(numstring, "%d ", (int)w->strip_chart.max_value );
 + #endif
-      { "-diskxfr",   XtNdiskxfrSub,     XrmoptionNoArg,     "True" },
-      { "+diskxfr",   XtNdiskxfrAdd,     XrmoptionNoArg,     "TRUE" },
-      { "-interrupts",  XtNinterruptsSub ,     XrmoptionNoArg,     "True" },
+  	x = LABEL_ROOM - XTW(numstring);
+  	y = w->strip_chart.font_height - 4;
+  	XDS(numstring);		/* draw max value */
 ***************
-*** 253,269 ****
-      { "+nfsclient",   XtNnfsclientAdd,     XrmoptionNoArg,     "TRUE" },
-      { "-nfsserver",   XtNnfsserverSub,     XrmoptionNoArg,     "True" },
-      { "+nfsserver",   XtNnfsserverAdd,     XrmoptionNoArg,     "TRUE" },
--     { "-stuf",      XtNstufAdd,        XrmoptionNoArg,     (XtPointer)"True" },
--     { "+stuf",      XtNstufSub,        XrmoptionNoArg,     (XtPointer)"True" },
-  };
+*** 511,525 ****
   
-  /* Application Resource List - no particular widget */
+  		if ( i == left && left + 1 == width && width != next ) {
+  		    y1 = (int) (w->core.height -
+! 				(int)(w->core.height * w->strip_chart.valuedata[i-1]) /
+! 				w->strip_chart.scale);
+  		    XDrawLine(dpy, win, w->strip_chart.fgGC,
+  			      i-1, y1, i, y);
+  		}
+  		else if ( i == left )	{ /* If this is the leftmost point, then just plot it. */
+! 		    
+  		    XDrawPoint(dpy, win, w->strip_chart.fgGC, i, y);
+! 		} 
+  		else	{
+  		    /* If this is not the left most point, then draw a line
+  		     * connecting this point with the one to its left.
+--- 549,562 ----
   
-  static XtResource resources[] = {
--     { XtNstufAdd, XtCStufAdd, XtRBool, sizeof(Bool),
-- 	  XtOffsetOf(AppData, addG[1]), XtRImmediate, (XtPointer) NULL },
--     { XtNstufSub, XtCStufSub, XtRBool, sizeof(Bool),
-- 	  XtOffsetOf(AppData, subG[0]), XtRImmediate, (XtPointer) NULL },
-      { XtNinterval, XtCInterval, XtRInt, sizeof(int),
-  	  XtOffsetOf(AppData, interval), XtRImmediate, (caddr_t) DEF_INTERVAL },
-      { XtNcount, XtCCount, XtRInt, sizeof(int),
---- 328,338 ----
-***************
-*** 274,288 ****
-  	  XtOffsetOf(AppData, debug), XtRImmediate, (caddr_t)NULL },
-      { XtNfast, XtCFast, XtRBoolean, sizeof(Boolean),
-  	  XtOffsetOf(AppData, fast), XtRImmediate, (XtPointer) NULL },
+  		if ( i == left && left + 1 == width && width != next ) {
+  		    y1 = (int) (w->core.height -
+! 				(int)(w->core.height * w->strip_chart.valuedata[i-1]) /	w->strip_chart.scale);
+  		    XDrawLine(dpy, win, w->strip_chart.fgGC,
+  			      i-1, y1, i, y);
+  		}
+  		else if ( i == left )	{ /* If this is the leftmost point, then just plot it. */
 ! 
-      { XtNusercpuAdd, XtCUsercpuAdd, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, addG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNusercpuSub, XtCUsercpuSub, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, subG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNsystemcpuAdd, XtCSystemcpuAdd, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, addG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNsystemcpuSub, XtCSystemcpuSub, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, subG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNidlecpuAdd, XtCIdlecpuAdd, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, addG[IDL_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNidlecpuSub, XtCIdlecpuSub, XtRBool, sizeof(Bool),
---- 343,374 ----
-  	  XtOffsetOf(AppData, debug), XtRImmediate, (caddr_t)NULL },
-      { XtNfast, XtCFast, XtRBoolean, sizeof(Boolean),
-  	  XtOffsetOf(AppData, fast), XtRImmediate, (XtPointer) NULL },
-! #if __FreeBSD_version >= 220000
-!     { XtNsysloadAdd, XtCSysloadAdd, XtRBool, sizeof(Bool),
-! 	  XtOffsetOf(AppData, addG[SYS_LOAD]), XtRImmediate, (XtPointer) NULL },
-!     { XtNsysloadSub, XtCSysloadSub, XtRBool, sizeof(Bool),
-! 	  XtOffsetOf(AppData, subG[SYS_LOAD]), XtRImmediate, (XtPointer) NULL },
-! #endif
-      { XtNusercpuAdd, XtCUsercpuAdd, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, addG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNusercpuSub, XtCUsercpuSub, XtRBool, sizeof(Bool),
-            XtOffsetOf(AppData, subG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
-+ #if __FreeBSD_version >= 220000
-+     { XtNnicecpuAdd, XtCNicecpuAdd, XtRBool, sizeof(Bool),
-+ 	  XtOffsetOf(AppData, addG[NICE_CPU]), XtRImmediate, (XtPointer) NULL },
-+     { XtNnicecpuSub, XtCNicecpuSub, XtRBool, sizeof(Bool),
-+           XtOffsetOf(AppData, subG[NICE_CPU]), XtRImmediate, (XtPointer) NULL },
-+ #endif
-      { XtNsystemcpuAdd, XtCSystemcpuAdd, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, addG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNsystemcpuSub, XtCSystemcpuSub, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, subG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
-+ #if __FreeBSD_version >= 220000
-+     { XtNintercpuAdd, XtCIntercpuAdd, XtRBool, sizeof(Bool),
-+ 	  XtOffsetOf(AppData, addG[INT_CPU]), XtRImmediate, (XtPointer) NULL },
-+     { XtNintercpuSub, XtCIntercpuSub, XtRBool, sizeof(Bool),
-+           XtOffsetOf(AppData, subG[INT_CPU]), XtRImmediate, (XtPointer) NULL },
-+ #endif
-      { XtNidlecpuAdd, XtCIdlecpuAdd, XtRBool, sizeof(Bool),
-  	  XtOffsetOf(AppData, addG[IDL_CPU]), XtRImmediate, (XtPointer) NULL },
-      { XtNidlecpuSub, XtCIdlecpuSub, XtRBool, sizeof(Bool),
+  		    XDrawPoint(dpy, win, w->strip_chart.fgGC, i, y);
+! 		}
+  		else	{
+  		    /* If this is not the left most point, then draw a line
+  		     * connecting this point with the one to its left.
 ***************
-*** 324,329 ****
---- 410,418 ----
-  void
-  usage()
-  {
-+ #if __FreeBSD_version >= 220000
-+     fprintf(stderr, "\nxperfmon++ V2.0 for FreeBSD-2.2.X and 3.X\n");
-+ #endif
-      fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
-      fprintf(stderr, "options:\n");
-      fprintf(stderr, "    [-display [{host}]:[{vs}]]\n");
+*** 536,542 ****
+  		int y = (int) (w->core.height -
+  				(int)(w->core.height * w->strip_chart.valuedata[i]) /
+  				w->strip_chart.scale);
+! 		XFillRectangle(dpy, win, w->strip_chart.fgGC, 
+  			       i,	                                  /* x */
+  			       y,					  /* y */
+  			       (unsigned int) 1,			  /* width */
+--- 573,579 ----
+  		int y = (int) (w->core.height -
+  				(int)(w->core.height * w->strip_chart.valuedata[i]) /
+  				w->strip_chart.scale);
+! 		XFillRectangle(dpy, win, w->strip_chart.fgGC,
+  			       i,	                                  /* x */
+  			       y,					  /* y */
+  			       (unsigned int) 1,			  /* width */
 ***************
-*** 340,350 ****
-      fprintf(stderr, "    [-fast]                (changes interval from seconds to milliseconds)\n");
-      fprintf(stderr, "    [-immediate]           (background limit alarm color is based on current sample)\n");
-      fprintf(stderr, "    [-fill]                (output filled graph instead of line graph)\n\n");
+*** 545,551 ****
+  
+  	}
+  
+! 	/************** Draw graph reference lines 
+  	for (i = 1; i < w->strip_chart.scale; i++) {
+  	    j = i * ((int)w->core.height / w->strip_chart.scale);
+  	    XDrawLine(dpy, win, w->strip_chart.hiGC, left , j, scalewidth, j);
+--- 582,588 ----
+  
+  	}
+  
+! 	/************** Draw graph reference lines
+  	for (i = 1; i < w->strip_chart.scale; i++) {
+  	    j = i * ((int)w->core.height / w->strip_chart.scale);
+  	    XDrawLine(dpy, win, w->strip_chart.hiGC, left , j, scalewidth, j);
+***************
+*** 582,598 ****
+      bcopy((char *)(w->strip_chart.valuedata + next - j),
+  	  (char *)(w->strip_chart.valuedata), j * sizeof(double));
+      next = w->strip_chart.interval = j;
+! 	
+      /*
+!      * Since we just lost some data, recompute the 
+!      * w->strip_chart.max_value, and min_value. 
+       */
+  
+      old_max = w->strip_chart.max_value;
+      w->strip_chart.max_value = 0.0;
+!     w->strip_chart.min_value = 99999.99;
+      for (i = LABEL_ROOM; i < next; i++) {
+!       if (w->strip_chart.valuedata[i] > w->strip_chart.max_value) 
+  	w->strip_chart.max_value = w->strip_chart.valuedata[i];
+        if ( w->strip_chart.valuedata[i] < w->strip_chart.min_value )
+  	  w->strip_chart.min_value = w->strip_chart.valuedata[i];
+--- 619,645 ----
+      bcopy((char *)(w->strip_chart.valuedata + next - j),
+  	  (char *)(w->strip_chart.valuedata), j * sizeof(double));
+      next = w->strip_chart.interval = j;
 ! 
-      fprintf(stderr, "    [{-+}usercpu]          ({remove|add} usercpu to list of graphs\n");
-      fprintf(stderr, "    [{-+}systemcpu]        ({remove|add} systemcpu to list of graphs\n");
-      fprintf(stderr, "    [{-+}idlecpu]          ({remove|add} idlecpu to list of graphs\n");
-      fprintf(stderr, "    [{-+}freemem]          ({remove|add} freemem to list of graphs\n");
-      fprintf(stderr, "    [{-+}diskxfr]          ({remove|add} disk transfers to list of graphs\n");
-      fprintf(stderr, "    [{-+}interrupts]       ({remove|add} interrupts to list of graphs\n");
-      fprintf(stderr, "    [{-+}inputpkts]        ({remove|add} input packets to list of graphs\n");
---- 429,451 ----
-      fprintf(stderr, "    [-fast]                (changes interval from seconds to milliseconds)\n");
-      fprintf(stderr, "    [-immediate]           (background limit alarm color is based on current sample)\n");
-      fprintf(stderr, "    [-fill]                (output filled graph instead of line graph)\n\n");
-! #if __FreeBSD_version >= 220000
-!     fprintf(stderr, "    [{-+}sysload]          ({remove|add} sysload to list of graphs\n");
-! #endif
-      fprintf(stderr, "    [{-+}usercpu]          ({remove|add} usercpu to list of graphs\n");
-+ #if __FreeBSD_version >= 220000
-+     fprintf(stderr, "    [{-+}nicecpu]          ({remove|add} nicecpu to list of graphs\n");
-+ #endif
-      fprintf(stderr, "    [{-+}systemcpu]        ({remove|add} systemcpu to list of graphs\n");
-+ #if __FreeBSD_version >= 220000
-+     fprintf(stderr, "    [{-+}intercpu]         ({remove|add} intercpu to list of graphs\n");
-+ #endif
-      fprintf(stderr, "    [{-+}idlecpu]          ({remove|add} idlecpu to list of graphs\n");
-+ #if __FreeBSD_version >= 220000
-+     fprintf(stderr, "    [{-+}freeswap]         ({remove|add} freeswap to list of graphs\n");
+      /*
+!      * Since we just lost some data, recompute the
+!      * w->strip_chart.max_value, and min_value.
+       */
+  
+      old_max = w->strip_chart.max_value;
++     /*
++      * To avoid scaling of Free Swap cause it changes so slow, it's
++      * better to not change the max value of 100%
++      */
++ #ifdef __FreeBSD__
++     if ( strcmp(w->strip_chart.botLabel, botNames[FRE_MEM]) != 0 )
++ 	w->strip_chart.max_value = 0.0;
 + #else
-      fprintf(stderr, "    [{-+}freemem]          ({remove|add} freemem to list of graphs\n");
-+ #endif
-      fprintf(stderr, "    [{-+}diskxfr]          ({remove|add} disk transfers to list of graphs\n");
-      fprintf(stderr, "    [{-+}interrupts]       ({remove|add} interrupts to list of graphs\n");
-      fprintf(stderr, "    [{-+}inputpkts]        ({remove|add} input packets to list of graphs\n");
-***************
-*** 361,370 ****
-      fprintf(stderr, "    [-high*Alarm {value}]     ( Set High Alarm value for *)\n");
-      fprintf(stderr, "    [-high*Warn {value}]      ( Set High Warning value for *)\n");
-      fprintf(stderr, "  Where \"*\" is one of the following:\n");
-      fprintf(stderr, "    [mem | user | sys | idle | disk | intrpts |\n");
-!     fprintf(stderr, "     input | output | collision | nfsclient | nfsserver]\n");
-      fprintf(stderr, "  For Example:\n");
-      fprintf(stderr, "    [-lowmemAlarm {value}]    ( Set low Free Memory Alarm Value)\n");
-      fprintf(stderr, "WARNING: It is an error condition to set both a high, and a low, limit warning or alarm.\n");
-      exit(1);
-  }
---- 462,479 ----
-      fprintf(stderr, "    [-high*Alarm {value}]     ( Set High Alarm value for *)\n");
-      fprintf(stderr, "    [-high*Warn {value}]      ( Set High Warning value for *)\n");
-      fprintf(stderr, "  Where \"*\" is one of the following:\n");
-+ #if __FreeBSD_version >= 220000
-+     fprintf(stderr, "    [load | user | nice | sys | inter | idle | swap | disk |\n");
-+ #else
-      fprintf(stderr, "    [mem | user | sys | idle | disk | intrpts |\n");
+      w->strip_chart.max_value = 0.0;
 ! #endif
-!     fprintf(stderr, "     intrpts | input | output | collision | nfsclient | nfsserver]\n");
-      fprintf(stderr, "  For Example:\n");
-+ #if __FreeBSD_version >= 220000
-+     fprintf(stderr, "    [-lowswapAlarm {value}]   ( Set low Free Swap Alarm Value)\n");
+! 
+!     w->strip_chart.min_value = 99999;
+      for (i = LABEL_ROOM; i < next; i++) {
+!       if (w->strip_chart.valuedata[i] > w->strip_chart.max_value)
+  	w->strip_chart.max_value = w->strip_chart.valuedata[i];
+        if ( w->strip_chart.valuedata[i] < w->strip_chart.min_value )
+  	  w->strip_chart.min_value = w->strip_chart.valuedata[i];
+***************
+*** 611,622 ****
+  	      (unsigned int) j-LABEL_ROOM, (unsigned int) w->core.height,
+  	      LABEL_ROOM, 0);
+  
+!     XClearArea(XtDisplay((Widget)w), XtWindow((Widget)w), 
+! 	       (int) j, 0, 
+  	       (unsigned int) w->core.width - j, (unsigned int)w->core.height,
+  	       FALSE);
+  
+!     /* Draw graph reference lines 
+      left = j;
+      for (i = 1; i < w->strip_chart.scale; i++) {
+        j = i * ((int)w->core.height / w->strip_chart.scale);
+--- 658,669 ----
+  	      (unsigned int) j-LABEL_ROOM, (unsigned int) w->core.height,
+  	      LABEL_ROOM, 0);
+  
+!     XClearArea(XtDisplay((Widget)w), XtWindow((Widget)w),
+! 	       (int) j, 0,
+  	       (unsigned int) w->core.width - j, (unsigned int)w->core.height,
+  	       FALSE);
+  
+!     /* Draw graph reference lines
+      left = j;
+      for (i = 1; i < w->strip_chart.scale; i++) {
+        j = i * ((int)w->core.height / w->strip_chart.scale);
+***************
+*** 645,663 ****
+  				draw_graph, (XtPointer)w);
+      }
+  */
+      if ( w->strip_chart.min_scale > (int) ((w->strip_chart.max_value) + 1) )
+        ret_val = TRUE;
+!      
+      if ( w->strip_chart.fgpixel != old->strip_chart.fgpixel ) {
+        new_gc |= FOREGROUND;
+        ret_val = True;
+      }
+!     
+      if ( w->strip_chart.hipixel != old->strip_chart.hipixel ) {
+        new_gc |= HIGHLIGHT;
+        ret_val = True;
+      }
+!     
+      DestroyGC(old, new_gc);
+      CreateGC(w, new_gc);
+  
+--- 692,714 ----
+  				draw_graph, (XtPointer)w);
+      }
+  */
++ #ifdef __FreeBSD__
++     if ( w->strip_chart.min_scale > ((w->strip_chart.max_value)) )
 + #else
-      fprintf(stderr, "    [-lowmemAlarm {value}]    ( Set low Free Memory Alarm Value)\n");
+      if ( w->strip_chart.min_scale > (int) ((w->strip_chart.max_value) + 1) )
 + #endif
-      fprintf(stderr, "WARNING: It is an error condition to set both a high, and a low, limit warning or alarm.\n");
-      exit(1);
-  }
-***************
-*** 386,391 ****
---- 495,501 ----
-      time(&timeStamp);
-      return;
-  }
-+ 
-  /*ARGSUSED*/
-  void handleResize( w, unused, event, contin2disp )
-  Widget w;
-***************
-*** 394,400 ****
-  Boolean *contin2disp;
-  {
-      Dimension neww, newh;
-!     int i;
-      char eventString[60];
-      switch (event->type) {
-      case Expose:
---- 504,511 ----
-  Boolean *contin2disp;
-  {
-      Dimension neww, newh;
-!     Dimension hOverHead, boxH, timeH, newWidgetH;
-!     int i, window_size_changed;
-      char eventString[60];
-      switch (event->type) {
-      case Expose:
-***************
-*** 403,415 ****
-  	strcpy(eventString,"expose");
-  	break;
-      case MapNotify:
-! 	neww=0;
-! 	newh=0;
-  	strcpy(eventString,"map notify");
-  	break;
-      case ReparentNotify:
-! 	neww=0;
-! 	newh=0;
-  	strcpy(eventString,"reparent");
-  	break;
-      case ConfigureNotify:
---- 514,531 ----
-  	strcpy(eventString,"expose");
-  	break;
-      case MapNotify:
-! 	neww=w->core.width;
-! 	newh=oldHeight;
-  	strcpy(eventString,"map notify");
-  	break;
-+     case UnmapNotify:
-+ 	neww=w->core.width;
-+ 	newh=oldHeight;
-+ 	strcpy(eventString,"unmap notify");
-+ 	break;
-      case ReparentNotify:
-! 	neww=w->core.width;
-! 	newh=oldHeight;
-  	strcpy(eventString,"reparent");
-  	break;
-      case ConfigureNotify:
-***************
-*** 417,429 ****
-  	newh=event->xconfigure.height;
-  	strcpy(eventString,"configure");
-  	break;
-  
-      }
-!     if ( neww < 250 + 10 ) {
-! 	neww = 250 + 10;
-! 	w->core.width = 250 + 10;
-  	XtResizeWindow(w);
-!     }
-      if ( appData.debug )
-  	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
-  	       (int)event->type, eventString,
---- 533,567 ----
-  	newh=event->xconfigure.height;
-  	strcpy(eventString,"configure");
-  	break;
-+     }
-  
-+     if ( neww < MIN_WIDTH ) {
-+ 	neww = MIN_WIDTH;
-+ 	w->core.width = MIN_WIDTH;
-+ 	window_size_changed = TRUE;
-+     } else {
-+         w->core.width = neww;
-+     }
-+ 
-+     if ( newh < MIN_HEIGHT ) {
-+ 	newh = MIN_HEIGHT;
-+ 	w->core.height = MIN_HEIGHT;
-+ 	window_size_changed = TRUE;
-+     }
-+ 
-+     /* Now the graphs fit perfect into the window! */
-+     hOverHead = (5.6 * appData.numGraphsOn) - (6 / appData.numGraphsOn);
-+     boxH = labelBox->core.height;
-+     timeH = timechart->core.height;
-+     newWidgetH = (newh - (boxH+7) - (timeH+10) - hOverHead) / appData.numGraphsOn;
-+     w->core.height = newWidgetH * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+10);
-+     if(w->core.height != newh) {
-+       newh = w->core.height;
+        ret_val = TRUE;
+! 
+      if ( w->strip_chart.fgpixel != old->strip_chart.fgpixel ) {
+        new_gc |= FOREGROUND;
+        ret_val = True;
       }
 ! 
-!     if( neww != oldWidth || newh != oldHeight || window_size_changed == TRUE )
-        XtResizeWindow(w);
+      if ( w->strip_chart.hipixel != old->strip_chart.hipixel ) {
+        new_gc |= HIGHLIGHT;
+        ret_val = True;
+      }
 ! 
-      if ( appData.debug )
-  	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
-  	       (int)event->type, eventString,
+      DestroyGC(old, new_gc);
+      CreateGC(w, new_gc);
+  
 ***************
-*** 431,441 ****
-  	       neww, newh);
+*** 686,701 ****
+  	w->strip_chart.points = NULL;
+  	return;
+      }
+!     
+!     size = sizeof(XPoint) * (w->strip_chart.scale - 1);
   
-      if ( event->type == ConfigureNotify ) {
-! /*	Dimension h = perfmon[0]->core.height;*/
-! 	Dimension hOverHead = 5 * appData.numGraphsOn;
-! 	Dimension boxH = labelBox->core.height;
-! 	Dimension timeH = timechart->core.height;
-! 	Dimension newWidgetH = (newh - (boxH+8) - (timeH+10) - hOverHead) / appData.numGraphsOn;
-  	if ( oldWidth == neww && oldHeight == newh ) return;
+      points = (XPoint *) XtRealloc( (XtPointer) w->strip_chart.points, size);
+      w->strip_chart.points = points;
   
-  	if ( appData.debug )
---- 569,575 ----
-  	       neww, newh);
+      /* Draw graph reference lines into clip mask */
   
-      if ( event->type == ConfigureNotify ) {
+!     for (i = 1; i < w->strip_chart.scale; i++) {
+  	points[i - 1].x = 0;
+  	points[i - 1].y = HEIGHT / w->strip_chart.scale;
+      }
+  }
+--- 737,753 ----
+  	w->strip_chart.points = NULL;
+  	return;
+      }
 ! 
-  	if ( oldWidth == neww && oldHeight == newh ) return;
+!     size = sizeof(XPoint) * (w->strip_chart.scale - 1) / SCALE_HACK;
   
-  	if ( appData.debug )
-***************
-*** 455,460 ****
---- 589,595 ----
-  	XFlush(XtDisplay(w));
+      points = (XPoint *) XtRealloc( (XtPointer) w->strip_chart.points, size);
+      w->strip_chart.points = points;
   
+      /* Draw graph reference lines into clip mask */
+  
+!     for (i = 1; i < w->strip_chart.scale / SCALE_HACK; i++) {
+  	points[i - 1].x = 0;
+  	points[i - 1].y = HEIGHT / w->strip_chart.scale;
       }
 + 
-      oldWidth = neww+=10, oldHeight = newh;
-      return;
-  }
-***************
-*** 464,472 ****
-      int argc;
-      char **argv;
-  {
-      Arg arg;
-      Pixmap icon_pixmap = None;
-!     Widget  loadParent, pappaBox;
-  
-      char *progname = argv[0];
-      Bool foundAnAdd = FALSE;
---- 599,611 ----
-      int argc;
-      char **argv;
-  {
-+     /* LK!!! */
-+     Dimension timeH, newWidgetW, newWidgetH, hOverHead, boxH;
-+     unsigned int w, h;
-+ 
-      Arg arg;
-      Pixmap icon_pixmap = None;
-!     Widget pappaBox;
-  
-      char *progname = argv[0];
-      Bool foundAnAdd = FALSE;
-***************
-*** 478,483 ****
---- 617,626 ----
-  				 optionDescList, XtNumber(optionDescList),
-  				 &argc, argv,
-  				 NULL, NULL);
-+ 
-+     appData.toplevel->core.width=MIN_WIDTH;
-+     appData.toplevel->core.height=MIN_HEIGHT;
-+ 
-      if (argc != 1) usage();
-  
-      if ( appData.toplevel->core.depth == 1 )
-***************
-*** 540,561 ****
-  		xperfmon_width, xperfmon_height));
-  	XtSetValues(appData.toplevel, &arg, 1);
-      }
-- 
-  /* create windows */
-  
-      pappaBox = XtVaCreateManagedWidget("PappaBox", boxWidgetClass, appData.toplevel, 
-  				       XtNborderWidth, 0,
-  				       NULL);
-- 
-      XtOverrideTranslations(pappaBox, XtParseTranslationTable(defaultTranslations));
-  
-      (void)gethostname(hostname, sizeof(hostname));
-      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
-      sprintf(c, "\nUpdate Interval = %5.1f secs", (float)(appData.interval*appData.ms_per_sec)/1000.0);
-  
-      labelBox = XtVaCreateManagedWidget("LabelBox", labelWidgetClass, pappaBox,
-! 					 XtNwidth, 250,
-! /*					 XtNheight, 16,*/
-  				         XtNjustify, XtJustifyLeft,
-  				         XtNinternalHeight, 0,
-  					 XtNtop, XtChainTop,
---- 683,734 ----
-  		xperfmon_width, xperfmon_height));
-  	XtSetValues(appData.toplevel, &arg, 1);
-      }
-  /* create windows */
-  
-      pappaBox = XtVaCreateManagedWidget("PappaBox", boxWidgetClass, appData.toplevel,
-  				       XtNborderWidth, 0,
-  				       NULL);
-      XtOverrideTranslations(pappaBox, XtParseTranslationTable(defaultTranslations));
-  
-      (void)gethostname(hostname, sizeof(hostname));
-      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
-      sprintf(c, "\nUpdate Interval = %5.1f secs", (float)(appData.interval*appData.ms_per_sec)/1000.0);
-  
-+     { /* LK!!! handle -geometry option correct, also small changes in handleResize */
-+       Window rwin;
-+       int x,y,px,py;
-+       unsigned int pw,ph,bw,d;
-+ 
-+       XtRealizeWidget(appData.toplevel);
-+ 
-+       XGetGeometry(XtDisplay(appData.toplevel),XtWindow(appData.toplevel),
-+ 		   &rwin,&x,&y,&w,&h,&bw,&d);
-+ 
-+       if ( w > MIN_WIDTH) {
-+ 	newWidgetW = w - 10;
-+ 	appData.toplevel->core.width = w;
-+       } else {
-+ 	appData.toplevel->core.width = MIN_WIDTH;
-+ 	newWidgetW = MIN_WIDTH - 10;
-+       }
-+ 
-+       hOverHead = (5.6 * appData.numGraphsOn) - (6 / appData.numGraphsOn);
-+       boxH = 22;
-+       timeH = 12;
-+       if (h > GRAPH_MIN_HEIGHT * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+10))
-+ 	newWidgetH = (h - hOverHead - (boxH+7) - (timeH+10)) / appData.numGraphsOn;
-+       else
-+ 	newWidgetH = GRAPH_MIN_HEIGHT;
-+ 
-+       MIN_HEIGHT = newWidgetH * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+10);
-+       appData.toplevel->core.height = MIN_HEIGHT;
-+ 
-+       XtResizeWindow(appData.toplevel);
-+     }
-+ 
-      labelBox = XtVaCreateManagedWidget("LabelBox", labelWidgetClass, pappaBox,
-! 					 XtNwidth, newWidgetW,
-! 					 XtNheight, boxH,
-  				         XtNjustify, XtJustifyLeft,
-  				         XtNinternalHeight, 0,
-  					 XtNtop, XtChainTop,
-***************
-*** 570,577 ****
-  	    perfmon[i] = XtVaCreateManagedWidget(hostname, perfChartWidgetClass, pappaBox, 
-  						 XtNtopLabel, topNames[i],
-  						 XtNbotLabel, botNames[i],
-! 						 XtNwidth, 250,
-! 						 XtNheight, 36,
-  						 XtNupdate, appData.interval*appData.ms_per_sec,
-  						 XtNfillRect, (int)appData.fill,
-  						 XtNjumpScroll, 1,
---- 743,750 ----
-  	    perfmon[i] = XtVaCreateManagedWidget(hostname, perfChartWidgetClass, pappaBox,
-  						 XtNtopLabel, topNames[i],
-  						 XtNbotLabel, botNames[i],
-! 						 XtNwidth, newWidgetW,
-! 						 XtNheight, newWidgetH,
-  						 XtNupdate, appData.interval*appData.ms_per_sec,
-  						 XtNfillRect, (int)appData.fill,
-  						 XtNjumpScroll, 1,
-***************
-*** 580,600 ****
-      }
-      timechart = XtVaCreateManagedWidget("timeChart", timeChartWidgetClass, pappaBox, 
-  					 XtNfromVert, perfmon[1], 
-! 					 XtNwidth, 250,
-! 					 XtNheight, 18,
-  					 XtNupdate, appData.interval*appData.ms_per_sec,
-  					 XtNjumpScroll, 1,
-  					 NULL);
-      sys_setup();
-      XtAddCallback(timechart, XtNgetValue, update_time_stat, NULL);
-  
-      for ( i=0; i<NUM_GRAPHS; i++ ) 
-  	if ( appData.graphOn[i] ) 
-! 	    XtAddCallback(perfmon[i], XtNgetValue, update_stat, i);
-  
-      appData.interval_id = XtAppAddTimeOut(appData.app_context,
-  		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
-  
--     XtRealizeWidget(appData.toplevel);
-      XtAppMainLoop(appData.app_context);
-  }
---- 753,773 ----
-      }
-      timechart = XtVaCreateManagedWidget("timeChart", timeChartWidgetClass, pappaBox,
-  					 XtNfromVert, perfmon[1],
-! 					 XtNwidth, newWidgetW,
-! 					 XtNheight, timeH,
-  					 XtNupdate, appData.interval*appData.ms_per_sec,
-  					 XtNjumpScroll, 1,
-  					 NULL);
-+ 
-      sys_setup();
-      XtAddCallback(timechart, XtNgetValue, update_time_stat, NULL);
-  
-      for ( i=0; i<NUM_GRAPHS; i++ )
-  	if ( appData.graphOn[i] )
-! 	    XtAddCallback(perfmon[i], XtNgetValue, update_stat, (XtPointer)i);
-  
-      appData.interval_id = XtAppAddTimeOut(appData.app_context,
-  		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
-  
-      XtAppMainLoop(appData.app_context);
   }

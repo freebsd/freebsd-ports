@@ -1,0 +1,71 @@
+*** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
+--- ./README	Thu Oct 15 21:25:22 1998
+***************
+*** 6,12 ****
+  		program will compile correctly under X11R5 and/or Motif.
+  
+  1-11-94		Revised by Roger Smith, Sterling Software @NASA-Ames Research Center,
+! 		rsmith@proteus.arc.nasa.gov. 
+  		Changed name to "xperfmon++".
+  		Replaced Perfmon widget with a highly modified StripChart widget. Charts
+  		now smooth scroll, scales update immediately, and there is a scrolling timestamp
+--- 6,12 ----
+  		program will compile correctly under X11R5 and/or Motif.
+  
+  1-11-94		Revised by Roger Smith, Sterling Software @NASA-Ames Research Center,
+! 		rsmith@proteus.arc.nasa.gov.
+  		Changed name to "xperfmon++".
+  		Replaced Perfmon widget with a highly modified StripChart widget. Charts
+  		now smooth scroll, scales update immediately, and there is a scrolling timestamp
+***************
+*** 18,20 ****
+--- 18,66 ----
+  		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
+  		O/S if x11r5 is fully installed in all the right places.
+  
++ 
++ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
++ 
++ 8-16-95		Quick and dirty workaround of -geometry option bug.
++ 		But there are still some side effects when changing the geometry.
++ 		Fix memory leak in bsd_system.c
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
++ 
++ 30-10-95	Change 'Free Mem' graph to 'Free Swap' cause the FreeBSD memory system
++ 		tries to minimize the free unused amount of memory.
++ 		Include basic support for FreeBSD > 2.1.
++ 		Number of interrupts now independent from 'Update Intervall'
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 11-12-95        Fix -geometry bug! Now there is only a MIN_WIDTH of 185 pixels, and the
++ 		MIN_HEIGTH is calculates dynamically depending on the number of active
++ 		graphs.	FreeBSD-2.X only:
++ 		Change 'Free  Swap' graph from absolut into percent values.
++ 		All graphs shoud be independent of the 'Update Intervall'.
++ 		Modify graph labels and add unit of each graph.
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 5-4-96		Fix some event problems that consumes a lot of cpu power after resizing
++ 		(mwm) or restart of an window manager. Make xperfmon compile with
++ 		FreeBSD-current (2.2, changes in get_swapspace)
++ 		by Lars Köller @University of Rostock, Germany.
++ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++ 
++ 4-30-98		Add System Load graph
++ 		Add CPU Nice and Interrupt graph
++ 		Compiles on FreeBSD-2.2.X and 3.X
++ 		by Lars Köller @University of Bielefeld, Germany.
++ 		E-Mail: Lars.Koeller@Uni-Bielefeld.DE
++ 
++ 10-10-98	Add graphs for: disk/tape/cdrom transfers, disktape/cdrom io in MB/s,
++                                 NFS client and server cache hits/misses
++ 		Complete rewrite of freebsd_system.c!
++ 		Graphs now scales and displays floating point values correctly
++ 		Compiles on FreeBSD-3.X
++ 		by Lars Köller @University of Bielefeld, Germany.
++ 		E-Mail: Lars.Koeller@Uni-Bielefeld.DE

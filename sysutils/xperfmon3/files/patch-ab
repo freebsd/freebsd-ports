@@ -1,80 +1,10 @@
-*** ../xperfmon++/StripCharP.h	Wed Jul 27 22:29:30 1994
---- ./StripCharP.h	Thu Apr 30 15:03:13 1998
+*** ../xperfmon++/misc.c	Wed Jul 27 22:29:33 1994
+--- ./misc.c	Sun Jan 10 21:14:22 1999
 ***************
-*** 62,71 ****
-  #define HIGHLIGHT  1 << 1
-  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
-  
-  /* New fields for the PerfChart widget instance record */
-  
-  typedef struct {
-!     double valuedata[2048];	/* record of data points */
-      Pixel	fgpixel;	/* color index for graph */
-      Pixel	hipixel;	/* color index for lines */
-      Pixel       warnColor;
---- 62,73 ----
-  #define HIGHLIGHT  1 << 1
-  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
-  
-+ #define NUM_VALUES 2048
-+ 
-  /* New fields for the PerfChart widget instance record */
-  
-  typedef struct {
-!     double valuedata[NUM_VALUES]; /* record of data points */
-      Pixel	fgpixel;	/* color index for graph */
-      Pixel	hipixel;	/* color index for lines */
-      Pixel       warnColor;
-*** ../xperfmon++/TimeChart.h	Wed Jul 27 22:29:31 1994
---- ./TimeChart.h	Thu Apr 30 15:03:14 1998
-***************
-*** 88,99 ****
-  #define XtCFillRect "FillRect"
-  
-  #define XtNgetValue "getValue"
-! #define XtNhighlight "highlight"
-  #define XtNjumpScroll "jumpScroll"
-  #define XtNminScale "minScale"
-  #define XtNscale "scale"
-  #define XtNfillRect "fillRect"
-! #define XtNupdate "update"
-  #define XtNvmunix "vmunix"
-   
-  typedef struct _TimeChartRec *TimeChartWidget;
---- 88,99 ----
-  #define XtCFillRect "FillRect"
-  
-  #define XtNgetValue "getValue"
-! /* #define XtNhighlight "highlight" */
-  #define XtNjumpScroll "jumpScroll"
-  #define XtNminScale "minScale"
-  #define XtNscale "scale"
-  #define XtNfillRect "fillRect"
-! /* #define XtNupdate "update" */
-  #define XtNvmunix "vmunix"
-   
-  typedef struct _TimeChartRec *TimeChartWidget;
-*** ../xperfmon++/system.h	Wed Jul 27 22:29:34 1994
---- ./system.h	Thu Apr 30 22:41:43 1998
-***************
-*** 20,26 ****
-   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
-   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
-!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
-   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+*** 1,10 ****
+  /* Copyright 1994, Roger Smith for Sterling Software and NASA-Ames Research Center
    *
-   * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
---- 20,26 ----
-   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
-   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
-!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
-   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-   *
-   * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
-***************
-*** 32,38 ****
+   * Permission to use, copy, modify, and distribute this software and its
    * documentation for any purpose and without fee is hereby granted, provided that
    * the above copyright notice appear in all copies and that both that
    * copyright notice and this permission notice appear in supporting
@@ -82,7 +12,17 @@
    * or individually) are not be used in advertising or
    * publicity pertaining to distribution of the software without specific,
    * written prior permission.  NASA and Sterling Software makes no representations about the
---- 32,38 ----
+--- 1,17 ----
++ /*
++  * Enhancement and error correction for FreeBSD-3.X
++  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
++  *
++  *      $Id: misc.c,v 3.3 1999/01/10 20:13:27 lkoeller Exp lkoeller $
++  */
++ 
+  /* Copyright 1994, Roger Smith for Sterling Software and NASA-Ames Research Center
+   *
+   * Permission to use, copy, modify, and distribute this software and its
    * documentation for any purpose and without fee is hereby granted, provided that
    * the above copyright notice appear in all copies and that both that
    * copyright notice and this permission notice appear in supporting
@@ -91,7 +31,7 @@
    * publicity pertaining to distribution of the software without specific,
    * written prior permission.  NASA and Sterling Software makes no representations about the
 ***************
-*** 43,49 ****
+*** 15,27 ****
    * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
    * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
    * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
@@ -99,7 +39,13 @@
    * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
    *
    * 1994 Revision
---- 43,49 ----
+   * Author:           Roger Smith, Sterling Software @ NASA-Ames Research Center
+   *                   Moffett Field, California, rsmith@proteus.arc.nasa.gov
+   */
+  #include <stdio.h>
+  
+  #include <X11/IntrinsicP.h>
+--- 22,40 ----
    * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
    * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
    * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
@@ -107,206 +53,118 @@
    * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
    *
    * 1994 Revision
-***************
-*** 55,61 ****
-  
-  /* This file information needed by both system.c and Perfmon.c */
-  
-! #define NUM_POSSIBLE_STATS     11
-  #define MAX_STATS NUM_POSSIBLE_STATS + 1
-  
-  #define LINES_PER_LABEL 2
---- 55,65 ----
-  
-  /* This file information needed by both system.c and Perfmon.c */
-  
-! #if __FreeBSD_version >= 220000
-! # define NUM_POSSIBLE_STATS     14
-! #else
-! # define NUM_POSSIBLE_STATS     11
-! #endif
-  #define MAX_STATS NUM_POSSIBLE_STATS + 1
-  
-  #define LINES_PER_LABEL 2
-***************
-*** 77,93 ****
-      for (stat = 0; stat < num_stats; stat++)
-  
-  #define	NO_STAT			-1
-! #define USER_CPU_PERCENTAGE	0
-! #define SYSTEM_CPU_PERCENTAGE	1
-! #define IDLE_CPU_PERCENTAGE	2
-! #define FREE_MEM		3
-! #define DISK_TRANSFERS		4
-! #define INTERRUPTS		5
-! #define INPUT_PACKETS		6
-! #define OUTPUT_PACKETS		7
-! #define COLLISION_PACKETS	8
-  #define NFS_CLIENT_CALLS        9
-  #define NFS_SERVER_CALLS       10
-  
-  struct statistic {
-      int min_val, max_val;
---- 81,114 ----
-      for (stat = 0; stat < num_stats; stat++)
-  
-  #define	NO_STAT			-1
-! #if __FreeBSD_version >= 220000
-! #define LOAD                    0
-! #define USER_CPU_PERCENTAGE	1
-! #define NICE_CPU_PERCENTAGE     2
-! #define SYSTEM_CPU_PERCENTAGE	3
-! #define INTER_CPU_PERCENTAGE    4
-! #define IDLE_CPU_PERCENTAGE	5
-! #define FREE_MEM		6
-! #define DISK_TRANSFERS		7
-! #define INTERRUPTS		8
-! #define INPUT_PACKETS		9
-! #define OUTPUT_PACKETS	       10
-! #define COLLISION_PACKETS      11
-! #define NFS_CLIENT_CALLS       12
-! #define NFS_SERVER_CALLS       13
-! #else
-! #define USER_CPU_PERCENTAGE     0
-! #define SYSTEM_CPU_PERCENTAGE   1
-! #define IDLE_CPU_PERCENTAGE     2
-! #define FREE_MEM                3
-! #define DISK_TRANSFERS          4
-! #define INTERRUPTS              5
-! #define INPUT_PACKETS           6
-! #define OUTPUT_PACKETS          7
-! #define COLLISION_PACKETS       8
-  #define NFS_CLIENT_CALLS        9
-  #define NFS_SERVER_CALLS       10
-+ #endif
-  
-  struct statistic {
-      int min_val, max_val;
-***************
-*** 113,118 ****
---- 134,155 ----
-  
-  #define VALID_UPDATE(x) ((x <= MAX_TIME) && (x > 0))
-  
-+ #if __FreeBSD_version >= 220000
-+ #define SYS_LOAD 0
-+ #define USR_CPU  1
-+ #define NICE_CPU 2
-+ #define SYS_CPU  3
-+ #define INT_CPU  4
-+ #define IDL_CPU  5
-+ #define FRE_MEM  6
-+ #define DSK_XFR  7
-+ #define INTRPTS  8
-+ #define INP_PKT  9
-+ #define OUT_PKT 10
-+ #define COL_PKT 11
-+ #define NFS_CLT 12
-+ #define NFS_SRV 13
-+ #else
-  #define USR_CPU 0
-  #define SYS_CPU 1
-  #define IDL_CPU 2
-***************
-*** 124,129 ****
---- 161,167 ----
-  #define COL_PKT 8
-  #define NFS_CLT 9
-  #define NFS_SRV 10
-+ #endif
-  #define LAST_ITEM NFS_SRV	/* must equal last item above */
-  #define NUM_GRAPHS LAST_ITEM+1
-  
-***************
-*** 146,168 ****
---- 184,238 ----
-  }AppData, *AppDataPtr;
-  
-  static char *topNames[] = {
-+ #if __FreeBSD_version >= 220000
-+     "Load",
-+ #endif
-      "User",
-+ #if __FreeBSD_version >= 220000
-+     "Nice",
-+ #endif
-      "System",
-+ #if __FreeBSD_version >= 220000
-+     "Interrpt",
-+ #endif
-      "Idle",
-      "Free",
-      "Disk",
-+ #if __FreeBSD_version >= 220000
-+     "Inter-",
-+ #else
-      "Interrupts",
-+ #endif
-      "Input",
-      "Output",
-+ #if __FreeBSD_version >= 220000
-+     "Collis",
-+     "NFS Clt",
-+     "NFS Srv",
-+ #else
-      "Collision",
-      "NFS Client",
-      "NFS Server",
-+ #endif
-  };
-  static char *widgetLabels[] = {
-+ #if __FreeBSD_version >= 220000
-+     "Load",
-+ #endif
-      "User",
-+ #if __FreeBSD_version >= 220000
-+     "Nice",
-+ #endif
-      "System",
-+ #if __FreeBSD_version >= 220000
-+     "Inter",
-+ #endif
-      "Idle",
-+ #if __FreeBSD_version >= 220000
-+     "Swap",
-+ #else
-      "Free",
-+ #endif
-      "Disk",
-      "Intrpts",
-      "Input",
-***************
-*** 171,177 ****
---- 241,264 ----
-      "NFSClient",
-      "NFSServer",
-  };
+   * Author:           Roger Smith, Sterling Software @ NASA-Ames Research Center
+   *                   Moffett Field, California, rsmith@proteus.arc.nasa.gov
+   */
 + 
-  static char *botNames[] = {
-+ #if __FreeBSD_version >= 220000
-+     "(* 100)",
-+     "CPU (%)",
-+     "CPU (%)",
-+     "CPU (%)",
-+     "CPU (%)",
-+     "CPU (%)",
-+     "Swap (%)",
-+     "Trsf/s",
-+     "rupts/s",
-+     "Pkts/s",
-+     "Pkts/s",
-+     "Pkts/s",
-+     "Calls/s",
-+     "Calls/s",
-+ #else
-      "CPU",
-      "CPU",
-      "CPU",
-***************
-*** 183,186 ****
---- 270,274 ----
-      "Packets",
-      "Calls",
-      "Calls",
++ #ifndef LINT
++ static char rcsid[] = "$Id: misc.c,v 3.3 1999/01/10 20:13:27 lkoeller Exp lkoeller $";
 + #endif
-  };
++ 
++ #include "fbsd_vers.h"
+  #include <stdio.h>
+  
+  #include <X11/IntrinsicP.h>
+***************
+*** 42,48 ****
+  
+  static void adjust_timeout();
+  
+! /* This routine interprets the key that was pressed on top of the window. 
+   * It returns TRUE if Quit has been selected, signaling that the program
+   * is done.
+   */
+--- 55,61 ----
+  
+  static void adjust_timeout();
+  
+! /* This routine interprets the key that was pressed on top of the window.
+   * It returns TRUE if Quit has been selected, signaling that the program
+   * is done.
+   */
+***************
+*** 58,64 ****
+      int i, keycode, length = 0;
+  /*    PerfmonWidget pw = (PerfmonWidget) w;*/
+  
+!     length = XLookupString(event, strbuf, STRBUFSIZE, &keycode, NULL);
+      switch (keycode) {
+      case 'Q':
+      case 'q':
+--- 71,77 ----
+      int i, keycode, length = 0;
+  /*    PerfmonWidget pw = (PerfmonWidget) w;*/
+  
+!     length = XLookupString((XKeyEvent *)event, strbuf, STRBUFSIZE, (KeySym *)&keycode, NULL);
+      switch (keycode) {
+      case 'Q':
+      case 'q':
+***************
+*** 88,103 ****
+  	break;
+      case 'L':
+      case 'l':			/* print out a chart of current limit settings */
+! 	printf("\n%10s %5s %5s %5s %5s\n",
+! 	       "Widget", "Hi ", "Hi ", "Low", "Low ");
+! 	printf("%10s %5s %5s %5s %5s\n",
+! 	       "Name ", "Warn", "Alarm", "Warn", "Alarm");
+! 	printf("%10s %5s %5s %5s %5s\n",
+! 	       "------", "-----","-----","-----","-----");
+  	for ( i=0; i<NUM_GRAPHS; i++ ) {
+  	    if ( perfmon[i] ) {
+  		PerfChartWidget pw = (PerfChartWidget)perfmon[i];
+! 		printf("%10s %5d %5d %5d %5d\n",
+  		       widgetLabels[i],
+  		       pw->strip_chart.highWarn,
+  		       pw->strip_chart.highAlarm,
+--- 101,116 ----
+  	break;
+      case 'L':
+      case 'l':			/* print out a chart of current limit settings */
+! 	printf("\n%16s %6s %6s %6s %6s\n",
+! 	       " Widget ", " Hi ", " Hi ", " Low", " Low ");
+! 	printf("%16s %6s %6s %6s %6s\n",
+! 	       " Name  ", " Warn", " Alarm", " Warn", " Alarm");
+! 	printf("%16s %6s %6s %6s %6s\n",
+! 	       "--------", "------","------","------","------");
+  	for ( i=0; i<NUM_GRAPHS; i++ ) {
+  	    if ( perfmon[i] ) {
+  		PerfChartWidget pw = (PerfChartWidget)perfmon[i];
+! 		printf("%16s %6d %6d %6d %6d\n",
+  		       widgetLabels[i],
+  		       pw->strip_chart.highWarn,
+  		       pw->strip_chart.highAlarm,
+***************
+*** 152,158 ****
+  	appData.interval += delta;
+  
+  	XtRemoveTimeOut(appData.interval_id);
+! 		    
+  	appData.interval_id =
+  	    XtAppAddTimeOut(appData.app_context,
+  			    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
+--- 165,171 ----
+  	appData.interval += delta;
+  
+  	XtRemoveTimeOut(appData.interval_id);
+! 
+  	appData.interval_id =
+  	    XtAppAddTimeOut(appData.app_context,
+  			    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
+***************
+*** 160,166 ****
+  
+      (void)gethostname(hostname, sizeof(hostname));
+      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
+!     sprintf(c, "\nUpdate Interval = %5.1f secs", 
+  	    (float)(appData.interval*appData.ms_per_sec)/1000.0);
+      XtVaSetValues(labelBox, XtNlabel, hostname, NULL);
+  }
+--- 173,179 ----
+  
+      (void)gethostname(hostname, sizeof(hostname));
+      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
+!     sprintf(c, "\nUpdate Interval = %5.1f secs",
+  	    (float)(appData.interval*appData.ms_per_sec)/1000.0);
+      XtVaSetValues(labelBox, XtNlabel, hostname, NULL);
+  }

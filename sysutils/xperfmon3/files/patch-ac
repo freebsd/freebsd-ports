@@ -1,336 +1,1384 @@
-*** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
---- ./Imakefile	Thu Apr 30 15:03:39 1998
+*** ../xperfmon++/xperfmon.c	Wed Jul 27 22:29:39 1994
+--- ./xperfmon.c	Tue Jan 26 22:17:32 1999
 ***************
-*** 17,31 ****
-  SYS_MODULE=	sgi_system
-  #endif
+*** 1,6 ****
+  /*
+!  * $XConsortium: xperfmon.c,v 1.6 89/09/19 14:44:02 jim Exp $
+!  * 
+   * xperfmon
+   * X Window System -based Unix Performance Monitor.
+   * Simple graphical performance monitor for system-wide data.
+--- 1,11 ----
+  /*
+!  * Enhancement and error correction for FreeBSD-3.X
+!  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
+!  *
+!  *      $Id: xperfmon.c,v 3.5 1999/01/10 17:04:06 lkoeller Exp lkoeller $
+!  */
+! 
+! /*
+   * xperfmon
+   * X Window System -based Unix Performance Monitor.
+   * Simple graphical performance monitor for system-wide data.
+***************
+*** 22,28 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * This original version was completed by Emanuel Jay Berkenbilt,
+--- 27,33 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * This original version was completed by Emanuel Jay Berkenbilt,
+***************
+*** 38,44 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 43,49 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 49,55 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 54,60 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 58,63 ****
+--- 63,74 ----
+   *
+   */
   
-! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS)
++ #ifndef LINT
++ static char rcsid[] = "$Id: xperfmon.c,v 3.5 1999/01/10 17:04:06 lkoeller Exp lkoeller $";
++ #endif
++ 
++ #include "fbsd_vers.h"
++ 
+  #include <stdio.h>
+  #include <X11/IntrinsicP.h>
+  #include <X11/StringDefs.h>
+***************
+*** 76,82 ****
+--- 87,98 ----
+  extern void start_graphs();
+  extern time_t timeStamp;
+  extern Dimension oldHeight, oldWidth;
++ 
++ #if __FreeBSD_version >= 300000
++ extern double current_values[NUM_GRAPHS];
++ #else
+  extern int current_values[NUM_GRAPHS];
++ #endif
   
-     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
-! LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XMULIB) $(XLIB)
-         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
-! #       INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11 -I/usr/include/bsd
-!      CDEBUGFLAGS = -O
-!            SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
-!            OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
+  char *gprogname;
+  double testValue;
+***************
+*** 94,99 ****
+--- 110,122 ----
+       { NULL,           NULL      },
+  };
   
-  ComplexProgramTarget(xperfmon++)
++ /* LK!!! */
++ char *info1 = "da1";
++ int  MIN_HEIGHT=78;
++ #define MIN_WIDTH 185
++ #define ADD_TO_TIMEH (11+(int)(appData.numGraphsOn*0.2))
++ #define GRAPH_MIN_HEIGHT 25
++ 
+  #define XtNinterval "interval"
+  #define XtNcount "count"
+  #define XtCCount "Count"
+***************
+*** 101,156 ****
+  #define XtCFill "Fill"
+  #define XtNfast "fast"
+  #define XtCFast "Fast"
+- #define XtNstufAdd "stufAdd"
+- #define XtCStufAdd "StufAdd"
+- #define XtNstufSub "stufSub"
+- #define XtCStufSub "StufSub"
+  #define XtNdebug "debug"
+  #define XtCDebug "Debug"
+  #define XtNusercpuAdd "usercpuAdd"
+  #define XtCUsercpuAdd "UsercpuAdd"
+  #define XtNusercpuSub "usercpuSub"
+  #define XtCUsercpuSub "UsercpuSub"
+  #define XtNsystemcpuAdd "systemcpuAdd"
+  #define XtCSystemcpuAdd "SystemcpuAdd"
+  #define XtNsystemcpuSub "systemcpuSub"
+  #define XtCSystemcpuSub "SystemcpuSub"
+  #define XtNidlecpuAdd "idlecpuAdd"
+  #define XtCIdlecpuAdd "IdlecpuAdd"
+  #define XtNidlecpuSub "idlecpuSub"
+  #define XtCIdlecpuSub "IdlecpuSub"
+  #define XtNfreememAdd "freememAdd"
+  #define XtCFreememAdd "FreememAdd"
+  #define XtNfreememSub "freememSub"
+  #define XtCFreememSub "FreememSub"
+  #define XtNdiskxfrAdd "diskxfrAdd"
+  #define XtCDiskxfrAdd "DiskxfrAdd"
+  #define XtNdiskxfrSub "diskxfrSub"
+  #define XtCDiskxfrSub "DiskxfrSub"
+! #define XtNinterruptsAdd "interruptsAdd"
+! #define XtCInterrputsAdd "InterrputsAdd"
+! #define XtNinterruptsSub "interruptsSub"
+! #define XtCInterrputsSub "InterrputsSub"
+  #define XtNinputpktsAdd "inputpktsAdd"
+  #define XtCInputpktsAdd "InputpktsAdd"
+  #define XtNinputpktsSub "inputpktsSub"
+  #define XtCInputpktsSub "InputpktsSub"
+  #define XtNoutputpktsAdd "outputpktsAdd"
+  #define XtCOutputpktsAdd "OutputpktsAdd"
+  #define XtNoutputpktsSub "outputpktsSub"
+  #define XtCOutputpktsSub "OutputpktsSub"
+  #define XtNcollpktsAdd "collpktsAdd"
+  #define XtCCollpktsAdd "CollpktsAdd"
+  #define XtNcollpktsSub "collpktsSub"
+  #define XtCCollpktsSub "CollpktsSub"
+  #define XtNnfsclientAdd "nfsclientAdd"
+  #define XtCNfsclientAdd "NfsclientAdd"
+  #define XtNnfsclientSub "nfsclientSub"
+  #define XtCNfsclientSub "NfsclientSub"
+  #define XtNnfsserverAdd "nfsserverAdd"
+  #define XtCNfsserverAdd "NfsserverAdd"
+  #define XtNnfsserverSub "nfsserverSub"
+  #define XtCNfsserverSub "NfsserverSub"
   
---- 17,38 ----
-  SYS_MODULE=	sgi_system
-  #endif
-  
-! #if defined (FreeBSDArchitecture)
-! FreeBSDFLAGS=	-lkvm
-! SYS_MODULE=     freebsd_system
-! CC=		gcc
-! EXTRA_DEFINES=  -DHAVE_SYS_PARAM_H
+  #define DEF_INTERVAL	1
+  #define DEF_COUNT	-1
+--- 124,280 ----
+  #define XtCFill "Fill"
+  #define XtNfast "fast"
+  #define XtCFast "Fast"
+  #define XtNdebug "debug"
+  #define XtCDebug "Debug"
++ 
++ #if __FreeBSD_version >= 300000
++ # define XtNsysloadAdd "sysloadAdd"
++ # define XtCSysloadAdd "SysloadAdd"
++ # define XtNsysloadSub "sysloadSub"
++ # define XtCSysloadSub "SysloadSub"
++ #endif
++ 
+  #define XtNusercpuAdd "usercpuAdd"
+  #define XtCUsercpuAdd "UsercpuAdd"
+  #define XtNusercpuSub "usercpuSub"
+  #define XtCUsercpuSub "UsercpuSub"
++ 
++ #if __FreeBSD_version >= 300000
++ # define XtNnicecpuAdd "nicecpuAdd"
++ # define XtCNicecpuAdd "NicecpuAdd"
++ # define XtNnicecpuSub "nicecpuSub"
++ # define XtCNicecpuSub "NicecpuSub"
++ #endif
++ 
+  #define XtNsystemcpuAdd "systemcpuAdd"
+  #define XtCSystemcpuAdd "SystemcpuAdd"
+  #define XtNsystemcpuSub "systemcpuSub"
+  #define XtCSystemcpuSub "SystemcpuSub"
++ 
++ #if __FreeBSD_version >= 300000
++ # define XtNintercpuAdd "intercpuAdd"
++ # define XtCIntercpuAdd "IntercpuAdd"
++ # define XtNintercpuSub "intercpuSub"
++ # define XtCIntercpuSub "IntercpuSub"
++ #endif
++ 
+  #define XtNidlecpuAdd "idlecpuAdd"
+  #define XtCIdlecpuAdd "IdlecpuAdd"
+  #define XtNidlecpuSub "idlecpuSub"
+  #define XtCIdlecpuSub "IdlecpuSub"
++ 
++ #if __FreeBSD_version >= 300000
++ # define XtNttyinAdd "ttyinAdd"
++ # define XtCTtyinAdd "TtyinAdd"
++ # define XtNttyinSub "ttyinSub"
++ # define XtCTtyinSub "TtyinSub"
++ 
++ # define XtNttyoutAdd "ttyoutAdd"
++ # define XtCTtyoutAdd "TtyoutAdd"
++ # define XtNttyoutSub "ttyoutSub"
++ # define XtCTtyoutSub "TtyoutSub"
++ #endif
++ 
++ #define XtNinterruptsAdd "interruptsAdd"
++ #define XtCInterrputsAdd "InterrputsAdd"
++ #define XtNinterruptsSub "interruptsSub"
++ #define XtCInterrputsSub "InterrputsSub"
++ 
+  #define XtNfreememAdd "freememAdd"
+  #define XtCFreememAdd "FreememAdd"
+  #define XtNfreememSub "freememSub"
+  #define XtCFreememSub "FreememSub"
++ 
+  #define XtNdiskxfrAdd "diskxfrAdd"
+  #define XtCDiskxfrAdd "DiskxfrAdd"
+  #define XtNdiskxfrSub "diskxfrSub"
+  #define XtCDiskxfrSub "DiskxfrSub"
+! 
+! #if __FreeBSD_version >= 300000
+! # define XtNdiskmbAdd "diskmbAdd"
+! # define XtCDiskmbAdd "DiskmbAdd"
+! # define XtNdiskmbSub "diskmbSub"
+! # define XtCDiskmbSub "DiskmbSub"
+! 
+! # define XtNtapexfrAdd "tapexfrAdd"
+! # define XtCTapexfrAdd "TapexfrAdd"
+! # define XtNtapexfrSub "tapexfrSub"
+! # define XtCTapexfrSub "TapexfrSub"
+! 
+! # define XtNtapembAdd "tapembAdd"
+! # define XtCTapembAdd "TapembAdd"
+! # define XtNtapembSub "tapembSub"
+! # define XtCTapembSub "TapembSub"
+! 
+! # define XtNcdromxfrAdd "cdromxfrAdd"
+! # define XtCCdromxfrAdd "CdromxfrAdd"
+! # define XtNcdromxfrSub "cdromxfrSub"
+! # define XtCCdromxfrSub "CdromxfrSub"
+! 
+! # define XtNcdrommbAdd "cdrommbAdd"
+! # define XtCCdrommbAdd "CdrommbAdd"
+! # define XtNcdrommbSub "cdrommbSub"
+! # define XtCCdrommbSub "CdrommbSub"
 ! #endif
 ! 
-! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS) $(FreeBSDFLAGS)
+  #define XtNinputpktsAdd "inputpktsAdd"
+  #define XtCInputpktsAdd "InputpktsAdd"
+  #define XtNinputpktsSub "inputpktsSub"
+  #define XtCInputpktsSub "InputpktsSub"
++ 
+  #define XtNoutputpktsAdd "outputpktsAdd"
+  #define XtCOutputpktsAdd "OutputpktsAdd"
+  #define XtNoutputpktsSub "outputpktsSub"
+  #define XtCOutputpktsSub "OutputpktsSub"
++ 
+  #define XtNcollpktsAdd "collpktsAdd"
+  #define XtCCollpktsAdd "CollpktsAdd"
+  #define XtNcollpktsSub "collpktsSub"
+  #define XtCCollpktsSub "CollpktsSub"
++ 
++ #if __FreeBSD_version >= 300000
++ # define XtNnfsservercAdd "nfsservercAdd"
++ # define XtCNfsservercAdd "NfsservercAdd"
++ # define XtNnfsservercSub "nfsservercSub"
++ # define XtCNfsservercSub "NfsservercSub"
++ 
++ # define XtNnfsserverhAdd "nfsserverhAdd"
++ # define XtCNfsserverhAdd "NfsserverhAdd"
++ # define XtNnfsserverhSub "nfsserverhSub"
++ # define XtCNfsserverhSub "NfsserverhSub"
++ 
++ # define XtNnfsservermAdd "nfsservermAdd"
++ # define XtCNfsservermAdd "NfsservermAdd"
++ # define XtNnfsservermSub "nfsservermSub"
++ # define XtCNfsservermSub "NfsservermSub"
++ 
++ # define XtNnfsclientcAdd "nfsclientcAdd"
++ # define XtCNfsclientcAdd "NfsclientcAdd"
++ # define XtNnfsclientcSub "nfsclientcSub"
++ # define XtCNfsclientcSub "NfsclientcSub"
++ 
++ # define XtNnfsclienthAdd "nfsclienthAdd"
++ # define XtCNfsclienthAdd "NfsclienthAdd"
++ # define XtNnfsclienthSub "nfsclienthSub"
++ # define XtCNfsclienthSub "NfsclienthSub"
++ 
++ # define XtNnfsclientmAdd "nfsclientmAdd"
++ # define XtCNfsclientmAdd "NfsclientmAdd"
++ # define XtNnfsclientmSub "nfsclientmSub"
++ # define XtCNfsclientmSub "NfsclientmSub"
++ 
++ #else
++ 
+  #define XtNnfsclientAdd "nfsclientAdd"
+  #define XtCNfsclientAdd "NfsclientAdd"
+  #define XtNnfsclientSub "nfsclientSub"
+  #define XtCNfsclientSub "NfsclientSub"
++ 
+  #define XtNnfsserverAdd "nfsserverAdd"
+  #define XtCNfsserverAdd "NfsserverAdd"
+  #define XtNnfsserverSub "nfsserverSub"
+  #define XtCNfsserverSub "NfsserverSub"
++ #endif
   
-     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
-! LOCAL_LIBRARIES = -lXaw -lXt -lXmu -lX11
-         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
-! #      SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
-! #      OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
-!        SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c
-!        OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o
+  #define DEF_INTERVAL	1
+  #define DEF_COUNT	-1
+***************
+*** 171,207 ****
+  static XrmOptionDescRec optionDescList[] = {
+      { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
+      { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
+! 
+!     { "-lowmemAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowmemWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highmemAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highmemWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
+! 
+      { "-lowuserAlarm", "*perfChartUser.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowuserWarn", "*perfChartUser.lowWarn", XrmoptionSepArg, NULL },
+      { "-highuserAlarm", "*perfChartUser.highAlarm", XrmoptionSepArg, NULL },
+      { "-highuserWarn", "*perfChartUser.highWarn", XrmoptionSepArg, NULL },
+! 
+      { "-lowsysAlarm", "*perfChartSystem.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowsysWarn", "*perfChartSystem.lowWarn", XrmoptionSepArg, NULL },
+      { "-highsysAlarm", "*perfChartSystem.highAlarm", XrmoptionSepArg, NULL },
+      { "-highsysWarn", "*perfChartSystem.highWarn", XrmoptionSepArg, NULL },
+! 
+      { "-lowidleAlarm", "*perfChartIdle.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowidleWarn", "*perfChartIdle.lowWarn", XrmoptionSepArg, NULL },
+      { "-highidleAlarm", "*perfChartIdle.highAlarm", XrmoptionSepArg, NULL },
+      { "-highidleWarn", "*perfChartIdle.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowdiskAlarm", "*perfChartDisk.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowdiskWarn", "*perfChartDisk.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highdiskAlarm", "*perfChartDisk.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highdiskWarn", "*perfChartDisk.highWarn", XrmoptionSepArg, NULL },
+! 
+      { "-lowintrptsAlarm", "*perfChartIntrpts.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowintrptsWarn", "*perfChartIntrpts.lowWarn", XrmoptionSepArg, NULL },
+      { "-highintrptsAlarm", "*perfChartIntrpts.highAlarm", XrmoptionSepArg, NULL },
+      { "-highintrptsWarn", "*perfChartIntrpts.highWarn", XrmoptionSepArg, NULL },
+! 
+      { "-lowinputAlarm", "*perfChartInput.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowinputWarn", "*perfChartInput.lowWarn", XrmoptionSepArg, NULL },
+      { "-highinputAlarm", "*perfChartInput.highAlarm", XrmoptionSepArg, NULL },
+--- 295,392 ----
+  static XrmOptionDescRec optionDescList[] = {
+      { "-interval",  ".interval",    XrmoptionSepArg,    (caddr_t) NULL},
+      { "-immediate", "*PerfChart.immediate", XrmoptionNoArg, "True" },
+! #if __FreeBSD_version >= 300000
+!     { "-lowloadAlarm", "*perfChartLoad.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowloadWarn", "*perfChartLoad.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highloadAlarm", "*perfChartLoad.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highloadWarn", "*perfChartLoad.highWarn", XrmoptionSepArg, NULL },
+! #endif
+      { "-lowuserAlarm", "*perfChartUser.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowuserWarn", "*perfChartUser.lowWarn", XrmoptionSepArg, NULL },
+      { "-highuserAlarm", "*perfChartUser.highAlarm", XrmoptionSepArg, NULL },
+      { "-highuserWarn", "*perfChartUser.highWarn", XrmoptionSepArg, NULL },
+! #if __FreeBSD_version >= 300000
+!     { "-lowniceAlarm", "*perfChartNice.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowniceWarn", "*perfChartNice.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highniceAlarm", "*perfChartNice.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highniceWarn", "*perfChartNice.highWarn", XrmoptionSepArg, NULL },
+! #endif
+      { "-lowsysAlarm", "*perfChartSystem.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowsysWarn", "*perfChartSystem.lowWarn", XrmoptionSepArg, NULL },
+      { "-highsysAlarm", "*perfChartSystem.highAlarm", XrmoptionSepArg, NULL },
+      { "-highsysWarn", "*perfChartSystem.highWarn", XrmoptionSepArg, NULL },
+! #if __FreeBSD_version >= 300000
+!     { "-lowinterAlarm", "*perfChartInter.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowinterWarn", "*perfChartInter.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highinterAlarm", "*perfChartInter.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highinterWarn", "*perfChartInter.highWarn", XrmoptionSepArg, NULL },
+! #endif
+      { "-lowidleAlarm", "*perfChartIdle.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowidleWarn", "*perfChartIdle.lowWarn", XrmoptionSepArg, NULL },
+      { "-highidleAlarm", "*perfChartIdle.highAlarm", XrmoptionSepArg, NULL },
+      { "-highidleWarn", "*perfChartIdle.highWarn", XrmoptionSepArg, NULL },
+! #if __FreeBSD_version >= 300000
+!     { "-lowttyinAlarm", "*perfChartTtyin.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowttyinWarn", "*perfChartTtyin.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highttyinAlarm", "*perfChartTtyin.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highttyinWarn", "*perfChartTtyin.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowttyoutAlarm", "*perfChartTtyout.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowttyoutWarn", "*perfChartTtyout.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highttyoutAlarm", "*perfChartTtyout.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highttyoutWarn", "*perfChartTtyout.highWarn", XrmoptionSepArg, NULL },
+! #endif
+      { "-lowintrptsAlarm", "*perfChartIntrpts.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowintrptsWarn", "*perfChartIntrpts.lowWarn", XrmoptionSepArg, NULL },
+      { "-highintrptsAlarm", "*perfChartIntrpts.highAlarm", XrmoptionSepArg, NULL },
+      { "-highintrptsWarn", "*perfChartIntrpts.highWarn", XrmoptionSepArg, NULL },
+! #if __FreeBSD_version >= 300000
+!     { "-lowswapAlarm", "*perfChartSwap.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowswapWarn", "*perfChartSwap.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highswapAlarm", "*perfChartSwap.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highswapWarn", "*perfChartSwap.highWarn", XrmoptionSepArg, NULL },
+! #else
+!     { "-lowmemAlarm", "*perfChartFree.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowmemWarn", "*perfChartFree.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highmemAlarm", "*perfChartFree.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highmemWarn", "*perfChartFree.highWarn", XrmoptionSepArg, NULL },
+! #endif
+! #if __FreeBSD_version >= 300000
+!     { "-lowdiskxfrfAlarm", "*perfChartDiskXfr.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowdiskxfrWarn", "*perfChartDiskXfr.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highdiskxfrAlarm", "*perfChartDiskXfr.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highdiskxfrWarn", "*perfChartDiskXfr.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowdiskmbAlarm", "*perfChartDiskMB.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowdiskmbWarn", "*perfChartDiskMB.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highdiskmbAlarm", "*perfChartDiskMB.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highdiskmbWarn", "*perfChartDiskMB.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowtapexfrAlarm", "*perfChartTapeXfr.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowtapexfrWarn", "*perfChartTapeXfr.lowWarn", XrmoptionSepArg, NULL },
+!     { "-hightapexfrAlarm", "*perfChartTapeXfr.highAlarm", XrmoptionSepArg, NULL },
+!     { "-hightapexfrWarn", "*perfChartTapeXfr.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowtapembAlarm", "*perfChartTapeMB.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowtapembWarn", "*perfChartTapeMB.lowWarn", XrmoptionSepArg, NULL },
+!     { "-hightapembAlarm", "*perfChartTapeMB.highAlarm", XrmoptionSepArg, NULL },
+!     { "-hightapembWarn", "*perfChartTapeMB.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowcdromxfrAlarm", "*perfChartCDRomXfr.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowcdromxfrWarn", "*perfChartCDRomXfr.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highcdromxfrAlarm", "*perfChartCDRomXfr.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highcdromxfrWarn", "*perfChartCDRomXfr.highWarn", XrmoptionSepArg, NULL },
+! 
+!     { "-lowcdrommbAlarm", "*perfChartCDRomMB.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowcdrommbWarn", "*perfChartCDRomMB.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highcdrommbAlarm", "*perfChartCDRomMB.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highcdrommbWarn", "*perfChartCDRomMB.highWarn", XrmoptionSepArg, NULL },
+! #else
+!     { "-lowdiskAlarm", "*perfChartDisk.lowAlarm", XrmoptionSepArg, NULL },
+!     { "-lowdiskWarn", "*perfChartDisk.lowWarn", XrmoptionSepArg, NULL },
+!     { "-highdiskAlarm", "*perfChartDisk.highAlarm", XrmoptionSepArg, NULL },
+!     { "-highdiskWarn", "*perfChartDisk.highWarn", XrmoptionSepArg, NULL },
+! #endif
+      { "-lowinputAlarm", "*perfChartInput.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lowinputWarn", "*perfChartInput.lowWarn", XrmoptionSepArg, NULL },
+      { "-highinputAlarm", "*perfChartInput.highAlarm", XrmoptionSepArg, NULL },
+***************
+*** 217,222 ****
+--- 402,438 ----
+      { "-highcollisionAlarm", "*perfChartCollision.highAlarm", XrmoptionSepArg, NULL },
+      { "-highcollisionWarn", "*perfChartCollision.highWarn", XrmoptionSepArg, NULL },
   
-  ComplexProgramTarget(xperfmon++)
++ #if __FreeBSD_version >= 300000
++     { "-lownfsservercallsAlarm", "*perfChartNFSServerCalls.lowAlarm", XrmoptionSepArg, NULL },
++     { "-lownfsservercallsWarn", "*perfChartNFSServerCalls.lowWarn", XrmoptionSepArg, NULL },
++     { "-highnfsservercallsAlarm", "*perfChartNFSServerCalls.highAlarm", XrmoptionSepArg, NULL },
++     { "-highnfsservercallsWarn", "*perfChartNFSServerCalls.highWarn", XrmoptionSepArg, NULL },
++ 
++     { "-lownfsserverhitsAlarm", "*perfChartNFSServerHits.lowAlarm", XrmoptionSepArg, NULL },
++     { "-lownfsserverhitsWarn", "*perfChartNFSServerHits.lowWarn", XrmoptionSepArg, NULL },
++     { "-highnfsserverhitsAlarm", "*perfChartNFSServerHits.highAlarm", XrmoptionSepArg, NULL },
++     { "-highnfsserverhitsWarn", "*perfChartNFSServerHits.highWarn", XrmoptionSepArg, NULL },
++ 
++     { "-lownfsservermissesAlarm", "*perfChartNFSServerMisses.lowAlarm", XrmoptionSepArg, NULL },
++     { "-lownfsservermissesWarn", "*perfChartNFSServerMisses.lowWarn", XrmoptionSepArg, NULL },
++     { "-highnfsservermissesAlarm", "*perfChartNFSServerMisses.highAlarm", XrmoptionSepArg, NULL },
++     { "-highnfsservermissesWarn", "*perfChartNFSServerMisses.highWarn", XrmoptionSepArg, NULL },
++ 
++     { "-lownfsclientcallsAlarm", "*perfChartNFSClientCalls.lowAlarm", XrmoptionSepArg, NULL },
++     { "-lownfsclientcallsWarn", "*perfChartNFSClientCalls.lowWarn", XrmoptionSepArg, NULL },
++     { "-highnfsclientcallsAlarm", "*perfChartNFSClientCalls.highAlarm", XrmoptionSepArg, NULL },
++     { "-highnfsclientcallsWarn", "*perfChartNFSClientCalls.highWarn", XrmoptionSepArg, NULL },
++ 
++     { "-lownfsclienthitsAlarm", "*perfChartNFSClientHits.lowAlarm", XrmoptionSepArg, NULL },
++     { "-lownfsclienthitsWarn", "*perfChartNFSClientHits.lowWarn", XrmoptionSepArg, NULL },
++     { "-highnfsclienthitsAlarm", "*perfChartNFSClientHits.highAlarm", XrmoptionSepArg, NULL },
++     { "-highnfsclienthitsWarn", "*perfChartNFSClientHits.highWarn", XrmoptionSepArg, NULL },
++ 
++     { "-lownfsclientmissesAlarm", "*perfChartNFSClientMisses.lowAlarm", XrmoptionSepArg, NULL },
++     { "-lownfsclientmissesWarn", "*perfChartNFSClientMisses.lowWarn", XrmoptionSepArg, NULL },
++     { "-highnfsclientmissesAlarm", "*perfChartNFSClientMisses.highAlarm", XrmoptionSepArg, NULL },
++     { "-highnfsclientmissesWarn", "*perfChartNFSClientMisses.highWarn", XrmoptionSepArg, NULL },
++ #else
+      { "-lownfsclientAlarm", "*perfChartNFSClient.lowAlarm", XrmoptionSepArg, NULL },
+      { "-lownfsclientWarn", "*perfChartNFSClient.lowWarn", XrmoptionSepArg, NULL },
+      { "-highnfsclientAlarm", "*perfChartNFSClient.highAlarm", XrmoptionSepArg, NULL },
+***************
+*** 226,269 ****
+      { "-lownfsserverWarn", "*perfChartNFSServer.lowWarn", XrmoptionSepArg, NULL },
+      { "-highnfsserverAlarm", "*perfChartNFSServer.highAlarm", XrmoptionSepArg, NULL },
+      { "-highnfsserverWarn", "*perfChartNFSServer.highWarn", XrmoptionSepArg, NULL },
   
-*** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
---- ./README	Thu Apr 30 15:03:39 1998
-***************
-*** 18,20 ****
---- 18,58 ----
-  		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
-  		O/S if x11r5 is fully installed in all the right places.
+      { "-count",	    ".count",	    XrmoptionSepArg,    (caddr_t) NULL},
+      { "-fill",      "*fill",        XrmoptionNoArg,     "True" },
+      { "-debug",     "*debug",       XrmoptionNoArg,     "True" },
+      { "-fast",      "*fast",        XrmoptionNoArg,     (XtPointer)"True" },
+      { "-usercpu",   XtNusercpuSub,     XrmoptionNoArg,     "True" },
+      { "+usercpu",   XtNusercpuAdd,     XrmoptionNoArg,     "TRUE" },
+!     { "-systemcpu", XtNsystemcpuSub,     XrmoptionNoArg,     "True" },
+!     { "+systemcpu", XtNsystemcpuAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-idlecpu",   XtNidlecpuSub,     XrmoptionNoArg,     "True" },
+      { "+idlecpu",   XtNidlecpuAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-freemem",   XtNfreememSub,     XrmoptionNoArg,     "True" },
+      { "+freemem",   XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-diskxfr",   XtNdiskxfrSub,     XrmoptionNoArg,     "True" },
+      { "+diskxfr",   XtNdiskxfrAdd,     XrmoptionNoArg,     "TRUE" },
+!     { "-interrupts",  XtNinterruptsSub ,     XrmoptionNoArg,     "True" },
+!     { "+interrupts",   XtNinterruptsAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-inputpkts",   XtNinputpktsSub,     XrmoptionNoArg,     "True" },
+      { "+inputpkts",   XtNinputpktsAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-outputpkts",   XtNoutputpktsSub,     XrmoptionNoArg,     "True" },
+      { "+outputpkts",   XtNoutputpktsAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-collpkts",   XtNcollpktsSub,     XrmoptionNoArg,     "True" },
+      { "+collpkts",   XtNcollpktsAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-nfsclient",   XtNnfsclientSub,     XrmoptionNoArg,     "True" },
+      { "+nfsclient",   XtNnfsclientAdd,     XrmoptionNoArg,     "TRUE" },
+      { "-nfsserver",   XtNnfsserverSub,     XrmoptionNoArg,     "True" },
+      { "+nfsserver",   XtNnfsserverAdd,     XrmoptionNoArg,     "TRUE" },
+!     { "-stuf",      XtNstufAdd,        XrmoptionNoArg,     (XtPointer)"True" },
+!     { "+stuf",      XtNstufSub,        XrmoptionNoArg,     (XtPointer)"True" },
+  };
   
+  /* Application Resource List - no particular widget */
+  
+  static XtResource resources[] = {
+-     { XtNstufAdd, XtCStufAdd, XtRBool, sizeof(Bool),
+- 	  XtOffsetOf(AppData, addG[1]), XtRImmediate, (XtPointer) NULL },
+-     { XtNstufSub, XtCStufSub, XtRBool, sizeof(Bool),
+- 	  XtOffsetOf(AppData, subG[0]), XtRImmediate, (XtPointer) NULL },
+      { XtNinterval, XtCInterval, XtRInt, sizeof(int),
+  	  XtOffsetOf(AppData, interval), XtRImmediate, (caddr_t) DEF_INTERVAL },
+      { XtNcount, XtCCount, XtRInt, sizeof(int),
+--- 442,543 ----
+      { "-lownfsserverWarn", "*perfChartNFSServer.lowWarn", XrmoptionSepArg, NULL },
+      { "-highnfsserverAlarm", "*perfChartNFSServer.highAlarm", XrmoptionSepArg, NULL },
+      { "-highnfsserverWarn", "*perfChartNFSServer.highWarn", XrmoptionSepArg, NULL },
++ #endif
+  
+      { "-count",	    ".count",	    XrmoptionSepArg,    (caddr_t) NULL},
+      { "-fill",      "*fill",        XrmoptionNoArg,     "True" },
+      { "-debug",     "*debug",       XrmoptionNoArg,     "True" },
+      { "-fast",      "*fast",        XrmoptionNoArg,     (XtPointer)"True" },
++ #if __FreeBSD_version >= 300000
++     { "-sysload",   XtNsysloadSub,     XrmoptionNoArg,     "True" },
++     { "+sysload",   XtNsysloadAdd,     XrmoptionNoArg,     "TRUE" },
++ #endif
+      { "-usercpu",   XtNusercpuSub,     XrmoptionNoArg,     "True" },
+      { "+usercpu",   XtNusercpuAdd,     XrmoptionNoArg,     "TRUE" },
+! #if __FreeBSD_version >= 300000
+!     { "-nicecpu",   XtNnicecpuSub,     XrmoptionNoArg,     "True" },
+!     { "+nicecpu",   XtNnicecpuAdd,     XrmoptionNoArg,     "TRUE" },
+! #endif
+!     { "-systemcpu", XtNsystemcpuSub,   XrmoptionNoArg,     "True" },
+!     { "+systemcpu", XtNsystemcpuAdd,   XrmoptionNoArg,     "TRUE" },
+! #if __FreeBSD_version >= 300000
+!     { "-intercpu",   XtNintercpuSub,   XrmoptionNoArg,     "True" },
+!     { "+intercpu",   XtNintercpuAdd,   XrmoptionNoArg,     "TRUE" },
+! #endif
+      { "-idlecpu",   XtNidlecpuSub,     XrmoptionNoArg,     "True" },
+      { "+idlecpu",   XtNidlecpuAdd,     XrmoptionNoArg,     "TRUE" },
++ #if __FreeBSD_version >= 300000
++     { "-ttyin",      XtNttyinSub,      XrmoptionNoArg,     "True" },
++     { "+ttyin",      XtNttyinAdd,      XrmoptionNoArg,     "TRUE" },
 + 
-+ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
++     { "-ttyout",     XtNttyoutSub,     XrmoptionNoArg,     "True" },
++     { "+ttyout",     XtNttyoutAdd,     XrmoptionNoArg,     "TRUE" },
++ #endif
++     { "-interrupts",  XtNinterruptsSub ,     XrmoptionNoArg,     "True" },
++     { "+interrupts",   XtNinterruptsAdd,     XrmoptionNoArg,     "TRUE" },
++ #if __FreeBSD_version >= 300000
++     { "-freeswap",  XtNfreememSub,     XrmoptionNoArg,     "True" },
++     { "+freeswap",  XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
++ #else
+      { "-freemem",   XtNfreememSub,     XrmoptionNoArg,     "True" },
+      { "+freemem",   XtNfreememAdd,     XrmoptionNoArg,     "TRUE" },
++ #endif
+      { "-diskxfr",   XtNdiskxfrSub,     XrmoptionNoArg,     "True" },
+      { "+diskxfr",   XtNdiskxfrAdd,     XrmoptionNoArg,     "TRUE" },
+! #if __FreeBSD_version >= 300000
+!     { "-diskmb",    XtNdiskmbSub,      XrmoptionNoArg,     "True" },
+!     { "+diskmb",    XtNdiskmbAdd,      XrmoptionNoArg,     "TRUE" },
+! 
+!     { "-tapexfr",   XtNtapexfrSub,     XrmoptionNoArg,     "True" },
+!     { "+tapexfr",   XtNtapexfrAdd,     XrmoptionNoArg,     "TRUE" },
+! 
+!     { "-tapemb",    XtNtapembSub,      XrmoptionNoArg,     "True" },
+!     { "+tapemb",    XtNtapembAdd,      XrmoptionNoArg,     "TRUE" },
+! 
+!     { "-cdromxfr",  XtNcdromxfrSub,    XrmoptionNoArg,     "True" },
+!     { "+cdromxfr",  XtNcdromxfrAdd,    XrmoptionNoArg,     "TRUE" },
+! 
+!     { "-cdrommb",   XtNcdrommbSub,     XrmoptionNoArg,     "True" },
+!     { "+cdrommb",   XtNcdrommbAdd,     XrmoptionNoArg,     "TRUE" },
+! #endif
+      { "-inputpkts",   XtNinputpktsSub,     XrmoptionNoArg,     "True" },
+      { "+inputpkts",   XtNinputpktsAdd,     XrmoptionNoArg,     "TRUE" },
 + 
-+ 8-16-95		Quick and dirty workaround of -geometry option bug.
-+ 		But there are still some side effects when changing the geometry.
-+ 		Fix memory leak in bsd_system.c
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
+      { "-outputpkts",   XtNoutputpktsSub,     XrmoptionNoArg,     "True" },
+      { "+outputpkts",   XtNoutputpktsAdd,     XrmoptionNoArg,     "TRUE" },
 + 
-+ 30-10-95	Change 'Free Mem' graph to 'Free Swap' cause the FreeBSD memory system
-+ 		tries to minimize the free unused amount of memory.
-+ 		Include basic support for FreeBSD > 2.1.
-+ 		Number of interrupts now independent from 'Update Intervall'
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
+      { "-collpkts",   XtNcollpktsSub,     XrmoptionNoArg,     "True" },
+      { "+collpkts",   XtNcollpktsAdd,     XrmoptionNoArg,     "TRUE" },
++ #if __FreeBSD_version >= 300000
++     { "-nfsservercalls",   XtNnfsservercSub,     XrmoptionNoArg,     "True" },
++     { "+nfsservercalls",   XtNnfsservercAdd,     XrmoptionNoArg,     "TRUE" },
 + 
-+ 11-12-95        Fix -geometry bug! Now there is only a MIN_WIDTH of 185 pixels, and the
-+ 		MIN_HEIGTH is calculates dynamically depending on the number of active
-+ 		graphs.	FreeBSD-2.X only:
-+ 		Change 'Free  Swap' graph from absolut into percent values.
-+ 		All graphs shoud be independent of the 'Update Intervall'.
-+ 		Modify graph labels and add unit of each graph.
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++     { "-nfsserverhits",   XtNnfsserverhSub,     XrmoptionNoArg,     "True" },
++     { "+nfsserverhits",   XtNnfsserverhAdd,     XrmoptionNoArg,     "TRUE" },
 + 
-+ 5-4-96		Fix some event problems that consumes a lot of cpu power after resizing
-+ 		(mwm) or restart of an window manager. Make xperfmon compile with
-+ 		FreeBSD-current (2.2, changes in get_swapspace)
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
++     { "-nfsservermisses",   XtNnfsservermSub,     XrmoptionNoArg,     "True" },
++     { "+nfsservermisses",   XtNnfsservermAdd,     XrmoptionNoArg,     "TRUE" },
 + 
-+ 4-30-98		Add System Load graph
-+ 		Add CPU Nice and Interrupt graph
-+ 		Compiles on FreeBSD-2.2.X and 3.X
-+ 		by Lars Köller @University of Bielefeld, Germany.
-+ 		E-Mail: Lars.Koeller@Uni-Bielefeld.DE
-*** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
---- ./XPerfmon++.ad	Thu Aug 13 18:58:32 1998
++     { "-nfsclientcalls",   XtNnfsclientcSub,     XrmoptionNoArg,     "True" },
++     { "+nfsclientcalls",   XtNnfsclientcAdd,     XrmoptionNoArg,     "TRUE" },
++ 
++     { "-nfsclienthits",   XtNnfsclienthSub,     XrmoptionNoArg,     "True" },
++     { "+nfsclienthits",   XtNnfsclienthAdd,     XrmoptionNoArg,     "TRUE" },
++ 
++     { "-nfsclientmisses",   XtNnfsclientmSub,     XrmoptionNoArg,     "True" },
++     { "+nfsclientmisses",   XtNnfsclientmAdd,     XrmoptionNoArg,     "TRUE" },
++ #else
+      { "-nfsclient",   XtNnfsclientSub,     XrmoptionNoArg,     "True" },
+      { "+nfsclient",   XtNnfsclientAdd,     XrmoptionNoArg,     "TRUE" },
++ 
+      { "-nfsserver",   XtNnfsserverSub,     XrmoptionNoArg,     "True" },
+      { "+nfsserver",   XtNnfsserverAdd,     XrmoptionNoArg,     "TRUE" },
+! #endif
+  };
+  
+  /* Application Resource List - no particular widget */
+  
+  static XtResource resources[] = {
+      { XtNinterval, XtCInterval, XtRInt, sizeof(int),
+  	  XtOffsetOf(AppData, interval), XtRImmediate, (caddr_t) DEF_INTERVAL },
+      { XtNcount, XtCCount, XtRInt, sizeof(int),
 ***************
-*** 4,27 ****
-  ! commented out, the "NFS Server" graph background will be the application
-  ! default color, unless some other resource file has specified it.
-  ! *PerfChart.highAlarm:		99998
-  *perfChartIdle.lowWarn:		10
-  *perfChartIdle.lowAlarm:	5
-! *perfChartUser.highAlarm:	90
-! *perfChartUser.highWarn:	75
-! *perfChartSystem.highAlarm:	90
-! *perfChartSystem.highWarn:	75
-! *perfChartFree.lowWarn:		2000
-! *perfChartFree.lowAlarm:	1000
-! *perfChartDisk.highWarn:	25
-! *perfChartDisk.highAlarm:	50
-! *perfChartIntrpts.highWarn:	500
-! *perfChartIntrpts.highAlarm:	750
-! *perfChartInput.highWarn:	300
-! *perfChartInput.highAlarm:	500
-! *perfChartOutput.highWarn:	300
-! *perfChartOutput.highAlarm:	500
-  *perfChartCollision.highWarn:	20
-  *perfChartCollision.highAlarm:	50
-! *perfChartNFSClient.highWarn:	200
-! *perfChartNFSClient.highAlarm:	400
-  *font:				6x13
---- 4,50 ----
-  ! commented out, the "NFS Server" graph background will be the application
-  ! default color, unless some other resource file has specified it.
-  ! *PerfChart.highAlarm:		99998
+*** 274,316 ****
+  	  XtOffsetOf(AppData, debug), XtRImmediate, (caddr_t)NULL },
+      { XtNfast, XtCFast, XtRBoolean, sizeof(Boolean),
+  	  XtOffsetOf(AppData, fast), XtRImmediate, (XtPointer) NULL },
+! 
+      { XtNusercpuAdd, XtCUsercpuAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNusercpuSub, XtCUsercpuSub, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, subG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNsystemcpuAdd, XtCSystemcpuAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNsystemcpuSub, XtCSystemcpuSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNidlecpuAdd, XtCIdlecpuAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[IDL_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNidlecpuSub, XtCIdlecpuSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[IDL_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNfreememAdd, XtCFreememAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[FRE_MEM]), XtRImmediate, (XtPointer) NULL },
+      { XtNfreememSub, XtCFreememSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[FRE_MEM]), XtRImmediate, (XtPointer) NULL },
+      { XtNdiskxfrAdd, XtCDiskxfrAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[DSK_XFR]), XtRImmediate, (XtPointer) NULL },
+      { XtNdiskxfrSub, XtCDiskxfrSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[DSK_XFR]), XtRImmediate, (XtPointer) NULL },
+!     { XtNinterruptsAdd, XtCInterrputsAdd, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, addG[INTRPTS]), XtRImmediate, (XtPointer) NULL },
+!     { XtNinterruptsSub, XtCInterrputsSub, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, subG[INTRPTS]), XtRImmediate, (XtPointer) NULL },
+      { XtNinputpktsAdd, XtCInputpktsAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[INP_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNinputpktsSub, XtCInputpktsSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[INP_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNoutputpktsAdd, XtCOutputpktsAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[OUT_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNoutputpktsSub, XtCOutputpktsSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[OUT_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNcollpktsAdd, XtCCollpktsAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[COL_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNcollpktsSub, XtCCollpktsSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[COL_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNnfsclientAdd, XtCNfsclientAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[NFS_CLT]), XtRImmediate, (XtPointer) NULL },
+      { XtNnfsclientSub, XtCNfsclientSub, XtRBool, sizeof(Bool),
+--- 548,684 ----
+  	  XtOffsetOf(AppData, debug), XtRImmediate, (caddr_t)NULL },
+      { XtNfast, XtCFast, XtRBoolean, sizeof(Boolean),
+  	  XtOffsetOf(AppData, fast), XtRImmediate, (XtPointer) NULL },
+! #if __FreeBSD_version >= 300000
+!     { XtNsysloadAdd, XtCSysloadAdd, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, addG[SYS_LOAD]), XtRImmediate, (XtPointer) NULL },
+!     { XtNsysloadSub, XtCSysloadSub, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, subG[SYS_LOAD]), XtRImmediate, (XtPointer) NULL },
+! #endif
+      { XtNusercpuAdd, XtCUsercpuAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNusercpuSub, XtCUsercpuSub, XtRBool, sizeof(Bool),
+!           XtOffsetOf(AppData, subG[USR_CPU]), XtRImmediate, (XtPointer) NULL },
+! #if __FreeBSD_version >= 300000
+!     { XtNnicecpuAdd, XtCNicecpuAdd, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, addG[NICE_CPU]), XtRImmediate, (XtPointer) NULL },
+!     { XtNnicecpuSub, XtCNicecpuSub, XtRBool, sizeof(Bool),
+!           XtOffsetOf(AppData, subG[NICE_CPU]), XtRImmediate, (XtPointer) NULL },
+! #endif
+      { XtNsystemcpuAdd, XtCSystemcpuAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNsystemcpuSub, XtCSystemcpuSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[SYS_CPU]), XtRImmediate, (XtPointer) NULL },
++ #if __FreeBSD_version >= 300000
++     { XtNintercpuAdd, XtCIntercpuAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[INT_CPU]), XtRImmediate, (XtPointer) NULL },
++     { XtNintercpuSub, XtCIntercpuSub, XtRBool, sizeof(Bool),
++           XtOffsetOf(AppData, subG[INT_CPU]), XtRImmediate, (XtPointer) NULL },
++ #endif
+      { XtNidlecpuAdd, XtCIdlecpuAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[IDL_CPU]), XtRImmediate, (XtPointer) NULL },
+      { XtNidlecpuSub, XtCIdlecpuSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[IDL_CPU]), XtRImmediate, (XtPointer) NULL },
++ #if __FreeBSD_version >= 300000
++     { XtNttyinAdd, XtCTtyinAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[TTY_IN]), XtRImmediate, (XtPointer) NULL },
++     { XtNttyinSub, XtCTtyinSub, XtRBool, sizeof(Bool),
++           XtOffsetOf(AppData, subG[TTY_IN]), XtRImmediate, (XtPointer) NULL },
 + 
-+ ! Remember Load*100 is shown in the graph!
-+ *perfChartLoad.highAlarm:	800
-+ *perfChartLoad.highWarn:	400
++     { XtNttyoutAdd, XtCTtyoutAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[TTY_OUT]), XtRImmediate, (XtPointer) NULL },
++     { XtNttyoutSub, XtCTtyoutSub, XtRBool, sizeof(Bool),
++           XtOffsetOf(AppData, subG[TTY_OUT]), XtRImmediate, (XtPointer) NULL },
++ #endif
++     { XtNinterruptsAdd, XtCInterrputsAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[INTRPTS]), XtRImmediate, (XtPointer) NULL },
++     { XtNinterruptsSub, XtCInterrputsSub, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, subG[INTRPTS]), XtRImmediate, (XtPointer) NULL },
 + 
-+ *perfChartUser.highAlarm:	95
-+ *perfChartUser.highWarn:	75
+      { XtNfreememAdd, XtCFreememAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[FRE_MEM]), XtRImmediate, (XtPointer) NULL },
+      { XtNfreememSub, XtCFreememSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[FRE_MEM]), XtRImmediate, (XtPointer) NULL },
++ #if __FreeBSD_version >= 300000
++     { XtNdiskxfrAdd, XtCDiskxfrAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[DA_XFR]), XtRImmediate, (XtPointer) NULL },
++     { XtNdiskxfrSub, XtCDiskxfrSub, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, subG[DA_XFR]), XtRImmediate, (XtPointer) NULL },
 + 
-+ *perfChartNice.highAlarm:	75
-+ *perfChartNice.highWarn:	55
++     { XtNdiskmbAdd, XtCDiskmbAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[DA_MB]), XtRImmediate, (XtPointer) NULL },
++     { XtNdiskmbSub, XtCDiskmbSub, XtRBool, sizeof(Bool),
++           XtOffsetOf(AppData, subG[DA_MB]), XtRImmediate, (XtPointer) NULL },
 + 
-+ *perfChartSystem.highAlarm:	40
-+ *perfChartSystem.highWarn:	25
++     { XtNtapexfrAdd, XtCTapexfrAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[SA_XFR]), XtRImmediate, (XtPointer) NULL },
++     { XtNtapexfrSub, XtCTapexfrSub, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, subG[SA_XFR]), XtRImmediate, (XtPointer) NULL },
 + 
-+ *perfChartInter.highAlarm:	40
-+ *perfChartInter.highWarn:	25
++     { XtNtapembAdd, XtCTapembAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[SA_MB]), XtRImmediate, (XtPointer) NULL },
++     { XtNtapembSub, XtCTapembSub, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, subG[SA_MB]), XtRImmediate, (XtPointer) NULL },
 + 
-  *perfChartIdle.lowWarn:		10
-  *perfChartIdle.lowAlarm:	5
-! 
-! *perfChartSwap.lowWarn:		20
-! *perfChartSwap.lowAlarm:	10
-! 
-! *perfChartDisk.highWarn:	50
-! *perfChartDisk.highAlarm:	100
-! 
-! *perfChartIntrpts.highWarn:	400
-! *perfChartIntrpts.highAlarm:	600
-! 
-! *perfChartInput.highWarn:	500
-! *perfChartInput.highAlarm:	1000
-! 
-! *perfChartOutput.highWarn:	500
-! *perfChartOutput.highAlarm:	1000
-! 
-  *perfChartCollision.highWarn:	20
-  *perfChartCollision.highAlarm:	50
-! 
-! *perfChartNFSClient.highWarn:	100
-! *perfChartNFSClient.highAlarm:	200
-! 
-! *perfChartNFSServer.highWarn:	100
-! *perfChartNFSServer.highAlarm:	200
-  *font:				6x13
-*** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
---- ./xperfmon++.man	Thu Apr 30 15:03:39 1998
++     { XtNcdromxfrAdd, XtCCdromxfrAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[CD_XFR]), XtRImmediate, (XtPointer) NULL },
++     { XtNcdromxfrSub, XtCCdromxfrSub, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, subG[CD_XFR]), XtRImmediate, (XtPointer) NULL },
++ 
++     { XtNcdrommbAdd, XtCCdrommbAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[CD_MB]), XtRImmediate, (XtPointer) NULL },
++     { XtNcdrommbSub, XtCCdrommbSub, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, subG[CD_MB]), XtRImmediate, (XtPointer) NULL },
++ #else
+      { XtNdiskxfrAdd, XtCDiskxfrAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[DSK_XFR]), XtRImmediate, (XtPointer) NULL },
+      { XtNdiskxfrSub, XtCDiskxfrSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[DSK_XFR]), XtRImmediate, (XtPointer) NULL },
+! #endif
+      { XtNinputpktsAdd, XtCInputpktsAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[INP_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNinputpktsSub, XtCInputpktsSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[INP_PKT]), XtRImmediate, (XtPointer) NULL },
++ 
+      { XtNoutputpktsAdd, XtCOutputpktsAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[OUT_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNoutputpktsSub, XtCOutputpktsSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[OUT_PKT]), XtRImmediate, (XtPointer) NULL },
++ 
+      { XtNcollpktsAdd, XtCCollpktsAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[COL_PKT]), XtRImmediate, (XtPointer) NULL },
+      { XtNcollpktsSub, XtCCollpktsSub, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, subG[COL_PKT]), XtRImmediate, (XtPointer) NULL },
++ #if __FreeBSD_version >= 300000
++     { XtNnfsservercAdd, XtCNfsservercAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
++     { XtNnfsservercSub, XtCNfsservercSub, XtRBool, sizeof(Bool),
++          XtOffsetOf(AppData, subG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
++ 
++     { XtNnfsserverhAdd, XtCNfsserverhAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[NFS_SRV_HIT]), XtRImmediate, (XtPointer) NULL },
++     { XtNnfsserverhSub, XtCNfsserverhSub, XtRBool, sizeof(Bool),
++          XtOffsetOf(AppData, subG[NFS_SRV_HIT]), XtRImmediate, (XtPointer) NULL },
++ 
++     { XtNnfsservermAdd, XtCNfsservermAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[NFS_SRV_MIS]), XtRImmediate, (XtPointer) NULL },
++     { XtNnfsservermSub, XtCNfsservermSub, XtRBool, sizeof(Bool),
++          XtOffsetOf(AppData, subG[NFS_SRV_MIS]), XtRImmediate, (XtPointer) NULL },
++ 
++     { XtNnfsclientcAdd, XtCNfsclientcAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[NFS_CLT]), XtRImmediate, (XtPointer) NULL },
++     { XtNnfsclientcSub, XtCNfsclientcSub, XtRBool, sizeof(Bool),
++          XtOffsetOf(AppData, subG[NFS_CLT]), XtRImmediate, (XtPointer) NULL },
++ 
++     { XtNnfsclienthAdd, XtCNfsclienthAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[NFS_CLT_HIT]), XtRImmediate, (XtPointer) NULL },
++     { XtNnfsclienthSub, XtCNfsclienthSub, XtRBool, sizeof(Bool),
++          XtOffsetOf(AppData, subG[NFS_CLT_HIT]), XtRImmediate, (XtPointer) NULL },
++ 
++     { XtNnfsclientmAdd, XtCNfsclientmAdd, XtRBool, sizeof(Bool),
++ 	  XtOffsetOf(AppData, addG[NFS_CLT_MIS]), XtRImmediate, (XtPointer) NULL },
++     { XtNnfsclientmSub, XtCNfsclientmSub, XtRBool, sizeof(Bool),
++          XtOffsetOf(AppData, subG[NFS_CLT_MIS]), XtRImmediate, (XtPointer) NULL },
++ #else
+      { XtNnfsclientAdd, XtCNfsclientAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[NFS_CLT]), XtRImmediate, (XtPointer) NULL },
+      { XtNnfsclientSub, XtCNfsclientSub, XtRBool, sizeof(Bool),
 ***************
-*** 85,101 ****
-  default list. Specifying both "-" and "+" options will produce unpredictable
-  results.
-  .TP 26
-  .B \-usercpu | \+usercpu
-  Graph percentage of \fIUser CPU Time\fP.
-  .TP 26
-  .B \-systemcpu  | \+systemcpu
-! Graph \fISystem\fP CPU Percentage.
-  .TP 26
-  .B \-idlecpu | \+idlecpu
-! Graph \fIIdle\fP CPU Percentage.
-  .TP 26
-! .B \-freemem | \+freemem
-! Graph \fIFree Memory\fP.
-  .TP 26
-  .B \-diskxfr | \+diskxfr
-  Graph \fIDisk Transfers\fP per interval period.
---- 85,110 ----
-  default list. Specifying both "-" and "+" options will produce unpredictable
-  results.
-  .TP 26
-+ .B \-sysload | \+sysload
-+ Graph percentage of \fISystem Load\fP (avaraged over 1 minute).
-+ .TP 26
-  .B \-usercpu | \+usercpu
-  Graph percentage of \fIUser CPU Time\fP.
-  .TP 26
-+ .B \-nicecpu | \+nicecpu
-+ Graph percentage of \fINice CPU Time\fP.
-+ .TP 26
-  .B \-systemcpu  | \+systemcpu
-! Graph percentage of \fISystem CPU Time\fP.
-! .TP 26
-! .B \-intercpu | \+intercpu
-! Graph percentage of \fIInterrupt CPU Time\fP.
-  .TP 26
-  .B \-idlecpu | \+idlecpu
-! Graph percentage of \fIIdle CPU Time\fP.
-  .TP 26
-! .B \-free{mem/swap} | \+free{mem/swap}
-! Graph \fIFree Memory/Swap (Operating system dependent, swap for FreeBSD in %)\fP.
-  .TP 26
-  .B \-diskxfr | \+diskxfr
-  Graph \fIDisk Transfers\fP per interval period.
+*** 318,329 ****
+      { XtNnfsserverAdd, XtCNfsserverAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
+      { XtNnfsserverSub, XtCNfsserverSub, XtRBool, sizeof(Bool),
+! 	  XtOffsetOf(AppData, subG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
+  };
+  
+  void
+  usage()
+  {
+      fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
+      fprintf(stderr, "options:\n");
+      fprintf(stderr, "    [-display [{host}]:[{vs}]]\n");
+--- 686,701 ----
+      { XtNnfsserverAdd, XtCNfsserverAdd, XtRBool, sizeof(Bool),
+  	  XtOffsetOf(AppData, addG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
+      { XtNnfsserverSub, XtCNfsserverSub, XtRBool, sizeof(Bool),
+!          XtOffsetOf(AppData, subG[NFS_SRV]), XtRImmediate, (XtPointer) NULL },
+! #endif
+  };
+  
+  void
+  usage()
+  {
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "\nxperfmon++ V3.0 for FreeBSD-3.X\n");
++ #endif
+      fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
+      fprintf(stderr, "options:\n");
+      fprintf(stderr, "    [-display [{host}]:[{vs}]]\n");
 ***************
-*** 167,183 ****
-  .PP 
-  Where "*" is one of the following:
-  .TP 12
-  .B user
-  Set \fIlimit\fP value for User CPU Percentage.
-  .TP 12
-  .B sys
-  Set \fIlimit\fP value for System CPU Percentage.
-  .TP 12
-  .B idle
-  Set \fIlimit\fP value for Idle CPU Percentage.
-  .TP 12
-! .B mem
-! Set \fIlimit\fP value for Free Memory.
-  .TP 12
-  .B disk
-  Set \fIlimit\fP value for Disk Transfers.
---- 176,201 ----
-  .PP
-  Where "*" is one of the following:
-  .TP 12
-+ .B load
-+ Set \fIlimit\fP value for Load Average (multiplied by 100!!!).
-+ .TP 12
-  .B user
-  Set \fIlimit\fP value for User CPU Percentage.
-  .TP 12
-+ .B nice
-+ Set \fIlimit\fP value for Nice CPU Percentage.
-+ .TP 12
-  .B sys
-  Set \fIlimit\fP value for System CPU Percentage.
-  .TP 12
-+ .B inter
-+ Set \fIlimit\fP value for Interrupt CPU Percentage.
-+ .TP 12
-  .B idle
-  Set \fIlimit\fP value for Idle CPU Percentage.
-  .TP 12
-! .B mem/swap
-! Set \fIlimit\fP value for Free Memory/Swap (OS dependent, swap for FreeBSD).
-  .TP 12
-  .B disk
-  Set \fIlimit\fP value for Disk Transfers.
+*** 340,357 ****
+      fprintf(stderr, "    [-fast]                (changes interval from seconds to milliseconds)\n");
+      fprintf(stderr, "    [-immediate]           (background limit alarm color is based on current sample)\n");
+      fprintf(stderr, "    [-fill]                (output filled graph instead of line graph)\n\n");
+! 
+      fprintf(stderr, "    [{-+}usercpu]          ({remove|add} usercpu to list of graphs\n");
+      fprintf(stderr, "    [{-+}systemcpu]        ({remove|add} systemcpu to list of graphs\n");
+      fprintf(stderr, "    [{-+}idlecpu]          ({remove|add} idlecpu to list of graphs\n");
+      fprintf(stderr, "    [{-+}freemem]          ({remove|add} freemem to list of graphs\n");
+      fprintf(stderr, "    [{-+}diskxfr]          ({remove|add} disk transfers to list of graphs\n");
+!     fprintf(stderr, "    [{-+}interrupts]       ({remove|add} interrupts to list of graphs\n");
+      fprintf(stderr, "    [{-+}inputpkts]        ({remove|add} input packets to list of graphs\n");
+      fprintf(stderr, "    [{-+}outputpkts]       ({remove|add} output packets to list of graphs\n");
+      fprintf(stderr, "    [{-+}collpkts]         ({remove|add} collision packets to list of graphs\n");
+      fprintf(stderr, "    [{-+}nfsclient]        ({remove|add} NFS client transactions count to list of graphs\n");
+      fprintf(stderr, "    [{-+}nfsserver]        ({remove|add} NFS server transactions count to list of graphs\n\n");
+      fprintf(stderr, "NOTE: The default is ALL graphs! A \"-\" option takes away from the default list.\n");
+      fprintf(stderr, "      Any \"+\" option resets the default list to empty and then adds the option.\n\n");
+      fprintf(stderr, "ALARMS:\n");
+--- 712,761 ----
+      fprintf(stderr, "    [-fast]                (changes interval from seconds to milliseconds)\n");
+      fprintf(stderr, "    [-immediate]           (background limit alarm color is based on current sample)\n");
+      fprintf(stderr, "    [-fill]                (output filled graph instead of line graph)\n\n");
+! #if __FreeBSD_version >= 300000
+!     fprintf(stderr, "    [{-+}sysload]          ({remove|add} sysload to list of graphs\n");
+! #endif
+      fprintf(stderr, "    [{-+}usercpu]          ({remove|add} usercpu to list of graphs\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [{-+}nicecpu]          ({remove|add} nicecpu to list of graphs\n");
++ #endif
+      fprintf(stderr, "    [{-+}systemcpu]        ({remove|add} systemcpu to list of graphs\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [{-+}intercpu]         ({remove|add} intercpu to list of graphs\n");
++ #endif
+      fprintf(stderr, "    [{-+}idlecpu]          ({remove|add} idlecpu to list of graphs\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [{-+}ttyin]            ({remove|add} input tty characters to list of graphs\n");
++     fprintf(stderr, "    [{-+}ttyout]           ({remove|add} output tty characters to list of graphs\n");
++ #endif
++     fprintf(stderr, "    [{-+}interrupts]       ({remove|add} interrupts to list of graphs\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [{-+}freeswap]         ({remove|add} freeswap to list of graphs\n");
++ #else
+      fprintf(stderr, "    [{-+}freemem]          ({remove|add} freemem to list of graphs\n");
++ #endif
+      fprintf(stderr, "    [{-+}diskxfr]          ({remove|add} disk transfers to list of graphs\n");
+! #if __FreeBSD_version >= 300000
+!     fprintf(stderr, "    [{-+}diskmb]           ({remove|add} MB to/from disks to list of graphs\n");
+!     fprintf(stderr, "    [{-+}tapexfr]          ({remove|add} tape transfers to list of graphs\n");
+!     fprintf(stderr, "    [{-+}tapemb]           ({remove|add} MB to/from tapes to list of graphs\n");
+!     fprintf(stderr, "    [{-+}cdromxfr]         ({remove|add} cdrom transfers to list of graphs\n");
+!     fprintf(stderr, "    [{-+}cdrommb]          ({remove|add} MB from cdroms to list of graphs\n");
+! #endif
+      fprintf(stderr, "    [{-+}inputpkts]        ({remove|add} input packets to list of graphs\n");
+      fprintf(stderr, "    [{-+}outputpkts]       ({remove|add} output packets to list of graphs\n");
+      fprintf(stderr, "    [{-+}collpkts]         ({remove|add} collision packets to list of graphs\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [{-+}nfsservercalls]   ({remove|add} NFS server transactions count to list of graphs\n\n");
++     fprintf(stderr, "    [{-+}nfsserverhits]    ({remove|add} NFS server cache hit count to list of graphs\n\n");
++     fprintf(stderr, "    [{-+}nfsservermisses]  ({remove|add} NFS server cache miss count to list of graphs\n\n");
++     fprintf(stderr, "    [{-+}nfsclientcalls]   ({remove|add} NFS client transactions count to list of graphs\n\n");
++     fprintf(stderr, "    [{-+}nfsclienthits]    ({remove|add} NFS client cache hit count to list of graphs\n\n");
++     fprintf(stderr, "    [{-+}nfsclientmisses]  ({remove|add} NFS client cache miss count to list of graphs\n\n");
++ #else
+      fprintf(stderr, "    [{-+}nfsclient]        ({remove|add} NFS client transactions count to list of graphs\n");
+      fprintf(stderr, "    [{-+}nfsserver]        ({remove|add} NFS server transactions count to list of graphs\n\n");
++ #endif
+      fprintf(stderr, "NOTE: The default is ALL graphs! A \"-\" option takes away from the default list.\n");
+      fprintf(stderr, "      Any \"+\" option resets the default list to empty and then adds the option.\n\n");
+      fprintf(stderr, "ALARMS:\n");
 ***************
-*** 304,320 ****
-  .PP
-  Where "&" is one of the following (Note: \fICase\fP IS important):
-  .TP 16
-! .B Idle
-! Set Idle CPU Percentage resource.
-  .TP 16
-  .B User
-  Set User CPU Percentage resource.
-  .TP 16
-  .B System
-  Set System CPU Percentage resource.
-  .TP 16
-! .B Free
-! Set Free Memory resource.
-  .TP 16
-  .B Disk
-  Set Disk Transfer count resource.
---- 322,347 ----
-  .PP
-  Where "&" is one of the following (Note: \fICase\fP IS important):
-  .TP 16
-! .B Load
-! Set System Load resource.
-  .TP 16
-  .B User
-  Set User CPU Percentage resource.
-  .TP 16
-+ .B Nice
-+ Set Nice CPU Percentage resource.
-+ .TP 16
-  .B System
-  Set System CPU Percentage resource.
-  .TP 16
-! .B Inter
-! Set Interrupt CPU Percentage resource.
-! .TP 16
-! .B Idle
-! Set Idle CPU Percentage resource.
-! .TP 16
-! .B Free/Swap
-! Set Free Memory/Swap resource.
-  .TP 16
-  .B Disk
-  Set Disk Transfer count resource.
+*** 361,370 ****
+      fprintf(stderr, "    [-high*Alarm {value}]     ( Set High Alarm value for *)\n");
+      fprintf(stderr, "    [-high*Warn {value}]      ( Set High Warning value for *)\n");
+      fprintf(stderr, "  Where \"*\" is one of the following:\n");
+      fprintf(stderr, "    [mem | user | sys | idle | disk | intrpts |\n");
+!     fprintf(stderr, "     input | output | collision | nfsclient | nfsserver]\n");
+      fprintf(stderr, "  For Example:\n");
+      fprintf(stderr, "    [-lowmemAlarm {value}]    ( Set low Free Memory Alarm Value)\n");
+      fprintf(stderr, "WARNING: It is an error condition to set both a high, and a low, limit warning or alarm.\n");
+      exit(1);
+  }
+--- 765,785 ----
+      fprintf(stderr, "    [-high*Alarm {value}]     ( Set High Alarm value for *)\n");
+      fprintf(stderr, "    [-high*Warn {value}]      ( Set High Warning value for *)\n");
+      fprintf(stderr, "  Where \"*\" is one of the following:\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [load | user | nice | sys | inter | idle | ttyin | ttyout | intrps | swap |\n");
++     fprintf(stderr, "    diskxfr | diskmb | tapexfr | tapemb | cdromxfr | cdrommb | input | output |\n");
++     fprintf(stderr, "    collision | nfsservercalls | nfsserverhits | nfsservermisses |\n");
++     fprintf(stderr, "    nfsclientcalls | nfsclienthits | nfsclientmisses]\n");
++ #else
+      fprintf(stderr, "    [mem | user | sys | idle | disk | intrpts |\n");
+!     fprintf(stderr, "     intrpts | input | output | collision | nfsclient | nfsserver]\n");
+! #endif
+      fprintf(stderr, "  For Example:\n");
++ #if __FreeBSD_version >= 300000
++     fprintf(stderr, "    [-lowswapAlarm {value}]   ( Set low Free Swap Alarm Value)\n");
++ #else
+      fprintf(stderr, "    [-lowmemAlarm {value}]    ( Set low Free Memory Alarm Value)\n");
++ #endif
+      fprintf(stderr, "WARNING: It is an error condition to set both a high, and a low, limit warning or alarm.\n");
+      exit(1);
+  }
 ***************
-*** 394,398 ****
---- 421,449 ----
-  out there would like to port this program to any other operating system or architecture I would be
-  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
-  above address.
-+ .PP
-+ .I xperfmon++ V1.2 for FreeBSD
-+ was written by Lars Köller with a lot of helpful notes by Jörg Wunsch.
-+ .PP
-+ .I xperfmon++ V1.31 for FreeBSD
-+ close some memory leaks, fix geometry (resize) bug, display free swap
-+ without resizing of graph in percent.
-+ .PP
-+ .I xperfmon++ V1.33 for FreeBSD
-+ contains some fixes due to event problems and compiles fine under
-+ FreeBSD 2.2 (changes in get_swapspace).
-+ Now the -geometry switch works well!
-+ .PP
-+ .I xperfmon++ V1.40 for FreeBSD
-+ contains some fixes due to changes in the networking structs and
-+ cleans up the FreeBSD version number #if's. Now it should compile fine
-+ from FreeBSD 2.0 up to FreeBSD-3.0-current.
-+ .PP
-+ .I xperfmon++ V2.0 for FreeBSD 2.2.X and 3.0
-+ added System Load, Nice and Interrupt CPU graphs.
-+ Should compile fine from FreeBSD 2.2 up to FreeBSD-3.0-current.
-+ .PP
-+ Please E-Mail any bugs or comments with the subject
-+ "xperfmon++: ..." to Lars.Koeller@Uni-Bielefeld.DE.
-  .PP
-  Enjoy!
+*** 386,391 ****
+--- 801,807 ----
+      time(&timeStamp);
+      return;
+  }
++ 
+  /*ARGSUSED*/
+  void handleResize( w, unused, event, contin2disp )
+  Widget w;
+***************
+*** 394,400 ****
+  Boolean *contin2disp;
+  {
+      Dimension neww, newh;
+!     int i;
+      char eventString[60];
+      switch (event->type) {
+      case Expose:
+--- 810,817 ----
+  Boolean *contin2disp;
+  {
+      Dimension neww, newh;
+!     Dimension hOverHead, boxH, timeH, newWidgetH;
+!     int i, window_size_changed;
+      char eventString[60];
+      switch (event->type) {
+      case Expose:
+***************
+*** 403,415 ****
+  	strcpy(eventString,"expose");
+  	break;
+      case MapNotify:
+! 	neww=0;
+! 	newh=0;
+  	strcpy(eventString,"map notify");
+  	break;
+      case ReparentNotify:
+! 	neww=0;
+! 	newh=0;
+  	strcpy(eventString,"reparent");
+  	break;
+      case ConfigureNotify:
+--- 820,837 ----
+  	strcpy(eventString,"expose");
+  	break;
+      case MapNotify:
+! 	neww=w->core.width;
+! 	newh=oldHeight;
+  	strcpy(eventString,"map notify");
+  	break;
++     case UnmapNotify:
++ 	neww=w->core.width;
++ 	newh=oldHeight;
++ 	strcpy(eventString,"unmap notify");
++ 	break;
+      case ReparentNotify:
+! 	neww=w->core.width;
+! 	newh=oldHeight;
+  	strcpy(eventString,"reparent");
+  	break;
+      case ConfigureNotify:
+***************
+*** 417,429 ****
+  	newh=event->xconfigure.height;
+  	strcpy(eventString,"configure");
+  	break;
+  
+      }
+!     if ( neww < 250 + 10 ) {
+! 	neww = 250 + 10;
+! 	w->core.width = 250 + 10;
+! 	XtResizeWindow(w);
+      }
+      if ( appData.debug )
+  	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
+  	       (int)event->type, eventString,
+--- 839,872 ----
+  	newh=event->xconfigure.height;
+  	strcpy(eventString,"configure");
+  	break;
++     }
+  
++     if ( neww < MIN_WIDTH ) {
++ 	neww = MIN_WIDTH;
++ 	w->core.width = MIN_WIDTH;
++ 	window_size_changed = TRUE;
++     } else {
++         w->core.width = neww;
+      }
+! 
+!     hOverHead = (5.6 * appData.numGraphsOn) - (6 / appData.numGraphsOn);
+!     boxH = labelBox->core.height;
+!     timeH = timechart->core.height;
+!     if (newh > GRAPH_MIN_HEIGHT * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+ADD_TO_TIMEH))
+! 	newWidgetH = (newh - hOverHead - (boxH+7) - (timeH+ADD_TO_TIMEH)) / appData.numGraphsOn;
+!     else
+! 	newWidgetH = GRAPH_MIN_HEIGHT;
+! 
+!     MIN_HEIGHT = newWidgetH * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+ADD_TO_TIMEH);
+!     w->core.height = MIN_HEIGHT;
+!     if(w->core.height != newh) {
+!         newh = w->core.height;
+! 	window_size_changed = TRUE;
+      }
++ 
++     if( neww != oldWidth || newh != oldHeight || window_size_changed == TRUE )
++       XtResizeWindow(w);
++ 
+      if ( appData.debug )
+  	printf("Resize Request: type=%d %s, oldw=%hu, oldh=%hu, neww=%hu, newh=%hu\n",
+  	       (int)event->type, eventString,
+***************
+*** 431,441 ****
+  	       neww, newh);
+  
+      if ( event->type == ConfigureNotify ) {
+! /*	Dimension h = perfmon[0]->core.height;*/
+! 	Dimension hOverHead = 5 * appData.numGraphsOn;
+! 	Dimension boxH = labelBox->core.height;
+! 	Dimension timeH = timechart->core.height;
+! 	Dimension newWidgetH = (newh - (boxH+8) - (timeH+10) - hOverHead) / appData.numGraphsOn;
+  	if ( oldWidth == neww && oldHeight == newh ) return;
+  
+  	if ( appData.debug )
+--- 874,880 ----
+  	       neww, newh);
+  
+      if ( event->type == ConfigureNotify ) {
+! 
+  	if ( oldWidth == neww && oldHeight == newh ) return;
+  
+  	if ( appData.debug )
+***************
+*** 455,472 ****
+  	XFlush(XtDisplay(w));
+  
+      }
+      oldWidth = neww+=10, oldHeight = newh;
+      return;
+  }
+  
+! void
+  main(argc, argv)
+      int argc;
+      char **argv;
+  {
+      Arg arg;
+      Pixmap icon_pixmap = None;
+!     Widget  loadParent, pappaBox;
+  
+      char *progname = argv[0];
+      Bool foundAnAdd = FALSE;
+--- 894,917 ----
+  	XFlush(XtDisplay(w));
+  
+      }
++ 
+      oldWidth = neww+=10, oldHeight = newh;
+      return;
+  }
+  
+! int
+  main(argc, argv)
+      int argc;
+      char **argv;
+  {
++     /* LK!!! */
++     Dimension timeH, newWidgetW, newWidgetH, hOverHead, boxH;
++     unsigned int w, h;
++     static char *da_str[] = {"da1 da2"};
++ 
+      Arg arg;
+      Pixmap icon_pixmap = None;
+!     Widget pappaBox;
+  
+      char *progname = argv[0];
+      Bool foundAnAdd = FALSE;
+***************
+*** 474,483 ****
+      int i;
+      gprogname = progname;
+  
+!     appData.toplevel = XtVaAppInitialize(&appData.app_context, "XPerfmon++", 
+! 				 optionDescList, XtNumber(optionDescList), 
+  				 &argc, argv,
+  				 NULL, NULL);
+      if (argc != 1) usage();
+  
+      if ( appData.toplevel->core.depth == 1 )
+--- 919,936 ----
+      int i;
+      gprogname = progname;
+  
+! 
+! /*    topNames[DA_MB] = da_str[0]; LK!!! */
+! 
+! 
+!     appData.toplevel = XtVaAppInitialize(&appData.app_context, "XPerfmon++",
+! 				 optionDescList, XtNumber(optionDescList),
+  				 &argc, argv,
+  				 NULL, NULL);
++ 
++     appData.toplevel->core.width=MIN_WIDTH;
++     appData.toplevel->core.height=MIN_HEIGHT;
++ 
+      if (argc != 1) usage();
+  
+      if ( appData.toplevel->core.depth == 1 )
+***************
+*** 488,493 ****
+--- 941,949 ----
+      XtGetApplicationResources(appData.toplevel, &appData, resources,
+                                XtNumber(resources), NULL, 0 );
+  
++     /* LK!!! Moved to here, cause calling it in TimeChart.c is too late! */
++     XtInsertEventHandler(appData.toplevel, StructureNotifyMask, FALSE, handleResize, (Opaque)NULL, XtListHead);
++ 
+  /*check resources to make sure they are in range */
+  
+      if ( (int)appData.fast ) {
+***************
+*** 512,518 ****
+  
+  /* build graphOn table */
+  
+!     for ( i=0; i<NUM_GRAPHS; i++ ) 
+  	if ( appData.addG[i] ) {
+  	    foundAnAdd = appData.graphOn[i] = TRUE;
+  	    appData.numGraphsOn++;
+--- 968,974 ----
+  
+  /* build graphOn table */
+  
+!     for ( i=0; i<NUM_GRAPHS; i++ )
+  	if ( appData.addG[i] ) {
+  	    foundAnAdd = appData.graphOn[i] = TRUE;
+  	    appData.numGraphsOn++;
+***************
+*** 520,526 ****
+      if ( !foundAnAdd ) {
+  	for ( i=0; i<NUM_GRAPHS; i++ ) {
+  	    appData.graphOn[i] = TRUE;
+! 	    if ( appData.subG[i] ) 
+  		appData.graphOn[i] = FALSE;
+  	    else
+  		appData.numGraphsOn++;
+--- 976,982 ----
+      if ( !foundAnAdd ) {
+  	for ( i=0; i<NUM_GRAPHS; i++ ) {
+  	    appData.graphOn[i] = TRUE;
+! 	    if ( appData.subG[i] )
+  		appData.graphOn[i] = FALSE;
+  	    else
+  		appData.numGraphsOn++;
+***************
+*** 540,561 ****
+  		xperfmon_width, xperfmon_height));
+  	XtSetValues(appData.toplevel, &arg, 1);
+      }
+- 
+  /* create windows */
+  
+!     pappaBox = XtVaCreateManagedWidget("PappaBox", boxWidgetClass, appData.toplevel, 
+  				       XtNborderWidth, 0,
+  				       NULL);
+- 
+      XtOverrideTranslations(pappaBox, XtParseTranslationTable(defaultTranslations));
+  
+      (void)gethostname(hostname, sizeof(hostname));
+      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
+      sprintf(c, "\nUpdate Interval = %5.1f secs", (float)(appData.interval*appData.ms_per_sec)/1000.0);
+  
+      labelBox = XtVaCreateManagedWidget("LabelBox", labelWidgetClass, pappaBox,
+! 					 XtNwidth, 250,
+! /*					 XtNheight, 16,*/
+  				         XtNjustify, XtJustifyLeft,
+  				         XtNinternalHeight, 0,
+  					 XtNtop, XtChainTop,
+--- 996,1047 ----
+  		xperfmon_width, xperfmon_height));
+  	XtSetValues(appData.toplevel, &arg, 1);
+      }
+  /* create windows */
+  
+!     pappaBox = XtVaCreateManagedWidget("PappaBox", boxWidgetClass, appData.toplevel,
+  				       XtNborderWidth, 0,
+  				       NULL);
+      XtOverrideTranslations(pappaBox, XtParseTranslationTable(defaultTranslations));
+  
+      (void)gethostname(hostname, sizeof(hostname));
+      c = (char *) ((long) &hostname[0] + (int) strlen(hostname));
+      sprintf(c, "\nUpdate Interval = %5.1f secs", (float)(appData.interval*appData.ms_per_sec)/1000.0);
+  
++     { /* LK!!! handle -geometry option correct, also small changes in handleResize */
++       Window rwin;
++       int x,y,px,py;
++       unsigned int pw,ph,bw,d;
++ 
++       XtRealizeWidget(appData.toplevel);
++ 
++       XGetGeometry(XtDisplay(appData.toplevel),XtWindow(appData.toplevel),
++ 		   &rwin,&x,&y,&w,&h,&bw,&d);
++ 
++       if ( w > MIN_WIDTH) {
++ 	newWidgetW = w - 10;
++ 	appData.toplevel->core.width = w;
++       } else {
++ 	appData.toplevel->core.width = MIN_WIDTH;
++ 	newWidgetW = MIN_WIDTH - 10;
++       }
++ 
++       hOverHead = (5.6 * appData.numGraphsOn) - (6 / appData.numGraphsOn);
++       boxH = 22;
++       timeH = 12;
++       if (h > GRAPH_MIN_HEIGHT * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+ADD_TO_TIMEH))
++ 	newWidgetH = (h - hOverHead - (boxH+7) - (timeH+ADD_TO_TIMEH) ) / appData.numGraphsOn;
++       else
++ 	newWidgetH = GRAPH_MIN_HEIGHT;
++ 
++       MIN_HEIGHT = newWidgetH * appData.numGraphsOn + hOverHead + (boxH+7) + (timeH+ADD_TO_TIMEH);
++       appData.toplevel->core.height = MIN_HEIGHT;
++ 
++       XtResizeWindow(appData.toplevel);
++     }
++ 
+      labelBox = XtVaCreateManagedWidget("LabelBox", labelWidgetClass, pappaBox,
+! 					 XtNwidth, newWidgetW,
+! 					 XtNheight, boxH,
+  				         XtNjustify, XtJustifyLeft,
+  				         XtNinternalHeight, 0,
+  					 XtNtop, XtChainTop,
+***************
+*** 567,600 ****
+      for ( i=0; i<NUM_GRAPHS; i++ ) {
+  	if ( appData.graphOn[i] ) {
+  	    sprintf(hostname, "perfChart%s", widgetLabels[i]);
+! 	    perfmon[i] = XtVaCreateManagedWidget(hostname, perfChartWidgetClass, pappaBox, 
+  						 XtNtopLabel, topNames[i],
+  						 XtNbotLabel, botNames[i],
+! 						 XtNwidth, 250,
+! 						 XtNheight, 36,
+  						 XtNupdate, appData.interval*appData.ms_per_sec,
+  						 XtNfillRect, (int)appData.fill,
+  						 XtNjumpScroll, 1,
+  						 NULL);
+  	}
+      }
+!     timechart = XtVaCreateManagedWidget("timeChart", timeChartWidgetClass, pappaBox, 
+! 					 XtNfromVert, perfmon[1], 
+! 					 XtNwidth, 250,
+! 					 XtNheight, 18,
+  					 XtNupdate, appData.interval*appData.ms_per_sec,
+  					 XtNjumpScroll, 1,
+  					 NULL);
+      sys_setup();
+      XtAddCallback(timechart, XtNgetValue, update_time_stat, NULL);
+  
+!     for ( i=0; i<NUM_GRAPHS; i++ ) 
+! 	if ( appData.graphOn[i] ) 
+! 	    XtAddCallback(perfmon[i], XtNgetValue, update_stat, i);
+  
+      appData.interval_id = XtAppAddTimeOut(appData.app_context,
+  		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
+  
+-     XtRealizeWidget(appData.toplevel);
+      XtAppMainLoop(appData.app_context);
+  }
+--- 1053,1086 ----
+      for ( i=0; i<NUM_GRAPHS; i++ ) {
+  	if ( appData.graphOn[i] ) {
+  	    sprintf(hostname, "perfChart%s", widgetLabels[i]);
+! 	    perfmon[i] = XtVaCreateManagedWidget(hostname, perfChartWidgetClass, pappaBox,
+  						 XtNtopLabel, topNames[i],
+  						 XtNbotLabel, botNames[i],
+! 						 XtNwidth, newWidgetW,
+! 						 XtNheight, newWidgetH,
+  						 XtNupdate, appData.interval*appData.ms_per_sec,
+  						 XtNfillRect, (int)appData.fill,
+  						 XtNjumpScroll, 1,
+  						 NULL);
+  	}
+      }
+!     timechart = XtVaCreateManagedWidget("timeChart", timeChartWidgetClass, pappaBox,
+! 					 XtNfromVert, perfmon[1],
+! 					 XtNwidth, newWidgetW,
+! 					 XtNheight, timeH,
+  					 XtNupdate, appData.interval*appData.ms_per_sec,
+  					 XtNjumpScroll, 1,
+  					 NULL);
++ 
+      sys_setup();
+      XtAddCallback(timechart, XtNgetValue, update_time_stat, NULL);
+  
+!     for ( i=0; i<NUM_GRAPHS; i++ )
+! 	if ( appData.graphOn[i] )
+! 	    XtAddCallback(perfmon[i], XtNgetValue, update_stat, (XtPointer)i);
+  
+      appData.interval_id = XtAppAddTimeOut(appData.app_context,
+  		    appData.interval*appData.ms_per_sec, start_graphs, (caddr_t) appData.toplevel);
+  
+      XtAppMainLoop(appData.app_context);
+  }

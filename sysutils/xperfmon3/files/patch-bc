@@ -1,0 +1,371 @@
+*** ../xperfmon++/system.h	Wed Jul 27 22:29:34 1994
+--- ./system.h	Sun Jan 10 18:08:49 1999
+***************
+*** 1,4 ****
+--- 1,11 ----
+  /*
++  * Enhancement and error correction for FreeBSD-3.X
++  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
++  *
++  *      $Id: system.h,v 3.4 1999/01/10 17:08:28 lkoeller Exp lkoeller $
++  */
++ 
++ /*
+   * $XConsortium: system.h,v 1.4 89/09/19 14:43:58 jim Exp $
+   *
+   * Perfmon Performance Monitor
+***************
+*** 20,26 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
+--- 27,33 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
+***************
+*** 32,38 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 39,45 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 43,49 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 50,56 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 55,61 ****
+  
+  /* This file information needed by both system.c and Perfmon.c */
+  
+! #define NUM_POSSIBLE_STATS     11
+  #define MAX_STATS NUM_POSSIBLE_STATS + 1
+  
+  #define LINES_PER_LABEL 2
+--- 62,72 ----
+  
+  /* This file information needed by both system.c and Perfmon.c */
+  
+! #if __FreeBSD_version >= 300000
+! # define NUM_POSSIBLE_STATS     25
+! #else
+! # define NUM_POSSIBLE_STATS     11
+! #endif
+  #define MAX_STATS NUM_POSSIBLE_STATS + 1
+  
+  #define LINES_PER_LABEL 2
+***************
+*** 77,93 ****
+      for (stat = 0; stat < num_stats; stat++)
+  
+  #define	NO_STAT			-1
+! #define USER_CPU_PERCENTAGE	0
+! #define SYSTEM_CPU_PERCENTAGE	1
+! #define IDLE_CPU_PERCENTAGE	2
+! #define FREE_MEM		3
+! #define DISK_TRANSFERS		4
+! #define INTERRUPTS		5
+! #define INPUT_PACKETS		6
+! #define OUTPUT_PACKETS		7
+! #define COLLISION_PACKETS	8
+  #define NFS_CLIENT_CALLS        9
+  #define NFS_SERVER_CALLS       10
+  
+  struct statistic {
+      int min_val, max_val;
+--- 88,132 ----
+      for (stat = 0; stat < num_stats; stat++)
+  
+  #define	NO_STAT			-1
+! #if __FreeBSD_version >= 300000
+! #define LOAD                    0
+! #define USER_CPU_PERCENTAGE	1
+! #define NICE_CPU_PERCENTAGE     2
+! #define SYSTEM_CPU_PERCENTAGE	3
+! #define INTER_CPU_PERCENTAGE    4
+! #define IDLE_CPU_PERCENTAGE	5
+! #define TTY_CHARS_IN            6
+! #define TTY_CHARS_OUT           7
+! #define INTERRUPTS	        8
+! #define FREE_MEM		9
+! #define DISK_TRANSFERS	       10
+! #define DISK_MB	               11
+! #define TAPE_TRANSFERS	       12
+! #define TAPE_MB	               13
+! #define CDROM_TRANSFERS	       14
+! #define CDROM_MB               15
+! #define INPUT_PACKETS	       16
+! #define OUTPUT_PACKETS	       17
+! #define COLLISION_PACKETS      18
+! #define NFS_SERVER_CALLS       19
+! #define NFS_SERVER_HIT         20
+! #define NFS_SERVER_MIS         21
+! #define NFS_CLIENT_CALLS       22
+! #define NFS_CLIENT_HIT         23
+! #define NFS_CLIENT_MIS         24
+! #else
+! #define USER_CPU_PERCENTAGE     0
+! #define SYSTEM_CPU_PERCENTAGE   1
+! #define IDLE_CPU_PERCENTAGE     2
+! #define FREE_MEM                3
+! #define DISK_TRANSFERS          4
+! #define INTERRUPTS              5
+! #define INPUT_PACKETS           6
+! #define OUTPUT_PACKETS          7
+! #define COLLISION_PACKETS       8
+  #define NFS_CLIENT_CALLS        9
+  #define NFS_SERVER_CALLS       10
++ #endif
+  
+  struct statistic {
+      int min_val, max_val;
+***************
+*** 113,118 ****
+--- 152,197 ----
+  
+  #define VALID_UPDATE(x) ((x <= MAX_TIME) && (x > 0))
+  
++ #if __FreeBSD_version >= 300000
++ 
++ /*
++  * This is a dirty but easy hack to display and scale floating point numbers
++  * in the graphs. The original version of xperfmon++ can only scale integers
++  * above 1.
++  */
++ #define SCALE_HACK 100.0
++ 
++ #define SYS_LOAD     0
++ #define USR_CPU      1
++ #define NICE_CPU     2
++ #define SYS_CPU      3
++ #define INT_CPU      4
++ #define IDL_CPU      5
++ #define TTY_IN       6
++ #define TTY_OUT      7
++ #define INTRPTS      8
++ #define FRE_MEM      9
++ #define DA_XFR      10
++ #define DA_MB       11
++ #define SA_XFR      12
++ #define SA_MB       13
++ #define CD_XFR      14
++ #define CD_MB       15
++ #define INP_PKT     16
++ #define OUT_PKT     17
++ #define COL_PKT     18
++ #define NFS_SRV     19
++ #define NFS_SRV_HIT 20
++ #define NFS_SRV_MIS 21
++ #define NFS_CLT     22
++ #define NFS_CLT_HIT 23
++ #define NFS_CLT_MIS 24
++ #define LAST_ITEM NFS_CLT_MIS	/* must equal last item above */
++ 
++ #else
++ 
++ #define SCALE_HACK 1
++ 
+  #define USR_CPU 0
+  #define SYS_CPU 1
+  #define IDL_CPU 2
+***************
+*** 125,130 ****
+--- 204,210 ----
+  #define NFS_CLT 9
+  #define NFS_SRV 10
+  #define LAST_ITEM NFS_SRV	/* must equal last item above */
++ #endif
+  #define NUM_GRAPHS LAST_ITEM+1
+  
+  /* data structure for custom application resources */
+***************
+*** 146,177 ****
+  }AppData, *AppDataPtr;
+  
+  static char *topNames[] = {
+      "User",
+      "System",
+      "Idle",
+      "Free",
+      "Disk",
+!     "Interrupts",
+      "Input",
+      "Output",
+!     "Collision",
+!     "NFS Client",
+!     "NFS Server",
+! };
+! static char *widgetLabels[] = {
+      "User",
+      "System",
+      "Idle",
+      "Free",
+      "Disk",
+!     "Intrpts",
+      "Input",
+      "Output",
+      "Collision",
+!     "NFSClient",
+!     "NFSServer",
+  };
+  static char *botNames[] = {
+      "CPU",
+      "CPU",
+      "CPU",
+--- 226,299 ----
+  }AppData, *AppDataPtr;
+  
+  static char *topNames[] = {
++ #if __FreeBSD_version >= 300000
++     "System",
+      "User",
++     "Nice",
+      "System",
++     "Intrpt",
+      "Idle",
++     "TTY",
++     "TTY",
++     "Inter-",
+      "Free",
+      "Disk",
+!     "Disk IO",
+!     "Tape",
+!     "Tape IO",
+!     "CDRom",
+!     "CDRom IO",
+      "Input",
+      "Output",
+!     "Collis",
+!     "NFS Srv",
+!     "NFS Srv",
+!     "NFS Srv",
+!     "NFS Clt",
+!     "NFS Clt",
+!     "NFS Clt",
+! #else
+      "User",
+      "System",
+      "Idle",
+      "Free",
+      "Disk",
+!     "Interrupts",
+      "Input",
+      "Output",
+      "Collision",
+!     "NFS Client",
+!     "NFS Server",
+! #endif
+  };
+  static char *botNames[] = {
++ #if __FreeBSD_version >= 300000
++     "Load",
++     "CPU (%)",
++     "CPU (%)",
++     "CPU (%)",
++     "CPU (%)",
++     "CPU (%)",
++     "in (Char/s)",
++     "out (Char/s)",
++     "rupts/s",
++     "Swap (%)",
++     "Trsf/s",
++     "(MByte/s)",
++     "Trsf/s",
++     "(MByte/s)",
++     "Trsf/s",
++     "(MByte/s)",
++     "Packets/s",
++     "Packets/s",
++     "Packets/s",
++     "Calls/s",
++     "Cache-Hits",
++     "Cache-Miss",
++     "Calls/s",
++     "Cache-Hits",
++     "Cache-Miss",
++ #else
+      "CPU",
+      "CPU",
+      "CPU",
+***************
+*** 183,186 ****
+--- 305,351 ----
+      "Packets",
+      "Calls",
+      "Calls",
++ #endif
++ };
++ 
++ static char *widgetLabels[] = {
++ #if __FreeBSD_version >= 300000
++     "Load",
++     "User",
++     "Nice",
++     "System",
++     "Inter",
++     "Idle",
++     "Ttyin",
++     "Ttyout",
++     "Intrpts",
++     "Swap",
++     "DiskXfr",
++     "DiskMB",
++     "TapeXfr",
++     "TapeMB",
++     "CDRomXfr",
++     "CDRomMB",
++     "Input",
++     "Output",
++     "Collision",
++     "NFSServerCalls",
++     "NFSServerHits",
++     "NFSServerMisses",
++     "NFSClientCalls",
++     "NFSClientHits",
++     "NFSClientMisses",
++ #else
++     "User",
++     "System",
++     "Idle",
++     "Free",
++     "Disk",
++     "Intrpts",
++     "Input",
++     "Output",
++     "Collision",
++     "NFSClient",
++     "NFSServer",
++ #endif
+  };
