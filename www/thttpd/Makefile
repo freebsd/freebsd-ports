@@ -39,7 +39,7 @@ do-install:
 
 post-install: message
 
-post-fetch: config-message
+pre-configure: config-message
 
 post-build: config-message
 
