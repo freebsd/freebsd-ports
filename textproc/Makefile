@@ -513,6 +513,7 @@
     SUBDIR += py-martel
     SUBDIR += py-pyx12
     SUBDIR += py-rdflib
+    SUBDIR += py-rss2gen
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
     SUBDIR += py-syck
