@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	zodb
-PORTVERSION=	2001.06.16
+PORTVERSION=	1.0.c1
+PORTEPOCH=	1
 CATEGORIES=	databases python
-MASTER_SITES=	http://amk.ca/files/zodb/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
+MASTER_SITES=	http://www.zope.org/Products/StandaloneZODB/
+DISTNAME=	StandaloneZODB-${PORTVERSION:C/\.([^.]*)$/\1/}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
 
@@ -17,26 +19,15 @@ BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
 
 USE_PYTHON=	yes
-SRCDIRS=	zodb-basic ExtensionClass ZODB BTrees
+PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 
 do-build:
-.for dir in ${SRCDIRS}
-	@ cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py build
-.endfor
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
+
+pre-install:
+	@ ${SH} ${PKGREQ} INSTALL
 
 do-install:
-.for dir in ${SRCDIRS}
-	@ cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
-	  setup.py install -c -O1 --prefix=${PREFIX}
-.endfor
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-.for docfile in ACKS CHANGES README TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-.endif
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
 
 .include <bsd.port.mk>
