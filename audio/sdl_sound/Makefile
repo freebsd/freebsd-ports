@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--disable-mikmod
 .endif
 
 .if !defined(WITHOUT_PHYSFS)
-LIB_DEPENDS+=	physfs-0.1.9:${PORTSDIR}/devel/physfs
+LIB_DEPENDS+=	physfs-1.0.0:${PORTSDIR}/devel/physfs
 .else
 CONFIGURE_ARGS+=	--disable-physfs
 .endif
