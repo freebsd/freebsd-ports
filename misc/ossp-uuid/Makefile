@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	uuid
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	misc devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/${PORTNAME}/
 PKGNAMEPREFIX=	ossp-
 
-MAINTAINER=	fuyuki@nigredo.org
+MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	An ISO-C API and CLI for generating Universally Unique Identifiers
 
-CONFLICTS=	e2fsprogs-*
+CONFLICTS=	e2fsprogs-[0-9]*
 
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 
 MAN1=		uuid-config.1 uuid.1
 MAN3=		uuid.3
+
+test:
+	cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.mk>
