@@ -10,7 +10,7 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/apel-emacs
+MASTERDIR=	${.CURDIR}/../../editors/apel
 
 # emacs port setup
 EMACS_PORT_NAME=	xemacs21-mule
@@ -24,9 +24,6 @@ PLIST_SUB=	EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR}
 # how to install
 ALL_TARGET=	package
 INSTALL_TARGET=	install-package
-
-# use pkg-* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}
 
 # package info manifest
 MANIFEST=	MANIFEST.apel
