@@ -39,7 +39,7 @@ ALL_TARGET?=	elc
 
 .if defined(EMACS_PORT)
 PKGNAME=	apel-${EMACS_PORT}-${APEL_VER}
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
+EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
@@ -82,6 +82,9 @@ pre-install:
 .if defined(EMACS_PACKAGESDIR) && defined(EMACS_PACKAGES_SUBDIRS)
 	@${MAKE} mkdir-site-packages
 .endif
+.if defined(EMACS_PACKAGESDIR) && defined(XEMACS_PKGNAME)
+	@${MAKE} pkg-el-install
+.endif
 
 post-install:
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
@@ -103,6 +106,13 @@ mkdir-site-packages:
 	@(for i in ${EMACS_PACKAGES_SUBDIRS} ; do \
 		${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/$${i} ; \
 	done)
+
+pkg-el-install:
+	@(if [ -f ${FILESDIR}/_pkg.el ] ; then \
+	${MKDIR} ${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME} ;\
+	${INSTALL_DATA} ${FILESDIR}/_pkg.el \
+		${PREFIX}/${EMACS_PACKAGESDIR}/lisp/${XEMACS_PKGNAME}/_pkg.el ;\
+	fi)
 
 doc-install:
 	@${MKDIR} ${PREFIX}/${APELDOCDIR}
