@@ -5510,6 +5510,7 @@ mimelib		ports/converters/mimelib
 mindfocus	ports/games/mindfocus
 mindguard	ports/games/mindguard
 mindterm-binary	ports/security/mindterm-binary
+mined		ports/editors/mined
 ming		ports/graphics/ming
 mingplot	ports/graphics/mingplot
 mingunittf	ports/chinese/mingunittf
