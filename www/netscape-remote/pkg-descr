@@ -1,0 +1,10 @@
+This is a sort of "remote control" for netscape navigator, allowing you to
+send commands to a running netscape process. A complete list of commands is
+at:
+
+  WWW: http://home.netscape.com/newsref/std/x-remote.html
+
+Requires netscape navigator 1.1 or higher to do anything useful.
+
+  -Kelly
+   kbyanc@posi.net

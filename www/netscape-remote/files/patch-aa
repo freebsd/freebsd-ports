@@ -1,0 +1,37 @@
+--- remote.c.orig	Sun Oct 31 13:45:51 1999
++++ remote.c	Sun Oct 31 13:46:28 1999
+@@ -146,11 +146,16 @@
+     }
+   else if (tenative)
+     {
++#ifndef STANDALONE
++      /* no point in harassing the user when run standalone; everyone has
++       * at least netscape 1.1 by now!
++       */
+       fprintf (stderr,
+ 	       "%s: warning: expected version %s but found version\n"
+ 	       "\t%s (0x%x) instead.\n",
+ 	       progname, expected_mozilla_version,
+ 	       tenative_version, (unsigned int) tenative);
++#endif
+       XFree (tenative_version);
+       return tenative;
+     }
+@@ -507,6 +512,8 @@
+   int status = 0;
+   mozilla_remote_init_atoms (dpy);
+ 
++  if(commands == NULL) return;
++
+   if (window == 0)
+     window = mozilla_remote_find_window (dpy);
+   else
+@@ -566,7 +573,7 @@
+ }
+ 
+ 
+-void
++int
+ main (int argc, char **argv)
+ {
+   Display *dpy;
