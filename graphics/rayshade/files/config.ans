@@ -4,8 +4,8 @@
 
 
 
-@CFLAGS@
 
+@CFLAGS@
 
 n
 /usr/local/include
@@ -13,8 +13,8 @@ n
 
 
 
-/usr/bin/mkdep
+
 yacc
 
-y
+
 
