@@ -363,6 +363,7 @@ arm-rtems-gcj	ports/devel/arm-rtems-gcj
 arm-rtems-gdb	ports/devel/arm-rtems-gdb
 arm-rtems-objc	ports/devel/arm-rtems-objc
 arp		src/usr.sbin/arp
+arpd		ports/net/arpd
 arping		ports/net/arping
 arprelease	ports/net/arprelease
 arpwatch	ports/net/arpwatch
