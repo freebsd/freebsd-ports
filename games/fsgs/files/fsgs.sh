@@ -7,7 +7,11 @@ fi
 
 case "$1" in
 start)
-	cd ${PREFIX}; [ -x fsgs/fsgs -a -f fsgs/fsgs.cfg ] && fsgs/fsgs > /dev/null & && echo -n ' fsgs'
+	cd ${PREFIX}
+	if [ -x fsgs/fsgs -a -f fsgs/fsgs.cfg ]; then
+		fsgs/fsgs > /dev/null &
+		echo -n ' fsgs'
+	fi
 	;;
 stop)
 	killall fsgs && echo -n ' fsgs'

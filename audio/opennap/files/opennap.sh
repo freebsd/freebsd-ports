@@ -7,10 +7,13 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/opennap ] && ${PREFIX}/sbin/opennap > /dev/null 2>&1 & && echo -n ' opennap'
+	if [ -x ${PREFIX}/sbin/opennap ]; then
+		${PREFIX}/sbin/opennap > /dev/null 2>&1 &
+		echo -n ' opennap'
+	fi
 	;;
 stop)
-	[ -r ${PREFIX}/share/opennap/pid ] && kill -15 `cat ${PREFIX}/share/opennap/pid` > /dev/null && rm -f ${PREFIX}/share/opennap/pid &&echo -n ' opennap'
+	[ -r ${PREFIX}/share/opennap/pid ] && kill -15 `cat ${PREFIX}/share/opennap/pid` > /dev/null && rm -f ${PREFIX}/share/opennap/pid && echo -n ' opennap'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2

@@ -10,7 +10,8 @@ start)
 	exec 2>/dev/null
 	ulimit -c 0
 	if ${PREFIX}/sbin/checkvm >/dev/null; then
-		${PREFIX}/sbin/vmware-guestd & && echo -n ' vmware-guestd'
+		${PREFIX}/sbin/vmware-guestd &
+		echo -n ' vmware-guestd'
 	fi
 	;;
 stop)

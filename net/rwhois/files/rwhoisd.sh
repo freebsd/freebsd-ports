@@ -10,7 +10,7 @@ start)
 	# remove or comment the following line and uncomment the one below it once you have
 	# configured your server's data
 	echo "rwhoisd not started; sample data still in place.   See ${PREFIX}/share/doc/rwhois for details."
-	#[ -x ${PREFIX}/lib/rwhois/sbin/rwhoisd ] && ${PREFIX}/lib/rwhois/sbin/rwhoisd -c ${PREFIX}/lib/rwhois/rwhoisd.conf & && echo -n ' rwhoisd'
+	#if [ -x ${PREFIX}/lib/rwhois/sbin/rwhoisd ]; then (${PREFIX}/lib/rwhois/sbin/rwhoisd -c ${PREFIX}/lib/rwhois/rwhoisd.conf &); echo -n ' rwhoisd'; fi
 	;;
 stop)
 	# killall rwhoisd && echo -n ' rwhoisd
