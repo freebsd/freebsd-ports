@@ -578,6 +578,7 @@ blender		ports/graphics/blender
 blimitd		ports/sysutils/blimitd
 block		ports/games/block
 blockade	ports/games/blockade
+blop		ports/audio/blop
 blt		ports/x11-toolkits/blt
 blue		ports/games/blue
 bluefish	ports/www/bluefish
