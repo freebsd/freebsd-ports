@@ -1,5 +1,5 @@
---- set_soenv.in.orig	Thu Feb 27 15:12:36 2003
-+++ set_soenv.in	Wed Mar  5 21:16:43 2003
+--- set_soenv.in.orig	Thu Feb 27 14:12:36 2003
++++ set_soenv.in	Thu Mar 27 21:49:39 2003
 @@ -52,7 +52,7 @@
  #-------------------------------------------------
  #
@@ -28,7 +28,7 @@
  $WRAPCMD	= "";				# Wrapper (only for winnt)
  
  #
-@@ -1265,7 +1266,12 @@
+@@ -1265,7 +1266,13 @@
  {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
  }
  elsif ($platform eq "$FreeBSD")
@@ -38,6 +38,7 @@
 +       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
 +   } else {
 +       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
++       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."bsd";
 +   }
  }
  elsif ($platform eq "$NetBSD")
