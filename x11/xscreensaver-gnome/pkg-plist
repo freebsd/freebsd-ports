@@ -8,6 +8,7 @@ bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/ant
+bin/xscreensaver-hacks/antspotlight
 bin/xscreensaver-hacks/apollonian
 bin/xscreensaver-hacks/atlantis
 bin/xscreensaver-hacks/attraction
@@ -52,6 +53,7 @@ bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
 bin/xscreensaver-hacks/flag
 bin/xscreensaver-hacks/flame
+bin/xscreensaver-hacks/flipflop
 bin/xscreensaver-hacks/flipscreen3d
 bin/xscreensaver-hacks/flow
 bin/xscreensaver-hacks/fluidballs
@@ -117,6 +119,7 @@ bin/xscreensaver-hacks/phosphor
 bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pipes
 bin/xscreensaver-hacks/polyominoes
+bin/xscreensaver-hacks/polytopes
 bin/xscreensaver-hacks/popsquares
 bin/xscreensaver-hacks/pulsar
 bin/xscreensaver-hacks/pyro
@@ -198,6 +201,7 @@ share/locale/zh_TW/LC_MESSAGES/xscreensaver.mo
 share/xscreensaver/config/README
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/ant.xml
+share/xscreensaver/config/antspotlight.xml
 share/xscreensaver/config/apollonian.xml
 share/xscreensaver/config/atlantis.xml
 share/xscreensaver/config/attraction.xml
@@ -242,8 +246,10 @@ share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
+share/xscreensaver/config/fireflies.xml
 share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
+share/xscreensaver/config/flipflop.xml
 share/xscreensaver/config/flipscreen3d.xml
 share/xscreensaver/config/flow.xml
 share/xscreensaver/config/fluidballs.xml
@@ -310,6 +316,7 @@ share/xscreensaver/config/phosphor.xml
 share/xscreensaver/config/piecewise.xml
 share/xscreensaver/config/pipes.xml
 share/xscreensaver/config/polyominoes.xml
+share/xscreensaver/config/polytopes.xml
 share/xscreensaver/config/popsquares.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml
