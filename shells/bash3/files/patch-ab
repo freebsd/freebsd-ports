@@ -1,11 +1,32 @@
-*** cpp-Makefile.orig	Thu Sep 15 21:14:19 1994
---- cpp-Makefile	Thu Sep 15 21:14:45 1994
+*** cpp-Makefile	Thu Sep 29 05:00:51 1994
+--- cpp-Makefile.orig	Tue Jul 19 14:02:14 1994
+***************
+*** 136,144 ****
+  /* This is guaranteed to work, even if you have the fixed includes!
+     (Unless, of course, you have the fixed include files installed in
+     /usr/include.  Then it will break.) */
+! CC = cc -traditional -I/usr/include $(GCC_EXTRAS)
+  #  else /* HAVE_FIXED_INCLUDES */
+! CC = cc $(GCC_EXTRAS)
+  #  endif /* HAVE_FIXED_INCLUDES */
+  #else /* !HAVE_GCC */
+  CC = CPP_CC
+--- 136,144 ----
+  /* This is guaranteed to work, even if you have the fixed includes!
+     (Unless, of course, you have the fixed include files installed in
+     /usr/include.  Then it will break.) */
+! CC = gcc -traditional -I/usr/include $(GCC_EXTRAS)
+  #  else /* HAVE_FIXED_INCLUDES */
+! CC = gcc $(GCC_EXTRAS)
+  #  endif /* HAVE_FIXED_INCLUDES */
+  #else /* !HAVE_GCC */
+  CC = CPP_CC
 ***************
 *** 383,389 ****
   Program = bash
   
   /**/# The type of machine and OS Bash is being compiled on.
-! HOSTTYPE_DECL = -DHOSTTYPE='$(SYSTEM_NAME)' -DOSTYPE='$(OS_NAME)'
+! HOSTTYPE_DECL = -DHOSTTYPE='"$(SYSTEM_NAME)"' -DOSTYPE='"$(OS_NAME)"'
   
   MAINTAIN_DEFINE = -DMAINTAINER='"bug-bash@prep.ai.mit.edu"'
   
@@ -13,7 +34,7 @@
   Program = bash
   
   /**/# The type of machine and OS Bash is being compiled on.
-! HOSTTYPE_DECL = -DHOSTTYPE='"$(SYSTEM_NAME)"' -DOSTYPE='"$(OS_NAME)"'
+! HOSTTYPE_DECL = -DHOSTTYPE='$(SYSTEM_NAME)' -DOSTYPE='$(OS_NAME)'
   
   MAINTAIN_DEFINE = -DMAINTAINER='"bug-bash@prep.ai.mit.edu"'
   
