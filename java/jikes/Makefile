@@ -3,7 +3,32 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: Makefile,v 1.2 1998/12/10 20:29:37 dillon Exp $
+# UNOFFICIAL PATCH SOURCES:
+#	ftp://ftp.crocodile.org/pub/jikes/
+#		maintained by Vadim Zaliva
+#
+# PATCH INFO:	(note: patches had to be regenerated, the patch files in
+#		patches/ are not exactly the same as the ftp source)
+#
+#	patches/patch-aa	
+#	    patch to compile under FreeBSD (local)
+#
+#	patches/patch-ab	
+#	    ftp://ftp.crocodile.org/pub/jikes/divide0.patch
+#
+#	patches/patch-ac
+#	    ftp://ftp.crocodile.org/pub/jikes/jikes-0.41-warnings1.patch
+#
+#	patches/patch-ad
+#	    ftp://ftp.crocodile.org/pub/jikes/jikes-array-clone.patch
+#
+#	(solaris compiler patch not required)
+#	    ftp://ftp.crocodile.org/pub/jikes/jikes-solaris2.6-gcc2.8.1.patch
+#
+#	patches/patch-ae
+#	    ftp://ftp.crocodile.org/pub/jikes/jikes.makedepend.patch
+#
+# $Id: Makefile,v 1.3 1998/12/16 00:12:24 steve Exp $
 #
 
 DISTNAME=	jikes-0.41
