@@ -1,16 +1,16 @@
 # New ports collection makefile for:   bochs
-# Version required:    980513a
+# Version required:    990219a
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.13 1998/12/01 08:04:23 asami Exp $
+# $Id: Makefile,v 1.14 1999/01/01 16:34:07 alex Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.20
-BIOS=		BIOS-bochs-980717a
-DATE= 		981102
+BIOS=		BIOS-bochs-990623a
+DATE= 		990708
 
-DISTNAME=	bochs-${DATE}b
+DISTNAME=	bochs-${DATE}a
 CATEGORIES= 	emulators
 MASTER_SITES= 	ftp://ftp.bochs.com/pub/
 
@@ -18,10 +18,8 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--enable-80386 --enable-memory=16 \
-	--enable-v8086-mode --enable-paging --enable-vga \
-	--enable-bochs-bios-hooks --enable-dma-floppy-io \
-	--enable-processor-ips=200000
+CONFIGURE_ARGS=	--enable-cpu-level=4 --enable-vga \
+		--with-x11 --prefix=${PREFIX}
 
 WRKSRC=		${WRKDIR}/bochs-${DATE}
 
@@ -41,6 +39,7 @@ do-install:
 	-@${MKDIR} ${PREFIX}/share/doc/bochs
 	${INSTALL_MAN} ${WRKSRC}/docs-html/LICENSE ${PREFIX}/share/doc/bochs
 	${INSTALL_MAN} ${WRKSRC}/docs-html/*.html ${PREFIX}/share/doc/bochs
+	${INSTALL_MAN} ${WRKSRC}/docs-html/*.gif ${PREFIX}/share/doc/bochs
 .endif
 
 .include <bsd.port.mk>
