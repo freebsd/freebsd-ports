@@ -14,6 +14,8 @@ DISTNAME=	oo_605_src
 
 MAINTAINER=	obrien@FreeBSD.org
 
+BROKEN=	'work in progress -- does not work yet'
+
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 
 .include <bsd.port.pre.mk>
