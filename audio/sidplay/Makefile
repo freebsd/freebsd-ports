@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sidplay
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.8
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
 DISTNAME=	${PORTNAME}-base-${PORTVERSION}
