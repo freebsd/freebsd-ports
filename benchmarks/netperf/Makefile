@@ -15,8 +15,6 @@ PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCHFILES=	netperf-21pl3-20000721.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	fenner@freebsd.org
-
 MAKEFILE=	makefile
 MAN1=		netperf.1 netserver.1
 
