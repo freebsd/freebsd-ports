@@ -32,6 +32,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="87cc48fd-5fdd-11d8-80e3-0020ed76ef5a">
+    <topic>mnGoSearch buffer overflow in UdmDocToTextBuf()</topic>
+    <affects>
+      <package>
+	<name>mnogosearch</name>
+	<range><le>3.1.20_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jedi/Sector One &lt;j@pureftpd.org&gt; reported the following
+	  on the full-disclosure list:</p>
+	<blockquote>
+          <p>Every document is stored in multiple parts according to
+            its sections (description, body, etc) in databases. And
+            when the content has to be sent to the client,
+            UdmDocToTextBuf() concatenates those parts together and
+            skips metadata.</p>
+          <p>Unfortunately, that function lacks bounds checking and
+            a buffer overflow can be triggered by indexing a large
+            enough document.</p>
+          <p>'len' is fixed to 10K [in UdmDocToTextBuf] in searchd.c
+            . S->val length depends on the length of the original
+            document and on the indexer settings (the sample
+            configuration file has low limits that work around the
+	    bug, though).</p>
+          <p>Exploitation should be easy, moreover textbuf points to
+          the stack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.netsys.com/pipermail/full-disclosure/2004-February/017366.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-15</discovery>
+      <entry>2004-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cacaffbc-5e64-11d8-80e3-0020ed76ef5a">
     <topic>GNU libtool insecure temporary file handling</topic>
     <affects>
