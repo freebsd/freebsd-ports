@@ -14,7 +14,8 @@ MASTER_SITES=		http://www.rnl.ist.utl.pt/~bapm/gtm/files/     \
 MAINTAINER=		nectar@FreeBSD.org
 
 # wget is in BUILD_DEPENDS because the configure script checks for it
-LIB_DEPENDS=		gnome.2:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=		gnome.2:${PORTSDIR}/x11/gnomelibs               \
+			capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
 BUILD_DEPENDS=		wget:${PORTSDIR}/ftp/wget
 RUN_DEPENDS=		wget:${PORTSDIR}/ftp/wget
 
