@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/create.c	2002/06/01 21:08:46	1.1
-+++ src/create.c	2002/06/01 21:09:16
-@@ -1473,7 +1473,7 @@
- 	  if (linklen != current_stat.st_size || linklen + 1 == 0)
+--- src/create.c.orig	Thu Apr 22 17:51:04 2004
++++ src/create.c	Thu Apr 22 17:51:24 2004
+@@ -1408,7 +1408,7 @@
+ 	  if (linklen != stat->stat.st_size || linklen + 1 == 0)
  	    xalloc_die ();
  	  buffer = (char *) alloca (linklen + 1);
 -	  size = readlink (p, buffer, linklen + 1);
 +	  size = readlink (p, buffer, linklen);
  	  if (size < 0)
  	    {
- 	      if (ignore_failed_read_option)
+ 	      readlink_diag (p);
