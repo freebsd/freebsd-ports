@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.zope.org/Products/ZODB3.1/
 DISTNAME=	ZODB3-${PORTVERSION}
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	ports@freebsd.org
 COMMENT=	The Z - Object Database for python
 
 USE_PYTHON=	yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://snaught.com/glabels/source/
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A programm to create labels and business cards
 
 LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \

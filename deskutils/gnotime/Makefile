@@ -11,7 +11,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gttr
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	ports@freebsd.org
 COMMENT=	GnoTime is a time tracker for gnome2
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \

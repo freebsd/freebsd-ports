@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtklp
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=	martin.klaffenboeck@gmx.at
+MAINTAINER=	ports@freebsd.org
 COMMENT=	A gtk interface to cups
 
 LIB_DEPENDS=	cups:${PORTSDIR}/print/cups
