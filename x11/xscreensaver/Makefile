@@ -25,7 +25,7 @@ LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
@@ -79,6 +79,10 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-O0
+.endif
 
 pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
