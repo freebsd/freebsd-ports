@@ -12,7 +12,7 @@ MASTER_SITES=	http://devel.ringlet.net/sysutils/penv/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Set the environment accoring to the current working directory"
+COMMENT=	Set the environment according to the current working directory
 
 RUN_DEPENDS=	envdir:${PORTSDIR}/sysutils/daemontools
 
