@@ -1,21 +1,9 @@
---- Makefile.old	Tue Mar 16 21:13:21 2004
-+++ Makefile	Tue Mar 16 21:14:20 2004
-@@ -3,6 +3,8 @@
+--- Makefile.orig	Sun May  9 22:32:36 2004
++++ Makefile	Sun May  9 22:32:49 2004
+@@ -1,5 +1,5 @@
+ #MARCH=-march=athlon-tbird
+-CXXFLAGS=-ansi -pedantic -Wall -O3
++CXXFLAGS?=-ansi -pedantic -Wall -O3
  includedir = $(CURDIR)/include
  CXXFLAGS+= -I$(includedir)
  
-+PREFIX ?= /usr
-+
- export MARCH CXXFLAGS
- 
- VPATH = src $(SUBDIRS)
-@@ -65,7 +67,7 @@
- 
- install: libs aldo uninstall
- 	@strip aldo
--	@install -m555 -oroot aldo /usr/bin/
-+	@install -m555 -oroot aldo $(PREFIX)/bin/
- 
- uninstall:
--	@$(RM) /usr/bin/aldo
-+	@$(RM) $(PREFIX)/bin/aldo
