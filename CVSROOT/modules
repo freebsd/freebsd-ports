@@ -2214,6 +2214,7 @@ iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
 iview		ports/graphics/iview
 iwidgets	ports/x11-toolkits/iwidgets
+ixlib		ports/devel/ixlib
 ja-ASCIIdates98-fpw	ports/japanese/ASCIIdates98-fpw
 ja-CGdic-fpw	ports/japanese/CGdic-fpw
 ja-Canna	ports/japanese/Canna
