@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1999/06/05 22:31:23 mharo Exp $
+# $Id: Makefile,v 1.15 1999/07/04 19:05:24 obrien Exp $
 #
 
 DISTNAME=	wget-1.5.3
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/wget/pub/unix/util/wget/ \
 		ftp://ftp.informatik.hu-berlin.de/gnu/wget/ \
 		ftp://ftp.uni-mainz.de/pub/gnu/wget/ \
-		ftp://ftp.max.irk.ru/pub/unix/net/www/wget/
+		ftp://ftp.max.irk.ru/unix/net/www/wget/
 MASTER_SITE_SUBDIR=	wget
 
 MAINTAINER=	obrien@FreeBSD.ORG
