@@ -16,7 +16,7 @@ COMMENT=	Problem reporting system
 
 LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 
-CONFLICTS=	libpreps-1.9.*
+CONFLICTS=	libpreps-devel-1.9.*
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
