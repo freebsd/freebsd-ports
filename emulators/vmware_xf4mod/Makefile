@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.vmware.com/software/
 DISTNAME=	vmware_drv.o
 EXTRACT_SUFX=	# none
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 RUN_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
 

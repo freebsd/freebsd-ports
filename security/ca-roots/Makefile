@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 DISTFILES=	# none
 
-MAINTAINER=	nsayer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_BUILD=	yes
 

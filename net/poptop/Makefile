@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	poptop
 DISTNAME=		pptpd-${PORTVERSION}
 
-MAINTAINER=		nsayer@freebsd.org
+MAINTAINER=		ports@freebsd.org
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-bsdppp

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=   http://www.csn.ul.ie/~airlied/pam_smb/devel/
 
-MAINTAINER=	nsayer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	jabber-
 DISTNAME=	yahoo-t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	nsayer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

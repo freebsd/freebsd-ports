@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	bzflag
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/e./e/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nsayer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
 USE_MESA=	yes
