@@ -4,5 +4,5 @@ It is very similar to CVSup but not compatible with it.
 
 Note that this utility is still experimental.
 
-Author:	MAEKAWA Masahide <maekawa at daemon-systems dot org>
-WWW:	http://www.daemon-systems.org/cvsync/
+Author:	MAEKAWA Masahide <maekawa at cvsync dot org>
+WWW:	http://www.cvsync.org/
