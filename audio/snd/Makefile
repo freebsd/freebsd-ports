@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--without-guile
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-	PLIST_FILES+=	share/locale/de/LC_MESSAGES/snd.mo
+PLIST_FILES+=	share/locale/de/LC_MESSAGES/snd.mo
 .else
 CONFIGURE_ARGS+=--disable-nls
 .endif
