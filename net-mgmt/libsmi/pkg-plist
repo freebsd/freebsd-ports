@@ -9,6 +9,7 @@ lib/libsmi.so.2
 lib/libsmi.so
 lib/libsmi.la
 lib/libsmi.a
+lib/pkgconfig/libsmi.pc
 share/aclocal/libsmi.m4
 share/smi/mibs/iana/IANA-ADDRESS-FAMILY-NUMBERS-MIB
 share/smi/mibs/iana/IANA-LANGUAGE-MIB
@@ -37,6 +38,8 @@ share/smi/mibs/ietf/COFFEE-POT-MIB
 share/smi/mibs/ietf/COPS-CLIENT-MIB
 share/smi/mibs/ietf/DECNET-PHIV-MIB
 share/smi/mibs/ietf/DIAL-CONTROL-MIB
+share/smi/mibs/ietf/DIFFSERV-DSCP-TC
+share/smi/mibs/ietf/DIFFSERV-MIB
 share/smi/mibs/ietf/DIRECTORY-SERVER-MIB
 share/smi/mibs/ietf/DISMAN-EVENT-MIB
 share/smi/mibs/ietf/DISMAN-EXPRESSION-MIB
@@ -58,6 +61,7 @@ share/smi/mibs/ietf/DS0BUNDLE-MIB
 share/smi/mibs/ietf/DS1-MIB
 share/smi/mibs/ietf/DS3-MIB
 share/smi/mibs/ietf/DSA-MIB
+share/smi/mibs/ietf/DSMON-MIB
 share/smi/mibs/ietf/EBN-MIB
 share/smi/mibs/ietf/ENTITY-MIB
 share/smi/mibs/ietf/ETHER-CHIPSET-MIB
@@ -70,7 +74,10 @@ share/smi/mibs/ietf/FR-MFR-MIB
 share/smi/mibs/ietf/FRAME-RELAY-DTE-MIB
 share/smi/mibs/ietf/FRNETSERV-MIB
 share/smi/mibs/ietf/FRSLD-MIB
+share/smi/mibs/ietf/GSMP-MIB
+share/smi/mibs/ietf/HC-RMON-MIB
 share/smi/mibs/ietf/HCNUM-TC
+share/smi/mibs/ietf/HDSL2-SHDSL-LINE-MIB
 share/smi/mibs/ietf/HOST-RESOURCES-MIB
 share/smi/mibs/ietf/HOST-RESOURCES-TYPES
 share/smi/mibs/ietf/HPR-IP-MIB
@@ -95,6 +102,7 @@ share/smi/mibs/ietf/IPV6-TCP-MIB
 share/smi/mibs/ietf/IPV6-UDP-MIB
 share/smi/mibs/ietf/ISDN-MIB
 share/smi/mibs/ietf/Job-Monitoring-MIB
+share/smi/mibs/ietf/L2TP-MIB
 share/smi/mibs/ietf/MAU-MIB
 share/smi/mibs/ietf/MIOX25-MIB
 share/smi/mibs/ietf/MIP-MIB
@@ -180,6 +188,46 @@ share/smi/mibs/ietf/WWW-MIB
 share/smi/mibs/irtf/IRTF-NMRG-SMING
 share/smi/mibs/irtf/IRTF-NMRG-SMING-EXTENSIONS
 share/smi/mibs/irtf/IRTF-NMRG-SMING-TYPES
+share/smi/mibs/tubs/ACCESSBIND-PIB
+share/smi/mibs/tubs/ACCESSBIND-PIB-orig
+share/smi/mibs/tubs/ACCOUNTING-FRAMEWORK-PIB
+share/smi/mibs/tubs/ACCOUNTING-FRAMEWORK-PIB-orig
+share/smi/mibs/tubs/COPS-PR-SPPI
+share/smi/mibs/tubs/COPS-PR-SPPI-TC
+share/smi/mibs/tubs/DIFFSERV-PIB
+share/smi/mibs/tubs/DIFFSERV-PIB-orig
+share/smi/mibs/tubs/FEEDBACK-FRAMEWORK-PIB
+share/smi/mibs/tubs/FEEDBACK-FRAMEWORK-PIB-orig
+share/smi/mibs/tubs/FRAMEWORK-PIB
+share/smi/mibs/tubs/FRAMEWORK-PIB-orig
+share/smi/mibs/tubs/FRAMEWORK-TC-PIB
+share/smi/mibs/tubs/FRAMEWORK-TC-PIB-orig
+share/smi/mibs/tubs/IP-TE-PIB
+share/smi/mibs/tubs/IP-TE-PIB-orig
+share/smi/mibs/tubs/IPSEC-POLICY-PIB
+share/smi/mibs/tubs/IPSEC-POLICY-PIB-orig
+share/smi/mibs/tubs/LOAD-BALANCING-PIB
+share/smi/mibs/tubs/LOAD-BALANCING-PIB-orig
+share/smi/mibs/tubs/META-POLICY-PIB
+share/smi/mibs/tubs/META-POLICY-PIB-orig
+share/smi/mibs/tubs/MPLS-SETUP-PIB
+share/smi/mibs/tubs/MPLS-SETUP-PIB-orig
+share/smi/mibs/tubs/PARTITION-PIB
+share/smi/mibs/tubs/PARTITION-PIB-orig
+share/smi/mibs/tubs/POLICY-DEVICE-AUX-MIB
+share/smi/mibs/tubs/POLICY-DEVICE-AUX-MIB-orig
+share/smi/mibs/tubs/POLICY-FRAMEWORK-PIB
+share/smi/mibs/tubs/POLICY-FRAMEWORK-PIB-orig
+share/smi/mibs/tubs/PPVPN-PIB
+share/smi/mibs/tubs/PPVPN-PIB-orig
+share/smi/mibs/tubs/QOS-POLICY-802-PIB
+share/smi/mibs/tubs/QOS-POLICY-802-PIB-orig
+share/smi/mibs/tubs/QOS-POLICY-IP-PIB
+share/smi/mibs/tubs/QOS-POLICY-IP-PIB-orig
+share/smi/mibs/tubs/RSVP-PCC-PIB
+share/smi/mibs/tubs/RSVP-PCC-PIB-orig
+share/smi/mibs/tubs/SLS-NEGOTIATION-PIB
+share/smi/mibs/tubs/SLS-NEGOTIATION-PIB-orig
 share/smi/mibs/tubs/TUBS-IBR-AGENT-CAPABILITIES
 share/smi/mibs/tubs/TUBS-IBR-LINUX-MIB
 share/smi/mibs/tubs/TUBS-IBR-NFS-MIB
@@ -188,6 +236,9 @@ share/smi/mibs/tubs/TUBS-IBR-PROC-MIB
 share/smi/mibs/tubs/TUBS-IBR-TEST-MIB
 share/smi/mibs/tubs/TUBS-IBR-TNM-MIB
 share/smi/mibs/tubs/TUBS-SMI
+share/smi/mibs/tubs/UMTS-PIB
+share/smi/mibs/tubs/UMTS-PIB-orig
+share/smi/mibs/tubs/ibrpib-assignments.txt
 @dirrm share/smi/mibs/iana
 @dirrm share/smi/mibs/ietf
 @dirrm share/smi/mibs/irtf

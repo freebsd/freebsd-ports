@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsmi
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 
@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=--with-data-dir=${PREFIX}/share/smi \
 		--with-mibdir=${MIBDIR}
 
 MAN1=	smiquery.1 smilint.1 smidump.1 smistrip.1 smidiff.1 smicache.1
-MAN3=	libsmi.3 smi_config.3 smi_module.3 smi_macro.3 smi_node.3 smi_type.3
+MAN3=	libsmi.3 smi_config.3 smi_module.3 smi_macro.3 smi_node.3 smi_type.3 \
+        smi_render.3
 
 .include <bsd.port.mk>
