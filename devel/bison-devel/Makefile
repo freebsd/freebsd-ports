@@ -3,7 +3,7 @@
 # Date created:		27 Mar 1999
 # Whom:			Jerry Hicks
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 03:18:07 steve Exp $
+# $Id: Makefile,v 1.2 1999/08/11 04:34:50 cpiazza Exp $
 #
 
 DISTNAME=		bison-1.28
