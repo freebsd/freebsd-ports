@@ -24,6 +24,7 @@
     SUBDIR += detach
     SUBDIR += diskusage
     SUBDIR += doconfig
+    SUBDIR += eject
     SUBDIR += ffsrecov
     SUBDIR += flexbackup
     SUBDIR += gcombust
