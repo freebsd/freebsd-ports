@@ -32,6 +32,12 @@ ANT_TARGET?=	library-linux
 USE_GMAKE=	yes
 PLIST_FILES=	bin/colorer lib/libcolorer.so
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-build:
 	@(cd ${WRKSRC} && \
           ${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT} ${ANT_TARGET} ; \
@@ -76,4 +82,4 @@ do-install:
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
