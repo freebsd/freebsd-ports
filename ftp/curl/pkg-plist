@@ -1,4 +1,5 @@
 bin/curl
+bin/curl-config
 include/curl/curl.h
 include/curl/easy.h
 include/curl/mprintf.h
