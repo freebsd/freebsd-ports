@@ -1,6 +1,50 @@
---- Makefile.in.orig	Mon May  4 10:42:08 1998
-+++ Makefile.in	Mon May  4 10:42:34 1998
-@@ -204,7 +204,7 @@
+--- Makefile.in.orig	Sun Jul 15 13:23:30 2001
++++ Makefile.in	Mon Mar 18 21:47:17 2002
+@@ -69,7 +69,7 @@
+ SUBDIRS = . m4 tests
+ 
+ bin_SCRIPTS = automake aclocal
+-info_TEXINFOS = automake.texi
++info_TEXINFOS = automake14.texi
+ 
+ amfiles = clean-hdr.am clean-kr.am clean.am comp-vars.am compile.am data-clean.am data.am dejagnu.am depend.am depend2.am dist-vars.am footer.am header-vars.am header.am java-clean.am java.am kr-extra.am library.am libs-clean.am libs.am libtool.am lisp-clean.am lisp.am ltlib-clean.am ltlib.am ltlibrary.am mans-vars.am mans.am multilib.am program.am progs-clean.am progs.am remake-hdr.am remake.am scripts.am subdirs.am tags-clean.am tags.am texi-vers.am texinfos.am
+ 
+@@ -90,9 +90,9 @@
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
+ TEXI2DVI = texi2dvi
+-INFO_DEPS = automake.info
+-DVIS = automake.dvi
+-TEXINFOS = automake.texi
++INFO_DEPS = automake14.info
++DVIS = automake14.dvi
++TEXINFOS = automake14.texi
+ DATA =  $(pkgdata_DATA) $(script_DATA)
+ 
+ DIST_COMMON =  README AUTHORS COPYING ChangeLog INSTALL Makefile.am \
+@@ -149,8 +149,8 @@
+ $(srcdir)/version.texi: stamp-vti
+ 	@:
+ 
+-$(srcdir)/stamp-vti: automake.texi $(top_srcdir)/configure.in
+-	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake.texi`" > vti.tmp
++$(srcdir)/stamp-vti: automake14.texi $(top_srcdir)/configure.in
++	@echo "@set UPDATED `$(SHELL) $(srcdir)/mdate-sh $(srcdir)/automake14.texi`" > vti.tmp
+ 	@echo "@set EDITION $(VERSION)" >> vti.tmp
+ 	@echo "@set VERSION $(VERSION)" >> vti.tmp
+ 	@cmp -s vti.tmp $(srcdir)/version.texi \
+@@ -169,8 +169,8 @@
+ maintainer-clean-vti:
+ 	-rm -f $(srcdir)/stamp-vti $(srcdir)/version.texi
+ 
+-automake.info: automake.texi version.texi
+-automake.dvi: automake.texi version.texi
++automake14.info: automake14.texi version.texi
++automake14.dvi: automake14.texi version.texi
+ 
+ 
+ DVIPS = dvips
+@@ -178,7 +178,7 @@
  .texi.info:
  	@cd $(srcdir) && rm -f $@ $@-[0-9] $@-[0-9][0-9]
  	cd $(srcdir) \
@@ -8,4 +52,13 @@
 +	  && $(MAKEINFO) --no-split `echo $< | sed 's,.*/,,'`
  
  .texi.dvi:
- 	TEXINPUTS=$(srcdir):$$TEXINPUTS \
+ 	TEXINPUTS=.:$$TEXINPUTS \
+@@ -269,7 +269,7 @@
+ 	done
+ 
+ mostlyclean-aminfo:
+-	-rm -f automake.aux automake.cp automake.cps automake.dvi automake.fn \
++	-rm -f automake.aux automake.cp automake.cps automake14.dvi automake.fn \
+ 	  automake.fns automake.ky automake.kys automake.ps \
+ 	  automake.log automake.pg automake.toc automake.tp \
+ 	  automake.tps automake.vr automake.vrs automake.op automake.tr \
