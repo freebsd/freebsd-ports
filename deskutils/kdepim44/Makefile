@@ -38,11 +38,8 @@ MAKE_ENV=	${CONFIGURE_ENV}
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,malloc.h,stdlib.h,' \
-		${WRKSRC}/libical/src/libical/icallangbind.c \
-		${WRKSRC}/libical/src/libicalvcal/vcc.y \
-		${WRKSRC}/libical/src/libicalvcal/vobject.c \
-		${WRKSRC}/libkcal/parseholiday.c
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
+		"s,#include.*<malloc.h>,#include <stdlib.h>,g"
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/auto-bin
