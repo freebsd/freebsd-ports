@@ -1,42 +1,36 @@
---- ./src/StdImakefile.org	Wed Apr 19 10:47:22 1995
-+++ ./src/StdImakefile	Tue Jul 18 00:17:45 1995
-@@ -18,7 +18,9 @@
- DEPLIBS = XawClientDepLibs $(OTHERDEPLIBS)
- SYSLIBS = XawClientLibs
- 
-+#ifndef NOT_SINGLE_OBJECT_FILE
- AddToLibraryTarget(archive,$(FWF_LIBDIR),$(FWF_LIBNAME),$(LIB_OBJS))
-+#endif
- 
- ObjectRuleWithFlags($(FWF_CFLAGS))
- 
---- FWF.rules.orig	Wed Apr 19 08:27:56 1995
-+++ FWF.rules	Tue Jul 18 02:04:22 1995
-@@ -23,9 +23,6 @@
- libdir/libname:: objlist						@@\
- 	-@(if [ ! -f libdir/libname ]; then \				@@\
- 		$(MKDIRHIER) libdir ; \					@@\
--		echo Creating Library libdir/libname ; \		@@\
--		$(AR) libdir/libname ; \				@@\
--		RanLibrary(libdir/libname) ; \				@@\
- 	fi; exit 0)							@@\
- 	@echo Adding objlist To Library libdir/libname			@@\
- 	$(ARMERGE) libdir/libname objlist				@@\
-@@ -282,3 +279,9 @@
- #define SqueakyCleanSubdirs(dirs)					@@\
- NamedSqueakyCleanSubdirs(squeakyclean,dirs)
- #endif
-+
-+#undef InstallNamedTarget
-+#define	InstallNamedTarget(step,srcname,flags,dest,dstname)		@@\
-+step:: srcname								@@\
-+	MakeDir($(DESTDIR)dest)						@@\
-+	$(INSTALL) $(INSTALLFLAGS) flags srcname $(DESTDIR)dest/
---- ./src/FileComp/Imakefile.org	Mon May  3 12:40:20 1993
-+++ ./src/FileComp/Imakefile	Tue Jul 18 03:09:52 1995
-@@ -7,4 +7,4 @@
- 
- #include "../StdImakefile"
- 
--AddToLibraryTarget(archive,$(FWF_LIBDIR),$(FWF_LIBNAME),squish.o getod.o)
-+AddToLibraryTarget(archive,$(FWF_LIBDIR),$(FWF_LIBNAME),$(WIDGET).o squish.o getod.o)
+*** src/Imakefile.orig	Wed Feb 14 18:05:37 1996
+--- src/Imakefile	Sat Apr 25 22:03:03 1998
+***************
+*** 13,19 ****
+  	Button RowCol Prompt Slider2 Slider4 Arrow Scrollbar PullDown	\
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3	\
+! 	PieMenu Array FileLister Entry SpinLabel Mdial PcBar Toggle	\
+  	Icon Alert Group RadioGroup ThumbWheel FoldingTree IconBox	\
+  	Animator XmTabs XmAnsiTerm XmIcon XmPager			\
+  	UserGraf TextOut FText Calendar # HTML2 SSGML
+--- 13,19 ----
+  	Button RowCol Prompt Slider2 Slider4 Arrow Scrollbar PullDown	\
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3	\
+! 	PieMenu Array FileLister Entry SpinLabel PcBar Toggle	\
+  	Icon Alert Group RadioGroup ThumbWheel FoldingTree IconBox	\
+  	Animator XmTabs XmAnsiTerm XmIcon XmPager			\
+  	UserGraf TextOut FText Calendar # HTML2 SSGML
+***************
+*** 42,48 ****
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3	\
+  	ThumbWheel2 PieMenu Array FileLister Entry SpinLabel		\
+! 	Mdial PcBar XmTabs XmAnsiTerm					\
+  	TextOut ArticleText Calendar
+  #endif
+  
+--- 42,48 ----
+  	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
+  	CircPerc Stack Enforcer Rows MenuBar ScrollWin ScrollWin3	\
+  	ThumbWheel2 PieMenu Array FileLister Entry SpinLabel		\
+! 	PcBar XmTabs XmAnsiTerm					\
+  	TextOut ArticleText Calendar
+  #endif
+  

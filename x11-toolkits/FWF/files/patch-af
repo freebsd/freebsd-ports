@@ -1,0 +1,304 @@
+*** src/FileComp/FileComp.c.orig	Thu Apr 18 05:21:21 1996
+--- src/FileComp/FileComp.c	Sat Apr 25 21:48:25 1998
+***************
+*** 121,129 ****
+  #ifdef USEONELINE
+  #include "OneLineText.h"
+  #endif
+! #if defined(USE_REGEX) && defined(GNU_REGEX)
+  #include <regex.h>
+! #endif
+  #if defined(USE_GLOB)
+  #include <glob.h>
+  #endif
+--- 121,129 ----
+  #ifdef USEONELINE
+  #include "OneLineText.h"
+  #endif
+! 
+  #include <regex.h>
+! 
+  #if defined(USE_GLOB)
+  #include <glob.h>
+  #endif
+***************
+*** 299,307 ****
+  static void ChoosePrefix();
+  static void UpdateFilesList();
+  
+! #if defined(USE_REGEX) && defined(GNU_REGEX)
+! static struct re_pattern_buffer compbuf;
+! #endif
+  
+  static void
+  Initialize(request, new)
+--- 299,305 ----
+  static void ChoosePrefix();
+  static void UpdateFilesList();
+  
+! static regex_t *compbuf;
+  
+  static void
+  Initialize(request, new)
+***************
+*** 405,417 ****
+    } else
+      fcwp->cancel_button = NULL;
+  
+- #if defined(USE_REGEX) && defined(GNU_REGEX)
+-   /* this code initializes the compile buffer for the regex routines */
+-   compbuf.buffer = XtMalloc(256);
+-   compbuf.allocated = 256;
+-   compbuf.fastmap = compbuf.translate = NULL;
+- #endif
+- 
+    UpdateFilesList(new);
+    ChoosePrefix(new);
+  
+--- 403,408 ----
+***************
+*** 451,462 ****
+      free(fcwp->candidates);
+    if (fcwp->candidx)
+      free(fcwp->candidx);
+! #if defined(USE_REGEX) && defined(GNU_REGEX)
+!   if (compbuf.buffer) {	  /* free the compile buffer from the regex routines */
+!     XtFree(compbuf.buffer);
+!     compbuf.buffer = NULL;
+    }
+- #endif
+  }
+  
+  /* this is used to detect a double-click.
+--- 442,451 ----
+      free(fcwp->candidates);
+    if (fcwp->candidx)
+      free(fcwp->candidx);
+!   if (compbuf) {	  /* free the compile buffer from the regex routines */
+!     regfree(compbuf);
+!     compbuf = NULL;
+    }
+  }
+  
+  /* this is used to detect a double-click.
+***************
+*** 1657,1690 ****
+  }
+  
+  
+! 
+! 
+! #if defined(USE_REGEX)
+! 
+! /* following regex routine was developed by reading Brian Totty's code
+!    and reading the man page.  Long live free source code! */
+! 
+! #if !defined(GNU_REGEX)
+! 
+! #define INIT		register char *sp = instring;
+! #define	GETC()		(*sp++)
+! #define	PEEKC()		(*sp)
+! #define	UNGETC(c)	-- sp
+! #define	RETURN(ptr)	return (ptr);
+! #define	ERROR(val)	{ regex_errno = (val); return NULL; }
+! static int	regex_errno;
+! static int	getrnge();
+! #include	<regexp.h>
+! 
+! #endif /* !GNU_REGEX */
+! 
+! /* This routine now uses either the regexp library or the GNU regex
+!    library based on the #define GNU_REGEX.  It can also be eliminated
+!    entirely by not #defining USE_REGEX 			EdW */
+! /* We don't want to completely eliminate it.  This would cause
+!    compatibility problems.  Instead we define some stub procedures
+!    that issue XtAppWarningMsgs.                         RF */
+! 
+  #if NeedFunctionPrototypes
+  Boolean XfwfFCRegexFiles (
+       char	*s,
+--- 1646,1652 ----
+  }
+  
+  
+! /* This routine now uses POSIX regex */
+  #if NeedFunctionPrototypes
+  Boolean XfwfFCRegexFiles (
+       char	*s,
+***************
+*** 1704,1752 ****
+  {
+    static char	*cache_regex = NULL,
+  		*busted_regex = NULL;
+! #if defined(GNU_REGEX)
+!   _Xconst char *	comp_result;
+! #else
+!   static char	compbuf[2048]; /* I should modify this to be a dynamically
+! 				  grown array.  sigh */
+! #endif
+    int	rval;
+  
+    if (busted_regex && 0==strcmp(regex,busted_regex))
+      return TRUE;
+  
+    if (!cache_regex || 0!=strcmp(cache_regex,regex)) {
+! #if defined(GNU_REGEX)
+!     if (!(comp_result = re_compile_pattern(regex, strlen(regex), &compbuf))) {
+! #else
+!     if (NULL != compile(regex, compbuf, compbuf+sizeof(compbuf), '\0')) {
+! #endif
+        XtFree(cache_regex);	/* safe for NULL */
+        cache_regex = XtNewString(regex);
+      } else {
+        String	params[2];
+        Cardinal	n;
+  
+! #if defined(GNU_REGEX)
+!       params[0] = comp_result;
+! #else
+!       switch (regex_errno) {
+!       case 11: params[0] = "Range endpoint too large."; break;
+!       case 16: params[0] = "Bad number"; break;
+!       case 25: params[0] = "`\\digit' out of range."; break;
+!       case 36: params[0] = "Illegal or missing delimiter."; break;
+!       case 41: params[0] = "No remembered search string."; break;
+!       case 42: params[0] = "\\( \\) imbalance."; break;
+!       case 43: params[0] = "Too many \\(."; break;
+!       case 44: params[0] = "More than 2 numbers given in \\{ \\}."; break;
+!       case 45: params[0] = "} expected after \\."; break;
+!       case 46: params[0] = "First number exceeds second in \\{ \\}."; break;
+!       case 49: params[0] = "[] imbalance."; break;
+!       case 50: params[0] = "Regular expression too long."; break;
+!       default: params[0] = "unknown regex compilation error."; break;
+!       }
+! #endif
+! 
+        params[1] = regex;
+        n = 2;
+        XtAppWarningMsg(app_con, "compileFailed", "xfwfFileCompRegex",
+--- 1666,1687 ----
+  {
+    static char	*cache_regex = NULL,
+  		*busted_regex = NULL;
+!   static regex_t *compbuf;
+    int	rval;
+  
+    if (busted_regex && 0==strcmp(regex,busted_regex))
+      return TRUE;
+  
+    if (!cache_regex || 0!=strcmp(cache_regex,regex)) {
+!     compbuf = (regex_t *)malloc(sizeof(regex_t));
+!     if (!regcomp(compbuf, regex, REG_EXTENDED | REG_NOSUB)) {
+        XtFree(cache_regex);	/* safe for NULL */
+        cache_regex = XtNewString(regex);
+      } else {
+        String	params[2];
+        Cardinal	n;
+  
+!       params[0] = "bogus regex";
+        params[1] = regex;
+        n = 2;
+        XtAppWarningMsg(app_con, "compileFailed", "xfwfFileCompRegex",
+***************
+*** 1758,1771 ****
+        return TRUE;
+      }
+    }
+! 
+! #if defined(GNU_REGEX)
+!   rval = re_match(&compbuf, s, strlen(s), 0, NULL);
+!   return ((rval >= 0) && (rval == strlen(s)));
+! #else
+!   rval = advance(s, compbuf);
+!   return rval && *loc2==0;
+! #endif
+  }
+  
+  
+--- 1693,1699 ----
+        return TRUE;
+      }
+    }
+!   return regexec(compbuf, s, 0, NULL, 0);
+  }
+  
+  
+***************
+*** 1783,1840 ****
+      XfwfFCRegexFiles(filename, regex, app_con) ;
+  }
+  
+- #else /* USE_REGEX */
+- 
+- #if NeedFunctionPrototypes
+- Boolean XfwfFCRegexFiles (
+-      char	*s,
+-      _Xconst XtPointer	regex,
+-      XtAppContext	app_con)
+- #else
+- Boolean XfwfFCRegexFiles (s, regex, app_con)
+-      char	*s;
+-      XtPointer	regex;
+-      XtAppContext	app_con;
+- #endif
+- {
+-   Cardinal	num_subs = 0;
+-   String	subs[1];
+-   static int	issued=0;
+- 
+-   if (issued)
+-     return;		/* they don't want to see this a million times */
+-   /* urgh, regex was not available at the time :( */
+-   XtAppWarningMsg(app_con, "packageUnavailable", "xfwfFileCompRegex",
+- 		  "XfwfLibraryError",
+- 		  "attempt to use regular expressions in a FileComplete widget (XfwfFCRegexFiles).  The FWF library was not compiled with that option.",
+- 		  subs, &num_subs);
+-   issued = 1;
+- }
+- 
+- Boolean XfwfFCDirsOrRegexFiles(filename, filestats, regex, app_con)
+-      char	*filename;
+-      struct stat *filestats;
+-      XtPointer	regex;
+-      XtAppContext	app_con;
+- {
+-   Cardinal	num_subs = 0;
+-   String	subs[1];
+-   static int	issued=0;
+- 
+-   if (issued)
+-     return;		/* they don't want to see this a million times */
+- 
+-   /* urgh, regex was not available at the time :( */
+-   XtAppWarningMsg(app_con, "packageUnavailable", "xfwfFileCompRegex",
+- 		  "XfwfLibraryError",
+- 		  "attempt to use regular expressions in a FileComplete widget (XfwfFCDirsOrRegexFiles).  The FWF library was not compiled with that option.",
+- 		  subs, &num_subs);
+-   issued = 1;
+- }
+- 
+- #endif /* USE_REGEX */
+- 
+- 
+  #ifdef USE_GLOB
+  
+  Boolean XfwfFCDirsOrGlobFiles(filename, filestats, regex, app_con)
+--- 1711,1716 ----
+***************
+*** 1949,1963 ****
+  enum xfwfFileCompleteRegexFlavor
+  XfwfFileCompleteRegexFlavor()
+  {
+- #ifdef USE_REGEX
+- #ifdef GNU_REGEX
+    return xfwfFC_Emacs;
+- #else
+-   return xfwfFC_ATT;
+- #endif
+- #else
+-   return xfwfFC_NoRegex;
+- #endif
+  }
+  
+  int XfwfFileCompleteHasGlob()
+--- 1825,1831 ----

@@ -1,23 +1,20 @@
-=================================== README ===================================
+                        The Free Widget Foundation
+				       
+                                Brian Totty
 
-*****************************************************************
-*                                                               *
-*           The Free Widget Foundation Widget Release           *
-*                                                               *
-*****************************************************************
+                      Department of Computer Science
+                University of Illinois at Urbana-Champaign
+                        1304 West Springfield Avenue
+                             Urbana, IL 61801
 
-This is the Free Widget Foundation widget release, a collection of no-cost,
-freely redistributable X graphical user interface widgets.
+                    free-widgets-info@let.rug.nl
 
-The Free Widget Foundation is a grass-roots, all-volunteer effort.
+THE FREE WIDGET FOUNDATION
 
-The Free Widget Foundation project was started summer 1990 in order to collect
-existing widgets in a well-publicized location to prevent duplication of
-effort.  Numerous people have expressed interest in submitting widgets to the
-collection.  The collection process is going slowly because of lack of time
-and organizational needs.  The "Free Widget Foundation" is a pun on the "Free
-Software Foundation" title.  While the two organizations share some similar
-goals, that is the improvement of the quality and quantity of
-freely-redistributable public software, this organization is in no way related
-to the Free Software Foundation or the GNU projects.  In fact, we aren't even
-a "foundation" in the legal meaning of the word.
+The Free Widget Foundation (FWF) was first organized in the summer of 1990, as
+a grass-roots, all-volunteer effort to generate a publically accessible
+repository for X widgets.  The goal of the FWF was to gather a set of
+powerful, flexible, freely-accessible widgets, assisting programmers to
+construct complicated user-interfaces.  Furthermore, we wanted to discourage
+multiple parties from "reinventing the widget" multiple times, and encourage
+the development of a single, quality object.

@@ -1,0 +1,18 @@
+--- src/IconBox/IconBoxT.c.orig	Wed Nov 29 12:48:00 1995
++++ src/IconBox/IconBoxT.c	Sun Apr 26 07:51:32 1998
+@@ -5,6 +5,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <sys/types.h>
+ #include <dirent.h>
+ #include <unistd.h>
+ #include <sys/stat.h>
+@@ -42,7 +43,6 @@
+ };
+ 
+ extern int errno;
+-extern char *sys_errlist[];
+ 
+ static XtAppContext app_context;
+ static int hlen, vlen;

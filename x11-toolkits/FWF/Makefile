@@ -1,23 +1,23 @@
 # New ports collection makefile for:	FWF Widgets
-# Version required:	3.8
+# Version required:	4.0
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1997/01/06 12:14:26 jkh Exp $
+# $Id: Makefile,v 1.10 1997/11/22 21:42:31 jseger Exp $
 #
 
-DISTNAME=	fwf-3.8
+DISTNAME=	fwf-4.0
 CATEGORIES=	x11
-MASTER_SITES=   ${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=     widgets
+MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
+		ftp://ftp.let.rug.nl/pub/FWF/
+MASTER_SITE_SUBDIR=libs/X/fwf
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF
-PATCH_STRIP=	-p1
 XMKMF=		env X11BASE=${X11BASE} WRKSRC=${WRKSRC} sh ${FILESDIR}/xmkmf
 
 .include <bsd.port.mk>
