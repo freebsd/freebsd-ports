@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Tue Jul 16 23:42:39 2002
++++ src/Makefile.in	Tue Aug 20 05:03:35 2002
+@@ -11,8 +11,8 @@
+ # WARNINGS = -Wall -Wwrite-strings
+ # WARNINGS = -woff 3303
+ # LFLAGS = -woff 1167 -woff 1110 -woff 3322
+-CFLAGS = @OPTIM@ $(WARNINGS) -I. -Iswt/include @CPPFLAGS@
+-CXXFLAGS = $(CFLAGS)
++CFLAGS = @CFLAGS@ $(WARNINGS) -I. -Iswt/include @CPPFLAGS@
++CXXFLAGS = @CXXFLAGS@ $(WARNINGS) -I. -Iswt/include @CPPFLAGS@
+ LIBS = @STATIC@ -Lswt/lib -lswt @LIBS@
+ 
+ .SUFFIXES: .cpp
