@@ -1,0 +1,9 @@
+lib/python1.5/site-packages/Gnuplot/__init__.pyc
+lib/python1.5/site-packages/Gnuplot/demo.pyc
+lib/python1.5/site-packages/Gnuplot/gnuplot_Suites.pyc
+lib/python1.5/site-packages/Gnuplot/gp.pyc
+lib/python1.5/site-packages/Gnuplot/gp_mac.pyc
+lib/python1.5/site-packages/Gnuplot/gp_win32.pyc
+lib/python1.5/site-packages/Gnuplot/oldplot.pyc
+lib/python1.5/site-packages/Gnuplot/test.pyc
+@dirrm lib/python1.5/site-packages/Gnuplot
