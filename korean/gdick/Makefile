@@ -17,6 +17,8 @@ COMMENT=	English-Korean Dictionary Client for GNOME2
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes

@@ -14,6 +14,8 @@ MASTER_SITES=	http://userpage.fu-berlin.de/~zeank/gtk-imonc/download/
 MAINTAINER=	aberg@doomnet.de
 COMMENT=	A GTK2-based imond-client to control an on(e) disc fli4l router
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

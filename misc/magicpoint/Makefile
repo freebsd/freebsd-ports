@@ -18,6 +18,8 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		mng:${PORTSDIR}/graphics/libmng
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
+BROKEN=		Incomplete pkg-plist
+
 USE_IMAKE=	yes
 USE_REINPLACE=	yes
 USE_FREETYPE=	yes

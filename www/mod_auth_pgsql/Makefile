@@ -16,6 +16,8 @@ COMMENT=	Allows users to use PostgreSQL databases for user authentication
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/${APACHE_PORT}
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PGSQL=	yes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}

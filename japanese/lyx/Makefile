@@ -24,6 +24,8 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 #.endif
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
+BROKEN=		Incomplete pkg-plist
+
 USE_XPM=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
