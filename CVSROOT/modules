@@ -7590,6 +7590,7 @@ wmicons		ports/graphics/wmicons
 wminet		ports/sysutils/wminet
 wmitime		ports/x11-clocks/wmitime
 wmix		ports/audio/wmix
+wmjulia		ports/misc/wmjulia
 wmjupiter	ports/astro/wmjupiter
 wml		ports/www/wml
 wmlj		ports/net/wmlj
