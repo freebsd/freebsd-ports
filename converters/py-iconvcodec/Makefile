@@ -7,8 +7,7 @@
 PORTNAME=	iconvcodec
 PORTVERSION=	1.1.1
 CATEGORIES=	converters python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	koco
+MASTER_SITES=	http://download.berlios.de/cjkpython/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
