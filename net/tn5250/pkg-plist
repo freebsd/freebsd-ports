@@ -1,0 +1,33 @@
+bin/scs2ascii
+bin/tn5250
+bin/tn5250-config
+bin/xt5250
+include/tn5250.h
+include/tn5250/buffer.h
+include/tn5250/codes5250.h
+include/tn5250/config.h
+include/tn5250/cursesterm.h
+include/tn5250/dbuffer.h
+include/tn5250/debug.h
+include/tn5250/display.h
+include/tn5250/field.h
+include/tn5250/printsession.h
+include/tn5250/record.h
+include/tn5250/scs.h
+include/tn5250/session.h
+include/tn5250/slangterm.h
+include/tn5250/stream.h
+include/tn5250/terminal.h
+include/tn5250/transmaps.h
+include/tn5250/utility.h
+include/tn5250/wtd.h
+lib/lib5250.so
+lib/lib5250.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/tn5250/XTerm
+share/tn5250/dialogrc
+share/tn5250/uk5250.map
+share/tn5250/us5250.map
+@dirrm include/tn5250
+@dirrm share/tn5250

@@ -188,6 +188,7 @@
     SUBDIR += tintin++
     SUBDIR += tinyfugue
     SUBDIR += tn3270
+    SUBDIR += tn5250
     SUBDIR += traceroute
     SUBDIR += trafshow
     SUBDIR += ttcp
