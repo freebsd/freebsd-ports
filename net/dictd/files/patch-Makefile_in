@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jun 10 02:33:02 2002
-+++ Makefile.in	Mon Jun 10 02:37:31 2002
+--- Makefile.in.orig	Tue Mar  4 03:14:35 2003
++++ Makefile.in	Thu Oct  9 22:07:56 2003
 @@ -33,7 +33,7 @@
  srcdir=		@srcdir@
  VPATH=		@srcdir@
@@ -9,19 +9,19 @@
  exec_prefix=	@exec_prefix@
  man1_prefix=	@mandir@/man1
  man8_prefix=	@mandir@/man8
-@@ -57,9 +57,9 @@
- 		-DDICT_CONFIG_PATH=\"$(conf)\"
+@@ -70,9 +70,9 @@
+ 
  SCFLAGS=        @SCFLAGS@
  LDFLAGS=        @LDFLAGS@
 -XTRACFLAGS=     @WCFLAGS@ @XTRACFLAGS@ @DEFS@ @CPPFLAGS@ -I. -Iregex
 +XTRACFLAGS=     @WCFLAGS@ @XTRACFLAGS@ @DEFS@ @CPPFLAGS@ -I. # -Iregex
  XTRALDFLAGS=    @WLDFLAGS@ @XTRALDFLAGS@
--LDLIBS=		@LIBS@ -Lregex -lregex
-+LDLIBS=		@LIBS@ -L%%PREFIX%%/lib -lltdl # -Lregex -lregex
+-LDLIBS=		    @LIBOBJS@ @LIBS@ -Lregex -lregex
++LDLIBS=		    @LIBOBJS@ @LIBS@ -L%%PREFIX%%/lib -lltdl # -Lregex -lregex
  
- EXES=	 	dict dictd dictzip
+ EXES=	 	dict dictd dictzip dictfmt
  
-@@ -75,17 +75,7 @@
+@@ -114,17 +114,7 @@
  all $(EXES)::
  	@for subdir in `echo $(subdirs)`; do \
  		echo making in $$subdir; \
@@ -39,23 +39,4 @@
 +		(cd $$subdir && $(MAKE)) || exit 1; \
  	done
  
- all:: $(EXES)
-@@ -116,11 +106,13 @@
- servscan.o: servscan.c servparse.o servparse.h $(HEADERS)
- 	$(CC) -c $(XTRACFLAGS) $(CFLAGS) $(SCFLAGS) $<
- 
--servparse.c: servparse.y
--	$(YACC) -tdv $<
--	cmp -s y.tab.h servparse.h || mv y.tab.h servparse.h
--	cmp -s y.tab.c servparse.c || mv y.tab.c servparse.c
--	-rm -f y.tab.h y.tab.c
-+servparse.c: servparse.h
-+
-+servparse.h: servparse.y
-+	$(YACC) -tdv -b serv $<
-+	cmp -s serv.tab.h servparse.h || mv serv.tab.h servparse.h
-+	cmp -s serv.tab.c servparse.c || mv serv.tab.c servparse.c
-+	-rm -f serv.tab.h serv.tab.c
- 
- servparse.o: servparse.c $(HEADERS)
- 	$(CC) -c $(XTRACFLAGS) $(CFLAGS) $(SCFLAGS) $<
+ all:: $(EXES) $(LIBRARIES) plugins
