@@ -3,7 +3,7 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/02/16 01:14:03 obrien Exp $
 #
 # This port is adapted from japanese/kon
 #
@@ -20,7 +20,10 @@ DISTFILES=	kon-0.99.4e.tgz 8x16.bdf.gz taipei16.bdf.gz
 
 MAINTAINER=	hcchu@r350.ee.ntu.edu.tw
 
-RESTRICTED=	"The font 'taipei16.bdf' is copyrighted"
+#from Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>:  The font is transformed from
+#	a font with restrictive copyright, so I think you can't distribute
+#	it on the CDROM.
+RESTRICTED=	"The font 'taipei16.bdf' has restrictive copyrighted"
 EXTRACT_ONLY=	kon-0.99.4e.tgz
 USE_GMAKE=	yes
 
