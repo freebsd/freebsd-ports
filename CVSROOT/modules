@@ -9579,6 +9579,7 @@ rvm		ports/devel/rvm
 rw-aspell	ports/textproc/rw-aspell
 rwhois		ports/net/rwhois
 rxp		ports/textproc/rxp
+rxtx		ports/comms/rxtx
 rxvt		ports/x11/rxvt
 rxvt-devel	ports/x11/rxvt-devel
 rxvt-unicode	ports/x11/rxvt-unicode
