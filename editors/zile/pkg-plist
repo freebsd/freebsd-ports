@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-bin/zile
-%%DATADIR%%/AUTODOC
-%%DATADIR%%/FAQ
-%%DATADIR%%/HELP
-%%DATADIR%%/TUTORIAL
-%%DATADIR%%/zilerc.sample
-@dirrm %%DATADIR%%
