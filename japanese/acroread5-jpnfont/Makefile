@@ -6,8 +6,9 @@
 #
 
 DISTNAME=	jpnfont
+DIST_SUBDIR=	Acrobat5
 CATEGORIES=	japanese
 
-MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
+MASTERDIR=	${.CURDIR}/../../print/acroread5-commfont
 
 .include "${MASTERDIR}/Makefile"

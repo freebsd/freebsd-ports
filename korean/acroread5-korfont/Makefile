@@ -6,8 +6,9 @@
 #
 
 DISTNAME=	korfont
+DIST_SUBDIR=	Acrobat5
 CATEGORIES=	korean
 
-MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
+MASTERDIR=	${.CURDIR}/../../print/acroread5-commfont
 
 .include "${MASTERDIR}/Makefile"

@@ -5,9 +5,10 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese
 DISTNAME=	chsfont
+DIST_SUBDIR=	Acrobat5
+CATEGORIES=	chinese
 
-MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
+MASTERDIR=	${.CURDIR}/../../print/acroread5-commfont
 
 .include "${MASTERDIR}/Makefile"
