@@ -1,27 +1,34 @@
-*** src/command.c.orig	Mon Nov  7 15:23:31 1994
---- src/command.c	Mon Aug  5 06:32:38 1996
-***************
-*** 244,249 ****
---- 244,251 ----
-  		"legendre series: n = 1,...N { Pn(X) }"},
-  	{"lo!rentzian", do_stfunc, "set function lorentzian", "",
-  	    "Lorentzian series: n = 3, 6...N { A[n-1]*((X*A[n])^2/((X^2-A[n-2]^2)^2+(X*A[n])^2) }"},
-+ 	{"n!one", do_stfunc, "set function none", "",
-+ 		"none"},
-  	{"p!olynomial", do_stfunc, "set function polynomial", "",
-  		"power series: n = 1,...N { A[n]*X^(n-1) }"},
-  	{"u!ser", do_stfunc, "set function user", "definition",
-***************
-*** 268,273 ****
---- 270,277 ----
-  		"least square linear regression"},
-  	{"m!l_fit", do_stmeth, "set method ml_fit", "",
-  		"Marquardt-Levenberg iterative nonlinear fit"},
-+ 	{"n!one", do_stmeth, "set method none", "",
-+ 		"none"},
-  	{"s!vd_fit", do_stmeth, "set method svd_fit", "",
-  		"singular value decomposition linear fit"},
-  	{ 0,	 0,		0,		0,		0 }
+--- src/command.c.orig	Tue Nov  8 00:23:31 1994
++++ src/command.c	Sat Oct 19 22:41:03 2002
+@@ -38,8 +38,8 @@
+ extern int Ft_printversion(void);
+ extern Ft_mathyyparse(void);
+ 
+-extern int write_history(char *);
+-extern int append_history(int, char *);
++//extern int write_history(char *);
++//extern int append_history(int, char *);
+ extern HIST_ENTRY **history_list(void);
+ 
+ typedef union {
+@@ -244,6 +244,8 @@
+ 		"legendre series: n = 1,...N { Pn(X) }"},
+ 	{"lo!rentzian", do_stfunc, "set function lorentzian", "",
+ 	    "Lorentzian series: n = 3, 6...N { A[n-1]*((X*A[n])^2/((X^2-A[n-2]^2)^2+(X*A[n])^2) }"},
++	{"n!one", do_stfunc, "set function none", "",
++		"none"},
+ 	{"p!olynomial", do_stfunc, "set function polynomial", "",
+ 		"power series: n = 1,...N { A[n]*X^(n-1) }"},
+ 	{"u!ser", do_stfunc, "set function user", "definition",
+@@ -268,6 +270,8 @@
+ 		"least square linear regression"},
+ 	{"m!l_fit", do_stmeth, "set method ml_fit", "",
+ 		"Marquardt-Levenberg iterative nonlinear fit"},
++	{"n!one", do_stmeth, "set method none", "",
++		"none"},
+ 	{"s!vd_fit", do_stmeth, "set method svd_fit", "",
+ 		"singular value decomposition linear fit"},
+ 	{ 0,	 0,		0,		0,		0 }
 *** src/fudgit.h.orig	Thu Sep  8 16:02:47 1994
 --- src/fudgit.h	Mon Aug  5 06:32:38 1996
 ***************

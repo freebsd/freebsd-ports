@@ -1,0 +1,34 @@
+--- src/head.h~	Sat Sep  3 08:02:18 1994
++++ src/head.h	Sat Oct 19 22:35:57 2002
+@@ -84,9 +84,9 @@
+ extern int Ft_varcpy(char *, char *);
+ extern int Ft_vgetargp (char *b, char **p, int type, char **add);
+ extern int Ft_vgetargp(char *b, char **p, int type, char **add);
+-extern int append_history(int, char *);
++//extern int append_history(int, char *);
+ extern int history_expand(char *, char **);
+-extern int write_history(char *);
++//extern int write_history(char *);
+ extern void Ft_cleanframe (void);
+ extern void Ft_fit (double *x, double *y, int ndata, double *sig, int mwt, double *a, double *b, double *siga, double *sigb, double *chi2, double *q);
+ extern void Ft_free_dmatrix(double **m, int nrl, int nrh, int ncl, int nch);
+@@ -105,7 +105,7 @@
+ extern void Ft_pearsn (double *x, double *y, int n, double *r, double *prob, double *z);
+ extern void Ft_resetindex(void);
+ extern void Ft_resetprog(void);
+-extern void add_history(char *);
++//extern void add_history(char *);
+ int Ft_printversion (void);
+ void Ft_reaperon(void);
+ void Ft_reaperoff(void);
+--- src/macro.c~	Mon Nov  7 22:07:40 1994
++++ src/macro.c	Sat Oct 19 22:36:09 2002
+@@ -64,7 +64,7 @@
+ jmp_buf Ft_Jump;
+ 
+ extern int history_expand(char *, char **);
+-extern void add_history(char *);
++//extern void add_history(char *);
+ extern char *readline(char *);
+ extern int Ft_Interact;
+ 
