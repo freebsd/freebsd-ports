@@ -1,0 +1,15 @@
+Unneeded confusion for users.
+
+--- configure.orig	Wed Jun  5 19:14:27 2002
++++ configure	Wed Jun  5 19:15:32 2002
+@@ -61,9 +61,7 @@
+ elif echo $UNAME | grep -i freebsd > /dev/null ; then
+ 	cat $BUILDDIR/Makefile.linux >> Makefile
+ 	echo It looks like you are using FreeBSD\; this should compile
+-	echo fine by typing in \'make\'.  There is an official port here:
+-	echo
+-	echo	http://www.freebsd.org/cgi/query-pr.cgi?pr=28389
++	echo fine by typing in \'make\'.
+ elif echo $UNAME | grep -i openbsd > /dev/null ; then
+ 	cat $BUILDDIR/Makefile.linux >> Makefile
+ 	echo It looks like you are using OpenBSD\; please read doc/faq.txt

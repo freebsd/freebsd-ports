@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.9.34
+PORTVERSION=	0.9.92
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+		http://maradns.glou.net/download/ \
+		http://maradns.3va.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -40,6 +41,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/mararc.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/maradns.8 ${MANPREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/en/man/zoneserver.8 ${MANPREFIX}/man/man8
+	${INSTALL_SCRIPT} ${FILESDIR}/maradns.sh.sample ${PREFIX}/etc/rc.d
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/00README.FIRST ${DOCSDIR}
