@@ -9,7 +9,8 @@ PORTNAME=	kwebwatch
 PORTVERSION=	0.72
 CATEGORIES=	www kde
 MASTER_SITES=	http://linuxberg.uol.com.br/files/kde/network/ \
-		http://www.kde.gr.jp/~hanawa/apps/kwebwatch/
+		ftp://ftp.bmtmicro.com/tucows/mirror/files/kde/network/ \
+		ftp://ftp.bitcon.no/.4/kde/network/
 
 MAINTAINER=	lioux@linf.unb.br
 
