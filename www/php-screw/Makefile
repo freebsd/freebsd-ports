@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	php_screw-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PHP script encryption tool
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

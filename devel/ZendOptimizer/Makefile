@@ -10,7 +10,7 @@ PORTVERSION=	2.1.0b
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}-${PORTVERSION}-FreeBSD4.0-i386
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An optimizer for PHP code
 
 ONLY_FOR_ARCHS=	i386

@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A text web browser, very ambitious, in active development
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

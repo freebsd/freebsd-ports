@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-gzip
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An Internet Content Acceleration module for Apache
 
 USE_APACHE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.10.1
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \

@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DISTFILES+=	php_templates-doc-eng-1.1${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	sysadmin@alexdupre.com
+MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A template framework for PHP
 
 WRKSRC=		${WRKDIR}/templates

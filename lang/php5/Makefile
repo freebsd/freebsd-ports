@@ -47,7 +47,7 @@ PKGNAMESUFFIX=	-cli
 DISTNAME=	php-${PORTVERSION:S/.a/a/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER?=	sysadmin@alexdupre.com
+MAINTAINER?=	ale@FreeBSD.org
 COMMENT?=	PHP Scripting Language (Apache Module and CLI)
 .if defined(WITHOUT_APACHE)
 .if defined(WITHOUT_CLI)
