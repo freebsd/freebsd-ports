@@ -7307,6 +7307,7 @@ p5-Tcl		ports/lang/p5-Tcl
 p5-Tcl-Tk	ports/x11-toolkits/p5-Tcl-Tk
 p5-TeX-Hyphen	ports/textproc/p5-TeX-Hyphen
 p5-Telnet-Cisco	ports/net-mgmt/p5-Telnet-Cisco
+p5-Template-Magic	ports/textproc/p5-Template-Magic
 p5-Template-Plugin-Class	ports/www/p5-Template-Plugin-Class
 p5-Template-Plugin-Comma	ports/www/p5-Template-Plugin-Comma
 p5-Template-Plugin-MP3	ports/www/p5-Template-Plugin-MP3
