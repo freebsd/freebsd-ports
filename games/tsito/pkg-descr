@@ -1,0 +1,11 @@
+Tsito plays XiangQi (Chinese Chess) against the user or it referees two
+players. It can be used on the console (or an xterm) or can communicate through
+pipes to a GUI frontend. If used in a console it uses ASCII characters to
+display the board on the screen.
+
+'tsito', stands for "The Secret Inside The Orange".
+
+WWW:	http://xiangqi-engine.sourceforge.net/
+
+- Kuang-che Wu
+  kcwu@csie.org

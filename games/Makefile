@@ -462,6 +462,7 @@
     SUBDIR += traindirector
     SUBDIR += trojka
     SUBDIR += trophy
+    SUBDIR += tsito
     SUBDIR += tt
     SUBDIR += ttraffic
     SUBDIR += tux-aqfh
