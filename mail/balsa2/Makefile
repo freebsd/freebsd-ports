@@ -7,7 +7,7 @@
 
 PORTNAME=	balsa2
 PORTVERSION=	2.0.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A mail reader for the GNOME 2 desktop
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20 \
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21 \
 		aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
