@@ -1,5 +1,7 @@
-README zu UNIX-Connect 
-======================
+English abstract:
+It is an german communication-protocol over modem lines,
+a gateway for mail and news, complient to the german "GATEBAU" regulations.
+It is the native protocol for the z-netz newsgroups.
 
 UNIX-Connect kann sehr vielseitig eingesetzt werden. Entwickelt wurde
 es, um ein Unix-System als Server im Z-NETZ (im alten Sinne) einsetzen
@@ -13,12 +15,6 @@ Linux-System die Nachrichten aus der Z-NETZ MailBox vor Ort im ELM oder NN
 zu lesen. Dieser Einsatzmoeglichkeit widmet die Dokumentation ein eigenes 
 Kapitel, da hierbei sehr viele Konfigurationsprobleme von vornherein 
 vermieden werden koennen.
-
-Autoren:
-     * 1993-1994 Martin Husemann         * 1995-1998 Christopher Creutzig
-     * 1997-1998 Detlef Wuerkner         * 1995-2000 Moritz Both
-     * 1997-2000 Matthias Andree         * 1997-2000 Andreas Barth
-     * 1999-2000 Krischan Jodies         * 1996-2001 Dirk Meyer
 
 FTP: ftp://ftp.sf.net/pub/sourceforge/unix-connect/
 FTP: ftp://unix-connect.sf.net/pub/unix-connect/
