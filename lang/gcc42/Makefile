@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.65 1999/06/24 19:11:49 obrien Exp $
+# $Id: Makefile,v 1.66 1999/07/04 20:55:43 obrien Exp $
 #
 
 SNAPDATE=	1999-06-23
@@ -53,7 +53,7 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 CONFIGURE_ARGS+= --enable-shared
 .endif
 .if defined(WANT_THREADS)
-#	?is his an ObjC only thing?
+#	?is this an ObjC only thing?
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
