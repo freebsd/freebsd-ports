@@ -1,6 +1,6 @@
---- sanei/sanei_scsi.c.orig	Sat Aug 12 23:54:15 2000
-+++ sanei/sanei_scsi.c	Fri Sep  8 22:38:49 2000
-@@ -2424,6 +2424,169 @@
+--- sanei/sanei_scsi.c.orig	Fri Dec  1 05:02:30 2000
++++ sanei/sanei_scsi.c	Sat Dec 23 04:14:27 2000
+@@ -2425,6 +2425,169 @@
     cam_freeccb(ccb);
     return SANE_STATUS_GOOD;
  }
@@ -169,12 +169,4 @@
 +
  #endif
  
- 
-@@ -3722,6 +3885,7 @@
- 			 int findbus, int findchannel, int findid, int findlun,
- 			 SANE_Status (*attach) (const char *dev))
- {
-+  DBG_INIT();
-   DBG (1, "sanei_scsi_find_devices: not implemented for this platform\n");
- }
  
