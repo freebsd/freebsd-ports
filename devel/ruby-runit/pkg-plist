@@ -1,0 +1,74 @@
+bin/c2t
+bin/c2t.rb
+bin/runtest
+bin/runtest.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/assert.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/error.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/cui/testrunner.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/ext/repeatedtest.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/ext/testdecorator.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/ext/testsetup.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/robserver.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/testfailure.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/test.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/testcase.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/testresult.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/testsuite.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/topublic.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/runit/version.rb
+@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/runit/cui
+@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/runit/ext
+@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/runit
+share/examples/ruby/runit/howtouse.html
+share/examples/ruby/runit/simpletest.rb
+share/examples/ruby/runit/testall.rb
+share/examples/ruby/runit/testarray.rb
+share/examples/ruby/runit/testrepeatedtest.rb
+share/examples/ruby/runit/testtestsetup.rb
+@dirrm share/examples/ruby/runit
+share/doc/ruby/runit/HISTORY
+share/doc/ruby/runit/README
+share/doc/ruby/runit/ToDo
+share/doc/ruby/runit/assert.html
+share/doc/ruby/runit/assert.rd
+share/doc/ruby/runit/assert.rmi
+share/doc/ruby/runit/cui/testrunner.html
+share/doc/ruby/runit/cui/testrunner.rd
+share/doc/ruby/runit/cui/testrunner.rmi
+share/doc/ruby/runit/error.html
+share/doc/ruby/runit/error.rd
+share/doc/ruby/runit/error.rmi
+share/doc/ruby/runit/ext/repeatedtest.html
+share/doc/ruby/runit/ext/repeatedtest.rd
+share/doc/ruby/runit/ext/repeatedtest.rmi
+share/doc/ruby/runit/ext/testdecorator.html
+share/doc/ruby/runit/ext/testdecorator.rd
+share/doc/ruby/runit/ext/testdecorator.rmi
+share/doc/ruby/runit/ext/testsetup.html
+share/doc/ruby/runit/ext/testsetup.rd
+share/doc/ruby/runit/ext/testsetup.rmi
+share/doc/ruby/runit/index.html
+share/doc/ruby/runit/robserver.html
+share/doc/ruby/runit/robserver.rd
+share/doc/ruby/runit/robserver.rmi
+share/doc/ruby/runit/test.html
+share/doc/ruby/runit/test.rd
+share/doc/ruby/runit/test.rmi
+share/doc/ruby/runit/testcase.html
+share/doc/ruby/runit/testcase.rd
+share/doc/ruby/runit/testcase.rmi
+share/doc/ruby/runit/testfailure.html
+share/doc/ruby/runit/testfailure.rd
+share/doc/ruby/runit/testfailure.rmi
+share/doc/ruby/runit/testresult.html
+share/doc/ruby/runit/testresult.rd
+share/doc/ruby/runit/testresult.rmi
+share/doc/ruby/runit/testsuite.html
+share/doc/ruby/runit/testsuite.rd
+share/doc/ruby/runit/testsuite.rmi
+share/doc/ruby/runit/version.html
+share/doc/ruby/runit/version.rd
+share/doc/ruby/runit/version.rmi
+@dirrm share/doc/ruby/runit/cui
+@dirrm share/doc/ruby/runit/ext
+@dirrm share/doc/ruby/runit

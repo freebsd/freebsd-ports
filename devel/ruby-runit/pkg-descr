@@ -1,0 +1,8 @@
+RubyUnit is Ruby implementation of Kent Beck's Testing Framework,
+which is known as the part of "eXtreme Programming" (XP).
+
+For details of XP, see http://www.xprogramming.com/.
+
+
+Author:	Masaki Suketa <CQN02273@nifty.ne.jp>
+WWW:	http://homepage1.nifty.com/markey/ruby/rubyunit/rubyunit_e.html
