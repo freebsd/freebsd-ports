@@ -20,10 +20,10 @@ MASTER_SITE_SUBDIR=	wget
 MAINTAINER=	sf@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_PERL5=	yes		# only for pod2man
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS=	--with-ssl=no
