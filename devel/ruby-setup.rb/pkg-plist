@@ -2,21 +2,21 @@ bin/ruby-install.rb
 bin/ruby-setup.rb
 %%RUBY_SITELIBDIR%%/install.rb
 %%RUBY_SITELIBDIR%%/setup.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/changes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/NEWS.en
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Usage_en.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/devel.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/hookapi.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/metaconfapi.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/notes.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage-en.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/changes.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/NEWS.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/Usage_ja.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/devel.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/hookapi.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/metaconfapi.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/notes.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage-ja.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/usage.html
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

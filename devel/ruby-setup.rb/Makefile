@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	setup.rb
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME:R}
@@ -25,8 +25,8 @@ _SCRIPTS=	install.rb setup.rb
 
 RUBY_SHEBANG_FILES=	${_SCRIPTS:S:^:${WRKSRC}/ruby-:}
 
-DOCS_EN=	doc.en/* usage-en.txt
-DOCS_JA=	doc.ja/* usage-ja.txt
+DOCS_EN=	doc.en/* NEWS.en Usage_en.txt ChangeLog TODO
+DOCS_JA=	doc.ja/* NEWS.ja Usage_ja.txt
 
 post-extract:
 .for f in ${_SCRIPTS}
