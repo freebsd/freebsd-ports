@@ -15,7 +15,7 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.19:${PORTSDIR}/www/neon \
 		expat:${PORTSDIR}/textproc/expat \
 		apr:${PORTSDIR}/devel/apr-devel
-RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
+RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
 	 	python:${PORTSDIR}/lang/python
 
