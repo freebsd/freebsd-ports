@@ -1,0 +1,8 @@
+bin/bkmrkconv
+share/bkmrkconv/random.pl
+share/bkmrkconv/README.txt
+share/bkmrkconv/src/contentspage.html
+share/bkmrkconv/src/linkspage.html
+share/bkmrkconv/src/rootpage.html
+@dirrm share/bkmrkconv/src
+@dirrm share/bkmrkconv/
