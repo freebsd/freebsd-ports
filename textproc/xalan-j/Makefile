@@ -7,6 +7,7 @@
 
 PORTNAME=	xalan-j
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	java textproc
 MASTER_SITES=	http://xml.apache.org/dist/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
@@ -44,7 +45,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/docs/apidocs/* ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/build/docs/apidocs ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 .endif
 
