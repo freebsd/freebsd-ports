@@ -252,11 +252,6 @@ USE_JAVA=	1.4
 
 .		elif (${USE_JAVA} == "1.4+")
 USE_JAVA=	1.4
-
-.		else
-.BEGIN:
-	@${ECHO} "${Java_Include}: Internal error. \"${USE_JAVA}\" is not caught as a valid value for USE_JAVA. Please send an email to ${Java_Include_MAINTAINER} with a detailed description of what you did and what the output was.";
-	@${FALSE}
 .		endif
 
 
