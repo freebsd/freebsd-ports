@@ -9,7 +9,6 @@ group|meisters|peter,jdp,markm,joe
 group|hack|imp
 
 unavail
-unavail|:hack|ports
 avail||CVSROOT
 avail||distrib
 avail||doc
@@ -17,3 +16,4 @@ avail||ports
 avail||projects
 avail||src
 avail||www
+unavail|:hack|ports
