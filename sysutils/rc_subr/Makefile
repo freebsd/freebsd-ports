@@ -8,9 +8,7 @@
 PORTNAME=	rc_subr
 PORTVERSION=	1.16
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.westbend.net/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-MASTER_SITE_SUBDIR=	rcNG
+MASTER_SITES=	ftp://ftp.westbend.net/pub/FreeBSD/ports/local-distfiles/rcNG/
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Common startup and shutdown subroutines used by scripts
