@@ -6,27 +6,33 @@
 #
 
 PORTNAME=	bluefish
-PORTVERSION=	0.11.20031031
+PORTVERSION=	0.12
 CATEGORIES=	www editors
 MASTER_SITES=	http://pkedu.fbt.eitn.wau.nl/~olivier/${DOWNLOAD}/ \
 		ftp://bluefish.advancecreations.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.mrball.net/${DOWNLOAD}/ \
 		ftp://ftp.ratisbona.com/pub/bluefish/${DOWNLOAD}/ \
 		http://bluefish.shellhung.org/${DOWNLOAD}/
-DISTNAME=	${PORTNAME}-2003-10-31
 
 MAINTAINER=	einekoai@chello.nl
 COMMENT=	HTML editor designed for the experienced web designer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		aspell.15:${PORTSDIR}/textproc/aspell
-RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 
-DOWNLOAD=	snapshots
-WRKSRC=		${WRKDIR}/bluefish-gtk2
+.if !defined(WITHOUT_WEBLINT)
+RUN_DEPENDS+=	weblint:${PORTSDIR}/www/weblint
+.endif
+.if defined(WITH_TIDY)
+RUN_DEPENDS+=	tidy:${PORTSDIR}/www/tidy
+.endif
+
+CONFLICTS=	bluefish-0.7*
+
+DOWNLOAD=	downloads
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehier gtk20
+USE_GNOME=	gnomehier gtk20 gnomevfs2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -39,10 +45,17 @@ CONFIGURE_ARGS=	--with-gnome2-menu=${PREFIX}/share/gnome/apps/Applications \
 CONFIGURE_ARGS+=	--with-debugging-output
 .endif
 
-pre-everything::
-.if !defined(WITH_DEBUG)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_DEBUG=yes for debug support"
+.if defined(WITHOUT_SPLASH)
+CONFIGURE_ARGS+=	--disable-splash-screen
 .endif
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Bluefish  has the following tunable option(s):"
+	@${ECHO_MSG} "  WITH_DEBUG		for debug support"
+	@${ECHO_MSG} "  WITHOUT_WEBLINT	disable the weblint syntax and style checker"
+	@${ECHO_MSG} "  WITH_TIDY		for the tidy html cleanup program"
+	@${ECHO_MSG} "  WITHOUT_SPLASH	disable the splash screen"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
