@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.0.7.2
+PORTVERSION=	0.0.8
 CATEGORIES=	security
-MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
-		http://freehaven.net/tor/dist/
+MASTER_SITES=	http://freehaven.net/tor/dist/ \
+		http://www.mavetju.org/download/adopted/
 
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
 
-RUN_DEPENDS= tsocks:${PORTSDIR}/net/tsocks
+RUN_DEPENDS=	tsocks:${PORTSDIR}/net/tsocks
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -22,7 +22,7 @@ USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
 MANCOMPRESSED=	no
-MAN1=		tor.1 torify.1
+MAN1=		tor.1 tor-resolve.1 torify.1
 
 post-patch:
 	@${MV} ${WRKSRC}/contrib/tor-tsocks.conf \

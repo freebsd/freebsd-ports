@@ -1,4 +1,5 @@
 bin/tor
+bin/tor-resolve
 bin/torify
 etc/rc.d/tor.sh.sample
 etc/tor/dirservers
