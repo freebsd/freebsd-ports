@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTVERSION=	1.3.9
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
@@ -39,6 +38,7 @@ HEADERS_SUFX=
 .endif
 .endif
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
