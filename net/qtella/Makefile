@@ -7,13 +7,13 @@
 
 PORTNAME=		qtella
 PORTVERSION=		0.6.4
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	qtella
 
-MAINTAINER=	seanc@FreeBSD.org
-COMMENT=	A Gnutella client using Qt
+MAINTAINER=		seanc@FreeBSD.org
+COMMENT=		A Gnutella client using Qt
 
 HAS_CONFIGURE=		yes
 USE_GMAKE=		yes
@@ -22,4 +22,10 @@ CONFIGURE_ENV+=		LDFLAGS=-pthread CXXFLAGS="${CXXFLAGS} -pthread"
 
 USE_KDELIBS_VER=3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=			"Does not compile on FreeBSD 4.x"
+.endif
+
+.include <bsd.port.post.mk>
