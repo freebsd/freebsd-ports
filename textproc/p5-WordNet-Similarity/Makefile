@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WordNet-Similarity
-PORTVERSION=	0.09
+PORTVERSION=	0.11
 PORTREVISION=	0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -50,10 +50,9 @@ post-patch:
 	@${REINPLACE_CMD} -e  \
 		'/wnUnixPath/s|/usr/local/WordNet-2.0|${WNHOME}|; \
 		 /wnUnixPath/s|."/dict"||' ${WRKSRC}/Makefile.PL
-	@${REINPLACE_CMD} -e  \
-		 "s|'dict|'|" ${WRKSRC}/utils/wnDepths.pl
 	@${FIND} ${WRKSRC}/utils -type f| ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/local/bin/perl|${PERL}|'
+		's|/usr/local/bin/perl|${PERL}|; \
+		 /wnUnixPath/s|/dict||'
 
 .include <bsd.port.pre.mk>
 
