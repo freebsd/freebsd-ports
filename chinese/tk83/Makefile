@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcl8_3
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	Graphical toolkit for TCL which supports Chinese
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/chinese/tcl83
 

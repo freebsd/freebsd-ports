@@ -15,6 +15,7 @@ DISTFILES=	wcl-01.ttf.bz2 wcl-02.ttf.bz2 wcl-03.ttf.bz2 wcl-04.ttf.bz2 \
 EXTRACT_ONLY=
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	Ten Chinese Big5 TrueType fonts, made by Dr. Hann-Tzong Wang
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 

@@ -12,6 +12,7 @@ MASTERDIR=      ${.CURDIR}/../../x11/rxvt-devel
 .include "${MASTERDIR}/Makefile"
 
 MAINTAINER=	keichii@freebsd.org
+COMMENT=	A low memory usage xterm replacement that supports color & Chinese
 
 CONFIGURE_ARGS+= \
 		--enable-menubar --enable-graphics \

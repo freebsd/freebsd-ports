@@ -8,6 +8,8 @@
 PKGNAMESUFFIX=	-server
 CATEGORIES=	chinese
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
+COMMENT=	A Japanese/Chinese/Korean input method (Chinese server)
+
 PKGDIR=		${.CURDIR}
 PKGINSTALL=	${.CURDIR}/../../japanese/FreeWnn-server/pkg-install
 WNN=		cWnn

@@ -23,6 +23,7 @@ PORTVERSION=	2.6.4
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
 
 MAINTAINER=	keichii@freebsd.org
+COMMENT=	Chinese big5 locale enabled RXVT program, slave port from X11/rxvt
 
 CONFIGURE_ARGS+= \
 		--enable-xim --enable-big5 \

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	${DISTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	XEmacs text editor version 20, with XIM support and Big5 settings
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcl8_3
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	Tool Command Language which supports Chinese
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes

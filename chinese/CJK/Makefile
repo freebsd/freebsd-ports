@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/cjk/\
 DISTNAME=	cjk-${PORTVERSION}
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	A LaTeX2e macro package which enables the use of CJK scripts
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		${LOCALBASE}/share/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \

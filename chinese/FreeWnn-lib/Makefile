@@ -8,6 +8,8 @@
 PKGNAMESUFFIX=	-lib
 CATEGORIES=	chinese
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
+COMMENT=	A Japanese/Chinese/Korean input method (Chinese client libraries)
+
 PKGDIR=		${.CURDIR}
 WNN=		cWnn
 

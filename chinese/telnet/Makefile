@@ -12,6 +12,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	8bit compatible telnet client for Chinese input
 
 SRCDIR=		/usr/src/usr.bin/telnet
 USE_REINPLACE=	yes

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	zh_TW-
 DIST_SUBDIR=    KDE
 
 MAINTAINER?=    kde@FreeBSD.org
+COMMENT=	Traditional Chinese messages and documentation for KDE3
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

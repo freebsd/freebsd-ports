@@ -8,6 +8,7 @@ CATEGORIES=	chinese x11
 MASTERDIR=      ${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	X11 terminal emulator based on rxvt/xterm that supports traditional Chinese (Big5)
 
 EXTRA_PATCHES=  ${.CURDIR}/files/extra-patch-configure.in
 

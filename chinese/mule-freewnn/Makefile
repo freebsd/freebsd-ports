@@ -9,6 +9,8 @@ CATEGORIES=	chinese
 PKGNAMESUFFIX=	-freewnn
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
+COMMENT=	Multilingual emacs, with FreeWnn support built in (Only the executables)
+
 PKGDIR=		${.CURDIR}
 
 CFREEWNN=	yes

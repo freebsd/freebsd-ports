@@ -16,6 +16,7 @@ DISTFILES=		${RPM_SET1} ${RPM_LDCONFIG} ${RPM_BASH2} ${RPM_SET2} \
 EXTRACT_ONLY=
 
 MAINTAINER=		keith@FreeBSD.org
+COMMENT=		The base set of CLE packages needed in Linux mode, support both GB & Big5
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 

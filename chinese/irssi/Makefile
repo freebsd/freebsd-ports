@@ -17,8 +17,9 @@ PORTREVISION=	2
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	A zh-tw cursor movement friendly, wrapping clean irssi
 
 .include "${MASTERDIR}/Makefile"
 
 PKGNAMEPREFIX:= ${PKGNAMEPREFIX}tw-
-COMMENTFILE=	${.CURDIR}/pkg-comment
+
