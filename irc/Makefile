@@ -24,7 +24,6 @@
     SUBDIR += insub
     SUBDIR += irc
     SUBDIR += ircII
-    SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
     SUBDIR += ircd-hybrid-ru
     SUBDIR += ircd-ru
