@@ -13,7 +13,7 @@ MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Render extension library
 
-LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/xextensions
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xextensions.pc:${PORTSDIR}/x11/xextensions
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/render.pc:${PORTSDIR}/x11-toolkits/render \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
