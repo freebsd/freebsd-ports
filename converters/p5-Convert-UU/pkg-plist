@@ -1,8 +1,5 @@
 bin/puudecode
 bin/puuencode
-lib/perl5/man/man3/Convert::UU.3.gz
 lib/perl5/site_perl/Convert/UU.pm
 lib/perl5/site_perl/i386-freebsd/auto/Convert/UU/.packlist
-man/man1/puudecode.1.gz
-man/man1/puuencode.1.gz
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Convert/UU

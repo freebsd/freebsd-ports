@@ -13,6 +13,5 @@ share/doc/uulib/td-v3.c
 share/doc/uulib/test.txt
 share/doc/uulib/porting.notes
 share/doc/uulib/HISTORY
-man/man3/uulib.3.gz
 @exec /sbin/ldconfig -m %D/lib
 @dirrm share/doc/uulib
