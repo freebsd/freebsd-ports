@@ -1,14 +1,13 @@
 # New ports collection makefile for:	jove
-# Version required:	4.14.6
+# Version required:	4.
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.6 1994/11/15 00:22:29 gpalmer Exp $
+# $Id: Makefile,v 1.7 1994/11/20 21:50:58 ats Exp $
 #
 
-DISTNAME=	jove4.14.10
+DISTNAME=	jove4.16beta
 MASTER_SITES=	ftp://relay.cs.toronto.edu/pub/moraes/jove/
-EXTRACT_SUFX=	.tar.Z
-NO_WRKSUBDIR=	yes
-
+EXTRACT_SUFX=	.tar.gz
+WRKSRC=		${WRKDIR}/jove-4.16beta
 .include <bsd.port.mk>
