@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.0.2.7
+PORTVERSION=	6.0.5.3
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -33,7 +33,7 @@ USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
@@ -76,12 +76,6 @@ CONFIGURE_ARGS+=	--with-quantum-depth=8
 PLIST_SUB+=		QBIT='Q8'
 .else
 PLIST_SUB+=		QBIT='Q16'
-.endif
-
-# Produce standard (small) GIFs
-.if defined(HAVE_UNISYS_LICENSE) || \
-    (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
-CONFIGURE_ARGS+=	--enable-lzw
 .endif
 
 .if defined(WITH_WINDOWS_FONT_DIR)
