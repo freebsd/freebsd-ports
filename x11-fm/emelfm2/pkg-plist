@@ -2,9 +2,11 @@ bin/emelfm2
 lib/emelfm2/plugins/cdburner.so
 lib/emelfm2/plugins/clone.so
 lib/emelfm2/plugins/copy_to_clipboard.so
+lib/emelfm2/plugins/cpbar.so
 lib/emelfm2/plugins/du.so
 lib/emelfm2/plugins/for_each.so
 lib/emelfm2/plugins/glob.so
+lib/emelfm2/plugins/mvbar.so
 lib/emelfm2/plugins/pack.so
 lib/emelfm2/plugins/rename_ext.so
 lib/emelfm2/plugins/sort_by_ext.so
@@ -18,6 +20,7 @@ lib/emelfm2/plugins/view.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/SPEC
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/WARNING
 %%PORTDOCS%%%%DOCSDIR%%/help.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/emelfm2/plugins
