@@ -1,0 +1,8 @@
+--- ../cppu/prj/build.lst.orig	Mon Mar 11 14:13:47 2002
++++ ../cppu/prj/build.lst	Mon Mar 11 14:14:30 2002
+@@ -1,4 +1,4 @@
+-cu	cppu	:	codemaker udkapi NULL
++cu	cppu	:	codemaker udkapi offuh NULL
+ cu	cppu									usr1	-	all	cu_mkout NULL
+ cu	cppu\source								nmake	-	all	cu_source NULL
+ cu	cppu\source\uno							nmake	-	all	cu_uno cu_source NULL
