@@ -1,0 +1,13 @@
+--- pbm/pbmtog3.1.orig	Mon Oct  4 18:10:48 1993
++++ pbm/pbmtog3.1	Sat Apr  8 12:00:00 2000
+@@ -6,8 +6,8 @@
+ .B pbmtog3
+ .RI [ pbmfile ]
+ .SH DESCRIPTION
+-Reads a portable bitmap as output.
+-Produces a Group 3 fax file as input.
++Reads a portable bitmap as input.
++Produces a Group 3 fax file as output.
+ .IX "Group 3 fax"
+ .IX fax
+ .SH REFERENCES
