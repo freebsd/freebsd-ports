@@ -7,7 +7,7 @@
 
 PORTNAME=	totem
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -91,6 +91,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/bacon-video-widget-gst.c
 .endif
+	@${REINPLACE_CMD} -e 's|@LOCALBASE@|${LOCALBASE}|' \
+		${WRKSRC}/src/bacon-video-widget-xine.c
 
 post-install:
 	@-update-desktop-database
