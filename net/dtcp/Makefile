@@ -27,10 +27,10 @@ MANCOMPRESSED=	yes
 
 pre-everything::
 .if !defined(DTCP_CLIENT_ONLY)
-	@${ECHO} ""
-	@${ECHO} "If you don't use DTCP server, you don't need qpopper."
-	@${ECHO} "In that case, You may use DTCP_CLIENT_ONLY=yes to avoid building qpopper."
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you don't use DTCP server, you don't need qpopper."
+	@${ECHO_MSG} "In that case, You may use DTCP_CLIENT_ONLY=yes to avoid building qpopper."
+	@${ECHO_MSG} ""
 .endif
 
 post-install:
