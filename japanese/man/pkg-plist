@@ -1,0 +1,13 @@
+bin/jman
+bin/jmanpath
+bin/japropos
+bin/jwhatis
+bin/jmakewhatis
+bin/jcatman
+man/ja_JP.EUC/man1/jcatman.1.gz
+man/ja_JP.EUC/man1/jman.1.gz
+man/ja_JP.EUC/man1/jmanpath.1.gz
+man/ja_JP.EUC/man1/japropos.1.gz
+man/ja_JP.EUC/man1/jwhatis.1.gz
+man/ja_JP.EUC/man1/jmakewhatis.1.gz
+etc/manpath.config
