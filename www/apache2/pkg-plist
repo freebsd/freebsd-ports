@@ -1251,6 +1251,7 @@ www/data-dist/index.html.ru.koi8-r
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.sv
 www/data-dist/index.html.var
+www/data-dist/index.html.zh-cn.gb2312
 www/data-dist/index.html.zh-tw.big5
 @unexec if [ -L %D/www/error ]; then rm -f %D/www/error; fi
 @exec [ ! -d %D/www/error ] && ln -fs %D/www/error-dist %D/www/error
