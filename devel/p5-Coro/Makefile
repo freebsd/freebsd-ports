@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	Coro
-PORTVERSION=	0.9
+PORTVERSION=	0.97
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Coro
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Coro - coroutine process abstraction for perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Event.pm:${PORTSDIR}/devel/p5-Event \
 		${SITE_PERL}/${PERL_ARCH}/Scalar/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
@@ -35,6 +34,7 @@ MAN3=		Coro.3 \
 		Coro::Handle.3 \
 		Coro::MakeMaker.3 \
 		Coro::RWLock.3 \
+		Coro::Select.3 \
 		Coro::Semaphore.3 \
 		Coro::SemaphoreSet.3 \
 		Coro::Signal.3 \
