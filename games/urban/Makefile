@@ -7,6 +7,7 @@
 
 PORTNAME=		urban
 PORTVERSION=		1.5.3
+PORTREVISION=		1
 CATEGORIES=		games
 MASTER_SITES=		http://urban.bengburken.net/files/linux/
 DIST_SUBDIR=		urban
@@ -17,14 +18,12 @@ COMMENT=		A bloody, violent sidescrolling shoot-em-up
 LIB_DEPENDS=		ggi:${PORTSDIR}/graphics/libggi \
 			mikmod:${PORTSDIR}/audio/libmikmod
 
-SCOREFILE=		/var/games/urban.scores
-
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 CFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=		--with-global-highscore=${SCOREFILE}
+CONFIGURE_ARGS=		--with-global-highscore=/var/games/urban.scores
 
 OPTIONS=		CHEAT_CODES "Enable cheat codes" off
 
@@ -35,9 +34,6 @@ CONFIGURE_ARGS+=	--enable-cheat-codes
 .endif
 
 post-install:
-	${TOUCH} ${SCOREFILE}
-	${CHGRP} games ${SCOREFILE}
-	${CHMOD} g+w ${SCOREFILE}
 	${CHGRP} games ${PREFIX}/bin/urban
 	${CHMOD} g+s ${PREFIX}/bin/urban
 .if !defined(NOPORTDOCS)
@@ -50,6 +46,7 @@ post-install:
 		${WRKSRC}/README.swe \
 		${DOCSDIR}
 .endif
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
