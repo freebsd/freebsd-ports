@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+ECHO_CMD=echo
+
+case $2 in
+POST-DEINSTALL)
+  ${ECHO_CMD}
+  ${ECHO_CMD} "The portaudit package has been deleted."
+  ${ECHO_CMD} "If you're *not* upgrading and won't be using"
+  ${ECHO_CMD} "it any longer, you may want to remove the"
+  ${ECHO_CMD} "portaudit database:"
+  ${ECHO_CMD}
+  ${ECHO_CMD} "  rm -Rf %%DATABASEDIR%%"
+  ;;
+esac
