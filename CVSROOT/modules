@@ -945,6 +945,7 @@ cgiparse	ports/www/cgiparse
 cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
 cgoban2		ports/games/cgoban2
+cgprof		ports/devel/cgprof
 chameleon	ports/lang/chameleon
 chbg		ports/graphics/chbg
 checkbot	ports/www/checkbot
