@@ -1,0 +1,69 @@
+Xrubik, X-based rubik's cube(tm)
+
+    Click on the left mouse button to move a piece.  Release it on a
+      piece in the same row and on the face.  The puzzle will then turn
+      towards where the mouse button was released.
+    Click on the middle mouse button toggle the practice mode. (This is
+      good for learning moves).  Also 'P' or 'p' do the same thing.
+      One must double click on the middle mouse button if the puzzle is
+      being worked on.
+    Click on the right mouse button if you want to randomize the puzzle.
+      Also 'R' or 'r' do the same thing.  One must double click on
+      the right mouse button if the puzzle is being worked on.
+    'I' or 'i' to increase the number of cubes.
+    'D' or 'd' to decrease the number of cubes.
+    'O' or 'o' to toggle orient mode. (I prefer the orient mode since
+      it is slightly more challenging).
+    'S', 's' to auto-solve.  It only works on 1x1x1, 2x2x2, 3x3x3 cubes.
+      For the 3x3x3 it only solves it in the non-orient mode.
+    'U' or 'u' to undo last move.
+    'G' or 'g' to get a saved puzzle.
+    'W' or 'w' to write or save a puzzle.
+    'Q', 'q', or Control-C to kill program.
+
+    Key pad is defined for 2d rubik as:
+        /
+ 
+        8
+        ^
+    4 < 5 > 6
+        v
+        2
+
+    The key pad along with the use of the mouse will allow you to move the
+    cube i.e.,
+              KP_DIVIDE=>CCW
+              KP_8=>Top
+    KP=>Left  KP_5=>CW        KP_6=>Right
+              KP_2=>Bottom
+
+    Key pad for 3d rubik, use your intuition (is this a cop out or what?).
+    The key pad is defined differently depending on which side of the cube
+    your mouse is pointing at. One thing that stays the same is KP_5=>CW.
+
+    The control key allows you to move the whole cube at once without
+    being entered as a move.  Hold down the control key while using the
+    left mouse button or the keypad.
+    One has to orient the faces in orient mode, besides getting all the
+    faces to be the same color. To do this one has to get the lines to
+    be oriented in the same direction, this only matters with center
+    cubes (i.e. those cubes not on a corner or edge). This does add
+    complexity so there are 2 sets of records.
+
+    Try resizing the cube. Notice the puzzle resizes to take advantage
+    of the "room" available.
+
+    The title is in the following format (non-motif version):
+        xrubik{2|3}d: {1|2|3|4|5|6} @ (<Number of moves>/\
+                {<Record number of moves>|NEVER|PRACTICE}) - <Comment>
+    {2|3}: current dimensional view
+    {1|2|3|4|5|6}: number of cubes per edge
+    {<Record...}: puzzle is either in practice mode or record mode
+       In record mode, if there is no record of the current puzzle, it
+       displays "NEVER".
+
+    If you were looking for a auto-solver, sorry. One of the problems in
+    auto-solvers the generally don't work for different number of cuts.
+    If you know of one let me know. There is a real neat 3x3x3 cube called
+    "magiccube" with a better 3-D look, a auto-solver, and Motif. Use
+    "archie" to find "magiccube" at the site nearest you.
