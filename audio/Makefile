@@ -361,10 +361,6 @@
     SUBDIR += squash
     SUBDIR += streamripper
     SUBDIR += streamtuner
-    SUBDIR += streamtuner-live365
-    SUBDIR += streamtuner-local
-    SUBDIR += streamtuner-python
-    SUBDIR += streamtuner-xiph
     SUBDIR += swami
     SUBDIR += sweep
     SUBDIR += swhplugins
