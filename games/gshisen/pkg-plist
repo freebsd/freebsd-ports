@@ -84,3 +84,11 @@ System/Applications/GShisen.app/stamp.make
 @dirrm System/Applications/GShisen.app/%%GNU_ARCH%%
 @dirrm System/Applications/GShisen.app/Resources
 @dirrm System/Applications/GShisen.app
+@cwd /root
+GNUstep/Defaults/.GNUstepDefaults
+GNUstep/Services/.GNUstepServices
+GNUstep/Services/.GNUstepAppList
+@dirrm GNUstep/Defaults
+@dirrm GNUstep/Library
+@dirrm GNUstep/Services
+@dirrm GNUstep
