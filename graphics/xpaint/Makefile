@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpaint
-PORTVERSION=	2.6.6
+PORTVERSION=	2.6.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ac-grenoble.fr/Office/
@@ -20,10 +20,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
-MAN1=		xpaint.1
+ALL_TARGET=	xaw
 
-post-patch:
-	@${ECHO_CMD} \
-		"SYS_LIBRARIES = XawClientLibs -lm" > ${WRKSRC}/Local.xawdefs
+MAN1=		xpaint.1
 
 .include <bsd.port.mk>
