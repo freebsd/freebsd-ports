@@ -52,26 +52,22 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/net/www/apache/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.cs.tu-berlin.de/pub/net/www/apache/httpd/%SUBDIR%/ \
 	ftp://ftp.dkuug.dk/pub/apache/httpd/%SUBDIR%/ \
 	ftp://sunsite.auc.dk/pub/infosystems/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://mir1.ovh.net/ftp.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://sunsite.srce.hr/mirrors/ftp.apache.org/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ebizlab.hit.bme.hu/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://xenia.sote.hu/pub/mirrors/www.apache.org/httpd/%SUBDIR%/ \
-	ftp://ftp.esat.net/mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
+	ftp://ftp.esat.net/mirrors/ftp.apache.org/httpd/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/apache/httpd/%SUBDIR%/ \
 	ftp://apache.theomnistore.com/mirror/apache/dist/httpd/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd/&,} \
-	ftp://ftp.nuri.net/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.sogang.ac.kr/www/apache/dist/httpd/%SUBDIR%/ \
-	ftp://apache.unam.mx/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.azc.uam.mx/mirrors/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/httpd/%SUBDIR%/ \
-	ftp://ftp.ist.utl.pt/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.telepac.pt/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.kappa.ro/pub/mirrors/ftp.apache.org/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.opsynet.com/linux/apache/dist/httpd/%SUBDIR%/ \
@@ -84,7 +80,6 @@ MASTER_SITE_APACHE_HTTPD+=	\
 	ftp://ftp.plig.net/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://mirrors.rmplc.co.uk/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://apache.secsup.org/pub/apache/dist/httpd/%SUBDIR%/ \
-	ftp://apache.valueclick.com/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.apache.inetcosmos.org/pub/apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/httpd/%SUBDIR%/ \
 	ftp://ftp.epix.net/pub/apache/httpd/%SUBDIR%/ \
@@ -117,7 +112,6 @@ MASTER_SITE_DEBIAN+=	\
 MASTER_SITE_DEBIAN_NON_US+=	\
 	ftp://ftp.au.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.bg.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.br.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.cl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.cz.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.de.debian.org/debian-non-US/%SUBDIR%/ \
@@ -135,7 +129,6 @@ MASTER_SITE_DEBIAN_NON_US+=	\
 	ftp://ftp.jp.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.nl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.no.debian.org/debian-non-US/%SUBDIR%/ \
-	ftp://ftp.nz.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.pl.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.ru.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp.se.debian.org/debian-non-US/%SUBDIR%/ \
