@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.2.92
+PORTVERSION=	0.4.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		ftp://ftp.Awfulhak.org/pub/vlc/ \
@@ -14,26 +14,17 @@ MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 
 MAINTAINER=	brian@FreeBSD.org
 
-LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss
-
+LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/graphics/libdvdcss \
+		dvdread.2:${PORTSDIR}/graphics/libdvdread
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		INCLUDE="-I${LOCALBASE}/include" \
-		LIB="-L${LOCALBASE}/lib" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE}
+CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}"
+CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
+		--with-dvdread=${LOCALBASE} \
+		--includedir="${LOCALBASE}/include" \
+		--libdir="${LOCALBASE}/lib"
 
 USE_GTK=	yes
 USE_GMAKE=	yes
-USE_BZIP2=	yes
-
-post-patch:
-	${PERL} -pi.orig -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
-	find ${WRKSRC}/ -name \*.[ch] | xargs ${PERL} -pi.orig \
-	    -e 's,"videolan/dvdcss.h","dvdcss/dvdcss.h",; \
-		s,<videolan/dvdcss.h>,<dvdcss/dvdcss.h>,'
 
 .include <bsd.port.mk>
