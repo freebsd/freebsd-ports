@@ -4,7 +4,7 @@ display editor (emacs binary only).
 This package's emacs has a dynamic loading module function.
 
 Emacs binary is:
-    ${PREFIX}/bin/emacs-dl-20.5
+    ${PREFIX}/bin/emacs-dl-20.7
 
 Dynamic loading patch:
     ftp://ftp.m17n.org/mule/dynamic-loading/emacs-20.4-dl3.diff.gz
@@ -16,7 +16,7 @@ warning message may be displayed:
 	Warning: locale not supported by C library, locale unchanged
 
 If you complain about this message, type `make install WITH_XPG4=yes'
-at the "${PORTSDIR}/editors/japanese" directory to re-make this package.
+at the "${PORTSDIR}/editors/emacs20-dl" directory to re-make this package.
 
 WWW: http://www.m17n.org/mule/dynamic-loading/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emacs-dl
-PORTVERSION=	20.6
+PORTVERSION=	20.7
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-EMACS_VER=	20.6
+EMACS_VER=	20.7
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 .if !defined(WITHOUT_X11)
 CONFIGURE_ARGS= --with-x-toolkit --with-pop
@@ -44,7 +44,12 @@ SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 		DOC_FILE=${DOC_FILE}
 
 .if defined(WITH_XPG4)
+.if ${OSVERSION} >= 220000 && ${OSVERSION} < 400020
 CONFIGURE_ARGS+=	--with-xpg4
+.endif
+.if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
+CONFIGURE_ARGS+=	--with-xpg4
+.endif
 .endif
 
 pre-build:
