@@ -1,396 +1,396 @@
 etc/rc.d/orion.sh
 bin/orionctl
-%%TARGET_PREFIX%%/config/database-schemas/hypersonic.xml
-%%TARGET_PREFIX%%/config/database-schemas/ms-access.xml
-%%TARGET_PREFIX%%/config/database-schemas/ms-sql.xml
-%%TARGET_PREFIX%%/config/database-schemas/oracle.xml
-%%TARGET_PREFIX%%/config/database-schemas/postgresql.xml
-%%TARGET_PREFIX%%/config/database-schemas/sybase.xml
-%%TARGET_PREFIX%%/config/data-sources.xml
-%%TARGET_PREFIX%%/config/default-web-site.xml
-%%TARGET_PREFIX%%/config/global-web-application.xml
-%%TARGET_PREFIX%%/config/jms.xml
-%%TARGET_PREFIX%%/config/mime.types
-%%TARGET_PREFIX%%/config/principals.xml
-%%TARGET_PREFIX%%/config/rmi.xml
-%%TARGET_PREFIX%%/config/application.xml
-%%TARGET_PREFIX%%/config/server.xml
-%%TARGET_PREFIX%%/default-web-app/examples/cal/TableBean.txt
-%%TARGET_PREFIX%%/default-web-app/examples/cal/cal1.txt
-%%TARGET_PREFIX%%/default-web-app/examples/cal/cal2.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/cal/cal2.txt
-%%TARGET_PREFIX%%/default-web-app/examples/cal/calendar.html
-%%TARGET_PREFIX%%/default-web-app/examples/cal/Entries.txt
-%%TARGET_PREFIX%%/default-web-app/examples/cal/Entry.txt
-%%TARGET_PREFIX%%/default-web-app/examples/cal/JspCalendar.txt
-%%TARGET_PREFIX%%/default-web-app/examples/cal/login.html
-%%TARGET_PREFIX%%/default-web-app/examples/cal/cal1.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/images/code.gif
-%%TARGET_PREFIX%%/default-web-app/examples/images/execute.gif
-%%TARGET_PREFIX%%/default-web-app/examples/images/return.gif
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/include/foo.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/include/foo.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/include/inc.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/include/include.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/include/include.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/checkbox/check.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/checkbox/checkresult.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/checkbox/checkresult.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/checkbox/CheckTest.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/checkbox/cresult.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/colors/clr.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/colors/ColorGameBean.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/colors/colors.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/colors/colors.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/colors/colrs.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/dates/date.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/dates/date.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/dates/date.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/error/er.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/error/err.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/error/err.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/error/error.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/error/errorpge.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/forward/forward.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/forward/forward.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/forward/fwd.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/forward/one.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/forward/two.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/snp/snoop.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/snp/snoop.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/snp/snoop.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/TableBean.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/cal1.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/cal2.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/cal2.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/calendar.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/Entries.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/Entry.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/JspCalendar.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/login.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/cal/cal1.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/jsptoserv/hello.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/jsptoserv/jsptoservlet.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/jsptoserv/jts.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/jsptoserv/jts.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/jsptoserv/stj.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/num/numguess.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/num/numguess.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/num/numguess.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin/applet/Clock2.class
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin/applet/Clock2.java
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin/plugin.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin/plugin.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin/plugin.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/sessions/carts.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/sessions/carts.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/sessions/carts.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/sessions/crt.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/sessions/DummyCart.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/META-INF/taglib.tld
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.class
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.java
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/index.html
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/looptag.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/looptag.jsp.txt
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/looptags.jar
-%%TARGET_PREFIX%%/default-web-app/examples/jsp/index.html
-%%TARGET_PREFIX%%/default-web-app/examples/perl/helloworld.pl
-%%TARGET_PREFIX%%/default-web-app/examples/perl/post.html
-%%TARGET_PREFIX%%/default-web-app/examples/perl/post.pl
-%%TARGET_PREFIX%%/default-web-app/examples/ssi/other.txt
-%%TARGET_PREFIX%%/default-web-app/examples/ssi/real.txt
-%%TARGET_PREFIX%%/default-web-app/examples/ssi/ssi.shtml
-%%TARGET_PREFIX%%/default-web-app/examples/xsl/data.xml
-%%TARGET_PREFIX%%/default-web-app/examples/xsl/data.xsl
-%%TARGET_PREFIX%%/default-web-app/examples/xsl/doc.dtd
-%%TARGET_PREFIX%%/default-web-app/examples/xsl/doc.jsp
-%%TARGET_PREFIX%%/default-web-app/examples/xsl/doc.xml
-%%TARGET_PREFIX%%/default-web-app/examples/xsl/doc.xsl
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/error/Smart.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/error/Smart.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/sessions/DummyCart.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/sessions/DummyCart.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/dates/JspCalendar.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/dates/JspCalendar.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/TableBean.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/Entries.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/Entry.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/Entry.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/JspCalendar.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/JspCalendar.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/TableBean.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal/Entries.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/Counter.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/DateServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/DateServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/FingerServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/FingerServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/HelloWorldExample.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/HelloWorldExample.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/HelloWorldServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/HelloWorldServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/LinkCheckerServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/LinkCheckerServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/LocalStrings.properties
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/ParameterBean.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/ParameterBean.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RedirectServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RedirectServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RequestHeaderExample.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RequestHeaderExample.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RequestInfoExample.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RequestInfoExample.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RequestParamExample.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/RequestParamExample.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SessionExample.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SessionExample.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SessionServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SessionServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SimpleServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SimpleServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SnoopServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SnoopServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SurveyServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/SurveyServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/ToJSPServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/ToJSPServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/UpperCaseFilter.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/UpperCaseFilter.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/BBoardServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/URLInfo.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/BBoardServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/ConfigServlet.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/ConfigServlet.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/CookieExample.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/CookieExample.java
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/Counter.class
-%%TARGET_PREFIX%%/default-web-app/WEB-INF/web.xml
-%%TARGET_PREFIX%%/default-web-app/index.html
-%%TARGET_PREFIX%%/applications/news.ear
-%%TARGET_PREFIX%%/applications/atm.ear
-%%TARGET_PREFIX%%/applications/estore-bugs.txt
-%%TARGET_PREFIX%%/applications/estore-install.txt
-%%TARGET_PREFIX%%/applications/estore-orionadapter.jar
-%%TARGET_PREFIX%%/applications/estore-patched.ear
-%%TARGET_PREFIX%%/applications/news-install.txt
-%%TARGET_PREFIX%%/applications/atm-install.txt
-%%TARGET_PREFIX%%/demo/ejb/cart/META-INF/application-client.xml
-%%TARGET_PREFIX%%/demo/ejb/cart/META-INF/ejb-jar.xml
-%%TARGET_PREFIX%%/demo/ejb/cart/META-INF/MANIFEST.MF
-%%TARGET_PREFIX%%/demo/ejb/cart/Cart.java
-%%TARGET_PREFIX%%/demo/ejb/cart/CartClient.class
-%%TARGET_PREFIX%%/demo/ejb/cart/CartClient.java
-%%TARGET_PREFIX%%/demo/ejb/cart/CartEJB.class
-%%TARGET_PREFIX%%/demo/ejb/cart/CartEJB.java
-%%TARGET_PREFIX%%/demo/ejb/cart/CartHome.class
-%%TARGET_PREFIX%%/demo/ejb/cart/CartHome.java
-%%TARGET_PREFIX%%/demo/ejb/cart/jndi.properties
-%%TARGET_PREFIX%%/demo/ejb/cart/NotInCartException.class
-%%TARGET_PREFIX%%/demo/ejb/cart/NotInCartException.java
-%%TARGET_PREFIX%%/demo/ejb/cart/Cart.class
-%%TARGET_PREFIX%%/demo/ejb/cart/orion-cart.jar
-%%TARGET_PREFIX%%/demo/ejb/META-INF/application.xml
-%%TARGET_PREFIX%%/demo/ejb/product/META-INF/application-client.xml
-%%TARGET_PREFIX%%/demo/ejb/product/META-INF/ejb-jar.xml
-%%TARGET_PREFIX%%/demo/ejb/product/META-INF/MANIFEST.MF
-%%TARGET_PREFIX%%/demo/ejb/product/orion-product.jar
-%%TARGET_PREFIX%%/demo/ejb/product/Product.class
-%%TARGET_PREFIX%%/demo/ejb/product/Product.java
-%%TARGET_PREFIX%%/demo/ejb/product/product.skeleton
-%%TARGET_PREFIX%%/demo/ejb/product/ProductClient.class
-%%TARGET_PREFIX%%/demo/ejb/product/ProductClient.java
-%%TARGET_PREFIX%%/demo/ejb/product/ProductEJB.class
-%%TARGET_PREFIX%%/demo/ejb/product/ProductEJB.java
-%%TARGET_PREFIX%%/demo/ejb/product/ProductHome.class
-%%TARGET_PREFIX%%/demo/ejb/product/ProductHome.java
-%%TARGET_PREFIX%%/demo/ejb/product/ProductServlet.class
-%%TARGET_PREFIX%%/demo/ejb/product/jndi.properties
-%%TARGET_PREFIX%%/demo/ejb/product/ProductServlet.java
-%%TARGET_PREFIX%%/demo/ejb/usermanager/META-INF/ejb-jar.xml
-%%TARGET_PREFIX%%/demo/ejb/install.txt
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/META-INF/application-client.xml
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/META-INF/MANIFEST.MF
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/META-INF/orion-application-client.xml
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/CoffeeMachine.class
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/CoffeeMachine.java
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/CoffeeMaker.class
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/CoffeeMaker.java
-%%TARGET_PREFIX%%/demo/jms/coffeemaker/jndi.properties
-%%TARGET_PREFIX%%/demo/jms/jmschat/META-INF/application-client.xml
-%%TARGET_PREFIX%%/demo/jms/jmschat/META-INF/MANIFEST.MF
-%%TARGET_PREFIX%%/demo/jms/jmschat/META-INF/orion-application-client.xml
-%%TARGET_PREFIX%%/demo/jms/jmschat/JMSChat$1.class
-%%TARGET_PREFIX%%/demo/jms/jmschat/JMSChat.class
-%%TARGET_PREFIX%%/demo/jms/jmschat/JMSChat.java
-%%TARGET_PREFIX%%/demo/jms/jmschat/jndi.properties
-%%TARGET_PREFIX%%/demo/jms/coffeemaker.jar
-%%TARGET_PREFIX%%/demo/jms/jmschat.jar
-%%TARGET_PREFIX%%/demo/jms/jmsdemo-readme.txt
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemClient.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.java
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.class
-%%TARGET_PREFIX%%/demo/news-app/news-ejb-source/META-INF/ejb-jar.xml
-%%TARGET_PREFIX%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.class
-%%TARGET_PREFIX%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.java
-%%TARGET_PREFIX%%/demo/news-app/news-client-source/com/evermind/ejb/NewsItemClient.class
-%%TARGET_PREFIX%%/demo/news-app/news-client-source/META-INF/application-client.xml
-%%TARGET_PREFIX%%/demo/news-app/news-client-source/META-INF/MANIFEST.MF
-%%TARGET_PREFIX%%/demo/news-app/news-web/admin/editnews.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/admin/editnews_done.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/WEB-INF/lib/ejbtags.jar
-%%TARGET_PREFIX%%/demo/news-app/news-web/WEB-INF/lib/utiltags.jar
-%%TARGET_PREFIX%%/demo/news-app/news-web/WEB-INF/web.xml
-%%TARGET_PREFIX%%/demo/news-app/news-web/border.html
-%%TARGET_PREFIX%%/demo/news-app/news-web/checks.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/index.html
-%%TARGET_PREFIX%%/demo/news-app/news-web/initviews.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/login-error.html
-%%TARGET_PREFIX%%/demo/news-app/news-web/addnews.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/loginbox.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/logout.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/news-body.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/news.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/newsdetail.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/newssearch.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/usertest.jsp
-%%TARGET_PREFIX%%/demo/news-app/news-web/login.html
-%%TARGET_PREFIX%%/demo/news-app/news-web/addnews_done.jsp
-%%TARGET_PREFIX%%/demo/news-app/META-INF/application.xml
-%%TARGET_PREFIX%%/demo/news-app/news-web.war
-%%TARGET_PREFIX%%/demo/news-app/news-client.jar
-%%TARGET_PREFIX%%/demo/news-app/news-ejb.jar
-%%TARGET_PREFIX%%/demo/news-app/counter.jar
-%%TARGET_PREFIX%%/demo/rmi/RMIApp.class
-%%TARGET_PREFIX%%/demo/rmi/RMIApp.java
-%%TARGET_PREFIX%%/demo/ssl/ssl-user-registration.jsp
-%%TARGET_PREFIX%%/demo/messagelogger.ear
-%%TARGET_PREFIX%%/lib/hsql.jar
-%%TARGET_PREFIX%%/loadbalancer.jar
-%%TARGET_PREFIX%%/jta.jar
-%%TARGET_PREFIX%%/jsse.jar
-%%TARGET_PREFIX%%/jnet.jar
-%%TARGET_PREFIX%%/jndi.jar
-%%TARGET_PREFIX%%/jdbc.jar
-%%TARGET_PREFIX%%/jcert.jar
-%%TARGET_PREFIX%%/jaxp.jar
-%%TARGET_PREFIX%%/ejbmaker.jar
-%%TARGET_PREFIX%%/ejbassembler.jar
-%%TARGET_PREFIX%%/ejb.jar
-%%TARGET_PREFIX%%/earassembler.jar
-%%TARGET_PREFIX%%/clientassembler.jar
-%%TARGET_PREFIX%%/changes.txt
-%%TARGET_PREFIX%%/autoupdate.properties
-%%TARGET_PREFIX%%/autoupdate.jar
-%%TARGET_PREFIX%%/assemblerlauncher.jar
-%%TARGET_PREFIX%%/applicationlauncher.jar
-%%TARGET_PREFIX%%/admin.jar
-%%TARGET_PREFIX%%/activation.jar
-%%TARGET_PREFIX%%/Readme.txt
-%%TARGET_PREFIX%%/xerces.jar
-%%TARGET_PREFIX%%/Copyright.txt
-%%TARGET_PREFIX%%/xalan.jar
-%%TARGET_PREFIX%%/webappassembler.jar
-%%TARGET_PREFIX%%/taglibassembler.jar
-%%TARGET_PREFIX%%/parser.jar
-%%TARGET_PREFIX%%/orionconsole.jar
-%%TARGET_PREFIX%%/orion.jar
-%%TARGET_PREFIX%%/tools.jar
-%%TARGET_PREFIX%%/mail.jar
-@dirrm %%TARGET_PREFIX%%/application-deployments
-@dirrm %%TARGET_PREFIX%%/config/database-schemas
-@dirrm %%TARGET_PREFIX%%/config
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/cal
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/images
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/include
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/checkbox
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/colors
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/dates
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/error
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/forward
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/snp
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/cal
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/jsptoserv
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/num
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin/applet
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/plugin
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/sessions
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/META-INF
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop/taglib
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib/loop
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp/taglib
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/jsp
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/perl
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/ssi
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples/xsl
-@dirrm %%TARGET_PREFIX%%/default-web-app/examples
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/colors
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/num
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/error
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/sessions
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/dates
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/cal
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes/checkbox
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF/classes
-@dirrm %%TARGET_PREFIX%%/default-web-app/WEB-INF
-@dirrm %%TARGET_PREFIX%%/default-web-app
-@dirrm %%TARGET_PREFIX%%/applications
-@dirrm %%TARGET_PREFIX%%/database
-@dirrm %%TARGET_PREFIX%%/demo/ejb/cart/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/ejb/cart
-@dirrm %%TARGET_PREFIX%%/demo/ejb/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/ejb/product/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/ejb/product
-@dirrm %%TARGET_PREFIX%%/demo/ejb/usermanager/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/ejb/usermanager
-@dirrm %%TARGET_PREFIX%%/demo/ejb
-@dirrm %%TARGET_PREFIX%%/demo/jms/coffeemaker/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/jms/coffeemaker
-@dirrm %%TARGET_PREFIX%%/demo/jms/jmschat/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/jms/jmschat
-@dirrm %%TARGET_PREFIX%%/demo/jms
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind/ejb
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com/evermind
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-ejb-source/com
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-ejb-source/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-ejb-source
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-client-source/com/evermind/ejb
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-client-source/com/evermind
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-client-source/com
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-client-source/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-client-source
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-web/admin
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-web/WEB-INF/classes
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-web/WEB-INF/lib
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-web/WEB-INF
-@dirrm %%TARGET_PREFIX%%/demo/news-app/news-web
-@dirrm %%TARGET_PREFIX%%/demo/news-app/META-INF
-@dirrm %%TARGET_PREFIX%%/demo/news-app
-@dirrm %%TARGET_PREFIX%%/demo/rmi
-@dirrm %%TARGET_PREFIX%%/demo/ssl
-@dirrm %%TARGET_PREFIX%%/demo
-@dirrm %%TARGET_PREFIX%%/lib
-@dirrm %%TARGET_PREFIX%%/log
-@dirrm %%TARGET_PREFIX%%/persistence/ejb
-@dirrm %%TARGET_PREFIX%%/persistence
-@dirrm %%TARGET_PREFIX%%
+%%T%%/config/database-schemas/hypersonic.xml
+%%T%%/config/database-schemas/ms-access.xml
+%%T%%/config/database-schemas/ms-sql.xml
+%%T%%/config/database-schemas/oracle.xml
+%%T%%/config/database-schemas/postgresql.xml
+%%T%%/config/database-schemas/sybase.xml
+%%T%%/config/data-sources.xml
+%%T%%/config/default-web-site.xml
+%%T%%/config/global-web-application.xml
+%%T%%/config/jms.xml
+%%T%%/config/mime.types
+%%T%%/config/principals.xml
+%%T%%/config/rmi.xml
+%%T%%/config/application.xml
+%%T%%/config/server.xml
+%%T%%/default-web-app/examples/cal/TableBean.txt
+%%T%%/default-web-app/examples/cal/cal1.txt
+%%T%%/default-web-app/examples/cal/cal2.jsp
+%%T%%/default-web-app/examples/cal/cal2.txt
+%%T%%/default-web-app/examples/cal/calendar.html
+%%T%%/default-web-app/examples/cal/Entries.txt
+%%T%%/default-web-app/examples/cal/Entry.txt
+%%T%%/default-web-app/examples/cal/JspCalendar.txt
+%%T%%/default-web-app/examples/cal/login.html
+%%T%%/default-web-app/examples/cal/cal1.jsp
+%%T%%/default-web-app/examples/images/code.gif
+%%T%%/default-web-app/examples/images/execute.gif
+%%T%%/default-web-app/examples/images/return.gif
+%%T%%/default-web-app/examples/jsp/include/foo.html
+%%T%%/default-web-app/examples/jsp/include/foo.jsp
+%%T%%/default-web-app/examples/jsp/include/inc.html
+%%T%%/default-web-app/examples/jsp/include/include.jsp
+%%T%%/default-web-app/examples/jsp/include/include.txt
+%%T%%/default-web-app/examples/jsp/checkbox/check.html
+%%T%%/default-web-app/examples/jsp/checkbox/checkresult.jsp
+%%T%%/default-web-app/examples/jsp/checkbox/checkresult.txt
+%%T%%/default-web-app/examples/jsp/checkbox/CheckTest.html
+%%T%%/default-web-app/examples/jsp/checkbox/cresult.html
+%%T%%/default-web-app/examples/jsp/colors/clr.html
+%%T%%/default-web-app/examples/jsp/colors/ColorGameBean.html
+%%T%%/default-web-app/examples/jsp/colors/colors.html
+%%T%%/default-web-app/examples/jsp/colors/colors.txt
+%%T%%/default-web-app/examples/jsp/colors/colrs.jsp
+%%T%%/default-web-app/examples/jsp/dates/date.html
+%%T%%/default-web-app/examples/jsp/dates/date.jsp
+%%T%%/default-web-app/examples/jsp/dates/date.txt
+%%T%%/default-web-app/examples/jsp/error/er.html
+%%T%%/default-web-app/examples/jsp/error/err.jsp
+%%T%%/default-web-app/examples/jsp/error/err.txt
+%%T%%/default-web-app/examples/jsp/error/error.html
+%%T%%/default-web-app/examples/jsp/error/errorpge.jsp
+%%T%%/default-web-app/examples/jsp/forward/forward.jsp
+%%T%%/default-web-app/examples/jsp/forward/forward.txt
+%%T%%/default-web-app/examples/jsp/forward/fwd.html
+%%T%%/default-web-app/examples/jsp/forward/one.jsp
+%%T%%/default-web-app/examples/jsp/forward/two.html
+%%T%%/default-web-app/examples/jsp/snp/snoop.html
+%%T%%/default-web-app/examples/jsp/snp/snoop.jsp
+%%T%%/default-web-app/examples/jsp/snp/snoop.txt
+%%T%%/default-web-app/examples/jsp/cal/TableBean.txt
+%%T%%/default-web-app/examples/jsp/cal/cal1.txt
+%%T%%/default-web-app/examples/jsp/cal/cal2.jsp
+%%T%%/default-web-app/examples/jsp/cal/cal2.txt
+%%T%%/default-web-app/examples/jsp/cal/calendar.html
+%%T%%/default-web-app/examples/jsp/cal/Entries.txt
+%%T%%/default-web-app/examples/jsp/cal/Entry.txt
+%%T%%/default-web-app/examples/jsp/cal/JspCalendar.txt
+%%T%%/default-web-app/examples/jsp/cal/login.html
+%%T%%/default-web-app/examples/jsp/cal/cal1.jsp
+%%T%%/default-web-app/examples/jsp/jsptoserv/hello.jsp
+%%T%%/default-web-app/examples/jsp/jsptoserv/jsptoservlet.jsp
+%%T%%/default-web-app/examples/jsp/jsptoserv/jts.html
+%%T%%/default-web-app/examples/jsp/jsptoserv/jts.txt
+%%T%%/default-web-app/examples/jsp/jsptoserv/stj.txt
+%%T%%/default-web-app/examples/jsp/num/numguess.html
+%%T%%/default-web-app/examples/jsp/num/numguess.jsp
+%%T%%/default-web-app/examples/jsp/num/numguess.txt
+%%T%%/default-web-app/examples/jsp/plugin/applet/Clock2.class
+%%T%%/default-web-app/examples/jsp/plugin/applet/Clock2.java
+%%T%%/default-web-app/examples/jsp/plugin/plugin.html
+%%T%%/default-web-app/examples/jsp/plugin/plugin.jsp
+%%T%%/default-web-app/examples/jsp/plugin/plugin.txt
+%%T%%/default-web-app/examples/jsp/sessions/carts.html
+%%T%%/default-web-app/examples/jsp/sessions/carts.jsp
+%%T%%/default-web-app/examples/jsp/sessions/carts.txt
+%%T%%/default-web-app/examples/jsp/sessions/crt.html
+%%T%%/default-web-app/examples/jsp/sessions/DummyCart.html
+%%T%%/default-web-app/examples/jsp/taglib/loop/META-INF/taglib.tld
+%%T%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.class
+%%T%%/default-web-app/examples/jsp/taglib/loop/taglib/LoopTag.java
+%%T%%/default-web-app/examples/jsp/taglib/loop/index.html
+%%T%%/default-web-app/examples/jsp/taglib/loop/looptag.jsp
+%%T%%/default-web-app/examples/jsp/taglib/loop/looptag.jsp.txt
+%%T%%/default-web-app/examples/jsp/taglib/loop/looptags.jar
+%%T%%/default-web-app/examples/jsp/index.html
+%%T%%/default-web-app/examples/perl/helloworld.pl
+%%T%%/default-web-app/examples/perl/post.html
+%%T%%/default-web-app/examples/perl/post.pl
+%%T%%/default-web-app/examples/ssi/other.txt
+%%T%%/default-web-app/examples/ssi/real.txt
+%%T%%/default-web-app/examples/ssi/ssi.shtml
+%%T%%/default-web-app/examples/xsl/data.xml
+%%T%%/default-web-app/examples/xsl/data.xsl
+%%T%%/default-web-app/examples/xsl/doc.dtd
+%%T%%/default-web-app/examples/xsl/doc.jsp
+%%T%%/default-web-app/examples/xsl/doc.xml
+%%T%%/default-web-app/examples/xsl/doc.xsl
+%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.class
+%%T%%/default-web-app/WEB-INF/classes/colors/ColorGameBean.java
+%%T%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.class
+%%T%%/default-web-app/WEB-INF/classes/num/NumberGuessBean.java
+%%T%%/default-web-app/WEB-INF/classes/error/Smart.class
+%%T%%/default-web-app/WEB-INF/classes/error/Smart.java
+%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.class
+%%T%%/default-web-app/WEB-INF/classes/sessions/DummyCart.java
+%%T%%/default-web-app/WEB-INF/classes/dates/JspCalendar.class
+%%T%%/default-web-app/WEB-INF/classes/dates/JspCalendar.java
+%%T%%/default-web-app/WEB-INF/classes/cal/TableBean.java
+%%T%%/default-web-app/WEB-INF/classes/cal/Entries.java
+%%T%%/default-web-app/WEB-INF/classes/cal/Entry.class
+%%T%%/default-web-app/WEB-INF/classes/cal/Entry.java
+%%T%%/default-web-app/WEB-INF/classes/cal/JspCalendar.class
+%%T%%/default-web-app/WEB-INF/classes/cal/JspCalendar.java
+%%T%%/default-web-app/WEB-INF/classes/cal/TableBean.class
+%%T%%/default-web-app/WEB-INF/classes/cal/Entries.class
+%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.class
+%%T%%/default-web-app/WEB-INF/classes/checkbox/CheckTest.java
+%%T%%/default-web-app/WEB-INF/classes/Counter.java
+%%T%%/default-web-app/WEB-INF/classes/DateServlet.class
+%%T%%/default-web-app/WEB-INF/classes/DateServlet.java
+%%T%%/default-web-app/WEB-INF/classes/FingerServlet.class
+%%T%%/default-web-app/WEB-INF/classes/FingerServlet.java
+%%T%%/default-web-app/WEB-INF/classes/HelloWorldExample.class
+%%T%%/default-web-app/WEB-INF/classes/HelloWorldExample.java
+%%T%%/default-web-app/WEB-INF/classes/HelloWorldServlet.class
+%%T%%/default-web-app/WEB-INF/classes/HelloWorldServlet.java
+%%T%%/default-web-app/WEB-INF/classes/LinkCheckerServlet.class
+%%T%%/default-web-app/WEB-INF/classes/LinkCheckerServlet.java
+%%T%%/default-web-app/WEB-INF/classes/LocalStrings.properties
+%%T%%/default-web-app/WEB-INF/classes/ParameterBean.class
+%%T%%/default-web-app/WEB-INF/classes/ParameterBean.java
+%%T%%/default-web-app/WEB-INF/classes/RedirectServlet.class
+%%T%%/default-web-app/WEB-INF/classes/RedirectServlet.java
+%%T%%/default-web-app/WEB-INF/classes/RequestHeaderExample.class
+%%T%%/default-web-app/WEB-INF/classes/RequestHeaderExample.java
+%%T%%/default-web-app/WEB-INF/classes/RequestInfoExample.class
+%%T%%/default-web-app/WEB-INF/classes/RequestInfoExample.java
+%%T%%/default-web-app/WEB-INF/classes/RequestParamExample.class
+%%T%%/default-web-app/WEB-INF/classes/RequestParamExample.java
+%%T%%/default-web-app/WEB-INF/classes/SessionExample.class
+%%T%%/default-web-app/WEB-INF/classes/SessionExample.java
+%%T%%/default-web-app/WEB-INF/classes/SessionServlet.class
+%%T%%/default-web-app/WEB-INF/classes/SessionServlet.java
+%%T%%/default-web-app/WEB-INF/classes/SimpleServlet.class
+%%T%%/default-web-app/WEB-INF/classes/SimpleServlet.java
+%%T%%/default-web-app/WEB-INF/classes/SnoopServlet.class
+%%T%%/default-web-app/WEB-INF/classes/SnoopServlet.java
+%%T%%/default-web-app/WEB-INF/classes/SurveyServlet.class
+%%T%%/default-web-app/WEB-INF/classes/SurveyServlet.java
+%%T%%/default-web-app/WEB-INF/classes/ToJSPServlet.class
+%%T%%/default-web-app/WEB-INF/classes/ToJSPServlet.java
+%%T%%/default-web-app/WEB-INF/classes/UpperCaseFilter.class
+%%T%%/default-web-app/WEB-INF/classes/UpperCaseFilter.java
+%%T%%/default-web-app/WEB-INF/classes/BBoardServlet.class
+%%T%%/default-web-app/WEB-INF/classes/URLInfo.class
+%%T%%/default-web-app/WEB-INF/classes/BBoardServlet.java
+%%T%%/default-web-app/WEB-INF/classes/ConfigServlet.class
+%%T%%/default-web-app/WEB-INF/classes/ConfigServlet.java
+%%T%%/default-web-app/WEB-INF/classes/CookieExample.class
+%%T%%/default-web-app/WEB-INF/classes/CookieExample.java
+%%T%%/default-web-app/WEB-INF/classes/Counter.class
+%%T%%/default-web-app/WEB-INF/web.xml
+%%T%%/default-web-app/index.html
+%%T%%/applications/news.ear
+%%T%%/applications/atm.ear
+%%T%%/applications/estore-bugs.txt
+%%T%%/applications/estore-install.txt
+%%T%%/applications/estore-orionadapter.jar
+%%T%%/applications/estore-patched.ear
+%%T%%/applications/news-install.txt
+%%T%%/applications/atm-install.txt
+%%T%%/demo/ejb/cart/META-INF/application-client.xml
+%%T%%/demo/ejb/cart/META-INF/ejb-jar.xml
+%%T%%/demo/ejb/cart/META-INF/MANIFEST.MF
+%%T%%/demo/ejb/cart/Cart.java
+%%T%%/demo/ejb/cart/CartClient.class
+%%T%%/demo/ejb/cart/CartClient.java
+%%T%%/demo/ejb/cart/CartEJB.class
+%%T%%/demo/ejb/cart/CartEJB.java
+%%T%%/demo/ejb/cart/CartHome.class
+%%T%%/demo/ejb/cart/CartHome.java
+%%T%%/demo/ejb/cart/jndi.properties
+%%T%%/demo/ejb/cart/NotInCartException.class
+%%T%%/demo/ejb/cart/NotInCartException.java
+%%T%%/demo/ejb/cart/Cart.class
+%%T%%/demo/ejb/cart/orion-cart.jar
+%%T%%/demo/ejb/META-INF/application.xml
+%%T%%/demo/ejb/product/META-INF/application-client.xml
+%%T%%/demo/ejb/product/META-INF/ejb-jar.xml
+%%T%%/demo/ejb/product/META-INF/MANIFEST.MF
+%%T%%/demo/ejb/product/orion-product.jar
+%%T%%/demo/ejb/product/Product.class
+%%T%%/demo/ejb/product/Product.java
+%%T%%/demo/ejb/product/product.skeleton
+%%T%%/demo/ejb/product/ProductClient.class
+%%T%%/demo/ejb/product/ProductClient.java
+%%T%%/demo/ejb/product/ProductEJB.class
+%%T%%/demo/ejb/product/ProductEJB.java
+%%T%%/demo/ejb/product/ProductHome.class
+%%T%%/demo/ejb/product/ProductHome.java
+%%T%%/demo/ejb/product/ProductServlet.class
+%%T%%/demo/ejb/product/jndi.properties
+%%T%%/demo/ejb/product/ProductServlet.java
+%%T%%/demo/ejb/usermanager/META-INF/ejb-jar.xml
+%%T%%/demo/ejb/install.txt
+%%T%%/demo/jms/coffeemaker/META-INF/application-client.xml
+%%T%%/demo/jms/coffeemaker/META-INF/MANIFEST.MF
+%%T%%/demo/jms/coffeemaker/META-INF/orion-application-client.xml
+%%T%%/demo/jms/coffeemaker/CoffeeMachine.class
+%%T%%/demo/jms/coffeemaker/CoffeeMachine.java
+%%T%%/demo/jms/coffeemaker/CoffeeMaker.class
+%%T%%/demo/jms/coffeemaker/CoffeeMaker.java
+%%T%%/demo/jms/coffeemaker/jndi.properties
+%%T%%/demo/jms/jmschat/META-INF/application-client.xml
+%%T%%/demo/jms/jmschat/META-INF/MANIFEST.MF
+%%T%%/demo/jms/jmschat/META-INF/orion-application-client.xml
+%%T%%/demo/jms/jmschat/JMSChat$1.class
+%%T%%/demo/jms/jmschat/JMSChat.class
+%%T%%/demo/jms/jmschat/JMSChat.java
+%%T%%/demo/jms/jmschat/jndi.properties
+%%T%%/demo/jms/coffeemaker.jar
+%%T%%/demo/jms/jmschat.jar
+%%T%%/demo/jms/jmsdemo-readme.txt
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemClient.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemEJB.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemHome.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItemServlet.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSession.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionEJB.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsSessionHome.java
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsView.class
+%%T%%/demo/news-app/news-ejb-source/com/evermind/ejb/NewsItem.class
+%%T%%/demo/news-app/news-ejb-source/META-INF/ejb-jar.xml
+%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.class
+%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsClient.java
+%%T%%/demo/news-app/news-client-source/com/evermind/ejb/NewsItemClient.class
+%%T%%/demo/news-app/news-client-source/META-INF/application-client.xml
+%%T%%/demo/news-app/news-client-source/META-INF/MANIFEST.MF
+%%T%%/demo/news-app/news-web/admin/editnews.jsp
+%%T%%/demo/news-app/news-web/admin/editnews_done.jsp
+%%T%%/demo/news-app/news-web/WEB-INF/lib/ejbtags.jar
+%%T%%/demo/news-app/news-web/WEB-INF/lib/utiltags.jar
+%%T%%/demo/news-app/news-web/WEB-INF/web.xml
+%%T%%/demo/news-app/news-web/border.html
+%%T%%/demo/news-app/news-web/checks.jsp
+%%T%%/demo/news-app/news-web/index.html
+%%T%%/demo/news-app/news-web/initviews.jsp
+%%T%%/demo/news-app/news-web/login-error.html
+%%T%%/demo/news-app/news-web/addnews.jsp
+%%T%%/demo/news-app/news-web/loginbox.jsp
+%%T%%/demo/news-app/news-web/logout.jsp
+%%T%%/demo/news-app/news-web/news-body.jsp
+%%T%%/demo/news-app/news-web/news.jsp
+%%T%%/demo/news-app/news-web/newsdetail.jsp
+%%T%%/demo/news-app/news-web/newssearch.jsp
+%%T%%/demo/news-app/news-web/usertest.jsp
+%%T%%/demo/news-app/news-web/login.html
+%%T%%/demo/news-app/news-web/addnews_done.jsp
+%%T%%/demo/news-app/META-INF/application.xml
+%%T%%/demo/news-app/news-web.war
+%%T%%/demo/news-app/news-client.jar
+%%T%%/demo/news-app/news-ejb.jar
+%%T%%/demo/news-app/counter.jar
+%%T%%/demo/rmi/RMIApp.class
+%%T%%/demo/rmi/RMIApp.java
+%%T%%/demo/ssl/ssl-user-registration.jsp
+%%T%%/demo/messagelogger.ear
+%%T%%/lib/hsql.jar
+%%T%%/loadbalancer.jar
+%%T%%/jta.jar
+%%T%%/jsse.jar
+%%T%%/jnet.jar
+%%T%%/jndi.jar
+%%T%%/jdbc.jar
+%%T%%/jcert.jar
+%%T%%/jaxp.jar
+%%T%%/ejbmaker.jar
+%%T%%/ejbassembler.jar
+%%T%%/ejb.jar
+%%T%%/earassembler.jar
+%%T%%/clientassembler.jar
+%%T%%/changes.txt
+%%T%%/autoupdate.properties
+%%T%%/autoupdate.jar
+%%T%%/assemblerlauncher.jar
+%%T%%/applicationlauncher.jar
+%%T%%/admin.jar
+%%T%%/activation.jar
+%%T%%/Readme.txt
+%%T%%/xerces.jar
+%%T%%/Copyright.txt
+%%T%%/xalan.jar
+%%T%%/webappassembler.jar
+%%T%%/taglibassembler.jar
+%%T%%/parser.jar
+%%T%%/orionconsole.jar
+%%T%%/orion.jar
+%%T%%/tools.jar
+%%T%%/mail.jar
+@dirrm %%T%%/application-deployments
+@dirrm %%T%%/config/database-schemas
+@dirrm %%T%%/config
+@dirrm %%T%%/default-web-app/examples/cal
+@dirrm %%T%%/default-web-app/examples/images
+@dirrm %%T%%/default-web-app/examples/jsp/include
+@dirrm %%T%%/default-web-app/examples/jsp/checkbox
+@dirrm %%T%%/default-web-app/examples/jsp/colors
+@dirrm %%T%%/default-web-app/examples/jsp/dates
+@dirrm %%T%%/default-web-app/examples/jsp/error
+@dirrm %%T%%/default-web-app/examples/jsp/forward
+@dirrm %%T%%/default-web-app/examples/jsp/snp
+@dirrm %%T%%/default-web-app/examples/jsp/cal
+@dirrm %%T%%/default-web-app/examples/jsp/jsptoserv
+@dirrm %%T%%/default-web-app/examples/jsp/num
+@dirrm %%T%%/default-web-app/examples/jsp/plugin/applet
+@dirrm %%T%%/default-web-app/examples/jsp/plugin
+@dirrm %%T%%/default-web-app/examples/jsp/sessions
+@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/META-INF
+@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop/taglib
+@dirrm %%T%%/default-web-app/examples/jsp/taglib/loop
+@dirrm %%T%%/default-web-app/examples/jsp/taglib
+@dirrm %%T%%/default-web-app/examples/jsp
+@dirrm %%T%%/default-web-app/examples/perl
+@dirrm %%T%%/default-web-app/examples/ssi
+@dirrm %%T%%/default-web-app/examples/xsl
+@dirrm %%T%%/default-web-app/examples
+@dirrm %%T%%/default-web-app/WEB-INF/classes/colors
+@dirrm %%T%%/default-web-app/WEB-INF/classes/num
+@dirrm %%T%%/default-web-app/WEB-INF/classes/error
+@dirrm %%T%%/default-web-app/WEB-INF/classes/sessions
+@dirrm %%T%%/default-web-app/WEB-INF/classes/dates
+@dirrm %%T%%/default-web-app/WEB-INF/classes/cal
+@dirrm %%T%%/default-web-app/WEB-INF/classes/checkbox
+@dirrm %%T%%/default-web-app/WEB-INF/classes
+@dirrm %%T%%/default-web-app/WEB-INF
+@dirrm %%T%%/default-web-app
+@dirrm %%T%%/applications
+@dirrm %%T%%/database
+@dirrm %%T%%/demo/ejb/cart/META-INF
+@dirrm %%T%%/demo/ejb/cart
+@dirrm %%T%%/demo/ejb/META-INF
+@dirrm %%T%%/demo/ejb/product/META-INF
+@dirrm %%T%%/demo/ejb/product
+@dirrm %%T%%/demo/ejb/usermanager/META-INF
+@dirrm %%T%%/demo/ejb/usermanager
+@dirrm %%T%%/demo/ejb
+@dirrm %%T%%/demo/jms/coffeemaker/META-INF
+@dirrm %%T%%/demo/jms/coffeemaker
+@dirrm %%T%%/demo/jms/jmschat/META-INF
+@dirrm %%T%%/demo/jms/jmschat
+@dirrm %%T%%/demo/jms
+@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind/ejb
+@dirrm %%T%%/demo/news-app/news-ejb-source/com/evermind
+@dirrm %%T%%/demo/news-app/news-ejb-source/com
+@dirrm %%T%%/demo/news-app/news-ejb-source/META-INF
+@dirrm %%T%%/demo/news-app/news-ejb-source
+@dirrm %%T%%/demo/news-app/news-client-source/com/evermind/ejb
+@dirrm %%T%%/demo/news-app/news-client-source/com/evermind
+@dirrm %%T%%/demo/news-app/news-client-source/com
+@dirrm %%T%%/demo/news-app/news-client-source/META-INF
+@dirrm %%T%%/demo/news-app/news-client-source
+@dirrm %%T%%/demo/news-app/news-web/admin
+@dirrm %%T%%/demo/news-app/news-web/WEB-INF/classes
+@dirrm %%T%%/demo/news-app/news-web/WEB-INF/lib
+@dirrm %%T%%/demo/news-app/news-web/WEB-INF
+@dirrm %%T%%/demo/news-app/news-web
+@dirrm %%T%%/demo/news-app/META-INF
+@dirrm %%T%%/demo/news-app
+@dirrm %%T%%/demo/rmi
+@dirrm %%T%%/demo/ssl
+@dirrm %%T%%/demo
+@dirrm %%T%%/lib
+@dirrm %%T%%/log
+@dirrm %%T%%/persistence/ejb
+@dirrm %%T%%/persistence
+@dirrm %%T%%
