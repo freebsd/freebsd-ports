@@ -1,0 +1,136 @@
+--- ndb/src/kernel/vm/ArrayPool.hpp.orig	2004-07-27 01:09:09 -07:00
++++ ndb/src/kernel/vm/ArrayPool.hpp	2004-07-27 01:09:09 -07:00
+@@ -795,8 +795,8 @@
+ void 
+ UnsafeArrayPool<T>::getPtrForce(Ptr<T> & ptr){
+   Uint32 i = ptr.i;
+-  if(i < size){
+-    ptr.p = &theArray[i];
++  if(i < this->size){
++    ptr.p = &this->theArray[i];
+   } else {
+     ErrorReporter::handleAssert("UnsafeArrayPool<T>::getPtr", 
+ 				__FILE__, __LINE__);
+@@ -808,8 +808,8 @@
+ void 
+ UnsafeArrayPool<T>::getPtrForce(ConstPtr<T> & ptr) const{
+   Uint32 i = ptr.i;
+-  if(i < size){
+-    ptr.p = &theArray[i];
++  if(i < this->size){
++    ptr.p = &this->theArray[i];
+   } else {
+     ErrorReporter::handleAssert("UnsafeArrayPool<T>::getPtr", 
+ 				__FILE__, __LINE__);
+@@ -820,8 +820,8 @@
+ inline
+ T * 
+ UnsafeArrayPool<T>::getPtrForce(Uint32 i){
+-  if(i < size){
+-    return &theArray[i];
++  if(i < this->size){
++    return &this->theArray[i];
+   } else {
+     ErrorReporter::handleAssert("UnsafeArrayPool<T>::getPtr", 
+ 				__FILE__, __LINE__);
+@@ -833,8 +833,8 @@
+ inline
+ const T * 
+ UnsafeArrayPool<T>::getConstPtrForce(Uint32 i) const {
+-  if(i < size){
+-    return &theArray[i];
++  if(i < this->size){
++    return &this->theArray[i];
+   } else {
+     ErrorReporter::handleAssert("UnsafeArrayPool<T>::getPtr",
+ 				__FILE__, __LINE__);
+@@ -847,8 +847,8 @@
+ void 
+ UnsafeArrayPool<T>::getPtrForce(Ptr<T> & ptr, Uint32 i){
+   ptr.i = i;
+-  if(i < size){
+-    ptr.p = &theArray[i];
++  if(i < this->size){
++    ptr.p = &this->theArray[i];
+     return ;
+   } else {
+     ErrorReporter::handleAssert("UnsafeArrayPool<T>::getPtr", 
+@@ -861,8 +861,8 @@
+ void 
+ UnsafeArrayPool<T>::getPtrForce(ConstPtr<T> & ptr, Uint32 i) const{
+   ptr.i = i;
+-  if(i < size){
+-    ptr.p = &theArray[i];
++  if(i < this->size){
++    ptr.p = &this->theArray[i];
+     return ;
+   } else {
+     ErrorReporter::handleAssert("UnsafeArrayPool<T>::getPtr", 
+diff -Nru a/ndb/src/kernel/vm/DLFifoList.hpp b/ndb/src/kernel/vm/DLFifoList.hpp
+--- ndb/src/kernel/vm/DLFifoList.hpp.orig	2004-07-27 01:09:09 -07:00
++++ ndb/src/kernel/vm/DLFifoList.hpp	2004-07-27 01:09:09 -07:00
+@@ -153,11 +153,11 @@
+   LocalDLFifoList(ArrayPool<T> & thePool, typename DLFifoList<T>::Head & _src)
+     : DLFifoList<T>(thePool), src(_src)
+   {
+-    head = src;
++    this->head = src;
+   }
+   
+   ~LocalDLFifoList(){
+-    src = head;
++    src = this->head;
+   }
+ private:
+   typename DLFifoList<T>::Head & src;
+diff -Nru a/ndb/src/kernel/vm/DLList.hpp b/ndb/src/kernel/vm/DLList.hpp
+--- ndb/src/kernel/vm/DLList.hpp.orig	2004-07-27 01:09:09 -07:00
++++ ndb/src/kernel/vm/DLList.hpp	2004-07-27 01:09:09 -07:00
+@@ -169,11 +169,11 @@
+   LocalDLList(ArrayPool<T> & thePool, typename DLList<T>::Head & _src)
+     : DLList<T>(thePool), src(_src)
+   {
+-    head = src;
++    this->head = src;
+   }
+   
+   ~LocalDLList(){
+-    src = head;
++    src = this->head;
+   }
+ private:
+   typename DLList<T>::Head & src;
+diff -Nru a/ndb/src/kernel/vm/DataBuffer.hpp b/ndb/src/kernel/vm/DataBuffer.hpp
+--- ndb/src/kernel/vm/DataBuffer.hpp.orig	2004-07-27 01:09:09 -07:00
++++ ndb/src/kernel/vm/DataBuffer.hpp	2004-07-27 01:09:09 -07:00
+@@ -174,11 +174,11 @@
+ 		  typename DataBuffer<sz>::Head & _src)
+     : DataBuffer<sz>(thePool), src(_src)
+   {
+-    head = src;
++    this->head = src;
+   }
+   
+   ~LocalDataBuffer(){
+-    src = head;
++    src = this->head;
+   }
+ private:
+   typename DataBuffer<sz>::Head & src;
+diff -Nru a/ndb/src/kernel/vm/SLList.hpp b/ndb/src/kernel/vm/SLList.hpp
+--- ndb/src/kernel/vm/SLList.hpp.orig	2004-07-27 01:09:09 -07:00
++++ ndb/src/kernel/vm/SLList.hpp	2004-07-27 01:09:09 -07:00
+@@ -137,11 +137,11 @@
+   LocalSLList(ArrayPool<T> & thePool, typename SLList<T>::Head & _src)
+     : SLList<T>(thePool), src(_src)
+   {
+-    head = src;
++    this->head = src;
+   }
+   
+   ~LocalSLList(){
+-    src = head;
++    src = this->head;
+   }
+ private:
+   typename SLList<T>::Head & src;
