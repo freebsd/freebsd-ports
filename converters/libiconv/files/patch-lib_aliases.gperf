@@ -1,5 +1,5 @@
---- lib/aliases.gperf.orig	Mon Jun 25 08:39:41 2001
-+++ lib/aliases.gperf	Mon Apr 29 11:23:40 2002
+--- lib/aliases.gperf.orig	Mon Jun 25 21:39:41 2001
++++ lib/aliases.gperf	Sun May 19 21:08:32 2002
 @@ -42,6 +42,7 @@
  JAVA, ei_java
  ISO-8859-1, ei_iso8859_1
@@ -105,3 +105,22 @@
  ISO_8859-16:2000, ei_iso8859_16
  ISO-IR-226, ei_iso8859_16
  KOI8-R, ei_koi8_r
+@@ -251,12 +265,12 @@
+ CHINESE, ei_gb2312
+ ISO-IR-165, ei_isoir165
+ CN-GB-ISOIR165, ei_isoir165
+-KSC_5601, ei_ksc5601
+-KS_C_5601-1987, ei_ksc5601
+-KS_C_5601-1989, ei_ksc5601
+-ISO-IR-149, ei_ksc5601
+-CSKSC56011987, ei_ksc5601
+-KOREAN, ei_ksc5601
++KSC_5601, ei_euc_kr
++KS_C_5601-1987, ei_euc_kr
++KS_C_5601-1989, ei_euc_kr
++ISO-IR-149, ei_euc_kr
++CSKSC56011987, ei_euc_kr
++KOREAN, ei_euc_kr
+ EUC-JP, ei_euc_jp
+ EUCJP, ei_euc_jp
+ EXTENDED_UNIX_CODE_PACKED_FORMAT_FOR_JAPANESE, ei_euc_jp
