@@ -1,4 +1,4 @@
-lib/libqt.so.0.98
+lib/libqt.so.1.0
 @exec /sbin/ldconfig -m %B
 man/man1/moc.1.gz
 man/man3/qaccel.3qt.gz
