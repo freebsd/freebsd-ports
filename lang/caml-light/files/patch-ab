@@ -1,0 +1,71 @@
+--- contrib/Makefile--	Mon Dec  1 23:47:01 1997
++++ contrib/Makefile	Mon Jul 27 12:27:01 1998
+@@ -5,7 +5,7 @@
+ # Remember that "libunix" is required for
+ # "debugger", "libgraph", "camltk", "camltk4", and "search_isos".
+ PACKAGES=libunix libgraph debugger libnum libstr mletags \
+-  camlmode lorder profiler camltk4 camlsearch
++  camlmode lorder profiler camlsearch
+ # caml-tex
+ # caml-latex2e
+ # camltk
+@@ -22,7 +22,7 @@
+ # and /usr/ccs/lib/cpp under Solaris.
+ # The -P option suppresses the generation of "# linenum" directives,
+ # which are not understood by Caml Light.
+-CPP=/lib/cpp -P
++CPP=/usr/bin/cpp -P
+ 
+ # Test to see whether ranlib exists on the machine
+ RANLIBTEST=test -f /usr/bin/ranlib -o -f /bin/ranlib
+@@ -31,26 +31,26 @@
+ RANLIB=ranlib
+ 
+ # The directory where public executables will be installed
+-BINDIR=/usr/local/bin
++BINDIR=${PREFIX}/bin
+ 
+ # The directory where library files will be installed
+-LIBDIR=/usr/local/lib/caml-light
++LIBDIR=${PREFIX}/lib/caml-light
+ 
+ # The manual section where the manual pages will be installed
+ MANEXT=1
+ 
+ # The directory where the manual pages will be installed
+-MANDIR=/usr/local/man/man$(MANEXT)
++MANDIR=${PREFIX}/man/man$(MANEXT)
+ 
+ # The path to the include directory containing the X11/*.h includes
+ # (usually /usr/include; for SunOS with OpenLook, /usr/openwin/include)
+ # Needed for the "libgraph" and "camltk" packages.
+-X11_INCLUDES=/usr/X11R6/include
++X11_INCLUDES=${X11BASE}/include
+ 
+ # The path to the directory containing the X11 libraries.
+ # (usually /usr/lib; for SunOS with OpenLook, /usr/openwin/lib)
+ # Needed for the "libgraph" and "camltk" packages.
+-X11_LIB=/usr/X11R6/lib
++X11_LIB=${X11BASE}/lib
+ 
+ # Name of the target architecture.
+ # Used only for the libnum library (arbitrary-precision arithmetic), to
+@@ -62,15 +62,15 @@
+ # See the file libnum/README for more explanations.
+ # If you don't know, leave BIGNUM_ARCH=C, which selects a portable
+ # C implementation of these routines.
+-BIGNUM_ARCH=C
++BIGNUM_ARCH=pentium
+ 
+ # Name of the directory where LaTeX style files should be installed.
+ # Needed only for the "caml-tex" and "caml-latex2e" packages.
+-TEXINPUTDIR=/usr/lib/texmf/tex/latex/etc
++TEXINPUTDIR=${PREFIX}/lib/texmf/tex/latex/etc
+ 
+ # Name of the directory where Emacs Lisp files should be installed.
+ # Needed only for the "camlmode" package.
+-EMACSLISPDIR=/usr/lib/emacs/site-lisp
++EMACSLISPDIR=${PREFIX}/share/emacs/site-lisp
+ 
+ # Name of the directories where the tcl.h and tk.h includes can be found.
+ # Needed only for the "camltk" package.
