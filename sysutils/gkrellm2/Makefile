@@ -34,8 +34,6 @@ DOCS=		COPYRIGHT README Themes.html
 
 .if ${OSVERSION} < 300000
 ALL_TARGET=	freebsd2
-.elif ${OSVERSION} < 400000
-ALL_TARGET=	freebsd3
 .else
 ALL_TARGET=	freebsd
 .endif
