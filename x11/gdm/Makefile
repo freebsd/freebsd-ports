@@ -49,15 +49,9 @@ post-patch:
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 post-install:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${CHOWN} -R gdm:gdm ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
-.else
-	@${CHOWN} -R 92:92 ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
-.endif
-	@${CHMOD} 0750 ${PREFIX}/share/gnome/gdm
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
