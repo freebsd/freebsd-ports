@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.5.p1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/pre/ \
 		ftp://samba.anu.edu.au/pub/samba/pre/ \
@@ -159,14 +160,15 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/audit.so ${SAMBA_VFSDIR}
 .endif
 .if defined(WITH_RECYCLE)
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle.so ${SAMBA_VFSDIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle/recycle.so ${SAMBA_VFSDIR}
 .endif
 .endif
 	${MKDIR} ${PREFIX}/share/examples/samba
 	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
-	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
-	@for file in Makefile.orig audit.o audit.so recycle.c.orig recycle.o recycle.so skel.o skel.so ; do \
+#	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
+	${FIND} ${PREFIX}/share/examples/samba/VFS -type d -name ".libs" | ${XARGS} ${RM} -r
+	@for file in audit.o audit.so recycle/recycle.o recycle/recycle.so skel.o skel.so ; do \
 		${RM} ${PREFIX}/share/examples/samba/VFS/$${file} ; \
 	done
 .endif
