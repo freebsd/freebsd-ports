@@ -21,6 +21,12 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502103
+BROKEN=		"Does not install on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -33,4 +39,4 @@ post-install:
 	${CHMOD} 664 /var/games/${PORTNAME}/ltris.hscr
 	${CHOWN} root:games /var/games/${PORTNAME}/ltris.hscr
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
