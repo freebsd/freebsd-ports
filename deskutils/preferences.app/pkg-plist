@@ -25,7 +25,6 @@ System/Library/Libraries/libPrefsModule.so.%%LIBVERSION%%
 System/Library/Frameworks/PrefsModule.framework/Resources
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Headers/PrefsModule.h
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info-gnustep.plist
-%%GNUSTEP_STABLE%%System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info.plist
 System/Library/Frameworks/PrefsModule.framework/Versions/A/PrefsModule
 System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so
 System/Library/Frameworks/PrefsModule.framework/Versions/A/libPrefsModule.so.%%MAJORLIBVERSION%%
