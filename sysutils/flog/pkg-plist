@@ -1,3 +1,1 @@
 bin/flog
-%%PORTDOCS%%share/doc/flog/README
-%%PORTDOCS%%@dirrm share/doc/flog
