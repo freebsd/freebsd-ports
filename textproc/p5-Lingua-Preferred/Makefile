@@ -14,7 +14,7 @@ PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		svenasse@polaris.ca
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/${PERL_VER}/Log/TraceMessages.pm:${PORTSDIR}/devel/p5-Log-TraceMessages
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Log/TraceMessages.pm:${PORTSDIR}/devel/p5-Log-TraceMessages
 
 PERL_CONFIGURE=		yes
 
