@@ -7,6 +7,7 @@
 
 PORTNAME=	qpage
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
@@ -15,8 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SNPP client/server for sending messages to an alphanumeric pager
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		qpage.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
+		${WRKSRC}/qpage.man \
+		${WRKSRC}/config.input \
+		${WRKSRC}/config.h.in
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/qpage.sh ]; then \

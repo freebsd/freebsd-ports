@@ -1,0 +1,11 @@
+--- qpage.man.orig	Sat Jan 10 00:44:16 2004
++++ qpage.man	Sat Jan 10 00:44:47 2004
+@@ -867,7 +867,7 @@
+ must be able to detect when it's safe to send dial commands to the modem.
+ .LP
+ .SH FILES
+-/etc/qpage.cf
++%%PREFIX%%/etc/qpage.cf
+ .SH SEE ALSO
+ .B RFC-1861
+ .SH KNOWN BUGS

@@ -1,0 +1,11 @@
+--- config.h.in.orig	Sat Jan 10 00:42:55 2004
++++ config.h.in	Sat Jan 10 00:43:14 2004
+@@ -17,7 +17,7 @@
+ #undef SNPP_SERVER_FILE
+ 
+ /* Define as the location of the qpage configuration file.  */
+-#define QPAGE_CONFIG "/etc/qpage.cf"
++#define QPAGE_CONFIG "%%PREFIX%%/etc/qpage.cf"
+ 
+ /* Define as the location of the lock directory.  */
+ #undef DEFAULT_LOCKDIR
