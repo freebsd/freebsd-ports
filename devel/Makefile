@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.167 1999/04/03 01:20:55 steve Exp $
+# $Id: Makefile,v 1.168 1999/04/03 01:23:47 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -9,6 +9,7 @@
     SUBDIR += a2dev
     SUBDIR += amulet
     SUBDIR += asl
+    SUBDIR += astyle
     SUBDIR += autoconf
     SUBDIR += automake
     SUBDIR += bcc
