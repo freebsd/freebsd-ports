@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/XML/Writer.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Writer/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Writer
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/XML 2>/dev/null || true

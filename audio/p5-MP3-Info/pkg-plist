@@ -2,3 +2,6 @@ lib/perl5/site_perl/%%PERL_VER%%/MP3/Info.pm
 lib/perl5/site_perl/%%PERL_VER%%/MPEG/MP3Info.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MP3/Info/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MP3/Info
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MP3 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MPEG 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MP3 2>/dev/null || true

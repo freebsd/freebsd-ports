@@ -8,3 +8,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Convert/ASN1/IO.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/ASN1/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/ASN1
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Convert/ASN1
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Convert 2>/dev/null || true

@@ -1,3 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/B/Graph.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/Graph/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/B/Graph
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/B 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/B 2>/dev/null || true
