@@ -3,12 +3,12 @@
 # Date created:		July 8, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
+# $Id: Makefile,v 1.5 1998/06/27 05:19:44 asami Exp $
 #
 
 DISTNAME=	linuxdoc-1.1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
+MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
