@@ -1,0 +1,11 @@
+--- src/oops.cfg.in.orig	Thu Sep 14 15:35:50 2000
++++ src/oops.cfg.in	Thu Sep 14 15:38:56 2000
+@@ -452,7 +452,7 @@
+ 
+ module oopsctl {
+ 	# path to oopsctl unix socket
+-	socket_path	@OOPS_LOCALSTATEDIR@/oopsctl
++	socket_path	/tmp/oopsctl
+ 	# time to auto-refresh page (seconds)
+         html_refresh    300
+ }
