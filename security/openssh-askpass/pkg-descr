@@ -1,0 +1,8 @@
+ssh-askpass is a small applet intended for use in conjunction with
+OpenSSH. It pops up a window and requests the user input their SSH
+passphrase. It is not designed to be executed directly, but to be called
+by OpenSSH's ssh-add(1) utility. If no controlling terminal is found (e.g.
+ssh-add is called from the .xinitrc as part of the X login process), and
+DISPLAY is set, ssh-add will spawn ssh-askpass to request the password.
+
+WWW: http://www.openssh.com/

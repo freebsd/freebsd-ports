@@ -45,6 +45,7 @@
     SUBDIR += nmap
     SUBDIR += nmapfe
     SUBDIR += openssh
+    SUBDIR += openssh-askpass
     SUBDIR += openssl
     SUBDIR += p5-Authen-PAM
     SUBDIR += p5-Authen-Radius
