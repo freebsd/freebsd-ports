@@ -3,7 +3,7 @@
 # Date created:		July 8, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/09 04:18:01 jfieber Exp $
+# $Id: Makefile,v 1.2 1997/07/09 11:23:09 jfieber Exp $
 #
 
 DISTNAME=	linuxdoc-1.0
@@ -15,11 +15,11 @@ MAINTAINER=	jfieber@FreeBSD.ORG
 RUN_DEPENDS=    ${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
 NO_MTREE=       yes
-NO_EXTRACT=     yes
+EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
-NO_WRKDIR=      yes
+NO_WRKSUBDIR=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/linuxdoc
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
