@@ -506,6 +506,7 @@
     SUBDIR += p5-Kwiki-RecentChangesRSS
     SUBDIR += p5-Kwiki-Revisions
     SUBDIR += p5-Kwiki-Search
+    SUBDIR += p5-Kwiki-Theme-ColumnLayout
     SUBDIR += p5-Kwiki-UserName
     SUBDIR += p5-Kwiki-UserPreferences
     SUBDIR += p5-Kwiki-plugins

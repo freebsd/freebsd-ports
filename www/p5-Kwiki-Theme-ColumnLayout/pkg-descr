@@ -1,0 +1,8 @@
+Kwiki::Theme::ColumnLayout - 
+
+Kwiki Theme with two/three column layout.
+
+This module provide a simple column layout for your kwiki site.
+
+WWW: http://search.cpan.org/dist/Kwiki-Theme-ColumnLayout/
+Author:	GUGOD <gugod at cpan.org>
