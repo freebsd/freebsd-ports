@@ -27,8 +27,8 @@ CONFIGURE_ENV=	TCL_TK_INCLUDE_DIR="${PREFIX}/include/tcl8.3:${PREFIX}/include/tk
 		TK_LIBRARY=${PREFIX}/lib/tk8.3 \
 		LD_TCL_TK_LIBS="-ltk83 -ltcl83"
 
-MAN1=		CIDRAdvisor.1 aoe.1 prpath.1 RtConfig.1 peval.1 \
-		roe.1 rpslcheck.1 prtraceroute.1
+MAN1=		CIDRAdvisor.1 Errors.1 RtConfig.1 aoe.1 peval.1 prpath.1 \
+		prtraceroute.1 roe.1 rpslcheck.1
 MAN3=		librpsl.3
 
 .include <bsd.port.pre.mk>
