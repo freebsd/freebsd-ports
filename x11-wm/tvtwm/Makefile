@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	window_managers
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	gpalmer@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twm with a virtual desktop
 
 WRKSRC=		${WRKDIR}/tvtwm
