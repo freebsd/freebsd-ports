@@ -3,7 +3,7 @@
 # Date created:		Mar 28, 1998
 # Whom:			dchapes@ddm.on.ca
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 11:13:24 dburr Exp $
+# $Id: Makefile,v 1.2 1998/07/13 01:25:02 dburr Exp $
 
 DISTNAME=	vice-0.14.1
 CATEGORIES=	emulators
@@ -24,7 +24,9 @@ MANPAGES=	vice c1541 petcat
 MAN1=		vice.1 c1541.1 petcat.1
 
 pre-build:
-	${ECHO} ${OSVER}
+	@${ECHO} "NOTE:  When compiling on FreeBSD some source files cause gcc to go over the"
+	@${ECHO} "default memory limits.  Either fix /etc/login.conf or temporaryily adjust"
+	@${ECHO} "the limits with your shells limit command (\"unlimit\" works in [t]csh)."
 
 pre-install:
 	${SED} -e "s,%VER%,`uname -r | ${SED} -e 's,-.*$$,,'`," < ${PKGDIR}/PLIST.in > ${PKGDIR}/PLIST
