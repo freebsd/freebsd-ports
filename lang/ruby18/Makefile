@@ -29,7 +29,7 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 .if defined(WITH_ONIGURUMA)
 ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
 ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
-ONIGURUMA_DISTFILE=		onigd20020325.tar.gz
+ONIGURUMA_DISTFILE=		onigd20020424.tar.gz
 .endif
 
 USE_BZIP2=	yes
@@ -95,7 +95,7 @@ post-extract:
 
 post-patch:
 .if defined(WITH_ONIGURUMA)
-	${CP} -f ${WRKDIR}/oniguruma/regex.[ch] ${WRKSRC}/
+	${CP} -f ${WRKDIR}/oniguruma/*.[ch] ${WRKSRC}/
 	cd ${WRKSRC}; ${PATCH} < ${WRKDIR}/oniguruma/re.c.172.patch
 .endif
 	${FIND} ${WRKSRC} -name '*.orig' -delete
