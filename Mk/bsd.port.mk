@@ -712,7 +712,7 @@ PKGDIR?=		${MASTERDIR}
 # Special macro for doing in-place file editing using regexps
 .if defined(USE_REINPLACE)
 REINPLACE_ARGS?=	-i.bak
-.if ${OSVERSION} <= 500033
+.if ${OSVERSION} < 460101 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500034 )
 BUILD_DEPENDS+=	${LOCALBASE}/bin/sed_inplace:${PORTSDIR}/textproc/sed_inplace
 REINPLACE_CMD?=	${LOCALBASE}/bin/sed_inplace ${REINPLACE_ARGS}
 .else
