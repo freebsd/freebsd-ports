@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sun Jun 24 08:15:31 2001
++++ src/Makefile.in	Thu Aug 23 15:52:25 2001
+@@ -73,7 +73,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-INCLUDES = -I$(top_srcdir)/src
++INCLUDES = -I%%LOCALBASE%%/include -I$(top_srcdir)/src
+ 
+ lib_LTLIBRARIES = libborzoi.la
+ 
+@@ -92,7 +92,7 @@
+ 
+ borzoi_SOURCES = test.cpp fips186_2.h
+ 
+-borzoi_LDADD = @BORZOI_LIBS@ -lntl
++borzoi_LDADD = @BORZOI_LIBS@ -lntl -L%%LOCALBASE%%/lib
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
+ LTLIBRARIES =  $(lib_LTLIBRARIES)

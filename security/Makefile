@@ -12,6 +12,7 @@
     SUBDIR += beecrypt
     SUBDIR += bfbtester
     SUBDIR += bjorb
+    SUBDIR += borzoi
     SUBDIR += bro
     SUBDIR += bugs
     SUBDIR += ca-roots
