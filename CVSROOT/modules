@@ -2395,7 +2395,6 @@ hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
 holyshout	ports/audio/holyshout
 honeyd		ports/net/honeyd
 hope		ports/lang/hope
-horde		ports/www/horde
 horde2		ports/www/horde2
 hotjava		ports/www/hotjava
 hotwayd		ports/mail/hotwayd
@@ -2560,7 +2559,6 @@ imlib2		ports/graphics/imlib2
 imlib2_loaders	ports/graphics/imlib2_loaders
 imlib3d		ports/graphics/imlib3d
 imm		ports/mbone/imm
-imp		ports/mail/imp
 imp3		ports/mail/imp3
 impress		ports/editors/impress
 imwheel		ports/x11/imwheel
