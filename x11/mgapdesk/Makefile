@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mgapdesk
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.7
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/powerdesk_1_3_0/
-DISTNAME=	${PORTNAME}-1_00-5beta
+MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/powerdesk_1_00_7/
+DISTNAME=	${PORTNAME}-1_00-7beta_src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nsayer@freebsd.org

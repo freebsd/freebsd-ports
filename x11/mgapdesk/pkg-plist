@@ -9,6 +9,7 @@ share/mgapdesk/pixmaps/ArrowShrinkV.xpm
 share/mgapdesk/pixmaps/ArrowUp.xpm
 share/mgapdesk/pixmaps/BoardWGear.xpm
 share/mgapdesk/pixmaps/DHClone.xpm
+share/mgapdesk/pixmaps/DHMergedDisplay.xpm
 share/mgapdesk/pixmaps/DHMultiDisplay.xpm
 share/mgapdesk/pixmaps/icon.xpm
 share/mgapdesk/pixmaps/invert.xpm
@@ -20,3 +21,4 @@ share/mgapdesk/pixmaps/planet.xpm
 share/mgapdesk/pixmaps/s1.xpm
 share/mgapdesk/pixmaps/s2.xpm
 share/mgapdesk/pixmaps/screen.xpm
+@dirrm share/mgapdesk/pixmaps
