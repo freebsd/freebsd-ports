@@ -17,7 +17,7 @@ DISTFILES=	${BIN_FILES} ${SBIN_FILES} ${MAN1:S/$/:man/}
 DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marshall@chezmarshall.com
 COMMENT=	Perforce client and server
 
 #
@@ -29,17 +29,19 @@ ARCH?= i386
 
 MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .if ${ARCH} == i386
-VERSION=	03.1
-REVISION=	3
+VERSION=	03.2
+REVISION=	0
 PLATFORM=	freebsd4
 BIN_FILES=	p4 p4web
 SBIN_FILES=	p4d p4ftpd p4p
+REL_NOTES=	http://www.perforce.com/perforce/doc.032/user/relnotes.txt
 .elif ${ARCH} == alpha
 VERSION=	99.1
 REVISION=	1
 PLATFORM=	freebsdaxp
 BIN_FILES=	p4
 SBIN_FILES=	p4d
+REL_NOTES=	http://www.perforce.com/perforce/doc.991/user/relnotes.txt
 .else
 IGNORE=		"Unsupported platform, sorry."
 .endif
@@ -69,6 +71,16 @@ PERFORCE_TARGET?=     perforce:1666
 pre-everything::
 	@${ECHO} "If the checksums fail, try doing 'make distclean'"
 	@${ECHO} "to force getting the latest binaries from Perforce."
+	@${ECHO} ""
+	@${ECHO} "Read the release notes for this release to determine"
+	@${ECHO} "how to migrate the database to the new version.  In"
+	@${ECHO} "most instances, it is done automatically.  However,"
+	@${ECHO} "sometimes it must be done manually."
+	@${ECHO} ""
+	@${ECHO} "The release notes for this version are at"
+	@${ECHO} ${REL_NOTES}
+	@${ECHO} ""
+	@${ECHO} "Checkpoint and backup your data before installing!"
 
 do-build:
 	${SED}	-e "s,@PERFORCE_ROOT@,${PERFORCE_ROOT},g" \
