@@ -1,32 +1,33 @@
 # New ports collection makefile for:	GNU emacs
-# Version required:	19.34b
+# Version required:	20.2
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.28 1997/05/20 10:25:09 asami Exp $
+# $Id: Makefile,v 1.29 1997/07/17 10:38:15 asami Exp $
 #
 
-DISTNAME=	emacs-19.34b
+DISTNAME=	emacs-20.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
+prefix=		${PREFIX}
+sharedstatedir=	${PREFIX}/share/com
 
+pre-build:
+	${RM} -rf ${WRKSRC}/info/*
 post-install:
-.for file in emacs-19.34 emacsclient etags ctags b2m
-	strip ${PREFIX}/bin/${file}
-.endfor
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
-.for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode
+.for info in ccmode cl dired-x ediff emacs forms gnus message mh-e \
+     sc vip viper
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor
 

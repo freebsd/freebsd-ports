@@ -1,0 +1,13 @@
+--- man/message.texi.orig	Mon Oct 13 19:20:17 1997
++++ man/message.texi	Mon Oct 13 19:21:06 1997
+@@ -11,6 +11,10 @@
+ @setchapternewpage odd
+ 
+ @ifinfo
++@dircategory The Emacs editor and associated tools
++@direntry
++* Message: (message).		Message, the Emacs message composition mode.
++@end direntry
+ 
+ This file documents Message, the Emacs message composition mode.
+ 
