@@ -1,5 +1,5 @@
 # New ports collection makefile for:	mod_dav (apache)
-# Version required:	0.9.12
+# Version required:	0.9.14
 # Date created:		Sun Oct 17, 1999
 # Whom:			patrick@mindstep.com
 #
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
 
 # This port will work with the following version of Apache and anything newer.
 APACHE_VERSION=	1.3.6
-DAV_VERSION=	0.9.12
+DAV_VERSION=	0.9.14
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
