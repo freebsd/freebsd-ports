@@ -23,7 +23,6 @@ www/data-dist/phpgroupware/addressbook/inc/export/Palm_PDB
 www/data-dist/phpgroupware/addressbook/inc/export/phpgw_LDIF
 www/data-dist/phpgroupware/addressbook/inc/export/phpgw_SQL
 www/data-dist/phpgroupware/addressbook/inc/functions.inc.php
-www/data-dist/phpgroupware/addressbook/inc/hook_about.inc.php
 www/data-dist/phpgroupware/addressbook/inc/hook_add_def_pref.inc.php
 www/data-dist/phpgroupware/addressbook/inc/hook_addressbook_add_def_acl.inc.php
 www/data-dist/phpgroupware/addressbook/inc/hook_admin.inc.php
@@ -122,7 +121,6 @@ www/data-dist/phpgroupware/admin/inc/class.html.inc.php
 www/data-dist/phpgroupware/admin/inc/class.soaccess_history.inc.php
 www/data-dist/phpgroupware/admin/inc/class.soaccounts.inc.php
 www/data-dist/phpgroupware/admin/inc/class.soapplications.inc.php
-www/data-dist/phpgroupware/admin/inc/class.socurrentsessions.inc.php
 www/data-dist/phpgroupware/admin/inc/class.solog.inc.php
 www/data-dist/phpgroupware/admin/inc/class.soserver.inc.php
 www/data-dist/phpgroupware/admin/inc/class.uiaccess_history.inc.php
@@ -385,10 +383,8 @@ www/data-dist/phpgroupware/bookmarks/templates/default/maintain.body.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/msie.quik-mark.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/ns.quik-mark.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/preference_acl.tpl
-www/data-dist/phpgroupware/bookmarks/templates/default/preference_acl_colspan.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/preference_acl_row.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/preference_colspan.tpl
-www/data-dist/phpgroupware/bookmarks/templates/default/preference_colspan_private.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/redirect_frames.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/redirect_frames_header.tpl
 www/data-dist/phpgroupware/bookmarks/templates/default/search.body.tpl
@@ -566,7 +562,6 @@ www/data-dist/phpgroupware/brewer/templates/idsociety/images/up.png
 www/data-dist/phpgroupware/brewer/view.php
 www/data-dist/phpgroupware/brewer/view_recipe.php
 www/data-dist/phpgroupware/brewer/yeasts.php
-www/data-dist/phpgroupware/calendar/accept_holiday.php
 www/data-dist/phpgroupware/calendar/doc/rfc2445.txt
 www/data-dist/phpgroupware/calendar/help/EN/add.php
 www/data-dist/phpgroupware/calendar/help/EN/calendar.php
@@ -616,8 +611,10 @@ www/data-dist/phpgroupware/calendar/inc/hook_home_year.inc.php
 www/data-dist/phpgroupware/calendar/inc/hook_manual.inc.php
 www/data-dist/phpgroupware/calendar/inc/hook_preferences.inc.php
 www/data-dist/phpgroupware/calendar/index.php
+www/data-dist/phpgroupware/calendar/phpgroupware.org/accept_holiday.php
 www/data-dist/phpgroupware/calendar/preferences.php
 www/data-dist/phpgroupware/calendar/setup/holidays.CA
+www/data-dist/phpgroupware/calendar/setup/holidays.DE
 www/data-dist/phpgroupware/calendar/setup/holidays.FI
 www/data-dist/phpgroupware/calendar/setup/holidays.IE
 www/data-dist/phpgroupware/calendar/setup/holidays.JP
@@ -644,7 +641,6 @@ www/data-dist/phpgroupware/calendar/setup/setup.inc.php
 www/data-dist/phpgroupware/calendar/setup/tables_baseline.inc.php
 www/data-dist/phpgroupware/calendar/setup/tables_current.inc.php
 www/data-dist/phpgroupware/calendar/setup/tables_update.inc.php
-www/data-dist/phpgroupware/calendar/submitlocale.php
 www/data-dist/phpgroupware/calendar/templates/default/alarm.tpl
 www/data-dist/phpgroupware/calendar/templates/default/config.tpl
 www/data-dist/phpgroupware/calendar/templates/default/csv_import.tpl
@@ -768,12 +764,9 @@ www/data-dist/phpgroupware/calendar/templates/justweb/header.inc.php
 www/data-dist/phpgroupware/calendar/templates/verdilak/header.inc.php
 www/data-dist/phpgroupware/chat/body.php
 www/data-dist/phpgroupware/chat/channels.php
-www/data-dist/phpgroupware/chat/create_tables.mysql
-www/data-dist/phpgroupware/chat/create_tables.pgsql
 www/data-dist/phpgroupware/chat/images/navbar.gif
 www/data-dist/phpgroupware/chat/images/navbar.png
 www/data-dist/phpgroupware/chat/index.php
-www/data-dist/phpgroupware/chat/lang.sql
 www/data-dist/phpgroupware/chat/load.php
 www/data-dist/phpgroupware/chat/messages.php
 www/data-dist/phpgroupware/chat/navbar.php
@@ -853,6 +846,7 @@ www/data-dist/phpgroupware/chora/setup/default_records.inc.php
 www/data-dist/phpgroupware/chora/setup/phpgw_de.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_en.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_fi.lang
+www/data-dist/phpgroupware/chora/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/chora/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/chora/setup/setup.inc.php
 www/data-dist/phpgroupware/chora/setup/tables_current.inc.php
@@ -961,6 +955,7 @@ www/data-dist/phpgroupware/comic/index.php
 www/data-dist/phpgroupware/comic/preferences.php
 www/data-dist/phpgroupware/comic/setup/default_records.inc.php
 www/data-dist/phpgroupware/comic/setup/phpgw_da.lang
+www/data-dist/phpgroupware/comic/setup/phpgw_de.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_en.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_fr.lang
@@ -968,9 +963,6 @@ www/data-dist/phpgroupware/comic/setup/phpgw_it.lang
 www/data-dist/phpgroupware/comic/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/comic/setup/setup.inc.php
 www/data-dist/phpgroupware/comic/setup/tables_current.inc.php
-www/data-dist/phpgroupware/comic/sql/comic_data.sql
-www/data-dist/phpgroupware/comic/sql/create_tables.mysql
-www/data-dist/phpgroupware/comic/sql/destroy_tables.mysql
 www/data-dist/phpgroupware/comic/templates/default/admin.common.tpl
 www/data-dist/phpgroupware/comic/templates/default/admin.datalist.tpl
 www/data-dist/phpgroupware/comic/templates/default/admin.options.tpl
@@ -1000,71 +992,17 @@ www/data-dist/phpgroupware/comic/templates/default/table.comics.tpl
 www/data-dist/phpgroupware/comic/templates/default/table.front.tpl
 www/data-dist/phpgroupware/comic/templates/default/table.left.tpl
 www/data-dist/phpgroupware/comic/templates/default/table.right.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/admin.common.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/admin.options.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/cell.images.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/form.comics.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/format00.comic.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/format01.comic.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/images/format00.gif
-www/data-dist/phpgroupware/comic/templates/idsociety/images/format00.png
-www/data-dist/phpgroupware/comic/templates/idsociety/images/format01.gif
-www/data-dist/phpgroupware/comic/templates/idsociety/images/format01.png
 www/data-dist/phpgroupware/comic/templates/idsociety/images/navbar-over.gif
 www/data-dist/phpgroupware/comic/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/comic/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/comic/templates/idsociety/images/navbar.png
-www/data-dist/phpgroupware/comic/templates/idsociety/matchs.comic.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/message.common.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/option.common.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/prefs.body.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/prefs.common.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/question.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/row.common.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/row.images.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/table.center.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/table.front.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/table.left.tpl
-www/data-dist/phpgroupware/comic/templates/idsociety/table.right.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/admin.common.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/admin.datalist.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/admin.options.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/cell.images.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/form.comics.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/format00.comic.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/format01.comic.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/images/format00.gif
-www/data-dist/phpgroupware/comic/templates/verdilak/images/format00.png
-www/data-dist/phpgroupware/comic/templates/verdilak/images/format01.gif
-www/data-dist/phpgroupware/comic/templates/verdilak/images/format01.png
 www/data-dist/phpgroupware/comic/templates/verdilak/images/navbar.gif
 www/data-dist/phpgroupware/comic/templates/verdilak/images/navbar.png
-www/data-dist/phpgroupware/comic/templates/verdilak/matchs.comic.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/message.common.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/option.common.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/prefs.body.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/prefs.common.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/question.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/row.comics.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/row.common.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/row.images.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/table.center.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/table.comics.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/table.front.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/table.left.tpl
-www/data-dist/phpgroupware/comic/templates/verdilak/table.right.tpl
 www/data-dist/phpgroupware/developer_tools/doc/copyright.gpl
-www/data-dist/phpgroupware/developer_tools/inc/class.bochangelogs.inc.php
 www/data-dist/phpgroupware/developer_tools/inc/class.bolangfile.inc.php
-www/data-dist/phpgroupware/developer_tools/inc/class.bosf_project_tracker.inc.php
-www/data-dist/phpgroupware/developer_tools/inc/class.sochangelogs.inc.php
 www/data-dist/phpgroupware/developer_tools/inc/class.solangfile.inc.php
-www/data-dist/phpgroupware/developer_tools/inc/class.sosf_project_tracker.inc.php
-www/data-dist/phpgroupware/developer_tools/inc/class.uichangelogs.inc.php
 www/data-dist/phpgroupware/developer_tools/inc/class.uilangfile.inc.php
-www/data-dist/phpgroupware/developer_tools/inc/class.uisf_project_tracker.inc.php
 www/data-dist/phpgroupware/developer_tools/inc/header.inc.php
-www/data-dist/phpgroupware/developer_tools/inc/hook_preferences.inc.php
 www/data-dist/phpgroupware/developer_tools/index.php
 www/data-dist/phpgroupware/developer_tools/perl/lang_extract.pl
 www/data-dist/phpgroupware/developer_tools/setup/phpgw_de.lang
@@ -1076,25 +1014,13 @@ www/data-dist/phpgroupware/developer_tools/setup/phpgw_ja.lang
 www/data-dist/phpgroupware/developer_tools/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/developer_tools/setup/phpgw_pt.lang
 www/data-dist/phpgroupware/developer_tools/setup/setup.inc.php
-www/data-dist/phpgroupware/developer_tools/setup/tables_current.inc.php
 www/data-dist/phpgroupware/developer_tools/templates/default/addphrase.tpl
 www/data-dist/phpgroupware/developer_tools/templates/default/applications.tpl
-www/data-dist/phpgroupware/developer_tools/templates/default/changelog_form.tpl
-www/data-dist/phpgroupware/developer_tools/templates/default/changelog_header.tpl
 www/data-dist/phpgroupware/developer_tools/templates/default/header.tpl
-www/data-dist/phpgroupware/developer_tools/templates/default/images/cvs16b.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/docman16b.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/ftp16b.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/mail16b.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/medbutton.png
 www/data-dist/phpgroupware/developer_tools/templates/default/images/navbar.gif
 www/data-dist/phpgroupware/developer_tools/templates/default/images/navbar.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/notes16.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/survey16b.png
-www/data-dist/phpgroupware/developer_tools/templates/default/images/taskman16b.png
 www/data-dist/phpgroupware/developer_tools/templates/default/langfile.tpl
 www/data-dist/phpgroupware/developer_tools/templates/default/langmissing.tpl
-www/data-dist/phpgroupware/developer_tools/templates/default/sf_project.tpl
 www/data-dist/phpgroupware/developer_tools/templates/idsociety/images/navbar-over.gif
 www/data-dist/phpgroupware/developer_tools/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/developer_tools/templates/idsociety/images/navbar.gif
@@ -1802,89 +1728,13 @@ www/data-dist/phpgroupware/email/templates/idsociety/images/tree_vertline.gif
 www/data-dist/phpgroupware/email/templates/idsociety/images/tree_vertline.png
 www/data-dist/phpgroupware/email/test.php
 www/data-dist/phpgroupware/email/view_image.php
-www/data-dist/phpgroupware/felamimail/AUTHORS.Squirrelmail
 www/data-dist/phpgroupware/felamimail/COPYING
 www/data-dist/phpgroupware/felamimail/Changelog
 www/data-dist/phpgroupware/felamimail/README
-www/data-dist/phpgroupware/felamimail/README.Squirrelmail
+www/data-dist/phpgroupware/felamimail/TODO
 www/data-dist/phpgroupware/felamimail/addressbook.php
-www/data-dist/phpgroupware/felamimail/config/config.php
-www/data-dist/phpgroupware/felamimail/download.php
-www/data-dist/phpgroupware/felamimail/folders.php
-www/data-dist/phpgroupware/felamimail/folders_create.php
-www/data-dist/phpgroupware/felamimail/folders_delete.php
-www/data-dist/phpgroupware/felamimail/folders_rename_do.php
-www/data-dist/phpgroupware/felamimail/folders_rename_getname.php
-www/data-dist/phpgroupware/felamimail/folders_subscribe.php
-www/data-dist/phpgroupware/felamimail/help/EN/add.php
 www/data-dist/phpgroupware/felamimail/help/EN/felamimail.php
-www/data-dist/phpgroupware/felamimail/help/EN/other.php
-www/data-dist/phpgroupware/felamimail/help/ca/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/options.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/ca/search.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/options.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/cs/search.hlp
-www/data-dist/phpgroupware/felamimail/help/en/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/en/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/en/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/en/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/en/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/en/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/en/options.hlp
-www/data-dist/phpgroupware/felamimail/help/en/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/en/search.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/options.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/fr/search.hlp
 www/data-dist/phpgroupware/felamimail/help/index.php
-www/data-dist/phpgroupware/felamimail/help/ko/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/options.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/ko/search.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/options.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/pl/search.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/FAQ.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/addresses.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/basic.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/compose.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/folders.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/main_folder.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/options.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/read_mail.hlp
-www/data-dist/phpgroupware/felamimail/help/ru/search.hlp
-www/data-dist/phpgroupware/felamimail/inc/array.php
-www/data-dist/phpgroupware/felamimail/inc/auth.php
 www/data-dist/phpgroupware/felamimail/inc/class.bocaching.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.bocompose.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.bofelamimail.inc.php
@@ -1895,45 +1745,21 @@ www/data-dist/phpgroupware/felamimail/inc/class.sieve.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.smtp.php
 www/data-dist/phpgroupware/felamimail/inc/class.socaching.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.sofelamimail.inc.php
+www/data-dist/phpgroupware/felamimail/inc/class.sofilter.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.transformdate.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.uicompose.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.uidisplay.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.uifelamimail.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.uifilter.inc.php
+www/data-dist/phpgroupware/felamimail/inc/class.uipreferences.inc.php
 www/data-dist/phpgroupware/felamimail/inc/class.uisieve.inc.php
-www/data-dist/phpgroupware/felamimail/inc/date.php
-www/data-dist/phpgroupware/felamimail/inc/display_messages.php
-www/data-dist/phpgroupware/felamimail/inc/functions.inc.php
 www/data-dist/phpgroupware/felamimail/inc/hook_about.inc.php
 www/data-dist/phpgroupware/felamimail/inc/hook_admin.inc.php
 www/data-dist/phpgroupware/felamimail/inc/hook_home.inc.php
 www/data-dist/phpgroupware/felamimail/inc/hook_manual.inc.php
 www/data-dist/phpgroupware/felamimail/inc/hook_preferences.inc.php
 www/data-dist/phpgroupware/felamimail/inc/hook_settings.inc.php
-www/data-dist/phpgroupware/felamimail/inc/i18n.php
-www/data-dist/phpgroupware/felamimail/inc/imap.php
-www/data-dist/phpgroupware/felamimail/inc/imap_general.php
-www/data-dist/phpgroupware/felamimail/inc/imap_mailbox.php
-www/data-dist/phpgroupware/felamimail/inc/imap_messages.php
-www/data-dist/phpgroupware/felamimail/inc/imap_search.php
-www/data-dist/phpgroupware/felamimail/inc/mailbox_display.php
-www/data-dist/phpgroupware/felamimail/inc/mime.php
-www/data-dist/phpgroupware/felamimail/inc/page_header.php
-www/data-dist/phpgroupware/felamimail/inc/plugin.php
-www/data-dist/phpgroupware/felamimail/inc/prefs.php
-www/data-dist/phpgroupware/felamimail/inc/smtp.php
-www/data-dist/phpgroupware/felamimail/inc/strings.php
-www/data-dist/phpgroupware/felamimail/inc/translate_setup.php
-www/data-dist/phpgroupware/felamimail/inc/tree.php
-www/data-dist/phpgroupware/felamimail/inc/url_parser.php
 www/data-dist/phpgroupware/felamimail/index.php
-www/data-dist/phpgroupware/felamimail/preferences_display.php
-www/data-dist/phpgroupware/felamimail/preferences_email.php
-www/data-dist/phpgroupware/felamimail/preferences_folder.php
-www/data-dist/phpgroupware/felamimail/preferences_highlight.php
-www/data-dist/phpgroupware/felamimail/preferences_index_order.php
-www/data-dist/phpgroupware/felamimail/preferences_translate.php
-www/data-dist/phpgroupware/felamimail/read_body.php
 www/data-dist/phpgroupware/felamimail/setup/phpgw_de.lang
 www/data-dist/phpgroupware/felamimail/setup/phpgw_en.lang
 www/data-dist/phpgroupware/felamimail/setup/phpgw_fi.lang
@@ -1945,43 +1771,6 @@ www/data-dist/phpgroupware/felamimail/setup/setup.inc.php
 www/data-dist/phpgroupware/felamimail/setup/tables_baseline.inc.php
 www/data-dist/phpgroupware/felamimail/setup/tables_current.inc.php
 www/data-dist/phpgroupware/felamimail/setup/tables_update.inc.php
-www/data-dist/phpgroupware/felamimail/src/load_prefs.php
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/ChangeLog.txt
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/LICENSE
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/README
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/class.phpmailer.php
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/class.smtp.php
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/docs/extending.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/docs/faq.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/docs/timeoutfix.diff
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/allclasses-frame.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/deprecated-list.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/help-doc.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/index-all.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/index.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/overview-tree.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/packages.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/phpmailer.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/serialized-form.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc/stylesheet.css
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/ChangeLog.txt
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/LICENSE
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/README
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/class.phpmailer.php
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/class.smtp.php
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/docs/extending.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/docs/faq.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/docs/timeoutfix.diff
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/allclasses-frame.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/deprecated-list.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/help-doc.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/index-all.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/index.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/overview-tree.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/packages.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/phpmailer.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/serialized-form.html
-www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc/stylesheet.css
 www/data-dist/phpgroupware/felamimail/templates/default/addressbook.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/composeForm.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/config.tpl
@@ -2025,6 +1814,7 @@ www/data-dist/phpgroupware/felamimail/templates/default/preferences_display.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/preferences_email.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/preferences_folder.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/preferences_index_order.tpl
+www/data-dist/phpgroupware/felamimail/templates/default/preferences_manage_folder.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/preferences_translate.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/sieveForm.tpl
 www/data-dist/phpgroupware/felamimail/templates/default/view_main.tpl
@@ -2064,7 +1854,6 @@ www/data-dist/phpgroupware/felamimail/templates/idsociety/images/unread_flagged_
 www/data-dist/phpgroupware/felamimail/templates/idsociety/images/unread_small.png
 www/data-dist/phpgroupware/felamimail/templates/idsociety/images/up_pointer.gif
 www/data-dist/phpgroupware/felamimail/templates/idsociety/images/up_pointer.png
-www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/app.css
 www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/composeForm.tpl
 www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/images/attach.gif
 www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/images/down_pointer.gif
@@ -2107,9 +1896,6 @@ www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/images/unread_s
 www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/images/up_pointer.gif
 www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/images/up_pointer.png
 www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/mainscreen.tpl
-www/data-dist/phpgroupware/files/groups/BLANK
-www/data-dist/phpgroupware/files/home/BLANK
-www/data-dist/phpgroupware/files/users/BLANK
 www/data-dist/phpgroupware/forum/README
 www/data-dist/phpgroupware/forum/doc/CHANGELOG
 www/data-dist/phpgroupware/forum/doc/HISTORY
@@ -2395,7 +2181,6 @@ www/data-dist/phpgroupware/infolog/inc/class.sbox2.inc.php
 www/data-dist/phpgroupware/infolog/inc/class.soinfolog.inc.php
 www/data-dist/phpgroupware/infolog/inc/class.uiinfolog.inc.php
 www/data-dist/phpgroupware/infolog/inc/class.vfs.inc.php
-www/data-dist/phpgroupware/infolog/inc/hook_about.inc.php
 www/data-dist/phpgroupware/infolog/inc/hook_addressbook_view.inc.php
 www/data-dist/phpgroupware/infolog/inc/hook_admin.inc.php
 www/data-dist/phpgroupware/infolog/inc/hook_deleteaccount.inc.php
@@ -3130,6 +2915,9 @@ www/data-dist/phpgroupware/phonelog/inc/footer.inc.php
 www/data-dist/phpgroupware/phonelog/inc/functions.inc.php
 www/data-dist/phpgroupware/phonelog/inc/header.inc.php
 www/data-dist/phpgroupware/phonelog/index.php
+www/data-dist/phpgroupware/phonelog/setup/phpgw_en.lang
+www/data-dist/phpgroupware/phonelog/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/phonelog/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/phonelog/templates/default/images/navbar.gif
 www/data-dist/phpgroupware/phonelog/templates/default/images/navbar.png
 www/data-dist/phpgroupware/phonelog/templates/idsociety/images/navbar-over.gif
@@ -3138,24 +2926,6 @@ www/data-dist/phpgroupware/phonelog/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/phonelog/templates/idsociety/images/navbar.png
 www/data-dist/phpgroupware/phonelog/templates/verdilak/images/navbar.gif
 www/data-dist/phpgroupware/phonelog/templates/verdilak/images/navbar.png
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/MSSCCPRJ.SCC
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmAbout.frm
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmAbout.frx
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmMain.frm
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmMain.frx
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmOptions.frm
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmOptions.frx
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/frmServers.frm
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/isubclass.cls
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/logo.ico
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/modListTabs.bas
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/modMain.bas
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/modPrevInst.bas
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/phpGWShell.exe
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/phpGWShell.vbp
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/phpGWShell.vbw
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/subclass.bas
-www/data-dist/phpgroupware/phpGWShell_Win32_VB/subclass.cls
 www/data-dist/phpgroupware/phpgwapi/cron/clean_database.pl
 www/data-dist/phpgroupware/phpgwapi/cron/stalesessions.php
 www/data-dist/phpgroupware/phpgwapi/cron/stalesessions.pl
@@ -4514,7 +4284,7 @@ www/data-dist/phpgroupware/qmailldap/inc/class.soqmailldap.inc.php
 www/data-dist/phpgroupware/qmailldap/inc/class.uiqmailldap.inc.php
 www/data-dist/phpgroupware/qmailldap/inc/class.uiuserdata.inc.php
 www/data-dist/phpgroupware/qmailldap/inc/hook_about.inc.php
-www/data-dist/phpgroupware/qmailldap/inc/hook_add_def_pref.inc.php
+www/data-dist/phpgroupware/qmailldap/inc/hook_admin.inc.php
 www/data-dist/phpgroupware/qmailldap/inc/hook_edit_user.inc.php
 www/data-dist/phpgroupware/qmailldap/inc/hook_manual.inc.php
 www/data-dist/phpgroupware/qmailldap/inc/hook_preferences.inc.php
@@ -4525,6 +4295,7 @@ www/data-dist/phpgroupware/qmailldap/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/qmailldap/setup/setup.inc.php
 www/data-dist/phpgroupware/qmailldap/setup/tables_current.inc.php
 www/data-dist/phpgroupware/qmailldap/setup/tables_update.inc.php
+www/data-dist/phpgroupware/qmailldap/templates/default/config.tpl
 www/data-dist/phpgroupware/qmailldap/templates/default/defaultpage.tpl
 www/data-dist/phpgroupware/qmailldap/templates/default/domainnames.tpl
 www/data-dist/phpgroupware/qmailldap/templates/default/edituserdata.tpl
@@ -4536,59 +4307,6 @@ www/data-dist/phpgroupware/qmailldap/templates/idsociety/images/navbar-over.gif
 www/data-dist/phpgroupware/qmailldap/templates/idsociety/images/navbar-over.png
 www/data-dist/phpgroupware/qmailldap/templates/idsociety/images/navbar.gif
 www/data-dist/phpgroupware/qmailldap/templates/idsociety/images/navbar.png
-www/data-dist/phpgroupware/rbs/COPYING
-www/data-dist/phpgroupware/rbs/add.php
-www/data-dist/phpgroupware/rbs/admin.php
-www/data-dist/phpgroupware/rbs/auth_ext.inc
-www/data-dist/phpgroupware/rbs/auth_ip.inc
-www/data-dist/phpgroupware/rbs/auth_ldap.inc
-www/data-dist/phpgroupware/rbs/config.inc
-www/data-dist/phpgroupware/rbs/connect.inc
-www/data-dist/phpgroupware/rbs/create_tables.mysql
-www/data-dist/phpgroupware/rbs/day.php
-www/data-dist/phpgroupware/rbs/del.php
-www/data-dist/phpgroupware/rbs/del_entry.php
-www/data-dist/phpgroupware/rbs/edit_entry.php
-www/data-dist/phpgroupware/rbs/edit_entry_handler.php
-www/data-dist/phpgroupware/rbs/failed.php
-www/data-dist/phpgroupware/rbs/functions.inc
-www/data-dist/phpgroupware/rbs/head.gif
-www/data-dist/phpgroupware/rbs/head.png
-www/data-dist/phpgroupware/rbs/images/navbar.gif
-www/data-dist/phpgroupware/rbs/images/navbar.png
-www/data-dist/phpgroupware/rbs/images/new.gif
-www/data-dist/phpgroupware/rbs/images/new.png
-www/data-dist/phpgroupware/rbs/inc/admin.inc.php
-www/data-dist/phpgroupware/rbs/inc/hook_admin.inc.php
-www/data-dist/phpgroupware/rbs/inc/hook_preferences.inc.php
-www/data-dist/phpgroupware/rbs/index.php
-www/data-dist/phpgroupware/rbs/lang.de
-www/data-dist/phpgroupware/rbs/lang.en
-www/data-dist/phpgroupware/rbs/lang.es
-www/data-dist/phpgroupware/rbs/lang.fr
-www/data-dist/phpgroupware/rbs/lang.ja
-www/data-dist/phpgroupware/rbs/lang.nl
-www/data-dist/phpgroupware/rbs/lang.zh-tw
-www/data-dist/phpgroupware/rbs/mincals.inc
-www/data-dist/phpgroupware/rbs/mrbs.css
-www/data-dist/phpgroupware/rbs/mrbs_auth.inc
-www/data-dist/phpgroupware/rbs/mrbs_sql.inc
-www/data-dist/phpgroupware/rbs/style.inc
-www/data-dist/phpgroupware/rbs/templates/default/images/navbar.gif
-www/data-dist/phpgroupware/rbs/templates/default/images/navbar.png
-www/data-dist/phpgroupware/rbs/templates/default/images/new.gif
-www/data-dist/phpgroupware/rbs/templates/default/images/new.png
-www/data-dist/phpgroupware/rbs/templates/justweb/images/navbar.gif
-www/data-dist/phpgroupware/rbs/templates/justweb/images/navbar.png
-www/data-dist/phpgroupware/rbs/templates/justweb/images/new.gif
-www/data-dist/phpgroupware/rbs/templates/justweb/images/new.png
-www/data-dist/phpgroupware/rbs/templates/verdilak/images/navbar.gif
-www/data-dist/phpgroupware/rbs/templates/verdilak/images/navbar.png
-www/data-dist/phpgroupware/rbs/templates/verdilak/images/new.gif
-www/data-dist/phpgroupware/rbs/templates/verdilak/images/new.png
-www/data-dist/phpgroupware/rbs/testdata.php
-www/data-dist/phpgroupware/rbs/trailer.inc
-www/data-dist/phpgroupware/rbs/view_entry.php
 www/data-dist/phpgroupware/redirect.php
 www/data-dist/phpgroupware/registration/doc/README
 www/data-dist/phpgroupware/registration/doc/TODO
@@ -4744,12 +4462,14 @@ www/data-dist/phpgroupware/sitemgr/inc/hook_preferences.inc.php
 www/data-dist/phpgroupware/sitemgr/index.php
 www/data-dist/phpgroupware/sitemgr/setup/phpgw_de.lang
 www/data-dist/phpgroupware/sitemgr/setup/phpgw_en.lang
+www/data-dist/phpgroupware/sitemgr/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/sitemgr/setup/setup.inc.php
 www/data-dist/phpgroupware/sitemgr/setup/tables_baseline.inc.php
 www/data-dist/phpgroupware/sitemgr/setup/tables_current.inc.php
 www/data-dist/phpgroupware/sitemgr/setup/tables_update.inc.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/index.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/phpgw_en.lang
+www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/setup.inc.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/tables_baseline.inc.php
 www/data-dist/phpgroupware/sitemgr/sitemgr-link/setup/tables_current.inc.php
@@ -5252,6 +4972,7 @@ www/data-dist/phpgroupware/skel/inc/hook_manual.inc.php
 www/data-dist/phpgroupware/skel/inc/hook_preferences.inc.php
 www/data-dist/phpgroupware/skel/inc/hook_skel_about.inc.php
 www/data-dist/phpgroupware/skel/setup/phpgw_en.lang
+www/data-dist/phpgroupware/skel/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/skel/setup/setup.inc.php
 www/data-dist/phpgroupware/skel/setup/tables_baseline.inc.php
 www/data-dist/phpgroupware/skel/setup/tables_current.inc.php
@@ -5278,6 +4999,7 @@ www/data-dist/phpgroupware/soap/inc/class.soap_server.inc.php.wip
 www/data-dist/phpgroupware/soap/index.php
 www/data-dist/phpgroupware/soap/interop_harness.php
 www/data-dist/phpgroupware/soap/setup/phpgw_en.lang
+www/data-dist/phpgroupware/soap/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/soap/setup/setup.inc.php
 www/data-dist/phpgroupware/soap/soaplib.soapinterop.php
 www/data-dist/phpgroupware/soap/templates/default/images/navbar.gif
@@ -5306,6 +5028,7 @@ www/data-dist/phpgroupware/stocks/setup/phpgw_de.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_en.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_fi.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_fr.lang
+www/data-dist/phpgroupware/stocks/setup/phpgw_it.lang
 www/data-dist/phpgroupware/stocks/setup/phpgw_pl.lang
 www/data-dist/phpgroupware/stocks/setup/setup.inc.php
 www/data-dist/phpgroupware/stocks/templates/default/images/navbar.gif
@@ -5538,6 +5261,7 @@ www/data-dist/phpgroupware/xmlrpc/phpgw_test.php
 www/data-dist/phpgroupware/xmlrpc/phpunit.php
 www/data-dist/phpgroupware/xmlrpc/server.php
 www/data-dist/phpgroupware/xmlrpc/setup/phpgw_en.lang
+www/data-dist/phpgroupware/xmlrpc/setup/phpgw_fr.lang
 www/data-dist/phpgroupware/xmlrpc/setup/setup.inc.php
 www/data-dist/phpgroupware/xmlrpc/templates/default/images/navbar.gif
 www/data-dist/phpgroupware/xmlrpc/templates/default/images/navbar.png
@@ -5685,16 +5409,6 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/registration/inc
 @dirrm www/data-dist/phpgroupware/registration/doc
 @dirrm www/data-dist/phpgroupware/registration
-@dirrm www/data-dist/phpgroupware/rbs/templates/verdilak/images
-@dirrm www/data-dist/phpgroupware/rbs/templates/verdilak
-@dirrm www/data-dist/phpgroupware/rbs/templates/justweb/images
-@dirrm www/data-dist/phpgroupware/rbs/templates/justweb
-@dirrm www/data-dist/phpgroupware/rbs/templates/default/images
-@dirrm www/data-dist/phpgroupware/rbs/templates/default
-@dirrm www/data-dist/phpgroupware/rbs/templates
-@dirrm www/data-dist/phpgroupware/rbs/inc
-@dirrm www/data-dist/phpgroupware/rbs/images
-@dirrm www/data-dist/phpgroupware/rbs
 @dirrm www/data-dist/phpgroupware/qmailldap/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/qmailldap/templates/idsociety
 @dirrm www/data-dist/phpgroupware/qmailldap/templates/default
@@ -5783,7 +5497,6 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/phpgwapi/doc
 @dirrm www/data-dist/phpgroupware/phpgwapi/cron
 @dirrm www/data-dist/phpgroupware/phpgwapi
-@dirrm www/data-dist/phpgroupware/phpGWShell_Win32_VB
 @dirrm www/data-dist/phpgroupware/phonelog/templates/verdilak/images
 @dirrm www/data-dist/phpgroupware/phonelog/templates/verdilak
 @dirrm www/data-dist/phpgroupware/phonelog/templates/idsociety/images
@@ -5791,6 +5504,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/phonelog/templates/default/images
 @dirrm www/data-dist/phpgroupware/phonelog/templates/default
 @dirrm www/data-dist/phpgroupware/phonelog/templates
+@dirrm www/data-dist/phpgroupware/phonelog/setup
 @dirrm www/data-dist/phpgroupware/phonelog/inc
 @dirrm www/data-dist/phpgroupware/phonelog/images
 @dirrm www/data-dist/phpgroupware/phonelog/doc
@@ -5940,10 +5654,6 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/forum/inc
 @dirrm www/data-dist/phpgroupware/forum/doc
 @dirrm www/data-dist/phpgroupware/forum
-@dirrm www/data-dist/phpgroupware/files/users
-@dirrm www/data-dist/phpgroupware/files/home
-@dirrm www/data-dist/phpgroupware/files/groups
-@dirrm www/data-dist/phpgroupware/files
 @dirrm www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de/images
 @dirrm www/data-dist/phpgroupware/felamimail/templates/linux-at-work.de
 @dirrm www/data-dist/phpgroupware/felamimail/templates/idsociety/images
@@ -5951,25 +5661,10 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/felamimail/templates/default/images
 @dirrm www/data-dist/phpgroupware/felamimail/templates/default
 @dirrm www/data-dist/phpgroupware/felamimail/templates
-@dirrm www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/phpdoc
-@dirrm www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50/docs
-@dirrm www/data-dist/phpgroupware/felamimail/src/phpmailer-1.50
-@dirrm www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/phpdoc
-@dirrm www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41/docs
-@dirrm www/data-dist/phpgroupware/felamimail/src/phpmailer-1.41
-@dirrm www/data-dist/phpgroupware/felamimail/src
 @dirrm www/data-dist/phpgroupware/felamimail/setup
 @dirrm www/data-dist/phpgroupware/felamimail/inc
-@dirrm www/data-dist/phpgroupware/felamimail/help/ru
-@dirrm www/data-dist/phpgroupware/felamimail/help/pl
-@dirrm www/data-dist/phpgroupware/felamimail/help/ko
-@dirrm www/data-dist/phpgroupware/felamimail/help/fr
-@dirrm www/data-dist/phpgroupware/felamimail/help/en
-@dirrm www/data-dist/phpgroupware/felamimail/help/cs
-@dirrm www/data-dist/phpgroupware/felamimail/help/ca
 @dirrm www/data-dist/phpgroupware/felamimail/help/EN
 @dirrm www/data-dist/phpgroupware/felamimail/help
-@dirrm www/data-dist/phpgroupware/felamimail/config
 @dirrm www/data-dist/phpgroupware/felamimail
 @dirrm www/data-dist/phpgroupware/email/templates/idsociety/images
 @dirrm www/data-dist/phpgroupware/email/templates/idsociety
@@ -6030,7 +5725,6 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/comic/templates/default/images
 @dirrm www/data-dist/phpgroupware/comic/templates/default
 @dirrm www/data-dist/phpgroupware/comic/templates
-@dirrm www/data-dist/phpgroupware/comic/sql
 @dirrm www/data-dist/phpgroupware/comic/setup
 @dirrm www/data-dist/phpgroupware/comic/inc
 @dirrm www/data-dist/phpgroupware/comic/images
@@ -6067,6 +5761,7 @@ www/data-dist/phpgroupware/xmlrpc/zopetest.php
 @dirrm www/data-dist/phpgroupware/calendar/templates/default
 @dirrm www/data-dist/phpgroupware/calendar/templates
 @dirrm www/data-dist/phpgroupware/calendar/setup
+@dirrm www/data-dist/phpgroupware/calendar/phpgroupware.org
 @dirrm www/data-dist/phpgroupware/calendar/inc
 @dirrm www/data-dist/phpgroupware/calendar/help/JA
 @dirrm www/data-dist/phpgroupware/calendar/help/FI
