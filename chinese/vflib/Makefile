@@ -31,18 +31,18 @@ USE_FREETYPE=	yes
 USE_XLIB=	yes
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${PREFIX}/include/freetype1/freetype \
 		--with-freetype-libdir=${PREFIX}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (need to replace varargs.h with stdarg.h)"
-.endif
-
 pre-patch:
 	@${SED} -e "s;%%LOCALBASE%%;${LOCALBASE};g" -e "s;%%X11BASE%%;${X11BASE};g" ${DISTDIR}/zh-vfontcap.in > ${WRKSRC}/vfontcap
+
+post-patch:
+	${REINPLACE_CMD} -e "s,varargs.h,stdarg.h," ${WRKSRC}/tools/disol.c
 
 pre-install:
 	@(cd ${WRKSRC}/tools; \
