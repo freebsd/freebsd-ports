@@ -803,6 +803,12 @@ check-makefile::
 
 _PREMKINCLUDED=	yes
 
+.if defined(MAKE_VERSION)
+.if ${MAKE_VERSION} >= 5200408030 || ${MAKE_VERSION} >= 4200408030 && ${MAKE_VERSION} < 5000000000
+NOPRECIOUSSOFTMAKEVARS= yes
+.endif
+.endif
+
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
 BRANDELF?=	/usr/bin/brandelf
@@ -4752,12 +4758,15 @@ depend:
 tags:
 .endif
 
-.if !defined(NOPRECIOUSMAKEVARS)
+.if !defined(NOPRECIOUSSOFTMAKEVARS)
 .for softvar in CKSUMFILES _MLINKS
 .if defined(${softvar})
 __softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
 .endif
 .endfor
+.endif
+
+.if !defined(NOPRECIOUSMAKEVARS)
 # These won't change, so we can pass them through the environment
 .MAKEFLAGS: \
 	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
