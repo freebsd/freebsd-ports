@@ -1,12 +1,11 @@
 bin/charmap
 bin/gucharmap
-etc/gucharmap/gtk.immodules
 include/gucharmap/charmap.h
 include/gucharmap/chartable.h
 include/gucharmap/gucharmap_window.h
 include/gucharmap/mini_fontsel.h
 include/gucharmap/unicode_info.h
-lib/gucharmap/immodules/im-gucharmap.so
+lib/gtk-2.0/2.2.0/immodules/im-gucharmap.so
 lib/libgucharmap.a
 lib/libgucharmap.so
 lib/libgucharmap.so.2
@@ -34,7 +33,9 @@ share/locale/pt/LC_MESSAGES/gucharmap.mo
 share/locale/pt_BR/LC_MESSAGES/gucharmap.mo
 share/locale/sv/LC_MESSAGES/gucharmap.mo
 share/locale/uk/LC_MESSAGES/gucharmap.mo
-@dirrm lib/gucharmap/immodules
-@dirrm lib/gucharmap
+share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
+share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm include/gucharmap
 @dirrm etc/gucharmap
+@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
+@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
