@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-menueditor
-PORTVERSION=	0.90
+PORTVERSION=	1.0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://users.skynet.be/p0llux/files/
 
@@ -21,6 +21,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+
+CONFIGURE_ARGS=		--disable-cvs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
