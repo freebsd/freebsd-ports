@@ -20,4 +20,4 @@ extractres (perl) filter to extract resources from PostScript files
 includeres (perl) filter to include resources into PostScript files
 psmerge    (perl) hack script to merge multiple PostScript files
 
-WWW: http://www.tardis.ed.ac.uk/~ajcd/psutils/
+WWW: http://gershwin.ens.fr/vdaniel/Doc-Locale/Outils-Gnu-Linux/PsUtils/
