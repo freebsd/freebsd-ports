@@ -2,6 +2,7 @@
 #
     SUBDIR += ziarc
 
+    SUBDIR += admesh
     SUBDIR += astk-client
     SUBDIR += astk-serveur
     SUBDIR += atlc
