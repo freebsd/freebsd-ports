@@ -1,48 +1,8 @@
 bin/gedit
 bin/gnome-text-editor
-etc/gconf/gconf.xml.defaults/apps/gedit-2/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/auto_indent/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/colors/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/font/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/line_numbers/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/right_margin/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/save/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/tabs/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/undo/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/wrap_mode/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/encodings/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/fonts/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/page/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/syntax_highlighting/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/recents/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/toolbar/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/auto_indent/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/colors/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/font/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/line_numbers/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/right_margin/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/save/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/tabs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/undo/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/wrap_mode/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/encodings/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/fonts/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/page/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/syntax_highlighting/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/recents/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/toolbar/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gedit.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gedit.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gedit.schemas > /dev/null || /usr/bin/true
 include/gedit-%%VERSION%%/gedit/bonobo-mdi-child.h
 include/gedit-%%VERSION%%/gedit/bonobo-mdi.h
 include/gedit-%%VERSION%%/gedit/gedit-convert.h
@@ -217,6 +177,7 @@ share/locale/he/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/hi/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gedit-%%VERSION%%.mo
+share/locale/id/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/is/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gedit-%%VERSION%%.mo
@@ -248,6 +209,7 @@ share/locale/sr@Latn/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/ta/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/th/LC_MESSAGES/gedit-%%VERSION%%.mo
+share/locale/tk/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/gedit-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/gedit-%%VERSION%%.mo
@@ -287,48 +249,6 @@ share/locale/zh_TW/LC_MESSAGES/gedit-%%VERSION%%.mo
 @dirrm include/gedit-%%VERSION%%/gedit/recent-files
 @dirrm include/gedit-%%VERSION%%/gedit
 @dirrm include/gedit-%%VERSION%%
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/toolbar
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/statusbar
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/recents
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/syntax_highlighting
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/page
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print/fonts
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/print
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/encodings
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/wrap_mode
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/undo
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/tabs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/save
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/right_margin
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/line_numbers
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/font
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/colors
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/auto_indent
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/toolbar
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/statusbar
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/recents
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/syntax_highlighting
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/page
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print/fonts
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/print
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/encodings
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/wrap_mode
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/undo
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/tabs
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/save
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/right_margin
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/line_numbers
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/font
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/colors
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/auto_indent
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences
-@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-es.omf 2>/dev/null || /usr/bin/true
