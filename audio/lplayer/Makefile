@@ -8,19 +8,19 @@
 #
 
 PORTNAME=	lplayer
-PORTVERSION=	0.99.3
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}_src
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A QT program to queue lots of MP3s for random XMMS play
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	db_cxx-4.3.0:${PORTSDIR}/databases/db43 \
+		xmms.4:${PORTSDIR}/multimedia/xmms
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
@@ -32,11 +32,13 @@ CONFIGURE_ARGS=	--with-xmms-prefix=${X11BASE} --with-xinerama \
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
+QTCPPFLAGS+=	-I${LOCALBASE}/include/db43
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		's|#include "queue.h"||g' ${WRKSRC}/src/lpapp.cpp
+	@${REINPLACE_CMD} -e 's|-O2 ||g ; \
+		 s|-pedantic ||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|-ldb_cxx|-ldb_cxx-4.3|g' ${WRKSRC}/configure
 
 post-install:
 	@${LN} -sf lplayer ${PREFIX}/bin/longplayer
