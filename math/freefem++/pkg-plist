@@ -1,6 +1,6 @@
 bin/FreeFem++
-bin/FreeFem++-glx
-%%MPI%%bin/FreeFem++-mpi
+bin/FreeFem++-cs
+bin/FreeFem++-cs-server
 bin/FreeFem++-nw
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
@@ -8,7 +8,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/manual-full.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/D2.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/NSP1P1b.edp
@@ -25,6 +25,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/bilap.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/SegmentationFault.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/aaa.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/bug/bug-arg-string.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugborder.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugf.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/bug/bugv1.18.edp
@@ -98,7 +99,7 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/freeboundary-weak.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/freeboundary.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/gnuplot.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/makeref.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mat_interpol.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/medit.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/mesh.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/movemesh.edp
@@ -115,11 +116,11 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-gc.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-no-overlap.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/schwarz-overlap.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/shur-comp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparse-cmatrix.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sparse-matrix.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/sphere.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tablefunction.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/tt.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/xyf
 %%PORTDOCS%%%%EXAMPLESDIR%%/wafer-heating-laser-axi.edp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
