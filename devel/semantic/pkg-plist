@@ -24,6 +24,9 @@ info/semantic.info-3
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ctxt.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-el.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-el.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-example.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ia.el
+%%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-ia.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-imenu.el
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-imenu.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/semantic/semantic-java.el
