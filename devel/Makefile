@@ -404,6 +404,7 @@
     SUBDIR += linux-understand_ada
     SUBDIR += linux-understand_c
     SUBDIR += linux-understand_java
+    SUBDIR += linux_devtools
     SUBDIR += linux_devtools-6
     SUBDIR += linux_devtools-7
     SUBDIR += linux_kdump

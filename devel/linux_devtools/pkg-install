@@ -1,0 +1,18 @@
+#!/bin/sh
+# installation script for linux_devtools
+
+case "$2" in
+PRE-INSTALL)
+	if [ -z "`kldstat -v | grep -E 'linux(aout|elf)'`" ]; then
+		echo 'Linux mode is not enabled.'
+		echo 'Loading Linux kernel module now...'
+		if ! kldload linux; then
+			echo 'The Linux kernel module could not be loaded.'
+			echo 'Please enable Linux mode manually and retry.'
+			exit 1
+		fi
+	fi
+	;;
+esac
+
+exit 0

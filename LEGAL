@@ -165,6 +165,7 @@ libudbc			ports/databases/libudbc		Downloading and redistribution
 						terms are unclear.
 limewire		ports/net/limewire	No redistribution allowed
 linux-agsatellite	ports/net/linux-agsatellite	Unsure of licensing issues
+linux_devtools		ports/devel/linux_devtools	GPL binaries
 linux-divx4linux	ports/multimedia/linux-divx4linux	Restrictive copyright
 linux-eagle		ports/cad/linux-eagle		Non-commercial usage only &
 			ports/german/linux-eagle	Sale for profit not permitted
