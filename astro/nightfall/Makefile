@@ -11,7 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.lsw.uni-heidelberg.de/~rwichman/ \
 		http://unixpages.org/distfiles/
 
-MAINTAINER=	chris@unixpages.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive binary star application
 
 .if !defined(WITHOUT_GTK)

@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/ \
 		http://unixpages.org/distfiles/
 
-MAINTAINER=	chris@unixpages.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alarm timer plugin for the X Multimedia System
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

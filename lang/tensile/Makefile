@@ -14,7 +14,7 @@ MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://unixpages.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
-MAINTAINER=	chris@unixpages.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The New Scripting Language
 
 BROKEN=		"Does not compile"

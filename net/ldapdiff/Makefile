@@ -11,7 +11,7 @@ CATEGORIES=     net
 MASTER_SITES=   http://webtomware.rhoen.de/ \
 		http://unixpages.org/distfiles/
 
-MAINTAINER=     chris@unixpages.org
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	A utility for patching LDAP directories using LDIF files
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
