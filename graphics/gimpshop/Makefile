@@ -3,21 +3,24 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.12 1997/10/16 09:04:34 tg Exp $
+# $Id: Makefile,v 1.13 1997/12/01 08:05:34 tg Exp $
 #
 
-VERSION=	0.99.14
+MAJOR=	0
+MINOR=	99
+MICRO=	16
+
+VERSION=		${MAJOR}.${MINOR}.${MICRO}
+MM_VERSION= ${MAJOR}.${MINOR}
 
 DISTNAME=   gimp-${VERSION}
 DISTFILES=	${DISTNAME}.tar.gz
-DISTFILES+=	gimp-data-min-${VERSION}.tar.gz \
-            gimp-data-extras-${VERSION}.tar.gz \
-            gimptcl-1.0.tar.gz
+DISTFILES+=	gimp-data-min-${MM_VERSION}.tar.gz \
+            gimp-data-extras-${MM_VERSION}.tar.gz
 
 CATEGORIES=     graphics
-MASTER_SITES=   ftp://ftp.cs.umn.edu/pub/gimp/gimp/0.99/${VERSION}/ \
-                ftp://ftp.gimp.org/pub/gimp/0.99/${VERSION}/ \
-                http://www.freebsd.org/~erich/
+MASTER_SITES=   ftp://ftp.gimp.org/pub/gimp/0.99/${VERSION}/ \
+                ftp://ftp.cs.umn.edu/pub/gimp/gimp/0.99/${VERSION}/ \
 
 MAINTAINER=     erich@FreeBSD.org
 
@@ -34,17 +37,24 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.0 \
 		  -I${LOCALBASE}/include/tk8.0 -I${LOCALBASE}/include/tiff34" \
-		LIBS=-L${LOCALBASE}/lib
+			LIBS=-L${LOCALBASE}/lib INSTALL_SCRIPT='$${INSTALL} -m 755'
+CONFIGURE_ARGS=  --with-tcl=tcl80 --with-tk=tk80
 
 DATASTUFF=  brushes palettes gradients patterns
 
 post-install:
-	cd ${WRKDIR}/gimp-data-min-${VERSION}; \
+	mkdir -p ${PREFIX}/share/gimp/${MM_VERSION};
+	cd ${WRKDIR}/gimp-data-min-${MM_VERSION}; \
+	tar -cf - --exclude '*Makefile*' ${MM_DATASTUFF} |\
+	(cd ${PREFIX}/share/gimp/${MM_VERSION}; tar -xvf -)
+	cd ${WRKDIR}/gimp-data-extras-${MM_VERSION}; \
 	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
-	(cd ${PREFIX}/share/gimp/${VERSION}; tar -xvf -)
-	cd ${WRKDIR}/gimp-data-extras-${VERSION}; \
-	tar -cf - --exclude '*Makefile*' ${DATASTUFF} |\
-	(cd ${PREFIX}/share/gimp/${VERSION}; tar -xvf -)
+	(cd ${PREFIX}/share/gimp/${MM_VERSION}; tar -xvf -)
+
+post-extract:
+	rm -f ${WRKSRC}/plug-ins/gimptcl/scripts/consolio \
+		${WRKSRC}/plug-ins/gimptcl/scripts/pdb_help \
+		${WRKSRC}/plug-ins/gimptcl/scripts/stained_glass
 
 .include <bsd.port.mk>
 

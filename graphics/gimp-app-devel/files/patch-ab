@@ -3,8 +3,8 @@
 ***** patches for plug-ins
 *****
 
---- /a/gimp-0.99.6/plug-ins/url.c	Mon Mar 10 04:57:12 1997
-+++ plug-ins/url.c	Wed Mar 12 21:56:39 1997
+--- /a/gimp-0.99.6/plug-ins/url/url.c	Mon Mar 10 04:57:12 1997
++++ plug-ins/url/url.c	Wed Mar 12 21:56:39 1997
 @@ -146,8 +146,8 @@
      }
    else if (pid == 0)
@@ -18,21 +18,3 @@
    else
 
 
---- plug-ins/script-fu/interp_regex.c~	Fri Apr 18 14:00:00 1997
-+++ plug-ins/script-fu/interp_regex.c	Fri Apr 18 14:00:45 1997
-@@ -1,3 +1,4 @@
-+#include <sys/types.h>
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
-
---- plug-ins/dgimp/dgimp.c.orig	Wed Apr 30 11:39:18 1997
-+++ plug-ins/dgimp/dgimp.c	Wed Apr 30 11:38:42 1997
-@@ -15,6 +15,7 @@
-  * along with this program; if not, write to the Free Software
-  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-  */
-+#include <sys/types.h>
- #include <stdlib.h>
- #include <stdio.h>
- #include <string.h>

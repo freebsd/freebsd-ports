@@ -9,40 +9,25 @@
  AC_SUBST(INSTALL_SCRIPT)dnl
  ])
  
---- configure.in.orig	Tue Oct 14 20:50:42 1997
-+++ configure.in	Tue Oct 14 20:50:51 1997
-@@ -185,7 +185,7 @@
- fi
+--- configure.in.orig	Sun Dec 14 21:44:48 1997
++++ configure.in	Mon Dec 15 11:14:59 1997
+@@ -240,7 +240,7 @@
+ AC_C_INLINE
  
- gimpdatadir=$datadir/$PACKAGE/$VERSION
--gimpplugindir=$libdir/$PACKAGE/$VERSION
-+gimpplugindir=$libexecdir/$PACKAGE/$VERSION
+ gimpdatadir=$datadir/$PACKAGE
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
  
- scriptdata=`ls -1 plug-ins/script-fu/scripts | grep -v Makefile`
- scriptdata=`echo $scriptdata`
---- configure.orig	Wed Oct  1 12:51:27 1997
-+++ configure	Tue Oct 14 21:28:44 1997
-@@ -615,12 +615,12 @@
- 
- # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
- # It thinks the first close brace ends the variable substitution.
--test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
-+test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL} -c -s -m 755'
- 
- test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ dnl This is for generating PDB docuemntation.
+ AC_PATH_PROG(EMACS, emacs, :)
+--- configure.orig	Mon Dec 15 11:13:24 1997
++++ configure	Mon Dec 15 11:13:41 1997
+@@ -3933,7 +3933,7 @@
  
  
--test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
-+test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -c -m 755'
+ gimpdatadir=$datadir/$PACKAGE
+-gimpplugindir=$libdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
++gimpplugindir=$libexecdir/$PACKAGE/$GIMP_MAJOR_VERSION_NUMBER.$GIMP_MINOR_VERSION_NUMBER
  
- 
- PACKAGE=gimp
-@@ -3692,7 +3692,7 @@
- fi
- 
- gimpdatadir=$datadir/$PACKAGE/$VERSION
--gimpplugindir=$libdir/$PACKAGE/$VERSION
-+gimpplugindir=$libexecdir/$PACKAGE/$VERSION
- 
- scriptdata=`ls -1 plug-ins/script-fu/scripts | grep -v Makefile`
- scriptdata=`echo $scriptdata`
+ # Extract the first word of "emacs", so it can be a program name with args.
+ set dummy emacs; ac_word=$2
