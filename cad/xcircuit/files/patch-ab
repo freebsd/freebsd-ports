@@ -1,0 +1,23 @@
+--- xcircuit.c.orig	Thu May 21 16:43:03 1998
++++ xcircuit.c	Tue Jan 26 18:20:21 1999
+@@ -30,6 +30,9 @@
+ #include <sys/stat.h>
+ #include <errno.h>
+ #include <limits.h>
++#ifdef __FreeBSD__
++#include <machine/floatingpoint.h>
++#endif
+ 
+ #undef FUNCPROTO
+ #include <X11/Intrinsic.h>
+@@ -3575,6 +3578,10 @@
+    Arg		wargs[12];
+    short i, j, k = 0, n = 0, maxbuttons, maxcolors;
+    objectptr	*page;
++
++#ifdef __FreeBSD__
++   fpsetmask(0);
++#endif
+ 
+    /*---------------------------*/
+    /* initialize user variables */
