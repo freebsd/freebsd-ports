@@ -2158,6 +2158,7 @@ gnowavcut	ports/audio/gnowavcut
 gnu-finger	ports/net/gnu-finger
 gnu-radius	ports/net/gnu-radius
 gnu-regexp	ports/java/gnu-regexp
+gnubg		ports/games/gnubg
 gnuboy		ports/emulators/gnuboy
 gnucap		ports/cad/gnucap
 gnucash		ports/finance/gnucash
