@@ -4,7 +4,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.83 1998/03/08 12:19:18 ache Exp $
+# $Id: Makefile,v 1.84 1998/03/11 01:54:20 ache Exp $
 #
 
 DISTNAME=       lynx2.8rel.2
@@ -14,6 +14,7 @@ MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	ache@FreeBSD.ORG
 
+NO_LATEST_LINK=	YES
 WRKSRC=         ${WRKDIR}/lynx2-8
 GNU_CONFIGURE=  YES
 CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc"
