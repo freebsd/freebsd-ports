@@ -1,4 +1,5 @@
 bin/pyslsk
+bin/pyslsk-import-winconfig
 %%PYTHON_SITELIBDIR%%/pysoulseek/__init__.py
 %%PYTHON_SITELIBDIR%%/pysoulseek/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysoulseek/__init__.pyo
