@@ -9,7 +9,8 @@ PORTNAME=	imanager
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linuxberg.com/files/kde/graphics/
+MASTER_SITES=	http://linuxberg.ii.net/files/kde/graphics/ \
+		http://www.linuxberg.com/files/kde/graphics/
 DISTNAME=	imanager-${PORTVERSION}.final.imlib
 
 MAINTAINER=	ports@freebsd.org
