@@ -24,6 +24,12 @@ USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/mntent* ${WRKSRC}/src
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
@@ -31,4 +37,4 @@ post-patch:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
