@@ -7,7 +7,7 @@
 
 PORTNAME=	php-gtk
 PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -15,24 +15,28 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	An extension to use gtk in PHP-applications
 
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+
 # Port does only build with automake-1.4 and
 # automake-1.5 installed - what a mess
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		automake14:${PORTSDIR}/devel/automake14 \
 		autoconf:${PORTSDIR}/devel/autoconf \
 		autoconf213:${PORTSDIR}/devel/autoconf213 \
-		phpize:${PORTSDIR}/lang/php4-cli \
 		php:${PORTSDIR}/lang/php4-cli
-RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-cli
 
 # Don't call autoconf directly, ./buildconf does this
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	# none
+WANT_PHP_CLI=	yes
+USE_PHPIZE=	yes
 USE_AUTOCONF=	no
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
+
 # Fix environment for self contained extensions
 ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\
 		-DHAVE_PIEMENU=1	\
@@ -47,22 +51,34 @@ ENVSCE+=	-DHAVE_LIBGLADE
 .else
 CONFIGURE_ARGS+=	--disable-libglade
 .endif
+
+.if !defined(WITHOUT_SCINTILLA)
+BUILD_DEPENDS+=	${X11BASE}/include/scintilla/gtkscintilla.h:${PORTSDIR}/x11-toolkits/gtkscintilla
+LIB_DEPENDS+=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
+ENVSCE+=	-DHAVE_SCINTILLA=1 # -DPHP_GTK_COMPILE_DL_SCINTILLA=1
+CONFIGURE_ARGS+=	--enable-scintilla
+.endif
+
 .if !defined(WITHOUT_GDK_PIXBUF)
 USE_GNOME+=	gdkpixbuf
-CONFIGURE_ARGS+=	--enable-gdkpixbuf=shared
+CONFIGURE_ARGS+=	--enable-gdkpixbuf
 ENVSCE+=	-DHAVE_GDKPIXBUF=1 -DPHP_GTK_COMPILE_DL_GDKPIXBUF=1
 PLIST_SUB+=	GDKPIXBUF=""
 .else
 PLIST_SUB+=	GDKPIXBUF="@comment "
 .endif
+
 .if !defined(WITHOUT_GTKHTML)
 USE_GNOME+=	gtkhtml
-CONFIGURE_ARGS+=	--enable-gtkhtml=shared
-ENVSCE+=	-DHAVE_HTML=1 -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${X11BASE}/include/gal-1.0
+CONFIGURE_ARGS+=	--enable-gtkhtml
+ENVSCE+=	-DHAVE_HTML=1 -I${X11BASE}/include/gal-1.0 # -DPHP_GTK_COMPILE_DL_GTKHTML=1 -DGTKHTML_HAVE_GCONF=1 -I${X11BASE}/include/gal-1.0
 PLIST_SUB+=     GTKHTML=""
 .else
 PLIST_SUB+=	GTKHTML="@comment "
 .endif
+
+PLIST_SUB+=	PHPEXTDIR="${PHP_EXT_DIR}"
+
 CONFIGURE_ENV=  CPPFLAGS="${ENVSCE}"
 
 USE_REINPLACE=	yes
@@ -82,6 +98,7 @@ pre-everything::
 	@${ECHO_MSG} '*    - WITHOUT_LIBGLADE                                 *'
 	@${ECHO_MSG} '*    - WITHOUT_GDK_PIXBUF                               *'
 	@${ECHO_MSG} '*    - WITHOUT_GTKHTML                                  *'
+	@${ECHO_MSG} '*    - WITHOUT_SCINTILLA                                *'
 	@${ECHO_MSG} '*                                                       *'
 	@${ECHO_MSG} '*********************************************************'
 
@@ -107,4 +124,4 @@ post-install:
 	@${CAT} ${MASTERDIR}/pkg-message
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
