@@ -7,6 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.1.1
+PORTREVISION=	1
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -93,7 +94,7 @@ NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 NET_SNMP_MIB_MODULES?=	${NET_SNMP_MIB_MODULE_LIST}
 
-NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail ucd-snmp/diskio
+NET_SNMP_MIB_MODULE_LIST=host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
 _NET_SNMP_MIB_MODULES=
 .for module1 in ${NET_SNMP_MIB_MODULE_LIST}
 _module1=${module1}
