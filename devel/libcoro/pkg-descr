@@ -1,0 +1,18 @@
+Excerpt from The Art of Computer Programming by D. E. Knuth:
+
+	"Subroutines are special cases of more general program
+	 components, called coroutines.  In contrast to the un-
+	 symmetric relationship between a main routine and a sub-
+	 routine, there is complete symmetry between coroutines,
+	 which call on each other."
+
+coro is a C library that implements the low level handling of coroutines.
+Despite it's simplicity, there is no portable way to implement them. The goal
+of this library is to build a standard API for coroutines and implement it for
+as many architectures as possible. Currently on the i386 architecture is
+supported.
+
+WWW: http://themen01.exit.de/user/member/froese/
+
+- Kelly
+kbyanc@posi.net

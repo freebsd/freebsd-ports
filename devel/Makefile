@@ -95,6 +95,7 @@
     SUBDIR += libU77
     SUBDIR += libcache
     SUBDIR += libcii
+    SUBDIR += libcoro
     SUBDIR += libdlmalloc
     SUBDIR += libffi
     SUBDIR += libg++
