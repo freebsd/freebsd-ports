@@ -3,3 +3,4 @@ bin/aishmv
 bin/ishcat
 share/doc/ja/aish/aish.txt
 @dirrm share/doc/ja/aish
+@unexec rmdir %D/share/doc/ja 2>/dev/null || true
