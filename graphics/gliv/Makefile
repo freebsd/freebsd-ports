@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
 
