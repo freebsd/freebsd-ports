@@ -34,6 +34,7 @@
     SUBDIR += mlan3
     SUBDIR += mserver
     SUBDIR += mwavem
+    SUBDIR += p5-Device-Modem
     SUBDIR += p5-Device-SerialPort
     SUBDIR += plp
     SUBDIR += pr
