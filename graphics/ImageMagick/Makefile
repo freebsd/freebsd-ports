@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.1.2
+PORTVERSION=	5.4.3.4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -47,6 +47,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
@@ -54,7 +55,7 @@ CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
-		composite.1 convert.1 identify.1 mogrify.1 montage.1
+		composite.1 conjure.1 convert.1 identify.1 mogrify.1 montage.1
 MAN3=		Image::Magick.3
 MAN4=		miff.4
 MAN5=		quantize.5

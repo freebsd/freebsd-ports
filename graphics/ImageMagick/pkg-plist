@@ -2,6 +2,7 @@ bin/Magick++-config
 bin/Magick-config
 %%X11%%bin/animate
 bin/composite
+bin/conjure
 bin/convert
 %%X11%%bin/display
 bin/identify
@@ -37,6 +38,7 @@ include/magick/draw.h
 include/magick/error.h
 include/magick/gem.h
 include/magick/image.h
+include/magick/list.h
 include/magick/magic.h
 include/magick/magick.h
 include/magick/magick_config.h
@@ -51,6 +53,9 @@ include/magick/version.h
 include/magick/widget.h
 include/magick/xwindow.h
 lib/ImageMagick/delegates.mgk
+lib/ImageMagick/type-ghostscript.mgk
+lib/ImageMagick/type-solaris.mgk
+lib/ImageMagick/type-windows.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/art.la
 %%MODULES%%lib/ImageMagick/modules/coders/art.so
 %%MODULES%%lib/ImageMagick/modules/coders/avi.la
@@ -59,6 +64,8 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/avs.so
 %%MODULES%%lib/ImageMagick/modules/coders/bmp.la
 %%MODULES%%lib/ImageMagick/modules/coders/bmp.so
+%%MODULES%%lib/ImageMagick/modules/coders/caption.la
+%%MODULES%%lib/ImageMagick/modules/coders/caption.so
 %%MODULES%%lib/ImageMagick/modules/coders/cmyk.la
 %%MODULES%%lib/ImageMagick/modules/coders/cmyk.so
 %%MODULES%%lib/ImageMagick/modules/coders/cut.la
@@ -118,10 +125,12 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/mono.so
 %%MODULES%%lib/ImageMagick/modules/coders/mpc.la
 %%MODULES%%lib/ImageMagick/modules/coders/mpc.so
-%%MODULES%%lib/ImageMagick/modules/coders/mpr.la
-%%MODULES%%lib/ImageMagick/modules/coders/mpr.so
 %%MODULES%%lib/ImageMagick/modules/coders/mpeg.la
 %%MODULES%%lib/ImageMagick/modules/coders/mpeg.so
+%%MODULES%%lib/ImageMagick/modules/coders/mpr.la
+%%MODULES%%lib/ImageMagick/modules/coders/mpr.so
+%%MODULES%%lib/ImageMagick/modules/coders/msl.la
+%%MODULES%%lib/ImageMagick/modules/coders/msl.so
 %%MODULES%%lib/ImageMagick/modules/coders/mtv.la
 %%MODULES%%lib/ImageMagick/modules/coders/mtv.so
 %%MODULES%%lib/ImageMagick/modules/coders/mvg.la
@@ -130,6 +139,8 @@ lib/ImageMagick/delegates.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/null.so
 %%MODULES%%lib/ImageMagick/modules/coders/otb.la
 %%MODULES%%lib/ImageMagick/modules/coders/otb.so
+%%MODULES%%lib/ImageMagick/modules/coders/palm.la
+%%MODULES%%lib/ImageMagick/modules/coders/palm.so
 %%MODULES%%lib/ImageMagick/modules/coders/pcd.la
 %%MODULES%%lib/ImageMagick/modules/coders/pcd.so
 %%MODULES%%lib/ImageMagick/modules/coders/pcl.la
@@ -261,6 +272,7 @@ share/ImageMagick/www/Magick++/Blob.html
 share/ImageMagick/www/Magick++/Cache.fig
 share/ImageMagick/www/Magick++/Cache.png
 share/ImageMagick/www/Magick++/Cache.svg
+share/ImageMagick/www/Magick++/CoderInfo.html
 share/ImageMagick/www/Magick++/Color.html
 share/ImageMagick/www/Magick++/Documentation.html
 share/ImageMagick/www/Magick++/Drawable.html
@@ -311,6 +323,7 @@ share/ImageMagick/www/api/effect.html
 share/ImageMagick/www/api/enhance.html
 share/ImageMagick/www/api/error.html
 share/ImageMagick/www/api/image.html
+share/ImageMagick/www/api/list.html
 share/ImageMagick/www/api/magick.html
 share/ImageMagick/www/api/memory.html
 share/ImageMagick/www/api/monitor.html
@@ -342,6 +355,7 @@ share/ImageMagick/www/archives.html
 share/ImageMagick/www/cd.html
 share/ImageMagick/www/color.html
 share/ImageMagick/www/composite.html
+share/ImageMagick/www/conjure.html
 share/ImageMagick/www/convert.html
 share/ImageMagick/www/cvs.html
 share/ImageMagick/www/display.html
