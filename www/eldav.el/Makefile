@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eldav.el
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.1
 PORTEPOCH=	1
 CATEGORIES=	www elisp
 MASTER_SITES=	http://www.gohome.org/eldav/
