@@ -13,7 +13,6 @@
     SUBDIR += alloywm
     SUBDIR += amaterus
     SUBDIR += amiwm
-    SUBDIR += aquaosk
     SUBDIR += badwm
     SUBDIR += bbconf
     SUBDIR += bbkeys
@@ -39,7 +38,6 @@
     SUBDIR += fluxter
     SUBDIR += flwm
     SUBDIR += fvwm
-    SUBDIR += fvwm-themes
     SUBDIR += fvwm2
     SUBDIR += fvwm2-devel
     SUBDIR += fvwm2-i18n
@@ -57,15 +55,12 @@
     SUBDIR += jewel
     SUBDIR += kahakai
     SUBDIR += kappdock
-    SUBDIR += kdeartwork3
-    SUBDIR += kwin_flatcurve
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet
     SUBDIR += lwm
     SUBDIR += matchbox
     SUBDIR += metacity
-    SUBDIR += mkultra
     SUBDIR += mlvwm
     SUBDIR += novawm
     SUBDIR += obconf
@@ -79,15 +74,12 @@
     SUBDIR += piewm
     SUBDIR += plwm
     SUBDIR += pwm
-    SUBDIR += qinx
     SUBDIR += qlwm
-    SUBDIR += qnxstyle
     SUBDIR += qvwm
     SUBDIR += ratmenu
     SUBDIR += ratpoison
     SUBDIR += rox-pager
     SUBDIR += sapphire
-    SUBDIR += sapphire-themes
     SUBDIR += sawfish2
     SUBDIR += selectwm
     SUBDIR += skippy

@@ -3,10 +3,12 @@
 
     COMMENT = X Windows System themes
 
+    SUBDIR += aquaosk
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
     SUBDIR += engradient
+    SUBDIR += fvwm-themes
     SUBDIR += geramik
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
@@ -62,6 +64,8 @@
     SUBDIR += kde-icons-steel
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-wasp
+    SUBDIR += kdeartwork3
+    SUBDIR += kwin_flatcurve
     SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-theme-aero
     SUBDIR += metacity-theme-alloy-c
@@ -69,7 +73,11 @@
     SUBDIR += metacity-theme-iridium-rounded
     SUBDIR += metacity-theme-microgui
     SUBDIR += metacity-themes
+    SUBDIR += mkultra
+    SUBDIR += qinx
+    SUBDIR += qnxstyle
     SUBDIR += qt-bluecurve-theme
+    SUBDIR += sapphire-themes
     SUBDIR += sawfish-themes
     SUBDIR += thinice
     SUBDIR += whistlerk

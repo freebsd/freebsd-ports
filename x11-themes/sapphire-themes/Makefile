@@ -8,7 +8,7 @@
 PORTNAME=	sapphire-themes
 PORTVERSION=	1.1
 PORTREVISION=	1
-CATEGORIES=	x11-wm x11-themes
+CATEGORIES=	x11-themes x11-wm
 MASTER_SITES=	http://jpj.net/~trevor/${PORTNAME}/
 EXTRACT_SUFX=	.tar
 
