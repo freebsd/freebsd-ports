@@ -1,0 +1,11 @@
+--- m3/m3core/src/float/Common/DragonInt.m3.orig	Fri Jul  7 13:26:16 1995
++++ m3/m3core/src/float/Common/DragonInt.m3	Wed Dec 15 09:17:34 1999
+@@ -421,7 +421,7 @@
+     t.s := n_words;
+     t.w := s.next;
+     INC (s.next, n_words);
+-    IF (s.next > NUMBER (s.w^)) THEN Expand (s); END;
++    IF (s.next >= NUMBER (s.w^)) THEN Expand (s); END;
+     RETURN ADR (s.w[t.w]);
+   END InitValue;
+ 
