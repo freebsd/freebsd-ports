@@ -32,6 +32,8 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 .endif
 
+BROKEN=		Unfetchable
+
 CONFLICTS?=	ja-bugzilla-2.*
 
 .if defined(WITH_CONTRIB)
