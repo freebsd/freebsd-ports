@@ -261,7 +261,7 @@ WITH_SVGALIB=	yes
 WITH_AALIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.6)
+.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
 WITH_SDL=	yes
 WITH_AALIB=	yes
 .endif
