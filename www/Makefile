@@ -315,6 +315,7 @@
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTML-Webmake
     SUBDIR += p5-HTML-Widgets-SelectLayers
+    SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-DAV
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTPD-Log-Filter
