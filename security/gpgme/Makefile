@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
 
-MAINTAINER=	markun@onohara.to
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to make access to GnuPG easier
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
