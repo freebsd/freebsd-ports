@@ -34,7 +34,7 @@ do-install:
 		${TAR} -C ${PREFIX}/include -xf -
 	${TAR} -C ${WRKSRC}/dist/lib --dereference -cf - . | \
 		${TAR} -C ${PREFIX}/lib -xf -
-	${INSTALL_SCRIPT} ${WRKSRC}/build/config/nspr-config ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/config/nspr-config ${PREFIX}/bin
 .for lib in ${LIBS}
 	${LN} -sf ${lib} ${PREFIX}/lib/${lib:S/.1$//}
 .endfor
