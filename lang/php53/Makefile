@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	php4
-PORTREVISION=	2
+PORTREVISION=	0
 CATEGORIES=	lang
 
 MASTERDIR=	${.CURDIR}/../../www/mod_php4
