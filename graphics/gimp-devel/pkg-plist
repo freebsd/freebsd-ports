@@ -2,7 +2,6 @@ bin/gimp-1.3
 bin/gimp-remote-1.3
 bin/gimptool-1.3
 etc/gimp/1.3/gimprc
-etc/gimp/1.3/gimprc_user
 etc/gimp/1.3/gtkrc_user
 etc/gimp/1.3/ps-menurc
 etc/gimp/1.3/unitrc
@@ -36,8 +35,10 @@ include/gimp-1.3/libgimp/gimplayer.h
 include/gimp-1.3/libgimp/gimplayer_pdb.h
 include/gimp-1.3/libgimp/gimpmenu.h
 include/gimp-1.3/libgimp/gimpmessage_pdb.h
+include/gimp-1.3/libgimp/gimpmisc.h
 include/gimp-1.3/libgimp/gimpmisc_pdb.h
 include/gimp-1.3/libgimp/gimpmisctools_pdb.h
+include/gimp-1.3/libgimp/gimpmiscui.h
 include/gimp-1.3/libgimp/gimppainttools_pdb.h
 include/gimp-1.3/libgimp/gimppalettes_pdb.h
 include/gimp-1.3/libgimp/gimppaletteselect_pdb.h
@@ -148,6 +149,8 @@ lib/libgimpwidgets-1.3.so
 lib/libgimpwidgets-1.3.so.%%SHLIBVER%%
 libdata/pkgconfig/gimp-1.3.pc
 libdata/pkgconfig/gimpui-1.3.pc
+libexec/gimp/1.3/environ/default.env
+libexec/gimp/1.3/modules/libcdisplay_colorblind.so
 libexec/gimp/1.3/modules/libcdisplay_gamma.so
 libexec/gimp/1.3/modules/libcdisplay_highcontrast.so
 libexec/gimp/1.3/modules/libcolorsel_triangle.so
@@ -308,8 +311,10 @@ libexec/gimp/1.3/plug-ins/xwd
 libexec/gimp/1.3/plug-ins/zealouscrop
 share/aclocal/gimp-1.4.m4
 share/doc/gimp/libgimp/gimpdefinitions.html
+share/doc/gimp/libgimp/home.png
 share/doc/gimp/libgimp/index.html
 share/doc/gimp/libgimp/index.sgml
+share/doc/gimp/libgimp/left.png
 share/doc/gimp/libgimp/libgimp-gimp.html
 share/doc/gimp/libgimp/libgimp-gimpbrushes.html
 share/doc/gimp/libgimp/libgimp-gimpchannel.html
@@ -344,6 +349,8 @@ share/doc/gimp/libgimp/libgimp-gimpui.html
 share/doc/gimp/libgimp/libgimp-gimpundo.html
 share/doc/gimp/libgimp/libgimp.html
 share/doc/gimp/libgimp/libgimpui.html
+share/doc/gimp/libgimp/right.png
+share/doc/gimp/libgimp/up.png
 share/doc/gimp/libgimpbase/index.html
 share/doc/gimp/libgimpbase/index.sgml
 share/doc/gimp/libgimpbase/libgimpbase-gimpbasetypes.html
@@ -375,9 +382,13 @@ share/doc/gimp/libgimpmath/libgimpmath-gimpvector.html
 share/doc/gimp/libgimpmath/libgimpmath.html
 share/doc/gimp/libgimpmodule/gimpmodule.html
 share/doc/gimp/libgimpmodule/gimpmoduledb.html
+share/doc/gimp/libgimpmodule/home.png
 share/doc/gimp/libgimpmodule/index.html
 share/doc/gimp/libgimpmodule/index.sgml
+share/doc/gimp/libgimpmodule/left.png
 share/doc/gimp/libgimpmodule/libgimpmodule.html
+share/doc/gimp/libgimpmodule/right.png
+share/doc/gimp/libgimpmodule/up.png
 share/doc/gimp/libgimpwidgets/gimpbutton.html
 share/doc/gimp/libgimpwidgets/gimpchainbutton.html
 share/doc/gimp/libgimpwidgets/gimpcolorbutton.html
@@ -394,8 +405,10 @@ share/doc/gimp/libgimpwidgets/gimppickbutton.html
 share/doc/gimp/libgimpwidgets/gimppixmap.html
 share/doc/gimp/libgimpwidgets/gimpsizeentry.html
 share/doc/gimp/libgimpwidgets/gimpunitmenu.html
+share/doc/gimp/libgimpwidgets/home.png
 share/doc/gimp/libgimpwidgets/index.html
 share/doc/gimp/libgimpwidgets/index.sgml
+share/doc/gimp/libgimpwidgets/left.png
 share/doc/gimp/libgimpwidgets/libgimpwidgets-colordisplay.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-colorselector.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpcolorarea.html
@@ -405,6 +418,8 @@ share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpstock.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-gimpwidgets.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-utils.html
 share/doc/gimp/libgimpwidgets/libgimpwidgets-widgets.html
+share/doc/gimp/libgimpwidgets/right.png
+share/doc/gimp/libgimpwidgets/up.png
 share/gimp/brushes/10x10square.gbr
 share/gimp/brushes/10x10squareBlur.gbr
 share/gimp/brushes/11circle.gbr
@@ -676,13 +691,11 @@ share/gimp/gradients/Wood_2.ggr
 share/gimp/gradients/Yellow_Contrast.ggr
 share/gimp/gradients/Yellow_Orange.ggr
 share/gimp/images/gimp_logo.png
-share/gimp/images/gimp_splash.gif
 share/gimp/images/gimp_splash.png
 share/gimp/images/wilber-icon.png
 share/gimp/images/wilber-tips.png
 share/gimp/images/wilber-wizard.png
 share/gimp/misc/gimp.desktop
-share/gimp/misc/user_install
 share/gimp/palettes/Bears.gpl
 share/gimp/palettes/Bgold.gpl
 share/gimp/palettes/Blues.gpl
@@ -882,6 +895,7 @@ share/gimp/themes/Default/images/preferences/default-comment.png
 share/gimp/themes/Default/images/preferences/display.png
 share/gimp/themes/Default/images/preferences/environment.png
 share/gimp/themes/Default/images/preferences/folders-brushes.png
+share/gimp/themes/Default/images/preferences/folders-environ.png
 share/gimp/themes/Default/images/preferences/folders-gradients.png
 share/gimp/themes/Default/images/preferences/folders-modules.png
 share/gimp/themes/Default/images/preferences/folders-palettes.png
@@ -891,6 +905,7 @@ share/gimp/themes/Default/images/preferences/folders-themes.png
 share/gimp/themes/Default/images/preferences/folders-tool-plug-ins.png
 share/gimp/themes/Default/images/preferences/folders.png
 share/gimp/themes/Default/images/preferences/help-system.png
+share/gimp/themes/Default/images/preferences/image-title.png
 share/gimp/themes/Default/images/preferences/image-windows.png
 share/gimp/themes/Default/images/preferences/input-devices.png
 share/gimp/themes/Default/images/preferences/interface.png
@@ -1148,6 +1163,7 @@ share/locale/zh_TW/LC_MESSAGES/gimp14.mo
 @dirrm share/gimp
 @dirrm libexec/gimp/1.3/plug-ins
 @dirrm libexec/gimp/1.3/modules
+@dirrm libexec/gimp/1.3/environ
 @dirrm libexec/gimp/1.3
 @dirrm libexec/gimp
 @dirrm include/gimp-1.3/libgimpwidgets

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.11
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
