@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR= mpg321
 MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	ao.2:${PORTSDIR}/audio/libao \
-		mad.0:${PORTSDIR}/audio/mad
+		mad.1:${PORTSDIR}/audio/mad
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-mpg123-symlink
