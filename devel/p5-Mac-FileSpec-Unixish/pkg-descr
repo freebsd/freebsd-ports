@@ -1,0 +1,12 @@
+Mac::FileSpec::Unixish provides two functions, `nativize' and `unixify'
+(both of which are exported by default), that will allow you to denote
+and manipulate pathspecs in Unixish style, and let you convert these
+pathspecs to and from the native OS's format for conveying such things.
+It currently assumes that if you are not running under MacOS (as
+reported in `$^O'), you must be on a Unix box.  If you want better, use
+File::Spec -- in essence, Mac::FileSpec::Unixish is a cheap hack to get
+around using File::Spec.
+
+Author: Sean M. Burke <sburke@cpan.org>
+
+--will
