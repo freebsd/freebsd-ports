@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.49 1998/03/16 14:10:23 tg Exp $
+# $Id: Makefile,v 1.50 1998/03/18 10:21:44 obrien Exp $
 #
 
     SUBDIR += asedit
     SUBDIR += axe
     SUBDIR += beav
     SUBDIR += bpatch
+    SUBDIR += cooledit
     SUBDIR += e93
     SUBDIR += emacs
     SUBDIR += emacs20
