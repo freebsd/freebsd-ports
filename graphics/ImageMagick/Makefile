@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.5.6
+PORTREVISION=   1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://imagemagick.sourceforge.net/http/ \
@@ -49,7 +50,7 @@ LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib
+		--without-gslib --enable-lzw
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -75,11 +76,6 @@ CONFIGURE_ARGS+=	--without-threads
 # Faster, but poor quality
 .if defined(WITHOUT_IMAGEMAGICK_16BIT_PIXEL)
 CONFIGURE_ARGS+=	--with-quantum-depth=8
-.endif
-
-# Produce standard (small) GIFs
-.if defined(HAVE_UNISYS_LICENSE)
-CONFIGURE_ARGS+=	--enable-lzw
 .endif
 
 # Loadable coders, smaller executable, but PerlMagick not really works
