@@ -5807,6 +5807,7 @@ p5-CGI-Application-ValidateRM	ports/www/p5-CGI-Application-ValidateRM
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
+p5-CGI-Framework	ports/www/p5-CGI-Framework
 p5-CGI-Kwiki	ports/www/p5-CGI-Kwiki
 p5-CGI-Minimal	ports/www/p5-CGI-Minimal
 p5-CGI-SSI	ports/www/p5-CGI-SSI
