@@ -4565,6 +4565,7 @@ ninja		ports/irc/ninja
 njs		ports/lang/njs
 nl		src/usr.bin/nl
 nl-ispell	ports/textproc/nl-ispell
+nload		ports/net/nload
 nm		src/usr.bin/nm
 nmap		ports/security/nmap
 nmapfe		ports/security/nmapfe
