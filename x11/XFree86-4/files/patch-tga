@@ -1,0 +1,11 @@
+--- programs/Xserver/hw/xfree86/drivers/tga/tga_driver.c.orig	Wed Aug 29 11:38:09 2001
++++ programs/Xserver/hw/xfree86/drivers/tga/tga_driver.c	Wed Aug 29 11:39:09 2001
+@@ -758,7 +758,7 @@
+ 
+     pTga->FbMapSize = pScrn->videoRam * 1024;
+ 
+-    if (mod && xf86LoadSubModule(pScrn, "fb") == NULL) {
++    if (xf86LoadSubModule(pScrn, "fb") == NULL) {
+ 	TGAFreeRec(pScrn);
+ 	return FALSE;
+     }
