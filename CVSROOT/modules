@@ -8425,6 +8425,7 @@ xmms-bonk	ports/audio/xmms-bonk
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
 xmms-fc		ports/audio/xmms-fc
+xmms-finespectrum	ports/graphics/xmms-finespectrum
 xmms-fishmatic	ports/graphics/xmms-fishmatic
 xmms-gdancer	ports/audio/xmms-gdancer
 xmms-gforce	ports/graphics/xmms-gforce
