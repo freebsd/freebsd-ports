@@ -3,12 +3,12 @@
 # Date created:			02 March 1999
 # Whom:				mharo@area51.fremont.ca.us
 #
-# $Id: Makefile,v 1.3 1999/04/22 15:59:03 mharo Exp $
+# $Id: Makefile,v 1.4 1999/04/27 03:56:49 mharo Exp $
 #
 
 DISTNAME=	naim-0.9.4
 CATEGORIES=	net
-MASTER_SITES=	http://naim.n.ml.org/release/ \
+MASTER_SITES=	http://naim.n.ml.org/release.phtml/ \
 		ftp://ftp.netmug.org/pub/FreeBSD/distfiles/
 EXTRACT_SUFX=	.tgz
 
