@@ -15,12 +15,11 @@ DISTFILES=	${DISTNAME}.zip
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Java Media Framework
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 USE_ZIP=	YES
 USE_REINPLACE=	YES
 NO_BUILD=	YES
-
-PLIST_SUB+=	JAVAJARDIR=${JAVAJARDIR}
 
 WRKSRC=		${WRKDIR}/JMF-${PORTVERSION}
 
@@ -37,7 +36,7 @@ PORTDOCS=	*
 # Check for JMF sources
 .if !exists(${DISTDIR}/${DISTFILES}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
-IGNORE= :\n\
+IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
 manually.  Please access:\n\
 http://java.sun.com/products/java-media/jmf/2.1.1/download.html\n\

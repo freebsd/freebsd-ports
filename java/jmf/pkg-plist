@@ -1,9 +1,10 @@
+@comment $FreeBSD$
 bin/jmfcustomizer
 bin/jmfinit
 bin/jmfregistry
 bin/jmstudio
-share/java/classes/customizer.jar
-share/java/classes/jmf.jar
-share/java/classes/jmf.properties
-share/java/classes/mediaplayer.jar
-share/java/classes/multiplayer.jar
+%%JAVAJARDIR%%/customizer.jar
+%%JAVAJARDIR%%/jmf.jar
+%%JAVAJARDIR%%/jmf.properties
+%%JAVAJARDIR%%/mediaplayer.jar
+%%JAVAJARDIR%%/multiplayer.jar
