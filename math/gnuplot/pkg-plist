@@ -1,9 +1,9 @@
 bin/gnuplot
 %%X11:%%bin/gnuplot_x11
 bin/lasergnu
-%%PORTDOCS%%@unexec install-info --delete %D/info/gnuplot.info %D/info/dir
-%%PORTDOCS%%info/gnuplot.info
-%%PORTDOCS%%@exec install-info %D/info/gnuplot.info %D/info/dir
+@unexec install-info --delete %D/info/gnuplot.info %D/info/dir
+info/gnuplot.info
+@exec install-info %D/info/gnuplot.info %D/info/dir
 %%PORTDOCS%%share/examples/gnuplot/1.dat
 %%PORTDOCS%%share/examples/gnuplot/2.dat
 %%PORTDOCS%%share/examples/gnuplot/3.dat
@@ -70,5 +70,5 @@ bin/lasergnu
 %%PORTDOCS%%share/examples/gnuplot/world.dat
 %%PORTDOCS%%share/examples/gnuplot/world.dem
 %%PORTDOCS%%@dirrm share/examples/gnuplot
-%%PORTDOCS%%share/gnuplot/gnuplot.gih
-%%PORTDOCS%%@dirrm share/gnuplot
+share/gnuplot/gnuplot.gih
+@dirrm share/gnuplot
