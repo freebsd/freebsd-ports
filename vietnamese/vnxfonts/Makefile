@@ -33,6 +33,8 @@ do-install:
 	@cd ${WRKSRC} ; \
 		${INSTALL_DATA} fonts.dir *.pcf.Z  \
 		${PREFIX}/lib/X11/fonts/vietnamese
+	@${INSTALL_DATA} ${FILESDIR}/fonts.alias \
+		${PREFIX}/lib/X11/fonts/vietnamese
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
