@@ -1,6 +1,7 @@
 bin/xslt-config
 bin/xsltproc
 etc/xsltConf.sh
+include/breakpoint/breakpoint.h
 include/libexslt/exslt.h
 include/libexslt/exsltconfig.h
 include/libxslt/attributes.h
@@ -23,10 +24,13 @@ include/libxslt/xsltconfig.h
 include/libxslt/xsltutils.h
 lib/libexslt.a
 lib/libexslt.so
-lib/libexslt.so.5
+lib/libexslt.so.7
 lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
+lib/libxsltbreakpoint.a
+lib/libxsltbreakpoint.so
+lib/libxsltbreakpoint.so.1
 share/doc/libxslt/html/book1.html
 share/doc/libxslt/html/libxslt-attributes.html
 share/doc/libxslt/html/libxslt-functions.html
@@ -51,3 +55,4 @@ share/doc/libxslt/html/tutorial/libxslttutorial.xml
 @dirrm share/doc/libxslt
 @dirrm include/libxslt
 @dirrm include/libexslt
+@dirrm include/breakpoint
