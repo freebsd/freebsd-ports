@@ -23,18 +23,12 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
-CONFIGURE_ARGS+=--enable-final
-.endif
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
-CONFIGURE_ARGS+=--disable-debug
-.endif
 USE_GMAKE=	yes
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 pre-configure:
 	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs

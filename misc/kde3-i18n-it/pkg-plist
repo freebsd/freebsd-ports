@@ -52,6 +52,9 @@ share/doc/HTML/it/kbattleship/index.docbook
 share/doc/HTML/it/kblackbox/common
 share/doc/HTML/it/kblackbox/index.cache.bz2
 share/doc/HTML/it/kblackbox/index.docbook
+share/doc/HTML/it/kbounce/common
+share/doc/HTML/it/kbounce/index.cache.bz2
+share/doc/HTML/it/kbounce/index.docbook
 share/doc/HTML/it/kcalc/common
 share/doc/HTML/it/kcalc/index.cache.bz2
 share/doc/HTML/it/kcalc/index.docbook
@@ -99,6 +102,9 @@ share/doc/HTML/it/kicker-applets/index.cache.bz2
 share/doc/HTML/it/kicker-applets/index.docbook
 share/doc/HTML/it/kicker-applets/kolourpicker.docbook
 share/doc/HTML/it/kicker-applets/ktimemon.docbook
+share/doc/HTML/it/kicker/common
+share/doc/HTML/it/kicker/index.cache.bz2
+share/doc/HTML/it/kicker/index.docbook
 share/doc/HTML/it/kiconedit/common
 share/doc/HTML/it/kiconedit/index.cache.bz2
 share/doc/HTML/it/kiconedit/index.docbook
@@ -132,6 +138,9 @@ share/doc/HTML/it/kmines/index.docbook
 share/doc/HTML/it/kmoon/common
 share/doc/HTML/it/kmoon/index.cache.bz2
 share/doc/HTML/it/kmoon/index.docbook
+share/doc/HTML/it/kodo/common
+share/doc/HTML/it/kodo/index.cache.bz2
+share/doc/HTML/it/kodo/index.docbook
 share/doc/HTML/it/konq-plugins/archiver.docbook
 share/doc/HTML/it/konq-plugins/babel.docbook
 share/doc/HTML/it/konq-plugins/common
@@ -591,3 +600,53 @@ share/locale/it/LC_MESSAGES/webarchiver.mo
 share/locale/it/charset
 share/locale/it/entry.desktop
 share/locale/it/flag.png
+@dirrm share/doc/HTML/it/kworldclock
+@dirrm share/doc/HTML/it/kwin4
+@dirrm share/doc/HTML/it/kweather
+@dirrm share/doc/HTML/it/kvoctrain
+@dirrm share/doc/HTML/it/kuickshow
+@dirrm share/doc/HTML/it/ktuberling
+@dirrm share/doc/HTML/it/ktouch
+@dirrm share/doc/HTML/it/kteatime
+@dirrm share/doc/HTML/it/kstars
+@dirrm share/doc/HTML/it/kspaceduel
+@dirrm share/doc/HTML/it/ksokoban
+@dirrm share/doc/HTML/it/ksnapshot
+@dirrm share/doc/HTML/it/kshisen
+@dirrm share/doc/HTML/it/ksame
+@dirrm share/doc/HTML/it/kruler
+@dirrm share/doc/HTML/it/kpat
+@dirrm share/doc/HTML/it/konquest
+@dirrm share/doc/HTML/it/konq-plugins
+@dirrm share/doc/HTML/it/kodo
+@dirrm share/doc/HTML/it/kmoon
+@dirrm share/doc/HTML/it/kmines
+@dirrm share/doc/HTML/it/kmessedwords
+@dirrm share/doc/HTML/it/kmenuedit
+@dirrm share/doc/HTML/it/kmail
+@dirrm share/doc/HTML/it/klprfax
+@dirrm share/doc/HTML/it/klines
+@dirrm share/doc/HTML/it/klettres
+@dirrm share/doc/HTML/it/kiconedit
+@dirrm share/doc/HTML/it/kicker-applets
+@dirrm share/doc/HTML/it/kicker
+@dirrm share/doc/HTML/it/khelpcenter
+@dirrm share/doc/HTML/it/khangman
+@dirrm share/doc/HTML/it/kghostview
+@dirrm share/doc/HTML/it/kgeo
+@dirrm share/doc/HTML/it/kfract
+@dirrm share/doc/HTML/it/kfouleggs
+@dirrm share/doc/HTML/it/kfloppy
+@dirrm share/doc/HTML/it/kenolaba
+@dirrm share/doc/HTML/it/kdvi
+@dirrm share/doc/HTML/it/kdf
+@dirrm share/doc/HTML/it/kcoloredit
+@dirrm share/doc/HTML/it/kcalc
+@dirrm share/doc/HTML/it/kbounce
+@dirrm share/doc/HTML/it/kblackbox
+@dirrm share/doc/HTML/it/kbattleship
+@dirrm share/doc/HTML/it/katomic
+@dirrm share/doc/HTML/it/kasteroids
+@dirrm share/doc/HTML/it/common
+@dirrm share/doc/HTML/it/amor
+@dirrm share/doc/HTML/it

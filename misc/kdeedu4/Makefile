@@ -1,4 +1,4 @@
-# New ports collection makefile for:	kdebase2
+# New ports collection makefile for:	kdeedu3
 # Date created:				2 November 2001
 # Whom:					will@cvs.kde.org
 #
@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	kdeedu
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES?=	misc kde
-MASTER_SITES=	http://www.csociety.org/~will/kde/${PORTVERSION}/
+MASTER_SITES=		${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-#WRKSRC=		${WRKDIR}/kdeedu
 USE_KDELIBS_VER=3
 USE_XPM=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.mk>

@@ -158,6 +158,12 @@ share/doc/HTML/hu/kcontrol/kcmusb.docbook
 share/doc/HTML/hu/kcontrol/kcmuseragent.docbook
 share/doc/HTML/hu/kcontrol/kcmwinshare.docbook
 share/doc/HTML/hu/kcontrol/kcmxservinfo.docbook
+share/doc/HTML/hu/kcron/common
+share/doc/HTML/hu/kcron/index.cache.bz2
+share/doc/HTML/hu/kcron/index.docbook
+share/doc/HTML/hu/kdat/common
+share/doc/HTML/hu/kdat/index.cache.bz2
+share/doc/HTML/hu/kdat/index.docbook
 share/doc/HTML/hu/kdebugdialog/common
 share/doc/HTML/hu/kdebugdialog/index.cache.bz2
 share/doc/HTML/hu/kdebugdialog/index.docbook
@@ -185,9 +191,6 @@ share/doc/HTML/hu/kfind/index.docbook
 share/doc/HTML/hu/kfloppy/common
 share/doc/HTML/hu/kfloppy/index.cache.bz2
 share/doc/HTML/hu/kfloppy/index.docbook
-share/doc/HTML/hu/kformula/common
-share/doc/HTML/hu/kformula/index.cache.bz2
-share/doc/HTML/hu/kformula/index.docbook
 share/doc/HTML/hu/kfouleggs/common
 share/doc/HTML/hu/kfouleggs/index.cache.bz2
 share/doc/HTML/hu/kfouleggs/index.docbook
@@ -270,6 +273,7 @@ share/doc/HTML/hu/kioslave/http.docbook
 share/doc/HTML/hu/kioslave/https.docbook
 share/doc/HTML/hu/kioslave/imap.docbook
 share/doc/HTML/hu/kioslave/imaps.docbook
+share/doc/HTML/hu/kioslave/index.cache.bz2
 share/doc/HTML/hu/kioslave/index.docbook
 share/doc/HTML/hu/kioslave/info.docbook
 share/doc/HTML/hu/kioslave/lan.docbook
@@ -281,6 +285,8 @@ share/doc/HTML/hu/kioslave/nfs.docbook
 share/doc/HTML/hu/kioslave/nntp.docbook
 share/doc/HTML/hu/kioslave/pop3.docbook
 share/doc/HTML/hu/kioslave/pop3s.docbook
+share/doc/HTML/hu/kioslave/print.docbook
+share/doc/HTML/hu/kioslave/rdate.docbook
 share/doc/HTML/hu/kioslave/rlan.docbook
 share/doc/HTML/hu/kioslave/rlogin.docbook
 share/doc/HTML/hu/kioslave/sftp.docbook
@@ -367,9 +373,6 @@ share/doc/HTML/hu/kooka/index.docbook
 share/doc/HTML/hu/korn/common
 share/doc/HTML/hu/korn/index.cache.bz2
 share/doc/HTML/hu/korn/index.docbook
-share/doc/HTML/hu/koshell/common
-share/doc/HTML/hu/koshell/index.cache.bz2
-share/doc/HTML/hu/koshell/index.docbook
 share/doc/HTML/hu/kpager/common
 share/doc/HTML/hu/kpager/index.cache.bz2
 share/doc/HTML/hu/kpager/index.docbook
@@ -469,12 +472,6 @@ share/doc/HTML/hu/lskat/index.docbook
 share/doc/HTML/hu/noatun/common
 share/doc/HTML/hu/noatun/index.cache.bz2
 share/doc/HTML/hu/noatun/index.docbook
-share/doc/HTML/hu/pixie/common
-share/doc/HTML/hu/pixie/index.cache.bz2
-share/doc/HTML/hu/pixie/index.docbook
-share/doc/HTML/hu/thesaurus/common
-share/doc/HTML/hu/thesaurus/index.cache.bz2
-share/doc/HTML/hu/thesaurus/index.docbook
 share/locale/hu/LC_MESSAGES/Kiten.mo
 share/locale/hu/LC_MESSAGES/aktion.mo
 share/locale/hu/LC_MESSAGES/amor.mo
@@ -754,7 +751,6 @@ share/locale/hu/LC_MESSAGES/kpf.mo
 share/locale/hu/LC_MESSAGES/kphone.mo
 share/locale/hu/LC_MESSAGES/kpilot.mo
 share/locale/hu/LC_MESSAGES/kpixmap2bitmap.mo
-share/locale/hu/LC_MESSAGES/kpm.mo
 share/locale/hu/LC_MESSAGES/kpoker.mo
 share/locale/hu/LC_MESSAGES/kpovmodeler.mo
 share/locale/hu/LC_MESSAGES/kppp.mo
@@ -860,3 +856,106 @@ share/locale/hu/LC_MESSAGES/webarchiver.mo
 share/locale/hu/charset
 share/locale/hu/entry.desktop
 share/locale/hu/flag.png
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/doc/HTML/hu/noatun
+@dirrm share/doc/HTML/hu/lskat
+@dirrm share/doc/HTML/hu/kwuftpd
+@dirrm share/doc/HTML/hu/kwrite
+@dirrm share/doc/HTML/hu/kworldclock
+@dirrm share/doc/HTML/hu/kwin4
+@dirrm share/doc/HTML/hu/kweather
+@dirrm share/doc/HTML/hu/kview
+@dirrm share/doc/HTML/hu/kuser
+@dirrm share/doc/HTML/hu/kuickshow
+@dirrm share/doc/HTML/hu/ktuberling
+@dirrm share/doc/HTML/hu/ktron
+@dirrm share/doc/HTML/hu/ktouch
+@dirrm share/doc/HTML/hu/kteatime
+@dirrm share/doc/HTML/hu/ksysguard
+@dirrm share/doc/HTML/hu/kspell
+@dirrm share/doc/HTML/hu/kspaceduel
+@dirrm share/doc/HTML/hu/ksokoban
+@dirrm share/doc/HTML/hu/ksnapshot
+@dirrm share/doc/HTML/hu/ksnake
+@dirrm share/doc/HTML/hu/ksirtet
+@dirrm share/doc/HTML/hu/kshisen
+@dirrm share/doc/HTML/hu/kscore
+@dirrm share/doc/HTML/hu/ksame
+@dirrm share/doc/HTML/hu/kruler
+@dirrm share/doc/HTML/hu/krn
+@dirrm share/doc/HTML/hu/kreversi
+@dirrm share/doc/HTML/hu/kpoker
+@dirrm share/doc/HTML/hu/kpm
+@dirrm share/doc/HTML/hu/kpf
+@dirrm share/doc/HTML/hu/kpat
+@dirrm share/doc/HTML/hu/kpaint
+@dirrm share/doc/HTML/hu/kpager
+@dirrm share/doc/HTML/hu/korn
+@dirrm share/doc/HTML/hu/kooka
+@dirrm share/doc/HTML/hu/konsole
+@dirrm share/doc/HTML/hu/konquest
+@dirrm share/doc/HTML/hu/konq-plugins
+@dirrm share/doc/HTML/hu/kodo
+@dirrm share/doc/HTML/hu/knotes
+@dirrm share/doc/HTML/hu/knode
+@dirrm share/doc/HTML/hu/kmoon
+@dirrm share/doc/HTML/hu/kmix
+@dirrm share/doc/HTML/hu/kmines
+@dirrm share/doc/HTML/hu/kmessedwords
+@dirrm share/doc/HTML/hu/kmenuedit
+@dirrm share/doc/HTML/hu/klprfax
+@dirrm share/doc/HTML/hu/klpq
+@dirrm share/doc/HTML/hu/kljettool
+@dirrm share/doc/HTML/hu/klipper
+@dirrm share/doc/HTML/hu/klines
+@dirrm share/doc/HTML/hu/klettres
+@dirrm share/doc/HTML/hu/kjumpingcube
+@dirrm share/doc/HTML/hu/kjots
+@dirrm share/doc/HTML/hu/kit
+@dirrm share/doc/HTML/hu/kioslave
+@dirrm share/doc/HTML/hu/kiconedit
+@dirrm share/doc/HTML/hu/kicker-applets
+@dirrm share/doc/HTML/hu/kicker
+@dirrm share/doc/HTML/hu/khexedit
+@dirrm share/doc/HTML/hu/khelpcenter/visualdict
+@dirrm share/doc/HTML/hu/khelpcenter/quickstart
+@dirrm share/doc/HTML/hu/khelpcenter/glossary
+@dirrm share/doc/HTML/hu/khelpcenter
+@dirrm share/doc/HTML/hu/khangman
+@dirrm share/doc/HTML/hu/kghostview
+@dirrm share/doc/HTML/hu/kgeo
+@dirrm share/doc/HTML/hu/kfract
+@dirrm share/doc/HTML/hu/kfouleggs
+@dirrm share/doc/HTML/hu/kfloppy
+@dirrm share/doc/HTML/hu/kfind
+@dirrm share/doc/HTML/hu/kenolaba
+@dirrm share/doc/HTML/hu/kedit
+@dirrm share/doc/HTML/hu/kdvi
+@dirrm share/doc/HTML/hu/kdm
+@dirrm share/doc/HTML/hu/kdf
+@dirrm share/doc/HTML/hu/kdesu
+@dirrm share/doc/HTML/hu/kdebugdialog
+@dirrm share/doc/HTML/hu/kdat
+@dirrm share/doc/HTML/hu/kcron
+@dirrm share/doc/HTML/hu/kcontrol
+@dirrm share/doc/HTML/hu/kcoloredit
+@dirrm share/doc/HTML/hu/kcalc
+@dirrm share/doc/HTML/hu/kbounce
+@dirrm share/doc/HTML/hu/kblackbox
+@dirrm share/doc/HTML/hu/kbattleship
+@dirrm share/doc/HTML/hu/kbackgammon
+@dirrm share/doc/HTML/hu/katomic
+@dirrm share/doc/HTML/hu/kate-plugins
+@dirrm share/doc/HTML/hu/kasteroids
+@dirrm share/doc/HTML/hu/karm
+@dirrm share/doc/HTML/hu/kandy
+@dirrm share/doc/HTML/hu/kaddressbook
+@dirrm share/doc/HTML/hu/kab
+@dirrm share/doc/HTML/hu/common
+@dirrm share/doc/HTML/hu/columbo
+@dirrm share/doc/HTML/hu/artsbuilder
+@dirrm share/doc/HTML/hu/ark
+@dirrm share/doc/HTML/hu/amor
+@dirrm share/doc/HTML/hu/KRegExpEditor
+@dirrm share/doc/HTML/hu

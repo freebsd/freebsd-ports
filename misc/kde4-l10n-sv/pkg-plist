@@ -354,9 +354,6 @@ share/doc/HTML/sv/kfind/index.docbook
 share/doc/HTML/sv/kfloppy/common
 share/doc/HTML/sv/kfloppy/index.cache.bz2
 share/doc/HTML/sv/kfloppy/index.docbook
-share/doc/HTML/sv/kformula/common
-share/doc/HTML/sv/kformula/index.cache.bz2
-share/doc/HTML/sv/kformula/index.docbook
 share/doc/HTML/sv/kfouleggs/common
 share/doc/HTML/sv/kfouleggs/index.cache.bz2
 share/doc/HTML/sv/kfouleggs/index.docbook
@@ -584,9 +581,6 @@ share/doc/HTML/sv/knotes/index.docbook
 share/doc/HTML/sv/kodo/common
 share/doc/HTML/sv/kodo/index.cache.bz2
 share/doc/HTML/sv/kodo/index.docbook
-share/doc/HTML/sv/koffice/common
-share/doc/HTML/sv/koffice/index.cache.bz2
-share/doc/HTML/sv/koffice/index.docbook
 share/doc/HTML/sv/koncd/audiocd.jpg
 share/doc/HTML/sv/koncd/common
 share/doc/HTML/sv/koncd/copycd.jpg
@@ -629,14 +623,6 @@ share/doc/HTML/sv/konsole/common
 share/doc/HTML/sv/konsole/index.cache.bz2
 share/doc/HTML/sv/konsole/index.docbook
 share/doc/HTML/sv/konsole/konsole.png
-share/doc/HTML/sv/kontour/colour.png
-share/doc/HTML/sv/kontour/common
-share/doc/HTML/sv/kontour/export.png
-share/doc/HTML/sv/kontour/index.cache.bz2
-share/doc/HTML/sv/kontour/index.docbook
-share/doc/HTML/sv/kontour/open_dialog.png
-share/doc/HTML/sv/kontour/polygon-setup.png
-share/doc/HTML/sv/kontour/save_dialog.png
 share/doc/HTML/sv/kooka/common
 share/doc/HTML/sv/kooka/index.cache.bz2
 share/doc/HTML/sv/kooka/index.docbook
@@ -646,9 +632,6 @@ share/doc/HTML/sv/korganizer/index.docbook
 share/doc/HTML/sv/korn/common
 share/doc/HTML/sv/korn/index.cache.bz2
 share/doc/HTML/sv/korn/index.docbook
-share/doc/HTML/sv/koshell/common
-share/doc/HTML/sv/koshell/index.cache.bz2
-share/doc/HTML/sv/koshell/index.docbook
 share/doc/HTML/sv/kpackage/common
 share/doc/HTML/sv/kpackage/index.cache.bz2
 share/doc/HTML/sv/kpackage/index.docbook
@@ -728,76 +711,6 @@ share/doc/HTML/sv/kppp/kppp-wizard.png
 share/doc/HTML/sv/kppp/security.docbook
 share/doc/HTML/sv/kppp/tricks.docbook
 share/doc/HTML/sv/kppp/wizard.docbook
-share/doc/HTML/sv/kpresenter/barmenus.png
-share/doc/HTML/sv/kpresenter/barstyle1.png
-share/doc/HTML/sv/kpresenter/barstyle2.png
-share/doc/HTML/sv/kpresenter/barstyle3.png
-share/doc/HTML/sv/kpresenter/barstyle4.png
-share/doc/HTML/sv/kpresenter/barstyle5.png
-share/doc/HTML/sv/kpresenter/barstyle6.png
-share/doc/HTML/sv/kpresenter/barstyle7.png
-share/doc/HTML/sv/kpresenter/common
-share/doc/HTML/sv/kpresenter/faq.docbook
-share/doc/HTML/sv/kpresenter/great-presentations.docbook
-share/doc/HTML/sv/kpresenter/guides.docbook
-share/doc/HTML/sv/kpresenter/htmlshow01.png
-share/doc/HTML/sv/kpresenter/htmlshow02.png
-share/doc/HTML/sv/kpresenter/htmlshow03.png
-share/doc/HTML/sv/kpresenter/htmlshow04.png
-share/doc/HTML/sv/kpresenter/htmlshow05.png
-share/doc/HTML/sv/kpresenter/htmlshow07.png
-share/doc/HTML/sv/kpresenter/index.cache.bz2
-share/doc/HTML/sv/kpresenter/index.docbook
-share/doc/HTML/sv/kpresenter/menuedit.png
-share/doc/HTML/sv/kpresenter/menuextra.png
-share/doc/HTML/sv/kpresenter/menufile.png
-share/doc/HTML/sv/kpresenter/menuinsert.png
-share/doc/HTML/sv/kpresenter/menus.docbook
-share/doc/HTML/sv/kpresenter/menuscreen.png
-share/doc/HTML/sv/kpresenter/menutext.png
-share/doc/HTML/sv/kpresenter/menutools.png
-share/doc/HTML/sv/kpresenter/menuview.png
-share/doc/HTML/sv/kpresenter/options.docbook
-share/doc/HTML/sv/kpresenter/screen.docbook
-share/doc/HTML/sv/kpresenter/settings01.png
-share/doc/HTML/sv/kpresenter/settings03.png
-share/doc/HTML/sv/kpresenter/settings04.png
-share/doc/HTML/sv/kpresenter/settings05.png
-share/doc/HTML/sv/kpresenter/settings06.png
-share/doc/HTML/sv/kpresenter/template02.png
-share/doc/HTML/sv/kpresenter/template03.png
-share/doc/HTML/sv/kpresenter/template04.png
-share/doc/HTML/sv/kpresenter/template06.png
-share/doc/HTML/sv/kpresenter/template07.png
-share/doc/HTML/sv/kpresenter/textmenu01.png
-share/doc/HTML/sv/kpresenter/textmenu02.png
-share/doc/HTML/sv/kpresenter/textmenu03.png
-share/doc/HTML/sv/kpresenter/textmenu03a.png
-share/doc/HTML/sv/kpresenter/toolsmenu01.png
-share/doc/HTML/sv/kpresenter/tut01.png
-share/doc/HTML/sv/kpresenter/tut02.png
-share/doc/HTML/sv/kpresenter/tut03.png
-share/doc/HTML/sv/kpresenter/tut04.png
-share/doc/HTML/sv/kpresenter/tut05.png
-share/doc/HTML/sv/kpresenter/tut06.png
-share/doc/HTML/sv/kpresenter/tut07.png
-share/doc/HTML/sv/kpresenter/tut08.png
-share/doc/HTML/sv/kpresenter/tut09.png
-share/doc/HTML/sv/kpresenter/tut10.png
-share/doc/HTML/sv/kpresenter/tut11.png
-share/doc/HTML/sv/kpresenter/tut12.png
-share/doc/HTML/sv/kpresenter/tut13.png
-share/doc/HTML/sv/kpresenter/tut14.png
-share/doc/HTML/sv/kpresenter/tut15.png
-share/doc/HTML/sv/kpresenter/tut16.png
-share/doc/HTML/sv/kpresenter/tut17.png
-share/doc/HTML/sv/kpresenter/tut18.png
-share/doc/HTML/sv/kpresenter/tut19.png
-share/doc/HTML/sv/kpresenter/tut20.png
-share/doc/HTML/sv/kpresenter/tut21.png
-share/doc/HTML/sv/kpresenter/tut22.png
-share/doc/HTML/sv/kpresenter/tut23.png
-share/doc/HTML/sv/kpresenter/tutorial.docbook
 share/doc/HTML/sv/kreversi/common
 share/doc/HTML/sv/kreversi/index.cache.bz2
 share/doc/HTML/sv/kreversi/index.docbook
@@ -851,9 +764,6 @@ share/doc/HTML/sv/kspaceduel/kspaceduel3.png
 share/doc/HTML/sv/kspell/common
 share/doc/HTML/sv/kspell/index.cache.bz2
 share/doc/HTML/sv/kspell/index.docbook
-share/doc/HTML/sv/kspread/common
-share/doc/HTML/sv/kspread/index.cache.bz2
-share/doc/HTML/sv/kspread/index.docbook
 share/doc/HTML/sv/kstars/ai-contents.docbook
 share/doc/HTML/sv/kstars/astroinfo.docbook
 share/doc/HTML/sv/kstars/commands.docbook
@@ -918,15 +828,6 @@ share/doc/HTML/sv/ktuberling/menu.help.png
 share/doc/HTML/sv/ktuberling/menu.option.png
 share/doc/HTML/sv/ktuberling/menu.raw.png
 share/doc/HTML/sv/ktuberling/technical-reference.docbook
-share/doc/HTML/sv/kugar/common
-share/doc/HTML/sv/kugar/datadtd.docbook
-share/doc/HTML/sv/kugar/dataref.docbook
-share/doc/HTML/sv/kugar/index.cache.bz2
-share/doc/HTML/sv/kugar/index.docbook
-share/doc/HTML/sv/kugar/kugar.png
-share/doc/HTML/sv/kugar/template-elements.docbook
-share/doc/HTML/sv/kugar/template.docbook
-share/doc/HTML/sv/kugar/templatedtd.docbook
 share/doc/HTML/sv/kuickshow/common
 share/doc/HTML/sv/kuickshow/index.cache.bz2
 share/doc/HTML/sv/kuickshow/index.docbook
@@ -983,121 +884,6 @@ share/doc/HTML/sv/kweather/index.docbook
 share/doc/HTML/sv/kwin4/common
 share/doc/HTML/sv/kwin4/index.cache.bz2
 share/doc/HTML/sv/kwin4/index.docbook
-share/doc/HTML/sv/kword/ChooseTempDia.png
-share/doc/HTML/sv/kword/Tut1.png
-share/doc/HTML/sv/kword/Tut11a.png
-share/doc/HTML/sv/kword/Tut11b.png
-share/doc/HTML/sv/kword/Tut13.png
-share/doc/HTML/sv/kword/Tut14.png
-share/doc/HTML/sv/kword/Tut14a.png
-share/doc/HTML/sv/kword/Tut14b.png
-share/doc/HTML/sv/kword/Tut15.png
-share/doc/HTML/sv/kword/Tut15b.png
-share/doc/HTML/sv/kword/Tut16.png
-share/doc/HTML/sv/kword/Tut18.png
-share/doc/HTML/sv/kword/Tut19.png
-share/doc/HTML/sv/kword/Tut2.png
-share/doc/HTML/sv/kword/Tut21.png
-share/doc/HTML/sv/kword/Tut22.png
-share/doc/HTML/sv/kword/Tut3.png
-share/doc/HTML/sv/kword/Tut4.png
-share/doc/HTML/sv/kword/Tut7.png
-share/doc/HTML/sv/kword/Tut8.png
-share/doc/HTML/sv/kword/auto1.png
-share/doc/HTML/sv/kword/auto2.png
-share/doc/HTML/sv/kword/auto3.png
-share/doc/HTML/sv/kword/basic.png
-share/doc/HTML/sv/kword/basics.docbook
-share/doc/HTML/sv/kword/columns.docbook
-share/doc/HTML/sv/kword/common
-share/doc/HTML/sv/kword/ctab2.png
-share/doc/HTML/sv/kword/delcoldlg.png
-share/doc/HTML/sv/kword/delrowdlg.png
-share/doc/HTML/sv/kword/do_not_translate.docbook
-share/doc/HTML/sv/kword/dtab2.png
-share/doc/HTML/sv/kword/dtpfmtpg1.png
-share/doc/HTML/sv/kword/dtpfmtpg2.png
-share/doc/HTML/sv/kword/editing.docbook
-share/doc/HTML/sv/kword/fchardlg.png
-share/doc/HTML/sv/kword/finddlg.png
-share/doc/HTML/sv/kword/formatchar.docbook
-share/doc/HTML/sv/kword/formatframes.docbook
-share/doc/HTML/sv/kword/formatpara.docbook
-share/doc/HTML/sv/kword/formframe1.png
-share/doc/HTML/sv/kword/formframe2.png
-share/doc/HTML/sv/kword/formframe4.png
-share/doc/HTML/sv/kword/formulas.docbook
-share/doc/HTML/sv/kword/fpara1.png
-share/doc/HTML/sv/kword/fpara2.png
-share/doc/HTML/sv/kword/fpara3.png
-share/doc/HTML/sv/kword/fpara4.png
-share/doc/HTML/sv/kword/fpara5.png
-share/doc/HTML/sv/kword/framers.png
-share/doc/HTML/sv/kword/frames.docbook
-share/doc/HTML/sv/kword/fundimentals.docbook
-share/doc/HTML/sv/kword/graphics.docbook
-share/doc/HTML/sv/kword/headerfooter.docbook
-share/doc/HTML/sv/kword/index.cache.bz2
-share/doc/HTML/sv/kword/index.docbook
-share/doc/HTML/sv/kword/inscoldlg.png
-share/doc/HTML/sv/kword/insertmisc.docbook
-share/doc/HTML/sv/kword/insrowdlg.png
-share/doc/HTML/sv/kword/instab1.png
-share/doc/HTML/sv/kword/instab2.png
-share/doc/HTML/sv/kword/intro1.png
-share/doc/HTML/sv/kword/intro2.png
-share/doc/HTML/sv/kword/intro3.png
-share/doc/HTML/sv/kword/kparts.docbook
-share/doc/HTML/sv/kword/kwordtechinfo.docbook
-share/doc/HTML/sv/kword/ltab2.png
-share/doc/HTML/sv/kword/mbtb.docbook
-share/doc/HTML/sv/kword/obtkb.png
-share/doc/HTML/sv/kword/obttb.png
-share/doc/HTML/sv/kword/opendlg.png
-share/doc/HTML/sv/kword/opt.docbook
-share/doc/HTML/sv/kword/opt1.png
-share/doc/HTML/sv/kword/opt2.png
-share/doc/HTML/sv/kword/optkb.png
-share/doc/HTML/sv/kword/opttb.png
-share/doc/HTML/sv/kword/pageformat.docbook
-share/doc/HTML/sv/kword/pntdlg.png
-share/doc/HTML/sv/kword/pntdlg1.png
-share/doc/HTML/sv/kword/repldlg.png
-share/doc/HTML/sv/kword/rtab2.png
-share/doc/HTML/sv/kword/ruler.png
-share/doc/HTML/sv/kword/saved1.png
-share/doc/HTML/sv/kword/saved2.png
-share/doc/HTML/sv/kword/savedlg.png
-share/doc/HTML/sv/kword/savetmpl1.png
-share/doc/HTML/sv/kword/savetmpl2.png
-share/doc/HTML/sv/kword/savetmpl3.png
-share/doc/HTML/sv/kword/savetmpl4.png
-share/doc/HTML/sv/kword/screen.png
-share/doc/HTML/sv/kword/select1.png
-share/doc/HTML/sv/kword/spelldlg.png
-share/doc/HTML/sv/kword/storeprint.docbook
-share/doc/HTML/sv/kword/styldlg1.png
-share/doc/HTML/sv/kword/styldlg2.png
-share/doc/HTML/sv/kword/styldlg3.png
-share/doc/HTML/sv/kword/styldlg4.png
-share/doc/HTML/sv/kword/styldlg5.png
-share/doc/HTML/sv/kword/styldlg6.png
-share/doc/HTML/sv/kword/styldlg7.png
-share/doc/HTML/sv/kword/styldlg8.png
-share/doc/HTML/sv/kword/styles.docbook
-share/doc/HTML/sv/kword/table.docbook
-share/doc/HTML/sv/kword/tabstops.docbook
-share/doc/HTML/sv/kword/tb2.png
-share/doc/HTML/sv/kword/tb3.png
-share/doc/HTML/sv/kword/tb4.png
-share/doc/HTML/sv/kword/tbmax.png
-share/doc/HTML/sv/kword/techinfo.docbook
-share/doc/HTML/sv/kword/templatecreation.docbook
-share/doc/HTML/sv/kword/toc.docbook
-share/doc/HTML/sv/kword/tutorial.docbook
-share/doc/HTML/sv/kword/wpfmtpg1.png
-share/doc/HTML/sv/kword/wpfmtpg2.png
-share/doc/HTML/sv/kword/wpfmtpg3.png
 share/doc/HTML/sv/kworldclock/common
 share/doc/HTML/sv/kworldclock/index.cache.bz2
 share/doc/HTML/sv/kworldclock/index.docbook
@@ -1124,9 +910,6 @@ share/doc/HTML/sv/lskat/index.docbook
 share/doc/HTML/sv/noatun/common
 share/doc/HTML/sv/noatun/index.cache.bz2
 share/doc/HTML/sv/noatun/index.docbook
-share/doc/HTML/sv/thesaurus/common
-share/doc/HTML/sv/thesaurus/index.cache.bz2
-share/doc/HTML/sv/thesaurus/index.docbook
 share/locale/sv/LC_MESSAGES/Kiten.mo
 share/locale/sv/LC_MESSAGES/aktion.mo
 share/locale/sv/LC_MESSAGES/amor.mo
@@ -1203,6 +986,7 @@ share/locale/sv/LC_MESSAGES/kcardchooser.mo
 share/locale/sv/LC_MESSAGES/kcharselect.mo
 share/locale/sv/LC_MESSAGES/kcharselectapplet.mo
 share/locale/sv/LC_MESSAGES/kcli.mo
+share/locale/sv/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/sv/LC_MESSAGES/kcm_scsimanager.mo
 share/locale/sv/LC_MESSAGES/kcm_splash.mo
 share/locale/sv/LC_MESSAGES/kcmaccess.mo
@@ -1466,6 +1250,7 @@ share/locale/sv/LC_MESSAGES/ktux.mo
 share/locale/sv/LC_MESSAGES/kue.mo
 share/locale/sv/LC_MESSAGES/kuick_plugin.mo
 share/locale/sv/LC_MESSAGES/kuickshow.mo
+share/locale/sv/LC_MESSAGES/kurves.mo
 share/locale/sv/LC_MESSAGES/kuser.mo
 share/locale/sv/LC_MESSAGES/kvalgrind.mo
 share/locale/sv/LC_MESSAGES/kvidmode.mo
@@ -1527,3 +1312,133 @@ share/locale/sv/LC_MESSAGES/zonedclockapplet.mo
 share/locale/sv/charset
 share/locale/sv/entry.desktop
 share/locale/sv/flag.png
+@dirrm share/doc/HTML/sv/noatun
+@dirrm share/doc/HTML/sv/lskat
+@dirrm share/doc/HTML/sv/lisa
+@dirrm share/doc/HTML/sv/kwuftpd
+@dirrm share/doc/HTML/sv/kwrite
+@dirrm share/doc/HTML/sv/kworldclock
+@dirrm share/doc/HTML/sv/kwin4
+@dirrm share/doc/HTML/sv/kweather
+@dirrm share/doc/HTML/sv/kvoctrain
+@dirrm share/doc/HTML/sv/kview
+@dirrm share/doc/HTML/sv/kuser
+@dirrm share/doc/HTML/sv/kuickshow
+@dirrm share/doc/HTML/sv/ktuberling
+@dirrm share/doc/HTML/sv/ktron
+@dirrm share/doc/HTML/sv/ktouch
+@dirrm share/doc/HTML/sv/kteatime
+@dirrm share/doc/HTML/sv/ktalkd
+@dirrm share/doc/HTML/sv/ksysv
+@dirrm share/doc/HTML/sv/ksysguard
+@dirrm share/doc/HTML/sv/kstars
+@dirrm share/doc/HTML/sv/kspell
+@dirrm share/doc/HTML/sv/kspaceduel
+@dirrm share/doc/HTML/sv/ksokoban
+@dirrm share/doc/HTML/sv/ksnapshot
+@dirrm share/doc/HTML/sv/ksnake
+@dirrm share/doc/HTML/sv/ksirtet
+@dirrm share/doc/HTML/sv/ksirc
+@dirrm share/doc/HTML/sv/kshisen
+@dirrm share/doc/HTML/sv/kscore
+@dirrm share/doc/HTML/sv/kscd
+@dirrm share/doc/HTML/sv/ksame
+@dirrm share/doc/HTML/sv/kruler
+@dirrm share/doc/HTML/sv/kreversi
+@dirrm share/doc/HTML/sv/kppp
+@dirrm share/doc/HTML/sv/kpoker
+@dirrm share/doc/HTML/sv/kpm
+@dirrm share/doc/HTML/sv/kpilot
+@dirrm share/doc/HTML/sv/kpf
+@dirrm share/doc/HTML/sv/kpat
+@dirrm share/doc/HTML/sv/kpaint
+@dirrm share/doc/HTML/sv/kpager
+@dirrm share/doc/HTML/sv/kpackage
+@dirrm share/doc/HTML/sv/korn
+@dirrm share/doc/HTML/sv/korganizer
+@dirrm share/doc/HTML/sv/kooka
+@dirrm share/doc/HTML/sv/konsole
+@dirrm share/doc/HTML/sv/konquest
+@dirrm share/doc/HTML/sv/konqueror
+@dirrm share/doc/HTML/sv/konq-plugins
+@dirrm share/doc/HTML/sv/koncd
+@dirrm share/doc/HTML/sv/kodo
+@dirrm share/doc/HTML/sv/knotes
+@dirrm share/doc/HTML/sv/knode
+@dirrm share/doc/HTML/sv/knewsticker
+@dirrm share/doc/HTML/sv/kmoon
+@dirrm share/doc/HTML/sv/kmix
+@dirrm share/doc/HTML/sv/kmines
+@dirrm share/doc/HTML/sv/kmidi
+@dirrm share/doc/HTML/sv/kmid
+@dirrm share/doc/HTML/sv/kmessedwords
+@dirrm share/doc/HTML/sv/kmenuedit
+@dirrm share/doc/HTML/sv/kmail
+@dirrm share/doc/HTML/sv/klprfax
+@dirrm share/doc/HTML/sv/klpq
+@dirrm share/doc/HTML/sv/kljettool
+@dirrm share/doc/HTML/sv/klipper
+@dirrm share/doc/HTML/sv/klines
+@dirrm share/doc/HTML/sv/klettres
+@dirrm share/doc/HTML/sv/kjumpingcube
+@dirrm share/doc/HTML/sv/kjots
+@dirrm share/doc/HTML/sv/kit
+@dirrm share/doc/HTML/sv/kioslave
+@dirrm share/doc/HTML/sv/kiconedit
+@dirrm share/doc/HTML/sv/kicker-applets
+@dirrm share/doc/HTML/sv/kicker
+@dirrm share/doc/HTML/sv/khexedit
+@dirrm share/doc/HTML/sv/khelpcenter/visualdict
+@dirrm share/doc/HTML/sv/khelpcenter/userguide
+@dirrm share/doc/HTML/sv/khelpcenter/quickstart
+@dirrm share/doc/HTML/sv/khelpcenter/glossary
+@dirrm share/doc/HTML/sv/khelpcenter/faq
+@dirrm share/doc/HTML/sv/khelpcenter
+@dirrm share/doc/HTML/sv/khangman
+@dirrm share/doc/HTML/sv/kghostview
+@dirrm share/doc/HTML/sv/kgeo
+@dirrm share/doc/HTML/sv/kfract
+@dirrm share/doc/HTML/sv/kfouleggs
+@dirrm share/doc/HTML/sv/kfloppy
+@dirrm share/doc/HTML/sv/kfind
+@dirrm share/doc/HTML/sv/kenolaba
+@dirrm share/doc/HTML/sv/kedit
+@dirrm share/doc/HTML/sv/kdvi
+@dirrm share/doc/HTML/sv/kdm
+@dirrm share/doc/HTML/sv/kdict
+@dirrm share/doc/HTML/sv/kdf
+@dirrm share/doc/HTML/sv/kdevelop
+@dirrm share/doc/HTML/sv/kdesu
+@dirrm share/doc/HTML/sv/kdeprint
+@dirrm share/doc/HTML/sv/kdebugdialog
+@dirrm share/doc/HTML/sv/kdat
+@dirrm share/doc/HTML/sv/kcron
+@dirrm share/doc/HTML/sv/kcontrol
+@dirrm share/doc/HTML/sv/kcoloredit
+@dirrm share/doc/HTML/sv/kcalc
+@dirrm share/doc/HTML/sv/kbounce
+@dirrm share/doc/HTML/sv/kblackbox
+@dirrm share/doc/HTML/sv/kbattleship
+@dirrm share/doc/HTML/sv/kbackgammon
+@dirrm share/doc/HTML/sv/kbabel
+@dirrm share/doc/HTML/sv/katomic
+@dirrm share/doc/HTML/sv/kate-plugins
+@dirrm share/doc/HTML/sv/kate
+@dirrm share/doc/HTML/sv/kasteroids
+@dirrm share/doc/HTML/sv/karm
+@dirrm share/doc/HTML/sv/kandy
+@dirrm share/doc/HTML/sv/kalarm
+@dirrm share/doc/HTML/sv/kaddressbook
+@dirrm share/doc/HTML/sv/kab
+@dirrm share/doc/HTML/sv/common
+@dirrm share/doc/HTML/sv/cervisia
+@dirrm share/doc/HTML/sv/artsbuilder/images
+@dirrm share/doc/HTML/sv/artsbuilder
+@dirrm share/doc/HTML/sv/ark
+@dirrm share/doc/HTML/sv/amor
+@dirrm share/doc/HTML/sv/aktion
+@dirrm share/doc/HTML/sv/KRegExpEditor
+@dirrm share/doc/HTML/sv
+@dirrm share/apps/ktuberling/sounds/sv
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

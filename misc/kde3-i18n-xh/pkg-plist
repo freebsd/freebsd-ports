@@ -25,35 +25,12 @@ share/doc/HTML/xh/kmail/index.docbook
 share/doc/HTML/xh/kmenuedit/common
 share/doc/HTML/xh/kmenuedit/index.cache.bz2
 share/doc/HTML/xh/kmenuedit/index.docbook
-share/doc/HTML/xh/koffice/common
-share/doc/HTML/xh/koffice/index.cache.bz2
-share/doc/HTML/xh/koffice/index.docbook
 share/doc/HTML/xh/konqueror/common
 share/doc/HTML/xh/konqueror/index.cache.bz2
 share/doc/HTML/xh/konqueror/index.docbook
 share/doc/HTML/xh/kspell/common
 share/doc/HTML/xh/kspell/index.cache.bz2
 share/doc/HTML/xh/kspell/index.docbook
-share/doc/HTML/xh/kugar/datadtd.docbook
-share/doc/HTML/xh/kugar/dataref.docbook
-share/doc/HTML/xh/kugar/template.docbook
-share/doc/HTML/xh/kugar/templatedtd.docbook
-share/doc/HTML/xh/kword/formulas.docbook
-share/doc/HTML/xh/kword/graphics.docbook
-share/doc/HTML/xh/kword/insertmisc.docbook
-share/doc/HTML/xh/kword/kparts.docbook
-share/doc/HTML/xh/kword/kwordbasics.docbook
-share/doc/HTML/xh/kword/kwordfundimentals.docbook
-share/doc/HTML/xh/kword/kwordguides1.docbook
-share/doc/HTML/xh/kword/kwordguides2.docbook
-share/doc/HTML/xh/kword/kwordguides3.docbook
-share/doc/HTML/xh/kword/kwordguides3b.docbook
-share/doc/HTML/xh/kword/kwordguides3c.docbook
-share/doc/HTML/xh/kword/kwordguides4.docbook
-share/doc/HTML/xh/kword/kwordmbtb.docbook
-share/doc/HTML/xh/kword/kwordopt.docbook
-share/doc/HTML/xh/kword/kwordtutorial.docbook
-share/doc/HTML/xh/kword/opt.docbook
 share/locale/xh/LC_MESSAGES/aktion.mo
 share/locale/xh/LC_MESSAGES/amor.mo
 share/locale/xh/LC_MESSAGES/appletproxy.mo
@@ -62,6 +39,7 @@ share/locale/xh/LC_MESSAGES/artsbuilder.mo
 share/locale/xh/LC_MESSAGES/artscontrol.mo
 share/locale/xh/LC_MESSAGES/babelfish.mo
 share/locale/xh/LC_MESSAGES/caitoo.mo
+share/locale/xh/LC_MESSAGES/cervisia.mo
 share/locale/xh/LC_MESSAGES/childpanelextension.mo
 share/locale/xh/LC_MESSAGES/clockapplet.mo
 share/locale/xh/LC_MESSAGES/colfind.mo
@@ -278,6 +256,7 @@ share/locale/xh/LC_MESSAGES/knotes.mo
 share/locale/xh/LC_MESSAGES/knotify.mo
 share/locale/xh/LC_MESSAGES/kodo.mo
 share/locale/xh/LC_MESSAGES/kolourpicker.mo
+share/locale/xh/LC_MESSAGES/kompare.mo
 share/locale/xh/LC_MESSAGES/konqsidebar_mediaplayer.mo
 share/locale/xh/LC_MESSAGES/konqueror.mo
 share/locale/xh/LC_MESSAGES/konquest.mo
@@ -390,3 +369,15 @@ share/locale/xh/LC_MESSAGES/validatorsplugin.mo
 share/locale/xh/LC_MESSAGES/webarchiver.mo
 share/locale/xh/charset
 share/locale/xh/entry.desktop
+@dirrm share/locale/xh/LC_MESSAGES
+@dirrm share/locale/xh
+@dirrm share/doc/HTML/xh/kspell
+@dirrm share/doc/HTML/xh/konqueror
+@dirrm share/doc/HTML/xh/kmenuedit
+@dirrm share/doc/HTML/xh/kmail
+@dirrm share/doc/HTML/xh/kicker-applets
+@dirrm share/doc/HTML/xh/khelpcenter
+@dirrm share/doc/HTML/xh/kate-plugins
+@dirrm share/doc/HTML/xh/kaddressbook
+@dirrm share/doc/HTML/xh/amor
+@dirrm share/doc/HTML/xh

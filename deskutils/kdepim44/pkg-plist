@@ -1,4 +1,3 @@
-@comment files/links
 bin/ical2vcal
 bin/kabcfrontend
 bin/kalarm
@@ -211,13 +210,12 @@ share/autostart/kalarm.tray.desktop
 share/autostart/kalarmd.autostart.desktop
 share/autostart/korgac.desktop
 share/config/knotesrc
-share/config/korganizerrc
-share/doc/HTML/en/auto/alarmmessage.png
-share/doc/HTML/en/auto/common
-share/doc/HTML/en/auto/editwindow.png
-share/doc/HTML/en/auto/index.cache.bz2
-share/doc/HTML/en/auto/index.docbook
-share/doc/HTML/en/auto/mainwindow.png
+share/doc/HTML/en/kalarm/alarmmessage.png
+share/doc/HTML/en/kalarm/common
+share/doc/HTML/en/kalarm/editwindow.png
+share/doc/HTML/en/kalarm/index.cache.bz2
+share/doc/HTML/en/kalarm/index.docbook
+share/doc/HTML/en/kalarm/mainwindow.png
 share/doc/HTML/en/kandy/common
 share/doc/HTML/en/kandy/index.cache.bz2
 share/doc/HTML/en/kandy/index.docbook
@@ -322,9 +320,10 @@ share/servicetypes/korganizerpart.desktop
 @dirrm share/doc/HTML/en/knotes
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kandy
-@dirrm share/doc/HTML/en/auto
+@dirrm share/doc/HTML/en/kalarm
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/config
 @dirrm share/autostart
 @dirrm share/apps/korganizer/sounds
@@ -382,6 +381,7 @@ share/servicetypes/korganizerpart.desktop
 @dirrm share/applnk/Settings
 @dirrm share/applnk/Applications
 @dirrm share/applnk
+@dirrm lib/kde3
 @dirrm include/korganizer
 @dirrm include/kgantt
 @dirrm include/calendar

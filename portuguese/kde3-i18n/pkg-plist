@@ -257,8 +257,6 @@ share/doc/HTML/pt/ksysv/index.docbook
 share/doc/HTML/pt/kteatime/common
 share/doc/HTML/pt/kteatime/index.cache.bz2
 share/doc/HTML/pt/kteatime/index.docbook
-share/doc/HTML/pt/kugar/datadtd.docbook
-share/doc/HTML/pt/kugar/templatedtd.docbook
 share/doc/HTML/pt/kuser/common
 share/doc/HTML/pt/kuser/index.cache.bz2
 share/doc/HTML/pt/kuser/index.docbook
@@ -347,6 +345,7 @@ share/locale/pt/LC_MESSAGES/kcardchooser.mo
 share/locale/pt/LC_MESSAGES/kcharselect.mo
 share/locale/pt/LC_MESSAGES/kcharselectapplet.mo
 share/locale/pt/LC_MESSAGES/kcli.mo
+share/locale/pt/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/pt/LC_MESSAGES/kcm_scsimanager.mo
 share/locale/pt/LC_MESSAGES/kcm_splash.mo
 share/locale/pt/LC_MESSAGES/kcmaccess.mo
@@ -606,6 +605,7 @@ share/locale/pt/LC_MESSAGES/ktux.mo
 share/locale/pt/LC_MESSAGES/kue.mo
 share/locale/pt/LC_MESSAGES/kuick_plugin.mo
 share/locale/pt/LC_MESSAGES/kuickshow.mo
+share/locale/pt/LC_MESSAGES/kurves.mo
 share/locale/pt/LC_MESSAGES/kuser.mo
 share/locale/pt/LC_MESSAGES/kvalgrind.mo
 share/locale/pt/LC_MESSAGES/kvidmode.mo
@@ -662,3 +662,34 @@ share/locale/pt/LC_MESSAGES/zonedclockapplet.mo
 share/locale/pt/charset
 share/locale/pt/entry.desktop
 share/locale/pt/flag.png
+@dirrm share/doc/HTML/pt/kwuftpd
+@dirrm share/doc/HTML/pt/kworldclock
+@dirrm share/doc/HTML/pt/kweather
+@dirrm share/doc/HTML/pt/kuser
+@dirrm share/doc/HTML/pt/kteatime
+@dirrm share/doc/HTML/pt/ksysv
+@dirrm share/doc/HTML/pt/kspell
+@dirrm share/doc/HTML/pt/ksnapshot
+@dirrm share/doc/HTML/pt/kscore
+@dirrm share/doc/HTML/pt/kpager
+@dirrm share/doc/HTML/pt/kpackage
+@dirrm share/doc/HTML/pt/kodo
+@dirrm share/doc/HTML/pt/kmoon
+@dirrm share/doc/HTML/pt/klprfax
+@dirrm share/doc/HTML/pt/klpq
+@dirrm share/doc/HTML/pt/kioslave
+@dirrm share/doc/HTML/pt/khelpcenter
+@dirrm share/doc/HTML/pt/kfloppy
+@dirrm share/doc/HTML/pt/kfind
+@dirrm share/doc/HTML/pt/kenolaba
+@dirrm share/doc/HTML/pt/kdf
+@dirrm share/doc/HTML/pt/kdesu
+@dirrm share/doc/HTML/pt/kdeprint
+@dirrm share/doc/HTML/pt/kdebugdialog
+@dirrm share/doc/HTML/pt/kcron
+@dirrm share/doc/HTML/pt/kcontrol
+@dirrm share/doc/HTML/pt/kate
+@dirrm share/doc/HTML/pt/kaddressbook
+@dirrm share/doc/HTML/pt/common
+@dirrm share/doc/HTML/pt/amor
+@dirrm share/doc/HTML/pt

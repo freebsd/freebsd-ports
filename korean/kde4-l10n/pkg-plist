@@ -224,3 +224,5 @@ share/locale/ko/LC_MESSAGES/taskbarextension.mo
 share/locale/ko/charset
 share/locale/ko/entry.desktop
 share/locale/ko/flag.png
+@dirrm share/doc/HTML/ko/common
+@dirrm share/doc/HTML/ko

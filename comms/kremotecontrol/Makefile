@@ -1,4 +1,4 @@
-# New ports collection makefile for:	kdeutils2
+# New ports collection makefile for:	kdeutils3
 # Date created:				3 November 2001
 # Whom:					will@cvs.kde.org
 #
@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	kdeutils
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES?=	misc kde
-MASTER_SITES=	http://www.csociety.org/~will/kde/${PORTVERSION}/
+MASTER_SITES=		${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
 
-#WRKSRC=		${WRKDIR}/kdeutils
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
 MAN1=		efax.1 efix.1 fax.1
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 #klaptop doesn't like alpha because alpha doesn't support apm
 .if ${MACHINE_ARCH} == "alpha"

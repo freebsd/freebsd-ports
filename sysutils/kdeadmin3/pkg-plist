@@ -1,4 +1,3 @@
-@comment files/links
 bin/kcron
 bin/kpackage
 bin/kuser
@@ -101,6 +100,7 @@ share/mimelnk/application/x-debian-package.desktop
 @dirrm share/doc/HTML/en/kcron
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
+@dirrm share/doc
 @dirrm share/apps/kuser/pics
 @dirrm share/apps/kuser/icons/hicolor/22x22/actions
 @dirrm share/apps/kuser/icons/hicolor/22x22

@@ -202,6 +202,7 @@ share/locale/lt/LC_MESSAGES/kstart.mo
 share/locale/lt/LC_MESSAGES/ksysguard.mo
 share/locale/lt/LC_MESSAGES/ksystemtrayapplet.mo
 share/locale/lt/LC_MESSAGES/ksystraycmd.mo
+share/locale/lt/LC_MESSAGES/ksysv.mo
 share/locale/lt/LC_MESSAGES/ktalkd.mo
 share/locale/lt/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/lt/LC_MESSAGES/ktimemon.mo
@@ -245,3 +246,5 @@ share/locale/lt/LC_MESSAGES/webarchiver.mo
 share/locale/lt/charset
 share/locale/lt/entry.desktop
 share/locale/lt/flag.png
+@dirrm share/locale/lt/LC_MESSAGES
+@dirrm share/locale/lt

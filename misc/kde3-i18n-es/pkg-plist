@@ -576,12 +576,6 @@ share/doc/HTML/es/kvoctrain/index.docbook
 share/doc/HTML/es/kweather/common
 share/doc/HTML/es/kweather/index.cache.bz2
 share/doc/HTML/es/kweather/index.docbook
-share/doc/HTML/es/kword/formulas.docbook
-share/doc/HTML/es/kword/graphics.docbook
-share/doc/HTML/es/kword/headerfooter.docbook
-share/doc/HTML/es/kword/insertmisc.docbook
-share/doc/HTML/es/kword/kparts.docbook
-share/doc/HTML/es/kword/toc.docbook
 share/doc/HTML/es/kworldclock/common
 share/doc/HTML/es/kworldclock/index.cache.bz2
 share/doc/HTML/es/kworldclock/index.docbook
@@ -988,3 +982,90 @@ share/locale/es/LC_MESSAGES/zonedclockapplet.mo
 share/locale/es/charset
 share/locale/es/entry.desktop
 share/locale/es/flag.png
+@dirrm share/doc/HTML/es/noatun
+@dirrm share/doc/HTML/es/kwuftpd
+@dirrm share/doc/HTML/es/kworldclock
+@dirrm share/doc/HTML/es/kweather
+@dirrm share/doc/HTML/es/kvoctrain
+@dirrm share/doc/HTML/es/kview
+@dirrm share/doc/HTML/es/kuser
+@dirrm share/doc/HTML/es/kuickshow
+@dirrm share/doc/HTML/es/ktouch
+@dirrm share/doc/HTML/es/kteatime
+@dirrm share/doc/HTML/es/ksysv
+@dirrm share/doc/HTML/es/ksysguard
+@dirrm share/doc/HTML/es/kstars
+@dirrm share/doc/HTML/es/kspell
+@dirrm share/doc/HTML/es/ksnapshot
+@dirrm share/doc/HTML/es/ksnake
+@dirrm share/doc/HTML/es/ksirtet
+@dirrm share/doc/HTML/es/kshisen
+@dirrm share/doc/HTML/es/kscore
+@dirrm share/doc/HTML/es/kscd
+@dirrm share/doc/HTML/es/ksame
+@dirrm share/doc/HTML/es/kruler
+@dirrm share/doc/HTML/es/kppp
+@dirrm share/doc/HTML/es/kpoker
+@dirrm share/doc/HTML/es/kpat
+@dirrm share/doc/HTML/es/kpaint
+@dirrm share/doc/HTML/es/kpager
+@dirrm share/doc/HTML/es/kpackage
+@dirrm share/doc/HTML/es/kooka
+@dirrm share/doc/HTML/es/konsole
+@dirrm share/doc/HTML/es/konquest
+@dirrm share/doc/HTML/es/konqueror
+@dirrm share/doc/HTML/es/koncd
+@dirrm share/doc/HTML/es/kodo
+@dirrm share/doc/HTML/es/knode
+@dirrm share/doc/HTML/es/kmoon
+@dirrm share/doc/HTML/es/kmix
+@dirrm share/doc/HTML/es/kmines
+@dirrm share/doc/HTML/es/kmidi
+@dirrm share/doc/HTML/es/kmessedwords
+@dirrm share/doc/HTML/es/kmenuedit
+@dirrm share/doc/HTML/es/klprfax
+@dirrm share/doc/HTML/es/klipper
+@dirrm share/doc/HTML/es/klines
+@dirrm share/doc/HTML/es/klettres
+@dirrm share/doc/HTML/es/kit
+@dirrm share/doc/HTML/es/kioslave
+@dirrm share/doc/HTML/es/kiconedit
+@dirrm share/doc/HTML/es/kicker-applets
+@dirrm share/doc/HTML/es/kicker
+@dirrm share/doc/HTML/es/khelpcenter/visualdict
+@dirrm share/doc/HTML/es/khelpcenter/userguide
+@dirrm share/doc/HTML/es/khelpcenter/quickstart
+@dirrm share/doc/HTML/es/khelpcenter/glossary
+@dirrm share/doc/HTML/es/khelpcenter/faq
+@dirrm share/doc/HTML/es/khelpcenter
+@dirrm share/doc/HTML/es/khangman
+@dirrm share/doc/HTML/es/kghostview
+@dirrm share/doc/HTML/es/kgeo
+@dirrm share/doc/HTML/es/kfract
+@dirrm share/doc/HTML/es/kfloppy
+@dirrm share/doc/HTML/es/kfind
+@dirrm share/doc/HTML/es/kenolaba
+@dirrm share/doc/HTML/es/kdvi
+@dirrm share/doc/HTML/es/kdm
+@dirrm share/doc/HTML/es/kdf
+@dirrm share/doc/HTML/es/kdevelop
+@dirrm share/doc/HTML/es/kdesu
+@dirrm share/doc/HTML/es/kdeprint
+@dirrm share/doc/HTML/es/kdebugdialog
+@dirrm share/doc/HTML/es/kdat
+@dirrm share/doc/HTML/es/kcron
+@dirrm share/doc/HTML/es/kcontrol
+@dirrm share/doc/HTML/es/kcoloredit
+@dirrm share/doc/HTML/es/kbounce
+@dirrm share/doc/HTML/es/katomic
+@dirrm share/doc/HTML/es/kate-plugins
+@dirrm share/doc/HTML/es/kate
+@dirrm share/doc/HTML/es/kasteroids
+@dirrm share/doc/HTML/es/kaddressbook
+@dirrm share/doc/HTML/es/kab
+@dirrm share/doc/HTML/es/common
+@dirrm share/doc/HTML/es/artsbuilder
+@dirrm share/doc/HTML/es/ark
+@dirrm share/doc/HTML/es/amor
+@dirrm share/doc/HTML/es/aktion
+@dirrm share/doc/HTML/es

@@ -6,45 +6,33 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	2.0.2
-PORTREVISION?=	1
+PORTVERSION=	2.1.1
 CATEGORIES?=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/2.2.2/src
+MASTER_SITE_SUBDIR=	stable/3.0.1/src
 DIST_SUBDIR=	KDE
+DISTNAME=	${PORTNAME}-${PORTVERSION}_for_KDE_3.0
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
-		kdoc:${PORTSDIR}/textproc/kdoc \
-		kiconedit:${PORTSDIR}/graphics/kdegraphics2 \
-		ark:${PORTSDIR}/misc/kdeutils2 \
+		kiconedit:${PORTSDIR}/graphics/kdegraphics3 \
+		ark:${PORTSDIR}/misc/kdeutils3 \
 		glimpse:${PORTSDIR}/textproc/glimpse \
-		designer:${PORTSDIR}/devel/qt-designer \
-		linguist:${PORTSDIR}/devel/linguist \
-		kdbg:${PORTSDIR}/devel/kdbg \
-		kbabel:${PORTSDIR}/devel/kdesdk \
+		kbabel:${PORTSDIR}/devel/kdesdk3 \
 		a2ps:${PORTSDIR}/print/a2ps-letter
 .endif
 
-USE_KDELIBS_VER=2
+USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt2/html
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500029
-_NO_KDE_OBJPRELINK=yes
-.endif
-
-.include "${.CURDIR}/../../x11/kde2/Makefile.kde"
+CONFIGURE_ARGS+= --with-qtdoc-dir=${X11BASE}/share/doc/qt/html
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)
@@ -54,18 +42,4 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-pre-configure:
-	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
-	cd ${WRKSRC} ; env PATH=${WRKSRC}/auto-bin:$$PATH \
-		${GMAKE} -f Makefile.cvs
-
-pre-build:
-	${PERL} -pi -e "s@libkdeui.so.3@libkdeui.so@g" ${WRKSRC}/kdevelop/main.cpp
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

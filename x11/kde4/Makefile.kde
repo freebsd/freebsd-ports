@@ -1,0 +1,58 @@
+# This is a simple set of Makefile macros which allow the core kde ports to
+# bring these in automatically since it's tiring to modify all of them to
+# add more of these.  These don't belong in bsd.kde.mk because they aren't
+# very likely to apply outside of KDE core modules.  Nonetheless, also
+# provide variables to remove one or more of these.
+#
+# $FreeBSD$
+
+CONFIGURE_ARGS?=
+
+# Stop the docs from regenerating.
+COPY=	-c -p
+
+.if !defined(_NO_KDE_CONFTARGET_HACK)
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+.endif
+
+.if !defined(_NO_KDE_FINAL)
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+CONFIGURE_ARGS+=--enable-final
+.endif
+.endif
+
+.if !defined(_NO_KDE_NDEBUG)
+.if defined(PARALLEL_PACKAGE_BUILD) || !defined(WANT_KDE_DEBUG)
+CONFIGURE_ARGS+=--disable-debug
+.else
+CONFIGURE_ARGS+=--enable-debug
+STRIP=''
+.endif
+.endif
+
+.if !defined(_NO_KDE_NON_I386_OPTS)
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS=		-O0 ${KDE_CFLAGS}
+.endif
+.endif
+
+kde-version-check:
+.if exists(${LOCALBASE}/include/kfm.h)
+	@${ECHO}
+	@${ECHO} "			NOTICE"
+	@${ECHO}
+	@${ECHO} "You have KDE1 headers installed!  Installing this port"
+	@${ECHO} "will result in conflicts between KDE3 and KDE1!"
+	@${ECHO}
+	@${FALSE}
+.endif
+.if exists(${LOCALBASE}/include/defaultprogress.h)
+	@${ECHO}
+	@${ECHO} "			NOTICE"
+	@${ECHO}
+	@${ECHO} "You have KDE2 headers installed!  Installing this port"
+	@${ECHO} "will result in conflicts between KDE3 and KDE2!"
+	@${ECHO}
+	@${FALSE}
+.endif

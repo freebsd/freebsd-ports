@@ -209,6 +209,7 @@ share/locale/en_GB/LC_MESSAGES/kcardchooser.mo
 share/locale/en_GB/LC_MESSAGES/kcharselect.mo
 share/locale/en_GB/LC_MESSAGES/kcharselectapplet.mo
 share/locale/en_GB/LC_MESSAGES/kcli.mo
+share/locale/en_GB/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/en_GB/LC_MESSAGES/kcm_scsimanager.mo
 share/locale/en_GB/LC_MESSAGES/kcm_splash.mo
 share/locale/en_GB/LC_MESSAGES/kcmaccess.mo
@@ -470,6 +471,7 @@ share/locale/en_GB/LC_MESSAGES/ktux.mo
 share/locale/en_GB/LC_MESSAGES/kue.mo
 share/locale/en_GB/LC_MESSAGES/kuick_plugin.mo
 share/locale/en_GB/LC_MESSAGES/kuickshow.mo
+share/locale/en_GB/LC_MESSAGES/kurves.mo
 share/locale/en_GB/LC_MESSAGES/kuser.mo
 share/locale/en_GB/LC_MESSAGES/kvalgrind.mo
 share/locale/en_GB/LC_MESSAGES/kvidmode.mo
@@ -529,3 +531,15 @@ share/locale/en_GB/LC_MESSAGES/zonedclockapplet.mo
 share/locale/en_GB/charset
 share/locale/en_GB/entry.desktop
 share/locale/en_GB/flag.png
+@dirrm share/locale/en_GB/LC_MESSAGES
+@dirrm share/locale/en_GB
+@dirrm share/doc/HTML/en_GB/kspell
+@dirrm share/doc/HTML/en_GB/kioslave
+@dirrm share/doc/HTML/en_GB/khelpcenter/visualdict
+@dirrm share/doc/HTML/en_GB/khelpcenter/userguide
+@dirrm share/doc/HTML/en_GB/khelpcenter/faq
+@dirrm share/doc/HTML/en_GB/khelpcenter
+@dirrm share/doc/HTML/en_GB/kdeprint
+@dirrm share/doc/HTML/en_GB/kdebugdialog
+@dirrm share/doc/HTML/en_GB/kcontrol
+@dirrm share/doc/HTML/en_GB

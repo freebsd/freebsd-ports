@@ -67,6 +67,10 @@ ALL_TARGET=	symlinks sub-src sub-tools
 CFLAGS+=	-O0
 .endif
 
+.if ${XFREE86_VERSION} < 4
+BROKEN=		"The QT 3.x port does not support any XFree86 < 4.x"
+.endif
+
 .if defined(WITH_OPENGL)
 # Display WITH_OPENGL advisory.
 pre-everything:
@@ -74,6 +78,16 @@ pre-everything:
 	@${ECHO_MSG} '===> NOTE: Use of WITH_OPENGL is not recommended with'
 	@${ECHO_MSG} '===> versions of XFree86 < 4.2.0.' 
 	@${ECHO_MSG} '===> **************************************************'
+.endif
+
+pre-fetch:
+.if exists(${X11BASE}/include/qt2/qapp.h)
+	@${ECHO}
+	@${ECHO} "			NOTICE"
+	@${ECHO}
+	@${ECHO} "You have QT2 headers installed!  Installing this port"
+	@${ECHO} "will result in conflicts between QT3 and QT2!"
+	@${FALSE}
 .endif
 
 # Remove unneeded dirs (speedup) and fake netscape files.

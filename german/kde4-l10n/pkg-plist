@@ -276,9 +276,6 @@ share/doc/HTML/de/kfind/index.docbook
 share/doc/HTML/de/kfloppy/common
 share/doc/HTML/de/kfloppy/index.cache.bz2
 share/doc/HTML/de/kfloppy/index.docbook
-share/doc/HTML/de/kformula/common
-share/doc/HTML/de/kformula/index.cache.bz2
-share/doc/HTML/de/kformula/index.docbook
 share/doc/HTML/de/kfouleggs/common
 share/doc/HTML/de/kfouleggs/index.cache.bz2
 share/doc/HTML/de/kfouleggs/index.docbook
@@ -321,6 +318,10 @@ share/doc/HTML/de/kgeo/vector.png
 share/doc/HTML/de/kghostview/common
 share/doc/HTML/de/kghostview/index.cache.bz2
 share/doc/HTML/de/kghostview/index.docbook
+share/doc/HTML/de/khangman/common
+share/doc/HTML/de/khangman/index.cache.bz2
+share/doc/HTML/de/khangman/index.docbook
+share/doc/HTML/de/khangman/khangman1.png
 share/doc/HTML/de/khelpcenter/common
 share/doc/HTML/de/khelpcenter/contact.docbook
 share/doc/HTML/de/khelpcenter/faq/about.docbook
@@ -415,29 +416,6 @@ share/doc/HTML/de/kicker/qb_root.png
 share/doc/HTML/de/kiconedit/common
 share/doc/HTML/de/kiconedit/index.cache.bz2
 share/doc/HTML/de/kiconedit/index.docbook
-share/doc/HTML/de/killustrator/Poly_set.png
-share/doc/HTML/de/killustrator/ausrichten.png
-share/doc/HTML/de/killustrator/bezier.png
-share/doc/HTML/de/killustrator/blend_dialog.png
-share/doc/HTML/de/killustrator/color.png
-share/doc/HTML/de/killustrator/ellipse.png
-share/doc/HTML/de/killustrator/export.png
-share/doc/HTML/de/killustrator/freehand.png
-share/doc/HTML/de/killustrator/line.png
-share/doc/HTML/de/killustrator/logo.png
-share/doc/HTML/de/killustrator/movepoint.png
-share/doc/HTML/de/killustrator/newpoint.png
-share/doc/HTML/de/killustrator/open_dialog.png
-share/doc/HTML/de/killustrator/pfeil.png
-share/doc/HTML/de/killustrator/point.png
-share/doc/HTML/de/killustrator/polygon.png
-share/doc/HTML/de/killustrator/rect.png
-share/doc/HTML/de/killustrator/rmpoint.png
-share/doc/HTML/de/killustrator/save_dialog.png
-share/doc/HTML/de/killustrator/schichten.png
-share/doc/HTML/de/killustrator/text.png
-share/doc/HTML/de/killustrator/verteilen.png
-share/doc/HTML/de/killustrator/zoom.png
 share/doc/HTML/de/kioslave/audiocd.docbook
 share/doc/HTML/de/kioslave/bzip.docbook
 share/doc/HTML/de/kioslave/bzip2.docbook
@@ -597,9 +575,6 @@ share/doc/HTML/de/korganizer/kagenda-appointment.png
 share/doc/HTML/de/korn/common
 share/doc/HTML/de/korn/index.cache.bz2
 share/doc/HTML/de/korn/index.docbook
-share/doc/HTML/de/koshell/common
-share/doc/HTML/de/koshell/index.cache.bz2
-share/doc/HTML/de/koshell/index.docbook
 share/doc/HTML/de/kpackage/common
 share/doc/HTML/de/kpackage/index.cache.bz2
 share/doc/HTML/de/kpackage/index.docbook
@@ -616,13 +591,6 @@ share/doc/HTML/de/kpat/man.docbook
 share/doc/HTML/de/kpf/common
 share/doc/HTML/de/kpf/index.cache.bz2
 share/doc/HTML/de/kpf/index.docbook
-share/doc/HTML/de/kpm/common
-share/doc/HTML/de/kpm/index.cache.bz2
-share/doc/HTML/de/kpm/index.docbook
-share/doc/HTML/de/kpm/kpmjobs.png
-share/doc/HTML/de/kpm/kpmmemory.png
-share/doc/HTML/de/kpm/kpmstart.png
-share/doc/HTML/de/kpm/kpmtext.png
 share/doc/HTML/de/kpoker/common
 share/doc/HTML/de/kpoker/index.cache.bz2
 share/doc/HTML/de/kpoker/index.docbook
@@ -636,14 +604,24 @@ share/doc/HTML/de/kppp/global-settings.docbook
 share/doc/HTML/de/kppp/hayes.docbook
 share/doc/HTML/de/kppp/index.cache.bz2
 share/doc/HTML/de/kppp/index.docbook
+share/doc/HTML/de/kppp/kppp-account-accounting-tab.png
+share/doc/HTML/de/kppp/kppp-account-dial-tab.png
+share/doc/HTML/de/kppp/kppp-account-dns-tab.png
+share/doc/HTML/de/kppp/kppp-account-execute-tab.png
+share/doc/HTML/de/kppp/kppp-account-gateway-tab.png
+share/doc/HTML/de/kppp/kppp-account-ip-tab.png
+share/doc/HTML/de/kppp/kppp-account-login-script-tab.png
+share/doc/HTML/de/kppp/kppp-config.png
+share/doc/HTML/de/kppp/kppp-device-tab.png
+share/doc/HTML/de/kppp/kppp-dialler-tab.png
 share/doc/HTML/de/kppp/kppp-faq.docbook
+share/doc/HTML/de/kppp/kppp-graph-tab.png
+share/doc/HTML/de/kppp/kppp-misc-tab.png
+share/doc/HTML/de/kppp/kppp-modem-tab.png
+share/doc/HTML/de/kppp/kppp-wizard.png
 share/doc/HTML/de/kppp/security.docbook
 share/doc/HTML/de/kppp/tricks.docbook
 share/doc/HTML/de/kppp/wizard.docbook
-share/doc/HTML/de/kpresenter/faq.docbook
-share/doc/HTML/de/kpresenter/guides.docbook
-share/doc/HTML/de/kpresenter/menus.docbook
-share/doc/HTML/de/kpresenter/options.docbook
 share/doc/HTML/de/kreversi/common
 share/doc/HTML/de/kreversi/index.cache.bz2
 share/doc/HTML/de/kreversi/index.docbook
@@ -740,6 +718,12 @@ share/doc/HTML/de/ksysv/index.docbook
 share/doc/HTML/de/ktalkd/common
 share/doc/HTML/de/ktalkd/index.cache.bz2
 share/doc/HTML/de/ktalkd/index.docbook
+share/doc/HTML/de/ktouch/common
+share/doc/HTML/de/ktouch/index.cache.bz2
+share/doc/HTML/de/ktouch/index.docbook
+share/doc/HTML/de/ktouch/screenshot1.png
+share/doc/HTML/de/ktouch/screenshot2.png
+share/doc/HTML/de/ktouch/screenshot3.png
 share/doc/HTML/de/ktron/common
 share/doc/HTML/de/ktron/index.cache.bz2
 share/doc/HTML/de/ktron/index.docbook
@@ -1151,3 +1135,112 @@ share/locale/de/LC_MESSAGES/webarchiver.mo
 share/locale/de/charset
 share/locale/de/entry.desktop
 share/locale/de/flag.png
+@dirrm share/doc/HTML/de/noatun
+@dirrm share/doc/HTML/de/lskat
+@dirrm share/doc/HTML/de/lisa
+@dirrm share/doc/HTML/de/kwrite
+@dirrm share/doc/HTML/de/kworldclock
+@dirrm share/doc/HTML/de/kwin4
+@dirrm share/doc/HTML/de/kvoctrain
+@dirrm share/doc/HTML/de/kuser
+@dirrm share/doc/HTML/de/ktuberling
+@dirrm share/doc/HTML/de/ktron
+@dirrm share/doc/HTML/de/ktouch
+@dirrm share/doc/HTML/de/ktalkd
+@dirrm share/doc/HTML/de/ksysv
+@dirrm share/doc/HTML/de/ksysguard
+@dirrm share/doc/HTML/de/kstars
+@dirrm share/doc/HTML/de/kspaceduel
+@dirrm share/doc/HTML/de/ksokoban
+@dirrm share/doc/HTML/de/ksnapshot
+@dirrm share/doc/HTML/de/ksnake
+@dirrm share/doc/HTML/de/ksmiletris
+@dirrm share/doc/HTML/de/ksirtet
+@dirrm share/doc/HTML/de/ksirc
+@dirrm share/doc/HTML/de/kshisen
+@dirrm share/doc/HTML/de/kscd
+@dirrm share/doc/HTML/de/ksame
+@dirrm share/doc/HTML/de/kruler
+@dirrm share/doc/HTML/de/kreversi
+@dirrm share/doc/HTML/de/kppp
+@dirrm share/doc/HTML/de/kpoker
+@dirrm share/doc/HTML/de/kpf
+@dirrm share/doc/HTML/de/kpat
+@dirrm share/doc/HTML/de/kpaint
+@dirrm share/doc/HTML/de/kpager
+@dirrm share/doc/HTML/de/kpackage
+@dirrm share/doc/HTML/de/korn
+@dirrm share/doc/HTML/de/korganizer
+@dirrm share/doc/HTML/de/konsole
+@dirrm share/doc/HTML/de/konquest
+@dirrm share/doc/HTML/de/konqueror
+@dirrm share/doc/HTML/de/koncd
+@dirrm share/doc/HTML/de/knotes
+@dirrm share/doc/HTML/de/knode
+@dirrm share/doc/HTML/de/knewsticker
+@dirrm share/doc/HTML/de/kmoon
+@dirrm share/doc/HTML/de/kmix
+@dirrm share/doc/HTML/de/kmines
+@dirrm share/doc/HTML/de/kmidi
+@dirrm share/doc/HTML/de/kmid
+@dirrm share/doc/HTML/de/kmessedwords
+@dirrm share/doc/HTML/de/kmail
+@dirrm share/doc/HTML/de/klprfax
+@dirrm share/doc/HTML/de/klpq
+@dirrm share/doc/HTML/de/kljettool
+@dirrm share/doc/HTML/de/klipper
+@dirrm share/doc/HTML/de/klines
+@dirrm share/doc/HTML/de/kjumpingcube
+@dirrm share/doc/HTML/de/kjots
+@dirrm share/doc/HTML/de/kit
+@dirrm share/doc/HTML/de/kioslave
+@dirrm share/doc/HTML/de/kiconedit
+@dirrm share/doc/HTML/de/kicker-applets
+@dirrm share/doc/HTML/de/kicker
+@dirrm share/doc/HTML/de/khexedit
+@dirrm share/doc/HTML/de/khelpcenter/visualdict
+@dirrm share/doc/HTML/de/khelpcenter/userguide
+@dirrm share/doc/HTML/de/khelpcenter/quickstart
+@dirrm share/doc/HTML/de/khelpcenter/faq
+@dirrm share/doc/HTML/de/khelpcenter
+@dirrm share/doc/HTML/de/khangman
+@dirrm share/doc/HTML/de/kghostview
+@dirrm share/doc/HTML/de/kgeo
+@dirrm share/doc/HTML/de/kfract
+@dirrm share/doc/HTML/de/kfouleggs
+@dirrm share/doc/HTML/de/kfloppy
+@dirrm share/doc/HTML/de/kfind
+@dirrm share/doc/HTML/de/kenolaba
+@dirrm share/doc/HTML/de/kedit
+@dirrm share/doc/HTML/de/kdvi
+@dirrm share/doc/HTML/de/kdm
+@dirrm share/doc/HTML/de/kdict
+@dirrm share/doc/HTML/de/kdf
+@dirrm share/doc/HTML/de/kdesu
+@dirrm share/doc/HTML/de/kdeprint
+@dirrm share/doc/HTML/de/kdebugdialog
+@dirrm share/doc/HTML/de/kcron
+@dirrm share/doc/HTML/de/kcontrol
+@dirrm share/doc/HTML/de/kcalc
+@dirrm share/doc/HTML/de/kbounce
+@dirrm share/doc/HTML/de/kblackbox
+@dirrm share/doc/HTML/de/kbattleship
+@dirrm share/doc/HTML/de/kbackgammon
+@dirrm share/doc/HTML/de/katomic
+@dirrm share/doc/HTML/de/kate-plugins
+@dirrm share/doc/HTML/de/kate
+@dirrm share/doc/HTML/de/kasteroids
+@dirrm share/doc/HTML/de/karm
+@dirrm share/doc/HTML/de/kandy
+@dirrm share/doc/HTML/de/kaddressbook
+@dirrm share/doc/HTML/de/kab
+@dirrm share/doc/HTML/de/common
+@dirrm share/doc/HTML/de/caitoo
+@dirrm share/doc/HTML/de/artsbuilder
+@dirrm share/doc/HTML/de/ark
+@dirrm share/doc/HTML/de/amor
+@dirrm share/doc/HTML/de/aktion
+@dirrm share/doc/HTML/de
+@dirrm share/apps/ktuberling/sounds/de
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling

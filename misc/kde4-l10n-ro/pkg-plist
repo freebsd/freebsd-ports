@@ -367,3 +367,13 @@ share/locale/ro/LC_MESSAGES/webarchiver.mo
 share/locale/ro/charset
 share/locale/ro/entry.desktop
 share/locale/ro/flag.png
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/doc/HTML/ro/kikbd
+@dirrm share/doc/HTML/ro/khelpcenter
+@dirrm share/doc/HTML/ro/common
+@dirrm share/doc/HTML/ro
+@dirrm share/apps/ktuberling/sounds/ro
+@dirrm share/apps/ktuberling/sounds
+@dirrm share/apps/ktuberling
+@dirrm share/apps/amor
