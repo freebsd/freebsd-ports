@@ -1,0 +1,11 @@
+--- src/support/dbmmanage~	Tue Oct 10 06:23:58 2000
++++ src/support/dbmmanage	Sun Dec  3 00:45:08 2000
+@@ -338,7 +338,7 @@
+     } elsif (substr($chkpass, 0, 5) eq '{SHA}') {
+         need_sha1_crypt;
+         $crypt_method = "sha1";
+-    } elsif (length($chkpass) == 13 && $chkpass ne $testpass) {
++    } elsif ((length($chkpass) == 13 && $chkpass ne $testpass) || ($chkpass =~ m/^\$[0-9]\$/)) {
+         $crypt_method = "crypt";
+     } else {
+         $crypt_method = "plain";
