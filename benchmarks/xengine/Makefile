@@ -16,7 +16,7 @@ PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
 MAINTAINER=	kazu@jp.freebsd.org
 COMMENT=	Reciprocating engine for X
 
-EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
+EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 
 DIST_SUBDIR=	xengine
 NO_WRKSUBDIR=	yes
