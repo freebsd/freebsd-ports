@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	srilm
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	textproc
 DISTNAME=	srilm
 EXTRACT_SUFX?=	.tgz

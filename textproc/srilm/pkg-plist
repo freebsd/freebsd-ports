@@ -1,6 +1,5 @@
 bin/anti-ngram
 bin/disambig
-bin/fax2tiff
 bin/hidden-ngram
 bin/lattice-tool
 bin/multi-ngram
@@ -8,7 +7,6 @@ bin/nbest-lattice
 bin/nbest-mix
 bin/nbest-optimize
 bin/nbest-pron-score
-bin/ncftpget
 bin/ngram
 bin/ngram-class
 bin/ngram-count
