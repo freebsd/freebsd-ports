@@ -1,7 +1,22 @@
---- configure.orig	Mon Feb 11 15:20:43 2002
-+++ configure	Mon Feb 11 15:22:24 2002
-@@ -8516,3 +8516,3 @@
+
+$FreeBSD$
+
+--- configure.orig	Mon Apr 15 14:19:44 2002
++++ configure	Wed May  1 03:03:18 2002
+@@ -6804,6 +6804,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7945,7 +7946,7 @@
+ BDB_LIBS=
+ BDB_CFLAGS=
  
 -for dblib in db-3.3 db-3.2 db-3.1 db-3; do
 +for dblib in db-3.3 db-3.2 db-3.1 db-3 db3; do
    as_ac_Lib=`echo "ac_cv_lib_$dblib''_db_env_create" | $as_tr_sh`
+ echo "$as_me:7950: checking for db_env_create in -l$dblib" >&5
+ echo $ECHO_N "checking for db_env_create in -l$dblib... $ECHO_C" >&6
