@@ -1,5 +1,5 @@
---- sources/handlers.c.orig	Mon Oct 20 10:27:32 2003
-+++ sources/handlers.c	Tue Oct 21 00:13:59 2003
+--- sources/handlers.c.orig	Thu Oct 23 12:43:05 2003
++++ sources/handlers.c	Fri Apr 23 16:19:52 2004
 @@ -24,6 +24,7 @@
  #endif
  
@@ -35,7 +35,7 @@
          newEnvp[i] = NULL;
          
          /* we change the current working directory to the scripts one */
-@@ -317,7 +331,244 @@
+@@ -317,7 +331,251 @@
      return 0;
  }
  
@@ -214,6 +214,13 @@
 +        newArgv[i] = NULL; /* we correctly terminate argv */
 +
 +        i = 0;
++        /* beware of not overfilling this array, check MAX_ENVP_LEN */
++        if (req.contentLength != -1)
++        {
++            sprintf(newEnvp[i++], "CONTENT_LENGTH=%ld", req.contentLength);
++            strcpy(newEnvp[i], "CONTENT_TYPE=");
++            strcat(newEnvp[i++], req.contentType);
++        }
 +        strcpy(newEnvp[i], "SERVER_NAME=");
 +        strcat(newEnvp[i++], DEFAULT_SERVER_NAME);
 +        strcpy(newEnvp[i], "SERVER_SOFTWARE=");
@@ -281,17 +288,3 @@
  int sock;
  char filePath[];
  char mimeType[];
-@@ -360,11 +611,11 @@
-         return -1;
-     }
-     stat(filePath, &fileStats);
--    generateMimeHeader(sock, 200, mimeType, &fileStats, req.protocolVersion, FULL_HEADER);
--    logWriter(LOG_GET_SUCCESS, req.documentAddress, (long int)fileStats.st_size, req, 0);
-     howMany = 0;
-     if (strncmp(mimeType, "text", 4)) /* check if it is a text type */
-     {   /* raw binary output routine */
-+        generateMimeHeader(sock, 200, mimeType, &fileStats, req.protocolVersion, FULL_HEADER);
-+        logWriter(LOG_GET_SUCCESS, req.documentAddress, (long int)fileStats.st_size, req, 0);
-         fatal = NO;
-         retry = NO;
-         while(!feof(inFile) && !fatal)

@@ -1,5 +1,5 @@
 --- sources/main.c.orig	Sat Dec 20 11:16:21 2003
-+++ sources/main.c	Thu Jan  8 12:27:13 2004
++++ sources/main.c	Wed May  5 11:28:52 2004
 @@ -23,6 +23,7 @@
  char defaultFileName[MAX_PATH_LEN+1];
  char logFileName[MAX_PATH_LEN+1];
@@ -23,21 +23,10 @@
      while (i < readLines)
      {
          if (!strncmp(reqArray[i], "User-Agent:", strlen("User-Agent:")))
-@@ -327,14 +331,28 @@
-             strncpy(reqStruct->userAgent, &reqArray[i][strlen("User-Agent: ")], USER_AGENT_LEN - 1);
-             reqStruct->userAgent[USER_AGENT_LEN] = '\0';
-         }
--	else if (!strncmp(reqArray[i], "Content-Length:", strlen("Content-length:")) || !strncmp(reqArray[i], "Content-length:", strlen("Content-length:")))
--    	{
--	    strcpy(token, &reqArray[i][strlen("Content-length: ")]);
--	    sscanf(token, "%ld", &(reqStruct->contentLength));
-+        else if (!strncmp(reqArray[i], "Content-Length:", strlen("Content-length:")) || !strncmp(reqArray[i], "Content-length:", strlen("Content-length:")))
-+        {
-+            strcpy(token, &reqArray[i][strlen("Content-length: ")]);
-+            sscanf(token, "%ld", &(reqStruct->contentLength));
-+#ifdef PRINTF_DEBUG
-+            printf("content length %ld\n", reqStruct->contentLength);
-+#endif
+@@ -334,6 +338,20 @@
+ #ifdef PRINTF_DEBUG
+ 	    printf("content length %ld\n", reqStruct->contentLength);
+ #endif
 +        }
 +        else if (!strncmp(reqArray[i], "Content-Type:", strlen("Content-type:")) || !strncmp(reqArray[i], "Content-type:", strlen("Content-type:")))
 +        {
@@ -49,15 +38,12 @@
 +        else if (!strncmp(reqArray[i], "Cookie:", strlen("Cookie:")))
 +        {
 +            strncpy(reqStruct->cookie, &reqArray[i][strlen("Cookie: ")], MAX_COOKIE_LEN - 1);
- #ifdef PRINTF_DEBUG
--	    printf("content length %ld\n", reqStruct->contentLength);
++#ifdef PRINTF_DEBUG
 +            printf("cookie %s\n", reqStruct->cookie);
- #endif
--	}
-+        }
++#endif
+ 	}
          i++;
      }
-     /* if we didn't find a User-Agent we fill in a (N)ot(R)ecognized */
 @@ -431,18 +449,39 @@
                      /* we append the default file name */
                      strcat(completeFilePath, defaultFileName);
@@ -131,6 +117,15 @@
  #ifdef PRINTF_DEBUG
          printf ("begin of post handling\n");
  
+@@ -547,7 +586,7 @@
+             return -1;
+         } else if (req.contentLength >= BUFFER_SIZE)
+         {
+-            sayError(sock, BUFFER_OVERFLOW, "", req);
++            sayError(sock, POST_BUFFER_OVERFLOW, "", req);
+             return -1;
+         }
+         while (!readFinished)
 @@ -625,7 +664,77 @@
  #ifdef PRINTF_DEBUG
              printf("buff: |%s|\n", buff);
@@ -257,3 +252,12 @@
      }
      if (!feof(f)) fscanf(f, "%s %s", str1, str2);
      if (str1 != NULL && str2 != NULL && !strcmp(str1, "cgiRoot"))
+@@ -1002,7 +1127,7 @@
+                         } */
+                     } else
+                     {
+-                        sayError(newSocket, BUFFER_OVERFLOW, "", NULL);
++                        sayError(newSocket, POST_BUFFER_OVERFLOW, "", NULL);
+                     }
+                 }
+                 if (close(newSocket))
