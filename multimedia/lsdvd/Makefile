@@ -29,11 +29,10 @@ WITH_DVD_DEVICE?=/dev/acd0
 .endif
 
 pre-everything::
-.if !defined(WITH_DVD_DEVICE)
-	@${ECHO_MSG} "===> The default DVD device is ${DEFAULT_DVD_DEVICE}"
+	@${ECHO_MSG} "===> The default DVD device is ${WITH_DVD_DEVICE}"
 	@${ECHO_MSG} "===> Define WITH_DVD_DEVICE if you want to change the default"
 	@${ECHO_MSG} "===> For example, 'make WITH_DVD_DEVICE=\"/dev/somedevice\"'"
-.endif
+	@${ECHO_MSG} "===>"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${WITH_DVD_DEVICE}|' \
