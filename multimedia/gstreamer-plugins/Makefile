@@ -208,9 +208,9 @@ WITH_LIBDV=yes
 
 # libdvdnav
 # XXX libdvdnav needs to be updated to 0.1.9 or higher
-#.if exists(${LOCALBASE}/lib/libdvdnav.so)
-.undef WITH_LIBDVDNAV
-#.endif
+.if exists(${LOCALBASE}/lib/libdvdnav.so)
+WITH_LIBDVDNAV=yes
+.endif
 
 # libdvdread
 .if exists(${LOCALBASE}/lib/libdvdread.a)
@@ -465,7 +465,7 @@ PLIST_SUB+=	LIBDV=""
 CONFIGURE_ARGS+=	--disable-dvdnav
 PLIST_SUB+=	LIBDVDNAV="@comment "
 .else
-LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
+LIB_DEPENDS+=	dvdnav.3:${PORTSDIR}/multimedia/libdvdnav
 
 PLIST_SUB+=	LIBDVDNAV=""
 .endif
