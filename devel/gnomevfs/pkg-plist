@@ -1,4 +1,5 @@
 bin/gnome-vfs-config
+%%CDPARANOIA%%etc/vfs/modules/cdda-module.conf
 etc/vfs/modules/default-modules.conf
 etc/vfsConf.sh
 include/gnome-vfs-1.0/libgnomevfs/gnome-vfs-application-registry.h
@@ -52,26 +53,9 @@ lib/libgnomevfs-pthread.so
 lib/libgnomevfs.a
 lib/libgnomevfs.so
 lib/libgnomevfs.so.0
-lib/vfs/extfs/README
-lib/vfs/extfs/a
-lib/vfs/extfs/ar
-lib/vfs/extfs/arj
-lib/vfs/extfs/cpio
-lib/vfs/extfs/deb
-lib/vfs/extfs/hp48
-lib/vfs/extfs/lha
-lib/vfs/extfs/mailfs
-lib/vfs/extfs/patchfs
-lib/vfs/extfs/rar
-lib/vfs/extfs/rpm
-lib/vfs/extfs/rpms
-lib/vfs/extfs/tar
-lib/vfs/extfs/trpm
-lib/vfs/extfs/zip
-lib/vfs/extfs/zoo
 lib/vfs/modules/libbzip2.so
+%%CDPARANOIA%%lib/vfs/modules/libcdda.so
 lib/vfs/modules/libdesktop.so
-lib/vfs/modules/libextfs.so
 lib/vfs/modules/libfile.so
 lib/vfs/modules/libftp.so
 lib/vfs/modules/libgzip.so
@@ -111,6 +95,5 @@ share/locale/tr/LC_MESSAGES/gnome-vfs.mo
 share/locale/uk/LC_MESSAGES/gnome-vfs.mo
 share/locale/wa/LC_MESSAGES/gnome-vfs.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-vfs.mo
-@dirrm lib/vfs/extfs
 @dirrm include/gnome-vfs-1.0/libgnomevfs
 @dirrm include/gnome-vfs-1.0

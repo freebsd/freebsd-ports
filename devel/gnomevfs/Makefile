@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomevfs
 PORTVERSION=	1.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/1.0
@@ -33,6 +33,17 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
+
+.if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
+WITH_CDPARANOIA=	yes
+.endif
+
+.if defined(WITH_CDPARANOIA)
+LIB_DEPENDS+=	cdda_paranoia.0:${PORTSDIR}/audio/cdparanoia
+PLIST_SUB+=	CDPARANOIA=""
+.else
+PLIST_SUB+=	CDPARANOIA="@comment "
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name 'xml-i18n-*' | ${XARGS} ${REINPLACE_CMD} -e \
