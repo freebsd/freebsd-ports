@@ -1,0 +1,7 @@
+Redland is a library that provides a high-level interface for RDF allowing
+the model to be stored, queried and manipulated. Redland implements each
+of the RDF model concepts in its own class so provides an object based API
+for them. Some of the classes providing the parsers, storage mechanisms and
+other elements are built as modules that can be added or removed as required.
+
+WWW: http://www.redland.opensource.ac.uk/

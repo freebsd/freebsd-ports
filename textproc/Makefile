@@ -180,6 +180,7 @@
     SUBDIR += py-xml
     SUBDIR += py2html
     SUBDIR += rand
+    SUBDIR += redland
     SUBDIR += replaceit
     SUBDIR += rman
     SUBDIR += rot
