@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.6 1998/02/22 21:44:49 jseger Exp $
+# $Id: Makefile,v 1.7 1998/03/15 17:34:41 jseger Exp $
 #
 
 DISTNAME=	w3c-libwww-5.1j
@@ -18,7 +18,9 @@ USE_GMAKE=	yes
 DOCDIR=		${PREFIX}/share/doc/libwww
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/Library/src/*.h ${PREFIX}/include
+	@${MKDIR} ${PREFIX}/include/www
+	${INSTALL_DATA} ${WRKSRC}/Library/src/*.h ${PREFIX}/include/www
+	${INSTALL_DATA} ${WRKSRC}/config.h ${PREFIX}/include/www
 	@${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}/User
