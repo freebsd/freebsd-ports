@@ -11,6 +11,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://debianlinux.net/ \
 		http://hermes.homelinux.net/xine/
 
+FORBIDDEN=	Incompatible with the current version of xine
+
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine

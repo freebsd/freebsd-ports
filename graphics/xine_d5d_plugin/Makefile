@@ -14,6 +14,8 @@ MASTER_SITES=	http://debianlinux.net/ \
 DISTNAME=	xine-d5d-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
+FORBIDDEN=	Incompatible with the current version of xine
+
 MAINTAINER=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine \
