@@ -24,9 +24,7 @@ MAN8=		raproxy.8
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/raproxy ${PREFIX}/libexec
-.if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
-.endif
 
 .if !defined(NOPORTDOCS)
 	-${MKDIR} ${PREFIX}/share/doc/raproxy
