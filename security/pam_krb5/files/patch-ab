@@ -1,6 +1,6 @@
 --- pam_krb5.h.orig	Tue Jan  4 19:08:51 2000
-+++ pam_krb5.h	Wed Jan 24 13:37:28 2001
-@@ -5,7 +5,18 @@
++++ pam_krb5.h	Mon Jun 11 13:24:14 2001
+@@ -5,7 +5,16 @@
   */
  
  int get_user_info(pam_handle_t *, char *, int, char **);
@@ -14,8 +14,6 @@
 +
 +const char	*compat_princ_component(krb5_context, krb5_principal, int);
 +void		 compat_free_data_contents(krb5_context, krb5_data *);
-+krb5_error_code	 compat_cc_next_cred(krb5_context, const krb5_ccache, 
-+				     krb5_cc_cursor *, krb5_creds *);
 +
 +#ifndef ENCTYPE_DES_CBC_MD5
 +#define ENCTYPE_DES_CBC_MD5	ETYPE_DES_CBC_MD5

@@ -1,6 +1,6 @@
---- compat_heimdal.c.orig	Wed Jan 24 12:40:26 2001
-+++ compat_heimdal.c	Wed Jan 24 12:50:52 2001
-@@ -0,0 +1,133 @@
+--- compat_heimdal.c.orig	Mon Jun 11 13:29:54 2001
++++ compat_heimdal.c	Mon Jun 11 13:32:00 2001
+@@ -0,0 +1,125 @@
 +#include <errno.h>
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -23,17 +23,9 @@
 +	krb5_xfree(data->data);
 +}
 +
-+krb5_error_code
-+compat_cc_next_cred(krb5_context context, const krb5_ccache id, 
-+    krb5_cc_cursor *cursor, krb5_creds *creds)
-+{
-+	return krb5_cc_next_cred(context, id, creds, cursor);
-+}
-+
-+
 +static krb5_error_code
-+heimdal_pam_prompter(krb5_context context, void *data, const char *banner, int 
-+  num_prompts, krb5_prompt prompts[])
++heimdal_pam_prompter(krb5_context context, void *data, const char *name,
++    const char *banner, int num_prompts, krb5_prompt prompts[])
 +{
 +    int		pam_prompts = num_prompts;
 +    int		pamret, i;
