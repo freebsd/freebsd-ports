@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=    3.10
+PORTVERSION=    3.11
 PORTEPOCH=      1
 CATEGORIES=	archivers
 MASTER_SITES=   http://files10.rarlab.com/rar/ \
 		ftp://pubftp.slovenska.sk/pub/rarsoft/rar/
-DISTNAME=       rarbsd-3.1.0
+DISTNAME=       rarbsd-3.1.1
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -31,7 +31,7 @@ STRIP=
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/rar
 	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/rar
-	${INSTALL_PROGRAM} ${WRKSRC}/rar ${PREFIX}/bin/unrar
+	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin/unrar
 	cd ${WRKSRC} && \
 		${INSTALL_MAN} rar.txt ${PREFIX}/man/cat1/rar.1 && \
 		${INSTALL_DATA} rar_faq.txt technote.txt license.txt \
