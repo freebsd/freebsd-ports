@@ -13,14 +13,23 @@ die () {
 delete_modules () {
     modules="
 	bigfloat
+	devel-logger
 	dl
+	drb
 	erb
 	fileutils
 	fnmatch
+	gserver
+	openssl
 	optparse
 	racc-runtime
+	rexml
+	soap
 	strscan
 	testunit
+	webrick
+	xmlrpc
+	yaml
 	zlib
     "
 
