@@ -109,6 +109,19 @@ lib/wnn/zh_TW/rk_p/mode
 lib/wnn/zh_TW/rk_p/2A_CTRL
 lib/wnn/zh_TW/rk_z/mode
 lib/wnn/zh_TW/rk_z/2A_CTRL
+@dirrm lib/wnn/zh_CN/rk_z
+@dirrm lib/wnn/zh_CN/rk_p
+@dirrm lib/wnn/zh_CN/rk
+@dirrm lib/wnn/zh_CN/dic/sys
+@dirrm lib/wnn/zh_CN/dic
+@dirrm lib/wnn/zh_CN
+@dirrm lib/wnn/zh_TW/rk_z
+@dirrm lib/wnn/zh_TW/rk_p
+@dirrm lib/wnn/zh_TW/rk
+@dirrm lib/wnn/zh_TW/dic/sys
+@dirrm lib/wnn/zh_TW/dic
+@dirrm lib/wnn/zh_TW
+@dirrm lib/wnn
 bin/cWnn4/cserver
 bin/cWnn4/tserver
 bin/cWnn4/cuum
@@ -120,6 +133,7 @@ bin/cWnn4/cdtoa
 bin/cWnn4/catod
 bin/cWnn4/catof
 bin/cWnn4/cwnntouch
+@dirrm bin/cWnn4
 @cwd /usr/X11R6
 lib/libcwnn.a
 include/cwnn/jllib.h
@@ -129,6 +143,7 @@ include/cwnn/wnnerror.h
 include/cwnn/commonhd.h
 include/cwnn/cplib.h
 include/cwnn/msg.h
+@dirrm include/cwnn
 man/man1/cwdreg.1.gz
 man/man1/cdicsort.1.gz
 man/man1/cwddel.1.gz
