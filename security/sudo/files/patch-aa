@@ -1,0 +1,66 @@
+*** configure.in~	Sun Aug 13 16:40:24 1995
+--- configure.in	Sun Aug 13 16:40:38 1995
+***************
+*** 148,153 ****
+--- 148,156 ----
+  		;;
+      "bsd/386")	echo "Looks like bsdi BSD/386"
+  		;;
++     "freebsd")  echo "Looks like FreeBSD"
++ 		LIBS="${LIBS} -lcrypt"
++ 		;;
+      "mtxinu")	echo "Looks like mt Xinu MORE/BSD"
+  		;;
+      "4.3bsd")	echo "Looks like HP BSD"
+*** configure~	Sun Aug 13 16:39:32 1995
+--- configure	Sun Aug 13 16:40:38 1995
+***************
+*** 890,895 ****
+--- 890,898 ----
+  		;;
+      "bsd/386")	echo "Looks like bsdi BSD/386"
+  		;;
++     "freebsd")  echo "Looks like FreeBSD"
++ 		LIBS="${LIBS} -lcrypt"
++ 		;;
+      "mtxinu")	echo "Looks like mt Xinu MORE/BSD"
+  		;;
+      "4.3bsd")	echo "Looks like HP BSD"
+*** config.h.in~	Sun Aug 13 16:31:00 1995
+--- config.h.in	Sun Aug 13 16:31:26 1995
+***************
+*** 23,34 ****
+--- 23,36 ----
+   *             NOT using configure.
+   */
+  
++ #ifndef __FreeBSD__
+  /* Deal with ansi stuff reasonably.  */
+  #undef  __P
+  #if defined (__cplusplus) || defined (__STDC__)
+  #  define __P(args)	args
+  #else
+  #  define __P(args)	()
++ #endif
+  #endif
+  
+  /* New ANSI-style OS defs.  */
+*** visudoers/visudo.yacc~	Mon Aug 14 08:53:44 1995
+--- visudoers/visudo.yacc	Mon Aug 14 08:54:12 1995
+***************
+*** 42,48 ****
+  #include "sudo.h"
+  
+  extern int status;
+! extern int yyerrok, sudolineno, err_line_no;
+  
+  yyerror(s)
+  char *s;
+--- 42,48 ----
+  #include "sudo.h"
+  
+  extern int status;
+! extern int sudolineno, err_line_no;
+  
+  yyerror(s)
+  char *s;

@@ -1,0 +1,5 @@
+bin/sudo
+sbin/visudo
+etc/sudoers
+man/man8/sudo.8
+man/man8/visudo.8
