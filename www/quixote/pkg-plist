@@ -21,6 +21,7 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/config.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/forms.ptl
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyo
