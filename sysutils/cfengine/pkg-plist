@@ -43,13 +43,11 @@ share/cfengine/cfd.conf.example
 share/cfengine/cfdaily
 share/cfengine/cfengine.conf.example
 share/cfengine/cfengine.el
-share/cfengine/cfmail
 share/cfengine/cfrc.example
 share/cfengine/cfrun.hosts.example
-share/cfengine/cfwrap
 share/cfengine/start-cfd
-share/doc/cfengine/cf-security.html
-share/doc/cfengine/cfengine-Reference.html
-share/doc/cfengine/cfengine-Tutorial.html
+%%PORTDOCS%%share/doc/cfengine/cf-security.html
+%%PORTDOCS%%share/doc/cfengine/cfengine-Reference.html
+%%PORTDOCS%%share/doc/cfengine/cfengine-Tutorial.html
+%%PORTDOCS%%@dirrm share/doc/cfengine
 @dirrm share/cfengine
-@dirrm share/doc/cfengine

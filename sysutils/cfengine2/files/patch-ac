@@ -1,32 +1,28 @@
---- configure.in.orig	Mon Dec 18 12:12:07 2000
-+++ configure.in	Mon Jan  8 20:52:29 2001
+--- configure.in.orig	Mon Jan 15 03:51:48 2001
++++ configure.in	Tue Jan 23 01:13:32 2001
 @@ -60,13 +60,13 @@
  AC_PROG_RANLIB
  AC_PROG_INSTALL
  
--AC_PATH_PROG(LATEX, latex, /bin/false, \
+-AC_PATH_PROG(LATEX, latex, false, \
 +AC_PATH_PROG(LATEX, latex, true, \
  		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
--AC_PATH_PROG(TEXI2DVI, texi2dvi, /bin/false, \
+-AC_PATH_PROG(TEXI2DVI, texi2dvi, false, \
 +AC_PATH_PROG(TEXI2DVI, texi2dvi, true, \
  		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
--AC_PATH_PROG(DVIPS, dvips, /bin/false, \
+-AC_PATH_PROG(DVIPS, dvips, false, \
 +AC_PATH_PROG(DVIPS, dvips, true, \
  		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
--AC_PATH_PROG(MAKEINFO, makeinfo, /bin/false, \
+-AC_PATH_PROG(MAKEINFO, makeinfo, false, \
 +AC_PATH_PROG(MAKEINFO, makeinfo, true, \
  		$PATH:$prefix/bin:/usr/bin:/usr/local/bin)
  
  
---- doc/Makefile.in.orig	Tue Dec 26 06:58:18 2000
-+++ doc/Makefile.in	Mon Jan  8 22:33:39 2001
-@@ -446,8 +446,7 @@
- install-exec-am:
- install-exec: install-exec-am
- 
--install-data-am: install-info-am install-man install-htmlDATA \
--		install-psDATA
-+install-data-am: install-info-am install-man
- install-data: install-data-am
- 
- install-am: all-am
+@@ -262,6 +262,7 @@
+    freebsd*)
+ 	AC_DEFINE(FREEBSD)
+          CFLAGS="$CFLAGS -pthread"
++         LIBS="$LIBS -ldes"
+         AC_CHECK_HEADERS(pthread.h)
+         ;;
+    netbsd*)
