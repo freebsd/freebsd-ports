@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	memcached
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.8
 CATEGORIES=	databases
-MASTER_SITES=	http://www.danga.com/memcached/
+MASTER_SITES=	http://www.danga.com/memcached/dist/
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
