@@ -1,7 +1,0 @@
-dapple is a DAAP library for Perl.  DAAP is the protocol built
-on top of HTTP that Apple's iTunes 4 uses to share music.  Most
-responses to DAAP requests contain a binary DMAP structure.
-
-Author: Nathan Torkington <nathan AT torkington.com>
-
-WWW: http://search.cpan.org/dist/dapple/
