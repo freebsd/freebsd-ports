@@ -10,7 +10,7 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/psgml-emacs
+MASTERDIR=	${.CURDIR}/../psgml
 
 # emacs port setup
 EMACS_PORT_NAME=	mule

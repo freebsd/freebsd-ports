@@ -90,7 +90,8 @@
     SUBDIR += openoffice
     SUBDIR += pico
     SUBDIR += poedit
-    SUBDIR += psgml-emacs
+    SUBDIR += psgml
+    SUBDIR += psgml-emacs19
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
     SUBDIR += psgml-xemacs21-mule
