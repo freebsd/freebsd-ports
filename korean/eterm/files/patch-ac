@@ -1,0 +1,22 @@
+--- doc/Makefile.in.orig	Sat Jan 30 00:19:23 1999
++++ doc/Makefile.in	Sat Jan 30 00:20:04 1999
+@@ -76,7 +76,7 @@
+ EGCS = @EGCS@
+ FEATURE_CMD = @FEATURE_CMD@
+ GDB = @GDB@
+-GRLIBS = @GRLIBS@
++GRLIBS = -L/usr/local/lib @GRLIBS@
+ IMLIB_CONFIG = @IMLIB_CONFIG@
+ LD = @LD@
+ LDFLAGS = @LDFLAGS@
+--- utils/Makefile.in.orig	Mon May  3 12:39:18 1999
++++ utils/Makefile.in	Mon May  3 12:39:36 1999
+@@ -225,7 +225,7 @@
+ 
+ Etbg: $(Etbg_OBJECTS) $(Etbg_DEPENDENCIES)
+ 	@rm -f Etbg
+-	$(LINK) $(Etbg_LDFLAGS) $(Etbg_OBJECTS) $(Etbg_LDADD) $(LIBS)
++	$(LINK) $(Etbg_LDFLAGS) $(Etbg_OBJECTS) $(Etbg_LDADD) $(GRLIBS) $(LIBS)
+ 
+ install-binSCRIPTS: $(bin_SCRIPTS)
+ 	@$(NORMAL_INSTALL)

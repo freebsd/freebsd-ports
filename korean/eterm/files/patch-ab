@@ -1,0 +1,169 @@
+diff -uNr Eterm-0.8.9.orig/themes/Eterm/MAIN.in Eterm-0.8.9/themes/Eterm/MAIN.in
+--- themes/Eterm/MAIN.in	Mon Mar 15 03:17:31 1999
++++ themes/Eterm/MAIN.in	Wed May  5 21:24:35 1999
+@@ -105,14 +105,14 @@
+ 
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+-#  begin kanji
+-#    font 0 k14
+-#    font 1 jiskan16
+-#    font 2 jiskan18
+-#    font 3 jiskan24
+-#    font 4 jiskan26
++  begin kanji
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
+ #    encoding eucj
+-#  end kanji
++  end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.
+diff -uNr Eterm-0.8.9.orig/themes/chooser/MAIN.in Eterm-0.8.9/themes/chooser/MAIN.in
+--- themes/chooser/MAIN.in	Mon Mar 15 03:17:24 1999
++++ themes/chooser/MAIN.in	Wed May  5 21:25:30 1999
+@@ -105,14 +105,14 @@
+ 
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+-#  begin kanji
+-#    font 0 k14
+-#    font 1 jiskan16
+-#    font 2 jiskan18
+-#    font 3 jiskan24
+-#    font 4 jiskan26
++  begin kanji
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
+ #    encoding eucj
+-#  end kanji
++  end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.
+diff -uNr Eterm-0.8.9.orig/themes/emacs/MAIN.in Eterm-0.8.9/themes/emacs/MAIN.in
+--- themes/emacs/MAIN.in	Mon Mar 15 03:17:14 1999
++++ themes/emacs/MAIN.in	Wed May  5 21:26:47 1999
+@@ -105,14 +105,14 @@
+ 
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+-#  begin kanji
+-#    font 0 k14
+-#    font 1 jiskan16
+-#    font 2 jiskan18
+-#    font 3 jiskan24
+-#    font 4 jiskan26
++  begin kanji
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
+ #    encoding eucj
+-#  end kanji
++  end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.
+diff -uNr Eterm-0.8.9.orig/themes/irc/MAIN.in Eterm-0.8.9/themes/irc/MAIN.in
+--- themes/irc/MAIN.in	Mon Mar 15 03:28:13 1999
++++ themes/irc/MAIN.in	Wed May  5 21:27:15 1999
+@@ -105,14 +105,14 @@
+ 
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+-#  begin kanji
+-#    font 0 k14
+-#    font 1 jiskan16
+-#    font 2 jiskan18
+-#    font 3 jiskan24
+-#    font 4 jiskan26
++  begin kanji
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
+ #    encoding eucj
+-#  end kanji
++  end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.
+diff -uNr Eterm-0.8.9.orig/themes/mutt/MAIN.in Eterm-0.8.9/themes/mutt/MAIN.in
+--- themes/mutt/MAIN.in	Mon Mar 15 03:17:00 1999
++++ themes/mutt/MAIN.in	Wed May  5 21:27:38 1999
+@@ -106,12 +106,12 @@
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+   begin kanji
+-    font 0 k14
+-    font 1 jiskan16
+-    font 2 jiskan18
+-    font 3 jiskan24
+-    font 4 jiskan26
+-    encoding eucj
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
++#    encoding eucj
+   end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+diff -uNr Eterm-0.8.9.orig/themes/tn3270/MAIN.in Eterm-0.8.9/themes/tn3270/MAIN.in
+--- themes/tn3270/MAIN.in	Mon Mar 15 03:16:46 1999
++++ themes/tn3270/MAIN.in	Wed May  5 21:28:03 1999
+@@ -106,12 +106,12 @@
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+   begin kanji
+-    font 0 k14
+-    font 1 jiskan16
+-    font 2 jiskan18
+-    font 3 jiskan24
+-    font 4 jiskan26
+-    encoding eucj
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
++#    encoding eucj
+   end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+diff -uNr Eterm-0.8.9.orig/themes/trans/MAIN.in Eterm-0.8.9/themes/trans/MAIN.in
+--- themes/trans/MAIN.in	Fri Apr 16 06:21:22 1999
++++ themes/trans/MAIN.in	Wed May  5 21:28:27 1999
+@@ -107,14 +107,14 @@
+ 
+ # The Kanji support options.  Same goes for these fonts as for the normal
+ # ones.  The "encoding" attribute can be either "eucj" or "sjis".
+-#  begin kanji
+-#    font 0 k14
+-#    font 1 jiskan16
+-#    font 2 jiskan18
+-#    font 3 jiskan24
+-#    font 4 jiskan26
++  begin kanji
++    font 0 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 1 *-kodig-medium-r-normal--12-*-ksc5601*
++    font 2 *-kodig-medium-r-normal--14-*-ksc5601*
++    font 3 *-kodig-medium-r-normal--16-*-ksc5601*
++    font 4 *-kodig-medium-r-normal--20-*-ksc5601*
+ #    encoding eucj
+-#  end kanji
++  end kanji
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.

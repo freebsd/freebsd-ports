@@ -1,0 +1,15 @@
+Eterm
+-----
+
+Eterm is a color vt102 terminal emulator for X Window system.
+It supports pixmap and pseudo-transparent background. 
+It also supports input and output for korean.
+
+- Added Hangul input patch. written by <eterm@user.sarang.net> [aa]
+- Patch theme for Hangul font set. [ab]
+- Porting for FreeBSD. [ac]
+
+You can download scale and tile.  - ftp://ftp.eterm.org/pub/Eterm/
+
+--
+Ports by Oh Junseon <hollywar@mail.holywar.net>
