@@ -1,5 +1,8 @@
 bin/iverilog
 bin/vvp
+bin/iverilog-vpi
+include/acc_user.h
+include/veriuser.h
 include/ivl_target.h
 include/vvm.h
 include/vpi_priv.h
@@ -17,7 +20,10 @@ lib/ivl/system.vpi
 lib/ivl/ivlpp
 lib/ivl/null.tgt
 lib/ivl/vvp.tgt
+lib/libveriuser.a
 lib/libvvm.a
 lib/libvpi.a
 lib/libvpip.a
 @dirrm lib/ivl
+
+
