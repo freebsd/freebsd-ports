@@ -3,5 +3,3 @@ bin/omshell
 etc/dhcpd.conf.sample
 etc/rc.d/isc-dhcpd.sh
 sbin/dhcpd
-@exec [ -f /var/db/dhcpd.leases ] || touch /var/db/dhcpd.leases
-@unexec [ -s /var/db/dhcpd.leases ] || rm -f /var/db/dhcpd.leases
