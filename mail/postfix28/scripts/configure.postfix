@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix28/scripts/Attic/configure.postfix,v 1.54 2004-10-12 23:58:50 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix28/scripts/Attic/configure.postfix,v 1.55 2004-10-26 14:23:33 pav Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -108,7 +108,7 @@ while [ "$1" ]; do
                         echo "POSTFIX_AUXLIBS+= -lkrb -lcrypto -lcom_err"
 			;;
 		SASLKRB5)
-                        echo "POSTFIX_AUXLIBS+= -lkrb5 -lcrypto -lcom_err"
+                        echo "POSTFIX_AUXLIBS+= -lkrb5 -lcrypto -lcom_err -lasn1 -lroken"
 			;;
 		TLS)
 			echo "MAN8+=		tlsmgr.8"
