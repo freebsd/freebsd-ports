@@ -1,6 +1,62 @@
---- doc/gawk.texi~	Wed Jul 11 01:44:15 2001
-+++ doc/gawk.texi	Wed Jul 11 01:47:18 2001
-@@ -20336,8 +20336,7 @@
+--- doc/gawk.texi.orig	Mon Apr 22 20:26:20 2002
++++ doc/gawk.texi	Mon May 20 23:07:14 2002
+@@ -97,7 +97,7 @@
+ @finalout
+ @end iftex
+ 
+-@copying
++@ifinfo
+ Copyright @copyright{} 1989, 1991, 1992, 1993, 1996, 1997, 1998, 1999, 2000, 2001, 2002 Free Software Foundation, Inc.
+ @sp 2
+ 
+@@ -122,7 +122,7 @@
+ software.  Copies published by the Free Software Foundation raise
+ funds for GNU development.''
+ @end enumerate
+-@end copying
++@end ifinfo
+ 
+ @c Comment out the "smallbook" for technical review.  Saves
+ @c considerable paper.  Remember to turn it back on *before*
+@@ -184,8 +184,24 @@
+ 
+ @c This one is correct for gawk 3.1.0 from the FSF
+ ISBN 1-882114-28-0 @*
+-@sp 2
+-@insertcopying
++
++Permission is granted to copy, distribute and/or modify this document
++under the terms of the GNU Free Documentation License, Version 1.1 or
++any later version published by the Free Software Foundation; with the
++Invariant Sections being ``GNU General Public License'', the Front-Cover
++texts being (a) (see below), and with the Back-Cover Texts being (b)
++(see below).  A copy of the license is included in the section entitled
++``GNU Free Documentation License''.
++
++@enumerate a
++@item
++``A GNU Manual''
++
++@item
++``You have freedom to copy and modify this GNU Manual, like GNU
++software.  Copies published by the Free Software Foundation raise
++funds for GNU development.''
++@end enumerate
+ @sp 2
+ Cover art by Etienne Suvasa.
+ @end titlepage
+@@ -228,7 +244,9 @@
+ This file documents @command{awk}, a program that you can use to select
+ particular records in a file and perform operations upon them.
+ 
+-@insertcopying
++This is Edition @value{EDITION} of @cite{@value{TITLE}: @value{SUBTITLE}},
++for the @value{VERSION}.@value{PATCHLEVEL} (or later) version of the GNU
++implementation of AWK.
+ 
+ @end ifnottex
+ 
+@@ -21418,8 +21436,7 @@
  arranges to clean up any temporary files on program exit or upon an
  interrupt.
  
@@ -10,7 +66,7 @@
  
  The next part loops through all the command-line arguments.
  There are several cases of interest:
-@@ -20358,13 +20357,13 @@
+@@ -21440,13 +21457,13 @@
  These are saved and passed on to @command{gawk}.
  
  @item -f@r{,} --file@r{,} --file=@r{,} -Wfile=
@@ -26,8 +82,8 @@
  
  @item --version@r{,} -Wversion
  @command{igawk} prints its version number, runs @samp{gawk --version}
-@@ -20375,17 +20374,12 @@
- or @option{-Wsource} arguments are supplied, then the first non-option argument
+@@ -21457,17 +21474,12 @@
+ or @option{-Wsource} arguments are supplied, then the first nonoption argument
  should be the @command{awk} program.  If there are no command-line
  arguments left, @command{igawk} prints an error message and exits.
 -Otherwise, the first argument is echoed into @file{/tmp/ig.s.$$}.
@@ -35,11 +91,11 @@
  In any case, after the arguments have been processed,
 -@file{/tmp/ig.s.$$} contains the complete text of the original @command{awk}
 -program.
-+the complete text of the original @code{awk} program
++the complete text of the original @command{awk} program
 +is contained in a temporary file.
  
  @cindex @command{sed} utility
--@cindex stream editor
+-@cindex stream editors
 -The @samp{$$} in @command{sh} represents the current process ID number.
 -It is often used in shell programs to generate unique temporary @value{FN}s.
 -This allows multiple users to run @command{igawk} without worrying
@@ -47,7 +103,7 @@
  The program is as follows:
  
  @cindex @code{igawk.sh} program
-@@ -20400,6 +20394,18 @@
+@@ -21482,6 +21494,18 @@
  # Arnold Robbins, arnold@@gnu.org, Public Domain
  # July 1993
  
@@ -66,7 +122,7 @@
  @c endfile
  @end ignore
  @c file eg/prog/igawk.sh
-@@ -20409,7 +20415,7 @@
+@@ -21491,7 +21515,7 @@
      shift
  else
      # cleanup on exit, hangup, interrupt, quit, termination
@@ -75,7 +131,7 @@
  fi
  
  while [ $# -ne 0 ] # loop over arguments
-@@ -20426,26 +20432,26 @@
+@@ -21508,26 +21532,26 @@
  
      -[vF]*) opts="$opts '$1'" ;;
  
@@ -108,7 +164,7 @@
              shift;;
  
      -?version)
-@@ -20460,7 +20466,7 @@
+@@ -21542,7 +21566,7 @@
      shift
  done
  
@@ -117,7 +173,7 @@
  then
  @group
      if [ -z "$1" ]
-@@ -20469,12 +20475,12 @@
+@@ -21551,12 +21575,12 @@
           exit 1
  @end group
      else
@@ -132,7 +188,7 @@
  @c endfile
  @end example
  
-@@ -20553,7 +20559,7 @@
+@@ -21635,7 +21659,7 @@
  @c endfile
  @end example
  
@@ -141,7 +197,7 @@
  The main loop comes next.  Input lines are read in succession. Lines that
  do not start with @samp{@@include} are printed verbatim.
  If the line does start with @samp{@@include}, the @value{FN} is in @code{$2}.
-@@ -20599,7 +20605,7 @@
+@@ -21681,7 +21705,7 @@
          @}
          close(input[stackptr])
      @}
@@ -150,7 +206,7 @@
  @c endfile
  @end example
  
-@@ -20625,7 +20631,7 @@
+@@ -21707,7 +21731,7 @@
  
  @example
  @c file eg/prog/igawk.sh

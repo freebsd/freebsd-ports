@@ -5,16 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
 
 MAINTAINER=	dd@FreeBSD.org
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-bitops \
-			--enable-non-decimal-data
+BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--with-libintl-prefix=${LOCALBASE}
 MAN1=		gawk.1 igawk.1
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
