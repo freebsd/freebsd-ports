@@ -1,0 +1,19 @@
+lib/perl5/site_perl/%%PERL_VER%%/HTMLObject/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTMLObject/FrameSet.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTMLObject/GetCookie.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTMLObject/Normal.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTMLObject/ReadCookie.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/Base/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/FrameSet/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/GetCookie/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/Normal/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/ReadCookie/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTMLObject/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTMLObject
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/Base
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/FrameSet
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/GetCookie
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/Normal
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject/ReadCookie
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/HTMLObject
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTMLObject
