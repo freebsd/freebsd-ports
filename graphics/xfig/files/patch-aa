@@ -1,5 +1,14 @@
---- Imakefile.orig	Thu Jul  2 12:37:09 1998
-+++ Imakefile	Tue Dec 28 16:25:42 1999
+--- Imakefile.orig	Fri Jul  3 02:37:09 1998
++++ Imakefile	Mon Jan  3 13:19:34 2000
+@@ -40,7 +40,7 @@
+ 
+ #ifdef USEJPEG
+ #ifdef USEINSTALLEDJPEG
+-JPEGLIBDIR = /usr/local/lib
++JPEGLIBDIR = %%LOCALBASE%%/lib
+ #else
+ JPEGLIBDIR = ../jpeg
+ #endif
 @@ -49,12 +49,12 @@
  XCOMM Uncomment the following definiton if you want to use the small icons
  XCOMM for the panel buttons.  Use this if you have a 800x600 or smaller screen.
@@ -45,7 +54,7 @@
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
 -JPEGINCDIR = -I/usr/include/X11
-+JPEGINCDIR = -I/usr/local/include
++JPEGINCDIR = -I%%LOCALBASE%%/include
  JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
  #else
  JPEGCONF = configure

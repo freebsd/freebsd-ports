@@ -1,7 +1,7 @@
 bin/xfig
-lib/X11/xfig/CompKeyDB
 lib/X11/app-defaults/Fig
 lib/X11/app-defaults/Fig-color
+lib/X11/xfig/CompKeyDB
 lib/X11/xfig/Libraries/Buildings/barrack.fig
 lib/X11/xfig/Libraries/Buildings/highrise1.fig
 lib/X11/xfig/Libraries/Buildings/highrise2.fig
@@ -192,8 +192,8 @@ lib/X11/xfig/Libraries/Music/sixteenth.fig
 lib/X11/xfig/Libraries/Music/staff.fig
 lib/X11/xfig/Libraries/Music/treble_clef.fig
 lib/X11/xfig/Libraries/Music/treble_staff.fig
-lib/X11/xfig/Libraries/Music/whole.fig
 lib/X11/xfig/Libraries/Music/whole-dotted.fig
+lib/X11/xfig/Libraries/Music/whole.fig
 lib/X11/xfig/Libraries/Networks/at+t_emmi.fig
 lib/X11/xfig/Libraries/Networks/concentrator1.fig
 lib/X11/xfig/Libraries/Networks/concentrator2.fig
@@ -215,8 +215,6 @@ lib/X11/xfig/Libraries/Networks/synoptics_latticell.fig
 lib/X11/xfig/Libraries/Networks/transceiver1.fig
 lib/X11/xfig/Libraries/Networks/transceiver2.fig
 lib/X11/xfig/Libraries/Networks/transceiver3.fig
-lib/X11/xfig/xfig-howto.pdf
-lib/X11/xfig/xfig.pdf
 lib/X11/xfig/html/accelerators.html
 lib/X11/xfig/html/authors.html
 lib/X11/xfig/html/command-panel.html
@@ -226,28 +224,6 @@ lib/X11/xfig/html/faq.html
 lib/X11/xfig/html/features_bugs.html
 lib/X11/xfig/html/fig-format.html
 lib/X11/xfig/html/i18n.html
-lib/X11/xfig/html/index.html
-lib/X11/xfig/html/indicator-panel.html
-lib/X11/xfig/html/installation.html
-lib/X11/xfig/html/introduction.html
-lib/X11/xfig/html/misc-panel.html
-lib/X11/xfig/html/options.html
-lib/X11/xfig/html/japanese/accelerators.html
-lib/X11/xfig/html/japanese/authors.html
-lib/X11/xfig/html/japanese/command-panel.html
-lib/X11/xfig/html/japanese/drawing-mode.html
-lib/X11/xfig/html/japanese/editing-mode.html
-lib/X11/xfig/html/japanese/faq.html
-lib/X11/xfig/html/japanese/features_bugs.html
-lib/X11/xfig/html/japanese/fig-format.html
-lib/X11/xfig/html/japanese/i18n.html
-lib/X11/xfig/html/japanese/index.html
-lib/X11/xfig/html/japanese/indicator-panel.html
-lib/X11/xfig/html/japanese/installation.html
-lib/X11/xfig/html/japanese/introduction.html
-lib/X11/xfig/html/japanese/japanese.ps
-lib/X11/xfig/html/japanese/misc-panel.html
-lib/X11/xfig/html/japanese/options.html
 lib/X11/xfig/html/images/3dhouse-small.gif
 lib/X11/xfig/html/images/3dhouse.gif
 lib/X11/xfig/html/images/a-umlaut.gif
@@ -263,7 +239,6 @@ lib/X11/xfig/html/images/angle-geom-mountain.gif
 lib/X11/xfig/html/images/angle-geom-mounthattan.gif
 lib/X11/xfig/html/images/angle-geom-unrestricted.gif
 lib/X11/xfig/html/images/anybrowser3.gif
-lib/X11/xfig/html/images/exclaim.gif
 lib/X11/xfig/html/images/arc-box-button.gif
 lib/X11/xfig/html/images/arc-button.gif
 lib/X11/xfig/html/images/arc-examples.gif
@@ -281,7 +256,6 @@ lib/X11/xfig/html/images/arrow-open.gif
 lib/X11/xfig/html/images/arrow-pointed.gif
 lib/X11/xfig/html/images/arrow-size-button.gif
 lib/X11/xfig/html/images/arrow-size-image.gif
-lib/X11/xfig/html/images/redball.gif
 lib/X11/xfig/html/images/arrow-size-panel.gif
 lib/X11/xfig/html/images/arrow-type-button.gif
 lib/X11/xfig/html/images/arrow-types.gif
@@ -299,7 +273,6 @@ lib/X11/xfig/html/images/cap-style-button.gif
 lib/X11/xfig/html/images/cap-style-example.gif
 lib/X11/xfig/html/images/cap-style-projecting.gif
 lib/X11/xfig/html/images/cap-style-round.gif
-lib/X11/xfig/html/images/ruler.gif
 lib/X11/xfig/html/images/circle-diam-button.gif
 lib/X11/xfig/html/images/circle-example.gif
 lib/X11/xfig/html/images/circle-rad-button.gif
@@ -320,6 +293,7 @@ lib/X11/xfig/html/images/edit-point-panel.gif
 lib/X11/xfig/html/images/ellipse-diam-button.gif
 lib/X11/xfig/html/images/ellipse-example.gif
 lib/X11/xfig/html/images/ellipse-rad-button.gif
+lib/X11/xfig/html/images/exclaim.gif
 lib/X11/xfig/html/images/export-panel.gif
 lib/X11/xfig/html/images/file-panel.gif
 lib/X11/xfig/html/images/fill-color-button.gif
@@ -365,7 +339,6 @@ lib/X11/xfig/html/images/num-y-copies-button.gif
 lib/X11/xfig/html/images/open-approx-spline-button.gif
 lib/X11/xfig/html/images/open-compound-button.gif
 lib/X11/xfig/html/images/open-compound-button.gif.bak
-lib/X11/xfig/html/images/splash.gif
 lib/X11/xfig/html/images/open-interp-spline-button.gif
 lib/X11/xfig/html/images/pen-color-button.gif
 lib/X11/xfig/html/images/pict-button.gif
@@ -378,11 +351,13 @@ lib/X11/xfig/html/images/polyline-button.gif
 lib/X11/xfig/html/images/polyline-example.gif
 lib/X11/xfig/html/images/print-panel.gif
 lib/X11/xfig/html/images/pull-down.gif
+lib/X11/xfig/html/images/redball.gif
 lib/X11/xfig/html/images/redballdot.gif
 lib/X11/xfig/html/images/regular-polygon-button.gif
 lib/X11/xfig/html/images/rotate-angle-button.gif
 lib/X11/xfig/html/images/rotate-ccw-button.gif
 lib/X11/xfig/html/images/rotate-cw-button.gif
+lib/X11/xfig/html/images/ruler.gif
 lib/X11/xfig/html/images/scale-button.gif
 lib/X11/xfig/html/images/screen-image-small.gif
 lib/X11/xfig/html/images/screen-image.fig
@@ -394,6 +369,7 @@ lib/X11/xfig/html/images/smart-link-button.gif
 lib/X11/xfig/html/images/smart-link-move.gif
 lib/X11/xfig/html/images/smart-link-off.gif
 lib/X11/xfig/html/images/smart-link-slide.gif
+lib/X11/xfig/html/images/splash.gif
 lib/X11/xfig/html/images/spline-curves.gif
 lib/X11/xfig/html/images/spline-examples.gif
 lib/X11/xfig/html/images/spline-line-button.gif
@@ -438,18 +414,42 @@ lib/X11/xfig/html/images/xim-over-the-spot.gif
 lib/X11/xfig/html/images/xim-root.gif
 lib/X11/xfig/html/images/zoom-button.gif
 lib/X11/xfig/html/images/zoom-panel.gif
-@dirrm lib/X11/xfig/Libraries/Buildings
-@dirrm lib/X11/xfig/Libraries/Computers
-@dirrm lib/X11/xfig/Libraries/Electrical/Physical
-@dirrm lib/X11/xfig/Libraries/Electrical/Schematic
-@dirrm lib/X11/xfig/Libraries/Electrical
-@dirrm lib/X11/xfig/Libraries/Flowchart
-@dirrm lib/X11/xfig/Libraries/Hospital
-@dirrm lib/X11/xfig/Libraries/Logic
-@dirrm lib/X11/xfig/Libraries/Music
-@dirrm lib/X11/xfig/Libraries/Networks
-@dirrm lib/X11/xfig/Libraries
-@dirrm lib/X11/xfig/html/images
+lib/X11/xfig/html/index.html
+lib/X11/xfig/html/indicator-panel.html
+lib/X11/xfig/html/installation.html
+lib/X11/xfig/html/introduction.html
+lib/X11/xfig/html/japanese/accelerators.html
+lib/X11/xfig/html/japanese/authors.html
+lib/X11/xfig/html/japanese/command-panel.html
+lib/X11/xfig/html/japanese/drawing-mode.html
+lib/X11/xfig/html/japanese/editing-mode.html
+lib/X11/xfig/html/japanese/faq.html
+lib/X11/xfig/html/japanese/features_bugs.html
+lib/X11/xfig/html/japanese/fig-format.html
+lib/X11/xfig/html/japanese/i18n.html
+lib/X11/xfig/html/japanese/index.html
+lib/X11/xfig/html/japanese/indicator-panel.html
+lib/X11/xfig/html/japanese/installation.html
+lib/X11/xfig/html/japanese/introduction.html
+lib/X11/xfig/html/japanese/japanese.ps
+lib/X11/xfig/html/japanese/misc-panel.html
+lib/X11/xfig/html/japanese/options.html
+lib/X11/xfig/html/misc-panel.html
+lib/X11/xfig/html/options.html
+lib/X11/xfig/xfig-howto.pdf
+lib/X11/xfig/xfig.pdf
 @dirrm lib/X11/xfig/html/japanese
+@dirrm lib/X11/xfig/html/images
 @dirrm lib/X11/xfig/html
+@dirrm lib/X11/xfig/Libraries/Networks
+@dirrm lib/X11/xfig/Libraries/Music
+@dirrm lib/X11/xfig/Libraries/Logic
+@dirrm lib/X11/xfig/Libraries/Hospital
+@dirrm lib/X11/xfig/Libraries/Flowchart
+@dirrm lib/X11/xfig/Libraries/Electrical/Schematic
+@dirrm lib/X11/xfig/Libraries/Electrical/Physical
+@dirrm lib/X11/xfig/Libraries/Electrical
+@dirrm lib/X11/xfig/Libraries/Computers
+@dirrm lib/X11/xfig/Libraries/Buildings
+@dirrm lib/X11/xfig/Libraries
 @dirrm lib/X11/xfig

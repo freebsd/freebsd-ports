@@ -1,5 +1,5 @@
 # New ports collection makefile for:	xfig
-# Version required:	3.2
+# Version required:	3.2.2
 # Date created:		4 January 1995
 # Whom:			roberto
 #
@@ -26,13 +26,22 @@ RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript5
 USE_IMAKE=	yes
 MAN1=		xfig.1
 
-MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
-		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
-		XFIGLIBDIR=${PREFIX}/lib/X11/xfig  -f
-
+pre-fetch:
 .if !defined(WANT_GS_SUPPORT)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you would like build xfig with Ghostscript support"
+	@${ECHO_MSG} "you must set the variable WANT_GS_SUPPORT"
+	@${ECHO_MSG} ""
+.else
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Building xfig with Ghostscript support"
+	@${ECHO_MSG} ""
+.endif
+
 post-patch:
-	@( cd ${WRKSRC}; ${PERL} -pi -e 's,-DGSBIT ,,' Imakefile )
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
+.if !defined(WANT_GS_SUPPORT)
+	@${PERL} -pi -e 's|-DGSBIT ||g' ${WRKSRC}/Imakefile
 .endif
 
 .include <bsd.port.mk>
