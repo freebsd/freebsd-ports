@@ -23,6 +23,8 @@ share/a2ps/afm/phvr-o.afm
 share/a2ps/afm/phvro-o.afm
 share/a2ps/afm/phvb-o.afm
 share/a2ps/afm/phvbo-o.afm
+share/a2ps/afm/pcfont.afm
+share/a2ps/fonts/pcfont.pfa
 share/a2ps/fonts/pcrr-o.pfa
 share/a2ps/fonts/pcrro-o.pfa
 share/a2ps/fonts/pcrb-o.pfa
@@ -150,9 +152,10 @@ share/a2ps/sheets/vrml.ssh
 share/a2ps/sheets/zsh.ssh
 share/a2ps/encoding/encoding.map
 share/a2ps/encoding/ascii.edf
-share/a2ps/encoding/cp1250.edf
+share/a2ps/encoding/ms-cp1250.edf
 share/a2ps/encoding/hp.edf
-share/a2ps/encoding/ibmpc.edf
+share/a2ps/encoding/ibm-cp437.edf
+share/a2ps/encoding/ibm-cp850.edf
 share/a2ps/encoding/iso1.edf
 share/a2ps/encoding/iso2.edf
 share/a2ps/encoding/iso3.edf
@@ -164,7 +167,6 @@ share/a2ps/encoding/iso10.edf
 share/a2ps/encoding/iso15.edf
 share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/mac.edf
-share/a2ps/encoding/pcg.edf
 share/a2ps/afm/make_fonts_map.sh
 share/a2ps/afm/fonts.map
 share/a2ps/afm/colle10.afm
@@ -226,15 +228,15 @@ share/emacs/site-lisp/a2ps.el
 share/emacs/site-lisp/a2ps-print.el
 bin/a2ps
 bin/ogonkify
-bin/compose
+bin/composeglyphs
 bin/fixnt
 bin/texi2dvi4a2ps
 bin/card
 bin/psmandup
 bin/fixps
 bin/pdiff
-@unexec install-info --info-dir=%D/info %D/info/a2ps.info --delete
-@unexec install-info --info-dir=%D/info %D/info/ogonkify.info --delete
+@unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
+@unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
 info/ogonkify.info
 info/a2ps.info
 info/a2ps.info-1
@@ -252,12 +254,11 @@ include/liba2ps.h
 lib/liba2ps.so.1
 lib/liba2ps.so
 lib/liba2ps.a
-lib/liba2ps.la
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/a2ps/ps
-@dirrm share/a2ps/afm  
-@dirrm share/a2ps/fonts 
+@dirrm share/a2ps/afm
+@dirrm share/a2ps/fonts
 @dirrm share/a2ps/ogonkify
-@dirrm share/a2ps/sheets  
+@dirrm share/a2ps/sheets
 @dirrm share/a2ps/encoding

@@ -3,17 +3,19 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.22 1998/11/20 04:15:00 asami Exp $
+# $Id: Makefile,v 1.23 1998/11/22 01:56:20 obrien Exp $
 #
 
-DISTNAME=	a2ps-4.10.3
-PKGNAME=	a2ps-${PAPERSIZE}-4.10.3
+DISTNAME=	a2ps-4.10.4
+PKGNAME=	a2ps-${PAPERSIZE}-4.10.4
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} sheets.map.fixed
 
 MAINTAINER=	chuckr@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
 
 PAPERSIZE?=	letter
@@ -31,9 +33,13 @@ CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF}
 	@${FALSE}
 .endif
 
+post-extract:
+	$(CP) $(DISTDIR)/sheets.map.fixed $(WRKSRC)/sheets/sheets.map
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	strip ${PREFIX}/bin/a2ps
 	(cd ${WRKSRC}/doc; ${MAKE} install)
+	$(RM) -f $(PREFIX)/lib/liba2ps.la
 
 .include <bsd.port.mk>
