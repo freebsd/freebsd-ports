@@ -1,18 +1,18 @@
 
 $FreeBSD$
 
---- configure	2002/05/30 11:20:36	1.1
-+++ configure	2002/05/30 11:20:46
-@@ -455,7 +455,7 @@
+--- configure.orig	Tue Jul  1 15:02:34 2003
++++ configure	Tue Jul  1 15:03:00 2003
+@@ -467,7 +467,7 @@
  # include <unistd.h>
  #endif"
  
 -ac_subdirs_all="$ac_subdirs_all libltdl"
 +ac_subdirs_all="$ac_subdirs_all"
+ ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO AMTAR install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM AWK SET_MAKE MAINTAINER_MODE_TRUE MAINTAINER_MODE_FALSE MAINT CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT DEPDIR am__include am__quote AMDEP_TRUE AMDEP_FALSE AMDEPBACKSLASH CCDEPMODE CPP build build_cpu build_vendor build_os host host_cpu host_vendor host_os LN_S ECHO RANLIB ac_ct_RANLIB EGREP LIBTOOL MKINSTALLDIRS MSGFMT GMSGFMT XGETTEXT MSGMERGE ALLOCA GLIBC21 LIBICONV LTLIBICONV INTLBISON USE_NLS BUILD_INCLUDED_LIBINTL USE_INCLUDED_LIBINTL CATOBJEXT INTLOBJS DATADIRNAME INSTOBJEXT GENCAT INTL_LIBTOOL_SUFFIX_PREFIX INTLLIBS LIBINTL LTLIBINTL POSUB PTHREAD_CC PTHREAD_LIBS PTHREAD_CFLAGS BUILD_GUILE GUILE_INCS GUILE_LIBS GUILE_TRUE GUILE_FALSE GNOME_LIBS GNOMEUI_LIBS ZVT_LIBS GNOME_LIBDIR GNOME_INCLUDEDIR GNOME_CONFIG ESD_CONFIG ESD_CFLAGS ESD_LIBS IMLIB_CONFIG GNOME_APPLETS_LIBS GNOME_CAPPLET_LIBS HAVE_GNOME_TRUE HAVE_GNOME_FALSE ac_libglade_config XML_CFLAGS XML_LIBS XML2_CONFIG XML_CONFIG HAVE_FFTW_TRUE HAVE_FFTW_FALSE afconfig HAVE_OSS_TRUE HAVE_OSS_FALSE HAVE_ESD_TRUE HAVE_ESD_FALSE SGIAUDIO_LIBS HAVE_SGI_TRUE HAVE_SGI_FALSE ALSA_CFLAGS ALSA_LIBS HAVE_ALSA_TRUE HAVE_ALSA_FALSE LADSPA_CFLAGS LADSPA_TRUE LADSPA_FALSE LIBOBJS EXPERIMENTAL_TRUE EXPERIMENTAL_FALSE PKG_CONFIG MAD_CFLAGS MAD_LIBS STATICLIBS_TRUE STATICLIBS_FALSE pkgpixmapsdir pkgscriptsdir GLAME_LIBS GLAME_CFLAGS GLAME_DLIBS GLAME_DCFLAGS GLAME_AUDIO_LIBS GLAME_AUDIO_CFLAGS GLAME_FFT_LIBS LIBLTDL LTDLINCL subdirs LTLIBOBJS'
+ ac_subst_files=''
  
- # Initialize some variables set by options.
- ac_init_help=
-@@ -7280,6 +7280,7 @@
+@@ -8138,6 +8138,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -20,7 +20,7 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -18106,7 +18107,7 @@
+@@ -21263,7 +21264,7 @@
  
  
  
@@ -28,8 +28,8 @@ $FreeBSD$
 +subdirs="$subdirs"
  
  
- ac_config_files="$ac_config_files Makefile macros/Makefile doc/Makefile doc/pix/Makefile data/Makefile data/pixmaps/Makefile src/Makefile src/filter/Makefile src/swapfile/Makefile src/hash/Makefile src/plugins/Makefile src/include/Makefile src/gui/Makefile src/gui/edit_filter/Makefile src/glmid/Makefile src/gui/libgtkwaveform/Makefile src/gui/timeline/Makefile src/gui/util/Makefile intl/Makefile po/Makefile.in"
-@@ -18813,8 +18814,8 @@
+                                                                                                                                                                 ac_config_files="$ac_config_files Makefile macros/Makefile doc/Makefile doc/pix/Makefile data/Makefile data/pixmaps/Makefile src/Makefile src/filter/Makefile src/swapfile/Makefile src/hash/Makefile src/plugins/Makefile src/include/Makefile src/gui/Makefile src/glmid/Makefile intl/Makefile po/Makefile.in"
+@@ -22129,8 +22130,8 @@
  s,@GLAME_AUDIO_LIBS@,$GLAME_AUDIO_LIBS,;t t
  s,@GLAME_AUDIO_CFLAGS@,$GLAME_AUDIO_CFLAGS,;t t
  s,@GLAME_FFT_LIBS@,$GLAME_FFT_LIBS,;t t
@@ -38,5 +38,5 @@ $FreeBSD$
 +s,@LIBLTDL@,,;t t
 +s,@LTDLINCL@,,;t t
  s,@subdirs@,$subdirs,;t t
+ s,@LTLIBOBJS@,$LTLIBOBJS,;t t
  CEOF
- 
