@@ -7,10 +7,11 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
-PATCHFILES=	${BINNAME}-rtems-20010409.diff
+PATCHFILES=	${BINNAME}-rtems-20010409.diff.gz
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
