@@ -4601,6 +4601,7 @@ openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
 openoffice-dk	ports/editors/openoffice-dk
+openoffice-gr	ports/editors/openoffice-gr
 openquicktime	ports/graphics/openquicktime
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
