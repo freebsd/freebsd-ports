@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/ \
 
 MAINTAINER=	will@FreeBSD.org
 
+BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
+
 USE_QT2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
