@@ -35,6 +35,7 @@
     SUBDIR += css-mode.el
     SUBDIR += decss
     SUBDIR += demoroniser
+    SUBDIR += djvuplugin
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
