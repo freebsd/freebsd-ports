@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnut
-PORTVERSION=	0.4.21
+PORTVERSION=	0.4.22
 CATEGORIES=	net audio
 MASTER_SITES=	http://www.gnutelliums.com/linux_unix/gnut/tars/
 
