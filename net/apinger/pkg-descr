@@ -6,7 +6,7 @@ response upon target failure. It is written in C and supports both
 IPv4 and IPv6.
 
 AUTHOR:		Jacek Konieczny <jajcus@pld.org.pl>
-WWW:			http://www.bnet.pl/~jajcus/apinger/	
+WWW:		http://www.bnet.pl/~jajcus/apinger/	
 
 	- Michael L. Hostbaek
 	mich@FreeBSD.org
