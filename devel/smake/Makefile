@@ -23,4 +23,10 @@ MAKE_ARGS=	INS_BASE=${PREFIX}
 MAN1=		smake.1
 MAN5=		makefiles.5 makerules.5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
+.include <bsd.port.post.mk>

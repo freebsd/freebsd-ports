@@ -27,6 +27,12 @@ MANCOMPRESSED=	no
 
 PORTDOCS=	CHANGELOG README WISHLIST
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not build on sparc64"
+.endif
+
 post-patch:
 	@${SED} -e 's|PREFIX|${PREFIX}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
@@ -39,4 +45,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
