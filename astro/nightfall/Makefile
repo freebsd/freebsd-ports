@@ -15,7 +15,6 @@ MAINTAINER=	chris@unixpages.org
 COMMENT=	An interactive binary star application
 
 .if !defined(WITHOUT_GTK)
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 .endif
 .if !defined(WITHOUT_GNUPLOT)

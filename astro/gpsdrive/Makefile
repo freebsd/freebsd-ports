@@ -23,7 +23,6 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
