@@ -8,7 +8,7 @@
 PORTNAME=	bbkeys
 PORTVERSION=	0.3.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.cs.uct.ac.za/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://movingparts.thelinuxcommunity.org/bbkeys/
 
 MAINTAINER=	patseal@hyperhost.net
 
