@@ -1,0 +1,38 @@
+--- INSTALL.orig	Thu Nov  7 00:04:53 1996
++++ INSTALL	Sat Nov 16 15:30:26 1996
+@@ -67,7 +67,7 @@
+     exit 1
+   fi
+ 
+-  if [ -z "$PAGER" ] || [ "`type $PAGER`" = "$PAGER not found" ] ; then
++  if [ -z "$PAGER" ] || [ "`$PAGER`" = "$PAGER not found" ] ; then
+     if [ "`type more`" != "more not found" ] ; then
+       command=more
+     elif [ "`type pg`" != "pg not found" ] ; then
+@@ -117,6 +117,8 @@
+     if [ "$i" -a -f "$i" ] ; then
+         if [ `uname -s` = "Linux" ] ; then
+           size=`ls -lLn "$i" | ( read perm links owner group size date ; echo $size )`
++        elif [ `uname -s` = "FreeBSD" ] ; then
++          size=`ls -lL "$i" | ( read perm links owner group size date ; echo $size )`
+         else
+           size=`ls -lLon "$i" | ( read perm links owner size date ; echo $size )`
+         fi
+@@ -559,7 +561,7 @@
+   *) ScriptDirectory="$CurrentDirectory"/"$ScriptDirectory" ;;
+ esac
+ 
+-if [ "`type uname`" != "uname not found" ] ; then
++if [ "`uname`" != "uname not found" ] ; then
+   OSname=`uname -s`
+   if [ "$OSname" = "AIX" ] ; then
+     OSrelease=`uname -a | ( read name host minor major foo ; echo $major.$minor )`
+@@ -1044,7 +1046,7 @@
+     DistDefaultNum="$DistIntelBSDINum"
+     DefaultName="Intel/BSDI"
+     ;;
+-  Linux)
++  FreeBSD|Linux)
+     AcroDefaultNum="$AcroIntelLinuxNum"
+     ExchDefaultNum="$ExchIntelLinuxNum"
+     ReadDefaultNum="$ReadIntelLinuxNum"
