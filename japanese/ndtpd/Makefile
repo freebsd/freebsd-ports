@@ -16,7 +16,6 @@ PATCHFILES=	${DISTNAME}+.diff
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 LIB_DEPENDS=	eb.6:${PORTSDIR}/japanese/eb
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${RUNDIR} --with-logdir=${LOGDIR}
@@ -30,8 +29,6 @@ LOGDIR=		/var/log
 RUNDIR=		/var/run
 STARTUP_SCRIPT=	${PORTNAME}.sh.sample
 
-pre-configure:
-	cd ${WRKSRC}; autoconf
 post-build:
 	${SED} "s,@prefix@,${PREFIX},; s,@rundir@,${RUNDIR},"\
 	  ${FILESDIR}/${STARTUP_SCRIPT} > ${WRKDIR}/${STARTUP_SCRIPT}
