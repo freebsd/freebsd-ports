@@ -4,11 +4,11 @@ JFC from ports (supplied as java/jdk and java/jfc) and set
 the following environment variables:
 
 B-shells)
-	export JAVA_HOME=/usr/local/jdk1.1.8
-	export SWING_HOME=/usr/local/share/java/classes/jfc-1.1.1
+	export JAVA_HOME=${PREFIX}/jdk1.1.8
+	export SWING_HOME=${PREFIX}/share/java/classes/jfc-1.1.1
 
 C-shells)
-	setenv JAVA_HOME /usr/local/jdk1.1.8
-	setenv SWING_HOME /usr/local/share/java/classes/jfc-1.1.1
+	setenv JAVA_HOME ${PREFIX}/jdk1.1.8
+	setenv SWING_HOME ${PREFIX}/share/java/classes/jfc-1.1.1
 
 ************************************************************

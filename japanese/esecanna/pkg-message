@@ -11,6 +11,10 @@ Quick Setup:
   If you find something strange with esecanna, please consult
 the log file `/var/log/esecanna.log'.
 
+
+  Read the documents under ${PREFIX}/share/doc/esecanna/
+for details.
+
 Note:
   Using VJE-Delta 3.0 trial, esecannaserver will fail to
 connect to vjed before once you run vje.

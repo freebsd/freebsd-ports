@@ -19,7 +19,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/fastjar
 	cd ${WRKSRC} && ${INSTALL_DATA} CHANGES README ${PREFIX}/share/doc/fastjar/
-.endif
 	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
