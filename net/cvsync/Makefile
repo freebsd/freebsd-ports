@@ -16,7 +16,8 @@ COMMENT=	A portable CVS repository synchronization utility
 
 USE_GMAKE=	yes
 
-MAN1=		cvscan.1 cvsup2cvsync.1 cvsync.1 cvsyncd.1 rcscan.1 rcscmp.1
+MAN1=		cvscan.1 cvsup2cvsync.1 cvsync.1 cvsync2cvsup.1 cvsyncd.1 \
+		rcscan.1 rcscmp.1
 DOCS=		doc/COPYRIGHT doc/ChangeLog doc/FAQ doc/TODO
 EXAMPLES=	samples/cvsync.conf samples/cvsyncd-FreeBSD.conf \
 		samples/cvsyncd-NetBSD.conf samples/cvsyncd-OpenBSD.conf
