@@ -5558,6 +5558,7 @@ python20	ports/lang/python20
 python21	ports/lang/python21
 pythoong	ports/games/pythoong
 pyweather	ports/astro/pyweather
+q3-paks		ports/games/q3-paks
 q3server	ports/games/q3server
 q3server-excessive	ports/games/q3server-excessive
 q3server-freezetag	ports/games/q3server-freezetag
