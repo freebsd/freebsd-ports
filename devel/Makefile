@@ -46,6 +46,7 @@
     SUBDIR += fastcrc
     SUBDIR += flick
     SUBDIR += fpp
+    SUBDIR += freelibiberty
     SUBDIR += ftnchek
     SUBDIR += gaa
     SUBDIR += gcc11
