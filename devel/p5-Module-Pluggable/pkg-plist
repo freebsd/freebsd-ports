@@ -1,0 +1,2 @@
+%%SITE_PERL%%/Module/Pluggable.pm
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
