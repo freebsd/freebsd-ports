@@ -11,7 +11,7 @@ CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kevlo@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2 \
 		iconv.1:${PORTSDIR}/converters/iconv
