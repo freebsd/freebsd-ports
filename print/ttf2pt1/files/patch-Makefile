@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jun 14 09:51:39 2002
-+++ Makefile	Sun Jul 21 19:58:47 2002
+--- Makefile.orig	Fri Aug  9 09:16:57 2002
++++ Makefile	Thu Nov  7 15:43:07 2002
 @@ -20,7 +20,7 @@
  #
  # Default
@@ -45,3 +45,12 @@
  # for scripts, maps/encodings etc.
  SHAREDIR = $(INSTDIR)/share/ttf2pt1
  MANDIR = $(INSTDIR)/man
+@@ -142,7 +142,7 @@
+ 	@echo >&2
+ 
+ DOCS=CHANGES README FONTS FONTS.hpux encodings/README other/README \
+-	app/X11/README app/netscape/README app/TeX/README
++	app/X11/README app/netscape/README
+ 
+ SUBDIRS = app encodings maps scripts other
+ TXTFILES = README* FONTS* CHANGES* COPYRIGHT
