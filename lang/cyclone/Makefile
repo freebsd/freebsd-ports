@@ -20,6 +20,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A safe dialect of C from Cornell and AT&T Research
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -36,7 +37,7 @@ pre-everything::
 
 post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		's/-O3/-O/'
 .endif
 
