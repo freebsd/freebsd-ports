@@ -1,35 +1,32 @@
---- config.h.orig	Thu Dec  2 13:12:36 1999
-+++ config.h	Mon Dec  6 03:21:06 1999
-@@ -49,18 +49,20 @@
+--- config.h.orig	Fri Jan 28 09:48:51 2000
++++ config.h	Fri Jan 28 18:53:34 2000
+@@ -59,19 +59,16 @@
  /**********************************************************/
  #ifdef makefile_parameter
  
 -BIN_DIR = /usr/local/bin
 -HELP_DIR = /usr/local/lib/w3m
+-LIB_DIR = /usr/local/lib/w3m
 -HELP_FILE = w3mhelp_ja.html
--SYS_LIBRARIES = -lgpm  -lbsd -lncurses 
+-SYS_LIBRARIES = -lgpm  -lbsd -lncurses  -L/usr/local/ssl/lib -lssl -lcrypto
 +BIN_DIR = %%PREFIX%%/bin
-+LIB_DIR = %%PREFIX%%/libexec/w3m
 +HELP_DIR = %%PREFIX%%/share/doc/w3m
 +HELP_DIR_JA = %%PREFIX%%/share/doc/ja/w3m
++LIB_DIR = %%PREFIX%%/libexec/w3m
 +HELP_FILE = w3mhelp_en.html
 +SYS_LIBRARIES = -lncurses
  LOCAL_LIBRARIES = 
 -CC = gcc
--MYCFLAGS = -g -I./gc
-+#CC = gcc
-+#MYCFLAGS = -g -I./gc
+-MYCFLAGS = -g -I./gc  -I/usr/local/ssl/include/openssl -I/usr/local/ssl/include
  KEYBIND_SRC = keybind.c
  KEYBIND_OBJ = keybind.o
  EXT=
 -GCLIB=gc/gc.a
 -GCTARGET=gc/gc.a
-+#GCLIB=gc/gc.a
-+#GCTARGET=gc/gc.a
+ RANLIB=ranlib
+ MKDIR=mkdir -p
  #else
- 
- 
-@@ -68,21 +70,30 @@
+@@ -81,23 +78,31 @@
  
  #define JA 0
  #define EN 1
@@ -43,19 +40,22 @@
  #define COLOR
  #define MOUSE
 -#define USE_GPM
+-#undef USE_SYSMOUSE
 +#undef USE_GPM
++#define USE_SYSMOUSE
  #define MENU
  #define USE_COOKIE
- #undef USE_SSL
+-#define USE_SSL
++#undef USE_SSL
  
--#define DEF_EDITOR "/bin/vi"
+ #define DEF_EDITOR "/usr/bin/vi"
 -#define DEF_MAILER "/bin/mail"
 -#define DEF_EXT_BROWSER "/usr/local/bin/netscape"
-+#define DEF_EDITOR "/usr/bin/vi"
 +#define DEF_MAILER "/usr/bin/mail"
 +#define DEF_EXT_BROWSER "%%PREFIX%%/bin/netscape"
  
 -#define LIB_DIR      "/usr/local/lib/w3m"
+-#define HELP_DIR     "/usr/local/lib/w3m"
 -#define HELP_FILE    "w3mhelp.html"
 +#define LIB_DIR      "%%PREFIX%%/libexec/w3m"
 +#ifdef JAPANESE

@@ -1,0 +1,16 @@
+--- rc.c.orig	Fri Jan 28 09:46:07 2000
++++ rc.c	Fri Jan 28 18:58:17 2000
+@@ -540,13 +540,3 @@
+   Strcat_charp(file, base);
+   return expandName(file->ptr);
+ }
+-
+-char *
+-helpFile(char *base)
+-{
+-    Str file = Strnew_charp(HELP_DIR);
+-    
+-    Strcat_char(file, '/');
+-    Strcat_charp(file, base);
+-    return expandName(file->ptr);
+-}

@@ -1,20 +1,18 @@
 # New ports collection makefile for:   w3m
-# Version required:		991028-2
+# Version required:		0.1.7
 # Date Created:			7 Oct 1999
 # Whom:				MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	w3m-${W3M_DIST_VER}
-PKGNAME?=	w3m-${W3M_VER}
-W3M_DIST_VER=	991203
-W3M_VER=	${W3M_DIST_VER}
+DISTNAME=	w3m-${W3M_VER}
+W3M_VER=	0.1.7
 CATEGORIES?=	www ipv6
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
-		ftp://ftp.firedrake.org/w3m/ \
-		http://www.instinct.org/~pgl/w3m/ \
-		http://grilli.net/mirrors/w3m/download/
+MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
+		ftp://ftp.firedrake.org/w3m/dev/ \
+		http://www.instinct.org/~pgl/w3m/dev/ \
+		http://grilli.net/mirrors/w3m/download/dev/
 
 MAINTAINER=	nobutaka@nobutaka.com
 
@@ -27,7 +25,7 @@ MAN1=		w3m.1
 MANLANG=	""
 
 TARGET=		${WRKSRC}/config.h
-DOCS=		FAQ.html MANUAL.html MANUAL_lynx.html README \
+DOCS=		FAQ.html HISTORY MANUAL.html README \
 		README.dict README.func STORY.html keymap.default \
 		keymap.lynx menu.default menu.submenu
 SED_CMD=	-e "s,%%PREFIX%%,${PREFIX},g" \

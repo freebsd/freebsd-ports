@@ -1,10 +1,10 @@
---- main.c.orig	Mon Dec  6 01:55:23 1999
-+++ main.c	Mon Dec  6 01:56:00 1999
-@@ -1032,7 +1032,7 @@
+--- main.c.orig	Fri Jan 28 14:38:59 2000
++++ main.c	Fri Jan 28 18:57:39 2000
+@@ -1087,7 +1087,7 @@
  void
  ldhelp(void)
  {
--  cmd_loadURL(libFile(HELP_FILE), NULL);
+-  cmd_loadURL(helpFile(HELP_FILE), NULL);
 +  cmd_loadURL(HELP_FILE, NULL);
  }
  
