@@ -14,7 +14,7 @@
 
 DISTNAME=	sirc-2.211
 CATEGORIES=	irc
-MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/sirc/ \
+MASTER_SITES=	http://www.iagora.com/~espel/sirc/ \
 		http://freebsd.simplenet.com/Downloads/
 
 MAINTAINER=	Doug@gorean.org
