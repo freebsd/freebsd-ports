@@ -1,9 +1,0 @@
-SPAM is the black plague of the Internet world and this Sendmail milter
-attempts to address a small subset of the problem by verifying that the
-sender's email address is in good standing by performing an SMTP callback
-to the MX server responsible for the sender's domain. This milter is not
-intended to be a complete solution to the SPAM plague and so it should be
-used in conjunction with other tools such as DNS blacklists and content
-filters. Milter-sender also supports grey-listing.
-
-WWW: http://www.milter.info/milter-sender/

@@ -191,7 +191,6 @@
     SUBDIR += mew3-xemacs21-mule
     SUBDIR += milter-greylist
     SUBDIR += milter-regex
-    SUBDIR += milter-sender
     SUBDIR += milter-skem
     SUBDIR += milter-spamc
     SUBDIR += mimedefang
