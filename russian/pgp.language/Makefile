@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1998/10/16 00:48:11 jseger Exp $
+# $Id: Makefile,v 1.19 1998/10/16 02:54:07 jseger Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -17,7 +17,7 @@ MAINTAINER=	ache@FreeBSD.ORG
 RESTRICTED=	"Crypto"
 
 BUILD_DEPENDS += unzip:${PORTSDIR}/archivers/unzip
-RUN_DEPENDS += pgp:${PORTSDIR}/security/pgp
+RUN_DEPENDS += ${PREFIX}/lib/pgp/config.txt:${PORTSDIR}/security/pgp
 
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
