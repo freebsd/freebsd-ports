@@ -3,7 +3,7 @@
 # Date created:                21 Nov 1998
 # Whom:                        bradh
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/23 00:35:43 flathill Exp $
 #
 
 DISTNAME=	nocol-4.2.2beta1
@@ -22,6 +22,8 @@ MAN8=		etherload.8 eventselect.8 genmon.8 multiping.8 noclogd.8 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
+
+NO_PACKAGE=	Hostname is needed.
 
 post-install:
 		@cd ${WRKSRC} && make root
