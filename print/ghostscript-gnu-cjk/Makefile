@@ -30,6 +30,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
+BROKEN=	"Obsoleted by ghostscript-gnu-commfont"
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes

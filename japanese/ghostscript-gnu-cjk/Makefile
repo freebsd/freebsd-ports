@@ -21,6 +21,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/cid.sh:${PORTSDIR}/print/gh
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
+BROKEN=		"Obsoleted by ja-ghostscript-gnu-jpnfont. Please use that."
+
 GSLIB_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}/lib
 PLIST_SUB=	GS_VERSION=${PORTVERSION}
 

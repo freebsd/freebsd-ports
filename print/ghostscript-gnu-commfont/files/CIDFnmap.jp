@@ -1,0 +1,22 @@
+% Japanese Truetype Fonts (Kochi)
+/Kochi-Mincho	(%%X11BASE%%/lib/X11/fonts/TrueType/kochi-mincho.ttf) 1 ;
+/Kochi-Gothic	(%%X11BASE%%/lib/X11/fonts/TrueType/kochi-gothic.ttf) 1 ;
+
+%
+% Convenient aliases for PS files on Japanese PostScript printer
+%
+/Adobe-Japan1		/Kochi-Mincho	;
+/Ryumin-Light		/Kochi-Mincho	;
+/Ryumin-Light-H		/Kochi-Mincho	;
+/Ryumin-Light-V		/Kochi-Mincho	;
+/GothicBBB-Medium	/Kochi-Gothic	;
+/GothicBBB-Medium-H	/Kochi-Gothic	;
+/GothicBBB-Medium-V	/Kochi-Gothic	;
+/HeiseiMin-W3H		/Kochi-Mincho	;
+/HeiseiKakuGo-W5H	/Kochi-Gothic	;
+/FutoMinA101-Bold	/Kochi-Mincho	;
+/FutoMinA101-Bold-H	/Kochi-Mincho	;
+/FutoMinA101-Bold-V	/Kochi-Mincho	;
+/FutoGoB101-Bold	/Kochi-Gothic	;
+/FutoGoB101-Bold-H	/Kochi-Gothic	;
+/FutoGoB101-Bold-V	/Kochi-Gothic	;
