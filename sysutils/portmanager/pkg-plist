@@ -1,20 +1,22 @@
-etc/portmanager/portmanager.conf.SAMPLE
+etc/portmanager/pm-020.conf.SAMPLE
 bin/mgmlParse
 bin/pmStatus
 bin/pmupgrade
 bin/portmanager
-include/MGrDbArray.h
 include/MGrFileSize.h
 include/MGrFileTime.h
 include/MGrIfFileExist.h
 include/MGrInStringSwap.h
 include/MGrIntToString.h
+include/MGrStripComment.h
 include/PMGRrDbCreate.h
 include/PMGRrMakeDescribe.h
+include/PMGRrReadConfigure.h
 include/libMG.h
 include/libPMGR.h
 include/pmStatus.h
 include/pmupgrade.h
+include/portmanager.h
 lib/libMG.a
 lib/libMG
 lib/libMG.0
@@ -22,6 +24,8 @@ lib/libPMGR.a
 lib/libPMGR
 lib/libPMGR.0
 share/portmanager/.keepme
+@unexec rm -f %D/share/portmanager/configure.db 2>/dev/null || true
+@unexec rm -f %D/share/portmanager/configure.db.temp 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_installed.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/port_dependencies.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_cache.db 2>/dev/null || true
