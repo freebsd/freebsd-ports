@@ -45,6 +45,12 @@ USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502112
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-everything::
 .if !defined(WITH_MOTIF)
 	@${ECHO_MSG}
@@ -72,4 +78,4 @@ pre-build:
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
