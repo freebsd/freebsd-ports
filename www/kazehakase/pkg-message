@@ -1,0 +1,4 @@
+===>
+===>  Thumbnail support is in the experimental state, so it does not work by
+===>  default. If you wish to use thumbnails, you have to write
+===>  "create_thumbnail=true" in [Global] section in ~/.kazehakase/kzrc
