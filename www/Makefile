@@ -63,7 +63,6 @@
     SUBDIR += dhttpd
     SUBDIR += dillo
 #    SUBDIR += djvuplugin
-    SUBDIR += eddie
     SUBDIR += eldav.el
     SUBDIR += elinks
     SUBDIR += emacs-w3m

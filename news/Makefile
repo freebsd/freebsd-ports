@@ -78,7 +78,6 @@
     SUBDIR += unpost
     SUBDIR += xmitbin
     SUBDIR += xrn
-    SUBDIR += xvnews
     SUBDIR += yencode
 
 .include <bsd.port.subdir.mk>

@@ -26,7 +26,6 @@
     SUBDIR += ircservices
     SUBDIR += iroffer
     SUBDIR += irssi
-    SUBDIR += kvirc
     SUBDIR += liece
     SUBDIR += liece-dcc
     SUBDIR += liece-emacs20

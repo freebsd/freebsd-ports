@@ -75,7 +75,6 @@
     SUBDIR += vice
     SUBDIR += visualos
     SUBDIR += vmsbackup
-    SUBDIR += vmware
     SUBDIR += vmware-guestd3
     SUBDIR += vmware-guestd4
     SUBDIR += vmware-tools2

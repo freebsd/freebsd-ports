@@ -6,7 +6,6 @@
     SUBDIR += XFree86-4-PrintServer
     SUBDIR += XFree86-4-Server
     SUBDIR += XFree86-4-VirtualFramebufferServer
-    SUBDIR += Xatm
     SUBDIR += Xfstt
     SUBDIR += XttXF86srv-3DLabs
     SUBDIR += XttXF86srv-8514

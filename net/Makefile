@@ -68,10 +68,8 @@
     SUBDIR += coda5_client
     SUBDIR += coda5_doc
     SUBDIR += coda5_server
-    SUBDIR += coda_client
     SUBDIR += coda_doc
     SUBDIR += coda_intro
-    SUBDIR += coda_server
     SUBDIR += confregdecode
     SUBDIR += corkscrew
     SUBDIR += cphone
@@ -197,7 +195,6 @@
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gtic
-    SUBDIR += gtk+licq
     SUBDIR += gtk-gnutella
     SUBDIR += gtkhx
     SUBDIR += gtkyahoo
@@ -221,7 +218,6 @@
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
-    SUBDIR += icukrell
     SUBDIR += idnkit
     SUBDIR += ifstat
     SUBDIR += imcom
@@ -301,7 +297,6 @@
     SUBDIR += lmd
     SUBDIR += lmule
     SUBDIR += loadd
-    SUBDIR += macipgw
     SUBDIR += magictun
     SUBDIR += maradns
     SUBDIR += mars_nwe
@@ -655,7 +650,6 @@
     SUBDIR += totd
     SUBDIR += tptest
     SUBDIR += traceroute
-    SUBDIR += trafcount
     SUBDIR += trafd
     SUBDIR += trafshow
     SUBDIR += tramp
@@ -710,7 +704,6 @@
     SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zebra-server
-    SUBDIR += zephyr
     SUBDIR += ztelnet
 
 .include <bsd.port.subdir.mk>

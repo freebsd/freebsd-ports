@@ -26,10 +26,8 @@
     SUBDIR += apr
     SUBDIR += arch
     SUBDIR += arm-aout-binutils
-    SUBDIR += arm-aout-gcc295
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-elf-gcc295
-    SUBDIR += arm-elf-gcc31
     SUBDIR += arm-rtems-binutils
     SUBDIR += arm-rtems-g77
     SUBDIR += arm-rtems-gcc
@@ -104,7 +102,6 @@
     SUBDIR += clo++
     SUBDIR += cmake
     SUBDIR += codecrusader
-    SUBDIR += codemedic
     SUBDIR += commoncpp
     SUBDIR += cons
     SUBDIR += cons-test
@@ -182,7 +179,6 @@
     SUBDIR += fhist
     SUBDIR += fib
     SUBDIR += flick
-    SUBDIR += flux
     SUBDIR += fnccheck
     SUBDIR += fnorb
     SUBDIR += fortran-utils
@@ -201,7 +197,6 @@
     SUBDIR += gdb52
     SUBDIR += gdb53
     SUBDIR += gdbmods
-    SUBDIR += gecc
     SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += gettext
@@ -209,7 +204,6 @@
     SUBDIR += gide
     SUBDIR += gindent
     SUBDIR += glade
-    SUBDIR += glade--
     SUBDIR += glade2
     SUBDIR += glg
     SUBDIR += glib12
@@ -266,7 +260,6 @@
     SUBDIR += id-utils
     SUBDIR += idlefork
     SUBDIR += ifd-test
-    SUBDIR += ilu
     SUBDIR += imake
     SUBDIR += imake-4
     SUBDIR += inilib

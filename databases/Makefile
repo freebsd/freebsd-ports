@@ -46,7 +46,6 @@
     SUBDIR += libgda2
     SUBDIR += libgnomedb
     SUBDIR += libiodbc
-    SUBDIR += libodbc++
     SUBDIR += libsdb
     SUBDIR += libudbc
     SUBDIR += lsdb
@@ -112,7 +111,6 @@
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
     SUBDIR += p5-Metadata
-    SUBDIR += p5-Msql
     SUBDIR += p5-Mysql
     SUBDIR += p5-Pg
     SUBDIR += p5-ResourcePool-Resource-DBI
@@ -179,7 +177,6 @@
     SUBDIR += ruby-rdbc1
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlrelay
-    SUBDIR += sixpack
     SUBDIR += sqlite
     SUBDIR += sqlrelay
     SUBDIR += sqsh
