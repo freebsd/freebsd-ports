@@ -9,10 +9,8 @@ The TNEF program allows one to unpack the attachments which were encapsulated
 into the TNEF attachment.  Thus alleviating the need to use Microsoft Outlook
 to view them.
 
-Written by:		Mark Simpson <damned@world.std.com>
-Based upon work by:	Thomas Boll <tb@boll.ch>
-
-WWW: http://world.std.com/~damned/software.html
+Author:	Mark Simpson <verdammelt@users.sourceforge.net>
+WWW:	http://tnef.sourceforge.net/
 
 - Cyrus Rahman
 cr@jcmax.com

@@ -6,18 +6,31 @@
 #
 
 PORTNAME=	tnef
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	converters mail
-MASTER_SITES=	http://world.std.com/~damned/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cr@jcmax.com
-COMMENT=	Unpack data encapsulated into Microsoft Outlook's application/ms-tnef format
+COMMENT=	Unpack data in MS Outlook TNEF format
 
 GNU_CONFIGURE=	yes
+USE_GETOPT_LONG=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN1=	tnef.1
+MAN1=		tnef.1
+DOCS=		AUTHORS NEWS README THANKS TODO
 
-pre-configure:
-	${MV} ${WRKSRC}/doc/tnef.3 ${WRKSRC}/doc/tnef.1
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
+
+# This target is intended to be run by the port maintainer.
+x-test: build
+.for dir in cmdline files
+	@cd ${WRKSRC}/tests/${dir} && ${MAKE} check-TESTS
+.endfor
 
 .include <bsd.port.mk>
