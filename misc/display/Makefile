@@ -3,13 +3,14 @@
 # Date created:		25 August 1997
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
-# $Id: Makefile,v 1.4 1998/11/07 03:37:38 asami Exp $
+# $Id: Makefile,v 1.5 1998/11/08 16:51:06 fenner Exp $
 #
 
 DISTNAME=		display
 PKGNAME=		display-1.0
 CATEGORIES=		misc
-MASTER_SITES=		ftp://ftp.uu.net/usenet/comp.sources.unix/volume8/
+MASTER_SITES=		${MASTER_SITE_COMP_SOURCES}
+MASTER_SITE_SUBDIR=	unix/volume8
 EXTRACT_SUFX=		.Z
 
 PATCH_SITES=		${MASTER_SITES}

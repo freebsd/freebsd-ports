@@ -3,13 +3,14 @@
 # Date created:		23 October 1998
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/20 21:14:43 jseger Exp $
 #
 
 DISTNAME=		copytape
 PKGNAME=		copytape-1.0
 CATEGORIES=		sysutils
-MASTER_SITES=		ftp://ftp.uu.net/usenet/comp.sources.unix/volume10/
+MASTER_SITE=		${MASTER_SITE_COMP_SOURCES}
+MASTER_SITE_SUBDIR=	unix/volume8
 EXTRACT_SUFX=		.Z
 
 MAINTAINER=		ports@FreeBSD.ORG
