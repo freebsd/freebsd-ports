@@ -12,6 +12,7 @@ PRE-INSTALL)
 			exit 1
 		fi
 	fi
+	;;
 esac
 
 exit 0
