@@ -6,27 +6,23 @@
 #
 
 PORTNAME=	lemon
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.33
 CATEGORIES=	devel
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/${PORTNAME}/
-DISTFILES=	lemon.c lempar.c
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	An LALR(1) parser generator. Similar in function to yacc and bison
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	${CP} -p ${DISTDIR}/lemon.c ${WRKSRC}
+USE_BZIP2=	yes
 
 do-build:
-	cd ${WRKSRC} && ${MAKE} VPATH=${DISTDIR} PROG=lemon NOMAN=1 \
+	cd ${WRKSRC} && ${MAKE} PROG=lemon NO_MAN=1 \
 		CFLAGS="-g ${CFLAGS} -DLEMPAR='\"${PREFIX}/share/lemon/lempar.c\"'" \
 			-f /usr/share/mk/bsd.prog.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/share/lemon
-	${INSTALL_DATA} ${DISTDIR}/lempar.c ${PREFIX}/share/lemon/
+	${INSTALL_DATA} ${WRKSRC}/lempar.c ${PREFIX}/share/lemon/
 
 .include <bsd.port.mk>
