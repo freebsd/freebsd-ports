@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	2.3.11
+PORTVERSION=	3.0.4
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-2.0/%SUBDIR%/
+MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-3.0/%SUBDIR%/
 
 MAINTAINER=	anders@andersa.net
 COMMENT=	POP3 mail retriever written in Python
