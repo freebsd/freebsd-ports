@@ -22,11 +22,17 @@ RUN_DEPENDS=	${X11BASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
+CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "amd64"
 CFLAGS=	-fPIC
 .endif
+
+PLSIT_FILES=	lib/xmms/Input/liba52dec.so
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -shared -o liba52dec.so xmms-a52dec.c -la52
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/liba52dec.so ${PREFIX}/lib/xmms/Input/

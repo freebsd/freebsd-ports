@@ -20,9 +20,16 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC `xmms-config --cflags`
 
 BUILD_WRKSRC=	${WRKSRC}/OSSSurround-${PORTVERSION}
+
+PLIST_FILES=	lib/xmms/Output/libOSSSurround.so
+
+do-build:
+	cd ${BUILD_WRKSRC} && \
+	 ${CC} ${CFLAGS} -c *.c && \
+	 ${CC} -shared -olibOSSSurround.so about.o audio.o configure.o convert.o init.o mixer.o OSS.o
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/OSSSurround-0.1/libOSSSurround.so \
