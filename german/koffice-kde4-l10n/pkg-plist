@@ -1,0 +1,59 @@
+share/doc/HTML/de/kchart/common
+share/doc/HTML/de/kchart/index.cache.bz2
+share/doc/HTML/de/kchart/index.docbook
+share/doc/HTML/de/kformula/common
+share/doc/HTML/de/kformula/index.cache.bz2
+share/doc/HTML/de/kformula/index.docbook
+share/doc/HTML/de/koshell/common
+share/doc/HTML/de/koshell/index.cache.bz2
+share/doc/HTML/de/koshell/index.docbook
+share/doc/HTML/de/kpresenter/faq.docbook
+share/doc/HTML/de/kpresenter/guides.docbook
+share/doc/HTML/de/kpresenter/menus.docbook
+share/doc/HTML/de/kpresenter/options.docbook
+share/doc/HTML/de/thesaurus/common
+share/doc/HTML/de/thesaurus/index.cache.bz2
+share/doc/HTML/de/thesaurus/index.docbook
+share/locale/de/LC_MESSAGES/csvfilter.mo
+share/locale/de/LC_MESSAGES/desktop_koffice.mo
+share/locale/de/LC_MESSAGES/example.mo
+share/locale/de/LC_MESSAGES/graphite.mo
+share/locale/de/LC_MESSAGES/karbon.mo
+share/locale/de/LC_MESSAGES/kchart.mo
+share/locale/de/LC_MESSAGES/kfile_koffice.mo
+share/locale/de/LC_MESSAGES/kformula.mo
+share/locale/de/LC_MESSAGES/kformulalatexfilter.mo
+share/locale/de/LC_MESSAGES/kformulapngfilter.mo
+share/locale/de/LC_MESSAGES/kivio.mo
+share/locale/de/LC_MESSAGES/koconverter.mo
+share/locale/de/LC_MESSAGES/kocryptfilter.mo
+share/locale/de/LC_MESSAGES/koffice.mo
+share/locale/de/LC_MESSAGES/kontour.mo
+share/locale/de/LC_MESSAGES/koshell.mo
+share/locale/de/LC_MESSAGES/kounavail.mo
+share/locale/de/LC_MESSAGES/kplato.mo
+share/locale/de/LC_MESSAGES/kpresenter.mo
+share/locale/de/LC_MESSAGES/kpresenterkwordfilter.mo
+share/locale/de/LC_MESSAGES/krita.mo
+share/locale/de/LC_MESSAGES/kscan_plugin.mo
+share/locale/de/LC_MESSAGES/kspread.mo
+share/locale/de/LC_MESSAGES/kspreadcalc_calc.mo
+share/locale/de/LC_MESSAGES/kspreadqprofilter.mo
+share/locale/de/LC_MESSAGES/kthesaurus.mo
+share/locale/de/LC_MESSAGES/kugar.mo
+share/locale/de/LC_MESSAGES/kword.mo
+share/locale/de/LC_MESSAGES/kwordasciifilter.mo
+share/locale/de/LC_MESSAGES/kwordhtmlexportfilter.mo
+share/locale/de/LC_MESSAGES/kwordhtmlimportfilter.mo
+share/locale/de/LC_MESSAGES/kwordlatexfilter.mo
+share/locale/de/LC_MESSAGES/kwordmswritefilter.mo
+share/locale/de/LC_MESSAGES/olefilterswinword97filter.mo
+share/locale/de/LC_MESSAGES/thesaurus_tool.mo
+share/locale/de/LC_MESSAGES/xsltexportfilter.mo
+share/locale/de/LC_MESSAGES/xsltimportfilter.mo
+@dirrm share/doc/HTML/de/thesaurus
+@dirrm share/doc/HTML/de/kpresenter
+@dirrm share/doc/HTML/de/koshell
+@dirrm share/doc/HTML/de/kformula
+@dirrm share/doc/HTML/de/kchart
+@dirrm share/doc/HTML/de

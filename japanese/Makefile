@@ -144,6 +144,7 @@
     SUBDIR += kbanner
     SUBDIR += kcc
     SUBDIR += kde3-i18n
+    SUBDIR += koffice-i18n
     SUBDIR += kdrill
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+freewnn

@@ -9,6 +9,7 @@
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
     SUBDIR += kde3-i18n
+    SUBDIR += koffice-i18n
     SUBDIR += netscape7
     SUBDIR += ooodict-fr_FR
     SUBDIR += openoffice

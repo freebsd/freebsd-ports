@@ -11,6 +11,7 @@
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
     SUBDIR += kde3-i18n
+    SUBDIR += koffice-i18n
     SUBDIR += ksteak
     SUBDIR += linux-eagle
     SUBDIR += manpages
