@@ -3,6 +3,7 @@ lib/xine/plugins/input_dvd.so
 lib/xine/plugins/input_file.so
 lib/xine/plugins/input_net.so
 lib/xine/plugins/input_stdin_fifo.so
+lib/xine/plugins/input_vcd.so
 share/doc/xine/FAQ
 share/doc/xine/README
 share/doc/xine/README.syncfb
