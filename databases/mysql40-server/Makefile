@@ -133,9 +133,6 @@ pre-fetch:
 	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
 	@${ECHO} ""
 
-post-extract:
-	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @sql_server_dirs@ scripts man support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@|g" ${WRKSRC}/scripts/Makefile.in
@@ -228,5 +225,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 .endif
 .endif
+# Common part
+post-extract:
+	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
 
 .include <bsd.port.post.mk>
