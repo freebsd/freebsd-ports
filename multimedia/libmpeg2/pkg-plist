@@ -5,11 +5,9 @@ include/mpeg2dec/mpeg2.h
 include/mpeg2dec/mpeg2convert.h
 include/mpeg2dec/video_out.h
 lib/libmpeg2.a
-lib/libmpeg2.la
 lib/libmpeg2.so
 lib/libmpeg2.so.0
 lib/libmpeg2convert.a
-lib/libmpeg2convert.la
 lib/libmpeg2convert.so
 lib/libmpeg2convert.so.0
 lib/libvo.a
