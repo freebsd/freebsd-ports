@@ -7,11 +7,12 @@
 
 PORTNAME=	libgnomesu
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	http://members1.chello.nl/~h.lai/libgnomesu/
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Library for su integration with GNOME apps
+COMMENT=	Library for and frontend for running commands as root
 
 USE_X_PREFIX=	yes
 USE_GETOPT_LONG=yes
@@ -23,17 +24,15 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CONFLICTS=	gnomesu-*
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-IGNORE=	Corrupts PAM configuration
-.endif
-
 post-install:
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.4.x.sample ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.5.x.sample ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/api.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/libgnomesu.css ${DOCSDIR}
 .endif
+	@${SED} -e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,3 @@
+gnomesu-pam	auth	required	pam_unix.so	try_first_pass
+gnomesu-pam	session	required	pam_permit.so
+gnomesu-pam	account	required	pam_permit.so
