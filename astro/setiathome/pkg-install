@@ -54,7 +54,7 @@ EOF
 		echo "      a brief registration process."
 		echo "      Would you like to set up a working directory in ${DBDIR},"
 		echo "      register with SETI@home, and let me arrange for SETI@home to be"
-		echo -n "      started automatically [Y/n]? "
+		echo -n "      started automatically as user \`nobody' [Y/n]? "
 		read a
 		echo ""
 		if [ "$a" = "N" -o "$a" = "n" ]; then

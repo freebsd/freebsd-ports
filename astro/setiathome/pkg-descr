@@ -21,7 +21,7 @@ directory, and about 12 MBytes of memory.  If you have ample physical
 memory, it's work load should be almost undetectable.
 
 setiathome is a binary distribution currently available for FreeBSD
-2.2.6, 2.2.7, 2.2.8, and 3.1.  Newer versions of FreeBSD should be able
+2.2.6, 2.2.7, 2.2.8, 3.1, and 4.0.  Newer versions of FreeBSD should be able
 to run older binaries.
 
 WWW: http://setiathome.ssl.berkeley.edu/
