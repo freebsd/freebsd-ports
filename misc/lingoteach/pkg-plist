@@ -1,8 +1,22 @@
-bin/lingoteach
-share/lingoteach/data/rules.en.txt
-share/lingoteach/data/lingoteach.dtd
+bin/lingoteach-gtk
+include/lingoteach/conf.h
+include/lingoteach/data.h
+include/lingoteach/iterator.h
+include/lingoteach/language.h
+include/lingoteach/lesson.h
+include/lingoteach/meaning.h
+include/lingoteach/sound.h
+info/lingoteach.info
+lib/liblingoteach.a
+lib/liblingoteach.la
+lib/liblingoteach.so
+lib/liblingoteach.so.0
+share/lingoteach/data/basic.xml
+share/lingoteach/data/freedict.xml
 share/lingoteach/data/language.dtd
 share/lingoteach/data/language.xml
-share/lingoteach/data/basic.xml
+share/lingoteach/data/lingoteach.dtd
+share/lingoteach/data/rules.en.txt
 @dirrm share/lingoteach/data
 @dirrm share/lingoteach
+@dirrm include/lingoteach

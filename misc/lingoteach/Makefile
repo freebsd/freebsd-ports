@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lingoteach
-PORTVERSION=	0.3.7
-PORTREVISION=	2
+PORTVERSION=	0.3.8
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +29,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	""
 USE_GMAKE=	yes
 
+.if defined(WITH_COMP)
+CONFIGURE_ARGS+=	--with-compression
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
 .if defined(WITH_SOUND)
 PLIST=		${WRKDIR}/plist
 .endif
@@ -38,28 +45,25 @@ SORT?=		/usr/bin/sort
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_SOUND)
-pre-extract::
-	@${ECHO_CMD} "************************************************"
-	@${ECHO_CMD} "*                                              *"
-	@${ECHO_CMD} "* For Sound in Lingoteach, type Ctrl-C now and *"
-	@${ECHO_CMD} "*            define WITH_SOUND=yes             *"
-	@${ECHO_CMD} "*                                              *"
-	@${ECHO_CMD} "************************************************"
-	@sleep 3
-.endif
+pre-everything::
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "	Available options for lingoteach:"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " 		 WITH_SOUND	download additional sounds"
+	@${ECHO_CMD} "				for lingoteach"
+	@${ECHO_CMD} "		 WITH_COMP	enable compression of data"
+	@${ECHO_CMD} "				files"
+	@${ECHO_CMD} " 		 WITH_DEBUG	enable debugging"
+	@${ECHO_CMD} ""
 
 .if defined(WITH_SOUND)
 pre-install::
-	cd ${WRKSRC}/src; ${ECHO_CMD} \
-	"bin/`find . -type f -perm 755 |cut -c3-`" > ${PLIST}; \
+	${CAT} pkg-plist | ${SED} '/@dirrm/d' > ${WRKDIR}/plist; \
 	cd ${WRKDIR}/${PORTNAME}-sound-${PORTVERSION}/data; \
 	${FIND} . -type f \! -name "Make*" | cut -c2- | \
 	${SED} 's|^|${DATADIR:S,${PREFIX}/,,}/data|' \
 	| ${SORT} >> ${PLIST}; \
-	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/data; \
-	${FIND} . -type f \! -name "Make*" | cut -c2- | ${SED} \
-	's|^|${DATADIR:S,${PREFIX}/,,}/data|' | ${SORT} >> ${PLIST}; \
+	${CAT} ${WRKDIR}/../pkg-plist | ${GREP} '@dirrm include' >> ${PLIST}; \
 	cd ${WRKDIR}/${PORTNAME}-sound-${PORTVERSION}/data; \
 	${FIND} . -type d | cut -c2- | ${SED} \
 	's|^|@dirrm ${DATADIR:S,${PREFIX}/,,}/data|' | ${SORT} -r >> ${PLIST};
@@ -69,7 +73,7 @@ pre-install::
 .if defined(WITH_SOUND)
 post-install::
 	cd ${WRKDIR}/${PORTNAME}-sound-${PORTVERSION}/data; \
-	${RM} Make*; \
+	${RM} -f Make*; \
 	${CP} -R ${WRKDIR}/${PORTNAME}-sound-${PORTVERSION}/data \
 	${DATADIR};
 .endif
