@@ -150,6 +150,7 @@ include/w3c-libwww/WWWXML.h
 include/w3c-libwww/WWWZip.h
 include/w3c-libwww/wwwconf.h
 include/w3c-libwww/wwwsys.h
+include/w3c-libwww/xmlparse.h
 lib/libmd5.a
 lib/libmd5.la
 lib/libmd5.so.1

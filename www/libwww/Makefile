@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.15 1999/01/26 04:00:51 steve Exp $
+# $Id: Makefile,v 1.16 1999/03/08 00:15:40 jseger Exp $
 #
 
 PKGNAME=	libwww-5.2.6
@@ -17,9 +17,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 DOCDIR=		${PREFIX}/share/doc/libwww
+MAKE_ENV=	objformat=${PORTOBJFORMAT}
 
 post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/modules/expat/xmlparse/xmlparse.h \
+		${PREFIX}/include/w3c-libwww/
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}/User
 	${CP} -R ${WRKSRC}/Library/User/* ${DOCDIR}/User
