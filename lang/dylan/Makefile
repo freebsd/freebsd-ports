@@ -54,10 +54,6 @@ MAN7=		dylan.7 gwydion.7
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
-
 USE_REINPLACE=	yes
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
