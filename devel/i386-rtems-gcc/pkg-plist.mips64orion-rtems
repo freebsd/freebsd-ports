@@ -408,7 +408,6 @@ mips64orion-rtems/include/sys/utime.h
 mips64orion-rtems/include/sys/wait.h
 mips64orion-rtems/include/sys/features.h
 mips64orion-rtems/include/sys/sched.h
-mips64orion-rtems/include/sys/siginfo.h
 mips64orion-rtems/include/limits.h
 mips64orion-rtems/include/pthread.h
 @dirrm lib/gcc-lib/mips64orion-rtems/2.95.2/include

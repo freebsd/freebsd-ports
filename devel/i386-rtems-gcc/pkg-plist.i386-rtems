@@ -238,6 +238,26 @@ lib/gcc-lib/i386-rtems/2.95.2/soft-float/libstdc++.a
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/libgcc.a
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/crtbegin.o
 lib/gcc-lib/i386-rtems/2.95.2/soft-float/crtend.o
+lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float/crtend.o
+lib/gcc-lib/i386-rtems/2.95.2/m486/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/m486/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/m486/crtend.o
+lib/gcc-lib/i386-rtems/2.95.2/m486/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/mpentium/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/mpentium/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/mpentium/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/mpentium/crtend.o
+lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro/crtend.o
+lib/gcc-lib/i386-rtems/2.95.2/k6/libstdc++.a
+lib/gcc-lib/i386-rtems/2.95.2/k6/libgcc.a
+lib/gcc-lib/i386-rtems/2.95.2/k6/crtbegin.o
+lib/gcc-lib/i386-rtems/2.95.2/k6/crtend.o
 i386-rtems/bin/gcc
 i386-rtems/lib/libm.a
 i386-rtems/lib/libc.a
@@ -251,6 +271,36 @@ i386-rtems/lib/soft-float/libc.a
 i386-rtems/lib/soft-float/crt0.o
 i386-rtems/lib/soft-float/libg.a
 i386-rtems/lib/soft-float/libiberty.a
+i386-rtems/lib/m486/soft-float/libm.a
+i386-rtems/lib/m486/soft-float/libstdc++.a.2.10.0
+i386-rtems/lib/m486/soft-float/libc.a
+i386-rtems/lib/m486/soft-float/crt0.o
+i386-rtems/lib/m486/soft-float/libg.a
+i386-rtems/lib/m486/soft-float/libiberty.a
+i386-rtems/lib/m486/libstdc++.a.2.10.0
+i386-rtems/lib/m486/libm.a
+i386-rtems/lib/m486/libc.a
+i386-rtems/lib/m486/crt0.o
+i386-rtems/lib/m486/libg.a
+i386-rtems/lib/m486/libiberty.a
+i386-rtems/lib/mpentium/libm.a
+i386-rtems/lib/mpentium/libstdc++.a.2.10.0
+i386-rtems/lib/mpentium/libc.a
+i386-rtems/lib/mpentium/crt0.o
+i386-rtems/lib/mpentium/libg.a
+i386-rtems/lib/mpentium/libiberty.a
+i386-rtems/lib/mpentiumpro/libm.a
+i386-rtems/lib/mpentiumpro/libstdc++.a.2.10.0
+i386-rtems/lib/mpentiumpro/libc.a
+i386-rtems/lib/mpentiumpro/crt0.o
+i386-rtems/lib/mpentiumpro/libg.a
+i386-rtems/lib/mpentiumpro/libiberty.a
+i386-rtems/lib/k6/libm.a
+i386-rtems/lib/k6/libstdc++.a.2.10.0
+i386-rtems/lib/k6/libc.a
+i386-rtems/lib/k6/crt0.o
+i386-rtems/lib/k6/libg.a
+i386-rtems/lib/k6/libiberty.a
 i386-rtems/include/_ansi.h
 i386-rtems/include/_syslist.h
 i386-rtems/include/ar.h
@@ -309,11 +359,15 @@ i386-rtems/include/sys/utime.h
 i386-rtems/include/sys/wait.h
 i386-rtems/include/sys/features.h
 i386-rtems/include/sys/sched.h
-i386-rtems/include/sys/siginfo.h
 i386-rtems/include/pthread.h
 i386-rtems/include/_G_config.h
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/include
 @dirrm lib/gcc-lib/i386-rtems/2.95.2/soft-float
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/m486/soft-float
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/m486
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/mpentium
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/mpentiumpro
+@dirrm lib/gcc-lib/i386-rtems/2.95.2/k6
 @dirrm lib/gcc-lib/i386-rtems/2.95.2
 @dirrm lib/gcc-lib/i386-rtems
 @dirrm lib/gcc-lib
@@ -321,5 +375,10 @@ i386-rtems/include/_G_config.h
 @dirrm i386-rtems/include/sys
 @dirrm i386-rtems/include
 @dirrm i386-rtems/lib/soft-float
+@dirrm i386-rtems/lib/m486/soft-float
+@dirrm i386-rtems/lib/m486
+@dirrm i386-rtems/lib/mpentium
+@dirrm i386-rtems/lib/mpentiumpro
+@dirrm i386-rtems/lib/k6
 @dirrm include/g++-3/std
 @dirrm include/g++-3
