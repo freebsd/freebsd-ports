@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	latex-bibunits
-PORTVERSION=	2.3.20040206
+PORTVERSION=	2.4.20040512
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -32,7 +33,7 @@ TEX_BIN=	${LOCALBASE}/bin/tex
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	bibunits.sty bibunits.ins bibunits.dtx
 
-DOC_FILES=	00Readme
+DOC_FILES=	README bibunits.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
