@@ -1,5 +1,5 @@
 --- util/lg/Makefile.in.orig	Fri Aug  9 23:59:06 2002
-+++ util/lg/Makefile.in	Thu Sep 26 10:54:50 2002
++++ util//lg/Makefile.in	Mon Mar 17 15:48:24 2003
 @@ -1,6 +1,6 @@
  PREFIX = @prefix@
  
@@ -15,10 +15,11 @@
 -	if test -f $(PREFIX)/util/lg/lg.conf ; then \
 -	    echo "WARNING: *** $(PREFIX)/util/lg/lg.conf exists: installing as lg.conf.new."; \
 -	    echo "         *** review lg.conf.new for new/deprecated switches"; \
- 	    $(INSTALL_DATA) lg.conf $(PREFIX)/util/lg/lg.conf.new; \
+-	    $(INSTALL_DATA) lg.conf $(PREFIX)/util/lg/lg.conf.new; \
 -	else \
 -	    $(INSTALL_DATA) lg.conf $(PREFIX)/util/lg; \
 -	fi; \
++	    $(INSTALL_DATA) lg.conf $(PREFIX)/util/lg/lg.conf.dist; \
  	for file in *README* *.html; do \
  	    $(INSTALL_DATA) $$file $(PREFIX)/util/lg; \
  	done
