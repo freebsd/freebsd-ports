@@ -23,7 +23,13 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	lib/xmms/Effect/libquix3dn.so
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libquix3dn.so ${PREFIX}/lib/xmms/Effect/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
