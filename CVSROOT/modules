@@ -2465,6 +2465,7 @@ hu-jdictionary-eng-hun-expr	ports/hungarian/jdictionary-eng-hun-expr
 hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
+hulgalugha	ports/misc/hulgalugha
 husky-base	ports/news/husky-base
 husky-bsopack	ports/news/husky-bsopack
 husky-fidoconf	ports/news/husky-fidoconf
