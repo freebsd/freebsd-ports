@@ -4,6 +4,7 @@ bin/fftwf-wisdom
 include/fftw3.f
 include/fftw3.h
 lib/libfftw3.a
+lib/libfftw3.la
 lib/libfftw3.so
 lib/libfftw3.so.3
 lib/libfftw3f.a
