@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.60 1998/08/17 10:42:38 vanilla Exp $
+# $Id: Makefile,v 1.61 1998/08/17 12:12:34 vanilla Exp $
 #
 # Maximal ssh package requires YES values for
 # USE_PERL, USE_TCPWRAP
@@ -119,6 +119,8 @@ post-install:
 	ln -sf ssh.1.gz ${PREFIX}/man/man1/slogin.1.gz
 	ln -sf ssh1.1.gz ${PREFIX}/man/man1/slogin1.1.gz
 	ln -sf sshd1.8.gz ${PREFIX}/man/man8/sshd.8.gz
+.else
+	${ECHO} Warning---some manpages not installed.  See port Makefile
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		echo "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
