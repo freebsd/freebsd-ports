@@ -20,7 +20,8 @@ MAINTAINER=	simokawa@FreeBSD.org
 COMMENT=	A imprementation of Digital Video Transport System
 
 USE_AUTOCONF_VER=	253
-GNU_CONFIGURE=	YES
+# XXX autoconf-2.53 is useless without perl.
+USE_PERL5_BUILD=	YES
 
 MAN1=		dvts.1 dvsend.1 dvrecv.1
 
