@@ -253,6 +253,7 @@
     SUBDIR += p5-Locale-PGetText
     SUBDIR += p5-Locale-gettext
     SUBDIR += p5-LockFile-Simple
+    SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-PV
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Penguin
