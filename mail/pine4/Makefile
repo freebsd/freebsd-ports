@@ -46,6 +46,7 @@ pre-fetch:
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install
+	${SH} pkg-libwarning
 .endif
 
 post-patch:
