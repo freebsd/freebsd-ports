@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.cs.uidaho.edu/~cass0664/fRaBs/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
-MAINTAINER=	des@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	The fRaBs (Free Abuse) data files for the Abuse game engine
 
 RUN_DEPENDS=	abuse.sdl:${PORTSDIR}/games/abuse_sdl

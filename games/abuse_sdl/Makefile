@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.labyrinth.net.au/~trandor/abuse/files/
 
-MAINTAINER=	des@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	An SDL port of the Abuse game engine
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12:install
