@@ -1,0 +1,25 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/12/25 21:00:23	1.1
++++ Makefile.in	2001/12/26 06:40:16
+@@ -64,8 +64,7 @@
+ DIRS = $(NSPRPUB_DIR) \
+ 	$(tier_0_dirs) \
+ 	$(tier_1_dirs) \
+-	$(tier_9_dirs) \
+-	$(NULL)
++	$(tier_9_dirs)
+ 
+ ifdef MOZ_LDAP_XPCOM
+ DIRS += directory/c-sdk/ldap
+@@ -81,7 +80,8 @@
+ DIRS += $(tier_98_dirs)
+ endif
+ 
+-DIRS	+= $(tier_99_dirs)
++DIRS	+= $(tier_99_dirs) \
++	    $(NULL)
+ 
+ #
+ # tier 0 - base build config dirs
