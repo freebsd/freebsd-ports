@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	libexif
-PORTVERSION=	0.5.10
-PORTREVISION=	1
+PORTVERSION=	0.5.12
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Library to read digital camera file meta-data
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
