@@ -27,13 +27,8 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-USE_REINPLACE=	yes
-#	This is to deal with the broken assumption that Vector<T>::size_type, 
-#	String<T>::size_type is size_t as mentioned in doc/ideas.htm.  At least
-#	I believe this is what is preventing jade from linking on the Alpha.
-post-patch:
-	${REINPLACE_CMD} -e 's/<size_t>/<unsigned int>/g' `find ${WRKSRC} -type f`
+.if ${ARCH} == "alpha" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+CXXFLAGS:=	${CXXFLAGS} -DSIZEOF_SIZE_T=8
 .endif
 
 pre-install:
