@@ -45,6 +45,7 @@
     SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += gmcal
+    SUBDIR += gnochm
     SUBDIR += gnomeblog
     SUBDIR += gnomepim
     SUBDIR += gnomeutils2
