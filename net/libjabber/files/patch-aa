@@ -1,0 +1,10 @@
+--- man/jabber-config.1.orig	Wed Mar  1 00:15:13 2000
++++ man/jabber-config.1	Wed May 10 16:39:59 2000
+@@ -1,7 +1,6 @@
+ .\" Process this file with
+ .\" groff -man -Tascii jabber-config.1
+ .\"
+-
+ .PU
+ .TH JABBER-CONFIG 1
+ 

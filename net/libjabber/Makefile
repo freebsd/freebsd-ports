@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	libjabber
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=     net
-MASTER_SITES=	http://download.jabber.org/dists/0.9/final/
+MASTER_SITES=	http://download.jabber.org/dists/1.0/
 
 MAINTAINER=	lukin@okbmei.msk.su
 
-LIB_DEPENDS=	xode.0:${PORTSDIR}/textproc/libxode
+LIB_DEPENDS=	xode.1:${PORTSDIR}/textproc/libxode
 
 USE_LIBTOOL=	yes
 
