@@ -1230,6 +1230,7 @@ dvips		ports/print/dvips
 dvips2ascii	ports/print/dvips2ascii
 dviselect	ports/print/dviselect
 dvorak7min	ports/misc/dvorak7min
+dvorakng	ports/misc/dvorakng
 dxpc		ports/x11/dxpc
 dylan		ports/lang/dylan
 dynamag		ports/x11/dynamag
