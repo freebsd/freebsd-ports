@@ -14,7 +14,7 @@ DISTFILES=	${ANT_DISTFILE}:bin \
 		${MANPAGE_DISTFILE}:man
 EXTRACT_ONLY=	${ANT_DISTFILE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
