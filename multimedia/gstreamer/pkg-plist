@@ -20,6 +20,7 @@ bin/gst-xmllaunch
 bin/gst-xmllaunch-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/bytestream/adapter.h
 include/gstreamer-%%VERSION%%/gst/bytestream/bytestream.h
+include/gstreamer-%%VERSION%%/gst/bytestream/filepad.h
 include/gstreamer-%%VERSION%%/gst/control/control.h
 include/gstreamer-%%VERSION%%/gst/control/dparam.h
 include/gstreamer-%%VERSION%%/gst/control/dparam_smooth.h
@@ -99,6 +100,7 @@ lib/libgstreamer-%%VERSION%%.so
 lib/libgstreamer-%%VERSION%%.so.%%SHLIB_VERSION%%
 libdata/pkgconfig/gstreamer-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-control-%%VERSION%%.pc
+share/doc/gstreamer-%%VERSION%%/api-index.html
 share/doc/gstreamer-%%VERSION%%/GstBin.html
 share/doc/gstreamer-%%VERSION%%/GstClock.html
 share/doc/gstreamer-%%VERSION%%/GstElementFactory.html
@@ -113,7 +115,6 @@ share/doc/gstreamer-%%VERSION%%/GstSchedulerFactory.html
 share/doc/gstreamer-%%VERSION%%/GstThread.html
 share/doc/gstreamer-%%VERSION%%/GstTypeFindFactory.html
 share/doc/gstreamer-%%VERSION%%/GstXML.html
-share/doc/gstreamer-%%VERSION%%/ch03.html
 share/doc/gstreamer-%%VERSION%%/gstreamer-%%VERSION%%.devhelp
 share/doc/gstreamer-%%VERSION%%/gstreamer-GstSystemClock.html
 share/doc/gstreamer-%%VERSION%%/gstreamer-gst.html
@@ -140,21 +141,25 @@ share/doc/gstreamer-%%VERSION%%/gstreamer-gsttaginterface.html
 share/doc/gstreamer-%%VERSION%%/gstreamer-gsturi.html
 share/doc/gstreamer-%%VERSION%%/gstreamer-gstutils.html
 share/doc/gstreamer-%%VERSION%%/gstreamer-gstvalue.html
+share/doc/gstreamer-%%VERSION%%/gstreamer-hierarchy.html
 share/doc/gstreamer-%%VERSION%%/gstreamer-support.html
 share/doc/gstreamer-%%VERSION%%/gstreamer.html
 share/doc/gstreamer-%%VERSION%%/index.html
 share/doc/gstreamer-%%VERSION%%/index.sgml
-share/doc/gstreamer-%%VERSION%%/ix01.html
+share/doc/gstreamer-libs-%%VERSION%%/api-index.html
 share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-%%VERSION%%.devhelp
 share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-gstcontrol.html
 share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-gstdataprotocol.html
 share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-gstgetbits.html
+share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs-hierarchy.html
 share/doc/gstreamer-libs-%%VERSION%%/gstreamer-libs.html
 share/doc/gstreamer-libs-%%VERSION%%/index.html
 share/doc/gstreamer-libs-%%VERSION%%/index.sgml
 share/aclocal/gst-element-check-%%VERSION%%.m4
 share/locale/af/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/ca/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/fr/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gstreamer-%%VERSION%%.mo
@@ -174,8 +179,8 @@ share/locale/uk/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/bytestream
 @dirrm include/gstreamer-%%VERSION%%/gst
 @dirrm include/gstreamer-%%VERSION%%
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%/pwg
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%/manual
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%/faq
-@dirrm share/gnome/doc/gstreamer-%%VERSION%%
-@exec %D/bin/gst-register 2>/dev/null || true
+@dirrm share/gnome/doc/gstreamer-%%PORTVERSION%%/pwg
+@dirrm share/gnome/doc/gstreamer-%%PORTVERSION%%/manual
+@dirrm share/gnome/doc/gstreamer-%%PORTVERSION%%/faq
+@dirrm share/gnome/doc/gstreamer-%%PORTVERSION%%
+@exec %D/bin/gst-register --gst-registry=%D/share/gnome/cache/gstreamer-%%VERSION%%/registry.xml 2>/dev/null || true

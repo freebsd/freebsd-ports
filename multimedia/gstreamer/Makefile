@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.3
-PORTREVISION=	3
+PORTVERSION=	0.8.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://gstreamer.freedesktop.org/src/gstreamer/
+		http://gstreamer.freedesktop.org/src/gstreamer/pre/
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
@@ -31,7 +30,7 @@ USE_GNOME=	gnomehack \
 		glib20 \
 		pkgconfig \
 		libxml2
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS= --disable-tests \
 		--disable-failing-tests
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
@@ -39,24 +38,26 @@ CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 PLIST_SUB=	\
 		VERSION="${GST_VERSION}" \
-		SHLIB_VERSION="${SHLIB_VERSION}"
+		SHLIB_VERSION="${SHLIB_VERSION}" \
+		PORTVERSION="${PORTVERSION}"
 INSTALLS_SHLIB=	yes
 
 MAN1=	gst-complete-${GST_VERSION}.1 gst-compprep-${GST_VERSION}.1 \
 	gst-feedback-${GST_VERSION}.1 gst-inspect-${GST_VERSION}.1 \
 	gst-launch-${GST_VERSION}.1 gst-md5sum-${GST_VERSION}.1 \
 	gst-register-${GST_VERSION}.1 gst-typefind-${GST_VERSION}.1 \
-	gst-xmllaunch-${GST_VERSION}.1
+	gst-xmllaunch-${GST_VERSION}.1 gst-xmlinspect-${GST_VERSION}.1
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 GST_VERSION=${PORTVERSION:C/..$//}
 
 # library minor number
-SHLIB_VERSION=	3
+SHLIB_VERSION=	4
 
 post-install:
 # register plugins
-	-@${PREFIX}/bin/gst-register-${GST_VERSION} 2>/dev/null
+	-@${PREFIX}/bin/gst-register-${GST_VERSION} \
+		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
 .include <bsd.port.pre.mk>
 
