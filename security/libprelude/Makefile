@@ -4,26 +4,24 @@
 # $FreeBSD$
 
 PORTNAME=	libprelude
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	security
-MASTER_SITES=   http://www.prelude-ids.org/download/releases/
+MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Prelude Network Intrusion Detection System librairies
 
 USE_REINPLACE=		yes
-GNU_MAKE=		yes
-GNU_CONFIGURE=		yes
-USE_AUTOCONF=		yes
-WANT_AUTOCONF_VER=	253
+USE_GMAKE=		yes
+USE_LIBTOOL=		yes
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix="" --localstatedir=/var
 
 .if defined(WITHOUT_SSL)
-CONFIGURE_ARGS+= 	--disable-openssl
+CONFIGURE_ARGS+=	--disable-openssl
 .else
-USE_OPENSSL=            YES
+USE_OPENSSL=		YES
 .endif
 
 post-extract:
@@ -38,7 +36,5 @@ post-extract:
 pre-configure:
 	@${REINPLACE_CMD} 's!\$(prefix)/libprelude/include!\$(prefix)/include/libprelude!' \
 			${WRKSRC}/Makefile.in
-	@${ECHO} "===> Regenerating libltdl configure script (Please wait...)"
-	@(cd ${WRKSRC}/libltdl ; autoconf)
 
 .include <bsd.port.mk>

@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-manager
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	0.8.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.org/download/releases/
 
@@ -16,7 +15,7 @@ COMMENT=	Prelude Network Intrusion Detection System central logging point
 LIB_DEPENDS+=		prelude.0:${PORTSDIR}/security/libprelude \
 			xml2.5:${PORTSDIR}/textproc/libxml2
 
-GNU_MAKE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix="" --localstatedir=/var

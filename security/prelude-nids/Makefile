@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	prelude-nids
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.3
 CATEGORIES=	security
 MASTER_SITES=   http://www.prelude-ids.org/download/releases/
 
@@ -14,9 +14,8 @@ COMMENT=	Prelude Network Intrusion Detection System sensor
 
 LIB_DEPENDS=		prelude.0:${PORTSDIR}/security/libprelude
 
-GNU_MAKE=	yes
-GNU_CONFIGURE=	yes
-
+USE_GMAKE=		yes
+USE_LIBTOOL=		yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-html-dir=${PREFIX}/share/doc \
 			--program-prefix=""
