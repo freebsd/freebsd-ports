@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomelibs
-PORTVERSION=	1.4.1.3
+PORTVERSION=	1.4.1.4
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-libs
@@ -33,11 +33,11 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		dns-helper.1 gconfigger.1 gnome-config.1 gnome-doc.1 \
-		gnome-dump-metadata.1 gnome-gen-mimedb.1 gnome-mkstub.1 \
-		gnome-moz-remote.1 gnome-name-service.1 gnome-pty-helper.1 \
-		gnome.1 gnome_segv.1 goad-browser.1 libart-config.1 \
-		loadshlib.1 new-object.1
+MAN1=		dns-helper.1 gconfigger.1 gnome-bug.1 gnome-config.1 \
+		gnome-doc.1 gnome-dump-metadata.1 gnome-gen-mimedb.1 \
+		gnome-mkstub.1 gnome-moz-remote.1 gnome-name-service.1 \
+		gnome-pty-helper.1 gnome.1 gnome_segv.1 goad-browser.1 \
+		libart-config.1 loadshlib.1 new-object.1
 MAN5=		gnome-mime.5
 
 pre-patch:

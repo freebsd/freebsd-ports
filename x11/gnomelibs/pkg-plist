@@ -457,14 +457,14 @@ share/gnome/html/gnorba/book1.html
 share/gnome/html/gnorba/gnorba-gnorba.html
 share/gnome/html/gnorba/gnorba-goad.html
 share/gnome/html/gnorba/libgnorba.html
+share/gnome/html/zvt-decl.txt
+share/gnome/html/zvt-sections.txt
 share/gnome/html/zvt/book1.html
 share/gnome/html/zvt/x1035.html
 share/gnome/html/zvt/x1065.html
 share/gnome/html/zvt/x1086.html
 share/gnome/html/zvt/x1106.html
 share/gnome/html/zvt/x119.html
-share/gnome/html/zvt/x144.html
-share/gnome/html/zvt/x152.html
 share/gnome/html/zvt/x98.html
 share/gnome/html/zvt/x987.html
 share/gnome/html/zvt/x995.html
@@ -476,6 +476,7 @@ share/gnome/html/zvt/zvtterm-properties.html
 share/gnome/html/zvt/zvtterm-reference.html
 share/gnome/html/zvt/zvtterm-window-hints.html
 share/gnome/html/zvt/zvtterm.html
+share/gnome/html/zvtterm.html
 share/gnome/idl/GnomeObject.idl
 share/gnome/idl/Table.idl
 share/gnome/idl/desktop-editor.idl
