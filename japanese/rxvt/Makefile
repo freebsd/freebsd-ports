@@ -1,24 +1,27 @@
-# New ports collection Makefile for: rxvt
-# Version required:	2.6PRE4
+# New ports collection Makefile for: ja-rxvt
+# Version required:	2.6.0
 # Date created:         11 May 1999
 # Whom:                 HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 #
-# $Id: Makefile,v 1.8 1999/05/01 02:08:00 steve Exp $
+# $Id: Makefile,v 1.9 1999/05/10 16:27:33 flathill Exp $
 #
 
-DISTNAME=	rxvt-2.6.PRE4
-PKGNAME=	ja-rxvt-2.6p4
+DISTNAME=	rxvt-2.6.0
+PKGNAME=	ja-rxvt-2.6.0
 CATEGORIES=	japanese x11
-MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/devel/
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 
 MAINTAINER=	honda@kashio.info.mie-u.ac.jp
 
-LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
 MAN1=		rxvt.1
-CONFIGURE_ARGS=	--enable-xpm-background --enable-transparency --enable-menubar --enable-graphics --enable-xim --enable-kanji --disable-backspace-key --disable-delete-key
+CONFIGURE_ARGS+=--enable-xpm-background --enable-transparency \
+		--enable-menubar --enable-graphics --enable-xim \
+		--enable-kanji --disable-backspace-key --disable-delete-key
 
 DOCDIR=		${PREFIX}/share/doc/ja/rxvt
 RXVTLIB=	${PREFIX}/lib/X11/rxvt
