@@ -1,72 +1,56 @@
-@cwd /usr/local
 bin/netscape
-lib/netscape/LICENSE
 lib/netscape/README
-lib/netscape/netscape.bin
-lib/netscape/mailcap
-lib/netscape/movemail
-lib/netscape/bookmark.htm
-lib/netscape/vreg
-lib/netscape/registry
+lib/netscape/LICENSE
 lib/netscape/Netscape.ad
-lib/netscape/policyMoz40P1.jar
+lib/netscape/movemail
+lib/netscape/plugins/libnullplugin.so
+lib/netscape/libjsd.so.1.0
+lib/netscape/bookmark.htm
 lib/netscape/java/classes/ifc11.jar
-@exec ln -fs java/classes/%f %D/lib/netscape/%f
-@unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/iiop10.jar
-@exec ln -fs java/classes/%f %D/lib/netscape/%f
-@unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/jae40.jar
-@exec ln -fs java/classes/%f %D/lib/netscape/%f
-@unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/java40.jar
-@exec ln -fs java/classes/%f %D/lib/netscape/%f
-@unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/jio40.jar
-@exec ln -fs java/classes/%f %D/lib/netscape/%f
-@unexec rm -f lib/netscape/%f
 lib/netscape/java/classes/jsd10.jar
-@exec ln -fs java/classes/%f %D/lib/netscape/%f
-@unexec rm -f lib/netscape/%f
 lib/netscape/nethelp/Back_dep.gif
-lib/netscape/nethelp/Back_dis.gif
-lib/netscape/nethelp/Back_sel.gif
-lib/netscape/nethelp/Back_up.gif
-lib/netscape/nethelp/Exit_dep.gif
-lib/netscape/nethelp/Exit_sel.gif
-lib/netscape/nethelp/Exit_up.gif
-lib/netscape/nethelp/Forw_dep.gif
-lib/netscape/nethelp/Forw_dis.gif
-lib/netscape/nethelp/Forw_sel.gif
-lib/netscape/nethelp/Forw_up.gif
-lib/netscape/nethelp/Prnt_dep.gif
-lib/netscape/nethelp/Prnt_sel.gif
-lib/netscape/nethelp/Prnt_up.gif
-lib/netscape/nethelp/Tool_dep.gif
-lib/netscape/nethelp/Tool_sel.gif
-lib/netscape/nethelp/Tool_up.gif
-lib/netscape/nethelp/Wait.gif
-lib/netscape/nethelp/Blank.htm
-lib/netscape/nethelp/CntTool.htm
-lib/netscape/nethelp/IdxFill.htm
-lib/netscape/nethelp/IdxKey.htm
-lib/netscape/nethelp/IdxTool.htm
-lib/netscape/nethelp/IdxTopic.htm
-lib/netscape/nethelp/NSHIfrm.htm
-lib/netscape/nethelp/NavUI.htm
-lib/netscape/nethelp/NoJSerr.htm
-lib/netscape/nethelp/Status.htm
-lib/netscape/nethelp/System.htm
-lib/netscape/nethelp/ToolUI.htm
-lib/netscape/nethelp/Button.js
-lib/netscape/nethelp/CntData.js
-lib/netscape/nethelp/CntTool.js
-lib/netscape/nethelp/Header.js
-lib/netscape/nethelp/IdxData.js
-lib/netscape/nethelp/Local-1.js
-lib/netscape/nethelp/Stack.js
-lib/netscape/nethelp/System.js
 lib/netscape/nethelp/Topic.js
+lib/netscape/nethelp/System.js
+lib/netscape/nethelp/Stack.js
+lib/netscape/nethelp/Local-1.js
+lib/netscape/nethelp/IdxData.js
+lib/netscape/nethelp/Header.js
+lib/netscape/nethelp/CntTool.js
+lib/netscape/nethelp/CntData.js
+lib/netscape/nethelp/Button.js
+lib/netscape/nethelp/ToolUI.htm
+lib/netscape/nethelp/System.htm
+lib/netscape/nethelp/Status.htm
+lib/netscape/nethelp/NoJSerr.htm
+lib/netscape/nethelp/NavUI.htm
+lib/netscape/nethelp/NSHIfrm.htm
+lib/netscape/nethelp/IdxTopic.htm
+lib/netscape/nethelp/IdxTool.htm
+lib/netscape/nethelp/IdxKey.htm
+lib/netscape/nethelp/IdxFill.htm
+lib/netscape/nethelp/CntTool.htm
+lib/netscape/nethelp/Blank.htm
+lib/netscape/nethelp/Wait.gif
+lib/netscape/nethelp/Tool_up.gif
+lib/netscape/nethelp/Tool_sel.gif
+lib/netscape/nethelp/Tool_dep.gif
+lib/netscape/nethelp/Prnt_up.gif
+lib/netscape/nethelp/Prnt_sel.gif
+lib/netscape/nethelp/Prnt_dep.gif
+lib/netscape/nethelp/Forw_up.gif
+lib/netscape/nethelp/Forw_sel.gif
+lib/netscape/nethelp/Forw_dis.gif
+lib/netscape/nethelp/Forw_dep.gif
+lib/netscape/nethelp/Exit_up.gif
+lib/netscape/nethelp/Exit_sel.gif
+lib/netscape/nethelp/Exit_dep.gif
+lib/netscape/nethelp/Back_up.gif
+lib/netscape/nethelp/Back_sel.gif
+lib/netscape/nethelp/Back_dis.gif
 lib/netscape/nethelp/Utility.js
 lib/netscape/nethelp/netscape/collabra/collabra.gif
 lib/netscape/nethelp/netscape/collabra/discgrps.gif
@@ -126,6 +110,10 @@ lib/netscape/nethelp/netscape/shared/navIcon.gif
 lib/netscape/nethelp/netscape/shared/netIcon.gif
 lib/netscape/nethelp/netscape/shared/Contents.htm
 lib/netscape/nethelp/netscape/shared/NetHelp1.css
-@cwd /usr/X11R6
-lib/X11/nls/C
-lib/X11/nls/nls.dir
+lib/netscape/nethelp/netscape/nscal/index.html
+lib/netscape/spell/pen4s324.dat
+lib/netscape/spell/netscape.dic
+lib/netscape/vreg
+lib/netscape/registry
+lib/netscape/netscape.bin
+lib/netscape/mailcap
