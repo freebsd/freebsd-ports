@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Algorithm-Permute
-PORTVERSION=	0.04
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Algorithm
@@ -17,7 +17,6 @@ COMMENT=	Perl interface to handy and fast permutation
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Algorithm::Permute.3
 
 .include <bsd.port.mk>
