@@ -161,7 +161,7 @@ CONFIGURE_ARGS+=	--with-acl-support
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
-PATCH_WRKSRC=   ${WRKDIR}/${DISTNAME}
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 LIBTOOLFILES=		${WRKSRC}/aclocal.m4
 
@@ -176,7 +176,7 @@ MAN8=		nmbd.8 pdbedit.8 smbd.8 smbmnt.8 smbmount.8 \
 
 SED_PLIST=	${SED} -e 's!${PREFIX}!%D!g'
 
-PLIST_SUB=      AUDIT=${AUDIT} \
+PLIST_SUB=	AUDIT=${AUDIT} \
 		RECYCLE=${RECYCLE} \
 		LIBSAMBA=${LIBSAMBA} \
 		BUILD_VFS=${BUILD_VFS} \
