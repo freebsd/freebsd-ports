@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.57 1999/06/02 08:13:02 mharo Exp $
+# $Id: Makefile,v 1.58 1999/06/06 17:49:58 steve Exp $
 #
 
     SUBDIR += bjorb
@@ -10,6 +10,7 @@
     SUBDIR += crack
     SUBDIR += donkey
     SUBDIR += fakebo
+    SUBDIR += firewalk
     SUBDIR += fwtk
     SUBDIR += gnupg
     SUBDIR += gtkportscan
