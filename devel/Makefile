@@ -350,8 +350,8 @@
     SUBDIR += py-mxProxy
     SUBDIR += py-mxStack
     SUBDIR += py-mxTools
+    SUBDIR += py-ncurses
     SUBDIR += qtarch
-    SUBDIR += pyncurses
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
