@@ -7,36 +7,29 @@
 #
 
 PORTNAME=	ups
-PORTVERSION=	3.35.b13
+PORTVERSION=	3.38.b1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
-		http://www.concerto.demon.co.uk/UPS/src/  \
-		ftp://unix.hensa.ac.uk/pub/misc/unix/ups/
-MASTER_SITE_SUBDIR= utilities
-DISTNAME=	ups-3.35-beta13
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	ups-3.38-beta1
 
-MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"Does not build"
+MAINTAINER=	sergei@kolobov.com
 
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ups
-MAN1=		ups.1
 
-#It will build for either a.out or ELF depending on your 'objformat'.
-#To explicitly build for a format do :
-#	./configure --with-elf
-#	make
-#or
-#	./configure --with-aout
-#	make
+MAN1=		ups.1
+DOCS=		CHANGES FAQ README
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/ups
-	@${INSTALL_MAN} ${WRKSRC}/FAQ ${WRKSRC}/README ${WRKSRC}/Ups \
-		${PREFIX}/share/doc/ups
-	@${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+	${INSTALL_DATA} ${WRKSRC}/Ups ${X11BASE}/lib/X11/app-defaults
 
 .include <bsd.port.mk>
