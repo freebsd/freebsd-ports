@@ -1,0 +1,8 @@
+@mode 755
+@owner bin
+@group bin
+bin/broadcast
+bin/radio
+@mode 644
+man/man1/broadcast.1.gz
+man/man1/radio.1.gz
