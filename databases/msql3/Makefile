@@ -7,6 +7,7 @@
 
 PORTNAME=	msql
 PORTVERSION=    2.0.12
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org

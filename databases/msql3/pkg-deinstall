@@ -9,12 +9,7 @@ fi
 USER=msql
 
 if pw usershow "${USER}" 2>/dev/null 1>&2; then
-	if pw userdel ${USER}; then
-		echo "Delete user/group \"${USER}\"."
-	else
-		echo "Deleting user/group \"${USER}\" failed..."
-		exit 1
-	fi
+	echo "To delete MSQL user permanently, use 'pw userdel ${USER}'"
 fi
 
 exit 0
