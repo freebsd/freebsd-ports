@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mysql-navigator
-PORTVERSION=	1.3.3.6
+PORTVERSION=	1.3.7
 CATEGORIES=	databases kde
-MASTER_SITES=	http://sql.kldp.org/snapshots/ \
+MASTER_SITES=	http://ftp.kde.com/Database/MySQL_Navigator/ \
+		http://sql.kldp.org/snapshots/ \
 		ftp://sise15.mizi.com/pub/
 DISTNAME=	mysqlnavigator-${PORTVERSION}
 
