@@ -7,13 +7,17 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/:db \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/evolution
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		db-3.1.17.tar.gz:db
+
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	sobomax
+PATCHFILES=	evolution-${PORTVERSION}-reply-to.diff.gz
 
 MAINTAINER=	gnome@FreeBSD.org
 
