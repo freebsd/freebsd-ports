@@ -1,0 +1,64 @@
+eclipse/features/net.java.sqlexplorer_2.2.2/feature.xml
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/3.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/alpha_mode.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/app_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/backward_nav.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/claytable_new.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/clear.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/col_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/commit.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/configs.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/copy_edit.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/defaultview_misc.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/delete_edit.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/edittsk_tsk.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/element_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/elements_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/error_log.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/error_st_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/feature_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/forward_nav.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/history_list.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/key.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/logo.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/new_page.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/new_wiz.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/next.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/nextall.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/nullkey.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/ok_st_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/open.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/outline.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/overview.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/perspective_icon.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/removeAll_co.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/remove_co.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/replace_persp.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/replace_persp2.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/replace_persp3.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/rollback.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/run_exc.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/save.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/showparents_mode.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/update.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/sort_asc.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/sort_desc.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/template_obj.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/tree_mode.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/icons/view.gif
+eclipse/plugins/net.java.sqlexplorer_2.2.2/lib/commons-logging.jar
+eclipse/plugins/net.java.sqlexplorer_2.2.2/lib/gef.jar
+eclipse/plugins/net.java.sqlexplorer_2.2.2/lib/log4j.jar
+eclipse/plugins/net.java.sqlexplorer_2.2.2/lib/nanoxml.jar
+eclipse/plugins/net.java.sqlexplorer_2.2.2/lib/rowset.jar
+eclipse/plugins/net.java.sqlexplorer_2.2.2/lib/squirrel.jar
+eclipse/plugins/net.java.sqlexplorer_2.2.2/default_drivers.xml
+eclipse/plugins/net.java.sqlexplorer_2.2.2/plugin.xml
+eclipse/plugins/net.java.sqlexplorer_2.2.2/sqlexplorer.jar
+@dirrm eclipse/features/net.java.sqlexplorer_2.2.2
+@dirrm eclipse/plugins/net.java.sqlexplorer_2.2.2/lib
+@dirrm eclipse/plugins/net.java.sqlexplorer_2.2.2/icons
+@dirrm eclipse/plugins/net.java.sqlexplorer_2.2.2
+@unexec rmdir %D/eclipse/plugins 2>/dev/null || true
+@unexec rmdir %D/eclipse/features 2>/dev/null || true
+@unexec rmdir %D/eclipse 2>/dev/null || true
