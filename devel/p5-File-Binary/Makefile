@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	File-Binary
-PORTVERSION=	0.3
+PORTVERSION=	1.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	File
@@ -17,7 +17,6 @@ COMMENT=	Perl interface to modify and read binary files
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		File::Binary.3
 
 .include <bsd.port.mk>
