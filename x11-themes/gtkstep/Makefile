@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gtkstep
-PORTVERSION= 	2.0
+PORTVERSION= 	2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ulli.linuxave.net/gtkstep/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sobomax@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
