@@ -40,10 +40,15 @@ DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf
 do-install:
 	${MKDIR} ${PREFIX}/lib/tcl${TCLV}/memchan
 	${INSTALL_DATA} ${WRKSRC}/libmemchan.so.1 ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${PREFIX}/lib/tcl${TCLV}/memchan
+	${SED} 's@%%PREFIX%%@${PREFIX}@g' < ${FILESDIR}/pkgIndex.tcl \
+		> ${PREFIX}/lib/tcl${TCLV}/memchan/pkgIndex.tcl
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/memchan
 	${CP} -pR ${WRKSRC}/../doc/html/* ${PREFIX}/share/doc/memchan/
+
+PLIST_SUB+=	DOC=''
+.else
+PLIST_SUB+=	DOC='@comment '
 .endif
 
 .include <bsd.port.mk>
