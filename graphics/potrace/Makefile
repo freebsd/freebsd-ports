@@ -7,9 +7,13 @@
 
 PORTNAME=	potrace
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://potrace.sourceforge.net/download/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-speed.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	smyru@heron.pl
 COMMENT=	Transforms bitmaps into vector graphics
