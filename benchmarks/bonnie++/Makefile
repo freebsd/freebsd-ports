@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	bonnie++
-PORTVERSION=	1.01d
+PORTVERSION=	1.02
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
