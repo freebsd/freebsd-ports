@@ -215,6 +215,9 @@ DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		mailing-list man notes os overview questions readme sieve \
 		sieve-protocol specs
 
+CONFS=		cmu-frontend.conf prefork.conf cmu-backend.conf normal.conf \
+		small.conf
+
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 
@@ -230,8 +233,12 @@ RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
 
 post-patch:
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+			-e "s|%%PREFIX%%|${PREFIX}|g" \
+			-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
 			${.CURDIR}/pkg-install > ${PKGINSTALL}
 		@${SED} -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
+			-e "s|%%PREFIX%%|${PREFIX}|g" \
+			-e "s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|g" \
 			${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 				  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
@@ -288,10 +295,14 @@ post-install:
 		@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 			${FILESDIR}/imapd.sh > ${PREFIX}/etc/rc.d/imapd.sh
 		@${CHMOD} 755 ${PREFIX}/etc/rc.d/imapd.sh
-		@${INSTALL_DATA} ${FILESDIR}/imapd.conf \
-			${PREFIX}/etc/imapd.conf.dist
-		@${INSTALL_DATA} ${WRKSRC}/master/conf/normal.conf \
-			${PREFIX}/etc/cyrus.conf.dist
+		@${MKDIR} ${EXAMPLESDIR}
+		@${INSTALL_DATA} ${FILESDIR}/imapd.conf ${EXAMPLESDIR}
+.for f in ${CONFS}
+		@${INSTALL_DATA} ${WRKSRC}/master/conf/${f} ${EXAMPLESDIR}
+		@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
+.endfor
+		@${ECHO_CMD} @dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,} \
+			>>${TMPPLIST}
 		@${INSTALL_SCRIPT} ${WRKSRC}/tools/mkimap \
 			${PREFIX}/cyrus/bin/mkimap
 		@${INSTALL_SCRIPT} ${WRKSRC}/tools/masssievec \
