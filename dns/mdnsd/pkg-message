@@ -1,0 +1,4 @@
+To use:
+     mhttp 'unique name' 12.34.56.78 80 '/optionalpath'
+For example:
+     mhttp audiotron 192.168.123.195 80 '/index.asp' &
