@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.20 1999/05/01 00:27:16 asami Exp $
+# $Id: Makefile,v 1.21 1999/06/04 13:29:21 ejc Exp $
 #
 
 DISTNAME=	OB-3.1.3
@@ -15,7 +15,7 @@ MAINTAINER=	ejc@bazzle.com
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} >= 4
+.if ${OSVERSION} >= 400000
 LIBSTDC=	/usr/lib/libstdc++.a
 CONFIGURE_ENV=	CXX=c++ CXXFLAGS="-O -pipe"
 .else
