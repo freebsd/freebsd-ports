@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmemload
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.markstaggs.net/wmmemload/
 
