@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.125 1999/05/29 05:00:34 steve Exp $
+# $Id: Makefile,v 1.126 1999/06/01 12:14:08 tg Exp $
 #
 
     SUBDIR += 4va
@@ -103,7 +103,6 @@
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += vcg
-    SUBDIR += vtk
     SUBDIR += whirlgif
     SUBDIR += wmicons
     SUBDIR += xanim
