@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
 		http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
 		http://www.proaxis.com/~mgelhaus/linux/software/hp880c/1.31/ \
-		ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/ \
+		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
 		http://www.harsch.net/Download/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_DRV} ${HP970_DRV}
