@@ -1042,6 +1042,7 @@ cl-split-sequence-sbcl	ports/devel/cl-split-sequence-sbcl
 clamassassin	ports/security/clamassassin
 clamav		ports/security/clamav
 clamav-devel	ports/security/clamav-devel
+clamfilter	ports/mail/clamfilter
 clamsmtp	ports/security/clamsmtp
 clanbomber	ports/games/clanbomber
 clanlib		ports/devel/clanlib
