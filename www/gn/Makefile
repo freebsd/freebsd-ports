@@ -10,7 +10,7 @@ PORTVERSION=	2.24
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 
-MAINTAINER=	adam@veda.is
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
 

@@ -15,7 +15,7 @@ PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
 PATCHFILES=	nntp-patch-y2k
 
-MAINTAINER=	adam@veda.is
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 
