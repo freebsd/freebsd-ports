@@ -9,15 +9,13 @@ MAINTAINER=	nobutaka@nobutaka.com
 
 MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 
-EMACS_NAME=		mule
 EMACS_PORT_NAME=	mule
-EMACS_VER=		19.34
 MULE_VER=		2.3
-EMACS_LIBDIR=		share/mule
-EMACS_LIBDIR_WITH_VER=	share/mule/${EMACS_VER}
-
-HAVE_COMMON_PORT=	yes
 
 IS_SLAVE=		yes
+
+.if !defined(WITHOUT_X11) && !defined(WITHOUT_BITMAP)
+RUN_DEPENDS=    ${LOCALBASE}/${EMACS_SITE_LISPDIR}/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-mule
+.endif
 
 .include <${MASTERDIR}/Makefile>
