@@ -1,0 +1,11 @@
+--- doc/C/Makefile.in.orig	Tue Jan 18 00:42:51 2005
++++ doc/C/Makefile.in	Tue Jan 18 00:43:05 2005
+@@ -449,7 +449,7 @@
+ omf_dest_dir = $(datadir)/omf/@PACKAGE@
+ scrollkeeper_localstate_dir = /var/db/scrollkeeper
+ 
+-manpagedir = $(datadir)/man/man1
++manpagedir = $(mandir)/man1
+ manpage_DATA = gnumeric.1 ssconvert.1
+ subdir = doc/C
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
