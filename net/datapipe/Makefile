@@ -11,8 +11,8 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/unsupported/ \
 		http://http.distributed.net/pub/dcti/unsupported/
 
-MAINTAINER=	dbaker@FreeBSD.org
-COMMENT=	A simple program to bind a local port and connect it to a remote socket
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Bind a local port and connect it to a remote socket
 
 PLIST_FILES=	bin/datapipe
 
