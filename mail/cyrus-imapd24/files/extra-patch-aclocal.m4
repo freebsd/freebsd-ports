@@ -1,7 +1,7 @@
 Index: aclocal.m4
 diff -u aclocal.m4.orig aclocal.m4
---- aclocal.m4.orig	Thu Jan 15 23:36:46 2004
-+++ aclocal.m4	Sat Jan 17 22:58:54 2004
+--- aclocal.m4.orig	Sat May 29 03:08:14 2004
++++ aclocal.m4	Sat May 29 04:57:43 2004
 @@ -505,7 +505,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -20,12 +20,12 @@ diff -u aclocal.m4.orig aclocal.m4
                          dblib="no")
  
  	CPPFLAGS=$cmu_save_CPPFLAGS
-@@ -1786,7 +1786,7 @@
-   LIB_UCDSNMP=""
-   if test "$with_ucdsnmp" != no; then
-     AC_DEFINE(HAVE_UCDSNMP,1,[Do we have SNMP support?])
--    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
-+    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
-     AC_CHECK_LIB(rpm, rpmdbOpen,
+@@ -1834,7 +1834,7 @@
+     LIB_UCDSNMP=""
+     if test "$with_snmp" != no; then
+       AC_DEFINE(HAVE_UCDSNMP,1,[Do we have UCD-SNMP support?])
+-      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
++      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
+       AC_CHECK_LIB(rpm, rpmdbOpen,
  		 LIB_UCDSNMP="${LIB_UCDSNMP} -lrpm -lpopt",,-lpopt)
-   fi
+     fi

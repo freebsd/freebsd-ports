@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.4
+PORTVERSION= 	2.2.5
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -112,9 +112,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 
 .if defined(WITH_SNMP)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
-CONFIGURE_ARGS+=--with-ucdsnmp=${LOCALBASE}
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=--with-ucdsnmp=no
+CONFIGURE_ARGS+=--with-snmp=no
 .endif
 
 CYRUS_USER?=	cyrus

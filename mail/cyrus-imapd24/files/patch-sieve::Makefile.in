@@ -1,8 +1,8 @@
 Index: sieve/Makefile.in
 diff -u sieve/Makefile.in.orig sieve/Makefile.in
---- sieve/Makefile.in.orig	Fri Mar 12 00:25:35 2004
-+++ sieve/Makefile.in	Wed May 19 00:38:00 2004
-@@ -33,12 +33,13 @@
+--- sieve/Makefile.in.orig	Sat May 29 03:03:09 2004
++++ sieve/Makefile.in	Sat May 29 04:53:11 2004
+@@ -34,6 +34,7 @@
  YACC = @YACC@
  YFLAGS = -d
  LEX = @LEX@
@@ -10,14 +10,7 @@ diff -u sieve/Makefile.in.orig sieve/Makefile.in
  RANLIB = @RANLIB@
  COMPILE_ET = @COMPILE_ET@
  
- DEFS = @DEFS@
- CPPFLAGS = -I.. -I$(srcdir)/../lib @COM_ERR_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ @PERL_CCCDLFLAGS@
- LDFLAGS = @LDFLAGS@
- 
- MAKEDEPEND = @MAKEDEPEND@
-@@ -58,8 +59,8 @@
+@@ -60,8 +61,8 @@
  dist: $(BUILT_SOURCES)
  
  install: sievec
