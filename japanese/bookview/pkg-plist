@@ -1,17 +1,22 @@
 bin/bookview
-share/bookview/arrow.xbm
-share/bookview/back.xbm
-share/bookview/copyright.xbm
-share/bookview/menu.xbm
-share/bookview/next.xbm
-share/bookview/space.xbm
-share/bookview/help.txt
-share/bookview/help-ja.txt
-@dirrm share/bookview
-@unexec install-info --delete %D/info/bookview.info    %D/info/dir
 @unexec install-info --delete %D/info/bookview-ja.info %D/info/dir
-info/bookview.info
+@unexec install-info --delete %D/info/bookview.info %D/info/dir
 info/bookview-ja.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
-@exec install-info %D/info/bookview.info    %D/info/dir
-@exec install-info %D/info/bookview-ja.info %D/info/dir
+info/bookview.info
+@exec [ -f %B/dir ] || cp -p /usr/share/info/dir-tmpl %B/dir
+@exec install-info %B/bookview-ja.info %B/dir
+@exec install-info %B/bookview.info %B/dir
+share/bookview/arrow.xbm
+share/bookview/copyright.gif
+share/bookview/find.gif
+share/bookview/finder.tcl
+share/bookview/help-ja.txt
+share/bookview/help.tcl
+share/bookview/help.txt
+share/bookview/menu.gif
+share/bookview/ndtp.tcl
+share/bookview/next.gif
+share/bookview/prev.gif
+share/bookview/setup.tcl
+share/bookview/space.xbm
+@dirrm share/bookview
