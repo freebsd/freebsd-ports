@@ -1,0 +1,16 @@
+--- gdb/config/sparc/nm-fbsd.h.orig	Fri Mar  1 10:35:24 2002
++++ gdb/config/sparc/nm-fbsd.h	Sat Oct 12 12:05:27 2002
+@@ -50,10 +50,7 @@
+ #define GDB_FPREGSET_T	struct fpreg
+ 
+-#define regs		trapframe
+-#define r_g1		tf_global[1]
+-#define r_ps		tf_tstate
+-#define r_pc		tf_tpc
+-#define r_npc		tf_tnpc
+-#define r_y		tf_y
++#define regs		reg
++#define r_g1		r_global[1]
++#define r_ps		r_tstate
+ 
+ #define FPU_FSR_TYPE	unsigned long
