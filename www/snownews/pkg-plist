@@ -4,11 +4,10 @@ share/locale/de/LC_MESSAGES/snownews.mo
 share/locale/fr/LC_MESSAGES/snownews.mo
 share/locale/nl/LC_MESSAGES/snownews.mo
 share/locale/sl/LC_MESSAGES/snownews.mo
+share/locale/es/LC_MESSAGES/snownews.mo
 @unexec rmdir %D/man/fr/man1 2>/dev/null || true
 @unexec rmdir %D/man/fr 2>/dev/null || true
 @unexec rmdir %D/man/de/man1 2>/dev/null || true
 @unexec rmdir %D/man/de 2>/dev/null || true
 @unexec rmdir %D/man/nl/man1 2>/dev/null || true
 @unexec rmdir %D/man/nl 2>/dev/null || true
-@unexec rmdir %D/man/sl/man1 2>/dev/null || true
-@unexec rmdir %D/man/sl 2>/dev/null || true

@@ -1,11 +1,11 @@
---- Makefile.orig	Mon Nov  3 04:41:22 2003
-+++ Makefile	Tue Nov  4 00:00:15 2003
+--- Makefile.orig	Wed Nov 12 17:39:24 2003
++++ Makefile	Fri Nov 14 11:48:43 2003
 @@ -1,8 +1,8 @@
  include Makefile.inc
  
 -LDFLAGS = -lncurses `xml2-config --libs` $(EXTRA_LDFLAGS)
 +LDFLAGS = -lncurses `xml2-config --libs` $(EXTRA_LDFLAGS) -lintl -liconv
- OBJFILES = main.o netio.o interface.o xmlparse.o updatecheck.o conversions.o dialog.o
+ OBJFILES = main.o netio.o interface.o xmlparse.o updatecheck.o conversions.o dialog.o ui-support.o
 -CFLAGS = -Wall -O2 -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS)
 +CFLAGS += -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS)
  VERSION = `grep VERSION version.h | sed s/\"//g | sed s/\#define\ VERSION\ //`
