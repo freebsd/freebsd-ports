@@ -1,5 +1,0 @@
-Ruby-dl is a Ruby interface to dynamic linker.  You can call an
-arbitrary function in an arbitrary shared library with it.
-
-WWW:	http://kt-www.jaist.ac.jp/~ttate/ruby/ruby-ext.html
-Author:	Takaaki Tateishi <ttate@jaist.ac.jp>
