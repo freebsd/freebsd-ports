@@ -1,0 +1,179 @@
+SMB proxy authentication module
+
+Current version: 0.05
+Released on    : 28 September 1999
+Author         : Richard Huveneers
+License        : GNU GPL
+
+smb_auth is a proxy authentication module. With smb_auth you can
+authenticate proxy users against an SMB server like Windows NT or Samba.
+
+Download
+
+The current version is smb_auth-0.05.tar.gz.
+
+Highlights of new features:
+
+   * Easier debugging (finally!)
+   * More flexibility
+   * Improved documentation
+
+Requirements
+
+   * Squid 2.0 or above, or another proxy server with the same
+     authentication module interface.
+     Squid 1.1 with Arjan de Vet's patch works fine too.
+   * smb_auth needs Samba to talk SMB. If you don't have Samba installed on
+     your proxy server, download and install Samba now. You don't need to
+     start the Samba daemons, smb_auth only uses the Samba client
+     utilities.
+
+     Note to Samba 2.0 users: The -E option of smbclient does not work
+     properly in Samba 2.0.3 and earlier, which breaks smb_auth. This has
+     been fixed in Samba 2.0.4, so make sure you are using Samba 2.0.4 or
+     later (the command "smbclient -h" shows the version number). If you
+     prefer not to upgrade to Samba 2.0.4, you can apply this patch which
+     fixes the bug.
+
+Installation
+
+   * Check the Makefile. Make sure that SAMBAPREFIX and INSTALLBIN are set
+     correctly before running make.
+   * Run "make", then "make install". This will install smb_auth and
+     smb_auth.sh in the INSTALLBIN directory.
+
+Primary domain controller setup
+
+To get proxy access control by user and group, smb_auth reads the file
+\netlogon\proxyauth on one of the domain controllers using the supplied
+credentials. If reading this file returns "allow" then access will be
+allowed, otherwise denied.
+
+   * Create a file named "proxyauth" on the NETLOGON share of the primary
+     domain controller. In case you have one or more backup domain
+     controllers, I'm assuming you are replicating this share to the backup
+     domain controllers. If you prefer, you can change the location of this
+     file by using the -S option of smb_auth (see below).
+   * Put just the one word "allow" in this file.
+   * Assign "Read" access to the "proxyauth" file to all users or group
+     which you want to allow access to the proxy.
+   * If you want to allow access from multiple domains to your proxy,
+     repeat the above steps for the other domains.
+
+Configure Squid
+
+You need to configure Squid for proxy authentication. If you have problems
+doing this, have a look at the FAQ. While reading the FAQ, replace
+ncsa_auth with smb_auth. Please pay attention to the REQUIRED keyword in
+the proxy_auth acl. As an example, here are the relevant lines of my own
+squid.conf file:
+
+    authenticate_program /usr/local/bin/smb_auth -W MEDIA@VANTAGE
+    acl domainusers proxy_auth REQUIRED
+    http_access allow domainusers
+
+smb_auth has several options. Most people will call smb_auth like this:
+
+    smb_auth -W domainname
+
+where domainname is the name of your domain. By default, smb_auth tries to
+find a domain controller by broadcasting on the primary network interface.
+If you want to broadcast on another interface (for instance, if you have
+two ethernet interfaces installed), use:
+
+    smb_auth -W domainname -B <broadcast IP address>
+
+If you really want to specify the IP address of a domain controller
+yourself, use:
+
+    smb_auth -W domainname -U <IP address>
+
+This might even work with a WINS server (untested, feedback appreciated).
+If you have several domains from which you want to allow access to your
+proxy, just add them:
+
+    smb_auth -W domain1 -W domain2 -W domain3 ...
+
+in this case all users (except those of domain1) have to specify their
+username as domainname\username when authenticating. If your users are
+lazy, you can abbreviate the domainnames like this:
+
+    smb_auth -W domain1 -W domain2 -w d2 -W domain3 -w d3 ..
+
+then users of domain2 can authenticate with d2\username instead of
+domain2\username. You can also specify different broadcast addresses etc.
+per domain. Note that you don't need an abbreviation for the first domain
+since omitting a domainname implies authenticating against the first
+domain.
+
+If you want to authenticate users of domain1 against a domain controller of
+domain2 (you must have a trust relationship between domain1 and domain2)
+then you can use the -P option. This is called pass-through authentication
+and is useful to manage access from multiple domains to the proxy server
+centrally (using a single proxyauth file):
+
+    smb_auth -W domain1 -P domain2 -W domain2 ..
+
+If you want to change the location of the proxyauth file (for instance
+because your NETLOGON share is located on a FAT filesystem) then you can
+use the -S option to specify a different share (make sure you are
+replicating this share to the backup domain controllers):
+
+    smb_auth -W domain -S share
+
+You can also change the name of the proxyauth file and store it in a
+sub-directory of the share by appending the full pathname of the proxyauth
+file to the sharename. You may use both forward slashes and backslashes to
+separate directories and you may (not required) prepend a (back)slash to
+the sharename:
+
+    smb_auth -W domain -S /share/path/to/proxyauth
+
+Troubleshooting
+
+You can run smb_auth on the command-line using the same options as in your
+squid.conf. To debug authentication you can additionally use the -d option
+which will print debug information after each step, so you can determine
+which step is failing.
+Do not use the -d option in your squid.conf, this corrupts the
+communication between Squid and smb_auth.
+
+You need to feed one username and password (separated by a space character)
+to smb_auth's standard input. After authenticating this username and
+password, smb_auth will continue accepting such username/password
+combinations until you close it's standard input by pressing Ctrl-D.
+
+Here's the output of a succesful authentication, so you know how the output
+should look like:
+
+# smb_auth -W MEDIA@VANTAGE -d
+richard xxxxxxxx
+Domain name: MEDIA@VANTAGE
+Pass-through authentication: no
+Query address options:
+Domain controller IP address: 192.168.1.2
+Domain controller NETBIOS name: VEGA
+Contents of //VEGA/NETLOGON/proxyauth: allow
+OK
+
+Still having problems?
+
+Please e-mail me if you have problems compiling, installing or configuring
+smb_auth. Suggestions are welcome too.
+If somebody could comment on NT licensing issues of smb_auth, that would be
+more than welcome.
+
+TODO
+
+These are the items currently on my todo list. If you need another feature
+currently not available, just let me know. I will add it to this list and
+who knows, it might even get implemented.
+
+   * research if smbclient does encrypted passwords on demand or needs
+     smb.conf option or something else.
+   * research if Samba 2.0 is able to retrieve NT group membership directly
+   * re-code the shell script in C. I used a shell script mainly to speedup
+     development.
+   * add a netbios name cache. This feature needs the previous one and will
+     speed up smb_auth considerably.
+   * research if linking smb_auth with the Samba code is worth the trouble.

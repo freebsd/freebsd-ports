@@ -1,0 +1,5 @@
+bin/smb_auth
+bin/smb_auth.sh
+share/doc/smb_auth/COPYING-2.0
+share/doc/smb_auth/README
+@dirrm share/doc/smb_auth
