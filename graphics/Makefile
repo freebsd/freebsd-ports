@@ -216,7 +216,6 @@
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
     SUBDIR += seejpeg
-    SUBDIR += shot2png
     SUBDIR += sketch
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms

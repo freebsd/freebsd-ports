@@ -47,6 +47,7 @@
     SUBDIR += netcdf
     SUBDIR += ngraph
     SUBDIR += ntl
+    SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
     SUBDIR += p5-AI-NeuralNet-BackProp
