@@ -9514,6 +9514,7 @@ skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
 skencil		ports/graphics/skencil
 ski		ports/emulators/ski
+skim		ports/textproc/skim
 skill		ports/sysutils/skill
 skip		ports/security/skip
 skippy		ports/x11-wm/skippy
