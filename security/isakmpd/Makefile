@@ -19,6 +19,8 @@ PATCH_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/patches/3.1/common/
 PATCHFILES=	010_isakmpd.patch
 PATCH_DIST_STRIP= -p2
 
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+
 MAINTAINER=	ports@FreeBSD.org
 
 # this is not compatible with cross build - there's no other way
