@@ -3,7 +3,7 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.17 1997/05/17 19:48:20 jfitz Exp $
+# $Id: Makefile,v 1.18 1997/06/07 02:55:41 jfitz Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+
+BROKEN=		repository copy from 1.0, awaiting upgrade to 1.44
 
 USE_X11=	yes
 INSTALL_TARGET=	install install.man
