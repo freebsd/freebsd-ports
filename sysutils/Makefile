@@ -163,6 +163,7 @@
     SUBDIR += slay
     SUBDIR += slmon
     SUBDIR += socket
+    SUBDIR += ssync
     SUBDIR += star
     SUBDIR += stat
     SUBDIR += stmpclean

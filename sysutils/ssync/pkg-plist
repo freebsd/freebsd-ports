@@ -1,0 +1,5 @@
+bin/ssync
+sbin/ssyncd
+etc/ssyncd.conf.sample
+etc/ssyncd.work.sample
+etc/rc.d/ssyncd.init

@@ -1,0 +1,38 @@
+# New ports collection makefile for:	ssync
+# Date created:		23 March 2002
+# Whom:			Andrew Shevtsov <nyxo@dnuc.polyn.kiae.su>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ssync
+PORTVERSION=	2.2
+CATEGORIES=	sysutils
+MASTER_SITES=	http://equusasinus.com/ssync/
+
+MAINTAINER=	nyxo@dnuc.polyn.kiae.su
+
+ALL_TARGET=	default
+USE_GMAKE=	yes
+MAKEFILE=	makefile
+
+MAN1=		ssync.1
+
+post-patch:
+	@${PERL} -pi -e 's@/etc/init.d/ssyncd@\$$0@g' ${WRKSRC}/ssyncd.init
+	@${PERL} -pi -e "s@/etc@${PREFIX}/etc@g;s@/usr/sbin@${PREFIX}/sbin@g;" \
+		${WRKSRC}/ssyncd.init ${WRKSRC}/ssyncd.conf ${WRKSRC}/daemon.c
+	@${PERL} -pi -e "s@ +CFLAGS.+@@g; s@ +LDFLAGS.+@@g;" ${WRKSRC}/makefile
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/ssync ${PREFIX}/bin/ssync
+	@${INSTALL_PROGRAM} ${WRKSRC}/ssyncd ${PREFIX}/sbin/ssyncd
+	@${INSTALL_DATA} ${WRKSRC}/ssyncd.conf ${PREFIX}/etc/ssyncd.conf.sample
+	@${INSTALL_DATA} ${WRKSRC}/ssyncd.work ${PREFIX}/etc/ssyncd.work.sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/ssyncd.init ${PREFIX}/etc/rc.d/ssyncd.init
+	@${INSTALL_MAN} ${WRKSRC}/ssync.man ${MAN1PREFIX}/man/man1/ssync.1
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
