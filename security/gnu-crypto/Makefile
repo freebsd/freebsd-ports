@@ -1,0 +1,67 @@
+# New ports collection makefile for:	gnu-crypto
+# Date created:		Fri Dec 31 00:00:25 UTC 2004
+# Whom:                 Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnu-crypto
+PORTVERSION=	2.0.1
+CATEGORIES=	security java
+MASTER_SITES=   ${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	lioux@FreeBSD.org
+COMMENT=	Java cryptographic primitives and tools
+
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+CONFIGURE_ENV+= \
+		CLASSPATH='' \
+		JAR=${JAR} \
+		JAVA=${JAVA} \
+		JAVAC=${JAVAC}
+
+USE_JAVA=       yes
+JAVA_VERSION=   1.4+
+USE_ANT=	yes
+
+JAR_DIR=	share/java/jar/${PORTNAME}
+JAR_FILES=	\
+		javax-crypto.jar \
+		javax-security.jar \
+		gnu-crypto.jar
+
+INFO=		gnu-crypto
+MAKEINFOFLAGS=	--no-split
+
+.for jar in ${JAR_FILES}
+PLIST_FILES+=	${JAR_DIR}/${jar}
+.endfor
+
+PLIST_DIRS+=	${JAR_DIR}
+
+post-extract:
+	@${RM} ${WRKSRC}/docs/*.info*
+
+post-configure:
+	@${REINPLACE_CMD} -E \
+		-e 's|(\$$\(MAKEINFOFLAGS\))|\1 --no-split|' \
+		${BUILD_WRKSRC}/docs/${MAKEFILE}
+
+post-build:
+	@cd ${WRKSRC}/docs && ${GMAKE} all
+
+do-install:
+	@${MKDIR} ${PREFIX}/${JAR_DIR}
+.for jar in ${JAR_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/lib/${jar} ${PREFIX}/${JAR_DIR}
+.endfor
+	@${MKDIR} ${PREFIX}/${INFO_PATH}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.info \
+		${PREFIX}/${INFO_PATH}
+
+.include <bsd.port.mk>
