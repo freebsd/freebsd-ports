@@ -660,6 +660,9 @@ pre-install:
 
 post-install: share-doc share-guides share-examples
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.for dir in Mrm Xm
+	cd ${WRKSRC}/lib/${dir} && ${INSTALL_DATA} *I.h ${PREFIX}/include/${dir}
+.endfor
 
 share-doc:
 	@${MKDIR} ${PREFIX}/share/doc/openmotif/
