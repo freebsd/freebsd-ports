@@ -18,8 +18,6 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
-BROKEN=		"Does not fetch"
-
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget gtk20 lthack
 WANT_GNOME=	yes
