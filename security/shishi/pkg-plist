@@ -1,0 +1,16 @@
+bin/shishi
+sbin/shishid
+etc/shishi.conf
+include/shishi.h
+include/shishi-int.h
+lib/libshishi.a
+lib/libshishi.so
+lib/libshishi.so.0
+libdata/pkgconfig/shishi.pc
+share/locale/sv/LC_MESSAGES/shishi.mo
+share/gtk-doc/html/shishi/c4.html
+share/gtk-doc/html/shishi/index.html
+share/gtk-doc/html/shishi/shishi-shishi.html
+share/gtk-doc/html/shishi/index.sgml
+%%DATADIR%%/shishi.skel
+@dirrm %%DATADIR%%

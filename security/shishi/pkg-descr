@@ -1,0 +1,12 @@
+Shishi is a free implementation of the Kerberos 5 network security system.
+
+The goals of this project are:
+    * Full standards compliance.
+    * Thread safe library.
+    * Internationalization, both for client messages but also for non-ASCII
+      username and passwords.
+    * Integrate with existing password management systems (/etc/passwd, PAM,
+      SASL).
+    * Clean room implementation with clear copyright and license.
+
+WWW: http://www.gnu.org/software/shishi/
