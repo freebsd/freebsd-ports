@@ -53,7 +53,8 @@ post-patch:
 		s!(CONFIG_FILE(\s|=)\")[^/]+?/!\1${LOCALBASE}/!; \
 		s|(CONFIG_FILE_DTD=\")[^/]+?/|\1${LOCALBASE}/|g; \
 		s|(PACKAGE_PIXMAPS_DIR=\").+\"|\1${PREFIX}/${SHARE_DATADIR}/ogle_gui/\"|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|" \
+		s|%%LOCALBASE%%|${LOCALBASE}|; \
+		s|(xmlversion.h>)|libxml/\1|" \
 			${CONFIGURE_WRKSRC}/configure
 
 post-configure:
