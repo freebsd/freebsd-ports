@@ -188,7 +188,6 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.krnet.ne.jp/pub/ruby/%SUBDIR%/ \
-	ftp://ftp.nctu.edu.tw/computer-languages/ruby/%SUBDIR%/ \
 	ftp://mirror.nucba.ac.jp/mirror/ruby/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+= \
