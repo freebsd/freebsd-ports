@@ -15,10 +15,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		ORBit-2.0:${PORTSDIR}/devel/ORBit2
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
