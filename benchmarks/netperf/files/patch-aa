@@ -216,7 +216,7 @@
   #
   # where is netperf installed, there are a few possible places:
   
-! NETPERF_CMD=${NETPERF_CMD:=/opt/netperf}
+! NETPERF_CMD=${NETPERF_CMD:=/opt/netperf/netperf}
   
   
   # there should be no more than two parms passed

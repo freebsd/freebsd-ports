@@ -1,17 +1,17 @@
 # New ports collection makefile for: netperf
-# Version required:	2.1.1
+# Version required:	2.1.2
 # Date created:		19 July 1996
 # Whom:			koshy
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:22:01 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/20 01:59:25 obrien Exp $
 #
 
-DISTNAME=	netperf-2.1pl1
-PKGNAME=	netperf-2.1.1
+DISTNAME=	netperf-2.1pl2
+PKGNAME=	netperf-2.1.2
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
 
-MAINTAINER=	pst@freebsd.org
+MAINTAINER=	fenner@freebsd.org
 
 MAKEFILE=	makefile
 MAN1=		netperf.1 netserver.1
