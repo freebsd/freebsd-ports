@@ -19,7 +19,7 @@ MAINTAINER?=	olgeni@FreeBSD.org
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
-		ast.1:${PORTSDIR}/devel/libast
+		ast.2:${PORTSDIR}/devel/libast
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
