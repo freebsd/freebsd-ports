@@ -2,4 +2,5 @@ bin/roxirc
 share/doc/roxirc/config-example
 share/doc/roxirc/menus-example
 share/doc/roxirc/prefs-initial
+share/doc/roxirc/help
 @dirrm share/doc/roxirc

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    roxirc
-# Version required:     1.2
+# Version required:     1.3
 # Date created:         Mar 15 1999
 # Whom:                 rox@fearme.com
 #
-# $Id: Makefile,v 1.2 1999/06/20 00:36:30 cpiazza Exp $
+# $Id: Makefile,v 1.3 1999/06/22 00:08:52 cpiazza Exp $
 #
 
-DISTNAME=	roxirc-1.2
+DISTNAME=	roxirc-1.3
 CATEGORIES=	net tk80
 MASTER_SITES=	http://roxirc.lighter.net/download/
 
@@ -14,7 +14,6 @@ MAINTAINER=	rox@fearme.com
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
-WRKSRC=		${WRKDIR}/roxirc-1.2
 NO_BUILD=	yes
 
 do-install:
@@ -23,6 +22,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/doc/roxirc/config-example
 	${INSTALL_DATA} ${WRKSRC}/menus ${PREFIX}/share/doc/roxirc/menus-example
 	${INSTALL_DATA} ${WRKSRC}/prefs ${PREFIX}/share/doc/roxirc/prefs-initial
+	${INSTALL_DATA} ${WRKSRC}/help ${PREFIX}/share/doc/roxirc/help
 
 post-patch:
 	/usr/bin/perl -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/roxirc
