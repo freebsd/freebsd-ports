@@ -1,6 +1,15 @@
---- configure.orig	Thu Dec 26 13:09:19 2002
-+++ configure	Thu Dec 26 13:09:37 2002
-@@ -7501,6 +7501,7 @@
+--- configure.orig	Wed Oct  1 12:59:06 2003
++++ configure	Mon Oct  6 23:25:13 2003
+@@ -2005,7 +2005,7 @@
+ _ACEOF
+ 
+ 		libdl=
+-		libgc_threads=pthreads
++		libgc_threads=no
+ 		;;
+ 	*-*-linux*)
+ 		platform_win32=no
+@@ -8257,6 +8257,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
