@@ -1,0 +1,11 @@
+--- src/getline.c.orig	Sat May 27 18:57:13 2000
++++ src/getline.c	Sat May 27 18:57:18 2000
+@@ -384,7 +384,7 @@
+   if (!history_file)
+     {
+ #if unix
+-      history_file = tilde_expand (HISTORY_FILE);
++      history_file = my_tilde_expand (HISTORY_FILE);
+ #endif
+       using_history ();
+       read_history (history_file);

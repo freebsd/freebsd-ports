@@ -1,0 +1,11 @@
+--- src/groff-font.c.orig	Sat May 27 18:57:34 2000
++++ src/groff-font.c	Sat May 27 18:57:45 2000
+@@ -100,7 +100,7 @@
+   int prev_index = -1;
+ 
+ #if unix
+-  fn = tilde_expand (fn);
++  fn = my_tilde_expand (fn);
+ #endif
+ 
+   verbose_msg (1, _("%s: Opening Groff font file..."), fn);

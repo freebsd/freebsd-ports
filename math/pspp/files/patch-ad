@@ -1,0 +1,11 @@
+--- src/filename.h.orig	Sat May 27 18:55:01 2000
++++ src/filename.h	Sat May 27 18:56:43 2000
+@@ -31,7 +31,7 @@
+ const char *getenv_default (const char *key, const char *def);
+ char *interp_vars (const char *, const char *(*)(const char *));
+ 
+-char *tilde_expand (const char *);
++char *my_tilde_expand (const char *);
+ char *search_path (const char *name, const char *path, const char *prepend);
+ 
+ char *gnu_getcwd (void);

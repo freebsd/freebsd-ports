@@ -1,0 +1,43 @@
+--- src/filename.c.orig	Sat May 27 18:56:28 2000
++++ src/filename.c	Sat May 27 18:59:02 2000
+@@ -213,7 +213,7 @@
+ /* Expands csh tilde notation from the path INPUT into a malloc()'d
+    returned string. */
+ char *
+-tilde_expand (const char *input)
++my_tilde_expand (const char *input)
+ {
+   char *output, *end;
+   const char *ip;
+@@ -288,7 +288,7 @@
+ }
+ #else /* !unix */
+ char *
+-tilde_expand (char *input)
++my_tilde_expand (char *input)
+ {
+   return xstrdup (input);
+ }
+@@ -340,7 +340,7 @@
+   if (is_special_filename (filename))
+     return xstrdup (filename);
+   
+-  fn1 = tilde_expand (filename);
++  fn1 = my_tilde_expand (filename);
+ 
+   /* Follow symbolic links. */
+   while (1)
+@@ -585,11 +585,11 @@
+     boilerplate_len += 1 + strlen (prepend);
+ 
+   if (absolute_filename_p (name))
+-    return tilde_expand (name);
++    return my_tilde_expand (name);
+   
+   {
+     char *temp = interp_vars (path, blp_getenv);
+-    bp = subst_path = tilde_expand (temp);
++    bp = subst_path = my_tilde_expand (temp);
+     free (temp);
+   }
+ 
