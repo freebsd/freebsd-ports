@@ -12,39 +12,41 @@ man/man5/sane-pint.5.gz
 man/man5/sane-qcam.5.gz
 man/man5/sane-umax.5.gz
 man/man5/sane-scsi.5.gz
+lib/libsane-epson.so.0.65
+lib/libsane-epson.so
+lib/libsane-epson.la
+lib/libsane-epson.a
 lib/libsane-hp.so.0.65
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane-hp.so
 lib/libsane-hp.la
 lib/libsane-hp.a
+lib/libsane-microtek.so.0.65
+lib/libsane-microtek.so
+lib/libsane-microtek.la
+lib/libsane-microtek.a
 lib/libsane-mustek.so.0.65
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane-mustek.so
 lib/libsane-mustek.la
 lib/libsane-mustek.a
 lib/libsane-net.so.0.65
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane-net.so
 lib/libsane-net.la
 lib/libsane-net.a
 lib/libsane-pnm.so.0.65
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane-pnm.so
 lib/libsane-pnm.la
 lib/libsane-pnm.a
 lib/libsane-umax.so.0.65
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane-umax.so
 lib/libsane-umax.la
 lib/libsane-umax.a
 lib/libsane-dll.so.0.65
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane-dll.so
 lib/libsane-dll.la
 lib/libsane-dll.a
-@exec /sbin/ldconfig -m %D/lib
 lib/libsane.so
 lib/libsane.a
+@exec /sbin/ldconfig -m %D/lib
 share/sane-style.rc
 include/sane/sane.h
 include/sane/sanei.h
