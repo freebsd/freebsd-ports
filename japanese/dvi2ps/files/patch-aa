@@ -47,7 +47,7 @@
   # optional font formats
   FONTF = -DVFLIB
   # VFlib library (comment out next line if -DFVLIB is not included)
-! VFLIB = ${PREFIX}/lib/VFlib.a
+! VFLIB = -L${PREFIX}/lib -lVFlib
   
   #
   CC=cc

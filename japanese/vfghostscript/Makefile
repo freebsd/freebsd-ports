@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1996/11/13 12:41:13 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/18 10:24:17 asami Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -22,8 +22,7 @@ DISTFILES=	ghostscript-2.6.2.tar.gz ghostscript-fonts-2.6.2.tar.gz \
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libVFlib.a:${PORTSDIR}/japanese/vflib
-RUN_DEPENDS=	${PREFIX}/lib/libVFlib.a:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
 WRKSRC=		${WRKDIR}/gs262
 EXTRACT_ONLY=	ghostscript-2.6.2.tar.gz

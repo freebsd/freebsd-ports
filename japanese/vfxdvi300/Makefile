@@ -3,7 +3,7 @@
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1996/12/03 04:07:10 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/03 13:08:20 obrien Exp $
 #
 
 DISTNAME=	xdvi-17
@@ -20,8 +20,7 @@ DISTFILES=	xdvi-17.tar.gz xdvi-17miyu.patch-beta6.gz \
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/VFlib.a:${PORTSDIR}/japanese/vflib
-RUN_DEPENDS= 	${LOCALBASE}/lib/VFlib/vfontcap:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib\\.2\\.:${PORTSDIR}/japanese/vflib
 
 WRKSRC=		${WRKDIR}
 DIST_SUBDIR=	xdvi
