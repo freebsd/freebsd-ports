@@ -5,20 +5,31 @@ bin/getmail_mbox
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/docs.html
-%%PORTDOCS%%%%DOCSDIR%%/docs.txt
+%%PORTDOCS%%%%DOCSDIR%%/documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/documentation.txt
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/getmail.txt
+%%PORTDOCS%%%%DOCSDIR%%/configuration.html
+%%PORTDOCS%%%%DOCSDIR%%/configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/troubleshooting.html
+%%PORTDOCS%%%%DOCSDIR%%/troubleshooting.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/getmailrc-example
+%%EXAMPLESDIR%%/getmailrc-examples
 @dirrm %%EXAMPLESDIR%%
-%%DATADIR%%/ConfParser.py
-%%DATADIR%%/getmail.py
-%%DATADIR%%/getmail_classes.py
-%%DATADIR%%/getmail_constants.py
-%%DATADIR%%/getmail_defaults.py
-%%DATADIR%%/getmail_mbox.py
-%%DATADIR%%/getmail_utilities.py
-%%DATADIR%%/timeoutsocket.py
+%%DATADIR%%/getmailcore/__init__.py
+%%DATADIR%%/getmailcore/_pop3ssl.py
+%%DATADIR%%/getmailcore/_retrieverbases.py
+%%DATADIR%%/getmailcore/baseclasses.py
+%%DATADIR%%/getmailcore/constants.py
+%%DATADIR%%/getmailcore/destinations.py
+%%DATADIR%%/getmailcore/exceptions.py
+%%DATADIR%%/getmailcore/filters.py
+%%DATADIR%%/getmailcore/logging.py
+%%DATADIR%%/getmailcore/message.py
+%%DATADIR%%/getmailcore/retrievers.py
+%%DATADIR%%/getmailcore/utilities.py
+%%DATADIR%%/getmail
+%%DATADIR%%/getmail_maildir
+%%DATADIR%%/getmail_mbox
+@dirrm %%DATADIR%%/getmailcore
 @dirrm %%DATADIR%%
