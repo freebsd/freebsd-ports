@@ -16,7 +16,7 @@ COMMENT=	Swedish dictionary for ispell
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 
-DEPRECATED=	"Install ports/textproc/ispell with ISPELL_SE=yes"
+DEPRECATED=	"Installs files in wrong place\; use textproc/ispell with ISPELL_SE=yes instead"
 EXPIRATION_DATE=2004-10-01
 
 .include <bsd.port.mk>
