@@ -14,7 +14,7 @@
  LinNeighborhood_LDADD = @GTK_LIBS@
  INCLUDES = @GTK_CFLAGS@ -DLIBDIR=\"$(libdir)\" -DDATADIR=\"$(datadir)\"
 -LIBS = @GTK_LIBS@ -lpthread
-+LIBS = @GTK_LIBS@ -lc_r -lutil
++LIBS = @GTK_LIBS@ -lutil
  
  EXTRA_DIST = picture
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
