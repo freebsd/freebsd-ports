@@ -1,0 +1,8 @@
+Mysql++ is a complex C++ API for Mysql (And other SQL Databases Soon).
+The goal of this API is too make working with Queries as easy as
+working with other STL Containers.
+   
+The manual can be found at share/doc/mysql++, and there are some
+examples in share/examples/mysql++ under your PREFIX (see README).
+
+WWW: http://www.mysql.com/download_mysql++.html

@@ -1,0 +1,11 @@
+--- sqlplusint/Makefile.in.orig	Tue May 16 16:21:47 2000
++++ sqlplusint/Makefile.in	Thu Jul 20 11:22:08 2000
+@@ -91,7 +91,7 @@
+ libsqlplus_la_SOURCES = coldata.cc connection.cc datetime.cc field_names.cc field_types.cc manip.cc query.cc result.cc row.cc set.cc sql_query.cc type_info.cc vallist.cc string_util.cc
+ 
+ 
+-libsqlplus_la_LDFLAGS = -version-info $(SQLPLUS_MAJOR_VERSION):$(SQLPLUS_MINOR_VERSION):$(SQLPLUS_MICRO_VERSION)
++libsqlplus_la_LDFLAGS = -version-info $(SQLPLUS_MAJOR_VERSION)
+ 
+ include_HEADERS = sqlplus.hh coldata1.hh coldata2.hh coldata3.hh coldata4.hh compare1.hh compare2.hh compare3.hh connection0.hh connection1.hh connection2.hh connection3.hh const_string1.hh const_string2.hh const_string3.hh 	convert1.hh convert2.hh convert3.hh custom-macros.hh custom.hh datetime1.hh 	datetime2.hh datetime3.hh field_names1.hh field_names2.hh field_names3.hh 	field_types1.hh field_types2.hh field_types3.hh fields1.hh fields2.hh 	manip1.hh manip2.hh manip3.hh null1.hh null2.hh null3.hh query1.hh query2.hh 	query3.hh resiter1.hh result1.hh result2.hh result3.hh row1.hh row2.hh 	row3.hh set1.hh set2.hh set3.hh sql_query0.hh sql_query1.hh sql_query2.hh 	sql_query3.hh sql_string1.hh sql_string2.hh sql_string3.hh stream2string1.hh stream2string2.hh stream2string3.hh tiny_int1.hh tiny_int2.hh tiny_int3.hh type_info1.hh type_info2.hh type_info3.hh vallist1.hh vallist2.hh vallist3.hh string_util.hh 	define_short defs
+ 
