@@ -14,12 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-pre-patch:
-	@${REINPLACE_CMD} -e "s@malloc.h@stdlib.h@g" \
-		${WRKSRC}/CfgFileParser.cc
+CONFIGURE_ENV=	CPPFLAGS="-DHAVE_DECL_GETOPT=1 -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/colortail
