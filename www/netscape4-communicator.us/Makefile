@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.4 1998/10/07 13:23:18 obrien Exp $
+# $Id: Makefile,v 1.5 1998/10/19 17:37:36 obrien Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -53,19 +53,19 @@ pre-fetch:
 .endif
 
 do-install:
-	cd ${WRKSRC} && yes "" | \
-	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
-	mv -f ${NDIR}/netscape ${NDIR}/communicator-4.07.us.bin
+	cd ${WRKSRC} && \
+		yes "" | LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
+	${MV} -f ${NDIR}/netscape ${NDIR}/communicator-4.07.us.bin
 	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/communicator-4.07.us
-	ln -sf communicator-4.07.us ${BINDIR}/communicator-4.us
-	ln -sf communicator-4.07.us ${BINDIR}/netscape.us
+	${LN} -sf communicator-4.07.us ${BINDIR}/communicator-4.us
+	${LN} -sf communicator-4.07.us ${BINDIR}/netscape.us
 	if [ ! -f ${NDIR}/mailcap ] ; then \
-	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
+		${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
 	fi
-	rm -rf ${NDIR}/netscape-dynMotif
-	rm -rf ${NDIR}/libnullplugin-dynMotif.so
-	rm -rf ${NDIR}/movemail-src
-	chown -R bin.bin ${NDIR}
+	${RM} -rf ${NDIR}/netscape-dynMotif
+	${RM} -rf ${NDIR}/libnullplugin-dynMotif.so
+	${RM} -rf ${NDIR}/movemail-src
+	chown -R ${BINOWN}.${BINGRP} ${NDIR}
 
 post-install:
 	@${CAT} ${PKGDIR}/DESCR
