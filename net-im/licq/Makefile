@@ -19,7 +19,6 @@ COMMENT=	A popular ICQ-compatible plugin-based program
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 .endif
 
-USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	${.CURDIR}
 
@@ -41,5 +40,9 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
+CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
+
 .include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
