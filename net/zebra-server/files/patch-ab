@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Sep 20 13:24:26 2000
++++ Makefile.in	Wed Sep 20 13:25:10 2000
+@@ -37,8 +37,8 @@
+ INCDIR=$(prefix)/include
+ #  Misc tables, etc.
+ ZEBRADIR=$(prefix)/lib/@PROGPREFIX@
+-ZEBRATAB=$(prefix)/lib/@PROGPREFIX@/tab
+-ZEBRADOC=$(prefix)/lib/@PROGPREFIX@/doc
++ZEBRATAB=$(prefix)/share/zebra-server/tab
++ZEBRADOC=$(prefix)/share/doc/zebra-server
+ 
+ SUBDIR=@SUBDIR@
+ 

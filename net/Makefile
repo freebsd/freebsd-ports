@@ -294,6 +294,7 @@
     SUBDIR += yaz
     SUBDIR += ytalk
     SUBDIR += zebra
+    SUBDIR += zebra-server
     SUBDIR += zephyr
     SUBDIR += ztelnet
 
