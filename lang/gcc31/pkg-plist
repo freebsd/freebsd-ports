@@ -2,33 +2,21 @@
 bin/cpp31
 bin/g++filt31
 bin/g++31
-bin/g77-31
 bin/gcc31
 bin/gcov31
 bin/%%GNU_HOST%%-gcc31
 bin/%%GNU_HOST%%-g++31
 bin/gccbug-%%SNAPVER%%
-bin/gcj31
-bin/gcjh31
-bin/jv-scan31
-bin/jcf-dump31
-bin/jar31
-bin/grepjar31
 @comment not needed post-libstdc++-v3:	%%GNU_HOST%%/include/_G_config.h
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
 @comment I AM TIRED OF THIS .INFO CRAP	@unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 @comment I AM TIRED OF THIS .INFO CRAP	@unexec install-info --delete %D/info/gcc.info %D/info/dir
-@comment I AM TIRED OF THIS .INFO CRAP	@unexec install-info --delete %D/info/g77.info %D/info/dir
 @comment I AM TIRED OF THIS .INFO CRAP	info/cpp.info
 @comment I AM TIRED OF THIS .INFO CRAP	info/cppinternals.info
-@comment I AM TIRED OF THIS .INFO CRAP	info/g77.info
 @comment I AM TIRED OF THIS .INFO CRAP	info/gcc.info
-@comment I AM TIRED OF THIS .INFO CRAP	info/gcj.info
 @comment I AM TIRED OF THIS .INFO CRAP	@exec install-info %D/info/cppinternals.info %D/info/dir
-@comment I AM TIRED OF THIS .INFO CRAP	@exec install-info %D/info/g77.info %D/info/dir
 @comment I AM TIRED OF THIS .INFO CRAP	@exec install-info %D/info/gcc.info %D/info/dir
-@comment I AM TIRED OF THIS .INFO CRAP	@exec install-info %D/info/gcj.info %D/info/dir
 @comment @dirrm %%GNU_HOST%%/include
 @comment @dirrm %%GNU_HOST%%

@@ -13,22 +13,18 @@ PORTNAME=	gcc
 PORTVERSION=	3.1.1
 PORTREVISION=	1
 PORTREVISION=	${SNAPVER}
-CATEGORIES=	lang java
+CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_REV}
 DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc31_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.1 (inprogress version)
-
-BROKEN=		Broken pkg-plist
+COMMENT=	GNU Compiler Collection 3.1
 
 DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
 
@@ -50,10 +46,6 @@ USE_GCC=	X
 NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Install fails on sparc64"
-.endif
 
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
@@ -88,9 +80,7 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1 \
-		gcj31.1 gcjh31.1 gij.1 \
-		jcf-dump31.1 jv-scan31.1 jv-convert.1
+MAN1=		cpp31.1 g++31.1 gcc31.1 gcov31.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-everything::
@@ -114,24 +104,18 @@ post-install:
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
-		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
+		${PREFIX}/bin/g++filt ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
-		${TARGLIB}/cpp0 ${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
+		${TARGLIB}/cpp0 ${TARGLIB}/collect2 ; \
 	do \
 		${STRIP_CMD} $$prog ; \
 	done )
-.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
+.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}31
 	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
 		${PREFIX}/man/man1/${file}31.1 )
-.endfor
-.for file in g77
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
-	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}-31.1 )
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
@@ -140,13 +124,11 @@ post-install:
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	# Java
-	cd ${PREFIX}/lib ; ${MV} -f libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
 # I am sick and tired of this .info shit, makeinfo --no-split isn't working
-	@cd ${PREFIX}/info ; ${RM} -f cpp.* cppinternals.* g77.* gcc.* gccint.* gcj.*
-#.for info in cpp cppinternals g77 gcc gcj
+	@cd ${PREFIX}/info ; ${RM} -f cpp.* cppinternals.* gcc.* gccint.*
+#.for info in cpp cppinternals gcc
 #	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 #.endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
