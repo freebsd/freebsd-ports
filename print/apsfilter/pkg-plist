@@ -11,23 +11,20 @@ apsfilter/setup/devices-6.01
 apsfilter/setup/filtersetup
 apsfilter/setup/printer-5.50
 apsfilter/setup/printer-6.01
-apsfilter/setup/mksymlinks
+apsfilter/setup/mksymlink
 apsfilter/setup/test.ps
 apsfilter/template/README
 apsfilter/template/apsfilterrc
+share/doc/apsfilter/ANNOUNCE
 share/doc/apsfilter/FAQ
 share/doc/apsfilter/HOWTO-BUGREPORTS
+share/doc/apsfilter/LICENSE
 share/doc/apsfilter/README.TeX
 share/doc/apsfilter/TROUBLESHOOTING
 share/doc/apsfilter/WHAT_AM_I
-share/doc/apsfilter/color
-share/doc/apsfilter/deskjets
-share/doc/apsfilter/deskjets.features
 share/doc/apsfilter/features
 share/doc/apsfilter/methods
 share/doc/apsfilter/paper
-share/doc/apsfilter/printer
-share/doc/apsfilter/readme.hp8
 @dirrm apsfilter/bin
 @dirrm apsfilter/filter
 @dirrm apsfilter/global
