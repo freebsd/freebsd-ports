@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	shishi
-PORTVERSION=	0.0.13
+PORTVERSION=	0.0.14
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		idn.12:${PORTSDIR}/devel/libidn \
 		tasn1.2:${PORTSDIR}/security/libtasn1
 
+USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
