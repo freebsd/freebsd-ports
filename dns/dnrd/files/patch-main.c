@@ -1,5 +1,5 @@
---- main.c.orig	Thu Jan  4 14:40:42 2001
-+++ main.c	Sat Jan  6 15:06:31 2001
+--- main.c.orig	Fri Jan  5 01:40:42 2001
++++ main.c	Sat Jan  3 16:39:25 2004
 @@ -18,6 +18,7 @@
   * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
   */
@@ -16,7 +16,18 @@
  #include <sys/stat.h>
  #include <sys/socket.h>
  #include <sys/stat.h>
-@@ -170,20 +170,20 @@
+@@ -82,6 +82,10 @@
+     /*
+      * Parse the command line.
+      */
++     memset(&recv_addr, 0, sizeof(recv_addr));
++     recv_addr.sin_family = AF_INET;
++     recv_addr.sin_port = htons(53);
++
+     parse_args(argc, argv);
+ 
+     openlog(progname, LOG_PID, LOG_DAEMON);
+@@ -170,20 +174,20 @@
       * Change our root and current working directories to /etc/dnrd.
       * Also, so some sanity checking on that directory first.
       */
@@ -42,7 +53,7 @@
  	cleanexit(-1);
      }
  
-@@ -198,31 +198,31 @@
+@@ -198,31 +202,31 @@
  
  	if (rslt) continue;
  	if (S_ISDIR(st.st_mode)) {
