@@ -11,7 +11,7 @@ CATEGORIES=	math devel
 MASTER_SITES=	http://rnoc.urc.ac.ru/~anton/projects/files/
 DISTNAME=	matrix-${PORTVERSION}
 
-MAINTAINER=	anton@urc.ac.ru
+MAINTAINER=	anton@chelcom.ru
 COMMENT=	C++ library to manipulate matrices and vectors
 
 WRKSRC=		${WRKDIR}/matrix

@@ -11,7 +11,7 @@ MASTER_SITES=	http://wmtop.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	wmtop@tanelorn.demon.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windowmaker dock app to display top 3 CPU consuming processes
 
 USE_X_PREFIX=	yes

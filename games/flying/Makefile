@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	searle@longacre.demon.co.uk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pool/snooker/billiards/carrom/etc game
 
 USE_IMAKE=	yes

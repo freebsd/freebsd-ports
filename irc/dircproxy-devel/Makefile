@@ -10,7 +10,7 @@ PORTVERSION=	1.0.5
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.netsplit.com/pub/dircproxy/stable/
 
-MAINTAINER=	lester@mazpe.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A detachable irc proxy server with many features
 
 GNU_CONFIGURE=	yes

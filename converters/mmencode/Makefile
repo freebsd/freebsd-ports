@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://thumper.bellcore.com/pub/nsb/ \
 DISTNAME=	mm${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translate to and from mail-oriented encoding formats
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/metamail

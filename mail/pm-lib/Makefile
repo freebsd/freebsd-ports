@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-2001.0728
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of procmail plug-in modules
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail

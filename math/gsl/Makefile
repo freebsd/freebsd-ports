@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GSLREF} ${GSLREFHTML}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
-MAINTAINER=	vlad@reid.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 
 USE_LIBTOOL=	yes

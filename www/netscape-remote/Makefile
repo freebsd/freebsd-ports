@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://home.netscape.com/newsref/std/
 DISTFILES=	remote.c vroot.h
 
-MAINTAINER=	kbyanc@posi.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to pass commands to running netscape process
 
 USE_XLIB=	yes

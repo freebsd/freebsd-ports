@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
-MAINTAINER=	jerry@rootbsd.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ncurses-based console mixer
 
 .include <bsd.port.pre.mk>

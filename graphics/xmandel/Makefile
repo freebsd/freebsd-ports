@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cray.com/src/graphics/xmandel/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.shar
 
-MAINTAINER=	andreas@marvin.robin.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window based interface to Mandelbrot sets and Julia sets
 
 EXTRACT_CMD=	${SH}

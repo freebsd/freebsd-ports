@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.greslin.org/code/
 DISTNAME=	GXAnim-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 
-MAINTAINER=	rbt@zort.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end to Xanim
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim
