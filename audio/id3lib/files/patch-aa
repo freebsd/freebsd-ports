@@ -1,0 +1,43 @@
+--- configure.orig	Fri Sep 15 03:14:06 2000
++++ configure	Thu Oct 26 03:26:10 2000
+@@ -2200,7 +2200,7 @@
+ 
+ fi
+ 
+-for ac_hdr in zlib.h wchar.h sys/param.h popt.h
++for ac_hdr in zlib.h sys/param.h popt.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -2296,16 +2296,18 @@
+ ac_link='${CXX-g++} -o conftest${ac_exeext} $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS 1>&5'
+ cross_compiling=$ac_cv_prog_cxx_cross
+ 
+-ac_safe=`echo "iostream.h iomanip.h" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for iostream.h iomanip.h""... $ac_c" 1>&6
+-echo "configure:2302: checking for iostream.h iomanip.h" >&5
++for ac_hdr in iostream.h iomanip.h
++do
++ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
++echo "configure:2302: checking for $ac_hdr" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+ #line 2307 "configure"
+ #include "confdefs.h"
+-#include <iostream.h iomanip.h>
++#include <$ac_hdr>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:2312: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -2328,7 +2330,7 @@
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+-
++done
+ 
+ echo $ac_n "checking for 8-bit clean memcmp""... $ac_c" 1>&6
+ echo "configure:2335: checking for 8-bit clean memcmp" >&5
