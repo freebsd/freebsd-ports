@@ -35,7 +35,6 @@ MAN8=		sasldblistusers.8 saslpasswd.8
 
 USE_AUTOMAKE=	YES
 USE_LIBTOOL=	YES
-AUTOHEADER=	autoheader
 AUTOMAKE_ARGS=	--add-missing --include-deps
 
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
