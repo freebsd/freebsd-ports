@@ -109,6 +109,9 @@ share/xfce4/doc/C/images/pager-properties.png
 share/xfce4/doc/C/images/panel-settings.png
 share/xfce4/doc/C/images/systembuttons-properties.png
 share/xfce4/doc/C/xfce4-panel.html
+@dirrm etc/xdg/xfce4/panel
+@unexec rmdir %D/etc/xdg/xfce4 2>/dev/null || true
+@unexec rmdir %D/etc/xdg 2>/dev/null || true
 @unexec rmdir %D/etc/xfce4 2>/dev/null || true
 @dirrm include/xfce4/panel
 @unexec rmdir %D/include/xfce4 2>/dev/null || true
@@ -116,6 +119,7 @@ share/xfce4/doc/C/xfce4-panel.html
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true

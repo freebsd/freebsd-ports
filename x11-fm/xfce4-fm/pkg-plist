@@ -246,6 +246,12 @@ share/xfce4/xffm/xffm.spec.in
 @unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/stock/generic 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/stock 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/doc/fr 2>/dev/null || true
@@ -253,4 +259,6 @@ share/xfce4/xffm/xffm.spec.in
 @unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
 @unexec rmdir %D/share/xfce4/mime 2>/dev/null || true
 @dirrm share/xfce4/xffm
+@dirrm share/xffm/pixmaps
+@dirrm share/xffm
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
