@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	kseg
-PORTVERSION=	0.3
+PORTVERSION=	0.351
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.mit.edu/~ibaran/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
 COMMENT=	A simulator of euclidean geometry
 
-USE_GCC=	2.95
-USE_QT_VER=	2
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 pre-configure:
-	${REINPLACE_CMD} -e "s@\\$$(QTDIR)/include@${PREFIX}/include/qt2@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
-	${REINPLACE_CMD} -e "s@\\$$(QTDIR)/lib -lqt@${PREFIX}/lib -lqt2@" ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e "s@^MOC =.*@MOC = ${MOC}@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
-	${REINPLACE_CMD} -e 's@"LanguageDir", "\."@"LanguageDir", "${PREFIX}/share/doc/kseg"@' ${WRKSRC}/main.cpp
+	${REINPLACE_CMD} -e "s@\$$(QTDIR)@${QT_PREFIX}@; s@^CC=@#CC=@; s@-O2@${CFLAGS} ${PTHREAD_CFLAGS}@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
+	${REINPLACE_CMD} -e "s@-lqt@-lqt-mt ${PTHREAD_LIBS}@; " ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kseg ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/kseg
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/kseg
-.for TRANS in de en fr pt xx
-	${INSTALL_DATA} ${WRKSRC}/kseg_${TRANS}.qm ${PREFIX}/share/doc/kseg
+	${MKDIR} ${PREFIX}/lib/X11/kseg
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/lib/X11/kseg
+.for TRANS in de en es fr hu nb pt xx
+	${INSTALL_DATA} ${WRKSRC}/kseg_${TRANS}.qm ${PREFIX}/lib/X11/kseg
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/kseg/examples
-	for EXAMPLES in ${WRKSRC}/examples/*;do ${INSTALL_DATA} $${EXAMPLES} ${PREFIX}/share/doc/kseg/examples;done
+.for TRANS in en
+	${INSTALL_DATA} ${WRKSRC}/kseg_help_${TRANS}.html ${PREFIX}/lib/X11/kseg
+.endfor
+	${MKDIR} ${PREFIX}/lib/X11/kseg/examples
+	for EXAMPLES in ${WRKSRC}/examples/*;do \
+		${INSTALL_DATA} $${EXAMPLES} ${PREFIX}/lib/X11/kseg/examples;done
 
 .include <bsd.port.mk>
