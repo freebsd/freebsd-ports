@@ -890,6 +890,7 @@ claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
 clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-toolkits/clean-theme-gtk
+clean_		ports/sysutils/clean_
 cleanfeed	ports/news/cleanfeed
 cleanscore	ports/news/cleanscore
 clementine	ports/x11-wm/clementine
@@ -1573,6 +1574,7 @@ exctags		ports/devel/ctags
 exiftags	ports/graphics/exiftags
 exim		ports/mail/exim
 exim-doc-html	ports/mail/exim-doc-html
+exim-doc-info	ports/mail/exim-doc-info
 exim-doc-pdf	ports/mail/exim-doc-pdf
 exim-doc-postscript	ports/mail/exim-doc-postscript
 exim-ldap	ports/mail/exim-ldap
@@ -4393,7 +4395,7 @@ midimountain	ports/audio/midimountain
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
-milter-regex	ports/mail
+milter-regex	ports/mail/milter-regex
 milter-sender	ports/mail/milter-sender
 mime		ports/devel/mime
 mime-support	ports/misc/mime-support
@@ -8360,6 +8362,7 @@ trove4j		ports/java/trove4j
 trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
 tsclient	ports/net/tsclient
+tsocks		ports/net/tsocks
 ttcp		ports/net/ttcp
 ttf2pt1		ports/print/ttf2pt1
 ttftot42	ports/print/ttftot42
@@ -8418,6 +8421,7 @@ ucblogo		ports/lang/logo
 ucl		ports/archivers/ucl
 uclmmbase	ports/devel/uclmmbase
 ucpp		ports/devel/ucpp
+ucspi-ssl	ports/sysutils/ucspi-ssl
 ucspi-tcp	ports/sysutils/ucspi-tcp
 ude		ports/x11-wm/ude
 udesc_dump	ports/sysutils/udesc_dump
