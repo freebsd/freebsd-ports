@@ -6775,6 +6775,7 @@ sex		ports/games/sex
 seyon		ports/comms/seyon
 sfio		ports/devel/sfio
 sfront		ports/audio/sfront
+sfs		ports/security/sfs
 sftp		src/secure/usr.bin/sftp
 sftp-server	src/secure/libexec/sftp-server
 sftp_port	ports/ftp/sftp
