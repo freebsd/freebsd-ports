@@ -1,6 +1,6 @@
---- configure.orig	Thu Sep 24 02:15:00 1998
-+++ configure	Sat Sep 26 20:57:55 1998
-@@ -1702,143 +1702,6 @@
+--- configure.orig	Thu Dec 24 05:59:01 1998
++++ configure	Thu Dec 24 06:01:01 1998
+@@ -1711,143 +1711,6 @@
    rm -f conf.gtktest
  
  
@@ -9,7 +9,7 @@
 -# Extract the first word of "djpeg", so it can be a program name with args.
 -set dummy djpeg; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1711: checking for $ac_word" >&5
+-echo "configure:1720: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_DJPEG_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -40,7 +40,7 @@
 -# Extract the first word of "cjpeg", so it can be a program name with args.
 -set dummy cjpeg; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1742: checking for $ac_word" >&5
+-echo "configure:1751: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_CJPEG_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -72,7 +72,7 @@
 -# Extract the first word of "convert", so it can be a program name with args.
 -set dummy convert; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1774: checking for $ac_word" >&5
+-echo "configure:1783: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_CONVERT_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -108,7 +108,7 @@
 -# Extract the first word of "giftopnm", so it can be a program name with args.
 -set dummy giftopnm; ac_word=$2
 -echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
--echo "configure:1810: checking for $ac_word" >&5
+-echo "configure:1819: checking for $ac_word" >&5
 -if eval "test \"`echo '$''{'ac_cv_path_GIFTOPNM_PROG'+set}'`\" = set"; then
 -  echo $ac_n "(cached) $ac_c" 1>&6
 -else
@@ -142,26 +142,51 @@
 -
 -
  echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
- echo "configure:1844: checking how to run the C preprocessor" >&5
+ echo "configure:1853: checking how to run the C preprocessor" >&5
  # On Suns, sometimes $CPP names a directory.
-@@ -3821,16 +3684,16 @@
+@@ -4010,16 +3873,16 @@
  
  
  
 -ac_safe=`echo "gif_lib.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for gif_lib.h""... $ac_c" 1>&6
--echo "configure:3827: checking for gif_lib.h" >&5
+-echo "configure:4016: checking for gif_lib.h" >&5
 +ac_safe=`echo "giflib/gif_lib.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for giflib/gif_lib.h""... $ac_c" 1>&6
-+echo "configure:3827: checking for giflib/gif_lib.h" >&5
++echo "configure:4016: checking for giflib/gif_lib.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 3832 "configure"
+ #line 4021 "configure"
  #include "confdefs.h"
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:3837: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ { (eval echo configure:4026: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -4234,24 +4097,6 @@
+ else
+   echo "configure: warning: *** Native PNG support will not be built (PNG header file not found) ***" 1>&2
+ fi
+-
+-echo $ac_n "checking for libpng version other than 1.0.2""... $ac_c" 1>&6
+-echo "configure:4240: checking for libpng version other than 1.0.2" >&5
+-cat > conftest.$ac_ext <<EOF
+-#line 4242 "configure"
+-#include "confdefs.h"
+-#include <png.h>
+-PNG_LIBPNG_VER_STRING
+-EOF
+-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+-  egrep ""1.0.2"" >/dev/null 2>&1; then
+-  rm -rf conftest*
+-  echo "********* WARNING *********** Your libpng version is 1.0.2. Build will not continue until you revert to 1.0.1 or a newer version.";exit
+-else
+-  rm -rf conftest*
+-  png_ok=yes
+-fi
+-rm -f conftest*
+ 
+ echo "$ac_t""$png_ok" 1>&6
+ 
