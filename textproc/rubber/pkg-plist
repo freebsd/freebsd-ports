@@ -41,6 +41,8 @@ bin/rubber-pipe
 %%PYTHON_SITELIBDIR%%/rubber/modules/dvips.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/epsfig.py
 %%PYTHON_SITELIBDIR%%/rubber/modules/epsfig.pyc
+%%PYTHON_SITELIBDIR%%/rubber/modules/etex.py
+%%PYTHON_SITELIBDIR%%/rubber/modules/etex.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/expand.py
 %%PYTHON_SITELIBDIR%%/rubber/modules/expand.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/graphics.py
@@ -51,6 +53,8 @@ bin/rubber-pipe
 %%PYTHON_SITELIBDIR%%/rubber/modules/gz.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/hyperref.py
 %%PYTHON_SITELIBDIR%%/rubber/modules/hyperref.pyc
+%%PYTHON_SITELIBDIR%%/rubber/modules/index.py
+%%PYTHON_SITELIBDIR%%/rubber/modules/index.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/lhs2TeX.py
 %%PYTHON_SITELIBDIR%%/rubber/modules/lhs2TeX.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/makeidx.py
@@ -65,6 +69,8 @@ bin/rubber-pipe
 %%PYTHON_SITELIBDIR%%/rubber/modules/multibib.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/natbib.py
 %%PYTHON_SITELIBDIR%%/rubber/modules/natbib.pyc
+%%PYTHON_SITELIBDIR%%/rubber/modules/omega.py
+%%PYTHON_SITELIBDIR%%/rubber/modules/omega.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/pdftex.py
 %%PYTHON_SITELIBDIR%%/rubber/modules/pdftex.pyc
 %%PYTHON_SITELIBDIR%%/rubber/modules/ps2pdf.py
