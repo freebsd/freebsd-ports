@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
@@ -17,6 +17,7 @@ COMMENT=	A pam module for authenticating with LDAP
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_OPENLDAP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-dir=${LOCALBASE} \
@@ -24,23 +25,14 @@ CONFIGURE_ARGS=	--with-ldap-lib=openldap \
 		--with-ldap-secret-file=${PREFIX}/etc/ldap.secret
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-.if !defined(WITHOUT_LDAP_V3)
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap21-client
-.else
-LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
-.endif
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 post-install:
-	@${ECHO} "================================================================================"
-	@${ECHO} "Copy/move/symlink ${PREFIX}/etc/ldap.conf.dist to"
-	@${ECHO} "${PREFIX}/etc/ldap.conf to be able to use it."
-	@${ECHO} "Add lines like the following to /etc/pam.conf"
-	@${ECHO} "to get things going:"
-	@${ECHO} ""
-	@${ECHO} "login    auth    sufficient    ${PREFIX}/lib/pam_ldap.so"
-	@${ECHO} "================================================================================"
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' < ${PKGDIR}/pkg-message \
+		| /usr/bin/fmt 75 79 > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
