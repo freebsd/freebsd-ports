@@ -4919,6 +4919,7 @@ netscript	ports/net/netscript
 netsed		ports/net/netsed
 netshow		ports/graphics/netshow
 netspades	ports/games/netspades
+netspeed_applet	ports/net/netspeed_applet
 netspoc		ports/net/netspoc
 netstat		src/usr.bin/netstat
 nettest		ports/net/nettest
