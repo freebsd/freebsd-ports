@@ -1,0 +1,489 @@
+*** src/ftpd.c.orig	Wed Apr 13 22:17:18 1994
+--- src/ftpd.c	Wed Jan 25 21:51:50 1995
+***************
+*** 139,146 ****
+   *freopen(const char *, const char *, FILE *);
+  extern int ftpd_pclose(FILE *iop),
+    fclose(FILE *);
+! extern char *getline(),
+!  *realpath(char *pathname, char *result);
+  extern char cbuf[];
+  extern off_t restart_point;
+  
+--- 139,146 ----
+   *freopen(const char *, const char *, FILE *);
+  extern int ftpd_pclose(FILE *iop),
+    fclose(FILE *);
+! extern char *getline();
+! extern char *realpath(const char *pathname, char *result);
+  extern char cbuf[];
+  extern off_t restart_point;
+  
+***************
+*** 237,242 ****
+--- 237,247 ----
+  
+  #endif /* SETPROCTITLE */
+  
++ #ifdef SKEY
++ #include <skey.h>
++ int	pwok = 0;
++ #endif
++ 
+  #ifdef KERBEROS
+  void init_krb();
+  void end_krb();
+***************
+*** 252,257 ****
+--- 257,269 ----
+  char  ls_short[50];
+  struct aclmember *entry = NULL;
+  
++ void end_login(void);
++ void send_data(FILE *, FILE *, off_t);
++ void dolog(struct sockaddr_in *);
++ void dologout(int);
++ void perror_reply(int, char *);
++ 
++ void
+  main(int argc, char **argv, char **envp)
+  {
+      int addrlen,
+***************
+*** 686,691 ****
+--- 698,705 ----
+   * does not have a standard shell as returned by getusershell().  Disallow
+   * anyone mentioned in the file _PATH_FTPUSERS to allow people such as root
+   * and uucp to be avoided. */
++ 
++ void
+  user(char *name)
+  {
+      register char *cp;
+***************
+*** 878,884 ****
+--- 892,903 ----
+      } else
+          acl_setfunctions();
+  
++ #ifdef SKEY
++     pwok = skeyaccess(name, NULL, remotehost, remoteaddr);
++     reply(331, "%s", skey_challenge(name, pw, pwok));
++ #else
+      reply(331, "Password required for %s.", name);
++ #endif
+      askpasswd = 1;
+      /* Delay before reading passwd after first failed attempt to slow down
+       * passwd-guessing programs. */
+***************
+*** 887,892 ****
+--- 906,912 ----
+  }
+  
+  /* Check if a user is in the file _PATH_FTPUSERS */
++ int
+  checkuser(char *name)
+  {
+      register FILE *fd;
+***************
+*** 911,916 ****
+--- 931,937 ----
+  
+  /* Terminate login as previous user, if any, resetting state; used when USER
+   * command is given or login fails. */
++ void
+  end_login(void)
+  {
+  
+***************
+*** 965,970 ****
+--- 986,992 ----
+          return 0;
+  }
+  
++ void
+  pass(char *passwd)
+  {
+      char *xpasswd,
+***************
+*** 1007,1014 ****
+--- 1029,1041 ----
+  #ifdef KERBEROS
+          xpasswd = crypt16(passwd, salt);
+  #else
++ #ifdef SKEY
++ 	xpasswd = skey_crypt(passwd, salt, pw, pwok);
++ 	pwok = 0;
++ #else
+          xpasswd = crypt(passwd, salt);
+  #endif
++ #endif
+  
+  #ifdef ULTRIX_AUTH
+          if ((numfails = ultrix_check_pass(passwd, xpasswd)) < 0) {
+***************
+*** 1095,1101 ****
+      (void) initgroups(pw->pw_name, pw->pw_gid);
+  
+      /* open wtmp before chroot */
+!     (void) sprintf(ttyline, "ftp%d", getpid());
+      logwtmp(ttyline, pw->pw_name, remotehost);
+      logged_in = 1;
+  
+--- 1122,1132 ----
+      (void) initgroups(pw->pw_name, pw->pw_gid);
+  
+      /* open wtmp before chroot */
+! #if (defined(BSD) && (BSD >= 199103))
+!     (void) sprintf(ttyline, "ftp%ld", getpid());
+! #else
+!     (void) sprintf(ttyline, "ftpd%d", getpid());
+! #endif
+      logwtmp(ttyline, pw->pw_name, remotehost);
+      logged_in = 1;
+  
+***************
+*** 1190,1197 ****
+          reply(230, "Guest login ok, access restrictions apply.");
+  #ifdef SETPROCTITLE
+          sprintf(proctitle, "%s: anonymous/%.*s", remotehost,
+!                     sizeof(proctitle) - sizeof(remotehost) -
+!                     sizeof(": anonymous/"), passwd);
+          setproctitle("%s", proctitle);
+  #endif /* SETPROCTITLE */
+          if (logging)
+--- 1221,1228 ----
+          reply(230, "Guest login ok, access restrictions apply.");
+  #ifdef SETPROCTITLE
+          sprintf(proctitle, "%s: anonymous/%.*s", remotehost,
+!                     (int) (sizeof(proctitle) - sizeof(remotehost) -
+!                     sizeof(": anonymous/")), passwd);
+          setproctitle("%s", proctitle);
+  #endif /* SETPROCTITLE */
+          if (logging)
+***************
+*** 1235,1240 ****
+--- 1266,1272 ----
+      return (buf);
+  }
+  
++ void
+  retrieve(char *cmd, char *name)
+  {
+      FILE *fin,
+***************
+*** 1422,1428 ****
+--- 1454,1464 ----
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
++ #if (defined(BSD) && (BSD >= 199103))
++         sprintf(msg, "%.24s %d %s %qd %s %c %s %c %c %s ftp %d %s\n",
++ #else
+          sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n",
++ #endif
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
+***************
+*** 1445,1450 ****
+--- 1481,1487 ----
+          (*closefunc) (fin);
+  }
+  
++ void
+  store(char *name, char *mode, int unique)
+  {
+      FILE *fout, *din;
+***************
+*** 1610,1616 ****
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
+!         sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n",
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
+--- 1647,1657 ----
+          for (loop = 0; namebuf[loop]; loop++)
+              if (isspace(namebuf[loop]) || iscntrl(namebuf[loop]))
+                  namebuf[loop] = '_';
+! #if (defined(BSD) && (BSD >= 199103))
+!         sprintf(msg, "%.24s %d %s %qd %s %c %s %c %c %s ftp %d %s\n",
+! #else
+!         sprintf(msg, "%.24s %d %s %d %s %c %s %c %c %s ftp %d %s\n", 
+! #endif
+                  ctime(&curtime),
+                  xfertime,
+                  remotehost,
+***************
+*** 1699,1705 ****
+      file_size = size;
+      byte_count = 0;
+      if (size != (off_t) - 1)
+!         (void) sprintf(sizebuf, " (%ld bytes)", size);
+      else
+          (void) strcpy(sizebuf, "");
+      if (pdata >= 0) {
+--- 1740,1750 ----
+      file_size = size;
+      byte_count = 0;
+      if (size != (off_t) - 1)
+! #if (defined(BSD) && (BSD >= 199103))
+!         (void) sprintf(sizebuf, " (%qd bytes)", size);
+! #else
+! 	(void) sprintf(sizebuf, " (%d bytes)", size);
+! #endif
+      else
+          (void) strcpy(sizebuf, "");
+      if (pdata >= 0) {
+***************
+*** 1707,1715 ****
+          int s,
+            fromlen = sizeof(from);
+  
+!         s = accept(pdata, (struct sockaddr *) &from, &fromlen);
+!         if (s < 0) {
+!             reply(425, "Can't open data connection.");
+              (void) close(pdata);
+              pdata = -1;
+              return (NULL);
+--- 1752,1774 ----
+          int s,
+            fromlen = sizeof(from);
+  
+! #ifdef FD_ZERO
+!        struct timeval timeout;
+!        fd_set set;
+! 
+!        FD_ZERO(&set);
+!        FD_SET(pdata, &set);
+! 
+!        timeout.tv_usec = 0;
+!        timeout.tv_sec = 120;
+! 
+!        if (select(pdata+1, &set, (fd_set *) 0, (fd_set *) 0, &timeout) == 0 ||
+!            (s = accept(pdata, (struct sockaddr *) &from, &fromlen)) < 0) {
+! #else
+!           s = accept(pdata, (struct sockaddr *) &from, &fromlen);
+!           if (s < 0) {
+! #endif
+! 	    reply(425, "Can't open data connection.");
+              (void) close(pdata);
+              pdata = -1;
+              return (NULL);
+***************
+*** 1764,1769 ****
+--- 1823,1829 ----
+   * encapsulation of the data subject to Mode, Structure, and Type.
+   *
+   * NB: Form isn't handled. */
++ void
+  send_data(FILE *instr, FILE *outstr, off_t blksize)
+  {
+      register int c,
+***************
+*** 1839,1844 ****
+--- 1899,1905 ----
+   * the data subject to Mode, Structure, and Type.
+   *
+   * N.B.: Form isn't handled. */
++ int
+  receive_data(FILE *instr, FILE *outstr)
+  {
+      register int c;
+***************
+*** 1915,1920 ****
+--- 1976,1982 ----
+      return (-1);
+  }
+  
++ void
+  statfilecmd(char *filename)
+  {
+      char line[BUFSIZ];
+***************
+*** 1948,1953 ****
+--- 2010,2016 ----
+      reply(211, "End of Status");
+  }
+  
++ void
+  statcmd(void)
+  {
+      struct sockaddr_in *sin;
+***************
+*** 2001,2006 ****
+--- 2064,2070 ----
+      reply(211, "End of status");
+  }
+  
++ void
+  fatal(char *s)
+  {
+      reply(451, "Error in server: %s\n", s);
+***************
+*** 2095,2100 ****
+--- 2159,2165 ----
+  
+  #else
+  /* VARARGS2 */
++ void
+  reply(int n, char *fmt, int p0, int p1, int p2, int p3, int p4, int p5)
+  {
+      if (autospout != NULL) {
+***************
+*** 2129,2134 ****
+--- 2194,2200 ----
+  }
+  
+  /* VARARGS2 */
++ void
+  lreply(int n, char *fmt, int p0, int p1, int p2, int p3, int p4, int p5)
+  {
+      if (!dolreplies)
+***************
+*** 2144,2160 ****
+--- 2210,2229 ----
+  }
+  #endif
+  
++ void
+  ack(char *s)
+  {
+      reply(250, "%s command successful.", s);
+  }
+  
++ void
+  nack(char *s)
+  {
+      reply(502, "%s command not implemented.", s);
+  }
+  
+  /* ARGSUSED */
++ void
+  yyerror(char *s)
+  {
+      char *cp;
+***************
+*** 2164,2169 ****
+--- 2233,2239 ----
+      reply(500, "'%s': command not understood.", cbuf);
+  }
+  
++ void
+  delete(char *name)
+  {
+      struct stat st;
+***************
+*** 2208,2213 ****
+--- 2278,2284 ----
+      ack("DELE");
+  }
+  
++ void
+  cwd(char *path)
+  {
+      struct aclmember *entry = NULL;
+***************
+*** 2248,2253 ****
+--- 2319,2325 ----
+      }
+  }
+  
++ void
+  makedir(char *name)
+  {
+  	uid_t uid;
+***************
+*** 2274,2282 ****
+      reply(257, "MKD command successful.");
+  }
+  
+  removedir(char *name)
+  {
+! 	int c, d;  /* dummy variables */
+          int valid = 0;
+  
+      /*
+--- 2346,2355 ----
+      reply(257, "MKD command successful.");
+  }
+  
++ void
+  removedir(char *name)
+  {
+! 	unsigned long c, d;  /* dummy variables */
+          int valid = 0;
+  
+      /*
+***************
+*** 2298,2303 ****
+--- 2371,2377 ----
+          ack("RMD");
+  }
+  
++ void
+  pwd(void)
+  {
+      char path[MAXPATHLEN + 1];
+***************
+*** 2342,2347 ****
+--- 2416,2422 ----
+      return (name);
+  }
+  
++ void
+  renamecmd(char *from, char *to)
+  {
+  
+***************
+*** 2357,2362 ****
+--- 2432,2438 ----
+          ack("RNTO");
+  }
+  
++ void
+  dolog(struct sockaddr_in *sin)
+  {
+      struct hostent *hp;
+***************
+*** 2412,2417 ****
+--- 2488,2494 ----
+  }
+  
+  /* Record logout in wtmp file and exit with supplied status. */
++ void
+  dologout(int status)
+  {
+      if (logged_in) {
+***************
+*** 2459,2464 ****
+--- 2536,2542 ----
+   * PASV command in RFC959. However, it has been blessed as a legitimate
+   * response by Jon Postel in a telephone conversation with Rick Adams on 25
+   * Jan 89. */
++ void
+  passive(void)
+  {
+      int len;
+***************
+*** 2530,2535 ****
+--- 2608,2614 ----
+  }
+  
+  /* Format and send reply containing system error number. */
++ void
+  perror_reply(int code, char *string)
+  {
+      reply(code, "%s: %s.", string, strerror(errno));
+***************
+*** 2538,2543 ****
+--- 2617,2623 ----
+  static char *onefile[] =
+  {"", 0};
+  
++ void
+  send_file_list(char *whichfiles)
+  {
+      struct stat st;

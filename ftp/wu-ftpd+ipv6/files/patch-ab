@@ -1,5 +1,5 @@
-*** Makefile.orig	Fri Apr  1 21:03:58 1994
---- Makefile	Tue Oct 18 18:45:08 1994
+*** Makefile.orig	Fri Apr  1 20:03:58 1994
+--- Makefile	Wed Jan 25 21:12:08 1995
 ***************
 *** 1,25 ****
 ! BINDIR=		/usr/local/bin
@@ -27,7 +27,7 @@
 ! 	install -o bin -g bin -m 755 doc/ftphosts.5 ${MANDIR}/man5/ftphosts.5
 ! 	install -o bin -g bin -m 755 doc/ftpconversions.5 ${MANDIR}/man5/ftpconversions.5
 ! 	install -o bin -g bin -m 755 doc/xferlog.5 ${MANDIR}/man5/xferlog.5
---- 1,26 ----
+--- 1,35 ----
 ! BINDIR=		${PREFIX}/bin
 ! ETCDIR=		${PREFIX}/etc
 ! MANDIR=		${PREFIX}/man
@@ -54,3 +54,12 @@
 ! 	install -c -o bin -g bin -m 755 doc/ftphosts.5 ${MANDIR}/man5/ftphosts.5
 ! 	install -c -o bin -g bin -m 755 doc/ftpconversions.5 ${MANDIR}/man5/ftpconversions.5
 ! 	install -c -o bin -g bin -m 755 doc/xferlog.5 ${MANDIR}/man5/xferlog.5
+! 	@echo Compressing manpages
+! 	gzip -9 ${MANDIR}/man8/ftpd.8
+! 	gzip -9 ${MANDIR}/man1/ftpcount.1
+! 	gzip -9 ${MANDIR}/man1/ftpwho.1
+! 	gzip -9 ${MANDIR}/man8/ftpshut.8
+! 	gzip -9 ${MANDIR}/man5/ftpaccess.5
+! 	gzip -9 ${MANDIR}/man5/ftphosts.5
+! 	gzip -9 ${MANDIR}/man5/ftpconversions.5
+! 	gzip -9 ${MANDIR}/man5/xferlog.5
