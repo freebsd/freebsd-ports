@@ -18,6 +18,7 @@ MAINTAINER=	dominic_marks@btinternet.com
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
+ONLY_FOR_ARCHS=	i386
 BINUTILS_VER=	2.11.2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
