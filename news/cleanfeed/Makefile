@@ -14,8 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Spam filter for Usenet news servers
 
-RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn \
-		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn
 
 NO_BUILD=	yes
 BINOWN=		news
@@ -24,6 +23,12 @@ SHAREOWN=	news
 SHAREGRP=	news
 USE_REINPLACE=	yes
 INSTALL+=	-b
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/news,${PREFIX}/news,g' ${WRKSRC}/cleanfeed*
@@ -34,4 +39,4 @@ do-install:
 .endfor
 	@cd ${LOCALBASE}/news/bin/filter; ${LN} -f cleanfeed filter_innd.pl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
