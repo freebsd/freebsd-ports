@@ -1,0 +1,7 @@
+JavaScriptCore is part of Gtk-Wecore.
+
+JavaScriptCore is javascript interpreter that OSB uses. It is based on
+Apple's WebCore JavaScriptCore code, which is in turn based on KDE kjs
+code.
+
+WWW:	http://gtk-webcore.sf.net/

@@ -156,6 +156,7 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += open-cobol
+    SUBDIR += osb-jscore
     SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
