@@ -1,0 +1,48 @@
+--- tmac.orig/tmac.doc	Fri May 21 13:50:47 1999
++++ tmac/tmac.doc	Thu Sep 23 07:36:16 1999
+@@ -30,6 +30,7 @@
+ .\" SUCH DAMAGE.
+ .\"
+ .\"     @(#)doc	5.8 (Berkeley) 8/5/91
++.\" %FreeBSD: src/contrib/groff/tmac/tmac.doc,v 1.4 1999/09/22 22:36:16 phantom Exp %
+ .\" Modified by jjc@jclark.com as follows: the doc-* files are assumed to be
+ .\" installed as mdoc/doc-* rather than tmac.doc-* (the filename
+ .\" `tmac.doc-common' would be too long); when using groff, the doc-* files
+@@ -49,6 +50,9 @@
+ .de sO
+ .mso mdoc/\\$1
+ ..
++.de sOl
++.sO locale/\\$1
++..
+ .if t \{\
+ .       sO doc-ditroff
+ .\}
+@@ -57,6 +61,7 @@
+ .\}
+ .sO doc-common
+ .sO doc-syms
++.sOl locale-list
+ .\" NS Db macro - start/stop DEBUG MODE
+ .\" NS Db register DEBUG MODE
+ .\" NS iN register DEBUG MODE (inline if 1, to stderr if 0 (default))
+@@ -1536,7 +1541,7 @@
+ .	if "\\$1"-literal" \&\\*(lI\c
+ .	if "\\$1"-symbolic" \&\\*(sY\c
+ .\}
+-.el .tm Usage .Bf [Em | emphasis | Li | literal | Sy | symbolic] (#\\n(.c)
++.el .tm Usage .Bf [Em | -emphasis | Li | -literal | Sy | -symbolic] (#\\n(.c)
+ ..
+ .de Ef
+ .ds mN Ef
+@@ -3417,7 +3422,9 @@
+ .\" .	nr fV \\n(.$-1
+ .	if "\\$1"-std" \{\
+ .	nr cH \\*(cH
+-.	if (\\n(cH<2):(\\n(cH>3) .tm Usage: .Rv -std sections 2 and 3 only
++.\" This macro also allowed for 7 section because mdoc.samples.7 will show
++.\" actual information (not hardcoded)
++.	if !((\\n(cH=2):(\\n(cH=3):(\\n(cH=7)) .tm Usage: .Rv -std sections 2 and 3 only
+ .		br
+ \&The
+ .Fn \\$2

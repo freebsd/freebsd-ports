@@ -1,0 +1,15 @@
+--- aclocal.m4.orig	Tue Dec 14 22:18:56 1999
++++ aclocal.m4	Wed Apr 26 19:36:35 2000
+@@ -424,7 +424,11 @@
+ 	g=g
+ else
+ 	AC_MSG_RESULT(no)
+-	g=
++	if test "x$program_prefix" != xNONE; then
++		g="$program_prefix"
++	else
++		g=
++	fi
+ fi
+ AC_SUBST(g)
+ ])dnl

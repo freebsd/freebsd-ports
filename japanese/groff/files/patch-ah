@@ -1,0 +1,11 @@
+--- Makefile.in.~1~	Mon May  1 10:10:40 2000
++++ Makefile.in	Mon May  1 10:15:10 2000
+@@ -81,7 +81,7 @@
+ fontdir=$(datasubdir)/font
+ 
+ # fontpath says where to look for dev*/*.
+-fontpath=.:$(fontdir):/usr/lib/font
++fontpath=.:$(fontdir):/usr/share/groff_font
+ 
+ # tmacdir says where to install macros.
+ tmacdir=$(datasubdir)/tmac
