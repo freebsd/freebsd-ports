@@ -3,7 +3,7 @@
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/26 00:24:18 jseger Exp $
 #
 
 DISTNAME=	bind-8.1.1
@@ -40,5 +40,5 @@ post-install:
 #	for i in ${MAN8}; do \
 #		${INSTALL_MAN} ${WRKDIR}/doc/man/$$i ${PREFIX}/man/man8/; \
 #	done
-	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} clean all ${INSTALL_TARGET})
 .include <bsd.port.mk>
