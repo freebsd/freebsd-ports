@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	listar
-PORTVERSION=	0.129a
+PORTVERSION=	1.0.0.b1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.listar.org/pub/listar/
+MASTER_SITES=	ftp://ftp.listar.org/pub/listar/snapshots/tar/
+DISTFILES=	listar-1.0.0-snap20010225${EXTRACT_SUFX}
 
 MAINTAINER=	plosher@wwiv.com
 
 USE_GMAKE=	yes
 
 NO_PACKAGE=	"Requires listar uid"
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=		${WRKDIR}/listar-1.0.0/src
 
 pre-patch:
 
