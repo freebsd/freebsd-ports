@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Dec 24 01:26:33 1998
++++ Makefile.in	Thu Dec 24 01:26:47 1998
+@@ -93,7 +93,7 @@
+ 	ghttp.h \
+ 	ghttp_constants.h
+ 
+-libghttp_la_LDFLAGS = -version-info 99:0:99
++libghttp_la_LDFLAGS = -version-info 0:1:0
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 

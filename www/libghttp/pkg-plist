@@ -1,0 +1,8 @@
+include/ghttp.h
+include/ghttp_constants.h
+lib/libghttp.a
+lib/libghttp.la
+lib/libghttp.so
+lib/libghttp.so.0.1
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
