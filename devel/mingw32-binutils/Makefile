@@ -30,8 +30,6 @@ PATCHVERSION=	90.20040222.1
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 
-BROKEN=		"Incorrect pkg-plist"
-
 #USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
@@ -51,12 +49,22 @@ MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
 	${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1    \
 	${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1
 
+INFO=		as bfd binutils ld configure standards
+INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
+
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip dlltool dllwrap windres
 
 post-install:
+# Register these too
+	install-info ${PREFIX}/${INFO_PATH}/configure.info ${PREFIX}/${INFO_PATH}/dir
+	install-info ${PREFIX}/${INFO_PATH}/standards.info ${PREFIX}/${INFO_PATH}/dir
+# Add this after all quto-generated info etries
+	echo "@unexec rm %D/${PKGNAMEPREFIX:S/-$//}/info/dir" >> ${TMPPLIST}
+	echo "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//}/info 2> /dev/null || true" >> ${TMPPLIST}
+	echo "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 .for F in ${BINARIES}
 	@${STRIP_CMD} ${PREFIX}/bin/${PKGNAMEPREFIX}$F
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
