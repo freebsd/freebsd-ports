@@ -1,0 +1,4 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/odbc/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/odbc/odbcsql.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/odbc/odbcsql.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/odbc
