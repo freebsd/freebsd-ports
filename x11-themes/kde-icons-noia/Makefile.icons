@@ -27,12 +27,18 @@ RESTRICTED?=    It may contain iconic, visual, graphical or other\
 NO_PACKAGE?=	${RESTRICTED}
 .endif
 
+INDEX_FILES=	index.desktop index.theme
+
 post-patch:
 # correctly inherits crystal per default
-	@${REINPLACE_CMD} -E \
+.for file in ${INDEX_FILES}
+	@if [ -f "${WRKSRC}/${file}" ]; then \
+		${REINPLACE_CMD} -E \
 		-e 's|||' \
 		-e 's|^Inherits.*$$|Inherits=crystalsvg|' \
-		${WRKSRC}/index.desktop
+		"${WRKSRC}/${file}" ; \
+		fi
+.endfor
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/icons/${PORT_SHAREDIR}
