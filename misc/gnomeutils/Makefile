@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeutils
-PORTVERSION=	1.4.0.1
+PORTVERSION=	1.4.0.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-utils
@@ -25,7 +25,11 @@ CONFIGURE_ARGS=	--with-messages=/var/log/messages
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=	gnome-exe-handler.1
+MAN1=	gcalc.1 gcharmap.1 gcolorsel.1 gdialog.1 gdict.1 gdiskfree.1 \
+	gfontsel.1 gless.1 gnome-exe-handler.1 gsearchtool.1 guname.1 gw.1 \
+	logview.1 meat-grinder.1 splac.1 splash.1 stripchart-applet.1 \
+	stripchart.1
+MAN8=	gshutdown.8
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
