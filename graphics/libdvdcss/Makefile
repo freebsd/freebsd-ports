@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -17,9 +17,10 @@ MAINTAINER=	lioux@FreeBSD.org
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/ioctl.c
+	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/ioctl.c
 
 .include <bsd.port.mk>
