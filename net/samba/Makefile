@@ -13,6 +13,15 @@ MASTER_SITES=	http://us3.samba.org/samba/ftp/%SUBDIR%/ \
 		http://us5.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
 
+.if defined(WITH_JAIL)
+# This patch was originally created by Gerhard Sittig <Gerhard.Sittig@gmx.net>
+# See PR ports/22316
+# Reworked/updated and portsified by anders@FreeBSD.org, 2003-11-08
+PATCH_SITES+=	ftp://totem.fix.no/pub/mirrors/misc/:smbjail \
+		ftp://ftp.nuug.no/pub/anders/distfiles/:smbjail
+PATCHFILES=	samba-2.2.8a-freebsd-jail-patch-20031108.gz:smbjail
+.endif
+
 MAINTAINER=	dwcjr@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
