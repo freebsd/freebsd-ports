@@ -12,7 +12,7 @@
     SUBDIR += blt
     SUBDIR += bwidget
     SUBDIR += easygtk
-    SUBDIR += eel2
+    SUBDIR += eel
     SUBDIR += efltk
     SUBDIR += erlgtk
     SUBDIR += fl_editor

@@ -991,7 +991,6 @@ x11-toolkits/libgnomeprintui20||2004-03-23|removed obsolete port
 textproc/whitespace.el||2004-03-24|removed obsolete port
 editors/openoffice-1.1-sl-SL|editors/openoffice-1.1-sl_SI|2004-03-25|correct ISO code
 www/webcpp|textproc/webcpp|2004-03-25|moved to textproc category
-x11-toolkits/eel||2004-03-25|removed obsolete port
 editors/xemacs21|editors/xemacs|2004-03-27|removed old version of xemacs 21.x
 mail/mew-xemacs21|mail/mew|2004-03-28|removed old version of xemacs 21.x
 mail/mew2-xemacs21|mail/mew2|2004-03-28|removed old version of xemacs 21.x
@@ -1379,3 +1378,4 @@ www/turck-mmcache|www/eaccelerator|2005-01-19|project changed name
 sysutils/task|sysutils/sleuthkit|2005-01-19|broken, unmaintained, better alternative exists
 graphics/gthumb2|graphics/gthumb|2005-01-23|moved to non-versioned directory
 devel/bugbuddy2|devel/bugbuddy|2005-01-24|moved to non-versioned directory
+x11-toolkits/eel2|x11-toolkits/eel|2005-01-25|moved to non-versioned directory
