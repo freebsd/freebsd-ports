@@ -24,7 +24,7 @@ LANGDIST?=	bg_BG.zip ca_ES.zip hr_HR.zip cs_CZ.zip \
 		en_US.zip fr_FR.zip de_DE.zip de_CH.zip \
 		hu_HU.zip it_IT.zip pl_PL.zip pt_PT.zip \
 		pt_BR.zip es_ES.zip sk_SK.zip sv_SE.zip \
-		el_GR-enhanced.zip
+		el_GR-enhanced.zip ru_RU_io.zip
 
 HYPHDIST?=	hyph_cs.zip hyph_da.zip hyph_de_DE.zip \
 		hyph_en.zip hyph_en_CA.zip hyph_en_GB.zip \
