@@ -1,25 +1,26 @@
 # New ports collection makefile for:	blt
-# Version required:	2.1
-# Date created:		3 August 1996
-# Whom:			lukin <lukin@okbmei.msk.su>
+# Version required:	2.4c
+# Date created:		9 July 1998
+# Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.15 1997/11/22 01:11:34 asami Exp $
+# $Id: Makefile,v 1.16 1997/11/22 11:22:00 asami Exp $
 #
 
-DISTNAME=	blt-2.1
-CATEGORIES=	x11 tk41
-MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/devel/
-DISTFILES=	BLT2.1.tar.gz
+DISTNAME=	BLT2.4c
+PKGNAME=	blt-2.4c
+CATEGORIES=	x11 tk80
+MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	kjc@csl.sony.co.jp
 
-LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
-WRKSRC=		${WRKDIR}/blt2.1
+WRKSRC=		${WRKDIR}/blt2.4c
 GNU_CONFIGURE=	yes
 MANN=		BLT.n barchart.n bgexec.n bitmap.n bltdebug.n busy.n \
-		dragdrop.n graph.n htext.n spline.n table.n tile.n \
-		vector.n watch.n winop.n
+		dragdrop.n eps.n graph.n htext.n hierbox.n spline.n \
+		stripchart.n table.n tabset.n tile.n vector.n watch.n winop.n \
+		beep.n cutbuffer.n
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib

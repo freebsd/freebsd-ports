@@ -1,4 +1,4 @@
-This is version 2.1 of the BLT library.  BLT is an extension to the Tk
+This is version 2.4c of the BLT library.  BLT is an extension to the Tk
 toolkit, adding new widgets, geometry managers, and miscellaneous
 commands.  It does not require any patching of the Tcl or Tk source
 files.
