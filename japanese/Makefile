@@ -244,6 +244,7 @@
     SUBDIR += vfxdvi600
     SUBDIR += vfxdvik
     SUBDIR += w3
+    SUBDIR += w3m
     SUBDIR += weblint97
     SUBDIR += wine
     SUBDIR += word
