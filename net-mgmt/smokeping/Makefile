@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.28
+PORTVERSION=	1.30
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -94,8 +94,6 @@ post-extract:
 	@${RM} ${WRKSRC}/lib/BER.pm
 	@${RM} ${WRKSRC}/lib/SNMP_*.pm
 	@${RM} ${WRKSRC}/lib/probes/patch
-	@${RM} ${WRKSRC}/lib/Smokeping.pm.orig
-	@${RM} ${WRKSRC}/lib/Smokeping.pm.rej
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -delete
