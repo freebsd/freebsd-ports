@@ -45,7 +45,6 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.a/a/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	ale@FreeBSD.org
 COMMENT?=	PHP Scripting Language (Apache Module and CLI)
