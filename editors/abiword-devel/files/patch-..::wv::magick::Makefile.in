@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ../wv/magick/Makefile.in	2001/08/08 11:44:02	1.1
++++ ../wv/magick/Makefile.in	2001/08/08 11:44:13
+@@ -40,7 +40,7 @@
+ all: $(MAGICKOBJECTS)
+ 
+ %.$(OBJEXT): $(srcdir)/%.c 
+-	$(CC) $(CFLAGS) -c $(srcdir)/$*.c 
++	$(CC) @CPPFLAGS@ $(CFLAGS) -c $(srcdir)/$*.c 
+ 
+ clean:
+ 	rm -rf *.$(OBJEXT) core a.$(OBJEXT)ut *.a

@@ -1,5 +1,5 @@
---- wp/Makefile	Fri Jul 21 15:06:38 2000
-+++ wp/Makefile.new	Wed Oct 11 21:03:24 2000
+--- src/wp/Makefile	Fri Jul 21 15:06:38 2000
++++ src/wp/Makefile.new	Wed Oct 11 21:03:24 2000
 @@ -44,10 +44,28 @@
  	@$(subst xxxx,$(CANON_AppDir),$(VERIFY_DIRECTORY))
  	@$(subst xxxx,$(CANON_AppDir)/strings,$(VERIFY_DIRECTORY))

@@ -1,9 +1,12 @@
---- af/util/xp/ut_png.cpp	Fri Feb 19 12:20:25 1999
-+++ af/util/xp/ut_png.cpp.new	Sat Oct 30 19:10:59 1999
-@@ -17,7 +17,7 @@
-  * 02111-1307, USA.
-  */
+
+$FreeBSD$
+
+--- src/af/util/xp/ut_png.cpp.orig	Wed Jun 13 23:39:53 2001
++++ src/af/util/xp/ut_png.cpp	Wed Aug  8 13:22:37 2001
+@@ -19,7 +19,7 @@
  
+ /* Required to get proper namespace inclusion from PNG code */
+ #include <string.h>
 -#include "png.h"
 +#include <png.h>
  

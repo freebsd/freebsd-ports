@@ -1,5 +1,5 @@
---- config/require/unix/Makefile.orig	Sun Jan  7 01:24:20 2001
-+++ config/require/unix/Makefile	Sun Jan  7 01:24:39 2001
+--- src/config/require/unix/Makefile.orig	Sun Jan  7 01:24:20 2001
++++ src/config/require/unix/Makefile	Sun Jan  7 01:24:39 2001
 @@ -22,7 +22,7 @@
  
  include $(ABI_ROOT)/src/config/abi_defs.mk
