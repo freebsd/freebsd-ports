@@ -363,6 +363,7 @@
     SUBDIR += upsd
     SUBDIR += upsmon
     SUBDIR += uptimed
+    SUBDIR += uschedule
     SUBDIR += userinfo
     SUBDIR += userlist
     SUBDIR += usermin

@@ -1,0 +1,5 @@
+uschedule is not cron and uschedule is not at - it does offer similar
+functionality but is not intended to be a drop-in replacement. It works
+differently. It's designed to be different.
+
+WWW:	http://www.ohse.de/uwe/uschedule.html
