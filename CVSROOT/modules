@@ -2110,7 +2110,6 @@ gnomecontrolcenter	ports/sysutils/gnomecontrolcenter
 gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
 gnomecrash	ports/devel/gnomecrash
 gnomedb		ports/databases/gnomedb
-gnomedebug	ports/devel/gnomedebug
 gnomedesktop	ports/x11/gnomedesktop
 gnomefind	ports/sysutils/gnomefind
 gnomegames2	ports/games/gnomegames2
