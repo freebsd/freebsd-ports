@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Net-Server
-PORTVERSION=	0.85
+PORTVERSION=	0.86
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.seamons.com/net_server/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jesse@gallup.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configurable base class for writing internet servers in Perl
 
 PERL_CONFIGURE=	yes
@@ -34,4 +34,11 @@ MAN3=		Net::Server.3 \
 		Net::Server::SIG.3\
 		Net::Server::Single.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
+.endif
+
+.include <bsd.port.post.mk>
