@@ -1,0 +1,28 @@
+--- Makefile.sun.orig	Fri Oct  8 13:00:00 1993
++++ Makefile.sun	Wed May  8 17:05:41 2002
+@@ -1,5 +1,9 @@
+ OBJS     = btoa.o atob.o repair.o
+ 
++DESTDIR  ?= /usr/local
++
++all:	btoa
++
+ btoa:	$(OBJS)
+ 	cc -O $(OBJS) -o btoa
+ 
+@@ -11,3 +15,15 @@
+ 
+ repair.o: repair.c btoa.h
+ 	cc -c -O repair.c
++
++install: btoa btoa.1
++	-@mkdir -p $(DESTDIR)/bin
++	install -c -s -m 755 btoa $(DESTDIR)/bin/btoa
++	rm -f $(DESTDIR)/bin/atob
++	ln $(DESTDIR)/bin/btoa $(DESTDIR)/bin/atob
++	-@mkdir -p $(DESTDIR)/man/man1
++	install -c -m 644 btoa.1 $(DESTDIR)/man/man1/btoa.1
++	strip $(DESTDIR)/bin/btoa
++
++clean:
++	rm -f btoa $(OBJS)
