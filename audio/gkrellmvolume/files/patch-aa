@@ -1,7 +1,7 @@
 Index: Makefile
 diff -u Makefile.orig Makefile
 --- Makefile.orig	Thu Jun 15 21:02:13 2000
-+++ Makefile	Thu Jun 22 22:16:36 2000
++++ Makefile	Tue Jun 27 00:34:00 2000
 @@ -1,15 +1,15 @@
  # Makefile for  GKrellM volume plugin
  
@@ -36,7 +36,7 @@ diff -u Makefile.orig Makefile
  INSTALL = install -c
  INSTALL_PROGRAM = $(INSTALL) -s
  
-@@ -34,7 +32,7 @@
+@@ -34,12 +32,13 @@
  	make GTK_CONFIG=gtk12-config SYSLIB= all
  
  volume.so: $(OBJS)
@@ -45,3 +45,9 @@ diff -u Makefile.orig Makefile
  
  clean:
  	rm -f *.o core *.so* *.bak *~
+ 
+ install: 
++	mkdir -p $(PLUGIN_DIR)
+ 	$(INSTALL_PROGRAM) volume.so $(PLUGIN_DIR)
+ 
+ volume.c.o: volume.c
