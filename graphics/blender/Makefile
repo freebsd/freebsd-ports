@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blender
-PORTVERSION=	2.11
+PORTVERSION=	2.14
 CATEGORIES=	graphics games
 MASTER_SITES=	ftp://ftp.blender.nl/pub/
 DISTNAME=	blender${PORTVERSION}-freebsd-4.2-i386
@@ -19,13 +19,6 @@ NO_CDROM=	"Commercial distribution prohibited"
 NO_BUILD=	YES
 ONLY_FOR_ARCHS=	i386
 USE_MESA=	YES
-
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you encounter versioning problems with GL,"
-	@${ECHO_MSG} "you can get a statically linked version on"
-	@${ECHO_MSG} "${MASTER_SITES}"
-	@${ECHO_MSG} ""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blender ${PREFIX}/bin
