@@ -1,5 +1,27 @@
-bin/nvi-devel
+bin/ex
+bin/vi
+bin/view
 lib/libvi.a
 lib/libvi.la
 lib/libvi.so
 lib/libvi.so.0
+share/vi/catalog/german
+share/vi/catalog/spanish
+share/vi/catalog/ru_SU.KOI8-R
+share/vi/catalog/swedish
+share/vi/catalog/french
+share/vi/catalog/english
+share/vi/catalog/dutch
+@dirrm share/vi/catalog
+share/vi/perl/wc.pl
+share/vi/perl/tk.pl
+share/vi/perl/make.pl
+share/vi/perl/forall.pl
+@dirrm share/vi/perl
+share/vi/tcl/wc.tcl
+share/vi/tcl/mailprocs.tcl
+share/vi/tcl/gnats.tcl
+share/vi/tcl/errors.tcl
+share/vi/recover
+@dirrm share/vi/tcl
+@dirrm share/vi
