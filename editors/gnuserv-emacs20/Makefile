@@ -5,44 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	gnuserv
-PORTVERSION=	3.12.4
-CATEGORIES=	editors
-MASTER_SITES=	http://meltin.net/hacks/emacs/src/
-PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+# This is a slave port.
+PORTCLASS=	slave
 
-MAINTAINER=	ports@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../../editors/gnuserv
 
-HAS_CONFIGURE=	yes
+# emacs port setup
+EMACS_PORT_NAME=	emacs20
 
-EMACS_PORT_NAME?=emacs20
-
-CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-PORTDOCDIR=	share/doc/gnuserv-${EMACS_PORT_NAME}
-MAN1=		gnuserv.1
-MLINKS=		gnuserv.1 gnuattach.1 \
-		gnuserv.1 gnuclient.1 \
-		gnuserv.1 gnudoit.1
-DOCS=		COPYING ChangeLog INSTALL README README.orig
-SOURCES=	devices.el gnuserv-compat.el gnuserv.el
-ELCS=		${SOURCES:S/.el/.elc/g}
-
-PLIST_SUB=	EMACS_PORT_NAME=${EMACS_PORT_NAME} \
-		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
-
-lispdir=	${PREFIX}/${EMACS_SITE_LISPDIR}/gnuserv
-post-install:
-	${MKDIR} ${lispdir};
-.for i in ${SOURCES} ${ELCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${lispdir}
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${PORTDOCDIR}
-.for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${PORTDOCDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.mk>
+.include <${MASTERDIR}/Makefile>

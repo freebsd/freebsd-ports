@@ -1,4 +1,4 @@
-# New ports collection makefile for:   gnuserv-emacs20
+# New ports collection makefile for:   gnuserv
 # Date created:        10 February 2001
 # Whom:                ilya
 #
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=	yes
 
-EMACS_PORT_NAME?=emacs20
+EMACS_PORT_NAME?=emacs21
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
