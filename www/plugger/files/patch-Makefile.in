@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Jul  7 03:13:00 2004
-+++ Makefile.in	Wed Jul  7 03:21:47 2004
+--- Makefile.in.orig	Sun May 16 01:02:46 2004
++++ Makefile.in	Fri Sep 10 15:03:17 2004
 @@ -30,7 +30,7 @@
  CC=@CC@
  LD=@LD@
@@ -27,3 +27,12 @@
  all: plugger.so plugger-$(VERSION) plugger-controller
  
  
+@@ -132,7 +132,7 @@
+ plugger-helper.o: plugger.h
+ 
+ plugger.o: plugger.c plugger.h
+-	$(CC) -c $(SHARED_CFLAGS) -o plugger.o plugger.c
++	$(CC) -c $(SHARED_CFLAGS) -DSYSCONFDIR=\"$(prefix)/etc\" -o plugger.o plugger.c
+ 
+ plugger-common.o: plugger-common.c plugger.h
+ 	$(CC) -c $(SHARED_CFLAGS) -o plugger-common.o plugger-common.c
