@@ -1,6 +1,6 @@
 # New ports collection makefile for:	vlc
 # Date created:		3rd August 2001
-# Whom:			Brian Somers <brian@Awfulhak.org>
+# Whom:			Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		ftp://ftp.Awfulhak.org/pub/vlc/ \
 		http://people.FreeBSD.org/~brian/vlc/
 
-MAINTAINER=	brian@Awfulhak.org
+MAINTAINER=	brian@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 

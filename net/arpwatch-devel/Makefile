@@ -1,6 +1,6 @@
 # New ports collection makefile for:    arpwatch
 # Date created:         March 24 1997
-# Whom:                 Brian Somers <brian@Awfulhak.org>
+# Whom:                 Brian Somers <brian@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
 DISTNAME=	arpwatch-2.1a11
 
-MAINTAINER=	brian@Awfulhak.org
+MAINTAINER=	brian@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 HAS_CONFIGURE=	yes
