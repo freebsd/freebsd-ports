@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Google/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Cache.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Response.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Search.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Services/GoogleSearch.wsdl
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Spelling.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Services
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Google
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Google
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
