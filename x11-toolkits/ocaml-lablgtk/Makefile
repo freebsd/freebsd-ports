@@ -22,8 +22,8 @@ PLIST_SUB+=	GL="@comment "
 SFXGL=		-nogl
 .else
 PLIST_SUB+=	GL=""
-BUILD_DEPENDS+=	lablgl:${PORTSDIR}/graphics/lablgl
-RUN_DEPENDS+=	lablgl:${PORTSDIR}/graphics/lablgl
+BUILD_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
+RUN_DEPENDS+=	lablgl:${PORTSDIR}/graphics/ocaml-lablgl
 LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 CONFIGURE_ENV+=	USE_GL=1
 .endif
