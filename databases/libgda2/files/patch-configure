@@ -1,62 +1,56 @@
---- configure.orig	Wed Jun 13 18:45:10 2001
-+++ configure	Tue Jun 19 00:39:40 2001
-@@ -5389,4 +5389,19 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Jul 26 15:51:10 2001
++++ configure	Thu Jul 26 16:09:53 2001
+@@ -6238,7 +6240,7 @@
  
--
--
-+# Actually configure libtool.  ac_aux_dir is where install-sh is found.
-+CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
-+LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
-+LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
-+DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
-+${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
-+$libtool_flags $ac_aux_dir/ltmain.sh $lt_target \
-+|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
-+  
-+# Reload cache, that may have been modified by ltconfig
-+if test -r "$cache_file"; then
-+  echo "loading cache $cache_file"
-+  . $cache_file
-+else
-+  echo "creating cache $cache_file"
-+  > $cache_file
-+fi
  
-@@ -5394,3 +5409,3 @@
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
  
-@@ -5399,2 +5414,7 @@
- 
-+# Redirect the config.log output again, so that the ltconfig log is not
-+# clobbered by the next message.
-+exec 5>>./config.log
-+
-+
- # Prevent multiple expansion
-@@ -7911,3 +7931,3 @@
+-if test $perl_val == true; then
++if test $perl_val = true; then
+   WITH_PERL_TRUE=
+   WITH_PERL_FALSE='#'
+ else
+@@ -7909,7 +7911,7 @@
+ #line 7910 "configure"
+ #include "confdefs.h"
  #include <stdlib.h>
 -#include <iconv.h>
 +#include <giconv.h>
  int main() {
-@@ -7928,3 +7948,3 @@
+ iconv_t cd = iconv_open("","");
+        iconv(cd,NULL,NULL,NULL,NULL);
+@@ -7926,12 +7928,12 @@
+ rm -f conftest*
+     if test "$am_cv_func_iconv" != yes; then
        am_save_LIBS="$LIBS"
 -      LIBS="$LIBS -liconv"
 +      LIBS="$LIBS -lgiconv"
        cat > conftest.$ac_ext <<EOF
-@@ -7933,3 +7953,3 @@
+ #line 7932 "configure"
+ #include "confdefs.h"
  #include <stdlib.h>
 -#include <iconv.h>
 +#include <giconv.h>
  int main() {
-@@ -7971,3 +7991,3 @@
+ iconv_t cd = iconv_open("","");
+          iconv(cd,NULL,NULL,NULL,NULL);
+@@ -7969,7 +7971,7 @@
+ #include "confdefs.h"
+ 
  #include <stdlib.h>
 -#include <iconv.h>
 +#include <giconv.h>
  extern
-@@ -8009,3 +8029,3 @@
+ #ifdef __cplusplus
+ "C"
+@@ -8007,7 +8009,7 @@
+   fi
+   LIBICONV=
    if test "$am_cv_lib_iconv" = yes; then
 -    LIBICONV="-liconv"
 +    LIBICONV="-lgiconv"
    fi
+   
+ 

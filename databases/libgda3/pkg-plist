@@ -45,6 +45,16 @@ lib/libgda-common.so.0
 lib/libgda-server.a
 lib/libgda-server.so
 lib/libgda-server.so.0
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/GDA/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/GDA/Common.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/Client.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/Client.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/Common.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/Common.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common/autosplit.ix
 share/gda/templates/gda-srv-command.c.tmpl
 share/gda/templates/gda-srv-connection.c.tmpl
 share/gda/templates/gda-srv-recordset.c.tmpl
@@ -158,8 +168,8 @@ share/gnome/idl/GDA_Command.idl
 share/gnome/idl/GDA_Connection.idl
 share/gnome/idl/GDA_Error.idl
 share/gnome/idl/GDA_Field.idl
-share/gnome/idl/GDA_Recordset.idl
 share/gnome/idl/GDA_Parameter.idl
+share/gnome/idl/GDA_Recordset.idl
 share/gnome/oaf/GNOME_GDA_Provider_Default.oaf
 share/locale/ca/LC_MESSAGES/libgda.mo
 share/locale/da/LC_MESSAGES/libgda.mo
@@ -191,5 +201,11 @@ share/locale/uk/LC_MESSAGES/libgda.mo
 @dirrm share/gnome/help/libgda
 @dirrm share/gda/templates
 @dirrm share/gda
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Common
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA/Client
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome/GDA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gnome
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome/GDA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gnome
 @dirrm include/gda/gda++
 @dirrm include/gda
