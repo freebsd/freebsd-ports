@@ -1,4 +1,4 @@
-# New ports collection makefile for:	oonsoo 
+# New ports collection makefile for:	oonsoo
 # Date created:		23rd June, 1997
 # Whom:			Joel Sutton <jsutton@bbcon.com.au>
 #

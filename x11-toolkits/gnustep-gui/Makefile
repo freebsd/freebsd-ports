@@ -44,7 +44,7 @@ PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
 SYSLIBDIR=	${PREFIX}/System/Libraries
 
 post-extract:
-.for file in config.guess config.sub install-sh 
+.for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
 

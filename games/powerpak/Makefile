@@ -36,7 +36,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/Makefile.UNIX ${PREFIX}/share/examples/PowerPak/PowerDraw/Makefile
 	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.c ${PREFIX}/share/examples/PowerPak/PowerDraw
 	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.ttf ${PREFIX}/share/examples/PowerPak/PowerDraw
-	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.pcx ${PREFIX}/share/examples/PowerPak/PowerDraw 
+	@ ${INSTALL_DATA} ${WRKSRC}/PowerDraw/examples/*.pcx ${PREFIX}/share/examples/PowerPak/PowerDraw
 	@ ${MKDIR} ${PREFIX}/share/examples/PowerPak/PowerInput
 	@ ${INSTALL_DATA} ${WRKSRC}/PowerInput/examples/Makefile.UNIX ${PREFIX}/share/examples/PowerPak/PowerInput/Makefile
 .for file in ex1.c ex2.c ex3.c ex4.c ex5.c sprite.pcx

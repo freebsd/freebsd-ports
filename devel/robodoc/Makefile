@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes	
+GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
 MAN1=		robodoc.1

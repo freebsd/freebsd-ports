@@ -16,7 +16,7 @@ MAINTAINER=	ports@freebsd.org
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 
-do-install:	
+do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin
 		@ ${MKDIR} ${PREFIX}/share/qcc/v101qc
 		${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/qcc

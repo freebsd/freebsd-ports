@@ -9,7 +9,7 @@ PORTNAME=	gphoto
 PORTVERSION=	0.4.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gphoto.net/dist/
-      
+
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick

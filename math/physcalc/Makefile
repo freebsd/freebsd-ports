@@ -21,7 +21,7 @@ USE_ZIP=	yes
 
 DEFS=		-DSHAREDIR="\"${PREFIX}/share/physcalc/\""
 SRCS=		physconv.c physmain.c physmlib.c physnode.c physoper.c \
-		physsolv.c 
+		physsolv.c
 
 pre-build:
 	${PERL} -pi -e "s@void main@int main@g" ${WRKSRC}/physmain.c

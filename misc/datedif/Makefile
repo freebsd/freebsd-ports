@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-0.9.1-4
 
 MAINTAINER=	ports@FreeBSD.org
 
-ALL_TARGET=	
+ALL_TARGET=
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/datedif ${PREFIX}/bin

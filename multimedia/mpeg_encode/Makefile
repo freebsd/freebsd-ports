@@ -1,5 +1,5 @@
 # New ports collection makefile for:    mpeg_encode
-# Date created:         
+# Date created:
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$

@@ -1,5 +1,5 @@
 # New ports collection makefile for:	STk
-# Date created:		17 Sep 96 
+# Date created:		17 Sep 96
 # Whom:			jmacd@cs.berkeley.edu
 #
 # $FreeBSD$
