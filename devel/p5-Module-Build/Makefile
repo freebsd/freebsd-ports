@@ -6,20 +6,39 @@
 #
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.19
+PORTVERSION=	0.19.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	Module
+MASTER_SITE_SUBDIR=	Module/KWILLIAMS
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/_\1/}
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Build and install Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
+		${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
+
+MAN3=		Module::Build.3 \
+		Module::Build::Base.3 \
+		Module::Build::Compat.3 \
+		Module::Build::Cookbook.3 \
+		Module::Build::PPMMaker.3 \
+		Module::Build::Platform::Amiga.3 \
+		Module::Build::Platform::Default.3 \
+		Module::Build::Platform::EBCDIC.3 \
+		Module::Build::Platform::MPEiX.3 \
+		Module::Build::Platform::MacOS.3 \
+		Module::Build::Platform::RiscOS.3 \
+		Module::Build::Platform::Unix.3 \
+		Module::Build::Platform::VMS.3 \
+		Module::Build::Platform::VOS.3 \
+		Module::Build::Platform::Windows.3 \
+		Module::Build::Platform::darwin.3
 
 .include <bsd.port.pre.mk>
 
@@ -30,4 +49,5 @@ BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-P
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
 
+.include "inc.build.mk"
 .include <bsd.port.post.mk>
