@@ -70,7 +70,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.21.spec
+share/mysql/mysql-3.22.22.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys
@@ -100,6 +100,7 @@ share/mysql/swedish/errmsg.txt
 @dirrm share/mysql/hungarian
 @dirrm share/mysql/italian
 @dirrm share/mysql/japanese
+@dirrm share/mysql/korean
 @dirrm share/mysql/mysql
 @dirrm share/mysql/norwegian
 @dirrm share/mysql/norwegian-ny
