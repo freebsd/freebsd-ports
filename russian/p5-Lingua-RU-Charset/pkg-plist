@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/RU/Charset.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/RU/Charset/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/RU/Charset
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua/RU 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/RU 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
