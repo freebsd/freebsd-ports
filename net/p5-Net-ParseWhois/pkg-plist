@@ -1,0 +1,22 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/BulkRegister.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/CoreNic.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/DomainBank.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/DomainDiscover.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/Dotster.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/Easyspace.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/INameWW.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/Netsol.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/OpenSRS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/Register.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/Registrars.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar/Unknown.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/ParseWhois/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/ParseWhois
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain/Registrar
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois/Domain
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/ParseWhois
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true

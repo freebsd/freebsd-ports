@@ -1,0 +1,6 @@
+Based on Net::Whois, Net::ParseWhois was written with the intent to provide a
+replacement for the (broken) Net::Whois module. It is otherwise different to
+Net::Whois in that it a) is easily extendable b) has a work-around approach
+rather than wanting/expecting/wishing registrars to standardize their output.
+
+WWW: http://dajoba.com/projects/netparsewhois/
