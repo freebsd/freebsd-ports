@@ -1,0 +1,20 @@
+--- maildrop/configure.orig	Thu Oct 30 03:25:02 2003
++++ maildrop/configure	Mon Dec 22 20:03:49 2003
+@@ -7409,15 +7409,8 @@
+ _ACEOF
+ 
+ 	use_mysql=1
+-	LIBMYSQL="`mysql_config --libs`"
+-
+-	if test "$?" != 0
+-	then
+-		{ { echo "$as_me:$LINENO: error: Unable to run mysql_config" >&5
+-echo "$as_me: error: Unable to run mysql_config" >&2;}
+-   { (exit 1); exit 1; }; }
+-	fi
+-	CPPFLAGS="`mysql_config --cflags` $CPPFLAGS"
++	LIBMYSQL="-lmysqlclient"
++	CPPFLAGS="$CPPFLAGS"
+         ;;
+ *)
+   	use_mysql=0
