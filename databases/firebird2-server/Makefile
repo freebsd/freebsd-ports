@@ -53,7 +53,7 @@ pre-everything::
 	@sleep 10
 .endif
 
-patch-libtool:
+patch-autotools:
 	@${DO_NADA}
 
 run-autotools:
