@@ -20,6 +20,7 @@ MAN5=		indexer.conf.5
 
 INSTALLS_SHLIB= yes
 USE_GMAKE=	yes
+USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-phrase \
