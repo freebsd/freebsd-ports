@@ -1,6 +1,8 @@
 share/texmf/tex/latex/preview/prauctex.cfg
 share/texmf/tex/latex/preview/prauctex.def
+share/texmf/tex/latex/preview/prcounters.def
 share/texmf/tex/latex/preview/preview.sty
+share/texmf/tex/latex/preview/prfootnotes.def
 share/texmf/tex/latex/preview/prlyx.def
 share/texmf/tex/latex/preview/prshowbox.def
 share/texmf/tex/latex/preview/prshowlabels.def
@@ -19,6 +21,7 @@ share/texmf/doc/latex/styles/preview.dvi
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preverr.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.xbm
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/preview.xpm
+%%EMACS_VERSION_SITE_LISPDIR%%/preview/preview-cap-up.xpm
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xbm
 %%EMACS_VERSION_SITE_LISPDIR%%/preview/prevwork.xpm
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/preview
@@ -26,6 +29,7 @@ share/texmf/doc/latex/styles/preview.dvi
 info/preview-latex.info
 info/preview-latex.info-1
 info/preview-latex.info-2
+info/preview-latex.info-3
 @exec install-info %D/info/preview-latex.info %D/info/dir
 %%PORTDOCS%%share/doc/preview-latex/ChangeLog
 %%PORTDOCS%%share/doc/preview-latex/INSTALL
