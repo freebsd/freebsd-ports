@@ -49,6 +49,7 @@
     SUBDIR += gtk-engines2
     SUBDIR += gtk-flat-theme
     SUBDIR += gtk-flat-theme2
+    SUBDIR += gtk-industrial-theme
     SUBDIR += gtk-qn-x11-theme
     SUBDIR += gtk-qnxtheme
     SUBDIR += gtk-sharp
