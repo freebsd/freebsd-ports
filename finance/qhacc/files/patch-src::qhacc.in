@@ -1,17 +1,17 @@
---- src/qhacc.in.bak	Thu Dec  4 22:21:26 2003
-+++ src/qhacc.in	Fri Dec  5 16:48:17 2003
+--- src/qhacc.in.orig	Tue Dec  7 11:05:34 2004
++++ src/qhacc.in	Fri Dec 10 02:47:25 2004
 @@ -1,4 +1,4 @@
 -#! /bin/sh
 +#!%%LOCALBASE%%/bin/bash
  ###############################################################
  # parse the command line, and call the appropriate executable #
  #                                                             #
-@@ -42,7 +42,7 @@
- 
- 
+@@ -39,7 +39,7 @@
  # You can change QHACC_ROOT and QHACC_HOME to fit your needs
--QHACC_ROOT=${QHACC_ROOT:="@prefix@"}
-+QHACC_ROOT=${QHACC_ROOT:="@prefix@/lib/qhacc"}
+ QHACC_ROOT=${QHACC_ROOT:="@libdir@"}
  QHACC_HOME=${QHACC_HOME:="${HOME}/.qhacc"}
+-QHACC_LANGDIR=${QHACC_LANGDIR:="@datadir@"}
++QHACC_LANGDIR=${QHACC_LANGDIR:="@datadir@/qhacc"}
  
- prefix=@prefix@
+ export LD_LIBRARY_PATH=$QHACC_ROOT:$LD_LIBRARY_PATH
+ 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,6 @@ USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	259
 USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
@@ -39,9 +38,7 @@ USE_MYSQL=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
-CONFIGURE_ARGS+=	--enable-mysql \
-		--with-mysql-libs="${LOCALBASE}/lib/mysql" \
-		--with-mysql-includes="${LOCALBASE}/include/mysql"
+CONFIGURE_ARGS+=	--enable-mysql
 PLIST_SUB+=	MYSQL=""
 .else
 PLIST_SUB+=	MYSQL="@comment "
@@ -57,7 +54,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--enable-sqlite \
 		--with-sqlite-libs="${LOCALBASE}/lib" \
 		--with-sqlite-includes="${LOCALBASE}/include"
@@ -81,11 +78,11 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's| -O2||g ; \
 		 s| -g||g ; \
-		 s| -pedantic||g ; \
-		 s|$$(prefix)/plugins|$$(pkglibdir)/plugins|g'
+		 s| -pedantic||g'
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${PREFIX}/lib/qhacc
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/qm/*.qm ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
