@@ -25,7 +25,7 @@ MANCOMPSUFFIX=	.gz
 MANCOMPSUFFIX=
 .endif
 
-pre-build:
+post-patch:
 	@${PERL} -pi -e 's/getopt[.]h/unistd.h/g' ${WRKSRC}/*
 
 do-install:
