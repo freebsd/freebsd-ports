@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	devel net
 MASTER_SITES=	http://craz.net/programs/itunes/files/
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C lib used to connect to iTunes(R) music shares
 
 USE_BZIP2=	yes
