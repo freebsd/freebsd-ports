@@ -1,0 +1,21 @@
+Qfsm is a graphical editor for finite state machines written in C++ using Qt.
+
+Finite state machines are a model to describe complex objects or systems in
+terms of the states they may be in. In practice they can used to create
+regular expressions, scanners or other program code.
+
+Current features of Qfsm are:
+   - Creation, editing, loading and saving of binary and ASCII machines
+   - Drawing of states and transitions
+   - Binary and ASCII condition codes
+   - Setting of a start state and end states
+   - Zooming
+   - Cut, copy & paste inside Qfsm
+   - Printing of diagrams
+   - Multiple windows
+   - Integrity check
+   - Interactive simulation
+   - AHDL/VHDL export
+   - State table export (Latex, HTML)
+
+WWW: http://qfsm.sourceforge.net/

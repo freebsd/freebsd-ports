@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Apr 12 00:35:08 2002
++++ Makefile.in	Fri Apr 12 00:35:16 2002
+@@ -210,7 +210,7 @@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+ 
+-SUBDIRS = src po
++SUBDIRS = src
+ 
+ #qfsmdir = $(prefix)/qfsm
+ #qfsm_DATA = $(srcdir)/po
