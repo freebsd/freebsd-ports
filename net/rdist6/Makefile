@@ -30,7 +30,7 @@ MAN8=		rdistd.8
 PLIST_SUB=	RDIST_NAME=${RDIST_NAME}
 
 post-install:
-	@strip ${PREFIX}/bin/${RDIST_NAME}
-	@strip ${PREFIX}/bin/rdistd
+	@${STRIP_CMD} ${PREFIX}/bin/${RDIST_NAME}
+	@${STRIP_CMD} ${PREFIX}/bin/rdistd
 
 .include <bsd.port.post.mk>
