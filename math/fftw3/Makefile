@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	fftw
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
+MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
+		ftp://ftp.fftw.org/pub/fftw/old/ 	\
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
 
@@ -31,6 +32,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/fftw
 	${CP} ${WRKSRC}/doc/fftw.ps ${PREFIX}/share/doc/fftw
+	install-info ${PREFIX}/info/fftw.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.post.mk>
