@@ -4052,6 +4052,7 @@ mhwaveedit	ports/audio/mhwaveedit
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
 midimountain	ports/audio/midimountain
+mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
 mille		src/games/mille
