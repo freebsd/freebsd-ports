@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
 MAN1=		workman.1
 MAN5=		workmandb.5
-XFREE86_HTML_MAN=no
 
 .include <bsd.port.pre.mk>
 
