@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Convert-BER
-PORTVERSION=	1.31
+PORTVERSION=	1.31.01
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Perl5 module to encode and decode objects using Basic Encoding Rules (BER)
@@ -18,6 +19,5 @@ COMMENT=	Perl5 module to encode and decode objects using Basic Encoding Rules (B
 PERL_CONFIGURE=	YES
 
 MAN3=		Convert::BER.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
