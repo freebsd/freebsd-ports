@@ -8638,6 +8638,7 @@ pt-webalizer-pt_PT	ports/portuguese/webalizer-pt_PT
 pth		ports/devel/pth
 ptkei		ports/games/ptkei
 ptlink-ircd	ports/irc/ptlink-ircd
+ptlink-services	ports/irc/ptlink-services
 ptoc		ports/lang/ptoc
 ptypes		ports/devel/ptypes
 publib		ports/devel/publib
