@@ -7,6 +7,7 @@
     SUBDIR += Sather
     SUBDIR += TenDRA
     SUBDIR += aleph
+    SUBDIR += alisp
     SUBDIR += atlast
     SUBDIR += awka
     SUBDIR += bf2c
