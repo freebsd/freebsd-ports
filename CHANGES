@@ -10,6 +10,30 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040709:
+AUTHOR: portmgr@FreeBSD.org
+  USE_LIBTOOL_VER now configures a port to use the ports version of libtool
+  instead of its included version.  This was put in place to reduce the
+  number of ad hoc patches to individual ports' libtools to prevent .la
+  file installation as well as fix various threading problems.
+
+  To restore the previous libtool behavior, use the new macro,
+  USE_INC_LIBTOOL_VER.  It works the exact same way as USE_LIBTOOL_VER
+  in that it takes a libtool version as its argument.
+
+  For example, to use the included version of libtool with extra hacks
+  provided by libtool-1.5, add the following to your Makefile:
+
+  USE_INC_LIBTOOL_VER=	15
+
+  To use the ports version of libtool-1.5, add the following to
+  your Makefile:
+
+  USE_LIBTOOL_VER=	15
+
+  Note: these macros are mutually exclusive.  Your port should only include
+  one or the other if it needs to make use of libtool.
+
 20040707:
 AUTHOR: gnome@FreeBSD.org
   The way GConf schema files are installed has changed to support the upcoming
