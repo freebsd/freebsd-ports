@@ -1,5 +1,4 @@
 bin/rxvt
 lib/librxvt.a
-lib/librxvt.la
 lib/librxvt.so
 lib/librxvt.so.0

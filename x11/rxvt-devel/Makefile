@@ -8,7 +8,7 @@
 # (and maybe ports/chinese/rxvt) when you upgrade rxvt.  These ports all use
 # the same distfile.
 
-PORTNAME=	rxvt-devel
+PORTNAME=	rxvt
 PORTVERSION=	2.7.6
 PORTREVISION=	1
 CATEGORIES=	x11
@@ -17,17 +17,20 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
 MASTER_SITE_SUBDIR=     . old devel
+PKGNAMESUFFIX=	-devel
 DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtoo
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-utmp --enable-wtmp --enable-languages \
 		--with-xpm --enable-xpm-background --enable-transparency \
 		--enable-shared
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 
