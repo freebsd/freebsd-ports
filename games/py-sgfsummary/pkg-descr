@@ -1,0 +1,6 @@
+Sgfsummary reads multiple SGF (Smart Game Format) files, specifically
+those recording Go/WeiQi/Baduk games, and summarizes their game
+information to standard output. It is a part of the Go Tools Project.
+
+Author: David John Goodger <goodger@python.org>
+WWW: http://gotools.sourceforge.net/sgfsummary/
