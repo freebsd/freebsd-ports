@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdumpfs
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://namazu.org/~satoru/pdumpfs/
 
