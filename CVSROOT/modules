@@ -1204,6 +1204,7 @@ demoroniser	ports/www/demoroniser
 denemo		ports/audio/denemo
 deskmenu	ports/x11/deskmenu
 despoof		ports/net/despoof
+destroy		ports/security/destroy
 detach		ports/sysutils/detach
 detachtty	ports/misc/detachtty
 detex		ports/print/detex
