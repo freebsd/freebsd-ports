@@ -1,0 +1,4 @@
+Ftp client based on the OpenBSD ftp client code, implements the
+FTP AUTH TLS IETF draft.
+
+WWW: http://www.runestig.com/osp.html

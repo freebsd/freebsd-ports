@@ -12,6 +12,7 @@
     SUBDIR += emirror
     SUBDIR += fget
     SUBDIR += frox
+    SUBDIR += ftp-tls
     SUBDIR += ftpcopy
     SUBDIR += ftpcube
     SUBDIR += ftpfind
