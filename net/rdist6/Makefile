@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rdist
-# Version required:	rdist-6.1.4
+# Version required:	rdist-6.1.5
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.16 1998/11/11 05:37:29 asami Exp $
+# $Id: Makefile,v 1.17 1999/02/04 01:56:42 peter Exp $
 #
 
-DISTNAME=	rdist-6.1.4
+DISTNAME=	rdist-6.1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 		ftp://ftp.rge.com/pub/admin/rdist/ \
