@@ -7,6 +7,7 @@ share/centericq/online.wav
 share/centericq/url.wav
 share/locale/cs/LC_MESSAGES/centericq.mo
 share/locale/de/LC_MESSAGES/centericq.mo
+share/locale/es/LC_MESSAGES/centericq.mo
 share/locale/hu/LC_MESSAGES/centericq.mo
 share/locale/it/LC_MESSAGES/centericq.mo
 share/locale/pl/LC_MESSAGES/centericq.mo
