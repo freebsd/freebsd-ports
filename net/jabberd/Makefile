@@ -16,29 +16,49 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-openssl=/usr \
-		--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS= --with-libiconv-prefix=${LOCALBASE} \
+		--enable-storage='${STORAGE}' \
+		--enable-authreg='${AUTHREG}'
 
-.if defined(WITH_BDB)
-LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
-CONFIGURE_ARGS+=--with-berkeley-db=${LOCALBASE} \
-		--enable-storage=db \
-		--enable-authreg=db
-LDFLAGS+=	-ldb41
-CFLAGS+=	-I${LOCALBASE}/include/db41
+STORAGE+=	fs
+AUTHREG+=	anon pipe
+
+.if defined(WITH_PGSQL)
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
+CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/include:${LOCALBASE}/lib
+STORAGE+=	pgsql
+AUTHREG+=	pgsql
 .endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
-CONFIGURE_ARGS+=--with-mysql=${LOCALBASE} \
-		--enable-storage=mysql \
-		--enable-authreg=mysql
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}/include/mysql:${LOCALBASE}/lib/mysql
+STORAGE+=	mysql
+AUTHREG+=	mysql
+.endif
+
+.if defined(WITH_BDB)
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=--with-berkeley-db=${LOCALBASE}/include/db41:${LOCALBASE}/lib
+STORAGE+=	db
+AUTHREG+=	db
 .endif
 
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}/include:${LOCALBASE}/lib
+AUTHREG+=	ldap
 .endif
 
 MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
+
+pre-everything::
+	@${ECHO}
+	@${ECHO} "You can build jabberd with the following options:"
+	@${ECHO} "WITH_PGSQL	use PostgreSQL for storage and authentication"
+	@${ECHO} "WITH_BDB	use Berkeley DB for storage and authentication"
+	@${ECHO} "WITH_MYSQL	use MySQL for storage and authentication"
+	@${ECHO} "WITH_LDAP	use LDAP for authentication"
+	@${ECHO}
 
 .include <bsd.port.mk>
