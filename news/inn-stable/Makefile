@@ -45,7 +45,8 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--with-perl \
 			--with-tmp-dir=${INN_NEWSSPOOL}/tmp \
 			--with-openssl=${OPENSSLBASE} \
-			--enable-ipv6
+			--enable-ipv6 \
+			--with-etc-dir=${ETC_DIR}
 
 .if defined(WITH_BERKELEYDB)
 CONFIGURE_ARGS+=	--with-berkeleydb=${LOCABASE}
@@ -126,6 +127,14 @@ MAN8=	actsync.8 actsyncd.8 archive.8 auth_smb.8 batcher.8 buffchan.8 \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_STANDARD_ETC)
+ETC_DIR=	${PREFIX}/etc/inn
+PLIST_SUB+=	ETCDIR=etc/inn
+.else
+ETC_DIR=	${PREFIX}/news/etc
+PLIST_SUB+=	ETCDIR=news/etc
+.endif
+
 post-patch:
 .if defined(WITH_TCL)
 	@${REINPLACE_CMD} -e 's!<tcl.h>!<tcl8.3/tcl.h>!' ${WRKSRC}/innd/innd.h
@@ -150,7 +159,7 @@ post-install:
 	    s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} CHECK-CONF ${ETC_DIR}
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \
 	    cd ${PREFIX}/news/db ; \

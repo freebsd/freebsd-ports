@@ -8,9 +8,9 @@ case $2 in
     PRE-INSTALL)
 	;;
     CHECK-CONF)
-	NEWSBASE=${PKG_PREFIX}/news
+	ETC_DIR=${3}
 	echo "Checking for configuration files"
-	for f in $(find ${NEWSBASE}/etc/ -name "*.dist" -type f)
+	for f in $(find ${ETC_DIR} -name "*.dist" -type f)
 		do
 			REALFILE=${f%%.dist}
 			echo -n "Checking if ${REALFILE} exists:   "
