@@ -21,6 +21,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 .endif
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
@@ -74,7 +75,7 @@ post-extract:
 	@${TAR} -xzf ${DISTDIR}/fvwm_icons.tgz -C ${WRKDIR}/icons
 
 post-patch:
-	@${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' \
+	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
 		${WRKSRC}/modules/FvwmM4/FvwmM4.c
 
 post-install:
