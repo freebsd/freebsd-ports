@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	esound imlib
+USE_REINPLACE=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
@@ -45,7 +46,7 @@ CONFIGURE_ARGS+=--disable-zoom
 MAN1=		enlightenment.1
 
 pre-patch:
-	@${PERL} -pi -e 's/ wctype.h//' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| wctype.h||' ${WRKSRC}/configure
 
 pre-build:
 .for i in Marble.etheme BlueSteel.etheme.zh_TW.Big5 BrushedMetal-Tigert.etheme.zh_TW.Big5 ShinyMetal.etheme.zh_TW.Big5
