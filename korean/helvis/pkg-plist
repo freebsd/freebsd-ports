@@ -5,5 +5,3 @@ bin/hview
 bin/hinput
 bin/ctags
 bin/ref
-bin/elvrec
-bin/elvprsv

@@ -7,7 +7,7 @@
 
 PORTNAME=	helvis
 PORTVERSION=	1.8h2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean editors
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/editor/HElvis/ \
@@ -17,14 +17,15 @@ DISTNAME=	helvis-1.8h2-
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	A clone of vi/ex, the standard UNIX editor, supporting Hangul
 
-MAN1=		ctags.1 elvis.1 elvprsv.1 elvrec.1 fmt.1 ref.1
+MAN1=		ctags.1 elvis.1 fmt.1 ref.1
 
-pre-build:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+post-patch:
+	${ECHO_CMD} '.include "${FILESDIR}/Makefile.inc"' > ${WRKSRC}/${MAKEFILE}
+	${CAT} ${WRKSRC}/${MAKEFILE}.mix >> ${WRKSRC}/${MAKEFILE}
 
 post-install:
 	@for manpage in \
-	  ctags elvis elvprsv elvrec fmt ref; \
+	  ctags elvis fmt ref; \
 	do \
 	  ${INSTALL_MAN} ${WRKSRC}/doc/$${manpage}.man ${PREFIX}/man/man1/$${manpage}.1; \
 	done
