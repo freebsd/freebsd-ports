@@ -326,6 +326,7 @@
     SUBDIR += streamtuner-python
     SUBDIR += sweep
     SUBDIR += swhplugins
+    SUBDIR += taglib
     SUBDIR += tclmidi
     SUBDIR += teamspeak_client
     SUBDIR += teamspeak_server
