@@ -227,6 +227,7 @@
     SUBDIR += scilab
     SUBDIR += sdpa
     SUBDIR += sdpara
+    SUBDIR += ses
     SUBDIR += slsc
     SUBDIR += snns
     SUBDIR += solitaire

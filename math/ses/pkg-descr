@@ -1,0 +1,20 @@
+SES - Simple Emacs Spreadsheet
+
+Sales pitch from the readme file:
+  
+  * Create and edit simple spreadsheets with a minimum of fuss.
+  * Full undo/redo/autosave.
+  * Immune to viruses in spreadsheet files.
+  * Cell formulas are straight Emacs Lisp.
+  * Printer functions for control of cell appearance.
+  * Intuitive keystroke commands: C-o = insert row, M-o = insert column, etc.
+  * "Spillover" of lengthy cell values into following blank cells.
+  * Header line shows column letters or a selected row.
+  * Completing-read for entering symbols as cell values.
+  * Cut, copy, and paste can transfer formulas and printer functions.
+  * Import and export of tab-separated values or tab-separated formulas.
+  * Plaintext, easily-hacked file format.
+
+Documentation is installed into share/doc/ses
+
+WWW: http://home.comcast.net/~jyavner/ses/
