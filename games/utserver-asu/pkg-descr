@@ -1,0 +1,16 @@
+abfackelns Server Utilities (ASU) for Unreal Tournament
+-------------------------------------------------------
+
+Key features of abfackelns UT installer package:
+
+Easy-access to modify most of the common ini settings.
+Umod installation and removal.
+Intelligent patching system with patches for CSHP and ngWorldStats.
+Custom "rc.d" style init scripts to start and stop the server.
+Init script options to ensure that the server stays up!
+Configurable number of bots to be in each game by default.
+Map or skin download redirection of files larger than 100k.
+
+Visit the following web page for more information:
+
+WWW: http://ut.abfackeln.com/asu.html

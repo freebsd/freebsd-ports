@@ -1,0 +1,21 @@
+%%UTDIR%%Patches/CSHP-4b-patch.tar.gz
+%%UTDIR%%Patches/netgames-abfackeln-0.8-patch.tar.gz
+%%UTDIR%%Lib/umodpack-abf/Tie/IxHash.pm
+%%UTDIR%%Lib/umodpack-abf/umod
+%%UTDIR%%Lib/umodpack-abf/Umod.pm
+%%UTDIR%%Lib/umodpack-abf/IniFile.pm
+%%PORTDOCS%%%%UTDIR%%Lib/gpl.txt.gz
+%%PORTDOCS%%%%UTDIR%%Lib/help.txt.gz
+%%UTDIR%%Lib/legacy-asu-script-0.1.sh
+%%PORTDOCS%%%%UTDIR%%Lib/legal.txt.gz
+%%UTDIR%%Lib/umod.pl
+%%UTDIR%%Lib/settings.ini
+%%UTDIR%%Lib/UnrealTournament.ini.gz
+%%UTDIR%%Lib/User.ini.gz
+%%UTDIR%%Lib/ucc.init.gz
+%%UTDIR%%Lib/asu-main.sh
+%%UTDIR%%asu.sh
+@dirrm %%UTDIR%%Patches
+@dirrm %%UTDIR%%Lib/umodpack-abf/Tie
+@unexec rmdir %D/%%UTDIR%%Lib/umodpack-abf 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%UTDIR%%Lib/umodpack-abf`` to remove any configuration files and logs left." | fmt
+@unexec rmdir %D/%%UTDIR%%Lib 2>/dev/null || true
