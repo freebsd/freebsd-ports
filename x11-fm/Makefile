@@ -9,6 +9,7 @@
     SUBDIR += ezfm
     SUBDIR += filerunner
     SUBDIR += fsv
+    SUBDIR += gentoo
     SUBDIR += gnomemc
     SUBDIR += jafm
     SUBDIR += mtoolsfm
