@@ -1,0 +1,27 @@
+*** jikes/src/Makefile.orig	Wed Dec  9 21:59:34 1998
+--- jikes/src/Makefile	Wed Dec  9 22:02:10 1998
+***************
+*** 131,136 ****
+--- 131,152 ----
+  O=o
+  SYSOBJECTS=
+  
++ # g++ definitions (FreeBSD)
++ CC=g++
++ # use -W to see warnings (should review from time to time)
++ CCREQUIREDFLAGS=-DGNU_LIBC5 -DUNIX -funsigned-char  -c -DTYPE_bool -ansi -I.
++ CCDEBUGFLAGS=-DTEST -g
++ CCOPTFLAGS=-O2
++ CCFLAGS=$(CCREQUIREDFLAGS) $(CCDEBUGFLAGS)
++ CCFLAGS=$(CCREQUIREDFLAGS) $(CCOPTFLAGS)
++ ERASE=rm -f
++ EXECUTABLE=jikes
++ LD=g++
++ LDDEBUGFLAGS=-g
++ LDFLAGS=-L. -o$(EXECUTABLE)
++ O=o
++ SYSOBJECTS=
++ 
+  
+  OBJECTS=jikes.$(O) scanner.$(O) code.$(O) zip.$(O) unzip.$(O) ast.$(O) diagnose.$(O) \
+  	parser.$(O) lpginput.$(O) lcase.$(O) javaact.$(O) error.$(O) set.$(O) symbol.$(O) \
