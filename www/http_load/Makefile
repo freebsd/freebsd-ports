@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	http_load
-PORTVERSION=	20010405
+PORTVERSION=	20020104
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/http_load/
-DISTNAME=	${PORTNAME}-05apr2001
+DISTNAME=	${PORTNAME}-04jan2002
 
-MAINTAINER=	ask@valueclick.com
 COMMENT=	Multiprocessing http performance test client
 
-WRKSRC=		${WRKDIR}/http_load
+WRKSRC=		${WRKDIR}/http_load-04jan2002
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 MAN1=		http_load.1
