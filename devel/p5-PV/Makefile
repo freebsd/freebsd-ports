@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	PV
-PORTVERSION=	1.0
+PORTVERSION=	1.5
 CATEGORIES=	devel net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PV
 PKGNAMEPREFIX=	p5-
-DISTNAME=	perlvision
-EXTRACT_SUFX=	.tgz
+DISTNAME=	PerlVision-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -20,12 +19,10 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Curses.pm
 
 USE_PERL5=	YES
 
-NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 
 do-install:
 	${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-	${INSTALL_DATA} ${WRKDIR}/PV.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-	${INSTALL_DATA} ${WRKDIR}/PerlVision.doc ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+	${INSTALL_DATA} ${WRKSRC}/PV.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.mk>
