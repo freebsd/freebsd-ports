@@ -8,7 +8,9 @@
 PORTNAME=	asclock-gtk
 PORTVERSION=	2.1.10
 CATEGORIES=	x11-clocks afterstep windowmaker
-MASTER_SITES=	http://www.asclock.org/tar/
+MASTER_SITES=	http://www.asclock.org/tar/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kuriyama
 DISTNAME=	${PKGNAME}beta
 
 MAINTAINER=	kuriyama@FreeBSD.org
