@@ -8,7 +8,7 @@
 PORTNAME=	libxalloc
 PORTVERSION=	1.0.3
 CATEGORIES=	devel
-MASTER_SITES=	http://home.sol.no/~sverrehu/pub-unix/files/
+MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	xalloc-${PORTVERSION}
 
 MAINTAINER=	obrien@FreeBSD.org
