@@ -22,11 +22,13 @@ MAN3=	AFclose.3tsp AFopenRead.3tsp AFopenWrite.3tsp AFreadData.3tsp \
 	AFsetFileType.3tsp AFsetHinfo.3tsp AFsetNHpar.3tsp \
 	AFwriteData.3tsp AFsetSpeaker.3tsp
 
+MAKE_ENV=	COPTS="${CFLAGS}"
+
 post-extract:
 	@${CP} -f ${FILESDIR}/Makefile ${WRKSRC}
 
 post-patch:
 	cd ${WRKSRC} && find . -name Makefile | \
-		xargs -n10 ${PERL} -i -pe 's/^(CFLAGS\s*)=\s*-O/$$1+=/'
+		xargs -n10 ${PERL} -i -pe 's/^(COPTS)/#$$1/'
 
 .include <bsd.port.mk>
