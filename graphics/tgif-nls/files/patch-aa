@@ -1,11 +1,11 @@
---- tgif.man.orig	Wed May 26 01:19:41 1999
-+++ tgif.man	Wed May 26 01:20:08 1999
+--- tgif.man.orig	Sun May 30 05:28:59 1999
++++ tgif.man	Sun May 30 05:29:12 1999
 @@ -8,7 +8,7 @@
  .\"
  .\"
  .\"
--.TH tgif n "Version 4.1 Patchlevel 10 and Above" "Tgif"
-+.TH tgif 1L "Version 4.1 Patchlevel 10 and Above" "Tgif"
+-.TH tgif n "Version 4.1 Patchlevel 15 and Above" "Tgif"
++.TH tgif 1L "Version 4.1 Patchlevel 15 and Above" "Tgif"
  .\"
  .SH NAME
  .\"
