@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	milter_regex
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 DISTNAME=	milter-regex-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	"Milter plugin to sendmail for regular expression filtering"
 
 MAN8=		milter-regex.8
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_FILES=	libexec/milter-regex
 
 pre-everything::
 .if !exists(/usr/lib/libmilter.a)
@@ -29,9 +29,6 @@ post-patch:
 	${SED} -e "s:-lpthread:${PTHREAD_LIBS}:g; \
 	s:-I/usr/src/gnu/usr.sbin/sendmail/include:${PTHREAD_CFLAGS}:g; \
 	s/-Werror//g" < ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
-
-pre-install:
-	${ECHO_CMD} libexec/milter-regex > ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/milter-regex ${PREFIX}/libexec
