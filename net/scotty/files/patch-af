@@ -1,0 +1,20 @@
+--- configure	Tue Jul 22 15:21:27 1997
++++ configure	Sat Aug 23 04:14:43 1997
+@@ -1402,7 +1402,7 @@
+ DL_LIBS=$TCL_DL_LIBS
+ LD_FLAGS=$TCL_LD_FLAGS
+ LD_SEARCH_FLAGS=$TCL_LD_SEARCH_FLAGS
+-TCL_INCLUDES=-I$TCL_PREFIX/include
++TCL_INCLUDES=-I$TCL_PREFIX/include/tcl$TCL_VERSION
+ 
+ if test -z "$SHLIB_LD" ; then
+     { echo "configure: error: no shared linker definition (TCL_SHLIB_LD) in tclConfig.sh" 1>&2; exit 1; }
+@@ -1486,7 +1486,7 @@
+ fi
+ 
+ . $tnm_cv_path_tk_config/tkConfig.sh
+-TK_INCLUDES=-I$TK_PREFIX/include
++TK_INCLUDES=-I$TK_PREFIX/include/tk$TK_VERSION
+ if test "$TK_INCLUDES" = "$TCL_INCLUDES" ; then
+     TK_INCLUDES=""
+ fi
