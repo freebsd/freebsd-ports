@@ -1,0 +1,12 @@
+--- src/syslog-names.c.orig	Thu Apr 19 21:15:46 2001
++++ src/syslog-names.c	Thu Apr 19 21:19:19 2001
+@@ -56,7 +56,8 @@
+ 	{ "lpr", LOG_LPR },
+ 	{ "mail", LOG_MAIL },
+ 	{ "news", LOG_NEWS },
+-	{ "security", LOG_AUTH },           /* DEPRECATED */
++	{ "ntp", LOG_NTP },
++	{ "security", LOG_SECURITY },
+ 	{ "syslog", LOG_SYSLOG },
+ 	{ "user", LOG_USER },
+ 	{ "uucp", LOG_UUCP },

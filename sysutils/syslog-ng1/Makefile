@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.11
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.hu/downloads/syslog-ng/1.4/
 
