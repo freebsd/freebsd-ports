@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: commitcheck,v 1.5 1996/12/23 05:42:37 peter Exp $
+# $Id: commitcheck,v 1.6 1997/05/21 15:58:59 peter Exp $
 
 #
 # BEWARE:  If you are "borrowing" this code for use on another cvs
@@ -20,8 +20,8 @@ esac
 #
 # Ensure the minimum version of cvs is installed.
 #
-VERS=`/usr/bin/cvs -v | awk '$1 == "Concurrent" { print $5 }' | tr -d .`
-if [ "x${VERS}" = "x" -o ${VERS} -lt 180 ]; then
+VERS=`/usr/bin/cvs -v | awk '$1 == "Concurrent" { print $5 }' | awk -F. '{printf "%d%02d%02d\n",$1,$2,$3}'`
+if [ "x${VERS}" = "x" -o ${VERS} -lt 10909 ]; then
 	echo "The wrong version of CVS is installed!" 1>&2
 	exit 1
 fi
