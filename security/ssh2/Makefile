@@ -3,7 +3,7 @@
 # Date created:		5 Oct 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.80 1999/04/03 03:42:01 ache Exp $
+# $Id: Makefile,v 1.81 1999/06/18 20:02:11 ache Exp $
 #
 # Maximal ssh2 package requires YES values for
 # USE_SSH1, USE_TCPWRAP
@@ -27,7 +27,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX} --with-etcdir=${PREFIX}/etc --enable-debug
 
 # Include support for ssh1 client backward compatibility
 USE_SSH1?=	YES
-# Include tcp_wrappers support
+# Include tcp_wrappers support (automaticlly YES if /usr/include/tcpd.h exists)
 USE_TCPWRAP?=	NO
 # Warning: untested !
 # Include support for the TIS authentication server
