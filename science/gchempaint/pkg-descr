@@ -1,0 +1,5 @@
+GChemPaint is a 2D chemical structures editor for GNOME 2.
+It's also bonobo server so some chemistry could be embedded
+in Gnome applications such as Gnumeric and Abiword.
+
+WWW: http://www.nongnu.org/gchempaint/

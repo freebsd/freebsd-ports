@@ -6,6 +6,7 @@
     SUBDIR += clhep
     SUBDIR += euler
     SUBDIR += flounder
+    SUBDIR += gchempaint
     SUBDIR += gchemutils
     SUBDIR += gdis
     SUBDIR += glens
