@@ -8,6 +8,7 @@
     SUBDIR += af-aspell
     SUBDIR += aft
     SUBDIR += agrep
+    SUBDIR += aiksaurus
     SUBDIR += align
     SUBDIR += ant-xinclude-task
     SUBDIR += antiword
