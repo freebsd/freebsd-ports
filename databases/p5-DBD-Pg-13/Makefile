@@ -24,15 +24,15 @@ MAN3=		DBD::Pg.3 DBD::dbd-pg.3
 
 .include <bsd.port.mk>
 
-.if exists(${LOCALBASE}/bin/pg_config)
-PG_CONFIG=	${LOCALBASE}/bin/pg_config
-.elif exists(${LOCALBASE}/pgsql/bin/pg_config)
+.if defined(WITH_OLD_LAYOUT)
+CONFIGURE_ENV+=	POSTGRES_INCLUDE=${LOCALBASE}/include/pgsql \
+		POSTGRES_LIB=${LOCALBASE}/lib
+.else
+.if exists(${LOCALBASE}/pgsql/bin/pg_config)
 PG_CONFIG=	${LOCALBASE}/pgsql/bin/pg_config
+.else
+PG_CONFIG=	${LOCALBASE}/bin/pg_config
 .endif
-.if defined(PG_CONFIG)
 CONFIGURE_ENV+=	POSTGRES_INCLUDE=`${PG_CONFIG} --includedir` \
 		POSTGRES_LIB=`${PG_CONFIG} --libdir`
-.else
-CONFIGURE_ENV+=	POSTGRES_INCLUDE=${PREFIX}/include/pgsql \
-		POSTGRES_LIB=${PREFIX}/lib
 .endif
