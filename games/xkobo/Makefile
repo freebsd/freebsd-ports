@@ -1,7 +1,7 @@
 # New ports collection makefile for:    xkobo
-# Version required:     1.11
-# Date created:         18 Jul 1995
-# Whom:                 jkh
+# Version required:	1.11
+# Date created:		18 Jul 1995
+# Whom:			jkh
 #
 # $FreeBSD$
 #
