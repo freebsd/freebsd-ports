@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A C library for dynamically generating PDF
 
+BROKEN=		Does not fetch
+
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 LATEST_LINK?=	${PORTNAME}
