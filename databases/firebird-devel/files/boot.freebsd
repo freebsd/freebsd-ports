@@ -1,0 +1,32 @@
+#! /bin/sh
+#
+# $Id: boot.freebsd,v 1.1 2000/09/29 16:24:25 tom Exp tom $
+#
+# Contributor(s):
+#
+# Tom Coleman TMC Systems <tcoleman@autowares.com>
+# Geoff Speicher <geoff@sea-incorporated.com>
+#
+CWD=`pwd`;export CWD
+INTERBASE=$CWD/interbase
+LD_LIBRARY_PATH=$INTERBASE/lib
+PATH=$PATH:$INTERBASE/bin:.
+echo INTERBASE=$INTERBASE
+echo LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+if [ -z "$REFDBPATH" ];then
+	echo "REFDBPATH not defined"
+	REFDBPATH=`dirname $CWD`/refDatabases; export REFDBPATH
+fi
+echo "REFDBPATH="$REFDBPATH
+if [ "$1" = "SUPER" ]; then
+	echo "Building SUPER"
+	make -f make.freebsd super_firebird
+else
+	echo "Building CLASSIC"
+	if [ "$#" -gt 0 ]; then
+		make -f make.freebsd $1
+	else
+		make -f make.freebsd
+	fi
+fi

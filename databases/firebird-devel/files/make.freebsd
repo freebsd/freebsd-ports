@@ -1,0 +1,851 @@
+# The contents of this file are subject to the Interbase Public
+# License Version 1.0 (the "License"); you may not use this file
+# except in compliance with the License. You may obtain a copy
+# of the License at http://www.Inprise.com/IPL.html
+#
+# Software distributed under the License is distributed on an
+# "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express
+# or implied. See the License for the specific language governing
+# rights and limitations under the License.
+#
+# The Original Code was created by Inprise Corporation
+# and its predecessors. Portions created by Inprise Corporation are
+# Copyright (C) Inprise Corporation.
+#
+# All Rights Reserved.
+# Contributor(s):
+#
+# Tom Coleman TMC Systems <tcoleman@autowares.com>
+#
+# Start of file prefix.freebsd:	PROD	$(PLATFORM)
+#
+#$Id: prefix.freebsd,v 1.2 2000/10/08 15:36:25 gspeicher Exp $
+
+.SUFFIXES: .c .e
+.e.c:
+	$(GPRE) $(GPRE_FLAGS) $<
+.SUFFIXES: .bin .o .c
+.c.o:
+	$(CC) -c $(CFLAGS) $(VERSION_FLAG) $<
+.c.bin:
+	$(CC) -c $(PIC_FLAGS) $(VERSION_FLAG) -o $*.bin $<
+
+METADATA=$(REFDBPATH)/jrd/metadata.gdb
+MESSAGES=$(REFDBPATH)/msgs/msg.gdb
+HELP=$(REFDBPATH)/qli/help.gdb
+ISC=$(REFDBPATH)/jrd/isc.gdb
+
+PROD_DEBUG_OBJECTS=	nodebug.o
+PROD_SHRLIB_DIR=	-Lsource/jrd
+PROD_VERSION_FLAG=	-DPROD_BUILD
+PROD_CFLAGS=            -O -m486 -fpic -DFLINTSTONE
+
+
+DEV_DEBUG_OBJECTS=	grammar.o dbg.o dbt.o dmp.o
+DEV_SHRLIB_DIR=		-Lsource/jrd
+DEV_VERSION_FLAG=	-DDEV_BUILD
+DEV_CFLAGS=		-ggdb
+
+DEBUG_OBJECTS=		$(PROD_DEBUG_OBJECTS)
+SHRLIB_DIR=		$(PROD_SHRLIB_DIR)
+VERSION_FLAG=		$(PROD_VERSION_FLAG)
+CFLAGS_COMMON=		$(PROD_CFLAGS)  -Isource/interbase/include -DFREEBSD -w -fwritable-strings
+CFLAGS=			$(CFLAGS_COMMON) 
+PIC_J_CFLAGS=		$(CFLAGS_COMMON) -DPIPE_IS_SHRLIB -fPIC
+SPECIAL_OBJECTS=	j
+UDF_LINK_CMD=		gcc
+UDF_CFLAGS=         	-fPIC -mieee-fp
+UDF_LFLAGS=         	-shared
+UDF_SHRLIBS=        	-lgds -lm -lc -mieee-fp -ldescrypt
+
+#NOTE: PIC_J_CFLAGS is special CFLAGS used to build PIPD_IS_SHRLIB modules
+#      to workaround the Solaris threading problems with signals
+
+
+#NOTE: -Xt is ANSI C transition mode (default)
+#      -DBDS_COMP is for BSD Compatibility package and is used in <sys/ioctl.h>
+
+ACCESS_METHOD=		gdslib.freebsd pipe
+BACKEND_BRIDGE_MISC=	head5.o allp.o
+BIN_PATH=		interbase/bin
+BRIDGE_MISC=		head5.o allp.o
+CHMOD_VAL=		666
+CURSES_LIB=             -lncurses
+DSQL_P_OBJS=		dsql_p_objects
+FORM_OBJECTS=		form.o
+FORM_TRN_OBJECTS=	form_trn.o
+FUNCTIONS=		functions.bin
+FUNCSHR=		source/interbase/lib/gdsf.so
+GDS_LINK=		$(GDSSHR_LINK)
+GDS_PYXIS=		gds_pyxis.a
+GDSLIB_BACKEND=		source/interbase/lib/gds_b.a
+GDSLIB_LINK=		-Lsource/jrd -lgds_b -lc -ldescrypt
+
+GDSSHR=			source/interbase/lib/gds.so
+LINUX_GDSSHR=		$(GDSSHR)
+GDSSHR_LINK=		$(SHRLIB_DIR) -lgds -lgds_pyxis -ldescrypt
+PIPE_GDSSHR_LINK=	$(SHRLIB_DIR) -lgds -lgds_pyxis
+HLPDIR=			source/qli/
+HOSTNAME=		`hostname | cut -d'.' -f1`
+INCLUDES=		include_so include_so_ada	
+INTL=			intl
+
+INTL_CFLAGS=		$(CFLAGS)
+INTL_LD_LINE=		ld -G -o gdsintl 
+INTL_PIC_FLAGS=		$(PIC_FLAGS)
+INTL_TARGET=		intl_shr_objs
+IO_OBJECTS=		unix.o
+IO_P_OBJECTS=		unix.bin
+JRD_MISC_OBJECTS=	source/jrd/sun_ftn.o
+JRD_J_MISC_OBJECTS=	source/jrd/sun_ftn.j 
+JRD_P_MISC_OBJECTS=	source/jrd/sun_ftn.bin source/jrd/nodebug.bin
+LANG_OBJECTS=		ada.o ftn.o cob.o
+LANGUAGES=		cc cxx ada sun_ada microfocus_cob make16 gdl1 sun_ftn
+LD_LIBS=		-lc
+LD_LIBS_J=		-lc
+LD_OPTS=		-shared
+LOCK_JRD_MISC=		source/jrd/thd.o
+LOCK_MANAGER=		manager
+MARION_DB=		-d source/marion.gdb
+MUISQL=			muisql
+MUISQL_MU_LIB=		-L /usr/gds.$(HOSTNAME)/qa_tools/lib -lmu
+MUISQL_LINK_OPTS=	$(MUISQL_MU_LIB) $(PIPE_GDSSHR_LINK) -lm 
+PIC_FLAGS=		$(CFLAGS) -fPIC
+PIPE=			gds.a gds_pipe
+PYXIS=			pyxis
+PYXIS_MISC_OBJS=	$(PYXIS_MISC)
+PYXIS_P_MISC_OBJS=	$(PYXIS_P_MISC)
+PYXIS_OBJECTS=		pyxis_objects
+PYXIS_MISC_OBJECTS=	$(PYXDIR)cdm.o $(PYXDIR)vt100.o $(PYXDIR)sun_ftn_pyxis.o
+REG_HELP=		isc_ins_hlp.dat
+REMOTE_GDSSHR=		$(GDSSHR)
+REMOTE_GDSSHR_LINK=	$(SERVER_LINK)
+REMOTE_P_OBJS=		rem_p_objects
+SCREEN_LIBS=
+#SCREEN_LIBS=		-lncurses
+SERVER_LINK=		$(GDSSHR_LINK)
+SETUP_ISC=              ISC_USER=sysdba; ISC_PASSWORD=masterkey; export ISC_USER ISC_PASSWORD;
+SPECIAL_OPT=		source/special_opt
+NETWORK_LIB=		
+SOCKET_LIB=		-lc
+THREAD_LIB=		-llthread
+SUN_FUNCSHR=		$(FUNCSHR)
+LX_SUPER_GDSSHR=		source/interbase/lib/gds.so.1
+SUPER_CLIENT_GDSSHR=    $(LX_SUPER_GDSSHR)
+SUPER_BACKEND=		source/jrd/gds_ss.a
+SUPER_LINK=		-Lsource/jrd -lgds_ss -lc -ldescrypt -llthread
+SUPER_SERVER=	
+UTILITIES=		
+WAL_P_OBJS=		wal_p_objects
+
+
+SUPER_SERVER_DEST=	source/interbase/bin/ibserver
+INET_SERVER_DEST=	source/interbase/bin/gds_inet_server
+DNET_SERVER_DEST=	source/interbase/bin/gds_dnet_server
+AMBX_SERVER_DEST=	source/interbase/bin/gds_server
+INET_LIB_DEST=		source/interbase/lib/gds_inet_server.a
+DNET_LIB_DEST=		source/interbase/lib/gds_dnet_server.a
+
+SH=			sh -c
+RM=			rm -f
+CHMOD=			chmod
+CHMOD_6=		chmod 666
+CHMOD_7=		chmod 777
+CHMOD_S7=		chmod 06777
+MV=			mv -f
+TOUCH=			touch
+CP=			cp
+ECHO=			echo
+QUIET_ECHO=		@echo
+CD=			cd
+CAT=			cat
+AR=			ar r
+EXPAND_DBNAME=		@echo No need to expand...
+COMPRESS_DBNAME=	@echo No need to compress...
+SED=			sed
+
+ARCH_EXT=		.a
+EXEC_EXT=
+SHRLIB_EXT=		.so
+
+V3PRINTER=		source/lock/printv3.o
+
+# Forces library build for FreeBSD
+PYXIS_LIBRARY= libpyxis.a
+
+#   End of file prefix.freebsd:	PROD	$(PLATFORM)
+# The contents of this file are subject to the Interbase Public
+# License Version 1.0 (the "License"); you may not use this file
+# except in compliance with the License. You may obtain a copy
+# of the License at http://www.Inprise.com/IPL.html
+#
+# Software distributed under the License is distributed on an
+# "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express
+# or implied. See the License for the specific language governing
+# rights and limitations under the License.
+#
+# The Original Code was created by Inprise Corporation
+# and its predecessors. Portions created by Inprise Corporation are
+# Copyright (C) Inprise Corporation.
+#
+# All Rights Reserved.
+# Contributor(s): ______________________________________.
+
+EXTERNAL_OBJECTS=	$(CSI_OBJS) dsql_objects lock.o $(PYXIS_OBJECTS) rem_objects $(INTL) wal_objects
+EXTERNAL_P_OBJECTS=	$(CSI_P_OBJS) dsql_p_objects lock.bin $(PYXIS_P_OBJS) rem_p_objects $(INTL_P_OBJS) wal_p_objects
+
+INCLUDE_DEST=	source/interbase/include/
+
+GPRE=		source/interbase/bin/gpre
+GBAK=		source/interbase/bin/gbak
+GDEF=		source/interbase/bin/gdef
+GFIX=		source/interbase/bin/gfix
+HELP_GDB=	source/interbase/help/help.gdb
+HELP_GBAK=	source/interbase/help/help.gbak
+ISC_GDB=	source/interbase/isc4.gdb
+ISC_GBAK=	source/interbase/bin/isc4.gbak
+JRN_GBAK=	source/interbase/bin/journal.gbak
+CMP=		cmp
+
+CODES=source/jrd/codes
+
+firebird:	gds.h includes fireboot run_codes executables help msgs msgs_intl extlib
+
+#  burp wanted to build gpre	
+#  we break this dependency
+#  1) build burp (gbak)
+#  2) use gbak to create the message databases
+#  3) build the message files
+#  4) build gpre
+
+fireboot:	burp boot_dbs msgs gpre
+
+boot_dbs:	$(GBAK) $(METADATA) $(MESSAGES) $(HELP) $(ISC)
+
+$(METADATA):	misc/metadata.gbak 
+	$(GBAK) -c misc/metadata.gbak $(METADATA)
+
+$(ISC):	misc/isc4.gbak 
+	$(GBAK) -c misc/isc4.gbak $(ISC)
+
+$(MESSAGES):	misc/msg.gbak
+	$(GBAK) -c misc/msg.gbak $(MESSAGES)
+
+$(HELP):	misc/help.gbak
+	$(GBAK) -c misc/help.gbak $(HELP)
+
+all_example_dbs:	example_dbs v4_dbs v5_dbs
+ 
+example_dbs:
+	$(ECHO) "- building example dbs"
+	$(CD) $(REFDBPATH)/examples; \
+	$(RM) *.gdb; \
+	$(INTERBASE)/bin/gdef $(CWD)/examples/atlas.gdl; \
+	$(INTERBASE)/bin/gdef $(CWD)/examples/emp.gdl; \
+	$(INTERBASE)/bin/gdef $(CWD)/examples/slides.gdl; \
+	$(INTERBASE)/bin/gdef $(CWD)/examples/nc_guide.gdl; \
+	$(INTERBASE)/bin/gdef $(CWD)/examples/c_guide.gdl; \
+	$(INTERBASE)/bin/gdef $(CWD)/examples/stocks.gdl
+	touch example_dbs
+ 
+v4_dbs:
+	$(ECHO) "- copying example files"
+	$(CP) example4/*.sql $(REFDBPATH)/example4
+	$(CP) example4/empbuild.e $(REFDBPATH)/example4
+	$(CP) example4/intlbld.e $(REFDBPATH)/example4
+	$(ECHO) "- building examples4"
+	$(CD) $(REFDBPATH)/example4; \
+	$(RM) *.gdb; \
+	$(SED) -e s/employee.gdb/empbuild.gdb/g $(CWD)/example4/empbld.sql >empbuild.sql; \
+	$(SED) -e s/' year'/' proj_year'/g -e s/\(year/\(proj_year/g -e s/\(YEAR/\(PROJ_YEAR/g -e s/' DATE'/' TIMESTAMP'/g $(CWD)/example4/empddl.sql >empddl.sql; \
+	isql -i empbuild.sql; \
+	$(SED) -e s/' year'/' proj_year'/g -e s/\(year/\(proj_year/g -e s/\(YEAR/\(PROJ_YEAR/g -e s/' DATE'/' TIMESTAMP'/g $(CWD)/example4/intlddl.sql >intlddl.sql; \
+	isql -i intlbld.sql
+	touch v4_dbs
+ 
+#	The following were not used but the source files exist
+#	(cd examples; $IBBin/gdef $IBSrc/examples/cs_load.gdl)
+#	(cd examples; $IBBin/gdef $IBSrc/examples/sources.gdl)
+#	(cd examples; $IBBin/gdef $IBSrc/examples/udf_trig.gdl)
+ 
+v5_dbs:
+	echo "- building examples5"
+	$(CP) example5/*.sql $(REFDBPATH)/example5
+	$(CD) $(REFDBPATH)/example5; \
+	$(RM) *.gdb; \
+	$(SED) -e s/employee.gdb/empbuild.gdb/g $(CWD)/example5/empbld.sql >empbuild.sql; \
+	$(SED) -e s/' year'/' proj_year'/g -e s/' YEAR'/' PROJ_YEAR'/g -e s/' DATE'/' TIMESTAMP'/g $(CWD)/example5/empddl.sql >empddl.sql; \
+	isql -i empbuild.sql; \
+	$(SED) -e s/' year'/' proj_year'/g -e s/' YEAR'/' PROJ_YEAR'/g -e s/' DATE'/' TIMESTAMP'/g $(CWD)/example5/intlddl.sql >intlddl.sql; \
+	isql -i intlbld.sql
+	touch v5_dbs
+ 
+# Run the codes program, thus generating codes.h, iberror.h, etc
+# compare and copy the file only if the files are different
+run_codes:	$(CODES)
+	$(SH) '$(CD) source/jrd; $(CODES)'
+
+$(CODES):	jrd/codes.c
+	echo "creating codes"
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="$(SYSTEM)" codes'
+
+# NOTE: "journals" removed from "executables" as it currently doesn't
+#	build and isn't used for V4 anyway.
+# 1995-June-7 David Schnepper 
+# removed burp and gpre 081800 TMC
+#executables:	alice burp dudley gpre install $(INTL) isql locks
+executables:	alice dudley install $(INTL) isql locks \
+	$(SUPER_SERVER) pyxis qli remote spit utilities \
+	$(SHARED_AM) $(LINKABLE_LIBS)
+	
+super_firebird:	gds.h includes fireboot super_targets dudley install $(INTL) isql locks qli remote spit help msgs msgs_intl dba gfix gsec security_db extlib
+
+super_targets: 	s_run_codes s_alice s_burp s_dba s_security_c super_client super_server super_utils 
+
+alice gfix:	gpre force
+	$(QUIET_ECHO) "Building GFIX..."
+	$(SH) '$(CD) source/alice; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" alice'
+
+#burp gbak:	gpre msgs force  #TMC
+burp gbak $(GBAK):	pyxis
+	$(QUIET_ECHO) "Building GBAK..."
+	$(SH) '$(CD) source/burp; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" burp'
+
+burplib.a:	burp
+	$(QUIET_ECHO) "Building interbase/lib/gbaklib.a..."
+	$(SH) '$(CD) source/burp; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" libgbaklib.a'
+
+central_server gds_cserver:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_CSERVER..."
+	$(SH) '$(CD) source/csv; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" central_server'
+
+super_client:		force
+	$(QUIET_ECHO) "Building super/client..."
+	$(SH) '$(CD) source/super/client; $(MAKE) CFLAGS="$(CFLAGS) -DSUPERCLIENT" SYSTEM="builds" super_client'
+
+csu gcsu:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GCSU..."
+	$(SH) '$(CD) source/csv; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" csu'
+
+csvs:		central_server csu
+
+gds_archive:	$(ACCESS_METHOD) gpre force
+	$(QUIET_ECHO) "Building GDS_ARCHIVE..."
+	$(SH) '$(CD) source/journal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_archive'
+
+dba gstat:	gpre force
+	$(QUIET_ECHO) "Building GSTAT..."
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" dba'
+
+dnet_server gds_dnet_server:	$(DNET_SERVER_LIB) $(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_DNET_SERVER..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" dnet_server'
+
+dnet_server.a gds_dnet_server.a:	force
+	$(QUIET_ECHO) "Building GDS_DNET_SERVER.A..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" dnet_server.a'
+
+drop gds_drop:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_DROP..."
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" drop'
+
+driver:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building DRIVER..."
+	$(SH) '$(CD) source/wal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" driver'
+
+dudley gdef:	gpre msgs force
+	$(QUIET_ECHO) "Building GDEF..."
+	$(SH) '$(CD) source/dudley; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" dudley'
+
+extlib:	force
+	$(QUIET_ECHO) "Building EXTLIB..."
+	$(SH) '$(CD) source/extlib; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" ib_util'
+	$(SH) '$(CD) source/extlib; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" ib_udf'
+
+examples:	all_example_dbs v5_examples v4_examples force
+	$(QUIET_ECHO) "Building examples directory..."
+	$(SH) '$(CD) source/examples; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" examples'
+
+fred:		gpre force
+	$(QUIET_ECHO) "Building FRED..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" fred'
+
+gds.h:		force
+	$(QUIET_ECHO) "Building GDS.H..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.h'
+
+codes.h:	force
+	$(QUIET_ECHO) "Building CODES.H..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" codes.h'
+
+gds_server:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_SERVER..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_server'
+
+gdslib.aix gdslib.aix_ppc:	$(GPRE) $(EXTERNAL_OBJECTS) force
+	$(QUIET_ECHO) "Building GDSSHR..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gdsshr.a'
+
+gdslib.apollo:	$(GPRE) $(EXTERNAL_OBJECTS) pyxislib force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gdslib'
+
+gdslib.decosf gdslib.sgi gdslib.epson :	\
+	$(GPRE) $(EXTERNAL_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.so.o'
+
+gdslib.linux:	\
+	$(GPRE) $(EXTERNAL_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.so.linux'
+
+gdslib.freebsd:	\
+	$(GPRE) $(EXTERNAL_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.so.linux'
+
+gdslib.sco_ev:	\
+	$(GPRE) $(EXTERNAL_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.so.O'
+
+gdslib.dg gdslib.m88k gdslib.unixware gdslib.ncr3000 gdslib.dg_x86:	\
+	$(GPRE) $(EXTERNAL_P_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.so.0'
+
+gdslib.solaris:	\
+	$(GPRE) $(EXTERNAL_P_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.so.solaris'
+
+gdslib.hp:	$(GPRE) $(EXTERNAL_P_OBJECTS) $(GDS_PYXIS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.sl'
+
+gdslib.imp:	$(GPRE) $(EXTERNAL_P_OBJECTS) force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_s.a'
+
+gdslib.sco:	$(GPRE) $(EXTERNAL_P_OBJECTS) gds_pyxis.a force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_s.a'
+
+gdslib.sunos4:	$(GPRE) $(EXTERNAL_P_OBJECTS) gds_pyxis.a force
+	$(QUIET_ECHO) "Building GDSLIB..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gdslib.so.1.0'
+
+gds_pipe:	$(PIPE_LIBRARY) gds_b.a $(GPRE) force
+	$(QUIET_ECHO) "Building GDS_PIPE..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_pipe'
+
+gds_b.a:	force
+	$(QUIET_ECHO) "Building GDS_B.A..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_b.a'
+
+gds_pipe.a:	force
+	$(QUIET_ECHO) "Building GDS_PIPE.A..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds_pipe.a'
+
+gds.a:		force
+	$(QUIET_ECHO) "Building GDS.A..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.a'
+
+gds.a.solaris:		force
+	$(QUIET_ECHO) "Building GDS.A.SOLARIS..."
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gds.a.solaris'
+
+gpre:		security_c $(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GPRE..."
+	$(SH) '$(CD) source/gpre; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gpre'
+
+security_c: force
+	$(QUIET_ECHO) "Building security.c ..."
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" security.c'
+
+# Run the codes program (for SUPERSERVER hierarchy), 
+# thus generating codes.h, iberror.h, etc
+s_run_codes:	$(CODES) force
+	$(QUIET_ECHO) "Running codes in super ..."
+	$(SH) '$(CD) source/super/jrd; $(CODES)'
+
+s_security_c: force
+	$(QUIET_ECHO) "Building security.c ..."
+	$(SH) '$(CD) source/super/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" security.c'
+
+s_alice: force
+	$(QUIET_ECHO) "Building met.c ..."
+	$(SH) '$(CD) source/super/alice; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" met.c'
+
+s_burp:	force
+	$(QUIET_ECHO) "Building restore.c and backup.c ..."
+	$(SH) '$(CD) source/super/burp; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" restore.c'
+	$(SH) '$(CD) source/super/burp; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" backup.c'
+
+s_dba:	force
+	$(QUIET_ECHO) "Building dba.e ..."
+	$(SH) '$(CD) source/super/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" dba.c'
+
+gsec:	gpre force
+	$(QUIET_ECHO) "Building GSEC..."
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gsec'
+
+$(GPRE):
+	$(QUIET_ECHO) "Building bootstrap version of GPRE..."
+# 
+# gpre_boot needs more work than I've got time for, so we'll build the big one
+#
+#	$(SH) '$(CD) source/gpre; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gpre_boot'
+	$(SH) '$(CD) source/gpre; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gpre'
+
+help:		gbak force
+	$(QUIET_ECHO) "Building the QLI help database..."
+	$(SETUP_ISC_REMOTE) $(GBAK) $(DBALOGIN) $(HLPDIR)master_help_db $(HELP_GBAK)
+	-$(RM) $(HELP_GDB)
+	$(SETUP_ISC_LOCAL) \
+	$(GBAK) $(DBALOGIN) -r $(HELP_GBAK) $(HELP_GDB)
+
+include_generic:	force
+	$(QUIET_ECHO) "Building the include directory..."
+	$(CAT) source/jrd/ibase.h source/jrd/gdsold.h > $(INCLUDE_DEST)gds.h
+	$(CP) source/extlib/ib_util.h $(INCLUDE_DEST)ib_util.h
+	$(CP) source/jrd/gds.hxx $(INCLUDE_DEST)gds.hxx
+	$(CP) source/jrd/perf.h $(INCLUDE_DEST)perf.h
+	$(CP) source/jrd/ibase.h $(INCLUDE_DEST)ibase.h
+	$(SH) '$(CMP) source/jrd/iberror.h $(INCLUDE_DEST)iberror.h; if [ $$? != 0 ]; then $(CP) source/jrd/iberror.h $(INCLUDE_DEST)iberror.h; fi'
+
+include_apollo:	include_generic
+	$(CP) $(INCLUDE_DEST)gds.h $(INCLUDE_DEST)gds.ins.c
+	$(ECHO) "sm gds_apollo.f $(INCLUDE_DEST)gds.ins.ftn" >> sm_include
+	$(ECHO) "sm gds.pas $(INCLUDE_DEST)gds.ins.pas" >> sm_include
+	$(ECHO) "sm interbase.a $(INCLUDE_DEST)interbase.a" >> sm_include
+	$(ECHO) "sm interbase_alsys.a $(INCLUDE_DEST)interbase.ada" >> sm_include
+	$(ECHO) "sm perf.pas $(INCLUDE_DEST)perf.pas" >> sm_include
+
+
+include_aix:	include_generic
+	$(ECHO) "sm gds_aix.f $(INCLUDE_DEST)gds.f" >> sm_include
+
+include_dg:	include_generic
+	$(ECHO) "sm gds_sun.f $(INCLUDE_DEST)gds.f" >> sm_include
+
+include_dg_x86:	include_generic
+	$(ECHO) "sm gds_sun.f $(INCLUDE_DEST)gds.f" >> sm_include
+
+include_hp:	include_generic
+	$(ECHO) "sm gds_hp.f $(INCLUDE_DEST)gds.f" >> sm_include
+
+include_hp_ada:	include_generic
+	$(ECHO) "sm interbase_hp.a $(INCLUDE_DEST)interbase.ada" >> sm_include
+
+include_sco:	include_generic
+	$(ECHO) "sm interbase_sco.a $(INCLUDE_DEST)interbase.ada" >> sm_include
+
+include_sgi:	include_generic
+	$(ECHO) "sm gds_sun.f $(INCLUDE_DEST)gds.f" >> sm_include
+
+include_so:	include_generic
+	$(CP) source/jrd/gds_sun.f $(INCLUDE_DEST)gds.f
+ 
+include_so_ada:	include_generic
+#	$(ECHO) "sm interbase_sol.a $(INCLUDE_DEST)interbase.a" >> sm_include
+
+include_sun4:	include_generic
+	$(ECHO) "sm gds_sun.f $(INCLUDE_DEST)gds.f" >> sm_include
+	$(ECHO) "sm interbase_sun.a $(INCLUDE_DEST)interbase.a" >> sm_include
+
+includes:	include_generic $(INCLUDES) force
+#	$(BIN_PATH)/marion $(MARION_DB) -c jrd -x -v -z < sm_include
+#	-$(RM) sm_include
+
+inet_server gds_inet_server:	$(INET_LIBRARY) $(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_INET_SERVER..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" inet_server'
+
+inet_server.a gds_inet_server.a:	force
+	$(QUIET_ECHO) "Building GDS_INET_SERVER.A..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" inet_server.a'
+
+install:	force
+	$(QUIET_ECHO) "Building miscellaneous install files..."
+	$(CP) source/builds/install source/interbase
+	-$(CP) source/builds/servers.isc source/interbase
+	$(CP) source/builds/inetd.conf.isc source/interbase
+	$(CP) source/builds/original/services.isc source/interbase
+	-$(CP) source/builds/sys.conf.isc source/interbase
+
+intl:		force
+	$(QUIET_ECHO) "Building INTL..."
+	$(SH) '$(CD) source/intl; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" intl'
+
+iscinstall:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building ISCINSTALL..."
+	$(SH) '$(CD) source/register; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" iscinstall'
+
+isql:		gpre msgs force
+	$(QUIET_ECHO) "Building ISQL..."
+	$(SH) '$(CD) source/isql; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" all'
+
+isqllib.a:	isql
+	$(QUIET_ECHO) "Building interbase/lib/isqllib.a..."
+	$(SH) '$(CD) source/isql; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" libisqllib.a'
+
+gjrn:	$(ACCESS_METHOD) gpre force
+	$(QUIET_ECHO) "Building GJRN..."
+	$(SH) '$(CD) source/journal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" gjrn'
+
+journals:	gjrn gds_archive gdef gfix gbak force
+	$(QUIET_ECHO) "Building journal database backup file..."
+	$(SH) '$(CD) source/journal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" journal.db'
+	-$(RM) $(JRN_GBAK)
+	$(COMPRESS_JRN)
+	$(SETUP_ISC_LOCAL) \
+	$(GDEF) -z -r source/journal.gdl
+	$(GFIX) -w sync journal.gdb
+	$(GBAK) -z journal.gdb $(JRN_GBAK)
+	$(CHMOD_6) $(JRN_GBAK)
+	-$(RM) source/journal.gdl source/journal.gdb
+
+locks:		lock_print $(LOCK_MANAGER) force
+	$(QUIET_ECHO) "Building template of IPC configuration file..."
+	-$(CP) source/lock/config_params source/interbase/isc_config
+
+lock_print gds_lock_print:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_LOCK_PRINT..."
+	$(SH) '$(CD) source/lock; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" lock_print'
+
+manager gds_lock_manager:	$(ACCESS_METHOD) drop force
+	$(QUIET_ECHO) "Building GDS_LOCK_MANAGER..."
+	$(SH) '$(CD) source/lock; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" manager'
+
+msgs:		$(ACCESS_METHOD) $(LOCK_MANAGER) force
+	$(QUIET_ECHO) "Building message file(s)..."
+	$(SH) '$(CD) source/msgs; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" check_messages'
+	$(SH) '$(CD) source/msgs; check_messages -d $(MSGSDIR)master_msg_db -l'
+	$(SH) '$(CD) source/msgs; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" interbase.msg'
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" includes.msg'
+
+msgs_intl:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building international message file(s)..."
+	$(SH) '$(CD) source/msgs; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" locales.msg'
+
+pipe:		$(EXTERNAL_OBJECTS) $(PIPE)
+
+pyxis:		force
+	$(QUIET_ECHO) "Building PYXIS..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" objects'
+
+qli:		gpre msgs force
+	$(QUIET_ECHO) "Building QLI..."
+	$(SH) '$(CD) source/qli; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" qli'
+
+qlilib.a:	qli
+	$(QUIET_ECHO) "Building interbase/lib/qlilib.a..."
+	$(SH) '$(CD) source/qli; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" libqlilib.a'
+
+register:	gpre force
+	$(QUIET_ECHO) "Building REGISTER..."
+	$(SH) '$(CD) source/register; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" register'
+
+relay gds_relay:	force
+	$(QUIET_ECHO) "Building GDS_RELAY..."
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" relay'
+
+remote:		inet_server $(DNET_SERVER) $(AMBX_SERVER)
+
+spit:	force
+	$(QUIET_ECHO) "Building GSPLIT..."
+	$(SH) '$(CD) source/burp; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" spit'
+
+super_server:		force
+	$(QUIET_ECHO) "Building super_server... "
+#	$(SH) '$(CD) source/super/remote; $(MAKE) SYSTEM="builds" super_server'
+	$(SH) '$(CD) source/super/remote; $(MAKE) CFLAGS_COMMON="$(CFLAGS_COMMON)" SYSTEM="builds" super_server'
+
+super_utils:		force
+	$(QUIET_ECHO) "Building super server utlities... "
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" super_server_targets'
+
+utilities:	dba relay gsec security_db $(UTILITIES)
+
+security_db:	force
+	$(QUIET_ECHO) "Building the ISC security database..."
+	-$(RM) $(ISC_GBAK) isc4.gdb
+	$(SETUP_ISC_LOCAL) \
+	source/interbase/bin/isql -z -i source/utilities/isc4.sql; \
+	source/interbase/bin/gdef -z source/utilities/isc4.gdl; \
+	source/interbase/bin/gsec -da isc4.gdb -add sysdba -pw masterkey; \
+	$(GBAK) -z isc4.gdb $(ISC_GBAK)
+	-$(MV) interbase/isc4.gdb interbase/isc4_tmp.gdb
+	-$(MV) isc4.gdb $(ISC_GDB)
+	$(CHMOD_6) $(ISC_GBAK) $(ISC_GDB)
+	-$(RM) isc4.gdb
+
+#
+# The V4 intlbld crashes attempting to create a Dialect 3 database
+# The sed hack creates it using DIALECT 1
+#
+v4_examples:	v4_dbs
+	$(QUIET_ECHO) "Building V4 examples directory..."
+	$(CD) source/example4; \
+	$(SED) -e s/' year'/' proj_year'/g $(REFDBPATH)/example4/empbuild.e >empbuild.e; \
+	$(SED) -e s/' year'/' proj_year'/g $(REFDBPATH)/example4/intlbld.e >tmpbld.e; \
+	$(ECHO) '/EXEC SQL SET SQL DIALECT 1;/d' > sedf; \
+	$(ECHO) '/EXEC SQL INCLUDE SQLCA;/a\' >> sedf; \
+	$(ECHO) 'EXEC SQL SET SQL DIALECT 1;' >> sedf; \
+	$(SED) -f sedf tmpbld.e > intlbld.e; \
+	$(CP) $(REFDBPATH)/example4/empddl.sql .; \
+	$(SED) -e s/\(year/\(proj_year/g $(REFDBPATH)/example4/empdml.sql >empdml.sql; \
+	$(CP) $(REFDBPATH)/example4/intlddl.sql .; \
+	$(SED) -e s/\(year/\(proj_year/g $(REFDBPATH)/example4/intldml.sql >intldml.sql; \
+	$(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" v4_examples
+
+v5_examples:	v5_dbs
+	$(QUIET_ECHO) "Building V5 examples directory..."
+	$(CP) $(REFDBPATH)/example5/empddl.sql example5
+	$(CP) $(REFDBPATH)/example5/intlddl.sql example5
+	$(CD) source/example5; \
+	$(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" v5_examples
+
+wal_print:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_WAL_PRINT..."
+	$(SH) '$(CD) source/wal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" wal_print'
+
+wal_writer:	$(ACCESS_METHOD) force
+	$(QUIET_ECHO) "Building GDS_WAL_WRITER..."
+	$(SH) '$(CD) source/wal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" wal_writer'
+
+csi_objects:
+	$(QUIET_ECHO) "Building CSI OBJECTS..."
+	$(SH) '$(CD) source/csv; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+dsql_objects:
+	$(QUIET_ECHO) "Building DSQL OBJECTS..."
+	$(SH) '$(CD) source/dsql; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+lock.o:
+	$(QUIET_ECHO) "Building LOCK.O..."
+	$(SH) '$(CD) source/lock; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+pyxis_objects:
+	$(QUIET_ECHO) "Building PYXIS OBJECTS..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+pyxlib.o:
+	$(QUIET_ECHO) "Building PYXLIB.O..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+rem_objects:
+	$(QUIET_ECHO) "Building REMOTE OBJECTS..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+wal_objects:
+	$(QUIET_ECHO) "Building WAL OBJECTS..."
+	$(SH) '$(CD) source/wal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+
+dsqllib:
+	$(QUIET_ECHO) "Building DSQLLIB..."
+	$(SH) '$(CD) source/dsql; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+pyxislib:
+	$(QUIET_ECHO) "Building PYXISLIB..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+
+csi_p_objs:
+	$(QUIET_ECHO) "Building CSI PIC OBJECTS..."
+	$(SH) '$(CD) source/csv; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+dsql_p_objects:
+	$(QUIET_ECHO) "Building DSQL PIC OBJECTS..."
+	$(SH) '$(CD) source/dsql; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+gds_pyxis.a:
+	$(QUIET_ECHO) "Building GDS_PYXIS.A..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" libpyxis.a'
+lock.bin:
+	$(QUIET_ECHO) "Building LOCK.BIN..."
+	$(SH) '$(CD) source/lock; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+pyx_p_objects:
+	$(QUIET_ECHO) "Building PYXIS PIC OBJECTS..."
+	$(SH) '$(CD) source/pyxis; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+wal_p_objects:
+	$(QUIET_ECHO) "Building WAL PIC OBJECTS..."
+	$(SH) '$(CD) source/wal; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+rem_p_objects:
+	$(QUIET_ECHO) "Building REMOTE PIC OBJECTS..."
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" SYSTEM="builds" $(@F)'
+
+
+# Note:	So far this target is only available on Solaris
+makedepend:
+	$(QUIET_ECHO) "Building component dependency files..."
+	$(RM) \
+	source/alice/depends.mak \
+	source/burp/depends.mak \
+	source/csv/depends.mak \
+	source/dsql/depends.mak \
+	source/dudley/depends.mak \
+	source/gpre/depends.mak \
+	source/intl/depends.mak \
+	source/lock/depends.mak \
+	source/isql/depends.mak \
+	source/journal/depends.mak \
+	source/jrd/depends.mak \
+	source/msgs/depends.mak \
+	source/qli/depends.mak \
+	source/remote/depends.mak \
+	source/utilities/depends.mak \
+	source/wal/depends.mak 
+	$(SH) '$(CD) source/alice; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/burp; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/csv; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/dsql; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/dudley; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/gpre; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/intl; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/lock; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/isql; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/journal; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/jrd; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/msgs; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/qli; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/remote; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/utilities; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	$(SH) '$(CD) source/wal; $(MAKE) CFLAGS="$(CFLAGS)" depends.mak' 
+	
+clean:	clean_executables
+	-$(RM) \
+	source/burp/gbaklib.a \
+	source/super/client/gds.so.0 \
+	source/examples/refresh \
+	source/jrd/gdsshr.a source/jrd/gdslib source/jrd/gds.sl \
+	source/jrd/gds_s.a source/jrd/gdsf_s.a \
+	source/jrd/gds.so.0 \
+	source/jrd/gdslib.so.1.0 source/jrd/gdslib.so.0.1 \
+	source/jrd/gdsflib.so.0.0 \
+	source/jrd/gds_b.a source/jrd/gds.a source/jrd/gds.a.solaris \
+	source/jrd/gds_pipe.a \
+	source/jrd/gdsmt.so.0 \
+	source/super/jrd/gds_ss.a source/super/client/gdsmt.so.1 \
+	source/super/client/gds.sl.1 \
+	source/pyxis/libpyxis.a \
+	source/qli/qlilib.a \
+	source/remote/inet_server.a source/remote/dnet_server.a
+
+clean_executables:
+	-$(RM) \
+	source/alice/alice \
+	source/burp/burp \
+	source/csv/central_server source/csv/csu \
+	source/dudley/dudley \
+	source/gpre/gpre \
+	source/intl/intl \
+	source/journal/gjrn source/journal/gds_archive \
+	source/jrd/codes \
+	source/lock/lock_print source/lock/manager \
+	source/jrd/gds_pipe \
+	source/msgs/build_file source/msgs/check_messages \
+	source/pyxis/fred \
+	source/qli/qli \
+	source/register/iscinstall \
+	source/remote/inet_server source/remote/dnet_server \
+	source/remote/gds_server \
+	source/super/remote/super_server \
+	source/utilities/dba source/utilities/drop source/utilities/gsec \
+	source/utilities/relay \
+	source/utilities/ibmgr source/utilities/ibguard \
+	source/wal/wal_writer
+
+force:
