@@ -1,0 +1,75 @@
+%%PEARDIR%%/simpletest/authentication.php
+%%PEARDIR%%/simpletest/browser.php
+%%PEARDIR%%/simpletest/dumper.php
+%%PEARDIR%%/simpletest/errors.php
+%%PEARDIR%%/simpletest/expectation.php
+%%PEARDIR%%/simpletest/extensions/pear_test_case.php
+%%PEARDIR%%/simpletest/extensions/phpunit_test_case.php
+%%PEARDIR%%/simpletest/form.php
+%%PEARDIR%%/simpletest/frames.php
+%%PEARDIR%%/simpletest/http.php
+%%PEARDIR%%/simpletest/mock_objects.php
+%%PEARDIR%%/simpletest/options.php
+%%PEARDIR%%/simpletest/page.php
+%%PEARDIR%%/simpletest/parser.php
+%%PEARDIR%%/simpletest/remote.php
+%%PEARDIR%%/simpletest/reporter.php
+%%PEARDIR%%/simpletest/scorer.php
+%%PEARDIR%%/simpletest/shell_tester.php
+%%PEARDIR%%/simpletest/simple_test.php
+%%PEARDIR%%/simpletest/socket.php
+%%PEARDIR%%/simpletest/tag.php
+%%PEARDIR%%/simpletest/unit_tester.php
+%%PEARDIR%%/simpletest/url.php
+%%PEARDIR%%/simpletest/user_agent.php
+%%PEARDIR%%/simpletest/web_tester.php
+%%PEARDIR%%/simpletest/xml.php
+%%PORTDOCS%%%%DOCSDIR%%/HELP_MY_TESTS_DONT_WORK_ANYMORE
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/expectation_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/form_testing_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/group_test_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/mock_objects_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/partial_mocks_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/reporter_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/server_stubs_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/unit_test_documentation.html
+%%PORTDOCS%%%%DOCSDIR%%/web_tester_documentation.html
+%%DATADIR%%/test/acceptance_test.php
+%%DATADIR%%/test/adapter_test.php
+%%DATADIR%%/test/all_tests.php
+%%DATADIR%%/test/authentication_test.php
+%%DATADIR%%/test/browser_test.php
+%%DATADIR%%/test/dumper_test.php
+%%DATADIR%%/test/errors_test.php
+%%DATADIR%%/test/expectation_test.php
+%%DATADIR%%/test/form_test.php
+%%DATADIR%%/test/frames_test.php
+%%DATADIR%%/test/http_test.php
+%%DATADIR%%/test/live_test.php
+%%DATADIR%%/test/options_test.php
+%%DATADIR%%/test/page_test.php
+%%DATADIR%%/test/parser_test.php
+%%DATADIR%%/test/real_sites_test.php
+%%DATADIR%%/test/remote_test.php
+%%DATADIR%%/test/shell_test.php
+%%DATADIR%%/test/shell_tester_test.php
+%%DATADIR%%/test/simple_mock_test.php
+%%DATADIR%%/test/socket_test.php
+%%DATADIR%%/test/tag_test.php
+%%DATADIR%%/test/unit_tests.php
+%%DATADIR%%/test/url_test.php
+%%DATADIR%%/test/user_agent_test.php
+%%DATADIR%%/test/visual_test.php
+%%DATADIR%%/test/web_tester_test.php
+%%DATADIR%%/test/xml_test.php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%
+@dirrm %%PEARDIR%%/simpletest/extensions
+@dirrm %%PEARDIR%%/simpletest
+@unexec rmdir %D/%%PEARDIR%% 2>/dev/null || true
