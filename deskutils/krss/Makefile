@@ -13,27 +13,19 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	kde@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE Rich Site Summary viewer
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-USE_KDEBASE_VER=3
-GNU_CONFIGURE=	yes
-QTCFGLIBS+=	-pthread
-CONFIGURE_ENV+=	LIBQT="-lqt-mt"
+USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
-MAKE_ENV=	${CONFIGURE_ENV}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBQT="-lqt-mt"
+
+QTCPPFLAGS+=	${PTHREAD_CFLAGS}
+QTCFGLIBS+=	${PTHREAD_LIBS}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/auto-bin
@@ -46,4 +38,4 @@ pre-configure:
 	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.dist
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
