@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.1 1995/07/01 08:07:18 asami Exp $
+# $Id: Makefile,v 1.2 1995/07/13 00:03:31 asami Exp $
 #
 
     SUBDIR += cpmemu
@@ -6,6 +6,7 @@
     SUBDIR += hfs
     SUBDIR += mtools
     SUBDIR += pcemu
+    SUBDIR += tkhfs
     SUBDIR += vmsbackup
     SUBDIR += wine
 
