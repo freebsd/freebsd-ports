@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.98 1998/11/18 10:07:49 flathill Exp $
+# $Id: Makefile,v 1.99 1998/11/19 17:01:31 vanilla Exp $
 #
 
     SUBDIR += 4va
@@ -25,7 +25,9 @@
     SUBDIR += gifmerge
     SUBDIR += giftool
     SUBDIR += giftrans
-    SUBDIR += gimp-manual
+    SUBDIR += gimp-manual-html
+    SUBDIR += gimp-manual-pdf
+    SUBDIR += gimp-manual-ps
     SUBDIR += gimp1
     SUBDIR += gplot
     SUBDIR += gqview

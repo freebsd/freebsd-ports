@@ -1,9 +1,9 @@
-# New ports collection makefile for:    psutils
+# New ports collection makefile for:    psutils (letter)
 # Version required:     1.16
 # Date created:         21 September 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.16 1998/03/12 16:12:09 jmz Exp $
+# $Id: Makefile,v 1.17 1998/10/30 08:35:38 asami Exp $
 #
 
 DISTNAME=	psutils-p17
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-LOOP_VAR=	PAPERSIZE
-LOOP_OPTIONS=	letter a4
 WRKSRC=		${WRKDIR}/psutils
 MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
 MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
@@ -22,21 +20,8 @@ MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
 		fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 \
 		extractres.1 includeres.1 fixscribeps.1 psmerge.1
 
-
-##package::	letter  a4
-
-letter::
-	${MAKE} PAPERSIZE=letter
-
-letter-install::
-	${MAKE} PAPERSIZE=letter install
-
-a4::
-	${MAKE} PAPERSIZE=a4
-
-
 .if !defined(PAPERSIZE)
-PAPERSIZE=a4
+PAPERSIZE=letter
 PAPERSIZE_UNSPECIFIED=	yes
 .else
 .if ${PAPERSIZE} != A3 && ${PAPERSIZE} != a3 && ${PAPERSIZE} != A4 \
@@ -46,7 +31,11 @@ PAPERSIZE_UNSPECIFIED=	yes
 	&& ${PAPERSIZE} != ledger && ${PAPERSIZE} != tabloid \
 	&& ${PAPERSIZE} != statement && ${PAPERSIZE} != executive \
 	&& ${PAPERSIZE} != folio && ${PAPERSIZE} != quarto && ${PAPERSIZE} != 10x14
-PAPERSIZE_INVALID= yes
+.BEGIN:
+	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
+	@${ECHO} "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
+	@${ECHO} "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
+	@${FALSE}
 .endif
 .endif
 
@@ -55,13 +44,8 @@ pre-fetch:
 	@echo "Defaulting to ${PAPERSIZE} sized paper."
 	@echo ""
 	@echo "Set the environment variable PAPERSIZE if you want to use other sizes."
-	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
+	@echo "Possible values are:  A3, A4, A5, B5, letter, legal,"
 	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
-.elif defined(PAPERSIZE_INVALID)
-	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\""
-	@echo "Possible values are:  A3, A4 (default), A5, B5, letter, legal,"
-	@echo "   ledger, tabloid, statement, executive, folio, quarto, and 10x14."
-	@${FALSE}
 .endif
 
 .include <bsd.port.mk>

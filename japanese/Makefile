@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.162 1998/11/19 08:49:04 asami Exp $
+# $Id: Makefile,v 1.163 1998/11/19 18:43:04 sada Exp $
 #
 
     SUBDIR += Canna
@@ -29,7 +29,10 @@
     SUBDIR += expect
     SUBDIR += gawk
     SUBDIR += gd
-    SUBDIR += ghostscript
+    SUBDIR += ghostscript118
+    SUBDIR += ghostscript240
+    SUBDIR += ghostscript300
+    SUBDIR += ghostscript400
     SUBDIR += gicq
     SUBDIR += gimp
     SUBDIR += gn-gnspool
@@ -77,7 +80,8 @@
     SUBDIR += kinput2-sj3+wnn6
     SUBDIR += kinput2-wnn4
     SUBDIR += kinput2-wnn6
-    SUBDIR += kon
+    SUBDIR += kon2-14dot
+    SUBDIR += kon2-16dot
     SUBDIR += kterm
     SUBDIR += less
     SUBDIR += libicq
@@ -181,15 +185,26 @@
     SUBDIR += vfghostscript5
     SUBDIR += vflib
     SUBDIR += vftool
-    SUBDIR += vftool-misc
-    SUBDIR += vfxdvi
+    SUBDIR += vftool-misc118
+    SUBDIR += vftool-misc240
+    SUBDIR += vftool-misc300
+    SUBDIR += vftool-misc400
+    SUBDIR += vfxdvi118
+    SUBDIR += vfxdvi240
+    SUBDIR += vfxdvi300
+    SUBDIR += vfxdvi360
+    SUBDIR += vfxdvi400
+    SUBDIR += vfxdvi600
     SUBDIR += vfxdvik
     SUBDIR += vje-trial
     SUBDIR += w3
     SUBDIR += weblint97
     SUBDIR += wine
     SUBDIR += x0212fonts
-    SUBDIR += xdvi
+    SUBDIR += xdvi118
+    SUBDIR += xdvi240
+    SUBDIR += xdvi300
+    SUBDIR += xdvi400
     SUBDIR += xemacs
     SUBDIR += xemacs-canna
     SUBDIR += xemacs-canna+wnn4

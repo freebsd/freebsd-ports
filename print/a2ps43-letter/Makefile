@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.16 1998/04/04 07:36:44 asami Exp $
+# $Id: Makefile,v 1.17 1998/10/30 08:35:29 asami Exp $
 #
 
 DISTNAME=	a2ps
@@ -15,55 +15,25 @@ DISTFILES=	a2ps.V4.3.tar.gz
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_LATEST_LINK=	yes
-LOOP_VAR=	PAPERSIZE
-LOOP_OPTIONS=	letter a4
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 NO_WRKSUBDIR=	yes
 MAN1=		a2ps.1
 
-letter::
-	${MAKE} PAPERSIZE=letter
+PAPERSIZE?=	letter
 
-letter-install::
-	${MAKE} PAPERSIZE=letter install
-
-a4::
-	${MAKE} PAPERSIZE=a4
-
-a4-install::
-	${MAKE} PAPERSIZE=a4 install
-
-
-.if !defined(PAPERSIZE)
-PAPERSIZE_UNSPECIFIED=	yes
-PAPERSIZE=letter
-.endif
-
-.if ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER || ${PAPERSIZE} == Letter
-PAPERSIZE=letter
+.if ${PAPERSIZE} == letter
 WIDTH=8.5
 HEIGHT=11.0
 A4_PAPERSIZE=0
-.elif ${PAPERSIZE} == A4 || ${PAPERSIZE} == a4 
-PAPERSIZE=a4
+.elif ${PAPERSIZE} == a4
 WIDTH=8.27
 HEIGHT=11.64
 A4_PAPERSIZE=1
 .else
-PAPERSIZE_INVALID= yes
-.endif
-
-
-pre-fetch:
-.if defined(PAPERSIZE_UNSPECIFIED)
-	@echo "Defaulting to ${PAPERSIZE} sized paper."
-	@echo ""
-	@echo "Set the environment variable PAPERSIZE if you want to use other sizes."
-	@echo "Possible values are:  A4 or letter (default)"
-.elif defined(PAPERSIZE_INVALID)
-	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
-	@echo "Possible values are:  A4 or letter (default)"
-	@/usr/bin/false
+.BEGIN:
+	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
+	@${ECHO} "Possible values are:  a4 or letter"
+	@${FALSE}
 .endif
 
 pre-install:

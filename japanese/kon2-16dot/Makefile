@@ -1,9 +1,9 @@
-# New ports collection makefile for:	kon2
+# New ports collection makefile for:	kon2 with 16dot font
 # Version required:     0.3
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.17 1998/11/07 14:30:29 kuriyama Exp $
+# $Id: Makefile,v 1.18 1998/11/08 00:49:29 asami Exp $
 #
 
 DISTNAME=	kon2-0.3
@@ -19,30 +19,21 @@ DISTFILES=	kon2-0.3.tar.gz \
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
-LOOP_VAR=	KONFONT
-LOOP_OPTIONS=	14dot 16dot
 MAN1=		kon.1
 MANLANG=	ja
 EXTRACT_ONLY=	kon2-0.3.tar.gz
 
 DOCDIR=		${PREFIX}/share/doc/kon2
 
-.if defined(KONFONT)
-.if (${KONFONT} == "16dot")
-KON16FONT=Startup
-.else if (${KONFONT} == "14dot")
-KON14FONT=Startup
-.endif
-.endif
-
-pre-fetch:
 .if !defined(KONFONT)
-	@${ECHO_MSG} "NOTE: You can select default kon font size."
-	@${ECHO_MSG} "by adding \"KONFONT=<Font Size>\" to argument of make."
-	@${ECHO_MSG} "<Font Size> must be \"16dot\" or \"14dot\"."
-	@${ECHO_MSG} "KONFONT defalut value is \"16dot\"."
 KONFONT=16dot
 KON16FONT=Startup
+.elif (${KONFONT} == "14dot")
+KON14FONT=Startup
+.elif (${KONFONT} != "16dot")
+.BEGIN:
+	@${ECHO} "Error: \$${KONFONT} (\"${KONFONT}\") should be either \"14dot\" or \"16dot\"."
+	@${FALSE}
 .endif
 
 pre-build:

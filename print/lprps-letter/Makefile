@@ -1,10 +1,10 @@
 # ex:ts=8
-# New ports collection makefile for:    lprps
+# New ports collection makefile for:    lprps (letter)
 # Version required:     2.50
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1997/11/10 11:23:26 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/30 08:35:36 asami Exp $
 #
 
 DISTNAME=	lprps-2.5
@@ -15,47 +15,19 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
 
-LOOP_VAR=	PAPERSIZE
-LOOP_OPTIONS=	letter a4
-MAKE_FLAGS?=	PAPERSIZE=${PAPERSIZE} -f
+MAKE_FLAGS?=	PAPERSIZE=${PS} -f
 MAN1=		psrev.1 textps.1
 MAN8=		lprps.8 psif.8 psof.8
 
 
-letter::
-	${MAKE} PAPERSIZE=letter
+PAPERSIZE?=	letter
+PS!=		echo ${PAPERSIZE} | awk '{print toupper($$1)}'
 
-letter-install::
-	${MAKE} PAPERSIZE=letter install
-
-a4::
-	${MAKE} PAPERSIZE=a4
-
-a4-install::
-	${MAKE} PAPERSIZE=a4 install
-
-
-.if !defined(PAPERSIZE)
-PAPERSIZE=LETTER
-PAPERSIZE_UNSPECIFIED=	yes
-.elif ${PAPERSIZE} == A4 || ${PAPERSIZE} == a4
-PAPERSIZE=A4
-.elif ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER
-PAPERSIZE=LETTER
-.else
-PAPERSIZE_INVALID= yes
-.endif	# not defined PAPERSIZE
-
-pre-fetch:
-.if defined(PAPERSIZE_UNSPECIFIED)
-	@echo "Defaulting to ${PAPERSIZE} sized paper."
-	@echo ""
-	@echo "Set the environment variable PAPERSIZE if you want to use other sizes."
-	@echo "Possible values are:  A4 or letter (default)"
-.elif defined(PAPERSIZE_INVALID)
-	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
-	@echo "Possible values are:  A4 or letter (default)"
-	@/usr/bin/false
+.if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter
+.BEGIN:
+	@${ECHO} "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
+	@${ECHO} "Possible values are:  a4 or letter"
+	@${FALSE}
 .endif
 
 do-install:
