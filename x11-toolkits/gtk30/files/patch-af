@@ -1,11 +1,11 @@
---- gtk/gtkrc.ru.orig	Fri May 19 08:18:08 2000
-+++ gtk/gtkrc.ru	Thu May 25 13:55:53 2000
-@@ -1,7 +1,7 @@
+--- gtk/gtkrc.ru.orig	Tue Mar 14 21:57:24 2000
++++ gtk/gtkrc.ru	Tue Jul 18 13:32:44 2000
+@@ -12,7 +12,7 @@
  style "gtk-default-ru" {
         fontset = "-adobe-helvetica-medium-r-normal--12-*-*-*-*-*-iso8859-*,\
                    -*-arial-medium-r-normal--12-*-*-*-*-*-iso8859-1,\
 -                  -cronyx-helvetica-medium-r-normal--12-*-*-*-*-*-koi8-r,\
 +                  -*-helvetica-medium-r-normal--12-*-*-*-*-*-koi8-r,\
-                   -*-arial-medium-r-normal--12-*-*-*-*-*-koi8-r,*-r-*"
+                   -*-arial-medium-r-normal--12-*-*-*-*-*-koi8-r"
  }
  class "GtkWidget" style "gtk-default-ru"
