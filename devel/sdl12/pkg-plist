@@ -95,6 +95,7 @@ share/examples/SDL11/testhread.c
 share/examples/SDL11/testjoystick.c
 share/examples/SDL11/testkeys.c
 share/examples/SDL11/testlock.c
+share/examples/SDL11/testsem.c
 share/examples/SDL11/testsprite.c
 share/examples/SDL11/testtimer.c
 share/examples/SDL11/testtypes.c
