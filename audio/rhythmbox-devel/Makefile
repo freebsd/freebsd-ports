@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	rhythmbox
-PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTVERSION=	0.6.10
 CATEGORIES=	audio gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	rhythmbox \
+			sources/${PORTNAME}/0.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -21,7 +22,7 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		mad.2:${PORTSDIR}/audio/libmad \
 		id3tag.2:${PORTSDIR}/audio/libid3tag
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
