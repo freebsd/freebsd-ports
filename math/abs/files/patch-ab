@@ -1,0 +1,11 @@
+--- Xpm/Makefile.orig	Mon Jan 25 00:38:13 1999
++++ Xpm/Makefile	Mon Jan 25 00:38:43 1999
+@@ -16,7 +16,7 @@
+ #################################
+ ### C Compiler
+ CC		= cc 
+-CFLAGS		=  -O
++CFLAGS		+=  -O -I$(X11BASE)/include
+ 
+ ### C++ Compiler
+ CCC		= xlC 

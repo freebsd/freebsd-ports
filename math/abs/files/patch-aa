@@ -1,0 +1,19 @@
+--- Makefile.orig	Mon Jan 25 00:36:03 1999
++++ Makefile	Mon Jan 25 00:37:42 1999
+@@ -4,6 +4,7 @@
+ 
+ MAKE =	make
+ 
++CFLAGS+=-I$(X11BASE)/include
+ LIBS = -L /lib/X11 -L /usr/X11R6/lib -lXaw -lX11 -lm -lXt -lXmu -lXext 
+ 
+ SRCS 	=	\
+@@ -105,7 +106,7 @@
+ 	$(MAKE) all); \
+ 	fi \
+ 	done
+-	cc -o abs ./TextField-1.0/*.o $(OBJS) ./Xpm/libxpm.a $(LIBS) 
++	$(CC) $(CFLAGS) -o abs ./TextField-1.0/*.o $(OBJS) ./Xpm/libxpm.a $(LIBS) 
+ 
+ clean::
+ 	rm -f *.o */*.o */*.a
