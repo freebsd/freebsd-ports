@@ -7,7 +7,7 @@
 
 PORTNAME=	nvu
 PORTVERSION=	0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www linux
 MASTER_SITES=	http://cvs.nvu.com/download/
 PKGNAMEPREFIX=	linux-
