@@ -5868,6 +5868,7 @@ siege		ports/benchmarks/siege
 sigit		ports/mail/sigit
 sigrot		ports/mail/sigrot
 silc-client	ports/net/silc-client
+silc-doc	ports/net/silc-doc
 silc-server	ports/net/silc-server
 silc-toolkit	ports/devel/silc-toolkit
 sim		ports/emulators/sim
