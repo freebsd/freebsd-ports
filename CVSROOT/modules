@@ -6798,6 +6798,7 @@ prtunnel	ports/net/prtunnel
 prune		ports/sysutils/prune
 pscal		ports/print/pscal
 pscan		ports/security/pscan
+pserv		ports/www/pserv
 psgml		ports/editors/psgml
 psgml-emacs19	ports/editors/psgml-emacs19
 psgml-emacs20	ports/editors/psgml-emacs20
