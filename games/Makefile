@@ -104,6 +104,7 @@
     SUBDIR += galaxis
     SUBDIR += garith
     SUBDIR += gcompris
+    SUBDIR += gcompris2
     SUBDIR += gemdropx
     SUBDIR += gl-117
     SUBDIR += glasteroids
