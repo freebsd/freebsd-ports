@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ssmtp
-PORTVERSION=	2.60.8
+PORTVERSION=	2.60.9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ARGS=	--enable-ssl --enable-inet6
+CONFIGURE_ARGS=	--enable-ssl
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAILERCONF=	/etc/mail/mailer.conf
@@ -32,6 +32,14 @@ MAN8=		ssmtp.8
 
 .if defined(WITH_LOGFILE)
 CONFIGURE_ARGS+=	--enable-logfile
+.endif
+
+.if defined(WITH_MD5AUTH)
+CONFIGURE_ARGS+=	--enable-md5suth
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-inet6
 .endif
 
 .if !defined(WITHOUT_USERPREFS)
