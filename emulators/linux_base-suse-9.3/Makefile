@@ -3,17 +3,16 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.10 1996/11/12 02:16:46 obrien Exp $
+# $Id: Makefile,v 1.11 1996/11/26 23:09:12 erich Exp $
 #
 
 DISTNAME=	linux_lib-2.2
 CATEGORIES=	emulators
+MASTER_SITES=	ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	erich@FreeBSD.org
 
 PREFIX=		/compat/linux
-WRKSRC=		${WRKDIR}
-
 NO_MTREE=	yes
 NO_BUILD=	yes
 NO_EXTRACT=	yes
