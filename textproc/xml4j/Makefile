@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	xml4j
-PORTVERSION= 	3.0.0.e3
+PORTVERSION= 	3.0.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.alphaworks.ibm.com/tech/xml4j/
-DISTNAME=	xml4J_3_0_0EA3
+MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/xml4j/
+DISTNAME=	XML4J-bin.${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 
-WRKSRC=		${WRKDIR}/XML4J_3_0_0EA3
+WRKSRC=		${WRKDIR}/XML4J_3_0_1
 RESTRICTED=	"License prohibites distribute."
 NO_BUILD=	YES
 
@@ -26,7 +26,7 @@ do-install:
 	@${MKDIR} ${DIR}/classes
 	@(cd ${WRKSRC} && ${INSTALL_DATA} xml4j.jar xerces.jar xercesSamples.jar ${DIR}/classes)
 	@${MKDIR} ${DIR}/xml4j
-	@(cd ${WRKSRC} && ${INSTALL_DATA} Readme.html License.html ${DIR}/xml4j)
-	@(cd ${WRKSRC} && ${CP} -R data docs samples src ${DIR}/xml4j)
+	@(cd ${WRKSRC} && ${INSTALL_DATA} Readme.html ${DIR}/xml4j)
+	@(cd ${WRKSRC} && ${CP} -R data docs ${DIR}/xml4j)
 
 .include <bsd.port.mk>
