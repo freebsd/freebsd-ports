@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,8 +35,9 @@ WRKSRC=		${WRKDIR}/phpBB2
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PHPBB_VER=	${PORTVERSION:S/.0.//g:S/.//g}
 PLIST_SUB+=	PHPBBDIR=${PHPBBDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-PLIST_SUB+=	PHPBB_VER=${PORTVERSION:S/.//g}
+PLIST_SUB+=	PHPBB_VER=${PHPBB_VER}
 
 # Set custom variables:
 #
@@ -44,7 +45,7 @@ PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
 EXCEPTFILES=	${PREFIX}/${PHPBBDIR}/install/install.php \
 		${PREFIX}/${PHPBBDIR}/install/upgrade.php \
-		${PREFIX}/${PHPBBDIR}/install/update_to_${PORTVERSION:S/.//g}.php
+		${PREFIX}/${PHPBBDIR}/install/update_to_${PHPBB_VER}.php
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
