@@ -10,7 +10,7 @@ PORTVERSION=	5.4.5a
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.visi.com/users/hawkeyd/X/
 
-MAINTAINER=	bmah@ca.sandia.gov
+MAINTAINER=	bmah@acm.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
