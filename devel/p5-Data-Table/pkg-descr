@@ -1,0 +1,22 @@
+This perl package uses perl5 objects to make it easy for manipulating 
+spreadsheet data among disk files, database, and Web publishing.
+
+A table object contains a header and a two-dimensional array of scalars. 
+Three class methods Data::Table::fromCSV, Data::Table::fromTSV, and 
+Data::Table::fromSQL allow users to create a table object from a CSV/TSV 
+file or a database SQL selection in a snap.
+
+Table methods provide basic access, add, delete row(s) or column(s) 
+operations, as well as more advanced sub-table extraction, table sorting, 
+record matching via keywords or patterns, table merging, and web 
+publishing. Data::Table class also provides a straightforward interface to 
+other popular Perl modules such as DBI and GD::Graph.
+
+The current version of Table.pm is available at 
+http://www.geocities.com/easydatabase
+
+WWW: http://search.cpan.org/dist/Data-Table
+Author: Yingyao Zhou & Guangzhou Zou <easydatabase@yahoo.com>
+
+- Aaron Dalton
+aaron@daltons.ca
