@@ -420,6 +420,7 @@ arts		ports/audio/arts
 arts++		ports/net-mgmt/arts++
 artswrapper	ports/audio/artswrapper
 artwiz-aleczapka	ports/x11-fonts/artwiz-aleczapka
+artwiz-aleczapka-de	ports/x11-fonts/artwiz-aleczapka-de
 artwiz-aleczapka-se	ports/x11-fonts/artwiz-aleczapka-se
 artwiz-fonts	ports/x11-fonts/artwiz-fonts
 as31		ports/devel/as31
