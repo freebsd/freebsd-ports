@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.3 1994/08/23 10:20:26 jkh Exp $
+# $Id: Makefile,v 1.4 1994/08/28 10:49:45 jkh Exp $
 #
-SUBDIR=	bash tcsh
+SUBDIR=	bash pdksh tcsh
 
 .include <bsd.port.subdir.mk>

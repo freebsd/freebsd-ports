@@ -6,8 +6,7 @@
 
 
 DISTNAME=	pdksh-5.1.3
-MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh
-
+MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/
 HAS_CONFIGURE=	YES
 
 .include <bsd.port.mk>
