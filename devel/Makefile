@@ -755,6 +755,7 @@
     SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Set-Object
     SUBDIR += p5-Set-Scalar
+    SUBDIR += p5-Shape
     SUBDIR += p5-Sort-ArrayOfArrays
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Storable
