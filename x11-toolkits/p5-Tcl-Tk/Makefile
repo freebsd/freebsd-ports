@@ -3,11 +3,11 @@
 # Date created:				June 15th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.4 1997/11/22 01:11:36 asami Exp $
+#   $Id: Makefile,v 1.5 1998/02/21 22:38:03 fenner Exp $
 
 DISTNAME=	TclTk-b1
 PKGNAME=	p5-Tcl-Tk-b1
-CATEGORIES=	x11 lang perl5 tk41
+CATEGORIES=	x11-toolkits lang perl5 tk41
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Tcl
 

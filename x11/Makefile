@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.226 1998/08/07 22:56:12 asami Exp $
+# $Id: Makefile,v 1.227 1998/08/07 23:01:15 asami Exp $
 #
 
     SUBDIR += XFree86
@@ -11,7 +11,6 @@
     SUBDIR += emu
     SUBDIR += eterm
     SUBDIR += fbsd-icons
-    SUBDIR += gtk
     SUBDIR += kb2mb2
     SUBDIR += kde
     SUBDIR += kdebase
@@ -23,9 +22,6 @@
     SUBDIR += lupe
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
-    SUBDIR += p5-Gtk
-    SUBDIR += p5-Tcl-Tk
-    SUBDIR += p5-Tk
     SUBDIR += props
     SUBDIR += pythonqt
     SUBDIR += rxvt

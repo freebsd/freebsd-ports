@@ -1,13 +1,17 @@
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/07 22:08:20 asami Exp $
 #
 
     SUBDIR += FWF
     SUBDIR += Xaw3d
     SUBDIR += auis
     SUBDIR += blt
+    SUBDIR += gtk
     SUBDIR += iv
     SUBDIR += lesstif
     SUBDIR += neXtaw
+    SUBDIR += p5-Gtk
+    SUBDIR += p5-Tcl-Tk
+    SUBDIR += p5-Tk
     SUBDIR += pmw
     SUBDIR += pygtk
     SUBDIR += qt
