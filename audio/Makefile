@@ -24,6 +24,7 @@
     SUBDIR += csound-manual
     SUBDIR += dagrab
     SUBDIR += dap
+    SUBDIR += denemo
     SUBDIR += ecasound
     SUBDIR += esound
     SUBDIR += extace
