@@ -1,0 +1,4 @@
+bin/imageindex
+bin/autocaption
+%%PORTDOCS%%share/doc/imageindex/README
+%%PORTDOCS%%@dirrm share/doc/imageindex

@@ -1,0 +1,19 @@
+A flexible digital photo gallery tool. Features include:
+
+ o Index, detail, slide, and frame views
+ o Simple, uncluttered output
+ o Static HTML output for ease of copying/archiving
+ o Uses captions from comments embedded in the image files
+   (utility provided).  Captions will never be lost as long as you have
+   the image file itself.
+ o Keeps generated images up to date, removes stale files,
+   only generates needed thumbs, etc.
+ o Digital photo details extracted from EXIF data
+ o Can optionally recurse directory trees and make montage images of
+   directory contents
+ o Easily configurable, can use an rc file.  
+ o CSS is used for fonts/styles.
+ o Can handle many image file formats
+ o Pages pass W3C specs.
+
+WWW: http://www.edwinh.org/imageindex/
