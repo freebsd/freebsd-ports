@@ -3,12 +3,12 @@
 # Date created:				6/25/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/04 22:29:17 nectar Exp $
+# $Id: Makefile,v 1.1.1.1 1998/07/06 17:45:34 nectar Exp $
 #
 
 DISTNAME=		PyGreSQL-2.1
 PKGNAME=		py-PyGreSQL-2.1
-CATEGORIES=		devel
+CATEGORIES=		databases
 MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/
 EXTRACT_SUFX=		.tgz
 
