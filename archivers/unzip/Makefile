@@ -8,13 +8,13 @@
 PORTNAME=	unzip
 PORTVERSION=    5.50
 PORTREVISION=   2
-CATEGORIES=	archivers
+CATEGORIES?=    archivers
 MASTER_SITES=   ftp://ftp.info-zip.org/pub/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
 DISTFILES=      ${PORTNAME}550.tar.gz
 
-MAINTAINER=	ache@FreeBSD.org
-COMMENT=	List, test and extract compressed files in a ZIP archive
+MAINTAINER?=    ache@FreeBSD.org
+COMMENT?=       List, test and extract compressed files in a ZIP archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
