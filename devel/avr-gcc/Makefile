@@ -20,7 +20,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	joerg@freebsd.org
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
-		avr-ld:${PORTSDIR}/devel/avr-binutils
+		avr-ld:${PORTSDIR}/devel/avr-binutils \
+		autoheader:${PORTSDIR}/devel/autoconf
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
 
@@ -30,7 +31,6 @@ WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 # the original master site still uses .gz.
 #USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
