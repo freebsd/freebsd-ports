@@ -8,7 +8,7 @@
 
 PORTNAME=	faces
 PORTVERSION=	1.7.7
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 
@@ -101,7 +101,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	if [ ! -e ${PREFIX}/share/doc/${PORTNAME} ]; then \
 		${MKDIR} ${PREFIX}/share/doc/${PORTNAME}; \
-	       	${CP} -f ${WRKSRC}/README                 ${PREFIX}/share/doc/${PORTNAME};
+	       	${CP} -f ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}; \
+	fi
 .endif
+	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${PREFIX}/bin
 
 .include <bsd.port.mk>

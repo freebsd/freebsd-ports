@@ -6,7 +6,7 @@
 #  Written 11th November 1989.
 #
 #  Permission is given to distribute these sources, as long as the
-#  copyright messages are not removed, and no monies are exchanged.
+#  copyright messages are not removed, and no monies are exchanged. 
 #
 #  No responsibility is taken for any errors on inaccuracies inherent
 #  either to the comments or the code of this program, but if reported
@@ -22,10 +22,10 @@
 # BINDIR, LIBDIR, INCDIR and MANDIR are expected to be overridden by the
 # calling Makefile
 
-BINDIR		= ${PREFIX}/bin
-LIBDIR		= ${PREFIX}/lib
-INCDIR		= ${PREFIX}/include
-MANDIR		= ${PREFIX}/man
+BINDIR		= /usr/local/bin
+LIBDIR		= /usr/local/lib
+INCDIR		= /usr/local/include
+MANDIR		= /usr/local/man
 
 NAME		= compface
 UNNAME		= uncompface
@@ -55,7 +55,7 @@ CC		?= cc
 CDEFS		= $(SYSV)
 CFLAGS		+= $(CDEFS) $(CCOMP)
 
-all:		lib$(NAME).a $(SOLIB) $(NAME) $(UNNAME)
+all:		lib$(NAME).a $(SOLIB) $(NAME) $(UNNAME) 
 
 $(NAME) :	cmain.o compface.o
 		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o -L./ -lcompface
