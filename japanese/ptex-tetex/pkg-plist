@@ -5,6 +5,8 @@ bin/platex
 bin/pltotf-ptex
 bin/ptex
 bin/tftopl-ptex
+bin/updmap-ptex
+bin/updmap-sys-ptex
 %%TEXMFDIR%%/web2c/ptex/platex-euc.fmt
 %%TEXMFDIR%%/web2c/ptex/platex-jis.fmt
 %%TEXMFDIR%%/web2c/ptex/platex-sjis.fmt
