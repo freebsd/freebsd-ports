@@ -37,6 +37,7 @@ PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php3
 
+USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)

@@ -27,6 +27,7 @@ BUILD_DEPENDS=	${PATCH}:${PORTSDIR}/devel/patch
 BROKEN=		doesn\'t build on the alpha yet
 .endif
 
+USE_SUBMAKE=	yes
 INSTALLS_SHLIB=	YES
 LDCONFIG_DIRS=	%%PREFIX%%/lib
 

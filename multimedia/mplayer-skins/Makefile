@@ -19,6 +19,7 @@ DIST_SUBDIR=	mplayer
 
 MAINTAINER=	riggs@rrr.de
 
+USE_SUBMAKE=	yes
 USE_BZIP2=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

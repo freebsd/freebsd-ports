@@ -22,6 +22,7 @@ MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 
+USE_SUBMAKE=	yes
 XFREE_VERSION=	3.3.6
 VERSION=	1.3
 PATCHLEVEL=	1

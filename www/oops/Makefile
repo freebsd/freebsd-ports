@@ -20,6 +20,7 @@ MAINTAINER=	ozz@FreeBSD.org.ru
 OOPSVERSION=	1.5.22
 OOPSDATE=	20020312
 
+USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \

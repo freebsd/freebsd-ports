@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-1.2.9-4
 
 MAINTAINER=	blaz@si.FreeBSD.org
 
+USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/netsaint/sbin \
 		--libexecdir=${PREFIX}/libexec/netsaint \

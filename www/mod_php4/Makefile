@@ -31,6 +31,7 @@ PHP_DISTDIR=	distributions
 
 SLAVEDIRS=	lang/php4
 
+USE_SUBMAKE=	yes
 USE_AUTOCONF_VER=213
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)

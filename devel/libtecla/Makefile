@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	default

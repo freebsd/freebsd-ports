@@ -17,6 +17,7 @@ MAINTAINER=	edwin@mavetju.org
 BUILD_DEPENDS=	${PORTSDIR}/net/papaya/work/papaya-src-${PORTVERSION}/src/h:${PORTSDIR}/net/papaya
 RUN_DEPENDS=	papaya:${PORTSDIR}/net/papaya
 
+USE_SUBMAKE=	yes
 IS_INTERACTIVE=	yes
 USE_GMAKE=	yes
 USE_GNOMELIBS=	yes

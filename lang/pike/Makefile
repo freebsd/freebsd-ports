@@ -15,6 +15,7 @@ MAINTAINER=	vns@delta.odessa.ua
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
+USE_SUBMAKE=	yes
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=  yes
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)

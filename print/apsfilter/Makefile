@@ -17,6 +17,8 @@ MAINTAINER=	andreas@FreeBSD.org
 
 DIST_SUBDIR=	apsfilter
 
+USE_SUBMAKE=	yes
+
 # special arrangement for package building, build stuff without X11
 # to make memory footprint of apsfilter package smaller
 .if defined(BATCH) && defined(PACKAGE_BUILDING)

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
+USE_SUBMAKE=	yes
 USE_MESA=	yes
 WANT_GTK=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \

@@ -36,6 +36,7 @@ FREEBSD_MODULE_SITES=	\
 		ftp://mirror.aarnet.edu.au/pub/vmware/freebsd/ \
 		http://mirror.aarnet.edu.au/pub/vmware/freebsd/
 
+USE_SUBMAKE=	yes
 USE_LINUX=	yes
 VMDIR=		${PREFIX}/lib/vmware
 
