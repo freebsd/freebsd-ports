@@ -2,6 +2,7 @@
 #
 
     SUBDIR += abacus
+    SUBDIR += bulb
     SUBDIR += cal
     SUBDIR += cbb
     SUBDIR += gaddr
@@ -14,6 +15,7 @@
     SUBDIR += korganizer
     SUBDIR += korganizer11-i18n
     SUBDIR += kproject
+    SUBDIR += moneydance
     SUBDIR += offix-trash
     SUBDIR += plan
     SUBDIR += sliderule
