@@ -49,7 +49,7 @@ TARGETDIR=	freebsd-4
 WORDSIZE=	32
 .elif ${ARCH} == "alpha"
 .if ${OSVERSION} < 400011
-BROKEN=		Not supported on older versions of FreeBSD/Alpha
+IGNORE=		Not supported on older versions of FreeBSD/Alpha
 .endif
 CFLAGS+=	-mieee
 L2=		.so.${SOVERSION}
