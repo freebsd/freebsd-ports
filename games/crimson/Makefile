@@ -16,10 +16,11 @@ MAINTAINER=	jan@jungnickel.com
 LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
 
 USE_BZIP2=	yes
-GNU_CONFIGURE= yes
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	${PERL} -pi -e "s|sdl-config|sdl11-config|;" ${WRKSRC}/configure
+	@${PERL} -pi -e "s|sdl-config|sdl11-config|; s|SDL/|SDL11/|" \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
