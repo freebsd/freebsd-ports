@@ -4770,6 +4770,7 @@ libgeda		ports/cad/libgeda
 libgenome	ports/biology/libgenome
 libgetline	ports/devel/libgetline
 libggi		ports/graphics/libggi
+libggimisc	ports/graphics/libggimisc
 libggiwmh	ports/graphics/libggiwmh
 libggz		ports/games/libggz
 libghthash	ports/devel/libghthash
