@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
 MASTER_SITE_SUBDIR= . old-versions old
 
-MAINTAINER=	dwcjr@inethouston.net
+MAINTAINER=	dwcjr@FreeBSD.org
 
 USE_AUTOCONF=	yes
 

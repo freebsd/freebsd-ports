@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 MASTER_SITE_SUBDIR= . old-versions alpha old
 DISTNAME=       samba-${PORTVERSION}
 
-MAINTAINER=	dwcjr@inethouston.net
+MAINTAINER=	dwcjr@FreeBSD.org
 
 NO_LATEST_LINK=	yes
 USE_AUTOCONF=	yes
