@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bugbuddy2
+PORTNAME=	bugbuddy
 PORTVERSION=	2.8.0
 PORTREVISION=	2
 CATEGORIES=	devel gnome
