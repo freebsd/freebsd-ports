@@ -325,6 +325,7 @@
     SUBDIR += wtf
     SUBDIR += x3eyes
     SUBDIR += xabacus
+    SUBDIR += xarchon
     SUBDIR += xasteroids
     SUBDIR += xataxx
     SUBDIR += xbaby
