@@ -1,21 +1,15 @@
-OpenGL hardware acceleration for RIVA based cards and Matrox G200.
+Utah-GLX is a hardware OpenGL support for XFree86 X-Servers.
 
-To bridge the time until the XFree86-4 release, this port will build a  
-Mesa 3.0 Graphics Library that makes use of the 3d hardware acceleration
-features of nvidia's RIVA 128/128ZX and RIVA TNT/TNT2/VANTAGE based 
-graphics cards and the Matrox G200/G400.
+Currently supported hardware:
+ o Matrox MGA-G200, MGA-G400
+ o ATI RagePro (Mach64)
+ o Intel i810
+ o NVIDIA Riva series
+ o SiS 6326
+ o S3 Virge
 
-WARNING:
+Please note that some of the videocards above (e.g. i810) require kernel
+support, which at the time of this writting (May 2000) is not implemented for
+FreeBSD yet, so it may or may not work for your particular h/w.
 
-Please note that this build might need a considerable amount of time.
-(AMD K6/300MHz/196MB/SCSI: XFree86 3 hours, Mesa 1/2 hour, glx 10 min)
-
-See Jordan K Hubbard's article in the July '99 issue of
-
-    http://www.freebsdzine.org 
-
-for more information or visit
-
-WWW: http://people.FreeBSD.org/~3d
-
-Marc E E van Woerkom  <3d@freebsd.org>
+WWW: http://utah-glx.sourceforge.net/

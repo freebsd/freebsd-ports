@@ -1,31 +1,20 @@
-include/GL/GLXproto.h
-include/GL/dosmesa.h
-include/GL/foomesa.h
-include/GL/fxmesa.h
-include/GL/ggimesa.h
+etc/glx.conf.default
 include/GL/gl.h
-include/GL/gl_mangle.h
 include/GL/glu.h
-include/GL/glu_mangle.h
 include/GL/glut.h
+include/GL/glutf90.h
 include/GL/glx.h
-include/GL/glx_mangle.h
-include/GL/mglmesa.h
-include/GL/osmesa.h
-include/GL/osmesa3.h
-include/GL/svgamesa.h
-include/GL/wmesa.h
-include/GL/xmesa.h
-lib/libGL.a
-lib/libGL.so.1 
-lib/libMesaGL.a
-lib/libMesaGL.so.14
-lib/libMesaGLU.a
-lib/libMesaGLU.so.14
-lib/libglut.a
-lib/libglut.so.3
+lib/libGL.so
+lib/libGL.so.%%GLVER%%
+lib/libGLU.so
+lib/libGLU.so.%%GLVER%%
+lib/libglut.so
+lib/libglut.so.%%GLUTVER%%
 lib/modules/glx.so
-share/doc/riva-glx/README
-share/doc/riva-glx/riva-x-glx.faq.bz2
-share/doc/riva-glx/tested.html
-@dirrm share/doc/riva-glx
+share/doc/utah-glx/README.i810
+share/doc/utah-glx/README.mach64
+share/doc/utah-glx/README.mga
+share/doc/utah-glx/README.nv
+share/doc/utah-glx/README.s3virge
+@dirrm include/GL
+@dirrm share/doc/utah-glx

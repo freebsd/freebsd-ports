@@ -1,0 +1,20 @@
+--- libGL/Makefile.in.orig	Mon Feb 28 20:57:28 2000
++++ libGL/Makefile.in	Mon Feb 28 21:09:30 2000
+@@ -14,7 +14,7 @@
+ # These define the name/version of the shared library we're building
+ # ------------------------------------------------------------------
+ LIBNAME = GL
+-SOGLREV = 1.0
++SOGLREV = ${GLVER}
+ 
+ # Source and Object files
+ # -----------------------
+@@ -111,7 +111,7 @@
+ 
+ lib${LIBNAME}.so.${SOGLREV} : render.c ${OBJS}
+ 	${RM} $@~
+-	@SONAME=`echo $@ | sed 's/\.[^\.]*$$//'`; set -x; \
++	@SONAME=`echo $@`; set -x; \
+ 	if [ `uname` = "SunOS" ] ; then \
+ 		${CC} -o ./$@~ ${SHARED_LDFLAGS} -Wl,-h,$$SONAME ${OBJS} \
+ 		${XLIBDIR} ${XLIBS} ${LIBS} ${MATHLIBS}; \
