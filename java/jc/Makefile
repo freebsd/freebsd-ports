@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include" \
 		LDFLAGS="${LDFLAGS} -L${PREFIX}/lib"
 PATCH_WRKSRC=	${WRKDIR}
 INFO=		jc
+ONLY_FOR_ARCHS=	i386
 
 .if defined(WITH_GNOMELIBS) || exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
 USE_GNOME=	gnomelibs
@@ -93,7 +94,6 @@ pre-build:
 		    ${ECHO} ''; \
 		    sleep 10; \
 		fi
-		exit 1
 		@${ECHO} "===>    Building ${CLASSPATHDIR}"
 		@( cd ${.CURDIR} && ${MAKE} do-build \
 		    BUILD_WRKSRC=${WRKDIR}/${CLASSPATHDIR} )
