@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	7.1
+PORTVERSION=	7.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}.tgz
 DIST_SUBDIR=	amaya
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	The W3C's testbed web editor/browser
 
 WRKSRC=		${WRKDIR}/Amaya/obj
 
@@ -58,7 +59,7 @@ post-install:
 .if ${DICT} != "none"
 	${INSTALL_DATA} ${WRKDIR}/*.dic ${PREFIX}/Amaya/dicopar
 	${MV} ${TMPPLIST} ${TMPPLIST}.new
-	cd ${WRKDIR} && ls -1 *.dic | \
+	cd ${WRKDIR} && ${LS} -1 *.dic | \
 		${SED} -e 's|^|Amaya/dicopar/|' > ${TMPPLIST}
 	${CAT} ${TMPPLIST}.new >> ${TMPPLIST}
 	${RM} ${TMPPLIST}.new

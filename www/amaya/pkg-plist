@@ -46,6 +46,7 @@ Amaya/amaya/TextFileT.TRA
 Amaya/amaya/TextFileUSL.PRS
 Amaya/amaya/Timeline.STR
 Amaya/amaya/Timeline.conf
+Amaya/amaya/Timeline.en
 Amaya/amaya/TimelineP.PRS
 Amaya/amaya/TimelineT.TRA
 Amaya/amaya/TimelineTX.TRA
@@ -735,7 +736,6 @@ Amaya/doc/images/align-de.png
 Amaya/doc/images/alternateview-de.jpg
 Amaya/doc/images/alternateview.jpg
 Amaya/doc/images/amaya.gif
-Amaya/doc/images/annot.gif
 Amaya/doc/images/annot.png
 Amaya/doc/images/annotationicon-de.png
 Amaya/doc/images/annotationicon-es.png
@@ -747,7 +747,6 @@ Amaya/doc/images/annotationsmenu.png
 Amaya/doc/images/annotationwindow-de.png
 Amaya/doc/images/annotationwindow-es.png
 Amaya/doc/images/annotationwindow.png
-Amaya/doc/images/annotorp.gif
 Amaya/doc/images/annotorp.png
 Amaya/doc/images/background-de.png
 Amaya/doc/images/browser_preferences-de.png
@@ -826,8 +825,6 @@ Amaya/doc/images/threads.png
 Amaya/doc/images/tocview-de.jpg
 Amaya/doc/images/tocview.jpg
 Amaya/doc/images/up.gif
-Amaya/doc/images/vh40.gif
-Amaya/doc/images/w3c-amaya.gif
 Amaya/doc/images/w3c_home
 Amaya/fonts/Families.list
 Amaya/fonts/fonts.dir
