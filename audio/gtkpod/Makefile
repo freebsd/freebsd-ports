@@ -18,16 +18,6 @@ COMMENT=	GUI for Apple iPods using GTK2
 LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mp3gain:${PORTSDIR}/audio/mp3gain
 
-.if defined(WITH_AAC)
-BROKEN=		"need mpeg4ip-1.0 for AAC support."
-#LIB_DEPENDS+=	mp4v2.1:${PORTSDIR}/multimedia/mpeg4ip
-#.else
-#pre-everything::
-#	@${ECHO_MSG}
-#	@${ECHO_MSG} "To enable AAC support define the WITH_AAC knob."
-#	@${ECHO_MSG}
-.endif
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
@@ -35,8 +25,38 @@ USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libmp4v2.so)
+.if exists(${LOCALBASE}/include/mpeg4ip_config.h)
+WITH_AAC=	YES
+.else
+WITH_FAAD=	YES
+.endif
+.endif
+.if defined(WITH_AAC) && defined(WITH_FAAD)
+BROKEN=		"WITH_AAC and WITH_FAAD are exclusive."
+.endif
+.if defined(WITH_AAC)
+LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip
+.endif
+.if defined(WITH_FAAD)
+LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/audio/faad
+.endif
+
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+
+.if !defined(WITH_AAC) && !defined(WITH_FAAD)
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To enable AAC support with mpeg4ip define the WITH_AAC knob."
+	@${ECHO_MSG} "To enable AAC support with faad2 define the WITH_FAAD knob."
+	@${ECHO_MSG}
+.endif
+
+post-patch:
+	@${CP} ${FILESDIR}/systems.h ${WRKSRC}/src
 
 pre-configure:
 # install locale correctly (share dir instead of lib dir)
@@ -53,4 +73,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/TODOandBUGS.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
