@@ -15,7 +15,8 @@ DISTNAME=	${APP_TITLE}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBoss 2.x, an open-source J2EE application server
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
 USE_ZIP=	YES
 NO_BUILD=	YES
