@@ -1,11 +1,7 @@
 bin/straw
-etc/gconf/gconf.xml.defaults/apps/straw/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/straw/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/straw/ui/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/straw/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/straw/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/straw/ui/%gconf.xml
+@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/straw.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/straw.schemas
+@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/straw.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/straw.desktop
 share/gnome/pixmaps/straw.png
 share/gnome/straw/Config.py
@@ -143,9 +139,3 @@ share/locale/sr/LC_MESSAGES/straw.mo
 share/locale/sr@Latn/LC_MESSAGES/straw.mo
 share/locale/sv/LC_MESSAGES/straw.mo
 @dirrm share/gnome/straw
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/straw/ui
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/straw/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/straw
-@dirrm etc/gconf/gconf.xml.defaults/apps/straw/ui
-@dirrm etc/gconf/gconf.xml.defaults/apps/straw/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/straw

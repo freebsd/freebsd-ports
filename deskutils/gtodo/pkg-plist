@@ -1,11 +1,7 @@
 bin/gtodo
-etc/gconf/gconf.xml.defaults/apps/gtodo/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtodo/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gtodo/view/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtodo/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtodo/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gtodo/view/%gconf.xml
+@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtodo.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gtodo.schemas
+@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtodo.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gtodo.desktop
 share/gnome/pixmaps/gtodo-about.png
 share/gnome/pixmaps/gtodo-edit.png
@@ -18,9 +14,3 @@ share/locale/pl/LC_MESSAGES/gtodo.mo
 share/locale/ru/LC_MESSAGES/gtodo.mo
 share/locale/sr/LC_MESSAGES/gtodo.mo
 share/locale/sr@Latn/LC_MESSAGES/gtodo.mo
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtodo/view
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtodo/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gtodo
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtodo/view
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtodo/prefs
-@dirrm etc/gconf/gconf.xml.defaults/apps/gtodo
