@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tar.bz
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	General purpose dynamic array
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	YES
 HAS_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES

@@ -16,6 +16,8 @@ COMMENT=	Beacon active measurement tool to monitor multicast
 BUILD_DEPENDS=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+BROKEN=		Unfetchable
+
 WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
