@@ -3,6 +3,7 @@
 %%EMACS_PACKAGESDIR%%/lisp/semi/README.en
 %%EMACS_PACKAGESDIR%%/lisp/semi/TODO
 %%EMACS_PACKAGESDIR%%/lisp/semi/VERSION
+%%EMACS_PACKAGESDIR%%/lisp/semi/_pkg.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/semi/auto-autoloads.elc
 %%EMACS_PACKAGESDIR%%/lisp/semi/custom-load.el
@@ -42,4 +43,4 @@
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/semi
 share/semi/%%SEMI_COOKIE%%
-@unexec /bin/rmdir %D/share/semi || true
+@unexec /bin/rmdir %D/share/semi||(echo "===>  Please ignore above error.";true)

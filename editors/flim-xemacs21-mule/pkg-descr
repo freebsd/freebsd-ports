@@ -1,4 +1,4 @@
-FLIM, message representation or encoding emacs lisp library for xemacs-mule.
+FLIM, message representation or encoding emacs lisp library for xemacs21-mule.
 
   FLIM is a library to provide basic features about message
   representation or encoding.  It consists of following
