@@ -5,8 +5,8 @@ The vfs object's is in %%PREFIX%%/lib/samba.
 
 The configuration files is in %%PREFIX%%/etc/samba-vscan.
 
-Edit %%PREFIX%%/etc/smb.conf and add the following entry 
-(that's only an example):
+Edit %%PREFIX%%/etc/smb.conf and add the following entry if you are using 
+samba 2.X (that's only an example):
 
   [vscan]
        comment = virus-protected /tmp directory
@@ -16,6 +16,18 @@ Edit %%PREFIX%%/etc/smb.conf and add the following entry
        writeable = yes
        browseable = yes
        guest ok = yes
+
+If you are using samba 3.X:
+
+Edit /etc/smb.conf and add the following entry (that's only an example):
+  [vscan]
+      comment = virus-protected /tmp directory
+      path = /tmp
+      vfs object = vscan-oav
+      vscan-oav: config-file = %%PREFIX%%/etc/samba-vscan/vscan-oav.conf
+      writeable = yes
+      browseable = yes
+      guest ok = yes
 
 Basically you have to add a vfs object line to your shares
 which should be virus-protected by this module. If you'd like to use the

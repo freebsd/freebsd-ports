@@ -7,6 +7,7 @@
 
 PORTNAME=	samba-vscan
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://heanet.dl.sourceforge.net/sourceforge/openantivirus/ \
 		http://easynews.dl.sourceforge.net/sourceforge/openantivirus/ \
