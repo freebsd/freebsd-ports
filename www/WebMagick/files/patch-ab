@@ -1,5 +1,5 @@
---- webmagickrc.in.orig	Sun Dec 20 01:03:42 1998
-+++ webmagickrc.in	Thu Mar 25 05:13:47 1999
+--- webmagickrc.in.bak	Sun Oct 17 18:43:44 1999
++++ webmagickrc.in	Sun Nov 21 05:41:33 1999
 @@ -41,6 +41,7 @@
  # $opt_pageindexname	= '.index';	# Base name of secondary index files
  # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
