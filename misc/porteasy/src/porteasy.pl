@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.8.1";
+my $VERSION	= "2.8.2";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -42,6 +42,7 @@ sub ANONCVS_ROOT	{ ":ext:anoncvs\@anoncvs.FreeBSD.org:/home/ncvs" }
 sub REQ_EXPLICIT	{ 1 }
 sub REQ_IMPLICIT	{ 2 }
 
+sub PATH_BZIP2		{ "/usr/bin/bzip2" }
 sub PATH_CVS		{ "/usr/bin/cvs" }
 sub PATH_FETCH		{ "/usr/bin/fetch" }
 sub PATH_LDCONFIG	{ "/sbin/ldconfig" }
@@ -352,11 +353,21 @@ sub update_index() {
 
     my $ifn;			# Index file name
 
-    $ifn = capture(\&cmd, ("make", "-f$portsdir/Makefile", "-VINDEXFILE"));
-    if ($update) {
-	info("Retrieving $ifn");
-	cmd(&PATH_FETCH, $verbose ? "-mv" : "-m", "-o$portsdir/$ifn",
-	    "http://www.freebsd.org/ports/$ifn");
+    cd($portsdir);
+    $ifn = capture(\&cmd, ("make", "-VINDEXFILE"));
+    if ($update || ! -f $ifn) {
+	my $izfn = "$ifn.bz2";
+	info("Retrieving $izfn");
+	if (!cmd(&PATH_FETCH, $verbose ? "-mv" : "-m",
+	    "http://www.freebsd.org/ports/$izfn") || ! -f $izfn) {
+	    bsd::errx(1, "Failed to retrieve index file");
+	}
+	if (! -f $ifn || (stat($izfn))[9] > (stat($ifn))[9]) {
+	    info("Decompressing $izfn");
+	    if (!cmd(&PATH_BZIP2, "-dfk", $izfn)) {
+		bsd::errx(1, "Failed to decompress index file");
+	    }
+	}
     }
     $index = "$portsdir/$ifn";
     if (! -f $index) {
