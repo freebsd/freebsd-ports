@@ -1,0 +1,22 @@
+--- include/Makefile.in	2000/11/15 09:53:28	1.1
++++ include/Makefile.in	2000/11/15 10:12:23
+@@ -143,8 +143,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(xmlincdir)
+ 	@list='$(xmlinc_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
+-	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/$$p"; \
+-	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/$$p; \
++	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/`echo $$p | sed 's|libxml/|libxml2/|'`"; \
++	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(xmlincdir)/`echo $$p | sed 's|libxml/|libxml2/|'`; \
+ 	done
+ 
+ uninstall-xmlincHEADERS:
+@@ -266,7 +266,7 @@
+ 
+ 
+ install-exec-hook:
+-	$(mkinstalldirs) $(DESTDIR)$(xmlincdir) $(DESTDIR)$(xmlincdir)/libxml
++	$(mkinstalldirs) $(DESTDIR)$(xmlincdir) $(DESTDIR)$(xmlincdir)/libxml2
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
