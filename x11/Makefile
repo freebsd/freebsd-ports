@@ -78,7 +78,6 @@
     SUBDIR += xprompt
     SUBDIR += xscreensaver
     SUBDIR += xskyroot
-    SUBDIR += xsheep
     SUBDIR += xsnow
     SUBDIR += xstarroll
     SUBDIR += xtacy
