@@ -222,6 +222,7 @@
     SUBDIR += mod_roaming2
     SUBDIR += mod_ruby
     SUBDIR += mod_scgi
+    SUBDIR += mod_security
     SUBDIR += mod_sed
     SUBDIR += mod_sequester
     SUBDIR += mod_snake
