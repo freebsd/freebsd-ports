@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Strptime
-PORTVERSION=	1.04
+PORTVERSION=	1.05
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-P
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/02//}
 PERL_CONFIGURE=	yes
 
 MAN3=		DateTime::Format::Strptime.3
