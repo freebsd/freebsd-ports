@@ -7886,6 +7886,7 @@ pure-ftpd	ports/ftp/pure-ftpd
 pure-xemacs21-mule	ports/irc/pure-xemacs21-mule
 puredb		ports/databases/puredb
 putty		ports/security/putty
+pv		ports/sysutils/pv
 pvm		ports/net/pvm
 pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
