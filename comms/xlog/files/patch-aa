@@ -1,0 +1,14 @@
+--- ./src/callbacks_mainwindow_qsoframe.c.orig	Sun Feb 27 20:06:41 2005
++++ ./src/callbacks_mainwindow_qsoframe.c	Sun Feb 27 20:06:59 2005
+@@ -25,10 +25,7 @@
+ #include <time.h>
+ #include <math.h>
+ #include <ctype.h>
+-#ifdef BSD
+-	#include <machine/param.h>
+-	#include <sys/types.h>
+-#endif
++#include <sys/types.h>
+ 
+ #if defined(HAVE_SYS_SHM_H)
+ #include <sys/ipc.h>

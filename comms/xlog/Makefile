@@ -5,16 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	comms
 MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/ \
 		http://www.qsl.net/pg4i/download/
 
 MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio logging application
-
-NOT_FOR_ARCHS=	alpha
 
 USE_X_PREFIX=	yes
 USE_GNOME=	libgnomeprint
