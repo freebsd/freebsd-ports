@@ -229,6 +229,15 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%%%DOCSDIR%%/wasnew4.html
 %%PORTDOCS%%%%DOCSDIR%%/webworks.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/big.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/bigbyrep.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/misclogs.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/robotinc.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/searchen.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/statslab.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/typealias.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/virtdoms.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/xferlog.cfg
 %%IMGDIR%%/analogo.gif
 %%IMGDIR%%/analogo.png
 %%IMGDIR%%/bara1.gif
@@ -367,4 +376,5 @@ share/analog/lang/yudom.tab
 @dirrm share/analog/lang
 @dirrm share/analog
 %%PORTDOCS%%@dirrm share/doc/analog
+%%PORTDOCS%%@dirrm share/examples/analog
 @unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true
