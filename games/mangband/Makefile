@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://mangband.org/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
-MAINTAINER=	adam@alameda.edu
+MAINTAINER=	adam@blacktabby.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
