@@ -8,7 +8,9 @@
 PORTNAME=	domtools
 PORTVERSION=	1.5.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.domtools.com/pub/
+MASTER_SITES=	http://www.domtools.com/pub/ \
+		http://www.ussrback.com/UNIX/utilities/ \
+		http://packetstormsecurity.org/UNIX/utilities/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	veers@disturbed.net
