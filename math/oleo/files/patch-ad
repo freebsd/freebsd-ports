@@ -1,0 +1,11 @@
+--- ./Makefile.in.org	Fri Jun  3 21:58:09 1994
++++ ./Makefile.in	Wed Oct 18 22:06:28 1995
+@@ -28,7 +28,7 @@
+ # Directory to install `oleo' in.
+ bindir = $(exec_prefix)/bin
+ 
+-CFLAGS = -g -D_XOPEN_SOURCE
++CFLAGS += -D_XOPEN_SOURCE
+ BISONFLAGS =
+ optional_libs = @LIBS@ @wlibs@
+ extra_objs =@LIBOBJS@ @ALLOCA@
