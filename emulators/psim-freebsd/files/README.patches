@@ -20,3 +20,4 @@ to properly align the htab when the memory is allocated in the first place.
 
 sim/ppc/ppc-spr-table:
 Correct 2 of the SPR entries to allow "info all-registers" to work when the
+architecture is set using "set architecture powerpc:604".
