@@ -87,7 +87,7 @@ post-install:
 .if !defined(WITHOUT_SSL)
 	@${ECHO} "================================================================================"
 	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
-	@${ECHO} "the cclient library but do not support SSL may stop working or have problems
+	@${ECHO} "the cclient library but do not support SSL may stop working or have problems"
 	@${ECHO} "linking. Linking them explicitly with ssl (-lssl -lcrypto) may or may not help."
 	@${ECHO} "================================================================================"
 .endif
