@@ -1,0 +1,42 @@
+#!/bin/sh
+# $FreeBSD$
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+LIB_DIR=${PKG_PREFIX}/lib
+LIB_VERSION=0
+
+LN="ln -sf"
+RM=rm
+
+case "$ACTION" in
+
+POST-INSTALL)
+	${LN} libopenquicktime.so \
+		${LIB_DIR}/libopenquicktime.so.${LIB_VERSION}
+	${LN} quicktime_codec_.mp3.so \
+		${LIB_DIR}/quicktime_codec_.mp3.so.${LIB_VERSION}
+	${LN} quicktime_codec_ms.so \
+		${LIB_DIR}/quicktime_codec_ms.so.${LIB_VERSION}
+	${LN} quicktime_codec_jpeg.so \
+		${LIB_DIR}/quicktime_codec_jpeg.so.${LIB_VERSION}
+	;;
+
+DEINSTALL)
+	${RM} ${LIB_DIR}/libopenquicktime.so.${LIB_VERSION}
+	${RM} ${LIB_DIR}/quicktime_codec_.mp3.so.${LIB_VERSION}
+	${RM} ${LIB_DIR}/quicktime_codec_ms.so.${LIB_VERSION}
+	${RM} ${LIB_DIR}/quicktime_codec_jpeg.so.${LIB_VERSION}
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit

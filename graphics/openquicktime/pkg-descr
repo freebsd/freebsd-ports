@@ -1,0 +1,23 @@
+[from developer's site]
+OpenQuicktime aims to be a portable library for handling Apple's
+QuickTime (TM) popular media files on Unix-like environments. This
+project was firstly designed to allow the porting of the 3ivx codec
+on any Unix, but is now a completly separate and fully Open Source
+project. Details:
+
+o OpenQuicktime library contains no embedded codecs but has a plugin
+  system to dynamically load audio and video codecs.
+o OpenQuicktime contains no colorspace conversion algorithm.
+o OpenQuicktime is fully portable and fully configurable with all
+  the autoconfigure and automake magic we have been able to add.
+o OpenQuicktime supports compressed headers (decoding only for the
+  moment).
+o OpenQuicktime supports Quicktime Sound System version 2.
+o OpenQuicktime can support any inputs and outputs (file, HTTP,
+  FTP, RTP, ...), in fact the functions used to read, write and
+  seek are overloadable.
+o OpenQuicktime has an overloadable plugin mechanism. This is a
+  complexe feature which enables any application to use its own
+  codecs instead of the OpenQuicktime ones.
+
+WWW: http://openquicktime.sourceforge.net/
