@@ -32,6 +32,115 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f3eec2b5-8cd8-11d9-8066-000a95bc6fae">
+    <topic>postnuke -- SQL injection vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>postnuke</name>
+        <range><lt>0.760</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Two separate SQL injection vulnerabilites have been
+           identified in the PostNuke PHP content management
+           system. An attacker can use this vulnerability to
+           potentially insert executable PHP code into the content
+           management system (to view all files within the PHP scope,
+           for instance). Various other SQL injection vulnerabilities
+           exist, which give attackers the ability to run SQL queries
+           on any tables within the database.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0617</cvename>
+      <cvename>CAN-2005-0615</cvename>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110962710805864</mlist>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110962819232255</mlist>
+      <url>http://news.postnuke.com/Article2669.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-28</discovery>
+      <entry>2005-03-04</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7e580822-8cd8-11d9-8c81-000a95bc6fae">
+    <topic>postnuke -- cross-site scripting (XSS) vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>postnuke</name>
+        <range><lt>0.760</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A cross-site scripting vulnerability is present in the
+           PostNuke PHP content management system. By passing data
+           injected through exploitable errors in input validation, an
+           attacker can insert code which will run on the machine of
+           anybody viewing the page. It is feasible that this attack
+           could be used to retrieve session information from cookies,
+           thereby allowing the attacker to gain administrative access
+           to the CMS.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0616</cvename>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110962768300373</mlist>
+      <url>http://news.postnuke.com/Article2669.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-28</discovery>
+      <entry>2005-03-04</entry>
+    </dates>
+  </vuln>
+
+   <vuln vid="c73305ae-8cd7-11d9-9873-000a95bc6fae">
+     <topic>realplayer -- remote heap overflow</topic>
+    <affects>
+      <package>
+        <name>linux-realplayer</name>
+        <range><le>10.0.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Two exploits have been identified in the Linux RealPlayer client.
+           RealNetworks states:</p>
+        <blockquote cite="http://service.real.com/help/faq/security/050224_player/EN/">
+	  <p>RealNetworks, Inc. has addressed recently discovered
+	     security vulnerabilities that offered the potential for
+	     an attacker to run arbitrary or malicious code on a
+	     customer's machine. RealNetworks has received no reports
+	     of machines compromised as a result of the now-remedied
+	     vulnerabilities. RealNetworks takes all security
+	     vulnerabilities very seriously.</p>
+	  <p>The specific exploits were:</p>
+	  <ul>
+	    <li><strong>Exploit 1:</strong> To fashion a malicious WAV
+	      file to cause a buffer overflow which could have allowed
+	      an attacker to execute arbitrary code on a customer's
+	      machine.</li>
+	    <li><strong>Exploit 2:</strong> To fashion a malicious
+	      SMIL file to cause a buffer overflow which could have
+	      allowed an attacker to execute arbitrary code on a
+	      customer's machine.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0611</cvename>
+      <mlist>http://marc.theaimsgroup.com/?l=vulnwatch&amp;m=110977858619314</mlist>
+      <url>http://service.real.com/help/faq/security/050224_player/EN/</url>
+    </references>
+    <dates>
+      <discovery>2005-03-01</discovery>
+      <entry>2005-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="713c3913-8c2b-11d9-b58c-0001020eed82">
     <topic>ImageMagick -- format string vulnerability</topic>
     <affects>
