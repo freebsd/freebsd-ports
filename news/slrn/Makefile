@@ -27,7 +27,6 @@ COMMENT=	SLang-based newsreader
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
