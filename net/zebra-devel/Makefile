@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	zebra-0.83a
+DISTNAME=	zebra-0.84
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !
@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 
 MAINTAINER=	andreas@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/zebra-0.84a
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 
