@@ -9,7 +9,7 @@
 PORTNAME=	rubber
 PORTVERSION=	0.99.6
 CATEGORIES=	textproc
-MASTER_SITES=	http://beffara.org/pub/
+MASTER_SITES=	http://ebeffara.free.fr/pub/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A wrapper for LaTeX and friends
