@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 SHLIB_MAJOR=	1
 
