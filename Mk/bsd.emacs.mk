@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.30 2004-03-21 07:38:52 kris Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.31 2004-08-19 14:18:46 shige Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -132,11 +132,11 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 # XEmacs-21.x
 .elif (${EMACS_PORT_NAME} == "xemacs21")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.1.14
+EMACS_VER=		21.4.15
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
-EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs21
+EMACS_PORTSDIR=		${PORTSDIR}/editors/xemacs
 EMACS_COMMON_PORT=	NO
 EMACS_HAS_MULE=		NO
 EMACS_NO_SUBDIRSEL=	NO
