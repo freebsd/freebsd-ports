@@ -141,6 +141,7 @@
     SUBDIR += darts
     SUBDIR += ddd
     SUBDIR += decompyle
+    SUBDIR += devhelp
     SUBDIR += devtodo
     SUBDIR += dia2code
     SUBDIR += diffconvert
