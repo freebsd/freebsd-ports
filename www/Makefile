@@ -110,6 +110,7 @@
     SUBDIR += mnoGoSearch-current
     SUBDIR += mod_access_referer
     SUBDIR += mod_auth_mysql
+    SUBDIR += mod_auth_pam
     SUBDIR += mod_auth_pgsql
     SUBDIR += mod_csacek
     SUBDIR += mod_dav
