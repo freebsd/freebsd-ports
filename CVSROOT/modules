@@ -2951,6 +2951,7 @@ htdig		ports/textproc/htdig
 htdump		ports/www/htdump
 hte		ports/editors/hte
 html		ports/textproc/html
+html-pretty	ports/textproc/html-pretty
 html2fo		ports/textproc/html2fo
 html2hdml	ports/www/html2hdml
 html2latex	ports/print/html2latex
