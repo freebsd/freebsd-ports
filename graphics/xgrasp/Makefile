@@ -9,8 +9,8 @@
 DISTNAME=	xgrasp.1.7d
 PKGNAME=	xgrasp-1.7d
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://qiclab.scn.rain.com/pub/X11/	\
-		ftp://ftp.cs.ubc.ca/mirror1/x-contrib.R5/
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	../R5contrib
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
