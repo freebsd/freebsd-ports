@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	xfmail
-PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTVERSION=	1.5.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://ftp.welcomes-you.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}rc1/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-rc1
+MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
 MAINTAINER=	mikeh@FreeBSD.org
 COMMENT=	An X Window System application for receiving electronic mail
@@ -23,8 +21,6 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 
 CONFLICTS=	qt-3.*
 
-USE_AUTOMAKE_VER=	15
-USE_AUTOCONF=	yes
 USE_BZIP2=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
@@ -32,9 +28,7 @@ USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 INSTALLS_SHLIB=	yes
-
-# XXX: Disable patching for libtool until we can generate the files
-LIBTOOLFILES=
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -77,9 +71,5 @@ pre-everything::
 	@echo "To build with LDAP support, restart make and define WITH_LDAP"
 .endif
 	@echo
-
-pre-configure:
-	@(cd ${WRKSRC} && ${ENV} ${SCRIPTS_ENV} ${SH} autogen.sh);	\
-	${MAKE} LIBTOOLFILES=aclocal.m4 patch-libtool
 
 .include <bsd.port.post.mk>
