@@ -3,10 +3,10 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.10 1998/10/10 02:09:30 smace Exp $
+#	$Id$
 #
 
-DISTNAME=	mrtg-2.6.6
+DISTNAME=	mrtg-2.7.2
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/
 
@@ -25,13 +25,18 @@ CONFIGURE_ARGS=	--with-gd-lib=${PREFIX}/lib \
 CONFIGURE_ENV=	PERL=${PERL}
 
 do-install:
-		${MKDIR} -p -m 755 ${PREFIX}/etc/mrtg
-		${MKDIR} -p -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-		${MKDIR} -p -m 755 ${PREFIX}/share/mrtg
-		${MKDIR} -p -m 755 ${PREFIX}/share/doc/mrtg
-		for file in ANNOUNCE CHANGES COPYING COPYRIGHT MANIFEST README doc/config.html doc/config.pod doc/config.txt doc/htaccess.txt doc/logfile-format.txt doc/manual.html doc/manual.txt doc/mibhelp.txt doc/squid.txt ; do \
+		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
+		${MKDIR} -m 755 ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
+		${MKDIR} -m 755 ${PREFIX}/share/mrtg
+.if !defined(NOPORTDOCS)
+		${MKDIR} -m 755 ${PREFIX}/share/doc/mrtg
+		for file in ANNOUNCE CHANGES COPYING COPYRIGHT MANIFEST README \
+			doc/config.html doc/config.pod doc/config.txt doc/htaccess.txt \
+			doc/logfile-format.txt doc/manual.html doc/manual.txt \
+			doc/mibhelp.txt doc/squid.txt ; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/mrtg/; \
 		done
+.endif
 		${INSTALL_DATA} ${WRKSRC}/doc/sample-mrtg.cfg ${PREFIX}/etc/mrtg
 		for file in ${WRKSRC}/images/*.gif; do \
 			${INSTALL_DATA} $$file ${PREFIX}/share/mrtg/; \
@@ -40,7 +45,7 @@ do-install:
 			${INSTALL_DATA} ${WRKSRC}/run/$$file ${PREFIX}/lib/perl5/site_perl/${PERL_VER}; \
 		done
 		${INSTALL_PROGRAM} ${WRKSRC}/run/rateup ${PREFIX}/bin/
-		for file in mrtg cfgmaker indexmaker; do \
+		for file in mrtg cfgmaker cfgmaker_ip indexmaker; do \
 			${INSTALL_SCRIPT} ${WRKSRC}/run/$$file ${PREFIX}/bin/; \
 		done
 
