@@ -1,13 +1,13 @@
 # New ports collection makefile for:	LotusXSL
-# Version required:	0.17.2
+# Version required:	0.17.4
 # Date created:		23 June 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/25 15:10:29 kuriyama Exp $
 #
 
-DISTNAME=	lotusxsl_0_17_2
-PKGNAME=	lotusxsl-0.17.2
+DISTNAME=	lotusxsl_0_17_4
+PKGNAME=	lotusxsl-0.17.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.alphaworks.ibm.com/formula/lotusxsl/
 #MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/lotusxsl/
