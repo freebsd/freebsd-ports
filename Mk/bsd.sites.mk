@@ -745,7 +745,7 @@ MASTER_SITE_SAVANNAH+= \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
 # currently belnet has corrupted distfiles, add when the problems have gone away
-.for mirror in heanet aleron unc umn
+.for mirror in heanet aleron umn
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
