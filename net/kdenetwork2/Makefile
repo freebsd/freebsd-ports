@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.28 1999/02/08 22:25:50 se Exp $
+# $Id: Makefile,v 1.29 1999/02/08 22:30:00 se Exp $
 #
 
 DISTNAME=	kdenetwork-1.1
@@ -31,8 +31,5 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 USE_GMAKE=	yes
 CFLAGS+=	"-I${PREFIX}/include"
-
-pre-configure:
-		${LN} -sf $(PREFIX)/include/uu.h $(WRKSRC)/krn/uudeview.h
 
 .include <bsd.port.mk>
