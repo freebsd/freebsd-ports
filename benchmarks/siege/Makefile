@@ -8,8 +8,7 @@
 PORTNAME=	siege
 PORTVERSION=	2.59
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://sid.joedog.org/pub/siege/ \
-		http://www.cus.org.uk/~dom/distfiles/siege/
+MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
 
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A http regression testing and benchmarking utility
