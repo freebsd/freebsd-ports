@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/07/20 03:28:52 steve Exp $
+# $Id: Makefile,v 1.13 1998/10/07 06:11:42 asami Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -21,6 +21,8 @@ DISTFILES=	ghostscript-2.6.2.tar.gz ghostscript-fonts-2.6.2.tar.gz \
 		bjc600j-0.9.tar.gz gdevmjc-0.7.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
 
