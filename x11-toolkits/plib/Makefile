@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/07/03 06:38:36 cpiazza Exp $
 #
 
 DISTNAME=		plib-1.0.12a
@@ -23,7 +23,7 @@ USE_X_PREFIX=		yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400003
-RUN_DEPENDS=		eg++:${PORTSDIR}/lang/egcs
+BUILD_DEPENDS=		eg++:${PORTSDIR}/lang/egcs
 CXX=			eg++
 .endif
 
