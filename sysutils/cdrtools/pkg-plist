@@ -1,2 +1,4 @@
 bin/cdrecord
 man/man1/cdrecord.1.gz
+@unexec rm -f /dev/scgx
+@exec ln -sf /dev/rworm0.ctl /dev/scgx
