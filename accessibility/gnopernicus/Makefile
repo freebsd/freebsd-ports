@@ -7,6 +7,7 @@
 
 PORTNAME=	gnopernicus
 PORTVERSION=	0.9.19
+PORTREVISION=	1
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
@@ -21,6 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui atspi gnomespeech
 USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -30,5 +32,10 @@ MAKE_ENV=	SED="${SED}"
 GCONF_SCHEMAS=	brlmonitor.schemas gnopernicus.schemas remote.schemas
 SHLIB_VERSION=	19
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^F||' \
+		${WRKSRC}/help/braille_monitor/C/brlmonitor-C.omf \
+		${WRKSRC}/help/braille_monitor/es/brlmonitor-es.omf
 
 .include <bsd.port.mk>
