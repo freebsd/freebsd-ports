@@ -127,6 +127,7 @@
     SUBDIR += sonicmail
     SUBDIR += spruce
     SUBDIR += sqwebmail
+    SUBDIR += stuphead
     SUBDIR += sylpheed
     SUBDIR += teapop
     SUBDIR += tkrat
