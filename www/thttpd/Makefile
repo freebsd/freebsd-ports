@@ -63,7 +63,7 @@ do-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/thttpd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/thttpd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/thttpd.sh ${PREFIX}/etc/rc.d/thttpd.sh; \
-		${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${PREFIX}/etc/rc.d/thttpd.sh; \
+		${REINPLACE_CMD} -i '' -e 's|%%PREFIX%%|${PREFIX}|g' ${PREFIX}/etc/rc.d/thttpd.sh; \
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/thttpd
