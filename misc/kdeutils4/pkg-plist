@@ -1,0 +1,145 @@
+bin/kcalc
+bin/kedit
+bin/khexdit
+bin/karm
+bin/kjots
+bin/knotes
+bin/kzip
+share/doc/HTML/en/kcalc/index-1.html
+share/doc/HTML/en/kcalc/index-2.html
+share/doc/HTML/en/kcalc/index-3.html
+share/doc/HTML/en/kcalc/index-4.html
+share/doc/HTML/en/kcalc/index-5.html
+share/doc/HTML/en/kcalc/index-6.html
+share/doc/HTML/en/kcalc/index-7.html
+share/doc/HTML/en/kcalc/index-8.html
+share/doc/HTML/en/kcalc/kcalc.gif
+share/doc/HTML/en/kcalc/index.html
+share/doc/HTML/en/kcalc/kcalc_on_Aix.txt
+share/doc/HTML/en/kcalc/kcalc_on_OSF.txt
+share/doc/HTML/en/kcalc/kcalclogo.tif
+share/doc/HTML/en/kedit/index.html
+share/doc/HTML/en/kedit/index-1.html
+share/doc/HTML/en/kedit/index-2.html
+share/doc/HTML/en/kedit/index-3.html
+share/doc/HTML/en/kedit/index-4.html
+share/doc/HTML/en/kedit/index-5.html
+share/doc/HTML/en/khexdit/index.html
+share/doc/HTML/en/karm/index-1.html
+share/doc/HTML/en/karm/index-2.html
+share/doc/HTML/en/karm/index-3.html
+share/doc/HTML/en/karm/index-4.html
+share/doc/HTML/en/karm/karm.gif
+share/doc/HTML/en/karm/index.html
+share/doc/HTML/en/karm/scrn.html
+share/doc/HTML/en/karm/index.sgml
+share/doc/HTML/en/kjots/index.html
+share/doc/HTML/en/knotes/index.html
+share/doc/HTML/en/knotes/index-1.html
+share/doc/HTML/en/knotes/index-2.html
+share/doc/HTML/en/knotes/index-3.html
+share/doc/HTML/en/knotes/index-4.html
+share/doc/HTML/en/knotes/index-5.html
+share/doc/HTML/en/kzip/index.html
+share/doc/HTML/en/kzip/kzip.gif
+share/doc/HTML/it/khexdit/index.html
+share/apps/kcalc/pics/kcalclogo.xpm
+share/apps/kedit/toolbar/filenew2.xpm
+share/apps/kedit/toolbar/send.xpm
+share/apps/kedit/pics/keditlogo.xpm
+share/apps/kjots/toolbar/OpenBook.xpm
+share/apps/kjots/toolbar/filedel.xpm
+share/icons/kcalc.xpm
+share/icons/kedit.xpm
+share/icons/khexdit.xpm
+share/icons/mini/khexdit.xpm
+share/icons/mini/kzip.xpm
+share/icons/kjots.xpm
+share/icons/knotes.xpm
+share/icons/kzip.xpm
+share/applnk/Utilities/kcalc.kdelnk
+share/applnk/Utilities/khexdit.kdelnk
+share/applnk/Utilities/KArm.kdelnk
+share/applnk/Utilities/Kjots.kdelnk
+share/applnk/Utilities/knotes.kdelnk
+share/applnk/Utilities/kzip.kdelnk
+share/applnk/Applications/kedit.kdelnk
+share/mimelnk/application/x-lha.kdelnk
+share/mimelnk/application/x-ar.kdelnk
+share/mimelnk/application/x-zip.kdelnk
+share/locale/de/LC_MESSAGES/kedit.mo
+share/locale/de/LC_MESSAGES/khexdit.mo
+share/locale/fr/LC_MESSAGES/khexdit.mo
+share/locale/fr/LC_MESSAGES/kedit.mo
+share/locale/cz/LC_MESSAGES/khexdit.mo
+share/locale/cz/LC_MESSAGES/kedit.mo
+share/locale/nl/LC_MESSAGES/kedit.mo
+share/locale/nl/LC_MESSAGES/khexdit.mo
+share/locale/sv/LC_MESSAGES/kedit.mo
+share/locale/sv/LC_MESSAGES/khexdit.mo
+share/locale/es/LC_MESSAGES/khexdit.mo
+share/locale/es/LC_MESSAGES/kedit.mo
+share/locale/ru/LC_MESSAGES/khexdit.mo
+share/locale/hu/LC_MESSAGES/kedit.mo
+share/locale/hu/LC_MESSAGES/khexdit.mo
+share/locale/it/LC_MESSAGES/khexdit.mo
+share/locale/it/LC_MESSAGES/kedit.mo
+share/locale/pl/LC_MESSAGES/khexdit.mo
+share/locale/pl/LC_MESSAGES/kedit.mo
+share/locale/pt/LC_MESSAGES/kedit.mo
+share/locale/pt/LC_MESSAGES/khexdit.mo
+share/locale/pt/LC_MESSAGES/kzip.mo
+share/locale/fi/LC_MESSAGES/khexdit.mo
+share/locale/fi/LC_MESSAGES/kedit.mo
+@dirrm share/mimelnk/application
+@dirrm share/mimelnk
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/hu/LC_MESSAGES
+@dirrm share/locale/hu
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/fi/LC_MESSAGES
+@dirrm share/locale/fi
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/cz/LC_MESSAGES
+@dirrm share/locale/cz
+@dirrm share/locale
+@dirrm share/icons/mini
+@dirrm share/icons
+@dirrm share/doc/HTML/it/khexdit
+@dirrm share/doc/HTML/it
+@dirrm share/doc/HTML/en/kzip
+@dirrm share/doc/HTML/en/knotes
+@dirrm share/doc/HTML/en/kjots
+@dirrm share/doc/HTML/en/khexdit
+@dirrm share/doc/HTML/en/kedit
+@dirrm share/doc/HTML/en/kcalc
+@dirrm share/doc/HTML/en/karm
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
+@dirrm share/doc
+@dirrm share/apps/kjots/toolbar
+@dirrm share/apps/kjots
+@dirrm share/apps/kedit/toolbar
+@dirrm share/apps/kedit/pics
+@dirrm share/apps/kedit
+@dirrm share/apps/kcalc/pics
+@dirrm share/apps/kcalc
+@dirrm share/apps
+@dirrm share/applnk/Utilities
+@dirrm share/applnk/Applications
+@dirrm share/applnk
