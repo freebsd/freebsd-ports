@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yank
-PORTVERSION=	0.1.5
+PORTVERSION=	0.2.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://home.ins.de/~m.hussmann/software/yank/
 

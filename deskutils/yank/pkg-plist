@@ -5,6 +5,7 @@ share/gnome/pixmaps/yank.png
 share/locale/de/LC_MESSAGES/yank.mo
 share/locale/ja/LC_MESSAGES/yank.mo
 share/locale/sv/LC_MESSAGES/yank.mo
+share/locale/uk/LC_MESSAGES/yank.mo
 @dirrm lib/yank/plugins/%%PORTVERSION%%
 @dirrm lib/yank/plugins
 @dirrm lib/yank
