@@ -54,6 +54,7 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						use could render you liable 
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
+ccc-*.alpha.rpm		ports/lang/compaq-cc	Distribution not allowed
 cfs-*			ports/security/cfs	Crypto; export-controlled
 classes111_01.zip	ports/databases/jdbc-oracle816  This software is 
 						under license and export 
@@ -75,6 +76,7 @@ contool-*		ports/sysutils/contool	Don't incorporate the source
 cos-*			ports/java/cos		Special conditions apply for
 						commercial use.
 cosmo/*			ports/games/cosmo	Possible copyright infringement
+cpml_*.alpha.rpm	ports/lang/compaq-cc	Distribution not allowed
 cryptix-jce-*		ports/java/cryptix-jce	Testing purpose only.
 csound			ports/audio/csound	Distribution prohibited; may be
 						used for making commercial
@@ -192,6 +194,7 @@ l_fc_p*_*.*.*.tar.gz	ports/lang/ifc		No redistribution allowed
 lame			ports/audio/lame	may be patented
 lgrind			ports/print/lgrind	Contains non-free code written by Van Jacobson
 libidea			ports/security/libidea	Crypto; export-controlled
+libots-*.alpha.rpm	ports/lang/compaq-cc	Distribution not allowed
 libudbc			ports/databases/libudbc		Downloading and redistribution
 						terms are unclear.
 limewire		ports/net/limewire	No redistribution allowed
