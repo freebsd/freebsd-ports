@@ -1,0 +1,10 @@
+bin/crashecho
+bin/crashexport
+bin/crashstats
+bin/crashwrite
+bin/crashmaint
+bin/crashconvdupebase
+etc/ftn/crashecho.conf.sample
+share/crashecho/AreafixHelp.txt
+@dirrm etc/ftn
+@dirrm share/crashecho
