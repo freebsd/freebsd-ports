@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+paths="/sys /usr/include /usr/src/sys"
+for i in ${paths}; do
+    if [ -f $i/netinet/ip_nat.h ]; then
+	exit 0
+    fi
+done
+echo Unable find netinet/ip_nat.h
+echo This header file from ipfilter package
+echo Try to locate ip_nat.h and manually create links in following catalogs:
+echo $paths
+exit 1
