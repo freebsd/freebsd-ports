@@ -156,6 +156,7 @@ MASTER_SITE_FESTIVAL+= \
 MASTER_SITE_FESTIVAL_OGI+= \
 	ftp://ftp.leb.net/pub/blinux/festival/mirror.ogi-synth_home/ \
 	ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.ogi-synth_home/ \
+	ftp://ftp.tuwien.ac.at/opsys/linux/blinux/festival/mirror.ogi-synth_home/ \
 	ftp://cslu.cse.ogi.edu/pub/tts/
 
 #
