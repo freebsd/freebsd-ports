@@ -1,0 +1,12 @@
+$FreeBSD$
+
+--- Makefile.in	2001/10/30 18:46:00	1.14
++++ Makefile.in	2001/10/30 20:44:26	1.15
+@@ -391,6 +391,7 @@
+ 	@chgrp games ${SCORE} || chgrp wheel ${SCORE} || \
+ 	  echo "Unable to change group ownership of the high score file"
+ 	chmod 0660 ${SCORE}
++	src/dopewars -C ${SCORE}
+ 	${mkinstalldirs} ${DESKTOPDIR}
+ 	${INSTALL} -m 0644 ${DESKTOP} ${DESKTOPDIR}
+ 
