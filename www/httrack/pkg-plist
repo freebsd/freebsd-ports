@@ -11,6 +11,24 @@ include/httrack/htsopt.h
 include/httrack/htssystem.h
 include/httrack/htswrap.h
 include/httrack/httrack-library.h
+lib/httrack/libbaselinks.a
+lib/httrack/libbaselinks.so
+lib/httrack/libbaselinks.so.1
+lib/httrack/libcontentfilter.a
+lib/httrack/libcontentfilter.so
+lib/httrack/libcontentfilter.so.1
+lib/httrack/libdisplayheader.a
+lib/httrack/libdisplayheader.so
+lib/httrack/libdisplayheader.so.1
+lib/httrack/libfilename.a
+lib/httrack/libfilename.so
+lib/httrack/libfilename.so.1
+lib/httrack/libfilename2.a
+lib/httrack/libfilename2.so
+lib/httrack/libfilename2.so.1
+lib/httrack/liblistlinks.a
+lib/httrack/liblistlinks.so
+lib/httrack/liblistlinks.so.1
 lib/libhttrack.a
 lib/libhttrack.so
 lib/libhttrack.so.1
@@ -157,10 +175,12 @@ share/httrack/lang/Turkish.txt
 share/httrack/lang/Ukrainian.txt
 share/httrack/lang.def
 share/httrack/lang.indexes
+share/httrack/libtest/callbacks-example-baselinks.c
 share/httrack/libtest/callbacks-example-contentfilter.c
+share/httrack/libtest/callbacks-example-displayheader.c
 share/httrack/libtest/callbacks-example-filename.c
 share/httrack/libtest/callbacks-example-filename2.c
-share/httrack/libtest/callbacks-example.c
+share/httrack/libtest/callbacks-example-listlinks.c
 share/httrack/libtest/example.c
 share/httrack/libtest/example.dsp
 share/httrack/libtest/example.dsw
@@ -187,6 +207,7 @@ share/pixmaps/httrack.xpm
 @dirrm share/doc/httrack/html/div
 @dirrm share/doc/httrack/html
 @dirrm share/doc/httrack
+@dirrm lib/httrack
 @dirrm include/httrack
 @unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @unexec rmdir %D/share/applications 2>/dev/null || true
