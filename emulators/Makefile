@@ -59,6 +59,7 @@
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-rh-9
     SUBDIR += linux_base-src-rh-7.3
+    SUBDIR += linux_base-src-rh-8
     SUBDIR += linux_base-suse-9.1
     SUBDIR += linux_base-suse-9.2
     SUBDIR += mastergear

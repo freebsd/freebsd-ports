@@ -1,0 +1,8 @@
+This port contains the sources for the packages in linux_base-8.  It exists for
+licencing purposes.  If you distribute the linux_base-8 binary package or the
+distfiles for it, which are also precompiled binaries, you can satisfy the
+requirements of the GNU GPL by offering this package to your customers.  Sources
+for RPM packages with other licences are omitted.
+
+This port takes roughly 66 MB of space when installed.  The package and
+distfiles are a similar size.
