@@ -47,7 +47,7 @@ case $retval in
 		;;
 esac
 
-${MKDIR} -p ${WRKDIRPREFIX}${CURDIR}
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 while [ "$1" ]; do
