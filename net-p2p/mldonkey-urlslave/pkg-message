@@ -1,0 +1,9 @@
+	ATTENTIONATTENTION:
+
+Please make sure that you read
+/usr/local/share/doc/mldonkey-urlslave/README. It contains important
+information about configuring and finally enabling mldonkey-urlslave
+within the GNOME Desktop.
+
+This port/package merely installed the program, you now need to
+configure it and enable it.
