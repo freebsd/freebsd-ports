@@ -11454,6 +11454,7 @@ zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
+zendstudio	ports/devel/zendstudio
 zenity		ports/x11/zenity
 zgv		ports/graphics/zgv
 zh-CJK		ports/chinese/CJK
