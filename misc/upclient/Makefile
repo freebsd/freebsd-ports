@@ -12,6 +12,8 @@ MASTER_SITES=	http://uptime.hexon.cx/download/
 
 MAINTAINER=	kbyanc@posi.net
 
+BROKEN=		Client is outdated and new client cannot be reasonably ported
+
 ALL_TARGET=	bsd
 INSTALL_TARGET=	bsd install CP=$(CP)
 
