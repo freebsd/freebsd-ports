@@ -1,0 +1,11 @@
+The Extensible Messaging and Presence Protocol (XMPP) is an IETF standard
+that provides a complete cross protocol messaging solution.  The problem
+with current IM solutions is that they are all proprietary and cannot
+talk to each other.  XMPP seeks to get rid of those barriers.
+
+Net::XMPP is a collection of Perl modules that provide a Perl Developer
+access to the XMPP protocol.  Using OOP modules we provide a clean
+interface to writing anything from a full client to a simple protocol
+tester.
+
+WWW: http://www.xmpp.org/
