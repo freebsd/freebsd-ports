@@ -1411,6 +1411,7 @@ drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
 dropbear	ports/security/dropbear
 drscheme	ports/lang/drscheme
+drupal		ports/www/drupal
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
 drweb-qmail	ports/security/drweb-qmail
