@@ -3,7 +3,7 @@
 # Date Created:				7 nov 98
 # Whom:				 	Gilad Rom
 #
-# $Id: Makefile,v 1.2 1998/12/10 13:18:16 vanilla Exp $
+# $Id: Makefile,v 1.3 1999/02/18 04:58:45 vanilla Exp $
 #
 
 DISTNAME=	gtkstep-1.4
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-info2.informatik.uni-wuerzburg.de/mitarbeiter/ulli/gtks
 
 MAINTAINER=     rom_glsa@ein-hashofet.co.il
 
-LIB_DEPENDS=	gdk_imlib.2:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

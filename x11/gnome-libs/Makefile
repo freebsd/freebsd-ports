@@ -3,7 +3,7 @@
 # Date created:				17 June 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.33 1999/03/09 01:09:05 nectar Exp $
+# $Id: Makefile,v 1.34 1999/03/15 02:04:17 nectar Exp $
 #
 
 DISTNAME=	gnome-libs-1.0.3
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	gnome-1.0/sources
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gdk_imlib.2:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	gdk_imlib.3:${PORTSDIR}/graphics/imlib \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		ORBit.1:${PORTSDIR}/devel/ORBit \
 		esd.1:${PORTSDIR}/audio/esound

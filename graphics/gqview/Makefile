@@ -3,7 +3,7 @@
 # Date Created:				27 Oct 1998
 # Whom:					Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.9 1999/01/17 18:17:51 nectar Exp $
+# $Id: Makefile,v 1.10 1999/03/15 05:59:15 nectar Exp $
 #
 
 DISTNAME=	gqview-0.6.0.src
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
-		Imlib.2:${PORTSDIR}/graphics/imlib
+		Imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 
