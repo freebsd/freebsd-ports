@@ -1,0 +1,16 @@
+diff -ruN lame-3.91.orig/configure lame-3.91/configure
+--- configure.orig	Wed Dec 26 02:59:42 2001
++++ configure	Thu Aug 15 23:54:44 2002
+@@ -5521,12 +5521,6 @@
+ 
+ 
+ if test "x$GCC" = "xyes"; then
+-	# gcc defaults. OS specific options go in versious sections below
+-        # from the gcc man pages:  "there is no reason to use -pedantic"
+-	CFLAGS="-Wall -pipe ${CFLAGS}"
+-
+-
+-	OPTIMIZATION="-O3 -fomit-frame-pointer -ffast-math -funroll-loops"
+ 	case "${GCC_version}" in
+ 	2.96*)
+            # for buggy version of gcc shipped with RH7.1, back of on some
