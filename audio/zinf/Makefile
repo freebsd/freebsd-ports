@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	freeamp
-PORTVERSION=	2.1.rc5
+PORTVERSION=	2.1.0
 PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://www.freeamp.org/download/src/
 
 MAINTAINER=	ports@FreeBSD.org
-
-BROKEN=		"incompatibility with release versions of musicbrainz API."
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.1:${PORTSDIR}/audio/musicbrainz \
@@ -25,7 +23,8 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_GNOMECTRL=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF	=yes
+
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
@@ -35,5 +34,12 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_M_IX86"
 .elif ${ARCH} == "alpha"
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -D_M_ALPHA"
 .endif
+
+post-install:
+	if [ ! -d ... ]; then \
+		${MKDIR} ${LOCALBASE}/etc/sdr/plugins; \
+	fi;\
+	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.freeamp \
+		${LOCALBASE}/etc/sdr/plugins/
 
 .include <bsd.port.post.mk>
