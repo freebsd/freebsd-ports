@@ -1,18 +1,12 @@
-# New ports collection makefile for:	tiff34
-# Version required:	3.4beta35
+# New ports collection makefile for:	tiff
+# Version required:	3.4
 # Date created:		8 October 1996
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.3 1997/05/26 02:16:32 asami Exp $
+# $Id: Makefile,v 1.4 1997/11/05 09:34:56 tg Exp $
 #
-
-# NOTE:
-# To get rid of rumored incompatibility between libtiff3.3 and 3.4
-# (can somebody confirm it?) installation will be done as libtiff34.a,
-# not libtiff.a.  The port is made so that there's no overwrite
-# for headers, libraries, and documents.  (there may be overwrite of manuals)
 
 DISTNAME=	tiff-v3.4
 PKGNAME=	tiff-3.4
@@ -25,10 +19,10 @@ MAINTAINER=	itojun@itojun.org
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 
-WRKSRC=		${WRKDIR}/tiff-v3.4
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
-		--with-DIR_LIB=${PREFIX}/lib --with-DIR_INC=${PREFIX}/include \
+		--with-DIR_LIB=${PREFIX}/lib \
+		--with-DIR_INC=${PREFIX}/include/tiff34 \
 		--with-CC="${CC}" --with-GCOPTS="${CFLAGS}" \
 		--with-DIRS_LIBINC=${PREFIX}/include \
 		--with-DIR_GZLIB=/usr/lib \
@@ -66,7 +60,7 @@ MAN3=	TIFFCheckTile.3t TIFFClose.3t TIFFComputeStrip.3t TIFFComputeTile.3t \
 	TIFFmemset.3t TIFFquery.3t TIFFrealloc.3t TIFFsize.3t TIFFstrip.3t \
 	TIFFswab.3t TIFFtile.3t libtiff.3t
 
-DOCDIR=	${PREFIX}/share/doc/tiff34
+DOCDIR=	${PREFIX}/share/doc/tiff
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -74,7 +68,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/html/images/* ${DOCDIR}/images
 .endif
-	perl -pi -e 's/\"tiff.h\"/\"tiff34\.h\"/g;' ${PREFIX}/include/tiffio34.h
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
