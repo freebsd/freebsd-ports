@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	9.0.1
+PORTVERSION=	9.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
 MAINTAINER=	ecu@ipv42.net
-COMMENT=	Perl script useful to configure Cisco routers via TFTP
+COMMENT=	Network devices management tool using TFTP and SNMP
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
