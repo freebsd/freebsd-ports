@@ -1,0 +1,38 @@
+--- Makefile.orig	Fri Jun 13 05:14:45 2003
++++ Makefile	Fri Jun 13 05:19:41 2003
+@@ -4,26 +4,28 @@
+ # Makefile for rbldnsd
+ 
+-CC = cc
+-CFLAGS = -O
++CC ?= cc
++CFLAGS += -O
+ LD = $(CC)
+-LDFLAGS = $(CFLAGS)
++LDFLAGS += $(CFLAGS)
+ AR = ar
+ ARFLAGS = rv
+ RANLIB = :
+-SHELL = /bin/sh
+-AWK = awk
++SHELL = ${SH}
++AWK ?= awk
+ 
+ # Disable statistic counters
+ #DEFS = -DNOSTATS
+ # Disable memory info logging (mallinfo)
+-#DEFS = -DNOMEMINFO
++DEFS += -DNOMEMINFO
+ # Disable printing zone (re)load time using utimes()
+ #DEFS = -DNOTIMES
+ # If your system lacks <stdint.h> header but uint32_t is in sys/types.h
+-#DEFS = -DNOSTDINT_H
++DEFS += -DNOSTDINT_H
+ # If you don't want/have IPv6 support (transport only)
+-#DEFS = -DNOIPv6
++.if !defined(WITH_IPV6)
++DEFS += -DNOIPv6
++.endif
+ #
+ # For FreeBSD 4, use DEFS="-DNOMEMINFO -DNOSTDINT_H"
+ # For Solaris, use DEFS="-DNOMEMINFO -DNOSTDINT_H -DNOIPv6"
