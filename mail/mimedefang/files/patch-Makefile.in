@@ -1,26 +1,26 @@
---- Makefile.in.orig	Thu Jun 26 22:13:09 2003
-+++ Makefile.in	Thu Jun 26 22:18:40 2003
-@@ -173,9 +173,8 @@
+--- Makefile.in.orig	Sat Jul 17 15:00:15 2004
++++ Makefile.in	Sat Jul 17 15:43:49 2004
+@@ -196,9 +196,8 @@
  	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true
  	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || true
  
 -	if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter ; then \
 -		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
 -	else \
-+	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
++	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1;
 +	if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter) ; then \
  		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
  	fi
  
-@@ -194,9 +193,8 @@
+@@ -218,9 +217,8 @@
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
- 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin > /dev/null 2>&1 ; \
- 		chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin ;\
--		if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf ; then \
--			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf.example || exit 1; \
+ 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} > /dev/null 2>&1 ; \
+ 		chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} ;\
+-		if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}sa-mimedefang.cf ; then \
+-			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf.example || exit 1; \
 -		else \
-+		@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf.example || exit 1; \
-+		if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf) ; then \
- 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/spamassassin/sa-mimedefang.cf || exit 1; \
++		@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf.example || exit 1; \
++		if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}sa-mimedefang.cf) ; then \
+ 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf || exit 1; \
  		fi \
  	fi

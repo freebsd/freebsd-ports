@@ -6,8 +6,8 @@ bin/watch-mimedefang
 etc/rc.d/mimedefang.sh-dist
 @unexec if cmp -s %D/etc/mimedefang/mimedefang-filter %D/etc/mimedefang/mimedefang-filter.example; then rm -f %D/etc/mimedefang/mimedefang-filter; fi
 etc/mimedefang/mimedefang-filter.example
-@unexec if cmp -s %D/etc/mimedefang/spamassassin/sa-mimedefang.cf %D/etc/mimedefang/spamassassin/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/spamassassin/sa-mimedefang.cf; fi
-etc/mimedefang/spamassassin/sa-mimedefang.cf.example
+@unexec if cmp -s %D/etc/mimedefang/sa-mimedefang.cf %D/etc/mimedefang/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/sa-mimedefang.cf; fi
+etc/mimedefang/sa-mimedefang.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.ANOMY
 %%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
