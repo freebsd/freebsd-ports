@@ -30,7 +30,7 @@
  
    test -z "$ac_cv_prog_CXXPROG" && ac_cv_prog_CXXPROG=""MISSING""
  fi
-@@ -3499,7 +3504,7 @@
+@@ -3505,7 +3510,7 @@
  
  
  
