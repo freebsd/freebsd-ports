@@ -17,8 +17,8 @@ RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 		blackbox:${PORTSDIR}/x11-wm/blackbox
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

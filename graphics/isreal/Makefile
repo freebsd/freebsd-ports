@@ -15,7 +15,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	markp@FreeBSD.org
 
 USE_XLIB=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/isreal ${PREFIX}/bin

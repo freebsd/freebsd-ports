@@ -18,7 +18,8 @@ MAINTAINER=	lioux@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALL_SHLIBS=	yes

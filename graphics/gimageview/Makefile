@@ -17,16 +17,18 @@ LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-WANT_IMLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_IMLIB)
-USE_IMLIB=	yes
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME+=	imlib
+PKGNAMESUFFIX=	-imlib
 .endif
 
 post-patch:

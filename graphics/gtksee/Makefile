@@ -23,7 +23,8 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip
 RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

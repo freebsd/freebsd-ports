@@ -21,13 +21,14 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libvo.a:${PORTSDIR}/graphics/libmpeg2
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		mpeg2.0:${PORTSDIR}/graphics/libmpeg2
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-CPPFLAGS=	-I${LOCALBASE}/include -D__GNU_LIBRARY__ ${PTHREAD_CFLAGS} 
+CPPFLAGS=	-I${LOCALBASE}/include -D__GNU_LIBRARY__ ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS}
 
 post-patch:

@@ -16,7 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

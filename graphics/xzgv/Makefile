@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 MAINTAINER=	nosuzuki@e-mail.ne.jp
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 USE_GMAKE=	yes
 
 MAN1=		xzgv.1

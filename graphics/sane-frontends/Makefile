@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

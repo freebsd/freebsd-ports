@@ -18,7 +18,8 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	XML2_CONFIG="${LOCALBASE}/bin/xml2-config" \
 		XMMS_CONFIG="${X11BASE}/bin/xmms-config"
