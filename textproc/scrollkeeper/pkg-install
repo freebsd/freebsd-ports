@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ -n "${PACKAGE_BUILDING}" ]; then
-    exit 0
-fi
-
 PATH=${PATH}:/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
 export PATH
 
@@ -219,7 +215,9 @@ if [ "$xsldir" = "" ] ; then
 fi
 echo Found DocBook XSLT stylesheets in $xsldir
 for version in current 1.39 1.40 1.41 1.42 1.43 1.44 1.45 1.46 1.47 \
-               1.48 1.49 1.50 1.51 1.52 1.53 1.54 1.55
+               1.48 1.49 1.50.0 1.51.0 1.52.0 1.52.1 1.52.2 1.53.0 1.54.0 \
+	       1.54.1 1.55.0 1.56.0 1.56.1 1.57.0 1.58.0 1.58.1 1.59.0 \
+	       1.59.1 1.60.0
 do
     xmlcatalog --noout --add "rewriteSystem" \
 	"http://docbook.sourceforge.net/release/xsl/$version" \
