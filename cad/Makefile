@@ -9,6 +9,7 @@
     SUBDIR += geda
     SUBDIR += geda-symbols
     SUBDIR += gnetlist
+    SUBDIR += gnucap
     SUBDIR += gschem
     SUBDIR += irsim
     SUBDIR += iverilog
