@@ -15,6 +15,10 @@ DISTNAME=	rs-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented, extended version of the Scheme dialect of Lisp
 
+.if ${MACHINE_ARCH} != "i386"
+BROKEN=		"fails to install on ${ARCH}"
+.endif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 HAS_CONFIGURE=	yes
