@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	v6eval
-PORTVERSION=	2.2b3
+PORTVERSION=	2.3b1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/v6eval/
 
 MAINTAINER=	Yukiyo.Akisada@jp.yokogawa.com
 COMMENT=		IPv6 Conformance Test Platform
 
-RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect
+RUN_DEPENDS=	${SITE_PERL}/Expect.pm:${PORTSDIR}/lang/p5-Expect \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 USE_PERL5=	yes
 USE_OPENSSL=	yes
