@@ -6,4 +6,4 @@ und unserialize() as it comes with a matching XML_Unserializer that is
 able to create PHP data strcutures (like arrays and objects) from XML
 documents, if type hints are available.
 
-WWW: http://pear.php.net/package-info.php?package=XML_Serializer
+WWW: http://pear.php.net/package/XML_Serializer/

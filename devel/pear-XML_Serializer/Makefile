@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML_Serializer
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +19,12 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 
 CATEGORY=	XML
 FILES=		Serializer.php Unserializer.php
-EXAMPLES=	serializeObject.php serializeRDF.php unserializeAnyXML.php \
-		unserializeObject.php unserializeRDF.php
+EXAMPLES=	example.xml serializeIndexedArray.php serializeObject.php \
+		serializeRDF.php serializeWithAttributes.php serializeWithDtd.php \
+		serializeWithIndentedAttributes.php unserializeAnyXML.php \
+		unserializeObject.php unserializeRDF.php unserializeWithAttributes.php
+DOCS=		todo.txt
+_DOCSDIR=	doc
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
