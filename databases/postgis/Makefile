@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	postgis
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+DISTVERSION=	1.0.0-rc2
 CATEGORIES=	databases
 MASTER_SITES=	http://postgis.refractions.net/
-DISTNAME=	postgis-${PORTVERSION}
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
@@ -21,31 +19,38 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 PKGMESSAGE=	pkg-message
-WRKSRC=		${WRKDIR}/postgis-${PORTVERSION}
 PGSQL_SRC=	${WRKDIR}/pgsql/postgresql
 
 INSTALL_TARGET=	install
 INSTALLS_SHLIB=	no
 
 OPTIONS=	GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off \
+		UTF8 "UTF-8 support for shp2pgsql. (needs libiconv)" off
 
 USE_PGSQL=	YES
 
 .include <bsd.port.pre.mk>
 
 MAKE_ARGS=	PGSQL_SRC="${PGSQL_SRC}" \
+		USE_PROJ=1 \
 		DATADIR="${PREFIX}/share/postgis" \
+		INSTALL_DATA="${INSTALL_DATA}" \
 		BINDIR="${PREFIX}/bin" \
 		LIBDIR="${PREFIX}/lib"
 
-PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
+PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl 
+		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 MAKE_ARGS+=	WITH-DOC=yes \
 		DOCSDIR="${DOCSDIR}"
 PORTDOCS=	*
+.endif
+
+.if defined(WITH_UTF8)
+LIB_DEPENDS+=	iconv:${PORTSDIR}/converters/libiconv
+MAKE_ARGS+=	USE_ICONV=1
 .endif
 
 .if defined(WITH_GEOS)
@@ -65,8 +70,8 @@ pre-configure:
 	${MV} ${WRKDIR}/pgsql/postgresql* ${PGSQL_SRC} \
 
 post-install:
-	@ ${INSTALL_SCRIPT} ${FILESDIR}/updatedb.default ${PREFIX}/share/postgis
-	@ ${INSTALL_SCRIPT} ${FILESDIR}/UPDATE ${PREFIX}/share/postgis
+	@ ${INSTALL_DATA} ${FILESDIR}/updatedb.default ${PREFIX}/share/postgis
+	@ ${INSTALL_DATA} ${FILESDIR}/README.upgrade ${PREFIX}/share/postgis
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
 	@ ${CAT} ${PKGMESSAGE}

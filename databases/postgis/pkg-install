@@ -4,10 +4,8 @@ msg(){
  echo "
   ================== ** Postgis Upgrade Notice ** ===================
 
-  The Postgis 0.9.1 port has changed the location of some files, 
-  including libpostgis.so.0 library. If you are a user from a old 
-  version of Postgis (0.9.0 or older), make a backup from your 
-  databases before continue !
+  If you are a user from a old version of Postgis (0.9.1 or older), 
+  make a backup from your databases before continue !
 
   If you need to backup your data, press CTRL-C now !
 
@@ -43,8 +41,9 @@ case "$2" in
 	PREF=${PREFIX:-$PKG_PREFIX}
 	SHAREDIR=${PREF}/share/postgis
 	LIBDIR=${PREF}/lib
-	sed -e "s|\$libdir|${LIBDIR}|g" ${SHAREDIR}/postgis.sql.default > ${SHAREDIR}/postgis.sql
+	sed -e "s|\$libdir|${LIBDIR}|g" ${SHAREDIR}/lwpostgis.sql.default > ${SHAREDIR}/lwpostgis.sql
 	sed -e "s|%%LIBDIR%%|${LIBDIR}|g" ${SHAREDIR}/updatedb.default > ${SHAREDIR}/updatedb
+	chmod 0755 ${SHAREDIR}/updatedb
   ;;
   "MESSAGE")
 	msg
