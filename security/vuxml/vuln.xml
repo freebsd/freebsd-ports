@@ -103,9 +103,15 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>apache</name>
-	<name>apache+ssl</name>
+	<range><lt>1.3.29_2</lt></range>
+      </package>
+      <package>
 	<name>apache+mod_ssl</name>
-	<range><lt>1.3.30</lt></range>
+	<range><lt>1.3.29+2.8.16_1</lt></range>
+      </package>
+      <package>
+	<name>apache+ssl</name>
+	<range><lt>1.3.29.1.53_1</lt></range>
       </package>
     </affects>
     <description>
