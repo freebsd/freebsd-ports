@@ -120,6 +120,9 @@ etc/pygopherd/pygopherd.conf-dist
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.py
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/sighandlers.pyo
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.py 
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.pyc
+%%PYTHON_SITELIBDIR%%/pygopherd/handlers/tal.pyo
 %%PYTHON_SITELIBDIR%%/pygopherd/testutil.py
 %%PYTHON_SITELIBDIR%%/pygopherd/testutil.pyc
 %%PYTHON_SITELIBDIR%%/pygopherd/testutil.pyo
