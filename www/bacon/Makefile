@@ -22,6 +22,7 @@ do-build:
 			${DIST}.orig > ${DIST}
 
 do-install:
+	${MKDIR} ${PREFIX}/www/cgi-bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bacon.pl ${PREFIX}/www/cgi-bin/bacon.pl
 
 post-install:
