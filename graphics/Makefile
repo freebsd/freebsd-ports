@@ -84,7 +84,6 @@
     SUBDIR += hdf
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
-    SUBDIR += hpscan
     SUBDIR += icod
     SUBDIR += imagesort
     SUBDIR += imanager
