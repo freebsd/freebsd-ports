@@ -1,0 +1,5 @@
+lib/gnome-panel/gnome_swallow
+libdata/bonobo/servers/GNOME_Swallow.server
+share/doc/gnome-swallow/README
+@dirrm share/doc/gnome-swallow
+@dirrm lib/gnome-panel

@@ -1,0 +1,17 @@
+--- GNOME_Swallow.server.orig	Wed Apr 16 03:13:17 2003
++++ GNOME_Swallow.server	Wed Apr 16 03:13:30 2003
+@@ -1,6 +1,6 @@
+ <oaf_info>
+ <oaf_server iid="OAFIID:GNOME_Swallow_Factory" type="exe"
+-            location="/usr/lib/gnome-panel/gnome_swallow">
++            location="%%PREFIX%%/lib/gnome-panel/gnome_swallow">
+ 
+         <oaf_attribute name="repo_ids" type="stringv">
+                 <item value="IDL:Bonobo/GenericFactory:1.0"/>
+@@ -23,4 +23,4 @@
+         <oaf_attribute name="panel:category" type="string" value="Utility"/>
+         <oaf_attribute name="panel:icon" type="string" value="gnome-applets.png"/>
+ </oaf_server>
+-</oaf_info>
+\ No newline at end of file
++</oaf_info>
