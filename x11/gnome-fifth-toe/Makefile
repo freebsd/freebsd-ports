@@ -46,7 +46,6 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 # gnorpm, googlizer, merlin-cpufire, radioactive, toutdoux
 
 NO_BUILD=	yes
-USE_GNOME=	yes
 USE_PYTHON=	yes
 
 do-install:	# empty
