@@ -1,0 +1,22 @@
+   "My Mailer" is an incarnation of a UNIX text-based mailer
+designed to be an intermediate step between mail and pine.
+
+   Features:
+
+   MIME aware -- While this mailer does not implement a full set of
+the MIME mail extensions, it should handle most MIME mail.
+It also handles some Sun mail attachment formats.
+
+   Threaded messages -- Articles by default are threaded by subject.
+This allows one to plow through huge mailing list discussions,
+sometimes spanning weeks, with very little effort.
+
+   Automatic detection of a modified mail file, and the changes will
+then be merged with the current message listing.
+	    
+   Automatically uncompresses and recompresses gzipped mailfiles
+
+   Searchable message listings, including search through message text
+
+   Automatic ignoring of certain MIME types.
+   Get rid of those Micrsoft Exchange MIME trailers.
