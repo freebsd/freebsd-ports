@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/libs/varconf/ \
 MAINTAINER=	lehmann@ans-netz.de
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
-		Atlas.0:${PORTSDIR}/devel/Atlas
+		Atlas.0:${PORTSDIR}/devel/atlas
 
 USE_LIBTOOL=	YES
 CONFIGURE_ARGS=	--prefix=${PREFIX}
