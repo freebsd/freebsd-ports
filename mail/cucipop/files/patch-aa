@@ -9,22 +9,3 @@
  
  #include <unistd.h>			/* open() close() link() unlink()
  					   getpid() */
---- config.h.orig	Wed May 13 05:09:14 1998
-+++ config.h	Tue Aug 25 18:12:48 1998
-@@ -3,7 +3,7 @@
- #define USEdot_lock	/**/
- /*#define USEfcntl_lock /**/	    /* to test which combinations make sense */
- /*#define USElockf	/**/	      /* run the lockingtest program part of */
--/*#define USEflock	/**/		/* the procmail installation process */
-+#define USEflock	/**/		/* the procmail installation process */
- 
- /*#define SHADOW_PASSWD /**/		  /* shadow password library support */
- 
-@@ -84,6 +84,6 @@
- #define MAXBULLETINS	64
- #define MAXSTATEAGE	8388608				       /* > 3 months */
- #define MEMORY_CACHE	(64*1024)
--#define CUCIPOP_LIB	"/var/lib/cucipop"
-+#define CUCIPOP_LIB	"/var/spool/cucipop"
- #define STATE_DB	"state.db"
- #define BULLETINS_PATH	CUCIPOP_LIB"/bulletins"

@@ -1,0 +1,26 @@
+--- config.h.orig	Wed May 13 01:09:14 1998
++++ config.h	Mon Mar 29 06:21:42 1999
+@@ -3,13 +3,13 @@
+ #define USEdot_lock	/**/
+ /*#define USEfcntl_lock /**/	    /* to test which combinations make sense */
+ /*#define USElockf	/**/	      /* run the lockingtest program part of */
+-/*#define USEflock	/**/		/* the procmail installation process */
++#define USEflock	/**/		/* the procmail installation process */
+ 
+ /*#define SHADOW_PASSWD /**/		  /* shadow password library support */
+ 
+ #define USER		/**/			  /* comment out, to disable */
+ #define UIDL		/**/		  /* the optional command completely */
+-#define APOP		/**/
++/*#define APOP            /**/
+ #define TOP		/**/
+ 
+ #define LAST_HACK	/**/		   /* uncomment to enable dummy LAST */
+@@ -84,6 +84,6 @@
+ #define MAXBULLETINS	64
+ #define MAXSTATEAGE	8388608				       /* > 3 months */
+ #define MEMORY_CACHE	(64*1024)
+-#define CUCIPOP_LIB	"/var/lib/cucipop"
++#define CUCIPOP_LIB	"/var/spool/cucipop"
+ #define STATE_DB	"state.db"
+ #define BULLETINS_PATH	CUCIPOP_LIB"/bulletins"
