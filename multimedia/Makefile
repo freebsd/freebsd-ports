@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += gtksubtitler
     SUBDIR += ksubeditor
     SUBDIR += 
 

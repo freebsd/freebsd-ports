@@ -1,0 +1,10 @@
+[ excerpt with some modifications from author's website ]
+
+GTKsubtitler is a small program for editing and converting subtitles.
+
+o It supports: moving, merging and converting to iso-8859-1 and
+  iso-8859-2
+
+o Four subtitle formats: Time, MicroDVD, Subviewer and SubRip
+
+WWW: http://www.gtksubtitler.prv.pl/
