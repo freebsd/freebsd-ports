@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmbattery
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,11 +24,10 @@ CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib \
 MAN1=		wmbattery.1
 
 post-install:
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
-		${PREFIX}/share/doc/${PORTNAME}
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for i in README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
