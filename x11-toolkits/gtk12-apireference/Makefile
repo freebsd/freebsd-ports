@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk12-apireference
-PORTVERSION=	20011213
+PORTVERSION=	20021119
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://developer.gnome.org/doc/API/
 DISTFILES=	glib-docs.tar.gz gtk-docs.tar.gz gdk-docs.tar.gz
@@ -14,6 +14,7 @@ DISTFILES=	glib-docs.tar.gz gtk-docs.tar.gz gdk-docs.tar.gz
 MAINTAINER=	edwin@mavetju.org
 
 NO_BUILD=	yes
+PREFIX=		${X11BASE}
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/gdk12
