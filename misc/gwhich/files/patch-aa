@@ -1,0 +1,13 @@
+--- which.texinfo.orig	Wed Sep 20 12:11:54 2000
++++ which.texinfo	Wed Sep 20 12:31:18 2000
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename which.info
+ @settitle @command{which}: show full path of commands
++@dircategory Miscellaneous
++@direntry
++* GNU which: (which).	Show full path of commmands.
++@end direntry
+ @include version.texi
+ @c %**end of header
+ 
