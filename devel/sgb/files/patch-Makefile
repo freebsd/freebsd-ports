@@ -1,0 +1,30 @@
+--- Makefile.orig	Mon Dec 27 23:27:24 1999
++++ Makefile	Fri May  2 14:43:29 2003
+@@ -8,22 +8,22 @@
+ #   current directory. (Not recommended for serious users.)
+ 
+ #   Change SGBDIR to the directory where all GraphBase files will go:
+-SGBDIR = /usr/local/sgb
++SGBDIR = ${PREFIX}
+ 
+ #   Change DATADIR to the directory where GraphBase data files will go:
+-DATADIR = $(SGBDIR)/data
++DATADIR = $(SGBDIR)/lib/sgb
+ 
+ #   Change INCLUDEDIR to the directory where GraphBase header files will go:
+ INCLUDEDIR = $(SGBDIR)/include
+ 
+ #   Change LIBDIR to the directory where GraphBase library routines will go:
+-LIBDIR = /usr/local/lib
++LIBDIR = $(SGBDIR)/lib
+ 
+ #   Change BINDIR to the directory where installdemos will put demo programs:
+-BINDIR = /usr/local/bin
++BINDIR = $(SGBDIR)/bin
+ 
+ #   Change CWEBINPUTS to the directory where CWEB include files will go:
+-CWEBINPUTS = /usr/local/lib/cweb
++CWEBINPUTS = $(SGBDIR)/lib/cweb
+ 
+ #   SHORTCUT: Uncomment these lines, for single-directory installation:
+ #DATADIR = .

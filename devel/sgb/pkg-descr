@@ -1,0 +1,8 @@
+A workbench for combinatorial computing, and standard sets of data that
+can be used for benchmark tests of competing methods by Donald Knuth.
+Also includes demonstration programs and games that make use of the data.
+
+WWW: http://www-cs-faculty.stanford.edu/~knuth/sgb.html
+
+- Gerald Pfeifer
+gerald@FreeBSD.org
