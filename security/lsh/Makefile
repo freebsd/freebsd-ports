@@ -8,8 +8,8 @@ PORTNAME=	lsh
 PORTVERSION=	1.5
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
-		ftp://ftp.lysator.liu.se/pub/security/lsh/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+		ftp://ftp.lysator.liu.se/pub/security/%SUBDIR%/
+MASTER_SITE_SUBDIR=	lsh lsh/old
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
