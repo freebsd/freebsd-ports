@@ -3,7 +3,7 @@
 # Date created:		10 November 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.8 1996/11/18 13:57:19 asami Exp $
+# $Id: Makefile,v 1.9 1997/01/10 15:17:16 torstenb Exp $
 #
 
 DISTNAME=       gnats-3.97-beta
@@ -23,7 +23,7 @@ CONFIGURE_ARGS= --prefix=${PREFIX} \
 		--with-full-gnats
 USE_GMAKE=	yes
 MAN1=		edit-pr.1 gnats.1 query-pr.1 send-pr.1
-MAN8=		mkcat.8 rmcat.8 mkdist.8 file-pr.8 gen-index.8
+MAN8=		mkcat.8 rmcat.8 mkdist.8 queue-pr.8 file-pr.8 gen-index.8
 
 # this stops the configuration program from pulling installation
 # information in from the standard freebsd send-pr program
