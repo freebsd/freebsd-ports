@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gltk
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sgi.com/opengl/contrib/ \
 		ftp://ftp.u-aizu.ac.jp/pub/os/sgi/misc/ftp.sgi.com/pub/opengl/contrib/
