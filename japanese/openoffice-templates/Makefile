@@ -16,12 +16,15 @@ DIST_SUBDIR?=	openoffice1.1
 
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	OpenOffice.org 1.1 Impress Templates
-PLIST=		${WRKDIR}/pkg-plist
 
-RUN_DEPENDS=	${PREFIX}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
+RUN_DEPENDS=	${LOCALBASE}/${OPENOFFICE}/program/soffice:${PORTSDIR}/japanese/openoffice-1.1
+
+NO_BUILD=	yes
+PLIST_FILES=	${OOTEMPLATES:S|^|${TEMPLATEDIR}/|}
 
 OPENOFFICE=	OpenOffice.org${OPENOFFICE_VER}
 OPENOFFICE_VER=	1.1.4
+TEMPLATEDIR=	${OPENOFFICE}/share/template/japanese/layout
 
 OOTEMPLATES=	\
 		A4-kariert.sti			\
@@ -108,14 +111,9 @@ OOTEMPLATES=	\
 		sun4.sti			\
 		templatecopyright
 
-do-build:
-.for FILE in ${OOTEMPLATES}
-	@${ECHO_CMD} ${OPENOFFICE}/share/template/japanese/layout/${FILE} >> ${PLIST}
-.endfor
-
 do-install:
 .for FILE in ${OOTEMPLATES}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${OPENOFFICE}/share/template/japanese/layout/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${TEMPLATEDIR}/${FILE}
 .endfor
 
 .include <bsd.port.mk>
