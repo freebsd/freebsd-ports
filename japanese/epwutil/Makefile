@@ -10,7 +10,7 @@ DISTNAME=	epwutil-1.0
 PKGNAME=	ja-epwutil-1.0
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nerimadors.or.jp/pub/epwutil/ \
-		ftp://ring.aist.go.jp/openlab/lookup/edict/
+		ftp://ftp.mei.co.jp/free/others/Dictionary/epwutil/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
