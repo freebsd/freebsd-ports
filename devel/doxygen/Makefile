@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTVERSION=	1.2.11
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -30,9 +29,17 @@ CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 ALL_TARGET=	all docs
 .ifdef HAVE_LATEX
 ALL_TARGET+=	ps
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
+		dvipdfm:${PORTSDIR}/print/dvipdfm
 PLIST_SUB+=	HAVE_LATEX=""
 .else
 PLIST_SUB+=	HAVE_LATEX="@comment "
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want DVI, Postscript, and PDF documentation"
+	@${ECHO_MSG} "in addition to the HTML documentation,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make HAVE_LATEX=yes\""
+	@${ECHO_MSG}
 .endif
 .endif
 
@@ -57,8 +64,10 @@ do-install:
 		${TAR} -C ${PREFIX}/share/doc/doxygen --unlink -xf -
 .ifdef HAVE_LATEX
 	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.dvi \
-			${PREFIX}/share/doc/doxygen
-	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.ps \
+			${WRKSRC}/latex/doxygen_manual.pdf \
+			${WRKSRC}/latex/doxygen_manual.ps \
+			${WRKSRC}/latex/archoverview.eps \
+			${WRKSRC}/latex/doxygen_logo.eps \
 			${PREFIX}/share/doc/doxygen
 .endif
 .endif

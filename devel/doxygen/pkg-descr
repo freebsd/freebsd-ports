@@ -3,7 +3,4 @@ class browser (in HTML) and/or an off-line reference manual (in LaTeX) from a
 set of documented source files. The documentation is extracted directly from
 the sources.
 
-WWW: http://www.stack.nl/~dimitri/doxygen/
-
-Joep Grooten
-joep@di.nl
+WWW: http://www.doxygen.org/
