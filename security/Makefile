@@ -99,7 +99,6 @@
     SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += kgpg
-    SUBDIR += kgpgapplet
     SUBDIR += knocker
     SUBDIR += krb5
     SUBDIR += krb5-beta
