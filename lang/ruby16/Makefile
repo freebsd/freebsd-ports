@@ -39,6 +39,8 @@ ONLY_FOR_ARCHS+=	alpha sparc64
 
 #USE_BZIP2=	yes
 
+RUBY_VER=	1.6
+
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
