@@ -6119,6 +6119,7 @@ pharmacy	ports/devel/pharmacy
 phex		ports/net/phex
 phluid		ports/x11-wm/phluid
 phoon		ports/astro/phoon
+photo_gallery	ports/www/photo_gallery
 photopc		ports/graphics/photopc
 php-dbg		ports/devel/php-dbg
 php-dyn		ports/www/php-dyn
