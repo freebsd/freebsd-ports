@@ -5,7 +5,7 @@ for teaching Haskell. Quality of the error messages has been the main concern
 both in the choice of the language features and in the implementation of the
 compiler.
 
-WWW: http://www.cs.uu.nl/~afie/helium/
+WWW: http://www.cs.uu.nl/helium
 
 -- Oliver Braun
 obraun@FreeBSD.org
