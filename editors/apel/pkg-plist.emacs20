@@ -10,24 +10,14 @@
 %%EMACS_LIBDIR%%/site-lisp/apel/mule-caesar.elc
 %%EMACS_LIBDIR%%/site-lisp/apel/path-util.el
 %%EMACS_LIBDIR%%/site-lisp/apel/path-util.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/broken.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/broken.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/emu.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/emu.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/inv-19.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/inv-19.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/invisible.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/invisible.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/richtext.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/richtext.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poe.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poe.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-20.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-20.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20_3.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20_3.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/mcharset.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/mcharset.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/mcs-20.el
@@ -38,7 +28,25 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/pccl.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/pccl-20.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/pccl-20.elc
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/broken.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/broken.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/pcustom.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/pcustom.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poe.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poe.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-20.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-20.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20_3.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/poem-e20_3.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/static.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/static.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/richtext.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu/richtext.elc
 @dirrm %%EMACS_LIBDIR%%/site-lisp/apel
 @dirrm %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/emu
+%%APELDOCDIR%%/ChangeLog
+%%APELDOCDIR%%/README.en
+%%APELDOCDIR%%/README.ja
+@dirrm %%APELDOCDIR%%
