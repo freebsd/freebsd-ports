@@ -1,42 +1,40 @@
---- Makefile.in.orig	Thu Aug 14 22:02:48 2003
-+++ Makefile.in	Thu Aug 14 22:04:43 2003
-@@ -153,7 +153,7 @@
- install_sh = @install_sh@
- pythondir = @pythondir@
- 
+--- Makefile.in.orig	Tue Mar 23 09:17:22 2004
++++ Makefile.in	Tue Mar 23 09:18:51 2004
+@@ -418,13 +418,13 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = include . doc example @PYTHON_SUBDIR@
 +SUBDIRS = include . doc example @WITH_PYTHON_TRUE@ @PYTHON_SUBDIR@
- 
  DIST_SUBDIRS = include . doc example python
- 
-@@ -171,7 +171,7 @@
+ INCLUDES = -I$(top_builddir)/include -I@srcdir@/include @THREAD_CFLAGS@ @Z_CFLAGS@ 
+ bin_SCRIPTS = xml2-config
  lib_LTLIBRARIES = libxml2.la
- libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIBS@ $(ICONV_LIBS) -lm
- 
--libxml2_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
-+libxml2_la_LDFLAGS = -version-info 5:0:0
- 
- @WITH_TRIO_SOURCES_TRUE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
- @WITH_TRIO_SOURCES_TRUE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
-@@ -270,7 +270,7 @@
- 
+ libxml2_la_LIBADD = @THREAD_LIBS@ @Z_LIBS@ $(ICONV_LIBS) @M_LIBS@ @WIN32_EXTRA_LIBADD@
+-libxml2_la_LDFLAGS = @WIN32_EXTRA_LDFLAGS@ -version-info @LIBXML_VERSION_INFO@
++libxml2_la_LDFLAGS = @WIN32_EXTRA_LDFLAGS@ -version-info 5:0:0
+ @WITH_TRIO_SOURCES_FALSE@libxml2_la_SOURCES = SAX.c entities.c encoding.c error.c parserInternals.c  \
+ @WITH_TRIO_SOURCES_FALSE@		parser.c tree.c hash.c list.c xmlIO.c xmlmemory.c uri.c  \
+ @WITH_TRIO_SOURCES_FALSE@		valid.c xlink.c HTMLparser.c HTMLtree.c debugXML.c xpath.c  \
+@@ -501,7 +501,7 @@
+ testReader_DEPENDENCIES = $(DEPS)
+ testReader_LDADD = $(LDADDS)
  CLEANFILES = xml2Conf.sh
- 
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xml2Conf.sh
  EXTRA_DIST = xml2-config.in xml2Conf.sh.in libxml.spec.in libxml2.spec \
               libxml.m4 Copyright check-xml-test-suite.py \
-@@ -289,7 +289,7 @@
+@@ -521,7 +521,7 @@
  # Instll the tests program sources as examples 
  #
  BASE_DIR = $(datadir)/doc
 -DOC_MODULE = libxml2-$(VERSION)
 +DOC_MODULE = libxml2
  EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
- subdir = .
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-@@ -1034,7 +1034,7 @@
+ all: config.h
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+@@ -1209,7 +1209,7 @@
  check-am: all-am
  	$(MAKE) $(AM_MAKEFLAGS) check-local
  check: check-recursive

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
@@ -23,7 +23,8 @@ USE_GNOME=	gnomehack gnometarget pkgconfig
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
-		--with-html-dir=${PREFIX}/share/doc
+		--with-html-dir=${PREFIX}/share/doc \
+		--with-html-subdir=${PORTNAME}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
