@@ -106,7 +106,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/HTTP/DAV.pm:${PORTSDIR}/www/p5-HTTP-DAV
 #.endif
 
 .if exists(${SITE_PERL}/${PERL_ARCH}/Imager.pm)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}graphics/p5-Imager
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Imager.pm:${PORTSDIR}/graphics/p5-Imager
 .endif
 
 .if exists(${SITE_PERL}/XML/DOM.pm)
