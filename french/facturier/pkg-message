@@ -1,0 +1,23 @@
+************************************************************************
+Le Facturier a été installé dans %%FACT_REP%%.
+
+Vous devez maintenant lui créer une base MySQL :
+	cd %%FACT_REP%%/sql
+	mysql -u%%DBOWN%% -p%%DBPWD%% -hlocalhost < fact.sql
+où %%DBOWN%% a le droit de créer des bases MySQL.
+(Pour plus de détails, ou si vous devez mettre à jour une base existante
+ Cf. %%DOCSDIR%%/README.txt)
+
+Il faut ensuite configurer le fichier Conf.pm, qui se trouve dans
+%%FACT_REP%%/facturier/lib/
+en particulier les variables $USERBDD et $MDPBDD.
+
+Redémarrez Apache pour que les modifications de httpd.conf soient prises
+en compte.
+
+L'application est accessible depuis <http://localhost/fact/login.cgi>
+ (ou rempacer localhost par l'adresse de votre serveur).
+Le nom de connexion est donné dans
+ %%DOCSDIR%%/README.txt
+et vous devez changer son mot de passe par le menu « UTILISATEURS ».
+************************************************************************

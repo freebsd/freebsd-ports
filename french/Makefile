@@ -4,6 +4,7 @@
     SUBDIR += abispell-fr-FR
     SUBDIR += aspell
     SUBDIR += daCode
+    SUBDIR += facturier
     SUBDIR += gfaim
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun

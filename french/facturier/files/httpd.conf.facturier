@@ -1,0 +1,31 @@
+# This is included in Apache's httpd.conf for Le Facturier   
+
+<Directory "%%FACT_REP%%">  
+    Options Indexes FollowSymLinks ExecCGI
+    AllowOverride None
+    order allow,deny
+    allow from all
+</Directory>
+
+<IfModule mod_alias.c>
+    Alias /facturier/ "%%FACT_REP%%/"
+    ScriptAlias /fact/ "%%FACT_REP%%/cgi-bin/"
+</IfModule>
+#
+# For security, don't serve pages from the Facturier configuration and library
+# directories.
+#
+<Directory "%%FACT_REP%%/lib">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "%%FACT_REP%%/log">
+    Order deny,allow
+    Deny from all
+</Directory>
+<Directory "%%FACT_REP%%/sql">
+    Order deny,allow
+    Deny from all
+</Directory>
+# End of Le Facturier configuration ================
+

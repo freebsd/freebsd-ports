@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Try to restore httpd.conf when deinstalling Le Facturier
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+if [ -f ${PKG_PREFIX}/etc/apache/httpd.conf.beforeFacturier ] ; then
+	echo "Restoring httpd.conf..."
+	cp ${PKG_PREFIX}/etc/apache/httpd.conf ${PKG_PREFIX}/etc/apache/httpd.conf.deinstFacturier
+	sed -i.tmp -e "s:Include ${PKG_PREFIX}/etc/facturier:# Include ${PKG_PREFIX}/etc/facturier:" \
+		${PKG_PREFIX}/etc/apache/httpd.conf
+	rm ${PKG_PREFIX}/etc/apache/httpd.conf.tmp
+fi
+
+# Backup Le Facturier's config files, if needed.
+
+cf=${PKG_PREFIX}/www/facturier/lib/Conf.pm
+
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  diff -bBqw $cf $cf.dist >/dev/null 2>&1
+  case $? in
+    0)  # original config file, will be deleted by pkg-plist
+        ;;
+    1)  # config file has been updated, must be backuped
+        cp -p $cf $cf.previous
+        echo "===> Backing-up..."
+        echo "--->   $cf has been saved ***"
+        echo "--->      as $cf.previous ***"
+        ;;
+    *)  # not found?
+        ;;
+    esac
+fi
