@@ -59,7 +59,7 @@ INCLUDEDIR=	/usr/include
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500043
+.if ${OSVERSION} >= 500043 && ${OSVERSION} < 502100
 PKGMESSAGE=	${PKGDIR}/.not-here
 .endif
 
