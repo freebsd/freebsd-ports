@@ -8,7 +8,8 @@
 PORTNAME=	achievo
 PORTVERSION=	1.0.4
 CATEGORIES=	misc www
-MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
+MASTER_SITES=	http://www.achievo.org/files/ \
+		http://www.caomhin.org/geek/ports/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	kevin@caomhin.demon.co.uk
