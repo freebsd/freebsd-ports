@@ -142,6 +142,7 @@
     SUBDIR += jakarta-tomcat5
     SUBDIR += jdresolve
     SUBDIR += jesred
+    SUBDIR += jetspeed
     SUBDIR += jetty
     SUBDIR += jonah
     SUBDIR += junkbuster
