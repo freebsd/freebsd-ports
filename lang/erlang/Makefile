@@ -9,7 +9,7 @@ PORTNAME=	erlang
 PORTVERSION=	r9c2
 PORTREVISION=	1
 PORTEPOCH=	1
-CATEGORIES=	lang
+CATEGORIES=	lang parallel
 MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
