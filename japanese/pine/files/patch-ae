@@ -1,0 +1,28 @@
+*** imap/Makefile	Sat Jun 18 04:53:04 1994
+--- imap/Makefile	Sat Sep  3 17:38:37 1994
+***************
+*** 46,50 ****
+  	@false
+  
+! a32 aix bsi d-g lnx mct mnt neb nxt osf sco sgi:
+  	$(MAKE) build SYSTYPE=ANSI OS=$@
+  
+--- 46,50 ----
+  	@false
+  
+! a32 aix bsi bsf d-g lnx mct mnt neb nxt osf sco sgi:
+  	$(MAKE) build SYSTYPE=ANSI OS=$@
+  
+***************
+*** 65,69 ****
+  
+  clean:
+! 	$(RM) systype
+  	cd ANSI/imapd;$(MAKE) clean
+  	cd ANSI/ipopd;$(MAKE) clean
+--- 65,69 ----
+  
+  clean:
+! 	$(RM) systype OSTYPE
+  	cd ANSI/imapd;$(MAKE) clean
+  	cd ANSI/ipopd;$(MAKE) clean
