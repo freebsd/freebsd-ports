@@ -1,0 +1,30 @@
+bin/lsysexp
+share/lsysexp/expand.pl
+share/lsysexp/fractint2lsysexp.pl
+share/lsysexp/lsysexp-help.html
+share/lsysexp/icons/lsysexp-128x128.xpm
+share/lsysexp/icons/lsysexp-64x64.xpm
+share/lsysexp/icons/lsysexp-32x32.xpm
+share/lsysexp/icons/lsysexp-16x16.xpm
+share/lsysexp/icons/lsysexp-48x48.xpm
+share/lsysexp/maps/Black-Red-Yellow.fmap
+share/lsysexp/maps/Blue-Cyan.fmap
+share/lsysexp/maps/Blue-Green.fmap
+share/lsysexp/maps/Blue-Slate.fmap
+share/lsysexp/maps/Blue-Yellow-Red.fmap
+share/lsysexp/maps/Caribbean-Blues.fmap
+share/lsysexp/maps/Cyan-Yellow.fmap
+share/lsysexp/maps/Deep-Sea.fmap
+share/lsysexp/maps/Full-Spectrum.fmap
+share/lsysexp/maps/Golden.fmap
+share/lsysexp/maps/Grayscale.fmap
+share/lsysexp/maps/Greens.fmap
+share/lsysexp/maps/Green-White-Red.fmap
+share/lsysexp/maps/Pastel-Rainbow.fmap
+share/lsysexp/maps/Red-White-Blue.fmap
+share/lsysexp/maps/Red-Yellow.fmap
+share/lsysexp/maps/Skyline.fmap
+share/lsysexp/maps/Yellow-Purple.fmap
+@dirrm share/lsysexp/icons
+@dirrm share/lsysexp/maps
+@dirrm share/lsysexp
