@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 
 pre-patch:
 	${REINPLACE_CMD} -e 's#PACKAGE=blackbox#PACKAGE=boxtools#' \
-		${WRKSRC}/configure
+		-e 's#-pedantic##' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/util/bsetbg ${PREFIX}/bin
