@@ -28,3 +28,6 @@ share/locale/ro/LC_MESSAGES/centericq.mo
 share/locale/ru/LC_MESSAGES/centericq.mo
 share/locale/uk/LC_MESSAGES/centericq.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
+%%DOCSDIR%%share/doc/centericq/FAQ
+%%DOCSDIR%%share/doc/centericq/README
+%%DOCSDIR%%@dirrm share/doc/centericq

@@ -8,7 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.7.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -27,6 +27,12 @@ MAN1=	centericq.1
 
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC} ; ${INSTALL_DATA} FAQ README ${DOCSDIR})
 .endif
 
 .include <bsd.port.post.mk>
