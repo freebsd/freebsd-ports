@@ -8,16 +8,12 @@
 PORTNAME=	rtcw
 PORTVERSION=	1.1b
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/wolf/linux/old/
 DISTNAME=	wolf-linux-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	nik@FreeBSD.org
 COMMENT=	Return to Castle Wolfenstein for Linux
-
-BROKEN=		"Does not fetch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
