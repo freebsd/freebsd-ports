@@ -1,0 +1,20 @@
+diff -NPru cmd_ls.c.orig cmd_ls.c
+--- cmd_ls.c.orig	Wed Jun 16 13:01:43 1999
++++ cmd_ls.c	Sat Jan 22 23:48:06 2000
+@@ -6,6 +6,8 @@
+  * The "ls" built-in command.
+  */
+ 
++#ifdef HAVE_LS
++
+ #include "sash.h"
+ 
+ #include <sys/types.h>
+@@ -574,5 +576,7 @@
+ 		free(list[listUsed]);
+ 	}
+ }
++
++#endif /* HAVE_LS */
+ 
+ /* END CODE */

@@ -1,0 +1,41 @@
+--- Makefile.orig	Sat Sep 25 01:21:56 1999
++++ Makefile	Sat Jan 22 21:52:23 2000
+@@ -5,13 +5,26 @@
+ # The HAVE_EXT2 definition adds the -chattr and -lsattr comamnds.
+ #
+ 
+-CFLAGS = -O3 -Wall -Wmissing-prototypes -DHAVE_GZIP -DHAVE_EXT2
++CFLAGS += -O2 -Wall -Wmissing-prototypes $(OPTS)
+ LDFLAGS = -static -s
+ LIBS = -lz
+ 
+ 
+-BINDIR = /bin
+-MANDIR = /usr/man/man1
++## FreeBSD: add/remove components as needed. HAVE_EXT2 doesn't work
++## for us...
++OPTS+=-DHAVE_AR
++OPTS+=-DHAVE_DD
++OPTS+=-DHAVE_ED
++OPTS+=-DHAVE_FILE
++OPTS+=-DHAVE_FIND
++OPTS+=-DHAVE_GREP
++OPTS+=-DHAVE_GZIP
++OPTS+=-DHAVE_LS
++OPTS+=-DHAVE_TAR
++
++
++BINDIR = $(PREFIX)/bin
++MANDIR = $(PREFIX)/man/man1
+ 
+ 
+ OBJS = sash.o cmds.o cmd_dd.o cmd_ed.o cmd_grep.o cmd_ls.o cmd_tar.o \
+@@ -20,6 +33,8 @@
+ 
+ sash:	$(OBJS)
+ 	$(CC) $(LDFLAGS) -o sash $(OBJS) $(LIBS)
++
++all:	sash
+ 
+ clean:
+ 	rm -f $(OBJS) sash

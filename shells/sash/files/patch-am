@@ -1,0 +1,115 @@
+diff -NPru sash.c.orig sash.c
+--- sash.c.orig	Sat Sep 25 06:03:51 1999
++++ sash.c	Sat Jan 22 23:50:57 2000
+@@ -57,11 +57,13 @@
+ 		""
+ 	},
+ 
++#ifdef HAVE_AR
+ 	{
+ 		"-ar",		do_ar,		3,	INFINITE_ARGS,
+ 		"Extract or list files from an AR file",
+ 		"[txp]v arFileName fileName ..."
+ 	},
++#endif
+ 
+ 	{
+ 		"cd",		do_cd,		1,	2,
+@@ -107,11 +109,13 @@
+ 		"srcName ... destName"
+ 	},
+ 
++#ifdef HAVE_DD
+ 	{
+ 		"-dd",		do_dd,		3,	INFINITE_ARGS,
+ 		"Copy data between two files",
+ 		"if=name of=name [bs=n] [count=n] [skip=n] [seek=n]"
+ 	},
++#endif
+ 
+ 	{
+ 		"-echo",	do_echo,	1,	INFINITE_ARGS,
+@@ -119,11 +123,13 @@
+ 		"[args] ..."
+ 	},
+ 
++#ifdef HAVE_ED
+ 	{
+ 		"-ed",		do_ed,		1,	2,
+ 		"Edit a fileName using simple line mode commands",
+ 		"[fileName]"
+ 	},
++#endif
+ 
+ 	{
+ 		"exec",		do_exec,	2,	INFINITE_ARGS,
+@@ -137,23 +143,29 @@
+ 		""
+ 	},
+ 
++#ifdef HAVE_FILE
+ 	{
+ 		"-file",	do_file,	1,	INFINITE_ARGS,
+ 		"Describe information about files",
+ 		"fileName ..."
+ 	},
++#endif
+ 
++#ifdef HAVE_FIND
+ 	{
+ 		"-find",	do_find,	2,	INFINITE_ARGS,
+ 		"Find files in a directory tree meeting some conditions",
+ 		"dirName [-xdev] [-type chars] [-name pattern] [-size minSize]"
+ 	},
++#endif
+ 
++#ifdef HAVE_GREP
+ 	{
+ 		"-grep",	do_grep,	3,	INFINITE_ARGS,
+ 		"Look for lines containing a word in some files",
+ 		"[-in] word fileName ..."
+ 	},
++#endif
+ 
+ #ifdef	HAVE_GZIP
+ 	{
+@@ -187,11 +199,13 @@
+ 		"[-s] srcName ... destName"
+ 	},
+ 
++#ifdef HAVE_LS
+ 	{
+ 		"-ls",		do_ls,		1,	INFINITE_ARGS,
+ 		"List information about files or directories",
+ 		"[-lidFC] fileName ..."
+ 	},
++#endif
+ 
+ #ifdef	HAVE_EXT2
+ 	{
+@@ -222,7 +236,11 @@
+ 	{
+ 		"-mount",	do_mount,	3,	INFINITE_ARGS,
+ 		"Mount or remount a filesystem on a directory",
++#ifdef __FreeBSD__
++		"[-t type] [-r] [-u] devName dirName"
++#else
+ 		"[-t type] [-r] [-m] devName dirName"
++#endif
+ 	},
+ 
+ 	{
+@@ -291,11 +309,13 @@
+ 		""
+ 	},
+ 
++#ifdef HAVE_TAR
+ 	{
+ 		"-tar",		do_tar,		2,	INFINITE_ARGS,
+ 		"Create, extract, or list files from a TAR file",
+ 		"[cxtv]f tarFileName fileName ..."
+ 	},
++#endif
+ 
+ 	{
+ 		"-touch",	do_touch,	2,	INFINITE_ARGS,

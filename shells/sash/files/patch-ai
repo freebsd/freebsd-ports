@@ -1,0 +1,11 @@
+diff -NPru cmd_gzip.c.orig cmd_gzip.c
+--- cmd_gzip.c.orig	Tue Apr 20 13:46:17 1999
++++ cmd_gzip.c	Sat Jan 22 23:47:44 2000
+@@ -666,6 +666,6 @@
+ }
+ 
+ 
+-#endif
++#endif /* HAVE_GZIP */
+ 
+ /* END CODE */
