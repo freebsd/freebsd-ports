@@ -38,6 +38,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 or ia64"
+.endif
+
 .if ${OSVERSION} >= 500000
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=	--with-gmp-dir=${LOCALBASE}/lib \
