@@ -4,4 +4,4 @@ words, it is a set of functions callable from Python code that can
 be used to control XMMS, a free multimedia (audio and video) player
 for X-Window.
 
-WWW: http://www.via.ecp.fr/~flo/index.en.html#PyXMMS_and_PyXMMS-remote
+WWW: http://people.via.ecp.fr/~flo/index.en.xhtml#PyXMMS_and_PyXMMS-remote
