@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.60 1999/08/16 00:21:03 obrien Exp $
+# $Id: Makefile,v 1.61 1999/08/18 19:03:09 obrien Exp $
 #
 
 DISTNAME=	gcc-2.95
@@ -62,7 +62,7 @@ pre-patch:
 
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
-	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
+	${SED} -e "s:__FreeBSD__[0-9=]*:__FreeBSD__=$${MAJ}:" ${FILESDIR}/freebsd.h \
 		>${WRKSRC}/gcc/config/freebsd.h )
 	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
 .if ${PORTOBJFORMAT} == "elf" && ${MACHINE_ARCH} == "i386"
