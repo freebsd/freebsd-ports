@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.0.13
-PORTREVISION?=	1
+PORTVERSION=	4.0.14
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/MySQL-4.0/ \
 		http://mysql.tzone.it/Downloads/MySQL-4.0/ \
@@ -163,7 +163,7 @@ post-install:
 .else
 MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
 		mysqladmin.1 mysqld.1 mysqld_multi.1 mysqld_safe.1 mysqldump.1 \
-		mysqlshow.1 perror.1 replace.1
+		mysql_fix_privilege_tables.1 mysqlshow.1 perror.1 replace.1
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql

@@ -61,25 +61,6 @@
  
  echo "$as_me:$LINENO: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -12763,8 +12729,16 @@
-     ;;
-   *freebsd*)
-     echo "Adding fix for interrupted reads"
--    CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
--    CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000 -DHAVE_BROKEN_REALPATH"
-+    OSVERSION=`/sbin/sysctl -a | /usr/bin/grep osreldate | /usr/bin/awk '{ print $2 }'`
-+    if test "$OSVERSION" -gt "480100" && \
-+       test "$OSVERSION" -lt "500000" || \
-+       test "$OSVERSION" -gt "500109"
-+    then
-+	CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000"
-+    else
-+	CFLAGS="$CFLAGS -DHAVE_BROKEN_REALPATH"
-+	CXXFLAGS="$CXXFLAGS -DMYSQLD_NET_RETRY_COUNT=1000000 -DHAVE_BROKEN_REALPATH"
-+    fi
-     ;;
-   *netbsd*)
-     echo "Adding flag -Dunix"
 @@ -22320,7 +22294,7 @@
  	/* ) rel_srcdir="$srcdir" ;;
  	* )  rel_srcdir="../$srcdir" ;;
