@@ -5138,6 +5138,7 @@ linuxpluginwrapper	ports/www/linuxpluginwrapper
 linuxthreads	ports/devel/linuxthreads
 lirc		ports/comms/lirc
 lire		ports/sysutils/lire
+listener	ports/audio/listener
 listmanager	ports/mail/listmanager
 liteamp		ports/audio/liteamp
 liveMedia	ports/net/liveMedia
