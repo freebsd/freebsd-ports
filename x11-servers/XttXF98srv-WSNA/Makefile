@@ -1,5 +1,5 @@
 # New ports collection makefile for:	X98server for WSNA with X True Type
-# Version required:	1.2.1
+# Version required:	1.3.0
 # Date created:		25 October 1998
 # Whom:			NAKAJI Hiroyuki <nakaji@tutrp.tut.ac.jp>
 #
@@ -12,7 +12,7 @@ CATEGORIES=	x11-servers
 
 MAINTAINER=	nakaji@tutrp.tut.ac.jp
 
-LIB_DEPENDS=	font.1:${.CURDIR}/../XttXF86srv-common
+RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
 
 ONLY_FOR_ARCHS=	i386
 

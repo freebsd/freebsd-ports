@@ -1,5 +1,5 @@
 # New ports collection makefile for:	Common Files for Xservers with Xtt
-# Version required:	1.2.1
+# Version required:	1.3.0
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
@@ -9,23 +9,19 @@
 DISTNAME=	xc
 PKGNAME?=	xtt-common-${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11-servers
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.3/source/ \
-		http://X-TT.dsl.gr.jp/dists/1.x/1.2/
-DISTFILES=	X333src-1.tgz X333src-2.tgz \
-		xtt-1.2.tar.gz \
-		xtt-1.2-to-1.2.1.tar.gz
-
-PATCH_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/fixes/
-PATCHFILES=	3.3.3-3.3.3.1.diff.gz
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.5/source/ \
+		ftp://xfree86.cdrom.com/pub/XFree86/3.3.5/source/ \
+		http://X-TT.dsl.gr.jp/dists/1.x/1.3/
+DISTFILES=	X335src-1.tgz xtt-1.3.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
-RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
+RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 
-VERSION=	1.2
-PATCHLEVEL=	1
+VERSION=	1.3
+PATCHLEVEL=	0
+SERVER?=	common
 .if !defined(USE_SHARED_WRKSRC) && defined(COMPILE_ALL_SERVERS_AT_ONCE)
 USE_SHARED_WRKSRC= YES
 .endif
@@ -37,8 +33,7 @@ DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
 USE_X_PREFIX=	YES
-EXTRACT_ONLY=	X333src-1.tgz  X333src-2.tgz \
-		xtt-1.2.tar.gz xtt-1.2-to-1.2.1.tar.gz
+EXTRACT_ONLY=	X335src-1.tgz xtt-1.3.tgz
 BINOWN=		root
 BINGRP=		wheel
 MASTERDIR?=	${.CURDIR}/../XttXF86srv-common
@@ -49,20 +44,17 @@ WRKDIR=		${MASTERDIR}/work
 .endif
 WRKSRC=		${WRKDIR}/xc
 DIST_SUBDIR=	xc
-XTTDIR=		${WRKDIR}/xtt-1.2
-XTTPATCHDIR=	${WRKDIR}/xtt-1.2-to-1.2.1
+XTTDIR=		${WRKDIR}/xtt-1.3
 .if !defined(PATCH_DEBUG)
 XTTPATCHARGS=	-p1 -E -t -s -N
 .else
 XTTPATCHARGS=	-p1 -E
 .endif
-COREPATCHES=	shared-libfont-1.0.diff xfs-for-delayed-font-1.0.diff \
-		make-xfs-only-1.1.diff xtt-xf333-changes.diff
+COREPATCHES=	shared-libfont-1.2.diff xfs-for-delayed-font-1.0.diff \
+		make-xfs-only-1.3.diff xtt-xf335-changes.diff
 XTTTARBALL=	xtt-core.tar
-ADDPATCHES=	${XTTDIR}/contribute/xtt-xfsft-lib.patch \
-		${XTTPATCHDIR}/xtt-core.diff
+ADDPATCHES=	${XTTDIR}/contribute/xtt-xfsft-lib.patch
 DOCDIR=		${PREFIX}/share/doc/Xtt
-SERVER?=	common
 PATCH_DIST_ARGS= -d ${WRKDIR} --forward --quiet -E ${PATCH_STRIP}
 #PATCH_DIST_STRIP=	-p1
 
@@ -77,11 +69,18 @@ PATCH_DIST_ARGS= -d ${WRKDIR} --forward --quiet -E ${PATCH_STRIP}
 #  This variable will save your time, if you want to make all xtt packages.
 # ******************
 .if defined(USE_SHARED_WRKSRC)
+SHARED_COOKIE=		${WRKDIR}/.compiled_by_other_server_ports
 CONFIGURE_COOKIE=	${WRKDIR}/.configure_done.${SERVER}
 BUILD_COOKIE=		${WRKDIR}/.build_done.${SERVER}
 INSTALL_COOKIE=		${WRKDIR}/.install_done.${SERVER}
 PACKAGE_COOKIE=		${WRKDIR}/.package_done.${SERVER}
 TMPPLIST=		${WRKDIR}/.PLIST.${SERVER}.mktmp
+.if ${SERVER} == common && exists(${SHARED_COOKIE}) && !defined(COMPILE_ALL_SERVERS_AT_ONCE)
+EXTRACT_ONLY=
+.endif
+.if ${SERVER} == common && exists(${SHARED_COOKIE}) && !defined(COMPILE_ALL_SERVERS_AT_ONCE)
+NO_BUILD=	YES
+.endif
 .if defined(COMPILE_ALL_SERVERS_AT_ONCE) && ${SERVER} != xfs
 ALL_SERVER=	XF86_3DLabs XF86_8514 XF86_AGX XF86_I128 XF86_Mach32 \
 	XF86_Mach64 XF86_Mach8 XF86_Mono XF86_P9000 XF86_S3 XF86_S3V \
@@ -100,16 +99,16 @@ ALL_SERVER=	${SERVER}
 HOSTDEFSRV=	${FILESDIR}/host.def.${SERVER}
 .endif
 
-HOSTDEFLOCAL=	${WRKDIR}/host.def.local
+LOCALFILE=	host.def.local
+HOSTDEFLOCAL=	${WRKDIR}/${LOCALFILE}
+HOSTDEFDST=	${WRKSRC}/config/cf/${LOCALFILE}
+HOSTDEFORG=	${WRKSRC}/config/cf/host.def
 .if ${SERVER} == xfs
 ALL_TARGET=	xfs
-HOSTDEFDST=	${WRKSRC}/config/cf/host.def.xfs
-.elif ${SERVER} == common
+.elif ${SERVER} == common && !defined(COMPILE_ALL_SERVERS_AT_ONCE)
 ALL_TARGET=	libfont
-HOSTDEFDST=	${WRKSRC}/config/cf/host.def
 .else
 ALL_TARGET=	World
-HOSTDEFDST=	${WRKSRC}/config/cf/host.def
 .endif
 
 .include <bsd.port.pre.mk>
@@ -145,17 +144,15 @@ pre-patch:
 	   ${TAR} xf ${XTTDIR}/${XTTTARBALL} -C ${WRKSRC}/lib/font; \
 	   for i in ${ADDPATCHES} ; do \
 		${PATCH} ${XTTPATCHARGS} < $${i}; \
-	   done; \
-	   cd ${XTTDIR}/doc; \
-	   ${PATCH} ${XTTPATCHARGS} < ${XTTPATCHDIR}/xtt-doc.diff )
+	   done )
 
 pre-configure:
-	@( \
-	${CP} ${FILESDIR}/Imakefile ${WRKDIR} ; \
-	(cd ${WRKDIR} ; ${XMKMF} ; \
-	  ${SETENV} ${MAKE_ENV} DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} \
+	@( ${CP} ${FILESDIR}/Imakefile ${WRKDIR} ; \
+	   (cd ${WRKDIR} ; ${XMKMF} ; \
+	    ${SETENV} ${SCRIPT_ENV} DISTDIR=${DISTDIR} WRKDIR=${WRKDIR} \
 		FILESDIR=${FILESDIR} ${MAKE}) ; \
-	${CAT} ${HOSTDEFLOCAL} ${HOSTDEFSRV} > ${HOSTDEFDST} )
+	   ${CAT} ${HOSTDEFLOCAL} ${HOSTDEFSRV} > ${HOSTDEFDST} ; \
+	   ${ECHO} "#include <${LOCALFILE}>" >> ${HOSTDEFORG} )
 
 .if ${SERVER} == common
 do-install:
@@ -185,15 +182,22 @@ do-install:
 .if defined(USE_SHARED_WRKSRC)
 post-configure:
 	@( \
-	cd ${WRKDIR} ; for i in ${ALL_SERVER} ; do \
+	cd ${WRKDIR} ; \
+	for i in ${ALL_SERVER} ; do \
 		${TOUCH} ${TOUCH_FLAGS} `${BASENAME} ${CONFIGURE_COOKIE} .${SERVER}`.$${i} ; \
 	done )
+.if ${SERVER} != common || (${SERVER} == common && defined(COMPILE_ALL_SERVERS_AT_ONCE))
+	@${TOUCH} ${TOUCH_FLAGS} ${SHARED_COOKIE}
+.endif
 
 post-build:
 	@( \
 	cd ${WRKDIR} ; for i in ${ALL_SERVER} ; do \
 		${TOUCH} ${TOUCH_FLAGS} `${BASENAME} ${BUILD_COOKIE} .${SERVER}`.$${i} ; \
 	done )
+.if ${SERVER} != common || (${SERVER} == common && defined(COMPILE_ALL_SERVERS_AT_ONCE))
+	@${TOUCH} ${TOUCH_FLAGS} ${SHARED_COOKIE}
+.endif
 
 post-install:
 	@( \
