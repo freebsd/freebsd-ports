@@ -29,7 +29,7 @@ USE_REINPLACE=		yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502102
-BROKEN=		"Links against conflicting thread libraries"
+IGNORE=			links against conflicting thread libraries
 .endif
 
 post-patch:
