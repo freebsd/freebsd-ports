@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.epkowa.on.arena.ne.jp/pips/data/V306/:eplaser \
+		http://www.epkowa.on.arena.ne.jp/gslpd/data/V306/:eplaser \
 		http://www.hi.is.uec.ac.jp/~osamuw/gdevnpdl/:npdl \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
