@@ -1,0 +1,10 @@
+bin/tkp4
+%%SCRIPTS%%/combobox.tcl
+%%SCRIPTS%%/tkp4.tcl
+%%SCRIPTS%%/tree.tcl
+@dirrm %%SCRIPTS%%
+%%PORTDOCS%%%%DOCS%%/CHANGES
+%%PORTDOCS%%%%DOCS%%/P4WINdifferences
+%%PORTDOCS%%%%DOCS%%/README
+%%PORTDOCS%%%%DOCS%%/UsingTkP4
+%%PORTDOCS%%@dirrm %%DOCS%%

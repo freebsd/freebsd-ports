@@ -1,0 +1,8 @@
+This is the Tcl/Tk frontend to Perforce's p4. You have to
+have p4-client binary installed -- it is available from
+
+WWW: http://www.perforce.com/perforce/loadprog.html
+
+The actual front-end is by Rick Macdonald <rickm@vsl.com>:
+
+WWW: http://www.cuug.ab.ca/~macdonal/tkp4/
