@@ -637,6 +637,7 @@ buttonbox	ports/x11/buttonbox
 bvi		ports/editors/bvi
 bwbasic		ports/lang/bwbasic
 bwidget		ports/x11-toolkits/bwidget
+byaccj		ports/devel/byaccj
 bytebench	ports/benchmarks/bytebench
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
