@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	chasen
-PORTVERSION=	2.2.9
-CATEGORIES=	japanese
+PORTVERSION=	2.3.0
+CATEGORIES=	japanese textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
