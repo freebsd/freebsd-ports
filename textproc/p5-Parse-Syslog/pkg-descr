@@ -1,0 +1,6 @@
+Parse::Syslog presents a simple interface to parse syslog
+files: you create a parser on a file (with new) and call
+next to get one line at a time with Unix-timestamp, host,
+program, pid and text returned in a hash-reference.
+
+WWW: http://search.cpan.org/search?dist=Parse-Syslog

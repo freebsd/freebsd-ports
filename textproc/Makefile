@@ -100,6 +100,7 @@
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Ispell
     SUBDIR += p5-PDF-Create
+    SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
     SUBDIR += p5-Sort-PolySort
