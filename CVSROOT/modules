@@ -2124,6 +2124,7 @@ imaze		ports/games/imaze
 imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
+imlib2_loaders	ports/graphics/imlib2_loaders
 imm		ports/mbone/imm
 imp		ports/mail/imp
 impress		ports/editors/impress
