@@ -1,6 +1,8 @@
 bin/mgp
 bin/mgp2ps
+bin/mgpembed
 bin/mgpnet
+bin/xmindpath
 bin/xwintoppm
 lib/X11/mgp/default.mgp
 lib/X11/mgp/mgp1.gif
@@ -9,18 +11,22 @@ lib/X11/mgp/mgp3.gif
 share/doc/mgp/COPYRIGHT
 share/doc/mgp/COPYRIGHT.jp
 share/doc/mgp/README
+share/doc/mgp/README.fonts
+share/doc/mgp/README.fonts.jp
 share/doc/mgp/SYNTAX
 share/doc/mgp/TODO.jp
 share/doc/mgp/USAGE
 share/doc/mgp/USAGE.jp
 share/doc/mgp/sample/README
 share/doc/mgp/sample/README.jp
-share/doc/mgp/sample/ascii.mgp
 share/doc/mgp/sample/cloud.gif
 share/doc/mgp/sample/dad.eps
 share/doc/mgp/sample/dad.gif
-share/doc/mgp/sample/dns.mgp
 share/doc/mgp/sample/default.mgp
+share/doc/mgp/sample/dns-jp.mgp
+share/doc/mgp/sample/embed-jp.mgp
+share/doc/mgp/sample/embed.mgp
+share/doc/mgp/sample/gradation-jp.mgp
 share/doc/mgp/sample/gradation.mgp
 share/doc/mgp/sample/mgp-old1.gif
 share/doc/mgp/sample/mgp-old2.gif
@@ -28,15 +34,19 @@ share/doc/mgp/sample/mgp-old3.gif
 share/doc/mgp/sample/mgp1.gif
 share/doc/mgp/sample/mgp2.gif
 share/doc/mgp/sample/mgp3.gif
+share/doc/mgp/sample/mgp3.xbm
+share/doc/mgp/sample/mgprc-sample
+share/doc/mgp/sample/multilingual.mgp
+share/doc/mgp/sample/sample-jp.mgp
 share/doc/mgp/sample/sample.mgp
+share/doc/mgp/sample/sendmail6-jp.mgp
+share/doc/mgp/sample/sendmail6.mgp
+share/doc/mgp/sample/tutorial-jp.mgp
 share/doc/mgp/sample/tutorial.mgp
+share/doc/mgp/sample/v6-jp.mgp
 share/doc/mgp/sample/v6.mgp
 share/doc/mgp/sample/v6header.eps
 share/doc/mgp/sample/v6header.gif
-man/man1/mgp.1.gz
-man/man1/mgp2ps.1.gz
-man/man1/mgpnet.1.gz
-man/man1/xwintoppm.1.gz
 @dirrm lib/X11/mgp
 @dirrm share/doc/mgp/sample
 @dirrm share/doc/mgp
