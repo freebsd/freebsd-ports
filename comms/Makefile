@@ -13,6 +13,7 @@
     SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gnokii
+    SUBDIR += gsmlib
     SUBDIR += hylafax
     SUBDIR += ixj
     SUBDIR += kermit
