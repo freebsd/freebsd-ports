@@ -1,0 +1,11 @@
+--- exrdisplay/Makefile.in.orig	Sun Mar 23 20:08:11 2003
++++ exrdisplay/Makefile.in	Mon Mar 24 20:17:50 2003
+@@ -392,7 +392,7 @@
+ 	uninstall-binPROGRAMS uninstall-info-am
+ 
+ 
+-@HAVE_FLTK_TRUE@install-exec-hook:
++install-exec-hook:
+ @HAVE_FLTK_TRUE@	@FLTK_CONFIG@ --post $(DESTDIR)$(bindir)/exrdisplay
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	OpenEXR
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
+#PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	http://savannah.nongnu.org/download/openexr/${PORTNAME}.pkg/${PORTVERSION}/
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk-xunicode
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 USE_MESA=	YES
-CONFIGURE_ARGS+=--with-fltk-prefix=${X11BASE}
+CONFIGURE_ARGS+=--with-fltk-config=${X11BASE}/bin/fltk-config
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LDFLAGS}
 PLIST_SUB+=	WITH_FLTK=
@@ -46,12 +46,8 @@ pre-everything::
 	@${ECHO_CMD} ===================================================
 .endif
 .else
-CONFIGURE_ARGS+=--with-fltk-prefix=DUMMY
+CONFIGURE_ARGS+=--with-fltk-config=/usr/bin/false --without-x
 PLIST_SUB+=	WITH_FLTK="@comment "
-.endif
-
-.ifdef WITHOUT_X11
-CONFIGURE_ARGS+=--without-x
 .endif
 
 .include <bsd.port.post.mk>

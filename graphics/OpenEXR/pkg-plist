@@ -41,6 +41,7 @@ include/OpenEXR/ImathMath.h
 include/OpenEXR/ImathMatrix.h
 include/OpenEXR/ImathMatrixAlgo.h
 include/OpenEXR/ImathPlane.h
+include/OpenEXR/ImathPlatform.h
 include/OpenEXR/ImathQuat.h
 include/OpenEXR/ImathRandom.h
 include/OpenEXR/ImathRoots.h
