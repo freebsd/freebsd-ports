@@ -1,0 +1,5 @@
+==
+Because FreeBSD's installworld target cleans all locale
+stuffs up, you'll need to reinstall the port after every
+installworld operations.
+==
