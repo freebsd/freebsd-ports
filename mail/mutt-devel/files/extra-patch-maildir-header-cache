@@ -2,11 +2,11 @@ diff -Nru a/PATCHES b/PATCHES
 --- a/PATCHES
 +++ b/PATCHES
 @@ -0,0 +1 @@
-+patch-1.5.6.tg.hcache.2
++patch-1.5.6.tg.hcache.9
 diff -Nru a/configure.in b/configure.in
 --- a/configure.in	2004-08-18 09:43:09 +02:00
-+++ b/configure.in	2004-08-18 06:34:04 +02:00
-@@ -768,6 +768,81 @@
++++ b/configure.in	2004-09-02 13:09:08 +02:00
+@@ -768,6 +768,90 @@
  
          fi])
  
@@ -19,66 +19,75 @@ diff -Nru a/configure.in b/configure.in
 +    OLDCPPFLAGS="$CPPFLAGS"
 +    OLDLIBS="$LIBS"
 +
-+    BDB_VERSIONS="db-4 db4 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db"
-+
-+    AC_MSG_CHECKING([for BerkeleyDB > 4.0])
-+
-+    for d in /opt/csw/bdb4 /opt /usr/local /usr; do
-+        for v in `echo $BDB_VERSIONS .`; do
-+            if test -r "$d/include/$v/db.h"; then
-+                BDB_INCLUDE_DIR="$d/include/$v"
-+                break
-+            fi
-+        done
-+        for v in `echo $BDB_VERSIONS .`; do
-+            if test -d "$d/lib/$v"; then
-+                BDB_LIB_DIR="$d/lib/$v"
-+                break
-+            fi
-+        done
-+        for v in BerkeleyDB.4.3 BerkeleyDB.4.2 BerkeleyDB.4.1; do
-+            test -r "$d/$v/include/db.h" && BDB_INCLUDE_DIR="$d/$v/include"
-+            test -d "$d/$v/lib" && BDB_LIB_DIR="$d/$v/lib"
-+        done
-+        test x$BDB_INCLUDE_DIR = x -o x$BDB_LIB_DIR = x && continue
-+        for v in `echo $BDB_VERSIONS`; do
-+            CPPFLAGS="$OLDCPPFLAGS -I$BDB_INCLUDE_DIR"
-+            LIBS="$OLDLIBS -L$BDB_LIB_DIR -l$v"
-+	    AC_TRY_LINK([
-+		#include <stdlib.h>
-+                #include <db.h>
-+	    ],[
-+                DB *db = NULL;
-+                db->open(db,NULL,NULL,NULL,0,0,0);
-+	    ],[
-+                ac_cv_dbcreate=yes
-+                BDB_LIB="$v"
-+                break
-+	    ])
-+        done
-+        test x$BDB_LIB != x && break
-+    done
-+
-+    if test x$ac_cv_dbcreate = xyes; then
-+        AC_MSG_RESULT(yes)
-+    else
-+        AC_MSG_RESULT(no)
++    ac_prefer_gdbm=yes
++    AC_ARG_WITH(gdbm, [  --without-gdbm             Get rid of gdbm even if it is available ],
++        ac_prefer_gdbm=$withval)
++    if test x$ac_prefer_gdbm != xno; then
++        CPPFLAGS="$OLDCPPFLAGS"
++        LIBS="$OLDLIBS -lgdbm";
++        AC_CACHE_CHECK(for gdbm_open, ac_cv_gdbmopen,[
++            ac_cv_gdbmopen=no
++            AC_TRY_LINK([#include <gdbm.h>],[gdbm_open(0,0,0,0,0);],[ac_cv_gdbmopen=yes])
++        ])
 +    fi
 +
-+    CPPFLAGS="$OLDCPPFLAGS"
-+    LIBS="$OLDLIBS -lgdbm";
-+    AC_CACHE_CHECK(for gdbm_open, ac_cv_gdbmopen,
-+        [ac_cv_gdbmopen=no
-+        AC_TRY_LINK([#include <gdbm.h>],[gdbm_open(0,0,0,0,0);],[ac_cv_gdbmopen=yes])])
++    ac_bdb_prefix=yes
++    AC_ARG_WITH(bdb, [  --with-bdb[=DIR]          Use BerkeleyDB4 if gdbm is not available ],
++        ac_bdb_prefix=$withval)
++    if test x$ac_bdb_prefix != xno -a x$ac_cv_gdbmopen != xyes; then
++        test x$ac_bdb_prefix = xyes && ac_bdb_prefix="$mutt_cv_prefix /opt/csw/bdb4 /opt /usr/local /usr"
++        for d in $ac_bdb_prefix; do
++            bdbpfx="$bdbpfx $d"
++            for v in BerkeleyDB.4.3 BerkeleyDB.4.2 BerkeleyDB.4.1; do
++                bdbpfx="$bdbpfx $d/$v"
++            done
++        done
++        BDB_VERSIONS="db-4 db4 db-4.3 db4.3 db43 db-4.2 db4.2 db42 db-4.1 db4.1 db41 db ''"
++        AC_MSG_CHECKING([for BerkeleyDB > 4.0])
++        for d in $bdbpfx; do
++            BDB_INCLUDE_DIR=""
++            BDB_LIB_DIR=""
++            for v in / $BDB_VERSIONS; do
++                if test -r "$d/include/$v/db.h"; then
++                    BDB_INCLUDE_DIR="$d/include/$v"
++                    if test -d "$d/lib/$v"; then
++                        BDB_LIB_DIR="$d/lib/$v"
++                        for l in `echo $BDB_VERSIONS`; do
++                            CPPFLAGS="-I$BDB_INCLUDE_DIR $OLDCPPFLAGS"
++                            LIBS="$OLDLIBS -L$BDB_LIB_DIR -l$l"
++                            AC_TRY_LINK([
++                                #include <stdlib.h>
++                                #include <db.h>
++                            ],[
++                                DB *db = NULL;
++                                db->open(db,NULL,NULL,NULL,0,0,0);
++                            ],[
++                                ac_cv_dbcreate=yes
++                                BDB_LIB="$l"
++                                break
++                            ])
++                        done
++                        test x$ac_dbcreate = xyes && break
++                    fi
++                fi
++            done
++            test x$BDB_LIB != x && break
++        done
++        if test x$ac_cv_dbcreate = xyes; then
++            AC_MSG_RESULT(yes)
++        else
++            AC_MSG_RESULT(no)
++        fi
++    fi
 +
-+    if test x$ac_cv_dbcreate = xyes; then
-+        CPPFLAGS="$OLDCPPFLAGS -I$BDB_INCLUDE_DIR"
-+        LIBS="$OLDLIBS -L$BDB_LIB_DIR -l$BDB_LIB"
-+        AC_DEFINE(HAVE_DB4, 1, [Sleepycat DB4 Support])
-+    elif test x$ac_cv_gdbmopen = xyes; then
++    if test x$ac_cv_gdbmopen = xyes; then
 +        CPPFLAGS="$OLDCPPFLAGS"
 +        LIBS="$OLDLIBS -lgdbm";
 +        AC_DEFINE(HAVE_GDBM, 1, [GDBM Support])
++    elif test x$ac_cv_dbcreate = xyes; then
++        CPPFLAGS="-I$BDB_INCLUDE_DIR $OLDCPPFLAGS"
++        LIBS="$OLDLIBS -L$BDB_LIB_DIR -l$BDB_LIB"
++        AC_DEFINE(HAVE_DB4, 1, [Sleepycat DB4 Support])
 +    else
 +        AC_MSG_ERROR(You need Sleepycat DB4 or GDBM for --enable-hcache)
 +    fi
@@ -104,8 +113,8 @@ diff -Nru a/globals.h b/globals.h
  WHERE char *MhUnseen;
 diff -Nru a/hcache.c b/hcache.c
 --- /dev/null	Wed Dec 31 16:00:00 196900
-+++ b/hcache.c	2004-08-26 22:32:53 +02:00
-@@ -0,0 +1,798 @@
++++ b/hcache.c	2004-09-28 19:57:45 +02:00
+@@ -0,0 +1,856 @@
 +/*
 + * Copyright (C) 2004 Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
 + * Copyright (C) 2004 Tobias Werth <sitowert@stud.uni-erlangen.de>
@@ -133,7 +142,7 @@ diff -Nru a/hcache.c b/hcache.c
 +#if HAVE_GDBM
 +#include <gdbm.h>
 +#elif HAVE_DB4
-+#include <db42/db.h>
++#include <db.h>
 +#endif
 +
 +#include <errno.h>
@@ -145,6 +154,7 @@ diff -Nru a/hcache.c b/hcache.c
 +#include "mime.h"
 +#include "mx.h"
 +#include "lib.h"
++#include "md5.h"
 +
 +#if HAVE_GDBM
 +static struct
@@ -514,7 +524,7 @@ diff -Nru a/hcache.c b/hcache.c
 +{
 +	int crc = 0;
 +
-+	crc = crc32(crc, (unsigned char const *) "sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040826203315|26242", mutt_strlen("sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040826203315|26242"));
++	crc = crc32(crc, (unsigned char const *) "sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040928175752|08278", mutt_strlen("sithglan@stud.uni-erlangen.de[sithglan]|hcache.c|20040928175752|08278"));
 +
 +#if HAVE_LANGINFO_CODESET
 +	crc = crc32(crc, (unsigned char const *) Charset, mutt_strlen(Charset));
@@ -523,6 +533,18 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +#if EXACT_ADDRESS
 +	crc = crc32(crc, (unsigned char const *) "EXACT_ADDRESS", mutt_strlen("EXACT_ADDRESS"));
++#endif
++
++#ifdef USE_POP
++	crc = crc32(crc, (unsigned char const *) "USE_POP", mutt_strlen("USE_POP"));
++#endif
++
++#ifdef MIXMASTER
++	crc = crc32(crc, (unsigned char const *) "MIXMASTER", mutt_strlen("MIXMASTER"));
++#endif
++
++#ifdef USE_IMAP
++ 	crc = crc32(crc, (unsigned char const *) "USE_IMAP", mutt_strlen("USE_IMAP"));
 +#endif
 +	return crc;
 +}
@@ -540,6 +562,44 @@ diff -Nru a/hcache.c b/hcache.c
 +	restore_int(&mycrc, (unsigned char *) d, &off);
 +
 +	return (crc == mycrc);
++}
++
++/* Append md5sumed folder to path if path is a directory. */
++static const char *
++mutt_hcache_per_folder(const char *path, const char *folder)
++{
++	static char mutt_hcache_per_folder_path[_POSIX_PATH_MAX];
++	struct stat path_stat;
++	MD5_CTX md5;
++	unsigned char md5sum[16];
++	int ret;
++
++	ret = stat(path, &path_stat);
++	if (ret < 0) {
++		return path;
++	}
++
++	if (! S_ISDIR(path_stat.st_mode)) {
++		return path;
++	}
++
++	MD5Init(&md5);
++	MD5Update(&md5, (unsigned char *) folder, strlen(folder));
++	MD5Final(md5sum, &md5);
++
++	ret = snprintf(mutt_hcache_per_folder_path, _POSIX_PATH_MAX,
++                        "%s/%02x%02x%02x%02x%02x%02x%02x%02x"
++                        "%02x%02x%02x%02x%02x%02x%02x%02x",
++			path, md5sum[0], md5sum[1], md5sum[2], md5sum[3],
++			md5sum[4], md5sum[5], md5sum[6], md5sum[7], md5sum[8],
++			md5sum[9], md5sum[10], md5sum[11], md5sum[12],
++			md5sum[13], md5sum[14], md5sum[15]);
++
++	if (ret <= 0) {
++		return path;
++	}
++
++	return mutt_hcache_per_folder_path;
 +}
 +
 +/* This function transforms a header into a char so that it is useable by
@@ -614,17 +674,18 @@ diff -Nru a/hcache.c b/hcache.c
 +mutt_hcache_open(const char *path, const char *folder)
 +{
 +	struct header_cache *h = safe_calloc(1, sizeof(HEADER_CACHE));
++	int pagesize = atoi(HeaderCachePageSize) ? atoi(HeaderCachePageSize) : 16384;
 +	h->db     = NULL;
 +        h->folder = safe_strdup (folder);
 +	h->crc    = generate_crc32();
-+
-+	int pagesize = atoi(HeaderCachePageSize) ? atoi(HeaderCachePageSize) : 16384;
 +
 +	if (! path || path[0] == '\0') {
 +		FREE(& h->folder);
 +		FREE(& h);
 +		return NULL;
 +	}
++
++	path = mutt_hcache_per_folder(path, folder);
 +
 +	h->db = gdbm_open((char *) path, pagesize, GDBM_WRCREAT, 00600, NULL);
 +	if (h->db) {
@@ -768,6 +829,8 @@ diff -Nru a/hcache.c b/hcache.c
 +		return NULL;
 +	}
 +
++	path = mutt_hcache_per_folder(path, folder);
++
 +	snprintf (h->lockfile, _POSIX_PATH_MAX, "%s-lock-hack", path);
 +
 +	h->fd = open(h->lockfile, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
@@ -785,6 +848,7 @@ diff -Nru a/hcache.c b/hcache.c
 +	ret = db_env_create(&h->env, 0);
 +	if (ret) {
 +		mx_unlock_file(h->lockfile, h->fd, 0);
++		close(h->fd);
 +		FREE(& h);
 +		return NULL;
 +	}
@@ -795,6 +859,7 @@ diff -Nru a/hcache.c b/hcache.c
 +		if (ret) {
 +			h->env->close(h->env, 0);
 +			mx_unlock_file(h->lockfile, h->fd, 0);
++			close(h->fd);
 +			FREE(& h);
 +			return NULL;
 +		}
@@ -810,6 +875,7 @@ diff -Nru a/hcache.c b/hcache.c
 +		h->db->close(h->db, 0);
 +		h->env->close(h->env, 0);
 +		mx_unlock_file(h->lockfile, h->fd, 0);
++		close(h->fd);
 +		FREE(& h);
 +		return NULL;
 +	}
@@ -830,6 +896,7 @@ diff -Nru a/hcache.c b/hcache.c
 +	h->db->close(h->db, 0);
 +	h->env->close(h->env, 0);
 +	mx_unlock_file(h->lockfile, h->fd, 0);
++	close(h->fd);
 +	FREE(& h);
 +}
 +
@@ -1196,8 +1263,8 @@ diff -Nru a/imap/message.c b/imap/message.c
   *   return 1 if found or flag list has '\*', 0 otherwise */
 diff -Nru a/init.h b/init.h
 --- a/init.h	2004-08-18 09:43:12 +02:00
-+++ b/init.h	2004-08-26 22:32:53 +02:00
-@@ -981,6 +981,31 @@
++++ b/init.h	2004-09-20 22:58:42 +02:00
+@@ -981,6 +981,34 @@
    ** \fBDON'T CHANGE THIS SETTING UNLESS YOU ARE REALLY SURE WHAT YOU ARE
    ** DOING!\fP
    */
@@ -1206,8 +1273,11 @@ diff -Nru a/init.h b/init.h
 +  { "header_cache", DT_PATH, R_NONE, UL &HeaderCache, 0 },
 +  /*
 +  ** .pp
-+  ** Path to the header cache file. If unset no cache will be used. Otherwise
-+  ** the cache will be enabled for Maildir and IMAP mailboxes.
++  ** The header_cache variable points to the header cache database. If
++  ** header_cache points to a directory there will be created one header cache
++  ** database per folder within this directory. If it doesn't point to a directory a
++  ** global header cache for all folders is used. Per default it is unset and so
++  ** no header caching will be used.
 +  */
 +  { "maildir_header_cache_verify", DT_BOOL, R_NONE, OPTHCACHEVERIFY, 1 },
 +  /*
@@ -1247,86 +1317,100 @@ diff -Nru a/main.c b/main.c
  #ifdef ISPELL
 diff -Nru a/mh.c b/mh.c
 --- a/mh.c	2004-08-18 09:43:13 +02:00
-+++ b/mh.c	2004-07-26 09:37:28 +02:00
-@@ -779,11 +779,68 @@
++++ b/mh.c	2004-09-03 14:33:12 +02:00
+@@ -779,30 +779,79 @@
    return r;
  }
  
 +#if USE_HCACHE
-+
 +static size_t maildir_hcache_keylen (const char *fn)
 +{
 +  const char * p = strchr (fn, ':');
 +  return p ? (size_t) (p - fn) : mutt_strlen(fn);
 +}
-+
++#endif
  
  /* 
   * This function does the second parsing pass for a maildir-style
   * folder.
   */
-+void maildir_delayed_parsing (CONTEXT * ctx, struct maildir *md)
-+{
-+	struct maildir *p;
-+	void *hc = NULL;
-+	char fn[_POSIX_PATH_MAX];
-+	void *data;
-+	unsigned int size;
-+	struct timeval *when = NULL;
-+	struct stat lastchanged;
-+	int ret;
-+
-+	hc = mutt_hcache_open (HeaderCache, ctx->path);
-+
-+	for (p = md; p; p = p->next) {
-+		if (! (p && p->h && !p->header_parsed)) {
-+			continue;
-+		}
-+
-+		data      = mutt_hcache_fetch (hc, p->h->path + 3, &maildir_hcache_keylen);
-+		when      = (struct timeval *) data;
-+
-+		snprintf(fn, sizeof (fn), "%s/%s", ctx->path, p->h->path);
-+
-+		if (option(OPTHCACHEVERIFY)) {
-+			ret = stat(fn, &lastchanged);
-+		} else {
-+			lastchanged.st_mtime = 0;
-+			ret = 0;
-+		}
-+
-+		if (data != NULL
-+		 && ret == 0
-+		 && lastchanged.st_mtime <= when->tv_sec) {
-+			p->h = mutt_hcache_restore ((unsigned char *)data, &p->h);
-+			maildir_parse_flags (p->h, fn);
-+
-+		} else if (maildir_parse_message (ctx->magic, fn, p->h->old, p->h)) {
-+			maildir_parse_flags(p->h, fn);
-+			p->header_parsed = 1;
-+			mutt_hcache_store (hc, p->h->path + 3, p->h, 0, &maildir_hcache_keylen);
-+		} else {
-+			mutt_free_header (&p->h);
-+		}
-+		FREE(&data);
-+	}
-+	mutt_hcache_close (hc);
-+}
-+
-+#else /* USE_HCACHE */
- 
+-
  void maildir_delayed_parsing (CONTEXT * ctx, struct maildir *md)
  {
-@@ -801,7 +858,7 @@
-     }
+   struct maildir *p;
+   char fn[_POSIX_PATH_MAX];
++  int count;
+ 
+-  for (p = md; p; p = p->next)
+-    if (p && p->h && !p->header_parsed)
+-    {
+-      snprintf (fn, sizeof (fn), "%s/%s", ctx->path, p->h->path);
+-      if (maildir_parse_message (ctx->magic, fn, p->h->old, p->h))
+-	p->header_parsed = 1;
+-      else
+-	mutt_free_header (&p->h);
+-    }
++#if USE_HCACHE
++  void *hc = NULL;
++  void *data;
++  unsigned int size;
++  struct timeval *when = NULL;
++  struct stat lastchanged;
++  int ret;
++
++  hc = mutt_hcache_open (HeaderCache, ctx->path);
++#endif
++
++  for (p = md, count = 0; p; p = p->next, count++)
++  {
++    if (! (p && p->h && !p->header_parsed))
++    	continue;
++
++#if USE_HCACHE
++    data      = mutt_hcache_fetch (hc, p->h->path + 3, &maildir_hcache_keylen);
++    when      = (struct timeval *) data;
++#endif
++
++    snprintf (fn, sizeof (fn), "%s/%s", ctx->path, p->h->path);
++
++#if USE_HCACHE
++    if (option(OPTHCACHEVERIFY)) {
++      ret = stat(fn, &lastchanged);
++    } else {
++      lastchanged.st_mtime = 0;
++      ret = 0;
++    }
++
++    if (data != NULL && !ret && lastchanged.st_mtime <= when->tv_sec)
++    {
++      p->h = mutt_hcache_restore ((unsigned char *)data, &p->h);
++      maildir_parse_flags (p->h, fn);
++    } else
++#endif
++    if (maildir_parse_message (ctx->magic, fn, p->h->old, p->h))
++    {
++      p->header_parsed = 1;
++      maildir_parse_flags (p->h, fn);
++#if USE_HCACHE
++      mutt_hcache_store (hc, p->h->path + 3, p->h, 0, &maildir_hcache_keylen);
++#endif
++    } else
++      mutt_free_header (&p->h);
++#if USE_HCACHE
++    FREE(&data);
++#endif
++  }
++#if USE_HCACHE
++  mutt_hcache_close (hc);
++#endif
  }
  
 -
-+#endif /* USE_HCACHE */
- 
+-
  /* Read a MH/maildir style mailbox.
   *
-@@ -1293,6 +1350,9 @@
+  * args:
+@@ -1293,6 +1342,9 @@
  {
    char path[_POSIX_PATH_MAX], tmp[_POSIX_PATH_MAX];
    int i, j;
@@ -1336,7 +1420,7 @@ diff -Nru a/mh.c b/mh.c
  
    if (ctx->magic == M_MH)
      i = mh_check_mailbox (ctx, index_hint);
-@@ -1302,6 +1362,11 @@
+@@ -1302,6 +1354,11 @@
    if (i != 0)
      return i;
  
@@ -1348,7 +1432,7 @@ diff -Nru a/mh.c b/mh.c
    for (i = 0; i < ctx->msgcount; i++)
    {
      if (ctx->hdrs[i]->deleted
-@@ -1310,7 +1375,13 @@
+@@ -1310,7 +1367,13 @@
        snprintf (path, sizeof (path), "%s/%s", ctx->path, ctx->hdrs[i]->path);
        if (ctx->magic == M_MAILDIR
  	  || (option (OPTMHPURGE) && ctx->magic == M_MH))
@@ -1362,7 +1446,7 @@ diff -Nru a/mh.c b/mh.c
        else if (ctx->magic == M_MH)
        {
  	/* MH just moves files out of the way when you delete them */
-@@ -1332,16 +1403,21 @@
+@@ -1332,16 +1395,21 @@
        if (ctx->magic == M_MAILDIR)
        {
  	if (maildir_sync_message (ctx, i) == -1)
@@ -1386,7 +1470,7 @@ diff -Nru a/mh.c b/mh.c
    if (ctx->magic == M_MH)
      mh_update_sequences (ctx);
  
-@@ -1362,6 +1438,13 @@
+@@ -1362,6 +1430,13 @@
    }
  
    return 0;

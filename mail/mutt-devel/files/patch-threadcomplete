@@ -1,21 +1,12 @@
 diff -Nru a/PATCHES b/PATCHES
---- PATCHES	2004-07-24 12:27:17 +02:00
-+++ PATCHES	2004-08-22 02:01:52 +02:00
+--- PATCHES
++++ PATCHES
 @@ -0,0 +1 @@
-+patch-1.5.6.cb.thread_pattern.1
++patch-1.5.6+20040904.tg.mutt-thread.3
 diff -Nru a/doc/manual.sgml.head b/doc/manual.sgml.head
 --- doc/manual.sgml.head	2004-07-24 12:27:29 +02:00
-+++ doc/manual.sgml.head	2004-08-25 14:54:08 +02:00
-@@ -1771,6 +1771,8 @@
- messages:
- 
- <tscreen><verb>
-+~a              messages in threads that contain at least one tagged message;
-+                this is the same as ~(~T) [see below for ~(..)]
- ~A              all messages
- ~b EXPR         messages which contain EXPR in the message body
- ~B EXPR         messages which contain EXPR in the whole message
-@@ -1809,6 +1811,8 @@
++++ doc/manual.sgml.head	2004-09-04 12:40:02 +02:00
+@@ -1809,6 +1809,8 @@
  ~y EXPR         messages which contain EXPR in the `X-Label' field
  ~z [MIN]-[MAX]  messages with a size in the range MIN to MAX *)
  ~=              duplicated messages (see $duplicate_threads)
@@ -26,13 +17,8 @@ diff -Nru a/doc/manual.sgml.head b/doc/manual.sgml.head
  Where EXPR, USER, ID, and SUBJECT are 
 diff -Nru a/mutt.h b/mutt.h
 --- mutt.h	2004-07-24 12:27:21 +02:00
-+++ mutt.h	2004-08-25 14:04:40 +02:00
-@@ -207,10 +207,12 @@
-   M_LIMIT,
-   M_EXPIRED,
-   M_SUPERSEDED,
-+  M_THREADCOMPLETE,
- 
++++ mutt.h	2004-09-04 12:36:18 +02:00
+@@ -211,6 +211,7 @@
    /* actions for mutt_pattern_comp/mutt_pattern_exec */
    M_AND,
    M_OR,
@@ -42,16 +28,8 @@ diff -Nru a/mutt.h b/mutt.h
    M_COLLAPSED,
 diff -Nru a/pattern.c b/pattern.c
 --- pattern.c	2004-07-24 12:27:23 +02:00
-+++ pattern.c	2004-08-25 15:37:51 +02:00
-@@ -44,6 +44,7 @@
- }
- Flags[] =
- {
-+  { 'a', M_THREADCOMPLETE,	0,		NULL },
-   { 'A', M_ALL,			0,		NULL },
-   { 'b', M_BODY,		M_FULL_MSG,	eat_regexp },
-   { 'B', M_WHOLE_MSG,		M_FULL_MSG,	eat_regexp },
-@@ -700,7 +701,7 @@
++++ pattern.c	2004-09-04 12:37:52 +02:00
+@@ -700,7 +700,7 @@
  pattern_t *mutt_pattern_comp (/* const */ char *s, int flags, BUFFER *err)
  {
    pattern_t *curlist = NULL;
@@ -60,7 +38,7 @@ diff -Nru a/pattern.c b/pattern.c
    pattern_t *last = NULL;
    int not = 0;
    int alladdr = 0;
-@@ -755,6 +756,39 @@
+@@ -755,6 +755,39 @@
  	alladdr = 0;
  	break;
        case '~':
@@ -100,7 +78,7 @@ diff -Nru a/pattern.c b/pattern.c
  	if (implicit && or)
  	{
  	  /* A | B & C == (A | B) & C */
-@@ -945,6 +979,30 @@
+@@ -945,6 +978,29 @@
    return alladdr;
  }
  
@@ -112,10 +90,9 @@ diff -Nru a/pattern.c b/pattern.c
 +  if(!t)
 +    return 0;
 +  h = t->message;
-+  if(!h)
-+    return 0;
-+  if(mutt_pattern_exec(pat, flags, ctx, h))
-+    return 1;
++  if(h)
++    if(mutt_pattern_exec(pat, flags, ctx, h))
++      return 1;
 +
 +  if(up && (a=match_threadcomplete(pat, flags, ctx, t->parent,1,1,1,0)))
 +    return a;
@@ -131,7 +108,7 @@ diff -Nru a/pattern.c b/pattern.c
  /* flags
     	M_MATCH_FULL_ADDRESS	match both personal and machine address */
  int
-@@ -958,6 +1016,8 @@
+@@ -958,6 +1014,8 @@
        return (pat->not ^ (perform_and (pat->child, flags, ctx, h) > 0));
      case M_OR:
        return (pat->not ^ (perform_or (pat->child, flags, ctx, h) > 0));
@@ -140,7 +117,38 @@ diff -Nru a/pattern.c b/pattern.c
      case M_ALL:
        return (!pat->not);
      case M_EXPIRED:
-@@ -1023,6 +1083,16 @@
+--- doc/manual.sgml.head.orig2	Mon Sep  6 09:24:16 2004
++++ doc/manual.sgml.head	Mon Sep  6 09:25:41 2004
+@@ -1773,6 +1773,8 @@
+ messages:
+ 
+ <tscreen><verb>
++~a              messages in threads that contain at least one tagged message;
++                this is the same as ~(~T) [see below for ~(..)]
+ ~A              all messages
+ ~b EXPR         messages which contain EXPR in the message body
+ ~B EXPR         messages which contain EXPR in the whole message
+--- mutt.h.orig2	Mon Sep  6 09:24:17 2004
++++ mutt.h	Mon Sep  6 09:27:04 2004
+@@ -212,6 +212,7 @@
+   M_LIMIT,
+   M_EXPIRED,
+   M_SUPERSEDED,
++  M_THREADCOMPLETE,
+ 
+   /* actions for mutt_pattern_comp/mutt_pattern_exec */
+   M_AND,
+--- pattern.c.orig2	Mon Sep  6 09:24:10 2004
++++ pattern.c	Mon Sep  6 09:30:02 2004
+@@ -44,6 +44,7 @@
+ }
+ Flags[] =
+ {
++  { 'a', M_THREADCOMPLETE,	0,		NULL },
+   { 'A', M_ALL,			0,		NULL },
+   { 'b', M_BODY,		M_FULL_MSG,	eat_regexp },
+   { 'B', M_WHOLE_MSG,		M_FULL_MSG,	eat_regexp },
+@@ -1024,6 +1083,16 @@
  					pat->alladdr, 2, h->env->to, h->env->cc));
      case M_LIST:
        return (pat->not ^ mutt_is_list_recipient (pat->alladdr, h->env->to, h->env->cc));
