@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-Apache
+# New ports collection makefile for:	mod_perl
 # Version required:			1.21
 # Date created:				November 5th 1999
 # Whom:	      				Sheldon Hearn <sheldonh@FreeBSD.org>
@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	Apache
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 USE_PERL5=	YES
 
@@ -33,13 +34,22 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		mod_perl_tuning.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400000
+BROKEN=		"see PR 14924; use p5-Apache instead"
+.endif
+
 do-configure:
 	@ cd ${WRKSRC}; \
 	${PERL5} Makefile.PL USE_APXS=1 EVERYTHING=1 \
-	    WITH_APXS=${PREFIX}/sbin/apxs \
+	    WITH_APXS=${LOCALBASE}/sbin/apxs \
 	    PERL_EXTRA_CFLAGS='-DDEFAULT_PATH=\"/bin:/usr/bin:/usr/local/bin\"'
 
 post-install:
-	@ ${SH} ${PKGINSTALL}
+	${MKDIR} ${PREFIX}/include/apache/modules/perl
+	${INSTALL_DATA} ${WRKSRC}/src/modules/perl/*.h \
+	    ${PREFIX}/include/apache/modules/perl
+	${SH} ${PKGINSTALL}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
