@@ -1,1 +1,65 @@
 bin/xspread
+bin/pxspread
+share/xspread/README
+share/xspread/notes
+share/xspread/doc/Sample_Run
+share/xspread/doc/final_rpt
+share/xspread/doc/last_xspread
+share/xspread/doc/prog_rpt
+share/xspread/doc/sc.changes
+share/xspread/doc/sc.readme
+share/xspread/doc/sc.vms_notes
+share/xspread/doc/xspread.aux
+share/xspread/doc/xspread.dvi
+share/xspread/doc/xspread.log
+share/xspread/doc/xspread.ps
+share/xspread/doc/xspread.tex
+share/xspread/doc/xspread.toc
+share/xspread/doc/xspread_prog.asc
+share/xspread/documents/progress.aux
+share/xspread/documents/progress.dvi
+share/xspread/documents/progress.log
+share/xspread/documents/progress.ps
+share/xspread/documents/progress.tex
+share/xspread/documents/report.aux
+share/xspread/documents/report.dvi
+share/xspread/documents/report.log
+share/xspread/documents/report.ps
+share/xspread/documents/report.tex
+share/xspread/sample_files/demo_dates
+share/xspread/sample_files/demo_func
+share/xspread/sample_files/demo_math
+share/xspread/sample_files/demo_matrix
+share/xspread/sample_files/demo_strval
+share/xspread/sample_files/ex1
+share/xspread/sample_files/ex1o
+share/xspread/sample_files/ex2
+share/xspread/sample_files/ex2o
+share/xspread/sample_files/ex3
+share/xspread/sample_files/tutorial
+share/xspread/tests/Makefile
+share/xspread/tests/READ_ME
+share/xspread/tests/copy.cmp
+share/xspread/tests/copy.input
+share/xspread/tests/copy.output
+share/xspread/tests/copy.sc
+share/xspread/tests/intfunc.cmp
+share/xspread/tests/intfunc.input
+share/xspread/tests/intfunc.output
+share/xspread/tests/intfunc.sc
+share/xspread/tests/irr.cmp
+share/xspread/tests/irr.input
+share/xspread/tests/irr.output
+share/xspread/tests/irr.sc
+share/xspread/tests/read.cmp
+share/xspread/tests/read.data
+share/xspread/tests/read.input
+share/xspread/tests/read.output
+share/xspread/tests/read.sc
+share/xspread/tests/tester.sh
+share/xspread/tests/txt.sc
+@dirrm share/xspread/tests
+@dirrm share/xspread/sample_files
+@dirrm share/xspread/documents
+@dirrm share/xspread/doc
+@dirrm share/xspread

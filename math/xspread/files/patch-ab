@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Nov  7 11:17:18 1995
++++ Makefile.in	Tue Sep 28 01:41:35 1999
+@@ -1,7 +1,7 @@
+ 
+ # Common prefix for installation directories.
+ # NOTE: This directory must exist when you start the install.
+-prefix		= /usr/local
++prefix		= @prefix@
+ exec_prefix	= $(prefix)
+ # Where to put the executables.
+ bindir		= $(exec_prefix)/bin
+@@ -19,7 +19,7 @@
+ CFLAGS	= @CFLAGS@
+ DEFS	= @DEFS@
+ LIBS	= @LIBS@
+-INCLUDEDIR = -I. -I$(srcdir)
++INCLUDEDIR = -I. -I$(srcdir) @CPPFLAGS@
+ LN	= @LN_S@
+ RM	= rm -f
+ SHELL	= /bin/sh
