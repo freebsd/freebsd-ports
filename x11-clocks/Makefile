@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = X11 clocks
+
     SUBDIR += abclock
     SUBDIR += alltraxclock
     SUBDIR += asclock

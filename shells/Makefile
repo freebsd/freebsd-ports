@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Shells
+
     SUBDIR += 44bsd-csh
     SUBDIR += bash-completion
     SUBDIR += bash1

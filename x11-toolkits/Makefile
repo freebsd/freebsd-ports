@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = X11 toolkits
+
     SUBDIR += 9libs
     SUBDIR += SoXt
     SUBDIR += Xaw3d

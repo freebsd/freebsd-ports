@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Vietnamese support
+
 .if !defined(NO_VIET_KDE)
     SUBDIR += kde3-i18n
 .endif

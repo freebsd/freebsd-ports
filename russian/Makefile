@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Russian support
+
     SUBDIR += X.language
     SUBDIR += apache13
     SUBDIR += apache13-modssl

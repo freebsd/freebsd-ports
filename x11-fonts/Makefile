@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = X11 fonts and font utilities
+
     SUBDIR += XFree86-4-font100dpi
     SUBDIR += XFree86-4-font75dpi
     SUBDIR += XFree86-4-fontCyrillic

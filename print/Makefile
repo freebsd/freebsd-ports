@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Desktop publishing
+
     SUBDIR += a2ps-a4
     SUBDIR += a2ps-letter
     SUBDIR += a2ps-letterdj

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = X11 servers
+
     SUBDIR += XFree86-4-FontServer
     SUBDIR += XFree86-4-NestServer
     SUBDIR += XFree86-4-PrintServer

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Network news
+
     SUBDIR += PicMonger
     SUBDIR += atp
     SUBDIR += aub

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Japanese support
+
     SUBDIR += ASCIIdates98-fpw
     SUBDIR += CGdic-fpw
     SUBDIR += Canna

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Korean support
+
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += a2ps

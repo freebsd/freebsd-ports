@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Internet Relay Chat utilities
+
     SUBDIR += bitchx
     SUBDIR += bitlbee
     SUBDIR += blackened

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Audio tools
+
     SUBDIR += HVSC-Update
     SUBDIR += Maaate
     SUBDIR += abcde

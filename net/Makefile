@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Networking tools
+
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
     SUBDIR += 4g8

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Domain Name Service tools
+
     SUBDIR += adns
     SUBDIR += ares
     SUBDIR += bind8

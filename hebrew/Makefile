@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Hebrew support
+
     SUBDIR += culmus
     SUBDIR += elmar-fonts
     SUBDIR += he2

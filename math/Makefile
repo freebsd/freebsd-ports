@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Mathematics
+
     SUBDIR += GiNaC
     SUBDIR += PDL
     SUBDIR += R-a4

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Archivers
+
     SUBDIR += 9e
     SUBDIR += alz2zip
     SUBDIR += arc

@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Communication utilities
+
     SUBDIR += acfax
     SUBDIR += aldo
     SUBDIR += asmodem

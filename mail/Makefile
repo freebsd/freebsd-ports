@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Electronic mail utilities
+
     SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += aileron

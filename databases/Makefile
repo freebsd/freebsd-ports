@@ -1,6 +1,8 @@
 # $FreeBSD$
 #
 
+    COMMENT = Databases
+
     SUBDIR += WWWdb
     SUBDIR += adodb
     SUBDIR += arcexplorer
