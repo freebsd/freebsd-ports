@@ -16,12 +16,3 @@
  	name=Electric Eyes
  	can_open_multiple_files=true
  	expects_uris=false
-@@ -203,7 +203,7 @@
- 	mime_types=application/x-gnumeric,application/x-applix-spreadsheet,application/vnd.ms-excel,application/vnd.lotus-1-2-3,application/x-oleo,application/x-xbase,text/spreadsheet,text/x-comma-separated-values,text/tab-separated-values
- 
- grecord
--	command=gnome-sound-recorder -p
-+	command=gnome-sound-recorder
- 	name=Sound Recorder
- 	can_open_multiple_files=false
- 	expects_uris=false
