@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Sep 25 11:13:50 2001
++++ Makefile.in	Sun Oct  7 20:05:23 2001
+@@ -400,7 +400,7 @@
+ 	if test -d $(srcdir)/data; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/data; \
+ 	  for d in $(srcdir)/data/*; do \
+-	      cp -afr $$d $(DESTDIR)$(pkgdatadir)/data; \
++	      cp -pfR $$d $(DESTDIR)$(pkgdatadir)/data; \
+ 	  done \
+ 	fi
+ 
