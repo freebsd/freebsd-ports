@@ -187,6 +187,7 @@
     SUBDIR += upsmon
     SUBDIR += userlist
     SUBDIR += uwatch
+    SUBDIR += videogen
     SUBDIR += webmin
     SUBDIR += whowatch
     SUBDIR += wmapm
