@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.100
-PORTREVISION=	10
+PORTVERSION=	1.110
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,19 +24,18 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	apache-1.100-3.wbm.gz \
-		dhcpd-1.100-1.wbm.gz \
-		file-1.100-2.wbm.gz \
-		ldap-useradmin-1.100-1.wbm.gz \
-		lpadmin-1.100-2.wbm.gz \
-		mon-1.100-2.wbm.gz \
-		mount-1.100-8.wbm.gz \
-		mysql-1.100-1.wbm.gz \
-		nis-1.100-1.wbm.gz \
-		qmailadmin-1.100-1.wbm.gz \
-		samba-1.100-6.wbm.gz \
-		squid-1.100-5.wbm.gz \
-		updown-1.100-4.wbm.gz
+WEBMIN_MODULES=	dhcpd-1.110-9.wbm.gz \
+		file-1.110-1.wbm.gz \
+		fsdump-1.110-2.wbm.gz \
+		ldap-useradmin-1.110-3.wbm.gz \
+		lpadmin-1.110-1.wbm.gz \
+		mysql-1.110-1.wbm.gz \
+		postfix-1.110-1.wbm.gz \
+		sendmail-1.110-1.wbm.gz \
+		stunnel-1.110-1.wbm.gz \
+		updown-1.110-1.wbm.gz \
+		upload-1.110-1.wbm.gz \
+		webalizer-1.110-2.wbm.gz
 
 WEBMIN_THEMES=
 
