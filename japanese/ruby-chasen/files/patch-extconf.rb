@@ -1,6 +1,6 @@
---- extconf.rb.orig	Thu Sep  9 21:57:36 1999
-+++ extconf.rb	Thu Mar  1 19:09:18 2001
-@@ -1,20 +1,6 @@
+--- extconf.rb.orig	Thu Sep  9 05:57:36 1999
++++ extconf.rb	Sun Aug 29 21:26:29 2004
+@@ -1,20 +1,7 @@
  require "mkmf"
 -require "parsearg"
  
@@ -21,5 +21,6 @@
 -end
 +dir_config("chasen")
  
++have_library("stdc++")
 +have_library("chasen", "chasen_getopt_argv") &&
  create_makefile("chasen")
