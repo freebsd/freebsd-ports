@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.4.8
+PORTVERSION=	2.5.0
 CATEGORIES=	devel
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -33,9 +33,13 @@ pre-patch:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/portlint.pl
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/portlintgrep.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl ${PREFIX}/bin/portlint
 	${INSTALL_MAN} ${WRKSRC}/portlint.1 ${MAN1PREFIX}/man/man1
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/portlintgrep.pl ${EXAMPLESDIR}/portlintgrep
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.26 2003/11/15 22:08:28 marcus Exp $
+# $Id: portlint.pl,v 1.27 2003/11/17 20:00:17 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -39,8 +39,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 4;
-my $micro = 8;
+my $minor = 5;
+my $micro = 0;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -171,8 +171,8 @@ my @varlist =  qw(
 	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
 	PKGNAMESUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
 	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
-	PKGDIR COMMENT DESCR PLIST PKGINSTALL PKGDEINSTALL PKGREQ PKGMESSAGE
-	MD5_FILE .CURDIR INSTALLS_SHLIB
+	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
+	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -453,17 +453,19 @@ sub checkplist {
 			if ($_ =~ /^\@(cwd|cd)[ \t]+(\S+)/) {
 				$curdir = $2;
 			} elsif ($_ =~ /^\@unexec[ \t]+rm[ \t]/) {
-				if ($_ !~ /%D/) {
-				&perror("WARN: pkg-plist:$. use \"%D\" to specify prefix.");
+				if ($_ !~ /%[DB]/) {
+					&perror("WARN: pkg-plist:$. use \"%D\" or \"%B\" to ".
+						"specify prefix.");
 				}
-				if ($_ !~ /true$/) {
-				&perror("WARN: pkg-plist:$. add \"2>&1 ".
-					">/dev/null || true\" ".
-					"to \"\@unexec rm\".");
+				if ($_ !~ /true$/ && $_ !~ /rm -f/) {
+					&perror("WARN: pkg-plist:$. add \"2>&1 ".
+						">/dev/null || true\" ".
+						"to \"\@unexec rm\".");
 				}
 			} elsif ($_ =~ /^\@unexec[ \t]+rmdir/) {
-				if ($_ !~ /%D/) {
-				&perror("WARN: pkg-plist:$. use \"%D\" to specify prefix.");
+				if ($_ !~ /%[DB]/) {
+					&perror("WARN: pkg-plist:$. use \"%D\" or \"%B\" to ".
+						"specify prefix.");
 				}
 				if ($_ !~ /true$/) {
 				&perror("WARN: pkg-plist:$. use \"\@dirrm\" ".
@@ -852,9 +854,8 @@ sub checkmakefile {
 		if ($verbose);
 	$i = "\n" x ($contblank + 2);
 	if ($whole =~ /$i/) {
-		my @linesbefore = split(/\n/, $`);
 		&perror("FATAL: contiguous blank lines (> $contblank lines) found ".
-			"in $file at line " . ($#linesbefore + 1) . ".");
+			"in $file at line " . (&linenumber($`)) . ".");
 	}
 
 	#
@@ -864,7 +865,7 @@ sub checkmakefile {
 		print "OK: checking for \$(VARIABLE).\n" if ($verbose);
 		if ($whole =~ /\$\([\w\d]+\)/) {
 			&perror("WARN: use \${VARIABLE}, instead of ".
-				"\$(VARIABLE).");
+				"\$(VARIABLE) at line " . (&linenumber($`)) . ".");
 		}
 	}
 
@@ -898,7 +899,8 @@ sub checkmakefile {
 			@other_early);
 
 		while ($whole =~ /^($earlypattern)[+?:!]?=/gmo) {
-			&perror("FATAL: $1 is set after including bsd.port.pre.mk.");
+			&perror("FATAL: $1 is set at line " . (&linenumber($`)) . " after ".
+				"including bsd.port.pre.mk.");
 		}
 	}
 
@@ -916,7 +918,8 @@ sub checkmakefile {
 	#
 	print "OK: checking for USE_* as a user-settable option.\n" if ($verbose);
 	while ($whole =~ /\n\s*\.\s*(?:el)?if[^\n]*?\b(\w*USE_)(\w+)(?\![^\n]*\n#?\.error)/g) {
-		&perror("WARN: is $1$2 a user-settable option? ".
+		my $lineno = &linenumber($`);
+		&perror("WARN: is $1$2 a user-settable option at line $lineno? ".
 			"Consider using WITH_$2 instead.")
 		if ($1.$2 ne 'USE_GCC');
 	}
@@ -924,8 +927,9 @@ sub checkmakefile {
 	#
 	# whole file: NO_CHECKSUM
 	#
-	$whole =~ s/\n#[^\n]*/\n/g;
-	$whole =~ s/\n\n+/\n/g;
+	# XXX Don't compress newlines since it messes up line number calculation.
+	#$whole =~ s/\n#[^\n]*/\n/g;
+	#$whole =~ s/\n\n+/\n/g;
 	print "OK: checking NO_CHECKSUM.\n" if ($verbose);
 	if ($whole =~ /\nNO_CHECKSUM/) {
 		&perror("FATAL: use of NO_CHECKSUM discouraged. ".
@@ -954,7 +958,8 @@ sub checkmakefile {
 	}
 	print "OK: checking for use of NOPORTDOCS.\n" if ($verbose);
 	if ($whole =~ /NOPORTSDOC/) {
-		&perror("WARN: NOPORTSDOC found. Do you mean NOPORTDOCS?");
+		&perror("WARN: NOPORTSDOC found at " . (&linenumber($`)) . ". Do you ".
+			"mean NOPORTDOCS?");
 	}
 	if ($sharedocused && $whole !~ /defined\s*\(?NOPORTDOCS\)?/
 	 && $whole !~ /def\s*\(?NOPORTDOCS\)?/
@@ -981,46 +986,55 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	$cmdnames{'python'} = '${PYTHON_CMD}';
 	$cmdnames{'strip'} = '${STRIP_CMD}';
 	foreach my $i (qw(aclocal autoconf autoheader automake autoreconf autoupdate autoscan ifnames libtool libtoolize)) {
-		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal/ ) ? "AUTO" : "" ) . "\U$i\E\}";
+		$autocmdnames{$i} = "\$\{" . ( ( $i !~ /auto|aclocal|libtool/ ) ? "AUTO" : "" ) . "\U$i\E\}";
 	}
 	#
 	# ignore parameter string to echo command.
 	# note that we leave the command as is, since we need to check the
 	# use of echo itself.
 	$j = $whole;
-	$j =~ s/([ \t][\@\-]{0,2})(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;/; #"
+	$j =~ s/([ \t][\@\-]{0,2})(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*[;\n]/$1$2;\n/g; #"
 	foreach my $i (keys %cmdnames) {
 		# XXX This is a hack.  Really, we should break $j up into individual
 		# lines, and go through each one.
-		if ($j =~ /([^ \t\/]*[ \t\/][\@\-]{0,2}$i[ \t\n;][^\n]*\n?)/) {
-			if ($1 !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/
-				&& $1 !~ /\nIGNORE(.)?=[^\n]+$i/
-				&& $1 !~ /\nBROKEN(.)?=[^\n]+$i/
-				&& $1 !~ /\nRESTRICTED(.)?=[^\n]+$i/
-				&& $1 !~ /\nNO_PACKAGE(.)?=[^\n]+$i/
-				&& $1 !~ /\nNO_CDROM(.)?=[^\n]+$i/
-				&& $1 !~ /\nCOMMENT(.)?=[^\n]+$i/) {
+#		if ($j =~ /([^ \t\/]*[ \t\/][\@\-]{0,2}$i[ \t\n;][^\n]*\n?)/) {
+		while ($j =~ /^(.*$i.*)$/gm) {
+			my $curline = $1;
+			my $lineno = &linenumber($`);
+			if ($curline =~ /(^|\s+)[\@\-]{0,2}$i\b/
+				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
+				&& $curline !~ /^IGNORE(.)?=[^\n]+$i/m
+				&& $curline !~ /^BROKEN(.)?=[^\n]+$i/m
+				&& $curline !~ /^RESTRICTED(.)?=[^\n]+$i/m
+				&& $curline !~ /^NO_PACKAGE(.)?=[^\n]+$i/m
+				&& $curline !~ /^NO_CDROM(.)?=[^\n]+$i/m
+				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
+				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
 					&perror("WARN: possible direct use of command \"$i\" ".
-						"found. use $cmdnames{$i} instead.");
+						"found at line $lineno. use $cmdnames{$i} instead.");
 			}
 		}
 	}
 
 	foreach my $i (keys %autocmdnames) {
 		# XXX Same hack as above.
-		if ($j =~ /([^ \t\/]*[ \t\/][\@\-]{0,2}($i\d*)[ \t\n;][^\n]*\n?)/) {
+#		if ($j =~ /([^ \t\/]*[ \t\/][\@\-]{0,2}($i\d*)[ \t\n;][^\n]*\n?)/) {
+		while ($j =~ /^(.*($i\d*).*)$/gm) {
 			my $lm = $1;
 			my $sm = $2;
-			if ($lm !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/
-				&& $1 !~ /\nIGNORE(.)?=[^\n]+$i/
-				&& $1 !~ /\nBROKEN(.)?=[^\n]+$i/
-				&& $1 !~ /\nRESTRICTED(.)?=[^\n]+$i/
-				&& $1 !~ /\nNO_PACKAGE(.)?=[^\n]+$i/
-				&& $1 !~ /\nNO_CDROM(.)?=[^\n]+$i/
-				&& $lm !~ /\nCOMMENT(.)?=[^\n]+($i\d*)/) {
+			my $lineno = &linenumber($`);
+			if ($lm =~ /(^|\s+)[\@\-]{0,2}($i\d*)\b/
+				&& $lm !~ /^[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/m
+				&& $lm !~ /^IGNORE(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^BROKEN(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^RESTRICTED(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^NO_PACKAGE(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^NO_CDROM(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^CATEGORIES(.)?=[^\n]+($i\d*)/m
+				&& $lm !~ /^COMMENT(.)?=[^\n]+($i\d*)/m) {
 					&perror("WARN: possible direct use of command \"$sm\" ".
-						"found. Use $autocmdnames{$i} instead and ".
-						"set according USE_*_VER= flag");
+						"found at line $lineno. Use $autocmdnames{$i} ".
+						"instead and set according USE_*_VER= flag");
 			}
 		}
 	}
@@ -1048,7 +1062,8 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	#
 	if ($j =~ /\${MKDIR}\s+-p/) {
 		&perror("WARN: possible use of \"\${MKDIR} -p\" ".
-			"found. \${MKDIR} includes \"-p\" by default.");
+			"found at line " . (&linenumber($`)) . ". \${MKDIR} includes ".
+			"\"-p\" by default.");
 	}
 
 	#
@@ -1080,6 +1095,14 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 		if ($1 =~ /gnomehack/) {
 			$use_gnome_hack = 1;
 		}
+	}
+
+	#
+	# whole file: check for deprecated USE_MESA
+	#
+	if ($whole =~ /^USE_MESA[?:]?=/m) {
+		&perror("WARN: USE_MESA is deprecated at line " . (&linenumber($`)) .
+			". use USE_GL instead.");
 	}
 
 	#
@@ -1227,7 +1250,7 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	}
 
 	if ($committer && $makevar{'.CURDIR'} =~ m'/([^/]+)/[^/]+/?$') {
-		if ($cat[0] ne $1) {
+		if ($cat[0] ne $1 && $makevar{PKGCATEGORY} ne $1 ) {
 			&perror("FATAL: category \"$1\" must be listed first");
 		}
 	}
@@ -1917,6 +1940,15 @@ sub checkearlier {
 			&perror("WARN: \"$i\" has to appear earlier in $file.");
 		}
 	}
+}
+
+sub linenumber {
+	my $text = shift;
+	my @lines;
+
+	@lines = split /\n/, $text;
+
+	return scalar(@lines);
 }
 
 sub abspathname {
