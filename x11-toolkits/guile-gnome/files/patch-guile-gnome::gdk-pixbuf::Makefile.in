@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- guile-gnome/gdk-pixbuf/Makefile.in	2001/11/12 12:09:05	1.1
++++ guile-gnome/gdk-pixbuf/Makefile.in	2001/11/12 12:09:54
+@@ -98,7 +98,7 @@
+ VERSION = @VERSION@
+ ZVT_LIBS = @ZVT_LIBS@
+ 
+-INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR)
++INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR) `$(GNOME_CONFIG) --cflags gdk_pixbuf`
+ 
+ 
+ GDKPIXBUF_LIBS = -lgdk_pixbuf

@@ -4,11 +4,4 @@
  
 -GLADE_LIBS = -lglade -lglade-gnome 
 +GLADE_LIBS = `libglade-config --libs gnome`
- 
---- guile-gnome/bonobo/Makefile.in.orig	Sun Feb  4 20:53:42 2001
-+++ guile-gnome/bonobo/Makefile.in	Wed Feb 28 11:15:12 2001
-@@ -103,3 +103,3 @@
- 
--BONOBO_LIBS = -lbonobo 
-+BONOBO_LIBS = `gnome-config --libs bonobo`
- 
+  
