@@ -19,13 +19,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	petef@FreeBSD.org
 
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
+		intl.2:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6 --disable-inews --with-slrnpull
+CONFIGURE_ARGS=	--enable-ipv6 --disable-inews --with-slrnpull \
+		--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	YES
@@ -45,6 +49,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/slrnpull ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/examples/slrn
 	${INSTALL_DATA} ${WRKSRC}/doc/slrn.rc ${PREFIX}/share/examples/slrn
+	(cd ${WRKSRC}/po; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
 	@${MKDIR} ${PREFIX}/share/examples/slrn/slrnpull
 .for file in FAQ README SETUP score slrn.rc slrnpull.conf slrnpull.sh
 	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/${file} ${PREFIX}/share/examples/slrn/slrnpull
