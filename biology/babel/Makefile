@@ -14,6 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
 
 post-install:
-	@ ${CAT} ${PKGDIR}/MESSAGE | ${SED} -e 's:/usr/local:${PREFIX}:'
+	@ ${CAT} ${PKGMESSAGE} | ${SED} -e 's:/usr/local:${PREFIX}:'
 
 .include <bsd.port.mk>

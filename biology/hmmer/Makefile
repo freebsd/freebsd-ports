@@ -32,6 +32,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/hmmer
 	${INSTALL_MAN} ${WRKSRC}/Userguide/Userguide.ps ${PREFIX}/share/doc/hmmer
 .endif
-	@ ${CAT} ${PKGDIR}/MESSAGE
+	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
