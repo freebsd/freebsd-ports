@@ -8,6 +8,7 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.uib.no/pub/mutt/ \
