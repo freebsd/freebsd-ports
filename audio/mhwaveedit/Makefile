@@ -7,26 +7,34 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
 
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		portaudio.0:${PORTSDIR}/audio/portaudio
 
 USE_GNOME=	gnomehack gnometarget gtk20
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-optimization --without-sdl
+CONFIGURE_ARGS=	--disable-optimization --without-alsalib --without-sdl
 
 PLIST_FILES=	bin/mhwaveedit
 
 .if defined(WITH_DOUBLE_SAMPLES)
 CONFIGURE_ARGS+=	--with-double-samples
+.endif
+
+.if defined(WITH_JACK)
+LIB_DPENDS+=	jack:${PORTSDIR}/audio/jack
+.else
+CONFIGURE_ARGS+=	--without-jack
 .endif
 
 pre-everything::
@@ -38,5 +46,11 @@ pre-everything::
 	@${ECHO_MSG} "		processing (slows down program but may increase"
 	@${ECHO_MSG} "		quality for 24/32-bit samplerates)"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITH_JACK=yes"
+	@${ECHO_MSG} "		Support JACK driver"
+	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
