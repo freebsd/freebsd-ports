@@ -15,14 +15,24 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Command-line player/decoder for musepack audio
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 
 MAKEFILE=	Makefile.bsd
 USE_BZIP2=	yes
-ONLY_FOR_ARCHS=	i386
+USE_REINPLACE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386
+BUILD_DEPENDS=	nasm:${PORTVERSION}/devel/nasm
+.endif
+
+post-patch:
+.if ${ARCH} != i386
+		${REINPLACE_CMD} -e "s,#define USE_ASM,//define USE_ASM," ${WRKSRC}/mpp.h
+.endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mppdec ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
