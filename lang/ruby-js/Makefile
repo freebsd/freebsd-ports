@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	js
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.ruby-lang.org/~tamura/ruby/
+MASTER_SITES=	http://www.ruby-lang.org/~tamura/ruby/ruby-js/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -21,9 +21,12 @@ LIB_DEPENDS=	js.0:${PORTSDIR}/lang/njs
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+WRKSRC=		${WRKDIR}/JS
 INSTALL_TARGET=	site-install
 
-EXAMPLES=	html_ssi_lua.rb test_*
+EXAMPLES=	classtest.rb
+DOCS_EN=	README.rd
+DOCS_JA=	README.rd.ja
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -31,8 +34,13 @@ post-install:
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
-	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/rubylua.txt ${RUBY_MODDOCDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+.endfor
 .endif
 
 .include <bsd.port.mk>
