@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.11 1996/05/20 07:37:06 asami Exp $
+# $Id: Makefile,v 1.12 1996/06/15 16:58:06 jkh Exp $
 #
 
 DISTNAME=       apache_1.0.5
@@ -21,9 +21,11 @@ post-extract:
 	cp ${DISTDIR}/mod_env.c ${WRKSRC}/src
 
 post-install:
-	@echo "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."
-	@echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh
-	@echo "[ -x /usr/local/sbin/httpd ] && /usr/local/sbin/httpd && echo -n ' httpd'" >> ${PREFIX}/etc/rc.d/apache.sh
-	@chmod 751 ${PREFIX}/etc/rc.d/apache.sh
+	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
+		echo "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
+		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
+		echo "[ -x /usr/local/sbin/httpd ] && /usr/local/sbin/httpd && echo -n ' httpd'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
+	fi
 
 .include <bsd.port.mk>
