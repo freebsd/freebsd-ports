@@ -1,6 +1,12 @@
---- setup.py.orig	Sat Oct 18 00:44:51 2003
-+++ setup.py	Sat Oct 18 00:45:09 2003
-@@ -197,7 +197,7 @@
+--- setup.py.orig	Wed Oct 22 11:25:31 2003
++++ setup.py	Thu Nov 20 02:02:19 2003
+@@ -192,12 +192,12 @@
+          ('share/locale/nl/LC_MESSAGES',
+              ['share/locale/nl/LC_MESSAGES/linkcheck.mo']),
+          ('share/linkchecker', ['linkcheckerrc']),
+-         ('share/linkchecker/examples',
++         ('share/examples/linkchecker',
+              ['lconline/leer.html.en', 'lconline/leer.html.de',
                'lconline/index.html', 'lconline/lc_cgi.html.en',
                'lconline/lc_cgi.html.de', 'lconline/check.js',
                'lc.cgi','lc.fcgi','lc.sz_fcgi','linkchecker.bat']),

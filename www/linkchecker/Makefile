@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	linkchecker
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Check HTML documents for broken links
 
 USE_PYTHON=	2.3
