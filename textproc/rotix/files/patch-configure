@@ -1,14 +1,5 @@
 --- configure.orig	Sun Jan 27 13:00:06 2002
 +++ configure	Sun Oct 20 03:32:06 2002
-@@ -17,7 +17,7 @@
- arch=`uname -s`
- 
- while [ -n "$1" ]; do
--	e="`expr "$1" : '--\(.*=.*\)'`"
-+	e="`expr -- "$1" : '--\(.*=.*\)'`"
- 	if [ -z "$e" ]; then
- 		cat<<EOF
- Rotix configure
 @@ -83,9 +83,9 @@
  fi
  
