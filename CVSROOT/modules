@@ -4433,6 +4433,7 @@ latex-pict2e	ports/print/latex-pict2e
 latex-subfig	ports/print/latex-subfig
 latex-subfloat	ports/print/latex-subfloat
 latex-timing	ports/print/latex-timing
+latex-tipa	ports/print/latex-tipa
 latex-ucs	ports/print/latex-ucs
 latex-xcolor	ports/print/latex-xcolor
 latex2html	ports/textproc/latex2html
@@ -10181,7 +10182,6 @@ tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
 tinyq		ports/devel/tinyq
 tinyxml		ports/textproc/tinyxml
-tipa		ports/print/tipa
 tipograf	ports/print/tipograf
 tirc		ports/irc/tirc
 tircproxy	ports/irc/tircproxy
