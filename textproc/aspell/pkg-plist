@@ -104,15 +104,11 @@ share/aspell/canadian-lrg.multi
 share/aspell/canadian-med-only
 share/aspell/canadian-med.multi
 share/aspell/canadian.multi
-share/aspell/cp1252.dat
-share/aspell/cp437.dat
 share/aspell/english-lrg-only
 share/aspell/english-med-only
 share/aspell/english.dat
 share/aspell/english.multi
 share/aspell/english_phonet.dat
-share/aspell/francais.dat
-share/aspell/francais_phonet.dat
 share/aspell/iso8859-1.dat
 share/aspell/iso8859-1.map
 share/aspell/iso8859-10.dat
@@ -183,18 +179,17 @@ share/doc/aspell/manual.aux
 share/doc/aspell/manual.dvi
 share/doc/aspell/manual.tex
 share/doc/aspell/manual2.lyx
-share/pspell/en-american-aspell-lrg.pwli
-share/pspell/en-american-aspell-med.pwli
 share/pspell/en-american-aspell.pwli
+share/pspell/en-american-lrg-aspell.pwli
+share/pspell/en-american-med-aspell.pwli
 share/pspell/en-aspell.pwli
-share/pspell/en-british-aspell-lrg.pwli
-share/pspell/en-british-aspell-med.pwli
 share/pspell/en-british-aspell.pwli
-share/pspell/en-canadian-aspell-lrg.pwli
-share/pspell/en-canadian-aspell-med.pwli
+share/pspell/en-british-lrg-aspell.pwli
+share/pspell/en-british-med-aspell.pwli
 share/pspell/en-canadian-aspell.pwli
+share/pspell/en-canadian-lrg-aspell.pwli 
+share/pspell/en-canadian-med-aspell.pwli 
 @dirrm include/aspell
-@dirrm share/pspell
 @dirrm share/aspell
 @dirrm share/doc/aspell/man-html
 @dirrm share/doc/aspell/man-text
