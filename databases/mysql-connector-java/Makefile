@@ -15,6 +15,8 @@ EXTRACT_SUFX=	-you-must-unjar-me.jar
 
 MAINTAINER=	dglo@SSEC.WISC.EDU
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES
 
@@ -59,9 +61,12 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@(cd ${PREFIX} \
 		&& find share/doc/mysql-jdbc -type f -print >> ${TMPPLIST})
+	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt/mm/mysql/jdbc2" >> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt/mm/mysql" >> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt/mm" >> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/mysql-jdbc/org/gjt" >> ${TMPPLIST}
+	@${ECHO} "@dirrm share/doc/mysql-jdbc/org" >> ${TMPPLIST}
 	@${ECHO} "@dirrm share/doc/mysql-jdbc" >> ${TMPPLIST}
 .endif
-	@${ECHO} "@unexec ${RMDIR} %D/share/java/classes 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO} "@unexec ${RMDIR} %D/share/java 2>/dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
