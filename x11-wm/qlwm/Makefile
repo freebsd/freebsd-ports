@@ -15,6 +15,12 @@ MASTER_SITES=	http://www.netcologne.de/~nc-lindenal/qlwm/
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Qt-based window manager
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Fails to link"
+.endif
+
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		CHANGES README
 LIBDIR=		lib/${PORTNAME}
@@ -73,4 +79,4 @@ do-install:
 	${SED} -e s,%PREFIX%,${PREFIX},g <${FILESDIR}/qlwm >${WRKSRC}/qlwm
 	${INSTALL_SCRIPT} ${WRKSRC}/qlwm ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

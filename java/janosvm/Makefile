@@ -15,6 +15,12 @@ MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	A virtual machine for executing Java bytecodes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Fails to link"
+.endif
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x
@@ -30,4 +36,4 @@ post-install:
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
