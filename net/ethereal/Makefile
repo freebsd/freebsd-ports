@@ -19,17 +19,21 @@ MASTER_SITE_SUBDIR=	. old-versions
 MAINTAINER=	billf@FreeBSD.org
 COMMENT=	An X11/GTK network analyzer/capture tool
 
+USE_BZIP2=	yes
+WANT_GNOME=	yes
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_SNMP)
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
-USE_BZIP2=	yes
 CONFIGURE_ARGS=	--program-transform-name=""
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
-.if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
+.if defined(WITH_GTK2) || (${HAVE_GNOME:Mgtk20}!="")
+USE_GNOME=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2=yes
 .else
 USE_GNOME=	gtk12
@@ -60,7 +64,7 @@ CONFIGURE_ARGS+=	--enable-snmp=no --without-ucdsnmp --without-net-snmp
 
 .if defined(WITH_ADNS) || (!defined(WITHOUT_ADNS) && exists(${LOCALBASE}/lib/adns.so))
 LIB_DEPENDS+=	adns.1:${PORTSDIR}/dns/adns
-CONFIGURE_ARGS+=	--with-adns=${LOCALBASE}
+.include <bsd.port.post.mk>
 .else
 CONFIGURE_ARGS+=	--without-adns
 .endif
@@ -68,4 +72,4 @@ CONFIGURE_ARGS+=	--without-adns
 MAN1+=		editcap.1 idl2eth.1 mergecap.1 tethereal.1 text2pcap.1
 MAN4+=		ethereal-filter.4
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
