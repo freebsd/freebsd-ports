@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.6.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/ \
