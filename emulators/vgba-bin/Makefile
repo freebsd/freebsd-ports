@@ -9,8 +9,7 @@ PORTNAME=	vgb
 PORTVERSION=	2.1
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.komkon.org/fms/VGB/ \
-		http://fms.komkon.org/VGB/
+MASTER_SITES=	http://fms.komkon.org/VGB/
 PKGNAMESUFFIX=	-bin
 DISTNAME=	VGB${PORTVERSION:S/.//}-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
