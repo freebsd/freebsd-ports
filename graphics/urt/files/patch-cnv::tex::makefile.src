@@ -1,0 +1,11 @@
+--- cnv/tex/makefile.src.orig	Sat Jun  8 00:57:32 1991
++++ cnv/tex/makefile.src	Sat Dec 28 00:47:13 2002
+@@ -39,7 +39,7 @@
+ 
+ install-scripts: $(SCRIPTS)
+ 	for pgm in $?; do d=$(DEST)/`basename $$pgm .sh`; \
+-		cp $$pgm $$d; chmod +x $$d; done
++		${BSD_INSTALL_SCRIPT} $$pgm $$d; chmod +x $$d; done
+ 	touch install-scripts
+ 
+ # Default rule for making a program from its .c file.

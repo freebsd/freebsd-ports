@@ -1,0 +1,253 @@
+--- config/hp700-hpux10.orig	Fri Dec 27 23:02:36 2002
++++ config/hp700-hpux10	Fri Dec 27 23:02:36 2002
+@@ -0,0 +1,250 @@
++# Configuration file for HP 9000/700 series running HP-UX 10.01 with gcc
++# Note that you will probably need to change the INCX11 directive at the
++# end of this file
++
++#quiet on
++
++# Configuration file for the URT raster toolkit package.  Modify all 
++# entries in this file.
++
++# This file should be the only thing you have to edit to configure the
++# toolkit for a new system.  If you are adding capabilities, please
++# keep this in mind and be sure to make those capabilities configurable
++# from this file.
++
++# The file "makefile.hdr" contains code common to all makefiles.  It
++# should not be necessary to edit that file.
++
++# The following define the available "hardware" display configuration.
++# Remove one # sign to define a symbol (i.e., leaving #define at the
++# beginning of the line.)
++
++# Displays
++##define AMIGA		Amiga computer display.
++##define APOLLO         Apollo computer display.
++##define BOBCAT         HP "bobcat" 9000 series (with Starbase).
++##define CX3D           Chromatics CX3D system.
++##define FB             BRL extended frame buffer library.
++##define GETICR		Display for NCSA telnet.  Requires PBMPLUS tools.
++##define GRINNELL	Grinnell GMR27 frame buffer.
++##define HPQCR		Matrix QCR-Z attached to HP series 300.
++##define IRIS           Silicon Graphics Iris 2000/3000.
++##define IRIS4D         Silicon Graphics Iris/4D.
++##define NEXT		NeXT computer display.
++##define ORION		High-Level Hardware Orion display.
++##define SUNTOOLS       For Suns running SunTools.
++##define TAAC1		Suns with TAAC-1 board.
++##define X10		X10 Window system.
++#define X11            X11 Window system.
++
++# Conversion programs
++#define ABEKASA60	Abekas A60 conversions.
++#define ABEKASA62	Abekas A62 conversions.
++#define ALIAS		Alias conversions.
++##define CGM		RLE to CGM conversion.
++#define CUBICOMP	Cubicomp conversions.
++#define GIF		GIF image conversions.
++#define GRAYFILES	Grayscale conversions.
++##define SGICONV	SGI Image conversions.
++#define MACPAINT	Macpaint conversions.
++##define PBMPLUS		PBMPLUS conversions.
++#define POSTSCRIPT	Postscript conversions.
++##define SUNRASTER	For Sun raster conversions.
++#define TARGA		Targa format conversions.
++##define TIFF		TIFF image conversions.
++#define TIFF2p4		Define if libtiff is version 2.4 or greater
++#define VICAR		VICAR image conversions.
++#define WASATCH		Wasatch Paintbox conversions.
++#define WAVEFRONT	Wavefront RLA file conversions.
++
++# The dvirle program requires the Maryland MC-TeX library.  See the
++# README file in the cnv/tex subdirectory.
++##define DVIRLE		Compile dvirle program
++
++# Control C compilation flags.  Define according to your compiler.
++
++##define APOLLOCC	Apollo computer.
++##define CONVEXCC	Convex C 4.0 or greater
++##define CRAY2CC		Cray-2 running UNICOS.
++#define GCC		Gcc compiler.
++##define HPUX300CC	HP 9000/300 running HP-UX.
++#define HPUX800CC	HP 9000/800 running HP-UX.
++##define IBMR6000CC	IBM RS6000.
++##define IRIS4DCC	Silicon Graphics Iris 4D.
++##define IRISCC		Silicon Graphics Iris 2400/3000.
++##define SUNCC		Sun 3 computers.
++##define 386IXCC		SVr3 386/ix 2.2
++
++# You can put any system dependent flags here.
++ExtraCFLAGS =
++
++# System specific or configuration parameters.  Define according to your
++# environment and desires.
++
++##define ABEKAS_PAL	Convert to PAL format in Abekas A60 tool.
++##define ALL_MAN	Print/install all man pages.
++##define CONST_DECL	If your compiler understands 'const' (ANSI)
++##define FILE_NAME_14_CHARS	If filenames are limited to 14 characters.
++##define HAVE_CPROTO	If you have the cproto command.  Not normally required.
++##define NEED_BSTRING	Your libc does not have bcopy or bzero (Sys V probably)
++##define NEED_GETOPT	Your libc does not have the getopt function (BSD)
++##define NEED_RENAME	Your libc does not have the rename function (Sys V)
++#define NEED_SETLINEBUF	Your stdio does not have setlinebuf (Sys V)
++##define NO_MAKE_MAKEFILE	If you don't want a "makefile" action.
++##define NO_OPEN_PIPES	If file "names" "|..." and "*.Z" are not special.
++#define NO_RANLIB	You don't have the ranlib program (Sys V)
++##define NO_ITIMER	You don't have setitimer (e.g., Cray 2).
++##define NO_TOOLS	Don't build tool directory.
++##define STDIO_NEEDS_BINARY	Your fopen() needs "b" specified for binary io
++##define USE_TIME_H	You need to include time.h for time_t (Sys V)
++#define SYS_V_SETPGRP	Your system has the SysV setpgrp() call.
++##define USE_L_FLAG	Use -Llibdir -lrle instead of libdir/liblre.a.
++#define USE_PROTOTYPES	Declare library functions with ANSI-C prototypes.
++##define USE_RANDOM	Your libc has the BSD random() function.
++#define USE_SHARED_LIB	You want to link to shared libraries as possible.
++##define USE_STDARG	Use 'stdarg' instead of 'varargs' (ANSI).
++##define USE_STDLIB_H	You have "stdlib.h".
++##define USE_UNISTD_H	You have "unistd.h".
++#define USE_STRING_H	You have "string.h", not "strings.h"
++#define VOID_STAR	Your C compiler understands the 'void *' declaration.
++##define USE_XLIBINT_H	You have the include file <X11/Xlibint.h>.
++##define X_SHARED_MEMORY	You have the XShm extension.
++
++# DEST is where all programs will be put.  Can be overridden for specific
++# directories below.
++# RI is where the include files live.  You probably shouldn't change this.
++# RL is where the tool directories find the RLE library.  You can change
++# this, but see the README instructions about making the toolkit in this
++# case.
++
++# Path names not starting with a / are relative to this directory.
++# Path names starting with a / are absolute.
++
++#defpath DEST	bin
++#defpath RI	include
++#defpath RL	lib
++
++# Note! LIB_DEST, INC_DEST, and MAN_DEST must be defined for the 
++# library, include files, or manual pages, respectively, to be
++# installed anywhere.
++
++##defpath MAN_DEST /usr/site/man
++##defpath LIB_DEST
++##defpath GET_DEST
++##defpath CNV_DEST
++##defpath TOOLS_DEST
++##defpath INC_DEST
++
++# Control of formatting.  If your "roff" program needs to be piped to
++# something to print, set ROFFPIPE to (e.g.) "| lpr"
++ROFF = nroff
++ROFFOPT = -man
++ROFFPIPE = | lpr
++
++# Stuff you like to have removed from directories to "make clean"
++OTHERJUNK = core *~ #*#
++
++# Files needed for the various options above.
++#ifdef BOBCAT
++#ifdef USE_SHARED_LIB
++LDOPTS = -a shared
++LIBBOBCAT = -L /usr/lib/X11R4 -lXwindow -lsb -ldld -lXhp11 -lX11
++# #endif /* shared library */
++# #ifndef USE_SHARED_LIB
++#else
++LDOPTS = -a archive
++LIBBOBCAT = -L /usr/lib/X11R4 -lXwindow -ldd98705 -ldd98721 -ldd98731 -ldd98736
++-lddgcrx -lddbyte -lddsox11 -lsb1 -lsb2 -lXhp11 -lX11
++#endif /* archive library */
++#endif /* BOBCAT */
++
++#ifdef CGM
++# Path to directory where CGM library and include files may be found
++# Absolute or relative to URT root
++#defpath CGMDIR 
++INCCGM = -I$(CGMDIR)
++LIBCGM = $(CGMDIR)/libcgm.a
++#endif
++
++#ifdef CX3D
++# Where are the include files for the CX3D
++INCCX3D = /usr/site/include
++LIBCX3D = -lcx3d
++#endif
++
++#ifdef DVIRLE
++#define DVIRLE_LIBSUBDIR	Defined if LIBMCTEX is under cnv/tex directory
++# The MC-TeX library.
++LIBMCTEX = lib/lib.a		# Note! relative to cnv/tex directory
++# Where to find the MC-TeX include files.
++INCMCTEX = h			# Note! relative to cnv/tex directory
++# where to find the font description file
++CONFFILE = /usr/local/lib/tex/fontdesc
++#endif
++
++#ifdef FB
++LIBFB = /usr/brl/lib/libfb.a
++#endif
++
++#ifdef GRINNELL
++# Library containing GMR27 functions.
++LIBGRINNELL = -lfb
++#endif
++
++#ifdef HPQCR
++# HP device io library.
++LIBHPQCR = -ldvio
++#endif
++
++#ifdef IRIS
++LIBIRIS = -Zg
++#endif
++
++#ifdef IRIS4D
++LIBIRIS4D = -lgl_s
++#endif
++
++#ifdef PBMPLUS
++# PBMDIR should refer to the root of your PBM source tree.
++# If relative, it's relative to root of URT source tree.
++#defpath PBMDIR
++
++INCPBMPLUS = -I$(PBMDIR) -I$(PBMDIR)/ppm -I$(PBMDIR)/pgm -I$(PBMDIR)/pbm
++LIBPBMPLUS = $(PBMDIR)/ppm/libppm.a $(PBMDIR)/pgm/libpgm.a \
++		$(PBMDIR)/pbm/libpbm.a 
++#endif
++
++#ifdef SUNRASTER|SUNTOOLS|TAAC1
++LIBSUNTOOLS_COM = -lsuntool -lsunwindow -lpixrect
++#endif
++
++#ifdef SUNRASTER
++LIBSUNRASTER = $(LIBSUNTOOLS_COM)
++#endif
++
++#ifdef SUNTOOLS
++LIBSUNTOOLS = $(LIBSUNTOOLS_COM)
++#endif
++
++#ifdef TAAC1
++LIBTAAC1 = -ltaac1 $(LIBSUNTOOLS_COM)
++#endif
++
++#ifdef TIFF
++# Location of tiff library and include files.  Relative to URT root directory.
++#defpath TIFFDIR
++INCTIFF = -I$(TIFFDIR)
++LIBTIFF = $(TIFFDIR)/libtiff.a
++#endif
++
++#ifdef X10
++LIBX10 = -lX
++INCX10 = 
++#endif
++
++#ifdef X11
++#  Fetch the X11 library from /usr/lib/X11R4/libX11.sl
++LIBX11 = /usr/lib/X11R4/libX11.sl
++# You will probably need to change this
++INCX11 = -I/usr/sww/X11/include
++#endif

@@ -1,0 +1,20 @@
+--- tools/makefile.src.orig	Wed Jan 29 03:47:42 1992
++++ tools/makefile.src	Fri Dec 27 23:02:36 2002
+@@ -68,7 +68,7 @@
+ fant.out: fant.o mallocNd.o
+ 	$(CC) $(CFLAGS) -I$(RI) fant.o mallocNd.o $(LIBS) -lm -o fant.new
+ 	mv fant.new fant.out
+-	
++
+ # rlebox and crop use some common code.
+ rle_box.o: $(RI)/rle.h $(RI)/rle_config.h $(RI)/rle_raw.h
+ 
+@@ -82,7 +82,7 @@
+ # rleClock has it's own directory, must be built special
+ 
+ rleClock.out: clock/font.c clock/font.h clock/font.src clock/rleClock.c
+-	(cd clock ; make)
++	(cd clock ; $(MAKE))
+ 
+ # Incremental install, copies everything ("$?") since last install to DEST dir.
+ install: $(PGMS) install-pgm

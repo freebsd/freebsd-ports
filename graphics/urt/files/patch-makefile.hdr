@@ -1,0 +1,16 @@
+--- makefile.hdr.orig	Fri Mar  6 23:04:57 1992
++++ makefile.hdr	Fri Dec 27 23:15:13 2002
+@@ -45,11 +45,11 @@
+ #emit MachFLAGS
+ MachFLAGS =
+ 
+-CFLAGS = -O $(DFLAGS) $(DIRFLAGS) $(ExtraCFLAGS) $(IFLAGS) $(MachFLAGS) 
++CFLAGS += $(DFLAGS) $(DIRFLAGS) $(ExtraCFLAGS) $(IFLAGS) $(MachFLAGS) 
+ IFLAGS = -I. -I$(RI)
+ 
+ #ifdef GCC
+-CC=gcc
++CC ?= gcc
+ #endif
+ 
+ 

@@ -1,5 +1,5 @@
---- lib/makefile.src.orig	Wed Mar  4 13:32:53 1992
-+++ lib/makefile.src	Sun Oct  4 23:38:40 1998
+--- lib/makefile.src.orig	Thu Mar  5 04:32:53 1992
++++ lib/makefile.src	Sat Dec 28 00:41:59 2002
 @@ -26,7 +26,14 @@
  	vaxshort.o \
  	$(OPT_OBJS)
@@ -22,10 +22,10 @@
  	@sh -c "if test '$(DEST)x' != x ; then \
 -		echo cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
 -		cp $(LIBNAME) $(DEST)/$(LIBNAME) ; \
-+		echo cp $(LIBANAME) $(DEST)/$(LIBANAME) ; \
-+		cp $(LIBANAME) $(DEST)/$(LIBANAME) ; \
-+		echo cp $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
-+		cp $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
++		echo install $(LIBANAME) $(DEST)/$(LIBANAME) ; \
++		${BSD_INSTALL_DATA} $(LIBANAME) $(DEST)/$(LIBANAME) ; \
++		echo install $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
++		${BSD_INSTALL_DATA} $(LIBSONAME) $(DEST)/$(LIBSONAME) ; \
 +		ln -sf $(LIBSONAME) $(DEST)/librle.so ; \
  		if test x$(RANLIB) != x ; then \
 -			echo ranlib $(DEST)/$(LIBNAME) ; \

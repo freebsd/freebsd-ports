@@ -1,0 +1,20 @@
+--- makefile.src.orig	Sat Jun  8 00:58:13 1991
++++ makefile.src	Fri Dec 27 23:02:36 2002
+@@ -17,7 +17,7 @@
+ # clean deletes all but source, pristine (below) deletes installed stuff, too
+ default clean: doit
+ 	@for d in $(DIRS) ; do \
+-		( cd $$d ; echo make $@ on $$d ; make $(MFLAGS) $@ ) ; \
++		( cd $$d ; echo make $@ on $$d ; $(MAKE) $(MFLAGS) $@ ) ; \
+ 	done
+ 
+ # install puts library, binaries and documentation into global location
+@@ -29,7 +29,7 @@
+ 
+ install $(MAKE_TARGET) pristine depend:: doit
+ 	@for d in $(ALLDIRS) ; do \
+-		( cd $$d ; echo make $@ on $$d ; make $(MFLAGS) $@ ) ; \
++		( cd $$d ; echo make $@ on $$d ; $(MAKE) $(MFLAGS) $@ ) ; \
+ 	done
+ 
+ 

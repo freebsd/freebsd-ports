@@ -1,5 +1,5 @@
---- config/urt.orig	Wed Jul 15 14:47:15 1992
-+++ config/urt	Sun Oct  4 22:57:47 1998
+--- config/urt.orig	Thu Jul 16 04:47:15 1992
++++ config/urt	Fri Dec 27 23:19:11 2002
 @@ -1,3 +1,7 @@
 +# Configuration for HP 9000/300 series running BSD4.3
 +
@@ -45,7 +45,7 @@
  
  # You can put any system dependent flags here.
 -ExtraCFLAGS = 
-+ExtraCFLAGS = -O2 -pipe -fno-strength-reduce
++ExtraCFLAGS = -fno-strength-reduce
  
  # System specific or configuration parameters.  Define according to your
  # environment and desires.

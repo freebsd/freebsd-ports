@@ -1,5 +1,5 @@
---- makefile.tlr.orig	Tue Aug  4 12:17:57 1992
-+++ makefile.tlr	Sun Oct  4 23:37:05 1998
+--- makefile.tlr.orig	Wed Aug  5 02:17:57 1992
++++ makefile.tlr	Sat Dec 28 00:48:28 2002
 @@ -7,7 +7,7 @@
  	@sh -c "if test 'x$(DIRS)' != x ; then eval \
  		'set -e ; for dir in $(DIRS) ; do \
@@ -9,7 +9,15 @@
  		done' ; \
  	  else \
  		true ; \
-@@ -24,7 +24,6 @@
+@@ -18,35 +18,31 @@
+ 	@sh -c "if test 'x$?' != x ; then eval \
+ 		'for pgm in $? ; do \
+ 			dpgm=\`basename \$$pgm .out\` ; \
+-			echo cp \$$pgm $(DEST)/\$$dpgm ; \
+-			cp \$$pgm $(DEST)/\$$dpgm; \
++			echo install \$$pgm $(DEST)/\$$dpgm ; \
++			${BSD_INSTALL_PROGRAM} \$$pgm $(DEST)/\$$dpgm; \
+ 		done' ; \
  	else \
  	    true ; \
  	fi"
@@ -17,7 +25,16 @@
  
  # Install all scripts
  install-script: $(SCRIPTS)
-@@ -39,14 +38,13 @@
+ 	@sh -c "if test 'x$?' != x ; then eval \
+ 		'for pgm in $? ; do \
+ 			dpgm=\`basename \$$pgm .sh\` ; \
+-			echo cp \$$pgm $(DEST)/\$$dpgm ; \
+-			cp \$$pgm $(DEST)/\$$dpgm; \
+-			echo chmod a+rx $(DEST)/\$$dpgm ; \
+-			chmod a+rx $(DEST)/\$$dpgm; \
++			echo install \$$pgm $(DEST)/\$$dpgm ; \
++			${BSD_INSTALL_SCRIPT} \$$pgm $(DEST)/\$$dpgm; \
+ 		done' ; \
  	else \
  	    true ; \
  	fi"
@@ -33,7 +50,7 @@
  		done' ; \
  	  else \
  		true ; \
-@@ -105,7 +103,7 @@
+@@ -105,7 +101,7 @@
  	    'for dir in $(ALLDIRS); do \
  		if test -d $$dir ; then \
  			(cd $$dir; echo Make ${HERE}$$dir pristine ; \
@@ -42,7 +59,7 @@
  		else \
  			true; \
  		fi; \
-@@ -124,7 +122,7 @@
+@@ -124,7 +120,7 @@
  	    'for dir in $(ALLDIRS); do \
  		if test -d $$dir ; then \
  			(cd $$dir; echo Clean ${HERE}$$dir ; \
