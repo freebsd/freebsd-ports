@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.98 1996/12/29 04:45:47 obrien Exp $
+# $Id: Makefile,v 1.99 1997/01/05 22:57:28 obrien Exp $
 #
 
     SUBDIR += amanda
@@ -35,6 +35,7 @@
     SUBDIR += plan
     SUBDIR += recode
     SUBDIR += rman
+    SUBDIR += rpm
     SUBDIR += screen
     SUBDIR += splitvt
     SUBDIR += team
