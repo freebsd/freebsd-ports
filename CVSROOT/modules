@@ -4176,7 +4176,6 @@ mess822		ports/mail/mess822
 messagewall	ports/mail/messagewall
 meta-cvs	ports/devel/meta-cvs
 metacity	ports/x11-wm/metacity
-metacity-setup	ports/x11-wm/metacity-setup
 metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
 metamail	ports/mail/metamail
