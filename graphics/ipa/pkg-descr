@@ -1,0 +1,6 @@
+IPA stands for Image Processing Algorithms and represents the library of
+image processing operators and functions. IPA is based on the Prima toolkit,
+which in turn is a perl-based graphic library. IPA is designed for solving
+image analysis and object recognition tasks with perl.
+
+WWW: http://www.prima.eu.org/IPA/
