@@ -41,6 +41,9 @@ post-patch:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${STARTER} ${PREFIX}/etc/rc.d/
+	if [ -x ${PREFIX}/etc/rc.d/canna.sh ]; then \
+		${CHMOD} -x ${PREFIX}/etc/rc.d/canna.sh; \
+	fi
 	${MKDIR} ${PREFIX}/lib/esecanna
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/esecanna
