@@ -1,0 +1,19 @@
+This package provides standardized, efficient versions of utility classes
+commonly encountered in concurrent Java programming. This code consists of
+implementations of ideas that have been around for ages, and is merely intended
+to save you the trouble of coding them.
+
+The package mainly consists of implementations of a few interfaces:
+
+  * Sync -- locks, conditions
+  * Channel -- queues, buffers
+  * Barrier -- multi-party synchronization
+  * SynchronizedVariable -- atomic ints, refs etc
+  * java.util.Collection -- collections
+  * Executor -- replacements for direct use of Thread
+
+Plus some utilities and frameworks that build upon these.
+
+This package was the precursor to java.util.concurrent.
+
+WWW:	http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html
