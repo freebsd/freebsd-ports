@@ -40,6 +40,8 @@ etc/dpsearch/langmap/el.cp1253.lm
 etc/dpsearch/langmap/el.greek.lm
 etc/dpsearch/langmap/el.utf-8.lm
 etc/dpsearch/langmap/en.ascii.lm
+etc/dpsearch/langmap/en.utf-16be.lm
+etc/dpsearch/langmap/en.utf-16le.lm
 etc/dpsearch/langmap/eo.latin1-h.as.lm
 etc/dpsearch/langmap/eo.latin1-x.as.lm
 etc/dpsearch/langmap/eo.latin3.as.lm
@@ -105,6 +107,8 @@ etc/dpsearch/langmap/ru.iso-8859-1.lm
 etc/dpsearch/langmap/ru.koi-7.lm
 etc/dpsearch/langmap/ru.koi8-r.lm
 etc/dpsearch/langmap/ru.maccyr.lm
+etc/dpsearch/langmap/ru.utf-16be.lit.lm
+etc/dpsearch/langmap/ru.utf-16le.lit.lm
 etc/dpsearch/langmap/ru.utf8.lm
 etc/dpsearch/langmap/sk.ascii.lm
 etc/dpsearch/langmap/sk.cp1250.lm
@@ -122,6 +126,7 @@ etc/dpsearch/langmap/sw.latin1.lm
 etc/dpsearch/langmap/ta.tscii.lm
 etc/dpsearch/langmap/th.cp874.lm
 etc/dpsearch/langmap/th.tis-620.lm
+etc/dpsearch/langmap/th.utf-8.lm
 etc/dpsearch/langmap/tl.ascii.bible.lm
 etc/dpsearch/langmap/tl.ascii.lm
 etc/dpsearch/langmap/tr.cp1254.lm

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dpsearch
-PORTVERSION=	4.26
-PORTREVISION=	1
+PORTVERSION=	4.28
 CATEGORIES=	www
-MASTER_SITES=	http://www.dataparksearch.org/ \
-		http://dataparksearch.h0t.de/
+MASTER_SITES=	http://dataparksearch.newsa.ru/ \
+		http://dataparksearch.h0t.de/ \
+		http://www.dataparksearch.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source search engine for Internet and Intranet sites
@@ -19,7 +19,6 @@ COMMENT=	Open source search engine for Internet and Intranet sites
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 DOCSDIR=	${PREFIX}/share/doc/dataparksearch
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -31,8 +30,7 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/dpsearch \
 OPTIONS=	DPSEARCH_THREADS  "Enable pthreads"                       on  \
 		DPSEARCH_SSL      "Enable SSL"                            on  \
 		DPSEARCH_GUESSER  "Enable charset and language guesser"   on  \
-		DPSEARCH_CHARSETS "Enable all charsets"                   off \
-		DPSEATCH_CHINESE  "Enable chinese charsets"               off \
+		DPSEARCH_CHINESE  "Enable chinese charsets"               off \
 		DPSEARCH_JAPANESE "Enable japanese charsets"              off \
 		DPSEARCH_MECAB    "Enable MeCab japanese analyzer"        off \
 		DPSEARCH_CHASEN   "Enable ChaSen japanese analyzer"       off \
