@@ -1,0 +1,18 @@
+%%SITE_PERL%%/Search/InvertedIndex.pm
+%%SITE_PERL%%/Search/InvertedIndex/DB/DB_File_SplitHash.pm
+%%SITE_PERL%%/Search/InvertedIndex/AutoLoader.pm
+%%SITE_PERL%%/Search/InvertedIndex/DB/Mysql.pm
+%%SITE_PERL%%/Search/InvertedIndex/Query.pm
+%%SITE_PERL%%/Search/InvertedIndex/Update.pm
+%%SITE_PERL%%/Search/InvertedIndex/Result.pm
+%%SITE_PERL%%/Search/InvertedIndex/Query/Leaf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex/.packlist
+@dirrm %%SITE_PERL%%/Search/InvertedIndex/DB
+@dirrm %%SITE_PERL%%/Search/InvertedIndex/Query
+@dirrm %%SITE_PERL%%/Search/InvertedIndex
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex
+@unexec rmdir %D/%%SITE_PERL%%/Search/InvertedIndex/DB 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Search/InvertedIndex/Query 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Search/InvertedIndex 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Search 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Search/InvertedIndex 2>/dev/null || true

@@ -1,0 +1,6 @@
+A general purpose inverted indexing system suitable for medium
+scale searching.
+
+WWW:	http://search.cpan.org/~snowhare/Search-InvertedIndex-1.13/
+
+Author:	Benjamin Franz
