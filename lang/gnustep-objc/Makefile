@@ -8,7 +8,9 @@
 PORTNAME=	gnustep-objc
 PORTVERSION=	1.2.2
 CATEGORIES=	lang devel
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/ \
+		http://archive.progeny.com/gnustep/ \
+		ftp://ftp.easynet.nl/mirror/GNUstep/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
