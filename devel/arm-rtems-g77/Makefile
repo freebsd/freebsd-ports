@@ -11,5 +11,5 @@ MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	arm-rtems
 
-.include "${.CURDIR}/../i386-rtems-g77/Makefile"
-MASTERDIR=	${MASTERDIR}/i386-rtems-g77
+MASTERDIR=	${.CURDIR}/../i386-rtems-g77
+.include "${MASTERDIR}/Makefile"
