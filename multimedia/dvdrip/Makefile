@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dvdrip
-PORTVERSION=	0.39.05
-PORTREVISION=	1	
+PORTVERSION=	0.41.01
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.exit1.org/dvdrip/dist/
-DISTNAME=	Video-DVDRip-${PORTVERSION:S/.05$//g}_05
+MASTER_SITES=	http://www.exit1.org/dvdrip/dist/pre/
+DISTNAME=	Video-DVDRip-${PORTVERSION:S/.01$//g}_01
 
 MAINTAINER=	michaelnottebrock@gmx.net
 
@@ -25,11 +24,11 @@ RUN_DEPENDS+=	xine:${PORTSDIR}/graphics/xine \
 		${X11BASE}/lib/xine/plugins/xineplug_inp_d4d.so:${PORTSDIR}/graphics/xine_d4d_plugin
 .endif
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick \
-		transcode:${PORTSDIR}/graphics/transcode \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
+		transcode:${PORTSDIR}/graphics/transcode
+BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk/Gdk/Pixbuf.pm:${PORTSDIR}/x11-toolkits/p5-GdkPixbuf
 
-PERL_CONFIGURE=yes
+PERL_CONFIGURE=	yes
 USE_PERL5=	yes
 
 MAN1=		splitpipe.1
