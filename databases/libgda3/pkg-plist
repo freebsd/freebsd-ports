@@ -13,6 +13,7 @@ include/libgda-report/gda-report-item-reportfooter.h
 include/libgda-report/gda-report-item-reportheader.h
 include/libgda-report/gda-report-item-sqlquery.h
 include/libgda-report/gda-report-item.h
+include/libgda-report/gda-report-result.h
 include/libgda-report/gda-report-types.h
 include/libgda-report/gda-report-valid.h
 include/libgda-report/gda-report.h
@@ -176,6 +177,7 @@ share/doc/libgda/x883.html
 share/doc/libgda/x885.html
 share/doc/libgda/x887.html
 share/gnome/libgda/xml/gda-report.dtd
+share/gnome/libgda/xml/gda-report-result.dtd
 share/gnome/libgda/xml/gda-xml-query.dtd
 share/gnome/libgda/xml/gda-xml-query.xsl
 share/gnome/omf/libgda/libgda-C.omf

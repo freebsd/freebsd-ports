@@ -40,7 +40,7 @@ lib/gnome-vfs-2.0/modules/libdatabase.so
 lib/libglade/2.0/libgnomedb.so
 lib/libgnomedb-2.a
 lib/libgnomedb-2.so
-lib/libgnomedb-2.so.1
+lib/libgnomedb-2.so.2
 libdata/pkgconfig/libgnomedb.pc
 libdata/bonobo/servers/GNOME_Database_Components.server
 libdata/bonobo/servers/GNOME_Database_Monikers.server
@@ -99,6 +99,7 @@ share/gnome/omf/libgnomedb/libgnomedb-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/libgnomedb/libgnomedb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-aggregates_24x24.png
+share/gnome/pixmaps/libgnomedb/gnome-db-commit_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-connect_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-database_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-database_24x24.png
@@ -110,6 +111,7 @@ share/gnome/pixmaps/libgnomedb/gnome-db-procedures_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-procedures_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-query_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-query_24x24.png
+share/gnome/pixmaps/libgnomedb/gnome-db-rollback_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-sequences_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-sequences_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-sql_16x16.png
