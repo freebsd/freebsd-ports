@@ -1,0 +1,59 @@
+# New ports collection makefile for:	nethack-qt
+# Version required:	3.2.2
+# Date created:		So   6 Apr 1997 04:25:57 MET DST
+# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
+#
+# $Id$
+#
+
+DISTNAME=	nethack-3.2.2
+PKGNAME=	nethack-3.2.2-qt
+CATEGORIES=	games x11
+MASTER_SITES=	ftp://ftp.uu.net/pub/games/nethack/sources/ \
+		http://www.uq.edu.au/~cswallis/nhqt/ \
+		http://student.uq.edu.au/~s002434/ \
+		${MASTER_SITE_GNU}
+QT_PATCH=	nhqt0.9.tar.gz
+QT_SOUND=	nhs.tar.gz
+DISTFILES=	nethack-3.2.2.tar.gz ${QT_PATCH} ${QT_SOUND}
+
+MAINTAINER=	andreas@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+RUN_DEPENDS=	auplay:${PORTSDIR}/audio/nas
+
+EXTRACT_ONLY=	nethack-3.2.2.tar.gz
+USE_GMAKE=	yes
+SHELL=		/bin/sh
+MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
+
+pre-configure:
+	@cd ${WRKSRC}/win; tar xvzf ${DISTDIR}/${QT_PATCH}
+	@cd ${WRKSRC}; patch < win/Qt/nhqt.patch
+	@cd ${WRKSRC}/sys/unix; ${SHELL} setup.sh
+	@cd ${WRKSRC}/src; patch < ${FILESDIR}/src-Makefile.diff
+	@cd ${WRKSRC}/src; patch < ${FILESDIR}/src-sounds.c.diff
+	@cd ${WRKSRC}; patch < ${FILESDIR}/include-unixconf.h.diff
+
+post-install:
+	@cd ${WRKSRC}/doc; chmod 644 *.6
+	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/nethack
+	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/nethack
+.endif
+	@cd ${PREFIX}/lib/nethackdir; tar xzf ${DISTDIR}/${QT_SOUND}
+	@cd ${PREFIX}/lib/nethackdir; chown games.games *.au .nethackrc
+	@cd ${PREFIX}/lib/nethackdir; chmod 444 *.au .nethackrc
+	echo "-----------------------"
+	echo "post-installation hints
+	echo "-----------------------"
+	echo "a) Add this to your user environment:"
+	echo "   setenv AUDIOSERVER `hostname`:0"
+	echo "b) Start the NAS audio server"
+	echo "   auvoxware -aa &    # -aa allows any host access"
+	echo "c) Copy the example nethackrc file from $FILESDIR to your"
+	echo "   login directory:"
+	echo "   cp $FILESDIR/sample.nethackrc $HOME/.nethackrc"
+
+.include <bsd.port.mk>
