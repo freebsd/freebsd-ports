@@ -63,6 +63,10 @@ CONFIGURE_ARGS+= --without-debug \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # FreeBSD 5.0 Needs to have libgmp port to support gmp.
