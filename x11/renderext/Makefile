@@ -8,16 +8,17 @@
 PORTNAME=	renderext
 PORTVERSION=	0.8
 PORTREVISION=	1
-CATEGORIES=	x11 x11-toolkits
+CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
-DISTNAME=	render-${PORTVERSION}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Header files and documentation for the X render extension
 
+USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig
 
 .include <bsd.port.mk>
