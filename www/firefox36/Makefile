@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -33,7 +33,7 @@ ESD_LIB=	libesd.so.2
 LOCAL_PREFIX=	${PREFIX}/lib/${PORTNAME}
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/plist
-PLUGINSDIR=	${PREFIX}lib/browser_plugins
+PLUGINSDIR=	${PREFIX}/lib/browser_plugins
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libidl
@@ -99,7 +99,7 @@ post-extract::
 		-e 's|@LIBS@|${LIBS}|'			\
 		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
-		-e 's|@PREFIX@|${PREFIX}/lib/firefox|'	\
+		-e 's|@PREFIX@|${FAKEDIR}/lib/firefox|'	\
 		-e 's|@PERL@|${PERL5}|'			\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
@@ -123,7 +123,8 @@ post-patch:
 
 pre-install:
 	@${RM} -rf ${FAKEDIR} ${PLIST}
-	@${MKDIR} ${FAKEDIR} ${FAKEDIR}/lib/browser_plugins
+	@${MKDIR} ${FAKEDIR}/lib/browser_plugins
+	@${TOUCH} ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
 .if !defined (WITH_HEADERS)
@@ -132,7 +133,7 @@ pre-install:
 .for ii in firefox Firefox firefox-config ${EXTRA_SCRIPTS}
 	@${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
-	@cd ${FAKEDIR}; ${FIND} * ! -type d | ${SORT} >>${PLIST}; \
+	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
 	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
 		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
 	${FIND} * -type d -empty | ${SORT} -r | ${SED} -e \
@@ -150,16 +151,19 @@ post-install:
 .for ii in f F
 	${RM} -f ${PREFIX}/bin/${ii}irefox
 	${LN} -sf ${LOCAL_PREFIX}/bin/firefox ${PREFIX}/bin/${ii}irefox
+	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/${ii}irefox
 .endfor
 	${RM} -f ${PREFIX}/bin/firefox-config
 	${LN} -sf ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/firefox-config
-	${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
-	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
+	${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g' ${LOCAL_PREFIX}/bin/firefox-config
+	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} ${PERL} -pi -e \
+		's|${FAKEDIR}|${PREFIX}|g'
+	-if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 		for jpi in ${JPI_LIST}; do \
 			if [ -f $${jpi} ]; then \
-				-${LN} -sf $${jpi} \
-					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+				${LN} -sf $${jpi} \
+					${PLUGINSDIR}/libjavaplugin_oji.so ; \
 				break; \
 			fi; \
 		done; \
