@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.4 1995/02/26 01:19:17 ats Exp $
+# $Id: Makefile,v 1.5 1995/03/19 16:19:15 ats Exp $
 #
 # Broken povray
 
 SUBDIR=	ImageMagick dore mpeg-lib mpeg_play netpbm jpeg \
-	tiff xanim xli xfig xpaint xpm xv
+	pixmap tiff xanim xli xfig xpaint xpm xv
 
 .include <bsd.port.subdir.mk>
