@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010817
-PORTREVISION=	1
+PORTVERSION=	20010817b
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -46,7 +45,6 @@ MANCOMPRESSED=	yes
 
 post-patch:
 	${RUBY} -i -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/pkgdb.rb
-	${RUBY} -i -pe 'sub %r:^(\s*if deps)\s*:, "\\1 && !deps.empty?\n"' ${WRKSRC}/pkgtools.rb
 
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
