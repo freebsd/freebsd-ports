@@ -1,7 +1,7 @@
 IMP is a set of PHP scripts that implement an IMAP based webmail system.
 Assuming you have an account on a server that supports IMAP, you can use
 an installation of IMP to check your mail from anywhere that you have web
-access. 
+access.
 
 WWW: http://www.horde.org/imp/
 
