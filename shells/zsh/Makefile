@@ -16,15 +16,16 @@ MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.ips.oz.au/pub/packages/zsh/ \
 		ftp://ftp.uit.no/pub/unix/shells/zsh/
 
-MAINTAINER=	torstenb@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshexpn.1 zshmisc.1 \
 		zshoptions.1 zshall.1 zshparam.1 zshzle.1
 PLIST_SUB=	ZSH_VERSION=${DISTNAME:S/zsh-//}
 
-# If you want to build a static binary, uncomment the following line
-#CONFIGURE_ENV+=	"LDFLAGS=-static"
+.if defined(WANT_STATIC)
+CONFIGURE_ENV+=	"LDFLAGS=-static"
+.endif
 
 post-build:
 # Fix ".so" macro problem by using "soelim" command.
