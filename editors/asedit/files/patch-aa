@@ -13,7 +13,7 @@
   
   LOCAL_X_LIBDIR =
   
-! XMLIB    = -lXm
+! XMLIB    = ${MOTIFLIB}
   
   XCOMM - HP PW setup:  		XMLIB = -lXm -lc -lPW
   XCOMM - SUN setup:    		XMLIB = -lXm
