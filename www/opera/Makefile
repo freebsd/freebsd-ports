@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
 		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
@@ -44,6 +45,10 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 
+.ifndef(WITHOUT_ASPELL)
+LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
@@ -60,6 +65,13 @@ PLIST_SUB+=	GNOME="@comment "
 PLIST_SUB+=	KDE=""
 .else
 PLIST_SUB+=	KDE="@comment "
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_ASPELL)
+	@${ECHO_CMD} '===> The following options are available for this port:'
+	@${ECHO_CMD} '===>'
+	@${ECHO_CMD} '===> Define WITHOUT_ASPELL to not install aspell.'
 .endif
 
 post-patch:
