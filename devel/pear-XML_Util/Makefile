@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Util
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,10 +18,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 CATEGORY=	XML
 FILES=		Util.php
 EXAMPLES=	example.php example2.php
-
-do-install-tests-msg: .USE
-	@${ECHO_MSG} "     (These tests require PHPUnit - see"
-	@${ECHO_MSG} "     <http://pear.php.net/package-info.php?package=PHPUnit>;;)."
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
