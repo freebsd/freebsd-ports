@@ -518,6 +518,7 @@
     SUBDIR += py-zsi
     SUBDIR += pygopherd
     SUBDIR += pyslsk
+    SUBDIR += pythondirector
     SUBDIR += qadsl
     SUBDIR += qtella
     SUBDIR += quagga

@@ -1,0 +1,20 @@
+This is a pure-python TCP load balancer. It takes inbound TCP 
+connections and connects them to one of a number of backend servers.
+
+Features:
+    * async i/o based, so much less overhead than fork/thread based 
+      balancers. 
+    * Multiple scheduling algorithms (random, round robin, leastconns, 
+      leastconns+roundrobin)
+    * If a server fails to answer, it's removed from the pool - the 
+      client that failed to connect gets transparently failed over to a 
+      new host.
+    * xml based configuration file
+    * seperate management thread that periodically re-adds failed hosts 
+      if they've come back up.
+    * optional builtin webserver for admin (sample of the running 
+      screen)
+    * webserver has methods suitable for both interactive and automated 
+      systems 
+
+WWW: http://pythondirector.sourceforge.net/
