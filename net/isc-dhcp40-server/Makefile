@@ -14,7 +14,7 @@ DISTNAME=	dhcp-3.0b1pl14
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbind.a:${PORTSDIR}/net/bind8
+BUILD_DEPENDS=	${LOCALBASE}/include/bind/res_update.h:${PORTSDIR}/net/bind8
 
 Y2K=		http://www.isc.org/y2k.html
 
