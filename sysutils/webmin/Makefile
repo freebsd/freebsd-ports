@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.121
-PORTREVISION=	1
+PORTVERSION=	1.130
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,18 +24,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	apache-1.120-4.wbm.gz \
-		cluster-webmin-1.120-2.wbm.gz \
-		custom-1.120-3.wbm.gz \
-		file-1.120-3.wbm.gz \
-		fsdump-1.120-4.wbm.gz \
-		lpadmin-1.120-4.wbm.gz \
-		mysql-1.120-2.wbm.gz \
-		postfix-1.120-3.wbm.gz \
-		postgresql-1.120-6.wbm.gz \
-		proftpd-1.120-1.wbm.gz \
-		sendmail-1.120-5.wbm.gz \
-		spam-1.120-4.wbm.gz
+WEBMIN_MODULES=
 
 WEBMIN_THEMES=
 
@@ -68,6 +56,7 @@ post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
 # we may have 2 levels of empty directories which cause the plist generation
 # system to fail
 	@${FIND} ${WRKSRC} -type d -empty -print | ${XARGS} ${RMDIR}
