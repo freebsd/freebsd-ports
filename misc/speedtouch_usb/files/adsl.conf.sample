@@ -1,0 +1,22 @@
+# Sample configuration for the SpeedTouch ADSL adapter.
+#
+# You will have to fill in:
+# - <login>
+# - <password>
+# - <VPI>.<VCI> is defined by your provider. Common values are:
+#     - 8.35 or 8.67 in France
+#     - 0.38 in the UK
+#     - 8.48 in the Netherlands
+#   or check the value used in Windows.
+
+adsl:
+    set authname <login>
+    set authkey <password>
+    set device !"pppoa2 -vpi <VPI> -vci <VCI> -v 1"
+    accept chap
+    set speed sync
+    set timeout 900
+    set dial ""
+    set ifaddr 10.0.0.1/0 10.0.0.2/0 255.255.255.0 0.0.0.0
+    add default HISADDR
+    enable dns
