@@ -7953,6 +7953,7 @@ tiff2png	ports/graphics/tiff2png
 tifmerge	ports/graphics/tifmerge
 tightvnc	ports/net/tightvnc
 tik		ports/net/tik
+tileworld	ports/games/tileworld
 time		src/usr.bin/time
 timed		src/usr.sbin/timed
 timelimit	ports/sysutils/timelimit
