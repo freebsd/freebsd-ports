@@ -53,7 +53,7 @@ post-extract:
 
 post-patch:
 .if !defined(WITH_LZW)
-	${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.gif && \
+	${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.nogif && \
 		${SED} -e "s|#define LZW_LICENCED||g" \
 			< ${WRKSRC}/gd_gif_out.c.nogif \
 			> ${WRKSRC}/gd_gif_out.c
