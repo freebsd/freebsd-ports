@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	cln
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.6
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/ \
 		ftp://ftp.santafe.edu/pub/gnu/ \
@@ -19,7 +18,9 @@ COMMENT=	Class Library for Numbers
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
