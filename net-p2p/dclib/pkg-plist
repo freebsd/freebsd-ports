@@ -1,15 +1,19 @@
 include/dclib/cclient.h
 include/dclib/cclientssl.h
 include/dclib/cconfig.h
+include/dclib/cconnectionmanager.h
 include/dclib/cdcproto.h
 include/dclib/cdownloadmanager.h
 include/dclib/cdownloadqueue.h
 include/dclib/cencrypt.h
 include/dclib/cfilemanager.h
 include/dclib/chttp.h
+include/dclib/chublistmanager.h
 include/dclib/chubsearch.h
+include/dclib/clistenmanager.h
 include/dclib/cmessagehandler.h
 include/dclib/core/casyncdns.h
+include/dclib/core/cbase32.h
 include/dclib/core/cbase64.h
 include/dclib/core/cbytearray.h
 include/dclib/core/cbz.h
@@ -39,18 +43,22 @@ include/dclib/core/types.h
 include/dclib/cpluginmanager.h
 include/dclib/cquerymanager.h
 include/dclib/csearchindex.h
-include/dclib/cservermanager.h
 include/dclib/csharelist.h
 include/dclib/ctransfer.h
+include/dclib/cuserlist.h
 include/dclib/cutils.h
 include/dclib/dclib.h
 include/dclib/dcobject.h
 include/dclib/dcos.h
+include/dclib/hash/libdefs.h
+include/dclib/hash/mhash_tiger.h
 lib/libdc.a
 lib/libdc.la
 lib/libdc.so
 lib/libdc.so.0
+libdata/pkgconfig/dclib.pc
 @unexec rmdir %D/share/dcgui/plugin 2>/dev/null || true
 @unexec rmdir %D/share/dcgui 2>/dev/null || true
+@dirrm include/dclib/hash
 @dirrm include/dclib/core
 @dirrm include/dclib
