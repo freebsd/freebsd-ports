@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb 29 09:07:56 2004
-+++ Makefile.in	Sun Mar 28 15:41:51 2004
+--- Makefile.in.orig	Fri Mar 26 23:16:32 2004
++++ Makefile.in	Sun Jun 20 13:22:21 2004
 @@ -33,7 +33,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
@@ -9,7 +9,7 @@
  RELEASE = @ALLOWRELEASE@
  
  # libtool compile/link/install
-@@ -184,12 +184,12 @@
+@@ -188,12 +188,12 @@
  
  libsqlite.la:	$(LIBOBJ)
  	$(LTLINK) -o libsqlite.la $(LIBOBJ) ${RELEASE} -rpath @exec_prefix@/lib \
@@ -24,7 +24,7 @@
  
  sqlite@TARGET_EXEEXT@:	$(TOP)/src/shell.c libsqlite.la sqlite.h
  	$(LTLINK) $(READLINE_FLAGS) -o sqlite $(TOP)/src/shell.c \
-@@ -365,67 +365,67 @@
+@@ -372,67 +372,67 @@
  	./testfixture $(TOP)/test/quick.test
  
  index.html:	$(TOP)/www/index.tcl last_change
@@ -112,21 +112,21 @@
  
  
  # Files to be published on the website.
-@@ -459,13 +459,19 @@
+@@ -466,13 +466,19 @@
  
  install:	sqlite libsqlite.la sqlite.h
- 	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/lib
--	$(LTINSTALL) libsqlite.la $(DESTDIR)/$(exec_prefix)/lib
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib
+-	$(LTINSTALL) libsqlite.la $(DESTDIR)$(exec_prefix)/lib
 +	$(INSTALL) .libs/libsqlite.a $(exec_prefix)/lib
 +	$(INSTALL) .libs/libsqlite.so $(exec_prefix)/lib
 +	$(INSTALL) .libs/libsqlite.so.2 $(exec_prefix)/lib
- 	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/bin
--	$(LTINSTALL) sqlite $(DESTDIR)/$(exec_prefix)/bin
+ 	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/bin
+-	$(LTINSTALL) sqlite $(DESTDIR)$(exec_prefix)/bin
 +	$(INSTALL) .libs/sqlite $(exec_prefix)/bin
- 	$(INSTALL) -d $(DESTDIR)/$(prefix)/include
- 	$(INSTALL) -m 0644 sqlite.h $(DESTDIR)/$(prefix)/include
--	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/lib/pkgconfig; 
--	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/lib/pkgconfig; 
+ 	$(INSTALL) -d $(DESTDIR)$(prefix)/include
+ 	$(INSTALL) -m 0644 sqlite.h $(DESTDIR)$(prefix)/include
+-	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
+-	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)$(exec_prefix)/lib/pkgconfig; 
 +	$(INSTALL) -d $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig; 
 +	$(INSTALL) -m 0644 sqlite.pc $(DESTDIR)/$(exec_prefix)/libdata/pkgconfig; 
 +
