@@ -45,6 +45,7 @@
     SUBDIR += libcdaudio
     SUBDIR += libmikmod
     SUBDIR += libshout
+    SUBDIR += libsidplay
     SUBDIR += libworkman
     SUBDIR += linux-realplayer
     SUBDIR += maplay
