@@ -1,32 +1,31 @@
-# New ports collection makefile for:	wxGTK
-# Version required:	2.0.2
-# Date created:		18 Jun 1999
-# Whom:			Alexander Langer <alex@cichlids.com>
+# New ports collection makefile for:    wxGTK
+# Version required:     		2.1.0b9
+# Date created:         		September 18, 1999
+# Whom:					nectar@FreeBSD.ORG
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wxGTK-2.0.1
-PKGNAME=	wxgtk-2.0.1
-CATEGORIES= 	x11-toolkits
-MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
-EXTRACT_SUFX=	.tgz
+DISTNAME=	wxGTK-2.1.0-b9
+PKGNAME=	wxgtk-2.1.0b9
+CATEGORIES=	x11-toolkits
+MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
+		http://www.nectar.com/distfiles/
+EXTRACT_SUFX=   .tgz
 
-MAINTAINER= 	alex@cichlids.com
+MAINTAINER=	nectar@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk10:${PORTSDIR}/x11-toolkits/gtk10:install
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	OSTYPE="${OPSYS}"
 USE_GMAKE=	yes
-MAKE_ENV=	OSTYPE="${OPSYS}"
 
-WRKSRC=		${WRKDIR}/wxGTK
+WRKSRC=         ${WRKDIR}/wxGTK
+
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 
 post-install:
-# There are two empty directories that make problems
-# while deinstalling if installed as a .tgz-package.
-	${TOUCH} ${PREFIX}/include/wx/motif/.placeholder
-	${TOUCH} ${PREFIX}/include/wx/common/.placeholder
+	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
