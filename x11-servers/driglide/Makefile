@@ -11,7 +11,7 @@ CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= anholt/driglide/
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
 USE_BZIP2=		yes
