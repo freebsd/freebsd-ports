@@ -366,6 +366,7 @@
     SUBDIR += tdiary
     SUBDIR += teTeX
     SUBDIR += texfamily
+    SUBDIR += texfamily-vfn2a
     SUBDIR += texinfo
     SUBDIR += tgif
     SUBDIR += timidity++-slang
