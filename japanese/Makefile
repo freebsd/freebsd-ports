@@ -168,7 +168,6 @@
     SUBDIR += latex2html
     SUBDIR += leafrogue
     SUBDIR += less
-    SUBDIR += lesw
     SUBDIR += libicq
     SUBDIR += libimg
     SUBDIR += libjcode
