@@ -114,6 +114,7 @@
     SUBDIR += linux-j
     SUBDIR += logo
     SUBDIR += lua
+    SUBDIR += lua-mode.el
     SUBDIR += lua4
     SUBDIR += lush
     SUBDIR += m3gdb

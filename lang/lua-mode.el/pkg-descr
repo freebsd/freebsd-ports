@@ -1,0 +1,3 @@
+Emacs/XEmacs major mode for editing Lua scripts.  Includes syntax
+highlighting, auto-indent, interactive lua shell, paren and brace
+matching, auto-move to function or block begin/end.
