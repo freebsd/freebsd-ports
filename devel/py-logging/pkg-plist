@@ -30,6 +30,8 @@
 %%PORTDOCS%%share/examples/py-logging/log_test20.py
 %%PORTDOCS%%share/examples/py-logging/log_test21.py
 %%PORTDOCS%%share/examples/py-logging/log_test22.py
+%%PORTDOCS%%share/examples/py-logging/log_test23.py
+%%PORTDOCS%%share/examples/py-logging/log_test24.py
 %%PORTDOCS%%share/examples/py-logging/log_test3.ini
 %%PORTDOCS%%share/examples/py-logging/log_test3.py
 %%PORTDOCS%%share/examples/py-logging/log_test4.py
