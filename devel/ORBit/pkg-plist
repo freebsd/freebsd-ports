@@ -67,28 +67,22 @@ include/orb/sequences.h
 include/orb/typecode.h
 @unexec install-info --delete %D/info/libIDL.info %D/info/dir
 info/libIDL.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/libIDL.info %D/info/dir
 lib/libIDL.a
-lib/libIDL.la
 lib/libIDL.so
-lib/libIDL.so.1
+lib/libIDL.so.2
 lib/libIIOP.a
-lib/libIIOP.la
 lib/libIIOP.so
-lib/libIIOP.so.1
+lib/libIIOP.so.2
 lib/libORBit.a
-lib/libORBit.la
 lib/libORBit.so
-lib/libORBit.so.1
+lib/libORBit.so.2
 lib/libORBitCosNaming.a
-lib/libORBitCosNaming.la
 lib/libORBitCosNaming.so
-lib/libORBitCosNaming.so.1
+lib/libORBitCosNaming.so.2
 lib/libORBitutil.a
-lib/libORBitutil.la
 lib/libORBitutil.so
-lib/libORBitutil.so.1
+lib/libORBitutil.so.2
 lib/libname-server.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -3,7 +3,7 @@
 # Date Created:			16 Aug 1998
 # Whom:				Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.17 1999/04/16 05:48:40 taoka Exp $
+# $Id: Makefile,v 1.18 1999/05/06 07:17:31 asami Exp $
 #
 
 DISTNAME=	ORBit-0.4.3
@@ -13,20 +13,14 @@ MASTER_SITE_SUBDIR=	sources/ORBit
 
 MAINTAINER=	clkao@CirX.ORG
 
-LIB_DEPENDS=	glib12.1:${PORTSDIR}/devel/glib12
+LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12
 
-GNU_CONFIGURE=	yes
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+
 USE_GMAKE=	yes
-
-CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/glib12-config"
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libIDL/configure popt/configure
+CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 CONFIGURE_ARGS= --disable-indent
-
-pre-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
  BUILT_SOURCES = $(libwrap_files)
  
 -libIIOP_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libIIOP_la_LDFLAGS = -version-info 1:0:0
++libIIOP_la_LDFLAGS = -version-info 2:0:0
  
  EXTRA_DIST = IIOP-design.txt
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
@@ -16,7 +16,7 @@
  
  
 -libORBitutil_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBitutil_la_LDFLAGS = -version-info 1:0:0
++libORBitutil_la_LDFLAGS = -version-info 2:0:0
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../config.h
  CONFIG_CLEAN_FILES = 
@@ -27,7 +27,7 @@
  IRIDL = $(top_srcdir)/src/daemons/interface_repository/interface_repository.idl
  
 -libORBit_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBit_la_LDFLAGS = -version-info 1:0:0
++libORBit_la_LDFLAGS = -version-info 2:0:0
  libORBit_la_LIBADD = $(GLIB_LIBS) -lm
  
  BUILT_SOURCES =  	interface_repository.h 	interface_repository-common.c 	interface_repository-stubs.c
@@ -38,7 +38,7 @@
  
  
 -libORBitCosNaming_la_LDFLAGS =  	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
-+libORBitCosNaming_la_LDFLAGS =  	-version-info 1:0:0
++libORBitCosNaming_la_LDFLAGS =  	-version-info 2:0:0
  
  
  INCLUDES = -I. -I$(top_builddir)/src -I$(top_srcdir)/src  @GLIB_CFLAGS@
@@ -58,7 +58,7 @@
  libIDL_la_SOURCES = parser.c parser.h lexer.c 			  ns.c util.c util.h rename.h
  
 -libIDL_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)				  -release $(LT_RELEASE)
-+libIDL_la_LDFLAGS = -version-info 1:0:0
++libIDL_la_LDFLAGS = -version-info 2:0:0
  
  
  m4datadir = $(datadir)/aclocal
