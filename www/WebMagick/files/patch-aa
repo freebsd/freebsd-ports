@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.102
-retrieving revision 1.111
-diff -u -r1.102 -r1.111
+retrieving revision 1.112
+diff -u -r1.102 -r1.112
 --- webmagick.in	21 Aug 2002 20:36:28 -0000	1.102
-+++ webmagick.in	7 Sep 2002 15:57:27 -0000	1.111
++++ webmagick.in	7 Sep 2002 16:35:38 -0000	1.112
 @@ -1,6 +1,6 @@
  #! @PERL@
  #
 -# $Id: webmagick.in,v 1.102 2002/08/21 20:36:28 clindell Exp $
-+# $Id: webmagick.in,v 1.111 2002/09/07 15:57:27 ache Exp $
++# $Id: webmagick.in,v 1.112 2002/09/07 16:35:38 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -72,6 +72,15 @@ diff -u -r1.102 -r1.111
  	 'coloralink'		=> $opt_coloralink,
  	 'colorback'		=> $opt_colorback,
  	 'colorfore'		=> $opt_colorfore,
+@@ -1675,7 +1674,7 @@
+ 	 'subdirectories'       => !$opt_frames ? "" : join(' ',@dirNames),
+ 	 'tables'		=> $opt_tables,
+ 	 'title'		=> $pageTitle,
+-	 'version'		=> $webmagickInfo{'version'},
++	 'version'              => $opt_anonymous ? "" : $webmagickInfo{'version'},
+ 	 );
+ 
+     # Compute a conglomeration of all parameters that effect the HTML
 @@ -1903,38 +1902,40 @@
      #
      # Clean up cached thumbnails
