@@ -113,9 +113,6 @@ SPAMASS_FILES+=	weeds2.cf
 
 PLIST_FILES=	${SPAMASS_FILES:S/^/${SPAMASS_CONF}\//}
 
-do-build:
-	@${DO_NADA}
-
 pre-install:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
