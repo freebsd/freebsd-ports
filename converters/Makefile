@@ -58,6 +58,7 @@
     SUBDIR += php4-mbstring
     SUBDIR += php4-recode
     SUBDIR += php5-iconv
+    SUBDIR += php5-mbstring
     SUBDIR += psiconv
     SUBDIR += py-cjkcodecs
     SUBDIR += py-iconv
