@@ -25,7 +25,7 @@ CONFIGURE_ARGS=	--with-gzip --enable-opi		\
 		--with-t1-library=${LOCALBASE}/lib	\
 		--with-t1-includes=${LOCALBASE}/include	\
 		--with-freetype-library=${LOCALBASE}/lib \
-		--with-freetype-includes=${LOCALBASE}/include/freetype
+		--with-freetype-includes=${LOCALBASE}/include/freetype1/freetype
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
 .endif

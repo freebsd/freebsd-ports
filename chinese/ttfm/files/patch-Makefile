@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- Makefile	2002/03/14 07:35:10	1.1
++++ Makefile	2002/03/14 07:35:23
+@@ -1,5 +1,5 @@
+ FREETYPE_BASE=/usr/local
+-FREETYPE_INCL=$(FREETYPE_BASE)/include
++FREETYPE_INCL=$(FREETYPE_BASE)/include/freetype1
+ FREETYPE_LIB=$(FREETYPE_BASE)/lib
+ prefix=/usr
+ 

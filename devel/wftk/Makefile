@@ -21,5 +21,6 @@ LIB_DEPENDS=    png.5:${PORTSDIR}/graphics/png \
 USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype1"
 
 .include <bsd.port.mk>

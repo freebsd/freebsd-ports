@@ -14,6 +14,6 @@ MAINTAINER=	nakai@FreeBSD.org
 
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"CFLAGS=-I${LOCALBASE}/include/freetype"
+CONFIGURE_ENV=	"CFLAGS=-I${LOCALBASE}/include/freetype1/freetype"
 
 .include <bsd.port.mk>

@@ -18,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
 
 do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${LOCALBASE}/include/freetype \
+	cd ${WRKSRC}; ${CC} ${CFLAGS} -I${LOCALBASE}/include/freetype1/freetype \
 		ttmkfdir.c -o ttmkfdir -L${LOCALBASE}/lib -lttf
 
 do-install:

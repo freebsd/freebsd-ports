@@ -1,6 +1,6 @@
 CC?=gcc
 LOCALBASE?=/usr/local
-CFLAGS+=-Wall -I${LOCALBASE}/include
+CFLAGS+=-Wall -I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include
 LIBS=-L${LOCALBASE}/lib -lm -lSDL -lttf
 OBJECTS=powerpak.o img.o img_gif.o img_ppm.o img_tif.o img_pcx.o img_bmp.o img_png.o img_jpg.o img_xxx.o \
 PowerDraw/powerdraw.o PowerDraw/gfx.o PowerDraw/primitives.o PowerDraw/sprites.o PowerDraw/truetype.o \
