@@ -1,0 +1,48 @@
+diff -ru ../xdvik-20a.orig/configure ./configure
+--- ../xdvik-20a.orig/configure	Tue Feb  4 04:22:07 1997
++++ ./configure	Tue Feb 24 23:12:05 1998
+@@ -890,6 +890,7 @@
+   fi
+ fi
+ echo "$ac_t""$INSTALL" 1>&6
++ac_given_INSTALL=${INSTALL}
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+ # It thinks the first close brace ends the variable substitution.
+diff -ru ../xdvik-20a.orig/kpathsea/configure ./kpathsea/configure
+--- ../xdvik-20a.orig/kpathsea/configure	Tue Feb  4 04:27:18 1997
++++ ./kpathsea/configure	Tue Feb 24 23:13:09 1998
+@@ -774,6 +774,7 @@
+   fi
+ fi
+ echo "$ac_t""$INSTALL" 1>&6
++ac_given_INSTALL=${INSTALL}
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+ # It thinks the first close brace ends the variable substitution.
+diff -ru ../xdvik-20a.orig/xdvik/configure ./xdvik/configure
+--- ../xdvik-20a.orig/xdvik/configure	Tue Feb 24 23:09:22 1998
++++ ./xdvik/configure	Tue Feb 24 23:15:44 1998
+@@ -786,6 +786,7 @@
+   fi
+ fi
+ echo "$ac_t""$INSTALL" 1>&6
++ac_given_INSTALL=${INSTALL}
+ 
+ # Use test -z because SunOS4 sh mishandles braces in ${var-val}.
+ # It thinks the first close brace ends the variable substitution.
+diff -ru ../xdvik-20a.orig/klibtool ./klibtool
+--- ../xdvik-20a.orig/klibtool	Sat Dec 28 07:50:27 1996
++++ ./klibtool	Fri Feb 27 23:54:11 1998
+@@ -251,6 +251,11 @@
+ 
+     # Override defaults for this system.
+     case $host_type in
++      *-*-freebsd*)
++	shared_support=true
++	SHARED_postinstall='ldconfig -m $libdir'
++	;;
++
+       *-*-linux*)
+         shared_support=true
+         SHARED_postinstall='ldconfig $libdir'
