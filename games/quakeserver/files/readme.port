@@ -12,7 +12,6 @@ This port, as installed, contains the following directory structure
 %%PREFIX%%/quakeserver/readme.unixded		unix server readme
 %%PREFIX%%/quakeserver/qserver.sh		shell script to run the
 						server
-%%PREFIX%%/quakeserver/screenrc.quake		screen configuration
 %%PREFIX%%/quakeserver/unixded			server binary
 %%PREFIX%%/quakeserver/quakeserver.log		server logfile
 %%PREFIX%%/quakeserver/quakeserver.in		server console named pipe

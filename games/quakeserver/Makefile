@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1997/04/20 13:19:03 wosch Exp $
+# $Id: Makefile,v 1.11 1997/05/31 00:52:03 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.0
@@ -53,7 +53,7 @@ do-install:
 		@ echo "" >> ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ echo "if [ -x ${PREFIX}/quakeserver/unixded ]" >> ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ echo "then" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ echo "	su nobody -c ${PREFIX}/quakeserver/qserver.sh &" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "	su nobody -c ${PREFIX}/quakeserver/qserver.sh && echo -n ' quakeserver'" >> ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ echo "fi" >> ${PREFIX}/etc/rc.d/quakeserver.sh
 		@ /bin/chmod 750 ${PREFIX}/etc/rc.d/quakeserver.sh
 .if !defined(BATCH)
