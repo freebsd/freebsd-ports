@@ -13,12 +13,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
-COMMENT=	An advanced tool for adjusting soundcard mixers, designed as a replacement for aumix
+COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CC="$(CC) -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		umix.1
 
