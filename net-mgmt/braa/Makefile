@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	braa
-PORTVERSION=	0.3
+PORTVERSION=	0.41
 CATEGORIES=	net
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
