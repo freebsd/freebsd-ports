@@ -3,12 +3,11 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.21 1997/12/04 11:44:52 asami Exp $
+# $Id: Makefile,v 1.22 1997/12/24 01:21:37 alex Exp $
 
 DISTNAME=	postgresql-6.2.1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.PostgreSQL.org/pub/ \
-		ftp://ftp.jaist.ac.jp/pub/dbms/postgres95/
+MASTER_SITES=	http://www.freebsd.org/~andreas/download/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
