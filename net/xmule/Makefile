@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lmule
-PORTVERSION=	1.1.11.b
+PORTVERSION=	1.1.12
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lmule
-DISTNAME=	${PORTNAME}-1.1.11b
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Port of eMule eDonkey P2P client using wxWindows class library
