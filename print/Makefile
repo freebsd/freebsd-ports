@@ -95,6 +95,7 @@
     SUBDIR += latex-beamer
     SUBDIR += latex-caption
     SUBDIR += latex-keystroke
+    SUBDIR += latex-layouts
     SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
     SUBDIR += latex-subfig

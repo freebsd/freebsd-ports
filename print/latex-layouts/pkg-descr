@@ -1,0 +1,7 @@
+The layouts package enables the display of various elements of a
+document's layout including: the general page layout; disposition
+of floats; layout of paragraphs, lists, footnotes, table of contents, 
+and sectional headings; font boxes.
+
+Facilities are provided for a document designer to experiment with
+the layout parameters.
