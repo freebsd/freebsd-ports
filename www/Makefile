@@ -54,7 +54,6 @@
     SUBDIR += mapedit
     SUBDIR += marc-search
     SUBDIR += mhonarc
-    SUBDIR += mmm
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += netscape3

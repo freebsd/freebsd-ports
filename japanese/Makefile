@@ -127,7 +127,6 @@
     SUBDIR += mhonarc
     SUBDIR += micq
     SUBDIR += mimekit
-    SUBDIR += mmm
     SUBDIR += mnews
     SUBDIR += mnews-gnspool
     SUBDIR += mtools
