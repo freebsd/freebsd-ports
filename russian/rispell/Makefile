@@ -1,8 +1,9 @@
 # New ports collection makefile for:    rispell
+# Version required:	N/A
 # Date created:         16 Dec 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1997/12/21 12:07:17 ache Exp $
+# $Id: Makefile,v 1.4 1997/12/23 07:23:24 asami Exp $
 #
 
 DISTNAME=       rispell
