@@ -1,18 +1,14 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skiplocal.1m skipsrc-1.0/skip/man/skiplocal.1m
---- skipsrc-1.0.orig/skip/man/skiplocal.1m	Fri Oct 25 13:12:58 1996
-+++ skipsrc-1.0/skip/man/skiplocal.1m	Wed Nov 26 20:11:53 1997
-@@ -171,13 +171,9 @@
- \fBskipd_restart\fP in order for the changes to take effect.
- .P
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/raw_keys.4 work.new/skip/man/raw_keys.4
+--- skipsrc-1.0.orig/skip/man/raw_keys.4	Fri Oct 25 13:12:56 1996
++++ work.new/skip/man/raw_keys.4	Mon Mar  8 21:33:39 1999
+@@ -42,9 +42,4 @@
+ link.
  .SH FILES
--.SS Solaris 1.x systems:
  .P
--/etc/skip/localids
-+@@PREFIX@@/etc/skip/localids
- .br
--.SS Solaris 2.x systems:
+-.SH Solaris 2.x systems:
+-/etc/opt/SUNWicg/skip/raw_keys
 -.P
--/etc/opt/SUNWicg/skip/localids
- .P
- .SH BUGS
- skiplocal export does not work well for communicating with multiple keys.
+-.SH Other systems:
+-.P
+-/etc/skip/raw_keys
++@@PREFIX@@/etc/skip/raw_keys

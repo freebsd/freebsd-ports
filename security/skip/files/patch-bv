@@ -1,21 +1,39 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skip_certd.1m skipsrc-1.0/skip/man/skip_certd.1m
---- skipsrc-1.0.orig/skip/man/skip_certd.1m	Fri Oct 25 13:12:56 1996
-+++ skipsrc-1.0/skip/man/skip_certd.1m	Wed Nov 26 20:04:40 1997
-@@ -14,15 +14,10 @@
- .SH FILES
- .br
- /tmp/skip_certd.log
--.SS Solaris 1.x systems:
- .P
--/etc/skip/certs.dir
-+@@PREFIX@@/etc/skip/certs.dir
- .br
--/etc/skip/certs.pag
-+@@PREFIX@@/etc/skip/certs.pag
- .P
--.SS Solaris 2.x systems:
--.P
--/etc/opt/SUNWicg/skip/certs.dir
--/etc/opt/SUNWicg/skip/certs.pag
- .SH SEE ALSO
- caping(1)
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_log.C work.new/skip/keymgrd/skip_log.C
+--- skipsrc-1.0.orig/skip/keymgrd/skip_log.C	Fri Oct 25 13:12:50 1996
++++ work.new/skip/keymgrd/skip_log.C	Mon Mar  8 21:33:38 1999
+@@ -60,7 +60,7 @@
+ 	strcpy(outbuf,buf);
+ }
+ 
+-FILE *skip_log_fp = NULL;
++int skip_log_syslog = 0;
+ 
+ void skip_log(int severity, char *control,...)
+ {
+@@ -71,15 +71,15 @@
+ 	get_time(buf);
+ 	va_start(va,control);
+ 
+-	if (skip_log_fp)
+-		out = skip_log_fp;
+-	else if (severity == SKIP_NOTICE) 
+-		out=stdout;
+-	else
+-		out=stderr;
+-
+-	fprintf(out,"%s",buf);
+-	vfprintf(out, control,va);
+-	fprintf(out,"\n");
+-	fflush(out);
++	if (skip_log_syslog) {
++	  vsyslog(severity, control, va);
++	} else {
++		out = (severity == SKIP_NOTICE) ? stdout : stderr;
++		fprintf(out, "%s",buf);
++		vfprintf(out, control, va);
++		fprintf(out, "\n");
++		fflush(out);
++	}
++	va_end(va);
+ }
++

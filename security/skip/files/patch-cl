@@ -1,13 +1,39 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_if.h skipsrc-1.0/skip/freebsd/skip_if.h
---- skipsrc-1.0.orig/skip/freebsd/skip_if.h	Fri Oct 25 20:12:43 1996
-+++ skipsrc-1.0/skip/freebsd/skip_if.h	Mon Nov 16 22:55:25 1998
-@@ -104,7 +104,7 @@
- /*
-  * returns TRUE if SKIP has processed this buffer
-  */
--#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_EOR)
-+#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_PROTO1)
- 
- /* 
-  * Macro to retrieve an ifnet 
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skipsrc-1.0/skip/freebsd/skip_os.h
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/man/skiphost.1m work.new/skip/man/skiphost.1m
+--- skipsrc-1.0.orig/skip/man/skiphost.1m	Fri Oct 25 13:12:57 1996
++++ work.new/skip/man/skiphost.1m	Mon Mar  8 21:33:38 1999
+@@ -42,6 +42,8 @@
+ .BI \-s " sender NSID       "   \-S " sender key ID"...
+ .if n .ti +8n
+ .BI \-v " SKIP version      "   \-A " tunnel address  " \-T
++.if n .ti +8n
++.BI \-f " source IP address "
+ ]
+ .if n .ti +5n
+ [
+@@ -53,9 +55,13 @@
+ .if n .ti +8n
+ .BI \-r " receiver NSID     "   \-R " receiver key ID"...
+ .if n .ti +8n
++.BI \-f " source IP address "
++.if n .ti +8n
+ .BI \-s " sender NSID       "   \-S " sender key ID"...
+ .if n .ti +8n
+ .BI \-v " SKIP version      "   \-A " tunnel address  " \-T
++.if n .ti +8n
++.BI \-f " source IP address "
+ ]
+ .SH DESCRIPTION
+ .B
+@@ -185,6 +191,12 @@
+ address in outgoing packets with the supplied value.
+ This permits hiding of network topology.
+ By default, the tunnel address is set to the destination address. 
++.TP 
++.BI \-f " source IP address"
++This option is used in tunneling mode to replace the source IP
++address in outgoing packets with the supplied value.
++This permits hiding of network topology.
++By default, the source address is not changed when the packet is encrypted.
+ .TP 
+ .BI \-T
+ Encrypt or authenticate only the data part of the IP packet. By default,

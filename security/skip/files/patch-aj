@@ -1,11 +1,13 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/Bstream.C skipsrc-1.0/certs/lib/Bstream.C
---- skipsrc-1.0.orig/certs/lib/Bstream.C	Fri Oct 25 13:11:38 1996
-+++ skipsrc-1.0/certs/lib/Bstream.C	Fri Nov 21 11:39:11 1997
-@@ -48,6 +48,7 @@
- #include <netinet/in.h>
- #include <stdio.h>
- #include <stdlib.h>
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/AuthPolicy.C work.new/certs/lib/AuthPolicy.C
+--- skipsrc-1.0.orig/certs/lib/AuthPolicy.C	Fri Oct 25 13:11:37 1996
++++ work.new/certs/lib/AuthPolicy.C	Mon Mar  8 21:33:38 1999
+@@ -44,7 +44,9 @@
+ 
+ #pragma ident "@(#)AuthPolicy.C	1.9 96/05/15"
+ 
++#include <sys/types.h>
+ #include <dirent.h>
 +#include <string.h>
- #include <unistd.h>
- #include <fcntl.h>
- #include "Bstream.h"
+ #include "AuthPolicy.h"
+ 
+ 

@@ -1,6 +1,6 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/Makefile skipsrc-1.0/Makefile
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/Makefile work.new/Makefile
 --- skipsrc-1.0.orig/Makefile	Fri Oct 25 13:11:18 1996
-+++ skipsrc-1.0/Makefile	Mon Dec  8 13:22:13 1997
++++ work.new/Makefile	Mon Mar  8 21:33:38 1999
 @@ -74,3 +74,7 @@
  cleanpkgs:
  	@echo "Cleaning SKIP package directory..."

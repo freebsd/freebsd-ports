@@ -1,13 +1,11 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skiplocal.C skipsrc-1.0/skip/keymgrd/skiplocal.C
---- skipsrc-1.0.orig/skip/keymgrd/skiplocal.C	Fri Oct 25 13:12:55 1996
-+++ skipsrc-1.0/skip/keymgrd/skiplocal.C	Sat Dec 20 11:26:35 1997
-@@ -88,8 +88,7 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/include/skip_types.h work.new/skip/include/skip_types.h
+--- skipsrc-1.0.orig/skip/include/skip_types.h	Fri Oct 25 13:12:45 1996
++++ work.new/skip/include/skip_types.h	Mon Mar  8 21:33:38 1999
+@@ -142,6 +142,7 @@
+ 	unsigned char		flags;		/* ACL info for this system */
+ 	struct in_addr		mask;		/* network/host mask */
+ 	struct in_addr		tunnel_addr;	/* tunneling address */
++	unsigned long		source;		/* source address */
+ } skip_param_t;
  
- void
- usage(char *s){
--	fprintf(stderr, "%s [add|export|extract|list|keygen|rm"
--		, s);
-+	fprintf(stderr, "%s [add|export|extract|list|keygen|rm]\n", s);
- 	exit(1);
- }
- 
+ /*

@@ -1,39 +1,43 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/keymgrd/skip_log.C skipsrc-1.0/skip/keymgrd/skip_log.C
---- skipsrc-1.0.orig/skip/keymgrd/skip_log.C	Fri Oct 25 13:12:50 1996
-+++ skipsrc-1.0/skip/keymgrd/skip_log.C	Thu Dec  4 18:20:12 1997
-@@ -60,7 +60,7 @@
- 	strcpy(outbuf,buf);
- }
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_if.h work.new/skip/freebsd/skip_if.h
+--- skipsrc-1.0.orig/skip/freebsd/skip_if.h	Fri Oct 25 13:12:43 1996
++++ work.new/skip/freebsd/skip_if.h	Tue Mar  9 20:30:46 1999
+@@ -86,7 +86,9 @@
+ 	struct skip_es	*next;
+ 	char		if_name[SKIPSZ];/* e.g. "le0" */
+ 	struct ifnet	*ifp;		/* network interface */
+-	int		(*if_output)();	/* default output handler */
++	int		(*if_output)	/* default output handler */
++			    (struct ifnet *, struct mbuf *,
++			    struct sockaddr *, struct rtentry *);
+ 	void		*sd;		/* skip descriptor */
+ 	unsigned char	if_mode;	/* interface mode */
+ 	int		notifier;	/* who to send events to */
+@@ -104,7 +106,7 @@
+ /*
+  * returns TRUE if SKIP has processed this buffer
+  */
+-#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_EOR)
++#define	SKIP_DECRYPTED(m)	((m)->m_flags & M_PROTO1)
  
--FILE *skip_log_fp = NULL;
-+int skip_log_syslog = 0;
- 
- void skip_log(int severity, char *control,...)
- {
-@@ -71,15 +71,15 @@
- 	get_time(buf);
- 	va_start(va,control);
- 
--	if (skip_log_fp)
--		out = skip_log_fp;
--	else if (severity == SKIP_NOTICE) 
--		out=stdout;
--	else
--		out=stderr;
--
--	fprintf(out,"%s",buf);
--	vfprintf(out, control,va);
--	fprintf(out,"\n");
--	fflush(out);
-+	if (skip_log_syslog) {
-+	  vsyslog(severity, control, va);
-+	} else {
-+		out = (severity == SKIP_NOTICE) ? stdout : stderr;
-+		fprintf(out, "%s",buf);
-+		vfprintf(out, control, va);
-+		fprintf(out, "\n");
-+		fflush(out);
-+	}
-+	va_end(va);
- }
+ /* 
+  * Macro to retrieve an ifnet 
+@@ -114,14 +116,15 @@
+ /*
+  * function prototypes
+  */
 +
++int			skip_init(void);
++int			skip_uninit(void);
+ int			skip_ifopen(dev_t, int, int, struct proc *);
+ int			skip_ifclose(dev_t, int, int, struct proc *);
+-int			skip_ifioctl(dev_t, int, caddr_t, int, struct proc *);
+-int			skip_ifselect(dev_t, int, struct proc *);
++int			skip_ifioctl(dev_t, u_long, caddr_t, int, struct proc *);
++int			skip_ifpoll(dev_t, int, struct proc *);
+ int			skip_ifwrite(dev_t, struct uio *, int);
+ int			skip_ifread(dev_t, struct uio *, int);
+-
+-void 			skip_key_tellkm( enum skip_msgs, skip_keycb_t *);
+ 
+ /*
+  * exported functions

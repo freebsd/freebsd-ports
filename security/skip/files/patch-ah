@@ -1,12 +1,12 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/hashcert/dh_keygen.C skipsrc-1.0/certs/hashcert/dh_keygen.C
---- skipsrc-1.0.orig/certs/hashcert/dh_keygen.C	Fri Oct 25 13:11:37 1996
-+++ skipsrc-1.0/certs/hashcert/dh_keygen.C	Mon Dec 15 16:57:05 1997
-@@ -54,6 +54,8 @@
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/bnlib/Makefile.in work.new/bnlib/Makefile.in
+--- skipsrc-1.0.orig/bnlib/Makefile.in	Fri Oct 25 13:11:20 1996
++++ work.new/bnlib/Makefile.in	Mon Mar  8 21:33:38 1999
+@@ -61,7 +61,7 @@
+ # code compiled with another cc, which doesn't know about -lgcc.
  
- #include <stdio.h>
- #include <stdlib.h>
-+#include <unistd.h>
-+#include <time.h>
- #include <sys/types.h>
- #include "Time.h"
- #include "Bigint.h"
+ lbn%.o: $(srcdir)/lbn%.c $(HDRS) config.h
+-	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ @GCCMAGIC1@ $< @GCCMAGIC2@
++	$(CC) $(CPPFLAGS) $(CFLAGS) -I. -I$(srcdir) -o $@ -c $<
+ 
+ # Saying that every .o file depends on every header is overkill, but
+ # it will suffice.

@@ -1,6 +1,6 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/install_skip_keys.sh skipsrc-1.0/admin/install_skip_keys.sh
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/install_skip_keys.sh work.new/admin/install_skip_keys.sh
 --- skipsrc-1.0.orig/admin/install_skip_keys.sh	Fri Oct 25 13:11:19 1996
-+++ skipsrc-1.0/admin/install_skip_keys.sh	Wed Nov 26 18:36:37 1997
++++ work.new/admin/install_skip_keys.sh	Mon Mar  8 21:33:39 1999
 @@ -145,18 +145,11 @@
  	rm -rf $DIR
  }

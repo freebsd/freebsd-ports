@@ -16,10 +16,10 @@ Report ()
 
 install_lkm_files ()
 {
-  LKM_FILES="drv/skip.o"
+  LKM_FILES="drv/skip.ko"
 
-  Report "Installing kernel module in ${PREFIX}/lkm"
-  ${BSD_INSTALL_DATA} ${LKM_FILES} ${PREFIX}/lkm
+  Report "Installing kernel KLD module in ${PREFIX}/modules"
+  ${BSD_INSTALL_DATA} ${LKM_FILES} ${PREFIX}/modules
 }
 
 install_etc_files ()

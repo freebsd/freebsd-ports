@@ -1,6 +1,6 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/hosts.4.x skipsrc-1.0/admin/hosts.4.x
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/admin/hosts.4.x work.new/admin/hosts.4.x
 --- skipsrc-1.0.orig/admin/hosts.4.x	Fri Oct 25 13:13:14 1996
-+++ skipsrc-1.0/admin/hosts.4.x	Thu Dec 18 10:53:56 1997
++++ work.new/admin/hosts.4.x	Mon Mar  8 21:33:39 1999
 @@ -46,20 +46,18 @@
  #
  # SKIP host access control information

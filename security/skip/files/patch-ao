@@ -1,11 +1,11 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/asn1_der_decode.C skipsrc-1.0/certs/lib/asn1_der_decode.C
---- skipsrc-1.0.orig/certs/lib/asn1_der_decode.C	Fri Oct 25 13:11:45 1996
-+++ skipsrc-1.0/certs/lib/asn1_der_decode.C	Fri Nov 21 11:39:11 1997
-@@ -48,6 +48,7 @@
- #include <stdarg.h>
- #include <stdlib.h>
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/certs/lib/Time.C work.new/certs/lib/Time.C
+--- skipsrc-1.0.orig/certs/lib/Time.C	Fri Oct 25 13:11:43 1996
++++ work.new/certs/lib/Time.C	Mon Mar  8 21:33:38 1999
+@@ -46,6 +46,7 @@
+ 
+ #include <sys/types.h>
  #include <stdio.h>
 +#include <string.h>
- #include "my_types.h"
  #include "Time.h"
- #include "Bigint.h"
+ #include <time.h>
+ #include <sys/time.h>

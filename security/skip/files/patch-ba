@@ -1,12 +1,21 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/bdcmod/simplecrypt/simplecrypt.c skipsrc-1.0/skip/bdcmod/simplecrypt/simplecrypt.c
---- skipsrc-1.0.orig/skip/bdcmod/simplecrypt/simplecrypt.c	Fri Oct 25 13:12:38 1996
-+++ skipsrc-1.0/skip/bdcmod/simplecrypt/simplecrypt.c	Mon Dec 15 17:41:14 1997
-@@ -335,7 +335,7 @@
- 	register char		*s = keyp->buf;
- 	register char		*e = keyp->buf + keyp->len;
+diff -ur --unidirectional-new-file skipsrc-1.0.orig/libdb/hash/ndbm.c work.new/libdb/hash/ndbm.c
+--- skipsrc-1.0.orig/libdb/hash/ndbm.c	Fri Oct 25 13:12:22 1996
++++ work.new/libdb/hash/ndbm.c	Mon Mar  8 21:33:38 1999
+@@ -180,7 +180,7 @@
+ 	HTAB *hp;
  
--	*payload_type = IPPROTO_ENCAP;
-+	*payload_type = IPPROTO_IPIP;
+ 	hp = (HTAB *)db->internal;
+-	return (hp->errno);
++	return (hp->errnum);
+ }
  
- 	/*
- 	 * exclusive-or the key over the buffer
+ extern int
+@@ -190,7 +190,7 @@
+ 	HTAB *hp;
+ 
+ 	hp = (HTAB *)db->internal;
+-	hp->errno = 0;
++	hp->errnum = 0;
+ 	return (0);
+ }
+ 
