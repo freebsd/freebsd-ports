@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	nslint
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.a2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	petef@FreeBSD.org
 
