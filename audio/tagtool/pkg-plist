@@ -1,6 +1,6 @@
 bin/tagtool
 share/gnome/apps/Multimedia/tagtool.desktop
-share/pixmaps/TagTool.png
+share/gnome/pixmaps/TagTool.png
 %%DATADIR%%/TagTool.png
 %%DATADIR%%/edit.png
 %%DATADIR%%/fail.png
