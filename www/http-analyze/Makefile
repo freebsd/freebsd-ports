@@ -16,6 +16,8 @@ MAINTAINER=	andreas@FreeBSD.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
+BROKEN=		gd upgrade
+
 MAN1=		http-analyze.1
 
 .include <bsd.port.mk>
