@@ -22,6 +22,7 @@ lib/gauche/%%VERSION%%/%%TARGET%%/sha1.so
 lib/gauche/%%VERSION%%/%%TARGET%%/syslog.so
 lib/gauche/%%VERSION%%/%%TARGET%%/termios.so
 lib/gauche/%%VERSION%%/%%TARGET%%/threads.so
+lib/gauche/%%VERSION%%/%%TARGET%%/vport.so
 lib/gauche/%%VERSION%%/include/gauche.h
 lib/gauche/%%VERSION%%/include/gauche/arch.h
 lib/gauche/%%VERSION%%/include/gauche/builtin-syms.h
@@ -47,7 +48,7 @@ lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
 lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
 lib/libgauche.so
 lib/libgauche.so.0
-lib/libgauche.so.0.8.1
+lib/libgauche.so.%%VERSION%%
 share/aclocal/gauche.m4
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
@@ -67,6 +68,7 @@ share/gauche/%%VERSION%%/lib/gauche/cgen.scm
 share/gauche/%%VERSION%%/lib/gauche/charconv.scm
 share/gauche/%%VERSION%%/lib/gauche/collection.scm
 share/gauche/%%VERSION%%/lib/gauche/common-macros.scm
+share/gauche/%%VERSION%%/lib/gauche/condutil.scm
 share/gauche/%%VERSION%%/lib/gauche/config.scm
 share/gauche/%%VERSION%%/lib/gauche/defvalues.scm
 share/gauche/%%VERSION%%/lib/gauche/fcntl.scm
@@ -122,6 +124,7 @@ share/gauche/%%VERSION%%/lib/gauche/validator.scm
 share/gauche/%%VERSION%%/lib/gauche/version.scm
 share/gauche/%%VERSION%%/lib/gauche/vm/debugger.scm
 share/gauche/%%VERSION%%/lib/gauche/vm/disasm.scm
+share/gauche/%%VERSION%%/lib/gauche/vport.scm
 share/gauche/%%VERSION%%/lib/gauche/with.scm
 share/gauche/%%VERSION%%/lib/genstub
 share/gauche/%%VERSION%%/lib/math/const.scm
