@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnumeric
-# Version required:			0.45
+# Version required:			0.46
 # Date created:				08 October 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnumeric-0.45
+DISTNAME=	gnumeric-0.46
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -32,5 +32,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+PLIST_SUB=	GNUMERIC_REV=${DISTNAME:S/gnumeric-//g}
 
 .include <bsd.port.mk>
