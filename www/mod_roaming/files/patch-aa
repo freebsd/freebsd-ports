@@ -1,0 +1,26 @@
+--- mod_roaming.c.orig	Sun Jul 23 02:02:33 2000
++++ mod_roaming.c	Fri Aug 11 21:55:18 2000
+@@ -275,11 +275,12 @@
+ 	FILE				*f;
+ 	struct stat			file_info;	
+ 	int					i, ret;
+-	roaming_config_t	*rc;
+ 	array_header		*hdr_arr;
+ 	table_entry			*headers;
+ 	size_t				chars_read;
+ 
++	new_uri = NULL;
++
+ 	/* Checks whether the correct user has logged on */
+ 	/* to access these roaming files. */
+ 	user = ap_table_get(r->notes, "roaming-user");
+@@ -292,8 +293,7 @@
+ 				"Unauthenticated user has no access to roaming files for %s",
+ 				user);
+ 		ap_log_rerror(APLOG_MARK, APLOG_WARNING|APLOG_NOERRNO, r,
+-				"Have you put a .htaccess file in the roaming directory?",
+-				user);
++				"Have you put a .htaccess file in the roaming directory?");
+ 		return HTTP_FORBIDDEN;
+ 	} else if(strcmp(r->connection->user, user) != 0) {
+ 		ap_log_rerror(APLOG_MARK, APLOG_ERR|APLOG_NOERRNO, r,

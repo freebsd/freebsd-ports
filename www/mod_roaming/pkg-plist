@@ -1,0 +1,8 @@
+libexec/apache/mod_roaming.so
+@exec %D/sbin/apxs -e -A -n roaming %D/%F
+@unexec %D/sbin/apxs -e -A -n roaming %D/%F
+share/doc/mod_roaming/CHANGES
+share/doc/mod_roaming/INSTALL
+share/doc/mod_roaming/LICENSE
+share/doc/mod_roaming/README
+@dirrm share/doc/mod_roaming

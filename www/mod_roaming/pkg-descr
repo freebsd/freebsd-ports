@@ -1,0 +1,9 @@
+mod_roaming is an Apache module that works as a Netscape Roaming
+Access server for Netscape Communicator 4.5 or later.
+
+This allows you to store your Netscape Communicator 4.5 preferences,
+bookmarks, address books, cookies etc.  on the server so that you can
+use (and update) the same settings from any Netscape Communicator 4.5
+that can access the server.
+
+WWW:	http://www.klomp.org/mod_roaming/
