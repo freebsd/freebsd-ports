@@ -33,7 +33,6 @@ PLIST_SUB+=	GNOME="@comment "
 SFXGNOME=	-nognome
 .else
 PLIST_SUB+=	GNOME=""
-USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
 CONFIGURE_ENV+=	USE_GNOME=1
 .endif
@@ -52,7 +51,7 @@ CONFIGURE_ENV+=	USE_GLADE=1
 .endif
 
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOME+=	gtk12
 ALL_TARGET=	all opt
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
