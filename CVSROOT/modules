@@ -3961,6 +3961,7 @@ libnewmail	ports/mail/libnewmail
 libnids		ports/net/libnids
 libnova		ports/astro/libnova
 libnss-mysql	ports/net/libnss-mysql
+libntlm		ports/security/libntlm
 liboe		ports/mail/liboe
 libofx		ports/finance/libofx
 libogg		ports/audio/libogg
