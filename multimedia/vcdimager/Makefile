@@ -6,7 +6,7 @@
 
 PORTNAME=	vcdimager
 PORTVERSION=	0.7.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -17,7 +17,7 @@ COMMENT=	"GNU VCDImager/VCDRip -- The GNU VideoCD Image Maker/Ripping Tool"
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		xml2:${PORTSDIR}/textproc/libxml2 \
-		cdio.1:${PORTSDIR}/sysutils/libcdio
+		cdio.2:${PORTSDIR}/sysutils/libcdio
 
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes

@@ -1,5 +1,7 @@
 include/cdio/cd_types.h
 include/cdio/cdio.h
+include/cdio/cdtext.h
+include/cdio/dvd.h
 include/cdio/iso9660.h
 include/cdio/logging.h
 include/cdio/sector.h
@@ -11,7 +13,7 @@ include/cdio/xa.h
 lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
-lib/libcdio.so.1
+lib/libcdio.so.2
 lib/libiso9660.a
 lib/libiso9660.la
 lib/libiso9660.so
