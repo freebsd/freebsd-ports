@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	freebsd-update
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.daemonology.net/freebsd-update/
-DISTNAME=	freebsd-update-client-1_2
+DISTNAME=	${PORTNAME}-client-${PORTVERSION:S/./_/}
 
 MAINTAINER=	cperciva@daemonology.net
 COMMENT=	Fetches and installs binary updates to FreeBSD
+
+RUN_DEPENDS=	bspatch:${PORTSDIR}/misc/bsdiff
 
 MAN5=		freebsd-update.conf.5
 MAN8=		freebsd-update.8
@@ -28,8 +29,8 @@ post-extract:
 		> ${WRKSRC}/freebsd-update
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/pkg-message \
 		> ${PKGMESSAGE}
-	cp ${FILESDIR}/freebsd-update.8 ${WRKSRC}
-	cp ${FILESDIR}/freebsd-update.conf.5 ${WRKSRC}
+	@${CP} ${FILESDIR}/freebsd-update.8 ${WRKSRC}
+	@${CP} ${FILESDIR}/freebsd-update.conf.5 ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${PREFIX}/freebsd-update
@@ -44,7 +45,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/freebsd-update.conf.5 ${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/freebsd-update.8 ${PREFIX}/man/man8/
 .endif
-
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
