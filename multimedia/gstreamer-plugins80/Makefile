@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://gstreamer.freedesktop.org/src/gst-plugins/
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-plugins/ \
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gst-plugins/0.8
 PKGNAMESUFFIX=	-plugins
 DISTNAME=	gst-plugins-${PORTVERSION}
@@ -54,7 +54,6 @@ CONFIGURE_ARGS=	--disable-tests \
 CONFIGURE_ARGS+=\
 		--disable-tarkin \
 		--disable-lcs \
-		--disable-mplex \
 		--disable-shout2 \
 		--disable-libvisual \
 		--disable-dirac \
@@ -133,11 +132,6 @@ post-patch:
 		${WRKSRC}/sys/cdrom/gstcdplayer_ioctl.c \
 		${WRKSRC}/sys/vcd/vcdsrc.c \
 		${WRKSRC}/sys/vcd/vcdsrc.h
-# KDE libkio required thread support
-	${REINPLACE_CMD} -E \
-		 -e 's|(KIO_CFLAGS=.+)"$$|\1 ${PTHREAD_CFLAGS}"|' \
-		 -e 's|(KIO_LIBS=.+)"$$|\1 ${PTHREAD_LIBS}"|' \
-			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
 
@@ -221,14 +215,14 @@ WITH_GNOMEVFS=yes
 WITH_JACK=YES
 .endif
 
-# KIO
-.if exists(${LOCALBASE}/lib/libkio.so)
-WITH_KIO=yes
-.endif
-
 # libcaca
 .if exists(${LOCALBASE}/lib/libcaca.a)
 WITH_LIBCACA=yes
+.endif
+
+# libmng
+.if exists(${LOCALBASE}/lib/libmng.a)
+WITH_MNG=yes
 .endif
 
 # gsm
@@ -549,19 +543,6 @@ LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .endif
 
-# KIO
-.ifndef(WITH_KIO)
-CONFIGURE_ARGS+=	--disable-kio
-PLIST_SUB+=	KIO="@comment "
-.else
-LIB_DEPENDS+=	kio.6:${PORTSDIR}/x11/kdelibs3
-
-CONFIGURE_ENV+=	KDE_PREFIX="${LOCALBASE}" \
-		KDE_MOC="${X11BASE}/bin/moc" \
-		QTDIR="${X11BASE}"
-PLIST_SUB+=	KIO=""
-.endif
-
 # Hermes
 .ifndef(WITH_HERMES)
 CONFIGURE_ARGS+=	--disable-hermes
@@ -757,11 +738,12 @@ PLIST_SUB+=	LIBMAD=""
 
 # mjpegtools
 .ifndef(WITH_MJPEGTOOLS)
-CONFIGURE_ARGS+=	--disable-mpeg2enc
+CONFIGURE_ARGS+=	--disable-mpeg2enc --disable-mplex
 PLIST_SUB+=	MJPEGTOOLS="@comment "
 .else
 LIB_DEPENDS+=	lavjpeg-1.6.2:${PORTSDIR}/multimedia/mjpegtools
 
+EXTRA_BUILD_DIR+=	ext/mpeg2enc
 # XXX - make sure CONFIGURE works with mpeg2enc even with "ccache
 # c++" ... weird but necessary
 CONFIGURE_ENV+=	HAVE_CXX=yes
@@ -806,6 +788,15 @@ USE_GNOME+=	pango
 PLIST_SUB+=	PANGO=""
 .endif
 
+# mng
+.ifndef(WITH_MNG)
+CONFIGURE_ARGS+=	--disable-libmng
+PLIST_SUB+=	MNG="@comment "
+.else
+LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng
+PLIST_SUB+=	MNG=""
+.endif
+
 # png
 .ifndef(WITH_PNG)
 CONFIGURE_ARGS+=	--disable-libpng
@@ -840,13 +831,14 @@ PLIST_SUB+=	SMOOTHWAVE=""
 .endif
 
 # speex
-.ifndef(WITH_SPEEX)
+# !!!BROKEN RIGHT NOW!!! - need -devel speex
+#.ifndef(WITH_SPEEX)
 CONFIGURE_ARGS+=	--disable-speex
 PLIST_SUB+=	SPEEX="@comment "
-.else
-LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
-PLIST_SUB+=	SPEEX=""
-.endif
+#.else
+#LIB_DEPENDS+=	speex.3:${PORTSDIR}/audio/speex
+#PLIST_SUB+=	SPEEX=""
+#.endif
 
 # swfdec
 .ifndef(WITH_SWFDEC)
@@ -987,10 +979,6 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_JACK to enable jackd audio plugin'
 .endif
-.ifndef(WITH_KIO)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Define WITH_KIO to enable support for KIO slave sources'
-.endif
 .ifndef(WITH_HERMES)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_HERMES to enable Hermes colorspace plugin'
@@ -1066,6 +1054,10 @@ pre-everything::
 .ifndef(WITH_MAD)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_MAD to enable mad Audio plugin'
+.endif
+.ifndef(WITH_MNG)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_MNG to enable libmng plugin'
 .endif
 .ifndef(WITH_NAS)
 	@${ECHO_MSG} '===>'
