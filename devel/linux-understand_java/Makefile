@@ -19,8 +19,8 @@ COMMENT=	Understand can parse a Java project helping reverse engineer it
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
-BROKEN=		Unfetchable, outdated, new version requires support contract
-DEPRECATED=	${BROKEN}
+IGNORE=		"is unfetchable and outdated and new version requires support contract"
+DEPRECATED=	${IGNORE}
 EXPIRATION_DATE=	2005-05-01
 RESTRICTED=	Commercial software
 
