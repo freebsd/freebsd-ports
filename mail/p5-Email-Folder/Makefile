@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Folder
-PORTVERSION=	0.8
+PORTVERSION=	0.82
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -29,4 +29,12 @@ MAN3=		Email::Folder.3 \
 test:
 	cd ${WRKSRC} ; make test
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} <= 500503
+# make PREFIX-clean under perl 5.005_03
+post-configure:
+	@${PERL} -pi -e 's,/usr/local/,\$${PREFIX}/,g' ${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
