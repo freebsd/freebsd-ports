@@ -1,0 +1,11 @@
+--- xgraph.C.orig	Sun Jan  9 01:11:55 2000
++++ xgraph.C	Sun Jan  9 01:12:25 2000
+@@ -603,7 +603,7 @@
+ XSizeHints				hints;
+ XEvent	event;
+ static	int	offx=10;
+-const	frame = 7;
++const	int frame = 7;
+ 
+ 	hints.flags = PPosition | PSize | PAspect | PMinSize | PMaxSize;
+ 	hints.x = DisplayWidth(dpy,scr) -offx-width-frame;
