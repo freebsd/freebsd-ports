@@ -4824,6 +4824,7 @@ libxkbfile	ports/x11/libxkbfile
 libxklavier	ports/x11/libxklavier
 libxml		ports/textproc/libxml
 libxml++	ports/textproc/libxml++
+libxml++26	ports/textproc/libxml++26
 libxml2		ports/textproc/libxml2
 libxode		ports/textproc/libxode
 libxslt		ports/textproc/libxslt
