@@ -98,7 +98,6 @@
     SUBDIR += pyDict
     SUBDIR += qe
     SUBDIR += qterm
-    SUBDIR += stardict
     SUBDIR += stardict2-dict-zh_CN
     SUBDIR += stardict2-dict-zh_TW
     SUBDIR += tcl83
