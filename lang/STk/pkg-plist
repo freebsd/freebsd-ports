@@ -1,6 +1,9 @@
 @cwd /usr/local
 bin/stk
-lib/stk
+bin/stk-2.1.7
+bin/snow
+bin/snow-2.1.7
+lib/stk/2.1.7
 man/man1/stk.1
 man/man3/3DBorder.3
 man/man3/BackgdErr.3
