@@ -153,3 +153,4 @@
 @dirrm %%RUBY_DOCDIR%%/programmingruby/html
 @dirrm %%RUBY_DOCDIR%%/programmingruby/xml
 @dirrm %%RUBY_DOCDIR%%/programmingruby
+@unexec rmdir %D/%%RUBY_DOCDIR%% 2>/dev/null || true
