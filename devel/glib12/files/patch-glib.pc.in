@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- glib.pc.in	2002/06/10 15:31:17	1.1
++++ glib.pc.in	2002/06/10 15:31:24
+@@ -6,6 +6,6 @@
+ Name: GLib
+ Description: C Utility Library
+ Version: @VERSION@
+-Libs: -L${libdir} -lglib
++Libs: -L${libdir} -lglib12
+ Cflags: -I${includedir}/glib-1.2 -I${libdir}/glib/include 
+ 
