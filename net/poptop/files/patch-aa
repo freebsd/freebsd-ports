@@ -5,7 +5,7 @@
  
  #define PPP_SPEED_DEFAULT		"115200"
 +#ifdef __FreeBSD__
-+#define PPTPD_CONFIG_FILE_DEFAULT	ETCDIR "pptpd.conf"
++#define PPTPD_CONFIG_FILE_DEFAULT	ETCDIR "/pptpd.conf"
 +#else
  #if EMBED
  #define PPTPD_CONFIG_FILE_DEFAULT	"/etc/config/pptpd.conf"
