@@ -1,25 +1,16 @@
-diff -udr ../mh-6.8.3.ORG/conf/FreeBSD ./conf/FreeBSD
---- ../mh-6.8.3.ORG/conf/FreeBSD	Sat Apr 27 18:53:50 1996
-+++ ./conf/FreeBSD	Sat Apr 27 18:48:58 1996
-@@ -27,14 +27,16 @@
- #
- # POP
- #
--#pop	on
--#popdir	/usr/local/libexec
-+pop	on
-+popdir	/usr/local/libexec
-+ldoptlibs -lcrypt
-+options POP2
-+options RPOP
-+options POPSERVICE='"pop3"'
- #options APOP='"/usr/local/etc/pop.auth"'
- #options DPOP
- #options MPOP
--#options POP2
--#options RPOP
--#options POPSERVICE='"pop3"'
-+#options KPOP
- #
- #
- #bboards	nntp
+*** folder.c.orig	Tue Nov 30 20:01:36 1993
+--- uip/folder.c	Fri Jul  1 13:11:16 1994
+***************
+*** 551,556 ****
+--- 551,561 ----
+  
+      base = strcmp (name, "./") ? name : name + 2;/* hack */
+  
++      /* short-cut to see if directory has any sub-directories */
++ 
++      if (stat (name, &st) != NOTOK && st.st_nlink == 2)
++ 	return;
++ 
+      if ((dd = opendir (name)) == NULL) {
+  	admonish (name, "unable to read directory ");
+  	return;
