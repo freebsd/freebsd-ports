@@ -12,8 +12,8 @@
 -  c(auto_home,"man/man8","antirbl.8",-1,-1,0644);
 -  c(auto_home,"man/cat8","rblsmtpd.0",-1,-1,0644);
 -  c(auto_home,"man/cat8","antirbl.0",-1,-1,0644);
-+  c(auto_home,"bin","rblsmtpd",3,7,0555);
-+  c(auto_home,"bin","antirbl",3,7,0555);
-+  c(auto_home,"man/man8","rblsmtpd.8",3,7,0444);
-+  c(auto_home,"man/man8","antirbl.8",3,7,0444);
++  c(auto_home,"bin","rblsmtpd",0,0,0555);
++  c(auto_home,"bin","antirbl",0,0,0555);
++  c(auto_home,"man/man8","rblsmtpd.8",0,0,0444);
++  c(auto_home,"man/man8","antirbl.8",0,0,0444);
  }
