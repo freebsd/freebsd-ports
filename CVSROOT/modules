@@ -11395,6 +11395,7 @@ vchat		ports/net/vchat
 vcheck		ports/ftp/vcheck
 vcp		ports/sysutils/vcp
 vda2fbd		ports/converters/vda2fbd
+vde		ports/net/vde
 vdesk		ports/x11/vdesk
 vdk		ports/x11-toolkits/vdk
 vdkbuilder	ports/x11-toolkits/vdkbuilder
