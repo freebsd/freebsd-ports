@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.6 1995/04/16 15:33:42 ache Exp $
+# $Id: Makefile,v 1.7 1995/05/29 12:42:41 asami Exp $
 #
 
 VERSION=	3.1
@@ -27,5 +27,11 @@ pre-fetch:
 	    rmdir ${DISTDIR}/${DISTNAME} ; \
 	fi
 .endif
+
+post-install:
+	cd ${PREFIX}/interviews/man/mann; gzip -9nf *.n
+# need these in ${PREFIX}/lib so that ldconfig can find them
+	ln -fs ../interviews/lib/FREEBSD/libIV.so.3.1 ${PREFIX}/lib
+	ln -fs ../interviews/lib/FREEBSD/libUnidraw.so.3.1 ${PREFIX}/lib
 
 .include <bsd.port.mk>
