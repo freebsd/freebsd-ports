@@ -1,0 +1,16 @@
+BIND 8 Features
+	-> DNS Dynamic Updates (RFC 2136)
+	-> DNS Change Notification (RFC 1996)
+	-> Completely new configuration syntax
+	-> Flexible, categorized logging system
+	-> IP-address-based access control for queries, zone transfers, and
+	   updates that may be specified on a zone-by-zone basis
+	-> More efficient zone transfers
+	-> Improved performance for servers with thousands of zones
+	-> The server no longer forks for outbound zone transfers
+	-> Many bug fixes
+
+BIND 8.4.0 Highlights
+	IPv6 transport support for named, named-xfer and ndc.
+
+WWW: http://www.isc.org/products/BIND/
