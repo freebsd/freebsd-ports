@@ -10,26 +10,4 @@ easy to create build scripts that are simple, understandable and
 maintainable. Cons ensures that complex software is easily and
 accurately reproducible.
 
-`Cons' uses a number of techniques to accomplish all of this.
-Construction scripts are just Perl scripts, making them both easy
-to comprehend and very flexible. Global scoping of variables is
-replaced with an import/export mechanism for sharing information
-between scripts, significantly improving the readability and
-maintainability of each script. `Construction environments' are
-introduced: these are Perl objects that capture the information
-required for controlling the build process. Multiple environments
-are used when different semantics are required for generating
-products in the build tree. Cons implements automatic dependency
-analysis and uses this to globally sequence the entire build.
-Variant builds are easily produced from a single source tree.
-Intelligent build subsetting is possible, when working on localized
-changes. Overrides can be setup to easily override build instructions
-without modifying any scripts. MD5 cryptographic `signatures' are
-associated with derived files, and are used to accurately determine
-whether a given file needs to be rebuilt.
-
-While offering all of the above, and more, Cons remains simple and
-easy to use. This will, hopefully, become clear as you read the
-remainder of the man page.
-
 WWW: http://www.dsmit.com/cons/
