@@ -10,7 +10,8 @@ PORTVERSION=	${JDK_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-
-DISTFILES=	j2sdk-1_3_1-linux-i386.bin
+DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}-linux-${ARCH}
+EXTRACT_SUFX=	.bin
 
 MAINTAINER=	kevlo@FreeBSD.org
 
@@ -25,24 +26,23 @@ IGNORE=	"You can not legally distribute binaries"
 
 EXTRACT_CMD=		# empty
 EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	#empty
+EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
-PLIST_SUB+=	TARGET_PREFIX=${TARGET_PREFIX:S/^${PREFIX}\///}
+PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
 ONLY_FOR_ARCHS=	i386
-TARGET_PREFIX?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
+DOWNLOAD_URL?=	http://java.sun.com/j2se/1.3/download-linux.html
 
 .include <bsd.port.pre.mk>
 
-.for file in ${DISTFILES}
-.if !exists(${DISTDIR}/${file})
-IGNORE=You must manually fetch the Java 2 Development Kit ${JDK_VERSION} for Linux archive (${DISTFILES}) from http://java.sun.com/j2se/1.3/download-linux.html, place it in ${DISTDIR} and then run make again.
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=You must manually fetch the Java 2 Development Kit ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
-.endfor
 
 post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
