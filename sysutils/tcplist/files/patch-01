@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr 14 18:06:02 1997
-+++ Makefile	Mon Apr 14 18:08:48 1997
+--- Makefile.orig	Thu Apr 24 09:33:17 1997
++++ Makefile	Thu Apr 24 10:02:39 1997
 @@ -1,14 +1,16 @@
  # Compiler: eg. cc or gcc
  CC = cc                      
@@ -47,3 +47,14 @@
  #
  
  # If you're using an old version of lsof, uncomment this:
+@@ -76,8 +78,8 @@
+ RM = /bin/rm -rf
+ CP = /bin/cp
+ CHMOD = /bin/chmod
+-CHOWN = /bin/chown
+-CHGRP = /bin/chgrp
++CHOWN = /usr/sbin/chown
++CHGRP = /usr/bin/chgrp
+ 
+ all:: tcplist
+ 
