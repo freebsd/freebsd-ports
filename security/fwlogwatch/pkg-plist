@@ -1,6 +1,10 @@
+etc/fwlogwatch.config
+etc/fwlogwatch.template
 sbin/fwlogwatch
 sbin/fwlw_notify
 sbin/fwlw_respond
 share/locale/de/LC_MESSAGES/fwlogwatch.mo
 share/locale/pt_BR/LC_MESSAGES/fwlogwatch.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/fwlogwatch.mo
+share/locale/sv/LC_MESSAGES/fwlogwatch.mo
+share/locale/zh_CN/LC_MESSAGES/fwlogwatch.mo
+share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
