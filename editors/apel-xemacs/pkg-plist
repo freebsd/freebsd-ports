@@ -19,11 +19,14 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/invisible.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.el
-%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcharset.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-ltn1.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/mcs-ltn1.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pccl.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pccl.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces.elc
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-raw.el
+%%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pces-raw.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pcustom.el
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/pcustom.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/emu/poe.el
