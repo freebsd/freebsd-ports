@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/haddock/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
