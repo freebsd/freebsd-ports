@@ -1,13 +1,12 @@
 # New ports collection makefile for: Japanese ghostscript + vector font library
-# Version required:	2.6.2
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ghostscript2.6.2
-PKGNAME=	ja-vfghostscript-2.6.2
+PORTNAME=	vfghostscript
+PORTVERSION=	2.6.2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.iis.u-tokyo.ac.jp/GNU/ \
@@ -15,19 +14,23 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/
 MASTER_SITE_SUBDIR=	ghostscript
-DISTFILES=	ghostscript-2.6.2.tar.gz ghostscript-fonts-2.6.2.tar.gz \
-		ghostscript-fonts-4.0.tar.gz gs261j10.tar.gz \
+DISTNAME=	ghostscript-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		ghostscript-fonts-${PORTVERSION}.tar.gz \
+		ghostscript-fonts-4.0.tar.gz \
+		gs261j10.tar.gz \
 		gs261d13.tar.gz \
 		gdevlips4-1.1.0.tar.gz \
-		bjc600j-0.9.tar.gz gdevmjc-0.7.tar.gz
+		bjc600j-0.9.tar.gz \
+		gdevmjc-0.7.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 NO_LATEST_LINK=	yes
-WRKSRC=		${WRKDIR}/gs262
-EXTRACT_ONLY=	ghostscript-2.6.2.tar.gz
+WRKSRC=		${WRKDIR}/gs${PORTVERSION:S/.//g}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN1=		gs.1
 
 DOC_DIR=${PREFIX}/lib/ghostscript/doc 

@@ -1,26 +1,27 @@
 # New ports collection makefile for: virtual fonts tools(n2a,a2n,a2bk,p2pn)
-# Version required:	1.2
 # Date created:		12 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vftool-1.2
-PKGNAME=	ja-vftool-1.2
+PORTNAME=	vftool
+PORTVERSION=	1.2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
 		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ptex215/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/fonts/pk/ \
 		ftp://ftp.waseda.ac.jp/pub/tex/ascii-OLD/
-DISTFILES=	vftool-1.2.tar.gz plib13-euc.tar.gz jtex-1.52.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		plib13-euc.tar.gz \
+		jtex-1.52.tar.gz
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 BUILD_DEPENDS=	${AFMDIR}/GothicBBB-Medium-H:${PORTSDIR}/japanese/japaneseAFM
 
-EXTRACT_ONLY=	vftool-1.2.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 ALL_TARGET=	n2a a2n a2bk p2pn
 SCRIPTS_ENV=	MV=${MV} SED=${SED} AFMDIR=${AFMDIR} JFMDIR=${JFMDIR}

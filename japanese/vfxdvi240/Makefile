@@ -1,5 +1,4 @@
 # New ports collection makefile for: xdvi-17miyu + patches + vector font library
-# Version required:	pl17
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #

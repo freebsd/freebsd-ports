@@ -1,21 +1,25 @@
 # New ports collection makefile for: xdvi-17miyu + patches + vector font library
-# Version required:	pl17
 # Date created:		8 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdvi-17
-PKGNAME=	ja-vfxdvi${RESOLUTION}-17
+PORTNAME=	vfxdvi
+PORTVERSION=	17
+PKGNAMESUFFIX=	${RESOLUTION}
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Sep/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Oct/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Nov/
-DISTFILES=	xdvi-17.tar.gz xdvi-17miyu.patch-beta6.gz \
+DISTNAME=	xdvi-${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		xdvi-${PORTVERSION}miyu.patch-beta6.gz \
 		xdvi18-okagawa-patch \
-		950923.02.Z 951007.02.Z 951109.04.Z
+		950923.02.Z \
+		951007.02.Z \
+		951109.04.Z
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
@@ -26,7 +30,7 @@ WRKSRC=		${WRKDIR}
 DIST_SUBDIR=	xdvi
 USE_IMAKE=      yes
 XMKMF=          xmkmf
-EXTRACT_ONLY=	xdvi-17.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 .if !defined(RESOLUTION)
 RESOLUTION=     300
@@ -48,15 +52,15 @@ pre-patch:
 	  uudecode ${DISTDIR}/${DIST_SUBDIR}/xdvi18-okagawa-patch ; \
 	  ${GUNZIP_CMD} xdvi18.vflib.patch.gz ; \
 	  ${PATCH} < ${FILESDIR}/xdvi18.vflib.patch.of.patch >/dev/null 2>&1; \
-	  ${GUNZIP_CMD} xdvi-17+ptex.fixed.patch.gz ; \
-	  ${PATCH} < ${FILESDIR}/xdvi-17+ptex.fixed.patch.of.patch >/dev/null 2>&1; \
+	  ${GUNZIP_CMD} xdvi-${PORTVERSION}+ptex.fixed.patch.gz ; \
+	  ${PATCH} < ${FILESDIR}/xdvi-${PORTVERSION}+ptex.fixed.patch.of.patch >/dev/null 2>&1; \
 	  ${MKDIR} tmp; \
 	  cd tmp; \
 	  ${PATCH} -f < ../xdvi18.vflib.patch >/dev/null 2>&1; \
 	  cd .. ; \
-	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xdvi-17miyu.patch-beta6.gz | patch -d . >/dev/null 2>&1; \
-	  ${GZCAT} xdvi-pl17+markpage+toc+printdvi+paper.patch.gz | patch -d . >/dev/null 2>&1 ; \
-	  ${PATCH} -d . < xdvi-17+ptex.fixed.patch >/dev/null 2>&1; \
+	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xdvi-${PORTVERSION}miyu.patch-beta6.gz | patch -d . >/dev/null 2>&1; \
+	  ${GZCAT} xdvi-pl${PORTVERSION}+markpage+toc+printdvi+paper.patch.gz | patch -d . >/dev/null 2>&1 ; \
+	  ${PATCH} -d . < xdvi-${PORTVERSION}+ptex.fixed.patch >/dev/null 2>&1; \
 	  ${CP} tmp/dnpzeit.c tmp/zeit.c . ; \
 	)
 

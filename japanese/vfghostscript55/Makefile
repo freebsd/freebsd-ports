@@ -1,13 +1,12 @@
 # New ports collection makefile for: Japanese Aladdin ghostscript + vector font library(FreeType)
-# Version required:	5.50
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ghostscript-5.50
-PKGNAME=	ja-vfghostscript-5.50
+PORTNAME=	vfghostscript
+PORTVERSION=	5.50
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
@@ -25,15 +24,16 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
 		ftp://ftp.humblesoft.com/pub/ \
 		http://www.necs.co.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
-		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs5.50/
+		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs${PORTVERSION}/
+DISTNAME=	ghostscript-${PORTVERSION}
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
-EXTRACT_ONLY=	ghostscript-5.50.tar.gz jpegsrc.v6b.tar.gz libpng-1.0.2.tar.gz
-WRKSRC=		${WRKDIR}/gs5.50
+EXTRACT_ONLY=	ghostscript-${PORTVERSION}.tar.gz jpegsrc.v6b.tar.gz libpng-1.0.2.tar.gz
+WRKSRC=		${WRKDIR}/gs${PORTVERSION}
 MAKEFILE=	unix-gcc.mak
 #MAKE_FLAGS=	prefix=${PREFIX} CFLAGS="${CFLAGS}" -f
 ALL_TARGET=	
@@ -41,13 +41,13 @@ MAN1=		gs.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 pdf2dsc.1 ps2ps.1
 
 USE_GMAKE=	yes
 CFLAGS+=	-DA4
-GSINST_DIR=	${PREFIX}/share/ghostscript/5.50vflib
+GSINST_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}vflib
 DOC_DIR=	${GSINST_DIR}/doc
 PRINTER=	${WRKSRC}/jp-printers
-GS_SOURCES=	ghostscript-5.50.tar.gz
+GS_SOURCES=	ghostscript-${PORTVERSION}.tar.gz
 GS_SOURCES+=	jpegsrc.v6b.tar.gz
 GS_SOURCES+=	libpng-1.0.2.tar.gz
-GS_DRIVERS=	gs5.50-vflib-1.0.tar.gz
+GS_DRIVERS=	gs${PORTVERSION}-vflib-1.0.tar.gz
 GS_DRIVERS+=	gdevlips-2.3.2.tar.gz
 GS_DRIVERS+=	gdevmjc-0.8.tar.gz
 GS_DRIVERS+=	gdev10v.tar.gz
@@ -61,8 +61,8 @@ GS_DRIVERS+=	gdevrpdl-1.2.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-5.50.tar.gz
+GS_FONTS_STD=	ghostscript-fonts-std-${PORTVERSION}.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-${PORTVERSION}.tar.gz
 
 pre-fetch:
 .if !defined(PDFENCRYPT)
@@ -72,10 +72,10 @@ pre-fetch:
 
 pre-patch:
 	@(cd ${WRKSRC} ; \
-	tar xzf ${DISTDIR}/gs5.50-vflib-1.0.tar.gz ;\
+	tar xzf ${DISTDIR}/gs${PORTVERSION}-vflib-1.0.tar.gz ;\
 	${MV} ../jpeg-6b jpeg ; \
 	${MV} ../libpng-1.0.2 libpng ; \
-	${PATCH} -s -p1 < ${WRKSRC}/gs5.50-vflib-1.0/gs5.50-vflib-1.0.diff \
+	${PATCH} -s -p1 < ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/gs${PORTVERSION}-vflib-1.0.diff \
 		>/dev/null 2>&1)
 
 post-patch:
@@ -99,8 +99,8 @@ post-patch:
 	  ${CP} gdevdmpr/dviprlib.c gdevdmpr/dviprlib.h   ${WRKSRC}; \
 	  ${CP} epag-3.08/gdevepag.c epag-3.08/gdevepag.mak ${WRKSRC}; \
 	  ${CP} gdevnpdl/gdevnpdl.c gdevnpdl/gdevnpdl.mak ${WRKSRC}; \
-	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-5.50 ${WRKSRC}; \
-	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-5.50 ${WRKSRC}; \
+	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-${PORTVERSION} ${WRKSRC}; \
+	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-${PORTVERSION} ${WRKSRC}; \
 	  ${CP} gdevrpdl-1.2/gdevrpdl.c gdevrpdl-1.2/gdevrpdl.mak ${WRKSRC}; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
@@ -117,8 +117,8 @@ post-patch:
 	@${CAT} ${WRKSRC}/gdevnpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevrpdl.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevmjc.mak >> ${WRKSRC}/contrib.mak
-	@${CAT} ${WRKSRC}/gdevalps.mak-5.50 >> ${WRKSRC}/contrib.mak
-	@${CAT} ${WRKSRC}/gdevmd2k.mak-5.50 >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevalps.mak-${PORTVERSION} >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevmd2k.mak-${PORTVERSION} >> ${WRKSRC}/contrib.mak
 
 post-build:
 	@(cd ${PRINTER}/epag-3.08 ;  ${MAKE})
@@ -132,9 +132,9 @@ post-install:
 	${INSTALL_PROGRAM} ${PRINTER}/epag-3.08/ert ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
-	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \
-	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gs5.50-vflib-1.0/OLD-DOC/gs261j11-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/README ${DOC_DIR}/README.gs5.10-vflib ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.0/OLD-DOC/gs261j11-doc/* ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips-2.3.2/Gdevlips.htm ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips-2.3.2/gs_statd.dif ${DOC_DIR} ; \

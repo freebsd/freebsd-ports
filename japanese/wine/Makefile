@@ -1,21 +1,22 @@
 # New ports collection makefile for:    ja-wine
-# Version required:     971130
 # Date created:         14 Jan 1998
 # Whom:			Takashi Uozu <j1594016@ed.kagu.sut.ac.jp>
 #
 # $FreeBSD$
 
-DISTNAME=	ja-Wine-990131
-PKGNAME=	ja-wine-99.01.31
+PORTNAME=	wine
+PORTVERSION=	99.01.31
 CATEGORIES=	japanese emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www1.mahoroba.ne.jp/~jkuchi/wine-jp/src/
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
-DISTFILES=	Wine-990131.tar.gz Wine990131-ja.tar.gz
+DISTNAME=	ja-Wine-${PORTVERSION:S/.//g}
+DISTFILES=	Wine-${PORTVERSION:S/.//g}.tar.gz \
+		Wine${PORTVERSION:S/.//g}-ja.tar.gz
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-WRKSRC=		${WRKDIR}/wine-990131
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.//g}
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-japanese --with-kinput
@@ -24,7 +25,7 @@ MAN1=		wine.1
 
 pre-patch:
 	@(cd ${WRKDIR}; \
-	  ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/Wine990131-jp.Patch)
+	  ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/Wine${PORTVERSION:S/.//g}-jp.Patch)
 
 pre-configure:
 	@${ECHO} "WINE_INI_GLOBAL \"${PREFIX}/etc/wine.conf\"" \
