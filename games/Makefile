@@ -95,6 +95,7 @@
     SUBDIR += golddig
     SUBDIR += gomoku.app
     SUBDIR += gracer
+    SUBDIR += greed
     SUBDIR += gru
     SUBDIR += gtetrinet
     SUBDIR += gtkabale
