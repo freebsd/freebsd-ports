@@ -191,8 +191,6 @@ acidwarp	ports/graphics/acidwarp
 acl		src/eBones/acl
 aclgen		ports/misc/aclgen
 acm		ports/games/acm
-acorn		ports/games/acorn
-acorn-media	ports/games/acorn-media
 acpi		src/usr.sbin/acpi
 acpicatools	ports/devel/acpicatools
 acpiconf	src/usr.sbin/acpi/acpiconf
@@ -7467,7 +7465,6 @@ ubench		ports/benchmarks/ubench
 ubh		ports/news/ubh
 ucblogo		ports/lang/logo
 ucl		ports/archivers/ucl
-uclient		ports/games/uclient
 uclmmbase	ports/devel/uclmmbase
 ucpp		ports/devel/ucpp
 ucspi-tcp	ports/sysutils/ucspi-tcp
