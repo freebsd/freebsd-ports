@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- lib/gs/src/tool_utils.erl.orig	Thu Sep  4 23:01:37 2003
-+++ lib/gs/src/tool_utils.erl	Fri Sep  5 00:16:20 2003
+--- lib/gs/src/tool_utils.erl.orig	Tue Oct 12 22:14:23 2004
++++ lib/gs/src/tool_utils.erl	Tue Oct 12 22:17:17 2004
 @@ -27,6 +27,9 @@
  -export([file_dialog/1]).
  -export([notify/2, confirm/2, confirm_yesno/2, request/2]).
@@ -13,28 +13,30 @@ $FreeBSD$
  %%----------------------------------------------------------------------
  %% open_help(GS, File)
  %%   GS = gsobj()  (GS root object returned by gs:start/0,1)
-@@ -51,7 +54,7 @@
- 	local ->
- 	    Cmd = case os:type() of
+@@ -65,7 +68,8 @@
+ 	      local ->
+ 		  case os:type() of
  		      {unix,_AnyType} ->
 -			  "netscape -remote \"openURL(file:" ++ File ++ ")\"";
 +			  unix_url_command("file:" ++ File);
- 
++
  		      {win32,_AnyType} ->
- 			  "start " ++ filename:nativename(File)
-@@ -62,7 +65,7 @@
- 	remote ->
- 	    Cmd = case os:type() of
+ 			  "start " ++ filename:nativename(File);
+ 
+@@ -77,7 +81,7 @@
+ 	      remote ->
+ 		  case os:type() of
  		      {unix,_AnyType} ->
 -			  "netscape -remote \"openURL(" ++ File ++ ")\"";
-+			  unix_url_command(File);
++			  unix_url_command("file:" ++ File);
  
  		      {win32,_AnyType} ->
- 			  "netscape.exe -h " ++ regexp:gsub(File,"\\\\","/")
-@@ -307,3 +310,54 @@
+ 			  "netscape.exe -h " ++ regexp:gsub(File,"\\\\","/");
+@@ -337,3 +341,54 @@
      [Last];
  insert_newlines(Other) ->
      Other.
++
 +
 +%% find_browser(BrowserList) => string() | false
 +%%   BrowserList - [string()]
@@ -61,28 +63,27 @@ $FreeBSD$
 +    Template = "BROWSER -remote \"openURL(" ++ URL ++ ")\" || BROWSER " ++ URL ++ "&",
 +
 +    case os:getenv("BROWSER") of
-+        false ->
-+            %% look for a compatible browser
-+            case find_browser(?BROWSERS) of
-+                false ->
-+                    "";
-+                Browser ->
-+                    case regexp:gsub(Template, "BROWSER", Browser) of
-+                        {ok, Command, 0} ->
-+                            %% Template does not contain "BROWSER" placeholder
-+                            "";
-+                        {ok, Command, _} ->
-+                            Command
-+                    end
-+            end;
++	false ->
++	    %% look for a compatible browser
++	    case find_browser(?BROWSERS) of
++		false ->
++		    "";
++		Browser ->
++		    case regexp:gsub(Template, "BROWSER", Browser) of
++			{ok, Command, 0} ->
++			    %% Template does not contain "BROWSER" placeholder
++			    "";
++			{ok, Command, _} ->
++			    Command
++		    end
++	    end;
 +
-+        Value ->
-+            case regexp:gsub(Template, "BROWSER", Value) of
-+                {ok, Command2, 0} ->
-+                    %% no placeholder
-+                    "";
-+                {ok, Command2, _} ->
-+                    Command2
-+            end
++	Value ->
++	    case regexp:gsub(Template, "BROWSER", Value) of
++		{ok, Command2, 0} ->
++		    %% no placeholder
++		    "";
++		{ok, Command2, _} ->
++		    Command2
++	    end
 +    end.
-+

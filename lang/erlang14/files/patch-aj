@@ -1,19 +1,9 @@
 
 $FreeBSD$
 
---- erts/etc/unix/Install.src.orig	Wed Mar  5 17:20:07 2003
-+++ erts/etc/unix/Install.src	Wed Mar  5 17:21:04 2003
-@@ -119,7 +119,8 @@
- sed -e "s;%EMU%;%EMULATOR%%EMULATOR_NUMBER%;" $ERL_ROOT/erts-%I_VSN%/bin/start_erl.src > start_erl
- chmod 755 start_erl
- 
--if [ -d $ERL_ROOT/lib/sasl* ]
-+set $ERL_ROOT/lib/sasl*
-+if [ -d $1 ]
- then
-     (cd $ERL_ROOT/releases
-      echo %I_VSN% %I_SYSTEM_VSN% > start_erl.data)
-@@ -193,4 +194,4 @@
+--- erts/etc/unix/Install.src.orig	Thu Oct  7 15:45:43 2004
++++ erts/etc/unix/Install.src	Thu Oct  7 15:45:59 2004
+@@ -157,4 +157,4 @@
      ./misc/format_man_pages $ERL_ROOT
  fi
  

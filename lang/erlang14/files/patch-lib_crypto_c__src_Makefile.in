@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- lib/crypto/c_src/Makefile.in.orig	Thu Oct  7 12:11:06 2004
++++ lib/crypto/c_src/Makefile.in	Thu Oct  7 12:11:07 2004
+@@ -121,7 +121,7 @@
+ release_spec: opt
+ 	$(INSTALL_DIR) $(RELSYSDIR)/priv/obj
+ 	$(INSTALL_DIR) $(RELSYSDIR)/priv/lib
+-	$(INSTALL_PROGRAM) $(DRV_MAKEFILE) $(RELSYSDIR)/priv/obj
++	$(INSTALL_DATA) $(DRV_MAKEFILE) $(RELSYSDIR)/priv/obj
+ 	$(INSTALL_PROGRAM) $(OBJS) $(RELSYSDIR)/priv/obj
+ 	$(INSTALL_PROGRAM) $(DYN_DRIVER) $(RELSYSDIR)/priv/lib
+ 

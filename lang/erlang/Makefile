@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	erlang
-PORTVERSION=	r9c2
-PORTREVISION=	1
+PORTVERSION=	r10b2
 PORTEPOCH=	1
 CATEGORIES=	lang parallel
-MASTER_SITES=	ftp://ftp.erlang.org/pub/download/     \
+MASTER_SITES=	http://www.erlang.org/download/        \
+		ftp://ftp.erlang.org/pub/download/     \
 		http://www.erlang.org/download/        \
 		http://erlang.stacken.kth.se/download/ \
 		http://www.csd.uu.se/ftp/mirror/erlang/download/
-DISTNAME=	otp_src_R9C-2
+DISTNAME=	otp_src_R10B-2
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${ERLANG_MAN} ${ERLANG_DOCS}
 DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -30,9 +31,9 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 JAVABINDIR?=	${LOCALBASE}/jdk1.4.2/bin
 JAVAPORT?=	${JAVABINDIR}/javac:${PORTSDIR}/java/jdk14
 
-ERLANG_MAN=     otp_man_R9C-2.tar.gz
+ERLANG_MAN=     otp_doc_man_R10B-2.tar.gz
 .if !defined(NOPORTDOCS)
-ERLANG_DOCS=	otp_html_R9C-2.tar.gz
+ERLANG_DOCS=	otp_doc_html_R10B-2.tar.gz
 .endif
 
 USE_GMAKE=	yes
@@ -104,13 +105,13 @@ pre-configure:
 # rest, not in share/doc/erlang as it should, because of relative
 # links in the documentation.
 post-install:
-	@for SCRIPT in ecc elink ear escript; do \
-		${REINPLACE_CMD} -e "s@ERLANG_EARS=.*@ERLANG_EARS=${LOCALBASE}/lib/erlang/erts-${ERTS_VSN}@" ${LOCALBASE}/bin/$${SCRIPT}; \
-	done
-		
-	@for SCRIPT in ecc elink; do \
-		${REINPLACE_CMD} -e "s@exec .*beam_evm@exec beam_evm@" ${LOCALBASE}/bin/$${SCRIPT}; \
-	done
+#	@for SCRIPT in ecc elink ear escript; do \
+#		${REINPLACE_CMD} -e "s@ERLANG_EARS=.*@ERLANG_EARS=${LOCALBASE}/lib/erlang/erts-${ERTS_VSN}@" ${LOCALBASE}/bin/$${SCRIPT}; \
+#	done
+
+#	@for SCRIPT in ecc elink; do \
+#		${REINPLACE_CMD} -e "s@exec .*beam_evm@exec beam_evm@" ${LOCALBASE}/bin/$${SCRIPT}; \
+#	done
 
 	@${LN} -sf ${LOCALBASE}/lib/erlang/lib/erl_interface-*/bin/erl_call ${LOCALBASE}/bin/erl_call
 	@${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \

@@ -1,32 +1,21 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Fri Dec 19 13:55:58 2003
-+++ Makefile.in	Sat Jun 26 20:25:23 2004
-@@ -534,14 +534,20 @@
+--- Makefile.in.orig	Tue Sep 14 13:46:54 2004
++++ Makefile.in	Thu Oct  7 14:36:38 2004
+@@ -528,14 +528,9 @@
  # Erlang base public files
  #
  install.bin:
 -	rm -f $(BINDIR)/erl $(BINDIR)/erlc \
 -	      $(BINDIR)/ecc $(BINDIR)/elink $(BINDIR)/ear $(BINDIR)/escript
-+	rm -f $(BINDIR)/erl $(BINDIR)/erlc $(BINDIR)/run_erl \
-+	      $(BINDIR)/to_erl $(BINDIR)/beam_evm $(BINDIR)/ear \
-+	      $(BINDIR)/ecc $(BINDIR)/elink $(BINDIR)/erlexec \
-+	      $(BINDIR)/escript
++	rm -f $(BINDIR)/erl $(BINDIR)/erlc
  	${LN_S} $(ERLANG_BINDIR)/erl      $(BINDIR)/erl
  	${LN_S} $(ERLANG_BINDIR)/erlc     $(BINDIR)/erlc
 -	${LN_S} $(ERLANG_BINDIR)/ecc      $(BINDIR)/ecc
 -	${LN_S} $(ERLANG_BINDIR)/elink    $(BINDIR)/elink
 -	${LN_S} $(ERLANG_BINDIR)/ear      $(BINDIR)/ear
 -	${LN_S} $(ERLANG_BINDIR)/escript  $(BINDIR)/escript
-+	${LN_S} $(ERLANG_BINDIR)/run_erl  $(BINDIR)/run_erl
-+	${LN_S} $(ERLANG_BINDIR)/to_erl   $(BINDIR)/to_erl
-+	${LN_S} $(ERLANG_ERTSBINDIR)/beam_evm $(BINDIR)/beam_evm
-+	${LN_S} $(ERLANG_ERTSBINDIR)/ear      $(BINDIR)/ear
-+	${LN_S} $(ERLANG_ERTSBINDIR)/ecc      $(BINDIR)/ecc
-+	${LN_S} $(ERLANG_ERTSBINDIR)/elink    $(BINDIR)/elink
-+	${LN_S} $(ERLANG_ERTSBINDIR)/erlexec  $(BINDIR)/erlexec
-+	${LN_S} $(ERLANG_ERTSBINDIR)/escript  $(BINDIR)/escript
  
  #
  # Directories needed before we can install
