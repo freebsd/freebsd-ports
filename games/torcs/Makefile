@@ -20,8 +20,7 @@ EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}			\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Open Racing Car Simulator
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib	\
-		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -34,7 +33,7 @@ CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	default
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lpub
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TARBALL=	${PORTNAME:U}-${PORTVERSION}
