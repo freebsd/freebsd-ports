@@ -23,6 +23,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu_mt.a:${PORTSDIR}/math/superlu_mt
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .endif
 
+BROKEN=		"Does not compile"
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
