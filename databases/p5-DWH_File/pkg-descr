@@ -1,0 +1,14 @@
+DWH_File is used in a similar manner to NDBM_File, DB_File etc. In fact it
+depends on one of these. DWH_File expands the functionality to save not
+only the hash that is tied but also all the data that this hash contains
+references to - that is it'll save all you list of lists and list of hashes
+and so forth. And what's more, it will save objects as well - if they'll
+comply with some very simple rules which don't impose any limitations to
+their functionality or structure except that they can't themselves be tied
+to anyone else. See the "Models" section of the embedded documentation for
+details.
+
+WWW:	http://www.orqwood.dk/perl5/dwh/
+
+- Michael Haro
+mharo@FreeBSD.org
