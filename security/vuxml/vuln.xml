@@ -43,22 +43,22 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <name>php4-horde</name>
         <name>php4-nms</name>
         <name>php4</name>
-        <range><le>4.3.10</le></range>
+        <range><lt>4.3.10</lt></range>
       </package>
       <package>
         <name>mod_php</name>
         <name>mod_php4</name>
-	<range><ge>4</ge><le>4.3.10</le></range>
+	<range><ge>4</ge><lt>4.3.10</lt></range>
       </package>
       <package>
         <name>php5</name>
         <name>php5-cgi</name>
         <name>php5-cli</name>
-        <range><le>5.0.3</le></range>
+        <range><lt>5.0.3</lt></range>
       </package>
       <package>
         <name>mod_php5</name>
-        <range><le>5.0.3,1</le></range>
+        <range><lt>5.0.3,1</lt></range>
       </package>
     </affects>
     <description>
