@@ -10,7 +10,7 @@ PKGNAMESUFFIX=		-xdps
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-WITH_GNUSTEP_XDPS=	yes
+WANT_GNUSTEP_XDPS=	yes
 MASTERDIR?=	${.CURDIR}/../gnustep-back
 
 .if exists(${.CURDIR}/Makefile.local)
