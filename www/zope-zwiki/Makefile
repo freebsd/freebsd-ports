@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	zwiki
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.4
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/simon/ZWiki/
+MASTER_SITES=	http://www.zope.org/Members/simon/ZWiki/ \
+		http://zwiki.org/zwikidir/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	ZWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
