@@ -3,7 +3,7 @@
 # Date created:				16 May 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1998/01/15 03:42:31 steve Exp $
+# $Id: Makefile,v 1.8 1998/09/19 22:45:41 steve Exp $
 #
 
 DISTNAME=	mpd-1.0b5
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/mpd/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
-
-OSVERSION!=	sysctl -n kern.osreldate
 
 WRKSRC=		${WRKDIR}/mpd-1.0b5/src
 ALL_TARGET=	depend all
