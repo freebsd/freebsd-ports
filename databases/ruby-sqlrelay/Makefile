@@ -43,6 +43,8 @@ do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
 	${RM} -f ${WRKSRC}/config.cache
+	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
+	${CP} ${TEMPLATES}/config.guess ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/sqlrelay.so ${RUBY_SITEARCHLIBDIR}/
