@@ -3,13 +3,14 @@
 # Date created:				2/22/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1999/04/08 19:05:46 billf Exp $
+# $Id: Makefile,v 1.15 1999/04/14 00:03:12 scrappy Exp $
 #
 
-DISTNAME=		PyGreSQL-2.3
-PKGNAME=		py-PyGreSQL-2.3
-CATEGORIES=		databases
-MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/
+DISTNAME=		PyGreSQL-2.4
+PKGNAME=		py-PyGreSQL-2.4
+CATEGORIES=		databases python
+MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/               \
+			http://www.nectar.cc/distfiles/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.ORG
