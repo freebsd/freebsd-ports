@@ -1,12 +1,37 @@
 bin/sapphire
 bin/sapphire.inst
-share/sapphire/README
+share/doc/sapphire/README
 share/sapphire/menu/default
-share/sapphire/themes/darkblue
-share/sapphire/themes/default
-share/sapphire/themes/slate
+share/sapphire/themes/atomic.theme
+share/sapphire/themes/backgrounds/atomic.jpg
+share/sapphire/themes/backgrounds/bevel.jpg
+share/sapphire/themes/backgrounds/blues.jpg
+share/sapphire/themes/backgrounds/dtheater.jpg
+share/sapphire/themes/backgrounds/klamath.jpg
+share/sapphire/themes/backgrounds/metal.jpg
+share/sapphire/themes/backgrounds/nocturne.jpg
+share/sapphire/themes/backgrounds/river.jpg
+share/sapphire/themes/backgrounds/sapphire.jpg
+share/sapphire/themes/backgrounds/slate.jpg
+share/sapphire/themes/backgrounds/synopsis.jpg
+share/sapphire/themes/bevel.theme
+share/sapphire/themes/blues.theme
+share/sapphire/themes/darkblue.theme
+share/sapphire/themes/default.theme
+share/sapphire/themes/dtheater.theme
+share/sapphire/themes/gray.theme
+share/sapphire/themes/klamath.theme
+share/sapphire/themes/metal.theme
+share/sapphire/themes/nocturne.theme
+share/sapphire/themes/river.theme
+share/sapphire/themes/rose.theme
+share/sapphire/themes/sapphire.theme
+share/sapphire/themes/slate.theme
+share/sapphire/themes/synopsis.theme
 share/sapphire/wmconfig/wmconf
-@dirrm share/sapphire/wmconfig
-@dirrm share/sapphire/themes
+@dirrm share/doc/sapphire
 @dirrm share/sapphire/menu
+@dirrm share/sapphire/themes/backgrounds
+@dirrm share/sapphire/themes
+@dirrm share/sapphire/wmconfig
 @dirrm share/sapphire
