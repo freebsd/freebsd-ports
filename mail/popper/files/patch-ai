@@ -1,5 +1,5 @@
-*** pop_dropcopy.c.orig	Tue Jun 30 21:54:41 1998
---- pop_dropcopy.c	Tue Jun 30 21:59:22 1998
+*** pop_dropcopy.c.orig	Wed Jul  1 00:06:43 1998
+--- pop_dropcopy.c	Wed Jul  1 00:16:07 1998
 ***************
 *** 471,478 ****
   		    *cp++ = '\n';
@@ -22,6 +22,29 @@
   	/* New UIDs do not dirty the mailspool if NO_STATUS is set.  They
   	   are just recalculated each time the popper is run or LMOS is
 ***************
+*** 483,491 ****
+  #endif
+  		}
+  
+! 	    } else if (CONTENT_LENGTH && !strncmp(buffer, "Content-Length:", 15)) {
+! 		cont_len = atoi(buffer + 15);
+! 		MD5Update(&mdContext,(unsigned char *)buffer,strlen(buffer));
+  		continue;	/* not part of the message size */
+  	    } else if (!uidl_found && (!strncasecmp("Received:", buffer, 9) ||
+  				       !strncasecmp("Date:", buffer, 5) ||
+--- 485,495 ----
+  #endif
+  		}
+  
+! 	    } else if (!strncmp(buffer, "Content-Length:", 15)) {
+! 		if (CONTENT_LENGTH) {
+! 		    cont_len = atoi(buffer + 15);
+! 		    MD5Update(&mdContext,(unsigned char *)buffer,strlen(buffer));
+! 		}
+  		continue;	/* not part of the message size */
+  	    } else if (!uidl_found && (!strncasecmp("Received:", buffer, 9) ||
+  				       !strncasecmp("Date:", buffer, 5) ||
+***************
 *** 504,511 ****
   		    if( (len = strlen(cp)) > MIN_UIDL_LENGTH && len < MAX_UIDL_LENGTH ) {
   			uidl_found++;
@@ -31,7 +54,7 @@
   		    }
   		}
   		continue;  /* Do not include this value in the message size */
---- 506,515 ----
+--- 508,517 ----
   		    if( (len = strlen(cp)) > MIN_UIDL_LENGTH && len < MAX_UIDL_LENGTH ) {
   			uidl_found++;
   			mp->uidl_str = (char *)strdup(cp);
@@ -52,7 +75,7 @@
   
   	/* New UIDs do not dirty the mailspool if NO_STATUS is set.  They
   	   are just recalculated each time the popper is run or LMOS is
---- 721,730 ----
+--- 723,732 ----
   		    *cp++ = '\n';
   		    *cp   = '\0';
   
@@ -64,6 +87,32 @@
   	/* New UIDs do not dirty the mailspool if NO_STATUS is set.  They
   	   are just recalculated each time the popper is run or LMOS is
 ***************
+*** 729,739 ****
+  #endif
+  		}
+  
+! 	    } else if (CONTENT_LENGTH && !strncmp(buffer, "Content-Length:", 15)) {
+! 		cont_len = atoi(buffer + 15);
+! 		MD5Update(&mdContext,(unsigned char *)buffer,strlen(buffer));
+  		continue;  /* Not included in message size */
+- 
+  	    } else if (!uidl_found && (!strncasecmp("Received:", buffer, 9) ||
+  				       !strncasecmp("Date:", buffer, 5) ||
+  				       !strncasecmp("Message-Id:",buffer, 11) ||
+--- 737,748 ----
+  #endif
+  		}
+  
+! 	    } else if (!strncmp(buffer, "Content-Length:", 15)) {
+! 		if (CONTENT_LENGTH) {
+! 		    cont_len = atoi(buffer + 15);
+! 		    MD5Update(&mdContext,(unsigned char *)buffer,strlen(buffer));
+! 		}
+  		continue;  /* Not included in message size */
+  	    } else if (!uidl_found && (!strncasecmp("Received:", buffer, 9) ||
+  				       !strncasecmp("Date:", buffer, 5) ||
+  				       !strncasecmp("Message-Id:",buffer, 11) ||
+***************
 *** 753,760 ****
   		    if( (len = strlen(cp)) > MIN_UIDL_LENGTH && len < MAX_UIDL_LENGTH ) {
   			uidl_found++;
@@ -73,7 +122,7 @@
   		    }
   		}
   		continue;  /* Do not include this value in the message size */
---- 759,768 ----
+--- 762,771 ----
   		    if( (len = strlen(cp)) > MIN_UIDL_LENGTH && len < MAX_UIDL_LENGTH ) {
   			uidl_found++;
   			mp->uidl_str = (char *)strdup(cp);
