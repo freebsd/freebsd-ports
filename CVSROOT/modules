@@ -4943,6 +4943,7 @@ libstroke	ports/devel/libstroke
 libsvg		ports/graphics/libsvg
 libsvg-cairo	ports/graphics/libsvg-cairo
 libsvm		ports/science/libsvm
+libsvm-python	ports/science/libsvm-python
 libsx		ports/x11/libsx
 libtai		ports/devel/libtai
 libtar		ports/devel/libtar
