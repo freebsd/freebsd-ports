@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Client-HTTP
-PORTVERSION=	0.39
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5 www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://poe.perl.org/poedown/
