@@ -1,0 +1,13 @@
+--- db_null.c.orig	Fri Feb 27 09:49:40 2004
++++ db_null.c	Fri Feb 27 09:51:14 2004
+@@ -48,9 +48,7 @@
+ char *a_username;
+ char *elapsed_time;char *bytes_in;char *bytes_out;
+ {
+-report(LOG_INFO,"Db accounting user=%s pass=%s host=%s 
+-db_name=%s table=%s servern=%s clientn=%s username=%s et=%s bi=%s bo=%s",db_user,db_password,db_hostname,
+-db_name,db_table,s_name,c_name,a_username,elapsed_time,bytes_in,bytes_out);
++report(LOG_INFO,"Db accounting user=%s pass=%s host=%s db_name=%s table=%s servern=%s clientn=%s username=%s et=%s bi=%s bo=%s",db_user,db_password,db_hostname, db_name,db_table,s_name,c_name,a_username,elapsed_time,bytes_in,bytes_out);
+ return (1);
+ }
+ #endif
