@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lfview
-PORTVERSION=	1.1.b3
+PORTVERSION=	1.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.geocities.co.jp/Playtown/6344/
-DISTNAME=	lfview11beta3
+MASTER_SITES=	http://hoshina.denpa.org/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	s974123@cc.matsuyama-u.ac.jp
