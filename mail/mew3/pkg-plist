@@ -1,7 +1,10 @@
+bin/incm
 bin/mewcat
 bin/mewdecode
 bin/mewencode
 bin/mewls
+@unexec install-info --delete %D/info/mew%%MEW_MAJOR_VER%%.info %D/info/dir
+@unexec install-info --delete %D/info/mew%%MEW_MAJOR_VER%%.jis.info %D/info/dir
 info/mew%%MEW_MAJOR_VER%%.info
 info/mew%%MEW_MAJOR_VER%%.info-1
 info/mew%%MEW_MAJOR_VER%%.info-2
@@ -9,6 +12,9 @@ info/mew%%MEW_MAJOR_VER%%.info-3
 info/mew%%MEW_MAJOR_VER%%.jis.info
 info/mew%%MEW_MAJOR_VER%%.jis.info-1
 info/mew%%MEW_MAJOR_VER%%.jis.info-2
+info/mew%%MEW_MAJOR_VER%%.jis.info-3
+@exec install-info %D/info/mew%%MEW_MAJOR_VER%%.info %D/info/dir
+@exec install-info %D/info/mew%%MEW_MAJOR_VER%%.jis.info %D/info/dir
 share/doc/mew%%MEW_MAJOR_VER%%/00api
 share/doc/mew%%MEW_MAJOR_VER%%/00changes
 share/doc/mew%%MEW_MAJOR_VER%%/00copyright
@@ -17,9 +23,6 @@ share/doc/mew%%MEW_MAJOR_VER%%/00diff
 share/doc/mew%%MEW_MAJOR_VER%%/00readme
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme-namazu.jis
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/README-mewinc.jis
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/incdir
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/incmbox
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-browse.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-caesar.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-fancy-summary.el
@@ -29,7 +32,6 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-refile-view.el
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-smime-ja.texi
 share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mewinc
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.img
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.png
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.xbm

@@ -19,7 +19,7 @@ MAINTAINER?=	kiri@FreeBSD.org
 MEW_MAJOR_VER?=	2
 
 # distfile version
-MEW_VER=	${MEW_MAJOR_VER}.1
+MEW_VER=	${MEW_MAJOR_VER}.2
 
 # document install directory by install-doc target
 MEW_DOCDIR?=	share/doc/${PORTNAME}${MEW_MAJOR_VER}
@@ -36,7 +36,7 @@ MAKE_ENV+=	EMACS_LIBDIR=${EMACS_LIBDIR} MEW_MAJOR_VER=${MEW_MAJOR_VER}
 PLIST_SUB+=	MEW_MAJOR_VER=${MEW_MAJOR_VER}
 
 # manuals
-MAN1=		mewcat.1 mewdecode.1 mewencode.1 mewls.1
+MAN1=		mewcat.1 mewdecode.1 mewencode.1 mewls.1 incm.1
 
 post-patch:
 	for f in mew-key.el info/mew.texi; do \
