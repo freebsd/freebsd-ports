@@ -1,12 +1,12 @@
 # New ports collection makefile for:        tirc IRC-Client
-# Version required:	1.2
 # Date created:		14 August 1999
 # Whom:			Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tirc-1.2
+PORTNAME=	tirc
+PORTVERSION=	1.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.mayn.de/pub/unix/software/Network/Irc/tirc/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for: 	Ninja-irc
-# Version required: 	1.1
 # Date created:	 	10 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME= 	ninja-1.1-src
-PKGNAME=	ninja-1.1
+PORTNAME=	ninja
+PORTVERSION=	1.1
 CATEGORIES=	irc
 MASTER_SITES=	http://ninja.qoop.org/ftp/ninja/unstable/
+DISTNAME= 	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	QuIRC
-# Version required:	0.9.79
 # Date created:		21 May 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	quirc-0.9.79
+PORTNAME=	quirc
+PORTVERSION=	0.9.79
 CATEGORIES=	irc tk82
 MASTER_SITES=	http://patearl.powersurfr.com/quirc/
 

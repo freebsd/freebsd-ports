@@ -1,12 +1,12 @@
 # New ports collection makefile for:	party
-# Version required:	2.12
 # Date created:		4 December 1999
 # Whom:			James Howard <howardj@wam.umd.edu>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	party-2.12
+PORTNAME=	party
+PORTVERSION=	2.12
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/party/ \
 		http://www.wam.umd.edu/~howardjp/software/party/ \

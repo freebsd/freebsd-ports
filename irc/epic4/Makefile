@@ -1,12 +1,12 @@
 # New ports collection makefile for: 	epic4
-# Version required:	4pre2.003
 # Date created:		11 November 1998
 # Whom:			Ben Hutchinson <benhutch@xfiles.org.uk>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	epic4-2000
+PORTNAME=	epic4
+PORTVERSION=	2000
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/EPIC4-BETA/ \
 		ftp://mirror.pipex.net/pub/epic/EPIC4-BETA/ \

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	IrcII Client
-# Version required:	4.4S
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ircii-4.4S
+PORTNAME=	ircii
+PORTVERSION=	4.4S
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ircftp.au.eterna.com.au/pub/ircII/
 
