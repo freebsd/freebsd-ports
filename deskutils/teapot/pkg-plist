@@ -1,5 +1,4 @@
 bin/teapot
-man/man1/teapot.1.gz
 share/doc/teapot/README.html
 share/doc/teapot/teapot.doc
 share/doc/teapot/teapot.html

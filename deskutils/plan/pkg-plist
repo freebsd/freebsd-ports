@@ -31,9 +31,6 @@ share/doc/plan/examples/holiday_us
 share/doc/plan/BlackWhite
 share/doc/plan/Monochrome
 share/doc/plan/README
-man/man1/netplan.1.gz
-man/man1/plan.1.gz
-man/man4/plan.4.gz
 @exec /bin/mkdir -p share/netplan.dir
 @dirrm share/netplan.dir
 @dirrm share/doc/plan/examples
