@@ -11,7 +11,7 @@ PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		# manual download
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		Cy.Schubert@uumail.gov.bc.ca
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
