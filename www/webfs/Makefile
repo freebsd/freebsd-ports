@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webfs
-PORTVERSION=	1.13
+PORTVERSION=	1.16
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://bytesex.org/misc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -25,6 +25,7 @@ BROKEN=		"Requires FreeBSD 4.x or greater due to ipv6 support"
 
 do-configure:
 	@${PERL} -pi.orig -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/Makefile
+	@${PERL} -pi.orig -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin
