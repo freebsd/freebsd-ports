@@ -4898,6 +4898,7 @@ messagewall	ports/mail/messagewall
 meta-cvs	ports/devel/meta-cvs
 metacity	ports/x11-wm/metacity
 metacity-theme-6nome	ports/x11-themes/metacity-theme-6nome
+metacity-theme-aero	ports/x11-themes/metacity-theme-aero
 metacity-themes	ports/x11-themes/metacity-themes
 metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
