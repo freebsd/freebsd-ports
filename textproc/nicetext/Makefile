@@ -8,7 +8,8 @@ PORTNAME=	nicetext
 PORTVERSION=	0.9
 PORTREVISION=	2
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.nicetext.com/pub/ctgi/nicetext/src/
+MASTER_SITES=	http://wiretapped.securax.org/security/steganography/nicetext/ \
+		http://www.nicetext.com/pub/ctgi/nicetext/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
