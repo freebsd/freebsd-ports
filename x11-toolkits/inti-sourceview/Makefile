@@ -19,7 +19,7 @@ COMMENT=	An Inti binding for GtkSourceView
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
 USE_GNOME=	gtksourceview gnomehack gnomeprefix
-WRKSRC=		${WRKDIR}/lib${PKGNAME}
+WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
