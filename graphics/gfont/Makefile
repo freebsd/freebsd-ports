@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
 		ftp://ftp.engelschall.com/sw/gfont/ \
 		http://www.hyperreal.org/software/engelschall/gfont/
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics Font - Create GIF image rendered with TeX-available Font
 
 RUN_DEPENDS=	mf:${PORTSDIR}/print/teTeX \

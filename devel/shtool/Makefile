@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ossp.org/pkg/tool/shtool/
 MASTER_SITE_SUBDIR=	shtool
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Portable Shell Tool
 
 USE_PERL5=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.9.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/str/
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic String Library
 
 HAS_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 USE_PERL5=	yes

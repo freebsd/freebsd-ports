@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.engelschall.com/sw/iselect/distrib/ \
 		ftp://ftp.engelschall.com/sw/iselect/
 
-MAINTAINER=	rse@engelschall.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive Selection Tool
 
 HAS_CONFIGURE=	yes
