@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbottler
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://callisto.comlab.soft.iwate-pu.ac.jp/~g031y177/etc/files/gbottler/
 
