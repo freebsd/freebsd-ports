@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.62 1998/12/14 02:48:24 obrien Exp $
+# $Id: Makefile,v 1.63 1998/12/14 20:03:28 jseger Exp $
 #
 
 DISTNAME=       ImageMagick-4.1.6
@@ -20,13 +20,13 @@ MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		mpeg.1:${PORTSDIR}/graphics/mpeg-lib \
 		tiff.4:${PORTSDIR}/graphics/tiff34 \
 		png.2:${PORTSDIR}/graphics/png \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		ttf.3:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
+		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		gs:${PORTSDIR}/print/ghostscript5
 
 MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 import.1 mogrify.1 montage.1 xtp.1
