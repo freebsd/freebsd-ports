@@ -14,7 +14,7 @@ MASTER_SITES=	http://download.sourceforge.net/aterm/
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
