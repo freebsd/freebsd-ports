@@ -14,10 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aidan@velvet.net
 
-BROKEN=		"Patch does not apply"
-
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
+WRKSRC=		${WRKDIR}/xmlada-0.7.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
