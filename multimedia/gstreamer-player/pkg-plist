@@ -14,6 +14,7 @@ lib/libgstplayer.so
 lib/libgstplayer.so.%%SHLIB_VERSION%%
 libdata/bonobo/servers/Gst-Player-Control.server
 libexec/gst-player-control
+%%GST_PLAYER_VIEW%%libexec/gst-player-view
 share/gnome/application-registry/gst-player.applications
 share/gnome/applications/gst-player.desktop
 share/gnome/gst-player/ui/demaximize.png
