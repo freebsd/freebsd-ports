@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.180 1998/12/26 17:19:27 sada Exp $
+# $Id: Makefile,v 1.181 1998/12/27 18:05:36 sada Exp $
 #
 
     SUBDIR += 221upgrade
@@ -32,6 +32,7 @@
     SUBDIR += gone
     SUBDIR += gtkfind
     SUBDIR += gyvescm
+    SUBDIR += Howto
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
