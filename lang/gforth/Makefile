@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	gforth
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	Fast and portable Forth system
 
+ONLY_FOR_ARCHS=	i386 amd64 ia64
+
 # Global variables
 #
 
@@ -69,19 +71,19 @@ post-install: install-doc install-el remove-empty-files remove-empty-dirs
 install-doc:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for filename in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}
 .endfor
 .endif
 
 install-el:
-.for file in ${EMACS_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EMACS_DIR}
+.for filename in ${EMACS_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${filename} ${EMACS_DIR}
 .endfor
 
 remove-empty-files:
-.for file in ${EMPTY_FILES}
-	@${RM} -f ${FORTH_DIR}/${file}
+.for filename in ${EMPTY_FILES}
+	@${RM} -f ${FORTH_DIR}/${filename}
 .endfor
 
 remove-empty-dirs:
