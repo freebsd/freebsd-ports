@@ -14,6 +14,7 @@
     SUBDIR += emu
     SUBDIR += eterm
     SUBDIR += fbsd-icons
+    SUBDIR += gmessage
     SUBDIR += gnome
     SUBDIR += gnomecore
     SUBDIR += gnomelibs
