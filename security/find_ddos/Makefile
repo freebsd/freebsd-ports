@@ -8,10 +8,10 @@
 
 PORTNAME=	find_ddos
 PORTVERSION=	4.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.nipc.gov/warnings/alerts/1999/ \
 		http://www.ucl.ac.uk/cert/tools/
-
 DISTNAME=	find_ddos_v42_linux
 EXTRACT_SUFX=	.tar.Z
 
@@ -26,7 +26,7 @@ do-build:
 	@brandelf -t Linux ${WRKSRC}/find_ddos
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/find_ddos ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/find_ddos ${PREFIX}/sbin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
