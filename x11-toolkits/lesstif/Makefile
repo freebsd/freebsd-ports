@@ -1,9 +1,9 @@
 # New ports collection makefile for:	lesstif
-# Version required:	0.78
+# Version required:	0.79
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.6 1997/05/24 08:45:05 obrien Exp $
+# $Id: Makefile,v 1.7 1997/05/26 01:58:15 asami Exp $
 #
 
 DISTNAME=	lesstif-0.79
