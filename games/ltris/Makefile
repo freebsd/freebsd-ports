@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	ltris
-PORTVERSION=	010310
+PORTVERSION=	1.0.1
+PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lgames
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LIBS="`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lcompat"
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -30,9 +30,7 @@ pre-patch:
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/${PORTNAME}
 	${CHMOD} 2755 ${PREFIX}/bin/${PORTNAME}
-.for N in 0 1 2
-	${CHMOD} 664 /var/games/${PORTNAME}/highscore.${N}
-	${CHOWN} root:games /var/games/${PORTNAME}/highscore.${N}
-.endfor
+	${CHMOD} 664 /var/games/${PORTNAME}/ltris.hscr
+	${CHOWN} root:games /var/games/${PORTNAME}/ltris.hscr
 
 .include <bsd.port.mk>

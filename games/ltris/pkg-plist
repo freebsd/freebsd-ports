@@ -1,23 +1,32 @@
 bin/ltris
-share/ltris/bkgnd0.bmp
-share/ltris/bkgnd1.bmp
-share/ltris/bkgnd2.bmp
-share/ltris/bkgnd3.bmp
-share/ltris/bkgnd4.bmp
-share/ltris/blocks.bmp
-share/ltris/click.wav
-share/ltris/explosion.wav
-share/ltris/f_white.bmp
-share/ltris/f_yellow.bmp
-share/ltris/font_s.sdlfnt
-share/ltris/leftright.wav
-share/ltris/logo.bmp
-share/ltris/quest.bmp
-share/ltris/stop.wav
-share/ltris/title.bmp
+share/ltris/figures
+share/ltris/gfx/back0.bmp
+share/ltris/gfx/back1.bmp
+share/ltris/gfx/back2.bmp
+share/ltris/gfx/back3.bmp
+share/ltris/gfx/back4.bmp
+share/ltris/gfx/back5.bmp
+share/ltris/gfx/balloon.bmp
+share/ltris/gfx/balloon_peek.bmp
+share/ltris/gfx/blocks.bmp
+share/ltris/gfx/f_small_white.bmp
+share/ltris/gfx/f_small_yellow.bmp
+share/ltris/gfx/f_tiny_black.bmp
+share/ltris/gfx/f_white.bmp
+share/ltris/gfx/f_yellow.bmp
+share/ltris/gfx/logo.bmp
+share/ltris/gfx/menuback.bmp
+share/ltris/gfx/quest.bmp
+share/ltris/sounds/click.wav
+share/ltris/sounds/excellent.wav
+share/ltris/sounds/explosion.wav
+share/ltris/sounds/leftright.wav
+share/ltris/sounds/motion.wav
+share/ltris/sounds/nextlevel.wav
+share/ltris/sounds/stop.wav
+@dirrm share/ltris/sounds
+@dirrm share/ltris/gfx
 @dirrm share/ltris
 @cwd /var/games
-ltris/highscore.0
-ltris/highscore.1
-ltris/highscore.2
+ltris/ltris.hscr
 @dirrm ltris
