@@ -78,7 +78,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>cyrus-imapd</name>
-	<range><le>2.2.8</le></range>
+	<range><le>2.1.16</le></range>
+	<range><ge>2.2.*</ge><le>2.2.8</le></range>
       </package>
     </affects>
     <description>
@@ -101,6 +102,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-06</discovery>
       <entry>2004-11-22</entry>
+      <modified>2004-11-24</modified>
     </dates>
   </vuln>
 
@@ -109,7 +111,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>cyrus-imapd</name>
-	<range><le>2.2.6</le></range>
+	<range><le>2.1.16</le></range>
+	<range><ge>2.2.*</ge><le>2.2.6</le></range>
       </package>
     </affects>
     <description>
@@ -135,6 +138,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-06</discovery>
       <entry>2004-11-22</entry>
+      <modified>2004-11-24</modified>
     </dates>
   </vuln>
 
