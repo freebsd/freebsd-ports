@@ -29,4 +29,8 @@ cd ${MOZDIR} || exit 1
 ./run-mozilla.sh ${REGCHROME} || true
 ./run-mozilla.sh ${FIREFOX} -register > /dev/null 2>&1
 
+if [ ! -d %%PREFIX%%/lib/browser_plugins ]; then
+    mkdir -p %%PREFIX%%/lib/browser_plugins
+fi
+
 exit 0

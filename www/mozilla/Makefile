@@ -267,7 +267,8 @@ post-patch:
 			s|mozilla-nspr|mozilla-nspr${MOZ_SUFX}${PKGNAMESUFFIX}|g' \
 			${WRKSRC}/build/unix/$${pcfile}.pc.in; \
 	done
-	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${MOZILLA}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}

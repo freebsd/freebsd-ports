@@ -126,6 +126,7 @@ post-extract::
 
 post-patch:
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FIREFOX}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${PREFIX}/lib/${FIREFOX}|g' \
