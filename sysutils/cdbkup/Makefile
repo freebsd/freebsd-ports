@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
 
 MAINTAINER=	kay_lehmann@web.de
-COMMENT=	Simple backup restore perl scripts (uses gnu tar)
+COMMENT=	Simple but full-featured backup/restore perl scripts (uses gnu tar)
 
 BUILD_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
