@@ -20,12 +20,17 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		gtar:${PORTSDIR}/archivers/gtar \
 		${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-jdk13 \
 		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif-devel
+.if !defined(WITHOUT_PLUGIN)
+RUN_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
+		gtk12.3:$(PORTSDIR)/x11-toolkits/gtk12 \
+		nspr4.1:$(PORTSDIR)/devel/nspr
+.endif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
-JDK_PATCHSET_VERSION=	5
+JDK_PATCHSET_VERSION=	6
 
 JDK13DIR?=	${LOCALBASE}/linux-jdk${JDK_VERSION}
 
@@ -39,7 +44,16 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 		CLASSPATH="" \
 		LD_LIBRARY_PATH="" \
 		JAVA_COMPILER=""
+.if !defined(WITHOUT_PLUGIN)
+MAKE_ENV +=	LIBG_HDRS="${LOCALBASE}/include/glib12" \
+		GTK_HDRS="${X11BASE}/include/gtk12" \
+		LIBIDL_HDRS=
+.endif
+.if !defined(WITHOUT_PLUGIN)
+ALL_TARGET=	all plugin images
+.else
 ALL_TARGET=	all images
+.endif
 TAR=		gtar	# Necessary for proper extraction of sources
 BSD_TAR=	/usr/bin/tar
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
@@ -52,6 +66,19 @@ PLIST_SUB+=	DEBUG:="@comment "
 PKGNAMESUFFIX=	-nodebug
 .else
 PLIST_SUB+=	DEBUG:=""
+.endif
+
+.if defined(WITH_NATIVE_THREADS)
+PLIST_SUB+=    NATIVE:=""
+MAKE_ARGS+=    HPIS="green native"
+.else
+PLIST_SUB+=    NATIVE:="@comment "
+.endif
+
+.if defined(WITHOUT_PLUGIN)
+PLIST_SUB+=    PLUGIN:="@comment "
+.else
+PLIST_SUB+=    PLUGIN:=""
 .endif
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
@@ -68,9 +95,16 @@ IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DI
 
 pre-patch:
 	@cd ${WRKDIR} &&  \
+		${CHMOD} -R u+w * &amp;&amp; \
 		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/bsd/jdk12 && \
 		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/solaris/navig5/private && \
 		${MKDIR} -p j2sdk1.3.1/src/bsd/doc/man && \
+		${MKDIR} -p hotspot1.3.1/build/bsd &amp;&amp; \
+		${MKDIR} -p hotspot1.3.1/build/bsd/makefiles &amp;&amp; \
+		${MKDIR} -p hotspot1.3.1/build/bsd/package &amp;&amp; \
+		${MKDIR} -p hotspot1.3.1/src/os/bsd/launcher &amp;&amp; \
+		${MKDIR} -p hotspot1.3.1/src/os/bsd/vm &amp;&amp; \
+		${MKDIR} -p hotspot1.3.1/src/os_cpu/bsd_i486/vm &amp;&amp; \
 			${PATCH} < ${WRKDIR}/jdk131.patches
 
 .if !defined(NODEBUG)
@@ -92,5 +126,17 @@ do-install:
 
 post-install:
 	${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
+.if !defined(WITHOUT_PLUGIN)
+	@${ECHO_MSG}
+	@${ECHO_MSG} The use the Java plugin with Mozilla you must create a
+	@${ECHO_MSG} symbolic link from
+	@${ECHO_MSG}
+	@${ECHO_MSG} ${PREFIX}/jdk${JDK_VERSION}/jre/plugin/i386/ns600/libjavaplugin_oji.so
+	@${ECHO_MSG}
+	@${ECHO_MSG} to your Mozilla plugins directory, which is usually found at
+	@${ECHO_MSG}
+	@${ECHO_MSG} ${X11BASE}/lib/mozilla/plugins
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>
