@@ -7,6 +7,7 @@
 
 PORTNAME=	ilohamail
 PORTVERSION=	0.8.13
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ilohamail
@@ -16,8 +17,15 @@ MAINTAINER=	tota@rtfm.jp
 COMMENT=	IlohaMail is a lightweight multilingual webmail program
 
 NO_BUILD=	yes
-USE_PHP=	yes
+USE_PHP=	pcre
 WANT_PHP_WEB=	yes
+
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
+.endif
 
 .if !defined(WITHOUT_WWWDIR)
 ILOHADIR=	${PREFIX}/www/ilohamail
@@ -28,12 +36,19 @@ ILOHADIR=	${PREFIX}/ilohamail
 PLIST_SUB+=	ILOHADIR="${ILOHADIR:S,^${PREFIX}/,,}"
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "  define WITHOUT_MYSQL: not to use MySQL back-end"
+	@${ECHO_MSG} ""
+
 do-install:
 	@${MKDIR} ${ILOHADIR}
 	${CP} -Rp ${WRKSRC}/IlohaMail/ ${ILOHADIR}
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${ILOHADIR}/data
+.if !defined(WITHOUT_MYSQL)
 	@${MKDIR} ${DATADIR}
 	${CP} -Rp ${WRKSRC}/MySQL ${DATADIR}
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}; ${CP} -Rp INSTALL README RELEASE_NOTES \
