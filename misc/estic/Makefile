@@ -26,9 +26,9 @@ AUTHOR=			"Ullrich von Bassewitz" <uz@ibb.schwaben.com>
 # Personal Preferences, Where to install.
 PBX_VAR=${PREFIX}/var/log/pbx
 PBX_ETC=${PREFIX}/etc/pbx
-PBX_MAN=${PREFIX}/man/man1
+PBX_MAN=${MANPREFIX}/man/man1
 PBX_BIN=${PREFIX}/bin
-PBX_DOC=${PREFIX}/share/doc/estic
+PBX_DOC=${DOCSDIR}
 ESTIC=${WRKSRC}/estic
 MAKE_E= make X11BASE=${X11BASE} -f make/freebsd${X_OR_NOT}.mak
 

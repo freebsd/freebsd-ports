@@ -17,6 +17,10 @@ COMMENT=	GNU diction and style
 
 USE_AUTOCONF=	yes
 
+PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
+		share/diction/en
+PLIST_DIRS=	share/diction
+
 MAN1=		diction.1 style.1
 
 .include <bsd.port.mk>

@@ -1,6 +1,0 @@
-bin/diction
-bin/style
-share/diction/C
-share/diction/de
-share/diction/en
-@dirrm share/diction
