@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20030928
+PORTVERSION=	20030930
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -29,7 +29,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
+CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--disable-clamav --enable-bigstack
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	${PTHREAD_LIBS}
@@ -39,11 +39,11 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1 clamav-milter.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8
 
-CLAMAVUSER?=    clamav
-CLAMAVGROUP?=   clamav
+CLAMAVUSER?=	clamav
+CLAMAVGROUP?=	clamav
 
-PLIST_SUB+=     CLAMAVUSER="${CLAMAVUSER}"
-PLIST_SUB+=     CLAMAVGROUP="${CLAMAVGROUP}"
+PLIST_SUB+=	CLAMAVUSER="${CLAMAVUSER}"
+PLIST_SUB+=	CLAMAVGROUP="${CLAMAVGROUP}"
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g'
@@ -85,10 +85,6 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|clamav.conf|&.default|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
 		${CONFIGURE_WRKSRC}/etc/Makefile.in
-.ifdef USE_LIBTOOL_VER
-	@${REINPLACE_CMD} -e '/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 
 post-build:
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
@@ -96,7 +92,7 @@ post-build:
 
 pre-install:
 	 ${SETENV} PKG_PREFIX=${PREFIX} \
-                ${SH} ${PKGINSTALL} ${PREFIX}
+		${SH} ${PKGINSTALL} ${PREFIX}
 
 post-install:
 	@[ -f ${PREFIX}/etc/clamav.conf ] || \
