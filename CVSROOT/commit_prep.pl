@@ -97,7 +97,7 @@ sub write_line {
 
 sub check_version {
 	local($id, $rname, $version, $bareid, $exclude, $path);
-	local($filename, $directory, $hastag, $cvsversion) = @_;
+	local($filename, $directory, $hastag, %cvsversion) = @_;
 
 	if (! -f $filename) {
 		return(0);	# not present - either removed or let
@@ -245,7 +245,7 @@ if ($check_id != 0) {
 		next if ($check_id == 2 && $arg ne "Makefile");
 		next if ($check_id == 3 && $hastag);
 		$failed += &check_version($arg, $directory, $hastag,
-		    $cvsversion);
+		    %cvsversion);
 	}
 	if ($failed) {
 		print "\n";
