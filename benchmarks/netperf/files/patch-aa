@@ -20,28 +20,11 @@
   # The compiler on your system might be somewhere else, and/or have
   # a different name.
 ***************
-*** 36,42 ****
-  # You may safely ignore that warning.
-  #
-  
-! CC = cc
-  
-  # Adding flags to CFLAGS enables some non-mainline features. For
-  # more information, please consult the source code.
---- 36,42 ----
-  # You may safely ignore that warning.
-  #
-  
-! CC = cc -Wall
-  
-  # Adding flags to CFLAGS enables some non-mainline features. For
-  # more information, please consult the source code.
-***************
 *** 83,89 ****
   # -U__hpux    - Use this when compiling _on_ HP-UX *for* an HP-RT system
   
   LOG_FILE=DEBUG_LOG_FILE="\"/tmp/netperf.debug\""
-! CFLAGS = -O -Ae -D$(LOG_FILE) -DUSE_LOOPER 
+! CFLAGS = -O -D$(LOG_FILE) -DUSE_LOOPER
   
   # Some platforms, and some options, require additional libraries.
   # you can add to the "LIBS =" line to accomplish this. if you find
