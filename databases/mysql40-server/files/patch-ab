@@ -1,6 +1,6 @@
---- scripts/mysql_install_db.sh.orig	Tue Feb 17 13:18:22 1998
-+++ scripts/mysql_install_db.sh	Thu Mar  5 11:16:28 1998
-@@ -3,24 +3,12 @@
+--- scripts/mysql_install_db.sh.orig	Mon Jun 29 17:30:30 1998
++++ scripts/mysql_install_db.sh	Fri Aug 14 17:30:19 1998
+@@ -3,7 +3,6 @@
  # For a more info consult the file COPYRIGHT distributed with this file
  
  # This scripts creates the privilige tables db, host, user in mysql
@@ -8,24 +8,26 @@
  #
  # All arguments to this script is passed to safe_mysqld
  
+@@ -27,18 +26,9 @@
+ 
  if test ! -x @bindir@/mysqladmin
  then
-   echo "Can't execute @bindir@/mysqladmin"
 -  if test "@localstatedir@" = "./data"
 -  then
+-    echo "Can't execute @bindir@/mysqladmin"
 -    echo "You should be in the distribution directory when executing this script"
+-    echo "Please go to the directory where you unpacked this distribution"
+-    echo "and start this script with 'scripts/mysql_install_db'"
+-    exit 1
 -  else
--    echo "You should do a 'make install' before executing this script"
+     echo "Didn't find @bindir@/mysqladmin"
+     echo "You should do a 'make install' before executing this script"
+     exit 1
 -  fi
--  exit 1
--fi
--if test ! -d "./data"
--then
--  echo "You should be in the distribution directory when executing this script"
-   exit 1
  fi
  
-@@ -78,10 +66,7 @@
+ if test -f @localstatedir@/mysql/db.ISM
+@@ -105,10 +95,7 @@
  
  # copy the definition files
  #
@@ -37,7 +39,7 @@
  
  @bindir@/mysql mysql <<END_OF_DATA
  # Create tables from the .frm files
-@@ -122,11 +107,7 @@
+@@ -149,11 +136,7 @@
    echo
    echo "PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !"
    echo
