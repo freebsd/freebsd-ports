@@ -32,6 +32,7 @@ share/doc/rrdtool/rrdresize.pod
 share/doc/rrdtool/rrdcgi.pod
 share/doc/rrdtool/rrdtutorial.pod
 share/doc/rrdtool/rrdtutorial.es.pod
+share/doc/rrdtool/rrdxport.pod
 share/doc/rrdtool/rrdtool.txt
 share/doc/rrdtool/rrdinfo.txt
 share/doc/rrdtool/rrdlast.txt
@@ -51,6 +52,7 @@ share/doc/rrdtool/rrdtutorial.txt
 share/doc/rrdtool/rrdtutorial.es.txt
 share/doc/rrdtool/RRDs.txt
 share/doc/rrdtool/RRDp.txt
+share/doc/rrdtool/rrdxport.txt
 share/doc/rrdtool/html/rrdtool.html
 share/doc/rrdtool/html/rrdinfo.html
 share/doc/rrdtool/html/rrdlast.html
@@ -70,6 +72,7 @@ share/doc/rrdtool/html/rrdtutorial.html
 share/doc/rrdtool/html/rrdtutorial.es.html
 share/doc/rrdtool/html/RRDs.html
 share/doc/rrdtool/html/RRDp.html
+share/doc/rrdtool/html/rrdxport.html
 lib/perl5/site_perl/%%PERL_VER%%/RRDp.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RRDp/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/RRDs.pm
