@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.3.5
-PORTREVISION=	1
+PORTVERSION=	1.3.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
@@ -60,7 +59,7 @@ CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
 
 .if ${MACHINE_ARCH:L} == alpha
-CONFIGURE_ARGS+=	--english-only
+CONFIGURE_ARGS+=	--enable-langs no
 .endif
 
 pre-configure:
