@@ -171,6 +171,7 @@
     SUBDIR += sslproxy
     SUBDIR += sslwrap
     SUBDIR += sst
+    SUBDIR += stegdetect
     SUBDIR += steghide
     SUBDIR += strobe
     SUBDIR += stunnel

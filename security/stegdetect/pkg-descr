@@ -1,0 +1,11 @@
+Stegdetect is an automated tool for detecting steganographic content
+in images. It is capable of detecting severval different
+steganographic methods to embed hidden information in JPEG images.
+Currently, the detectable schemes are:
+
+* jsteg
+* jphide (unix and windows)
+* invisible secrets
+* outguess 01.3b
+
+WWW: http://www.outguess.org/detection.html
