@@ -31,10 +31,18 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 #WITH_MYSQL=	yes
 #WITH_PAM=	yes
 
-# If WITH_PAM==yes then one or more of PAM_CRAM_MD5 and PAM_PLAINTEXT
+# If WITH_PAM is defined then one or more of PAM_CRAM_MD5 and PAM_PLAINTEXT
 # must be left uncommented.
 PAM_CRAM_MD5=	yes
 PAM_PLAINTEXT=	yes
+
+# Uncommment the WITH_LDAP definition to enable LDAP lookups (requires
+# the openldap port.
+#WITH_LDAP=	yes
+
+# If WITH_LDAP is defined, LDAP_LIB_TYPE must be one of UMICHIGAN,
+# NETSCAPE or SOLARIS7.
+LDAP_LIB_TYPE=UMICHIGAN
 
 # Uncomment to compile support for non-standard mailbox formats.
 #WITH_MAILDIR=	yes
@@ -49,8 +57,6 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 SEDLIST+=	-e 's/^EXIM_MONITOR/\#EXIM_MONITOR/'
 .endif
 
-# BROKEN: the WITH_LDAP stuff will not work until the openldap port
-# builds a shared liblber.
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -llber -lldap,' \
