@@ -9,8 +9,8 @@
 -LDFLAGS=-L$(QTDIR)/lib -lqt
 +CC?=gcc
 +CXX?=g++
-+INCLUDES=-I$(X11BASE)/include/ ${PTHREAD_CFLAGS}
-+LDFLAGS=-L$(X11BASE)/lib -lqt-mt ${PTHREAD_LIBS}
++INCLUDES=${QTCPPFLAGS}
++LDFLAGS=${QTCFGLIBS} -lqt-mt
  VERSION=1.2
  
  # For systems that don't have install, use this
