@@ -21,7 +21,7 @@ COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-MANLANG=	"" fr
+MANLANG=	""
 
 post-patch:
 	@${REINPLACE_CMD} -e '/SILENT/d' \
