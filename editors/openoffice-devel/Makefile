@@ -35,7 +35,7 @@ NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
-ADEBAS=		soa-5_2-ga-bin-linux-en.bin
+LD_PATH=	${TMPDIR}:${WRKSRC}:/compat/linux/lib:/compat/linux/usr/lib
 
 .include <bsd.port.pre.mk>
 
@@ -96,24 +96,23 @@ do-install:
 	@ ${ECHO}
 	@ ${FALSE}
 .else
-.if exists(/compat/linux/usr/local)
-	@${LN} -fs /compat/linux/usr/local/office52 ${PREFIX}/office52
+.if exists(/compat/linux/${PREFIX})
+	@${LN} -fs /compat/linux/${PREFIX}/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
-	@LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${TMPDIR}:${WRKSRC}:/compat/linux/lib:/compat/linux/usr/lib
-	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
-.if exists(/usr/local/office52/program/setup)
-	@ ${ECHO}
-	@ ${ECHO} Ignore the error-message. StarOffice5.2 has been installed
-	@ ${ECHO} successfully on your system.
-	@ ${ECHO}
-.else
-	@ ${ECHO}
-	@ ${ECHO} An error occured during StarOffice5.2 install. Please send a mail with debug-output and
-	@ ${ECHO} some information about your FreeBSD-environment to mb@imp.ch. Thanks.
-	@ ${ECHO}
-	@ ${FALSE}
-.endif
+	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
+	@if [ -f ${PREFIX}/office52/program/setup ]; then \
+		${ECHO} ; \
+		${ECHO} Ignore the error-message. StarOffice5.2 has been installed ; \
+		${ECHO} successfully on your system. ; \
+		${ECHO} ; \
+	else \
+		${ECHO} ; \
+		${ECHO} An error occured during StarOffice5.2 install. Please send a mail with debug-output and ; \
+		${ECHO} some information about your FreeBSD-environment to mb@imp.ch. Thanks. ; \
+		${ECHO} ; \
+		${FALSE} ; \
+	fi
 .endif
 
 post-install:

@@ -30,7 +30,7 @@ NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp
-ADEBAS=		soa-5_2-ga-bin-linux-de.bin
+LD_PATH=	${TMPDIR}:${WRKSRC}:/compat/linux/lib:/compat/linux/usr/lib
 
 .include <bsd.port.pre.mk>
 
@@ -91,16 +91,23 @@ do-install:
 	@ ${ECHO}
 	@ ${FALSE}
 .else
-.if exists(/compat/linux/usr/local)
-	@${LN} -fs /compat/linux/usr/local/office52 ${PREFIX}/office52
+if exists(/compat/linux/${PREFIX})
+	@${LN} -fs /compat/linux/${PREFIX}/office52 ${PREFIX}/office52
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
-	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
-	@ ${ECHO}
-	@ ${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.2 wurde erfolgreich
-	@ ${ECHO} auf Ihrem System installiert.
-	@ ${ECHO}
-.endif
+	@-SAL_IGNOREXERRORS=1 TEMP=${TMPDIR} LD_LIBRARY_PATH=${LD_PATH} /compat/linux/bin/sh -c '${WRKSRC}/setup /net'
+	@if [ -f ${PREFIX}/office52/program/setup ]; then \
+		${ECHO} ; \
+		${ECHO} Ignorieren Sie die Fehlermeldung. StarOffice5.2 wurde erfolgreich ; \
+		${ECHO} auf Ihrem System installiert. ; \
+		${ECHO} ; \
+	.else \
+		${ECHO} ; \
+		${ECHO} Während Ihrer StarOffice5.2 Installation ist ein Fehler aufgetreten. ; \
+		${ECHO} Bitte schicken Sie ein Mail mit dem Fehlerbeschrieb an mb@imp.ch. Danke ; \
+		${ECHO} ; \
+		${FALSE} ; \
+	.endif
 
 post-install:
 	@${PATCH} -s ${PREFIX}/office52/program/setup ${FILESDIR}/setup.patch
