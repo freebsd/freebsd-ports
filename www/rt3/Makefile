@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rt3
-PORTVERSION?=	3.0.4
+PORTVERSION?=	3.0.5
 CATEGORIES=	www
 MASTER_SITES?=	http://www.fsck.com/pub/rt/release/ \
 		http://www.fsck.com/pub/rt/devel/ \
