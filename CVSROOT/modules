@@ -7737,6 +7737,7 @@ symlinks	ports/sysutils/symlinks
 synaesthesia	ports/graphics/synaesthesia
 syncal		ports/palm/syncal
 synce-dccm	ports/palm/synce-dccm
+synce-librapi2	ports/palm/synce-librapi2
 synce-libsynce	ports/palm/synce-libsynce
 synce-serial	ports/palm/synce-serial
 syncmal		ports/palm/syncmal
