@@ -7,10 +7,11 @@
 
 PORTNAME=		vmd
 PORTVERSION=		1.8.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		science graphics python tcl84 tk84
-MASTER_SITES=		#
-DISTFILES=		${PORTNAME}-${PORTVERSION}.src.tar.gz
+MASTER_SITES=		http://jedi.ks.uiuc.edu/~johns/raytracer/files/0.96/ \
+			ftp://ftp.ebi.ac.uk/pub/software/unix/stride/src/
+DISTFILES=		${VMD_DIST} ${TACHYON_DIST} ${STRIDE_DIST}
 
 MAINTAINER=		stephen@math.missouri.edu
 COMMENT=		A molecular visualization program
@@ -27,16 +28,19 @@ USE_GL=			yes
 USE_PYTHON=		yes
 USE_REINPLACE=		yes
 
-# I.A.N.A.L. so this may be overly restrictive.
 NO_PACKAGE=		"License has restrictions"
 NO_CDROM=		"License has restrictions"
 RESTRICTED=		"License has restrictions"
 
+VMD_DIST=		${PORTNAME}-${PORTVERSION}.src.tar.gz
+TACHYON_DIST=		tachyon-0.96.tar.gz
+STRIDE_DIST=		stride.tar.gz
+
 .include <bsd.port.pre.mk>
 
 # Check for VMD sources
-.if !exists(${DISTDIR}/${DISTFILES}) # && !defined(PACKAGE_BUILDING)
-ECHO_MSG=	/usr/bin/printf
+.if !exists(${DISTDIR}/${VMD_DIST}) # && !defined(PACKAGE_BUILDING)
+ECHO_MSG=	${PRINTF}
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
 manually.  Please access\n\
@@ -44,8 +48,15 @@ http://www.ks.uiuc.edu/Development/Download/download.cgi?PackageName=VMD\n\
 with a web browser.  You will be required to log in and register,\n\
 but you can create an account on this page.  After registration and\n\
 accepting the University of Illinois agreement, download the source file,\n\
-${DISTFILES}.  Please place this file in ${DISTDIR}.\n
+${VMD_DIST}.  Please place this file in ${DISTDIR}.\n
 .endif
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	cd ${WRKDIR} && ${TAR} xfz ${DISTDIR}/${VMD_DIST}
+	cd ${WRKSRC}/lib/surf && ${TAR} xfz surf.tar.Z
+	cd ${WRKSRC}/lib && ${TAR} xfz ${DISTDIR}/${TACHYON_DIST}
+	cd ${WRKSRC}/lib/stride && ${TAR} xfz ${DISTDIR}/${STRIDE_DIST}
 
 post-patch:
 	${REINPLACE_CMD} "s/-lpthread/${PTHREAD_LIBS}/" ${WRKSRC}/configure
@@ -55,11 +66,15 @@ post-patch:
 	${REINPLACE_CMD} "s/python2.2/${PYTHON_VERSION}/" ${WRKSRC}/configure
 
 do-build:
+	cd ${WRKSRC}/lib/tachyon/unix && ${SETENV} ${MAKE_ENV} ${GMAKE} bsd && ${MV} ../compile/bsd/tachyon ../tachyon_FREEBSD
 	cd ${WRKDIR}/plugins && ${SETENV} ${MAKE_ENV} PLUGINDIR=${WRKSRC}/plugins ${GMAKE} FREEBSD distrib
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} TCL_INCLUDE_DIR=${PREFIX}/include/tcl8.4 TK_INCLUDE_DIR=${PREFIX}/include/tk8.4 ${GMAKE} freebsd.opengl
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} all
+	cd ${WRKSRC}/lib/surf && ${SETENV} ${MAKE_ENV} ${GMAKE} depend && ${SETENV} ${MAKE_ENV} ${GMAKE} surf && ${MV} surf surf_FREEBSD
+	cd ${WRKSRC}/lib/stride && ${SETENV} ${MAKE_ENV} ${GMAKE} && ${MV} stride stride_FREEBSD
 
 do-install:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} install
+#	cd ${WRKSRC}/lib/surf && ${INSTALL_PROGRAM} surf_FREEBSD ${PREFIX}/lib/vmd
 
 .include <bsd.port.post.mk>

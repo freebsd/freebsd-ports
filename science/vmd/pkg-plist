@@ -4,6 +4,9 @@ lib/vmd/Announcement
 lib/vmd/README
 lib/vmd/LICENSE
 lib/vmd/vmd_FREEBSD
+lib/vmd/surf_FREEBSD
+lib/vmd/stride_FREEBSD
+lib/vmd/tachyon_FREEBSD
 lib/vmd/scripts/CVS/Root
 lib/vmd/scripts/CVS/Repository
 lib/vmd/scripts/CVS/Entries
