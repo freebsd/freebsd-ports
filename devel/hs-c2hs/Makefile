@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	hs-
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
+RUN_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
