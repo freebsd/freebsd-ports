@@ -452,7 +452,7 @@ collect_stats()
 #if (__FreeBSD_version >= 300003) /* ?? */
     mib[1] = MNT_EXPORTED;
 #else
-    mib[1] = MNT_NFS;
+    mib[1] = MOUNT_NFS;
 #endif
     mib[2] = NFS_NFSSTATS;
 
