@@ -22,6 +22,13 @@ WRKSRC=		${WRKDIR}/telnetx
 MAN1=		telnetx.1
 ALL_TARGET=	bsdi
 
+.if !exists(/usr/lib/libtelnet.a)
+IGNORE=	"You need to make libtelnet first, which can be done in /usr/src/lib/libtelnet"
+.if !exists(/usr/src/lib/libtelnet)
+IGNORE+=". Oh dear, you don\'t have the sources installed neither"
+.endif
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/telnet/telnet ${PREFIX}/bin/telnetx
 	${INSTALL_PROGRAM} ${WRKSRC}/transit/transit ${PREFIX}/bin/transit
