@@ -6,21 +6,26 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.70
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.71
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.72
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.73
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_queries.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup_new.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup_new_trigger.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/b.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/runtest
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.65
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.70
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.71
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.72
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.73
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_queries.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_new.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_new_trigger.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_old.sql
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plp
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plt
