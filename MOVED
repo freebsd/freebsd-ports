@@ -1350,3 +1350,4 @@ japanese/estraier|textproc/estraier|2004-12-11|accurate category
 math/gnumeric2|math/gnumeric|2004-12-11|renamed to gnumeric
 chinese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
 japanese/gnumeric|math/gnumeric|2004-12-11|obsoleted by gtk2 version
+sysutils/bacula|sysutils/bacula-server|2004-12-12|split into client and server
