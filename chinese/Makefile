@@ -13,7 +13,6 @@
     SUBDIR += bg5ps
     SUBDIR += big5con
     SUBDIR += c2t
-    SUBDIR += cdict
     SUBDIR += celvis
     SUBDIR += chinput
     SUBDIR += cless
@@ -35,6 +34,7 @@
     SUBDIR += pine3
     SUBDIR += pine4
     SUBDIR += rxvt
+    SUBDIR += stardict
     SUBDIR += ted
     SUBDIR += telnet
     SUBDIR += tin
