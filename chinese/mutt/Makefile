@@ -10,10 +10,10 @@ MASTERDIR=	${.CURDIR}/../../mail/mutt
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
-EXTRA_PATCHES=	${.CURDIR}/patches/patch-init.h  \
-		${.CURDIR}/patches/patch-parse.c  \
-		${.CURDIR}/patches/patch-pgp.c  \
-		${.CURDIR}/patches/patch-sendlib.c 
+EXTRA_PATCHES=	${.CURDIR}/files/patch-init.h  \
+		${.CURDIR}/files/patch-parse.c  \
+		${.CURDIR}/files/patch-pgp.c  \
+		${.CURDIR}/files/patch-sendlib.c 
 
 .include "${MASTERDIR}/Makefile"
 
