@@ -9512,6 +9512,7 @@ vpce		ports/emulators/vpce
 vpnc		ports/security/vpnc
 vpnd		ports/security/vpnd
 vpopmail	ports/mail/vpopmail
+vpopmail-devel	ports/mail/vpopmail-devel
 vpopmail-stable	ports/mail/vpopmail-stable
 vqadmin		ports/mail/vqadmin
 vqregister	ports/mail/vqregister
