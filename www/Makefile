@@ -338,6 +338,7 @@
     SUBDIR += p5-Flash-FLAP
     SUBDIR += p5-GtkHTML
     SUBDIR += p5-HTML
+    SUBDIR += p5-HTML-Breadcrumbs
     SUBDIR += p5-HTML-CalendarMonthSimple
     SUBDIR += p5-HTML-Clean
     SUBDIR += p5-HTML-Element-Extended

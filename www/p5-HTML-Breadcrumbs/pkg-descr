@@ -1,0 +1,20 @@
+HTML::Breadcrumbs
+=================
+
+HTML::Breadcrumbs is a module used to create HTML 'breadcrumb trails'
+i.e. an ordered set of html links locating the current page within
+a hierarchy.
+
+HTML::Breadcrumbs splits the given path up into a list of elements,
+derives labels to use for each of these elements, and then renders
+this list as N-1 links using the derived label, with the final
+element being just a label.
+
+Both procedural and object-oriented interfaces are provided. The OO
+interface is useful if you want to separate object creation and
+initialisation from rendering or display, or for subclassing.
+
+Both interfaces allow you to munge the path in various ways, to set
+labels either explicitly via a hashref or via a callback subroutine,
+and to control the formatting of elements via sprintf patterns or a
+callback subroutine.
