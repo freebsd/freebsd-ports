@@ -16,7 +16,7 @@ standard text format or gzip compressed.
 Keywords:      Web Analysis, Log Analysis, Usage Statistics, Linux, Unix 
 Author:        Bradford L. Barrett 
 Maintained-by: Bradford L. Barrett 
-WWW: http://www.mrunix.net/webalizer/ 
+WWW: http://www.mrunix.net/webalizer/
 Alternate-site:http://samhain.unix.cslab.tuwien.ac.at/webalizer/
 FTP: ftp://www.mrunix.net/pub/webalizer/
 Platforms:     Linux, SCO, other UNIX's 
