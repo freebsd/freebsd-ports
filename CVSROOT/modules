@@ -73,6 +73,7 @@ AbiWord		ports/editors/AbiWord
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
 Coin		ports/graphics/Coin
+DarwinStreamingServer	ports/net/DarwinStreamingServer
 ETHOberonV4	ports/lang/ETHOberonV4
 EZWGL		ports/graphics/EZWGL
 ElectricFence	ports/devel/ElectricFence
