@@ -1,16 +1,11 @@
-portaudit provides a list of published security vulnerabilities
-of FreeBSD ports and tools to check if installed ports are listed.
+portaudit provides a system to check if installed ports are listed in a 
+database of published security vulnerabilities.
 
-After installation it will update the security database automatically
-and include its reports in the output of the daily security run.
+After installation it will update this security database automatically and 
+include its reports in the output of the daily security run.
 
-Since this is a prerelease version, it is mostly usable for
-committers that want to contribute to the project, and can currently
-not be relied upon as an extensive security auditing tool.
-
-Credits go to Roland Dowdeswell <elric@NetBSD.org> and Bill
-Sommerfeld <sommerfeld@NetBSD.org> for the idea and Alistair
-Crooks <agc@NetBSD.org>  for the initial implementation.
+Since this system is in development it can currently not be relied upon as an 
+extensive security auditing tool.
 
 WWW: http://sourceforge.net/projects/portaudit/
 

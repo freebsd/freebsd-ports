@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	security
 DISTFILES=
 
 MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Checks installed ports against a list of security vulnerabilities
+
+MAN1=		portaudit.1
 
 PERIODICDIR?=	${PREFIX}/etc/periodic
 DATABASEDIR?=	/var/db/portaudit
@@ -33,13 +35,18 @@ IGNORE=		"You need tar with bzip support to run portaudit"
 .endif
 
 do-build:
-.for f in portaudit.sh fetchaudit.sh portaudit.functions
+.for f in portaudit-cmd.sh portaudit.sh fetchaudit.sh portaudit.functions portaudit.1
 	@${SED} -e "s|%%DATADIR%%|${DATADIR}|g" \
 		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g" \
+		-e "s|%%PREFIX%%|${PREFIX}|g" \
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
 		${FILESDIR}/${f} > ${WRKDIR}/${f}
 .endfor
 
 do-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit-cmd.sh ${PREFIX}/bin/portaudit
+	@${INSTALL_MAN} ${WRKDIR}/portaudit.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${PERIODICDIR}/security
 	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit.sh ${PERIODICDIR}/security/910.portaudit
 	@${MKDIR} ${PERIODICDIR}/daily
