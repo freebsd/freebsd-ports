@@ -17,7 +17,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An archive manager for zip files, tar, etc
 
-LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		lzop:${PORTSDIR}/archivers/lzop
 .if !exists(/usr/bin/bzip2)
@@ -26,7 +25,7 @@ RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
