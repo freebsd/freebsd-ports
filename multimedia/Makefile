@@ -78,6 +78,7 @@
     SUBDIR += mtv
     SUBDIR += nautilus-media
     SUBDIR += netshow
+    SUBDIR += noatun-plugins
     SUBDIR += nuppelvideo
     SUBDIR += nxtvepg
     SUBDIR += ogle
