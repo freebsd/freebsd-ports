@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/cp1251.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/cp866.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/mac-cyrillic.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/koi8-r.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/windows-1251.enc
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML 2>/dev/null || true

@@ -13,6 +13,7 @@
     SUBDIR += messarge
     SUBDIR += netscape4.language
     SUBDIR += p5-Lingua-RU-Charset
+    SUBDIR += p5-XML-Parser-encodings
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += pscyr
