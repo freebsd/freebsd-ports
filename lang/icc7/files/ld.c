@@ -328,7 +328,11 @@ main(int argc, char *argv[], char *envp[])
 
 		/* Switch Linux stuff to FreeBSD counterparts. */
 		if (ARGCMP("/lib/ld-linux.so.2")) {
+#if __FreeBSD_version >= 501105
+			addarg(&al, "/libexec/ld-elf.so.1", 1);
+#else
 			addarg(&al, "/usr/libexec/ld-elf.so.1", 1);
+#endif
 			continue;
 		}
 		if (ARGCMP("-L/usr/lib")) {
