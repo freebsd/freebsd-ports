@@ -11,8 +11,8 @@
   37.77  -122.44 "                         ,archie" # Haight, San Francisco, CA 
   37.55  -122.26 "                                ,terry" # Foster City, CA 
   37.32  -121.94 "                                      ,jmg" # San Jose, CA
-  37.40  -121.94 "                                          ,alfred" # Santa Clara
-  37.32916 -121.96222 "                                                 ,nsayer" # Santa Clara, CA
+  37.40  -121.94 "                                          ,alfred,billf" # Santa Clara
+  37.32916 -121.96222 "                                                  ,nsayer" # Santa Clara, CA
   37.39, -122.06 "                                                        ,marcel" # Mountain View, CA
   37.51, -122.30 "                                                               ,kbyanc" # Belmont, CA
   37.50 -122.17 "                                                                      ,gshapiro" # Emeryville, CA
@@ -28,7 +28,6 @@
   42.02   -93.67 "ghelmer"                      # Ames, IA
   39.8    -86.2  "dyson"                        # Indianapolis, IN
   40.42   -86.92 "will"				# West Lafayette, IN
-  42.63   -83.02 "billf"                        # Utica, MI
   43.37   -79.79 "hoek"                         # Burlington, ON
   44.99   -93.26 "nectar"                       # Minneapolis, MN
   34.8    -86.7  "steve"                        # Harvest, AL
