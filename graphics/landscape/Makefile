@@ -20,7 +20,7 @@ MAKE_ENV=		QTDIR="${QTDIR}"
 
 pre-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${X11BASE}/mkspecs/freebsd-g++ landscape.pro
+		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ landscape.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/landscape ${PREFIX}/bin
