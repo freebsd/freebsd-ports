@@ -328,10 +328,9 @@ MASTER_SITE_NETSCAPE+= \
 	ftp://ftp.uni-bielefeld.de/pub/netscape/%SUBDIR%/ \
 	ftp://ftp.uniovi.es/pub/netscape/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/netscape/%SUBDIR%/ \
-	ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/www/Netscape/%SUBDIR%/ \
-	ftp://ftp.fct.unl.pt/.1/Netscape/%SUBDIR%/ \
+	ftp://ftp.fct.unl.pt/pub/Netscape/%SUBDIR%/ \
 	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/%SUBDIR%/ \
 	ftp://sunfreeware.unam.mx/pub/Netscape/%SUBDIR%/ \
 	ftp://ftp.fh-wolfenbuettel.de/pub/www/netscape/%SUBDIR%/ \
@@ -343,7 +342,7 @@ MASTER_SITE_NETSCAPE+= \
 	ftp://ftp.nsysu.edu.tw/Netscape/%SUBDIR%/ \
 	ftp://ftp.uniroma2.it/%7bC/Netscape/%SUBDIR%/ \
 	ftp://ftp.ut.ee/pub/WWW/netscape/%SUBDIR%/ \
-	ftp://ftp.skynet.be/mirror2/netscape/%SUBDIR%/ \
+	ftp://ftp.skynet.be/mirror/netscape/%SUBDIR%/ \
 	ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/
 
