@@ -7,7 +7,7 @@
 
 PORTNAME=	webalizer
 PORTVERSION=	2.1.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
@@ -17,13 +17,14 @@ MAINTAINER?=	dinoex@FreeBSD.org
 COMMENT=	A web server log file analysis program
 
 .if !defined(LIB_DEPENDS)
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/${GD_PORT}
 .endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+GD_PORT?=	graphics/gd
 
 .if defined(BATCH)
 # no cosmetique spaces allowed
