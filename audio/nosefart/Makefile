@@ -24,7 +24,7 @@ MAKE_ENV=	INSTALL="${INSTALL}" COPY="${COPY}" STRIP="${STRIP}"\
 		LDFLAGS="${LDFLAGS}"
 PLIST_FILES=	bin/nosefart
 
-post-extract:
+pre-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} clean)
 
 .include    <bsd.port.mk>
