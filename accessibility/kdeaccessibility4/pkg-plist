@@ -108,21 +108,6 @@ share/icons/locolor/16x16/apps/kmouth.png
 share/icons/locolor/22x22/apps/kmouth.png
 share/icons/locolor/32x32/apps/kmag.png
 share/icons/locolor/32x32/apps/kmouth.png
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/22x22/apps
-@dirrm share/icons/locolor/22x22
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/kmouth
 @dirrm share/doc/HTML/en/kmousetool
 @dirrm share/doc/HTML/en/kmag
@@ -156,5 +141,3 @@ share/icons/locolor/32x32/apps/kmouth.png
 @dirrm share/apps/kmag/icons/hicolor
 @dirrm share/apps/kmag/icons
 @dirrm share/apps/kmag
-@dirrm share/applnk/Applications
-@dirrm share/applnk

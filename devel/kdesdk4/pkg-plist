@@ -12,6 +12,7 @@ bin/cvsaskpass
 bin/cvsbackport
 bin/cvsblame
 bin/cvscheck
+bin/cvsforwardport
 bin/cvslastchange
 bin/cvslastlog
 bin/cvsrevertlast
@@ -793,12 +794,6 @@ share/servicetypes/kbabeldict_module.desktop
 share/servicetypes/kbabelfilter.desktop
 share/servicetypes/komparenavigationpart.desktop
 share/servicetypes/kompareviewpart.desktop
-@dirrm share/icons/locolor/32x32/mimetypes
-@dirrm share/icons/locolor/16x16/mimetypes
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/16x16/mimetypes
 @dirrm share/doc/HTML/en/umbrello
 @dirrm share/doc/HTML/en/kompare
 @dirrm share/doc/HTML/en/kcachegrind

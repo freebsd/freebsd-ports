@@ -34,7 +34,7 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 CONFIGURE_ARGS+=--with-db-include-dir=/usr/local/include/db4 \
 		--with-db-lib-dir=/usr/local/lib --with-db-name=db4
 
-MAN1=		cervisia.1 cvsversion.1 noncvslist.1 kde-build.1 cvsblame.1 cvscheck.1
+MAN1=		cervisia.1 cvsblame.1 cvscheck.1 cvsversion.1 includemocs.1 kde-build.1 noncvslist.1
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>

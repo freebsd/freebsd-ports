@@ -777,9 +777,6 @@ share/doc/HTML/et/kpager/index.cache.bz2
 share/doc/HTML/et/kpager/index.docbook
 share/doc/HTML/et/kpager/screenshot.png
 share/doc/HTML/et/kpager/settings.png
-share/doc/HTML/et/kpaint/common
-share/doc/HTML/et/kpaint/index.cache.bz2
-share/doc/HTML/et/kpaint/index.docbook
 share/doc/HTML/et/kpat/common
 share/doc/HTML/et/kpat/index.cache.bz2
 share/doc/HTML/et/kpat/index.docbook
@@ -1077,6 +1074,8 @@ share/locale/et/LC_MESSAGES/artscontrol.mo
 share/locale/et/LC_MESSAGES/artsmodules.mo
 share/locale/et/LC_MESSAGES/atlantik.mo
 share/locale/et/LC_MESSAGES/atlantikdesigner.mo
+share/locale/et/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/et/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/et/LC_MESSAGES/audiorename_plugin.mo
 share/locale/et/LC_MESSAGES/autorefresh.mo
 share/locale/et/LC_MESSAGES/babelfish.mo
@@ -1168,7 +1167,6 @@ share/locale/et/LC_MESSAGES/kcm_kviewcanvasconfig.mo
 share/locale/et/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/et/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/et/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
-share/locale/et/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/et/LC_MESSAGES/kcmaccess.mo
 share/locale/et/LC_MESSAGES/kcmaccessibility.mo
 share/locale/et/LC_MESSAGES/kcmarts.mo
@@ -1183,7 +1181,6 @@ share/locale/et/LC_MESSAGES/kcmcrypto.mo
 share/locale/et/LC_MESSAGES/kcmcss.mo
 share/locale/et/LC_MESSAGES/kcmemail.mo
 share/locale/et/LC_MESSAGES/kcmenergy.mo
-share/locale/et/LC_MESSAGES/kcmfileshare.mo
 share/locale/et/LC_MESSAGES/kcmfonts.mo
 share/locale/et/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/et/LC_MESSAGES/kcmicons.mo
@@ -1451,6 +1448,7 @@ share/locale/et/LC_MESSAGES/krdc.mo
 share/locale/et/LC_MESSAGES/kreadconfig.mo
 share/locale/et/LC_MESSAGES/krec.mo
 share/locale/et/LC_MESSAGES/kregexpeditor.mo
+share/locale/et/LC_MESSAGES/kres_bugzilla.mo
 share/locale/et/LC_MESSAGES/kres_exchange.mo
 share/locale/et/LC_MESSAGES/kres_imap.mo
 share/locale/et/LC_MESSAGES/kres_remote.mo
@@ -1669,7 +1667,6 @@ share/locale/et/flag.png
 @dirrm share/doc/HTML/et/kpercentage
 @dirrm share/doc/HTML/et/kpdf
 @dirrm share/doc/HTML/et/kpat
-@dirrm share/doc/HTML/et/kpaint
 @dirrm share/doc/HTML/et/kpager
 @dirrm share/doc/HTML/et/kpackage
 @dirrm share/doc/HTML/et/korn

@@ -1243,13 +1243,6 @@ share/servicetypes/kdevelopplugin.desktop
 share/servicetypes/kdevelopproject.desktop
 share/servicetypes/kdevelopsourceformatter.desktop
 share/servicetypes/kdevelopversioncontrol.desktop
-@dirrm share/icons/locolor/32x32/actions
-@dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/hicolor/48x48/actions
-@dirrm share/icons/hicolor/32x32/actions
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/actions
 @dirrm share/doc/HTML/en/kdevelop
 @dirrm share/doc/HTML/en/kde_app_devel
 @dirrm share/apps/qeditorpart/highlight
@@ -1326,7 +1319,6 @@ share/servicetypes/kdevelopversioncontrol.desktop
 @dirrm share/apps/kdevabbrev/templates
 @dirrm share/apps/kdevabbrev/sources
 @dirrm share/apps/kdevabbrev
-@dirrm share/applnk/Development
 @dirrm kdevbdb/lib
 @dirrm kdevbdb/include
 @dirrm kdevbdb/docs/CVS

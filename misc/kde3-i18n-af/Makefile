@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kde-i18n
-# PORTVERSION=	${KDE_VERSION}
-PORTVERSION=	3.1.5
+PORTVERSION=	${KDE_VERSION}
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	af-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for KDE3
+COMMENT=	Afrikaans localized messages and documentation for KDE3
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

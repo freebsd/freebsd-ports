@@ -586,11 +586,6 @@ share/icons/locolor/32x32/apps/ktux.png
 share/services/kcmweather.desktop
 share/services/kcmweatherservice.desktop
 share/services/kweatherservice.desktop
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
 @dirrm share/doc/HTML/en/kworldclock
 @dirrm share/doc/HTML/en/kweather
 @dirrm share/doc/HTML/en/kteatime
@@ -615,10 +610,6 @@ share/services/kweatherservice.desktop
 @dirrm share/apps/kodo
 @dirrm share/apps/kmoon/pics
 @dirrm share/apps/kmoon
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
-@dirrm share/apps/kdesktop/programs
-@dirrm share/apps/kdesktop
 @dirrm share/apps/amor/worm
 @dirrm share/apps/amor/tao
 @dirrm share/apps/amor/static
@@ -629,6 +620,3 @@ share/services/kweatherservice.desktop
 @dirrm share/apps/amor/blob
 @dirrm share/apps/amor/b
 @dirrm share/apps/amor
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk

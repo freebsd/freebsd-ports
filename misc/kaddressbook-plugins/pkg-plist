@@ -1,5 +1,5 @@
 lib/kde3/libkaddrbk_geo_xxport.la
 lib/kde3/libkaddrbk_geo_xxport.so
-share/applications/kdeaddons-kaddressbook-plugins-3.3.1
+share/applications/kdeaddons-kaddressbook-plugins-3.3.2
 share/apps/kaddressbook/geo_xxportui.rc
 share/services/kaddressbook/geo_xxport.desktop

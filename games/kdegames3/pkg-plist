@@ -2316,17 +2316,6 @@ share/services/atlantik.protocol
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdegames-apidocs/libkdegames/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdegames-apidocs/libkdegames/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdegames-apidocs/libkdegames/html
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/crystalsvg/scalable/apps
-@dirrm share/icons/crystalsvg/22x22/apps
 @dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/kwin4
 @dirrm share/doc/HTML/en/ktuberling
@@ -2360,7 +2349,6 @@ share/services/atlantik.protocol
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/atlantik
 @dirrm share/config/magic
-@dirrm share/config.kcfg
 @dirrm share/apps/lskat/grafix
 @dirrm share/apps/lskat
 @dirrm share/apps/kwin4/grafix/default

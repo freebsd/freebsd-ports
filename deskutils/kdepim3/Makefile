@@ -7,7 +7,6 @@
 
 PORTNAME=	kdepim
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	deskutils mail news palm kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -16,7 +15,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Personal Information Management tools for KDE
 
-LIB_DEPENDS=	mal:${PORTSDIR}/palm/libmal \
+LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
+		mal:${PORTSDIR}/palm/libmal \
 		pisock:${PORTSDIR}/palm/pilot-link
 
 CONFLICTS=	kdenetwork-3.1.* kdeaddons-kontact-plugins-[0-9]* kdepim-kpilot-3.2.3

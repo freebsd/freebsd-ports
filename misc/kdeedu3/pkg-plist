@@ -352,6 +352,20 @@ share/apps/klatin/data/vocabs/en/QR.kvtml
 share/apps/klatin/data/vocabs/en/S.kvtml
 share/apps/klatin/data/vocabs/en/TU.kvtml
 share/apps/klatin/data/vocabs/en/V.kvtml
+share/apps/klatin/data/vocabs/pl/A.kvtml
+share/apps/klatin/data/vocabs/pl/BC.kvtml
+share/apps/klatin/data/vocabs/pl/D.kvtml
+share/apps/klatin/data/vocabs/pl/EF.kvtml
+share/apps/klatin/data/vocabs/pl/GHI1.kvtml
+share/apps/klatin/data/vocabs/pl/I2L.kvtml
+share/apps/klatin/data/vocabs/pl/M.kvtml
+share/apps/klatin/data/vocabs/pl/N.kvtml
+share/apps/klatin/data/vocabs/pl/OP1.kvtml
+share/apps/klatin/data/vocabs/pl/P2.kvtml
+share/apps/klatin/data/vocabs/pl/QR.kvtml
+share/apps/klatin/data/vocabs/pl/S.kvtml
+share/apps/klatin/data/vocabs/pl/TU.kvtml
+share/apps/klatin/data/vocabs/pl/V.kvtml
 share/apps/klatin/klatinui.rc
 share/apps/klettres/cs.txt
 share/apps/klettres/da.txt
@@ -1614,17 +1628,6 @@ share/mimelnk/application/x-kwordquiz.desktop
 share/services/kfile_drgeo.desktop
 share/services/kfile_kig.desktop
 share/services/kig_part.desktop
-@dirrm share/icons/locolor/16x16/actions
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/crystalsvg/scalable/apps
-@dirrm share/icons/crystalsvg/22x22/apps
 @dirrm share/doc/HTML/en/kwordquiz
 @dirrm share/doc/HTML/en/kvoctrain
 @dirrm share/doc/HTML/en/kverbos
@@ -1644,7 +1647,6 @@ share/services/kig_part.desktop
 @dirrm share/doc/HTML/en/kbruch
 @dirrm share/doc/HTML/en/kalzium
 @dirrm share/config/magic
-@dirrm share/config.kcfg
 @dirrm share/apps/kwordquiz/icons/crystalsvg/scalable/mimetypes
 @dirrm share/apps/kwordquiz/icons/crystalsvg/scalable/apps
 @dirrm share/apps/kwordquiz/icons/crystalsvg/scalable
@@ -1724,6 +1726,7 @@ share/services/kig_part.desktop
 @dirrm share/apps/klettres/fr
 @dirrm share/apps/klettres/data
 @dirrm share/apps/klettres
+@dirrm share/apps/klatin/data/vocabs/pl
 @dirrm share/apps/klatin/data/vocabs/en
 @dirrm share/apps/klatin/data/vocabs
 @dirrm share/apps/klatin/data/verbs
@@ -1768,5 +1771,3 @@ share/services/kig_part.desktop
 @dirrm share/applnk/Edutainment/Miscellaneous
 @dirrm share/applnk/Edutainment/Mathematics
 @dirrm share/applnk/Edutainment/Languages
-@dirrm share/applnk/Edutainment
-@dirrm share/applnk

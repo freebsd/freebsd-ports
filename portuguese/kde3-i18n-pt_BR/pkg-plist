@@ -888,6 +888,8 @@ share/locale/pt_BR/LC_MESSAGES/artscontrol.mo
 share/locale/pt_BR/LC_MESSAGES/artsmodules.mo
 share/locale/pt_BR/LC_MESSAGES/atlantik.mo
 share/locale/pt_BR/LC_MESSAGES/atlantikdesigner.mo
+share/locale/pt_BR/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/pt_BR/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/pt_BR/LC_MESSAGES/audiorename_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/autorefresh.mo
 share/locale/pt_BR/LC_MESSAGES/babelfish.mo

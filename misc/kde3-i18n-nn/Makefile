@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	nn-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for KDE3
+COMMENT=	Norwegian Nynorsk messages and documentation for KDE3
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

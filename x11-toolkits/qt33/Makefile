@@ -8,7 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	ftp://sunsite.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/	\
@@ -97,6 +97,7 @@ CONFIGURE_ARGS+=-debug
 
 .if !defined(WITHOUT_OPENGL)
 USE_GL=		yes
+CONFIGURE_ARGS+=-dlopen-opengl
 .elseif defined(WITHOUT_OPENGL)
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL

@@ -230,6 +230,8 @@ share/locale/ja/LC_MESSAGES/artscontrol.mo
 share/locale/ja/LC_MESSAGES/artsmodules.mo
 share/locale/ja/LC_MESSAGES/atlantik.mo
 share/locale/ja/LC_MESSAGES/atlantikdesigner.mo
+share/locale/ja/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/ja/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/ja/LC_MESSAGES/audiorename_plugin.mo
 share/locale/ja/LC_MESSAGES/autorefresh.mo
 share/locale/ja/LC_MESSAGES/babelfish.mo
@@ -400,6 +402,7 @@ share/locale/ja/LC_MESSAGES/kdelibs.mo
 share/locale/ja/LC_MESSAGES/kdelibs_colors.mo
 share/locale/ja/LC_MESSAGES/kdelirc.mo
 share/locale/ja/LC_MESSAGES/kdepasswd.mo
+share/locale/ja/LC_MESSAGES/kdepimwizards.mo
 share/locale/ja/LC_MESSAGES/kdeprint.mo
 share/locale/ja/LC_MESSAGES/kdeprint_part.mo
 share/locale/ja/LC_MESSAGES/kdeprintfax.mo
@@ -431,6 +434,7 @@ share/locale/ja/LC_MESSAGES/kfile_cpp.mo
 share/locale/ja/LC_MESSAGES/kfile_deb.mo
 share/locale/ja/LC_MESSAGES/kfile_desktop.mo
 share/locale/ja/LC_MESSAGES/kfile_diff.mo
+share/locale/ja/LC_MESSAGES/kfile_drgeo.mo
 share/locale/ja/LC_MESSAGES/kfile_dvi.mo
 share/locale/ja/LC_MESSAGES/kfile_exr.mo
 share/locale/ja/LC_MESSAGES/kfile_flac.mo
@@ -440,11 +444,13 @@ share/locale/ja/LC_MESSAGES/kfile_gif.mo
 share/locale/ja/LC_MESSAGES/kfile_html.mo
 share/locale/ja/LC_MESSAGES/kfile_ico.mo
 share/locale/ja/LC_MESSAGES/kfile_jpeg.mo
+share/locale/ja/LC_MESSAGES/kfile_kig.mo
 share/locale/ja/LC_MESSAGES/kfile_lnk.mo
 share/locale/ja/LC_MESSAGES/kfile_m3u.mo
 share/locale/ja/LC_MESSAGES/kfile_mp3.mo
 share/locale/ja/LC_MESSAGES/kfile_mpc.mo
 share/locale/ja/LC_MESSAGES/kfile_ogg.mo
+share/locale/ja/LC_MESSAGES/kfile_palm.mo
 share/locale/ja/LC_MESSAGES/kfile_pcx.mo
 share/locale/ja/LC_MESSAGES/kfile_pdf.mo
 share/locale/ja/LC_MESSAGES/kfile_png.mo
@@ -463,6 +469,8 @@ share/locale/ja/LC_MESSAGES/kfile_vcf.mo
 share/locale/ja/LC_MESSAGES/kfile_wav.mo
 share/locale/ja/LC_MESSAGES/kfile_xbm.mo
 share/locale/ja/LC_MESSAGES/kfileaudiopreview.mo
+share/locale/ja/LC_MESSAGES/kfilereplace.mo
+share/locale/ja/LC_MESSAGES/kfileshare.mo
 share/locale/ja/LC_MESSAGES/kfindpart.mo
 share/locale/ja/LC_MESSAGES/kfloppy.mo
 share/locale/ja/LC_MESSAGES/kfmclient.mo
@@ -484,6 +492,7 @@ share/locale/ja/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ja/LC_MESSAGES/kicker.mo
 share/locale/ja/LC_MESSAGES/kiconedit.mo
 share/locale/ja/LC_MESSAGES/kig.mo
+share/locale/ja/LC_MESSAGES/kimagemapeditor.mo
 share/locale/ja/LC_MESSAGES/kinetd.mo
 share/locale/ja/LC_MESSAGES/kio.mo
 share/locale/ja/LC_MESSAGES/kio_audiocd.mo
@@ -498,6 +507,7 @@ share/locale/ja/LC_MESSAGES/kio_ldap.mo
 share/locale/ja/LC_MESSAGES/kio_mac.mo
 share/locale/ja/LC_MESSAGES/kio_man.mo
 share/locale/ja/LC_MESSAGES/kio_mobile.mo
+share/locale/ja/LC_MESSAGES/kio_newimap4.mo
 share/locale/ja/LC_MESSAGES/kio_nfs.mo
 share/locale/ja/LC_MESSAGES/kio_nntp.mo
 share/locale/ja/LC_MESSAGES/kio_pop3.mo
@@ -516,14 +526,18 @@ share/locale/ja/LC_MESSAGES/kjots.mo
 share/locale/ja/LC_MESSAGES/kjumpingcube.mo
 share/locale/ja/LC_MESSAGES/klaptopdaemon.mo
 share/locale/ja/LC_MESSAGES/klegacyimport.mo
+share/locale/ja/LC_MESSAGES/kleopatra.mo
 share/locale/ja/LC_MESSAGES/klettres.mo
 share/locale/ja/LC_MESSAGES/klickety.mo
 share/locale/ja/LC_MESSAGES/klines.mo
+share/locale/ja/LC_MESSAGES/klinkstatus.mo
 share/locale/ja/LC_MESSAGES/klipper.mo
 share/locale/ja/LC_MESSAGES/klock.mo
 share/locale/ja/LC_MESSAGES/kmag.mo
 share/locale/ja/LC_MESSAGES/kmahjongg.mo
 share/locale/ja/LC_MESSAGES/kmail.mo
+share/locale/ja/LC_MESSAGES/kmail_text_calendar_plugin.mo
+share/locale/ja/LC_MESSAGES/kmail_text_vcard_plugin.mo
 share/locale/ja/LC_MESSAGES/kmailcvt.mo
 share/locale/ja/LC_MESSAGES/kmathapplet.mo
 share/locale/ja/LC_MESSAGES/kmathtool.mo
@@ -554,6 +568,7 @@ share/locale/ja/LC_MESSAGES/kodo.mo
 share/locale/ja/LC_MESSAGES/kolf.mo
 share/locale/ja/LC_MESSAGES/kolourpaint.mo
 share/locale/ja/LC_MESSAGES/kolourpicker.mo
+share/locale/ja/LC_MESSAGES/kommander.mo
 share/locale/ja/LC_MESSAGES/kompare.mo
 share/locale/ja/LC_MESSAGES/konq_smbmounterplugin.mo
 share/locale/ja/LC_MESSAGES/konqsidebar_mediaplayer.mo
@@ -588,6 +603,11 @@ share/locale/ja/LC_MESSAGES/krdc.mo
 share/locale/ja/LC_MESSAGES/kreadconfig.mo
 share/locale/ja/LC_MESSAGES/krec.mo
 share/locale/ja/LC_MESSAGES/kregexpeditor.mo
+share/locale/ja/LC_MESSAGES/kres_bugzilla.mo
+share/locale/ja/LC_MESSAGES/kres_exchange.mo
+share/locale/ja/LC_MESSAGES/kres_imap.mo
+share/locale/ja/LC_MESSAGES/kres_remote.mo
+share/locale/ja/LC_MESSAGES/kres_xmlrpc.mo
 share/locale/ja/LC_MESSAGES/kreversi.mo
 share/locale/ja/LC_MESSAGES/krfb.mo
 share/locale/ja/LC_MESSAGES/kruler.mo
@@ -622,6 +642,7 @@ share/locale/ja/LC_MESSAGES/ksysv.mo
 share/locale/ja/LC_MESSAGES/ktalkd.mo
 share/locale/ja/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/ja/LC_MESSAGES/kteatime.mo
+share/locale/ja/LC_MESSAGES/ktexteditor_autobookmarker.mo
 share/locale/ja/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/ja/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/ja/LC_MESSAGES/ktexteditor_isearch.mo
@@ -652,6 +673,7 @@ share/locale/ja/LC_MESSAGES/kviewtemplateplugin.mo
 share/locale/ja/LC_MESSAGES/kviewviewer.mo
 share/locale/ja/LC_MESSAGES/kvoctrain.mo
 share/locale/ja/LC_MESSAGES/kwalletmanager.mo
+share/locale/ja/LC_MESSAGES/kwatchgnupg.mo
 share/locale/ja/LC_MESSAGES/kweather.mo
 share/locale/ja/LC_MESSAGES/kwifimanager.mo
 share/locale/ja/LC_MESSAGES/kwin.mo
@@ -697,6 +719,7 @@ share/locale/ja/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/ja/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/ja/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/ja/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/ja/LC_MESSAGES/libkleopatra.mo
 share/locale/ja/LC_MESSAGES/libkonq.mo
 share/locale/ja/LC_MESSAGES/libkpimexchange.mo
 share/locale/ja/LC_MESSAGES/libkscan.mo

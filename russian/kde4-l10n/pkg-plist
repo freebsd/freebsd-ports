@@ -94,6 +94,9 @@ share/doc/HTML/ru/kaddressbook/index.docbook
 share/doc/HTML/ru/kalzium/common
 share/doc/HTML/ru/kalzium/index.cache.bz2
 share/doc/HTML/ru/kalzium/index.docbook
+share/doc/HTML/ru/kamera/common
+share/doc/HTML/ru/kamera/index.cache.bz2
+share/doc/HTML/ru/kamera/index.docbook
 share/doc/HTML/ru/kandy/common
 share/doc/HTML/ru/kandy/index.cache.bz2
 share/doc/HTML/ru/kandy/index.docbook
@@ -148,12 +151,18 @@ share/doc/HTML/ru/kbounce/index.docbook
 share/doc/HTML/ru/kbruch/common
 share/doc/HTML/ru/kbruch/index.cache.bz2
 share/doc/HTML/ru/kbruch/index.docbook
+share/doc/HTML/ru/kbugbuster/common
+share/doc/HTML/ru/kbugbuster/index.cache.bz2
+share/doc/HTML/ru/kbugbuster/index.docbook
 share/doc/HTML/ru/kcachegrind/common
 share/doc/HTML/ru/kcachegrind/index.cache.bz2
 share/doc/HTML/ru/kcachegrind/index.docbook
 share/doc/HTML/ru/kcalc/common
 share/doc/HTML/ru/kcalc/index.cache.bz2
 share/doc/HTML/ru/kcalc/index.docbook
+share/doc/HTML/ru/kcharselect/common
+share/doc/HTML/ru/kcharselect/index.cache.bz2
+share/doc/HTML/ru/kcharselect/index.docbook
 share/doc/HTML/ru/kcontrol/arts/common
 share/doc/HTML/ru/kcontrol/arts/index.cache.bz2
 share/doc/HTML/ru/kcontrol/arts/index.docbook
@@ -224,6 +233,9 @@ share/doc/HTML/ru/kcontrol/kcmfontinst/index.docbook
 share/doc/HTML/ru/kcontrol/kcmkonsole/common
 share/doc/HTML/ru/kcontrol/kcmkonsole/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmkonsole/index.docbook
+share/doc/HTML/ru/kcontrol/kcmktalkd/common
+share/doc/HTML/ru/kcontrol/kcmktalkd/index.cache.bz2
+share/doc/HTML/ru/kcontrol/kcmktalkd/index.docbook
 share/doc/HTML/ru/kcontrol/kcmlaunch/common
 share/doc/HTML/ru/kcontrol/kcmlaunch/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmlaunch/index.docbook
@@ -264,6 +276,9 @@ share/doc/HTML/ru/kcontrol/kmixcfg/index.docbook
 share/doc/HTML/ru/kcontrol/kwindecoration/common
 share/doc/HTML/ru/kcontrol/kwindecoration/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kwindecoration/index.docbook
+share/doc/HTML/ru/kcontrol/lanbrowser/common
+share/doc/HTML/ru/kcontrol/lanbrowser/index.cache.bz2
+share/doc/HTML/ru/kcontrol/lanbrowser/index.docbook
 share/doc/HTML/ru/kcontrol/language/common
 share/doc/HTML/ru/kcontrol/language/index.cache.bz2
 share/doc/HTML/ru/kcontrol/language/index.docbook
@@ -279,6 +294,9 @@ share/doc/HTML/ru/kcontrol/netpref/index.docbook
 share/doc/HTML/ru/kcontrol/panel/common
 share/doc/HTML/ru/kcontrol/panel/index.cache.bz2
 share/doc/HTML/ru/kcontrol/panel/index.docbook
+share/doc/HTML/ru/kcontrol/panelappearance/common
+share/doc/HTML/ru/kcontrol/panelappearance/index.cache.bz2
+share/doc/HTML/ru/kcontrol/panelappearance/index.docbook
 share/doc/HTML/ru/kcontrol/passwords/common
 share/doc/HTML/ru/kcontrol/passwords/index.cache.bz2
 share/doc/HTML/ru/kcontrol/passwords/index.docbook
@@ -346,9 +364,6 @@ share/doc/HTML/ru/kdesu/common
 share/doc/HTML/ru/kdesu/index.cache.bz2
 share/doc/HTML/ru/kdesu/index.docbook
 share/doc/HTML/ru/kdevelop/applicationwizard.docbook
-share/doc/HTML/ru/kdevelop/common
-share/doc/HTML/ru/kdevelop/index.cache.bz2
-share/doc/HTML/ru/kdevelop/index.docbook
 share/doc/HTML/ru/kdevelop/kdevelop-install.docbook
 share/doc/HTML/ru/kdevelop/kdevelop-survey.docbook
 share/doc/HTML/ru/kdevelop/project-management.docbook
@@ -695,6 +710,9 @@ share/doc/HTML/ru/kolf/index.docbook
 share/doc/HTML/ru/kolourpaint/common
 share/doc/HTML/ru/kolourpaint/index.cache.bz2
 share/doc/HTML/ru/kolourpaint/index.docbook
+share/doc/HTML/ru/kompare/common
+share/doc/HTML/ru/kompare/index.cache.bz2
+share/doc/HTML/ru/kompare/index.docbook
 share/doc/HTML/ru/konq-plugins/common
 share/doc/HTML/ru/konq-plugins/index.cache.bz2
 share/doc/HTML/ru/konq-plugins/index.docbook
@@ -752,6 +770,9 @@ share/doc/HTML/ru/kpat/common
 share/doc/HTML/ru/kpat/index.cache.bz2
 share/doc/HTML/ru/kpat/index.docbook
 share/doc/HTML/ru/kpat/man.docbook
+share/doc/HTML/ru/kpdf/common
+share/doc/HTML/ru/kpdf/index.cache.bz2
+share/doc/HTML/ru/kpdf/index.docbook
 share/doc/HTML/ru/kpercentage/commands.docbook
 share/doc/HTML/ru/kpercentage/common
 share/doc/HTML/ru/kpercentage/credits.docbook
@@ -797,6 +818,9 @@ share/doc/HTML/ru/kreversi/index.docbook
 share/doc/HTML/ru/krfb/common
 share/doc/HTML/ru/krfb/index.cache.bz2
 share/doc/HTML/ru/krfb/index.docbook
+share/doc/HTML/ru/kruler/common
+share/doc/HTML/ru/kruler/index.cache.bz2
+share/doc/HTML/ru/kruler/index.docbook
 share/doc/HTML/ru/ksame/common
 share/doc/HTML/ru/ksame/index.cache.bz2
 share/doc/HTML/ru/ksame/index.docbook
@@ -806,6 +830,9 @@ share/doc/HTML/ru/kscd/index.docbook
 share/doc/HTML/ru/kshisen/common
 share/doc/HTML/ru/kshisen/index.cache.bz2
 share/doc/HTML/ru/kshisen/index.docbook
+share/doc/HTML/ru/ksim/common
+share/doc/HTML/ru/ksim/index.cache.bz2
+share/doc/HTML/ru/ksim/index.docbook
 share/doc/HTML/ru/ksirc/common
 share/doc/HTML/ru/ksirc/index.cache.bz2
 share/doc/HTML/ru/ksirc/index.docbook
@@ -902,6 +929,9 @@ share/doc/HTML/ru/ktalkd/index.docbook
 share/doc/HTML/ru/kteatime/common
 share/doc/HTML/ru/kteatime/index.cache.bz2
 share/doc/HTML/ru/kteatime/index.docbook
+share/doc/HTML/ru/ktimer/common
+share/doc/HTML/ru/ktimer/index.cache.bz2
+share/doc/HTML/ru/ktimer/index.docbook
 share/doc/HTML/ru/ktnef/common
 share/doc/HTML/ru/ktnef/index.cache.bz2
 share/doc/HTML/ru/ktnef/index.docbook
@@ -921,6 +951,9 @@ share/doc/HTML/ru/kuser/index.docbook
 share/doc/HTML/ru/kverbos/common
 share/doc/HTML/ru/kverbos/index.cache.bz2
 share/doc/HTML/ru/kverbos/index.docbook
+share/doc/HTML/ru/kview/common
+share/doc/HTML/ru/kview/index.cache.bz2
+share/doc/HTML/ru/kview/index.docbook
 share/doc/HTML/ru/kvoctrain/common
 share/doc/HTML/ru/kvoctrain/index.cache.bz2
 share/doc/HTML/ru/kvoctrain/index.docbook
@@ -1024,6 +1057,7 @@ share/locale/ru/LC_MESSAGES/clockapplet.mo
 share/locale/ru/LC_MESSAGES/crashesplugin.mo
 share/locale/ru/LC_MESSAGES/cupsdconf.mo
 share/locale/ru/LC_MESSAGES/cvsservice.mo
+share/locale/ru/LC_MESSAGES/dcopservice.mo
 share/locale/ru/LC_MESSAGES/devicesapplet.mo
 share/locale/ru/LC_MESSAGES/dirfilterplugin.mo
 share/locale/ru/LC_MESSAGES/display.mo
@@ -1041,6 +1075,7 @@ share/locale/ru/LC_MESSAGES/imagerename_plugin.mo
 share/locale/ru/LC_MESSAGES/imgalleryplugin.mo
 share/locale/ru/LC_MESSAGES/irkick.mo
 share/locale/ru/LC_MESSAGES/jefferson.mo
+share/locale/ru/LC_MESSAGES/joystick.mo
 share/locale/ru/LC_MESSAGES/juk.mo
 share/locale/ru/LC_MESSAGES/kabc2mutt.mo
 share/locale/ru/LC_MESSAGES/kabc_dir.mo
@@ -1065,6 +1100,7 @@ share/locale/ru/LC_MESSAGES/kasteroids.mo
 share/locale/ru/LC_MESSAGES/kate.mo
 share/locale/ru/LC_MESSAGES/katecppsymbolviewer.mo
 share/locale/ru/LC_MESSAGES/katedefaultproject.mo
+share/locale/ru/LC_MESSAGES/katefiletemplates.mo
 share/locale/ru/LC_MESSAGES/katefll_initplugin.mo
 share/locale/ru/LC_MESSAGES/katefll_plugin.mo
 share/locale/ru/LC_MESSAGES/katehelloworld.mo
@@ -1100,7 +1136,6 @@ share/locale/ru/LC_MESSAGES/kcm_kviewcanvasconfig.mo
 share/locale/ru/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/ru/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/ru/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
-share/locale/ru/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/ru/LC_MESSAGES/kcmaccess.mo
 share/locale/ru/LC_MESSAGES/kcmaccessibility.mo
 share/locale/ru/LC_MESSAGES/kcmarts.mo
@@ -1115,7 +1150,6 @@ share/locale/ru/LC_MESSAGES/kcmcrypto.mo
 share/locale/ru/LC_MESSAGES/kcmcss.mo
 share/locale/ru/LC_MESSAGES/kcmemail.mo
 share/locale/ru/LC_MESSAGES/kcmenergy.mo
-share/locale/ru/LC_MESSAGES/kcmfileshare.mo
 share/locale/ru/LC_MESSAGES/kcmfonts.mo
 share/locale/ru/LC_MESSAGES/kcmhtmlsearch.mo
 share/locale/ru/LC_MESSAGES/kcmicons.mo
@@ -1140,6 +1174,7 @@ share/locale/ru/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ru/LC_MESSAGES/kcmkvaio.mo
 share/locale/ru/LC_MESSAGES/kcmkwallet.mo
 share/locale/ru/LC_MESSAGES/kcmkwindecoration.mo
+share/locale/ru/LC_MESSAGES/kcmkwinrules.mo
 share/locale/ru/LC_MESSAGES/kcmkwintheme.mo
 share/locale/ru/LC_MESSAGES/kcmkwm.mo
 share/locale/ru/LC_MESSAGES/kcmkxmlrpcd.mo
@@ -1165,7 +1200,6 @@ share/locale/ru/LC_MESSAGES/kcmsocks.mo
 share/locale/ru/LC_MESSAGES/kcmspellchecking.mo
 share/locale/ru/LC_MESSAGES/kcmstyle.mo
 share/locale/ru/LC_MESSAGES/kcmtaskbar.mo
-share/locale/ru/LC_MESSAGES/kcmthemes.mo
 share/locale/ru/LC_MESSAGES/kcmthinkpad.mo
 share/locale/ru/LC_MESSAGES/kcmusb.mo
 share/locale/ru/LC_MESSAGES/kcmview1394.mo
@@ -1249,11 +1283,11 @@ share/locale/ru/LC_MESSAGES/kfile_wav.mo
 share/locale/ru/LC_MESSAGES/kfile_xbm.mo
 share/locale/ru/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/ru/LC_MESSAGES/kfilereplace.mo
+share/locale/ru/LC_MESSAGES/kfileshare.mo
 share/locale/ru/LC_MESSAGES/kfindpart.mo
 share/locale/ru/LC_MESSAGES/kfloppy.mo
 share/locale/ru/LC_MESSAGES/kfmclient.mo
 share/locale/ru/LC_MESSAGES/kfontinst.mo
-share/locale/ru/LC_MESSAGES/kfontviewpart.mo
 share/locale/ru/LC_MESSAGES/kfouleggs.mo
 share/locale/ru/LC_MESSAGES/kgamma.mo
 share/locale/ru/LC_MESSAGES/kgantt.mo
@@ -1281,6 +1315,7 @@ share/locale/ru/LC_MESSAGES/kio_floppy.mo
 share/locale/ru/LC_MESSAGES/kio_help.mo
 share/locale/ru/LC_MESSAGES/kio_imap4.mo
 share/locale/ru/LC_MESSAGES/kio_lan.mo
+share/locale/ru/LC_MESSAGES/kio_ldap.mo
 share/locale/ru/LC_MESSAGES/kio_mac.mo
 share/locale/ru/LC_MESSAGES/kio_man.mo
 share/locale/ru/LC_MESSAGES/kio_mobile.mo
@@ -1319,6 +1354,7 @@ share/locale/ru/LC_MESSAGES/kmail_text_vcard_plugin.mo
 share/locale/ru/LC_MESSAGES/kmailcvt.mo
 share/locale/ru/LC_MESSAGES/kmathtool.mo
 share/locale/ru/LC_MESSAGES/kmcop.mo
+share/locale/ru/LC_MESSAGES/kmenuapplet.mo
 share/locale/ru/LC_MESSAGES/kmenuedit.mo
 share/locale/ru/LC_MESSAGES/kmessedwords.mo
 share/locale/ru/LC_MESSAGES/kmid.mo
@@ -1416,6 +1452,8 @@ share/locale/ru/LC_MESSAGES/ksysv.mo
 share/locale/ru/LC_MESSAGES/ktalkd.mo
 share/locale/ru/LC_MESSAGES/ktaskbarapplet.mo
 share/locale/ru/LC_MESSAGES/kteatime.mo
+share/locale/ru/LC_MESSAGES/ktexteditor_autobookmarker.mo
+share/locale/ru/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/ru/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/ru/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/ru/LC_MESSAGES/ktexteditor_kdatatool.mo
@@ -1473,6 +1511,7 @@ share/locale/ru/LC_MESSAGES/kwin_system.mo
 share/locale/ru/LC_MESSAGES/kwireless.mo
 share/locale/ru/LC_MESSAGES/kwordquiz.mo
 share/locale/ru/LC_MESSAGES/kworldclock.mo
+share/locale/ru/LC_MESSAGES/kwriteconfig.mo
 share/locale/ru/LC_MESSAGES/kxkb.mo
 share/locale/ru/LC_MESSAGES/kxmlrpcd.mo
 share/locale/ru/LC_MESSAGES/kxsconfig.mo
@@ -1553,12 +1592,14 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kwatchgnupg
 @dirrm share/doc/HTML/ru/kwallet
 @dirrm share/doc/HTML/ru/kvoctrain
+@dirrm share/doc/HTML/ru/kview
 @dirrm share/doc/HTML/ru/kverbos
 @dirrm share/doc/HTML/ru/kuser
 @dirrm share/doc/HTML/ru/ktuberling
 @dirrm share/doc/HTML/ru/ktron
 @dirrm share/doc/HTML/ru/ktouch
 @dirrm share/doc/HTML/ru/ktnef
+@dirrm share/doc/HTML/ru/ktimer
 @dirrm share/doc/HTML/ru/kteatime
 @dirrm share/doc/HTML/ru/ktalkd
 @dirrm share/doc/HTML/ru/ksysv
@@ -1572,9 +1613,11 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/ksnake
 @dirrm share/doc/HTML/ru/ksirtet
 @dirrm share/doc/HTML/ru/ksirc
+@dirrm share/doc/HTML/ru/ksim
 @dirrm share/doc/HTML/ru/kshisen
 @dirrm share/doc/HTML/ru/kscd
 @dirrm share/doc/HTML/ru/ksame
+@dirrm share/doc/HTML/ru/kruler
 @dirrm share/doc/HTML/ru/krfb
 @dirrm share/doc/HTML/ru/kreversi
 @dirrm share/doc/HTML/ru/krec
@@ -1584,6 +1627,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kpoker
 @dirrm share/doc/HTML/ru/kpf
 @dirrm share/doc/HTML/ru/kpercentage
+@dirrm share/doc/HTML/ru/kpdf
 @dirrm share/doc/HTML/ru/kpat
 @dirrm share/doc/HTML/ru/kpager
 @dirrm share/doc/HTML/ru/kpackage
@@ -1597,6 +1641,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/konquest
 @dirrm share/doc/HTML/ru/konqueror
 @dirrm share/doc/HTML/ru/konq-plugins
+@dirrm share/doc/HTML/ru/kompare
 @dirrm share/doc/HTML/ru/kolourpaint
 @dirrm share/doc/HTML/ru/kolf
 @dirrm share/doc/HTML/ru/kodo
@@ -1686,11 +1731,13 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kcontrol/proxy
 @dirrm share/doc/HTML/ru/kcontrol/powerctrl
 @dirrm share/doc/HTML/ru/kcontrol/passwords
+@dirrm share/doc/HTML/ru/kcontrol/panelappearance
 @dirrm share/doc/HTML/ru/kcontrol/panel
 @dirrm share/doc/HTML/ru/kcontrol/netpref
 @dirrm share/doc/HTML/ru/kcontrol/mouse
 @dirrm share/doc/HTML/ru/kcontrol/laptop
 @dirrm share/doc/HTML/ru/kcontrol/language
+@dirrm share/doc/HTML/ru/kcontrol/lanbrowser
 @dirrm share/doc/HTML/ru/kcontrol/kwindecoration
 @dirrm share/doc/HTML/ru/kcontrol/kmixcfg
 @dirrm share/doc/HTML/ru/kcontrol/khtml
@@ -1704,6 +1751,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kcontrol/kcmlowbatwarn
 @dirrm share/doc/HTML/ru/kcontrol/kcmlowbatcrit
 @dirrm share/doc/HTML/ru/kcontrol/kcmlaunch
+@dirrm share/doc/HTML/ru/kcontrol/kcmktalkd
 @dirrm share/doc/HTML/ru/kcontrol/kcmkonsole
 @dirrm share/doc/HTML/ru/kcontrol/kcmfontinst
 @dirrm share/doc/HTML/ru/kcontrol/kcmcss
@@ -1727,8 +1775,10 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kcontrol/background
 @dirrm share/doc/HTML/ru/kcontrol/arts
 @dirrm share/doc/HTML/ru/kcontrol
+@dirrm share/doc/HTML/ru/kcharselect
 @dirrm share/doc/HTML/ru/kcalc
 @dirrm share/doc/HTML/ru/kcachegrind
+@dirrm share/doc/HTML/ru/kbugbuster
 @dirrm share/doc/HTML/ru/kbruch
 @dirrm share/doc/HTML/ru/kbounce
 @dirrm share/doc/HTML/ru/kbattleship
@@ -1739,6 +1789,7 @@ share/locale/ru/flag.png
 @dirrm share/doc/HTML/ru/kasteroids
 @dirrm share/doc/HTML/ru/karm
 @dirrm share/doc/HTML/ru/kandy
+@dirrm share/doc/HTML/ru/kamera
 @dirrm share/doc/HTML/ru/kalzium
 @dirrm share/doc/HTML/ru/kaddressbook
 @dirrm share/doc/HTML/ru/kaboodle

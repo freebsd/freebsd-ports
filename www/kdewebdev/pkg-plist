@@ -1500,26 +1500,10 @@ share/services/kxsldbg_part.desktop
 share/services/quanta_preview_config.desktop
 share/services/quantadebuggergubed.desktop
 share/servicetypes/quantadebugger.desktop
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22/actions
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
 @dirrm share/doc/HTML/en/quanta
 @dirrm share/doc/HTML/en/kxsldbg
 @dirrm share/doc/HTML/en/kommander
 @dirrm share/doc/HTML/en/klinkstatus
-@dirrm share/config.kcfg
 @dirrm share/apps/templates/text/scripts
 @dirrm share/apps/templates/text
 @dirrm share/apps/templates
@@ -1598,8 +1582,3 @@ share/servicetypes/quantadebugger.desktop
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kafkapart/pics
 @dirrm share/apps/kafkapart
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Editors
-@dirrm share/applnk/Development
-@dirrm share/applnk/.hidden
-@dirrm share/applnk

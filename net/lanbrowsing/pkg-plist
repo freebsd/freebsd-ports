@@ -20,9 +20,3 @@ share/services/rlan.protocol
 @dirrm share/apps/lisa
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree
-@dirrm share/apps/konqueror
-@dirrm share/apps/konqsidebartng/virtual_folders/services
-@dirrm share/apps/konqsidebartng/virtual_folders
-@dirrm share/apps/konqsidebartng
-@dirrm share/applnk/.hidden
-@dirrm share/applnk

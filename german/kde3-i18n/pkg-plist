@@ -99,6 +99,17 @@ share/doc/HTML/de/flashkard/flashkard3.png
 share/doc/HTML/de/flashkard/flashkard4.png
 share/doc/HTML/de/flashkard/index.cache.bz2
 share/doc/HTML/de/flashkard/index.docbook
+share/doc/HTML/de/juk/common
+share/doc/HTML/de/juk/history-playlist.png
+share/doc/HTML/de/juk/index.cache.bz2
+share/doc/HTML/de/juk/index.docbook
+share/doc/HTML/de/juk/juk-adv-search.png
+share/doc/HTML/de/juk/juk-file-renamer.png
+share/doc/HTML/de/juk/juk-main.png
+share/doc/HTML/de/juk/juk-tag-guesser.png
+share/doc/HTML/de/juk/normal-playlist.png
+share/doc/HTML/de/juk/search-playlist.png
+share/doc/HTML/de/juk/toolbar.png
 share/doc/HTML/de/kaboodle/common
 share/doc/HTML/de/kaboodle/index.cache.bz2
 share/doc/HTML/de/kaboodle/index.docbook
@@ -819,6 +830,9 @@ share/doc/HTML/de/knode/using-subscribing.docbook
 share/doc/HTML/de/knotes/common
 share/doc/HTML/de/knotes/index.cache.bz2
 share/doc/HTML/de/knotes/index.docbook
+share/doc/HTML/de/kodo/common
+share/doc/HTML/de/kodo/index.cache.bz2
+share/doc/HTML/de/kodo/index.docbook
 share/doc/HTML/de/kompare/common
 share/doc/HTML/de/kompare/index.cache.bz2
 share/doc/HTML/de/kompare/index.docbook
@@ -1178,6 +1192,9 @@ share/doc/HTML/de/kwatchgnupg/index.docbook
 share/doc/HTML/de/kweather/common
 share/doc/HTML/de/kweather/index.cache.bz2
 share/doc/HTML/de/kweather/index.docbook
+share/doc/HTML/de/kwifimanager/common
+share/doc/HTML/de/kwifimanager/index.cache.bz2
+share/doc/HTML/de/kwifimanager/index.docbook
 share/doc/HTML/de/kwin4/common
 share/doc/HTML/de/kwin4/index.cache.bz2
 share/doc/HTML/de/kwin4/index.docbook
@@ -1695,6 +1712,7 @@ share/locale/de/LC_MESSAGES/krdc.mo
 share/locale/de/LC_MESSAGES/kreadconfig.mo
 share/locale/de/LC_MESSAGES/krec.mo
 share/locale/de/LC_MESSAGES/kregexpeditor.mo
+share/locale/de/LC_MESSAGES/kres_bugzilla.mo
 share/locale/de/LC_MESSAGES/kres_exchange.mo
 share/locale/de/LC_MESSAGES/kres_imap.mo
 share/locale/de/LC_MESSAGES/kres_remote.mo
@@ -1868,6 +1886,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kwrite
 @dirrm share/doc/HTML/de/kworldclock
 @dirrm share/doc/HTML/de/kwin4
+@dirrm share/doc/HTML/de/kwifimanager
 @dirrm share/doc/HTML/de/kweather
 @dirrm share/doc/HTML/de/kwatchgnupg
 @dirrm share/doc/HTML/de/kwallet
@@ -1920,6 +1939,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/konqueror
 @dirrm share/doc/HTML/de/konq-plugins
 @dirrm share/doc/HTML/de/kompare
+@dirrm share/doc/HTML/de/kodo
 @dirrm share/doc/HTML/de/knotes
 @dirrm share/doc/HTML/de/knode
 @dirrm share/doc/HTML/de/knewsticker
@@ -2070,6 +2090,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/kalarm
 @dirrm share/doc/HTML/de/kaddressbook
 @dirrm share/doc/HTML/de/kaboodle
+@dirrm share/doc/HTML/de/juk
 @dirrm share/doc/HTML/de/flashkard
 @dirrm share/doc/HTML/de/common
 @dirrm share/doc/HTML/de/cervisia

@@ -176,6 +176,7 @@
     SUBDIR += kde3-i18n-gl
     SUBDIR += kde3-i18n-hi
     SUBDIR += kde3-i18n-hr
+    SUBDIR += kde3-i18n-hsb
     SUBDIR += kde3-i18n-id
     SUBDIR += kde3-i18n-is
     SUBDIR += kde3-i18n-it
@@ -190,6 +191,7 @@
     SUBDIR += kde3-i18n-nl
     SUBDIR += kde3-i18n-nn
     SUBDIR += kde3-i18n-nso
+    SUBDIR += kde3-i18n-pa
     SUBDIR += kde3-i18n-ro
     SUBDIR += kde3-i18n-se
     SUBDIR += kde3-i18n-sk
@@ -208,6 +210,7 @@
     SUBDIR += kde3-i18n-zu
     SUBDIR += kdeaddons3
     SUBDIR += kdeedu3
+    SUBDIR += kdehier
     SUBDIR += kdeutils3
     SUBDIR += kenny
     SUBDIR += kfile-plugins
@@ -217,9 +220,11 @@
     SUBDIR += koffice-i18n
     SUBDIR += koffice-i18n-af
     SUBDIR += koffice-i18n-bg
+    SUBDIR += koffice-i18n-br
     SUBDIR += koffice-i18n-bs
     SUBDIR += koffice-i18n-ca
     SUBDIR += koffice-i18n-cs
+    SUBDIR += koffice-i18n-cy
     SUBDIR += koffice-i18n-da
     SUBDIR += koffice-i18n-el
     SUBDIR += koffice-i18n-en_GB

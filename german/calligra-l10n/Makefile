@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES?=	german kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION:S/.0//}/src
@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	de-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for koffice
+COMMENT=	German messages and documentation for koffice
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 

@@ -1,27 +1,6 @@
 --- kworldwatch/zone.tab	Sat May 22 22:59:07 2004
-+++ kwordlwatch/zone.tab	Wed Aug 11 14:48:53 2004
-@@ -1,16 +1,18 @@
-+# @(#)zone.tab	1.29
-+#
- # TZ zone descriptions
- #
- # From Paul Eggert <eggert@twinsun.com> (1996-08-05):
- #
- # This file contains a table with the following columns:
--# 1.  ISO 3166 2-character country code.  See the file `iso3166.tab'.
-+# 1.  ISO 3166 2-character country code.  See /usr/share/misc/iso3166.
- # 2.  Latitude and longitude of the zone's principal location
- #     in ISO 6709 sign-degrees-minutes-seconds format,
- #     either +-DDMM+-DDDMM or +-DDMMSS+-DDDMMSS,
- #     first latitude (+ is north), then longitude (+ is east).
- # 3.  Zone name used in value of TZ environment variable.
- # 4.  Comments; present if and only if the country has multiple rows.
--#     
-+#
- # Columns are separated by a single tab.
- # The table is sorted first by country, then an order within the country that
- # (1) makes some geographical sense, and
-@@ -31,14 +33,16 @@
++++ kworldwatch/zone.tab	Sat Dec  4 18:55:32 2004
+@@ -31,34 +33,43 @@
  AO	-0848+01314	Africa/Luanda
  AQ	-7750+16636	Antarctica/McMurdo	McMurdo Station, Ross Island
  AQ	-9000+00000	Antarctica/South_Pole	Amundsen-Scott Station, South Pole
@@ -32,15 +11,27 @@
  AQ	-6617+11031	Antarctica/Casey	Casey Station, Bailey Peninsula
 +AQ	-7824+10654	Antarctica/Vostok	Vostok Station, S Magnetic Pole
  AQ	-6640+14001	Antarctica/DumontDUrville	Dumont-d'Urville Base, Terre Adelie
-+AQ	-690022+0393524	Antarctica/Syowa	Syowa Station, E Ongul I
- AR	-3436-05827	America/Buenos_Aires	E Argentina (BA, DF, SC, TF)
+-AR	-3436-05827	America/Buenos_Aires	E Argentina (BA, DF, SC, TF)
 -AR	-3257-06040	America/Rosario	NE Argentina (SF, ER, CN, MN, CC, FM, LP, CH)
 -AR	-3124-06411	America/Cordoba	W Argentina (CB, SA, TM, LR, SJ, SL, NQ, RN)
-+AR	-3124-06411	America/Cordoba	most locations (CB,CC,CH,CN,ER,FM,LP,LR,MN,NQ,RN,SA,SE,SF,SJ,SL,TM)
- AR	-2411-06518	America/Jujuy	Jujuy (JY)
- AR	-2828-06547	America/Catamarca	Catamarca (CT)
- AR	-3253-06849	America/Mendoza	Mendoza (MZ)
-@@ -48,7 +52,7 @@
+-AR	-2411-06518	America/Jujuy	Jujuy (JY)
+-AR	-2828-06547	America/Catamarca	Catamarca (CT)
+-AR	-3253-06849	America/Mendoza	Mendoza (MZ)
++AQ	-690022+0393524	Antarctica/Syowa	Syowa Station, E Ongul I
++AR	-3436-05827	America/Argentina/Buenos_Aires	Buenos Aires (BA, CF)
++AR	-3124-06411	America/Argentina/Cordoba	most locations (CB, CC, CN, ER, FM, LP, MN, NQ, RN, SA, SE, SF, SL)
++AR	-2411-06518	America/Argentina/Jujuy	Jujuy (JY)
++AR	-3124-06411	America/Argentina/Tucuman	Tucuman (TM)
++AR	-2828-06547	America/Argentina/Catamarca	Catamarca (CT)
++AR	-2926-06651	America/Argentina/La_Rioja	La Rioja (LR)
++AR	-3132-06831	America/Argentina/San_Juan	San Juan (SJ)
++AR	-3253-06849	America/Argentina/Mendoza	Mendoza (MZ)
++AR	-4552-06730	America/Argentina/ComodRivadavia	Chubut (CH)
++AR	-5138-06913	America/Argentina/Rio_Gallegos	Santa Cruz (SC)
++AR	-5448-06818	America/Argentina/Ushuaia	Tierra del Fuego (TF)
+ AS	-1416-17042	Pacific/Pago_Pago
+ AT	+4813+01620	Europe/Vienna
+ AU	-3133+15905	Australia/Lord_Howe	Lord Howe Island
  AU	-4253+14719	Australia/Hobart	Tasmania
  AU	-3749+14458	Australia/Melbourne	Victoria
  AU	-3352+15113	Australia/Sydney	New South Wales - most locations
@@ -49,7 +40,10 @@
  AU	-2728+15302	Australia/Brisbane	Queensland - most locations
  AU	-2016+14900	Australia/Lindeman	Queensland - Holiday Islands
  AU	-3455+13835	Australia/Adelaide	South Australia
-@@ -58,7 +62,7 @@
+ AU	-1228+13050	Australia/Darwin	Northern Territory
+ AU	-3157+11551	Australia/Perth	Western Australia
+ AW	+1230-06858	America/Aruba
++AX	+6006+01957	Europe/Mariehamn
  AZ	+4023+04951	Asia/Baku
  BA	+4352+01825	Europe/Sarajevo
  BB	+1306-05937	America/Barbados
@@ -58,7 +52,7 @@
  BE	+5050+00420	Europe/Brussels
  BF	+1222-00131	Africa/Ouagadougou
  BG	+4241+02319	Europe/Sofia
-@@ -68,15 +72,23 @@
+@@ -68,15 +79,23 @@
  BM	+3217-06446	Atlantic/Bermuda
  BN	+0456+11455	Asia/Brunei
  BO	-1630-06809	America/La_Paz
@@ -90,7 +84,7 @@
  BW	-2545+02555	Africa/Gaborone
  BY	+5354+02734	Europe/Minsk
  BZ	+1730-08812	America/Belize
-@@ -84,14 +96,16 @@
+@@ -84,14 +103,16 @@
  CA	+4439-06336	America/Halifax	Atlantic Time - Nova Scotia (most places), NB, W Labrador, E Quebec & PEI
  CA	+4612-05957	America/Glace_Bay	Atlantic Time - Nova Scotia - places that did not observe DST 1966-1971
  CA	+5320-06025	America/Goose_Bay	Atlantic Time - E Labrador
@@ -111,7 +105,7 @@
  CA	+5024-10439	America/Regina	Central Standard Time - Saskatchewan - most locations
  CA	+5017-10750	America/Swift_Current	Central Standard Time - Saskatchewan - midwest
  CA	+5333-11328	America/Edmonton	Mountain Time - Alberta, east British Columbia & west Saskatchewan
-@@ -109,17 +123,17 @@
+@@ -109,17 +130,17 @@
  CH	+4723+00832	Europe/Zurich
  CI	+0519-00402	Africa/Abidjan
  CK	-2114-15946	Pacific/Rarotonga
@@ -137,7 +131,7 @@
  CU	+2308-08222	America/Havana
  CV	+1455-02331	Atlantic/Cape_Verde
  CX	-1025+10543	Indian/Christmas
-@@ -158,9 +172,10 @@
+@@ -158,9 +179,10 @@
  GF	+0456-05220	America/Cayenne
  GH	+0533-00013	Africa/Accra
  GI	+3608-00521	Europe/Gibraltar
@@ -151,7 +145,7 @@
  GM	+1328-01639	Africa/Banjul
  GN	+0931-01343	Africa/Conakry
  GP	+1614-06132	America/Guadeloupe
-@@ -171,12 +186,14 @@
+@@ -171,12 +193,14 @@
  GU	+1328+14445	Pacific/Guam
  GW	+1151-01535	Africa/Bissau
  GY	+0648-05810	America/Guyana
@@ -167,7 +161,7 @@
  ID	-0232+14042	Asia/Jayapura	Irian Jaya & the Moluccas
  IE	+5320-00615	Europe/Dublin
  IL	+3146+03514	Asia/Jerusalem
-@@ -188,7 +205,7 @@
+@@ -188,7 +212,7 @@
  IT	+4154+01229	Europe/Rome
  JM	+1800-07648	America/Jamaica
  JO	+3157+03556	Asia/Amman
@@ -176,7 +170,7 @@
  KE	-0117+03649	Africa/Nairobi
  KG	+4254+07436	Asia/Bishkek
  KH	+1133+10455	Asia/Phnom_Penh
-@@ -201,9 +218,11 @@
+@@ -201,9 +225,11 @@
  KR	+3733+12658	Asia/Seoul
  KW	+2920+04759	Asia/Kuwait
  KY	+1918-08123	America/Cayman
@@ -191,7 +185,7 @@
  LA	+1758+10236	Asia/Vientiane
  LB	+3353+03530	Asia/Beirut
  LC	+1401-06100	America/St_Lucia
-@@ -225,8 +244,10 @@
+@@ -225,8 +251,10 @@
  ML	+1239-00800	Africa/Bamako	southwest Mali
  ML	+1446-00301	Africa/Timbuktu	northeast Mali
  MM	+1647+09610	Asia/Rangoon
@@ -204,7 +198,7 @@
  MP	+1512+14545	Pacific/Saipan
  MQ	+1436-06105	America/Martinique
  MR	+1806-01557	Africa/Nouakchott
-@@ -235,10 +256,14 @@
+@@ -235,10 +263,14 @@
  MU	-2010+05730	Indian/Mauritius
  MV	+0410+07330	Indian/Maldives
  MW	-1547+03500	Africa/Blantyre
@@ -223,7 +217,7 @@
  MY	+0310+10142	Asia/Kuala_Lumpur	peninsular Malaysia
  MY	+0133+11020	Asia/Kuching	Sabah & Sarawak
  MZ	-2558+03235	Africa/Maputo
-@@ -254,7 +279,7 @@
+@@ -254,7 +286,7 @@
  NR	-0031+16655	Pacific/Nauru
  NU	-1901+16955	Pacific/Niue
  NZ	-3652+17446	Pacific/Auckland	most locations
@@ -232,7 +226,7 @@
  OM	+2336+05835	Asia/Muscat
  PA	+0858-07932	America/Panama
  PE	-1203-07703	America/Lima
-@@ -287,7 +312,8 @@
+@@ -287,7 +319,8 @@
  RU	+5216+10420	Asia/Irkutsk	Moscow+05 - Lake Baikal
  RU	+6200+12940	Asia/Yakutsk	Moscow+06 - Lena River
  RU	+4310+13156	Asia/Vladivostok	Moscow+07 - Amur River
@@ -242,7 +236,7 @@
  RU	+5301+15839	Asia/Kamchatka	Moscow+09 - Kamchatka
  RU	+6445+17729	Asia/Anadyr	Moscow+10 - Bering Sea
  RW	-0157+03004	Africa/Kigali
-@@ -318,7 +344,8 @@
+@@ -318,7 +351,8 @@
  TH	+1345+10031	Asia/Bangkok
  TJ	+3835+06848	Asia/Dushanbe
  TK	-0922-17114	Pacific/Fakaofo
@@ -252,7 +246,7 @@
  TN	+3648+01011	Africa/Tunis
  TO	-2110+17510	Pacific/Tongatapu
  TR	+4101+02858	Europe/Istanbul
-@@ -327,21 +354,24 @@
+@@ -327,21 +361,24 @@
  TW	+2503+12130	Asia/Taipei
  TZ	-0648+03917	Africa/Dar_es_Salaam
  UA	+5026+03031	Europe/Kiev	most locations
@@ -280,7 +274,7 @@
  US	+394421-1045903	America/Denver	Mountain Time
  US	+433649-1161209	America/Boise	Mountain Time - south Idaho & east Oregon
  US	+364708-1084111	America/Shiprock	Mountain Time - Navajo
-@@ -354,7 +384,8 @@
+@@ -354,7 +391,8 @@
  US	+515248-1763929	America/Adak	Aleutian Islands
  US	+211825-1575130	Pacific/Honolulu	Hawaii
  UY	-3453-05611	America/Montevideo
@@ -290,7 +284,7 @@
  VA	+4154+01227	Europe/Vatican
  VC	+1309-06114	America/St_Vincent
  VE	+1030-06656	America/Caracas
-@@ -366,7 +397,6 @@
+@@ -366,7 +404,6 @@
  WS	-1350-17144	Pacific/Apia
  YE	+1245+04512	Asia/Aden
  YT	-1247+04514	Indian/Mayotte

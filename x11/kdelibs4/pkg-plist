@@ -383,6 +383,7 @@ include/kio/tcpslavebase.h
 include/kio/thumbcreator.h
 include/kio/uiserver.h
 include/kio/uiserver_stub.h
+include/kiobuffer.h
 include/kipc.h
 include/kjanuswidget.h
 include/kjs/completion.h
@@ -681,6 +682,7 @@ include/kuser.h
 include/kuserprofile.h
 include/kvmallocator.h
 include/kwallet.h
+include/kwallettypes.h
 include/kwin.h
 include/kwindowinfo.h
 include/kwindowlistmenu.h
@@ -1001,7 +1003,7 @@ share/apps/dcopidlng/kdocLib.pm
 share/apps/dcopidlng/kdocParseDoc.pm
 share/apps/dcopidlng/kdocUtil.pm
 share/apps/kabc/countrytransl.map
-share/apps/kabc/formats/binary.desktop
+share/apps/kabc/formats/binary.desktop/binary.desktop
 share/apps/katepart/katepartreadonlyui.rc
 share/apps/katepart/katepartui.rc
 share/apps/katepart/syntax/ada.xml
@@ -1372,6 +1374,7 @@ share/apps/ksgmltools2/customization/cs/entities/underArtisticLicense.docbook
 share/apps/ksgmltools2/customization/cs/entities/underBSDLicense.docbook
 share/apps/ksgmltools2/customization/cs/entities/underFDL.docbook
 share/apps/ksgmltools2/customization/cs/entities/underGPL.docbook
+share/apps/ksgmltools2/customization/cs/entities/underLGPL.docbook
 share/apps/ksgmltools2/customization/cs/entities/underX11License.docbook
 share/apps/ksgmltools2/customization/cs/entities/update-doc.docbook
 share/apps/ksgmltools2/customization/cs/lang.entities
@@ -4294,6 +4297,7 @@ share/locale/all_languages
 share/mimelnk/all/all.desktop
 share/mimelnk/all/allfiles.desktop
 share/mimelnk/application/illustrator.desktop
+share/mimelnk/application/java.desktop
 share/mimelnk/application/mathml+xml.desktop
 share/mimelnk/application/msexcel.desktop
 share/mimelnk/application/mspowerpoint.desktop
@@ -4444,6 +4448,7 @@ share/mimelnk/application/x-zerosize.desktop
 share/mimelnk/application/x-zip.desktop
 share/mimelnk/application/x-zoo.desktop
 share/mimelnk/application/xhtml+xml.desktop
+share/mimelnk/application/xml.desktop
 share/mimelnk/audio/aac.desktop
 share/mimelnk/audio/ac3.desktop
 share/mimelnk/audio/basic.desktop
@@ -4659,14 +4664,6 @@ share/servicetypes/kurifilterplugin.desktop
 share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/icons/crystalsvg/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/32x32/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/22x22/actions/kde
-@exec /bin/mkdir -p %D/share/icons/crystalsvg/32x32/actions/kde
 @exec /bin/mkdir -p %D/share/icons/crystalsvg/22x22/actions/kde
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/libkmid/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/libkmid/html
@@ -4725,105 +4722,12 @@ share/servicetypes/scriptinterface.desktop
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/khtml/html
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdefx/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdecore/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeui/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kjs/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/libkmid/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeprint/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/khtml/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/dcop/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdefx/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdecore/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeui/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kjs/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kwallet/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kio/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/arts/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/knewstuff/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kparts/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kresources/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kutils/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/libkmid/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/interfaces/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kdeprint/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kabc/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kmdi/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/khtml/html
-@exec /bin/mkdir -p %D/share/doc/HTML/en/kdelibs-apidocs/kate/html
-@dirrm share/servicetypes
 @dirrm share/services/kresources/kabc
 @dirrm share/services/kresources
 @dirrm share/services/kded
-@dirrm share/services
-@dirrm share/mimelnk/video
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/multipart
-@dirrm share/mimelnk/model
-@dirrm share/mimelnk/message
-@dirrm share/mimelnk/inode
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk/all
-@dirrm share/mimelnk
-@dirrm share/icons/hicolor
 @dirrm share/icons/crystalsvg/scalable/mimetypes
-@dirrm share/icons/crystalsvg/scalable/filesystems
-@dirrm share/icons/crystalsvg/scalable/devices
-@dirrm share/icons/crystalsvg/scalable/actions
-@dirrm share/icons/crystalsvg/scalable
-@dirrm share/icons/crystalsvg/64x64/mimetypes
-@dirrm share/icons/crystalsvg/64x64/filesystems
-@dirrm share/icons/crystalsvg/64x64/devices
-@dirrm share/icons/crystalsvg/64x64/apps
-@dirrm share/icons/crystalsvg/64x64/actions
-@dirrm share/icons/crystalsvg/64x64
-@dirrm share/icons/crystalsvg/48x48/mimetypes
-@dirrm share/icons/crystalsvg/48x48/filesystems
-@dirrm share/icons/crystalsvg/48x48/devices
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48/actions
-@dirrm share/icons/crystalsvg/48x48
-@dirrm share/icons/crystalsvg/32x32/mimetypes
-@dirrm share/icons/crystalsvg/32x32/filesystems
-@dirrm share/icons/crystalsvg/32x32/devices
-@dirrm share/icons/crystalsvg/32x32/apps
 @dirrm share/icons/crystalsvg/32x32/actions/kde
-@dirrm share/icons/crystalsvg/32x32/actions
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/22x22/mimetypes
-@dirrm share/icons/crystalsvg/22x22/filesystems
-@dirrm share/icons/crystalsvg/22x22/devices
 @dirrm share/icons/crystalsvg/22x22/actions/kde
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
-@dirrm share/icons/crystalsvg/16x16/mimetypes
-@dirrm share/icons/crystalsvg/16x16/filesystems
-@dirrm share/icons/crystalsvg/16x16/devices
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg/128x128/mimetypes
-@dirrm share/icons/crystalsvg/128x128/filesystems
-@dirrm share/icons/crystalsvg/128x128/devices
-@dirrm share/icons/crystalsvg/128x128/apps
-@dirrm share/icons/crystalsvg/128x128/actions
-@dirrm share/icons/crystalsvg/128x128
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid/html
 @dirrm share/doc/HTML/en/kdelibs-apidocs/libkmid
 @dirrm share/doc/HTML/en/kdelibs-apidocs/kwallet/html
@@ -4864,8 +4768,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/doc/HTML/en/kdelibs-apidocs/arts
 @dirrm share/doc/HTML/en/kdelibs-apidocs
 @dirrm share/doc/HTML/en/common
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/config/ui
 @dirrm share/config/colors
 @dirrm share/config
@@ -5032,17 +4934,12 @@ share/servicetypes/scriptinterface.desktop
 @dirrm share/apps/kcertpart
 @dirrm share/apps/katepart/syntax
 @dirrm share/apps/katepart
-@dirrm share/apps/kabc/formats
-@dirrm share/apps/kabc
 @dirrm share/apps/dcopidlng
 @dirrm share/apps/LICENSES
-@dirrm share/apps
 @dirrm share/applications/kde
-@dirrm share/applications
 @dirrm lib/kde3/plugins/styles
 @dirrm lib/kde3/plugins/designer
 @dirrm lib/kde3/plugins
-@dirrm lib/kde3
 @dirrm include/libkmid
 @dirrm include/ktexteditor
 @dirrm include/kspell2

@@ -7,7 +7,7 @@ lib/libxvim.la
 lib/libxvim.so
 lib/libxvim.so.0
 share/applications/kde/kcmvim.desktop
-share/applications/kdeaddons-vimpart-3.3.1
+share/applications/kdeaddons-vimpart-3.3.2
 share/apps/kcontrol/pics/kvim.png
 share/apps/vimpart/kvim.vim
 share/apps/vimpart/vimpartui.rc

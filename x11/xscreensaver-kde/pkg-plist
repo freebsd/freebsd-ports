@@ -184,6 +184,3 @@ share/applnk/System/ScreenSavers/xspirograph.desktop
 share/applnk/System/ScreenSavers/xsublim.desktop
 share/applnk/System/ScreenSavers/xteevee.desktop
 share/applnk/System/ScreenSavers/zoom.desktop
-@dirrm share/applnk/System/ScreenSavers
-@dirrm share/applnk/System
-@dirrm share/applnk

@@ -864,8 +864,10 @@ share/doc/HTML/fr/kmplot/index.cache.bz2
 share/doc/HTML/fr/kmplot/index.docbook
 share/doc/HTML/fr/kmplot/install.docbook
 share/doc/HTML/fr/kmplot/introduction.docbook
+share/doc/HTML/fr/kmplot/main.png
 share/doc/HTML/fr/kmplot/menu.docbook
 share/doc/HTML/fr/kmplot/reference.docbook
+share/doc/HTML/fr/kmplot/settingsdlg.png
 share/doc/HTML/fr/kmplot/using.docbook
 share/doc/HTML/fr/knewsticker/common
 share/doc/HTML/fr/knewsticker/contextmenu.png
@@ -1494,6 +1496,8 @@ share/locale/fr/LC_MESSAGES/artscontrol.mo
 share/locale/fr/LC_MESSAGES/artsmodules.mo
 share/locale/fr/LC_MESSAGES/atlantik.mo
 share/locale/fr/LC_MESSAGES/atlantikdesigner.mo
+share/locale/fr/LC_MESSAGES/audiocd_encoder_lame.mo
+share/locale/fr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/fr/LC_MESSAGES/audiorename_plugin.mo
 share/locale/fr/LC_MESSAGES/autorefresh.mo
 share/locale/fr/LC_MESSAGES/babelfish.mo
@@ -1866,6 +1870,7 @@ share/locale/fr/LC_MESSAGES/krdc.mo
 share/locale/fr/LC_MESSAGES/kreadconfig.mo
 share/locale/fr/LC_MESSAGES/krec.mo
 share/locale/fr/LC_MESSAGES/kregexpeditor.mo
+share/locale/fr/LC_MESSAGES/kres_bugzilla.mo
 share/locale/fr/LC_MESSAGES/kres_exchange.mo
 share/locale/fr/LC_MESSAGES/kres_imap.mo
 share/locale/fr/LC_MESSAGES/kres_remote.mo

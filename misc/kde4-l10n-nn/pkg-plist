@@ -8,6 +8,7 @@ share/locale/nn/LC_MESSAGES/artscontrol.mo
 share/locale/nn/LC_MESSAGES/artsmodules.mo
 share/locale/nn/LC_MESSAGES/atlantik.mo
 share/locale/nn/LC_MESSAGES/babelfish.mo
+share/locale/nn/LC_MESSAGES/charlatanui.mo
 share/locale/nn/LC_MESSAGES/childpanelextension.mo
 share/locale/nn/LC_MESSAGES/clockapplet.mo
 share/locale/nn/LC_MESSAGES/crashesplugin.mo
@@ -63,6 +64,7 @@ share/locale/nn/LC_MESSAGES/katepart.mo
 share/locale/nn/LC_MESSAGES/kateprojectmanager.mo
 share/locale/nn/LC_MESSAGES/katepybrowse.mo
 share/locale/nn/LC_MESSAGES/katespell.mo
+share/locale/nn/LC_MESSAGES/katetabbarextension.mo
 share/locale/nn/LC_MESSAGES/katetextfilter.mo
 share/locale/nn/LC_MESSAGES/katexmlcheck.mo
 share/locale/nn/LC_MESSAGES/katexmltools.mo
@@ -81,6 +83,7 @@ share/locale/nn/LC_MESSAGES/kcm_kviewcanvasconfig.mo
 share/locale/nn/LC_MESSAGES/kcm_kviewgeneralconfig.mo
 share/locale/nn/LC_MESSAGES/kcm_kviewpluginsconfig.mo
 share/locale/nn/LC_MESSAGES/kcm_kviewviewerpluginsconfig.mo
+share/locale/nn/LC_MESSAGES/kcm_sambaconf.mo
 share/locale/nn/LC_MESSAGES/kcmaccess.mo
 share/locale/nn/LC_MESSAGES/kcmaccessibility.mo
 share/locale/nn/LC_MESSAGES/kcmarts.mo
@@ -200,6 +203,7 @@ share/locale/nn/LC_MESSAGES/kfile_html.mo
 share/locale/nn/LC_MESSAGES/kfile_ico.mo
 share/locale/nn/LC_MESSAGES/kfile_jpeg.mo
 share/locale/nn/LC_MESSAGES/kfile_kig.mo
+share/locale/nn/LC_MESSAGES/kfile_lnk.mo
 share/locale/nn/LC_MESSAGES/kfile_m3u.mo
 share/locale/nn/LC_MESSAGES/kfile_mp3.mo
 share/locale/nn/LC_MESSAGES/kfile_mpc.mo
@@ -293,6 +297,7 @@ share/locale/nn/LC_MESSAGES/kmail.mo
 share/locale/nn/LC_MESSAGES/kmail_text_calendar_plugin.mo
 share/locale/nn/LC_MESSAGES/kmail_text_vcard_plugin.mo
 share/locale/nn/LC_MESSAGES/kmailcvt.mo
+share/locale/nn/LC_MESSAGES/kmathapplet.mo
 share/locale/nn/LC_MESSAGES/kmathtool.mo
 share/locale/nn/LC_MESSAGES/kmcop.mo
 share/locale/nn/LC_MESSAGES/kmenuapplet.mo
@@ -461,6 +466,7 @@ share/locale/nn/LC_MESSAGES/libkickermenu_konsole.mo
 share/locale/nn/LC_MESSAGES/libkickermenu_prefmenu.mo
 share/locale/nn/LC_MESSAGES/libkickermenu_recentdocs.mo
 share/locale/nn/LC_MESSAGES/libkickermenu_tom.mo
+share/locale/nn/LC_MESSAGES/libkleopatra.mo
 share/locale/nn/LC_MESSAGES/libkonq.mo
 share/locale/nn/LC_MESSAGES/libkpimexchange.mo
 share/locale/nn/LC_MESSAGES/libkscan.mo
@@ -483,6 +489,7 @@ share/locale/nn/LC_MESSAGES/ppdtranslations.mo
 share/locale/nn/LC_MESSAGES/privacy.mo
 share/locale/nn/LC_MESSAGES/quanta.mo
 share/locale/nn/LC_MESSAGES/quicklauncher.mo
+share/locale/nn/LC_MESSAGES/rellinks.mo
 share/locale/nn/LC_MESSAGES/searchbarplugin.mo
 share/locale/nn/LC_MESSAGES/secpolicy.mo
 share/locale/nn/LC_MESSAGES/spy.mo

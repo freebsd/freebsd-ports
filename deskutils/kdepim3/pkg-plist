@@ -32,6 +32,7 @@ bin/ksync
 bin/ktnef
 bin/kwatchgnupg
 bin/sloxwizard
+include/KNotesAppIface.h
 include/KNotesIface.h
 include/calendar/calendardecoration.h
 include/calendar/plugin.h
@@ -168,6 +169,7 @@ include/libkcal/icaldrag.h
 include/libkcal/icalformat.h
 include/libkcal/incidence.h
 include/libkcal/incidencebase.h
+include/libkcal/incidenceformatter.h
 include/libkcal/journal.h
 include/libkcal/kcalversion.h
 include/libkcal/listbase.h
@@ -414,7 +416,7 @@ lib/libdummykonnector.la
 lib/libdummykonnector.so
 lib/libgpgme++.la
 lib/libgpgme++.so
-lib/libgpgme++.so.0
+lib/libgpgme++.so.1
 lib/libkabc_imap.la
 lib/libkabc_imap.so
 lib/libkabc_imap.so.0
@@ -766,6 +768,7 @@ share/apps/knotes/icons/crystalsvg/16x16/actions/knotes_delete.png
 share/apps/knotes/icons/crystalsvg/16x16/actions/text_sub.png
 share/apps/knotes/icons/crystalsvg/16x16/actions/text_super.png
 share/apps/knotes/knotes_part.rc
+share/apps/knotes/knotesappui.rc
 share/apps/knotes/knotesui.rc
 share/apps/kontact/kontact.setdlg
 share/apps/kontact/kontactui.rc
@@ -1531,14 +1534,6 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/services/kitchensync
 @dirrm share/services/kaddressbook
 @dirrm share/mimelnk/kdedevice
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/crystalsvg/22x22/apps
 @dirrm share/doc/HTML/en/kwatchgnupg
 @dirrm share/doc/HTML/en/ktnef
 @dirrm share/doc/HTML/en/kpilot
@@ -1600,12 +1595,10 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/doc/HTML/en/kdepim-apidocs/certmanager
 @dirrm share/doc/HTML/en/kdepim-apidocs
 @dirrm share/doc/HTML/en/kcontrol/kalarmd
-@dirrm share/doc/HTML/en/kcontrol
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kandy
 @dirrm share/doc/HTML/en/kalarm
 @dirrm share/doc/HTML/en/kaddressbook
-@dirrm share/config.kcfg
 @dirrm share/apps/libkleopatra/pics
 @dirrm share/apps/libkleopatra
 @dirrm share/apps/kwatchgnupg/pics
@@ -1727,10 +1720,6 @@ share/servicetypes/kpilotconduit.desktop
 @dirrm share/apps/kaddressbook/csv-templates
 @dirrm share/apps/kaddressbook/contacteditorpages
 @dirrm share/apps/kaddressbook
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Applications
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
 @dirrm include/qgpgme
 @dirrm include/mimelib
 @dirrm include/libkcal

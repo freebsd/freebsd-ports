@@ -31,6 +31,7 @@ share/locale/bn/LC_MESSAGES/kbackgammon.mo
 share/locale/bn/LC_MESSAGES/kbattleship.mo
 share/locale/bn/LC_MESSAGES/kblackbox.mo
 share/locale/bn/LC_MESSAGES/kbounce.mo
+share/locale/bn/LC_MESSAGES/kbruch.mo
 share/locale/bn/LC_MESSAGES/kcmaccess.mo
 share/locale/bn/LC_MESSAGES/kcmaccessibility.mo
 share/locale/bn/LC_MESSAGES/kcmarts.mo
@@ -38,10 +39,12 @@ share/locale/bn/LC_MESSAGES/kcmbackground.mo
 share/locale/bn/LC_MESSAGES/kcmcgi.mo
 share/locale/bn/LC_MESSAGES/kcmemail.mo
 share/locale/bn/LC_MESSAGES/kcmenergy.mo
+share/locale/bn/LC_MESSAGES/kcmfonts.mo
 share/locale/bn/LC_MESSAGES/kcmicons.mo
 share/locale/bn/LC_MESSAGES/kcminfo.mo
 share/locale/bn/LC_MESSAGES/kcmioslaveinfo.mo
 share/locale/bn/LC_MESSAGES/kcmkclock.mo
+share/locale/bn/LC_MESSAGES/kcmkded.mo
 share/locale/bn/LC_MESSAGES/kcmkicker.mo
 share/locale/bn/LC_MESSAGES/kcmkio.mo
 share/locale/bn/LC_MESSAGES/kcmkonq.mo
@@ -56,9 +59,11 @@ share/locale/bn/LC_MESSAGES/kcmnic.mo
 share/locale/bn/LC_MESSAGES/kcmnotify.mo
 share/locale/bn/LC_MESSAGES/kcmprintmgr.mo
 share/locale/bn/LC_MESSAGES/kcmscreensaver.mo
+share/locale/bn/LC_MESSAGES/kcmsmartcard.mo
 share/locale/bn/LC_MESSAGES/kcmsmserver.mo
 share/locale/bn/LC_MESSAGES/kcmspellchecking.mo
 share/locale/bn/LC_MESSAGES/kcmstyle.mo
+share/locale/bn/LC_MESSAGES/kcmtaskbar.mo
 share/locale/bn/LC_MESSAGES/kcmusb.mo
 share/locale/bn/LC_MESSAGES/kcmview1394.mo
 share/locale/bn/LC_MESSAGES/kcontrol.mo
@@ -145,10 +150,12 @@ share/locale/bn/LC_MESSAGES/ktexteditor_docwordcompletion.mo
 share/locale/bn/LC_MESSAGES/ktexteditor_insertfile.mo
 share/locale/bn/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/bn/LC_MESSAGES/ktexteditor_kdatatool.mo
+share/locale/bn/LC_MESSAGES/ktip.mo
 share/locale/bn/LC_MESSAGES/ktouch.mo
 share/locale/bn/LC_MESSAGES/ktron.mo
 share/locale/bn/LC_MESSAGES/kturtle.mo
 share/locale/bn/LC_MESSAGES/kverbos.mo
+share/locale/bn/LC_MESSAGES/kvoctrain.mo
 share/locale/bn/LC_MESSAGES/kwin.mo
 share/locale/bn/LC_MESSAGES/kwin_b2_config.mo
 share/locale/bn/LC_MESSAGES/kwin_default_config.mo
