@@ -1,0 +1,21 @@
+GIFTool , a tool for GIF89a trasnparent option  and interlace mode.
+
+Usage: giftool [options] [file]
+       giftool (-p|-c|-B) [options] [files...]
+	-B	Batch Mode, read and write the same filename
+	-i	Set GIF Interlace mode ON
+	+i	Set GIF Interlace mode OFF
+	-p	Print information about file(s)
+	-c	Print comment information
+	+c	Add comments to file(s)
+	-C	Strip comment from file(s)
+	-o file	Send output to 'file'
+	-rgb name	Use 'name' as the transparent pixel
+	-rgb ##,##,##	tUse rgb-value as the transparent pixel
+	-###	Used pixel index as transparent (1 == first colormap entry)
+
+For instance you could say 'giftool -B -i *.gif' to convert all your images
+to interlaced GIF files in one easy step.
+
+giftool version 1.0 is Copyright 1994 Home Pages, Inc and is shareware.
+Please, use the -info option to read the licensing information.
