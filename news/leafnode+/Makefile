@@ -1,14 +1,14 @@
 # New ports collection makefile for:	leafnode+
-# Version required:	2.9
+# Version required:	2.10
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	leafnode+-2.9
+DISTNAME=	leafnode+-2.10
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/leafnode/
+MASTER_SITES=	ftp://hiroshima.isdn.uiuc.edu/leafnode+/
 
 MAINTAINER=	tom@FreeBSD.org
 
@@ -47,11 +47,19 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/leafnode+
 .endfor
 .endif
-
-post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@if test \( ! -d ${LEAFSPOOLDIR} \) -o \( ! -d ${LEAFLIBDIR} \) ; then \
-		${CAT} ${PKGDIR}/MESSAGE; \
-	fi
+.if !exists{LEAFSPOOLDIR} || !exists{{LEAFLIBDIR}
+	@${MKDIR} ${LEAFSPOOLDIR} ${LEAFLIBDIR}
+	@${MKDIR} ${LEAFSPOOLDIR}/interesting.groups
+	@${MKDIR} ${LEAFSPOOLDIR}/out.going
+.for dir_a in 0 1 2 3 4 5 6 7 8 9
+.for dir_b in 0 1 2 3 4 5 6 7 8 9
+.for dir_c in 0 1 2 3 4 5 6 7 8 9
+	@${MKDIR} ${LEAFSPOOLDIR}/message.id/${dir_a}${dir_b}${dir_c}
+.endfor
+.endfor
+.endfor
+	@${CHOWN} -R news:news ${LEAFSPOOLDIR} ${LEAFLIBDIR}
+	@${CHMOD} 2750 ${LEAFSPOOLDIR}
+.endif
 
 .include <bsd.port.mk>
