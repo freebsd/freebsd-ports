@@ -1,0 +1,31 @@
+%%MYSUBDIR%%bin/matchup
+%%MYSUBDIR%%bin/columnt
+%%MYSUBDIR%%bin/zoverall
+%%MYSUBDIR%%bin/zsendmail
+%%MYSUBDIR%%bin/xqp
+%%MYSUBDIR%%bin/xsender
+%%MYSUBDIR%%bin/xrecipient
+%%MYSUBDIR%%bin/ddist
+%%MYSUBDIR%%bin/deferrals
+%%MYSUBDIR%%bin/failures
+%%MYSUBDIR%%bin/successes
+%%MYSUBDIR%%bin/rhosts
+%%MYSUBDIR%%bin/recipients
+%%MYSUBDIR%%bin/rxdelay
+%%MYSUBDIR%%bin/senders
+%%MYSUBDIR%%bin/suids
+%%MYSUBDIR%%bin/zddist
+%%MYSUBDIR%%bin/zdeferrals
+%%MYSUBDIR%%bin/zfailures
+%%MYSUBDIR%%bin/zsuccesses
+%%MYSUBDIR%%bin/zrhosts
+%%MYSUBDIR%%bin/zrecipients
+%%MYSUBDIR%%bin/zrxdelay
+%%MYSUBDIR%%bin/zsenders
+%%MYSUBDIR%%bin/zsuids
+%%MYSUBDIR%%doc/MATCHUP
+%%MYSUBDIR%%doc/ACCOUNTING
+@dirrm %%MYSUBDIR%%doc
+@dirrm %%MYSUBDIR%%bin
+@dirrm %%MYSUBDIR%%man/man1
+@dirrm %%MYSUBDIR%%man

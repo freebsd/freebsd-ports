@@ -1,0 +1,18 @@
+qmailanalog is a collection of tools to help you analyze qmail-send's
+activity record. It supplies statistics to answer a wide variety of
+questions:
+
+   * overall: how many messages? recipients? attempts? etc.
+
+   * ddist: how soon were 50% of the messages delivered? 90%? 95%? 99%?
+
+   * rxdelay: what's the best order of recipients for mailing lists?
+
+   * recipients, rhosts: who's getting mail? bytes? messages? attempts?
+
+   * successes, failures, deferrals: why? how often? how much delay?
+
+   * senders, suids: messages? bytes? load? recipients? attempts? delay?
+
+qmailanalog also includes several tools to focus attention on particular
+senders, recipients, or messages.
