@@ -2,10 +2,10 @@ bin/lmove
 bin/rpost
 bin/suck
 bin/testhost
-share/examples/suck/get.news.generic
-share/examples/suck/get.news.inn
-share/examples/suck/put.news
-share/examples/suck/suckkillfile.sample
-share/examples/suck/sucknewsrc.sample
-share/examples/suck/suckothermsgs.sample
-@dirrm share/examples/suck
+%%PORTDOCS%%share/examples/suck/get.news.generic
+%%PORTDOCS%%share/examples/suck/get.news.inn
+%%PORTDOCS%%share/examples/suck/put.news
+%%PORTDOCS%%share/examples/suck/suckkillfile.sample
+%%PORTDOCS%%share/examples/suck/sucknewsrc.sample
+%%PORTDOCS%%share/examples/suck/suckothermsgs.sample
+%%PORTDOCS%%@dirrm share/examples/suck
