@@ -3,7 +3,7 @@
 # Date created:        7 July 1998
 # Whom:                jkoshy
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/15 10:05:42 jkoshy Exp $
 #
 
 DISTNAME=     110-bin.x86-unix
@@ -35,6 +35,8 @@ SML_LIBDIR=   ${SML_BASE}/lib
 SML_BINDIR=   ${SML_BASE}/bin
 SML_SRCDIR=   ${SML_BASE}/src
 SML_EXES=     ml-burg ml-lex ml-yacc sml sml-cm
+
+BROKEN=       Need to install documentation and library sources.
 
 # The build target needs to run $WRKDIR/config/install.sh
 do-build:
