@@ -1,5 +1,5 @@
 bin/log4c-config
-etc/log4crc
+etc/log4crc.sample
 include/log4c.h
 include/log4c/appender.h
 include/log4c/appender_type_mmap.h
@@ -14,6 +14,7 @@ include/log4c/layout_type_dated.h
 include/log4c/location_info.h
 include/log4c/logging_event.h
 include/log4c/priority.h
+include/log4c/rc.h
 include/log4c/version.h
 lib/liblog4c.a
 lib/liblog4c.so
