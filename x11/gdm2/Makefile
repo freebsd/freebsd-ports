@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdm2
-PORTVERSION=	2.4.0.5
+PORTVERSION=	2.4.0.7
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		2.0.0/sources/${PORTNAME:S/2$//}
@@ -40,6 +40,10 @@ pre-fetch:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
+post-extract:
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
+		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -48,11 +52,11 @@ post-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/config/gnomerc ${PREFIX}/etc/gdm
+	@${INSTALL_SCRIPT} ${WRKSRC}/gdm.sh.sample ${PREFIX}/etc/rc.d
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${CHOWN} -R gdm:gdm ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
 .else
-	@${CHOWN} -R 91:91 ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
+	@${CHOWN} -R 92:92 ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
 .endif
 	@${CHMOD} 0750 ${PREFIX}/share/gnome/gdm
 	@${CAT} ${PKGMESSAGE}

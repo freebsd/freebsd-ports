@@ -1,12 +1,12 @@
---- config/gdm.conf.in.orig	Sat Jun  1 12:10:13 2002
-+++ config/gdm.conf.in	Tue Jun 11 16:45:25 2002
+--- config/gdm.conf.in.orig	Wed Aug  7 23:50:26 2002
++++ config/gdm.conf.in	Fri Aug  9 17:13:47 2002
 @@ -17,7 +17,7 @@
  # want gdm to kill/restart the server, turn this on
  AlwaysRestartServer=false
  Configurator=@EXPANDED_GDMCONFIGDIR@/gdmsetup --disable-sound --disable-crash-dialog
 -GnomeDefaultSession=@EXPANDED_DATADIR@/gnome/default.session
 +GnomeDefaultSession=@EXPANDED_DATADIR@/default.session
- Chooser=@EXPANDED_BINDIR@/gdmchooser --disable-sound --disable-crash-dialog
+ Chooser=@EXPANDED_BINDIR@/gdmchooser
  DefaultPath=/bin:/usr/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/local/bin:@EXPANDED_BINDIR@
  DisplayInitDir=@EXPANDED_SYSCONFDIR@/gdm/Init
 @@ -26,7 +26,7 @@
@@ -44,7 +44,7 @@
  
  [gui]
 -GtkRC=@EXPANDED_DATADIR@/themes/Default/gtk/gtkrc
-+GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk/gtkrc
++GtkRC=@EXPANDED_DATADIR@/../themes/Default/gtk-2.0/gtkrc
  MaxIconWidth=128
  MaxIconHeight=128
  
@@ -57,10 +57,21 @@
  # These are things excluded from the face browser, not from logging in
  Exclude=bin,daemon,adm,lp,sync,shutdown,halt,mail,news,uucp,operator,nobody,gdm,postgres,pvm,rpm
  GlobalFaceDir=@EXPANDED_DATADIR@/faces/
-@@ -151,5 +151,5 @@
+@@ -159,7 +159,7 @@
  
  [server-Standard]
  name=Standard server
 -command=/usr/X11R6/bin/X
 +command=@EXPANDED_BINDIR@/X
  flexible=true
+ 
+ # To use this server type you should add -query host or -indirect host
+@@ -167,7 +167,7 @@
+ [server-Terminal]
+ name=Terminal server
+ # Add -terminate to make things behave more nicely
+-command=/usr/X11R6/bin/X -terminate
++command=@EXPANDED_BINDIR@/X -terminate
+ # Make this not appear in the flexible servers (we need extra params
+ # anyway, and terminate would be bad for xdmcp)
+ flexible=false
