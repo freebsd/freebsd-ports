@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4a0b334d-8d8d-11d9-afa0-003048705d5a">
+    <topic>phpbb - Insuffient check against HTML code in usercp_register.php</topic>
+    <affects>
+      <package>
+	<name>phpbb</name>
+	<range><le>2.0.13</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Neo Security Team reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110987231502274">
+	  <p>If we specify a variable in the html code (any type:
+	    hidden, text, radio, check, etc) with the name allowhtml,
+	    allowbbcode or allowsmilies, is going to be on the html,
+	    bbcode and smilies in our signature.</p>
+	</blockquote>
+	<p>This is a low risk vulnerability that allows users to bypass
+	  forum-wide configuration.</p>
+      </body>
+    </description>
+    <references>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110987231502274</mlist>
+      <mlist>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110988400407204</mlist>
+    </references>
+    <dates>
+      <discovery>2005-02-29</discovery>
+      <entry>2005-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3eec2b5-8cd8-11d9-8066-000a95bc6fae">
     <topic>postnuke -- SQL injection vulnerabilities</topic>
     <affects>
