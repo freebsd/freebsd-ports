@@ -8,7 +8,7 @@
 PORTNAME=	wizardwars
 PORTVERSION=	0.1.0
 PORTEPOCH=	1
-MASTER_SITES=	ftp://fileplanet.ngi.it/fileplanet2/planethalflife/wizardwars/
+MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/modifications/
 DISTNAME=	wizwars_release_${PORTVERSION_PROCESSED:S/./_/}_linux
 
 MAINTAINER=	lioux@FreeBSD.org
