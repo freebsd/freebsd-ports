@@ -3,13 +3,13 @@
 # Date created:     	15th August 1997
 # Whom:			Mark Murray <mark@grondar.za>
 #
-# $Id: Makefile,v 1.44 1998/02/20 00:43:40 steve Exp $
+# $Id: Makefile,v 1.45 1998/04/12 09:53:50 markm Exp $
 
 DISTNAME=       apache_1.2.6
 PKGNAME=        apacheSSL-1.2.6
 CATEGORIES=	www security
 MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
-		ftp://ftp.ox.ac.uk/pub/crypto/SSL/
+		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} apache_1.2.6+ssl_1.15.tar.gz
 
 MAINTAINER=     markm@freebsd.org
