@@ -42,6 +42,12 @@ CONFIGURE_ARGS+=	--with-tcl=no
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
@@ -54,4 +60,4 @@ post-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.el ${PREFIX}/share/emacs/site-lisp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
