@@ -8,6 +8,8 @@ bin/info2def.pl
 bin/texflow
 include/flowdesigner/Array.h
 include/flowdesigner/BaseException.h
+include/flowdesigner/BinaryAND.h
+include/flowdesigner/BinaryOR.h
 include/flowdesigner/Buffer.h
 include/flowdesigner/BufferedNode.h
 include/flowdesigner/Collector.h
@@ -29,6 +31,7 @@ include/flowdesigner/GUINetwork.h
 include/flowdesigner/GUINode.h
 include/flowdesigner/GUINodeParameters.h
 include/flowdesigner/GUINodeTooltip.h
+include/flowdesigner/GUINote.h
 include/flowdesigner/GUITerminal.h
 include/flowdesigner/GtkPlotProbe.h
 include/flowdesigner/IntfNode.h
@@ -44,6 +47,7 @@ include/flowdesigner/ObjectPool.h
 include/flowdesigner/ObjectRef.h
 include/flowdesigner/ParameterSet.h
 include/flowdesigner/PlotProbe.h
+include/flowdesigner/Power.h
 include/flowdesigner/Probe.h
 include/flowdesigner/SocketStream.h
 include/flowdesigner/Stream.h
@@ -56,6 +60,7 @@ include/flowdesigner/UINetwork.h
 include/flowdesigner/UINode.h
 include/flowdesigner/UINodeParameters.h
 include/flowdesigner/UINodeRepository.h
+include/flowdesigner/UINote.h
 include/flowdesigner/UITerminal.h
 include/flowdesigner/URLHandler.h
 include/flowdesigner/UserException.h
