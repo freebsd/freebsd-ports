@@ -1,0 +1,67 @@
+--- src/ylocale.cc.orig	Tue Oct  9 23:54:04 2001
++++ src/ylocale.cc	Wed Feb 20 17:32:28 2002
+@@ -18,7 +18,9 @@
+ 
+ #ifdef CONFIG_I18N
+ #include <errno.h>
++#if __FreeBSD__ >= 5
+ #include <langinfo.h>
++#endif
+ #include <locale.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -31,6 +33,41 @@
+ YLocale * YLocale::locale(NULL);
+ #endif
+ 
++#ifdef CONFIG_I18N
++#if __FreeBSD__ < 5
++#undef CONFIG_NL_CODESETS
++#define CONFIG_NL_CODESETS 0
++char* icewm_nl_langinfo(void* item) {
++  char* mylocale = setlocale(LC_ALL, "");
++
++  if( mylocale == NULL || *mylocale == '\0' )
++    return NULL;
++
++  if( strncmp(mylocale, "ja", strlen("ja")) == 0 ) {
++    return strdup("EUC-JP");
++  } if( strncmp(mylocale, "zh_TW", strlen("zh_TW")) == 0 ) {
++    return strdup("BIG5");
++  } if( strncmp(mylocale, "ko", strlen("ko")) == 0 ) {
++    return strdup("EUC-KR");
++  } if( strncmp(mylocale, "ru", strlen("ru")) == 0 ) {
++    return "KOI8-R";
++  } if( strncmp(mylocale, "ro", strlen("ro")) == 0 ) {
++    return "ISO-8859-2";
++  } if( strncmp(mylocale, "hr", strlen("hr")) == 0 ) {
++    return "ISO-8859-2";
++  } if( strncmp(mylocale, "hu", strlen("hu")) == 0 ) {
++    return "ISO-8859-2";
++  } if( strncmp(mylocale, "pl", strlen("pl")) == 0 ) {
++    return "ISO-8859-2";
++  } if( strncmp(mylocale, "lt", strlen("lt")) == 0 ) {
++    return "ISO-8859-13";
++  }
++
++  return NULL;
++}
++#endif
++#endif /* CONFIG_I18N */
++
+ #ifndef CONFIG_I18N
+ YLocale::YLocale(char const * ) {
+ #else
+@@ -45,8 +82,12 @@
+     char const * codeset("");
+     int const codesetItems[] = { CONFIG_NL_CODESETS };
+ 
++#if __FreeBSD__ >= 5
+     for (int const * csi(codesetItems); *csi && 
+          NULL != (codeset = nl_langinfo(*csi)) && '\0' == *codeset; ++csi);
++#else
++    codeset = icewm_nl_langinfo(NULL);
++#endif
+ 
+     if (NULL == codeset || '\0' == *codeset) {
+         warn(_("Failed to determinate the current locale's codeset. "

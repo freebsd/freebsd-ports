@@ -1,26 +1,116 @@
---- configure.in.orig	Fri Apr 27 09:32:21 2001
-+++ configure.in	Tue May  1 06:18:24 2001
-@@ -75,7 +75,7 @@
+--- configure.in.orig	Tue Oct  9 23:54:02 2001
++++ configure.in	Tue Feb 19 16:22:42 2002
+@@ -83,7 +83,7 @@
  AC_FUNC_SELECT_ARGTYPES
  
  dnl Configuring features
 -TARGETS='base docs'
 +TARGETS='base'
+ APPLICATIONS='genpref icewm icesh icewmhint icewmbg'
  
  dnl Checking for X11
- AC_PATH_XTRA
-@@ -116,7 +116,7 @@
-   AC_DEFINE(ENABLE_NLS, 1, [Define to enable internationalized message])
+@@ -108,27 +108,28 @@
+ AC_ARG_ENABLE(i18n,
+   [  --enable-i18n           Enable internationalization],
+   [ if test "$enable_i18n" != "no"; then
+-      AC_CHECK_HEADERS(langinfo.h,,
+-      [ AC_MSG_ERROR([I18N support has been requested but langinfo.h wasn´t found.
+-*** Check your installation.])])
+-      AC_CHECK_FUNC(nl_langinfo,,
+-      [ AC_MSG_ERROR([I18N support has been requested but nl_langinfo wasn´t found.
+-*** Check your installation.])])
+-
+-      ice_nl_codesets=""
+-
++dnl       AC_CHECK_HEADERS(langinfo.h,,
++dnl       [ AC_MSG_ERROR([I18N support has been requested but langinfo.h wasn´t found.
++dnl *** Check your installation.])])
++dnl       AC_CHECK_FUNC(nl_langinfo,,
++dnl       [ AC_MSG_ERROR([I18N support has been requested but nl_langinfo wasn´t found.
++dnl *** Check your installation.])])
++dnl 
++dnl       ice_nl_codesets=""
++dnl 
+       ICE_CHECK_NL_ITEM(_NL_MESSAGES_CODESET,
+         [ ice_nl_codesets="${ice_nl_codesets} _NL_MESSAGES_CODESET," ])
+       ICE_CHECK_NL_ITEM(_NL_CTYPE_CODESET_NAME,
+         [ ice_nl_codesets="${ice_nl_codesets} _NL_CTYPE_CODESET_NAME," ])
+       ICE_CHECK_NL_ITEM(CODESET,
+         [ ice_nl_codesets="${ice_nl_codesets} CODESET," ])
+-
++dnl 
+       if test "${ice_nl_codesets}" = ""; then
+-        AC_MSG_ERROR([I18N support has been requested but nl_langinfo doesn't
+-*** return any information about the locale's codeset. Check your manuals.
+-*** Ask your vendor. Contact icewm-devel@lists.sourceforge.net when you know 
+-*** the name of the locale-dependent parameter for your platform.])
++dnl         AC_MSG_ERROR([I18N support has been requested but nl_langinfo doesn't
++dnl *** return any information about the locale's codeset. Check your manuals.
++dnl *** Ask your vendor. Contact icewm-devel@lists.sourceforge.net when you know 
++dnl *** the name of the locale-dependent parameter for your platform.])
++        ice_nl_codesets="CODESET"
+       fi
+       
+       ice_nl_codesets="${ice_nl_codesets} 0"
+@@ -136,20 +137,20 @@
+ 
+       ice_iconv_cxxflags="${CXXFLAGS}"
+ 
+-      AC_CHECK_HEADERS(iconv.h,,
+-      [ AC_MSG_ERROR([I18N support has been requested but iconv.h wasn´t found.
++      AC_CHECK_HEADERS(giconv.h,,
++      [ AC_MSG_ERROR([I18N support has been requested but giconv.h wasn´t found.
+ *** Check your installation. Upgrade your C library or install GNU libiconv
+ *** available at ftp://ftp.gnu.org/pub/gnu/libiconv/.])])
+ 
+       AC_CHECK_DECL(_libiconv_version,
+-      [ AC_MSG_RESULT(assuming iconv.h belongs to GNU libiconv)
+-        AC_CHECK_LIB(iconv, iconv,
+-        AC_CHECK_LIB(iconv, iconv_open,
+-        AC_CHECK_LIB(iconv, iconv_close,
+-	CXXFLAGS="${CXXFLAGS} -liconv"
+-	CORE_LIBS="${CORE_LIBS} -liconv"
+-	AC_DEFINE(CONFIG_LIBICONV, 1, Define when using libiconv),
+-        AC_MSG_ERROR([iconv.h appears to be part of libiconv but linking failed.
++      [ AC_MSG_RESULT(assuming giconv.h belongs to GNU libiconv)
++        AC_CHECK_LIB(giconv, iconv,
++        AC_CHECK_LIB(giconv, iconv_open,
++        AC_CHECK_LIB(giconv, iconv_close,
++	CXXFLAGS="${CXXFLAGS} -lgiconv"
++	CORE_LIBS="${CORE_LIBS} -lgiconv"
++	AC_DEFINE(CONFIG_LIBICONV, 1, Define when using libgiconv),
++        AC_MSG_ERROR([giconv.h appears to be part of libiconv but linking failed.
+ *** Check your installation. Upgrade your C library (glibc 2.2) or install
+ *** GNU libiconv available at ftp://ftp.gnu.org/pub/gnu/libiconv/.]))))],
+ 
+@@ -158,13 +159,13 @@
+         AC_MSG_ERROR([iconv.h appears to be part of libc but linking failed.
+ *** Check your installation. Upgrade your C library (glibc 2.2) or install
+ *** GNU libiconv available at ftp://ftp.gnu.org/pub/gnu/libiconv/.]))],
+-      [#include <iconv.h>])
++      [#include <giconv.h>])
+ 
+       AC_ARG_WITH(unicode-set,
+         [  --unicode-set=CODESET   your iconv's unicode set in machine endian encoding
+                           (e.g. WCHAR_T, UCS-4-INTERNAL, UCS-4LE, UCS-4BE)],
+ 	   AC_DEFINE_UNQUOTED(CONFIG_UNICODE_SET, "$with_unicode_set"),
+-	   with_unicode_set=UCS-4//TRANSLIT)
++	   with_unicode_set=ISO-8859-1)
+ 
+       ice_sufficent_iconv=no
+       ICE_CHECK_CONVERSION(ISO-8859-1,$with_unicode_set,no,$ice_libiconv,
+@@ -203,7 +204,7 @@
+   features="${features} nls"
    TARGETS=$TARGETS' nls'
  
 -  localedir='${datadir}/locale'
 +  localedir='${prefix}/share/locale'
  fi
  
- dnl ============================================================= GUI Events ===
-@@ -284,7 +284,7 @@
+ dnl ======================================================= /proc/wm-session ===
+@@ -464,7 +465,7 @@
  
- 	AC_DEFINE(GNOME, 1, [Define to make IceWM more GNOME-friendly])
+ 	AC_DEFINE(CONFIG_GNOME_MENUS, 1, [Define to make IceWM more GNOME-friendly])
        else
 -	AC_MSG_ERROR([gnome-config can not be found.
 +	AC_MSG_WARN([gnome-config can not be found.

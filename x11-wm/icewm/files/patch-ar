@@ -1,0 +1,12 @@
+--- src/sysdep.h.orig	Tue Oct  9 23:54:03 2001
++++ src/sysdep.h	Wed Feb 20 15:22:43 2002
+@@ -57,7 +57,9 @@
+ 
+ #ifdef CONFIG_I18N
+ #include <locale.h>
++#if __FreeBSD__ >= 5
+ #include <langinfo.h>
++#endif
+ #endif
+ 
+ #endif
