@@ -1,0 +1,23 @@
+SIM (Simple Instant Messenger) is an unpretentious ICQ client which supports
+many of the features of Version 8 of the ICQ protocol (ICQ 2001).
+(QT is needed, can be build for KDE).
+
+Special Features
+
+    * sending and receiving SMS
+    * server-side contact lists
+    * phone directories
+    * file transfers
+    * chat
+    * user search
+    * proxy support (SOCKS4, SOCKS5, HTTP)
+    * a SPAM filter
+    * secure direct connections with SIM and Licq
+    * message or chat mode for the user window
+    * keyboard shortcuts
+    * message forwarding
+
+WWW: http://sim-icq.sourceforge.net/
+
+Josef El-Rayes
+daemon@gigolo.li
