@@ -5,40 +5,36 @@
 # $FreeBSD$
 #
 
-PORTNAME=	PySQLite
-PORTVERSION=	1.0
-PORTREVISION=	1
-CATEGORIES=	databases python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTNAME=		PySQLite
+PORTVERSION=		1.1.6
+CATEGORIES=		databases python
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysqlite
-PKGNAMEPREFIX=	py-
-DISTNAME=	pysqlite-${PORTVERSION}
+PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
+DISTNAME=		pysqlite-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A DB-API v2 Python library for the SQLite embedded SQL engine
+MAINTAINER=		marcus@corp.grupos.com.br
+COMMENT=		A DB-API v2 Python library for the SQLite 3 embedded SQL engine
 
-RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS=		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
-WRKSRC=		${WRKDIR}/pysqlite
-EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
-USE_PYTHON=	yes
+CONFLICTS=		py*-PySQLite-1.0*
+
+WRKSRC=			${WRKDIR}/pysqlite
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
-PORTDOCS=	README
-
-DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
-
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
 .if !defined(NOPORTDOCS)
+PORTDOCS=		*
+.endif
+
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/rest/manual.txt ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
