@@ -11,7 +11,7 @@ CATEGORIES=	sysutils security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=sleuthkit
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jan@atstake.com
 
 DOCS=		README docs/* tct.docs/*
 MAN1=		blockcalc.1 dcalc.1 dcat.1 dls.1 dstat.1 ffind.1 \
