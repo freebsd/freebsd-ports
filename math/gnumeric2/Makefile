@@ -3,7 +3,7 @@
 # Date created:        08 October 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/26 11:58:07 vanilla Exp $
 #
 
 DISTNAME=	gnumeric-0.3
@@ -15,6 +15,8 @@ MAINTAINER=	Nakai@technologist.com
 
 LIB_DEPENDS=	xml.0:${PORTSDIR}/textproc/libxml
 LIB_DEPENDS+=	gnome.0:${PORTSDIR}/x11/gnomelibs
+
+BROKEN=		build
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
