@@ -9,9 +9,7 @@ PORTNAME=	big5con
 PORTVERSION=	0.92e
 PORTREVISION=	1
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://bsd.sinica.edu.tw/pub/FreeBSD/taiwan/users/woju/source/ \
-		ftp://bsd.sinica.edu.tw/pub/FreeBSD/taiwan/users/woju/binary/ \
-		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/ \
+MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/ \
 		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/binary/
 DISTFILES=	big5con-0.92e.tgz b5cbin-pa.tgz
 
