@@ -6954,6 +6954,7 @@ wscan		ports/x11/wscan
 wsoundprefs	ports/audio/wsoundprefs
 wsoundserver	ports/audio/wsoundserver
 wterm		ports/x11/wterm
+wtf		ports/games/wtf
 wu-ftpd		ports/ftp/wu-ftpd
 wump		src/games/wump
 wv		ports/textproc/wv
