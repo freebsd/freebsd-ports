@@ -1,0 +1,19 @@
+--- configure.orig	Fri Oct 15 18:31:00 1999
++++ configure	Fri Jan 28 03:52:54 2000
+@@ -99,13 +99,13 @@
+ 	    PROFILE="-pg"
+ 	    ECHO="echo -e"
+             ;;
+-  FreeBSD ) CC="gcc"
++  FreeBSD ) CC="${CC}"
+             WFLAGS=$GCCWFLAGS
+-	    INCLUDE="-I/usr/local/include"
++	    INCLUDE="-I${LOCALBASE}/include"
+ 	    LDLIBS="-lm"
+ 	    DEBUG="-g"
+ 	    CHAR="-fsigned-char"
+-	    OPTIMIZE="-O4"
++	    OPTIMIZE="${OPTIMIZE}"
+ 	    PROFILE="-pg"
+ 	    ECHO=/bin/echo
+             ;;

@@ -1,4 +1,3 @@
-lib/libuclmmbase.a
 include/uclmmbase/base64.h
 include/uclmmbase/config_win32.h
 include/uclmmbase/config_unix.h
@@ -13,3 +12,5 @@ include/uclmmbase/qfDES.h
 include/uclmmbase/rtp.h
 include/uclmmbase/util.h
 include/uclmmbase/version.h
+lib/libuclmmbase.a
+@dirrm include/uclmmbase
