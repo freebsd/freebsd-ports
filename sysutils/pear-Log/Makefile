@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTVERSION=	1.8.6
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	antonio@php.net
@@ -29,7 +28,10 @@ EXAMPLES=	composite.php console.php display.php error_log.php file.php	\
 TESTS=		composite.phpt console.phpt display.phpt error_log.phpt		\
 		extract.phpt extract2.phpt factory.phpt null.phpt priority.phpt	\
 		singleton.phpt sqlite.phpt sql_ident.phpt
+SQLS=		log.sql
+
 _EXAMPLESDIR=	docs/examples
+_SQLSDIR=	misc
 
 LATEST_LINK=	pear-Log
 OPTIONS=	PEAR_DB "PEAR::DB support" off
