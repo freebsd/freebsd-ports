@@ -7,6 +7,7 @@ lib/mozilla-embedded/chrome/overlayinfo/navigator/content/overlays.rdf
 lib/mozilla-embedded/chrome/pipnss.jar
 lib/mozilla-embedded/chrome/pippki.jar
 lib/mozilla-embedded/component.reg
+@unexec rm -f %D/lib/mozilla-embedded/component.reg || true
 lib/mozilla-embedded/components/appshell.xpt
 lib/mozilla-embedded/components/caps.xpt
 lib/mozilla-embedded/components/chrome.xpt
@@ -69,7 +70,13 @@ lib/mozilla-embedded/components/libstrres.so
 lib/mozilla-embedded/components/libtimer_gtk.so
 lib/mozilla-embedded/components/libtxtsvc.so
 lib/mozilla-embedded/components/libuconv.so
+lib/mozilla-embedded/components/libucvcn.so
+lib/mozilla-embedded/components/libucvibm.so
+lib/mozilla-embedded/components/libucvja.so
+lib/mozilla-embedded/components/libucvko.so
 lib/mozilla-embedded/components/libucvlatin.so
+lib/mozilla-embedded/components/libucvtw.so
+lib/mozilla-embedded/components/libucvtw2.so
 lib/mozilla-embedded/components/libunicharutil.so
 lib/mozilla-embedded/components/liburiloader.so
 lib/mozilla-embedded/components/libwallet.so
@@ -108,7 +115,7 @@ lib/mozilla-embedded/components/xpcom_io.xpt
 lib/mozilla-embedded/components/xpcom_threads.xpt
 lib/mozilla-embedded/components/xpcom_xpti.xpt
 lib/mozilla-embedded/components/xpconnect.xpt
-lib/mozilla-embedded/components/xpti.dat
+@unexec rm -f %D/lib/mozilla-embedded/components/xpti.dat || true
 lib/mozilla-embedded/defaults/pref/all.js
 lib/mozilla-embedded/defaults/pref/initpref.js
 lib/mozilla-embedded/defaults/pref/security-prefs.js
