@@ -40,7 +40,6 @@ HEADERS_SUFX=
 .endif
 .endif
 .endif
-.endif
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
