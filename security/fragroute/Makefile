@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libdnet=${PREFIX} \
 			--with-libevent=${PREFIX} --with-pcap
 
+FORBIDDEN=	Distfile may be trojaned.
+
 MAN8=	fragroute.8 fragtest.8
 
 SCRIPTS=	README.snort base-1 frag-1 frag-2 frag-3 frag-4 frag-5 \
