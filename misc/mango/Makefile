@@ -28,7 +28,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 MAKE_ENV+=	QTDIR=${QT_PREFIX} LDFLAGS="-lkextmdi"
 .if defined(WITH_KDE)
-USE_KDEBASE_VER=	3
+USE_KDELIBS_VER=	3
 .else
 USE_QT_VER=	3
 .endif
