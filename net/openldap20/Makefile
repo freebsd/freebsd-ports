@@ -92,10 +92,10 @@ BINS=		bin/ldapadd \
 
 .if exists(${LOCALBASE}/lib/libdb4.so)
 DB_CFLAGS=      -I${LOCALBASE}/include/db4
-LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .else
 DB_CFLAGS=      -I${LOCALBASE}/include/db3
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .endif
 
 post-patch:
