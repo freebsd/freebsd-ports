@@ -8,8 +8,10 @@
 PORTNAME=	imanager
 PORTVERSION=	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.digidezign.com/~imanager/
+MASTER_SITES=	http://www.linuxberg.com/files/kde/graphics/
 DISTNAME=	imanager-${PORTVERSION}.final.imlib
+
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11
