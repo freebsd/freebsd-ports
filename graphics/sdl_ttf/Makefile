@@ -21,7 +21,8 @@ USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_FREETYPE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 post-extract:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
