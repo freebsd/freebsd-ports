@@ -9,7 +9,10 @@ PORTNAME=	xanim
 PORTVERSION=	2.92.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/:main \
-		ftp://xanim.va.pubnix.com/dlls/
+		http://www.go.dlr.de/fresh/unix/src/misc/:main \
+		ftp://xanim.va.pubnix.com/dlls/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	xanim2920
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
 
