@@ -8,10 +8,13 @@
 PORTNAME=	as80
 PORTVERSION=	0.8
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tstrathmann.de/files/
+MASTER_SITES=	# dead
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight 8080/8085 assembler
+
+DEPRECATED=	"mastersite disappeared\; alternatives are available, such as devel/asl"
+EXPIRATION_DATE=	"April 22, 2004"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 BUILD_WRKSRC=	${WRKSRC}/src
