@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.153 1997/09/09 08:32:48 tg Exp $
+# $Id: Makefile,v 1.154 1997/09/12 10:06:36 pst Exp $
 #
 
     SUBDIR += FWF
@@ -82,6 +82,7 @@
     SUBDIR += xmbdfed
     SUBDIR += xmold
     SUBDIR += xpostit
+    SUBDIR += xpostitPlus
     SUBDIR += xprompt
     SUBDIR += xscreensaver
     SUBDIR += xsnow
