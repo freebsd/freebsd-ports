@@ -1,0 +1,3 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/oracle/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/oracle/oraoci.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/oracle

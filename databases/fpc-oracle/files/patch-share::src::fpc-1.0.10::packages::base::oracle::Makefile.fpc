@@ -1,0 +1,10 @@
+--- share/src/fpc-1.0.10/packages/base/oracle/Makefile.fpc.bak	Sun Apr  6 07:44:46 2003
++++ share/src/fpc-1.0.10/packages/base/oracle/Makefile.fpc	Thu Jan  8 22:16:08 2004
+@@ -21,5 +21,5 @@
+ 
+ # in libdir variable must be path to libraries
+ # libclntsh.*,libnlsrtl3.*
+-#[compiler]
+-#libdir=/usr/local/oracle8cli/lib
++[compiler]
++libdir=/usr/local/oracle8cli/lib
