@@ -49,7 +49,10 @@ PLIST_SUB+=	CLIENT=""
 #MAN1=		gkrellm.1
 .endif
 MAN8=		gkrellmd.8
-DOCS=		COPYRIGHT CREDITS README Themes.html
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	COPYRIGHT CREDITS README Themes.html
+.endif
 
 MAN1PREFIX=	${X11BASE}
 
@@ -105,7 +108,7 @@ post-install:
 	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
