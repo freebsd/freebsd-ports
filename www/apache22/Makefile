@@ -8,15 +8,7 @@
 PORTNAME=	apache
 PORTVERSION=	2.0.45
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		http://apache.mirrorcentral.com/dist/httpd/ \
-		http://apache.missouri.edu/dist/httpd/ \
-		http://ftp.epix.net/apache/dist/httpd/ \
-		ftp://ftp.digex.net/pub/packages/network/apache/httpd/ \
-		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
-		http://www.freebsd.org/gifs/:freebsd \
-		http://www2.freebsd.org/gifs/:freebsd
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif:freebsd
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
@@ -68,12 +60,13 @@ USE_OPENSSL=	yes
 .if defined(WITH_SUEXEC)
 SUEXEC_DOCROOT?= ${PREFIX_RELDEST}/www/data
 SUEXEC_USERDIR?= public_html
+SUEXEC_SAFEPATH?=${PREFIX_RELDEST}/bin:${LOCALBASE}/bin:/usr/bin:/bin
 CONFIGURE_ARGS+= --enable-suexec \
 		--with-suexec-caller=www \
 		--with-suexec-uidmin=1000 --with-suexec-gidmin=1000 \
 		--with-suexec-userdir="${SUEXEC_USERDIR}" \
 		--with-suexec-docroot="${SUEXEC_DOCROOT}" \
-		--with-suexec-safepath="${PREFIX_RELDEST}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
+		--with-suexec-safepath="${SUEXEC_SAFEPATH}" \
 		--with-suexec-logfile="/var/log/httpd-suexec.log" \
 		--with-suexec-bin="${PREFIX_RELDEST}/sbin/suexec"
 PLIST_SUB+=	SUEXEC=""
