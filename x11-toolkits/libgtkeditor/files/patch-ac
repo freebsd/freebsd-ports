@@ -1,0 +1,17 @@
+--- scanner.c.orig	Thu Jun  1 19:02:09 2000
++++ scanner.c	Mon Sep 25 14:09:23 2000
+@@ -149,6 +149,14 @@
+   scanner_lib = g_module_open (buf, G_MODULE_BIND_LAZY);
+   if (scanner_lib) goto get_symbols; /* got it */
+ 
++  /* try in PREFIX/lib/gtkeditor */
++  g_snprintf (buf, BUF_SIZE, "%s/%s", "%%PREFIX%%/lib/gtkeditor", scanner_name);
++  scanner_lib = g_module_open (buf, G_MODULE_BIND_LAZY);
++  if (scanner_lib) goto get_symbols; /* got it */
++  strncat (buf, ".so", BUF_SIZE);
++  scanner_lib = g_module_open (buf, G_MODULE_BIND_LAZY);
++  if (scanner_lib) goto get_symbols; /* got it */
++
+   /* if we reach this point, we couldn't find the scanner */
+   g_warning ("error loading scanner!\n");
+   return NULL;

@@ -1,0 +1,132 @@
+--- tktext-port/Makefile	2000/09/25 10:03:27	1.1
++++ tktext-port/Makefile	2000/09/25 10:32:49
+@@ -21,99 +21,99 @@
+ #EFENCE=-lefence
+ EFENCE=
+ 
+-DYN_LIBS= $(EFENCE) `gtk-config --libs` -lunicode $(EFENCE)
++DYN_LIBS= $(EFENCE) $(GTK_LIBS) -lunicode
+ STATIC_LIBS=-L/home/hp/local/lib -L/usr/X11R6/lib -L/home/hp/unstable/lib -rdynamic -lgmodule -ldl -lXext -lX11 -lm -lunicode ./libgtk.a ./libgdk.a ./libglib.a
+ MANY_STATIC_LIBS=-lunicode -L/usr/X11R6/lib -L/opt/gnome/lib -rdynamic -lgmodule -ldl -lm ./libgtk.a ./libgdk.a ./libX11.a ./libXext.a ./libXi.a ./libglib.a 
+ 
+ #            I know this shouldn't go here...but it's easier
+-OPTIMIZE=-O2 -DG_DISABLE_ASSERT
++OPTIMIZE=$(GTK_CFLAGS) -DG_DISABLE_ASSERT
+ #OPTIMIZE=
+ 
+ all: $(ALL_OBJECTS)
+ 
+ gtktextlayout.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextlayout.c -o gtktextlayout.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextlayout.c -o gtktextlayout.lo
+ 
+ gtktext.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktext.c -o gtktext.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktext.c -o gtktext.lo
+ 
+ gtktextdisplay.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextdisplay.c -o gtktextdisplay.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextdisplay.c -o gtktextdisplay.lo
+ 
+ gtktextbtree.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextbtree.c -o gtktextbtree.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextbtree.c -o gtktextbtree.lo
+ 
+ gtktextbuffer.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextbuffer.c -o  gtktextbuffer.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextbuffer.c -o  gtktextbuffer.lo
+ 
+ gtktexttag.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktexttag.c -o gtktexttag.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktexttag.c -o gtktexttag.lo
+ 
+ gtktextmark.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextmark.c -o gtktextmark.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextmark.c -o gtktextmark.lo
+ 
+ gtktexttypes.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktexttypes.c -o gtktexttypes.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktexttypes.c -o gtktexttypes.lo
+ 
+ gstring.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gstring.c -o  gstring.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gstring.c -o  gstring.lo
+ 
+ gbsearch.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gbsearch.c -o gbsearch.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gbsearch.c -o gbsearch.lo
+ 
+ gtktextchild.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextchild.c -o gtktextchild.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextchild.c -o gtktextchild.lo
+ 
+ gtktexttagtable.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktexttagtable.c -o gtktexttagtable.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktexttagtable.c -o gtktexttagtable.lo
+ 
+ gtktextiter.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextiter.c -o gtktextiter.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextiter.c -o gtktextiter.lo
+ 
+ gtktextsegment.lo:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextsegment.c -o gtktextsegment.lo
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextsegment.c -o gtktextsegment.lo
+ 
+ gtktextlayout.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextlayout.c -o gtktextlayout.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextlayout.c -o gtktextlayout.o
+ 
+ gtktext.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktext.c -o gtktext.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktext.c -o gtktext.o
+ 
+ gtktextdisplay.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextdisplay.c -o gtktextdisplay.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextdisplay.c -o gtktextdisplay.o
+ 
+ gtktextbtree.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextbtree.c -o gtktextbtree.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextbtree.c -o gtktextbtree.o
+ 
+ gtktextbuffer.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextbuffer.c -o  gtktextbuffer.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextbuffer.c -o  gtktextbuffer.o
+ 
+ gtktexttag.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktexttag.c -o gtktexttag.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktexttag.c -o gtktexttag.o
+ 
+ gtktextmark.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextmark.c -o gtktextmark.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextmark.c -o gtktextmark.o
+ 
+ gtktexttypes.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktexttypes.c -o gtktexttypes.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktexttypes.c -o gtktexttypes.o
+ 
+ gstring.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gstring.c -o  gstring.o
++	cc $(OPTIMIZE) $(PROFILE) -c gstring.c -o  gstring.o
+ 
+ gbsearch.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gbsearch.c -o gbsearch.o
++	cc $(OPTIMIZE) $(PROFILE) -c gbsearch.c -o gbsearch.o
+ 
+ gtktextchild.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextchild.c -o gtktextchild.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextchild.c -o gtktextchild.o
+ 
+ gtktexttagtable.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktexttagtable.c -o gtktexttagtable.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktexttagtable.c -o gtktexttagtable.o
+ 
+ gtktextiter.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextiter.c -o gtktextiter.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextiter.c -o gtktextiter.o
+ 
+ gtktextsegment.o:
+-	cc -Wall -ggdb $(OPTIMIZE) $(PROFILE) -c `gtk-config --cflags` `gnome-config --cflags gnomeui` gtktextsegment.c -o gtktextsegment.o
++	cc $(OPTIMIZE) $(PROFILE) -c gtktextsegment.c -o gtktextsegment.o
+ 		
+ clean: 
+ 	/bin/rm -f *.o *.lo *~ *.bak 

@@ -1,0 +1,20 @@
+--- Makefile.in	2000/09/25 10:39:41	1.1
++++ Makefile.in	2000/09/25 10:39:44
+@@ -77,6 +77,8 @@
+ USE_SYMBOL_UNDERSCORE = @USE_SYMBOL_UNDERSCORE@
+ VERSION = @VERSION@
+ 
++AM_MAKEFLAGS = GTK_CFLAGS="$(CFLAGS) $(GTK_CFLAGS)"
++
+ SUBDIRS = tools scanners tktext-port
+ 
+ lib_LTLIBRARIES = libgtkeditor.la
+@@ -86,7 +88,7 @@
+ 
+ libgtkeditor_la_LIBADD = tktext-port/gtktextlayout.lo tktext-port/gtktext.lo tktext-port/gtktextdisplay.lo tktext-port/gtktextbtree.lo tktext-port/gtktextbuffer.lo tktext-port/gtktexttag.lo tktext-port/gtktextmark.lo tktext-port/gtktexttypes.lo tktext-port/gstring.lo tktext-port/gbsearch.lo tktext-port/gtktextchild.lo tktext-port/gtktexttagtable.lo tktext-port/gtktextiter.lo tktext-port/gtktextsegment.lo
+ 
+-libgtkeditor_la_LDFLAGS = `gtk-config --libs` -lunicode
++libgtkeditor_la_LDFLAGS = $(GTK_LIBS) -lunicode
+ testapp_LDADD = libgtkeditor.la
+ static_testapp_LDADD = libgtkeditor.la scanners/c-scanner.so
+ debugapp_LDADD = libgtkeditor.la

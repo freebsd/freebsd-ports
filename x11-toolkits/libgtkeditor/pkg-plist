@@ -1,0 +1,19 @@
+bin/scannertool
+include/gtkeditor.h
+include/tktext-port/gtktext.h
+include/tktext-port/gtktextbuffer.h
+include/tktext-port/gtktextiter.h
+include/tktext-port/gtktextmark.h
+include/tktext-port/gtktexttag.h
+include/tktext-port/gtktexttagtable.h
+lib/gtkeditor/c-scanner.so
+lib/gtkeditor/html-scanner.so
+lib/gtkeditor/java-scanner.so
+lib/gtkeditor/perl-scanner.so
+lib/gtkeditor/scheme-scanner.so
+lib/gtkeditor/sml-scanner.so
+lib/libgtkeditor.a
+lib/libgtkeditor.so
+lib/libgtkeditor.so.0
+@dirrm lib/gtkeditor
+@dirrm include/tktext-port
