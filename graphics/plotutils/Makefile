@@ -1,9 +1,9 @@
-# New ports collection makefile for:	xfig
+# New ports collection makefile for:	plotutils
 # Version required:	2.1.1
 # Date created:		19 June 1998
 # Whom:			Chuck Robey (chuckr)
 #
-# $Id: Makefile,v 1.2 1998/06/26 04:53:29 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/05 03:02:02 steve Exp $
 #
 
 DISTNAME=	plotutils-2.1.1
@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	chuckr@FreeBSD.ORG
 
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 
 .ifdef HAVE_MOTIF

@@ -3,7 +3,7 @@
 # Date created:		18 Aug 1998
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/06/06 03:45:04 itojun Exp $
+# $Id: Makefile,v 1.7 1998/10/09 06:10:47 kuriyama Exp $
 #
 
 DISTNAME=	sj3-2.0.1.20
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
 
 MAINTAINER=	hidekazu@cs.titech.ac.jp
+
+BUILD_DPENDS=	xmkmf:${PORTSDIR}/x11/XFree86
 
 MAN1=		sj3.1 sj3dic.1 sj3mkdic.1 sj3serv.1
 MANLANG=	ja

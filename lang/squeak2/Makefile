@@ -3,7 +3,7 @@
 # Date created:        25 April 1997
 # Whom:                jesse
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/10 09:31:49 asami Exp $
+# $Id: Makefile,v 1.2 1997/11/22 16:11:14 jseger Exp $
 #
 
 DISTNAME=      Squeak-1.18
@@ -13,6 +13,7 @@ MASTER_SITES=  ftp://ftp.create.ucsb.edu/pub/Smalltalk/Squeak/unix/
 
 MAINTAINER=    jesse@cs.uni-magdeburg.de
 
+USE_XLIB=	yes
 WRKSRC=         $(WRKDIR)/Squeak-1.18/src
 
 do-install:

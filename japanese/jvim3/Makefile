@@ -3,7 +3,7 @@
 # Date created:         98/11/17
 # Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/10/31 07:06:01 kuriyama Exp $
+# $Id: Makefile,v 1.6 1998/11/24 19:47:50 sada Exp $
 #
 
 DISTNAME=	vim
@@ -15,6 +15,7 @@ DISTFILES=	vim-3.0.tar.gz ${JPATCH}
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
+USE_XLIB=	yes
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
