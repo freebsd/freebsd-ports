@@ -7,6 +7,7 @@
 
 PORTNAME=	libdvdread
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 
@@ -34,6 +35,9 @@ post-patch:
 	@${PERL} -pi -e 's|cd \$$\(top_srcdir\) && \$$\(AUTOMAKE\)|\#|; \
 		s|cd \$$\(srcdir\) && \$$\(ACLOCAL\)|\#|' ${WRKSRC}/${p}
 .endfor
+# update this in sync with libdvdcss shared library version
+	@${PERL} -pi -e 's|(libdvdcss.so).0|\1|' \
+		${WRKSRC}/dvdread/dvd_reader.c
 
 post-configure:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
