@@ -3,14 +3,14 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.19 1998/05/04 20:23:32 jseger Exp $
+# $Id: Makefile,v 1.20 1998/08/27 18:27:44 mph Exp $
 #
 
 DISTNAME=	xv-3.10a
 CATEGORIES=     graphics x11
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
-		http://www.freebsd.org/~mph/distfiles/xv/
+		http://www.yuasa.kuis.kyoto.ac.jp/~shige/FreeBSD/ports/xv/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		xv310a-jp-extension-rev5.3.3.tar.gz \
 		croppad.patch grabpatch jp-ext-bzip2.patch longname.patch \
