@@ -8,7 +8,8 @@
 PORTNAME=	mailcrypt
 PORTVERSION= 	3.5.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.nb.net/~lbudney/linux/software/mailcrypt/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=    apps/crypto
 
 MAINTAINER=	murray@FreeBSD.org
 
