@@ -1,13 +1,6 @@
-Index: ksim/monitors/cpu/ksimcpu.cpp
-===================================================================
-RCS file: /home/kde/kdeutils/ksim/monitors/cpu/ksimcpu.cpp,v
-retrieving revision 1.21
-diff -u -5 -p -d -r1.21 ksimcpu.cpp
---- ksim/monitors/cpu/ksimcpu.cpp	13 May 2002 14:47:51 -0000	1.21
-+++ ksim/monitors/cpu/ksimcpu.cpp	3 Mar 2003 07:38:33 -0000
-@@ -40,12 +40,20 @@
- #include <chart.h>
- #include <progress.h>
+--- ksim/monitors/cpu/ksimcpu.cpp.orig	Mon May 13 10:47:51 2002
++++ ksim/monitors/cpu/ksimcpu.cpp	Mon Mar 17 13:26:46 2003
+@@ -42,8 +42,16 @@
  #include <themetypes.h>
  
  #ifdef Q_OS_BSD4
@@ -25,5 +18,14 @@ diff -u -5 -p -d -r1.21 ksimcpu.cpp
  #include <sys/sysctl.h>
  #include <string.h>
  #include <kvm.h>
- #ifdef Q_OS_NETBSD
- #include <sys/sched.h>
+@@ -246,8 +254,8 @@
+   static int oidCpuTime[CTL_MAXNAME + 2];
+   static size_t oidCpuTimeLen = sizeof(oidCpuTime);
+   long cpuTime[CPUSTATES];
+-  unsigned int cpuTimeLen = sizeof(cpuTime);
+-  static char *name = "kern.cp_time";
++  size_t cpuTimeLen = sizeof(cpuTime);
++  static const char *name = "kern.cp_time";
+   static int initialized = 0;
+ 
+   if (!initialized) {
