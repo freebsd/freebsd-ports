@@ -148,6 +148,7 @@
     SUBDIR += mod_index_rss
     SUBDIR += mod_jk
     SUBDIR += mod_layout
+    SUBDIR += mod_log_mysql
     SUBDIR += mod_mp3
     SUBDIR += mod_mylo
     SUBDIR += mod_mysqluserdir
