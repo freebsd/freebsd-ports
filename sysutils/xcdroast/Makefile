@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	xcdroast
-PORTVERSION=	0.98.a.10
+PORTVERSION=	0.98.a.13
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.xcdroast.org/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.xcdroast.org/download/
+MASTER_SITE_SUBDIR=	xcdroast
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./alpha/}
 
 MAINTAINER=	lehmann@ans-netz.de
@@ -17,26 +19,34 @@ RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	imlib gdkpixbuf
+USE_GNOME=	gdkpixbuf
+GNU_CONFIGURE=	yes
 
-MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		IMLIB_CONFIG="${IMLIB_CONFIG}"
+CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}"
 
 MAN1=		xcdroast.1
 
-post-patch:
-	for i in xcdroast.h Makefile ; do \
-	  ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$$i ; \
-	done
+.if defined(WITH_NONROOT)
+CONFIGURE_ARGS+=--enable-nonrootmode
+.else
+CONFIGURE_ARGS+=--disable-nonrootmode
+.endif
 
-	for i in Makefile xcdroast.h ; do \
-	  ${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/$$i ; \
-	done
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      WITH_NONROOT=yes Use xcdroast w/o beeing root"
+	@${ECHO} ""
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g; \
+	                 s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/xcdroast.h;
 
 post-install:
+.if defined(WITH_NONROOT)
 	@${CAT} ${PKGMESSAGE}
-
+.endif
 .include <bsd.port.mk>
