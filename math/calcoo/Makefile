@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	calcoo
 
 MAINTAINER=	naddy@FreeBSD.org
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 MAN1=		calcoo.1
