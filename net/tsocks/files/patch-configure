@@ -1,5 +1,5 @@
---- configure.orig	Sat Sep  6 00:45:57 2003
-+++ configure	Sat Sep  6 00:46:07 2003
+--- configure.orig	Mon Jul 15 15:51:08 2002
++++ configure	Wed Oct  8 01:42:17 2003
 @@ -1836,14 +1836,14 @@
  SIMPLELIBS=${LIBS}
  LIBS=
@@ -27,12 +27,30 @@
  
  else
    echo "$ac_t""no" 1>&6
-@@ -2228,7 +2228,7 @@
+@@ -2151,6 +2151,7 @@
+ #line 2152 "configure"
+ #include "confdefs.h"
+ 
++      #include <sys/types.h>
+       #include <sys/socket.h>
+       int connect($testproto);
+     
+@@ -2227,14 +2228,16 @@
+ 
  echo $ac_n "checking for correct poll prototype""... $ac_c" 1>&6
  echo "configure:2230: checking for correct poll prototype" >&5
- PROTO=
+-PROTO=
 -for testproto in 'struct pollfd *ufds, unsigned long nfds, int timeout' 
-+for testproto in 'struct pollfd fds[], nfds_t nfds, int timeout'
++PROTO1="struct pollfd fds[], nfds_t nfds, int timeout"
++PROTO2="struct pollfd *fds, unsigned int nfds, int timeout"
++for PROTO in "$PROTO1" "$PROTO2"
  do
    if test "${PROTO}" = ""; then
      cat > conftest.$ac_ext <<EOF
+ #line 2236 "configure"
+ #include "confdefs.h"
+ 
++      #include <sys/types.h>
+       #include <sys/poll.h>
+       int poll($testproto);
+     
