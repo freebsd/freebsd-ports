@@ -7,6 +7,7 @@
 
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 		ftp://sunsite.auc.dk/pub/os/linux/loki/open-source/smpeg/ \
@@ -17,17 +18,13 @@ MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free MPEG1 video player library with sound support
 
-LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_SDL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		GLBASE="${X11BASE}" \
+CONFIGURE_ENV=	GLBASE="${X11BASE}" \
 		CPPFLAGS="-I${X11BASE}/include" \
 		CC="${CXX}" REAL_CC="${CC}"
 
