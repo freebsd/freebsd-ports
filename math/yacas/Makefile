@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.50
+PORTVERSION=	1.0.51
 CATEGORIES=	math
 MASTER_SITES=	http://www.xs4all.nl/~apinkus/backups/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
