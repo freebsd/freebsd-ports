@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sma
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.klake.org/sma/dl/ \
 		http://www.saunalahti.fi/~jt2/sma/dl/
