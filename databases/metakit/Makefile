@@ -7,6 +7,7 @@
 
 PORTNAME=	metakit
 PORTVERSION=	2.4.9.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -86,10 +87,8 @@ pre-patch:
 .endif
 
 post-install:
-.if defined(METAKIT_WITH_PYTHON)
-.endif
-
-post-install:
+	${MV} ${PREFIX}/lib/libmk4.so ${PREFIX}/lib/libmk4.so.0
+	@${LN} -sf libmk4.so.0 ${PREFIX}/lib/libmk4.so
 .if defined(METAKIT_WITH_PYTHON)
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.a ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PREFIX}/lib
