@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 DISTNAME=	Xfonts
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	X fonts for displaying Vietnamese
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
