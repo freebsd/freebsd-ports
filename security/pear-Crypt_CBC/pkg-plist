@@ -1,3 +1,2 @@
 %%PEARDIR%%/Crypt/CBC.php
-%%PEARDIR%%/Crypt/HCEMD5.php
 @dirrm %%PEARDIR%%/Crypt
