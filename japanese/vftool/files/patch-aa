@@ -1,42 +1,17 @@
 --- Makefile.orig	Mon Aug  7 02:48:48 1995
-+++ Makefile	Thu Sep 11 20:55:16 1997
-@@ -1,21 +1,22 @@
++++ Makefile	Sun Aug  2 15:55:56 1998
+@@ -1,12 +1,12 @@
  #
  # where you can find ASCII Nihongo TeX jfm files: min10.tfm ...
 -JFM = /usr/local/lib/tex/jfonts/jfm
 +JFM ?= %%JFM%%
  #
  # where you can find NTT JTeX tfm files: dmjsy10.tfm ...
--SUBTFM = /usr/local/lib/tex/jfonts/tfm
-+MINTFM ?= %%MINTFM%%
-+GOTTFM ?= %%GOTTFM%%
+ SUBTFM = /usr/local/lib/tex/jfonts/tfm
  #
  # where you can find afm files: Ryumin-Light-H ...
 -AFM = afm
 +AFM ?= %%AFM%%
  # builtin kanji fonts 
--bkfonts = ${t1} ${t2}
-+bkfonts = ${t1} ${t2} ${t3} ${t4}
+ bkfonts = ${t1} ${t2}
  t1=rml:Ryumin-Light-H:min:monokan
- t2=gbm:GothicBBB-Medium-H:goth:monokan
- t3=rmlv:Ryumin-Light-V:tmin:monokan-v
- t4=gbmv:GothicBBB-Medium-V:tgoth:monokan-v
- #
--# where you can tind dmjsy10.300pk ...
--PK = /usr/local/lib/tex/jfonts/pk
-+# where you can find dmjsy10.300pk ...
-+PK ?= %%PK%%
- 
- FILES = Makefile README vfdata.doc prninfo.ps \
- 	MKNTT2ASC MKASC2NTT MKASC2BKall MKASC2BK \
-@@ -53,8 +54,8 @@
- 
- tjsy: mktjsyvf
- 	-mkdir vf-tjsy
--	./MKTJSY vrotdnp dm tdm ${SUBTFM} vf-tjsy
--	./MKTJSY vrotdnp dg tdg ${SUBTFM} vf-tjsy
-+	./MKTJSY vrotdnp dm tdm ${MINTFM} vf-tjsy
-+	./MKTJSY vrotdnp dg tdg ${GOTTFM} vf-tjsy
- 
- tjsypk: mktjsygf
- 	-mkdir pk-tjsy
