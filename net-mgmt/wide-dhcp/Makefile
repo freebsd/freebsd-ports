@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       dhcp-1.4.0p5
-PKGNAME=        wide-dhcp-1.4.0p5
+DISTNAME=       dhcp-1.4.0p6
+PKGNAME=        wide-dhcp-1.4.0p6
 CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/wide-dhcp/ \
