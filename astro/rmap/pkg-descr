@@ -1,0 +1,11 @@
+This program generates, but does not display, image files containing 
+raster maps of the Earth.  It includes public-domain, vector
+data from which they are drawn, describing the continents, bodies
+of water, boundaries of countries and U.S. states, and a few cities.
+Command-line options allow centering the maps at a particular
+latitude and longitude and zooming in.
+
+WWW:  http://www.reza.net/rmap/
+
+Trevor Johnson
+trevor@jpj.net
