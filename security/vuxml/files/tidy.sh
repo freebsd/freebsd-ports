@@ -3,7 +3,7 @@ tidy_file="$1"
 vuxml_file="$2"
 if [ -z "${vuxml_file}" -o -z "${tidy_file}" ]; then
   exec >&2
-  echo "Usage: tidy.sh /path/to/vuxml/document /path/to/tidy.xsl"
+  echo "Usage: tidy.sh /path/to/tidy.xsl /path/to/vuxml/document"
   exit 1
 fi
 
