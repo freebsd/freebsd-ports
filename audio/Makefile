@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1999/03/02 00:07:53 fenner Exp $
+# $Id: Makefile,v 1.71 1999/03/09 02:35:14 nectar Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -7,7 +7,6 @@
     SUBDIR += bladeenc
     SUBDIR += cam
     SUBDIR += cdd
-    SUBDIR += cddbd
     SUBDIR += cdplay
     SUBDIR += dagrab
     SUBDIR += dap
