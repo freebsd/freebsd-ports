@@ -7,4 +7,4 @@ acids.  It can read and write MDL Molfiles, read and write CML
 files, and export to EPS.  It can predict 13C NMR and simple IR
 spectra.  It works under Unix or Windows.
 
-WWW:  http://www.prism.gatech.edu/~gte067k/xdrawchem/
+WWW:  http://xdrawchem.sourceforge.net
