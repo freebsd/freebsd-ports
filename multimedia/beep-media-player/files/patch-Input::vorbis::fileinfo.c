@@ -1,5 +1,14 @@
---- Input/vorbis/fileinfo.c.orig	Sat Feb  7 19:35:28 2004
-+++ Input/vorbis/fileinfo.c	Sat Feb  7 19:42:05 2004
+--- Input/vorbis/fileinfo.c.orig	Sat Jul 31 22:46:58 2004
++++ Input/vorbis/fileinfo.c	Sat Jul 31 22:52:22 2004
+@@ -200,7 +200,7 @@
+     gchar *errorstring;
+     errorstring = g_strdup_printf(_("An error occured:\n%s"), error);
+ 
+-    xmms_show_message_test(_("Error!"),
++    xmms_show_message(_("Error!"),
+ 			   errorstring, _("Ok"), FALSE, NULL, NULL);
+ 
+     g_free(errorstring);
 @@ -488,12 +488,21 @@
  
      static GtkWidget *filename_entry, *tag_frame;
