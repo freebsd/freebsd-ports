@@ -1,5 +1,5 @@
 share/dict/lookup-package/mypaedia-fpw.el
-share/dict/lookup-package/mypaedia-fpw.pl
+share/dict/lookup-package/extract-mypaedia.pl
 share/doc/%%PKGNAME%%/ChangeLog
 share/doc/%%PKGNAME%%/README.TXT
 @dirrm share/dict/lookup-package

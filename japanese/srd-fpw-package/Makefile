@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	srd-fpw-package
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/srd-fpw/
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
@@ -19,6 +18,7 @@ RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick
 
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME=${PKGNAME}
+USE_PERL5=	yes
 
 PKG_DIR=	${PREFIX}/share/dict/lookup-package
 PORT_DOCDIR=	${PREFIX}/share/doc/${PKGNAME}
@@ -26,7 +26,7 @@ PORT_DOCDIR=	${PREFIX}/share/doc/${PKGNAME}
 do-install:
 	${MKDIR} ${PKG_DIR}
 	${INSTALL_DATA} ${WRKSRC}/srd-fpw.el ${PKG_DIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/extract.pl ${PKG_DIR}/srd-fpw.pl
+	${INSTALL_SCRIPT} ${WRKSRC}/extract-srd.pl ${PKG_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PORT_DOCDIR}
 .for file in ChangeLog README.TXT

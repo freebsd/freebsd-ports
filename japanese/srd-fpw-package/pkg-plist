@@ -1,5 +1,5 @@
 share/dict/lookup-package/srd-fpw.el
-share/dict/lookup-package/srd-fpw.pl
+share/dict/lookup-package/extract-srd.pl
 share/doc/%%PKGNAME%%/ChangeLog
 share/doc/%%PKGNAME%%/README.TXT
 @dirrm share/dict/lookup-package
