@@ -17,5 +17,5 @@
 +	!Lock @Num_Lock Ctrl	<Btn5Down>:	scroll-forw(1,halfpage) \n\
 +	! @Num_Lock Ctrl	<Btn5Down>:	scroll-forw(1,halfpage) \n\
 +				<Btn5Down>:	scroll-forw(5,line) \n\
-+	Ctrl<Key>space: begin-conversion(_JAPANESE_CONVERSION)
++	Shift<Key>space: begin-conversion(_JAPANESE_CONVERSION)
 +
