@@ -3,10 +3,10 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.9 1999/05/29 03:55:57 steve Exp $
+# $Id: Makefile,v 1.10 1999/07/04 17:08:55 obrien Exp $
 #
 
-DISTNAME=	mtr-0.37
+DISTNAME=	mtr-0.39
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.giovannelli.it/~gmarco/files/
