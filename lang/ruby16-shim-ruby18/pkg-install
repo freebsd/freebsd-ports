@@ -19,6 +19,7 @@ delete_modules () {
 	optparse
 	racc-runtime
 	strscan
+	testunit
     "
 
     echo "Deinstalling modules being replaced by $PKGNAME..."

@@ -5,6 +5,7 @@ bin/h2rb%%_RUBY_SUFFIX%%
 @comment features/ruby18
 %%RUBY_SITEARCHLIBDIR%%/features/ruby18/file_ruby18.so
 %%RUBY_SITEARCHLIBDIR%%/features/ruby18/io_ruby18.so
+%%RUBY_SITEARCHLIBDIR%%/features/ruby18/math_ruby18.so
 @dirrm %%RUBY_SITEARCHLIBDIR%%/features/ruby18
 @dirrm %%RUBY_SITEARCHLIBDIR%%/features
 %%RUBY_SITELIBDIR%%/features/ruby18.rb
@@ -17,6 +18,7 @@ bin/h2rb%%_RUBY_SUFFIX%%
 %%RUBY_SITELIBDIR%%/features/ruby18/io.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/kernel.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/marshal.rb
+%%RUBY_SITELIBDIR%%/features/ruby18/math.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/module.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/numeric.rb
 %%RUBY_SITELIBDIR%%/features/ruby18/object.rb
@@ -56,6 +58,39 @@ bin/h2rb%%_RUBY_SUFFIX%%
 %%RUBY_SITEARCHLIBDIR%%/stringio.so
 @comment strscan
 %%RUBY_SITEARCHLIBDIR%%/strscan.so
+@comment testunit
+%%RUBY_SITELIBDIR%%/rubyunit.rb
+%%RUBY_SITELIBDIR%%/runit/assert.rb
+%%RUBY_SITELIBDIR%%/runit/cui/testrunner.rb
+%%RUBY_SITELIBDIR%%/runit/error.rb
+%%RUBY_SITELIBDIR%%/runit/testcase.rb
+%%RUBY_SITELIBDIR%%/runit/testresult.rb
+%%RUBY_SITELIBDIR%%/runit/testsuite.rb
+%%RUBY_SITELIBDIR%%/runit/topublic.rb
+%%RUBY_SITELIBDIR%%/test/unit.rb
+%%RUBY_SITELIBDIR%%/test/unit/assertionfailederror.rb
+%%RUBY_SITELIBDIR%%/test/unit/assertions.rb
+%%RUBY_SITELIBDIR%%/test/unit/error.rb
+%%RUBY_SITELIBDIR%%/test/unit/failure.rb
+%%RUBY_SITELIBDIR%%/test/unit/testcase.rb
+%%RUBY_SITELIBDIR%%/test/unit/testresult.rb
+%%RUBY_SITELIBDIR%%/test/unit/testsuite.rb
+%%RUBY_SITELIBDIR%%/test/unit/ui/console/testrunner.rb
+%%RUBY_SITELIBDIR%%/test/unit/ui/fox/testrunner.rb
+%%RUBY_SITELIBDIR%%/test/unit/ui/gtk/testrunner.rb
+%%RUBY_SITELIBDIR%%/test/unit/ui/testrunnermediator.rb
+%%RUBY_SITELIBDIR%%/test/unit/ui/testrunnerutilities.rb
+%%RUBY_SITELIBDIR%%/test/unit/util/observable.rb
+%%RUBY_SITELIBDIR%%/test/unit/util/procwrapper.rb
+@dirrm %%RUBY_SITELIBDIR%%/test/unit/util
+@dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/gtk
+@dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/fox
+@dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/console
+@dirrm %%RUBY_SITELIBDIR%%/test/unit/ui
+@dirrm %%RUBY_SITELIBDIR%%/test/unit
+@dirrm %%RUBY_SITELIBDIR%%/test
+@dirrm %%RUBY_SITELIBDIR%%/runit/cui
+@dirrm %%RUBY_SITELIBDIR%%/runit
 @comment others
 %%RUBY_SITELIBDIR%%/benchmark.rb
 %%RUBY_SITELIBDIR%%/erb.rb
