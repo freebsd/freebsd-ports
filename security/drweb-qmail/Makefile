@@ -7,10 +7,9 @@
 
 PORTNAME=	drweb_qmail
 PORTVERSION=	4.29.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
-DISTNAME=	drweb-qmail-${PORTVERSION}-F-freebsd4
 
 MAINTAINER=	info@volginfo.ru
 COMMENT=	Qmail client for DrWeb antivirus suite
@@ -32,6 +31,13 @@ DRWEB_WRKDIR=	/var/drweb
 DRWEB_PREFIX=	${PREFIX}/drweb
 
 PW_CMD?=	/usr/sbin/pw
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500000
+DISTNAME=	drweb-qmail-${PORTVERSION}-F-freebsd5
+.else
+DISTNAME=	drweb-qmail-${PORTVERSION}-F-freebsd4
+.endif
 
 pre-fetch:
 	@${ECHO_MSG} ""
@@ -81,4 +87,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
