@@ -1,0 +1,12 @@
+XZX is a portable emulator of ZX Spectrum 48K/128K/+3 (8-bit home computers
+made by Sir Clive Sinclair) for machines running UNIX and the X Window system.
+
+XZX emulates either a Spectrum 48K, 128K or +3, Interface I with up to 8
+microdrives, Multiface 128 (if you have the ROM image) and Kempston joystick.
+XZX loads from .SNA, .Z80, .SLT, .DAT, .TAP, .TZX, .VOC, .MDR and .DSK files
+and saves to .SNA, .Z80, .SLT, .TAP, .MDR, .DSK and .SCR files.
+
+XZX will work with color (8,16,24,32bpp) and monochrome displays, where
+contrasting colours are displayed with the darker colour in black and the
+lighter colour in white, which works reasonably well. Halftoning is used if
+the scaling factor is increased.
