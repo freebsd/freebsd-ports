@@ -3,7 +3,7 @@ Structure Illustrations.
 
 (1) If you can use `pgplot' as screen drawing routine, type 
 
-    % make USEPGPLOT=yes
+    % make WITH_PGPLOT=yes
 
 (2) If you are not familier to `pgplot', note the followings:
 
