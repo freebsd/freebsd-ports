@@ -1,22 +1,7 @@
---- installer.sh.orig	Sun Jul 25 16:20:28 2004
-+++ installer.sh	Sun Jul 25 17:19:48 2004
-@@ -69,6 +69,7 @@
-           ;;
-       *)
-           echo "Wrong parameter"
-+          exit
- 	  ;;
-   esac
-   shift
-@@ -111,21 +112,18 @@
- overwrite:check_port.pl:/scripts/check_port.pl:Portscanner
- overwrite:filehashmd5.pl:/scripts/filehashmd5.pl:MD5%%Digest%%generator
- overwrite:filehashsha1.pl:/scripts/filehashsha1.pl:SHA1%%Digest%%generator
--verwrite:showfiles.pl:/scripts/showfiles.pl:Directory%%viewer
-+overwrite:showfiles.pl:/scripts/showfiles.pl:Directory%%viewer
- overwrite:backdoorports.dat:/db/backdoorports.dat:Database%%Backdoor%%ports
- overwrite:mirrors.dat:/db/mirrors.dat:Database%%Update%%mirrors
- overwrite:os.dat:/db/os.dat:Database%%Operating%%Systems
+--- installer.sh.old	Sun Aug  8 00:16:28 2004
++++ installer.sh	Sun Aug  8 00:21:52 2004
+@@ -120,15 +120,12 @@
+ overwrite:programs_good.dat:/db/programs_good.dat:Database%%Program%%versions
  overwrite:defaulthashes.dat:/db/defaulthashes.dat:Database%%Default%%file%%hashes
  overwrite:md5blacklist.dat:/db/md5blacklist.dat:Database%%MD5%%blacklisted%%files
 -overwrite:CHANGELOG:/docs/CHANGELOG:Changelog
@@ -33,7 +18,7 @@
  "
  
  # Create directories (only if they do not exist)
-@@ -134,10 +132,7 @@
+@@ -137,10 +134,7 @@
  ${INSTALLDIR}/etc
  ${INSTALLDIR}/bin
  ${INSTALLDIR}/lib/rkhunter/db
@@ -44,16 +29,17 @@
  "
  
  CHECKDIR="/usr/local"
-@@ -345,8 +340,6 @@
+@@ -347,9 +341,6 @@
+ #################################################################################
  
  
- # Clean active window
+-# Clean active window
 -clear
 -
  echo "${INSTALLER_NAME} ${INSTALLER_VERSION} (${INSTALLER_COPYRIGHT})"
  echo $ECHOOPT "---------------"
  echo "Starting installation/update"
-@@ -467,7 +460,7 @@
+@@ -470,7 +461,7 @@
    if [ -f ${INSTALLPREFIX}${CURFILE} ]
      then
        #error redirection in .rkhunter it's just for a clear display if user run not as root
@@ -62,7 +48,7 @@
        if [ $? -eq 0 ]
          then
  	  echo $E "OK"
-@@ -482,10 +475,10 @@
+@@ -485,10 +476,10 @@
   
  done
  
@@ -75,7 +61,7 @@
      echo "Configuration updated with installation path (${INSTALLDIR})"
    else
      echo "Configuration already updated."
-@@ -495,7 +488,7 @@
+@@ -498,7 +489,7 @@
  then
  	echo ""
  	echo $E "$t17"
