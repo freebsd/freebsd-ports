@@ -1,0 +1,36 @@
+**********************************************************************
+
+Zope 2.7 Successfull installed.
+
+To create an instance of Zope please run 
+%%ZOPEBASEDIR%%/bin/mkzopeinstance.py -d <INSTANCEDIR>
+
+<INSTANCEDIR> is the directory where the instance files should 
+              be installed. This can be %%ZOPEBASEDIR%%
+
+Command-line options to 'mkzopeinstance' are available, and can be 
+investigated by running 'mkzopeinstance.py --help'.
+
+The Instancefiles created by mkzopeinstance.py will not be remove 
+when the package is deinstalled. You`ll have to delete them yourself. 
+
+If Zope should get started automatically when the system starts, 
+please add the following lines to /etc/rc.conf
+
+zope_enable="YES"
+zope_instances="<INSTANCEDIR>" 
+
+If there is already a zope_instances entry please add 
+<INSTANCEDIR> separated by a space. 
+
+
+**********************************************************************
+****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
+
+The default installation directory for Zope Products has changed from 
+%%ZOPEBASEDIR%%/lib/python/Products 
+to %%ZOPEBASEDIR%%/Products. 
+
+You might have to add the following lines to your zope.conf 
+products %%ZOPEBASEDIR%%/Products
+products $INSTANCE/Products

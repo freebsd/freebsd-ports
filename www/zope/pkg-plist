@@ -1,9 +1,9 @@
 etc/rc.d/zope.sh
+%%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/check_catalog.py
 %%ZOPEBASEDIR%%/bin/compilezpy.py
 %%ZOPEBASEDIR%%/bin/copyzopeskel.py
-@exec rm -f %%ZOPEBASEDIR%%/bin/copyzopeskel.pyc
 %%ZOPEBASEDIR%%/bin/decompilezpy.py
 %%ZOPEBASEDIR%%/bin/load_site.py
 %%ZOPEBASEDIR%%/bin/mkzeoinstance.py
@@ -1432,6 +1432,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testBrains.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testCatalog.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testCatalog.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testLazySequences.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/tests/testLazySequences.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/www/Vocabulary.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZCatalog/www/ZCatalog.gif
@@ -1786,8 +1788,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/DummyEngine.py
 %%ZOPEBASEDIR%%/lib/python/TAL/DummyEngine.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/HISTORY.txt
-%%ZOPEBASEDIR%%/lib/python/TAL/HTMLParser.py
-%%ZOPEBASEDIR%%/lib/python/TAL/HTMLParser.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/HTMLTALParser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/HTMLTALParser.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/ITALES.py
@@ -1883,6 +1883,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test20.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test29.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test34.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test36.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test_failed_attr_translation.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test_metal1.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/input/test_metal2.html
@@ -1927,6 +1928,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test20.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test29.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test34.html
+%%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test36.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test_failed_attr_translation.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test_metal1.html
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/output/test_metal2.html
@@ -1939,8 +1941,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/run.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_files.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_files.pyc
-%%ZOPEBASEDIR%%/lib/python/TAL/tests/test_htmlparser.py
-%%ZOPEBASEDIR%%/lib/python/TAL/tests/test_htmlparser.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_htmltalparser.py
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_htmltalparser.pyc
 %%ZOPEBASEDIR%%/lib/python/TAL/tests/test_sourcepos.py
@@ -2670,6 +2670,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/sv.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/roles.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/roles.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/roman.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/roman.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/states.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/states.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/tableparser.py
@@ -2680,8 +2682,6 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/readers/pep.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/readers/standalone.py
 %%ZOPEBASEDIR%%/lib/python/docutils/readers/standalone.pyc
-%%ZOPEBASEDIR%%/lib/python/docutils/roman.py
-%%ZOPEBASEDIR%%/lib/python/docutils/roman.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/statemachine.py
 %%ZOPEBASEDIR%%/lib/python/docutils/statemachine.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/transforms/__init__.py
