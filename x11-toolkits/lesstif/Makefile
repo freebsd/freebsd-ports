@@ -7,6 +7,7 @@
 
 PORTNAME=	lesstif
 PORTVERSION=	0.93.36
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://twtelecom.dl.sourceforge.net/sourceforge/lesstif/ \
 		http://umn.dl.sourceforge.net/sourceforge/lesstif/ \
@@ -75,13 +76,10 @@ pre-extract:
 .endif
 
 post-install:
-	${RM} -f ${PREFIX}/LessTif/TODO
-	${RM} -f ${PREFIX}/LessTif/INSTALL
-	${RM} -rf ${PREFIX}/LessTif/doc
-	${RM} -f ${PREFIX}/lib/libXm.so.2
 	${RM} -f ${PREFIX}/lib/libXm.la
-	${RM} -f ${PREFIX}/lib/libMrm.so.2
 	${RM} -f ${PREFIX}/lib/libMrm.la
+	${RM} -f ${PREFIX}/lib/libDtPrint.la
+	${RM} -f ${PREFIX}/lib/libUil.la
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
