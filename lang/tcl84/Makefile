@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.4.1
+PORTVERSION=	8.4.2
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -28,6 +28,7 @@ PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.4
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for README.html
+USE_REINPLACE=	YES
 
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=84
 
@@ -588,9 +589,14 @@ PKGNAMESUFFIX?=		-threads
 USE_REINPLACE=	YES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
 
 .endif
+
+post-configure:
+	${REINPLACE_CMD} -e 's=${WRKDIRPREFIX}=$${WRKDIRPREFIX}=' \
+		${WRKSRC}/tclConfig.sh
 
 .include <bsd.port.pre.mk>
 

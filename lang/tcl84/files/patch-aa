@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Aug 17 21:04:03 2002
-+++ Makefile.in	Mon Sep  9 14:00:35 2002
+--- Makefile.in.orig	Mon Mar  3 21:30:58 2003
++++ Makefile.in	Sun Mar  9 13:04:43 2003
 @@ -56,7 +56,9 @@
  SCRIPT_INSTALL_DIR	= $(INSTALL_ROOT)$(TCL_LIBRARY)
  
@@ -15,12 +15,12 @@
  #CFLAGS			= $(CFLAGS_DEBUG)
  #CFLAGS			= $(CFLAGS_OPTIMIZE)
  #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
--CFLAGS			= @CFLAGS@ @CFLAGS_DEFAULT@
-+CFLAGS			?= @CFLAGS@ @CFLAGS_DEFAULT@
+-CFLAGS			= @CFLAGS@ @CFLAGS_DEFAULT@ -DTCL_DBGX=$(TCL_DBGX)
++CFLAGS			+= @CFLAGS@ @CFLAGS_DEFAULT@ -DTCL_DBGX=$(TCL_DBGX)
  
  # Flags to pass to the linker
  LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
-@@ -436,7 +438,8 @@
+@@ -445,7 +447,8 @@
  
  all: binaries libraries doc
  
@@ -30,7 +30,7 @@
  
  libraries:
  
-@@ -447,6 +450,15 @@
+@@ -456,6 +459,15 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f $@
  	@MAKE_LIB@
@@ -46,7 +46,7 @@
  
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
-@@ -606,6 +618,12 @@
+@@ -602,6 +614,12 @@
  	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 $(LIB_INSTALL_DIR)/$(LIB_FILE)
@@ -59,7 +59,7 @@
  	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
  	    echo "Installing $(TCL_EXP_FILE) to $(LIB_INSTALL_DIR)/"; \
  	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
-@@ -613,15 +631,17 @@
+@@ -609,15 +627,17 @@
  	    fi
  	@echo "Installing tclsh as $(BIN_INSTALL_DIR)/tclsh$(VERSION)"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
@@ -80,7 +80,7 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -643,11 +663,17 @@
+@@ -639,11 +659,17 @@
  	    chmod +x $(SRC_DIR)/install-sh; \
  	    fi
  	@echo "Installing header files";
@@ -101,7 +101,7 @@
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
-@@ -705,7 +731,6 @@
+@@ -701,7 +727,6 @@
  	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking top-level (.1) docs";
@@ -109,7 +109,7 @@
  	@echo "Installing C API (.3) docs";
  	@cd $(TOP_DIR)/doc; for i in *.3; \
  	    do \
-@@ -715,7 +740,6 @@
+@@ -711,7 +736,6 @@
  	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking C API (.3) docs";
@@ -117,7 +117,7 @@
  	@echo "Installing command (.n) docs";
  	@cd $(TOP_DIR)/doc; for i in *.n; \
  	    do \
-@@ -725,7 +749,14 @@
+@@ -721,7 +745,14 @@
  	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
  	    done;
  	@echo "Cross-linking command (.n) docs";
