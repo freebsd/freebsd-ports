@@ -1,11 +1,14 @@
---- gdk/Makefile.in	2000/11/20 14:59:03	1.1
-+++ gdk/Makefile.in	2000/11/20 15:01:41
-@@ -228,7 +228,7 @@
+
+$FreeBSD$
+
+--- gdk/Makefile.in.orig	Thu Feb 14 12:38:26 2002
++++ gdk/Makefile.in	Thu Feb 14 12:45:37 2002
+@@ -315,7 +315,7 @@
  #
  # Rule to install gdkconfig.h header file
  #
 -configexecincludedir = $(libdir)/gtk-2.0/include
-+configexecincludedir = $(prefix)/include/gtk-2.0/gtk
++configexecincludedir = $(prefix)/include/gtk-2.0/gdk
  
- BUILT_SOURCES = stamp-gc-h #note: not gdkconfig.h
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ #note: not gdkconfig.h
+ BUILT_SOURCES = stamp-gc-h @REBUILD@ gdkenumtypes.c gdkenumtypes.h
