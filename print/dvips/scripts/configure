@@ -77,7 +77,7 @@ echo "LOCALDIR=$CACHE" >> ${WRKSRC}/Makefile
 echo "TEXMACRODIR=\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
 echo "FIGPATH = .:..:\$(TEXDIR)/tex" >> ${WRKSRC}/Makefile
 echo "MANDIR=$PREFIX/man/man1" >> ${WRKSRC}/Makefile
-echo "DEFS= -DTPIC -DDEBUG -DDEFRES=$res"  >> ${WRKSRC}/Makefile
+echo "DEFS= -DTPIC -DDEBUG -DDEFRES=$res -DCREATIONDATE -DHAVE_GETCWD -DHPS"  >> ${WRKSRC}/Makefile
 echo "OPT = -O2 -funsigned-char"  >> ${WRKSRC}/Makefile
 echo "BINDIR=$PREFIX/bin"  >> ${WRKSRC}/Makefile
 echo "FLIBS=-lm" >> ${WRKSRC}/Makefile
