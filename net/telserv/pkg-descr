@@ -1,0 +1,4 @@
+A telnet server (using the telnet protocol) analogous to the unix talk
+command that allows the equivalent of talk requests via telnet. 
+
+By default it listens on port 7435.
