@@ -1,0 +1,29 @@
+bin/anthy-agent
+bin/anthy-dic-tool
+etc/anthy-conf
+include/anthy/anthy.h
+include/anthy/dicutil.h
+include/anthy/input.h
+lib/libanthy.a
+lib/libanthy.la
+lib/libanthy.so.0
+lib/libanthydic.a
+lib/libanthydic.la
+lib/libanthydic.so.0
+lib/libanthyinput.a
+lib/libanthyinput.la
+lib/libanthyinput.so.0
+share/anthy/a.depword
+share/anthy/ajv.depword
+share/anthy/anthy.dic
+share/anthy/av.depword
+share/anthy/dep.depword
+share/anthy/dic-tool-usage.txt
+share/anthy/indepword.txt
+share/anthy/master.depword
+share/anthy/noun.depword
+share/anthy/struct.txt
+share/anthy/typetab
+share/anthy/v.depword
+@dirrm include/anthy
+@dirrm share/anthy
