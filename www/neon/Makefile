@@ -25,8 +25,14 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
 		--with-libxml1
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-.ifndef NOPORTDOCS
+MAN1=	neon-config.1
+MAN3=	ne_close_connection.3 ne_session_create.3 \
+	ne_session_decide_proxy.3 ne_session_destroy.3 ne_session_proxy.3
+
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${PREFIX}/man/man3
+.ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/neon
 	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${PREFIX}/share/doc/neon
 .endif
