@@ -37,8 +37,10 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
+OBJCOPY?=	/usr/bin/objcopy
+
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, e.g. from ${ICC_SITE}c60l/noncom.htm or from https://premier.intel.com/ \(whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again."
+IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, ${ICC_SITE}c60l/noncom.htm or https://premier.intel.com/ \(whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
 .endif
 
 post-extract:
@@ -49,7 +51,14 @@ post-extract:
 #	intel-ecc6-6.0.1-304.ia64.rpm \
 #	intel-eldb6-6.0.1-308.ia64.rpm \
 #	intel-esubh6-6.0.1-304.ia64.rpm
-	@cd ${WRKSRC};  rpm2cpio 2>/dev/null ${i} | cpio -idu --quiet
+.if defined(NOPORTDOCS)
+	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
+		cpio -idfuE ${FILESDIR}/cpio-exclude --quiet \
+		*/opt/intel/compiler60/docs/*
+.else
+	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
+		cpio -idfuE ${FILESDIR}/cpio-exclude --quiet
+.endif
 .endfor
 
 pre-patch:
@@ -75,23 +84,13 @@ post-patch:
 		${WRKSRC}/opt/intel/compiler60/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/${i}
 .endfor
-# Remove unneeded files
-.for i in cfloat.orig cwchar.orig yvals.h.orig algorithm bitset complex deque \
-	fstream fstream.h functional hash_map hash_set iomanip iomanip.h ios \
-	iosfwd iostream iostream.h istream iterator limits list locale map \
-	memory numeric ostream queue set slist sstream stack stdexcept stl.h \
-	stream.h streambuf string strstream strstream.h utility valarray \
-	vector xcomplex xdebug xhash xiosbase xlocale xlocinfo xlocinfo.h \
-	xlocmes xlocmon xlocnum xloctime xmemory xstring xtree xutility ymath.h
+.for i in cfloat.orig cwchar.orig yvals.h.orig
 	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/include/${i}
 .endfor
-.for i in libcprts.a libcprts.so libcprts.so.1 libguide.a libguide.so \
-	libunwind.so libunwind.so.1
-	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/ia32/lib/${i}
+.for i in icc.orig icpc.orig
+	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
 .endfor
-	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/uninstall \
-		${WRKSRC}/opt/intel/compiler60/ia32/bin/icc.orig \
-		${WRKSRC}/opt/intel/compiler60/ia32/bin/icpc.orig
+# Remove empty directory
 .if defined(NOPORTDOCS)
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/docs
 .endif
@@ -109,9 +108,16 @@ do-build:
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
 		${FILESDIR}/cxa_atexit.c ${FILESDIR}/cxa_finalize.c \
-		${FILESDIR}/errno_location.c ${FILESDIR}/stderr.c \
-		${FILESDIR}/mcount.S && \
-		${AR} q opt/intel/compiler60/ia32/lib/libcxa.a *.o
+		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
+.if ${OSVERSION} < 500042
+	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
+.else
+.for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
+	@${OBJCOPY} --redefine-sym stderr=__stderrp \
+		${WRKSRC}/opt/intel/compiler60/ia32/lib/${i}
+.endfor
+.endif
+	@${AR} q ${WRKSRC}/opt/intel/compiler60/ia32/lib/libcxa.a ${WRKSRC}/*.o
 # Some magic to be able to link
 	@${CC} ${CFLAGS} -o ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld ${FILESDIR}/ld.c
 	@${STRIP_CMD} ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld

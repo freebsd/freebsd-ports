@@ -737,7 +737,6 @@ intel/compiler60/ia32/include/sse2mmx.h
 intel/compiler60/ia32/include/stdarg.h
 intel/compiler60/ia32/include/stdbool.h
 intel/compiler60/ia32/include/stddef.h
-intel/compiler60/ia32/include/stdiostream.h
 intel/compiler60/ia32/include/typeinfo
 intel/compiler60/ia32/include/varargs.h
 intel/compiler60/ia32/include/xmmintrin.h
