@@ -1,13 +1,22 @@
---- docs/Makefile.orig	Sun Jul  7 18:19:14 2002
-+++ docs/Makefile	Sun Jul  7 18:19:35 2002
-@@ -49,8 +49,8 @@
- clean:
+--- Makefile.in	Sun Aug 17 01:27:52 2003
++++ Makefile.in.patch	Sun Aug 17 01:32:21 2003
+@@ -90,7 +90,7 @@
+ 	fi
  
+ configure: configure.in $(ADMIN_LIBTOOLS) $(ADMIN_ACLOCAL) include/autoconf.h.in
+-	rm -f $@ && autoconf --localdir=admin
++#	rm -f $@ && autoconf --localdir=admin
+ 
+ include/autoconf.h.in: configure.in
+ 	rm -f $@ && autoheader
+@@ -158,8 +158,8 @@
+ 
+ #
  install:
--	$(INSTALL-DIR) $(DESTDIR)$(datadir)/man/man1 && \
--	$(INSTALL-TXT) twin.1 $(DESTDIR)$(datadir)/man/man1 ; \
-+	$(INSTALL-DIR) $(DESTDIR)$(prefix)/man/man1 && \
-+	$(INSTALL-TXT) twin.1 $(DESTDIR)$(prefix)/man/man1 ; \
- 	$(INSTALL-DIR) $(DESTDIR)$(datadir)/twin/docs
- 	$(INSTALL-TXT) $(DOCS) $(DESTDIR)$(datadir)/twin/docs
- 	$(INSTALL-TXT) $(TOPDOCS) $(DESTDIR)$(datadir)/twin
+-	$(INSTALL-DIR) $(DESTDIR)$(libdir)/twin
+-	$(INSTALL-TXT) system.twinrc $(DESTDIR)$(libdir)/twin
++	$(INSTALL-DIR) $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL-TXT) twin.1 $(DESTDIR)$(prefix)/man/man1
+ 	$(LN) system.twinrc $(DESTDIR)$(libdir)/twin/.twinrc
+ 	$(INSTALL-BIN) system.twenvrc.sh $(DESTDIR)$(libdir)/twin
+ 	$(LN) system.twenvrc.sh $(DESTDIR)$(libdir)/twin/.twenvrc.sh

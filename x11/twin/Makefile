@@ -17,7 +17,6 @@ COMMENT=	A text-mode window manager and terminal emulator
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
-USE_AUTOCONF=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
