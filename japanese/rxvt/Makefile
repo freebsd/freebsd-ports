@@ -3,7 +3,7 @@
 # Date created:         23 November 1998
 # Whom:                 HONDA Yasuhiro <honda@kashio.info.mie-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/11/09 01:24:12 steve Exp $
+# $Id: Makefile,v 1.5 1998/12/06 06:52:10 flathill Exp $
 #
 
 DISTNAME=	rxvt-2.4.11
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://mason.primenet.com.au/pub/rxvt/
 
 .if !defined(NOXIMSUPPORT)
 PATCH_SITES=	http://www.kashio.info.mie-u.ac.jp/~honda/rxvt/
-PATCHFILES=	rxvt-2.4.10-JP-XIM.patch.gz
+PATCHFILES=	rxvt-2.4.11-JP-XIM.patch.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -33,6 +33,8 @@ post-install:
 	@${MKDIR} ${DOCDIR}
 	@${INSTALL_MAN} ${FILESDIR}/README.ja ${DOCDIR}
 .endif
+.if !defined(NOXIMSUPPORT)
 	@${CAT} ${PKGDIR}/MESSAGE
+.endif
 
 .include <bsd.port.mk>
