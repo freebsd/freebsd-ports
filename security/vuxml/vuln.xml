@@ -32,6 +32,287 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="ac4b9d18-67a9-11d8-80e3-0020ed76ef5a">
+    <topic>fetchmail denial-of-service vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.2.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Dave Jones discovered two denial-of-service vulnerabilities
+          in fetchmail:</p>
+	<ul>
+	  <li>An out-of-bounds array reference in rfc822.c could cause
+	    fetchmail to segfault.  (This bug was actually fixed in the
+	    OpenBSD port before the discovery of the implications by
+	    Dave.)  (CAN-2003-0790)</li>
+	  <li>An email message containing a very long line could cause
+	    fetchmail to segfault due to a missing NUL termination
+	    in transact.c. (CAN-2003-0792)</li>
+	</ul>
+	<p>Eric Raymond decided not to mention these issues in the
+	  release notes for fetchmail 6.2.5, but they were fixed
+	  there.</p>
+	<p>NOTE: MITRE has mistakenly cancelled CAN-2003-0790.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0790</cvename>
+      <cvename>CAN-2003-0792</cvename>
+      <bid>8843</bid>
+      <url>http://xforce.iss.net/xforce/xfdb/13450</url>
+      <url>http://www.openbsd.org/cgi-bin/cvsweb/ports/mail/fetchmail/patches/Attic/patch-rfc822_c?rev=1.1</url>
+    </references>
+    <dates>
+      <discovery>2003-10-16</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b0e76877-67a8-11d8-80e3-0020ed76ef5a">
+    <topic>mailman denial-of-service vulnerability in
+      MailCommandHandler</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A malformed message could cause mailman to crash.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0991</cvename>
+      <url>http://umn.dl.sourceforge.net/sourceforge/mailman/mailman-2.0.13-2.0.14-diff.txt</url>
+    </references>
+    <dates>
+      <discovery>2003-11-18</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3cb88bb2-67a6-11d8-80e3-0020ed76ef5a">
+    <topic>mailman XSS in admin script</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dirk Mueller reports:</p>
+          <blockquote><p>I've found a cross-site scripting
+           vulnerability in the admin interface of mailman 2.1.3 that
+           allows, under certain circumstances, for anyone to retrieve
+           the (valid) session cookie.</p></blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0965</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2003-December/000066.html</url>
+      <url>http://xforce.iss.net/xforce/xfdb/14121</url>
+    </references>
+    <dates>
+      <discovery>2003-12-31</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="429249d2-67a7-11d8-80e3-0020ed76ef5a">
+    <topic>mailman XSS in create script</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the 2.1.3 release notes:</p>
+        <blockquote><p>Closed a cross-site scripting exploit in the
+        create cgi script.</p></blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0992</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2003-September/000061.html</url>
+    </references>
+    <dates>
+      <discovery>2003-09-28</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="00263aa3-67a8-11d8-80e3-0020ed76ef5a">
+    <topic>mailman XSS in user options page</topic>
+    <affects>
+      <package>
+	<name>mailman</name>
+	<range><lt>2.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>From the 2.1.1 release notes:</p>
+        <blockquote><p>Closed a cross-site scripting vulnerability in
+        the user options page.</p></blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0038</cvename>
+      <url>http://mail.python.org/pipermail/mailman-announce/2003-February/000056.html</url>
+    </references>
+    <dates>
+      <discovery>2003-02-08</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="75770425-67a2-11d8-80e3-0020ed76ef5a">
+    <topic>SQL injection vulnerability in phpnuke</topic>
+    <affects>
+      <package>
+	<name>phpnuke</name>
+	<range><le>6.9</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Multiple researchers have discovered multiple SQL injection
+	  vulnerabilities in some versions of Php-Nuke.  These
+	  vulnerabilities may lead to information disclosure, compromise
+	  of the Php-Nuke site, or compromise of the back-end
+	  database.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://security.nnov.ru/search/document.asp?docid=5748</url>
+      <url>http://www.securityfocus.com/archive/1/348375</url>
+      <url>http://www.security-corporation.com/advisories-027.html</url>
+      <url>http://www.securityfocus.com/archive/1/353201</url>
+    </references>
+    <dates>
+      <discovery>2003-12-12</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ad4f6ca4-6720-11d8-9fb5-000a95bc6fae">
+    <topic>lbreakout2 vulnerability in environment variable
+      handling</topic>
+    <affects>
+      <package>
+	<name>lbreakout2</name>
+	<range><le>2.2.2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Ulf Härnhammar discovered an exploitable vulnerability in
+          lbreakout2's environmental variable handling.  In several
+          instances, the contents of the HOME environmental variable
+          are copied to a stack or global buffer without range
+          checking.  A local attacker may use this vulnerability to
+          acquire group-ID `games' privileges.</p>
+        <p>An exploit for this vulnerability has been published by
+          ``Li0n7 voila fr''.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0158</cvename>
+      <url>http://www.debian.org/security/2004/dsa-445</url>
+      <url>http://www.securityfocus.com/archive/1/354760/2004-02-21/2004-02-27/0</url>
+    </references>
+    <dates>
+      <discovery>2004-02-21</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="316e1c9b-671c-11d8-9aad-000a95bc6fae">
+    <topic>hsftp format string vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>hsftp</name>
+	<range><lt>1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar discovered a format string bug in hsftp's file
+	  listing code may allow a malicious server to cause arbitrary
+	  code execution by the client.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://lists.debian.org/debian-security-announce/debian-security-announce-2004/msg00044.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-22</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c7cad0f0-671a-11d8-bdeb-000a95bc6fae">
+    <topic>Darwin Streaming Server denial-of-service
+      vulnerability</topic>
+    <affects>
+      <package>
+	<name>DarwinStreamingServer</name>
+	<range><le>4.1.3g</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An attacker can cause an assertion to trigger by sending
+	  a long User-Agent field in a request.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0169</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=75</url>
+    </references>
+    <dates>
+      <discovery>2004-02-23</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="847ade05-6717-11d8-b321-000a95bc6fae">
+    <topic>libxml2 stack buffer overflow in URI parsing</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yuuichi Teranishi reported a crash in libxml2's URI handling
+	  when a long URL is supplied.  The implementation in nanohttp.c
+	  and nanoftp.c uses a 4K stack buffer, and longer URLs will
+	  overwrite the stack.  This could result in denial-of-service
+	  or arbitrary code execution in applications using libxml2
+	  to parse documents.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0110</cvename>
+      <url>http://www.xmlsoft.org/news.html</url>
+      <url>http://mail.gnome.org/archives/xml/2004-February/msg00070.html</url>
+    </references>
+    <dates>
+      <discovery>2004-02-08</discovery>
+      <entry>2004-02-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cc0fb686-6550-11d8-80e3-0020ed76ef5a">
     <topic>file disclosure in phpMyAdmin</topic>
     <affects>
