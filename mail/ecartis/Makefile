@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecartis
-PORTVERSION=	1.0.0.s20030303
+PORTVERSION=	1.0.0.s20030417
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
@@ -30,6 +30,7 @@ pre-install:
 	@${CP} -R ${WRKDIR}/${PORTNAME}-1.0.0/* ${PREFIX}/ecartis
 	@${RM} -R ${PREFIX}/${PORTNAME}/src/
 	@${RM} -R ${PREFIX}/${PORTNAME}/debian/
+	@${RM} ${PREFIX}/${PORTNAME}/ecartis.dsp ${PREFIX}/${PORTNAME}/ecartis.dsw
 	@${CHOWN} -R ecartis:ecartis ${PREFIX}/${PORTNAME}/*
 
 post-install:
