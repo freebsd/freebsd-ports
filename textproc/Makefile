@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1999/04/16 23:31:20 steve Exp $
+# $Id: Makefile,v 1.49 1999/04/17 17:34:42 nectar Exp $
 #
 
     SUBDIR += agrep
@@ -26,6 +26,7 @@
     SUBDIR += iso8879
     SUBDIR += ispell
     SUBDIR += jade
+    SUBDIR += java2html
     SUBDIR += latex2html
     SUBDIR += libxml
     SUBDIR += linuxdoc
@@ -33,6 +34,7 @@
     SUBDIR += mgdiff
     SUBDIR += mswordview
     SUBDIR += nfbtrans
+    SUBDIR += nicetext
     SUBDIR += p5-XML-Parser
     SUBDIR += par
     SUBDIR += prag
