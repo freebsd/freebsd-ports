@@ -7,6 +7,10 @@ lib/X11/XFCE/.xinitrc
 lib/X11/XFCE/XFCE.logo
 lib/X11/XFCE/XFCE_dithered.logo
 lib/X11/XFCE/XFCE_full.logo
+lib/X11/XFCE/doc/COPYRIGHT
+lib/X11/XFCE/doc/INSTALL
+lib/X11/XFCE/doc/MANUAL
+lib/X11/XFCE/doc/README
 lib/X11/XFCE/palettes/Alpine
 lib/X11/XFCE/palettes/Anthracite
 lib/X11/XFCE/palettes/Bahamas
@@ -29,5 +33,6 @@ lib/X11/XFCE/sample.fvwmrc
 lib/X11/XFCE/sample.xfcerc
 lib/X11/XFCE/sample.xinitrc
 man/man1/XFCE.1.gz
+@dirrm lib/X11/XFCE/doc
 @dirrm lib/X11/XFCE/palettes
 @dirrm lib/X11/XFCE

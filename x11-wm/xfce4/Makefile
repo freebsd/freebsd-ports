@@ -1,26 +1,24 @@
 # New ports collection makefile for:	xfce
-# Version required:	1.2.3
+# Version required:	1.2.4
 # Date created:		30 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/08/31 17:10:45 max Exp $
 #
 
-DISTNAME=	xfce-1.2.3
+DISTNAME=	xfce-1.2.4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/toolbars
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
-LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms
+LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		xforms\\.0\\.:${PORTSDIR}/x11/xforms
 
-WRKSRC=		${WRKDIR}/XFCE-1.2.3
+WRKSRC=		${WRKDIR}/XFCE-1.2.4
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 XMKMF=		xmkmf
-MAN1=		XFCE.1
-MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
