@@ -18,7 +18,7 @@ MANLANG=	ja
 MAN1=		hex.1
 
 do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} hex.cc -o hex
+	cd ${WRKSRC}; ${CXX} ${CXXFLAGS} hex.cc -o hex
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex ${PREFIX}/bin
