@@ -16,7 +16,7 @@
 -	$(INSTALL-DIR) $(DESTDIR)$(libdir)/twin
 -	$(INSTALL-TXT) system.twinrc $(DESTDIR)$(libdir)/twin
 +	$(INSTALL-DIR) $(DESTDIR)$(prefix)/man/man1
-+	$(INSTALL-TXT) twin.1 $(DESTDIR)$(prefix)/man/man1
++	$(INSTALL-TXT) docs/twin.1 $(DESTDIR)$(prefix)/man/man1
  	$(LN) system.twinrc $(DESTDIR)$(libdir)/twin/.twinrc
  	$(INSTALL-BIN) system.twenvrc.sh $(DESTDIR)$(libdir)/twin
  	$(LN) system.twenvrc.sh $(DESTDIR)$(libdir)/twin/.twenvrc.sh
