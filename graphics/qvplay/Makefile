@@ -6,35 +6,34 @@
 #
 
 PORTNAME=	qvplay
-PORTVERSION=	0.94
+PORTVERSION=	0.95
 CATEGORIES=	graphics
-MASTER_SITES=   http://www.asahi-net.or.jp/~xg2k-hys/
+MASTER_SITES=	http://www.asahi-net.or.jp/~xg2k-hys/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-RESTRICTED=	"Redistribution prohibited since it is in beta test period"
+WRKSRC=		${WRKDIR}/QVplay095/obj/FreeBSD
 
-WRKSRC=		${WRKDIR}/QVplay094/obj/FreeBSD
 GNU_CONFIGURE=	yes
-MAN1= 		qvplay.1 qvrec.1 qvalldel.1
-MAKE_ARGS+=	INSTALL_MAN="${INSTALL_MAN}"
 
-DOC=	README README.eng README.FreeBSD FAQ.txt HISTORY PROTOCOL.txt \
-	PROTOCOL.eng
+MAN1= 		qvplay.1 qvrec.1 qvalldel.1
+
+PORTDOCS=	FAQ.txt HISTORY PROTOCOL.txt PROTOCOL.eng \
+		README README.eng README.FreeBSD
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}
 
 pre-configure:
-	@( cd ${WRKDIR}/QVplay094; ./setup FreeBSD )
+	@( cd ${WRKDIR}/QVplay095; ./setup FreeBSD )
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/qvplay
-	for i in ${DOC}; do \
-		${INSTALL_DATA} ${WRKSRC}/../../$$i \
-			${PREFIX}/share/doc/qvplay; \
-	done
-	@${ECHO} && ${ECHO}
+.for file  in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/../../${file} ${PREFIX}/share/doc/qvplay
+.endfor
+.endif
 	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
