@@ -3,7 +3,7 @@
 # Date created:		15 Mar 1999
 # Whom:		Takeshi WATANABE <watanabe@komadori.planet.sci.kobe-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/11 06:30:03 taoka Exp $
 #
 
 PKGNAME=	ja-${DISTNAME}
@@ -16,6 +16,6 @@ JAPANESE_EXMH=	yes
 MASTERDIR=	${.CURDIR}/../../mail/exmh2
 COMMENT=	${.CURDIR}/pkg/COMMENT
 DESCR=		${.CURDIR}/pkg/DESCR
-WRKDIR=		${.CURDIR}/work
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 
 .include	"${MASTERDIR}/Makefile"
