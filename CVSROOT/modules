@@ -1789,6 +1789,7 @@ fr-koffice-i18n	ports/french/koffice-i18n
 fr-netscape7	ports/french/netscape7
 fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice	ports/french/openoffice
+fr-plgrenouille	ports/french/plgrenouille
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 frabs		ports/games/frabs
