@@ -8,4 +8,20 @@ ${PREFIX}/etc/afbackup/cryptkey. Remember to change it!
 Also, ${PREFIX}/share/doc/afbackup contains the documentation
 you ought to read before starting using the package.
 
+For server configuration one must add two services into
+/etc/services files:
+
+afbackup	2988/tcp
+afmbackup	2989/tcp
+
+and into /etc/inetd.conf:
+
+afbackup stream tcp nowait afbackup ${PKG_PREFIX}/libexec/afbackup/afserver ${PKG_PREFIX}/libexec/afbackup/afserver ${PKG_PREFIX}/etc/afbackup/server.conf
+afmbackup stream tcp nowait afbackup ${PKG_PREFIX}/libexec/afbackup/afmserver ${PKG_PREFIX}/libexec/afbackup/afmserver ${PKG_PREFIX}/etc/afbackup/server.conf
+
+For more information on how to configure the package read
+${PKG_PREFIX}/share/doc/afbackup/INSTALL keeping in mind that
+the package conforms to hier(7); in other words, paths are
+different from what is mentioned in the document.
+
 --------------------------------------------------------------

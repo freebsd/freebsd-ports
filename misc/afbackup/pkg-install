@@ -3,16 +3,35 @@
 #set -vx
 
 PKG_BATCH=${BATCH:=NO}
-
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+SERVERVARDIR=/var/spool/afbackup
 
 #
 # create 'afbackup' user before installing
 #
 
+dlg() {
+	if [ X"${NONINTERACTIVE}" != "XYES" ]; then
+		dialog "$@"
+		return $?
+	else
+		i=1
+		while [ $i -lt $# ]; do
+			eval 'arg="$'$i'"'
+			if [ $arg = '--msgbox' ]; then
+				eval 'echo "$'$(($i+1))'"'
+				return 0
+			fi
+			i=$(($i+1))
+		done
+	fi
+	return 0;
+}
+
 create() {
 	if [ ! -x /usr/sbin/pw ]; then
-		dialog --msgbox "Please add a user named \`afbackup' before installing this package." 6 60
+		dlg --msgbox "Please add a user named \`afbackup' before installing this package." 6 60
 		exit 69
 	fi
 
@@ -22,8 +41,8 @@ create() {
 		shell=/nonexistent
 	fi
 	if ! pw show user afbackup -q >/dev/null; then
-		if ! dialog --clear --yesno "There is no user afbackup on your system.\n\nDo you want it to be created?" 7 60; then
-			dialog --msgbox "Please add a user named \`afbackup' before installing this package." 6 60
+		if ! dlg --clear --yesno "There is no user afbackup on your system.\n\nDo you want it to be created?" 7 60; then
+			dlg --msgbox "Please add a user named \`afbackup' before installing this package." 6 60
 			exit 69
 		fi
 		uid=100
@@ -34,7 +53,7 @@ create() {
 				-c "AFBackup System Owner" -s "${shell}" \
 				; then
 			e=$?
-			dialog --msgbox "Failed to add user \`afbackup'. Please add it manually." 6 60
+			dlg --msgbox "Failed to add an account for \`afbackup' user. Please add it manually." 6 60
 			exit ${e}
 		fi
 		echo "==>  Added user \`afbackup' (id ${uid})"
@@ -43,53 +62,10 @@ create() {
 				-c "AFBackup System Owner" -s "${shell}" \
 				; then
 			e=$?
-			dialog --msgbox "Failed to update user \`afbackup'." 6 60
+			dlg --msgbox "Failed to update user \`afbackup'." 6 60
 			exit ${e}
 		fi
 		echo "==>  Updated user \`afbackup'."
-	fi
-}
-
-install_services() {
-	oldmask=`umask`
-	umask 077
-	egrep -v "^af.?backup" /etc/services >/tmp/services
-	echo "afbackup	2988/tcp" >>/tmp/services
-	echo "afmbackup	2989/tcp" >>/tmp/services
-	# XXX what if the original file had another mode?
-	install -m 0644 -o root -g wheel /tmp/services /etc/services
-	umask $oldmask
-}
-
-install_inetd_services() {
-	oldmask=`umask`
-	umask 077
-	egrep -v "^#?af.?backup" /etc/inetd.conf >/tmp/inetd.conf
-	echo "afbackup        stream  tcp     nowait  afbackup        ${PKG_PREFIX}/libexec/afbackup/afserver ${PKG_PREFIX}/libexec/afbackup/afserver ${PKG_PREFIX}/etc/afbackup/server.conf" >>/tmp/inetd.conf
-	echo "afmbackup       stream  tcp     nowait  afbackup        ${PKG_PREFIX}/libexec/afbackup/afmserver ${PKG_PREFIX}/libexec/afbackup/afmserver ${PKG_PREFIX}/etc/afbackup/server.conf" >>/tmp/inetd.conf
-	# XXX what if the original file had another mode?
-	install -m 0644 -o root -g wheel /tmp/inetd.conf /etc/inetd.conf
-	umask $oldmask
-	if [ -r /var/run/inetd.pid ]; then
-		kill -1 `cat /var/run/inetd.pid`
-	fi
-}
-
-check_service() {
-	if [ -z "`egrep '^afm?backup' /etc/services`" ] ; then
-		if dialog --clear --yesno "You don't have neither 'afbackup' nor 'afmbackup' entries\nin /etc/services.\n\nDo you want them to be created?\n\nNote that /etc/services will be forced to have root:wheel\nownership and mode 0644." 11 61; then
-			install_services
-		else
-			dialog --msgbox "Create the entries manually then. You will need them." 5 60
-			return
-		fi
-	fi
-	if [ -z "`egrep '^#?af.?backup' /etc/inetd.conf`" ] ; then
-		if dialog --clear --yesno "You don't have entries for afbackup/afmbackup server in\nyour /etc/inetd.conf file.\n\nDo you want them to be installed?" 8 60; then
-			install_inetd_services
-		else
-			dialog --msgbox "You shell create the entries manually then." 5 60
-		fi
 	fi
 }
 
@@ -97,14 +73,17 @@ case $2 in
 	PRE-INSTALL)
 		create
 		;;
-
 	POST-INSTALL)
-		case $1 in
-			*-client*)
-			;;
-			*)
-			check_service
-			;;
-		esac
+                case $1 in
+                        *-client*)
+                        ;;
+                        *)
+                        if [ ! -d ${SERVERVARDIR} ]; then
+				install -d -o afbackup -g operator ${SERVERVARDIR}
+				touch ${SERVERVARDIR}/readonly_tapes
+			fi
+                        ;;
+                esac
+
 		;;
 esac

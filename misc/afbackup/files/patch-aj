@@ -1,0 +1,42 @@
+--- sysutils.c.orig	Wed Sep 12 20:29:45 2001
++++ sysutils.c	Mon Jan 21 21:55:47 2002
+@@ -37,6 +37,9 @@
+ #include <grp.h>
+ #include <sysutils.h>
+ #include <fileutil.h>
++#ifdef __FreeBSD__
++#include <sys/sysctl.h>
++#endif
+ 
+ #define	GETOUT		{ goto getout; }
+ #define	CLEANUP		{ goto cleanup; }
+@@ -763,9 +766,20 @@
+ Int32
+ free_fds()
+ {
+-  int	*fds = NULL, *newfds = NULL, fd;
+   Int32	num_fds = 0;
+ 
++#ifdef __FreeBSD__
++  /* This code is for avoiding race conditions with other processes which
++   * might need a spare file descriptor while afbackup tries to find out
++   * how many of those it can use. sysctl gives us more general yet less
++   * reliable answer as it is does not count on a number of possibly
++   * opened files. */
++  size_t sz = sizeof( Int32);
++
++  sysctlbyname( "kern.maxfilesperproc", &num_fds, &sz, NULL, 0);
++#else
++  int	*fds = NULL, *newfds = NULL, fd;
++
+   while((fd = open(NULLDEV, O_RDONLY)) >= 0){
+     newfds = ZSRENEWP(fds, int, num_fds + 1, num_fds);
+ 
+@@ -784,6 +798,7 @@
+     close(fds[fd]);
+ 
+   free(fds);
++#endif
+ 
+   return(num_fds);
+ }
