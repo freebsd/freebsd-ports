@@ -3,6 +3,44 @@ bin/fbsetbg
 bin/fluxbox
 bin/fluxbox-generate_menu
 bin/startfluxbox
+%%DOCHTML:%%%%DOCSDIR%%/html/app-artwiz.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-debugging.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-setup.html
+%%DOCHTML:%%%%DOCSDIR%%/html/app-themeref.html
+%%DOCHTML:%%%%DOCSDIR%%/html/bsetroot-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c152.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c28.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c287.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c722.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c740.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c98.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-bg.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-slit.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-tabs.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-themes.html
+%%DOCHTML:%%%%DOCSDIR%%/html/chap-toolbar.html
+%%DOCHTML:%%%%DOCSDIR%%/html/docbook.css
+%%DOCHTML:%%%%DOCSDIR%%/html/faq.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fbrun-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fbsetbg-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxbox-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxboxstyle-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/fluxstyle-man.html
+%%DOCHTML:%%%%DOCSDIR%%/html/index.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-fbgm.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-fluxspace.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-pager.html
+%%DOCHTML:%%%%DOCSDIR%%/html/sect-wmctrl.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x160.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x231.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x315.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x346.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x47.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x739.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x757.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x795.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x813.html
+%%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
@@ -124,3 +162,6 @@ share/fluxbox/styles/qnx-photon
 %%NLS:%%@dirrm share/fluxbox/nls/C
 %%NLS:%%@dirrm share/fluxbox/nls
 @dirrm share/fluxbox
+%%DOCPDF:%%@dirrm %%DOCSDIR%%/pdf
+%%DOCHTML:%%@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
