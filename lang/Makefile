@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.96 1998/03/27 10:53:24 tg Exp $
+# $Id: Makefile,v 1.97 1998/04/17 22:07:04 mph Exp $
 #
 
     SUBDIR += Gofer
     SUBDIR += STk
     SUBDIR += Sather
+    SUBDIR += TenDRA
     SUBDIR += atlast
     SUBDIR += bwbasic
     SUBDIR += cim
