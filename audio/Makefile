@@ -53,6 +53,7 @@
     SUBDIR += flac
     SUBDIR += fmio
     SUBDIR += freeamp
+    SUBDIR += funktrackergold
     SUBDIR += gdcd
     SUBDIR += gdrdao
     SUBDIR += gkrellmms

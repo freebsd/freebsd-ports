@@ -1,0 +1,76 @@
+--- Makefile.orig	Mon Jun 22 20:24:17 1998
++++ Makefile	Sun Apr  1 20:44:19 2001
+@@ -5,53 +5,10 @@
+ # FunktrackerGOLD now comes under the GNU General Public License. Please
+ # read the COPYING notice in this distribution.
+ ############################################################################
+-CC	= gcc
+-OPTIONS = -Wall -O2 -pipe -fomit-frame-pointer
+-LIB	= -lpthread -lncurses -lm
++LDFLAGS+=$(EXTRA_LDFLAGS) -lncurses -lm
++CFLAGS+=$(EXTRA_CFLAGS)
+ 
+-ifeq ($(OSTYPE),Linux)
+-  OPTIONS += -DLinux
+-else
+-  ifeq ($(OSTYPE),FreeBSD)
+-    OPTIONS += -DFreeBSD
+-    LIB += -ltermcap #-lmytinfo
+-  else
+-    OPTIONS += -DLinux
+-  endif
+-endif
+-
+-HOST_SAFE = 0
+-
+-ifeq ($(HOSTTYPE),i386)
+-  HOST_SAFE = 1
+-endif
+-
+-ifeq ($(HOSTTYPE),i486)
+-  HOST_SAFE = 1
+-endif
+-
+-ifeq ($(HOSTTYPE),i586)
+-  HOST_SAFE = 1
+-endif
+-
+-ifeq ($(HOSTTYPE),i686)
+-  HOST_SAFE = 1
+-endif
+-
+-###############################
+-all:
+-	@if [ $(HOST_SAFE) = '1' ]; then \
+-	  make funkgold; \
+-	else \
+-	  echo "***********************************************"; \
+-	  echo "This is not an INTEL based machine. As the Funktracker"; \
+-	  echo "format is in Intel byte sex (and i haven't yet made"; \
+-	  echo "provisions for other processors), trying to play"; \
+-	  echo "funktracker songs on this machine will be dangerous."; \
+-	  echo ""; \
+-	  echo "Refer to INSTALL file."; \
+-	  echo "***********************************************"; \
+-	fi
++all: funkgold
+ 
+ ###############################
+ OBJ_FT		= dsp_mixxer.o funktracker.o funkload.o funkgold_misc.o \
+@@ -59,7 +16,7 @@
+ 		funkgold_trac.o funkgold.o
+ 
+ funkgold: $(OBJ_FT)
+-	$(CC) $(OPTIONS) -o funkgold $(OBJ_FT) $(LIB)
++	$(CC) -o funkgold $(OBJ_FT) $(LDFLAGS)
+ 	strip funkgold
+ 
+ ###############################
+@@ -69,7 +26,3 @@
+ release:
+ 	make
+ 	rm -f *.o
+-
+-###############################
+-%.o: %.c %.h
+-	$(CC) $(OPTIONS) -c $< -o $@
