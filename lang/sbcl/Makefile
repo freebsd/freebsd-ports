@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sbcl
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sbcl
@@ -48,7 +48,9 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} BUGS COPYING CREDITS ${DOCSDIR})
 .if !defined(NOPORTDOCS)
-	(cd ${WRKSRC}/doc && ${TAR} cf - html | ${TAR} xf - -C ${DOCSDIR})
+	${MKDIR} ${DOCSDIR}/manual
+	(cd ${WRKSRC}/doc/manual/sbcl && ${FIND} . -print | \
+	    ${CPIO} -pdmu -R${DOCOWN}:${DOCGRP} ${DOCSDIR}/manual)
 .endif
 
 .include <bsd.port.mk>
