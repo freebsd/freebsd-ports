@@ -1,0 +1,27 @@
+*** Imakefile.orig	Thu May 19 04:01:00 1994
+--- Imakefile	Sat Nov  2 17:06:31 1996
+***************
+*** 5,14 ****
+  XCOMM Imakefile,v 2.0 1994/05/19 02:01:00 dan Exp
+  
+! XMLIB = -lXm
+  XCOMM
+! XCOMM for Dell SVR4
+  XCOMM
+! EXTRA_LIBRARIES = -lc -lucb
+  
+  SRCS = mgdiff.c rundiff.c misc.c files.c spawn.c manual.c modal.c legend.c
+  OBJS = mgdiff.o rundiff.o misc.o files.o spawn.o manual.o modal.o legend.o
+--- 5,16 ----
+  XCOMM Imakefile,v 2.0 1994/05/19 02:01:00 dan Exp
+  
+! XMLIB = ${MOTIFLIB}
++ 
+  XCOMM
+! XCOMM The gnuregex library is needed for the Motif file selection box widget.
+  XCOMM
+! XCOMM 
+! EXTRA_LIBRARIES = -lgnuregex
+  
+  SRCS = mgdiff.c rundiff.c misc.c files.c spawn.c manual.c modal.c legend.c
+  OBJS = mgdiff.o rundiff.o misc.o files.o spawn.o manual.o modal.o legend.o

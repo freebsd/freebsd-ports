@@ -1,0 +1,9 @@
+This is mgdiff, a graphical front end to the Unix diff command based
+upon X11R[456] and the Motif widget set.  It allows the user to select
+two files for comparison, runs the diff command, parses the output and
+presents the results graphically.  This presentation can also be used
+to generate a user-specified merge of the two files into a third file.
+
+This program's appearance is based upon a program called gdiff, which
+runs only on Silicon Graphics workstations and for which source code
+is not provided.
