@@ -1,0 +1,44 @@
+share/xsl/tei/html/teicommon.xsl
+share/xsl/tei/html/teihtml-acdt-css.xsl
+share/xsl/tei/html/teihtml-acdt-printable.xsl
+share/xsl/tei/html/teihtml-acdt-text.xsl
+share/xsl/tei/html/teihtml-acdt.xsl
+share/xsl/tei/html/teihtml-bibl.xsl
+share/xsl/tei/html/teihtml-chunk.xsl
+share/xsl/tei/html/teihtml-corpus.xsl
+share/xsl/tei/html/teihtml-drama.xsl
+share/xsl/tei/html/teihtml-figures.xsl
+share/xsl/tei/html/teihtml-frames.xsl
+share/xsl/tei/html/teihtml-front.xsl
+share/xsl/tei/html/teihtml-lists.xsl
+share/xsl/tei/html/teihtml-main.xsl
+share/xsl/tei/html/teihtml-master.xsl
+share/xsl/tei/html/teihtml-misc.xsl
+share/xsl/tei/html/teihtml-notes.xsl
+share/xsl/tei/html/teihtml-odds.xsl
+share/xsl/tei/html/teihtml-oucs-css.xsl
+share/xsl/tei/html/teihtml-oucs-msxml.xsl
+share/xsl/tei/html/teihtml-oucs-printable.xsl
+share/xsl/tei/html/teihtml-oucs-raw.xsl
+share/xsl/tei/html/teihtml-oucs-text.xsl
+share/xsl/tei/html/teihtml-oucs.xsl
+share/xsl/tei/html/teihtml-oucsdoc.xsl
+share/xsl/tei/html/teihtml-pagetable.xsl
+share/xsl/tei/html/teihtml-param.xsl
+share/xsl/tei/html/teihtml-poetry.xsl
+share/xsl/tei/html/teihtml-slides-oucs.xsl
+share/xsl/tei/html/teihtml-slides.xsl
+share/xsl/tei/html/teihtml-struct.xsl
+share/xsl/tei/html/teihtml-tables.xsl
+share/xsl/tei/html/teihtml-teic-css.xsl
+share/xsl/tei/html/teihtml-teic-msxml.xsl
+share/xsl/tei/html/teihtml-teic.xsl
+share/xsl/tei/html/teihtml-teic-printable.xsl
+share/xsl/tei/html/teihtml-teic-raw.xsl
+share/xsl/tei/html/teihtml-teic-text.xsl
+share/xsl/tei/html/teihtml-xref.xsl
+share/xsl/tei/html/teihtml-math.xsl
+share/xsl/tei/html/teihtml.xsl
+@dirrm share/xsl/tei/html
+@unexec rmdir %D/share/xsl/tei 2> /dev/null || true
+@unexec rmdir %D/share/xsl 2> /dev/null || true
