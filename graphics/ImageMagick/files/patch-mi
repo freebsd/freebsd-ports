@@ -5,15 +5,3 @@
 -#include <sys/ipc.h>
 -#include <sys/shm.h>
  #include <X11/extensions/XShm.h>
---- magick/xwindow.c	Thu Oct 17 10:08:02 2002
-+++ magick/xwindow.c	Thu Oct 17 10:11:42 2002
-@@ -58,4 +58,11 @@
- #include "xwindow.h"
- #if defined(HasX11)
-+#if defined(HasSharedMemory)
-+#include <machine/param.h>
-+//typedef unsigned short ushort;	/* needed for sys/ipc.h at the moment */
-+#include <sys/types.h>
-+#include <sys/ipc.h>
-+#include <sys/shm.h>
-+#endif
