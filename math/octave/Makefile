@@ -1,12 +1,12 @@
 # New ports collection makefile for:	octave
-# Version required:	2.0.9
-# Date created:		28 June 1997
+# Version required:	2.0.12
+# Date created:		19 April 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.11 1997/10/15 23:20:44 max Exp $
+# $Id: Makefile,v 1.12 1998/02/16 11:59:34 asami Exp $
 #
 
-DISTNAME=	octave-2.0.9
+DISTNAME=	octave-2.0.12
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
@@ -14,41 +14,33 @@ MAINTAINER=	chuckr@FreeBSD.ORG
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
-MANUAL_PACKAGE_BUILD=	"installs libreadline shared library"
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	${SETENV} "INSTALL_DATA=$(INSTALL_DATA)" "INSTALL_PROGRAM=$(INSTALL_SCRIPT)"
-CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --enable-info --enable-shared --host=i386-unknown-freebsd
+CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --enable-shared --host=i386-unknown-freebsd
 USE_GMAKE=	yes
 MAN1=		octave.1
 
-post-configure:
-	(cd $(WRKDIR)/octave-2.0.9/scripts; ./configure)
-
-OCTAVE-INFO= octave.info octave.info-1 octave.info-10 octave.info-11 octave.info-12 octave.info-2 octave.info-3 octave.info-4 octave.info-5 octave.info-6 octave.info-7 octave.info-8 octave.info-9
 LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
 
 post-install:
-	${MV} ${PREFIX}/lib/libcruft.so ${PREFIX}/lib/libcruft.so.2.0
-	${MV} ${PREFIX}/lib/liboctave.so ${PREFIX}/lib/liboctave.so.2.0
-	${MV} ${PREFIX}/lib/liboctinterp.so ${PREFIX}/lib/liboctinterp.so.2.0
-	${MV} ${PREFIX}/lib/libtinst.so ${PREFIX}/lib/libtinst.so.2.0
-	${MV} ${PREFIX}/lib/libreadline.so ${PREFIX}/lib/libreadline.so.2.0
-	${MV} ${PREFIX}/lib/libhistory.so ${PREFIX}/lib/libhistory.so.2.0
-	${MV} ${PREFIX}/lib/libkpathsea.so ${PREFIX}/lib/libkpathsea.so.2.0
-	${LDCONFIG} -m $(PREFIX)/lib
 .ifndef NOPORTDOCS
-.for file in $(OCTAVE-INFO)
-	$(INSTALL_DATA) $(WRKSRC)/doc/interpreter/$(file) $(PREFIX)/info
-.endfor
+	install-info --defentry='* Octave: (octave).	Interactive language for numerical computations.' $(WRKSRC)/doc/interpreter/octave.info $(PREFIX)/info/dir
+	install-info --defentry='* LibOctave: (liboctave).	C++ class library for Octave.' $(WRKSRC)/doc/liboctave/liboctave.info $(PREFIX)/info/dir
+	$(MKDIR) $(PREFIX)/share/octave/doc
 .for file in $(LIBOCTAVE-INFO)
 	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/$(file) $(PREFIX)/info
 .endfor
-	$(MKDIR) $(PREFIX)/share/octave/doc
 	$(INSTALL_DATA) $(WRKSRC)/doc/interpreter/octave.ps $(PREFIX)/share/octave/doc
 	$(INSTALL_DATA) $(WRKSRC)/doc/liboctave/liboctave.ps $(PREFIX)/share/octave/doc
 	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-letter.ps $(PREFIX)/share/octave/doc
+	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-legal.ps $(PREFIX)/share/octave/doc
 	$(INSTALL_DATA) $(WRKSRC)/doc/refcard/refcard-a4.ps $(PREFIX)/share/octave/doc
+	$(INSTALL_DATA) $(WRKSRC)/doc/faq/Octave-FAQ.ps $(PREFIX)/share/octave/doc
+	$(RM) -rf $(PREFIX)/libexec/octave/2.0.12/oct/i386-unknown-freebsd?
+	$(RM) -rf $(PREFIX)/libexec/octave/2.0.12/exec/i386-unknown-freebsd?
+	$(RM) -rf $(PREFIX)/libexec/octave/site/oct/i386-unknown-freebsd?
+	$(RM) -rf $(PREFIX)/libexec/octave/site/exec/i386-unknown-freebsd?
 .endif
+	${LDCONFIG} -m $(PREFIX)/lib
 
 .include <bsd.port.mk>
