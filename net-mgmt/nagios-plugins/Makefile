@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.4.0.b1
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	nagiosplug
-DISTNAME=	nagios-plugins-1.4-beta1
 
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Plugins for nagios
