@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ MAINTAINER=	ports@mark.reidel.info
 COMMENT=	A remote-controllable music-daemon
 
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
-		mad.1:${PORTSDIR}/audio/mad
+		mad.2:${PORTSDIR}/audio/mad
 
 GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message

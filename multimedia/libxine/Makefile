@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0.r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,7 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
-		mad.1:${PORTSDIR}/audio/mad \
+		mad.2:${PORTSDIR}/audio/mad \
 		speex.2:${PORTSDIR}/audio/speex \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.5:${PORTSDIR}/devel/gettext \

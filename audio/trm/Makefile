@@ -7,7 +7,7 @@
 
 PORTNAME=	trm
 PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/ \
 		ftp://ftp.nl.musicbrainz.org/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	mp3splt
 PORTVERSION=	1.9
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	q@uni.de
 COMMENT=	Utility to split mp3 and ogg files (via CUE sheets)
 
-LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad \
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		ogg.4:${PORTSDIR}/audio/libogg
 

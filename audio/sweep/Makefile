@@ -7,7 +7,7 @@
 
 PORTNAME=	sweep
 PORTVERSION=	0.8.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		samplerate.0:${PORTSDIR}/audio/libsamplerate \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		speex.2:${PORTSDIR}/audio/speex \
-		mad.1:${PORTSDIR}/audio/mad \
+		mad.2:${PORTSDIR}/audio/mad \
 		tdb.1:${PORTSDIR}/databases/tdb
 
 USE_X_PREFIX=	yes

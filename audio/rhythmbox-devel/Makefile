@@ -7,6 +7,7 @@
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -17,7 +18,7 @@ COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
 		FLAC.5:${PORTSDIR}/audio/flac \
-		mad.1:${PORTSDIR}/audio/mad
+		mad.2:${PORTSDIR}/audio/mad
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
