@@ -1011,3 +1011,4 @@ devel/gnomevfs-extras|devel/gnomevfs2|2004-04-04|merged into gnomevfs2
 games/scummvm|emulators/scummvm|2004-04-06|new category
 ftp/wget+ipv6|ftp/wget|2004-04-06|removed, ftp/wget has this function
 misc/metatheme2||2004-04-09|removed obsolete port
+x11-fm/apotheke||2004-04-10|removed obsolete port
