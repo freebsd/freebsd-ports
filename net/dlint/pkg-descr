@@ -1,0 +1,14 @@
+`dlint' is a Domain Name Server zone verification utility.
+
+`dlint' analyzes any DNS zone you specify, and reports any problems it
+finds by displaying errors and warnings.  Then it descends recursively to
+examine all zones below the given one (this can be disabled with a command-
+line option).
+
+You can run dlint on your own domains, or on somebody else's, because it uses
+the standard DNS network protocol.  Dlint is very useful since most nameservers
+do no more than syntax-check your database files.  Dlint's messages are very
+informative and suggest ways to fix the problems, not just complain about them.
+
+-- David
+   obrien@NUXI.com
