@@ -1,5 +1,5 @@
-*** Makefile.orig	Fri Apr  1 11:03:58 1994
---- Makefile	Thu Oct 12 17:31:47 1995
+*** Makefile.orig	Fri Apr  1 23:03:58 1994
+--- Makefile	Fri Dec 29 23:51:30 1995
 ***************
 *** 1,25 ****
 ! BINDIR=		/usr/local/bin
@@ -48,9 +48,9 @@
 ! 	install -c -o bin -g bin -m 755 bin/ftpwho ${BINDIR}/ftpwho
 ! 	install -c -o bin -g bin -m 755 bin/ckconfig ${BINDIR}/ftpckconfig
 ! 	@echo Installing basic configuration
-! 	install -c -o root -g bin -m 755 doc/examples/ftpaccess ${ETCDIR}/ftpaccess
-! 	install -c -o root -g bin -m 755 doc/examples/ftpusers ${ETCDIR}/ftpusers
-! 	install -c -o root -g bin -m 755 doc/examples/ftpconversions ${ETCDIR}/ftpconversions
+! 	install -c -o root -g bin -m 755 doc/examples/ftpaccess ${ETCDIR}/ftpaccess.example
+! 	install -c -o root -g bin -m 755 doc/examples/ftpusers ${ETCDIR}/ftpusers.example
+! 	install -c -o root -g bin -m 755 doc/examples/ftpconversions ${ETCDIR}/ftpconversions.example
   	@echo Installing manpages.
 ! 	install -c -o bin -g bin -m 755 doc/ftpd.8 ${MANDIR}/man8/ftpd.8
 ! 	install -c -o bin -g bin -m 755 doc/ftpcount.1 ${MANDIR}/man1/ftpcount.1
