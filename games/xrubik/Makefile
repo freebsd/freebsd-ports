@@ -1,24 +1,25 @@
 # New ports collection makefile for:   xrubik
-# Version required:	5.3.2
+# Version required:	5.4.1
 # Date created:		20 October 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:27:09 asami Exp $
+# $Id: Makefile,v 1.5 1997/01/03 09:37:48 obrien Exp $
 #
 
-DISTNAME=	xrubik
-PKGNAME=	xrubik-5.3.2
+DISTNAME=	xrubik-5.4.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games/puzzles
+MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	nakai@mlab.t.u-tokyo.ac.jp
 
+WRKSRC=		${WRKDIR}/xrubik
 USE_IMAKE=	yes
+MAN1=		xrubik.1
 
 post-install:
-	@chmod 755 ${PREFIX}/bin/xrubik
-	@/usr/sbin/chown ${BINOWN}.${BINGRP} ${PREFIX}/bin/xrubik
+	${INSTALL_PROGRAM} ${WRKSRC}/xrubik ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Rubik.ad ${PREFIX}/lib/X11/app-defaults/Rubik
+	${INSTALL_MAN} ${WRKSRC}/xrubik.man ${PREFIX}/man/man1/xrubik.1
 
 .include <bsd.port.mk>
