@@ -109,6 +109,12 @@ MLINKS=		pvm_intro.1 PVM.1 pvmd3.1 pvmd.1 \
 		pvm_trecv.3 pvmftrecv.3 pvm_unpack.3 pvmfunpack.3 \
 		pvm_pkmesg.3 pvmfupkmesg.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/tracer/tracer.h ${WRKSRC}/tracer/trclib.h \
@@ -141,4 +147,4 @@ do-install:
 post-install:
 	${SED} 's|/usr/local|${PREFIX}|g' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
