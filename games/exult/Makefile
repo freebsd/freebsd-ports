@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@comset.net
 COMMENT=	Ultima VII engine
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity

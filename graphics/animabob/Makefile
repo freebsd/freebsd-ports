@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0b
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.borg.umn.edu/pub/lcse/grant/AnimaBob/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tiamat@comset.net
 COMMENT=	Interactive 3D volume renderer
 
 USE_IMAKE=	yes
