@@ -5,7 +5,7 @@
 --- 201,210 ----
   #ifdef HAVE_TZSET
   	{
-  #ifndef ultrix
+  #ifndef OS_ultrix
 + #ifndef __FreeBSD__
   		/* Ultrix defines this to be a different type */
   		extern long timezone;
