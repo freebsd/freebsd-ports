@@ -1,0 +1,8 @@
+--- makefile.orig	Sun Aug  5 20:04:08 1990
++++ makefile	Wed Aug 13 14:50:08 1997
+@@ -1,4 +1,4 @@
+-DEST = .
++DEST = $(PREFIX)/bin
+ #CFLAGS = -O -DSysV
+ CFLAGS = -O
+ LDFLAGS = -s
