@@ -170,7 +170,6 @@
     SUBDIR += pam_passwdqc
     SUBDIR += pam_pwdfile
     SUBDIR += pam_smb
-    SUBDIR += pam_ssh
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pgp6

@@ -1,8 +1,0 @@
-This PAM module provides single sign-on behavior for UNIX using
-SSH. Users are authenticated by decrypting their SSH private keys with
-the password provided (probably to XDM). In the PAM session phase, an
-ssh-agent process is started and keys are added.
-
-WWW: http://sourceforge.net/projects/pam-ssh/
-
-Andrew J. Korty <ajk@iu.edu>
