@@ -18,9 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gdkpixbuf

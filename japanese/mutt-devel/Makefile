@@ -24,8 +24,8 @@ DIST_SUBDIR=	mutt
 MAINTAINER=	st@be.to
 COMMENT=	Text-based mail client (Japanised development version)
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
+
 .if !defined(WITH_GETTEXT)
 USE_GETTEXT=	yes
 .else
@@ -45,6 +45,7 @@ FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 NO_LATEST_LINK=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_AUTOMAKE_VER=	14
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}

@@ -37,7 +37,6 @@ LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		mad.2:${PORTSDIR}/audio/libmad \
 		avcodec.0:${PORTSDIR}/${FFMPEG_PORT} \
 		a52.0:${PORTSDIR}/audio/liba52 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		faad.0:${PORTSDIR}/audio/faad \
@@ -48,6 +47,7 @@ USE_GETOPT_LONG=yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_SDL=	sdl
 USE_XLIB=	yes

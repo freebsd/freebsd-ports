@@ -34,8 +34,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		png.5:${PORTSDIR}/graphics/png			\
 		freetype.9:${PORTSDIR}/print/freetype2		\
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
-		gd.4:${PORTSDIR}/graphics/gd			\
-		iconv.3:${PORTSDIR}/converters/libiconv
+		gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget
 
@@ -72,6 +71,7 @@ PLIST_SUB+=	IBASE="@comment "
 
 USE_BISON=		yes
 USE_GMAKE=		yes
+USE_ICONV=		yes
 USE_REINPLACE=		yes
 REINPLACE_ARGS=		-i ""
 USE_XLIB=		yes

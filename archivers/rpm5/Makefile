@@ -15,7 +15,6 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The RPM Package Manager
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 .if !exists(/usr/bin/bzip2)
@@ -28,6 +27,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 USE_LIBTOOL_VER=14
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 LATEST_LINK=	rpm4
 CONFLICTS=	beecrypt-* rpm-3.*

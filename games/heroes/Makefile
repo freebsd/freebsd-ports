@@ -21,8 +21,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	jre@vineyard.net
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 DATAVERSION=	1.5
 SOUNDVERSION=	1.0
 MUSICVERSION=	1.0
@@ -37,6 +35,7 @@ USE_X_PREFIX=	yes
 USE_SDL=	mixer sdl
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

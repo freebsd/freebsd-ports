@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme script interpreter with multibyte character handling
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 # Choices are: "pthreads" and "no", but it seems that FreeBSD does not
 # yet fully support threads with Boehm GC.
 GAUCHE_THREADS?=	no
@@ -39,6 +37,7 @@ CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}" \
 		INFOSECTION="${INFOSECTION}"
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 INFO=		gauche-refe gauche-refj

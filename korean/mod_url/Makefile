@@ -13,9 +13,8 @@ DISTFILES=		${PORTNAME}.c readme.${PORTNAME}
 MAINTAINER=		cjh@FreeBSD.org
 COMMENT=		Apache module for manipulating euc-kr encoded URL
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_APACHE=	yes
+USE_ICONV=	yes
 
 do-extract:
 	${MKDIR} ${WRKSRC}

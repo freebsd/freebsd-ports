@@ -15,13 +15,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GNOME i18n editor
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs gnomeprefix gnomehack gtk12 glib12 orbit
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -liconv"

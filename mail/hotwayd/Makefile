@@ -15,12 +15,12 @@ MAINTAINER=	john@jnielsen.net
 COMMENT=	A Hotmail -> POP3 gateway
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 
 MAN1=		hotwayd.1 \
 		hotsmtpd.1

@@ -17,10 +17,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIX Development Kit offers an emulation of MIX and MIXAL
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		guile.15:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes

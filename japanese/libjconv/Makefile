@@ -13,11 +13,11 @@ MASTER_SITES=	http://ghost.math.sci.hokudai.ac.jp/misc/libjconv/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese charset conversion library powered by iconv(3)
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 #RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
 
 MAKE_ARGS=	NOPROFILE=true PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
 INSTALLS_SHLIB=	yes
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 
 post-patch:

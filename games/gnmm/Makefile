@@ -17,9 +17,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	barner@gmx.de
 COMMENT=	A "nine mens' morris" implementation for the GNOME Desktop Environment
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf

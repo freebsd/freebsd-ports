@@ -15,8 +15,7 @@ PORTREVISION=	1
 MAINTAINER=	ports@oven.org
 COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes

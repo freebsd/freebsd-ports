@@ -29,8 +29,6 @@ EXT_PORTS=	databases/ruby-bdb1
 _PORTSDIR=	${.CURDIR}/../..
 _RUBY_PORTDIR=	${_PORTSDIR}/${RUBY_PORT}
 
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
-
 .if ${RUBY_VER} < 1.7
 EXT_PORTS+=	${RUBY_SHIM18_PORT}
 .else
@@ -42,6 +40,7 @@ EXTRACT_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
 .endfor
 
 GNU_CONFIGURE=	yes
+USE_ICONV=	yes
 
 WRKSRC=		${RUBY_WRKSRC}
 

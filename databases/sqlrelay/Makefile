@@ -16,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		xml2.5:${PORTSDIR}/textproc/libxml2
 
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

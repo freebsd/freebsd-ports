@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A library to handle internationalized domain names
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv=${LOCALBASE} \

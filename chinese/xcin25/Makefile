@@ -18,8 +18,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 MAINTAINER=	kcwu@ck.tp.edu.tw
 COMMENT=	Chinese input method server under X
 
-LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
+
 .if !defined(USE_DB2)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .else
@@ -30,6 +30,7 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcf
 
 WRKSRC=		${WRKDIR}/xcin
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=	yes

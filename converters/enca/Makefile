@@ -14,9 +14,8 @@ MASTER_SITES=	http://kf.fyz.fce.vutbr.cz/~yeti/Ftp/enca/
 MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	A package for detecting encoding of text files
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_GNOME=	pkgconfig
+USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13

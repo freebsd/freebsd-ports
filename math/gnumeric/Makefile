@@ -18,7 +18,6 @@ COMMENT=	The GNOME spreadsheet
 
 LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		psiconv.8:${PORTSDIR}/converters/psiconv
 RUN_DEPENDS=	guppi-gnumeric:${PORTSDIR}/math/guppi
 
@@ -27,6 +26,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
+USE_ICONV=	yes
 USE_PYTHON=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes

@@ -18,8 +18,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf,sav
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 INFO=		elmo
@@ -28,6 +26,7 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 MAN1=		elmo.1 elmoconf.pl.1
 PLIST=		${WRKDIR}/pkg-plist
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_PERL5=	yes
 
 pre-extract:

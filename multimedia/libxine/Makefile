@@ -23,12 +23,12 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		mad.2:${PORTSDIR}/audio/libmad \
 		speex.2:${PORTSDIR}/audio/speex \
-		iconv.3:${PORTSDIR}/converters/libiconv \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 WANT_GNOME=	yes

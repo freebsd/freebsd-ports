@@ -17,9 +17,9 @@ COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
-		iconv.3:${PORTSDIR}/converters/libiconv
+		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+USE_ICONV=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14

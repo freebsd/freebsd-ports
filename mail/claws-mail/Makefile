@@ -18,14 +18,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 THEMEVERSION=	20040206
 THEMEFILE=	sylpheed-iconset-${THEMEVERSION}.tar.gz
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=13
 USE_GNOME=	gnomehack pkgconfig gtk12

@@ -16,9 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	henrik.motakef@web.de
 COMMENT=	An ANSI Common Lisp
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_BZIP2=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GCC=	2.95
 USE_GETTEXT=	yes

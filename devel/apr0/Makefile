@@ -26,9 +26,9 @@ DISTFILES=	apr-APR_0_9_BRANCH_20040113112838.tar.gz apr-util-APU_0_9_BRANCH_2004
 MAINTAINER=	rodrigc@crodrigues.org
 COMMENT=	The Apache Group's Portability Library
 
-LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2 \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
+USE_ICONV=	yes
 USE_AUTOCONF_VER=	257
 USE_PERL5=		yes
 USE_GMAKE=		yes

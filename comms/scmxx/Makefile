@@ -15,9 +15,8 @@ MASTER_SITE_SUBDIR=	scmxx
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

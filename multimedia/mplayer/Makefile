@@ -197,11 +197,11 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
