@@ -45,6 +45,7 @@
     SUBDIR += p5-Set-IntSpan
     SUBDIR += pari
     SUBDIR += parmetis
+    SUBDIR += physcalc
     SUBDIR += plplot
     SUBDIR += pspp
     SUBDIR += py-gnuplot

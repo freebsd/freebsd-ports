@@ -1,0 +1,20 @@
+--- physmain.c	Sun Aug 27 17:55:04 2000
++++ physmain.c.new	Sun Aug 27 17:55:53 2000
+@@ -227,7 +227,7 @@
+ 				printf("Replace %s = ",v->name);
+ 				printexpr(v->value);
+ 				printf(" ?");
+-				gets(answer);
++				fgets(answer, sizeof(answer), stdin);
+ 				printf("\n");
+ 			} else
+ 				answer[0] = 'Y';
+@@ -711,7 +711,7 @@
+ 	} else
+ 		while (TRUE) {
+ 			printf(">");
+-			gets(buf);
++			fgets(buf, sizeof(buf), stdin);
+ 			do_cmd(buf);
+ 		}
+ }

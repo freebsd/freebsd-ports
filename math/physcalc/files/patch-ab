@@ -1,0 +1,29 @@
+--- physconv.c	Sun Aug 27 17:57:24 2000
++++ physconv.c.new	Sun Aug 27 18:03:58 2000
+@@ -260,12 +260,16 @@
+ {	/* read in lines from fp and do each as if typed from console */
+ 	FILE *fp;
+ 	char buf[SMALLBUF];
++	char *fullpath;
+ 	int oldecho;
+ #ifdef TRACE
+ 	int oldtrace;
+ #endif
+ 
+-	if ((fp = fopen(s,"r"))==NULL) {
++	fullpath = malloc( strlen( SHAREDIR ) + strlen( s ) + 1 );
++	bcopy(SHAREDIR, fullpath, strlen(SHAREDIR));
++	(void) strcat(fullpath, s);
++	if ((fp = fopen(fullpath,"r"))==NULL) {
+ 		printf("Can't open %s\n",s);
+ 		return;
+ 	}
+@@ -797,7 +801,7 @@
+ 				} else {
+ 					showdims(&d);
+ 					printf("Convert to: ");
+-					gets(buf);
++					fgets(buf, sizeof(buf), stdin);
+ 					trimspc(buf);
+ 					if (buf[0]=='?') {
+ 						showdims(&d);

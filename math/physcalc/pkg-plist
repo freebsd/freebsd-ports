@@ -1,0 +1,11 @@
+bin/physcalc
+share/physcalc/astro.phy
+share/physcalc/bits.phy
+share/physcalc/british.phy
+share/physcalc/light.phy
+share/physcalc/math.phy
+share/physcalc/money.phy
+share/physcalc/nuclear.phy
+share/physcalc/paper.phy
+share/physcalc/physcalc.phy
+@dirrm share/physcalc
