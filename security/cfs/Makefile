@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hacktic.nl/pub/crypto/disk/cfs/ \
 		ftp://ftp.uni-bielefeld.de/pub/crypto/replay/disk/cfs/
 DISTNAME=	cfs.1.4.0.beta2
+PORTREVISION=	1
 
 MAINTAINER=	green@FreeBSD.org
 
