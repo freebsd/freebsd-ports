@@ -1,16 +1,19 @@
---- Makefile.orig	Mon Nov 16 19:21:45 1998
-+++ Makefile	Sun Mar  5 05:33:25 2000
-@@ -1,14 +1,22 @@
+--- Makefile.orig	Sun Oct 28 07:30:22 2001
++++ Makefile	Sun Oct 28 07:34:31 2001
+@@ -1,13 +1,21 @@
 -CC = cc
 -CFLAGS = -O
-+PREFIX?=/usr/local
++PREFIX?= /usr/local
 +CC?= cc
 +CFLAGS?= -O
  SHAR = shar -T
  # SHAR = shar 
 -PERL = perl5
+-RM = rm -rf
 +PERL?= perl5
-+INSTALL?=/usr/bin/install
++RM?= rm -rf
++INSTALL?= /usr/bin/install
+ VERSION = 19
  
  nkf : nkf.c
  	$(CC) $(CFLAGS) -o nkf nkf.c
@@ -22,8 +25,9 @@
 +	${INSTALL} -c -o root -g wheel -m 444 nkf.1j.euc ${PREFIX}/man/ja/man1/nkf.1
  
  clean:
--	rm -fr nkf.o nkf nkf.in nkf.out nkf17 *~
-+	rm -fr nkf.o nkf nkf.in nkf.out nkf17 nkf.1j.euc *~
- test:	nkf
- 	perl nkf_test.pl
- 
+ 	-$(RM) nkf.o nkf nkf.in nkf.out nkf$(VERSION) *~ *.bad
+@@ -30,3 +38,4 @@
+ 	done 
+ 	( cd nkf$(VERSION) ; $(SHAR)  `cat ../MANIFEST` ) > nkf$(VERSION).shar
+ 	-$(RM) nkf$(VERSION)
++
