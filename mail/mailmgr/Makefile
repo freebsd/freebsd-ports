@@ -16,4 +16,7 @@ COMMENT=	Sendmail Analisys Report Generator
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
+do-install:
+		@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>
