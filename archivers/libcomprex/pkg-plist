@@ -1,19 +1,39 @@
 bin/comprex-config
 include/comprex.h
+include/libcomprex/archive.h
+include/libcomprex/archive_api.h
 include/libcomprex/comprex.h
-include/libcomprex/fileio.h
+include/libcomprex/directory.h
+include/libcomprex/directory_api.h
+include/libcomprex/file.h
+include/libcomprex/file_api.h
 include/libcomprex/module.h
-include/libcomprex/status.h
+include/libcomprex/types.h
 include/libcomprex/utils.h
-lib/comprex/file/ar.so
-lib/comprex/file/bzip2.so
-lib/comprex/file/zlib.so
-lib/comprex/scheme/curl.so
+lib/comprex/archive/libar.a
+lib/comprex/archive/libar.la
+lib/comprex/archive/libar.so
+lib/comprex/archive/libbzip2.a
+lib/comprex/archive/libbzip2.la
+lib/comprex/archive/libbzip2.so
+lib/comprex/archive/libtar.a
+lib/comprex/archive/libtar.la
+lib/comprex/archive/libtar.so
+lib/comprex/archive/libzip.a
+lib/comprex/archive/libzip.la
+lib/comprex/archive/libzip.so
+lib/comprex/archive/libzlib.a
+lib/comprex/archive/libzlib.la
+lib/comprex/archive/libzlib.so
+lib/comprex/scheme/libcurl.a
+lib/comprex/scheme/libcurl.la
+lib/comprex/scheme/libcurl.so
 lib/libcomprex.a
+lib/libcomprex.la
 lib/libcomprex.so
-lib/libcomprex.so.0
-share/aclocal/comprex.m4
+lib/libcomprex.so.1
+share/aclocal/libcomprex.m4
+@dirrm lib/comprex/archive
 @dirrm lib/comprex/scheme
-@dirrm lib/comprex/file
 @dirrm lib/comprex
 @dirrm include/libcomprex
