@@ -1,8 +1,6 @@
 bin/aaxine
 bin/fbxine
 bin/xine
-bin/xine-bugreport
-bin/xine-check
 bin/xine-remote
 share/doc/xine-ui/README.config_en
 share/doc/xine-ui/README.cs.0.Introduction

@@ -1,0 +1,10 @@
+--- misc/Makefile.in.orig	Wed Apr  7 23:51:25 2004
++++ misc/Makefile.in	Wed Apr  7 23:51:58 2004
+@@ -244,7 +244,6 @@
+ 	black.mpv
+ 
+ 
+-bin_SCRIPTS = xine-check xine-bugreport
+ subdir = misc
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
