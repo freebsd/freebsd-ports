@@ -1,0 +1,18 @@
+GMT is a collection of public-domain Unix tools that allows you to
+manipulate x,y and x,y,z data sets (filtering, trend fitting,
+gridding, projecting, etc.) and produce PostScript illustrations
+ranging from simple x-y plots, via contour maps, to artificially
+illuminated surfaces and 3-d perspective views in black/white or
+24bit color. Linear, log10, and power scaling is supported in
+addition to 25 common map projections. The processing and display
+routines within GMT are completely general and will handle any (x,y)
+or (x,y,z) data as input.
+
+This port installs only the GMT manpages, there is a tutorial and
+documentation in .ps, .pdf and .html format on the ftp site, too.
+
+In case you look for data to plot, there is topological data at
+ftp://topex.ucsd.edu/pub/global_topo_2min/topo_8.2.img
+(140MB, covers nearly the whole earth)
+
+WWW: http://gmt.soest.hawaii.edu/

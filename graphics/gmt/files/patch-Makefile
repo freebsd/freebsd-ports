@@ -1,0 +1,19 @@
+--- Makefile.org	Thu Jan 17 18:42:50 2002
++++ Makefile	Sat May 11 20:22:31 2002
+@@ -104,14 +104,14 @@
+ 		done
+ 
+ mex_config:	
+-		if [ ! -f src/mex/makefile ]; then \
++		if [ -d src/mex -a ! -f src/mex/makefile ]; then \
+ 			cd src/mex; \
+ 			\rm -f config.{cache,log,status}; \
+ 			./configure; \
+ 		fi
+ 		
+ xgrid_config:	
+-		if [ ! -f src/xgrid/makefile ]; then \
++		if [ -d src/xgrid -a ! -f src/xgrid/makefile ]; then \
+ 			cd src/xgrid; \
+ 			\rm -f config.{cache,log,status}; \
+ 			./configure; \
