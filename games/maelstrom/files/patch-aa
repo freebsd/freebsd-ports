@@ -1,0 +1,15 @@
+--- mixer.cpp	Thu Dec  5 13:14:44 1996
++++ /home/andy/tmp/wrk/mixer.cpp	Wed May 13 23:06:18 1998
+@@ -283,10 +283,12 @@
+ #endif /* linux */
+ 
+ 	/* This is necessary so that the sound server stays in sync */
++#ifndef __FreeBSD__
+ 	long flags;
+ 	flags = fcntl(dsp_fd, F_GETFL, 0);
+ 	flags |= O_SYNC;
+ 	(void) fcntl(dsp_fd, F_SETFL, flags);
++#endif
+ 
+ 	return(0);
+ }

@@ -1,0 +1,53 @@
+bin/Maelstrom
+bin/Maelstrom_sound
+share/Maelstrom/Maelstrom Fonts
+share/Maelstrom/Maelstrom Sounds
+share/Maelstrom/Maelstrom Sprites
+share/Maelstrom/Maelstrom-Scores
+share/Maelstrom/Images/Maelstrom_Icon#100.cicn
+share/Maelstrom/Images/Maelstrom_Icon#101.cicn
+share/Maelstrom/Images/Maelstrom_Icon#102.cicn
+share/Maelstrom/Images/Maelstrom_Icon#103.cicn
+share/Maelstrom/Images/Maelstrom_Icon#104.cicn
+share/Maelstrom/Images/Maelstrom_Icon#110.cicn
+share/Maelstrom/Images/Maelstrom_Icon#128.cicn
+share/Maelstrom/Images/Maelstrom_Icon#129.cicn
+share/Maelstrom/Images/Maelstrom_Icon#130.cicn
+share/Maelstrom/Images/Maelstrom_Icon#131.cicn
+share/Maelstrom/Images/Maelstrom_Icon#132.cicn
+share/Maelstrom/Images/Maelstrom_Icon#133.cicn
+share/Maelstrom/Images/Maelstrom_Icon#134.cicn
+share/Maelstrom/Images/Maelstrom_Icon#135.cicn
+share/Maelstrom/Images/Maelstrom_Icon#136.cicn
+share/Maelstrom/Images/Maelstrom_Icon#137.cicn
+share/Maelstrom/Images/Maelstrom_Sprites#128.icon
+share/Maelstrom/Images/Maelstrom_Titles#100.icon
+share/Maelstrom/Images/Maelstrom_Titles#101.icon
+share/Maelstrom/Images/Maelstrom_Titles#102.icon
+share/Maelstrom/Images/Maelstrom_Titles#128.icon
+share/Maelstrom/Images/Maelstrom_Titles#129.icon
+share/Maelstrom/Images/Maelstrom_Titles#130.icon
+share/Maelstrom/Images/Maelstrom_Titles#133.icon
+share/Maelstrom/Images/Maelstrom_Titles#134.icon
+share/Maelstrom/Images/Maelstrom_Titles#135.icon
+share/Maelstrom/Images/Maelstrom_Titles#999.icon
+share/doc/Maelstrom/Ambrosia.FAQ
+share/doc/Maelstrom/Ambrosia.URL
+share/doc/Maelstrom/BUGS
+share/doc/Maelstrom/Changelog
+share/doc/Maelstrom/Copyright
+share/doc/Maelstrom/Maelstrom-Announce
+share/doc/Maelstrom/Maelstrom.FAQ
+share/doc/Maelstrom/Networking.Paper
+share/doc/Maelstrom/Porting.Paper
+share/doc/Maelstrom/Quotes
+share/doc/Maelstrom/README
+share/doc/Maelstrom/README.Options
+share/doc/Maelstrom/README.network
+share/doc/Maelstrom/RSA.README
+share/doc/Maelstrom/Technical_Notes-v1.0
+share/doc/Maelstrom/Technical_Notes-v1.1
+share/doc/Maelstrom/Technical_Notes-v2.0
+@dirrm share/Maelstrom/Images
+@dirrm share/Maelstrom
+@dirrm share/doc/Maelstrom
