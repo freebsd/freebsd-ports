@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,11 +17,17 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+		gconf-2.5:${PORTSDIR}/devel/gconf2 \
 		gstreamer.0:${PORTSDIR}/graphics/gstreamer \
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack \
+		gnomehier \
+		gnomeprefix
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -30,19 +36,16 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-cdrom \
 		--disable-mjpegtools \
 		--disable-qcam \
+		--disable-v4l2 \
 		--disable-v4l
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
-		SDL_CONFIG=${SDL_CONFIG} \
-		XMMS_CONFIG=${XMMS_CONFIG} \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	LOCALBASE="${LOCALBASE}"
 
 # for esound detection
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
 MAN1=	gst-launch-ext.1 gst-visualise.1
@@ -53,18 +56,14 @@ XMMS_CONFIG?="${LOCALBASE}/bin/xmms-config"
 
 post-patch:
 # as of this writing, FreeBSD does not support lrint* C99 math functions
-# do not prefix binary names with anything
 	@${REINPLACE_CMD} -E -e \
 		's|^#define.*LRINT.*$$||' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-# use proper dir
-	@${REINPLACE_CMD} -E -e \
-		's|^(pkgconfigdir).*$$|\1=${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
 # remove version number from include dir name
 	@${REINPLACE_CMD} -E -e \
 		's|-@VERSION@||' \
-		${WRKSRC}/gstreamer-libs.pc.in
+		${WRKSRC}/gstreamer-libs.pc.in \
+		${WRKSRC}/gstreamer-play.pc.in
 # remove version number from include dir name
 # respect CFLAGS
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
@@ -94,36 +93,9 @@ post-patch:
 
 post-install:
 # register plugins
-	@${LOCALBASE}/bin/gst-register 2>/dev/null
+	@${X11BASE}/bin/gst-register 2>/dev/null
 
 .include <bsd.port.pre.mk>
-
-CONFIGURE_ARGS+= \
-	--with-xmms-prefix=${LOCALBASE} \
-	--with-xmms-exec-prefix=${LOCALBASE}
-
-#--disable-cdparanoia
-#--disable-dv
-#--disable-dvdnav
-#--disable-dxr3
-#--disable-examples
-#--disable-gnome_vfs
-#--disable-hermes
-#--disable-jack
-#--disable-ladspa
-#--disable-lcs
-#--disable-libdvtest
-#--disable-raw1394
-#--disable-rtp
-#--disable-shout
-#--disable-sidplay
-#--disable-smoothwave
-#--disable-tarkin
-#--disable-tests
-#--disable-vcd
-#--disable-vga
-#--disable-xmms
-#--disable-xvideo
 
 ##
 ## auto detect possible plugins
@@ -154,9 +126,19 @@ WITH_ESOUND=yes
 WITH_FLAC=yes
 .endif
 
+# freetype
+.if exists(${LOCALBASE}/lib/libfreetype.a)
+WITH_FREETYPE=yes
+.endif
+
 # lame
 .if exists(${LOCALBASE}/lib/libmp3lame.a)
 WITH_LAME=yes
+.endif
+
+# gnomevfs
+.if exists(${X11BASE}/lib/libgnomevfs-2.a)
+WITH_GNOMEVFS=yes
 .endif
 
 # gsm
@@ -169,11 +151,6 @@ WITH_GSM=yes
 WITH_JPEG=yes
 .endif
 
-# flac
-.if exists(${LOCALBASE}/lib/libFLAC.a)
-WITH_FLAC=yes
-.endif
-
 # liba52
 .if exists(${LOCALBASE}/lib/liba52.a)
 WITH_LIBA52=yes
@@ -182,6 +159,16 @@ WITH_LIBA52=yes
 # libaudiofile
 .if exists(${LOCALBASE}/lib/libaudiofile.a)
 WITH_LIBAUDIOFILE=yes
+.endif
+
+# libdv
+.if exists(${LOCALBASE}/lib/libdv.a)
+WITH_LIBDV=yes
+.endif
+
+# libdvdnav
+.if exists(${LOCALBASE}/lib/libdvdnav.so)
+WITH_LIBDVDNAV=yes
 .endif
 
 # libdvdread
@@ -202,6 +189,16 @@ WITH_LIBMIKMOD=yes
 # libmpeg2
 .if exists(${LOCALBASE}/lib/libmpeg2.a)
 WITH_LIBMPEG2=yes
+.endif
+
+# libshout
+.if exists(${LOCALBASE}/lib/libshout.a)
+WITH_LIBSHOUT=yes
+.endif
+
+# libsidplay
+.if exists(${LOCALBASE}/lib/libsidplay.a)
+WITH_LIBSIDPLAY=yes
 .endif
 
 # mad
@@ -227,6 +224,11 @@ WITH_SDL=yes
 # vorbis
 .if exists(${LOCALBASE}/lib/libvorbis.a)
 WITH_VORBIS=yes
+.endif
+
+# xmms
+.if exists(${X11BASE}/lib/libxmms.a)
+WITH_XMMS=yes
 .endif
 
 ##
@@ -287,9 +289,31 @@ PLIST_SUB+=	ESOUND=""
 CONFIGURE_ARGS+=	--disable-flac
 PLIST_SUB+=	FLAC="@comment "
 .else
-LIB_DEPENDS+=	FLAC.3:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	FLAC.4:${PORTSDIR}/audio/flac
 
 PLIST_SUB+=	FLAC=""
+.endif
+
+# freetype
+.ifndef(WITH_FREETYPE)
+CONFIGURE_ARGS+=	--disable-freetypetest
+PLIST_SUB+=	FREETYPE="@comment "
+.else
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+
+CONFIGURE_ARGS+=	--with-ft-prefix=${LOCALBASE}  \
+			--with-ft-exec-prefix=${LOCALBASE}
+PLIST_SUB+=	FREETYPE=""
+.endif
+
+# gnomevfs
+.ifndef(WITH_GNOMEVFS)
+CONFIGURE_ARGS+=	--disable-gnome_vfs
+PLIST_SUB+=	GNOMEVFS="@comment "
+.else
+LIB_DEPENDS+=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
+
+PLIST_SUB+=	GNOMEVFS=""
 .endif
 
 # gsm
@@ -351,6 +375,26 @@ LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 PLIST_SUB+=	LIBAUDIOFILE=""
 .endif
 
+# libdv
+.ifndef(WITH_LIBDV)
+CONFIGURE_ARGS+=	--disable-libdv
+PLIST_SUB+=	LIBDV="@comment "
+.else
+LIB_DEPENDS+=	dv.2:${PORTSDIR}/graphics/libdv
+
+PLIST_SUB+=	LIBDV=""
+.endif
+
+# libdvdnav
+.ifndef(WITH_LIBDVDNAV)
+CONFIGURE_ARGS+=	--disable-dvdnav
+PLIST_SUB+=	LIBDVDREAD="@comment "
+.else
+LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/graphics/libdvdnav
+
+PLIST_SUB+=	LIBDVDNAV=""
+.endif
+
 # libdvdread
 .ifndef(WITH_LIBDVDREAD)
 CONFIGURE_ARGS+=	--disable-dvdread
@@ -396,6 +440,26 @@ LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2
 
 CONFIGURE_ARGS+=	--with-mpeg2dec-prefix=${LOCALBASE}
 PLIST_SUB+=	LIBMPEG2=""
+.endif
+
+# libshout
+.ifndef(WITH_LIBSHOUT)
+CONFIGURE_ARGS+=	--disable-shout
+PLIST_SUB+=	LIBSHOUT="@comment "
+.else
+LIB_DEPENDS+=	shout.2:${PORTSDIR}/audio/libshout
+
+PLIST_SUB+=	LIBSHOUT=""
+.endif
+
+# libsidplay
+.ifndef(WITH_LIBSIDPLAY)
+CONFIGURE_ARGS+=	--disable-sidplay
+PLIST_SUB+=	LIBSIDPLAY="@comment "
+.else
+LIB_DEPENDS+=	sidplay.1:${PORTSDIR}/audio/libsidplay
+
+PLIST_SUB+=	LIBSIDPLAY=""
 .endif
 
 # mad
@@ -446,6 +510,7 @@ LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE}  \
 			--with-sdl-exec-prefix=${LOCALBASE}
+CONFIGURE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 PLIST_SUB+=	SDL=""
 .endif
 
@@ -457,7 +522,23 @@ PLIST_SUB+=	VORBIS="@comment "
 .else
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 
+CONFIGURE_ARGS+=	--with-vorbis=${LOCALBASE} \
+			--with-vorbis-libraries=${LOCALBASE}/lib \
+			--with-vorbis-includes=${LOCALBASE}/include
 PLIST_SUB+=	VORBIS=""
+.endif
+
+# xmms
+.ifndef(WITH_XMMS)
+CONFIGURE_ARGS+=	--disable-xmms
+PLIST_SUB+=	XMMS="@comment "
+.else
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
+
+CONFIGURE_ARGS+=	--with-xmms-prefix=${X11BASE} \
+			--with-xmms-exec-prefix=${X11BASE}
+CONFIGURE_ENV+=		XMMS_CONFIG=${XMMS_CONFIG}
+PLIST_SUB+=	XMMS=""
 .endif
 
 pre-everything::
@@ -481,9 +562,17 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_FLAC to enable flac Audio plugin'
 .endif
+.ifndef(WITH_FREETYPE)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_FREETYPE to enable freetype support'
+.endif
 .ifndef(WITH_GSM)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_GSM to enable gsm Audio plugin'
+.endif
+.ifndef(WITH_GNOMEVFS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_GNOMEVFS to enable gnomevfs Network plugin'
 .endif
 .ifndef(WITH_HTTP)
 	@${ECHO_MSG} '===>'
@@ -505,6 +594,14 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_LIBAUDIOFILE to enable libaudiofile Audio plugin'
 .endif
+.ifndef(WITH_LIBDV)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_LIBDV to enable libdv Video plugin'
+.endif
+.ifndef(WITH_LIBDVDNAV)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_LIBDVDNAV to enable libdvdnav Video plugin'
+.endif
 .ifndef(WITH_LIBDVDREAD)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_LIBDVDREAD to enable libdvdread Video plugin'
@@ -520,6 +617,14 @@ pre-everything::
 .ifndef(WITH_LIBMPEG2)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_LIBMPEG2 to enable libmpeg2 Video plugin'
+.endif
+.ifndef(WITH_LIBSHOUT)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_LIBSHOUT to enable libshout Audio plugin'
+.endif
+.ifndef(WITH_LIBSIDPLAY)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_LIBSIDPLAY to enable libsidplay Audio plugin'
 .endif
 .ifndef(WITH_MAD)
 	@${ECHO_MSG} '===>'
@@ -544,6 +649,10 @@ pre-everything::
 .ifndef(WITH_VORBIS)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_VORBIS to enable vorbis Audio plugin'
+.endif
+.ifndef(WITH_XMMS)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_XMMS to enable xmms Audio plugin'
 .endif
 
 .include <bsd.port.post.mk>
