@@ -16,6 +16,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/lunit.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/mailcap.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/mailcap.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/md4.el
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/md4.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/md5.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/md5.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/mel-b-ccl.el
@@ -46,12 +48,18 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/mmexternal.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/mmgeneric.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/mmgeneric.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/ntlm.el
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/ntlm.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/qmtp.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/qmtp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-cram.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-cram.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-digest.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-digest.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-ntlm.el
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-ntlm.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-scram.el
+%%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl-scram.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sasl.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/sha1-el.el

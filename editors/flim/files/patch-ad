@@ -1,5 +1,5 @@
---- mime-ja.texi.orig	Wed Jan 27 23:12:42 1999
-+++ mime-ja.texi	Tue Mar  9 06:11:05 1999
+--- mime-ja.texi.orig	Fri Feb 15 14:12:42 2002
++++ mime-ja.texi	Mon Aug 12 19:32:16 2002
 @@ -2,6 +2,10 @@
  @c Generated automatically from mime-ja.sgml by sinfo 3.7.
  @setfilename mime-ja.info
@@ -11,3 +11,28 @@
  @titlepage
  @title FLIM 1.12 MIME 機能説明書
  @author 守岡 知彦 <morioka@@jaist.ac.jp>
+@@ -1541,13 +1545,13 @@
+ @example
+ (0) cvs login
+ 
+-    % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
++    % cvs -d :pserver:anonymous@@cvs.m17n.org:/cvs/root login
+ 
+     CVS password: [CR] # NULL string
+ 
+ (1) checkout
+ 
+-    % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout
++    % cvs -d :pserver:anonymous@@cvs.m17n.org:/cvs/root checkout
+ 	checkout [-r TAG] flim
+ @end example
+ 
+@@ -1556,7 +1560,7 @@
+ 
+ @itemize @bullet
+ @item
+- <cvs@cvs.m17n.org>
++ <cvs@@cvs.m17n.org>
+ @end itemize
+ 
+ @noindent
