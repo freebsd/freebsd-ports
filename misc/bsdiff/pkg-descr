@@ -1,0 +1,9 @@
+This is a pair of tools for building (bsdiff) and applying (bspatch)
+binary patches.  When applied to two versions of the same executable
+the patches produced are significantly smaller than those generated
+by other binary diff tools (eg, xdelta).
+
+WWW: http://www.daemonology.net/bsdiff/
+
+- Colin Percival
+cperciva@daemonology.net

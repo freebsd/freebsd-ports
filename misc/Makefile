@@ -30,6 +30,7 @@
     SUBDIR += bottlerocket
     SUBDIR += boxes
     SUBDIR += brs
+    SUBDIR += bsdiff
     SUBDIR += buffer
     SUBDIR += cave
     SUBDIR += cfe
