@@ -50,6 +50,8 @@ bin/thudboard
 %%PORTDOCS%%%%DOCSDIR%%/img/thudscreen.jpg
 %%PORTDOCS%%%%DOCSDIR%%/img/thudscroll.gif
 %%PORTDOCS%%%%DOCSDIR%%/img/troll.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/valid-xhtml11.gif
+%%PORTDOCS%%%%DOCSDIR%%/img/vcss.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/thudboard.css
 %%PORTDOCS%%%%DOCSDIR%%/files/bug.thud
