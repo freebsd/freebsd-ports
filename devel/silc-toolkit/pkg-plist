@@ -1,3 +1,4 @@
+bin/silc
 include/silc/aes.h
 include/silc/bitmove.h
 include/silc/blowfish.h
@@ -14,9 +15,6 @@ include/silc/mars.h
 include/silc/md5.h
 include/silc/mp_gmp.h
 include/silc/mp_mpi.h
-include/silc/mpi.h
-include/silc/mplogic.h
-include/silc/mpprime.h
 include/silc/none.h
 include/silc/payload.h
 include/silc/pkcs1.h
@@ -26,6 +24,7 @@ include/silc/rc6.h
 include/silc/rsa.h
 include/silc/sha1.h
 include/silc/silcapi.h
+include/silc/silcargument.h
 include/silc/silcauth.h
 include/silc/silcbuffer.h
 include/silc/silcbuffmt.h
@@ -50,7 +49,6 @@ include/silc/silcmutex.h
 include/silc/silcnet.h
 include/silc/silcnotify.h
 include/silc/silcpacket.h
-include/silc/silcpayload.h
 include/silc/silcpkcs.h
 include/silc/silcprivate.h
 include/silc/silcprotocol.h
@@ -116,6 +114,7 @@ share/silc-toolkit/help/disconnect
 share/silc-toolkit/help/echo
 share/silc-toolkit/help/eval
 share/silc-toolkit/help/exec
+share/silc-toolkit/help/file
 share/silc-toolkit/help/format
 share/silc-toolkit/help/getkey
 share/silc-toolkit/help/help
