@@ -3,7 +3,7 @@
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $id$
+# $Id$
 #
 
 DISTNAME=	vt-1.09
@@ -11,17 +11,17 @@ PKGNAME=	vtcl-1.09
 CATEGORIES=	devel x11 tk42
 MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
 		ftp://ftp.neuron.com/pub/
-WRKSRC=		${WRKDIR}/vtcl
-BUILD_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
 
 MAINTAINER=	vanilla@MinJe.com.TW
 
-do-build:
+BUILD_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
+
+WRKSRC=		${WRKDIR}/vtcl
+NO_BUILD=	yes
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/lib/vtcl/images
 	@ ${MKDIR} ${PREFIX}/lib/vtcl/lib
-	@ ${MKDIR} ${PREFIX}/share/vtcl/images
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin
 
 .for data in ANNOUNCE CHANGES LICENSE README TODO vt.tcl
