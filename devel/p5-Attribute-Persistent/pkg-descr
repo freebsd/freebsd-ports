@@ -1,0 +1,12 @@
+This module provides a way of abstracting away persistence of array and hash
+variables.
+
+It's useful for quick hacks when you don't care about pulling in the right DBM
+library and calling tie and so on. Its job is to reduce fuss for the lazy
+programmer at the cost of flexibility.
+
+It uses MLDBM, so you can use complex data structures in your arrays and
+hashes. It uses AnyDBM_File, so if you really care about which DBM you get, you
+can modify AnyDBM_File::ISA in a BEGIN block after loading this module.
+
+WWW: http://search.cpan.org/dist/Attribute-Persistent/

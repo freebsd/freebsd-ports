@@ -528,6 +528,7 @@
     SUBDIR += p5-AtExit
     SUBDIR += p5-Attribute-Handlers
     SUBDIR += p5-Attribute-Handlers-Prospective
+    SUBDIR += p5-Attribute-Persistent
     SUBDIR += p5-B-Deobfuscate
     SUBDIR += p5-B-Graph
     SUBDIR += p5-B-Keywords
