@@ -3996,6 +3996,7 @@ mp3encode	ports/audio/mp3encode
 mp3info		ports/audio/mp3info
 mp3mover	ports/audio/mp3mover
 mp3rename	ports/audio/mp3rename
+mp3stat		ports/audio/mp3stat
 mpack		ports/converters/mpack
 mpage		ports/print/mpage
 mpd		ports/net/mpd
