@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+etc/nginx/koi-win
 @unexec if cmp -s %D/etc/nginx/mime.types %D/etc/nginx/mime.types-dist; then rm -f %D/etc/nginx/mime.types; fi
 etc/nginx/mime.types-dist
 @exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
@@ -14,3 +15,7 @@ etc/nginx/nginx.conf-dist
 %%WWWDATA%%@exec chmod a-w www/nginx-dist
 %%WWWDATA%%@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
 %%WWWDATA%%@dirrm www/nginx-dist
+%%STOP_BEFORE_REMOVE%%@unexec %D/etc/rc.d/nginx.sh stop || true
+sbin/nginx
+etc/rc.d/nginx.sh
+%%START_AFTER_INSTALL%%@exec %D/etc/rc.d/nginx.sh start
