@@ -169,7 +169,7 @@ $FreeBSD$
  	fclose (fh);
 +#else
 +	while ((ent = getfsent ()) != NULL) {
-+		{static int b = 1; while (b);}
++		/*{static int b = 1; while (b);}*/
 +		if (strcmp(ent->fs_vfstype, "swap") == 0)
 +			continue;
 +		volume = create_volume (ent->fs_spec, ent->fs_file);
