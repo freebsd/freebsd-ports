@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.107 1997/06/14 16:20:01 max Exp $
+# $Id: Makefile,v 1.108 1997/06/24 06:13:40 max Exp $
 #
 
     SUBDIR += amanda
@@ -28,6 +28,7 @@
     SUBDIR += mshell
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Search
     SUBDIR += plan
     SUBDIR += rpm

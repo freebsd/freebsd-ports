@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1997/06/03 23:39:35 asami Exp $
+# $Id: Makefile,v 1.48 1997/06/03 23:41:27 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -29,6 +29,7 @@
     SUBDIR += mplex
     SUBDIR += netpbm
     SUBDIR += p5-Image-Size
+    SUBDIR += p5-GD
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += pixmap
