@@ -6,29 +6,27 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	1.7.b.1e
+PORTVERSION=	1.8.1
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.sei.cmu.edu/pub/argus/argus-1.7/
-DISTNAME=	argus-1.7.beta.1e
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/argus/current/
 
-MAINTAINER=	jhanna@home.com
+MAINTAINER=	se@freebsd.org
 
 .if !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
 GNU_CONFIGURE=	true
-CONFIGURE_ARGS=	--with-pcap=bpf
 
 MAN1=	connections.1 ra.1 rasort.1 services.1
 MAN5=	argus.5
 MAN8=	argus.8
 
 do-install:
-.for i in adjacency argus_bpf connections dnstats ra raservices rasort
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus_bpf ${PREFIX}/bin/argus
+.for i in fullra ra radjacency raconnections racount radnstats raservices rasort
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
 .endfor
-	${MV} ${PREFIX}/bin/argus_bpf ${PREFIX}/bin/argus
 .for i in connections.1 ra.1 rasort.1 services.1
 	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${PREFIX}/man/man1
 .endfor
@@ -38,6 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/argus
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/argus/README.argus
 .for i in CA-95.01 CA-95.01.scan.sh README configs dailyscan.sh policy.conf policy.test ra.conf services
 	${INSTALL_DATA} ${WRKSRC}/examples/$i ${PREFIX}/share/doc/argus
 .endfor
