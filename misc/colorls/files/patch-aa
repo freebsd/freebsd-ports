@@ -265,9 +265,9 @@
  .Ar file
  of a type other than
 @@ -85,6 +93,12 @@
- and an at sign (@) after each symbolic link.
- .\" and a vertical bar (|) after each that is a
- .\" .Tn FIFO . 
+ an equals sign (=) after each socket,
+ and a vertical bar (|) after each that is a
+ .Tn FIFO . 
 +.It Fl G
 +Use ANSI color sequences to distinguish file types.  (See
 +.Ev LSCOLORS
