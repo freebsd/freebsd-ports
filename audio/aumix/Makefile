@@ -29,7 +29,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		aumix.1 xaumix.1
-
+PLIST_DIRS=	share/aumix
+PLIST_FILES=	bin/aumix bin/mute bin/xaumix
+.for ii in ansi aumix.xpm fadein.set fadeout.set vt100 xterm
+PLIST_FILES+=	share/aumix/${ii}
+.endfor
+.for ii in de el es fr gl ja nl pl pt_BR ru sv uk zh_CN
+PLIST_FILES+=	share/locale/${ii}/LC_MESSAGES/aumix.mo
+.endfor
 .include <bsd.port.pre.mk>
 
 pre-extract:
