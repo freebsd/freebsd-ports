@@ -1,0 +1,11 @@
+--- elvi/Makefile.am.orig	Sun Sep 17 14:45:18 2000
++++ elvi/Makefile.am	Sun Sep 17 14:48:39 2000
+@@ -34,7 +34,7 @@
+ 		  xxx \
+ 		  yahoo
+ 
+-sysconf_DATA	= surfraw_elvi.list
++pkgdata_DATA	= surfraw_elvi.list
+ 
+ EXTRA_DIST	= $(bin_SCRIPTS)
+ 
