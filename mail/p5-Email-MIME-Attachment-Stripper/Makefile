@@ -7,6 +7,7 @@
 
 PORTNAME=	Email-MIME-Attachment-Stripper
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -28,6 +29,10 @@ MAN3=		Email::MIME::Attachment::Stripper.3
 .if ${PERL_LEVEL} <= 500503
 post-patch:
 	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1); $$1/;' \
+		${WRKSRC}/lib/Email/MIME/Attachment/Stripper.pm
+	${PERL} -pi -e '$$_ = "" if (/use warnings/);' \
+		${WRKSRC}/Makefile.PL \
+		${WRKSRC}/t/01.t \
 		${WRKSRC}/lib/Email/MIME/Attachment/Stripper.pm
 .endif
 
