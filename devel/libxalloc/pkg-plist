@@ -1,0 +1,8 @@
+include/xalloc.h
+lib/libxalloc.so
+lib/libxalloc.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/doc/libxalloc/CREDITS
+share/doc/libxalloc/README
+@dirrm share/doc/libxalloc
