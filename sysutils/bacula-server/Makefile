@@ -39,16 +39,16 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-ALL_OPTIONS=    CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL
+ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
-BATCH=  yes
+BATCH=	yes
 .endif
 .endfor
 
 .if !defined(BATCH)
-IS_INTERACTIVE= yes
+IS_INTERACTIVE=	yes
 .endif
 
 .if defined(WITH_CLIENT_ONLY)
@@ -71,6 +71,12 @@ USE_GNOME=	libgnome
 
 PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
+# Client only or full server version
+.if defined(WITH_CLIENT_ONLY)
+CONFIGURE_ARGS+=	--enable-client-only
+PORTDOCS=	bacula.pdf ReleaseNotes html-manual
+PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
+PKGINSTALL=	${PKGDIR}/pkg-install.client
 # Build gnome-console
 .if defined(WITH_GNOMECONSOLE)
 CONFIGURE_ARGS+=	--enable-gnome
@@ -80,7 +86,6 @@ PLIST_SUB+=		GNOMECONS=""
 WITHOUT_GNOME=		yes
 PLIST_SUB+=		GNOMECONS="@comment "
 .endif
-
 # Build wx-console
 .if defined(WITH_WXCONSOLE)
 CONFIGURE_ARGS+=	--enable-wx-console
@@ -92,15 +97,8 @@ PLIST_SUB+=		WXCONS=""
 WITHOUT_GNOME=		yes
 PLIST_SUB+=	 	WXCONS="@comment "
 .endif
-
-# Client only or full server version
-.if defined(WITH_CLIENT_ONLY)
-CONFIGURE_ARGS+=	--enable-client-only
-PORTDOCS=	bacula.pdf ReleaseNotes html-manual
-PKGDEINSTALL=  	${PKGDIR}/pkg-deinstall.client
-PKGINSTALL=    	${PKGDIR}/pkg-install.client
-
 .else
+# Server only Options
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
@@ -115,23 +113,15 @@ LIB_DEPENDS+=		sqlite:${PORTSDIR}/databases/sqlite
 DBTYPE=			sqlite
 .endif
 PLIST_SUB+=		DBTYPE=${DBTYPE}
-PLIST_SUB+=		SERVER=""
-.endif
-
 # Install mtx
 .if defined(WITH_MTX)
 RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
+.endif
 .endif
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
 	@${ECHO_MSG} "=======> ATTENTION <======="
-	@${ECHO_MSG} "######################################################"
-	@${ECHO_MSG} "===> Please read the file"
-	@${ECHO_MSG} "===>     ${DOCSDIR}/ReleaseNotes"
-	@${ECHO_MSG} "===> for the upgrade procedure!"
-	@${ECHO_MSG} "===> IF YOU IGNORE THIS you may !! LOSE DATA !!"
-	@${ECHO_MSG} "######################################################"
 	@${ECHO_MSG} "===> Note that there is a pthreads problem, which leads to the loss of 500kB"
 	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in newer versions of FreeBSD"
 	@${ECHO_MSG} "===> READ ${WRKSRC}/platforms/freebsd/pthreads-fix.txt"
@@ -275,7 +265,7 @@ post-install:
 	@${ECHO_MSG} "*********************************************************************"
 
 .if !defined(WITH_CLIENT_ONLY)
-	$(CAT) pkg-message
+	${CAT} pkg-message
 .endif
 
 .include <bsd.port.post.mk>
