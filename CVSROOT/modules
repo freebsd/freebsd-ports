@@ -3994,6 +3994,7 @@ libole2		ports/devel/libole2
 liboop		ports/devel/liboop
 libosip		ports/net/libosip
 libparanoia	ports/security/libparanoia
+libpathan	ports/textproc/libpathan
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libprelude	ports/security/libprelude
