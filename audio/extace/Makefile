@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extace
-PORTVERSION=	1.7.8
+PORTVERSION=	1.8.06
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,19 +17,16 @@ COMMENT=	An Audio Visualization plugin for the X Window System
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk12 imlib esound
+USE_GNOME=	esound imlib gnomehack gnomehier
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS+=	--disable-alsa
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LIBFFTW" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"  \
-		-e "s|DATADIRNAME=lib|DATADIRNAME=share|g"  ${WRKSRC}/configure
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/extace ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/extace \
+		${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/extace.desktop \
 		${PREFIX}/share/gnome/apps/Multimedia
 
