@@ -998,6 +998,7 @@ cpp2latex	ports/print/cpp2latex
 cppadvio	ports/devel/cppadvio
 cppunit		ports/devel/cppunit
 cproto		ports/devel/cproto
+cpu		ports/sysutils/cpu
 cpuburn		ports/sysutils/cpuburn
 cpuid		ports/misc/cpuid
 cqcam		ports/graphics/cqcam
