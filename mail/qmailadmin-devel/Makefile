@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	0.42
+PORTVERSION=	0.45
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/qmailadmin/
 
