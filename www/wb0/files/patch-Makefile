@@ -1,0 +1,30 @@
+--- Makefile.orig	Mon Dec  6 00:45:08 1999
++++ Makefile	Wed Jan 31 14:58:33 2001
+@@ -1,16 +1,17 @@
+-
+-CFLAGS=-O2 -Wall -fomit-frame-pointer -malign-functions=0
+-LDFLAGS= -lm -s -lvga -lvgagl -ljpeg -lpng -lz
++PREFIX?=	/usr/local
++CFLAGS+=	-I${LOCALBASE}/include 
++LDFLAGS=	-L${LOCALBASE}/lib -lm -s -lvga -lvgagl -ljpeg -lpng -lz
+ 
+ all: wb0
+-
++ 
+ install:
+-	mkdir -p /etc/wb0
+-	cp ./etc/wb0/* /etc/wb0
+-	cp ./wb0 /usr/local/bin/wb0
+-	echo "path `pwd`/data/" >>/etc/wb0/wb0.config
+-	chmod a+s /usr/local/bin/wb0
+-	chown root:root /usr/local/bin/wb0
++	mkdir -p ${PREFIX}/share/wb0
++	cp ./wb0  ${PREFIX}/bin
++	cp ./etc/wb0/wb0.config ${PREFIX}/etc/
++	cp ./data/* ${PREFIX}/share/wb0/
++	echo "path ${PREFIX}/share/wb0/" >>${PREFIX}/etc/wb0.config
++	chmod a+s ${PREFIX}/bin/wb0
++	chown root:wheel ${LOCALBASE}/bin/wb0
+ 
+ pkfont: pkfont.c
+ 

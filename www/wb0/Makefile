@@ -1,0 +1,48 @@
+# New ports collection makefile for:	wb0
+# Date created:				2001-01-31
+# Whom:					trevor
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wb0
+PORTVERSION=	000324
+CATEGORIES=	www
+MASTER_SITES=	ftp://atrey.karlin.mff.cuni.cz/pub/local/clock/wb0/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	trevor@FreeBSD.org
+
+RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-current
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		vga.1:${PORTSDIR}/graphics/svgalib \
+		png.4:${PORTSDIR}/graphics/png
+
+DOCDIR=		share/doc/${PORTNAME}
+PLIST=		${WRKDIR}/pkg-plist
+
+post-patch:
+	${PERL} -pi -e 's|/etc/wb0|${LOCALBASE}/etc|g ; \
+		s|/usr/local/src/wb0/font/bit|${LOCALBASE}/share/wb0/|g' \
+		${WRKSRC}/wb0.c
+
+pre-install:
+	${ECHO} bin/wb0 > ${PLIST}
+.if !defined(NOPORTDOCS)
+	${ECHO} ${DOCDIR}/wb0.config.README >> ${PLIST}
+	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
+.endif
+	${ECHO} etc/wb0.config >> ${PLIST}
+	for i in `find ${PREFIX}/share/wb0 -type f`; \
+		do ${ECHO} share/wb0/`${BASENAME} $${i}` >> ${PLIST}; \
+	done
+	${ECHO} @dirrm share/wb0 >> ${PLIST}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/${DOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/etc/wb0/wb0.config.README \
+		${PREFIX}/${DOCDIR}
+.endif
+
+.include <bsd.port.mk>
