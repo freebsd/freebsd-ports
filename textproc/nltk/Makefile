@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nltk
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	clsung@dragon2.net
 COMMENT=	Natural language toolkit written in python
 
-USE_PYTHON=	2.1+
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 
@@ -24,5 +24,11 @@ USE_PYTHON_PREFIX=	yes
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500000
 BROKEN=		"Coredump during build on alpha 4.x"
 .endif
+
+post-install:
+	@${FIND} ${PYTHON_SITELIBDIR}/nltk ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/nltk -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
