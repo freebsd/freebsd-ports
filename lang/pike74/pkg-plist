@@ -1,0 +1,221 @@
+bin/pike
+bin/pike-module
+bin/hilfe
+include/pike/acconfig.h
+include/pike/array.h
+include/pike/backend.h
+include/pike/block_alloc.h
+include/pike/builtin_functions.h
+include/pike/callback.h
+include/pike/compilation.h
+include/pike/constants.h
+include/pike/cpp.h
+include/pike/cyclic.h
+include/pike/dmalloc.h
+include/pike/docode.h
+include/pike/dynamic_buffer.h
+include/pike/dynamic_load.h
+include/pike/efun.h
+include/pike/encode.h
+include/pike/error.h
+include/pike/fd_control.h
+include/pike/fdlib.h
+include/pike/fsort.h
+include/pike/fsort_template.h
+include/pike/gc.h
+include/pike/global.h
+include/pike/las.h
+include/pike/hashtable.h
+include/pike/interpret.h
+include/pike/language.h
+include/pike/lex.h
+include/pike/machine.h
+include/pike/main.h
+include/pike/mapping.h
+include/pike/module.h
+include/pike/module_support.h
+include/pike/multiset.h
+include/pike/object.h
+include/pike/opcodes.h
+include/pike/operators.h
+include/pike/otable.h
+include/pike/peep.h
+include/pike/pike_macros.h
+include/pike/pike_memory.h
+include/pike/pike_types.h
+include/pike/port.h
+include/pike/program.h
+include/pike/program_areas.h
+include/pike/queue.h
+include/pike/rusage.h
+include/pike/signal_handler.h
+include/pike/stralloc.h
+include/pike/stuff.h
+include/pike/svalue.h
+include/pike/threads.h
+include/pike/time_stuff.h
+include/pike/version.h
+include/pike/y.tab.h
+include/pike/dynamic_module_makefile
+include/pike/aclocal.m4
+lib/pike/modules/Gdbm.so
+lib/pike/modules/Gmp.so
+lib/pike/modules/Gz.so
+lib/pike/modules/Image.so
+lib/pike/modules/MIME.so
+lib/pike/modules/MIME.pmod
+lib/pike/modules/Msql.so
+lib/pike/modules/Mysql.so
+lib/pike/modules/Pipe.so
+lib/pike/modules/Postgres.so
+lib/pike/modules/Regexp.so
+lib/pike/modules/Ssleay.so
+lib/pike/modules/Yp.so
+lib/pike/modules/Yp.pmod
+lib/pike/modules/_Charset.so
+lib/pike/modules/_Charset.pmod
+lib/pike/modules/_Image_JPEG.so
+lib/pike/modules/_Image_TTF.so
+lib/pike/modules/_Image_XFace.so
+lib/pike/modules/_Lobotomized_Crypto.so
+lib/pike/modules/call_out.pmod
+lib/pike/modules/files.pmod
+lib/pike/modules/math.pmod
+lib/pike/modules/readline.so
+lib/pike/modules/spider.so
+lib/pike/modules/sprintf.pmod
+lib/pike/modules/system.pmod
+lib/pike/master.pike
+share/pike/include/getopt.h
+share/pike/include/array.h
+share/pike/include/fifo.h
+share/pike/include/process.h
+share/pike/include/mysql.h
+share/pike/include/simulate.h
+share/pike/include/sql.h
+share/pike/include/stack.h
+share/pike/include/stdio.h
+share/pike/include/string.h
+share/pike/include/syslog.h
+share/pike/include/msql.h
+share/pike/include/postgres.h
+share/pike/modules/ADT.pmod/queue.pike
+share/pike/modules/ADT.pmod/struct.pike
+share/pike/modules/ADT.pmod/Table.pmod
+share/pike/modules/Tools.pmod/Hilfe.pmod
+share/pike/modules/Tools.pmod/sed.pmod
+share/pike/modules/Tools.pmod/PEM.pmod
+share/pike/modules/Tools.pmod/_PEM.pmod
+share/pike/modules/Crypto/des3.pike
+share/pike/modules/Crypto/des3_cbc.pike
+share/pike/modules/Crypto/des_cbc.pike
+share/pike/modules/Crypto/idea_cbc.pike
+share/pike/modules/Crypto/randomness.pmod
+share/pike/modules/Crypto/rsa.pike
+share/pike/modules/Crypto/hmac.pike
+share/pike/modules/LR.pmod/Grammar_parser.pmod
+share/pike/modules/LR.pmod/item.pike
+share/pike/modules/LR.pmod/kernel.pike
+share/pike/modules/LR.pmod/lr.pike
+share/pike/modules/LR.pmod/parser.pike
+share/pike/modules/LR.pmod/priority.pike
+share/pike/modules/LR.pmod/rule.pike
+share/pike/modules/LR.pmod/scanner.pike
+share/pike/modules/Sql.pmod/mysql.pike
+share/pike/modules/Sql.pmod/mysql_result.pike
+share/pike/modules/Sql.pmod/sql.pike
+share/pike/modules/Sql.pmod/sql_result.pike
+share/pike/modules/Sql.pmod/odbc.pike
+share/pike/modules/Sql.pmod/odbc_result.pike
+share/pike/modules/Sql.pmod/oracle.pike
+share/pike/modules/Sql.pmod/msql.pike
+share/pike/modules/Sql.pmod/postgres.pike
+share/pike/modules/Sql.pmod/postgres_result.pike
+share/pike/modules/Protocols.pmod/X.pmod/db/compose.db
+share/pike/modules/Protocols.pmod/X.pmod/db/compose
+share/pike/modules/Protocols.pmod/X.pmod/db/convert_compose.pike
+share/pike/modules/Protocols.pmod/X.pmod/db/keysyms
+share/pike/modules/Protocols.pmod/X.pmod/Atom.pmod
+share/pike/modules/Protocols.pmod/X.pmod/AUTHORS
+share/pike/modules/Protocols.pmod/X.pmod/Auth.pmod
+share/pike/modules/Protocols.pmod/X.pmod/Extensions.pmod
+share/pike/modules/Protocols.pmod/X.pmod/Requests.pmod
+share/pike/modules/Protocols.pmod/X.pmod/Types.pmod
+share/pike/modules/Protocols.pmod/X.pmod/XImage.pmod
+share/pike/modules/Protocols.pmod/X.pmod/XTools.pmod
+share/pike/modules/Protocols.pmod/X.pmod/Xlib.pmod
+share/pike/modules/Protocols.pmod/X.pmod/_Types.pmod
+share/pike/modules/Protocols.pmod/X.pmod/_Xlib.pmod
+share/pike/modules/Protocols.pmod/X.pmod/error.h
+share/pike/modules/Protocols.pmod/X.pmod/keysyms.h
+share/pike/modules/Protocols.pmod/X.pmod/my_struct.pmod
+share/pike/modules/Protocols.pmod/DNS.pmod
+share/pike/modules/Protocols.pmod/NNTP.pmod
+share/pike/modules/Protocols.pmod/LPD.pmod
+share/pike/modules/Protocols.pmod/SMTP.pmod
+share/pike/modules/Protocols.pmod/TELNET.pmod
+share/pike/modules/Protocols.pmod/Line.pmod
+share/pike/modules/Protocols.pmod/Ident.pmod
+share/pike/modules/Protocols.pmod/Ports.pmod
+share/pike/modules/Calendar.pmod/Gregorian.pmod
+share/pike/modules/Calendar.pmod/ISO.pmod
+share/pike/modules/Calendar.pmod/Julian.pmod
+share/pike/modules/Calendar.pmod/Orthodox.pmod
+share/pike/modules/Calendar.pmod/Swedish.pmod
+share/pike/modules/Calendar.pmod/module.pmod
+share/pike/modules/Languages.pmod/PLIS.pmod
+share/pike/modules/Standards.pmod/ASN1.pmod/Encode.pmod
+share/pike/modules/Standards.pmod/ASN1.pmod/Decode.pmod
+share/pike/modules/Standards.pmod/ASN1.pmod/Types.pmod
+share/pike/modules/Standards.pmod/PKCS.pmod/CSR.pmod
+share/pike/modules/Standards.pmod/PKCS.pmod/Certificate.pmod
+share/pike/modules/Standards.pmod/PKCS.pmod/Identifiers.pmod
+share/pike/modules/Standards.pmod/PKCS.pmod/RSA.pmod
+share/pike/modules/Standards.pmod/PKCS.pmod/Signature.pmod
+share/pike/modules/Standards.pmod/PKCS.pmod/PFX.pmod
+share/pike/modules/Yabu.pmod/module.pmod
+share/pike/modules/Yabu.pmod/test.pike
+share/pike/modules/Locale.pmod/Charset.pmod
+share/pike/modules/Remote.pmod/Client.pike
+share/pike/modules/Remote.pmod/Server.pike
+share/pike/modules/Remote.pmod/call.pike
+share/pike/modules/Remote.pmod/connection.pike
+share/pike/modules/Remote.pmod/context.pike
+share/pike/modules/Remote.pmod/obj.pike
+share/pike/modules/Remote.pmod/remote.h
+share/pike/modules/Array.pmod
+share/pike/modules/Colors.pmod
+share/pike/modules/Crypto.pmod
+share/pike/modules/Getopt.pmod
+share/pike/modules/Process.pmod
+share/pike/modules/Simulate.pmod
+share/pike/modules/Stdio.pmod
+share/pike/modules/Stack.pmod
+share/pike/modules/String.pmod
+share/pike/modules/Thread.pmod
+share/pike/modules/__builtin.pmod
+share/pike/modules/error.pmod
+share/pike/master.pike.in
+@dirrm include/pike
+@dirrm lib/pike/modules
+@dirrm lib/pike/include
+@dirrm lib/pike
+@dirrm share/pike/include
+@dirrm share/pike/modules/ADT.pmod
+@dirrm share/pike/modules/Tools.pmod
+@dirrm share/pike/modules/Crypto
+@dirrm share/pike/modules/LR.pmod
+@dirrm share/pike/modules/Sql.pmod
+@dirrm share/pike/modules/Protocols.pmod/X.pmod/db
+@dirrm share/pike/modules/Protocols.pmod/X.pmod
+@dirrm share/pike/modules/Protocols.pmod
+@dirrm share/pike/modules/Calendar.pmod
+@dirrm share/pike/modules/Languages.pmod
+@dirrm share/pike/modules/Standards.pmod/ASN1.pmod
+@dirrm share/pike/modules/Standards.pmod/PKCS.pmod
+@dirrm share/pike/modules/Standards.pmod
+@dirrm share/pike/modules/Yabu.pmod
+@dirrm share/pike/modules/Locale.pmod
+@dirrm share/pike/modules/Remote.pmod
+@dirrm share/pike/modules
+@dirrm share/pike
