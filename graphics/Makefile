@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.113 1999/03/07 12:27:37 flathill Exp $
+# $Id: Makefile,v 1.114 1999/03/14 02:52:30 flathill Exp $
 #
 
     SUBDIR += 4va
@@ -97,6 +97,7 @@
     SUBDIR += urt
     SUBDIR += vcg
     SUBDIR += whirlgif
+    SUBDIR += wmicons
     SUBDIR += xanim
     SUBDIR += xaos
     SUBDIR += xbmbrowser
