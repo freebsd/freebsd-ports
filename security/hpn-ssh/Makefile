@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.7.1p2
+PORTVERSION=	3.8p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
@@ -121,6 +121,7 @@ post-install:
 
 test:
 	(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} \
+	TEST_SHELL=/bin/sh \
 	PATH=${WRKSRC}:${PREFIX}/bin:${PREFIX}/sbin:${PATH} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} )
 
