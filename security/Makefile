@@ -67,6 +67,7 @@
     SUBDIR += geheimnis
     SUBDIR += gnupg
     SUBDIR += gnupg-idea
+    SUBDIR += gnutls
     SUBDIR += gpa
     SUBDIR += gpasman
     SUBDIR += gpgme
