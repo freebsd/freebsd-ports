@@ -8330,6 +8330,7 @@ txtbdf2ps	ports/print/txtbdf2ps
 txtmerge	ports/graphics/txtmerge
 tya		ports/java/tya
 tycoon		ports/x11/tycoon
+typespeed	ports/games/typespeed
 typhoon		ports/databases/typhoon
 ua-ispell	ports/textproc/ua-ispell
 uae		ports/emulators/uae
