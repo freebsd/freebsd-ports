@@ -32,3 +32,5 @@
 #
 # uncomment this to deal with the new edit hook
 #DEFAULT			/home/ncvs/CVSROOT/new_edithook
+# peter's edit post-processor..
+DEFAULT			/home/ncvs/CVSROOT/cvsedit
