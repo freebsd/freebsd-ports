@@ -1453,6 +1453,7 @@ dri		ports/graphics/dri
 dri-devel	ports/graphics/dri-devel
 driftnet	ports/net-mgmt/driftnet
 driglide	ports/x11-servers/driglide
+drivel		ports/www/drivel
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
 dropbear	ports/security/dropbear
