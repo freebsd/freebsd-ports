@@ -22,15 +22,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,bjc250/} \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/:gs_fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs${GS_VERSION:S/.//}/:gs_srcs
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,ports_jp_gs \
 			bjc250gs/:bjc250 \
 			./:ports_jp
 PKGNAMESUFFIX=	-afpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
-		${GS_FONTS_STD}:gs_fonts \
-		${GS_FONTS_OTHER}:gs_fonts \
 		${HP8XX_SRCS}:hp8xx \
 		${DJ970_SRCS}:dj970 \
 		${MD2K_SRCS}:md2k \
@@ -54,6 +51,7 @@ COMMENT=	AFPL Postscript interpreter
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/gs/fonts.dir:${PORTSDIR}/print/gsfonts
 
 NO_CDROM=	"Can only be distributed for free"
 
@@ -115,8 +113,6 @@ PLIST_SUB+=	SHLIB="@comment "
 .endif
 
 GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
-GS_FONTS_STD=	ghostscript-fonts-std-8.11.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-6.0.tar.gz
 
 # Additional Drivers:
 
@@ -439,9 +435,6 @@ pre-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
-	${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
-	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
-	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install:
