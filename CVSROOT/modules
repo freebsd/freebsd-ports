@@ -6566,6 +6566,7 @@ p5-Class-Accessor-Chained	ports/devel/p5-Class-Accessor-Chained
 p5-Class-Accessor-Lvalue	ports/devel/p5-Class-Accessor-Lvalue
 p5-Class-AlzaboWrapper	ports/devel/p5-Class-AlzaboWrapper
 p5-Class-ArrayObjects	ports/devel/p5-Class-ArrayObjects
+p5-Class-AutoClass	ports/devel/p5-Class-AutoClass
 p5-Class-Autouse	ports/devel/p5-Class-Autouse
 p5-Class-Base	ports/devel/p5-Class-Base
 p5-Class-BlackHole	ports/devel/p5-Class-BlackHole
