@@ -3,7 +3,7 @@
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/26 02:55:58 msmith Exp $
 #
 
 DISTNAME=       	vnc-3.3.1_unixsrc
@@ -12,6 +12,7 @@ CATEGORIES=		net
 MASTER_SITES=   	http://www.orl.co.uk/vnc/dist/
 DISTFILES=		vnc-3.3.1_unixsrc.tgz \
 			vnc-3.3.1_doc.tgz
+IGNOREFILES=		${DISTFILES}
 
 MAINTAINER=	 	msmith@FreeBSD.ORG
 
