@@ -3109,6 +3109,7 @@ jailer		ports/sysutils/jailer
 jailutils	ports/sysutils/jailutils
 jakarta-ant	ports/devel/jakarta-ant
 jakarta-bcel	ports/java/jakarta-bcel
+jakarta-jmeter	ports/www/jakarta-jmeter
 jakarta-oro	ports/java/jakarta-oro
 jakarta-regexp	ports/java/jakarta-regexp
 jakarta-tomcat3	ports/www/jakarta-tomcat3
