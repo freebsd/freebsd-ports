@@ -5,3 +5,4 @@ share/doc/xdvi/ChangeLog
 share/doc/xdvi/README
 share/doc/xdvi/xdvi.FAQ
 @dirrm share/doc/xdvi
+@unexec rmdir %D/share/texmf/dvips  2> /dev/null || true
