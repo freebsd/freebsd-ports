@@ -1,0 +1,26 @@
+*** Mailman/Utils.py.orig	Thu Nov 16 22:43:11 2000
+--- Mailman/Utils.py	Thu Feb 15 19:42:10 2001
+***************
+*** 407,413 ****
+          f = open(mm_cfg.SITE_PW_FILE)
+          pw2 = f.read()
+          f.close()
+!         return Crypt.crypt(pw1, pw2[:2]) == pw2
+      # There probably is no site admin password if there was an exception
+      except IOError:
+          return 0
+--- 407,420 ----
+          f = open(mm_cfg.SITE_PW_FILE)
+          pw2 = f.read()
+          f.close()
+!         # First we check for the Modular Crypt Format
+!         mcf = re.match(r'\$\d\$(\w+)\$', pw2)
+!         if mcf:     # Is it MCF?
+!             salt=mcf.group(1)
+!         else:       # No, it's traditional DES.
+!             salt=pw2[:2]
+!             
+!         return Crypt.crypt(pw1, salt) == pw2
+      # There probably is no site admin password if there was an exception
+      except IOError:
+          return 0
