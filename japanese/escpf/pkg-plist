@@ -4,3 +4,4 @@ libexec/escpf
 libexec/escpsf
 libexec/escpagef
 libexec/escpagesf
+@dirrm share/doc/escpf

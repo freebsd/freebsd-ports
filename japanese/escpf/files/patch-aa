@@ -1,25 +1,35 @@
-*** Makefile.orig	Tue Aug 20 21:22:04 1996
---- Makefile	Wed Dec 18 23:39:21 1996
+*** Makefile.orig	Tue Aug 20 14:22:04 1996
+--- Makefile	Sun Sep 28 11:19:23 1997
 ***************
-*** 6,13 ****
+*** 6,18 ****
   #
   
   # user setting 
 ! BINDIR		= /usr/sbin		# Linux
 ! #BINDIR 	= /usr/local/libexec	# FreeBSD
+! 
+! LINES		= 66
+! COLUMNS		= 80
+! TOP_MERGIN	= 0
+! LEFT_MERGIN	= 0
   
-  LINES		= 66
-  COLUMNS		= 80
---- 6,14 ----
+  CC	= cc
+  CFLAGS	= -O -DLINES=${LINES} -DCOLUMNS=${COLUMNS} -DTOP_MERGIN=${TOP_MERGIN} -DLEFT_MERGIN=${LEFT_MERGIN}
+--- 6,19 ----
   #
   
   # user setting 
 ! #BINDIR		= /usr/sbin		# Linux
 ! PREFIX?= /usr/local
 ! BINDIR 	= ${PREFIX}/libexec	# FreeBSD
+! 
+! LINES		?= 66
+! COLUMNS		?= 80
+! TOP_MERGIN	?= 0
+! LEFT_MERGIN	?= 0
   
-  LINES		= 66
-  COLUMNS		= 80
+  CC	= cc
+  CFLAGS	= -O -DLINES=${LINES} -DCOLUMNS=${COLUMNS} -DTOP_MERGIN=${TOP_MERGIN} -DLEFT_MERGIN=${LEFT_MERGIN}
 ***************
 *** 41,50 ****
   # ${OBJS}: ${SRCS} ${HEADERS}
