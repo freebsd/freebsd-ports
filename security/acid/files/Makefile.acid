@@ -1,0 +1,32 @@
+# This is a dummy Makefile for FreeBSD ports system, not from the author.
+# We don't need to compile anything but just copy these files to finish
+# the installation.
+#
+# Foxfair. <foxfair@FreeBSD.org>
+ACIDDIR=/usr/local/share/doc/apache/acid
+INSTALL=install
+
+ACIDFILES=\
+	README \
+	acid_common.php \
+	acid_conf.php \
+	acid_footer.html \
+	acid_hdr1.html \
+        acid_hdr2.html \
+	acid_main.php \
+	acid_pkt_form.php \
+	acid_pkt_main.php \
+        acid_pkt_sqlcalls.php \
+	acid_stat_alerts.php \
+	acid_stat_common.php \
+        acid_stat_time.php \
+	acid_style.css \
+	index.html
+
+all: install
+
+install: ${ACIDFILES}
+	[ -d ${ACIDDIR} ] || mkdir ${ACIDDIR}
+	for i in ${ACIDFILES}; do \
+	    ${INSTALL} -c -m 444 $$i ${ACIDDIR} ; \
+	done
