@@ -161,6 +161,7 @@ www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
 www/data-dist/index.html.zh-tw.big5
+%%DOCSDIR%%/FAQ.html
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/bind.html.en
 %%DOCSDIR%%/bind.html.fr
@@ -329,7 +330,9 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/mod/mod_negotiation.html.en
 %%DOCSDIR%%/mod/mod_negotiation.html.ja.jis
 %%DOCSDIR%%/mod/mod_proxy.html
-%%DOCSDIR%%/mod/mod_rewrite.html
+%%DOCSDIR%%/mod/mod_rewrite.html.en
+%%DOCSDIR%%/mod/mod_rewrite.html.html
+%%DOCSDIR%%/mod/mod_rewrite.html.ja.jis
 %%DOCSDIR%%/mod/mod_setenvif.html.en
 %%DOCSDIR%%/mod/mod_setenvif.html.html
 %%DOCSDIR%%/mod/mod_setenvif.html.ja.jis
@@ -505,6 +508,13 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/howto/ssi.html.ja.jis
 %%DOCSDIR%%/urlmapping.html
 %%DOCSDIR%%/vhosts/index.html.html
+%%WITHSNMP%%%%DOCSDIR%%/mod/mod_snmp.html
+%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/index.html
+%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/www-mib.txt
+%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/snmpv2-mib.txt
+%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/rfc2594.txt
+%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/apache-scoreboard-mib.txt
+%%WITHSNMP%%%%DOCSDIR%%/snmp_agt/apache-config-mib.txt
 www/cgi-bin-dist/printenv
 @exec [ -d %D/www/cgi-bin/ ] || ln -fs %B %D/www/cgi-bin
 www/cgi-bin-dist/test-cgi
@@ -748,10 +758,12 @@ www/icons/world2.png
 @dirrm %%DOCSDIR%%/images
 @dirrm %%DOCSDIR%%/howto
 @dirrm %%DOCSDIR%%/programs
+%%WITHSNMP%%@dirrm %%DOCSDIR%%/snmp_agt
 @dirrm %%DOCSDIR%%
 @unexec rmdir %D/www/data-dist 2>/dev/null || true
 @unexec rmdir %D/www/cgi-bin-dist 2>/dev/null || true
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
+%%WITHSNMP%%@dirrm www/buckets
 @unexec rmdir %D/www 2>/dev/null || true
