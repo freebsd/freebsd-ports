@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20011029.1
+PORTVERSION=	20011030
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -25,17 +25,17 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 
 USE_RUBY=	yes
 
-RUBY_SHEBANG_FILES=	\
-		${WRKSRC}/pkg_fetch \
-		${WRKSRC}/pkg_glob \
-		${WRKSRC}/pkgdb \
-		${WRKSRC}/portcvsweb \
-		${WRKSRC}/portsclean \
-		${WRKSRC}/portsdb \
-		${WRKSRC}/portupgrade \
-		${WRKSRC}/portversion
+MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
 
-NO_BUILD=	yes
+RUBY_SHEBANG_FILES=	\
+		${WRKSRC}/bin/pkg_fetch \
+		${WRKSRC}/bin/pkg_glob \
+		${WRKSRC}/bin/pkgdb \
+		${WRKSRC}/bin/portcvsweb \
+		${WRKSRC}/bin/portsclean \
+		${WRKSRC}/bin/portsdb \
+		${WRKSRC}/bin/portupgrade \
+		${WRKSRC}/bin/portversion
 
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
@@ -49,25 +49,18 @@ MAN1=		pkg_deinstall.1 \
 MLINKS=		pkgdb.1 pkg_which.1 \
 		portupgrade.1 portinstall.1 \
 		portsdb.1 ports_glob.1
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	maybe
 
 DOCS=		ChangeLog README
 
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/pkgtools
 
 post-patch:
 .for f in pkgdb.rb pkgtools.rb
-	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/${f}
+	${RUBY} -i~ -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/lib/${f}
 .endfor
 
-do-install:
-	cd ${WRKSRC} && ${RUBY} install.rb
-	${MKDIR} ${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/misc/zsh/* ${PREFIX}/share/zsh/site-functions/
-	${MKDIR} ${EXAMPLESDIR}/bash
-	${INSTALL_DATA} ${WRKSRC}/misc/bash/* ${EXAMPLESDIR}/bash/
-	${MKDIR} ${EXAMPLESDIR}/tcsh
-	${INSTALL_DATA} ${WRKSRC}/misc/tcsh/* ${EXAMPLESDIR}/tcsh/
+post-install:
 	# Remove old database
 	${RM} -f /var/db/pkg/pkgdb.byfile.db
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
