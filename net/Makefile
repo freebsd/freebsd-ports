@@ -443,6 +443,7 @@
     SUBDIR += p5-Net-Radius
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-RawSock
+    SUBDIR += p5-Net-Rendezvous
     SUBDIR += p5-Net-SCP
     SUBDIR += p5-Net-SFTP
     SUBDIR += p5-Net-SMPP
@@ -596,8 +597,8 @@
     SUBDIR += rude
     SUBDIR += rwhois
     SUBDIR += samba
-    SUBDIR += samba3
     SUBDIR += samba-libsmbclient
+    SUBDIR += samba3
     SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += scand

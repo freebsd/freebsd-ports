@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Net/Rendezvous.pm
+%%SITE_PERL%%/Net/Rendezvous/Entry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous
+@dirrm %%SITE_PERL%%/Net/Rendezvous
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
