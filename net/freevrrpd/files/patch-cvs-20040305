@@ -1,0 +1,824 @@
+diff -urN LICENSE src/LICENSE
+--- LICENSE	Thu Jan 30 11:50:55 2003
++++ src/LICENSE	Sun Feb 15 12:55:26 2004
+@@ -28,4 +28,4 @@
+ OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGE.
+ 
+-$Id: LICENSE,v 1.1.1.1 2002/05/23 15:46:06 spe Exp $
++$Id: LICENSE,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+diff -urN Makefile src/Makefile
+--- Makefile	Thu Jan 30 11:50:55 2003
++++ src/Makefile	Tue Feb 24 11:55:51 2004
+@@ -1,4 +1,4 @@
+-# $Id: Makefile,v 1.3 2002/09/17 12:51:48 spe Exp $
++# $Id: Makefile,v 1.2 2004/02/24 11:55:51 spe Exp $
+ 
+ PROG=		freevrrpd
+ SRCS=		vrrp_misc.c vrrp_multicast.c vrrp_main.c vrrp_thread.c vrrp_state.c vrrp_network.c vrrp_interface.c vrrp_conf.c vrrp_signal.c vrrp_list.c vrrp_moncircuit.c
+@@ -9,7 +9,7 @@
+ MANDIR=		/usr/local/man/man
+ 
+ # Must write a man page
+-# MAN=	freevrrpd.8
++MAN=	freevrrpd.8
+ MAN8=	freevrrpd.8
+ 
+ beforeinstall:
+diff -urN PORTS src/PORTS
+--- PORTS	Thu Jan  1 00:00:00 1970
++++ src/PORTS	Tue Feb 24 11:55:51 2004
+@@ -0,0 +1,6 @@
++# $Id: PORTS,v 1.1 2004/02/24 11:55:51 spe Exp $
++
++FreeVRRPd has been ported under:
++
++* FreeBSD (initial dev OS)
++* NetBSD (must be tested)
+diff -urN README src/README
+--- README	Thu Jan 30 11:50:55 2003
++++ src/README	Sun Feb 15 12:55:26 2004
+@@ -1,4 +1,4 @@
+-# $Id: README,v 1.1.1.1 2002/05/23 15:46:11 spe Exp $
++# $Id: README,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+ 
+ Hi,
+ 
+diff -urN TODO src/TODO
+--- TODO	Sat May 24 21:18:33 2003
++++ src/TODO	Sun Feb 15 12:55:26 2004
+@@ -1,3 +1,3 @@
+-# $Id: TODO,v 1.1.1.1 2002/05/23 15:46:06 spe Exp $
++# $Id: TODO,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+ 
+ * Cryptographic Authentification Data
+diff -urN freevrrpd.8 src/freevrrpd.8
+--- freevrrpd.8	Thu Jan 30 11:50:55 2003
++++ src/freevrrpd.8	Tue Feb 24 11:55:51 2004
+@@ -37,6 +37,7 @@
+ Support of plain text authentication described in RFC2338
+ .It
+ Support netmask for virtual IP addresses
++.El
+ .Sh IMPLEMENTATION NOTES
+ This utility doesn't quit properly if you use the -KILL signal. If you want to stop freevrrpd, you can use kill [PID] and not kill -9 [PID], then it can delete virtual IP addresses and routes properly on shutdown.
+ .Sh BUGS
+diff -urN vrrp_conf.c src/vrrp_conf.c
+--- vrrp_conf.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_conf.c	Wed Feb 18 08:56:43 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_conf.c,v 1.4 2002/09/17 13:09:29 spe Exp $
++ * $Id: vrrp_conf.c,v 1.2 2004/02/18 08:56:43 spe Exp $
+  */
+ 
+ #include "vrrp_conf.h"
+@@ -141,12 +141,15 @@
+ 	}
+ 	if (lstat(name, &st) == -1) {
+ 		syslog(LOG_ERR, "cannot call lstat(): %m");
++		fclose(stream);
+ 		return NULL;
+ 	}
+ 	if ((st.st_mode & S_IFMT) != S_IFREG) {
+ 		syslog(LOG_ERR, "%s is not a regular file", name);
++		fclose(stream);
+ 		return NULL;
+ 	}
++
+ 	return stream;
+ }
+ 
+diff -urN vrrp_conf.h src/vrrp_conf.h
+--- vrrp_conf.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_conf.h	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_conf.h,v 1.3 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_conf.h,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #ifndef _VRRP_CONF_H
+@@ -41,11 +41,13 @@
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <net/if.h>
++#ifdef __FreeBSD__
+ #include <net/if_mib.h>
++#endif
+ #include <stdio.h>
+ #include <fcntl.h>
+ #include <syslog.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <ctype.h>
+ #include <string.h>
+ #include <stdlib.h>
+diff -urN vrrp_define.h src/vrrp_define.h
+--- vrrp_define.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_define.h	Mon Feb 23 16:17:12 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_define.h,v 1.2 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_define.h,v 1.2 2004/02/23 16:17:12 spe Exp $
+  */
+ 
+ /*
+@@ -50,6 +50,7 @@
+ #define VRRP_USEC_COEFF 1000000
+ #define VRRP_CONF_MAX_ARGS 255
+ #define VRRP_DEFAULT_ADV_INT 1
++#define VRRP_DEFAULT_CARRIER_TIMEOUT 10
+ #define VRRP_PROTOCOL_MAX_VRID 255
+ #define VRRP_CONF_FILE_NAME "/usr/local/etc/freevrrpd.conf"
+ #define VRRP_MONCIRCUIT_MONDELAY 1000000
+diff -urN vrrp_functions.h src/vrrp_functions.h
+--- vrrp_functions.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_functions.h	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_functions.h,v 1.2 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_functions.h,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <net/route.h>
+@@ -58,7 +58,7 @@
+ void            vrrp_network_close_bpf(struct vrrp_vr *);
+ void            vrrp_network_initialize(void);
+ char            vrrp_network_open_socket(struct vrrp_vr *);
+-int             vrrp_network_send_packet(char *, int, int, int);
++ssize_t         vrrp_network_send_packet(char *, int, int, int);
+ u_int           vrrp_network_vrrphdr_len(struct vrrp_vr *);
+ void            vrrp_network_init_ethhdr(char *, struct vrrp_vr *);
+ void            vrrp_network_init_iphdr(char *, struct vrrp_vr *);
+@@ -114,6 +114,6 @@
+ void            vrrp_thread_mutex_unlock(void);
+ void            vrrp_thread_mutex_lock_bpf(void);
+ void            vrrp_thread_mutex_unlock_bpf(void);
+-void            vrrp_thread_launch_vrrprouter(int *);
++void            vrrp_thread_launch_vrrprouter(void **);
+ char            vrrp_thread_initialize(void);
+ char            vrrp_thread_create_vrid(struct vrrp_vr *);
+diff -urN vrrp_interface.c src/vrrp_interface.c
+--- vrrp_interface.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_interface.c	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_interface.c,v 1.1.1.1 2002/05/23 15:46:07 spe Exp $
++ * $Id: vrrp_interface.c,v 1.2 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include "vrrp_interface.h"
+@@ -50,10 +50,10 @@
+ char 
+ vrrp_interface_ethaddr_set(char *if_name, struct ether_addr * ethaddr)
+ {
++#if defined(SIOCSIFLLADDR)
+ 	int             sd;
+ 	struct ifreq    ifr;
+ 
+-#if defined(SIOCSIFLLADDR)
+ 	bzero(&ifr, sizeof(ifr));
+ 	sd = socket(AF_INET, SOCK_DGRAM, 0);
+ 	if (sd == -1) {
+diff -urN vrrp_interface.h src/vrrp_interface.h
+--- vrrp_interface.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_interface.h	Tue Feb 24 11:55:51 2004
+@@ -29,15 +29,21 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_interface.h,v 1.1.1.1 2002/05/23 15:46:07 spe Exp $
++ * $Id: vrrp_interface.h,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <sys/sockio.h>
+-#include <net/ethernet.h>
++#include <sys/ioctl.h>
+ #include <net/if.h>
++#ifdef __FreeBSD__
++#include <net/ethernet.h>
++#endif
++#ifdef __NetBSD__
++#include <net/if_ether.h>
++#endif
+ #include <arpa/inet.h>
+ #include <errno.h>
+ #include <math.h>
+@@ -45,7 +51,7 @@
+ #include <string.h>
+ #include <syslog.h>
+ #include <unistd.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
+diff -urN vrrp_list.c src/vrrp_list.c
+--- vrrp_list.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_list.c	Sun Feb 15 12:55:26 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_list.c,v 1.2 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_list.c,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+  */
+ 
+ #include "vrrp_list.h"
+diff -urN vrrp_list.h src/vrrp_list.h
+--- vrrp_list.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_list.h	Sun Feb 15 12:55:26 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_list.h,v 1.1.1.1 2002/05/23 15:46:08 spe Exp $
++ * $Id: vrrp_list.h,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+  */
+ 
+ #include <stdio.h>
+diff -urN vrrp_main.c src/vrrp_main.c
+--- vrrp_main.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_main.c	Mon Feb 23 16:17:12 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_main.c,v 1.4 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_main.c,v 1.4 2004/02/23 16:17:12 spe Exp $
+  */
+ 
+ #include <errno.h>
+@@ -76,6 +76,7 @@
+ 		vr->vr_if->alive = 1;
+ 		vr->vr_if->nberrors = 0;
+ 		vr->vr_if->reportsyslog = 0;
++		vr->vr_if->carrier_timeout = VRRP_DEFAULT_CARRIER_TIMEOUT;
+ 	}
+ 
+ 	return;
+diff -urN vrrp_main.h src/vrrp_main.h
+--- vrrp_main.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_main.h	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_main.h,v 1.4 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_main.h,v 1.2 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <sys/types.h>
+@@ -45,3 +45,7 @@
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
++
++#ifdef __NetBSD__
++#define octet ether_addr_octet
++#endif
+diff -urN vrrp_misc.c src/vrrp_misc.c
+--- vrrp_misc.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_misc.c	Sun Feb 15 12:55:26 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_misc.c,v 1.4 2002/09/17 23:30:57 spe Exp $
++ * $Id: vrrp_misc.c,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+  */
+ 
+ #include "vrrp_misc.h"
+diff -urN vrrp_misc.h src/vrrp_misc.h
+--- vrrp_misc.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_misc.h	Sun Feb 15 12:55:26 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_misc.h,v 1.1.1.1 2002/05/23 15:46:09 spe Exp $
++ * $Id: vrrp_misc.h,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+  */
+ 
+ #include <stdio.h>
+diff -urN vrrp_moncircuit.c src/vrrp_moncircuit.c
+--- vrrp_moncircuit.c	Thu Jan 30 11:50:56 2003
++++ src/vrrp_moncircuit.c	Mon Feb 23 16:17:12 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_moncircuit.c,v 1.2 2002/09/20 11:44:54 spe Exp $
++ * $Id: vrrp_moncircuit.c,v 1.2 2004/02/23 16:17:12 spe Exp $
+  */
+ 
+ #include <sys/types.h>
+@@ -90,6 +90,7 @@
+ 	int numvrid, numvrid2;
+ 	int cpt;
+ 	int sd;
++	int returnCode;
+ 
+ 	sd = socket(PF_INET, SOCK_DGRAM, 0);
+ 	if (sd < 0) {
+@@ -100,7 +101,10 @@
+ 	for (;;) {
+ 		numvrid = 0;
+ 		while (vr_ptr[numvrid]) {
+-			if ((vrrp_moncircuit_interface_status(sd, vr_ptr[numvrid]->vr_if->if_name) == 1) && (! vr_ptr[numvrid]->fault)) {
++			vrrp_thread_mutex_lock_monitor();
++			returnCode = vrrp_moncircuit_interface_status(sd, vr_ptr[numvrid]->vr_if->if_name);
++			vrrp_thread_mutex_unlock_monitor();
++			if ((returnCode == 1) && (! vr_ptr[numvrid]->fault)) {
+ 				if (vr_ptr[numvrid]->vr_if->nberrors < VRRP_MONCIRCUIT_MAX_ERRORS) {
+ 					if (! vr_ptr[numvrid]->vr_if->alive) {
+ 						vr_ptr[numvrid]->vr_if->alive = 1;
+diff -urN vrrp_moncircuit.h src/vrrp_moncircuit.h
+--- vrrp_moncircuit.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_moncircuit.h	Mon Feb 23 16:17:12 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_moncircuit.h,v 1.1 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_moncircuit.h,v 1.2 2004/02/23 16:17:12 spe Exp $
+  */
+ 
+ #ifndef _VRRP_MONCIRCUIT_H
+@@ -37,12 +37,14 @@
+ 
+ #include "vrrp_proto.h"
+ #include "vrrp_define.h"
++#include "vrrp_thread.h"
+ 
+ /* externals */
+ extern struct vrrp_vr *vr_ptr[VRRP_PROTOCOL_MAX_VRID];
+ extern u_char   vr_ptr_pos;
+ 
+ /* Functions */
+-void vrrp_moncircuit_monitor_thread(int **args);
++void vrrp_moncircuit_monitor_thread(int **);
++int vrrp_moncircuit_interface_status(int, char *);
+ 
+ #endif
+diff -urN vrrp_multicast.c src/vrrp_multicast.c
+--- vrrp_multicast.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_multicast.c	Sun Feb 15 12:55:26 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_multicast.c,v 1.1.1.1 2002/05/23 15:46:09 spe Exp $
++ * $Id: vrrp_multicast.c,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+  */
+ 
+ #include "vrrp_multicast.h"
+diff -urN vrrp_multicast.h src/vrrp_multicast.h
+--- vrrp_multicast.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_multicast.h	Mon Feb 23 16:20:14 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_multicast.h,v 1.1.1.1 2002/05/23 15:46:09 spe Exp $
++ * $Id: vrrp_multicast.h,v 1.2 2004/02/23 16:20:14 spe Exp $
+  */
+ 
+ #include <sys/types.h>
+@@ -40,7 +40,7 @@
+ #include <string.h>
+ #include <syslog.h>
+ #include <unistd.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
+diff -urN vrrp_network.c src/vrrp_network.c
+--- vrrp_network.c	Thu Jan 30 11:50:55 2003
++++ src/vrrp_network.c	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_network.c,v 1.4 2002/09/17 13:05:16 spe Exp $
++ * $Id: vrrp_network.c,v 1.5 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <errno.h>
+@@ -124,18 +124,18 @@
+ 	return 0;
+ }
+ 
+-int
++ssize_t
+ vrrp_network_send_packet(char *buffer, int sizebuf, int sd_bpf, int log)
+ {
+ 	/* struct sockaddr_in addr; */
+-	size_t          octets;
++	ssize_t          octets;
+ 
+ 	vrrp_thread_mutex_lock_bpf();
+ 	vrrp_network_flush_bpf(sd_bpf);
+ 	octets = write(sd_bpf, buffer, sizebuf);
+ 	vrrp_network_flush_bpf(sd_bpf);
+ 	vrrp_thread_mutex_unlock_bpf();
+-	if (octets == -1) {
++	if (octets < 0) {
+ 		if (log)
+ 			syslog(LOG_ERR, "can't write to bpf socket descriptor (pseudo_device bpf not activated in kernel ?)");
+ 		return -1;
+@@ -221,7 +221,7 @@
+ {
+ 	u_char         *buffer;
+ 	u_int           len = ETHER_HDR_LEN + sizeof(struct ip) + vrrp_network_vrrphdr_len(vr);
+-	int		error;
++	ssize_t		bytes = 0;
+ 
+ 	buffer = (u_char *) malloc(len);
+ 	bzero(buffer, len);
+@@ -230,17 +230,17 @@
+ 	vrrp_network_init_ethhdr(buffer, vr);
+ 	vrrp_network_init_vrrphdr(buffer, vr);
+ 
+-	error = vrrp_network_send_packet(buffer, len, vr->sd_bpf, ! vr->fault);
+-	if (error < 0) {
++	if (vr->fault)
++		bytes = vrrp_network_send_packet(buffer, len, vr->sd_bpf, 0);
++	else
++		bytes = vrrp_network_send_packet(buffer, len, vr->sd_bpf, 1);
++	if (bytes < 0) {
++		syslog(LOG_ERR, "There is a big problem here !");
+ 		vr->fault = 1;
+ 		free(buffer);
+ 		return -1;
+ 	}
+-	else {
+-		if (vr->fault)
+-			vr->fault = 0;
+-	}
+-
++	vr->fault = 0;
+ 	free(buffer);
+ 
+ 	return 0;
+@@ -335,7 +335,12 @@
+ 	bzero(&rtmsg, sizeof(rtmsg));
+ 	rtm.rtm_type = RTM_DELETE;
+ 	rtm.rtm_version = RTM_VERSION;
++#ifdef __FreeBSD__
+ 	rtm.rtm_flags = RTF_UP | RTF_HOST | RTF_LOCAL | RTF_WASCLONED;
++#endif
++#ifdef __NetBSD__
++	rtm.rtm_flags = RTF_UP | RTF_HOST | RTF_CLONED;
++#endif
+ 	rtm.rtm_addrs = RTA_DST;
+ 	rtm.rtm_msglen = sizeof(rtmsg);
+ 	rtmsg.addr.sin_len = sizeof(rtmsg.addr);
+diff -urN vrrp_network.h src/vrrp_network.h
+--- vrrp_network.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_network.h	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_network.h,v 1.1.1.1 2002/05/23 15:46:09 spe Exp $
++ * $Id: vrrp_network.h,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <sys/ioctl.h>
+@@ -38,8 +38,13 @@
+ #include <sys/socket.h>
+ #include <sys/uio.h>
+ #include <net/bpf.h>
+-#include <net/ethernet.h>
+ #include <net/if.h>
++#ifdef __FreeBSD__
++#include <net/ethernet.h>
++#endif
++#ifdef __NetBSD__
++#include <net/if_ether.h>
++#endif
+ #include <net/route.h>
+ #include <netinet/in_systm.h>
+ #include <netinet/in.h>
+@@ -52,10 +57,14 @@
+ #include <string.h>
+ #include <syslog.h>
+ #include <unistd.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
++
++#ifdef __NetBSD__
++#define octet ether_addr_octet
++#endif
+ 
+ struct arp_header {
+ 	u_short         ar_hrd;	/* format of hardware address */
+diff -urN vrrp_proto.h src/vrrp_proto.h
+--- vrrp_proto.h	Thu Jan 30 11:50:55 2003
++++ src/vrrp_proto.h	Tue Feb 24 11:55:51 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_proto.h,v 1.5 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_proto.h,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #ifndef _VRRP_PROTO_H
+@@ -38,7 +38,12 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <net/if.h>
++#ifdef __FreeBSD__
+ #include <net/ethernet.h>
++#endif
++#ifdef __NetBSD__
++#include <net/if_ether.h>
++#endif
+ #include <netinet/in.h>
+ #include "vrrp_define.h"
+ 
+@@ -73,6 +78,7 @@
+ 	struct ether_addr ethaddr;
+ 	struct ether_addr actualethaddr;
+ 	struct vrrp_ethaddr_list *p, *d;
++	int		carrier_timeout;
+ };
+ 
+ struct vrrp_vip {
+diff -urN vrrp_signal.c src/vrrp_signal.c
+--- vrrp_signal.c	Thu Jan 30 11:50:56 2003
++++ src/vrrp_signal.c	Sun Feb 15 12:55:26 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_signal.c,v 1.3 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_signal.c,v 1.1.1.1 2004/02/15 12:55:26 spe Exp $
+  */
+ 
+ #include <string.h>
+diff -urN vrrp_signal.h src/vrrp_signal.h
+--- vrrp_signal.h	Thu Jan 30 11:50:56 2003
++++ src/vrrp_signal.h	Tue Feb 24 11:55:51 2004
+@@ -29,16 +29,20 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_signal.h,v 1.1.1.1 2002/05/23 15:46:10 spe Exp $
++ * $Id: vrrp_signal.h,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <unistd.h>
+ #include <signal.h>
+ #include <stdlib.h>
+ #include <syslog.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
++
++#ifdef __NetBSD__
++#define octet ether_addr_octet
++#endif
+ 
+ extern struct vrrp_vr *vr_ptr[VRRP_PROTOCOL_MAX_VRID];
+diff -urN vrrp_state.c src/vrrp_state.c
+--- vrrp_state.c	Fri May  9 10:29:11 2003
++++ src/vrrp_state.c	Mon Feb 23 16:17:12 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_state.c,v 1.6 2002/09/17 13:05:16 spe Exp $
++ * $Id: vrrp_state.c,v 1.2 2004/02/23 16:17:12 spe Exp $
+  */
+ 
+ #include <stdlib.h>
+@@ -51,11 +51,15 @@
+ char 
+ vrrp_state_set_master(struct vrrp_vr * vr)
+ {
++	int returnCode = 0;
++	int counter = 0;
++
+ 	/* Tester si sd_bpf n'est pas egal a -1 */
+ 
+ 	vrrp_list_add(vr, &vr->ethaddr);
+ 	vrrp_network_send_advertisement(vr);
+ 	vrrp_thread_mutex_lock();
++	vrrp_thread_mutex_lock_monitor();
+ 	if (vrrp_interface_down(vr->vr_if->if_name) == -1) {
+ 		vrrp_thread_mutex_unlock();
+ 		return -1;
+@@ -73,9 +77,18 @@
+ 		vrrp_thread_mutex_unlock();
+ 		return -1;
+ 	}
+-	vrrp_thread_mutex_unlock();
++
++	/* Some NICs will reset (eg: bge/em) and wait some seconds before becoming carrier again */
++	/* So we must wait for carrier */
++	for (counter = 0; (counter < vr->vr_if->carrier_timeout) && (returnCode != 1); counter++) {
++		returnCode = vrrp_moncircuit_interface_status(vr->sd, vr->vr_if->if_name);
++		sleep(1);
++	}
++
++	vrrp_thread_mutex_unlock_monitor();
+ 	if (vrrp_network_send_gratuitous_arp_ips(vr, &vr->ethaddr) == -1)
+ 		return -1;
++	vrrp_thread_mutex_unlock();
+ 	if (vrrp_misc_calcul_tminterval(&vr->tm.adv_tm, vr->adv_int) == -1)
+ 		return -1;
+ 	vr->state = VRRP_STATE_MASTER;
+@@ -95,10 +108,13 @@
+ vrrp_state_set_backup(struct vrrp_vr * vr)
+ {
+ 	struct ether_addr ethaddr;
++	int returnCode = 0;
++	int counter = 0;
+ 
+ 	vrrp_thread_mutex_lock();
+ 	vrrp_interface_vripaddr_delete(vr);
+ 	ethaddr = vrrp_list_get_last(vr);
++	vrrp_thread_mutex_lock_monitor();
+ 	if (vrrp_interface_down(vr->vr_if->if_name) == -1) {
+ 		vrrp_thread_mutex_unlock();
+ 		return -1;
+@@ -112,6 +128,15 @@
+ 		vrrp_thread_mutex_unlock();
+ 		return -1;
+ 	}
++
++	/* Some NICs will reset (eg: bge/em) and wait some seconds before becoming carrier again */
++	/* So we must wait for carrier */
++	for (counter = 0; (counter < vr->vr_if->carrier_timeout) && (returnCode != 1); counter++) {
++		returnCode = vrrp_moncircuit_interface_status(vr->sd, vr->vr_if->if_name);
++		sleep(1);
++	}
++	vrrp_thread_mutex_unlock_monitor();
++
+ 	if (vrrp_network_send_gratuitous_arp_ips(vr, &ethaddr) == -1)
+ 		return -1;
+ 	vrrp_thread_mutex_unlock();
+diff -urN vrrp_state.h src/vrrp_state.h
+--- vrrp_state.h	Thu Jan 30 11:50:56 2003
++++ src/vrrp_state.h	Mon Feb 23 16:20:14 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_state.h,v 1.1.1.1 2002/05/23 15:46:10 spe Exp $
++ * $Id: vrrp_state.h,v 1.3 2004/02/23 16:20:14 spe Exp $
+  */
+ 
+ #include <sys/types.h>
+@@ -45,7 +45,9 @@
+ #include <string.h>
+ #include <syslog.h>
+ #include <unistd.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
++#include "vrrp_moncircuit.h"
++#include "vrrp_thread.h"
+diff -urN vrrp_thread.c src/vrrp_thread.c
+--- vrrp_thread.c	Thu Jan 30 11:50:56 2003
++++ src/vrrp_thread.c	Tue Feb 24 11:55:51 2004
+@@ -29,14 +29,14 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_thread.c,v 1.2 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_thread.c,v 1.3 2004/02/24 11:55:51 spe Exp $
+  */
+ 
+ #include <stdlib.h>
+ #include "vrrp_thread.h"
+ #include "vrrp_moncircuit.h"
+ 
+-pthread_mutex_t pth_mutex, pth_mutex_bpf;
++pthread_mutex_t pth_mutex, pth_mutex_bpf, pth_mutex_monitor;
+ 
+ void 
+ vrrp_thread_mutex_lock(void)
+@@ -70,8 +70,22 @@
+ 	return;
+ }
+ 
++void vrrp_thread_mutex_lock_monitor(void)
++{
++	pthread_mutex_lock(&pth_mutex_monitor);
++
++	return;
++}
++
++void vrrp_thread_mutex_unlock_monitor(void)
++{
++	pthread_mutex_unlock(&pth_mutex_monitor);
++
++	return;
++}
++
+ void 
+-vrrp_thread_launch_vrrprouter(int *args)
++vrrp_thread_launch_vrrprouter(void *args[2])
+ {
+ 	struct vrrp_vr *vr = (struct vrrp_vr *)args[0];
+ 	sem_t *sem = (sem_t *)args[1];
+@@ -116,9 +130,9 @@
+ vrrp_thread_create_vrid(struct vrrp_vr * vr)
+ {
+ 	pthread_t       pth;
+-	pthread_attr_t  pth_attr = NULL;
++	pthread_attr_t  pth_attr;
+ 	sem_t		sem;
+-	int		*args[2];
++	void		*args[2];
+ 
+         if (sem_init(&sem, 0, 0) == -1) {
+ 		syslog(LOG_ERR, "can't initialize an unnamed semaphore [ SEM, 0, 0 ]");
+@@ -132,8 +146,8 @@
+ 		syslog(LOG_ERR, "can't set thread attributes [ PTH_ATTR, PTHREAD_CREATE_DETACHED ]");
+ 		return -1;
+ 	}
+-	args[0] = (int *)vr;
+-	args[1] = (int *)&sem;
++	args[0] = vr;
++	args[1] = &sem;
+ 	if (pthread_create(&pth, &pth_attr, (void *)&vrrp_thread_launch_vrrprouter, args) != 0) {
+ 		syslog(LOG_ERR, "can't create new thread [ PTH, PTH_ATTR, VRRP_THREAD_READ_SOCKET ]");
+ 		return -1;
+@@ -147,10 +161,10 @@
+ int vrrp_thread_create_moncircuit(void)
+ {
+ 	pthread_t	pth;
+-	pthread_attr_t	pth_attr = NULL;
++	pthread_attr_t	pth_attr;
+ 	sem_t		sem;
+ 	int		delay = VRRP_MONCIRCUIT_MONDELAY;
+-	int		*args[2];
++	void		*args[2];
+ 
+ 	if (sem_init(&sem, 0, 0) == -1) {
+ 		syslog(LOG_ERR, "can't initialize an unnamed semaphore [ SEM, 0, 0 ]");
+@@ -164,8 +178,8 @@
+ 		syslog(LOG_ERR, "can't set thread attributes [ PTH_ATTR, PTHREAD_CREATE_DETACHED ]");
+ 		return -1;
+ 	}
+-	args[0] = (int *)&delay;
+-	args[1] = (int *)&sem;
++	args[0] = &delay;
++	args[1] = &sem;
+ 	if (pthread_create(&pth, &pth_attr, (void *)&vrrp_moncircuit_monitor_thread, args) != 0) {
+ 		syslog(LOG_ERR, "can't create new thread [ PTH, PTH_ATTR, VRRP_THREAD_READ_SOCKET ]");
+ 		return -1;
+diff -urN vrrp_thread.h src/vrrp_thread.h
+--- vrrp_thread.h	Thu Jan 30 11:50:56 2003
++++ src/vrrp_thread.h	Mon Feb 23 16:17:12 2004
+@@ -29,7 +29,7 @@
+  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+  * SUCH DAMAGE.
+  *
+- * $Id: vrrp_thread.h,v 1.2 2002/09/17 12:51:48 spe Exp $
++ * $Id: vrrp_thread.h,v 1.2 2004/02/23 16:17:12 spe Exp $
+  */
+ 
+ #ifndef _VRRP_THREAD_H
+@@ -39,12 +39,13 @@
+ #include <semaphore.h>
+ #include <stdio.h>
+ #include <syslog.h>
+-#include <varargs.h>
+ #include "vrrp_define.h"
+ #include "vrrp_proto.h"
+ #include "vrrp_functions.h"
+ 
+ /* Functions */
+ int vrrp_thread_create_moncircuit(void);
++void vrrp_thread_mutex_lock_monitor(void);
++void vrrp_thread_mutex_unlock_monitor(void);
+ 
+ #endif
