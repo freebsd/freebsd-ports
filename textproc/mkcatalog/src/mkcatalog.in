@@ -1,0 +1,116 @@
+#!/bin/sh
+#
+# mkcatalog - script for making sgml catalog file.
+#
+# Created:  20001015  Shigeyuki Fukushima <shige@FreeBSD.org>.
+# Modified: 20001019  Hiroki Sato <hrs@FreeBSD.org>.
+#
+# $FreeBSD$
+#
+
+PREFIX=@@PREFIX@@
+CAT_DIR=${PREFIX}/share/sgml
+TMPDIR=/tmp
+
+F_PRESERVE_OLD=""
+F_QUIET=""
+args=`getopt pq $*` ; set -- $args
+for i
+do
+    case "$i" in
+    -p) F_PRESERVE_OLD=1; shift ;;
+    -q) F_QUIET=1; shift ;;
+    --) shift; break ;;
+    esac
+done
+
+[ "x${F_QUIET}" != "x" ] && exec 1> /dev/null 2>&1
+
+dtd_install=$1
+dtd_dir=$2
+[ x"$3" != "x" ] && dtd_catalog=`basename "$3"` || dtd_catalog=''
+
+### option check
+case "${dtd_install}" in
+install|deinstall)
+    if [ -d "${CAT_DIR}/${dtd_dir}" -o -d "${dtd_dir}" ]; then
+        dtd_dir=`exec 2>/dev/null; cd ${CAT_DIR}/${dtd_dir} || cd ${dtd_dir}; pwd`
+        case "${dtd_dir}" in
+            ${CAT_DIR}/*) ;;
+            *)  echo "`basename $0`: DTD directory \"${dtd_dir}\" is invalid."
+                exit 1 ;;
+            esac
+    else
+        echo "`basename $0`: DTD directory \"${dtd_dir}\" not found."
+        exit 1
+    fi
+    ### normalize dtd_dir
+    dtd_dir=${dtd_dir#"${CAT_DIR}/"}
+    ;;
+*)
+    echo "`basename $0`: missig options."
+    echo "usage: `basename $0` [-pq] [install|deinstall] dtd-directory-name [catalog-filename]."
+    exit 1
+esac
+
+echo "${dtd_install} catalog for \"${dtd_dir}\""
+TMPCAT=/tmp/catalog.$$
+
+proc_catalog () {
+    catalog_high=${1:-${CAT_DIR}/catalog}
+    catalog_low=${2:-${dtd_name}/catalog}
+    cat_line="CATALOG \"${catalog_low}\""
+    abs_path_head=${catalog_high%/catalog}
+
+    touch ${catalog_high} || exit 1
+    grep -v "CATALOG \"\(${abs_path_head}/\)\?${catalog_low}\"" ${catalog_high} > ${TMPCAT}
+
+    ### preserve old catalog
+    if [ "x${F_PRESERVE_OLD}" != "x" ]; then
+        cp ${catalog_high} ${catalog_high}.old || exit 1
+    fi
+
+    case "${dtd_install}" in
+    install)
+            echo " * add ${cat_line} line to ${catalog_high}"
+            echo "${cat_line}" >> ${TMPCAT}
+            cp ${TMPCAT} ${catalog_high} || exit 1
+            ;;
+    deinstall)
+            echo " * delete ${cat_line} line from ${catalog_high}"
+            if [ ! -s ${TMPCAT} ]; then
+                echo " * delete empty catalog ${catalog_high}"
+                rm -f ${catalog_high}
+            else
+                cp ${TMPCAT} ${catalog_high} || exit 1
+            fi
+            ;;
+    esac
+
+    if [ "x${F_PRESERVE_OLD}" != "x" ] && \
+       cmp -s ${catalog_high}.old ${catalog_high}; then
+        rm -f ${catalog_high}.old
+    fi
+    rm -f ${TMPCAT}
+}
+
+IFS=" /"; set -- ${dtd_dir}
+dtd_name=$1
+dtd_list="$*"
+IFS=" "
+n_dtd_list=$#
+counter=0
+
+for i in ${dtd_list}
+do
+    counter=`expr ${counter} + 1`
+    cat_high_dir=${CAT_DIR}${dtd_base}
+
+    if [ ${counter} -ne ${n_dtd_list} ]; then
+        proc_catalog ${cat_high_dir}/catalog ${i}/catalog
+    else
+        proc_catalog ${cat_high_dir}/catalog ${i}/${dtd_catalog:-catalog}
+    fi
+
+    dtd_base=${dtd_base}/$i
+done

@@ -58,6 +58,7 @@
     SUBDIR += lotusxsl
     SUBDIR += man2html
     SUBDIR += mgdiff
+    SUBDIR += mkcatalog
     SUBDIR += mswordview
     SUBDIR += nfbtrans
     SUBDIR += nicetext
