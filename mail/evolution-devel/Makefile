@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-nss-libs=${LOCALBASE}/lib
 #		--with-openldap=${LOCALBASE}
 .if !defined(WITHOUT_PILOT)
-CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE}/pilot \
+CONFIGURE_ARGS+=	--with-pisock=${LOCALBASE} \
 			--enable-pilot-conduits=yes
 PLIST_SUB=	PILOT:=""
 .else
