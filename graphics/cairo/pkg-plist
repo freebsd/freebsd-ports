@@ -4,7 +4,7 @@ include/cairo/cairo-ft.h
 include/cairo/cairo-pdf.h
 include/cairo/cairo-png.h
 include/cairo/cairo-ps.h
-include/cairo/cairo-xlib.h
+%%X11%%include/cairo/cairo-xlib.h
 include/cairo/cairo.h
 lib/libcairo.a
 lib/libcairo.so
