@@ -1,3 +1,5 @@
+include/python1.5/arrayobject.h
+include/python1.5/ufuncobject.h
 lib/python1.5/site-packages/_numpymodule.so
 lib/python1.5/site-packages/fast_umathmodule.so
 lib/python1.5/site-packages/fftpack.so
