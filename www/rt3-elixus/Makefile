@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	7717
+PORTVERSION=	8352
 PORTREVISION=	0
 MASTER_SITES=	http://p4.elixus.org/hist/
 PKGNAMESUFFIX=	-elixus
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTabl
 MASTERDIR=	${.CURDIR}/../../www/rt3
 MD5_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/rt
 
 .include "${MASTERDIR}/Makefile"
