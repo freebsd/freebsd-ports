@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -119,12 +119,12 @@ post-install:
 	@${ECHO_MSG} ">> Installing moduli."
 	${INSTALL_DATA} -c ${FILESDIR}/moduli ${PREFIX}/etc/moduli
 .endif
-.if !exists(${PREFIX}/etc/rc.d/sshd.sh)
-	@${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/sshd.sh.sample
+	${INSTALL_DATA} -c ${WRKSRC}/ssh_config ${PREFIX}/etc/ssh_config-dist
+	${INSTALL_DATA} -c ${WRKSRC}/sshd_config ${PREFIX}/etc/sshd_config-dist
 .if !exists(${PREFIX}/etc/ssh_config) && !exists(${PREFIX}/etc/sshd_config)
-	@cd ${WRKSRC}; \
-	${MAKE} DESTDIR=${PREFIX} distribution
+	${INSTALL_DATA} -c ${WRKSRC}/ssh_config ${PREFIX}/etc/ssh_config
+	${INSTALL_DATA} -c ${WRKSRC}/sshd_config ${PREFIX}/etc/sshd_config
 .else
 	@${ECHO_MSG} ">> ${PREFIX}/etc/ssh{,d}_config exists, not being replaced!"
 	@${ECHO_MSG} ">> If this is left over from another version of SSH, you will"
