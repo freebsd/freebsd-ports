@@ -80,6 +80,7 @@
     SUBDIR += gkrellscore
     SUBDIR += gkrellweather
     SUBDIR += gman
+    SUBDIR += gnomemimedata
     SUBDIR += gnomepm
     SUBDIR += gnomeuserdocs
     SUBDIR += gnomeutils

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/01/22 10:16:10	1.1
++++ Makefile.in	2002/01/22 10:16:42
+@@ -94,7 +94,7 @@
+ 
+ SUBDIRS = po
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gnome-mime-data-2.0.pc
+ 
+ NULL = 

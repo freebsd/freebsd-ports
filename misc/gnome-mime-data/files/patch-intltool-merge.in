@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- intltool-merge.in	2002/01/22 10:08:56	1.1
++++ intltool-merge.in	2002/01/22 10:09:15
+@@ -232,7 +232,7 @@
+ 
+         if ($UTF8_ARG) {
+             my $encoding = get_po_encoding($po_file);
+-            open PO_FILE, "iconv -f $encoding -t UTF-8 $po_file|";	
++            open PO_FILE, "giconv -f $encoding -t UTF-8 $po_file|";	
+         } else {
+             open PO_FILE, "<$po_file";	
+         }
