@@ -1,0 +1,45 @@
+              PHYLIP - Phylogeny Inference Package (version 3.5)
+
+     This is a FREE package of programs for inferring phylogenies and  carrying
+out certain related tasks.  At present it contains 30 programs, which carry out
+different algorithms on different kinds of data.  The programs in  the  package
+are:
+      ---------- Programs for molecular sequence data ----------
+  PROTPARS  Protein parsimony          DNAPARS   Parsimony method for DNA
+  DNAMOVE   Interactive DNA parsimony  DNAPENNY  Branch and bound for DNA
+  DNACOMP   Compatibility for DNA      DNAINVAR  Phylogenetic invariants
+  DNAML     Maximum likelihood method  DNAMLK    DNA ML with molecular clock
+  DNADIST   Distances from sequences   PROTDIST  Distances from proteins
+  RESTML    ML for restriction sites   SEQBOOT   Bootstraps sequence data sets
+      ----------- Programs for distance matrix data ------------
+  FITCH     Fitch-Margoliash and least-squares methods
+  KITSCH    Fitch-Margoliash and least squares methods with evolutionary clock
+  NEIGHBOR  Neighbor-joining and UPGMA methods
+      -------- Programs for gene frequencies and continuous characters -------
+  CONTML    Maximum likelihood method  GENDIST  Computes genetic distances
+  CONTRAST  Computes contrasts and correlations for comparative method studies
+      ------------- Programs for 0-1 discrete state data -----------
+  MIX       Wagner, Camin-Sokal, and mixed parsimony criteria
+  MOVE      Interactive Wagner, C-S, mixed parsimony program
+  PENNY     Finds all most parsimonious trees by branch-and-bound
+  DOLLOP, DOLMOVE, DOLPENNY   same as preceding four programs, but for
+     the Dollo and polymorphism parsimony criteria
+  CLIQUE    Compatibility method       FACTOR    recode multistate characters
+      ---------- Programs for plotting trees and consensus trees -------
+  DRAWGRAM  Draws cladograms and phenograms on screens, plotters and printers
+  DRAWTREE  Draws unrooted phylogenies on screens, plotters and printers
+  CONSENSE  Majority-rule and strict consensus trees
+  RETREE    Reroots, changes names and branch lengths, and flips trees
+
+There is also an Unsupported Division  containing  two  programs,  makeinf  and
+ProtML, which were contributed by others and are maintained by their authors.
+
+The package includes extensive documentation files that provide the information
+necessary to use and modify the programs.
+
+                             Joe Felsenstein
+                             joe@genetics.washington.edu
+                             Department of Genetics
+                             University of Washington
+                             Box 357360
+                             Seattle, Washington 98195-7360, U.S.A.
