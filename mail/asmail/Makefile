@@ -6,32 +6,34 @@
 #
 
 PORTNAME=	asmail
-PORTVERSION= 	0.54
+PORTVERSION=	0.56
 CATEGORIES=	mail afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asmail/ \
-		ftp://ftp.afterstep.org/apps/asmail/
+MASTER_SITES=	http://asmail.sourceforge.net/files/ \
+		ftp://gates.enemy.at/pub/
 
 MAINTAINER=	brett@peloton.runet.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shaping
 
 MAN1=	asmail.1
 
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sample.asmailrc
+
 post-install:
+	${INSTALL_MAN} ${WRKSRC}/asmail.man ${PREFIX}/man/man1/asmail.1
 	@${MKDIR} ${PREFIX}/include/X11/pixmaps/cloud-e
-	@${INSTALL_DATA} ${WRKSRC}/pixmaps/cloud-e/*.xpm ${PREFIX}/include/X11/pixmaps/cloud-e
-	@${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/include/X11/pixmaps
-	@${INSTALL_MAN} ${WRKSRC}/asmail.man ${PREFIX}/man/man1/asmail.1
-	@${MKDIR} ${PREFIX}/share/doc/asmail
-	@${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/doc/asmail
-	@strip ${PREFIX}/bin/asmail
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/cloud-e/*.xpm ${PREFIX}/include/X11/pixmaps/cloud-e
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/include/X11/pixmaps
+	@${MKDIR} ${PREFIX}/share/examples/asmail
+	${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/examples/asmail
 .if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/asmail
-	@${ECHO} "===>   README installed in ${PREFIX}/share/doc/asmail"
+	@${MKDIR} ${PREFIX}/share/doc/asmail
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/asmail
 .endif
 
 .include <bsd.port.mk>
