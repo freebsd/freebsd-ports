@@ -78,4 +78,7 @@ do-install:
 validate:
 	@${SH} ${FILESDIR}/validate.sh "${VUXML_FILE}"
 
+tidy:
+	@${SH} ${FILESDIR}/tidy.sh "${FILESDIR}/tidy.xsl" "${VUXML_FILE}"
+
 .include <bsd.port.mk>
