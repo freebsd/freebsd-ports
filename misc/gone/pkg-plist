@@ -1,2 +1,3 @@
+@cwd /usr/local
 bin/gone
 man/man1/gone.1.gz
