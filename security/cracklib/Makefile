@@ -9,9 +9,8 @@ PORTNAME=	cracklib
 PORTVERSION=	2.7
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://www.users.dircon.co.uk/~crypto/download/
+MASTER_SITES=	http://www.crypticide.org/users/alecm/security/
 DISTNAME=	${PORTNAME},${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ajk@iu.edu
 COMMENT=	Password-checking library
