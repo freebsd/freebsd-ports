@@ -540,6 +540,7 @@ avr-binutils	ports/devel/avr-binutils
 avr-gcc		ports/devel/avr-gcc
 avr-gdb		ports/devel/avr-gdb
 avr-libc	ports/devel/avr-libc
+avra		ports/devel/avra
 avrdude		ports/devel/avrdude
 awele		ports/games/awele
 awka		ports/lang/awka
