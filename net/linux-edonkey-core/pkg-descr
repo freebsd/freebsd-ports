@@ -1,0 +1,10 @@
+The eDonkey2000 'core' is the actual edonkey program which does
+everything behind the scenes - connecting to servers, searching,
+downloading, uploading, all that stuff.
+
+The 'core' comes with a very simple text interface (=command line
+client), where you can tell it what to do by typing in commands.
+
+Check http://www.edonkey2000.com/ and the WWW site below.
+
+WWW: http://users.aber.ac.uk/tpm01/guihome.html
