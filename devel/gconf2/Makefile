@@ -40,4 +40,9 @@ pre-patch:
 		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
+post-install:
+	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/apps
+	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/schemas/apps
+	@${MKDIR} ${PREFIX}/etc/gconf/schemas
+
 .include <bsd.port.mk>
