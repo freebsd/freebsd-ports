@@ -663,7 +663,7 @@ LIB_DEPENDS+=	qt.2:${PORTSDIR}/x11-toolkits/qt142
 .endif
 
 .if defined(USE_QT2)
-LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt2
+LIB_DEPENDS+=	qt2.2:${PORTSDIR}/x11-toolkits/qt201
 USE_NEWGCC=	yes
 .endif
 
@@ -2379,7 +2379,7 @@ package-depends:
 
 .if !target(describe)
 describe:
-	@perl -e ' \
+	@${ECHO} `perl -e ' \
 		print "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
 		if (open (COMMENT, "${COMMENT}")) { \
 			$$_ = <COMMENT>; \
@@ -2449,7 +2449,7 @@ describe:
 				print $$_[1]; \
 			} \
 		} \
-		print "\n";'
+		print "\n";'`
 .endif
 
 www-site:
@@ -2549,10 +2549,10 @@ ${TMPPLIST}:
 compress-man:
 .if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-	@[ "${_MANPAGES}" != "" ] && ${GUNZIP_CMD} ${_MANPAGES} || ${TRUE}
+	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GUNZIP_CMD} $${_manpages} ) || ${TRUE}
 .elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-	@[ "${_MANPAGES}" != "" ] && ${GZIP_CMD} ${_MANPAGES} || ${TRUE}
+	@_manpages='${_MANPAGES:S/'/'\''/g}' && [ "$${_manpages}" != "" ] && ( eval ${GZIP_CMD} $${_manpages} ) || ${TRUE}
 .endif
 .if defined(_MLINKS)
 	@set ${_MLINKS:S,"",,g:S,//,/,g}; \
