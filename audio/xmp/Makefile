@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 WANT_GNOME=	yes
