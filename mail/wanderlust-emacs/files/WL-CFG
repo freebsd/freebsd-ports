@@ -1,2 +1,0 @@
-(setq wl-install-utils t)
-(setq wl-install-sasl t)

@@ -7,12 +7,10 @@
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
+MASTERDIR=	${.CURDIR}/../../mail/wanderlust
 
 EMACS_PORT_NAME=	xemacs21-mule
 EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 MANIFEST=		MANIFEST.wl
-
-IS_SLAVE=		yes
 
 .include <${MASTERDIR}/Makefile>

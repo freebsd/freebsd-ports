@@ -1,2 +1,2 @@
 (setq wl-install-utils t)
-(setq wl-install-sasl t)
+(setq wl-info-lang (list "en" "ja"))
