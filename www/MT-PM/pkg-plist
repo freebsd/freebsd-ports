@@ -1,0 +1,20 @@
+%%CGIDIR%%/mt-pm.cgi
+%%CGIDIR%%/extlib/MT/Plugins/Manager.pm
+@dirrm %%CGIDIR%%/extlib/MT/Plugins
+%%CGIDIR%%/tmpl/plugins/bottom.tmpl
+%%CGIDIR%%/tmpl/plugins/copyright.tmpl
+%%CGIDIR%%/tmpl/plugins/error.tmpl
+%%CGIDIR%%/tmpl/plugins/info.tmpl
+%%CGIDIR%%/tmpl/plugins/list_plugins.tmpl
+%%CGIDIR%%/tmpl/plugins/login.tmpl
+%%CGIDIR%%/tmpl/plugins/logonav.tmpl
+%%CGIDIR%%/tmpl/plugins/manual_install.tmpl
+%%CGIDIR%%/tmpl/plugins/requirements.tmpl
+%%CGIDIR%%/tmpl/plugins/sidebar.tmpl
+%%CGIDIR%%/tmpl/plugins/top.tmpl
+@dirrm %%CGIDIR%%/tmpl/plugins
+%%DATADIR%%/styles-pm.css
+%%DATADIR%%/images/dot.gif
+%%CGIDIR%%/plugins/plugins.xml
+@dirrm %%CGIDIR%%/plugins/docs
+@dirrm %%CGIDIR%%/plugins/manager-cache
