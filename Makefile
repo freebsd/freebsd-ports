@@ -19,6 +19,7 @@ SUBDIR += ftp
 SUBDIR += games
 SUBDIR += german
 SUBDIR += graphics
+SUBDIR += hebrew
 SUBDIR += irc
 SUBDIR += japanese
 SUBDIR += java
