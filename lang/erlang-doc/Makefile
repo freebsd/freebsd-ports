@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang-doc
 PORTVERSION=	9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.erlang.org/doc/r9b/pdf/ \
 		http://erlang.org/download/
