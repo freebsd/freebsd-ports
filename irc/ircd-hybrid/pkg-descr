@@ -1,6 +1,8 @@
-Irc is a functional replacement for and improvement to talk(1).  Talk
+IRC is a functional replacement for and improvement to talk(1).  Talk
 is an old, primitive, atrocious, minimalist sort of keyboard/screen
 conversation tool, using a grotesque, machine-dependent protocol.
-Irc does everything talk does, but with a better protocol, allowing
+IRC does everything talk does, but with a better protocol, allowing
 more than 2 users to talk at once, with access across the aggregate
 Internet, and providing a whole raft of other useful features.
+
+ftp://ftp.blackened.com/pub/irc/hybrid/

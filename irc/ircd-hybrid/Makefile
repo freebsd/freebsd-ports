@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ircd-hybrid
-# Version required:	5.3p2
+# Version required:	5.3p4
 # Date created:		9 January 1998
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.7 1998/08/30 18:35:41 steve Exp $
+# $Id: Makefile,v 1.8 1998/11/16 21:44:58 billf Exp $
 #
 
-DISTNAME=	ircd-hybrid-5.3p2
+DISTNAME=	ircd-hybrid-5.3p4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/hybrid/
 
