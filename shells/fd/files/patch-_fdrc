@@ -1,5 +1,5 @@
---- _fdrc.orig	Mon Jun 10 00:00:00 2002
-+++ _fdrc	Sun Aug 11 22:18:20 2002
+--- _fdrc.orig	Wed Jul 10 00:00:00 2002
++++ _fdrc	Mon Sep 16 05:39:03 2002
 @@ -13,2 +13,3 @@
  #SORTTYPE=0
 +FD_SORTTYPE=101
@@ -8,38 +8,50 @@
  #SORTTREE=0
 +FD_SORTTREE=1
  
-@@ -50,2 +52,3 @@
+@@ -35,2 +37,3 @@
+ #WRITEFS=0
++FD_WRITEFS=1
+ 
+@@ -45,2 +48,3 @@
+ #INHERITCOPY=0
++FD_INHERITCOPY=1
+ 
+@@ -50,2 +54,3 @@
  #ADJTTY=0
 +FD_ADJTTY=1
  
-@@ -62,2 +65,3 @@
+@@ -62,2 +67,3 @@
  #DEFCOLUMNS=2
 +FD_DEFCOLUMNS=1
  
-@@ -104,2 +108,3 @@
+@@ -104,2 +110,3 @@
  #ANSICOLOR=0
 +FD_ANSICOLOR=1
  
-@@ -144,2 +149,3 @@
+@@ -144,2 +151,3 @@
  #LANGUAGE=$LANG
 +FD_LANGUAGE=$LANG
  
-@@ -215,2 +221,3 @@
+@@ -215,2 +223,3 @@
  #PAGER=more%K
 +FD_PAGER=${PAGER:-/usr/bin/more}%K
  #EDITOR=vi
-@@ -222,2 +229,34 @@
+@@ -222,2 +231,38 @@
  # launcher definition
 +tar="tar"
 +tar_format="%a %u/%g %s %m %d %t %y %f"
 +
-+launch ".tar"		"$tar tvf"		"$tar_format"
++launch "/.tar"		"$tar tvf"		"$tar_format"
 +
-+for ext in .tar.Z .taZ .tar.gz .tgz .taz; do
++for ext in .tar.Z .taZ .TAZ; do
++  launch "$ext"		"$tar Ztvf %C"		"$tar_format"
++done
++
++for ext in .tar.gz /.tgz .taz; do
 +  launch "$ext"		"$tar ztvf %C"		"$tar_format"
 +done
 +
-+for ext in .tar.bz2 .tbz2 .tbz; do
++for ext in .tar.bz2 .tbz2 /.tbz; do
 +  launch "$ext"		"$tar jtvf %C"		"$tar_format"
 +done
 +
@@ -49,45 +61,47 @@
 +  launch "$ext"	"unzip -lqq"		"%s %m-%d-%y %t %f"
 +done
 +
-+for ext in .Z .gz; do
++for ext in .Z /.gz; do
 +  launch "$ext"	"zcat %C | $PAGER"
 +done
 +
-+launch ".bz2"		"bzip2 -cd %C | $PAGER"
++launch "/.bz2"		"bzip2 -cd %C | $PAGER"
 +
 +# RCS/CVS files
 +launch ",v"		"rlog %C | $PAGER"
 +
 +# distribution files
-+launch	".aa"	"cat %X.?? | $tar tvfz -"	"$tar_format"
-+arch	".aa"	"echo ERROR"			"cat %X.?? | $tar zxf - %TA"
++launch	"/.aa"	"cat %X.?? | $tar tvfz -"	"$tar_format"
++arch	"/.aa"	"echo ERROR"			"cat %X.?? | $tar zxf - %TA"
 +
  #(Default)
-@@ -325,2 +364,37 @@
+@@ -325,2 +370,39 @@
  # archiver definition
 +
-+arch	".tar"	"$tar cf %C %T"			"$tar xf %C %TA"
++for ext in /.tar; do
++  arch	"$ext"	"$tar cf %C %T"			"$tar xf %C %TA"
++done
 +
-+for ext in .tar.Z .taZ; do
++for ext in .tar.Z .taZ .TAZ; do
 +  arch	"$ext"	"$tar Zcf %C %T"		"$tar Zxf %C %TA"
 +done
 +
-+for ext in .tar.gz .tgz .taz; do
++for ext in .tar.gz /.tgz .taz; do
 +  arch	"$ext"	"$tar cf - %T | gzip -9c > %C"	"$tar zxf %C %TA"
 +done
 +
-+for ext in .tar.bz2 .tbz2 .tbz; do
++for ext in .tar.bz2 .tbz2 /.tbz; do
 +  arch	"$ext"	"$tar cf - %T | bzip2 -9c > %C"	"$tar jxf %C %TA"
 +done
 +
 +arch	".Z"	"compress %M"			"uncompress %C"
-+arch	".gz"	"gzip -9 %M"			"gzip -d %C"
-+arch	".bz2"	"bzip2 -9 %M"			"bzip2 -d %C"
++arch	"/.gz"	"gzip -9 %M"			"gzip -d %C"
++arch	"/.bz2"	"bzip2 -9 %M"			"bzip2 -d %C"
 +
 +arch	"/.lzh"	"lha aq %C %TA"			"lha xq %C %TA"
 +
 +for ext in /.zip /.jar; do
-+  arch	"$ext"	"zip -q %C %TA"			"unzip -q %C %TA"
++  arch	"$ext"	"zip -qr %C %TA"		"unzip -q %C %TA"
 +done
 +
 +_uuencode() {
@@ -101,3 +115,9 @@
 +arch	".uu"  "_uuencode %C %TA"		"uudecode -ic < %C"
 +
  #(Default)
+@@ -387 +469,5 @@
+ #keymap DEL	"\033[3~"
++
++if [ -f /etc/fd2rc.local ]; then
++	source /etc/fd2rc.local
++fi
