@@ -111,6 +111,7 @@
     SUBDIR += cdk
     SUBDIR += cdoc
     SUBDIR += cedet
+    SUBDIR += cedet-emacs20
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += chora
