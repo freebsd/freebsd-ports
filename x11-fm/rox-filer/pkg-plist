@@ -2,7 +2,7 @@ apps/ROX-Filer/.DirIcon
 apps/ROX-Filer/Action.png
 apps/ROX-Filer/AppInfo.xml
 apps/ROX-Filer/AppRun
-apps/ROX-Filer/FreeBSD-ix86/ROX-Filer
+apps/ROX-Filer/%%BINARIES%%/ROX-Filer
 apps/ROX-Filer/Help/COPYING
 apps/ROX-Filer/Help/Changes
 apps/ROX-Filer/Help/Manual-fr.html
@@ -84,7 +84,7 @@ share/Choices/MIME-types/text
 @dirrm apps/ROX-Filer/images
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
-@dirrm apps/ROX-Filer/FreeBSD-ix86
+@dirrm apps/ROX-Filer/%%BINARIES%%
 @dirrm apps/ROX-Filer
 @unexec rmdir %D/share/mime/mime-info 2>/dev/null || true
 @unexec rmdir %D/share/mime 2>/dev/null || true
