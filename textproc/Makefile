@@ -119,6 +119,7 @@
     SUBDIR += htmldoc
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
+    SUBDIR += iiimf-protocol-lib
     SUBDIR += info2html
     SUBDIR += info_to_html
     SUBDIR += intltool
