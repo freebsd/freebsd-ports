@@ -5,56 +5,55 @@
 # $FreeBSD$
 #
 
-PORTNAME=		pavuk
-PORTVERSION=		0.9.18
-CATEGORIES=		ftp www
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			ftp://ftp.idata.sk/pub/unix/www/ \
-			ftp://ftp.phacka.sk/pub/pavuk/ \
-			http://www.idata.sk/~ondrej/sw/
-MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/pavuk
-DISTNAME=		${PORTNAME}-0.9pl18
-EXTRACT_SUFX=		.tgz
+PORTNAME=	pavuk
+PORTVERSION=	0.9.26
+CATEGORIES=	ftp www
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.idata.sk/~ondrej/sw/
+MASTER_SITE_SUBDIR=	apps/www/mirroring
+DISTNAME=	${PORTNAME}-0.9pl26
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_AUTOCONF=		yes
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-.if defined(WIITHOUT_X11)
-CONFIGURE_ARGS=		--disable-gtk
+WANT_GTK=	yes
+USE_AUTOMAKE=	yes
+AUTOMAKE_ARGS=	--include-deps
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS= --with-locale-dir=${LOCALBASE}/share/locale \
+		--disable-debug --disable-gnome --enable-threads
+
+MAN1=		pavuk.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK)
+USE_GTK=	yes
+CONFIGURE_ARGS+=	--with-gtk-config="${GTK_CONFIG:T}"
 .else
-CONFIGURE_ARGS=		--with-xpm-includes=${X11BASE}/include --disable-gtk
-USE_XPM=		yes
+CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
-USE_GMAKE=		yes
-
 .if defined(WITH_SSL)
-USE_OPENSSL=		YES
+USE_OPENSSL=	yes
 .else
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-MAN1=			pavuk.1
+pre-configure:
+	@cd ${WRKSRC} && aclocal
 
-do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/pavuk ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/man/pavuk.1 ${PREFIX}/man/man1
-	@ ${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
-	@ ${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
-	@ ${MKDIR} ${PREFIX}/share/locale/cs/LC_MESSAGES
-	@ ${MKDIR} ${PREFIX}/share/locale/de/LC_MESSAGES
-	@ ${MKDIR} ${PREFIX}/share/locale/sk/LC_MESSAGES
-	@ ${INSTALL_DATA} ${WRKSRC}/po/cs.mo ${PREFIX}/share/locale/cs/LC_MESSAGES/pavuk.mo
-	@ ${INSTALL_DATA} ${WRKSRC}/po/de.mo ${PREFIX}/share/locale/de/LC_MESSAGES/pavuk.mo
-	@ ${INSTALL_DATA} ${WRKSRC}/po/sk.mo ${PREFIX}/share/locale/sk/LC_MESSAGES/pavuk.mo
-	@ ${MKDIR} ${PREFIX}/share/icons
-	@ ${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/share/icons
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/pavuk
-.for file in AUTHORS BUGS ChangeLog FAQ README THANK_TO TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/pavuk
+	@${MKDIR} ${PREFIX}/share/doc/pavuk
+.for file in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/pavuk
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
