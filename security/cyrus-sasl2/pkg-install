@@ -38,18 +38,13 @@ create_user() {
 		gid=`pw show group cyrus 2>/dev/null | cut -d: -f3`
 	fi
 
-	if [ -x /sbin/nologin ]; then
-		shell=/sbin/nologin
-	else
-		shell=/nonexistent
-	fi
 	if ! pw show user cyrus -q >/dev/null; then
 		uid=60
 		while pw show user -u ${uid} -q >/dev/null; do
 			uid=`expr ${uid} + 1`
 		done
-		if ! pw add user cyrus -u ${uid} -g ${gid} -d "/nonexistent" \
-				-c "the cyrus mail server" -s "${shell}" -p "*" \
+		if ! pw add user cyrus -u ${uid} -g ${gid} -d "${PKG_PREFIX}/cyrus" \
+				-c "the cyrus mail server" -s "/bin/csh" -p "*" \
 				; then
 			e=$?
 			echo "*** Failed to add user \`cyrus'. Please add it manually."
@@ -57,8 +52,8 @@ create_user() {
 		fi
 		echo "*** Added user \`cyrus' (id ${uid})"
 	else
-		if ! pw mod user cyrus -g ${gid} -d "/nonexistent" \
-				-c "the cyrus mail server" -s "${shell}" -p "*" \
+		if ! pw mod user cyrus -g ${gid} -d "${PKG_PREFIX}/cyrus" \
+				-c "the cyrus mail server" -s "/bin/csh" -p "*" \
 				; then
 			e=$?
 			echo "*** Failed to update user \`cyrus'."
@@ -74,9 +69,13 @@ create_user() {
 create_sasldb() {
 	if [ ! -f ${SASLDB_NAME} ]; then
 		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd -p -c cyrus
-		${PKG_PREFIX}/sbin/saslpasswd -d cyrus
-		chown cyrus:mail ${SASLDB_NAME}
-		chmod 640 ${SASLDB_NAME}
+		if [ `${PKG_PREFIX}/sbin/sasldblistusers | wc -l` -eq 0 ] ; then
+                        echo "WARNING: Failed to create ${PKG_PREFIX}/etc/$SASLDB_NAME}"
+                else
+			${PKG_PREFIX}/sbin/saslpasswd -d cyrus
+			chown cyrus:mail ${SASLDB_NAME}
+			chmod 640 ${SASLDB_NAME}
+		fi
 	fi
 }
 
