@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1995/11/27 03:50:07 asami Exp $
+# $Id: Makefile,v 1.23 1996/03/06 08:53:45 asami Exp $
 #
 
 SUBDIR += archivers
@@ -27,6 +27,8 @@ SUBDIR += security
 SUBDIR += sysutils
 SUBDIR += www
 SUBDIR += x11
+
+PORTSTOP=	yes
 
 .include <bsd.port.subdir.mk>
 
