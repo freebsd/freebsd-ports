@@ -1,6 +1,7 @@
 bin/mtools
 @exec ln -fs %D/%F %B/mattrib
 @exec ln -fs %D/%F %B/mbadblocks
+@exec ln -fs %D/%F %B/mcat
 @exec ln -fs %D/%F %B/mcd
 @exec ln -fs %D/%F %B/mcopy
 @exec ln -fs %D/%F %B/mdel
@@ -24,6 +25,7 @@ bin/mtools
 @exec ln -fs %D/%F %B/mzip
 @unexec rm %B/mattrib
 @unexec rm %B/mbadblocks
+@unexec rm %B/mcat
 @unexec rm %B/mcd
 @unexec rm %B/mcopy
 @unexec rm %B/mdel
