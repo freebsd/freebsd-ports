@@ -1,11 +1,18 @@
 bin/verlihub
 bin/verlihub_config
+bin/vh_getcfg
+bin/vh_getdb
+bin/vh_install
+bin/vh_regnick
+bin/vh_runhub
+bin/vh_trigger
 include/verlihub/cantiflood.h
 include/verlihub/casyncconn.h
 include/verlihub/casyncsocketserver.h
 include/verlihub/cbanlist.h
 include/verlihub/cban.h
 include/verlihub/ccallbacklist.h
+include/verlihub/cchatconsole.h
 include/verlihub/ccmdr.h
 include/verlihub/ccommand.h
 include/verlihub/cconfigbase.h
@@ -18,6 +25,7 @@ include/verlihub/cconnchoose.h
 include/verlihub/cconnpoll.h
 include/verlihub/cconnselect.h
 include/verlihub/cdbconf.h
+include/verlihub/cdccommand.h
 include/verlihub/cdcconf.h
 include/verlihub/cdcconsole.h
 include/verlihub/cdcproto.h
@@ -61,16 +69,23 @@ include/verlihub/cvhpluginmgr.h
 include/verlihub/cvhplugin.h
 include/verlihub/cworkerthread.h
 include/verlihub/dll.h
+include/verlihub/make_time.h
 include/verlihub/script_api.h
 include/verlihub/tcache.h
 include/verlihub/thasharray.h
 include/verlihub/tchashlistmap.h
+include/verlihub/tlistconsole.h
+include/verlihub/tlistplugin.h
 include/verlihub/tmysqlmemorylist.h
 include/verlihub/tpluginbase.h
 lib/libdiakritika_pi.a
 lib/libdiakritika_pi.la
 lib/libdiakritika_pi.so
 lib/libdiakritika_pi.so.0
+lib/libplug_pi.a
+lib/libplug_pi.la
+lib/libplug_pi.so
+lib/libplug_pi.so.0
 lib/libtest_pi.a
 lib/libtest_pi.la
 lib/libtest_pi.so
@@ -83,10 +98,4 @@ lib/libvhapi.a
 lib/libvhapi.la
 lib/libvhapi.so
 lib/libvhapi.so.0
-%%PORTDOCS%%%%EXAMPLESDIR%%/scripts/trigger
-%%PORTDOCS%%%%EXAMPLESDIR%%/scripts/install
-%%PORTDOCS%%%%EXAMPLESDIR%%/scripts/regnick
-%%PORTDOCS%%%%EXAMPLESDIR%%/scripts/runhub
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/scripts
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm include/verlihub
