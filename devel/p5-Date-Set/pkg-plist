@@ -2,6 +2,8 @@
 %%SITE_PERL%%/Date/Set.pm
 %%SITE_PERL%%/auto/Date/Set/ICal/autosplit.ix
 %%SITE_PERL%%/auto/Date/Set/autosplit.ix
+%%SITE_PERL%%/auto/Date/Set/.packlist
 @dirrm %%SITE_PERL%%/Date/Set
 @dirrm %%SITE_PERL%%/auto/Date/Set/ICal
 @dirrm %%SITE_PERL%%/auto/Date/Set
+@unexec rmdir %D/%%SITE_PERL%%/auto/Date 2>/dev/null || true
