@@ -31,8 +31,14 @@ do-install:
 		(cd /usr/local/nsr/bin && tar --unlink -xpf -)
 	@cd ${WRKSRC} && tar cf - networker.sh | \
 		(cd /usr/local/etc/rc.d  && tar --unlink -xpf -)
-	@cd ${WRKSRC}/catman && tar cf - . | \
-		(cd /usr/local/man/man8  && tar --unlink -xpf -)
+	@cd ${WRKSRC}/catman && tar cf - *.1 | \
+		(cd /usr/local/man/cat1  && tar --unlink -xpf -)
+	@cd ${WRKSRC}/catman && tar cf - *.3 | \
+		(cd /usr/local/man/cat3  && tar --unlink -xpf -)
+	@cd ${WRKSRC}/catman && tar cf - *.5 | \
+		(cd /usr/local/man/cat5  && tar --unlink -xpf -)
+	@cd ${WRKSRC}/catman && tar cf - *.8 | \
+		(cd /usr/local/man/cat8  && tar --unlink -xpf -)
 
 post-install:
 	@sed -e "s,ROOTDIR,${PREFIX}," < ${PKGDIR}/MESSAGE
