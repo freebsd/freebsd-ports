@@ -1,0 +1,26 @@
+# New ports collection makefile for:	png2html
+# Version required:			1.0
+# Date created:				11 November 1999
+# Whom:					Chris D. Faulhaber <jedgar@fxp.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	png2html-1.0
+CATEGORIES=	graphics
+MASTER_SITES=	http://www.engr.mun.ca/~holden/
+
+MAINTAINER=	jedgar@fxp.org
+
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+BUILD_DEPENDS=	webpng:${PORTSDIR}/graphics/gd
+
+do-configure:
+		@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
+		@${SED} -e 's|CHANGE_ME|${PREFIX}|' \
+			< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
+
+do-install:
+		${INSTALL_PROGRAM} ${WRKSRC}/png2html ${PREFIX}/bin
+
+.include <bsd.port.mk>
