@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}3.1b5
 MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth
+CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/qpopper/pop.auth
 
 O_DEFS=         -DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
@@ -27,15 +27,18 @@ CONFIGURE_ARGS+=--enable-debugging
 
 CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
-MAN8=		popauth.8 popper.8
+MAN8=		qpopauth.8 qpopper.8
+
+post-patch:
+	cd ${WRKSRC} && \
+		${PERL} -pi.orig -e "s:/usr/local:${PREFIX}:g" man/popper.8
 
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} popper/popauth ${PREFIX}/bin
-	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} popper/popper ${PREFIX}/libexec
-	cd ${WRKSRC} && \
-		${INSTALL_MAN} man/popauth.8 man/popper.8 ${PREFIX}/man/man8
+		${INSTALL_PROGRAM} popper/popauth ${PREFIX}/bin/qpopauth && \
+		${INSTALL_PROGRAM} popper/popper ${PREFIX}/libexec/qpopper && \
+		${INSTALL_MAN} man/popauth.8 ${PREFIX}/man/man8/qpopauth.8 && \
+		${INSTALL_MAN} man/popper.8 ${PREFIX}/man/man8/qpopper.8
 
 post-install:
 	@${SED} -e "s:/usr/local:${PREFIX}:" ${PKGMESSAGE}

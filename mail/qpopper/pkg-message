@@ -1,7 +1,7 @@
 
 ****************************************************************************
-To enable the popper-daemon, add the following line to your /etc/inetd.conf:
+To enable the qpopper-daemon, add the following line to your /etc/inetd.conf:
 
-   pop3 stream tcp nowait root /usr/local/libexec/popper qpopper -s
+   pop3 stream tcp nowait root /usr/local/libexec/qpopper qpopper -s
 ****************************************************************************
 
