@@ -6,11 +6,13 @@ hf77.1 \
 introu.1 \
 lamboot.1 \
 lamclean.1 \
+lamd.1 \
 lamexec.1 \
 lamgrow.1 \
 lamshrink.1 \
 lamtrace.1 \
 mpiCC.1 \
+mpic++.1 \
 mpicc.1 \
 mpif77.1 \
 mpimsg.1 \
