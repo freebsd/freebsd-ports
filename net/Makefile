@@ -213,6 +213,7 @@
     SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += ldapsdk
+    SUBDIR += libdnet
     SUBDIR += libfreenet
     SUBDIR += libicq
     SUBDIR += libicq2000
