@@ -1184,3 +1184,4 @@ devel/automake17||2004-07-01|autotools cleanup
 devel/libtool14||2004-07-01|autotools cleanup
 math/libgmp-freebsd|math/libgmp4|2004-07-02|superseded by API compatible version
 devel/umbrello|devel/kdesdk3|2004-07-02|Umbrello was integrated into kdesdk package
+korean/mkisofs|sysutils/cdrtools-cjk|2004-07-02|superseded
