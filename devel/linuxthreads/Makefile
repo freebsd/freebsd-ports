@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -42,11 +42,14 @@ MAKE_ENV+=	LINUXTHREADS_DETECT_UNSAFE_EXIT=yes
 MAKE_ENV+=	LINUXTHREADS_WRAP_API=yes
 MAKE_ENV+=	LINUXTHREADS_WRAP_LD="sh ${FILESDIR}/ldwrap"
 .endif
+.if defined(LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING)
+MAKE_ENV+=	LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING=yes
+.endif
 
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
 	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
 	lclone.c libc_calls.c libc_thread.c sched.c uthread_file.c \
-	wraputhread.c localtime.c
+	wraputhread.c localtime.c getlogin.c telldir.c ttyname.c
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 SRC_BASE=	/usr/src
@@ -72,6 +75,13 @@ pre-fetch:
 	@${ECHO} "Some conflicts with native threads can be avoided by defining"
 	@${ECHO} "LINUXTHREADS_WRAP_API, see files/README.FreeBSD"
 	@${ECHO} "for more info."
+	@${ECHO}
+.endif
+.if !defined(LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING)
+	@${ECHO}
+	@${ECHO} "Use of POSIX priority scheduling can be turned off by"
+	@${ECHO} "defining LINUXTHREADS_NO_POSIX_PRIORITY_SCHEDULING,"
+	@${ECHO} "see files/README.FreeBSD for more info."
 	@${ECHO}
 .endif
 	@if ${TEST} -f /usr/src/gnu/lib/libgcc/Makefile; then \
@@ -107,6 +117,9 @@ post-extract:
 .endfor
 	@cd ${FILESDIR} ; \
 		${CP} -p ${threads_files} ${WRKSRC}/.
+	@${SED} -f ${FILESDIR}/strptime.sed \
+	    /usr/src/lib/libc/stdtime/strptime.c \
+	    > ${WRKSRC}/strptime.c
 	@${MKDIR} ${WRKSRC}/libgcc_r
 	@${TEST} -f ${WRKSRC}/libgcc_r/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
@@ -194,6 +207,11 @@ PLIST_SUB+=	PIC:=""
 PLIST_SUB+=	PICARCHIVE:=""
 .else
 PLIST_SUB+=	PICARCHIVE:="@comment "
+.endif
+.if defined(INSTALL_PIC_ARCHIVE) || ${OSVERSION} >= 501101
+PLIST_SUB+=	LIBLGCC_R_PICARCHIVE:=""
+.else
+PLIST_SUB+=	LIBLGCC_R_PICARCHIVE:="@comment "
 .endif
 .if defined(INSTALL_PIC_ARCHIVE) || defined(INSTALL_LIBLTHREAD_PIC_ARCHIVE)
 PLIST_SUB+=	LIBLTHREADPICARCHIVE:=""
