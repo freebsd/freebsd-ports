@@ -113,6 +113,7 @@
     SUBDIR += popa3d
     SUBDIR += poppassd
     SUBDIR += popper
+    SUBDIR += poppwd
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postilion
