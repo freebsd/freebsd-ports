@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	asmutils
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.17
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://linuxassembly.org/asmutils/
 
@@ -30,14 +30,9 @@ BINARIES=	asmutils basename cat chmod chown chroot cp cpuinfo date \
 		mkdir more mv nc ping pwd rc6crypt renice report rm rmdsum \
 		sh sleep strings sync tee true uname wc yes
 
-DOCFILES=	Asmutils-HOWTO acknowledgements endorsements history \
-		index s-contrib s-debug s-include s-layout s-optimize
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+PORTDOCS=	Asmutils-HOWTO.html acknowledgements.html endorsements.html \
+		history.html index.html s-contrib.html s-debug.html \
+		s-include.html s-layout.html s-optimize.html
 
 post-patch:
 	@(${SED} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG > ${WRKDIR}/foo \
@@ -59,13 +54,12 @@ do-install:
 		${LN} -sf ln sln)
 .for L in c crypto m
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib$L.so.0 ${PREFIX}/lib/asmutils
-	${INSTALL_DATA} ${WRKSRC}/lib/lib$L.a ${PREFIX}/lib/asmutils
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/asmutils
-.for D in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/$D.html ${PREFIX}/share/doc/asmutils
+	${MKDIR} ${DOCSDIR}
+.for D in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/$D ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,15 +1,25 @@
---- MCONFIG.orig	Sat Mar 10 21:03:55 2001
-+++ MCONFIG	Sat Mar 10 21:04:12 2001
-@@ -12,11 +12,11 @@
- 
- # Target Operating System (LINUX/FREEBSD/NETBSD/OPENBSD/BEOS/ATHEOS/LIBC)
+--- MCONFIG.orig	Fri Mar 15 01:42:46 2002
++++ MCONFIG	Sun Feb  8 01:06:18 2004
+@@ -13,11 +13,11 @@
+ # Target operating system. Valid values are:
+ # LINUX FREEBSD OPENBSD NETBSD SOLARIS UNIXWARE BEOS ATHEOS
  
 -OS = LINUX
 +OS = FREEBSD
  
- # Kernel version (1.2 = 12, 2.4 = 24, 3.6 = 36, etc)
+ # Kernel version of target OS (1.2 = 12, 2.4 = 24, 3.6 = 36, etc)
  
 -KERNEL = 24
 +KERNEL = %%KERNEL%%
  
  # Optimization method (SIZE/SPEED)
+ 
+@@ -93,7 +93,7 @@
+ 
+ ASVER := $(shell $(AS) -r | cut -d ' ' -f 3)
+ #LDVER := $(shell $(LD) -v | cut -d ' ' -f 4)
+-CORRECT_ASVER = 0.98
++CORRECT_ASVER = 0.98.38
+ 
+ #
+ # avoid using asmutils during the build process if PATH has '.'
