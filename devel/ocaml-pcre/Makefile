@@ -30,6 +30,7 @@ ALL_TARGET=	all
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+USE_GHOSTSCRIPT_BUILD=	yes
 ALL_TARGET+=	doc
 PORTDOCS=	*
 
