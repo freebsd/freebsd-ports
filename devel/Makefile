@@ -173,6 +173,7 @@
     SUBDIR += sfio
     SUBDIR += shtool
     SUBDIR += stlport
+    SUBDIR += str
     SUBDIR += swarm
     SUBDIR += t1lib
     SUBDIR += tclcheck
