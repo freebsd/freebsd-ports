@@ -24,4 +24,8 @@ MAINTAINER=	obrien@FreeBSD.org
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 
+post-patch:
+	${PERL} -pi.prefix -e 's.!!PREFIX!!.${PREFIX}.g' \
+		${WRKSRC}/url_handler.sh
+
 .include <bsd.port.mk>
