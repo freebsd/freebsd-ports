@@ -1,0 +1,6 @@
+Music Player Daemon (MPD) allows remote access for playing music
+(MP3's, Ogg's, and Flac's) and managing playlists.
+The design focus is on integrating a computer into a stereo system
+that provides control for music playback over a local network.
+
+WWW:	http://www.musicpd.org/

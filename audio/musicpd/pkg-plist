@@ -1,0 +1,9 @@
+bin/mpd
+@unexec %%RC_DIR%%/musicpd%%RC_SUFX%% stop 2>/dev/null || true
+share/doc/mpd/COMMANDS
+share/doc/mpd/README
+share/doc/mpd/UPGRADING
+etc/mpd.conf.sample
+@dirrm share/doc/mpd
+@cwd %%RC_DIR%%
+musicpd%%RC_SUFX%%

@@ -1,0 +1,78 @@
+# New ports collection makefile for:	musicpd
+# Date created:		Tue Oct 02 2003
+# Whom:			Mark Reidel <ports@mark.reidel.info>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	musicpd
+PORTVERSION=	0.9.1
+CATEGORIES=	audio
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	mpd-${PORTVERSION}
+
+MAINTAINER=	ports@mark.reidel.info
+COMMENT=	A remote-controllable music-daemon
+
+LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
+		mad.1:${PORTSDIR}/audio/mad
+
+GNU_CONFIGURE=  yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500038
+RC_SUBR?=       ${DESTDIR}/etc/rc.subr
+RC_DIR=         ${DESTDIR}/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR=    yes
+RC_DIR=         ${PREFIX}/etc/rc.d
+RC_SUFX=        .sh
+.endif
+
+.ifdef(WITHOUT_FLAC)
+CONFIGURE_ARGS+=--disable-flac
+.else
+LIB_DEPENDS+=	FLAC.5:${PORTSDIR}/audio/flac
+.endif
+
+.ifdef(WITHOUT_OGG)
+CONFIGURE_ARGS+=--disable-ogg
+.else
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+.endif
+
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+CFLAGS+=	-I${PREFIX}/include
+
+MAN1=		mpd.1
+
+SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
+
+pre-everything::
+	@${ECHO} "You can build ${PKGNAME} with the following options:"
+	@${ECHO}
+	@${ECHO} "WITHOUT_OGG             Disable OGG-Vorbis-support"
+	@${ECHO} "WITHOUT_FLAC            Disable FLAC-support"
+	@${ECHO}
+
+post-build:
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/musicpd.sh >${WRKDIR}/musicpd.sh
+	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-message >${PKGMESSAGE}
+
+post-install:
+	@${INSTALL_SCRIPT} ${FILESDIR}/mpd.conf.sample ${PREFIX}/etc
+	@${INSTALL_SCRIPT} ${WRKDIR}/musicpd.sh ${RC_DIR}/musicpd${RC_SUFX}
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

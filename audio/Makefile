@@ -191,6 +191,7 @@
     SUBDIR += musicbox
     SUBDIR += musicbrainz
     SUBDIR += musiccontrol
+    SUBDIR += musicpd
     SUBDIR += mutemix
     SUBDIR += mziq
     SUBDIR += napster
