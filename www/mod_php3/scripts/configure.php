@@ -9,7 +9,7 @@ fi
 Please select desired options:" -1 -1 14 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
-GD		"PHP3:   GD library support" ON \
+GD		"PHP3:   GD library support" OFF \
 FreeType	"PHP3:   TrueType font rendering (implies GD)" OFF \
 zlib		"PHP3:   zlib library support" ON \
 mcrypt		"PHP3:   Encryption support" OFF \
@@ -122,7 +122,7 @@ BUILD_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl \\
 		\${PREFIX}/lib/libmm.a:\${PORTSDIR}/devel/mm
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.3.5
+VERSION_MODSSL=	2.3.6
 
 RESTRICTED=	"Contains cryptography"
 
