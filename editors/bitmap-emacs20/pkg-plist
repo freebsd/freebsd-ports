@@ -1,5 +1,7 @@
 %%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap.el
 %%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap.elc
+%%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap-ci.el
+%%EMACS_LIBDIR%%/site-lisp/bitmap/bitmap-ci.elc
 %%EMACS_LIBDIR%%/site-lisp/bitmap/po.el
 %%EMACS_LIBDIR%%/site-lisp/bitmap/po.elc
 %%EMACS_LIBDIR%%/site-lisp/bitmap/smiley-mule.el
