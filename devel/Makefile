@@ -284,6 +284,7 @@
     SUBDIR += gnomecrash
     SUBDIR += gnomevfs
     SUBDIR += gnomevfs2
+    SUBDIR += gnulibiberty
     SUBDIR += gnustep
     SUBDIR += gnustep-make
     SUBDIR += gob2
