@@ -11929,6 +11929,7 @@ zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
 zh-scim-chinese	ports/chinese/scim-chinese
 zh-scim-tables	ports/chinese/scim-tables
+zh-srecite	ports/chinese/srecite
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
