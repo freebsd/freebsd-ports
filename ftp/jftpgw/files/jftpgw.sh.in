@@ -1,0 +1,25 @@
+#!/bin/sh
+
+PROGRAM=@PREFIX@/sbin/jftpgw
+PIDFILE=/var/run/jftpgw.pid
+
+case "$1" in
+
+start)
+	if [ -x $PROGRAM ] && [ -r @PREFIX@/etc/jftpgw.conf ]
+	then
+		$PROGRAM
+		echo -n "jftpgw "
+	fi
+	;;
+
+stop)
+	PID=`cat $PIDFILE 2>/dev/null`
+	ps -p "$PID" | tail +2 | grep -sqw $PROGRAM && kill $PID
+	;;
+
+*)
+	echo "usage: $0 start|stop"
+	;;
+esac
+

@@ -22,6 +22,7 @@
     SUBDIR += greed
     SUBDIR += gtm
     SUBDIR += hsftp
+    SUBDIR += jftpgw
     SUBDIR += jmirror
     SUBDIR += junglemonkey
     SUBDIR += kmago

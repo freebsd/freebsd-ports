@@ -1,0 +1,63 @@
+--- jftpgw.conf.sample.in~	Thu Apr 26 11:11:56 2001
++++ jftpgw.conf.sample.in	Sun Jul 15 14:48:03 2001
+@@ -1,7 +1,15 @@
+-# - This is the configuration file for jftpgw @JFTPGW_VERSION@ -
++# - This is the configuration file for jftpgw 0.0.13a -
+ # - -
+ # - Lines starting with a ``#'' sign and empty lines will be ignored -
+ 
++####
++#
++# New sample config file constructed from 0.0.12pre plus information
++# from the web site by Stefan Esser <se@freebsd.org>
++#
++####
++
++<global>
+ 
+ #-Section listen
+ # Bind to the address(es) specified below
+@@ -502,3 +510,43 @@
+ 
+ 
+ # - End of configuration file -
++
++</global>
++
++
++# nobody should connect, except for host1 and host2
++<from 0.0.0.0/0 exclude host1 host2>
++        access deny
++</from>
++
++# host1, host2.domain.net and 192.168.181.234 are allowed to connect to some
++# other host on port 21.
++<from host1 host2.domain.net 192.168.181.234>
++        <port 21>
++                access allow
++        </port>
++</from>
++
++# *.domain.net may not connect, this paragraph is not valid for host1 and
++# host2. If the connection comes from .slowdomain.domain.net moreover, limit
++# the connection to 4k/s.
++<from .domain.net exclude host1 host2>
++        access deny
++        <from .slowdomain.domain.net>
++                limit 4
++        </from>
++</from>
++
++# The host on which jftpgw runs may not connect to the proxy itself. Thus,
++# the proxy may not loop by calling itself again
++<to localhost 0.0.0.0 serverhost.domain.net>
++        <port 2370>
++                access deny
++        </port>
++</to>
++
++# This paragraph is valid for all connections again
++<global>
++        defaultmode             passive
++</global>
++

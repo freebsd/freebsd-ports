@@ -1,0 +1,46 @@
+--- secsftp_cmds.h~	Thu Apr 26 11:11:56 2001
++++ secsftp_cmds.h	Sun Jul 15 13:14:23 2001
+@@ -22,25 +22,25 @@
+ int do_cancel(void);
+ 
+ /* this function is used from the standard command set */
+-int std_user(char*, struct conn_info_st*);
++int std_user(const char*, struct conn_info_st*);
+ 
+-int secsftp_user(char*, struct conn_info_st*);
+-int secsftp_pass(char*, struct conn_info_st*);
+-int secsftp_quit(char*, struct conn_info_st*);
+-int secsftp_noop(char*, struct conn_info_st*);
+-int secsftp_pwd (char*, struct conn_info_st*);
+-int secsftp_cwd (char*, struct conn_info_st*);
+-int secsftp_mkd (char*, struct conn_info_st*);
+-int secsftp_rmd (char*, struct conn_info_st*);
+-int secsftp_syst(char*, struct conn_info_st*);
+-int secsftp_cdup(char*, struct conn_info_st*);
+-int secsftp_pasv(char*, struct conn_info_st*);
+-int secsftp_port(char*, struct conn_info_st*);
+-int secsftp_retr(char*, struct conn_info_st*);
+-int secsftp_stor(char*, struct conn_info_st*);
+-int secsftp_type(char*, struct conn_info_st*);
+-int secsftp_size_mdtm(char*, struct conn_info_st*);
+-int secsftp_abor(char*, struct conn_info_st*);
++int secsftp_user(const char*, struct conn_info_st*);
++int secsftp_pass(const char*, struct conn_info_st*);
++int secsftp_quit(const char*, struct conn_info_st*);
++int secsftp_noop(const char*, struct conn_info_st*);
++int secsftp_pwd (const char*, struct conn_info_st*);
++int secsftp_cwd (const char*, struct conn_info_st*);
++int secsftp_mkd (const char*, struct conn_info_st*);
++int secsftp_rmd (const char*, struct conn_info_st*);
++int secsftp_syst(const char*, struct conn_info_st*);
++int secsftp_cdup(const char*, struct conn_info_st*);
++int secsftp_pasv(const char*, struct conn_info_st*);
++int secsftp_port(const char*, struct conn_info_st*);
++int secsftp_retr(const char*, struct conn_info_st*);
++int secsftp_stor(const char*, struct conn_info_st*);
++int secsftp_type(const char*, struct conn_info_st*);
++int secsftp_size_mdtm(const char*, struct conn_info_st*);
++int secsftp_abor(const char*, struct conn_info_st*);
+ 
+ 
+ struct cmdhandlerstruct secsftp_cmdhandler[] = {
