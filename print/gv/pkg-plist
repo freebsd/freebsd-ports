@@ -1,6 +1,7 @@
 bin/gv
 lib/X11/app-defaults/GV
+lib/X11/gv/gv_class.ad
 lib/X11/gv/gv_spartan.dat
-lib/X11/gv/GV.ad
-lib/X11/gv/GV.user.ad
+lib/X11/gv/gv_system.ad
+lib/X11/gv/gv_user.ad
 man/man1/gv.1.gz
