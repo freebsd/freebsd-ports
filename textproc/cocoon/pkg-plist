@@ -1,0 +1,171 @@
+etc/apache/cocoon.properties.default
+share/java/classes/Cocoon.jar
+share/java/classes/openxml.jar
+share/java/classes/xslp.jar
+share/java/cocoon/LICENSE
+share/java/cocoon/META-INF/MANIFEST.MF
+share/java/cocoon/README
+share/java/cocoon/docs/api.html
+share/java/cocoon/docs/api/allclasses-frame.html
+share/java/cocoon/docs/api/deprecated-list.html
+share/java/cocoon/docs/api/help-doc.html
+share/java/cocoon/docs/api/index-all.html
+share/java/cocoon/docs/api/index.html
+share/java/cocoon/docs/api/org/apache/cocoon/Browsers.Browser.html
+share/java/cocoon/docs/api/org/apache/cocoon/Browsers.html
+share/java/cocoon/docs/api/org/apache/cocoon/Cocoon.html
+share/java/cocoon/docs/api/org/apache/cocoon/Defaults.html
+share/java/cocoon/docs/api/org/apache/cocoon/Engine.html
+share/java/cocoon/docs/api/org/apache/cocoon/Frontend.html
+share/java/cocoon/docs/api/org/apache/cocoon/Utils.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/AbstractCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/Cache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/CachedObject.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/CheckDateCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/DoNothingCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/ForeverCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/Latch.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/Sync.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/AbstractCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/Cache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/CachedObject.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/CheckDateCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/DoNothingCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/ForeverCache.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/Latch.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use/Sync.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/package-frame.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/package-summary.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/package-tree.html
+share/java/cocoon/docs/api/org/apache/cocoon/cache/package-use.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Browsers.Browser.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Browsers.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Cocoon.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Defaults.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Engine.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Frontend.html
+share/java/cocoon/docs/api/org/apache/cocoon/class-use/Utils.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/Configurable.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/ConfigurationFactory.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/Configurations.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/Factory.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/Status.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/class-use/Configurable.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/class-use/ConfigurationFactory.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/class-use/Configurations.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/class-use/Factory.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/class-use/Status.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/package-frame.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/package-summary.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/package-tree.html
+share/java/cocoon/docs/api/org/apache/cocoon/framework/package-use.html
+share/java/cocoon/docs/api/org/apache/cocoon/package-frame.html
+share/java/cocoon/docs/api/org/apache/cocoon/package-summary.html
+share/java/cocoon/docs/api/org/apache/cocoon/package-tree.html
+share/java/cocoon/docs/api/org/apache/cocoon/package-use.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/IBMXMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/OpenXMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/Parser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/SunXMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/class-use/IBMXMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/class-use/OpenXMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/class-use/Parser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/class-use/SunXMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/package-frame.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/package-summary.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/package-tree.html
+share/java/cocoon/docs/api/org/apache/cocoon/parser/package-use.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/OpenXMLPrinter.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/Printer.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/SunPrinter.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/class-use/OpenXMLPrinter.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/class-use/Printer.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/class-use/SunPrinter.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/package-frame.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/package-summary.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/package-tree.html
+share/java/cocoon/docs/api/org/apache/cocoon/printer/package-use.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/AbstractXSLProcessor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/LotusXSLProcessor.XMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/LotusXSLProcessor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/PINotFoundException.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/Processor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/ProcessorException.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/XSLPProcessor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/AbstractXSLProcessor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/LotusXSLProcessor.XMLParser.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/LotusXSLProcessor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/PINotFoundException.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/Processor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/ProcessorException.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use/XSLPProcessor.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/package-frame.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/package-summary.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/package-tree.html
+share/java/cocoon/docs/api/org/apache/cocoon/processor/package-use.html
+share/java/cocoon/docs/api/overview-frame.html
+share/java/cocoon/docs/api/overview-summary.html
+share/java/cocoon/docs/api/overview-tree.html
+share/java/cocoon/docs/api/package-list
+share/java/cocoon/docs/api/packages.html
+share/java/cocoon/docs/api/serialized-form.html
+share/java/cocoon/docs/api/stylesheet.css
+share/java/cocoon/docs/changes.html
+share/java/cocoon/docs/contributing.html
+share/java/cocoon/docs/faq.html
+share/java/cocoon/docs/guide.html
+share/java/cocoon/docs/images/cocoon.jpg
+share/java/cocoon/docs/images/java-apache-project.gif
+share/java/cocoon/docs/index.html
+share/java/cocoon/docs/installing.html
+share/java/cocoon/docs/license/license.cocoon.html
+share/java/cocoon/docs/license/license.openxml.html
+share/java/cocoon/docs/license/license.xslp.html
+share/java/cocoon/docs/stylesheet.css
+share/java/cocoon/docs/todo.html
+share/java/cocoon/docs/xsp/WD-xsp.html
+share/java/cocoon/example/hello/hello.html
+share/java/cocoon/example/hello/hello.xml
+share/java/cocoon/example/hello/hello.xsl
+share/java/cocoon/example/index.html
+share/java/cocoon/example/java.apache.org/news.html
+share/java/cocoon/example/java.apache.org/news.text.xsl
+share/java/cocoon/example/java.apache.org/news.xml
+share/java/cocoon/example/java.apache.org/news.xsl
+share/java/cocoon/example/trilug/events.xml
+share/java/cocoon/example/trilug/events.xsl
+share/java/cocoon/example/trilug/resources.xml
+share/java/cocoon/example/trilug/resources.xsl
+share/java/cocoon/example/trilug/sidebar.xml
+share/java/cocoon/example/trilug/talks.xml
+share/java/cocoon/example/trilug/talks.xsl
+share/java/cocoon/example/xsp/page.xml
+share/java/cocoon/example/xsp/page.xsl
+share/java/cocoon/example/xsp/page.xsp
+share/java/cocoon/index.html
+@dirrm share/java/cocoon/META-INF
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/cache/class-use
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/cache
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/class-use
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/framework/class-use
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/framework
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/parser/class-use
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/parser
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/printer/class-use
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/printer
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/processor/class-use
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon/processor
+@dirrm share/java/cocoon/docs/api/org/apache/cocoon
+@dirrm share/java/cocoon/docs/api/org/apache
+@dirrm share/java/cocoon/docs/api/org
+@dirrm share/java/cocoon/docs/api
+@dirrm share/java/cocoon/docs/images
+@dirrm share/java/cocoon/docs/license
+@dirrm share/java/cocoon/docs/xsp
+@dirrm share/java/cocoon/docs
+@dirrm share/java/cocoon/example/hello
+@dirrm share/java/cocoon/example/java.apache.org
+@dirrm share/java/cocoon/example/trilug
+@dirrm share/java/cocoon/example/xsp
+@dirrm share/java/cocoon/example
+@dirrm share/java/cocoon

@@ -1,0 +1,42 @@
+# New ports collection makefile for:	Coccon
+# Version required:	1.3.1
+# Date created:		27 June 1999
+# Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
+#
+# $Id$
+#
+
+DISTNAME=	Cocoon_1.3.1
+PKGNAME=	cocoon-1.3.1
+CATEGORIES=	textproc www java
+MASTER_SITES=	http://java.apache.org/cocoon/dist/
+EXTRACT_SUFX=	.jar
+
+MAINTAINER=	kuriyama@FreeBSD.ORG
+
+RUN_DEPENDS=	${PREFIX}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
+#		${PREFIX}/share/java/classes/lotusxsl.jar:${PORTSDIR}/textproc/lotusxsl
+#		${PREFIX}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j
+
+EXTRACT_CMD=	${PREFIX}/${JAVASUBDIR}/bin/jar
+EXTRACT_BEFORE_ARGS=	xf
+EXTRACT_AFTER_ARGS=	
+NO_WRKSUBDIR=	YES
+NO_BUILD=	YES
+
+JAVASUBDIR=	jdk1.1.8
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/cocoon
+	@(cd ${WRKSRC}/bin; \
+	  ${INSTALL_DATA} Cocoon.jar openxml.jar xslp.jar \
+		${PREFIX}/share/java/classes)
+	@(cd ${WRKSRC}; \
+	 ${CP} -R [L-Rd-i]* ${PREFIX}/share/java/cocoon)
+	@${INSTALL_DATA} ${FILESDIR}/cocoon.properties.default \
+		${PREFIX}/etc/apache
+
+post-install:
+	@${CAT} ${PKGDIR}/MESSAGE
+
+.include <bsd.port.mk>
