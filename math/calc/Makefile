@@ -10,8 +10,8 @@ DISTNAME=	calc-2.11.1t3.0
 PKGNAME=	calc-2.11.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://reality.sgi.com/users/chongo/src/calc/		\
-		http://reality.sgi.com/chongo/src/calc/			\
-		ftp://ftp.uu.net/pub/calc/
+		ftp://ftp.uu.net/pub/calc/				\
+		http://reality.sgi.com/chongo/src/calc/
 
 MAINTAINER=	jmz@FreeBSD.org
 
