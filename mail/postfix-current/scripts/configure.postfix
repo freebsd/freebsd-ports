@@ -105,6 +105,7 @@ while [ "$1" ]; do
 			SUB_TEST=""
 			;;
 		\"IPv6\")
+			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
 			echo "PATCHFILES+=	postfix-20010204snap-v6-20010205a.diff.gz"
 			echo ""
