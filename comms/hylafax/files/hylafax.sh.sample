@@ -4,6 +4,20 @@
 #   server: /usr/local/sbin/faxsetup 
 #   modems: /usr/local/sbin/faxaddmodem 
 #   incoming calls: /etc/ttys 
-if [ -x /usr/local/sbin/faxq ]; then 
-	/usr/local/sbin/faxq && echo -n ' hylafax' 
-fi
+
+case "$1" in
+start)
+	if [ -x /usr/local/sbin/faxq ]; then 
+		/usr/local/sbin/faxq && echo -n ' hylafax' 
+	fi
+	;;
+stop)
+	killall faxq && echo -n ' hylafax'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

@@ -1,10 +1,23 @@
 #!/bin/sh
 canna=@PREFIX@/sbin/cannaserver
-if [ -f $canna ]; then
-	rm -f /var/run/canna/Canna.pid
-	mkdir -p /var/run/canna
-	touch /var/log/CANNA0msgs
-	chown bin:bin /var/run/canna /var/log/CANNA0msgs
-	echo -n ' Canna'
-	$canna
-fi
+
+case "$1" in
+start)
+	if [ -f $canna ]; then
+		rm -f /var/run/canna/Canna.pid
+		mkdir -p /var/run/canna
+		touch /var/log/CANNA0msgs
+		chown bin:bin /var/run/canna /var/log/CANNA0msgs
+		echo -n ' Canna'
+		$canna
+	fi
+stop)
+	killall $canna && echo -n ' Canna'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

@@ -95,11 +95,7 @@ post-install:
 	${MKDIR} ${PREFIX}/squid/cache
 	@if [ ! -f ${PREFIX}/etc/rc.d/squid.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/squid.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/squid.sh; \
-		${ECHO} "if [ -x ${PREFIX}/sbin/RunCache -a -f ${PREFIX}/etc/squid/squid.conf ]; then" >> ${PREFIX}/etc/rc.d/squid.sh; \
-		${ECHO} "	(cd /tmp; ${PREFIX}/sbin/RunCache >/dev/null 2>&1 &) ; ${ECHO} -n ' squid'" >> ${PREFIX}/etc/rc.d/squid.sh; \
-		${ECHO} "fi" >> ${PREFIX}/etc/rc.d/squid.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/squid.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/squid.sh ${PREFIX}/etc/rc.d/squid.sh; \
 	fi
 
 .include <bsd.port.mk>

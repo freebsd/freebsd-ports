@@ -16,10 +16,24 @@
 #   environment variable in !!PG_PATH!!/.profile
 #
 
-[ -d !!PG_PATH!!/lib ] && /sbin/ldconfig -m !!PG_PATH!!/lib
+case "$1" in
+start)
+	[ -d !!PG_PATH!!/lib ] && /sbin/ldconfig -m !!PG_PATH!!/lib
 
-[ -x !!PG_PATH!!/bin/postmaster ] && {
-	su -l !!PGSQL_UID!! -c 'exec !!PG_PATH!!/bin/postmaster -i -S -o -F \
-		-D!!PG_PATH!!/data > !!PG_PATH!!/errlog'
-	echo -n ' PostgreSQL' 
-}
+	[ -x !!PG_PATH!!/bin/postmaster ] && {
+		su -l !!PGSQL_UID!! -c 'exec !!PG_PATH!!/bin/postmaster -i -S -o -F \
+			-D!!PG_PATH!!/data > !!PG_PATH!!/errlog'
+		echo -n ' PostgreSQL' 
+	}
+	;;
+stop)
+	# XXX some pgsql user should check this --tg
+	killall !!PG_PATH!!/bin/postmaster
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

@@ -20,9 +20,7 @@ MAN8=		healthd.8 healthdc.8
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/healthd.sh; \
-		${ECHO} "[ -x ${PREFIX}/bin/healthd ] && ${PREFIX}/bin/healthd > /dev/null && ${ECHO} -n ' healthd'" >> ${PREFIX}/etc/rc.d/healthd.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/healthd.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh; \
 	fi
 	@if [ ! -f ${PREFIX}/etc/healthd.conf ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/healthd.conf configuration file."; \

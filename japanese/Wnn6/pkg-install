@@ -173,10 +173,22 @@ POST-INSTALL)
       echo "Installing ${startup_script} startup file."
       echo '#!/bin/sh' > ${startup_script};
       echo "wnn=${wnnserver}" >> ${startup_script};
-      echo 'if [ -f $wnn ]; then' >> ${startup_script};
+      echo 'case $1 in' >> ${startup_script};
+      echo 'start)' >> ${startup_script};
+      echo '    if [ -f $wnn ]; then' >> ${startup_script};
+      echo "        echo -n ' ${wnnname}'" >> ${startup_script};
+      echo '        $wnn' >> ${startup_script};
+      echo "    fi" >> ${startup_script}; 
+      echo '    ;;' >> ${startup_script};
+      echo 'stop)' >> ${startup_script};
+      echo '    killall $wnn' >> ${startup_script};
       echo "    echo -n ' ${wnnname}'" >> ${startup_script};
-      echo '    $wnn' >> ${startup_script};
-      echo "fi" >> ${startup_script};
+      echo '    ;;' >> ${startup_script};
+      echo '*)' >> ${startup_script};
+      echo '    echo "Usage: `basename $0` {start|stop}" >&2' >> ${startup_script};
+      echo '    ;;' >> ${startup_script};
+      echo 'esac' >> ${startup_script};
+      echo 'exit 0' >> ${startup_script};
       chmod 755 ${startup_script}
       chown bin.bin ${startup_script}
     fi

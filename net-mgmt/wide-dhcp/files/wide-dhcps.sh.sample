@@ -1,0 +1,30 @@
+#!/bin/sh
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    exit 1
+fi
+
+DB_POOL=/etc/dhcpdb.pool
+DB_RELAY=/etc/dhcpdb.relay
+DB_BIND=/var/db/dhcpdb.bind
+
+case "$1" in
+start)
+	if [ -f ${DB_POOL} -a -f ${DB_RELAY} -a -x ${PREFIX}/sbin/dhcps ]; then
+		if [ -f ${DB_BIND} ]; then
+			find ${DB_POOL} -newer ${DB_BIND} -exec rm ${DB_BIND} \;
+		fi
+		${PREFIX}/sbin/dhcps [Interface Name]
+		echo -n ' dhcps'
+	fi
+	;;
+stop)
+	killall dhcps && echo -n ' dhcps'
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

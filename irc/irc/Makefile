@@ -50,10 +50,7 @@ do-install:
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
-		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT};		\
-		${ECHO} "[ -f ${PREFIX}/etc/ircd/ircd.conf ] && ${PREFIX}/sbin/ircd && ${ECHO} -n ' ircd'" >> ${STARTUP_SCRIPT} ;			\
-		${CHMOD} 755 ${STARTUP_SCRIPT} ;			\
-		${CHOWN} bin.bin ${STARTUP_SCRIPT};			\
+		${INSTALL_SCRIPT} ${FILESDIR}/ircd.sh ${STARTUP_SCRIPT};\
 	fi
 
 .include <bsd.port.post.mk>

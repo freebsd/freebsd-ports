@@ -34,22 +34,7 @@ post-install:
 	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
-		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT};			\
-		${ECHO} 'virecovery=`${ECHO} /var/tmp/elv_*`'			\
-			>> ${STARTUP_SCRIPT};				\
-		${ECHO} 'if [ "$$virecovery" != '"'/var/tmp/elv_*' ]; then"	\
-			>> ${STARTUP_SCRIPT};				\
-		${ECHO} "	${ECHO} 'Recovering ja-elvis editor sessions'"	\
-			>> ${STARTUP_SCRIPT};				\
-		${ECHO} '	for i in $$virecovery; do'			\
-			>> ${STARTUP_SCRIPT};				\
-		${ECHO} "		${PREFIX}/bin/elvprsv "'$$i'		\
-			>> ${STARTUP_SCRIPT};				\
-		${ECHO} '	done'						\
-			>> ${STARTUP_SCRIPT};				\
-		${ECHO} 'fi' >> ${STARTUP_SCRIPT};				\
-		${CHMOD} 755 ${STARTUP_SCRIPT};				\
-		${CHOWN} bin.bin ${STARTUP_SCRIPT};                        \
+		${INSTALL_SCRIPT} ${FILESDIR}/ja-elvis.sh ${STARTUP_SCRIPT};\
 	fi
 
 .include <bsd.port.mk>

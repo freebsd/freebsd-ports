@@ -63,13 +63,8 @@ post-configure:
 		${PKGDIR}/MESSAGE > ${PKGMESSAGE}
 
 post-install:
-	@${ECHO} #!${SH} > ${PREFIX}/etc/rc.d/zmailer.sh.sample
-	@${ECHO} "[ -x ${PREFIX}/sbin/zmailer ] && \
-		${PREFIX}/sbin/zmailer start >/dev/null 2>&1) && \
-		${ECHO} -n \' zmailer\'" \
-		>> ${PREFIX}/etc/rc.d/zmailer.sh.sample
-	@${CHOWN} root:wheel ${PREFIX}/etc/rc.d/zmailer.sh.sample
-	@${CHMOD} a+x ${PREFIX}/etc/rc.d/zmailer.sh.sample
+	@${INSTALL_SCRIPT} ${FILESDIR}/zmailer.sh.sample \
+		 ${PREFIX}/etc/rc.d/zmailer.sh.sample
 
 	${CAT} ${PKGMESSAGE} | ${SED} -e s:@PREFIX@:${PREFIX}:g \
 		-e s:@PORTSDIR@:${PORTSDIR}:g
@@ -82,7 +77,7 @@ post-install:
 	@${ECHO} "# Who do I claim to be?" >> ${PREFIX}/etc/zmailer/mail.conf.sample
 	@${ECHO} 'mydomain=$$orgdomain' >> ${PREFIX}/etc/zmailer/mail.conf.sample
 
-# obdained directly from ports/mail/postfix
+# obtained directly from ports/mail/postfix
 # with minor hacks by the originator of this port <veers@disturbed.net>
 replace:
 	@${ECHO_MSG} "===> Replacing sendmail"

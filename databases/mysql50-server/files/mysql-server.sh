@@ -13,6 +13,6 @@ case "$1" in
 		echo ""
 		echo "Usage: `basename $0` { start | stop }"
 		echo ""
-		exit 1
+		exit 64
 		;;
 esac

@@ -1,7 +1,19 @@
 #!/bin/sh
 roxen=%%PREFIX%%/roxen/server
 
-if [ -x $roxen/start ]; then
-	( cd $roxen; ./start --log-dir=/var/log/roxen ) > /dev/null
-	echo -n ' Roxen'
-fi
+case $1 in
+start)
+	if [ -x $roxen/start ]; then
+		( cd $roxen; ./start --log-dir=/var/log/roxen ) > /dev/null
+		echo -n ' Roxen'
+	fi
+	;;
+stop)
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

@@ -51,9 +51,7 @@ post-install:
 	fi
 	@if [ ! -f ${PREFIX}/etc/rc.d/syslog-ng.sh.sample ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/syslog-ng.sh.sample startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
-		${ECHO} "[ -x ${PREFIX}/sbin/syslog-ng ] && ${PREFIX}/sbin/syslog-ng && ${ECHO} -n ' syslog-ng'" >> ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
-		${CHMOD} 755 ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
+		${INSTALL_SCRIPT} ${FILESDIR}/syslog-ng.sh.sample ${PREFIX}/etc/rc.d/syslog-ng.sh.sample; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 

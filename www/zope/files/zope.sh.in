@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case "$1" in
+start)
+	%%ZOPEBASEDIR%%/start -w '' -f '' -m '' -p %%CGI_BIN_DIR%%/Zope.cgi &
+	echo -n " Zope"
+	;;
+stop)
+	%%ZOPEBASEDIR%% stop
+	echo -n " Zope"
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

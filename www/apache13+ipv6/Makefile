@@ -79,8 +79,6 @@ pre-configure:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start > /dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 .include <bsd.port.post.mk>

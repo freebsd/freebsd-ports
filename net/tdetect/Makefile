@@ -28,10 +28,7 @@ do-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/tdetect.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/tdetect.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} "ETHERNETDEV=ed0" >> ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${ECHO} '[ -x ${PREFIX}/sbin/tdetect ] && ${PREFIX}/sbin/tdetect $$ETHERNETDEV && ${ECHO} -n " tdetect"' >> ${PREFIX}/etc/rc.d/tdetect.sh; \
-		${CHMOD} 750 ${PREFIX}/etc/rc.d/tdetect.sh; \
+		${INSTALL_SCRIPT} -m 750 ${FILESDIR}/tdetect.sh ${PREFIX}/etc/rc.d/tdetect.sh; \
 		${SED} -e 's,/usr/local,${PREFIX},g' ${PKGMESSAGE}; \
 	fi
 

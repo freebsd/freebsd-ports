@@ -32,9 +32,10 @@ do-extract:
 
 do-configure:
 		@ ${CP} ${FILESDIR}/readme.port ${WRKSRC}
+		@ ${CP} ${FILESDIR}/quakeserver.sh ${WRKSRC}
 		@ ${CP} ${FILESDIR}/qserver.sh ${WRKSRC}
 		@ ${CP} ${FILESDIR}/stopserver.sh ${WRKSRC}
-		@ ${SETENV} ${MAKE_ENV} ${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
+		@ ${SETENV} ${MAKE_ENV} ${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/quakeserver.sh ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
 
 do-install:
 		@ ${MKDIR} ${PREFIX}/quakeserver
@@ -43,6 +44,7 @@ do-install:
 		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/unixded ${PREFIX}/quakeserver
 		${INSTALL_DATA} ${WRKSRC}/readme.unixded ${PREFIX}/quakeserver
 		${INSTALL_DATA} ${WRKSRC}/readme.port ${PREFIX}/quakeserver
+		${INSTALL_SCRIPT} -m 0750 ${WRKSRC}/quakeserver.sh ${PREFIX}/etc/rc.d
 		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/qserver.sh ${PREFIX}/quakeserver
 		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/stopserver.sh ${PREFIX}/quakeserver
 		@ ${RM} -f ${PREFIX}/quakeserver/quakeserver.in
@@ -50,15 +52,6 @@ do-install:
 		${TOUCH} ${PREFIX}/quakeserver/quakeserver.log
 		@ ${CHMOD} 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
 		@ ${CHOWN} -R nobody.nobody ${PREFIX}/quakeserver
-		@ ${ECHO} "Installing ${PREFIX}/etc/rc.d/quakeserver.sh startup script"
-		@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${ECHO} "if [ -x ${PREFIX}/quakeserver/unixded ]" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${ECHO} "	su nobody -c ${PREFIX}/quakeserver/qserver.sh && ${ECHO} -n ' quakeserver'" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/quakeserver.sh
-		@ ${CHMOD} 750 ${PREFIX}/etc/rc.d/quakeserver.sh
 .if !defined(BATCH)
 		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
 .endif

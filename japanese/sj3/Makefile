@@ -30,13 +30,7 @@ do-configure:
 post-install:
 	if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
-		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT}; 			\
-		${ECHO} 'sj3=${PREFIX}/bin/sj3serv' >> ${STARTUP_SCRIPT} ; \
-		${ECHO} 'if [ -f $$sj3 ]; then' >> ${STARTUP_SCRIPT} ;	\
-		${ECHO} '     $$sj3' >> ${STARTUP_SCRIPT} ;		\
-		${ECHO} "fi" >> ${STARTUP_SCRIPT} ;			\
-		${CHMOD} 755 ${STARTUP_SCRIPT} ;				\
-		${CHOWN} bin.bin ${STARTUP_SCRIPT};			\
+		${INSTALL_SCRIPT} ${FILESDIR}/sj3.sh ${STARTUP_SCRIPT};	\
 	fi
 	${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
