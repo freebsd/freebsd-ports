@@ -7,7 +7,7 @@
 
 PORTNAME=	rancid
 PORTVERSION=	2.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 
@@ -38,12 +38,6 @@ MAN5=		env.5 lg.conf.5 cloginrc.5 router.db.5
 
 CONFIG_FILES=	bin/env util/lg/lg.conf
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/rancid:g" pkg-message >${PKGMESSAGE}
 .if !defined(BATCH)
@@ -58,4 +52,4 @@ post-install:
 	fi
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
