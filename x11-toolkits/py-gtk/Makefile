@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-python-1.0.4
-PKGNAME=	py-gtk-0.6.2
+DISTNAME=	gnome-python-1.0.50
+PKGNAME=	py-gtk-0.6.3
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.daa.com.au/pub/james/python/ \
 		ftp://ftp.gimp.org/pub/gtk/python/ \
