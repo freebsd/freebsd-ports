@@ -1,7 +1,11 @@
-*** config/Makefile.freebsd4.orig	Mon Feb 16 11:12:43 2004
---- config/Makefile.freebsd4	Wed Jun 16 15:23:15 2004
+*** config/Makefile.freebsd5.orig	Tue Jun 15 19:28:13 2004
+--- config/Makefile.freebsd5	Wed Jun 16 15:22:55 2004
 ***************
-*** 5,11 ****
+*** 1,11 ****
+  # -*- mode: makefile -*-
+  #
+! # Makefile of ROOT for FreeBSD 4.5
+  
   PLATFORM      = fbsd
   
   DEBUGFLAGS    = -g
@@ -9,9 +13,19 @@
   ifeq (debug,$(findstring debug,$(ROOTBUILD)))
   OPT           = $(DEBUGFLAGS)
   NOOPT         =
---- 5,10 ----
+--- 1,10 ----
+  # -*- mode: makefile -*-
+  #
+! # Makefile of ROOT for FreeBSD 5.x
+  
+  PLATFORM      = fbsd
+  
+  DEBUGFLAGS    = -g
+  ifeq (debug,$(findstring debug,$(ROOTBUILD)))
+  OPT           = $(DEBUGFLAGS)
+  NOOPT         =
 ***************
-*** 15,24 ****
+*** 15,33 ****
   endif
   
   # Compiler:
@@ -22,7 +36,16 @@
   CINTCXXFLAGS  = -pipe -W -Wall -fPIC -DG__REGEXP $(EXTRA_CXXFLAGS) \
                   -DG__UNIX -DG__SHAREDLIB -DG__ROOT -DG__REDIRECTIO -DG__OSFDLL
   CINTCFLAGS    = -pipe -W -Wall -fPIC -DG__REGEXP -DG__UNIX -DG__SHAREDLIB \
---- 14,23 ----
+                  -DG__ROOT -DG__REDIRECTIO -DG__OSFDLL $(EXTRA_CFLAGS)
+  COMPILER      = gnu
+  
+  # Linker:
+! LD            = g++
+! LDFLAGS       = $(OPT) $(EXTRA_LDFLAGS)
+  SOFLAGS       = -shared -Wl,-x -Wl,-soname,
+  SOEXT         = so
+  
+--- 14,37 ----
   endif
   
   # Compiler:
@@ -33,29 +56,14 @@
   CINTCXXFLAGS  = -pipe -W -Wall -fPIC -DG__REGEXP $(EXTRA_CXXFLAGS) \
                   -DG__UNIX -DG__SHAREDLIB -DG__ROOT -DG__REDIRECTIO -DG__OSFDLL
   CINTCFLAGS    = -pipe -W -Wall -fPIC -DG__REGEXP -DG__UNIX -DG__SHAREDLIB \
-***************
-*** 26,38 ****
+                  -DG__ROOT -DG__REDIRECTIO -DG__OSFDLL $(EXTRA_CFLAGS)
   COMPILER      = gnu
   
-  ifeq ($(ENABLETHREAD),yes)
-! CXXFLAGS     += -pthread
-! CINTCXXFLAGS += -pthread
-  endif
-  
-  # Linker:
-! LD            = g++
-! LDFLAGS       = $(OPT) $(EXTRA_LDFLAGS)
-  SOFLAGS       = -shared -Wl,-x -Wl,-soname,
-  SOEXT         = so
-  
---- 25,37 ----
-  COMPILER      = gnu
-  
-  ifeq ($(ENABLETHREAD),yes)
-! CXXFLAGS     += $(PTHREAD_CFLAGS)
-! CINTCXXFLAGS += $(PTHREAD_CFLAGS)
-  endif
-  
++ ifeq ($(ENABLETHREAD),yes)
++ CXXFLAGS     += $(PTHREAD_CFLAGS)
++ CINTCXXFLAGS += $(PTHREAD_CFLAGS)
++ endif
++ 
   # Linker:
 ! LD            = $(CXX)
 ! LDFLAGS      += $(OPT) $(EXTRA_LDFLAGS)
@@ -63,7 +71,7 @@
   SOEXT         = so
   
 ***************
-*** 43,50 ****
+*** 38,45 ****
   CRYPTLIBS     = -lcrypt
   
   # Fortran:
