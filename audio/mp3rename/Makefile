@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3rename
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rendo.dekooi.nl/~janssen/
 
