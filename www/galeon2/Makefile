@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	galeon2
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUF
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
 		--enable-nautilus-view=no \
 		${MOZ_CONFIGURE_ARGS}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 MAN1=		galeon.1

@@ -1,5 +1,5 @@
---- src/galeon.in.orig	Thu Dec 27 19:13:42 2001
-+++ src/galeon.in	Mon Mar 10 11:20:39 2003
+--- src/galeon.in.orig	Thu Apr  3 15:08:00 2003
++++ src/galeon.in	Sat Apr 19 23:10:10 2003
 @@ -4,18 +4,14 @@
  
  if test -n "$MOZILLA_FIVE_HOME"; then
@@ -26,7 +26,7 @@
  else
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit
-@@ -27,16 +23,17 @@
+@@ -27,11 +23,12 @@
  MOZILLA_FIVE_HOME=$MOZILLA_HOME
  export MOZILLA_FIVE_HOME
  
@@ -43,10 +43,5 @@
 +    export LD_PRELOAD
  fi
  
- if [ -f ./galeon-bin ]; then
- exec ./galeon-bin "$@"
- else
--exec $dist_bin/galeon-bin "$@"
-+exec %%PREFIX%%/bin/galeon-bin "$@"
- fi
- 
+-exec "$dist_bin/galeon-bin" "$@"
++exec "%%PREFIX%%/bin/galeon-bin" "$@"
