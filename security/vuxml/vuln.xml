@@ -224,7 +224,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>ja-samba</name>
-	<range><lt>2.2.11</lt></range>
+	<range><lt>2.2.10.j1.0</lt></range>
       </package>
     </affects>
     <description>
@@ -255,7 +255,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-07-14</discovery>
       <entry>2004-07-21</entry>
-      <modified>2004-08-12</modified>
+      <modified>2004-08-15</modified>
     </dates>
   </vuln>
 
@@ -4358,7 +4358,7 @@ misc.c:
       <package>
         <name>mozilla</name>
         <range><lt>1.7.2,2</lt></range>
-        <range><ge>1.8,2</ge><le>1.8.a2,2</le></range>
+        <range><ge>1.8.a,2</ge><le>1.8.a2,2</le></range>
       </package>
       <package>
         <name>mozilla-gtk1</name>
@@ -4423,7 +4423,7 @@ misc.c:
     <dates>
       <discovery>2004-08-04</discovery>
       <entry>2004-08-04</entry>
-      <modified>2004-08-12</modified>
+      <modified>2004-08-15</modified>
     </dates>
   </vuln>
 
