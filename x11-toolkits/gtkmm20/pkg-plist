@@ -636,11 +636,9 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ArrayHandle-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ArrayHandle.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Cond-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Cond.html
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Container__Helpers_1_1ArrayHandleIterator-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Container__Helpers_1_1ArrayHandleIterator.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Container__Helpers_1_1ListHandleIterator-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Container__Helpers_1_1ListHandleIterator.html
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Container__Helpers_1_1SListHandleIterator-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Container__Helpers_1_1SListHandleIterator.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ConvertError-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ConvertError.html
@@ -847,7 +845,6 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ValueBase__String__inherit_
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1ValueBase__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4.html
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4.html
@@ -891,7 +888,6 @@ share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01unsigned_01long_0
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01unsigned_01long_01_4__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01unsigned_01long_01long_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01unsigned_01long_01long_01_4.html
-share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01unsigned_01long_01long_01_4__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01void_01_5_01_4-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01void_01_5_01_4.html
 share/doc/gtkmm-2.0/docs/reference/html/classGlib_1_1Value_3_01void_01_5_01_4__inherit__graph.png
@@ -993,9 +989,7 @@ share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDown.html
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDownItem-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDownItem.html
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDownItem__inherit__graph.png
-share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList-members.html
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList.html
-share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1ComboDropDown__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1Combo__inherit__graph.png
 share/doc/gtkmm-2.0/docs/reference/html/classGtk_1_1Container-members.html
