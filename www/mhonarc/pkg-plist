@@ -25,6 +25,7 @@ share/MHonArc/MHonArc/CharEnt/ISO8859_9.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_9R.pm
 share/MHonArc/MHonArc/CharEnt/Makefile
 share/MHonArc/MHonArc/Makefile
+share/MHonArc/MHonArc/UTF8.pm
 share/MHonArc/base64.pl
 share/MHonArc/ewhutil.pl
 share/MHonArc/iso2022jp.pl
@@ -108,6 +109,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/frames.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/icons.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/subject.mrc.html
+%%PORTDOCS%%share/doc/MHonArc/rcfileexs/utf-8.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcvars.html
 %%PORTDOCS%%share/doc/MHonArc/relnotes.html
 %%PORTDOCS%%share/doc/MHonArc/resources.html
@@ -150,7 +152,6 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/folupbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/folupend.html
 %%PORTDOCS%%share/doc/MHonArc/resources/foluplitxt.html
-%%PORTDOCS%%share/doc/MHonArc/resources/footer.html
 %%PORTDOCS%%share/doc/MHonArc/resources/force.html
 %%PORTDOCS%%share/doc/MHonArc/resources/fromfields.html
 %%PORTDOCS%%share/doc/MHonArc/resources/genidx.html
@@ -159,13 +160,13 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/gzipfiles.html
 %%PORTDOCS%%share/doc/MHonArc/resources/gziplinks.html
 %%PORTDOCS%%share/doc/MHonArc/resources/headbodysep.html
-%%PORTDOCS%%share/doc/MHonArc/resources/header.html
 %%PORTDOCS%%share/doc/MHonArc/resources/htmlext.html
 %%PORTDOCS%%share/doc/MHonArc/resources/icons.html
 %%PORTDOCS%%share/doc/MHonArc/resources/idxfname.html
 %%PORTDOCS%%share/doc/MHonArc/resources/idxlabel.html
 %%PORTDOCS%%share/doc/MHonArc/resources/idxpgbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/idxpgend.html
+%%PORTDOCS%%share/doc/MHonArc/resources/idxpgssmarkup.html
 %%PORTDOCS%%share/doc/MHonArc/resources/idxprefix.html
 %%PORTDOCS%%share/doc/MHonArc/resources/idxsize.html
 %%PORTDOCS%%share/doc/MHonArc/resources/include.html
@@ -188,6 +189,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/main.html
 %%PORTDOCS%%share/doc/MHonArc/resources/maxsize.html
 %%PORTDOCS%%share/doc/MHonArc/resources/mhpattern.html
+%%PORTDOCS%%share/doc/MHonArc/resources/mimealtprefs.html
 %%PORTDOCS%%share/doc/MHonArc/resources/mimeargs.html
 %%PORTDOCS%%share/doc/MHonArc/resources/mimedecoders.html
 %%PORTDOCS%%share/doc/MHonArc/resources/mimeexcs.html
@@ -205,6 +207,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/msgpgbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/msgpgend.html
 %%PORTDOCS%%share/doc/MHonArc/resources/msgpgs.html
+%%PORTDOCS%%share/doc/MHonArc/resources/msgpgssmarkup.html
 %%PORTDOCS%%share/doc/MHonArc/resources/msgprefix.html
 %%PORTDOCS%%share/doc/MHonArc/resources/msgsep.html
 %%PORTDOCS%%share/doc/MHonArc/resources/multipg.html
@@ -215,6 +218,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/nextlinkia.html
 %%PORTDOCS%%share/doc/MHonArc/resources/nextpglink.html
 %%PORTDOCS%%share/doc/MHonArc/resources/nextpglinkia.html
+%%PORTDOCS%%share/doc/MHonArc/resources/nosubjecttxt.html
 %%PORTDOCS%%share/doc/MHonArc/resources/note.html
 %%PORTDOCS%%share/doc/MHonArc/resources/notedir.html
 %%PORTDOCS%%share/doc/MHonArc/resources/noteia.html
@@ -263,6 +267,7 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/tidxlabel.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tidxpgbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tidxpgend.html
+%%PORTDOCS%%share/doc/MHonArc/resources/tidxpgssmarkup.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tidxprefix.html
 %%PORTDOCS%%share/doc/MHonArc/resources/timezones.html
 %%PORTDOCS%%share/doc/MHonArc/resources/tindentbegin.html
