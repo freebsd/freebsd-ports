@@ -22,7 +22,8 @@ COMMENT=	Perl Data Language
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
 		${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77 \
 		${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
-		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter
+		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter \
+		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header
 LIB_DEPENDS=	plplotd.9:${PORTSDIR}/math/plplot \
 		fftw.2:${PORTSDIR}/math/fftw \
 		gsl.5:${PORTSDIR}/math/gsl
