@@ -11,9 +11,9 @@
 %%RUBY_SITELIBDIR%%/test/unit/ui/gtk/testrunner.rb
 %%RUBY_SITELIBDIR%%/test/unit/ui/testrunnermediator.rb
 %%RUBY_SITELIBDIR%%/test/unit/ui/testrunnerutilities.rb
-%%RUBY_SITELIBDIR%%/test/unit/ui/util/observable.rb
-%%RUBY_SITELIBDIR%%/test/unit/ui/util/procwrapper.rb
-@dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/util
+%%RUBY_SITELIBDIR%%/test/unit/util/observable.rb
+%%RUBY_SITELIBDIR%%/test/unit/util/procwrapper.rb
+@dirrm %%RUBY_SITELIBDIR%%/test/unit/util
 @dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/gtk
 @dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/fox
 @dirrm %%RUBY_SITELIBDIR%%/test/unit/ui/console
@@ -34,146 +34,111 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/TODO
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/AssertionFailedError.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000001.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000002.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000003.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000004.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000005.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000006.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000007.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000008.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000009.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000010.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000011.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000012.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000013.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000014.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000015.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000016.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000017.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000018.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000019.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000020.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000021.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000022.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions/Message.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000023.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000024.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src/M000041.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000042.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000043.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000044.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000045.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000046.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000059.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000060.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000061.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000062.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src/M000063.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000047.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000048.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000049.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000050.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000051.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000052.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src/M000053.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000065.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000066.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000067.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000068.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000069.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000070.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000071.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000072.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000043.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000044.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000045.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000046.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000047.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000048.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestCase.src/M000049.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000056.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000057.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000058.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000059.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000060.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000061.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000062.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000063.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000064.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000065.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000066.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000067.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000068.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000069.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000070.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000071.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestResult.src/M000072.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000051.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000052.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000053.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000054.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000055.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000056.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000057.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/TestSuite.src/M000058.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src/M000031.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src/M000032.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src/M000033.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/FaultListItem.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src/M000010.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src/M000023.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src/M000024.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src/M000025.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner/from-@fault_detail_label.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/EnhancedLabel.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/EnhancedProgressBar.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/FaultListItem.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src/M000007.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src/M000034.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src/M000035.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src/M000013.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Status.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Status.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Status.src/M000015.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000038.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000039.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000040.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src/M000019.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerUtilities.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerUtilities.src/M000030.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/Observable.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/Observable.src/M000026.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/Observable.src/M000027.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/Observable.src/M000028.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/ProcWrapper.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/ProcWrapper.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerUtilities.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/Observable.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/Observable.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/Observable.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/Observable.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/ProcWrapper.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/ProcWrapper.src/M000004.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/pre-install_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/assertionfailederror_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/assertions_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/error_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/failure_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/testcase_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/testresult_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/testsuite_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/console/testrunner_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/fox/testrunner_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/gtk/testrunner_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/testrunnermediator_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/testrunnerutilities_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/util/observable_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/util/procwrapper_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/test/unit_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/util
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/gtk
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/fox
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test/unit/ui/console
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test/unit/ui
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test/unit
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/test
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/ProcWrapper.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util/Observable.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Util
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/ProcWrapper.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util/Observable.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Util
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerUtilities.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/TestRunnerMediator.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Status.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK/TestRunner.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/GTK
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox/TestRunner
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Fox
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console/TestRunner.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/UI/Console
@@ -184,7 +149,6 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Failure.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Error.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions.src
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit/Assertions
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test/Unit
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Test
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
