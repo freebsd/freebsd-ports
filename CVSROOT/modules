@@ -6000,6 +6000,7 @@ ruby-acl	ports/security/ruby-acl
 ruby-aes	ports/security/ruby-aes
 ruby-algebra	ports/math/ruby-algebra
 ruby-amstd	ports/devel/ruby-amstd
+ruby-aspectr	ports/devel/ruby-aspectr
 ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
 ruby-bdb	ports/databases/ruby-bdb
