@@ -1,0 +1,22 @@
+--- Makefile.mix.orig	Mon Jan 10 16:51:09 2005
++++ Makefile.mix	Mon Jan 10 16:51:35 2005
+@@ -680,19 +680,10 @@
+ 	$(CP) $(PROGS) $(BIN)
+ 	(cd $(BIN); chmod 755 $(PROGS))
+ 	(cd $(BIN); chown bin $(PROGS))
+-	(cd $(BIN); chown root elvprsv$(COM) elvrec$(COM))
+-	(cd $(BIN); chmod 4755 elvprsv$(COM) elvrec$(COM))
+ 	-$(LN) $(BIN)/helvis $(BIN)/hvi
+ 	-$(LN) $(BIN)/helvis $(BIN)/hex
+ 	-$(LN) $(BIN)/helvis $(BIN)/hview
+ 	-$(LN) $(BIN)/helvis $(BIN)/hinput
+-	test -d /usr/preserve || (mkdir /usr/preserve; chmod 755 /usr/preserve)
+-	@if test -d /etc/rc2.d; then \
+-		echo $(BIN)/elvprsv /tmp/elv* >/etc/rc2.d/S03elvis; \
+-	else \
+-		echo "::: YOU STILL NEED TO EDIT THE /ETC/RC FILE, OR WHATEVER,"; \
+-		echo "::: TO HAVE TEMP FILES BE PRESERVED AFTER A SYSTEM CRASH."; \
+-	fi
+ #	sh instman.sh $(PROGS)
+ 
+ inst.dos: $(DUMMY)
