@@ -26,8 +26,6 @@ WANT_GNOME=	yes
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
 .endif
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget
