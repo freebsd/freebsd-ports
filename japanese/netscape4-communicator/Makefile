@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/21 04:45:36 itojun Exp $
+# $Id: Makefile,v 1.2 1998/03/21 04:48:19 itojun Exp $
 #
 
 DISTNAME=	ja-netscape4
@@ -25,7 +25,6 @@ MSG_LANG=
 RESOURCE_BASE=	Netscape-us-v404
 MSG_LANG=		-us
 .endif
-# is it REALLY necessery?
 RUN_DEPENDS=	${X11BASE}/lib/X11/k12:${PORTSDIR}/japanese/k12 \
 		${X11BASE}/lib/X11/fonts/misc/5x10B.pcf.Z:${PORTSDIR}/japanese/k10
 
