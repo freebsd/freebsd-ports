@@ -1,0 +1,6 @@
+Pyparsing is a general parsing module for Python. Grammars are
+implemented directly in the client code using parsing objects,
+instead of externally, as with lex/yacc-type tools. Includes simple
+examples for parsing SQL, CORBA IDL, and 4-function math.
+
+WWW: http://pyparsing.sourceforge.net/
