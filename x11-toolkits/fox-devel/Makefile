@@ -23,6 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
+USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -135,10 +136,6 @@ pre-everything::
 	@${ECHO_MSG}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
 
 ##
 ## Port conflict management
