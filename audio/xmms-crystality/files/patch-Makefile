@@ -17,7 +17,7 @@
  
  
  TARGETS=	$(XMMS_PLUGIN) $(STDIO_PLUGIN)
-@@ -15,10 +15,10 @@
+@@ -15,13 +15,13 @@
  all	: $(TARGETS)
  
  $(STDIO_PLUGIN): crystality.o gui.o stdio.o
@@ -29,4 +29,8 @@
 +	${CC} $(CFLAGS) -o$(XMMS_PLUGIN) -shared -fPIC crystality.o gui.o xmms.o
  
  .c.o	:
- 	cc $(CFLAGS) -c $<
+-	cc $(CFLAGS) -c $<
++	${CC} $(CFLAGS) -c $<
+ 
+ clean	: 
+ 	rm -f $(TARGETS) core *\.o
