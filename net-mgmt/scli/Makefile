@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scli
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 
