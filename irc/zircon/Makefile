@@ -8,7 +8,9 @@
 PORTNAME=	zircon
 PORTVERSION=	1.18.256
 CATEGORIES=	irc tk84
-MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
+MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 interface to Internet Relay Chat
