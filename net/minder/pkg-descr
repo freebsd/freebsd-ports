@@ -1,0 +1,20 @@
+[ excerpt from developer's web site ]
+
+The minder is a small network application for automatic maintenance
+of peer lists. The application accepts connections from other network
+entities ("minions") and returns a list of other identitical minions.
+
+When a minion contacts the minder, the minion supplies its type,
+network port and address, and its unique node identification.
+
+The framework for building a minion is included in the C++ Sockets
+Library. The framework consists of classes representing connections
+between minion-minder and minion-minion, and also a controller class
+for them both.
+
+The minder itself is also built with the C++ Sockets Library as its
+foundation.
+
+WWW: http://www.alhem.net/project/minder/index.html
+
+-- lioux@FreeBSD.org
