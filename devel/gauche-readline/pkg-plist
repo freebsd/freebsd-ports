@@ -1,0 +1,5 @@
+%%GAUCHE_LIBDIR%%/readline.scm
+%%GAUCHE_LIBDIR%%/readline/history.scm
+%%GAUCHE_LIBDIR%%/readline/keymap.scm
+%%GAUCHE_LIBDIR%%/readline/term-util.scm
+@dirrm %%GAUCHE_LIBDIR%%/readline
