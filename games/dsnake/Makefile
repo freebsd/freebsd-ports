@@ -10,7 +10,6 @@ PORTVERSION=	3.0.0
 CATEGORIES=	games linux
 MASTER_SITES=	http://bitblaze.com/downloads/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
-WRKSRC=		${WRKDIR}/DeluxeSnake
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Deluxe Snake - snake clone with frogs and mushrooms
@@ -22,6 +21,7 @@ NO_PACKAGE=	Licence forbids any repacking and reselling
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
+WRKSRC=		${WRKDIR}/DeluxeSnake
 
 do-install:
 	${MKDIR} ${DATADIR}
