@@ -29,7 +29,7 @@
 +		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,-*-bold-r-*-big5-0");
  	if (cfg.mainwin_font == NULL)
 -		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*");
-+		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,,-*-medium-r-*-big5-0");
++		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,-*-medium-r-*-big5-0");
  	if (cfg.gentitle_format == NULL)
  		cfg.gentitle_format = g_strdup("%p - %t");
  	if (cfg.outputplugin == NULL)
