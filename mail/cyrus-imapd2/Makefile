@@ -31,9 +31,25 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-cyrus-group=${CYRUS_GROUP} \
 		--with-sasl=${LOCALBASE} \
 		--with-bdb-libdir=${LOCALBASE}/lib \
-		--with-bdb-incdir=${LOCALBASE}/include/db3 \
 		--with-auth=unix \
 		--with-com_err
+
+.if defined(WITH_BDB_VER)
+USE_BDB_VER=	${WITH_BDB_VER}
+.else
+USE_BDB_VER=	3
+.endif
+.if ${USE_BDB_VER} == 41
+LIB_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
+.elif ${USE_BDB_VER} == 4
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+.elif ${USE_BDB_VER} == 3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+.else
+BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
+.endif
+CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${USE_BDB_VER} \
+		--with-bdb=db${USE_BDB_VER}
 
 .if defined(WITH_SKIPLIST_MBOX)
 CONFIGURE_ARGS+=--with-mboxlist-db=skiplist
@@ -86,6 +102,18 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSD
 .endif
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
+.endif
+
+pre-everything::
+.if !defined(WITH_BDB_VER)
+	@if ${LDCONFIG} -r | ${GREP} -qwE -e "-ldb(41|4)"; then \
+		${ECHO} ""; \
+		${ECHO} "It seems you have installed newer db than db3.  If"; \
+		${ECHO} "you are using newer db for cyrus-sasl2, you should"; \
+		${ECHO} "specify same version by WITH_BDB_VER.  For"; \
+		${ECHO} "exapmle, WITH_BDB_VER=4 for db4."; \
+		${ECHO} ""; \
+	fi
 .endif
 
 post-patch:
