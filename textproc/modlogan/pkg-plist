@@ -19,6 +19,8 @@ etc/modlogan/modlogan.def.conf-dist
 @dirrm etc/modlogan
 lib/libmla_input_bsdftpd.so
 lib/libmla_input_clf.so
+lib/libmla_input_cp_ims_login.so
+lib/libmla_input_cp_ims_smtp.so
 lib/libmla_input_flowraw.so
 lib/libmla_input_ipchains.so
 lib/libmla_input_ippl.so
