@@ -16,6 +16,7 @@
     SUBDIR += c2t
     SUBDIR += celvis
     SUBDIR += chinput
+    SUBDIR += chinput2
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cxterm
