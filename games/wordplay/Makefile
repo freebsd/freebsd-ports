@@ -7,7 +7,7 @@
 PORTNAME=	wordplay
 PORTVERSION=	7.22
 CATEGORIES=	games
-MASTER_SITES= 	http://www.itsc.uah.edu/~criswell/wordplay/
+MASTER_SITES= 	http://home.hiwaay.net/~criswell/wordplay/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 
