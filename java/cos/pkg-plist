@@ -1,87 +1,87 @@
-share/java/classes/cos.jar
-share/java/cos/readme.txt
-share/java/cos/license.txt
+%%JAVAJARDIR%%/cos.jar
+%%DATADIR%%/readme.txt
+%%DATADIR%%/license.txt
 
-share/java/cos/doc/com/oreilly/servlet/package-tree.html
-share/java/cos/doc/com/oreilly/servlet/package-summary.html
-share/java/cos/doc/com/oreilly/servlet/package-frame.html
-share/java/cos/doc/com/oreilly/servlet/multipart/package-tree.html
-share/java/cos/doc/com/oreilly/servlet/multipart/package-summary.html
-share/java/cos/doc/com/oreilly/servlet/multipart/package-frame.html
-share/java/cos/doc/com/oreilly/servlet/multipart/PartInputStream.html
-share/java/cos/doc/com/oreilly/servlet/multipart/Part.html
-share/java/cos/doc/com/oreilly/servlet/multipart/ParamPart.html
-share/java/cos/doc/com/oreilly/servlet/multipart/MultipartParser.html
-share/java/cos/doc/com/oreilly/servlet/multipart/MacBinaryDecoderOutputStream.html
-share/java/cos/doc/com/oreilly/servlet/multipart/LimitedServletInputStream.html
-share/java/cos/doc/com/oreilly/servlet/multipart/FileRenamePolicy.html
-share/java/cos/doc/com/oreilly/servlet/multipart/FilePart.html
-share/java/cos/doc/com/oreilly/servlet/multipart/DefaultFileRenamePolicy.html
-share/java/cos/doc/com/oreilly/servlet/multipart/BufferedServletInputStream.html
-@dirrm share/java/cos/doc/com/oreilly/servlet/multipart
+%%DATADIR%%/doc/com/oreilly/servlet/package-tree.html
+%%DATADIR%%/doc/com/oreilly/servlet/package-summary.html
+%%DATADIR%%/doc/com/oreilly/servlet/package-frame.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/package-tree.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/package-summary.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/package-frame.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/PartInputStream.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/Part.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/ParamPart.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/MultipartParser.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/MacBinaryDecoderOutputStream.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/LimitedServletInputStream.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/FileRenamePolicy.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/FilePart.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/DefaultFileRenamePolicy.html
+%%DATADIR%%/doc/com/oreilly/servlet/multipart/BufferedServletInputStream.html
+@dirrm %%DATADIR%%/doc/com/oreilly/servlet/multipart
 
-share/java/cos/doc/com/oreilly/servlet/VersionDetector.html
-share/java/cos/doc/com/oreilly/servlet/ServletUtils.html
-share/java/cos/doc/com/oreilly/servlet/RemoteHttpServlet.html
-share/java/cos/doc/com/oreilly/servlet/RemoteDaemonHttpServlet.html
-share/java/cos/doc/com/oreilly/servlet/ParameterParser.html
-share/java/cos/doc/com/oreilly/servlet/ParameterNotFoundException.html
-share/java/cos/doc/com/oreilly/servlet/MultipartWrapper.html
-share/java/cos/doc/com/oreilly/servlet/MultipartResponse.html
-share/java/cos/doc/com/oreilly/servlet/MultipartRequest.html
-share/java/cos/doc/com/oreilly/servlet/MultipartFilter.html
-share/java/cos/doc/com/oreilly/servlet/MailMessage.html
-share/java/cos/doc/com/oreilly/servlet/LocaleToCharsetMap.html
-share/java/cos/doc/com/oreilly/servlet/LocaleNegotiator.html
-share/java/cos/doc/com/oreilly/servlet/HttpsMessage.html
-share/java/cos/doc/com/oreilly/servlet/HttpMessage.html
-share/java/cos/doc/com/oreilly/servlet/DaemonHttpServlet.html
-share/java/cos/doc/com/oreilly/servlet/CookieParser.html
-share/java/cos/doc/com/oreilly/servlet/CookieNotFoundException.html
-share/java/cos/doc/com/oreilly/servlet/CacheHttpServlet.html
-share/java/cos/doc/com/oreilly/servlet/Base64Encoder.html
-share/java/cos/doc/com/oreilly/servlet/Base64Decoder.html
-@dirrm share/java/cos/doc/com/oreilly/servlet
-@dirrm share/java/cos/doc/com/oreilly
-@dirrm share/java/cos/doc/com
+%%DATADIR%%/doc/com/oreilly/servlet/VersionDetector.html
+%%DATADIR%%/doc/com/oreilly/servlet/ServletUtils.html
+%%DATADIR%%/doc/com/oreilly/servlet/RemoteHttpServlet.html
+%%DATADIR%%/doc/com/oreilly/servlet/RemoteDaemonHttpServlet.html
+%%DATADIR%%/doc/com/oreilly/servlet/ParameterParser.html
+%%DATADIR%%/doc/com/oreilly/servlet/ParameterNotFoundException.html
+%%DATADIR%%/doc/com/oreilly/servlet/MultipartWrapper.html
+%%DATADIR%%/doc/com/oreilly/servlet/MultipartResponse.html
+%%DATADIR%%/doc/com/oreilly/servlet/MultipartRequest.html
+%%DATADIR%%/doc/com/oreilly/servlet/MultipartFilter.html
+%%DATADIR%%/doc/com/oreilly/servlet/MailMessage.html
+%%DATADIR%%/doc/com/oreilly/servlet/LocaleToCharsetMap.html
+%%DATADIR%%/doc/com/oreilly/servlet/LocaleNegotiator.html
+%%DATADIR%%/doc/com/oreilly/servlet/HttpsMessage.html
+%%DATADIR%%/doc/com/oreilly/servlet/HttpMessage.html
+%%DATADIR%%/doc/com/oreilly/servlet/DaemonHttpServlet.html
+%%DATADIR%%/doc/com/oreilly/servlet/CookieParser.html
+%%DATADIR%%/doc/com/oreilly/servlet/CookieNotFoundException.html
+%%DATADIR%%/doc/com/oreilly/servlet/CacheHttpServlet.html
+%%DATADIR%%/doc/com/oreilly/servlet/Base64Encoder.html
+%%DATADIR%%/doc/com/oreilly/servlet/Base64Decoder.html
+@dirrm %%DATADIR%%/doc/com/oreilly/servlet
+@dirrm %%DATADIR%%/doc/com/oreilly
+@dirrm %%DATADIR%%/doc/com
 
-share/java/cos/doc/images/blue-ball-small.gif
-share/java/cos/doc/images/blue-ball.gif
-share/java/cos/doc/images/class-index.gif
-share/java/cos/doc/images/constructor-index.gif
-share/java/cos/doc/images/constructors.gif
-share/java/cos/doc/images/cyan-ball-small.gif
-share/java/cos/doc/images/cyan-ball.gif
-share/java/cos/doc/images/error-index.gif
-share/java/cos/doc/images/exception-index.gif
-share/java/cos/doc/images/green-ball-small.gif
-share/java/cos/doc/images/green-ball.gif
-share/java/cos/doc/images/interface-index.gif
-share/java/cos/doc/images/magenta-ball-small.gif
-share/java/cos/doc/images/magenta-ball.gif
-share/java/cos/doc/images/method-index.gif
-share/java/cos/doc/images/methods.gif
-share/java/cos/doc/images/package-index.gif
-share/java/cos/doc/images/red-ball-small.gif
-share/java/cos/doc/images/red-ball.gif
-share/java/cos/doc/images/variable-index.gif
-share/java/cos/doc/images/variables.gif
-share/java/cos/doc/images/yellow-ball-small.gif
-share/java/cos/doc/images/yellow-ball.gif
-@dirrm share/java/cos/doc/images
+%%DATADIR%%/doc/images/blue-ball-small.gif
+%%DATADIR%%/doc/images/blue-ball.gif
+%%DATADIR%%/doc/images/class-index.gif
+%%DATADIR%%/doc/images/constructor-index.gif
+%%DATADIR%%/doc/images/constructors.gif
+%%DATADIR%%/doc/images/cyan-ball-small.gif
+%%DATADIR%%/doc/images/cyan-ball.gif
+%%DATADIR%%/doc/images/error-index.gif
+%%DATADIR%%/doc/images/exception-index.gif
+%%DATADIR%%/doc/images/green-ball-small.gif
+%%DATADIR%%/doc/images/green-ball.gif
+%%DATADIR%%/doc/images/interface-index.gif
+%%DATADIR%%/doc/images/magenta-ball-small.gif
+%%DATADIR%%/doc/images/magenta-ball.gif
+%%DATADIR%%/doc/images/method-index.gif
+%%DATADIR%%/doc/images/methods.gif
+%%DATADIR%%/doc/images/package-index.gif
+%%DATADIR%%/doc/images/red-ball-small.gif
+%%DATADIR%%/doc/images/red-ball.gif
+%%DATADIR%%/doc/images/variable-index.gif
+%%DATADIR%%/doc/images/variables.gif
+%%DATADIR%%/doc/images/yellow-ball-small.gif
+%%DATADIR%%/doc/images/yellow-ball.gif
+@dirrm %%DATADIR%%/doc/images
 
-share/java/cos/doc/package-list
-share/java/cos/doc/packages.html
-share/java/cos/doc/stylesheet.css
-share/java/cos/doc/help-doc.html
-share/java/cos/doc/index-all.html
-share/java/cos/doc/index.html
-share/java/cos/doc/overview-frame.html
-share/java/cos/doc/overview-summary.html
-share/java/cos/doc/overview-tree.html
-share/java/cos/doc/serialized-form.html
-share/java/cos/doc/allclasses-frame.html
-share/java/cos/doc/deprecated-list.html
-share/java/cos/doc/upload.war
-@dirrm share/java/cos/doc
-@dirrm share/java/cos
+%%DATADIR%%/doc/package-list
+%%DATADIR%%/doc/packages.html
+%%DATADIR%%/doc/stylesheet.css
+%%DATADIR%%/doc/help-doc.html
+%%DATADIR%%/doc/index-all.html
+%%DATADIR%%/doc/index.html
+%%DATADIR%%/doc/overview-frame.html
+%%DATADIR%%/doc/overview-summary.html
+%%DATADIR%%/doc/overview-tree.html
+%%DATADIR%%/doc/serialized-form.html
+%%DATADIR%%/doc/allclasses-frame.html
+%%DATADIR%%/doc/deprecated-list.html
+%%DATADIR%%/doc/upload.war
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
