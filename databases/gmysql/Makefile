@@ -20,4 +20,6 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=${PREFIX}
 
+MAN1=		gmysql.1
+
 .include <bsd.port.mk>
