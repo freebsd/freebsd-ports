@@ -7,7 +7,7 @@
 
 PORTNAME=	sqwebmail
 PORTVERSION=	4.0.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -229,5 +229,14 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/sqwebmail-authdaemond.sh \
 		${PREFIX}/etc/rc.d/
 .endif
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "*************************************************************************"
+	@${ECHO_MSG} "*******      Make shure to run 'make install-configure' now!      *******"
+	@${ECHO_MSG} "*************************************************************************"
+	@${ECHO_MSG} ""
+
+install-configure:
+	cd ${WRKSRC} && ${GMAKE} install-configure
+
 
 .include <bsd.port.mk>
