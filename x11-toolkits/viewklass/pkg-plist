@@ -34,11 +34,13 @@ include/Vk/VkMenuLabel.h
 include/Vk/VkMenuSeparator.h
 include/Vk/VkMenuToggle.h
 include/Vk/VkMenuUndoManager.h
+include/Vk/VkMessageDialog.h
 include/Vk/VkModel.h
 include/Vk/VkNameList.h
 include/Vk/VkOptionMenu.h
 include/Vk/VkPeriodic.h
 include/Vk/VkPipe.h
+include/Vk/VkPixmap.h
 include/Vk/VkPopupMenu.h
 include/Vk/VkPrefCustom.h
 include/Vk/VkPrefDialog.h
