@@ -35,7 +35,7 @@
 #
 
 PORTNAME=	samhain
-PORTVERSION=	1.7.11
+PORTVERSION=	1.7.12
 CATEGORIES=	security
 MASTER_SITES=	http://la-samhna.de/archive/ \
 		http://cold.darkambient.net/
