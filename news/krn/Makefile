@@ -17,6 +17,8 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		uu.1:${PORTSDIR}/converters/uulib \
 		mimelib.2:${PORTSDIR}/converters/kdesupport11
 
+BROKEN=		"Can't find KDE during configure"
+
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
