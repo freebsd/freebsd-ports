@@ -17,8 +17,10 @@ COMMENT=	Perl interface to the WordNet database files
 
 LIB_DEPENDS=	wn1.7:${PORTSDIR}/textproc/wordnet
 
+WNHOME?=	${LOCALBASE}/share/WordNet-1.7.1
+
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV=	WNHOME=${LOCALBASE}/share/WordNet-1.7.1
+CONFIGURE_ENV=	WNHOME=${WNHOME}
 
 MAN3=		WordNet::QueryData.3
 
