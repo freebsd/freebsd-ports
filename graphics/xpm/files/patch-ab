@@ -1,0 +1,10 @@
+*** sxpm/Imakefile.orig	Thu Mar 19 20:51:01 1998
+--- sxpm/Imakefile	Sun Jun 13 14:19:16 1999
+***************
+*** 96,98 ****
+--- 96,100 ----
+  clean::	
+  	$(RM) sxpmout.xpm
+  
++ XCOMM unset LDPRELIBS to ensure we link with local lib not system lib
++ LDPRELIBS=
