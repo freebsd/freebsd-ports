@@ -1,20 +1,11 @@
-$FreeBSD$
-
---- Imakefile.orig	Wed Dec  5 08:01:33 2001
-+++ Imakefile	Wed Dec  5 08:01:51 2001
-@@ -12,11 +12,11 @@
- /**/#  the xgobi directories src, help, ps, etc.
+--- Imakefile.orig	Sat Oct 12 12:26:37 2002
++++ Imakefile	Sat Oct 12 12:28:33 2002
+@@ -13,7 +13,7 @@
           XGOBID = $(PWD)/..
  
--              CC = cc
--       CCOPTIONS = -xansi -n32
-+#              CC = cc
-+#       CCOPTIONS = -xansi -n32
+ /**/# Use the gnu C compiler
+-            CC = gcc
++            CC ?= gcc
+      CCOPTIONS = -ansi -w
  
--#           CC = gcc
--#    CCOPTIONS = -ansi -w
-+           CC ?= gcc
-+    CCOPTIONS = -ansi -w
- 
-              LD = 
-      CDEBUGFLAGS = -g
+ /**/# Or use the C compiler on your system, and whatever options it requires.
