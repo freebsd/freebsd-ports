@@ -9,12 +9,13 @@
 # the same distfile.
 
 PORTNAME=	rxvt-devel
-PORTVERSION=	2.7.5
+PORTVERSION=	2.7.6
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
-		ftp://mason.primenet.com.au/pub/rxvt/ \
-		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \
-		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
+		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
+		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
+		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
+MASTER_SITE_SUBDIR=     . old devel
 DISTNAME=	rxvt-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -58,7 +59,7 @@ CONFIGURE_ARGS+=	--enable-next-scroll
 #
 # enable rxvt style scrollbar
 .if defined(WITH_RXVT_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-rxvt-scroll	
+CONFIGURE_ARGS+=	--enable-rxvt-scroll
 .endif # WITH_RXVT_SCROLLBAR
 #
 # XIM (X Input Method) protocol support
@@ -68,7 +69,7 @@ CONFIGURE_ARGS+=	--enable-xim
 #
 # enable Xterm style scrollbar
 .if defined(WITH_XTERM_SCROLLBAR)
-CONFIGURE_ARGS+=	--enable-xterm-scroll	
+CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif # WITH_XTERM_SCROLLBAR
 
 pre-fetch:
