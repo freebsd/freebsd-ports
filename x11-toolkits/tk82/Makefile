@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tk8.1
-# Version required:	8.1a2
+# Version required:	8.1
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.23 1999/05/04 20:50:08 fenner Exp $
+# $Id: Makefile,v 1.24 1999/05/04 21:03:55 fenner Exp $
 #
 
-DISTNAME=	tk8.1b1
-PKGNAME=	tk-8.1.b1
+DISTNAME=	tk8.1
+PKGNAME=	tk-8.1
 CATEGORIES=	x11-toolkits tk81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	tcl81.1:${PORTSDIR}/lang/tcl81
 FILE_DEPENDS=	${PORTSDIR}/x11-toolkits/tk80
 
 USE_XLIB=	yes
-NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
@@ -38,9 +37,9 @@ MAN3=	3DBorder.3 BindTable.3 CanvPsY.3 CanvTkwin.3 CanvTxtInfo.3 \
 	MapWindow.3 MeasureChar.3 MoveToplev.3 Name.3 NameOfImg.3 OwnSelect.3 \
 	ParseArgv.3 QWinEvent.3 Restack.3 RestrictEv.3 SetAppName.3 \
 	SetClass.3 SetGrid.3 SetOptions.3 SetVisual.3 StrictMotif.3 \
-	TextLayout.3 Tk_Init.3 Tk_Main.3 WindowId.3
+	TextLayout.3 Tk_Init.3 Tk_InitStubs.3 Tk_Main.3 WindowId.3
 MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
-	chooseColor.n clipboard.n dde.n destroy.n dialog.n entry.n event.n \
+	chooseColor.n clipboard.n destroy.n dialog.n entry.n event.n \
 	focus.n focusNext.n font.n frame.n getOpenFile.n grab.n grid.n \
 	image.n label.n listbox.n loadTk.n lower.n menu.n menubar.n \
 	menubutton.n message.n messageBox.n option.n optionMenu.n options.n \
@@ -293,6 +292,9 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
+post-extract:   
+	${MV} ${WRKDIR}/${DISTNAME}/doc/InitStubs.3 \
+	      ${WRKDIR}/${DISTNAME}/doc/Tk_InitStubs.3
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if exists(${PKGINSTALL})

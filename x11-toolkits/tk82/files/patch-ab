@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Dec 11 17:38:40 1998
-+++ Makefile.in	Sun Jan 24 16:16:06 1999
+--- Makefile.in.orig	Fri Apr 30 08:27:45 1999
++++ Makefile.in	Mon May 10 01:18:32 1999
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -20,16 +20,7 @@
  
  # A "-I" switch that can be used when compiling to make all of the
  # X11 include files accessible (the configure script will try to
-@@ -113,7 +115,7 @@
- 
- # Libraries to use when linking.  This definition is determined by the
- # configure script.
--LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
-+LIBS = -L${PREFIX}/lib -ltcl81 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
- 
- # To turn off the security checks that disallow incoming sends when
- # the X server appears to be insecure, reverse the comments on the
-@@ -155,7 +157,7 @@
+@@ -152,7 +154,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -38,7 +29,16 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -320,8 +322,14 @@
+@@ -188,7 +190,7 @@
+ # Libraries to use when linking.  This definition is determined by the
+ # configure script.
+ LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+-WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++WISH_LIBS = -L${PREFIX}/lib -ltcl81 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
+ 
+ # The symbol below provides support for dynamic loading and shared
+ # libraries.  See configure.in for a description of what it means.
+@@ -348,8 +350,14 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
@@ -50,19 +50,20 @@
 +	ar cr libtk81.a ${OBJS}
 +	$(RANLIB) libtk81.a
 +
- # Make target which outputs the list of the .o contained in the Tk lib
- # usefull to build a single big shared library containing Tcl/Tk and other
- # extensions.  used for the Tcl Plugin.  -- dl
-@@ -376,7 +384,7 @@
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f ${STUB_LIB_FILE}
+ 	@MAKE_STUB_LIB@
+@@ -410,7 +418,8 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
--install-binaries: $(TK_LIB_FILE) wish
-+install-binaries: $(TK_LIB_FILE) libtk81.a wish
+-install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) \
++		libtk81.a wish
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -388,15 +396,22 @@
+@@ -422,12 +431,18 @@
  	    done;
  	@echo "Installing $(TK_LIB_FILE)"
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -79,6 +80,10 @@
 -	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tkConfig.sh
 +	@mkdir -p $(LIB_INSTALL_DIR)/tk$(VERSION)
 +	@$(INSTALL_DATA) tkConfig.sh $(LIB_INSTALL_DIR)/tk$(VERSION)/tkConfig.sh
+ 	@if test "$(TK_BUILD_EXP_FILE)" != ""; then \
+ 	    echo "Installing $(TK_EXP_FILE)"; \
+ 	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
+@@ -441,6 +456,7 @@
  
  install-libraries:
  	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
@@ -86,12 +91,11 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -406,8 +421,18 @@
+@@ -450,11 +466,19 @@
  		else true; \
  		fi; \
  	    done;
--	@echo "Installing tk.h"
--	@$(INSTALL_DATA) $(GENERIC_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
+-	@for i in $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h ; \
 +	@echo "Installing headers"
 +	@for i in $(GENERIC_DIR)/*.h ; \
 +	    do \
@@ -99,15 +103,17 @@
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@for i in $(UNIX_DIR)/*.h ; \
-+	    do \
-+	    echo "Installing $$i"; \
+ 	    do \
+ 	    echo "Installing $$i"; \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
-+	    done;
+ 	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tkDecls.h $(INCLUDE_INSTALL_DIR)/tkDecls.h
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -466,30 +491,27 @@
+@@ -513,30 +537,27 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \

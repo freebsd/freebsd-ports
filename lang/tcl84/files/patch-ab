@@ -1,6 +1,15 @@
---- configure.orig	Fri Dec 11 18:36:14 1998
-+++ configure	Sat Jan  2 15:04:24 1999
-@@ -4330,14 +4330,19 @@
+--- configure.orig	Fri Apr 30 08:23:33 1999
++++ configure	Tue May 11 01:25:32 1999
+@@ -4384,7 +4384,7 @@
+ 	LD_FLAGS="-Wl,-Bexport"
+ 	LD_SEARCH_FLAGS=""
+ 	;;
+-    NetBSD-*|FreeBSD-12.*|OpenBSD-*)
++    NetBSD-*|FreeBSD-*|OpenBSD-*)
+ 	# Not available on all versions:  check for include file.
+ 	ac_safe=`echo "dlfcn.h" | tr './\055' '___'`
+ echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
+@@ -4413,14 +4413,19 @@
    echo "$ac_t""yes" 1>&6
    
  	    SHLIB_CFLAGS="-fpic"
@@ -13,12 +22,38 @@
  	    LD_SEARCH_FLAGS=""
 -	    TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
 +        if eval "test \"`echo ${PORTOBJFORMAT}`\" = elf"; then
-+            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1'
++            TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1'
 +            SHLIB_LD="ld -shared -x -soname \$@"
 +        else
-+            TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++            TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}.so.1.0'
 +            SHLIB_LD="ld -Bshareable -x"
 +        fi
  	
  else
    echo "$ac_t""no" 1>&6
+@@ -4443,17 +4448,6 @@
+ 	TCL_UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
+ 	TCL_LIB_VERSIONS_OK=nodots
+         ;;
+-    FreeBSD-*)
+-        # FreeBSD 3.* and greater have ELF.
+-        SHLIB_CFLAGS="-fpic"
+-        SHLIB_LD="ld -Bshareable -x"
+-        SHLIB_LD_LIBS=""
+-        SHLIB_SUFFIX=".so"
+-        DL_OBJS="tclLoadDl.o"
+-        DL_LIBS=""
+-        LD_FLAGS=""
+-        LD_SEARCH_FLAGS=""
+-	;;
+     NEXTSTEP-*)
+ 	SHLIB_CFLAGS=""
+ 	SHLIB_LD="cc -nostdlib -r"
+@@ -5100,6 +5094,7 @@
+ #       stub support.
+ #--------------------------------------------------------------------
+ # Replace ${VERSION} with contents of ${TCL_VERSION}
++${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0
+ eval "STUB_LIB_FILE=libtclstub${TCL_UNSHARED_LIB_SUFFIX}"
+ # Replace DBGX with TCL_DBGX
+ eval "STUB_LIB_FILE=\"${STUB_LIB_FILE}\""

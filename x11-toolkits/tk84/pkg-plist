@@ -6,24 +6,31 @@ include/tk8.1/generic/tk3d.h
 include/tk8.1/generic/tkButton.h
 include/tk8.1/generic/tkCanvas.h
 include/tk8.1/generic/tkColor.h
+include/tk8.1/generic/tkDecls.h
 include/tk8.1/generic/tkFileFilter.h
 include/tk8.1/generic/tkFont.h
 include/tk8.1/generic/tkInitScript.h
 include/tk8.1/generic/tkInt.h
+include/tk8.1/generic/tkIntDecls.h
+include/tk8.1/generic/tkIntPlatDecls.h
+include/tk8.1/generic/tkIntXlibDecls.h
 include/tk8.1/generic/tkMenu.h
 include/tk8.1/generic/tkMenubutton.h
+include/tk8.1/generic/tkPlatDecls.h
 include/tk8.1/generic/tkPort.h
 include/tk8.1/generic/tkScale.h
 include/tk8.1/generic/tkScrollbar.h
 include/tk8.1/generic/tkSelect.h
 include/tk8.1/generic/tkText.h
 include/tk8.1/tk.h
+include/tk8.1/tkDecls.h
 include/tk8.1/unix/tkUnixDefault.h
 include/tk8.1/unix/tkUnixInt.h
 include/tk8.1/unix/tkUnixPort.h
 lib/libtk81.a
 lib/libtk81.so
 lib/libtk81.so.1
+lib/libtkstub81.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/tk8.1/bgerror.tcl

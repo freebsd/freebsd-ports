@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1999/05/06 20:14:38 cwt Exp $
+# $Id: Makefile,v 1.19 1999/05/25 18:10:35 hoek Exp $
 #
 
 DISTNAME=	tcl8.0.5
@@ -15,6 +15,7 @@ MAINTAINER=	cwt@freebsd.org
 
 Y2K=            http://www.scriptics.com/Y2K.html
 
+NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tcl8.0.5/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared

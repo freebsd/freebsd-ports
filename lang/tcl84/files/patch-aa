@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Dec 11 18:36:13 1998
-+++ Makefile.in	Sat Jan  2 14:47:02 1999
+--- Makefile.in.orig	Fri Apr 30 08:23:33 1999
++++ Makefile.in	Tue May 11 01:48:45 1999
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
  
@@ -20,7 +20,7 @@
  
  
  # To disable ANSI-C procedure prototypes reverse the comment characters
-@@ -152,7 +154,7 @@
+@@ -161,7 +163,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -29,16 +29,16 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -357,15 +359,21 @@
+@@ -391,15 +393,21 @@
  
- SRCS = $(GENERIC_SRCS) $(UNIX_SRCS)
+ SRCS = $(GENERIC_SRCS) $(UNIX_SRCS) $(STUB_SRCS)
  
--all: ${TCL_LIB_FILE} tclsh
-+all: ${TCL_LIB_FILE} libtcl81.a tclsh
+-all: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) tclsh
++all: ${TCL_LIB_FILE} $(TCL_STUB_LIB_FILE) libtcl81.a tclsh
  
  # The following target is configured by autoconf to generate either
  # a shared library or non-shared library for Tcl.
- ${TCL_LIB_FILE}: ${OBJS}
+ ${TCL_LIB_FILE}: ${OBJS} ${STUB_LIB_FILE}
  	rm -f ${TCL_LIB_FILE}
  	@MAKE_LIB@
 +	ln -sf ${TCL_LIB_FILE} libtcl81.so
@@ -49,19 +49,19 @@
 +	ar cr libtcl81.a ${OBJS}	
 +	$(RANLIB) libtcl81.a
 +
- # Make target which outputs the list of the .o contained in the Tcl lib
- # usefull to build a single big shared library containing Tcl and other
- # extensions.  used for the Tcl Plugin.  -- dl
-@@ -459,7 +467,7 @@
- # some ranlibs write to current directory, and this might not always be
+ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f ${STUB_LIB_FILE}
+ 	@MAKE_STUB_LIB@
+@@ -499,7 +507,7 @@
  # possible (e.g. if installing as root).
  
--install-binaries: $(TCL_LIB_FILE) tclsh
-+install-binaries: $(TCL_LIB_FILE) libtcl81.a tclsh
+ install-binaries: $(TCL_LIB_FILE) $(TCL_STUB_LIB_FILE) $(TCL_BUILD_EXP_FILE) \
+-		tclsh
++		libtcl81.a tclsh
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -471,16 +479,22 @@
+@@ -511,8 +519,13 @@
  	    done;
  	@echo "Installing $(TCL_LIB_FILE)"
  	@$(INSTALL_DATA) $(TCL_LIB_FILE) $(LIB_INSTALL_DIR)/$(TCL_LIB_FILE)
@@ -72,12 +72,21 @@
 +	@$(INSTALL_DATA) libtcl81.a $(LIB_INSTALL_DIR)/libtcl81.a
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtcl81.a)
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtcl81.a
+ 	@if test "$(TCL_BUILD_EXP_FILE)" != ""; then \
+ 	    echo "Installing $(TCL_EXP_FILE)"; \
+ 	    $(INSTALL_DATA) $(TCL_BUILD_EXP_FILE) \
+@@ -521,7 +534,8 @@
  	@echo "Installing tclsh"
  	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
  	@echo "Installing tclConfig.sh"
 -	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
 +	@mkdir -p $(SCRIPT_INSTALL_DIR)
 +	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
+ 	@if test "$(TCL_STUB_LIB_FILE)" != "" ; then \
+ 	    echo "Installing $(TCL_STUB_LIB_FILE)"; \
+ 	    $(INSTALL_DATA) $(STUB_LIB_FILE) \
+@@ -529,8 +543,8 @@
+ 	    fi
  
  install-libraries:
 -	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
@@ -87,25 +96,26 @@
  	    do \
  	    if [ ! -d $$i ] ; then \
  		echo "Making directory $$i"; \
-@@ -498,8 +512,15 @@
+@@ -548,11 +562,16 @@
  		else true; \
  		fi; \
  	    done;
--	@echo "Installing tcl.h"
--	@$(INSTALL_DATA) $(GENERIC_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
+-	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h ; \
 +	@echo "Installing libraries, tcl.h and other headers"
 +	@for i in $(GENERIC_DIR)/*.h ; \
-+	    do \
-+	    echo "Installing $$i"; \
+ 	    do \
+ 	    echo "Installing $$i"; \
+-	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    $(INSTALL_DATA) $$i $(GENERIC_INCLUDE_INSTALL_DIR); \
-+	    done;
+ 	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
 +	@echo "Installing $(TOP_DIR)unix/tclUnixPort.h"
 +	@$(INSTALL_DATA) $(TOP_DIR)/unix/tclUnixPort.h $(UNIX_INCLUDE_INSTALL_DIR)
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex $(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -531,30 +552,34 @@
+@@ -584,30 +603,35 @@
  	@cd $(TOP_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -147,6 +157,7 @@
 +	@echo "**********"
 +	@echo "tclConfig.sh in $(SCRIPT_INSTALL_DIR)/tclConfig.sh"
 +	@echo "tcl.h        in $(INCLUDE_INSTALL_DIR)/tcl.h"
++	@echo "tclDecls.h   in $(INCLUDE_INSTALL_DIR)/tclDecls.h"
 +	@echo "There are NOT default place, but good place to avoid"
 +	@echo "conflicting with another version of Tcl/Tks."
  
