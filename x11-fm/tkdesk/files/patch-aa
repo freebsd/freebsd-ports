@@ -1,6 +1,14 @@
---- configure~	Sun Sep 20 20:41:40 1998
-+++ configure	Sun Dec 20 10:57:19 1998
-@@ -647,8 +647,8 @@
+--- configure.orig	Sun Nov 14 17:07:45 1999
++++ configure	Mon May  1 13:40:36 2000
+@@ -739,14 +739,14 @@
+ #
+ # -----------------------------------------------------------------------
+ if test "$ITCL_VERSION" != "no" ; then
+-  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
+-  TK_INCLUDE_PATH=$TCL_INCLUDE_PATH
++  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include/tcl${TCL_VERSION}
++  TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include/tk${TK_VERSION}
+   NEED_ITCL_LIB=
    # ITCL_LIB_SPEC already set in itclConfig.sh
    ITCL_LIB_STATIC=${TCLCONF_PATH}/libitcl${ITCL_VERSION}.a
  else
