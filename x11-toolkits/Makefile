@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.25 1999/04/12 08:17:25 asami Exp $
+# $Id: Makefile,v 1.26 1999/04/27 12:41:31 taoka Exp $
 #
 
     SUBDIR += FWF
@@ -40,7 +40,6 @@
     SUBDIR += xg
     SUBDIR += xmhtml
     SUBDIR += xview-clients
-    SUBDIR += xview-config
-    SUBDIR += xview-lib
+    SUBDIR += xview
 
 .include <bsd.port.subdir.mk>

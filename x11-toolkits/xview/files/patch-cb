@@ -1,0 +1,87 @@
+*** config/XView.cf.orig	Sun Jun 26 21:09:19 1994
+--- config/XView.cf	Thu Jan 21 17:48:22 1999
+***************
+*** 101,107 ****
+   *	the appropriate value.
+   */
+  #ifndef XVDestDir
+! #define XVDestDir /usr/X11/xview
+  #endif
+  /*
+   *	Command to add object modules to the library.
+--- 101,107 ----
+   *	the appropriate value.
+   */
+  #ifndef XVDestDir
+! #define XVDestDir /usr/X11R6
+  #endif
+  /*
+   *	Command to add object modules to the library.
+***************
+*** 139,145 ****
+   *	installed in $(DESTDIR)/lib/X11/config (aka $(CONFIGDIR)).
+   */ 
+  #ifndef OnlyNeedsNewXViewConfigInstalled 
+! #define OnlyNeedsNewXViewConfigInstalled NO 
+  #endif 
+  /*
+   *	If you would like the XView man pages to be installed in 
+--- 139,145 ----
+   *	installed in $(DESTDIR)/lib/X11/config (aka $(CONFIGDIR)).
+   */ 
+  #ifndef OnlyNeedsNewXViewConfigInstalled 
+! #define OnlyNeedsNewXViewConfigInstalled YES
+  #endif 
+  /*
+   *	If you would like the XView man pages to be installed in 
+***************
+*** 195,201 ****
+  # if PreR4Server
+  # define LibXViewDefines -DPRE_R4_ICCCM
+  # else
+! # define LibXViewDefines -DFULL_R5 -I$(OPENWINHOME)/include -DSUNOS41 -DX11R6
+  # endif
+  #endif
+  /*
+--- 195,201 ----
+  # if PreR4Server
+  # define LibXViewDefines -DPRE_R4_ICCCM
+  # else
+! #   define LibXViewDefines -DFULL_R5 -I$(OPENWINHOME)/include -DSUNOS41 -DX11R6
+  # endif
+  #endif
+  /*
+***************
+*** 259,265 ****
+   *	following variable to YES.  
+   */
+  #ifndef InstallAllImages
+! #define InstallAllImages NO
+  #endif
+  /*
+   *	If you do not already have the textsw extras menu installed in
+--- 259,265 ----
+   *	following variable to YES.  
+   */
+  #ifndef InstallAllImages
+! #define InstallAllImages YES
+  #endif
+  /*
+   *	If you do not already have the textsw extras menu installed in
+***************
+*** 360,366 ****
+   *    	be defined as -PIC
+   */
+  #ifndef PositionIndependentCodeFlag
+! #define PositionIndependentCodeFlag -PIC
+  #endif
+  
+  /*
+--- 360,366 ----
+   *    	be defined as -PIC
+   */
+  #ifndef PositionIndependentCodeFlag
+! #define PositionIndependentCodeFlag -fpic
+  #endif
+  
+  /*

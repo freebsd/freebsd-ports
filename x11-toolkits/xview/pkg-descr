@@ -1,5 +1,3 @@
-What Is XView
--------------
 XView (X Window-System-based Visual/Integrated Environment for Workstations)
 is a user-interface toolkit to support interactive, graphics-based
 applications running under the X Window System.  XView provides a set of
@@ -8,9 +6,11 @@ control panels.  The appearance and functionality of these objects follow
 the OPEN LOOK Graphical User Interface (GUI) specification.  XView features
 an object-oriented style Application Programmer's Interface (API) that is
 straightforward and easy to learn.
-
 This package contains all the configurations files needed for use of
 the XView libraries and applications.
+
+This package contains the libraries, headers and support files
+necessary to build XView applications.
 
 Source Notes
 ------------

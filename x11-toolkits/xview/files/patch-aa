@@ -1,20 +1,38 @@
-diff -rc ../old/xview3.2p1-X11R6/config/Imakefile Imakefile
-*** ../old/xview3.2p1-X11R6/config/Imakefile	Tue Jun 29 01:13:19 1993
---- Imakefile	Sun Nov 20 13:38:58 1994
+*** Imakefile.orig	Sat Jun 25 20:47:22 1994
+--- Imakefile	Mon Jan 25 12:07:10 1999
 ***************
-*** 8,14 ****
-  /**/# config directory
-  /**/# @(#)Imakefile	1.9 28 Jun 1993 SMI
+*** 4,11 ****
+  /**/# Top level Imakefile for ProductNameAndRelease
+  /**/# @(#)Imakefile	1.7 1/7/92 SMI
   
-! XVFILES = XView.cf XView.lib XView.obj XView.rules XView.tmpl library.tmpl
-  CFFILES = $(XVFILES) $(HEADERS)
+! CC = cc
+! CFLAGS = -O 
   
-  InstallMultipleDestFlags(install,$(CFFILES),$(CONFIGDIR),$(INSTDATFLAGS))
---- 8,14 ----
-  /**/# config directory
-  /**/# @(#)Imakefile	1.9 28 Jun 1993 SMI
+  #define IHaveSubdirs
+  #define PassCDebugFlags
+--- 4,11 ----
+  /**/# Top level Imakefile for ProductNameAndRelease
+  /**/# @(#)Imakefile	1.7 1/7/92 SMI
   
-! XVFILES = XView.cf XView.lib XView.obj XView.rules XView.tmpl XView.prog
-  CFFILES = $(XVFILES) $(HEADERS)
+! CC ?= gcc
+! CFLAGS += -O -fstrength-reduce -fpcc-struct-return 
   
-  InstallMultipleDestFlags(install,$(CFFILES),$(CONFIGDIR),$(INSTDATFLAGS))
+  #define IHaveSubdirs
+  #define PassCDebugFlags
+***************
+*** 13,19 ****
+             WORLDOPTS = 
+  /**/# If you want to make only the library, then start the build in the lib
+  /**/# subdirectory.  Be sure to do a 'make includes' in images and bitmaps first.
+!             COREDIRS = lib images bitmaps misc util
+  #if InstallOpenLookFonts 
+              FONTSDIR = fonts
+  #else
+--- 13,19 ----
+             WORLDOPTS = 
+  /**/# If you want to make only the library, then start the build in the lib
+  /**/# subdirectory.  Be sure to do a 'make includes' in images and bitmaps first.
+!             COREDIRS = lib images bitmaps misc util config
+  #if InstallOpenLookFonts 
+              FONTSDIR = fonts
+  #else
