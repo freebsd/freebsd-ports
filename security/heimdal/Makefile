@@ -15,6 +15,10 @@ MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 
 MAINTAINER=		nectar@FreeBSD.ORG
 
+.if defined(WITH_LDAP)
+LIB_DEPENDS=		ldap.2:${PORTSDIR}/net/openldap2
+.endif
+
 RESTRICTED=		"Crypto; export-controlled"
 
 MAN1=			ftp.1 kdestroy.1 kf.1 kgetcred.1 kinit.1 klist.1 kpasswd.1 \
@@ -35,6 +39,9 @@ MAN8=			ftpd.8 hprop.8 hpropd.8 kadmind.8 kdc.8 kfd.8 kpasswdd.8 \
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
+.if defined(WITH_LDAP)
+CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE}
+.endif
 
 .if defined(HEIMDAL_HOME)
 PREFIX=			${HEIMDAL_HOME}
