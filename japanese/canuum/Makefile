@@ -3,13 +3,14 @@
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/11 07:56:55 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/02/12 16:59:31 motoyuki Exp $
 #
 
 DISTNAME=	canuum-1.0
 PKGNAME=	ja-canuum-1.0
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna22/
+MASTER_SITES=	ftp://ftp.nec.co.jp/pub/Canna/Canna22/ \
+		ftp://ftp.nec.co.jp/pub/Canna/Canna32/
 DISTFILES=	Uum4.109.tar.gz  Canna32p2.tar.gz
 EXTRACT_ONLY=	Uum4.109.tar.gz
 
