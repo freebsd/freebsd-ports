@@ -195,6 +195,7 @@
     SUBDIR += gofish
     SUBDIR += googolplex
     SUBDIR += gopher
+    SUBDIR += gossip
     SUBDIR += gps
     SUBDIR += gq
     SUBDIR += gsk

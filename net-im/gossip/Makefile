@@ -1,0 +1,25 @@
+# New ports collection makefile for:	gossip
+# Date created:				08 July 2003
+# Whom:					Adam Weinberger <adamw@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gossip
+PORTVERSION=	0.3
+CATEGORIES=	net gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GTK2 Jabber Instant Messaging client
+
+LIB_DEPENDS=	loudmouth.0:${PORTSDIR}/net/loudmouth
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
+
+.include <bsd.port.mk>
