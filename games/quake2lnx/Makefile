@@ -27,6 +27,7 @@ COMMENT=	Cleaned up copy of the original Quake II source code
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+WANT_SDL=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -45,10 +46,10 @@ PLIST_SUB+=	SVGA="@comment "
 .endif
 
 .if defined(WITH_SDLCLIENT) || defined(WITH_SDL) || defined(WITH_SDLGL) \
-	|| exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+	|| ${HAVE_SDL:Msdl}!=""
 . if !(defined(WITHOUT_SDLCLIENT) && defined(WITHOUT_SDL) \
 	&& defined(WITHOUT_SDLGL))
-USE_SDL=	yes
+USE_SDL=	sdl
 . endif
 . if !defined(WITHOUT_SDLCLIENT)
 MAKE_ARGS+=	BUILD_SDLQUAKE2=YES
@@ -188,13 +189,13 @@ pre-everything::
 .if ${ARCH} == "i386" && !(defined(WITH_SVGA) || exists(${LOCALBASE}/lib/libvga.so.1))
 	@${ECHO_MSG} "Define WITH_SVGA to build SVGA driver"
 .endif
-.if !(defined(WITH_SDL) || exists(${LOCALBASE}/lib/libSDL-1.1.so.5))
+.if !(defined(WITH_SDL) || ${HAVE_SDL:Msdl}!="")
 	@${ECHO_MSG} "Define WITH_SDL to build SDL software driver"
 .endif
-.if !(defined(WITH_SDLGL) || exists(${LOCALBASE}/lib/libSDL-1.1.so.5))
+.if !(defined(WITH_SDLGL) || ${HAVE_SDL:Msdl}!="")
 	@${ECHO_MSG} "Define WITH_SDLGL to build SDL OpenGL driver"
 .endif
-.if !(defined(WITH_SDLCLIENT) || exists(${LOCALBASE}/lib/libSDL-1.1.so.5))
+.if !(defined(WITH_SDLCLIENT) || ${HAVE_SDL:Msdl}!="")
 	@${ECHO_MSG} "Define WITH_SDLCLIENT to build executable that uses SDL for cdrom and sound"
 .endif
 .if !(defined(WITH_AA) || exists(${LOCALBASE}/lib/libaa.so.1))

@@ -30,7 +30,7 @@ PLIST_SUB=	STELLA_BIN="${STELLA_BIN}"
 ALL_TARGET=	freebsd-x
 STELLA_BIN=	stella.x11
 .else
-USE_SDL=	yes
+USE_SDL=	sdl
 ALL_TARGET=	freebsd-sdl
 STELLA_BIN=	stella.sdl
 .endif

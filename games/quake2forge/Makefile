@@ -21,6 +21,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
+WANT_SDL=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/quake2 ${PREFIX}/lib/quake2/baseq2 ${PREFIX}/lib/quake2/ctf
 
 .include <bsd.port.pre.mk>
@@ -28,7 +29,7 @@ LDCONFIG_DIRS=	${PREFIX}/lib/quake2 ${PREFIX}/lib/quake2/baseq2 ${PREFIX}/lib/qu
 CONFIGURE_ARGS=	--enable-static=no --program-transform-name='s/^quake2$$/q2f/'
 CONFIGURE_TARGET=
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+.if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
 .endif
 

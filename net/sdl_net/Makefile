@@ -17,7 +17,7 @@ COMMENT=	A small sample cross-platform networking library
 
 LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

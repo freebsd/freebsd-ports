@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GL=		yes
 
 CONFIGURE_ARGS=	--with-sdl=${LOCALBASE} --disable-oggtest --disable-vorbistest --disable-sdltest

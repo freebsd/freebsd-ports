@@ -16,7 +16,7 @@ COMMENT=	An SDL port of the Abuse game engine
 
 USE_BZIP2=	yes
 USE_MESA=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

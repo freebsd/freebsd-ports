@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
 USE_REINPLACE=	yes
 .if !defined(WITHOUT_SDL)
-USE_SDL=	yes
+USE_SDL=	sdl
 .endif
 
 ROM=		1541 Basic Char Kernal

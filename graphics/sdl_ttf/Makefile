@@ -17,7 +17,7 @@ COMMENT=	A library to use TrueType fonts to render text in SDL applications
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

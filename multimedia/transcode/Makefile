@@ -29,6 +29,7 @@ CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+WANT_SDL=	yes
 
 MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
 	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \
@@ -48,7 +49,7 @@ WITH_IMAGEMAGICK=	yes
 WITH_AVIFILE=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so)
+.if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
 .endif
 
@@ -138,7 +139,7 @@ WITHOUT_FFMPEG=	YES
 .endif
 
 .if defined(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+USE_SDL=	sdl
 WITH_LIBDV=	yes
 PLIST_SUB+=	WITH_SDL=""
 .else

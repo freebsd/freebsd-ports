@@ -20,6 +20,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+WANT_SDL=	yes
 
 CONFIGURE_TARGET=
 CONFIGURE_ENV=	CFLAGS=${PTHREAD_CFLAGS}
@@ -28,7 +29,7 @@ MAN6=	freesci-tools.6 freesci.6
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+.if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
 .endif
 .if exists(${LOCALBASE}/lib/libdirectfb-0.9.so.16)
@@ -43,7 +44,7 @@ CONFIGURE_ARGS+=	--with-console
 .endif
 
 .if defined(WITH_SDL) && !defined(WITHOUT_SDL)
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+USE_SDL=	yes
 CONFIGURE_ARGS=		--with-sdl-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-sdl

@@ -29,10 +29,10 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 HAS_CONFIGURE=	yes
+WANT_SDL=	yes
 
 MAN1=	mplayerxp.1
 
-SDL_CONFIG?=	"${LOCALBASE}/bin/sdl11-config"
 WIN32_CODEC_PREFIX=	${LOCALBASE}/lib/win32
 
 # dirs to create before installation
@@ -80,11 +80,11 @@ WITH_CDPARANOIA=yes
 WITH_DVD=yes
 .endif
 # sdl
-.if exists(${LOCALBASE}/lib/libSDL-1.1.a)
+.if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=yes
 .endif
 # sdl_image
-.if exists(${LOCALBASE}/lib/libSDL_image.a)
+.if ${HAVE_SDL:Mimage}!=""
 WITH_SDL_IMAGE=yes
 .endif
 # xvid
@@ -139,17 +139,14 @@ CONFIGURE_ARGS+=	--with-libdvdnav=${LOCALBASE}
 .endif
 # sdl
 .ifdef(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	sdl
 CONFIGURE_ARGS+=	--enable-sdl
-CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 .else
 CONFIGURE_ARGS+=	--disable-sdl
 .endif
 # sdl_image
 .ifdef(WITH_SDL_IMAGE)
-LIB_DEPENDS+=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
+USE_SDL+=	image
 CONFIGURE_ARGS+=	--enable-sdl-image
 .else
 CONFIGURE_ARGS+=	--disable-sdl-image

@@ -16,7 +16,7 @@ COMMENT=	A program to send AM radio signals using a PC monitor
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 
 post-install:
 	${MKDIR} ${PREFIX}/share/tempest

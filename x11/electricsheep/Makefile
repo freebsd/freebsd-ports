@@ -20,7 +20,7 @@ RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

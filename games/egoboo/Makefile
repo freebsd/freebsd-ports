@@ -16,7 +16,7 @@ MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	A 3d dungeon crawling adventure in the spirit of NetHack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
