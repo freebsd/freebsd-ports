@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # Roman Shterenzon <roman@xpert.com> 27/12/2000 
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/security/amavis-perl/Attic/pkg-install.sendmail,v 1.1 2001-10-21 18:47:20 dwcjr Exp $
 
 use strict;
 
@@ -83,12 +83,6 @@ if ( ! -d "/var/spool/mqamavis" ) {
 }
 my $gid=getgrnam('daemon');
 chown 0, $gid, "/var/spool/mqamavis";
-
-print "===> Creating /var/spool/quarantine directory\n";
-if ( ! -d "/var/spool/quarantine" ) {
-  mkdir "/var/spool/quarantine",0755 || die "Can't create /var/spool/quarantine\n";
-}
-chown 0, $gid, "/var/spool/quarantine";
 
 die "There's already a $cf.pre-amavis, is amavis already installed?\n"
   if -f "$cf.pre-amavis";

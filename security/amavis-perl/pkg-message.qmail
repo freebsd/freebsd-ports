@@ -1,0 +1,20 @@
+
+Please read documentation on http://www.amavis.org/ before you start using it.
+
+SECURITY NOTES:
+
+The qmail installation already has bin/qmail-queue as suid qmailq.  This port
+copies bin/qmail-queue to bin/qmail-queue-real and installs itself as
+bin/qmail-queue with suid qmailq.
+
+Additionally, for this port to properly work with qmail, it requires that
+/usr/bin/suidperl be suid root.  The following changes were made:
+
+-rwsr-xr-x  3 root  wheel  50760 xxx xx xx:xx /usr/bin/suidperl
+
+ADDITIONAL NOTES:
+
+An alias for ~alias/.qmail-virusalert to root was created.  Modify this file
+to meet your requirements.
+
+
