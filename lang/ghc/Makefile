@@ -6,7 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	5.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
 
@@ -34,6 +34,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=      GHC_VERSION=${PORTVERSION}
+.if defined(WITHOUT_PROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
 
 # This port builds by downloading a minimal binary distribution of GHC and
 # using that to bootstrap.
@@ -49,11 +54,37 @@ CONFIGURE_TARGET=
 TMPDIR = ${WRKSRC}/tmp
 MAKE_ENV += TMPDIR=${TMPDIR}
 
+pre-everything::
+.if !defined(WITHOUT_PROFILE)
+	@${ECHO_CMD} "To build GHC without profiling libraries,"
+	@${ECHO_CMD} "hit Ctrl-C now and restart with 'make"
+	@$(ECHO_CMD) "WITHOUT_PROFILE=YES'."
+.else
+	@${ECHO_CMD} "Building GHC without profiling libraries."
+.endif
+
+.if defined(WITHOUT_PROFILE)
+post-extract:
+	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
+.endif
+
+post-patch:
+	@${PERL} -pi -e 's/DrIFT/DrIFT-ghc/g; \
+		s/DtdToHaskell/DtdToHaskell-ghc/g; \
+		s/Xtract/Xtract-ghc/g' \
+			${WRKSRC}/ghc/mk/config.mk \
+			${WRKSRC}/hslibs/tools/DrIFT/Makefile \
+			${WRKSRC}/hslibs/tools/DtdToHaskell/Makefile \
+			${WRKSRC}/hslibs/tools/Xtract/Makefile
+
 pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 	@(cd ${BOOT_DIR} && ${MAKE} in-place)
 
 pre-build:
 	@${MKDIR} ${TMPDIR}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

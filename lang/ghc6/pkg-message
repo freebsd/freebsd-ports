@@ -1,0 +1,9 @@
+******************************************************************************
+In order to avoid a conflict with the textproc/haxml and the devel/drift port,
+
+                  DrIFT,     DtdToHaskell,     and  Xtract
+
+were installed as
+
+                  DrIFT-ghc, DtdToHaskell-ghc, and Xtract-ghc
+******************************************************************************
