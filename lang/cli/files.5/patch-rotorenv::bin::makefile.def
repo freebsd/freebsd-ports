@@ -9,7 +9,7 @@ $FreeBSD$
                  $(LINK_INCREMENTAL_FLAG) \
 -                $(REQUIRED_C_RUNTIME)
 +                $(REQUIRED_C_RUNTIME) \
-+		-lc_r -lc
++		-lstdc++ -lc_r -lc
  !else
  LINKER_FLAGS =  $(LINKER_FLAGS) \
                  -MERGE:_PAGE=PAGE \

@@ -1,333 +1,326 @@
-cli-20020326/Microsoft.JScript.dll
-cli-20020326/Microsoft.Vsa.dll
-cli-20020326/Symbols.pri/dll/Microsoft.JScript.ildb
-cli-20020326/Symbols.pri/dll/Microsoft.Vsa.ildb
-cli-20020326/Symbols.pri/dll/SharedSourceCLI.TK.ildb
-cli-20020326/Symbols.pri/dll/System.Runtime.Remoting.ildb
-cli-20020326/Symbols.pri/dll/System.Runtime.Serialization.Formatters.Soap.ildb
-cli-20020326/Symbols.pri/dll/System.Xml.ildb
-cli-20020326/Symbols.pri/dll/System.ildb
-cli-20020326/Symbols.pri/exe/caspol.ildb
-cli-20020326/Symbols.pri/exe/corcls.ildb
-cli-20020326/Symbols.pri/exe/jsc.ildb
-cli-20020326/Symbols.pri/exe/ngrep.ildb
-cli-20020326/Symbols.pri/exe/pighello.ildb
-cli-20020326/Symbols.pri/exe/pigpad.ildb
-cli-20020326/Symbols.pri/exe/resgen.ildb
-cli-20020326/Symbols.pri/exe/secdbedit.ildb
-cli-20020326/Symbols.pri/exe/storeadm.ildb
-cli-20020326/Symbols/dll/Microsoft.JScript.ildb
-cli-20020326/Symbols/dll/Microsoft.Vsa.ildb
-cli-20020326/Symbols/dll/SharedSourceCLI.TK.ildb
-cli-20020326/Symbols/dll/System.Runtime.Remoting.ildb
-cli-20020326/Symbols/dll/System.Runtime.Serialization.Formatters.Soap.ildb
-cli-20020326/Symbols/dll/System.Xml.ildb
-cli-20020326/Symbols/dll/System.ildb
-cli-20020326/Symbols/exe/caspol.ildb
-cli-20020326/Symbols/exe/corcls.ildb
-cli-20020326/Symbols/exe/jsc.ildb
-cli-20020326/Symbols/exe/ngrep.ildb
-cli-20020326/Symbols/exe/pighello.ildb
-cli-20020326/Symbols/exe/pigpad.ildb
-cli-20020326/Symbols/exe/resgen.ildb
-cli-20020326/Symbols/exe/secdbedit.ildb
-cli-20020326/Symbols/exe/storeadm.ildb
-cli-20020326/System.Runtime.Remoting.dll
-cli-20020326/System.Runtime.Serialization.Formatters.Soap.dll
-cli-20020326/System.Xml.dll
-cli-20020326/System.dll
-cli-20020326/al
-cli-20020326/alink.satellite
-cli-20020326/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
-cli-20020326/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
-cli-20020326/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.Vsa.dll
-cli-20020326/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
-cli-20020326/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089/System.Runtime.Remoting.dll
-cli-20020326/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
-cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll
-cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
-cli-20020326/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/System.Xml.dll
-cli-20020326/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
-cli-20020326/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/System.dll
-cli-20020326/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
-cli-20020326/big5.nlp
-cli-20020326/binplace
-cli-20020326/bopomofo.nlp
-cli-20020326/build
-cli-20020326/caspol.exe
-cli-20020326/charinfo.nlp
-cli-20020326/clix
-cli-20020326/clix.satellite
-cli-20020326/config/enterprisesec.config
-cli-20020326/config/enterprisesec.config.cch
-cli-20020326/config/enterprisesec.config.old
-cli-20020326/config/machine.config
-cli-20020326/config/security.config
-cli-20020326/config/security.config.cch
-cli-20020326/config/security.config.old
-cli-20020326/cppmunge
-cli-20020326/csc
-cli-20020326/csc.rsp
-cli-20020326/cscomp.satellite
-cli-20020326/ctype.nlp
-cli-20020326/culture.nlp
-cli-20020326/dump/__mscoree_file__.h
-cli-20020326/dump/allocacheck.h
-cli-20020326/dump/arraylist.h
-cli-20020326/dump/asmoffsets.h
-cli-20020326/dump/blobfetcher.h
-cli-20020326/dump/cahlpr.h
-cli-20020326/dump/caspol.exe
-cli-20020326/dump/ceefilegenwriter.h
-cli-20020326/dump/ceegen.h
-cli-20020326/dump/ceegentokenmapper.h
-cli-20020326/dump/ceesectionstring.h
-cli-20020326/dump/classfac.h
-cli-20020326/dump/clear-class-dump-defs.h
-cli-20020326/dump/columnbinding.h
-cli-20020326/dump/compressionformat.h
-cli-20020326/dump/contxt.h
-cli-20020326/dump/cordbpriv.h
-cli-20020326/dump/corffi.h
-cli-20020326/dump/corhlpr.h
-cli-20020326/dump/corhost.h
-cli-20020326/dump/corimage.h
-cli-20020326/dump/corinfo.h
-cli-20020326/dump/corjit.h
-cli-20020326/dump/corperm.h
-cli-20020326/dump/corperme.h
-cli-20020326/dump/corpermp.h
-cli-20020326/dump/corpolicy.h
-cli-20020326/dump/corpriv.h
-cli-20020326/dump/corsvcpriv.h
-cli-20020326/dump/cortypeinfo.h
-cli-20020326/dump/crtwrap.h
-cli-20020326/dump/dbgalloc.h
-cli-20020326/dump/dbgmeta.h
-cli-20020326/dump/debugmacros.h
-cli-20020326/dump/declsec.h
-cli-20020326/dump/dump-tables.h
-cli-20020326/dump/dump-type-info.h
-cli-20020326/dump/dump-types.h
-cli-20020326/dump/eetwain.h
-cli-20020326/dump/ehencoder.h
-cli-20020326/dump/enc.h
-cli-20020326/dump/endian.h
-cli-20020326/dump/frame-types.h
-cli-20020326/dump/fusion.h
-cli-20020326/dump/fusionbind.h
-cli-20020326/dump/fusionpriv.h
-cli-20020326/dump/fusionsetup.h
-cli-20020326/dump/fusionsink.h
-cli-20020326/dump/fuspriv.h
-cli-20020326/dump/gcdump.h
-cli-20020326/dump/gcinfo.h
-cli-20020326/dump/guidfromname.h
-cli-20020326/dump/holder.h
-cli-20020326/dump/hrex.h
-cli-20020326/dump/iceefilegen.h
-cli-20020326/dump/il_kywd.h
-cli-20020326/dump/ilformatter.h
-cli-20020326/dump/internaldebug.h
-cli-20020326/dump/intrinsic.h
-cli-20020326/dump/ipcfunccall.h
-cli-20020326/dump/ipcmanagerinterface.h
-cli-20020326/dump/jitperf.h
-cli-20020326/dump/log.h
-cli-20020326/dump/loglf.h
-cli-20020326/dump/machine.h
-cli-20020326/dump/md5.h
-cli-20020326/dump/mdcommon.h
-cli-20020326/dump/member-offset-info.h
-cli-20020326/dump/metadata.h
-cli-20020326/dump/metadatatracker.h
-cli-20020326/dump/metamodelpub.h
-cli-20020326/dump/mscorcfg.h
-cli-20020326/dump/nativevaraccessors.h
-cli-20020326/dump/nsutilpriv.h
-cli-20020326/dump/openum.h
-cli-20020326/dump/opinfo.h
-cli-20020326/dump/outstring.h
-cli-20020326/dump/palclr.h
-cli-20020326/dump/perfcounterdefs.h
-cli-20020326/dump/perfcounters.h
-cli-20020326/dump/perflog.h
-cli-20020326/dump/pesectionman.h
-cli-20020326/dump/posterror.h
-cli-20020326/dump/prettyprintsig.h
-cli-20020326/dump/profilepriv.h
-cli-20020326/dump/querybinding.h
-cli-20020326/dump/regdisp.h
-cli-20020326/dump/safegetfilesize.h
-cli-20020326/dump/secdbedit.exe
-cli-20020326/dump/setupcodes.h
-cli-20020326/dump/shimload.h
-cli-20020326/dump/sighelper.h
-cli-20020326/dump/stacktrace.h
-cli-20020326/dump/stdmacros.h
-cli-20020326/dump/stgpool.h
-cli-20020326/dump/stgpooli.h
-cli-20020326/dump/stresslog.h
-cli-20020326/dump/switches.h
-cli-20020326/dump/threadpool.h
-cli-20020326/dump/timeline.h
-cli-20020326/dump/timer.h
-cli-20020326/dump/tpoolfnsp.h
-cli-20020326/dump/unused.h
-cli-20020326/dump/utilcode.h
-cli-20020326/dump/utsem.h
-cli-20020326/dump/vererror.h
-cli-20020326/dump/warningcontrol.h
-cli-20020326/dump/winwrap.h
-cli-20020326/dump/wsinfo.h
-cli-20020326/dump/wsperf.h
-cli-20020326/dump/xmlparser.h
-cli-20020326/fusion.localgac
-cli-20020326/fusion.satellite
-cli-20020326/gacutil
-cli-20020326/int_tools/internalresgen
-cli-20020326/jsc.exe
-cli-20020326/ksc.nlp
-cli-20020326/l_except.nlp
-cli-20020326/l_intl.nlp
-cli-20020326/libalink.so
-cli-20020326/libcscomp.so
-cli-20020326/libfusion.so
-cli-20020326/libildbsymbols.so
-cli-20020326/libmscordbi.so
-cli-20020326/libmscorejt.so
-cli-20020326/libmscorpe.so
-cli-20020326/libmscorrc.so
-cli-20020326/libmscorsn.so
-cli-20020326/librotor_pal.so
-cli-20020326/librotor_palrt.so
-cli-20020326/libsos.so
-cli-20020326/libsscoree.so
-cli-20020326/license.txt
-cli-20020326/mscorlib.dll
-cli-20020326/mscorrc.satellite
-cli-20020326/nmake
-cli-20020326/pigui/SharedSourceCLI.TK.dll
-cli-20020326/pigui/pighello.exe
-cli-20020326/pigui/pigpad.exe
-cli-20020326/prc.nlp
-cli-20020326/prcp.nlp
-cli-20020326/private/lib/System.dll
-cli-20020326/region.nlp
-cli-20020326/resourcecompiler
-cli-20020326/rotor/rotor.ini
-cli-20020326/rotor/strongname.ini
-cli-20020326/rotor_pal.satellite
-cli-20020326/sdk/bin/corcls.exe
-cli-20020326/sdk/bin/cordbg
-cli-20020326/sdk/bin/ilasm
-cli-20020326/sdk/bin/ildasm
-cli-20020326/sdk/bin/ildasm.satellite
-cli-20020326/sdk/bin/metainfo
-cli-20020326/sdk/bin/ngrep.exe
-cli-20020326/sdk/bin/peverify
-cli-20020326/sdk/bin/resgen.exe
-cli-20020326/sdk/bin/sn
-cli-20020326/sdk/bin/sn.satellite
-cli-20020326/sdk/bin/storeadm.exe
-cli-20020326/sdk/include/cor.h
-cli-20020326/sdk/include/cordebug.h
-cli-20020326/sdk/include/corerror.h
-cli-20020326/sdk/include/corhdr.h
-cli-20020326/sdk/include/corprof.h
-cli-20020326/sdk/include/corpub.h
-cli-20020326/sdk/include/corsym.h
-cli-20020326/sdk/include/gchost.h
-cli-20020326/sdk/include/ivalidator.h
-cli-20020326/sdk/include/ivehandler.h
-cli-20020326/sdk/include/mscoree.h
-cli-20020326/sdk/include/opcode.def
-cli-20020326/sdk/include/strongname.h
-cli-20020326/sdk/lib/mscorsn.lib
-cli-20020326/sdk/pal/inc/assert.h
-cli-20020326/sdk/pal/inc/atl.h
-cli-20020326/sdk/pal/inc/ccombstr.h
-cli-20020326/sdk/pal/inc/crtdbg.h
-cli-20020326/sdk/pal/inc/ctype.h
-cli-20020326/sdk/pal/inc/float.h
-cli-20020326/sdk/pal/inc/guiddef.h
-cli-20020326/sdk/pal/inc/io.h
-cli-20020326/sdk/pal/inc/limits.h
-cli-20020326/sdk/pal/inc/malloc.h
-cli-20020326/sdk/pal/inc/math.h
-cli-20020326/sdk/pal/inc/mbstring.h
-cli-20020326/sdk/pal/inc/memory.h
-cli-20020326/sdk/pal/inc/new.h
-cli-20020326/sdk/pal/inc/ntimage.h
-cli-20020326/sdk/pal/inc/oaidl.h
-cli-20020326/sdk/pal/inc/objbase.h
-cli-20020326/sdk/pal/inc/objidl.h
-cli-20020326/sdk/pal/inc/ole2.h
-cli-20020326/sdk/pal/inc/oleauto.h
-cli-20020326/sdk/pal/inc/poppack.h
-cli-20020326/sdk/pal/inc/process.h
-cli-20020326/sdk/pal/inc/pshpack1.h
-cli-20020326/sdk/pal/inc/pshpack2.h
-cli-20020326/sdk/pal/inc/pshpack4.h
-cli-20020326/sdk/pal/inc/pshpack8.h
-cli-20020326/sdk/pal/inc/rotor_pal.h
-cli-20020326/sdk/pal/inc/rotor_palrt.h
-cli-20020326/sdk/pal/inc/rpc.h
-cli-20020326/sdk/pal/inc/rpcndr.h
-cli-20020326/sdk/pal/inc/servprov.h
-cli-20020326/sdk/pal/inc/shlwapi.h
-cli-20020326/sdk/pal/inc/stdarg.h
-cli-20020326/sdk/pal/inc/stddef.h
-cli-20020326/sdk/pal/inc/stdio.h
-cli-20020326/sdk/pal/inc/stdlib.h
-cli-20020326/sdk/pal/inc/string.h
-cli-20020326/sdk/pal/inc/time.h
-cli-20020326/sdk/pal/inc/unknwn.h
-cli-20020326/sdk/pal/inc/wchar.h
-cli-20020326/sdk/pal/inc/winbase.h
-cli-20020326/sdk/pal/inc/wincrypt.h
-cli-20020326/sdk/pal/inc/windef.h
-cli-20020326/sdk/pal/inc/windows.h
-cli-20020326/sdk/pal/inc/winerror.h
-cli-20020326/sdk/pal/inc/winnls.h
-cli-20020326/sdk/pal/inc/winresrc.h
-cli-20020326/sdk/pal/inc/winver.h
-cli-20020326/sortkey.nlp
-cli-20020326/sorttbls.nlp
-cli-20020326/xjis.nlp
-@dirrm cli-20020326/sdk/pal/inc
-@dirrm cli-20020326/sdk/pal
-@dirrm cli-20020326/sdk/lib
-@dirrm cli-20020326/sdk/include
-@dirrm cli-20020326/sdk/bin
-@dirrm cli-20020326/sdk
-@dirrm cli-20020326/rotor
-@dirrm cli-20020326/private/lib/rotor_x86
-@dirrm cli-20020326/private/lib
-@dirrm cli-20020326/private
-@dirrm cli-20020326/pigui
-@dirrm cli-20020326/int_tools
-@dirrm cli-20020326/dump
-@dirrm cli-20020326/config
-@dirrm cli-20020326/assembly/tmp
-@dirrm cli-20020326/assembly/GAC/System/1.0.3300.0__b77a5c561934e089
-@dirrm cli-20020326/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089
-@dirrm cli-20020326/assembly/GAC/System.Xml
-@dirrm cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a
-@dirrm cli-20020326/assembly/GAC/System.Runtime.Serialization.Formatters.Soap
-@dirrm cli-20020326/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089
-@dirrm cli-20020326/assembly/GAC/System.Runtime.Remoting
-@dirrm cli-20020326/assembly/GAC/System
-@dirrm cli-20020326/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a
-@dirrm cli-20020326/assembly/GAC/Microsoft.Vsa
-@dirrm cli-20020326/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a
-@dirrm cli-20020326/assembly/GAC/Microsoft.JScript
-@dirrm cli-20020326/assembly/GAC
-@dirrm cli-20020326/assembly
-@dirrm cli-20020326/Symbols/exe
-@dirrm cli-20020326/Symbols/dll
-@dirrm cli-20020326/Symbols.pri/exe
-@dirrm cli-20020326/Symbols.pri/dll
-@dirrm cli-20020326/Symbols.pri
-@dirrm cli-20020326/Symbols
-@dirrm cli-20020326
+cli-%%CLI_VERSION%%/ISymWrapper.dll
+cli-%%CLI_VERSION%%/ISymWrapper.ildb
+cli-%%CLI_VERSION%%/Microsoft.JScript.dll
+cli-%%CLI_VERSION%%/Microsoft.JScript.ildb
+cli-%%CLI_VERSION%%/Microsoft.Vsa.dll
+cli-%%CLI_VERSION%%/Microsoft.Vsa.ildb
+cli-%%CLI_VERSION%%/Symbols.pri/dll/mscorlib.ildb
+cli-%%CLI_VERSION%%/System.Runtime.Remoting.dll
+cli-%%CLI_VERSION%%/System.Runtime.Remoting.ildb
+cli-%%CLI_VERSION%%/System.Runtime.Serialization.Formatters.Soap.dll
+cli-%%CLI_VERSION%%/System.Runtime.Serialization.Formatters.Soap.ildb
+cli-%%CLI_VERSION%%/System.Xml.dll
+cli-%%CLI_VERSION%%/System.Xml.ildb
+cli-%%CLI_VERSION%%/System.dll
+cli-%%CLI_VERSION%%/System.ildb
+cli-%%CLI_VERSION%%/al
+cli-%%CLI_VERSION%%/alink.satellite
+cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
+cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.Vsa.dll
+cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089/System.Runtime.Remoting.dll
+cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a/System.Runtime.Serialization.Formatters.Soap.dll
+cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/System.Xml.dll
+cli-%%CLI_VERSION%%/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/System.dll
+cli-%%CLI_VERSION%%/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/big5.nlp
+cli-%%CLI_VERSION%%/binplace
+cli-%%CLI_VERSION%%/bopomofo.nlp
+cli-%%CLI_VERSION%%/build
+cli-%%CLI_VERSION%%/caspol.exe
+cli-%%CLI_VERSION%%/charinfo.nlp
+cli-%%CLI_VERSION%%/clix
+cli-%%CLI_VERSION%%/clix.satellite
+cli-%%CLI_VERSION%%/config/enterprisesec.config
+cli-%%CLI_VERSION%%/config/enterprisesec.config.cch
+cli-%%CLI_VERSION%%/config/enterprisesec.config.old
+cli-%%CLI_VERSION%%/config/machine.config
+cli-%%CLI_VERSION%%/config/security.config
+cli-%%CLI_VERSION%%/config/security.config.cch
+cli-%%CLI_VERSION%%/config/security.config.old
+cli-%%CLI_VERSION%%/cppmunge
+cli-%%CLI_VERSION%%/csc
+cli-%%CLI_VERSION%%/csc.rsp
+cli-%%CLI_VERSION%%/cscomp.satellite
+cli-%%CLI_VERSION%%/ctype.nlp
+cli-%%CLI_VERSION%%/culture.nlp
+cli-%%CLI_VERSION%%/dump/__mscoree_file__.h
+cli-%%CLI_VERSION%%/dump/allocacheck.h
+cli-%%CLI_VERSION%%/dump/arraylist.h
+cli-%%CLI_VERSION%%/dump/blobfetcher.h
+cli-%%CLI_VERSION%%/dump/cahlpr.h
+cli-%%CLI_VERSION%%/dump/caspol.exe
+cli-%%CLI_VERSION%%/dump/caspol.ildb
+cli-%%CLI_VERSION%%/dump/ceefilegenwriter.h
+cli-%%CLI_VERSION%%/dump/ceegen.h
+cli-%%CLI_VERSION%%/dump/ceegentokenmapper.h
+cli-%%CLI_VERSION%%/dump/ceesectionstring.h
+cli-%%CLI_VERSION%%/dump/classfac.h
+cli-%%CLI_VERSION%%/dump/clear-class-dump-defs.h
+cli-%%CLI_VERSION%%/dump/columnbinding.h
+cli-%%CLI_VERSION%%/dump/compressionformat.h
+cli-%%CLI_VERSION%%/dump/contxt.h
+cli-%%CLI_VERSION%%/dump/cordbpriv.h
+cli-%%CLI_VERSION%%/dump/corffi.h
+cli-%%CLI_VERSION%%/dump/corhlpr.h
+cli-%%CLI_VERSION%%/dump/corhost.h
+cli-%%CLI_VERSION%%/dump/corimage.h
+cli-%%CLI_VERSION%%/dump/corinfo.h
+cli-%%CLI_VERSION%%/dump/corjit.h
+cli-%%CLI_VERSION%%/dump/corperm.h
+cli-%%CLI_VERSION%%/dump/corperme.h
+cli-%%CLI_VERSION%%/dump/corpermp.h
+cli-%%CLI_VERSION%%/dump/corpolicy.h
+cli-%%CLI_VERSION%%/dump/corpriv.h
+cli-%%CLI_VERSION%%/dump/corsvcpriv.h
+cli-%%CLI_VERSION%%/dump/cortypeinfo.h
+cli-%%CLI_VERSION%%/dump/crtwrap.h
+cli-%%CLI_VERSION%%/dump/dbgalloc.h
+cli-%%CLI_VERSION%%/dump/dbgmeta.h
+cli-%%CLI_VERSION%%/dump/debugmacros.h
+cli-%%CLI_VERSION%%/dump/declsec.h
+cli-%%CLI_VERSION%%/dump/dump-tables.h
+cli-%%CLI_VERSION%%/dump/dump-type-info.h
+cli-%%CLI_VERSION%%/dump/dump-types.h
+cli-%%CLI_VERSION%%/dump/eetwain.h
+cli-%%CLI_VERSION%%/dump/ehencoder.h
+cli-%%CLI_VERSION%%/dump/enc.h
+cli-%%CLI_VERSION%%/dump/endian.h
+cli-%%CLI_VERSION%%/dump/frame-types.h
+cli-%%CLI_VERSION%%/dump/fusion.h
+cli-%%CLI_VERSION%%/dump/fusionbind.h
+cli-%%CLI_VERSION%%/dump/fusionpriv.h
+cli-%%CLI_VERSION%%/dump/fusionsetup.h
+cli-%%CLI_VERSION%%/dump/fusionsink.h
+cli-%%CLI_VERSION%%/dump/fuspriv.h
+cli-%%CLI_VERSION%%/dump/gcdump.h
+cli-%%CLI_VERSION%%/dump/gcinfo.h
+cli-%%CLI_VERSION%%/dump/guidfromname.h
+cli-%%CLI_VERSION%%/dump/hello.exe
+cli-%%CLI_VERSION%%/dump/hello.ildb
+cli-%%CLI_VERSION%%/dump/helloxml.exe
+cli-%%CLI_VERSION%%/dump/helloxml.ildb
+cli-%%CLI_VERSION%%/dump/holder.h
+cli-%%CLI_VERSION%%/dump/hrex.h
+cli-%%CLI_VERSION%%/dump/iceefilegen.h
+cli-%%CLI_VERSION%%/dump/il_kywd.h
+cli-%%CLI_VERSION%%/dump/ilformatter.h
+cli-%%CLI_VERSION%%/dump/internaldebug.h
+cli-%%CLI_VERSION%%/dump/intrinsic.h
+cli-%%CLI_VERSION%%/dump/ipcfunccall.h
+cli-%%CLI_VERSION%%/dump/ipcmanagerinterface.h
+cli-%%CLI_VERSION%%/dump/jitperf.h
+cli-%%CLI_VERSION%%/dump/log.h
+cli-%%CLI_VERSION%%/dump/loglf.h
+cli-%%CLI_VERSION%%/dump/machine.h
+cli-%%CLI_VERSION%%/dump/md5.h
+cli-%%CLI_VERSION%%/dump/mdcommon.h
+cli-%%CLI_VERSION%%/dump/member-offset-info.h
+cli-%%CLI_VERSION%%/dump/metadata.h
+cli-%%CLI_VERSION%%/dump/metadatatracker.h
+cli-%%CLI_VERSION%%/dump/metamodelpub.h
+cli-%%CLI_VERSION%%/dump/mscorcfg.h
+cli-%%CLI_VERSION%%/dump/nativevaraccessors.h
+cli-%%CLI_VERSION%%/dump/nsutilpriv.h
+cli-%%CLI_VERSION%%/dump/openum.h
+cli-%%CLI_VERSION%%/dump/opinfo.h
+cli-%%CLI_VERSION%%/dump/outstring.h
+cli-%%CLI_VERSION%%/dump/palclr.h
+cli-%%CLI_VERSION%%/dump/perfcounterdefs.h
+cli-%%CLI_VERSION%%/dump/perfcounters.h
+cli-%%CLI_VERSION%%/dump/perflog.h
+cli-%%CLI_VERSION%%/dump/pesectionman.h
+cli-%%CLI_VERSION%%/dump/posterror.h
+cli-%%CLI_VERSION%%/dump/prettyprintsig.h
+cli-%%CLI_VERSION%%/dump/profilepriv.h
+cli-%%CLI_VERSION%%/dump/querybinding.h
+cli-%%CLI_VERSION%%/dump/regdisp.h
+cli-%%CLI_VERSION%%/dump/safegetfilesize.h
+cli-%%CLI_VERSION%%/dump/secdbedit.exe
+cli-%%CLI_VERSION%%/dump/secdbedit.ildb
+cli-%%CLI_VERSION%%/dump/setupcodes.h
+cli-%%CLI_VERSION%%/dump/shimload.h
+cli-%%CLI_VERSION%%/dump/sighelper.h
+cli-%%CLI_VERSION%%/dump/sscli_version.h
+cli-%%CLI_VERSION%%/dump/stacktrace.h
+cli-%%CLI_VERSION%%/dump/stdmacros.h
+cli-%%CLI_VERSION%%/dump/stgpool.h
+cli-%%CLI_VERSION%%/dump/stgpooli.h
+cli-%%CLI_VERSION%%/dump/stresslog.h
+cli-%%CLI_VERSION%%/dump/switches.h
+cli-%%CLI_VERSION%%/dump/threadpool.h
+cli-%%CLI_VERSION%%/dump/timeline.h
+cli-%%CLI_VERSION%%/dump/timer.h
+cli-%%CLI_VERSION%%/dump/tpoolfnsp.h
+cli-%%CLI_VERSION%%/dump/utilcode.h
+cli-%%CLI_VERSION%%/dump/utsem.h
+cli-%%CLI_VERSION%%/dump/vererror.h
+cli-%%CLI_VERSION%%/dump/warningcontrol.h
+cli-%%CLI_VERSION%%/dump/winwrap.h
+cli-%%CLI_VERSION%%/dump/wsinfo.h
+cli-%%CLI_VERSION%%/dump/wsperf.h
+cli-%%CLI_VERSION%%/dump/xmlparser.h
+cli-%%CLI_VERSION%%/fusion.localgac
+cli-%%CLI_VERSION%%/fusion.satellite
+cli-%%CLI_VERSION%%/gacutil
+cli-%%CLI_VERSION%%/int_tools/internalresgen
+cli-%%CLI_VERSION%%/jsc.exe
+cli-%%CLI_VERSION%%/jsc.ildb
+cli-%%CLI_VERSION%%/ksc.nlp
+cli-%%CLI_VERSION%%/l_except.nlp
+cli-%%CLI_VERSION%%/l_intl.nlp
+cli-%%CLI_VERSION%%/libalink.so
+cli-%%CLI_VERSION%%/libcscomp.so
+cli-%%CLI_VERSION%%/libdnprofiler.so
+cli-%%CLI_VERSION%%/libfusion.so
+cli-%%CLI_VERSION%%/libildbsymbols.so
+cli-%%CLI_VERSION%%/libmscordbc.so
+cli-%%CLI_VERSION%%/libmscordbi.so
+cli-%%CLI_VERSION%%/libmscorejt.so
+cli-%%CLI_VERSION%%/libmscorpe.so
+cli-%%CLI_VERSION%%/libmscorrc.so
+cli-%%CLI_VERSION%%/libmscorsn.so
+cli-%%CLI_VERSION%%/librotor_pal.so
+cli-%%CLI_VERSION%%/librotor_palrt.so
+cli-%%CLI_VERSION%%/libsos.so
+cli-%%CLI_VERSION%%/libsscoree.so
+cli-%%CLI_VERSION%%/license.txt
+cli-%%CLI_VERSION%%/mscorlib.dll
+cli-%%CLI_VERSION%%/mscorrc.satellite
+cli-%%CLI_VERSION%%/nmake
+cli-%%CLI_VERSION%%/pigui/SharedSourceCLI.TK.dll
+cli-%%CLI_VERSION%%/pigui/SharedSourceCLI.TK.ildb
+cli-%%CLI_VERSION%%/pigui/pighello.exe
+cli-%%CLI_VERSION%%/pigui/pighello.ildb
+cli-%%CLI_VERSION%%/pigui/pigpad.exe
+cli-%%CLI_VERSION%%/pigui/pigpad.ildb
+cli-%%CLI_VERSION%%/prc.nlp
+cli-%%CLI_VERSION%%/prcp.nlp
+cli-%%CLI_VERSION%%/private/lib/System.dll
+cli-%%CLI_VERSION%%/region.nlp
+cli-%%CLI_VERSION%%/resourcecompiler
+cli-%%CLI_VERSION%%/rotor/rotor.ini
+cli-%%CLI_VERSION%%/rotor/strongname.ini
+cli-%%CLI_VERSION%%/rotor_pal.satellite
+cli-%%CLI_VERSION%%/sdk/bin/corcls.exe
+cli-%%CLI_VERSION%%/sdk/bin/corcls.ildb
+cli-%%CLI_VERSION%%/sdk/bin/cordbg
+cli-%%CLI_VERSION%%/sdk/bin/ilasm
+cli-%%CLI_VERSION%%/sdk/bin/ildasm
+cli-%%CLI_VERSION%%/sdk/bin/ildasm.satellite
+cli-%%CLI_VERSION%%/sdk/bin/ildbdump
+cli-%%CLI_VERSION%%/sdk/bin/metainfo
+cli-%%CLI_VERSION%%/sdk/bin/ngrep.exe
+cli-%%CLI_VERSION%%/sdk/bin/ngrep.ildb
+cli-%%CLI_VERSION%%/sdk/bin/permview
+cli-%%CLI_VERSION%%/sdk/bin/permview.satellite
+cli-%%CLI_VERSION%%/sdk/bin/peverify
+cli-%%CLI_VERSION%%/sdk/bin/resgen.exe
+cli-%%CLI_VERSION%%/sdk/bin/resgen.ildb
+cli-%%CLI_VERSION%%/sdk/bin/sn
+cli-%%CLI_VERSION%%/sdk/bin/sn.satellite
+cli-%%CLI_VERSION%%/sdk/bin/storeadm.exe
+cli-%%CLI_VERSION%%/sdk/bin/storeadm.ildb
+cli-%%CLI_VERSION%%/sdk/bin/xsd.exe
+cli-%%CLI_VERSION%%/sdk/bin/xsd.ildb
+cli-%%CLI_VERSION%%/sdk/include/cor.h
+cli-%%CLI_VERSION%%/sdk/include/cordebug.h
+cli-%%CLI_VERSION%%/sdk/include/corerror.h
+cli-%%CLI_VERSION%%/sdk/include/corhdr.h
+cli-%%CLI_VERSION%%/sdk/include/corprof.h
+cli-%%CLI_VERSION%%/sdk/include/corpub.h
+cli-%%CLI_VERSION%%/sdk/include/corsym.h
+cli-%%CLI_VERSION%%/sdk/include/gchost.h
+cli-%%CLI_VERSION%%/sdk/include/ivalidator.h
+cli-%%CLI_VERSION%%/sdk/include/ivehandler.h
+cli-%%CLI_VERSION%%/sdk/include/mscoree.h
+cli-%%CLI_VERSION%%/sdk/include/opcode.def
+cli-%%CLI_VERSION%%/sdk/include/strongname.h
+cli-%%CLI_VERSION%%/sdk/lib/mscorsn.lib
+cli-%%CLI_VERSION%%/sdk/pal/inc/assert.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/atl.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/ccombstr.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/crtdbg.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/ctype.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/float.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/guiddef.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/io.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/limits.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/malloc.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/math.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/mbstring.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/memory.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/new.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/ntimage.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/oaidl.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/objbase.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/objidl.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/ole2.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/oleauto.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/poppack.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/process.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/pshpack1.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/pshpack2.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/pshpack4.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/pshpack8.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/rotor_pal.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/rotor_palrt.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/rpc.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/rpcndr.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/servprov.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/shlwapi.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/stdarg.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/stddef.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/stdio.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/stdlib.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/string.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/time.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/unknwn.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/wchar.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/winbase.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/wincrypt.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/windef.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/windows.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/winerror.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/winnls.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/winresrc.h
+cli-%%CLI_VERSION%%/sdk/pal/inc/winver.h
+cli-%%CLI_VERSION%%/sortkey.nlp
+cli-%%CLI_VERSION%%/sorttbls.nlp
+cli-%%CLI_VERSION%%/xjis.nlp
+@dirrm cli-%%CLI_VERSION%%/sdk/pal/inc
+@dirrm cli-%%CLI_VERSION%%/sdk/pal
+@dirrm cli-%%CLI_VERSION%%/sdk/lib
+@dirrm cli-%%CLI_VERSION%%/sdk/include
+@dirrm cli-%%CLI_VERSION%%/sdk/bin
+@dirrm cli-%%CLI_VERSION%%/sdk
+@dirrm cli-%%CLI_VERSION%%/rotor
+@dirrm cli-%%CLI_VERSION%%/private/lib/rotor_x86
+@dirrm cli-%%CLI_VERSION%%/private/lib
+@dirrm cli-%%CLI_VERSION%%/private
+@dirrm cli-%%CLI_VERSION%%/pigui
+@dirrm cli-%%CLI_VERSION%%/int_tools
+@dirrm cli-%%CLI_VERSION%%/dump
+@dirrm cli-%%CLI_VERSION%%/config
+@dirrm cli-%%CLI_VERSION%%/assembly/tmp
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System/1.0.3300.0__b77a5c561934e089
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Xml
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Serialization.Formatters.Soap/1.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Serialization.Formatters.Soap
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Remoting/1.0.3300.0__b77a5c561934e089
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Runtime.Remoting
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/System
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.Vsa
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC
+@dirrm cli-%%CLI_VERSION%%/assembly
+@dirrm cli-%%CLI_VERSION%%/Symbols.pri/dll
+@dirrm cli-%%CLI_VERSION%%/Symbols.pri
+@dirrm cli-%%CLI_VERSION%%

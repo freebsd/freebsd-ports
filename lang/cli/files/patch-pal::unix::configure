@@ -1,14 +1,10 @@
 
 $FreeBSD$
 
---- pal/unix/configure.orig	Thu Mar 14 20:21:45 2002
-+++ pal/unix/configure	Tue Apr  9 19:29:27 2002
-@@ -1010,17 +1010,17 @@
- test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
- 
- 
--CFLAGS="-Wall -fPIC -fno-builtin -fno-exceptions"
-+CFLAGS="$CFLAGS -Wall -fpic -DPIC -fno-builtin -fno-exceptions -fno-rtti"
+--- pal/unix/configure.orig	Fri Jun 14 06:01:07 2002
++++ pal/unix/configure	Fri Jul 26 17:53:12 2002
+@@ -1037,14 +1037,14 @@
+ CFLAGS="$CFLAGS -Wall -fno-builtin -fno-exceptions -fno-rtti"
  
  if test "$NTDEBUG" != "ntsdnodbg"; then
 -   CFLAGS="$CFLAGS -g"
@@ -23,5 +19,5 @@ $FreeBSD$
 -   CFLAGS="$CFLAGS -O2"
 +#   CFLAGS="$CFLAGS -O2"
  fi
- 
- 
+ CFLAGS_NO_PIC="$CFLAGS"
+ CFLAGS="$CFLAGS -fPIC -DPIC"

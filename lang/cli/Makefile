@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	cli
-PORTVERSION=	20020326
-PORTREVISION=	3
+PORTVERSION=	20020619
 CATEGORIES=	lang
-MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta1/WXP/EN-US/ \
-		http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \
+MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta2/WXP/EN-US/ \
+		http://download.microsoft.com/download/.netframesdk/Beta2/WXP/EN-US/ \
 		http://www.corel.com/6763/downloads/mirror/microsoft/rotor/ \
 		ftp://ftp.corel.com/pub/mirror/Microsoft/rotor/
-DISTNAME=	sscli${PORTVERSION}
+DISTNAME=	sscli_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -28,8 +27,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${BUILD_TYPE}
 CONFIGURE_SCRIPT=	portconfigure
 MAKEFILE=	makefile
-MAKE_ENV=	CC_NAME="${CC}"
-BUILD_TYPE=	retail
+MAKE_ENV=	CC_NAME="${CC}" SHELL="${SH}"
+BUILD_TYPE=	free
+CFLAGS+=	-fpermissive
+PLIST_SUB=	CLI_VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
 
@@ -55,7 +56,7 @@ pre-install:
 do-install:
 	@${MKDIR} ${PREFIX}/cli-${PORTVERSION}
 	@${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/cli-${PORTVERSION}
-	@cd ${WRKSRC}/build/v1.x86fre.rotor && ${FIND} . | \
+	@cd ${WRKSRC}/build/v1.x86fstchk.rotor && ${FIND} . | \
 		/usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/cli-${PORTVERSION}
 
 .include <bsd.port.post.mk>

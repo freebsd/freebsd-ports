@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- pal/unix/makefile.in	2002/03/28 22:29:43	1.1
-+++ pal/unix/makefile.in	2002/03/28 22:30:07
+--- pal/unix/makefile.in.orig	Thu Jun 20 02:44:00 2002
++++ pal/unix/makefile.in	Fri Jul 26 18:04:01 2002
 @@ -120,7 +120,7 @@
  #the recursive librotor_pal target does that
  $(MODULE_PATH)$(MODULE_NAME): $(OBJS)
- 	gcc $(PTHREAD_OPTIONS) -shared -Wl,-soname,librotor_pal.so \
--	    $(OBJS) -o "$(MODULE_PATH)$(MODULE_NAME)" -lc_r -lm -Wl,-R,/usr/lib/crt1.o
-+	    $(OBJS) -o "$(MODULE_PATH)$(MODULE_NAME)" -lm -lc_r -lc -Wl,-R,/usr/lib/crt1.o
+ 	$(CC) $(PTHREAD_OPTIONS) -shared -Wl,-soname,$(MODULE_NAME) $(OBJS) \
+-	    -o "$(MODULE_PATH)$(MODULE_NAME)" -lc_r -lm -Wl,-R,/usr/lib/crt1.o
++	    -o "$(MODULE_PATH)$(MODULE_NAME)" -lm -lstdc++ -lc_r -lc -Wl,-R,/usr/lib/crt1.o
+ 	    
  
  makefile : makefile.in
- 	@echo $? is newer than $@, please rerun $(srcdir)/configure.
