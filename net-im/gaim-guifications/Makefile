@@ -22,6 +22,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	lthack gtk20
 USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	--with-gaim=${WRKDIRPREFIX}${PORTSDIR}/net/gaim/work/gaim*
+CONFIGURE_ARGS=	--with-gaim=${WRKDIRPREFIX}${.CURDIR}/../../net/gaim/work/gaim*
 
 .include <bsd.port.mk>
