@@ -1,0 +1,8 @@
+include/shhcards.h
+lib/libshhcards.so.1.0.3
+lib/libshhcards.so
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -m %D/lib
+share/doc/libshhcards/CREDITS
+share/doc/libshhcards/README
+@dirrm share/doc/libshhcards

@@ -1,0 +1,31 @@
+--- Makefile.orig	Sun Mar 23 04:02:53 1997
++++ Makefile	Fri May  1 22:29:34 1998
+@@ -8,7 +8,7 @@
+ ###########################################################################
+ 
+ # Define SHARED as 1 for Linux shared ELF library
+-#SHARED		= 1
++SHARED		= 1
+ 
+ ifeq ($(SHARED),1)
+ LIBTARGET	= lib$(DIST).so.$(VERSION)
+@@ -28,8 +28,8 @@
+ INSTALL		= install -m 644
+ MKDIRP		= install -d -m 755
+ 
+-CC		= gcc
+-OPTIM		= -O2
++#CC		= gcc
++OPTIM		= $(CFLAGS)
+ 
+ ###########################################################################
+ 
+@@ -87,7 +87,7 @@
+ 
+ $(LIBTARGET): $(LIBOBJS)
+ ifeq ($(SHARED),1)
+-	$(CC) -shared -Wl,-soname,$(LIBTARGETSOMAJ) -o $(LIBTARGET) $(LIBOBJS)
++	$(CC) -shared -o $(LIBTARGET) $(LIBOBJS)
+ else
+ 	ar rcs $(LIBTARGET) $(LIBOBJS)
+ endif
