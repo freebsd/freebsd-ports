@@ -40,6 +40,7 @@
     SUBDIR += dvi2dvi
     SUBDIR += dvi2ps
     SUBDIR += dvi2tty
+    SUBDIR += dvipdfm
     SUBDIR += dvipsk
     SUBDIR += dvipsk-vflib
     SUBDIR += e2ps
