@@ -5,29 +5,35 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tcl-sql
+PORTNAME=	${TCL_NODOT}-sql
 PORTVERSION=	20000114
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases ${TCL_NODOT}
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	tcl-sql-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL module for accessing MySQL databases
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	${TCL_VERSION:S/tcl/tclsh/}:${PORTSDIR}/lang/${TCL_NODOT}
+LIB_DEPENDS=	mysqlclient:${PORTSDIR}/databases/mysql323-client
+BUILD_DEPENDS=	tclsh${TCL_VERSION}:${PORTSDIR}/lang/${TCL_NODOT}
 
-TCL_VERSION?=	tcl8.3	# Only this needs changing to switch TCL-version
-TCL_NODOT=	${TCL_VERSION:S/.//}
+TCL_VERSION?=	8.4	# Only this needs changing to switch TCL-version
+TCL_NODOT=	tcl${TCL_VERSION:S/.//}
 WRKSRC=		${WRKDIR}/tcl-sql/
-PLIST_SUB=	TCL_VERSION=${TCL_VERSION} LIB_NAME=${LIB_NAME}
+LIB_NAME=	libTclMySQL.so.1
+PLIST_SUB=	TCL_VERSION=tcl${TCL_VERSION} LIB_NAME=${LIB_NAME}
+MAKE_ARGS+=	SHLIB_NAME=${LIB_NAME} ${PLIST_SUB}
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
+MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-do-build:
-	cd ${WRKSRC} && ${MAKE} ${PLIST_SUB} -f ${FILESDIR}/Makefile.bsd
+post-patch:
+	@${REINPLACE_CMD} -e 's,^int ,static int ,' ${WRKSRC}/sql.cc
 
-SQL_DIR=	${LOCALBASE}/lib/${TCL_VERSION}/sql1.0
+SQL_DIR=	${LOCALBASE}/lib/tcl${TCL_VERSION}/sql1.0
 
 do-install:
 	${MKDIR} ${SQL_DIR}
@@ -42,5 +48,3 @@ do-install:
 .endif
 
 .include <bsd.port.mk>
-
-LIB_NAME!=	${MAKE} -f ${FILESDIR}/Makefile.bsd printname
