@@ -419,7 +419,7 @@
     SUBDIR += sarien
     SUBDIR += scare
     SUBDIR += scid
-    SUBDIR += scorched3d-devel
+    SUBDIR += scorched3d
     SUBDIR += scummvm
     SUBDIR += scummvm-tools
     SUBDIR += sdlroids
