@@ -7,10 +7,10 @@
 
 PORTNAME=	ispell
 PORTVERSION=	0.0.2b
-CATEGORIES=     textproc ukrainian
+CATEGORIES=     textproc
 MASTER_SITES=   http://virtual-estates.net/port-stuff/ \
 		ftp://cad.ntu-kpi.kiev.ua/soft/lingvist/UkrIspell/
-PKGNAMEPREFIX=	ua
+PKGNAMEPREFIX=	ua-
 DISTNAME=	ua-ispell.${PORTVERSION}
 
 MAINTAINER=     mi@aldan.algebra.com
