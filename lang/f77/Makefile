@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PREFIX}/bin/fpp:${PORTSDIR}/devel/fpp \
 .endif
 
 # Set F77NAME to the name of the Fortran 77 wrapper.
-F77NAME=	fc
+F77NAME=	ftn77
 
 .ifdef GNU_CPP
 MAKE_ARGS=	"CFLAGS= ${CFLAGS} -DPP_COMMAND='\"/usr/bin/cpp\"' \
