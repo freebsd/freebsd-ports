@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/galeon.in	2001/05/15 11:38:39	1.1
-+++ src/galeon.in	2001/05/15 11:42:43
-@@ -1,19 +1,15 @@
+--- src/galeon.in.orig	Tue Jul  3 13:30:53 2001
++++ src/galeon.in	Wed Jul  4 18:39:12 2001
+@@ -1,25 +1,15 @@
  #!/bin/sh
  
 -dist_bin=`dirname $0`
@@ -21,6 +21,12 @@ $FreeBSD$
 -	MOZILLA_HOME=/opt/mozilla
 -elif [ -f /usr/lib/mozilla-0.8.1/chrome/embed.jar ]; then
 -	MOZILLA_HOME=/usr/lib/mozilla-0.8.1/
+-elif [ -f /usr/lib/mozilla-0.9.1/chrome/embed.jar ]; then
+-	MOZILLA_HOME=/usr/lib/mozilla-0.9.1/
+-elif [ -f /usr/lib/mozilla-0.9.2/chrome/embed.jar ]; then
+-	MOZILLA_HOME=/usr/lib/mozilla-0.9.2/
+-elif [ -f /opt/gnome/lib/mozilla/chrome/embed.jar ]; then
+-        MOZILLA_HOME=/opt/gnome/lib/mozilla/
 +elif [ -f %%LOCALBASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then
 +	MOZILLA_HOME=%%LOCALBASE%%/lib/%%MOZILLA%%
 +elif [ -f %%X11BASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then
@@ -30,7 +36,17 @@ $FreeBSD$
  else
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit
-@@ -34,6 +30,6 @@
+@@ -31,16 +21,9 @@
+ MOZILLA_FIVE_HOME=$MOZILLA_HOME
+ export MOZILLA_FIVE_HOME
+ 
+-# for some reason this lets Galeon start properly on Red Hat 7.1 systems
+-if [ -f /etc/redhat-release ]; then
+-	if [ "`cat /etc/redhat-release`" = "Red Hat Linux release 7.1 (Seawolf)"  ]; then
+-   	 export LD_ASSUME_KERNEL=2.2.5
+-	fi
+-fi
+-
  if [ -f ./galeon-bin ]; then
  exec ./galeon-bin "$@"
  else
