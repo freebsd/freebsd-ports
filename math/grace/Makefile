@@ -6,18 +6,12 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.17
+PORTVERSION=	5.1.18
 PORTREVISION=	0
 CATEGORIES=	math print
 #
-# You never know when and why it is moved to ../src/old/   :-)
-#
-MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/ \
-		ftp://plasma-gate.weizmann.ac.il/pub/grace/src/old/ \
-		ftp://abragam.med.utoronto.ca/pub/mirrors/grace/src/ \
-		ftp://abragam.med.utoronto.ca/pub/mirrors/grace/src/old/ \
-		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/old/ \
-		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/
+MASTER_SITES=	ftp://plasma-gate.weizmann.ac.il/pub/grace/src/stable/ \
+		ftp://linux.mathematik.tu-darmstadt.de/pub/linux/mirrors/misc/grace/src/stable/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	A powerful plotting tool (successor of xmgr)
