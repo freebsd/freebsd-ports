@@ -44,10 +44,7 @@
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
 #
-# If you want to have the IMAP header cache define:
-#  WITH_MUTT_IMAP_HEADER_CACHE
-#
-# If you want to have the Maildir header cache define:
+# If you want to have the Maildir/IMAP header cache define:
 #  WITH_MUTT_MAILDIR_HEADER_CACHE
 #
 # If you want to make SMIME outlook compatible define:
@@ -84,7 +81,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -151,6 +148,9 @@ DW_PATCH_VERSION=	${PORTVERSION}
 .if !defined(DW_MBOX_PATCH_VERSION)
 DW_MBOX_PATCH_VERSION=	${DW_PATCH_VERSION}
 .endif
+.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
+WITH_MUTT_MAILDIR_HEADER_CACHE=	yes
+.endif
 
 # XXX
 # this should be done automagically by aclocal but ....
@@ -215,13 +215,9 @@ CFLAGS+=	-I${PREFIX}/include/db42
 pre-configure::
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-outlook
 .endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-imap-header-cache
-.endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 pre-configure::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-maildir-header-cache
+	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-maildir-header-cache
 .endif
 .if defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
 pre-configure::
@@ -323,9 +319,6 @@ SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 .if ! defined(WITHOUT_MUTT_QUOTE_PATCH)
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
 .endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-SCRIPTS_ENV+=	MUTT_IMAP_HEADER_CACHE="yes"
-.endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
 CONFIGURE_ARGS+=	--enable-hcache
@@ -403,33 +396,14 @@ post-install:
 .endif
 .endif
 .if defined(MUTT_USES_SLANG)
-	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
 	@${ECHO} "You have installed ${PORTNAME} with SLANG support." >> ${PKGMESSAGE}
 	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
 	@${ECHO} "COLORTERM=yes and COLORFGBG=color,color in your" >> ${PKGMESSAGE}
 	@${ECHO} "environment." >> ${PKGMESSAGE}
-	@${ECHO} "====================================================" >> ${PKGMESSAGE}
-.endif
-.if defined(WITH_MUTT_IMAP_HEADER_CACHE)
-	@${ECHO} "====================================================" >> ${PKGMESSAGE}
-	@${ECHO} "You have installed ${PORTNAME} with the IMAP header cache enabled." >> ${PKGMESSAGE}
-	@${ECHO} "Please be aware that this - at the moment - could result in" >> ${PKGMESSAGE}
-	@${ECHO} "incorrect display of message flags if there is another client" >> ${PKGMESSAGE}
-	@${ECHO} "simultaneously using the same mailbox." >> ${PKGMESSAGE}
-	@${ECHO} "====================================================" >> ${PKGMESSAGE}
-.endif
-.if defined(WITH_MUTT_MAILDIR_HEADER_CACHE) && defined(WITH_MUTT_MAILDIR_MTIME_PATCH)
-	@${ECHO} "====================================================" >> ${PKGMESSAGE}
-	@${ECHO} "You have installed ${PORTNAME} with the Maildir header" >> ${PKGMESSAGE}
-	@${ECHO} "cache and the MAILDIR_MTIME_PATCH enabled." >> ${PKGMESSAGE}
-	@${ECHO}  >> ${PKGMESSAGE}
-	@${ECHO} "For this to work you may have to delete your old" >> ${PKGMESSAGE}
-	@${ECHO} "Maildir header cache or otherwise you may face" >> ${PKGMESSAGE}
-	@${ECHO} "an \"Out of memory\" error." >> ${PKGMESSAGE}
-	@${ECHO} "====================================================" >> ${PKGMESSAGE}
+	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
 .endif
 .if !defined(BATCH)
-	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 .endif

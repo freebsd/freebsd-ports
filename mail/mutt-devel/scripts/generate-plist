@@ -146,9 +146,6 @@ EOF
     if [ "$MUTT_EDIT_THREADS" = "yes" ]; then
       html=$(($html + 3))
     fi
-    if [ "$MUTT_IMAP_HEADER_CACHE" = "yes" ]; then
-      html=$(($html + 1))
-    fi
     if [ "$MUTT_MAILDIR_HEADER_CACHE" = "yes" ]; then
       html=$(($html + 3))
     fi

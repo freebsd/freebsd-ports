@@ -1,20 +1,21 @@
---- Makefile.am.orig	Fri Mar  5 15:34:57 2004
-+++ Makefile.am	Fri Mar  5 15:35:55 2004
+diff -Nru a/Makefile.am b/Makefile.am
+--- a/Makefile.am	2004-08-18 10:08:12 +02:00
++++ b/Makefile.am	2004-08-18 10:08:12 +02:00
 @@ -20,2 +20,3 @@
  mutt_SOURCES = $(BUILT_SOURCES) \
 +	hcache.c \
  	addrbook.c alias.c attach.c base64.c browser.c buffy.c color.c \
 diff -Nru a/configure.in b/configure.in
---- configure.in.orig	Sat Jun 12 09:49:17 2004
-+++ configure.in	Sat Jun 12 09:50:18 2004
-@@ -773,6 +773,80 @@
+--- a/configure.in	2004-08-18 10:08:12 +02:00
++++ b/configure.in	2004-08-18 10:08:12 +02:00
+@@ -768,6 +768,80 @@
  
          fi])
  
 +dnl -- start cache --
-+AC_ARG_ENABLE(hcache, [  --enable-hcache            Enable header caching for Maildir folders],
++AC_ARG_ENABLE(hcache, [  --enable-hcache            Enable header caching],
 +[if test x$enableval = xyes; then
-+    AC_DEFINE(USE_HCACHE, 1, [Enable header caching for Maildir style mailboxes])
++    AC_DEFINE(USE_HCACHE, 1, [Enable header caching])
 +
 +    OLDCPPFLAGS="$CPPFLAGS"
 +    OLDLIBS="$LIBS"
@@ -44,17 +45,17 @@ diff -Nru a/configure.in b/configure.in
 +        for v in `echo $BDB_VERSIONS`; do
 +            CPPFLAGS="$OLDCPPFLAGS -I$BDB_INCLUDE_DIR"
 +            LIBS="$OLDLIBS -L$BDB_LIB_DIR -l$v"
-+            AC_LINK_IFELSE([AC_LANG_PROGRAM([[
-+                #include <stdlib.h>
++	    AC_TRY_LINK([
++		#include <stdlib.h>
 +                #include <db.h>
-+            ]],[[
++	    ],[
 +                DB *db = NULL;
 +                db->open(db,NULL,NULL,NULL,0,0,0);
-+            ]])],[
++	    ],[
 +                ac_cv_dbcreate=yes
 +                BDB_LIB="$v"
 +                break
-+            ])
++	    ])
 +        done
 +        test x$BDB_LIB != x && break
 +    done
@@ -89,25 +90,26 @@ diff -Nru a/configure.in b/configure.in
  AC_SUBST(MUTT_LIB_OBJECTS)
  AC_SUBST(LIBIMAP)
 diff -Nru a/globals.h b/globals.h
---- globals.h	2004-06-10 14:03:44 +02:00
-+++ globals.h	2004-06-10 14:03:44 +02:00
+--- a/globals.h	2004-08-18 10:08:12 +02:00
++++ b/globals.h	2004-08-18 10:08:12 +02:00
 @@ -63,6 +63,10 @@
  WHERE char *Locale;
  WHERE char *MailcapPath;
  WHERE char *Maildir;
 +#if USE_HCACHE
-+WHERE char *MaildirCache;
-+WHERE short MaildirCachePageSize;
++WHERE char *HeaderCache;
++WHERE short HeaderCachePageSize;
 +#endif
  WHERE char *MhFlagged;
  WHERE char *MhReplied;
  WHERE char *MhUnseen;
 diff -Nru a/hcache.c b/hcache.c
---- hcache.c.orig	Sat Jun 12 09:52:31 2004
-+++ hcache.c	Sat Jun 12 09:52:56 2004
-@@ -0,0 +1,676 @@
+--- /dev/null	Wed Dec 31 16:00:00 196900
++++ b/hcache.c	2004-08-18 10:08:12 +02:00
+@@ -0,0 +1,794 @@
 +/*
 + * Copyright (C) 2004 Thomas Glanzmann <sithglan@stud.uni-erlangen.de>
++ * Copyright (C) 2004 Tobias Werth <sitowert@stud.uni-erlangen.de>
 + * Copyright (C) 2004 Brian Fundakowski Feldman <green@FreeBSD.org>
 + *
 + *     This program is free software; you can redistribute it and/or modify
@@ -138,9 +140,38 @@ diff -Nru a/hcache.c b/hcache.c
 +#include <errno.h>
 +#include <fcntl.h>
 +#include "mutt.h"
++#ifdef USE_IMAP
++#include "message.h"
++#endif
 +#include "mime.h"
 +#include "mx.h"
 +#include "lib.h"
++
++#if HAVE_GDBM
++static struct
++header_cache
++{
++	GDBM_FILE db;
++	char *folder;
++	unsigned int crc;
++} HEADER_CACHE;
++#elif HAVE_DB4
++static struct
++header_cache
++{
++	DB_ENV *env;
++	DB *db;
++	unsigned int crc;
++	int fd;
++	char lockfile[_POSIX_PATH_MAX];
++} HEADER_CACHE;
++#endif
++
++typedef union
++{
++        struct timeval timeval;
++        unsigned long long uid_validity;
++} validate;
 +
 +static unsigned char *
 +dump_int(unsigned int i, unsigned char *d, int *off)
@@ -170,7 +201,24 @@ diff -Nru a/hcache.c b/hcache.c
 +		return d;
 +	}
 +
-+	size = strlen(c) + 1;
++	size = mutt_strlen(c) + 1;
++	d = dump_int(size, d, off);
++	safe_realloc(&d, *off + size);
++	memcpy(d + *off, c, size);
++	*off += size;
++
++	return d;
++}
++
++static unsigned char *
++dump_char_size(char *c, unsigned char *d, int *off, ssize_t size)
++{
++	if (c == NULL) {
++		size = 0;
++		d = dump_int(size, d, off);
++		return d;
++	}
++
 +	d = dump_int(size, d, off);
 +	safe_realloc(&d, *off + size);
 +	memcpy(d + *off, c, size);
@@ -192,14 +240,6 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	*c = safe_malloc(size);
 +	memcpy(*c, d + *off, size);
-+	*off += size;
-+}
-+
-+static void
-+skip_char(const unsigned char *d, int *off)
-+{
-+	unsigned int size;
-+	restore_int(&size, d, off);
 +	*off += size;
 +}
 +
@@ -247,7 +287,6 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	*a = NULL;
-+	return;
 +}
 +
 +static unsigned char *
@@ -284,7 +323,43 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	*l = NULL;
-+	return;
++}
++
++static unsigned char *
++dump_buffer(BUFFER *b, unsigned char *d, int *off)
++{
++	if (! b) {
++		d = dump_int(0, d, off);
++		return d;
++	} else {
++		d = dump_int(1, d, off);
++	}
++
++	d = dump_char_size(b->data, d, off, b->dsize + 1);
++	d = dump_int(b->dptr - b->data, d, off);
++	d = dump_int(b->dsize, d, off);
++	d = dump_int(b->destroy, d, off);
++
++	return d;
++}
++
++static void
++restore_buffer(BUFFER **b, const unsigned char *d, int *off)
++{
++	unsigned int used;
++	unsigned int offset;
++	restore_int(&used, d, off);
++	if (! used) {
++		return;
++	}
++
++	*b = safe_malloc(sizeof(BUFFER));
++
++	restore_char(& (*b)->data, d, off);
++	restore_int(& offset, d, off);
++	(*b)->dptr = (*b)->data + offset;
++	restore_int(& (*b)->dsize, d, off);
++	restore_int((unsigned int *) & (*b)->destroy, d, off);
 +}
 +
 +static unsigned char *
@@ -323,7 +398,6 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	*p = NULL;
-+	return;
 +}
 +
 +static unsigned char *
@@ -408,7 +482,7 @@ diff -Nru a/hcache.c b/hcache.c
 +	restore_address(& e->mail_followup_to, d, off);
 +
 +	restore_char(& e->subject, d, off);
-+	restore_int(& real_subj_off, d, off);
++	restore_int((unsigned int *) (& real_subj_off), d, off);
 +	if (0 <= real_subj_off) {
 +		e->real_subj = e->subject + real_subj_off;
 +	} else {
@@ -424,42 +498,72 @@ diff -Nru a/hcache.c b/hcache.c
 +	restore_list(& e->userhdrs, d, off);
 +}
 +
++static
++unsigned int crc32(unsigned int crc, unsigned char const *p, size_t len)
++{
++	int i;
++	while (len--) {
++		crc ^= *p++;
++		for (i = 0; i < 8; i++)
++			crc = (crc >> 1) ^ ((crc & 1) ? 0xedb88320 : 0);
++	}
++	return crc;
++}
++
++static int
++generate_crc32()
++{
++	int crc = 0;
++
++	crc = crc32(crc, (unsigned char const *) "HCACHE V1", mutt_strlen("HCACHE V1"));
++
++#if HAVE_LANGINFO_CODESET
++	crc = crc32(crc, (unsigned char const *) Charset, mutt_strlen(Charset));
++	crc = crc32(crc, (unsigned char const *) "HAVE_LANGINFO_CODESET", mutt_strlen("HAVE_LANGINFO_CODESET"));
++#endif
++
++#if EXACT_ADDRESS
++	crc = crc32(crc, (unsigned char const *) "EXACT_ADDRESS", mutt_strlen("EXACT_ADDRESS"));
++#endif
++	return crc;
++}
++
++static int
++crc32_matches(const char *d, unsigned int crc)
++{
++	int off = sizeof(validate);
++	unsigned int mycrc = 0;
++
++	if (! d) {
++		return 0;
++	}
++
++	restore_int(&mycrc, (unsigned char *) d, &off);
++
++	return (crc == mycrc);
++}
 +
 +/* This function transforms a header into a char so that it is useable by
-+ * gdbm_store */
-+
-+#if HAVE_LANGINFO_CODESET
-+int
-+mutt_hcache_charset_matches(const char *d)
-+{
-+	int matches;
-+	int off = sizeof(struct timeval);
-+	char *charset = NULL;
-+
-+	restore_char(&charset, (unsigned char *) d, &off);
-+	matches = (0 == mutt_strcmp(charset, Charset));
-+	FREE(&charset);
-+
-+	return (matches);
-+}
-+#endif /* HAVE_LANGINFO_CODESET */
-+
++ * db_store */
 +static void *
-+mutt_hcache_dump(HEADER *h, int *off)
++mutt_hcache_dump(void *_db, HEADER *h, int *off, unsigned long long uid_validity)
 +{
++	struct header_cache *db = _db;
 +	unsigned char *d = NULL;
-+	struct timeval now;
 +	*off             = 0;
 +
-+	d = safe_malloc(sizeof(struct timeval));
-+	gettimeofday(&now, NULL);
-+	memcpy(d, &now, sizeof(struct timeval));
-+	*off += sizeof(struct timeval);
++	d = safe_malloc(sizeof(validate));
 +
-+#if HAVE_LANGINFO_CODESET
-+	d = dump_char(Charset, d, off);
-+#endif /* HAVE_LANGINFO_CODESET */
++	if (uid_validity) {
++		memcpy(d, &uid_validity, sizeof(long long));
++	} else {
++		struct timeval now;
++		gettimeofday(&now, NULL);
++		memcpy(d, &now, sizeof(struct timeval));
++	}
++	*off += sizeof(validate);
 +
++	d = dump_int(db->crc, d, off);
 +
 +	safe_realloc(&d, *off + sizeof(HEADER));
 +	memcpy(d + *off, h, sizeof(HEADER));
@@ -478,12 +582,11 @@ diff -Nru a/hcache.c b/hcache.c
 +	int off = 0;
 +	HEADER *h        = mutt_new_header();
 +
-+	/* skip timeval */
-+	off += sizeof(struct timeval);
++	/* skip validate */
++	off += sizeof(validate);
 +
-+#if HAVE_LANGINFO_CODESET
-+	skip_char(d, &off);
-+#endif /* HAVE_LANGINFO_CODESET */
++	/* skip crc */
++	off += sizeof(unsigned int);
 +
 +	memcpy(h, d + off, sizeof(HEADER));
 +	off += sizeof(HEADER);
@@ -496,45 +599,39 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	restore_char(&h->maildir_flags, d, &off);
 +
-+	h->old  = (*oh)->old;
-+	h->path = safe_strdup((*oh)->path);
-+	mutt_free_header (oh);
++	/* this is needed for maildir style mailboxes */
++	if (oh) {
++		h->old  = (*oh)->old;
++		h->path = safe_strdup((*oh)->path);
++		mutt_free_header (oh);
++	}
 +
 +	return h;
 +}
 +
-+static size_t mutt_hcache_keylen (const char *fn)
-+{
-+  const char * p = strchr (fn, ':');
-+  return p ? (size_t) (p - fn) : strlen (fn);
-+}
-+
 +#if HAVE_GDBM
-+static struct
-+header_cache
-+{
-+	GDBM_FILE db;
-+	char *folder;
-+} HEADER_CACHE;
 +
 +void *
 +mutt_hcache_open(const char *path, const char *folder)
 +{
-+	struct header_cache *h = malloc(sizeof(HEADER_CACHE));
++	struct header_cache *h = safe_calloc(1, sizeof(HEADER_CACHE));
 +	h->db     = NULL;
 +        h->folder = safe_strdup (folder);
++	h->crc    = generate_crc32();
 +
 +	if (! path || path[0] == '\0') {
++		FREE(& h->folder);
++		FREE(& h);
 +		return NULL;
 +	}
 +
-+	h->db = gdbm_open((char *) path, (int) MaildirCachePageSize, GDBM_WRCREAT, 00600, NULL);
++	h->db = gdbm_open((char *) path, (int) HeaderCachePageSize, GDBM_WRCREAT, 00600, NULL);
 +	if (h->db) {
 +		return h;
 +	}
 +
 +	/* if rw failed try ro */
-+	h->db = gdbm_open((char *) path, (int) MaildirCachePageSize, GDBM_READER, 00600, NULL);
++	h->db = gdbm_open((char *) path, (int) HeaderCachePageSize, GDBM_READER, 00600, NULL);
 +	if(h->db) {
 +		return h;
 +	} else {
@@ -560,7 +657,7 @@ diff -Nru a/hcache.c b/hcache.c
 +}
 +
 +void *
-+mutt_hcache_fetch(void *db, const char *filename)
++mutt_hcache_fetch(void *db, const char *filename, size_t (*keylen)(const char *fn))
 +{
 +	struct header_cache *h = db;
 +	datum key;
@@ -572,18 +669,23 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	strncpy(path, h->folder, sizeof(path));
-+	strncat(path, filename, sizeof(path) - strlen(path));
++	strncat(path, filename, sizeof(path) - mutt_strlen(path));
 +
 +	key.dptr  = path;
-+	key.dsize = mutt_hcache_keylen(path);
++	key.dsize = keylen(path);
 +
 +	data = gdbm_fetch(h->db, key);
++
++	if (! crc32_matches(data.dptr, h->crc)) {
++		free(data.dptr);
++		return NULL;
++	}
 +
 +	return data.dptr;
 +}
 +
 +int
-+mutt_hcache_store(void *db, const char *filename, HEADER *header)
++mutt_hcache_store(void *db, const char *filename, HEADER *header, unsigned long long uid_validity, size_t (*keylen)(const char *fn))
 +{
 +	struct header_cache *h = db;
 +	datum key;
@@ -596,12 +698,12 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	strncpy(path, h->folder, sizeof(path));
-+	strncat(path, filename, sizeof(path) - strlen(path));
++	strncat(path, filename, sizeof(path) - mutt_strlen(path));
 +
 +	key.dptr  = path;
-+	key.dsize = mutt_hcache_keylen(path);
++	key.dsize = keylen(path);
 +
-+	data.dptr = mutt_hcache_dump(header, &data.dsize); 
++	data.dptr = mutt_hcache_dump(db, header, &data.dsize, uid_validity); 
 +
 +	ret = gdbm_store(h->db, key, data, GDBM_REPLACE);
 +
@@ -611,7 +713,7 @@ diff -Nru a/hcache.c b/hcache.c
 +}
 +
 +int
-+mutt_hcache_delete(void *db, const char *filename)
++mutt_hcache_delete(void *db, const char *filename, size_t (*keylen)(const char *fn))
 +{
 +	datum key;
 +	struct header_cache *h = db;
@@ -622,21 +724,14 @@ diff -Nru a/hcache.c b/hcache.c
 +	}
 +
 +	strncpy(path, h->folder, sizeof(path));
-+	strncat(path, filename, sizeof(path) - strlen(path));
++	strncat(path, filename, sizeof(path) - mutt_strlen(path));
 +
 +	key.dptr  = path;
-+	key.dsize = mutt_hcache_keylen(path);
++	key.dsize = keylen(path);
 +
 +	return gdbm_delete(h->db, key);
 +}
 +#elif HAVE_DB4
-+
-+static struct
-+header_cache
-+{
-+	DB_ENV *env;
-+	DB *db;
-+} HEADER_CACHE;
 +
 +static void
 +mutt_hcache_dbt_init(DBT *dbt, void *data, size_t len)
@@ -661,15 +756,32 @@ diff -Nru a/hcache.c b/hcache.c
 +	struct stat sb;
 +	u_int32_t createflags = DB_CREATE;
 +	int ret;
-+	struct header_cache *h = malloc(sizeof(HEADER_CACHE));
++	struct header_cache *h = calloc(1, sizeof(HEADER_CACHE));
++
++	h->crc = generate_crc32();
 +
 +	if (! path || path[0] == '\0') {
 +		FREE(& h);
 +		return NULL;
 +	}
 +
++	snprintf (h->lockfile, _POSIX_PATH_MAX, "%s-lock-hack", path);
++
++	h->fd = open(h->lockfile, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
++	if (h->fd < 0) {
++		FREE (&h);
++		return NULL;
++	}
++
++	if (mx_lock_file(h->lockfile, h->fd, 1, 0, 5)) {
++		close(h->fd);
++		FREE (&h);
++		return NULL;
++	}
++
 +	ret = db_env_create(&h->env, 0);
 +	if (ret) {
++		mx_unlock_file(h->lockfile, h->fd, 0);
 +		FREE(& h);
 +		return NULL;
 +	}
@@ -679,6 +791,7 @@ diff -Nru a/hcache.c b/hcache.c
 +		ret = db_create(&h->db, h->env, 0);
 +		if (ret) {
 +			h->env->close(h->env, 0);
++			mx_unlock_file(h->lockfile, h->fd, 0);
 +			FREE(& h);
 +			return NULL;
 +		}
@@ -686,13 +799,14 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	if (stat(path, &sb) != 0 && errno == ENOENT) {
 +		createflags |= DB_EXCL;
-+		h->db->set_pagesize(h->db, (int) MaildirCachePageSize);
++		h->db->set_pagesize(h->db, (int) HeaderCachePageSize);
 +	}
 +
 +	ret = h->db->open(h->db, NULL, path, folder, DB_BTREE, createflags, 0600);
 +	if (ret) {
 +		h->db->close(h->db, 0);
 +		h->env->close(h->env, 0);
++		mx_unlock_file(h->lockfile, h->fd, 0);
 +		FREE(& h);
 +		return NULL;
 +	}
@@ -712,12 +826,12 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	h->db->close(h->db, 0);
 +	h->env->close(h->env, 0);
-+
++	mx_unlock_file(h->lockfile, h->fd, 0);
 +	FREE(& h);
 +}
 +
 +void *
-+mutt_hcache_fetch(void *db, const char *filename)
++mutt_hcache_fetch(void *db, const char *filename, size_t (*keylen)(const char *fn))
 +{
 +	DBT key;
 +	DBT data;
@@ -729,17 +843,22 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	filename++; /* skip '/' */
 +
-+	mutt_hcache_dbt_init(&key, (void *) filename, mutt_hcache_keylen(filename));
++	mutt_hcache_dbt_init(&key, (void *) filename, keylen(filename));
 +	mutt_hcache_dbt_empty_init(&data);
 +	data.flags = DB_DBT_MALLOC;
 +
 +	h->db->get(h->db, NULL, &key, &data, 0);
 +
++	if (! crc32_matches(data.data, h->crc)) {
++		free(data.data);
++		return NULL;
++	}
++
 +	return data.data;
 +}
 +
 +int
-+mutt_hcache_store(void *db, const char *filename, HEADER *header)
++mutt_hcache_store(void *db, const char *filename, HEADER *header, unsigned long long uid_validity, size_t (*keylen)(const char *fn))
 +{
 +	DBT key;
 +	DBT data;
@@ -752,11 +871,11 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	filename++; /* skip '/' */
 +
-+	mutt_hcache_dbt_init(&key, (void *) filename, mutt_hcache_keylen(filename));
++	mutt_hcache_dbt_init(&key, (void *) filename, keylen(filename));
 +
 +	mutt_hcache_dbt_empty_init(&data);
 +	data.flags = DB_DBT_USERMEM;
-+	data.data = mutt_hcache_dump(header, (signed int *) &data.size); 
++	data.data = mutt_hcache_dump(db, header, (signed int *) &data.size, uid_validity); 
 +	data.ulen = data.size;
 +
 +	ret = h->db->put(h->db, NULL, &key, &data, 0);
@@ -767,7 +886,7 @@ diff -Nru a/hcache.c b/hcache.c
 +}
 +
 +int
-+mutt_hcache_delete(void *db, const char *filename)
++mutt_hcache_delete(void *db, const char *filename, size_t (*keylen)(const char *fn))
 +{
 +	DBT key;
 +	struct header_cache *h = db;
@@ -778,31 +897,323 @@ diff -Nru a/hcache.c b/hcache.c
 +
 +	filename++; /* skip '/' */
 +
-+	mutt_hcache_dbt_init(&key, (void *) filename, mutt_hcache_keylen(filename));
++	mutt_hcache_dbt_init(&key, (void *) filename, keylen(filename));
 +	return h->db->del(h->db, NULL, &key, 0);
 +}
 +#endif
+diff -Nru a/imap/imap.c b/imap/imap.c
+--- a/imap/imap.c	2004-08-18 10:08:12 +02:00
++++ b/imap/imap.c	2004-08-18 10:08:12 +02:00
+@@ -602,6 +602,17 @@
+       if ((pc = imap_get_flags (&(idata->flags), pc)) == NULL)
+ 	goto fail;
+     }
++#ifdef USE_HCACHE
++    /* save UIDVALIDITY for the header cache */
++    else if (ascii_strncasecmp("OK [UIDVALIDITY", pc, 14) == 0)
++    {
++	    dprint(2, (debugfile, "Getting mailbox UIDVALIDITY\n"));
++	    pc += 3;
++	    pc = imap_next_word(pc);
++
++	    sscanf(pc, "%u", &(idata->uid_validity));
++    }
++#endif
+     else
+     {
+       pc = imap_next_word (pc);
+diff -Nru a/imap/imap_private.h b/imap/imap_private.h
+--- a/imap/imap_private.h	2004-08-18 10:08:12 +02:00
++++ b/imap/imap_private.h	2004-08-18 10:08:12 +02:00
+@@ -179,6 +179,9 @@
+   unsigned int newMailCount;
+   IMAP_CACHE cache[IMAP_CACHE_LEN];
+   int noclose : 1;
++#ifdef USE_HCACHE
++  unsigned long long uid_validity;
++#endif
+   
+   /* all folder flags - system flags AND keywords */
+   LIST *flags;
+diff -Nru a/imap/message.c b/imap/message.c
+--- a/imap/message.c	2004-08-18 10:08:12 +02:00
++++ b/imap/message.c	2004-08-18 10:08:12 +02:00
+@@ -39,6 +39,12 @@
+ static int msg_parse_fetch (IMAP_HEADER* h, char* s);
+ static char* msg_parse_flags (IMAP_HEADER* h, char* s);
+ 
++#if USE_HCACHE
++static int msg_fetch_header_fetch (CONTEXT* ctx, IMAP_HEADER* h, char* buf,
++  FILE* fp);
++static size_t imap_hcache_keylen (const char *fn);
++#endif /* USE_HCACHE */
++
+ /* imap_read_headers:
+  * Changed to read many headers instead of just one. It will return the
+  * msgno of the last message read. It will return a value other than
+@@ -57,8 +63,18 @@
+   int fetchlast = 0;
+   const char *want_headers = "DATE FROM SUBJECT TO CC MESSAGE-ID REFERENCES CONTENT-TYPE IN-REPLY-TO REPLY-TO LINES X-LABEL";
+ 
++#if USE_HCACHE
++  void *hc   = NULL;
++  unsigned long long *uid_validity = NULL;
++  char uid_buf[64];
++#endif /* USE_HCACHE */
++
+   ctx = idata->ctx;
+ 
++#if USE_HCACHE
++  hc = mutt_hcache_open (HeaderCache, ctx->path);
++#endif /* USE_HCACHE */
++
+   if (mutt_bit_isset (idata->capabilities,IMAP4REV1))
+   {
+     snprintf (hdrreq, sizeof (hdrreq), "BODY.PEEK[HEADER.FIELDS (%s)]", 
+@@ -73,6 +89,9 @@
+   {	/* Unable to fetch headers for lower versions */
+     mutt_error _("Unable to fetch headers from this IMAP server version.");
+     mutt_sleep (2);	/* pause a moment to let the user see the error */
++#if USE_HCACHE
++    mutt_hcache_close (hc);
++#endif /* USE_HCACHE */
+     return -1;
+   }
+ 
+@@ -83,6 +102,9 @@
+   {
+     mutt_error (_("Could not create temporary file %s"), tempfile);
+     mutt_sleep (2);
++#if USE_HCACHE
++    mutt_hcache_close (hc);
++#endif /* USE_HCACHE */
+     return -1;
+   }
+   unlink (tempfile);
+@@ -95,14 +117,88 @@
+   idata->reopen &= ~IMAP_NEWMAIL_PENDING;
+   idata->newMailCount = 0;
+ 
++#if USE_HCACHE
++  snprintf (buf, sizeof (buf),
++    "FETCH %d:%d (UID FLAGS)", msgbegin + 1, msgend + 1);
++  fetchlast = msgend + 1;
++
++  imap_cmd_start (idata, buf);
++
++  for (msgno = msgbegin; msgno <= msgend ; msgno++)
++  {
++    if (ReadInc && (!msgno || ((msgno+1) % ReadInc == 0)))
++      mutt_message (_("Evaluating cache... [%d/%d]"), msgno + 1,
++        msgend + 1);
++
++    rewind (fp);
++    memset (&h, 0, sizeof (h));
++    h.data = safe_calloc (1, sizeof (IMAP_HEADER_DATA));
++    do
++    {
++      mfhrc = 0;
++
++      rc = imap_cmd_step (idata);
++      if (rc != IMAP_CMD_CONTINUE)
++	break;
++
++      if ((mfhrc = msg_fetch_header_fetch (idata->ctx, &h, idata->cmd.buf, fp)) == -1)
++	continue;
++      else if (mfhrc < 0)
++	break;
++
++      /* make sure we don't get remnants from older larger message headers */
++      fputs ("\n\n", fp);
++
++      sprintf(uid_buf, "/%u", h.data->uid); /* XXX --tg 21:41 04-07-11 */
++      uid_validity = (unsigned long long *) mutt_hcache_fetch (hc, uid_buf, &imap_hcache_keylen);
++
++      if (uid_validity != NULL
++      && *uid_validity == idata->uid_validity) {
++	      ctx->hdrs[msgno] = mutt_hcache_restore((unsigned char *) uid_validity, 0);
++	      ctx->hdrs[msgno]->index = h.sid - 1;
++	      if (h.sid != ctx->msgcount + 1)
++		      dprint (1, (debugfile, "imap_read_headers: msgcount and sequence ID are inconsistent!"));
++	      /* messages which have not been expunged are ACTIVE (borrowed from mh 
++	       * folders) */
++	      ctx->hdrs[msgno]->active = 1;
++	      ctx->hdrs[msgno]->read = h.read;
++	      ctx->hdrs[msgno]->old = h.old;
++	      ctx->hdrs[msgno]->deleted = h.deleted;
++	      ctx->hdrs[msgno]->flagged = h.flagged;
++	      ctx->hdrs[msgno]->replied = h.replied;
++	      ctx->hdrs[msgno]->changed = h.changed;
++	      /*  ctx->hdrs[msgno]->received is restored from mutt_hcache_restore */
++	      ctx->hdrs[msgno]->data = (void *) (h.data);
++
++	      ctx->msgcount++;
++      }
++      rewind (fp);
++
++      FREE(&uid_validity);
++
++    }
++    while ((rc != IMAP_CMD_OK) && ((mfhrc == -1) ||
++      ((msgno + 1) >= fetchlast)));
++  }
++
++  fetchlast = msgbegin;
++#endif /* USE_HCACHE */
++
+   for (msgno = msgbegin; msgno <= msgend ; msgno++)
+   {
+     if (ReadInc && (!msgno || ((msgno+1) % ReadInc == 0)))
+       mutt_message (_("Fetching message headers... [%d/%d]"), msgno + 1,
+         msgend + 1);
+ 
++    if (ctx->hdrs[msgno])
++      continue;
++
+     if (msgno + 1 > fetchlast)
+     {
++      fetchlast = msgno + 1;
++      while((fetchlast <= msgend) && (! ctx->hdrs[fetchlast]))
++        fetchlast++;
++
+       /*
+        * Make one request for everything. This makes fetching headers an
+        * order of magnitude faster if you have a large mailbox.
+@@ -112,11 +208,9 @@
+        */
+       snprintf (buf, sizeof (buf),
+         "FETCH %d:%d (UID FLAGS INTERNALDATE RFC822.SIZE %s)", msgno + 1,
+-        msgend + 1, hdrreq);
++        fetchlast, hdrreq);
+ 
+       imap_cmd_start (idata, buf);
+-
+-      fetchlast = msgend + 1;
+     }
+ 
+     /* freshen fp, h */
+@@ -170,6 +264,11 @@
+       /* content built as a side-effect of mutt_read_rfc822_header */
+       ctx->hdrs[msgno]->content->length = h.content_length;
+ 
++#if USE_HCACHE
++      sprintf(uid_buf, "/%u", h.data->uid);
++      mutt_hcache_store(hc, uid_buf, ctx->hdrs[msgno], idata->uid_validity, &imap_hcache_keylen);
++#endif /* USE_HCACHE */
++
+       ctx->msgcount++;
+     }
+     while ((rc != IMAP_CMD_OK) && ((mfhrc == -1) ||
+@@ -179,7 +278,9 @@
+     {
+       imap_free_header_data ((void**) &h.data);
+       fclose (fp);
+-
++#if USE_HCACHE
++  mutt_hcache_close (hc);
++#endif /* USE_HCACHE */
+       return -1;
+     }
+ 	
+@@ -194,6 +295,10 @@
+     }
+   }
+ 
++#if USE_HCACHE
++  mutt_hcache_close (hc);
++#endif /* USE_HCACHE */
++
+   fclose(fp);
+ 
+   if (ctx->msgcount > oldmsgcount)
+@@ -724,6 +829,7 @@
+   return s;
+ }
+ 
++
+ /* msg_fetch_header: import IMAP FETCH response into an IMAP_HEADER.
+  *   Expects string beginning with * n FETCH.
+  *   Returns:
+@@ -782,6 +888,56 @@
+ 
+   return rc;
+ }
++
++#if USE_HCACHE
++static size_t imap_hcache_keylen (const char *fn)
++{
++  return mutt_strlen(fn);
++}
++
++/* msg_fetch_header: import IMAP FETCH response into an IMAP_HEADER.
++ *   Expects string beginning with * n FETCH.
++ *   Returns:
++ *      0 on success
++ *     -1 if the string is not a fetch response
++ *     -2 if the string is a corrupt fetch response */
++static int msg_fetch_header_fetch (CONTEXT* ctx, IMAP_HEADER* h, char* buf, FILE* fp)
++{
++  IMAP_DATA* idata;
++  long bytes;
++  int rc = -1; /* default now is that string isn't FETCH response*/
++
++  idata = (IMAP_DATA*) ctx->data;
++
++  if (buf[0] != '*')
++    return rc;
++
++  /* skip to message number */
++  buf = imap_next_word (buf);
++  h->sid = atoi (buf);
++
++  /* find FETCH tag */
++  buf = imap_next_word (buf);
++  if (ascii_strncasecmp ("FETCH", buf, 5))
++    return rc;
++
++  rc = -2; /* we've got a FETCH response, for better or worse */
++  if (!(buf = strchr (buf, '(')))
++    return rc;
++  buf++;
++
++  if (msg_parse_fetch (h, buf) < 0) {
++         return -2;
++  }
++
++  if (!(buf = strchr (buf, ')')))
++    return rc;
++  buf++;
++
++  return 0;
++}
++#endif /* USE_HCACHE */
++
+ 
+ /* msg_has_flag: do a caseless comparison of the flag against a flag list,
+  *   return 1 if found or flag list has '\*', 0 otherwise */
 diff -Nru a/init.h b/init.h
---- init.h	2004-06-10 14:03:44 +02:00
-+++ init.h	2004-06-10 14:03:44 +02:00
-@@ -981,6 +981,28 @@
+--- a/init.h	2004-08-18 10:08:12 +02:00
++++ b/init.h	2004-08-18 10:08:12 +02:00
+@@ -981,6 +981,30 @@
    ** \fBDON'T CHANGE THIS SETTING UNLESS YOU ARE REALLY SURE WHAT YOU ARE
    ** DOING!\fP
    */
 +#if USE_HCACHE
-+  { "maildir_cache", DT_PATH, R_NONE, UL &MaildirCache, 0 },
++
++  { "header_cache", DT_PATH, R_NONE, UL &HeaderCache, 0 },
 +  /*
 +  ** .pp
-+  ** Path to the maildir cache file. If unset no cache will be used.
++  ** Path to the header cache file. If unset no cache will be used. Otherwise
++  ** the cache will be enabled for Maildir and IMAP mailboxes.
 +  */
-+  { "maildir_cache_verify", DT_BOOL, R_NONE, OPTHCACHEVERIFY, 1 },
++  { "maildir_header_cache_verify", DT_BOOL, R_NONE, OPTHCACHEVERIFY, 1 },
 +  /*
 +  ** .pp
-+  ** Check for programs other than mutt having modified maildir
-+  ** files when the header cache is in use.  This incurs one stat(2)
-+  ** per message every time the folder is opened.
++  ** Check for Maildir unaware programs other than mutt having modified maildir
++  ** files when the header cache is in use.  This incurs one stat(2) per
++  ** message every time the folder is opened.
 +  */
-+  { "maildir_cache_page_size", DT_NUM, R_NONE, UL &MaildirCachePageSize, 16384 },
++  { "header_cache_pagesize", DT_NUM, R_NONE, UL &HeaderCachePageSize, 16384 },
 +  /*
 +  ** .pp
 +  ** Change the maildir header cache database page size.  Too large
@@ -815,8 +1226,8 @@ diff -Nru a/init.h b/init.h
    /*
    ** .pp
 diff -Nru a/main.c b/main.c
---- main.c	2004-06-10 14:03:44 +02:00
-+++ main.c	2004-06-10 14:03:44 +02:00
+--- a/main.c	2004-08-18 10:08:12 +02:00
++++ b/main.c	2004-08-18 10:08:12 +02:00
 @@ -411,6 +411,12 @@
  	"-HAVE_GETADDRINFO  "
  #endif
@@ -831,13 +1242,20 @@ diff -Nru a/main.c b/main.c
  
  #ifdef ISPELL
 diff -Nru a/mh.c b/mh.c
---- mh.c	2004-06-10 14:03:44 +02:00
-+++ mh.c	2004-06-10 14:03:44 +02:00
-@@ -779,11 +779,65 @@
+--- a/mh.c	2004-08-18 10:08:12 +02:00
++++ b/mh.c	2004-08-18 10:08:12 +02:00
+@@ -779,11 +779,68 @@
    return r;
  }
  
 +#if USE_HCACHE
++
++static size_t maildir_hcache_keylen (const char *fn)
++{
++  const char * p = strchr (fn, ':');
++  return p ? (size_t) (p - fn) : mutt_strlen(fn);
++}
++
  
  /* 
   * This function does the second parsing pass for a maildir-style
@@ -854,14 +1272,14 @@ diff -Nru a/mh.c b/mh.c
 +	struct stat lastchanged;
 +	int ret;
 +
-+	hc = mutt_hcache_open (MaildirCache, ctx->path);
++	hc = mutt_hcache_open (HeaderCache, ctx->path);
 +
 +	for (p = md; p; p = p->next) {
 +		if (! (p && p->h && !p->header_parsed)) {
 +			continue;
 +		}
 +
-+		data      = mutt_hcache_fetch (hc, p->h->path + 3);
++		data      = mutt_hcache_fetch (hc, p->h->path + 3, &maildir_hcache_keylen);
 +		when      = (struct timeval *) data;
 +
 +		snprintf(fn, sizeof (fn), "%s/%s", ctx->path, p->h->path);
@@ -875,18 +1293,14 @@ diff -Nru a/mh.c b/mh.c
 +
 +		if (data != NULL
 +		 && ret == 0
-+		 && lastchanged.st_mtime <= when->tv_sec
-+#if HAVE_LANGINFO_CODESET
-+		 && mutt_hcache_charset_matches (data)
-+#endif /* HAVE_LANGINFO_CODESET */
-+		 ) {
++		 && lastchanged.st_mtime <= when->tv_sec) {
 +			p->h = mutt_hcache_restore ((unsigned char *)data, &p->h);
 +			maildir_parse_flags (p->h, fn);
 +
 +		} else if (maildir_parse_message (ctx->magic, fn, p->h->old, p->h)) {
 +			maildir_parse_flags(p->h, fn);
 +			p->header_parsed = 1;
-+			mutt_hcache_store (hc, p->h->path + 3, p->h);
++			mutt_hcache_store (hc, p->h->path + 3, p->h, 0, &maildir_hcache_keylen);
 +		} else {
 +			mutt_free_header (&p->h);
 +		}
@@ -899,7 +1313,7 @@ diff -Nru a/mh.c b/mh.c
  
  void maildir_delayed_parsing (CONTEXT * ctx, struct maildir *md)
  {
-@@ -801,7 +855,7 @@
+@@ -801,7 +858,7 @@
      }
  }
  
@@ -908,7 +1322,7 @@ diff -Nru a/mh.c b/mh.c
  
  /* Read a MH/maildir style mailbox.
   *
-@@ -1293,6 +1347,9 @@
+@@ -1293,6 +1350,9 @@
  {
    char path[_POSIX_PATH_MAX], tmp[_POSIX_PATH_MAX];
    int i, j;
@@ -918,33 +1332,33 @@ diff -Nru a/mh.c b/mh.c
  
    if (ctx->magic == M_MH)
      i = mh_check_mailbox (ctx, index_hint);
-@@ -1302,6 +1359,11 @@
+@@ -1302,6 +1362,11 @@
    if (i != 0)
      return i;
  
 +#if USE_HCACHE
 +  if (ctx->magic == M_MAILDIR)
-+    hc = mutt_hcache_open(MaildirCache, ctx->path);
++    hc = mutt_hcache_open(HeaderCache, ctx->path);
 +#endif /* USE_HCACHE */
 +
    for (i = 0; i < ctx->msgcount; i++)
    {
      if (ctx->hdrs[i]->deleted
-@@ -1310,7 +1372,13 @@
+@@ -1310,7 +1375,13 @@
        snprintf (path, sizeof (path), "%s/%s", ctx->path, ctx->hdrs[i]->path);
        if (ctx->magic == M_MAILDIR
  	  || (option (OPTMHPURGE) && ctx->magic == M_MH))
 +      {
 +#if USE_HCACHE
 +        if (ctx->magic == M_MAILDIR)
-+          mutt_hcache_delete (hc, ctx->hdrs[i]->path + 3);
++          mutt_hcache_delete (hc, ctx->hdrs[i]->path + 3, &maildir_hcache_keylen);
 +#endif /* USE_HCACHE */
  	unlink (path);
 +      }
        else if (ctx->magic == M_MH)
        {
  	/* MH just moves files out of the way when you delete them */
-@@ -1332,16 +1400,21 @@
+@@ -1332,16 +1403,21 @@
        if (ctx->magic == M_MAILDIR)
        {
  	if (maildir_sync_message (ctx, i) == -1)
@@ -968,7 +1382,7 @@ diff -Nru a/mh.c b/mh.c
    if (ctx->magic == M_MH)
      mh_update_sequences (ctx);
  
-@@ -1362,6 +1435,13 @@
+@@ -1362,6 +1438,13 @@
    }
  
    return 0;
@@ -983,8 +1397,8 @@ diff -Nru a/mh.c b/mh.c
  
  static char *maildir_canon_filename (char *dest, const char *src, size_t l)
 diff -Nru a/mutt.h b/mutt.h
---- mutt.h	2004-06-10 14:03:44 +02:00
-+++ mutt.h	2004-06-10 14:03:44 +02:00
+--- a/mutt.h	2004-08-18 10:08:12 +02:00
++++ b/mutt.h	2004-08-18 10:08:12 +02:00
 @@ -345,6 +345,9 @@
    OPTFORCENAME,
    OPTFORWDECODE,
@@ -996,9 +1410,9 @@ diff -Nru a/mutt.h b/mutt.h
    OPTHEADER,
    OPTHELP,
 diff -Nru a/protos.h b/protos.h
---- protos.h	2004-06-10 14:03:44 +02:00
-+++ protos.h	2004-06-10 14:03:44 +02:00
-@@ -99,6 +99,19 @@
+--- a/protos.h	2004-08-18 10:08:12 +02:00
++++ b/protos.h	2004-08-18 10:08:12 +02:00
+@@ -99,6 +99,16 @@
  ENVELOPE *mutt_read_rfc822_header (FILE *, HEADER *, short, short);
  HEADER *mutt_dup_header (HEADER *);
  
@@ -1006,12 +1420,9 @@ diff -Nru a/protos.h b/protos.h
 +void *mutt_hcache_open(const char *path, const char *folder);
 +void mutt_hcache_close(void *db);
 +HEADER *mutt_hcache_restore(const unsigned char *d, HEADER **oh);
-+void *mutt_hcache_fetch(void *db, const char *filename);
-+int mutt_hcache_store(void *db, const char *filename, HEADER *h);
-+int mutt_hcache_delete(void *db, const char *filename);
-+#if HAVE_LANGINFO_CODESET
-+int mutt_hcache_charset_matches(const char *d);
-+#endif /* HAVE_LANGINFO_CODESET */
++void *mutt_hcache_fetch(void *db, const char *filename, size_t (*keylen)(const char *fn));
++int mutt_hcache_store(void *db, const char *filename, HEADER *h, unsigned long long uid_validity, size_t (*keylen)(const char *fn));
++int mutt_hcache_delete(void *db, const char *filename, size_t (*keylen)(const char *fn));
 +#endif /* USE_HCACHE */
 +
 +
@@ -1021,4 +1432,4 @@ diff -Nru a/protos.h b/protos.h
 --- PATCHES.orig    Tue Nov  6 19:59:33 2001
 +++ PATCHES     Tue Nov  6 19:59:42 2001
 @@ -1,0 +1 @@
-+maildir-header-cache.19
++patch-1.5.6.tg.hcache.0
