@@ -6,7 +6,7 @@
 # $Id: Makefile,v 1.4 1997/08/05 06:41:54 asami Exp $
 #
 
-DISTNAME=	sgmlformat-1.2
+DISTNAME=	sgmlformat-1.3
 CATEGORIES=	textproc print
 MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 

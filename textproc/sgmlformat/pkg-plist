@@ -7,10 +7,12 @@ share/sgml/transpec/roff.cmap
 share/sgml/transpec/roff.sdata
 share/sgml/transpec/linuxdoc-roff.ts
 share/sgml/transpec/docbook-roff.ts
+share/sgml/transpec/iso12083article-roff.ts
 share/sgml/transpec/html.cmap
 share/sgml/transpec/html.sdata
 share/sgml/transpec/linuxdoc-html.ts
 share/sgml/transpec/docbook-html.ts
+share/sgml/transpec/linuxdoc-docbook.ts
 share/sgml/transpec/transpec.dtd
 share/sgml/transpec/catalog
 @dirrm share/sgml/transpec
