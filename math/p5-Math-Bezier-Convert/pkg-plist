@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Math/Bezier/Convert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier/Convert/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Math/Bezier 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Math 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier/Convert
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Bezier 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
