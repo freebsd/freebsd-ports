@@ -35,6 +35,12 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler
 .endif
+.if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
+CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
+.if defined(WITH_XCHARSET) && ${WITH_XCHARSET} != ""
+CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
+.endif
+.endif
 CONFIGURE_ENV+=	PERL=${PERL} \
 		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -47,6 +53,15 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-rtti
 .if ${OSVERSION} >= 400002
 CXXFLAGS+=	-fno-exceptions
 .endif
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "	WITH_CHARSET=charset	define the primary built-in charset (Latin1);"
+	@${ECHO} "	WITH_XCHARSET=list	define other built-in charsets (may be 'all');"
+	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files."
+	@${ECHO} ""
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
