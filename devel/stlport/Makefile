@@ -8,8 +8,10 @@
 
 PORTNAME=	stlport
 PORTVERSION=	4.5.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.stlport.com/archive/
+PKGNAMESUFFIX=	-${COMPILER}
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
 MAINTAINER=	pmarquis@pobox.com
@@ -23,9 +25,11 @@ BROKEN=		"Requires /usr/include/wchar.h for compilation"
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
 PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes
-MAKEFILE=	gcc-freebsd.mak
+COMPILER?=	gcc
+MAKEFILE=	${COMPILER}-freebsd.mak
 MAKE_ARGS+=	INSTALLDIR=${PREFIX} PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 		PTHREAD_LIBS=${PTHREAD_LIBS}
+PLIST_SUB=	COMPILER=${COMPILER}
 
 INSTALL_TARGET=	install_unix
 INSTALLS_SHLIB=	yes
@@ -34,13 +38,25 @@ INSTALLS_SHLIB=	yes
 BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
 .endif
 
-.if ${OSVERSION} < 460000
+.if ${COMPILER} == icc
+CC=	icc
+CXX=	icpc
+.endif
+
+.if ${COMPILER} == gcc && ${OSVERSION} < 460000
 pre-everything:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "There may be a bug in your version of gcc's exception"
 	@${ECHO_MSG} "handling code.  Consider upgrading to FreeBSD 4.6"
 	@${ECHO_MSG} "or above."
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/src::icc-freebsd.mak ${WRKSRC}/icc-freebsd.mak
+	@${CP} ${FILESDIR}/stlport::stl_icc.h \
+		${WRKSRC}/../stlport/config/stl_icc.h
+	@${CP} ${FILESDIR}/test::eh::icc-freebsd.mak \
+		${WRKSRC}/../test/eh/icc-freebsd.mak
 
 post-install:
 	${FIND} ${PREFIX}/include/stlport -name \*.orig -delete
@@ -51,7 +67,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/images/* ${DOCSDIR}/images
 .endif
 
-.if ${OSVERSION} >= 46000
+.if ${OSVERSION} >= 46000 || ${COMPILER} == icc
 post-build:	test
 .endif
 

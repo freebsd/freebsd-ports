@@ -23,6 +23,7 @@ include/stlport/config/stl_fujitsu.h
 include/stlport/config/stl_gcc.h
 include/stlport/config/stl_hpacc.h
 include/stlport/config/stl_ibm.h
+include/stlport/config/stl_icc.h
 include/stlport/config/stl_intel.h
 include/stlport/config/stl_kai.h
 include/stlport/config/stl_mlc.h
@@ -320,12 +321,12 @@ include/stlport/wrap_std/ostream
 include/stlport/wrap_std/sstream
 include/stlport/wrap_std/streambuf
 include/stlport/wrap_std/strstream
-lib/libstlport_gcc.a
-lib/libstlport_gcc.so
-lib/libstlport_gcc.so_4_5
-lib/libstlport_gcc_stldebug.a
-lib/libstlport_gcc_stldebug.so
-lib/libstlport_gcc_stldebug.so_4_5
+lib/libstlport_%%COMPILER%%.a
+lib/libstlport_%%COMPILER%%.so
+lib/libstlport_%%COMPILER%%.so_4_5
+lib/libstlport_%%COMPILER%%_stldebug.a
+lib/libstlport_%%COMPILER%%_stldebug.so
+lib/libstlport_%%COMPILER%%_stldebug.so_4_5
 %%PORTDOCS%%share/doc/stlport/README.BC.html
 %%PORTDOCS%%share/doc/stlport/README.CW.html
 %%PORTDOCS%%share/doc/stlport/README.DEC.html

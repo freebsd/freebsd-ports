@@ -4,7 +4,7 @@
  #  include <stl/_prolog.h>
  # endif
  
-+#ifdef __FreeBSD__
++#if defined (__FreeBSD__) && defined (__GNUC__)
 +# include <../wchar.h>
 +#endif
 +
