@@ -61,7 +61,7 @@ int main(int argc, char *argv[]) {
 	char *argument;
 
 	/* Parse the arguments */
-	if (argc != 2) {
+	if (argc < 2) {
 		printUsage();
 		return 0;
 	}
