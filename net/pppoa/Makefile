@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pppoa
-PORTVERSION=		1.0
+PORTVERSION=		1.1b
 PORTEPOCH=		1
 CATEGORIES=		net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
@@ -16,10 +16,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	speedtouch
 DISTFILES=		${SPEEDTOUCH}.tar.gz ${ALCATELDRIVER}
 
-MAINTAINER=		ports@freebsd-services.com
+MAINTAINER=		brian@FreeBSD.org
 
 HAS_CONFIGURE=		yes
-SPEEDTOUCH=		speedtouch-1_0
+SPEEDTOUCH=		speedtouch-1.1b
 ALCATELDRIVER=		speedmgmt.tar.gz
 NO_CDROM=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
 NO_PACKAGE=		"http://www.alcatel.com/consumer/dsl/disclaimer_lx.htm"
@@ -30,14 +30,11 @@ WRKSRC=			${WRKDIR}/${SPEEDTOUCH}
 MAN1=			modem_run.1 pppoa2.1 pppoa3.1
 
 post-install:
-	if [ ! -d ${PREFIX}/libdata ]; then			\
-		${MKDIR} ${PREFIX}/libdata;			\
-		${CHMOD} 775 ${PREFIX}/libdata;			\
-		${CHOWN} root:wheel ${PREFIX}/libdata;		\
-	fi
-	${INSTALL_DATA} ${WRKSRC}/../mgmt/mgmt.o ${PREFIX}/libdata/.
-	${INSTALL_DATA} ${FILESDIR}/quick-install ${PREFIX}/share/speedtouch/.
-	${CAT} ${PREFIX}/share/speedtouch/quick-install
+	${INSTALL} -m 0755 -o root -g wheel -d ${LOCALBASE}/libdata
+	${INSTALL_DATA} ${WRKSRC}/../mgmt/mgmt.o ${LOCALBASE}/libdata
+	${INSTALL_DATA} ${FILESDIR}/quick-install \
+	    ${LOCALBASE}/share/doc/speedtouch/.
+	@${CAT} ${LOCALBASE}/share/doc/speedtouch/quick-install
 
 .include <bsd.port.pre.mk>
 
