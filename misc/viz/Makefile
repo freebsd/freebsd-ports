@@ -8,7 +8,8 @@
 PORTNAME=	viz
 PORTVERSION=	1.1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bjn@visi.com

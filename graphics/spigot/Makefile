@@ -8,7 +8,8 @@
 PORTNAME= 	spigot
 PORTVERSION=	1.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 DISTFILES=	spigot.1.7.tar.gz
 
 MAINTAINER=	james@cs.uwm.edu

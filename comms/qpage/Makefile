@@ -9,7 +9,8 @@ PORTNAME=	qpage
 PORTVERSION=	3.2
 CATEGORIES=	comms
 #MASTER_SITES=	http://www.qpage.org/download/
-MASTER_SITES=	http://people.FreeBSD.org/~fenner/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joes@seaport.net
