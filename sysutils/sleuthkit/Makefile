@@ -28,7 +28,7 @@ MAN1=		dcalc.1 dcat.1 disk_sreset.1 disk_stat.1 dls.1 \
 		sigfind.1 sorter.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/BSD5)$$/BSD5) || defined(FREEBSD6)/' \
+	@${REINPLACE_CMD} -e 's/BSD5)$$/& || defined(FREEBSD6)/' \
 		${WRKSRC}/src/misc/tsk_os.h
 	@${REINPLACE_CMD} -E -e 's/^CC[[:space:]]*=/CC \?=/' \
 		-e 's/[[:space:]]+file test[[:space:]]*$$//' ${WRKSRC}/Makefile
