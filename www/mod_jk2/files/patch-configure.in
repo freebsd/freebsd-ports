@@ -1,12 +1,23 @@
---- configure.in.orig	Thu Sep  4 05:05:30 2003
-+++ configure.in	Thu Sep  4 05:06:25 2003
-@@ -102,7 +102,8 @@
-                 WEBSERVER="apache-2.0"
-               	APXSCFLAGS="`${APXS} -q CFLAGS` `${APXS} -q EXTRA_CFLAGS`"
-               	APXSCPPFLAGS="`${APXS} -q EXTRA_CPPFLAGS`"
--                APACHE_CONFIG_VARS=${apache_dir}/build/config_vars.mk
-+                APACHE_CONFIG_VARS=${prefix}/share/apache2/build/config_vars.mk
-+		LIBTOOL=`$APXS -q LIBTOOL`
-             fi
-             AC_MSG_RESULT([building connector for \"$WEBSERVER\"])
-     
+The apache mod_jk modules *communicate* with Java using an internet
+protocol, AJP13, but they are written in C.  I can't come up with any
+reason to look for a JDK here, it's plain stupid! Since apache and
+tomcat can be run on separate machines, there is no dependency
+whatsoever... /Palle
+
+--- configure.in.orig	Tue Oct 22 00:00:00 2002
++++ configure.in	Thu Feb 26 00:19:35 2004
+@@ -184,10 +184,10 @@
+ 
+ dnl Java settings
+ 
+-JK_JDK()
+-JK_JDK_OS()
+-JK_JNI()
+-JK_PCRE()
++dnl JK_JDK()
++dnl JK_JDK_OS()
++dnl JK_JNI()
++dnl JK_PCRE()
+ 
+ AC_SUBST(JAVA_HOME)
+ AC_SUBST(JAVA_PLATFORM)

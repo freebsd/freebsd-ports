@@ -1,0 +1,14 @@
+--- server/apache13/Makefile.apxs.in.orig	Wed Mar 19 10:21:04 2003
++++ server/apache13/Makefile.apxs.in	Wed Jun 18 03:10:02 2003
+@@ -18,7 +18,10 @@
+ all: mod_jk2.so
+ 
+ mod_jk2.so: 
+-	$(APXS) -c -o $@ -Wc,"${JK_INCL} ${APR_CFLAGS} ${APR_LDFLAGS}" "${JAVA_INCL}" mod_jk2.c ${COMMON_C_FILES} 
++	$(APXS) -c -o $@ -Wc,"${JK_INCL} ${APR_CFLAGS} ${APR_LDFLAGS}" "${JAVA_INCL}" jk_service_apache13.c mod_jk2.c ${COMMON_C_FILES} 
++
++install:
++	$(APXS) -i mod_jk2.so
+ 
+ clean:
+ 	rm -f *.o *.so

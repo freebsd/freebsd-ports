@@ -1,5 +1,4 @@
-mod_jk is a replacement to the elderly mod_jserv. It is a completely
-new Tomcat-Apache plugin that handles the communication between
-Tomcat and Apache.
+mod_jk2 handles the communication between Tomcat and Apache.
+JK2 is a refactoring of JK and is much more powerful.
 
 WWW: http://jakarta.apache.org/tomcat/tomcat-4.1-doc/jk2/jk/aphowto.html

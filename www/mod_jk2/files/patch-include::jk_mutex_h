@@ -1,0 +1,20 @@
+--- include/jk_mutex.h~	Thu Jul 31 19:30:40 2003
++++ include/jk_mutex.h	Wed Sep 10 01:33:27 2003
+@@ -76,7 +76,7 @@
+ #include "apr_thread_mutex.h"
+ #elif defined( WIN32 )
+ #include <windows.h>
+-#elif defined( _REENTRANT )
++#elif defined( _THREAD_SAFE ) && defined ( FREEBSD_THREAD_HACK )
+ #include <pthread.h>
+ #endif
+ 
+@@ -122,7 +122,7 @@
+     apr_thread_mutex_t *threadMutex;
+ #elif defined( WIN32 )
+     CRITICAL_SECTION threadMutex;
+-#elif defined( _REENTRANT )
++#elif defined( _THREAD_SAFE ) && defined ( FREEBSD_THREAD_HACK )
+     pthread_mutex_t threadMutex;
+ #else
+     void *threadMutex;

@@ -1,0 +1,11 @@
+--- common/jk_mutex_thread.c~	Thu Jul 31 19:30:38 2003
++++ common/jk_mutex_thread.c	Wed Sep 10 01:37:29 2003
+@@ -159,7 +159,7 @@
+ }
+ 
+ 
+-#elif defined( _REENTRANT )
++#elif defined( _THREAD_SAFE ) && defined( FREEBSD_THREAD_HACK )
+ /*-------------------- PThread - @deprecated, use APR if possible -------------------- */
+ 
+ #include <pthread.h>
