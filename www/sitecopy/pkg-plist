@@ -1,8 +1,16 @@
 bin/sitecopy
-share/sitecopy/examplerc
-share/sitecopy/changes.awk
-share/locale/ru/LC_MESSAGES/sitecopy.mo
-share/locale/fr/LC_MESSAGES/sitecopy.mo
+share/doc/sitecopy/FAQ
+share/doc/sitecopy/NEWS
+share/doc/sitecopy/README
+share/doc/sitecopy/THANKS
+share/doc/sitecopy/update.sh
 share/locale/cs/LC_MESSAGES/sitecopy.mo
+share/locale/de/LC_MESSAGES/sitecopy.mo
+share/locale/fr/LC_MESSAGES/sitecopy.mo
 share/locale/ja/LC_MESSAGES/sitecopy.mo
-@unexec rmdir %D/share/sitecopy > /dev/null 2>&1
+share/locale/ru/LC_MESSAGES/sitecopy.mo
+share/locale/tr/LC_MESSAGES/sitecopy.mo
+share/sitecopy/changes.awk
+share/sitecopy/examplerc
+@dirrm share/doc/sitecopy
+@dirrm share/sitecopy
