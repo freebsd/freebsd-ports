@@ -51,6 +51,7 @@
     SUBDIR += par2cmdline
     SUBDIR += parchive
     SUBDIR += pear-Archive_Tar
+    SUBDIR += pecl-zip
     SUBDIR += ppunpack
     SUBDIR += py-bzip2
     SUBDIR += py-lzma
