@@ -1,0 +1,10 @@
+Various tools to assist in administration and configuration of a workstation.
+Included are tools to:
+
+	* Administer user and group accounts
+	* Change the date, time, and time zone
+	* Set up and configure network interfaces
+	* Modify bootloader settings
+	* Start, stop, and modify system services
+
+WWW: http://www.gnome.org/projects/gst/
