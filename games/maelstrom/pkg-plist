@@ -1,24 +1,24 @@
 bin/Maelstrom
 bin/Maelstrom-netd
-share/doc/Maelstrom/Ambrosia_Software,_Inc._FAQ
-share/doc/Maelstrom/COPYING
-share/doc/Maelstrom/COPYING.GPL
-share/doc/Maelstrom/Maelstrom-Announce
-share/doc/Maelstrom/Maelstrom.FAQ
-share/doc/Maelstrom/MaelstromGPL_press_release
-share/doc/Maelstrom/Makefile
-share/doc/Maelstrom/Makefile.in
-share/doc/Maelstrom/Networking.Paper
-share/doc/Maelstrom/Porting.Paper
-share/doc/Maelstrom/Quotes
-share/doc/Maelstrom/README
-share/doc/Maelstrom/README.joystick
-share/doc/Maelstrom/README.network
-share/doc/Maelstrom/README.options
-share/doc/Maelstrom/RSA.README
-share/doc/Maelstrom/Technical_Notes-v1.0
-share/doc/Maelstrom/Technical_Notes-v1.1
-share/doc/Maelstrom/Technical_Notes-v2.0
+%%PORTDOCS%%share/doc/Maelstrom/Ambrosia_Software,_Inc._FAQ
+%%PORTDOCS%%share/doc/Maelstrom/COPYING
+%%PORTDOCS%%share/doc/Maelstrom/COPYING.GPL
+%%PORTDOCS%%share/doc/Maelstrom/Maelstrom-Announce
+%%PORTDOCS%%share/doc/Maelstrom/Maelstrom.FAQ
+%%PORTDOCS%%share/doc/Maelstrom/MaelstromGPL_press_release
+%%PORTDOCS%%share/doc/Maelstrom/Makefile
+%%PORTDOCS%%share/doc/Maelstrom/Makefile.in
+%%PORTDOCS%%share/doc/Maelstrom/Networking.Paper
+%%PORTDOCS%%share/doc/Maelstrom/Porting.Paper
+%%PORTDOCS%%share/doc/Maelstrom/Quotes
+%%PORTDOCS%%share/doc/Maelstrom/README
+%%PORTDOCS%%share/doc/Maelstrom/README.joystick
+%%PORTDOCS%%share/doc/Maelstrom/README.network
+%%PORTDOCS%%share/doc/Maelstrom/README.options
+%%PORTDOCS%%share/doc/Maelstrom/RSA.README
+%%PORTDOCS%%share/doc/Maelstrom/Technical_Notes-v1.0
+%%PORTDOCS%%share/doc/Maelstrom/Technical_Notes-v1.1
+%%PORTDOCS%%share/doc/Maelstrom/Technical_Notes-v2.0
 share/Maelstrom/Images/Maelstrom_Icon#100.cicn
 share/Maelstrom/Images/Maelstrom_Icon#101.cicn
 share/Maelstrom/Images/Maelstrom_Icon#102.cicn
@@ -55,4 +55,4 @@ share/Maelstrom/icon.bmp
 share/Maelstrom/icon.xpm
 @dirrm share/Maelstrom/Images
 @dirrm share/Maelstrom
-@dirrm share/doc/Maelstrom
+%%PORTDOCS%%@dirrm share/doc/Maelstrom
