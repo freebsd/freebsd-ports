@@ -15,9 +15,14 @@ COMMENT=	Dog writes the contents of each given file, URL, or stdin
 
 USE_GMAKE=	yes
 ALL_TARGET=	dog
+USE_REINPLACE=	yes
 
 MAN1=		dog.1
 PLIST_FILES=	bin/dog
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O3 -Wall|${CFLAGS}|; s|gcc|${CC}|' \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dog ${PREFIX}/bin/
