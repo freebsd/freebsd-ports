@@ -19,6 +19,7 @@ include/apache/ap_config.h
 include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
+include/apache/ap_mmn.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -42,6 +43,7 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+lib/php3.ini-dist
 libexec/apache/libproxy.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
@@ -53,7 +55,6 @@ libexec/apache/mod_info.so
 libexec/apache/mod_mime_magic.so
 libexec/apache/mod_rewrite.so
 libexec/apache/mod_speling.so
-libexec/apache/mod_status.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_usertrack.so
 sbin/ab
@@ -239,6 +240,10 @@ www/icons/movie.gif
 www/icons/p.gif
 www/icons/patch.gif
 www/icons/pdf.gif
+www/icons/php2.gif
+www/icons/php3.gif
+www/icons/phpi.gif
+www/icons/phps.gif
 www/icons/pie0.gif
 www/icons/pie1.gif
 www/icons/pie2.gif

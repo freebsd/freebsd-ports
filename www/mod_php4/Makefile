@@ -6,19 +6,17 @@
 # $Id: Makefile,v 1.54 1998/09/13 17:18:11 andreas Exp $
 #
 
-DISTNAME=	apache_${APACHE_VER}
-PKGNAME=	apache-php${PHP3_VER}-${APACHE_VER}
+DISTNAME=	apache_${VERSION_APACHE}
+PKGNAME=	apache-php${VERSION_PHP3}-${VERSION_APACHE}
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://www.php.net/distributions/
-DISTFILES=	apache_${APACHE_VER}.tar.gz php-${PHP3_VER}.tar.gz
+DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP3}.tar.gz
 
 MAINTAINER=	Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 
-APACHE_VER=	1.3.1
-PHP3_VER=	3.0.3
-
-USE_PERL5=	yes
+VERSION_APACHE=	1.3.2
+VERSION_PHP3=	3.0.4
 
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	Support for different databases
@@ -36,21 +34,23 @@ CONFIGURE_ARGS= \
 		 --datadir=${PREFIX}/www \
 		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
+		 --without-confadjust \
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \
 		 --disable-module=auth_dbm \
-		 --with-perl=${PERL5} \
 		 --activate-module=src/modules/php3/libphp3.a
+
+# Currently perl version don't matter
+#                --with-perl=${PERL5}
 
 OPTIM=-DHARD_SERVER_LIMIT=512 \
 -DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
 -DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-CONFIGURE_ARGS+= --disable-rule=STATUS
 OPTIM+= -DBUFFERED_LOGS
-CFLAGS+= -O6 -fomit-frame-pointer -fexpensive-optimizations
+CFLAGS+= -O6 -fomit-frame-pointer
 .endif
 
 CONFIGURE_ENV= OPTIM='${OPTIM}' LIBS='-L${PREFIX}/lib'
@@ -65,32 +65,34 @@ PHP3_CONF_ARGS=	--prefix=${PREFIX} \
 		--with-system-regex \
 		--with-apache=${WRKSRC} \
 		--with-config-file-path=${PREFIX}/lib \
-		--disable-debug
+		--disable-debug \
+		--enable-track-vars
 
-post-fetch:
+pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
 
-#post-patch:
-#	@${PATCH} -s -d ${WRKDIR}/php-${PHP3_VER} < ${FILESDIR}/configure.patch
-
 pre-configure:
-	@( cd ${WRKSRC} \
+	@cd ${WRKSRC} \
 	&& ./configure > /dev/null \
-	&& cd ${WRKDIR}/php-${PHP3_VER} \
-	&& ${ECHO_MSG} "===>  Configuring for PHP-${PHP3_VER}" \
+	&& cd ${WRKDIR}/php-${VERSION_PHP3} \
+	&& ${ECHO_MSG} "===>  Configuring for PHP-${VERSION_PHP3}" \
 	&& CFLAGS= CPPFLAGS="-I${PREFIX}/include -I${PREFIX}/include/gd" LDFLAGS=-L${PREFIX}/lib ./configure ${PHP3_CONF_ARGS} \
-	&& ${ECHO_MSG} "===>  Building for PHP-${PHP3_VER}" \
+	&& ${ECHO_MSG} "===>  Building for PHP-${VERSION_PHP3}" \
 	&& ${MAKE} install \
-	&& ${ECHO_MSG} "===>  Configuring for Apache-${APACHE_VER}" )
+	&& ${ECHO_MSG} "===>  Configuring for Apache-${VERSION_APACHE}"
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
 		${ECHO} "[ -d ${PREFIX}/pgsql/lib ] && ${LDCONFIG} -m ${PREFIX}/pgsql/lib" >> ${PREFIX}/etc/rc.d/apache.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start > /dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
+		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start${SSL} > /dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/php3.ini-dist ${PREFIX}/lib
+.for i in php2 php3 phpi phps
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/extra/icons/$i.gif ${PREFIX}/www/icons
+.endfor
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${APACHEDOCDIR} ${PHP3DOCDIR}
@@ -105,7 +107,7 @@ post-install:
 	${LN} -s ${PREFIX}/share/doc/apache/$i ${PREFIX}/www/data/$i
 .endfor
 .for i in CODING_STANDARDS EXTENSION_STATUS LICENSE
-	${INSTALL_DATA} ${WRKDIR}/php-${PHP3_VER}/$i ${PHP3DOCDIR}
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP3}/$i ${PHP3DOCDIR}
 .endfor
 	@${ECHO} "Docs reside in ${APACHEDOCDIR}"
 	@${ECHO} "and in ${PHP3DOCDIR}"
