@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	abook
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook program with mutt mail client support
 
 GNU_CONFIGURE=	yes
