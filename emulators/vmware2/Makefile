@@ -114,7 +114,7 @@ post-patch:
 	cat ${FILESDIR}/fo_ioctl.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 .if ${OSVERSION} >= 500100
-	cat ${FILESDIR}/filedesc.patch | (cd ${WRKSRC} && patch) 
+	cat ${FILESDIR}/filedesc.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 	cat ${FILESDIR}/m_waitok.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
 .endif
 
@@ -174,6 +174,10 @@ pre-install: setoptions
 
 post-install:
 	${LN} -sf ${PREFIX}/etc/vmware /etc/
+.if ${OSVERSION} >= 500100
+	${RM} -f ${LINUXBASE}/dev/vmnet1
+	${LN} -sf /dev/vmnet1 ${LINUXBASE}/dev/vmnet1
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
