@@ -1,5 +1,8 @@
---- sysinfo.c.orig	Tue Oct  6 22:21:18 1998
-+++ sysinfo.c	Mon Oct 27 15:28:22 2003
+
+$FreeBSD$
+
+--- sysinfo.c.orig	Tue Oct  6 16:21:18 1998
++++ sysinfo.c	Sun Sep  5 22:30:23 2004
 @@ -13,7 +13,9 @@
  #include <sys/ioctl_compat.h>	/* XXX NTTYDISC is too well hidden */
  #include <sys/tty.h>
@@ -151,6 +154,15 @@
  	}
  	scale_bar(250, nfsStats.nfsClient-old_nfsStats.nfsClient, 25, states, 0);
  	draw_bar(nfsflag-1, states, 10);
+@@ -428,7 +497,7 @@
+   }
+ nfs_out:
+ 
+-}
++;}
+ 
+ 
+ /* swapmode is derived from freebsd's pstat source ...
 @@ -438,6 +507,21 @@
  void
  swapmode(int *used, int *avail)
