@@ -84,6 +84,7 @@
     SUBDIR += p5-Error
     SUBDIR += p5-Expect
     SUBDIR += p5-F77
+    SUBDIR += p5-Switch
     SUBDIR += p5-Tcl
     SUBDIR += p5-ePerl
     SUBDIR += pbasic
