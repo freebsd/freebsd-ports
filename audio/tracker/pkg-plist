@@ -3,9 +3,6 @@ bin/tracker
 etc/compression_methods
 @unexec install-info --delete %D/info/tracker.info %D/info/dir
 info/tracker.info
-info/tracker.info-1
-info/tracker.info-2
-info/tracker.info-3
 @exec install-info %D/info/tracker.info %D/info/dir
 %%PORTDOCS%%share/doc/tracker/FAQ
 %%PORTDOCS%%share/doc/tracker/html/Accessing_Aminet_on_the_Internet.html
