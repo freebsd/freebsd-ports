@@ -18,12 +18,10 @@ USE_XLIB=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-
-WRKSRC=		${WRKDIR}/rdesktop
-
-MAN1=		rdesktop.1
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
+MAN1=		rdesktop.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
