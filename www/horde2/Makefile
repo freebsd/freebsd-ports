@@ -7,7 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -101,6 +101,7 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
+	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${CONFDIR}/mime_drivers.php
 	@${CP} ${WRKSRC}/scripts/set_perms.sh ${HORDESBIN}/horde_set_perms.sh
 	@${PERL} -pi -e "s:UPDATED_BY_THE_PORT:${HORDEDIR}/:g" \
 		${HORDESBIN}/horde_set_perms.sh
