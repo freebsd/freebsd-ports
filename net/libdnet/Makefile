@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dominc_marks@btinternet.com
+MAINTAINER=	dominic_marks@btinternet.com
 
 GNU_CONFIGURE=	yes
 
