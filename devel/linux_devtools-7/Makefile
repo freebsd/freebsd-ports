@@ -34,6 +34,7 @@ NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
 PLIST=			${WRKDIR}/plist
+RESTRICTED=		"binaries under GNU GPL without accompanying source"
 MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 # Let's avoid hardcoding 'en' as the language.
