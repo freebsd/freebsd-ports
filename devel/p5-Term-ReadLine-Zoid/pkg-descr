@@ -1,0 +1,7 @@
+This package provides a set of modules that form an interactive input buffer
+written in plain perl with minimal dependencies. It features almost all
+key-bindings described in the posix spec for the sh(1) utility with some
+extensions like multiline editing; this includes a vi-command mode with a
+save-buffer (for copy-pasting) and an undo-stack.
+
+WWW: http://search.cpan.org/dist/Term-ReadLine-Zoid/
