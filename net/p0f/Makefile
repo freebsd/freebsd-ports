@@ -12,7 +12,7 @@ MASTER_SITES=		http://lcamtuf.hack.pl/
 DISTNAME=		${PORTNAME}
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		trevor@jpj.net
+MAINTAINER=		trevor@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

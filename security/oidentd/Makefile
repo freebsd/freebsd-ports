@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.numb.org/~odin/stuff/
 MASTER_SITE_SUBDIR=	ojnk
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

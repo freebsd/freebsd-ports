@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 DOC_FILES=	COPYING README ChangeLog
 GNU_CONFIGURE=	yes

@@ -32,7 +32,7 @@ DISTFILES+=	OGIresLPC-2.0.4.tar.gz
 PATCHFILES=	OGIfestpatch-${PORTVERSION}.tar.gz
 .endif
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	audio.1:${PORTSDIR}/audio/nas \
 		esd.2:${PORTSDIR}/audio/esound

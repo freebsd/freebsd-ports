@@ -15,7 +15,7 @@ MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/ \
 MASTER_SITE_SUBDIR=	GnuPG
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/MethodMaker.pm:${PORTSDIR}/devel/p5-Class-MethodMaker

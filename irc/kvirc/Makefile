@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/2.0.0/source/ \
 		ftp://kvirc.firenze.linux.it/pub/kvirc/2.0.0/source/
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 

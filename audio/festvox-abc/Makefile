@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://cslu.cse.ogi.edu/pub/tts/
 DISTNAME=	voice_abc_di-2.0
 DIST_SUBDIR=	festival
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 RUN_DEPENDS=	festival:${.CURDIR}/../festival \
 		${LOCALBASE}/share/festival/lib/ogi_spanish/ogi_span_mx_lts.scm:${.CURDIR}/../festogi-spanish \

@@ -8,7 +8,7 @@
 
 PORTNAME=	bsdi-netscape-${BROWSER}
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 

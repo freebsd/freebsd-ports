@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://jpj.net/~trevor/freebsd/ports/
 EXTRACT_SUFX=	.c.gz
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
