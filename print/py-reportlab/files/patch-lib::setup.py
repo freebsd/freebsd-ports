@@ -1,13 +1,26 @@
---- lib/setup.py.orig	Fri Jan  4 08:08:55 2002
-+++ lib/setup.py	Fri Jan  4 08:11:04 2002
-@@ -18,23 +18,23 @@
+--- lib/setup.py.orig	Mon Jul 23 20:38:19 2001
++++ lib/setup.py	Sat Mar 23 09:14:04 2002
+@@ -7,7 +7,7 @@
+ 	import os, sys
+ 	from distutils.core import setup, Extension
+ 
+-	if sys.platform in ['win32', 'sunos5', 'freebsd4', 'aix4', 'mac']:
++	if sys.platform in ['win32', 'sunos5', 'freebsd4', 'freebsd5', 'aix4', 'mac']:
+ 		LIBS=[]
+ 	else:
+ 		raise ValueError, "Don't know about platform:"+sys.platform
+@@ -18,23 +18,27 @@
  			author = "Robin Becker",
  			author_email = "robin@reportlab.com",
  			url = "http://www.reportlab.com",
 -			packages = [],
 -			ext_modules =	[Extension(	'_rl_accel',
 -										['_rl_accel.c'],
-+			packages = ['reportlab'],
++			packages = ['reportlab',
++				'reportlab.lib', 'reportlab.extensions', 'reportlab.graphics',
++				'reportlab.pdfbase', 'reportlab.pdfgen', 'reportlab.platypus',
++				'reportlab.tools', 'reportlab.tools.docco',
++				'reportlab.tools.py2pdf', 'reportlab.tools.pythonpoint'],
 +			ext_modules =	[Extension(	'reportlab.lib._rl_accel',
 +										['reportlab/lib/_rl_accel.c'],
  										include_dirs=[],
