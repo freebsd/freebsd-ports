@@ -1,6 +1,35 @@
---- develop/install.orig	Fri Feb 27 08:29:16 1998
-+++ develop/install	Sun Mar  1 15:34:53 1998
-@@ -133,14 +133,6 @@
+--- develop/install.orig	Fri Mar 13 01:16:41 1998
++++ develop/install	Sat Apr  4 18:53:55 1998
+@@ -113,17 +113,9 @@
+ if [ "$INETDCONF" = "" ]; then	INETDCONF=/etc/inetd.conf; fi
+ if [ "$SERVICES" = "" ]; then	SERVICES=/etc/services; fi
+ 
+-if [ -f /usr/man/man7/locale.7 -o -f /usr/man/man7/term.7 ]; then
+-  manmisc=7
+-else
+-  manmisc=5
+-fi
++manmisc=7
+ 
+-if [ -f /usr/man/man8/inetd.8 ]; then
+-  manadmin=8
+-else
+-  manadmin=1m
+-fi
++manadmin=8
+ 
+ # purge old logfiles (bug from sendfile revision < 19980310)
+ (cd $SPOOL && rm -f */.sendfile*.log)
+@@ -132,7 +124,7 @@
+ 	umask 022
+ 	cd src || exit 1
+ 	cp sendfile sendmsg receive utf7encode fetchfile wlock $BINDIR/
+-	[ -x $SERVERDIR/sendfiled ] && mv $SERVERDIR/sendfiled $SERVERDIR/sendfiled.old && rm $SERVERDIR/sendfiled.old
++	[ -x $SERVERDIR/sendfiled ] && mv $SERVERDIR/sendfiled $SERVERDIR/sendfiled.old && rm -f $SERVERDIR/sendfiled.old
+ 	cp sendfiled $SERVERDIR
+ 	cd ..
+ 	install_man
+@@ -156,14 +148,6 @@
  To deinstall the sendfile-daemon, simply type: 	rm $SERVERDIR/sendfiled
  
  EOD
@@ -15,15 +44,16 @@
  
  umask 022
  
-@@ -195,6 +187,7 @@
+@@ -213,7 +197,7 @@
    echo "         there is $SERVERDIR/sendfiled in makeconfig! Check it!"
  fi
  echo "installing the sendfile-daemon in $SERVERDIR"
-+[ -x $SERVERDIR/sendfiled ] && mv $SERVERDIR/sendfiled $SERVERDIR/sendfiled.old
+-[ -x $SERVERDIR/sendfiled ] && mv $SERVERDIR/sendfiled $SERVERDIR/sendfiled.old && rm $SERVERDIR/sendfiled.old
++[ -x $SERVERDIR/sendfiled ] && mv $SERVERDIR/sendfiled $SERVERDIR/sendfiled.old && rm -f $SERVERDIR/sendfiled.old
  cp src/sendfiled $SERVERDIR  || exit 1
  
  NOSENDFILE=`dirname $DENY 2>/dev/null`/nosendfile
-@@ -240,7 +233,6 @@
+@@ -259,7 +243,6 @@
      echo "saft	487/tcp		# simple asynchronous file transfer" | niload services .
    else
      echo "configuring $SERVICES"
@@ -31,7 +61,7 @@
      echo "saft	487/tcp		# simple asynchronous file transfer" >>$SERVICES
    fi
  fi
-@@ -253,8 +245,6 @@
+@@ -272,8 +255,6 @@
    fi
    RESTART=true
    echo "configuring $INETDCONF"
@@ -40,16 +70,7 @@
    echo "saft	stream	tcp	nowait	root	$SFD" >>$INETDCONF
  fi
  
-@@ -278,7 +268,7 @@
-     echo "adding check_sendfile to /etc/csh.login"
-     echo >>/etc/csh.login
-     echo "test -x $BINDIR/check_sendfile && $BINDIR/check_sendfile" \
--         >>/etc/profile
-+         >>/etc/csh.login
-   fi
- fi
- 				
-@@ -318,15 +308,11 @@
+@@ -337,15 +318,10 @@
  EOD
  fi
  
@@ -69,5 +90,3 @@
 +  kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '`
 +  [ -f $SERVERDIR/sendfiled.old ] && rm -f $SERVERDIR/sendfiled.old
  fi
-+true
-\ No newline at end of file
