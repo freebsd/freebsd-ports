@@ -12,6 +12,7 @@
     SUBDIR += airport
     SUBDIR += amcl
     SUBDIR += angst
+    SUBDIR += apinger
     SUBDIR += archie
     SUBDIR += archie.el
     SUBDIR += argus
