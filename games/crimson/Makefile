@@ -19,12 +19,9 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 USE_BZIP2=	yes
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 USE_GMAKE=	yes
 
 MAN6=	crimson.6
-
-post-patch:
-	@${PERL} -pi -e "s|sdl-config|${SDL_CONFIG}|; s|SDL/|SDL11/|" \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
