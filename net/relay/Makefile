@@ -10,7 +10,7 @@
 DISTNAME=	relay
 PKGNAME=	relay-1.10
 CATEGORIES=	net security
-MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/  \
+MASTER_SITES=	http://www.iagora.com/~espel/  \
 		http://www.freebsd.org/~obrien/Distfiles/
 
 MAINTAINER=     obrien@FreeBSD.org
