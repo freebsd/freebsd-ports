@@ -381,6 +381,7 @@
     SUBDIR += openh323proxy
     SUBDIR += openldap12
     SUBDIR += openldap20
+    SUBDIR += openldap21
     SUBDIR += openmcu
     SUBDIR += openslp
     SUBDIR += openverse
