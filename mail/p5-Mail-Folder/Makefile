@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/05/24 13:17:10 jfitz Exp $
+# $Id: Makefile,v 1.8 1997/06/24 18:43:24 jfitz Exp $
 #
 
 DISTNAME=	MailFolder-0.06
@@ -14,9 +14,17 @@ MASTER_SITE_SUBDIR=	Mail
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
+BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${PREFIX}/lib/perl5/site_perl/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${PREFIX}/lib/perl5/site_perl/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync
+RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${PREFIX}/lib/perl5/site_perl/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${PREFIX}/lib/perl5/site_perl/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync
+
 USE_PERL5=	YES
 
-MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3 Mail::Folder::NNTP.3 Mail::Folder::Maildir.3
+MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3 \
+		Mail::Folder::NNTP.3 Mail::Folder::Maildir.3
 MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
