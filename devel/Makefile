@@ -676,6 +676,7 @@
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-ORBit
     SUBDIR += p5-Object-Realize-Later
+    SUBDIR += p5-P4-Client
     SUBDIR += p5-PAR
     SUBDIR += p5-PAR-Dist
     SUBDIR += p5-POE
