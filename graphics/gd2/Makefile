@@ -43,8 +43,8 @@ MAKE_ARGS+=	$v="${$v}"
 pre-fetch:
 .if !defined(WITH_LZW)
 	@${ECHO_CMD} "************************************************************"
-	@${ECHO_CMD} "*      If you live outside US and Canada, you can set      *"
-	@${ECHO_CMD} "*      WITH_LZW=1 to enable GIF compression support.       *"
+	@${ECHO_CMD} "*      If you live outside US and Canada, you can define   *"
+	@${ECHO_CMD} "*      WITH_LZW to enable GIF compression support.         *"
 	@${ECHO_CMD} "************************************************************"
 .endif
 
