@@ -1,24 +1,16 @@
---- src/hooks/msnhook.cc.orig	Thu May  8 14:42:56 2003
-+++ src/hooks/msnhook.cc	Thu May  8 14:47:52 2003
-@@ -30,6 +30,7 @@
- #include "eventmanager.h"
- #include "imlogger.h"
- #include "connwrap.h"
-+#include "utf8conv.h"
- 
- #include "msn_bittybits.h"
- 
-@@ -259,7 +260,8 @@
+--- src/hooks/msnhook.cc.orig	Mon Oct  6 01:01:52 2003
++++ src/hooks/msnhook.cc	Mon Oct  6 01:05:37 2003
+@@ -248,7 +248,8 @@
      }
  
      icqcontact *c = clist.get(ev.getcontact());
--    text = siconv(text, conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET, "utf8");
-+//    text = siconv(text, conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET, "utf8");
-+	text = StrToUtf8(text);
+-    text = siconv(text, conf.getrussian(msn) ? "koi8-u" : conf.getdefcharset(), "utf8");
++//    text = siconv(text, conf.getrussian(msn) ? "koi8-u" : conf.getdefcharset(), "utf8");
++    text = StrToUtf8(text);
  
      if(c)
      if(c->getstatus() != offline || !c->inlist()) {
-@@ -389,11 +391,11 @@
+@@ -378,11 +379,11 @@
  
  void msnhook::checkfriendly(icqcontact *c, const string friendlynick, bool forcefetch) {
      string oldnick = c->getnick();
@@ -28,21 +20,21 @@
      c->setnick(newnick);
  
 -    if(forcefetch || (oldnick != newnick && c->getdispnick() == oldnick) || oldnick.empty()) {
-+    if(forcefetch || (oldnick != newnick && c->getdispnick() != newnick) || oldnick.empty()) {
++    if(forcefetch || (oldnick != newnick && c->getdispnick() != oldnick) || oldnick.empty()) {
  	c->setdispnick(newnick);
  	face.relaxedupdate();
      }
-@@ -613,7 +615,8 @@
+@@ -602,7 +603,8 @@
  
      mhook.checkinlist(ic);
  
--    string text = siconv(msg->body, "utf8", conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET);
-+//    string text = siconv(msg->body, "utf8", conf.getrussian(msn) ? "koi8-u" : DEFAULT_CHARSET);
-+	string text = Utf8ToStr(msg->body);
+-    string text = siconv(msg->body, "utf8", conf.getrussian(msn) ? "koi8-u" : conf.getdefcharset());
++//    string text = siconv(msg->body, "utf8", conf.getrussian(msn) ? "koi8-u" : conf.getdefcharset());
++    string text = Utf8ToStr(msg->body);
      em.store(immessage(ic, imevent::incoming, text));
  }
  
-@@ -795,3 +798,137 @@
+@@ -779,5 +781,139 @@
  	log(string("[OUT] ") + buf);
      }
  }
@@ -180,3 +172,5 @@
 +    };
 +}
 +#endif /* HAVE_ICONV_H */
+ 
+ #endif
