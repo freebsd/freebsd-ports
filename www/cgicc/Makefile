@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cgicc
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's| install-data-local||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's| install-data-local||g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

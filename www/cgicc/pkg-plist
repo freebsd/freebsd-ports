@@ -1,6 +1,7 @@
 bin/cgicc-config
 include/cgicc/CgiDefs.h
 include/cgicc/CgiEnvironment.h
+include/cgicc/CgiInput.h
 include/cgicc/CgiUtils.h
 include/cgicc/Cgicc.h
 include/cgicc/FormEntry.h
@@ -16,16 +17,17 @@ include/cgicc/HTMLElementList.h
 include/cgicc/HTTPContentHeader.h
 include/cgicc/HTTPCookie.h
 include/cgicc/HTTPHTMLHeader.h
-include/cgicc/HTTPHeaders.h
 include/cgicc/HTTPHeader.h
 include/cgicc/HTTPPlainHeader.h
 include/cgicc/HTTPRedirectHeader.h
 include/cgicc/HTTPResponseHeader.h
 include/cgicc/HTTPStatusHeader.h
 include/cgicc/MStreamable.h
+@dirrm include/cgicc
 lib/libcgicc.a
+lib/libcgicc.la
 lib/libcgicc.so
-lib/libcgicc.so.3
+lib/libcgicc.so.4
 %%PORTDOCS%%share/doc/cgicc/COPYING-source.html
 %%PORTDOCS%%share/doc/cgicc/COPYING_8DOC-source.html
 %%PORTDOCS%%share/doc/cgicc/COPYING_8LIB-source.html
@@ -33,6 +35,8 @@ lib/libcgicc.so.3
 %%PORTDOCS%%share/doc/cgicc/CgiDefs_8h.html
 %%PORTDOCS%%share/doc/cgicc/CgiEnvironment_8h-source.html
 %%PORTDOCS%%share/doc/cgicc/CgiEnvironment_8h.html
+%%PORTDOCS%%share/doc/cgicc/CgiInput_8h-source.html
+%%PORTDOCS%%share/doc/cgicc/CgiInput_8h.html
 %%PORTDOCS%%share/doc/cgicc/CgiUtils_8h-source.html
 %%PORTDOCS%%share/doc/cgicc/CgiUtils_8h.html
 %%PORTDOCS%%share/doc/cgicc/Cgicc_8h-source.html
@@ -65,7 +69,6 @@ lib/libcgicc.so.3
 %%PORTDOCS%%share/doc/cgicc/HTTPHTMLHeader_8h.html
 %%PORTDOCS%%share/doc/cgicc/HTTPHeader_8h-source.html
 %%PORTDOCS%%share/doc/cgicc/HTTPHeader_8h.html
-%%PORTDOCS%%share/doc/cgicc/HTTPHeaders_8h-source.html
 %%PORTDOCS%%share/doc/cgicc/HTTPPlainHeader_8h-source.html
 %%PORTDOCS%%share/doc/cgicc/HTTPPlainHeader_8h.html
 %%PORTDOCS%%share/doc/cgicc/HTTPRedirectHeader_8h-source.html
@@ -80,8 +83,8 @@ lib/libcgicc.so.3
 %%PORTDOCS%%share/doc/cgicc/bugs_8tmpl-source.html
 %%PORTDOCS%%share/doc/cgicc/cgi-overview_8tmpl-source.html
 %%PORTDOCS%%share/doc/cgicc/cgi_overview.html
-%%PORTDOCS%%share/doc/cgicc/cgicc-logo.jpg
-%%PORTDOCS%%share/doc/cgicc/cgicc.css
+%%PORTDOCS%%share/doc/cgicc/cgicc-doc.css
+%%PORTDOCS%%share/doc/cgicc/cgicc.png
 %%PORTDOCS%%share/doc/cgicc/cgicc_bugs.html
 %%PORTDOCS%%share/doc/cgicc/cgicc_demos.html
 %%PORTDOCS%%share/doc/cgicc/cgicc_license.html
@@ -89,6 +92,8 @@ lib/libcgicc.so.3
 %%PORTDOCS%%share/doc/cgicc/cgicc_tutorial.html
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1CgiEnvironment-members.html
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1CgiEnvironment.html
+%%PORTDOCS%%share/doc/cgicc/classcgicc_1_1CgiInput-members.html
+%%PORTDOCS%%share/doc/cgicc/classcgicc_1_1CgiInput.html
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1Cgicc-members.html
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1Cgicc.html
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1FormEntry-members.html
@@ -144,14 +149,12 @@ lib/libcgicc.so.3
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1comment-members.html
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1comment.gif
 %%PORTDOCS%%share/doc/cgicc/classcgicc_1_1comment.html
-%%PORTDOCS%%share/doc/cgicc/classes.html
 %%PORTDOCS%%share/doc/cgicc/config_8h-source.html
 %%PORTDOCS%%share/doc/cgicc/cookie_8cpp-source.html
 %%PORTDOCS%%share/doc/cgicc/cookie_8cpp.html
 %%PORTDOCS%%share/doc/cgicc/demos_8tmpl-source.html
 %%PORTDOCS%%share/doc/cgicc/dns_8cpp-source.html
 %%PORTDOCS%%share/doc/cgicc/dns_8cpp.html
-%%PORTDOCS%%share/doc/cgicc/doxygen.css
 %%PORTDOCS%%share/doc/cgicc/doxygen.gif
 %%PORTDOCS%%share/doc/cgicc/files.html
 %%PORTDOCS%%share/doc/cgicc/functions.html
@@ -176,4 +179,3 @@ lib/libcgicc.so.3
 %%PORTDOCS%%share/doc/cgicc/upload_8cpp-source.html
 %%PORTDOCS%%share/doc/cgicc/upload_8cpp.html
 %%PORTDOCS%%@dirrm share/doc/cgicc
-@dirrm include/cgicc
