@@ -1,0 +1,47 @@
+--- configure.old	Tue Jul 20 17:47:33 2004
++++ configure	Mon Aug  2 02:21:00 2004
+@@ -3174,9 +3174,8 @@
+         MYSQL_CFLAGS=""
+         MYSQL_LDFLAGS=""
+         MYSQL_LIBS=""
+-        { { echo "$as_me:$LINENO: error: *** Mysql client libraries not found!" >&5
+-echo "$as_me: error: *** Mysql client libraries not found!" >&2;}
+-   { (exit 1); exit 1; }; }
++        { echo "$as_me:$LINENO: WARNING: *** Mysql client libraries not found!" >&5
++echo "$as_me: WARNING: *** Mysql client libraries not found!" >&2;}
+         WANT_MYSQL_MOD=0
+ 
+       fi
+@@ -3218,9 +3217,8 @@
+ done
+ 
+ if test -z "$DBI_CFLAGS"; then
+-  { { echo "$as_me:$LINENO: error: ** libDBI client libraries not found!" >&5
+-echo "$as_me: error: ** libDBI client libraries not found!" >&2;}
+-   { (exit 1); exit 1; }; }
++  { echo "$as_me:$LINENO: WARNING: ** libDBI client libraries not found!" >&5
++echo "$as_me: WARNING: ** libDBI client libraries not found!" >&2;}
+         WANT_DBI_MOD=0
+ 
+ fi
+@@ -3309,9 +3307,8 @@
+     fi
+ done
+ if test -z "$DBI_LDFLAGS"; then
+-  { { echo "$as_me:$LINENO: error: ** libDBI client libraries not found!" >&5
+-echo "$as_me: error: ** libDBI client libraries not found!" >&2;}
+-   { (exit 1); exit 1; }; }
++  { echo "$as_me:$LINENO: WARNING: ** libDBI client libraries not found!" >&5
++echo "$as_me: WARNING: ** libDBI client libraries not found!" >&2;}
+         WANT_DBI_MOD=0
+ 
+ else
+@@ -4004,7 +4001,7 @@
+ 
+ case "$target" in
+ 	*-*-solaris* | *-*-osf* )
+-		if test $APACHE_VERSION -eq 1.3; then
++		if test $AP_VERSION -eq 1.3; then
+ 			RT_LIBS=-lrt
+ 		fi
+ 		;;
