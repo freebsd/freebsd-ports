@@ -7,6 +7,7 @@
 
 PORTNAME=	pf_freebsd
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
@@ -48,10 +49,6 @@ PLIST_SUB+=	WITH_ALTQ="@comment "
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Only for 5.0 and above"
-.endif
-
-.if ${OSVERSION} >= 501114
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-pf::pf.c
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile) && \

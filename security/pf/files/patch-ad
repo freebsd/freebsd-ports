@@ -1,0 +1,23 @@
+--- freebsd_libpcap/savefile.c.orig	Fri Nov 21 14:35:34 2003
++++ freebsd_libpcap/savefile.c	Fri Nov 21 14:35:46 2003
+@@ -178,6 +178,9 @@
+ #define LINKTYPE_HDLC		112		/* NetBSD HDLC framing */
+ #define LINKTYPE_IPFILTER	116		/* IP Filter capture files */
+ #define LINKTYPE_PFLOG		117		/* OpenBSD DLT_PFLOG */
++#if defined(DLT_PFSYNC)
++#define LINKTYPE_PFSYNC		DLT_PFSYNC
++#endif
+ 
+ static struct linktype_map {
+ 	int	dlt;
+@@ -271,6 +274,10 @@
+ 	 *	defining DLT_* values that collide with those
+ 	 *	LINKTYPE_* values, either).
+ 	 */
++	{ DLT_PFLOG,		LINKTYPE_PFLOG },
++#if defined(DLT_PFSYNC)
++	{ DLT_PFSYNC,		LINKTYPE_PFSYNC },
++#endif
+ 	{ -1,			-1 }
+ };
+ 

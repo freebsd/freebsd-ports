@@ -1,0 +1,98 @@
+--- pf/pf.c.orig	Fri Nov 21 14:32:14 2003
++++ pf/pf.c	Fri Nov 21 14:32:33 2003
+@@ -1250,8 +1250,10 @@
+ 	struct tcphdr	*th;
+ #if defined(__FreeBSD__)
+ 	struct ip 	*ip;
++#if (__FreeBSD_version < 501114)
+ 	struct route 	 ro;
+ #endif
++#endif
+ 	char *opt;
+ 
+ 	/* maximum segment size tcp option */
+@@ -1366,7 +1368,6 @@
+ 		h->ip_ttl = ttl ? ttl : ip_defttl;
+ 		h->ip_sum = 0;
+ #if defined(__FreeBSD__)
+-		bzero(&ro, sizeof(ro));
+ 		ip = mtod(m, struct ip *);
+ 		/*
+ 		 * XXX
+@@ -1376,6 +1377,8 @@
+ 		 */
+ 		NTOHS(ip->ip_len);
+ 		NTOHS(ip->ip_off);
++#if (__FreeBSD_version < 501114)
++		bzero(&ro, sizeof(ro));
+ 		ip_rtaddr(ip->ip_dst, &ro);
+ 		PF_UNLOCK();
+ 		ip_output(m, (void *)NULL, &ro, 0, (void *)NULL,
+@@ -1384,7 +1387,13 @@
+ 		if(ro.ro_rt) {
+ 			RTFREE(ro.ro_rt);
+ 		}
+-#else
++#else /* __FreeBSD_version >= 501114 */
++		PF_UNLOCK();
++		ip_output(m, (void *)NULL, (void *)NULL, 0, (void *)NULL,
++			(void *)NULL);
++		PF_LOCK();
++#endif
++#else /* ! __FreeBSD__ */
+ 		ip_output(m, (void *)NULL, (void *)NULL, 0, (void *)NULL,
+ 		    (void *)NULL);
+ #endif
+@@ -2354,8 +2363,12 @@
+ 		dst->sin_len = sizeof(*dst);
+ 		dst->sin_addr = addr->v4;
+ #if defined(__FreeBSD__)
++#ifdef RTF_PRCLONING
+ 		rtalloc_ign(&ro, (RTF_CLONING | RTF_PRCLONING));
+-#else
++#else /* !RTF_PRCLONING */
++		rtalloc_ign(&ro, RTF_CLONING);
++#endif
++#else /* ! __FreeBSD__ */
+ 		rtalloc_noclone(&ro, NO_CLONING);
+ #endif
+ 		rt = ro.ro_rt;
+@@ -2370,9 +2383,13 @@
+ 		dst6->sin6_len = sizeof(*dst6);
+ 		dst6->sin6_addr = addr->v6;
+ #if defined(__FreeBSD__)
++#ifdef RTF_PRCLONING
+ 		rtalloc_ign((struct route *)&ro6,
+ 		    (RTF_CLONING | RTF_PRCLONING));
+-#else
++#else /* !RTF_PRCLONING */
++		rtalloc_ign((struct route *)&ro6, RTF_CLONING);
++#endif
++#else /* ! __FreeBSD__ */
+ 		rtalloc_noclone((struct route *)&ro6, NO_CLONING);
+ #endif
+ 		rt = ro6.ro_rt;
+@@ -4731,8 +4748,12 @@
+ 	dst->sin_len = sizeof(*dst);
+ 	dst->sin_addr = addr->v4;
+ #if defined(__FreeBSD__)
++#ifdef RTF_PRCLONING
+ 	rtalloc_ign(&ro, (RTF_CLONING|RTF_PRCLONING));
+-#else
++#else /* !RTF_PRCLONING */
++	rtalloc_ign(&ro, RTF_CLONING);
++#endif
++#else /* ! __FreeBSD__ */
+ 	rtalloc_noclone(&ro, NO_CLONING);
+ #endif
+ 
+@@ -5044,7 +5065,8 @@
+ 	m0->m_pkthdr.csum_flags &= ifp->if_hwassist;
+ 
+ 	if (ntohs(ip->ip_len) <= ifp->if_mtu ||
+-		ifp->if_hwassist & CSUM_FRAGMENT) {
++	    (ifp->if_hwassist & CSUM_FRAGMENT &&
++		((ip->ip_off & htons(IP_DF)) == 0))) {
+ 		/*
+ 		 * ip->ip_len = htons(ip->ip_len);
+ 		 * ip->ip_off = htons(ip->ip_off);
