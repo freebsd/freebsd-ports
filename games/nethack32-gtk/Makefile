@@ -8,8 +8,7 @@
 PORTNAME=	nethack
 PORTVERSION=	1.1.5
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.jnethack.org/pub/jnethack/ \
-		ftp://ftp.uu.net/systems/gnu/nethack/
+MASTER_SITES=	ftp://ftp.jnethack.org/pub/jnethack/
 PKGNAMESUFFIX=	-gtk
 DISTNAME=	${PORTNAME}-3.2.2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${GTK_PATCH}
