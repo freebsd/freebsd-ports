@@ -86,6 +86,11 @@ post-patch:
 .endif
 .endif # ZABBIX_AGENT_ONLY
 
+.if ${ARCH} == "amd64"
+post-configure:
+	${ECHO_CMD} "#define HAVE_VA_COPY 1" >> ${WRKSRC}/include/config.h
+.endif
+
 do-install:
 .for FILE in ${ZABBIX_BINARIES}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${FILE} ${PREFIX}/bin
