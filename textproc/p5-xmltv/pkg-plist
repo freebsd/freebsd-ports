@@ -3,13 +3,20 @@ bin/tv_cat
 bin/tv_check
 bin/tv_extractinfo_en
 bin/tv_grab_de
+bin/tv_grab_dk
+bin/tv_grab_es
 bin/tv_grab_fi
+bin/tv_grab_hu
+bin/tv_grab_it
 bin/tv_grab_na
+bin/tv_grab_nl
+bin/tv_grab_nl_wolf
 bin/tv_grab_nz
 bin/tv_grab_sn
 bin/tv_grab_uk
 bin/tv_grab_uk_rt
 bin/tv_grep
+bin/tv_imdb
 bin/tv_sort
 bin/tv_split
 bin/tv_to_latex
@@ -18,11 +25,19 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XMLTV/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Ask.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Clumps.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Config_file.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Europe_TZ.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Get_nice.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Grab_XML.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Grep.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Gunzip.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/IMDB.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Memoize.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Mode.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Summarize.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/TZ.pm
-lib/perl5/site_perl/%%PERL_VER%%/XMLTV/UK_TZ.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Usage.pm
+lib/perl5/site_perl/%%PERL_VER%%/XMLTV/Version.pm
 lib/perl5/site_perl/%%PERL_VER%%/XMLTV/ZapListings.pm
 share/doc/xmltv-%%VERSION%%/COPYING
 share/doc/xmltv-%%VERSION%%/QuickStart
@@ -31,7 +46,22 @@ share/doc/xmltv-%%VERSION%%/README.tv_check
 share/doc/xmltv-%%VERSION%%/README.win32
 share/doc/xmltv-%%VERSION%%/tv_check_doc.html
 share/doc/xmltv-%%VERSION%%/tv_check_doc.jpg
+share/xmltv/tv_grab_it/dud_channels
+share/xmltv/tv_grab_nz/episode_names
 share/xmltv/tv_grab_uk/channel_ids
+share/xmltv/tv_grab_uk/channel_pkgs/Freeview
+share/xmltv/tv_grab_uk/channel_pkgs/NTL/analogue
+share/xmltv/tv_grab_uk/channel_pkgs/NTL/digital/Base
+share/xmltv/tv_grab_uk/channel_pkgs/NTL/digital/Disney
+share/xmltv/tv_grab_uk/channel_pkgs/NTL/digital/Family
+share/xmltv/tv_grab_uk/channel_pkgs/NTL/digital/Sports
+share/xmltv/tv_grab_uk/channel_pkgs/NTL/digital/movies
+share/xmltv/tv_grab_uk/channel_pkgs/Sky/Family
+share/xmltv/tv_grab_uk/channel_pkgs/Sky/Movies_World
+share/xmltv/tv_grab_uk/channel_pkgs/Sky/Sports
+share/xmltv/tv_grab_uk/channel_pkgs/Sky/Value
+share/xmltv/tv_grab_uk/channel_pkgs/Telewest/Essential
+share/xmltv/tv_grab_uk/channel_pkgs/Telewest/Supreme
 share/xmltv/tv_grab_uk/channel_pkgs/adult
 share/xmltv/tv_grab_uk/channel_pkgs/arts
 share/xmltv/tv_grab_uk/channel_pkgs/asia
@@ -60,8 +90,14 @@ share/xmltv/tv_grab_uk/channel_pkgs/travel
 share/xmltv/tv_grab_uk/channel_pkgs/wales
 share/xmltv/tv_grab_uk_rt/channel_ids
 @dirrm share/xmltv/tv_grab_uk_rt
+@dirrm share/xmltv/tv_grab_uk/channel_pkgs/Telewest
+@dirrm share/xmltv/tv_grab_uk/channel_pkgs/Sky
+@dirrm share/xmltv/tv_grab_uk/channel_pkgs/NTL/digital
+@dirrm share/xmltv/tv_grab_uk/channel_pkgs/NTL
 @dirrm share/xmltv/tv_grab_uk/channel_pkgs
 @dirrm share/xmltv/tv_grab_uk
+@dirrm share/xmltv/tv_grab_nz
+@dirrm share/xmltv/tv_grab_it
 @dirrm share/xmltv
 @dirrm share/doc/xmltv-%%VERSION%%
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XMLTV
