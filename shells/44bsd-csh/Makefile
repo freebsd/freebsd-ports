@@ -5,6 +5,7 @@
 #
 # $FreeBSD$
 #
+FORBIDDEN=	"Temporary filename problems allow potential root compromise"
 
 PORTNAME=	44bsd-csh
 PORTVERSION=	20000409
