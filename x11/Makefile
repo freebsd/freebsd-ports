@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1996/03/30 05:42:59 asami Exp $
+# $Id: Makefile,v 1.84 1996/04/12 07:43:19 asami Exp $
 #
 
     SUBDIR += FWF
@@ -40,6 +40,7 @@
     SUBDIR += xloadimage
     SUBDIR += xlockmore
     SUBDIR += xphoon
+    SUBDIR += xpostit
     SUBDIR += xscreensaver
     SUBDIR += xsnow
     SUBDIR += xview-config
