@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	3.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/
