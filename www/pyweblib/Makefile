@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pyweblib
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 		http://www.tricknology.org/ports/
 
-MAINTAINER=	oddbjorn@tricknology.org
+MAINTAINER=	bsam@ipt.ru
 COMMENT=	Yet another web programming framework for Python
 
 USE_PYTHON=	yes
