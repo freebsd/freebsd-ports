@@ -206,6 +206,7 @@
     SUBDIR += mudix
     SUBDIR += naim
     SUBDIR += nam
+    SUBDIR += napshare
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += nc
