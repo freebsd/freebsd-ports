@@ -11,7 +11,7 @@ CATEGORIES=	audio afterstep windowmaker
 MASTER_SITES=	http://worldserver.oleane.com/rsn/Archives/
 DISTFILES=	${DISTNAME}-src.tgz ${DATAFILES}
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 
