@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/11/10 20:19:54 obrien Exp $
+# $Id: Makefile,v 1.3 1996/11/11 18:37:07 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.49
@@ -34,12 +34,12 @@ DIST_SUBDIR=	Mutt
 WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
+MAN1=		mutt.1
 
 
 post-install:
 	@####   don't strip until out of beta peroid
 	@#strip ${PREFIX}/bin/mutt
-	@gzip -9nf ${PREFIX}/man/man1/mutt.1
 .if !defined(NOPORTDOCS)
 	@${ECHO} "Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && chmod a+rx ${PREFIX}/share/doc/mutt

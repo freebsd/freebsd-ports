@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.31 1996/10/03 19:07:54 ache Exp $
+# $Id: Makefile,v 1.32 1996/11/10 21:31:04 obrien Exp $
 #
 
 DISTNAME=       elm-2.4ME+28
@@ -16,6 +16,8 @@ MASTER_SITES=   ftp://dionysos.fmi.fi/KEH/ \
 MAINTAINER=	ache@FreeBSD.ORG
 
 WRKSRC=         ${WRKDIR}/elm2.4.ME+.28
+MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 filter.1 \
+		listalias.1 messages.1 newalias.1 printmail.1 readmsg.1
 
 post-install:
 	cd ${WRKSRC}/nls; ${MAKE} install

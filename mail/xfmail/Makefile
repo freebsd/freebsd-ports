@@ -3,7 +3,7 @@
 # Date created:		30 June 1996
 # Whom:			gena
 #
-# $Id: Makefile,v 1.5 1996/07/12 11:51:51 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/10 21:32:49 obrien Exp $
 #
 
 DISTNAME=	xfmail
@@ -20,6 +20,6 @@ WRKSRC=		${WRKDIR}/xfmail/ui
 USE_X11=	yes
 
 pre-configure:
-	@(cd ${WRKSRC} ; cp Makefile.FreeBSD Makefile)
+	@(cd ${WRKSRC} ; ${CP} Makefile.FreeBSD Makefile)
 
 .include <bsd.port.mk>
