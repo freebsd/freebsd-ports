@@ -2,14 +2,14 @@
 bin/ctags
 bin/b2m
 bin/rcs-checkin
-bin/emacs-19.31
+bin/emacs-19.34
 @exec ln -s %D/%F %B/emacs
 @unexec rm %B/emacs
 bin/etags
 bin/emacsclient
 @exec if [ ! -d %d/share/emacs/site-lisp ]; then mkdir -p %D/share/emacs/site-lisp; fi
-libexec/emacs/19.31
-share/emacs/19.31
+libexec/emacs/19.34
+share/emacs/19.34
 man/man1/emacs.1.gz
 man/man1/etags.1.gz
 man/man1/ctags.1.gz
