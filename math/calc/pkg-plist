@@ -68,4 +68,3 @@ lib/calc/longbits.h
 lib/calc/qmath.h
 lib/calc/stdarg.h
 lib/calc/zmath.h
-man/man1/calc.1.gz
