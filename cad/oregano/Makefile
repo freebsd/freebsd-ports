@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.40.0
+PORTVERSION=	0.40.1
 CATEGORIES=	cad
 MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/47/
 
@@ -15,10 +15,12 @@ COMMENT=	Schematic capture and simulation of electrical circuits
 
 LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.40.0
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
-		libgnomeui libgnomeprintui
+		libgnomeprintui libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -29,11 +31,8 @@ INSTALLS_OMF=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on 4.x"
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|src/main\.c|${PORTNAME}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|src/main\.c|${PORTNAME}|g ; \
+		 s|0\.40\.0|${PORTVERSION}|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
