@@ -136,6 +136,7 @@ XNSrouted	src/usr.sbin/XNSrouted
 Xatm		ports/x11-servers/Xatm
 Xaw3d		ports/x11-toolkits/Xaw3d
 Xfstt		ports/x11-servers/Xfstt
+Xft		ports/x11-fonts/Xft
 Xg		ports/x11-fonts/Xg
 XttXF86srv-3DLabs	ports/x11-servers/XttXF86srv-3DLabs
 XttXF86srv-8514		ports/x11-servers/XttXF86srv-8514
