@@ -33,6 +33,8 @@ HACKNAME?=	nethack
 HACKDIR?=	lib/${HACKNAME}
 HACKDOCSDIR?=	share/doc/${HACKNAME}
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GNOME_GRAPHICS)
 CATEGORIES=	games gnome
 PKGNAMESUFFIX=	-gnome
@@ -41,6 +43,9 @@ USE_GNOME=	gnomelibs
 MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 GRAPHICS=	GNOME_GRAPHICS
 .elif defined(WITH_QT_GRAPHICS)
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
 PKGNAMESUFFIX=	-qt
 USE_QT_VER=	3
 MAKE_ENV+=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
@@ -95,4 +100,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/${HACKDOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	xxdiff
-PORTVERSION=	2.0.3
+PORTVERSION=	2.9.1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/petef/g} \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 .if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xxdiff-${PORTVERSION}.html
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} #xxdiff-${PORTVERSION}.html
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
@@ -22,9 +21,15 @@ COMMENT=	QT interface to view/merge differences between 2 or 3 files
 
 BUILD_DEPENDS=	tmake:${PORTSDIR}/devel/tmake
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile (bad C++ code)"
+.endif
+
 USE_BISON=	yes
 USE_GMAKE=	yes
-USE_QT_VER=	2
+USE_QT_VER=	3
 TMAKEENV=	TMAKEPATH=${LOCALBASE}/share/tmake/freebsd-g++ QTDIR=${X11BASE}
 MAKE_ENV+=	QTDIR=${X11BASE} PTHREAD_LIBS=${PTHREAD_LIBS}
 WRKSRC=	${WRKDIR}/xxdiff-${PORTVERSION}/src
@@ -42,4 +47,4 @@ do-install:
 		${DOCSDIR}/xxdiff.html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
