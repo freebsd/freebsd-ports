@@ -15,6 +15,12 @@ MAINTAINER=	roger@freebsd.org
 
 ONLY_FOR_ARCHS=	i386
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN	=	"Driver has not been updated for 5.x kernels. Still uses machine/ipl.h"
+.endif
+
 WRKSRC=         ${WRKDIR}/ixj_freebsd
 USE_REINPLACE=	yes
 MAKEFILE=	Makefile.BSD
@@ -22,6 +28,7 @@ MAKEFILE=	Makefile.BSD
 post-patch:
 	${CP} ${FILESDIR}/ixj.sh ${WRKSRC}
 	${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/ixj.sh
+
 
 pre-build:
 .if !exists(${SRC_BASE}/sys/Makefile)
@@ -45,4 +52,4 @@ header-install: patch
 	@${INSTALL_DATA} ${WRKSRC}/ixjuser.h ${PREFIX}/include/sys
 	@${INSTALL_DATA} ${WRKSRC}/telephony.h ${PREFIX}/include/sys
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
