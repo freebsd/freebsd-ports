@@ -221,6 +221,7 @@
     SUBDIR += elib-emacs19
     SUBDIR += elib-emacs20
     SUBDIR += entity
+    SUBDIR += epm
     SUBDIR += epydoc
     SUBDIR += eric
     SUBDIR += erlslang
