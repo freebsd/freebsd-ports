@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2b4d5288-447e-11d9-9ebb-000854d03344">
+    <topic>rockdodger -- buffer overflows</topic>
+    <affects>
+      <package>
+	<name>rockdodger</name>
+	<range><lt>0.6_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The environment variable HOME is copied without regard
+	  to buffer size, which can be used to gain elevated privilege
+	  if the binary is installed setgid games, and a string is
+	  read from the high score file without bounds check.</p>
+	<p>The port installs the binary without setgid, but with a
+	  world-writable high score file.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=278878</url>
+    </references>
+    <dates>
+      <discovery>2004-10-29</discovery>
+      <entry>2004-12-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40549bbf-43b5-11d9-a9e7-0001020eed82">
     <topic>zip -- long path buffer overflow</topic>
     <affects>
