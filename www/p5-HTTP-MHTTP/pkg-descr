@@ -1,0 +1,17 @@
+HTTP::MHTTP - this library provides reasonably low level access to the
+HTTP protocol, for perl.  This does not replace LWP (what possibly could
+:-) but is a cut for speed.  It also supports all of HTTP 1.0, so you
+have GET, POST, PUT, HEAD, and DELETE.  Some support of HTTP 1.1 is
+available - specifically Transfer-Encoding = chunked and the Keep-Alive
+extensions.
+
+Additionally - rudimentary SSL support compiled in.  This effectively
+enables negotiation of TLS, but does not validate the certificates.
+
+A way faster http access library that uses C extension based on mhttp to
+do the calls.
+
+WWW: http://search.cpan.org/dist/HTTP-MHTTP/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
