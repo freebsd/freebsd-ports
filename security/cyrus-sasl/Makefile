@@ -7,12 +7,11 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.24
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		${MASTER_SITE_LOCAL} \
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR% \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
-MASTER_SITE_SUBDIR=	stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail
+MASTER_SITE_SUBDIR=	./ OLD-VERSIONS/sasl/
 
 PATCH_SITES=    http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=     ${DISTNAME}-ipv6-20010321.diff.gz
