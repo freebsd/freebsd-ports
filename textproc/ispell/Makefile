@@ -1,4 +1,4 @@
-DISTFILES=	ispell-3.1.08.tar.gz
+DISTFILES=	ispell-3.1.18.tar.gz
 DISTNAME=	ispell-3.1
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/
 

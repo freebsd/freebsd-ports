@@ -5,4 +5,8 @@ cd $WRKSRC || exit 1;
 sed -e s:/usr/local:$PREFIX: <local.h.samp >local.h || exit 1;
 echo '#define LANGUAGES "{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}"'  >>local.h ||exit 1;
 
+mv Makefile Makefile.orig
+sed -e 's/^[ 	]*$/\
+/' <Makefile.orig >Makefile
+
 exit 0;
