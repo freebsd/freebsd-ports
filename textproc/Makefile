@@ -71,6 +71,7 @@
     SUBDIR += perl2html
     SUBDIR += pspell
     SUBDIR += pspell-ispell
+    SUBDIR += py-HyperText
     SUBDIR += py-mxTextTools
     SUBDIR += py-xml
     SUBDIR += rand
