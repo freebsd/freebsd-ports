@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.8 1997/10/14 00:21:53 jfieber Exp $
+# $Id: Makefile,v 1.9 1998/03/13 15:05:20 jfieber Exp $
 #
 
 DISTNAME=	jade1_1
@@ -19,12 +19,6 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -U -qq
 NO_WRKSUBDIR=	yes
-
-# Unfortunately, jade needs a more modern C++ compiler than
-# comes with FreeBSD 2.1.x.
-.if !exists(/usr/lib/libstdc++.a)
-BROKEN=		Requires FreeBSD 2.2 or later.
-.endif
 
 # Shared libraries are currently broken for this port.
 # post-install:
