@@ -60,7 +60,6 @@
     SUBDIR += eo-aspell
     SUBDIR += eruby
     SUBDIR += es-aspell
-    SUBDIR += expat
     SUBDIR += expat2
     SUBDIR += fdp-tools
     SUBDIR += filepp
