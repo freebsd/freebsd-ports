@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.97 1998/02/14 23:37:50 obrien Exp $
+# $Id: LEGAL,v 1.98 1998/02/20 08:07:48 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -64,7 +64,6 @@ ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 john-1.4		ports/security/john	crypt(); export-controlled
 JDK-*			ports/lang/jdk		Put copyright on packaging!
 kaffe-0.9.1		ports/lang/kaffe	Restrictive copyright
-maxima-5.0-beta		ports/math/maxima	License required
 mew-1.70.tar.gz		ports/mail/mew	ITAR export-controlled (hooks to pgp)
 mikmod-2.14.tar.gz	ports/audio/mikmod	Registration required for 
 				redistribution of the source and commercial
