@@ -59,6 +59,7 @@
     SUBDIR += denemo
     SUBDIR += discid
     SUBDIR += easytag
+    SUBDIR += eawpats
     SUBDIR += ecasound
     SUBDIR += ecawave
     SUBDIR += ermixer

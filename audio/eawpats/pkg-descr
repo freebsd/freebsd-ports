@@ -1,0 +1,27 @@
+This is Eric A. Welsh's collection of Gravis UltraSound MIDI patches,
+configured for use with the TiMidity++ MIDI player.  A configuration file
+for TiMidity++ to use these patches is also included.
+
+Eric A. Welsh writes:
+
+I hope that all of these patches are the best ones you've ever heard.  I've
+worked really hard to try to ensure this.  I collected patches from the
+Ultrasound mirrors, Midia, Kurzweil archives, Roland archives, Yamaha
+archives, Maui, maybe a few from MAZ, and just about every known source of
+patches on the net.  I have tried to leave no stone unturned.
+
+I have removed clicks, changed volumes of samples within multipart patches
+so that they are the same relative to each other, relooped samples, created
+new instruments by combining others, edited out bad samples, remapped the
+note mappings to samples, rekeyed samples, retuned samples, changed
+envelopes, hand edited some to remove oversampling, and just about any other
+kind of manipulation you can think of.
+
+I think by now I have listened to every patch while being played in a midi
+file, so I've heard them over all sorts of ranges not intended for the
+instruments, in combination with instruments that might be slightly out of
+tune with the one in question, and heard most if not all the waveforms in
+multipatch instruments.  Hopefully all the patches now in the collection
+will sound good in every midi file they are used in.
+
+WWW: http://www.stardate.bc.ca/eawpatches/html/default.htm
