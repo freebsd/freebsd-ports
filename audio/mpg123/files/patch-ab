@@ -1,5 +1,8 @@
---- mpg123.c.orig	Fri Jun 18 05:18:11 1999
-+++ mpg123.c	Fri Mar  2 16:08:04 2001
+
+$FreeBSD$
+
+--- mpg123.c.orig	Tue Aug 21 19:48:17 2001
++++ mpg123.c	Tue Aug 21 19:49:02 2001
 @@ -27,6 +27,10 @@
  #include <sched.h>
  #endif
@@ -38,7 +41,25 @@
      }
  
      return newfile;
-@@ -784,6 +788,10 @@
+@@ -605,6 +609,9 @@
+ 		}
+ 
+ 		if(fr->header_change > 1 || init) {
++
++			init_output();
++
+ 			old_rate = ai.rate;
+ 			old_format = ai.format;
+ 			old_channels = ai.channels;
+@@ -652,7 +659,6 @@
+ 					break;
+ 			}
+ 
+-			init_output();
+ 			if(ai.rate != old_rate || ai.channels != old_channels ||
+ 			   ai.format != old_format || param.force_reopen) {
+ 				if(param.force_mono < 0) {
+@@ -787,6 +793,10 @@
          _wildcard(&argc,&argv);
  #endif
  
@@ -49,7 +70,7 @@
  	if(sizeof(short) != 2) {
  		fprintf(stderr,"Ouch SHORT has size of %d bytes (required: '2')\n",(int)sizeof(short));
  		exit(1);
-@@ -917,17 +925,6 @@
+@@ -923,17 +933,6 @@
  				&dirname, &filename))
  				fprintf(stderr, "\nDirectory: %s", dirname);
  			fprintf(stderr, "\nPlaying MPEG stream from %s ...\n", filename);
