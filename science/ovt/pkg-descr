@@ -1,0 +1,10 @@
+The Orbit Visualization Tool is computer software that makes it possible
+to show satellite orbits in the Earth's magnetospheric field. 
+
+The program can display satellite orbits in five coordinate systems (GEI,
+GEO, GSM, SMC, GSE), satellite footprints projected on the Earth's surface.
+In addition to satellite orbits the software computes and displays various
+models of magnetospheric structures, magnetopause, bow shock and electric
+potential, geomagnetic activity, and interplanetary field conditions.
+
+WWW: http://ovt.irfu.se/
