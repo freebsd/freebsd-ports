@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gnuplot.vt.edu/pub/gnuplot/
 MAINTAINER=	chuckr@FreeBSD.org
 
 LIB_DEPENDS=    png.3:${PORTSDIR}/graphics/png
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgd-old.a:${PORTSDIR}/graphics/gd-old
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
