@@ -10,7 +10,7 @@ PORTVERSION=	0.15.2
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/librep
-DIST_SUBDIR=	gnome
+#DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
