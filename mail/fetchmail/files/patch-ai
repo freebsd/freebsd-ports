@@ -1,15 +1,12 @@
-diff -ruN ../fetchmail-5.3.0.OLD/conf.c ./conf.c
---- ../fetchmail-5.3.0.OLD/conf.c	Fri Feb 18 01:31:22 2000
-+++ ./conf.c	Wed Feb 23 23:48:58 2000
-@@ -249,9 +249,10 @@
- 	    stringdump("via", ctl->server.via); 
- 	    stringdump("protocol", 
- 		       using_kpop ? "KPOP" : showproto(ctl->server.protocol));
--	    numdump("port",  ctl->server.port);
- #if INET6_ENABLE
- 	    stringdump("service", ctl->server.service);
-+#else
-+	    numdump("port",  ctl->server.port);
+diff -ru ../fetchmail-5.3.8.old/conf.c ./conf.c
+--- ../fetchmail-5.3.8.old/conf.c	Mon Mar  6 07:20:17 2000
++++ ./conf.c	Tue May  9 02:19:32 2000
+@@ -252,7 +252,7 @@
+ #ifndef INET6_ENABLE
+ 	    numdump("port",  ctl->server.port);
+ #else
+-	    stringdump("port",  ctl->server.service);
++	    stringdump("service",  ctl->server.service);
  #endif
  	    numdump("timeout",  ctl->server.timeout);
  	    numdump("interval", ctl->server.interval);
