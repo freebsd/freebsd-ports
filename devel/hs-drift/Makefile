@@ -14,6 +14,11 @@ DISTNAME=	DrIFT-${PORTVERSION}
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A type sensitive preprocessor for Haskell
 
+OPTIONS=	NHC98 "Build with nhc98" off \
+		GHC   "Build with ghc"   on
+
+.include <bsd.port.pre.mk>
+
 .if !defined(WITH_NHC98)
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .else
@@ -23,6 +28,7 @@ BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 HAS_CONFIGURE=	yes
 
 INFO=	drift
+PLIST_FILES=	bin/DrIFT bin/drift-ghc
 
 .if !defined(WITH_NHC98)
 CONFIGURE_ARGS+=	--with-hc=ghc
@@ -38,4 +44,4 @@ pre-everything::
 	@${ECHO} ""
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
