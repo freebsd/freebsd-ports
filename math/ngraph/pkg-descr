@@ -10,9 +10,18 @@ general ASCII text files, and plot to graph.
 	(cf, under csh/tcsh)
 	% setenv LANG ja_JP.EUC
 
-    Currently you need X True Type Server or X True Type Font server
-    to use Kanji font. These Servers are also listed in ports/package
-    system.
+    and you need....
+     - kinput2
+     - X Trye Type or X True Type Font server,
+       or kanji18 and kanji26 fonts(but these fonts are not yet in ports),
+       or to change font name in Ngraph.ini as below.
+
+font_map=Mincho,1,-*-fixed-medium-r-normal--*-*-75-75-c-*-jisx0208.1983-0
+font_map=Gothic,1,-*-fixed-medium-r-normal--*-*-75-75-c-*-jisx0208.1983-0
+
+     o You can get kanji18 and kanji26 fonts from below URL for Linux:
+ftp://ring.astem.or.jp/pub/linux/PJE/PJE-0.1.5/tgz/packages/font/xfnt18.tgz
+ftp://ring.astem.or.jp/pub/linux/PJE/PJE-0.1.5/tgz/packages/font/xfnt26.tgz
 
   - You can get documentation in Japanese from below URL.
 

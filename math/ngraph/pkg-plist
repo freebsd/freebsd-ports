@@ -24,6 +24,9 @@ lib/Ngraph/demo/demo5b.ngp
 lib/Ngraph/demo/demo5c.ngp
 lib/Ngraph/demo/demo5d.ngp
 lib/Ngraph/demo/demo5e.ngp
+lib/Ngraph/fft
+lib/Ngraph/fft.nsc
+lib/Ngraph/fft.tcl
 lib/Ngraph/fitrslt.nsc
 lib/Ngraph/fitrslt.tcl
 lib/Ngraph/gra2ps
