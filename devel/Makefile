@@ -510,6 +510,7 @@
     SUBDIR += log4cpp
     SUBDIR += log4cxx
     SUBDIR += log4j
+    SUBDIR += log4sh
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs
