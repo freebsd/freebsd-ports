@@ -1,0 +1,30 @@
+#!/bin/sh
+
+installdir=${PREFIX}/JDE/JGV; export installdir
+
+case ${LANGUAGE} in
+    Japanese)
+	for f in JGV.app; do
+	    ${PERL} -pi -e '
+		s/^(exec[ \t]+)wishstep[^ \t]*([ \t]+.*)$/$1wishstep$ENV{VERSION}jp$2/
+		' ${installdir}/bin/${f}
+	done
+    ;;
+    *)
+    ;;
+esac
+for f in JGV JGV.app; do
+    case ${f} in
+	JGV.app)
+	    target=${installdir}/bin/${f}
+	;;
+	JGV)
+	    target=${installdir}/defaults/${f}
+	;;
+    esac
+    ${PERL} -pi -e '
+        s/^([ \t]*set[ \t]+Jlib[ \t]+)"[^"]*"$/$1"$ENV{installdir}"/;
+        ' ${target}
+done
+
+${LN} -sf ${installdir}/bin/JGV.app ${PREFIX}/bin

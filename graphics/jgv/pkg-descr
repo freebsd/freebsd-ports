@@ -1,0 +1,13 @@
+The new correction of J desktop enviropment has come.
+
+There aren't simple functions with photo retouch but with very
+useful display functions which can display an animated gif, al-
+pha channeled gif and alpha channeled xpm. And you can make a 
+choice the language between English and Japanese because it's J.
+So,I think this is the best partner of gimp.
+
+Note that both graphics/jgv and japanese/jgv are mutually exclusive and 
+SHOULD NOT BE INSTALLED SIMULTANEOUSLY!
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>
