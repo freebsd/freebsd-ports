@@ -18,9 +18,10 @@ COMMENT=	Online presence and instant messaging server
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 CONFIGURE_ARGS= --localstatedir=/var \
 		--with-libiconv-prefix=${LOCALBASE} \
-		--with-openssl=/usr \
+		--with-openssl=${OPENSSLBASE} \
 		--enable-storage='${STORAGE}' \
 		--enable-authreg='${AUTHREG}'
 
