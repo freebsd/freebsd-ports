@@ -120,7 +120,7 @@ JAVAVM=         ${JDK13DIR}/bin/java
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/oo_1.0.1_src/config_office
+WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
