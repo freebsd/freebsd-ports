@@ -1,150 +1,78 @@
---- configure.old	Sun Oct  7 23:36:29 2001
-+++ configure	Tue Nov 13 15:38:29 2001
-@@ -299,7 +299,7 @@
- _confcygwin="TARGET_CYGWIN=no"
- _confwin32=
- if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" -o "$system_name" = "BSD/OS" ]; then
--    _archlibs="-rdynamic -pthread"
-+    _archlibs="-rdynamic ${PTHREAD_LIBS}"
- elif [ `echo $system_name | sed 's/[cC][yY][gG][wW][iI][nN].*/CYGWIN/'` = "CYGWIN" ]; then
-     _confcygwin="TARGET_CYGWIN=yes"
-     _confwin32="#define WIN32"
-@@ -460,19 +460,8 @@
- fi
+--- configure.old	Fri Jan  4 23:48:35 2002
++++ configure	Sat Jan  5 00:26:19 2002
+@@ -415,19 +415,10 @@
  
- if [ "$host_arch" = i386 ]; then
--    if [ -r /proc/cpuinfo ]; then
--	# linux with /proc mounted, extract cpu information from it
--	_cpuinfo="cat /proc/cpuinfo"
--    elif [ -r /compat/linux/proc/cpuinfo ]; then
--        # FreeBSD with linux emulation /proc mounted, 
--	# extract cpu information from it
--        _cpuinfo="cat /compat/linux/proc/cpuinfo"
--    else
--	# all other OS try to extract cpu information from a small helper
--	# program TOOLS/cpuinfo instead
- 	$_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
- 	_cpuinfo="TOOLS/cpuinfo"
--    fi
+ # Try to find the available options for the current CPU
+ if x86 ; then
+-  if test -r /proc/cpuinfo ; then
+-    # linux with /proc mounted, extract cpu information from it
+-    _cpuinfo="cat /proc/cpuinfo"
+-  elif test -r /compat/linux/proc/cpuinfo ; then
+-    # FreeBSD with linux emulation /proc mounted,
+-    # extract cpu information from it
+-    _cpuinfo="cat /compat/linux/proc/cpuinfo"
+-  else
+     # all other OS try to extract cpu information from a small helper
+     # program TOOLS/cpuinfo instead
+     $_cc -o TOOLS/cpuinfo TOOLS/cpuinfo.c
+     _cpuinfo="TOOLS/cpuinfo"
+-  fi
  
-     pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
-     pparam=`$_cpuinfo | grep 'features' | cut -d ':' -f 2 | head -1`
-@@ -798,7 +787,7 @@
- $_cc $_extraincdir $_extralibdir $TMPC -o $TMPO -lvgagl -lvga > /dev/null 2>&1 && _svga=yes
- 
- if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" -o "$system_name" = "BSD/OS" ]; then
--$_cc $TMPC -o $TMPO -pthread > /dev/null 2>&1 || \
-+$_cc $TMPC -o $TMPO ${PTHREAD_LIBS} > /dev/null 2>&1 || \
-  { echo "Lib pthread not found."; rm -f $TMPC $TMPO $TMPS ; exit 1; }
- else
- $_cc $TMPC -o $TMPO -lpthread > /dev/null 2>&1 || \
-@@ -893,7 +882,7 @@
- 
- # this is not yet checked with OpenBSD - atmos
- if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
--$_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm -pthread $_socklib > /dev/null 2>&1 && _gl=yes
-+$_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 && _gl=yes
- else
- $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm $_socklib > /dev/null 2>&1 && _gl=yes
- fi
-@@ -904,7 +893,7 @@
+   pname=`$_cpuinfo | grep 'model name' | cut -d ':' -f 2 | head -1`
+   pvendor=`$_cpuinfo | grep 'vendor_id' | cut -d ':' -f 2  | cut -d ' ' -f 2 | head -1`
+@@ -1135,14 +1126,7 @@
+ int main(void) { (void) malloc(0); return 0; }
  EOF
- # this is not yet checked with OpenBSD - atmos
- if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
--$_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm -pthread $_socklib > /dev/null 2>&1 || \
-+$_cc $_x11incdir $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm ${PTHREAD_LIBS} $_socklib > /dev/null 2>&1 || \
-  { _gl=no; echo "GL includes not found!";}
- else
- $_cc $TMPC -o $TMPO $_x11libdir -lX11 -lXext -lGL -lm $_socklib > /dev/null 2>&1 || \
-@@ -998,33 +987,10 @@
- # ---
- # check availability of some header files
+ _malloc=no
+-cc_check && _malloc=yes
+-if test "$_malloc" = yes ; then
+-  _def_malloc='#define HAVE_MALLOC_H 1'
+-else
+-  _def_malloc='#undef HAVE_MALLOC_H'
+-fi
+-# malloc.h emits a warning in FreeBSD
+-freebsd && _def_malloc='#undef HAVE_MALLOC_H'
++_def_malloc='#undef HAVE_MALLOC_H'
+ echores "$_malloc"
  
--cat > $TMPC << EOF
--#include <malloc.h>
--int main( void ) { return 0; }
--EOF
  
--_memalign_def=
+@@ -1153,12 +1137,7 @@
+ int main (void) { (void) memalign(64, sizeof(char)); return 0; }
+ EOF
  _memalign=no
- _malloc_h=no
--if $_cc -o $TMPO $TMPC 2> /dev/null ; then
--_malloc_h=yes
--# check for memalign - atmos
--# should this be restricted to x86, or customized for cpu types (opt for cacheline sizes)?
--cat > $TMPC << EOF
--#include <malloc.h>
--int main ( void ) {
--char *string = NULL;
--string = memalign(64, sizeof(char));
--return 0;
--}
--EOF
--_memalign_def='/* #define memalign(a,b) malloc(b) */'
--_memalign=yes
--$_cc -o $TMPO $TMPC 2> /dev/null || _memalign=no 
--if [ "$_memalign" = "no" ]; then
- _memalign_def='#define memalign(a,b) malloc(b)'
+-cc_check && _memalign=yes
+-if test "$_memalign" = yes ; then
+- _def_memalign='#define HAVE_MEMALIGN 1'
+-else
+- _def_memalign='#undef HAVE_MEMALIGN'
 -fi
++_def_memalign='#undef HAVE_MEMALIGN'
+ echores "$_memalign"
+ 
+ 
+@@ -1235,15 +1214,7 @@
+ void* func(void *arg) { return arg; }
+ int main(void) { pthread_t tid; return pthread_create (&tid, 0, func, 0) == 0 ? 0 : 1; }
+ EOF
+-if ( cc_check && $TMPO ) ; then              # QNX
+-  _ld_pthread=''
+-elif ( cc_check -lpthread && $TMPO ) ; then
+-  _ld_pthread='-lpthread'
+-elif ( cc_check -pthread && $TMPO ) ; then
+-  _ld_pthread='-pthread'
+-else
+-  die "Lib pthread not found. (needed by windows and networking stuff)"
 -fi
++_ld_pthread="${PTHREAD_LIBS}"
+ echores "yes (using $_ld_pthread)"
  
  
- cat > $TMPC << EOF
-@@ -1645,33 +1611,33 @@
- 
- echo
- echo $_echo_n "Checking for gtk version ... $_echo_c"
--_gtk=`gtk-config --version 2>&1`
-+_gtk=`${GTK_CONFIG} --version 2>&1`
- [ -z "$_gtk" ] && { echo 'gtk not found.'; exit 1; }
- echo "$_gtk"
- 
- echo $_echo_n "Checking for gtk includes ... $_echo_c"
--_gtkinc=`gtk-config --cflags 2>&1`
-+_gtkinc=`${GTK_CONFIG} --cflags 2>&1`
- [ -z "$_gtkinc" ] && { echo 'gtk not found.'; exit 1; }
- echo "done"
- 
- echo $_echo_n "Checking for gtk libs ... $_echo_c"
--_gtklib=`gtk-config --libs 2>&1`
-+_gtklib=`${GTK_CONFIG} --libs 2>&1`
- [ -z "$_gtklib" ] && { echo 'gtk not found.'; exit 1; }
- echo "done"
- 
- echo
- echo $_echo_n "Checking for glib version ... $_echo_c"
--_glib=`glib-config --version 2>&1`
-+_glib=`${GLIB_CONFIG} --version 2>&1`
- [ -z "$_glib" ] && { echo 'glib not found.'; exit 1; }
- echo "$_glib"
- 
- echo $_echo_n "Checking for glib includes ... $_echo_c"
--_glibinc=`glib-config --cflags 2>&1`
-+_glibinc=`${GLIB_CONFIG} --cflags 2>&1`
- [ -z "$_glibinc" ] && { echo 'glib not found.'; exit 1; }
- echo "done"
- 
- echo $_echo_n "Checking for glib libs ... $_echo_c"
--_gliblib=`glib-config --libs 2>&1`
-+_gliblib=`${GLIB_CONFIG} --libs 2>&1`
- [ -z "$_gliblib" ] && { echo 'glib not found.'; exit 1; }
- echo "done"
- 
-@@ -1700,7 +1666,7 @@
-    if [ "$system_name" = "FreeBSD" -o "$system_name" = "OpenBSD" ]; then
-       # Under XFree86 4.x GL port is poorly designed
-       if [ -r /usr/X11R6/bin/XFree86 ]; then
--         _gllib='-lGL -pthread'
-+         _gllib='-lGL ${PTHREAD_LIBS}'
-       else
-          _gllib='-lGL'
-       fi
-@@ -1926,7 +1892,7 @@
- # Under FreeBSD (maybe other systems as well?) we have to add to CFLAGS
- # for MT applications: 
- if [ "$system_name" = "FreeBSD" ]; then
--CFLAGS="$CFLAGS -D_THREAD_SAFE"
-+CFLAGS="$CFLAGS ${PTHREAD_CFLAGS}"
+@@ -2692,7 +2663,7 @@
+   CFLAGS="$CFLAGS -D_REENTRANT"
+ elif bsd ; then
+   # FIXME bsd needs this so maybe other OS'es
+-  CFLAGS="$CFLAGS -D_THREAD_SAFE"
++  CFLAGS="$CFLAGS ${PTHREAD_CFLAGS}"
  fi
  
  # 64 bit file offsets?

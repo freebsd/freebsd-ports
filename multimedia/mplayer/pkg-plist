@@ -1,11 +1,13 @@
 bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/DVB
+%%PORTDOCS%%share/doc/mplayer/DXR3
 %%PORTDOCS%%share/doc/mplayer/bugreports.html
 %%PORTDOCS%%share/doc/mplayer/cd-dvd.html
 %%PORTDOCS%%share/doc/mplayer/codecs-in.html
 %%PORTDOCS%%share/doc/mplayer/codecs.html
 %%PORTDOCS%%share/doc/mplayer/documentation.html
 %%PORTDOCS%%share/doc/mplayer/faq.html
+%%PORTDOCS%%share/doc/mplayer/formats.html
 %%PORTDOCS%%share/doc/mplayer/skin-en.html
 %%PORTDOCS%%share/doc/mplayer/sound.html
 %%PORTDOCS%%share/doc/mplayer/video.html

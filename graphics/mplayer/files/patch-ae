@@ -1,29 +1,60 @@
---- Makefile.orig	Fri Oct  5 10:39:21 2001
-+++ Makefile	Mon Oct 15 21:51:01 2001
-@@ -118,24 +118,8 @@
- 	$(CC) $(CFLAGS) -g codec-cfg.c -o $(PRG_CFG) -DCODECS2HTML
+--- Makefile.old	Wed Jan  2 20:05:02 2002
++++ Makefile	Sat Jan  5 01:38:46 2002
+@@ -15,12 +15,12 @@
+ PRG_MENCODER = mencoder
+ 
+ #prefix = /usr/local
+-BINDIR = ${prefix}/bin
++BINDIR = $(PREFIX)/bin
+ # BINDIR = /usr/local/bin
+-MANDIR = ${prefix}/man
++MANDIR = $(PREFIX)/man
+ 
+ # a BSD compatible 'install' program
+-INSTALL = install
++INSTALL = @${BSD_INSTALL_PROGRAM}
+ 
+ SRCS_COMMON = adpcm.c xacodec.c cpudetect.c mp_msg.c ac3-iec958.c dec_audio.c dec_video.c msvidc.c cinepak.c fli.c qtrle.c codec-cfg.c cfgparser.c my_profile.c RTjpegN.c minilzo.c nuppelvideo.c
+ SRCS_MENCODER = mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/img_format.c
+@@ -186,38 +186,12 @@
  
  install: $(ALL_PRG)
--	if [ ! -e $(BINDIR) ]; then \
--		mkdir -p $(BINDIR); \
--	fi
--	install -m 755 -s $(PRG) $(BINDIR)/$(PRG)
+ 	if test ! -d $(BINDIR) ; then mkdir -p $(BINDIR) ; fi
+-	$(INSTALL) -m 755 -s $(PRG) $(BINDIR)/$(PRG)
 -ifeq ($(GUI),yes)
--	-ln -s $(BINDIR)/$(PRG) $(BINDIR)/gmplayer
+-	-ln -sf $(BINDIR)/$(PRG) $(BINDIR)/gmplayer
 -endif
--	if [ ! -e $(prefix)/man/man1 ]; then \
--		mkdir -p $(prefix)/man/man1; \
++	$(INSTALL) $(PRG) $(BINDIR)/$(PRG)
+ 	if test ! -d $(MANDIR)/man1 ; then mkdir -p $(MANDIR)/man1; fi
+-	$(INSTALL) -c -m 644 DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
++	@${BSD_INSTALL_MAN}  DOCS/mplayer.1 $(MANDIR)/man1/mplayer.1
+ ifeq ($(MENCODER),yes)
+ 	$(INSTALL) -m 755 -s $(PRG_MENCODER) $(BINDIR)/$(PRG_MENCODER)
+-	$(INSTALL) -c -m 644 DOCS/mencoder.1 $(MANDIR)/man1/mencoder.1
+-endif
+-	@if test ! -d $(DATADIR) ; then mkdir -p $(DATADIR) ; fi
+-	@if test ! -d $(DATADIR)/font ; then mkdir -p $(DATADIR)/font ; fi
+-	@if test ! -f $(DATADIR)/font/font.desc ; then \
+-	echo "*** Download font at http://www.mplayerhq.hu/homepage/dload.html" ; \
+-	echo "*** for OSD/Subtitles support and extract to $(DATADIR)/font/" ; \
 -	fi
--	install -c -m 644 DOCS/mplayer.1 $(prefix)/man/man1/mplayer.1
+-ifeq ($(GUI),yes)
+-	@if test ! -d $(DATADIR)/Skin ; then mkdir -p $(DATADIR)/Skin ; fi
+-	@echo "*** Download skin(s) at http://www.mplayerhq.hu/homepage/dload.html"
+-	@echo "*** for GUI, and extract to $(DATADIR)/Skin/"
+-endif
+-	@if test ! -d $(CONFDIR) ; then mkdir -p $(CONFDIR) ; fi
+-	@if test -f $(CONFDIR)/codecs.conf.old ; then mv -f $(CONFDIR)/codecs.conf.old $(CONFDIR)/codecs.conf.older ; fi
+-	@if test -f $(CONFDIR)/codecs.conf ; then mv -f $(CONFDIR)/codecs.conf $(CONFDIR)/codecs.conf.old ; fi
+-	$(INSTALL) -c -m 644 etc/codecs.conf $(CONFDIR)/codecs.conf
+-
 -ifeq ($(CSS_USE),yes)
 -	@echo "Following task requires root privs. If it fails don't panic"
 -	@echo "however it means you can't use fibmap_mplayer."
 -	@echo "Without this (or without running mplayer as root) you won't be"
 -	@echo "able to play encrypted DVDs."
--	-install -o 0 -g 0 -m 4755 -s $(PRG_FIBMAP) $(BINDIR)/$(PRG_FIBMAP)
--endif
-+	@${BSD_INSTALL_PROGRAM} $(PRG) $(BINDIR)/$(PRG)
-+	@${BSD_INSTALL_MAN} DOCS/mplayer.1 $(prefix)/man/man1/mplayer.1
+-	-$(INSTALL) -o 0 -g 0 -m 4755 -s $(PRG_FIBMAP) $(BINDIR)/$(PRG_FIBMAP)
++	@${BSD_INSTALL_MAN} DOCS/mencoder.1 $(MANDIR)/man1/mencoder.1
+ endif
  
- clean:
- 	rm -f *.o *~ $(OBJS)
+ uninstall:
