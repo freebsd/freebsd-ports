@@ -279,6 +279,7 @@
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/infotext
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/loadcheck
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/now
+%%SGE_BASE%%/utilbin/%%SGE_ARCH%%/openssl
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/qrsh_starter
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/rlogin
 %%SGE_BASE%%/utilbin/%%SGE_ARCH%%/rsh
@@ -514,4 +515,4 @@
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/testsuite/adoc
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/testsuite
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
-@unexec rmdir %%PREFIX%%/%%SGE_BASE%%/ 2>/dev/null || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")
+@unexec rmdir %D/%%SGE_BASE%%/ 2>/dev/null || ( echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%SGE_BASE%% and its contents manually.")

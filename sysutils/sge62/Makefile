@@ -3,12 +3,11 @@
 # Whom:					Brooks Davis <brooks@FreeBSD.org>
 #
 # $FreeBSD$
-# $Aero: ports/sge/Makefile,v 1.3 2004/01/21 22:26:12 brooks Exp $
 #
 
 PORTNAME=	sge
-PORTVERSION=	5.3.5.20040120
-PORTREVISION=	1
+PORTVERSION=	${SGE_VERSION}.${SGE_SNAPDATE}
+PORTREVISION=	0
 CATEGORIES=	sysutils parallel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -16,12 +15,11 @@ MASTER_SITE_SUBDIR=	brooks
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT?=	Sun Grid Engine, a batch queueing system
 
-LIB_DEPENDS=	intl.6:${PORTSDIR}/devel/gettext
-
 USE_BZIP2=	yes
-USE_OPENSSL=	yes
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_MOTIF=	yes
+USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
@@ -29,6 +27,8 @@ LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
 SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
+SGE_VERSION=	5.3.5
+SGE_SNAPDATE=	20040224
 SGE_RELEASE=	5.3p5-snap-20040120
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
@@ -69,6 +69,11 @@ post-patch:
 	    -e "s|%%CFLAGS%%|${CFLAGS}|g" -e "s|%CXXFLAGS%%|${CXXFLAGS}|g" \
 	    ${WRKSRC}/aimk \
 	    ${WRKSRC}/dist/pvm/src/aimk
+	@${REINPLACE_CMD} -e 's|^CC = gcc|CC = ${CC}|' \
+	    -e 's|^CPP = gcc -E|CPP = ${CPP}|' \
+	    ${WRKSRC}/3rdparty/qmake/FREEBSD_*/Makefile \
+	    ${WRKSRC}/3rdparty/qmake/FREEBSD_*/glob/Makefile \
+	    ${WRKSRC}/3rdparty/qtcsh/FREEBSD_*/Makefile
 	@${RM} ${WRKSRC}/dist/util/arch_variables.orig
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 	    ${REINPLACE_CMD} "s|-g -O2|${CFLAGS}|"
@@ -100,17 +105,34 @@ do-install:
 	    | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
-# Automaticly produce the offical machine dependent tarball
-release-tar: install
-	cd ${SGE_ROOT} && \
-	    ${TAR} cfvz ${.CURDIR}/sge-${SGE_RELEASE}-bin-${SGE_ARCH}.tar.gz \
-	    `find . -name ${SGE_ARCH}`
-
 post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
 	    -e 's|%%SGE_BASE%%|${SGE_BASE}|g' \
 	    < ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
+
+# Automaticly produce the offical machine dependent tarball
+# Be sure to do an install first
+release-tar:
+	cd ${SGE_ROOT} && \
+	    ${TAR} cfvz ${.CURDIR}/sge-${SGE_RELEASE}-bin-${SGE_ARCH}.tar.gz \
+	    `find . -name ${SGE_ARCH}`
+
+# Produce a distfile for today.  This target exists for the use of the
+# port's maintainer.
+SGE_TAG=	V53_beta2_BRANCH
+TODAY!=		/bin/date +%Y%m%d
+XDISTNAME=	sge-${SGE_VERSION}.${TODAY}
+XDISTFILE=	${DISTDIR}/${XDISTNAME}.tar.bz2
+distfile:
+	${MKDIR} ${WRKDIR}
+	cd ${WRKDIR}; \
+	    cvs -d :pserver:guest@cvs.gridengine.sunsource.net:/cvs co \
+	    -r ${SGE_TAG} -d ${XDISTNAME} gridengine
+	${FIND} ${WRKDIR}/${XDISTNAME} -name CVS | ${XARGS} ${RM} -rf
+	cd ${WRKDIR}; ${TAR} cfy ${XDISTFILE} ${XDISTNAME}
+	@${RM} -rf ${WRKDIR}/${XDISTNAME}
+	@${RMDIR} ${WRKDIR} 2> /dev/null || true
 
 .include <bsd.port.mk>
