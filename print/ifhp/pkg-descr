@@ -1,0 +1,7 @@
+The IFHP print filter is a highly configurable and almost universal
+print filter for the LPRng print spooler.  It can handle text, PostScript,
+PCL, and PJL compatible printers, as well as doing synchronization, resetting,
+getting page counts,  end of job detection and other administrative functions.
+It will handle HP, Tektronics,  Xerox, Qume, and just about any printer that
+can accept a connection.  Configuration is done using the /etc/ifhp.conf file
+which can be tailored for your particular printer.
