@@ -1,0 +1,7 @@
+@cd /usr/X386
+@mode 755
+@owner bin
+@group bin
+bin/emu
+@mode 444
+lib/X11/app-defaults/Emu
