@@ -137,7 +137,7 @@ LIB_DEPENDS+=	crypto.1:\${PORTSDIR}/security/openssl \\
 		ssl.1:\${PORTSDIR}/security/openssl
 RUN_DEPENDS+=	openssl:\${PORTSDIR}/security/openssl
 
-VERSION_MODSSL=	2.4.8
+VERSION_MODSSL=	2.4.9
 
 RESTRICTED=	"Contains cryptography"
 
