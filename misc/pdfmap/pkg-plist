@@ -1,0 +1,18 @@
+bin/pdfmap
+%%PORTDOCS%%share/doc/pdfmap/index.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Circle.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Cross.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Diamond.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Ellipse.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Image.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_MapBackground.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_MapObject.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_PDFMap.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_PDFMapCanvas.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_PDFMapError.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Rectangle.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Square.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Star.py.html
+%%PORTDOCS%%share/doc/pdfmap/pdfmap_Triangle.py.html
+%%PORTDOCS%%@dirrm share/doc/pdfmap

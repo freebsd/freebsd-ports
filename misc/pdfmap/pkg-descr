@@ -1,0 +1,13 @@
+A python module to generate maps in PDF format and place clickable
+objects on them.
+
+Object types can be represented either by shapes of different forms and
+colors (fill and contour), or by user provided images. Each object is
+scaled, oriented and positionned on the map.
+
+The more powerful way to use this software is to use its API in your
+own programs, this will allow you to produce multipage documents with
+different sizes, orientations, scales, background, etc... from page to
+page.
+
+WWW: http://pdfmap.sourceforge.net/
