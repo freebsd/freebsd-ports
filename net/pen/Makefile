@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pen
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 		http://siag.nu/pub/pen/
@@ -15,8 +15,16 @@ MASTER_SITES=	ftp://siag.nu/pub/pen/ \
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A load balancer for "simple" tcp based protocols
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-daemon
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--with-daemon
+
+.if defined(WITH_FDSETSIZE)
+CONFIGURE_ARGS+=	--with-fd_setsize=${WITH_FDSETSIZE}
+.endif
+
+.if defined(WITH_POLL)
+CONFIGURE_ARGS+=	--with-poll
+.endif
 
 MAN1=		mergelogs.1 pen.1 penctl.1 penlog.1 penlogd.1
 
