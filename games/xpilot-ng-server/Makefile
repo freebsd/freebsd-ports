@@ -6,11 +6,10 @@
 #
 
 PORTNAME=		xpilot-ng
-PORTVERSION=		4.5.4X2
-PORTREVISION=		2
+PORTVERSION=		4.6.4
 CATEGORIES=		games
-MASTER_SITES=		http://www.hut.fi/~ksoderbl/xpilot/
-DISTNAME=		xpilot-${PORTVERSION}
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xpilot
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		An enhanced version of XPilot
@@ -19,11 +18,32 @@ LIB_DEPENDS=		expat:${PORTSDIR}/textproc/expat2
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
+USE_REINPLACE=		yes
 
-MAN6=			xp-mapedit-ng.6 xp-replay-ng.6 xpilot-ng.6 xpilots-ng.6
+MAN6=			xpilot-ng-replay.6 \
+			xpilot-ng-sdl.6 \
+			xpilot-ng-server.6 \
+			xpilot-ng-x11.6
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=		--program-suffix=-ng
+CONFIGURE_ARGS=		--program-prefix=""
 
-.include <bsd.port.mk>
+OPTIONS=		SDL "SDL/OpenGL client" on
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SDL)
+USE_SDL=		image sdl ttf
+CONFIGURE_ARGS+=	--enable-sdl-client
+PLIST_SUB+=		WITH_SDL=""
+USE_GCC=		3.2
+.else
+PLIST_SUB+=		WITH_SDL="@comment "
+.endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's,#include "SDL/,#include "SDL11/,g' \
+		${WRKSRC}/configure
+
+.include <bsd.port.post.mk>
