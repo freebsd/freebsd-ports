@@ -6,16 +6,21 @@
 #
 
 PORTNAME=	TekNap
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.teknap.com/pub/TekNap/ \
-		ftp://ftp.bitchx.com/pub/TekNap/ \
-		ftp://ukug.uk.freebsd.org/pub/lord_cj/
+		ftp://ftp.bitchx.com/pub/TekNap/
 
 MAINTAINER=	cj@vallcom.net
 
 .if defined(WITH_GTK)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+.endif
+.if defined(WITH_MP3)
+BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+.endif
+.if defined(WITH_XMMS)
+BUILD_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 .endif
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
@@ -26,8 +31,12 @@ USE_GMAKE=	yes
 
 .if defined(WITH_GTK)
 CONFIGURE_ARGS+= 	--with-gtk
-.else
-CONFIGURE_ARGS+= 	--without-gtk
+.endif
+.if defined(WITH_MP3)
+CONFIGURE_ARGS+=	--enable-mp3
+.endif
+.if defined(WITH_XMMS)
+CONFIGURE_ARGS+=	--enable-xmms
 .endif
 CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}/share" \
 			--bindir="${PREFIX}/bin" \
@@ -41,11 +50,12 @@ MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-.if !defined(WITH_GTK)
 pre-extract:
-	@${ECHO} "You can add hooks for GTK by defining WITH_GTK"
-.endif
-
+	@${ECHO} "Available switches:"
+	@${ECHO} "-------------------"
+	@${ECHO} "WITH_GTK - Add GTK support"
+	@${ECHO} "WITH_MP3 - Support MP3 playback"
+	@${ECHO} "WITH_XMMS - Support XMMS"
 pre-configure:
 	${PERL} -pi -e "s:-lc_r:-pthread:g" ${WRKSRC}/configure
 
