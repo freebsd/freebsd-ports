@@ -1,6 +1,6 @@
---- Imakefile.orig	Thu Jun 30 16:34:55 1994
-+++ Imakefile	Thu Jan  9 11:56:08 1997
-@@ -90,6 +90,7 @@
+--- Imakefile-	Thu Sep  2 23:33:47 1999
++++ Imakefile	Thu Sep 30 11:25:00 1999
+@@ -104,6 +104,7 @@
  /* FreeBSD */
  #if defined(i386BsdArchitecture) && (defined(i386FreeBsd) || defined(FreeBSDArchitecture))
  #define	StartupSound	myu.au
