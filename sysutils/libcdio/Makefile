@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compact Disc Input and Control Library
 
 LIB_DEPENDS=	cddb.1:${PORTSDIR}/audio/libcddb \
@@ -22,8 +22,10 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
-		--with-libiconv-prefix=${LOCALBASE}
+		--with-libiconv-prefix=${LOCALBASE} \
+		--without-cd-paranoia
 USE_REINPLACE=	yes
+USE_PERL5_BUILD=yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv"
 
 INFO=		libcdio
