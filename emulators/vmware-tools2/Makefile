@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	# none
 DISTNAME=	vmware-freebsd-tools
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd

@@ -11,7 +11,7 @@ CATEGORIES=	japanese elisp
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	skk${PORTVERSION}
 
-MAINTAINER=	matusita@jp.FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 
 BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule \
 		${NONEXISTENT}:${SKK_MASTERDIR}:configure
