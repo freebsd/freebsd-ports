@@ -9,21 +9,17 @@ PORTNAME=	pwg
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	sysutils kde
-MASTER_SITES=	http://www.8ung.at/tuxsoft/pwg/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small tool to generate secure, random passwords
 
 USE_BZIP2=	yes
-USE_KDELIBS_VER=3
-GNU_CONFIGURE=	yes
+USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
 
-pre-configure:
-	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
