@@ -4154,6 +4154,7 @@ maildrop	ports/mail/maildrop
 mailfilter	ports/mail/mailfilter
 mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
+mailman-devel	ports/mail/mailman-devel
 mailwrapper	src/usr.sbin/mailwrapper
 mailx		ports/mail/mailx
 maint		ports/sysutils/maint
