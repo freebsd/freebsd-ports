@@ -120,5 +120,8 @@ share/doc/color-mate/README.kanakan-cursor.jp
 @dirrm lib/xemacs/site-packages/lisp/color-mate/kanakan-cursor
 @dirrm lib/xemacs/site-packages/lisp/color-mate/theme
 @dirrm lib/xemacs/site-packages/lisp/color-mate
+@dirrm lib/xemacs/site-packages/lisp
+@dirrm lib/xemacs/site-packages/pkginfo
+@dirrm lib/xemacs/site-packages
+@dirrm lib/xemacs
 @dirrm share/doc/color-mate
-
