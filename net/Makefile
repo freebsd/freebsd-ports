@@ -430,7 +430,6 @@
     SUBDIR += ppptraf
     SUBDIR += pptpclient
     SUBDIR += ppxp
-    SUBDIR += priss
     SUBDIR += proxy-suite
     SUBDIR += psi
     SUBDIR += pvm
