@@ -709,7 +709,7 @@ lib/wine/ws2_32.dll.so
 lib/wine/wsock32.dll.so
 lib/wine/x11drv.dll.so
 share/aclocal/wine.m4
-share/applications/wine.desktop 
+share/applications/wine.desktop
 share/wine/generic.ppd
 share/wine/wine.inf
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
