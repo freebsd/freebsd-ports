@@ -16,7 +16,7 @@ DISTNAME=	automake-${PORTVERSION}
 MAINTAINER=	alane@FreeBSD.org
 COMMENT=	GNU automake generates input files for GNU autoconf
 
-BROKEN=		Needs autoconf >= 254 to build.
+BROKEN=		Needs at least autoconf 254 to build.
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
