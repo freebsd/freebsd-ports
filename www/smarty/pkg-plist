@@ -70,6 +70,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.combining.modifiers.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.config.variables.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.custom.functions.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/language.escaping.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.function.config.load.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.function.counter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.function.cycle.html
@@ -135,6 +136,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.now.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.request.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.template.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/language.variables.smarty.version.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.block.functions.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.compiler.functions.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/plugins.functions.html
@@ -207,8 +209,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.default.modifiers.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.default.resource.type.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.default.template.handler.func.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/variable.error.reporting.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.force.compile.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/variable.global.assign.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.left.delimiter.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.php.handling.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/variable.plugins.dir.html
