@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/DNS-Zone/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone.pm
+lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/Label.pm
+lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/Record.pm
+lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/File/Default.pm
+%%PORTDOCS%%share/doc/p5-DNS-Zone/README
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/DNS-Zone
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone/File
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/DNS/Zone
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DNS 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/p5-DNS-Zone
