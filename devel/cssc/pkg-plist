@@ -1,0 +1,20 @@
+bin/sccs
+libexec/cssc/admin
+libexec/cssc/cdc
+libexec/cssc/delta
+libexec/cssc/get
+libexec/cssc/prs
+libexec/cssc/prt
+libexec/cssc/rmdel
+libexec/cssc/sact
+libexec/cssc/sccsdiff
+libexec/cssc/unget
+libexec/cssc/val
+libexec/cssc/what
+@dirrm libexec/cssc
+@unexec install-info --delete %D/info/cssc.info %D/info/dir
+info/cssc.info
+info/cssc.info-1
+info/cssc.info-2
+info/cssc.info-3
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir

@@ -1,0 +1,19 @@
+*** docs/cssc.texi.orig	Sun Mar 21 11:11:21 1999
+--- docs/cssc.texi	Wed Mar 31 01:05:22 1999
+***************
+*** 5,11 ****
+  
+  @dircategory Miscellaneous
+  @direntry
+! * cssc: (cssc).		The GNU work-alike replacement for SCCS.
+  @end direntry
+  
+  @finalout
+--- 5,11 ----
+  
+  @dircategory Miscellaneous
+  @direntry
+! * cssc: (cssc).			The GNU work-alike replacement for SCCS.
+  @end direntry
+  
+  @finalout

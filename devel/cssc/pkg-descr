@@ -1,0 +1,15 @@
+This is GNU CSSC, a workalike for the source code control system SCCS.
+It is based on the MySC package by Ross Ridge.
+
+SCCS commands implemented this package are: admin, cdc, delta, get,
+prs, prt, sccsdiff, rmdel, sact, unget and what.  Not all options and
+capabilities of the commands have been implemented yet, and the comb,
+val and vc commands are not provided at all.
+
+Unimplemented features include consistency checking (admin -h),
+ignored deltas (delta -g), printing the differences after a delta
+(delta -p), l-files (get -l), and getting a delta by sequence number
+(get -a).  Some features like including and excluding deltas (get -i
+-x) have been implemented but not extensively tested.
+
+FreeBSD port made by Oliver Fromme <olli@fromme.com>
