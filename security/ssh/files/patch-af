@@ -1,5 +1,5 @@
-*** sshd.c.orig	Wed Apr 23 08:40:08 1997
---- sshd.c	Fri Apr 25 12:40:20 1997
+*** sshd.c.orig	Wed Apr 23 04:40:08 1997
+--- sshd.c	Sat May  3 00:04:30 1997
 ***************
 *** 400,405 ****
 --- 400,409 ----
@@ -14,8 +14,20 @@
   #define DEFAULT_SHELL		_PATH_BSHELL
   #else
 ***************
+*** 1698,1703 ****
+--- 1702,1710 ----
+    memset(&pwcopy, 0, sizeof(pwcopy));
+    pwcopy.pw_name = xstrdup(pw->pw_name);
+    pwcopy.pw_passwd = xstrdup(pw->pw_passwd);
++ #ifdef HAVE_LOGIN_CAP_H
++   pwcopy.pw_class = xstrdup(pw->pw_class);
++ #endif
+    pwcopy.pw_uid = pw->pw_uid;
+    pwcopy.pw_gid = pw->pw_gid;
+    pwcopy.pw_dir = xstrdup(pw->pw_dir);
+***************
 *** 2654,2659 ****
---- 2658,2666 ----
+--- 2661,2669 ----
     struct sockaddr_in from;
     int fromlen;
     struct pty_cleanup_context cleanup_context;
@@ -38,7 +50,7 @@
         /* If the user has logged in before, display the time of last login. 
            However, don't display anything extra if a command has been 
   	 specified (so that ssh can be used to execute commands on a remote
---- 2732,2750 ----
+--- 2735,2753 ----
         record_login(pid, ttyname, pw->pw_name, pw->pw_uid, hostname, 
   		   &from);
   
@@ -60,7 +72,7 @@
   	 specified (so that ssh can be used to execute commands on a remote
 ***************
 *** 2749,2754 ****
---- 2764,2792 ----
+--- 2767,2795 ----
   	    printf("Last login: %s from %s\r\n", time_string, buf);
   	}
   
@@ -92,7 +104,7 @@
   	 print it in /etc/profile or similar. */
 ***************
 *** 2758,2764 ****
---- 2796,2806 ----
+--- 2799,2809 ----
   	  FILE *f;
   
   	  /* Print /etc/motd if it exists. */
@@ -106,7 +118,7 @@
   	      while (fgets(line, sizeof(line), f))
 ***************
 *** 2766,2771 ****
---- 2808,2836 ----
+--- 2811,2839 ----
   	      fclose(f);
   	    }
   	}
@@ -145,7 +157,7 @@
     /* Check /etc/nologin. */
     f = fopen("/etc/nologin", "r");
     if (f)
---- 3082,3094 ----
+--- 3085,3097 ----
     char *user_shell;
     char *remote_ip;
     int remote_port;
@@ -153,7 +165,7 @@
 !   login_cap_t *lc;
 !   char *real_shell;
 !   
-!   lc = login_getuserclass(pw);
+!   lc = login_getclass(pw);
 !   auth_checknologin(lc);
 ! #else /* !HAVE_LOGIN_CAP_H */
     /* Check /etc/nologin. */
@@ -161,7 +173,7 @@
     if (f)
 ***************
 *** 3031,3036 ****
---- 3102,3108 ----
+--- 3105,3111 ----
         if (pw->pw_uid != UID_ROOT)
   	exit(254);
       }
@@ -178,7 +190,7 @@
   #ifdef HAVE_SETLOGIN
     /* Set login name in the kernel.  Warning: setsid() must be called before
        this. */
---- 3115,3122 ----
+--- 3118,3125 ----
         else
   	log_msg("executing remote command as user %.200s", pw->pw_name);
       }
@@ -189,7 +201,7 @@
        this. */
 ***************
 *** 3064,3069 ****
---- 3137,3143 ----
+--- 3140,3146 ----
     if (setpcred((char *)pw->pw_name, NULL))
       log_msg("setpcred %.100s: %.100s", strerror(errno));
   #endif /* HAVE_USERSEC_H */
@@ -199,20 +211,17 @@
        before we switch to user's uid.  (We must clear all sensitive data 
 ***************
 *** 3134,3139 ****
---- 3208,3271 ----
+--- 3211,3276 ----
     if (command != NULL || !options.use_login)
   #endif /* USELOGIN */
       {
 + #ifdef HAVE_LOGIN_CAP_H
 +       char *p, *s, **tmpenv;
 + 
-+       /* Save previous environment array
-+        */
-+       tmpenv = environ;
 +       /* Initialize the new environment.
 +        */
 +       envsize = 64;
-+       environ = env = xmalloc(envsize * sizeof(char *));
++       env = xmalloc(envsize * sizeof(char *));
 +       env[0] = NULL;
 + 
 +       child_set_env(&env, &envsize, "PATH", DEFAULT_PATH);
@@ -230,6 +239,11 @@
 +       /* Let it inherit timezone if we have one. */
 +       if (getenv("TZ"))
 + 	child_set_env(&env, &envsize, "TZ", getenv("TZ"));
++ 
++       /* Save previous environment array
++        */
++       tmpenv = environ;
++       environ = env;
 + 
 +       /* Set the user's login environment
 +        */
@@ -266,7 +280,7 @@
   	{ 
 ***************
 *** 3165,3170 ****
---- 3297,3303 ----
+--- 3302,3308 ----
         
         if (getuid() != user_uid || geteuid() != user_uid)
   	fatal("Failed to set uids to %d.", (int)user_uid);
@@ -276,7 +290,7 @@
     /* Reset signals to their default settings before starting the user
 ***************
 *** 3175,3185 ****
---- 3308,3323 ----
+--- 3313,3328 ----
        and means /bin/sh. */
     shell = (user_shell[0] == '\0') ? DEFAULT_SHELL : user_shell;
   
@@ -295,7 +309,7 @@
     if (command != NULL || !options.use_login)
 ***************
 *** 3189,3194 ****
---- 3327,3334 ----
+--- 3332,3339 ----
         child_set_env(&env, &envsize, "HOME", user_dir);
         child_set_env(&env, &envsize, "USER", user_name);
         child_set_env(&env, &envsize, "LOGNAME", user_name);
@@ -306,7 +320,7 @@
   #ifdef MAIL_SPOOL_DIRECTORY
 ***************
 *** 3200,3205 ****
---- 3340,3346 ----
+--- 3345,3351 ----
         child_set_env(&env, &envsize, "MAIL", buf);
   #endif /* MAIL_SPOOL_FILE */
   #endif /* MAIL_SPOOL_DIRECTORY */
@@ -316,7 +330,7 @@
         /* Read /etc/default/login; this exists at least on Solaris 2.x.  Note
 ***************
 *** 3215,3223 ****
---- 3356,3366 ----
+--- 3361,3371 ----
       child_set_env(&env, &envsize, "SSH_ORIGINAL_COMMAND",
   		  original_command);
     
@@ -330,7 +344,7 @@
     while (custom_environment) 
 ***************
 *** 3437,3443 ****
---- 3580,3590 ----
+--- 3585,3595 ----
   	  /* Execute the shell. */
   	  argv[0] = buf;
   	  argv[1] = NULL;
@@ -344,7 +358,7 @@
   	  exit(1);
 ***************
 *** 3458,3464 ****
---- 3605,3615 ----
+--- 3610,3620 ----
     argv[1] = "-c";
     argv[2] = (char *)command;
     argv[3] = NULL;
