@@ -467,6 +467,7 @@ axel		ports/ftp/axel
 axelq		ports/ftp/axelq
 axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
+b2bua		ports/net/b2bua
 babel		ports/biology/babel
 backfract	ports/graphics/backfract
 backgammon	src/games/backgammon
