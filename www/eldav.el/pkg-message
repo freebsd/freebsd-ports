@@ -1,0 +1,17 @@
+Add the following line to your .emacs:
+
+(require 'eldav)
+
+If you want to use a proxy server, the following setting
+is also needed:
+
+(setq eldav-proxy "http://your.proxy.server:8080")
+
+Then you can access WebDAV files by specifying a magic
+file name like:
+
+:http://your.webdav.server/path/to/file/name
+
+(Add preceding ':' to the WebDAV URL.)
+
+NOTICE: You need the MULE version of Emacs!
