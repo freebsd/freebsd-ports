@@ -26,8 +26,8 @@ include/ixlib_string.hh
 include/ixlib_textfile.hh
 include/ixlib_token_lex.hh
 include/ixlib_xml.hh
-lib/charset.alias
 lib/libixion.a
 lib/libixion.so
+lib/libixion.so.6
 share/aclocal/ixlib.m4
 share/locale/de/LC_MESSAGES/ixlib.mo
