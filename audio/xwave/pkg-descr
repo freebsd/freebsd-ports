@@ -15,6 +15,3 @@ Features:
 	- raw, wav, au, aiff, aifc (PCM, ALAW, ULAW, and some ADPCM
 	  implementations)
 	- files of any length
-
-Trevor Johnson
-trevor@jpj.net
