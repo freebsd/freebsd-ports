@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lcs-chemie.de/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	KDE board game
 
-KDELIBS_VER=	3
+USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
