@@ -8,7 +8,7 @@
 
 PORTNAME=	clint
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,12 +16,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 post-install:
 	@install-info ${PREFIX}/info/clint.info ${PREFIX}/info/dir
