@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Time-Local
-PORTVERSION=	1.07
+PORTVERSION=	1.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Time
@@ -16,7 +16,7 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Efficiently compute time from local and GMT time
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	INSTALLDIRS='site'
+CONFIGURE_ARGS=	INSTALLDIRS='site'
 
 MAN3=		Time::Local.3
 
