@@ -1,0 +1,9 @@
+bin/eyeclock
+lib/X11/EyeClock/sample1
+lib/X11/EyeClock/sample2
+lib/X11/EyeClock/sample1.xpm
+lib/X11/EyeClock/sample2.xpm
+lib/X11/EyeClock/README.euc
+lib/X11/EyeClock/Makefile
+lib/X11/EyeClock/COPYRIGHT.euc
+@dirrm lib/X11/EyeClock
