@@ -1,4 +1,15 @@
+bin/calculus
+bin/disp
+bin/lexi
+bin/pl
+bin/sid
 bin/tcc
+bin/tchk
+bin/tdfc2
+bin/tld
+bin/tnc
+bin/trans
+bin/tspec
 lib/TenDRA/%%TENDRA_PATH%%/bin/calculus
 lib/TenDRA/%%TENDRA_PATH%%/bin/disp
 lib/TenDRA/%%TENDRA_PATH%%/bin/lexi
@@ -43,6 +54,7 @@ lib/TenDRA/%%TENDRA_PATH%%/env/bsd_extn
 lib/TenDRA/%%TENDRA_PATH%%/env/building
 lib/TenDRA/%%TENDRA_PATH%%/env/c
 lib/TenDRA/%%TENDRA_PATH%%/env/c++
+lib/TenDRA/%%TENDRA_PATH%%/env/c99
 lib/TenDRA/%%TENDRA_PATH%%/env/common
 lib/TenDRA/%%TENDRA_PATH%%/env/compact
 lib/TenDRA/%%TENDRA_PATH%%/env/cose
@@ -93,6 +105,17 @@ lib/TenDRA/%%TENDRA_PATH%%/env/xpg4
 lib/TenDRA/%%TENDRA_PATH%%/lib/ansi.tl
 lib/TenDRA/%%TENDRA_PATH%%/lib/bsd_extn.tl
 lib/TenDRA/%%TENDRA_PATH%%/lib/cpp.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/ansi.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/bsd_extn.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/cpp.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/gcc.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/iso.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/posix.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/posix1.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/posix2.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/svid3.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/unix95.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/diag/xpg4.tl
 lib/TenDRA/%%TENDRA_PATH%%/lib/gcc.tl
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/ansi.api/assert.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/ansi.api/ctype.h
@@ -202,6 +225,24 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/include/gcc.api/sys/resource.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/gcc.api/sys/time.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/gcc.api/sys/types.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/gcc.api/tdf_alloca.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/assert.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/ctype.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/errno.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/float.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/iso646.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/limits.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/locale.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/math.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/setjmp.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/signal.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/stdarg.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/stddef.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/stdio.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/stdlib.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/string.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/time.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/wchar.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api/wctype.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/posix.api/assert.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/posix.api/ctype.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/posix.api/dirent.h
@@ -311,6 +352,9 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/bsd_extn.api/timeval.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/cpp.api/bad_allo.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/cpp.api/except.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/gcc.api/timeval.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/iso.api/mse.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/iso.api/mse2.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/iso.api/wint.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/posix.api/ctuid.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/posix.api/enums.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/posix.api/getopt.h
@@ -551,6 +595,7 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/include/xpg4.api/varargs.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/xpg4.api/wchar.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/xpg4.api/wordexp.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/include/xpg4.api/xti.h
+lib/TenDRA/%%TENDRA_PATH%%/lib/iso.tl
 lib/TenDRA/%%TENDRA_PATH%%/lib/machines/include/ctype.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/machines/include/limits.h
 lib/TenDRA/%%TENDRA_PATH%%/lib/machines/include/stdarg.h
@@ -579,16 +624,11 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Bounds.32/int_sizes.pf
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Bounds.ansi/default.pf
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Bounds.ansi/int_sizes.pf
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Literal/ansi.pf
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Literal/c99.pf
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Literal/trad.pf
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xa
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xc
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xp
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xs
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xsystem
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xt
-lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xw
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xa
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xc
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xc99
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xp
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xs
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xsystem
@@ -596,9 +636,17 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xt
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/Xw
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/nepc
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes/not_ansi
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xa
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xc
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xp
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xs
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xsystem
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xt
+lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Modes.cpp/Xw
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Promotion/ansi.pf
 lib/TenDRA/%%TENDRA_PATH%%/lib/startup/Promotion/sign.pf
 lib/TenDRA/%%TENDRA_PATH%%/lib/svid3.tl
+lib/TenDRA/%%TENDRA_PATH%%/lib/sys/crtp_n.o
 lib/TenDRA/%%TENDRA_PATH%%/lib/sys/libcpp.a
 lib/TenDRA/%%TENDRA_PATH%%/lib/sys/libtdf.a
 lib/TenDRA/%%TENDRA_PATH%%/lib/target_tok.tl
@@ -606,6 +654,7 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/unix95.tl
 lib/TenDRA/%%TENDRA_PATH%%/lib/xpg4.tl
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/bin
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/env
+@dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/diag
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/ansi.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/bsd_extn.api/arpa
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/bsd_extn.api/netinet
@@ -614,6 +663,7 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/xpg4.tl
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/cpp.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/gcc.api/sys
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/gcc.api
+@dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/iso.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/posix.api/sys
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/posix.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/posix1.api/sys
@@ -624,6 +674,7 @@ lib/TenDRA/%%TENDRA_PATH%%/lib/xpg4.tl
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/bsd_extn.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/cpp.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/gcc.api
+@dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/iso.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/posix.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/posix1.api
 @dirrm lib/TenDRA/%%TENDRA_PATH%%/lib/include/shared/svid3.api
