@@ -3,7 +3,7 @@
 # Date created:		7 June 1995
 # Whom:			Takashi Ogura <ogura@st.rim.or.jp>
 #
-# $Id: Makefile,v 1.7 1996/11/11 10:12:19 max Exp $
+# $Id: Makefile,v 1.8 1996/11/13 12:41:00 asami Exp $
 #
 
 DISTNAME=	kon
@@ -19,7 +19,7 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 USE_GMAKE=	yes
 MAN1=		kon.1
-MANLANG=	ja_JP.ujis
+MANLANG=	ja_JP.EUC
 
 post-configure:
 	sed -e 's%%CURDIR%%${.CURDIR}' \
