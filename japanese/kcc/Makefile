@@ -7,6 +7,7 @@
 
 PORTNAME=	kcc
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTNAME=	${PORTNAME}
@@ -18,10 +19,4 @@ INSTALL_TARGET=	install install.man
 MANLANG=	ja
 MAN1=		kcc.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-USE_GCC=2.95
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
