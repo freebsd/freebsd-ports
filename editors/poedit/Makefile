@@ -9,7 +9,8 @@
 PORTNAME=	poedit
 PORTVERSION=	1.0.3
 CATEGORIES=	editors
-MASTER_SITES=	http://www.volny.cz/v.slavik/poedit/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
