@@ -4,14 +4,11 @@
 #
 # $FreeBSD$
 #
-# This port is self contained in the src directory.
-#
 
 PORTNAME=	pkg_cutleaves
-PORTVERSION=	20040414
+PORTVERSION=	20040517
 CATEGORIES=	sysutils
-MASTER_SITES=	# none
-DISTFILES=	# none
+MASTER_SITES=	http://www.gegenunendlich.de/projects/${PORTNAME}/
 
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Interactive script for deinstalling 'leaf' packages
@@ -22,40 +19,33 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 
-SRC=		${.CURDIR}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		pkg_cutleaves.1
 
 PLIST_FILES=	sbin/pkg_cutleaves
 
-do-fetch:
-	@${DO_NADA}
-
-pre-patch:
-	@${CP} ${SRC}/pkg_cutleaves ${WRKDIR}/pkg_cutleaves
-	@${CP} ${SRC}/pkg_cutleaves.1 ${WRKDIR}/pkg_cutleaves.1
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
-	  ${WRKDIR}/pkg_cutleaves.1
+	  ${WRKSRC}/pkg_cutleaves.1
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/etc/pkg_leaves.exclude,${PREFIX}/etc/pkg_leaves.exclude,' \
-	  ${WRKDIR}/pkg_cutleaves
+	  ${WRKSRC}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/sbin/pkg_deinstall,${LOCALBASE}/sbin/pkg_deinstall,' \
-	  ${WRKDIR}/pkg_cutleaves
+	  ${WRKSRC}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
 	  's,/usr/local/sbin/pkgdb,${LOCALBASE}/sbin/pkgdb,' \
-	  ${WRKDIR}/pkg_cutleaves
+	  ${WRKSRC}/pkg_cutleaves
 	@${REINPLACE_CMD} -e \
 	  's,/var/db/pkg,${PKG_DBDIR},' \
-	  ${WRKDIR}/pkg_cutleaves
+	  ${WRKSRC}/pkg_cutleaves
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' \
-	  ${WRKDIR}/pkg_cutleaves
+	  ${WRKSRC}/pkg_cutleaves
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/pkg_cutleaves ${PREFIX}/sbin/pkg_cutleaves
-	${INSTALL_MAN} ${WRKDIR}/pkg_cutleaves.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/pkg_cutleaves ${PREFIX}/sbin/pkg_cutleaves
+	${INSTALL_MAN} ${WRKSRC}/pkg_cutleaves.1 ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
