@@ -16,7 +16,8 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		oaf.0:${PORTSDIR}/devel/oaf \
-		bonobo.2:${PORTSDIR}/devel/bonobo
+		bonobo.2:${PORTSDIR}/devel/bonobo \
+		glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 USE_X_PREFIX=	yes
