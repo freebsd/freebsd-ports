@@ -1,0 +1,12 @@
+--- rpc.dracd.c.old	Sun Jan 14 20:53:02 2001
++++ rpc.dracd.c	Sun Jan 14 20:53:10 2001
+@@ -36,9 +36,6 @@
+ #endif
+ #include "drac.h"
+ 
+-#define DBFILE "/etc/mail/dracd.db"
+-#define ALFILE "/etc/mail/dracd.allow"
+-
+ struct net_def {
+     struct net_def *nd_next;
+     struct in_addr nd_mask;
