@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.03.05
+PORTVERSION=	2004.03.12
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -61,8 +61,11 @@ liveMedia=		\
 		liveMedia/include/AC3AudioRTPSource.hh \
 		liveMedia/include/AC3AudioStreamFramer.hh \
 		liveMedia/include/AMRAudioFileServerMediaSubsession.hh \
+		liveMedia/include/AMRAudioFileSink.hh \
 		liveMedia/include/AMRAudioFileSource.hh \
 		liveMedia/include/AMRAudioRTPSink.hh \
+		liveMedia/include/AMRAudioRTPSource.hh \
+		liveMedia/include/AMRAudioSource.hh \
 		liveMedia/include/AudioInputDevice.hh \
 		liveMedia/include/AudioRTPSink.hh \
 		liveMedia/include/BasicUDPSource.hh \
