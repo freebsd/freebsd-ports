@@ -19,7 +19,7 @@ RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-EMACS_VER=	20.6
+EMACS_VER=	20.7
 PLIST_SUB=	EMACS_VER=${EMACS_VER}
 
 pre-configure:
