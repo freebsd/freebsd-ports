@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		link-monitor-applet
-PORTVERSION=		1.0
+PORTVERSION=		1.1
 CATEGORIES=		net ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	link-monitor
