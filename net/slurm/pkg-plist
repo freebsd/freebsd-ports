@@ -1,3 +1,4 @@
 bin/slurm
 %%PORTDOCS%%share/doc/slurm/README
+%%PORTDOCS%%share/doc/slurm/KEYS
 %%PORTDOCS%%@dirrm share/doc/slurm
