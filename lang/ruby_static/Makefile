@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../../${RUBY_PORT}:patch
 
 USE_RUBY=	yes
 
+RUBY_VER?=	1.6
+
 .include <bsd.port.pre.mk>
 
 # Beware, because gdbm is under GPL, you must treat the whole binary
