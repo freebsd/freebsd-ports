@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	esdl
-PORTVERSION=	0.91.1129
-PORTREVISION=	2
+PORTVERSION=	0.93.0131
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	esdl
 DISTNAME=	esdl-${PORTVERSION}.src
+DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for accessing SDL and OpenGL through Erlang
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+ALL_TARGET=	target
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
