@@ -13,7 +13,6 @@ MASTER_SITES=	http://rsug.itd.umich.edu/software/nefu/files/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A network monitoring daemon
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

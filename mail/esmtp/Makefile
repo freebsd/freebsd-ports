@@ -17,7 +17,6 @@ COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

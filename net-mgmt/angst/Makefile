@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet-config
 
-USE_SIZE=	yes
 USE_REINPLACE=	yes
 
 MAN8=		angst.8

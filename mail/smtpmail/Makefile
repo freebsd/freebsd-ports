@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool to send the mails over remote smtp server
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
