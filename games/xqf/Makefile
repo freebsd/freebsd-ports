@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
 GNU_CONFIGURE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 MAN6=		xqf.6
 

@@ -18,7 +18,7 @@ LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gtk
@@ -27,8 +27,9 @@ MAN6=		xscorch.6
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif

@@ -14,7 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/garith
 
 do-install:

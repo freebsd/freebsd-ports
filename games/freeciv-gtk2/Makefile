@@ -18,15 +18,17 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_XPM=	yes
 USE_BZIP2=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_IMLIB=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOMENG+=	imlib
+PKGNAMESUFFIX=	-imlib
 .else
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
