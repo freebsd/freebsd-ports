@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/downloads/
 
@@ -20,7 +20,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		wmconfig.1x
 
-PORTDOCS=	AUTHORS NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog COPYING README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
