@@ -8,8 +8,7 @@
 PORTNAME=	ncplib
 PORTVERSION=	1.3.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.butya.kz/pub/nwlib/ \
-		http://rbp.chat.ru/pub/nwlib/
+MASTER_SITES=	ftp://ftp.butya.kz/pub/nwlib/
 
 MAINTAINER=	bp@butya.kz
 COMMENT=	Client for Novell NetWare servers
