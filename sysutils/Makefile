@@ -86,6 +86,7 @@
     SUBDIR += fastest_cvsup
     SUBDIR += fastresolve
     SUBDIR += fcron
+    SUBDIR += fetchlog
     SUBDIR += ffsrecov
     SUBDIR += file
     SUBDIR += filedupe
