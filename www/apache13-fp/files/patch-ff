@@ -1,0 +1,42 @@
+*** support/Makefile.tmpl.orig	Mon Mar 10 03:31:34 1997
+--- support/Makefile.tmpl	Thu Apr 23 13:20:33 1998
+***************
+*** 8,18 ****
+--- 8,32 ----
+  INCLUDES=-I../src -I../src/regex $(INCLUDES1) $(EXTRA_INCLUDES)
+  LFLAGS=$(LFLAGS1) $(EXTRA_LFLAGS)
+  
++ PREFIX?=/usr/local
++ USER_CGI_BIN?=public_html
++ HTTPD_USER?=www
++ FP_EXE=${PREFIX}/frontpage/version3.0/apache-fp/_vti_bin/fpexe
++ SYS_CGI_BIN=${PREFIX}/www/cgi-bin
++ SU_FLAGS=-DHTTPD_USER=\"${HTTPD_USER}\"
++ SU_FLAGS+=-DSYSTEM_CGI=\"${SYS_CGI_BIN}\"
++ SU_FLAGS+=-DFRONTPAGE_EXE=\"${FP_EXE}\"
++ SU_FLAGS+=-DUSERDIR_SUFFIX=\"${USER_CGI_BIN}\"
++ 
+  .c.o: 
+  	$(CC) -c $(CFLAGS) $(INCLUDES) $<
+  
+  TARGETS=htpasswd htdigest httpd_monitor rotatelogs logresolve
+  
++ .if defined(SUEXEC)
++ TARGETS+=suexec
++ .endif
++ 
+  all: $(TARGETS)
+  
+  htpasswd: htpasswd.c
+***************
+*** 29,34 ****
+--- 43,51 ----
+  
+  logresolve: logresolve.c
+  	$(CC) $(INCLUDES) $(CFLAGS) logresolve.c -o logresolve $(LIBS)
++ 
++ suexec: suexec.c
++ 	$(CC) $(INCLUDES) $(CFLAGS) ${SU_FLAGS} suexec.c -o suexec
+  
+  clean:
+  	rm -f $(TARGETS)
