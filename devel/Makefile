@@ -372,6 +372,7 @@
     SUBDIR += qtarch
     SUBDIR += py-omniorb
     SUBDIR += py-orbit
+    SUBDIR += pychecker
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk
