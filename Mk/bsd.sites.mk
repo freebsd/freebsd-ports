@@ -647,9 +647,9 @@ MASTER_SITE_PYTHON+= \
 	http://shattered.teched.net/www.python.org/%SUBDIR%/
 
 MASTER_SITE_REDHAT_LINUX+= \
+	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
 	http://www.gtlib.cc.gatech.edu/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.rutgers.edu/pub/redhat/linux/%SUBDIR%/ \
-	http://mirrors.usc.edu/pub/linux/distributions/redhat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/linux/%SUBDIR%/ \
