@@ -1,0 +1,12 @@
+--- configure.in.orig	Sat Nov 21 08:59:52 1998
++++ configure.in	Sat Nov 21 08:58:16 1998
+@@ -57,6 +57,9 @@
+ AC_ARG_WITH(gssapi,
+ [  --with-gssapi           support GSSAPI-authenticated POP],
+ [AC_DEFINE(GSSAPI)])
++AC_ARG_WITH(xpg4,
++[  --with-xpg4             support XPG4 library on FreeBSD system],
++[AC_DEFINE(USE_XPG)])
+ dnl This should be the last --with option, because --with-x is
+ dnl added later on when we find the path of X, and it's best to
+ dnl keep them together visually.
