@@ -1679,6 +1679,7 @@ fsv		ports/x11-fm/fsv
 ft2demos	ports/print/ft2demos
 ftdi-eeprom	ports/misc/ftdi-eeprom
 fte		ports/editors/fte
+ftimes		ports/security/ftimes
 ftnchek		ports/devel/ftnchek
 ftp-tls		ports/ftp/ftp-tls
 ftpcopy		ports/ftp/ftpcopy
