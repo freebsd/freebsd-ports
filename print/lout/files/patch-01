@@ -1,6 +1,6 @@
---- makefile.orig	Wed May  8 03:33:44 1996
-+++ makefile	Fri Nov  8 02:10:41 1996
-@@ -203,15 +203,15 @@
+--- makefile.orig	Wed May  8 19:33:44 1996
++++ makefile	Thu Dec 19 19:57:02 1996
+@@ -203,15 +203,16 @@
  
  USESTAT = 1
  
@@ -8,6 +8,7 @@
 -LIBDIR	= /u12/staff/jeff/lout.lib
 -DOCDIR	= /u12/staff/jeff/lout.doc
 -MANDIR	= /u12/staff/jeff/lout.man
++PREFIX ?= /usr/local
 +BINDIR	= $(PREFIX)/bin
 +LIBDIR	= $(PREFIX)/share/lout
 +DOCDIR	= $(PREFIX)/share/doc/lout
@@ -21,8 +22,14 @@
  LOC_FR	= fr
  LOC_DE	= de
  
-@@ -263,35 +263,35 @@
+@@ -259,39 +260,41 @@
+ 	@echo "(a) Installing Lout and c2lout binaries into BINDIR $(BINDIR)"
+ 	cp lout $(BINDIR)/lout
+ 	chmod 755 $(BINDIR)/lout
++	chown bin.bin $(BINDIR)/lout
+ 	cp c2lout $(BINDIR)/c2lout
  	chmod 755 $(BINDIR)/c2lout
++	chown bin.bin $(BINDIR)/c2lout
  	@echo ""
  	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
 -	mkdir $(LIBDIR)
@@ -64,7 +71,34 @@
  	chmod 755 $(LIBDIR)/locale
  	@echo ""
  	@echo "(c) Initializing run (should be silent, no errors expected)"
-@@ -322,9 +322,9 @@
+@@ -300,6 +303,7 @@
+ 	@echo "(d) Changing mode of files just created by initializing run"
+ 	chmod 644 $(LIBDIR)/data/*
+ 	chmod 644 $(LIBDIR)/hyph/*
++	chown -R bin.bin $(LIBDIR)
+ 
+ installman:
+ 	@echo ""
+@@ -308,23 +312,27 @@
+ 	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
+ 	man/lout.1 > $(MANDIR)/lout.1
+ 	chmod 644 $(MANDIR)/lout.1
++	chown bin.bin $(MANDIR)/lout.1
+ 	cp man/c2lout.1 $(MANDIR)/c2lout.1
+ 	chmod 644 $(MANDIR)/c2lout.1
++	chown bin.bin $(MANDIR)/c2lout.1
+ 
+ installdoc:
+ 	@echo ""
+ 	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
+-	cp -r doc $(DOCDIR)
++	-mkdir $(DOCDIR)
++	cp -r doc/* $(DOCDIR)
+ 	chmod 755 $(DOCDIR)
+ 	chmod 755 $(DOCDIR)/*
+ 	chmod 644 $(DOCDIR)/*/*
++	chown -R bin.bin $(DOCDIR)
+ 
  installfr:
  	@echo ""
  	@echo "Installing French error messages into $(LIBDIR)/locale/$(LOC_FR)"
@@ -76,7 +110,7 @@
  	chmod 755 $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES
  	cp locale/msgs.fr $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
  	gencat $(LIBDIR)/locale/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
-@@ -334,9 +334,9 @@
+@@ -334,9 +342,9 @@
  installde:
  	@echo ""
  	@echo "Installing German error messages into $(LIBDIR)/locale/$(LOC_DE)"
