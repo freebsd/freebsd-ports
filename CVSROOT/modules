@@ -11606,6 +11606,7 @@ xfmail		ports/mail/xfmail
 xforms		ports/x11-toolkits/xforms
 xfpovray	ports/graphics/xfpovray
 xfractint	ports/graphics/xfractint
+xfree86-dri	ports/graphics/xfree86-dri
 xfree86_xkb_xml	ports/x11/xfree86_xkb_xml
 xfrisk		ports/games/xfrisk
 xfsm		ports/sysutils/xfsm
