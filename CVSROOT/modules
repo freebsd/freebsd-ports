@@ -4423,6 +4423,7 @@ mouseclock	ports/x11-clocks/mouseclock
 moused		src/usr.sbin/moused
 movemail	ports/mail/movemail
 moviedb		ports/misc/moviedb
+movingmotif	ports/x11-toolkits/movingmotif
 mowitz		ports/x11-toolkits/mowitz
 moxftp		ports/ftp/moxftp
 mozart		ports/lang/mozart
