@@ -1,7 +1,7 @@
 bin/vmware
+etc/rc.d/vmware.sh
 etc/vmware/config
 lib/vmware/bin/df
-lib/vmware/bin/fakeprocfs.sh
 lib/vmware/bin/vmware
 lib/vmware/bin/vmnet-bridge
 lib/vmware/bin/vmnet-dhcpd
@@ -113,7 +113,7 @@ share/doc/vmware/README.FreeBSD
 @exec ln -s %D/etc/vmware /etc/vmware
 @exec mknod /dev/vmmon c 200 0
 @exec mknod /dev/vmnet1 c 201 1
-@unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd?
+@unexec rm -f /etc/vmware /dev/vmmon /dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd?
 @dirrm etc/vmware
 @dirrm lib/vmware/bin
 @dirrm lib/vmware/lib/help

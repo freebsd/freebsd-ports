@@ -1,26 +1,23 @@
 #!/bin/sh
-#exec 1>&2
-#echo $@
-#env 
 
 case $1 in
-	vmmon*)
-	  target=vmmon
-	;;
-	vmnet*)
-	  target=vmnet
-	;;
-	*)
-	  echo unknown patch $1
-	  exit 64
-	;;
+vmmon*)
+    target=vmmon
+    ;;
+vmnet*)
+    target=vmnet
+    ;;
+*)
+    echo unknown patch $1
+    exit 64
+    ;;
 esac
 dir=${WRKSRC}/lib/modules/source
 tar -xf ${dir}/${target}.tar -C ${WRKSRC}
 tar -zxf $1 -C ${WRKSRC}
 if [ $target = vmmon ] ; then
-	Makefile=${WRKSRC}/vmmon-only/Makefile
-	mv ${Makefile}.FreeBSD $Makefile
+    Makefile=${WRKSRC}/vmmon-only/Makefile
+    mv ${Makefile}.FreeBSD $Makefile
 fi
 
 cat ${WRKSRC}/${target}-freebsd.diff
