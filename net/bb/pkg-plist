@@ -24,6 +24,9 @@ bb/web/mkbb.bkg
 bb/web/mkbb.cols
 bb/web/mkbb.sh
 bb/web/mkbb2.sh
+bb/www/bb.html
+bb/www/bb2.html
+bb/www/index.html
 bb/www/bb-help.html
 bb/www/bb-info.html
 bb/www/bb-page.html
