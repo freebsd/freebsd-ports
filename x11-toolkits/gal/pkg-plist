@@ -78,3 +78,4 @@ share/gnome/etable/glade/e-table-group.glade
 @dirrm include/gal/e-text
 @dirrm include/gal/e-table
 @dirrm include/gal/e-paned
+@dirrm include/gal
