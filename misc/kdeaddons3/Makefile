@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS+=	noatun.0:${PORTSDIR}/audio/kdemultimedia3 \
 		SDL-1.1.4:${PORTSDIR}/devel/sdl12
