@@ -2,7 +2,7 @@
 .SH NAME
 pkg_cutleaves \- deinstall 'leaf' packages
 .SH SYNOPSIS
-.B pkg_cutleaves [-l] [-x] [-R]
+.B pkg_cutleaves [-c] [-l] [-x] [-R]
 .SH DESCRIPTION
 .B pkg_cutleaves
 finds installed 'leaf' packages, i.e. packages that are not referenced
@@ -18,6 +18,9 @@ Note that your package registry database should be up to date for this
 to work properly, so it might be a good idea to run pkgdb(1) before
 running pkg_cutleaves.
 .SH OPTIONS
+.IP -c
+When listing leaf packages, also print their comments/short
+descriptions. Will be ignored unless the '-l' parameter is given, too.
 .IP -l
 List leaf packages only, one per line, and don't ask for anything to be
 deinstalled.
