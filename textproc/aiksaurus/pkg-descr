@@ -1,0 +1,12 @@
+Aiksaurus is a set of libraries and applications which provide a thesaurus
+(currently English only, based on Guttenburg's Moby thesaurus) using native
+GUI on several platforms: UNIX (GTK+ & Qt), Win32 & MacOSX (Cocoa). The core
+library itself is platform-independent. The principal language is C++, with
+some use of Cocoa/ObjC++; wrappers are provided for C and Cocoa/ObjC.
+
+Aiksausus plugins exist for AbiWord on UNIX and Win32; the library is also
+used by Lyx; and the new Cocoa port provides a MacOSX NSService hook so that
+Safari and other such applications can use this thesaurus without
+Aiksaurus-specific development.
+
+WWW: http://aiksaurus.sourceforge.net/
