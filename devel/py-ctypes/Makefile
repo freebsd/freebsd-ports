@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ctypes
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.6
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,ctypes/,g}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	ctypes-${PORTVERSION}.tar.gz
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python module allowing to create and manipulate C data types

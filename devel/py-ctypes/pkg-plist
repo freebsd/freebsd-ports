@@ -3,4 +3,35 @@
 %%PYTHON_SITELIBDIR%%/ctypes/__init__.py
 %%PYTHON_SITELIBDIR%%/ctypes/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ctypes/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/decorators.py
+%%PYTHON_SITELIBDIR%%/ctypes/decorators.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/decorators.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/SDL.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/SDL.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/SDL.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/__init__.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/__init__.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/__init__.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/codegenerator.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/codegenerator.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/codegenerator.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/cparser.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/cparser.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/cparser.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/cparser_config.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/cparser_config.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/cparser_config.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/gccxmlparser.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/gccxmlparser.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/gccxmlparser.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/h2xml.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/h2xml.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/h2xml.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/typedesc.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/typedesc.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/typedesc.pyo
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/xml2py.py
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/xml2py.pyc
+%%PYTHON_SITELIBDIR%%/ctypes/wrap/xml2py.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/ctypes/wrap
 @dirrm %%PYTHON_SITELIBDIR%%/ctypes
