@@ -32,8 +32,8 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 .if defined(WITH_GTK2)
 RUN_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS+=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS+=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 CONFIGURE_ENV+=	_GTHREAD_LIBS="-lgthread-2.0"
 .else
 CONFIGURE_ARGS+=	--disable-gtk20

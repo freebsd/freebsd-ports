@@ -7,13 +7,14 @@
 
 PORTNAME=	groundhog
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://home-2.tiscali.nl/~cb007736/
 
 MAINTAINER=	edwin@mavetju.org
 
-LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20		\
-		glib-2.0.0:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	gtk-x11-2.200:${PORTSDIR}/x11-toolkits/gtk20		\
+		glib-2.0.200:${PORTSDIR}/devel/glib20
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
