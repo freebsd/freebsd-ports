@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- plugins/gb/Makefile.in.orig	Wed Nov  7 11:18:32 2001
-+++ plugins/gb/Makefile.in	Wed Nov  7 11:19:15 2001
-@@ -194,7 +194,7 @@
- gnum_gb_la_SOURCES =  	common.c				common.h				excel-gb-application.c			excel-gb-application.h			excel-gb-context.c			excel-gb-context.h			excel-gb-interior.c			excel-gb-interior.h			excel-gb-range.c			excel-gb-range.h			excel-gb-selection.c			excel-gb-selection.h			excel-gb-worksheet.c			excel-gb-worksheet.h			excel-gb-worksheets.c			excel-gb-worksheets.h			excel-gb-worksheet-function.c		excel-gb-worksheet-function.h		plugin.c				streams.h				streams.c
- 
- 
--gnum_gb_la_LIBADD =  	$(GB_LIBS)			$(GNUMERIC_LIBS)		-lm @GLIB_LIBS@ -lgb -lgbrun
-+gnum_gb_la_LIBADD =  	$(GB_LIBS)			$(GNUMERIC_LIBS)		-lm @GLIB_LIBS@ -lgbrun
+--- plugins/gb/Makefile.in.orig	Tue Dec 24 00:29:02 2002
++++ plugins/gb/Makefile.in	Tue Dec 24 00:29:57 2002
+@@ -311,7 +311,7 @@
+ gnum_gb_la_LIBADD = \
+ 	$(GB_LIBS)		\
+ 	$(GNUMERIC_LIBS)	\
+-	-lm @GLIB_LIBS@ -lgb -lgbrun
++	-lm @GLIB_LIBS@ -lgbrun
  
  
  xml_in_files = plugin.xml.in
