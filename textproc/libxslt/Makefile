@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.12
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxslt
@@ -23,5 +23,21 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN4=		libexslt.4 libxslt.4
 MAN1=		xsltproc.1
+
+.if !defined(WITHOUT_PYTHON)
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON:=""
+.else
+CONFIGURE_ARGS+=	--without-python
+PLIST_SUB+=	PYTHON:="@comment "
+PKGNAMESUFFIX=	-nopython
+.endif
+
+.if !defined(WITHOUT_PYTHON)
+pre-extract:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you don't want Python support, add WITHOUT_PYTHON=yes to command line"
+	@${ECHO_MSG} ""
+.endif
 
 .include <bsd.port.mk>
