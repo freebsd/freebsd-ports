@@ -1,18 +1,18 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jul 23 22:54:08 2001
-+++ configure	Wed Jul 25 11:10:28 2001
-@@ -641,7 +641,7 @@
+--- configure.orig	Thu Nov  8 09:28:08 2001
++++ configure	Tue Nov 13 15:47:41 2001
+@@ -646,7 +646,7 @@
+ #
  SDL_MAJOR_VERSION=1
  SDL_MINOR_VERSION=2
- SDL_MICRO_VERSION=2
--SDL_INTERFACE_AGE=2
-+SDL_INTERFACE_AGE=3
- SDL_BINARY_AGE=2
+-SDL_MICRO_VERSION=3
++SDL_MICRO_VERSION=2
+ SDL_INTERFACE_AGE=3
+ SDL_BINARY_AGE=3
  SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
- 
-@@ -654,9 +654,9 @@
+@@ -660,9 +660,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -24,7 +24,7 @@ $FreeBSD$
  
  
  
-@@ -3068,7 +3068,7 @@
+@@ -2774,7 +2774,7 @@
  
  
  SDL_CFLAGS=""
@@ -33,16 +33,7 @@ $FreeBSD$
  
  
  case "$target" in
-@@ -5445,7 +5445,7 @@
- int main() {
- 
-          VGLBitmap bitmap;
--         exit(bitmap.PyxelBytes);
-+         exit(bitmap.PixelBytes);
-         
- ; return 0; }
- EOF
-@@ -5712,8 +5712,8 @@
+@@ -5578,8 +5578,8 @@
  #            pthread_cflags="-D_REENTRANT -D_THREAD_SAFE"
              ;;
          *-*-freebsd*)
@@ -53,19 +44,3 @@ $FreeBSD$
              ;;
          *-*-netbsd*)
              pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
-@@ -6344,7 +6344,6 @@
-         CheckX11
-         CheckDGA
-         CheckSVGA
--        CheckVGL
-         CheckAAlib
-         CheckOpenGL
-         CheckPTHREAD
-@@ -6491,6 +6490,7 @@
-         ARCH=freebsd
-         CheckDummyVideo
-         CheckDiskAudio
-+        CheckVGL
-         CheckNASM
-         CheckOSS
-         CheckARTSC

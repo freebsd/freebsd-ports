@@ -15,6 +15,7 @@ include/SDL11/SDL_keysym.h
 include/SDL11/SDL_main.h
 include/SDL11/SDL_mouse.h
 include/SDL11/SDL_mutex.h
+include/SDL11/SDL_opengl.h
 include/SDL11/SDL_quit.h
 include/SDL11/SDL_rwops.h
 include/SDL11/SDL_syswm.h
@@ -110,6 +111,7 @@ share/doc/SDL11/docs/html/sdlenablekeyrepeat.html
 share/doc/SDL11/docs/html/sdlenableunicode.html
 share/doc/SDL11/docs/html/sdlevent.html
 share/doc/SDL11/docs/html/sdleventstate.html
+share/doc/SDL11/docs/html/sdlexposeevent.html
 share/doc/SDL11/docs/html/sdlfillrect.html
 share/doc/SDL11/docs/html/sdlflip.html
 share/doc/SDL11/docs/html/sdlfreecursor.html
@@ -120,6 +122,7 @@ share/doc/SDL11/docs/html/sdlgetappstate.html
 share/doc/SDL11/docs/html/sdlgetaudiostatus.html
 share/doc/SDL11/docs/html/sdlgetcliprect.html
 share/doc/SDL11/docs/html/sdlgetcursor.html
+share/doc/SDL11/docs/html/sdlgeterror.html
 share/doc/SDL11/docs/html/sdlgeteventfilter.html
 share/doc/SDL11/docs/html/sdlgetgammaramp.html
 share/doc/SDL11/docs/html/sdlgetkeyname.html
