@@ -5,7 +5,7 @@
 
 USERDIR=$HOME/.wolf3d
 
-if [ -x $USERDIR ]; then
+if [ -d $USERDIR ]; then
 	echo "wolf3d appears to be installed to $USERDIR/"
 	echo ""
 	echo "Basic options:"
