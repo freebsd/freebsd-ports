@@ -122,6 +122,7 @@
     SUBDIR += libdivxdecore
     SUBDIR += libdivxdecore-devel
     SUBDIR += libdjvu++
+    SUBDIR += libdvdcss
     SUBDIR += libflash
     SUBDIR += libfpx
     SUBDIR += libgdgeda
