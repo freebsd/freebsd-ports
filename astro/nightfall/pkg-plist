@@ -8,89 +8,90 @@ bin/nightfall
 %%GNOME:%%share/gnome/help/nightfall/de/topic.dat
 %%GNOME:%%share/gnome/pixmaps/gnome-nightfall.png
 share/locale/de/LC_MESSAGES/nightfall.mo
-%%NFDATADIR%%/nightfall/cfg/51_peg.cfg
-%%NFDATADIR%%/nightfall/cfg/bh_vir.cfg
-%%NFDATADIR%%/nightfall/cfg/dd_mon.cfg
-%%NFDATADIR%%/nightfall/cfg/er_vul.cfg
-%%NFDATADIR%%/nightfall/cfg/lz_cen.cfg
-%%NFDATADIR%%/nightfall/cfg/mr_cyg.cfg
-%%NFDATADIR%%/nightfall/cfg/ty_boo.cfg
-%%NFDATADIR%%/nightfall/cfg/v541_cyg.cfg
-%%NFDATADIR%%/nightfall/data/51_pegR1.dat
-%%NFDATADIR%%/nightfall/data/bh_virB.dat
-%%NFDATADIR%%/nightfall/data/bh_virR1.dat
-%%NFDATADIR%%/nightfall/data/bh_virR2.dat
-%%NFDATADIR%%/nightfall/data/bh_virV.dat
-%%NFDATADIR%%/nightfall/data/bh_virb.dat
-%%NFDATADIR%%/nightfall/data/bh_viru.dat
-%%NFDATADIR%%/nightfall/data/bh_virv.dat
-%%NFDATADIR%%/nightfall/data/bh_viry.dat
-%%NFDATADIR%%/nightfall/data/dd_monB.dat
-%%NFDATADIR%%/nightfall/data/dd_monR2.dat
-%%NFDATADIR%%/nightfall/data/dd_monV.dat
-%%NFDATADIR%%/nightfall/data/er_vulB.dat
-%%NFDATADIR%%/nightfall/data/er_vulI.dat
-%%NFDATADIR%%/nightfall/data/er_vulR.dat
-%%NFDATADIR%%/nightfall/data/er_vulR1.dat
-%%NFDATADIR%%/nightfall/data/er_vulR2.dat
-%%NFDATADIR%%/nightfall/data/er_vulU.dat
-%%NFDATADIR%%/nightfall/data/er_vulV.dat
-%%NFDATADIR%%/nightfall/data/lz_cenR1.dat
-%%NFDATADIR%%/nightfall/data/lz_cenR2.dat
-%%NFDATADIR%%/nightfall/data/lz_cenb.dat
-%%NFDATADIR%%/nightfall/data/lz_cenu.dat
-%%NFDATADIR%%/nightfall/data/lz_cenv.dat
-%%NFDATADIR%%/nightfall/data/lz_ceny.dat
-%%NFDATADIR%%/nightfall/data/mr_cygB.dat
-%%NFDATADIR%%/nightfall/data/mr_cygR1.dat
-%%NFDATADIR%%/nightfall/data/mr_cygR2.dat
-%%NFDATADIR%%/nightfall/data/mr_cygU.dat
-%%NFDATADIR%%/nightfall/data/mr_cygV.dat
-%%NFDATADIR%%/nightfall/data/ty_booB.dat
-%%NFDATADIR%%/nightfall/data/ty_booR1.dat
-%%NFDATADIR%%/nightfall/data/ty_booR2.dat
-%%NFDATADIR%%/nightfall/data/ty_booV.dat
-%%NFDATADIR%%/nightfall/data/v541_cygR1.dat
-%%NFDATADIR%%/nightfall/data/v541_cygR2.dat
-%%NFDATADIR%%/nightfall/data/v541_cygV.dat
-%%NFDATADIR%%/nightfall/doc/C/help0.txt
-%%NFDATADIR%%/nightfall/doc/C/help1.txt
-%%NFDATADIR%%/nightfall/doc/C/help2.txt
-%%NFDATADIR%%/nightfall/doc/C/help3.txt
-%%NFDATADIR%%/nightfall/doc/C/help4.txt
-%%NFDATADIR%%/nightfall/doc/C/help5.txt
-%%NFDATADIR%%/nightfall/doc/C/help6.txt
-%%NFDATADIR%%/nightfall/doc/C/help7.txt
-%%NFDATADIR%%/nightfall/doc/de/help0.txt
-%%NFDATADIR%%/nightfall/doc/de/help1.txt
-%%NFDATADIR%%/nightfall/doc/de/help2.txt
-%%NFDATADIR%%/nightfall/doc/de/help3.txt
-%%NFDATADIR%%/nightfall/doc/de/help4.txt
-%%NFDATADIR%%/nightfall/doc/de/help5.txt
-%%NFDATADIR%%/nightfall/doc/de/help6.txt
-%%NFDATADIR%%/nightfall/doc/de/help7.txt
-%%NFDATADIR%%/nightfall/pixmaps/checker_256.jpg
-%%NFDATADIR%%/nightfall/pixmaps/disk_128.jpg
-%%NFDATADIR%%/nightfall/pixmaps/disk_256.jpg
-%%NFDATADIR%%/nightfall/pixmaps/gnome-nightfall.png
-%%NFDATADIR%%/nightfall/pixmaps/manim.xpm
-%%NFDATADIR%%/nightfall/pixmaps/mcomp.xpm
-%%NFDATADIR%%/nightfall/pixmaps/mhelp.xpm
-%%NFDATADIR%%/nightfall/pixmaps/mplot.xpm
-%%NFDATADIR%%/nightfall/pixmaps/nf_logo.xpm
-%%NFDATADIR%%/nightfall/pixmaps/star_128.jpg
-%%NFDATADIR%%/nightfall/pixmaps/star_256.jpg
-%%NFDATADIR%%/nightfall/pixmaps/starp_128.jpg
-%%NFDATADIR%%/nightfall/pixmaps/starp_256.jpg
-%%NFDATADIR%%/nightfall/pixmaps/stars_128.jpg
-%%NFDATADIR%%/nightfall/pixmaps/stars_256.jpg
-@dirrm %%NFDATADIR%%/nightfall/pixmaps
-@dirrm %%NFDATADIR%%/nightfall/doc/de
-@dirrm %%NFDATADIR%%/nightfall/doc/C
-@dirrm %%NFDATADIR%%/nightfall/doc
-@dirrm %%NFDATADIR%%/nightfall/data
-@dirrm %%NFDATADIR%%/nightfall/cfg
-@dirrm %%NFDATADIR%%/nightfall
+share/locale/it/LC_MESSAGES/nightfall.mo
+%%DATADIR%%/cfg/51_peg.cfg
+%%DATADIR%%/cfg/bh_vir.cfg
+%%DATADIR%%/cfg/dd_mon.cfg
+%%DATADIR%%/cfg/er_vul.cfg
+%%DATADIR%%/cfg/lz_cen.cfg
+%%DATADIR%%/cfg/mr_cyg.cfg
+%%DATADIR%%/cfg/ty_boo.cfg
+%%DATADIR%%/cfg/v541_cyg.cfg
+%%DATADIR%%/data/51_pegR1.dat
+%%DATADIR%%/data/bh_virB.dat
+%%DATADIR%%/data/bh_virR1.dat
+%%DATADIR%%/data/bh_virR2.dat
+%%DATADIR%%/data/bh_virV.dat
+%%DATADIR%%/data/bh_virb.dat
+%%DATADIR%%/data/bh_viru.dat
+%%DATADIR%%/data/bh_virv.dat
+%%DATADIR%%/data/bh_viry.dat
+%%DATADIR%%/data/dd_monB.dat
+%%DATADIR%%/data/dd_monR2.dat
+%%DATADIR%%/data/dd_monV.dat
+%%DATADIR%%/data/er_vulB.dat
+%%DATADIR%%/data/er_vulI.dat
+%%DATADIR%%/data/er_vulR.dat
+%%DATADIR%%/data/er_vulR1.dat
+%%DATADIR%%/data/er_vulR2.dat
+%%DATADIR%%/data/er_vulU.dat
+%%DATADIR%%/data/er_vulV.dat
+%%DATADIR%%/data/lz_cenR1.dat
+%%DATADIR%%/data/lz_cenR2.dat
+%%DATADIR%%/data/lz_cenb.dat
+%%DATADIR%%/data/lz_cenu.dat
+%%DATADIR%%/data/lz_cenv.dat
+%%DATADIR%%/data/lz_ceny.dat
+%%DATADIR%%/data/mr_cygB.dat
+%%DATADIR%%/data/mr_cygR1.dat
+%%DATADIR%%/data/mr_cygR2.dat
+%%DATADIR%%/data/mr_cygU.dat
+%%DATADIR%%/data/mr_cygV.dat
+%%DATADIR%%/data/ty_booB.dat
+%%DATADIR%%/data/ty_booR1.dat
+%%DATADIR%%/data/ty_booR2.dat
+%%DATADIR%%/data/ty_booV.dat
+%%DATADIR%%/data/v541_cygR1.dat
+%%DATADIR%%/data/v541_cygR2.dat
+%%DATADIR%%/data/v541_cygV.dat
+%%DATADIR%%/doc/C/help0.txt
+%%DATADIR%%/doc/C/help1.txt
+%%DATADIR%%/doc/C/help2.txt
+%%DATADIR%%/doc/C/help3.txt
+%%DATADIR%%/doc/C/help4.txt
+%%DATADIR%%/doc/C/help5.txt
+%%DATADIR%%/doc/C/help6.txt
+%%DATADIR%%/doc/C/help7.txt
+%%DATADIR%%/doc/de/help0.txt
+%%DATADIR%%/doc/de/help1.txt
+%%DATADIR%%/doc/de/help2.txt
+%%DATADIR%%/doc/de/help3.txt
+%%DATADIR%%/doc/de/help4.txt
+%%DATADIR%%/doc/de/help5.txt
+%%DATADIR%%/doc/de/help6.txt
+%%DATADIR%%/doc/de/help7.txt
+%%DATADIR%%/pixmaps/checker_256.jpg
+%%DATADIR%%/pixmaps/disk_128.jpg
+%%DATADIR%%/pixmaps/disk_256.jpg
+%%DATADIR%%/pixmaps/gnome-nightfall.png
+%%DATADIR%%/pixmaps/manim.xpm
+%%DATADIR%%/pixmaps/mcomp.xpm
+%%DATADIR%%/pixmaps/mhelp.xpm
+%%DATADIR%%/pixmaps/mplot.xpm
+%%DATADIR%%/pixmaps/nf_logo.xpm
+%%DATADIR%%/pixmaps/star_128.jpg
+%%DATADIR%%/pixmaps/star_256.jpg
+%%DATADIR%%/pixmaps/starp_128.jpg
+%%DATADIR%%/pixmaps/starp_256.jpg
+%%DATADIR%%/pixmaps/stars_128.jpg
+%%DATADIR%%/pixmaps/stars_256.jpg
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/doc/de
+@dirrm %%DATADIR%%/doc/C
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/cfg
+@dirrm %%DATADIR%%
 %%GNOME:%%@dirrm share/gnome/help/nightfall/de
 %%GNOME:%%@dirrm share/gnome/help/nightfall/C
 %%GNOME:%%@dirrm share/gnome/help/nightfall
