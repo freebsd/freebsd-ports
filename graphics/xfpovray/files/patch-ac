@@ -17,7 +17,7 @@
  			
 -EXTRA_LIBRARIES = -L$(XFORMS_LIBDIR) ../flx/libflx.a -lforms -lm
 - EXTRA_INCLUDES = -I$(XFORMS_INCDIR) -I../flx
-+EXTRA_LIBRARIES = ../flx/libflx.a -lxforms -lm
++EXTRA_LIBRARIES = ../flx/libflx.a -lxforms $(XPMLIB) -lm
 + EXTRA_INCLUDES = -I../flx
    EXTRA_DEFINES = -DHELP_DIR=\"$(XFHELPDIR)\"
           LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)

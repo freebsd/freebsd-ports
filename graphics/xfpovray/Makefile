@@ -22,6 +22,6 @@ USE_IMAKE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	${PERL} -pi -e "s|\@LOCALBASE\@|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
+	${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
  ** Command to invoke POV-Ray 
  */
 -#define POV_COMMAND "/usr/local/bin/povray"
-+#define POV_COMMAND "@LOCALBASE@/bin/povray"
++#define POV_COMMAND "%%LOCALBASE%%/bin/povray"
  
   
  /* 
@@ -13,7 +13,7 @@
  ** the widget for a total of 5, even though POV-Ray supports more.
  */
 -#define POV_LIB_PATH "/usr/local/include/povray"
-+#define POV_LIB_PATH "@LOCALBASE@/lib/povray3/include"
++#define POV_LIB_PATH "%%LOCALBASE%%/lib/povray3/include"
   
   
  /* 
