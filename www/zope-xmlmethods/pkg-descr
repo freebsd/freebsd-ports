@@ -1,0 +1,6 @@
+ZopeXMLMethods provides methods to apply to Zope objects for XML/XSLT
+processing. XSLTMethod associates XSLT transformers with XML documents.
+ZopeXMLMethods succeeds the XMLTransform  plug-in. It features
+file-system caching and works with many XML/XSLT libraries.
+
+WWW: http://zopexmlmethods.sourceforge.net/
