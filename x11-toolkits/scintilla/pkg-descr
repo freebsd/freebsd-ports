@@ -1,0 +1,11 @@
+Scintilla is a free source code editing component. As well as features found in
+standard text editing components, Scintilla includes features especially useful
+when editing and debugging source code. These include support for syntax
+styling, error indicators, code completion and call tips. The selection margin
+can contain markers like those used in debuggers to indicate breakpoints and
+the current line. Styling choices are more open than with many editors,
+allowing the use of proportional fonts, bold and italics, multiple foreground
+and background colours and multiple fonts. It comes with complete source code
+and may be used in any free project or commercial product.
+
+WWW: http://www.scintilla.org/
