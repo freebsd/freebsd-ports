@@ -6527,6 +6527,7 @@ sslwrap		ports/security/sslwrap
 ssmtp		ports/mail/ssmtp
 ssserver	ports/www/ssserver
 sst		ports/security/sst
+ssync		ports/sysutils/ssync
 st		ports/devel/st
 stackless_python	ports/lang/stackless_python
 stallion	src/usr.sbin/stallion
