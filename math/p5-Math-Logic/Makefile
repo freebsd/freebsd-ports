@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module providing pure 2, 3 or multi-value logic
 
 USE_SIZE=	yes
