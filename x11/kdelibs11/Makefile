@@ -44,7 +44,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 MTREE_CMD=	${CAT} ${MTREE_FILE} ${FILESDIR}/kde.dist | /usr/sbin/mtree
 MTREE_ARGS=	-U -d -e -p
 
-pre-fetch:
+pre-extract:
 .if exists(${LOCALBASE}/include/kwin.h)
 	@${ECHO}
 	@${ECHO} "                      NOTICE"
