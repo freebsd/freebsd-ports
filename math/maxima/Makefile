@@ -6,36 +6,38 @@
 #
 
 PORTNAME=	maxima
-PORTVERSION=	5.6
+PORTVERSION=	5.9.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/maxima/ \
+MASTER_SITES=	http://unc.dl.sourceforge.net/sourceforge/maxima/ \
+		http://aleron.dl.sourceforge.net/sourceforge/maxima/ \
+		http://switch.dl.sourceforge.net/sourceforge/maxima/ \
+		http://heanet.dl.sourceforge.net/sourceforge/maxima/ \
+		http://umn.dl.sourceforge.net/sourceforge/maxima/ \
+		http://flow.dl.sourceforge.net/sourceforge/maxima/ \
+		http://belnet.dl.sourceforge.net/sourceforge/maxima/ \
+		http://easynews.dl.sourceforge.net/sourceforge/maxima/ \
+		http://twtelecom.dl.sourceforge.net/sourceforge/maxima/ \
+		http://cesnet.dl.sourceforge.net/sourceforge/maxima/ \
 		${MASTER_SITE_LOCAL}
-DISTNAME=	maxima-5.6
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sf@slappy.org
 COMMENT=	Maxima symbolic computation program
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
-LIB_DEPENDS=	tk83:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	${LOCALBASE}/bin/lisp:${PORTSDIR}/lang/cmucl \
-		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot
+		${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
+		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 
 USE_XLIB=	yes
-NO_BUILD=	yes
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
+USE_AUTOCONF=	yes
+CONFIGURE_ARGS+=	--prefix=${PREFIX} \
+			--with-posix-shell=${PREFIX}/bin/bash
+# don't pass "-s" to install to avoid trying to strip a shell script
+CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
 
-do-install:
-	-${MKDIR} ${PREFIX}/lib/${DISTNAME}
-	(cd ${WRKDIR} && tar fc - ${DISTNAME}) | (cd ${PREFIX}/lib && tar fx -)
-
-post-install:
-	(cd ${PREFIX}/lib/${DISTNAME}/src ; \
-		${CP} ${FILESDIR}/build.lisp . ; \
-		${LOCALBASE}/bin/lisp -eval '(load "build.lisp")' ; \
-		${RM} build.lisp *.x86f)
-	${SED} -e 's#@MAXIMAPREFIX@#${PREFIX}/lib/${DISTNAME}/#g ; \
-		s#@LISPPREFIX@#${LOCALBASE}/bin/#g' \
-		${FILESDIR}/maxima.sh >${LOCALBASE}/bin/maxima
-	${CHMOD} 755 ${LOCALBASE}/bin/maxima
+MAN1=		maxima.1
 
 .include <bsd.port.mk>
