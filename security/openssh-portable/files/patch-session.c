@@ -1,5 +1,5 @@
---- session.c.orig	Wed Jun 26 15:51:06 2002
-+++ session.c	Mon Jul  1 21:33:04 2002
+--- session.c.orig	Thu Sep 26 02:38:50 2002
++++ session.c	Thu Oct 17 06:31:34 2002
 @@ -64,6 +64,13 @@
  #define is_winnt       (GetVersion() < 0x80000000)
  #endif
@@ -14,7 +14,7 @@
  /* func */
  
  Session *session_new(void);
-@@ -474,6 +481,13 @@
+@@ -469,6 +476,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -28,7 +28,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -572,6 +586,9 @@
+@@ -574,6 +588,9 @@
  {
  	int fdout, ptyfd, ttyfd, ptymaster;
  	pid_t pid;
@@ -38,7 +38,7 @@
  
  	if (s == NULL)
  		fatal("do_exec_pty: no session");
-@@ -579,7 +596,16 @@
+@@ -581,7 +598,16 @@
  	ttyfd = s->ttyfd;
  
  #if defined(USE_PAM)
@@ -56,7 +56,7 @@
  	do_pam_setcred(1);
  #endif
  
-@@ -588,6 +614,14 @@
+@@ -591,6 +617,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -71,7 +71,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -714,6 +748,18 @@
+@@ -724,6 +758,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -90,7 +90,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -747,6 +793,72 @@
+@@ -757,6 +803,72 @@
  	}
  #endif
  
@@ -163,10 +163,10 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -759,7 +871,17 @@
- 		printf("%s\n", aixloginmsg);
+@@ -770,7 +882,17 @@
  #endif /* WITH_AIXAUTHENTICATE */
  
+ #ifndef NO_SSH_LASTLOG
 -	if (options.print_lastlog && s->last_login_time != 0) {
 +	/*
 +	 * If the user has logged in before, display the time of last
@@ -182,9 +182,9 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -770,7 +892,30 @@
- 			    s->hostname);
+@@ -782,7 +904,30 @@
  	}
+ #endif /* NO_SSH_LASTLOG */
  
 -	do_motd();
 +#ifdef HAVE_LOGIN_CAP
@@ -214,7 +214,7 @@
  }
  
  /*
-@@ -786,9 +931,9 @@
+@@ -798,9 +943,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -226,7 +226,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -815,10 +960,10 @@
+@@ -827,10 +972,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -239,7 +239,7 @@
  	return 0;
  }
  
-@@ -938,6 +1083,10 @@
+@@ -950,6 +1095,10 @@
  	char buf[256];
  	u_int i, envsize;
  	char **env;
@@ -250,7 +250,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -945,6 +1094,9 @@
+@@ -957,6 +1106,9 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -260,26 +260,7 @@
  #ifdef HAVE_CYGWIN
  	/*
  	 * The Windows environment contains some setting which are
-@@ -958,10 +1110,6 @@
- 		child_set_env(&env, &envsize, "USER", pw->pw_name);
- 		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
- 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
--#ifdef HAVE_LOGIN_CAP
--		(void) setusercontext(lc, pw, pw->pw_uid, LOGIN_SETPATH);
--		child_set_env(&env, &envsize, "PATH", getenv("PATH"));
--#else /* HAVE_LOGIN_CAP */
- # ifndef HAVE_CYGWIN
- 		/*
- 		 * There's no standard path on Windows. The path contains
-@@ -976,7 +1124,6 @@
- 		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
- #  endif /* SUPERUSER_PATH */
- # endif /* HAVE_CYGWIN */
--#endif /* HAVE_LOGIN_CAP */
- 
- 		snprintf(buf, sizeof buf, "%.200s/%.50s",
- 			 _PATH_MAILDIR, pw->pw_name);
-@@ -984,9 +1131,21 @@
+@@ -998,9 +1150,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -303,16 +284,16 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1174,7 +1333,7 @@
+@@ -1208,7 +1372,7 @@
  		setpgid(0, 0);
- #endif
+ # endif
  		if (setusercontext(lc, pw, pw->pw_uid,
 -		    (LOGIN_SETALL & ~LOGIN_SETPATH)) < 0) {
 +		    (LOGIN_SETALL & ~(LOGIN_SETENV|LOGIN_SETPATH))) < 0) {
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1325,7 +1484,7 @@
+@@ -1362,7 +1526,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -321,7 +302,7 @@
  		close(i);
  
  	/*
-@@ -1355,6 +1514,31 @@
+@@ -1392,6 +1556,31 @@
  			exit(1);
  #endif
  	}
