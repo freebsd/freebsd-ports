@@ -7,6 +7,7 @@
 
 PORTNAME=	emil
 PORTVERSION=	2.1b9
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://ftp.gwdg.de/pub/misc/emil/ \
@@ -15,12 +16,11 @@ MASTER_SITES=	ftp://ftp.uu.se/pub/unix/networking/mail/emil/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.uu.se/pub/unix/networking/mail/emil/
 DISTNAME=	${PORTNAME}-2.1.0-beta9
 
-FORBIDDEN=	http://vuxml.freebsd.org/ce46b93a-80f2-11d8-9645-0020ed76ef5a.html
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mail format/encoding converter
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	YACC=byacc
 MAN1=		emil.1 emil.cf.1
 
 .if defined(NOPORTDOCS)
