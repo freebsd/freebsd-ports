@@ -1,0 +1,22 @@
+from the home page:
+
+   BadWM is
+     * a minimalistic window manager for the X Window System licensed
+       under the GNU General Public License.
+     * based on evilwm - less evil, but quite bad.
+     * kindly hosted at Sourceforge
+     * written by Robert Annessi
+       
+   FEATURES:
+     * No window decorations apart from a simple 1 pixel border.
+     * No icons.
+     * Good keyboard control including repositioning and maximising toggles.
+     * Virtual desktops.
+     * Small binary size.
+     * Intellegent window placement 
+     * Intellegent window resizing
+     * Snap to edge.
+     * Snap to border.
+     * Multihead support.
+
+WWW:  http://badwm.sourceforge.net/
