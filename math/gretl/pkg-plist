@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gretl
 bin/gretl_x11
 bin/gretlcli
@@ -16,6 +17,7 @@ include/gretl/estimate.h
 include/gretl/generate.h
 include/gretl/graphing.h
 include/gretl/gretl_utils.h
+include/gretl/gretl_win32.h
 include/gretl/interact.h
 include/gretl/internal.h
 include/gretl/libgretl.h
@@ -25,20 +27,23 @@ include/gretl/monte_carlo.h
 include/gretl/nonparam.h
 include/gretl/printout.h
 include/gretl/pvalues.h
+include/gretl/random.h
 include/gretl/strutils.h
 include/gretl/subsample.h
+include/gretl/system.h
 include/gretl/texprint.h
 include/gretl/var.h
 include/gretl/version.h
-include/gretl/win32.h
-lib/gretl/excel_import-2.so
-lib/gretl/gnumeric_import-2.so
+lib/gretl/excel_import.so
+lib/gretl/gnumeric_import.so
+lib/gretl/johansen.so
 lib/gretl/lad.so
 lib/gretl/mp_ols.so
 lib/gretl/panel_data.so
-lib/gretl/progress_bar-2.so
+lib/gretl/progress_bar.so
 lib/gretl/range-mean.so
 lib/gretl/stats_tables.so
+lib/gretl/sur.so
 lib/libgretl-1.0.a
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.0
@@ -143,6 +148,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/gretl/data/greene/greene10_3.gdt
 %%DATADIR%%/gretl/data/greene/greene11_3.gdt
 %%DATADIR%%/gretl/data/greene/greene12_1.gdt
+%%DATADIR%%/gretl/data/greene/greene13_1.gdt
 %%DATADIR%%/gretl/data/greene/greene18_1.gdt
 %%DATADIR%%/gretl/data/greene/greene18_2.gdt
 %%DATADIR%%/gretl/data/greene/greene19_1.gdt
@@ -150,18 +156,18 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/gretl/data/greene/greene8_3.gdt
 %%DATADIR%%/gretl/data/greene/greene9_1.gdt
 %%DATADIR%%/gretl/data/greene/wg_descriptions
+%%DATADIR%%/gretl/data/gretldata.dtd
+%%DATADIR%%/gretl/data/hamilton.gdt
 %%DATADIR%%/gretl/data/longley.gdt
-%%DATADIR%%/gretl/db/README
 %%DATADIR%%/gretl/db/bcih.bin
 %%DATADIR%%/gretl/db/bcih.idx
 %%DATADIR%%/gretl/gretl-logo.xpm
 %%DATADIR%%/gretl/gretl.hlp
-%%DATADIR%%/gretl/gretl.hlp.es
 %%DATADIR%%/gretl/gretl.stamp
 %%DATADIR%%/gretl/gretlcli.hlp
-%%DATADIR%%/gretl/gretlcli.hlp.es
 %%DATADIR%%/gretl/scripts/greene11_3.inp
 %%DATADIR%%/gretl/scripts/greene12_1.inp
+%%DATADIR%%/gretl/scripts/greene14_2.inp
 %%DATADIR%%/gretl/scripts/greene18_6.inp
 %%DATADIR%%/gretl/scripts/greene19_1.inp
 %%DATADIR%%/gretl/scripts/greene7_8.inp
@@ -241,6 +247,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/gretl/scripts/ps9-8.inp
 %%DATADIR%%/gretl/scripts/ps9-9.inp
 %%DATADIR%%/gretl/scripts/ps_descriptions
+%%DATADIR%%/gretl/scripts/pscoin.inp
 %%DATADIR%%/gretl/scripts/testinp
 %%DATADIR%%/gretl/scripts/wg_ps_descriptions
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/chapters/appendices.xml
@@ -261,7 +268,6 @@ libdata/pkgconfig/gretl.pc
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/adf2.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/autocorr.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/caution.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/chisqu.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/corc.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/cumulate.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/datafiles.png
@@ -270,23 +276,17 @@ libdata/pkgconfig/gretl.pc
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/important.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/ldx.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/ldy.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/linreg.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/mainwin.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/menubar.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/modelwin.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/nonlin.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/note.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/plot_control.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/resid.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/scriptwin.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/selector.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/session.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/tip.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/tipbak.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/toolbar.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/uhatsq.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/warning.png
-%%GNOME2:%%%%DATADIR%%/help/gretl/C/figures/yhat.png
 %%GNOME2:%%%%DATADIR%%/help/gretl/C/gretl.xml
 %%GNOME2:%%%%DATADIR%%/mime-info/gretl.keys
 %%GNOME2:%%%%DATADIR%%/mime-info/gretl.mime
@@ -297,6 +297,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME2:%%%%DATADIR%%/pixmaps/gretl.png
 share/locale/es/LC_MESSAGES/gretl.mo
 share/locale/fr/LC_MESSAGES/gretl.mo
+share/locale/ja/LC_MESSAGES/gretl.mo
 %%GNOME2:%%@dirrm %%DATADIR%%/omf/gretl
 %%GNOME2:%%@dirrm %%DATADIR%%/help/gretl/C/figures
 %%GNOME2:%%@dirrm %%DATADIR%%/help/gretl/C/chapters

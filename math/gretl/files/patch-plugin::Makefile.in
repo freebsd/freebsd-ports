@@ -1,5 +1,5 @@
---- plugin/Makefile.in.orig	Fri Oct 11 03:03:46 2002
-+++ plugin/Makefile.in	Mon Oct 21 10:23:25 2002
+--- plugin/Makefile.in.orig	Wed Apr  9 08:46:09 2003
++++ plugin/Makefile.in	Mon Apr 14 12:45:07 2003
 @@ -8,6 +8,10 @@
  INSTALL = @INSTALL@
  LN = @LN_S@
@@ -11,27 +11,27 @@
  have_gtk = @have_gtk@
  GTK_CFLAGS = @GTK_CFLAGS@
  GTK_LIBS = @GTK_LIBS@
-@@ -31,8 +35,8 @@
+@@ -36,8 +40,8 @@
  override CFLAGS += -I.. -DHAVE_CONFIG_H
  
- LIBTOOL = $(topsrc)/libtool
+ LIBTOOL = ../libtool
 -COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
--LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -shared
+-LINK = $(LIBTOOL) --mode=link $(CC) -module -avoid-version -rpath $(plugindir)
 +COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) $(CPPFLAGS)
-+LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -shared $(LDFLAGS)
++LINK = $(LIBTOOL) --mode=link $(CC) -module -avoid-version -rpath $(plugindir) $(LDFLAGS)
  
  GRETLINC = -I$(topsrc)/lib/src
- GRETLLIB = ../lib/libgretl.la
-@@ -47,7 +51,7 @@
-   PROGRESS_PLUGIN = progress_bar.so
-   GNUMERIC_PLUGIN = gnumeric_import.so
-   EXCEL_PLUGIN = excel_import.so
--  GRETL_LIBOLE2_CFLAGS := -I. $(shell glib-config --cflags)
-+  GRETL_LIBOLE2_CFLAGS := -I. $(shell $(GLIB_CONFIG) --cflags)
+ GRETLLIB = ../lib/libgretl-1.0.la
+@@ -46,7 +50,7 @@
+   GTK_CFLAGS += -DGTK_DISABLE_DEPRECATED
+   GRETL_LIBOLE2_CFLAGS := -I$(topsrc)/plugin $(shell pkg-config --cflags glib-2.0)
+ else
+-  GRETL_LIBOLE2_CFLAGS := -I$(topsrc)/plugin $(shell glib-config --cflags)
++  GRETL_LIBOLE2_CFLAGS := -I$(topsrc)/plugin $(shell $(GLIB_CONFIG) --cflags)
  endif  
  
- PLUGINS = stats_tables.so panel_data.so des_import.so range-mean.so lad.so \
-@@ -156,11 +160,11 @@
+ SRCS = excel_import.c gnumeric_import.c gretl_matrix.c import_common.c \
+@@ -130,15 +134,15 @@
  .PHONY: 
  
  install: $(PLUGINS) installdirs
@@ -43,5 +43,10 @@
 -	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) -s \
 +	$(LIBTOOL) --mode=install $(INSTALL_DATA) -s \
  	$(PLUGINS) $(plugindir)
+ 
+ install-lapack: $(GRETLLIB) $(LAPACK_PLUGINS) installdirs
+-	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) \
++	$(LIBTOOL) --mode=install $(INSTALL_DATA) \
+ 	$(LAPACK_PLUGINS) $(plugindir)
  
  installdirs:
