@@ -63,6 +63,12 @@ post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
+post-patch:
+.if !defined(WITH_MOTIF)
+	@${PERL} -pi -e 's/nsplugin//' \
+		${WRKSRC}/konqueror/konqueror_config.desktop
+.endif
+
 pre-configure:
 	${MKDIR} ${WRKSRC}/auto-bin
 .for AC in autoconf autoheader
