@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run
 
 MAN8=		stunnel.8
+CONFIGURE_ENV+= LOCALBASE=${LOCALBASE}
 
 cert:
 	@(cd ${WRKSRC}; make cert)
