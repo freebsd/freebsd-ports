@@ -1,4 +1,4 @@
-DNScache is a collection of Domain Name System tools. It includes
+DJBDNS is a collection of Domain Name System tools. It includes
 several components:
 
   * The dnscache program is a local DNS cache. It accepts recursive DNS
@@ -20,4 +20,4 @@ several components:
   * The dnsq and dnstrace programs are DNS debugging tools.
 
 Documentation is at the website below,
-WWW: http://cr.yp.to/dnscache.html
+WWW: http://cr.yp.to/djbdns.html
