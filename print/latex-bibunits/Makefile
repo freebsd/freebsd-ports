@@ -17,24 +17,22 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package allows separate bibliographies
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	tex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
+		tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEX_BIN=	${LOCALBASE}/bin/tex
+
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
+CLASS_FILES=	bibunits.sty bibunits.ins bibunits.dtx
 
 DOC_FILES=	00Readme
-
-CLASS_FILES=	bibunits.sty
-CLASS_FILES+=	bibunits.ins bibunits.dtx
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -42,6 +40,18 @@ do-extract:
 
 do-build:
 	cd ${WRKSRC} && ${TEX_BIN} bibunits.ins
+	(for F in ${CLASS_FILES}; do \
+			${ECHO_CMD} "${CLASSDIR}/$${F}"; \
+		done;\
+	${ECHO_CMD} "@dirrm ${CLASSDIR}" ) > ${PLIST}
+.if !defined(NOPORTDOCS)
+	(for F in ${DOC_FILES}; do \
+			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
+		done;\
+	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
+.endif
+	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}

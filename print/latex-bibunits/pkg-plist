@@ -1,9 +1,0 @@
-@comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/00Readme
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%CLASSDIR%%/bibunits.dtx
-%%CLASSDIR%%/bibunits.ins
-%%CLASSDIR%%/bibunits.sty
-@dirrm %%CLASSDIR%%
-@exec %%MKTEXLSR%%
-@unexec %%MKTEXLSR%%
