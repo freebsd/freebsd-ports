@@ -1,207 +1,230 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/.packlist
-%%SITE_PERL%%/Mail/Transport.pod
-%%SITE_PERL%%/Mail/Message.pod
-%%SITE_PERL%%/Mail/Box.pm
-%%SITE_PERL%%/Mail/Reporter.pod
-%%SITE_PERL%%/Mail/Transport.pm
-%%SITE_PERL%%/Mail/Reporter.pm
-%%SITE_PERL%%/Mail/Message.pm
 %%SITE_PERL%%/Mail/Box-Cookbook.pod
 %%SITE_PERL%%/Mail/Box-Overview.pod
+%%SITE_PERL%%/Mail/Box.pm
 %%SITE_PERL%%/Mail/Box.pod
-%%SITE_PERL%%/Mail/Transport/Sendmail.pod
-%%SITE_PERL%%/Mail/Transport/Sendmail.pm
-%%SITE_PERL%%/Mail/Transport/IMAP4.pod
-%%SITE_PERL%%/Mail/Transport/Receive.pm
-%%SITE_PERL%%/Mail/Transport/Send.pm
-%%SITE_PERL%%/Mail/Transport/IMAP4.pm
-%%SITE_PERL%%/Mail/Transport/SMTP.pm
-%%SITE_PERL%%/Mail/Transport/SMTP.pod
-%%SITE_PERL%%/Mail/Transport/Mailx.pod
-%%SITE_PERL%%/Mail/Transport/Exim.pm
-%%SITE_PERL%%/Mail/Transport/POP3.pod
-%%SITE_PERL%%/Mail/Transport/Exim.pod
-%%SITE_PERL%%/Mail/Transport/Qmail.pm
-%%SITE_PERL%%/Mail/Transport/Send.pod
-%%SITE_PERL%%/Mail/Transport/POP3.pm
-%%SITE_PERL%%/Mail/Transport/Receive.pod
-%%SITE_PERL%%/Mail/Transport/Qmail.pod
-%%SITE_PERL%%/Mail/Transport/Mailx.pm
-%%SITE_PERL%%/Mail/Message/TransferEnc.pm
-%%SITE_PERL%%/Mail/Message/Dummy.pm
-%%SITE_PERL%%/Mail/Message/Field.pod
-%%SITE_PERL%%/Mail/Message/Dummy.pod
-%%SITE_PERL%%/Mail/Message/Body.pod
-%%SITE_PERL%%/Mail/Message/Convert.pm
-%%SITE_PERL%%/Mail/Message/Convert.pod
-%%SITE_PERL%%/Mail/Message/Part.pm
-%%SITE_PERL%%/Mail/Message/Head.pod
-%%SITE_PERL%%/Mail/Message/Construct.pm
-%%SITE_PERL%%/Mail/Message/Part.pod
-%%SITE_PERL%%/Mail/Message/Field.pm
-%%SITE_PERL%%/Mail/Message/Body.pm
-%%SITE_PERL%%/Mail/Message/Head.pm
-%%SITE_PERL%%/Mail/Message/TransferEnc.pod
-%%SITE_PERL%%/Mail/Message/Construct.pod
-%%SITE_PERL%%/Mail/Message/Wrapper/SpamAssassin.pm
-%%SITE_PERL%%/Mail/Message/Wrapper/SpamAssassin.pod
-%%SITE_PERL%%/Mail/Message/TransferEnc/EightBit.pod
-%%SITE_PERL%%/Mail/Message/TransferEnc/Base64.pod
-%%SITE_PERL%%/Mail/Message/TransferEnc/Binary.pm
-%%SITE_PERL%%/Mail/Message/TransferEnc/QuotedPrint.pm
-%%SITE_PERL%%/Mail/Message/TransferEnc/QuotedPrint.pod
-%%SITE_PERL%%/Mail/Message/TransferEnc/Binary.pod
-%%SITE_PERL%%/Mail/Message/TransferEnc/SevenBit.pm
-%%SITE_PERL%%/Mail/Message/TransferEnc/SevenBit.pod
-%%SITE_PERL%%/Mail/Message/TransferEnc/Base64.pm
-%%SITE_PERL%%/Mail/Message/TransferEnc/EightBit.pm
-%%SITE_PERL%%/Mail/Message/Convert/Html.pm
-%%SITE_PERL%%/Mail/Message/Convert/Html.pod
-%%SITE_PERL%%/Mail/Message/Convert/MimeEntity.pod
-%%SITE_PERL%%/Mail/Message/Convert/MimeEntity.pm
-%%SITE_PERL%%/Mail/Message/Convert/TextAutoformat.pod
-%%SITE_PERL%%/Mail/Message/Convert/TextAutoformat.pm
-%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatPS.pod
-%%SITE_PERL%%/Mail/Message/Convert/MailInternet.pod
-%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatText.pod
-%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatText.pm
-%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatPS.pm
-%%SITE_PERL%%/Mail/Message/Convert/MailInternet.pm
-%%SITE_PERL%%/Mail/Message/Field/Fast.pm
-%%SITE_PERL%%/Mail/Message/Field/AddrGroup.pod
-%%SITE_PERL%%/Mail/Message/Field/Unstructured.pm
-%%SITE_PERL%%/Mail/Message/Field/Flex.pm
-%%SITE_PERL%%/Mail/Message/Field/Address.pod
-%%SITE_PERL%%/Mail/Message/Field/Attribute.pod
-%%SITE_PERL%%/Mail/Message/Field/AddrGroup.pm
-%%SITE_PERL%%/Mail/Message/Field/Addresses.pm
-%%SITE_PERL%%/Mail/Message/Field/Full.pod
-%%SITE_PERL%%/Mail/Message/Field/Flex.pod
-%%SITE_PERL%%/Mail/Message/Field/Address.pm
-%%SITE_PERL%%/Mail/Message/Field/Addresses.pod
-%%SITE_PERL%%/Mail/Message/Field/Unstructured.pod
-%%SITE_PERL%%/Mail/Message/Field/Fast.pod
-%%SITE_PERL%%/Mail/Message/Field/Attribute.pm
-%%SITE_PERL%%/Mail/Message/Field/Full.pm
-%%SITE_PERL%%/Mail/Message/Body/Multipart.pm
-%%SITE_PERL%%/Mail/Message/Body/Nested.pod
-%%SITE_PERL%%/Mail/Message/Body/Multipart.pod
-%%SITE_PERL%%/Mail/Message/Body/Nested.pm
-%%SITE_PERL%%/Mail/Message/Body/Lines.pod
-%%SITE_PERL%%/Mail/Message/Body/Lines.pm
-%%SITE_PERL%%/Mail/Message/Body/Construct.pm
-%%SITE_PERL%%/Mail/Message/Body/Encode.pod
-%%SITE_PERL%%/Mail/Message/Body/Delayed.pm
-%%SITE_PERL%%/Mail/Message/Body/String.pod
-%%SITE_PERL%%/Mail/Message/Body/File.pm
-%%SITE_PERL%%/Mail/Message/Body/Encode.pm
-%%SITE_PERL%%/Mail/Message/Body/Delayed.pod
-%%SITE_PERL%%/Mail/Message/Body/File.pod
-%%SITE_PERL%%/Mail/Message/Body/String.pm
-%%SITE_PERL%%/Mail/Message/Body/Construct.pod
-%%SITE_PERL%%/Mail/Message/Head/Complete.pm
-%%SITE_PERL%%/Mail/Message/Head/Complete.pod
-%%SITE_PERL%%/Mail/Message/Head/ResentGroup.pod
-%%SITE_PERL%%/Mail/Message/Head/Delayed.pod
-%%SITE_PERL%%/Mail/Message/Head/ResentGroup.pm
-%%SITE_PERL%%/Mail/Message/Head/Delayed.pm
-%%SITE_PERL%%/Mail/Message/Head/Subset.pod
-%%SITE_PERL%%/Mail/Message/Head/Subset.pm
-%%SITE_PERL%%/Mail/Box/Mbox.pod
-%%SITE_PERL%%/Mail/Box/File.pod
-%%SITE_PERL%%/Mail/Box/Manager.pm
-%%SITE_PERL%%/Mail/Box/Message.pod
-%%SITE_PERL%%/Mail/Box/File.pm
-%%SITE_PERL%%/Mail/Box/Net.pod
-%%SITE_PERL%%/Mail/Box/IMAP4.pod
-%%SITE_PERL%%/Mail/Box/Locker.pm
-%%SITE_PERL%%/Mail/Box/IMAP4.pm
-%%SITE_PERL%%/Mail/Box/POP3.pm
-%%SITE_PERL%%/Mail/Box/Search.pm
+%%SITE_PERL%%/Mail/Box/Dbx.pod
+%%SITE_PERL%%/Mail/Box/Dbx.pm
+%%SITE_PERL%%/Mail/Box/Dbx/Message.pod
+%%SITE_PERL%%/Mail/Box/Dbx/Message.pm
 %%SITE_PERL%%/Mail/Box/Dir.pm
-%%SITE_PERL%%/Mail/Box/Locker.pod
-%%SITE_PERL%%/Mail/Box/Tie.pod
-%%SITE_PERL%%/Mail/Box/Maildir.pod
 %%SITE_PERL%%/Mail/Box/Dir.pod
-%%SITE_PERL%%/Mail/Box/Mbox.pm
-%%SITE_PERL%%/Mail/Box/POP3.pod
-%%SITE_PERL%%/Mail/Box/Message.pm
-%%SITE_PERL%%/Mail/Box/Manager.pod
-%%SITE_PERL%%/Mail/Box/MH.pm
-%%SITE_PERL%%/Mail/Box/Search.pod
-%%SITE_PERL%%/Mail/Box/Parser.pod
-%%SITE_PERL%%/Mail/Box/Tie.pm
-%%SITE_PERL%%/Mail/Box/Parser.pm
-%%SITE_PERL%%/Mail/Box/Net.pm
-%%SITE_PERL%%/Mail/Box/Maildir.pm
-%%SITE_PERL%%/Mail/Box/MH.pod
-%%SITE_PERL%%/Mail/Box/Mbox/Message.pod
-%%SITE_PERL%%/Mail/Box/Mbox/Message.pm
-%%SITE_PERL%%/Mail/Box/Tie/HASH.pod
-%%SITE_PERL%%/Mail/Box/Tie/HASH.pm
-%%SITE_PERL%%/Mail/Box/Tie/ARRAY.pm
-%%SITE_PERL%%/Mail/Box/Tie/ARRAY.pod
-%%SITE_PERL%%/Mail/Box/Maildir/Message.pm
-%%SITE_PERL%%/Mail/Box/Maildir/Message.pod
-%%SITE_PERL%%/Mail/Box/Parser/Perl.pod
-%%SITE_PERL%%/Mail/Box/Parser/Perl.pm
-%%SITE_PERL%%/Mail/Box/Dir/Message.pod
 %%SITE_PERL%%/Mail/Box/Dir/Message.pm
-%%SITE_PERL%%/Mail/Box/Search/IMAP.pod
-%%SITE_PERL%%/Mail/Box/Search/Grep.pod
-%%SITE_PERL%%/Mail/Box/Search/IMAP.pm
-%%SITE_PERL%%/Mail/Box/Search/Grep.pm
-%%SITE_PERL%%/Mail/Box/Search/SpamAssassin.pod
-%%SITE_PERL%%/Mail/Box/Search/SpamAssassin.pm
-%%SITE_PERL%%/Mail/Box/File/Message.pod
+%%SITE_PERL%%/Mail/Box/Dir/Message.pod
+%%SITE_PERL%%/Mail/Box/File.pm
+%%SITE_PERL%%/Mail/Box/File.pod
 %%SITE_PERL%%/Mail/Box/File/Message.pm
+%%SITE_PERL%%/Mail/Box/File/Message.pod
+%%SITE_PERL%%/Mail/Box/IMAP4.pm
+%%SITE_PERL%%/Mail/Box/IMAP4.pod
 %%SITE_PERL%%/Mail/Box/IMAP4/Message.pm
 %%SITE_PERL%%/Mail/Box/IMAP4/Message.pod
-%%SITE_PERL%%/Mail/Box/MH/Labels.pm
-%%SITE_PERL%%/Mail/Box/MH/Index.pm
-%%SITE_PERL%%/Mail/Box/MH/Message.pod
-%%SITE_PERL%%/Mail/Box/MH/Index.pod
-%%SITE_PERL%%/Mail/Box/MH/Message.pm
-%%SITE_PERL%%/Mail/Box/MH/Labels.pod
-%%SITE_PERL%%/Mail/Box/Locker/DotLock.pod
-%%SITE_PERL%%/Mail/Box/Locker/Flock.pod
-%%SITE_PERL%%/Mail/Box/Locker/NFS.pm
+%%SITE_PERL%%/Mail/Box/Locker.pm
+%%SITE_PERL%%/Mail/Box/Locker.pod
 %%SITE_PERL%%/Mail/Box/Locker/DotLock.pm
-%%SITE_PERL%%/Mail/Box/Locker/POSIX.pod
-%%SITE_PERL%%/Mail/Box/Locker/POSIX.pm
-%%SITE_PERL%%/Mail/Box/Locker/Multi.pod
-%%SITE_PERL%%/Mail/Box/Locker/NFS.pod
-%%SITE_PERL%%/Mail/Box/Locker/Multi.pm
+%%SITE_PERL%%/Mail/Box/Locker/DotLock.pod
 %%SITE_PERL%%/Mail/Box/Locker/Flock.pm
-%%SITE_PERL%%/Mail/Box/Net/Message.pod
+%%SITE_PERL%%/Mail/Box/Locker/Flock.pod
+%%SITE_PERL%%/Mail/Box/Locker/Multi.pm
+%%SITE_PERL%%/Mail/Box/Locker/Multi.pod
+%%SITE_PERL%%/Mail/Box/Locker/NFS.pm
+%%SITE_PERL%%/Mail/Box/Locker/NFS.pod
+%%SITE_PERL%%/Mail/Box/Locker/POSIX.pm
+%%SITE_PERL%%/Mail/Box/Locker/POSIX.pod
+%%SITE_PERL%%/Mail/Box/MH.pm
+%%SITE_PERL%%/Mail/Box/MH.pod
+%%SITE_PERL%%/Mail/Box/MH/Index.pm
+%%SITE_PERL%%/Mail/Box/MH/Index.pod
+%%SITE_PERL%%/Mail/Box/MH/Labels.pm
+%%SITE_PERL%%/Mail/Box/MH/Labels.pod
+%%SITE_PERL%%/Mail/Box/MH/Message.pm
+%%SITE_PERL%%/Mail/Box/MH/Message.pod
+%%SITE_PERL%%/Mail/Box/Maildir.pm
+%%SITE_PERL%%/Mail/Box/Maildir.pod
+%%SITE_PERL%%/Mail/Box/Maildir/Message.pm
+%%SITE_PERL%%/Mail/Box/Maildir/Message.pod
+%%SITE_PERL%%/Mail/Box/Manager.pm
+%%SITE_PERL%%/Mail/Box/Manager.pod
+%%SITE_PERL%%/Mail/Box/Mbox.pm
+%%SITE_PERL%%/Mail/Box/Mbox.pod
+%%SITE_PERL%%/Mail/Box/Mbox/Message.pm
+%%SITE_PERL%%/Mail/Box/Mbox/Message.pod
+%%SITE_PERL%%/Mail/Box/Message.pm
+%%SITE_PERL%%/Mail/Box/Message.pod
+%%SITE_PERL%%/Mail/Message/Head/Partial.pm
+%%SITE_PERL%%/Mail/Message/Head/Partial.pod
+%%SITE_PERL%%/Mail/Box/Net.pm
+%%SITE_PERL%%/Mail/Box/Net.pod
 %%SITE_PERL%%/Mail/Box/Net/Message.pm
+%%SITE_PERL%%/Mail/Box/Net/Message.pod
+%%SITE_PERL%%/Mail/Box/POP3.pm
+%%SITE_PERL%%/Mail/Box/POP3.pod
 %%SITE_PERL%%/Mail/Box/POP3/Message.pm
 %%SITE_PERL%%/Mail/Box/POP3/Message.pod
-%%SITE_PERL%%/Mail/Box/Thread/Node.pod
-%%SITE_PERL%%/Mail/Box/Thread/Node.pm
-%%SITE_PERL%%/Mail/Box/Thread/Manager.pod
+%%SITE_PERL%%/Mail/Box/Parser.pm
+%%SITE_PERL%%/Mail/Box/Parser.pod
+%%SITE_PERL%%/Mail/Box/Parser/Perl.pm
+%%SITE_PERL%%/Mail/Box/Parser/Perl.pod
+%%SITE_PERL%%/Mail/Box/Search.pm
+%%SITE_PERL%%/Mail/Box/Search.pod
+%%SITE_PERL%%/Mail/Box/Search/Grep.pm
+%%SITE_PERL%%/Mail/Box/Search/Grep.pod
+%%SITE_PERL%%/Mail/Box/Search/IMAP.pm
+%%SITE_PERL%%/Mail/Box/Search/IMAP.pod
+%%SITE_PERL%%/Mail/Box/Search/SpamAssassin.pm
+%%SITE_PERL%%/Mail/Box/Search/SpamAssassin.pod
 %%SITE_PERL%%/Mail/Box/Thread/Manager.pm
+%%SITE_PERL%%/Mail/Box/Thread/Manager.pod
+%%SITE_PERL%%/Mail/Box/Thread/Node.pm
+%%SITE_PERL%%/Mail/Box/Thread/Node.pod
+%%SITE_PERL%%/Mail/Box/Tie.pm
+%%SITE_PERL%%/Mail/Box/Tie.pod
+%%SITE_PERL%%/Mail/Box/Tie/ARRAY.pm
+%%SITE_PERL%%/Mail/Box/Tie/ARRAY.pod
+%%SITE_PERL%%/Mail/Box/Tie/HASH.pm
+%%SITE_PERL%%/Mail/Box/Tie/HASH.pod
+%%SITE_PERL%%/Mail/Message.pm
+%%SITE_PERL%%/Mail/Message.pod
+%%SITE_PERL%%/Mail/Message/Body.pm
+%%SITE_PERL%%/Mail/Message/Body.pod
+%%SITE_PERL%%/Mail/Message/Body/Construct.pm
+%%SITE_PERL%%/Mail/Message/Body/Construct.pod
+%%SITE_PERL%%/Mail/Message/Body/Delayed.pm
+%%SITE_PERL%%/Mail/Message/Body/Delayed.pod
+%%SITE_PERL%%/Mail/Message/Body/Encode.pm
+%%SITE_PERL%%/Mail/Message/Body/Encode.pod
+%%SITE_PERL%%/Mail/Message/Body/File.pm
+%%SITE_PERL%%/Mail/Message/Body/File.pod
+%%SITE_PERL%%/Mail/Message/Body/Lines.pm
+%%SITE_PERL%%/Mail/Message/Body/Lines.pod
+%%SITE_PERL%%/Mail/Message/Body/Multipart.pm
+%%SITE_PERL%%/Mail/Message/Body/Multipart.pod
+%%SITE_PERL%%/Mail/Message/Body/Nested.pm
+%%SITE_PERL%%/Mail/Message/Body/Nested.pod
+%%SITE_PERL%%/Mail/Message/Body/String.pm
+%%SITE_PERL%%/Mail/Message/Body/String.pod
+%%SITE_PERL%%/Mail/Message/Construct.pm
+%%SITE_PERL%%/Mail/Message/Construct.pod
+%%SITE_PERL%%/Mail/Message/Construct/Bounce.pm
+%%SITE_PERL%%/Mail/Message/Construct/Bounce.pod
+%%SITE_PERL%%/Mail/Message/Construct/Build.pm
+%%SITE_PERL%%/Mail/Message/Construct/Build.pod
+%%SITE_PERL%%/Mail/Message/Construct/Forward.pm
+%%SITE_PERL%%/Mail/Message/Construct/Forward.pod
+%%SITE_PERL%%/Mail/Message/Construct/Read.pm
+%%SITE_PERL%%/Mail/Message/Construct/Read.pod
+%%SITE_PERL%%/Mail/Message/Construct/Rebuild.pm
+%%SITE_PERL%%/Mail/Message/Construct/Rebuild.pod
+%%SITE_PERL%%/Mail/Message/Construct/Reply.pm
+%%SITE_PERL%%/Mail/Message/Construct/Reply.pod
+%%SITE_PERL%%/Mail/Message/Construct/Text.pm
+%%SITE_PERL%%/Mail/Message/Construct/Text.pod
+%%SITE_PERL%%/Mail/Message/Convert.pm
+%%SITE_PERL%%/Mail/Message/Convert.pod
+%%SITE_PERL%%/Mail/Message/Convert/Html.pm
+%%SITE_PERL%%/Mail/Message/Convert/Html.pod
+%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatPS.pm
+%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatPS.pod
+%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatText.pm
+%%SITE_PERL%%/Mail/Message/Convert/HtmlFormatText.pod
+%%SITE_PERL%%/Mail/Message/Convert/MailInternet.pm
+%%SITE_PERL%%/Mail/Message/Convert/MailInternet.pod
+%%SITE_PERL%%/Mail/Message/Convert/MimeEntity.pm
+%%SITE_PERL%%/Mail/Message/Convert/MimeEntity.pod
+%%SITE_PERL%%/Mail/Message/Convert/TextAutoformat.pm
+%%SITE_PERL%%/Mail/Message/Convert/TextAutoformat.pod
+%%SITE_PERL%%/Mail/Message/Dummy.pm
+%%SITE_PERL%%/Mail/Message/Dummy.pod
+%%SITE_PERL%%/Mail/Message/Field.pm
+%%SITE_PERL%%/Mail/Message/Field.pod
+%%SITE_PERL%%/Mail/Message/Field/AddrGroup.pm
+%%SITE_PERL%%/Mail/Message/Field/AddrGroup.pod
+%%SITE_PERL%%/Mail/Message/Field/Address.pm
+%%SITE_PERL%%/Mail/Message/Field/Address.pod
+%%SITE_PERL%%/Mail/Message/Field/Addresses.pm
+%%SITE_PERL%%/Mail/Message/Field/Addresses.pod
+%%SITE_PERL%%/Mail/Message/Field/Attribute.pm
+%%SITE_PERL%%/Mail/Message/Field/Attribute.pod
+%%SITE_PERL%%/Mail/Message/Field/Fast.pm
+%%SITE_PERL%%/Mail/Message/Field/Fast.pod
+%%SITE_PERL%%/Mail/Message/Field/Flex.pm
+%%SITE_PERL%%/Mail/Message/Field/Flex.pod
+%%SITE_PERL%%/Mail/Message/Field/Full.pm
+%%SITE_PERL%%/Mail/Message/Field/Full.pod
+%%SITE_PERL%%/Mail/Message/Field/Unstructured.pm
+%%SITE_PERL%%/Mail/Message/Field/Unstructured.pod
+%%SITE_PERL%%/Mail/Message/Head.pm
+%%SITE_PERL%%/Mail/Message/Head.pod
+%%SITE_PERL%%/Mail/Message/Head/Complete.pm
+%%SITE_PERL%%/Mail/Message/Head/Complete.pod
+%%SITE_PERL%%/Mail/Message/Head/Delayed.pm
+%%SITE_PERL%%/Mail/Message/Head/Delayed.pod
+%%SITE_PERL%%/Mail/Message/Head/ResentGroup.pm
+%%SITE_PERL%%/Mail/Message/Head/ResentGroup.pod
+%%SITE_PERL%%/Mail/Message/Head/Subset.pm
+%%SITE_PERL%%/Mail/Message/Head/Subset.pod
+%%SITE_PERL%%/Mail/Message/Part.pm
+%%SITE_PERL%%/Mail/Message/Part.pod
+%%SITE_PERL%%/Mail/Message/TransferEnc.pm
+%%SITE_PERL%%/Mail/Message/TransferEnc.pod
+%%SITE_PERL%%/Mail/Message/TransferEnc/Base64.pm
+%%SITE_PERL%%/Mail/Message/TransferEnc/Base64.pod
+%%SITE_PERL%%/Mail/Message/TransferEnc/Binary.pm
+%%SITE_PERL%%/Mail/Message/TransferEnc/Binary.pod
+%%SITE_PERL%%/Mail/Message/TransferEnc/EightBit.pm
+%%SITE_PERL%%/Mail/Message/TransferEnc/EightBit.pod
+%%SITE_PERL%%/Mail/Message/TransferEnc/QuotedPrint.pm
+%%SITE_PERL%%/Mail/Message/TransferEnc/QuotedPrint.pod
+%%SITE_PERL%%/Mail/Message/TransferEnc/SevenBit.pm
+%%SITE_PERL%%/Mail/Message/TransferEnc/SevenBit.pod
+%%SITE_PERL%%/Mail/Message/Wrapper/SpamAssassin.pm
+%%SITE_PERL%%/Mail/Message/Wrapper/SpamAssassin.pod
+%%SITE_PERL%%/Mail/Reporter.pm
+%%SITE_PERL%%/Mail/Reporter.pod
+%%SITE_PERL%%/Mail/Transport.pm
+%%SITE_PERL%%/Mail/Transport.pod
+%%SITE_PERL%%/Mail/Transport/Exim.pm
+%%SITE_PERL%%/Mail/Transport/Exim.pod
+%%SITE_PERL%%/Mail/Transport/IMAP4.pm
+%%SITE_PERL%%/Mail/Transport/IMAP4.pod
+%%SITE_PERL%%/Mail/Transport/Mailx.pm
+%%SITE_PERL%%/Mail/Transport/Mailx.pod
+%%SITE_PERL%%/Mail/Transport/POP3.pm
+%%SITE_PERL%%/Mail/Transport/POP3.pod
+%%SITE_PERL%%/Mail/Transport/Qmail.pm
+%%SITE_PERL%%/Mail/Transport/Qmail.pod
+%%SITE_PERL%%/Mail/Transport/Receive.pm
+%%SITE_PERL%%/Mail/Transport/Receive.pod
+%%SITE_PERL%%/Mail/Transport/SMTP.pm
+%%SITE_PERL%%/Mail/Transport/SMTP.pod
+%%SITE_PERL%%/Mail/Transport/Send.pm
+%%SITE_PERL%%/Mail/Transport/Send.pod
+%%SITE_PERL%%/Mail/Transport/Sendmail.pm
+%%SITE_PERL%%/Mail/Transport/Sendmail.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Box
 @dirrm %%SITE_PERL%%/Mail/Transport
 @dirrm %%SITE_PERL%%/Mail/Message/Wrapper
 @dirrm %%SITE_PERL%%/Mail/Message/TransferEnc
-@dirrm %%SITE_PERL%%/Mail/Message/Convert
-@dirrm %%SITE_PERL%%/Mail/Message/Field
-@dirrm %%SITE_PERL%%/Mail/Message/Body
 @dirrm %%SITE_PERL%%/Mail/Message/Head
-@unexec rmdir %D/%%SITE_PERL%%/Mail/Message 2>/dev/null || true
-@dirrm %%SITE_PERL%%/Mail/Box/Mbox
+@dirrm %%SITE_PERL%%/Mail/Message/Field
+@dirrm %%SITE_PERL%%/Mail/Message/Convert
+@dirrm %%SITE_PERL%%/Mail/Message/Construct
+@dirrm %%SITE_PERL%%/Mail/Message/Body
 @dirrm %%SITE_PERL%%/Mail/Box/Tie
-@dirrm %%SITE_PERL%%/Mail/Box/Maildir
-@dirrm %%SITE_PERL%%/Mail/Box/Parser
-@dirrm %%SITE_PERL%%/Mail/Box/Dir
+@dirrm %%SITE_PERL%%/Mail/Box/Thread
 @dirrm %%SITE_PERL%%/Mail/Box/Search
-@dirrm %%SITE_PERL%%/Mail/Box/File
-@dirrm %%SITE_PERL%%/Mail/Box/IMAP4
+@dirrm %%SITE_PERL%%/Mail/Box/Parser
+@dirrm %%SITE_PERL%%/Mail/Box/POP3
+@dirrm %%SITE_PERL%%/Mail/Box/Net
+@dirrm %%SITE_PERL%%/Mail/Box/Mbox
+@dirrm %%SITE_PERL%%/Mail/Box/Maildir
 @dirrm %%SITE_PERL%%/Mail/Box/MH
 @dirrm %%SITE_PERL%%/Mail/Box/Locker
-@dirrm %%SITE_PERL%%/Mail/Box/Net
-@dirrm %%SITE_PERL%%/Mail/Box/POP3
-@dirrm %%SITE_PERL%%/Mail/Box/Thread
-@unexec rmdir %D/%%SITE_PERL%%/Mail/Box 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/Box/IMAP4
+@dirrm %%SITE_PERL%%/Mail/Box/File
+@dirrm %%SITE_PERL%%/Mail/Box/Dir
+@dirrm %%SITE_PERL%%/Mail/Box/Dbx
+@dirrm %%SITE_PERL%%/Mail/Box
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Mail/Message 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true
