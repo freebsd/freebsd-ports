@@ -11,6 +11,7 @@ lib/libcpuaccel.so.0
 lib/libmpeg2.a
 lib/libmpeg2.so
 lib/libmpeg2.so.0
+lib/libvo.a
 %%PORTDOCS%%share/doc/libmpeg2/libvo.txt
 %%PORTDOCS%%@dirrm share/doc/libmpeg2
 @dirrm include/mpeg2dec
