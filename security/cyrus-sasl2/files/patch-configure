@@ -1,8 +1,8 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Tue Dec  2 01:35:06 2003
-+++ configure	Sat Jan 17 23:21:19 2004
-@@ -1575,6 +1575,7 @@
+--- configure.orig	Thu Mar 11 00:56:10 2004
++++ configure	Fri Mar 12 00:26:13 2004
+@@ -1576,6 +1576,7 @@
  fi
  echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
@@ -10,16 +10,16 @@ diff -u configure.orig configure
  test "$program_prefix" != NONE &&
    program_transform_name="s,^,$program_prefix,;$program_transform_name"
  # Use a double $ so make ignores it.
-@@ -5132,7 +5133,7 @@
+@@ -5126,7 +5127,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
+-        for dbname in db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
-@@ -5156,11 +5157,11 @@
+@@ -5150,11 +5151,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -33,16 +33,16 @@ diff -u configure.orig configure
    ;
    return 0;
  }
-@@ -5935,7 +5936,7 @@
+@@ -5929,7 +5930,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
+-        for dbname in db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.2 db4.2 db42 db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              as_ac_Lib=`echo "ac_cv_lib_$dbname''_db_create" | $as_tr_sh`
  echo "$as_me:$LINENO: checking for db_create in -l$dbname" >&5
-@@ -5959,11 +5960,11 @@
+@@ -5953,11 +5954,11 @@
  #endif
  /* We use char because int might match the return type of a gcc2
     builtin and then its argument prototype would still apply.  */
@@ -56,7 +56,7 @@ diff -u configure.orig configure
    ;
    return 0;
  }
-@@ -7187,6 +7188,8 @@
+@@ -7181,6 +7182,8 @@
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
@@ -65,7 +65,7 @@ diff -u configure.orig configure
  
  echo "$as_me:$LINENO: checking if I should include saslauthd" >&5
  echo $ECHO_N "checking if I should include saslauthd... $ECHO_C" >&6
-@@ -10136,7 +10139,7 @@
+@@ -10167,7 +10170,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -74,7 +74,7 @@ diff -u configure.orig configure
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
-@@ -10485,7 +10488,7 @@
+@@ -10516,7 +10519,7 @@
      GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
