@@ -1,0 +1,10 @@
+--- xjdclient.c.orig	Sun Aug 17 22:48:25 1997
++++ xjdclient.c	Sun Aug 17 22:48:39 1997
+@@ -33,7 +33,6 @@
+ #include "xjdic.h"
+ 
+ extern int errno;
+-extern char *sys_errlist[];
+ unsigned char host[51] = {"localhost"};
+ unsigned char yn[2];
+ unsigned int portno = XJ_PORTNO;

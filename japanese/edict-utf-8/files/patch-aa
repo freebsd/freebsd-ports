@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Aug 17 22:45:50 1997
++++ Makefile	Sun Aug 17 22:47:02 1997
+@@ -48,7 +48,7 @@
+ #	S T A N D _ A L O N E 
+ #
+ SAOBJECTS = xjdsa.o xjdcomm_sa.o xjdservcomm_sa.o xjdfrontend_sa.o
+-SACFLAGS = -DXJDFRONTEND -DXJDDIC -DDEMAND_PAGING
++SACFLAGS = -DXJDFRONTEND -DXJDDIC -DDEMAND_PAGING -D__STRICT_BSD__
+ xjdic22sa: $(SAOBJECTS)
+ 	$(CC) $(SAOBJECTS) -o xjdic22sa
+ xjdsa.o: xjdsa.c
+@@ -64,7 +64,7 @@
+ #	C L I E N T
+ #
+ CLOBJECTS = xjdclient.o xjdcomm_cl.o xjdfrontend_cl.o
+-CLCFLAGS = -DXJDFRONTEND -DXJDCLSERV
++CLCFLAGS = -DXJDFRONTEND -DXJDCLSERV -D__STRICT_BSD__
+ xjdic22cl: $(CLOBJECTS)
+ 	$(CC) $(CLOBJECTS) -o xjdic22cl
+ xjdclient.o: xjdclient.c
