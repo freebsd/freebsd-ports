@@ -17,7 +17,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_VER		- (See below)
 # RUBY_DEFAULT_VER	- Set to (e.g.) "1.8" if you want to refer to "ruby18" just as "ruby".
 # RUBY_ARCH		- (See below)
-# RUBY_NO_RD_HTML	- Define if you don't want HTML files generated from RD files.
+# RUBY_RD_HTML		- Define if you want HTML files generated from RD files.
 #
 # [variables that each port can define]
 #
@@ -400,11 +400,17 @@ RUN_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 
 # documents
 
-.if defined(NOPORTDOCS)
 RUBY_NO_RD_HTML=	yes
+
+.if defined(RUBY_RD_HTML)
+.undef RUBY_NO_RD_HTML
 .endif
 
 .if (${ARCH} == alpha || ${ARCH} == sparc64) && ${RUBY_VER} <= 1.6
+RUBY_NO_RD_HTML=	yes
+.endif
+
+.if defined(NOPORTDOCS)
 RUBY_NO_RD_HTML=	yes
 .endif
 
