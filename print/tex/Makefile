@@ -14,7 +14,7 @@ CURDIR=		${.CURDIR}
 
 DISTNAME=	web2c-6.1
 
-#other equivalent sites: ftp.shsu.edu dtp.dante.de
+#other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk
 
 
@@ -75,7 +75,7 @@ mf_lib.tar.gz:
 modes.mf:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
 	  make -f ${CURDIR}/Makefile fetch-file FTPGET=${FTPGET} \
- 		ftp_dir=/tex-archive/systems/web2c file_in=modes.mf file_out=$@; \
+ 		ftp_dir=/tex-archive/fonts/modes file_in=modes.mf file_out=$@; \
 	 fi;)
 tex_base.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \

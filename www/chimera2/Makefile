@@ -1,4 +1,4 @@
-DISTNAME=	chimera-1.60
+DISTNAME=	chimera-1.61
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
