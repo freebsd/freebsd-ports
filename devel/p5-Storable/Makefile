@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Storable
-PORTVERSION=	2.12
+PORTVERSION=	2.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Storable
@@ -21,6 +21,6 @@ CONFIGURE_ARGS= INSTALLDIRS=site
 MAN3=		Storable.3
 
 post-patch:
-	@${PERL} -pi -e '$$_="" if /MAN3PODS/' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e '$$_="" if /MAN3PODS|INSTALLDIRS/' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
