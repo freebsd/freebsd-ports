@@ -7,6 +7,7 @@
 
 PORTNAME=	XFree86
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
@@ -18,6 +19,7 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
 	${X11BASE}/lib/X11/doc/ddx.TXT:${PORTSDIR}/x11/XFree86-4-documents \
 	${FONT100DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font100dpi \
 	${FONT75DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font75dpi \
+	${FONTCYR}:${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic \
 	${FONTDEFAULT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps \
 	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
 	${X11BASE}/bin/xfs:${PORTSDIR}/x11-servers/XFree86-4-FontServer \
@@ -29,6 +31,7 @@ NO_BUILD=	yes
 LATEST_LINK=	XFree86-4
 FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
 FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
+FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
 FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
 
