@@ -1026,11 +1026,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <cvename>CAN-2005-0095</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-wccp_denial_of_service</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1190</url>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2005_2.txt</url>
     </references>
     <dates>
       <discovery>2005-01-07</discovery>
       <entry>2005-01-12</entry>
-      <modified>2005-01-19</modified>
+      <modified>2005-01-22</modified>
     </dates>
   </vuln>
 
@@ -1060,11 +1061,12 @@ http_access deny Gopher</pre>
       <cvename>CAN-2005-0094</cvename>
       <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-gopher_html_parsing</url>
       <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1189</url>
+      <url>http://www.squid-cache.org/Advisories/SQUID-2005_1.txt</url>
     </references>
     <dates>
       <discovery>2005-01-11</discovery>
       <entry>2005-01-12</entry>
-      <modified>2005-01-19</modified>
+      <modified>2005-01-22</modified>
     </dates>
   </vuln>
 
