@@ -6,22 +6,25 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
-MAINTAINER=	cordeiro@iqm.unicamp.br
+MAINTAINER=	cordeiro@luinil.nic.br
 
 ALL_TARGET=	chkrootkit chklastlog chkwtmp ifpromisc
 
 DOCFILES=	COPYRIGHT README README.chklastlog README.chkwtmp
+
+BINMODE=	0700
+WRKSRC=		${WRKDIR}/${PORTNAME}-pre-${PORTVERSION}
 
 pre-patch:
 	${PERL} -pi -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
 	${PERL} -pi -e \
 		's#\./chklastlog#${PREFIX}/sbin/chklastlog#g; \
 		s#\./chkwtmp#${PREFIX}/sbin/chkwtmp#g; \
-		s#\./ifpromisc#${PREFIX}/sbin/ifpromisc#g; ' \
+		s#\./ifpromisc#${PREFIX}/sbin/ifpromisc#g;' \
 		${WRKSRC}/chkrootkit
 
 do-install:
