@@ -1,8 +1,10 @@
-sbin/elsa
-etc/elsa.cfg
-etc/rc.d/elsa.sh
-share/elsa/LICENSE
-share/elsa/README
-share/elsa/content/elsa-test.mov
-@dirrm share/elsa/content
-@dirrm share/elsa
+sbin/tcserver
+etc/tcserver.cfg
+etc/tcserver.cfg-full
+etc/rc.d/tcserver.sh
+share/tcserver/LICENSE
+share/tcserver/README
+share/tcserver/TeraCASTAdmin11.pdf
+share/tcserver/content/tcserver-test.mov
+@dirrm share/tcserver/content
+@dirrm share/tcserver

@@ -1,0 +1,20 @@
+--- scripts/tcserver.init.orig	Wed Apr 12 01:22:35 2000
++++ scripts/tcserver.init	Tue Jun 20 11:59:40 2000
+@@ -15,14 +15,14 @@
+ # ============================================================================
+ 
+ # replace this with the full path to tcserver
+-BIN=../tcserver
++BIN=__PREFIX__/sbin/tcserver
+ 
+ # replace this with the full path to the configuration directory
+-DIR=..
++DIR=__PREFIX__/etc
+ 
+ # replace this with the full path to the file specified in your PID_FILE
+ # variable in tcserver.cfg
+-PIDFILE=../tcserver.pid
++PIDFILE=__PID_DIR__/tcserver.pid
+ 
+ if [ ! -f $BIN ]; then
+ 	echo "$BIN not found.  TeraCAST not started"
