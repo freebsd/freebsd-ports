@@ -10,8 +10,11 @@ PORTVERSION=	2.0.3
 PORTREVISION=	0
 CATEGORIES=	sysutils
 
-MASTERDIR=	${.CURDIR}/../cdrtools
 COMMENT=	Create iso9660/Rock Ridge/Joliet filesystems
+
+CONFLICTS=	mkisofs-devel-*
+
+MASTERDIR=	${.CURDIR}/../cdrtools
 DESCR=		${PKGDIR}/pkg-descr.mkisofs
 PLIST=		${PKGDIR}/pkg-plist.mkisofs
 
