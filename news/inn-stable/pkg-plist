@@ -129,56 +129,82 @@ news/doc/hook-tcl
 news/doc/sample-control
 @unexec if cmp -s %D/news/etc/actsync.cfg %D/news/etc/actsync.cfg.dist; then rm -f %D/news/etc/actsync.cfg ; fi
 news/etc/actsync.cfg.dist
+@exec [ -f %B/actsync.cfg ] || cp -f %B/%f %B/actsync.cfg
 @unexec if cmp -s %D/news/etc/actsync.ign %D/news/etc/actsync.ign.dist; then rm -f %D/news/etc/actsync.ign ; fi
 news/etc/actsync.ign.dist
+@exec [ -f %B/actsync.ign ] || cp -f %B/%f %B/actsync.ign
 @unexec if cmp -s %D/news/etc/buffindexed.conf %D/news/etc/buffindexed.conf.dist; then rm -f %D/news/etc/buffindexed.conf ; fi
 news/etc/buffindexed.conf.dist
+@exec [ -f %B/buffindexed.conf ] || cp -f %B%/%f %B/buffindexed.conf
 @unexec if cmp -s %D/news/etc/control.ctl %D/news/etc/control.ctl.dist; then rm -f %D/news/etc/control.ctl ; fi
 news/etc/control.ctl.dist
+@exec [ -f %B/control.ctl ] || cp -f %B/%f %B/control.ctl
 @unexec if cmp -s %D/news/etc/cycbuff.conf %D/news/etc/cycbuff.conf.dist; then rm -f %D/news/etc/cycbuff.conf ; fi
 news/etc/cycbuff.conf.dist
+@exec [ -f %B/cycbuff.conf ] || cp -f %B/%f %B/cycbuff.conf
 @unexec if cmp -s %D/news/etc/distrib.pats %D/news/etc/distrib.pats.dist; then rm -f %D/news/etc/distrib.pats ; fi
 news/etc/distrib.pats.dist
+@exec [ -f %B/distrib.pats ] || cp -f %B/%f %B/distrib.pats
 @unexec if cmp -s %D/news/etc/expire.ctl %D/news/etc/expire.ctl.dist; then rm -f %D/news/etc/expire.ctl ; fi
 news/etc/expire.ctl.dist
+@exec [ -f %B/expire.ctl ] || cp -f %B/%f %B/expire.ctl
 @unexec if cmp -s %D/news/etc/incoming.conf %D/news/etc/incoming.conf.dist; then rm -f %D/news/etc/incoming.conf ; fi
 news/etc/incoming.conf.dist
+@exec [ -f %B/incoming ] || cp -f %B/%f %B/incoming.conf
 @unexec if cmp -s %D/news/etc/inn.conf %D/news/etc/inn.conf.dist; then rm -f %D/news/etc/inn.conf ; fi
 news/etc/inn.conf.dist
+@exec [ -f %B/inn.conf ] || cp -f %B/%f %B/inn.conf
 @unexec if cmp -s %D/news/etc/innfeed.conf %D/news/etc/innfeed.conf.dist; then rm -f %D/news/etc/innfeed.conf ; fi
 news/etc/innfeed.conf.dist
+@exec [ -f %B/innfeed.conf.dist ] || cp -f %B/%f %B/innfeed.conf.dist
 @unexec if cmp -s %D/news/etc/innreport.conf %D/news/etc/innreport.conf.dist; then rm -f %D/news/etc/innreport.conf ; fi
 news/etc/innreport.conf.dist
+@exec [ -f %B/innreport.conf ] || cp -f %B/%f %B/innreport.conf
 @unexec if cmp -s %D/news/etc/innwatch.ctl %D/news/etc/innwatch.ctl.dist; then rm -f %D/news/etc/innwatch.ctl ; fi
 news/etc/innwatch.ctl.dist
+@exec [ -f %B/innwatch.ctl ] || cp -f %B/%f %B/innwatch.ctl
 @unexec if cmp -s %D/news/etc/moderators %D/news/etc/moderators.dist; then rm -f %D/news/etc/moderators ; fi
 news/etc/moderators.dist
+@exec [ -f %B/moderators ] || cp -f %B/%f %B/moderators
 @unexec if cmp -s %D/news/etc/motd.news %D/news/etc/motd.news.dist; then rm -f %D/news/etc/motd.news ; fi
 news/etc/motd.news.dist
+@exec [ -f %B/motd.news ] || cp -f %B/%f %B/motd.news
 @unexec if cmp -s %D/news/etc/news2mail.cf %D/news/etc/news2mail.cf.dist; then rm -f %D/news/etc/news2mail.cf ; fi
 news/etc/news2mail.cf.dist
+@exec [ -f %B/news2mail.cf ] || cp -f %B/%f %B/news2mail.cf
 @unexec if cmp -s %D/news/etc/newsfeeds %D/news/etc/newsfeeds.dist; then rm -f %D/news/etc/newsfeeds ; fi
 news/etc/newsfeeds.dist
+@exec [ -f %B/newsfeeds ] || cp -f %B/%f %B/newsfeeds
 @unexec if cmp -s %D/news/etc/nnrpd.track %D/news/etc/nnrpd.track.dist; then rm -f %D/news/etc/nnrpd.track ; fi
 news/etc/nnrpd.track.dist
+@exec [ -f %B/nnrpd.track ] || cp -f %B/%f %B/nnrpd.track
 @unexec if cmp -s %D/news/etc/nntpsend.ctl %D/news/etc/nntpsend.ctl.dist; then rm -f %D/news/etc/nntpsend.ctl ; fi
 news/etc/nntpsend.ctl.dist
+@exec [ -f %B/nntpsend.ctl ] || cp -f %B/%f %B/nntpsend.ctl
 @unexec if cmp -s %D/news/etc/ovdb.conf %D/news/etc/ovdb.conf.dist; then rm -f %D/news/etc/ovdb.conf ; fi
 news/etc/ovdb.conf.dist
+@exec [ -f %B/ovdb.conf ] || cp -f %B/%f %B/ovdb.conf
 @unexec if cmp -s %D/news/etc/overview.fmt %D/news/etc/overview.fmt.dist; then rm -f %D/news/etc/overview.fmt ; fi
 news/etc/overview.fmt.dist
+@exec [ -f %B/overview.fmt ] || cp -f %B/%f %B/overview.fmt
 @unexec if cmp -s %D/news/etc/passwd.nntp %D/news/etc/passwd.nntp.dist; then rm -f %D/news/etc/passwd.nntp ; fi
 news/etc/passwd.nntp.dist
+@exec [ -f %B/passwd.nntp ] || cp -f %B/%f %B/passwd.nntp
 @unexec if cmp -s %D/news/etc/radius.conf %D/news/etc/radius.conf.dist; then rm -f %D/news/etc/radius.conf ; fi 
 news/etc/radius.conf.dist
+@exec [ -f %B/radius.conf ] || cp -f %B/%f %B/radius.conf
 @unexec if cmp -s %D/news/etc/readers.conf %D/news/etc/readers.conf.dist; then rm -f %D/news/etc/readers.conf; fi
 news/etc/readers.conf.dist
+@exec [ -f %B/readers.conf ] || cp -f %B/%f %B/readers.conf
 @unexec if cmp -s %D/news/etc/sasl.conf %D/news/etc/sasl.conf.dist; then rm -f %D/news/etc/sasl.conf ; fi
 news/etc/sasl.conf.dist
+@exec [ -f %B/sasl.conf ] || cp -f %B/%f %B/sasl.conf
 @unexec if cmp -s %D/news/etc/storage.conf %D/news/etc/storage.conf.dist; then rm -f %D/news/etc/storage.conf ; fi
 news/etc/storage.conf.dist
+@exec [ -f %B/storage.conf ] || cp -f %B/%f %B/storage.conf
 @unexec if cmp -s %D/news/etc/subscriptions %D/news/etc/subscriptions.dist; then rm -f %D/news/etc/subscriptions ; fi
 news/etc/subscriptions.dist
+@exec [ -f %B/subscriptions ] || cp -f %B/%f %B/subscriptions
 news/include/clibrary.h
 news/include/conffile.h
 news/include/config.h
