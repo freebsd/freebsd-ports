@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20040213
+PORTVERSION=	20040309
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -21,7 +21,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS=-L${PREFIX}/lib LIBS=-Wl,-rpath,${PREFIX}/lib/wine
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/wine
-MAN1=		wine.1 winebuild.1 winemaker.1 wmc.1 wrc.1
+MAN1=		widl.1 wine.1 winebuild.1 winedump.1 winemaker.1 wmc.1 wrc.1
 MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386
 USE_BISON=	yes
@@ -73,7 +73,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
-	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
 
