@@ -8,24 +8,8 @@
 PORTNAME=	nologin
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.xmission.com/pub/users/s/softweyr/pub/
-DISTFILES=	nologin.c nologin.8
+MASTER_SITES=	ftp://softweyr.com/pub/softweyr/
 
-MAINTAINER=	dburr@FreeBSD.org
-
-DIST_SUBDIR=	nologin
-NO_WRKSUBDIR=	YES
-ALL_TARGET=	nologin
-
-MAN8=		nologin.8
-
-do-extract:
-		@${MKDIR} ${WRKDIR}
-		for FILE in ${DISTFILES} ; do ${CP} ${DISTDIR}/${DIST_SUBDIR}/$${FILE} ${WRKDIR}/$${FILE} ; done
-		${CP} ${FILESDIR}/Makefile ${WRKDIR}
-
-do-install:
-		${INSTALL_PROGRAM} ${WRKDIR}/nologin ${PREFIX}/sbin
-		${INSTALL_MAN} ${WRKDIR}/nologin.8 ${PREFIX}/man/man8
+MAINTAINER=	wes@FreeBSD.org
 
 .include <bsd.port.mk>
