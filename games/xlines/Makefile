@@ -8,7 +8,7 @@
 PORTNAME=	xlines
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://risq.belcaf.minsk.by/pub/genie/
+MASTER_SITES=	ftp://ftp.trolltech.com/contrib/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,19 +17,20 @@ USE_QT=		yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 
-pre-build:
-	@ ${RM} ${WRKSRC}/lines.moc
+post-extract:
+	@${RM} ${WRKSRC}/lines.moc
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/*.cpp
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/xlines ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/xlines
-	@ ${INSTALL_DATA} ${WRKSRC}/trolltech.gif ${PREFIX}/share/xlines
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xlines ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/xlines
+	${INSTALL_DATA} ${WRKSRC}/trolltech.gif ${PREFIX}/share/xlines
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/xlines
-	@ ${INSTALL_DATA} ${WRKSRC}/readme.lines ${PREFIX}/share/doc/xlines
-	@ ${INSTALL_DATA} ${WRKSRC}/readme.qt ${PREFIX}/share/doc/xlines
+	@${MKDIR} ${PREFIX}/share/doc/xlines
+	${INSTALL_DATA} ${WRKSRC}/readme.lines ${PREFIX}/share/doc/xlines
+	${INSTALL_DATA} ${WRKSRC}/readme.qt ${PREFIX}/share/doc/xlines
 .endif
 
 .include <bsd.port.mk>
