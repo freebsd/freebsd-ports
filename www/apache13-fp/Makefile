@@ -22,6 +22,9 @@ COMMENT=	The Apache webserver with MS Frontpage Module
 #PATCH_SITE_SUBDIR=	patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
 
+CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache-2.* \
+		caudium-devel-1.* caudium10-1.* caudium12-* \
+		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
 
 RUN_DEPENDS=	${LOCALBASE}/frontpage/version5.0/bin/owsadm.exe:${PORTSDIR}/www/frontpage

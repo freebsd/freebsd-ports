@@ -20,6 +20,7 @@ DISTNAME=	ssh-${PORTVERSION}
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT=	Secure shell client and server (remote login program)
 
+CONFLICTS=	openssh-* openssh-portable-* openssh-gssapi-* ssh-1.*
 GNU_CONFIGURE=	YES
 USE_REINPLACE=	YES
 

@@ -21,6 +21,7 @@ DIST_SUBDIR=	openmotif
 MAINTAINER=	steve@FreeBSD.org
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
+CONFLICTS=	lesstif-*
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

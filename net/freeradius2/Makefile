@@ -20,6 +20,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 
 LOGDIR?=	/var/log
 
+CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
