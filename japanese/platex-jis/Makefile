@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/02/22 21:55:15 max Exp $
+# $Id: Makefile,v 1.7 1998/06/24 02:52:54 max Exp $
 #
 
 DISTNAME=	pl19980217j
@@ -18,7 +18,7 @@ MAINTAINER=	max@FreeBSD.ORG
 
 BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
 		platex-common:${PORTSDIR}/japanese/platex-common \
-		nkf:${PORTSDIRS}/japanese/nkf
+		nkf:${PORTSDIR}/japanese/nkf
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-jis \
 		platex-common:${PORTSDIR}/japanese/platex-common
 
