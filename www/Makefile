@@ -220,6 +220,7 @@
     SUBDIR += mod_perl2
     SUBDIR += mod_php3
     SUBDIR += mod_php4
+    SUBDIR += mod_php5
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_put
     SUBDIR += mod_python

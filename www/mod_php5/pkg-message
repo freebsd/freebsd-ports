@@ -1,12 +1,12 @@
 *****************************************************************************
 
-You have installed the mod_php4 package.
+You have installed the mod_php5 package.
 
-Have a look at the mod_php4 port if you need additional extensions other than
-CTYPE, MYSQL, OVERLOAD, PCRE, POSIX, SESSION, TOKENIZER, XML and ZLIB.
+Have a look at the mod_php5 port if you need additional extensions other than
+CTYPE, DOM, PCRE, POSIX, SESSION, SIMPLEXML, SQLITE, TOKENIZER and XML.
 
 You can find it at
-ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/mod_php4.tar
+ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/mod_php5.tar
 
 Make sure index.php is part of your DirectoryIndex.
 
