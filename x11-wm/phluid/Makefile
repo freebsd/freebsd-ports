@@ -7,6 +7,7 @@
 
 PORTNAME=	phluid
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phluid
@@ -17,10 +18,9 @@ COMMENT=	A window manager that emphasizes efficiency, speed, and beauty
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	imlib
-CONFIGURE_ENV=	CPPFLAGS='-I${X11BASE}/include' \
-		LIBS='-L${X11BASE}/lib -lX11 -lImlib'
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -lm"
 
 .include <bsd.port.mk>
