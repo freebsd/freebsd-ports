@@ -3,7 +3,7 @@
 # Date created:		28 Jan 1998
 # Whom:			Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/12 16:05:00 itojun Exp $
+# $Id: Makefile,v 1.2 1998/03/21 10:54:22 asami Exp $
 #
 
 DISTNAME=	skkinput-2.00-SNAP980123
@@ -15,8 +15,6 @@ MAINTAINER=	mrt@mickey.ai.kyutech.ac.jp
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/skkserv:${PORTSDIR}/japanese/skk \
 		jman:${PORTSDIR}/japanese/man
-
-BROKEN=		fetch
 
 USE_IMAKE=	yes
 MANLANG=	ja_JP.EUC
