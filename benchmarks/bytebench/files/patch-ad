@@ -1,0 +1,17 @@
+*** pgms/cleanup.sh.orig	Wed Feb  5 11:08:37 1992
+--- pgms/cleanup.sh	Wed Jan  3 19:27:21 1996
+***************
+*** 87,92 ****
+      
+      -r) : reason for failure
+! 	echo $1
+! 	echo $1 >>$LOGFILE
+  	shift
+  	;;
+--- 87,92 ----
+      
+      -r) : reason for failure
+! 	echo -e $1
+! 	echo -e $1 >>$LOGFILE
+  	shift
+  	;;
