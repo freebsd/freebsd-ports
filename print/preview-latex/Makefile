@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	preview-latex
-PORTVERSION=	0.5.8.2
+PORTVERSION=	0.6.1
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -25,6 +25,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
 		--with-texmf=${PREFIX}/share/texmf
+CONFIGURE_ARGS+=	--disable-8bit-test
 
 DOCS=	ChangeLog INSTALL PROBLEMS README README-preview RELEASE TODO
 
