@@ -5,7 +5,8 @@ share/locale/fr/LC_MESSAGES/gringotts.mo
 share/locale/it/LC_MESSAGES/gringotts.mo
 %%GNOMEHIER%%share/gnome/apps/Utilities/gringotts.desktop
 %%GNOMEHIER%%@unexec rmdir -p %D/share/gnome/apps/Utilities 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
