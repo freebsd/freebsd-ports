@@ -18,6 +18,8 @@ COMMENT=	An Inti binding for GConf, the GNOME Configuration System
 
 LIB_DEPENDS=	inti-1.0.9:${PORTSDIR}/x11-toolkits/inti
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GNOME=	gconf2 gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
