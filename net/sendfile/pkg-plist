@@ -2,20 +2,21 @@ bin/check_sendfile
 bin/ewl
 bin/fetchfile
 bin/receive
+bin/rf
 bin/sendfile
 bin/sendmsg
+bin/sf
 bin/sf_cleanup
 bin/sfconf
 bin/sfdconf
+bin/sm
 bin/utf7decode
 bin/utf7encode
 bin/wlock
 etc/rc.d/sendfiled.sh
 etc/sendfile.cf
 etc/sendfile.deny
-man/man1/utf7decode.1.gz
 sbin/sendfiled
-
 @exec mkdir -p /var/spool/sendfile/OUTGOING /var/spool/sendfile/LOG
 @exec chmod 755 /var/spool/sendfile
 @exec chmod 1777 /var/spool/sendfile/OUTGOING
@@ -25,7 +26,6 @@ sbin/sendfiled
 @exec echo -e 'saft\tstream\ttcp\tnowait\troot\t/usr/local/sbin/sendfiled sendfiled' >> /etc/inetd.conf
 @exec echo -e 'saft\t\t487/tcp\t# simple asynchronous file transfer'>>/etc/services
 @exec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '`
-
 @unexec perl -pi.bak -e '/^saft/ && ($_="")' /etc/inetd.conf
 @unexec kill -HUP `ps auxw|awk '$11 == "inetd" { print $2 } '`
 @unexec rm -R /var/spool/sendfile
