@@ -15,6 +15,15 @@ COMMENT=	A remote-boot solution for M$$ operating systems
 
 NO_PACKAGE=	"this port creates devices"
 
+MAN7=		rboot.7
+MAN8=		netboot.8
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502108
+BROKEN=		"Does not install on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	@${ECHO} ""
 	@${ECHO} "======================================================="
@@ -25,4 +34,4 @@ post-install:
 	@${ECHO} "======================================================="
 	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
