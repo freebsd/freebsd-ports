@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.110 1998/09/06 06:42:47 vanilla Exp $
+# $Id: Makefile,v 1.111 1998/09/24 00:31:19 vanilla Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -22,6 +22,7 @@
     SUBDIR += expect
     SUBDIR += forth
     SUBDIR += g77
+    SUBDIR += gawk
     SUBDIR += gcc28
     SUBDIR += gcl
     SUBDIR += glibstdc++28
