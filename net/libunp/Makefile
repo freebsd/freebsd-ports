@@ -21,6 +21,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
 pre-patch:
 	@ ${CP} ${WRKSRC}/lib/wrapsock.c ${WRKSRC}/lib/wrapsock_r.c
 

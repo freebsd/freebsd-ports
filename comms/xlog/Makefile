@@ -19,6 +19,10 @@ MAN1=		xlog.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
 .if defined(WITH_HAMLIB)
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 CONFIGURE_ARGS+=	--enable-hamlib
