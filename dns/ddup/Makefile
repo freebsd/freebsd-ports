@@ -7,7 +7,7 @@
 
 PORTNAME=	ddup
 PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITES_LOCAL}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
@@ -32,7 +32,7 @@ post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/ddup.1.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/ddupcron.sh
+	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/ddupcron.sh
 	@${REINPLACE_CMD} -e 's,/etc\b,${PREFIX}$$&,' ${WRKSRC}/ddup.1
 
 pre-build:
