@@ -1,0 +1,5 @@
+@cwd /usr/X11R6
+bin/piewm
+bin/ssetroot
+lib/X11/piewm
+man/man1/piewm.1.gz
