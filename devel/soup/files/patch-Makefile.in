@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/05/28 13:16:59	1.1
++++ Makefile.in	2001/05/28 13:17:30
+@@ -115,7 +115,7 @@
+ 
+ bin_SCRIPTS = soup-config
+ 
+-confexecdir = $(libdir)
++confexecdir = $(prefix)/etc
+ confexec_DATA = soupConf.sh soup_apacheConf.sh soup_wsdlConf.sh
+ 
+ pkgconfigdir = $(libdir)/pkgconfig

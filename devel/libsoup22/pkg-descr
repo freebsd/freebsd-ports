@@ -1,0 +1,17 @@
+Soup is a SOAP (Simple Object Access Protocol) implementation in C. 
+
+It provides an queued asynchronous callback-based mechanism for sending and
+servicing SOAP requests, and a WSDL (Web Service Definition Language) to C
+compiler which generates client stubs and server skeletons for easily calling
+and implementing SOAP methods.
+
+It uses the GLib main loop and is designed to work well with GTK applications.
+
+Features:
+  * Completely Asynchronous
+  * Connection cache
+  * HTTP chunked transfer and persistent connections
+  * authenticated HTTP, SOCKS4, and SOCKS5 proxy support
+  * SSL Support using OpenSSL
+  * Apache module server support
+  * Client digest authentication

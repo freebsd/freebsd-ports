@@ -455,6 +455,7 @@
     SUBDIR += shapelib
     SUBDIR += shtool
     SUBDIR += sip
+    SUBDIR += soup
     SUBDIR += sparc-rtems-binutils
     SUBDIR += sparc-rtems-chill
     SUBDIR += sparc-rtems-g77
