@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_layout
-PORTVERSION=	3.0
+PORTVERSION=	3.0.3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tangent.org/pub/apache/ \
 		http://software.tangent.org/download/
