@@ -3,7 +3,7 @@
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1995/04/12 04:54:11 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/16 00:25:14 asami Exp $
 #
 
 DISTNAME=       zip201
@@ -20,7 +20,7 @@ pre-install:
 	@mkdir -p ${PREFIX}/bin
 	@mkdir -p ${PREFIX}/man/man1
 
-install: build
+do-install:
 	cd ${WRKSRC}; install -c -o bin -g bin zip.1 zipgrep.1 ${PREFIX}/man/man1
 	cd ${WRKSRC}; install -c -o bin -g bin zip zipnote zipsplit zipcloak zipgrep ${PREFIX}/bin
 
