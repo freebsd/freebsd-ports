@@ -359,8 +359,8 @@ diff -arcN ../sj3-2.0.1.13.org/doc/man/sj3serv.1 ./doc/man/sj3serv.1
   かな漢字変換サーバ デフォルト辞書ディレクトリ
   .TP
       sj3main.dic
-*** server/setup.c.orig	Mon Mar 23 04:48:02 1998
---- server/setup.c	Sun Feb  6 18:48:31 2000
+*** server/setup.c.orig	Mon Mar 23 05:48:02 1998
+--- server/setup.c	Fri Feb  2 19:53:37 2001
 ***************
 *** 217,251 ****
   
@@ -457,3 +457,45 @@ diff -arcN ../sj3-2.0.1.13.org/doc/man/sj3serv.1 ./doc/man/sj3serv.1
   	0, 0, 0
   };
   
+***************
+*** 424,441 ****
+  	int	c;
+  	int	errflg = 0;
+  	char	*p;
+  
+  	extern	char	*optarg, *strrchr();
+  	extern	int	optind;
+  
+  	p = (p = strrchr(argv[0], '/')) ? p + 1 : argv[0];
+! 	strcpy(program_name,	p);
+! 	strcpy(runcmd_file,	RunCmdFile);
+  
+  	while ((c = getopt(argc, argv, "f:")) != EOF) {
+  		switch (c) {
+  		case 'f':
+! 			strcpy(runcmd_file, optarg);
+  			break;
+  
+  		case '?':
+--- 447,467 ----
+  	int	c;
+  	int	errflg = 0;
+  	char	*p;
++ 	size_t	ret;
+  
+  	extern	char	*optarg, *strrchr();
+  	extern	int	optind;
+  
+  	p = (p = strrchr(argv[0], '/')) ? p + 1 : argv[0];
+! 	strlcpy(program_name,	p, sizeof(program_name));
+! 	strlcpy(runcmd_file,	RunCmdFile, sizeof(runcmd_file));
+  
+  	while ((c = getopt(argc, argv, "f:")) != EOF) {
+  		switch (c) {
+  		case 'f':
+! 			ret = strlcpy(runcmd_file, optarg, sizeof(runcmd_file));
+! 			if (ret > sizeof(runcmd_file))
+! 				errflg++;
+  			break;
+  
+  		case '?':
