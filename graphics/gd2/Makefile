@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 PORTREVISION=   1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
@@ -59,7 +59,7 @@ post-extract:
 
 post-patch:
 .if !defined(WITH_LZW)
-	${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.nogif && \
+	@${MV} ${WRKSRC}/gd_gif_out.c ${WRKSRC}/gd_gif_out.c.nogif && \
 		${SED} -e "s|#define LZW_LICENCED||g" \
 			< ${WRKSRC}/gd_gif_out.c.nogif \
 			> ${WRKSRC}/gd_gif_out.c
