@@ -8,7 +8,7 @@
 PORTNAME=	acroread
 PORTVERSION=	4.05
 CATEGORIES=	print linux
-MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
+MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
 DISTNAME=	linux-ar-405
