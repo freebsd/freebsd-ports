@@ -6,7 +6,7 @@
 #
 
 PORTNAME=      samefile
-PORTVERSION=   2.9
+PORTVERSION=   2.10
 CATEGORIES=    sysutils
 MASTER_SITES=  http://www.schweikhardt.net/
 
@@ -15,7 +15,7 @@ MAINTAINER=    schweikh@FreeBSD.org
 MAN1=          samefile.1
 GNU_CONFIGURE= yes
 
-CFLAGS+= -ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wconversion -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wredundant-decls -Wnested-externs -Winline
+CFLAGS+= -ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wconversion -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wredundant-decls -Wnested-externs -Winline -Wno-long-long
 
 post-build:
 	@echo "   >>>>                        <<<<"
