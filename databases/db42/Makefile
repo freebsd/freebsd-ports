@@ -18,6 +18,8 @@ COMMENT=	The Berkeley DB package, revision 4.2
 
 MASTERDIR?=	${.CURDIR}
 
+SLAVE_PORT=	no
+
 .include <${MASTERDIR}/Makefile.db>
 .include <bsd.port.pre.mk>
 
