@@ -1,0 +1,24 @@
+ICMPINFO:
+
+   icmpinfo is a tool for looking at the icmp messages received on
+   the running host.
+
+   The source code comes from an heavily modified BSD ping source.
+   
+USAGE:
+
+icmpinfo       o Gives info about weird packets only [mainly icmp_unreachable].
+icmpinfo -v    o Gives info about all icmp packets [that includes your own
+                 traceroutes...] except pings (icmp_echo_reply).
+icmpinfo -vv   o To see pings too.
+icmpinfo -vvv  o Will add an ascci/hexa dump of the packet.
+icmpinfo -n    o Avoids name queries (faster, lighter).
+icmpinfo -p    o Avoids port number to service name queries (faster, lighter).
+icmpinfo -s    o Also decode the ip_src field which is the address of the
+                 interface receiving the packet. This option is not usefull
+                 for hosts with a single network interface. 
+icmpinfo -l    o Run like a daemon (forks) and output to SYSLOG.
+                 (It now checks that you are root for that)
+
+-- David
+   obrien@NUXI.com
