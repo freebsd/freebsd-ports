@@ -19,9 +19,4 @@ if [ "$2x" = "INSTALLx" -a ! -d ${FONTDIR} ]; then
 	mkdir ${FONTDIR}
 fi
 
-echo "**********************************************************"
-echo "You should restart X server or do 'xset fp rehash' command"
-echo "to enable this update."
-echo "**********************************************************"
-
 exit 0;
