@@ -56,11 +56,11 @@ PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
 .endif
 
-.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
-LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/deskutils/gucharmap
-.else
+#.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
+#LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/deskutils/gucharmap
+#.else
 CONFIGURE_ARGS+=	--enable-cmap=no
-.endif
+#.endif
 
 .if defined(WITH_ENCHANT) || exists(${LOCALBASE}/lib/libenchant.so)
 LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
@@ -73,7 +73,7 @@ LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
-	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
+#	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
 	@${ECHO_MSG} "	WITH_ENCHANT=yes	Enable use of the Enchant dictionary backend broker (default: auto)"
 	@${ECHO_MSG} ""
 
