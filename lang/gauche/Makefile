@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.7	# Keep databases/gauche-gdbm in sync with this
-PORTREVISION=	1
+PORTVERSION=	0.7.1	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,7 +29,6 @@ MAN1=		gosh.1 \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
 		--enable-multibyte=${GAUCHE_ENCODING}
-INSTALL_TARGET=	install-rpm
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}" \
 		INFOSECTION="${INFOSECTION}"
