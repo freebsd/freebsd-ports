@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	motor
-PORTVERSION=	3.2.4
-PORTREVISION=	2
+PORTVERSION=	3.3.0
 CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A powerful text mode based programming IDE
 
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl"
-USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
 
 MAN1=		motor.1
 
@@ -28,12 +33,6 @@ MAN1=		motor.1
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/_G_config.h/d' 		\
-		${WRKSRC}/kkstrtext/conf.h		\
-		${WRKSRC}/kksystr/include/conf.h	\
-		${WRKSRC}/kkconsui/include/conf.h
 
 .if !defined(NOPORTDOCS)
 post-install:
