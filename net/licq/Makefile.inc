@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	licq
 DISTNAME=		${PKGNAMEPREFIX}${LICQ_VER}
 DISTFILES=		${DISTNAME}.tar.bz2
 GNU_CONFIGURE=		yes
-MD5_FILE?=		${LICQ_PORT}/distinfo
+MD5_FILE?=		${PORTSDIR}/${LICQ_PORT}/distinfo
 # USE_LIBTOOL doesn't work for these ports
 #USE_LIBTOOL=		yes
 USE_GMAKE=		yes
