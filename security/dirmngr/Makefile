@@ -7,6 +7,7 @@
 
 PORTNAME=	dirmngr
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://tigress.com/lofi/:lofi/
@@ -34,6 +35,15 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=--with-included-gettext=no
 
 .include <bsd.port.pre.mk>
+
+# We need OpenLDAP. Default on openldap20 but let people build with
+# OpenLDAP 2.1.* if they want.
+
+.if defined(WITH_LDAP21)
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap21
+.else
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20
+.endif
 
 post-extract:
 	${MV} ${WRKDIR}/common ${WRKSRC}
