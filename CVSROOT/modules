@@ -6531,6 +6531,7 @@ py-rijndael	ports/security/py-rijndael
 py-ro		ports/devel/py-ro
 py-rrdpipe	ports/net/py-rrdpipe
 py-rrdtool	ports/net/py-rrdtool
+py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
 py-rt		ports/net/py-rt
 py-rxp		ports/textproc/py-rxp
 py-scgi		ports/www/py-scgi
