@@ -63,7 +63,7 @@
 ! .endif
   
   # if you want APOP support, uncomment the next line
-! CFLAGS+=-DAPOP=\"${PREFIX}/etc/pop.auth\" -DPOPUID=\"pop\"
+! CFLAGS+=-DAPOP=\"${PREFIX}/etc/popper/pop.auth\" -DPOPUID=\"pop\"
   
   # if you want RPOP support, uncomment the next line
 ! # CFLAGS+=-DRPOP
