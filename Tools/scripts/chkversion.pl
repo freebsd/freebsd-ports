@@ -69,18 +69,20 @@ use strict;
 use File::Find;
 use Cwd 'abs_path';
 
-my $portsdir   = $ENV{PORTSDIR}         ? $ENV{PORTSDIR}         : '/usr/ports';
-my $versiondir = $ENV{VERSIONDIR}       ? $ENV{VERSIONDIR}       : '/var/db/chkversion';
-my $cvsblame   = $ENV{CVSBLAME}         ? 1                      : 0;
-my $allports   = $ENV{ALLPORTS}         ? 1                      : 0;
+my $portsdir    = $ENV{PORTSDIR}        ? $ENV{PORTSDIR}        : '/usr/ports';
+my $versiondir  = $ENV{VERSIONDIR}      ? $ENV{VERSIONDIR}      : '/var/db/chkversion';
+my $cvsblame    = $ENV{CVSBLAME}        ? 1                     : 0;
+my $allports    = $ENV{ALLPORTS}        ? 1                     : 0;
 
-my $watchre    = $ENV{WATCH_REGEX}      ? $ENV{WATCH_REGEX}      : '';
-my $returnpath = $ENV{RETURNPATH}       ? $ENV{RETURNPATH}       : '';
-my $h_from     = $ENV{HEADER_FROM}      ? $ENV{HEADER_FROM}      : "$ENV{USER}\@$ENV{HOST}";
-my $h_replyto  = $ENV{HEADER_REPLYTO}   ? $ENV{HEADER_REPLYTO}   : $h_from;
-my $rcpt_watch = $ENV{RCPT_WATCH}       ? $ENV{RCPT_WATCH}       : '';
-my $rcpt_orig  = $ENV{RCPT_ORIGIN}      ? $ENV{RCPT_ORIGIN}      : '';
-my $rcpt_vers  = $ENV{RCPT_VERSION}     ? $ENV{RCPT_VERSION}     : '';
+my $watchre     = $ENV{WATCH_REGEX}     ? $ENV{WATCH_REGEX}     : '';
+my $watchmre    = $ENV{WATCHM_REGEX}    ? $ENV{WATCHM_REGEX}    : '';
+my $returnpath  = $ENV{RETURNPATH}      ? $ENV{RETURNPATH}      : '';
+my $h_from      = $ENV{HEADER_FROM}     ? $ENV{HEADER_FROM}     : "$ENV{USER}\@$ENV{HOST}";
+my $h_replyto   = $ENV{HEADER_REPLYTO}  ? $ENV{HEADER_REPLYTO}  : $h_from;
+my $rcpt_watch  = $ENV{RCPT_WATCH}      ? $ENV{RCPT_WATCH}      : '';
+my $rcpt_watchm = $ENV{RCPT_WATCHM}     ? $ENV{RCPT_WATCHM}     : '';
+my $rcpt_orig   = $ENV{RCPT_ORIGIN}     ? $ENV{RCPT_ORIGIN}     : '';
+my $rcpt_vers   = $ENV{RCPT_VERSION}    ? $ENV{RCPT_VERSION}    : '';
 
 my $make        = '/usr/bin/make';
 my $cvs         = '/usr/bin/cvs';
@@ -90,7 +92,8 @@ my $pkg_version =
   : '/usr/sbin/pkg_version';
 my $sendmail    = '/usr/sbin/sendmail';
 
-my $watch_re = join "|", split " ", $watchre;
+my $watch_re    = join '|', split ' ', $watchre;
+my $watchm_re   = join '|', split ' ', $watchmre;
 
 -d $portsdir or die "Can't find ports tree at $portsdir.\n";
 $portsdir = abs_path($portsdir);
@@ -123,7 +126,7 @@ $ENV{WITH_OPENSSL_BASE} = 'yes';
 
 my %pkgname;
 my %pkgorigin;
-my %maintainer;
+my %pkgmaintainer;
 
 sub wanted {
     return
@@ -139,14 +142,14 @@ sub wanted {
     elsif ($File::Find::name =~ m"^$portsdir/([^/]+/[^/]+)$"os) {
         $File::Find::prune = 1;
         my @makevar = readfrom $File::Find::name,
-          $make, '-VPKGORIGIN', '-VPKGNAME';
+          $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
 
-        $pkgorigin{$1} = $makevar[0]
-          if $makevar[0] && $1 ne $makevar[0];
-        $pkgname{$1} = $makevar[1]
-          if $makevar[1];
-        $maintainer{$_} = $makevar[2]
-          if $makevar[2];
+        if ($#makevar == 2) {
+            $pkgorigin{$1} = $makevar[0]
+              if $1 ne $makevar[0];
+            $pkgname{$1} = $makevar[1];
+            $pkgmaintainer{$1} = $makevar[2];
+        }
     }
 }
 
@@ -165,18 +168,18 @@ else {
             my @makevar = readfrom "$portsdir/$_",
               $make, '-VPKGORIGIN', '-VPKGNAME', '-VMAINTAINER';
 
+            next if $#makevar != 2;
             $pkgorigin{$_} = $makevar[0]
-              if $makevar[0] && $_ ne $makevar[0];
-            $pkgname{$_} = $makevar[1]
-              if $makevar[1];
-            $maintainer{$_} = $makevar[2]
-              if $makevar[2];
+              if $_ ne $makevar[0];
+            $pkgname{$_} = $makevar[1];
+            $pkgmaintainer{$_} = $makevar[2];
         }
     }
 }
 
 my %backwards;
 my %watched;
+my %watchedm;
 
 if ($useindex) {
     my $indexname = readfrom $portsdir, $make, '-VINDEXFILE';
@@ -188,13 +191,13 @@ open VERSIONS, "<$versionfile";
 while (<VERSIONS>) {
     chomp;
     next if /^(#|$)/;
-    my ($origin, $version);
+    my ($origin, $version, $maintainer);
     if ($useindex) {
-        ($version, $origin) = split /\|/;
+        ($origin, $version, $maintainer) = (split /\|/)[1,0,5];
         $origin =~ s,^.*/([^/]+/[^/]+)/?$,$1,;
     }
     else {
-        ($origin, $version) = split;
+        ($origin, $version, $maintainer) = split /\t/;
     }
     if (defined $pkgname{$origin}) {
         my $newversion = $pkgname{$origin};
@@ -207,7 +210,11 @@ while (<VERSIONS>) {
           $pkg_version, '-t', $newversion, $oldversion;
 
         $watched{$origin} = "$version -> $pkgname{$origin}"
-          if ($result ne '=' && $watch_re && $pkgname{$origin} =~ /^(?:$watch_re)$/o);
+          if ($watch_re && $result ne '=' && $origin =~ /^(?:$watch_re)$/o);
+
+        $watchedm{$origin} = "(was <$maintainer>) $version -> $pkgname{$origin}"
+          if ($watchm_re && $maintainer && $pkgmaintainer{$origin}
+            && $maintainer ne $pkgmaintainer{$origin} && $origin =~ /^(?:$watchm_re)$/o);
 
         if ($result eq '<') {
             $backwards{$origin} = "$pkgname{$origin} < $version";
@@ -216,6 +223,7 @@ while (<VERSIONS>) {
     }
     else {
         $pkgname{$origin} = $version;
+        $pkgmaintainer{$origin} = $maintainer;
     }
 }
 close VERSIONS;
@@ -225,7 +233,7 @@ if (!$useindex) {
 
     open VERSIONS, ">$versionfile";
     foreach (sort keys %pkgname) {
-        print VERSIONS "$_\t$pkgname{$_}\n";
+        print VERSIONS "$_\t$pkgname{$_}\t$pkgmaintainer{$_}\n";
     }
     close VERSIONS;
 }
@@ -235,8 +243,7 @@ sub blame {
 
     if (%{$ports}) {
         foreach my $origin (sort keys %{$ports}) {
-            my $maint = $maintainer{$origin} ? " <$maintainer{$origin}>" : '';
-            print $fh "- *$origin*$maint: $ports->{$origin}\n";
+            print $fh "- *$origin* <$pkgmaintainer{$origin}>: $ports->{$origin}\n";
             if ($cvsblame && -d "$portsdir/$origin/CVS") {
                 my @cvslog = readfrom "$portsdir/$origin",
                   $cvs, '-R', 'log', '-N', '-r.', 'Makefile';
@@ -297,6 +304,9 @@ mail $tmpl, $rcpt_vers, \%backwards;
 $tmpl = template $h_from, $rcpt_watch, $h_replyto;
 mail $tmpl, $rcpt_watch, \%watched;
 
+$tmpl = template $h_from, $rcpt_watch, $h_replyto;
+mail $tmpl, $rcpt_watchm, \%watchedm;
+
 exit((%pkgorigin || %backwards) ? 1 : 0);
 
 __END__
@@ -330,11 +340,22 @@ Subject: Ports with version numbers going backwards
 From: %%FROM%%
 To: %%RCPT%%
 Reply-To: %%REPLYTO%%
-Subject: Version changes in watched ports
+Subject: Version changes in your watched ports
 
 ** The following ports have changed version numbers **
 
  You have requested to be notified of version changes in the following
+ ports:
+
+.
+From: %%FROM%%
+To: %%RCPT%%
+Reply-To: %%REPLYTO%%
+Subject: Maintainer changes in your watched ports
+
+** The following ports have changed maintainers **
+
+ You have requested to be notified of maintainer changes in the following
  ports:
 
 .
