@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	3.1.0
+PORTVERSION=	3.2.0
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.nbci.com/romainguy/ \
