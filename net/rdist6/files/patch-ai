@@ -1,0 +1,11 @@
+--- config/os-type.dist	Fri Feb 23 03:18:41 1996
++++ config/os-type	Wed Dec 11 07:17:07 1996
+@@ -102,7 +102,7 @@
+ 				OS="${osname}${osmajver}"
+ 				;;
+ 		"linux"*)	OS=linux;;
+-		"freebsd"*)	OS="${osname}${osmajver}";;
++		"freebsd"*)	OS="freebsd2";;
+ 	  	# OpenBSD looks like freebsd2 right now
+ 		"openbsd"*)	OS="freebsd2";;
+ 		"dgux"*)	OS=dgux;;
