@@ -4315,6 +4315,7 @@ p5-Class-Contract	ports/devel/p5-Class-Contract
 p5-Class-Data-Inheritable	ports/devel/p5-Class-Data-Inheritable
 p5-Class-Date	ports/devel/p5-Class-Date
 p5-Class-Delegation	ports/devel/p5-Class-Delegation
+p5-Class-Fields	ports/devel/p5-Class-Fields
 p5-Class-Loader	ports/devel/p5-Class-Loader
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
 p5-Class-Singleton	ports/devel/p5-Class-Singleton
