@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += aqmoney
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
     SUBDIR += khacc
