@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/gru/
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
+COMMENT=	Gru makes your eyes happy
 
 USE_IMAKE=	yes
 

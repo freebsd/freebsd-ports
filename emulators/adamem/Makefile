@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.komkon.org/~dekogel/files/coleco/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	karlj000@unbc.ca
+COMMENT=	ADAMEm is a portable Coleco ADAM and ColecoVision emulator
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

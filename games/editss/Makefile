@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/contrib/
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	An editor for XPilot shipshapes
 
 USE_IMAKE=	yes
 ALL_TARGET=	editss

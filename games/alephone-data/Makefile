@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	marathon
 DISTNAME=	AlephOne-minf-demo
 
 MAINTAINER=	malyn@strangeGizmo.com
+COMMENT=	Data files for the alephone port
 
 RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Emilia Pinball is a free pinball game
 
 .if !defined(WITH_ALLEGRO)
 BUILD_DEPENDS=	${SDL_CONFIG}:${PORTSDIR}/devel/sdl12

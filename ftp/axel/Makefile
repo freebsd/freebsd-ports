@@ -13,6 +13,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
 MAINTAINER=	lintux@debian.org
+COMMENT=	A download accelerator
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

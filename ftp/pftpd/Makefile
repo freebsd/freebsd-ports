@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/pftpd/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	Multithreaded anonymous FTP daemon
 
 GNU_CONFIGURE=	yes
 

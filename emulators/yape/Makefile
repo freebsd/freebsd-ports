@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cbm264.com/yape/download/
 DISTNAME=	yapeSDL-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Yet Another Commodore +4 Emulator
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

@@ -11,6 +11,7 @@ CATEGORIES=	games gnome
 MASTER_SITES=	http://www.ecs.soton.ac.uk/~njl98r/code/kiss/
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
+COMMENT=	GNOME version of Kisekae Set System
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

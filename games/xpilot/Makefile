@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 MASTER_SITE_SUBDIR=	games/multiplayer
 
 MAINTAINER=	goranrunfeldt@home.se
+COMMENT=	Xpilot(client) and xpilots(server)
 
 USE_IMAKE=	yes
 MAN6=		xpilot.6 xpilots.6 xp-replay.6

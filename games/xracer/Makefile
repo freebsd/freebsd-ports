@@ -12,6 +12,7 @@ MASTER_SITES=	http://xracer.annexia.org/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xracer-data.tar.gz
 
 MAINTAINER=	troll@digitalspark.net
+COMMENT=	Awesome WipeOut clone for OpenGL and X11!
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

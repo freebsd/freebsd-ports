@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.empire.cx/Downloads/server/
 DISTNAME=	empire${PORTVERSION}
 
 MAINTAINER=	darius@dons.net.au
+COMMENT=	Long term multiplayer strategy game
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes     # configure script asks questions

@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 MASTER_SITE_SUBDIR=	pureftpd
 
 MAINTAINER=	j@pureftpd.org
+COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap2

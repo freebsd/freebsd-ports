@@ -12,6 +12,7 @@ MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	huntting@glarp.com
+COMMENT=	A quantum computer simulator
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

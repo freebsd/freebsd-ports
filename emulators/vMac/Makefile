@@ -13,6 +13,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		troll@digitalspark.net
+COMMENT=	Emulates a MacPlus machine!  Runs MacOS versions up to 7.5.5
 
 MAKEFILE=		Makefile
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}

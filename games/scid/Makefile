@@ -14,6 +14,7 @@ MASTER_SITES=	http://scid.sourceforge.net/download/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	volkmann@inode.at
+COMMENT=	A free chess database application
 
 LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 		tk84:${PORTSDIR}/x11-toolkits/tk84

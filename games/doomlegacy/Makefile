@@ -14,6 +14,7 @@ DISTFILES=	${DIST} ${WADFILE}
 EXTRACT_ONLY=	${DIST}
 
 MAINTAINER=	bock@bock.nnov.ru
+COMMENT=	DooM Legacy: popular DooM clone!
 
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm

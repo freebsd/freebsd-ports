@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
 
 MAINTAINER=	mwest@uct.ac.za
+COMMENT=	Colorful Boulderdash'n'Emerald Mine'n'Sokoban'n'Stuff
 
 .if defined(WITH_SDL)
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	flynn@energyhq.homeip.net
+COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 

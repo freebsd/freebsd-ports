@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	toppler
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	A game where you have to climb the tower and avoid the monsters
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 LIB_DEPENDS+=	SDL_mixer:${PORTSDIR}/audio/sdl_mixer

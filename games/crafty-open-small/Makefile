@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/small/
 DISTNAME=	small
 
 MAINTAINER=	seggers@semyam.dinoco.de
+COMMENT=	The small opening book (about 600 KByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty

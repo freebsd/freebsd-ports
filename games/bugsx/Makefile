@@ -14,6 +14,7 @@ DISTNAME=	bugsx108
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	croyle@gelemna.org
+COMMENT=	Breed bugs using genetic algorithims
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/bugsx

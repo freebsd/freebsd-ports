@@ -27,6 +27,7 @@ PATCHFILES=	vmmon-freebsd-0.94.tar.gz \
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
 MAINTAINER=	ak@freenet.co.uk
+COMMENT=	A virtual machine emulator - a full PC in a window
 
 BROKEN=		"Does not build"
 

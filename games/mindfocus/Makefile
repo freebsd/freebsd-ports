@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.toyoshima-house.net/classic/mf/files/
 DISTFILES=	mindfocus-0.88.tar.gz mindfocus-data1.tar.gz
 
 MAINTAINER=	ixtl@utmc.or.jp
+COMMENT=	Lovely characters stay on top of active window
 
 USE_IMAKE=	yes
 USE_XPM=	yes

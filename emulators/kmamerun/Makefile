@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kmamerun
 
 MAINTAINER=	smoberly@karamazov.org
+COMMENT=	KDE frontend for M.A.M.E. (Multiple Arcade Machine Emulator)
 
 RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
 

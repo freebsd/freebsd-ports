@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://savannah.nongnu.org/download/enigma/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/sdl11-config:${PORTSDIR}/devel/sdl12 \
 		lua:${PORTSDIR}/lang/lua

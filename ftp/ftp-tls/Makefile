@@ -11,6 +11,7 @@ CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.runestig.com/pub/ftp-tls/
 
 MAINTAINER=	marius@alchemy.franken.de
+COMMENT=	Ftp client supporting FTP AUTH TLS
 
 USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES

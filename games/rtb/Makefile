@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.lysator.liu.se/realtimebattle/Download/
 
 MAINTAINER=	draj@oceanfree.net
+COMMENT=	Robot programming game for UNIX
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.efd.lth.se/~d00jkr/tuxpuck/
 
 MAINTAINER=	Jan.Stocker@t-online.de
+COMMENT=	Shufflepuck Cafe Clone
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

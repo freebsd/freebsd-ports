@@ -11,6 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
 
 MAINTAINER=	simond@irrelevant.org
+COMMENT=	Amiga emulator
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

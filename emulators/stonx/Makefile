@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.complang.tuwien.ac.at/pub/nino/stonx-current/
 DISTNAME=	STonX-0.6.7-epsilon
 
 MAINTAINER=	treif@mayn.de
+COMMENT=	AtariST emulator
 
 RESTRICTED=	"tos.img is copyrighted"
 NO_PACKAGE=	${RESTRICTED}

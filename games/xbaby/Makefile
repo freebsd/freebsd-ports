@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/X/contrib-R5/games/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
+COMMENT=	Babies hide under your windows
 
 USE_IMAKE=	yes
 

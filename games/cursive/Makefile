@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	howardjp@wam.umd.edu
+COMMENT=	Create ASCII character cursive handwriting
 
 MAN6=		cursive.6
 

@@ -24,6 +24,7 @@ DISTFILES=	AIM.xpi \
 		xpcom.xpi
 
 MAINTAINER=	riggs@rrr.de
+COMMENT=	Linux Netscape 6 suite (German)
 
 NETSCAPE_LANG=	german
 

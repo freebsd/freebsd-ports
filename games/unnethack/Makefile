@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-tty
 DISTNAME=	se${PORTVERSION:S/.//g:L}
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	A dungeon explorin', slashin', hackin' game
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tiamat@telegraph.spb.ru
+COMMENT=	Ultima VII engine
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity

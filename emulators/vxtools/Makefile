@@ -11,6 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.penguin.cz/pub/users/mhi/vxfs/
 
 MAINTAINER=	mhi@penguin.cz
+COMMENT=	Command-line utilities for reading Veritas Filesystem (VxFS)
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ DISTFILES=	unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip
 
 MAINTAINER=	martin@raq.cx
+COMMENT=	A server to host Quake network games under FreeBSD
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha

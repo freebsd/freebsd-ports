@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
 DISTFILES=	xsw1.23.tgz stimages1.3.tgz
 
 MAINTAINER=	troll@digitalspark.net
+COMMENT=	Hardcore Internet space combat/economy game resembling EV on crack!
 
 WRKSRC=		${WRKDIR}/xsw1.23/client
 USE_XLIB=	YES

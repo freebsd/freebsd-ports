@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	debolaz@debolaz.com
+COMMENT=	Enhanced ftp server from NetBSD
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://puma.cis.ibaraki.ac.jp/pub/X11/
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
+COMMENT=	A life game for X
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes

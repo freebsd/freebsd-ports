@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=     abiword
 DISTNAME=	abispell-fr-FR.i386
 
 MAINTAINER=     fab@gcu.info
+COMMENT=	French (France) ispell dictionary for AbiWord
 
 BUILD_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord
 

@@ -10,6 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.heitec.net/pub/distfiles/
 
 MAINTAINER=	bdluevel@heitec.net
+COMMENT=	Rogue-like multiplayer game
 
 MAN6=	hunt.6 huntd.6
 

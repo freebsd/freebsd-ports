@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	doombsp
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	Node builder for Doom
 
 GNU_CONFIGURE=	yes
 

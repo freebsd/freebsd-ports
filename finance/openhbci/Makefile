@@ -11,6 +11,7 @@ MASTER_SITES=	 	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=		heiner@bilch.com
+COMMENT=	HBCI is a bank-independent homebanking standard
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		CXXFLAGS=-pedantic

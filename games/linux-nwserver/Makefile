@@ -12,6 +12,7 @@ MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/127/
 DISTNAME=	linuxserver127
 
 MAINTAINER=	tiamat@telegraph.spb.ru
+COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 
 USE_LINUX=	yes
 NO_BUILD=	yes

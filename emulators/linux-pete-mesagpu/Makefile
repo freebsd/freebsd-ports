@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-pete-
 DISTNAME=	gpupetemesagl168
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	A PSEmu Pro GPU plugin using an OpenGL renderer (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUXBASE}/usr/X11R6/lib/libGL.so:${PORTSDIR}/graphics/linux_mesa3

@@ -21,6 +21,7 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/games/source/ \
 DISTFILES=	dungn27s.zip dungn32b.zip
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
+COMMENT=	Text adventure game of ZORK
 
 EXTRACT_ONLY=	dungn27s.zip
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/medium/
 DISTNAME=	medium
 
 MAINTAINER=	seggers@semyam.dinoco.de
+COMMENT=	The medium opening book (about 1.9 MByte) for crafty
 
 BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty

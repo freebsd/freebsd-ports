@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
 # which is unresponsive since about 21.12.1998
 
 MAINTAINER=	malte.lance@gmx.net
+COMMENT=	GLUT version of Xeyes
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

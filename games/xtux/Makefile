@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S/.//g}
 
 MAINTAINER=	goranrunfeldt@home.se
+COMMENT=	Humorous Arcade game for X
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

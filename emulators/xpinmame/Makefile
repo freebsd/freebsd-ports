@@ -12,9 +12,9 @@ PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
 PATCHFILES+=	${DISTNAME}-pinmame-${PINMAMEVERSION}.patch.gz
 
 MAINTAINER=	stijn@win.tue.nl
+COMMENT=	X11 emulator for pinball ROMs
 
 MASTERDIR=	${.CURDIR}/../xmame
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	pinmame

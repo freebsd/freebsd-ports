@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	makoto@pinpott.spnet.ne.jp
+COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
 USE_XLIB=	yes
 USE_GMAKE=	yes

@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.psychostats.com/psychostats/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	martin@tradex.sk
+COMMENT=	Popular player statistics generator for Half-Life (cs/dod)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.xevil.com/download/stable/
 DISTNAME=	xevilsrc${PORTVERSION}
 
 MAINTAINER=	goranrunfeldt@home.se
+COMMENT=	A fast-action, networked, anti-social, kill-everything game
 
 USE_X_PREFIX=	yes
 USE_ZIP=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/frotz/ \
 		http://www.ifarchive.org/if-archive/infocom/interpreters/frotz/
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	Infocom games interpreter
 
 MAKE_ARGS=	CC="${CC}" OPTS="${CFLAGS}" PREFIX="${PREFIX}" \
 		CONFIG_DIR="${PREFIX}/etc" INCL="" LIB=""

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/tworld/
 DISTNAME=	tworld-${PORTVERSION}
 
 MAINTAINER=	sec@42.org
+COMMENT=	An emulation of the game "Chip's Challenge"
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

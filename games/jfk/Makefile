@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://relax.ath.cx/jfk/
 
 MAINTAINER=	e0026813@stud3.tuwien.ac.at
+COMMENT=	A multiplayer 2D shoot'em up game
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 

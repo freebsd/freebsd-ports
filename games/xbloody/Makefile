@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1994/oct/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kazu@jp.freebsd.org
+COMMENT=	Knife on X
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

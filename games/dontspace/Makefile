@@ -11,6 +11,7 @@ CATEGORIES=	games tk82
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JACOBY/
 
 MAINTAINER=	johnh@isi.edu
+COMMENT=	A solitaire game for X11 modeled after Free Space
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

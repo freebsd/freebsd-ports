@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/misc/smiley/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
+COMMENT=	A "server" to print out a smiley with it's explanation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

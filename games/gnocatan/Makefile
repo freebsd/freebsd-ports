@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	An Internet playable version of the Settlers of Catan for GNOME/GTK
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ PKGNAMESUFFIX=	-fields
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	Jan.Stocker@t-online.de
+COMMENT=	Tactical war game in the tradition of Battle Isle
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

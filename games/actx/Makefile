@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/ActX/
 
 MAINTAINER=	esu@yk.rim.or.jp
+COMMENT=	Window sitter for X11
 
 NO_CDROM=	'contains commercial character data'
 

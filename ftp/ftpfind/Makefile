@@ -12,5 +12,6 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA013366/ \
 		http://www.tryplanet.com/t-ishii/programs/ftpfind/
 
 MAINTAINER=	t-ishii@tryplanet.com
+COMMENT=	Find directory&file on a ftp server
 
 .include <bsd.port.mk>

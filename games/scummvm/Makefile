@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-src
 
 MAINTAINER=	flynn@energyhq.homeip.net
+COMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

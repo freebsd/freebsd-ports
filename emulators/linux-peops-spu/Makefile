@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	linux-peops-
 DISTNAME=	spupeopsoss103
 
 MAINTAINER=	jylefort@brutele.be
+COMMENT=	A PSEmu Pro SPU plugin using the OSS interface (Linux version)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 

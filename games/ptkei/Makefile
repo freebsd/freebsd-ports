@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.lfmm.org/ptkei/
 
 MAINTAINER=	pgfb@imp.ch
+COMMENT=	A Python/Tk graphical client for Wolfpack Empire servers
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/pmw

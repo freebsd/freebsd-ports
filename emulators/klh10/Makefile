@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tgz klh10-2.0a-aux.tgz
 
 MAINTAINER=	kstailey@yahoo.com
+COMMENT=	Emulator for DEC PDP-10
 
 ONLY_FOR_ARCHS=	i386
 

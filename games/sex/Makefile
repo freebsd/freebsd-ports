@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://spatula.net/software/sex/
 
 MAINTAINER=	freebsd@spatula.net
+COMMENT=	Spouts silly mad-lib-style porn-like text
 
 MAN6=		sex.6
 MANCOMPRESSED=	yes

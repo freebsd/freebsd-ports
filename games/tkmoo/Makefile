@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 DISTNAME=	tkMOO-light-${PORTVERSION}
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	Tk-based M** client with scripting support
 
 RUN_DEPENDS=	${WISH83}:${PORTSDIR}/x11-toolkits/tk83
 

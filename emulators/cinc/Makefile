@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cinc
 
 MAINTAINER=	verm@drunkmonk.net
+COMMENT=	Bell Laboratories cardiac computer emulator
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

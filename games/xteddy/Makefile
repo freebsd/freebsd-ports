@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/usenet/comp.sources.x/xteddy/
 
 MAINTAINER=	Isegrim@Wunder-Nett.org
+COMMENT=	A cuddlesome teddy for the X desktop
 
 NO_CDROM=	"Can only be distributed for free"
 
