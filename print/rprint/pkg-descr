@@ -1,0 +1,10 @@
+The rprint utility establishes a bidirectional raw tcp connection
+to a network printer, usually on port 9100. In case of PostScript(TM)
+printers, rprint may be directed to query the printer for accounting
+and printer status information.
+
+Although rprint can be used interactively, too, it is normally be
+invoked by an lpd input filter program.
+
+- Konrad Heuer
+kheuer@gwdu60.gwdg.de
