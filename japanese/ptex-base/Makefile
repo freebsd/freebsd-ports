@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.21 1997/10/04 17:58:42 max Exp $
+# $Id: Makefile,v 1.22 1997/10/05 08:32:25 max Exp $
 #
 
 DISTNAME=	web2c-7.0
@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} web-7.0.tar.gz texmflib-7.2.tar.gz
 
 MAINTAINER=	max@FreeBSD.ORG
 
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
 STRIP=		# some shell scripts
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} web-7.0.tar.gz
