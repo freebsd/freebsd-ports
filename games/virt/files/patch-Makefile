@@ -1,0 +1,35 @@
+--- Makefile.orig	Sun May 27 20:28:36 2001
++++ Makefile	Sun May 27 20:30:18 2001
+@@ -1,7 +1,4 @@
+-PREFIX=/usr/local
+ 
+-CC=gcc
+-CFLAGS=-Wall -ansi -g -ggdb
+ CFLAGS+= `gtk-config --cflags`
+ MCFLAGS=-DPREFIX=\"$(PREFIX)\"
+ 
+@@ -21,17 +18,13 @@
+ 	$(CC) $(CFLAGS) $(MCFLAGS) -c iface.c
+ 
+ install:
+-	install -d $(PREFIX)/bin
+-	install -cs virt $(PREFIX)/bin
+-	install -d -m 777 $(PREFIX)/share/virt
+-	install -d -m 777 $(PREFIX)/share/virt/keytop
+-	install -cm 666 virtrc $(PREFIX)/share/virt
+-	install -cm 666 virt.eng $(PREFIX)/share/virt
+-	install -cm 666 virt.rus $(PREFIX)/share/virt
+-	install -cm 444 COPYRIGHT $(PREFIX)/share/virt
+-	install -cm 444 keytop/*.xpm $(PREFIX)/share/virt/keytop
+-	install -d $(PREFIX)/man/man6
+-	install -cm 444 virt.6 $(PREFIX)/man/man6
++	%%INSTALL_PROGRAM%% virt $(PREFIX)/bin
++	%%INSTALL_DATA%% virtrc $(PREFIX)/share/virt
++	%%INSTALL_DATA%% virt.eng $(PREFIX)/share/virt
++	%%INSTALL_DATA%% virt.rus $(PREFIX)/share/virt
++	%%INSTALL_DATA%% COPYRIGHT $(PREFIX)/share/virt
++	%%INSTALL_DATA%% keytop/*.xpm $(PREFIX)/share/virt/keytop
++	%%INSTALL_MAN%% virt.6 $(PREFIX)/man/man6
+ 
+ .PHONY: clean
+ clean:
