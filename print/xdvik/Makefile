@@ -7,15 +7,21 @@
 
 PORTNAME=	xdvik
 PORTVERSION=	22.78
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
+PKGNAMESUFFIX=	-tetex
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DVI Previewer(kpathsearch) for X
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	tetex-modesw:${PORTSDIR}/print/tex-texmflocal \
+		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		mktexlsr:${PORTSDIR}/print/teTeX-base
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
 USE_XLIB=	yes
@@ -27,21 +33,29 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 
-PLIST_SUB=	TEXMFDIR=${TEXMFDIR} MKTEXLSR=${MKTEXLSR}
+PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
 CONFLICTS=	xdvi-* *-xdvi*
 
 MAN1=		xdvi.1 t1mapper.1 xdvizilla.1
 
-TEXMFDIR?=	share/texmf
+TEXMF?=		share/texmf
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 LIBT1_PREFIX?=	${LOCALBASE}
 DOC_FILES=	BUGS CHANGES INSTALL \
 		README README.CVS README_maintainer TODO
 
-do-install:
-	cd ${WRKSRC}/texk/xdvik && \
-		${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
+PKGINSTALL=	${WRKDIR}/pkg-install.sh
+PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
+PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
+		MKTEXLSR=${MKTEXLSR}
+
+pre-build:
+	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+	${CHMOD} 0755 ${PKGINSTALL}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/texk/xdvik/t1mapper ${PREFIX}/bin
@@ -49,6 +63,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
-	${MKTEXLSR}
+	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
