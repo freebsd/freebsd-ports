@@ -1,0 +1,11 @@
+The Devel::Modlist perl module provides a means by which to get a
+quick run-down on which libraries and modules are being utilized
+by a given perl script.
+
+Just as compiler systems like gcc provide dependancy information
+via switches such as -M, Devel::Modlist is intended to assist script
+authors in preparing dependancy information for potential users of
+their scripts.
+
+-Anton
+<tobez@tobez.org>
