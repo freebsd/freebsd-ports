@@ -14,7 +14,7 @@ MASTER_SITES=	http://gftp.seul.org/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	oliver@freebsd.org
-COMMENT=	A free multithreaded GTK based ftp client
+COMMENT=	A free multithreaded GTK-based GUI ftp and sftp client
 
 GNU_CONFIGURE=	yes
 
