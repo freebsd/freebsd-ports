@@ -2688,6 +2688,7 @@ java-cup	ports/java/java-cup
 java-sqlrelay	ports/databases/java-sqlrelay
 java2html	ports/textproc/java2html
 javac_netscape	ports/java/javac_netscape
+javadc		ports/net/javadc
 javamail	ports/java/javamail
 javavmwrapper	ports/java/javavmwrapper
 jbigkit		ports/graphics/jbigkit
