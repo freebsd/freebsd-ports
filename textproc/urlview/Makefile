@@ -3,11 +3,11 @@
 # Date created:		21 April 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/22 16:51:57 mph Exp $
 #
 
 DISTNAME=	urlview-0.7
-CATEGORIES=	textproc
+CATEGORIES=	textproc www
 MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/mutt/ \
 		ftp://ftp.univ-angers.fr/pub/mail/mutt/ \
