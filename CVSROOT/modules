@@ -263,6 +263,7 @@ alienwah	ports/audio/alienwah
 align		ports/textproc/align
 allegro		ports/devel/allegro
 alloywm		ports/x11-wm/alloywm
+alsaplayer	ports/audio/alsaplayer
 althea		ports/mail/althea
 altivore	ports/security/altivore
 amanda-client	ports/misc/amanda-client
