@@ -8,7 +8,8 @@
 PORTNAME=	hx
 PORTVERSION=	0.7.14
 CATEGORIES=	net
-MASTER_SITES=	ftp://fadeto.blackened.com/pub/other/hotlinex.org/
+MASTER_SITES=	http://hx.fortyoz.org/ \
+		http://members.macconnect.com/users/j/jalex/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text based Hotline (http://www.bigredh.com) client for Unix
