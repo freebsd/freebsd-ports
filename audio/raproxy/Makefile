@@ -3,7 +3,7 @@
 # Date created:			  Sat May 8, 1999
 # Whom:				  Nick Sayer (nsayer@freebsd.org)
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/09 17:34:12 nsayer Exp $
+# $Id: Makefile,v 1.2 1999/05/09 17:45:58 nsayer Exp $
 #
 
 DISTNAME=	raproxy3.0b1
@@ -26,7 +26,7 @@ IGNORE='Please fill out the form at http://service.real.com/firewall/index.html 
 .endif
 
 do-install:
-	${INSTALL-PROGRAM} ${WRKSRC}/raproxy ${PREFIX}/libexec/raproxy
-	${INSTALL-MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
+	${INSTALL_PROGRAM} ${WRKSRC}/raproxy ${PREFIX}/libexec/raproxy
+	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
 
 .include <bsd.port.post.mk>
