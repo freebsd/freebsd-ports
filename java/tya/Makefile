@@ -12,7 +12,7 @@ MASTER_SITES=	http://sax.sax.de/~adlibit/
 DISTNAME=	tya17v3
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ``100% unofficial'' JIT-compiler for java
 
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11

@@ -10,7 +10,7 @@ PORTVERSION=	0.7.14
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Just In Time java bytecode compiler
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
