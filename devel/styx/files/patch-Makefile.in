@@ -1,17 +1,11 @@
---- Makefile.in.orig	Tue Mar 12 03:22:11 2002
-+++ Makefile.in	Thu Mar 21 04:56:47 2002
-@@ -555,12 +555,10 @@
+--- Makefile.in.orig	Thu Dec  5 20:01:08 2002
++++ Makefile.in	Sat Dec  7 06:11:52 2002
+@@ -101,7 +101,7 @@
+ noinst_LTLIBRARIES = libfoolam.la
+ libfoolam_la_SOURCES = foolam.c
  
+-SUBDIRS = gen libbase libstyx libutil modext modstd pgm inc doc tutorial spe pat
++SUBDIRS = gen libbase libstyx libutil modext modstd pgm inc
  
- install-data-local:
--	install -d $(prefix)/include
--	for i in $(iHEADERS); do install -m 444 $$i $(prefix)/include; done
-+	install -d $(pkgincludedir)
-+	for i in $(iHEADERS); do install -m 444 $$i $(pkgincludedir); done
- 	if [ -d man ] ; then install -d $(prefix)/man; fi
- 	if [ -d man ] ; then for i in man/* ; do if [ $$i != "man/*" ]; then install $$i $(prefix)/man; fi; done; fi
--	if [ -d tutorial ] ; then cp -r tutorial $(prefix); fi;
--	if [ -d doc ] ; then cp -r doc $(prefix); fi;
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ EXTRA_DIST = CHANGELOG LICENSE bootstrap util windows
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

@@ -7,36 +7,36 @@
 #
 
 PORTNAME=	styx
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_FLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME}
 INSTALLS_SHLIB=	yes
-
-post-extract:
-	@${RM} -f ${WRKSRC}/config.cache
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,-lrt,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC} -cf - doc tutorial | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	${TAR} -C ${WRKSRC}/doc \
+		--exclude "*.in" --exclude "*Makefile*" -cf - . | \
+			${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${WRKSRC} \
+		--exclude "*.in" --exclude "*Makefile*" -cf - spe pat | \
+			${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	${TAR} -C ${WRKSRC}/tutorial \
+		--exclude "*.in" --exclude "*Makefile*" -cf - . | \
+			${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
