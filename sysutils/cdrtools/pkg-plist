@@ -1,4 +1,4 @@
-bin/cdrecord
 bin/cdda2wav
+bin/cdrecord
 bin/list_audio_tracks
 bin/readcd

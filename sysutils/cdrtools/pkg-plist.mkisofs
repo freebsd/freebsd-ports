@@ -1,0 +1,6 @@
+bin/devdump
+bin/isodump
+bin/isoinfo
+bin/isovfy
+bin/mkhybrid
+bin/mkisofs
