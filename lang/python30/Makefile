@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.48 1999/04/21 16:20:05 nectar Exp $
+# $Id: Makefile,v 1.49 1999/05/19 08:47:50 tg Exp $
 #
 
 DISTNAME=       py152
@@ -63,6 +63,13 @@ SETUP_LOCAL+=	Setup.gmp
 PLIST_GMP=	lib/python1.5/lib-dynload/mpzmodule.so
 .endif
 
+#
+# Install the Tools by default. It contains scripts ranging from an IDE
+# to a web tree checker, to a collection of simple scripts that are useful
+# while extending or managing Python.
+#
+WITH_TOOLS?=	yes
+
 post-extract:
 	cd ${WRKSRC}/Lib && ${SH} ${FILESDIR}/plat-freebsd4.sh
 
@@ -95,5 +102,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/python
 	${INSTALL_DATA} ${WRKSRC}/Misc/COPYRIGHT ${PREFIX}/share/doc/python
 	@${MKDIR} ${PREFIX}/lib/python1.5/site-packages
+.if defined(WITH_TOOLS) && ${WITH_TOOLS} == yes
+	@cd ${WRKSRC}; tar cf - Tools | \
+		(cd ${PREFIX}/lib/python1.5; tar xf -)
+.endif
 
 .include <bsd.port.post.mk>
