@@ -21,5 +21,6 @@ USE_GMAKE=	yes
 
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=		XML2POT=${TRUE} PO2XML=${TRUE}
 
 .include <bsd.port.mk>
