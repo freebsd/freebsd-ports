@@ -4427,6 +4427,7 @@ libogg		ports/audio/libogg
 libol		ports/devel/libol
 libole2		ports/devel/libole2
 liboop		ports/devel/liboop
+libopendaap	ports/devel/libopendaap
 libosip		ports/net/libosip
 libosip2	ports/net/libosip2
 libowfat	ports/devel/libowfat
