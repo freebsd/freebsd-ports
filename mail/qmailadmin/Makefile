@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.6
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/qmailadmin/
 
@@ -34,6 +34,10 @@ USE_GMAKE=	YES
 # CGIBINURL     - location of your cgi directory in a URL
 # WEBDATADIR    - location of your html files
 # WEBDATASUBDIR - subdirectory to place html files in (not working yet)
+#
+# WITHOUT_IPAUTH	- disable the IP address check after login
+# WITHOUT_USER_INDEX	- disable the user index display, which might
+#			  confuse earlier versions of Internet Explorer
 #
 
 CGIBINDIR?=	www/cgi-bin.default
@@ -68,6 +72,14 @@ CONFIGURE_ARGS+=	\
 	--with-htmllibdir=${PREFIX}/share/qmailadmin \
 	--enable-cgipath=/${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
 	--enable-ezmlmidx=y
+
+.if defined(WITHOUT_IPAUTH)
+CONFIGURE_ARGS+=	--enable-ipauth=n
+.endif
+
+.if defined(WITHOUT_USER_INDEX)
+CONFIGURE_ARGS+=	--enable-user-index=n
+.endif
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/qmailadmin/html
