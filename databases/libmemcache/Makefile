@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcache
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	databases
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/libmemcache/
 

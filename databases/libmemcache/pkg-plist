@@ -1,3 +1,4 @@
+include/memcache.h
 lib/libmemcache.so.1.0
 lib/libmemcache.so
 lib/libmemcache.a
