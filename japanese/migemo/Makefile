@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	migemo
-PORTVERSION=	0.32
-PORTREVISIUON=	1
+PORTVERSION=	0.40
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=   http://migemo.namazu.org/stable/
@@ -32,9 +31,6 @@ CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 post-install:
 .if defined(EMACS_PORT_NAME)
 	@${CAT} ${PKGMESSAGE}
-.else
-	@${MKDIR} -p ${DOCSDIR}
-	@${MV} ${PREFIX}/share/migemo/migemo.ja.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
