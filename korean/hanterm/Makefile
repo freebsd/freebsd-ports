@@ -17,6 +17,7 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/j
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
+ALL_TARGET=	hanterm
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/hanterm
