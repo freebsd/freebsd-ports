@@ -1,0 +1,49 @@
+--- Makefile.in.orig	Wed Nov  8 18:01:07 2000
++++ Makefile.in	Wed Nov  8 18:01:38 2000
+@@ -8,7 +8,7 @@
+ FTTESTDIR = test
+ FTPODIR = po
+ 
+-all: ttlib tttest ttpo
++all: ttlib ttpo
+ 
+ debug: ttlibdebug tttest ttpo
+ 
+@@ -22,30 +22,23 @@
+ ttlibdebug:
+ 	cd $(FTLIBDIR); $(MAKE) -f $(MAKEFILE) debug
+ 
+-tttest:
+-	cd $(FTTESTDIR); $(MAKE) -f $(MAKEFILE) all
+-
+ ttpo:
+ 	cd $(FTPODIR); $(MAKE) all
+ 
+ install: 
+ 	cd $(FTLIBDIR); $(MAKE) -f $(MAKEFILE) install
+-	cd $(FTTESTDIR); $(MAKE) -f $(MAKEFILE) install
+ 	cd $(FTPODIR); $(MAKE) install
+ 
+ uninstall:
+ 	cd $(FTLIBDIR); $(MAKE) -f $(MAKEFILE) uninstall
+-	cd $(FTTESTDIR); $(MAKE) -f $(MAKEFILE) uninstall
+ 	cd $(FTPODIR); $(MAKE) uninstall
+ 
+ clean:
+ 	cd $(FTLIBDIR); $(MAKE) -f $(MAKEFILE) clean
+-	cd $(FTTESTDIR); $(MAKE) -f $(MAKEFILE) clean
+ 	cd $(FTPODIR); $(MAKE) clean
+ 
+ distclean:
+ 	cd $(FTLIBDIR); $(MAKE) -f $(MAKEFILE) distclean
+-	cd $(FTTESTDIR); $(MAKE) -f $(MAKEFILE) distclean
+ 	cd $(FTPODIR); $(MAKE) distclean
+ 	$(RMF) config.cache config.log config.status Makefile \
+                MakeSub ft_conf.h libtool
+@@ -55,6 +48,5 @@
+ 
+ depend:
+ 	cd $(FTLIBDIR); $(MAKE) -f $(MAKEFILE) depend
+-	cd $(FTTESTDIR); $(MAKE) -f $(MAKEFILE) depend
+ 
+ # end of Makefile.in

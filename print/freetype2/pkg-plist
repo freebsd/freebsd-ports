@@ -1,14 +1,3 @@
-bin/ftdump
-bin/fterror
-bin/ftlint
-bin/ftmetric
-bin/ftsbit
-bin/ftstring
-bin/ftstrpnm
-bin/ftstrtto
-bin/fttimer
-bin/ftview
-bin/ftzoom
 include/freetype/freetype.h
 include/freetype/fterrid.h
 include/freetype/ftnameid.h
