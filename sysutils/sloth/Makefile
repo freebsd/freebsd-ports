@@ -9,8 +9,7 @@
 PORTNAME=	sloth
 PORTVERSION=	1.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.namodn.com/pub/projects/ \
-		http://communityprojects.org/apps/sloth/
+MASTER_SITES=	http://communityprojects.org/apps/sloth/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slow down a process
