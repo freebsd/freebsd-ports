@@ -48,7 +48,7 @@ pre-fetch:
 # Need to determine whether all author-supplied patches are correctly applied
 ### not yet implemented
 
-pre-patch: extract ${_PATCH_COOKIE}
+pre-patch: ${_PATCH_COOKIE}
 	@find -X ${WRKDIR}/dgd -name '*.orig' -print | xargs rm -f
 
 ${PATCHLIST}:
@@ -64,9 +64,10 @@ ${_PATCH_COOKIE}: ${PATCHLIST}
 	fi
 	@touch -f ${_PATCH_COOKIE};
 
-install: build
+do-install:
 	@chown -R mud.mud ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C /usr/local -xpf -
+	@${MAKE} ${.MAKEFLAGS} fake-pkg
 
 .include <bsd.port.mk>
