@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	linuxpluginwrapper
-PORTVERSION=	20040208
+PORTVERSION=	20040229
 PORTREVISION=	1
 CATEGORIES=	www linux
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.FreeBSD.org/~nork/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~nork/distfiles/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nork
 
 MAINTAINER=	nork@FreeBSD.org
@@ -18,7 +18,6 @@ COMMENT=	A wrapper allowing use of linux-plugins with native applications
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS=	lthread.${LTHREAD_MAJOR}:${PORTSDIR}/devel/linuxthreads
 RUN_DEPENDS=	${LOCALBASE}/Acrobat5/Browsers/intellinux/nppdf.so:${PORTSDIR}/print/acroread5 \
 		${LOCALBASE}/lib/linux-flashplugin6/libflashplayer.so:${PORTSDIR}/www/linux-flashplugin6
 
@@ -29,16 +28,6 @@ USE_MOTIF=	yes
 USE_REINPLACE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	flashpluginwrapper-*
-
-.if		${OSVERSION} >= 500035 && defined(LINUXTHREADS_WRAP_API)
-LTHREAD_MAJOR=	5
-.elif		${OSVERSION} >= 500035
-LTHREAD_MAJOR=	3
-.elif		${OSVERSION} <  500035 && defined(LINUXTHREADS_WRAP_API)
-LTHREAD_MAJOR=	4
-.elif		${OSVERSION} <  500035
-LTHREAD_MAJOR=	2
-.endif
 
 .if		${OSVERSION} >= 500000
 LIBMAPCONF=	${WRKSRC}/misc/libmap.conf-FreeBSD5.x
