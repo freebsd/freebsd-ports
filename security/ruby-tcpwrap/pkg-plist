@@ -1,9 +1,9 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/tcpd.so
-share/examples/ruby/tcpd/echod.rb
-@dirrm share/examples/ruby/tcpd
-share/doc/ruby/tcpd/README.en
-share/doc/ruby/tcpd/tcpd.html
-share/doc/ruby/tcpd/ja/README.ja
-share/doc/ruby/tcpd/ja/tcpd.html
-@dirrm share/doc/ruby/tcpd/ja
-@dirrm share/doc/ruby/tcpd
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/tcpwrap.so
+share/examples/ruby/tcpwrap/echod.rb
+@dirrm share/examples/ruby/tcpwrap
+share/doc/ruby/tcpwrap/README.en
+share/doc/ruby/tcpwrap/tcpwrap.html.en
+share/doc/ruby/tcpwrap/ja/README.ja
+share/doc/ruby/tcpwrap/ja/tcpwrap.html.ja
+@dirrm share/doc/ruby/tcpwrap/ja
+@dirrm share/doc/ruby/tcpwrap
