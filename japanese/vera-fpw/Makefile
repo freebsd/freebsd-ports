@@ -8,47 +8,29 @@
 PORTNAME=	vera-fpw
 PORTVERSION=	${VERA_VER}.${VERAFPW_VER}
 CATEGORIES=	japanese
-MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/vera/ \
-		${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	vera
-DISTNAME=	vera-${VERA_VER}-fpw${VERAFPW_VER}-src
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		vera-${VERA_VER}.tar.gz
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/vera/
+DISTNAME=	vera-${VERA_VER}-fpw${VERAFPW_VER}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		catdump:${PORTSDIR}/japanese/epwutil
-
-WRKSRC=		${WRKDIR}/vera-${VERA_VER}-fpw${VERAFPW_VER}
-VERAFPW_VER=	1.0
-VERA_VER=	1.6
-
-post-extract:
-	cd ${WRKSRC}; \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${_DISTDIR}/vera-${VERA_VER}.tar.gz \
-		${EXTRACT_AFTER_ARGS}
-
-pre-build:
-	cd ${WRKSRC}/vera-${VERA_VER}; \
-	makeinfo --no-split vera.texi
-
-do-build:
-	cd ${WRKSRC}; \
-	fpwmake > /dev/null; \
-	fpwmake catalogs
+USE_ZIP=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/vera
+EXTRACT_BEFORE_ARGS=	-qL
+VERA_VER=	1.7
+VERAFPW_VER=	1.0.2
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/data
-	${INSTALL_DATA} ${WRKSRC}/honmon ${PREFIX}/share/dict/vera-fpw/vera/data
+	${MKDIR} ${PREFIX}/share/dict/vera-fpw/vera/gaiji
+	${INSTALL_DATA} ${WRKSRC}/vera/data/honmon ${PREFIX}/share/dict/vera-fpw/vera/data
+	${INSTALL_DATA} ${WRKSRC}/vera/gaiji/gai16h ${PREFIX}/share/dict/vera-fpw/vera/gaiji
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/vera-fpw
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/vera-fpw
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/vera-fpw
-	${INSTALL_DATA} ${WRKSRC}/vera-${VERA_VER}/vera.texi \
-		${PREFIX}/share/doc/vera-fpw
+.for i in readme.txt vera.tex
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/vera-fpw
+.endfor
 .endif
 
 .include <bsd.port.mk>
