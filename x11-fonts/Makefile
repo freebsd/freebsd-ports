@@ -21,6 +21,7 @@
     SUBDIR += sharefonts
     SUBDIR += tkfont
     SUBDIR += ttmkfdir
+    SUBDIR += urwfonts
     SUBDIR += xfed
     SUBDIR += xmbdfed
 
