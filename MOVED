@@ -1192,7 +1192,6 @@ misc/cfe||2004-07-06|no longer exists
 devel/p5-WWW-Mechanize-FormFiller|www/p5-WWW-Mechanize-FormFiller|2004-07-09|moved to correct category (www)
 editors/moleskine||2004-07-09|project officially dead for last 1.5 years
 mail/sendmail-old|mail/sendmail811|2004-07-17|renamed
-mail/msmtp-devel|mail/msmtp|2004-07-19|mail/msmtp is now stable again
 lang/php4-dtc|lang/php4|2004-07-19|Useless with the new PHP modular infrastructure
 lang/php4-horde|lang/php4|2004-07-19|Useless with the new PHP modular infrastructure
 lang/php4-nms|lang/php4|2004-07-19|Useless with the new PHP modular infrastructure
