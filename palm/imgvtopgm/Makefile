@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.trends.net/~mu/srcs/
 
 MAINTAINER=	sumikawa@kame.net
 
-BUILD_DEPENDS=	${X11BASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
 GNU_CONFIGURE=	yes
 
