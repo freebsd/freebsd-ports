@@ -9,9 +9,7 @@
 DISTNAME=	ndtpd-2.3.3
 PKGNAME=	ja-ndtpd-2.3.3
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/ \
-		ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/old/ \
-		ftp://ftp.mei.co.jp/free/others/Dictionary/ndtp/ndtpd/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 
