@@ -139,6 +139,7 @@
     SUBDIR += hs-hgl
     SUBDIR += icod
     SUBDIR += icontact
+    SUBDIR += imageindex
     SUBDIR += imagesort
     SUBDIR += imc
     SUBDIR += imlib
