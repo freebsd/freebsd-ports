@@ -4620,6 +4620,7 @@ nasm		ports/devel/nasm
 nast		ports/net/nast
 nat		ports/net/nat
 naturalmath	ports/math/naturalmath
+nautilus-cd-burner	ports/sysutils/nautilus-cd-burner
 nautilus-media	ports/multimedia/nautilus-media
 nautilus2	ports/x11-fm/nautilus2
 nauty		ports/math/nauty
