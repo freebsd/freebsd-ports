@@ -24,6 +24,10 @@ NO_BUILD=	yes
 
 NO_BUILD_DEPENDS_JAVA=	yes
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lib/beep*.jar ${JAVAJARDIR}
 	${MKDIR} ${EXAMPLESDIR}
