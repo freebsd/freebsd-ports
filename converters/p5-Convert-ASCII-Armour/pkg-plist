@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/Convert/ASCII/Armor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Convert/ASCII/Armour.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Convert/ASCII 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Convert 2>/dev/null || true
