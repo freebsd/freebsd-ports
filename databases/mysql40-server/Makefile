@@ -140,7 +140,7 @@ pre-fetch:
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_server_dirs@ scripts man support-files|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @docs_dirs@ @sql_server_dirs@ scripts man support-files|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = @server_scripts@|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-data-am: install-pkgincludeHEADERS|install-data-am:|g" ${WRKSRC}/include/Makefile.in
@@ -177,8 +177,6 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
-	@install-info ${PREFIX}/info/mysql.info ${PREFIX}/info/dir
 
 .else
 # MySQL-Client part
