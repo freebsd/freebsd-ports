@@ -8,8 +8,7 @@
 
 DISTNAME=	bbdate-0.2.1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://bbtools.windsofstorm.net/sources/ \
-		ftp://stokes.tte.ele.tue.nl/pub/bbdate/
+MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
