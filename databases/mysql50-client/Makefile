@@ -8,9 +8,9 @@
 PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
 
 MASTERDIR=	${.CURDIR}/../mysql322-server
-COMMENT=	${PKGDIR}/COMMENT.client
+COMMENT=	${PKGDIR}/pkg-comment.client
 PKGINSTALL=	mustnotexist
-PLIST=		${PKGDIR}/PLIST.client
+PLIST=		${PKGDIR}/pkg-plist.client
 
 CLIENT_ONLY=	yes
 
