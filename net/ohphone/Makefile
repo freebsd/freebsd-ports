@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ohphone
-PORTVERSION=	1.1b3
+PORTVERSION=	1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	ohphone_1.1beta3
+DISTNAME=	ohphone_1.1
 
 MAINTAINER=	roger@FreeBSD.org
 
