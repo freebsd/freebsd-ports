@@ -29,7 +29,7 @@ MAKE_ARGS+=	DONT_USE_KANJI=-DNO_KANJI
 MAKE_ARGS+=	DONT_USE_KANJI=
 .endif
 RESTRICTED=	Condition is not clear
-
+ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/gogo231f
 
 do-install:
