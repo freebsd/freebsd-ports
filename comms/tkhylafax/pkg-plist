@@ -15,3 +15,4 @@ lib/tkhylafax-3.0/svrStatus.t
 lib/tkhylafax-3.0/tkhylafax.xbm
 lib/tkhylafax-3.0/viewBatch.t
 lib/tkhylafax-3.0/tclIndex
+@dirrm lib/tkhylafax-3.0
