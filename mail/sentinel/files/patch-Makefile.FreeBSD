@@ -1,11 +1,14 @@
---- Makefile.FreeBSD.orig	Tue May 14 16:05:07 2002
-+++ Makefile.FreeBSD	Tue May 14 16:05:38 2002
-@@ -2,12 +2,12 @@
+--- Makefile.FreeBSD.orig	Wed May  8 11:09:48 2002
++++ Makefile.FreeBSD	Tue Oct 22 20:20:20 2002
+@@ -1,13 +1,13 @@
+-CC = gcc
++CC ?= cc
  
- CFLAGS = -O -I../../include
+-CFLAGS = -O -I../../include
++CFLAGS += -I../../include
  
 -LDFLAGS =  -L../libmilter -L../libsmutil -L../libsm -pthread
-+LDFLAGS =  -L../libmilter -pthread
++LDFLAGS =  -L../libmilter -lc_r
  
 -LIBS = -lmilter -lsmutil -lsm
 +LIBS = -lmilter
