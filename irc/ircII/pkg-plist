@@ -1,5 +1,5 @@
 bin/irc
-bin/irc-4.4Z
+bin/irc-20010612
 bin/ircbug
 bin/ircflush
 bin/ircio
@@ -168,6 +168,7 @@ share/irc/help/load/kickmenu
 share/irc/help/load/killpath
 share/irc/help/load/kpstat
 share/irc/help/load/list
+share/irc/help/load/listidle
 share/irc/help/load/load
 share/irc/help/load/local
 share/irc/help/load/lynx_ircrc
@@ -395,6 +396,7 @@ share/irc/help/set/show_end_of_msgs
 share/irc/help/set/show_numerics
 share/irc/help/set/show_status_all
 share/irc/help/set/show_who_hopcount
+share/irc/help/set/star_prefix
 share/irc/help/set/status_away
 share/irc/help/set/status_channel
 share/irc/help/set/status_chanop
@@ -413,6 +415,7 @@ share/irc/help/set/status_query
 share/irc/help/set/status_server
 share/irc/help/set/status_umode
 share/irc/help/set/status_user
+share/irc/help/set/status_voice
 share/irc/help/set/status_window
 share/irc/help/set/suppress_server_motd
 share/irc/help/set/tab_max
@@ -535,6 +538,7 @@ share/irc/script/kickmenu
 share/irc/script/killpath
 share/irc/script/kpstat
 share/irc/script/list
+share/irc/script/listidle
 share/irc/script/log
 share/irc/script/lynx_ircrc
 share/irc/script/meta1

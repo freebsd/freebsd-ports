@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	4.4Z
+PORTVERSION=	20010612
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
