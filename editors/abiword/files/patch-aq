@@ -1,25 +1,24 @@
---- src/config/abi_defs.mk.orig	Mon Jun  7 00:43:15 2004
-+++ src/config/abi_defs.mk	Mon Jun  7 00:47:55 2004
-@@ -213,11 +213,11 @@
+--- src/config/abi_defs.mk.orig	Thu Jun 17 14:54:58 2004
++++ src/config/abi_defs.mk	Thu Jun 17 14:55:04 2004
+@@ -217,11 +217,11 @@
  ## INSTALL program...
  
  define MAKE_OBJDIR
 -if test ! -d $(@D); then rm -rf $(@D); mkdir -p $(@D); fi
-+if test ! -d $(@D); then $(ABIRM) -rf $(@D); $(ABIMKDIR) -p $(@D); fi
++if test ! -d $(@D); then rm -rf $(@D); $(ABIMKDIR) -p $(@D); fi
  endef
  
  define VERIFY_DIRECTORY
 -if test ! -d xxxx; then rm -rf xxxx; mkdir -p  xxxx; fi
-+if test ! -d xxxx; then $(ABIRM) -rf xxxx; $(ABIMKDIR) -p  xxxx; fi
++if test ! -d xxxx; then rm -rf xxxx; $(ABIMKDIR) -p  xxxx; fi
  endef
  
  ifeq ($(OS_NAME), WIN32)
-@@ -262,7 +262,10 @@
+@@ -266,7 +266,9 @@
  ##################################################################
  ##################################################################
  
 -ABICOPY=cp
-+ABIRM = rm
 +ABICOPY = cp
 +ABICHMOD = chmod
 +ABIMKDIR = mkdir -m u=rwx,go=rx

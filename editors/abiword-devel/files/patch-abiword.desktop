@@ -1,0 +1,14 @@
+--- abiword.desktop.orig	Sat Dec  4 02:09:21 2004
++++ abiword.desktop	Sat Dec  4 02:10:07 2004
+@@ -3,10 +3,9 @@
+ Icon=abiword_48.png
+ Terminal=false
+ Type=Application
+-Categories=Application;Office;WordProcessor;X-Red-Hat-Base;
++Categories=Application;Office;WordProcessor;
+ StartupNotify=true
+ Encoding=UTF-8
+-X-Desktop-File-Install-Version=0.4
+ MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;
+ Name=AbiWord Word Processor
+ Name[de]=AbiWord Textverarbeitung

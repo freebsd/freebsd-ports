@@ -4,8 +4,8 @@
     COMMENT = Editors
 
     SUBDIR += 2bsd-vi
-    SUBDIR += AbiWord2
     SUBDIR += MathPlanner
+    SUBDIR += abiword
     SUBDIR += aee
     SUBDIR += aewan
     SUBDIR += apel

@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	AbiWord2
-PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTNAME=	abiword
+PORTVERSION=	2.2.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -25,8 +24,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		wv-1.0.0:${PORTSDIR}/textproc/wv \
 		fribidi.0:${PORTSDIR}/converters/fribidi
 
-WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -42,62 +39,46 @@ CONFIGURE_ARGS=	--enable-xft \
 		--with-libpng=${LOCALBASE} \
 		--with-libiconv=${LOCALBASE} \
 		--with-libjpeg-prefix=${LOCALBASE} \
-		--disable-peer-config \
-		--enable-cmap=no
+		--disable-peer-config
 MAKEFILE=	GNUmakefile
 
-.ifndef(WITHOUT_HELP_DOCS)
-PLIST_SUB+=		HELPDOCS:=""
+ABIVERSION=	2.2
+PLIST_SUB+=	"ABIVERSION=${ABIVERSION}"
+WRKSRC=		${WRKDIR}/abiword-${PORTVERSION}/abi
+
+.ifndef(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
+PLIST_SUB+=		DICT:="@comment "
 .else
-PLIST_SUB+=		HELPDOCS:="@comment "
+CONFIGURE_ARGS+=	--disable-enchant
+PLIST_SUB+=		DICT:=""
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
-USE_GNOME+=		nautilus2 libgnomeprintui
+USE_GNOME+=		nautilus2 libgnomeprintui desktopfileutils
 CONFIGURE_ARGS+=	--enable-gnome
 PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
 .endif
 
-.ifndef(WITHOUT_GTKSPELL)
-.  if defined(WITH_ENCHANT) || exists(${LOCALBASE}/lib/libenchant.so) && !defined(WITH_ASPELL)
-LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
-CONFIGURE_ARGS+=	--disable-pspell
-.  elif defined(WITH_ASPELL) || exists(${LOCALBASE}/lib/libaspell.so) && !defined(WITH_ENCHANT)
-LIB_DEPENDS+=		aspell.16:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--with-pspell=${LOCALBASE} \
-			--disable-enchant
-.  else
-LIB_DEPENDS+=		enchant.2:${PORTSDIR}/textproc/enchant
-CONFIGURE_ARGS+=	--disable-pspell
-.  endif
-PLIST_SUB+=		DICT:="@comment "
+.if defined(WITH_GUCHARMAP) || exists(${X11BASE}/libdata/pkgconfig/gucharmap.pc)
+LIB_DEPENDS+=		gucharmap.4:${PORTSDIR}/deskutils/gucharmap
 .else
-CONFIGURE_ARGS+=	--disable-enchant --disable-pspell
-PLIST_SUB+=		DICT:=""
+CONFIGURE_ARGS+=	--enable-cmap=no
 .endif
 
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
-	@${ECHO_MSG} "	WITHOUT_HELP_DOCS=yes	Disable install the AbiWord HTML Help docs"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "AbiWord2 has the following spell choices: (Enchant is default)"
-	@${ECHO_MSG} "	WITH_ASPELL=yes		Enable use of the Aspell dictionary backend (default: auto)"
-	@${ECHO_MSG} "	WITH_ENCHANT=yes	Enable use of the Enchant dictionary backend broker (default: auto)"
-	@${ECHO_MSG} "	WITHOUT_GTKSPELL=yes	Don't use either Enchant or Aspell, but still"
-	@${ECHO_MSG} "				has spell enable and install dictionary."
+	@${ECHO_MSG} "	WITH_GUCHARMAP=yes	Enable use of Gucharmap as the symbol insertion tool (default: auto)"
+	@${ECHO_MSG} "	WITHOUT_GTKSPELL=yes	Don't use Enchant, but still enable spellchecking and install the dictionary."
 	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ansi||g ; s|-pedantic||g' \
 		${WRKSRC}/configure
-.ifndef(WITHOUT_HELP_DOCS)
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
-		${WRKDIR}/${DISTNAME}/abiword-docs/Makefile
-.endif
 	@${FIND} ${WRKSRC}/src/config/platforms -name "*.mk" | ${XARGS} \
 		${REINPLACE_CMD} 's|-ansi||g ; s|-pedantic||g'
 	@${FIND} ${WRKSRC} -name GNUmakefile.in | ${XARGS} ${REINPLACE_CMD} -e \
@@ -107,22 +88,17 @@ post-patch:
 		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 post-install:
+	@${MKDIR} ${PREFIX}/lib/AbiWord-${ABIVERSION}/plugins
 .if defined(GNOME_ENABLED)
-	@${MKDIR} ${PREFIX}/share/gnome/apps/Applications
-	@${INSTALL_DATA} ${WRKSRC}/src/pkg/linux/rpm/data/abiword.desktop \
-		${PREFIX}/share/gnome/apps/Applications/abiword.desktop
-	@${MKDIR} ${PREFIX}/share/gnome/pixmaps
-	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/icons/abiword_48.png \
-		${PREFIX}/share/gnome/pixmaps/abiword_48.png
-	@${MKDIR} ${PREFIX}/libdata/bonobo/servers
-	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/GNOME_AbiWord_Control_2_0.server \
-		${PREFIX}/libdata/bonobo/servers/GNOME_AbiWord_Control_2_0.server
-	@${MKDIR} ${PREFIX}/share/gnome/gnome-2.0/ui
-	@${LN} -sf ${PREFIX}/share/AbiSuite-2.0/abi-nautilus-view-file.xml \
-		${PREFIX}/share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
-.endif
-.ifndef(WITHOUT_HELP_DOCS)
-	@cd ${WRKDIR}/${DISTNAME}/abiword-docs && ${MAKE}
+	@${INSTALL_DATA} ${WRKSRC}/abiword.desktop \
+		${X11BASE}/share/gnome/applications/abiword.desktop
+	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/icons/abiword_48.png \
+		${X11BASE}/share/gnome/pixmaps/abiword_48.png
+	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server \
+		${X11BASE}/libdata/bonobo/servers/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server
+	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/abi-nautilus-view-file.xml \
+		${X11BASE}/share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
+	@${X11BASE}/bin/update-desktop-database
 .endif
 
 .include <bsd.port.post.mk>
