@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	qglviewer
-PORTVERSION=	1.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.qglviewer.de/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use OpenGL to play around with three dimensional scenes
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	QTDIR="${X11BASE}"
 INSTALLS_SHLIB=	yes
 
@@ -40,7 +40,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.css ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/html/*.gif ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${DOCSDIR}/html
 .endif
 
