@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	net
 DISTFILES=	#empty
 
-MAINTAINER=	jkh@freebsd.org
+MAINTAINER=	jkh@FreeBSD.org
 
 BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
 
