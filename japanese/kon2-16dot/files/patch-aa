@@ -1,5 +1,5 @@
---- src/vc.c.orig	Wed Jan 24 00:16:06 2001
-+++ src/vc.c	Wed Jan 24 00:16:55 2001
+--- src/vc.c.orig	Sat Jan 25 00:06:23 1997
++++ src/vc.c	Sun Sep 19 04:39:05 2004
 @@ -40,7 +40,13 @@
  #include	<termio.h>
  #elif defined(__FreeBSD__)
@@ -15,42 +15,48 @@
  #endif
  #include	<sys/ioctl.h>
  #ifdef linux
-@@ -95,28 +101,26 @@
+@@ -94,29 +100,22 @@
+ static
  inline	void	blatch(void *head, int n)
  {
- 
+-
 -    __asm__("\t clc\n"
-+    __asm__ volatile("\t clc\n"
- 	    "1:\n"
- 	    "\t andb %%bl, (%%eax)\n"
- 	    "\t incl %%eax\n"
- 	    "\t loop 1b\n"
+-	    "1:\n"
+-	    "\t andb %%bl, (%%eax)\n"
+-	    "\t incl %%eax\n"
+-	    "\t loop 1b\n"
 -	    :
 -	    : "eax" ((long)head), "bl" (0x7F), "c" (n)
 -	    : "bl", "cx" );
-+	    : "=bl" (head), "=c" (n)
-+	    : "eax" ((long)head), "0" (0x7F), "1" (n));
++    char *tmp = (char *)head;
++    do {
++	*tmp &= 0x7f;
++	tmp++;
++    }  while(  --n  );
  }
  
  static
  inline	void	llatch(void *head, int n)
  {
- 
+-
 -    __asm__("\t clc\n"
-+    __asm__ volatile("\t clc\n"
- 	    "1:\n"
- 	    "\t andl %%ebx, (%%eax)\n"
- 	    "\t addl $4, %%eax\n"
- 	    "\t loop 1b\n"
+-	    "1:\n"
+-	    "\t andl %%ebx, (%%eax)\n"
+-	    "\t addl $4, %%eax\n"
+-	    "\t loop 1b\n"
 -	    :
 -	    : "eax" ((long)head), "ebx" (0x7F7F7F7F), "c" (n>>2)
 -	    : "ebx", "cx" );
-+	    : "=ebx" (head), "=c" (n)
-+	    : "eax" ((long)head), "0" (0x7F7F7F7F), "1" (n>>2));
++    int *tmp = (int *)head;
++    n /= 4;
++    do {
++	*tmp &= 0x7f7f7f7f;
++	tmp++;
++    }  while(  --n  );
  }
  
  static inline u_int	TextAddress(u_int x, u_int y)
-@@ -266,12 +270,23 @@
+@@ -266,12 +265,23 @@
  {
      struct vt_mode vtm;
  
@@ -74,7 +80,7 @@
      ioctl(0, VT_SETMODE, &vtm);
  #if defined(__FreeBSD__)
      ioctl(0, VT_RELDISP, 1);
-@@ -297,6 +312,9 @@
+@@ -297,6 +307,9 @@
      vtm.waitv = 0;
      vtm.relsig = SIGUSR1;
      vtm.acqsig = SIGUSR2;
@@ -84,7 +90,7 @@
      ioctl(0, VT_SETMODE, &vtm);
      vInfo.graph_mode();
      if (useHardScroll)
-@@ -816,21 +834,31 @@
+@@ -816,21 +829,31 @@
  
  static int	ConfigBeep(const char *confstr)
  {
