@@ -1,0 +1,14 @@
+From the author (Michael Shields <shields@tembel.org>):
+
+ppgen generates passphrases using strings of words, long enough to have
+an arbitrary level of entropy.  It can use any dictionary and the best
+available source of randomness, including PGP's cryptographic RNG if you
+have version 2.6.2.  It is written in portable C, and it is fairly fast.
+
+You can use ppgen to generate passphrases whenever you have a program that
+accepts long passwords.  I use it for Kerberos and for local passwords
+(I use the FreeBSD MD5-based crypt(3), not the standard limited Unix one),
+and for my PGP keyring.
+
+Because ppgen is so simple, it can also easily be used by passwd(1)
+or adduser(1) programs to choose passwords for users.

@@ -140,6 +140,7 @@
     SUBDIR += pktsuckers
     SUBDIR += portscanner
     SUBDIR += portsentry
+    SUBDIR += ppgen
     SUBDIR += pscan
     SUBDIR += py-amkCrypto
     SUBDIR += py-fchksum

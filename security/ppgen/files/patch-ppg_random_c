@@ -1,0 +1,11 @@
+--- ppg_random.c.orig	Tue Aug 29 04:19:01 1995
++++ ppg_random.c	Sat Aug 12 20:14:39 2000
+@@ -109,7 +109,7 @@ pgp_rand_really_init()
+ 
+     int i;
+     
+-    SRAND(time(NULL)^getpid());
++    srandomdev();
+ 
+     for (i = 0; i < cachesize; i++) {
+ 	/* Conservatively, take what RAND() returns and fold it down
