@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tvision
 DISTNAME=	rhtvision-${PORTVERSION}.src
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Complete C++ Text User Interface (TUI) library
 
 WRKSRC=		${WRKDIR}/tvision
 USE_PERL5=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.red-dove.com/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Logging System for Python as in PEP282
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	koco
 DISTNAME=	KoreanCodecs-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python Unicode codecs for Korean charsets
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

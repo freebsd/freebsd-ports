@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pymad-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python module that provides the MPEG Audio Decoder interface
 
 LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad
 

@@ -12,6 +12,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-rrdtool-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to RRDTool, the graphing and logging utility
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 

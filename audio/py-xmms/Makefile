@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyxmms-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	XMMS Remote Control Library for Python
 
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms

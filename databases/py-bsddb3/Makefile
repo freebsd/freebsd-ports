@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	pybsddb
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python extension module for BerkeleyDB 3 and 4
 
 .if defined(WITH_DB3)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3

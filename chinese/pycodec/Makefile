@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	perky
 DISTNAME=	ChineseCodecs${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python Unicode codecs for Chinese charsets
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 

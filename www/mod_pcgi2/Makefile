@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.zope.org/Members/phd/mod_pcgi2/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Persistent CGI module for Apache and Zope
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 

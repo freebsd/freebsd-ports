@@ -11,6 +11,7 @@ CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Graph Visualization Software from AT&T and Bell Labs
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

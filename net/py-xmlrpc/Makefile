@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	A fast implementation of the xmlrpc spec for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

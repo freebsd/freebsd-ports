@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyserial-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Serial port encapsulation library for Python
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-a

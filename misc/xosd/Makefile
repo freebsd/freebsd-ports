@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ignavus.net/ \
 MASTER_SITE_SUBDIR=	perky
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		xmms.3:${PORTSDIR}/multimedia/xmms \

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygoogle-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python wrapper for the Google web API
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_xmlplus/sax/__init__.py:${PORTSDIR}/textproc/py-xml
 

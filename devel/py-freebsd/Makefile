@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py-freebsd-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to FreeBSD-specific system libraries
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

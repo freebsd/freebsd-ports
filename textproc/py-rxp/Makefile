@@ -14,6 +14,7 @@ DISTNAME=	pyRXP-${PORTVERSION:S/./-/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Fast validating XML parser for Python
 
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes

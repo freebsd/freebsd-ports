@@ -15,6 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}-${GV_VERSION}.tgz
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Python interface to GraphViz agraph
 
 BUILD_DEPENDS=	${SWIG_CMD}:${PORTSDIR}/devel/swig13
 

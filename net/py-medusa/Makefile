@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.amk.ca/files/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
+COMMENT=	Asynchronous socket-based server framework for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
