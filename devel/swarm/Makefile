@@ -21,7 +21,7 @@ LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/graphics/hdf5
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
-ONLY_FOR_ARCH=	i386
+ONLY_FOR_ARCHS=	i386
 
 USE_JAVA=	1.3+
 USE_GMAKE=	yes
