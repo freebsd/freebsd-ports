@@ -59,6 +59,10 @@ LATEST_LINK=	ruby-devel
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build on ia64"
+.endif
+
 MAKE_ARGS=	-j3
 
 .if ${OSVERSION} >= 400014
