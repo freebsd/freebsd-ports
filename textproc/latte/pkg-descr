@@ -1,0 +1,5 @@
+Latte is a simple language for marking up text in a very expressive
+way.  This distribution includes the Latte library, which allows you
+to build translators from Latte to any other text format you choose,
+and a demonstration application that converts Latte text into HTML,
+allowing you to write web pages in a much saner language than HTML.

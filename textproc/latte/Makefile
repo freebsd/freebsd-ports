@@ -1,0 +1,25 @@
+# New ports collection makefile for:        latte
+# Version required:     1.1
+# Date created:         15 August 1999
+# Whom:                 Dominik Rothert <dr@domix.de>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	latte-1.1
+CATEGORIES=	www
+MASTER_SITES=	http://www.latte.org/ \
+		ftp://ftp.brasslantern.com/pub/zanshin/latte/
+
+MAINTAINER=	dr@domix.de
+
+USE_NEWGCC=	yes
+USE_LIBTOOL=	yes
+MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
+
+post-install:
+	strip ${PREFIX}/bin/latte-html
+	${LN} -sf ${PREFIX}/bin/latte-html ${PREFIX}/bin/latte
+	${CP} -Rp ${WRKSRC}/tests ${PREFIX}/share/latte/
+
+.include <bsd.port.mk>
