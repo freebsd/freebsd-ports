@@ -1,0 +1,8 @@
+
+
+	The milter-skem port does not (yet?) provide the
+	milter-starting script(s).
+
+	Please, read the manual page (skem(8)) to determine,
+	what's best for your environment -- it can be configured
+	to be automaticly launched by syslogd(8), for example.

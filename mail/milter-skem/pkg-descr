@@ -1,0 +1,23 @@
+The skem utility is a sendmail milter, that checks and maintains a list
+of whitelisted, temporary banned, and permanently blacklisted
+IP-addresses. How you obtain the entries is up to you, but the included
+logwatcher module provides one possibility. 
+
+The list is stored in a directory, each entry being a file (usually --
+zero sized) or a symlink (usually -- a "broken" one). Such entries are
+stored efficiently (within the directory itself) and the directories are
+searched using the hash tables on modern file systems. At the same time,
+they can be listed, added, and removed with the simple ls(1), touch(1),
+and rm(1).
+
+This milter does not itself filter spam, instead it memorizes the
+verdicts issued by your other anti-spam defenses to reduce the system
+load and resource consumption, by temporarily rejecting the relays
+suspected of spamming (banned) and, optionally, by permanently rejecting
+the relays "convicted" of spamming (blacklisted).
+
+The idea is to stem the spam from real spam sources, while reducing the
+ill effects of false-positives to merely delaying, rather than rejecting
+future messages.
+
+WWW: http://virtual-estates.net/skem/
