@@ -28,11 +28,4 @@ PERL_CONFIGURE=	yes
 MAN3=		DateTime::Event::NameDay.3
 
 .include "../../devel/p5-Module-Build/inc.build.mk"
-.include <bsd.port.pre.mk>
-
-# Depends on p5-DateTime-Set which requires perl >= 5.6
-.if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
