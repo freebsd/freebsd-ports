@@ -1,19 +1,20 @@
---- src/cook.c.orig	Mon Feb 19 22:59:13 2001
-+++ src/cook.c	Mon Apr 30 02:57:21 2001
-@@ -109,7 +109,7 @@
- 			while (i++ < j)
- 				*q++ = ' ';
+--- src/cook.c.orig	Sat Dec 14 22:31:23 2002
++++ src/cook.c	Tue Jan  7 23:53:11 2003
+@@ -106,7 +106,7 @@
+ 				space--;
+ 			}
  
 -		} else if (((*p) & 0xFF) < ' ' && *p != '\n') {	/* Literal ctrl chars */
 +		} else if (((*p) & 0xFF) < ' ' && *p != '\n' && *p != 27) {	/* Literal ctrl chars */
  			*q++ = '^';
- 			*q++ = ((*p) & 0xFF) + '@';
- 			if (*p == '\f')					/* ^L detected */
-@@ -147,6 +147,7 @@
- 	vsnprintf (buf, sizeof(buf) - 1, fmt, ap);
+ 			if (--space) {
+ 				*q++ = ((*p) & 0xFF) + '@';
+@@ -793,7 +793,7 @@
+ 		if (expand_ctrl_chars(to, line, sizeof(to) - 1, cook_width))
+ 			flags |= C_CTRLL;				/* Line contains form-feed */
  
- 	bufp = buf;
-+	wrap_lines = FALSE;
+-		put_cooked(wrap_lines, flags, "%s", to);
++		put_cooked(wrap_lines && strncasecmp(tinrc.mm_local_charset, "Big5", 4), flags, "%s", to);
+ 	} /* while */
  
- 	for (p = bufp; *p; p++) {
- 		if (*p == '\n' || ((overflow + p - bufp >= cCOLS) && wrap_lines)) {
+ 	/*
