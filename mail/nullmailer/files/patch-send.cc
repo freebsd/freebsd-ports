@@ -8,3 +8,13 @@
  #include "configio.h"
  #include "defines.h"
  #include "errcodes.h"
+@@ -233,8 +234,7 @@
+        << itoa(files.count()) << " message(s) in queue." << endl;
+   for(rlist::iter remote(remotes); remote; remote++) {
+     for(slist::iter file(files); file; files.remove(file)) {
+-      if(!send_one(*file, *remote))
+-	break;
++      send_one(*file, *remote);
+     }
+   }
+   fout << "Delivery complete, "
