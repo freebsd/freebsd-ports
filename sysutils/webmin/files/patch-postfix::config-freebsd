@@ -1,0 +1,14 @@
+--- postfix/config-freebsd.orig	Sat Mar 16 07:07:19 2002
++++ postfix/config-freebsd	Sat Mar 16 07:07:56 2002
+@@ -1,6 +1,6 @@
+-postfix_control_command=/usr/local/sbin/postfix
+-postfix_config_command=/usr/local/sbin/postconf
+-postfix_config_file=/usr/local/etc/postfix/main.cf
+-postfix_aliases_table_command=/usr/local/sbin/postalias
++postfix_control_command=%%PREFIX%%/sbin/postfix
++postfix_config_command=%%PREFIX%%/sbin/postconf
++postfix_config_file=%%PREFIX%%/etc/postfix/main.cf
++postfix_aliases_table_command=%%PREFIX%%/sbin/postalias
+ postfix_newaliases_command=/usr/bin/newaliases
+-postfix_lookup_table_command=/usr/local/sbin/postmap
++postfix_lookup_table_command=%%PREFIX%%/sbin/postmap

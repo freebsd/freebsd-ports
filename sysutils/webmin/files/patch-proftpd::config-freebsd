@@ -1,0 +1,9 @@
+--- proftpd/config-freebsd.orig	Sat Mar 16 07:16:37 2002
++++ proftpd/config-freebsd	Sat Mar 16 07:16:38 2002
+@@ -1,4 +1,4 @@
+-proftpd_path=/usr/local/libexec/proftpd
+-proftpd_conf=/usr/local/etc/proftpd.conf
++proftpd_path=%%PREFIX%%/libexec/proftpd
++proftpd_conf=%%PREFIX%%/etc/proftpd.conf
+ pid_file=/var/run/proftpd.pid
+ ftpusers=/etc/ftpusers

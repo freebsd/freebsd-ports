@@ -1,0 +1,9 @@
+--- majordomo/config.orig	Sat Mar 16 06:41:27 2002
++++ majordomo/config	Sat Mar 16 06:41:40 2002
+@@ -1,4 +1,4 @@
+-majordomo_cf=/usr/local/majordomo/majordomo.cf
+-program_dir=/usr/local/majordomo
++majordomo_cf=%%PREFIX%%/majordomo/majordomo.cf
++program_dir=%%PREFIX%%/majordomo
+ dynamic=0
+ sort_mode=0
