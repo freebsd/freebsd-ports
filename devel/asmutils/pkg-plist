@@ -53,22 +53,8 @@ bin/asmutils/true
 bin/asmutils/uname
 bin/asmutils/wc
 bin/asmutils/yes
-lib/asmutils/libc.a
 lib/asmutils/libc.so.0
-lib/asmutils/libcrypto.a
 lib/asmutils/libcrypto.so.0
-lib/asmutils/libm.a
 lib/asmutils/libm.so.0
-%%PORTDOCS%%share/doc/asmutils/Asmutils-HOWTO.html
-%%PORTDOCS%%share/doc/asmutils/acknowledgements.html
-%%PORTDOCS%%share/doc/asmutils/endorsements.html
-%%PORTDOCS%%share/doc/asmutils/history.html
-%%PORTDOCS%%share/doc/asmutils/index.html
-%%PORTDOCS%%share/doc/asmutils/s-contrib.html
-%%PORTDOCS%%share/doc/asmutils/s-debug.html
-%%PORTDOCS%%share/doc/asmutils/s-include.html
-%%PORTDOCS%%share/doc/asmutils/s-layout.html
-%%PORTDOCS%%share/doc/asmutils/s-optimize.html
-%%PORTDOCS%%@dirrm share/doc/asmutils
 @dirrm lib/asmutils
 @dirrm bin/asmutils
