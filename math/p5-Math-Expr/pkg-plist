@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Expr/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/FormulaDB.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/MatchSet.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/Node.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/Num.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/Opp.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/OpperationDB.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/Rule.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/TypeDB.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/Var.pm
+lib/perl5/site_perl/%%PERL_VER%%/Math/Expr/VarSet.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Math/Expr
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/Expr
