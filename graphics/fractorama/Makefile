@@ -14,25 +14,34 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_BISON=	yes
-USE_QT_VER=	3
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USE_GMAKE=	yes
-MAKE_ENV=	QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}" MOC=${MOC}
-ALL_TARGET=	release
+
+USE_QT_VER=	3
+USE_BISON=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+		QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
+		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}"
+ALL_TARGET=	release
 
 post-patch:
-	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
-		${REINPLACE_CMD} -e "s,OPTIMIZE := -O2,OPTIMIZE := ${CFLAGS},g"
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|gcc|\$${CC}|g ; \
+		 s|g++|\$${CXX}|g ; \
+		 s|-L[$$][{]QTROOT[}]/lib -lqt|-lqt-mt \$${QTCFGLIBS}|g ; \
+		 s|-I[$$][{]QTROOT[}]/include|\$${QTCPPFLAGS}|g ; \
+		 s|-O2|\$${CFLAGS}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../fractorama.exe ${PREFIX}/bin/fractorama
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/../examples/* ${EXAMPLESDIR}
 	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/../doc/* ${DOCSDIR}
+	cd ${WRKSRC}/../doc && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/../examples && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
