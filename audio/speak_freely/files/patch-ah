@@ -1,0 +1,11 @@
+--- idea/Makefile.orig	Wed Jan  5 20:20:55 2000
++++ idea/Makefile	Wed Jan  5 20:21:08 2000
+@@ -7,7 +7,7 @@
+ #   Compiler flags
+ 
+ CC = cc
+-CFLAGS = -O
++CFLAGS = $(OPTFLAGS)
+ 
+ all:	idea.a
+ 
