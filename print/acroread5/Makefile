@@ -20,11 +20,14 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	View, distribute and print PDF documents
 
-RUN_DEPENS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
-
 ONLY_FOR_ARCHS=	i386
 
+.if (exists(${LINUXBASE}/lib/libc-2.3.2.so))
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
+.else
 USE_LINUX=	yes
+.endif
+
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i '' -E
 NO_FILTER_SHLIBS=	yes
