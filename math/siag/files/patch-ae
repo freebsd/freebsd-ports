@@ -1,0 +1,11 @@
+--- tsiag/window.c.orig	Wed Jan 28 02:38:18 1998
++++ tsiag/window.c	Wed Jan 28 02:38:24 1998
+@@ -27,7 +27,7 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include "../common/cmalloc.h"
+-#include <curses.h>
++#include <ncurses.h>
+ 
+ #include "../siag/types.h"
+ #include "../siag/calc.h"

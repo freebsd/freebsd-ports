@@ -1,0 +1,54 @@
+--- siod/slibu.c.orig	Wed Jan 28 02:32:30 1998
++++ siod/slibu.c	Wed Jan 28 02:33:37 1998
+@@ -28,6 +28,7 @@
+ #include <pwd.h>
+ #include <sys/stat.h>
+ #include <sys/time.h>
++#include <sys/syslimits.h>
+ #include <sys/resource.h>
+ #include <grp.h>
+ #include <utime.h>
+@@ -258,6 +259,7 @@
+  return(NIL);}
+ #endif
+ 
++#if !defined(__FreeBSD__)
+ LISP lputpwent(LISP alist,LISP file)
+ {int iflag = no_interrupt(1);
+  int status;
+@@ -266,6 +268,7 @@
+  status = putpwent(&p,get_c_file(file,NULL));
+  no_interrupt(iflag);
+  return(NIL);}
++#endif
+ 
+ LISP laccess_problem(LISP lfname,LISP lacc)
+ {char *fname = get_c_string(lfname);
+@@ -1413,7 +1416,7 @@
+ #endif
+ 
+ /* Ulric was here: added hpux */
+-#if defined(unix) && !defined(linux) && !defined(hpux)
++#if defined(unix) && !defined(linux) && !defined(hpux) && !defined(__FreeBSD__)
+ LISP l_lchown(LISP path,LISP uid,LISP gid)
+ {long iflag;
+  iflag = no_interrupt(1);
+@@ -1930,7 +1933,9 @@
+ #if defined(__osf__)
+  init_subr_1("setpwfile",lsetpwfile);
+ #endif
++#if !defined(__FreeBSD__)
+  init_subr_2("putpwent",lputpwent);
++#endif
+  init_subr_2("access-problem?",laccess_problem);
+  init_subr_3("utime",lutime);
+  init_subr_2("chmod",lchmod);
+@@ -2010,7 +2015,7 @@
+  init_subr_3("chown",l_chown);
+ #endif
+ /* Ulric was here: added hpux */
+-#if defined(unix) && !defined(linux) && !defined(hpux)
++#if defined(unix) && !defined(linux) && !defined(hpux) && !defined(__FreeBSD__)
+  init_subr_3("lchown",l_lchown);
+ #endif
+  init_subr_1("http-date",http_date);
