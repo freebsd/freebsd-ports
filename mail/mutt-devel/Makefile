@@ -108,6 +108,9 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www.spinnaker.de/mutt/compressed/:rr
+DISTNAME=	mutt-${PORTVERSION}i
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
@@ -123,12 +126,10 @@ MAINTAINER?=	udo.schweigert@siemens.com
 COMMENT?=	The Mongrel of Mail User Agents (part Elm, Pine, Mush, mh, etc.)
 
 CONFLICTS=	mutt-[0-9]*
-
 DIST_SUBDIR=	mutt
 DOCSDIR?=	${PREFIX}/share/doc/mutt
 EXAMPLESDIR?=	${PREFIX}/share/examples/mutt
 DATADIR?=	${PREFIX}/share/mutt
-
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl --with-ssl=${OPENSSLBASE} \
@@ -149,10 +150,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
 
 .include <bsd.port.pre.mk>
-
-DISTNAME=	mutt-${PORTVERSION}i
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 CD_PATCH_VERSION=	1.5.5.1
 CD_IFDEF_PATCH_VERSION=	1.5.4
@@ -383,7 +380,7 @@ pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
 
 .if defined(MUTT_SLAVE_HTML_PAGES)
-SCRIPTS_ENV+=	MUTT_SLAVE_HTML_PAGES="$(MUTT_SLAVE_HTML_PAGES)"
+SCRIPTS_ENV+=	MUTT_SLAVE_HTML_PAGES="${MUTT_SLAVE_HTML_PAGES}"
 .endif
 .if defined(WITH_MUTT_NNTP)
 SCRIPTS_ENV+=	MUTT_NNTP="yes"
