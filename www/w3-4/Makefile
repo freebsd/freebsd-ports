@@ -3,7 +3,7 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/10/10 04:51:50 asami Exp $
+# $Id: Makefile,v 1.7 1998/11/14 02:18:26 kuriyama Exp $
 #
 
 DISTNAME=	w3-2.2.26
@@ -22,6 +22,8 @@ MAKE_ENV+=	EMACSCMD=${EMACSCMD} ELISPDIR=${ELISPDIR} \
 		INFODIR=${INFODIR} \
 		INSTALL_DATA="${INSTALL_DATA}"
 
+PKGINSTALL=	${WRKDIR}/INSTALL
+PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 VERSION=	2.2.26
 EMACSCMD?=	emacs-19.34
 PORTSDOCDIR=	${PREFIX}/share/doc/w3
@@ -44,18 +46,20 @@ post-build:
 		-e "s,%MKDIR%,${MKDIR},g" \
 		-e "s,%SAMPLEDIR%,${SAMPLEDIR},g" \
 		-e "s,%DIRSECTION%,${DIRSECTION},g" \
-		< ${FILESDIR}/${f}.tmpl > ${FILESDIR}/${f}
+		< ${FILESDIR}/${f}.tmpl > ${WRKDIR}/${f}
 .endfor
-	@${CP} ${FILESDIR}/DEINSTALL ${FILESDIR}/INSTALL ${PKGDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PORTSDOCDIR}
 	@${MKDIR} ${SAMPLEDIR}
-.for f in dot.emacs dot.mosaic-hotlist-default 
+.for f in dot.mosaic-hotlist-default 
 	@${INSTALL_DATA} ${FILESDIR}/${f} ${SAMPLEDIR}
 .endfor
-	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${SAMPLEDIR}
+.for f in dot.emacs
+	@${INSTALL_DATA} ${WRKDIR}/${f} ${SAMPLEDIR}
+.endfor
+	@${INSTALL_SCRIPT} ${WRKDIR}/user-install ${SAMPLEDIR}
 .for f in W3.ad clean-cache Makefile w3.txi
 	@${INSTALL_DATA} ${WRKSRC}/${f}  ${PORTSDOCDIR}
 .endfor
@@ -64,11 +68,6 @@ post-install:
 		INFODIR=${INFODIR} INFOFILE=${INFOFILE} \
 		ELISPDIR=${ELISPDIR} ADDIR=${ADDIR} \
 		DIRSECTION="${DIRSECTION}" \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL  
-
-pre-clean:
-	@${RM} -f ${FILESDIR}/DEINSTALL ${FILESDIR}/INSTALL \
-		${FILESDIR}/dot.emacs ${FILESDIR}/user-install \
-		${PKGDIR}/DEINSTALL ${PKGDIR}/INSTALL 
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL  
 
 .include <bsd.port.mk>
