@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://home.snafu.de/tusk/mod_tidy/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Validates the HTML output of your apache2 webserver
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2

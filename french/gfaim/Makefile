@@ -11,7 +11,7 @@ CATEGORIES=	french misc
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
 USE_X_PREFIX= 	yes

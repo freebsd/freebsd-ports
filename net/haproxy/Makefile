@@ -11,7 +11,7 @@ CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/src/ \
 		http://w.ods.org/tools/haproxy/src/old/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
 USE_REINPLACE=	yes

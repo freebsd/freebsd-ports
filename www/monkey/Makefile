@@ -10,7 +10,7 @@ PORTVERSION=	0.8.0
 CATEGORIES=	www
 MASTER_SITES=	http://monkeyd.sourceforge.net/versions/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A small, powerful, and fast Web server written in C
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo

@@ -10,7 +10,7 @@ PORTVERSION=	1.13
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A POP3 & IMAP4 proxy that can map users to multiple backend servers
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-1.1.7b
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Tracks bandwidth usage by IP address
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

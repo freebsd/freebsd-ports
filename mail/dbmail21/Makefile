@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.dbmail.org/tgz/
 PKGNAMESUFFIX=	-${DATABASE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 USE_REINPLACE=	YES

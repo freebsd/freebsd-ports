@@ -19,7 +19,7 @@ DISTNAME=	bind-${ISCVERSION}
 # but moved to files/ because it contained hardcoded references to /usr/local
 #
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	BIND DNS 9 server which supports a MySQL backend
 
 CONFLICTS=	bind-8.3.* bind84-8.4.* bind9-9.2.* bind9-dlz-9.2.* host-* skalibs-0.*
