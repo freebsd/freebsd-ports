@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+use strict;
+
+my $qmailDir;
+my ( $uid, $gid );
+local *F;
+
+# ensure we are running only as post installation
+exit 0 if $ARGV[ 1 ] ne "POST-INSTALL";
+
+# find location of qmail
+if ( -f "/var/qmail/bin/qmail-send" ) {
+    $qmailDir = "/var/qmail";
+} else {
+    $qmailDir = "/usr/local/qmail";
+}
+
+# create virusalert use as root
+print "==> Creating virusalert user as root\n";
+open( F, ">${qmailDir}/alias/.qmail-virusalert" );
+print F "root\n";
+close( F );
+
+# move qmail-queue to qmail-queue-real
+print "==> Moving qmail-queue\n";
+if ( ! -f "${qmailDir}/bin/qmail-queue-real" ) {
+    system( "mv ${qmailDir}/bin/qmail-queue ${qmailDir}/bin/qmail-queue-real" );
+    system( "cp /usr/local/sbin/amavis ${qmailDir}/bin/qmail-queue" );
+    ( undef, undef, $uid, $gid ) = getpwnam( "qmailq" );
+    chown $uid, $gid, "${qmailDir}/bin/qmail-queue";
+    chmod 04711, "${qmailDir}/bin/qmail-queue";
+} else {
+    print "FAILURE: ${qmailDir}/bin/qmail-queue-real already exists!!\n";
+    exit 1;
+}
+
+print "==> Changing permissions on suidperl\n";
+chmod 04755, "/usr/bin/suidperl";

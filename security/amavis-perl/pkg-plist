@@ -2,7 +2,9 @@ sbin/amavis
 %%PORTDOCS%%share/doc/amavis/amavis.txt
 %%PORTDOCS%%share/doc/amavis/README
 %%PORTDOCS%%share/doc/amavis/README.exim
+%%PORTDOCS%%share/doc/amavis/README.qmail
 %%PORTDOCS%%share/doc/amavis/README.postfix
 %%PORTDOCS%%share/doc/amavis/README.sendmail
 %%PORTDOCS%%share/doc/amavis/README.scanners
+%%PORTDOCS%%share/doc/amavis/README.milter
 %%PORTDOCS%%@dirrm share/doc/amavis

@@ -1,11 +1,11 @@
---- configure.orig	Thu Dec  7 19:04:06 2000
-+++ configure	Sun Dec 31 15:22:09 2000
-@@ -1109,16 +1109,16 @@
+--- configure.orig	Tue Sep 25 19:59:02 2001
++++ configure	Sat Oct  6 15:42:18 2001
+@@ -1477,16 +1477,16 @@
    { echo "configure: error: Sorry, you need the "file" command" 1>&2; exit 1; }
  fi
  
 -echo $ac_n "checking if file can be brief""... $ac_c" 1>&6
--echo "configure:1114: checking if file can be brief" >&5
+-echo "configure:1482: checking if file can be brief" >&5
 -$file -b /bin/sh > /dev/null 2>&1
 -if test $? -ne 0 ; then
 -  { echo "configure: error: 
@@ -15,7 +15,7 @@
 -  echo "$ac_t""yes" 1>&6
 -fi
 +#echo $ac_n "checking if file can be brief""... $ac_c" 1>&6
-+#echo "configure:1114: checking if file can be brief" >&5
++#echo "configure:1482: checking if file can be brief" >&5
 +#$file -b /bin/sh > /dev/null 2>&1
 +#if test $? -ne 0 ; then
 +#  { echo "configure: error: 
@@ -25,9 +25,9 @@
 +#  echo "$ac_t""yes" 1>&6
 +#fi
  
- for ac_prog in grep
+ for ac_prog in id
  do
-@@ -1775,7 +1775,7 @@
+@@ -2875,7 +2875,7 @@
    if test ! -f "$sendmail_cf_orig" ; then
      if test -f /etc/sendmail.cf ; then
        sendmail_cf_orig=/etc/sendmail.orig.cf

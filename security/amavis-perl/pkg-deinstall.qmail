@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+use strict;
+
+my $qmailDir;
+
+# ensure we are running only as post installation
+exit 0 if $ARGV[ 1 ] ne "POST-DEINSTALL";
+
+# find location of qmail
+if ( -f "/var/qmail/bin/qmail-send" ) {
+    $qmailDir = "/var/qmail";
+} else {
+    $qmailDir = "/usr/local/qmail";
+}
+
+print "==> Removing virusalert user\n";
+unlink "${qmailDir}/alias/.qmail-virusalert";
+
+print "==> Removing amavis from qmail\n";
+unlink "${qmailDir}/bin/qmail-queue";
+system( "mv ${qmailDir}/bin/qmail-queue-real ${qmailDir}/bin/qmail-queue" );
+
+print "==> Removing mode from suidperl\n";
+chmod 0511, "/usr/bin/suidperl";

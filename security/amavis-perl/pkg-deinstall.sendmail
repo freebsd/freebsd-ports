@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/security/amavis-perl/Attic/pkg-deinstall.sendmail,v 1.1 2001-10-21 18:47:20 dwcjr Exp $
 
 prefix=/usr/local
 PATH="/bin:/usr/bin"
