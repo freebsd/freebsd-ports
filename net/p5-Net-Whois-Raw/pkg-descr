@@ -1,0 +1,16 @@
+Net::Whois::Raw - Perl extension for retrieving unparsed raw whois
+information.  There is also a simple way of checking whether a domain
+is registered or not.
+
+Usage:
+	use Net::Whois::Raw;
+
+	$s = whois('perl.com');
+	$s = whois('freebsd.org');
+	$s = whois('freebsd.org.ua');
+
+	$Net::Whois::Raw::CHECK_FAIL = 1;
+
+	print "Hurry up!\n" if !whois('microsoft.com');
+
+-- Alex Kapranoff <kappa@freebsd.org.ua>
