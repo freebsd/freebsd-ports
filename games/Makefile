@@ -232,6 +232,7 @@
     SUBDIR += nighthawk
     SUBDIR += nil
     SUBDIR += nonsense
+    SUBDIR += nwnusers
     SUBDIR += omega
     SUBDIR += oneko
     SUBDIR += oneko-sakura

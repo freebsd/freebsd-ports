@@ -1,0 +1,14 @@
+##############################################################################
+Add somthing like this to your mrtg.cfg:
+
+Target[nwn]: `${PREFIX}/bin/nwnusers some.nwn.server`
+MaxBytes[nwn]: 64
+Title[nwn]: Number of Players on some.nwn.server
+PageTop[nwn]: <H1>Number of Players on some.nwn.server</H1>
+Options[nwn]: growright,noinfo,integer,gauge
+YLegend[nwn]: Players
+ShortLegend[nwn]: Players
+Legend1[nwn]: Number of Players
+LegendI[nwn]: :
+LegendO[nwn]:
+##############################################################################
