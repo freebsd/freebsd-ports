@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdelta
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
 
