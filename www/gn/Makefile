@@ -8,14 +8,15 @@
 PORTNAME=	gn
 PORTVERSION=	2.24
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
+MASTER_SITES=	${MASTER_SITE_LOCAL}	#ftp://ftp.acns.nwu.edu/pub/gn/
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
 
 IS_INTERACTIVE=	yes
-NO_PACKAGE=	"Compiled in hostnames"
+NO_PACKAGE=	"Compiled-in hostnames"
 WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.5
 
 INETD_CONF=	/etc/inetd.conf
