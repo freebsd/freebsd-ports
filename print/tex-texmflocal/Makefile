@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	tex-texmflocal
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	print
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -13,47 +13,87 @@ DISTFILES=	# empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Meta-port that creates a site-local $$TEXMF directory
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 PLIST=		${WRKDIR}/pkg-plist
 
+TEXMF=		share/texmf
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFVAR=	share/texmf-var
+TEXMFVAR_LSR=	${LOCALBASE}/${TEXMFVAR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
+DEFAULT_MODE=	tetex
+TEXMFCNF=	web2c/texmf.cnf
+DVIPSKCNF=	dvips/config/config.ps
+XDVIKCNF=	xdvi/XDvi
+DVIPDFMCNF=	dvipdfm/config/config
+
+TETEX_MODESW_SUB= \
+		DEFAULT_MODE=${DEFAULT_MODE} \
+		TEXMFCNF=${TEXMFCNF} \
+		DVIPSKCNF=${DVIPSKCNF} \
+		XDVIKCNF=${XDVIKCNF} \
+		DVIPDFMCNF=${DVIPDFMCNF} \
+		PREFIX=${PREFIX} \
+		TEXMF=${TEXMF} \
+		TEXMFVAR=${TEXMFVAR} \
+		TEXMFLOCAL=${TEXMFLOCAL}
+
 DIRS=	bibtex/bib bibtex/bst bibtex\
-	dvipdfm dvips \
+	context/config context \
+	dvipdfm/config dvipdfm dvips/config dvips \
+	etex/plain/config etex/plain etex \
 	fonts/afm fonts/ofm fonts/ovp fonts/ovf \
 	fonts/ocp fonts/pk fonts/tfm fonts/type1 \
 	fonts/source/public fonts/source fonts/vf fonts \
 	metafont metapost \
 	jbibtex/bib jbibtex/bst jbibtex\
-	tex/generic tex/jadetex tex/latex tex/plain tex\
-	pdftex/latex pdftex/platex pdftex\
+	tex/generic/config tex/generic \
+	tex/jadetex tex/latex tex/plain tex\
+	pdftex/config pdftex/latex pdftex/platex pdftex\
 	ptex/plain ptex/platex ptex\
-	web2c
+	web2c xdvi
+
+LSRMAGIC=${ECHO_CMD} "% ls-R -- filename database for kpathsea; do not change this line."
 
 pre-install:
-	(${ECHO_CMD} '${TEXMFLOCAL}/ls-R'; \
+	${SED} ${TETEX_MODESW_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${FILESDIR}/tetex-modesw.in > ${WRKDIR}/tetex-modesw
+	(${ECHO_CMD} "bin/tetex-modesw"; \
 		for dir in ${DIRS}; do \
-			${ECHO_CMD} "@dirrm ${TEXMFLOCAL}/$${dir}"; \
+			${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFLOCAL}/$${dir} > /dev/null 2>&1 || true"; \
+			${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFVAR}/$${dir} > /dev/null 2>&1 || true"; \
 			${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFLOCAL}/$${dir}"; \
+			${ECHO_CMD} "@exec ${MKDIR} %D/${TEXMFVAR}/$${dir}"; \
 		done; \
-		${ECHO_CMD} '@exec ${MKTEXLSR}'; \
-		${ECHO_CMD} '@unexec ${MKTEXLSR}' ) > ${PLIST}
-	${SED} -e 's,%%TEXMFLOCAL_LSR%%,${TEXMFLOCAL_LSR},' \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${CHMOD} 0555 ${PKGINSTALL}
+		${ECHO_CMD} '@exec ${LSRMAGIC:S,%,%%,g} > ${TEXMFLOCAL_LSR} && ${CHMOD} 0644 ${TEXMFLOCAL_LSR}'; \
+		${ECHO_CMD} '@exec ${LSRMAGIC:S,%,%%,g} > ${TEXMFVAR_LSR} && ${CHMOD} 0644 ${TEXMFVAR_LSR}'; \
+		${ECHO_CMD} '@exec ${TOUCH} ${PREFIX}/etc/tetex-modesw.conf'; \
+		${ECHO_CMD} '@unexec ${RM} -f ${PREFIX}/etc/tetex-modesw.conf > /dev/null 2>&1 || true'; \
+		${ECHO_CMD} '@unexec ${RM} -f ${TEXMFLOCAL_LSR} > /dev/null 2>&1 || true'; \
+		${ECHO_CMD} '@unexec ${RM} -f ${TEXMFVAR_LSR} > /dev/null 2>&1 || true'; \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFLOCAL} > /dev/null 2>&1 || true"; \
+		${ECHO_CMD} "@unexec ${RMDIR} %D/${TEXMFVAR} > /dev/null 2>&1 || true"; \
+		${ECHO_CMD} '@exec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi'; \
+		${ECHO_CMD} '@unexec if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi'; \
+		) > ${PLIST}
 
 do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/tetex-modesw ${PREFIX}/bin
+	${TOUCH} ${PREFIX}/etc/tetex-modesw.conf
+	${CHMOD} 644 ${PREFIX}/etc/tetex-modesw.conf
 	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFLOCAL}/,}
+	${MKDIR} ${DIRS:S,^,${PREFIX}/${TEXMFVAR}/,}
+	${LSRMAGIC} > ${TEXMFLOCAL_LSR}
+	${CHMOD} 0644 ${TEXMFLOCAL_LSR}
+	${LSRMAGIC} > ${TEXMFVAR_LSR}
+	${CHMOD} 0644 ${TEXMFVAR_LSR}
 
 post-install:
-	@${MKTEXLSR}
-	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@if [ -x ${MKTEXLSR} ]; then ${MKTEXLSR}; fi
 
 .include <bsd.port.mk>
