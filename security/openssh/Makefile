@@ -30,8 +30,12 @@ CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+.ifdef USA_RESIDENT
+.if ${USA_RESIDENT} == YES
 CRYPTOLIBS+=	-lRSAglue -lrsaref
+.endif
+.else
+.error "USA_RESIDENT must be set to 'YES' or 'NO' correctly!"
 .endif
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
