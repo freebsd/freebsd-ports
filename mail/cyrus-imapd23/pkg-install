@@ -7,61 +7,21 @@ PKG_BATCH=${BATCH:=NO}
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 #
-# create 'cyrus' user and group before installing
+# Modify the 'cyrus' user created from the cyrus-sasl port
 #
 
-create() {
-	if [ ! -x /usr/sbin/pw ]; then
-		echo "*** Please add a user and a group named \`cyrus' before installing this package."
-		exit 69
-	fi
+modify_cyrus_user() {
+	USER=cyrus
+	PW=/usr/sbin/pw
+	shell=/bin/csh
+	uhome=${PKG_PREFIX}/cyrus
 
-	if ! pw show group cyrus -q >/dev/null; then
-		gid=60
-		while pw show group -g ${gid} -q >/dev/null; do
-			gid=`expr ${gid} + 1`
-		done
-		if ! pw add group cyrus -g ${gid}; then
+	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}" \ ; then
 			e=$?
-			echo "*** Failed to add group \`cyrus'. Please add it manually."
+			echo "*** Failed to update user \`${USER}'."
 			exit ${e}
-		fi
-		echo "*** Added group \`cyrus' (id ${gid})"
-	else
-		gid=`pw show group cyrus 2>/dev/null | cut -d: -f3`
 	fi
-
-	if [ -x /sbin/nologin ]; then
-		shell=/sbin/nologin
-	else
-		shell=/nonexistent
-	fi
-	if ! pw show user cyrus -q >/dev/null; then
-		uid=60
-		while pw show user -u ${uid} -q >/dev/null; do
-			uid=`expr ${uid} + 1`
-		done
-		if ! pw add user cyrus -u ${uid} -g ${gid} -d "/nonexistent" \
-				-c "the cyrus mail server" -s "${shell}" -p "*" \
-				; then
-			e=$?
-			echo "*** Failed to add user \`cyrus'. Please add it manually."
-			exit ${e}
-		fi
-		echo "*** Added user \`cyrus' (id ${uid})"
-	else
-		if ! pw mod user cyrus -g ${gid} -d "/nonexistent" \
-				-c "the cyrus mail server" -s "${shell}" -p "*" \
-				; then
-			e=$?
-			echo "*** Failed to update user \`cyrus'."
-			exit ${e}
-		fi
-		echo "*** Updated user \`cyrus'."
-	fi
-	if ! pw group mod cyrus -m daemon; then
-		echo "*** can't add user \`daemon' to group \`cyrus'"
-	fi
+	echo "*** Updated user \`${USER}'."
 }
 
 
@@ -90,10 +50,10 @@ cyrus_conf() {
 
 case $2 in
 	PRE-INSTALL)
-		create
 		;;
 
 	POST-INSTALL)
+		modify_cyrus_user
 		cd ${PKG_PREFIX}
 		cyrus_conf
 		checkfile ${PKG_PREFIX}/etc/imapd.conf
