@@ -32,6 +32,9 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500039
+WITHOUT_CPU_CFLAGS= yes
+.endif
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile"
 USE_REINPLACE=	yes
