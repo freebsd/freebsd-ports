@@ -12,6 +12,7 @@ man/man5/dhcpdb.relay.5.gz
 share/dhcp/README
 share/dhcp/README.jis
 share/dhcp/intro.dhcp
+share/dhcp/intro.dhcp.jis
 share/dhcp/dhcpdb.pool.sample
 share/dhcp/dhcpdb.relay.sample
 share/dhcp/dhcpdb.server.sample
