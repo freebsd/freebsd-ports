@@ -7,7 +7,7 @@
 
 PORTNAME=	dummyflash
 PORTVERSION=	1.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.netscape.com/pub/sdk/plugin/unix/
 DISTNAME=	unix-sdk-3.0b5
@@ -21,18 +21,8 @@ BUILD_WRKSRC=	${WRKSRC}/PluginSDK30b5/examples/UnixTemplate/Unix
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.freebsd
 
-.if defined(WITH_MOZILLA_DEVEL)
-DEVEL=-devel
-PLIST_SUB=DEVEL=${DEVEL}
-.else
-DEVEL=
-PLIST_SUB=DEVEL=
-.endif
-
-pre-everything::
-	@${ECHO_MSG} "Set WITH_MOZILLA_DEVEL to install this port for www/mozilla-devel"
-
 do-install:
-	${INSTALL_DATA} ${BUILD_WRKSRC}/dummyflash.so ${PREFIX}/lib/mozilla${DEVEL}/plugins
+	@${MKDIR} ${PREFIX}/lib/browser_plugins
+	${INSTALL_DATA} ${BUILD_WRKSRC}/dummyflash.so ${PREFIX}/lib/browser_plugins
 
 .include <bsd.port.mk>
