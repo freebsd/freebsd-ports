@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jdb
-PORTVERSION=	1.12
-PORTREVISION=	2
+PORTVERSION=	1.13
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.isi.edu/~johnh/SOFTWARE/JDB/
 

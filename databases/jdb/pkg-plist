@@ -1,4 +1,6 @@
+bin/crl_to_db
 bin/db2dcliff
+bin/db_to_html_table
 bin/dbcol
 bin/dbcolcreate
 bin/dbcoldefine
@@ -33,18 +35,16 @@ bin/dbstats
 bin/dbstripcomments
 bin/dbstripextraheaders
 bin/dbstripleadingspace
-bin/crl_to_db
-bin/db_to_html_table
 bin/dmalloc_to_db
 bin/ipchain_logs_to_db
 bin/kitrace_to_db
 bin/ns_to_db
 bin/tabdelim_to_db
 bin/tcpdump_to_db
-lib/jdb/README
 lib/jdb/COPYING
-lib/jdb/release
-lib/jdb/dblib.pl
 lib/jdb/DbGetopt.pm
 lib/jdb/DbTDistr.pm
+lib/jdb/README
+lib/jdb/dblib.pl
+lib/jdb/release
 @dirrm lib/jdb
