@@ -1,0 +1,120 @@
+*** html-fix/html2html.l.orig	Mon Feb 26 13:13:21 1996
+--- html-fix/html2html.l	Fri May 24 02:18:11 2002
+***************
+*** 59,71 ****
+  
+  %{
+  
+! #include <malloc.h>
+  #include <stdio.h>
+  #include <string.h>
+  
+  /* #define DEBUG */
+  
+! FILE *out = stdout;
+  
+  char *html_extension = "html"; /* Use Unix style ".html" by default */
+  
+--- 59,71 ----
+  
+  %{
+  
+! #include <stdlib.h>
+  #include <stdio.h>
+  #include <string.h>
+  
+  /* #define DEBUG */
+  
+! FILE *out;
+  
+  char *html_extension = "html"; /* Use Unix style ".html" by default */
+  
+***************
+*** 767,776 ****
+  
+  %%
+  
+! void
+  main( int argc, unsigned char **argv )
+  {
+    int i;
+  
+    strcpy( firstname, "$$" );
+    language[0]='\0';
+--- 767,778 ----
+  
+  %%
+  
+! int
+  main( int argc, unsigned char **argv )
+  {
+    int i;
++ 
++   out = stdout;
+  
+    strcpy( firstname, "$$" );
+    language[0]='\0';
+*** rtf-fix/rtf2rtf.l.orig	Tue Jan 16 21:46:56 1996
+--- rtf-fix/rtf2rtf.l	Fri May 24 02:19:01 2002
+***************
+*** 20,26 ****
+  
+  %{
+  
+! #include <malloc.h>
+  #include <stdio.h>
+  #include <string.h>
+  
+--- 20,26 ----
+  
+  %{
+  
+! #include <stdlib.h>
+  #include <stdio.h>
+  #include <string.h>
+  
+***************
+*** 51,58 ****
+  int section_id = 0; /* used for TOC hyperlinks */
+  int in_appendix = 0;
+    
+! FILE *out = stdout;
+! FILE *idx_fp = stdout;
+  
+  char buf[2048], sectname[256], labeltxt[256];
+  char firstname[256], outname[256];
+--- 51,58 ----
+  int section_id = 0; /* used for TOC hyperlinks */
+  int in_appendix = 0;
+    
+! FILE *out;
+! FILE *idx_fp;
+  
+  char buf[2048], sectname[256], labeltxt[256];
+  char firstname[256], outname[256];
+***************
+*** 379,388 ****
+  
+  %%
+  
+! void
+  main( int argc, char **argv )
+  {
+    int i;
+  
+    strcpy( firstname, "RTF" );
+  
+--- 379,391 ----
+  
+  %%
+  
+! int
+  main( int argc, char **argv )
+  {
+    int i;
++ 
++   out = stdout;
++   idx_fp = stdout;
+  
+    strcpy( firstname, "RTF" );
+  
