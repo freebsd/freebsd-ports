@@ -6,6 +6,7 @@ bin/winebuild
 bin/wineclipsrv
 bin/winedbg.so
 bin/winedbg
+bin/winedump
 bin/winelauncher
 bin/winemaker
 bin/wineserver
