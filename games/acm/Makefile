@@ -3,7 +3,7 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.10 1997/01/03 11:32:46 obrien Exp $
+# $Id: Makefile,v 1.11 1997/07/10 01:43:01 asami Exp $
 #
 
 DISTNAME=	acm-4.7
@@ -11,6 +11,8 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 
 MAINTAINER=	joerg@FreeBSD.org
+
+BROKEN_ELF=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	${SH} -x	# don't ask me why, will fail otherwise
@@ -25,6 +27,6 @@ MAN6=		acm.6
 .if defined(USE_SOUND) && ${USE_SOUND} == YES || \
     exists(${PREFIX}/lib/libaudio.a) && \
     (!defined(USE_SOUND) || ${USE_SOUND} != NO)
-LIB_DEPENDS+=   audio\\.7\\.:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=   audio.7:${PORTSDIR}/audio/nas
 .endif
 
