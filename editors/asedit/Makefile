@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text editor for X/Motif
 
 USE_MOTIF=	yes

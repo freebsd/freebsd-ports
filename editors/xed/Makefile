@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	editors
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A text editor for X
 
 USE_IMAKE=	yes

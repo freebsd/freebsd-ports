@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/logsurfer/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Process logfiles and conditionally perform certain actions
 
 GNU_CONFIGURE=	YES
