@@ -169,12 +169,6 @@ PATCHFILES+=	fontconfig-2.2.3-default_config-20041114.patch \
 PATCH_DIST_STRIP+=	-p1:CJK_charmaps
 .endif
 
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-.else
-MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
-.endif
-
 .if defined(NOPORTDOCS)
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,(install-data-am: )install-data-local,\1,g' \

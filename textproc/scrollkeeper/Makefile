@@ -54,14 +54,6 @@ MAN7=	scrollkeeper.7
 MAN8=	scrollkeeper-preinstall.8 scrollkeeper-rebuilddb.8 \
 	scrollkeeper-update.8
 
-.include <bsd.port.pre.mk>
-
-.if ${X_WINDOW_SYSTEM:L} == xfree86-3
-MTREE_FILE=     /etc/mtree/BSD.x11.dist
-.else
-MTREE_FILE=     /etc/mtree/BSD.x11-4.dist
-.endif
-
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e   \
 		's|[(]LN_S[)] -f -n|(LN_S) -f|g'
@@ -70,4 +62,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/extract/dtds/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
