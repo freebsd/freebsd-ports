@@ -1,16 +1,14 @@
 #!/bin/sh
 
-case "${1}" in
-	start)
-		echo -n "zabbix "
-		zabbix_suckerd
-		zabbix_trapperd
-		;;
-	stop)
-		killall zabbix_suckerd
-		killall zabbix_trapperd
-		;;
-	*)
-		echo Usage: `basename ${0}` "{start|stop}"
-		;;
-esac
+prefix=%PREFIX%
+
+zabbix_suckerd_enable="YES"
+
+. %LOCALBASE%/etc/rc.subr
+
+name="zabbix_suckerd"
+rcvar=`set_rcvar`
+command="${prefix}/bin/${name}"
+required_files="/etc/zabbix/${name}.conf"
+
+run_rc_command "$1"

@@ -7,6 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0b10
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
@@ -20,14 +21,15 @@ PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
 .else
-CONFIGURE_ARGS=	--with-mysql --with-net-snmp
+LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
+RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
 
-LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp \
-		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-BUILD_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=	safe_mysqld:${PORTSDIR}/databases/mysql323-server
+USE_MYSQL=	yes
+CONFIGURE_ARGS=	--with-mysql --with-net-snmp
+PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
+USE_RC_SUBR=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
@@ -37,6 +39,17 @@ ZABBIX_CONFIGS=	zabbix_agent.conf zabbix_agentd.conf
 ZABBIX_BINARIES+=zabbix_suckerd zabbix_trapper zabbix_trapperd
 ZABBIX_CONFIGS+=zabbix_suckerd.conf zabbix_trapper.conf zabbix_trapperd.conf
 .endif
+
+SCRIPT_REGEX=	-e 's|%PREFIX%|${PREFIX}|g' -e 's|%LOCALBASE%|${LOCALBASE}|g'
+
+pre-patch:
+.if !defined(ZABBIX_AGENT_ONLY)
+	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/scripts/zabbix.sh.sample > \
+		${WRKDIR}/zabbix.sh.sample
+.endif
+	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/scripts/zabbix-agent.sh.sample > \
+		${WRKDIR}/zabbix-agent.sh.sample
 
 do-install:
 .for FILE in ${ZABBIX_BINARIES}
@@ -63,6 +76,9 @@ do-install:
 .endif
 	${INSTALL_SCRIPT} ${MASTERDIR}/scripts/zabbix-agent.sh.sample \
 			${PREFIX}/etc/rc.d
-	${SH} ${PKGINSTALL}
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.ifndef(ZABBIX_AGENT_ONLY)
+	${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>

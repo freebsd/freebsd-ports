@@ -1,5 +1,6 @@
 #!/bin/sh
 
-echo "create database zabbix;" | mysql
-cat mysql/schema.sql | mysql zabbix
-cat data/data.sql | mysql zabbix
+{
+	echo "create database zabbix; use zabbix;"
+	cat mysql/schema.sql data/data.sql
+} | mysql ${*}
