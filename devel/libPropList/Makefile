@@ -3,14 +3,14 @@
 # Date Created:				6 December 1998
 # Whom:					Glenn Johnson
 #
-# $Id: Makefile,v 1.2 1999/01/27 08:31:49 fenner Exp $
+# $Id: Makefile,v 1.3 1999/02/02 14:30:27 vanilla Exp $
 #
 
 DISTNAME=	libPropList-0.8.3
 PKGNAME=	libproplist-0.8.3
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	libPropList
+MASTER_SITE_SUBDIR=	sources/libPropList
 
 MAINTAINER=    gljohns@bellsouth.net
 
