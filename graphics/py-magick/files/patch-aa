@@ -1,0 +1,41 @@
+--- setup.py.orig	Sun Apr 13 00:48:35 2003
++++ setup.py	Sun Nov  2 20:18:56 2003
+@@ -1,6 +1,7 @@
+ from distutils.core import setup, Extension
+ import commands
+ import os
++import re
+ import sys
+ 
+ if sys.platform != 'win32':
+@@ -15,15 +16,27 @@
+     except:
+         raise SystemExit
+     val = commands.getoutput('Magick-config --prefix')
+-    libs = ['Magick']
++
++    libs = commands.getoutput('Magick-config --libs')
++    libs = re.split('\s+',libs)
++    libs = map(lambda x:x[2:], libs)
++
++    incdir = commands.getoutput('Magick-config --cppflags')
++    incdir = re.split('\s+',incdir)
++    incdir = map(lambda x:x[2:], incdir)
++
++    libdir = commands.getoutput('Magick-config --ldflags')
++    libdir = re.split('\s+',libdir)
++    libdir = map(lambda x:x[2:], libdir)
++
+ else:
+     libs = ['CORE_RL_magick_']
+     val = os.environ.get('MAGICK_HOME')
+     if not val:
+         raise SystemExit, "ImageMagick not installed correctly"
++    libdir =[os.path.join(val,'lib')]
++    incdir =[os.path.join(val,'include')]
+ 
+-libdir =[os.path.join(val,'lib')]
+-incdir =[os.path.join(val,'include')]
+ 
+ setup(name = "magick",
+       version = "0.5",
