@@ -5726,6 +5726,7 @@ py-ncurses	ports/devel/py-ncurses
 py-numeric	ports/math/py-numeric
 py-numeric17	ports/math/py-numeric17
 py-omniorb	ports/devel/py-omniorb
+py-oops		ports/databases/py-oops
 py-opengl	ports/graphics/py-opengl
 py-openssl	ports/security/py-openssl
 py-optik	ports/devel/py-optik
