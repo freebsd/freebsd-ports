@@ -25,6 +25,7 @@ COMMENT?=	GNU Compiler Collection 3.2.3
 LATEST_LINK?=	gcc32${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -36,10 +37,6 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .if ${OSVERSION} > 502101
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h
-.endif
-
-.if ${ARCH} == "amd64"
-BROKEN=	linker: unrecognised emulation mode: elf_x86_64
 .endif
 
 .if ${PORTOBJFORMAT} == "aout"
@@ -87,6 +84,8 @@ pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch
 	@${RM} -f ${SRCDIR}/gcc/*/*.info*
 	@${MKDIR} ${CONFIGURE_WRKSRC}
+	@${REINPLACE_CMD} -e 's/elf_x86_64/elf_x86_64_fbsd/g' \
+	    ${SRCDIR}/gcc/config/i386/freebsd64.h
 
 post-build:
 	@echo "Consider running 'make check' before 'make install',"
