@@ -1,11 +1,20 @@
---- src/Makefile.orig	Thu Apr 18 00:49:56 2002
-+++ src/Makefile	Thu Apr 18 00:50:25 2002
-@@ -12,7 +12,7 @@
- ifeq ($(freebsd),1)
- LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -lc_r
- else
--LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -lpthread
-+LIBS = $(GTK_LIBS) $(MOZILLA_LIBS) -pthread
- endif
+--- configure.old	Thu Jul  4 11:36:30 2002
++++ configure	Thu Jul  4 11:37:06 2002
+@@ -657,7 +657,7 @@
+ 	fi
+ fi
  
- LOCALEDIR ?= /usr/share/locale
+-if test -f $mozilla_libs/chrome/comm.jar ; then
++if test -f $mozilla_libs/chrome/embed.jar ; then
+ 	MOZILLA_LIB_HOME=$mozilla_libs
+ 	
+ else
+@@ -1258,7 +1258,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
