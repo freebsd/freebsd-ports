@@ -16,6 +16,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	tota@rtfm.jp
 COMMENT=	Bug-tracking system with Japanese patch
 
+BROKEN=		does not work with bugzilla-2.18 masterport
+
 CONFLICTS=	bugzilla-2.*
 PATCHVERSION=	20040714
 
