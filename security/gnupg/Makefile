@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnupg
-# Version required:	0.9.8
+# Version required:	0.9.9
 # Date created:		Sep 30, 1998
 # Whom:			kuriyama@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1999/05/25 00:32:32 kuriyama Exp $
+# $Id: Makefile,v 1.12 1999/06/30 14:47:59 kuriyama Exp $
 #
 
-DISTNAME=	gnupg-0.9.8
+DISTNAME=	gnupg-0.9.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.guug.de/pub/gcrypt/ \
 		ftp://pgp.iijlab.net/pub/gnupg/ \
