@@ -1,4 +1,6 @@
-This is a port of sntop, a curses-based utility that uses fping (ping can be
-used as well) to determine connectivity of remote network hosts on a regular interval.  Features include HTML generation and a secure terminal.
+This is a port of sntop, a curses-based utility that uses fping (ping
+can be used as well) to determine connectivity of remote network hosts
+on a regular interval.  Features include HTML generation and a secure
+terminal.
 
-WWW:  http://sntop.sourceforge.net
+WWW: http://sntop.sourceforge.net
