@@ -12,7 +12,7 @@ MASTER_SITES=           ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     eterm
 DISTNAME=	Eterm-${PORTVERSION}
 
-MAINTAINER=	murray@FreeBSD.org
+MAINTAINER=	olgeni@FreeBSD.org
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 
