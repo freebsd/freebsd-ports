@@ -41,6 +41,7 @@ CONFIGURE_ARGS=	--with-i18n-swat --with-included-gettext \
 		--libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-lockdir=${VARDIR}/db/samba \
+		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-piddir=${VARDIR}/run \
 		--with-pam \
