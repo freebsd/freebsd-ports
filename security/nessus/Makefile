@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	nessus
-PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://cvs.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
+MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/ \
+		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/ \
+		ftp://cvs.nessus.org/pub/nessus/nessus-${PORTVERSION}/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/ \
+		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/ \
+		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-${PORTVERSION}/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/ \
+		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/ \
+		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/
 DISTNAME=	nessus-core-${PORTVERSION}
 
 MAINTAINER=	olgeni@uli.it
@@ -27,13 +26,11 @@ LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
+HAVE_GTK=	yes
+USE_LIBTOOL=	yes
 .if defined(WITHOUT_GTK)
 CONFIGURE_ARGS+=	--disable-gtk
-.else
-USE_GTK=	yes
-CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
 .endif
-USE_LIBTOOL=	yes
 
 MAN1=		nessus.1
 MAN8=		nessusd.8 nessus-adduser.8
