@@ -27,4 +27,6 @@ share/locale/uk/LC_MESSAGES/gqview.mo
 share/locale/vi/LC_MESSAGES/gqview.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
+share/gnome/apps/Graphics/gqview.desktop
+share/gnome/pixmaps/gqview.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

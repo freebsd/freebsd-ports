@@ -1,6 +1,22 @@
---- Makefile.in.orig	Fri Jan 23 18:33:39 2004
-+++ Makefile.in	Fri Jan 23 18:37:29 2004
-@@ -547,7 +547,7 @@
+--- Makefile.in.orig	Sat Feb 21 08:23:27 2004
++++ Makefile.in	Sun Feb 29 17:45:24 2004
+@@ -172,11 +172,11 @@
+ helpdir = $(prefix)/share/gqview
+ help_DATA = README
+ 
+-@HAVE_GNOME_TRUE@desktopdir = $(GNOME_DATADIR)/gnome/apps/Graphics
+-@HAVE_GNOME_TRUE@desktop_DATA = gqview.desktop
++#desktopdir = $(GNOME_DATADIR)/gnome/apps/Graphics
++#desktop_DATA = gqview.desktop
+ 
+-@HAVE_GNOME_TRUE@icondir = $(GNOME_DATADIR)/pixmaps
+-@HAVE_GNOME_TRUE@icon_DATA = gqview.png
++#icondir = $(GNOME_DATADIR)/pixmaps
++#icon_DATA = gqview.png
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ subdir = .
+@@ -646,7 +646,7 @@
  
  info-am:
  
