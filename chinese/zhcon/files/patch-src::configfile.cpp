@@ -10,12 +10,12 @@
  
  ConfigFile::ConfigFile(const char *fn) {
 +    uid_t euid = geteuid();
-+    setuid(getuid());
++    seteuid(getuid());
      ifstream in(fn);
      if (!in)
          throw runtime_error("Could not open config file!");
      ParseFile(in);
-+    setuid(euid);
++    seteuid(euid);
  }
  
  ConfigFile::~ConfigFile() {}
