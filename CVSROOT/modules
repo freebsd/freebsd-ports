@@ -738,6 +738,7 @@ braa		ports/net-mgmt/braa
 braincurses	ports/games/braincurses
 bricolage	ports/www/bricolage
 bricons		ports/x11/bricons
+brightside	ports/x11/brightside
 briquolo	ports/games/briquolo
 british-ispell	ports/textproc/british-ispell
 bro		ports/security/bro
