@@ -7200,6 +7200,7 @@ p5-Log-TraceMessages	ports/devel/p5-Log-TraceMessages
 p5-MARC		ports/textproc/p5-MARC
 p5-MD5		ports/security/p5-MD5
 p5-MIME-Base64	ports/converters/p5-MIME-Base64
+p5-MIME-Fast	ports/mail/p5-MIME-Fast
 p5-MIME-Lite	ports/mail/p5-MIME-Lite
 p5-MIME-Lite-HTML	ports/mail/p5-MIME-Lite-HTML
 p5-MIME-Tools	ports/mail/p5-MIME-Tools
