@@ -1,5 +1,5 @@
-*** make.44bsd	Wed May 29 17:37:44 1996
---- make.44bsd	Sat Jun  8 15:18:11 1996
+*** make.44bsd.orig	Thu May 30 09:37:44 1996
+--- make.44bsd	Fri Dec  6 11:05:40 1996
 ***************
 *** 3,10 ****
   
@@ -44,10 +44,11 @@
   
   .include <bsd.prog.mk>
 - 
---- 14,40 ----
+--- 14,41 ----
   	xtnd_xlst.c pop_uidl.c pop_rpop.c pop_apop.c md5.c
   #SRCS+=	flock.c mktemp.c
   
+! PREFIX?=/usr/local
 ! BINDIR=${PREFIX}/libexec
 ! MANDIR=${PREFIX}/man/man
   
