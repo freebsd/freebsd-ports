@@ -42,6 +42,7 @@ include/beecrypt/sha1opt.h
 include/beecrypt/sha256.h
 include/beecrypt/sha384.h
 include/beecrypt/sha512.h
+include/beecrypt/sha_k.h
 include/beecrypt/timestamp.h
 include/beecrypt/win.h
 lib/libbeecrypt.a
