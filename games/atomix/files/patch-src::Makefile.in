@@ -1,0 +1,12 @@
+--- src/Makefile.in.orig	Thu Dec 11 10:54:14 2003
++++ src/Makefile.in	Thu Dec 11 10:55:37 2003
+@@ -447,7 +447,8 @@
+ mostlyclean distclean maintainer-clean
+ 
+ 
+-@INTLTOOL_XML_RULE@
++%.xml: %.xml.in
++	@cp $< $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
