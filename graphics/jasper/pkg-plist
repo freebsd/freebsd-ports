@@ -17,9 +17,9 @@ include/jasper/jas_version.h
 include/jasper/jasper.h
 lib/libjasper.a
 lib/libjasper.so
-lib/libjasper.so.3
+lib/libjasper.so.4
 share/doc/jasper/README
-share/doc/jasper/jasper.html
-share/doc/jasper/jasper_small.gif
+share/doc/jasper/jasper.pdf
+share/doc/jasper/jpeg2000.pdf
 @dirrm share/doc/jasper
 @dirrm include/jasper

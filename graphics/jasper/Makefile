@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jasper
-PORTVERSION=	1.500.3
+PORTVERSION=	1.500.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.ece.ubc.ca/~mdadams/jasper/software/
+MASTER_SITES=	http://www.ece.uvic.ca/~mdadams/jasper/software/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
