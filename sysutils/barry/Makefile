@@ -22,10 +22,16 @@ USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 pre-build:
 	${REINPLACE_CMD} "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/Makefile
 
 pre-install:
 	${MKDIR} ${DESTDIR}${PREFIX}/share/applnk/Utilities
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
