@@ -5,13 +5,11 @@ apsfilter/filter/.keep_me
 apsfilter/global/GLOBAL.sh
 apsfilter/lib/redir_gs_msg.ps
 apsfilter/setup/README
-apsfilter/setup/compile
 apsfilter/setup/devices-5.50
 apsfilter/setup/devices-6.01
 apsfilter/setup/filtersetup
 apsfilter/setup/printer-5.50
 apsfilter/setup/printer-6.01
-apsfilter/setup/mksymlink
 apsfilter/setup/test.ps
 apsfilter/template/README
 apsfilter/template/apsfilterrc
