@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/04/20 16:15:31	1.1
++++ Makefile.in	2001/04/20 16:15:45
+@@ -106,7 +106,7 @@
+ 
+ EXTRA_DIST = scrollkeeper.spec COPYING-DOCS
+ 
+-scrollkeeperdocdir = $(datadir)/doc/scrollkeeper-$(VERSION)
++scrollkeeperdocdir = $(datadir)/doc/scrollkeeper
+ scrollkeeperdoc_DATA = COPYING-DOCS
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

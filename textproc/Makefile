@@ -146,6 +146,7 @@
     SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sarep
+    SUBDIR += scrollkeeper
     SUBDIR += sdf
     SUBDIR += sdocbook-xml
     SUBDIR += se-ispell
