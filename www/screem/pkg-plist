@@ -13,8 +13,16 @@ lib/screem/plugins/ssiWizard.so
 lib/screem/plugins/tableWizard.so
 lib/screem/plugins/uploadWizard.so
 share/gnome/apps/Development/screem.desktop
+share/gnome/help/screem/C/authors.html
 share/gnome/help/screem/C/authors.sgml
+share/gnome/help/screem/C/bugs.html
 share/gnome/help/screem/C/bugs.sgml
+share/gnome/help/screem/C/cvs.html
+share/gnome/help/screem/C/dnd.html
+share/gnome/help/screem/C/documentstructure.html
+share/gnome/help/screem/C/dtd.html
+share/gnome/help/screem/C/externalbrowsers.html
+share/gnome/help/screem/C/features.html
 share/gnome/help/screem/C/features.sgml
 share/gnome/help/screem/C/figs/color.png
 share/gnome/help/screem/C/figs/copybutton.png
@@ -48,14 +56,50 @@ share/gnome/help/screem/C/figs/tagbutton.png
 share/gnome/help/screem/C/figs/todo.png
 share/gnome/help/screem/C/figs/upload.png
 share/gnome/help/screem/C/figs/wizardbutton.png
+share/gnome/help/screem/C/guilescripting.html
+share/gnome/help/screem/C/highlighting.html
+share/gnome/help/screem/C/index.html
+share/gnome/help/screem/C/inlinetagginginfo.html
+share/gnome/help/screem/C/install-install.html
+share/gnome/help/screem/C/install-uninstall.html
+share/gnome/help/screem/C/install-what.html
+share/gnome/help/screem/C/install.html
 share/gnome/help/screem/C/install.sgml
+share/gnome/help/screem/C/intelliclose.html
+share/gnome/help/screem/C/intellientity.html
+share/gnome/help/screem/C/internationalisation.html
+share/gnome/help/screem/C/intro.html
 share/gnome/help/screem/C/intro.sgml
+share/gnome/help/screem/C/keymacros.html
+share/gnome/help/screem/C/libraryrequirements.html
+share/gnome/help/screem/C/linkfix.html
+share/gnome/help/screem/C/linkview.html
+share/gnome/help/screem/C/multiprojects.html
+share/gnome/help/screem/C/plugins.html
+share/gnome/help/screem/C/previewwindow.html
+share/gnome/help/screem/C/printing.html
+share/gnome/help/screem/C/requirements.html
 share/gnome/help/screem/C/requirements.sgml
 share/gnome/help/screem/C/screem.sgml
 share/gnome/help/screem/C/screemDev.sgml
 share/gnome/help/screem/C/screemGuiRef.sgml
+share/gnome/help/screem/C/searchreplace.html
+share/gnome/help/screem/C/setup-helpers.html
+share/gnome/help/screem/C/setup-import.html
+share/gnome/help/screem/C/setup.html
 share/gnome/help/screem/C/setup.sgml
+share/gnome/help/screem/C/sitewidetemplates.html
+share/gnome/help/screem/C/spellchecking.html
+share/gnome/help/screem/C/started-editing.html
+share/gnome/help/screem/C/started-previewing.html
+share/gnome/help/screem/C/started-uploading.html
+share/gnome/help/screem/C/started.html
 share/gnome/help/screem/C/started.sgml
+share/gnome/help/screem/C/taghelp.html
+share/gnome/help/screem/C/taglist.html
+share/gnome/help/screem/C/tagproperties.html
+share/gnome/help/screem/C/todolist.html
+share/gnome/help/screem/C/tooltips.html
 share/gnome/help/screem/C/topic.dat
 share/gnome/mc/templates/screem.desktop
 share/gnome/mime-info/screem.keys
@@ -259,35 +303,35 @@ share/locale/ru/LC_MESSAGES/screem.mo
 share/locale/sv/LC_MESSAGES/screem.mo
 share/locale/tr/LC_MESSAGES/screem.mo
 share/locale/uk/LC_MESSAGES/screem.mo
-@dirrm share/gnome/screem/syntax
-@dirrm share/gnome/screem/resources/Templates
-@dirrm share/gnome/screem/resources/PHP3
-@dirrm share/gnome/screem/resources/Javascript
-@dirrm share/gnome/screem/resources/Images
-@dirrm share/gnome/screem/resources/HTML
-@dirrm share/gnome/screem/resources/Applets
-@dirrm share/gnome/screem/resources
-@dirrm share/gnome/screem/htmlhelp/tables
-@dirrm share/gnome/screem/htmlhelp/special
-@dirrm share/gnome/screem/htmlhelp/phrase
-@dirrm share/gnome/screem/htmlhelp/lists
-@dirrm share/gnome/screem/htmlhelp/html
-@dirrm share/gnome/screem/htmlhelp/head
-@dirrm share/gnome/screem/htmlhelp/frames
-@dirrm share/gnome/screem/htmlhelp/forms
-@dirrm share/gnome/screem/htmlhelp/fontstyle
-@dirrm share/gnome/screem/htmlhelp/entities
-@dirrm share/gnome/screem/htmlhelp/block
-@dirrm share/gnome/screem/htmlhelp
-@dirrm share/gnome/screem/hints
-@dirrm share/gnome/screem/glade
-@dirrm share/gnome/screem/frames
-@dirrm share/gnome/screem/dtd
-@dirrm share/gnome/screem
-@dirrm share/gnome/pixmaps/screem/splash
-@dirrm share/gnome/pixmaps/screem
+@dirrm lib/screem/plugins
+@dirrm lib/screem
 @dirrm share/gnome/help/screem/C/figs
 @dirrm share/gnome/help/screem/C
 @dirrm share/gnome/help/screem
-@dirrm lib/screem/plugins
-@dirrm lib/screem
+@dirrm share/gnome/pixmaps/screem/splash
+@dirrm share/gnome/pixmaps/screem
+@dirrm share/gnome/screem/dtd
+@dirrm share/gnome/screem/frames
+@dirrm share/gnome/screem/glade
+@dirrm share/gnome/screem/hints
+@dirrm share/gnome/screem/htmlhelp/block
+@dirrm share/gnome/screem/htmlhelp/entities
+@dirrm share/gnome/screem/htmlhelp/fontstyle
+@dirrm share/gnome/screem/htmlhelp/forms
+@dirrm share/gnome/screem/htmlhelp/frames
+@dirrm share/gnome/screem/htmlhelp/head
+@dirrm share/gnome/screem/htmlhelp/html
+@dirrm share/gnome/screem/htmlhelp/lists
+@dirrm share/gnome/screem/htmlhelp/phrase
+@dirrm share/gnome/screem/htmlhelp/special
+@dirrm share/gnome/screem/htmlhelp/tables
+@dirrm share/gnome/screem/htmlhelp
+@dirrm share/gnome/screem/resources/Applets
+@dirrm share/gnome/screem/resources/HTML
+@dirrm share/gnome/screem/resources/Images
+@dirrm share/gnome/screem/resources/Javascript
+@dirrm share/gnome/screem/resources/PHP3
+@dirrm share/gnome/screem/resources/Templates
+@dirrm share/gnome/screem/resources
+@dirrm share/gnome/screem/syntax
+@dirrm share/gnome/screem
