@@ -1,6 +1,7 @@
 lib/tcllib%%PORTVERSION%%/base64/base64.tcl
-lib/tcllib%%PORTVERSION%%/base64/uuencode.tcl
 lib/tcllib%%PORTVERSION%%/base64/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/base64/uuencode.tcl
+lib/tcllib%%PORTVERSION%%/base64/yencode.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/base64
 lib/tcllib%%PORTVERSION%%/cmdline/cmdline.tcl
 lib/tcllib%%PORTVERSION%%/cmdline/pkgIndex.tcl
@@ -9,6 +10,12 @@ lib/tcllib%%PORTVERSION%%/cmdline/typedCmdline.tcl
 lib/tcllib%%PORTVERSION%%/counter/counter.tcl
 lib/tcllib%%PORTVERSION%%/counter/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/counter
+lib/tcllib%%PORTVERSION%%/dns/dns.tcl
+lib/tcllib%%PORTVERSION%%/dns/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/dns
+lib/tcllib%%PORTVERSION%%/exif/exif.tcl
+lib/tcllib%%PORTVERSION%%/exif/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/exif
 lib/tcllib%%PORTVERSION%%/fileutil/fileutil.tcl
 lib/tcllib%%PORTVERSION%%/fileutil/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/fileutil
@@ -22,6 +29,9 @@ lib/tcllib%%PORTVERSION%%/ftpd/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/html/html.tcl
 lib/tcllib%%PORTVERSION%%/html/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/html
+lib/tcllib%%PORTVERSION%%/irc/irc.tcl
+lib/tcllib%%PORTVERSION%%/irc/pkgIndex.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/irc
 lib/tcllib%%PORTVERSION%%/javascript/javascript.tcl
 lib/tcllib%%PORTVERSION%%/javascript/pkgIndex.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/javascript
@@ -48,11 +58,18 @@ lib/tcllib%%PORTVERSION%%/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/pop3/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/pop3/pop3.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/pop3
+lib/tcllib%%PORTVERSION%%/pop3d/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/pop3d/pop3d.tcl
+lib/tcllib%%PORTVERSION%%/pop3d/pop3d_dbox.tcl
+lib/tcllib%%PORTVERSION%%/pop3d/pop3d_udb.tcl
+@dirrm lib/tcllib%%PORTVERSION%%/pop3d
 lib/tcllib%%PORTVERSION%%/profiler/pkgIndex.tcl
 lib/tcllib%%PORTVERSION%%/profiler/profiler.tcl
 @dirrm lib/tcllib%%PORTVERSION%%/profiler
 lib/tcllib%%PORTVERSION%%/struct/graph.tcl
 lib/tcllib%%PORTVERSION%%/struct/pkgIndex.tcl
+lib/tcllib%%PORTVERSION%%/struct/pool.tcl
+lib/tcllib%%PORTVERSION%%/struct/pooltest.tcl
 lib/tcllib%%PORTVERSION%%/struct/queue.tcl
 lib/tcllib%%PORTVERSION%%/struct/matrix.tcl
 lib/tcllib%%PORTVERSION%%/struct/stack.tcl
