@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twistedmatrix.com/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,10 +20,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/unittest.py:${PORTSDIR}/devel/py-unit \
 		${PYTHON_SITELIBDIR}/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_PYTHON=	yes
-
+PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 EXAMPLESDIR=	${PREFIX}/share/examples/twisted
-SCRIPTS=	accepttests cpyrght faucet gnusto im malyon manhole \
-		mapeditor mktap runtests twistd twistd-debug
 MAN1=		faucet.1 gnusto.1 im.1 manhole.1 mktap.1 twistd.1
 
 post-patch:
@@ -31,14 +29,11 @@ post-patch:
 	  ${WRKSRC}/bin/runtests ${WRKSRC}/twisted/test/*.py
 
 do-build:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py build
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
 
 do-install:
-	@ cd ${WRKSRC} && ${PYTHON_CMD} setup.py install -c -O1 \
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 \
 	  --prefix=${PREFIX}
-.for script in ${SCRIPTS}
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/bin/${script} ${PREFIX}/bin
-.endfor
 .for manpage in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage} ${MANPREFIX}/man/man1
 .endfor
