@@ -1,0 +1,22 @@
+
+#
+# TOGL 1.5b3
+# This is a Tk widget module that lets PyOpenGL draw into a Tkinter window.
+# If you don't want/have togl, comment out all of the following lines
+#
+togl	\
+# This must match the name of the Togl source directory
+	-I./Togl-1.5 \
+# These must match the version you have installed
+	-ILOCALBASE/include/tcl8.0 -ILOCALBASE/include/tk8.0 \
+	-LLOCALBASE/lib -ltk80 -ltcl80 \
+# You'll definitely need these (or maybe edit them for MesaGL/MesaGLU:
+	-IX11BASE/include -LX11BASE/lib \
+	-lGLU -lGL \
+# Various combinations of these depending on your platform:
+	-lX11 -lXmu -lXext -lXt \
+# If you don't have this, something is really wrong!
+	-lm \
+# for Linux only?
+#	-ldl \
+togl.c  # putting this at the end for \ reasons

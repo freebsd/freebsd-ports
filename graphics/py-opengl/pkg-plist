@@ -1,0 +1,84 @@
+lib/python1.5/site-packages/OpenGL/GLUT/glutconst.py
+lib/python1.5/site-packages/OpenGL/GLUT/__init__.py
+lib/python1.5/site-packages/OpenGL/GL/glconst-1.0.py
+lib/python1.5/site-packages/OpenGL/GL/glconst.py
+lib/python1.5/site-packages/OpenGL/GL/wglconst.py
+lib/python1.5/site-packages/OpenGL/GL/__init__.py
+lib/python1.5/site-packages/OpenGL/GLU/gluconst-1.0.py
+lib/python1.5/site-packages/OpenGL/GLU/gluconst.py
+lib/python1.5/site-packages/OpenGL/GLU/__init__.py
+lib/python1.5/site-packages/OpenGL/Demo/da/dots.py
+lib/python1.5/site-packages/OpenGL/Demo/da/__init__.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/triangle.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/1crn.pdb
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/1crn.vert
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/1crn.xyzr
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/Geometry.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/NumericPDB.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/OglFrame.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/README
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/test.ppm
+lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface/1crn.face
+lib/python1.5/site-packages/OpenGL/Demo/dek/MandelImage.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/PILNumeric.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/README
+lib/python1.5/site-packages/OpenGL/Demo/dek/texturesurf.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/texturesurf2.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/tile.py
+lib/python1.5/site-packages/OpenGL/Demo/dek/image.ppm
+lib/python1.5/site-packages/OpenGL/Demo/dek/__init__.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/Images/cowbaby.ppm
+lib/python1.5/site-packages/OpenGL/Demo/srenner/Images/textile.ppm
+lib/python1.5/site-packages/OpenGL/Demo/srenner/att_obj.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/compass.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/cursor.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/objex.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/oglpm.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/ogltex.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/README
+lib/python1.5/site-packages/OpenGL/Demo/srenner/README~
+lib/python1.5/site-packages/OpenGL/Demo/srenner/renderer.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/room.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/sropengl.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/tablet.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/attention.py
+lib/python1.5/site-packages/OpenGL/Demo/srenner/trees.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/__init__.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/checker.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/cone.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/conechecker.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/conesave.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/demo.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/first.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/fog.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/Line.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/logo.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/lorentz.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/pick.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/poly.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/text.py
+lib/python1.5/site-packages/OpenGL/Demo/tom/arraytest.py
+lib/python1.5/site-packages/OpenGL/Demo/__init__.py
+lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%/openglutil_num.so
+lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%/openglutil.so
+lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%/_openglmodule.so
+lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%/_opengl_nummodule.so
+lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%/_glutmodule.so
+lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%/_glumodule.so
+lib/python1.5/site-packages/OpenGL/shared/__init__.py
+lib/python1.5/site-packages/OpenGL/Tk/__init__.py
+lib/python1.5/site-packages/OpenGL/__init__.py
+@dirrm lib/python1.5/site-packages/OpenGL/GLUT
+@dirrm lib/python1.5/site-packages/OpenGL/GL
+@dirrm lib/python1.5/site-packages/OpenGL/GLU
+@dirrm lib/python1.5/site-packages/OpenGL/Demo/da
+@dirrm lib/python1.5/site-packages/OpenGL/Demo/dek/OglSurface
+@dirrm lib/python1.5/site-packages/OpenGL/Demo/dek
+@dirrm lib/python1.5/site-packages/OpenGL/Demo/srenner/Images
+@dirrm lib/python1.5/site-packages/OpenGL/Demo/srenner
+@dirrm lib/python1.5/site-packages/OpenGL/Demo/tom
+@dirrm lib/python1.5/site-packages/OpenGL/Demo
+@dirrm lib/python1.5/site-packages/OpenGL/shared/freebsd%%OSMAJOR%%
+@dirrm lib/python1.5/site-packages/OpenGL/shared
+@dirrm lib/python1.5/site-packages/OpenGL/Tk
+@dirrm lib/python1.5/site-packages/OpenGL
