@@ -88,10 +88,10 @@ lib/aap/Exec-%%PORTVERSION%%/default.aap
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/index.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/license.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ln12.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p2962.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p7033.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p3145.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p7265.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p30.html
-%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p881.html
+%%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/p883.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-arguments.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-assign.html
 %%PORTDOCS%%lib/aap/Exec-%%PORTVERSION%%/doc/html/ref-attributes.html
@@ -148,4 +148,4 @@ lib/aap/Exec-%%PORTVERSION%%/tools/msvc.pyc
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc/html
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc
 @dirrm lib/aap/Exec-%%PORTVERSION%%
-@dirrm lib/aap
+@unexec rmdir %D/lib/aap 2>/dev/null || true
