@@ -3,13 +3,14 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.28 1999/01/12 18:25:32 scrappy Exp $
+# $Id: Makefile,v 1.29 1999/01/18 02:34:03 hosokawa Exp $
 #
 
 DISTNAME=	samba-2.0.0
 #PKGNAME=	samba-2.0.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
+MASTER_SITES=	ftp://ftp.bitcon.no/.7/unix/networking/samba/   \
+		ftp://samba.anu.edu.au/pub/samba/
 
 MAINTAINER=	hosokawa@jp.FreeBSD.org
 
