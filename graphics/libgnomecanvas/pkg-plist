@@ -38,8 +38,10 @@ share/doc/libgnomecanvas/libgnomecanvas-gnomecanvastext.html
 share/doc/libgnomecanvas/libgnomecanvas-gnomecanvaswidget.html
 share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/be/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/cs/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/de/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/el/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/es/LC_MESSAGES/libgnomecanvas-2.0.mo
