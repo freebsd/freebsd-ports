@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	shell
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6
 CATEGORIES=	shells ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	contrib
+MASTER_SITE_SUBDIR=	contrib in.coming
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
@@ -20,7 +20,8 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_JA=	doc/shell.doc
+DOCS_EN=	README		doc/shell.doc
+DOCS_JA=	README.jp	doc/shell.doc.jp
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
@@ -28,6 +29,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/shell/* ${RUBY_SITELIBDIR}/${PORTNAME}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor
