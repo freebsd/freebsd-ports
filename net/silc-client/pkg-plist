@@ -109,10 +109,20 @@ share/silc/scripts/hello.pl
 share/silc/scripts/mail-maildir.pl
 share/silc/scripts/mail.pl
 share/silc/themes/default.theme
+%%PORTDOCS%%%%DOCSDIR%%/CodingStyle
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/example_silc.conf
 @dirrm share/silc/themes
 @dirrm share/silc/scripts
 @dirrm share/silc/help
 @dirrm share/silc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/silcsim/client
 @unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true
