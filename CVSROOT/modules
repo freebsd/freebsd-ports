@@ -8337,7 +8337,6 @@ simgear		ports/devel/simgear
 simicq		ports/net/simicq
 simpack		ports/math/simpack
 simplemod	ports/audio/simplemod
-simpleparse	ports/devel/simpleparse
 simplicity	ports/java/simplicity
 simulavr	ports/devel/simulavr
 since		ports/misc/since
