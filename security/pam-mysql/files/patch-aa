@@ -1,5 +1,5 @@
---- pam_mysql.c.old	Tue Aug 29 03:31:46 2000
-+++ pam_mysql.c	Tue Aug 29 03:31:37 2000
+--- pam_mysql.c.old	Sun Sep 24 02:26:17 2000
++++ pam_mysql.c	Sun Sep 24 02:42:23 2000
 @@ -14,7 +14,6 @@
  #include <unistd.h>
  #include <syslog.h>
@@ -8,106 +8,56 @@
  #include <string.h>
  
  #include <mysql/mysql.h>
-@@ -79,7 +78,6 @@
- 
- int db_connect (MYSQL * auth_sql_server);
- void db_close( void );
--static void _pam_log (int err, const char *format,...);
- int askForPassword(pam_handle_t *pamh);
- 
- void db_close ( void )
-@@ -114,7 +112,7 @@
- 	}
- 	if ( retvalue != PAM_SUCCESS )
- 	{
--		_pam_log(LOG_INFO, "MySQL err %s\n", mysql_error(auth_sql_server));
-+		syslog(LOG_INFO, "MySQL err %s", mysql_error(auth_sql_server));
- 	}
- 	
- 	D (("returning."));
-@@ -149,13 +147,13 @@
- 	{
- 		sprintf(sql, "%s and %s", sql, options.where);
- 	}
--	_pam_log(LOG_ERR,sql);
-+	syslog(LOG_ERR,sql);
- 	D ((sql));
- 	mysql_query (auth_sql_server, sql);
- 	free (sql);
- 	result = mysql_store_result (auth_sql_server);
- 	if (!result) {
--		_pam_log(LOG_ERR, mysql_error (auth_sql_server));
-+		syslog(LOG_ERR, mysql_error(auth_sql_server));
- 		D (("returning."));
- 		return PAM_AUTH_ERR;
- 	}
-@@ -191,17 +189,6 @@
- 
- /* Global PAM functions stolen from other modules */
- 
--static void _pam_log (int err, const char *format,...)
--{
--	va_list args;
--
--	va_start (args, format);
--	openlog (PAM_MODULE_NAME, LOG_PID, LOG_AUTH);
--	vsyslog (err, format, args);
--	va_end (args);
--	closelog ();
--}
--
- int converse(pam_handle_t *pamh, int nargs
- 		    , struct pam_message **message
- 		    , struct pam_response **response)
-@@ -216,14 +203,12 @@
- 			    , response, conv->appdata_ptr);
- 	if ((retval != PAM_SUCCESS) && (retval != PAM_CONV_AGAIN)) 
- 	{
--	    _pam_log(LOG_DEBUG, "conversation failure [%s]"
--		     , pam_strerror(pamh, retval));
-+	    syslog(LOG_DEBUG, "conversation failure [%s]", pam_strerror(pamh, retval));
- 	}
-     } 
-     else 
-     {
--	_pam_log(LOG_ERR, "couldn't obtain coversation function [%s]"
--		 , pam_strerror(pamh, retval));
-+	syslog(LOG_ERR, "couldn't obtain coversation function [%s]", pam_strerror(pamh, retval));
-     }
-     return retval;                  /* propagate error status */
- }
-@@ -239,7 +224,7 @@
- 	prompt = malloc(strlen(PLEASE_ENTER_PASSWORD));
- 	if (prompt == NULL) 
- 	{
--		_pam_log(LOG_ERR,"pam_mysql: askForPassword(), out of memory!?");
-+		syslog(LOG_ERR,"pam_mysql: askForPassword(), out of memory!?");
- 		return PAM_BUF_ERR;
- 	} 
- 	else 
-@@ -251,7 +236,6 @@
- 	mesg[i] = &msg[i];
- 
- 	retval = converse(pamh, ++i, mesg, &resp);
--/*	_pam_log(LOG_ERR, "retval == %d\n", retval); */
- 	if (prompt) 
- 	{
- 	    _pam_overwrite(prompt);
-@@ -361,7 +345,7 @@
- 
- 	retval = pam_get_user (pamh, &user, NULL);
- 	if (retval != PAM_SUCCESS || user == NULL) {
--		_pam_log (LOG_ERR, "no user specified");
-+		syslog(LOG_ERR, "no user specified");
- 		D (("returning."));
- 		return PAM_USER_UNKNOWN;
- 	} 
-@@ -398,7 +382,7 @@
- 				 ,const char **argv)
- {
- 
--	_pam_log (LOG_INFO, "acct_mgmt    \n");
-+	syslog(LOG_INFO, "acct_mgmt    \n");
- 	return PAM_SUCCESS;
- }
- 
+@@ -332,40 +331,40 @@
+ 		}
+ 		strcpy (junk, argv[i]);
+ 		if ((strchr (junk, (int) '=') != NULL)) {
+-			strncpy (mybuf, strtok (junk, "="), 255);
+-			strncpy (myval, strtok (NULL, "="), 255);
++			strlcpy (mybuf, strtok (junk, "="), 255);
++			strlcpy (myval, strtok (NULL, "="), 255);
+ 			free (junk);
+ 			if (!strcasecmp ("host", mybuf)) {
+-				strncpy (options.host, myval, 255);
++				strlcpy (options.host, myval, 255);
+ 				D (("host changed."));
+ 			} else if (!strcasecmp ("where", mybuf)) {
+ 				while ( (mj = strtok(NULL,"=")) != NULL )
+ 				{
+-					strcat(myval, "=");
+-					strcat(myval, mj);
++					strlcat(myval, "=", 255);
++					strlcat(myval, mj, 255);
+ 				}
+-				strncpy (options.where, myval, 256);
++				strlcpy (options.where, myval, 256);
+ 				D (("where changed."));
+ #ifdef DEBUG
+ 				syslog(LOG_ERR, "pam_mysql: where now is %s", options.where);
+ #endif
+ 			} else if (!strcasecmp ("db", mybuf)) {
+-				strncpy (options.database, myval, 16);
++				strlcpy (options.database, myval, 16);
+ 				D (("database changed."));
+ 			} else if (!strcasecmp ("user", mybuf)) {
+-				strncpy (options.dbuser, myval, 16);
++				strlcpy (options.dbuser, myval, 16);
+ 				D (("dbuser changed."));
+ 			} else if (!strcasecmp ("passwd", mybuf)) {
+-				strncpy (options.dbpasswd, myval, 16);
++				strlcpy (options.dbpasswd, myval, 16);
+ 				D (("dbpasswd changed."));
+ 			} else if (!strcasecmp ("table", mybuf)) {
+-				strncpy (options.table, myval, 16);
++				strlcpy (options.table, myval, 16);
+ 				D (("table changed."));
+ 			} else if (!strcasecmp ("usercolumn", mybuf)) {
+-				strncpy (options.usercolumn, myval, 16);
++				strlcpy (options.usercolumn, myval, 16);
+ 				D (("usercolumn changed."));
+ 			} else if (!strcasecmp ("passwdcolumn", mybuf)) {
+-				strncpy (options.passwdcolumn, myval, 16);
++				strlcpy (options.passwdcolumn, myval, 16);
+ 				D (("passwdcolumn changed."));
+ 			} else if (!strcasecmp ("crypt", mybuf)) {
+ 				if ((!strcmp (myval, "1")) ||
