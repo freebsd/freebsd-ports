@@ -19,8 +19,6 @@ BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche \
 		${X11BASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/XFree86-4-clients
 
-BROKEN=		"SDL is needed in patch phase but only added in build phase"
-
 PLIST_SUB=	GAUCHE_VERSION="`gauche-config -V`"\
 		TARGET="${CONFIGURE_TARGET}"
 WRKSRC=		${WRKDIR}/${PORTFAKENAME}
@@ -29,7 +27,7 @@ USE_SDL=	image mixer sdl ttf
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-post-patch:
+pre-configure:
 .for DIR in . image mixer ttf
 		${REINPLACE_CMD} \
 			-e "s|^CFLAGS .*|& `${SDL_CONFIG} --cflags`|"\
