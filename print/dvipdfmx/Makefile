@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dvipdfmx
-PORTVERSION=	20031110
+PORTVERSION=	20031116
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
