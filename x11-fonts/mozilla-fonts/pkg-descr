@@ -1,0 +1,21 @@
+mozilla-fonts is a complete set of the three kingpin typefaces in
+Httpland-- Times, Helvetica, and Courier-- each in two weights,
+two slants, and seven sizes (for a grand total of 84). The sizes
+range from 13- to 57-point (all @ 100dpi) and have been individually
+selected to match the font display behavior of MS-Windows Netscape
+as closely as possible.  Right down to the glaring scale disparity
+between sizes 6 and 7.
+
+Once installed, you'll have to add /usr/X11R6/lib/X11/fonts/mozilla to
+your X font path by either:
+
+$ xset fp+ /usr/X11R6/lib/X11/fonts/mozilla
+$ xset fp rehash
+
+or by adding it to your X server configuration file (usually
+/etc/XF86Config) and restarting the X server.
+
+You'll also need to configure netscape to use them.  See
+/usr/X11R6/share/doc/mozilla-fonts/README.
+
+WWW: http://fox.mit.edu/skunk/xwin/#mozilla_fonts
