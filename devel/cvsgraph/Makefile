@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
@@ -19,17 +19,18 @@ LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		cvsgraph.1
-MAN5=		cvsgraph.conf.5
 
 USE_BISON=	yes
 ALL_TARGET=	cvsgraph
 DOCDIR=		share/doc/${PORTNAME}
-DOCS=		ChangeLog LICENCE README
+DOCS=		ChangeLog LICENSE README
 EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
 PLIST=		${WRKDIR}/pkg-plist
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include/gd \
+CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
+		--with-freetype2-lib=${X11BASE}/lib \
+		--with-gd-inc=${LOCALBASE}/include/gd \
 		--with-gd-lib=${LOCALBASE}/lib \
 		--with-jpeg-inc=${LOCALBASE}/include \
 		--with-jpeg-lib=${LOCALBASE}/lib \
@@ -37,10 +38,15 @@ CONFIGURE_ARGS=	--with-gd-inc=${LOCALBASE}/include/gd \
 		--with-png-lib=${LOCALBASE}/lib \
 		--with-z-inc=/usr/include \
 		--with-z-lib=/usr/lib \
+		--with-freetype2 \
 		--with-gd \
 		--with-jpeg \
 		--with-png \
 		--with-z
+
+pre-patch:
+	${PERL} -pi -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
+		${WRKSRC}/cvsgraph.conf
 
 post-configure:
 	${PERL} -pi -e \
