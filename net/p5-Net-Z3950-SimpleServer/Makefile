@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Z3950-SimpleServer
-PORTVERSION=	0.05
+PORTVERSION=	0.07
 CATEGORIES=	net perl5
 MASTER_SITES=	http://ftp.indexdata.dk/pub/simpleserver/
 PKGNAMEPREFIX=	p5-
