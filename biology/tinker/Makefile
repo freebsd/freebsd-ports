@@ -21,34 +21,24 @@ WRKSRC=		${WRKDIR}/tinker/source
 MAKEFILE=	${WRKDIR}/tinker/make/Makefile
 ALL_TARGET=	all listing
 INSTALL_TARGET=	rename
-
+USE_REINPLACE=	yes
 RESTRICTED=	author requests no distribution except from his FTP site
-NO_CDROM=	${RESTRICTED}
-NO_PACKAGE=	${RESTRICTED}
+
+pre-fetch:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} If you get a CHECKSUM mismatch, try doing a \'make distclean\' first.
+	@${ECHO_MSG} ""
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_VIEWER)
 .if ${XFREE86_VERSION} == 3
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake
+BUILD_DEPENDS+= imake:${PORTSDIR}/devel/imake
 .elif ${XFREE86_VERSION} == 4
-BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS+= imake:${PORTSDIR}/devel/imake-4
 .endif
-PLIST=		${PKGDIR}/pkg-plist.viewer
-USE_XLIB=	yes
-
-.if defined(WITH_OPTIMIZED_FLAGS)
-CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
-.if (${MACHINE_ARCH} == "i386")
-CFLAGS+=        -mfancy-math-387 -malign-double
-.endif # i386
-.endif
-
-pre-everything::
-.if !defined(WITH_OPTIMIZED_FLAGS)
-	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-.endif
-
+PLIST=          ${PKGDIR}/pkg-plist.viewer
+USE_XLIB=       yes
 post-build:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
 .else
@@ -59,8 +49,32 @@ pre-extract:
 	@${ECHO} ""
 .endif
 
+.if defined(WITH_OPTIMIZED_FLAGS)
+FFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+.if (${MACHINE_ARCH} == "i386")
+FFLAGS+=        -mfancy-math-387 -malign-double
+.endif # i386
+.endif
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_FLAGS)
+	@${ECHO_MSG} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
+.endif
+
+post-build:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/build_viewer
+
+pre-extract:
+	@${ECHO} ""
+	@${ECHO} If you would like to also build
+	@${ECHO} the molecular viewer, define WITH_VIEWER.
+	@${ECHO} ""
+
 post-extract:
 	${CHMOD} -R u+w ${WRKDIR}/tinker
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,%%FFLAGS%%,${FFLAGS},g' ${WRKSRC}/../make/Makefile
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/tinker
