@@ -1877,6 +1877,7 @@ gpp		ports/textproc/gpp
 gprof		src/usr.bin/gprof
 gprof4		src/usr.bin/gprof4
 gprolog		ports/lang/gprolog
+gpsman		ports/astro/gpsman
 gq		ports/net/gq
 gqmpeg		ports/audio/gqmpeg
 gqview		ports/graphics/gqview
