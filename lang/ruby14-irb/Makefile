@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
 		ftp://ftp.krnet.ne.jp/pub/ruby/contrib/ \
 		ftp://mirror.nucba.ac.jp/mirror/ruby/contrib/
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	yasuf@big.or.jp
 
