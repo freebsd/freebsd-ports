@@ -1,5 +1,7 @@
---- build/unix/run-mozilla.sh.orig	Wed Oct 23 00:08:03 2002
-+++ build/unix/run-mozilla.sh	Wed Oct 23 00:08:59 2002
+$FreeBSD$
+
+--- build/unix/run-mozilla.sh.orig	Mon Dec 15 12:27:28 2003
++++ build/unix/run-mozilla.sh	Wed Feb 11 14:24:17 2004
 @@ -355,7 +355,7 @@
  fi
  ##
@@ -9,16 +11,7 @@
  if [ -n "$LD_LIBRARYN32_PATH" ]
  then
  	LD_LIBRARYN32_PATH=${MOZ_DIST_BIN}:${MOZ_DIST_BIN}/plugins:${MRE_HOME}${LD_LIBRARYN32_PATH+":$LD_LIBRARYN32_PATH"}
-@@ -392,7 +392,7 @@
-         export XSUNTRANSPORT XSUNSMESIZE
- fi
- # Font path for Xft
--FONTCONFIG_PATH="/etc/fonts:${MOZILLA_FIVE_HOME}/res/Xft"
-+FONTCONFIG_PATH="%%PREFIX%%/etc/fonts:${MOZILLA_FIVE_HOME}/res/Xft"
- export FONTCONFIG_PATH
- 
- if [ "$moz_debug" -eq 1 ]
-@@ -435,6 +435,9 @@
+@@ -442,6 +442,9 @@
  #
  export MOZILLA_FIVE_HOME LD_LIBRARY_PATH
  export SHLIB_PATH LIBPATH LIBRARY_PATH ADDON_PATH DYLD_LIBRARY_PATH
