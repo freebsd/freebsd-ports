@@ -35,6 +35,7 @@
     SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += ve
+    SUBDIR += xa+cv
     SUBDIR += xcin
     SUBDIR += xcin25
 
