@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.0.8
+PORTVERSION=	0.0.8.1
 CATEGORIES=	security
 MASTER_SITES=	http://freehaven.net/tor/dist/ \
 		http://www.mavetju.org/download/adopted/
