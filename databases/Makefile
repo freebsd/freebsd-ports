@@ -46,6 +46,7 @@
     SUBDIR += java-sqlrelay
     SUBDIR += jdb
     SUBDIR += jdbc-oracle816
+    SUBDIR += kinterbasdb
     SUBDIR += knoda
     SUBDIR += libdbi
     SUBDIR += libdbi-drivers
