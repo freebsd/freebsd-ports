@@ -1,0 +1,4 @@
+Whitespace.el is an emacs mode which detects and cleans up
+whitespace in source code.
+
+WWW: http://www.dsmit.com/lisp/

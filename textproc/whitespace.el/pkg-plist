@@ -1,0 +1,6 @@
+share/emacs/site-lisp/whitespace.el
+@exec mkdir -p %D/lib/xemacs/site-lisp
+@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/whitespace.el
+@unexec rm %D/lib/xemacs/site-lisp/whitespace.el
+@dirrm lib/xemacs/site-lisp
+@dirrm lib/xemacs
