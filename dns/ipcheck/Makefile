@@ -8,8 +8,8 @@
 PORTNAME=	ipcheck
 PORTVERSION=	0.93
 CATEGORIES=	net
-MASTER_SITES=	http://ipcheck.sourceforge.net/
-DISTNAME=	ipcheck.py
+MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
+DISTNAME=	${PORTNAME}.${PORTVERSION:E}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
@@ -25,6 +25,6 @@ do-patch:
 			${DISTDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}.py
 
 .include <bsd.port.mk>
