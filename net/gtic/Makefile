@@ -21,6 +21,12 @@ MAKE_ENV+=	DEFINES="${DEFINES}"
 DEFINES+=	-DAMIGA4D
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/etc/gtic
 .for i in areagroups areas config domains help users
@@ -28,4 +34,4 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gtic ${PREFIX}/sbin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
