@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.04.26
+PORTVERSION=	2003.05.06
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -34,8 +34,7 @@ BasicUsageEnvironment=	\
 		BasicUsageEnvironment/include/BasicHashTable.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment.hh \
 		BasicUsageEnvironment/include/BasicUsageEnvironment_version.hh \
-		BasicUsageEnvironment/include/DelayQueue.hh \
-		BasicUsageEnvironment/include/Lock.hh
+		BasicUsageEnvironment/include/DelayQueue.hh
 
 UsageEnvironment=	\
 		UsageEnvironment/include/Boolean.hh \
