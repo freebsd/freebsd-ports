@@ -8,7 +8,7 @@
 PORTNAME=	fmsx
 PORTVERSION=	2.2
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.komkon.org/fms/fMSX/
+MASTER_SITES=	http://fms.komkon.org/fMSX/
 DISTNAME=	fMSX22
 EXTRACT_SUFX=	.tar.Z
 
