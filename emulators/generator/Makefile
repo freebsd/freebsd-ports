@@ -10,7 +10,7 @@ PORTVERSION=	0.34
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.math.bme.hu/pub/utils/xanim/ \
 DISTNAME=	txtmerge101
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for making GIF Animations
 
 WRKSRC=		${WRKDIR}/txtmerge

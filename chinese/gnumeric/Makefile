@@ -7,7 +7,7 @@
 
 CATEGORIES=	chinese math gnome
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../math/gnumeric
 

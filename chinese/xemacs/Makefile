@@ -15,7 +15,7 @@ MASTER_SITES+=	ftp://ftp.tnt.uni-hannover.de/pub/editors/xemacs/20.4/ \
 MASTER_SITE_SUBDIR=	${DISTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-mule${EXTRACT_SUFX}
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs text editor version 20, with XIM support and Big5 settings
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

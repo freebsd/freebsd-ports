@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.danbbs.dk/~dino/whirlgif/
 DISTNAME=	whirlgif304
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for making GIF animations
 
 NO_WRKSUBDIR=	yes

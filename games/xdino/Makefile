@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dino puzzle game for X11
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

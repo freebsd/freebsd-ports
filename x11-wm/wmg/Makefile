@@ -12,7 +12,7 @@ MASTER_SITES=	http://ductape.net/~reeve/downloads/ \
 		http://www.geocities.com/SiliconValley/Screen/4079/downloads/
 DISTNAME=	wmG-${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small GTK-based GNOME-compliant window manager
 
 USE_X_PREFIX=	yes

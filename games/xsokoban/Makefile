@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.cs.cornell.edu/andru/release/ \
 		ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A puzzle of pushing objects to the goals
 
 USE_IMAKE=	yes

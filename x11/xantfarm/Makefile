@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.acme.com/software/xantfarm/
 DISTNAME=	${PORTNAME}_23oct1991
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ant hill simulation on X11 root window
 
 WRKSRC=		${WRKDIR}/xantfarm

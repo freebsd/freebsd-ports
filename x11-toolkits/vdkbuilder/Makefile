@@ -10,7 +10,7 @@ PORTVERSION=	1.2.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.sourceforge.net/vdkbuilder/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general ide tool for GTK+/VDK
 
 LIB_DEPENDS=	vdk.3:${PORTSDIR}/x11-toolkits/vdk

@@ -11,7 +11,7 @@ CATEGORIES+=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 DISTFILES=	new-osaka.tar.gz
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator of Japanese EUC documents into Osaka language
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

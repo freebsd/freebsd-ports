@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.zophar.net/unix/Files/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
 USE_GETOPT_LONG=yes

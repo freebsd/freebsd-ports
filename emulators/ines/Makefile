@@ -12,7 +12,7 @@ MASTER_SITES=	http://fms.komkon.org/iNES/
 DISTNAME=	iNES22-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo Entertainment System emlator for X
 
 NO_WRKSUBDIR=	yes

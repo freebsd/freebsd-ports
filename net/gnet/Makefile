@@ -10,7 +10,7 @@ PORTVERSION=	1.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple network library built upon Glib
 
 USE_REINPLACE=	yes

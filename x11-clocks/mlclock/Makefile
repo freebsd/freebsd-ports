@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.hry.info.gifu-u.ac.jp/~hideki/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clock for mlvwm window manager
 
 USE_IMAKE=	yes

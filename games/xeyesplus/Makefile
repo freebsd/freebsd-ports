@@ -12,7 +12,7 @@ MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
 DISTNAME=	xeyes+${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Horrible eyes looking at your mouse cursor
 
 USE_IMAKE=	yes

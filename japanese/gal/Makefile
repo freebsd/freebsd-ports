@@ -10,7 +10,7 @@ CATEGORIES=	japanese x11-toolkits gnome
 
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/gal
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 post-patch:
 	perl -pi -e  's/gdk_font_load(\s)\(.*\)/gdk_fontset_load$$1\("-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*"\)/' \

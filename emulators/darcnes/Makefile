@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dridus.com/~nyef/darcnes/download/
 DISTNAME=	dn${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	multi-system emulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

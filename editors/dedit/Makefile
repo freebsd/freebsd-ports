@@ -12,7 +12,7 @@ CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple GNOME i18n editor
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

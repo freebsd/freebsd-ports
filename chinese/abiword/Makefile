@@ -11,7 +11,7 @@ CATEGORIES=	chinese editors
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform WYSIWYG word processor, with BIG5/GB available
 
 .if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes

@@ -11,7 +11,7 @@ CATEGORIES+=	japanese
 MASTER_SITES=	ftp://ftp.leo.chubu.ac.jp/pub/tools/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for recovery of broken japanese text
 
 NO_WRKSUBDIR=	yes

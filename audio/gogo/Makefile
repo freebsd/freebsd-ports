@@ -12,7 +12,7 @@ MASTER_SITES=	http://homepage1.nifty.com/herumi/soft/gogo2/src/
 DISTNAME=	gogo239b
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast MP3 encoder using recent x86 processors' features
 
 # More than version 0.98

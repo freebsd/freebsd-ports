@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.yggdrasil.com/pub/dist/devel/compilers/guavac/
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java compiler and decompiler developed under GPL
 
 USE_GMAKE=	yes

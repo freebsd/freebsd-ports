@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://kxl.hn.org/download/
 DISTNAME=	KXL-${PORTVERSION}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A visual, sound library for games
 
 USE_X_PREFIX=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTFILES=	gifmerge.tar
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for making a GIF Animation
 
 ALL_TARGET=	gifmerge

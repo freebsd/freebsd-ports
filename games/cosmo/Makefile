@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.riken.go.jp/pub/Linux/vine/VinePlus/1.1/JG-0.9.1/other-sources/jp/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}  moon.tif.gz
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Cosmo Gang the Puzzle (Namco)
 
 NO_CDROM=	Possible copyright infringement

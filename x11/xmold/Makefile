@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/ \
 		ftp://ftp.opaopa.org/pub/archives/games/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	nakai@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mold spreading over your X11 screen
 
 USE_IMAKE=	yes
