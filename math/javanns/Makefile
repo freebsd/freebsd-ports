@@ -15,6 +15,8 @@ MAINTAINER=	des@FreeBSD.org
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
 
+ONLY_FOR_ARCHS=	i386
+
 JAVAVM?=	${LOCALBASE}/bin/javavm
 CLASSDIR?=	${PREFIX}/share/java/classes
 LIBSDIR?=	${DATADIR}/lib
