@@ -3,10 +3,10 @@
 # Date created:		16 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.3 1998/08/05 09:31:22 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 22:43:11 asami Exp $
 #
 
-DISTNAME=	xfntmizi-1.1-1.noarch
+DISTNAME=	xfntmizi-1.1-2.noarch
 PKGNAME=	ko-mizifonts-1.1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	http://www.mizi.co.kr/packages/
