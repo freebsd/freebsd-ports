@@ -1,0 +1,17 @@
+Net::Printer
+============
+
+Perl module for directly printing to a print server/printer without
+having to create a pipe to either lpr or lp.  This essentially mimics
+what the BSD LPR program does by connecting directly to the line
+printer printer port (almost always 515), and transmitting the data
+and control information to the print server.
+
+Please note that this module only communicates with the BSD Line
+Printer Daemon Protocol as described in RFC-1179.  It does not
+natively speak to remote print servers via SMB, Apple-Talk or
+Netware.  Remote print services running lpsched, such as Sun Solaris
+or other Sys V-derived operating systems, will work so long as the
+print spoolers are set up to understand the BSD protocol.  Most modern
+network-capable laser printers, such as those manufactured by HP and
+LexMark, also "speak" BSD.

@@ -107,6 +107,7 @@
     SUBDIR += nenscript
     SUBDIR += offix-printer
     SUBDIR += p5-GnomePrint
+    SUBDIR += p5-Net-Printer
     SUBDIR += p5-PDFLib
     SUBDIR += p5-PostScript-Simple
     SUBDIR += p5-Text-PDF
