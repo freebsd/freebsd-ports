@@ -7,7 +7,7 @@
 
 PORTNAME=	xhtml
 PORTVERSION=	1.0.20020801
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 #MASTER_SITES=	http://www.w3.org/TR/xhtml1/
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -45,9 +45,10 @@ pre-install:
 
 do-install:
 	@(cd ${WRKSRC}/DTD; ${INSTALL_DATA} ${DTDFILES} ${DTDDIR})
+	${SED} -e 's|SGMLDECL.*||' ${WRKSRC}/DTD/xhtml.soc > ${DTDDIR}/xhtml-dcl.soc
 
 post-install:
-	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/xhtml.soc
+	${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DTDDIR}/xhtml-dcl.soc
 	${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${DTDDIR}/catalog.xml
 
 .include <bsd.port.mk>
