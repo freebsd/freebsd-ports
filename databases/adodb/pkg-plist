@@ -54,6 +54,7 @@
 %%ADODB_DIR%%/drivers/adodb-odbc.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc_mssql.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc_oracle.inc.php
+%%ADODB_DIR%%/drivers/adodb-odbtp.inc.php
 %%ADODB_DIR%%/drivers/adodb-oracle.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres64.inc.php
@@ -72,6 +73,7 @@
 %%ADODB_DIR%%/lang/adodb-es.inc.php
 %%ADODB_DIR%%/lang/adodb-fr.inc.php
 %%ADODB_DIR%%/lang/adodb-it.inc.php
+%%ADODB_DIR%%/lang/adodb-nl.inc.php
 %%ADODB_DIR%%/lang/adodb-pt-br.inc.php
 %%ADODB_DIR%%/lang/adodb-ru1251.inc.php
 %%ADODB_DIR%%/lang/adodb-sv.inc.php

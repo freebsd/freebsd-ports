@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.20
+PORTVERSION=	4.21
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -60,12 +60,13 @@ DRIVERS=adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
 	adodb-odbc_mssql.inc.php adodb-odbc_oracle.inc.php adodb-oracle.inc.php \
 	adodb-postgres.inc.php adodb-postgres64.inc.php adodb-postgres7.inc.php \
 	adodb-proxy.inc.php adodb-sapdb.inc.php adodb-sqlanywhere.inc.php \
-	adodb-sqlite.inc.php adodb-sybase.inc.php adodb-vfp.inc.php
+	adodb-sqlite.inc.php adodb-sybase.inc.php adodb-vfp.inc.php \
+	adodb-odbtp.inc.php
 
 LANG=	adodb-ca.inc.php adodb-cn.inc.php adodb-cz.inc.php \
 	adodb-de.inc.php adodb-en.inc.php adodb-es.inc.php \
-	adodb-fr.inc.php adodb-it.inc.php adodb-pt-br.inc.php \
-	adodb-ru1251.inc.php adodb-sv.inc.php
+	adodb-fr.inc.php adodb-it.inc.php adodb-nl.inc.php \
+	adodb-pt-br.inc.php adodb-ru1251.inc.php adodb-sv.inc.php
 
 PERF=	perf-db2.inc.php perf-informix.inc.php perf-mssql.inc.php \
 	perf-mysql.inc.php perf-oci8.inc.php perf-postgres.inc.php
