@@ -1,0 +1,11 @@
+--- Makefile.in.old     Mon Jul  6 16:56:21 1998
++++ Makefile.in Mon Jul  6 17:06:25 1998
+@@ -4,7 +4,7 @@
+ CFLAGS = -DVERSION='"v2.4.3"' -O6
+ CC = gcc
+ 
+-ALL: bnc
++all: bnc
+ 
+ bnc.o: config.h common.h bnc.c Makefile
+        ${CC} ${CFLAGS} -c bnc.c

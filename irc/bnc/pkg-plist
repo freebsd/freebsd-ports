@@ -1,0 +1,3 @@
+bin/bnc
+bin/bncchk
+etc/bnc.conf
