@@ -4,10 +4,10 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.39 1999/07/14 18:45:19 obrien Exp $
+# $Id: Makefile,v 1.40 1999/07/15 12:15:40 obrien Exp $
 #
 
-DISTNAME=	vim-5.3
+DISTNAME=	vim-5.4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
@@ -31,8 +31,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_DIST_STRIP}
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib" -f
 ALL_TARGET=	#
-MAN1=		vim.1 xxd.1 ectags.1
-MLINKS=		vim.1 rvim.1  vim.1 rview.1
+PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
+MAN1=		vim.1 vimtutor.1 xxd.1 ectags.1
+MLINKS=		vim.1 rvim.1  vim.1 rview.1  ectags.1 etags.1
 
 .if !defined(LITE)
 MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  
@@ -67,6 +68,5 @@ post-install:
 .endif
 	@${RM} -f ${PREFIX}/man/man1/etags.1
 	@${MV} ${PREFIX}/man/man1/ctags.1 ${PREFIX}/man/man1/ectags.1
-	@${LN} -sf ${PREFIX}/man/man1/ectags.1.gz ${PREFIX}/man/man1/etags.1.gz
 
 .include <bsd.port.mk>
