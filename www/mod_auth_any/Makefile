@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_any
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.itlab.musc.edu/pub/toolbox/mod_auth_any/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +20,10 @@ RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 APXS?=		${LOCALBASE}/sbin/apxs
 APACHE_PORT?=	${PORTSDIR}/www/apache13
+
+post-patch:
+	@${CAT} ${FILESDIR}/bash_single_quote_escape_string.c >> \
+		${WRKSRC}/${PORTNAME}.c
 
 do-build:
 	@cd ${WRKSRC} && ${APXS} -c ${PORTNAME}.c
