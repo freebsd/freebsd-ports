@@ -12,6 +12,7 @@
     SUBDIR += autosig
     SUBDIR += balsa
     SUBDIR += balsa2
+    SUBDIR += bayespam
     SUBDIR += bbmail
     SUBDIR += biabam
     SUBDIR += biffer
