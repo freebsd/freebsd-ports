@@ -2,8 +2,8 @@
 %%CLI%%sbin/osiris
 %%OSIRISD%%sbin/osirisd
 %%OSIRISMD%%sbin/osirismd
-%%OSIRISD%%etc/rc.d/osirisd.sh.sample
-%%OSIRISMD%%etc/rc.d/osirismd.sh.sample
+%%OSIRISD%%etc/rc.d/osirisd.sh
+%%OSIRISMD%%etc/rc.d/osirismd.sh
 @exec mkdir -p %D/osiris
 @exec chown osiris:osiris %D/osiris
 %%OSIRISMD%%osiris/configs/default.aix
