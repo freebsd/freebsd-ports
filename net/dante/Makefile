@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dante
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://www.freenix.no/~anders/ \
