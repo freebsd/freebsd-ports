@@ -20,6 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.4:${PORTSDIR}/devel/gettext \
 		guile.15:${PORTSDIR}/lang/guile
 
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	glib12 gtk12 libglade gnomehack gnomehier gnomeprefix
@@ -28,7 +29,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
-.include <bsd.port.mk>
+post-patch:
+.if ${OSVERSION} < 500028
+	@${REINPLACE_CMD} 's/#include <stdint.h>//g' \
+		${WRKSRC}/mixlib/mix_scanner.c
+.endif
+
+.include <bsd.port.post.mk>
