@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	pm-lib
-PORTVERSION=	20010728
+PORTVERSION=	20020102
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-2001.0728
+DISTNAME=	procmail-lib-2002.0102
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of procmail plug-in modules
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
-USE_ZIP=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 LIBS=		pm-jaaddr.rc pm-jabup.rc pm-jacookie.rc \
@@ -33,20 +31,27 @@ LIBS=		pm-jaaddr.rc pm-jabup.rc pm-jacookie.rc \
 		pm-jasrv-msg.rc pm-jasrv-multi.rc pm-jasrv-req.rc \
 		pm-jasrv-send.rc pm-jasrv.rc pm-jastore.rc pm-jasubject.rc \
 		pm-jatime.rc pm-jaube.rc pm-jaube1.rc pm-javac.rc pm-javar.rc
-DOCS=		README.html README.txt index.html pm-lib-body.html \
-		pm-lib-toc.html pm-lib.html pm-lib.txt
+DOCS=		README.txt pm-lib.txt
+HTMLS=		README.html index.html pm-lib-body.html \
+		pm-lib-toc.html pm-lib.html
+
+.include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${PREFIX}/share/${PORTNAME}
+	${MKDIR} ${DATADIR}
 .for i in ${LIBS}
-	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${PREFIX}/share/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/lib/ChangeLog ${PREFIX}/share/doc/${PORTNAME}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/ChangeLog ${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${PREFIX}/share/doc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/doc/source/${i} ${DOCSDIR}
+.endfor
+.for i in ${HTMLS}
+	${MKDIR} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${i} ${DOCSDIR}/html
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
