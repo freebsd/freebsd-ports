@@ -19,10 +19,4 @@ BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 
 MAN1=		conjugue.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not build on 5.0"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
