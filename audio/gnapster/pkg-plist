@@ -1,5 +1,5 @@
 bin/gnapster
 share/gnome/apps/Applications/gnapster.desktop
 share/gnome/pixmaps/gnapster.png
-share/locale/fr/LC_MESSAGES/Gnapster.mo
-share/locale/pt/LC_MESSAGES/Gnapster.mo
+share/locale/fr/LC_MESSAGES/gnapster.mo
+share/locale/pt/LC_MESSAGES/gnapster.mo
