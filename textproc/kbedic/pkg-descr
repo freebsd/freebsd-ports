@@ -9,7 +9,7 @@ the largest Bulgarian-to-English and English-to-Bulgarian database.
 English. When we add dictionary, the name becomes kbedic. To 
 use that program it is not necessary to have KDE installed,
 only the Qt libraries are required.
- KBE dictionary 2.1 has been written in C/C++ and has many
+ KBE dictionary has been written in C/C++ and has many
 advantages and enhancements in comparison with the older 
 versions - it works faster, the database contains more words 
 and the bugs are less. There is also a console version of the

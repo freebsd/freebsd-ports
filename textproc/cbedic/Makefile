@@ -7,13 +7,22 @@
 
 PORTNAME=	cbedic
 PORTVERSION=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=kbedic
 
-MAINTAINER=	todorov@freebsd-bg.org
+MAINTAINER=	roam@FreeBSD.org
+COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
-MASTERDIR=	${.CURDIR}/../kbedic
+RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 
-CONSOLE_VER=	yes
+DICT_CHECK?=	buleng.dat
+DICT_DIR?=	${LOCALBASE}/share
 
-.include "${MASTERDIR}/Makefile"
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+CONFIGURE_ARGS=	--datadir=${DICT_DIR}
+
+.include <bsd.port.mk>
