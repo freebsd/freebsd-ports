@@ -7,7 +7,7 @@
 
 PORTNAME=	erlang_xmlrpc
 PORTVERSION=	1.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.gleipnir.com/xmlrpc/
 DISTNAME=	xmlrpc-${PORTVERSION}
@@ -17,10 +17,8 @@ DIST_SUBDIR=	erlang
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A library for XMLRPC support in Erlang
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
-		${LOCALBASE}/lib/erlang/lib/xmerl/inc/xmerl.hrl:${PORTSDIR}/textproc/xmerl
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
-		${LOCALBASE}/lib/erlang/lib/xmerl/inc/xmerl.hrl:${PORTSDIR}/textproc/xmerl
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
