@@ -13,8 +13,6 @@ DISTNAME=	cs94_002
 
 MAINTAINER=	mkm@ieee.org
 
-BROKEN=		"Does not build"
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
@@ -27,10 +25,9 @@ pre-build:
 	cd ${WRKSRC}; ${GMAKE} freebsd
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|' \
-		${WRKSRC}/plugins/cscript/cspython/cspython.mak
 	@${FIND} ${WRKSRC} -name "*.mak" | ${XARGS} ${PERL} -pi -e \
 		's|-O6|${PTHREAD_CFLAGS}|; s|/usr/local|${LOCALBASE}|; \
+		s|-lGL|-lGL ${PTHREAD_LIBS}|g; s|-lpthread|${PTHREAD_LIBS}|g; \
 		s|INSTALL_DIR = ${LOCALBASE}/crystal|INSTALL_DIR = ${PREFIX}/crystal|'
 
 .include <bsd.port.mk>

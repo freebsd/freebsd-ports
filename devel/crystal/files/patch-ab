@@ -1,0 +1,17 @@
+--- ./libs/cssys/unix/freebsd.mak.orig	Fri Sep 20 16:19:32 2002
++++ ./libs/cssys/unix/freebsd.mak	Fri Sep 20 16:18:44 2002
+@@ -72,11 +72,11 @@
+ CFLAGS.INCLUDE=$(CFLAGS.I)/usr/local/include
+ 
+ # General flags for the compiler which are used in any case.
+-CFLAGS.GENERAL=-Wall
++CFLAGS.GENERAL=$(CXXFLAGS) -O0
+ 
+ # Flags for the compiler which are used when optimizing.
+-CFLAGS.optimize=-D_THREAD_SAFE -fomit-frame-pointer -malign-loops=2 -malign-jumps=2 \
+-  -malign-functions=2 -ffast-math
++CFLAGS.optimize=-D_THREAD_SAFE -fomit-frame-pointer -falign-loops=2 -falign-jumps=2 \
++  -falign-functions=2 -ffast-math
+ 
+ # Flags for the compiler which are used when debugging.
+ CFLAGS.debug=-g3 -gstabs
