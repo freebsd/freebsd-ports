@@ -8,7 +8,7 @@
 PORTNAME=	minimalist
 PORTVERSION= 	2.0.2
 CATEGORIES=	mail
-MASTER_SITES=	http://www.webest.com/minimalist/ \
+MASTER_SITES=	ftp://ftp.mml.org.ua/pub/minimalist/ \
 		http://www.giovannelli.it/~gmarco/files/
 
 MAINTAINER=	gmarco@giovannelli.it
