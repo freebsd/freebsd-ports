@@ -1,12 +1,13 @@
 bin/buildhash
+bin/deformat-c
+bin/deformat-sh
 bin/findaffix
 bin/icombine
 bin/ijoin
 bin/ispell
 bin/munchlist
-bin/sq
 bin/tryaffix
-bin/unsq
 share/ispell/english.aff
 share/ispell/english.dict
 share/ispell/english.hash
+
