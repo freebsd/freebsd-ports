@@ -1,1 +1,1 @@
-lib/perl5/site_perl/5.005/Tk/FileDialog.pm
+lib/perl5/site_perl/%%PERL_VERSION%%/Tk/FileDialog.pm
