@@ -7,6 +7,7 @@
 
 PORTNAME=	acroread
 PORTVERSION=	5.06
+PORTREVISION=	1
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
@@ -21,11 +22,11 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-E
+REINPLACE_ARGS=	-i '' -E
 NO_FILTER_SHLIBS=	yes
 
 .if ${ARCH} == "i386"
-PLIST_SUB=      "ARCHDIR=intellinux"
+PLIST_SUB=	"ARCHDIR=intellinux"
 .endif
 WRKSRC=		${WRKDIR}
 
@@ -44,7 +45,7 @@ post-install:
 	${REINPLACE_CMD} 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
 	-@/compat/linux/usr/bin/strip ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
-	${REINPLACE_CMD} -E 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
+	${REINPLACE_CMD} 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
 	@cd ${PREFIX}/Acrobat5/bin && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat5/bin/acroread \
 	     ${PREFIX}/bin/acroread5
