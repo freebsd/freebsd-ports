@@ -20,7 +20,7 @@ USE_QT_VER=	2
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	LDFLAGS="-lm" \
+CONFIGURE_ENV=	LDFLAGS="-lm ${PTHREAD_LIBS}" \
 		QTDIR=${X11BASE}
 
 .include <bsd.port.mk>

@@ -21,10 +21,10 @@ $FreeBSD$
      CPPFLAGS="$saved_CPPFLAGS -I$qt_includes"
      if test -n "$qt_libraries"; then
 -      LIBS="$saved_LIBS -L$qt_libraries -lqt"
-+      LIBS="$saved_LIBS -L$qt_libraries -lqt2"
++      LIBS="$saved_LIBS -L$qt_libraries -lqtgl"
      else
 -      LIBS="$saved_LIBS -lqt -lm $X11_LIBS"
-+      LIBS="$saved_LIBS -lqt2 -lm $X11_LIBS"
++      LIBS="$saved_LIBS -lqtgl -lm $X11_LIBS"
      fi
      echo $ac_n "checking for QT includes ($qt_includes)""... $ac_c" 1>&6
  echo "configure:3021: checking for QT includes ($qt_includes)" >&5
@@ -33,10 +33,10 @@ $FreeBSD$
        if test "$qt_libraries_found" = "yes"; then
          if test -n "$qt_libraries"; then
 -          QT_LIBS="-L$qt_libraries -lqt -lm $X11_LIBS";
-+          QT_LIBS="-L$qt_libraries -lqt2 -lm $X11_LIBS";
++          QT_LIBS="-L$qt_libraries -lqtgl -lm $X11_LIBS";
          else
 -          QT_LIBS="-lqt -lm $X11_LIBS";
-+          QT_LIBS="-lqt2 -lm $X11_LIBS";
++          QT_LIBS="-lqtgl -lm $X11_LIBS";
          fi
          echo "$ac_t""yes" 1>&6
        else
