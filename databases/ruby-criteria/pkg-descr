@@ -1,0 +1,16 @@
+Criteria is a module for abstracting queries to various data sets.
+For instance, you might have a flat text file, or an array of Ruby
+objects, or a SQL database, and wish to perform the same query on any
+given source, without different versions of code for each.  Here's a
+quick example (more on the site):
+
+idx1 = SQLTable.new("orders")
+q1 = (idx1.price > idx1.paid) & (idx1.duedate < Time.now.to_i)
+
+puts q1.select
+
+# => SELECT * FROM orders WHERE ((orders.price > orders.paid) AND
+# (orders.duedate < 1062616643))
+
+Author:	Ryan Pavlik <rpav@mephle.com>
+WWW:	http://mephle.org/Criteria/
