@@ -1,0 +1,29 @@
+--- apps/unix/server/Makefile.orig	Sun Jan 26 22:21:08 2003
++++ apps/unix/server/Makefile	Sun Jan 26 22:49:45 2003
+@@ -3,7 +3,7 @@
+ #      Use this for Linux and other systems that have makedepend
+ #      instead of mkdep.
+ #
+-MAKEDEPEND	= makedepend
++#MAKEDEPEND	= makedepend
+ #
+ #      For Solaris the mkdep script in this directory can be used.
+ #
+@@ -11,14 +11,14 @@
+ #
+ #      Use this for Free/Net/OpenBSD.
+ #
+-#MAKEDEPEND	= mkdep
++MAKEDEPEND	= mkdep
+ CDEBUG		= -g
+ INCL		= -I ../../../os-dep/unix -I ../../../engine
+ 
+ # Use this flag when compiling under Solaris
+ #EXTRADEFINES	= -DUNIX -DSOLARIS
+-#EXTRADEFINES	= -DUNIX -DOPENBSD
+-EXTRADEFINES	= -DUNIX -DLINUX
++EXTRADEFINES	= -DUNIX -DOPENBSD
++#EXTRADEFINES	= -DUNIX -DLINUX
+ 
+ #
+ #      Use this if your machine has problems with localtime().
