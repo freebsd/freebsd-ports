@@ -8,8 +8,7 @@
 PORTNAME=	esound
 PORTVERSION=	0.2.29
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://www.marcuscom.com/downloads/
+MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/esound/0.2
 DIST_SUBDIR=	gnome
 
