@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1997/07/17 15:12:45 max Exp $
+# $Id: Makefile,v 1.15 1998/04/16 01:56:42 jseger Exp $
 #
 
 DISTNAME=       xpm-3.4k
@@ -15,6 +15,6 @@ MAINTAINER=	jseger@FreeBSD.org
 USE_IMAKE=	yes
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
