@@ -4,6 +4,9 @@ encryption and authentication algorithms. The name "RSAREF" means
 educational reference implementation of modern public- and secret-key
 cryptography.
 
+If you are located outside the USA, you should use the security/librsaintl
+port instead, which has better performance and fewer limitations.
+
 RSAREF 2.0 supports the following algorithms:
 
      o    RSA encryption and key generation, as defined by RSA
