@@ -7,6 +7,7 @@
 
 PORTNAME=	libidn
 PORTVERSION=	0.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/${PORTNAME}/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/${PORTNAME}/ \
@@ -22,6 +23,7 @@ USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_GETOPT_LONG=	yes
+USE_GNOME=	gnomehack
 INFO=		libidn
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
