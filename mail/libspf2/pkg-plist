@@ -1,0 +1,22 @@
+bin/spf_example
+bin/spf_example_2mx
+bin/spf_example_2mx_static
+bin/spf_example_static
+bin/spfd
+bin/spfd_static
+bin/spfquery
+bin/spfquery_static
+bin/spftest
+bin/spftest_static
+include/spf2/spf.h
+include/spf2/spf_dns.h
+include/spf2/spf_dns_cache.h
+include/spf2/spf_dns_null.h
+include/spf2/spf_dns_resolv.h
+include/spf2/spf_dns_test.h
+include/spf2/spf_dns_zone.h
+include/spf2/spf_lib_version.h
+@dirrm include/spf2
+lib/libspf2.a
+lib/libspf2.so
+lib/libspf2.so.1
