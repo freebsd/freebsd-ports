@@ -3,13 +3,12 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.26 1998/02/10 06:05:23 andreas Exp $
+# $Id: Makefile,v 1.27 1998/02/11 17:58:27 andreas Exp $
 #
 
 DISTNAME=	inn-1.7.2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
-
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
@@ -22,7 +21,9 @@ PGPVERIFY?=	DONT
 USE_TCL?=	DONT
 USE_PERL5?=	DONT
 
-SCRIPTS_ENV+= PGPVERIFY=${PGPVERIFY} USE_TCL=${USE_TCL} USE_PERL5=${USE_PERL5}
+SCRIPTS_ENV=	PGPVERIFY=${PGPVERIFY} USE_TCL=${USE_TCL} \
+		USE_PERL5=${USE_PERL5} PERL_VERSION=${PERL_VERSION}
+		
 
 NO_PACKAGE=	"Too many compile-time options"
 MAN1=	convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 installit.1 \
@@ -69,7 +70,7 @@ post-install:
 	${MKDIR} ${PREFIX}/news/locks
 	chown news.news ${PREFIX}/news/locks
 	chmod 0755 ${PREFIX}/news/locks
-	sed <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
+	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
 
 .include <bsd.port.mk>
