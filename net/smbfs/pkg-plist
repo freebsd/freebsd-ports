@@ -1,5 +1,5 @@
 @cwd /
-dev/net/nsmb0
+dev/nsmb0
 modules/smbfs.ko
 sbin/mount_smbfs
 @cwd /usr/local
@@ -10,4 +10,3 @@ lib/libsmb.a
 man/man1/smbutil.1.gz
 man/man8/mount_smbfs.8.gz
 @cwd /dev
-@dirrm net
