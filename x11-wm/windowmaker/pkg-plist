@@ -134,9 +134,10 @@ include/proplist.h
 include/wraster.h
 lib/libPropList.a
 @exec ranlib %D/%F
+lib/libPropList.so
 lib/libPropList.so.0.8
-@exec /sbin/ldconfig -m %D
-@unexec /sbin/ldconfig -m %D
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D
 lib/libWINGs.a
 @exec ranlib %D/%F
 lib/libWMaker.a

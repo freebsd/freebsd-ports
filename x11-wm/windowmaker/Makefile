@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.31 1998/09/19 01:33:49 steve Exp $
+# $Id: Makefile,v 1.32 1998/09/24 15:13:35 tg Exp $
 
 DISTNAME=	WindowMaker-0.20.0
 PKGNAME=	windowmaker-0.20.0
@@ -43,9 +43,17 @@ pre-configure:
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; \
-	    make)
+	    ${MAKE} ${MAKE_ENV})
 
 pre-install:
-	@(cd ${WRKSRC}/libPropList; ${MAKE} install)
+	@(cd ${WRKSRC}/libPropList; ${MAKE} ${MAKE_ENV} install)
+
+post-install:
+	if [ "${PORTOBJFORMAT}" = "elf" ]; then \
+		${LN} -sf libPropList.so.0 ${PREFIX}/lib/libPropList.so; \
+	else \
+		${LN} -sf libPropList.so.0.8 ${PREFIX}/lib/libPropList.so; \
+	fi
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
