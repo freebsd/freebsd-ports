@@ -1,13 +1,15 @@
-This is a server daemon for FSP, the File Service Protocol.  With
-it, you can offer files to "anonymous" visitors.  Bandwidth can
-easily be limited.
+This is a server daemon, port scanner and (optionally) clients for FSP, the File
+Service Protocol.
  
-Since a service contact port (well-known port) for FSP has not been
-assigned by IANA (per RFC 1700), you must choose one yourself when
-configuring fspd.  Edit the example.conf file and place it in
-${LOCALBASE}/etc/fspd.conf (typically LOCALBASE is set to /usr/local).
+FSP is lightweight and connectionless.  It is typically used for offering files
+to "anonymous" visitors over a congested link.  It uses UDP rather than TCP
+sockets.  A service contact port (well-known port) for FSP has not been assigned
+by IANA (per RFC 1700).  See <URL:http://www.faqs.org/faqs/fsp-faq/> for an
+overview.
+
+To use fspd, you must copy the fspd.conf.sample file, normally installed in
+/usr/local/etc/, to fspd.conf and edit it.
+
 You can run fspd from inetd or stand-alone.
 
-WWW:  http://www.faqs.org/faqs/fsp-faq/
-
-Trevor Johnson
+WWW:  http://fsp.sf.net
