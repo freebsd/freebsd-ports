@@ -52,13 +52,13 @@ lib/X11/xcin25/tab/big5/sys.tab
 lib/X11/xcin25/tab/big5/telecode.tab
 lib/X11/xcin25/tab/ch_index.dat
 lib/X11/xcin25/tab/dict.dat
-lib/X11/xcin25/tab/euc/default.phr
-lib/X11/xcin25/tab/euc/jtcj_gb.tab
-lib/X11/xcin25/tab/euc/pinyin.tab
-lib/X11/xcin25/tab/euc/phonegb2.tab
-lib/X11/xcin25/tab/euc/shuangpin.tab
-lib/X11/xcin25/tab/euc/sys.tab
-lib/X11/xcin25/tab/euc/wubizixing.tab
+lib/X11/xcin25/tab/euccn/default.phr
+lib/X11/xcin25/tab/euccn/jtcj_gb.tab
+lib/X11/xcin25/tab/euccn/pinyin.tab
+lib/X11/xcin25/tab/euccn/phonegb2.tab
+lib/X11/xcin25/tab/euccn/shuangpin.tab
+lib/X11/xcin25/tab/euccn/sys.tab
+lib/X11/xcin25/tab/euccn/wubizixing.tab
 lib/X11/xcin25/tab/fonetree.dat
 lib/X11/xcin25/tab/ph_index.dat
 lib/X11/xcin25/tab/us_freq.dat
@@ -78,6 +78,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
 %%PORTDOCS%%@dirrm lib/X11/xcin25/doc
 @dirrm lib/X11/xcin25/bin
 @dirrm lib/X11/xcin25/tab/big5
-@dirrm lib/X11/xcin25/tab/euc
+@dirrm lib/X11/xcin25/tab/euccn
 @dirrm lib/X11/xcin25/tab
 @dirrm lib/X11/xcin25

@@ -31,8 +31,9 @@ RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcf
 
 WRKSRC=		${WRKDIR}/xcin
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--x-libraries=${X11BASE}/lib \
 		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \
@@ -64,6 +65,11 @@ post-extract:
 
 post-patch:
 	@cd ${WRKSRC}/src/Cinput/chewing; ${SH} ./patch_chewing
+	${REINPLACE_CMD} -e "s,@euc,@euccn,g" \
+		-e "s,@gb2312,@euccn,g" \
+		${WRKSRC}/etc/xcinrc.FREEBSD
+	${REINPLACE_CMD} -e "s,euc ,euccn ,g" \
+		${WRKSRC}/cin/gb/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
