@@ -1,6 +1,6 @@
-wxWindows is a C++ cross-platform GUI toolkit which 
-was started as a one man project by Julian Smart.
-More information about wxWindows can be found at [1].
+The wxWindows project is a C++ cross-platform GUI toolkit which
+was started by Julian Smart.
+
 Currently, work is being done on these ports of wxWindows 2.X: 
         Windows (wxMSW, finished) 
         Unix, GTK+ (wxGTK, finished) 
@@ -9,13 +9,16 @@ Currently, work is being done on these ports of wxWindows 2.X:
         OS/2 (wxOS2, just started) 
         BeOS (wxBeOS, just started) 
         SciTech's MGL library (wxMGL, started a few months ago) 
-This is the current stable (2.0.1) version of the GTK port [2].
-There is also a CVS-Version, but it is beta.
-Take a look into the samples/ directory of the working directory. 
-It's very helpful.
 
-- Alexander Langer
-<alex@cichlids.com>
+This is the current stable (2.0.1) version of the GTK port.  There
+is also a "CVS-Version" that is considered beta.
 
-WWW:http://www.freiburg.linux.de/~wxxt/
-And also see: http://web.ukonline.co.uk/julian.smart/wxwin/
+After installing, look in samples/ of the work directory (assuming
+you did not install this as a package --- the package of this port
+is broken in that the samples/ are not installed).  The samples
+are very helpful.
+
+WWW: http://www.freiburg.linux.de/~wxxt/
+     http://web.ukonline.co.uk/julian.smart/wxwin/
+
+- Alexander Langer <alex@cichlids.com>
