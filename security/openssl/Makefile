@@ -10,8 +10,8 @@ PORTNAME=	openssl
 PORTVERSION=	0.9.7
 PORTREVISION!=	date -v-1d +%Y%m%d
 .else
-PORTVERSION=	0.9.7e
-PORTREVISION?=	2
+PORTVERSION=	0.9.7f
+PORTREVISION?=	0
 .endif
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
