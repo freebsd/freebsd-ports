@@ -1,31 +1,27 @@
 # New ports collection makefile for:	diskusage
-# Version required:	1.00
-# Date created:		23 August 1999
+# Version required:	1.01
 # Whom:			maske
+# Date created:		23 August 1999
 #
-# $Id$
+# $FreeBSD$
 #
 
-DISTNAME=	diskusage-1.00
+DISTNAME=	diskusage-1.01
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.intsyst.com/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.thinblue.net/pub/FreeBSD/distfiles/
 
-MAINTAINER=	maske@intsyst.com
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400004
-BROKEN=		requires libg++.so.4 to run
-.endif
+MAINTAINER=	maske@thinblue.net
 
 MAN1=		diskusage.1
 MANCOMPRESSED=	yes
 
 WRKSRC=		${WRKDIR}/diskusage
-NO_BUILD=	yes
+
+do-build:
+	( cd ${WRKSRC}; ${CXX} -ansi diskusage.cpp -o diskusage )
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/diskusage ${PREFIX}/bin
+	$(INSTALL_PROGRAM) ${WRKSRC}/diskusage ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/diskusage.1.gz ${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
