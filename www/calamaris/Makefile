@@ -1,12 +1,12 @@
 # New ports collection makefile for:	calmaris
-# Date created:         25 December 1998
-# Whom:                 Dima Sivachenko
+# Date created:				25 December 1998
+# Whom:					Dima Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	calamaris
-PORTVERSION=	2.48
+PORTVERSION=	2.49
 CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/tools/squid/calamaris/
 
