@@ -1,7 +1,8 @@
 bin/rats
-lib/rats-c.xml
-lib/rats-perl.xml
-lib/rats-python.xml
-lib/rats-php.xml
+share/rats-c.xml
+share/rats-openssl.xml
+share/rats-perl.xml
+share/rats-php.xml
+share/rats-python.xml
 %%PORTDOCS%%share/doc/rats/README
 %%PORTDOCS%%@dirrm share/doc/rats
