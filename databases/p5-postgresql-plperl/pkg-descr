@@ -1,0 +1,7 @@
+PL/Perl allows you to write PostgreSQL functions and procedures in
+Perl. Consult the PostgreSQL User's Guide and the INSTALL file in the
+top-level directory of the source distribution for more information.
+
+This software is part of the standard PostgreSQL distribution.
+
+WWW: http://www.postgresql.org/

@@ -86,6 +86,7 @@
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Tie-DBI
     SUBDIR += p5-hp200lx-db
+    SUBDIR += p5-postgresql-plperl
     SUBDIR += p5-sqlrelay
     SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
