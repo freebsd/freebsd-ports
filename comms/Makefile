@@ -7,6 +7,7 @@
     SUBDIR += comserv
     SUBDIR += conserver
     SUBDIR += ecu
+    SUBDIR += ghfaxviewer
     SUBDIR += gkermit
     SUBDIR += gnokii
     SUBDIR += hylafax
