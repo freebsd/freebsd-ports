@@ -5,7 +5,7 @@
  ACORNOBJS = acorn2sfd.o sfd.o diffstubs.o psunicodenames.o stamp.o
  
 -_CFLAGS = -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
-+_CFLAGS = -I$(LOCALBASE)/include -I$(LOCALBASE)/include/freetype2 -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
++_CFLAGS = -I$(LOCALBASE)/include -I$(top_srcdir)/inc -I$(srcdir) -I. @WFLAGS@ $(X_CFLAGS) \
      @DEFS@ '-DSHAREDIR="$(sharedir)"' -DLIBDIR='"$(libdir)"'
  CFLAGS = @CFLAGS@ $(_CFLAGS)
  
