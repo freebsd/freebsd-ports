@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.8.3
-PORTREVISION=	3
+PORTVERSION=	2.8.4
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.8
@@ -48,9 +47,7 @@ OPTIONS=	KDE_MENUS "Integrated KDE menu picks" on
 .undef WITHOUT_CDPARANOIA
 .undef WITHOUT_SAMBA
 .undef WITHOUT_MDNS
-.if ${ARCH} != "alpha"
 WITH_MDNS=		yes
-.endif
 WITH_CDPARANOIA=	yes
 WITH_SAMBA=		yes
 .endif
@@ -131,6 +128,7 @@ pre-configure:
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .if !defined(WITHOUT_KDE_MENUS)
+	@${MKDIR} ${PREFIX}/share/gnome/vfolders
 	@${INSTALL_DATA} ${WRKSRC}/KDE.directory ${PREFIX}/share/gnome/vfolders
 .endif
 
