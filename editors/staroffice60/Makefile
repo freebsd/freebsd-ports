@@ -182,7 +182,6 @@ do-install:
 .endif
 	@${SED} -i .orig -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
 	${INSTDB.INS}
-	    ${INSTDB.INS}.orig > ${INSTDB.INS}
 	@make install-user
 .endif
 .if defined(WITH_ADABAS)
