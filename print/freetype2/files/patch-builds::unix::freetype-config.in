@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- builds/unix/freetype-config.in	2001/10/20 14:00:40	1.1
++++ builds/unix/freetype-config.in	2001/10/20 14:01:28
+@@ -77,7 +77,7 @@
+  echo $exec_prefix
+ fi
+ if test "$echo_cflags" = "yes"; then
+- cflags="-I@includedir@/freetype2"
++ cflags="-I@includedir@/freetype2 -I@includedir@"
+  echo $cflags $includes
+ fi
+ if test "$echo_libs" = "yes"; then
