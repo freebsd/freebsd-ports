@@ -1,0 +1,11 @@
+share/xsl/resume-extensions/Changes.txt
+share/xsl/resume-extensions/format/fo.xsl
+share/xsl/resume-extensions/format/html.xsl
+share/xsl/resume-extensions/format/text.xsl
+share/xsl/resume-extensions/format/xml.xsl
+share/xsl/resume-extensions/lib/extrefs.xsl
+share/xsl/resume-extensions/params.xsl
+@dirrm share/xsl/resume-extensions/lib
+@dirrm share/xsl/resume-extensions/format
+@dirrm share/xsl/resume-extensions
+@unexec rmdir %D/share/xsl 2>/dev/null || true
