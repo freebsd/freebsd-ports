@@ -27,7 +27,7 @@ USE_GNOME=	gdkpixbuf
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME+=	gtk12
+USE_GNOME+=	gtk12 gnomehier
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap=${LOCALBASE}
 
