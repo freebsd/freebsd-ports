@@ -1,33 +1,23 @@
 Index: src/Makefile.src
 diff -u src/Makefile.src.orig src/Makefile.src
---- src/Makefile.src.orig	Sun Jul  9 00:55:41 2000
-+++ src/Makefile.src	Mon Jul 10 20:04:52 2000
-@@ -13,23 +13,22 @@
+--- src/Makefile.src.orig	Fri Oct 13 01:00:12 2000
++++ src/Makefile.src	Sat Oct 14 04:01:17 2000
+@@ -13,7 +13,7 @@
  GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
 -FLAGS = -O2 -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE)
-+CFLAGS += -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE) \
-+	-DPREFIX=\"$(PREFIX)\"
++FLAGS = -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE)
+ FLAGS+= $(PTHREAD_INC)
+ 
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
- 
- ifeq ($(debug),1)
--    FLAGS += -g
-+    CFLAGS += -g
- endif
- 
- ifeq ($(enable_nls),1)
--    FLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
-+    CFLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
- endif
- 
- ifeq ($(HAVE_GETADDRINFO),1)
--    FLAGS += -DHAVE_GETADDRINFO
-+    CFLAGS += -DHAVE_GETADDRINFO
+@@ -33,8 +33,7 @@
+     FLAGS += -DHAVE_GETADDRINFO
  endif
  
 -
 -CC = gcc -Wall $(FLAGS)
++CFLAGS += $(FLAGS)
  
  GNOME_PREFIX = `gnome-config --prefix`
  
