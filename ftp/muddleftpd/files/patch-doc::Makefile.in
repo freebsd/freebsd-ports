@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Mon Apr 23 00:25:01 2001
++++ doc/Makefile.in	Mon Apr 23 00:26:09 2001
+@@ -41,11 +41,11 @@
+ 	
+ install: all
+ 	mkdir -p $(MANDIR)/man1
+-	install man/muddleftpd.1 -m 644 $(MANDIR)/man1/$(MUDOUTPROG)
+-	install man/ftpwho.1 -m 644 $(MANDIR)/man1/$(WHOPROG)
+-	install man/mudpasswd.1 -m 644 $(MANDIR)/man1/$(MUDPASSWDPROG)
++	${INSTALL_MAN} man/muddleftpd.1 $(MANDIR)/man1
++	${INSTALL_MAN} man/ftpwho.1 $(MANDIR)/man1
++	${INSTALL_MAN} man/mudpasswd.1 $(MANDIR)/man1
+ 	mkdir -p $(INFODIR)
+-	install $(DOCOBJ) -m 644 $(INFODIR)
++	${INSTALL_DATA} $(DOCOBJ) $(INFODIR)
+ 
+ clean:
+ 

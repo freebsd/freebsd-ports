@@ -30,6 +30,7 @@
     SUBDIR += lukemftpd
     SUBDIR += mirror
     SUBDIR += moxftp
+    SUBDIR += muddleftpd
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += ncftp3

@@ -1,0 +1,15 @@
+--- src/Makefile.in.orig	Mon Apr 23 00:20:53 2001
++++ src/Makefile.in	Mon Apr 23 00:23:46 2001
+@@ -98,9 +98,9 @@
+ install: all
+ 	mkdir -p $(BINDIR)
+ 
+-	install $(MUDOUTPROG) -m 755 $(BINDIR)
+-	install $(WHOPROG) -m 755 $(BINDIR)
+-	install $(MUDPASSWDPROG) -m 755 $(BINDIR)
++	${INSTALL_PROGRAM} $(MUDOUTPROG) $(BINDIR)
++	${INSTALL_PROGRAM} $(WHOPROG) $(BINDIR)
++	${INSTALL_PROGRAM} $(MUDPASSWDPROG) $(BINDIR)
+ 
+ ifndef MUDOUTPROG
+ clean:
