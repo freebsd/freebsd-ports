@@ -1,0 +1,5 @@
+Ruby-Poll is an object-oriented interface to the poll(2) system call
+for Ruby.
+
+Author:	Michael Granger <ged@FaerieMUD.org>
+WWW:	http://www.devEiate.org/code/Ruby-Poll.shtml

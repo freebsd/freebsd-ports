@@ -1,0 +1,74 @@
+%%RUBY_SITEARCHLIBDIR%%/poll.so
+%%RUBY_SITELIBDIR%%/poll.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/chatserver.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000002.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000003.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000004.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000005.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000006.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000007.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000008.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000009.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000010.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000011.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000012.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.src/M000022.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/PollError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000034.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000035.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000036.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000037.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000038.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000039.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000040.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000041.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/Server.src/M000042.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000023.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000024.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000025.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000029.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000030.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/classes/User.src/M000031.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/README.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/examples/chatserver_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/lib/poll_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/files/poll_c.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files/lib
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files/examples
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/User.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Server.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Poll/EventMask.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Poll.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes/Poll
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/html
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
