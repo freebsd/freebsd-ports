@@ -2,4 +2,12 @@ etc/pdnsd.conf.sample
 etc/rc.d/pdnsd.sh
 sbin/pdnsd
 sbin/pdnsd-ctl
+%%PORTDOCS%%%%DOCSDIR%%/dl.html
+%%PORTDOCS%%%%DOCSDIR%%/doc.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/manual.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -rf /var/db/pdnsd
