@@ -127,9 +127,9 @@ diff -u -r1.11 unxfbsdi.mk
 +# Compiler flags for compiling static object in multi threaded environment with character user interface
 +CFLAGSOBJCUIMT=
 +# Compiler flags for compiling shared object in multi threaded environment with graphical user interface
-+CFLAGSSLOGUIMT=-fpic
++CFLAGSSLOGUIMT=-fPIC
 +# Compiler flags for compiling shared object in multi threaded environment with character user interface
-+CFLAGSSLOCUIMT=-fpic
++CFLAGSSLOCUIMT=-fPIC
 +# Compiler flags for profiling
 +CFLAGSPROF=
  # Compiler flags for debugging

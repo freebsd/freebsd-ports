@@ -19,7 +19,7 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050110
+SNAPDATE=	20050119
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
@@ -49,10 +49,10 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		71
+MILESTONE=		72
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
-DIST_SUBDIR=		openoffice2.0
+DIST_SUBDIR=		openoffice.org2.0
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
 PACKAGE_BASENAME=	OOo_${RELEASE_NR}m${MILESTONE}_${OPSYS}${SIMPLEOSVER}Intel
 
@@ -141,10 +141,6 @@ post-extract:
 	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
-	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
-
 do-build:
 	@cd ${WRKSRC} ; ./bootstrap
 #DEFAULT_TO_ENGLISH_FOR_PACKING=yes, see #iz 35659, 34269 and 36708
@@ -190,7 +186,8 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sweb
 	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
-	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} > ${TMPPLIST}
+	@${PRINTF} "bin/openoffice.org" > ${TMPPLIST}
+	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
