@@ -1,0 +1,162 @@
+This is an excerpt of what you can see with the standalone "system".
+ -- Jörg
+
+
+1. This looks like PC, but where is DOS? How to get pcemu really running
+
+Pcemu is an emulator that emulates an 8086 CPU as well as a bunch of
+PC BIOS services, so it basically provides the functionality like an
+old PC/XT.  Anyway, as with the XT too, the emulator requires something
+like an operating system to run with.  Since we cannot ship MS-DOS or
+one of its variants along with this distribution (for legal reasons),
+you're now actually looking at a (sort of) "standalone operating system",
+just to get pcemu booted and running.  All this system does is showing
+you this introduction.
+
+You will have to replace this mini-system by a physical image of a
+DOS boot floppy.  The "system" currently running is booted from the
+file
+
+	/usr/local/lib/pcemu/DriveA.
+
+It pretends to be the image of a 720 KB diskette, which has been
+chosen as the default bootfile size.
+
+In order to obtain the image of a bootable DOS floppy, do the following:
+
+	Prepare a 720 KB floppy with a DOS system as you'd like
+	to run it later.  Include all the good stuff you don't want
+	to miss there.  Don't forget to put a simple text editor
+	there, so you can modify your configuration files later.
+
+	Put a copy of the file
+
+		/usr/local/lib/pcemu/C/emufs.sys
+
+	onto this diskette, and include a line like
+
+		device = a:\emufs.sys /usr/local/lib/pcemu/C
+
+	into the config.sys file on this diskette.  This will
+	provide you with an interface to the BSD file system from
+	within your DOS session.  (It actually pretends to be a
+	network drive.)  According to David Hedley, you are also
+	advised to include the line
+
+		stacks = 9, 512
+
+	there to avoid stack overflow problems with the emulator.
+
+	If you want to retain a copy of the standalone "system" you
+	are currently looking at, move it away:
+
+		# cd /usr/local/lib/pcemu; mv DriveA StandaloneA
+
+	Now, make a copy of your disk by either:
+
+	- under BSD, perform a
+
+		# cp /dev/fd0.720 /usr/local/lib/pcemu/DriveA
+
+	  (the number after the fd may vary for drives other than
+	  the primary one), or
+
+	- under DOS, copy the file
+
+		/usr/local/lib/pcemu/C/dumpdisk.exe
+
+	  to your DOS system and execute it.  This will dump the
+	  physical copy of either drive A or B to the file drivea
+	  in your current (DOS) working directory.  You can then move
+	  this file to
+
+		/usr/local/lib/pcemu/DriveA
+
+	  in your BSD system.
+
+Since pcemu needs to display the standard VGA font, you further need
+to tell your X server about the location of the font file.  It has
+been put under
+
+	/usr/local/lib/pcemu/font/
+
+along with the necessary information for the X server.  All you need
+to do is to tell your X server about it.  This can either be done
+as a server default by including the directory into the FontPath
+section of your XF86Config file (this is for XFree86, refer to
+the documentation if you're using another X server).  Alternatively,
+you can run the command
+
+	$ xset fp+ /usr/local/lib/pcemu/font
+
+when X11 is running to instruct your X server to append this directory
+to the font path.  Should you wish to run pcemu across the network,
+remember that the fonts must be physically available at the server
+side, or you need to provide an X11 font server (xfs).  Refer to
+the X11 documentation on how to setup this.
+
+
+That's all, now you should be able to run pcemu.  Add required
+device = a:\emufs.sys /... lines to your config.sys as you
+need them.  It's not wise to make the whole BSD hierarchy available
+since DOS does not provide multiuser protection.
+
+Should you wish to override some of the emulator defaults like
+size and location of the bootfile, you can do this by settig up a
+$HOME/.pcemurc file.  Refer to sections 2. and 3. below.
+
+
+
+2. Informations about this FreeBSD port
+
+
+This `port' of pcemu to FreeBSD has been prepared by Jörg Wunsch.
+It is an only slightly modified version of David's code, a few
+problems have been fixed for the BSD compilation environment, and
+the location of the default boot file has been moved in order to
+get you started with just what you are reading now.
+
+The PostScript document David is mentioning under 3. below has
+been compressed and stored under
+
+	/usr/local/lib/pcemu/doc/report.ps.gz.
+
+It is huge however, so if you don't care much for it you might wish
+to remove it later.
+
+Since i'm living in Germany with a German keyboard, i found the
+original X11 KeySym to PC scancode translation unacceptable.  Several
+scancodes have been unreachable for me.  Hence i decided to add another
+section to the .pcemurc file allowing to instruct pcemu of specific
+keyboard layout semantics.  They consist of the keyword keymap,
+followed by the desired PC scancode, an equal sign, and the character
+that is generated for this key under X11 without any shift keys.  (Note
+that no space is allowed on either side of the equal sign.)  This way
+i won't get a German key mapping under DOS, but at least a valid keyboard
+layout where all the scan codes can actually be generated at all.
+
+The appropriate section of my .pcemurc file looks like:
+
+keymap 12=ß
+keymap 13='
+keymap 21=z
+keymap 26=]
+keymap 27=+
+keymap 39=\
+keymap 40=[
+keymap 41=^
+keymap 43=#
+keymap 44=y
+keymap 53=-
+keymap 86=<
+
+
+Once :-) i will have filed all my modifications back to David, and
+perhaps they will be included into the regular distribution as well.
+
+Should you wish to contact me regarding this FreeBSD port, you can
+reach me as joerg_wunsch@uriah.heep.sax.de.
+
+
+
+

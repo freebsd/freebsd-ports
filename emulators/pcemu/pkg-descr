@@ -1,0 +1,238 @@
+[This is David Hedley's original README, FreeBSD port comments below]
+
+                       PC Emulator for Unix and X Windows
+
+As the title suggests, this is a Unix/X windows program which is
+designed to emulate a standard 8086 based PC.
+
+In its current form it runs most text based programs. The programs I have
+tried and found to work are as follows:
+
+MSDOS 5.0                         MSDOS 6.2
+WordPerfect 5.1                   Borland C++ 2.0
+Turbo Debugger 2.51               Turbo Assembler 2.51
+BBCBasic 4.61                     MSDOS QBasic
+MSDOS GWBASIC                     Virtually all program that came with MSDOS 5
+Hitchhiker's Guide to the Galaxy  PC Magazine's ANSI.COM
+SemWare's QEdit 2.1               Norton Utils 4.50 Advanced Edition
+Norton Utils 6.0                  Xtree Professional 1.1
+PowerMeter Utils                  Autoroute (ancient version)
+Minitab 8.0                       Microsoft Diagnostics
+
+This is all the programs I could lay my hands on which were text based
+and could run on an 8086
+
+The emulator runs at about 8-10MHz 80286 speed on a Sun SparcStation
+10/40 (without the -mviking flag) and at about 6MHz 8088 speed on a
+33MHz 80486 box running Linux.
+
+I have included a Postscript representation of my project report. It's
+a bit out of date now, but it's the closest thing I've got to
+documentation!  I'll do some kind of latex thing for the next
+release....
+
+The program rather hogs the cpu but unmapping the window (iconifying
+it) will put it to sleep.
+
+The most recent version of this program will always be in ftp.cs.bris.ac.uk
+currently in the directory /users/hedley
+
+INSTALLING THE EMULATOR
+
+Edit the Makefile to change the OPTIONS, CFLAGS and XROOT to be
+appropriate for your system (I am assuming you are using GNU GCC,
+although any ANSI C compiler should work just as well). Ensure you are
+using the best (speed) optimisations possible (e.g. -O2 -fomit-frame-poiner)
+
+Edit the file mytypes.h and ensure that the types for INT8, UINT8,
+INT16, UINT16 etc are correct. Hopefully nothing need be changed in
+this file, but you never can tell... I have assumed that 'char's are 8
+bit bytes, 'short's are 16 bit words and 'long's are 32 bit words. If
+your compiler treats these differently to the above then you will have
+to edit this header file.
+
+Type 'make' and go away and have a cup of tea! Compiling 'cpu.c' takes
+a while (and quite a bit of memory!).
+
+Get a floppy disk of the same size/type as you specified in the Makefile
+(i.e. if you chose -DBOOT720, then you'll need a 3.5" 720k disk). Install
+MSDOS on it. Copy the files 'config.sys', 'emufs.sys' and 'lredir.exe' from
+the 'programs' directory onto this floppy disk. Shove it in your Unix box
+and type cp /dev/fd0 DriveA This should create a 720k (or whatever) file
+which the emulator can boot from.  If you do not have access to a Unix box
+with a floppy disk on it, then you can use the supplied 'dumpdisk' program
+to create a disk image. All you need is access to a PC. Simply put in a
+bootable MSDOS disk into the drive and type dumpdisk A (or dumpdisk B if in
+drive B). The program will copy the entire disk to a file called
+'drivea'. You must then transfer it to your Unix box...
+
+You then need to convert the vga font (vga.bdf) into a font format
+your X server can understand (either SNF or PCF) using either
+'bdftosnf' or 'bdftopcf' and install the resulting font file somewhere
+where your X server can find it. Then type 'mkfontdir' to rebuild the
+fonts.dir file and then type 'xset fp rehash' to tell your X server
+about the new font. If you type 'xlsfonts' you should see 'vga' as one
+of the fonts listed. If not, then something has gone wrong. I may or
+may not be able to help - it depends on your local setup. The emulator
+will run without the font as it uses the standard 8x16 X11 font -
+although most programs which use the extended character set will look
+pretty terrible. A warning will be displayed if the correct VGA font
+cannot be found. If you are using openwindows, you will have to type
+'convertfont' and then 'bldfamily'
+
+You should now be in a position to run the emulator
+
+By default, the emulator requires the disk image called 'DriveA' to be in
+the current directory or else it will complain. If you don't like this,
+then you can change the file the emulator boots from by altering your
+.pcemurc file (see below) or by changing the default at compile time (by
+modifying the Makefile)
+
+Once run, the emulator should come up with the usual MSDOS banner and
+request the current date and time (which should already be
+correct). You can now run PC programs, mount Unix directories as
+drives etc. You will already have one drive redirection - drive C: is
+the Unix root directory. To mount further directories as drives, you
+must use the program 'lredir'. Consult the file 'lredir.readme' for
+instructions...
+
+                        The .pcemurc file
+
+At present this file allows a few things to be changed at run time. If this
+file is found (either in the current directory or in your home directory),
+then it is read and parsed and the values overwriting the equivalent
+compile time options. Currently the only options supported at present are:
+
+bootfile diskfile       
+
+where diskfile is the disk image you want to boot from (no quotes or
+anything are needed and the filename must not contain white spaces).
+
+boottype type
+
+where type is either 360, 720, 144 or 12. This tells the emulator the type
+of disk the disk image file represents (360k, 720k, 1.44MB, 1.2MB
+respectively).
+
+updatespeed n
+
+where n is an integer > 0
+This is the rate at which the screen memory gets checked for changes (and
+hence the update speed at which the screen gets updated for non-BIOS
+writes). n is measured in internal interrupt ticks of which there are ~72.8
+per second (depends on the resolution of the system timer).
+
+cursorspeed n
+
+where n is an integer
+This specifies how fast the cursor should flash. Flashing the cursor can
+take a fair amount of bandwidth and so on slow/heavily loaded networks it
+may be best to slow down the cursor flashing. Setting n to 0 or less will
+disable cursor flashing - the cursor will be permanently on.
+
+An example .pcemurc file can be found in this directory.
+
+If you have problems compiling or running the emulator, then please contact
+me giving details of what went wrong (along with your computer type
+etc).
+
+Architectures tested:
+
+Computer        OS              Comments
+-----------------------------------------------------------------------------
+PC 486/33       Linux 0.99.14w  Runs quite well. A bit pointless though :)
+Sun 3/60        SunOS 4.1.x     Takes an age to compile and not really worth
+                                the effort...
+SparcStation 10 SunOS 4.1.3     Runs well. Takes > 20MB RAM to compile though
+HP 755/99       HPUX            Runs OK (>25MB RAM to compile...)
+Sun 4           Solaris 2.3     Runs OK
+RS6000          ???             Had a few problems getting it to compile.
+                                Getting there slowly though.
+SGI Indigo      IRIX 4.?.?      Doesn't work if compiled with optimisation
+                                using the standard compiler. Haven't tried
+                                it using gcc yet...
+
+As you can see this list is quite small. The main limiting factor is the range 
+of machines I have access to. If anyone else can get it running on other
+architectures then please contact me!
+
+Warning: This program is not secure! Do not make is suid or sgid anything
+unless you wish to compromise the security of your system!
+
+EMULATOR LIMITATIONS etc
+
+Some parts of the PC architecture are emulated better than others. The
+BIOS has been partly implemented - enough to get MSDOS to boot and to
+allow most programs to run. Anyhow, most decent programs bypass the
+BIOS for screen access. BIOS Disk calls for drive A have been mostly
+emulated, although formatting doesn't work.
+
+Some of the hardware has been emulated but not much. Timer interrupts
+are generated by the system but there is now way (at present) to
+reprogram the timer. The Programmable Interrupt Controller has been
+emulated in part to respond to the End Of Interrupt command and reads
+from and writes to the mask register should work OK.
+
+None of the VGA hardware has been emulated at present (apart from
+screen updating) although this will change in the near future. Mode
+changes must therefore be done through the BIOS.
+
+The keyboard has been mostly emulated. The program converts X11
+keysyms to raw PC scan codes and then generates an interrupt 9 as per
+usual. There is a BIOS routine which takes these scan codes and
+generates the correct BIOS ASCII/scan code pair. The keysyms used can
+be found in the module 'xstuff.c'. In the future these keysyms will be
+read in from a file at run time.
+
+THANKS
+
+Thanks go to the following:
+
+Andy Norman at HPLabs, Bristol (ange@hpl.hewlett-packard.co.uk) for the HP
+port.
+Dieter Becker (becker@med-in.uni-sb.de) for help with the Solaris port
+Klaas Esselink (esselin1@ksla.nl) for help with the RS6000 port
+
+Please report bugs/comments etc to me (hedley@cs.bris.ac.uk) and I'll
+do my best to sort them out (no guarantees though). After June 25th I
+will be leaving University and will not be able to check email very
+frequently - please be patient if you want a response - I will reply
+eventually.
+
+Have fun...
+
+David
+
+
+
+[FreeBSD port comments]
+
+I (joerg_wunsch@uriah.heep.sax.de) have slightly extended the .pcemurc
+functionality, in order to improve the handling of international key-
+boards.  David's code hard-coded the keyboard mapping from XKeyStrings
+to PC scancodes.
+
+I've been adding a .pcemurc section that defines the reverse mapping
+from XKeyStrings to PC scancodes, so it's at the very least possible
+to remap the keyboard to the original US layout even for international
+versions.  The syntax for this rules is
+
+	`keymap' <scancode>`='<XKeyString>
+
+This is my personal .pcemurc file, just to illustrate the usage.
+
+bootfile /home/joerg/pcemu/DriveA
+boottype 720
+keymap 12=ß
+keymap 13='
+keymap 21=z
+keymap 26=]
+keymap 27=+
+keymap 39=\
+keymap 40=[
+keymap 41=^
+keymap 43=#
+keymap 44=y
+keymap 53=-
+keymap 86=<
+

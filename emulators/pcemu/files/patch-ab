@@ -1,0 +1,79 @@
+*** cpu.c.orig	Wed Jun 22 16:24:50 1994
+--- cpu.c	Tue Jan 24 18:37:17 1995
+***************
+*** 1127,1132 ****
+--- 1127,1133 ----
+  
+  static INLINE2 void i_daa(void)
+  {
++     /* Opcode 0x27 */
+      if (AF || ((*bregs[AL] & 0xf) > 9))
+      {
+          *bregs[AL] += 6;
+***************
+*** 1300,1305 ****
+--- 1301,1330 ----
+      c_ss = SegToMemPtr(SS);
+  }
+  
++ static INLINE2 void i_das(void)
++ {
++     /* Opcode 0x2f */
++     if (AF || ((*bregs[AL] & 0xf) > 9))
++     {
++         *bregs[AL] -= 6;
++         AF = 1;
++     }
++     else
++         AF = 0;
++ 
++     if (CF || (*bregs[AL] > 0x9f))
++     {
++         *bregs[AL] -= 0x60;
++         CF = 1;
++     }
++     else
++         CF = 0;
++ 
++     SetPF(*bregs[AL]);
++     SetSFB(*bregs[AL]);
++     SetZFB(*bregs[AL]);
++ }
++ 
+  
+      /* most XOR instructions go here */
+  
+***************
+*** 4140,4146 ****
+  {
+      fprintf(stderr,"Error: Unimplemented opcode %02X at cs:ip = %04X:%04X\n",
+  		    c_cs[ip-1],sregs[CS],ip-1);
+!     exit(1);
+  }
+  
+  
+--- 4165,4171 ----
+  {
+      fprintf(stderr,"Error: Unimplemented opcode %02X at cs:ip = %04X:%04X\n",
+  		    c_cs[ip-1],sregs[CS],ip-1);
+! /*    exit(1); */
+  }
+  
+  
+***************
+*** 4218,4224 ****
+          case 0x2c:    i_sub_ald8(); break;
+          case 0x2d:    i_sub_axd16(); break;
+          case 0x2e:    i_cs(); break;
+!         case 0x2f:    i_notdone(); break;
+          case 0x30:    i_xor_br8(); break;
+          case 0x31:    i_xor_wr16(); break;
+          case 0x32:    i_xor_r8b(); break;
+--- 4243,4249 ----
+          case 0x2c:    i_sub_ald8(); break;
+          case 0x2d:    i_sub_axd16(); break;
+          case 0x2e:    i_cs(); break;
+!         case 0x2f:    i_das(); break;
+          case 0x30:    i_xor_br8(); break;
+          case 0x31:    i_xor_wr16(); break;
+          case 0x32:    i_xor_r8b(); break;
