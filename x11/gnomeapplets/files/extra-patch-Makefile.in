@@ -1,10 +1,11 @@
---- Makefile.in.orig	Tue May 21 19:05:53 2002
-+++ Makefile.in	Tue May 21 19:06:00 2002
-@@ -228,7 +228,6 @@
- always_built_SUBDIRS = \
- 	another_clock	\
- 	asclock		\
--	battery		\
- 	charpick	\
- 	clockmail	\
- 	drivemount	\
+--- Makefile.in.orig	Sat Nov 16 15:47:10 2002
++++ Makefile.in	Sat Nov 16 15:47:32 2002
+@@ -213,7 +213,7 @@
+ 
+ @APPLET_MODEMLIGHTS_TRUE@modemlights_SUBDIRS = $(modemlights_applets)
+ 
+-always_built_SUBDIRS =  	another_clock		asclock			battery			charpick		clockmail		drivemount		fifteen			geyes			gkb-new			jbc			life			mini-commander		quicklaunch		tickastat		webcontrol		whereami		odometer
++always_built_SUBDIRS =  	another_clock		asclock						charpick		clockmail		drivemount		fifteen			geyes			gkb-new			jbc			life			mini-commander		quicklaunch		tickastat		webcontrol		whereami		odometer
+ 
+ 
+ SUBDIRS =  	intl po macros 			$(always_built_SUBDIRS)		$(gtop_SUBDIRS)			$(ghttp_SUBDIRS)		$(ghttp_vfs_SUBDIRS)		$(ghttp_xml_SUBDIRS)		$(cdplayer_SUBDIRS)		$(mixer_SUBDIRS)		$(modemlights_SUBDIRS)		$(esd_SUBDIRS)			$(wordexp_SUBDIRS)      	$(xml_SUBDIRS)			omf-install
