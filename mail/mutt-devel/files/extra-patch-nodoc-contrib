@@ -1,14 +1,14 @@
---- Makefile.am.orig	Thu Jun  7 22:00:05 2001
-+++ Makefile.am	Thu Jun 14 11:21:12 2001
-@@ -9,7 +9,7 @@
+--- Makefile.am.orig	Fri Feb 11 14:54:08 2005
++++ Makefile.am	Fri Feb 11 14:55:33 2005
+@@ -10,7 +10,7 @@
  IMAP_INCLUDES = -I$(top_srcdir)/imap
  endif
  
--SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
-+SUBDIRS = m4 po intl doc $(IMAP_SUBDIR)
+-SUBDIRS = m4 po intl contrib $(IMAP_SUBDIR) . doc
++SUBDIRS = m4 po intl $(IMAP_SUBDIR) . doc
  
- if NEEDS_PGPEWRAP
- bin_SCRIPTS = pgpewrap muttbug flea
+ bin_SCRIPTS = muttbug flea @SMIMEAUX_TARGET@
+ 
 --- doc/Makefile.in.orig	Fri Feb  4 13:46:04 2005
 +++ doc/Makefile.in	Fri Feb  4 13:47:49 2005
 @@ -92,14 +92,6 @@
