@@ -120,7 +120,9 @@ do-patch:
 pre-install:
 #
 # Handle the loading of the linux loadable kernel module if required.
+.if !defined(WITH_JAIL)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.endif
 
 do-install:
 	@${MKDIR} ${LINUXBASE}/${DBPATH}
@@ -129,15 +131,39 @@ do-install:
 	@${RPM} --initdb --root ${LINUXBASE} --dbpath ${DBPATH}
 #
 # Make sure we have a /dev/null in the chrooted environment.
+.if !defined(WITH_JAIL)
 	@${MKDIR} ${LINUXBASE}/dev
 	@${RM} -f ${LINUXBASE}/dev/null
 	@mknod ${LINUXBASE}/dev/null c 2 2
 	@${CHMOD} 666 ${LINUXBASE}/dev/null
+.endif
+.if !defined(BATCH) && !exists(${LINUXBASE}/dev/null)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You need to create the null device in your jailed Linux environment. Run this"
+	@${ECHO_MSG} "outside the jail, then press enter:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "mkdir -m 0755 -p <Jail root dir>/dev"
+	@${ECHO_MSG} "rm -f <Jail root dir>/${LINUXBASE}/dev/null"
+	@${ECHO_MSG} "mknod <Jail root dir>/${LINUXBASE}/dev/null c 2 2"
+	@${ECHO_MSG} "chmod 666 <Jail root dir>/${LINUXBASE}/dev/null"
+	@${ECHO_MSG} ""
+	@${SH} -c "read line"
+.endif
 #
 # Install all packages. Ignore dependencies just like the Red Hat installer.
 # Also, set the ELF fallback brand to Linux, so that we don't have to do
 # anything special to run staticly linked binaries.
+.if !defined(WITH_JAIL)
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}
+.endif
+.if defined(WITH_JAIL) && !defined(BATCH)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Run this command outside the jail, then press enter:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${LINUX_ELF}"
+	@${ECHO_MSG} ""
+	@sh -c "read line"
+.endif
 	@for R in ${UPD_SET1} ${DISTFILES} ${UPD_SET2}; do \
 		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
@@ -145,7 +171,17 @@ do-install:
 	@for F in ${BRAND_FILES}; do \
 		brandelf -t Linux ${LINUXBASE}/$$F; \
 	done
+.if !defined(WITH_JAIL)
 	@/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}
+.endif
+.if defined(WITH_JAIL) && !defined(BATCH)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Run this command outside the jail, then press enter:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "/sbin/sysctl -w ${FALLBACK_ELF_MIB}=${PREVIOUS_ELF}"
+	@${ECHO_MSG} ""
+	@sh -c "read line"
+.endif
 #
 # Install yp.conf as a hint to NIS users and make sure there's a
 # mtab in etc, albeit an empty one. This is needed in a couple of
