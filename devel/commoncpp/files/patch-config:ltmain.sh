@@ -1,5 +1,5 @@
---- config/ltmain.sh.orig	Tue Dec  2 09:24:40 2003
-+++ config/ltmain.sh	Tue Dec  2 09:24:52 2003
+--- autoconf/ltmain.sh.orig	Thu Feb 12 16:50:30 2004
++++ autoconf/ltmain.sh	Thu Feb 12 16:50:39 2004
 @@ -5428,10 +5428,12 @@
  	fi
  
