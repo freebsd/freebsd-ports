@@ -7,14 +7,19 @@
 
 PORTNAME=	polymake
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.tu-berlin.de/pub/combi/polymake/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-p1.diff.bz2 ${PORTNAME}-${PORTVERSION}-p2.diff.bz2
 
 MAINTAINER=	gawrilow@math.tu-berlin.de
 COMMENT=	A framework for experimental discrete mathematics
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -22,8 +27,6 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	install install-devel
 NO_INSTALL_MANPAGES=	yes
-
-PLIST_SUB=	PERL=${PERL}
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +36,7 @@ BROKEN=		does not configure with perl 5.0
 
 do-configure:
 	cd ${WRKSRC}; \
+	rm -f build*/conf.make; \
 	{ echo CC='${CC}'; \
 	  echo CXX='${CXX}'; \
 	  echo Cflags='${CFLAGS} -I${PREFIX}/include'; \
@@ -45,7 +49,22 @@ do-configure:
 	  echo PerlExe='${PERL}'; \
 	} | gmake configure
 
+pre-install:
+	rm -f `find ${WRKSRC} -name '*.orig'`
+
 post-install:
-	${PERL} -i -p -e 'print "PREFIX=${PREFIX}\n" if /InstallTop=/;' ${PREFIX}/libexec/polymake/Makefile
+	${AWK} '/InstallTop=/ { print "PREFIX=${PREFIX}" } { print }' \
+	   ${PREFIX}/libexec/polymake/Makefile >${PREFIX}/libexec/polymake/Makefile.devel
+	cp -p ${PREFIX}/libexec/polymake/Makefile.devel ${PREFIX}/libexec/polymake/Makefile
+	rm ${PREFIX}/bin/polymake
+	${SED} -e '/^use lib/ s|"[^"]*/perlx"|"${PREFIX}/libexec/polymake/perlx"|' \
+	   ${PREFIX}/share/polymake/perl/polymake >${PREFIX}/bin/polymake
+	chmod 755 ${PREFIX}/bin/polymake
+	mkdir ${PREFIX}/libexec/polymake/perlx
+	eval `${PERL} -V:archname`; \
+	mv ${PREFIX}/share/polymake/perlx/$$archname ${PREFIX}/libexec/polymake/perlx/${PERL_ARCH}; \
+	${REINPLACE_CMD} -e "s|/share/polymake/perlx/$$archname/|/libexec/polymake/perlx/${PERL_ARCH}/|g" ${PREFIX}/libexec/polymake/perlx/${PERL_ARCH}/auto/Poly/Ext/.packlist
+	rm -f ${PREFIX}/libexec/polymake/perlx/${PERL_ARCH}/auto/Poly/Ext/.packlist.bak
+	rmdir ${PREFIX}/share/polymake/perlx
 
 .include <bsd.port.post.mk>
