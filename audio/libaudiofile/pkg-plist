@@ -1,0 +1,12 @@
+bin/audiofile-config
+bin/sfconvert
+bin/sfinfo
+include/audiofile.h
+include/aupvlist.h
+lib/libaudiofile.a
+lib/libaudiofile.la
+lib/libaudiofile.so
+lib/libaudiofile.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/aclocal/audiofile.m4
