@@ -20,6 +20,7 @@ COMMENT=	C program cross-referencing & documentation tool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-cxref-cpp
 
 MAN1=		cxref.1 cxref-cpp.1 cxref-query.1
 
