@@ -1,0 +1,62 @@
+bin/kmyirc
+lib/libnetwork.so.0
+lib/libnetwork.so
+lib/libnetwork.la
+lib/libircgui.so.0
+lib/libircgui.so
+lib/libircgui.la
+lib/liblogic.so.0
+lib/liblogic.so
+lib/liblogic.la
+lib/libkmyircqextmdi.so.3
+lib/libkmyircqextmdi.so
+lib/libkmyircqextmdi.la
+lib/libkmiwidgets.so.0
+lib/libkmiwidgets.so
+lib/libkmiwidgets.la
+share/config/kmyircrc
+share/apps/kmyirc/icons/filenew.xpm
+share/apps/kmyirc/icons/kde2_closebutton.xpm
+share/apps/kmyirc/icons/kde2_maxbutton.xpm
+share/apps/kmyirc/icons/kde2_minbutton.xpm
+share/apps/kmyirc/icons/kde2_restorebutton.xpm
+share/apps/kmyirc/icons/kde2_undockbutton.xpm
+share/apps/kmyirc/icons/kde2laptop_closebutton.xpm
+share/apps/kmyirc/icons/kde2laptop_closebutton_menu.xpm
+share/apps/kmyirc/icons/kde2laptop_maxbutton.xpm
+share/apps/kmyirc/icons/kde2laptop_minbutton.xpm
+share/apps/kmyirc/icons/kde2laptop_restorebutton.xpm
+share/apps/kmyirc/icons/kde2laptop_undockbutton.xpm
+share/apps/kmyirc/icons/kde_closebutton.xpm
+share/apps/kmyirc/icons/kde_maxbutton.xpm
+share/apps/kmyirc/icons/kde_minbutton.xpm
+share/apps/kmyirc/icons/kde_restorebutton.xpm
+share/apps/kmyirc/icons/kde_undockbutton.xpm
+share/apps/kmyirc/icons/win_closebutton.xpm
+share/apps/kmyirc/icons/win_maxbutton.xpm
+share/apps/kmyirc/icons/win_minbutton.xpm
+share/apps/kmyirc/icons/win_restorebutton.xpm
+share/apps/kmyirc/icons/win_undockbutton..xpm
+share/apps/kmyirc/pics/nostatus.png
+share/apps/kmyirc/pics/operator.png
+share/apps/kmyirc/pics/voice.png
+share/apps/kmyirc/pics/server.png
+share/applnk/Internet/kmyirc.desktop
+share/doc/HTML/en/kmyirc/index.docbook
+share/doc/HTML/en/kmyirc/index.cache.bz2
+share/doc/HTML/en/kmyirc/common
+share/icons/locolor/32x32/apps/kmyirc.png
+share/icons/locolor/16x16/apps/kmyirc.png
+share/locale/de/LC_MESSAGES/kmyirc.mo
+share/locale/pt_BR/LC_MESSAGES/kmyirc.mo
+@dirrm share/doc/HTML/en/kmyirc
+@dirrm share/apps/kmyirc/icons
+@dirrm share/apps/kmyirc/pics
+@dirrm share/apps/kmyirc
+@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true

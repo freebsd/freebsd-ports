@@ -28,6 +28,7 @@
     SUBDIR += ircservices
     SUBDIR += iroffer
     SUBDIR += irssi
+    SUBDIR += kmyirc
     SUBDIR += konversation
     SUBDIR += liece
     SUBDIR += liece-dcc
