@@ -40,10 +40,16 @@ MAN1=		getzone.1 posadis.1 posadis-getroots.1 posask.1 poshost.1
 MAN5=		posadisrc.5
 DOCS=		AUTHORS ChangeLog README TODO
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
