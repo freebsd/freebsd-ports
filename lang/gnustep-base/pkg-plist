@@ -82,19 +82,6 @@ System/Headers/gnustep/base/Unicode.h
 System/Headers/gnustep/base/UnixFileHandle.h
 System/Headers/gnustep/base/behavior.h
 System/Headers/gnustep/base/numbers.h
-System/Headers/gnustep/base/o_array.h
-System/Headers/gnustep/base/o_array_bas.h
-System/Headers/gnustep/base/o_array_cbs.h
-System/Headers/gnustep/base/o_cbs.h
-System/Headers/gnustep/base/o_hash.h
-System/Headers/gnustep/base/o_hash_bas.h
-System/Headers/gnustep/base/o_hash_cbs.h
-System/Headers/gnustep/base/o_list.h
-System/Headers/gnustep/base/o_list_bas.h
-System/Headers/gnustep/base/o_list_cbs.h
-System/Headers/gnustep/base/o_map.h
-System/Headers/gnustep/base/o_map_bas.h
-System/Headers/gnustep/base/o_map_cbs.h
 System/Headers/gnustep/base/objc-gnu2next.h
 System/Headers/gnustep/base/preface.h
 System/Headers/gnustep/unicode/caseconv.h
@@ -223,6 +210,7 @@ System/Libraries/Resources/NSTimeZones/zones/America/Cordoba
 System/Libraries/Resources/NSTimeZones/zones/America/Costa_Rica
 System/Libraries/Resources/NSTimeZones/zones/America/Cuiaba
 System/Libraries/Resources/NSTimeZones/zones/America/Curacao
+System/Libraries/Resources/NSTimeZones/zones/America/Danmarkshavn
 System/Libraries/Resources/NSTimeZones/zones/America/Dawson
 System/Libraries/Resources/NSTimeZones/zones/America/Dawson_Creek
 System/Libraries/Resources/NSTimeZones/zones/America/Denver
@@ -246,6 +234,7 @@ System/Libraries/Resources/NSTimeZones/zones/America/Guyana
 System/Libraries/Resources/NSTimeZones/zones/America/Halifax
 System/Libraries/Resources/NSTimeZones/zones/America/Havana
 System/Libraries/Resources/NSTimeZones/zones/America/Hermosillo
+System/Libraries/Resources/NSTimeZones/zones/America/North_Dakota/Center
 System/Libraries/Resources/NSTimeZones/zones/America/Indiana/Indianapolis
 System/Libraries/Resources/NSTimeZones/zones/America/Indiana/Knox
 System/Libraries/Resources/NSTimeZones/zones/America/Indiana/Marengo
@@ -345,6 +334,8 @@ System/Libraries/Resources/NSTimeZones/zones/Asia/Beirut
 System/Libraries/Resources/NSTimeZones/zones/Asia/Bishkek
 System/Libraries/Resources/NSTimeZones/zones/Asia/Brunei
 System/Libraries/Resources/NSTimeZones/zones/Asia/Calcutta
+System/Libraries/Resources/NSTimeZones/zones/Asia/Choibalsan
+System/Libraries/Resources/NSTimeZones/zones/Asia/Chongqing
 System/Libraries/Resources/NSTimeZones/zones/Asia/Chungking
 System/Libraries/Resources/NSTimeZones/zones/Asia/Colombo
 System/Libraries/Resources/NSTimeZones/zones/Asia/Dacca
@@ -372,22 +363,26 @@ System/Libraries/Resources/NSTimeZones/zones/Asia/Kuala_Lumpur
 System/Libraries/Resources/NSTimeZones/zones/Asia/Kuching
 System/Libraries/Resources/NSTimeZones/zones/Asia/Kuwait
 System/Libraries/Resources/NSTimeZones/zones/Asia/Macao
+System/Libraries/Resources/NSTimeZones/zones/Asia/Macau
 System/Libraries/Resources/NSTimeZones/zones/Asia/Magadan
 System/Libraries/Resources/NSTimeZones/zones/Asia/Manila
 System/Libraries/Resources/NSTimeZones/zones/Asia/Muscat
 System/Libraries/Resources/NSTimeZones/zones/Asia/Nicosia
 System/Libraries/Resources/NSTimeZones/zones/Asia/Novosibirsk
 System/Libraries/Resources/NSTimeZones/zones/Asia/Omsk
+System/Libraries/Resources/NSTimeZones/zones/Asia/Oral
 System/Libraries/Resources/NSTimeZones/zones/Asia/Phnom_Penh
 System/Libraries/Resources/NSTimeZones/zones/Asia/Pontianak
 System/Libraries/Resources/NSTimeZones/zones/Asia/Pyongyang
 System/Libraries/Resources/NSTimeZones/zones/Asia/Qatar
+System/Libraries/Resources/NSTimeZones/zones/Asia/Qyzylorda
 System/Libraries/Resources/NSTimeZones/zones/Asia/Rangoon
 System/Libraries/Resources/NSTimeZones/zones/Asia/Riyadh
 System/Libraries/Resources/NSTimeZones/zones/Asia/Riyadh87
 System/Libraries/Resources/NSTimeZones/zones/Asia/Riyadh88
 System/Libraries/Resources/NSTimeZones/zones/Asia/Riyadh89
 System/Libraries/Resources/NSTimeZones/zones/Asia/Saigon
+System/Libraries/Resources/NSTimeZones/zones/Asia/Sakhalin
 System/Libraries/Resources/NSTimeZones/zones/Asia/Samarkand
 System/Libraries/Resources/NSTimeZones/zones/Asia/Seoul
 System/Libraries/Resources/NSTimeZones/zones/Asia/Shanghai
@@ -715,18 +710,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plmerge
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plparse
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plser
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
-System/Tools/HTMLLinker
-System/Tools/autogsdoc
-System/Tools/defaults
-System/Tools/gdnc
-System/Tools/gdomap
-System/Tools/gsdoc
-System/Tools/pl2link
-System/Tools/pldes
-System/Tools/plmerge
-System/Tools/plparse
-System/Tools/plser
-System/Tools/sfparse
 @exec ln -sf ../Resources %D/System/Library/Bundles/SSL.bundle/Contents/Resources
 @unexec rm -f %D/System/Library/Bundles/SSL.bundle/Contents/Resources
 @dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
@@ -753,6 +736,7 @@ System/Tools/sfparse
 @dirrm System/Libraries/Resources/NSTimeZones/zones/Antarctica
 @dirrm System/Libraries/Resources/NSTimeZones/zones/America/Kentucky
 @dirrm System/Libraries/Resources/NSTimeZones/zones/America/Indiana
+@dirrm System/Libraries/Resources/NSTimeZones/zones/America/North_Dakota
 @dirrm System/Libraries/Resources/NSTimeZones/zones/America
 @dirrm System/Libraries/Resources/NSTimeZones/zones/Africa
 @dirrm System/Libraries/Resources/NSTimeZones/zones

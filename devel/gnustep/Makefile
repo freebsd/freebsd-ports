@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel lang
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -35,9 +35,10 @@ GNU_ARCH=	ix86
 GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
-SYSLIBDIR=	${PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}
+SYSTEMDIR=	${LOCALBASE}/GNUstep/System
+SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
 COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
-XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
+XGPSBUNDLEDIR=	${SYSTEMDIR}/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
 
 do-install:	# empty
 
