@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	scons
-PORTVERSION=	0.01
+PORTVERSION=	0.06
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	peterh@sapros.com
+MAINTAINER=	perky@fallin.lv
 
 USE_PYTHON=	yes
 
@@ -21,6 +21,6 @@ do-build:
 	${SETUP_CMD} build
 
 do-install:
-	${SETUP_CMD} install --prefix ${PREFIX}
+	${SETUP_CMD} install -c -O1 --prefix ${PREFIX}
 
 .include <bsd.port.mk>
