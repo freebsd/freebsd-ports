@@ -37,7 +37,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
         <name>xorg-clients</name>
-        <range><ge>6.7.0</ge></range>
+        <range><eq>6.7.0</eq></range>
       </package>
     </affects>
     <description>
@@ -57,6 +57,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-05-19</discovery>
       <entry>2004-06-28</entry>
+      <modified>2004-06-28</modified>
     </dates>
   </vuln>
 
