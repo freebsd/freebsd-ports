@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	shell@shellhung.org
 
+BUILD_DEPENDS=	${SITE_PERL}/Test/Harness.pm:${PORTSDIR}/devel/p5-Test-Harness
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Test::More.3 Test::Simple.3 Test::Tutorial.3 \
