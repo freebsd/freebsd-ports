@@ -6,7 +6,7 @@ diff -rc ./Makefile ../omniORB_2.2.0.freebsd/Makefile
 --- 1,7 ----
 + # Makefile for omniORB2
 + #
-+ # $Id$
++ # $Id: patch-aa,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
 + 
 + SUBDIR=	src
 + 
@@ -54,7 +54,7 @@ diff -rc ./mk/freebsd_3.0.mk ../omniORB_2.2.0.freebsd/mk/freebsd_3.0.mk
 + #
 + 
 + CC		= g++
-+ CFLAGS		= -fhandle-exceptions
++ CFLAGS		= -fhandle-exceptions -pipe
 + 
 + OMNITHREAD_POSIX_CPPFLAGS = -DPthreadDraftVersion=8
 + OMNITHREAD_CPPFLAGS = -I$(TOP)/include
@@ -139,7 +139,7 @@ diff -rc ./src/Makefile ../omniORB_2.2.0.freebsd/src/Makefile
 --- 1,7 ----
 ! # Makefile for omniORB2
 ! #
-! # $Id$
+! # $Id: patch-aa,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
   
 ! SUBDIR=	tool lib appl examples
   
@@ -1744,7 +1744,7 @@ diff -rc ./src/tool/Makefile ../omniORB_2.2.0.freebsd/src/tool/Makefile
 --- 1,7 ----
 ! # Makefile for omniORB2
 ! #
-! # $Id$
+! # $Id: patch-aa,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
   
 ! SUBDIR=	omniidl2
   
