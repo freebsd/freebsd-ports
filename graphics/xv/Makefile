@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.16 1997/12/01 08:08:00 tg Exp $
+# $Id: Makefile,v 1.17 1998/04/15 22:18:24 jseger Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -20,7 +20,8 @@ PATCHFILES=     xv-3.10a.JPEG-patch xv-3.10a.TIFF-patch
 MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=    jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
-		tiff34\\.1:${PORTSDIR}/graphics/tiff34
+		tiff34\\.1:${PORTSDIR}/graphics/tiff34 \
+		png\\.2\\.:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
 
