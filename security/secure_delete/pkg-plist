@@ -1,0 +1,12 @@
+bin/sdel
+bin/srm
+bin/sfill
+bin/sswap
+bin/smem
+bin/the_cleaner.sh
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/FILES
+%%DOCSDIR%%/README
+%%DOCSDIR%%/secure_delete.doc
+%%DOCSDIR%%/usenix6-gutmann.doc
+@dirrm %%DOCSDIR%%
