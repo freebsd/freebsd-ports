@@ -32,6 +32,7 @@ JAVADIR=	${PREFIX}/jdk1.1.8
 JAVALIBDIR=	${JAVADIR}/lib/i386/green_threads
 JAVABINDIR=	${JAVADIR}/bin/i386/green_threads
 JAVAOBJFORMAT=	`file ${JAVABINDIR}/java | ${AWK} '{print $$2}'`
+CONFIGURE_ARGS+=	--with-jdk="${JAVADIR}"
 
 pre-build:
 	@( if [ ${JAVAOBJFORMAT} != ELF ]; then	\
