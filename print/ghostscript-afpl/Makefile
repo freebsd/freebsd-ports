@@ -55,7 +55,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 
 NO_CDROM=	"Can only be distributed for free"
 
-CONFLICTS=	ghostscript-gnu*
+CONFLICTS=	ghostscript-gnu* ghostscript-gpl*
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

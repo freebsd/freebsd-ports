@@ -86,7 +86,7 @@ for i; do
 done
 
 if [ -z "${BATCH}" ]; then
-	/usr/bin/dialog --title "AFPL Ghostscript driver configuration" --clear \
+	/usr/bin/dialog --title "GPL Ghostscript driver configuration" --clear \
 		--checklist "\n\
 This new ghostscript driver configuration dialog allows you to choose \n\
 only those gs drivers, you really need. Don't think too economical, since \n\
