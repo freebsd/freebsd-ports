@@ -20,4 +20,7 @@ MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f
 ALL_TARGET=	xmris
 MAN6=		xmred.6 xmris.6 xmsit.6
 
+post-install:
+	@${CHMOD} g+w ${X11BASE}/lib/X11/xmris
+
 .include <bsd.port.mk>
