@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.16 1998/10/20 04:06:17 smace Exp $
+# $Id: Makefile,v 1.17 1998/10/26 05:03:33 asami Exp $
 #
 
 DISTNAME=	olvwm4
@@ -23,8 +23,6 @@ MAINTAINER=	brianfeldman@hotmail.com
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib \
 		Xpm.4:${PORTSDIR}/graphics/xpm
-
-BROKEN=		package
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
