@@ -130,7 +130,7 @@ SGML_USED=	no
 .endif
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 .if defined(NOPORTDOCS)
 SGML_USED=	no

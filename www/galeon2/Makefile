@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA} \
 		msgfmt-new:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
 #BROKEN=		"b0rken with Mozilla-0.9.9"

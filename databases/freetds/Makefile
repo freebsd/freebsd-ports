@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

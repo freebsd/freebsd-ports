@@ -21,7 +21,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		gd.2:${PORTSDIR}/graphics/gd \
 		fftw.2:${PORTSDIR}/math/fftw \
-		giconv.2:${PORTSDIR}/converters/libiconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		pq.2:${PORTSDIR}/databases/postgresql7 \

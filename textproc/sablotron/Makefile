@@ -12,7 +12,7 @@ MASTER_SITES=	http://download-2.gingerall.cz/download/sablot/
 
 MAINTAINER=	skv@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv \
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		expat.2:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes

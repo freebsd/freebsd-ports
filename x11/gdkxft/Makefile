@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	anders@hack.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes

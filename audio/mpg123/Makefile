@@ -32,7 +32,7 @@ MAKE_ARGS+=	WITH_ICONV=yes
 .if defined(DEFAULT_RECODE)
 MAKE_ARGS+=	DEFAULT_RECODE=${DEFAULT_RECODE}
 .endif
-LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 .if defined(WITH_NAS)

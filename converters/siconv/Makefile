@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.technocage.com/~caskey/siconv/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -o ${WRKSRC}/siconv ${WRKSRC}/siconv.c -lgiconv

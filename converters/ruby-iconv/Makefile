@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		giconv.2:${PORTSDIR}/converters/libiconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes

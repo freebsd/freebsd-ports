@@ -16,7 +16,7 @@ MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
-		iconv.2:${PORTSDIR}/converters/iconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.1:${PORTSDIR}/devel/gettext-old
 
 USE_GNOMELIBS=	yes

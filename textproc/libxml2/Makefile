@@ -15,7 +15,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_BZIP2=	yes

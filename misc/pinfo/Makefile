@@ -12,7 +12,7 @@ MASTER_SITES=	http://zeus.polsl.gliwice.pl/~pborys/stable-version/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv \
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.1:${PORTSDIR}/devel/gettext-old
 
 GNU_CONFIGURE=	yes

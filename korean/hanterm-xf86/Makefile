@@ -21,9 +21,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cjh@FreeBSD.org
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
-RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf \
-		${LOCALBASE}/share/iconv/johab.cct:${PORTSDIR}/converters/iconv-extra
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
+#		${LOCALBASE}/share/iconv/johab.cct:${PORTSDIR}/converters/iconv-extra
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes

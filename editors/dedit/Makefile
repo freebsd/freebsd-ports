@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

@@ -42,7 +42,7 @@ PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/iconv.h) || defined(WITH_ICONV)
-LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 CONFIGURE_ENV+=	LIBS="-liconv"
 .endif
 

@@ -20,10 +20,9 @@ DISTNAME=	abiword-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 # unzip is needed during the installation process
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		giconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		giconv.2:${PORTSDIR}/converters/libiconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		psiconv.8:${PORTSDIR}/converters/psiconv
 
 DIST_SUBDIR=	AbiWord

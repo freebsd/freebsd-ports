@@ -14,7 +14,7 @@ DISTNAME=	gnome-mime-data-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	giconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

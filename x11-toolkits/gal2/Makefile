@@ -15,7 +15,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode \
 		glade.4:${PORTSDIR}/devel/libglade \
-		giconv.2:${PORTSDIR}/converters/libiconv
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes

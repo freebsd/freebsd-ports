@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@protey.ru
 
-LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib -liconv"

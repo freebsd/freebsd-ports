@@ -16,7 +16,7 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeole2.0:${PORTSDIR}/devel/libole2 \
 		gbrun.0:${PORTSDIR}/lang/gnomebasic \
-		giconv.2:${PORTSDIR}/converters/libiconv \
+		iconv.3:${PORTSDIR}/converters/libiconv \
 		psiconv.8:${PORTSDIR}/converters/psiconv
 RUN_DEPENDS=	guppi-gnumeric:${PORTSDIR}/math/guppi
 
@@ -28,6 +28,7 @@ USE_GNOME=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-evolution
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lgiconv ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
