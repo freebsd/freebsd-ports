@@ -1,6 +1,6 @@
 $FreeBSD$
 On FreeBSD, the loopback interface is normally called lo0.
-author:  Sanatana Dharma
+author:  Radim Kolar
 
 --- p0f.c.orig	Mon Oct 13 18:57:21 2003
 +++ p0f.c	Tue Feb 17 20:56:15 2004
