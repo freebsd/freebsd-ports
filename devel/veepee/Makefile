@@ -32,6 +32,8 @@ PYTHON_LIBS+=	-lssl -lcrypto
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|#include <values.h>||g' \
+		${WRKSRC}/pymod/gdchart/gdc_pie.c
 
 post-configure:
 	@${REINPLACE_CMD} -e \
