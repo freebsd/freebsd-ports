@@ -1,0 +1,14 @@
+--- fortran.h.orig	Tue Apr 23 02:45:02 1996
++++ fortran.h	Sun Jun 20 13:32:40 1999
+@@ -1,7 +1,11 @@
+ #ifndef FORTRAN_H
+ #define FORTRAN_H
+ 
++#if __FreeBSD__ < 4
+ #include <generic.h>
+ #define F77NAME(x) name2(x,_)
++#else
++#define F77NAME(x) x ## _
++#endif
+ 
+ #endif

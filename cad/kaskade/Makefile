@@ -3,7 +3,7 @@
 # Date created:		19 Sept. 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.5 1998/09/27 08:12:54 steve Exp $
+# $Id: Makefile,v 1.6 1998/12/09 00:19:05 steve Exp $
 #
 
 DISTNAME=	3.1.1
@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://elib.zib-berlin.de/pub/kaskade/3.x/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	giffunip@asme.org
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400004
+MAKE_ENV+=	HAVE_G2C=yes
+.endif
 
 DIST_SUBDIR=	kaskade
 WRKSRC=         ${WRKDIR}/3.1
@@ -31,4 +36,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.mat ${PREFIX}/share/examples/kaskade
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
