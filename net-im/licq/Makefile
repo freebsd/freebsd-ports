@@ -36,6 +36,11 @@ CONFIGURE_ENV+=	LDFLAGS=-L${LOCALBASE}/lib
 .endif
 .endif
 
+pre-configure:
+	@${MV} ${WRKSRC}/src/licq.conf.h ${WRKSRC}/src/licq.conf.h.sed
+	${SED} -e "s=/usr/share/licq=${PREFIX}/share/licq=" \
+		${WRKSRC}/src/licq.conf.h.sed > ${WRKSRC}/src/licq.conf.h
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
