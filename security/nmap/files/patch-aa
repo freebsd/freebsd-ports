@@ -1,12 +1,21 @@
---- Makefile.in.orig	Wed Oct  7 19:59:00 1998
-+++ Makefile.in	Thu Oct  8 03:57:23 1998
-@@ -10,4 +10,4 @@
+--- Makefile.in.orig	Sun Feb  7 12:23:10 1999
++++ Makefile.in	Mon Feb  8 03:18:01 1999
+@@ -5,12 +5,12 @@
+ sbindir = @sbindir@
+ mandir = @mandir@
+ srcdir = @srcdir@
+-libdir = @libdir@/nmap
++libdir = @libdir@
+ 
  CC = @CC@
  CCOPT = 
  LIBPCAPDIR = @libpcapdir@
 -INCLS = -I. -I$(LIBPCAPDIR)
 +INCLS = -I. # -I$(LIBPCAPDIR)
-@@ -30,7 +30,7 @@
+ DEFS = @DEFS@ -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(libdir)\"
+ CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ # CFLAGS = -g -Wall $(DEFS) $(INCLS)
+@@ -32,7 +32,7 @@
  
  all: $(TARGET)
  
