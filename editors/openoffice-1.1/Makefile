@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	1.1.1
 CATEGORIES+=	editors
 MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice.org/stable/%SUBDIR%/ \
@@ -33,6 +32,8 @@ UNZIP?=	${PREFIX}/bin/unzip
 ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 PASTE?=	/usr/bin/paste
+
+IGNORE=	"Work In Progress for 1.1.1"
 
 USE_GNOME=	orbit gtk12
 
