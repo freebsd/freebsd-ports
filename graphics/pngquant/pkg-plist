@@ -1,0 +1,4 @@
+bin/pngquant
+%%PORTDOCS%%share/doc/pngquant/CHANGELOG
+%%PORTDOCS%%share/doc/pngquant/README
+%%PORTDOCS%%@dirrm share/doc/pngquant
