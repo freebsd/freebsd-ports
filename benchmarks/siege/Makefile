@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.55
+PORTVERSION=	2.56
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
+MASTER_SITES=	ftp://sid.joedog.org/pub/siege/ \
+		http://www.cus.org.uk/~dom/distfiles/siege/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
