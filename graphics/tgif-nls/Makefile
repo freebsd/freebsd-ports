@@ -7,6 +7,7 @@
 
 PORTNAME=	tgif
 PORTVERSION=	4.1.41
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/ \
