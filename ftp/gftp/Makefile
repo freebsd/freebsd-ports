@@ -3,7 +3,7 @@
 # Date Created:		21 Feb 1999
 # Whom:			Damjan Marion <dmarion@open.hr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/03 01:38:52 steve Exp $
 #
 
 DISTNAME=	gftp-1.13
@@ -19,5 +19,8 @@ USE_X_PREFIX=	yes
 
 post-install:
 	strip ${PREFIX}/bin/gftp
+
+pre-install:
+	find ${WRKSRC} -name \*.orig -exec ${RM} -f \{} \;
 
 .include <bsd.port.mk>
