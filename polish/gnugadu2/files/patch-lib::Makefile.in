@@ -1,11 +1,11 @@
---- lib/Makefile.in.orig	Sun Dec 14 21:27:52 2003
-+++ lib/Makefile.in	Sun Dec 14 21:28:26 2003
-@@ -252,7 +252,7 @@
+--- lib/Makefile.in.orig	Wed Mar 17 22:59:16 2004
++++ lib/Makefile.in	Wed Mar 17 22:59:46 2004
+@@ -303,7 +303,7 @@
+ 	perl_embed.h 
  
  libgg2_core_la_HEADERS = gg2_core.h
- 
 -libgg2_core_la_LIBADD = $(PERL_OPTION_LDFLAGS) -ldl 
 +libgg2_core_la_LIBADD = $(PERL_OPTION_LDFLAGS)
  libgg2_core_la_LDFLAGS = -version-info 2:0:0
- 
  pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = gg2_core.pc
