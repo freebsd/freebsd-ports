@@ -13,7 +13,6 @@ CATEGORIES=	russian
 LANGPREFIX=	ru
 LANGSUFFIX=	RU
 LANGDIST+=	ru_RU_io.zip
-HYPHDIST+=	hyph_de_DE.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/russian/openoffice
 
