@@ -1,0 +1,18 @@
+************************************************************
+Please edit your Apache configuration file to enable and set
+up this module.  You may also need to create an htpasswd
+file if you are going to use basic authentication.
+
+Look at the file ${PREFIX}/etc/apache/httpd.conf.mod_roaming
+and the documents held in ${PREFIX}/share/doc/mod_roaming/
+for indications on what to do.
+
+(${PREFIX} is typically /usr/local)
+
+When it's all set up, do the following to take effect:
+
+  apachectl configtest	(and correct any errors reported)
+  apachectl restart
+
+Enjoy!
+************************************************************

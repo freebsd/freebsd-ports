@@ -198,6 +198,7 @@
     SUBDIR += mod_python
     SUBDIR += mod_python3
     SUBDIR += mod_roaming
+    SUBDIR += mod_roaming2
     SUBDIR += mod_ruby
     SUBDIR += mod_scgi
     SUBDIR += mod_sed
