@@ -195,6 +195,7 @@
     SUBDIR += idled
     SUBDIR += installwatch
     SUBDIR += ipa
+    SUBDIR += ipmitool
     SUBDIR += ipsc
     SUBDIR += jailadmin
     SUBDIR += jailer
