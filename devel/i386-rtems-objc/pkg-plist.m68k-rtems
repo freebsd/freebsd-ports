@@ -1,15 +1,15 @@
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/hash.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/objc-list.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/sarray.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/objc.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/objc-api.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/NXConstStr.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/Object.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/Protocol.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/encoding.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/typedstream.h
-lib/gcc-lib/m68k-rtems/3.2.1/include/objc/thr.h
-lib/gcc-lib/m68k-rtems/3.2.1/cc1obj
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/hash.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/objc-list.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/sarray.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/objc.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/objc-api.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/NXConstStr.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/Object.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/Protocol.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/encoding.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/typedstream.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc/thr.h
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/cc1obj
 m68k-rtems/lib/m68000/libobjc.la     
 m68k-rtems/lib/m68000/libobjc.a
 m68k-rtems/lib/m68040/msoft-float/libobjc.la
@@ -28,4 +28,4 @@ m68k-rtems/lib/msoft-float/libobjc.la
 m68k-rtems/lib/msoft-float/libobjc.a
 m68k-rtems/lib/libobjc.la
 m68k-rtems/lib/libobjc.a
-@dirrm lib/gcc-lib/m68k-rtems/3.2.1/include/objc
+@dirrm lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/include/objc

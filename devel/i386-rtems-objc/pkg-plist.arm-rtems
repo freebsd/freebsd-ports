@@ -2,16 +2,16 @@ arm-rtems/lib/thumb/libobjc.la
 arm-rtems/lib/thumb/libobjc.a        
 arm-rtems/lib/libobjc.la  
 arm-rtems/lib/libobjc.a  
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/hash.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/objc-list.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/sarray.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/objc.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/objc-api.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/NXConstStr.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/Object.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/Protocol.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/encoding.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/typedstream.h
-lib/gcc-lib/arm-rtems/3.2.1/include/objc/thr.h
-lib/gcc-lib/arm-rtems/3.2.1/cc1obj
-@dirrm lib/gcc-lib/arm-rtems/3.2.1/include/objc
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/hash.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/objc-list.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/sarray.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/objc.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/objc-api.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/NXConstStr.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/Object.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/Protocol.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/encoding.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/typedstream.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc/thr.h
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/cc1obj
+@dirrm lib/gcc-lib/arm-rtems/%%GCCVERSION%%/include/objc
