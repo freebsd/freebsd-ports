@@ -1,33 +1,28 @@
---- Makefile.old	Wed Oct 29 04:20:09 1997
-+++ Makefile	Mon Jul 20 16:34:44 1998
-@@ -6,21 +6,21 @@
+--- Makefile	Thu Apr 22 17:49:36 1999
++++ Makefile.new	Thu Jun  8 21:21:07 2000
+@@ -6,16 +6,17 @@
  
  # A `lib' directory under which ...../yodl will be attached, as the
  # system-wide include directory for macros of the yodl program?
 -LIBDIR=/usr/local/lib
-+LIBDIR=${PREFIX}/lib
++LOCALBASE?=/usr/local
++LIBDIR=${LOCALBASE}/lib
  
  # To what directory are the yodl program and all shell scripts installed?
 -BINDIR = /usr/local/bin
-+BINDIR = ${PREFIX}/bin
++BINDIR = ${LOCALBASE}/bin
  
  # Where do your man pages go? MANPREFIX is where the subdirs man1, man2 etc.
  # are located, CATPREFIX is where subdirs cat1, cat2 etc. are, that's
  # where formatted pages go.
--MANPREFIX=/usr/man
--CATPREFIX=/var/man
-+MANPREFIX=${PREFIX}/man
-+CATPREFIX=${PREFIX}/man
+-MANPREFIX=/usr/local/man
+-CATPREFIX=/usr/local/man
++MANPREFIX=${LOCALBASE}/man
++CATPREFIX=${LOCALBASE}/man
  
  # What's your LaTeX command? The shellscript "yodl2dvi" will run "yodl2tex" and
  # your LaTeX-er for you, creating the .dvi file. LaTeX is also used in
- # "make dvidoc" and "make psdoc".
--LATEX = mlatex
-+LATEX = latex
- 
- # What's your command to process a manpage into a format that's suitable
- # for viewing? Command should take one file argument and send the output
-@@ -37,13 +37,13 @@
+@@ -37,13 +38,13 @@
  
  # What's your pager, a-la "less"? Will be used in the "yodl2manless"
  # and "yodl2msless" scripts that show groff output in ASCII via a pager.
@@ -35,29 +30,21 @@
 +LESS = more
  
  # The C compiler?
- CC = cc
+-CC = cc
++CC ?= cc
  
  # Compiler flags?
--CFLAGS = -g -c -Wall
-+CFLAGS += -c -Wall
+-CFLAGS = -c -O2 -Kalloca
++CFLAGS += -c
  
  # Installation program? If you don't have install, make sure that you state
  # something that also strips executables.
-@@ -70,7 +70,7 @@
- SROFF = $(BINDIR)/striproff
- 
- # If you also want the manpage under $(MANPREFIX)/man1, uncomment:
--# SROFFMAN = $(MANPREFIX)/man1/striproff.1
-+SROFFMAN = $(MANPREFIX)/man1/striproff.1
- 
- # Additionally, if you want the preformatted manpage under $(CATPREFIX)/cat1,
- # uncomment:
-@@ -81,7 +81,7 @@
+@@ -81,7 +82,7 @@
  # shell will do too, but I suggest that you get bash if you don't have it
  # yet. I have it installed as /bin/sh, lucky me.
  # Define the path of your bash below:
--BASH = /bin/sh
-+BASH = ${PREFIX}/bin/bash
+-BASH = /bin/bash
++BASH = /bin/sh
  
  # Some systems seem to lack the function strerror() (I've heard of SunOS 4.1.4
  # with GCC 2.6). If that's the case, uncomment the following:

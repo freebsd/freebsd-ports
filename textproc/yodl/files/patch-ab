@@ -1,0 +1,10 @@
+--- src/yodlfixlabels/yodlfixlabels.h	Wed Oct 16 03:38:41 1996
++++ src/yodlfixlabels/yodlfixlabels.h.new	Thu Jun  8 21:23:20 2000
+@@ -1,7 +1,6 @@
+ 
+ /* required standard includes */
+ #include <ctype.h>
+-#include <malloc.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
