@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	resin
-PORTVERSION=	3.0.7
+PORTVERSION=	3.0.8
 CATEGORIES=	www java
 MASTER_SITES=	http://www.caucho.com/download/
 
@@ -57,6 +57,8 @@ REPLACE_FILES=	${FILESDIR}/pkg-install \
 	${FILESDIR}/resin.sh.in
 COPYDIRS=	doc lib libexec webapps
 
+.include <bsd.port.pre.mk>
+
 # Pass JAVA_HOME as determined by bsd.java.mk
 CONFIGURE_ARGS+=	--with-java-home=${JAVA_HOME}
 
@@ -88,6 +90,14 @@ PLIST_SUB+=	APACHE="@comment "
 PLIST_SUB+=	APP_NAME=${APP_NAME}
 PLIST_SUB+=	APXS=${APXS}
 
+.if ((defined(WITH_APACHE) && (${WITH_APACHE} == yes || ${WITH_APACHE} == YES)) \
+|| (defined(WITH_APACHE2) && (${WITH_APACHE2} == yes || ${WITH_APACHE2} == YES)))
+LIBEXECDIR!=	${APXS} -q LIBEXECDIR
+SYSCONFDIR!=	${APXS} -q SYSCONFDIR
+CONFIGURE_ARGS+=	--with-apache-libexec=${LIBEXECDIR}
+CONFIGURE_ARGS+=	--with-apache-conf=${SYSCONFDIR}
+.endif
+
 SUBSTITUTIONS=	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 	-e "s|%%APP_NAME%%|${APP_NAME}|g" \
 	-e "s|%%APXS%%|${APXS}|g" \
@@ -105,8 +115,6 @@ SUBSTITUTIONS=	-e "s|%%APP_HOME%%|${APP_HOME}|g" \
 	-e "s|%%RUNASUSER%%|${RUNASUSER}|g" \
 	-e "s|%%WRKDIR%%|${WRKDIR}|g" \
 	-e "s|%%WRKSRC%%|${WRKSRC}|g"
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 .for FILE in ${REINPLACE_FILES}

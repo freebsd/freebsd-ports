@@ -18,15 +18,15 @@ if test -e %%PREFIX%%/etc/%%APP_NAME%%/resin.xml && \
 else
     test -d %%PREFIX%%/etc/%%APP_NAME%% || mkdir %%PREFIX%%/etc/%%APP_NAME%%
     echo Created configuration directory %%PREFIX%%/etc/%%APP_NAME%%
-    install %%WRKDIR%%/resin.conf %%PREFIX%%/etc/%%APP_NAME%%/resin.xml
+    cp %%WRKDIR%%/resin.conf %%PREFIX%%/etc/%%APP_NAME%%/resin.xml
     echo Installed %%PREFIX%%/etc/%%APP_NAME%%/resin.xml
 fi
 
 # Install new config file with '-dist' appended
-install %%WRKDIR%%/resin.conf %%PREFIX%%/etc/%%APP_NAME%%/resin.xml-dist
+cp %%WRKDIR%%/resin.conf %%PREFIX%%/etc/%%APP_NAME%%/resin.xml-dist
 echo Installed %%PREFIX%%/etc/%%APP_NAME%%/resin.xml-dist
 
-install %%WRKSRC%%/conf/app-default.xml %%PREFIX%%/etc/%%APP_NAME%%
+cp %%WRKSRC%%/conf/app-default.xml %%PREFIX%%/etc/%%APP_NAME%%
 echo Installed %%PREFIX%%/etc/%%APP_NAME%%/app-default.xml
 
 install %%WRKDIR%%/resin.sh.in %%PREFIX%%/etc/rc.d/%%APP_NAME%%.sh
