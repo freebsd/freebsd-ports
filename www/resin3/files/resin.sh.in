@@ -22,6 +22,7 @@ ARGS="-conf $PREFIX/etc/%%APP_NAME%%/resin.xml \
 -pid %%PID_FILE%%"
 PATH=/usr/sbin:/usr/bin:/bin
 
+unset CLASSPATH
 export JAVA_HOME=%%JAVA_HOME%%
 export RESIN_HOME=$PREFIX/%%APP_NAME%%
 

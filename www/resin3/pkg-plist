@@ -7,6 +7,7 @@
 %%APP_NAME%%/lib/jstl-11.jar
 %%APP_NAME%%/lib/jta-101.jar
 %%APP_NAME%%/lib/license.jar
+%%APP_NAME%%/lib/portlet-10.jar
 %%APP_NAME%%/lib/resin.jar
 %%APP_NAME%%/lib/webutil.jar
 %%APP_NAME%%/webapps/resin-doc.war
