@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.21 1997/12/07 02:45:37 vanilla Exp $
+# $Id: Makefile,v 1.22 1997/12/15 17:59:30 vanilla Exp $
 #
 
     SUBDIR += Wnn
@@ -23,7 +23,6 @@
     SUBDIR += pine
     SUBDIR += rxvt
     SUBDIR += samba
-    SUBDIR += samba-des
     SUBDIR += ted
     SUBDIR += tin
     SUBDIR += xcin
