@@ -1,0 +1,292 @@
+--- programs/xfs/difs/dispatch.c	2001/04/01 14:00:20	3.9
++++ programs/xfs/difs/dispatch.c	2001/06/21 01:15:44
+@@ -141,8 +141,10 @@
+ 		    op = MAJOROP;
+ 		    if (op >= NUM_PROC_VECTORS)
+ 			result = ProcBadRequest (client);
+-		    else
++		    else if (*client->requestVector[op] != NULL)
+ 			result = (*client->requestVector[op]) (client);
++		    else
++			result = FSBadRequest;
+ 		}
+ 		if (result != FSSuccess) {
+ 		    if (client->noClientException != FSSuccess)
+@@ -202,8 +204,12 @@
+ 	return (client->noClientException = -2);
+     if (((*(char *) &whichbyte) && (prefix->byteOrder == 'B')) ||
+ 	    (!(*(char *) &whichbyte) && (prefix->byteOrder == 'l'))) {
++	int status;
++
+ 	client->swapped = TRUE;
+-	SwapConnClientPrefix(prefix);
++	status = SwapConnClientPrefix(client, prefix);
++	if (status != FSSuccess)
++	    return (status);
+     }
+     client->major_version = prefix->major_version;
+     client->minor_version = prefix->minor_version;
+@@ -257,7 +263,16 @@
+ 	client_auth[i].name = (char *) ad;
+ 	ad += client_auth[i].namelen;
+ 	client_auth[i].data = (char *) ad;
++	
+ 	ad += client_auth[i].datalen;
++
++	if (ad - (char *)auth_data > stuff->length -
++	    (i < (int)prefix->num_auths) ? 8 : 0) {
++	    int lengthword = stuff->length;
++
++	    SendErrToClient(client, FSBadLength, (pointer)&lengthword);
++	    return (FSBadLength);
++	}
+     }
+     num_alts = ListAlternateServers(&altservers);
+     for (i = 0, altlen = 0; i < num_alts; i++) {
+@@ -585,6 +600,13 @@
+ 	ad += acp[i].namelen;
+ 	acp[i].data = (char *) ad;
+ 	ad += acp[i].datalen;
++	if (ad - (char *)stuff + SIZEOF(fsCreateACReq) > stuff->length -
++	    (i < (int)stuff->num_auths ? 8 : 0)) {
++	    int lengthword = stuff->length;
++
++	    SendErrToClient(client, FSBadLength, (pointer)&lengthword);
++	    return (FSBadLength);
++	}
+     }
+ 
+ /* XXX needs work for AuthContinue */
+@@ -702,6 +724,13 @@
+     REQUEST(fsSetResolutionReq);
+     REQUEST_AT_LEAST_SIZE(fsSetResolutionReq);
+ 
++    if (stuff->length - SIZEOF(fsResolution) != stuff->num_resolutions *
++	sizeof(fsResolution)) {
++	int lengthword = stuff->length;
++
++	SendErrToClient(client, FSBadAlloc, &lengthword);
++	return FSBadLength;
++    }
+     new_res = (fsResolution *)
+ 	fsalloc(SIZEOF(fsResolution) * stuff->num_resolutions);
+     if (!new_res) {
+@@ -725,6 +754,13 @@
+     REQUEST(fsReq);
+     REQUEST_AT_LEAST_SIZE(fsReq);
+ 
++    if (stuff->length - SIZEOF(fsResolution) != client->num_resolutions *
++	sizeof(fsResolution)) {
++	int lengthword = stuff->length;
++
++	SendErrToClient(client, FSBadAlloc, &lengthword);
++	return FSBadLength;
++    }
+     reply.type = FS_Reply;
+     reply.num_resolutions = client->num_resolutions;
+     reply.sequenceNumber = client->sequence;
+--- programs/xfs/difs/fonts.c	2001/04/01 14:00:20	3.9
++++ programs/xfs/difs/fonts.c	2001/06/21 01:15:45
+@@ -709,8 +709,12 @@
+ 	}
+     }
+     if (validpaths < npaths) {
+-	fplist = (FontPathElementPtr *)
++	FontPathElementPtr *ftmp = (FontPathElementPtr *)
+ 	    fsrealloc(fplist, sizeof(FontPathElementPtr) * validpaths);
++
++	if (!ftmp)
++	    goto bail;
++	fplist = ftmp;
+ 	npaths = validpaths;
+     }
+     if (validpaths == 0) {
+--- programs/xfs/difs/main.c	2001/04/01 14:00:20	3.7
++++ programs/xfs/difs/main.c	2001/06/21 01:15:45
+@@ -171,11 +171,14 @@
+     exit(0);
+ }
+ 
+-void
++int
+ NotImplemented(void)
+ {
+     NoopDDA();			/* dummy to get difsutils.o to link */
+-    FatalError("Not implemented\n");
++    /* Getting here can become the next xfs exploit... so don't exit */
++    ErrorF("Not implemented\n");
++
++    return (FSBadImplementation);
+ }
+ 
+ static Bool
+--- programs/xfs/difs/swapreq.c	2001/01/17 23:45:29	1.5
++++ programs/xfs/difs/swapreq.c	2001/06/21 01:15:46
+@@ -135,8 +135,8 @@
+     return ((*ProcVector[stuff->reqType]) (client));
+ }
+ 
+-static void
+-swap_auth(pointer data, int num)
++static int
++swap_auth(ClientPtr client, pointer data, int num, int length)
+ {
+     unsigned char *p;
+     unsigned char t;
+@@ -158,16 +158,29 @@
+ 	p += 2;
+ 	p += (namelen + 3) & ~3;
+ 	p += (datalen + 3) & ~3;
++	if (p - (unsigned char *)data > length - (i < num ? 8 : 0)) {
++	    int lengthword = length;
++
++            SendErrToClient(client, FSBadLength, (pointer)&lengthword);
++            return (FSBadLength);
++	}
+     }
++
++    return (FSSuccess);
+ }
+ 
+ int
+ SProcCreateAC(ClientPtr client)
+ {
++    int status;
++	
+     REQUEST(fsCreateACReq);
+     stuff->length = lswaps(stuff->length);
+     stuff->acid = lswapl(stuff->acid);
+-    swap_auth((pointer) &stuff[1], stuff->num_auths);
++    status = swap_auth(client, (pointer) &stuff[1],
++	    	       stuff->num_auths, stuff->length);
++    if (status != FSSuccess)
++	return (status);
+     return ((*ProcVector[stuff->reqType]) (client));
+ }
+ 
+@@ -177,6 +190,8 @@
+     REQUEST(fsSetResolutionReq);
+     stuff->length = lswaps(stuff->length);
+     stuff->num_resolutions = lswaps(stuff->num_resolutions);
++    if ((int)stuff->length - (&stuff[1] - &stuff[0]) < stuff->num_resolutions)
++	return (FSBadLength);
+     SwapShorts((short *) &stuff[1], stuff->num_resolutions);
+ 
+     return ((*ProcVector[stuff->reqType]) (client));
+@@ -255,11 +270,14 @@
+     return ((*ProcVector[stuff->reqType]) (client));
+ }
+ 
+-void
+-SwapConnClientPrefix(fsConnClientPrefix *pCCP)
++int
++SwapConnClientPrefix(ClientPtr client, fsConnClientPrefix *pCCP)
+ {
++    REQUEST(fsFakeReq);
++	
+     pCCP->major_version = lswaps(pCCP->major_version);
+     pCCP->minor_version = lswaps(pCCP->minor_version);
+     pCCP->auth_len = lswaps(pCCP->auth_len);
+-    swap_auth((pointer) &pCCP[1], pCCP->num_auths);
++    return (swap_auth(client, (pointer) &pCCP[1],
++		      pCCP->num_auths, stuff->length));
+ }
+--- programs/xfs/include/difs.h	1999/08/21 13:48:50	1.2
++++ programs/xfs/include/difs.h	2001/06/21 01:15:46
+@@ -83,6 +83,6 @@
+ #endif
+ 
+ /* difs/main.c */
+-extern void NotImplemented(void);
++extern int NotImplemented(void);
+ 
+ #endif
+--- programs/xfs/include/osstruct.h	2001/01/16 22:52:04	1.1.1.4
++++ programs/xfs/include/osstruct.h	2001/06/21 01:15:46
+@@ -49,16 +49,16 @@
+ #include	"os.h"
+ 
+ typedef struct _alt_server {
+-    char        subset;
+-    short       namelen;
+-    char       *name;
++    char            subset;
++    unsigned short  namelen;
++    char           *name;
+ }           AlternateServerRec;
+ 
+ typedef struct _auth {
+-    short       namelen;
+-    short       datalen;
+-    char       *name;
+-    char       *data;
++    unsigned short  namelen;
++    unsigned short  datalen;
++    char           *name;
++    char           *data;
+ }           AuthRec;
+ 
+ #endif				/* _OSSTRUCT_H_ */
+--- programs/xfs/include/swapreq.h	1998/10/25 07:12:32	1.1
++++ programs/xfs/include/swapreq.h	2001/06/21 01:15:47
+@@ -48,7 +48,7 @@
+ extern int SProcResourceRequest(ClientPtr client);
+ extern int SProcSetResolution(ClientPtr client);
+ extern int SProcSimpleRequest(ClientPtr client);
+-extern void SwapConnClientPrefix(fsConnClientPrefix *pCCP);
++extern int SwapConnClientPrefix(ClientPtr client, fsConnClientPrefix *pCCP);
+ extern void SwapLongs(long *list, unsigned long count);
+ extern void SwapShorts(short *list, unsigned long count);
+ 
+cvs server: Diffing xc/programs/xfs/os
+--- programs/xfs/os/io.c	2001/01/17 23:45:32	3.12
++++ programs/xfs/os/io.c	2001/06/21 01:15:47
+@@ -127,14 +127,24 @@
+ int
+ ReadRequest(ClientPtr client)
+ {
+-    OsCommPtr   oc = (OsCommPtr) client->osPrivate;
+-    ConnectionInputPtr oci = oc->input;
++    OsCommPtr   oc;
++    ConnectionInputPtr oci;
+     fsReq      *request;
+-    int         fd = oc->fd;
+-    int         result,
++    int         fd,
++                result,
+                 gotnow,
+                 needed = 0;
+ 
++    if (client == NULL)
++	return -1;
++    oc = (OsCommPtr) client->osPrivate;
++    if (oc == NULL)
++	return -1;
++    oci = oc->input;
++    fd = oc->fd;
++    if (oci == NULL || fd < 0)
++	return -1;
++		
+     if (AvailableInput) {
+ 	if (AvailableInput != oc) {
+ 	    ConnectionInputPtr aci = AvailableInput->input;
+@@ -207,6 +217,8 @@
+ 	    oci->bufcnt = gotnow;
+ 	}
+ 	/* fill 'er up */
++	if (oc->trans_conn == NULL)
++	    return -1;
+ 	result = _FontTransRead(oc->trans_conn, oci->buffer + oci->bufcnt,
+ 		      oci->size - oci->bufcnt);
+ 	if (result <= 0) {
+@@ -230,7 +242,7 @@
+ 		(oci->bufcnt < BUFSIZE) && (needed < BUFSIZE)) {
+ 	    char       *ibuf;
+ 
+-	    ibuf = (char *) fsrealloc(oci, BUFSIZE);
++	    ibuf = (char *) fsrealloc(oci->buffer, BUFSIZE);
+ 	    if (ibuf) {
+ 		oci->size = BUFSIZE;
+ 		oci->buffer = ibuf;
+
+
