@@ -1,11 +1,28 @@
 --- kxkb/rules.cpp	2004/06/28 14:19:03	1.38
-+++ kxkb/rules.cpp	2004/08/29 19:05:04	1.39
-@@ -17,7 +17,7 @@
- #include "rules.h"
++++ kxkb/rules.cpp	2004/10/10 22:59:59	1.38.2.1
+@@ -1,3 +1,4 @@
++#include <qwindowdefs.h>
+ #include <qfile.h>
+ #include <qtextstream.h>
+ #include <qregexp.h>
+@@ -42,11 +43,19 @@ KeyRules::KeyRules():
+   }
  
- const char* X11DirList[2] = {"/usr/X11R6/lib/X11/", "/usr/local/X11R6/lib/X11/"};
--const char* rulesFileList[2] = {"xkb/rules/xfree86", "xkb/rules/xorg"};
-+const char* rulesFileList[2] = {"xkb/rules/xorg", "xkb/rules/xfree86"};
+   QString rulesFile;
+-  for(int ii=0; ii<2; ii++)
++  Display *dpy = qt_xdisplay();
++  XkbRF_VarDefsRec vd;
++  char *tmp= NULL;
++  if (XkbRF_GetNamesProp(dpy,&tmp,&vd) && tmp) 
++    rulesFile = X11_DIR + QString("xkb/rules/%1").arg(tmp);
++  else {
++    // old way
++    for(int ii=0; ii<2; ii++)
+     if( QFile(X11_DIR + QString(rulesFileList[ii])).exists() ) {
+ 	rulesFile = X11_DIR + rulesFileList[ii];
+ 	break;
+     }
++  }
  
- KeyRules::KeyRules():
-     m_layouts(90)
+   if( rulesFile.isEmpty() ) {
+     kdDebug() << "Cannot find rules file in " << X11_DIR << endl;

@@ -247,7 +247,6 @@ lib/kde3/kcm_locale.la
 lib/kde3/kcm_locale.so
 lib/kde3/kcm_nic.la
 lib/kde3/kcm_nic.so
-lib/kde3/kcm_nsplugins.so
 lib/kde3/kcm_performance.la
 lib/kde3/kcm_performance.so
 lib/kde3/kcm_printmgr.la
@@ -1650,7 +1649,6 @@ share/apps/kwin/web.desktop
 share/apps/kwrite/kwriteui.rc
 share/apps/naughtyapplet/pics/naughty-happy.png
 share/apps/naughtyapplet/pics/naughty-sad.png
-share/apps/plugin/nspluginpart.rc
 share/autostart/kdesktop.desktop
 share/autostart/khotkeys.desktop
 share/autostart/klipper.desktop
@@ -4162,7 +4160,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/doc/HTML/en/kate
 @dirrm share/desktop-directories
 @dirrm share/config.kcfg
-@dirrm share/apps/plugin
 @dirrm share/apps/naughtyapplet/pics
 @dirrm share/apps/naughtyapplet
 @dirrm share/apps/kwrite

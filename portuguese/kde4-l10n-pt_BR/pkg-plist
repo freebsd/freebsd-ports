@@ -434,6 +434,9 @@ share/doc/HTML/pt_BR/kdm/common
 share/doc/HTML/pt_BR/kdm/index.cache.bz2
 share/doc/HTML/pt_BR/kdm/index.docbook
 share/doc/HTML/pt_BR/kdm/kdmrc-ref.docbook
+share/doc/HTML/pt_BR/kdvi/common
+share/doc/HTML/pt_BR/kdvi/index.cache.bz2
+share/doc/HTML/pt_BR/kdvi/index.docbook
 share/doc/HTML/pt_BR/keduca/common
 share/doc/HTML/pt_BR/keduca/index.cache.bz2
 share/doc/HTML/pt_BR/keduca/index.docbook
@@ -715,18 +718,23 @@ share/doc/HTML/pt_BR/kstars/cequator.docbook
 share/doc/HTML/pt_BR/kstars/color_indices.png
 share/doc/HTML/pt_BR/kstars/colorandtemp.docbook
 share/doc/HTML/pt_BR/kstars/commands.docbook
+share/doc/HTML/pt_BR/kstars/common
 share/doc/HTML/pt_BR/kstars/config.docbook
 share/doc/HTML/pt_BR/kstars/cpoles.docbook
 share/doc/HTML/pt_BR/kstars/credits.docbook
 share/doc/HTML/pt_BR/kstars/csphere.docbook
 share/doc/HTML/pt_BR/kstars/darkmatter.docbook
+share/doc/HTML/pt_BR/kstars/dcop.docbook
 share/doc/HTML/pt_BR/kstars/detaildialog.png
+share/doc/HTML/pt_BR/kstars/details.docbook
 share/doc/HTML/pt_BR/kstars/devicemanager.png
+share/doc/HTML/pt_BR/kstars/dumpmode.docbook
 share/doc/HTML/pt_BR/kstars/ecliptic.docbook
 share/doc/HTML/pt_BR/kstars/ellipticalgalaxies.docbook
 share/doc/HTML/pt_BR/kstars/equinox.docbook
 share/doc/HTML/pt_BR/kstars/faq.docbook
 share/doc/HTML/pt_BR/kstars/find.png
+share/doc/HTML/pt_BR/kstars/flux.docbook
 share/doc/HTML/pt_BR/kstars/flux.png
 share/doc/HTML/pt_BR/kstars/flux1.png
 share/doc/HTML/pt_BR/kstars/flux2.png
@@ -736,9 +744,13 @@ share/doc/HTML/pt_BR/kstars/geolocator.png
 share/doc/HTML/pt_BR/kstars/greatcircle.docbook
 share/doc/HTML/pt_BR/kstars/horizon.docbook
 share/doc/HTML/pt_BR/kstars/hourangle.docbook
+share/doc/HTML/pt_BR/kstars/index.cache.bz2
+share/doc/HTML/pt_BR/kstars/index.docbook
+share/doc/HTML/pt_BR/kstars/indi.docbook
 share/doc/HTML/pt_BR/kstars/indiclient.png
 share/doc/HTML/pt_BR/kstars/indicontrolpanel.png
 share/doc/HTML/pt_BR/kstars/install.docbook
+share/doc/HTML/pt_BR/kstars/jmoons.docbook
 share/doc/HTML/pt_BR/kstars/jmoons.png
 share/doc/HTML/pt_BR/kstars/julianday.docbook
 share/doc/HTML/pt_BR/kstars/kepler2nd.png
@@ -747,6 +759,8 @@ share/doc/HTML/pt_BR/kstars/lambda_ex.png
 share/doc/HTML/pt_BR/kstars/lambda_max.png
 share/doc/HTML/pt_BR/kstars/leapyear.docbook
 share/doc/HTML/pt_BR/kstars/lightcurve.png
+share/doc/HTML/pt_BR/kstars/lightcurves.docbook
+share/doc/HTML/pt_BR/kstars/luminosity.docbook
 share/doc/HTML/pt_BR/kstars/luminosity.png
 share/doc/HTML/pt_BR/kstars/luminosity_ex.png
 share/doc/HTML/pt_BR/kstars/magnitude.docbook
@@ -758,18 +772,21 @@ share/doc/HTML/pt_BR/kstars/precession.docbook
 share/doc/HTML/pt_BR/kstars/quicktour.docbook
 share/doc/HTML/pt_BR/kstars/retrograde.docbook
 share/doc/HTML/pt_BR/kstars/screen1.png
+share/doc/HTML/pt_BR/kstars/scriptbuilder.docbook
 share/doc/HTML/pt_BR/kstars/scriptbuilder.png
 share/doc/HTML/pt_BR/kstars/sidereal.docbook
 share/doc/HTML/pt_BR/kstars/skycoords.docbook
 share/doc/HTML/pt_BR/kstars/skymapdevice.png
 share/doc/HTML/pt_BR/kstars/solarsys.docbook
 share/doc/HTML/pt_BR/kstars/solarsystem.png
+share/doc/HTML/pt_BR/kstars/spiralgalaxies.docbook
 share/doc/HTML/pt_BR/kstars/star_colors.png
 share/doc/HTML/pt_BR/kstars/stars.docbook
 share/doc/HTML/pt_BR/kstars/timezones.docbook
 share/doc/HTML/pt_BR/kstars/tools.docbook
 share/doc/HTML/pt_BR/kstars/utime.docbook
 share/doc/HTML/pt_BR/kstars/viewops.png
+share/doc/HTML/pt_BR/kstars/wut.docbook
 share/doc/HTML/pt_BR/kstars/wut.png
 share/doc/HTML/pt_BR/kstars/zenith.docbook
 share/doc/HTML/pt_BR/ksysguard/common
@@ -1449,6 +1466,7 @@ share/locale/pt_BR/flag.png
 @dirrm share/doc/HTML/pt_BR/khelpcenter
 @dirrm share/doc/HTML/pt_BR/kfind
 @dirrm share/doc/HTML/pt_BR/keduca
+@dirrm share/doc/HTML/pt_BR/kdvi
 @dirrm share/doc/HTML/pt_BR/kdm
 @dirrm share/doc/HTML/pt_BR/kdesu
 @dirrm share/doc/HTML/pt_BR/kdeprint

@@ -5,7 +5,10 @@ share/doc/HTML/it/kchart/index.docbook
 share/doc/HTML/it/kformula/common
 share/doc/HTML/it/kformula/index.cache.bz2
 share/doc/HTML/it/kformula/index.docbook
+share/doc/HTML/it/kivio/common
 share/doc/HTML/it/kivio/credits.docbook
+share/doc/HTML/it/kivio/index.cache.bz2
+share/doc/HTML/it/kivio/index.docbook
 share/doc/HTML/it/kivio/introduction.docbook
 share/doc/HTML/it/kivio/usage.docbook
 share/doc/HTML/it/kivio/working.docbook
@@ -100,7 +103,6 @@ share/locale/it/LC_MESSAGES/kwordasciifilter.mo
 share/locale/it/LC_MESSAGES/kwordhtmlexportfilter.mo
 share/locale/it/LC_MESSAGES/kwordhtmlimportfilter.mo
 share/locale/it/LC_MESSAGES/kwordlatexexportfilter.mo
-share/locale/it/LC_MESSAGES/kwordlatexfilter.mo
 share/locale/it/LC_MESSAGES/kwordlateximportfilter.mo
 share/locale/it/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/it/LC_MESSAGES/kwordmswritefilter.mo

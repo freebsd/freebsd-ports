@@ -4,6 +4,9 @@
 # very likely to apply outside of KDE core modules.  Nonetheless, also
 # provide variables to remove one or more of these.
 #
+# DON'T INCLUDE THIS FILE FROM YOUR PORT. THIS FILE SHOULD BE CONSIDERED OFF-
+# LIMITS FOR ANY MAINTAINER != kde@freebsd.org
+#
 # $FreeBSD$
 
 CONFIGURE_ARGS?=
@@ -92,11 +95,11 @@ _NO_KDE_FIXPTHREAD=	yes
 
 .if !defined(_NO_KDE_FIXPTHREAD)
 USE_REINPLACE=	yes
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure
 
 pre-configure: kde-fix-configure kde-fix-ltmain.sh
 kde-fix-configure:
-	${REINPLACE_CMD} "s,-pedantic,,g; \
-			   s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 kde-fix-ltmain.sh:
 	${REINPLACE_CMD} "s, | .*freebsd\*)$$,*),g" ${WRKSRC}/admin/ltmain.sh

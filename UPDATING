@@ -7,6 +7,18 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041107:
+  AFFECTS: users of x11/kdebase3
+  AUTHOR: kde@freebsd.org
+
+  To use GMail in konqueror, you need to set the browser identification for
+  gmail.google.com to 'Safari 1.2.3 on Mac OS X', otherwise you will not be
+  able to click on any links in GMail after logging in.
+
+  You can set site-specific browser identifications via the Settings menu in
+  Konqueror (Configure Konqueror/Browser Identification) or in the KDE Control
+  Center, Internet & Network/Web Browser/Browser Identification.
+
+20041107:
   AFFECTS: all users who have any GNOME libraries installed
   AUTHOR: adamw@FreeBSD.org and the rest of the FreeBSD/GNOME crew
 

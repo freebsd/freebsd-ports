@@ -8,6 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits ipv6
 MASTER_SITES=	ftp://sunsite.rediris.es/mirror/Qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/	\

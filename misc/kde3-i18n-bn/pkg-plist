@@ -5,10 +5,12 @@ share/locale/bn/LC_MESSAGES/clockapplet.mo
 share/locale/bn/LC_MESSAGES/devicesapplet.mo
 share/locale/bn/LC_MESSAGES/display.mo
 share/locale/bn/LC_MESSAGES/dockbarextension.mo
+share/locale/bn/LC_MESSAGES/drkonqi.mo
 share/locale/bn/LC_MESSAGES/extensionproxy.mo
 share/locale/bn/LC_MESSAGES/filetypes.mo
 share/locale/bn/LC_MESSAGES/fontinst.mo
 share/locale/bn/LC_MESSAGES/htmlsearch.mo
+share/locale/bn/LC_MESSAGES/juk.mo
 share/locale/bn/LC_MESSAGES/kabc_dir.mo
 share/locale/bn/LC_MESSAGES/kabc_file.mo
 share/locale/bn/LC_MESSAGES/kabc_ldap.mo
@@ -23,6 +25,7 @@ share/locale/bn/LC_MESSAGES/kappfinder.mo
 share/locale/bn/LC_MESSAGES/kasteroids.mo
 share/locale/bn/LC_MESSAGES/kate.mo
 share/locale/bn/LC_MESSAGES/katedefaultproject.mo
+share/locale/bn/LC_MESSAGES/katepart.mo
 share/locale/bn/LC_MESSAGES/katomic.mo
 share/locale/bn/LC_MESSAGES/kbackgammon.mo
 share/locale/bn/LC_MESSAGES/kbattleship.mo
@@ -34,6 +37,7 @@ share/locale/bn/LC_MESSAGES/kcmarts.mo
 share/locale/bn/LC_MESSAGES/kcmbackground.mo
 share/locale/bn/LC_MESSAGES/kcmcgi.mo
 share/locale/bn/LC_MESSAGES/kcmemail.mo
+share/locale/bn/LC_MESSAGES/kcmenergy.mo
 share/locale/bn/LC_MESSAGES/kcmicons.mo
 share/locale/bn/LC_MESSAGES/kcminfo.mo
 share/locale/bn/LC_MESSAGES/kcmioslaveinfo.mo
@@ -70,7 +74,14 @@ share/locale/bn/LC_MESSAGES/kdmconfig.mo
 share/locale/bn/LC_MESSAGES/kdmgreet.mo
 share/locale/bn/LC_MESSAGES/keduca.mo
 share/locale/bn/LC_MESSAGES/kenolaba.mo
+share/locale/bn/LC_MESSAGES/kfile_avi.mo
+share/locale/bn/LC_MESSAGES/kfile_drgeo.mo
 share/locale/bn/LC_MESSAGES/kfile_font.mo
+share/locale/bn/LC_MESSAGES/kfile_kig.mo
+share/locale/bn/LC_MESSAGES/kfile_m3u.mo
+share/locale/bn/LC_MESSAGES/kfile_mp3.mo
+share/locale/bn/LC_MESSAGES/kfile_ogg.mo
+share/locale/bn/LC_MESSAGES/kfile_wav.mo
 share/locale/bn/LC_MESSAGES/kfileaudiopreview.mo
 share/locale/bn/LC_MESSAGES/kfindpart.mo
 share/locale/bn/LC_MESSAGES/kfontinst.mo
@@ -82,6 +93,7 @@ share/locale/bn/LC_MESSAGES/khelpcenter.mo
 share/locale/bn/LC_MESSAGES/kicker.mo
 share/locale/bn/LC_MESSAGES/kig.mo
 share/locale/bn/LC_MESSAGES/kio.mo
+share/locale/bn/LC_MESSAGES/kio_audiocd.mo
 share/locale/bn/LC_MESSAGES/kio_devices.mo
 share/locale/bn/LC_MESSAGES/kio_finger.mo
 share/locale/bn/LC_MESSAGES/kio_fish.mo
@@ -103,6 +115,7 @@ share/locale/bn/LC_MESSAGES/kmathtool.mo
 share/locale/bn/LC_MESSAGES/kmcop.mo
 share/locale/bn/LC_MESSAGES/kmenuapplet.mo
 share/locale/bn/LC_MESSAGES/kmenuedit.mo
+share/locale/bn/LC_MESSAGES/kmessedwords.mo
 share/locale/bn/LC_MESSAGES/kmines.mo
 share/locale/bn/LC_MESSAGES/kmplot.mo
 share/locale/bn/LC_MESSAGES/knode.mo
@@ -112,6 +125,7 @@ share/locale/bn/LC_MESSAGES/konsole.mo
 share/locale/bn/LC_MESSAGES/kpartapp.mo
 share/locale/bn/LC_MESSAGES/kpersonalizer.mo
 share/locale/bn/LC_MESSAGES/kreadconfig.mo
+share/locale/bn/LC_MESSAGES/krec.mo
 share/locale/bn/LC_MESSAGES/kreversi.mo
 share/locale/bn/LC_MESSAGES/krunapplet.mo
 share/locale/bn/LC_MESSAGES/kscreensaver.mo
@@ -121,6 +135,7 @@ share/locale/bn/LC_MESSAGES/ksnake.mo
 share/locale/bn/LC_MESSAGES/ksokoban.mo
 share/locale/bn/LC_MESSAGES/ksplash.mo
 share/locale/bn/LC_MESSAGES/ksplashthemes.mo
+share/locale/bn/LC_MESSAGES/kstars.mo
 share/locale/bn/LC_MESSAGES/kstyle_keramik_config.mo
 share/locale/bn/LC_MESSAGES/ksysguard.mo
 share/locale/bn/LC_MESSAGES/ksystemtrayapplet.mo
@@ -132,6 +147,7 @@ share/locale/bn/LC_MESSAGES/ktexteditor_isearch.mo
 share/locale/bn/LC_MESSAGES/ktexteditor_kdatatool.mo
 share/locale/bn/LC_MESSAGES/ktouch.mo
 share/locale/bn/LC_MESSAGES/ktron.mo
+share/locale/bn/LC_MESSAGES/kturtle.mo
 share/locale/bn/LC_MESSAGES/kverbos.mo
 share/locale/bn/LC_MESSAGES/kwin.mo
 share/locale/bn/LC_MESSAGES/kwin_b2_config.mo
@@ -139,6 +155,7 @@ share/locale/bn/LC_MESSAGES/kwin_default_config.mo
 share/locale/bn/LC_MESSAGES/kwin_keramik_config.mo
 share/locale/bn/LC_MESSAGES/kwin_modernsys_config.mo
 share/locale/bn/LC_MESSAGES/kwin_quartz_config.mo
+share/locale/bn/LC_MESSAGES/kwordquiz.mo
 share/locale/bn/LC_MESSAGES/kwriteconfig.mo
 share/locale/bn/LC_MESSAGES/kxkb.mo
 share/locale/bn/LC_MESSAGES/libkdegames.mo

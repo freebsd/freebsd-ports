@@ -86,7 +86,6 @@ share/locale/eu/LC_MESSAGES/dub.mo
 share/locale/eu/LC_MESSAGES/extensionproxy.mo
 share/locale/eu/LC_MESSAGES/ffrs.mo
 share/locale/eu/LC_MESSAGES/filetypes.mo
-share/locale/eu/LC_MESSAGES/flashkard.mo
 share/locale/eu/LC_MESSAGES/fontinst.mo
 share/locale/eu/LC_MESSAGES/fsview.mo
 share/locale/eu/LC_MESSAGES/htmlsearch.mo
@@ -285,7 +284,6 @@ share/locale/eu/LC_MESSAGES/kfile_vcf.mo
 share/locale/eu/LC_MESSAGES/kfile_wav.mo
 share/locale/eu/LC_MESSAGES/kfile_xbm.mo
 share/locale/eu/LC_MESSAGES/kfileaudiopreview.mo
-share/locale/eu/LC_MESSAGES/kfilereplace.mo
 share/locale/eu/LC_MESSAGES/kfindpart.mo
 share/locale/eu/LC_MESSAGES/kfloppy.mo
 share/locale/eu/LC_MESSAGES/kfmclient.mo
@@ -297,7 +295,6 @@ share/locale/eu/LC_MESSAGES/kget.mo
 share/locale/eu/LC_MESSAGES/kghostview.mo
 share/locale/eu/LC_MESSAGES/kgoldrunner.mo
 share/locale/eu/LC_MESSAGES/kgpg.mo
-share/locale/eu/LC_MESSAGES/kgpgcertmanager.mo
 share/locale/eu/LC_MESSAGES/khangman.mo
 share/locale/eu/LC_MESSAGES/khelpcenter.mo
 share/locale/eu/LC_MESSAGES/khexedit.mo
@@ -350,7 +347,6 @@ share/locale/eu/LC_MESSAGES/kmenuapplet.mo
 share/locale/eu/LC_MESSAGES/kmenuedit.mo
 share/locale/eu/LC_MESSAGES/kmessedwords.mo
 share/locale/eu/LC_MESSAGES/kmid.mo
-share/locale/eu/LC_MESSAGES/kmidi.mo
 share/locale/eu/LC_MESSAGES/kmines.mo
 share/locale/eu/LC_MESSAGES/kminipagerapplet.mo
 share/locale/eu/LC_MESSAGES/kmix.mo
@@ -359,7 +355,6 @@ share/locale/eu/LC_MESSAGES/kmplot.mo
 share/locale/eu/LC_MESSAGES/kmrml.mo
 share/locale/eu/LC_MESSAGES/knewsticker.mo
 share/locale/eu/LC_MESSAGES/knode.mo
-share/locale/eu/LC_MESSAGES/knorskverbs.mo
 share/locale/eu/LC_MESSAGES/knotes.mo
 share/locale/eu/LC_MESSAGES/knotify.mo
 share/locale/eu/LC_MESSAGES/kodo.mo
@@ -480,7 +475,6 @@ share/locale/eu/LC_MESSAGES/kwriteconfig.mo
 share/locale/eu/LC_MESSAGES/kxkb.mo
 share/locale/eu/LC_MESSAGES/kxmlrpcd.mo
 share/locale/eu/LC_MESSAGES/kxsconfig.mo
-share/locale/eu/LC_MESSAGES/kxsldbg.mo
 share/locale/eu/LC_MESSAGES/libcalendarresources.mo
 share/locale/eu/LC_MESSAGES/libkaddrbk_geo_xxport.mo
 share/locale/eu/LC_MESSAGES/libkcal.mo
@@ -518,7 +512,6 @@ share/locale/eu/LC_MESSAGES/pitchablespeed.mo
 share/locale/eu/LC_MESSAGES/ppdtranslations.mo
 share/locale/eu/LC_MESSAGES/privacy.mo
 share/locale/eu/LC_MESSAGES/qeditor.mo
-share/locale/eu/LC_MESSAGES/quanta.mo
 share/locale/eu/LC_MESSAGES/quicklauncher.mo
 share/locale/eu/LC_MESSAGES/secpolicy.mo
 share/locale/eu/LC_MESSAGES/spy.mo

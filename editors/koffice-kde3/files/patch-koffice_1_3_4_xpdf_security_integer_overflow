@@ -1,0 +1,90 @@
+Index: Catalog.cc
+===================================================================
+RCS file: /home/kde/koffice/filters/kword/pdf/xpdf/xpdf/Catalog.cc,v
+retrieving revision 1.1.2.1
+retrieving revision 1.1.2.4
+diff -u -p -r1.1.2.1 -r1.1.2.4
+--- filters/kword/pdf/xpdf/xpdf/Catalog.cc	22 Oct 2004 12:13:56 -0000	1.1.2.1
++++ filters/kword/pdf/xpdf/xpdf/Catalog.cc	30 Oct 2004 16:43:47 -0000	1.1.2.4
+@@ -12,6 +12,7 @@
+ #pragma implementation
+ #endif
+ 
++#include <limits.h>
+ #include <stddef.h>
+ #include "gmem.h"
+ #include "Object.h"
+@@ -63,8 +64,8 @@ Catalog::Catalog(XRef *xrefA) {
+   }
+   pagesSize = numPages0 = obj.getInt();
+   obj.free();
+-  if (pagesSize*sizeof(Page *)/sizeof(Page *) != pagesSize ||
+-      pagesSize*sizeof(Ref)/sizeof(Ref) != pagesSize) {
++  if ((unsigned) pagesSize >= INT_MAX / sizeof(Page *) ||
++      (unsigned) pagesSize >= INT_MAX / sizeof(Ref)) {
+     error(-1, "Invalid 'pagesSize'");
+     ok = gFalse;
+     return;
+@@ -196,8 +197,8 @@ int Catalog::readPageTree(Dict *pagesDic
+       }
+       if (start >= pagesSize) {
+ 	pagesSize += 32;
+-        if (pagesSize*sizeof(Page *)/sizeof(Page *) != pagesSize ||
+-            pagesSize*sizeof(Ref)/sizeof(Ref) != pagesSize) {
++        if ((unsigned) pagesSize >= INT_MAX / sizeof(Page *) ||
++            (unsigned) pagesSize >= INT_MAX / sizeof(Ref)) {
+           error(-1, "Invalid 'pagesSize' parameter.");
+           goto err3;
+         }
+Index: XRef.cc
+===================================================================
+RCS file: /home/kde/koffice/filters/kword/pdf/xpdf/xpdf/XRef.cc,v
+retrieving revision 1.1.2.1
+retrieving revision 1.1.2.4
+diff -u -p -r1.1.2.1 -r1.1.2.4
+--- filters/kword/pdf/xpdf/xpdf/XRef.cc	22 Oct 2004 12:13:56 -0000	1.1.2.1
++++ filters/kword/pdf/xpdf/xpdf/XRef.cc	30 Oct 2004 16:43:47 -0000	1.1.2.4
+@@ -12,6 +12,7 @@
+ #pragma implementation
+ #endif
+ 
++#include <limits.h>
+ #include <stdlib.h>
+ #include <stddef.h>
+ #include <string.h>
+@@ -76,7 +77,7 @@ XRef::XRef(BaseStream *strA, GString *ow
+ 
+   // trailer is ok - read the xref table
+   } else {
+-    if (size*sizeof(XRefEntry)/sizeof(XRefEntry) != size) {
++    if ((unsigned) size >= INT_MAX / sizeof(XRefEntry)) {
+       error(-1, "Invalid 'size' inside xref table.");
+       ok = gFalse;
+       errCode = errDamaged;
+@@ -273,7 +274,7 @@ GBool XRef::readXRef(Guint *pos) {
+     // table size
+     if (first + n > size) {
+       newSize = size + 256;
+-      if (newSize*sizeof(XRefEntry)/sizeof(XRefEntry) != newSize) {
++      if ((unsigned) newSize >= INT_MAX / sizeof(XRefEntry)) {
+         error(-1, "Invalid 'newSize'");
+         goto err2;
+       }
+@@ -420,7 +421,7 @@ GBool XRef::constructXRef() {
+ 	    if (!strncmp(p, "obj", 3)) {
+ 	      if (num >= size) {
+ 		newSize = (num + 1 + 255) & ~255;
+-	        if (newSize*sizeof(XRefEntry)/sizeof(XRefEntry) != newSize) {
++	        if ((unsigned) newSize >= INT_MAX / sizeof(XRefEntry)) {
+ 	          error(-1, "Invalid 'obj' parameters.");
+ 	          return gFalse;
+ 	        }
+@@ -445,7 +446,7 @@ GBool XRef::constructXRef() {
+     } else if (!strncmp(p, "endstream", 9)) {
+       if (streamEndsLen == streamEndsSize) {
+ 	streamEndsSize += 64;
+-        if (streamEndsSize*sizeof(int)/sizeof(int) != streamEndsSize) {
++        if ((unsigned) streamEndsSize >= INT_MAX / sizeof(int)) {
+           error(-1, "Invalid 'endstream' parameter.");
+           return gFalse;
+         }

@@ -37,4 +37,13 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 501102
+RUN_DEPENDS+=	gtar:${PORTSDIR}/archivers/gtar
+
+post-patch:
+	${REINPLACE_CMD} -e 's|>tar<|>gtar<|g' ${WRKSRC}/ark/ark.kcfg
+.endif
+
+.include <bsd.port.post.mk>
