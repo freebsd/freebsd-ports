@@ -8,13 +8,14 @@ include/glpies.h
 include/glpinv.h
 include/glpipm.h
 include/glpk.h
-include/glplan.h
 include/glplib.h
+include/glplpp.h
 include/glplpx.h
 include/glpluf.h
 include/glplpt.h
 include/glpmat.h
 include/glpmip.h
+include/glpmpl.h
 include/glpmps.h
 include/glpqmd.h
 include/glpspm.h
