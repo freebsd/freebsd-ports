@@ -20,7 +20,6 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 BUILD_DEPENDS=	${X11BASE}/bin/gdk-pixbuf-config:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_PERL5=	yes
-USE_GLIB=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_LIBTOOL=	yes

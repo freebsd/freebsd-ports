@@ -72,7 +72,6 @@ MAKEFILE=	makefile
 PLIST=		${WRKDIR}/pkg-plist
 .if !defined(WITHOUT_X11)
 PREFIX=		${X11BASE}
-USE_GLIB=	yes
 USE_GTK=	yes
 USE_XLIB=	yes
 .endif

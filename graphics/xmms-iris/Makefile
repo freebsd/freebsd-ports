@@ -17,7 +17,6 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 GNU_CONFIGURE=	yes
-USE_GLIB=	yes
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes

@@ -17,7 +17,6 @@ MASTER_SITE_SUBDIR=	kris
 MAINTAINER=	lo_gafet@users.sourceforge.net
 
 USE_GMAKE=	yes
-USE_GLIB=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes
 

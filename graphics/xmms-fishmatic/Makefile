@@ -19,7 +19,6 @@ RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-USE_GLIB=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 USE_MESA=	yes
