@@ -29,6 +29,10 @@ CONFIGURE_ENV=	LIBS="-lxpg4"
 MAN1=		Eterm.1
 INSTALLS_SHLIB=	yes
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/libmej/debug.c ${WRKSRC}/libmej/strings.c
+
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
 .if !defined(NOPORTDOCS)
