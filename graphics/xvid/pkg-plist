@@ -1,4 +1,6 @@
 include/xvid.h
+include/xvid/divx4.h
 lib/libcore.a
 lib/libxvidcore.so
 lib/libxvidcore.so.0
+@dirrm include/xvid
