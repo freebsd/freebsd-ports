@@ -79,10 +79,10 @@ share/eb/appendix/crownfj-2.0/crown_fj.app
 share/eb/appendix/crownfj-2.0/crown_fj/data/furoku
 share/eb/appendix/crownfj-2.0/daily_ei.app
 share/eb/appendix/crownfj-2.0/daily_ei/data/furoku
-share/eb/appendix/daihyakka-1.0/catalog.app
-share/eb/appendix/daihyakka-1.0/dhk01/appendix
 share/eb/appendix/daihyakka-1.0/catalog
+share/eb/appendix/daihyakka-1.0/catalog.app
 share/eb/appendix/daihyakka-1.0/dhk01.app
+share/eb/appendix/daihyakka-1.0/dhk01/appendix
 share/eb/appendix/daijirin-2.0/catalogs
 share/eb/appendix/daijirin-2.0/catalogs.app
 share/eb/appendix/daijirin-2.0/dgx01.app
