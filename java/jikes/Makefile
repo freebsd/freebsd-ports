@@ -3,17 +3,18 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: exp $
+# $Id: Makefile,v 1.1 1998/12/10 18:02:52 dillon Exp $
 #
 
 DISTNAME=	jikes-0.41
 CATEGORIES=	lang
 MASTER_SITES=	http://www.backplane.com/FreeBSDPorts/
-DISTFILES=	${DISTNAME}.tar.gz
-WRKSRC=		${WRKDIR}/jikesos
-MAN1=		jikes.1
+#DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	dillon@backplane.com
+
+WRKSRC=		${WRKDIR}/jikesos
+MAN1=		jikes.1
 
 # 	(sufficiently handled by pkg/MESSAGE, but if IBM has an issue then
 #	uncomment this section)
