@@ -1,6 +1,6 @@
---- include/config.h.orig	Thu Mar 21 08:42:43 2002
-+++ include/config.h	Tue Aug 13 05:41:47 2002
-@@ -122,7 +122,7 @@
+--- include/config.h.orig	Sun Dec  7 23:39:13 2003
++++ include/config.h	Thu Dec 11 02:27:55 2003
+@@ -126,7 +126,7 @@
   * would allow:
   *  xpmtoppm <x11tiles.xpm | pnmscale 1.25 | ppmquant 90 >x11tiles_big.xpm
   */
@@ -9,7 +9,7 @@
  # ifdef USE_XPM
  #  define GRAPHIC_TOMBSTONE	/* Use graphical tombstone (rip.xpm) */
  # endif
-@@ -163,11 +163,11 @@
+@@ -169,11 +169,11 @@
  
  #ifdef UNIX
  /* path and file name extension for compression program */
@@ -25,12 +25,12 @@
  #endif
  
  #ifndef COMPRESS
-@@ -201,7 +201,7 @@
- #  ifdef __APPLE__
- #    define HACKDIR "nethackdir"	/* nethack directory */
- #  else
--#    define HACKDIR "/usr/games/lib/nethackdir"
-+#    define HACKDIR "%%HACKDIR%%"
- #  endif
+@@ -204,7 +204,7 @@
+  * otherwise it will be the current directory.
+  */
+ # ifndef HACKDIR
+-#  define HACKDIR "/usr/games/lib/nethackdir"
++#  define HACKDIR "%%HACKDIR%%"
  # endif
  
+ /*
