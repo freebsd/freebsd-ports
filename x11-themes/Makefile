@@ -31,6 +31,7 @@
     SUBDIR += kde-icons-noia-warm
     SUBDIR += kde-icons-nuvola
     SUBDIR += kde-icons-outline
+    SUBDIR += kde-icons-realistic
     SUBDIR += kde-icons-sky
     SUBDIR += kde-icons-sparkling
     SUBDIR += kde-icons-steel
