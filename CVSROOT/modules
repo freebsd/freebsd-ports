@@ -978,6 +978,7 @@ courier		ports/mail/courier
 courier-imap	ports/mail/courier-imap
 cowsay		ports/games/cowsay
 cp		src/bin/cp
+cp2fwb		ports/security/cp2fwb
 cpbk		ports/sysutils/cpbk
 cpdup		ports/sysutils/cpdup
 cphone		ports/net/cphone
