@@ -472,7 +472,6 @@ aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
 audacity	ports/audio/audacity
-audacity-devel	ports/audio/audacity-devel
 audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix
