@@ -1,4 +1,5 @@
 bin/mlmmj-bounce
+bin/mlmmj-list
 bin/mlmmj-maintd
 bin/mlmmj-make-ml.sh
 bin/mlmmj-process
@@ -6,18 +7,30 @@ bin/mlmmj-recieve
 bin/mlmmj-send
 bin/mlmmj-sub
 bin/mlmmj-unsub
-%%DATADIR%%/listtexts/access
-%%DATADIR%%/listtexts/bounce-probe
-%%DATADIR%%/listtexts/listhelp
-%%DATADIR%%/listtexts/moderation
-%%DATADIR%%/listtexts/notifysub
-%%DATADIR%%/listtexts/notifyunsub
-%%DATADIR%%/listtexts/notintocc
-%%DATADIR%%/listtexts/sub-confirm
-%%DATADIR%%/listtexts/sub-ok
-%%DATADIR%%/listtexts/subonlypost
-%%DATADIR%%/listtexts/unsub-confirm
-%%DATADIR%%/listtexts/unsub-ok
+%%DATADIR%%/text.skel/access
+%%DATADIR%%/text.skel/bounce-probe
+%%DATADIR%%/text.skel/listhelp
+%%DATADIR%%/text.skel/moderation
+%%DATADIR%%/text.skel/notifysub
+%%DATADIR%%/text.skel/notifysub-digest
+%%DATADIR%%/text.skel/notifysub-nomail
+%%DATADIR%%/text.skel/notifyunsub
+%%DATADIR%%/text.skel/notifyunsub-digest
+%%DATADIR%%/text.skel/notifyunsub-nomail
+%%DATADIR%%/text.skel/notintocc
+%%DATADIR%%/text.skel/sub-confirm
+%%DATADIR%%/text.skel/sub-confirm-digest
+%%DATADIR%%/text.skel/sub-confirm-nomail
+%%DATADIR%%/text.skel/sub-ok
+%%DATADIR%%/text.skel/sub-ok-digest
+%%DATADIR%%/text.skel/sub-ok-nomail
+%%DATADIR%%/text.skel/subonlypost
+%%DATADIR%%/text.skel/unsub-confirm
+%%DATADIR%%/text.skel/unsub-confirm-digest
+%%DATADIR%%/text.skel/unsub-confirm-nomail
+%%DATADIR%%/text.skel/unsub-ok
+%%DATADIR%%/text.skel/unsub-ok-digest
+%%DATADIR%%/text.skel/unsub-ok-nomail
 %%PERLWEB%%www/mlmmj/perl-admin/README
 %%PERLWEB%%www/mlmmj/perl-admin/conf/config.pl
 %%PERLWEB%%www/mlmmj/perl-admin/conf/tunables.pl
@@ -25,12 +38,16 @@ bin/mlmmj-unsub
 %%PERLWEB%%www/mlmmj/perl-admin/htdocs/edit.cgi
 %%PERLWEB%%www/mlmmj/perl-admin/htdocs/index.cgi
 %%PERLWEB%%www/mlmmj/perl-admin/htdocs/save.cgi
+%%PERLWEB%%www/mlmmj/perl-admin/htdocs/subscribers.cgi
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit_boolean.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit_list.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/edit_string.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/index.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/index_row.html
 %%PERLWEB%%www/mlmmj/perl-admin/templates/save.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/subscribers.html
+%%PERLWEB%%www/mlmmj/perl-admin/templates/subscribers_row.html
 %%PERLWEB%%www/mlmmj/perl-user/config.pl
 %%PERLWEB%%www/mlmmj/perl-user/example.html
 %%PERLWEB%%www/mlmmj/perl-user/mlmmj.cgi
@@ -62,5 +79,5 @@ bin/mlmmj-unsub
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin/conf
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin
 %%WEB%%@dirrm www/mlmmj
-@dirrm %%DATADIR%%/listtexts
+@dirrm %%DATADIR%%/text.skel
 @dirrm %%DATADIR%%

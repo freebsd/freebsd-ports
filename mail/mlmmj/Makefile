@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlmmj
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://mlmmj.mmj.dk/files/
 
@@ -22,7 +22,8 @@ WANT_PHP_WEB=	yes
 RUN_DEPENDS+=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate
+		${SITE_PERL}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
+		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
 .if defined(WITH_PERL_WEBINTERFACE)
@@ -49,14 +50,12 @@ USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
-MAN1=		mlmmj-bounce.1 mlmmj-maintd.1 mlmmj-make-ml.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
+MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/mlmmj-make-ml.sh
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/mlmmj/listtexts
-	@${INSTALL_DATA} ${WRKSRC}/listtexts/* ${PREFIX}/share/mlmmj/listtexts
 .if defined(WITH_PERL_WEBINTERFACE)
 	@${MKDIR} ${PREFIX}/www/mlmmj/perl-admin
 	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/README ${PREFIX}/www/mlmmj/perl-admin
