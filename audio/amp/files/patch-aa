@@ -1,6 +1,12 @@
---- audioIO_Linux.c.orig	Mon Nov  2 22:20:38 1998
-+++ audioIO_Linux.c	Mon Nov  2 22:22:38 1998
-@@ -26,7 +26,9 @@
+--- audioIO_Linux.c.orig	Sat May 31 10:47:58 1997
++++ audioIO_Linux.c	Fri Aug 23 14:46:27 2002
+@@ -21,12 +21,14 @@
+ #ifdef HAVE_MACHINE_SOUNDCARD_H
+ #include <machine/soundcard.h>
+ #else
+-#include <linux/soundcard.h>
++#include <sys/soundcard.h>
+ #endif
  
  /* optimal fragment size */
  
