@@ -4028,6 +4028,7 @@ liblingoteach	ports/textproc/liblingoteach
 liblrdf		ports/textproc/liblrdf
 libltdl		ports/devel/libltdl
 liblug		ports/graphics/liblug
+libmad		ports/audio/libmad
 libmal		ports/palm/libmal
 libmatroska	ports/multimedia/libmatroska
 libmba		ports/devel/libmba
