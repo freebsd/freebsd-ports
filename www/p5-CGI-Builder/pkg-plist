@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Bundle/CGI/Builder/Complete.pm
+%%SITE_PERL%%/CGI/Builder.pm
+%%SITE_PERL%%/CGI/Builder/Const.pm
+%%SITE_PERL%%/CGI/Builder/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Builder
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/CGI/Builder
+@unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Bundle/CGI/Builder
+@unexec rmdir %D/%%SITE_PERL%%/Bundle/CGI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
