@@ -24,6 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_PIXBUF)
 LIB_DEPENDS+=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 CONFIGURE_ARGS+=--disable-imlib
@@ -101,4 +103,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
