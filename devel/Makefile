@@ -10,6 +10,7 @@
     SUBDIR += aap
     SUBDIR += ac-archive
     SUBDIR += acpicatools
+    SUBDIR += activitymail
     SUBDIR += adabindx
     SUBDIR += adabooch
     SUBDIR += adabooch-doc-html
