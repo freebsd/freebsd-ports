@@ -19,6 +19,8 @@ DISTNAME=		axis-${PORTVERSION:S,.,_,g}
 MAINTAINER=	rui@ruilopes.com
 COMMENT=	SOAP implementation by APACHE project
 
+BROKEN=		"Unfetchable"
+
 #
 # Change webapp directory by TOMCAT version
 #

@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
 
+BROKEN=		Unfetchable
+
 USE_JAVA=	1.4+
 USE_SIZE=	yes
 NO_BUILD=	yes

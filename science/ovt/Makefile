@@ -16,6 +16,8 @@ COMMENT=	The Orbit Visualization Tool
 
 LIB_DEPENDS=	vtkCommonJava:${PORTSDIR}/math/vtk-java
 
+BROKEN=		"Unfetchable"
+
 WRKSRC=		${WRKDIR}/${PKGNAME}
 OVTBUILD=	3
 USE_BZIP2=	yes
