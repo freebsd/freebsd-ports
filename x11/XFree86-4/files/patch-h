@@ -1,0 +1,21 @@
+--- config/cf/Imake.rules.orig	Wed Mar  8 00:54:17 2000
++++ config/cf/Imake.rules	Wed Apr 12 18:00:00 2000
+@@ -1437,7 +1437,7 @@
+ 	MakeDir(Concat($(DESTDIR),npath/mdir))				@@\
+ 	@MakeFlagsToShellFlags(i,set +e); \				@@\
+ 	if [ -d Concat($(DESTDIR),opath/cdir) ]; then \			@@\
+-	  RELPATH=`echo opath/cdir | \					@@\
++	  RELPATH=`cd opath/cdir; pwd | \				@@\
+ 		sed -e 's:^.::' -e 's:[^/.][^/]*:..:'g`; \		@@\
+ 	  cd Concat($(DESTDIR),opath/cdir); \				@@\
+ 	  if [ -d rdir -a ! -h rdir ]; then \ 				@@\
+@@ -1484,7 +1484,7 @@
+ 	MakeDir(Concat($(DESTDIR),npath))				@@\
+ 	@MakeFlagsToShellFlags(i,set +e); \				@@\
+ 	if [ -d Concat($(DESTDIR),opath) ]; then \			@@\
+-	  RELPATH=`echo opath | \					@@\
++	  RELPATH=`cd opath; pwd | \					@@\
+ 		sed -e 's:^.::' -e 's:[^/.][^/]*:..:'g`; \		@@\
+ 	  cd Concat($(DESTDIR),opath); \				@@\
+ 	  if [ -f lfile -a ! -h lfile ]; then \ 			@@\
+
