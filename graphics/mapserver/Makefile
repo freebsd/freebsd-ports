@@ -7,6 +7,7 @@
 
 PORTNAME=		mapserver
 PORTVERSION=		4.2.3
+PORTREVISION=		1
 CATEGORIES=		graphics www misc
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
@@ -14,7 +15,7 @@ MAINTAINER=		mharo@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
-			proj.4:${PORTSDIR}/graphics/proj
+			proj.5:${PORTSDIR}/graphics/proj
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
