@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
-MAINTAINER=	greg@rosevale.com.au
+MAINTAINER=	ports@FreeBSD.Org
 
 ONLY_FOR_ARCHS=	i386
 
