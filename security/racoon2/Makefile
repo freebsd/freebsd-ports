@@ -7,6 +7,7 @@
 
 PORTNAME=	racoon
 PORTVERSION=	20020507a
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
@@ -37,6 +38,8 @@ pre-configure:
 	(cd ${WRKSRC}/../libipsec; make)
 
 post-install:
+	@${SED} 's@%PREFIX%@${LOCALBASE}@g' ${FILESDIR}/racoon.sh > ${PREFIX}/etc/rc.d/racoon.sh
+	@${CHMOD} +x ${PREFIX}/etc/rc.d/racoon.sh
 	@if [ -z `/sbin/sysctl -a | ${GREP} -q ipsec && echo ipsec` ]; then \
 	    ${ECHO_MSG} "WARNING: IPsec feature is disabled on this host"; \
 	    ${ECHO_MSG} "         You must build the kernel if you want to run racoon on the host"; \
