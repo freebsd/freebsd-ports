@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.311 1999/04/28 06:20:12 asami Exp $
+#	$Id: bsd.port.mk,v 1.312 1999/05/06 12:07:57 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -660,7 +660,7 @@ DO_NADA?=		/usr/bin/true
 # Miscellaneous overridable commands:
 GMAKE?=			gmake
 AUTOCONF?=		autoconf
-LIBTOOL?=		libtool
+LIBTOOL?=		${LOCALBASE}/bin/libtool
 XMKMF?=			xmkmf -a
 .if exists(/sbin/md5)
 MD5?=			/sbin/md5
