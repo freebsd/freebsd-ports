@@ -23,6 +23,9 @@ INSTALL_TARGET=	site-install
 DOCS_EN=	ChangeLog zlib.en.html
 DOCS_JA=	zlib.ja.html
 
+post-patch:
+	${RUBY} -i -pe 'sub /\bNORETURN\b/, ""' ${WRKSRC}/zlib.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/zlib/ja
