@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- lib/Makefile.elf-lib.orig	Sat Jun 23 07:25:59 2001
++++ lib/Makefile.elf-lib	Tue Jul  3 18:57:04 2001
+@@ -39,13 +39,12 @@
+ installdirs:: installdirs-elf-lib
+ 
+ install-shlibs install:: $(ELF_LIB) installdirs-elf-lib
+-	$(INSTALL_PROGRAM) $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
++	$(INSTALL_PROGRAM) $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_SONAME)
++	$(INSTALL_DATA) $(ELF_IMAGE).a $(DESTDIR)$(ELF_INSTALL_DIR)/
+ 	$(STRIP) --strip-debug \
+-		$(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB)
+-	$(LN_S) -f $(ELF_LIB) $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_SONAME)
++		$(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_SONAME)
+ 	$(LN_S) -f $(ELF_INSTALL_DIR)/$(ELF_SONAME) \
+ 		$(DESTDIR)$(libdir)/$(ELF_IMAGE).so
+-	-$(LDCONFIG)
+ 
+ uninstall-shlibs uninstall::
+ 	$(RM) -f $(DESTDIR)$(ELF_INSTALL_DIR)/$(ELF_LIB) \

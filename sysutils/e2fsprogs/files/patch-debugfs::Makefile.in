@@ -1,0 +1,26 @@
+
+$FreeBSD$
+
+--- debugfs/Makefile.in.orig	Sat Jun 23 07:25:59 2001
++++ debugfs/Makefile.in	Tue Jul  3 18:49:18 2001
+@@ -14,7 +14,7 @@
+ PROGS=		debugfs
+ MANPAGES=	debugfs.8
+ 
+-MK_CMDS=	_SS_DIR_OVERRIDE=../lib/ss ../lib/ss/mk_cmds
++MK_CMDS=	mk_cmds
+ 
+ DEBUG_OBJS= debug_cmds.o debugfs.o util.o ncheck.o icheck.o ls.o \
+ 	lsdel.o dump.o setsuper.o logdump.o
+@@ -75,9 +75,9 @@
+ # the Makefile.in file
+ #
+ debug_cmds.o: debug_cmds.c $(top_srcdir)/lib/ss/ss.h \
+- $(top_builddir)/lib/ss/ss_err.h
++
+ debugfs.o: $(srcdir)/debugfs.c $(top_srcdir)/lib/et/com_err.h \
+- $(top_srcdir)/lib/ss/ss.h $(top_builddir)/lib/ss/ss_err.h \
++ $(top_srcdir)/lib/ss/ss.h \
+  $(srcdir)/debugfs.h $(top_srcdir)/lib/ext2fs/ext2_fs.h \
+  $(top_builddir)/lib/ext2fs/ext2_types.h $(top_srcdir)/lib/ext2fs/ext2fs.h \
+  $(top_srcdir)/lib/ext2fs/ext2_io.h $(top_builddir)/lib/ext2fs/ext2_err.h \

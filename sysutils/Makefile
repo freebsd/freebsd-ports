@@ -40,6 +40,7 @@
     SUBDIR += doconfig
     SUBDIR += du2ps
     SUBDIR += dvdtape
+    SUBDIR += e2fsprogs
     SUBDIR += eject
     SUBDIR += extipl
     SUBDIR += fcron
