@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.0p7
+PORTVERSION=	3.0p8
 CATEGORIES=	audio
 MASTER_SITES=	ftp://mud.stack.nl/pub/mp3blaster/ \
 		http://mp3blaster.linuxave.net/src/
@@ -20,6 +20,7 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	"--with-cxxflags=${CXXFLAGS}"
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 
