@@ -1,8 +1,34 @@
 #!/bin/sh
-PID_FILE=/var/run/orion.pid
-if [ -e ${PID_FILE} ]; then
-	echo -n "Orion Server is still running."
-	/bin/kill `cat ${PID_FILE}`
-	rm -f ${PID_FILE}
-	echo " Stopped."
+#
+# This script does the following.
+#
+# * Checks if the Orion PID file exists. If it does, it kills the
+#   Orion process and removes the PID file.
+#
+# * Checks if the 'www' user exists. If it does, then it displays
+#   a message.
+#
+# $FreeBSD$
+#
+
+# Make sure we're in the right stage of the process
+if [ "$2" = "DEINSTALL" ]; then
+	# Kill Orion if it is still running
+	PID_FILE=/var/run/orion.pid
+	if [ -e ${PID_FILE} ]; then
+		echo -n "Orion Server is still running."
+		/bin/kill `cat ${PID_FILE}`
+		rm -f ${PID_FILE}
+		echo " Stopped."
+	fi
 fi
+
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+	# If the user exists, then display a message
+	if pw usershow "www" 2>/dev/null 1>&2; then
+		echo "To delete the www user permanently, use 'pw userdel www'"
+	fi
+fi
+
+exit 0
