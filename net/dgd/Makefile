@@ -6,19 +6,22 @@
 
 DISTNAME=	dgd-1.0.9
 DISTFILES=	${DISTNAME}.tar.gz
-CATEGORIES=	networking
+CATEGORIES=	networking languages
 
-# changed from PATCHFILES so it won't confuse bsd.port.mk
-PATCH_FILES=	1.0.9-1.0.9.1.gz
+MAINTAINER=	adam@veda.is
+
+_PATCHFILES=	1.0.9-1.0.9.1.gz
 .if defined(MASTER_SITE_OVERRIDE)
 PATCHSITE:=	${MASTER_SITE_OVERRIDE}
 .else
 PATCHSITE=	epsilon.me.chalmers.se:
 NCFTPFLAGS=
 .endif
+.if ${_PATCHFILES} != ""
 _PATCH_COOKIE=	${.CURDIR}/work/._patch_done
 PATCHLIST=	${.CURDIR}/work/.patchlist
-PATCHLEVEL=	`tail -1 ${PATCHLIST} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
+PATCHLEVEL=	.`echo ${_PATCHFILES} | sed 's/^.*\.\(.*\)\.gz$$/\1/'`
+.endif
 WRKSRC=		${WRKDIR}/dgd/src
 
 pre-fetch:
@@ -29,7 +32,7 @@ pre-fetch:
         		&& mv ${DISTNAME}.tar.gz ${DISTDIR}; \
 	fi
 .if defined(MASTER_SITE_OVERRIDE)
-	@for file in ${PATCH_FILES}; do \
+	@for file in ${_PATCHFILES}; do \
 		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
 			echo ">> Fetching patch $$file from remote site...";  \
 			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}${DISTNAME}/$$file \
@@ -37,7 +40,7 @@ pre-fetch:
 	    	fi \
 	 done
 .else
-	@for file in ${PATCH_FILES}; do \
+	@for file in ${_PATCHFILES}; do \
 		if [ ! -f ${DISTDIR}/${DISTNAME}/$$file ]; then \
 			echo ">> Fetching patch $$file from remote site...";  \
 			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}patches/$$file \
@@ -49,38 +52,26 @@ pre-fetch:
 # Need to determine whether all author-supplied patches are correctly applied
 ### not yet implemented
 
+.if ${_PATCHFILES} != ""
 pre-patch: ${_PATCH_COOKIE}
 	@find -X ${WRKDIR}/dgd -name '*.orig' -print | xargs rm -f
 
-${PATCHLIST}:
+${_PATCH_COOKIE}:
+	@echo "===>  Updating to ${DISTNAME}${PATCHLEVEL}"
 	@cd ${DISTDIR}/${DISTNAME}; \
-		ls *.[0-9].gz *.[0-9][0-9].gz \
-		2>/dev/null >${PATCHLIST}
-
-${_PATCH_COOKIE}: ${PATCHLIST}
-	@if [ -s ${PATCHLIST} ]; then \
-		echo "===>  Updating to ${DISTNAME}.${PATCHLEVEL}"; \
-		cd ${DISTDIR}/${DISTNAME}; \
-		gzcat `cat ${PATCHLIST}` | patch -d ${WRKDIR} --quiet -E -p0; \
-	fi
-	@touch -f ${_PATCH_COOKIE};
+		gzcat ${_PATCHFILES} | patch -d ${WRKDIR} --quiet -E -p0
+	@touch -f ${_PATCH_COOKIE}
+.endif
 
 do-install:
 	@chown -R mud.mud ${WRKDIR}/dgd
 	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 
-.if !defined(NO_INSTALL)
-do-package:
-	@${MAKE} ${.MAKEFLAGS} NO_INSTALL= package
-.endif
-
 .if !defined(DO_PACKAGE)
-do-package:
-	@echo ".include \"${.CURDIR}/Makefile\"" >${WRKDIR}/Makefile
-	@cd ${WRKDIR}; \
-${MAKE} ${.MAKEFLAGS} WRKDIR=${WRKDIR} PKGDIR=${PKGDIR} DO_PACKAGE= do-package
-	@rm -f ${WRKDIR}/Makefile
+package:
+	@${MAKE} ${.MAKEFLAGS} 'PKG_CMD= WRKDIR=${WRKDIR} ${PKG_CMD}' \
+	    PKGNAME=${DISTNAME}${PATCHLEVEL} NO_INSTALL= DO_PACKAGE= package
 .endif
 
 .include <bsd.port.mk>
