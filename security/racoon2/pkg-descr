@@ -13,6 +13,6 @@ Design choice, not a bug:
 - racoon negotiate IPsec keys only.  It does not negotiate policy.  Policy must
   be configured into the kernel separately from racoon.  If you want to
   support roaming clients, you may need to have a mechanism to put policy
-  for the roaming client after phase 1 finhises.
+  for the roaming client after phase 1 finishes.
 
 WWW: http://www.kame.net/
