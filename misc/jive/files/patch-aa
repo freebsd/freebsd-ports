@@ -1,0 +1,10 @@
+--- Makefile.orig	Fri Apr  5 18:55:29 2002
++++ Makefile	Fri Apr  5 18:55:40 2002
+@@ -1,5 +1,5 @@
+-CC	= gcc
+-CFLAGS	= -O2 -fomit-frame-pointer
++CC	?= cc
++CFLAGS	+= -fomit-frame-pointer
+ LDFLAGS	= -s
+ LEX	= flex
+ LEXLIB	= -lfl
