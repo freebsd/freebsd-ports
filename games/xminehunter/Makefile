@@ -3,13 +3,14 @@
 # Date created:		09 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/10 07:54:03 tg Exp $
+# $Id: Makefile,v 1.2 1997/01/10 12:23:20 asami Exp $
 #
 
 DISTNAME=	xminehunter-0.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@FreeBSD.ORG
 
