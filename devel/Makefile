@@ -403,6 +403,7 @@
     SUBDIR += libglade-java
     SUBDIR += libglade2
     SUBDIR += libglademm
+    SUBDIR += libglademm24
     SUBDIR += libgnugetopt
     SUBDIR += libgsf
     SUBDIR += libgsf-gnome
