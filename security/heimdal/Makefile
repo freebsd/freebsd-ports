@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=		heimdal-0.2l
+DISTNAME=		heimdal-0.2p
 CATEGORIES=		security ipv6
 MASTER_SITES=		ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 			ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
