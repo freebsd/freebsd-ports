@@ -8,7 +8,7 @@
 PORTNAME=	xwpl
 PORTVERSION=	1.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://pascal.math.yale.edu/pub/wavelets/software/xwpl/other-versions/
+MASTER_SITES=	# no longer available
 DISTNAME=	${PKGNAME}-freebsd
 
 MAINTAINER=	ports@FreeBSD.org
