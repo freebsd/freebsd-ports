@@ -150,6 +150,7 @@
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
     SUBDIR += wolfpack
+    SUBDIR += wordplay
     SUBDIR += x3eyes
     SUBDIR += xabacus
     SUBDIR += xasteroids
