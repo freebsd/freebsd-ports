@@ -35,6 +35,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 ENABLE_IPv6=	--enable-ipv6
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/${RAT} ${PREFIX}/bin/${RAT}
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/${RAT}-ui ${PREFIX}/bin/${RAT}-ui
