@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -64,8 +64,13 @@ MAN8=	snort.8
 DOCS=	ChangeLog doc/AUTHORS doc/BUGS doc/CREDITS doc/FAQ doc/NEWS \
 	doc/README* doc/TODO doc/USAGE doc/snort_manual.pdf
 
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
 post-patch:
 	${REINPLACE_CMD} "s,%%PREFIX%%,${PREFIX}," ${WRKSRC}/src/snort.c
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/snort.sh > ${WRKDIR}/snort.sh
 
 pre-configure:
 	@${ECHO} ""
@@ -85,7 +90,7 @@ post-install:
 		${DATADIR}/reference.config-sample
 	[ -f ${DATADIR}/reference.config ] ||  \
 	    ${CP} ${DATADIR}/reference.config-sample ${DATADIR}/reference.config
-	${INSTALL_DATA} ${FILESDIR}/snort.sh.sample ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/snort.sh ${PREFIX}/etc/rc.d/snort.sh
 .for f in snort.conf unicode.map threshold.conf
 	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
 	[ -f ${PREFIX}/etc/${f} ] || \
@@ -95,5 +100,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

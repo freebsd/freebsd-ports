@@ -1,0 +1,16 @@
+         ***********************************
+         * !!!!!!!!!!! WARNING !!!!!!!!!!! *
+         ***********************************
+
+snort now uses rcNG startup scripts and must be enabled via /etc/rc.conf
+
+Available variables:
+
+  snort_enable (bool):		Set to YES to enable snort
+  				Default: NO
+  snort_flags (str):		Extra flags passed to snort
+ 				Default: -Dq
+  snort_interface (str):	Network interface to sniff
+ 				Default: ""
+  snort_conf (str):		Snort configuration file
+ 				Default: ${PREFIX}/etc/snort.conf

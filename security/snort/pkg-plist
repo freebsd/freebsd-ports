@@ -9,7 +9,7 @@ etc/unicode.map-sample
 @unexec if [ -f %D/etc/threshold.conf ] && cmp -s %D/etc/threshold.conf %D/etc/threshold.conf-sample; then rm -f %D/etc/threshold.conf; fi
 etc/threshold.conf-sample
 @exec [ -f %B/threshold.conf ] || cp %B/%f %B/threshold.conf
-etc/rc.d/snort.sh.sample
+etc/rc.d/snort.sh
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
@@ -24,6 +24,7 @@ etc/rc.d/snort.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.alert_order
 %%PORTDOCS%%%%DOCSDIR%%/README.csv
 %%PORTDOCS%%%%DOCSDIR%%/README.database
+%%PORTDOCS%%%%DOCSDIR%%/README.event_queue
 %%PORTDOCS%%%%DOCSDIR%%/README.flow
 %%PORTDOCS%%%%DOCSDIR%%/README.flowbits
 %%PORTDOCS%%%%DOCSDIR%%/README.flow-portscan
