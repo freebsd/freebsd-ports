@@ -29,8 +29,8 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/doc/l2tp-secrets.5 ${PREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/l2tpd.conf.5 ${PREFIX}/man/man5
-	${MKDIR} ${PREFIX}/etc/l2tpd
-	${INSTALL_DATA} ${WRKSRC}/doc/l2tpd.conf.sample ${PREFIX}/etc/l2tpd
-	${INSTALL_DATA} ${WRKSRC}/doc/l2tp-secrets.sample ${PREFIX}/etc/l2tpd
+	${MKDIR} ${PREFIX}/etc/l2tp
+	${INSTALL_DATA} ${WRKSRC}/doc/l2tpd.conf.sample ${PREFIX}/etc/l2tp
+	${INSTALL_DATA} ${WRKSRC}/doc/l2tp-secrets.sample ${PREFIX}/etc/l2tp
 
 .include <bsd.port.mk>

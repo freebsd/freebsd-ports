@@ -11,9 +11,9 @@ $FreeBSD$
 -#define ALT_DEFAULT_AUTH_FILE "/etc/l2tpd/l2tp-secrets"
 -#define DEFAULT_CONFIG_FILE "/etc/l2tp/l2tpd.conf"
 -#define ALT_DEFAULT_CONFIG_FILE "/etc/l2tpd/l2tpd.conf"
-+#define DEFAULT_AUTH_FILE (PREFIX "/etc/l2tpd/l2tp-secrets")
++#define DEFAULT_AUTH_FILE (PREFIX "/etc/l2tp/l2tp-secrets")
 +#define ALT_DEFAULT_AUTH_FILE (PREFIX "/etc/l2tpd/l2tp-secrets")
-+#define DEFAULT_CONFIG_FILE (PREFIX "/etc/l2tpd/l2tpd.conf")
++#define DEFAULT_CONFIG_FILE (PREFIX "/etc/l2tp/l2tpd.conf")
 +#define ALT_DEFAULT_CONFIG_FILE (PREFIX "/etc/l2tpd/l2tpd.conf")
  #define DEFAULT_PID_FILE "/var/run/l2tpd.pid"
  

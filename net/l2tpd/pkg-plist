@@ -1,6 +1,6 @@
 bin/l2tpd
-etc/l2tpd/l2tp-secrets.sample
-etc/l2tpd/l2tpd.conf.sample
+etc/l2tp/l2tp-secrets.sample
+etc/l2tp/l2tpd.conf.sample
 share/doc/l2tpd/README
 @dirrm share/doc/l2tpd
-@dirrm etc/l2tpd
+@dirrm etc/l2tp
