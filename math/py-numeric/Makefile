@@ -18,6 +18,8 @@ MAINTAINER=	tg@FreeBSD.org
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+PYSETUP=	setup_all.py
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
@@ -30,13 +32,6 @@ pre-fetch:
 	@${ECHO} "Please use the py-numeric17 port for these."
 	@${FALSE}
 .endif
-
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py build
-
-do-install:
-	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py install
 
 post-install:
 	@${MKDIR} ${EXAMPLEDIR}

@@ -16,19 +16,11 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
-
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 
 DOCDIR=		${PREFIX}/share/doc/py-mx
 MXHDRDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/mx/stdlib
-
-do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)
-
-do-install:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install \
-	--prefix=${PREFIX})
 
 post-install:
 	@${MKDIR} ${DOCDIR}
