@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	octave-2.0.14
+DISTNAME=	octave-2.0.15
 CATEGORIES=	math
 #MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/ \
@@ -24,7 +24,7 @@ GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 .else
 GNU_HOST=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
-OCTAVE_VERSION=	2.0.14
+OCTAVE_VERSION=	2.0.15
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 
 USE_GMAKE=	yes

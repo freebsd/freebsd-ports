@@ -296,7 +296,6 @@ share/octave/%%OCTAVE_VERSION%%/m/general/is_symmetric.m
 share/octave/%%OCTAVE_VERSION%%/m/general/is_vector.m
 share/octave/%%OCTAVE_VERSION%%/m/general/isempty.m
 share/octave/%%OCTAVE_VERSION%%/m/general/length.m
-share/octave/%%OCTAVE_VERSION%%/m/general/linspace.m
 share/octave/%%OCTAVE_VERSION%%/m/general/logspace.m
 share/octave/%%OCTAVE_VERSION%%/m/general/nargchk.m
 share/octave/%%OCTAVE_VERSION%%/m/general/nextpow2.m
@@ -339,7 +338,6 @@ share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/kron.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/norm.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/null.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/orth.m
-share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/pinv.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/qzhess.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/rank.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/trace.m
@@ -356,6 +354,7 @@ share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/is_leap_year.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/list_primes.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/menu.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/paren.m
+share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/pack.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/path.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/popen2.m
 share/octave/%%OCTAVE_VERSION%%/m/miscellaneous/semicolon.m
