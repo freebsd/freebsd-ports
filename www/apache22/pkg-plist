@@ -21,6 +21,7 @@ include/apache21/ap_listen.h
 include/apache21/ap_mmn.h
 include/apache21/ap_mpm.h
 include/apache21/ap_provider.h
+include/apache21/ap_regex.h
 include/apache21/ap_regkey.h
 include/apache21/ap_release.h
 %%APR_PORTS%%include/apr-1/apr.h
@@ -45,6 +46,7 @@ include/apache21/ap_release.h
 %%APR_PORTS%%include/apr-1/apr_inherit.h
 %%APR_PORTS%%include/apr-1/apr_ldap.h
 %%APR_PORTS%%include/apr-1/apr_ldap_init.h
+%%APR_PORTS%%include/apr-1/apr_ldap_option.h
 %%APR_PORTS%%include/apr-1/apr_ldap_url.h
 %%APR_PORTS%%include/apr-1/apr_lib.h
 %%APR_PORTS%%include/apr-1/apr_md4.h
@@ -111,8 +113,6 @@ include/apache21/mpm.h
 include/apache21/mpm_common.h
 include/apache21/mpm_default.h
 include/apache21/os.h
-include/apache21/pcre.h
-include/apache21/pcreposix.h
 %%WORKER%%include/apache21/pod.h
 include/apache21/scoreboard.h
 include/apache21/unixd.h
@@ -131,10 +131,10 @@ include/apache21/util_xml.h
 %%APR_PORTS%%lib/aprutil.exp
 %%APR_PORTS%%lib/libapr-1.a
 %%APR_PORTS%%lib/libapr-1.so
-%%APR_PORTS%%lib/libapr-1.so.0
+%%APR_PORTS%%lib/libapr-1.so.1
 %%APR_PORTS%%lib/libaprutil-1.a
 %%APR_PORTS%%lib/libaprutil-1.so
-%%APR_PORTS%%lib/libaprutil-1.so.0
+%%APR_PORTS%%lib/libaprutil-1.so.1
 libexec/apache21/httpd.exp
 %%MOD_ACTIONS%%libexec/apache21/mod_actions.so
 %%MOD_ALIAS%%libexec/apache21/mod_alias.so
