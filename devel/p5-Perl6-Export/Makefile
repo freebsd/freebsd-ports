@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DC/DCONWAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ychsiao@ychsiao.idv.tw
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Implements the Perl 6 'is export(...)' trait
 
 BUILD_DEPENDS=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple

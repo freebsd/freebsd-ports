@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	ychsiao@ychsiao.idv.tw
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Allows you to limit the number of simultaneous connexions
 
 LATEST_LINK=	mod_limitipconn2
