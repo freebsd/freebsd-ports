@@ -46,8 +46,9 @@ CXX=		icpc
 CFLAGS=		-O -ip -axiMKW
 CXXFLAGS=	${CFLAGS}
 .else
-CFLAGS=
-CXXFLAGS=
+# There's segfault on -current if you use non default CFLAGS.
+CFLAGS=		-O -pipe
+CXXFLAGS=	${CFLAGS}
 .endif
 
 .if ${COMPILER} == gcc && ${OSVERSION} < 460000
