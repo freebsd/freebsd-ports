@@ -27,5 +27,7 @@ MAN1=		sagasu.1
 post-patch:
 	@${REINPLACE_CMD} -e 's|[(]datadir[)]/doc/$$(PACKAGE)-$$(VERSION)|(prefix)/share/doc/$$(PACKAGE)|g' \
 		${WRKSRC}/Makefile.in
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-D.*_DISABLE_DEPRECATED||g'
 
 .include <bsd.port.mk>
