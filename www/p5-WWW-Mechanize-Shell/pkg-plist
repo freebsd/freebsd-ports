@@ -1,27 +1,30 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell/.packlist
 %%SITE_PERL%%/HTML/Display.pm
-%%SITE_PERL%%/HTML/Display/Opera.pm
-%%SITE_PERL%%/HTML/Display/Mozilla.pm
+%%SITE_PERL%%/HTML/Display/Common.pm
+%%SITE_PERL%%/HTML/Display/Debian.pm
 %%SITE_PERL%%/HTML/Display/Dump.pm
+%%SITE_PERL%%/HTML/Display/Galeon.pm
+%%SITE_PERL%%/HTML/Display/Mozilla.pm
+%%SITE_PERL%%/HTML/Display/OSX.pm
+%%SITE_PERL%%/HTML/Display/OSX/Camino.pm
+%%SITE_PERL%%/HTML/Display/OSX/Safari.pm
+%%SITE_PERL%%/HTML/Display/Opera.pm
 %%SITE_PERL%%/HTML/Display/Phoenix.pm
 %%SITE_PERL%%/HTML/Display/TempFile.pm
-%%SITE_PERL%%/HTML/Display/Debian.pm
-%%SITE_PERL%%/HTML/Display/Galeon.pm
 %%SITE_PERL%%/HTML/Display/Win32.pm
-%%SITE_PERL%%/HTML/Display/Common.pm
-%%SITE_PERL%%/HTML/Display/OSX.pm
-%%SITE_PERL%%/HTML/Display/OSX/Safari.pm
-%%SITE_PERL%%/HTML/Display/OSX/Camino.pm
 %%SITE_PERL%%/HTML/Display/Win32/IE.pm
 %%SITE_PERL%%/HTML/Display/Win32/OLE.pm
 %%SITE_PERL%%/WWW/Mechanize/Shell.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell/.packlist
+%%PORTDOCS%%%%EXAMPLESDIR%%/banking.postbank.de.mech
+%%PORTDOCS%%%%EXAMPLESDIR%%/hotmail.signup.mech
+%%PORTDOCS%%%%EXAMPLESDIR%%/wwwshell.pl
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/Shell
-@dirrm %%SITE_PERL%%/HTML/Display/OSX
-@dirrm %%SITE_PERL%%/HTML/Display/Win32
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML/Display 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/WWW/Mechanize 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML/Display/Win32 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML/Display/OSX 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML/Display 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/HTML 2>/dev/null || true
