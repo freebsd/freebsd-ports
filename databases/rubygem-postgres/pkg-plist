@@ -1,15 +1,15 @@
-lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/postgres.so
-share/examples/ruby/postgres/losample.rb
-share/examples/ruby/postgres/psql.rb
-share/examples/ruby/postgres/psqlHelp.rb
-share/examples/ruby/postgres/test1.rb
-share/examples/ruby/postgres/test2.rb
-share/examples/ruby/postgres/test4.rb
-@dirrm share/examples/ruby/postgres
-share/doc/ruby/postgres/ChangeLog
-share/doc/ruby/postgres/README
-share/doc/ruby/postgres/postgres.html
-share/doc/ruby/postgres/ja/README.jp
-share/doc/ruby/postgres/ja/postgres.jp.html
-@dirrm share/doc/ruby/postgres/ja
-@dirrm share/doc/ruby/postgres
+%%RUBY_SITEARCHLIBDIR%%/postgres.so
+%%RUBY_EXAMPLESDIR%%/postgres/losample.rb
+%%RUBY_EXAMPLESDIR%%/postgres/psql.rb
+%%RUBY_EXAMPLESDIR%%/postgres/psqlHelp.rb
+%%RUBY_EXAMPLESDIR%%/postgres/test1.rb
+%%RUBY_EXAMPLESDIR%%/postgres/test2.rb
+%%RUBY_EXAMPLESDIR%%/postgres/test4.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/postgres
+%%RUBY_DOCDIR%%/postgres/ChangeLog
+%%RUBY_DOCDIR%%/postgres/README
+%%RUBY_DOCDIR%%/postgres/postgres.html
+%%RUBY_DOCDIR%%/postgres/ja/README.jp
+%%RUBY_DOCDIR%%/postgres/ja/postgres.jp.html
+@dirrm %%RUBY_DOCDIR%%/postgres/ja
+@dirrm %%RUBY_DOCDIR%%/postgres

@@ -1,23 +1,23 @@
-lib/ruby/site_ruby/date2.rb
-lib/ruby/site_ruby/date3.rb
-lib/ruby/site_ruby/holiday.rb
-lib/ruby/site_ruby/odate.rb
-lib/ruby/site_ruby/parsedate2.rb
-lib/ruby/site_ruby/parsedate2.ry
-lib/ruby/site_ruby/parsedate3.rb
-lib/ruby/site_ruby/qholiday.rb
-lib/ruby/site_ruby/strftime.rb
-lib/ruby/site_ruby/strptime.rb
-share/examples/ruby/date2/cal.rb
-share/examples/ruby/date2/daylight.rb
-share/examples/ruby/date2/goodfriday.rb
-share/examples/ruby/date2/ja/ncal.rb
-@dirrm share/examples/ruby/date2/ja
-@dirrm share/examples/ruby/date2
-share/doc/ruby/date2/CHANGES.en
-share/doc/ruby/date2/MANUAL.en
-share/doc/ruby/date2/README.en
-share/doc/ruby/date2/ja/MANUAL
-share/doc/ruby/date2/ja/README
-@dirrm share/doc/ruby/date2/ja
-@dirrm share/doc/ruby/date2
+%%RUBY_SITELIBDIR%%/date2.rb
+%%RUBY_SITELIBDIR%%/date3.rb
+%%RUBY_SITELIBDIR%%/holiday.rb
+%%RUBY_SITELIBDIR%%/odate.rb
+%%RUBY_SITELIBDIR%%/parsedate2.rb
+%%RUBY_SITELIBDIR%%/parsedate2.ry
+%%RUBY_SITELIBDIR%%/parsedate3.rb
+%%RUBY_SITELIBDIR%%/qholiday.rb
+%%RUBY_SITELIBDIR%%/strftime.rb
+%%RUBY_SITELIBDIR%%/strptime.rb
+%%RUBY_EXAMPLESDIR%%/date2/cal.rb
+%%RUBY_EXAMPLESDIR%%/date2/daylight.rb
+%%RUBY_EXAMPLESDIR%%/date2/goodfriday.rb
+%%RUBY_EXAMPLESDIR%%/date2/ja/ncal.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/date2/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/date2
+%%RUBY_DOCDIR%%/date2/CHANGES.en
+%%RUBY_DOCDIR%%/date2/MANUAL.en
+%%RUBY_DOCDIR%%/date2/README.en
+%%RUBY_DOCDIR%%/date2/ja/MANUAL
+%%RUBY_DOCDIR%%/date2/ja/README
+@dirrm %%RUBY_DOCDIR%%/date2/ja
+@dirrm %%RUBY_DOCDIR%%/date2
