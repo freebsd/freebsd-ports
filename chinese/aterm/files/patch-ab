@@ -1,26 +1,29 @@
---- src/state.h.orig	Mon Apr 26 01:49:05 1999
-+++ src/state.h	Mon Apr 26 01:49:05 1999
-@@ -0,0 +1,23 @@
-+/*
-+	Copyright (C) 1994	Edward Der-Hua Liu, Hsin-Chu, Taiwan
-+*/
-+
-+typedef struct {
-+	char  kb_state;
-+        char _CurInMethod;
-+} InmdState;
-+
-+#define EngChiMask (1)
-+#define HalfFullMask (2)
-+
-+typedef struct {
-+	int len;
-+	int status;
-+	InmdState inmdstate;
-+	char tkey[512];
-+} XCIN_RES;
-+
-+#define EngChi ((inmdstate.kb_state & EngChiMask) ? 1:0)
-+#define HalfFull ((inmdstate.kb_state & HalfFullMask) ? 1:0)
-+#define CurInMethod (inmdstate._CurInMethod)
-+/* extern InmdState inmdstate; */
+--- src/command.c.orig	Mon May 10 13:06:58 1999
++++ src/command.c	Mon May 10 13:09:27 1999
+@@ -2069,11 +2069,17 @@
+     static int      bypass_keystate = 0;
+     int             reportmode;
+     static int      csrO = 0;	/* Hops - csr offset in thumb/slider      */
++    int k_status;
++    char kbuf[256];
+ 
+ /*        to give proper Scroll behaviour */
+     switch (ev->type) {
+     case KeyPress:
+-	lookup_key(ev);
++	k_status = send_key(Xdisplay, TermWin.parent, &ev->xkey, kbuf);
++	if(!k_status)
++	    lookup_key(ev);
++	else if(kbuf[0])
++	    tt_write(kbuf, strlen(kbuf));
+ 	break;
+ 
+     case ClientMessage:
+@@ -2138,6 +2144,7 @@
+ 
+     case FocusIn:
+ 	if (!TermWin.focus) {
++	    send_FocusIn(Xdisplay, TermWin.parent);
+ 	    TermWin.focus = 1;
+ #ifdef OFF_FOCUS_FADING
+ 	    if( rs_fade != NULL )

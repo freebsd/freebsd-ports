@@ -1,13 +1,13 @@
 # New ports collection makefile for:   zh-aterm
-# Version required:	0.3.4
+# Version required:	0.3.5
 # Date created:		26 April 1999
 # Whom:			Chia-Hsing Yu <davidyu@ken.csie.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/01 13:47:14 steve Exp $
+# $Id: Makefile,v 1.2 1999/05/07 05:05:31 foxfair Exp $
 #
 
-DISTNAME=	aterm-0.3.4
-PKGNAME=	zh-aterm-0.3.4
+DISTNAME=	aterm-0.3.5
+PKGNAME=	zh-aterm-0.3.5
 CATEGORIES=	chinese
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 		http://www.tigr.net/afterstep/as-apps/download/aterm/	\
@@ -15,12 +15,20 @@ MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 
 MAINTAINER=	davidyu@ken.csie.ntu.edu.tw
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.3:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-transparency --enable-background-image \
-		--disable-delete-key --disable-backspace-key --enable-big5
+		--disable-delete-key --disable-backspace-key \
+		--enable-fading --enable-utmp --enable-wtmp --enable-big5
 MAN1=		aterm.1
 
+post-patch:
+	${CP} ${FILESDIR}/cli_xcin.c ${WRKSRC}/src/
+	${CP} ${FILESDIR}/state.h ${WRKSRC}/src/
+	${CP} ${FILESDIR}/protocol.h ${WRKSRC}/src/
+	
 .include <bsd.port.mk>
