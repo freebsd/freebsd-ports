@@ -23,6 +23,8 @@ USE_OPENSSL=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -39,4 +41,4 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" ${WRKSRC}/default.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
