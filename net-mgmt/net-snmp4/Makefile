@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF_VER=213
 USE_REINPLACE=	yes
@@ -65,6 +65,9 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
+.endif
+.if ${OSVERSION} >= 500100
+IGNORE=		Broken with latest OpenSSL suite
 .endif
 
 SHLIB_VERSION=	4
