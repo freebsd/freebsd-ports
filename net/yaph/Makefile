@@ -13,11 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mycroft@virgaria.org
 COMMENT=	Yaph is a proxy scanner
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 USE_REINPLACE=	yes
 
 post-extract:
