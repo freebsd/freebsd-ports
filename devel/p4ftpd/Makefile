@@ -20,6 +20,8 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	marshall@chezmarshall.com
 COMMENT=	Perforce client and server
 
+BROKEN=		"Size mismatch"
+
 #
 # This is a kludge.  I don't know a better way to set PORTVERSION and
 # PORTREVISION such that pkg_version figures out an update is needed
