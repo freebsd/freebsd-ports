@@ -1,5 +1,5 @@
 *** Makefile.orig	Sun Jul  2 21:47:44 1995
---- Makefile	Tue Jul  4 04:20:10 1995
+--- Makefile	Sun Aug 20 02:25:56 1995
 ***************
 *** 32,38 ****
   MAN_DIR = $(PREFIX)/man
@@ -38,6 +38,23 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
+***************
+*** 122,128 ****
+  AUDIODIR_linux=PCux/
+  CONFIG_linux = PCux/linux_
+  
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
+--- 124,130 ----
+  AUDIODIR_linux=PCux/
+  CONFIG_linux = PCux/linux_
+  
+! CFLAGS_freebsd = -O2 -fno-strength-reduce -funroll-loops -finline-functions
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
 ***************
 *** 161,169 ****
   prefs.o autoinit.o ${UI}ui.o display.o empty.o color.o version.o
