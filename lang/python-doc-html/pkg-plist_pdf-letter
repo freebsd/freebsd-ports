@@ -1,10 +1,10 @@
-share/doc/python/api.pdf
-share/doc/python/dist.pdf
-share/doc/python/doc.pdf
-share/doc/python/ext.pdf
-share/doc/python/inst.pdf
-share/doc/python/lib.pdf
-share/doc/python/mac.pdf
-share/doc/python/ref.pdf
-share/doc/python/tut.pdf
-@unexec rmdir %D/share/doc/python 2>/dev/null || true
+share/doc/%%PYTHON_VERSION%%/api.pdf
+share/doc/%%PYTHON_VERSION%%/dist.pdf
+share/doc/%%PYTHON_VERSION%%/doc.pdf
+share/doc/%%PYTHON_VERSION%%/ext.pdf
+share/doc/%%PYTHON_VERSION%%/inst.pdf
+share/doc/%%PYTHON_VERSION%%/lib.pdf
+share/doc/%%PYTHON_VERSION%%/mac.pdf
+share/doc/%%PYTHON_VERSION%%/ref.pdf
+share/doc/%%PYTHON_VERSION%%/tut.pdf
+@unexec rmdir %D/share/doc/%%PYTHON_VERSION%% 2>/dev/null || true

@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 PLIST=		${PKGDIR}/pkg-plist_${DOCFORMAT}
 
-DOCDIR=		${PREFIX}/share/doc/python
+DOCDIR=		${PREFIX}/share/doc/${PYTHON_VERSION}
 
 DOCFORMAT?=	html
 
