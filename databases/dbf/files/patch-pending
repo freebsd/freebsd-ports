@@ -1,0 +1,888 @@
+This patch was submitted to the dbf project at SourceForge.net.
+Hopefully, their next release will include these hunks.
+
+	-mi
+
+--- an_string.c	Thu May  8 14:53:15 2003
++++ an_string.c	Wed Aug 20 14:57:14 2003
+@@ -17,19 +17,28 @@
+  ************************************************************************************/
+  
++#include <assert.h>
+ #include "an_string.h"
+ 
+  /* * * * TRIM_SPACES 
+- * removes sequently spaces in a string (most time two and more) */
+-void trim_spaces (char *q, char *p)
++ * removes sequently spaces in a string (most time two and more)
++ * returns the address of the character following the last in the
++ * new string */
++unsigned char *
++trim_spaces(unsigned char *q, const unsigned char *p, size_t len)
+ {					
+-	unsigned int i;
+-	
+-	for(i=0; i < strlen(p); i++) {		
+-		if( *(p+i) != ' ')
+-			*q++ = *(p+i);
+-		if( *(p+(i-1)) != ' ' && *(p+i) == ' ' && *(p+(i+1)) != ' ') 
+-			*q++ = *(p+i);									
+-	}
++	size_t i;
++
++	assert(len > 0);
+ 	
++	if (p[0] != ' ')
++		*q++ = p[0];
++	len--;
++	for(i=1; i < len; i++)
++		if (p[i] != ' ' || p[i-1] != ' ' && p[i+1] != ' ')
++			*q++ = p[i];
++
++	if (p[i] != ' ')
++		*q++ = p[i];
++	return q;
+ }
+ 
+@@ -37,11 +46,12 @@
+  * we use this function to get the number of umlauts in
+  * the string and decide if we have to convert or not */
+-int countumlauts (char *src) {
++int
++countumlauts (const char *src)
++{
+ 	int count;
+-	int unsigned i;
+ 	count = 0;
+-	for(i=0; i < strlen(src); i++) {
+-		printf("%c\n",*(src+i));
+-    	switch(*(src+i)) {
++	for(; *src; src++) {
++		printf("%c\n", *src);
++    	switch(*src) {
+       	case '\341':
+ 			printf("ß gefunden\n");
+@@ -67,5 +77,6 @@
+ /* * * * CONVUML
+  * converts german special chars into standard chars */
+-void convuml (char *dest, char *src)
++void
++convuml(char *dest, const char *src)
+ {	
+ 	while(*src != '\0') {
+--- an_string.h	Thu May  8 14:53:15 2003
++++ an_string.h	Wed Aug 20 14:20:02 2003
+@@ -24,7 +24,7 @@
+ #include <string.h>
+ 
+-void trim_spaces (char *q, char *p);
+-int countumlauts (char *src);
+-void convuml (char *dest, char *src);
++unsigned char * trim_spaces (unsigned char *dest, const unsigned char *src, size_t srclen);
++int countumlauts (const char *src);
++void convuml (char *dest, const char *src);
+ 
+ #endif
+--- codepages.c	Thu May  8 14:53:15 2003
++++ codepages.c	Wed Aug 20 14:13:50 2003
+@@ -24,117 +24,117 @@
+ void cp850convert (unsigned char *src)
+ {
+-	int unsigned i;
+-	for(i=0; i < strlen(src); i++) {
+-		switch(*(src+i)) {
++
++	while (*src) {
++		switch(*src++) {
+ 		case 0xE4:
+-			*(src+i) = (unsigned char)228;	/*auml (GER)*/
++			*src = (unsigned char)228;	/*auml (GER)*/
+ 			break;
+ 		case 0xC4:
+-			*(src+i) = (unsigned char)196;	/*Auml (GER)*/
++			*src = (unsigned char)196;	/*Auml (GER)*/
+ 			break;			
+ 		case 0xF6:
+-			*(src+i) = (unsigned char)246;	/*ouml (GER)*/
++			*src = (unsigned char)246;	/*ouml (GER)*/
+ 			break;
+ 		case 0xD6:
+-			*(src+i) = (unsigned char)214;	/*Ouml (GER)*/
++			*src = (unsigned char)214;	/*Ouml (GER)*/
+ 			break;			
+ 		case 0xFC:
+-			*(src+i) = (unsigned char)252;	/*uuml (GER)*/
++			*src = (unsigned char)252;	/*uuml (GER)*/
+ 			break;	 
+ 		case 0xDC:
+-			*(src+i) = (unsigned char)220;	/*Uuml (GER)*/
++			*src = (unsigned char)220;	/*Uuml (GER)*/
+ 			break;	
+ 		case 0xDF:
+-			*(src+i) = (unsigned char)223;	/*szlig (GER)*/
++			*src = (unsigned char)223;	/*szlig (GER)*/
+ 			break;	
+ 		case 0xE9:
+-			*(src+i) = (unsigned char)233;	/*eacute (FR)*/
++			*src = (unsigned char)233;	/*eacute (FR)*/
+ 			break;
+ 		case 0xE2:
+-			*(src+i) = (unsigned char)226;	/*acirc (FR)*/
++			*src = (unsigned char)226;	/*acirc (FR)*/
+ 			break;			
+ 		case 0xE0:
+-			*(src+i) = (unsigned char)233;	/*agrave (FR)*/
++			*src = (unsigned char)233;	/*agrave (FR)*/
+ 			break;	
+ 		case 0xEA:
+-			*(src+i) = (unsigned char)234;	/*ecirc (FR)*/
++			*src = (unsigned char)234;	/*ecirc (FR)*/
+ 			break;	
+ 		case 0xE8:
+-			*(src+i) = (unsigned char)232;	/*egrave (FR)*/
++			*src = (unsigned char)232;	/*egrave (FR)*/
+ 			break;	
+ 		case 0xEE:
+-			*(src+i) = (unsigned char)238;	/*icirc	(FR)*/
++			*src = (unsigned char)238;	/*icirc	(FR)*/
+ 			break;	
+ 		case 0xEC:
+-			*(src+i) = (unsigned char)236;	/*igrave (FR)*/
++			*src = (unsigned char)236;	/*igrave (FR)*/
+ 			break;	
+ 		case 0xC9:
+-			*(src+i) = (unsigned char)201;	/*Eacute (FR)*/
++			*src = (unsigned char)201;	/*Eacute (FR)*/
+ 			break;	
+ 		case 0xF4:
+-			*(src+i) = (unsigned char)244; /*ocirc (FR)*/
++			*src = (unsigned char)244; /*ocirc (FR)*/
+ 			break;	
+ 		case 0xF2:
+-			*(src+i) = (unsigned char)242;	/*ograve (FR)*/
++			*src = (unsigned char)242;	/*ograve (FR)*/
+ 			break;	
+ 		case 0xFB:
+-			*(src+i) = (unsigned char)251;	/*ucirc (FR)*/
++			*src = (unsigned char)251;	/*ucirc (FR)*/
+ 			break;	
+ 		case 0xF9:
+-			*(src+i) = (unsigned char)249;	/*ugrave (FR)*/
++			*src = (unsigned char)249;	/*ugrave (FR)*/
+ 			break;	
+ 		case 0xE1:
+-			*(src+i) = (unsigned char)225;	/*aacute (FR)*/
++			*src = (unsigned char)225;	/*aacute (FR)*/
+ 			break;	
+ 		case 0xED:
+-			*(src+i) = (unsigned char)237;	/*iacute (FR)*/
++			*src = (unsigned char)237;	/*iacute (FR)*/
+ 			break;	
+ 		case 0xF3:
+-			*(src+i) = (unsigned char)243;	/*oacute (FR)*/
++			*src = (unsigned char)243;	/*oacute (FR)*/
+ 			break;	
+ 		case 0xFA:
+-			*(src+i) = (unsigned char)250;	/*uacute (FR)*/
++			*src = (unsigned char)250;	/*uacute (FR)*/
+ 			break;	
+ 		case 0xC1:
+-			*(src+i) = (unsigned char)193;	/*Aacute (FR)*/
++			*src = (unsigned char)193;	/*Aacute (FR)*/
+ 			break;		
+ 		case 0xC2:
+-			*(src+i) = (unsigned char)194;	/*Acirc (FR)*/
++			*src = (unsigned char)194;	/*Acirc (FR)*/
+ 			break;		
+ 		case 0xc0:
+-			*(src+i) = (unsigned char)192;	/*Agrave (FR)*/
++			*src = (unsigned char)192;	/*Agrave (FR)*/
+ 			break;		
+ 		case 0xCA:
+-			*(src+i) = (unsigned char)202;	/*Ecirc (FR)*/
++			*src = (unsigned char)202;	/*Ecirc (FR)*/
+ 			break;		
+ 		case 0xC8:
+-			*(src+i) = (unsigned char)200;	/*Egrave (FR)*/
++			*src = (unsigned char)200;	/*Egrave (FR)*/
+ 			break;		
+ 		case 0xCD:
+-			*(src+i) = (unsigned char)205;	/*Iacute (FR)*/
++			*src = (unsigned char)205;	/*Iacute (FR)*/
+ 			break;		
+ 		case 0xCE:
+-			*(src+i) = (unsigned char)206;	/*Icirc (FR)*/
++			*src = (unsigned char)206;	/*Icirc (FR)*/
+ 			break;		
+ 		case 0xCC:
+-			*(src+i) = (unsigned char)204;	/*Igrave (FR)*/
++			*src = (unsigned char)204;	/*Igrave (FR)*/
+ 			break;	
+ 		case 0xD3:
+-			*(src+i) = (unsigned char)211;	/*Oacute (FR)*/
++			*src = (unsigned char)211;	/*Oacute (FR)*/
+ 			break;			
+ 		case 0xD4:
+-			*(src+i) = (unsigned char)212;	/*Ocirc (FR)*/
++			*src = (unsigned char)212;	/*Ocirc (FR)*/
+ 			break;		
+ 		case 0xD2:
+-			*(src+i) = (unsigned char)210;	/*Ograve (FR)*/
++			*src = (unsigned char)210;	/*Ograve (FR)*/
+ 			break;		
+ 		case 0xDA:
+-			*(src+i) = (unsigned char)218;	/*Uacute (FR)*/
++			*src = (unsigned char)218;	/*Uacute (FR)*/
+ 			break;		
+ 		case 0xDB:
+-			*(src+i) = (unsigned char)219;	/*Ucirc (FR)*/
++			*src = (unsigned char)219;	/*Ucirc (FR)*/
+ 			break;		
+ 		case 0xD9:
+-			*(src+i) = (unsigned char)217;	/*Ugrave (FR)*/
++			*src = (unsigned char)217;	/*Ugrave (FR)*/
+ 			break;		
+ 		}	
+@@ -145,117 +145,117 @@
+ void ASCIInumbers (unsigned char *src)
+ {
+-	int unsigned i;
+-	for(i=0; i < strlen(src); i++) {
+-		switch(*(src+i)) {
++
++	while (*src) {
++		switch(*src++) {
+ 		case 0x84:
+-			*(src+i) = (unsigned char)228;	/*auml (GER)*/
++			*src = (unsigned char)228;	/*auml (GER)*/
+ 			break;
+ 		case 0x8E:
+-			*(src+i) = (unsigned char)196;	/*Auml (GER)*/
++			*src = (unsigned char)196;	/*Auml (GER)*/
+ 			break;			
+ 		case 0x94:
+-			*(src+i) = (unsigned char)246;	/*ouml (GER)*/
++			*src = (unsigned char)246;	/*ouml (GER)*/
+ 			break;
+ 		case 0x99:
+-			*(src+i) = (unsigned char)214;	/*Ouml (GER)*/
++			*src = (unsigned char)214;	/*Ouml (GER)*/
+ 			break;			
+ 		case 0x81:
+-			*(src+i) = (unsigned char)252;	/*uuml (GER)*/
++			*src = (unsigned char)252;	/*uuml (GER)*/
+ 			break;	 
+ 		case 0x9A:
+-			*(src+i) = (unsigned char)220;	/*Uuml (GER)*/
++			*src = (unsigned char)220;	/*Uuml (GER)*/
+ 			break;	
+ 		case 0xE1:
+-			*(src+i) = (unsigned char)223;	/*szlig (GER)*/
++			*src = (unsigned char)223;	/*szlig (GER)*/
+ 			break;	
+ 		case 0x82:
+-			*(src+i) = (unsigned char)233;	/*eacute (FR)*/
++			*src = (unsigned char)233;	/*eacute (FR)*/
+ 			break;
+ 		case 0x83:
+-			*(src+i) = (unsigned char)226;	/*acirc (FR)*/
++			*src = (unsigned char)226;	/*acirc (FR)*/
+ 			break;			
+ 		case 0x85:
+-			*(src+i) = (unsigned char)233;	/*agrave (FR)*/
++			*src = (unsigned char)233;	/*agrave (FR)*/
+ 			break;	
+ 		case 0x88:
+-			*(src+i) = (unsigned char)234;	/*ecirc (FR)*/
++			*src = (unsigned char)234;	/*ecirc (FR)*/
+ 			break;	
+ 		case 0x8A:
+-			*(src+i) = (unsigned char)232;	/*egrave (FR)*/
++			*src = (unsigned char)232;	/*egrave (FR)*/
+ 			break;	
+ 		case 0x8C:
+-			*(src+i) = (unsigned char)238;	/*icirc	(FR)*/
++			*src = (unsigned char)238;	/*icirc	(FR)*/
+ 			break;	
+ 		case 0x8D:
+-			*(src+i) = (unsigned char)236;	/*igrave (FR)*/
++			*src = (unsigned char)236;	/*igrave (FR)*/
+ 			break;	
+ 		case 0x90:
+-			*(src+i) = (unsigned char)201;	/*Eacute (FR)*/
++			*src = (unsigned char)201;	/*Eacute (FR)*/
+ 			break;	
+ 		case 0x93:
+-			*(src+i) = (unsigned char)244; /*ocirc (FR)*/
++			*src = (unsigned char)244; /*ocirc (FR)*/
+ 			break;	
+ 		case 0x95:
+-			*(src+i) = (unsigned char)242;	/*ograve (FR)*/
++			*src = (unsigned char)242;	/*ograve (FR)*/
+ 			break;	
+ 		case 0x96:
+-			*(src+i) = (unsigned char)251;	/*ucirc (FR)*/
++			*src = (unsigned char)251;	/*ucirc (FR)*/
+ 			break;	
+ 		case 0x97:
+-			*(src+i) = (unsigned char)249;	/*ugrave (FR)*/
++			*src = (unsigned char)249;	/*ugrave (FR)*/
+ 			break;	
+ 		case 0xA0:
+-			*(src+i) = (unsigned char)225;	/*aacute (FR)*/
++			*src = (unsigned char)225;	/*aacute (FR)*/
+ 			break;	
+ 		case 0xA1:
+-			*(src+i) = (unsigned char)237;	/*iacute (FR)*/
++			*src = (unsigned char)237;	/*iacute (FR)*/
+ 			break;	
+ 		case 0xA2:
+-			*(src+i) = (unsigned char)243;	/*oacute (FR)*/
++			*src = (unsigned char)243;	/*oacute (FR)*/
+ 			break;	
+ 		case 0xA3:
+-			*(src+i) = (unsigned char)250;	/*uacute (FR)*/
++			*src = (unsigned char)250;	/*uacute (FR)*/
+ 			break;	
+ 		case 0xB5:
+-			*(src+i) = (unsigned char)193;	/*Aacute (FR)*/
++			*src = (unsigned char)193;	/*Aacute (FR)*/
+ 			break;		
+ 		case 0xB6:
+-			*(src+i) = (unsigned char)194;	/*Acirc (FR)*/
++			*src = (unsigned char)194;	/*Acirc (FR)*/
+ 			break;		
+ 		case 0xB7:
+-			*(src+i) = (unsigned char)192;	/*Agrave (FR)*/
++			*src = (unsigned char)192;	/*Agrave (FR)*/
+ 			break;		
+ 		case 0xD2:
+-			*(src+i) = (unsigned char)202;	/*Ecirc (FR)*/
++			*src = (unsigned char)202;	/*Ecirc (FR)*/
+ 			break;		
+ 		case 0xD3:
+-			*(src+i) = (unsigned char)200;	/*Egrave (FR)*/
++			*src = (unsigned char)200;	/*Egrave (FR)*/
+ 			break;		
+ 		case 0xD6:
+-			*(src+i) = (unsigned char)205;	/*Iacute (FR)*/
++			*src = (unsigned char)205;	/*Iacute (FR)*/
+ 			break;		
+ 		case 0xD7:
+-			*(src+i) = (unsigned char)206;	/*Icirc (FR)*/
++			*src = (unsigned char)206;	/*Icirc (FR)*/
+ 			break;		
+ 		case 0xDE:
+-			*(src+i) = (unsigned char)204;	/*Igrave (FR)*/
++			*src = (unsigned char)204;	/*Igrave (FR)*/
+ 			break;	
+ 		case 0xE0:
+-			*(src+i) = (unsigned char)211;	/*Oacute (FR)*/
++			*src = (unsigned char)211;	/*Oacute (FR)*/
+ 			break;			
+ 		case 0xE2:
+-			*(src+i) = (unsigned char)212;	/*Ocirc (FR)*/
++			*src = (unsigned char)212;	/*Ocirc (FR)*/
+ 			break;		
+ 		case 0xE3:
+-			*(src+i) = (unsigned char)210;	/*Ograve (FR)*/
++			*src = (unsigned char)210;	/*Ograve (FR)*/
+ 			break;		
+ 		case 0xE9:
+-			*(src+i) = (unsigned char)218;	/*Uacute (FR)*/
++			*src = (unsigned char)218;	/*Uacute (FR)*/
+ 			break;		
+ 		case 0xEA:
+-			*(src+i) = (unsigned char)219;	/*Ucirc (FR)*/
++			*src = (unsigned char)219;	/*Ucirc (FR)*/
+ 			break;		
+ 		case 0xEB:
+-			*(src+i) = (unsigned char)217;	/*Ugrave (FR)*/
++			*src = (unsigned char)217;	/*Ugrave (FR)*/
+ 			break;				
+ 		}	
+--- csv.c	Thu May  8 14:53:15 2003
++++ csv.c	Wed Aug 20 15:10:55 2003
+@@ -18,24 +18,20 @@
+ /* writeCSVHeader */
+ /* creates the CSV Header with the information provided by DB_FIELD */
+-int writeCSVHeader (int fh, struct DB_FIELD *header[], struct DB_FIELD *dbf, int header_length)
++int
++writeCSVHeader (int fh, struct DB_FIELD * const header[],
++    const struct DB_FIELD *dbf, int header_length)
+ {
+ 	int i;
+-	char *q;
+-	char buffer[65536];	
+ 	
+ 	for(i=1; i < header_length; i++) {
+-		memset(buffer, 0, 65535);
+-		dbf = header[i];			
+-		strcpy(buffer,dbf->field_name);									
+-		q = buffer+strlen(buffer);
+-		*q++ = ';';
+-		*q = '\0';
+-		if((write(fh, buffer, strlen(buffer))) == -1)
++		if ((write(fh, header[i]->field_name,
++		    strlen((const char *)header[i]->field_name))) == -1
++		    || write(fh, ";", 1) == -1)
+ 		{
+-			printf("Cannot write data to CSV File - Aborting!\n"); exit(1);
++			perror("Cannot write data to CSV File - Aborting!"); exit(1);
+ 		}
+ 	}
+-	if((write(fh, "\n", NEWLINE_LENGTH)) == -1) {
+-		printf("Cannot write data to CSV File - Aborting!\n"); exit(1);
++	if ((write(fh, "\n", NEWLINE_LENGTH)) == -1) {
++		perror("Cannot write data to CSV File - Aborting!"); exit(1);
+ 	}
+ 	
+@@ -45,32 +41,38 @@
+ /* writeCSVLine */
+ /* creates a line in the CSV document for each data set */
+-int writeCSVLine (int fh, char *value, struct DB_FIELD *header[], struct DB_FIELD *dbf, int header_length) {
+-	char *p, *q;
+-	int i, x;
+-	char buffer[65536];
+-	char NewString[65536];
+-	
++int
++writeCSVLine(int fh, const unsigned char *value, struct DB_FIELD * const header[],
++    const struct DB_FIELD *dbf, int header_length) {
++	const unsigned char *p;
++	unsigned char *q, *end;
++	int i;
++
+ 	p = value;
++	q = NULL;
+ 	
+ 	for (i=1; i < header_length; i++)
+ 	{
+-		memset(buffer, 0, 65535);
+-		memset(NewString, 0, 65535);
+-		dbf = header[i];													    
+-		q = buffer;		
+-		x = dbf->field_length;
+-		while(x--)
+-			*q++ = *p++;
+-		*q++ = ';';				
+-				
+-		trim_spaces(NewString, buffer);																
+-													
+-		if((write(fh, NewString, strlen(NewString))) == -1) {
+-			printf("Cannot write data to CSV File - Aborting!\n");
++		dbf = header[i];
++
++		q = realloc(q, dbf->field_length + 2);
++		if (!q) {
++			perror("writeCSVLine");
++			exit(1);
++		}
++
++		end = trim_spaces(q, p, dbf->field_length);
++		p += dbf->field_length;
++		*end++ = ';';
++		
++		if (write(fh, q, end - q) == -1) {
++			perror("Cannot write data to CSV File - Aborting!");
+ 			exit(1);
+ 		}
+ 	}
++	if (q)
++		free(q);
++
+ 	if((write(fh, "\n", NEWLINE_LENGTH)) == -1) {
+-		printf("Cannot write data to CSV File - Aborting!\n"); exit(1);
++		perror("Cannot write data to CSV File - Aborting!"); exit(1);
+ 	}
+ 	return 0;				
+--- csv.h	Thu May  8 14:53:15 2003
++++ csv.h	Wed Aug 20 14:18:02 2003
+@@ -22,21 +22,19 @@
+ #include "tables.h"
+ #include "an_string.h"
++
+ #ifdef __unix__	
+-	#include <sys/stat.h>
+-    #define NEWLINE_LENGTH 2
+-	#include <unistd.h>
+-#elif __MSDOS__
+-	#include <io.h>
+-	#include <sys\stat.h>
+-#elif _WIN32
+-	#include <io.h>
+-	#include <sys\stat.h>
+-    #define NEWLINE_LENGTH 2
++#	include <sys/stat.h>
++#	include <unistd.h>
++#	define NEWLINE_LENGTH 1
++#elif __MSDOS__ || _WIN32
++#	include <io.h>
++#	include <sys\stat.h>
++#	define NEWLINE_LENGTH 2
+ #else    
+-    #define NEWLINE_LENGTH 1
++#	define NEWLINE_LENGTH 1
+ #endif
+ 
+-int writeCSVHeader (int fh, struct DB_FIELD *header[], struct DB_FIELD *dbf, int header_length);
+-int writeCSVLine (int fh, char *value, struct DB_FIELD *header[], struct DB_FIELD *dbf, int
++int writeCSVHeader (int fh, struct DB_FIELD * const header[], const struct DB_FIELD *dbf, int header_length);
++int writeCSVLine (int fh, const unsigned char *value, struct DB_FIELD * const header[], const struct DB_FIELD *dbf, int
+ header_length);
+ #endif
+--- dbf.c	Thu May  8 14:53:15 2003
++++ dbf.c	Wed Aug 20 14:25:27 2003
+@@ -99,5 +99,5 @@
+ {	
+ 	if ((read( fh, (char *)db, sizeof(struct DB_HEADER))) == -1 ) {
+-		printf("Error reading file %s.\n", file);
++		perror(file);
+ 		exit(1);
+ 	}
+@@ -114,9 +114,9 @@
+ 	{
+ 		if((header[i] = (struct DB_FIELD *)malloc(sizeof(struct DB_FIELD))) == NULL) {
+-			printf("Fatal error: Cannot malloc.\n");
++			perror("malloc");
+ 			exit(1);
+ 		}
+ 		if((read(fh, (char *)header[i], sizeof(struct DB_FIELD))) == -1) {
+-			printf("Error reading file %s.\n", file);
++			perror(file);
+ 			exit(1);
+ 		}
+@@ -205,9 +205,9 @@
+ {	
+ 	int dbfhandle, handle;
+-	int header_length, i;
++	int header_length, record_length, i;
+ 	char *filename;
+ 	int ppc_override; // Big Endian Check Override
+ 	int type;
+-	char *foo, *p;
++	unsigned char *foo, *p;
+ 	int k;	
+ 	ppc_override = 0;
+@@ -218,5 +218,5 @@
+ 		
+ 	if (argc < 2) {
+-		printf("Usage: %s [option][argument] dbf-file, -h for help\n", *argv);
++		fprintf(stderr, "Usage: %s [option][argument] dbf-file, -h for help\n", *argv);
+ 		exit(1);
+ 	} 
+@@ -246,6 +246,6 @@
+ 	/* Test if last argument is an option or a possible valid filename */
+ 	if(argv[(argc-1)][0] == 0x2D) {
+-		printf("\nERROR: Found no file for input\n");
+-		printf("Please make sure that the last argument is a valid dBASE file\n");
++		fprintf(stderr, "\nERROR: Found no file for input\n"
++		    "Please make sure that the last argument is a valid dBASE file\n");
+ 		exit(1);
+ 	} else 	filename = argv[(argc-1)]; 
+@@ -259,5 +259,5 @@
+                 type = CSV_OUTPUT;
+                } else {
+-		     	printf("Usage: %s --csv export_filename dbf-file, -h for help\n", *argv);
++		     	fprintf(stderr, "Usage: %s --csv export_filename dbf-file, -h for help\n", *argv);
+ 		     	exit(1);
+ 		   	   }
+@@ -272,5 +272,5 @@
+                 type = SQL_OUTPUT;
+             } else {
+-                printf("Usage: %s --sql export_filename dbf-file, -h for help\n", *argv);
++                fprintf(stderr, "Usage: %s --sql export_filename dbf-file, -h for help\n", *argv);
+                 exit(1);
+             } 
+@@ -289,11 +289,11 @@
+ 				getHeaderValues(dbfhandle,filename,header_length);
+ 				dbf_field_stat(header,header_length);
+-				exit(1);				
++				dbf_close(dbfhandle, filename);
++				exit(0);
+ 			} else {
+-				printf("Cannot open file %s\n", argv[(argc-1)]);
+-				printf("Usage: %s file --view-info\n", argv[0]);
++				fprintf(stderr, "Cannot open file %s\n"
++				    "Usage: %s file --view-info\n",  argv[(argc-1)], argv[0]);
+ 				exit(1);
+ 			}
+-			dbf_close(dbfhandle, filename);
+ 		}
+ 	}
+@@ -304,9 +304,10 @@
+ 		dbf_read_header(dbfhandle, filename);		
+ 		header_length = rotate2b(db->header_length) / 32;
++		record_length = rotate2b(db->record_length);
+ 		getHeaderValues(dbfhandle,filename,header_length);							
+ 		lseek(dbfhandle, rotate2b(db->header_length) + 1, 0);
+ 		
+-		if((foo = (char *)malloc(rotate2b(db->record_length))) == NULL)	{
+-			printf("Fatal error: Cannot malloc.\n"); exit(1);
++		if ((foo = malloc(record_length + 1)) == NULL)	{
++			perror("malloc"); exit(1);
+ 		}
+ 		
+@@ -319,15 +320,20 @@
+ 			    writeSQLHeader(handle,header,dbf,header_length,filename,export_filename);
+ 		    	break;
+-            default:
++		    default:
+ 			    writeCSVHeader(handle,header,dbf,header_length); // added dbf, must be tested                           
+ 		        break;
+-          }                                               
++		  }
+ 		}
+ 		
+ 		/* foo, p inherits full data set */
+-		while ((read(dbfhandle, (p = foo), rotate2b(db->record_length))))
++		while ((i = read(dbfhandle, (p = foo), record_length)))
+ 		{
++			if (i == -1) {
++				perror("reading the next block");
++				exit(1);
++			}
++			p[record_length] = '\0'; /* So the converters know, where to stop */
+ 			/* automatic convert options */
+-		  	cp850convert(p);					
++		  	cp850convert(p);
+ 		  	ASCIInumbers(p);
+ 			/* If export_filename is not set output data to screen, otherwise to export_filename */
+@@ -345,5 +351,5 @@
+ 		  	} else {
+ 		      	switch(type) {
+-              	case SQL_OUTPUT:
++			case SQL_OUTPUT:
+ 					writeSQLLine(handle,header,dbf,p,header_length,filename,export_filename);
+ 					break;
+@@ -354,4 +360,5 @@
+ 		  	} /* End of --> inner if */		  
+ 		} /* End of --> while */
++		free(foo);
+ 	} /* End of --> if dbfhandle */
+ 	if (filename) dbf_close(dbfhandle,filename);
+--- dbf.h	Thu May  8 14:53:15 2003
++++ dbf.h	Wed Aug 20 13:35:54 2003
+@@ -16,18 +16,5 @@
+ #include <string.h>
+ #include <limits.h>
+-#ifdef __unix__	
+-	#include <sys/stat.h>
+-    #define NEWLINE_LENGTH 2
+-	#include <unistd.h>
+-#elif __MSDOS__
+-	#include <io.h>
+-	#include <sys\stat.h>
+-#elif _WIN32
+-	#include <io.h>
+-	#include <sys\stat.h>
+-    #define NEWLINE_LENGTH 2
+-#else    
+-    #define NEWLINE_LENGTH 1
+-#endif
++
+ /*#define VERSION1 0
+ #define VERSION2 5
+--- sql.c	Sat May 24 14:38:46 2003
++++ sql.c	Wed Aug 20 14:19:09 2003
+@@ -24,32 +24,35 @@
+ /* writeSQLHeader */
+ /* creates the SQL Header with the information provided by DB_FIELD */
+-int writeSQLHeader (int handle,struct DB_FIELD *header[], struct DB_FIELD *dbf, int header_length,char *filename,char *export_filename)
++int writeSQLHeader (int handle, struct DB_FIELD * const header[],
++    const struct DB_FIELD *dbf, int header_length,
++    const char *filename, const char *export_filename)
+ {
+ 	int unsigned i,l1,l2;
+-	char *q;
+-	char buffer[65536], table[32],lg[12];	
++	FILE *fp;
++	size_t tablelen;
+ 
+-	strncpy(table,export_filename,strlen(export_filename)-4);
+-	memset(buffer, 0, 65535);
+-	q = buffer;
+-	strcat(q,"-- ");	
+-	strcat(q,export_filename);	
+-	strcat(q," -- \n--\n-- SQL code with the contents of dbf file ");
+-	strcat(q,filename);
+-	strcat(q,"\n\ndrop table ");
+-	strcat(q,table);
+-	strcat(q,";\n\nCREATE TABLE ");
+-	strcat(q,table);
+-	strcat(q,"(\n");
++	fp = fdopen(handle, "w");
++	if (!fp) {
++		perror("writeSQLHeader");
++		exit(1);
++	}
++	tablelen = strlen(export_filename) - 4;
++
++	fprintf(fp, "-- %s -- \n--\n"
++	    "-- SQL code with the contents of dbf file %s\n\n"
++	    "\ndrop table %.*s\n"
++	    "\nCREATE TABLE %.*s\n",
++	    export_filename, filename,
++	    tablelen, export_filename,
++	    tablelen, export_filename);
+  	for(i=1; i < (unsigned int)header_length; i++) {
+ 		dbf = header[i];
+-		strcat(q,dbf->field_name);
+-		strcat(q,"\t");
++		fprintf(fp, "%s\t", dbf->field_name);
+ 		switch(dbf->field_type) {
+ 			case 'C':
+-				strcat(q,"character varying(");
+-				sprintf(lg,"%d",dbf->field_length);
+-				strcat(q,lg);
+-				strcat(q,")");
++			case 'M':
++				fprintf(fp, "character varying(%d)",
++				    dbf->field_type == 'M' ? 10 :
++					dbf->field_length);
+ 				field_type[i] = IS_STRING;
+ 			break;
+@@ -58,26 +61,23 @@
+ 				l2 = dbf->field_decimals;
+ 				if((l1 < 10) && (l2 == 0))
+-					strcat(q, "int");
++					fputs("int", fp);
+ 				else
+-					sprintf(lg,"numeric(%d, %d)",l1,l2);
+-					strcat(q, lg);
++					fprintf(fp, "numeric(%d, %d)",
++					    l1, l2);
+ 				field_type[i] = IS_NUMERIC;
+ 			break;
+-			case 'M':
+-				strcat(q, "character varying(10)");
+-				field_type[i] = IS_STRING;
+-			break;
++			case 'D':
++				fputs("date", fp);
++				break;
+ 			default:
+-			break;
++				fprintf(fp, "/* unsupported type ``%c'' */",
++				    dbf->field_type);
+ 		} 								
+ 		if(i < header_length - 1)
+-			strcat(q,",");
+-		strcat(q,"\n");
+-	}
+-	strcat(q,");\n");
+-printf("Writing %s\n", buffer);
+- 	if((write(handle, buffer, strlen(buffer))) == -1) {
+-		printf("Cannot write data to SQL File - Aborting!\n"); exit(1);
++			fputc(',', fp);
++		fputs("\n", fp);
+ 	}
++	fputs(");\n", fp);
++	fflush(fp);
+ 
+ 	return 0;
+@@ -86,51 +86,55 @@
+ /* writeSQLLine */
+ /* fills the SQL table */
+-int writeSQLLine (int handle,struct DB_FIELD *header[], struct DB_FIELD *dbf,char *value, int header_length,char *filename, char *export_filename) {
+-	char *p, *q;
+-	int i, x;
+-	char buffer[65536];
+-	char NewString[65536];
+-	char table[32];	
++int
++writeSQLLine (int handle, struct DB_FIELD * const header[],
++    const struct DB_FIELD *dbf, const unsigned char *value, int header_length,
++    const char *filename, const char *export_filename)
++{
++	const unsigned char *p;
++	unsigned char *q;
++	FILE *fp;
++	int i;
++	size_t tablelen;
+ 	
+-	strncpy(table,export_filename,strlen(export_filename)-4);
++	fp = fdopen(handle, "w");
++	if (!fp) {
++		perror("writeSQLLine");
++		exit(1);
++	}
++	tablelen = strlen(export_filename) - 4;
+ 
+ 	p = value;
++	q = NULL;
+ 
+-	memset(buffer, 0, 65535);
+-	q = buffer;
+-	strcat(q,"INSERT INTO ");
+-	strcat(q,table);
+-	strcat(q," VALUES(\n");
+-	if((write(handle, buffer, strlen(buffer))) == -1) {
+-		printf("Cannot write data to SQL File - Aborting!\n"); exit(1);
+-	}
++	fprintf(fp, "INSERT INTO %.*s VALUES(\n",
++	    tablelen, export_filename);
++	
+ 	for (i=1; i < (unsigned int)header_length; i++)
+ 	{
+-		memset(buffer, 0, 65535);
+-		memset(NewString, 0, 65535);
++		unsigned char *end;
+ 		dbf = header[i];
+-		q = buffer;
+-		x = dbf->field_length;
++
++		q = realloc(q, dbf->field_length);
++		
+ 		if(field_type[i] == IS_STRING)
+-			*q++ = '\'';
+-		while(x--){
+-			*q++ = *p++;
+-		}
+-		trim_spaces(NewString, buffer);
+-		if((field_type[i] == IS_NUMERIC) && (strlen(NewString) == 0))
+-			strcat(NewString,"0");
++			fputc('\'', fp);
++
++		end = trim_spaces(q, p, dbf->field_length);
++		p += dbf->field_length;
++
++		fprintf(fp, "%.*s", end - q, q);
++
++		if((field_type[i] == IS_NUMERIC) && end == q)
++			fputc('0', fp);
+ 		if(field_type[i] == IS_STRING)
+-			strcat(NewString,"\'");
++			fputc('\'', fp);
+ 		if(i < header_length - 1)
+-			strcat(NewString,",");
+- 		if((write(handle, NewString, strlen(NewString))) == -1) {
+-			printf("Cannot write data to SQL File - Aborting!\n");
+-			exit(1);
+-		}
+-	}
+-	sprintf(buffer,");\n");
+-	if((write(handle, buffer, strlen(buffer))) == -1) {
+-		printf("Cannot write data to SQL File - Aborting!\n"); exit(1);
++			fputc(',', fp);
+ 	}
+-	return 0;				
++	if (q)
++		free(q);
++	fputs(");\n", fp);
++	fflush(fp);
++
++	return 0;
+ }
+--- sql.h	Thu May  8 14:53:15 2003
++++ sql.h	Wed Aug 20 14:17:46 2003
+@@ -42,7 +42,7 @@
+ 
+ int field_type[MAX_FIELDS];
+-int writeSQLHeader (int handle,struct DB_FIELD *header[], struct DB_FIELD *dbf, int header_length,char *filename,char
++int writeSQLHeader (int handle,struct DB_FIELD * const header[], const struct DB_FIELD *dbf, int header_length, const char *filename, const char
+ *export_filename);
+-int writeSQLLine (int handle,struct DB_FIELD *header[], struct DB_FIELD *dbf,char *value, int header_length,char *filename, char *export_filename);
++int writeSQLLine (int handle,struct DB_FIELD * const header[], const struct DB_FIELD *dbf, const unsigned char *value, int header_length, const char *filename,  const char *export_filename);
+ 
+ #endif
