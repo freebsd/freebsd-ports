@@ -584,6 +584,16 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INFO			- A list of .info files (omitting the trailing ".info");
 #				  only one entry per document!
 #
+# Set the following to specify all documentation your port installs into 
+# ${DOCSDIR}
+#
+# PORTDOCS		- A list of files and directories relative to DOCSDIR.
+# 				  Shell glob patterns can be used, directories include
+# 				  the entire subtree of contained files and directories.
+# 				  Should not be set when no documentation files are
+# 				  installed (for example because NOPORTDOCS is defined).
+# 				  Useful for dynamically generated documentation.
+#
 # Default targets and their behaviors:
 #
 # fetch			- Retrieves ${DISTFILES} (and ${PATCHFILES} if defined)
