@@ -6218,6 +6218,7 @@ solarwolf	ports/games/solarwolf
 solidpop3d	ports/mail/solidpop3d
 soltaire	ports/math/solitaire
 songprint	ports/audio/songprint
+sonice		ports/audio/sonice
 sonicmail	ports/mail/sonicmail
 sort		src/gnu/usr.bin/sort
 soundtracker	ports/audio/soundtracker
