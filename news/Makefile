@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1998/05/04 15:11:23 mph Exp $
+# $Id: Makefile,v 1.36 1998/05/16 03:35:31 dburr Exp $
 #
 
     SUBDIR += aub
@@ -24,6 +24,7 @@
     SUBDIR += suck
     SUBDIR += tin
     SUBDIR += trn
+    SUBDIR += trn4
     SUBDIR += unpost
     SUBDIR += xmitbin
     SUBDIR += xvnews
