@@ -4481,6 +4481,7 @@ newvox		ports/games/newvox
 nexfontsel	ports/x11-fonts/nexfontsel
 nfbtrans	ports/textproc/nfbtrans
 nget		ports/news/nget
+ngircd		ports/irc/ngircd
 ngpt		ports/devel/ngpt
 ngraph		ports/math/ngraph
 ngrep		ports/net/ngrep
