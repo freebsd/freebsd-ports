@@ -15,6 +15,8 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A GNOME pop-up fax manager
 
+BROKEN=		"Replaces system lpr binary"
+
 BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake \
 		${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax
 RUN_DEPENDS=	${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax
