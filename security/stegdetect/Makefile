@@ -19,6 +19,8 @@ COMMENT=	An automated tool for detecting steganographic content in jpegs
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 .endif
 
+BROKEN=		Broken by libevent update
+
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

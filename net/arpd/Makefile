@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/dnet.h:${PORTSDIR}/net/libdnet \
 RUN_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+BROKEN=		Broken by libevent update
+
 GNU_CONFIGURE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
