@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	so14k@so14k.com
 COMMENT=	An irc daemon with a number of new features
 
-BROKEN=		"Bad pkg-plist"
-
 MAN8=		ircd.8
 
 USE_GMAKE=	yes
