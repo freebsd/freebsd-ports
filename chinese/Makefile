@@ -105,7 +105,7 @@
     SUBDIR += qterm
     SUBDIR += reciteword
     SUBDIR += scim-chewing
-    SUBDIR += scim-chinese
+    SUBDIR += scim-pinyin
     SUBDIR += scim-tables
     SUBDIR += srecite
     SUBDIR += stardict2-dict-zh_CN
