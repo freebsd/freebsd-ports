@@ -19,6 +19,6 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	pinmame
 XMAMEVERSION=	0.37b13.1
-PINMAMEVERSION=	0.99b
+PINMAMEVERSION=	0.99b1
 
 .include "${MASTERDIR}/Makefile"
