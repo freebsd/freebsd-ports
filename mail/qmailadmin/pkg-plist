@@ -35,6 +35,7 @@
 %%DATADIR%%/lang/de
 %%DATADIR%%/lang/en
 %%DATADIR%%/lang/es
+%%DATADIR%%/lang/fi
 %%DATADIR%%/lang/fr
 %%DATADIR%%/lang/hu
 %%DATADIR%%/lang/it
@@ -42,7 +43,7 @@
 %%DATADIR%%/lang/nl
 %%DATADIR%%/lang/no
 %%DATADIR%%/lang/pl
-%%DATADIR%%/lang/pt-BR
+%%DATADIR%%/lang/pt-br
 %%DATADIR%%/lang/ru
 %%DATADIR%%/lang/sk
 %%DATADIR%%/lang/sv
