@@ -1,56 +1,34 @@
---- bg5ps.orig	Fri Oct  2 08:35:41 1998
-+++ bg5ps	Fri Dec 17 17:01:21 1999
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/local/bin/python
- ################################################################################
- # bg5ps.py which use the ttf2ps program to convert the Big5 Coding chinese     #
- # text into printable postscript file.  Since it uses true type font, the      #
-@@ -418,10 +418,10 @@
-                 exec l
-             cf.close()
-         else:
--            sys.stderr.write("\n~/.bg5ps.conf not found.\n Trying /etc/bg5ps.conf.")
--            if os.path.isfile("/etc/bg5ps.conf"):
--                sys.stderr.write("\n /etc/bg5ps.conf found. Use configuration file /etc/bg5ps.conf")
--                cf=open("/etc/bg5ps.conf","r")
-+            sys.stderr.write("\n~/.bg5ps.conf not found.\n Trying /usr/local/etc/chinese/bg5ps.conf.")
-+            if os.path.isfile("/usr/local/etc/chinese/bg5ps.conf"):
-+                sys.stderr.write("\n /usr/local/etc/chinese/bg5ps.conf found. Use configuration file /usr/local/etc/chinese/bg5ps.conf")
-+                cf=open("/usr/local/etc/chinese/bg5ps.conf","r")
-                 for l in cf.readlines():
-                     exec l
-                 cf.close()
---- bg5ps.conf.orig	Fri Dec 17 16:58:30 1999
-+++ bg5ps.conf	Fri Dec 17 17:07:48 1999
-@@ -1,9 +1,9 @@
- #chineseFontPath: 指定中文字型的路徑(預設值: 與 bg5ps 同) 
--chineseFontPath=""
-+chineseFontPath="/usr/X11R6/lib/X11/fonts/TrueType"
- #modify the above line
+--- Makefile.orig	Thu Nov  2 22:44:32 2000
++++ Makefile	Thu Nov  2 22:47:11 2000
+@@ -21,11 +21,13 @@
+ INSTALL = install
+ CFLAGS =
+ LIBS = -lttf -lm
+-INCLUDEDIR = 
++LIBSDIR = -L/usr/local/lib
++INCLUDEDIR = -I/usr/local/include
  
- #fontName: 指定中文字型的檔案名稱(預設值: ntu_kai) 
--fontName="ntu_kai"
-+fontName="moe_kai"
+-prefix = /usr
++
++prefix = /usr/local
+ BINDIR = $(prefix)/bin
+-ETCDIR = /etc/chinese/
++ETCDIR = /usr/local/etc/etc
  
- #oddPages: 0 不輸出奇數頁，1 輸出奇數頁(預設值: 1) 
- #true=1, false=0 
---- ttf2psm.c.orig	Wed Aug 26 21:50:26 1998
-+++ ttf2psm.c	Fri Dec 17 17:03:31 1999
-@@ -10,7 +10,6 @@
- #include <math.h>
- #include <stdlib.h>
- #include <string.h>
--#include <malloc.h>
- #include <memory.h>
- #include <time.h>
+ all: ttf2psm
  
-@@ -96,7 +95,7 @@
- void Beg();
- void End();
+@@ -33,12 +35,12 @@
+ 	$(CC) -c $(CFLAGS) $(INCLUDEDIR) $< -o $@
  
--void main(int argc, char *argv[]){
-+int main(int argc, char *argv[]){
-   FILE *fn;
-   short cidx, i;
-   time_t t1, t2;
+ ttf2psm: $(OBJS)
+-	$(CC) $(CFLAGS) $(INCLUDEDIR) $(LIBS) -o ttf2psm $(OBJS)
++	$(CC) $(CFLAGS) $(INCLUDEDIR) $(LIBSDIR) $(LIBS) -o ttf2psm $(OBJS)
+ 
+ install: all bg5ps bg5ps.conf
+ 	mkdir -p $(ETCDIR)
+ 	mkdir -p $(BINDIR)
+-	$(INSTALL) -m644 bg5ps.conf $(ETCDIR)/bg5ps.conf
++	$(INSTALL) -m644 bg5ps.conf $(ETCDIR)/bg5ps.conf.sample
+ 	$(INSTALL) -m755 bg5ps $(BINDIR)
+ 	$(INSTALL) -m755 ttf2psm $(BINDIR)
+ 

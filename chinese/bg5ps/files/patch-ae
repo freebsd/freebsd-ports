@@ -1,0 +1,9 @@
+--- gb2312-bg5ps.conf.orig	Fri Nov  3 01:31:43 2000
++++ gb2312-bg5ps.conf	Fri Nov  3 01:31:49 2000
+@@ -1,5 +1,5 @@
+ #chineseFontPath: 指定中文字型的路徑(預設值: 與 bg5ps 同) 
+-chineseFontPath="/usr/share/fonts/ttf/"
++chineseFontPath="/usr/X11R6/lib/X11/fonts/TrueType"
+ 
+ #modify the above line
+ 

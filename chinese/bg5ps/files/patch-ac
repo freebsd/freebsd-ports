@@ -1,0 +1,23 @@
+--- bg5ps.orig	Thu Nov  2 23:50:38 2000
++++ bg5ps	Thu Nov  2 23:55:25 2000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/local/bin/python
+ ################################################################################
+ # bg5ps.py which use the ttf2ps program to convert the Big5 Coding chinese     #
+ # text into printable postscript file.  Since it uses true type font, the      #
+@@ -443,10 +443,10 @@
+                 exec l
+             cf.close()
+         else:
+-            sys.stderr.write("\n~/.bg5ps.conf not found.\n Trying /etc/chinese/bg5ps.conf.")
+-            if os.path.isfile("/etc/chinese/bg5ps.conf"):
+-                sys.stderr.write("\n /etc/chinese/bg5ps.conf found. Use configuration file /etc/chinese/bg5ps.conf")
+-                cf=open("/etc/chinese/bg5ps.conf","r")
++            sys.stderr.write("\n~/.bg5ps.conf not found.\n Trying /usr/local/etc/bg5ps.conf.")
++            if os.path.isfile("/usr/local/etc/bg5ps.conf"):
++                sys.stderr.write("\n /usr/local/etc/bg5ps.conf found. Use configuration file /usr/local/etc/bg5ps.conf")
++                cf=open("/usr/local/etc/bg5ps.conf","r")
+                 for l in cf.readlines():
+                     exec l
+                 cf.close()
