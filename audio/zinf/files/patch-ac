@@ -1,8 +1,11 @@
---- Makefile.header.in.orig	Sat Aug  3 22:50:21 2002
-+++ Makefile.header.in	Sat Aug  3 22:51:50 2002
-@@ -72,7 +72,7 @@
+--- Makefile.header.in.orig	Mon Jun 24 08:44:27 2002
++++ Makefile.header.in	Fri Oct 18 06:28:36 2002
+@@ -70,9 +70,9 @@
  
- INCLUDES = -I. -I$(srcdir)/lib/gdbm -I$(srcdir)/base/include -I$(srcdir)/config -I$(srcdir)/io/include -I$(srcdir)/ui/include -I$(srcdir)/lmc/include -I$(srcdir)/io/soundcard/unix/$(UNIX_AUDIO_API)/include -I$(srcdir)/lmc/xingmp3/include -I$(srcdir)/lmc/cd/include -I$(srcdir)/plm/portable/pmp300/sba -I$(srcdir)/lib/xml/include -I$(srcdir)/lib/zlib/include -I$(srcdir)/lib/unzip/include -I$(srcdir)/io/cd/unix/include -I$(srcdir)/base/aps -I$(srcdir)/io/wavout/include -I$(srcdir)/ui/lcd/include -I$(srcdir)/ui/irman/include -I$(srcdir)/lib/http/include -I$(srcdir)/io/signature/include -I$(srcdir)/plm/metadata/id3v2 -I$(srcdir)/lmc/wav/include $(OSINC)
+ OSDEPOBJ = @OSDEPOBJ@
+ 
+-INCLUDES = -I. -I$(srcdir)/lib/gdbm -I$(srcdir)/base/include -I$(srcdir)/config -I$(srcdir)/io/include -I$(srcdir)/ui/include -I$(srcdir)/lmc/include -I$(srcdir)/io/soundcard/unix/$(UNIX_AUDIO_API)/include -I$(srcdir)/lmc/xingmp3/include -I$(srcdir)/lmc/cd/include -I$(srcdir)/plm/portable/pmp300/sba -I$(srcdir)/lib/xml/include -I$(srcdir)/lib/zlib/include -I$(srcdir)/lib/unzip/include -I$(srcdir)/io/cd/unix/include -I$(srcdir)/base/aps -I$(srcdir)/io/wavout/include -I$(srcdir)/ui/lcd/include -I$(srcdir)/ui/irman/include -I$(srcdir)/lib/http/include -I$(srcdir)/io/signature/include -I$(srcdir)/plm/metadata/id3v2 -I$(srcdir)/lmc/wav/include $(OSINC)
++INCLUDES = -I. -I$(srcdir)/lib/gdbm -I$(srcdir)/base/include -I$(srcdir)/config -I$(srcdir)/io/include -I$(srcdir)/ui/include -I$(srcdir)/lmc/include -I$(srcdir)/io/soundcard/unix/$(UNIX_AUDIO_API)/include -I$(srcdir)/lmc/xingmp3/include -I$(srcdir)/lmc/cd/include -I$(srcdir)/plm/portable/pmp300/sba -I$(srcdir)/lib/xml/include -I$(srcdir)/lib/zlib/include -I$(srcdir)/lib/unzip/include -I$(srcdir)/io/cd/unix/include -I$(srcdir)/base/aps -I$(srcdir)/io/wavout/include -I$(srcdir)/ui/lcd/include -I$(srcdir)/ui/irman/include -I$(srcdir)/lib/http/include -I$(srcdir)/io/signature/include -I$(srcdir)/lmc/wav/include $(OSINC)
  
 -CXXFLAGS = $(EXTRA_CXXFLAGS)
 +CXXFLAGS = @CXXFLAGS@ -D_REENTRANT

@@ -1,6 +1,6 @@
---- configure.in.orig	Mon Jun 24 01:44:27 2002
-+++ configure.in	Sat Aug  3 22:49:49 2002
-@@ -172,8 +172,8 @@
+--- configure.in.orig	Sat Oct 12 02:57:17 2002
++++ configure.in	Thu Oct 17 09:56:22 2002
+@@ -170,8 +170,8 @@
      ;;
    freebsd*)
      host_os="freebsd"
@@ -11,7 +11,7 @@
      ;;
    netbsd*)
      host_os="freebsd"
-@@ -325,8 +325,10 @@
+@@ -323,8 +323,10 @@
       esd_micro_version=`$ESD_CONFIG $esd_config_args --version | \
             sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
       ac_save_CFLAGS="$CFLAGS"
@@ -22,7 +22,7 @@
       LIBS="$LIBS $ESD_LIBS"
       rm -f conf.esdtest
       AC_MSG_CHECKING(for ESD - version >= $min_esd_version)
-@@ -385,7 +387,7 @@
+@@ -383,7 +385,7 @@
  }
  
  ],, have_esound=false, have_esound=false)
@@ -31,7 +31,7 @@
       LIBS="$ac_save_LIBS"
       AC_LANG_RESTORE
       rm -f conf.esdtest
-@@ -412,7 +414,7 @@
+@@ -410,7 +412,7 @@
  
  dnl optional freetype support..
  save_CPPFLAGS="$CPPFLAGS"
@@ -40,7 +40,7 @@
  AC_LANG_SAVE
  AC_LANG_C
  AC_CHECK_HEADERS(freetype.h, have_freetype="true", have_freetype="false")
-@@ -459,9 +461,9 @@
+@@ -460,9 +462,9 @@
       gtk_config_major=`$GTK_CONFIG --version | sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\1/'`
       gtk_config_minor=`$GTK_CONFIG --version | sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\2/'`
       gtk_config_micro=`$GTK_CONFIG --version | sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
@@ -52,7 +52,7 @@
       LIBS="$GTK_LIBS $LIBS"
  
       AC_TRY_RUN([
-@@ -488,7 +490,7 @@
+@@ -489,7 +491,7 @@
           gtk_major_version, gtk_minor_version, gtk_micro_version);
    return 1;
  }], , have_gtk=false, have_gtk=false])
@@ -61,7 +61,7 @@
      LIBS="$ac_save_LIBS" 
      if test "$have_gtk" = "false"; then
         AC_MSG_RESULT(no)
-@@ -509,7 +511,7 @@
+@@ -510,7 +512,7 @@
    OSINC="$OSINC -I$srcdir/ui/download/unix/include"
    OSINC="$OSINC -I$srcdir/ui/musicbrowser/include"
    OSINC="$OSINC -I$srcdir/ftc/kjofol"
@@ -70,7 +70,7 @@
    AC_DEFINE(HAVE_GTK)
  else
    GTK_CFLAGS=""
-@@ -530,18 +532,10 @@
+@@ -531,18 +533,10 @@
  AC_SUBST(GTK_PREFIX)
  AC_SUBST(EXTRALIBS)
  
@@ -91,7 +91,7 @@
  ORBIT_LIBS=""
  ORBIT_IDL=""
  
-@@ -651,7 +645,7 @@
+@@ -652,7 +646,7 @@
    alsa_min_major_version=0
    alsa_min_minor_version=5
    alsa_min_micro_version=0
@@ -100,7 +100,7 @@
    ac_save_LIBS="$LIBS"
  
    LIBS="$LIBS -lasound"
-@@ -696,7 +690,7 @@
+@@ -697,7 +691,7 @@
  ], , have_alsa=false, have_alsa=false
  )
     AC_LANG_RESTORE
@@ -109,7 +109,7 @@
     LIBS="$ac_save_LIBS"
     if test "$have_alsa" = "false"; then
        AC_MSG_RESULT(no)
-@@ -716,6 +710,9 @@
+@@ -717,6 +711,9 @@
    AC_MSG_RESULT([compiling alsa pmo plugin])
  fi
  
@@ -119,7 +119,7 @@
  AC_CHECK_LIB(ogg, ogg_sync_init, have_ogg="yes",)
  AC_CHECK_LIB(vorbisfile, ov_info, have_vorbis="yes",, -lvorbis -logg)
  
-@@ -726,6 +723,7 @@
+@@ -727,6 +724,7 @@
       OSDEPPLUGINS="$OSDEPPLUGINS plugins/vorbis.mdf";
       AC_MSG_RESULT([compiling vorbis codec plugin])
    fi 
@@ -127,7 +127,16 @@
  fi 
  
  ID3_LIBS=""
-@@ -813,9 +811,9 @@
+@@ -747,7 +745,7 @@
+     if test x$ARTSCCONFIG = x -o x$ARTSCCONFIG = x'"$ARTSCCONFIG"'; then
+     : # arts isn't installed
+     else
+-        CFLAGS="$CFLAGS `$ARTSCCONFIG --cflags`"
++        CPPFLAGS="$CPPFLAGS `$ARTSCCONFIG --cflags`"
+         AC_TRY_COMPILE([
+          #include <artsc.h>
+         ],[
+@@ -814,9 +812,9 @@
    gdk_pixbuf_micro_version=`$GDK_PIXBUF_CONFIG $gdk_pixbuf_config_args --version | \
           sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
    if test "x$enable_gdk_pixbuftest" = "xyes" ; then
@@ -139,7 +148,7 @@
      LIBS="$LIBS $GDK_PIXBUF_LIBS"
  dnl
  dnl Now check if the installed GDK_PIXBUF is sufficiently new. (Also sanity
-@@ -877,7 +875,7 @@
+@@ -878,7 +876,7 @@
  }
  
  ],, no_gdk_pixbuf=yes,[echo $ac_n "cross compiling; assumed OK... $ac_c"])
@@ -148,7 +157,7 @@
       LIBS="$ac_save_LIBS"
     fi
  fi
-@@ -896,7 +894,7 @@
+@@ -897,7 +895,7 @@
        :
       else
          echo "*** Could not run GDK_PIXBUF test program, checking why..."
@@ -157,7 +166,7 @@
          LIBS="$LIBS $GDK_PIXBUF_LIBS"
          AC_TRY_LINK([
  #include <stdio.h>
-@@ -915,7 +913,7 @@
+@@ -916,7 +914,7 @@
          echo "*** exact error that occured. This usually means GDK_PIXBUF was incorrectly installed"
          echo "*** or that you have moved GDK_PIXBUF since it was installed. In the latter case, you"
          echo "*** may want to edit the gdk-pixbuf-config script: $GDK_PIXBUF_CONFIG" ])
@@ -166,7 +175,7 @@
          LIBS="$ac_save_LIBS"
       fi
     fi
-@@ -927,8 +925,8 @@
+@@ -928,8 +926,8 @@
  AC_SUBST(GDK_PIXBUF_LIBS)
  rm -f conf.gdk_pixbuftest
  
@@ -177,7 +186,7 @@
  
  AC_LANG_SAVE
  AC_LANG_CPLUSPLUS
-@@ -938,7 +936,7 @@
+@@ -939,7 +937,7 @@
      echo "*** Download the library from "
      echo "***     http://www.musicbrainz.org/download.html"
      echo "***"
