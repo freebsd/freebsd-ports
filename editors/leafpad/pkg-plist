@@ -15,3 +15,5 @@ share/gnome/pixmaps/leafpad.png
 %%NLS:%%share/locale/zh_CN/LC_MESSAGES/leafpad.mo
 %%NLS:%%share/locale/zh_TW/LC_MESSAGES/leafpad.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
