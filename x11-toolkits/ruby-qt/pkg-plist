@@ -1,6 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/qt.so
 %%RUBY_SITELIBDIR%%/qt.rb
-%%RUBY_EXAMPLESDIR%%/qt/aclock/README.qt.orig
 %%RUBY_EXAMPLESDIR%%/qt/aclock/aclock.rb
 %%RUBY_EXAMPLESDIR%%/qt/aclock/aclock_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/application/application.rb
@@ -8,55 +7,53 @@
 %%RUBY_EXAMPLESDIR%%/qt/application/fileopen.xpm
 %%RUBY_EXAMPLESDIR%%/qt/application/fileprint.xpm
 %%RUBY_EXAMPLESDIR%%/qt/application/filesave.xpm
-%%RUBY_EXAMPLESDIR%%/qt/classbrows/classtree.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/splitter.rb
 %%RUBY_EXAMPLESDIR%%/qt/classbrows/qtbrows3.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/classtree.rb
 %%RUBY_EXAMPLESDIR%%/qt/connect/connect.rb
-%%RUBY_EXAMPLESDIR%%/qt/connect/README.orig
-%%RUBY_EXAMPLESDIR%%/qt/cursor/README.orig
 %%RUBY_EXAMPLESDIR%%/qt/cursor/cursor.rb
-%%RUBY_EXAMPLESDIR%%/qt/cursor/cb.xbm
-%%RUBY_EXAMPLESDIR%%/qt/cursor/cm.xbm
-%%RUBY_EXAMPLESDIR%%/qt/dclock/README.qt.orig
 %%RUBY_EXAMPLESDIR%%/qt/dclock/dclock.rb
 %%RUBY_EXAMPLESDIR%%/qt/dclock/dclock_sub.rb
-%%RUBY_EXAMPLESDIR%%/qt/forever/README.orig
-%%RUBY_EXAMPLESDIR%%/qt/forever/forever2.rb
+%%RUBY_EXAMPLESDIR%%/qt/deleteQObj/test1.rb
+%%RUBY_EXAMPLESDIR%%/qt/deleteQObj/test2.rb
+%%RUBY_EXAMPLESDIR%%/qt/deleteQObj/test3.rb
 %%RUBY_EXAMPLESDIR%%/qt/forever/forever.rb
-%%RUBY_EXAMPLESDIR%%/qt/hello/README.orig
-%%RUBY_EXAMPLESDIR%%/qt/hello/hello_lib.rb
+%%RUBY_EXAMPLESDIR%%/qt/forever/forever2.rb
 %%RUBY_EXAMPLESDIR%%/qt/hello/hello.rb
+%%RUBY_EXAMPLESDIR%%/qt/hello/hello_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/hello2/hello.rb
 %%RUBY_EXAMPLESDIR%%/qt/hello_simple/hello.rb
-%%RUBY_EXAMPLESDIR%%/qt/movies/README.orig
+%%RUBY_EXAMPLESDIR%%/qt/listview/listview.cpp
+%%RUBY_EXAMPLESDIR%%/qt/listview/listview.rb
+%%RUBY_EXAMPLESDIR%%/qt/listview/flag_ja.xpm
 %%RUBY_EXAMPLESDIR%%/qt/movies/movies.rb
 %%RUBY_EXAMPLESDIR%%/qt/movies/trolltech.gif
 %%RUBY_EXAMPLESDIR%%/qt/pinguin/pinguin.xpm
 %%RUBY_EXAMPLESDIR%%/qt/pinguin/pixbutton.rb
-%%RUBY_EXAMPLESDIR%%/qt/rubyedit/NewFile
-%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit.rb
-%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/editcopy.xpm
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/editcut.xpm
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/editpaste.xpm
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/fileopen.xpm
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/fileprint.xpm
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/filesave.xpm
-%%RUBY_EXAMPLESDIR%%/qt/rubyedit/editpaste.xpm
-%%RUBY_EXAMPLESDIR%%/qt/rubyedit/readme.txt
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/kde2ps
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/readme.txt
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit.rb
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit_win.rb
 %%RUBY_EXAMPLESDIR%%/qt/scribble/qtscribble.rb
 %%RUBY_EXAMPLESDIR%%/qt/scribble/qtscribble_win.rb
+%%RUBY_EXAMPLESDIR%%/qt/scribble/qtsext.rb
 %%RUBY_EXAMPLESDIR%%/qt/signal/hello_signal.rb
 %%RUBY_EXAMPLESDIR%%/qt/signal/hello_signal_jp.rb
-%%RUBY_EXAMPLESDIR%%/qt/widgets/widgets.rb
 %%RUBY_EXAMPLESDIR%%/qt/widgets/aclock_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/widgets/dclock_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/widgets/qt.bmp
 %%RUBY_EXAMPLESDIR%%/qt/widgets/trolltech.bmp
 %%RUBY_EXAMPLESDIR%%/qt/widgets/trolltech.gif
+%%RUBY_EXAMPLESDIR%%/qt/widgets/widgets.rb
 %%RUBY_EXAMPLESDIR%%/qt/widgets/widgets_win.rb
 %%RUBY_EXAMPLESDIR%%/qt/xform/image.any
-%%RUBY_EXAMPLESDIR%%/qt/xform/README.orig
 %%RUBY_EXAMPLESDIR%%/qt/xform/xform.rb
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/aclock
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/application
@@ -64,10 +61,12 @@
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/connect
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/cursor
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/dclock
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/deleteQObj
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/forever
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/hello
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/hello2
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/hello_simple
+@dirrm %%RUBY_EXAMPLESDIR%%/qt/listview
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/movies
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/pinguin
 @dirrm %%RUBY_EXAMPLESDIR%%/qt/rubyedit
