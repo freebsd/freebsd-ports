@@ -1,0 +1,17 @@
+       The Proc::Simple package provides objects that model real-
+       life processes from a user's point of view. A new process
+       object is created by
+
+          $myproc = Proc::Simple->new();
+
+       Either shell-like command lines or references to perl
+       subroutines can be specified for launching a process in
+       background.  A 10-second sleep process, for example, can
+       be started via the shell as
+
+          $myproc->start("sleep 10");
+
+       or, as a perl subroutine, with
+
+          $myproc->start(sub { sleep(10); });
+
