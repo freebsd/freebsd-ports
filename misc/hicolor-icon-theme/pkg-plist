@@ -48,4 +48,4 @@ share/icons/hicolor/index.theme
 @dirrm share/icons/hicolor/128x128/actions
 @dirrm share/icons/hicolor/128x128
 @dirrm share/icons/hicolor
-@dirrm share/icons
+@unexec /bin/rmdir %D/share/icons 2> /dev/null || /usr/bin/true
