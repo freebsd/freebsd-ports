@@ -77,35 +77,32 @@ include/cln/univpoly_modint.h
 include/cln/univpoly_rational.h
 include/cln/univpoly_real.h
 include/cln/version.h
-@unexec install-info --delete %D/info/cln.info %D/info/dir
-info/cln.info
-@exec install-info %D/info/cln.info %D/info/dir
 lib/libcln.a
 lib/libcln.so
 lib/libcln.so.2
 share/aclocal/cln.m4
-%%PORTDOCS%%share/doc/cln/dvi/cln.dvi
-%%PORTDOCS%%share/doc/cln/html/cln.html
-%%PORTDOCS%%share/doc/cln/html/cln_1.html
-%%PORTDOCS%%share/doc/cln/html/cln_10.html
-%%PORTDOCS%%share/doc/cln/html/cln_11.html
-%%PORTDOCS%%share/doc/cln/html/cln_12.html
-%%PORTDOCS%%share/doc/cln/html/cln_13.html
-%%PORTDOCS%%share/doc/cln/html/cln_14.html
-%%PORTDOCS%%share/doc/cln/html/cln_15.html
-%%PORTDOCS%%share/doc/cln/html/cln_16.html
-%%PORTDOCS%%share/doc/cln/html/cln_2.html
-%%PORTDOCS%%share/doc/cln/html/cln_3.html
-%%PORTDOCS%%share/doc/cln/html/cln_4.html
-%%PORTDOCS%%share/doc/cln/html/cln_5.html
-%%PORTDOCS%%share/doc/cln/html/cln_6.html
-%%PORTDOCS%%share/doc/cln/html/cln_7.html
-%%PORTDOCS%%share/doc/cln/html/cln_8.html
-%%PORTDOCS%%share/doc/cln/html/cln_9.html
-%%PORTDOCS%%share/doc/cln/html/cln_abt.html
-%%PORTDOCS%%share/doc/cln/html/cln_ovr.html
-%%PORTDOCS%%share/doc/cln/html/cln_toc.html
-%%PORTDOCS%%@dirrm share/doc/cln/html
-%%PORTDOCS%%@dirrm share/doc/cln/dvi
-%%PORTDOCS%%@dirrm share/doc/cln
+%%PORTDOCS%%%%DOCSDIR%%/dvi/cln.dvi
+%%PORTDOCS%%%%DOCSDIR%%/html/cln.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_10.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_11.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_12.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_13.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_14.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_15.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_16.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_9.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_ovr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cln_toc.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dvi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/cln
