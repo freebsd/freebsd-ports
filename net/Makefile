@@ -204,6 +204,7 @@
     SUBDIR += gtkhx
     SUBDIR += gtkyahoo
     SUBDIR += gutenfetch
+    SUBDIR += gyach
     SUBDIR += hagelslag
     SUBDIR += haproxy
     SUBDIR += hawk
