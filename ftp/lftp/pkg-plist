@@ -13,10 +13,10 @@ share/lftp/import-netscape
 share/locale/de/LC_MESSAGES/lftp.mo
 share/locale/es/LC_MESSAGES/lftp.mo
 share/locale/it/LC_MESSAGES/lftp.mo
+share/locale/ko/LC_MESSAGES/lftp.mo
 share/locale/pl/LC_MESSAGES/lftp.mo
 share/locale/pt_BR/LC_MESSAGES/lftp.mo
 share/locale/ru/LC_MESSAGES/lftp.mo
-share/locale/ko/LC_MESSAGES/lftp.mo
 share/locale/zh_CN/LC_MESSAGES/lftp.mo
 @dirrm share/lftp
 @dirrm share/doc/lftp
