@@ -5,6 +5,7 @@
     SUBDIR += asmail
     SUBDIR += balsa
     SUBDIR += bbmail
+    SUBDIR += biffer
     SUBDIR += bulk_mailer
     SUBDIR += cmail
     SUBDIR += coolmail
@@ -44,10 +45,12 @@
     SUBDIR += mew-xemacs20
     SUBDIR += mew-xemacs21
     SUBDIR += mh
+    SUBDIR += minimalist
     SUBDIR += ml
     SUBDIR += mmr
     SUBDIR += movemail
     SUBDIR += mutt
+    SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += p5-IMAP-Admin
     SUBDIR += p5-MIME-Lite
