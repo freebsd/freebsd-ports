@@ -2,7 +2,6 @@
 # Date created:         23 Dec 1998
 # Whom:                 imp
 #
-
 # $FreeBSD$
 #
 
