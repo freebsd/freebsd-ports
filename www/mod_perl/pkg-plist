@@ -39,7 +39,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/URI.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Util.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/httpd_conf.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/src.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/test.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/testold.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bundle/Apache.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak/Leak.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Apache/Leak/Leak.so
