@@ -1,0 +1,26 @@
+bin/totem
+etc/gconf/gconf.xml.defaults/apps/totem/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/totem/%gconf.xml
+etc/gconf/schemas/totem.schemas
+share/gnome/application-registry/totem.applications
+share/gnome/applications/totem.desktop
+share/gnome/mime-info/totem.keys
+share/gnome/pixmaps/media-player-48.png
+share/gnome/totem/media-player-48.png
+share/gnome/totem/stock_media_next.png
+share/gnome/totem/stock_media_previous.png
+share/gnome/totem/stock_media_pause.png
+share/gnome/totem/stock_media_play.png
+share/gnome/totem/playlist-16.png
+share/gnome/totem/playlist-24.png
+share/gnome/totem/playlist-playing.png
+share/gnome/totem/rhythmbox-volume-max.png
+share/gnome/totem/rhythmbox-volume-medium.png
+share/gnome/totem/rhythmbox-volume-min.png
+share/gnome/totem/rhythmbox-volume-zero.png
+share/gnome/totem/totem.glade
+share/gnome/totem/playlist.glade
+share/gnome/totem/totem_logo.mpv
+@dirrm share/gnome/totem
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/totem
+@dirrm etc/gconf/gconf.xml.defaults/apps/totem
