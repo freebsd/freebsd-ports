@@ -5,7 +5,7 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1997/04/30 03:18:05 asami Exp $
+# $Id: Makefile,v 1.7 1997/10/22 06:07:33 obrien Exp $
 #
 
 DISTNAME=	xfaces-3.3
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		${MASTER_SITE_LOCAL}
 DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
-MAINTAINER=	Lars_Koeller@odie.physik2.uni-rostock.de
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 BUILD_DEPENDS= 	${X11BASE}/lib/libaudio.a:${PORTSDIR}/audio/nas
 LIB_DEPENDS=	compface\\.1\\.:${PORTSDIR}/mail/faces \
