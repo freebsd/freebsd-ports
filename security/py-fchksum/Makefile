@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	find the checksum of files
+COMMENT=	Python module to find the checksum of files
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
