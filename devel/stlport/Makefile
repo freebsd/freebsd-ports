@@ -28,6 +28,10 @@ USE_GMAKE=	yes
 
 FIND?=	/usr/bin/find
 
+.if ${OSVERSION} < 440000
+BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
+.endif
+
 pre-build:
 	@${LN} -sf /usr/include/g++ ${WRKSRC}/../include
 
