@@ -15,11 +15,11 @@ DISTNAME=	Maelstrom-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
 
-USE_SDL=	sdl net
 USE_X_PREFIX=	yes
+USE_SDL=	sdl net
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--program-transform-name=\'\'
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_gamedocs
