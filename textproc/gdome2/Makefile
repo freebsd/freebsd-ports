@@ -24,5 +24,6 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	${PERL} -i -pe 's,^(HTML_DIR *= *).*,$$1\$$(prefix)/share/doc,' ${WRKSRC}/gtk-doc/Makefile.in
+	@${FIND} ${WRKSRC} -type f | xargs ${PERL} -i -pe 's,<parser.h>,<libxml/parser.h>,;s,<hash.h>,<libxml/hash.h>,;s,<xmlmemory.h>,<libxml/xmlmemory.h>,;s,<tree.h>,<libxml/tree.h>,;s,<xmlerror.h>,<libxml/xmlerror.h>,;s,<xmlIO.h>,<libxml/xmlIO.h>,;s,<parserInternals.h>,<libxml/parserInternals.h>,;s,<entities.h>,<libxml/entities.h>,'
 
 .include <bsd.port.mk>
