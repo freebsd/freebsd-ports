@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	q3ded
-PORTVERSION=	1.29g
+PORTVERSION=	1.29h
 CATEGORIES=	games linux
 MASTER_SITES=	http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/quake3/official/ \
 		ftp://ftp.idsoftware.com/idstuff/quake3/linux/
