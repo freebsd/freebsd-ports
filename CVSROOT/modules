@@ -1559,6 +1559,7 @@ eel		ports/x11-toolkits/eel
 eel2		ports/x11-toolkits/eel2
 efancylauncher	ports/x11/efancylauncher
 efax		ports/comms/efax
+efltk		ports/x11-toolkits/efltk
 egcs		ports/lang/egcs
 eggdrop		ports/irc/eggdrop
 egoboo		ports/games/egoboo
