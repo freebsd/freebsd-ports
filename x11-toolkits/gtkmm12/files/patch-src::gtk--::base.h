@@ -1,25 +1,40 @@
 --- src/gtk--/base.h.orig	Tue Nov 14 21:23:11 2000
-+++ src/gtk--/base.h	Sun Sep  5 06:11:48 2004
-@@ -454,6 +454,13 @@
-   pointer operator -> () const { return &operator*(); }
- };
++++ src/gtk--/base.h	Wed Oct 13 05:01:59 2004
+@@ -99,12 +99,10 @@
  
-+namespace Gtk {
-+
-+template <class impl, class interf>
-+interf* wrap(impl*);
-+
-+}
-+
- // this iterator variation returns interf (wrapped from impl)
- //  Equivelency  G_List_Cpp_Iterator<GtkWidget,Gtk_Widget>
- //     => list<Gtk_Widget*>::iterator
-@@ -482,7 +489,7 @@
-   value_type operator*() const
+ /* Translating API */
+ 
+-/*
+ // used to give error on unwrapped types; connect Gtk-- crew
+-template <class C> struct NotWrapped;
++template <class C> struct NotWrapped {typedef void Type;};
+ // hook for C => C++ translation
+ template <class C> struct Wrap {typedef typename NotWrapped<C>::Type CppType;};
+-*/
+ 
+ class Object;
+ class ObjectClass;
+@@ -118,19 +116,19 @@
+ 
+ // Request a specific wrapper for an object.
+ template <class Cpp>
+-Cpp* wrap_new(typename Cpp::BaseObjectType* o)
++inline Cpp* wrap_new(typename Cpp::BaseObjectType* o)
    {
-     if (node && node->data)
--      return Gtk::wrap(static_cast<impl*>((*node).data));
-+      return Gtk::wrap<impl, interf>(static_cast<impl*>((*node).data));
-     return 0;
+    return (typename Cpp::CppClassType::wrap_new(o));
    }
+ 
+ // interface to gtk--
+-/* 
++ 
+ template <class C>
+-typename Wrap<C>::CppType* wrap(C* o)
++inline typename Wrap<C>::CppType* wrap(C* o)
+   {
+     return dynamic_cast<typename Wrap<C>::CppType*>(wrap_auto((GtkObject*)(o)));
+   }
+-*/
++
+ 
+ /********************************************************************/
  
