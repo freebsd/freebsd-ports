@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.26.3
+PORTVERSION=	0.27
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--disable-ssl --disable-pcre
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
 			PTHREADLIB="${PTHREAD_LIBS}"

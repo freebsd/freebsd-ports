@@ -1,26 +1,37 @@
---- configure.orig	Tue Dec 30 20:12:47 2003
-+++ configure	Fri May 28 15:32:46 2004
-@@ -1505,7 +1505,7 @@
-   enableval="$enable_debug"
-   CXXFLAGS="-g -pg -fno-exceptions -Wall"; INSTALLSTRIP=""
- else
--  CXXFLAGS="-fomit-frame-pointer -fno-exceptions -Wall"; INSTALLSTRIP="-s"
-+  CXXFLAGS="${CXXFLAGS} -fomit-frame-pointer -fno-exceptions -Wall"; INSTALLSTRIP="-s"
- fi;
- 
- # Check whether --with-system-libtool or --without-system-libtool was given.
-@@ -19444,8 +19444,8 @@
- 
- 
- HAVE_PTHREAD=""
--PTHREADINCLUDES=""
--PTHREADLIB=""
-+#PTHREADINCLUDES=""
-+#PTHREADLIB=""
- 
- if ( test "$cross_compiling" = "yes" )
+--- configure.orig	Mon Aug  9 03:23:18 2004
++++ configure	Thu Aug 26 16:17:40 2004
+@@ -19632,8 +19632,8 @@
  then
-@@ -25251,7 +25251,7 @@
+ 
+ 	HAVE_PTHREAD=""
+-	PTHREADINCLUDES=""
+-	PTHREADLIB=""
++	#PTHREADINCLUDES=""
++	#PTHREADLIB=""
+ 
+ 	if ( test "$cross_compiling" = "yes" )
+ 	then
+@@ -19667,9 +19667,6 @@
+ STATIC=""
+ HEADERSANDLIBSPATH=""
+ 
+-eval "PTHREADINCLUDES=\"\""
+-eval "PTHREADLIB=\"\""
+-eval "PTHREADLIBPATH=\"\""
+ eval "PTHREADSTATIC=\"\""
+ if ( test -n "" )
+ then
+@@ -20293,9 +20290,6 @@
+ INCLUDESTRING=`echo $INCLUDESTRING | sed -e "s|-I/usr/include$||g" -e "s|-I/usr/include ||g"`
+ LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
+ 
+-eval "PTHREADINCLUDES=\"$INCLUDESTRING\""
+-eval "PTHREADLIB=\"$LIBSTRING\""
+-eval "PTHREADLIBPATH=\"$LIBPATH\""
+ eval "PTHREADSTATIC=\"$STATIC\""
+ if ( test -n "" )
+ then
+@@ -30503,7 +30497,7 @@
  #define RUDIMENTS_VERSION "$RUDIMENTS_VERSION"
  _ACEOF
  
