@@ -8981,6 +8981,7 @@ py-dbus		ports/devel/py-dbus
 py-dialog	ports/devel/py-dialog
 py-distutils	ports/misc/py-distutils
 py-dns		ports/dns/py-dns
+py-dnspython	ports/dns/py-dnspython
 py-docutils	ports/textproc/py-docutils
 py-dsv		ports/textproc/py-dsv
 py-exif		ports/graphics/py-exif
