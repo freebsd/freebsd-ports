@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmmailwatch
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	mailwatch-${PORTVERSION}
@@ -15,8 +15,6 @@ MAINTAINER=	treif@mayn.de
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
-
-WRKSRC=		${WRKDIR}/mailwatch
 
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes

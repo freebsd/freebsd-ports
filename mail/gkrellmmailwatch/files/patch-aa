@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Sep  5 16:30:33 2000
-+++ Makefile	Tue Sep  5 16:26:44 2000
+--- Makefile.orig	Mon Sep 18 21:40:13 2000
++++ Makefile	Tue Mar 13 00:18:02 2001
 @@ -1,32 +1,30 @@
  # Makefile for the GKrellM mailwatch plugin
  
@@ -21,7 +21,7 @@
  LIBS = $(GTK_LIB) $(IMLIB_LIB)
 -LFLAGS = -shared -lpthread
 -
--CC = gcc -g $(CFLAGS) $(FLAGS)
+-CC = gcc $(CFLAGS) $(FLAGS)
 +LFLAGS = -shared -pthread
  
  OBJS = mailwatch.o
