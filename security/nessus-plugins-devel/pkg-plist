@@ -164,6 +164,7 @@ lib/nessus/plugins/bind_vulnerable.nasl
 lib/nessus/plugins/bind_zxfr_bug.nasl
 lib/nessus/plugins/binlogin_overflow_rlogin.nasl
 lib/nessus/plugins/binlogin_overflow_telnet.nasl
+lib/nessus/plugins/bitkeeper_remote_shell.nasl
 lib/nessus/plugins/bizdb1_search.nasl
 lib/nessus/plugins/blackice_dos.nasl
 lib/nessus/plugins/bonk.nasl
@@ -231,6 +232,7 @@ lib/nessus/plugins/cp-firewall-webauth.nasl
 lib/nessus/plugins/cross_site_scripting.nasl
 lib/nessus/plugins/csSearch_cgi.nasl
 lib/nessus/plugins/csm_helo.nasl
+lib/nessus/plugins/cups_vulns.nasl
 lib/nessus/plugins/cvs_detect.nasl
 lib/nessus/plugins/cvs_in_www.nasl
 lib/nessus/plugins/cvsweb_shell.nasl
@@ -278,6 +280,7 @@ lib/nessus/plugins/eicon_modem_dos.nasl
 lib/nessus/plugins/empower_path.nasl
 lib/nessus/plugins/eserv.nasl
 lib/nessus/plugins/eshop_information_disclosure.nasl
+lib/nessus/plugins/etherleak.nasl
 lib/nessus/plugins/eviewer.nasl
 lib/nessus/plugins/ewave_servlet_upload.nasl
 lib/nessus/plugins/ews.nasl
