@@ -7,7 +7,7 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.61
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
@@ -20,6 +20,7 @@ PAPERSIZE=	letter
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
+		uncompface:${PORTSDIR}/graphics/compface \
 		convert:${PORTSDIR}/graphics/ImageMagick
 
 MAN1=		muttprint.1
