@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Mail/DeliveryStatus/BounceParser.pm
+%%SITE_PERL%%/Mail/DeliveryStatus/Report.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DeliveryStatus/BounceParser/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DeliveryStatus/BounceParser
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DeliveryStatus
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Mail/DeliveryStatus
+@unexec rmdir %D/%%SITE_PERL%%/Mail 2>/dev/null || true

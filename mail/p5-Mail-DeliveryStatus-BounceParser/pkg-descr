@@ -1,0 +1,8 @@
+Mail::DeliveryStatus::BounceParser analyzes RFC822 bounce messages and
+returns a structured description of the addresses that bounced and the
+reason they bounced; it also returns information about the original
+returned message including the Message-ID. It works best with RFC1892
+delivery reports, but will gamely attempt to understand any bounce
+message no matter what MTA generated it.
+
+WWW: http://search.cpan.org/~freeside/Mail-DeliveryStatus-BounceParser-1.4/

@@ -225,6 +225,7 @@
     SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-CheckUser
     SUBDIR += p5-Mail-ClamAV
+    SUBDIR += p5-Mail-DeliveryStatus-BounceParser
     SUBDIR += p5-Mail-Ezmlm
     SUBDIR += p5-Mail-FilterXML
     SUBDIR += p5-Mail-Folder
