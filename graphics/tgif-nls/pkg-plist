@@ -21,9 +21,35 @@ share/examples/tgif/keys.obj
 share/examples/tgif/launch-demo.obj
 share/examples/tgif/launch-demo-1.obj
 share/examples/tgif/slide-demo.obj
+share/examples/tgif/spice/BZ.mod
+share/examples/tgif/spice/DN.mod
+share/examples/tgif/spice/DN.sym
+share/examples/tgif/spice/MN.mod
+share/examples/tgif/spice/MN.sym
+share/examples/tgif/spice/MP.mod
+share/examples/tgif/spice/MP.sym
+share/examples/tgif/spice/README
+share/examples/tgif/spice/SN.mod
+share/examples/tgif/spice/SN.sym
+share/examples/tgif/spice/SP.mod
+share/examples/tgif/spice/SP.sym
+share/examples/tgif/spice/capacitor.sym
+share/examples/tgif/spice/connection.sym
+share/examples/tgif/spice/demo.obj
+share/examples/tgif/spice/gauge.sym
+share/examples/tgif/spice/ground.sym
+share/examples/tgif/spice/in.sym
+share/examples/tgif/spice/out.sym
+share/examples/tgif/spice/port.sym
+share/examples/tgif/spice/resistor.0tc.sym
+share/examples/tgif/spice/resistor.2tc.sym
+share/examples/tgif/spice/resistor.h.2tc.sym
+share/examples/tgif/spice/resistor.h.sym
+share/examples/tgif/spice/resistor.sym
 share/locale/fr/LC_MESSAGES/tgif.mo
 share/locale/ja/LC_MESSAGES/tgif.mo
 share/locale/ru/LC_MESSAGES/tgif.mo
 @dirrm share/doc/tgif
+@dirrm share/examples/tgif/spice
 @dirrm share/examples/tgif
 @dirrm lib/X11/tgif
