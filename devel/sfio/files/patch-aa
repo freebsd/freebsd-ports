@@ -1,0 +1,139 @@
+--- src/lib/sfio/makefile.orig	Sat Nov  8 12:15:30 1997
++++ src/lib/sfio/makefile	Sat Nov  8 12:43:09 1997
+@@ -9,7 +9,7 @@
+ # Compiler and flags to use
+ CXFLAGS=
+ CCMODE=	-O
+-CCFLAGS= -I. $(CCMODE) $(CXFLAGS)
++CFLAGS+= -I. $(CXFLAGS)
+ AR=	ar
+ CC=	cc
+ 
+@@ -44,7 +44,7 @@
+ 	Stdio_s/stdscanf.o Stdio_s/stdsprintf.o Stdio_s/stdvbuf.o
+ 
+ .c.o:
+-	$(CC) -c $(CCFLAGS) $*.c
++	$(CC) -c $(CFLAGS) $*.c
+ 
+ all:	install
+ 
+@@ -56,12 +56,12 @@
+ ast_common.h: features/ast_common
+ 	export CC; CC=$(CC); $(BINDIR)/iffe - run features/ast_common > ast_common.h
+ sfio_f:
+-	cd Sfio_f; make -f Makefile CC="$(CC)" CCMODE="$(CCMODE)" CXFLAGS="$(CXFLAGS)"
++	cd Sfio_f; make
+ stdio_s:
+-	cd Stdio_s; make -f Makefile CC="$(CC)" CCMODE="$(CCMODE)" CXFLAGS="$(CXFLAGS)"
++	cd Stdio_s; make
+ 
+ libstdio.a:
+-	cd Stdio_b; make -f Makefile CC="$(CC)" CCMODE="$(CCMODE)" CXFLAGS="$(CXFLAGS)"
++	cd Stdio_b; make
+ 
+ install: libsfio.a libstdio.a
+ 	cp sfio.h ast_common.h sfio_t.h Stdio_s/stdio.h $(INCDIR)
+--- src/lib/sfio/sfhdr.h.orig	Sat Nov  8 12:18:29 1997
++++ src/lib/sfio/sfhdr.h	Sat Nov  8 12:19:25 1997
+@@ -136,7 +136,7 @@
+ #if _typ_long_double
+ 
+ #if _hdr_values
+-#include	<values.h>
++#include	<float.h>
+ #endif
+ #if _hdr_math
+ #include	<math.h>
+--- src/lib/sfdisc/Makefile.orig	Sat Nov  8 12:02:59 1997
++++ src/lib/sfdisc/Makefile	Sat Nov  8 12:04:14 1997
+@@ -11,7 +11,7 @@
+ # Compiler and flags to use
+ CXFLAGS=
+ CCMODE=	-O
+-CCFLAGS= -I. -I$(INCDIR) $(CCMODE) $(CXFLAGS)
++CFLAGS+= -I. -I$(INCDIR) $(CXFLAGS)
+ AR=	ar
+ CC=	cc
+ 
+@@ -20,7 +20,7 @@
+ OBJS=	sfdcfilter.o sfdclzw.o sfdcskable.o sfdcsubstream.o sfdctee.o sfdcunion.o
+ 
+ .c.o:
+-	$(CC) -c $(CCFLAGS) $*.c
++	$(CC) -c $(CFLAGS) $*.c
+ 
+ all:	install
+ 
+--- src/lib/sfio/Sfio_f/Makefile.orig	Sat Nov  8 14:29:20 1997
++++ src/lib/sfio/Sfio_f/Makefile	Sat Nov  8 14:29:54 1997
+@@ -6,8 +6,7 @@
+ AR=	ar
+ CC=	cc
+ CXFLAGS=
+-CCMODE=	-O
+-CCFLAGS= -I.. $(CCMODE) $(CXFLAGS)
++CFLAGS+= -I.. $(CXFLAGS)
+ 
+ SRCS=	_sfclrerr.c _sfdlen.c _sfeof.c _sferror.c _sffileno.c _sfgetc.c \
+ 	_sfgetl.c _sfgetu.c _sfllen.c _sfputc.c _sfputd.c _sfputl.c _sfputu.c \
+@@ -16,7 +17,7 @@
+ 	_sfslen.o _sfstacked.o _sfulen.o _sfvalue.o
+ 
+ .c.o:
+-	$(CC) -c $(CCFLAGS) $*.c
++	$(CC) -c $(CFLAGS) $*.c
+ 
+ must:	$(OBJS)
+ 
+--- src/lib/sfio/Stdio_b/Makefile.orig	Sat Nov  8 14:30:33 1997
++++ src/lib/sfio/Stdio_b/Makefile	Sat Nov  8 14:31:14 1997
+@@ -6,8 +6,7 @@
+ AR=	ar
+ CC=	cc
+ CXFLAGS=
+-CCMODE=	-O
+-CCFLAGS= -I.. $(CCMODE) $(CXFLAGS)
++CFLAGS+= -I.. $(CXFLAGS)
+ BINDIR= ../../../../bin
+ 
+ SRCS=	doprnt.c doscan.c fclose.c fdopen.c fflush.c fgetc.c fgets.c filbuf.c \
+@@ -29,7 +28,7 @@
+ 	cleanup.o vsnprintf.o snprintf.o
+ 
+ .c.o:
+-	$(CC) -c $(CCFLAGS) $*.c
++	$(CC) -c $(CFLAGS) $*.c
+ 
+ libstdio.a: FEATURE/stdio must $(OBJS)
+ 	$(AR) cr libstdio.a $(OBJS)
+--- src/lib/sfio/Stdio_s/Makefile.orig	Sat Nov  8 14:31:35 1997
++++ src/lib/sfio/Stdio_s/Makefile	Sat Nov  8 14:32:06 1997
+@@ -6,14 +6,13 @@
+ AR=	ar
+ CC=	cc
+ CXFLAGS=
+-CCMODE=	-O
+-CCFLAGS= -I.. $(CCMODE) $(CXFLAGS)
++CFLAGS+= -I.. $(CXFLAGS)
+ 
+ SRCS=	stdgets.c stdopen.c stdprintf.c stdscanf.c stdsprintf.c stdvbuf.c
+ OBJS=	stdgets.o stdopen.o stdprintf.o stdscanf.o stdsprintf.o stdvbuf.o
+ 
+ .c.o:
+-	$(CC) -c $(CCFLAGS) $*.c
++	$(CC) -c $(CFLAGS) $*.c
+ 
+ must:	$(OBJS)
+ 
+--- src/lib/sfio/Sfio_t/runtest.orig	Sat Nov  8 15:27:24 1997
++++ src/lib/sfio/Sfio_t/runtest	Sat Nov  8 15:27:43 1997
+@@ -32,7 +32,7 @@
+ 	if $CC -g -I.. -I$INCLUDE $i $LIB/libsfio.a -o t
+ 	then
+ 		if ./t
+-		then	rm t; status=passed
++		then	rm -f t; status=passed
+ 		else	status=failed
+ 		fi
+ 	else	status="Not compiled"
