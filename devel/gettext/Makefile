@@ -37,7 +37,7 @@ PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 MAN1=		autopoint.1 gettext.1 gettextize.1 msgattrib.1 msgcat.1 \
 		msgcmp.1 msgcomm.1 msgconv.1 msgen.1 msgexec.1 \
 		msgfilter.1 msgfmt.1 msggrep.1 msginit.1 msgmerge.1 \
-		msgunfmt.1 msguniq.1 ngettext.1 xgettext.1
+		msgunfmt.1 msguniq.1 ngettext.1 xgettext.1 envsubst.1
 MAN3=		bind_textdomain_codeset.3 bindtextdomain.3 dcgettext.3 \
 		dcngettext.3 dgettext.3 dngettext.3 gettext.3 ngettext.3 \
 		textdomain.3
