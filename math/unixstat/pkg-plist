@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/abut
 bin/anova
+bin/calc
 bin/colex
 bin/contab
 bin/desc
