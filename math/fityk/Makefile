@@ -16,11 +16,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free peak fitting software
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2 \
+		readline.5:${PORTSDIR}/devel/readline
 
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+LDFLAGS+=	"-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-optimization
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE=	yes
 
 MAN1=	fityk.1
