@@ -1,0 +1,8 @@
+--- scsilib/TARGETS/Targetdirs.orig	Tue Oct 29 00:45:24 2002
++++ scsilib/TARGETS/Targetdirs	Tue Oct 29 00:45:59 2002
+@@ -1,4 +1,4 @@
+ #ident %W% %E% %Q%
+ ###########################################################################
+-DIRS=		conf inc lib libscg libschily librscg libdeflt rscsi export
++DIRS=		conf inc lib libscg libschily export
+ ###########################################################################
