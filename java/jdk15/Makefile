@@ -19,7 +19,7 @@ MAINTAINER=	glewis@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(NATIVE_BOOTSTRAP)
 BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk13
 .endif
@@ -30,7 +30,7 @@ LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
 		nspr4.1:$(PORTSDIR)/devel/nspr
 .endif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
-		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif \
+		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${X11BASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
