@@ -5,6 +5,7 @@ bin/bogoupgrade
 etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.10
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.11
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/METHODS
@@ -20,6 +21,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogofilter-qfe
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogogrep
 %%PORTDOCS%%%%DOCSDIR%%/contrib/dot-qmail-bogofilter-default
+%%PORTDOCS%%%%DOCSDIR%%/contrib/printmaildir.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/randomtrain
 %%PORTDOCS%%%%DOCSDIR%%/contrib/scramble
 %%PORTDOCS%%%%DOCSDIR%%/html/bogofilter-faq.html
