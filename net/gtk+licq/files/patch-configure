@@ -1,0 +1,11 @@
+--- configure.orig	Mon Aug  6 15:13:06 2001
++++ configure	Fri Nov 30 14:54:15 2001
+@@ -7956,7 +7956,7 @@
+         XSS_LIBS=""
+     fi
+     LDFLAGS="$LDFLAGS_old"
+-    CPPFLAGS="$LDFLAGS_old"
++    CPPFLAGS="$CPPFLAGS_old"
+ else
+     USE_XSS_LIBS="no"
+     XSS_LIBS=""
