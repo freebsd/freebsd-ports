@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Wed Mar 24 11:34:14 1999
-+++ Makefile.in	Wed Mar 24 11:34:23 1999
+--- Makefile.in.ORIG	Fri May  7 06:28:28 1999
++++ Makefile.in	Fri May  7 06:32:11 1999
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -78,8 +78,8 @@
  	TK_LIBRARY=$(TOP_DIR)/library; export TK_LIBRARY; \
  	./tktest
  
--install: install-binaries install-libraries install-demos install-man
-+install: install-binaries install-libraries install-demos
+-install: install-binaries install-libraries install-demos install-demosjp install-man
++install: install-binaries install-libraries install-demos install-demosjp
  
  # Note: before running ranlib below, must cd to target directory because
  # some ranlibs write to current directory, and this might not always be
@@ -135,7 +135,15 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -474,10 +512,10 @@
+@@ -485,6 +523,7 @@
+ 	    chmod 755 $(SCRIPT_INSTALL_DIR)/demos.jp/$$i; \
+ 	    done;
+ 	(cd $(SCRIPT_INSTALL_DIR)/demos.jp; \
++	    rm -f *.orig; \
+ 	    rm -rf images; \
+ 	    ln -s $(SCRIPT_INSTALL_DIR)/demos/images .)
+ 
+@@ -501,10 +540,10 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -149,7 +157,7 @@
  	    done;
  	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
  	@cd $(SRC_DIR)/doc; for i in *.3; \
-@@ -485,19 +523,26 @@
+@@ -512,19 +551,26 @@
  	    echo "Installing doc/$$i"; \
  	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
