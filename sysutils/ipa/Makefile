@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.simon.org.ua/ipa/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
