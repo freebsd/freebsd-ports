@@ -1,5 +1,3 @@
-@name x3270-3.0.1-bin
-@cwd /usr/X11R6
 @mode 555
 bin/x3270
 @mode 444
