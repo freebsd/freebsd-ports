@@ -1,0 +1,4 @@
+A scriptable FTP client that allows multiple simultaneous connections 
+and file queueing, as well as transger directly between servers. 
+
+WWW: http://quftp.sourceforge.net/
