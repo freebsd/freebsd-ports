@@ -385,7 +385,6 @@
     SUBDIR += quake2forge
     SUBDIR += quake2lnx
     SUBDIR += quakeforge
-    SUBDIR += quakeserver
     SUBDIR += quit
     SUBDIR += qwdtools
     SUBDIR += race
