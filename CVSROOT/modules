@@ -3304,6 +3304,7 @@ libggi		ports/graphics/libggi
 libghttp	ports/www/libghttp
 libgii		ports/devel/libgii
 libglade	ports/devel/libglade
+libglade2	ports/devel/libglade2
 libgmp		src/gnu/lib/libgmp
 libgmp3		ports/math/libgmp3
 libgnugetopt	ports/devel/libgnugetopt
