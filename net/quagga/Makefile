@@ -14,7 +14,7 @@ MASTER_SITES=	http://quagga.net/download/
 MAINTAINER=	fuzzball@ipv6peer.net
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
-CONFLICTS=	zebra-devel-* zebra-pj-* zebra-0*
+CONFLICTS=	zebra-devel-* zebra-0*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
