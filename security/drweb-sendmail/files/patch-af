@@ -1,53 +1,46 @@
---- etc/drweb_smf.conf.orig	Wed Jun  4 16:46:57 2003
-+++ etc/drweb_smf.conf	Tue Jul  1 10:12:55 2003
-@@ -17,14 +17,14 @@
+--- etc/drweb_smf.conf.orig	Fri Feb 27 23:21:37 2004
++++ etc/drweb_smf.conf	Sat Mar  6 23:10:40 2004
+@@ -18,14 +18,14 @@
  #   Address = local:/usr/local/drweb/run/drwebd.skt
  #   Address = pid:/usr/local/drweb/run/drwebd.pid
  #   Address = pid:/var/drweb/run/drwebd.pid, inet:3000@backup_server.example.com
 -Address = inet:3000@localhost
 +Address = local:%PREFIX%/drweb/run/drwebd.sock
  
- # Enable/disable caching resolved daemon host 
+ # Enable/disable caching of the resolved daemon host 
  # (useful only if daemon uses TCP/IP communications)
  Cache = yes
  
- # Timeout for whole scanning session (in seconds)
+ # Timeout for the whole scanning session (seconds)
 -Timeout = 120
 +Timeout = 160
  
  ########################
  # Scan options section #
-@@ -72,10 +72,10 @@
- DenyOnOne = yes
+@@ -91,10 +91,10 @@
+ DenyByDefault = no
  
  # List with rules for users or domains to block scanning 
 -DenyList = /etc/drweb/users.conf
 +DenyList = %PREFIX%/etc/drweb/users.conf
  
- # Directory used for story temporary files
+ # Directory used to store temporary files
 -Spool = /var/drweb/spool 
 +Spool = /tmp
  
  # Permissions for created spool files
  SpoolFilesMode = 0600
-@@ -195,28 +195,28 @@
- #        redirect - redirect to RedirectMail and reject message 
+@@ -245,7 +245,7 @@
+ #        pass - pass such messages 
  #        reject - reject such messages with permanent error 
  #        tempfail - reject such message with temporary error 
--ProcessingErrors = quarantine 
+-ProcessingErrors = reject 
 +ProcessingErrors = tempfail
  
- # Admin mail address (may be unix-local address)
--AdminMail = av-master@example.com
-+AdminMail = postmaster
- 
- # Mail address for redirect action (may be unix-local address)
--RedirectMail = quarantine@example.com
-+RedirectMail = postmaster
- 
- # Filter address, that be used in From: (should be qualified)
--FilterMail = DrWEB-DAEMON@example.com
-+FilterMail = DrWeb-DAEMON@%HOSTNAME%
+ # These reply strings will be used as SMTP reply if message has been rejected.
+ # You can specify only text part of reply: 550 5.7.0 Text part of reply.
+@@ -269,16 +269,16 @@
+ FilterMail = DrWEB-DAEMON
  
  # List of unnotificable viruses
 -UnnotificableVirusesList = /etc/drweb/viruses.conf
@@ -59,14 +52,14 @@
  
  # Quarantine directory. 
  # The infected files could be moved in that dir 
- # if you stay this field empty or commented then 
- # infected messages would not been storied
+ # if you leave this field empty or commented out then 
+ # infected messages will not be stored
 -Quarantine = /var/drweb/infected
 +Quarantine = %PREFIX%/drweb/infected
  
  # Permissions for quarantined files
  QuarantineFilesMode = 0660
-@@ -254,15 +254,15 @@
+@@ -317,15 +317,15 @@
  RcptsNotify = yes
  
  # Files with notification templates
@@ -86,7 +79,7 @@
  AdminTemplate = 
  RcptsTemplate = 
  
-@@ -270,16 +270,16 @@
+@@ -333,16 +333,16 @@
  SenderNotify = yes
  AdminNotify = yes
  RcptsNotify = no
@@ -107,7 +100,7 @@
  RcptsTemplate = 
  
  [RuleFilterNotifications]
-@@ -287,7 +287,7 @@
+@@ -350,7 +350,7 @@
  AdminNotify = yes
  RcptsNotify = no
  SenderTemplate = 
@@ -116,7 +109,7 @@
  RcptsTemplate = 
  
  ###################
-@@ -316,7 +316,7 @@
+@@ -391,7 +391,7 @@
  # Definition of Sendmail Milter Address according to sendmail.cf 
  # Note: FAMILY pid is not valid
  # MilterAddress = local:/usr/local/drweb/run/drweb-smf.skt
@@ -124,4 +117,4 @@
 +MilterAddress = local:%PREFIX%/drweb/run/drweb-smf.sock
  
  # Timeout for drweb-smf to sendmail connection
- # (Must be greater that any Timeout. parameter in sendmail.cf)
+ # (Must be greater than any Timeout. parameter in sendmail.cf)
