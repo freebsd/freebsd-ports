@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 CATEGORIES=	www databases ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/soap:${PORTSDIR}/net/ruby-soap
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/soap/wsdlDriver.rb:${PORTSDIR}/net/ruby-soap
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
