@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.44 1997/11/16 01:57:55 obrien Exp $
+# $Id: Makefile,v 1.40 1998/01/28 00:11:59 obrien Exp $
 
 DISTNAME=	${PKGNAME}i
-PKGNAME=	mutt-0.89
+PKGNAME=	mutt-0.89.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://riemann.iam.uni-bonn.de/pub/mutt/  \
 		ftp://ftp.gbnet.net/pub/mutt-international/  \
