@@ -1,0 +1,176 @@
+@comment $FreeBSD$
+bin/ae-sccs-put
+bin/ae_diff2htm
+bin/aeannotate
+bin/aebuffy
+bin/aecomp
+bin/aecomplete
+bin/aedist
+bin/aeedit
+bin/aefind
+bin/aeget
+bin/aegis
+bin/aegis.cgi
+bin/aegis.cgi.i
+bin/aeimport
+bin/aeintegratq
+bin/aels
+bin/aemeasure
+bin/aepatch
+bin/aerect
+bin/aereport
+bin/aesub
+bin/aetar
+bin/aexml
+bin/tkaeca
+bin/tkaegis
+bin/tkaenc
+bin/tkaepa
+bin/tkaer
+bin/xaegis
+%%DATADIR%%/aedefault.css
+%%DATADIR%%/aegis.icon
+%%DATADIR%%/aegis.mask
+%%DATADIR%%/aegis.pgm
+%%DATADIR%%/config.example/architecture
+%%DATADIR%%/config.example/cake
+%%DATADIR%%/config.example/cook
+%%DATADIR%%/config.example/diff
+%%DATADIR%%/config.example/fhist
+%%DATADIR%%/config.example/make
+%%DATADIR%%/config.example/rcs
+%%DATADIR%%/config.example/sccs
+%%DATADIR%%/cshrc
+%%DATADIR%%/db_forced.sh
+%%DATADIR%%/de.inews.sh
+%%DATADIR%%/de.sh
+%%DATADIR%%/de/LC_MESSAGES/glossary
+%%DATADIR%%/deu.inews.sh
+%%DATADIR%%/deu.sh
+%%DATADIR%%/en/html/chan_hstry.rpt
+%%DATADIR%%/en/html/chan_menu.rpt
+%%DATADIR%%/en/html/changes.rpt
+%%DATADIR%%/en/html/cp_command.rpt
+%%DATADIR%%/en/html/file_activ.rpt
+%%DATADIR%%/en/html/file_cflct.rpt
+%%DATADIR%%/en/html/file_densi.rpt
+%%DATADIR%%/en/html/file_diff.rpt
+%%DATADIR%%/en/html/file_hstry.rpt
+%%DATADIR%%/en/html/file_list.rpt
+%%DATADIR%%/en/html/file_menu.rpt
+%%DATADIR%%/en/html/proj_cch1.rpt
+%%DATADIR%%/en/html/proj_cch2.rpt
+%%DATADIR%%/en/html/proj_cch3.rpt
+%%DATADIR%%/en/html/proj_filme.rpt
+%%DATADIR%%/en/html/proj_hstg2.rpt
+%%DATADIR%%/en/html/proj_hstg3.rpt
+%%DATADIR%%/en/html/proj_hstgm.rpt
+%%DATADIR%%/en/html/proj_hstry.rpt
+%%DATADIR%%/en/html/proj_list.rpt
+%%DATADIR%%/en/html/proj_menu.rpt
+%%DATADIR%%/en/html/proj_prgr1.rpt
+%%DATADIR%%/en/html/proj_prgr2.rpt
+%%DATADIR%%/en/html/proj_prgr3.rpt
+%%DATADIR%%/en/html/proj_staff.rpt
+%%DATADIR%%/en/html/proj_stats.rpt
+%%DATADIR%%/en/notes/locale.man
+%%DATADIR%%/fr/LC_MESSAGES/glossaire
+%%DATADIR%%/if.inews.sh
+%%DATADIR%%/if.sh
+%%DATADIR%%/ip.inews.sh
+%%DATADIR%%/ip.sh
+%%DATADIR%%/man1/en/ae_c.1
+%%DATADIR%%/man1/en/ae_p.1
+%%DATADIR%%/profile
+%%DATADIR%%/remind/awt_dvlp.sh
+%%DATADIR%%/remind/awt_intgrtn.sh
+%%DATADIR%%/remind/bng_dvlpd.sh
+%%DATADIR%%/remind/bng_rvwd.sh
+%%DATADIR%%/report.index
+%%DATADIR%%/report/chan_detai.rpt
+%%DATADIR%%/report/chan_files.rpt
+%%DATADIR%%/report/chan_histo.rpt
+%%DATADIR%%/report/chan_lists.rpt
+%%DATADIR%%/report/chan_log.rpt
+%%DATADIR%%/report/chan_recur.rpt
+%%DATADIR%%/report/chan_so.rpt
+%%DATADIR%%/report/file_activ.rpt
+%%DATADIR%%/report/file_cflct.rpt
+%%DATADIR%%/report/file_hstry.rpt
+%%DATADIR%%/report/proj_activ.rpt
+%%DATADIR%%/report/proj_admin.rpt
+%%DATADIR%%/report/proj_ances.rpt
+%%DATADIR%%/report/proj_brada.rpt
+%%DATADIR%%/report/proj_bran.rpt
+%%DATADIR%%/report/proj_brana.rpt
+%%DATADIR%%/report/proj_detai.rpt
+%%DATADIR%%/report/proj_devel.rpt
+%%DATADIR%%/report/proj_files.rpt
+%%DATADIR%%/report/proj_gantt.rpt
+%%DATADIR%%/report/proj_integ.rpt
+%%DATADIR%%/report/proj_lists.rpt
+%%DATADIR%%/report/proj_recur.rpt
+%%DATADIR%%/report/proj_rvwrs.rpt
+%%DATADIR%%/report/proj_staff.rpt
+%%DATADIR%%/report/proj_stats.rpt
+%%DATADIR%%/rf.inews.sh
+%%DATADIR%%/rf.sh
+%%DATADIR%%/rp.inews.sh
+%%DATADIR%%/rp.sh
+%%DATADIR%%/rpu.inews.sh
+%%DATADIR%%/rpu.sh
+%%DATADIR%%/wish/aebuffy.rpt
+%%DATADIR%%/wish/aecomp.rpt
+%%DATADIR%%/wish/chan_attr.rpt
+%%DATADIR%%/wish/chan_list.rpt
+%%DATADIR%%/wish/devs_list.rpt
+%%DATADIR%%/wish/proj_attr.rpt
+%%DATADIR%%/wish/proj_conf.rpt
+%%DATADIR%%/wish/proj_list.rpt
+%%DATADIR%%/wish/tkaer_info.rpt
+@dirrm %%DATADIR%%/wish
+@dirrm %%DATADIR%%/report
+@dirrm %%DATADIR%%/remind
+@dirrm %%DATADIR%%/man1/en
+@dirrm %%DATADIR%%/man1
+@dirrm %%DATADIR%%/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/fr
+@dirrm %%DATADIR%%/en/notes
+@dirrm %%DATADIR%%/en/html
+@dirrm %%DATADIR%%/en
+@dirrm %%DATADIR%%/de/LC_MESSAGES
+@dirrm %%DATADIR%%/de
+@dirrm %%DATADIR%%/config.example
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/aoss4.ps
+%%PORTDOCS%%%%DOCSDIR%%/aoss4.txt
+%%PORTDOCS%%%%DOCSDIR%%/auug93.ps
+%%PORTDOCS%%%%DOCSDIR%%/auug93.txt
+%%PORTDOCS%%%%DOCSDIR%%/auug96.ps
+%%PORTDOCS%%%%DOCSDIR%%/auug96.txt
+%%PORTDOCS%%%%DOCSDIR%%/auug97.ps
+%%PORTDOCS%%%%DOCSDIR%%/auug97.txt
+%%PORTDOCS%%%%DOCSDIR%%/building.ps
+%%PORTDOCS%%%%DOCSDIR%%/building.txt
+%%PORTDOCS%%%%DOCSDIR%%/change_log.ps
+%%PORTDOCS%%%%DOCSDIR%%/change_log.txt
+%%PORTDOCS%%%%DOCSDIR%%/cvs-comparison.ps
+%%PORTDOCS%%%%DOCSDIR%%/cvs-comparison.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/auug97.ps
+%%PORTDOCS%%%%DOCSDIR%%/de/auug97.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq.ps
+%%PORTDOCS%%%%DOCSDIR%%/faq.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto.ps
+%%PORTDOCS%%%%DOCSDIR%%/howto.txt
+%%PORTDOCS%%%%DOCSDIR%%/lsm.ps
+%%PORTDOCS%%%%DOCSDIR%%/lsm.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.ps
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/refman.ps
+%%PORTDOCS%%%%DOCSDIR%%/refman.txt
+%%PORTDOCS%%%%DOCSDIR%%/release.ps
+%%PORTDOCS%%%%DOCSDIR%%/release.txt
+%%PORTDOCS%%%%DOCSDIR%%/user-guide.ps
+%%PORTDOCS%%%%DOCSDIR%%/user-guide.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
