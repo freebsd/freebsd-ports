@@ -1,0 +1,58 @@
+--- config.orig	Sun Aug  8 14:56:31 2004
++++ config	Sun Aug  8 14:58:41 2004
+@@ -0,0 +1,55 @@
++TRUSTED_RULESETS="TRIPWIRE EVILNUMBERS SARE_RANDOM";
++PREFIX="/usr/local"
++
++#### Local SpamAssassin/system Settings ####
++#### Modify these to match your system. ####
++SA_DIR="/usr/local/etc/mail/spamassassin";	# Change this to your SA local config 
++											# directory, probably /etc/mail/spamassassin.
++
++MAIL_ADDRESS="root";	# Where do Email notifications go
++
++SINGLE_EMAIL_ONLY="true";	# Set this to "true" to send only one notification
++							# email per RDJ run with "interesting"
++							# activity. Set to "" to send a separate
++							# for each interesting activity.
++
++EMAIL_RDJ_UPDATE_ONLY="true";	# Set this to "true" to send notifications only 
++								# when an update for RDJ has been retrieved.  Set 
++								# to "" (default) to send notifications whenever a ruleset 
++								# has changed. (Has no effect unless SINGLE_EMAIL_ONLY is set)
++
++SA_LINT="$PREFIX/bin/spamassassin --lint";	# Command used to lint the rules
++
++SA_RESTART="$PREFIX/etc/rc.d/spamd.sh restart";	# Command used to restart spamd
++												# May be /etc/rc.d/init.d/spamassassin restart
++												# For amavisd, may be /etc/init.d/amavisd restart
++												# For minedefang, may be /etc/init.d/mimedefang restart
++
++CURL_PROG="$PREFIX/bin/curl";								# Location of the curl program
++CURL_OPTS="-w %{http_code} --compressed -O -R -s -S -z";	# Parameters of the curl program
++
++WGET_PROG="fetch";	# Use FreeBSD's fetch instead of wget
++WGET_OPTS="-m";		# Parameter of the fetch program
++
++#WGET_PROG="$PREFIX/bin/wget";	# Location of the wget program
++#WGET_OPTS="-N";					# Parameters of the wget program
++
++#PERL="perl";		# Location of the perl program
++#GREP="grep";		# Location of the grep program 
++#TAIL="tail -1";	# Location (and parameters) for 'tail -n1'
++#HEAD="head -1";	# Location (and parameters) for 'head -n1'
++#MAILCMD="mail";	# Location of the mail program 
++					# that takes and understand the -s flag
++#DEBUG="true";		# Uncomment this to force debug mode on (or use -D)
++#### End Local SpamAssassin Settings    ####
++
++#TMPDIR="${SA_DIR}/RulesDuJour";	# Where we store old rulesets.  If you delete
++									# this directory, RuleSets may be detected as
++									# out of date the next time you run rules_du_jour.
++
++
++#### Do not change next lines        ####
++#### or script will break on FreeBSD ####
++
++DONT_CHECK_FOR_RDJ_UPDATES="true";	# Do not change, or periodic run will break on FreeBSD
++RDJ_URL="http://sandgnat.com/rdj/rules_du_jour";	# URL to update this script

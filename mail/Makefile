@@ -412,6 +412,7 @@
     SUBDIR += sortmail
     SUBDIR += spamass-milter
     SUBDIR += spamass-rules
+    SUBDIR += spamass-rules_du_jour
     SUBDIR += spambnc
     SUBDIR += spamd
     SUBDIR += spamguard
