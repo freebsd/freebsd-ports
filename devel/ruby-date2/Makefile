@@ -10,6 +10,7 @@ PORTVERSION=	2
 CATEGORIES=	devel	# ruby
 MASTER_SITES=	http://www.kt.rim.or.jp/~tadf/
 PKGNAMEPREFIX=	ruby-
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 

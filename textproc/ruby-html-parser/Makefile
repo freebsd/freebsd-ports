@@ -11,6 +11,7 @@ CATEGORIES=	textproc	# ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/html-parser/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel	# ruby
 MASTER_SITES=	http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/
 PKGNAMEPREFIX=	ruby-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
