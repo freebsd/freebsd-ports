@@ -522,6 +522,7 @@
     SUBDIR += pbnc
     SUBDIR += pchar
     SUBDIR += pcnfsd
+    SUBDIR += pear-Net_CheckIP
     SUBDIR += pear-Net_DIME
     SUBDIR += pear-Net_IPv6
     SUBDIR += pear-Net_NNTP
