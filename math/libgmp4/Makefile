@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
 DISTNAME=	gmp-${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free library for arbitrary precision arithmetic
 
 USE_REINPLACE=	yes
