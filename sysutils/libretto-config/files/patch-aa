@@ -17,9 +17,9 @@
 +OWNER = -o root
 +GROUP = -g operator
 +MODE  = -m 4550
-+BINDIR  = /usr/local/sbin
++BINDIR  = ${PREFIX}/sbin
 +MANSECT = 8
-+MANDIR  = /usr/local/man
++MANDIR  = ${PREFIX}/man
 +MANLANG = e
  
 -CFLAGS = -O2 #-DLIBRETTO -DDEBUG
