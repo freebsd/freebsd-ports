@@ -7,6 +7,7 @@
 
 PORTNAME=	orbitcpp
 PORTVERSION=	1.3.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -15,10 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ bindings for ORBit, a CORBA 2.2-compliant ORB
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack orbit2
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
