@@ -8,7 +8,7 @@
 PORTNAME=	emacs-w3m
 PORTVERSION=	1.0
 CATEGORIES=	www elisp
-MASTER_SITES=	http://namazu.org/~tsuchiya/emacs-w3m/
+MASTER_SITES=	http://emacs-w3m.namazu.org/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	w3m_el-${PORTVERSION}
 
