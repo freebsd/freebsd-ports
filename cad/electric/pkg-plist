@@ -1,15 +1,23 @@
 bin/electric
+share/electric/lib/.cadrc
 share/electric/lib/ALS.help
+share/electric/lib/AllDialogs.c
 share/electric/lib/CL.help
 share/electric/lib/EVE.help
 share/electric/lib/QUISC.help
 share/electric/lib/evemenus.mac
 share/electric/lib/evetutor.mac
+share/electric/lib/international/fr/LC_MESSAGES/electric.mo
+share/electric/lib/international/fr/LC_MESSAGES/license.txt
+share/electric/lib/international/messages.po
 share/electric/lib/pads4u.txt
 share/electric/lib/pla_mocmos.txt
 share/electric/lib/sclib.txt
+share/electric/lib/spiceparts.txt
 share/electric/lib/tsmc25.txt
 share/electric/lib/umc18.txt
-share/electric/lib/.cadrc
+@dirrm share/electric/lib/international/fr/LC_MESSAGES
+@dirrm share/electric/lib/international/fr
+@dirrm share/electric/lib/international
 @dirrm share/electric/lib
 @dirrm share/electric
