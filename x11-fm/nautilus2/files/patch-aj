@@ -1,0 +1,10 @@
+--- librsvg/rsvg-ft.c.orig	Sun Oct 22 05:24:29 2000
++++ librsvg/rsvg-ft.c	Fri Jan 12 10:32:10 2001
+@@ -30,3 +30,7 @@
+ 
++#ifdef __FreeBSD__
++#include <freetype2/freetype/freetype.h>
++#else
+ #include <freetype/freetype.h>
++#endif
+ 
