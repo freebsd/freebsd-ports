@@ -421,6 +421,7 @@ share/man/ja/man1/uupick.1.gz
 share/man/ja/man1/uuto.1.gz
 share/man/ja/man1/ypwhich.1.gz
 share/man/ja/man1/gate-ftp.1.gz
+share/man/ja/man1/introduction.1.gz
 share/man/ja/man5/inetd.conf.5.gz
 share/man/ja/man8/IPXrouted.8.gz
 share/man/ja/man8/MAKEDEV.8.gz
@@ -461,7 +462,6 @@ share/man/ja/man8/dmesg.8.gz
 share/man/ja/man8/dset.8.gz
 share/man/ja/man8/dump.8.gz
 share/man/ja/man8/dumpfs.8.gz
-share/man/ja/man8/dumplfs.8.gz
 share/man/ja/man8/dumpon.8.gz
 share/man/ja/man8/edquota.8.gz
 share/man/ja/man8/fdcontrol.8.gz
@@ -489,7 +489,6 @@ share/man/ja/man8/kgmon.8.gz
 share/man/ja/man8/kvm_mkdb.8.gz
 share/man/ja/man8/kzip.8.gz
 share/man/ja/man8/ldconfig.8.gz
-share/man/ja/man8/lfs_cleanerd.8.gz
 share/man/ja/man8/linux.8.gz
 share/man/ja/man8/locate.updatedb.8.gz
 share/man/ja/man8/lpc.8.gz
@@ -512,7 +511,6 @@ share/man/ja/man8/modunload.8.gz
 share/man/ja/man8/mount.8.gz
 share/man/ja/man8/mount_cd9660.8.gz
 share/man/ja/man8/mount_ext2fs.8.gz
-share/man/ja/man8/mount_lfs.8.gz
 share/man/ja/man8/mount_msdos.8.gz
 share/man/ja/man8/mount_nfs.8.gz
 share/man/ja/man8/mount_null.8.gz
@@ -536,7 +534,6 @@ share/man/ja/man8/ncrcontrol.8.gz
 share/man/ja/man8/ndc.8.gz
 share/man/ja/man8/netboot.8.gz
 share/man/ja/man8/newfs.8.gz
-share/man/ja/man8/newlfs.8.gz
 share/man/ja/man8/newsyslog.8.gz
 share/man/ja/man8/nextboot.8.gz
 share/man/ja/man8/nfsd.8.gz
