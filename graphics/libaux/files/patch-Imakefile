@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- Imakefile	2001/03/14 10:33:44	1.1
++++ Imakefile	2001/03/14 10:34:01
+@@ -42,3 +42,7 @@
+ DependTarget()
+ CleanTarget()
+ 
++.c.o:
++	$(RM) $@
++	$(CC) -c $(CFLAGS) $(_NOOP_) $*.c -o $@
++
