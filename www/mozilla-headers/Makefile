@@ -15,12 +15,22 @@ DISTFILES=
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Header files for mozilla communicator web-surfboard
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:configure
+.if !defined(WITH_MOZILLA)
+MOZILLA=	mozilla
+.else
+.if ${WITH_MOZILLA}=="mozilla-gtk2"
+MOZILLA=	mozilla-gtk2
+.else
+MOZILLA=	mozilla
+.endif
+.endif
+
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/${MOZILLA}:configure
 
 USE_X_PREFIX=	yes
 
 PLIST=		${WRKSRC}/pkg-plist
-MAINDIR=	${.CURDIR}/../mozilla
+MAINDIR=	${.CURDIR}/../${MOZILLA}
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
 PORTREVISION!=	${PORTREVISION}
