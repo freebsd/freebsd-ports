@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Authentication library used by courier ports
 
+CONFLICTS=	courier-0.*
+
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
@@ -38,18 +40,24 @@ OPTIONS=	PAM		"Build with PAM support"		on \
 		POSTGRESQL	"Build in postgresql support"		off \
 		LDAP		"Build in ldap support with openldap"	off \
 		GDBM		"Use gdbm files instead of bdb"		off \
-		AUTHUSERDB	"Build with authuserdb"			on
+		AUTHUSERDB	"Build with authuserdb"			on \
+		MERGECFGS	"Merge new Options into old auth-rc files" on
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
 WITH_MAILUSER?=	daemon
 WITH_MAILGROUP?=daemon
+CONFDIR?=	${PREFIX}/etc
+USERDB?=	${PREFIX}/etc/userdb
+
+PLIST_SUB=	CONFDIR=${CONFDIR:S,^${PREFIX}/,,} \
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--without-authshadow \
+CONFIGURE_ARGS=	--sysconfdir=${CONFDIR} \
+		--without-authshadow \
 		--without-authcustom \
 		--enable-unicode \
 		--enable-ltdl-install=no \
@@ -119,10 +127,11 @@ PLIST_SUB+=	PAMFLAG="@comment "
 CONFIGURE_ARGS+=--without-authuserdb
 PLIST_SUB+=     AUTHUSERDBFLAG="@comment "
 .else
+CONFIGURE_ARGS+=--with-userdb=${USERDB}
 PLIST_SUB+=     AUTHUSERDBFLAG=""
 .endif
 
-RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAILUSER=${WITH_MAILUSER} MAILGROUP=${WITH_MAILGROUP}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} MAILUSER=${WITH_MAILUSER} MAILGROUP=${WITH_MAILGROUP}
 
 MAN1=		courierlogger.1
 
@@ -154,7 +163,9 @@ post-install:
 	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/courier-authdaemond.sh > ${WRKDIR}/courier-authdaemond.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/courier-authdaemond.sh ${PREFIX}/etc/rc.d/courier-authdaemond.sh
+.if defined(WITH_MERGECFGS)
 	cd ${WRKSRC} && ( ${GMAKE} install-configure ; cd - )
+.endif
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
