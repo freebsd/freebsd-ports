@@ -6,7 +6,7 @@ $FreeBSD$
  fi
  
 -CFLAGS='-I./include -I $(top_srcdir)/include -Wall -W'
-+CFLAGS="-I./include -I \$(top_srcdir)/include"
++CFLAGS="$CFLAGS -I./include -I \$(top_srcdir)/include"
  if test x$debug = xtrue; then
 -	CFLAGS="$CFLAGS -g -O0 -DDEBUG"
 +	CFLAGS="$CFLAGS -g -DDEBUG"
