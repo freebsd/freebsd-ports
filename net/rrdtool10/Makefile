@@ -34,10 +34,6 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ( ${PERL_LEVEL} <= 500503 )
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-perl-shared::RRDs.xs
-.endif
-
 .if defined(WITH_LATIN2)
 CONFIGURE_ARGS+=	--with-latin2
 .endif
