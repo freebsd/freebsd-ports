@@ -1,27 +1,29 @@
-*** mjc.dev.orig	Sat Nov  9 22:51:15 1996
---- mjc.dev	Sat Nov  9 22:53:25 1996
+*** mjc.dev.orig	Sun Apr 20 01:41:48 1997
+--- mjc.dev	Sun Apr 20 01:43:46 1997
 ***************
-*** 17,27 ****
+*** 16,27 ****
+  gdevmjc.$(OBJ): gdevmjc.c $(PDEVH) $(gdevpcl_h)
   	$(CCC) gdevmjc.c
   
-  mjc180.dev: $(mj700v2c_)
+! mjc180.dev: $(mj700v2c_)
 ! 	$(SHP)gssetdev mjc180 $(mj700v2c_)
-  mjc360.dev: $(mj700v2c_)
+! mjc360.dev: $(mj700v2c_)
 ! 	$(SHP)gssetdev mjc360 $(mj700v2c_)
-  mjc720.dev: $(mj700v2c_)
+! mjc720.dev: $(mj700v2c_)
 ! 	$(SHP)gssetdev mjc720 $(mj700v2c_)
-  mj500c.dev: $(mj700v2c_)
+! mj500c.dev: $(mj700v2c_)
 ! 	$(SHP)gssetdev mj500c $(mj700v2c_)
   
---- 17,27 ----
+--- 16,27 ----
+  gdevmjc.$(OBJ): gdevmjc.c $(PDEVH) $(gdevpcl_h)
   	$(CCC) gdevmjc.c
   
-  mjc180.dev: $(mj700v2c_)
+! mjc180.dev: $(mj700v2c_) page.dev
 ! 	$(SETPDEV) mjc180 $(mj700v2c_)
-  mjc360.dev: $(mj700v2c_)
+! mjc360.dev: $(mj700v2c_) page.dev
 ! 	$(SETPDEV) mjc360 $(mj700v2c_)
-  mjc720.dev: $(mj700v2c_)
+! mjc720.dev: $(mj700v2c_) page.dev
 ! 	$(SETPDEV) mjc720 $(mj700v2c_)
-  mj500c.dev: $(mj700v2c_)
+! mj500c.dev: $(mj700v2c_) page.dev
 ! 	$(SETPDEV) mj500c $(mj700v2c_)
   
