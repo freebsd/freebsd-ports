@@ -1,5 +1,5 @@
---- configure.orig	Mon Oct 27 00:55:34 1997
-+++ configure	Sun Jan 24 15:54:23 1999
+--- configure.orig	Sun Oct 26 08:55:34 1997
++++ configure	Tue Jan 25 01:49:19 2000
 @@ -992,9 +992,9 @@
  qt_libdir=NO
  for i in $qt_libdirs;
@@ -12,3 +12,31 @@
        qt_libdir=$i
        break 2
      fi
+@@ -1682,10 +1682,6 @@
+ ARCH_TYPE=`uname -m`
+ echo "$ac_t""$ARCH_TYPE" 1>&6
+ 
+-CC=
+-CFLAGS=
+-LDFLAGS=
+-CFLAGS_ARCH=
+ 
+ 
+ 
+@@ -1701,7 +1697,6 @@
+     ;;
+ 
+   Linux|FreeBSD)
+-    CC="gcc"
+     if test "$ARCH_TYPE" = "i486" ; then
+       CFLAGS_ARCH="-m486"
+     fi
+@@ -1711,7 +1706,7 @@
+     if test "$OS_TYPE" = "FreeBSD" ; then
+       OS_TYPE="BSD"
+     fi
+-    CFLAGS="-O6 -ffast-math -fomit-frame-pointer -DNO_BYTE_SWAPPING ${CFLAGS_ARCH}"
++    CFLAGS="${CFLAGS} -ffast-math -fomit-frame-pointer -DNO_BYTE_SWAPPING ${CFLAGS_ARCH}"
+     ;;
+ 
+   SunOS)
