@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MI
 RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_GMAKE=	yes
 TGNUSVERSION=	6_14_6-04
 MIMEUI_PRODUCT?=semi
@@ -36,6 +37,10 @@ WITHOUT_MULE=yes
 
 .if (${EMACS_PORT_NAME} == "xemacs21" || ${EMACS_PORT_NAME} == "xemacs21-mule")
 CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD} --with-packagedir=${LOCALBASE}/${EMACS_PACKAGESDIR}
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages \
+		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-comm-packages
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages \
+		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-comm-packages
 .else
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/t-gnus \

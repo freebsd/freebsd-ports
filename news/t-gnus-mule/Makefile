@@ -8,6 +8,5 @@
 MASTERDIR=	${.CURDIR}/../t-gnus-emacs20
 
 EMACS_PORT_NAME=	mule
-PATCHDIR=		${.CURDIR}/files
 
 .include "${MASTERDIR}/Makefile"
