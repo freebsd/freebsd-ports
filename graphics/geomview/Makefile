@@ -11,7 +11,7 @@ CATEGORIES=	graphics tk83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geomview
 
-MAINTAINER=	fenner@freebsd.org
+MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
 
 BROKEN=		"Does not install"
