@@ -79,7 +79,8 @@
 +			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}httpd-error.log;" \
 +			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}httpd-referer.log;" \
 +			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}httpd-agent.log;" \
- 			-e 's;conf/tables/;$(sysconfdir)/tables/;' \
+-			-e 's;conf/tables/;$(sysconfdir)/tables/;' \
++			-e 's;conf/tables/;$(sysconfdir)/tables/;g' \
  			-e 's;conf/magic;$(sysconfdir)/magic;' \
  			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
  			-e 's;User nobody;User $(conf_user);' \

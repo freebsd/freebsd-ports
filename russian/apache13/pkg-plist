@@ -16,6 +16,70 @@ etc/apache/mime.types.default
 @unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf.default; then rm -f %D/etc/apache/srm.conf; fi
 etc/apache/srm.conf.default
 @exec [ ! -f %B/srm.conf ] && cp %B/%f %B/srm.conf
+etc/apache/tables/cyrillic/dos-dos.tab
+etc/apache/tables/cyrillic/dos-iso.tab
+etc/apache/tables/cyrillic/dos-koi.tab
+etc/apache/tables/cyrillic/dos-koiu.tab
+etc/apache/tables/cyrillic/dos-mac.tab
+etc/apache/tables/cyrillic/dos-macu.tab
+etc/apache/tables/cyrillic/dos-utf7.tab
+etc/apache/tables/cyrillic/dos-utf8.tab
+etc/apache/tables/cyrillic/dos-win.tab
+etc/apache/tables/cyrillic/iso-dos.tab
+etc/apache/tables/cyrillic/iso-iso.tab
+etc/apache/tables/cyrillic/iso-koi.tab
+etc/apache/tables/cyrillic/iso-koiu.tab
+etc/apache/tables/cyrillic/iso-mac.tab
+etc/apache/tables/cyrillic/iso-macu.tab
+etc/apache/tables/cyrillic/iso-utf7.tab
+etc/apache/tables/cyrillic/iso-utf8.tab
+etc/apache/tables/cyrillic/iso-win.tab
+etc/apache/tables/cyrillic/koi-dos.tab
+etc/apache/tables/cyrillic/koi-iso.tab
+etc/apache/tables/cyrillic/koi-koi.tab
+etc/apache/tables/cyrillic/koi-koiu.tab
+etc/apache/tables/cyrillic/koi-mac.tab
+etc/apache/tables/cyrillic/koi-macu.tab
+etc/apache/tables/cyrillic/koi-utf7.tab
+etc/apache/tables/cyrillic/koi-utf8.tab
+etc/apache/tables/cyrillic/koi-win.tab
+etc/apache/tables/cyrillic/koiu-dos.tab
+etc/apache/tables/cyrillic/koiu-iso.tab
+etc/apache/tables/cyrillic/koiu-koi.tab
+etc/apache/tables/cyrillic/koiu-koiu.tab
+etc/apache/tables/cyrillic/koiu-mac.tab
+etc/apache/tables/cyrillic/koiu-macu.tab
+etc/apache/tables/cyrillic/koiu-utf7.tab
+etc/apache/tables/cyrillic/koiu-utf8.tab
+etc/apache/tables/cyrillic/koiu-win.tab
+etc/apache/tables/cyrillic/mac-dos.tab
+etc/apache/tables/cyrillic/mac-iso.tab
+etc/apache/tables/cyrillic/mac-koi.tab
+etc/apache/tables/cyrillic/mac-koiu.tab
+etc/apache/tables/cyrillic/mac-mac.tab
+etc/apache/tables/cyrillic/mac-macu.tab
+etc/apache/tables/cyrillic/mac-utf7.tab
+etc/apache/tables/cyrillic/mac-utf8.tab
+etc/apache/tables/cyrillic/mac-win.tab
+etc/apache/tables/cyrillic/macu-dos.tab
+etc/apache/tables/cyrillic/macu-iso.tab
+etc/apache/tables/cyrillic/macu-koi.tab
+etc/apache/tables/cyrillic/macu-koiu.tab
+etc/apache/tables/cyrillic/macu-mac.tab
+etc/apache/tables/cyrillic/macu-macu.tab
+etc/apache/tables/cyrillic/macu-utf7.tab
+etc/apache/tables/cyrillic/macu-utf8.tab
+etc/apache/tables/cyrillic/macu-win.tab
+etc/apache/tables/cyrillic/readme.txt
+etc/apache/tables/cyrillic/win-dos.tab
+etc/apache/tables/cyrillic/win-iso.tab
+etc/apache/tables/cyrillic/win-koi.tab
+etc/apache/tables/cyrillic/win-koiu.tab
+etc/apache/tables/cyrillic/win-mac.tab
+etc/apache/tables/cyrillic/win-macu.tab
+etc/apache/tables/cyrillic/win-utf7.tab
+etc/apache/tables/cyrillic/win-utf8.tab
+etc/apache/tables/cyrillic/win-win.tab
 etc/apache/tables/russian/alt-alt.tab
 etc/apache/tables/russian/alt-iso.tab
 etc/apache/tables/russian/alt-koi.tab
@@ -101,8 +165,8 @@ etc/apache/tables/ukrainian2/win-mac.tab
 etc/apache/tables/ukrainian2/win-ruscii.tab
 etc/apache/tables/ukrainian2/win-trans.tab
 etc/rc.d/apache.sh
-include/apache/alloc.h
 include/apache/ap.h
+include/apache/ap_alloc.h
 include/apache/ap_compat.h
 include/apache/ap_config.h
 include/apache/ap_config_auto.h
@@ -168,6 +232,7 @@ sbin/logresolve
 sbin/rotatelogs
 share/doc/apache/apache_pb.gif
 share/doc/apache/ra-powered.gif
+share/doc/apache/README.rus
 @exec mkdir -p %D/www
 @exec ln -fs %B %D/www/data.default
 @unexec rm -f %D/www/data.default
@@ -182,17 +247,29 @@ share/doc/apache/index.html.ee
 share/doc/apache/index.html.en
 share/doc/apache/index.html.es
 share/doc/apache/index.html.fr
+share/doc/apache/index.html.he.iso8859-8
 share/doc/apache/index.html.it
 share/doc/apache/index.html.ja.jis
+share/doc/apache/index.html.kr.iso-kr
 share/doc/apache/index.html.lu
 share/doc/apache/index.html.nl
+share/doc/apache/index.html.no
 share/doc/apache/index.html.po.iso-pl
 share/doc/apache/index.html.pt
 share/doc/apache/index.html.pt-br
+share/doc/apache/index.html.ru.cp-1251
+share/doc/apache/index.html.ru.cp866
+share/doc/apache/index.html.ru.iso-ru
+share/doc/apache/index.html.ru.koi8-r
+share/doc/apache/index.html.ru.ucs2
+share/doc/apache/index.html.ru.ucs4
+share/doc/apache/index.html.ru.utf8
 share/doc/apache/index.html.se
+share/doc/apache/index.html.tw.Big5
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
 share/doc/apache/manual/cgi_path.html
+share/doc/apache/manual/configuring.html
 share/doc/apache/manual/content-negotiation.html
 share/doc/apache/manual/custom-error.html
 share/doc/apache/manual/dns-caveats.html
@@ -238,6 +315,7 @@ share/doc/apache/manual/misc/perf-tuning.html
 share/doc/apache/manual/misc/perf.html
 share/doc/apache/manual/misc/rewriteguide.html
 share/doc/apache/manual/misc/security_tips.html
+share/doc/apache/manual/misc/tutorials.html
 share/doc/apache/manual/misc/vif-info.html
 share/doc/apache/manual/misc/windoz_keepalive.html
 share/doc/apache/manual/mod/core.html
@@ -245,6 +323,7 @@ share/doc/apache/manual/mod/directive-dict.html
 share/doc/apache/manual/mod/directives.html
 share/doc/apache/manual/mod/footer.html
 share/doc/apache/manual/mod/header.html
+share/doc/apache/manual/mod/index-bytype.html
 share/doc/apache/manual/mod/index.html
 share/doc/apache/manual/mod/mod_access.html
 share/doc/apache/manual/mod/mod_actions.html
@@ -290,12 +369,15 @@ share/doc/apache/manual/mod/mod_unique_id.html
 share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
 share/doc/apache/manual/mod/mod_vhost_alias.html
+share/doc/apache/manual/mod/module-dict.html
+share/doc/apache/manual/mpeix.html
 share/doc/apache/manual/multilogs.html
 share/doc/apache/manual/netware.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
 share/doc/apache/manual/new_features_1_2.html
 share/doc/apache/manual/new_features_1_3.html
+share/doc/apache/manual/new_features_2_0.html
 share/doc/apache/manual/process-model.html
 share/doc/apache/manual/readme-tpf.html
 share/doc/apache/manual/search/manual-index.cgi
@@ -319,6 +401,8 @@ share/doc/apache/manual/vhosts/mass.html
 share/doc/apache/manual/vhosts/name-based.html
 share/doc/apache/manual/vhosts/vhosts-in-depth.html
 share/doc/apache/manual/vhosts/virtual-host.html
+share/doc/apache/manual/win_compiling.html
+share/doc/apache/manual/win_service.html
 share/doc/apache/manual/windows.html
 www/cgi-bin.default/printenv
 www/cgi-bin.default/test-cgi
@@ -434,6 +518,7 @@ www/icons/world2.gif
 @exec mkdir -p %D/www/proxy
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
+@dirrm etc/apache/tables/cyrillic
 @dirrm etc/apache/tables/russian
 @dirrm etc/apache/tables/russian2
 @dirrm etc/apache/tables/czech
