@@ -1,0 +1,15 @@
+include/pdflib.h
+lib/libpdf.so
+lib/libpdf.so.3
+share/doc/pdflib/PDFlib-license.pdf
+share/doc/pdflib/PDFlib-manual.pdf
+share/doc/pdflib/PDFlib-purchase-order.pdf
+share/doc/pdflib/aladdin-license.pdf
+share/doc/pdflib/changes.txt
+share/doc/pdflib/compatibility.txt
+share/doc/pdflib/grid.pdf
+share/doc/pdflib/readme_ebcdic.txt
+share/doc/pdflib/readme_mac.txt
+share/doc/pdflib/readme_unix.txt
+share/doc/pdflib/readme_win.txt
+@dirrm share/doc/pdflib
