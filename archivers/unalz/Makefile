@@ -6,24 +6,19 @@
 #
 
 PORTNAME=	unalz
-PORTVERSION=	0.20
+PORTVERSION=	0.31
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.kipple.pe.kr/win/unalz/
-DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Extracts AlZip archives
 
-USE_REINPLACE=	yes
+USE_ICONV=	yes
 PLIST_FILES=	bin/unalz
-MAKEFILE=	makefile
-MAKE_ENV=	CC="${CC} ${CFLAGS}" CPP="${CXX} ${CXXFLAGS}"
-
-post-patch:
-.for f in UnAlz.cpp UnAlz.h
-	${REINPLACE_CMD} 's/SIG_ERR/ALZ_SIG_ERR/g' ${WRKSRC}/$f
-.endfor
+MAKEFILE=	Makefile.freebsd
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unalz ${PREFIX}/bin
