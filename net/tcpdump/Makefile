@@ -7,20 +7,38 @@
 
 PORTNAME=	tcpdump
 PORTVERSION=	3.8.1
+PORTREVISION=	351
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/beta/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-316
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
+.if defined(TCPDUMP_OVERWRITE_BASE)
+LIB_DEPENDS=	pcap.2:${PORTSDIR}/net/libpcap
+.else
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		tcpdump.1
 
 GNU_CONFIGURE=	yes
+
+.if defined(TCPDUMP_OVERWRITE_BASE)
+PREFIX=		/usr
+PKGNAMESUFFIX=	-overwrite-base
+MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS+=--mandir=${MANPREFIX}/man
+PLIST_SUB+=	NOTBASE="@comment "
+PLIST_SUB+=	BASE=""
+PKGMESSAGE=	${FILESDIR}/pkg-message-base
+.else
+PLIST_SUB+=	BASE="@comment "
+PLIST_SUB+=	NOTBASE=""
+.endif
 
 .if !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
@@ -54,5 +72,10 @@ pre-configure:
 .for i in ${LOCALPCAPFILES}
 	${LN} -s ${LOCALBASE}/$i ${LOCALPCAPDIR}
 .endfor
+
+.if defined(TCPDUMP_OVERWRITE_BASE)
+post-install:
+	${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.mk>
