@@ -7062,6 +7062,7 @@ relaydb		ports/mail/relaydb
 remarp		ports/net/remarp
 render		ports/x11-toolkits/render
 renderpark	ports/graphics/renderpark
+reoback		ports/sysutils/reoback
 rep-gtk		ports/x11-toolkits/rep-gtk
 rep-gtk2	ports/x11-toolkits/rep-gtk2
 replaceit	ports/textproc/replaceit
