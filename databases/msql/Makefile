@@ -10,7 +10,7 @@ PORTVERSION=	2.0.12
 PORTREVISION=	4
 CATEGORIES=	databases
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vasallia@ukr.net
 COMMENT=	The Mini SQL server, version 2
 
 INSTALLS_SHLIB=	YES
