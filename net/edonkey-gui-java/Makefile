@@ -20,6 +20,8 @@ COMMENT=	Java GUI to eDonkey2000 'core' command line client
 
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 
+BROKEN=		Unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 NO_BUILD=	yes

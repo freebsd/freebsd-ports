@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \
 		${X11BASE}/bin/GrabWeather:${PORTSDIR}/misc/wmweather
 
+BROKEN=		Unfetchable
+
 NO_LATEST_LINK=	yes
 
 USE_X_PREFIX=	yes

@@ -18,6 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/boinc/api/boinc_api.h:${PORTSDIR}/net/boinc-client
 RUN_DEPENDS=	boinc-client:${PORTSDIR}/net/boinc-client
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
+BROKEN=		Unfetchable
+
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	LANG=C BOINCDIR=${LOCALBASE}/boinc CPPFLAGS=-I${X11BASE}/include CFLAGS=-I${X11BASE}/include LDFLAGS=-L${LOCALBASE}/lib
