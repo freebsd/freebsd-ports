@@ -8,7 +8,7 @@
 
 DISTNAME=	mlpb103
 PKGNAME=	mlan-1.03
-CATEGORIES=	devel
+CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.dalsemi.com/pub/auto_id/public/
 
 MAINTAINER=	phk@FreeBSD.org
