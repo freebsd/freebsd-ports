@@ -30,6 +30,7 @@
     SUBDIR += cheesetracker
     SUBDIR += chordpack
     SUBDIR += cmp3
+    SUBDIR += cmt
     SUBDIR += cplay
     SUBDIR += csound
     SUBDIR += csound-manual
