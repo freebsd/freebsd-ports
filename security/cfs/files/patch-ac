@@ -1,8 +1,22 @@
---- cfssh.orig	Mon May 22 20:56:00 2000
-+++ cfssh	Mon May 22 20:56:11 2000
-@@ -1,4 +1,4 @@
+--- cfssh.orig	Wed Dec  3 16:21:40 1997
++++ cfssh	Tue Apr 20 19:45:17 2004
+@@ -1,15 +1,16 @@
 -#!/bin/ksh
 +#!/bin/sh
  
  if [ -z "$1" ]; then
  	echo Usage: cfssh directory
+ 	exit
+ fi
+ export PS1="crypto:`basename $1`$ "
+-D=.$RANDOM.$RANDOM
++set -- $1 `dd if=/dev/urandom bs=8 count=1 2>/dev/null | od -D`
++D=.$3.$4
+ cattach $1 $D || exit 1
+ echo "Directory is /crypt/$D"
+ cd /crypt/$D
+-D="             "
++D="                    "
+ CWD=`/bin/pwd`
+ D=`basename $CWD`
+ PWD=$CWD
