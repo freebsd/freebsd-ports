@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uclmmbase
-PORTVERSION=	1.1.2
+PORTVERSION=	1.2.8
 CATEGORIES=	devel
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/common/
 DISTNAME=	common-${PORTVERSION}
@@ -29,10 +29,10 @@ INSTALL_HDRS=	base64.h config_win32.h config_unix.h crypt_random.h \
 		rtp.h uclconf.h util.h version.h
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libuclmmbase.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/libuclmmbase.a ${PREFIX}/lib
 	@${MKDIR} ${PREFIX}/include/uclmmbase
 .for file in ${INSTALL_HDRS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/uclmmbase
+	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/uclmmbase
 .endfor
 
 .include <bsd.port.post.mk>
