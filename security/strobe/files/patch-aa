@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jul  3 07:48:00 1997
-+++ Makefile	Thu Jan 29 16:57:49 1998
+--- Makefile.orig	Thu Jul  3 04:48:00 1997
++++ Makefile	Tue Dec 29 11:15:04 1998
 @@ -3,15 +3,16 @@
  
  # Modify the below to suit your filesystem
@@ -12,8 +12,10 @@
 +LIBDIR=${PREFIX}/lib
 +MANDIR=${PREFIX}/man/man1
  
- #CC=cc
- CC=gcc
+-#CC=cc
+-CC=gcc
++CC?=cc
++#CC=gcc
  
  #FLAGS=-O -nointl		# SCO
 -FLAGS= -O -g -Wall
@@ -21,6 +23,15 @@
  
  #LIBS= -lnsl -lsocket		# SYSVR4 / SOLARIS
  #LIBS= -lsocket -lmalloc -lc_s	# SCO
+@@ -31,7 +32,7 @@
+      -DSTROBE_SERVICES='"$(DATA)"'\
+      -DETC_SERVICES='"$(ETC_SERVICES)"'
+ 
+-CFLAGS=$(FLAGS) $(DEFS)
++CFLAGS+=$(DEFS)
+ 
+ $(BIN): $(OBJS)
+ 	$(CC) $(CFLAGS) -o $(BIN) $(OBJS) $(LIBS)
 @@ -40,13 +41,13 @@
  $(MAN):
  $(INSTALLDIR)/$(BIN): $(BIN)
