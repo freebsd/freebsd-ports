@@ -1,6 +1,6 @@
---- build.orig	Mon Nov 15 14:16:25 1999
-+++ build	Wed Jul  5 21:22:26 2000
-@@ -80,8 +80,9 @@
+--- build.orig	Wed Nov  8 12:31:25 2000
++++ build	Mon Dec 18 02:12:09 2000
+@@ -95,8 +95,9 @@
   pine   The Pine mailer. Once compiled this should work just fine on
          your system with no other files than this binary, and no
          modifications to your system. Optionally you may create two
@@ -12,8 +12,8 @@
   
   pico   The standalone editor similar to the Pine message composer.
          This is a very simple straight forward text editor.
-@@ -277,17 +278,17 @@
- 	  esac
+@@ -304,17 +305,17 @@
+ 	  echo "Including SSL functionality"
  	fi
  
 -        if [ -s c-client ] ; then rm -f c-client ; fi
@@ -23,9 +23,9 @@
 -        if [ -s imapd    ] ; then rm -f imapd    ; fi
 -        ln -s imap/imapd imapd
 -        echo "Making c-client library, mtest and imapd"
--        eval echo make "$makeargs" "$K1" "$K2" $ccltarg
+-        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
 -        cd $PHOME/imap
--        eval make "$makeargs" "$K1" "$K2" $ccltarg
+-        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
 -        echo ''
 +#        if [ -s c-client ] ; then rm -f c-client ; fi
 +#        ln -s imap/c-client c-client
@@ -34,14 +34,14 @@
 +#        if [ -s imapd    ] ; then rm -f imapd    ; fi
 +#        ln -s imap/imapd imapd
 +#        echo "Making c-client library, mtest and imapd"
-+#        eval echo make "$makeargs" "$K1" "$K2" $ccltarg
++#        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
 +#        cd $PHOME/imap
-+#        eval make "$makeargs" "$K1" "$K2" $ccltarg
++#        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
 +#        echo ''
  
          echo "Making Pico and Pilot"
          cd $PHOME/pico
-@@ -304,14 +305,14 @@
+@@ -331,14 +332,14 @@
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -59,7 +59,7 @@
  	case $maketarg in
  	    mnt)    echo "Fixing stacksizes ..."
  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
-@@ -321,15 +322,15 @@
+@@ -348,15 +349,15 @@
  
  
      clean) # This only sort of works 

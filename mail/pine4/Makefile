@@ -9,19 +9,18 @@
 # directory to the pine4-ssl port.
 
 PORTNAME?=	pine
-PORTVERSION?= 	4.21
-PORTREVISION?=	1
+PORTVERSION?= 	4.31
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME?=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER?=	pine@freebsd.ady.ro
+MAINTAINER?=	ports@FreeBSD.org
 
 Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
 
 MAN1=		pine.1 pico.1 pilot.1
 
-LIB_DEPENDS=	c-client4.7:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 # Define "WITH_LDAP" to include ldap support.
 # If the ldap port is installed somewhere other than /usr/local, define

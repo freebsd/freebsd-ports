@@ -9,17 +9,6 @@
  
  
  /*----------------------------------------------------------------------
---- pine/abookcpy.c.orig	Wed Jul  5 22:13:36 2000
-+++ pine/abookcpy.c	Wed Jul  5 22:13:56 2000
-@@ -63,7 +63,7 @@
-     FILE       *fp;
-     int         trimsize;
- 
--#include "../c-client/linkage.c"
-+#include "c-client/linkage.c"
- 
-     trimsize = parse_args(argc, argv, &local, &remote);
- 
 --- pine/pine.c.orig	Wed Jul  5 22:16:28 2000
 +++ pine/pine.c	Mon Sep 20 16:17:58 1999
 @@ -40,7 +40,7 @@
@@ -40,17 +29,6 @@
  
      /*------- ... then tune the drivers just installed -------*/ 
  #ifdef	DOS
---- pine/adrbklib.c.orig	Wed Jul  5 22:18:28 2000
-+++ pine/adrbklib.c	Wed Jul  5 22:18:46 2000
-@@ -41,7 +41,7 @@
- 
- #include "headers.h"
- #include "adrbklib.h"
--#include "../c-client/imap4r1.h"  /* for LEVELSTATUS() */
-+#include "c-client/imap4r1.h"  /* for LEVELSTATUS() */
- 
- /*
-  * We don't want any end of line fixups to occur, so include "b" in DOS modes.
 --- pine/mailindx.c.orig	Wed Jul  5 22:19:38 2000
 +++ pine/mailindx.c	Wed Jul  5 22:19:49 2000
 @@ -50,7 +50,7 @@

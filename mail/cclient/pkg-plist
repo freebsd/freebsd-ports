@@ -1,3 +1,4 @@
+include/c-client/c-client.h
 include/c-client/dummy.h
 include/c-client/env.h
 include/c-client/env_unix.h
