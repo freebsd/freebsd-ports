@@ -135,6 +135,7 @@ include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
 include/sp/constant.h
+include/sp/koi8-r.h
 include/sp/macros.h
 include/sp/rtti.h
 include/sp/sptchar.h
