@@ -1,5 +1,5 @@
-*** Makefile.orig	Mon Jun  5 19:49:08 1995
---- Makefile	Thu Jul 27 21:10:17 1995
+*** Makefile.orig	Mon Jun  5 21:49:08 1995
+--- Makefile	Fri Jul 28 04:53:59 1995
 ***************
 *** 15,21 ****
   #
@@ -18,24 +18,22 @@
   MANROOT=$(DESTROOT)/man
   MANDIR=$(MANROOT)/man8
 ***************
-*** 44,50 ****
+*** 42,48 ****
+  # GLIBS=-lident -ldes
+  GLIBS=
   
-  CFLAGS=-O
+! CFLAGS=-O
   
-! all:
+  all:
   	@echo "Please specify the type of system you wish to build for."
-  	@echo "Valid systems are:"
-  	@echo ""
---- 44,52 ----
+--- 42,48 ----
+  # GLIBS=-lident -ldes
+  GLIBS=
   
-  CFLAGS=-O
+! #CFLAGS=-O
   
-! all:	freebsd
-! 
-! fake:
+  all:
   	@echo "Please specify the type of system you wish to build for."
-  	@echo "Valid systems are:"
-  	@echo ""
 ***************
 *** 387,393 ****
   
@@ -45,7 +43,7 @@
   
   tests:
   	(cd testdir ; make)
---- 389,395 ----
+--- 387,393 ----
   
   install: in.identd
   	cp identd.8  $(MANDIR)/identd.8
