@@ -1,0 +1,11 @@
+--- memunlockall.c.orig	Sun Nov 17 18:04:44 2002
++++ memunlockall.c	Sun Nov 17 18:04:43 2002
+@@ -13,7 +13,7 @@
+ 
+ int memunlockall(void)
+ {
+-#ifdef _POSIX_MEMLOCK
++#if _POSIX_MEMLOCK == 1
+ 	return ( munlockall() );
+ #endif
+ 	return(-1);

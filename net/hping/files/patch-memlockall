@@ -1,0 +1,11 @@
+--- memlockall.c.orig	Sun Nov 17 18:04:44 2002
++++ memlockall.c	Sun Nov 17 18:04:43 2002
+@@ -13,7 +13,7 @@
+ 
+ int memlockall(void)
+ {
+-#ifdef _POSIX_MEMLOCK
++#if _POSIX_MEMLOCK == 1
+ 	return ( mlockall(MCL_CURRENT|MCL_FUTURE) );
+ #endif
+ 	return (-1);
