@@ -1,0 +1,10 @@
+Whowatch is an interactive who-like program that displays information about the
+users currently logged on to the machine. In addition to standard information
+(login name, tty, host, user's process), the type of the connection (telnet or
+ssh) is shown. You can toggle display between the users' commands or idle times.
+You can watch the process tree, navigate in it, and send INT and KILL signals. 
+
+WWW: http://wizard.ae.krakow.pl/~mike/
+
+- Daniel Harris
+dannyboy@subdimension.com
