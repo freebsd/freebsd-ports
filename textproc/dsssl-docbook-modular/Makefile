@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/09/08 22:03:31 kuriyama Exp $
+# $Id: Makefile,v 1.6 1998/09/20 03:48:10 kuriyama Exp $
 #
 
 DISTNAME=	db113
@@ -33,6 +33,7 @@ INSTDIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
 	@find ${WRKDIR} -name '*~' -exec ${RM} {} \;
+	@find ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
 
 do-install:
 	@${CP} -Rp ${WRKDIR}/docbook/* ${INSTDIR}
