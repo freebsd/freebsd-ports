@@ -5,10 +5,9 @@
 # $FreeBSD$
 #
 
-
 PORTNAME=	nvi
 PORTVERSION=	1.79.19991117
-CATEGORIES=	editors
+CATEGORIES?=	editors
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/\
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
 PKGNAMESUFFIX?=	-m17n
@@ -21,6 +20,7 @@ MAINTAINER=	itojun@itojun.org
 
 #LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
+SLAVEDIRS=	chinese/nvi-big5 chinese/nvi-euc-cn chinese/nvi-euc-tw
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 GNU_CONFIGURE=	yes
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p1 -f
