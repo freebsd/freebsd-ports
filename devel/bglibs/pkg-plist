@@ -21,13 +21,6 @@ include/bglibs/crypto/sha256.h
 include/bglibs/crypto/sha384.h
 include/bglibs/crypto/sha512.h
 @dirrm include/bglibs/crypto
-include/bglibs/cvm-sasl/cvm-sasl.h
-@dirrm include/bglibs/cvm-sasl
-include/bglibs/cvm/client.h
-include/bglibs/cvm/errors.h
-include/bglibs/cvm/facts.h
-include/bglibs/cvm/module.h
-@dirrm include/bglibs/cvm
 include/bglibs/dict/dict.h
 include/bglibs/dict/load.h
 @dirrm include/bglibs/dict
@@ -96,18 +89,6 @@ lib/libcrypto/sha1.a
 lib/libcrypto/sha256.a
 lib/libcrypto/sha512a.a
 @dirrm lib/libcrypto
-lib/libcvm-client.a
-lib/libcvm-command.a
-lib/libcvm-local.a
-lib/libcvm-sasl.a
-lib/libcvm-sasl/cvm-sasl.a
-@dirrm lib/libcvm-sasl
-lib/libcvm-udp.a
-lib/libcvm/client.a
-lib/libcvm/command.a
-lib/libcvm/local.a
-lib/libcvm/udp.a
-@dirrm lib/libcvm
 lib/libdict/dict.a
 lib/libdict/load.a
 @dirrm lib/libdict
