@@ -108,7 +108,7 @@
     SUBDIR += tgd
     SUBDIR += tgif
     SUBDIR += tgif-nls
-    SUBDIR += tiff34
+    SUBDIR += tiff
     SUBDIR += tifmerge
     SUBDIR += txtmerge
     SUBDIR += urt
