@@ -1,0 +1,13 @@
+heat allows you to monitor the thermal aspects measured by the
+Winbond chipset on your motherboard.  It also supports the
+ability to monitor fans, and provides workarounds for known bugs
+with certain motherboard models.  It does not monitor voltages
+(yet).
+
+Currently, the only supported chipsets are the following:
+  * Winbond 83781D  <untested>
+  * Winbond 83627HF <untested>
+  * Winbond 83782D
+  * Winbond 83783S  <untested>
+
+- yoshi@parodius.com

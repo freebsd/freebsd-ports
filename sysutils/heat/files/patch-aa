@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jan  5 09:57:53 2000
++++ Makefile	Sun May  7 08:45:50 2000
+@@ -1,7 +1,7 @@
+ #
+ # Makefile
+ #
+-CC = gcc
++CC?= gcc
+ CFLAGS += -Wall -Wunused -Wstrict-prototypes
+ #
+ # __for debugging__
