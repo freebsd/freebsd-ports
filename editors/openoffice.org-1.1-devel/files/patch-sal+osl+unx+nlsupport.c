@@ -1,5 +1,5 @@
---- ../sal/osl/unx/nlsupport.c.orig	Tue Jan 28 15:51:36 2003
-+++ ../sal/osl/unx/nlsupport.c	Wed Mar  5 21:03:13 2003
+--- ../sal/osl/unx/nlsupport.c.orig	Thu May 22 05:21:51 2003
++++ ../sal/osl/unx/nlsupport.c	Sat May 31 23:28:05 2003
 @@ -63,7 +63,7 @@
  #include <osl/diagnose.h>
  #include <osl/process.h>
@@ -51,46 +51,7 @@
  
  #if defined(SOLARIS)
  
-@@ -300,23 +307,23 @@
- #elif defined(IRIX)
- 
- const _pair _nl_language_list[] = {
--   { "ISO8859-1",  	RTL_TEXTENCODING_ISO_8859_1	}, /* Western */
--   { "ISO8859-2",  	RTL_TEXTENCODING_ISO_8859_2     }, /* Central European */
--   { "ISO8859-5",  	RTL_TEXTENCODING_ISO_8859_5     }, /* Cyrillic */
--   { "ISO8859-7",  	RTL_TEXTENCODING_ISO_8859_7    	}, /* Greek */
--   { "ISO8859-9",  	RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
--   { "ISO8859-15", 	RTL_TEXTENCODING_ISO_8859_15    }, /* Western Updated (w/Euro sign) */
--   { "eucJP",		RTL_TEXTENCODING_EUC_JP 	}, /* Japan */
--   { "eucKR",		RTL_TEXTENCODING_EUC_KR		}, /* Korea */
--   { "eucCN",		RTL_TEXTENCODING_EUC_CN		}, /* China */
--   { "eucTW",		RTL_TEXTENCODING_EUC_TW		}, /* Taiwan - Traditional Chinese */
--   { "big5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
--   { "eucgbk",		RTL_TEXTENCODING_DONTKNOW	}, /* China - Simplified Chinese */
--   { "gbk",		RTL_TEXTENCODING_GBK		}, /* China - Simplified Chinese */
--   { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
-+    { "BIG5",          RTL_TEXTENCODING_BIG5           }, /* China - Traditional Chinese */
-+    { "EUCCN",         RTL_TEXTENCODING_EUC_CN         }, /* China */
-+    { "EUCGBK",        RTL_TEXTENCODING_DONTKNOW       }, /* China - Simplified Chinese */
-+    { "EUCJP",         RTL_TEXTENCODING_EUC_JP         }, /* Japan */
-+    { "EUCKR",         RTL_TEXTENCODING_EUC_KR         }, /* Korea */
-+    { "EUCTW",         RTL_TEXTENCODING_EUC_TW         }, /* Taiwan - Traditional Chinese */
-+    { "GBK",           RTL_TEXTENCODING_GBK            }, /* China - Simplified Chinese */
-+    { "ISO8859-1",     RTL_TEXTENCODING_ISO_8859_1     }, /* Western */
-+    { "ISO8859-15",    RTL_TEXTENCODING_ISO_8859_15    }, /* Western Updated (w/Euro sign) */
-+    { "ISO8859-2",     RTL_TEXTENCODING_ISO_8859_2     }, /* Central European */
-+    { "ISO8859-5",     RTL_TEXTENCODING_ISO_8859_5     }, /* Cyrillic */
-+    { "ISO8859-7",     RTL_TEXTENCODING_ISO_8859_7     }, /* Greek */
-+    { "ISO8859-9",     RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
-+    { "SJIS",          RTL_TEXTENCODING_SHIFT_JIS      }  /* Japan */
- };
- 
--#elif defined(LINUX) || defined(NETBSD)
-+#elif defined(LINUX)
- 
- const _pair _nl_language_list[] = {
-     { "ANSI_X3.110-1983",           RTL_TEXTENCODING_DONTKNOW   },  /* ISO-IR-99 NAPLPS */
-@@ -491,13 +498,65 @@
+@@ -492,13 +499,65 @@
      { "T.101-G2",                   RTL_TEXTENCODING_DONTKNOW },    /* ISO-IR-128 */
      { "T.61-7BIT",                  RTL_TEXTENCODING_DONTKNOW },    /* ISO-IR-102 */
      { "T.61-8BIT",                  RTL_TEXTENCODING_DONTKNOW },    /* T.61 ISO-IR-103 */

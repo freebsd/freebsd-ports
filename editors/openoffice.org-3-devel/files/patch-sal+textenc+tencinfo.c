@@ -1,6 +1,6 @@
---- ../sal/textenc/tencinfo.c.orig	Wed Jul 31 11:44:35 2002
-+++ ../sal/textenc/tencinfo.c	Wed Jul 31 11:45:47 2002
-@@ -695,6 +695,10 @@
+--- ../sal/textenc/tencinfo.c.orig	Fri Apr 11 16:25:01 2003
++++ ../sal/textenc/tencinfo.c	Sat May 31 23:33:43 2003
+@@ -668,6 +668,10 @@
      /* characters. The function search for the first equal string in */
      /* the table. In this table are only the most used mime types. */
      /* Sort order: important */

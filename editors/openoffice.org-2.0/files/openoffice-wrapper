@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-2.0/files/Attic/openoffice-wrapper,v 1.7 2003-04-16 06:51:35 mbr Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice.org-2.0/files/Attic/openoffice-wrapper,v 1.8 2003-06-07 22:09:46 mbr Exp $
 
 oopath=%%PREFIX%%/OpenOffice.org-%%BUILD_NR%%/program/
 program=`echo $0 | sed -e 's|.*-||'`
@@ -9,9 +9,9 @@ if [ ! $LANG ]; then
 	export LANG=%%LANG%%
 fi
 
-if [ -e $HOME/OpenOffice.org644/setup.log ]; then
-	if [ ! -e $HOME/OpenOffice.org644/user/config/soffice.cfg ]; then
-		touch $HOME/OpenOffice.org644/user/config/soffice.cfg
+if [ -e $HOME/OpenOffice.org1.1/setup.log ]; then
+	if [ ! -e $HOME/OpenOffice.org1.1/user/config/soffice.cfg ]; then
+		touch $HOME/OpenOffice.org1.1/user/config/soffice.cfg
 	fi
 fi
 

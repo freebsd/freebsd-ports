@@ -1,6 +1,6 @@
---- ../sal/osl/unx/system.h.orig	Tue Aug 20 15:54:55 2002
-+++ ../sal/osl/unx/system.h	Thu May  8 20:31:08 2003
-@@ -203,12 +203,19 @@
+--- ../sal/osl/unx/system.h.orig	Mon Apr 28 19:13:35 2003
++++ ../sal/osl/unx/system.h	Sat May 31 23:32:34 2003
+@@ -212,12 +212,19 @@
  #   include <dlfcn.h>
  #   include <sys/filio.h>
  #   include <sys/ioctl.h>
@@ -20,7 +20,7 @@
  #   if BYTE_ORDER == LITTLE_ENDIAN
  #   	define _LITTLE_ENDIAN
  #   elif BYTE_ORDER == BIG_ENDIAN
-@@ -216,12 +223,14 @@
+@@ -225,12 +232,14 @@
  #   elif BYTE_ORDER == PDP_ENDIAN
  #   	define _PDP_ENDIAN
  #   endif
@@ -40,7 +40,7 @@
  #endif
  
  #ifdef SCO
-@@ -569,12 +578,14 @@
+@@ -556,12 +565,14 @@
  #endif
  
  #ifdef NO_PTHREAD_RTL
