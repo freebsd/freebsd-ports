@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2003.12.07
+PORTVERSION=	2004.01.03
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
@@ -23,16 +23,22 @@ USE_GMAKE=	yes
 MAKEFILE=	makefiles/unix.mak
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 
-DOCS=	demo.abc doc/abcguide.txt doc/readme.txt doc/yaps.txt
+MAN1=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 yaps.1
+
+DOCS=	demo.abc doc/abc2midi.txt doc/abcguide.txt doc/coding.txt doc/midi2abc.txt \
+	doc/readme.txt doc/yaps.txt
 
 do-install:
-.for file in abc2abc abc2midi mftext midi2abc yaps
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.for FILE in abc2abc abc2midi mftext midi2abc yaps
+	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
+.endfor
+.for FILE in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/doc/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
