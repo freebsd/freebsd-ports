@@ -1,32 +1,6 @@
---- config/ltmain.sh.orig	Fri Feb 22 03:19:44 2002
-+++ config/ltmain.sh	Tue Apr  2 02:40:21 2002
-@@ -1043,14 +1043,14 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
- 	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
-@@ -2441,7 +2441,7 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    ;;
- 	  *)
-@@ -4210,10 +4210,12 @@
+--- config/ltmain.sh.orig	Mon Feb 17 22:59:26 2003
++++ config/ltmain.sh	Mon Feb 17 23:00:06 2003
+@@ -4280,10 +4280,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.

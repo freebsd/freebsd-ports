@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autogen
-PORTVERSION=	5.4.7
+PORTVERSION=	5.5.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_GNU}
@@ -20,9 +20,11 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
+XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-libguile=${LOCALBASE} --with-libxml2=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes
 INSTALLS_SHLIB=	yes
 
 MAN1=	autogen.1 autoopts-config.1 columns.1 getdefs.1 xml2ag.1
