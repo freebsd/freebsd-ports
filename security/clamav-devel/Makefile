@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040404
+PORTVERSION=	20040419
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -63,7 +63,7 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(LogFile) .*$$|\1 /var/log/clamav/clamd.log|' \
 		-e 's|^\#?(PidFile) .*$$|\1 /var/run/clamav/clamd.pid|' \
-		-e 's|^\#?(LocalSocket) .*$$|\1 /var/run/clamav/clamd|' \
+		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 ${CLAMAVUSER}|' \
 		-e 's|^\#?(ScanMail)$$|\1|' \
 		-e 's|^\#?(Checks)$$|\#\1|' \
