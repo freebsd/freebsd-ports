@@ -7,13 +7,13 @@
 
 PORTNAME=	chill
 PORTVERSION=	2.95.2
-PORTREVISION=	9
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 DISTFILES=	${CHILLNAME}.tar.gz ${NEWLIBNAME}.tar.gz
-PATCHFILES=	${CHILLNAME}-rtems-20000724.diff.gz \
-		${NEWLIBNAME}-rtems-20000828.diff.gz
+PATCHFILES=	${CHILLNAME}-rtems-20001030.diff.gz \
+		${NEWLIBNAME}-rtems-20001027.diff.gz
 PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
 
