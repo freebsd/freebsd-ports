@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tnt
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel math
 MASTER_SITES=	http://math.nist.gov/tnt/
-DISTNAME=	${PORTNAME}120
+DISTNAME=	${PORTNAME}_121
 .ifndef NOPORTDOCS
 DISTFILES=${DISTNAME}${EXTRACT_SUFX} tnt120doc.zip
 .endif
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 do-install:
 	${MKDIR} ${PREFIX}/include/tnt
-	${INSTALL_DATA} ${WRKDIR}/projects/tnt/1.2/src/*.h	\
+	${INSTALL_DATA} ${WRKDIR}/*.h	\
 		${PREFIX}/include/tnt
 .ifndef NOPORTDOCS
 	${MKDIR} ${DOCSDIR}
