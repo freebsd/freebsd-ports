@@ -93,6 +93,7 @@
     SUBDIR += kover
     SUBDIR += latex
     SUBDIR += latex-beamer
+    SUBDIR += latex-biblist
     SUBDIR += latex-bibtopic
     SUBDIR += latex-bibunits
     SUBDIR += latex-caption
