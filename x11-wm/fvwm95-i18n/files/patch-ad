@@ -1,5 +1,5 @@
 *** sample.fvwmrc/system.fvwm95rc.orig	Wed Dec 11 23:24:54 1996
---- sample.fvwmrc/system.fvwm95rc	Fri Jun 13 21:19:49 1997
+--- sample.fvwmrc/system.fvwm95rc	Sun Jun 15 04:08:00 1997
 ***************
 *** 90,97 ****
   # Paths are a colon-separated list, just like regular unix PATH
@@ -175,7 +175,7 @@
 ! 							-j -ls -fn 10x20 &
   + "Large Rxvt	(10x20 font)%mini-term.xpm%"	Exec rxvt -font 10x20 -ls &
 ! + "Large Color Xterm	(10x20 font)%mini-term.xpm%" Exec xterm \
-! 							+cm -tn xterm-color
+! 							+cm -tn xterm-color \
 ! 							-sb -sl 500 \
 ! 							-j -ls -fn 10x20 &
   
