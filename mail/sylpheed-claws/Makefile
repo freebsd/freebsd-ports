@@ -16,7 +16,7 @@ DISTFILES=	${EXTRACT_ONLY} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	corecode@corecode.ath.cx
-COMMENT=	A lightweight and very featurefull GTK+ based e-mail and news client
+COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
