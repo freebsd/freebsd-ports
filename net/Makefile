@@ -134,6 +134,7 @@
     SUBDIR += gift
     SUBDIR += gkrellm_snmp
     SUBDIR += gkrellmqst
+    SUBDIR += gkrellmwireless
     SUBDIR += gnet
     SUBDIR += gnomba
     SUBDIR += gnome-vnc
