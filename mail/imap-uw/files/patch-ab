@@ -37,7 +37,7 @@
 -		STDPROTO=unixproto MAILSPOOL=/var/mail \
 +bsf:	sigbsd	# FreeBSD
 +		$(MAKE) $(ARCHIVE) $(SHLIB) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-+		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
++		STDPROTO=unixproto MAILSPOOL=/var/mail \
  		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
  		RSHPATH=/usr/bin/rsh \
 -		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
