@@ -94,7 +94,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 DB_TYPE=	mysql
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server
+BUILD_DEPENDS+=	${LOCALBASE}/bin/mysql_config:${PORTSDIR}/databases/mysql40-server \
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 USE_PERL5=	yes
