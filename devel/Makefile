@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.57 1997/05/27 16:46:01 max Exp $
+# $Id: Makefile,v 1.58 1997/05/30 16:10:49 jkh Exp $
 #
 
     SUBDIR += SWIG
@@ -45,6 +45,8 @@
     SUBDIR += p5-IniConf
     SUBDIR += p5-Ioctl
     SUBDIR += p5-PV
+    SUBDIR += p5-Penguin
+    SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Religion
     SUBDIR += p5-Resources
     SUBDIR += p5-Time
