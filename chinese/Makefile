@@ -99,6 +99,7 @@
     SUBDIR += xemacs
     SUBDIR += xemacs21
     SUBDIR += xmms
+    SUBDIR += xpdf
     SUBDIR += zhcon
 
 .include <bsd.port.subdir.mk>
