@@ -1,0 +1,24 @@
+
+Now that PostgreSQL-j was installed, you should read the documentation and
+implementation guides. These can be found at:
+
+		http://www.PostgreSQL.org/docs
+
+Documentations for the Multibyte-extention can be found at:
+
+		doc/README.mb (English)
+		doc/README.mb.jp (Japanese)
+
+You may wish to subscribe to the PostgreSQL user-support mailing list.
+Send an e-mail to pgsql-questions-request@postgresql.org with the
+text "subscribe" in the message body.
+
+If you understand Japanese, you might want to visit:
+
+	http://www.sra.co.jp/people/t-ishii/PostgreSQL
+
+to subscribe a local mailing list for Japanese speakers.
+
+If you build PostgreSQL with TCL support, then you can use the
+TCL/TK based database frontend "pgaccess" for database operations.
+
