@@ -1,7 +1,9 @@
 @cd /usr/local
+@owner bin
+@mode 755
+bin/latex
 @cd lib/texmf
 @mode 644
-@owner bin
 fonts/tfm/cmbsy5.tfm
 fonts/tfm/cmbsy6.tfm
 fonts/tfm/cmbsy7.tfm
