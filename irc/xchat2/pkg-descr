@@ -1,6 +1,8 @@
-MD5 (xchat-1.1.7.tar.bz2) = 7491e07a031100274fe56bad5e8a634c
-nice good looking interface, and best of all, is easy to use all around.
+XChat is a graphical IRC client.  It requires a computer running a
+UNIX-like OS and the X Window System (X11), and the GTK library.  It can
+also (optionally) take advantage of GNOME and use Perl and Python
+scripts.
 
-WWW: http://xchat.linuxpower.org/
+WWW:	http://xchat.org/
 
 - Jim <jim@FreeBSD.org>
