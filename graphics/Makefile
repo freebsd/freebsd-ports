@@ -209,6 +209,7 @@
     SUBDIR += sane-backends
     SUBDIR += sane-frontends
     SUBDIR += sced
+    SUBDIR += scr2png
     SUBDIR += scrot
     SUBDIR += scwm-icons
     SUBDIR += sdl_image
