@@ -10,3 +10,5 @@ amount of functionality from the second S book (the "White Book")
 has been implemented.  In particular functioning versions of "lm"
 and "glm" and their associated "summary" and "anova" methods  are
 provided.
+
+WWW: http://stat.auckland.ac.nz/r/r.html
