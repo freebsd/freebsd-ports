@@ -1,0 +1,11 @@
+--- clustalw.c-orig	Wed Jun  7 01:50:05 2000
++++ clustalw.c	Thu Jul  6 20:19:31 2000
+@@ -33,7 +33,7 @@
+ #ifdef MSDOS
+         char *help_file_name = "clustalw.hlp";
+ #else
+-        char *help_file_name = "clustalw_help";
++        char *help_file_name = "/usr/local/share/clustalw/clustalw_help";
+ #endif
+ 
+ sint max_names; /* maximum length of names in current alignment file */
