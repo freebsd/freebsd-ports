@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Start or stop zope
-# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.3 2004-07-02 20:41:00 thierry Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/zope/files/Attic/zope.sh,v 1.4 2004-11-16 00:02:25 pav Exp $
 
 # PROVIDE: zope
 # REQUIRE: DAEMON
@@ -13,7 +13,7 @@ prefix=%%PREFIX%%
 # Define these zope_* variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
-#       /etc/rc.conf.d/gkrellmd
+#       /etc/rc.conf.d/zope
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #

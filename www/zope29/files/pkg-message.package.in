@@ -20,9 +20,23 @@ please add the following lines to /etc/rc.conf
 zope_enable="YES"
 zope_instances="<INSTANCEDIR>" 
 
-If there is already a zope_instances entry please add 
-<INSTANCEDIR> separated by a space. 
+Additional zope Instances have to be added to zope_instances 
+seperated by a space. 
 
+** ZEO Instances ** (Optional) 
+** Please refere to http://zope.org/Products/ZEO/ZEOFactSheet  
+
+If you want to run a ZEO server please create a ZEO instancen by 
+calling %%ZOPEBASEDIR%%/bin/mkzopeinstance.py <ZEODIR>
+
+To start the ZEO Server at System startup add the following lines to 
+/etc/rc.conf
+
+zeo_enable="YES"
+zeo_instances="<ZEODIR>"
+
+Additional zeo Instances have to be added to zeo_instances seperated 
+by a space. 
 
 **********************************************************************
 ****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
