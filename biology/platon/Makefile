@@ -18,6 +18,9 @@ MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 # There is a charge of US$ 5000 for commercial users.
 RESTRICTED=	"free for academic, US$ 5000 for commercial users"
 
+# This port only has snapshot archive
+IGNOREFILES=	platon.tar.gz
+
 SAMPLES=	azt.dat bucky.spf c476.spf c540.cart3d check.def cubane.spf \
 		cyto.spf ml.pdb s810c.cif s913a.res sucrose.spf
 TESTDATADIR=	ABSORB_EXAMPLE ABSTOMPA_EXAMPLE ABSTOMPA_TEST ADDSYM_EXAMPLE \
