@@ -1,0 +1,14 @@
+--- gcc/f/g77.texi.orig	Mon Dec  1 14:20:58 1997
++++ gcc/f/g77.texi	Sat Jan 10 12:02:09 1998
+@@ -144,9 +144,9 @@
+ 
+ @ifinfo
+ 
+-@dircategory Fortran Programming
++@dircategory The egcs enhanced GNU compiler suite
+ @direntry
+-* g77: (g77).               The GNU Fortran compilation system.
++* g77: (g77).			The egcs Fortran-77 compiler.
+ @end direntry
+ @node Top, Copying,, (DIR)
+ @top Introduction
