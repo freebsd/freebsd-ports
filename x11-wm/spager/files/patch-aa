@@ -1,15 +1,25 @@
---- Makefile.orig	Mon May 22 04:36:02 2000
-+++ Makefile	Sat Jul  1 17:39:37 2000
-@@ -18,10 +18,10 @@
- # along with spager; see the file COPYING.  If not, write to
- # the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+--- Makefile.orig	Sat Feb 24 08:46:51 2001
++++ Makefile	Sun Apr  1 19:57:57 2001
+@@ -21,18 +21,18 @@
  
+ # SAWFISH_CLIENT_LIB should point to client.a distributed with sawfish
+ 
+-SAWFISH_CLIENT_LIB = /usr/lib/rep/i386-redhat-linux/sawfish/client.a
 -CC = gcc
++SAWFISH_CLIENT_LIB = /usr/X11R6/libexec/rep/%%GNUHOST%%/sawfish/client.so
 +CC ?= gcc
+ CFLAGS = 
  
- spager: spager.c 
--	$(CC) -O6 -Wall `gtk-config --cflags`  spager.c -o spager `gtk-config --libs`
-+	$(CC) $(CFLAGS) `$(GTK_CONFIG) --cflags`  spager.c -o spager `$(GTK_CONFIG) --libs`
+ all: spager spager.jlc merlin/message.jlc merlin/util.jlc
  
- clean: 
- 	rm -f *.o spager
+ spager: spager.o
+-	$(CC) -O6 -Wall spager.o $(SAWFISH_CLIENT_LIB) `gtk-config --libs` -o spager
++	$(CC) -O6 -Wall spager.o $(SAWFISH_CLIENT_LIB) `gtk12-config --libs` -o spager
+ 	strip spager
+ 
+ spager.o: spager.c
+-	$(CC) -c -O6 -Wall $(CFLAGS) `gtk-config --cflags` spager.c
++	$(CC) -c -O6 -Wall $(CFLAGS) `gtk12-config --cflags` spager.c
+ 
+ spager.jlc: spager.jl
+ 	sawfish --batch --no-rc compiler -f compile-batch $^ 
