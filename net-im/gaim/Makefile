@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.75
-PORTREVISION=	8
+PORTVERSION=	0.76
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -72,8 +71,8 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .if defined(TCL_VER)
 _TCL_DVER=	${TCL_VER:S/.//}
 _TCL_VER=	${_TCL_DVER:C/(.)/\1./}
-.if ${_TCL_VER} != 8.3
-.	error Currently GAIM can only use Tcl/Tk 8.3
+.if ${_TCL_VER} != 8.3 && ${_TCL_VER} != 8.4
+.	error Currently GAIM can only use Tcl/Tk 8.3 or 8.4
 .endif
 LIB_DEPENDS+=	tk${_TCL_DVER}:${PORTSDIR}/x11-toolkits/tk${_TCL_DVER}
 CONFIGURE_ARGS+=--with-tclconfig=${LOCALBASE}/lib/tcl${_TCL_VER} \
