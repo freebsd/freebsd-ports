@@ -191,8 +191,8 @@
     SUBDIR += p5-Data-Flow
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Date-Calc
-    SUBDIR += p5-Date-Convert
     SUBDIR += p5-Date-Manip
+    SUBDIR += p5-DateConvert
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Symdump
