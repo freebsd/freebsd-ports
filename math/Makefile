@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.55 1998/12/24 06:47:44 steve Exp $
+# $Id: Makefile,v 1.56 1998/12/24 07:05:53 steve Exp $
 #
 
     SUBDIR += R-a4
     SUBDIR += R-letter
     SUBDIR += Scilab
+    SUBDIR += abs
     SUBDIR += add
     SUBDIR += apc
     SUBDIR += blas
