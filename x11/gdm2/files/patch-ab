@@ -1,5 +1,5 @@
---- config/gdm.conf.in.orig	Wed Aug 20 13:40:45 2003
-+++ config/gdm.conf.in	Wed Aug 20 22:29:47 2003
+--- config/gdm.conf.in.orig	Fri Oct 10 16:57:25 2003
++++ config/gdm.conf.in	Thu Oct 16 14:33:28 2003
 @@ -73,7 +73,7 @@
  # To try to kill all clients started at greeter time or in the Init script.
  # doesn't always work, only if those clients have a window of their own
@@ -18,7 +18,7 @@
  #SuspendCommand=
  # Probably should not touch the below this is the standard setup
  ServAuthDir=@EXPANDED_AUTHDIR@
-@@ -123,7 +123,7 @@
+@@ -127,7 +127,7 @@
  # we force X to use specific vts.  turn VTAllocation to false if this
  # is causing problems.
  #FirstVT=7
@@ -27,7 +27,7 @@
  # Should double login be treated with a warning (and possibility to change
  # vts on linux systems for console logins)
  #DoubleLoginWarning=true
-@@ -200,7 +200,7 @@
+@@ -211,7 +211,7 @@
  # The 'theme'.  By default we're using the default gtk theme
  # Of course assuming that gtk got installed in the same prefix,
  # if not change this.
@@ -36,12 +36,12 @@
  # Maximum size of an icon, larger icons are scaled down
  #MaxIconWidth=128
  #MaxIconHeight=128
-@@ -372,7 +372,7 @@
- # to the command line
- [server-Chooser]
- name=Chooser server
--command=@X_SERVER@
-+command=@X_SERVER@ vt9
- # Make this not appear in the flexible servers for now, but if you
- # wish to allow a chooser server then make this true.  This is the
- # only way to make a flexible chooser server that behaves nicely.
+@@ -364,7 +364,7 @@
+ # Definition of the standard X server.
+ [server-Standard]
+ name=Standard server
+-command=@X_SERVER@ -audit 0
++command=@X_SERVER@ vt9 -audit 0
+ flexible=true
+ 
+ # To use this server type you should add -query host or -indirect host
