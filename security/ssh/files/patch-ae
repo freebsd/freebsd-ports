@@ -1,7 +1,13 @@
-*** server_config.sample.orig	Wed May 12 20:18:51 1999
---- server_config.sample	Sun Jun  6 02:36:38 1999
+*** server_config.sample.old	Thu Apr 20 23:24:57 2000
+--- server_config.sample	Thu Apr 20 23:26:24 2000
 ***************
-*** 7,13 ****
+*** 1,13 ****
+  # This is ssh server systemwide configuration file.
+  
+  Port 22
+! ListenAddress 0.0.0.0
+  HostKey _ETCDIR_/ssh_host_key
+  RandomSeed _ETCDIR_/ssh_random_seed
   ServerKeyBits 768
   LoginGraceTime 600
   KeyRegenerationInterval 3600
@@ -9,7 +15,13 @@
   IgnoreRhosts no
   StrictModes yes
   QuietMode no
---- 7,13 ----
+--- 1,13 ----
+  # This is ssh server systemwide configuration file.
+  
+  Port 22
+! #Port 722	# Secondary port to listen on
+  HostKey _ETCDIR_/ssh_host_key
+  RandomSeed _ETCDIR_/ssh_random_seed
   ServerKeyBits 768
   LoginGraceTime 600
   KeyRegenerationInterval 3600
