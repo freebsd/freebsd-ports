@@ -1,0 +1,11 @@
+From the README:
+
+ What is GWget
+ =============
+ GWget allows the user to retrieve multiple files from the web. These
+ files can be retrieved in multiple parts and each part retrieved on a
+ separate session that the user is connected to the Internet. This is
+ most useful to users with dialup connections. The program performs
+ this tasks using wget as it's back-end.
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
