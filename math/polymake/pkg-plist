@@ -1,8 +1,10 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Poly/Ext/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Poly/Ext/Ext.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Poly/Ext/Ext.so
-libexec/polymake/Makefile
-@exec %%PERL%% -i -p -e 's:PREFIX=.*:PREFIX=%D:' %D/%F
+libexec/polymake/perlx/%%PERL_ARCH%%/auto/Poly/Ext/.packlist
+libexec/polymake/perlx/%%PERL_ARCH%%/auto/Poly/Ext/Ext.bs
+libexec/polymake/perlx/%%PERL_ARCH%%/auto/Poly/Ext/Ext.so
+libexec/polymake/Makefile.devel
+@exec sed -e 's:PREFIX=.*:PREFIX=%D:' %D/%F >%B/Makefile
+@unexec rm -f %B/Makefile
+@exec [ -e %D/bin ] || mkdir %D/bin
 libexec/polymake/apps/polytope/bin/2-face-sizes-simple
 @exec ln -s %D/%F %D/bin
 @unexec rm -f %D/bin/%f
@@ -633,6 +635,7 @@ libexec/polymake/modules/graph/bin/triangle_free
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/install-bin.html
 %%DOCSDIR%%/install-full.html
+%%DOCSDIR%%/install-port.html
 %%DOCSDIR%%/install-rpm.html
 %%DOCSDIR%%/lib/AVL.html
 %%DOCSDIR%%/lib/Array.html
@@ -966,7 +969,7 @@ share/polymake/perl/Struct.pm
 share/polymake/perl/Switches.pm
 share/polymake/perl/namespaces.pm
 share/polymake/perl/polymake
-@exec ln -s %D/%F %D/bin; %%PERL%% -i -p -e 's|(\$InstallTop\s*=\s*).*|$1"%D/share/polymake";|' %D/%F
+@exec sed -e '/\$InstallTop *=/ s|".*"|"%D/share/polymake"|' -e '/^use lib/ s|"[^"]*/perlx"|"%D/libexec/polymake/perlx"|' %D/%F >%D/bin/%f; chmod 755 %D/bin/%f
 @unexec rm -f %D/bin/%f
 share/polymake/povray/polymake-scene.pov
 share/polymake/scripts/grow_complex
@@ -1049,6 +1052,9 @@ share/polymake/support/java.make
 @dirrm libexec/polymake/apps/polytope/bin
 @dirrm libexec/polymake/apps/polytope
 @dirrm libexec/polymake/apps
+@dirrm libexec/polymake/perlx/%%PERL_ARCH%%/auto/Poly/Ext
+@dirrm libexec/polymake/perlx/%%PERL_ARCH%%/auto/Poly
+@dirrm libexec/polymake/perlx/%%PERL_ARCH%%/auto
+@dirrm libexec/polymake/perlx/%%PERL_ARCH%%
+@dirrm libexec/polymake/perlx
 @dirrm libexec/polymake
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Poly/Ext
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Poly
