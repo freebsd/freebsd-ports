@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.senet.com.au/squirm/ \
 
 MAINTAINER=	sobomax@altavista.net
 
-RUN_DEPENDS=	${PREFIX}/sbin/squid:${PORTSDIR}/www/squid22
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid22
 
 NO_PACKAGE=	must set SQUID_UID and SQUID_GID before building
 
