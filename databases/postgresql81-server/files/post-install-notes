@@ -24,11 +24,17 @@ ruby-postgres, py-PyGreSQL
 p5-postgresql-plperl, postgresql-pltcl & postgresql-plruby
   For using perl5, tcl & ruby as procedural languages.
 
+postgresql-contrib
+  Lots of contributed utilities, postgresql functions and
+  datatypes. There you find autovacuum, pgcrypto and many other cool
+  things.
+
 etc etc...
 
-Note that many files have moved around compared to previous versions
-of PostgreSQL. For example, plpgsql.so and all other language modules
-are now in /usr/local/lib/postgresql.
+For procedural languages and postgresql functions, please note that
+you might have to update them when updating the server. For example,
+the "elog" method disappeared in postgresql-7.4, so postgresql-contrib
+must be updated along with the server.
 
 If you have many tables and many clients running, consider raising
 kern.maxfiles using sysctl(8), or reconfigure your kernel
