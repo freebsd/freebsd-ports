@@ -1,3 +1,2 @@
 bin/screw
 lib/php/extensions/php_screw.so
-lib/php/extensions/php_screw_ext.so

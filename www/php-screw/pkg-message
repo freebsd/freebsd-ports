@@ -5,6 +5,5 @@ You have installed the php-screw package.
 Edit %%LOCALBASE%%/etc/php.ini and add:
 
 zend_extension="%%PREFIX%%/lib/php/extensions/php_screw.so"
-zend_extension="%%PREFIX%%/lib/php/extensions/php_screw_ext.so"
 
 *****************************************************************************
