@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	max@love2party.net
 COMMENT=	Utility to render grafical statistics for pf
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
-RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
 .if defined(WITH_GD1)
 LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
 CFLAGS+=	-I${LOCALBASE}/include/gd
@@ -32,12 +30,17 @@ MAN8=		pfstat.8
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/pfstat
 
-CFLAGS+=	-I${LOCALBASE}/include/pf
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Only for 5.0 and above"
+.endif
+
+.if ${OSVERSION} < 502106
+BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
+RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
+
+CFLAGS+=	-I${LOCALBASE}/include/pf
 .endif
 
 post-patch:

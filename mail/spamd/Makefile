@@ -14,10 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	max@love2party.net
 COMMENT=	Traps spammers with a very slow smtp-login and return 4xx error
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
-
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-IS_INTERACTIVE= yes
+IS_INTERACTIVE=	yes
 .endif
 
 MAN5=		spamd.conf.5
@@ -25,7 +23,7 @@ MAN8=		spamd.8 spamd-setup.8
 
 MANCOMPRESSED=	maybe
 
-MAKE_ARGS=      MANDIR="${PREFIX}/man/man"
+MAKE_ARGS=	MANDIR="${PREFIX}/man/man"
 
 SAMPLE_SPAMD_CONF=	${PREFIX}/etc/spamd.conf.sample
 SAMPLE_SPAMD_RC=	${PREFIX}/etc/rc.d/spamd.sh
@@ -34,6 +32,10 @@ SAMPLE_SPAMD_RC=	${PREFIX}/etc/rc.d/spamd.sh
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Only for 5.0 and above"
+.endif
+
+.if ${OSVERSION} < 502106
+RUN_DEPENDS=	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
 .endif
 
 post-patch:

@@ -14,17 +14,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	max@love2party.net
 COMMENT=	Utility for real-time display of statistics for pf
 
-BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
-.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
-BUILD_DEPENDS+=${LOCALBASE}/include/pf/altq/altq.h:${PORTSDIR}/security/pf
-.endif
-RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
-
 MAN8=		pftop.8
 
 MANCOMPRESSED=	no
 
-CFLAGS+=	-I${LOCALBASE}/include/pf
 MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=34
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
 CFLAGS+=	-DHAVE_ALTQ=1
@@ -34,6 +27,16 @@ CFLAGS+=	-DHAVE_ALTQ=1
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Only for 5.0 and above"
+.endif
+
+.if ${OSVERSION} < 502106
+BUILD_DEPENDS=	${LOCALBASE}/include/pf/net/pfvar.h:${PORTSDIR}/security/pf
+.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
+BUILD_DEPENDS+=${LOCALBASE}/include/pf/altq/altq.h:${PORTSDIR}/security/pf
+.endif
+RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
+
+CFLAGS+=	-I${LOCALBASE}/include/pf
 .endif
 
 PLIST_FILES=	sbin/pftop
