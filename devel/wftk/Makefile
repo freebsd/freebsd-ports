@@ -17,9 +17,11 @@ COMMENT=	A Graphical User Interface library for C++
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		sigc.1:${PORTSDIR}/devel/libsigc++
 
+OPTIONS=	SDL_MIXER "music and sound support" off
+
 USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -40,13 +42,6 @@ WITH_SDL_MIXER=	yes
 .if defined(WITH_SDL_MIXER)
 USE_SDL=	mixer sdl
 .endif
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_SDL_MIXER=yes   Enable music and sound support"
-	@${ECHO} ""
 
 post-patch:
 .for i in ${SDL11_FILES}
