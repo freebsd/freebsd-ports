@@ -1,8 +1,10 @@
 sbin/arpwatch
 sbin/arpsnmp
+@unexec test -f %D/arpwatch/arp.dat && test -s %D/arpwatch/arp.dat || rm -f %D/arpwatch/arp.dat
 arpwatch/arp2ethers
 arpwatch/ethercodes.dat
 arpwatch/d.awk
 arpwatch/e.awk
 arpwatch/p.awk
 etc/rc.d/arpwatch.sh
+@dirrm arpwatch
