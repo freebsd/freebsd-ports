@@ -8,7 +8,8 @@
 PORTNAME=	uim
 PORTVERSION=	0.4.5
 CATEGORIES=	japanese x11
-MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
+MASTER_SITES=	http://xem.jp/~tkng/
+#		http://freedesktop.org/Software/UimDownload/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Input method library
