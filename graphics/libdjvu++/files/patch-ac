@@ -10,7 +10,10 @@
 -      $(RANLIB) $(LIB)
 +$(LIB): ${LIBOBJS:.o=.cpp}
 +	${MAKE} -f bsd.lib.mk CXX="${CXX}" OBJS="${LIBOBJS}" LIB=djvu++ \
-+		SHLIB_MAJOR=${VER:R} SHLIB_MINOR=${VER:E}
++		SHLIB_MAJOR=2 SHLIB_MINOR=1
+@@ -68 +67 @@
+-BZZOBJS = bzz.o BSByteStream.o ZPCodec.o ByteStream.o GException.o DjVuGlobal.o
++BZZOBJS = bzz.o
 --- @Test/Makefile.in.orig     Fri Mar  5 19:42:53 1999
 +++ @Test/Makefile.in  Tue Jul 20 18:00:24 1999
 @@ -17 +17 @@

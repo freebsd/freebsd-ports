@@ -6,34 +6,36 @@
 #
 
 PORTNAME=	libdjvu++
-PORTVERSION=	2.1
+PORTVERSION=	2.1.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.djvu.com/open/
+MASTER_SITES=	http://djvu.research.att.com/open/
 
 MAINTAINER=	mi@aldan.algebra.com
 
 INSTALLS_SHLIB=	yes
-IS_INTERACTIVE=	yes
+IS_INTERACTIVE=	some think, the AT&T license needs to be acked by the user
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXX=${CXX}
 CONFIGURE_ARGS=	--with-cxxflag="${CXXFLAGS}"
-MAKE_ARGS=	OPT=""
+MAKE_ARGS=	OPT="" -j 2
 
-post-extract:
+pre-patch:
 	${SH} ${WRKSRC}/RunMe
 
 do-install:
-.for prog in djvuinfo c44 d44 djvutopnm djvumake djvuextract ppmcoco bzz
-	${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
-.endfor
-.for lib in libdjvu++.a libdjvu++.so.2
-	${INSTALL_DATA} ${WRKSRC}/${lib} ${PREFIX}/lib
-.endfor
-	${LN} -sf libdjvu++.so.2 ${PREFIX}/lib/libdjvu++.so
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} c44 d44 djvutopnm djvumake \
+		djvuextract ppmcoco bzz djvuinfo ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libdjvu++.a ${WRKSRC}/libdjvu++.so.2* \
+		 ${PREFIX}/lib
+	${LN} -sf libdjvu++.so.2* ${PREFIX}/lib/libdjvu++.so
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/djvu
 	${INSTALL_DATA} ${WRKSRC}/@Doc/* ${PREFIX}/share/doc/djvu
+
+PLIST_SUB+=	DOC=''
+.else
+PLIST_SUB+=	DOC='@comment '
 .endif
 
 .include <bsd.port.mk>
