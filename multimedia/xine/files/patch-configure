@@ -1,0 +1,11 @@
+--- configure.orig	Tue Oct 10 07:57:35 2000
++++ configure	Sat Oct 14 18:10:35 2000
+@@ -3566,7 +3566,7 @@
+     *) echo "$host is not currently supported by xine"; exit 1;;
+     esac
+ 
+-        GLOBAL_CFLAGS="$GLOBAL_CFLAGS -Wall -O3 -fomit-frame-pointer -static -funroll-loops -finline-functions"
++        GLOBAL_CFLAGS="$GLOBAL_CFLAGS $CFLAGS -Wall -fomit-frame-pointer -static -funroll-loops -finline-functions"
+     ;;
+ esac
+ 
