@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.55 1998/11/16 15:50:22 vanilla Exp $
+# $Id: Makefile,v 1.56 1998/12/01 22:37:08 sada Exp $
 #
 
     SUBDIR += 8hz-mp3
     SUBDIR += amp
+    SUBDIR += ascd
     SUBDIR += cam
     SUBDIR += cddbd
     SUBDIR += cdplay
