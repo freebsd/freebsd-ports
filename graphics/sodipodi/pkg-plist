@@ -4,6 +4,8 @@ share/gnome/oaf/GNOME_Sodipodi.oaf
 share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/about.svg
 share/gnome/sodipodi/add.xpm
+share/gnome/sodipodi/add_xml_element_node.xpm
+share/gnome/sodipodi/add_xml_text_node.xpm
 share/gnome/sodipodi/al_bottom_in.xpm
 share/gnome/sodipodi/al_bottom_out.xpm
 share/gnome/sodipodi/al_center_hor.xpm
@@ -40,6 +42,8 @@ share/gnome/sodipodi/curve.xpm
 share/gnome/sodipodi/cusp.xpm
 share/gnome/sodipodi/del.xpm
 share/gnome/sodipodi/delete.xpm
+share/gnome/sodipodi/delete_xml_attribute.xpm
+share/gnome/sodipodi/delete_xml_node.xpm
 share/gnome/sodipodi/desktop.glade
 share/gnome/sodipodi/dimension_hor.xpm
 share/gnome/sodipodi/dimension_ver.xpm
@@ -60,6 +64,7 @@ share/gnome/sodipodi/draw_zoom.xpm
 share/gnome/sodipodi/dt_active.xpm
 share/gnome/sodipodi/dt_inactive.xpm
 share/gnome/sodipodi/duplicate.xpm
+share/gnome/sodipodi/duplicate_xml_node.xpm
 share/gnome/sodipodi/edge_down.xpm
 share/gnome/sodipodi/edge_up.xpm
 share/gnome/sodipodi/edit_copy.xpm
@@ -149,6 +154,7 @@ share/gnome/sodipodi/selection_top.xpm
 share/gnome/sodipodi/selection_ungroup.xpm
 share/gnome/sodipodi/selection_up.xpm
 share/gnome/sodipodi/seperate_tool.xpm
+share/gnome/sodipodi/set.xpm
 share/gnome/sodipodi/skew.xpm
 share/gnome/sodipodi/skew_hor.xpm
 share/gnome/sodipodi/skew_ver.xpm
