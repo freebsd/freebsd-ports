@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	dvi2ps
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	${PORTNAME}-${PORTVERSION}j
 
-MAINTAINER=	mita@jp.FreeBSD.org
+MAINTAINER=	mita@FreeBSD.org
 
-BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf \
-		${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common
+BUILD_DEPENDS=	${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MAN1=		dvi2ps.1 ../ja/man1/dvi2ps.1
@@ -31,8 +30,8 @@ post-install:
 	@(cd  ${WRKSRC}; \
 	make install-lib; \
 	${CP} -R doc ${PREFIX}/lib/dvi2ps/ ;\
-	${MV} ${PREFIX}/lib/dvi2ps/doc/dvi2ps.man ${PREFIX}/man/man1/dvi2ps.1 ;\
-	nkf -e ${PREFIX}/lib/dvi2ps/doc/dvi2ps.jman > \
+	${INSTALL_DATA} ${WRKSRC}/man/dvi2ps.man ${PREFIX}/man/man1/dvi2ps.1 ;\
+	${INSTALL_DATA} ${WRKSRC}/man/dvi2ps.jman \
 			${PREFIX}/man/ja/man1/dvi2ps.1 ;\
 	${RM} -f ${PREFIX}/lib/dvi2ps/doc/dvi2ps.jman ;\
 	${INSTALL_SCRIPT} tools/fontlink ${PREFIX}/lib/dvi2ps ;\
