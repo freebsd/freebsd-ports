@@ -1,0 +1,334 @@
+#!/bin/sh -
+#
+#	pre-configure script for Elm port to FreeBSD 2.0
+#	$Id: preconf,v 1.2 1994/10/15 13:33:53 ache Exp $
+
+PortsDir=$PORTSDIR
+  CurDir=$CURDIR
+  WrkSrc=$WRKSRC
+
+echo ""
+echo "Elm comes with a Configure script to help you setting things up."
+echo "Unfortunately, this  script asks for things (like locking style)"
+echo "which can be misleading."
+echo "I (the porter)  tried and  configure a general Elm (without MIME"
+echo "support), hopefully suitable for most systems."
+echo "Please note that if you will run Elm on a system with NFSmounted"
+echo "mailboxes you need to enable dot locking (see below)".
+echo ""
+
+echo ""
+echo "You now have two possible choices:"
+echo ""
+echo " 1) use my configuration as default, run Configure on top of it."
+echo " 2) run Configure from scratch."
+echo ""
+echo "Due to a check done iside the Elm Configure script, I cannot run"
+echo "it automagically.  If you want to pick up the default configura-"
+echo "tion, simply press ENTER each time the script asks you anything."
+echo ""
+echo -n "Your choice [1]: "
+read foo
+
+if [ ! ${foo} ] ; then
+	foo=1
+fi
+
+if [ ${foo} -eq 1 ] ; then
+	#DON'T ALTER INDENTATION
+	cat > ${WrkSrc}/config.sh << 'EOF'
+#!/bin/sh
+# config.sh
+# This file was produced by running the Configure script.
+
+Log='$Log'
+Header='$Header'
+bin='/usr/local/bin'
+contains='grep'
+cppstdin='/usr/bin/cpp'
+cppminus=''
+d_getopt='define'
+d_memcpy='define'
+d_mkdir='define'
+d_rename='define'
+d_symlink='define'
+d_whoami='undef'
+n='-n'
+c=''
+orderlib='false'
+ranlib='/usr/bin/ranlib'
+package='elm2'
+pager='builtin+'
+prefshell='/bin/csh'
+startsh='#!/bin/sh'
+d_eunice='undef'
+define='define'
+eunicefix=':'
+loclist='
+cat
+chgrp
+chmod
+cp
+echo
+expr
+grep
+ln
+ls
+make
+mv
+rm
+sed
+sleep
+touch
+tr
+'
+expr='/bin/expr'
+sed='/usr/bin/sed'
+echo='/bin/echo'
+cat='/bin/cat'
+rm='/bin/rm'
+mv='/bin/mv'
+cp='/bin/cp'
+tail=''
+tr='/usr/bin/tr'
+mkdir=''
+sort=''
+uniq=''
+grep='/usr/bin/grep'
+trylist='
+Mcc
+compress
+cpp
+date
+emacs
+execmail
+ispell
+line
+lint
+lp
+lpr
+mailx
+mips
+more
+nroff
+pack
+pg
+pmake
+pr
+rmail
+sendmail
+shar
+smail
+submit
+tar
+tbl
+test
+troff
+uname
+uuname
+vi
+'
+test='test'
+inews=''
+ispell='ispell'
+egrep=''
+more='/usr/bin/more'
+pg='pg'
+Mcc='Mcc'
+vi='/usr/bin/vi'
+mailx='mailx'
+mail=''
+cpp='/usr/bin/cpp'
+perl=''
+emacs='/usr/local/bin/emacs'
+ls='/bin/ls'
+rmail='/bin/rmail'
+sendmail='/usr/sbin/sendmail'
+shar='/usr/bin/shar'
+smail='smail'
+submit=''
+tbl='/usr/bin/tbl'
+troff='/usr/bin/troff'
+nroff='/usr/bin/nroff'
+uname='/usr/bin/uname'
+uuname='/usr/bin/uuname'
+line='line'
+chgrp='/usr/bin/chgrp'
+chmod='/bin/chmod'
+lint='lint'
+sleep='/bin/sleep'
+pr='/usr/bin/pr'
+tar='/usr/bin/tar'
+ln='/bin/ln'
+lpr='/usr/bin/lpr'
+lp='lp'
+touch='/usr/bin/touch'
+make='/usr/bin/make'
+date='/bin/date'
+csh=''
+pmake='pmake'
+mips='false'
+col=''
+pack='pack'
+compress='/usr/bin/compress'
+execmail=''
+libswanted='intl nls'
+c_date='Mon Sep 19 05:22:41 PDT 1994'
+d_ascii='undef'
+d_broke_ctype='undef'
+d_calendar='define'
+calendar='calendar'
+d_chown_neg1='define'
+d_content='undef'
+d_crypt='define'
+cryptlib='/usr/lib/libcrypt.a'
+d_cuserid='undef'
+d_disphost='undef'
+d_domname='define'
+d_usegetdom='undef'
+d_errlst='define'
+d_flock='define'
+d_dotlock='undef'
+d_fcntlock='undef'
+lock_dir='/var/spool/lock'
+has_flock='define'
+has_fcntl='define'
+d_ftruncate='define'
+d_gethname='define'
+d_douname='undef'
+d_host_comp='undef'
+ign_hname='n'
+d_havetlib='define'
+termlib='-ltermlib'
+d_index='undef'
+d_internet='define'
+d_ispell='undef'
+ispell_path=''
+ispell_options=''
+d_locale='define'
+d_nl_types='undef'
+d_msgcat='undef'
+d_usenls='define'
+d_mallocvoid='define'
+d_mboxedit='undef'
+d_mime='undef'
+defencoding='7bit'
+defcharset='US-ASCII'
+defdispcharset='US-ASCII'
+d_mmdf='undef'
+d_newauto='define'
+d_noaddfrom='define'
+d_usedomain='undef'
+d_noxheader='undef'
+d_pidcheck='define'
+d_ptem='undef'
+d_putenv='define'
+d_remlock='undef'
+maxattempts='6'
+d_setgid='undef'
+d_savegrpmboxid='undef'
+mailermode='755'
+d_sigvec='undef'
+d_sigvectr='undef'
+d_sigset='undef'
+d_sighold='undef'
+d_sigprocmask='define'
+d_sigblock='undef'
+d_sigaction='define'
+d_strcspn='define'
+d_strspn='define'
+d_strpbrk='define'
+d_strerror='define'
+d_strftime='define'
+d_strings='undef'
+d_pwdinsys='undef'
+strings='/usr/include/string.h'
+includepath=''
+d_strstr='define'
+d_strtok='define'
+d_subshell='define'
+d_tempnam='define'
+tempnamo=''
+tempnamc=''
+d_termio='undef'
+d_termios='define'
+d_useembed='define'
+d_utimbuf='define'
+d_vfork='define'
+defbatsub='no subject (file transmission)'
+defeditor='/usr/bin/vi'
+editoropts=''
+hostname="${Hostname}"
+phostname='hostname'
+mydomain="${Domain}"
+autohostname='define'
+i_memory='define'
+i_stdarg='define'
+i_stdlib='define'
+i_time='define'
+i_systime='define'
+d_systimekernel='undef'
+i_unistd='define'
+i_utime='define'
+i_sysutime='undef'
+lib='/usr/local/lib'
+libc='/usr/lib/libc.so.2.0'
+linepr='/usr/bin/lpr'
+maildir='/var/mail'
+mailer='/usr/sbin/sendmail'
+mailgrp='bin'
+mansrc='/usr/local/man/man1'
+catmansrc='/usr/local/man/cat1'
+manext='.1'
+manext_choice='.1'
+catmanext='.1'
+catmanext_choice='.1'
+packed='n'
+manroff='/usr/bin/nroff'
+manroffopts=''
+suffix=''
+packer=''
+models='none'
+split=''
+small=''
+medium=''
+large=''
+huge=''
+optimize='-O2'
+ccflags=''
+cppflags=''
+ldflags=''
+cc='cc'
+libs=''
+nametype='bsd'
+d_passnames='define'
+d_berknames='define'
+d_usgnames='undef'
+passcat='cat /etc/passwd'
+rmttape='unknown-remote-tape-unit'
+roff='/usr/bin/troff'
+roffopts=''
+sigtype='void'
+spitshell='cat'
+shsharp='true'
+sharpbang='#!'
+tmpdir='/tmp'
+tzmins_handling='TM_GMTOFF'
+tzname_handling='TM_ZONE'
+use_pmake='n'
+xencf=''
+xenlf=''
+d_xenix='undef'
+d_bsd='define'
+CONFIG=true
+EOF
+
+fi	# choice = 1
+
+cd ${WrkSrc}
+sh Configure
+cd ${CurDir}
+
+exit 0
+# END
+
