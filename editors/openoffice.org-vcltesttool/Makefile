@@ -15,16 +15,26 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	maho/openoffice.org
 DISTFILES+=	OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
-.if defined(L10NHELP)
-DISTFILES+=	${L10NHELP:S/$/:help/}
-.endif
 
 MAINTAINER=	openoffice@FreeBSD.org
 .if !defined(COMMENT)
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 .endif
 
-IGNORE=		"Installation is not complete, manual installation works"
+USE_GNOME=		orbit gtk12 gtk20
+USE_REINPLACE=		yes
+USE_PERL5=		yes
+USE_BZIP2=		yes
+USE_BISON=		yes
+USE_GMAKE=		yes
+USE_CCACHE=		yes
+
+.include <bsd.port.pre.mk>
+.include <${FILESDIR}/Makefile.localized>
+
+.if defined(L10NHELP)
+DISTFILES+=	${L10NHELP:S/$/:help/}
+.endif
 
 NO_LATEST_LINK=		yes
 UNZIP?=			${LOCALBASE}/bin/unzip
@@ -35,16 +45,10 @@ DIST_SUBDIR=		openoffice2.0
 BUILD_NR=		680
 MILESTONE=		m41
 RELEASE_NR=		2.0
-FRELEASE_NR=		2.0
 SNAPDATE=		20040611
+SIMPLEOSVER!=		${UNAME} -r | sed -e 's/\.//' | sed -e 's/\..*//'
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 EXTRACT_ONLY=		OOo_${BUILD_NR}${MILESTONE}_${SNAPDATE}_source.tar.bz2
-USE_GNOME=		orbit gtk12 gtk20
-USE_REINPLACE=		yes
-USE_PERL5=		yes
-USE_BZIP2=		yes
-USE_BISON=		yes
-USE_GMAKE=		yes
 LANG_EXT?=		01
 LANG_CONFIGURE_ARG?=	ENUS
 WRKDIR=			${WRKDIRPREFIX}${.CURDIR}/work
@@ -53,8 +57,17 @@ WRKSRC=			${WRKDIR}/oo_${RELEASE_NR}_src/config_office
 #XXX dirty
 BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
+
+.if defined(USE_CCACHE)
+BUILD_DEPENDS+= ccache:${PORTSDIR}/devel/ccache
+CC=	ccache gcc32
+CXX=	ccache g++32
+.else
 CC=	gcc32
 CXX=	g++32
+.endif
+
+
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
@@ -71,8 +84,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2
-
-.include <bsd.port.pre.mk>
 
 #
 # configuration for language specific slave ports
@@ -132,7 +143,7 @@ DISPLAYHACK=localhost:1001
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
-CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} --with-ant-home=${LOCALBASE}/ant  --with-gnu-cp=${LOCALBASE}/bin/gcp  --enable-mozilla=yes
+CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} --with-ant-home=${LOCALBASE}/ant --with-gnu-cp=${LOCALBASE}/bin/gcp  --enable-mozilla=yes
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -208,7 +219,7 @@ post-extract:
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP && \
-	    ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP}
+		${CAT} ${DISTDIR}/${DIST_SUBDIR}/${L10NHELP} | ${GZIP_CMD} -d | ${TAR} xf -
 .endif
 
 post-patch:
@@ -266,10 +277,9 @@ do-build:
 pre-install:
 	@${CP} ${FILESDIR}/oo_setup.resp \
 		${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/
-	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' \
+	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
+			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
 			${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
-	@${MKDIR} -p ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
 .if !defined(DISPLAY)
@@ -278,34 +288,28 @@ do-install:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
+	@-SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
 		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
 	@${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+	@-SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
 		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
 .endif
 
 install-user:
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
-		${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
+	@-SAL_IGNOREXERRORS=1 ${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
-	@${CP} ${FILESDIR}/freebsd-local.sh ${WRKDIR}/
-	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
+	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%LANG%%#${USE_LANG}#g' \
 			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			-e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' \
-			${WRKDIR}/openoffice-wrapper \
-			${WRKDIR}/freebsd-local.sh
+			${WRKDIR}/openoffice-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${PREFIX}/bin/openoffice-${RELEASE_NR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/freebsd-local.sh \
-		${PREFIX}/${INSTALLATION_BASEDIR}/program/freebsd-local.sh
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
