@@ -1,15 +1,20 @@
 include/xparam/xp_config.h
 include/xparam/xp_error.h
 include/xparam/xp_handle.h
+include/xparam/xp_hvl.h
 include/xparam/xp_loader.h
 include/xparam/xp_param.h
 include/xparam/xp_param_imp.h
 include/xparam/xp_paramset.h
 include/xparam/xp_paramset_manip.h
+include/xparam/xp_parsed_types.h
+include/xparam/xp_parser.h
 include/xparam/xp_saver.h
 include/xparam/xp_singleton.h
 include/xparam/xp_type_compare.h
 include/xparam/xp_type_tag.h
+include/xparam/xp_typed_tuple.h
+include/xparam/xp_typed_value_map.h
 include/xparam/xp_user_namespace.h
 include/xparam/xp_value.h
 include/xparam/xp_value_list.h
@@ -19,6 +24,7 @@ include/xparam/xp_value_sink.h
 include/xparam/xp_value_sink_imp.h
 include/xparam/xp_value_source.h
 include/xparam/xp_value_source_imp.h
+include/xparam/xp_value_tuple.h
 include/xparam/xparam.h
 include/xparam/xparam_extend.h
 include/xparam/xpv_arg_def.h
@@ -37,6 +43,9 @@ include/xparam/xpv_dtor_imp.h
 include/xparam/xpv_enum_registry.h
 include/xparam/xpv_extend_namespace.h
 include/xparam/xpv_facade_imp.h
+include/xparam/xpv_hvl_creator.h
+include/xparam/xpv_hvl_creator_imp.h
+include/xparam/xpv_hvl_registry.h
 include/xparam/xpv_iconv.h
 include/xparam/xpv_iconv_imp.h
 include/xparam/xpv_output.h
@@ -47,9 +56,16 @@ include/xparam/xpv_reg_conversion.h
 include/xparam/xpv_reg_ctor.h
 include/xparam/xpv_reg_ctor_imp.h
 include/xparam/xpv_reg_enum.h
+include/xparam/xpv_reg_hvl.h
 include/xparam/xpv_reg_inheritance.h
+include/xparam/xpv_reg_list.h
 include/xparam/xpv_reg_macros.h
+include/xparam/xpv_reg_map.h
 include/xparam/xpv_reg_output.h
+include/xparam/xpv_reg_pair.h
+include/xparam/xpv_reg_set.h
+include/xparam/xpv_reg_typed_tuple.h
+include/xparam/xpv_reg_typed_value_map.h
 include/xparam/xpv_reg_vector.h
 include/xparam/xpv_regcom.h
 include/xparam/xpv_registry.h
@@ -57,6 +73,9 @@ include/xparam/xpv_scheduler.h
 include/xparam/xpv_subobject_output.h
 include/xparam/xpv_template_fooler.h
 include/xparam/xpv_type.h
+include/xparam/xpv_typed_tuple_creator.h
+include/xparam/xpv_typed_tuple_creator_imp.h
+include/xparam/xpv_typed_tuple_registry.h
 include/xparam/xpv_untyped_null.h
 include/xparam/xpv_value_imp.h
 include/xparam.h
@@ -64,5 +83,5 @@ include/xparam_extend.h
 lib/libxparam.a
 lib/libxparam.la
 lib/libxparam.so
-lib/libxparam.so.0
+lib/libxparam.so.1
 @dirrm include/xparam

@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- lib/sources/xpv_dynamic_loader.cpp.orig	Sun Dec 22 17:50:59 2002
-+++ lib/sources/xpv_dynamic_loader.cpp	Sun Dec 22 17:51:18 2002
+--- lib/sources/xpv_dynamic_loader.cpp.orig	Sun Nov 25 03:43:26 2001
++++ lib/sources/xpv_dynamic_loader.cpp	Sat Dec 28 10:59:43 2002
 @@ -209,7 +209,7 @@
  	loader.load(type_name);
  }

@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sat Nov 16 01:29:46 2002
++++ Makefile.in	Sat Dec 21 14:09:19 2002
+@@ -52,17 +52,11 @@
+ prepare_check :
+ 	-$(MAKE) -C tests prepare
+ 
+-ifeq (x$(DESTDIR),x)
+-install_command = (@LDCONFIG@ $(libdir) || true) >/dev/null 2>&1
+-else
+-install_command = echo @LDCONFIG@ not run. You may need to execute \"@LDCONFIG@ $(libdir)\" after installation in $(libdir).
+-endif
+-
+-install : $(LIBNAME) installinfo
++install : $(LIBNAME)
+ 	$(INSTALL) -d $(DESTDIR)$(libdir)
+ 	$(INSTALL) -d $(DESTDIR)$(includedir)
+ 	$(INSTALL) -d $(DESTDIR)$(priv_includedir)
+-	libtool $(INSTALL_PROGRAM) $(LIBNAME) $(DESTDIR)$(libdir)
++	libtool --mode=install $(INSTALL_PROGRAM) $(LIBNAME) $(DESTDIR)$(libdir)
+ 	$(INSTALL_DATA) $(XPARAM_PUBLIC_INCLUDE_FILES) $(DESTDIR)$(includedir)
+ 	$(INSTALL_DATA) $(XPARAM_INCLUDE_FILES) $(DESTDIR)$(priv_includedir)
+ 	$(install_command)

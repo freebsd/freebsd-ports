@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xparam
-PORTVERSION=	1.11
+PORTVERSION=	1.21
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
-USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-dynamic
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
