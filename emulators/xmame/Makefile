@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.83.1
+PORTVERSION?=	0.86
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -126,12 +126,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 post-extract:
 	cd ${WRKDIR} && \
-		unzip -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/uhsdat${HIVER}.zip \
 			hiscore.dat
 	cd ${WRKDIR} && \
-		unzip -q ${DISTDIR}/${DIST_SUBDIR}/history.dat.zip history.dat
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/history.dat.zip \
+			history.dat
 	cd ${WRKDIR} && \
-		unzip -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
+		${UNZIP_CMD} -q ${DISTDIR}/${DIST_SUBDIR}/cheat.zip cheat.dat
 .else
 PLIST_SUB+=	DATFILES="@comment "
 .endif
@@ -214,28 +215,21 @@ USE_GNOME=	esound
 ESOUNDCOMMENT=\#
 .endif
 
+# XXX Network support is *broken* in 0.85+, leave commented out for now
 # Option WITH_NETWORK
-.if ${MAMEMESS} == "mame"
-.if !defined(WITH_NETWORK)
-WITH_NETWORK=	yes
-.endif
+#.if ${MAMEMESS} == "mame"
+#.if !defined(WITH_NETWORK)
+WITH_NETWORK=	no
+#.endif
 
 .if ${WITH_NETWORK:L} != "no"
 NETWORK=
 .else
 NETWORK=\#
 .endif
-.endif
+#.endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.if ${ARCH} != "i386" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on 5.x !i386"
-.endif
 
 #
 # Regular targets
@@ -282,12 +276,15 @@ do-configure:
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix
+.if ${DISPLAY_TARGET:L} == "sdl"
+		${REINPLACE_CMD} -e "s@# JOY_SDL = 1@JOY_SDL = 1@g" ${WRKSRC}/makefile.unix
+.endif
 
 # png.h conflicts with libpng.
-.for file in mess/artworkx.c mess/artworkx.h src/artwork.c \
+.for f in mess/artworkx.c mess/artworkx.h src/artwork.c \
 	src/common.c src/png.c src/unix/video-drivers/glexport.c
 
-	${REINPLACE_CMD} -e "s@\"png.h\"@\"mame_png.h\"@g" ${WRKSRC}/${file}
+	${REINPLACE_CMD} -e "s@\"png.h\"@\"mame_png.h\"@g" ${WRKSRC}/${f}
 
 .endfor
 	${LN} -s ${WRKSRC}/src/png.h ${WRKSRC}/src/mame_png.h
@@ -304,6 +301,9 @@ post-build:
 		${WRKSRC}/doc/x${MAMEMESS}rc.dist.sed > ${WRKSRC}/doc/x${MAMEMESS}rc.dist
 
 post-install:
+.if ${MAMEMESS} == "mame"
+	${INSTALL_PROGRAM} ${WRKSRC}/xml2info ${PREFIX}/bin
+.endif
 	${MV} ${PREFIX}/bin/x${MAMEMESS}.${DISPLAY_METHOD} \
 		${PREFIX}/bin/x${MAMEMESS}
 	${CHOWN} root:games ${PREFIX}/bin/x${MAMEMESS}
@@ -319,8 +319,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}
 	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}/img
-.for file in ${ALLDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/x${MAMEMESS}
+.for f in ${ALLDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/x${MAMEMESS}
 .endfor
 .endif
 .if ${MAMEMESS} == "mess"
