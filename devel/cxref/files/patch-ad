@@ -1,23 +1,26 @@
---- Makefile.in.orig	Fri May 21 03:48:04 1999
-+++ Makefile.in	Sun Sep  5 15:41:44 1999
-@@ -115,14 +115,13 @@
+--- Makefile.in.orig	Sun Mar 18 19:29:25 2001
++++ Makefile.in	Fri May 18 05:53:30 2001
+@@ -28,6 +28,9 @@
+ # The installation program.
  
- ########
+ INSTALL=@INSTALL@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_SCRIPT=@INSTALL_SCRIPT@
++INSTALL_DATA=@INSTALL_DATA@
  
--install : programs
--	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)
--	$(INSTALL) -m 755 cxref-inst $(bindir)/cxref
--	$(INSTALL) -m 755 cxref-cc $(bindir)
--	[ -d $(mandir)/man1 ] || $(INSTALL) -d $(mandir)/man1
-+install : cxref-query cxref-inst        
-+	$(INSTALL) -c -m 755 cxref-inst $(bindir)/cxref
-+	$(INSTALL) -c -m 755 query/cxref-query $(bindir)  
-+	[ ! -x cpp/cxref-cpp ] || $(INSTALL) -m 755 cpp/cxref-cpp $(bindir)
- 	$(INSTALL) -m 644 README.man $(mandir)/man1/cxref.1
--	cd cpp && $(MAKE) install
--	cd query && $(MAKE) install
-+	$(INSTALL) -m 644 query/README.man $(mandir)/man1/cxref-query.1
-+	[ ! -x cpp/cxref-cpp ] || $(INSTALL) -m 644 cpp/README.man $(mandir)/man1/cxref-cpp.1
+ # The C compiler and linker
  
- install-win32 : programs
+@@ -121,10 +124,10 @@
+ 
+ install : programs
  	[ -d $(bindir) ] || $(INSTALL) -d $(bindir)
+-	$(INSTALL) -m 755 cxref-inst $(bindir)/cxref
+-	$(INSTALL) -m 755 $(srcdir)/cxref-cc $(bindir)
++	$(INSTALL_PROGRAM) cxref-inst $(bindir)/cxref
++	$(INSTALL_SCRIPT) $(srcdir)/cxref-cc $(bindir)
+ 	[ -d $(mandir)/man1 ] || $(INSTALL) -d $(mandir)/man1
+-	$(INSTALL) -m 644 $(srcdir)/README.man $(mandir)/man1/cxref.1
++	$(INSTALL_DATA) $(srcdir)/README.man $(mandir)/man1/cxref.1
+ 	cd cpp && $(MAKE) install
+ 	cd query && $(MAKE) install
+ 
