@@ -10,6 +10,7 @@ DISTNAME=	fdfpp
 PKGNAME=	fpp-1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netlib.org/fortran/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vazquez@iqm.unicamp.br
 
