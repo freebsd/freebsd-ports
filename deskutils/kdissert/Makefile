@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	kdissert
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	deskutils kde
-MASTER_SITES=	ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/ \
-		http://www.freehackers.org/~tnagy/kdissert/ \
-		ftp://ftp.fasta.fh-dortmund.de/mirror/gentoo/distfiles/
+MASTER_SITES=	http://www.kde-apps.org/content/files/
+DISTNAME=	12725-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE mindmapping tool
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		gsed:${PORTSDIR}/textproc/gsed
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
@@ -71,7 +72,7 @@ do-install:
 		${PREFIX}/share/doc/HTML/${lang}/kdissert
 	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/index.docbook \
 		${PREFIX}/share/doc/HTML/${lang}/kdissert
-	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/screenshot.png \
+	${INSTALL_DATA} ${WRKSRC}/doc/${lang}/screenshot.jpg \
 		${PREFIX}/share/doc/HTML/${lang}/kdissert
 .endfor
 .for lang in fr
