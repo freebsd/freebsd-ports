@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/Date/Manip.pm
-lib/perl5/site_perl/%%PERL_VER%%/Date/Manip.pod
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Manip/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Manip
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Date 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
+%%SITE_PERL%%/Date/Manip.pm
+%%SITE_PERL%%/Date/Manip.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Manip/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/Manip
+@unexec rmdir %D/%%SITE_PERL%%/Date 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Date 2>/dev/null || true
