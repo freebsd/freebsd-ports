@@ -28,6 +28,6 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 
 do-install:
-	@${SH} ${FILESDIR}/install.sh ${WRKSRC} ${PREFIX} ${SHAREOWN} ${SHAREGRP} 0755 0644 ${PLIST}
+	@${SETENV} PLIST_SUB=${PLIST_SUB} ${SH} ${FILESDIR}/install.sh ${WRKSRC} ${PREFIX} ${SHAREOWN} ${SHAREGRP} 0755 0644 ${PLIST}
 
 .include <bsd.port.mk>
