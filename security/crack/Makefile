@@ -5,7 +5,7 @@
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/06/09 15:13:41 fenner Exp $
+# $Id: Makefile,v 1.6 1997/11/26 01:42:55 obrien Exp $
 #
 
 DISTNAME=	crack5.0
@@ -26,8 +26,8 @@ pre-configure:
 	@/bin/mv -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.notused
 	@/bin/mv -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
 	@${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
-	@echo "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile
 .endif
+	@echo "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile
 
 pre-build:
 	@(if [ ! -f /usr/share/dict/words ];then \
