@@ -7,7 +7,7 @@
 
 PORTNAME=	wily
 PORTVERSION=	0.13.41
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors plan9
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/old/ \
 		ftp://ftp.cs.su.oz.au/gary/wily/src/old/
@@ -16,7 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the Plan9 editor `acme'
 
-RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc
+RUN_DEPENDS=	${LOCALBASE}/bin/rc:${PORTSDIR}/shells/rc \
+		${X11BASE}/lib/X11/fonts/unicode.9.font:${PORTSDIR}/x11-fonts/Xg
 
 USE_XLIB=	YES
 GNU_CONFIGURE=	YES
