@@ -62,6 +62,7 @@
     SUBDIR += ruby14-gdbm
     SUBDIR += ruby-mysql
     SUBDIR += ruby-postgres
+    SUBDIR += sqlite
     SUBDIR += sqsh
     SUBDIR += tcl-Mysql
     SUBDIR += tkgnats
