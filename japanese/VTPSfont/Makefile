@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create Virtual PostScript fonts produced by VFlib (Truetype fonts)
 
 PLIST_FILES=	bin/VTPSfont
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash1
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
