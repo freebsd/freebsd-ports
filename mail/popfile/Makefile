@@ -94,7 +94,7 @@ pre-fetch:
 	@${ECHO_CMD} "        (Kanji Kana Simple Inverter.)  If you need Japanese email support,"
 	@${ECHO_CMD} "        enable this option to install japanese/p5-Text-Kakasi."
 .if ${PERL_LEVEL} < 500800
-	@${ECHO_CMD} "        If you still using perl 5.6 or before, a hacky patch (use jcode.pl
+	@${ECHO_CMD} "        If you still using perl 5.6 or before, a hacky patch (use jcode.pl"
 	@${ECHO_CMD} "        instead of Encode::from_to) is applied for using POPFile."
 .endif
 
