@@ -6,6 +6,7 @@
 
 PORTNAME=	SNMP-Info
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	snmp-info
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A perl5 module for gathering information from network devices
 
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 
 PERL_CONFIGURE=	yes
 
@@ -35,6 +36,7 @@ MAN3=	SNMP::Info::CiscoVTP.3 SNMP::Info::MAU.3 SNMP::Info::Layer2::C2900.3 \
 	SNMP::Info::Layer2::Orinoco.3 SNMP::Info::Layer3::AlteonAD.3 \
 	SNMP::Info::Layer3::BayRS.3 SNMP::Info::Layer3::Cisco.3 \
 	SNMP::Info::Layer3::Contivity.3	SNMP::Info::NortelStack.3 \
+	SNMP::Info::Layer3::Passport.3 \
 	SNMP::Info::RapidCity.3 SNMP::Info::SONMP.3
 
 .include <bsd.port.mk>

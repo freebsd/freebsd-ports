@@ -30,6 +30,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/Orinoco.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Aironet.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/AlteonAD.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/BayRS.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C6500.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/C3550.pm
