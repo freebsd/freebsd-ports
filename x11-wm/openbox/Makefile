@@ -66,8 +66,8 @@ pre-install:
 .for ii in openbox/xdg/openbox openbox/xdg openbox
 	 ${ECHO_CMD} @dirrm etc/${ii} >> ${PLIST}
 .endfor
-.for ii in openbox/3.0 3.0
-	 ${ECHO_CMD} @dirrm include/${ii} >> ${PLIST}
+.for ii in include/openbox share/gnome/wm-properties
+	 ${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
 .endfor
 .for ii in la lai so so.1
 	${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
@@ -81,10 +81,10 @@ pre-install:
 .endif
 
 do-install:
-	${MKDIR} ${DATADIR} ${PREFIX}/etc/openbox/xdg/openbox \
-		${PREFIX}/include/openbox/3.0
+	${MKDIR} ${DATADIR} ${PREFIX}/share/gnome/wm-properties \
+		${PREFIX}/etc/openbox/xdg/openbox ${PREFIX}/include/openbox
 .for ii in parser/parse render/theme render/render
-	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox/3.0
+	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox
 .endfor
 .for ii in parser render
 	${INSTALL_DATA} ${WRKSRC}/${ii}/ob${ii}-3.0.pc \
