@@ -1,5 +1,6 @@
 
 #define BuildServersOnly	YES
+#define BuildFontServer		NO
 
 #define XF86SVGAServer          YES
 #define XF86VGA16Server         YES
@@ -16,12 +17,3 @@
 #define XF86AGXServer		YES
 #define XF86W32Server		YES
 #define XF86I128Server		YES
-
-#define BuildFontServer		NO
-#define BuildFonts		NO
-#define XnestServer		NO
-#define XVirtualFramebufferServer	NO
-#define XprtServer		NO
-
-#define IncludeFlags
-
