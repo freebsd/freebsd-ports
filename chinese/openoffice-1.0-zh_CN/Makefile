@@ -7,6 +7,7 @@
 
 CATEGORIES=     chinese
 
+NO_LATEST_LINK=	yes
 LANG_PKGNAME=   zh
 LANG_SUFFIX=	CN
 LANG_EXT=       86
