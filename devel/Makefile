@@ -649,6 +649,7 @@
     SUBDIR += pcsc-lite
     SUBDIR += pear
     SUBDIR += pear-Console_Getopt
+    SUBDIR += pear-Date
     SUBDIR += pear-PEAR
     SUBDIR += pear-install
     SUBDIR += pedisassem

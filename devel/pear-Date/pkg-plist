@@ -1,0 +1,5 @@
+%%PEARDIR%%/Date/Calc.php
+%%PEARDIR%%/Date/Human.php
+%%PEARDIR%%/Date/TimeZone.php
+%%PEARDIR%%/Date.php
+@dirrm %%PEARDIR%%/Date
