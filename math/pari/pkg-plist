@@ -20,10 +20,6 @@ lib/libpari.so.2.0.18
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /bin/mkdir -p %D/lib/pari/data
-lib/pari/pari.el
-lib/pari/pariemacs.txt
-lib/pari/with-syntax.el
-lib/pari/pari-translator.el
 lib/pari/translations
 lib/pari/Makefile
 lib/pari/paricfg.tex
