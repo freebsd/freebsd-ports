@@ -1,10 +1,16 @@
---- ezfm.h	Thu Dec 10 09:30:59 1998
-+++ /home/andy/tmp/wrk/ezfm.h	Tue Mar 16 17:23:47 1999
-@@ -53,7 +53,9 @@
+
+$FreeBSD$
+
+--- ezfm.h.orig	Wed Oct  6 00:01:29 1999
++++ ezfm.h	Thu Oct 31 18:05:27 2002
+@@ -52,8 +52,11 @@
+ #define REMOVABLE_DRIVES
  #endif
  /*************************************************************/
- EXTERN   int erron, sys_nerr;
+-EXTERN   int erron, sys_nerr;
++EXTERN   int erron;
 +#ifndef __FreeBSD__
++EXTERN   int sys_nerr;
  EXTERN   char *sys_errlist[];
 +#endif
  #define syserr(en) (((en) >= 0 && (en) < sys_nerr) ? sys_errlist[(en)] : "Unknown error")
