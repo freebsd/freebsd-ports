@@ -8,8 +8,7 @@
 PORTNAME=	gnustep-back
 PORTVERSION=	0.9.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
-		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org

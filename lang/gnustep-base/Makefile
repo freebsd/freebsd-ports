@@ -12,8 +12,7 @@ PORTVERSION=	1.9.0
 PORTVERSION=	1.8.0
 .endif
 CATEGORIES=	lang devel
-MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
-		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
