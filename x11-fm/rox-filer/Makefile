@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -21,17 +21,8 @@ USE_GTK=	yes
 MAN1=		rox.1
 
 do-build:
-	# Hopefully gtk-config and glib-config will become
-	# configurable, so don't bother to add patch-* files
-
-	${PERL} -pi -e "s/gtk-config/gtk12-config/g" \
-		${WRKSRC}/ROX-Filer/src/Makefile.in
-	${PERL} -pi -e "s/glib-config/glib12-config/g" \
-		${WRKSRC}/ROX-Filer/src/configure
-
 	# Run the custom build procedure
-
-	cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} ROX-Filer/AppRun --compile
+	cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ROX-Filer/AppRun --compile
 
 do-install:
 	${MKDIR} ${PREFIX}/apps/ROX-Filer
