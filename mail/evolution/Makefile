@@ -7,7 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -26,7 +26,8 @@ LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
 .endif
-RUN_DEPENDS=	gnome-spell-component-0.5:${PORTSDIR}/textproc/gnomespell
+RUN_DEPENDS=	gnome-spell-component-0.5:${PORTSDIR}/textproc/gnomespell \
+		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 .if !defined(WITHOUT_PILOT)
 BUILD_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 RUN_DEPENDS+=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
