@@ -38,6 +38,10 @@ USE_GCC=	3.3
 BROKEN=		"Not supported on systems prior to FreeBSD 4.x"
 .endif
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if defined(DEBUG)
 STRIP=
 .else
