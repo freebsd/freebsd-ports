@@ -6,15 +6,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	kde
+PORTNAME?=	kde
 PORTVERSION=	${KDE_VERSION}
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The "meta-port" for KDE
+MAINTAINER?=	kde@FreeBSD.org
+COMMENT?=	The "meta-port" for KDE
+
+# This port conflicts with the kde-lite port, so make it known.
+.if defined(IS_INTERACTIVE)
+CONFLICTS?=	kde-lite-[0-9]*
+.endif
 
 ## This is the file where the selections made in the interactive dialog
 ## are saved in and initialized from.
