@@ -1,0 +1,16 @@
+Qt Linguist, localization tool, allows users to seamlessly convert Qt-based
+programs from one language to another, simply and intelligently. Qt Linguist
+helps with the translation of all visible text in a program, to and from any
+language supported by Unicode and the target platforms. A key feature in Qt
+Linguist is a specialized editing tool, with many features to help the
+translators be more productive and get better results. Qt Linguist will work
+with both Qt/Windows and Qt for UNIX.
+
+Qt Linguist also includes a pre-installed intelligent database of multi-lingual
+terms to assist in the translation process. Once new translations are made, the
+database saves the terms for later re-use. This provides translators a tool
+that greatly increases work efficiency as they continue to use the product. 
+
+Qt Linguist is distributed under BSD-style license.
+
+WWW: http://www.trolltech.com/company/announce/linguistpre.html
