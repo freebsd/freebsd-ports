@@ -1,5 +1,6 @@
 bin/sgf2tex
 bin/sgfsplit
+share/doc/sgf2tex.dvi
 share/texmf/fonts/tfm/gobl.tfm
 share/texmf/fonts/tfm/goea.tfm
 share/texmf/fonts/tfm/goeb.tfm
