@@ -8,13 +8,34 @@ etc/CORBA/servers/gnomecard.gnorba
 %%GNOME_PILOT%%share/gnome/gnome-pilot/conduits/gnomecard.conduit
 share/gnome/apps/Applications/gncal.desktop
 share/gnome/apps/Applications/gnomecard.desktop
-share/gnome/help/gnomecal/C/images/cal-props.gif
-share/gnome/help/gnomecal/C/images/calday.gif
-share/gnome/help/gnomecal/C/images/calmonth.gif
-share/gnome/help/gnomecal/C/images/calweek.gif
-share/gnome/help/gnomecal/C/images/calyear.gif
+share/gnome/help/gnomecal/C/calappoint.html
+share/gnome/help/gnomecal/C/calendar.html
+share/gnome/help/gnomecal/C/calsetup.html
+share/gnome/help/gnomecal/C/caluse.html
+share/gnome/help/gnomecal/C/cmdline.html
+share/gnome/help/gnomecal/C/images/cal-props.png
+share/gnome/help/gnomecal/C/images/calday.png
+share/gnome/help/gnomecal/C/images/calmonth.png
+share/gnome/help/gnomecal/C/images/calweek.png
+share/gnome/help/gnomecal/C/images/calyear.png
+share/gnome/help/gnomecal/C/index.html
+share/gnome/help/gnomecal/C/tech.html
 share/gnome/help/gnomecal/C/topic.dat
+share/gnome/help/gnomecard/C/description.html
+share/gnome/help/gnomecard/C/dialogs.html
+share/gnome/help/gnomecard/C/display.html
+share/gnome/help/gnomecard/C/index.html
+share/gnome/help/gnomecard/C/menubar.html
+share/gnome/help/gnomecard/C/recordview.html
+share/gnome/help/gnomecard/C/toolbar.html
 share/gnome/help/gnomecard/C/topic.dat
+share/gnome/help/gnomecard/eu/description.html
+share/gnome/help/gnomecard/eu/dialogs.html
+share/gnome/help/gnomecard/eu/display.html
+share/gnome/help/gnomecard/eu/index.html
+share/gnome/help/gnomecard/eu/menubar.html
+share/gnome/help/gnomecard/eu/toolbar.html
+share/gnome/help/gnomecard/eu/topic.dat
 share/gnome/idl/GnomeCal.idl
 share/gnome/idl/gnome-pim.idl
 share/gnome/mime-info/gnome-pim.keys
@@ -30,6 +51,7 @@ share/locale/el/LC_MESSAGES/gnome-pim.mo
 share/locale/en_GB/LC_MESSAGES/gnome-pim.mo
 share/locale/es/LC_MESSAGES/gnome-pim.mo
 share/locale/et/LC_MESSAGES/gnome-pim.mo
+share/locale/eu/LC_MESSAGES/gnome-pim.mo
 share/locale/fi/LC_MESSAGES/gnome-pim.mo
 share/locale/fr/LC_MESSAGES/gnome-pim.mo
 share/locale/ga/LC_MESSAGES/gnome-pim.mo
@@ -55,8 +77,9 @@ share/locale/sv/LC_MESSAGES/gnome-pim.mo
 share/locale/tr/LC_MESSAGES/gnome-pim.mo
 share/locale/uk/LC_MESSAGES/gnome-pim.mo
 share/locale/wa/LC_MESSAGES/gnome-pim.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-pim.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-pim.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pim.mo
+@dirrm share/gnome/help/gnomecard/eu
 @dirrm share/gnome/help/gnomecard/C
 @dirrm share/gnome/help/gnomecard
 @dirrm share/gnome/help/gnomecal/C/images
