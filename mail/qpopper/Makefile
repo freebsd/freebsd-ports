@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 DISTNAME=	${PORTNAME}${PORTVERSION}
-
-FORBIDDEN=	"Software contains buffer overflow"
 
 .include <bsd.port.pre.mk>
 
