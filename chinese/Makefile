@@ -10,14 +10,11 @@
     SUBDIR += autoconvert
     SUBDIR += bg5ps
     SUBDIR += big5con
-    SUBDIR += big5fonts
     SUBDIR += c2t
     SUBDIR += celvis
     SUBDIR += cless
-    SUBDIR += cnsfonts
     SUBDIR += cxterm
     SUBDIR += gb2ps
-    SUBDIR += gbfonts
     SUBDIR += gbscript
     SUBDIR += hc
     SUBDIR += hztty
