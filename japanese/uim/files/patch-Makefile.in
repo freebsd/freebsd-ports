@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Dec  8 21:20:20 2003
-+++ Makefile.in	Sun Dec 21 01:41:32 2003
-@@ -187,7 +187,7 @@
+--- Makefile.in.orig	Tue Feb  3 02:41:53 2004
++++ Makefile.in	Sun Feb  8 23:53:06 2004
+@@ -194,7 +194,7 @@
  
  DISTCLEANFILES = uim.pc
  
@@ -9,12 +9,3 @@
  pkgconfig_DATA = uim.pc
  
  noinst_PROGRAMS = $(gtk_entry) uim-agent
-@@ -198,7 +198,7 @@
- @GTK2_TRUE@gtk_entry_CFLAGS = @GTK2_CFLAGS@
- 
- uim_agent_SOURCES = agent.c
--uim_agent_LDADD = uim/libuim.la
-+uim_agent_LDADD = uim/libuim.la -liconv
- 
- ACLOCAL_AMFLAGS = -I m4
- subdir = .

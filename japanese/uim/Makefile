@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.8
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Input method library
 
-LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
 
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes
@@ -23,6 +21,7 @@ INSTALLS_SHLIB=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget glib20
 USE_GMAKE=	yes
+USE_ICONV=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib  -L${LOCALBASE}/lib"
