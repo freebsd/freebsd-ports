@@ -23,4 +23,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Tcl::Tk.3
 
+post-patch:
+	@${PERL} -pi -e 's,%LOCALBASE%,${LOCALBASE},g; \
+		s,%X11BASE%,${X11BASE},g' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
