@@ -1,0 +1,11 @@
+--- Makefile.in	Tue Feb 22 14:46:32 2000
++++ Makefile.in.new	Wed Mar  1 05:39:07 2000
+@@ -91,7 +91,7 @@
+ AUTOMAKE_OPTIONS = foreign dist-zip
+ #AUTOMAKE_OPTIONS = foreign dist-zip no-dependencies
+ 
+-SUBDIRS = utils include src doc tests pathfinder historic
++SUBDIRS = utils include src doc
+ EXTRA_DIST = ADDITIONS AUTHORS BUGS INSTALL LICENSE TRACING README index.html aclocal.m4
+ 
+ CLEANFILES = fox.tar.gz

@@ -1,0 +1,14 @@
+--- configure	Mon Mar  6 13:25:50 2000
++++ configure.new	Mon Mar  6 13:33:37 2000
+@@ -3561,7 +3561,10 @@
+ if test "x$enable_release" = "xyes" ; then
+ CXXFLAGS="${CXXFLAGS} -O2 -DNDEBUG"
+ if test "${GXX}" = "yes" ; then
+-CXXFLAGS="${CXXFLAGS} -Wuninitialized -ffast-math -finline-functions -fomit-frame-pointer -fexpensive-optimizations"
++CXXFLAGS="${CXXFLAGS} -Wuninitialized -ffast-math -finline-functions -fexpensive-optimizations"
++if test "${with_profiling}" = ""; then
++CXXFLAGS="${CXXFLAGS} -fomit-frame-pointer"
++fi
+ fi
+ fi
+ 
