@@ -37,8 +37,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -fno-rtti -fno-exceptions" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
-CONFIGURE_ARGS=	--with-freetype2-lib-place=${X11BASE}/lib \
-		--with-freetype2-include-place=${X11BASE}/include/freetype2
+CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
+		--with-freetype2-include-place=${LOCALBASE}/include/freetype2
 
 .if !defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+= --with-mozilla-lib-place=${X11BASE}/lib/${MOZILLA} \
