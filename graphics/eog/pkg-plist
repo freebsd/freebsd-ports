@@ -126,8 +126,10 @@ share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
 share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/LC_MESSAGES/eog.mo
+share/locale/xh/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
+share/locale/zu/LC_MESSAGES/eog.mo
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/zh_TW/figures
