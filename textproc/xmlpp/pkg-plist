@@ -1,1 +1,10 @@
+bin/xmlpp-config
+include/xmlcommon.h
+include/xmlhelpers.h
+include/xmlparser.h
+include/xmlpp.h
+include/xmltokenizer.h
 lib/libxmlpp.a
+lib/libxmlpp.so
+lib/libxmlpp.so.0
+share/aclocal/libxmlpp.m4

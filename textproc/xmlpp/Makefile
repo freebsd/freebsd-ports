@@ -7,15 +7,17 @@
 #
 
 PORTNAME=	xmlpp
-PORTVERSION=	0.6
+PORTVERSION=	0.7a
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.vividos.de/projekte/xmlpp/files/
+MASTER_SITES=	http://www.root.at/download/gpl/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libxmlpp.a ${PREFIX}/lib
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|/usr/local/share|\$$\(datadir\)|g'
 
 .include <bsd.port.mk>
