@@ -4139,6 +4139,10 @@ misc.c:
         <range><lt>0.9.3</lt></range>
       </package>
       <package>
+        <name>thunderbird</name>
+        <range><lt>0.7.3</lt></name>
+      </package>
+      <package>
         <name>linux-mozilla</name>
         <range><lt>1.7.2</lt></range>
       </package>
