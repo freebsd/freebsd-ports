@@ -1,21 +1,18 @@
-*** Makefile.orig	Wed Apr  5 23:23:25 1995
---- Makefile	Wed Apr  5 23:23:51 1995
+*** Makefile.in.orig	Fri Aug 25 02:32:36 1995
+--- Makefile.in	Fri Aug 25 02:32:42 1995
 ***************
-*** 40,47 ****
+*** 38,43 ****
+--- 38,50 ----
+  slirp: $(PROTO) $(OBJ)
+  	$(CC) @LDFLAGS@ -o slirp $(OBJ) $(LIBS)
   
-  linux:
-  	@$(MAKE) "CFLAGS = $(CFLAGS) -D_LITTLE_ENDIAN_ -DLINUX -DDEBUG -O2 -g -Wstrict-prototypes" \
-!                 slurp
-! 		
++ # This is a very very crude install target, but it's less crude than
++ # creating one in the top level directory.
++ install: slirp
++ 	install -c -s -m 755 slirp ${PREFIX}/bin
++ 	@mkdir -p ${PREFIX}/man/man1
++ 	install -c -m 755 ../docs/slirp.man.OLD ${PREFIX}/man/man1/slirp.1
++ 
+  objclean:
+  	rm -f $(OBJ)
   
-  #
-  # OBJ's
---- 40,47 ----
-  
-  linux:
-  	@$(MAKE) "CFLAGS = $(CFLAGS) -D_LITTLE_ENDIAN_ -DLINUX -DDEBUG -O2 -g -Wstrict-prototypes" \
-! 		slurp
-! 
-  
-  #
-  # OBJ's
