@@ -22,13 +22,13 @@ post-patch:
 do-install:
 
 post-install:
-	${ECHO} "===>   Installing ${PREFIX}/bin/dhisd."
-	${INSTALL_PROGRAM} ${WRKSRC}/dhisd ${PREFIX}/bin
-	@${ECH_CMDO} "bin/dhisd" >> ${TMPPLIST}
-	${ECHO} "===>   Installing ${PREFIX}/bin/genkeys."
-	${INSTALL_PROGRAM} ${WRKSRC}/genkeys ${PREFIX}/bin
-	@${ECH_CMDO} "bin/genkeys" >> ${TMPPLIST}
-	${ECHO} "===>   Creating ${PREFIX}/etc/dhis and installing sample db files."
+	@${ECHO_MSG} "===>   Installing ${PREFIX}/bin/dhisd."
+	@${INSTALL_PROGRAM} ${WRKSRC}/dhisd ${PREFIX}/bin
+	@${ECHO_CMD} "bin/dhisd" >> ${TMPPLIST}
+	@${ECHO_MSG} "===>   Installing ${PREFIX}/bin/genkeys."
+	@${INSTALL_PROGRAM} ${WRKSRC}/genkeys ${PREFIX}/bin
+	@${ECHO_CMD} "bin/genkeys" >> ${TMPPLIST}
+	@${ECHO_MSG} "===>   Creating ${PREFIX}/etc/dhis and installing sample db files."
 	@${MKDIR} ${PREFIX}/etc/dhis
 	@${CHMOD} 700 ${PREFIX}/etc/dhis
 	@${INSTALL_DATA} ${WRKSRC}/dhis.db.sample ${PREFIX}/etc/dhis/dhis.db.sample
@@ -38,19 +38,19 @@ post-install:
 	@${CHMOD} 600 ${PREFIX}/etc/dhis/*
 	@${ECHO_CMD} "@dirrm etc/dhis" >> ${TMPPLIST}
 .if !exists(${PREFIX}/etc/rc.d/dhisd.sh)
-	${ECHO} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh startup file."
-	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
+	@${ECHO_MSG} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh startup file."
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
 	@${ECHO_CMD} "etc/rc.d/dhisd.sh" >> ${TMPPLIST}
 .endif
 .if !defined(NOPORTDOCS)
-	${ECHO} "===>   Installing documentation in ${DOCSDIR}"
+	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	@${CHMOD} 755 ${DOCSDIR}
 .for DOCFILE in ${DOCFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
 	@${ECHO_CMD} "share/doc/${PORTNAME}/${DOCFILE}" >> ${TMPPLIST}
 .endfor
-	${INSTALL_DATA} ${FILESDIR}/INSTALL.bsd ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/INSTALL.bsd ${DOCSDIR}
 	@${ECHO_CMD} "share/doc/${PORTNAME}/INSTALL.bsd" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}
 .endif
