@@ -8,7 +8,8 @@
 PORTNAME=	mod_auth_useragent
 PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://download.tangent.org/
+MASTER_SITES=	http://download.tangent.org/ \
+		http://sheepkiller.nerim.net/ports/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to forbid clients based on their User-Agent
