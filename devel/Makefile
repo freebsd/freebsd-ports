@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.186 1999/05/23 14:55:24 rse Exp $
+# $Id: Makefile,v 1.187 1999/05/26 08:03:25 tg Exp $
 #
 
     SUBDIR += ElectricFence
@@ -29,6 +29,7 @@
     SUBDIR += cs
     SUBDIR += cscope
     SUBDIR += cssc
+    SUBDIR += ctags
     SUBDIR += cutils
     SUBDIR += cvslines
     SUBDIR += cweb
