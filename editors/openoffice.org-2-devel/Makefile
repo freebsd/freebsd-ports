@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
 EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 
-MAINTAINER=	mbr@FreeBSD.org
+MAINTAINER=	openoffice@FreeBSD.org
 
 # OO needs DISPLAY to be set and working
 RESTRICTED=	"No automated build possible"
