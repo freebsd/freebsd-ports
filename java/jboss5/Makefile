@@ -7,21 +7,21 @@
 
 PORTNAME=	${APP_TITLE:L}
 PORTVERSION= 	3.2.1
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-#DISTNAME=	${APP_TITLE}-${PORTVERSION}
 
-MAINTAINER=	des@des.no
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	JBoss 3, an open-source J2EE application server
 
-USE_JAVA=	1.2+
+USE_JAVA=	1.3+
 
+USE_REINPLACE=	YES
 USE_ZIP=	YES
-NO_BUILD=	YES
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}${PORTVERSION:R}
 LOG_DIR=	${APP_HOME}/log
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	JBoss
@@ -34,66 +34,54 @@ STARTUP_SCRIPT_NAME=	${APP_SHORTNAME}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 USER=		www
 GROUP=		www
-PW?=		/usr/sbin/pw
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
 STOP_TIMEOUT?=	5
 PID_FILE=	/var/run/${APP_SHORTNAME}.pid
-REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
-		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
-		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh
 JAR_FILE=	bin/run.jar
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
+DAEMONCTL_DIR=	${PORTSDIR}/www/jakarta-tomcat4/files
+DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh
+MAN1=		${CONTROL_SCRIPT_NAME}.1
+
+CPIO?=		/usr/bin/cpio
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${ECHO_CMD} -n ">> Deleting the symbol CR (carriage return) in some files and removing unneeded files..."
-	@${FIND} ${WRKSRC} -type f \
-	-iname '*.mf' -or \
-	-iname '*.dtd' -or \
-	-iname '*.txt' -or \
-	-iname '*.xml' -or \
-	-iname '*.conf' -or \
-	-iname '*.java' -or \
-	-iname '*.html' -or \
-	-iname '*.policy' -or \
-	-iname '*.properties' | \
-	${XARGS} -n 10 -x ${SED} -i .orig -e "s|"`printf '\015'`"||g"
-	@cd ${WRKSRC} && ${FIND} . -type f -name "*.orig" -print -or -iname "*.bat" -print -or -iname "*.exe" -print | ${XARGS} ${RM} -f
-	@${ECHO_CMD} " [ DONE ]"
-	@${CHMOD} -R 0644 ${WRKSRC} 
-	@${CHMOD} 0755 `${FIND} ${WRKSRC} -type d`
+	${FIND} ${WRKSRC} -type f\
+		\( -name '*.ba[kt]' -or -name '*.orig' \) -print0 |\
+		${XARGS} -0 ${RM}
+	@${FIND} ${WRKSRC} -type d -print0 | ${XARGS} -0 ${CHMOD} 0755
+	@${FIND} ${WRKSRC} -type f -print0 | ${XARGS} -0 ${CHMOD} 0644
 
-.for f in ${REPLACE_FILES}
-	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
-	@${SED} \
-	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
-	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
-	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
-	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
-	-e "/%%CONTROL_SCRIPT_MANPAGE_TITLE%%/s//${CONTROL_SCRIPT_MANPAGE_TITLE}/g" \
-	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
-	-e "/%%GROUP%%/s//${GROUP}/g" \
-	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
-	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
-	-e "/%%JAR_FILE%%/s//${JAR_FILE:S/\//\\\//g}/g" \
-	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/g" \
-	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
-	-e "/%%PORTNAME%%/s//${PORTNAME}/g" \
-	-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" \
-	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
-	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
-	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
-	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
-	-e "/%%STOP_TIMEOUT%%/s//${STOP_TIMEOUT}/g" \
-	-e "/%%USER%%/s//${USER}/g" \
-	$f > ${WRKDIR}/`basename $f`
-	@${ECHO_CMD} " [ DONE ]"
-.endfor
+do-configure:
+	@(cd ${DAEMONCTL_DIR} && ${CP} ${DAEMONCTL_FILES} ${WRKDIR})
+	@(cd ${WRKDIR} && ${REINPLACE_CMD} \
+		-e "s|%%APP_HOME%%|${APP_HOME}|g;" \
+		-e "s|%%APP_SHORTNAME%%|${APP_SHORTNAME}|g;" \
+		-e "s|%%APP_TITLE%%|${APP_TITLE}|g;" \
+		-e "s|%%CONTROL_SCRIPT%%|${CONTROL_SCRIPT}|g;" \
+		-e "s|%%CONTROL_SCRIPT_MANPAGE_TITLE%%|${CONTROL_SCRIPT_MANPAGE_TITLE}|g;" \
+		-e "s|%%CONTROL_SCRIPT_NAME%%|${CONTROL_SCRIPT_NAME}|g;" \
+		-e "s|%%GROUP%%|${GROUP}|g;" \
+		-e "s|%%JAR_ARGS%%||g;" \
+		-e "s|%%JAVA_ARGS%%||g;" \
+		-e "s|%%JAVA_CMD%%|bin/java|g;" \
+		-e "s|%%JAVA_HOME%%|${JAVA_HOME}|g;" \
+		-e "s|%%JAR_FILE%%|${JAR_FILE}|g;" \
+		-e "s|%%LOG_DIR%%|${LOG_DIR}|g;" \
+		-e "s|%%PID_FILE%%|${PID_FILE}|g;" \
+		-e "s|%%PORTNAME%%|${PORTNAME}|g;" \
+		-e "s|%%PORTVERSION%%|${PORTVERSION}|g;" \
+		-e "s|%%PREFIX%%|${PREFIX}|g;" \
+		-e "s|%%STARTUP_SCRIPT_NAME%%|${STARTUP_SCRIPT_NAME}|g;" \
+		-e "s|%%STDERR_LOG%%|${STDERR_LOG}|g;" \
+		-e "s|%%STDOUT_LOG%%|${STDOUT_LOG}|g;" \
+		-e "s|%%STOP_TIMEOUT%%|${STOP_TIMEOUT}|g;" \
+		-e "s|%%USER%%|${USER}|g;" ${DAEMONCTL_FILES})
 
-pre-install:
+post-configure:
 	@${ECHO_CMD} "Installation settings:"
 	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
 	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
@@ -108,66 +96,38 @@ pre-install:
 	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
 	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
+
+do-build:
+	(cd ${WRKDIR} && ${CC} ${CFLAGS} -o ${CONTROL_SCRIPT_NAME} daemonctl.c)
+
+pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${ECHO_CMD} -n ">> Creating destination directory..."
-	@${MKDIR} ${APP_HOME}
-	@${MKDIR} ${APP_HOME}/application-deployments
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${APP_HOME}
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Compiling and installing control program..."
-	@${SED} \
-	-e "/%%JAVA_ARGS%%/s///g" \
-	-e "/%%JAR_ARGS%%/s///g" \
-	${WRKDIR}/daemonctl.c > ${WRKDIR}/daemonctl_.c
-	@cd ${WRKDIR} && ${CC} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl_.c
-	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
-	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
-	@${CHMOD} 6754 ${CONTROL_SCRIPT}
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Installing startup script..."
-	@${CP} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
-	@${CHMOD} 0544 ${STARTUP_SCRIPT}
-	@${ECHO_CMD} " [ DONE ]"
-
+	${MKDIR} ${APP_HOME}
+	(cd ${WRKSRC} && ${FIND} . -type d \( -name docs -prune \) -or -print0 |\
+		(cd ${APP_HOME} && ${XARGS} -0 ${MKDIR}))
+	(cd ${WRKSRC} && ${FIND} . \( -type d -name docs -prune \) -or -type f |\
+		${CPIO} -pdmu -R ${USER}:${GROUP} ${APP_HOME})
+	${MKDIR} ${APP_HOME}/application-deployments
+	${INSTALL} -o ${USER} -g ${GROUP} -m 06754\
+		${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
+	${INSTALL_SCRIPT} ${WRKDIR}/startup.sh ${STARTUP_SCRIPT}
+	${MKDIR} ${LOG_DIR}
+	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDOUT_LOG}
+	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${STDERR_LOG}
+	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
+	${INSTALL_MAN} ${WRKDIR}/daemonctl.1 ${MANPREFIX}/man/man1/${CONTROL_SCRIPT_NAME}.1
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing man pages..."
-	@${INSTALL_MAN} ${WRKDIR}/daemonctl.1 ${MANPREFIX}/man/man1/${CONTROL_SCRIPT_NAME}.1
-	@${ECHO_CMD} " [ DONE ]"
+	${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${FIND} . -type f |\
+		${CPIO} -pdmu -R ${DOCOWN}:${DOCGRP} ${DOCSDIR})
 .endif
-
-	@${ECHO_CMD} -n ">> Creating log files..."
-	@${MKDIR} ${LOG_DIR}
-	@${INSTALL} /dev/null ${STDOUT_LOG}
-	@${INSTALL} /dev/null ${STDERR_LOG}
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Fixing ownership settings..."
-	@${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
-	@${ECHO_CMD} " [ DONE ]"
-
-	@${ECHO_CMD} -n ">> Creating PID file..."
-	@${TOUCH} ${PID_FILE}
-	@${CHOWN} ${USER}:${GROUP} ${PID_FILE}
-	@${CHMOD} 0600 ${PID_FILE}
-	@${ECHO_CMD} " [ DONE ]"
 
 post-install:
-	@${ECHO_CMD} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+	@${ECHO_CMD} "${PKGNAME} has been installed in ${APP_HOME}."
 	@${ECHO_CMD} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
-.if !defined(NOPORTDOCS)
-	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
-.endif
+	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${PORTNAME}."
 .if ${AUTO_START} == "YES"
 	@${CONTROL_SCRIPT} start || true
 .endif
