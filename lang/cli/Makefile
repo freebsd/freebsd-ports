@@ -56,7 +56,7 @@ pre-install:
 do-install:
 	@${MKDIR} ${PREFIX}/cli-${PORTVERSION}
 	@${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/cli-${PORTVERSION}
-	@cd ${WRKSRC}/build/v1.x86fstchk.rotor && ${FIND} . | \
+	@cd ${WRKSRC}/build/v1.x86fre.rotor && ${FIND} . | \
 		/usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/cli-${PORTVERSION}
 
 .include <bsd.port.post.mk>
