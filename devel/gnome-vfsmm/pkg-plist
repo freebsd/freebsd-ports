@@ -29,7 +29,7 @@ lib/gnome-vfsmm-2.0/proc/m4/convert.m4
 lib/gnome-vfsmm-2.0/proc/m4/convert_gnome_vfsmm.m4
 lib/libgnomevfsmm-1.3.a
 lib/libgnomevfsmm-1.3.so
-lib/libgnomevfsmm-1.3.so.4
+lib/libgnomevfsmm-1.3.so.5
 libdata/pkgconfig/gnome-vfsmm-2.0.pc
 @dirrm lib/gnome-vfsmm-2.0/include
 @dirrm lib/gnome-vfsmm-2.0/proc/m4
