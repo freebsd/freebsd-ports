@@ -4502,6 +4502,7 @@ p5-Imlib2	ports/graphics/p5-Imlib2
 p5-Include	ports/devel/p5-Include
 p5-Inline	ports/devel/p5-Inline
 p5-Inline-ASM	ports/devel/p5-Inline-ASM
+p5-Inline-CPP	ports/devel/p5-Inline-CPP
 p5-Ioctl	ports/devel/p5-Ioctl
 p5-LEGO-RCX	ports/misc/p5-LEGO-RCX
 p5-LJ-Cache	ports/sysutils/p5-LJ-Cache
