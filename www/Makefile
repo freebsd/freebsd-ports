@@ -160,6 +160,7 @@
     SUBDIR += libgtkhtml
     SUBDIR += libhttpd-persistent
     SUBDIR += libwww
+    SUBDIR += linkcheck
     SUBDIR += linkchecker
     SUBDIR += links
     SUBDIR += links1
