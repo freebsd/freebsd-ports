@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpeg4ip
-PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTVERSION=	0.9.8
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +17,6 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
-
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
@@ -32,6 +30,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${X11BASE} \
 		--program-transform-name=''
+INSTALLS_SHLIB=	yes
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
@@ -114,6 +113,11 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		s'|(-lm)|\1 -lgnugetopt|' \
 		${WRKSRC}/util/iptv/Makefile.in
+# do not install manm man pages
+	@${REINPLACE_CMD} -E \
+		-e 's|api.mpt||' \
+		-e 's|^(install-man.*)install-manm|\1|' \
+		${WRKSRC}/doc/mp4v2/Makefile.in
 
 post-configure:
 # disable GNU auto* tools
