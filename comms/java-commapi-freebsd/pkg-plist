@@ -1,4 +1,0 @@
-%%JAVA_HOME%%/jre/lib/ext/CommDriver.jar
-%%JAVA_HOME%%/jre/lib/i386/libSerial.so
-%%JAVA_HOME%%/jre/lib/i386/libParallel.so
-%%JAVA_HOME%%/jre/lib/javax.comm.properties
