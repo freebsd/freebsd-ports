@@ -6,5 +6,7 @@ This port contains two phone number conversion utilities:
 	2. phdecode - decodes a phone number containing characters into
 	   one containing only digits.
 
+WWW: http://www.whizkidtech.redprince.net/unix/
+
 G. Adam Stanislav
-<adam@whizkidtech.net>
+adam@redprince.net
