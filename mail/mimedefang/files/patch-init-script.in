@@ -1,0 +1,11 @@
+--- examples/init-script.in.orig	Wed May 29 22:34:24 2002
++++ examples/init-script.in	Sun Jun  2 22:50:49 2002
+@@ -37,7 +37,7 @@
+ MULTIPLEXOR=yes
+ 
+ # Run the multiplexor and filters as this user, not root.  RECOMMENDED
+-# MX_USER=defang
++MX_USER=mailnull
+ 
+ # If you want to keep spool directories around if the filter fails,
+ # set the next one to yes
