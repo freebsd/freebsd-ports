@@ -46,6 +46,12 @@ pre-configure:
 		-e 's,%%MANPREFIX%%,${MANPREFIX},g' \
 		${FILESDIR}/Makefile.inc > ${WRKDIR}/Makefile.inc
 
+.if ${OSVERSION} < 440001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500024 )
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.c' \
+		| ${XARGS} ${PERL} -pi.orig -e 's/__FBSDID\(("[^"]*")\)/static const char rcsid[] = $$1/'
+.endif
+
 deinstall:
 	@if ${PKG_INFO} -e ${PKGNAME}; then \
 		${PKG_DELETE} -f ${PKGNAME}; \
