@@ -2,6 +2,9 @@ bin/avifix
 bin/avimerge
 bin/avisplit
 bin/avisync
+%%WITH_SUBRIP%%bin/srttool
+%%WITH_SUBRIP%%bin/subtitle2pgm
+%%WITH_SUBRIP%%bin/subtitle2vobsub
 bin/tccat
 bin/tcdecode
 bin/tcdemux
@@ -13,6 +16,7 @@ bin/tcscan
 bin/transcode
 %%WITH_LIBA52%%lib/transcode/a52_decore.so
 lib/transcode/af6_decore.so
+lib/transcode/export_ac3.so
 lib/transcode/export_af6.conf
 %%WITH_AVIFILE%%lib/transcode/export_af6.so
 lib/transcode/export_divx4.so
@@ -20,14 +24,17 @@ lib/transcode/export_divx4raw.so
 lib/transcode/export_divx5.so
 lib/transcode/export_divx5raw.so
 lib/transcode/export_ffmpeg.so
+lib/transcode/export_jpg.so
 lib/transcode/export_lame.so
 lib/transcode/export_sampeg.so
 %%WITH_LIBDV%%lib/transcode/export_dv.so
 %%WITH_LIBDV%%lib/transcode/export_dvraw.so
 %%WITH_FAME%%lib/transcode/export_fame.so
 %%WITH_IMAGEMAGICK%%lib/transcode/export_im.so
-%%WITH_MJPEG%%lib/transcode/export_mjpeg.so
-lib/transcode/export_mpeg.so
+lib/transcode/export_mjpeg.so
+%%WITH_NASM%%lib/transcode/export_mpeg.so
+%%WITH_MJPEG%%lib/transcode/export_mpeg2enc.so
+%%WITH_MJPEG%%lib/transcode/export_mp2enc.so
 lib/transcode/export_net.so
 lib/transcode/export_null.so
 %%WITH_OGG%%lib/transcode/export_ogg.so
@@ -39,6 +46,7 @@ lib/transcode/export_wav.so
 lib/transcode/export_xvid.so
 lib/transcode/export_xvidcvs.so
 lib/transcode/export_xvidraw.so
+%%WITH_MJPEG%%lib/transcode/export_yuv4mpeg.so
 lib/transcode/filter_29to23.so
 lib/transcode/filter_32detect.so
 lib/transcode/filter_32drop.so
@@ -57,6 +65,7 @@ lib/transcode/filter_fields.so
 lib/transcode/filter_invert.so
 lib/transcode/filter_ivtc.so
 %%WITH_IMAGEMAGICK%%lib/transcode/filter_logo.so
+%%WITH_IMAGEMAGICK%%lib/transcode/filter_logoaway.so
 lib/transcode/filter_mask.so
 lib/transcode/filter_normalize.so
 lib/transcode/filter_null.so
@@ -88,7 +97,6 @@ lib/transcode/import_dvd.so
 %%WITH_IMAGEMAGICK%%lib/transcode/import_imlist.so
 lib/transcode/import_ffmpeg.so
 lib/transcode/import_lav.so
-%%WITH_MJPEG%%lib/transcode/import_mjpeg.so
 lib/transcode/import_mpeg2.so
 %%WITH_LAME%%lib/transcode/import_mp3.so
 lib/transcode/import_mplayer.so
@@ -118,6 +126,7 @@ share/doc/transcode/export_mpeg.txt
 share/doc/transcode/export-API.txt
 share/doc/transcode/filter_dnr.txt
 share/doc/transcode/filter_logo.txt
+share/doc/transcode/filter_logoaway.txt
 share/doc/transcode/filter_yuvdenoise.txt
 share/doc/transcode/filter-socket.txt
 share/doc/transcode/filter-API.txt
