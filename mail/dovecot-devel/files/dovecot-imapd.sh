@@ -7,11 +7,11 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/sbin/imap-master ] && \
-		${PREFIX}/sbin/imap-master && echo -n ' dovecot-imapd'
+	[ -x ${PREFIX}/sbin/dovecot ] && \
+		${PREFIX}/sbin/dovecot && echo -n ' dovecot'
 	;;
 stop)
-	/usr/bin/killall imap-master && echo -n ' dovecot-imapd'
+	/usr/bin/killall dovecot && echo -n ' dovecot'
 	;;
 *)
 	echo "Usage: `basename $0` { start | stop }" >&2

@@ -13,12 +13,16 @@ MASTER_SITES=	http://dovecot.procontrol.fi/
 MAINTAINER=	d.marks@student.umist.ac.uk
 COMMENT=	Secure and compact IMAP and POP3 servers
 
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-shadow --enable-ipv6 \
 		--localstatedir=/var/dovecot --with-ssl=openssl \
 		--with-ssldir=/var/dovecot/ssl --with-pop3d \
 		--with-ldap --with-pam
+CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
+	LDFLAGS=-L${LOCALBASE}/lib
 
 #
 # SASL2 support
@@ -45,9 +49,12 @@ BUILD_DEPENDS+=	${VPOPMAIL}:${PORTSDIR}/mail/vpopmail
 CONFIGURE_ARGS+=	--with-vpopmail
 .endif
 
-pre-build:
+post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
 		${WRKSRC}/dovecot-example.conf
+	@${REINPLACE_CMD} -e 's,^LIBS.*,& -liconv,' \
+		${WRKSRC}/src/imap/Makefile.in \
+		${WRKSRC}/src/pop3/Makefile.in
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
