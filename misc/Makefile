@@ -1,7 +1,5 @@
-# $Id: Makefile,v 1.12 1994/10/18 01:13:46 jkh Exp $
+# $Id: Makefile,v 1.13 1994/10/29 22:22:27 pst Exp $
 #
-# XXX dialog libmytinfo libncurses moved to core distribution
-#
-SUBDIR= calc iozone mshell mtools netpbm top unzip zoo
+SUBDIR= calc iozone ispell mshell mtools netpbm top unzip zoo
 
 .include <bsd.port.subdir.mk>
