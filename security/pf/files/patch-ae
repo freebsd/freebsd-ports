@@ -1,0 +1,13 @@
+--- pf/pf_norm.c	7 Apr 2003 15:31:41 -0000	1.2
++++ pf/pf_norm.c	3 Jul 2003 02:40:10 -0000	1.2.16.1
+@@ -747,6 +747,9 @@
+ 				 */
+ #if defined(__FreeBSD__)
+ 				*m0 = m_dup(m, M_NOWAIT);
++				/* From KAME Project : We have missed this! */
++				m_adj(*m0, (h->ip_hl << 2) -
++				    (*m0)->m_pkthdr.len);
+ #else
+ 				*m0 = m_copym2(m, 0, h->ip_hl << 2, M_NOWAIT);
+ #endif
+
