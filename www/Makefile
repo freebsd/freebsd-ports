@@ -98,6 +98,7 @@
     SUBDIR += mathopd
     SUBDIR += mhonarc
     SUBDIR += mmosaic
+    SUBDIR += mnoGoSearch
     SUBDIR += mod_access_referer
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_pgsql
