@@ -1,12 +1,12 @@
 --- Makefile.orig	Sun Sep  9 21:21:01 2001
-+++ Makefile	Fri Apr  5 23:44:49 2002
++++ Makefile	Thu Aug 22 20:21:37 2002
 @@ -1,7 +1,7 @@
  VERSION = 1.2.01
  
 -CC = gcc
 -CFLAGS = -O2 -Wall 
 +CC ?= gcc
-+CFLAGS ?= -O2 -Wall 
++
  CPPFLAGS = "-DVERSION=\"$(VERSION)\""
  
  DB_OBJS = fileio.o util.o dbench.o child.o
@@ -15,7 +15,7 @@
  
  dbench: $(DB_OBJS)
 -	$(CC) -o $@ $(DB_OBJS)
-+	$(CC) $(CFLAGS)-o $@ $(DB_OBJS)
++	$(CC) $(CFLAGS) -o $@ $(DB_OBJS)
  
  tbench: $(TB_OBJS)
 -	$(CC) -o $@ $(TB_OBJS)
