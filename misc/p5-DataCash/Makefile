@@ -11,7 +11,7 @@ CATEGORIES=	misc perl5
 MASTER_SITES=	http://www.datacash.com/stronghold/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	markm@FreeBSD.org
+MAINTAINER=	ports@freebsd-services.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
