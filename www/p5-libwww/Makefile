@@ -1,24 +1,24 @@
 # New ports collection makefile for:	p5-libwww
 # http://www.sn.no/libwww-perl/
-# Version required:                     5.33
+# Version required:                     5.36
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.17 1998/04/28 14:45:37 vanilla Exp $
+# $Id: Makefile,v 1.18 1998/05/14 08:23:24 vanilla Exp $
 #
 
-DISTNAME=       libwww-perl-5.33
-PKGNAME=        p5-libwww-5.33
+DISTNAME=       libwww-perl-5.36
+PKGNAME=        p5-libwww-5.36
 CATEGORIES=     www perl5 devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/MD5.pm:${PORTSDIR}/security/p5-MD5 \
-		${PREFIX}/lib/perl5/site_perl/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
-		${PREFIX}/lib/perl5/site_perl/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
-		${PREFIX}/lib/perl5/site_perl/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/5.005/i386-freebsd/MD5.pm:${PORTSDIR}/security/p5-MD5 \
+		${PREFIX}/lib/perl5/site_perl/5.005/i386-freebsd/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
+		${PREFIX}/lib/perl5/site_perl/5.005/i386-freebsd/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${PREFIX}/lib/perl5/site_perl/5.005/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 USE_PERL5=	YES
 
@@ -54,7 +54,7 @@ MAN3=           Bundle::LWP.3 \
 		WWW::RobotRules::AnyDBM_File.3 \
 		lwpcook.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5/5.00501
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
