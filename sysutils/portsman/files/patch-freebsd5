@@ -1,0 +1,20 @@
+--- src/consts.h.orig	Wed Jan 29 19:03:44 2003
++++ src/consts.h	Tue Jun 22 12:46:55 2004
+@@ -26,12 +26,17 @@
+ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+ */
++#include <osreldate.h>
+ #define _VERSION "portsman 0.2"
+ #define MAX_PATH 256
+ #define MAX_TOKEN 256
+ #define MAX_COLS 80
+ #define INSTALLED_PKG_DIR "/var/db/pkg"
++#if __FreeBSD_version >   500000
++#define INDEX_FILE "/usr/ports/INDEX-5"
++#else
+ #define INDEX_FILE "/usr/ports/INDEX"
++#endif
+ #define PORTS_DIR "/usr/ports"
+ #define CONFIG_FILE ".portsmanrc"
+ #define MK_FILE "Makefile"
