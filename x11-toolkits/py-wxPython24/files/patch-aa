@@ -1,0 +1,10 @@
+--- contrib/stc/contrib/src/stc/ScintillaWX.h	2000/12/08 13:24:39	1.1
++++ contrib/stc/contrib/src/stc/ScintillaWX.h	2000/12/08 13:25:18
+@@ -41,6 +41,7 @@
+ #include "Document.h"
+ #include "Editor.h"
+ #include "ScintillaBase.h"
++#include "WinDefs.h"
+ 
+ #include <wx/wx.h>
+ #include <wx/dataobj.h>

@@ -1,0 +1,11 @@
+WXPSRCDIR   = "$(WRKSRC)/src"
+CCC         = "$(CXX)"
+OTHERLFLAGS = "$(SYSLFLAGS)"
+TARGETDIR   = "$(_TARGETDIR)"
+OTHERLIBS   = "-lgcc_r"
+OTHERRULES  = OTHERRULES + r"""
+
+install-freebsd: default $(TARGETDIR) $(TARGETDIR)/$(TARGET) pycfiles
+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(TARGETDIR)
+
+"""
