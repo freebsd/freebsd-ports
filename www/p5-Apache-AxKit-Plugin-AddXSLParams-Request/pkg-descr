@@ -1,0 +1,8 @@
+Apache::AxKit::Plugin::AddXSLParams::Request offers a way to make 
+information about the current client request (cookies, headers, uri 
+info) available as params within XSLT stylesheets.
+
+WWW: http://search.cpan.org/search?dist=Apache-AxKit-Plugin-AddXSLParams-Request
+
+- Hansjoerg
+hansjoerg.pehofer@uibk.ac.at
