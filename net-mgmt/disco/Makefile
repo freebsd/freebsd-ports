@@ -13,13 +13,15 @@ MASTER_SITES=	http://www.altmode.com/disco/
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
 
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PORTDOCS=	README
+PLIST_FILES=	bin/disco bin/disco.fp
 
 post-install:
 .if !defined(NOPORTDOCS)
