@@ -19,7 +19,6 @@ BDBDIR=			BerkeleyDB.${BDBVER}
 CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
 			--enable-cxx --enable-dynamic \
 			--enable-rpc \
-			--with-uniquename \
 			--includedir=${PREFIX}/include/${PORTNAME} \
 			--libdir=${PREFIX}/lib/${PORTNAME} \
 			--bindir=${PREFIX}/bin/${PORTNAME}
@@ -37,8 +36,8 @@ pre-configure:
 
 post-install:
 .for i in libdb libdb_cxx
-	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.${BDBMINOR} ${PREFIX}/lib
-	${LN} -s -f ${i}-${BDBVER}.so.${BDBMINOR} ${PREFIX}/lib/${i}-${BDBVER}.so
+	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
 .endfor
 .if !defined(NOPORTDOCS)
 	@${RMDIR} ${DOCSDIR}/ref/splash 2>/dev/null || :

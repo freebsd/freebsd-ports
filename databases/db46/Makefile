@@ -1,20 +1,17 @@
-# ports collection makefile for:	Berkeley DB v4.2
-# Date created:				2003-11-26
+# ports collection makefile for:	Berkeley DB v4.3
+# Date created:				2004-11-10
 # Whom:					Matthias Andree <matthias.andree@gmx.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	db42
-PORTVERSION=	4.2.52
-PORTREVISION=	3
+PORTNAME=	db43
+PORTVERSION=	4.3.21
 CATEGORIES=	databases
 PKGNAMESUFFIX?=
 
-PATCHFILES=	patch.${PORTVERSION}.1  patch.${PORTVERSION}.2
-
 MAINTAINER=	matthias.andree@gmx.de
-COMMENT=	The Berkeley DB package, revision 4.2
+COMMENT=	The Berkeley DB package, revision 4.3
 
 MASTERDIR?=	${.CURDIR}
 
