@@ -142,6 +142,7 @@
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux-netscape6
     SUBDIR += linux-opera
+    SUBDIR += linux-phoenix
     SUBDIR += logtools
     SUBDIR += lws
     SUBDIR += lynx
