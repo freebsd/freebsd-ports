@@ -9580,7 +9580,6 @@ txt2pdbdoc	ports/palm/txt2pdbdoc
 txt2regex	ports/misc/txt2regex
 txt2tags	ports/textproc/txt2tags
 txtbdf2ps	ports/print/txtbdf2ps
-txtmerge	ports/graphics/txtmerge
 tya		ports/java/tya
 tycoon		ports/x11/tycoon
 typespeed	ports/games/typespeed

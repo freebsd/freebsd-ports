@@ -412,7 +412,6 @@
     SUBDIR += togl
     SUBDIR += truevision
     SUBDIR += tulip
-    SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += utah-glx
     SUBDIR += vcg
