@@ -1,0 +1,8 @@
+This is a configuration program for the Apple Airport and Lucent RG-1000
+in Java.
+
+The Airport and Lucent RG-1000 are the same, except for one detail:
+On the RG-1000 the net name cannot be changed and is overridden by
+the hex number on the label on the bottom.
+
+WWW: http://edge.mcs.drexel.edu/GICL/people/sevy/airport/index.html
