@@ -24,6 +24,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCS=		LICENSE.txt README doc
 EXAMPLES=	examples/*
 
+BROKEN=		"Broken pkg-plist"
+
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.8
