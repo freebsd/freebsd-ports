@@ -24,7 +24,8 @@ USE_AUTOCONF=	yes
 ZSH_VER=	${PORTVERSION}
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}/functions
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic
+CONFIGURE_ARGS=	--enable-zsh-mem --enable-zsh-secure-free --enable-dynamic \
+		--enable-maildir-support
 INSTALL_TARGET=	install install.info
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
