@@ -10,7 +10,7 @@ PORTVERSION=		11.13
 CATEGORIES=		print elisp
 MASTER_SITES=		http://savannah.nongnu.org/download/auctex/stable.pkg/${PORTVERSION}/
 
-MAINTAINER=		yoichi@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Integrated environment for writing LaTeX using GNU Emacs
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
