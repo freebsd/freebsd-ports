@@ -11,6 +11,7 @@
     SUBDIR += jpilot
     SUBDIR += kpilot
     SUBDIR += malsync
+    SUBDIR += mdbconv
     SUBDIR += p5-Palm
     SUBDIR += palmos-sdk
     SUBDIR += pilot-link
