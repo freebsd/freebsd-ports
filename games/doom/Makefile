@@ -3,7 +3,7 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1999/02/10 05:07:58 jmz Exp $
+# $Id: Makefile,v 1.13 1999/05/01 12:34:16 jseger Exp $
 #
 
 DISTNAME=	doomsrc
@@ -11,8 +11,7 @@ PKGNAME=	doom-1.8
 CATEGORIES=	games
 MASTER_SITES?=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		ftp://ftp.stomped.com/pub/idmirror/idstuff/source/ \
-		ftp://ftp.cdrom.com/pub/idgames/idstuff/source/ \
-		ftp://ftp.gamesnet.net/idsoftware/source/
+		ftp://ftp.cdrom.com/pub/idgames/idstuff/source/
 
 MAINTAINER=	jmz@FreeBSD.org
 
