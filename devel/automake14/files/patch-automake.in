@@ -1,11 +1,7 @@
---- automake.in.orig	Sun Jul 15 12:47:28 2001
-+++ automake.in	Sun Oct 13 19:59:10 2002
-@@ -32,7 +32,7 @@
- $VERSION = "@VERSION@";
- $PACKAGE = "@PACKAGE@";
+--- automake.in.orig	Sat Jul 27 13:55:58 2002
++++ automake.in	Thu May 13 13:34:28 2004
+@@ -34,3 +34,3 @@
  $prefix = "@prefix@";
--$am_dir = "@datadir@/@PACKAGE@";
+-$am_dir = "@datadir@/@PACKAGE@-@APIVERSION@";
 +$am_dir = "@datadir@/@PACKAGE@14";
  $TAR = "@TAR@";
- 
- # String constants.

@@ -1,44 +1,25 @@
---- aclocal.in.orig	Sun Jul 15 06:52:18 2001
-+++ aclocal.in	Sat Oct 19 12:28:09 2002
-@@ -32,7 +32,9 @@
- $PACKAGE = "@PACKAGE@";
- $prefix = "@prefix@";
- # Note that this isn't pkgdatadir, but a separate directory.
+--- aclocal.in.orig	Thu Jul 25 09:51:42 2002
++++ aclocal.in	Thu May 13 13:33:24 2004
+@@ -36,3 +36,4 @@
+ # Note also that the versioned directory is handled later.
 -$acdir = "@datadir@/aclocal";
 +$acdir = "@datadir@/aclocal14";
-+
 +$acdir_x11 = '%%X11BASE%%/share/aclocal';
- 
- # Some globals.
- 
-@@ -106,6 +108,9 @@
- 
- 
+ $default_acdir = $acdir;
+@@ -111,2 +112,3 @@
  local (@dirlist) = &parse_arguments (@ARGV);
-+
 +unshift @dirlist, $acdir_x11 if -d "$acdir_x11/.";
-+
- &scan_m4_files ($acdir, @dirlist);
- &scan_configure;
- if (! $exit_status)
-@@ -279,12 +284,13 @@
- 	$file_contents{'acinclude.m4'} = &scan_file ('acinclude.m4');
-     }
+ &scan_m4_files (@dirlist);
+@@ -296,2 +298,3 @@
  
 +    local (@skipinolist) = ();
      local ($m4dir);
-     foreach $m4dir (@dirlist)
-     {
- 	opendir (DIR, $m4dir)
+@@ -301,3 +304,3 @@
  	    || die "aclocal: couldn't open directory \`$m4dir': $!\n";
 -	local ($file, $fullfile, $expr);
 +	local ($file, $fullfile, $ino, $expr);
  	foreach $file (sort grep (! /^\./, readdir (DIR)))
- 	{
- 	    # Only examine .m4 files.
-@@ -294,6 +300,12 @@
- 	    next if $file eq 'aclocal.m4';
- 
+@@ -311,2 +314,8 @@
  	    $fullfile = $m4dir . '/' . $file;
 +
 +	    # Do not scan a file more than once.
@@ -47,14 +28,3 @@
 +	    push @skipinolist, $ino;
 +
  	    $file_contents{$fullfile} = &scan_file ($fullfile);
- 	}
- 	closedir (DIR);
-@@ -400,7 +412,7 @@
- 	    elsif ($map{$1} ne 'acinclude.m4' || $file eq 'acinclude.m4')
- 	    {
- 		warn "aclocal: $file: $.: duplicated macro \`$1'\n";
--		$exit_status = 1;
-+		# $exit_status = 1;
- 	    }
- 	    print STDERR "Found macro $1 in $file: $.\n" if $verbosity;
- 	}

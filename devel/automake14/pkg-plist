@@ -5,6 +5,7 @@ info/automake%%BUILD_VERSION%%.info
 @exec install-info %D/info/automake%%BUILD_VERSION%%.info %D/info/dir
 libexec/automake%%BUILD_VERSION%%/aclocal
 libexec/automake%%BUILD_VERSION%%/automake
+share/aclocal%%BUILD_VERSION%%/amversion.m4
 share/aclocal%%BUILD_VERSION%%/ccstdc.m4
 share/aclocal%%BUILD_VERSION%%/cond.m4
 share/aclocal%%BUILD_VERSION%%/dmalloc.m4

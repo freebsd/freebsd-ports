@@ -1,0 +1,7 @@
+--- configure.orig	Sat Jul 27 13:43:07 2002
++++ configure	Thu May 13 13:39:30 2004
+@@ -867,3 +867,3 @@
+ # A versioned directory, defined here for convenience.
+-pkgvdatadir="\${datadir}/automake-${APIVERSION}"
++pkgvdatadir="\${datadir}/automake14"
+ 
