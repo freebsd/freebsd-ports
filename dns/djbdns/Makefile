@@ -7,7 +7,7 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -15,15 +15,15 @@ DISTNAME=	djbdns-${DJBDNS_VER}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 .if !defined(WITHOUT_MAN) && !defined(LIBDJBDNS_ONLY)
-MANDATE=	-20021211
+MANDATE=	-20031023
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:1
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:1
 
 MAN1=		dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
 		dnsq.1 dnsqr.1 dnstrace.1 dnstracesort.1 dnstxt.1 \
 		tinydns-get.1
-MAN8=		axfr-get.8 axfrdns.8 dnscache-conf.8 dnscache.8 \
-		pickdns-conf.8 pickdns-data.8 pickdns.8 rbldns-conf.8 \
+MAN8=		axfr-get.8 axfrdns.8 axfrdns-conf.8 dnscache-conf.8 \
+		dnscache.8 rbldns-conf.8 \
 		rbldns-data.8 rbldns.8 tinydns-conf.8 tinydns-data.8 \
 		tinydns-edit.8 tinydns.8 walldns-conf.8 walldns.8
 MANCOMPRESSED=	no
