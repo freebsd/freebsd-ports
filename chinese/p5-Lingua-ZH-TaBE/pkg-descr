@@ -1,0 +1,4 @@
+This module is a Perl interface to the TaBE (Taiwan and Big5 Encoding)
+library, an unified interface and library dealing with Chinese words,
+phrases, sentences, and phonetic symbols; it is intended to be used as
+the foundation of Chinese text processing.
