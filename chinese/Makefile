@@ -5,7 +5,6 @@
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
     SUBDIR += MT
-    SUBDIR += abiword
     SUBDIR += acroread5-chsfont
     SUBDIR += acroread5-chtfont
     SUBDIR += arphicttf
