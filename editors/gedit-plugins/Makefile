@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|gedit-2.4|gedit-2.6|g" \
+	@${REINPLACE_CMD} -e "s|gedit-2.4|gedit-2.8|g" \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
