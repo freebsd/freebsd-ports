@@ -1,6 +1,14 @@
---- app/main.c.old	Tue Apr 28 09:54:27 1998
-+++ app/main.c	Tue Apr 28 09:53:51 1998
-@@ -80,6 +80,8 @@
+--- app/main.c.orig	Mon Apr 20 18:19:27 1998
++++ app/main.c	Sun May 17 10:33:39 1998
+@@ -16,6 +16,7 @@
+  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ #include "config.h"
++#include <floatingpoint.h>
+ #include <locale.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -80,10 +81,15 @@
    int i, j;
    gchar *display_name, *display_env;
  
@@ -9,3 +17,10 @@
    ATEXIT (g_mem_profile);
  
    /* Initialize variables */
+   prog_name = argv[0];
++
++  /* Ignore floating point exceptions */
++  fpsetmask(0);
+ 
+   /* Initialize Gtk toolkit */
+   gtk_set_locale ();
