@@ -1,0 +1,9 @@
+Way before Lara Croft, back in the 1980's and early 1990's, Rick
+Dangerous was the Indiana Jones of computer games, running away from
+rolling rocks, avoiding traps, from South America to a futuristic
+missile base via Egypt and the Schwarzendumpf castle.
+
+xrick is a clone of Rick Dangerous. Written entirely in C, it relies on
+the Simple DirectMedia Layer library.
+
+WWW: http://www.bigorno.net/xrick/
