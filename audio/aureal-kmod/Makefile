@@ -14,7 +14,7 @@ DISTNAME=	au88x0-${PORTVERSION}
 
 MAINTAINER=	matey@cis.ohio-state.edu
 
-NO_PACKAGE=	package doesn't make any sense, because kld's should be in sync with running kernel to work correctly
+NO_PACKAGE=	Should be in sync with the kernel to work correctly
 
 ONLY_FOR_ARCHS=	i386
 
@@ -26,19 +26,44 @@ MAKE_ENV=	WRKSRC="${WRKSRC}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 400000
-BROKEN=		"FreeBSD 3.* isn't supported"
-.elif ${OSVERSION} < 410002
-BROKEN=		"Your FreeBSD 4.1 system is too old. Please update it before installing this port"
-.elif ${OSVERSION} < 420000
-PORTVERSION=	1.1
-DISTNAME=	au88x0-${PORTVERSION}_1
-.elif ${OSVERSION} < 500000
-PORTVERSION=	1.3
-DISTNAME=	au88x0-${PORTVERSION}_1
+.if exists(/usr/src/sys/dev/sound/pcm/sound.c)
+VERSION_SOUND_C!=	${AWK} '/.*\$$FreeBSD/ { print $$4; exit; }' \
+				/usr/src/sys/dev/sound/pcm/sound.c
+.else
+VERSION_SOUND_C=
 .endif
 
-pre-build:
+VERSION_SOUND_C:=	${VERSION_SOUND_C:S/.//g}
+
+.if ${OSVERSION} < 410000
+BROKEN=		"FreeBSD 3.*, 4.0 are not supported"
+
+.elif ${OSVERSION} < 420000
+# FreeBSD 4.1, 4.1.1
+PORTVERSION=	1.1
+PORTREVISION=	2
+
+.elif ${OSVERSION} < 500000
+# FreeBSD 4.2
+PORTVERSION=    1.3
+
+.if ${VERSION_SOUND_C} < 11724
+# FreeBSD 4.2 before kobj MFC
+PORTREVISION=	1
+
+.else
+# FreeBSD 4.2 after kobj MFC
+PORTREVISION=	2
+MAKE_ENV+=	HAVE_KOBJ_PCM=1
+.endif
+
+.endif
+
+.if ${OSVERSION} < 500000
+DISTNAME=	au88x0-${PORTVERSION}_${PORTREVISION}
+.endif
+
+pre-fetch:
 	@if [ ! -d /sys -o ! -d /usr/src/sys ]; then \
 		${ECHO} "****************************************" ; \
 		${ECHO} " You need to extract kernel source tree" ; \
