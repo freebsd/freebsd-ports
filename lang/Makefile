@@ -95,6 +95,7 @@
     SUBDIR += python-doc-pdf-letter
     SUBDIR += python-doc-postscript-a4
     SUBDIR += python-doc-postscript-letter
+    SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += ruby
     SUBDIR += ruby-man
