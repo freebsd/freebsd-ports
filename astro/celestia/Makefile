@@ -21,17 +21,24 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 GNU_CONFIGURE=	yes
 PLIST=		${WRKDIR}/pkg-plist
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
+.if !defined(WITHOUT_GNOME)
 USE_GNOME=	gnomelibs
+.endif
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir="${LOCALBASE}/include" \
 		--libdir="${LOCALBASE}/lib"
 CONFIGURE_ENV=	\
-LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}"
-CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm ${PTHREAD_LIBS}" \
+	CPPFLAGS="-I${X11BASE}/include -I${X11BASE}/include/GL -I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
+
+.if defined(WITHOUT_GNOME)
+CONFIGURE_ARGS+=	--without-gtk
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -40,18 +47,18 @@ BROKEN=         "Does not compile (bad C++ code)"
 .endif
 
 pre-patch:
-	${PERL} -pi -e \
-"s:-O2::g; s:-Wall::g; s:-ffast-math::g; s:-fexpensive-optimizations::g; s:\!\ /bin/sh:\!\ ${LOCALBASE}/bin/bash:g" \
+	${REINPLACE_CMD} -e \
+'s:-O2::g; s:-Wall::g; s:-ffast-math::g; s:-fexpensive-optimizations::g; s:! /bin/sh:! ${LOCALBASE}/bin/bash:g' \
 	${WRKSRC}/configure
 
 pre-install:
 	${ECHO_CMD} bin/celestia > ${PLIST}
 	${FIND} ${WRKSRC}/data/ -name '*.???' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
 	${FIND} ${WRKSRC}/extras/ -name '*.ssc' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
 	${FIND} ${WRKSRC}/fonts/ -name '*.txf' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
 .for ii in celestia.cfg demo.cel guide.cel start.cel
 	${ECHO_CMD} share/celestia/${ii} >> ${PLIST}
 .endfor
@@ -60,17 +67,17 @@ pre-install:
 	${ECHO_CMD} share/doc/celestia/${ii} >> ${PLIST}
 .endfor
 	 ${FIND} ${WRKSRC}/manual/ -name '*.???*' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/doc/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/doc/celestia/:g" >> ${PLIST}
 .for ii in celestia/manual celestia
 	${ECHO_CMD} @dirrm share/doc/${ii} >> ${PLIST}
 .endfor
 .endif
 	${FIND} ${WRKSRC}/models/ -name '*.???' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
 	${FIND} ${WRKSRC}/shaders/ -name '*.vp' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
 	${FIND} ${WRKSRC}/textures/ -name '*.jpg' -o -name '*.png'| \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/celestia/:g" >> ${PLIST}
 .for ii in /data /extras /textures/lores /textures/medres /textures /models \
 	/shaders /fonts /
 	${ECHO_CMD} @dirrm share/celestia${ii} >> ${PLIST}
