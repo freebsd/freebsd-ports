@@ -2,6 +2,7 @@ bin/libquicktime_config
 bin/lqt-config
 bin/lqt_transcode
 bin/lqtplay
+bin/lqtvrplay
 bin/qtdechunk
 bin/qtdump
 bin/qtinfo
@@ -16,6 +17,7 @@ include/quicktime/lqt_codecinfo.h
 include/quicktime/lqt_version.h
 include/quicktime/qtprivate.h
 include/quicktime/quicktime.h
+lib/libquicktime.a
 lib/libquicktime.so
 lib/libquicktime.so.0
 lib/libquicktime/lqt_audiocodec.so
@@ -27,6 +29,7 @@ lib/libquicktime/lqt_png.so
 lib/libquicktime/lqt_rtjpeg.so
 lib/libquicktime/lqt_videocodec.so
 lib/libquicktime/lqt_vorbis.so
+libdata/pkgconfig/libquicktime.pc
 share/aclocal/lqt.m4
 @dirrm lib/libquicktime
 @dirrm include/quicktime
