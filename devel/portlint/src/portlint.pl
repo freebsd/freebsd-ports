@@ -244,9 +244,8 @@ close(IN);
 #
 # check for files.
 #
-my @checker = ($makevar{COMMENT}, $makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
+my @checker = ($makevar{DESCR}, 'Makefile', $makevar{MD5_FILE});
 my %checker = (
-			   $makevar{COMMENT} => 'checkdescr',
 			   $makevar{DESCR} => 'checkdescr',
 			   'Makefile' => 'checkmakefile',
 			   $makevar{MD5_FILE} => 'TRUE'
@@ -254,7 +253,7 @@ my %checker = (
 if ($extrafile) {
 	my @files = (
 				 <$makevar{SCRIPTDIR}/*>,
-				 @makevar{COMMENT,DESCR,PLIST,PKGINSTALL,PKGDEINSTALL,PKGREQ,PKGMESSAGE}
+				 @makevar{DESCR,PLIST,PKGINSTALL,PKGDEINSTALL,PKGREQ,PKGMESSAGE}
 				);
 
 	foreach my $i (@files) {
@@ -342,14 +341,13 @@ if ($err || $warn) {
 exit $err;
 
 #
-# pkg-comment, pkg-descr
+# pkg-descr
 #
 sub checkdescr {
 	my($file) = @_;
-	my(%maxchars) = ($makevar{COMMENT}, 70, $makevar{DESCR}, 80);
-	my(%maxlines) = ($makevar{COMMENT}, 1, $makevar{DESCR}, 24);
-	my(%errmsg) = ($makevar{COMMENT}, "must be one-liner.",
-			  $makevar{DESCR},	"exceeds $maxlines{$makevar{DESCR}} ".
+	my(%maxchars) = ($makevar{DESCR}, 80);
+	my(%maxlines) = ($makevar{DESCR}, 24);
+	my(%errmsg) = ($makevar{DESCR},	"exceeds $maxlines{$makevar{DESCR}} ".
 					"lines, make it shorter if possible.");
 	my($longlines, $linecnt, $tmp) = (0, 0, "");
 
@@ -387,11 +385,6 @@ sub checkdescr {
 
 		if ($has_url && ! $has_www) {
 			&perror("FATAL: $file: contains a URL but no WWW:");
-		}
-	}
-	if ($file =~ /\bpkg-comment/) {
-		if (($tmp !~ /^["0-9A-Z]/) || ($tmp =~ m/\.$/)) { #"
-			&perror("WARN: pkg-comment should begin with a capital, and end without a period");
 		}
 	}
 	close(IN);
@@ -1161,7 +1154,7 @@ DISTFILES EXTRACT_ONLY
 	#
 	# section 3: PATCH_SITES/PATCHFILES(optional)
 	#
-	print "OK: checking second section of $file (PATCH*: optinal).\n"
+	print "OK: checking second section of $file (PATCH*: optional).\n"
 		if ($verbose);
 	$tmp = $sections[$idx];
 
@@ -1202,6 +1195,10 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 	$tmp = $sections[$idx++];
 
 	&checkearlier($file, $tmp, @varnames);
+	&checkorder('MAINTAINER', $tmp, qw(
+MAINTAINER COMMENT
+	));
+
 	$tmp = "\n" . $tmp;
 	if ($tmp =~ /\nMAINTAINER\??=([^\n]+)/) {
 		my $addr = $1;
@@ -1216,9 +1213,23 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 	}
 	$tmp =~ s/\n\n+/\n/g;
 
-	&checkextra($tmp, 'MAINTAINER');
+	# check COMMENT
+	if ($tmp !~ /\nCOMMENT(.)?=/) {
+		&perror("FATAL: COMMENT has to be there.") unless ($slaveport && $makevar{COMMENT} ne '');
+	} elsif ($1 ne '') {
+		&perror("WARN: unless this is a master port, COMMENT has to be set by \"=\", ".
+			"not by \"$1=\".") unless ($masterport);
+	} else { # check for correctness
+		if (($makevar{COMMENT} !~ /^["0-9A-Z]/) || ($makevar{COMMENT} =~ m/\.$/)) { #"
+			&perror("WARN: COMMENT should begin with a capital, and end without a period");
+		} elsif (length($makevar{COMMENT}) > 70) {
+			&perror("WARN: COMMENT exceeds 70 characters limit.");
+		}
+	}
 
-	push(@varnames, 'MAINTAINER');
+	push(@varnames, qw(
+MAINTAINER COMMENT
+	));
 
 	#
 	# section 5: *_DEPENDS (may not be there)
