@@ -7,7 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
 DISTNAME=	SDL-${PORTVERSION}
@@ -45,7 +45,7 @@ USE_XLIB=	yes
 .if defined(WITHOUT_GL)
 CONFIGURE_ARGS+=--disable-video-opengl
 .else
-USE_MESA=	yes
+USE_GL=		yes
 CONFIGURE_ARGS+=--enable-video-opengl
 .endif
 .if exists(/usr/include/libusbhid.h)
