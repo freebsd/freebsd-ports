@@ -10,7 +10,7 @@ PORTNAME=	botan
 PORTVERSION=	1.4.4
 PORTREVISION=	0
 CATEGORIES=	security
-MASTER_SITES=	http://botan.randombit.net/files/
+MASTER_SITES=	http://files.randombit.net/botan/
 DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tbz
 
