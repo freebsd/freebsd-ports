@@ -269,6 +269,7 @@
     SUBDIR += p5-ReadLine-Perl
     SUBDIR += p5-Religion
     SUBDIR += p5-Resources
+    SUBDIR += p5-Set-NestedGroups
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Storable
     SUBDIR += p5-String-Approx
