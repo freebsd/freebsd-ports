@@ -7231,6 +7231,7 @@ xmms-kde	ports/audio/xmms-kde
 xmms-liveice	ports/audio/xmms-liveice
 xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-shn	ports/audio/xmms-shn
+xmms-sndfile	ports/audio/xmms-sndfile
 xmms-sndstretch	ports/audio/xmms-sndstretch
 xmms-tfmx	ports/audio/xmms-tfmx
 xmms-volnorm	ports/audio/xmms-volnorm
