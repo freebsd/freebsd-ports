@@ -1,0 +1,14 @@
+This software is made available for owners for Kodak's
+DC120 digital camera who would like to convert the .kdc
+files produced by the camera to .tiff or .jpeg files
+using Linux or other UNIX machines. kdc2tiff and kdc2jpeg
+pay particular attention to: aspect ratio accurate scaling
+contrast adjustment gamma correction image rotation In
+particular, the scaling algorithm takes into account the
+Bayer pattern of the CCD (pixels have one colour only,
+not three) and the exact (non-square) dimensions of the pixels. 
+
+WWW: http://kdc2tiff.sourceforge.net/
+Author: Chris Studholme <Chris.Studholme@canada.com>
+
+- Will <andrews@technologist.com>
