@@ -30,8 +30,7 @@ CONFIGURE_ARGS=	--with-gnome=${PREFIX}
 
 MAN1=		gide.1 gdbio.1
 
-VERSION=	${DISTNAME:S/gIDE-//}
-PLIST_SUB=	VERSION=${VERSION}
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/*.c
