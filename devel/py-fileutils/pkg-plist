@@ -1,0 +1,2 @@
+lib/%%PYTHON_VERSION%%/site-packages/fileutils.py
+lib/%%PYTHON_VERSION%%/site-packages/fileutils.pyc
