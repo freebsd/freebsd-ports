@@ -15,7 +15,7 @@ MAINTAINER=	perky@python.or.kr
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		art_lgpl.5:${PORTSDIR}/graphics/libart
 
 USE_PYTHON=	yes

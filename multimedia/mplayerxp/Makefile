@@ -29,7 +29,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${PREFIX}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
 CONFIGURE_ARGS+=--disable-esd

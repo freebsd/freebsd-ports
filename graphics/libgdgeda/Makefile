@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/dist/ \
 
 MAINTAINER=	bruno@tinkerbox.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

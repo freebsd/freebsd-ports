@@ -19,7 +19,7 @@ LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png \
+		png.5:${PORTSDIR}/graphics/png \
 		ming.2:${PORTSDIR}/graphics/ming \
 		wmf.1:${PORTSDIR}/graphics/libwmf \
 		Magick.5:${PORTSDIR}/graphics/ImageMagick

@@ -16,7 +16,7 @@ DISTNAME=	XaoS-${PORTVERSION}
 
 MAINTAINER=	jkoshy@freebsd.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	stable/sources/imlib
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
