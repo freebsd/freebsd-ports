@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	3.3.2
+PORTVERSION=	3.3.3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
