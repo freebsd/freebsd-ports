@@ -1,47 +1,19 @@
---- Canna.conf.orig	Thu Oct 24 23:37:25 2002
-+++ Canna.conf	Thu Nov 14 09:28:18 2002
-@@ -132,11 +132,12 @@
- 
+--- Canna.conf.orig	Sat Jan 25 17:47:47 2003
++++ Canna.conf	Tue Feb  4 16:20:34 2003
+@@ -133,13 +133,14 @@
  /* rootにならずにインストールする時はこれを定義して下さい */
  /* #define InstallAsUser */
--cannaPrefix = /usr/local/canna
+ /* 従来と互換のディレクトリ構造にする場合はこれを定義してください */
+-#define ObsoleteInstallDir
++/* #define ObsoleteInstallDir  */
+ #ifdef InstallAsUser
+ # define DefCannaPrefix $(HOME)/canna
+ # define DefErrDir $(cannaPrefix)/log
+ # define DefLibCannaDir $(cannaExecPrefix)/lib
+ #else 
+-# define DefCannaPrefix /usr/local/canna
 +PREFIX?= /usr/local
-+cannaPrefix = $(PREFIX)
- cannaExecPrefix = $(cannaPrefix)
- cannaBinDir = $(cannaExecPrefix)/bin
--cannaSrvDir = $(cannaExecPrefix)/bin
--cannaLibDir = $(cannaPrefix)/lib
-+cannaSrvDir = $(cannaExecPrefix)/sbin
-+cannaLibDir = $(cannaPrefix)/lib/canna
- cannaManDir = $(cannaPrefix)/man
- cannaIncDir = $(cannaPrefix)/include/canna
- 
-@@ -144,8 +145,8 @@
- libCannaDir = $(cannaExecPrefix)/lib
- ErrDir  = $(cannaExecPrefix)/log
- #else
--libCannaDir = /usr/lib
--ErrDir  = /usr/spool/canna
-+libCannaDir = $(cannaPrefix)/lib
-+ErrDir  = /var/log
- #endif
- 
- /* 次の3行は変更しないでください */
-@@ -164,7 +165,7 @@
- 
- pointerIntegerDef =
- 
--cannaDsoRev = 1
-+cannaDsoRev = 1.0
-     /* SunOS 4.x をお使いの方で shared object を利用する場合には
-             cannaDsoRev = 1.1
-     と指定してください。また、FreeBSD を利用する場合は、
-@@ -308,7 +309,7 @@
-  * ここから下は変更しないようにしてください。
-  */
- 
-- CANNASERVER_DEFINES = $(wcharDefinition)
-+ CANNASERVER_DEFINES = $(wcharDefinition) $(cannaOwnerDefinition)
-           RK_DEFINES = $(pointerIntegerDef)
-          RKC_DEFINES = $(wcharDefinition)
-        UILIB_DEFINES = $(wcharDefinition) $(pointerIntegerDef) \
++# define DefCannaPrefix $(PREFIX)
+ # ifdef ObsoleteInstallDir
+ #  define DefErrDir /usr/spool/canna
+ #  define DefLibCannaDir /usr/lib
