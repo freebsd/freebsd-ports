@@ -1,0 +1,19 @@
+*** vfs/Makefile.in.orig	Wed Sep 27 20:07:56 1995
+--- vfs/Makefile.in	Wed Sep 27 20:08:28 1995
+***************
+*** 75,81 ****
+  
+  install:
+  	if test x@mcserv@ != x; then \
+! 	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv; \
+  	fi
+  
+  install.extfs:
+--- 75,81 ----
+  
+  install:
+  	if test x@mcserv@ != x; then \
+! 	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv; \
+  	fi
+  
+  install.extfs:

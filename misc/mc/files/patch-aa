@@ -1,19 +1,121 @@
-*** Makefile.in.orig	Sat Jul 15 13:13:47 1995
---- Makefile.in	Sat Jul 15 13:13:52 1995
+*** configure.orig	Mon Sep 18 21:27:59 1995
+--- configure	Mon Sep 18 21:29:01 1995
 ***************
-*** 10,16 ****
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  DEFS = @DEFS@
-! LIBS = @LIBS@ $(XLIB)
-  
-  CFLAGS = @CFLAGS@
-  CPPFLAGS = @CPPFLAGS@ -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DVERSION=\""$(VERSION)"\" $(XINC)
---- 10,16 ----
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  DEFS = @DEFS@
-! LIBS = @LIBS@ $(XLIB) -lmytinfo
-  
-  CFLAGS = @CFLAGS@
-  CPPFLAGS = @CPPFLAGS@ -DBINDIR=\""$(bindir)/"\" -DLIBDIR=\""$(libdir)/"\" -DVERSION=\""$(VERSION)"\" $(XINC)
+*** 4828,4834 ****
+  	then
+  		search_ncurses=true
+  	else
+! 		LIBS="$LIBS -L$withval/lib -lncurses"
+  		CPPFLAGS="$CPPFLAGS -I$withval/include"
+  		search_ncurses=false
+  		screen_manager="ncurses"
+--- 4828,4834 ----
+  	then
+  		search_ncurses=true
+  	else
+! 		LIBS="$LIBS -L$withval/lib -lncurses -lmytinfo"
+  		CPPFLAGS="$CPPFLAGS -I$withval/include"
+  		search_ncurses=false
+  		screen_manager="ncurses"
+***************
+*** 5661,5667 ****
+          if test -f /usr/include/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses"
+  	    CPPFLAGS="$CPPFLAGS "
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/include"
+--- 5661,5667 ----
+          if test -f /usr/include/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -lmytinfo"
+  	    CPPFLAGS="$CPPFLAGS "
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/include"
+***************
+*** 5678,5684 ****
+          if test -f /usr/include/ncurses/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/include/ncurses"
+--- 5678,5684 ----
+          if test -f /usr/include/ncurses/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -lmytinfo"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/include/ncurses"
+***************
+*** 5695,5701 ****
+          if test -f /usr/local/include/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -L/usr/local/lib"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/local"
+--- 5695,5701 ----
+          if test -f /usr/local/include/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -lmytinfo -L/usr/local/lib"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/local/include"
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/local"
+***************
+*** 5712,5718 ****
+          if test -f /usr/local/include/ncurses/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -L/usr/local/lib -L/usr/local/lib/ncurses"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/local/include/ncurses"
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/local/include/ncurses"
+--- 5712,5718 ----
+          if test -f /usr/local/include/ncurses/ncurses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -lmytinfo -L/usr/local/lib -L/usr/local/lib/ncurses"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/local/include/ncurses"
+  	    search_ncurses=false
+  	    screen_manager="ncurses on /usr/local/include/ncurses"
+***************
+*** 5730,5736 ****
+          if test -f /usr/local/include/ncurses/curses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/curses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -L/usr/local/lib"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/local/include/ncurses -DRENAMED_NCURSES"
+  	    search_ncurses=false
+  	    screen_manager="renamed ncurses on /usr/local/.../ncurses"
+--- 5730,5736 ----
+          if test -f /usr/local/include/ncurses/curses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/curses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -lmytinfo -L/usr/local/lib"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/local/include/ncurses -DRENAMED_NCURSES"
+  	    search_ncurses=false
+  	    screen_manager="renamed ncurses on /usr/local/.../ncurses"
+***************
+*** 5748,5754 ****
+          if test -f /usr/include/ncurses/curses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/include/ncurses/curses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses -DRENAMED_NCURSES"
+  	    search_ncurses=false
+  	    screen_manager="renamed ncurses on /usr/include/ncurses"
+--- 5748,5754 ----
+          if test -f /usr/include/ncurses/curses.h
+  	then
+  	    echo "$ac_t""Found ncurses on /usr/include/ncurses/curses.h" 1>&6
+!  	    LIBS="$LIBS -lncurses -lmytinfo"
+  	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses -DRENAMED_NCURSES"
+  	    search_ncurses=false
+  	    screen_manager="renamed ncurses on /usr/include/ncurses"
