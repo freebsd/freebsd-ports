@@ -714,6 +714,7 @@
     SUBDIR += w3m-m17n-img
     SUBDIR += w3mir
     SUBDIR += waccess
+    SUBDIR += wacko
     SUBDIR += wb0
     SUBDIR += wcol
     SUBDIR += web-traceroute
