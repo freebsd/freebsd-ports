@@ -294,6 +294,7 @@
     SUBDIR += libcii
     SUBDIR += libcoro
     SUBDIR += libdict
+    SUBDIR += libdjbdns
     SUBDIR += libdlmalloc
     SUBDIR += libdsp
     SUBDIR += libedit

@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat May  3 02:54:00 2003
++++ Makefile	Sat May  3 02:56:15 2003
+@@ -1,7 +1,3 @@
+-CC=gcc
+-CFLAGS=-O2 -Wimplicit -Wunused -Wcomment -Wchar-subscripts -Wuninitialized \
+--Wshadow -Wcast-qual -Wcast-align -Wwrite-strings
+-
+ IT=libdjbdns.a libdjbdns.so.1
+ SYSDEPS=iopause.h select.h uint32.h uint64.h
+ 
