@@ -1,0 +1,14 @@
+CVSNT is a CVS clone. CVSNT features are:
+
+* Merge tracking via MergePoint attribute.
+* Support for :sspi: and :sserver: authentication.
+* Branch ACLs can be used to restrict access.
+* Directory browsing via cvs ls command.
+* LockServer on a second port replaces filesystem-based locks &
+  provides file level locking.
+* More sophisticated / extra triggers available e.g. postcommit.
+* Supports Unicode files with additional keyword expansion switches.
+* Atomic Checkout behaviour ensures you get the right version of every file.
+* Efficient storage of binary files using binary deltas. 
+
+WWW: http://www.cvsnt.org/
