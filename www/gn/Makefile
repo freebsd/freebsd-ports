@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.13 1996/02/09 09:42:00 adam Exp $
+# $Id: Makefile,v 1.14 1996/03/19 15:30:42 adam Exp $
 #
 
 DISTNAME=       gn-2.24
@@ -50,8 +50,8 @@ post-install:
 	  fi; \
 	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
 		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
-	  awk '$$1 == "#gopher" { exit 1 }' ${INETD_CONF} || { \
-		echo '#'gopher${CONF} >>${INETD_CONF}
+	  awk '$$1 ~ /#*gopher/ && $$6 == "/usr/local/libexec/gn" { exit 1 }' \
+		${INETD_CONF} || { \ echo '#'gopher${CONF} >>${INETD_CONF}
 	  }
 .endif
 
