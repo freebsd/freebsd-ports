@@ -43,6 +43,8 @@ include/ltxml12/sys/lt-mttslib.h
 include/ltxml12/sys/lt-sstring.h
 include/ltxml12/sys/lt-umalloc.h
 include/ltxml12/sys/namespaces.h
+include/ltxml12/sys/nf16check.h
+include/ltxml12/sys/nf16data.h
 include/ltxml12/sys/nsl-ibit.h
 include/ltxml12/sys/nsl-stack.h
 include/ltxml12/sys/nslfile.h
