@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gxditview
-PORTVERSION= 	1.10
+PORTVERSION= 	1.16.1
 CATEGORIES=	textproc
 DISTFILES=	# none
 
