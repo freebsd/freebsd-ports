@@ -19,7 +19,7 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1
+MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 texi2dvi4a2ps.1
 
 PAPERSIZE?=	letter
 PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
