@@ -8,8 +8,9 @@
 PORTNAME=	tuxnes
 PORTVERSION=	0.73
 CATEGORIES=	emulators
-MASTER_SITES=	http://people.freebsd.org/~asmodai/mirror/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://tmmm.simplenet.com/tuxnes/packages/
+MASTER_SITE_SUBDIR=	asmodai
 
 MAINTAINER=	asmodai@freebsd.org
 
