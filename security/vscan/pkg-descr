@@ -1,0 +1,16 @@
+McAfee's evaluation VirusScan for FreeBSD, provides immediate scanning of
+MS-DOS files hosted on FreeBSD Unix systems.
+
+	THIS IS AN EVALUATION COPY OF THE SOFTWARE. YOU MAY ONLY
+	USE THE SOFTWARE FOR THIRTY DAYS. 
+
+	After thirty days, you must either buy the software 
+	from McAfee Associates, Inc. or remove it from your 
+	computer and stop using it. If you are evaluating 
+	the software for corporate use and need longer than 
+	thirty days, please contact McAfee to arrange
+	an extended evaluation.
+
+Please see /usr/local/share/doc/vscan/vscan.LICENCE for more details.
+
+	-- David O'Brien	(obrien@cs.ucdavis.edu)
