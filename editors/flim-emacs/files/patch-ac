@@ -2,7 +2,7 @@
 +++ mime-en.texi	Sun Dec 27 17:49:17 1998
 @@ -9,6 +9,11 @@
  @node Top, Introduction, (dir), (dir)
- @top FLIM 1.9 Manual about MIME Features
+ @top FLIM 1.12 Manual about MIME Features
  
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
