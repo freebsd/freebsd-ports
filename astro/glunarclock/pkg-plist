@@ -1,6 +1,3 @@
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/glunarclock.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/glunarclock.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/glunarclock.schemas > /dev/null || /usr/bin/true
 libdata/bonobo/servers/GNOME_GLunarclockApplet_Factory.server
 libexec/glunarclock-applet-2
 share/gnome/glunarclock/glunarclock.glade
@@ -8,35 +5,35 @@ share/gnome/gnome-2.0/ui/GNOME_GLunarclockApplet.xml
 share/gnome/help/glunarclock-applet-2/C/figures/glunarclock_applet.png
 share/gnome/help/glunarclock-applet-2/C/glunarclock-applet-2.xml
 share/gnome/help/glunarclock-applet-2/C/legal.xml
-share/gnome/omf/gnome-applets/glunarclock-applet-2-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/glunarclock-applet-2-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/glunarclock/glunarclock-applet-2-C.omf
 share/gnome/pixmaps/glunarclock-logo.png
 share/gnome/pixmaps/glunarclock/cartoonmoon_12frames.png
 share/gnome/pixmaps/glunarclock/moon_56frames.png
-share/locale/ast_ES/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/az/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/da/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/de/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/es/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/fi/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/fr/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/gl/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/hu/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/ja/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/ms/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/nl/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/no/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/ro/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/ru/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/sr/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/sv/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/vi/LC_MESSAGES/glunarclock-0.30.mo
-share/locale/wa/LC_MESSAGES/glunarclock-0.30.mo
-@unexec rmdir %D/share/locale/ast_ES/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ast_ES 2> /dev/null || true
+share/locale/ast_ES/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/az/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/da/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/de/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/es/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/fi/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/fr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/ga/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/gl/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/hu/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/ja/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/ms/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/nl/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/no/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/ro/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/ru/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/sr/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/sv/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/vi/LC_MESSAGES/glunarclock-%%VERSION%%.mo
+share/locale/wa/LC_MESSAGES/glunarclock-%%VERSION%%.mo
 @dirrm share/gnome/pixmaps/glunarclock
+@dirrm share/gnome/omf/glunarclock
 @dirrm share/gnome/help/glunarclock-applet-2/C/figures
 @dirrm share/gnome/help/glunarclock-applet-2/C
 @dirrm share/gnome/help/glunarclock-applet-2
 @dirrm share/gnome/glunarclock
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/glunarclock-applet-2-C.omf 2>/dev/null || /usr/bin/true
+@unexec rmdir %D/share/locale/ast_ES/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ast_ES 2> /dev/null || true

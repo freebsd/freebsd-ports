@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	glunarclock
-PORTVERSION=	0.30.3
-PORTREVISION=	5
-CATEGORIES=	astro
+PORTVERSION=	0.32.1
+CATEGORIES=	astro gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -16,9 +15,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomepanel gail gnomehack gnomeprefix
-USE_LIBTOOL_VER=	13
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+USE_LIBTOOL_VER=	15
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_OMF=	yes
+
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
+
+GCONF_SCHEMAS=	glunarclock.schemas
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$${prefix}/share|$${datadir}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
