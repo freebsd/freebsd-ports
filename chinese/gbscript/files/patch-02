@@ -1,0 +1,31 @@
+--- gbscript.c.orig	Mon May 10 19:56:59 1993
++++ gbscript.c	Tue Feb  4 23:10:58 1997
+@@ -47,10 +47,19 @@
+ #  endif
+ #endif
+ 
++#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__)
++#include <sys/param.h>
++#define stricmp strcasecmp
++#endif
++
+ #ifndef SEEK_SET
+ #  define SEEK_SET 0
+ #endif
+ 
++#ifndef PROLOGUE_PATH
++#define PROLOGUE_PATH "."
++#endif
++
+ #define  FALSE          0
+ #define  TRUE           (!FALSE)
+ #define  GBBEGIN        0x00A1
+@@ -150,7 +159,7 @@
+ 			      12.0,
+ 			      0.5, 0.0, 0.0};
+ 
+-char                homedir[256] = ".";
++char                homedir[256] = PROLOGUE_PATH;
+ char                pfilename[64]= "gbscript.pro";
+ char                tfilename[64];
+ char                ifilename[256] = "";
