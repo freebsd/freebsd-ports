@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blue
-PORTVERSION=	2.7
+PORTVERSION=	2.9
 CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 DISTNAME=	bluemoon-${PORTVERSION}
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Blue Moon card solitaire
 
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 ALL_TARGET=	bluemoon
 
 MAN6=		bluemoon.6
