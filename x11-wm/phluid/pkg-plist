@@ -1,0 +1,13 @@
+bin/phluid
+share/phluid/themes/default/images/close_active.png
+share/phluid/themes/default/images/close_normal.png
+share/phluid/themes/default/images/gradient.jpg
+share/phluid/themes/default/images/title_bg.png
+share/phluid/ttfonts/notepad.ttf
+share/phluid/ttfonts/tahoma.ttf
+share/phluid/ttfonts/tahomabd.ttf
+@dirrm share/phluid/themes/default/images
+@dirrm share/phluid/themes/default
+@dirrm share/phluid/themes
+@dirrm share/phluid/ttfonts
+@dirrm share/phluid
