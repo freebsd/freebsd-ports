@@ -186,6 +186,7 @@ ac3dec		ports/audio/ac3dec
 accessx		ports/x11/accessx
 accrete		ports/astro/accrete
 ace		ports/devel/ace
+linux-firefox	ports/www/linux-firefox
 ace+tao		ports/devel/ace+tao
 ace+tao-doc	ports/devel/ace+tao-doc
 acfax		ports/comms/acfax
