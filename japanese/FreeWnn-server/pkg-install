@@ -169,7 +169,7 @@ POST-INSTALL)
 	echo "fi" >> ${startup_script};
       fi
       chmod 755 ${startup_script};
-      chown bin.bin ${startup_script};
+      chown bin:bin ${startup_script};
     fi
     ;;
 esac
