@@ -1,0 +1,11 @@
+--- w3mhelp_ja.html.orig	Thu Oct  7 12:18:45 1999
++++ w3mhelp_ja.html	Fri Oct 15 20:40:03 1999
+@@ -14,7 +14,7 @@
+  ***** キー割り当て *****
+ </CENTER>
+ 
+-<A HREF="w3mhelp_en.html">English</A>
++<A HREF="../../w3m/w3mhelp_en.html">English</A>
+ 
+ <H2>ページ/カーソル移動</H2>
+ <TABLE>
