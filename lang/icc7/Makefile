@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icc7
-PORTVERSION=	7.1.035
-PORTREVISION=	2
+PORTVERSION=	7.1.037
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION}
@@ -74,12 +73,8 @@ post-extract:
 	@${SED} 's:%%COMPILERDIR%%:${COMPILERDIR}:' \
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
-.for i in \
-	intel-icc7-7.1-38.i386.rpm
-#	intel-iidb7-7.2.2-77.i386.rpm
-	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | \
+	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null *.rpm | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
-.endfor
 
 pre-patch:
 # Allow everyone to use it
@@ -145,8 +140,7 @@ do-build:
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
 .if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
-		${FILESDIR}/cxa_finalize.c
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
 .if ( ${OSVERSION} < 470101 ) || \
 	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
