@@ -1,16 +1,16 @@
---- Makefile.orig	Sat Feb 23 07:24:08 2002
-+++ Makefile	Sun Mar  3 16:48:58 2002
+--- Makefile.orig	Wed Oct  9 18:54:01 2002
++++ Makefile	Wed Oct  9 18:55:21 2002
 @@ -25,13 +25,13 @@
  
  # GNU
  
--cpp = g++ -c -g -Wall -pedantic -Iinclude $(vflags)
-+cpp = g++ -c -Wall -pedantic -Iinclude $(vflags) %%CXXFLAGS%%
+-cpp = g++ -c -O5 -Wall -pedantic -Iinclude $(vflags)
++cpp = g++ -c -O5 -Wall -pedantic -Iinclude $(vflags) %%CXXFLAGS%%
  # To link with the static library libtcl.*.a
 -link = g++ -lm -lpthread
 +link = g++ -lm -lpthread %%LIBS%%
  # To link with the shared object libtcl.*.so
- # link = g++ -lm -Wl,-brtl -lpthreads
+ # link = g++ -lm -Wl,-brtl -lpthreads -bbigtoc
  # To link shared object
 -linkShared = g++ -lm -lpthread -Wl,-shared
 +linkShared = g++ -lm -lpthread -Wl,-shared %%LIBS%%
