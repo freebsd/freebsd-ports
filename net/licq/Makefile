@@ -27,11 +27,10 @@ CONFIGURE_ARGS+=--enable-socks5
 post-patch:
 	@${PERL5} -pi -e 's|<wait.h>|<sys/wait.h>|g' \
 		${WRKSRC}/src/sighandler.c
+	@${PERL5} -pi -e 's|.program_transform_name.|s,x,x,|' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
-.if !exists(${PREFIX}/bin/licq)
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/licq ${PREFIX}/bin
-.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/Makefile.inc"
