@@ -1,0 +1,8 @@
+
+This port provides Cyrillic replacements for _all_ of the standard
+/usr/X11R6/lib/X11/fonts/misc and for _most_ of the standard
+/usr/X11R6/lib/X11/fonts/75dpi fonts.
+
+You may want to remove those directories from your X-server's fontpath
+in favor of this new one -- /usr/X11R6/lib/X11/fonts/cyr-rfx-koi8-o .
+
