@@ -90,7 +90,6 @@ dgd/2.4.5-for-1.0.37.tgz ports/net/dgd-lpmud	No monetary gain. No point in
 						restrictions on distribution.
 						Source tarball may go on CDROM.
 dgd/net-*		ports/net/dgd-net	Same as dgd
-divx4linux		ports/graphics/divx4linux	Restrictive copyright
 djbdns			ports/net/djbdns	no license--see
 						http://cr.yp.to/softwarelaw.html
 djbfft			ports/math/djbfft	no license--see
@@ -153,6 +152,7 @@ libidea			ports/security/libidea	Crypto; export-controlled
 libudbc			ports/databases/libudbc		Downloading and redistribution
 						terms are unclear.
 limewire		ports/net/limewire	No redistribution allowed
+linux-divx4linux	ports/multimedia/linux-divx4linux	Restrictive copyright
 linux-eagle		ports/cad/linux-eagle		Non-commercial usage only &
 			ports/german/linux-eagle	Sale for profit not permitted
 linux-netscape6		ports/www/linux-netscape6	Java plugin is from Sun.
@@ -182,7 +182,7 @@ Mmsaic			ports/www/Mosaic	Do not sell.  Do not distribute
 mmosaic			ports/www/mmosaic	Do not sell (per NCSA).  Do not
 						distribute binary (GPL/BSD
 						conflict).
-mplayer			ports/graphics/mplayer	Restricted binary distribution
+mplayer			ports/multimedia/mplayer	Restricted binary distribution
 msql-*			ports/databases/msql	Not free for commercial org.
 mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
@@ -190,7 +190,7 @@ mysqlman		ports/databases/mysqlman Not redistributable, license
 						agreement required
 myth2_demo		ports/games/myth2_demo	Has no license.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
-netshow-*		ports/graphics/netshow	Commercial software
+netshow-*		ports/multimedia/netshow	Commercial software
 newkind*		ports/games/newkind	Reverse-engineered version of
 						ancient 8-bit abandonware
 nntpcache-*		ports/news/nntpcache	Commercial or government use
@@ -274,7 +274,7 @@ vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
 waeiji*.txt		ports/japanese/waeijiro-fpw The original dictionary is not free
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 webfonts-*		ports/x11-fonts/webfonts Restrictive copyright
-win32-codecs		ports/graphics/win32-codecs Licensing status of the
+win32-codecs		ports/multimedia/win32-codecs Licensing status of the
 						codecs is unknown. 
 wxg/ja-wxg-1.0b-1.tgz	ports/japanese/wxg	Redistribution not allowed
 xbarcode-*.tar.gz	ports/graphics/xbarcode	Must not be sold
