@@ -28,4 +28,12 @@ do-install:
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
+.if defined(NO_INSTALL)
+generate-plist:
+	${DO_NADA}
+process-plist:
+	${DO_NADA}
+.endif # defined(NO_INSTALL)
+
+
 .include <bsd.port.mk>
