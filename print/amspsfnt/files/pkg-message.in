@@ -2,10 +2,10 @@
 American Math Society Postscript fonts have been installed!
 ============================================================
 
-Please add	%%PREFIX%%/share/texmf/fonts/ams
+Please add	%%PREFIX%%/share/fonts/amspsfont/pfb
 to your X11 fonts path by either:
 
-$ xset fp+  %%PREFIX%%/share/texmf/fonts/ams
+$ xset fp+  %%PREFIX%%/share/fonts/amspsfont/pfb
 $ xset fp rehash
 
 or by adding it to your X-server configuration file.

@@ -2,10 +2,10 @@
 Computer Modern Postscript fonts have been installed!
 ============================================================
 
-Please add	%%PREFIX%%/share/texmf/fonts/type1
+Please add	%%PREFIX%%/share/fonts/cmpsfont/pfb
 to your X11 fonts path by either:
 
-$ xset fp+  %%PREFIX%%/share/texmf/fonts/type1
+$ xset fp+  %%PREFIX%%/share/fonts/cmpsfont/pfb
 $ xset fp rehash
 
 or by adding it to your X-server configuration file.
