@@ -3,9 +3,13 @@
 # Date created:		Oct 8, 1994
 # Whom:			pst
 #
+# $Id$
+#
+
 DISTNAME=	yale-tftpd-3.0
-MASTER_SITES=	ftp://ftp.cisco.com/pub/
 CATEGORIES+=	networking
+MASTER_SITES=	ftp://ftp.cisco.com/pub/
+
 NO_WRKSUBDIR=
 
 .include <bsd.port.mk>

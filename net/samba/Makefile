@@ -3,12 +3,13 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.3 1995/04/01 12:48:30 jkh Exp $
+# $Id: Makefile,v 1.4 1995/04/09 18:07:50 gpalmer Exp $
 #
 
 DISTNAME=	samba-1.9.11
-MASTER_SITES=	ftp://nimbus.anu.edu.au/pub/tridge/samba/
 CATEGORIES+=	networking
+MASTER_SITES=	ftp://nimbus.anu.edu.au/pub/tridge/samba/
+
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
 pre-install:

@@ -3,10 +3,12 @@
 # Date created:		22 August 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.5 1994/11/21 10:39:08 ats Exp $
+# $Id: Makefile,v 1.6 1995/02/10 06:09:56 gpalmer Exp $
 #
 
 DISTNAME=	tcpblast
+PKGNAME=	tcpblast-1.0
+
 NO_EXTRACT=	yes
 NO_WRKDIR=	yes
 
