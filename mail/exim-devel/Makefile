@@ -3,18 +3,18 @@
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.27 1999/02/10 16:09:48 markm Exp $
+# $Id: Makefile,v 1.28 1999/06/05 22:31:01 mharo Exp $
 #
 
-DISTNAME=	exim-2.12
+DISTNAME=	exim-3.02
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.quite.net/pub/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-2.12.tar.gz exim-texinfo-2.10.tar.gz
+DISTFILES=	exim-3.02.tar.gz exim-texinfo-3.00.tar.gz
 
-MAINTAINER=	axl@iafrica.com
+MAINTAINER=	sheldonh@FreeBSD.ORG
 
 # If USE_XLIB is defined, the eximon monitor, which requires X, will be
 # built.
@@ -39,7 +39,7 @@ do-configure:
 	${SED} -e "s#XX_BINOWN_XX#${BINOWN}#" \
 	    < ${FILESDIR}/configure.default > ${WRKSRC}/src/configure.default
 	cd ${WRKSRC}/doc && \
-	for i in ../../exim-texinfo-2.10/doc/* ; do \
+	for i in ../../exim-texinfo-3.00/doc/* ; do \
 		ln -sf $$i ; \
 	done
 
