@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.40 1999/08/21 17:13:39 andreas Exp $
+# $Id: Makefile,v 1.41 1999/08/22 18:59:40 mharo Exp $
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-07-24_03-02
@@ -98,21 +98,21 @@ update: build
 
 post-install:
 	${MKDIR} -m 0775 ${NEWSSPOOL}/articles
-	chown news.news ${NEWSSPOOL}/articles
+	${CHOWN} news.news ${NEWSSPOOL}/articles
 	${MKDIR} -m 0775 ${NEWSSPOOL}/cycbuffs
-	chown news.news ${NEWSSPOOL}/cycbuffs
+	${CHOWN} news.news ${NEWSSPOOL}/cycbuffs
 	${MKDIR} -m 0775 ${NEWSSPOOL}/incoming/bad
-	chown news.news ${NEWSSPOOL}/incoming/bad
+	${CHOWN} news.news ${NEWSSPOOL}/incoming/bad
 	${MKDIR} -m 0775 ${NEWSSPOOL}/innfeed
-	chown news.news ${NEWSSPOOL}/innfeed
+	${CHOWN} news.news ${NEWSSPOOL}/innfeed
 	${MKDIR} -m 0775 ${NEWSSPOOL}/outgoing
-	chown news.news ${NEWSSPOOL}/outgoing
+	${CHOWN} news.news ${NEWSSPOOL}/outgoing
 	${MKDIR} -m 0775 ${NEWSSPOOL}/overview
-	chown news.news ${NEWSSPOOL}/overview
+	${CHOWN} news.news ${NEWSSPOOL}/overview
 	${MKDIR} -m 0775 ${NEWSSPOOL}/tmp
-	chown news.news ${NEWSSPOOL}/tmp
+	${CHOWN} news.news ${NEWSSPOOL}/tmp
 	${MKDIR} -m 0775 ${NEWSSPOOL}/uniover
-	chown news.news ${NEWSSPOOL}/uniover
+	${CHOWN} news.news ${NEWSSPOOL}/uniover
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
 	# make rnews work when getting news via uucp !
