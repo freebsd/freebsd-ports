@@ -1,0 +1,26 @@
+--- handler.c.orig	Wed Jul 19 13:37:07 2000
++++ handler.c	Wed Jul 19 13:42:28 2000
+@@ -187,7 +187,11 @@
+     if(ch != EOF)
+     {
+       mutt_decoder_push_one (dec, ch);
++#ifdef KANJI
++      if (ch == '\n' || l++ == 1024)
++#else
+       if (l++ == 1024)
++#endif
+       {
+ 	mutt_decoder_pop_to_state (dec, s);
+ 	l = 0;
+@@ -270,7 +274,11 @@
+     else
+       mutt_decoder_push_one (dec, ch);
+     
++#ifdef KANJI
++    if (ch == '\n' || (l += 3) >= 1024)
++#else
+     if ((l += 3) >= 1024)
++#endif
+     {
+       mutt_decoder_pop_to_state (dec, s);
+       l = 0;
