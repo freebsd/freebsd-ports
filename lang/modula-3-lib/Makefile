@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/29 23:01:51 jdp Exp $
+# $Id: Makefile,v 1.2 1996/11/12 02:18:39 obrien Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -117,7 +117,7 @@ do-install:
 	@cd ${temp_prefix}; \
 	    umask 022; \
 	    grep '^lib/m3/' ${PKGDIR}/PLIST | \
-		${CP} -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
+		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
 	    grep '^lib/m3/' ${PKGDIR}/PLIST | xargs chmod go=u-w; \
 	    find -X lib/m3 -type d | xargs chown ${BINOWN}.${BINGRP}; \
