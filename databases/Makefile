@@ -60,6 +60,7 @@
     SUBDIR += libudbc
     SUBDIR += lsdb
     SUBDIR += lsdb-emacs20
+    SUBDIR += mantis
     SUBDIR += mdbtools
     SUBDIR += memcached
     SUBDIR += mergeant
