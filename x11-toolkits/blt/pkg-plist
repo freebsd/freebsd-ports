@@ -1,0 +1,24 @@
+@cwd /usr/local
+lib/blt/dd_protocols/dd-color.tcl
+lib/blt/dd_protocols/dd-file.tcl
+lib/blt/dd_protocols/dd-number.tcl
+lib/blt/dd_protocols/dd-text.tcl
+lib/blt/dd_protocols/tclIndex
+lib/blt/bltGraph.pro
+bin/blt_wish
+lib/libBLT.a
+lib/libBLT.so.1.7
+man/mann/blt_barchart.n
+man/mann/blt_bell.n
+man/mann/blt_bgexec.n
+man/mann/blt_bitmap.n
+man/mann/blt_busy.n
+man/mann/blt_cutbuffer.n
+man/mann/blt_debug.n
+man/mann/blt_dragdrop.n
+man/mann/blt_graph.n
+man/mann/blt_htext.n
+man/mann/blt_intro.n
+man/mann/blt_table.n
+man/mann/blt_watch.n
+man/mann/blt_win.n

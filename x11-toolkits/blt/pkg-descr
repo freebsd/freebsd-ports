@@ -1,0 +1,7 @@
+This package contains the binary release of BLT version 1.7, an add-on
+library for programs using Tk 3.6.  It includes widgets to implement
+drag and drop, barcharts and X-Y plots, and including generic Tk
+widgets inside a text object.
+
+NOTE: This kit requires as a pre-requisite the Tcl and Tk binary kits.
+This version uses FreeBSD shared libraries.

@@ -1,0 +1,41 @@
+*** configure.orig	Wed Dec 14 15:17:42 1994
+--- configure	Wed Dec 14 15:22:42 1994
+***************
+*** 183,187 ****
+  # -----------------------------------------------------------------------
+  if test -z "$prefix" ; then
+!     prefix=/usr/local/blt
+  fi
+  
+--- 183,187 ----
+  # -----------------------------------------------------------------------
+  if test -z "$prefix" ; then
+!     prefix=/usr/local
+  fi
+  
+***************
+*** 1114,1117 ****
+--- 1114,1123 ----
+          SHLIB_SUFFIX='.so.$(MAJOR_VERSION)'
+          ;;
++       FreeBSD*)
++ 	SHLIB_CCFLAGS="-fpic"
++ 	SHLIB_LDFLAGS="-Bshareable"
++ 	SHLIB_LOADER="ld"
++ 	SHLIB_SUFFIX='.so.$(MAJOR_VERSION).$(MINOR_VERSION)'
++ 	;;
+        *)
+  	echo "Don't know how to make shared libraries for $system"
+***************
+*** 1137,1141 ****
+  LIBDIR="$DESTDIR/lib"
+  MANDIR="$DESTDIR/man"
+! BLT_LIBRARY="$DESTDIR/library"
+  
+  
+--- 1143,1147 ----
+  LIBDIR="$DESTDIR/lib"
+  MANDIR="$DESTDIR/man"
+! BLT_LIBRARY="$DESTDIR/lib/blt"
+  
+  
