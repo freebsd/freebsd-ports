@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += autobench
     SUBDIR += bonnie
     SUBDIR += bonnie++
     SUBDIR += bytebench
