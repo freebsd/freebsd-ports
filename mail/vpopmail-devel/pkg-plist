@@ -2,11 +2,14 @@ vpopmail/bin/clearopensmtp
 vpopmail/bin/vaddaliasdomain
 vpopmail/bin/vadddomain
 vpopmail/bin/vadduser
+vpopmail/bin/valias
 vpopmail/bin/vchkpw
 vpopmail/bin/vconvert
 vpopmail/bin/vdeldomain
 vpopmail/bin/vdelivermail
+vpopmail/bin/vdeloldusers
 vpopmail/bin/vdeluser
+vpopmail/bin/vdominfo
 vpopmail/bin/vipmap
 vpopmail/bin/vmkpasswd
 vpopmail/bin/vmoduser
@@ -15,6 +18,7 @@ vpopmail/bin/vpopbull
 vpopmail/bin/vsetuserquota
 vpopmail/bin/vuserinfo
 vpopmail/doc/doc_html/vpopmail.html
+vpopmail/doc/doc_html/vpopmail5.abw
 vpopmail/doc/doc_html/vpopmailapi.png
 vpopmail/doc/man_html/clearopensmtp.html
 vpopmail/doc/man_html/index.html

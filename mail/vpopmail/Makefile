@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vpopmail
-PORTVERSION=	4.9.10
-PORTREVISION=	3
+PORTVERSION=	5.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.inter7.com/vpopmail/
 
@@ -52,11 +51,19 @@ CONFIGURE_ARGS=	--enable-qmaildir=${QMAIL_DIR} \
 # APOPFILE	- location of apop secrets file
 # QMAIL_DIR     - location of qmail directory
 # PREFIX	- installation area for vpopmail (see comment below)
-# WITH_MYSQL_USER - the username for connecting to the MySQL server (root)
-# WITH_MYSQL_PASSWD - the password for connecting to the MySQL server (gipgap)
-# WITH_MYSQL_DB - the name of the MySQL database to use (vpopmail)
 # VCHKPW_GID	- the group ID of the new vchkpw group (89)
 # VPOPMAIL_UID	- the user ID of the new vpopmail user (89)
+# WITH_MYSQL_SERVER - the hostname of the MySQL server (localhost)
+# WITH_MYSQL_USER - the username for connecting to the MySQL server (root)
+# WITH_MYSQL_PASSWD - the password for connecting to the MySQL server (secret)
+# WITH_MYSQL_DB - the name of the MySQL database to use (vpopmail)
+# The server, user and password variables may be defined separately
+# for read and update access, allowing you to set up a less-priviledged
+# MySQL connection account with read-only access, and another one which
+# is used for administrative purposes:
+# WITH_MYSQL_READ_SERVER, WITH_MYSQL_READ_USER, WITH_MYSQL_READ_PASSWD
+# WITH_MYSQL_UPDATE_SERVER, WITH_MYSQL_UPDATE_USER, WITH_MYSQL_UPDATE_PASSWD
+# Those variables, if defined, override WITH_MYSQL_{SERVER,USER,PASSWD}
 #
 
 HARDQUOTA?=	10000000
@@ -85,8 +92,8 @@ QMAIL_DIR?=	/var/qmail
 CONFIGURE_ARGS+=	--enable-hardquota=${HARDQUOTA} \
 			--enable-logging=${LOGLEVEL}
 
-.if !defined(WITH_PASSWD)
-CONFIGURE_ARGS+=	--enable-passwd=n
+.if defined(WITH_PASSWD)
+CONFIGURE_ARGS+=	--enable-passwd=y
 .endif
 
 .if defined(WITH_APOP)
@@ -96,8 +103,8 @@ CONFIGURE_ARGS+=	--enable-apop=y \
 CONFIGURE_ARGS+=	--enable-apop=n
 .endif
 
-.if !defined(WITH_SQWEBMAIL)
-CONFIGURE_ARGS+=	--enable-sqwebmail-pass=n
+.if defined(WITH_SQWEBMAIL)
+CONFIGURE_ARGS+=	--enable-sqwebmail-pass=y
 .endif
 
 .if !defined(WITHOUT_ROAMING)
@@ -112,6 +119,19 @@ CONFIGURE_ARGS+=	--enable-mysql=y \
 			--enable-sqllibdir=${LOCALBASE}/lib/mysql
 .if defined(WITH_MYSQL_LARGE_SITE)
 CONFIGURE_ARGS+=	--enable-large-site=y
+.endif
+
+.if defined(WITH_MYSQL_SERVER)
+WITH_MYSQL_READ_SERVER?=	${WITH_MYSQL_SERVER}
+WITH_MYSQL_UPDATE_SERVER?=	${WITH_MYSQL_SERVER}
+.endif
+.if defined(WITH_MYSQL_USER)
+WITH_MYSQL_READ_USER?=	${WITH_MYSQL_USER}
+WITH_MYSQL_UPDATE_USER?=	${WITH_MYSQL_USER}
+.endif
+.if defined(WITH_MYSQL_PASSWD)
+WITH_MYSQL_READ_PASSWD?=	${WITH_MYSQL_PASSWD}
+WITH_MYSQL_UPDATE_PASSWD?=	${WITH_MYSQL_PASSWD}
 .endif
 .endif
 
@@ -136,11 +156,23 @@ CONFIGURE_ARGS+=	--enable-deliver-filter=y
 pre-configure:
 	@PKG_PREFIX=${PREFIX}/vpopmail ${PERL5} ${PKGINSTALL}
 .if defined(WITH_MYSQL)
-.if defined(WITH_MYSQL_USER)
-	${PERL} -pi -e "s/(#define MYSQL_USER.*)root(.*)/\$$1${WITH_MYSQL_USER}\$$2/" ${WRKSRC}/vmysql.h
+.if defined(WITH_MYSQL_UPDATE_SERVER)
+	${PERL} -pi -e "s/(#define MYSQL_UPDATE_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_UPDATE_SERVER}\$$2/" ${WRKSRC}/vmysql.h
 .endif
-.if defined(WITH_MYSQL_PASSWD)
-	${PERL} -pi -e "s/(#define MYSQL_PASSWD.*)gipgap(.*)/\$$1${WITH_MYSQL_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+.if defined(WITH_MYSQL_READ_SERVER)
+	${PERL} -pi -e "s/(#define MYSQL_READ_SERVER.*)localhost(.*)/\$$1${WITH_MYSQL_READ_SERVER}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.if defined(WITH_MYSQL_UPDATE_USER)
+	${PERL} -pi -e "s/(#define MYSQL_UPDATE_USER.*)root(.*)/\$$1${WITH_MYSQL_UPDATE_USER}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.if defined(WITH_MYSQL_READ_USER)
+	${PERL} -pi -e "s/(#define MYSQL_READ_USER.*)root(.*)/\$$1${WITH_MYSQL_READ_USER}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.if defined(WITH_MYSQL_UPDATE_PASSWD)
+	${PERL} -pi -e "s/(#define MYSQL_UPDATE_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_UPDATE_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
+.endif
+.if defined(WITH_MYSQL_READ_PASSWD)
+	${PERL} -pi -e "s/(#define MYSQL_READ_PASSWD.*)secret(.*)/\$$1${WITH_MYSQL_READ_PASSWD}\$$2/" ${WRKSRC}/vmysql.h
 .endif
 .if defined(WITH_MYSQL_DB)
 	${PERL} -pi -e "s/(#define MYSQL_DATABASE.*)vpopmail(.*)/\$$1${WITH_MYSQL_DB}\$$2/" ${WRKSRC}/vmysql.h
