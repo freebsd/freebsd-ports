@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.184 1998/02/15 17:01:04 jseger Exp $
+# $Id: Makefile,v 1.185 1998/02/16 02:30:03 steve Exp $
 #
 
     SUBDIR += FWF
@@ -50,7 +50,6 @@
     SUBDIR += p5-Tcl-Tk
     SUBDIR += p5-Tk
     SUBDIR += piewm
-    SUBDIR += pppload
     SUBDIR += props
     SUBDIR += pythonqt
     SUBDIR += qt
