@@ -14,11 +14,11 @@ MASTER_SITE_SUBDIR=	gettext
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gettext package
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_ICONV=	yes
 CONFIGURE_ENV=	ACLOCAL="${TRUE}" \
 		AUTOCONF="${TRUE}" \
 		AUTOMAKE="${TRUE}" \
