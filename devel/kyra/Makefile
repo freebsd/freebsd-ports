@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Kyra is a simple Sprite engine written in C++
+COMMENT=	A simple Sprite engine written in C++
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -22,12 +22,11 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_LIBTOOL_VER=	13
 USE_SDL=	image sdl
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnometarget lthack
+USE_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib"
 INSTALLS_SHLIB=	yes
-
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
