@@ -3,7 +3,7 @@
 # Date created:		29 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.11 1996/11/18 14:10:41 asami Exp $
+# $Id: Makefile,v 1.12 1997/08/11 00:01:07 adam Exp $
 #
 
 DISTNAME=	nntp-t5
@@ -16,6 +16,7 @@ MAINTAINER=	adam@veda.is
 
 BUILD_DEPENDS=	${PREFIX}/lib/libcnews.a:${PORTSDIR}/news/cnews
 
+BROKEN=		depends on cnews, which is broken
 MAN1=		nntpxmit.1
 MAN8=		nntpd.8c mkgrdates.8c
 
