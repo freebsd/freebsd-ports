@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Tue Dec 29 18:36:04 1998
-+++ doc/Makefile.in	Tue Apr 20 16:43:54 1999
-@@ -21,7 +21,7 @@
+--- doc/Makefile.in.orig	Sat Feb  1 19:50:48 2003
++++ doc/Makefile.in	Wed Apr  9 21:54:54 2003
+@@ -24,7 +24,7 @@
  	${INSTALL_DATA} make-dylan-app.1 \
  		${DESTDIR}${MANDIR}/man1/make-dylan-app.1
  	${INSTALL_DATA} platforms.descr.4 \
 -		${DESTDIR}${MANDIR}/man4/platforms.descr.4
 +		${DESTDIR}${MANDIR}/man5/platforms.descr.5
+ 	${INSTALL_DATA} gobject-tool.1 \
+ 		${DESTDIR}${MANDIR}/man1/gobject-tool.1
  
- clean:
- 	-echo 'Nothing to do.'
