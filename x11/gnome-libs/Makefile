@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gnomelibs
-# Version required:    0.30
+# Version required:    0.30.1
 # Date created:        17 June 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1998/09/26 00:02:36 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/30 13:51:45 vanilla Exp $
 #
 
-DISTNAME=	gnome-libs-0.30
-PKGNAME=	gnomelibs-0.30
+DISTNAME=	gnome-libs-0.30.1
+PKGNAME=	gnomelibs-0.30.1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
