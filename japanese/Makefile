@@ -2,7 +2,6 @@
 #
 
     SUBDIR += Canna
-    SUBDIR += FAQ
     SUBDIR += VTPSfont
     SUBDIR += Wnn
     SUBDIR += Wnn6
