@@ -413,3 +413,4 @@ x11-toolkits/eazel-themes||2003-07-15|removed as it depends on sawfish
 chinese/pycodec||2003-07-20|is replaced by converters/py-cjkcodecs
 korean/pycodec||2003-07-20|is replaced by converters/py-cjkcodecs
 devel/jakarta-ant|devel/apache-ant|2003-07-21|project renamed
+games/newkind||2003-07-22|project abandoned
