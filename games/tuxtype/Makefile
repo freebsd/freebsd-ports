@@ -18,6 +18,7 @@ LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 
 USE_X_PREFIX=	yes
 USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
