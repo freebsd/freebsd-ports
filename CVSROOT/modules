@@ -5369,6 +5369,7 @@ reboot		src/sbin/reboot
 recode		ports/converters/recode
 recombine	ports/biology/recombine
 redir		ports/net/redir
+redland		ports/textproc/redland
 reed		ports/misc/reed
 regexx		ports/devel/regexx
 register	src/eBones/register
