@@ -1,4 +1,4 @@
-bin/bjpsprn
+bin/bjf850ps
 libexec/bjfilter850/filter850
 @dirrm libexec/bjfilter850
 @cwd /compat/linux

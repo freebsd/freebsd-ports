@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bjfiltercom
-PORTVERSION?=	1.0
+PORTVERSION?=	1.1
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://www.canon-sales.co.jp/pub/driver/printer/BJ/linux/
 DISTFILES=	${RPMFILE}
@@ -26,7 +26,9 @@ RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 		/compat/linux/usr/lib/libxml.so.1:${PORTSDIR}/textproc/linux-libxml \
 		/compat/linux/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		/compat/linux/usr/lib/libtiff.so.3:${PORTSDIR}/graphics/linux-tiff \
-		/compat/linux/usr/lib/libglade.so.0:${PORTSDIR}/devel/linux-libglade
+		/compat/linux/usr/lib/libglade.so.0:${PORTSDIR}/devel/linux-libglade \
+		/compat/linux/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
+
 BIN_FILES=	bjprn stsmon printui lgmon bjfilter
 .endif
 
@@ -34,7 +36,7 @@ EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| cpio -id --quiet
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 DIST_SUBDIR=	bjfilter
 PLIST=		${.CURDIR}/pkg-plist
 COMMENT=	${.CURDIR}/pkg-comment
@@ -45,7 +47,7 @@ NO_FILTER_SHLIBS=	yes
 NO_MTREE=	yes
 RPMFILE=	${PORTNAME}-${PORTVERSION}-0.i386.rpm
 .if defined(SLAVE_PORT)
-BIN_FILES=	bjpsprn
+BIN_FILES=	bjf${PRTYPE}ps
 FILTER=		${FILESDIR}/filter
 PAPERSIZE?=	a4
 .else
