@@ -79,9 +79,10 @@ PLIST_SUB+=	DEBUG:=""
 PTHREAD_FILES=	hotspot/build/bsd/makefiles/gcc.make \
 	hotspot/build/bsd/makefiles/vm.make \
 	j2se/make/common/Defs.gmk \
-	j2se/make/common/Program.gmk \
 	j2se/make/common/Defs-bsd.gmk \
-	j2se/make/java/hpi/native/Makefile
+	j2se/make/common/Program.gmk \
+	j2se/make/java/hpi/native/Makefile \
+	j2se/ext/plugin/build/solaris/GNUmakefile
 
 .include <bsd.port.pre.mk>
 
