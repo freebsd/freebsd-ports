@@ -93,7 +93,7 @@ ExtendedInputDevices?=	YES
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-everything:
-	${SH} ${PKGDIR}/INSTALL
+	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 do-configure:
