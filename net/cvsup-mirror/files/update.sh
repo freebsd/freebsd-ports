@@ -44,14 +44,14 @@ umask 2
 
 if [ ${host_crypto} = ${host} ]; then
     echo "Updating from ${host}"
-    cvsup -1gL 1 -c ${colldir} -h ${host} supfile
+    cvsup -1gL 1 -b ${base} -c ${colldir} -h ${host} supfile
 else
     if [ -d prefixes/FreeBSD-crypto.cvs ]; then
 	echo "Updating from ${host_crypto}"
-	cvsup -1gL 1 -c ${colldir} -h ${host_crypto} supfile.crypto
+	cvsup -1gL 1 -b ${base} -c ${colldir} -h ${host_crypto} supfile.crypto
     fi
     echo "Updating from ${host}"
-    cvsup -1gL 1 -c ${colldir} -h ${host} supfile.non-crypto
+    cvsup -1gL 1 -b ${base} -c ${colldir} -h ${host} supfile.non-crypto
 fi
 
 if [ -f .start_server ]; then
