@@ -8,19 +8,30 @@
 
 PORTNAME=	wol
 PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ahh
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Wake On LAN client
+MAINTAINER=	sergei@kolobov.com
+COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+		iconv.3:${PORTSDIR}/converters/libiconv
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv -lgnugetopt"
+GNU_CONFIGURE=		yes
+USE_GETOPT_LONG=	yes
+CPPFLAGS=		-I${LOCALBASE}/include
+LDFLAGS=		-L${LOCALBASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+DOCS=		AUTHORS NEWS README TODO
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
