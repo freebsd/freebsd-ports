@@ -110,7 +110,6 @@ share/java/fesi/examples/javaaccess/event.es
 share/java/fesi/examples/readme.txt
 share/java/fesi/Readme.txt
 share/java/fesi/COPYRIGHT.TXT
-@dirrm share/java/classes
 @dirrm share/java/fesi/examples/xml
 @dirrm share/java/fesi/examples/jslib
 @dirrm share/java/fesi/examples/javaaccess
@@ -132,4 +131,3 @@ share/java/fesi/COPYRIGHT.TXT
 @dirrm share/java/fesi/docs/api
 @dirrm share/java/fesi/docs
 @dirrm share/java/fesi
-@dirrm share/java
