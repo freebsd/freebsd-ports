@@ -1,23 +1,15 @@
---- Makefile.in.orig	Thu Dec  5 19:43:42 2002
-+++ Makefile.in	Tue Dec 31 18:26:52 2002
-@@ -231,7 +231,7 @@
+--- Makefile.in.orig	Thu Oct 16 00:22:13 2003
++++ Makefile.in	Mon Oct 27 12:19:58 2003
+@@ -702,8 +702,6 @@
  
- AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
- 
--COMMONDIRS = lib irssi silc silcd doc includes
-+COMMONDIRS = lib irssi silcd doc includes
- 
- # Sub directories defined by "distributions" file, and can be overridden
- # with ./configure, which substitutes these variables.
-@@ -700,7 +700,6 @@
  install-dirs:
  	-mkdir -p $(etcdir)
- 	-mkdir -p $(modulesdir)
+-	-mkdir -p $(modulesdir)
 -	-mkdir -p $(docdir)
  
  install-dirs-client: install-dirs
  	-mkdir -p $(helpdir)
-@@ -728,8 +727,7 @@
+@@ -731,8 +729,7 @@
  	 $(INSTALL_DATA) $(srcdir)/doc/silc.1 $(mandir)/man1; \
  	fi
  
@@ -27,7 +19,7 @@
  	-@if test -f $(srcdir)/doc/silcd.8 ; then \
  	 $(INSTALL_DATA) $(srcdir)/doc/silcd.8 $(mandir)/man8; \
  	fi
-@@ -746,13 +744,11 @@
+@@ -749,16 +746,13 @@
  	fi
  
  etc-install-server:
@@ -40,11 +32,14 @@
 -          chmod go= $(etcdir)/silcd.conf; \
 -	fi
 +		$(etcdir)/silcalgs.conf.sample; \
-+          chmod go= $(etcdir)/silcd.conf.sample
++          chmod go= $(etcdir)/silcd.conf.sample; \
  
  sim-install:
- 	-$(INSTALL_DATA) $(srcdir)/lib/silcsim/*.so $(modulesdir)/
-@@ -764,9 +760,9 @@
+-	-$(INSTALL_DATA) $(srcdir)/lib/silcsim/*.so $(modulesdir)/
+ 
+ toolkit-install:
+ 	-mkdir -p $(docdir)/toolkit/
+@@ -767,13 +761,13 @@
  	-cp -R $(srcdir)/tutorial $(prefix)
  
  examples-install:
@@ -53,16 +48,11 @@
 -	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(docdir)/examples/
 +	-mkdir -p $(prefix)/share/examples/silc
 +	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(prefix)/share/examples/silc
-+	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(prefix)/share/examples/silc
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -775,7 +771,7 @@
+ 	  $(sbindir)/silcd -C $(etcdir); \
++	    chmod 600 $(etcdir)/silcd.p*; \
+ 	fi
  
  @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
- @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
--@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
-+@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
