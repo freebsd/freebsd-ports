@@ -3790,7 +3790,7 @@ libcii		ports/devel/libcii
 libcomprex	ports/archivers/libcomprex
 libconnect	ports/net/libconnect
 libcoro		ports/devel/libcoro
-libcroco	ports/net/libcroco
+libcroco	ports/textproc/libcroco
 libctl		ports/science/libctl
 libdbi		ports/databases/libdbi
 libdict		ports/devel/libdict
