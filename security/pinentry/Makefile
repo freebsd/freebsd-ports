@@ -25,6 +25,7 @@ LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 
 USE_AUTOMAKE_VER=	15
 USE_GNOMENG=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
@@ -46,15 +47,15 @@ USE_QT_VER=	3
 PLIST_SUB+=	WITH_QT=""
 .else
 CONFIGURE_ARGS+=--disable-pinentry-qt
-PLIST_SUB+=WITH_QT="@comment "
+PLIST_SUB+=	WITH_QT="@comment "
 .endif
 
-.if !defined(WITHOUT_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
-PLIST_SUB+=WITH_GTK=""
+PLIST_SUB+=	WITH_GTK=""
 .else
 CONFIGURE_ARGS+=--disable-pinentry-gtk
-PLIST_SUB+=WITH_GTK="@comment "
+PLIST_SUB+=	WITH_GTK="@comment "
 .endif
 
 post-extract:
