@@ -17,6 +17,7 @@ RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
+USE_PERL=	yes
 
 NO_PACKAGE=	A possibly inherited DJB-style license would prohibit \
 		distribution of modified binary packages

@@ -26,6 +26,7 @@ LIB_DEPENDS= 	jpeg.9:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_X_PREFIX=	yes
+USE_PERL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes

@@ -18,6 +18,7 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 USE_GMAKE=	yes
+USE_PERL=	yes
 USE_X_PREFIX=	yes
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config

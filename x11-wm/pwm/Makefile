@@ -15,6 +15,7 @@ MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	A lightweight window manager with emphasis on usability
 
 USE_X_PREFIX=	yes
+USE_PERL=	yes
 USE_GMAKE=	yes
 
 MAN1=		pwm.1x

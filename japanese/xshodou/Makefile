@@ -15,6 +15,7 @@ COMMENT=	A Japanese shodou program for X based on Tcl/Tk
 
 RUN_DEPENDS=    wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
+USE_PERL=	yes
 USE_X_PREFIX=	yes
 MAN1=		xshodou.1
 MANCOMPRESSED=	yes

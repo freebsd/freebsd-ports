@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/povray31:configure \
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31 \
 		pvmd:${PORTSDIR}/net/pvm
 
+USE_PERL=	yes
 USE_XLIB=	yes
 
 WRKSRC=		${WRKDIR}/pvmpov3_1e_2

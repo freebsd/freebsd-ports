@@ -28,6 +28,7 @@ RESTRICTED=	"no license"
 NO_CDROM=	${RESTRICTED}
 NO_FTP=		${RESTRICTED}
 USE_LINUX=	yes
+USE_PERL=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/update/demos/myth2_demo/
 

@@ -24,6 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
+USE_PERL=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

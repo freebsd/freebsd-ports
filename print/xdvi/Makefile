@@ -17,6 +17,7 @@ MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A DVI Previewer for the X Window System
 
 DIST_SUBDIR=	xdvi	# to share distfiles with japanese/xdvi
+USE_PERL=	yes
 USE_IMAKE=	yes
 USE_GMAKE=	yes
 XMKMF=		xmkmf

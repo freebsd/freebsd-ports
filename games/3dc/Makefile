@@ -17,6 +17,7 @@ COMMENT=	3-Dimensional Chess for X Window System
 
 LIB_DEPENDS=		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
+USE_PERL=		yes
 USE_X_PREFIX=		yes
 USE_XPM=		yes
 WRKSRC=			${WRKDIR}/3Dc/src

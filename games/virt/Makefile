@@ -14,6 +14,7 @@ MAINTAINER=	lg@rrf.ru
 COMMENT=	Game and keyboard teacher in one. Enjoy it!
 
 USE_GNOME=	gtk12
+USE_PERL=	yes
 MAN6=		virt.6
 MANCOMPRESSED=	no
 

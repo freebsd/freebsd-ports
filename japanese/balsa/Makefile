@@ -22,6 +22,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
+USE_PERL=	yes
 USE_GMAKE=	yes
 LIBTOOLFILES=	configure libmutt/configure
 CONFIGURE_ARGS=	--enable-system-install --enable-threads

@@ -19,6 +19,7 @@ BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
+USE_PERL=	yes
 
 post-patch:
 	${PERL} -pi -e 's|/usr/local/share/ttraffic/|${DATADIR}/|g;' \

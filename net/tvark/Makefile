@@ -17,6 +17,7 @@ COMMENT=	GUI network monitoring tool, tied to a MySQL database
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_X_PREFIX=	yes
+USE_PERL=	yes
 USE_GNOME=	gtk12
 
 .include <bsd.port.pre.mk>

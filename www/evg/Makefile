@@ -19,6 +19,7 @@ COMMENT=	Create index pages in HTML for photo galleries
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	xv:${PORTSDIR}/graphics/xv
 
+USE_PERL=	yes
 USE_PYTHON=	yes
 
 NO_BUILD=	yes

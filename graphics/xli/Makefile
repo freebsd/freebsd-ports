@@ -20,6 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
+USE_PERL=	yes
 MAN1=		xli.1 xlito.1
 
 post-patch:

@@ -18,6 +18,7 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/awele
 USE_IMAKE=	yes
+USE_PERL=	yes
 MAN6=		xawele.6
 
 post-patch:

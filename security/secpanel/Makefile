@@ -16,6 +16,7 @@ COMMENT=	GUI for managing and running ssh and related utilities
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		ssh-askpass:${PORTSDIR}/security/openssh-askpass
 
+USE_PERL=	yes
 USE_X_PREFIX=	yes
 
 NO_BUILD=	yes

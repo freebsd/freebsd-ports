@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
+USE_PERL=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)

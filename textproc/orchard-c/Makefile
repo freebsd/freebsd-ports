@@ -21,6 +21,7 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
+USE_PERL=	yes
 USE_PYTHON=	yes
 USE_QT_VER=	2
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

@@ -15,6 +15,7 @@ MAINTAINER=	damm@yazzy.org
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USE_GMAKE= yes
+USE_PERL=	yes
 IS_INTERACTIVE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --with-ssl

@@ -19,6 +19,7 @@ BROKEN=		"Does not install on 4.x, does not compile on 5.x; will be removed afte
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
 USE_XLIB=	yes
+USE_PERL=	yes
 INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/simpack

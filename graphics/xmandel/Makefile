@@ -21,6 +21,7 @@ EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 USE_IMAKE=	yes
+USE_PERL=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		xmandel.1
 

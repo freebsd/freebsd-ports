@@ -14,6 +14,7 @@ MAINTAINER=	mwest@uct.ac.za
 COMMENT=	A message-of-the-day browser for X11 and dumb-terminals
 
 USE_IMAKE=	yes
+USE_PERL=	yes
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 

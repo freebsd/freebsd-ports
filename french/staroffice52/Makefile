@@ -39,6 +39,7 @@ NO_CDROM=	'Doit être téléchargé depuis le site web de Sun'
 CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
+USE_PERL=	yes
 DIST_SUBDIR=	staroffice52
 WRKSRC=		${WRKDIR}/office52
 TMPDIR=		${WRKDIR}/tmp

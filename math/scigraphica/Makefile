@@ -22,6 +22,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/gtk-1.2/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_X_PREFIX=	yes
+USE_PERL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_PYTHON=	yes

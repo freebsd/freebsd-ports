@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
+USE_PERL=	yes
 
 .include <bsd.port.pre.mk>
 

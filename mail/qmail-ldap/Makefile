@@ -37,6 +37,8 @@ PKGNAMESUFFIX:= ${PKGNAMESUFFIX}-with_tls
 USE_OPENSSL=	yes
 .endif # WITHOUT_TLS
 
+USE_PERL=	yes
+
 # Patches from the main qmail port are not wanted
 MAIN_QMAIL_PORT_DNS_PATCH_BARRIER=	yes
 MAIN_QMAIL_PORT_WITH_BIG_CONCURRENCY_PATCH_BARRIER=	yes

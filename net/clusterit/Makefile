@@ -25,6 +25,7 @@ PLIST_SUB+=	X11=''
 MAN1+=		rvt.1 dvt.1
 USE_XLIB=	yes
 .endif
+USE_PERL=	yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
