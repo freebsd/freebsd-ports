@@ -10,7 +10,7 @@
 +	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
 +	    else
 +	       SHLIB_LD="ld -Bshareable -x"
-+	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.0'
++	       TCL_SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1.2'
 +	    fi
  	    SHLIB_CFLAGS="-fpic"
 -	    SHLIB_LD="ld -Bshareable -x"
