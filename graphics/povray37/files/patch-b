@@ -1,24 +1,66 @@
-*** machine/unix/xwindows.mak	Sat Oct  9 12:39:46 1993
---- newmachine/unix/xwindows.mak	Wed Dec 28 03:27:46 1994
+*** sourceold/unix/makefile	Tue Sep  3 08:48:13 1996
+--- source/unix/makefile	Tue Dec  3 22:49:24 1996
 ***************
-*** 16,25 ****
+*** 28,44 ****
+  # Use libXXX.a if you want to force static linking of the libraries.
+  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
+  #   available).  It doesn't matter if you only have libXXX.a libraries.
+! PNGDIR = $(SRCDIR)/libpng
+! LIBPNGINC = -I$(PNGDIR)
+  #LIBPNGLIB = $(PNGDIR)/libpng.a
+! LIBPNGLIB = -L$(PNGDIR) -lpng
+! #LIBPNGLIB = -L/usr/local/lib -lpng
   
-  # Added for colorx addition.  You _do_ have $X11 defined by your .cshrc,
-  # don't you?
-! X11 = /usr
-  CFLAGS=		-c -O 
-! LFLAGS =	-O  $(X11)/lib/libXt.a $(X11)/lib/libXext.a -lX11 \
-!                 -o povray
-  CC =		cc
+! ZLIBDIR = $(SRCDIR)/zlib
+! ZLIBINC = -I$(ZLIBDIR)
+  #ZLIBLIB = $(ZLIBDIR)/libz.a
+! ZLIBLIB = -L$(ZLIBDIR) -lz
+! #ZLIBLIB = -L/usr/local/lib -lz
   
-  OBJ	= o
---- 16,24 ----
+  # This is the suffix for object files.
+  OBJ     = .o
+--- 28,44 ----
+  # Use libXXX.a if you want to force static linking of the libraries.
+  #   Use -Llibdir -lXXX if you want to use shared libraries (if they are
+  #   available).  It doesn't matter if you only have libXXX.a libraries.
+! PNGDIR = #$(SRCDIR)/libpng
+! LIBPNGINC = -I/usr/local/include
+  #LIBPNGLIB = $(PNGDIR)/libpng.a
+! #LIBPNGLIB = -L$(PNGDIR) -lpng
+! LIBPNGLIB = -L/usr/local/lib -lpng
   
-  # Added for colorx addition.  You _do_ have $X11 defined by your .cshrc,
-  # don't you?
-! X11 = ${X11BASE}
-  CFLAGS=		-c -O 
-! LFLAGS =	-O  -L${X11}/lib -lXt -lXext -lX11 -o povray
-  CC =		cc
+! #ZLIBDIR = $(SRCDIR)/zlib
+! #ZLIBINC = -I$(ZLIBDIR)
+  #ZLIBLIB = $(ZLIBDIR)/libz.a
+! #ZLIBLIB = -L$(ZLIBDIR) -lz
+! ZLIBLIB =  -lz
   
-  OBJ	= o
+  # This is the suffix for object files.
+  OBJ     = .o
+***************
+*** 55,61 ****
+  #X11 = /usr/local/X11R6
+  #X11 = /usr/openwin        # for some SunOS systems
+  #X11 = /usr/lpp/X11        # for some AIX systems
+! X11 = /usr/X11
+  
+  # You probably won't need to change these if you have the X11 variable
+  #   above set properly...
+--- 55,61 ----
+  #X11 = /usr/local/X11R6
+  #X11 = /usr/openwin        # for some SunOS systems
+  #X11 = /usr/lpp/X11        # for some AIX systems
+! X11 = /usr/X11R6
+  
+  # You probably won't need to change these if you have the X11 variable
+  #   above set properly...
+***************
+*** 901,907 ****
+                            config.h             \
+                            $(SRCDIR)/frame.h    \
+                            $(SRCDIR)/optout.h   \
+-                           $(PNGDIR)/png.h      \
+                            $(SRCDIR)/png_pov.h  \
+                            $(SRCDIR)/point.h    \
+                            $(SRCDIR)/povproto.h \
+--- 901,906 ----
