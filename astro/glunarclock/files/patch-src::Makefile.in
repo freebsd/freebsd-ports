@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/11/13 14:03:25	1.1
++++ src/Makefile.in	2001/11/13 14:03:55
+@@ -153,7 +153,7 @@
+ moonproperties.o CalcEphem.o Moon.o MoonRise.o
+ glunarclock_DEPENDENCIES = 
+ glunarclock_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ $(PIXBUF_CFLAGS)
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
