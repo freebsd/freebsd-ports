@@ -1,6 +1,6 @@
---- aaprintf.c.orig	Fri Mar  2 16:34:22 2001
-+++ aaprintf.c	Fri Mar  2 16:35:20 2001
-@@ -6,7 +6,7 @@
+--- src/aaprintf.c.orig	Thu Apr 26 23:37:31 2001
++++ src/aaprintf.c	Sat Mar  2 22:54:56 2002
+@@ -7,7 +7,7 @@
    char buf[1025];
    int i;
    va_start(args,fmt);
