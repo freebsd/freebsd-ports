@@ -1,0 +1,46 @@
+@comment $FreeBSD$
+bin/musicextras
+bin/musicextras-gui
+bin/musicextras-web
+%%RUBY_SITELIBDIR%%/musicextras/utils.rb
+%%RUBY_SITELIBDIR%%/musicextras/debuggable.rb
+%%RUBY_SITELIBDIR%%/musicextras/guicontrol.rb
+%%RUBY_SITELIBDIR%%/musicextras/mconfig.rb
+%%RUBY_SITELIBDIR%%/musicextras/dataaccessor.rb
+%%RUBY_SITELIBDIR%%/musicextras/accessordata.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicextrasrc.rb
+%%RUBY_SITELIBDIR%%/musicextras/album.rb
+%%RUBY_SITELIBDIR%%/musicextras/cache.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsite.rb
+%%RUBY_SITELIBDIR%%/musicextras/pusher.rb
+%%RUBY_SITELIBDIR%%/musicextras/artist.rb
+%%RUBY_SITELIBDIR%%/musicextras/song.rb
+%%RUBY_SITELIBDIR%%/musicextras/gui/ncursesgui.rb
+%%RUBY_SITELIBDIR%%/musicextras/gui/gui.rb
+%%RUBY_SITELIBDIR%%/musicextras/gui/textgui.rb
+%%RUBY_SITELIBDIR%%/musicextras/gui/gtkgui.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/lyricstime.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/allofmp3.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/_load_sites.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/plyrics.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/atame.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/allmusic.rb
+%%RUBY_SITELIBDIR%%/musicextras/musicsites/lyricsnet.rb
+share/musicextras/no_image.png
+share/musicextras/musicextras.glade
+share/musicextras/html/index.html
+share/musicextras/html/info.html
+share/musicextras/html/images/musicextras.gif
+share/musicextras/html/css/default.css
+share/musicextras/html/css/info.css
+share/locale/es/LC_MESSAGES/musicextras-gui.mo
+share/locale/es/LC_MESSAGES/musicextras.mo
+share/locale/de/LC_MESSAGES/musicextras-gui.mo
+share/locale/de/LC_MESSAGES/musicextras.mo
+@dirrm %%RUBY_SITELIBDIR%%/musicextras/musicsites
+@dirrm %%RUBY_SITELIBDIR%%/musicextras/gui
+@dirrm %%RUBY_SITELIBDIR%%/musicextras
+@dirrm share/musicextras/html/images
+@dirrm share/musicextras/html/css
+@dirrm share/musicextras/html
+@dirrm share/musicextras
