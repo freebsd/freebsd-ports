@@ -3390,6 +3390,7 @@ libglade	ports/devel/libglade
 libglade2	ports/devel/libglade2
 libgmp		src/gnu/lib/libgmp
 libgmp3		ports/math/libgmp3
+libgnomeui	ports/x11-toolkits/libgnomeui
 libgnugetopt	ports/devel/libgnugetopt
 libgnumalloc	src/lib/libgnumalloc
 libgrass5	ports/graphics/libgrass5
