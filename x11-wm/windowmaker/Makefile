@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 MAINTAINER=	handy@physics.montana.edu
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		gif.5:${PORTSDIR}/graphics/giflib \
+		ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--disable-debug
 
 MAN1=	geticonset.1x getstyle.1x seticons.1x setstyle.1x \
-	wdwrite.1x wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
+	wdwrite.1x wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
 
 DATAFILES=	WindowMaker-extra-0.1.tar.bz2
 
@@ -58,6 +58,10 @@ pre-extract:
 	${ECHO} "You can add hooks for Gnome and KDE by defining USE_GNOME and/or USE_KDE"
 .endif
 
+post-extract:
+	@cd ${WRKSRC} && \
+	${TAR} xfz libwmfun-0.0.2.tar.gz
+
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c \
 		${WRKSRC}/WindowMaker/Defaults/*
@@ -70,5 +74,6 @@ post-install:
 	@cd ${WRKDIR}/WindowMaker-extra-0.1; \
 		${MAKE} ${MAKE_ARGS} install
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
 
 .include <bsd.port.mk>
