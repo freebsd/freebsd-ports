@@ -305,6 +305,7 @@
     SUBDIR += wmeyes
     SUBDIR += wmfortune
     SUBDIR += wmminichess
+    SUBDIR += wmpuzzle
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
