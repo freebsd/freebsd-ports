@@ -1,0 +1,88 @@
+--- Makefile.orig	Sun Jul 23 11:00:40 1995
++++ Makefile	Sun Oct 11 23:07:08 1998
+@@ -23,17 +23,17 @@
+ #
+ #                       Mr A S R Ashley B.Eng (Hons)    23rd July 1995
+ 
+-      CC = gcc      
+-     CPP = g++
+-      RM = rm -f
++CC = gcc -O -I$(X11BASE)/include
++CPP = g++ -O -I$(X11BASE)/include
++RM = rm -f
+ 
+ DEPFILE  = Dependancies
+- SUBDIRS = ui MpegCodec editor xuseless
++SUBDIRS = ui MpegCodec editor xuseless
+ HEADERS  = 
+-SOURCES  = main.C globals/version.c
+-OBJS     = main.o globals/version.o
++SOURCES  = main.C globals/version.c 
++OBJS     = main.o globals/version.o 
+ ARCHIVES = editor/editor.a ui/ui.a MpegCodec/mpeg.a
+-    LIBS = -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
++    LIBS = -L$(X11BASE)/lib -L$(LOCALBASE)/lib -lXext -lX11 -lpnm -lppm -lpbm -lpgm -lm
+ #
+ #  CPPFLAGS     -Wall     all warnings
+ #               -pipe     speeds up compilation (remove only if not using g++)
+@@ -55,9 +55,9 @@
+ # PBMDIR         The location of the pbmplus header files, which is
+ #                /usr/include/gr on my Linux machine.
+ 
+-PBMDIR      = /usr/include/X11R5/X11
++PBMDIR      = $(LOCALBASE)/include
+ INCLUDES    = -Iglobals -Iui -IMpegCodec -IMpegCodec/decoder \
+-	      -IMpegCodec/encoder -Ieditor 
++	      -IMpegCodec/encoder -Ieditor -I$(X11BASE)/include
+ CPPFLAGS    = -Wall -pipe -O4
+ CFLAGS      = -Wall -pipe -O4
+ SHMEM	    = -DSH_MEM
+@@ -70,22 +70,27 @@
+ 
+ all: mpeg_edit
+ 
+-ui.a:
++install:
++	install -cs mpeg_edit $(PREFIX)/bin
++	mkdir -p $(PREFIX)/share/doc/mpeg_edit
++	install -c -m 644 README manual.ps $(PREFIX)/share/doc/mpeg_edit
++
++ui/ui.a:
+ 	cd ui && make ui.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
+ 	CFLAGS="$(CFLAGS)" && cd ..
+-	
+-mpeg.a:
++
++MpegCodec/mpeg.a:
+ 	cd MpegCodec && make mpeg.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
+ 	CFLAGS="$(CFLAGS)" CACHE_FLAGS="$(CACHE_FLAGS)" && cd ..
+-	
+-editor.a:
++
++editor/editor.a:
+ 	cd editor && make editor.a EXTRA="$(EXTRA)" CPPFLAGS="$(CPPFLAGS)" \
+ 	CFLAGS="$(CFLAGS)" SHMEM="$(SHMEM)" PBMDIR="$(PBMDIR)" && cd ..
+-	
+-mpeg_edit: ui.a mpeg.a editor.a $(DEPFILE) $(OBJS)  
++
++mpeg_edit: $(ARCHIVES) $(DEPFILE) $(OBJS)  
+ 	$(CPP) -o mpeg_edit $(OBJS) $(ARCHIVES) $(LIBS)
+ 
+-ppmtorle: mpeg.a editor.a $(DEPFILE) ppmtorle.o
++ppmtorle: MpegCodec/mpeg.a editor/editor.a $(DEPFILE) ppmtorle.o
+ 	$(CPP) -o ppmtorle ppmtorle.o MpegCodec/frame.o editor/yuv.o $(LIBS) 
+ 
+ globals/version.o:	$(ARCHIVES) 
+@@ -107,10 +112,10 @@
+ 
+ $(DEPFILE):
+ 	set -e; for i in $(SOURCES) ; do $(CPP) $(INCLUDES) -M $$i >>$(DEPFILE) ; done
+-	
++
+ #
+ # include a dependency file if one exists
+ #
+ #ifeq ($(DEPFILE),$(wildcard $(DEPFILE)))
+-include $(DEPFILE)
++#include $(DEPFILE)
+ #endif

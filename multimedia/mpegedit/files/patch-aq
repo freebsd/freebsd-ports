@@ -1,0 +1,69 @@
+--- editor/editor.C.orig	Sun Jun 18 04:27:07 1995
++++ editor/editor.C	Sat Apr  1 20:10:46 2000
+@@ -45,11 +45,14 @@
+ #include <stdio.h>
+ #include <time.h>
+ #include <unistd.h>
++#include <string.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+ #include <sys/wait.h>
++extern "C" {
+ #include "pbmplus.h"
+ #include "pnm.h"
++}
+ 
+ #define del(x) delete x; x = NULL;
+ 
+@@ -3249,17 +3252,17 @@
+       wins[0] = play_btn->WinId();
+       play_btn->RestrictEvents(wins,1);
+ 
+-      gettimeofday(&target,(timezone *)NULL);         // Time a read, to
++      gettimeofday(&target,(struct timezone *)NULL);         // Time a read, to
+       ret_stat = Codec_stream->Read(temp_frame);      // find out how long
+-      gettimeofday(&clk,(timezone *)NULL);            // it takes
++      gettimeofday(&clk,(struct timezone *)NULL);            // it takes
+ 
+       decode_delay = clk.tv_usec + 1000000*clk.tv_sec;
+       decode_delay -= target.tv_usec + 1000000*target.tv_sec;
+ 
+-      gettimeofday(&target,(timezone *)NULL);         // Time a dither, to
++      gettimeofday(&target,(struct timezone *)NULL);         // Time a dither, to
+       MajorWin.win->DisplayFrame(temp_frame,false);   // find out how long
+       time_win->SetTime(Codec_stream->GetPos_hms(),false);  // it takes
+-      gettimeofday(&clk,(timezone *)NULL);
++      gettimeofday(&clk,(struct timezone *)NULL);
+ 
+       dither_delay = clk.tv_usec + 1000000*clk.tv_sec;
+       dither_delay -= target.tv_usec + 1000000*target.tv_sec;
+@@ -3268,9 +3271,9 @@
+ 
+       for(int a=0; a<5; a++)
+ 	{
+-	  gettimeofday(&target,(timezone *)NULL);         // Time usleep, to
++	  gettimeofday(&target,(struct timezone *)NULL);         // Time usleep, to
+ 	  usleep(10000);                                  // find out how long
+-	  gettimeofday(&clk,(timezone *)NULL);            // it takes
++	  gettimeofday(&clk,(struct timezone *)NULL);            // it takes
+ 
+ 	  usleep_delay += clk.tv_usec + 1000000*clk.tv_sec - 10000;
+ 	  usleep_delay -= target.tv_usec + 1000000*target.tv_sec;
+@@ -3283,7 +3286,7 @@
+ 
+ // Calculate when the frame _should_ finish
+ 
+-	  gettimeofday(&target,(timezone *)NULL);
++	  gettimeofday(&target,(struct timezone *)NULL);
+ 	  target.tv_usec += usec_per_frame - dither_delay - decode_delay;
+ 	  if(target.tv_usec >= 1000000)
+ 	    {
+@@ -3299,7 +3302,7 @@
+ 
+ // See if we're ahead by more than a decode delay (for the next frame)
+ 
+-	  gettimeofday(&clk,(timezone *)NULL);
++	  gettimeofday(&clk,(struct timezone *)NULL);
+ 	  diff = target.tv_usec - clk.tv_usec;
+ 	  diff += 1000000*(target.tv_sec - clk.tv_sec);
+ 	  if(diff>usleep_delay)        // If we are ahead, sleep for a while
