@@ -6,14 +6,12 @@ URL:
 
 WWW: http://www.epkowa.co.jp/
 
-And then this port has a modified filter "filter900.rev" which is
-useful to print out more than one page. If you use it, you add the
-next entries into /etc/printcap.
+This port has a modified filter "filter900.rev" which is useful to
+print out more than one page. Then you execute the next command:
 
-pm900c|EPSON PM-900C:\
-        :lp=/dev/lpt0:\
-        :sh:\
-        :if=/usr/local/libexec/pips900/filter900.rev:\
-        :sd=/var/spool/lpd/pm900c:\
-        :mx#0:\
-        :lf=/var/log/lpd-errs
+/usr/local/libexec/pips900/setup
+
+to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
+
+To run with Japanese messages, you have to execute as follows:
+ env LANG=ja_JP pips900 -la JP
