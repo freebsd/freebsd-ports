@@ -22,6 +22,9 @@ APXS=		${LOCALBASE}/sbin/apxs
 
 AP_PORT?=       apache13
 .if exists(${APXS})
+APXS_WORKS!=	${APXS} -q TARGET 2>/dev/null || echo no
+.endif
+.if exists(${APXS}) && ${APXS_WORKS} != no
 AP_TARGET!=	${APXS} -q TARGET
 AP_SYSCONF!=	${APXS} -q SYSCONFDIR
 AP_INCLUDE!=	${APXS} -q INCLUDEDIR
