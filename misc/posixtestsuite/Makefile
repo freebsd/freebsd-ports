@@ -16,7 +16,6 @@ COMMENT=	Open POSIX Test Suite
 
 WRKSRC=		${WRKDIR}/posixtestsuite
 
-NO_CONFIGURE=	YES
 NO_BUILD=	YES
 NO_INSTALL=	YES
 NO_PACKAGE=	"Nothing to package"
@@ -73,18 +72,18 @@ help:	pre-everything
 
 aclean:	all
 	@${ECHO} "Cleaning tests tree..."
-	-@(cd ${WRKSRC} && rm -f ${RUN_RESULT} && gmake clean)
+	-@(cd ${WRKSRC} && ${RM} -f ${RUN_RESULT} && ${GMAKE} clean)
 
 rerun:	all
 .if defined(WITH_THRLIB)
-	echo ${THRLIB} > ${WRKSRC}/LDFLAGS
+	@${ECHO} ${THRLIB} > ${WRKSRC}/LDFLAGS
 .endif
 .if empty(THRLIB)
 	@${ECHO} "Running tests (against -lc) ..."
 .else
 	@${ECHO} "Running tests (against ${THRLIB}) ..."
 .endif
-	@(cd ${WRKSRC} && gmake all) ${THEPIPE} ${RUN_RESULT}
+	@(cd ${WRKSRC} && ${GMAKE} all) ${THEPIPE} ${RUN_RESULT}
 	@${ECHO} ""
 	@${ECHO} "Run output is stored into following files:"
 	@${ECHO} "  * short version: ${RUN_RESULT}"
@@ -96,6 +95,6 @@ regression:	run
 	@${ECHO} "Show regression log..."
 	@(cd ${WRKSRC} && diff -u ${FILESDIR}/${REGR_LOG} ${RUN_RESULT}) > ${LOCAL_REGR_LOG}
 	@[ -z ${LOCAL_REGR_LOG ] || ( ${ECHO} "No regression detected"; exit 0 )
-	@${ECHO} "Regression log stored at ${LOCAL_REGR_LOG}
+	@${ECHO} "Regression log stored at ${LOCAL_REGR_LOG}"
 
 .include <bsd.port.post.mk>
