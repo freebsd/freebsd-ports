@@ -762,8 +762,8 @@ share/locale/uk/LC_MESSAGES/gnumeric.mo
 share/locale/vi/LC_MESSAGES/gnumeric.mo
 share/locale/zh_CN/LC_MESSAGES/gnumeric.mo
 share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
-@dirrm share/locale/mr/LC_MESSAGES
-@dirrm share/locale/mr
+@unexec rmdir %D/share/locale/mr/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/mr 2> /dev/null || true
 @dirrm share/gnome/pixmaps/gnumeric
 @dirrm share/gnome/omf/gnumeric
 @dirrm share/gnome/gnumeric/%%VERSION%%/templates
