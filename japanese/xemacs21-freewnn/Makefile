@@ -7,6 +7,7 @@
 
 CATEGORIES=	japanese
 
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEmacs(stable version) text editor(SJ3, SKK and FreeWnn)
 
 MASTERDIR=	${.CURDIR}/../../editors/xemacs21-mule
