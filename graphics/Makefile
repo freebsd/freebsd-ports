@@ -60,6 +60,7 @@
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evas
+    SUBDIR += exiftags
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffmpeg
