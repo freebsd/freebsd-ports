@@ -349,6 +349,7 @@
     SUBDIR += vbsfilter
     SUBDIR += vm
     SUBDIR += vm-pop3d
+    SUBDIR += vmailmgr
     SUBDIR += vpopmail
     SUBDIR += vpopmail-stable
     SUBDIR += vqadmin

@@ -1,0 +1,48 @@
+bin/vpasswd2cdb
+bin/vrehash
+bin/listvdomain
+bin/vadduser
+bin/vaddusers
+bin/vchattr
+bin/vchforwards
+bin/vcheckquota
+bin/vdeliver
+bin/vdeluser
+bin/vpasswd
+bin/vpasswd2db
+bin/vpasswds
+bin/vpopbull
+bin/vsetup
+bin/allvpasswd2cdb
+bin/vaddalias
+bin/vconf2dir
+bin/vauthenticate
+bin/checkvpw
+bin/showvconfig
+cgi-bin/vpasswd
+cgi-bin/vadduser
+cgi-bin/vdeluser
+cgi-bin/vaddalias
+cgi-bin/vchattr
+cgi-bin/vchforwards
+cgi-bin/listvdomain
+etc/vmailmgr/default-username
+etc/vmailmgr/vdeliver-postdeliver
+lib/courier-imap/libexec/authlib/authvmailmgr
+sbin/vmailmgrd
+@dirrm etc/vmailmgr
+@cwd /var/qmail/service
+vmailmgrd/log/run
+vmailmgrd/run
+@unexec [ -e %D/vmailmgrd/log/supervise/control ] && rm %D/vmailmgrd/log/supervise/control
+@unexec [ -e %D/vmailmgrd/log/supervise/lock ] && rm %D/vmailmgrd/log/supervise/lock
+@unexec [ -e %D/vmailmgrd/log/supervise/ok ] && rm %D/vmailmgrd/log/supervise/ok
+@unexec [ -e %D/vmailmgrd/log/supervise/status ] && rm %D/vmailmgrd/log/supervise/status
+@unexec [ -e %D/vmailmgrd/log/supervise ] && rmdir %D/vmailmgrd/log/supervise
+@unexec [ -e %D/vmailmgrd/supervise/control ] && rm %D/vmailmgrd/supervise/control
+@unexec [ -e %D/vmailmgrd/supervise/lock ] && rm %D/vmailmgrd/supervise/lock
+@unexec [ -e %D/vmailmgrd/supervise/ok ] && rm %D/vmailmgrd/supervise/ok
+@unexec [ -e %D/vmailmgrd/supervise/status ] && rm %D/vmailmgrd/supervise/status
+@unexec [ -e %D/vmailmgrd/supervise ] && rmdir %D/vmailmgrd/supervise
+@dirrm vmailmgrd/log
+@dirrm vmailmgrd
