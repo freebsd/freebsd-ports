@@ -1,4 +1,5 @@
-Index: libaudio/audio.h
+--- libaudio/audio.h.orig	Fri Nov 12 11:35:21 1999
++++ libaudio/audio.h	Sat Dec 11 13:36:15 1999
 @@ -17,13 +17,15 @@
  |
  ****************************************************************************/
@@ -10,21 +11,18 @@ Index: libaudio/audio.h
  #define _audio_h
  
  #include <stdio.h>
-+#ifndef	__FreeBSD__
++#ifndef __FreeBSD__
  #include <malloc.h>
 +#endif
  #include <unistd.h>
  #include <fcntl.h>
  #include <limits.h>
-@@ -31,7 +33,11 @@
- #include <sys/types.h>
- #include <sys/stat.h>
+@@ -33,6 +35,8 @@
  #include <sys/ioctl.h>
-+#ifdef	__FreeBSD__
+ #ifdef __NetBSD__
+ #include <soundcard.h>
++#elif defined(__FreeBSD__)
 +#include <machine/soundcard.h>
-+#else
+ #else
  #include <sys/soundcard.h>
-+#endif
- 
- #ifdef __cplusplus
- extern "C"
+ #endif
