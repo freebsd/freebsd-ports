@@ -1,0 +1,78 @@
+hardcode perl to /usr/bin/perl
+
+--- configure.orig	Thu Sep 24 00:01:04 1998
++++ configure	Thu Sep 24 00:02:11 1998
+@@ -628,33 +628,34 @@
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+-for ac_prog in perl perl5 perl4
+-do
+-# Extract the first word of "$ac_prog", so it can be a program name with args.
+-set dummy $ac_prog; ac_word=$2
+-echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+-echo "configure:637: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_path_path_perl'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  case "$path_perl" in
+-  /*)
+-  ac_cv_path_path_perl="$path_perl" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
+-  for ac_dir in $PATH; do
+-    test -z "$ac_dir" && ac_dir=.
+-    if test -f $ac_dir/$ac_word; then
+-      ac_cv_path_path_perl="$ac_dir/$ac_word"
+-      break
+-    fi
+-  done
+-  IFS="$ac_save_ifs"
+-  ;;
+-esac
+-fi
+-path_perl="$ac_cv_path_path_perl"
++#for ac_prog in perl perl5 perl4
++#do
++## Extract the first word of "$ac_prog", so it can be a program name with args.
++#set dummy $ac_prog; ac_word=$2
++#echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
++#echo "configure:637: checking for $ac_word" >&5
++#if eval "test \"`echo '$''{'ac_cv_path_path_perl'+set}'`\" = set"; then
++#  echo $ac_n "(cached) $ac_c" 1>&6
++#else
++#  case "$path_perl" in
++#  /*)
++#  ac_cv_path_path_perl="$path_perl" # Let the user override the test with a path.
++#  ;;
++#  *)
++#  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS="${IFS}:"
++#  for ac_dir in $PATH; do
++#    test -z "$ac_dir" && ac_dir=.
++#    if test -f $ac_dir/$ac_word; then
++#      ac_cv_path_path_perl="$ac_dir/$ac_word"
++#      break
++#    fi
++#  done
++#  IFS="$ac_save_ifs"
++#  ;;
++#esac
++#fi
++#path_perl="$ac_cv_path_path_perl"
++path_perl=/usr/bin/perl
+ if test -n "$path_perl"; then
+   echo "$ac_t""$path_perl" 1>&6
+ else
+@@ -662,9 +663,8 @@
+ fi
+ 
+ test -n "$path_perl" && break
+-done
+-test -n "$path_perl" || path_perl="no"
+-
++#done
++#test -n "$path_perl" || path_perl="no"
+ 
+ echo $ac_n "checking whether ln -s works""... $ac_c" 1>&6
+ echo "configure:671: checking whether ln -s works" >&5
