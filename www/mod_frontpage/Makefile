@@ -44,7 +44,7 @@ PERL_CONFIGURE= yes
 
 pre-fetch:
 	@${ECHO}
-	@${ECHO} ******************************************************
+	@${ECHO} "*****************************************************"
 	@${ECHO} IMPORTANT
 	@${ECHO}
 	@${ECHO} This port still has some security issues. Some buffer
@@ -57,7 +57,7 @@ pre-fetch:
 	@${ECHO} FP_GID_MIN set correctly. If you think security is
 	@${ECHO} very important for you, you shouldn't run frontpage
 	@${ECHO} at all.
-	@${ECHO} ******************************************************
+	@${ECHO} "*****************************************************"
 	@${ECHO}
 	
 
