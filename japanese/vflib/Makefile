@@ -1,37 +1,26 @@
 # New ports collection makefile for:	jp-vflib
-# Version required:	2.22
+# Version required:	2.22 Patchlevel 9
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1997/03/03 09:00:04 asami Exp $
+# $Id: Makefile,v 1.7 1997/07/17 15:12:47 max Exp $
 #
 
-DISTNAME=	VFlib-2.22
-PKGNAME=	jp-vflib-2.22
+DISTNAME=	VFlib-2.22-PL8
+PKGNAME=	jp-vflib-2.22.9
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
-DISTFILES=	VFlib-2.22.tar.gz watanabe-vf.tar.Z \
-		VFlib-2.22-PATCH-1 VFlib-2.22-PATCH-2 \
-		VFlib-2.22-PATCH-3 VFlib-2.22-PATCH-4.updated
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} VFlib-2.22-Patch9 watanabe-vf.tar.Z
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
-EXTRACT_ONLY=	VFlib-2.22.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/VFlib-2.22pl8
 
 pre-patch:
-	@(cd ${WRKSRC}; \
-	 uudecode ${DISTDIR}/VFlib-2.22-PATCH-1 ; \
-	 cd tools ; \
-	 tar xzf ../ktestdiff.tar.gz ; \
-	 ${PATCH} -s < Imakefile.diff ; \
-	 ${PATCH} -s < ktest.diff ; \
-	 cd ../src ; \
-	 ${PATCH} -s < ${DISTDIR}/VFlib-2.22-PATCH-2 ; \
-	 ${PATCH} -s < ${DISTDIR}/VFlib-2.22-PATCH-3 )
-	(cd ${WRKSRC}; \
-	 uudecode ${DISTDIR}/VFlib-2.22-PATCH-4.updated ; \
-	 gzcat VF_FNTWV.patch.gz | ${PATCH} -s -p1  \
-	)
+	@(cd ${WRKSRC}/src; \
+	  ${PATCH} --forward --quiet -p0 -E < ${DISTDIR}/VFlib-2.22-Patch9 )
+
 
 do-build:
 	@(cd ${WRKSRC}/src; make)
@@ -45,7 +34,7 @@ do-install:
 	    ${PREFIX}/lib/VFlib)
 	@(cd ${WRKSRC}; \
 	  ${CP} -R doc jTeX COPYING README.txt.JP_EUC vfontcap \
-	    ${PREFIX}/lib/VFlib)
+	    vfontcap.bdf vfontcap.comp2 ${PREFIX}/lib/VFlib)
 	${MKDIR} ${PREFIX}/share/fonts/watanabe_font
 	tar -C ${PREFIX}/share/fonts/watanabe_font \
 	  -xzf ${DISTDIR}/watanabe-vf.tar.Z

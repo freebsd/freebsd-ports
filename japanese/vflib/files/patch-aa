@@ -1,5 +1,17 @@
-*** src/Makefile.orig	Tue Mar  4 14:50:27 1997
---- src/Makefile	Tue Mar  4 14:59:59 1997
+*** src/Makefile.orig	Fri Apr 25 13:14:25 1997
+--- src/Makefile	Fri Jul 25 05:40:39 1997
+***************
+*** 24,29 ****
+--- 24,32 ----
+  ### VFlib configurations
+  #-------------------------
+  
++ # Installation prefix.
++ PREFIX?= /usr/local
++ 
+  # Maximum of open files
+      OPENFILES = -DMAX_OPEN_FONT_FILES=6
+  
 ***************
 *** 32,38 ****
   #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
@@ -9,11 +21,11 @@
   
   # OS and Machine dependent compiling options
   #  Define __MSDOS__ (e.g., CCOPT=-D__MSDOS__) if you compile VFlib on MS-DOS
---- 32,38 ----
+--- 35,41 ----
   #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
   
   # VFontcap file
-!         VFCAP = -DDEFAULT_VFCAP=\"/usr/local/lib/VFlib/vfontcap\"
+!         VFCAP = -DDEFAULT_VFCAP=\"${PREFIX}/lib/VFlib/vfontcap\"
   
   # OS and Machine dependent compiling options
   #  Define __MSDOS__ (e.g., CCOPT=-D__MSDOS__) if you compile VFlib on MS-DOS
@@ -26,7 +38,7 @@
   
      LDFLAGS = $(LDOPT)
     SYS_LIBS = -lm
---- 45,51 ----
+--- 48,54 ----
   # Compilers, compiling options, etc.
   #-------------------------
           CC = cc
@@ -35,24 +47,28 @@
      LDFLAGS = $(LDOPT)
     SYS_LIBS = -lm
 ***************
-*** 62,68 ****
+*** 60,68 ****
   #-------------------------
-  INSTALL_LIBDIR=/usr/local/lib
-  INSTALL_INCDIR=/usr/local/include
+  # Installation Directories
+  #-------------------------
+! INSTALL_LIBDIR=/usr/local/lib
+! INSTALL_INCDIR=/usr/local/include
 ! INSTALL_BINDIR=/usr/local/etc
   
   
   
---- 62,68 ----
+--- 63,71 ----
   #-------------------------
-  INSTALL_LIBDIR=/usr/local/lib
-  INSTALL_INCDIR=/usr/local/include
-! INSTALL_BINDIR=/usr/local/lib/VFlib
+  # Installation Directories
+  #-------------------------
+! INSTALL_LIBDIR=${PREFIX}/lib
+! INSTALL_INCDIR=${PREFIX}/include
+! INSTALL_BINDIR=${PREFIX}/lib/VFlib
   
   
   
 ***************
-*** 82,111 ****
+*** 82,112 ****
   #endif
   
   default:
@@ -70,20 +86,21 @@
   	$(CP) bdfindex $(INSTALL_BINDIR)/bdfindex
   
   clean:
-! 	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex *.o core
+  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex fwindex bdfjpindex \
+! 		   *.o core
   veryclean:
-  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex\
+  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex fwindex bdfjpindex\
 ! 	           *.o core *~ \#tz* 
   
   
   # Font drivers
   DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
-  	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Null.o
-  
+  	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Comp2.o VF_Null.o
+! 
   
   # VFlib
   libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
---- 82,123 ----
+--- 85,119 ----
   #endif
   
   default:
@@ -103,32 +120,38 @@
 + 	$(CP) fwindex $(INSTALL_BINDIR)/fwindex
   
   clean:
-! 	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex *.o core \
-! 		*.so libVFlib.so.2.22
+  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex fwindex bdfjpindex \
+! 		   *.o core *.so libVFlib.so.2.22
   veryclean:
-  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex\
-! 	           *.o core *~ \#tz*  \
-! 		*.so libVFlib.so.2.22
+  	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex fwindex bdfjpindex\
+! 	           *.o core *~ \#tz* *.so libVFlib.so.2.22
   
   
   # Font drivers
   DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
-  	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Null.o
-  
-+ DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
-+ 	   VF_Comp.so VF_BitOp.so VF_FNTWV.so VF_Null.so
-+ 
-+ 
-+ # VFlib
-+ libVFlib.so.2.22:	VFlib.so VFenc.so VFEtable.so VFcap.so fn2ent.so fman.so $(DRV_SOBJ)
-+ 	$(LD) -x -Bshareable -o libVFlib.so.2.22 \
-+ 		VFlib.so VFenc.so VFEtable.so VFcap.so fn2ent.so fman.so $(DRV_SOBJ)
+  	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Comp2.o VF_Null.o
+!   
+! DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
+! 	   VF_Comp.so VF_BitOp.so VF_FNTWV.so VF_Comp2.so VF_Null.so
   
   # VFlib
   libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
 ***************
-*** 168,173 ****
---- 180,259 ----
+*** 116,121 ****
+--- 123,132 ----
+  	$(CP) libVFlib.a VFlib.a
+  	-$(RANLIB) VFlib.a
+  
++ libVFlib.so.2.22:	VFlib.so VFenc.so VFEtable.so VFcap.so fn2ent.so fman.so $(DRV_SOBJ)
++ 	$(LD) -x -Bshareable -o libVFlib.so.2.22 \
++ 	VFlib.so VFenc.so VFEtable.so VFcap.so fn2ent.so fman.so $(DRV_SOBJ)
++ 
+  # VFlib
+  VFlib.o:  	VFlib.c
+  	$(CC) $(CFLAGS) $(USEFSLIB)  -c VFlib.c
+***************
+*** 169,174 ****
+--- 180,263 ----
   # Null font driver
   VF_Null.o:  	VF_Null.c
   	$(CC) $(CFLAGS)  -c VF_Null.c
@@ -193,6 +216,10 @@
 + # Composite font driver
 + VF_Comp.so:  	VF_Comp.c
 + 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Comp.c -o $(.TARGET)
++ 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
++ # Composite font driver
++ VF_Comp2.so:  	VF_Comp2.c
++ 	$(CC) -fpic -DPIC $(CFLAGS)  -c VF_Comp2.c -o $(.TARGET)
 + 	$(LD) -O $(.TARGET) -x -r $(.TARGET)
 + # Bit-Operated font driver
 + VF_BitOp.so:  	VF_BitOp.c
