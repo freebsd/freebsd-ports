@@ -268,10 +268,10 @@
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Class-MethodMaker
-    SUBDIR += p5-ConfigReader
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tom
     SUBDIR += p5-Config-IniFiles
+    SUBDIR += p5-ConfigReader
     SUBDIR += p5-Curses
     SUBDIR += p5-Data-Compare
     SUBDIR += p5-Data-Flow
@@ -279,8 +279,8 @@
     SUBDIR += p5-Date-Calc
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-DateConvert
-    SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-DProf
+    SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Dialog
@@ -393,11 +393,11 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-ncurses
-    SUBDIR += qtarch
     SUBDIR += py-omniorb
     SUBDIR += py-orbit
     SUBDIR += pychecker
     SUBDIR += qt-designer
+    SUBDIR += qtarch
     SUBDIR += qtez
     SUBDIR += qtk
     SUBDIR += re2c
