@@ -10,4 +10,4 @@ with - and consist of only one character) can be handled. For standards
 about short and long options you may want to take a look at the GNU Coding
 Standards.
 
-WWW: http://www.gnu.org/software/gengetopt/gengetopt.html
+WWW: http://www.gnu.org/software/gengetopt/
