@@ -18,7 +18,7 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	GNU Compiler Collection
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	alpha i386
 USE_BZIP2=	yes
 
 LATEST_LINK=	gcc295
@@ -28,6 +28,10 @@ LATEST_LINK=	gcc295
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} = alpha
+WITHOUT_CPU_CFLAGS=	yes
+.endif
 
 .if ${OSVERSION} >= 500039
 WITHOUT_CPU_CFLAGS=	yes
