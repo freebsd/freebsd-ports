@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.34 1996/11/26 08:26:40 asami Exp $
+# $Id: Makefile,v 1.35 1997/03/06 08:41:37 asami Exp $
 #
 
     SUBDIR += asedit
@@ -13,7 +13,6 @@
     SUBDIR += mule
     SUBDIR += nedit
     SUBDIR += nvi
-    SUBDIR += scitext
     SUBDIR += uemacs
     SUBDIR += uzap
     SUBDIR += vile
