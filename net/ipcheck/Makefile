@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	ipcheck
-PORTVERSION=	0.198
+PORTVERSION=	0.200
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
 MASTER_SITE_SUBDIR=	lioux
+DISTNAME=	${PORTNAME}.${PORTVERSION:S/^0.//}
+EXTRACT_SUFX=
+EXTRACT_ONLY=
 
 MAINTAINER=	lioux@FreeBSD.org
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -30,12 +31,11 @@ pre-everything::
 .endif
 
 do-patch:
-	@${REINPLACE_CMD} \
+	@${SED} \
 		-e "s!/usr/bin/python!${LOCALBASE}/bin/python!" \
 		-e "s!ppp0!tun0!" \
-			${WRKDIR}/ipcheck.py
-
+		${DISTDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/ipcheck.py ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}.py
 
 .include <bsd.port.mk>
