@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,9 +18,9 @@ LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
-		--with-lzo-headers=${LOCALBASE}/include \
-		--program-transform-name="s/x/x/"
+		--with-lzo-headers=${LOCALBASE}/include
 
 MAN8=		openvpn.8
 
