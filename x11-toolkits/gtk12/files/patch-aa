@@ -1,36 +1,65 @@
---- Makefile.in.orig	Tue Sep 22 11:47:07 1998
-+++ Makefile.in	Tue Nov 17 22:36:30 1998
-@@ -97,7 +97,7 @@
+--- Makefile.in.orig	Fri Dec 11 14:20:23 1998
++++ Makefile.in	Sat Dec 12 11:35:00 1998
+@@ -100,9 +100,9 @@
+ xinput_progs = @xinput_progs@
+ 
  SRC_SUBDIRS = gdk gtk
- SUBDIRS = $(SRC_SUBDIRS) docs
+-SUBDIRS = $(SRC_SUBDIRS) docs
++SUBDIRS = $(SRC_SUBDIRS)
  
 -bin_SCRIPTS = gtk-config
-+bin_SCRIPTS = gtk11-config
++bin_SCRIPTS = gtk11d-config
  
  EXTRA_DIST =	\
  	HACKING		\
-@@ -179,7 +179,7 @@
+@@ -187,7 +187,7 @@
  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = config.h
 -CONFIG_CLEAN_FILES =  gtk-config
-+CONFIG_CLEAN_FILES =  gtk11-config
++CONFIG_CLEAN_FILES =  gtk11d-config
  SCRIPTS =  $(bin_SCRIPTS)
  
  DATA =  $(m4data_DATA)
-@@ -232,7 +232,10 @@
+@@ -240,7 +240,10 @@
  	-rm -f config.h
  
  maintainer-clean-hdr:
 -gtk-config: $(top_builddir)/config.status gtk-config.in
-+gtk11-config.in: gtk-config.in
-+	cp gtk-config.in gtk11-config.in
++gtk11d-config.in: gtk-config.in
++	cp gtk-config.in gtk11d-config.in
 +
-+gtk11-config: $(top_builddir)/config.status gtk11-config.in
++gtk11d-config: $(top_builddir)/config.status gtk11d-config.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
  
  install-binSCRIPTS: $(bin_SCRIPTS)
-@@ -412,7 +415,7 @@
+@@ -262,25 +265,6 @@
+ 	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+-install-m4dataDATA: $(m4data_DATA)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
+-	@list='$(m4data_DATA)'; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(m4datadir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(m4datadir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(m4datadir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(m4datadir)/$$p; \
+-	  fi; fi; \
+-	done
+-
+-uninstall-m4dataDATA:
+-	@$(NORMAL_UNINSTALL)
+-	list='$(m4data_DATA)'; for p in $$list; do \
+-	  rm -f $(DESTDIR)$(m4datadir)/$$p; \
+-	done
+-
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
+ # To change the values of `make' variables: instead of editing Makefiles,
+@@ -420,21 +404,19 @@
  all-recursive-am: config.h
  	$(MAKE) all-recursive
  
@@ -39,8 +68,16 @@
  
  install-exec-am: install-binSCRIPTS
  
-@@ -426,7 +429,7 @@
- install-data: install-data-recursive install-data-am
+-install-data-am: install-m4dataDATA
+-
+-uninstall-am: uninstall-binSCRIPTS uninstall-m4dataDATA
++uninstall-am: uninstall-binSCRIPTS
+ 
+ install-exec: install-exec-recursive install-exec-am
+ 	@$(NORMAL_INSTALL)
+ 
+-install-data: install-data-recursive install-data-am
++install-data: install-data-recursive
  	@$(NORMAL_INSTALL)
  
 -install: install-recursive install-exec-am install-data-am
@@ -48,139 +85,170 @@
  	@:
  
  uninstall: uninstall-recursive uninstall-am
---- gdk/Makefile.in.orig	Tue Sep 22 11:47:10 1998
-+++ gdk/Makefile.in	Tue Nov 17 22:42:44 1998
-@@ -96,9 +96,9 @@
+@@ -482,15 +464,15 @@
+ 	-rm -f config.status
+ 
+ .PHONY: mostlyclean-hdr distclean-hdr clean-hdr maintainer-clean-hdr \
+-uninstall-binSCRIPTS install-binSCRIPTS uninstall-m4dataDATA \
+-install-m4dataDATA install-data-recursive uninstall-data-recursive \
++uninstall-binSCRIPTS install-binSCRIPTS \
++install-data-recursive uninstall-data-recursive \
+ install-exec-recursive uninstall-exec-recursive installdirs-recursive \
+ uninstalldirs-recursive all-recursive check-recursive \
+ installcheck-recursive info-recursive dvi-recursive \
+ mostlyclean-recursive distclean-recursive clean-recursive \
+ maintainer-clean-recursive tags tags-recursive mostlyclean-tags \
+ distclean-tags clean-tags maintainer-clean-tags distdir info dvi \
+-installcheck all-recursive-am all-am install-exec-am install-data-am \
++installcheck all-recursive-am all-am install-exec-am \
+ uninstall-am install-exec install-data install uninstall all \
+ installdirs mostlyclean-generic distclean-generic clean-generic \
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+--- gdk/Makefile.in.orig	Fri Dec 11 14:20:26 1998
++++ gdk/Makefile.in	Sat Dec 12 11:42:19 1998
+@@ -101,7 +101,7 @@
  
  gdkincludedir = $(includedir)/gdk
  
 -lib_LTLIBRARIES = libgdk.la
-+lib_LTLIBRARIES = libgdk11.la
++lib_LTLIBRARIES = libgdk11d.la
+ 
+ INCLUDES = \
+ 	-DG_LOG_DOMAIN=\"Gdk\"	\
+@@ -113,7 +113,7 @@
+ 	@GLIB_CFLAGS@		\
+ 	@x_cflags@ 
  
 -libgdk_la_SOURCES = \
-+libgdk11_la_SOURCES = \
++libgdk11d_la_SOURCES = \
  	gdk.c		\
  	gdkcc.c		\
  	gdkcolor.c	\
-@@ -140,8 +140,8 @@
+@@ -156,8 +156,8 @@
  	gdktypes.h	\
  	gdkx.h
  
 -libgdk_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE) \
-+libgdk11_la_LDFLAGS = \
-+	-version-info 1:2:0 \
++libgdk11d_la_LDFLAGS = \
++	-version-info 1:0:0 \
           @x_ldflags@ @x_libs@
  
- INCLUDES = -I$(top_srcdir) @GLIB_CFLAGS@ @x_cflags@ 
-@@ -174,8 +174,8 @@
+ EXTRA_PROGRAMS = gxid
+@@ -184,8 +184,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
 -libgdk_la_LIBADD = 
 -libgdk_la_OBJECTS =  gdk.lo gdkcc.lo gdkcolor.lo gdkcursor.lo gdkdnd.lo \
-+libgdk11_la_LIBADD = 
-+libgdk11_la_OBJECTS =  gdk.lo gdkcc.lo gdkcolor.lo gdkcursor.lo gdkdnd.lo \
- gdkdraw.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkimage.lo gdkinput.lo \
- gdkpixmap.lo gdkproperty.lo gdkrgb.lo gdkrectangle.lo gdkregion.lo \
- gdkselection.lo gdkthreads.lo gdkvisual.lo gdkwindow.lo gdkxid.lo \
-@@ -198,8 +198,8 @@
++libgdk11d_la_LIBADD = 
++libgdk11d_la_OBJECTS =  gdk.lo gdkcc.lo gdkcolor.lo gdkcursor.lo gdkdnd.lo \
+ gdkdraw.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkim.lo gdkimage.lo \
+ gdkinput.lo gdkpixmap.lo gdkproperty.lo gdkrgb.lo gdkrectangle.lo \
+ gdkregion.lo gdkselection.lo gdkthreads.lo gdkvisual.lo gdkwindow.lo \
+@@ -208,8 +208,8 @@
  
  TAR = tar
  GZIP = --best
 -SOURCES = $(libgdk_la_SOURCES) $(gxid_SOURCES)
 -OBJECTS = $(libgdk_la_OBJECTS) $(gxid_OBJECTS)
-+SOURCES = $(libgdk11_la_SOURCES) $(gxid_SOURCES)
-+OBJECTS = $(libgdk11_la_OBJECTS) $(gxid_OBJECTS)
++SOURCES = $(libgdk11d_la_SOURCES) $(gxid_SOURCES)
++OBJECTS = $(libgdk11d_la_OBJECTS) $(gxid_OBJECTS)
  
  all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
  
-@@ -276,8 +276,8 @@
+@@ -286,8 +286,8 @@
  
  maintainer-clean-libtool:
  
 -libgdk.la: $(libgdk_la_OBJECTS) $(libgdk_la_DEPENDENCIES)
 -	$(LINK) -rpath $(libdir) $(libgdk_la_LDFLAGS) $(libgdk_la_OBJECTS) $(libgdk_la_LIBADD) $(LIBS)
-+libgdk11.la: $(libgdk11_la_OBJECTS) $(libgdk11_la_DEPENDENCIES)
-+	$(LINK) -rpath $(libdir) $(libgdk11_la_LDFLAGS) $(libgdk11_la_OBJECTS) $(libgdk11_la_LIBADD) $(LIBS)
++libgdk11d.la: $(libgdk11d_la_OBJECTS) $(libgdk11d_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgdk11d_la_LDFLAGS) $(libgdk11d_la_OBJECTS) $(libgdk11d_la_LIBADD) $(LIBS)
  
  mostlyclean-binPROGRAMS:
  
---- gtk/Makefile.in.orig	Tue Sep 22 11:47:15 1998
-+++ gtk/Makefile.in	Tue Nov 17 22:43:07 1998
-@@ -98,9 +98,9 @@
+--- gtk/Makefile.in.orig	Fri Dec 11 14:20:27 1998
++++ gtk/Makefile.in	Sat Dec 12 11:35:00 1998
+@@ -103,7 +103,7 @@
  
  gtkincludedir = $(includedir)/gtk
  
 -lib_LTLIBRARIES = libgtk.la
-+lib_LTLIBRARIES = libgtk11.la
++lib_LTLIBRARIES = libgtk11d.la
+ 
+ static_sources = \
+ 	gtkaccelgroup.c		\
+@@ -214,7 +214,7 @@
+ 	fnmatch.c		\
+ 	fnmatch.h
  
 -libgtk_la_SOURCES = \
-+libgtk11_la_SOURCES = \
- 	gtkaccelgroup.c		\
- 	gtkaccellabel.c		\
- 	gtkadjustment.c		\
-@@ -329,8 +329,8 @@
- # special remake rules
- # makeenums.h: @REBUILD@ gtk.h gtkprivate.h
++libgtk11d_la_SOURCES = \
+ 	$(static_sources)	\
+ 	gtkmarshal.c
+ 
+@@ -351,8 +351,8 @@
+ 	../gdk/gdktypes.h \
+ 	../gdk/gdkrgb.h
  
 -libgtk_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
-+libgtk11_la_LDFLAGS = \
-+	-version-info 1:2:0
++libgtk11d_la_LDFLAGS = \
++	-version-info 1:0:0
  
  EXTRA_DIST = \
  	line-arrow.xbm 		\
-@@ -367,12 +367,12 @@
- noinst_PROGRAMS = testgtk testinput testselection testthreads testrgb simple 
+@@ -400,12 +400,12 @@
+ noinst_PROGRAMS = testgtk testinput testselection testthreads testrgb testdnd simple 
  
  DEPS =	\
 -	libgtk.la					\
 -	$(top_builddir)/gdk/libgdk.la
-+	libgtk11.la					\
-+	$(top_builddir)/gdk/libgdk11.la
++	libgtk11d.la					\
++	$(top_builddir)/gdk/libgdk11d.la
  
  LDADDS = \
 -	libgtk.la					\
 -	$(top_builddir)/gdk/libgdk.la			\
-+	libgtk11.la					\
-+	$(top_builddir)/gdk/libgdk11.la			\
++	libgtk11d.la					\
++	$(top_builddir)/gdk/libgdk11d.la			\
  	@x_ldflags@					\
  	@x_libs@					\
  	@GLIB_LIBS@                                     \
-@@ -405,8 +405,8 @@
+@@ -440,8 +440,8 @@
  X_LIBS = @X_LIBS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
  X_PRE_LIBS = @X_PRE_LIBS@
 -libgtk_la_LIBADD = 
 -libgtk_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
-+libgtk11_la_LIBADD = 
-+libgtk11_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
++libgtk11d_la_LIBADD = 
++libgtk11d_la_OBJECTS =  gtkaccelgroup.lo gtkaccellabel.lo gtkadjustment.lo \
  gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
- gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcheckbutton.lo \
- gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo gtkcombo.lo \
-@@ -461,10 +461,10 @@
+ gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcalendar.lo \
+ gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo \
+@@ -501,10 +501,10 @@
  
  TAR = tar
  GZIP = --best
--SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c simple.c
--OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o simple.o
-+SOURCES = $(libgtk11_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c simple.c
-+OBJECTS = $(libgtk11_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o simple.o
+-SOURCES = $(libgtk_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c testdnd.c simple.c
+-OBJECTS = $(libgtk_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o testdnd.o simple.o
++SOURCES = $(libgtk11d_la_SOURCES) testgtk.c testinput.c testselection.c testthreads.c testrgb.c testdnd.c simple.c
++OBJECTS = $(libgtk11d_la_OBJECTS) testgtk.o testinput.o testselection.o testthreads.o testrgb.o testdnd.o simple.o
  
 -all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
 +all: Makefile $(LTLIBRARIES) $(HEADERS)
  
  .SUFFIXES:
  .SUFFIXES: .S .c .lo .o .s
-@@ -541,8 +541,8 @@
+@@ -581,8 +581,8 @@
  
  maintainer-clean-libtool:
  
 -libgtk.la: $(libgtk_la_OBJECTS) $(libgtk_la_DEPENDENCIES)
 -	$(LINK) -rpath $(libdir) $(libgtk_la_LDFLAGS) $(libgtk_la_OBJECTS) $(libgtk_la_LIBADD) $(LIBS)
-+libgtk11.la: $(libgtk11_la_OBJECTS) $(libgtk11_la_DEPENDENCIES)
-+	$(LINK) -rpath $(libdir) $(libgtk11_la_LDFLAGS) $(libgtk11_la_OBJECTS) $(libgtk11_la_LIBADD) $(LIBS)
++libgtk11d.la: $(libgtk11d_la_OBJECTS) $(libgtk11d_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libgtk11d_la_LDFLAGS) $(libgtk11d_la_OBJECTS) $(libgtk11d_la_LIBADD) $(LIBS)
  
  mostlyclean-noinstPROGRAMS:
  
