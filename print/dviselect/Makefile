@@ -7,6 +7,7 @@
 
 PORTNAME=	dviselect
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
@@ -20,10 +21,4 @@ SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 
 MAN1=		dviselect.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
