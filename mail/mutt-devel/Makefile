@@ -42,6 +42,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.27
+PORTREVISION=	1
 PATCH_VERSION=	1.3.26
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
@@ -123,6 +124,7 @@ WITH_MUTT_IMAP=	yes
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
+BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .if defined(USE_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(USE_NCURSES) && ${OSVERSION} < 400000
@@ -131,9 +133,6 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
 .if defined(WITH_MUTT_SSL)
 USE_OPENSSL=	yes
-.endif
-.if defined(WITH_MUTT_HTML)
-BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 .endif
 .if defined(WITH_MUTT_NNTP)
 BUILD_DEPENDS+=	${LOCALBASE}/news/bin/inews:${PORTSDIR}/news/inn-stable
@@ -847,10 +846,6 @@ post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-.if defined(WITH_MUTT_HTML)
-post-patch::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-html
-.endif
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
@@ -858,8 +853,8 @@ post-install:
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && \
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
-		../ABOUT-NLS ../contrib/language* \
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt manual.latin1 \
+		PGP-Notes.txt ../ABOUT-NLS ../contrib/language* \
 		${PREFIX}/share/doc/mutt
 .if defined(WITH_MUTT_NNTP)
 	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp \

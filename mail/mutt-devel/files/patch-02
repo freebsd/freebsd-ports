@@ -1,16 +1,38 @@
 --- doc/Makefile.in.orig	Tue Nov  6 20:12:31 2001
-+++ doc/Makefile.in	Tue Jan 15 17:22:04 2002
-@@ -60,7 +60,7 @@
++++ doc/Makefile.in	Tue Jan 22 20:47:07 2002
+@@ -60,13 +60,19 @@
  topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
  	README NEWS TODO README.SECURITY README.SSL 
  
 -all: muttrc.man try-html try-txt
-+all: 
++all: muttrc.man try-html try-txt try-latin1
  
  try-html: ../makedoc
- 	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
-@@ -86,10 +86,10 @@
- 		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	rm -f *.html && $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	touch $@
+ 
+ try-txt: ../makedoc
+-	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++	touch $@
++
++try-latin1: 
++	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
++	touch $@
+ 
+ install: all instdoc
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
+@@ -80,16 +86,16 @@
+ 	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/mbox.5
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
+ 	for f in $(srcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
++	 	$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+ 	done
+ 	for f in $(topsrcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
++	 	$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
  	done
  	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
@@ -24,3 +46,26 @@
  
  uninstall:
  	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
+@@ -99,14 +105,18 @@
+ 
+ check:
+ manual.txt: manual.sgml
+-	if sgml2txt -c latin manual ; then \
+-		uniq < manual.txt | expand > _manual.txt ; \
+-		rm manual.txt ; \
++	if sgmlfmt -f ascii manual; then \
++		uniq < manual.ascii | expand > _manual.txt ; \
++		rm -f manual.txt manual.ascii; \
+ 		mv _manual.txt manual.txt ;\
+ 	fi
+ 
+ manual.html: manual.sgml
+-	sgml2html manual  || true
++	@# sgml2html manual  || true
++	sgmlfmt -f html manual  || true
++
++manual.latin1: manual.sgml
++	sgmlfmt -f latin1 manual  || true
+ 
+ manual.ps: manual.sgml
+ 	sgml2latex --output=ps manual || true
