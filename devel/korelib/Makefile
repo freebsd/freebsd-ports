@@ -7,26 +7,23 @@
 
 PORTNAME=	korelib
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
-MASTER_SITES=	http://host33.ipowerweb.com/~smga3000/thekompany/Korelib/
+MASTER_SITES=	http://www.smga3000.com/thekompany/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform C++ library for developing modular applications
 
-USE_KDELIBS_VER=3
-USE_AUTOMAKE_VER=	14
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
+USE_GMAKE=	yes
+USE_AUTOMAKE_VER=	14
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
+INSTALLS_SHLIB=	yes
 
-pre-configure:
-	${REINPLACE_CMD} -e "s@-g -O2@${CXXFLAGS}@g; s@-O2@${CFLAGS}@g" \
-		${WRKSRC}/configure ${WRKSRC}/*/Makefile.in ${WRKSRC}/*/*/Makefile.in
-	${REINPLACE_CMD} -e "s@autoheader@autoheader213@" ${WRKSRC}/aclocal.m4
-
-post-install:
-	${RM} -f ${PREFIX}/lib/libkore.la
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.am" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|include kore demo|include kore|g ; \
+		 s|= -g -O2 -Wall|= @CXXFLAGS@|g'
 
 .include <bsd.port.mk>
