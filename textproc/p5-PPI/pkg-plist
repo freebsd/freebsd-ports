@@ -1,0 +1,85 @@
+%%SITE_PERL%%/PPI.pm
+%%SITE_PERL%%/PPI/Document.pm
+%%SITE_PERL%%/PPI/Document/Fragment.pm
+%%SITE_PERL%%/PPI/Document/Normalized.pm
+%%SITE_PERL%%/PPI/Dumper.pm
+%%SITE_PERL%%/PPI/Element.pm
+%%SITE_PERL%%/PPI/Find.pm
+%%SITE_PERL%%/PPI/Lexer.pm
+%%SITE_PERL%%/PPI/Node.pm
+%%SITE_PERL%%/PPI/Normal.pm
+%%SITE_PERL%%/PPI/Normal/Standard.pm
+%%SITE_PERL%%/PPI/Statement.pm
+%%SITE_PERL%%/PPI/Statement/Break.pm
+%%SITE_PERL%%/PPI/Statement/Compound.pm
+%%SITE_PERL%%/PPI/Statement/Data.pm
+%%SITE_PERL%%/PPI/Statement/End.pm
+%%SITE_PERL%%/PPI/Statement/Expression.pm
+%%SITE_PERL%%/PPI/Statement/Include.pm
+%%SITE_PERL%%/PPI/Statement/Null.pm
+%%SITE_PERL%%/PPI/Statement/Package.pm
+%%SITE_PERL%%/PPI/Statement/Scheduled.pm
+%%SITE_PERL%%/PPI/Statement/Sub.pm
+%%SITE_PERL%%/PPI/Statement/Unknown.pm
+%%SITE_PERL%%/PPI/Statement/UnmatchedBrace.pm
+%%SITE_PERL%%/PPI/Statement/Variable.pm
+%%SITE_PERL%%/PPI/Structure.pm
+%%SITE_PERL%%/PPI/Structure/Block.pm
+%%SITE_PERL%%/PPI/Structure/Condition.pm
+%%SITE_PERL%%/PPI/Structure/Constructor.pm
+%%SITE_PERL%%/PPI/Structure/ForLoop.pm
+%%SITE_PERL%%/PPI/Structure/List.pm
+%%SITE_PERL%%/PPI/Structure/Subscript.pm
+%%SITE_PERL%%/PPI/Structure/Unknown.pm
+%%SITE_PERL%%/PPI/Token.pm
+%%SITE_PERL%%/PPI/Token/ArrayIndex.pm
+%%SITE_PERL%%/PPI/Token/Attribute.pm
+%%SITE_PERL%%/PPI/Token/Cast.pm
+%%SITE_PERL%%/PPI/Token/Comment.pm
+%%SITE_PERL%%/PPI/Token/DashedWord.pm
+%%SITE_PERL%%/PPI/Token/Data.pm
+%%SITE_PERL%%/PPI/Token/End.pm
+%%SITE_PERL%%/PPI/Token/HereDoc.pm
+%%SITE_PERL%%/PPI/Token/Label.pm
+%%SITE_PERL%%/PPI/Token/Magic.pm
+%%SITE_PERL%%/PPI/Token/Number.pm
+%%SITE_PERL%%/PPI/Token/Operator.pm
+%%SITE_PERL%%/PPI/Token/Pod.pm
+%%SITE_PERL%%/PPI/Token/Prototype.pm
+%%SITE_PERL%%/PPI/Token/Quote.pm
+%%SITE_PERL%%/PPI/Token/Quote/Double.pm
+%%SITE_PERL%%/PPI/Token/Quote/Interpolate.pm
+%%SITE_PERL%%/PPI/Token/Quote/Literal.pm
+%%SITE_PERL%%/PPI/Token/Quote/Single.pm
+%%SITE_PERL%%/PPI/Token/QuoteLike.pm
+%%SITE_PERL%%/PPI/Token/QuoteLike/Backtick.pm
+%%SITE_PERL%%/PPI/Token/QuoteLike/Command.pm
+%%SITE_PERL%%/PPI/Token/QuoteLike/Readline.pm
+%%SITE_PERL%%/PPI/Token/QuoteLike/Regexp.pm
+%%SITE_PERL%%/PPI/Token/QuoteLike/Words.pm
+%%SITE_PERL%%/PPI/Token/Regexp.pm
+%%SITE_PERL%%/PPI/Token/Regexp/Match.pm
+%%SITE_PERL%%/PPI/Token/Regexp/Substitute.pm
+%%SITE_PERL%%/PPI/Token/Regexp/Transliterate.pm
+%%SITE_PERL%%/PPI/Token/Separator.pm
+%%SITE_PERL%%/PPI/Token/Structure.pm
+%%SITE_PERL%%/PPI/Token/Symbol.pm
+%%SITE_PERL%%/PPI/Token/Unknown.pm
+%%SITE_PERL%%/PPI/Token/Whitespace.pm
+%%SITE_PERL%%/PPI/Token/Word.pm
+%%SITE_PERL%%/PPI/Token/_QuoteEngine.pm
+%%SITE_PERL%%/PPI/Token/_QuoteEngine/Full.pm
+%%SITE_PERL%%/PPI/Token/_QuoteEngine/Simple.pm
+%%SITE_PERL%%/PPI/Tokenizer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI/.packlist
+@dirrm %%SITE_PERL%%/PPI/Token/_QuoteEngine
+@dirrm %%SITE_PERL%%/PPI/Token/QuoteLike
+@dirrm %%SITE_PERL%%/PPI/Token/Regexp
+@dirrm %%SITE_PERL%%/PPI/Token/Quote
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/PPI 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PPI/Statement 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PPI/Structure 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PPI/Document 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PPI/Normal 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PPI/Token 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/PPI 2>/dev/null || true
