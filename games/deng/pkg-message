@@ -1,0 +1,10 @@
+******************************************************************************
+Now you can start playing Doomsday!
+All three games Doom, Heretic and Hexen could be launched with one executable.
+A quick start command could be:
+	%%PREFIX%%/bin/doomsday -g ${game} -f ${path_to_game_wad}
+where
+	game - could be jdoom, jheretic or jhexen;
+	path_to_game_wad - path to game main wad file.
+Check documentation in %%DOCSDIR%% for other options.
+******************************************************************************

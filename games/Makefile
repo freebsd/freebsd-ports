@@ -94,6 +94,7 @@
     SUBDIR += d2x
     SUBDIR += deal
     SUBDIR += defendguin
+    SUBDIR += deng
     SUBDIR += digger-vgl
     SUBDIR += dmjava
     SUBDIR += dodgindiamond2
