@@ -1,0 +1,18 @@
+VRweb is a browser for VRML 1.0.
+
+VRweb homepage is:
+	http://www.iicm.edu/vrweb/
+
+VRML sample files in:
+	http://www.iicm.edu/vrml
+
+You need texture files for some samples. Get
+http://www.iicm.edu/0x811b9908_0x002e3f24
+http://www.iicm.edu/0x811b9908_0x002e3c4a
+
+and untar them in your directory.
+
+tar xzvf 0x811b9908_0x002e3f24
+tar xzvf 0x811b9908_0x002e3c4a
+
+WWW: http://www.iicm.edu/vrweb/
