@@ -7,6 +7,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	2.3.1.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/tripwire/
 DISTNAME=	tripwire-2.3.1-2
