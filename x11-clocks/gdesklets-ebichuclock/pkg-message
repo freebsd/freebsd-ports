@@ -1,0 +1,9 @@
+
+To list displays installed by this port:
+
+    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%
+
+To add this desklet to your desktop:
+
+    gdesklets %%PREFIX%%/share/gnome/gdesklets/Displays/%%NAME%%/<name>.display
+

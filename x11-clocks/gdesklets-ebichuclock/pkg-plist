@@ -1,0 +1,11 @@
+share/gnome/gdesklets/Displays/ebichuclock/README
+share/gnome/gdesklets/Displays/ebichuclock/ebichuclock-happy.display
+share/gnome/gdesklets/Displays/ebichuclock/ebichuclock-pie.display
+share/gnome/gdesklets/Displays/ebichuclock/ebichuclock-xface.display
+share/gnome/gdesklets/Displays/ebichuclock/ebichuclock.display
+share/gnome/gdesklets/Displays/ebichuclock/gfx/ebichu0.png
+share/gnome/gdesklets/Displays/ebichuclock/gfx/ebichu1.png
+share/gnome/gdesklets/Displays/ebichuclock/gfx/ebichu2.png
+share/gnome/gdesklets/Displays/ebichuclock/gfx/ebichuclock.png
+@dirrm share/gnome/gdesklets/Displays/ebichuclock/gfx
+@dirrm share/gnome/gdesklets/Displays/ebichuclock
