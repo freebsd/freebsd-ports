@@ -7,13 +7,14 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	2.50
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/devel/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	DougB@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
@@ -36,8 +37,7 @@ MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
 		Mail::SpamAssassin::PersistentAddrList.3 \
 		Mail::SpamAssassin::PerMsgLearner.3 \
-		Mail::SpamAssassin::Bayes.3 \
-		Mail::SpamAssassin::BayesStore.3
+		Mail::SpamAssassin::Bayes.3
 MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn-nonspam.1 \
 		sa-learn-spam.1 sa-learn-rebuild.1 sa-forget.1
@@ -46,6 +46,10 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples//${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
+.for file in Makefile.PL build/preprocessor.pm
+	@${CP} ${WRKSRC}/${file} ${WRKSRC}/${file}.orig
+	@${SED} -e 's#::Post545##' ${WRKSRC}/${file}.orig > ${WRKSRC}/${file}
+.endfor
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
 post-install:
@@ -53,12 +57,11 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh-dist
 
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
 	cd ${WRKSRC} ; ${INSTALL_DATA} \
-	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
-	    spamd/README* sql/spamassassin.sql \
-	    ${DOCSDIR}
+	BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
+		spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
