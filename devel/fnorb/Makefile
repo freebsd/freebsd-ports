@@ -7,6 +7,7 @@
 
 PORTNAME=	fnorb
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.fnorb.org/download/ \
 		ftp://ftp.dstc.edu.au/DSTC/fnorb/
@@ -22,7 +23,7 @@ do-configure:
 	@ (cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 	  Makefile.pre.in boot)
 
-FNORB_DIR=	${PYTHON_LIBDIR}/site-packages/Fnorb
+FNORB_DIR=	${PYTHON_SITELIBDIR}/Fnorb
 FNORB_SHAREDIR=	${PREFIX}/share/fnorb
 FNORB_DOCDIR=	${PREFIX}/share/doc/fnorb
 
@@ -30,6 +31,8 @@ post-install:
 	@ ${MKDIR} ${FNORB_DIR}
 	@ (cd ${WRKSRC}/../ && find *.py compiler cos orb parser \
 	  | cpio --quiet -pdum -R ${BINOWN}:${BINGRP} ${FNORB_DIR})
+	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${FNORB_DIR}
+	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${FNORB_DIR}
 	@ ${MKDIR} ${FNORB_SHAREDIR}
 	@ (cd ${WRKSRC}/../ && find script examples \! -name \*.bat \
 	  | cpio --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${FNORB_SHAREDIR})
