@@ -40,8 +40,10 @@ NO_BUILD=	yes
 BINDIR=		${PREFIX}/distributed.net
 LIBDIR=		${PREFIX}/etc/rc.d
 
-CLIENTUID=	nobody
-CLIENTGID=	daemon
+CLIENTUSER=	dnetc
+CLIENTUID=	26
+CLIENTGROUP=	${CLIENTUSER}
+CLIENTGID=	${CLIENTUID}
 
 SBINMODE=	700
 BINMODE=	700
@@ -49,23 +51,27 @@ BINMODE=	700
 MAN1=		dnetc.1
 
 do-configure:
-	if [ ! -f ${PREFIX}/dnetc.ini ]; then \
+	@if [ ! -f ${PREFIX}/dnetc.ini ]; then \
 		${INSTALL} -c -m 644 ${FILESDIR}/dnetc.ini ${WRKSRC}; \
 	fi
 
+pre-install:
+	@${ECHO} "==>  Creating custom user to run dnetc..."
+	${PKGINSTALL} ${PKGNAME} PRE-INSTALL "${CLIENTUSER}" "${CLIENTUID}" "${CLIENTGROUP}" "${CLIENTGID}"
+
 do-install:
-	if [ ! -d ${BINDIR} ]; then \
+	@if [ ! -d ${BINDIR} ]; then \
 		${MKDIR} ${BINDIR}; \
 	fi
 
-	${INSTALL} -c -m ${SBINMODE} -o ${CLIENTUID} -g ${CLIENTGID} ${WRKSRC}/dnetc ${BINDIR}
+	${INSTALL} -c -m ${SBINMODE} -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKSRC}/dnetc ${BINDIR}
 
 	${SED} s#CHANGETHIS#${BINDIR}# < ${FILESDIR}/dnetc.sh > ${WRKSRC}/dnetc.sh.pathnames
 	${INSTALL} -c -m ${SBINMODE} ${WRKSRC}/dnetc.sh.pathnames ${LIBDIR}/dnetc.sh
 
 	${INSTALL_DATA} ${FILESDIR}/INFO ${BINDIR}
 
-	${CHOWN} ${CLIENTUID}:${CLIENTGID} ${BINDIR}
+	${CHOWN} ${CLIENTUSER}:${CLIENTGROUP} ${BINDIR}
 	${CHMOD} 775 ${BINDIR}
 
 	if [ ! -f ${BINDIR}/dnetc.sh ]; then \
@@ -73,7 +79,7 @@ do-install:
 	fi
 
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
-	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKDIR}/dnetc.ini ${BINDIR}/dnetc.ini.default
+	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKDIR}/dnetc.ini ${BINDIR}/dnetc.ini.default
 .if !exists(${BINDIR}/dnetc.ini)
 	@echo ""
 	@echo ""
@@ -89,7 +95,7 @@ do-install:
 	@echo ""
 	@echo ""
 	@echo ""
-	${INSTALL} -c -m 644 -o ${CLIENTUID} -g ${CLIENTGID} ${WRKDIR}/dnetc.ini ${BINDIR}
+	${INSTALL} -c -m 644 -o ${CLIENTUSER} -g ${CLIENTGROUP} ${WRKDIR}/dnetc.ini ${BINDIR}
 .endif
 
 .include <bsd.port.post.mk>
