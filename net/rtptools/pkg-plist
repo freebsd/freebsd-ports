@@ -1,0 +1,8 @@
+bin/rtpdump
+bin/rtpplay
+bin/rtpsend
+bin/rtptrans
+share/doc/rtptools/README
+share/doc/rtptools/CHANGES.html
+share/doc/rtptools/rtptools.html
+@dirrm share/doc/rtptools

@@ -1,0 +1,69 @@
+Index: rtp.h
+--- 1.1.1.2	1997/12/17 03:37:05
++++ rtp.h	1997/12/17 04:26:01
+@@ -93,13 +93,18 @@
+ #define RTCP_VALID_MASK (0xc000 | 0x2000 | 0xfe)
+ #define RTCP_VALID_VALUE ((RTP_VERSION << 14) | RTCP_SR)
+ 
++#define	RTCP_FRACTION(x)	(((x) >> 24) & 0xFF)
++#define	RTCP_LOST(x)		((((x) & 0xFFFFFF) < 0x800000) ? \
++					((x) & 0xFFFFFF) \
++					: (((x) & 0xFFFFFF) - 0x1000000))
++
+ /*
+  * Reception report block
+  */
+ typedef struct {
+     u_int32 ssrc;             /* data source being reported */
+-    unsigned int fraction:8;  /* fraction lost since last SR/RR */
+-    int lost:24;              /* cumul. no. pkts lost (signed!) */
++    u_int32 fraclost;	      /* fraction lost since last SR/RR and */
++			      /* cumul. no. pkts lost (signed!) */
+     u_int32 last_seq;         /* extended last seq. no. received */
+     u_int32 jitter;           /* interarrival jitter */
+     u_int32 lsr;              /* last SR packet from this source */
+===================================================================
+Index: rtpdump.c
+--- 1.1.1.2	1997/12/17 03:37:07
++++ rtpdump.c	1997/12/17 04:26:00
+@@ -395,10 +395,10 @@
+           ntohl(r->r.sr.psent),
+         ntohl(r->r.sr.osent));
+         for (i = 0; i < r->common.count; i++) {
+-          printf("  (ssrc=%0lx fraction=%g lost=%lu last_seq=%lu jit=%lu lsr=%lu dlsr=%lu)\n",
++          printf("  (ssrc=0x%lx fraction=%g lost=%ld last_seq=%lu jit=%lu lsr=%lu dlsr=%lu)\n",
+            ntohl(r->r.sr.rr[i].ssrc),
+-           r->r.sr.rr[i].fraction / 256.,
+-           ntohl(r->r.sr.rr[i].lost), /* XXX I'm pretty sure this is wrong */
++           RTCP_FRACTION(ntohl(r->r.sr.rr[i].fraclost)) / 256.,
++           RTCP_LOST(ntohl(r->r.sr.rr[i].fraclost)),
+            ntohl(r->r.sr.rr[i].last_seq),
+            ntohl(r->r.sr.rr[i].jitter),
+            ntohl(r->r.sr.rr[i].lsr),
+@@ -412,10 +412,10 @@
+           ntohl(r->r.rr.ssrc), r->common.p, r->common.count,
+ 	       ntohs(r->common.length));
+         for (i = 0; i < r->common.count; i++) {
+-          printf("(ssrc=%0lx fraction=%g lost=%lu last_seq=%lu jit=%lu lsr=%lu dlsr=%lu)\n",
++          printf("  (ssrc=0x%lx fraction=%g lost=%ld last_seq=%lu jit=%lu lsr=%lu dlsr=%lu)\n",
+            ntohl(r->r.rr.rr[i].ssrc),
+-           r->r.rr.rr[i].fraction / 256.,
+-           ntohl(r->r.rr.rr[i].lost),
++           RTCP_FRACTION(ntohl(r->r.rr.rr[i].fraclost)) / 256.,
++           RTCP_LOST(ntohl(r->r.rr.rr[i].fraclost)),
+            ntohl(r->r.rr.rr[i].last_seq),
+            ntohl(r->r.rr.rr[i].jitter),
+            ntohl(r->r.rr.rr[i].lsr),
+===================================================================
+Index: rtpsend.c
+--- 1.1.1.2	1997/12/17 03:37:11
++++ rtpsend.c	1997/12/17 04:25:11
+@@ -599,6 +599,8 @@
+ 
+   if (optind < argc) {
+     if (hpt(argv[optind], (struct sockaddr *)&sin, &ttl) < 0) usage(argv[0]);
++  } else {
++    usage(argv[0]);
+   }
+ 
+   /* create/connect sockets */
