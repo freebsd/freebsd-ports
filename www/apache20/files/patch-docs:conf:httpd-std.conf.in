@@ -1,5 +1,5 @@
 --- docs/conf/httpd-std.conf.in.orig	Sat Apr 24 20:13:43 2004
-+++ docs/conf/httpd-std.conf.in	Sun Jul 25 11:37:58 2004
++++ docs/conf/httpd-std.conf.in	Tue Aug 17 12:11:17 2004
 @@ -68,7 +68,7 @@
  #
  <IfModule !mpm_netware.c>
@@ -34,7 +34,7 @@
  </Directory>
  
  #
-@@ -365,8 +366,11 @@
+@@ -365,24 +366,29 @@
  # UserDir: The name of the directory that is appended onto a user's home
  # directory if a ~user request is received.
  #
@@ -46,15 +46,36 @@
  #
  # Control access to UserDir directories.  The following is an example
  # for a site where these directories are restricted to read-only.
-@@ -384,6 +388,8 @@
- #    </LimitExcept>
- #</Directory>
- 
-+</IfModule>
+ #
+-#<Directory /home/*/public_html>
+-#    AllowOverride FileInfo AuthConfig Limit Indexes
+-#    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+-#    <Limit GET POST OPTIONS PROPFIND>
+-#        Order allow,deny
+-#        Allow from all
+-#    </Limit>
+-#    <LimitExcept GET POST OPTIONS PROPFIND>
+-#        Order deny,allow
+-#        Deny from all
+-#    </LimitExcept>
+-#</Directory>
++<Directory /home/*/public_html>
++    AllowOverride FileInfo AuthConfig Limit Indexes
++    Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
++    <Limit GET POST OPTIONS PROPFIND>
++        Order allow,deny
++        Allow from all
++    </Limit>
++    <LimitExcept GET POST OPTIONS PROPFIND>
++        Order deny,allow
++        Deny from all
++    </LimitExcept>
++</Directory>
 +
++</IfModule>
+ 
  #
  # DirectoryIndex: sets the file that Apache will serve if a directory
- # is requested.
 @@ -472,7 +478,7 @@
  # logged here.  If you *do* define an error logfile for a <VirtualHost>
  # container, that host's errors will be logged there and not here.
