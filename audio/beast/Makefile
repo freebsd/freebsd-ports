@@ -35,6 +35,16 @@ CONFIGURE_ARGS=		--disable-debug \
 MAN1=			beast.1 bsesh.1 sfidl.1
 MAN3=			beast-gxk.3 bse-procs.3 bse-structs.3 bse.3 sfi.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=			"Configure fails on ia64"
+.endif
+
+.if ${ARCH} == "alpha"
+BROKEN=			"Does not build on alpha"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|(bseladspapath=)\$${libdir}/ladspa|\1"${LOCALBASE}/lib/ladspa"|' \
@@ -44,4 +54,4 @@ post-patch:
 		${WRKSRC}/bse/Makefile.in \
 		${WRKSRC}/bse/zintern/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
