@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/
 

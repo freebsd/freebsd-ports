@@ -10,6 +10,14 @@ share/gaim/pixmaps/bold.xpm
 share/gaim/pixmaps/buddyadd.xpm
 share/gaim/pixmaps/buddychat.xpm
 share/gaim/pixmaps/buddydel.xpm
+share/gaim/pixmaps/daemon-buddyadd.xpm
+share/gaim/pixmaps/daemon-buddychat.xpm
+share/gaim/pixmaps/daemon-buddydel.xpm
+share/gaim/pixmaps/daemon-im.xpm
+share/gaim/pixmaps/daemon-info.xpm
+share/gaim/pixmaps/daemon-permadd.xpm
+share/gaim/pixmaps/daemon-permdel.xpm
+share/gaim/pixmaps/daemon.xpm
 share/gaim/pixmaps/dt_icon.xpm
 share/gaim/pixmaps/free_icon.xpm
 share/gaim/pixmaps/im.xpm
