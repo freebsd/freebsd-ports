@@ -3,7 +3,7 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:32:18 asami Exp $
+# $Id: Makefile,v 1.8 1997/12/25 22:29:42 asami Exp $
 #
 
 DISTNAME=	hexcalc
@@ -15,5 +15,6 @@ EXTRACT_SUFX=	..tar.Z
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
+MAN1=		hexcalc.1
 
 .include <bsd.port.mk>
