@@ -13,6 +13,7 @@
     SUBDIR += br-ispell
     SUBDIR += british-ispell
     SUBDIR += c2html
+    SUBDIR += ca-aspell
     SUBDIR += catdoc
     SUBDIR += cbedic
     SUBDIR += cdif
