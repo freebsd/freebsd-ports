@@ -27,6 +27,7 @@ pre-configure:
 		${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 do-install:
+	@${MKDIR} -p ${PREFIX}/lib/aout
 	cd ${WRKSRC}; \
 	for l in $$(ls lib*); do \
 		${SETENV} OBJFORMAT=${PORTOBJFORMAT} \
