@@ -25,4 +25,12 @@ MANPREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
 do-configure:
 	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
 
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/examples/Gateway
+.for file in listgate listgate.m4 listgate.readme raccmod raccpost racrmod
+	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${PREFIX}/share/examples/Gateway
+.endfor
+.endif
+
 .include <bsd.port.mk>
