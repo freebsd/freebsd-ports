@@ -1,13 +1,13 @@
 # New ports collection makefile for:	msql2
-# Version required:	2.0b4
+# Version required:	2.0b6
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
 # $Id$
 #
 
-DISTNAME=	msql-2.0-B4
-PKGNAME=	msql-2.0b4
+DISTNAME=	msql-2.0-B6
+PKGNAME=	msql-2.0b6
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.worldone.com/pub/msql/ \
 		http://www2.nerosworld.com/msql/ \
@@ -21,12 +21,17 @@ RESTRICTED=	"restrictive copyright (no commercial use)"
 
 MAKE_ENV+=	WRKSRC=${WRKSRC}
 
+# Uncomment this if you're upgrading from <= b4 to >= b5 and have already
+# dumped your databases (or just build with -DOVERWRITE_DB)
+#OVERWRITE_DB=	YES
+
 do-configure:
 		cd ${WRKSRC}; make target
 		cd ${WRKSRC}/targets/freebsd; sh setup
 		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/customize_scripts
 
 pre-install:
+		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/check_old_version
 		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
 
 post-install:
