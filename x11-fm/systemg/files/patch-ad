@@ -1,0 +1,44 @@
+--- programs/systemg/Make.header.orig	Mon Oct  4 19:52:16 1999
++++ programs/systemg/Make.header	Wed Jun 14 23:56:30 2000
+@@ -19,7 +19,7 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I- \
++SEARCHDIRS = -I- \
+               -I${CODEDIR} \
+ 	     	  -I${BINDINGSDIR} \
+ 			  -I${TREEDIR} \
+@@ -27,7 +27,8 @@
+               -I${JCOREDIR} \
+               -I${JXDIR} \
+               -I${MENUIMGDIR} \
+-              -I${ACE_ROOT}
++              -I${ACE_ROOT} \
++		${J_X11_INCLUDE_DIR}
+ 
+ # other constants
+ 
+@@ -44,13 +45,6 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.so 
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.a 
+-endif
+ 
+ # make variables
+ 
+@@ -66,7 +60,7 @@
+ #####
+ 
+ .PHONY : default
+-default: libs systemg
++default: systemg
+ 
+ .PHONY : Makefiles
+ Makefiles:
