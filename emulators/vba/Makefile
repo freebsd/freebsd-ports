@@ -51,19 +51,16 @@ pre-everything::
 do-install:
 	${INSTALL} -d ${TARGET_DIR}
 	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR}
-
-.if !exists (${PREFIX}/bin/VisualBoyAdvance.cfg)
-	${INSTALL_DATA} ${DATA_FILES} ${TARGET_DIR}
-.endif
+	${CP} ${DATA_FILES} ${DATA_FILES}-default
+	${INSTALL_DATA} ${DATA_FILES}-default ${TARGET_DIR}
 
 post-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-
 .for filename in ${DOC_FILES}
 	${INSTALL_MAN} ${WRKSRC}/${filename} ${DOCSDIR}
 .endfor
-
 .endif
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
