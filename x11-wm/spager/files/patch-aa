@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Jun  5 12:39:44 2000
++++ Makefile	Mon Jun  5 12:39:52 2000
+@@ -21,7 +21,7 @@
+ CC = gcc
+ 
+ spager: spager.c 
+-	$(CC) -O6 -Wall `gtk-config --cflags`  spager.c -o spager `gtk-config --libs`
++	$(CC) -O6 -Wall `gtk12-config --cflags`  spager.c -o spager `gtk12-config --libs`
+ 
+ clean: 
+ 	rm -f *.o spager
