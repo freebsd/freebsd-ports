@@ -1,0 +1,14 @@
+--- ogg123/buffer.c.orig	Tue Feb 27 14:57:30 2001
++++ ogg123/buffer.c	Tue Feb 27 14:58:25 2001
+@@ -14,7 +14,11 @@
+ #include <fcntl.h>
+ 
+ #ifndef DARWIN
++#ifdef __FreeBSD__
++#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
+ #endif
+ 
+ #include "ogg123.h"

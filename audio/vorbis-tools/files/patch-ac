@@ -1,0 +1,11 @@
+--- ogg123/Makefile.in.orig	Mon Feb 26 12:02:14 2001
++++ ogg123/Makefile.in	Tue Feb 27 15:02:56 2001
+@@ -85,7 +85,7 @@
+ bin_PROGRAMS = ogg123
+ docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+ doc_DATA = ogg123rc-example
+-mandir = $(datadir)/man
++mandir = $(prefix)/man
+ man_MANS = ogg123.1
+ 
+ INCLUDES = @OGG_CFLAGS@ @VORBIS_CFLAGS@ @AO_CFLAGS@
