@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.19
-PORTREVISION=	4
+PORTVERSION=	1.3.20
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/
@@ -24,7 +23,7 @@ CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
 		--with-sharedir=${PREFIX}/share/mutt \
 		--with-docdir=${PREFIX}/share/doc/mutt \
 		--sysconfdir=${PREFIX}/etc \
-		--with-iconv=${PREFIX}
+		--with-libiconv-prefix=${PREFIX}
 
 .include <bsd.port.pre.mk>
 
@@ -250,7 +249,7 @@ PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
 .elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_RU_PATCH) && defined(WITH_MUTT_QUOTE_PATCH)
+	!defined(WITH_MUTT_RU_PATCH) && !defined(WITH_MUTT_QUOTE_PATCH)
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -258,7 +257,7 @@ PLIST_SUB+=	SUB_ADD_D="@comment "
 PLIST_SUB+=	SUB_ADD_E="@comment "
 PLIST_SUB+=	SUB_ADD_F="@comment "
 PLIST_SUB+=	SUB_ADD_G="@comment "
-.else
+.else # patches
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "

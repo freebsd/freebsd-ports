@@ -5,7 +5,7 @@
  #include "pgp.h"
  #include "charset.h"
 -#include "iconv.h"
-+#include "giconv.h"
++#include <giconv.h>
  
  /* for hexval */
  #include "mime.h"

@@ -1,0 +1,11 @@
+--- intl/gettextP.h.orig	Thu Jun  7 22:00:05 2001
++++ intl/gettextP.h	Wed Jul 25 08:06:39 2001
+@@ -25,7 +25,7 @@
+ # include "../iconv/gconv_int.h"
+ #else
+ # if HAVE_ICONV
+-#  include <iconv.h>
++#  include <giconv.h>
+ # endif
+ #endif
+ 
