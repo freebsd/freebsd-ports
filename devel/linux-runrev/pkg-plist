@@ -1,0 +1,168 @@
+bin/revolution
+share/Revolution-1.1.1/Databases/libclntsh.so
+share/Revolution-1.1.1/Databases/libmysqlclient.so
+share/Revolution-1.1.1/Databases/libodbc.so
+share/Revolution-1.1.1/External SDK/External Tutorial.rev
+share/Revolution-1.1.1/External SDK/MCexternalPreComp
+share/Revolution-1.1.1/External SDK/MCexternalPreComp68K.pch
+share/Revolution-1.1.1/External SDK/MCexternalPreCompCarbon.pch
+share/Revolution-1.1.1/External SDK/MCexternalPreCompPPC.pch
+share/Revolution-1.1.1/External SDK/Makefile
+share/Revolution-1.1.1/External SDK/README.rtf
+share/Revolution-1.1.1/External SDK/XCmdFunc.c
+share/Revolution-1.1.1/External SDK/XCmdGlue.c
+share/Revolution-1.1.1/External SDK/XCmdGlue.h
+share/Revolution-1.1.1/External SDK/XCmdName.h
+share/Revolution-1.1.1/External SDK/XtGlue.c
+share/Revolution-1.1.1/External SDK/XtTemplate.c
+share/Revolution-1.1.1/External SDK/external Data/Basic Toolbox FAT/TargetDataMacOS.tdt
+share/Revolution-1.1.1/External SDK/external Data/CWSettingsMacOS.stg
+share/Revolution-1.1.1/External SDK/external Data/MCexternal68K/TargetDataMacOS.tdt
+share/Revolution-1.1.1/External SDK/external Data/MCexternalCarbon/TargetDataMacOS.tdt
+share/Revolution-1.1.1/External SDK/external Data/MCexternalPPC/TargetDataMacOS.tdt
+share/Revolution-1.1.1/External SDK/external.c
+share/Revolution-1.1.1/External SDK/external.def
+share/Revolution-1.1.1/External SDK/external.dsp
+share/Revolution-1.1.1/External SDK/external.dsw
+share/Revolution-1.1.1/External SDK/external.h
+share/Revolution-1.1.1/External SDK/external.proj
+share/Revolution-1.1.1/LicenseAgreement
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime - FreeHand
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime Mac.eps
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime PC.eps
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black - FreeHand
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black 1-bit.pct
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black 8-bit.pct
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black 8-bit.png
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black Mac.eps
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black PC.eps
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black.gif
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime black.swf
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime small PC.eps
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime small mac.eps
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime small.gif
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime small.pct
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime small.png
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime small.swf
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime.gif
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime.pct
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime.png
+share/Revolution-1.1.1/Made With Logos/Graphics/Runtime.swf
+share/Revolution-1.1.1/Made With Logos/logo.pdf
+share/Revolution-1.1.1/ReadMeFirst
+share/Revolution-1.1.1/components/assistants/revanimation.rev
+share/Revolution-1.1.1/components/global environment/revabout.rev
+share/Revolution-1.1.1/components/global environment/revcursors.rev
+share/Revolution-1.1.1/components/global environment/revdb
+share/Revolution-1.1.1/components/global environment/revdb.dll
+share/Revolution-1.1.1/components/global environment/reviconchooser.rev
+share/Revolution-1.1.1/components/global environment/revlibrary.rev
+share/Revolution-1.1.1/components/global environment/revmaccursors.rev
+share/Revolution-1.1.1/components/global environment/revpagesetup.rev
+share/Revolution-1.1.1/components/global environment/revprinterchooser.rev
+share/Revolution-1.1.1/components/global environment/revrulersh.rev
+share/Revolution-1.1.1/components/global environment/revrulersv.rev
+share/Revolution-1.1.1/components/global environment/revsearch.rev
+share/Revolution-1.1.1/components/help/Appendixes/revcolornames.rev
+share/Revolution-1.1.1/components/help/Appendixes/revemacskeybindings.rev
+share/Revolution-1.1.1/components/help/Appendixes/revmemoryandlimits.rev
+share/Revolution-1.1.1/components/help/Appendixes/revoperatorprecedence.rev
+share/Revolution-1.1.1/components/help/Appendixes/revregularexpressionsyntax.rev
+share/Revolution-1.1.1/components/help/Appendixes/revsupportedplatforms.rev
+share/Revolution-1.1.1/components/help/revdictionary.rev
+share/Revolution-1.1.1/components/help/revdocumentation.rev
+share/Revolution-1.1.1/components/help/revencyclopedia.rev
+share/Revolution-1.1.1/components/help/revglossary.rev
+share/Revolution-1.1.1/components/help/revhowto.rev
+share/Revolution-1.1.1/components/help/revlicensing.rev
+share/Revolution-1.1.1/components/help/revmenureference.rev
+share/Revolution-1.1.1/components/help/revquickref.rev
+share/Revolution-1.1.1/components/help/revshortcutsreference.rev
+share/Revolution-1.1.1/components/help/revsupport.rev
+share/Revolution-1.1.1/components/help/revtips.rev
+share/Revolution-1.1.1/components/help/revusingthestarterkit.rev
+share/Revolution-1.1.1/components/help/revwhy.rev
+share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data/Test Data.txt
+share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data/images/Fernando.jpg
+share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data/images/Joe.jpg
+share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data/images/Karen.jpg
+share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data/images/Lavonne.jpg
+share/Revolution-1.1.1/components/help/tutorials/exercises/employee database.rev
+share/Revolution-1.1.1/components/help/tutorials/modules/revTutorialAnim.rev
+share/Revolution-1.1.1/components/help/tutorials/modules/revtutorialgeometry.rev
+share/Revolution-1.1.1/components/help/tutorials/modules/revtutorialindep.rev
+share/Revolution-1.1.1/components/help/tutorials/modules/revtutorialmenu.rev
+share/Revolution-1.1.1/components/help/tutorials/modules/revtutorialprofile.rev
+share/Revolution-1.1.1/components/help/tutorials/modules/revtutorialstart.rev
+share/Revolution-1.1.1/components/properties palettes/revaudioclip.rev
+share/Revolution-1.1.1/components/properties palettes/revbasic.rev
+share/Revolution-1.1.1/components/properties palettes/revbutton.rev
+share/Revolution-1.1.1/components/properties palettes/revcard.rev
+share/Revolution-1.1.1/components/properties palettes/revcolors.rev
+share/Revolution-1.1.1/components/properties palettes/revcustom.rev
+share/Revolution-1.1.1/components/properties palettes/revemptypropertiesshell.rev
+share/Revolution-1.1.1/components/properties palettes/reveps.rev
+share/Revolution-1.1.1/components/properties palettes/revfield.rev
+share/Revolution-1.1.1/components/properties palettes/revgraphic.rev
+share/Revolution-1.1.1/components/properties palettes/revgroup.rev
+share/Revolution-1.1.1/components/properties palettes/revimage.rev
+share/Revolution-1.1.1/components/properties palettes/revinks.rev
+share/Revolution-1.1.1/components/properties palettes/revpatterns.rev
+share/Revolution-1.1.1/components/properties palettes/revplayer.rev
+share/Revolution-1.1.1/components/properties palettes/revpropertiesshell.rev
+share/Revolution-1.1.1/components/properties palettes/revscript.rev
+share/Revolution-1.1.1/components/properties palettes/revscriptmenus.rev
+share/Revolution-1.1.1/components/properties palettes/revscrollbar.rev
+share/Revolution-1.1.1/components/properties palettes/revstack.rev
+share/Revolution-1.1.1/components/properties palettes/revtext.rev
+share/Revolution-1.1.1/components/properties palettes/revvideoclip.rev
+share/Revolution-1.1.1/components/save/revgeneralicons.rev
+share/Revolution-1.1.1/components/save/revgeneralpatterns.rev
+share/Revolution-1.1.1/components/save/revpreferences.rev
+share/Revolution-1.1.1/components/save/sessionlog.txt
+share/Revolution-1.1.1/components/save/userobjects/revdefaultlibrary.rev
+share/Revolution-1.1.1/components/tools/revalign.rev
+share/Revolution-1.1.1/components/tools/revapplicationoverview.rev
+share/Revolution-1.1.1/components/tools/revdatabase.rev
+share/Revolution-1.1.1/components/tools/revdebugger.rev
+share/Revolution-1.1.1/components/tools/revdistributionbuilder.rev
+share/Revolution-1.1.1/components/tools/revgeometry.rev
+share/Revolution-1.1.1/components/tools/revicons.rev
+share/Revolution-1.1.1/components/tools/revimagelibrary.rev
+share/Revolution-1.1.1/components/tools/revmenubar.rev
+share/Revolution-1.1.1/components/tools/revmenumanager.rev
+share/Revolution-1.1.1/components/tools/revmessagebox.rev
+share/Revolution-1.1.1/components/tools/revobjectlibrary.rev
+share/Revolution-1.1.1/components/tools/revpainttools.rev
+share/Revolution-1.1.1/components/tools/revplugineditor.rev
+share/Revolution-1.1.1/components/tools/revprofileeditor.rev
+share/Revolution-1.1.1/components/tools/revreplicate.rev
+share/Revolution-1.1.1/components/tools/revtools.rev
+share/Revolution-1.1.1/license.rev
+share/Revolution-1.1.1/plugins/revexample.rev
+share/Revolution-1.1.1/revolution
+@dirrm share/Revolution-1.1.1/plugins
+@dirrm share/Revolution-1.1.1/components/tools
+@dirrm share/Revolution-1.1.1/components/save/userobjects
+@dirrm share/Revolution-1.1.1/components/save
+@dirrm share/Revolution-1.1.1/components/properties palettes
+@dirrm share/Revolution-1.1.1/components/help/tutorials/modules
+@dirrm share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data/images
+@dirrm share/Revolution-1.1.1/components/help/tutorials/exercises/Employee Data
+@dirrm share/Revolution-1.1.1/components/help/tutorials/exercises
+@dirrm share/Revolution-1.1.1/components/help/tutorials
+@dirrm share/Revolution-1.1.1/components/help/Appendixes
+@dirrm share/Revolution-1.1.1/components/help
+@dirrm share/Revolution-1.1.1/components/global environment
+@dirrm share/Revolution-1.1.1/components/assistants
+@dirrm share/Revolution-1.1.1/components
+@dirrm share/Revolution-1.1.1/Made With Logos/Graphics
+@dirrm share/Revolution-1.1.1/Made With Logos
+@dirrm share/Revolution-1.1.1/External SDK/external Data/MCexternalPPC
+@dirrm share/Revolution-1.1.1/External SDK/external Data/MCexternalCarbon
+@dirrm share/Revolution-1.1.1/External SDK/external Data/MCexternal68K
+@dirrm share/Revolution-1.1.1/External SDK/external Data/Basic Toolbox FAT
+@dirrm share/Revolution-1.1.1/External SDK/external Data
+@dirrm share/Revolution-1.1.1/External SDK
+@dirrm share/Revolution-1.1.1/Databases
+@dirrm share/Revolution-1.1.1
