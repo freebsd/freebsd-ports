@@ -1,0 +1,13 @@
+--- bogosort.texinfo	2000/09/15 13:16:16	1.1
++++ bogosort.texinfo	2000/09/15 13:35:49	1.2
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename bogosort.info
+ @settitle sorts or doesn't sort files or its standard input
++@dircategory Miscellaneous
++@direntry
++* Bogosort: (bogosort).  Sort (or not) files (or standard input)
++@end direntry
+ @finalout
+ @setchapternewpage odd
+ @c %**end of header

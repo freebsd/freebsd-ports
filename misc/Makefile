@@ -24,6 +24,7 @@
     SUBDIR += bbjd
     SUBDIR += biblereader
     SUBDIR += bidwatcher
+    SUBDIR += bogosort
     SUBDIR += bottlerocket
     SUBDIR += boxes
     SUBDIR += brs

@@ -1,0 +1,19 @@
+Sort files or its standard input using the bogo-sort algorithm
+described in the Jargon File <http://www.tuxedo.org/~esr/jargon>.
+
+A quote from the Jargon File 'bogo-sort' entry:
+
+     ...The archetypical perversely awful algorithm (as opposed to
+     _bubble sort_, which is merely the generic bad algorithm).
+     _Bogo-sort_ is equivalent to repeatedly throwing a deck of cards
+     in the air, picking them up at random, and then testing whether
+     they are in order. It serves as a sort of canonical example of
+     awfulness. Looking at a program and seeing a dumb algorithm, one
+     might say "Oh, I see, this program uses _bogo-sort_." Esp.
+     appropriate for algorithms with factorial or super-exponential
+     running time in the average case and probabilistically infinite
+     worst-case running time. Compare _bogus_, _brute force_,
+     _lasherism_...
+
+Author: Ulrik Haugen <qha@lysator.liu.se>
+WWW:	http://www.lysator.liu.se/~qha/bogosort/
