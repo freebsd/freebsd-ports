@@ -45,7 +45,7 @@ include/ogrsf_frmts.h
 lib/libgdal.a
 lib/libgdal.la
 lib/libgdal.so
-lib/libgdal.so.3
+lib/libgdal.so.4
 %%PYTHON_SITELIBDIR%%/_gdalmodule.a
 %%PYTHON_SITELIBDIR%%/_gdalmodule.la
 %%PYTHON_SITELIBDIR%%/_gdalmodule.so

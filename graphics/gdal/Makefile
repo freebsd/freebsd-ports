@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/
 
@@ -14,10 +14,11 @@ MAINTAINER=	boris@brooknet.com.au
 COMMENT=	A translator library for raster geospatial data formats
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+LIB_DEPENDS=	jasper.4:${PORTSDIR}/graphics/jasper
 
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_REINPLACE	=yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libz=internal \
 		--with-png=internal \
@@ -25,6 +26,7 @@ CONFIGURE_ARGS=	--with-libz=internal \
 		--with-libgeotiff=internal \
 		--with-libjpeg=internal \
 		--with-libgif=internal \
+		--with-jasper=${LOCALBASE} \
 		--with-python
 MAKEFILE=	GNUmakefile
 INSTALLS_SHLIB=	yes
