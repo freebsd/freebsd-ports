@@ -96,7 +96,7 @@ lib/transcode/filter_smartbob.so
 lib/transcode/filter_smartdeinter.so
 lib/transcode/filter_smartyuv.so
 lib/transcode/filter_smooth.so
-%%GCC3%%lib/transcode/filter_subtitler.so
+%%WITH_FREETYPE%%lib/transcode/filter_subtitler.so
 lib/transcode/filter_tc_audio.so
 lib/transcode/filter_tc_video.so
 lib/transcode/filter_test.so

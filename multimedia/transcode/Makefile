@@ -118,8 +118,10 @@ WITH_JPEGMMX=	yes
 .if defined(WITH_FREETYPE)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-ft-prefix=${LOCALBASE} --enable-freetype2
+PLIST_SUB+=	WITH_FREETYPE=""
 .else
 CONFIGURE_ARGS+=	--disable-fttest --enable-freetype=no
+PLIST_SUB+=	WITH_FREETYPE="@comment "
 .endif
 
 .if defined(WITH_OGG)
@@ -381,10 +383,8 @@ PLIST_SUB+=	I386="@comment "
 
 .if ${OSVERSION} > 500000 && ${ARCH}=="i386"
 PLIST_SUB+=	GCC2=""
-PLIST_SUB+=	GCC3="@comment "
 .else
 PLIST_SUB+=	GCC2="@comment "
-PLIST_SUB+=	GCC3=""
 .endif
 
 .include <bsd.port.post.mk>
