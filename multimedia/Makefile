@@ -49,6 +49,7 @@
     SUBDIR += linux-divx4linux4
     SUBDIR += linux-divxplayer
     SUBDIR += linux-realplayer
+    SUBDIR += linux-xmovie
     SUBDIR += mjpegtools
     SUBDIR += mmsclient
     SUBDIR += mpeg
@@ -102,7 +103,6 @@
     SUBDIR += xine_d5d_plugin
     SUBDIR += xmms
     SUBDIR += xmms-avi
-    SUBDIR += xmovie
     SUBDIR += xmps
     SUBDIR += xmps-opendivx-plugin
     SUBDIR += xmps-win32-plugin
