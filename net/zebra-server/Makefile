@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zebra-server
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
-DISTNAME=	zebra-${PORTVERSION}
+DISTNAME=	idzebra-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -22,9 +22,7 @@ CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin \
 		--with-tclconfig=${LOCALBASE}/lib/tcl8.3
 CONFIGURE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
-post-install:
-.if !defined(NOPORTDOCS)
-		@(cd ${WRKSRC}/doc; ${MAKE} install)
-.endif
+MAN1=		zebraidx.1
+MAN8=		zebrasrv.8
 
 .include <bsd.port.mk>
