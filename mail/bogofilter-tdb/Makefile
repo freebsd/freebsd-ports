@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	0
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tdb
 
-MASTERDIR=	${.CURDIR}/../bogofilter
+MAINTAINER=	matthias.andree@gmx.de
 
 LIB_DEPENDS=	tdb.1:${PORTSDIR}/databases/tdb
 
-CONFLICTS=	bogofilter-0* bogofilter-qdbm* [a-z][a-z]-bogofilter-0*
+CONFLICTS=	bogofilter-[0-9]* bogofilter-qdbm-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=tdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 DESCR=		${PKGDIR}/pkg-descr
+
+MASTERDIR=	${.CURDIR}/../bogofilter
 
 .include "${MASTERDIR}/Makefile"
