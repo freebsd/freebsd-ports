@@ -1,0 +1,7 @@
+bin/eet
+bin/eet-config
+include/Eet.h
+libdata/pkgconfig/eet.pc
+lib/libeet.a
+lib/libeet.so
+lib/libeet.so.9

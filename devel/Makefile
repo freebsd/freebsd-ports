@@ -211,6 +211,7 @@
     SUBDIR += ecb-emacs20
     SUBDIR += ecgi
     SUBDIR += ecos-tools
+    SUBDIR += eet
     SUBDIR += eieio
     SUBDIR += eieio-emacs20
     SUBDIR += elf
