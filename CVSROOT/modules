@@ -527,6 +527,7 @@ bin		src/bin
 bin86		ports/devel/bin86
 bind8		ports/net/bind8
 bind9		ports/net/bind9
+bind9-dlz	ports/net/bind9-dlz
 binder		ports/x11-fm/binder
 bing		ports/net/bing
 binkd		ports/net/binkd
