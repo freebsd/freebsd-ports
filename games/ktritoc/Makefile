@@ -20,4 +20,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+post-patch:
+	${RM} -r ${WRKSRC}/ktritoc/doc/ktritoc/dtd
+
 .include <bsd.port.mk>
