@@ -1,0 +1,84 @@
+--- io.c.orig	Sun Jan  2 19:55:12 2000
++++ io.c	Mon May 29 20:40:30 2000
+@@ -135,14 +135,17 @@
+     fd_set readfd;
+     struct timeval tv;
+ 
+-    FD_ZERO(&readfd);
+-
+-    FD_SET(fd,&readfd);
+-
+-    tv.tv_sec=tv.tv_usec=0;
+-
+-    if(select(fd+1,&readfd,NULL,NULL,&tv)<=0)
+-       return(nr);
++    while(1)
++      {
++       tv.tv_sec=tv.tv_usec=0;
++       FD_ZERO(&readfd);
++       FD_SET(fd,&readfd);
++       n=select(fd+1,&readfd,NULL,NULL,&tv);
++       if(n>0)
++          break;
++       if(n==0 || errno!=EINTR)
++          return(nr);
++      }
+ 
+     n=read(fd,fdbuf[fd],BUFSIZE);
+ 
+@@ -206,15 +209,18 @@
+     fd_set readfd;
+     struct timeval tv;
+ 
+-    FD_ZERO(&readfd);
+-
+-    FD_SET(fd,&readfd);
+-
+-    tv.tv_sec=timeout;
+-    tv.tv_usec=0;
+-
+-    if(select(fd+1,&readfd,NULL,NULL,&tv)<=0)
+-       return(-1);
++    while(1)
++      {
++       tv.tv_sec=timeout;
++       tv.tv_usec=0;
++       FD_ZERO(&readfd);
++       FD_SET(fd,&readfd);
++       nr=select(fd+1,&readfd,NULL,NULL,&tv);
++       if(nr>0)
++          break;
++       if(nr==0 || errno!=EINTR)
++          return(-1);
++      }
+ 
+     nr=read(fd,buffer,n);
+    }
+@@ -364,15 +370,18 @@
+  fd_set readfd;
+  struct timeval tv;
+ 
+- FD_ZERO(&readfd);
+-
+- FD_SET(fd,&readfd);
+-
+- tv.tv_sec=timeout;
+- tv.tv_usec=0;
+-
+- if(select(fd+1,&readfd,NULL,NULL,&tv)<=0)
+-    return(-1);
++ while(1)
++   {
++    tv.tv_sec=timeout;
++    tv.tv_usec=0;
++    FD_ZERO(&readfd);
++    FD_SET(fd,&readfd);
++    n=select(fd+1,&readfd,NULL,NULL,&tv);
++    if(n>0)
++       break;
++    if(n==0 || errno!=EINTR)
++       return(-1);
++   }
+ 
+  n=read(fd,fdbuf[fd]+fdbytes[fd],BUFSIZE-fdbytes[fd]);
+  fdbytes[fd]+=n;
