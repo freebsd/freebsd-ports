@@ -1,0 +1,17 @@
+       Devel::Peek contains functions which allows raw Perl
+       datatypes to be manipulated from a Perl script.  This is
+       used by those who do XS programming to check that the data
+       they are sending from C to Perl looks as they think it
+       should look.  The trick, then, is to know what the raw
+       datatype is supposed to look like when it gets to Perl.
+       This document offers some tips and hints to describe good
+       and bad raw data.
+
+       Devel::Peek supplies a Dump() function which can dump a
+       raw Perl datatype, and mstat("marker") function to report
+       on memory usage (if perl is compiled with corresponding
+       option).  The function DeadCode() provides statistics on
+       the data "frozen" into inactive CV.  Devel::Peek also
+       supplies SvREFCNT(), SvREFCNT_inc(), and SvREFCNT_dec()
+       which can query, increment, and decrement reference counts
+       on SVs.
