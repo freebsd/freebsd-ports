@@ -3,7 +3,7 @@
 # Date created:         25 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1998/01/08 18:52:14 fenner Exp $
+# $Id: Makefile,v 1.10 1999/05/04 08:43:34 tg Exp $
 #
 
 DISTNAME=	tr2latex
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support
 
 MAINTAINER=	ports@FreeBSD.org
+
+IGNOREFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAN1=		tr2latex.1
 
