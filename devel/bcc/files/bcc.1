@@ -1,0 +1,233 @@
+.\"
+.\" This manual page has been assembled after Bruce's original bcc.doc
+.\" file by Jörg Wunsch <joerg@FreeBSD.org>.
+.\" It is redistributed under the same conditions as the whole bcc
+.\" package itself.
+.\"
+.Dd March 26, 1995
+.Os
+.Dt BCC 1
+.Sh NAME
+.Nm bcc
+.Nd Bruce's C compiler
+.Sh SYNOPSIS
+.Nm bcc
+.Op Fl 03EGOPSVcegv
+.Op Fl A Ns Ar as_option
+.Op Fl B Ns Ar executable_prefix
+.Op Fl C Ns Ar cc1_option
+.Op Fl D Ns Ar define
+.Op Fl I Ns Ar include_dir
+.Op Fl L Ns Ar ld_option
+.Op Fl Q Ns Ar c386_option
+.Op Fl T Ns Ar tmpdir
+.Op Fl U Ns Ar undef
+.Op Fl o Ar outfile
+.Op Fl fpt Ar error
+.Op ld_options
+.Op Ar infiles
+
+.Sh DESCRIPTION
+
+.Ss Overview
+
+.Nm Bcc
+is a simple C compiler suitable for generating 8086 or 80386 code.
+It basically understands the old K&R C input syntax, with some
+restrictions on bit fields.  It interacts with the programs
+.Xr as86 1
+and
+.Xr ld86 1 .
+
+As a compile-time option, it is also possible to convince
+.Nm bcc
+to generate code for the Motorola 6809 CPU.
+
+.Ss Options
+
+.Bl -tag -width indent -compact
+
+.It Fl 0
+.Pq the digit 0
+8086 target
+.Pq works even on 80386 host
+
+.It Fl 3
+80386 target
+.Pq works even on 8086 host
+
+.It Fl A
+pass remainder of option to assembler; e.\& g.
+.Ql -A-l -Alistfile
+for a listing
+
+.It Fl B
+prefix for executable search path; the search order is all paths
+specified using
+.Fl B ,
+in order, then the path given in the environment variable
+.Ev BCC_EXEC_PREFIX
+if that is set, then the compiled-in defaults
+.Pa /usr/local/lib/bcc ,
+followed by
+.Pa /usr/local/bin 
+
+.It Fl C
+pass remainder of option to bcc-cc1; e.\& g.
+.Ql -C-c
+for caller-saves
+
+.It Fl D
+define
+
+.It Fl E
+produce preprocessor output
+
+.It Fl G
+produce gnu-Minix objects
+.Pq link with gnu ld
+
+.It Fl I
+include search path
+
+.It Fl L
+pass remainder of option to linker
+
+.It Fl O
+optimize
+.Pq does nothing
+
+.It Fl P
+produce preprocessor output with no line numbers
+
+.It Fl Q
+pass full option to c386
+
+.It Fl S
+produce assembler file
+
+.It Fl T
+temporary directory;
+overrides previous value and default; default is
+from the environment variable
+.Ev TMPDIR
+if that is set, otherwise
+.Pa /tmp
+
+.It Fl U
+undefine
+
+.It Fl V
+print names of files being compiled
+
+.It Fl c
+produce object file
+
+.It Fl e
+run the preprocess pass separately.  This takes less memory, and may
+help or harm by giving more traditional semantics like token pasting
+with
+.Ql /**/
+\&.
+
+.It Fl f
+error
+.Pq float emulation not supported
+
+.It Fl g
+produce debugging info
+.Pq does nothing
+
+.It Fl o
+output file name follows 
+.Pq assembler, object or executable
+
+.It Fl p
+error
+.Pq profiling not supported
+
+.It Fl t
+error
+.Pq substitution of some cc passes not supported
+
+.It Fl v
+print names and args of subprocesses being run.
+.Pp
+Two or more
+.Fl v
+\&'s: print names of files being unlinked.
+.Pp
+Three or more
+.Fl v
+\&'s: print names of paths being searched.
+
+.El
+
+The 6809 version does not support
+.Fl 0 ,
+.Fl 3
+or
+.Fl G.
+
+Only the c386 version supports
+.Fl Q .
+
+.Ss Defaults
+Off or none except for these:
+
+.Bl -tag -width indent -compact
+
+.It Fl 0 | Fl 3
+native, i.\& e. 80386
+
+.It Ar outfile
+stdout for preprocessor output
+.Pp
+.Pa somewhere/file.[ci]
+\&->
+.Pa file.s
+for compiler output
+.Pp
+.Pa somewhere/file.[cis]
+\&->
+.Pa file.o
+for assembler output
+.Pp
+.Pa a.out
+for ld output
+
+.El
+
+Other options are passed to the linker, in particular
+.Fl i- ,
+.Fl l Ns Ar x ,
+.Fl M ,
+.Fl m ,
+.Fl s .
+The
+.Fl i
+option is always passed to the linker but can be cancelled using
+.Fl i- .
+
+.Sh ENVIRONMENT
+
+.Bl -tag -width indent -compact
+
+.It Ev BCC_EXEC_PREFIX
+directory to search for compiler passes
+
+.It Ev TMPDIR
+where to place temporary files
+
+.El
+
+.Sh SEE ALSO
+
+.Xr as86 1 ,
+.Xr ld86 1 ,
+.Xr bcc-cc1 1 ;
+.Xr cc 1 .
+
+.Sh AUTHORS
+
+This program has been written by Bruce Evans.

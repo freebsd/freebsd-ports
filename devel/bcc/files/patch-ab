@@ -1,0 +1,75 @@
+*** as/Makefile.orig	Thu Apr 23 06:04:42 1992
+--- as/Makefile	Sun Mar 26 12:31:17 1995
+***************
+*** 1,27 ****
+! CFLAGS		=-O
+  LDFLAGS		=
+  
+! OBJS		=as.o assemble.o error.o express.o \
+! 		 genbin.o genlist.o genobj.o gensym.o \
+! 		 macro.o mops.o pops.o readsrc.o \
+! 		 scan.o table.o typeconv.o
+! 
+! as: $(OBJS)
+! 	$(CC) $(LDFLAGS) $(OBJS) -o as
+! 	chmem =182000 as
+! 
+! as.o: const.h type.h byteord.h macro.h file.h flag.h globvar.h
+! assemble.o: const.h type.h address.h globvar.h opcode.h scan.h
+! error.o: const.h type.h
+! express.o: const.h type.h address.h globvar.h scan.h source.h
+! genbin.o: const.h type.h address.h file.h globvar.h
+! genlist.o: const.h type.h address.h flag.h file.h globvar.h macro.h scan.h \
+! 	   source.h
+! genobj.o: const.h type.h address.h file.h globvar.h
+! gensym.o: const.h type.h flag.h file.h globvar.h
+! macro.o: const.h type.h globvar.h scan.h macro.h
+! mops.o: const.h type.h globvar.h opcode.h scan.h address.h
+! pops.o: const.h type.h address.h flag.h globvar.h opcode.h scan.h
+! readsrc.o: const.h type.h flag.h file.h globvar.h macro.h scan.h source.h
+! scan.o: const.h type.h globvar.h scan.h 
+! table.o: const.h type.h globvar.h opcode.h scan.h
+--- 1,18 ----
+! .include "../Makefile.inc"
+! .PATH:	../ld
+! 
+! CFLAGS		+=-Wall
+  LDFLAGS		=
+  
+! SRCS		=as.c assemble.c error.c express.c \
+! 		 genbin.c genlist.c genobj.c gensym.c \
+! 		 macro.c mops.c pops.c readsrc.c \
+! 		 scan.c table.c typeconv.c
+! 
+! PROG		=as86
+! 
+! BINDIR		= ${LOCALPREFIX}/bin
+! MANDIR		= ${LOCALPREFIX}/man/man
+! 
+! 
+! .include <bsd.prog.mk>
+*** as/as.c.orig	Sat Jul 10 21:03:52 1993
+--- as/as.c	Sun Mar 26 12:11:09 1995
+***************
+*** 7,13 ****
+  
+  #include "const.h"
+  #include "type.h"
+- #include "byteord.h"
+  #include "macro.h"
+  #undef EXTERN
+  #define EXTERN
+--- 7,12 ----
+***************
+*** 36,41 ****
+--- 35,44 ----
+  #include <fcntl.h>
+  #include <unistd.h>
+  #endif
++ 
++ /* BSD #defines this in <machine/endian.h>, but with another sense */
++ #undef BIG_ENDIAN
++ #include "byteord.h"
+  
+  PUBLIC char hexdigit[] = "0123456789ABCDEF";	/* XXX - ld uses lower case */
+  

@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# $Id$
+#
+# Author:		Jörg Wunsch <joerg@FreeBSD.org>
+# Date of creation:	Mar 26, 1995
+#
+
+# we don't need Bruce's symlink, since bmake knows about .PATH
+
+rm -f ${WRKSRC}/as/typeconv.o
+
+# since we like the ease of BSD's fancy .include <> files, we wish to
+# have an own directory for the compiler driver
+
+mv ${WRKSRC}/bcc ${WRKSRC}/bcc-cc1
+mkdir ${WRKSRC}/bcc
+cp -p ${FILESDIR}/Makefile.bcc ${WRKSRC}/bcc/Makefile
+
+# i wrote some man pages after Bruce's bcc.doc
+cp -p ${FILESDIR}/ld86.1 ${WRKSRC}/ld/
+cp -p ${FILESDIR}/as86.1 ${WRKSRC}/as/
+cp -p ${FILESDIR}/bcc.1 ${WRKSRC}/bcc/
+cp -p ${FILESDIR}/bcc-cc1.1 ${WRKSRC}/bcc-cc1/
+
+# create a Makefile.inc to pass the local prefix down to
+# the build stage:
+
+cat > ${WRKSRC}/Makefile.inc <<*EOF*
+#
+# Makefile.inc
+#
+# This file has been created by the "configure" script; DO NOT EDIT.
+#
+# Edit the port's Makefile \${PREFIX} variable should you wish to
+# override this, and reconfigure.
+#
+
+LOCALPREFIX = ${PREFIX}
+*EOF*
+
+# a simple Makefile to make all the subdirs
+
+cat > ${WRKSRC}/Makefile <<*EOF*
+
+SUBDIR = ld as bcc-cc1 bcc
+
+.include <bsd.subdir.mk>
+*EOF*

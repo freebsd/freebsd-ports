@@ -1,0 +1,14 @@
+@cwd /usr/local
+@mode 755
+@owner bin
+@group bin
+bin/as86
+bin/ld86
+bin/bcc
+lib/bcc
+lib/bcc/bcc-cc1
+@mode 644
+man/man1/as86.1.gz
+man/man1/bcc.1.gz
+man/man1/bcc-cc1.1.gz
+man/man1/ld86.1.gz

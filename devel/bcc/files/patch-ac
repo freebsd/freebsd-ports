@@ -1,0 +1,86 @@
+*** bcc/Makefile.orig	Thu Mar  9 11:43:29 1995
+--- bcc/Makefile	Sun Mar 26 12:23:06 1995
+***************
+*** 1,14 ****
+! CFLAGS		=-O -DNSIG=32
+  LDFLAGS 	=
+  
+! bcc: bcc.c
+! 	$(CC) $(CFLAGS) $(LDFLAGS) $@.c -o $@
+  
+! bcc09: bcc.c
+! 	$(CC) -DMC6809 $(CFLAGS) $(LDFLAGS) bcc.c -o $@
+  
+! ccc: bcc.c
+! 	$(CC) -DCCC $(CFLAGS) $(LDFLAGS) bcc.c -o $@
+  
+! clean:
+! 	rm -f bcc bcc09 ccc
+--- 1,22 ----
+! .include "../Makefile.inc"
+! 
+! CFLAGS		+=-DNSIG=32
+! #CFLAGS		+=-Wall		# too many warnings
+  LDFLAGS 	=
+  
+! PROG		=bcc-cc1
+! 
+! SRCS		=assign.c declare.c gencode.c label.c preserve.c type.c \
+! 		 bcc-cc1.c express.c genloads.c loadexp.c scan.c \
+! 		 exptree.c glogcode.c longop.c softop.c codefrag.c \
+! 		 floatop.c hardop.c output.c state.c debug.c function.c \
+! 		 input.c preproc.c table.c
+! 
+  
+! BINDIR		= ${LOCALPREFIX}/lib/bcc
+! MANDIR		= ${LOCALPREFIX}/man/man
+  
+! beforeinstall:
+! 		-mkdir -p ${LOCALPREFIX}/lib/bcc
+  
+! .include <bsd.prog.mk>
+*** bcc/bcc.c.orig	Sat Jul 17 14:49:49 1993
+--- bcc/bcc.c	Sun Mar 26 12:27:58 1995
+***************
+*** 27,46 ****
+  #define P(x)	()
+  #endif
+  
+! #define AS	"as"
+  #define BAS86
+  #define BCC86
+! #define CC1	"cc1"
+  #define CC1_MINUS_O_BROKEN	FALSE
+! #define CPP	"cpp"		/* normally a link to /usr/bin/bcc-cc1 */
+  #define CPPFLAGS	"-E"
+  #define CRT0	"crt0.o"
+  #define GCC	"gcc"
+! #define LD	"ld"
+! #define STANDARD_CRT0_0_PREFIX	"/usr/local/lib/i86/"
+! #define STANDARD_CRT0_3_PREFIX	"/usr/local/lib/i386/"
+! #define STANDARD_EXEC_PREFIX	"/usr/local/libexec/i386/bcc/"
+! #define STANDARD_EXEC_PREFIX_2	"/usr/bin/"
+  
+  #ifdef CCC
+  #undef BCC86
+--- 27,46 ----
+  #define P(x)	()
+  #endif
+  
+! #define AS	"as86"
+  #define BAS86
+  #define BCC86
+! #define CC1	"bcc-cc1"
+  #define CC1_MINUS_O_BROKEN	FALSE
+! #define CPP	"bcc-cc1"	/* normally a link to /usr/bin/bcc-cc1 */
+  #define CPPFLAGS	"-E"
+  #define CRT0	"crt0.o"
+  #define GCC	"gcc"
+! #define LD	"ld86"
+! #define STANDARD_CRT0_0_PREFIX	LOCALPREFIX "/lib/bcc/i86/"
+! #define STANDARD_CRT0_3_PREFIX	LOCALPREFIX "/lib/bcc/i386/"
+! #define STANDARD_EXEC_PREFIX	LOCALPREFIX "/lib/bcc/"
+! #define STANDARD_EXEC_PREFIX_2	LOCALPREFIX "/bin/"
+  
+  #ifdef CCC
+  #undef BCC86
