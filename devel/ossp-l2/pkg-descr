@@ -1,0 +1,8 @@
+OSSP l2 is a C library providing a very flexible and sophisticated Unix logging
+facility. It is based on the model of arbitrary number of channels, stacked
+together in a top-down data flow tree structure with filtering channels in
+internal nodes and output channels on the leave nodes. 
+
+WWW: http://www.ossp.org/pkg/lib/l2/
+
+-- AlanE@FreeBSD.org

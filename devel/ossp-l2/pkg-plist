@@ -1,0 +1,7 @@
+bin/l2-config
+bin/l2tool
+include/l2.h
+lib/libl2.a
+lib/libl2.la
+lib/libl2.so
+lib/libl2.so.9
