@@ -237,6 +237,7 @@ lib/povray3/pov3demo/recurse/sponge1.inc
 lib/povray3/pov3demo/radios/rad2.pov
 lib/povray3/pov3demo/radios/rad2.inc
 lib/povray3/pov3demo/radios/rad2.ini
+lib/povray3/pov3demo/radios/rad2.rca
 lib/povray3/pov3demo/showoff/newltpot/teapot.cat
 lib/povray3/pov3demo/showoff/newltpot/teapot.c2
 lib/povray3/pov3demo/showoff/newltpot/teapot.c3
@@ -260,25 +261,19 @@ lib/povray3/pov3demo/showoff/diffract.pov
 lib/povray3/pov3demo/showoff/gloflake.pov
 lib/povray3/pov3demo/showoff/blobloop.pov
 lib/povray3/pov3demo/showoff/matches.pov
-lib/povray3/docsdemo/torus.gif
-lib/povray3/docsdemo/adapt2.gif
 lib/povray3/docsdemo/atmos1.pov
 lib/povray3/docsdemo/atmos2.pov
 lib/povray3/docsdemo/atmos3.pov
 lib/povray3/docsdemo/atmos4.pov
 lib/povray3/docsdemo/atmos5.pov
-lib/povray3/docsdemo/axis.gif
 lib/povray3/docsdemo/bezdemo.pov
-lib/povray3/docsdemo/box.gif
-lib/povray3/docsdemo/camera1.gif
-lib/povray3/docsdemo/clipped.gif
-lib/povray3/docsdemo/cone.gif
-lib/povray3/docsdemo/csg1.gif
-lib/povray3/docsdemo/csg2.gif
-lib/povray3/docsdemo/csg3.gif
-lib/povray3/docsdemo/csg4.gif
-lib/povray3/docsdemo/csg5.gif
-lib/povray3/docsdemo/cylinder.gif
+lib/povray3/docsdemo/blobdem1.pov
+lib/povray3/docsdemo/blobdem2.pov
+lib/povray3/docsdemo/blobdem3.pov
+lib/povray3/docsdemo/blobdem4.pov
+lib/povray3/docsdemo/caustic1.pov
+lib/povray3/docsdemo/caustic2.pov
+lib/povray3/docsdemo/focaldem.pov
 lib/povray3/docsdemo/fog.inc
 lib/povray3/docsdemo/fog1.pov
 lib/povray3/docsdemo/fog2.pov
@@ -286,10 +281,6 @@ lib/povray3/docsdemo/fog3.pov
 lib/povray3/docsdemo/fog4.pov
 lib/povray3/docsdemo/fog5.pov
 lib/povray3/docsdemo/fog6.pov
-lib/povray3/docsdemo/halo-a.gif
-lib/povray3/docsdemo/halo-b.gif
-lib/povray3/docsdemo/halo-c.gif
-lib/povray3/docsdemo/halo-d.gif
 lib/povray3/docsdemo/halo0.inc
 lib/povray3/docsdemo/halo01.pov
 lib/povray3/docsdemo/halo02.pov
@@ -309,46 +300,41 @@ lib/povray3/docsdemo/halo32.pov
 lib/povray3/docsdemo/halo33.pov
 lib/povray3/docsdemo/halo34.pov
 lib/povray3/docsdemo/halo35.pov
-lib/povray3/docsdemo/hexagon.gif
-lib/povray3/docsdemo/heyney.gif
 lib/povray3/docsdemo/hfdemo.pov
-lib/povray3/docsdemo/hfield.gif
 lib/povray3/docsdemo/image.pov
-lib/povray3/docsdemo/lathe.gif
-lib/povray3/docsdemo/light.gif
+lib/povray3/docsdemo/lathdem1.pov
+lib/povray3/docsdemo/lathdem2.pov
+lib/povray3/docsdemo/lathdem3.pov
+lib/povray3/docsdemo/lathdem4.pov
+lib/povray3/docsdemo/lathdem5.pov
+lib/povray3/docsdemo/layered1.pov
+lib/povray3/docsdemo/layered2.pov
+lib/povray3/docsdemo/layered3.pov
+lib/povray3/docsdemo/layered4.pov
+lib/povray3/docsdemo/laytex.pov
 lib/povray3/docsdemo/meshdemo.pov
-lib/povray3/docsdemo/mie1.gif
-lib/povray3/docsdemo/mie2.gif
 lib/povray3/docsdemo/polygdem.pov
-lib/povray3/docsdemo/quilt1.gif
-lib/povray3/docsdemo/quilt2.gif
-lib/povray3/docsdemo/quilt3.gif
-lib/povray3/docsdemo/quilt4.gif
+lib/povray3/docsdemo/prismdm1.pov
+lib/povray3/docsdemo/prismdm2.pov
+lib/povray3/docsdemo/prismdm3.pov
+lib/povray3/docsdemo/prismdm4.pov
+lib/povray3/docsdemo/prismdm5.pov
+lib/povray3/docsdemo/prismdm6.pov
 lib/povray3/docsdemo/rainbow.inc
 lib/povray3/docsdemo/rainbow1.pov
 lib/povray3/docsdemo/rainbow2.pov
 lib/povray3/docsdemo/rainbow3.pov
-lib/povray3/docsdemo/rayleigh.gif
 lib/povray3/docsdemo/skysph1.inc
 lib/povray3/docsdemo/skysph1.pov
 lib/povray3/docsdemo/skysph2.inc
 lib/povray3/docsdemo/skysph2.pov
 lib/povray3/docsdemo/skysph3.pov
-lib/povray3/docsdemo/sor1.gif
-lib/povray3/docsdemo/sor2.gif
 lib/povray3/docsdemo/sordemo.pov
-lib/povray3/docsdemo/sphere.gif
-lib/povray3/docsdemo/spot-a.gif
-lib/povray3/docsdemo/spot-b.gif
-lib/povray3/docsdemo/spot-c.gif
-lib/povray3/docsdemo/spot-d.gif
-lib/povray3/docsdemo/spot.gif
 lib/povray3/docsdemo/supellps.pov
 lib/povray3/docsdemo/textcsg.pov
 lib/povray3/docsdemo/textdemo.pov
 lib/povray3/docsdemo/tiles.pov
 lib/povray3/docsdemo/tordemo.pov
-lib/povray3/docsdemo/adapt.gif
 lib/povray3/include/textures.v2
 lib/povray3/include/benediti.map
 lib/povray3/include/bubinga.map
@@ -564,6 +550,7 @@ lib/povray3/texsamps/skies/s_cloud4.pov
 lib/povray3/texsamps/skies/s_cloud5.pov
 lib/povray3/texsamps/glasses/glasses.doc
 lib/povray3/texsamps/glasses/glasses.pov
+lib/povray3/CMPL_Unix.doc
 lib/povray3/allscene.ini
 lib/povray3/slow.ini
 lib/povray3/res800.ini
@@ -580,7 +567,65 @@ lib/povray3/revision.doc
 lib/povray3/povray.doc
 lib/povray3/povlegal.doc
 lib/povray3/compile.doc
-lib/povray3/change3.doc
 lib/povray3/xpovicon.xpm
 lib/povray3/gamma.gif
 lib/povray3/allscene.sh
+@dirrm lib/povray3/texsamps/woods
+@dirrm lib/povray3/texsamps/stones
+@dirrm lib/povray3/texsamps/skies
+@dirrm lib/povray3/texsamps/metals
+@dirrm lib/povray3/texsamps/glasses
+@dirrm lib/povray3/texsamps
+@dirrm lib/povray3/povscn/math
+@dirrm lib/povray3/povscn/level3/teapot
+@dirrm lib/povray3/povscn/level3/snail
+@dirrm lib/povray3/povscn/level3/piece3
+@dirrm lib/povray3/povscn/level3/piece2
+@dirrm lib/povray3/povscn/level3/pencil
+@dirrm lib/povray3/povscn/level3/ntreal
+@dirrm lib/povray3/povscn/level3/ionic5
+@dirrm lib/povray3/povscn/level3/fish13
+@dirrm lib/povray3/povscn/level3/drums2
+@dirrm lib/povray3/povscn/level3
+@dirrm lib/povray3/povscn/level2
+@dirrm lib/povray3/povscn/level1
+@dirrm lib/povray3/povscn
+@dirrm lib/povray3/pov3demo/surfaces
+@dirrm lib/povray3/pov3demo/showoff/newltpot
+@dirrm lib/povray3/pov3demo/showoff
+@dirrm lib/povray3/pov3demo/recurse
+@dirrm lib/povray3/pov3demo/radios
+@dirrm lib/povray3/pov3demo/other
+@dirrm lib/povray3/pov3demo/objects
+@dirrm lib/povray3/pov3demo/lights
+@dirrm lib/povray3/pov3demo/halo
+@dirrm lib/povray3/pov3demo/demo
+@dirrm lib/povray3/pov3demo/camera
+@dirrm lib/povray3/pov3demo/atmos
+@dirrm lib/povray3/pov3demo/anim/wheel
+@dirrm lib/povray3/pov3demo/anim/vect2
+@dirrm lib/povray3/pov3demo/anim/vect1
+@dirrm lib/povray3/pov3demo/anim/speclr
+@dirrm lib/povray3/pov3demo/anim/slinky
+@dirrm lib/povray3/pov3demo/anim/scurve2
+@dirrm lib/povray3/pov3demo/anim/scurve1
+@dirrm lib/povray3/pov3demo/anim/reflect
+@dirrm lib/povray3/pov3demo/anim/raddem
+@dirrm lib/povray3/pov3demo/anim/quilted
+@dirrm lib/povray3/pov3demo/anim/pentmap
+@dirrm lib/povray3/pov3demo/anim/l_o
+@dirrm lib/povray3/pov3demo/anim/float4
+@dirrm lib/povray3/pov3demo/anim/float3
+@dirrm lib/povray3/pov3demo/anim/float2
+@dirrm lib/povray3/pov3demo/anim/float1
+@dirrm lib/povray3/pov3demo/anim/diffuse
+@dirrm lib/povray3/pov3demo/anim/camera2
+@dirrm lib/povray3/pov3demo/anim/boing
+@dirrm lib/povray3/pov3demo/anim/atmo
+@dirrm lib/povray3/pov3demo/anim/ambient
+@dirrm lib/povray3/pov3demo/anim
+@dirrm lib/povray3/pov3demo
+@dirrm lib/povray3/include
+@dirrm lib/povray3/docsdemo
+@dirrm lib/povray3/allscene
+@dirrm lib/povray3
