@@ -1,7 +1,9 @@
-include/gtkgl/gdkgl.h
-include/gtkgl/gtkglarea.h
-lib/libgtkgl.a
-lib/libgtkgl.so
-lib/libgtkgl.so.5
-share/aclocal/gtkgl.m4
-@dirrm include/gtkgl
+include/gtkgl-2.0/gtkgl/gdkgl.h
+include/gtkgl-2.0/gtkgl/gtkglarea.h
+lib/libgtkgl-2.0.a
+lib/libgtkgl-2.0.la
+lib/libgtkgl-2.0.so
+lib/libgtkgl-2.0.so.1
+lib/pkgconfig/gtkgl-2.0.pc
+@dirrm include/gtkgl-2.0/gtkgl
+@dirrm include/gtkgl-2.0
