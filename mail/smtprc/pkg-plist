@@ -3,5 +3,6 @@ etc/smtprc/auto.conf.sample
 etc/smtprc/email.tmpl.sample
 etc/smtprc/rcheck.conf.sample
 @dirrm /etc/smtprc
+%%WITHGUI%%bin/gsmtprc
 %%PORTDOCS%%share/doc/smtprc/README
 %%PORTDOCS%%@dirrm /share/doc/smtprc
