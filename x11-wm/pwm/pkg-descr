@@ -1,0 +1,21 @@
+PWM is a rather lightweight window manager for X11. It has the unique
+feature that multiple client windows can be attached to the same
+frame. This feature helps keeping windows, especially the numerous
+xterms, organized. A look at the screenshots below might clarify the
+idea.
+
+Being a lightweight window manager with emphasis on usability, PWM does
+not have all the features that one might expect from a window
+manager. Those features are simply unnecessary. PWM does not provide
+pixmapped themes or other bloated eye candies but has a clean and
+simple look inspired by BeOS and Motif. There are no icons and frames
+cannot be iconified, only "shaded". Only One True (pointer) focus
+mode is supported: sloppy. PWM does not even have titlebar buttons and
+may not be the easiest window manager to get into, most Good
+Things are not. 
+
+PWM does have workspaces, menus and Window Maker dockapp support. It has
+pretty good keyboard support and almost all the functionality
+is configurable. 
+
+WWW:	http://www.students.tut.fi/~tuomov/pwm/
