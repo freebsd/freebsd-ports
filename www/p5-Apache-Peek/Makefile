@@ -6,26 +6,30 @@
 #
 
 PORTNAME=	Apache-Peek
-PORTVERSION=	0.9501
+PORTVERSION=	1.01
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Apache
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leo@florida.sarang.net
-COMMENT=	A perl5 data debugging tool for the XS programmer
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A data debugging tool for the XS programmer (under mod_perl)
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/B/Graph.pm:${PORTSDIR}/devel/p5-B-Graph
+.if defined(WITH_MODPERL2)
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2 \
+ 		${SITE_PERL}/Apache2/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+MOD_PERL=	2
+.else
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+MOD_PERL=	1
+.endif
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
+CONFIGURE_ARGS=	-httpd ${LOCALBASE}/sbin/httpd
+
 MAN3=		Apache::Peek.3
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

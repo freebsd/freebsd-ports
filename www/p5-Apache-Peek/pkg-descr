@@ -1,7 +1,6 @@
-Apache::Peek is Ilya Zakharevich's Devel::Peek module that sends
-output to the browser instead of stderr.
+A data debugging tool for the XS programmer (under mod_perl)
 
-WWW: http://search.cpan.org/doc/DOUGM/mod_perl-1.24/apache-modlist.html
+WWW: http://stason.org
 
 - Leo Kim
 leo@florida.sarang.net
