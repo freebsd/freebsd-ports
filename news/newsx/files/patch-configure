@@ -1,0 +1,31 @@
+--- configure.orig	Wed Jan 22 09:15:31 2003
++++ configure	Sat May 17 23:22:41 2003
+@@ -253,7 +253,7 @@
+ #
+ # Initializations.
+ #
+-ac_default_prefix=/usr/local
++ac_default_prefix=%%LOCALBASE%%
+ ac_config_libobj_dir=.
+ cross_compiling=no
+ subdirs=
+@@ -1710,15 +1710,15 @@
+ 
+ 
+ VISIT="/usr/lib/news /var/news/etc /usr/spool/news /usr/share/news \
+- /var/db/news /usr/local/news/control /usr/local/news /local/news /etc/news \
+- /usr/local/news/bin/control /usr/local/lib/news /news /usr/local/inn \
++ /var/db/news %%LOCALBASE%%/news/control %%LOCALBASE%%/news /local/news /etc/news \
++ %%LOCALBASE%%/news/bin/control %%LOCALBASE%%/lib/news /news %%LOCALBASE%%/inn \
+  /var/lib/news /usr/lib /var/spool/news"
+ 
+ NEWSUMASK=002
+ INN_EXTENDEDDBZ=0
+ 
+-RNEWS_PATH=/usr/bin/rnews
+-INEWS_PATH=/usr/bin/inews
++RNEWS_PATH=%%LOCALBASE%%/news/bin/rnews
++INEWS_PATH=%%LOCALBASE%%/news/bin/inews
+ 
+ 
+ # Check whether --with-newshome or --without-newshome was given.

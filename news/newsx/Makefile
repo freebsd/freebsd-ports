@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	newsx
-PORTVERSION=	1.4.8
+PORTVERSION=	1.6
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.8/pl6/}
+#MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
+MASTER_SITES=	http://home.powertech.no/egilkv/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/$/pre/}
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A program to fetch news from and post news to a remote NNTP server
@@ -20,22 +21,17 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
-USE_AUTOMAKE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	PATH="${PATH}:${LOCALBASE}/news/bin"
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/news/include"
-CONFIGURE_ARGS=	--with-newslib=${LOCALBASE}/news/lib
 .endif
 .endif
-
-HDR_DIR=	${LOCALBASE}/news/include
 
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
 
 post-patch:
-	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${WRKSRC}/configure
 
 pre-configure:
 	@${ECHO} "*********************************************************"
@@ -44,6 +40,9 @@ pre-configure:
 	@${ECHO} "${PORTSDIR}/news/inn, and then try building this port"
 	@${ECHO} "again."
 	@${ECHO} "*********************************************************"
+
+pre-install:
+	@${STRIP_CMD} ${WRKSRC}/src/newsx
 
 post-install:
 .if !defined(NOPORTDOCS)
