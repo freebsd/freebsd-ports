@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	games gnome
-MASTER_SITES=	ftp://ftp.netis.com/pub/mirrors1/linuxberg/files/gnome/entertain/ \
-		ftp://ftp.sunsite.auc.dk/disk1/linuxberg.com/files/gnome/entertain/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtetrinet
 
 MAINTAINER=	bugg@bugg.strangled.net
 
