@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntl
-PORTVERSION=	5.3
+PORTVERSION=	5.3.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
