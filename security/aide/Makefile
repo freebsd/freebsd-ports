@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.cs.tut.fi/~rammer/ \
 		ftp://ftp.cs.tut.fi/pub/src/gnu/
 
-MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
+MAINTAINER=	cy@FreeBSD.org
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 

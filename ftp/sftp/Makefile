@@ -10,7 +10,7 @@ PORTVERSION=	0.9.9
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
 
-MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
+MAINTAINER=	cy@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
