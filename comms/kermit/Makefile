@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kermit
-PORTVERSION=	8.0.201
+PORTVERSION=	8.0.201.1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
