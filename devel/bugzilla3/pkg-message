@@ -4,8 +4,9 @@
   1. Create database user who has rights on bugs database manipulation
      by following mysql commands:
 
-     GRANT SELECT,INSERT,UPDATE,DELETE,INDEX, ALTER,CREATE,DROP,REFERENCES \
-           ON <database>.* TO <dbuser>@<host> IDENTIFIED BY '<password>'; 
+     GRANT SELECT,INSERT,UPDATE,DELETE,INDEX,ALTER,CREATE,DROP,REFERENCES,\
+	   LOCK TABLES ON <database>.* TO <dbuser>@<host> \
+	   IDENTIFIED BY '<password>';
      FLUSH PRIVILEGES;
 
      where <database> is a bugs database name; <dbuser> is a bugs database
