@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	Mail-Sendmail
-PORTVERSION=	0.78
+PORTVERSION=	0.79
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wchao@isi.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module implementing a simple, platform-independent mailer
 
 PERL_CONFIGURE=	yes
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
 MAN3=		Mail::Sendmail.3
 
 .include <bsd.port.mk>
