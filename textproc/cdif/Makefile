@@ -2,7 +2,7 @@
 # Date created:		July 22, 2000
 # Whom:			Yoshiro MIHIRA <sanpei@sanpei.org>
 #
-# $NetBSD: Makefile,v 1.2 2000/03/16 14:08:38 wiz Exp $
+# $NetBSD: Makefile,v 1.3 2000/08/27 02:46:07 jlam Exp $
 # $FreeBSD$
 #
 
@@ -23,7 +23,6 @@ do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}.dist
 
-# assumes perl is in ${LOCALBASE}/bin/perl
 do-patch:
 	${SED} -e '1s@/usr/local/bin/perl@${PERL}@' \
 		< ${WRKSRC}/${DISTNAME}.dist > ${WRKSRC}/${DISTNAME}
