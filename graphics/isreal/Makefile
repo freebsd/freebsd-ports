@@ -8,7 +8,8 @@
 PORTNAME=	isreal
 PORTVERSION=	2.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.striker.ottawa.on.ca/pub/isreal/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	markp
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	markp@FreeBSD.org
