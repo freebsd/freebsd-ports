@@ -1023,6 +1023,7 @@
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += prototype
+    SUBDIR += psvn
     SUBDIR += pth
     SUBDIR += ptypes
     SUBDIR += publib
