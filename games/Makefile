@@ -292,6 +292,7 @@
     SUBDIR += virt
     SUBDIR += wmeyes
     SUBDIR += wmminichess
+    SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
     SUBDIR += wolfpack
