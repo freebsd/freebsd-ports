@@ -31,6 +31,7 @@
     SUBDIR += rar
     SUBDIR += ruby-zlib
     SUBDIR += sectar
+    SUBDIR += ucl
     SUBDIR += unace
     SUBDIR += unadf
     SUBDIR += unarj
