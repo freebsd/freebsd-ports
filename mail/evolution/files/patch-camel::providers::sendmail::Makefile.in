@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- camel/providers/sendmail/Makefile.in	2002/01/22 19:07:18	1.1
++++ camel/providers/sendmail/Makefile.in	2002/01/22 19:08:14
+@@ -211,7 +211,7 @@
+ 	camel-sendmail-transport.h
+ 
+ 
+-libcamelsendmail_la_LDFLAGS = -version-info 0:0:0
++libcamelsendmail_la_LDFLAGS = -avoid-version -module
+ 
+ EXTRA_DIST = libcamelsendmail.urls
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
