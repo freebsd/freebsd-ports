@@ -1,4 +1,5 @@
 bin/keynote
+include/keynote.h
 lib/libkeynote.a
 share/doc/keynote/rfc2704.txt
 @dirrm share/doc/keynote/

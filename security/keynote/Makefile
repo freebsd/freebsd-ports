@@ -7,6 +7,7 @@
 
 PORTNAME=	keynote
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.cis.upenn.edu/~angelos/Code/
 
@@ -26,6 +27,7 @@ MAN5=		keynote.5
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/keynote.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/libkeynote.a ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/man/keynote.1 ${PREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/man/keynote.3 ${PREFIX}/man/man3/
