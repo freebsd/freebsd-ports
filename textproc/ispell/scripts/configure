@@ -6,8 +6,27 @@ if [ "`echo a|sed -e P`" = "aa" ]; then
 fi
 cd $WRKSRC || exit 1;
 
+if [ -f $WRKDIR/extra_dict ]; then
+  extra_dict=`cat $WRKDIR/extra_dict`;
+  case $extra_dict in
+    francais-IREQ*)
+    mkdir -p $WRKSRC/languages/francais-IREQ
+    LOCAL=' {francais-IREQ}'
+    for i in $WRKDIR/[A-Za-z]*; do
+      if [ -f $i ]; then cp $i  $WRKSRC/languages/francais-IREQ/; fi
+    done
+    (echo RM=rm -f; echo LIBDIR=$PREFIX/lib; echo HASH=../../buildhash) \
+           >> $WRKSRC/languages/francais-IREQ/Makefile
+    ;;
+    *)
+    echo "I don't now how to configure ispell with $extra_dict"
+    exit 1;
+    ;;
+  esac
+fi
 sed -e s:/usr/local:$PREFIX: <local.h.samp >local.h || exit 1;
-echo '#define LANGUAGES "{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}"'  >>local.h ||exit 1;
+echo "#undef NO8BIT" >> local.h 
+echo "#define LANGUAGES \"{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}$LOCAL\""  >>local.h ||exit 1;
 
 mv Makefile Makefile.orig
 sed -e 's/^[ 	]*$/\
