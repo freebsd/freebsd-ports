@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library to use LV's encoding conversion engine
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${LV_PORT}:configure
 

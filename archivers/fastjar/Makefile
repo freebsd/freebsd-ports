@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A version of JDK's `jar' command written entirely in C
 
 GNU_CONFIGURE=	YES
 

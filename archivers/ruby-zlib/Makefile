@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An extension library to use zlib from Ruby
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
