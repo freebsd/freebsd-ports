@@ -1,0 +1,10 @@
+--- demos/programs/Makefile.in.orig	Thu Feb 14 23:15:54 2002
++++ demos/programs/Makefile.in	Sat Sep  7 06:25:09 2002
+@@ -90,7 +90,6 @@
+ YACC = @YACC@
+ 
+ SUBDIRS = airport \
+-         animate \
+          drag_and_drop \
+          draw \
+          earth \
