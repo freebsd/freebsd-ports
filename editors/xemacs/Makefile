@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xemacs-21.1.6
+DISTNAME=	xemacs-21.1.7
 PKGNAME=	xemacs-21.1
 CATEGORIES=	editors
 MASTER_SITES=	\
@@ -24,7 +24,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png
 
-XEMACS_VER=	21.1.6
+XEMACS_VER=	21.1.7
 DIST_SUBDIR=	xemacs
 
 USE_GMAKE=	yes
