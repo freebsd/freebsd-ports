@@ -1,0 +1,7 @@
+share/scim/tables/HIRAGANA.bin
+share/scim/tables/KATAKANA.bin
+share/scim/tables/Nippon.bin
+share/scim/icons/HIRAGANA.png
+share/scim/icons/KATAKANA.png
+share/scim/icons/Nippon.png
+@unexec rmdir %D/share/scim/tables 2>/dev/null || true
