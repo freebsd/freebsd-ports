@@ -9,15 +9,13 @@ PORTNAME=	flick
 PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://flux.cs.utah.edu/flux/flick/2.1/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tar.gz
 
 MAINTAINER=     ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -17,7 +17,6 @@ CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
 
 USE_BZIP2=	yes
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN1=		ircII.1 ircbug.1
 
 .include <bsd.port.mk>

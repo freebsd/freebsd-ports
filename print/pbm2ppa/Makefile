@@ -9,14 +9,13 @@ PORTNAME=	pbm2ppa
 PORTVERSION=	0.8.6
 CATEGORIES=	print
 MASTER_SITES=	http://www.httptech.com/ppa/files/
-DISTNAME=	ppa-0.8.6
+DISTFILES=	ppa-${PORTVERSION}.tar.gz
 
 MAINTAINER=	smace@freebsd.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5 \
 		enscript:${PORTSDIR}/print/enscript-letter
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes
 
 HPMODEL?=	720

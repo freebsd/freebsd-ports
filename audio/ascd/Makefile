@@ -15,8 +15,6 @@ MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	workman.1:${PORTSDIR}/audio/libworkman
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 

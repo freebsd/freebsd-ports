@@ -9,13 +9,12 @@ PORTNAME=	bkmrkconv
 PORTVERSION= 	1.08
 CATEGORIES=	www
 MASTER_SITES=	http://www.dcs.warwick.ac.uk/~csube/bkmrkconv/
-DISTNAME=	${PORTNAME}
+DISTFILES=	${PORTNAME}.tar.gz
 
 MAINTAINER=	will@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 pre-install:
 	@${PERL} -pi -e "s:/usr/local/bin/perl:${PERL}:g" ${WRKSRC}/*.pl

@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.0-src-stable.tar.gz
 
 MAINTAINER=	dirk@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}.0
+WRKSRC=		${WRKDIR}/${DISTNAME}.0
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

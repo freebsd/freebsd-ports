@@ -10,12 +10,11 @@ PORTNAME=		cdk
 PORTVERSION=		4.9.10
 PORTREVISION=		1
 CATEGORIES=		devel
-MASTER_SITES=	http://www.vexus.ca/release/
-DISTNAME=	cdk
+MASTER_SITES=		http://www.vexus.ca/release/
+DISTFILES=		cdk.tar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 ALL_TARGET=	default

@@ -10,12 +10,11 @@ PORTVERSION=	2.3a
 CATEGORIES=	audio archivers
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
-DISTNAME=	${PORTNAME}
+DISTFILES=	${PORTNAME}.tar.gz
 
 MAINTAINER=	sec@42.org
 
 RESTRICTED=	"May not be sold. May not be distributed if modified."
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 MAN1=		shorten.1
 

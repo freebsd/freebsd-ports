@@ -10,8 +10,7 @@ PORTVERSION=	1.3.9
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/ \
 		http://www.freenix.no/~anders/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=   .tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/g}.tgz
 
 MAINTAINER=	anders@fix.no
 
@@ -22,8 +21,6 @@ USE_QT=		YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xsidplay ${PREFIX}/bin

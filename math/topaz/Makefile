@@ -9,7 +9,7 @@ PORTNAME=	topaz
 PORTVERSION=	3.25
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
-DISTNAME=	topaz-3_25-src
+DISTFILES=	topaz-3_25-src.tar.gz
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
@@ -19,7 +19,6 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 CXX?=		c++
 MAKEFILE=	Makefile.freebsd
 USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 post-install:
 		${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${PREFIX}/bin/topaz

@@ -9,12 +9,9 @@ PORTNAME=	lxnb
 PORTVERSION=	0.4
 CATEGORIES=	security
 MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
-DISTNAME=	linux-netbus-client-v0.4
-EXTRACT_SUFX=	.tgz
+DISTFILES=	linux-netbus-client-v${PORTVERSION}.tgz
 
 MAINTAINER=	kris@FreeBSD.org
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 pre-build:
 	rm -f ${WRKSRC}/lxnetbus

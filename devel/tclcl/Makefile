@@ -9,14 +9,12 @@ PORTNAME=	tclcl
 PORTVERSION=	1.0b9
 CATEGORIES=	devel
 MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
-DISTNAME=	tclcl-src-1.0b9
+DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
 LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		otcl.1:${PORTSDIR}/lang/otcl
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=8.2 --with-tk-ver=8.2

@@ -9,11 +9,10 @@ PORTNAME=	blockade
 PORTVERSION=	1.00
 CATEGORIES=	games
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Zone/5267/
-DISTNAME=	blockade-1_00-linux
+DISTFILES=	blockade-1_00-linux.tar.gz
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_XLIB=	yes
 
 MAN6=	blockade.6

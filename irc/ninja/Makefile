@@ -9,13 +9,12 @@ PORTNAME=	ninja
 PORTVERSION=	1.2
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ninja.qoop.org/ninja/unstable/
-DISTNAME= 	${PORTNAME}-${PORTVERSION}-src
+DISTFILES= 	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 pre-patch:
 	@${CP} ${WRKSRC}/config/configure ${WRKSRC}

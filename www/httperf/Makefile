@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes
 MAN1=		httperf.1
 

@@ -9,11 +9,10 @@ PORTNAME=	sendfile
 PORTVERSION=	2.1
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.belwue.de/pub/unix/sendfile/current/
-DISTNAME=	sendfile-20000102
+DISTFILES=	sendfile-20000102.tar.gz
 
 MAINTAINER=	sec@42.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=makeconfig
 CONFIGURE_ENV=	PREFIX="${PREFIX}"

@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/ \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${PORTVERSION}/
-DISTNAME=	wn16.unix
+DISTFILES=	wn16.unix.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
 
@@ -23,8 +23,6 @@ MAN5=		cntlist.5 glossidx.5 lexnames.5 senseidx.5 taglist.5 \
 MAN7=		morphy.7 uniqbeg.7 wngloss.7 wngroups.7 wnintro.7 \
 		wnlicens.7 wnpkgs.7 wnstats.7
 MANCOMPRESSED=	maybe
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 TCL_DVER=	8.2
 SCRIPTS_ENV+=	TCL_DVER=${TCL_DVER}

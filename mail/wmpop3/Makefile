@@ -9,11 +9,11 @@ PORTNAME=	wmpop3
 PORTVERSION= 	0.5.6a
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
-DISTNAME=	WMPop3-${PORTVERSION}
+DISTFILES=	WMPop3-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jim@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PKGNAME}/wmpop3
+WRKSRC=		${WRKDIR}/${DISTNAME}/wmpop3
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

@@ -11,12 +11,10 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.funet.fi/pub/Linux/util/networking/util-swan/pub/misc/ \
 		ftp://ftp.mcc.ac.uk/pub/linux/fi.mirror/util/networking/util-swan/pub/misc/ \
 		ftp://ftp.tu-chemnitz.de/pub/linux/funet-mirror/util/networking/util-swan/pub/misc/
-DISTNAME=	${PORTNAME}
-EXTRACT_SUFX=	.Z
+DISTFILES=	${PORTNAME}.Z
 
 MAINTAINER=	i.vaudrey@bigfoot.com
 
-WRKSRC=		${WRKDIR}/${PKGNAME}
 EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| tail -n 1759 | sh

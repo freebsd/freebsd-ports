@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 NO_PACKAGE=	"This program cannot be distributed if modified in any way"
 NO_CDROM=	"Don't sell for profit without written permission"
-WRKSRC=		${WRKDIR}/${PKGNAME}
 ALL_TARGET=
 
 do-install:

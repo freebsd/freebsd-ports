@@ -9,13 +9,11 @@ PORTNAME=	tank
 PORTVERSION=	0.4a
 CATEGORIES=	games
 MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
-DISTNAME=	${PKGNAME}-src
+DISTFILES=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	dburr@FreeBSD.org
 
 BROKEN=	can\'t find glaux.h
-
-WRKSRC=		${WRKDIR}/${PKGNAME}
 
 USE_MESA=	YES
 USE_GMAKE=	YES
