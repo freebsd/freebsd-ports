@@ -1,10 +1,11 @@
 bin/ggz-config
+bin/ggz-wrapper
 include/ggzcore.h
 include/ggzmod-ggz.h
 include/ggzmod.h
 lib/libggzcore.a
 lib/libggzcore.so
-lib/libggzcore.so.5
+lib/libggzcore.so.6
 lib/libggzmod.a
 lib/libggzmod.so
-lib/libggzmod.so.2
+lib/libggzmod.so.3
