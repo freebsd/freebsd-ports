@@ -77,6 +77,7 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/Version.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/__init__.py
 %%PYTHON_SITELIBDIR%%/TMDA/__init__.pyc
+%%PORTDOCS%%share/doc/tmda/CODENAMES
 %%PORTDOCS%%share/doc/tmda/COPYING
 %%PORTDOCS%%share/doc/tmda/CRYPTO
 %%PORTDOCS%%share/doc/tmda/ChangeLog
