@@ -71,12 +71,7 @@ share/bins/templates.joi/thumbnail.html
 share/bins/templates.joi/thumbnav.html
 share/bins/templates.joi/thumbnavrow.html
 share/bins/templates.joi/tree.html
-share/locale/de/LC_MESSAGES/bins.mo
-%%GUI%%share/locale/fr/LC_MESSAGES/bins-edit-gui.mo
-share/locale/fr/LC_MESSAGES/bins.mo
-share/locale/it/LC_MESSAGES/bins.mo
-share/locale/pl/LC_MESSAGES/bins.mo
-share/locale/ru/LC_MESSAGES/bins.mo
+%%PORTDOCS%%share/doc/bins/album.xml
 %%PORTDOCS%%share/doc/bins/autolayout.xml
 %%PORTDOCS%%share/doc/bins/bins-edit-gui.sgml
 %%PORTDOCS%%share/doc/bins/bins-edit-gui_man.html
@@ -122,7 +117,16 @@ share/locale/ru/LC_MESSAGES/bins.mo
 %%PORTDOCS%%share/doc/bins/usage_desc_gui_nautilus.xml
 %%PORTDOCS%%share/doc/bins/usage_desc_xml.html
 %%PORTDOCS%%share/doc/bins/usage_desc_xml.xml
-%%PORTDOCS%%share/doc/bins/album.xml
+share/locale/de/LC_MESSAGES/bins.mo
+share/locale/es/LC_MESSAGES/bins.mo
+%%GUI%%share/locale/fr/LC_MESSAGES/bins-edit-gui.mo
+share/locale/fr/LC_MESSAGES/bins.mo
+share/locale/it/LC_MESSAGES/bins.mo
+share/locale/pl/LC_MESSAGES/bins.mo
+share/locale/ru/LC_MESSAGES/bins.mo
+share/locale/zh/LC_MESSAGES/bins.mo
+@unexec rmdir %D/share/locale/zh/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
@@ -131,6 +135,8 @@ share/locale/ru/LC_MESSAGES/bins.mo
 @unexec rmdir %D/share/locale/it 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/bins
