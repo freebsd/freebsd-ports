@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bugghy@SAFe-mail.net
 COMMENT=	Rootkit detection tool
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
@@ -24,6 +24,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN8=		rkhunter.8
 MANCOMPRESSED=	no
 
+PORTDOCS=	CHANGELOG README WISHLIST
+
 post-patch:
 	@${SED} -e 's|PREFIX|${PREFIX}|g' ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
@@ -32,9 +34,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/files/development/rkhunter.8 ${MAN8PREFIX}/man/man8
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/files/CHANGELOG ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/files/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/files/WISHLIST ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/files/|} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
