@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5.1.1
+PORTVERSION=	1.5.2
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -36,7 +36,7 @@ PLIST_SUB+=             NETATALKPAM="@comment "
 .if defined(WITH_SRVLOC)
 # Enable Service Location Protocol support.  This allows MacOS X < 10.1 to
 # pickup afpd servers in the network.
-CONFIGURE_ARGS+=		--enable-srvloc
+CONFIGURE_ARGS+=		--enable-srvloc=${LOCALBASE}
 .endif
 .if defined(WITH_FLOCK_LOCKS)
 # Disable byte locking, and do full file locking.  This _may_ help with some
@@ -49,11 +49,11 @@ CONFIGURE_ARGS+=		--with-flock-locks
 # This should hopefully allow aliases to work between restarts of afpd.
 # This has been tested on MacOS 9.2.x and OS X.
 CONFIGURE_ARGS+=		--with-did=cnid \
-						--with-db3=/usr/local
+				--with-db3=${LOCALBASE}
 PLIST_SUB+=				NETATALKCNID=""
 .else
 # This method of DID calculation is not persistent, but has been tested to
-# work with MacOS X (10.0.3-10.1.1) as well as MacOS 7-9.2.2.
+# work with MacOS X (10.0.3-10.1.3) as well as MacOS 7-9.2.2.
 CONFIGURE_ARGS+=		--with-did=last
 PLIST_SUB+=             NETATALKCNID="@comment "
 .endif
