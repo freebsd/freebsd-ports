@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	2.2
-PORTREVISION=	1
+PORTVERSION=	2.6
 CATEGORIES=	security
 MASTER_SITES=	http://www.thc.org/releases/ \
 		${MASTER_SITE_PACKETSTORM}
