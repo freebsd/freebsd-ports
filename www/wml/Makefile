@@ -7,6 +7,7 @@
 
 PORTNAME=	wml
 PORTVERSION=	2.0.9
+PORTREVISION=	1
 CATEGORIES=	www lang
 MASTER_SITES=	http://thewml.org/distrib/ \
 		ftp://thewml.org/distrib/
@@ -19,11 +20,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"	\
+		PERL_ARCH="${PERL_ARCH}"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_LIBTOOL_VER=	15
 LIBTOOLFILES=	wml_backend/p2_mp4h/configure
-PLIST_SUB+=	ARCH=${LOCAL_PERL_ARCH}
+PLIST_SUB+=	ARCH=${PERL_ARCH}
 
 CAT1=	wml_aux_txt2html.1 wml_aux_tidy.1 wml_p4_gm4.1
 
@@ -57,12 +59,6 @@ CAT7=	wml_barebone.7 \
 MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 .include <bsd.port.pre.mk>
-
-.if exists(${PERL5})
-LOCAL_PERL_ARCH!=	${PERL5} -MConfig -e 'print "$$Config{archname}"'
-.else
-LOCAL_PERL_ARCH=	${ARCH}-freebsd
-.endif
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Build fails on amd64 (needs to build shared libraries with -fPIC)"

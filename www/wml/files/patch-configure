@@ -1,5 +1,5 @@
---- configure.orig	Sat May  8 01:58:52 2004
-+++ configure	Sat May  8 01:58:59 2004
+--- configure.orig	Fri Oct 18 23:44:21 2002
++++ configure	Thu Aug  5 23:40:57 2004
 @@ -1170,7 +1170,7 @@
      esac
      case " $ac_configure_args " in
@@ -9,3 +9,12 @@
      esac
    fi
  done
+@@ -2740,7 +2740,7 @@
+ 
+ dummy:
+ 	@echo INSTALLPRIVLIB=`echo $(INSTALLPRIVLIB) | $(abs2prefix)`
+-	@echo INSTALLARCHLIB=`echo $(INSTALLARCHLIB) | $(abs2prefix)`
++	@echo INSTALLARCHLIB=`echo $(INSTALLPRIVLIB) | $(abs2prefix)`/$(PERL_ARCH)
+ };
+ }
+ EOT
