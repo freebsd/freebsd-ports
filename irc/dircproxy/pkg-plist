@@ -1,7 +1,7 @@
 bin/dircproxy
 bin/dircproxy-crypt
-share/dircproxy/cronchk.sh
-share/dircproxy/dircproxyrc
-share/dircproxy/log.pl
-share/dircproxy/privmsg-log.pl
-@dirrm share/dircproxy
+%%DATADIR%%/cronchk.sh
+%%DATADIR%%/dircproxyrc
+%%DATADIR%%/log.pl
+%%DATADIR%%/privmsg-log.pl
+@dirrm %%DATADIR%%
