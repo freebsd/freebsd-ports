@@ -5075,6 +5075,7 @@ ports_japanese	ports/japanese
 ports_java	ports/java
 ports_korean	ports/korean
 ports_lang	ports/lang
+ports_less	ports/sysutils/less
 ports_mail	ports/mail
 ports_math	ports/math
 ports_mbone	ports/mbone
