@@ -1,13 +1,14 @@
 bin/xmlsec1
 bin/xmlsec1-config
+etc/xmlsec1Conf.sh
 include/xmlsec1/xmlsec/base64.h
 include/xmlsec1/xmlsec/buffer.h
 include/xmlsec1/xmlsec/crypto.h
 include/xmlsec1/xmlsec/errors.h
 include/xmlsec1/xmlsec/exports.h
-include/xmlsec1/xmlsec/gnutls/app.h
-include/xmlsec1/xmlsec/gnutls/crypto.h
-include/xmlsec1/xmlsec/gnutls/symbols.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/app.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/crypto.h
+%%GNUTLS%%include/xmlsec1/xmlsec/gnutls/symbols.h
 include/xmlsec1/xmlsec/io.h
 include/xmlsec1/xmlsec/keyinfo.h
 include/xmlsec1/xmlsec/keys.h
@@ -31,20 +32,16 @@ include/xmlsec1/xmlsec/xmldsig.h
 include/xmlsec1/xmlsec/xmlenc.h
 include/xmlsec1/xmlsec/xmlsec.h
 include/xmlsec1/xmlsec/xmltree.h
-lib/libxmlsec1-gnutls.a
-lib/libxmlsec1-gnutls.la
-lib/libxmlsec1-gnutls.so
-lib/libxmlsec1-gnutls.so.1
+%%GNUTLS%%lib/libxmlsec1-gnutls.a
+%%GNUTLS%%lib/libxmlsec1-gnutls.so
+%%GNUTLS%%lib/libxmlsec1-gnutls.so.1
 lib/libxmlsec1-openssl.a
-lib/libxmlsec1-openssl.la
 lib/libxmlsec1-openssl.so
 lib/libxmlsec1-openssl.so.1
 lib/libxmlsec1.a
-lib/libxmlsec1.la
 lib/libxmlsec1.so
 lib/libxmlsec1.so.1
-lib/pkgconfig/xmlsec1.pc
-lib/xmlsec1Conf.sh
+libdata/pkgconfig/xmlsec1.pc
 %%PORTDOCS%%share/doc/xmlsec1/api/chapters/compiling-and-linking.sgml
 %%PORTDOCS%%share/doc/xmlsec1/api/chapters/creating-templates.sgml
 %%PORTDOCS%%share/doc/xmlsec1/api/chapters/examples.sgml
@@ -184,7 +181,6 @@ lib/xmlsec1Conf.sh
 %%PORTDOCS%%@dirrm share/doc/xmlsec1/api
 %%PORTDOCS%%@dirrm share/doc/xmlsec1
 @dirrm include/xmlsec1/xmlsec/openssl
-@dirrm include/xmlsec1/xmlsec/gnutls
+%%GNUTLS%%@dirrm include/xmlsec1/xmlsec/gnutls
 @dirrm include/xmlsec1/xmlsec
 @dirrm include/xmlsec1
-@unexec rmdir $D/lib/pkgconfig 2>/dev/null || true
