@@ -21,7 +21,6 @@ NO_BUILD=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd4
 .else
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd5
