@@ -36,9 +36,7 @@ post-patch:
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/dancer-services
-.if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 
 post-install:
 	${FIND} ${PREFIX}/share/dancer-services -type d -print0 | \
