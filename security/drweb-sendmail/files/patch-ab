@@ -1,5 +1,5 @@
 --- dw_filter.c.orig	Thu Sep 27 01:00:46 2001
-+++ dw_filter.c	Wed Oct  3 06:25:53 2001
++++ dw_filter.c	Wed Oct  3 11:56:41 2001
 @@ -606,7 +606,7 @@
          }
          else
@@ -18,3 +18,12 @@
      priv->fname_tmp = strdup( ShareTemplate );
      if( !priv->fname_tmp )
      {
+@@ -983,7 +983,7 @@
+     }
+     else
+     {
+-        wprintLib( "message sent by %s is okey.\n", priv->from );
++	wprintLib( "message sent by %s is okay.\n", priv->from );
+         exit_code = SMFIS_ACCEPT;
+     }
+     if( bLocal && (virus == 0) && (exit_code == SMFIS_ACCEPT) && (status & DERR_EVAL_KEY) && (priv->body_offset > 0) )
