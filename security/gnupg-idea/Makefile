@@ -67,7 +67,7 @@ do-patch:
 do-build:
 .for i in ${CONTRIB}
 	${CC} ${CFLAGS} -o ${WRKSRC}/${i} ${WRKSRC}/${i}.c
-	${ECHO} "lib/gnupg/${i}" >>${PLIST}
+	${ECHO_CMD} "lib/gnupg/${i}" >>${PLIST}
 .endfor
 
 do-install:

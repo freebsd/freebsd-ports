@@ -20,9 +20,9 @@ SCRIPTS_ENV=	BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" \
 		MANMODE="${MANMODE}" CFLAGS="${CFLAGS}"
 
 post-configure:
-	@${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
-	@${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
-	@${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
+	@${ECHO_CMD} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} ${CC} -s > ${WRKSRC}/conf-ld
 
 do-install:
 .for file in addcr argv0 delcr fixcrio mconnect-io rblsmtpd recordio tcpclient tcprules tcprulescheck tcpserver

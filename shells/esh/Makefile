@@ -20,7 +20,7 @@ do-install:
 	@${ECHO} "updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/esh /etc/shells.bak; \
-	  ${ECHO} ${PREFIX}/bin/esh) > /etc/shells
+	  ${ECHO_CMD} ${PREFIX}/bin/esh) > /etc/shells
 	@${RM} /etc/shells.bak
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/doc/esh.info ${PREFIX}/info/esh.info

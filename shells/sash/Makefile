@@ -29,7 +29,7 @@ post-install:
 	@${ECHO_MSG} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/sash /etc/shells.bak; \
-		${ECHO} ${PREFIX}/bin/sash) > /etc/shells
+		${ECHO_CMD} ${PREFIX}/bin/sash) > /etc/shells
 	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>

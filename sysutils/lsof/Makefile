@@ -49,7 +49,7 @@ post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS:S/z//} ${SRCBALL_NAME}.tar \
 	${EXTRACT_AFTER_ARGS} \
 	)
-	@( cd ${WRKSRC} ; ${ECHO} "y" | ./Inventory || exit 1 )
+	@( cd ${WRKSRC} ; ${ECHO_CMD} "y" | ./Inventory || exit 1 )
 .endif
 
 #pre-patch:

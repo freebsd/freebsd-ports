@@ -38,7 +38,7 @@ pre-install:
 do-install:
 	@unzip -a -q -o ${DISTDIR}/${DISTFILES} -d ${INSTDIR}/4.1
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/4.1/catalog
-	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/4.1/catalog
+	@${ECHO_CMD} "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/4.1/catalog
 	@${CHMOD} ${SHAREMODE} ${INSTDIR}/4.1/*
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 

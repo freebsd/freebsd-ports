@@ -79,11 +79,11 @@ post-install:
 		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-webmin
 
-	@${ECHO} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
-	@${ECHO} "/Insert PLIST.lib-webmin"	>> ${WRKDIR}/ex.script
-	@${ECHO} "d"				>> ${WRKDIR}/ex.script
-	@${ECHO} "r ${WRKDIR}/PLIST.lib-webmin"	>> ${WRKDIR}/ex.script
-	@${ECHO} "x!"				>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "/Insert PLIST.lib-webmin"		>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "r ${WRKDIR}/PLIST.lib-webmin"	>> ${WRKDIR}/ex.script
+	@${ECHO_CMD} "x!"				>> ${WRKDIR}/ex.script
 	@${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-lib-webmin
 	@cd ${WRKDIR} ; ex < ex.script
 # upgrade configuration if etc/webmin exists

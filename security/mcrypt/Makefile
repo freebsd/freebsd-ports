@@ -33,14 +33,14 @@ USE_AUTOCONF=		yes
 USE_LIBTOOL=		yes
 
 pre-install:
-	${ECHO} bin/${PORTNAME} > ${PLIST}
-	${ECHO} bin/mdecrypt >> ${PLIST}
+	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
+	${ECHO_CMD} bin/mdecrypt >> ${PLIST}
 .for i in cs el pl
-	${ECHO} share/locale/${i}/LC_MESSAGES/mcrypt.mo >> ${PLIST}
+	${ECHO_CMD} share/locale/${i}/LC_MESSAGES/mcrypt.mo >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
-	${ECHO} share/examples/${PORTNAME}/sample.mcryptrc >> ${PLIST}
-	${ECHO} @dirrm share/examples/${PORTNAME} >> ${PLIST}
+	${ECHO_CMD} share/examples/${PORTNAME}/sample.mcryptrc >> ${PLIST}
+	${ECHO_CMD} @dirrm share/examples/${PORTNAME} >> ${PLIST}
 .endif
 
 post-install:

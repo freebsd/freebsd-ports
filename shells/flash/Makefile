@@ -63,7 +63,7 @@ post-install:
 	@${ECHO} "Updating /etc/shells"
 	@${CP} /etc/shells /etc/shells.bak
 	@(${GREP} -v ${PREFIX}/bin/flash /etc/shells.bak; \
-	${ECHO} ${PREFIX}/bin/flash) > /etc/shells
+	${ECHO_CMD} ${PREFIX}/bin/flash) > /etc/shells
 	@${RM} /etc/shells.bak
 	@${SED} -e "s:/usr/local:${PREFIX}:g" ${PKGMESSAGE}
 

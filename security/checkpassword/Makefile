@@ -23,8 +23,8 @@ DOCDIR=		${PREFIX}/share/doc/checkpassword
 .SILENT:
 
 do-configure:
-	${ECHO} 'cc -s -lcrypt' > ${WRKSRC}/conf-ld
-	${ECHO} ${PREFIX} >${WRKSRC}/conf-home
+	${ECHO_CMD} 'cc -s -lcrypt' > ${WRKSRC}/conf-ld
+	${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
 
 post-install:
 #	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8

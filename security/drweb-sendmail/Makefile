@@ -36,8 +36,8 @@ WITH_DRWEBSMF_HOSTNAME!=hostname
 .if exists( ${WITH_DRWEBSMF_SENDMAIL_DIR}/include/libmilter/mfapi.h )
 
 SENDMAIL_VERSION!=      ${AWK} '/^sendmail [0-9.]+$$/{print $$2}' ${WITH_DRWEBSMF_SENDMAIL_DIR}/FREEBSD-upgrade
-SENDMAIL_MAJOR!=	${ECHO} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$1 }'
-SENDMAIL_MINOR!=	${ECHO} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$2 }'
+SENDMAIL_MAJOR!=	${ECHO_CMD} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$1 }'
+SENDMAIL_MINOR!=	${ECHO_CMD} ${SENDMAIL_VERSION} | ${AWK} 'BEGIN{ FS="." }{ print $$2 }'
 .if ${SENDMAIL_MAJOR} > 8 || ${SENDMAIL_MAJOR} == 8 && ${SENDMAIL_MINOR} >= 12
 SENDMAIL8_12=	y
 .elif ${SENDMAIL_MAJOR} == 8 && ${SENDMAIL_MINOR} >= 10
@@ -69,13 +69,13 @@ post-configure:
 	cd ${WRKSRC}/libmilter && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
 	cd ${WRKSRC}/libsmutil && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
 	cd ${WRKSRC} && { \
-		${ECHO} y; \
-		${ECHO} n; \
-		${ECHO} y; \
-		${ECHO} ${SENDMAIL8_12} ; \
-		${ECHO} ${WITH_DRWEBSMF_SENDMAIL_DIR} ; \
-		${ECHO} ${CFLAGS} ; \
-		${ECHO} y; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} n; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} ${SENDMAIL8_12} ; \
+		${ECHO_CMD} ${WITH_DRWEBSMF_SENDMAIL_DIR} ; \
+		${ECHO_CMD} ${CFLAGS} ; \
+		${ECHO_CMD} y; \
 	} | ./configure
 
 do-install:
@@ -83,33 +83,33 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
 	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
 	cd ${WRKSRC}/../sendmail && { \
-		${ECHO} y; \
-		${ECHO} "${PREFIX}/sbin"; \
-		${ECHO} ; \
-		${ECHO} u; \
-		${ECHO} "${PREFIX}/drweb/run/drweb-smf.sock"; \
-		${ECHO} drweb; \
-		${ECHO} "${PREFIX}/drweb/infected"; \
-		${ECHO} y; \
-		${ECHO} /tmp; \
-		${ECHO} y; \
-		${ECHO} y; \
-		${ECHO} ; \
-		${ECHO} postmaster@${WITH_DRWEBSMF_HOSTNAME}; \
-		${ECHO} y; \
-		${ECHO} y; \
-		${ECHO} y; \
-		${ECHO} c; \
-		${ECHO} t; \
-		${ECHO} t; \
-		${ECHO} t; \
-		${ECHO} a; \
-		${ECHO} r; \
-		${ECHO} 160000; \
-		${ECHO} ${SENDMAIL8_12} ; \
-		${ECHO} n; \
-		${ECHO} y; \
-		${ECHO} ; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} "${PREFIX}/sbin"; \
+		${ECHO_CMD} ; \
+		${ECHO_CMD} u; \
+		${ECHO_CMD} "${PREFIX}/drweb/run/drweb-smf.sock"; \
+		${ECHO_CMD} drweb; \
+		${ECHO_CMD} "${PREFIX}/drweb/infected"; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} /tmp; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} ; \
+		${ECHO_CMD} postmaster@${WITH_DRWEBSMF_HOSTNAME}; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} c; \
+		${ECHO_CMD} t; \
+		${ECHO_CMD} t; \
+		${ECHO_CMD} t; \
+		${ECHO_CMD} a; \
+		${ECHO_CMD} r; \
+		${ECHO_CMD} 160000; \
+		${ECHO_CMD} ${SENDMAIL8_12} ; \
+		${ECHO_CMD} n; \
+		${ECHO_CMD} y; \
+		${ECHO_CMD} ; \
 	} | ./configure
 	cd ${WRKSRC}/../sendmail; \
 		${INSTALL_DATA} example* readme.* sendmail.*.addon ${DOC_DIR}
