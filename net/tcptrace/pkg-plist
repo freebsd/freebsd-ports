@@ -1,4 +1,5 @@
 bin/tcptrace
+bin/xpl2gpl
 share/doc/tcptrace/ARGS
 share/doc/tcptrace/CHANGES
 share/doc/tcptrace/COPYING
@@ -7,8 +8,11 @@ share/doc/tcptrace/FAQ
 share/doc/tcptrace/README
 share/doc/tcptrace/README.mailing_list
 share/doc/tcptrace/README.modules
+share/doc/tcptrace/README.tline_graphs
 share/doc/tcptrace/README.tput_graphs
+share/doc/tcptrace/README.version
+share/doc/tcptrace/README.xpl2gpl
 share/doc/tcptrace/THANKS
 share/doc/tcptrace/WWW
-share/doc/tcptrace/dot_tcptracerc.sample
+share/doc/tcptrace/dot_tcptracerc
 @dirrm share/doc/tcptrace
