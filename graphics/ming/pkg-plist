@@ -15,6 +15,7 @@ include/ming/ming.h
 include/ming/movie.h
 include/ming/movieclip.h
 include/ming/position.h
+include/ming/shape_cubic.h
 include/ming/shape_util.h
 include/ming/text_util.h
 include/ming/blocks/block.h
@@ -22,12 +23,14 @@ include/ming/blocks/blocktypes.h
 include/ming/blocks/character.h
 include/ming/blocks/cxform.h
 include/ming/blocks/error.h
+include/ming/blocks/exports.h
 include/ming/blocks/input.h
 include/ming/blocks/libswf.h
 include/ming/blocks/matrix.h
 include/ming/blocks/method.h
 include/ming/blocks/output.h
 include/ming/blocks/outputblock.h
+include/ming/blocks/placeobject.h
 include/ming/blocks/rect.h
 include/ming/blocks/sound.h
 include/ming/blocks/sprite.h
@@ -37,7 +40,7 @@ include/ming/mingpp.h
 @dirrm include/ming
 lib/libming.a
 lib/libming.so
-lib/libming.so.2
+lib/libming.so.3
 %%PORTDOCS%%share/doc/ming/CHANGES
 %%PORTDOCS%%share/doc/ming/CREDITS
 %%PORTDOCS%%share/doc/ming/README

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ming
-PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTVERSION=	0.2a
 CATEGORIES=	graphics ruby
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/SWIG-devel \
 		${NONEXISTENT}:${PORTSDIR}/graphics/ming:patch
-LIB_DEPENDS=	ming.2:${PORTSDIR}/graphics/ming
+LIB_DEPENDS=	ming.3:${PORTSDIR}/graphics/ming
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

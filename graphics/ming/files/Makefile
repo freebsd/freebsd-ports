@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 LIB=		ming
-SHLIB_MAJOR?=	2
+SHLIB_MAJOR?=	3
 SHLIB_MINOR?=	0
 CFLAGS+=	-I${.CURDIR}/actioncompiler -I${.CURDIR}/blocks -I${LOCALBASE}/include
 LDADD=		-lm
@@ -12,12 +12,16 @@ SRCS=		blocklist.c \
 		movie.c \
 		movieclip.c \
 		position.c \
+		shape_cubic.c \
 		shape_util.c \
 		text_util.c \
+		actioncompiler/assembler.c \
 		actioncompiler/compile.c \
 		actioncompiler/compileaction.c \
-		actioncompiler/compiler.tab.c \
-		actioncompiler/lex.yy.c \
+		actioncompiler/lex.swf4.c \
+		actioncompiler/lex.swf5.c \
+		actioncompiler/swf4compiler.tab.c \
+		actioncompiler/swf5compiler.tab.c \
 		blocks/action.c \
 		blocks/bitmap.c \
 		blocks/block.c \
@@ -41,6 +45,7 @@ SRCS=		blocklist.c \
 		blocks/mp3.c \
 		blocks/output.c \
 		blocks/outputblock.c \
+		blocks/placeobject.c \
 		blocks/rect.c \
 		blocks/shape.c \
 		blocks/soundstream.c \
@@ -57,6 +62,7 @@ INCS=		blocklist.h \
 		movie.h \
 		movieclip.h \
 		position.h \
+		shape_cubic.h \
 		shape_util.h \
 		text_util.h
 
@@ -89,8 +95,9 @@ pre-_includeinstall:
 beforeinstall:
 	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
 		${.CURDIR}/blocks/block.h ${.CURDIR}/blocks/cxform.h \
-		${.CURDIR}/blocks/error.h ${.CURDIR}/blocks/input.h \
-		${.CURDIR}/blocks/matrix.h ${.CURDIR}/blocks/outputblock.h \
+		${.CURDIR}/blocks/error.h ${.CURDIR}/blocks/exports.h \
+		${.CURDIR}/blocks/input.h ${.CURDIR}/blocks/matrix.h \
+		${.CURDIR}/blocks/outputblock.h ${.CURDIR}/blocks/placeobject.h \
 		${.CURDIR}/blocks/sound.h ${.CURDIR}/blocks/sprite.h \
 		${.CURDIR}/blocks/swf.h ${.CURDIR}/blocks/blocktypes.h \
 		${.CURDIR}/blocks/character.h ${.CURDIR}/blocks/libswf.h \
