@@ -1,14 +1,13 @@
---- man/Makefile.common.orig	Tue Dec 17 13:59:55 2002
-+++ man/Makefile.common	Wed Jan 22 07:38:08 2003
+--- man/Makefile.common.orig	Wed Dec 18 03:59:55 2002
++++ man/Makefile.common	Tue Jun 10 22:32:41 2003
 @@ -26,9 +26,8 @@
  # Man pages...
  #
  
 -MAN1	=	backend.man \
--		cupstestppd.man \
++MAN1	=	cupsaddsmb.man \
+ 		cupstestppd.man \
 -		filter.man \
-+MAN1	=	cupsaddsmb.man\
-+		cupstestppd.man\
  		lp.man \
  		lpoptions.man \
  		lppasswd.man \

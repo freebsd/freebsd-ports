@@ -1,4 +1,5 @@
 bin/cancel
+bin/cupstestppd
 bin/disable
 bin/enable
 bin/lp
@@ -9,10 +10,9 @@ bin/lpr
 bin/lprm
 bin/lpstat
 sbin/accept
-sbin/reject
 sbin/cupsaddsmb
-sbin/cupstestppd
 sbin/lpadmin
 sbin/lpc
 sbin/lpinfo
 sbin/lpmove
+sbin/reject
