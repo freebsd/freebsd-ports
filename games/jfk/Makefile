@@ -10,15 +10,14 @@ PORTVERSION=	0.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://relax.ath.cx/jfk/
 
-MAINTAINER=	e0026813@stud3.tuwien.ac.at
+MAINTAINER=	stefan@fafoe.narf.at
 COMMENT=	A multiplayer 2D shoot'em up game
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=	yes
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+USE_SDL=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/client/jfkclient ${PREFIX}/bin
