@@ -1,9 +1,9 @@
 bin/john
 bin/xtract
 bin/unshadow
-share/ucfjohn/all.chr
-share/ucfjohn/alpha.chr
-share/ucfjohn/digits.chr
-share/ucfjohn/john.ini
-share/ucfjohn/password.lst
-share/doc/ucfjohn/john.doc
+share/john/all.chr
+share/john/alpha.chr
+share/john/digits.chr
+share/john/john.ini
+share/john/password.lst
+share/doc/john/john.doc
