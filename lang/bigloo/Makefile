@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bigloo
-PORTVERSION=	2.5a
+PORTVERSION=	2.6b
 CATEGORIES=	lang scheme
 MASTER_SITES=	ftp://ftp-sop.inria.fr/mimosa/fp/Bigloo/ \
 		ftp://kaolin.unice.fr/pub/Bigloo/
@@ -20,18 +20,24 @@ ALL_TARGET=
 INSTALL_TARGET=	install compile-bee install-bee
 EMACS_PORT_NAME?=	emacs21
 MAN1=		bigloo.1
+INFO=		bigloo
 PLIST_SUB=	BIGLOO_VERSION=${PORTVERSION}
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/bigloo/%%BIGLOO_VERSION%%
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--emacs=${EMACS_NAME} \
 		--lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/bigloo \
 		--native=yes \
 		--jvm=no
 
 INSTALL_INFO?=	install-info
+
+post-configure:
+	${REINPLACE_CMD} -e 's/BGL_HAVE_SENDFILE 1/BGL_HAVE_SENDFILE 0/' \
+		${WRKSRC}/lib/${PORTVERSION}/bigloo_config.h
 
 .include <bsd.port.pre.mk>
 
