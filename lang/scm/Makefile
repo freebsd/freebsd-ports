@@ -37,10 +37,6 @@ SCM_MODULES=	crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Segfault during build"
-.endif
-
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
 .endif
