@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oaf
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/oaf
@@ -26,7 +26,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--enable-static --enable-shared
+		--enable-static --enable-shared \
+		--disable-more-warnings
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"

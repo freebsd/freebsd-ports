@@ -13,6 +13,7 @@ lib/liboaf.so.0
 share/aclocal/oaf.m4
 share/gnome/idl/gnome-factory.idl
 share/gnome/idl/oaf.idl
+share/gnome/oaf/broken.oafinfo
 share/gnome/oaf/empty.oafinfo
 share/gnome/oaf/oafd.oafinfo
 @unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
