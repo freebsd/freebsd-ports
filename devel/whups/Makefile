@@ -16,7 +16,7 @@ COMMENT=	WHUPS is a web-based bug tracking system
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
-BROKEN=		"Doesn't run with Horde 2.1 or 2.2"
+IGNORE=		"Doesn't run with Horde 2.1 or 2.2"
 
 NO_BUILD=	yes
 
