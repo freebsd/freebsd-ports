@@ -19,4 +19,10 @@ COMMENT=	The Berkeley DB package, revision 4.2
 MASTERDIR?=	${.CURDIR}
 
 .include <${MASTERDIR}/Makefile.db>
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CONFIGURE_ARGS+=	--with-mutex=x86/gcc-assembly
+.endif
+
+.include <bsd.port.post.mk>
