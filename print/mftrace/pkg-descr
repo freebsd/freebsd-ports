@@ -1,0 +1,8 @@
+pktrace is a small Python program that lets you trace a TeX bitmap font into
+a PFA or PFB font (A PostScript Type1 Scalable Font).
+
+Type1 fonts offer many advantages over bitmaps, as they allow PostScript
+files to render correctly on printers with many resolutions. Moreover,
+Ghostscript can generate much better PDF, if given scalable fonts.
+
+WWW: http://www.cs.uu.nl/~hanwen/pktrace/

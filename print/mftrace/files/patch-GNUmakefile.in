@@ -1,0 +1,11 @@
+--- GNUmakefile.in.orig	Sun Jun  2 23:51:33 2002
++++ GNUmakefile.in	Sun Jun  2 23:52:07 2002
+@@ -23,7 +23,7 @@
+ compile: pktrace gf2pbm
+ 
+ gf2pbm: gf2pbm.c
+-	gcc -O2 -Wall -o $@ $<
++	${CC} ${CFLAGS} -I${LOCALBASE}/include -o $@ $< -L${LOCALBASE}/lib -lgnugetopt
+ 
+ README.txt: README.texi
+ 	makeinfo --no-split --no-headers --output $@  $<
