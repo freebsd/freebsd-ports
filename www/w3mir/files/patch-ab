@@ -1,0 +1,10 @@
+--- w3mir.PL.bak	Fri May 28 23:35:19 1999
++++ w3mir.PL	Sat Jan 22 21:10:17 2000
+@@ -2322,6 +2322,7 @@
+ 
+ 
+ sub rm_rf {
++die;
+   # Recursively remove directories and other files
+   # File::Path::rmtree does a similar thing but the messages are wrong
+ 
