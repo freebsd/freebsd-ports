@@ -80,5 +80,5 @@
 #define	JAPANESE	1
 #define	X_NSUBJ_MODE	0
 #define	INEWS_SIG_MODE	0
-#define	JST_MODE	1
+#define	JST_MODE	0
 #define	DNAS_MODE	0
