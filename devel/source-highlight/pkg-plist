@@ -1,0 +1,31 @@
+bin/cpp2html
+bin/java2html
+share/source-highlight/tags.j2h
+share/doc/source-highlight/COPYING
+share/doc/source-highlight/ChangeLog
+share/doc/source-highlight/Hello.css
+share/doc/source-highlight/Hello.java
+share/doc/source-highlight/Hello.java.html
+share/doc/source-highlight/Hello1.html
+share/doc/source-highlight/Hello2.css
+share/doc/source-highlight/Hello2.html
+share/doc/source-highlight/Hello3.html
+share/doc/source-highlight/Hello4.html
+share/doc/source-highlight/Hello5.html
+share/doc/source-highlight/Hello_h_f.html
+share/doc/source-highlight/INSTALL
+share/doc/source-highlight/NEWS
+share/doc/source-highlight/README
+share/doc/source-highlight/README.compile_VC6
+share/doc/source-highlight/THANKS
+share/doc/source-highlight/TODO.txt
+share/doc/source-highlight/cmdline.c.html
+share/doc/source-highlight/cmdline.h.html
+share/doc/source-highlight/colors.html
+share/doc/source-highlight/cpp2html.css
+share/doc/source-highlight/mono-alt.css
+share/doc/source-highlight/mono.css
+share/doc/source-highlight/source-highlight.html
+share/doc/source-highlight/startapp.cc.html
+@dirrm share/source-highlight
+@dirrm share/doc/source-highlight

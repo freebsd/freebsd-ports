@@ -519,6 +519,7 @@
     SUBDIR += shtool
     SUBDIR += sip
     SUBDIR += soup
+    SUBDIR += source-highlight
     SUBDIR += sparc-rtems-binutils
     SUBDIR += sparc-rtems-chill
     SUBDIR += sparc-rtems-g77
