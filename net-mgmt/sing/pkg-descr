@@ -1,0 +1,20 @@
+Sing is a little tool that sends ICMP packets fully customized from command
+line. The main purpose is to replace/complement the niceful ping command
+with certain enhancements as:
+
+ - Send fragmented packets (Linux and BSD).
+ - Send monster packets > 65534 (Linux and BSD).
+ - Send/read spoofed packets.
+ - Send many ICMP Information types in addition to the ECHO REQUEST type sent
+   by default as Address Mask Request, Timestamp, Information Request, Router
+   Solicitation and Router Advertisement.
+ - Send many ICMP error types: Redirect, Source Quench, Time Exceeded,
+   Destination Unreach and Parameter Problem.
+ - Send to host with Loose or Strict Source Routing.
+ - Use little fingerprinting techniques to discover Windows or Solaris boxes.
+ - Send ICMP packets emulating certain OS: Cisco, Solaris, Linux, Shiva,
+   Unix and Windows at the moment.
+
+WWW: http://sourceforge.net/projects/sing/
+
+--Roman <roman@xpert.com>
