@@ -95,6 +95,11 @@ CONFIGURE_ARGS+=	--enable-xim
 .if defined(WITH_XTERM_SCROLLBAR)
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif # WITH_XTERM_SCROLLBAR
+#
+# enable line-spacing
+.if defined(WITH_LINESPACE)
+CONFIGURE_ARGS+=	--enable-linespace
+.endif # WITH_LINESPACE
 
 CONFIGURE_ENV+=		LIBS="-lutil"
 
@@ -107,6 +112,7 @@ pre-everything::
 	@${ECHO_MSG} "WITHOUT_XIM=yes			disable support for XIM (X Input Method) protocol"
 	@${ECHO_MSG} "WITH_GRAPHICS=yes		enable rxvt own graphics mode"
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes		add support for greek keyboard"
+	@${ECHO_MSG} "WITH_LINESPACE=yes	add support for line-spacing"
 	@${ECHO_MSG} "WITH_MENUBAR=yes		add support for rxvt menu bar system"
 	@${ECHO_MSG} "WITH_MOUSEWHEEL=yes		add support for scrolling via mouse wheel"
 	@${ECHO_MSG} "				or buttons 4 & 5"
