@@ -1,5 +1,5 @@
---- ../Makefile.pre.in.orig	Wed Apr 23 00:11:24 2003
-+++ ../Makefile.pre.in	Sat Aug  2 13:56:42 2003
+--- ../Makefile.pre.in.orig	Tue Apr 22 09:11:24 2003
++++ ../Makefile.pre.in	Fri Aug  8 12:08:07 2003
 @@ -92,7 +92,7 @@
  TARGET=		python
  
@@ -18,3 +18,12 @@
  LIBS=		@LIBS@
  LIBM=		@LIBM@
  LIBC=		@LIBC@
+@@ -153,7 +153,7 @@
+ INCLUDEPY=	$(INCLUDEDIR)/python$(VERSION)
+ EXECINCLUDEPY=	$(exec_installdir)/include/python$(VERSION)
+ LIBP=		$(exec_installdir)/lib/python$(VERSION)
+-DESTSHARED=	$(BINLIBDEST)/site-packages
++DESTSHARED=	$(BINLIBDEST)/site-packages/PIL
+ 
+ LIBPL=		$(LIBP)/config
+ 
