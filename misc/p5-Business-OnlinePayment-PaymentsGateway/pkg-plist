@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/PaymentsGateway.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/PaymentsGateway/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/PaymentsGateway
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/PaymentsGateway
