@@ -359,92 +359,101 @@ diff -arcN ../sj3-2.0.1.13.org/doc/man/sj3serv.1 ./doc/man/sj3serv.1
   かな漢字変換サーバ デフォルト辞書ディレクトリ
   .TP
       sj3main.dic
-diff -arcN ../sj3-2.0.1.13.org/server/setup.c ./server/setup.c
-*** ../sj3-2.0.1.13.org/server/setup.c	Fri Dec  9 20:27:07 1994
---- ./server/setup.c	Mon Aug 12 23:58:25 1996
+*** server/setup.c.orig	Mon Mar 23 04:48:02 1998
+--- server/setup.c	Sun Feb  6 18:48:31 2000
 ***************
-*** 221,250 ****
-  	u_char	*(*optfunc)();
-  	int	optarg;
-  } option[] = {
-  	"DebugOut",	get_str,	(int)&debug_file,
-  	"DebugLevel",	get_int,	(int)&debug_level,
-  	"ForkFlag",	get_flag,	(int)&fork_flag,
+*** 217,251 ****
   
-  	"PortName",	get_str,	(int)&port_name,
+  
+  struct	optlist {
+! 	char	*optname;
+  	u_char	*(*optfunc)();
+! 	int	optarg;
+  } option[] = {
+! 	"DebugOut",	get_str,	(int)&debug_file,
+! 	"DebugLevel",	get_int,	(int)&debug_level,
+! 	"ForkFlag",	get_flag,	(int)&fork_flag,
+  
+! 	"PortName",	get_str,	(int)&port_name,
   #ifdef TLI
-  	"PortNumber",	get_str,	(int)&port_number,
+! 	"PortNumber",	get_str,	(int)&port_number,
 !         "ProtoName",    get_str,        (int)&proto_name,
   #else
-  	"PortNumber",	get_int,	(int)&port_number,
+! 	"PortNumber",	get_int,	(int)&port_number,
   #endif
-  	"SocketName",	get_str,	(int)&socket_name,
+! 	"SocketName",	get_str,	(int)&socket_name,
   #ifdef	LOCK_FILE
-  	"LockFile",	get_str,	(int)&lock_file;
+! 	"LockFile",	get_str,	(int)&lock_file;
   #endif
   
-  	"maxclient",	get_int,	(int)&max_client,
-  	"dictdir",	get_str,	(int)&dict_dir,
-  	"readdict",	get_list,	(int)&read_dict,
-  	"opendict",	get_list,	(int)&open_dict,
-  	"errorout",	get_str,	(int)&error_file,
-  	"logout",	get_str,	(int)&log_file,
-  	"dirmode",	get_int,	(int)&dir_mode,
-  	"filemode",	get_int,	(int)&file_mode,
-  	"allowuser",	get_list,	(int)&allow_user,
+! 	"maxclient",	get_int,	(int)&max_client,
+! 	"dictdir",	get_str,	(int)&dict_dir,
+! 	"readdict",	get_list,	(int)&read_dict,
+! 	"opendict",	get_list,	(int)&open_dict,
+! 	"errorout",	get_str,	(int)&error_file,
+! 	"logout",	get_str,	(int)&log_file,
+! 	"dirmode",	get_int,	(int)&dir_mode,
+! 	"filemode",	get_int,	(int)&file_mode,
+! 	"allowuser",	get_list,	(int)&allow_user,
   	0, 0, 0
   };
---- 221,273 ----
+  
+--- 217,274 ----
+  
+  
+  struct	optlist {
+! 	const char	*optname;
   	u_char	*(*optfunc)();
-  	int	optarg;
+! 	void	*optarg;
   } option[] = {
-+ /*
-+  * Add option flag.
-+  * Because They are lacked in here. See document.
-+  * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
-+  */
-  	"DebugOut",	get_str,	(int)&debug_file,
-+ 	"debugout",	get_str,	(int)&debug_file,
-  	"DebugLevel",	get_int,	(int)&debug_level,
-+ 	"debuglevel",	get_int,	(int)&debug_level,
-  	"ForkFlag",	get_flag,	(int)&fork_flag,
-+ 	"forkflag",	get_flag,	(int)&fork_flag,
+! /*
+!  * Add option flag.
+!  * Because They are lacked in here. See document.
+!  * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
+!  */
+! 	"DebugOut",	get_str,	&debug_file,
+! 	"debugout",	get_str,	&debug_file,
+! 	"DebugLevel",	get_int,	&debug_level,
+! 	"debuglevel",	get_int,	&debug_level,
+! 	"ForkFlag",	get_flag,	&fork_flag,
+! 	"forkflag",	get_flag,	&fork_flag,
   
-  	"PortName",	get_str,	(int)&port_name,
-+ 	"portname",	get_str,	(int)&port_name,
+! 	"PortName",	get_str,	&port_name,
+! 	"portname",	get_str,	&port_name,
   #ifdef TLI
-  	"PortNumber",	get_str,	(int)&port_number,
-! 	"portnumber",	get_str,	(int)&port_number,
-! 	"ProtoName",    get_str,        (int)&proto_name,
-! 	"protoname",    get_str,        (int)&proto_name,
+! 	"PortNumber",	get_str,	&port_number,
+! 	"portnumber",	get_str,	&port_number,
+! 	"ProtoName",    get_str,        &proto_name,
+! 	"protoname",    get_str,        &proto_name,
   #else
-  	"PortNumber",	get_int,	(int)&port_number,
-+ 	"portnumber",	get_int,	(int)&port_number,
+! 	"PortNumber",	get_int,	&port_number,
+! 	"portnumber",	get_int,	&port_number,
   #endif
-  	"SocketName",	get_str,	(int)&socket_name,
-+ 	"socketname",	get_str,	(int)&socket_name,
+! 	"SocketName",	get_str,	&socket_name,
+! 	"socketname",	get_str,	&socket_name,
   #ifdef	LOCK_FILE
-  	"LockFile",	get_str,	(int)&lock_file;
-+ 	"lockfile",	get_str,	(int)&lock_file;
+! 	"LockFile",	get_str,	&lock_file;
+! 	"lockfile",	get_str,	&lock_file;
   #endif
   
-+ 	"MaxClient",	get_int,	(int)&max_client,
-  	"maxclient",	get_int,	(int)&max_client,
-+ 	"DictDir",	get_str,	(int)&dict_dir,
-  	"dictdir",	get_str,	(int)&dict_dir,
-+ 	"ReadDict",	get_list,	(int)&read_dict,
-  	"readdict",	get_list,	(int)&read_dict,
-+ 	"OpenDict",	get_list,	(int)&open_dict,
-  	"opendict",	get_list,	(int)&open_dict,
-+ 	"ErrorOut",	get_str,	(int)&error_file,
-  	"errorout",	get_str,	(int)&error_file,
-+ 	"LogOut",	get_str,	(int)&log_file,
-  	"logout",	get_str,	(int)&log_file,
-+ 	"DirMode",	get_int,	(int)&dir_mode,
-  	"dirmode",	get_int,	(int)&dir_mode,
-+ 	"FileMode",	get_int,	(int)&file_mode,
-  	"filemode",	get_int,	(int)&file_mode,
-+ 	"AllowUser",	get_list,	(int)&allow_user,
-  	"allowuser",	get_list,	(int)&allow_user,
+! 	"MaxClient",	get_int,	&max_client,
+! 	"maxclient",	get_int,	&max_client,
+! 	"DictDir",	get_str,	&dict_dir,
+! 	"dictdir",	get_str,	&dict_dir,
+! 	"ReadDict",	get_list,	&read_dict,
+! 	"readdict",	get_list,	&read_dict,
+! 	"OpenDict",	get_list,	&open_dict,
+! 	"opendict",	get_list,	&open_dict,
+! 	"ErrorOut",	get_str,	&error_file,
+! 	"errorout",	get_str,	&error_file,
+! 	"LogOut",	get_str,	&log_file,
+! 	"logout",	get_str,	&log_file,
+! 	"DirMode",	get_int,	&dir_mode,
+! 	"dirmode",	get_int,	&dir_mode,
+! 	"FileMode",	get_int,	&file_mode,
+! 	"filemode",	get_int,	&file_mode,
+! 	"AllowUser",	get_list,	&allow_user,
+! 	"allowuser",	get_list,	&allow_user,
   	0, 0, 0
   };
+  
