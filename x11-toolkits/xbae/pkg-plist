@@ -1,6 +1,9 @@
 lib/libXbae-4.6.a
 lib/libXbae.a
+lib/libXbae.so
 lib/libXbae.so.6.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D
+@unexec /usr/bin/env OBJFORMAT==%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/Xbae-4.6/Caption.h
 include/Xbae-4.6/CaptionP.h
 include/Xbae-4.6/Cell.h
@@ -12,7 +15,3 @@ include/Xbae-4.6/MatrixP.h
 include/Xbae-4.6/patchlevel.h
 @dirrm include/Xbae-4.6
 include/Xbae
-man/man3/XbaeMatrix.3.gz
-man/man3/XbaeCaption.3.gz
-@exec /sbin/ldconfig -m %D
-@unexec /sbin/ldconfig -R
