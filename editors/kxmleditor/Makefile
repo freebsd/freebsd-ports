@@ -6,20 +6,32 @@
 #
 
 PORTNAME=	kxmleditor
-PORTVERSION=	0.8.1
-PORTREVISION=	2
-CATEGORIES=	editors
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+PORTVERSION=	1.0.0
+CATEGORIES=	editors kde
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	XML editor for KDE
 
-BROKEN=		"Does not compile with qt 3.3"
-
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+UIFILES=kxesearchdialogbase kxeprocinstrdialogbase kxespecprocinstrdialogbase \
+	kxeelementdialogbase kxeattributedialogbase kxechardatadialogbase \
+	kxeattachdialogbase kxechoosestringdialogbase kxetreeviewsettingspage \
+	kxenewfilesettingspage kxeprintsettingspage kxearchiveextssettingspage \
+	kxetextviewsettingspage kxetexteditordialogbase
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.for i in ${UIFILES}
+	@${RM} ${WRKSRC}/part/$i.h ${WRKSRC}/part/$i.cpp
+.endfor
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
