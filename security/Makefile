@@ -236,6 +236,7 @@
     SUBDIR += p5-IO-Socket-SSL
     SUBDIR += p5-MD5
     SUBDIR += p5-Net-SSLeay
+    SUBDIR += p5-Nmap-Scanner
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += p5-SHA

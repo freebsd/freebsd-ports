@@ -1,0 +1,10 @@
+This set of modules provides perl class wrappers for the network mapper
+(nmap) scanning tool (see http://www.insecure.org/nmap/).  Using these
+modules, a developer, network administrator, or other techie can create
+perl routines or classes which can be used to automate and integrate
+nmap scans elegantly into new and existing perl scripts.
+
+WWW: http://search.cpan.org/dist/Nmap-Scanner/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
