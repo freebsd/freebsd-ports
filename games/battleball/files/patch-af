@@ -1,0 +1,26 @@
+--- Makefile	Thu Sep  2 22:25:18 1999
++++ Makefile.new	Sun Apr 16 17:28:19 2000
+@@ -1,17 +1,18 @@
+-CXX		= g++
++CXX		?= c++
+ 
+ # If you don't have OpenGL or Mesa, you can still compile BattleBall;
+ # just define the symbol NO_OPENGL when compiling, and don't link with
+ # $(GLLIBS) when linking
+-CXXFLAGS	= -O2 -funroll-loops
++CXXFLAGS	?= -O -pipe
+ #CXXFLAGS	= -O2 -funroll-loops -DNO_OPENGL
+ 
+ INCS		= -Ibsp -Ilib3d
+-XLIBS		= -L/usr/X11R6/lib -lX11
++X11BASE		?=/usr/X11R6
++XLIBS		= -L$(X11BASE)/lib -lX11
+ LIBS		= -lm $(XLIBS)
+ 
+-GLINCS		= -I/usr/local/X11/include
+-GLLIBS		= -lXi -lXmu -lXext -L/usr/local/X11/lib -lMesaGL
++GLINCS		= -I$(X11BASE)/include
++GLLIBS		= -lXi -lXmu -lXext -L$(X11BASE)/lib -lGL
+ #GLLIBS		=
+ 
+ BSPOBJS		= bsp/brep.o bsp/bsp.o bsp/polygon.o
