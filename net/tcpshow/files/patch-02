@@ -1,15 +1,23 @@
---- tcpshow.c.orig	Tue Mar 21 17:25:25 2000
-+++ tcpshow.c	Tue Mar 21 17:28:04 2000
-@@ -367,7 +367,7 @@
- #endif
+--- tcpshow.c.orig	Sat Aug 26 16:31:34 2000
++++ tcpshow.c	Sat Aug 26 16:33:15 2000
+@@ -359,15 +359,7 @@
+ typedef unsigned char uchar;
  
  
+-#if !defined(NOETHERNAMES)
+-// mr980118 ether_ntohost() and related functions aren't prototyped in the
+-// standard include directory.
+-extern struct ether_addr *ether_aton(char *);
+-extern int ether_ntohost(char *, struct ether_addr *);
+-#endif
+-
+-
 -void main(int, char **);
 +int main(int, char **);
  
  
  static boolean noBflag = FALSE;
-@@ -1125,7 +1125,9 @@
+@@ -1125,7 +1117,9 @@
  static char *icmpType (uint1 type) {
  
     char *descr;
@@ -19,7 +27,7 @@
  
     switch (type) {
      case ECHO_REPLY:  descr = "echo-reply";              break;
-@@ -1143,7 +1145,7 @@
+@@ -1143,7 +1137,7 @@
      case INFO_REPLY:  descr = "information-reply";       break;
      case MASK_REQ:    descr = "address-mask-request";    break;
      case MASK_REPLY:  descr = "address-mask-reply";      break;
@@ -28,7 +36,7 @@
     }
  
     return descr;
-@@ -1248,7 +1250,7 @@
+@@ -1248,7 +1242,7 @@
  /*                                                                          */
  /****==========------------------------------------------------==========****/
  
@@ -37,7 +45,7 @@
  
     /* Command line options.                                                 */
     while (--argc > 0 && **++argv == '-')
-@@ -1290,6 +1292,7 @@
+@@ -1290,6 +1284,7 @@
     for ( ; ; ) if (!setjmp(jmpBuf)) showPkt(pkt);
  
     exit(0);
@@ -45,7 +53,7 @@
  
  }
  
-@@ -1336,7 +1339,7 @@
+@@ -1336,7 +1331,7 @@
  	 name = number;
        }
     /* The crappy manpage doesn't say the port must be in net byte order.    */
@@ -54,7 +62,7 @@
        name = service->s_name;
     elif (!wantNumber)
        name = unknown;
-@@ -1580,13 +1583,14 @@
+@@ -1580,13 +1575,14 @@
     if (ppFlag) {
        (void)sscanf(p, "%s", time);
        etherType = ETHER_PROTO_IP;      /* tcpdump doesn't supply link type  */
@@ -70,7 +78,7 @@
        return getPkt();
     }
  
-@@ -1598,7 +1602,7 @@
+@@ -1598,7 +1594,7 @@
     (void)strcpy(eTo, etherAddr(eTo, 0));
     (void)strcpy(eToName, etherName(eTo, TRUE));
  
@@ -79,7 +87,7 @@
        if (terseFlag) {
           printf("TIME:\t%s%s\n", time, deltaTime(&prevTime, time));
           printf(
-@@ -1614,6 +1618,7 @@
+@@ -1614,6 +1610,7 @@
           if (!noEtherNames) printf(" (%s)", etherName(eTo, FALSE));
           printf("\n\tEncapsulated Protocol:\t\t%s\n", etherProto(eType, 0));
        }
@@ -87,7 +95,7 @@
  
     return getPkt();
  
-@@ -1778,7 +1783,7 @@
+@@ -1778,7 +1775,7 @@
  static void showPkt (reg char *p) {
  
     char *warnMsg = "<*** No decode support for encapsulated protocol ***>";
@@ -96,7 +104,7 @@
  
     prSep();
     printf("Packet %d\n", ++nPktsShown);
-@@ -1807,6 +1812,31 @@
+@@ -1807,6 +1804,31 @@
  	 p = showIcmp(p);
  	 p = showData(p);
  	 break;
@@ -128,7 +136,7 @@
         default:
  	 printf("\t%s\n", warnMsg);
  	 nextPkt();                    /* Doesn't return                    */
-@@ -1826,7 +1856,7 @@
+@@ -1826,7 +1848,7 @@
     }
     /* Note that if getPkt() returns here, then the line read isn't the      */
     /* start of a new packet, i.e. there's spurious data.                    */
@@ -137,7 +145,7 @@
        if (sFlag) printf("\t<*** Spurious data at end: \"%s\" ***>\n", p);
        nextPkt();
     }
-@@ -1996,10 +2026,10 @@
+@@ -1996,10 +2018,10 @@
  
     if (terseFlag) {
        printf(
@@ -151,7 +159,7 @@
        printf(
           "\thlen=%d (data=%u) UAPRSF=%s%s%s%s%s%s",
           hLen, dataLen,
-@@ -2016,9 +2046,9 @@
+@@ -2016,9 +2038,9 @@
        if (!noPortNames) printf(" (%s)", portName(sPort, "tcp", FALSE));
        printf("\n\tDestination Port:\t\t%d", dPort);
        if (!noPortNames) printf(" (%s)", portName(dPort, "tcp", FALSE));
