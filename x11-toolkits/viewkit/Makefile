@@ -22,7 +22,7 @@ AUTOCONFIG=      autoconf
 
 MOTIFPACKAGE?=   open-motif
 USE_X_PREFIX=   yes
-REQUIRES_MOTIF = yes
+USE_MOTIF = yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-${MOTIFPACKAGE}
 
