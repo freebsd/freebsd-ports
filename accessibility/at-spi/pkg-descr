@@ -1,4 +1,6 @@
-This is the Early Access Release of the Gnome Accessibility Project's
-Assistive Technology Service Provider Interface.
+This is the Gnome Accessibility Project's Assistive Technology
+Service Provider Interface.  It allows accessibility applications
+and assistive technologies to announce their respective existence
+to each other.
 
-WWW: http://www.gnome.org/
+WWW: http://developer.gnome.org/projects/gap/

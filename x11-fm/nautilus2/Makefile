@@ -6,30 +6,29 @@
 #
 
 PORTNAME=	nautilus2
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
 DIST_SUBDIR=	gnome2
 DISTNAME=	nautilus-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME file manager and graphical shell developed by Eazel
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier gnomedesktop eel2 \
+USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack gnomedesktop eel2 \
 		librsvg2
 GNOME_DESKTOP_VERSION=2
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${X11BASE}/lib -liconv" \
-		LIBPNG="-L${LOCALBASE}/lib -lpng -lz ${MOZILLA_LIBS}"
+		LIBPNG="-L${LOCALBASE}/lib -lpng -lz"
 CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 		--with-freetype2-include-place=${LOCALBASE}/include/freetype2 \
 		--enable-static

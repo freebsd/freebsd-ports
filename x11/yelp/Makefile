@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	yelp
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,14 +19,10 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui libgtkhtml
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui libgtkhtml lthack
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\@prefix\@/share|\@datadir\@|g' \
-		${WRKSRC}/stylesheets/docbook/catalog.in
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -37,7 +37,6 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		file-roller:${PORTSDIR}/archivers/fileroller \
 		${X11BASE}/share/themes/HighContrast/gtk-2.0/gtkrc:${PORTSDIR}/x11-toolkits/gnome-themes \
 		ggv:${PORTSDIR}/print/ggv2 \
-		acme:${PORTSDIR}/multimedia/acme \
 		gok:${PORTSDIR}/accessibility/gok \
 		gpdf:${PORTSDIR}/graphics/gpdf \
 		nautilus-cd-burner:${PORTSDIR}/sysutils/nautilus-cd-burner \
@@ -46,13 +45,13 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		zenity:${PORTSDIR}/x11/zenity \
 		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
-		gnopernicus:${PORTSDIR}/accessibility/gnopernicus
+		gnopernicus:${PORTSDIR}/accessibility/gnopernicus \
+		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
+		dasher:${PORTSDIR}/accessibility/dasher
 
 NO_BUILD=	yes
 
 USE_PYTHON=	yes
-
-CONFLICTS=	gnome2-lite*
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-configure:
@@ -63,12 +62,12 @@ do-install:	# empty
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64" && ( ${ARCH} == "i386" || ${OSVERSION} > 500035 )
+.if ${ARCH} == "i386" || ${OSVERSION} > 500035
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
 
-#.if ${ARCH} == "i386"
+.if ${ARCH} == "i386"
 #RUN_DEPENDS+=	gnomemeeting:${PORTSDIR}/net/gnomemeeting
-#.endif
+.endif
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2-power-tools
-PORTVERSION=	2.4.2
+PORTVERSION=	2.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -15,18 +15,14 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"Geektoys" for the GNOME 2 power user
 
-RUN_DEPENDS=	${X11BASE}/lib/gnome-vfs-2.0/modules/libsmb.so:${PORTSDIR}/devel/gnomevfs-extras \
+RUN_DEPENDS=	${X11BASE}/lib/epiphany/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
-		${X11BASE}/lib/libquicklounge-applet.so:${PORTSDIR}/misc/quick-lounge-applet \
-		gswitchit-plugins-capplet:${PORTSDIR}/x11/gswitchit \
-		dasher:${PORTSDIR}/accessibility/dasher \
+		${X11BASE}/libexec/quick-lounge-applet:${PORTSDIR}/misc/quick-lounge-applet \
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
-		${X11BASE}/lib/gedit-2/plugins/libasciitable.so:${PORTSDIR}/editors/gedit-plugins \
-		gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
-		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
 		splashsetter:${PORTSDIR}/deskutils/splashsetter \
-		gnome-netinfo:${PORTSDIR}/net/gnomenetwork
+		gnome-netinfo:${PORTSDIR}/net/gnomenetwork \
+		gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 NO_BUILD=	yes
 

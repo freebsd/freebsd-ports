@@ -1,16 +1,45 @@
 bin/gpdf
+etc/gconf/gconf.xml.defaults/apps/gpdf/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gpdf/UI/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gpdf/UI/Windows/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gpdf/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gpdf/UI/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gpdf/UI/Windows/%gconf.xml
+etc/gconf/schemas/gpdf.schemas
 libdata/bonobo/servers/GNOME_PDF.server
 libexec/gnome-pdf-viewer
-share/gnome/gpdf/glade/gpdf-print-progress-dialog.glade
-share/gnome/gpdf/glade/gpdf-properties-dialog.glade
-share/gnome/pixmaps/gpdf/fitwidth.png
-share/gnome/pixmaps/gnome-pdf.png
+share/gnome/application-registry/gpdf.applications
+share/gnome/applications/gpdf.desktop
 share/gnome/gnome-2.0/ui/gpdf-control-ui.xml
 share/gnome/gnome-2.0/ui/gpdf-window-ui.xml
-share/gnome/applications/gpdf.desktop
+share/gnome/gpdf/glade/gpdf-print-progress-dialog.glade
+share/gnome/gpdf/glade/gpdf-properties-dialog.glade
+share/gnome/help/gpdf/C/figures/gpdf_start_window.png
+share/gnome/help/gpdf/C/figures/gpdf_window.png
+share/gnome/help/gpdf/C/gpdf.xml
+share/gnome/help/gpdf/C/legal.xml
+share/gnome/help/gpdf/de/figures/gpdf_window.png
+share/gnome/help/gpdf/de/gpdf.xml
+share/gnome/help/gpdf/de/legal.xml
+share/gnome/help/gpdf/es/figures/gpdf_start_window.png
+share/gnome/help/gpdf/es/gpdf.xml
+share/gnome/help/gpdf/es/legal.xml
 share/gnome/mime-info/gpdf.keys
-share/gnome/application-registry/gpdf.applications
+share/gnome/omf/gpdf/gpdf-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gpdf/gpdf-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gpdf/gpdf-de.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gpdf/gpdf-de.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gpdf/gpdf-es.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gpdf/gpdf-es.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/gnome-pdf.png
+share/gnome/pixmaps/gpdf/fitwidth.png
+share/gnome/pixmaps/gpdf/stock_book-closed-mark.png
+share/gnome/pixmaps/gpdf/stock_book-closed.png
+share/gnome/pixmaps/gpdf/stock_book-opened-mark.png
+share/gnome/pixmaps/gpdf/stock_book-opened.png
+share/gnome/pixmaps/gpdf/stock_bookmarks.png
 share/locale/am/LC_MESSAGES/gpdf.mo
+share/locale/ar/LC_MESSAGES/gpdf.mo
 share/locale/az/LC_MESSAGES/gpdf.mo
 share/locale/be/LC_MESSAGES/gpdf.mo
 share/locale/bn/LC_MESSAGES/gpdf.mo
@@ -20,15 +49,19 @@ share/locale/cy/LC_MESSAGES/gpdf.mo
 share/locale/da/LC_MESSAGES/gpdf.mo
 share/locale/de/LC_MESSAGES/gpdf.mo
 share/locale/el/LC_MESSAGES/gpdf.mo
+share/locale/en_CA/LC_MESSAGES/gpdf.mo
+share/locale/en_GB/LC_MESSAGES/gpdf.mo
 share/locale/eo/LC_MESSAGES/gpdf.mo
 share/locale/es/LC_MESSAGES/gpdf.mo
 share/locale/eu/LC_MESSAGES/gpdf.mo
+share/locale/fa/LC_MESSAGES/gpdf.mo
 share/locale/fi/LC_MESSAGES/gpdf.mo
 share/locale/fr/LC_MESSAGES/gpdf.mo
 share/locale/ga/LC_MESSAGES/gpdf.mo
 share/locale/gl/LC_MESSAGES/gpdf.mo
 share/locale/he/LC_MESSAGES/gpdf.mo
 share/locale/hi/LC_MESSAGES/gpdf.mo
+share/locale/hr/LC_MESSAGES/gpdf.mo
 share/locale/hu/LC_MESSAGES/gpdf.mo
 share/locale/id/LC_MESSAGES/gpdf.mo
 share/locale/is/LC_MESSAGES/gpdf.mo
@@ -45,12 +78,14 @@ share/locale/ms/LC_MESSAGES/gpdf.mo
 share/locale/nl/LC_MESSAGES/gpdf.mo
 share/locale/nn/LC_MESSAGES/gpdf.mo
 share/locale/no/LC_MESSAGES/gpdf.mo
+share/locale/pa/LC_MESSAGES/gpdf.mo
 share/locale/pl/LC_MESSAGES/gpdf.mo
 share/locale/pt/LC_MESSAGES/gpdf.mo
 share/locale/pt_BR/LC_MESSAGES/gpdf.mo
 share/locale/ro/LC_MESSAGES/gpdf.mo
 share/locale/ru/LC_MESSAGES/gpdf.mo
 share/locale/sk/LC_MESSAGES/gpdf.mo
+share/locale/sl/LC_MESSAGES/gpdf.mo
 share/locale/sq/LC_MESSAGES/gpdf.mo
 share/locale/sr/LC_MESSAGES/gpdf.mo
 share/locale/sr@Latn/LC_MESSAGES/gpdf.mo
@@ -64,5 +99,22 @@ share/locale/wa/LC_MESSAGES/gpdf.mo
 share/locale/zh_CN/LC_MESSAGES/gpdf.mo
 share/locale/zh_TW/LC_MESSAGES/gpdf.mo
 @dirrm share/gnome/pixmaps/gpdf
+@dirrm share/gnome/omf/gpdf
+@dirrm share/gnome/help/gpdf/es/figures
+@dirrm share/gnome/help/gpdf/es
+@dirrm share/gnome/help/gpdf/de/figures
+@dirrm share/gnome/help/gpdf/de
+@dirrm share/gnome/help/gpdf/C/figures
+@dirrm share/gnome/help/gpdf/C
+@dirrm share/gnome/help/gpdf
 @dirrm share/gnome/gpdf/glade
 @dirrm share/gnome/gpdf
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpdf/UI/Windows
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpdf/UI
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpdf
+@dirrm etc/gconf/gconf.xml.defaults/apps/gpdf/UI/Windows
+@dirrm etc/gconf/gconf.xml.defaults/apps/gpdf/UI
+@dirrm etc/gconf/gconf.xml.defaults/apps/gpdf
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gpdf/gpdf-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gpdf/gpdf-de.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gpdf/gpdf-es.omf 2>/dev/null || /usr/bin/true

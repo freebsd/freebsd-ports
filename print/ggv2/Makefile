@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	ggv2
-PORTVERSION=	2.4.1
+PORTVERSION=	2.6.0
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
 DISTNAME=	ggv-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 ghostscript viewer
 
-USE_GHOSTSCRIPT=	yes
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix gnomehack lthack intlhack libgnomeui
+USE_GHOSTSCRIPT=yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,22 +1,18 @@
-GConf attempts to leapfrog the registry concept. It's a library which provides
-a simple configuration data storage interface to applications, and also an
-architecture that tries to make things easy for system administrators.
+GConf extends the concept of a configuration registry.  It provides
+a simple way for applications and administrators to store data;
+often GConf is used to store preferences for applications.
 
-Here are some of the features of GConf:
+Some of the features of GConf are:
+GConf provides:
 
-    * Replaceable backend architecture.
+    * Documentation for each configuration key, so that administrators
+      can better modify the value.
 
-    * Configuration key documentation. Applications can install documentation
-      along with their configuration data, explaining the possible settings and
-      the effect of each configuration key.
+    * Notifications to interested applications when configuration data
+      is changed.  The notification service works across networks,
+      affecting all login sessions for a single user.
 
-    * Data change notification service. If configuration data is changed, all
-      interested applications are notified. The notification service works
-      across the network, affecting all login sessions for a single user.
-
-    * The client API is very abstract.
-
-    * GConf does proper locking so that the configuration data doesn't get
-      corrupted when multiple applications try to use it.
+    * Proper locking so that configuration data doesn't get corrupted
+      when accessed by multiple applications at the same time.
 
 WWW: http://www.gnome.org/projects/gconf/

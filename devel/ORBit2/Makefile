@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ORBit2
-PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,9 +21,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	13
-USE_GNOME=	gnomehack libidl
-CONFIGURE_ARGS= --disable-indent \
+USE_LIBTOOL_VER=13
+USE_GNOME=	gnomehack lthack libidl
+CONFIGURE_ARGS=	--disable-indent \
 		--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

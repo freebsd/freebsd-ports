@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgtkhtml
-PORTVERSION=	2.4.1
-PORTREVISION=	2
+PORTVERSION=	2.6.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,7 +18,8 @@ COMMENT=	Lightweight HTML rendering/printing/editing engine
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libxslt gnomevfs2 gail
+USE_REINPLACE=	yes
+USE_GNOME=	gnomeprefix gnomehack lthack libxslt gnomevfs2 gail
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

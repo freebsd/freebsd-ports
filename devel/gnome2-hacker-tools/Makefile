@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2-hacker-tools
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -21,14 +20,20 @@ RUN_DEPENDS=	mlv:${PORTSDIR}/editors/mlview \
 		glade-2:${PORTSDIR}/devel/glade2 \
 		ghex2:${PORTSDIR}/editors/ghex2 \
 		gob2:${PORTSDIR}/devel/gob2 \
-		regexxer:${PORTSDIR}/devel/regexxer \
 		conglomerate:${PORTSDIR}/editors/conglomerate \
-		anjuta:${PORTSDIR}/devel/anjuta \
 		meld:${PORTSDIR}/textproc/meld \
 		gtranslator:${PORTSDIR}/devel/gtranslator
+# not yet buildable under GNOME 2.5
+#		regexxer:${PORTSDIR}/devel/regexxer
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+RUN_DEPENDS+=	anjuta:${PORTSDIR}/devel/anjuta
+.endif
 
 NO_BUILD=	yes
 
 do-install:	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,3 +1,4 @@
-Libraries for the GNOME GUI, a GNU desktop environment
+LibGnomeUI provides backend GUI components common to GNOME
+applications.
 
 WWW: http://www.gnome.org/

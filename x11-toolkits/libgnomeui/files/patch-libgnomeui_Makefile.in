@@ -1,11 +1,11 @@
---- libgnomeui/Makefile.in.orig	Fri Jun 13 14:41:05 2003
-+++ libgnomeui/Makefile.in	Fri Jun 13 14:41:43 2003
-@@ -148,7 +148,7 @@
- #
- libgnomeuiincludedir = $(includedir)/libgnomeui-2.0/libgnomeui
- 
--INCLUDES =  	-I$(top_builddir)					-I$(top_srcdir)					        -DG_DISABLE_DEPRECATED				        -DGDK_DISABLE_DEPRECATED			        -DGDK_PIXBUF_DISABLE_DEPRECATED			        -DGNOMEUILIBDIR=\""$(libdir)"\" 		        -DGNOMEUIDATADIR=\""$(datadir)"\" 		        -DGNOMEUIPIXMAPDIR=\""$(datadir)/pixmaps"\"	        -DGNOMEUIICONDIR=\""$(datadir)/icons"\"	        -DGNOMEUISERVERDIR=\""$(libexecdir)"\" 			-DGNOMEUILOCALSTATEDIR=\""$(localstatedir)"\" 	        -DGNOMEUILOCALEDIR=\""$(gnomelocaledir)"\"		-DSYSCONFDIR=\""$(sysconfdir)"\"			-DG_LOG_DOMAIN=\"GnomeUI\"				$(WARN_CFLAGS)						$(LIBGNOMEUI_CFLAGS)
-+INCLUDES =  	-I$(top_builddir)					-I$(top_srcdir)					        -DG_DISABLE_DEPRECATED				        -DGDK_DISABLE_DEPRECATED			        -DGDK_PIXBUF_DISABLE_DEPRECATED			        -DGNOMEUILIBDIR=\""$(libdir)"\" 		        -DGNOMEUIDATADIR=\""$(datadir)"\" 		        -DGNOMEUIPIXMAPDIR=\""$(datadir)/pixmaps"\"	        -DGNOMEUIICONDIR=\""$(prefix)/share/icons"\"	        -DGNOMEUISERVERDIR=\""$(libexecdir)"\" 			-DGNOMEUILOCALSTATEDIR=\""$(localstatedir)"\" 	        -DGNOMEUILOCALEDIR=\""$(gnomelocaledir)"\"		-DSYSCONFDIR=\""$(sysconfdir)"\"			-DG_LOG_DOMAIN=\"GnomeUI\"				$(WARN_CFLAGS)						$(LIBGNOMEUI_CFLAGS)
- 
- 
- EXTRA_HEADERS = 
+--- libgnomeui/Makefile.in.orig	Wed Feb 25 01:08:42 2004
++++ libgnomeui/Makefile.in	Wed Feb 25 01:10:01 2004
+@@ -158,7 +158,7 @@
+         -DGNOMEUILIBDIR=\""$(libdir)"\" 		\
+         -DGNOMEUIDATADIR=\""$(datadir)"\" 		\
+         -DGNOMEUIPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
+-        -DGNOMEUIICONDIR=\""$(datadir)/icons"\"	\
++        -DGNOMEUIICONDIR=\""$(prefix)/share/icons"\"	\
+         -DGNOMEUISERVERDIR=\""$(libexecdir)"\" 		\
+ 	-DGNOMEUILOCALSTATEDIR=\""$(localstatedir)"\" 	\
+         -DGNOMEUILOCALEDIR=\""$(gnomelocaledir)"\"	\

@@ -42,58 +42,8 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/none/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/layout/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gok/spy/%gconf.xml
 etc/gconf/schemas/gok.schemas
+libdata/bonobo/servers/GNOME_Gok.server
 libdata/pkgconfig/gok-1.0.pc
-%%DOCSDIR%%/c4.html
-%%DOCSDIR%%/gok-arraylist.html
-%%DOCSDIR%%/gok-callbacks.html
-%%DOCSDIR%%/gok-command-common.html
-%%DOCSDIR%%/gok-command-edge-data.html
-%%DOCSDIR%%/gok-command-edge.html
-%%DOCSDIR%%/gok-command-graph.html
-%%DOCSDIR%%/gok-command-predictor.html
-%%DOCSDIR%%/gok-command-vertex-data.html
-%%DOCSDIR%%/gok-command-vertex.html
-%%DOCSDIR%%/gok-global.html
-%%DOCSDIR%%/gok-gok-action.html
-%%DOCSDIR%%/gok-gok-branchback-stack.html
-%%DOCSDIR%%/gok-gok-chunker.html
-%%DOCSDIR%%/gok-gok-control.html
-%%DOCSDIR%%/gok-gok-data.html
-%%DOCSDIR%%/gok-gok-editor.html
-%%DOCSDIR%%/gok-gok-feedback.html
-%%DOCSDIR%%/gok-gok-file-util.html
-%%DOCSDIR%%/gok-gok-gconf-keys.html
-%%DOCSDIR%%/gok-gok-gconf.html
-%%DOCSDIR%%/gok-gok-key.html
-%%DOCSDIR%%/gok-gok-keyboard.html
-%%DOCSDIR%%/gok-gok-keyslotter.html
-%%DOCSDIR%%/gok-gok-log-priv.html
-%%DOCSDIR%%/gok-gok-log-reader.html
-%%DOCSDIR%%/gok-gok-log.html
-%%DOCSDIR%%/gok-gok-modifier.html
-%%DOCSDIR%%/gok-gok-output.html
-%%DOCSDIR%%/gok-gok-page-accessmethod.html
-%%DOCSDIR%%/gok-gok-page-actions.html
-%%DOCSDIR%%/gok-gok-page-feedbacks.html
-%%DOCSDIR%%/gok-gok-page-keysizespace.html
-%%DOCSDIR%%/gok-gok-page-wordcomplete.html
-%%DOCSDIR%%/gok-gok-predictor.html
-%%DOCSDIR%%/gok-gok-scanner.html
-%%DOCSDIR%%/gok-gok-settings-dialog.html
-%%DOCSDIR%%/gok-gok-sound.html
-%%DOCSDIR%%/gok-gok-spy-priv.html
-%%DOCSDIR%%/gok-gok-spy.html
-%%DOCSDIR%%/gok-gok-word-complete.html
-%%DOCSDIR%%/gok-gok.html
-%%DOCSDIR%%/gok-gokbutton.html
-%%DOCSDIR%%/gok-gtkjoyswitch.html
-%%DOCSDIR%%/gok-interface.html
-%%DOCSDIR%%/gok-main.html
-%%DOCSDIR%%/gok-support.html
-%%DOCSDIR%%/gok-switchapi.html
-%%DOCSDIR%%/gok-word-complete.html
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/index.sgml
 share/gnome/applications/gok.desktop
 share/gnome/gok/East.png
 share/gnome/gok/Keyboard.kbd
@@ -104,36 +54,366 @@ share/gnome/gok/SE.png
 share/gnome/gok/SW.png
 share/gnome/gok/South.png
 share/gnome/gok/West.png
-share/gnome/gok/alphabet.kbd
+share/gnome/gok/am/gok-controls.kbd
+share/gnome/gok/am/hide.kbd
+share/gnome/gok/am/launcher.kbd
+share/gnome/gok/am/main.kbd
+share/gnome/gok/am/mouse.kbd
+share/gnome/gok/am/move-resize.kbd
+share/gnome/gok/am/quit.kbd
+share/gnome/gok/am/text-operations.kbd
+share/gnome/gok/ar/gok-controls.kbd
+share/gnome/gok/ar/hide.kbd
+share/gnome/gok/ar/launcher.kbd
+share/gnome/gok/ar/main.kbd
+share/gnome/gok/ar/mouse.kbd
+share/gnome/gok/ar/move-resize.kbd
+share/gnome/gok/ar/quit.kbd
+share/gnome/gok/ar/text-operations.kbd
 share/gnome/gok/automatic-scanning.xam
+share/gnome/gok/az/gok-controls.kbd
+share/gnome/gok/az/hide.kbd
+share/gnome/gok/az/launcher.kbd
+share/gnome/gok/az/main.kbd
+share/gnome/gok/az/mouse.kbd
+share/gnome/gok/az/move-resize.kbd
+share/gnome/gok/az/quit.kbd
+share/gnome/gok/az/text-operations.kbd
+share/gnome/gok/be/gok-controls.kbd
+share/gnome/gok/be/hide.kbd
+share/gnome/gok/be/launcher.kbd
+share/gnome/gok/be/main.kbd
+share/gnome/gok/be/mouse.kbd
+share/gnome/gok/be/move-resize.kbd
+share/gnome/gok/be/quit.kbd
+share/gnome/gok/be/text-operations.kbd
+share/gnome/gok/ca/gok-controls.kbd
+share/gnome/gok/ca/hide.kbd
+share/gnome/gok/ca/launcher.kbd
+share/gnome/gok/ca/main.kbd
+share/gnome/gok/ca/mouse.kbd
+share/gnome/gok/ca/move-resize.kbd
+share/gnome/gok/ca/quit.kbd
+share/gnome/gok/ca/text-operations.kbd
+share/gnome/gok/cs/gok-controls.kbd
+share/gnome/gok/cs/hide.kbd
+share/gnome/gok/cs/launcher.kbd
+share/gnome/gok/cs/main.kbd
+share/gnome/gok/cs/mouse.kbd
+share/gnome/gok/cs/move-resize.kbd
+share/gnome/gok/cs/quit.kbd
+share/gnome/gok/cs/text-operations.kbd
+share/gnome/gok/cy/gok-controls.kbd
+share/gnome/gok/cy/hide.kbd
+share/gnome/gok/cy/launcher.kbd
+share/gnome/gok/cy/main.kbd
+share/gnome/gok/cy/mouse.kbd
+share/gnome/gok/cy/move-resize.kbd
+share/gnome/gok/cy/quit.kbd
+share/gnome/gok/cy/text-operations.kbd
+share/gnome/gok/da/gok-controls.kbd
+share/gnome/gok/da/hide.kbd
+share/gnome/gok/da/launcher.kbd
+share/gnome/gok/da/main.kbd
+share/gnome/gok/da/mouse.kbd
+share/gnome/gok/da/move-resize.kbd
+share/gnome/gok/da/quit.kbd
+share/gnome/gok/da/text-operations.kbd
+share/gnome/gok/de/gok-controls.kbd
+share/gnome/gok/de/hide.kbd
+share/gnome/gok/de/launcher.kbd
+share/gnome/gok/de/main.kbd
+share/gnome/gok/de/mouse.kbd
+share/gnome/gok/de/move-resize.kbd
+share/gnome/gok/de/quit.kbd
+share/gnome/gok/de/text-operations.kbd
 share/gnome/gok/dictionary.txt
 share/gnome/gok/direct-selection.xam
 share/gnome/gok/dwell-selection.xam
+share/gnome/gok/el/gok-controls.kbd
+share/gnome/gok/el/hide.kbd
+share/gnome/gok/el/launcher.kbd
+share/gnome/gok/el/main.kbd
+share/gnome/gok/el/mouse.kbd
+share/gnome/gok/el/move-resize.kbd
+share/gnome/gok/el/quit.kbd
+share/gnome/gok/el/text-operations.kbd
+share/gnome/gok/en_CA/gok-controls.kbd
+share/gnome/gok/en_CA/hide.kbd
+share/gnome/gok/en_CA/launcher.kbd
+share/gnome/gok/en_CA/main.kbd
+share/gnome/gok/en_CA/mouse.kbd
+share/gnome/gok/en_CA/move-resize.kbd
+share/gnome/gok/en_CA/quit.kbd
+share/gnome/gok/en_CA/text-operations.kbd
+share/gnome/gok/en_GB/gok-controls.kbd
+share/gnome/gok/en_GB/hide.kbd
+share/gnome/gok/en_GB/launcher.kbd
+share/gnome/gok/en_GB/main.kbd
+share/gnome/gok/en_GB/mouse.kbd
+share/gnome/gok/en_GB/move-resize.kbd
+share/gnome/gok/en_GB/quit.kbd
+share/gnome/gok/en_GB/text-operations.kbd
 share/gnome/gok/empty.png
+share/gnome/gok/es/gok-controls.kbd
+share/gnome/gok/es/hide.kbd
+share/gnome/gok/es/launcher.kbd
+share/gnome/gok/es/main.kbd
+share/gnome/gok/es/mouse.kbd
+share/gnome/gok/es/move-resize.kbd
+share/gnome/gok/es/quit.kbd
+share/gnome/gok/es/text-operations.kbd
+share/gnome/gok/fr/gok-controls.kbd
+share/gnome/gok/fr/hide.kbd
+share/gnome/gok/fr/launcher.kbd
+share/gnome/gok/fr/main.kbd
+share/gnome/gok/fr/mouse.kbd
+share/gnome/gok/fr/move-resize.kbd
+share/gnome/gok/fr/quit.kbd
+share/gnome/gok/fr/text-operations.kbd
+share/gnome/gok/ga/gok-controls.kbd
+share/gnome/gok/ga/hide.kbd
+share/gnome/gok/ga/launcher.kbd
+share/gnome/gok/ga/main.kbd
+share/gnome/gok/ga/mouse.kbd
+share/gnome/gok/ga/move-resize.kbd
+share/gnome/gok/ga/quit.kbd
+share/gnome/gok/ga/text-operations.kbd
 share/gnome/gok/gok.png
 share/gnome/gok/gok.rc
 share/gnome/gok/gok-controls.kbd
 share/gnome/gok/goklogo.png
 share/gnome/gok/goksound1.wav
 share/gnome/gok/goksound2.wav
-share/gnome/gok/inverse-scanning.xam
+share/gnome/gok/hi/gok-controls.kbd
+share/gnome/gok/hi/hide.kbd
+share/gnome/gok/hi/launcher.kbd
+share/gnome/gok/hi/main.kbd
+share/gnome/gok/hi/mouse.kbd
+share/gnome/gok/hi/move-resize.kbd
+share/gnome/gok/hi/quit.kbd
+share/gnome/gok/hi/text-operations.kbd
 share/gnome/gok/hide.kbd
+share/gnome/gok/hr/gok-controls.kbd
+share/gnome/gok/hr/hide.kbd
+share/gnome/gok/hr/launcher.kbd
+share/gnome/gok/hr/main.kbd
+share/gnome/gok/hr/mouse.kbd
+share/gnome/gok/hr/move-resize.kbd
+share/gnome/gok/hr/quit.kbd
+share/gnome/gok/hr/text-operations.kbd
+share/gnome/gok/inverse-scanning.xam
+share/gnome/gok/it/gok-controls.kbd
+share/gnome/gok/it/hide.kbd
+share/gnome/gok/it/launcher.kbd
+share/gnome/gok/it/main.kbd
+share/gnome/gok/it/mouse.kbd
+share/gnome/gok/it/move-resize.kbd
+share/gnome/gok/it/quit.kbd
+share/gnome/gok/it/text-operations.kbd
+share/gnome/gok/ja/gok-controls.kbd
+share/gnome/gok/ja/hide.kbd
+share/gnome/gok/ja/launcher.kbd
+share/gnome/gok/ja/main.kbd
+share/gnome/gok/ja/mouse.kbd
+share/gnome/gok/ja/move-resize.kbd
+share/gnome/gok/ja/quit.kbd
+share/gnome/gok/ja/text-operations.kbd
+share/gnome/gok/ko/gok-controls.kbd
+share/gnome/gok/ko/hide.kbd
+share/gnome/gok/ko/launcher.kbd
+share/gnome/gok/ko/main.kbd
+share/gnome/gok/ko/mouse.kbd
+share/gnome/gok/ko/move-resize.kbd
+share/gnome/gok/ko/quit.kbd
+share/gnome/gok/ko/text-operations.kbd
 share/gnome/gok/latched.png
 share/gnome/gok/launcher.kbd
 share/gnome/gok/locked.png
+share/gnome/gok/lt/gok-controls.kbd
+share/gnome/gok/lt/hide.kbd
+share/gnome/gok/lt/launcher.kbd
+share/gnome/gok/lt/main.kbd
+share/gnome/gok/lt/mouse.kbd
+share/gnome/gok/lt/move-resize.kbd
+share/gnome/gok/lt/quit.kbd
+share/gnome/gok/lt/text-operations.kbd
 share/gnome/gok/main.kbd
 share/gnome/gok/manage.kbd
+share/gnome/gok/mk/gok-controls.kbd
+share/gnome/gok/mk/hide.kbd
+share/gnome/gok/mk/launcher.kbd
+share/gnome/gok/mk/main.kbd
+share/gnome/gok/mk/mouse.kbd
+share/gnome/gok/mk/move-resize.kbd
+share/gnome/gok/mk/quit.kbd
+share/gnome/gok/mk/text-operations.kbd
+share/gnome/gok/ml/gok-controls.kbd
+share/gnome/gok/ml/hide.kbd
+share/gnome/gok/ml/launcher.kbd
+share/gnome/gok/ml/main.kbd
+share/gnome/gok/ml/mouse.kbd
+share/gnome/gok/ml/move-resize.kbd
+share/gnome/gok/ml/quit.kbd
+share/gnome/gok/ml/text-operations.kbd
+share/gnome/gok/mn/gok-controls.kbd
+share/gnome/gok/mn/hide.kbd
+share/gnome/gok/mn/launcher.kbd
+share/gnome/gok/mn/main.kbd
+share/gnome/gok/mn/mouse.kbd
+share/gnome/gok/mn/move-resize.kbd
+share/gnome/gok/mn/quit.kbd
+share/gnome/gok/mn/text-operations.kbd
 share/gnome/gok/mouse.kbd
 share/gnome/gok/move-resize.kbd
+share/gnome/gok/ms/gok-controls.kbd
+share/gnome/gok/ms/hide.kbd
+share/gnome/gok/ms/launcher.kbd
+share/gnome/gok/ms/main.kbd
+share/gnome/gok/ms/mouse.kbd
+share/gnome/gok/ms/move-resize.kbd
+share/gnome/gok/ms/quit.kbd
+share/gnome/gok/ms/text-operations.kbd
+share/gnome/gok/nl/gok-controls.kbd
+share/gnome/gok/nl/hide.kbd
+share/gnome/gok/nl/launcher.kbd
+share/gnome/gok/nl/main.kbd
+share/gnome/gok/nl/mouse.kbd
+share/gnome/gok/nl/move-resize.kbd
+share/gnome/gok/nl/quit.kbd
+share/gnome/gok/nl/text-operations.kbd
+share/gnome/gok/no/gok-controls.kbd
+share/gnome/gok/no/hide.kbd
+share/gnome/gok/no/launcher.kbd
+share/gnome/gok/no/main.kbd
+share/gnome/gok/no/mouse.kbd
+share/gnome/gok/no/move-resize.kbd
+share/gnome/gok/no/quit.kbd
+share/gnome/gok/no/text-operations.kbd
+share/gnome/gok/pa/gok-controls.kbd
+share/gnome/gok/pa/hide.kbd
+share/gnome/gok/pa/launcher.kbd
+share/gnome/gok/pa/main.kbd
+share/gnome/gok/pa/mouse.kbd
+share/gnome/gok/pa/move-resize.kbd
+share/gnome/gok/pa/quit.kbd
+share/gnome/gok/pa/text-operations.kbd
+share/gnome/gok/pl/gok-controls.kbd
+share/gnome/gok/pl/hide.kbd
+share/gnome/gok/pl/launcher.kbd
+share/gnome/gok/pl/main.kbd
+share/gnome/gok/pl/mouse.kbd
+share/gnome/gok/pl/move-resize.kbd
+share/gnome/gok/pl/quit.kbd
+share/gnome/gok/pl/text-operations.kbd
+share/gnome/gok/pt/gok-controls.kbd
+share/gnome/gok/pt/hide.kbd
+share/gnome/gok/pt/launcher.kbd
+share/gnome/gok/pt/main.kbd
+share/gnome/gok/pt/mouse.kbd
+share/gnome/gok/pt/move-resize.kbd
+share/gnome/gok/pt/quit.kbd
+share/gnome/gok/pt/text-operations.kbd
+share/gnome/gok/pt_BR/gok-controls.kbd
+share/gnome/gok/pt_BR/hide.kbd
+share/gnome/gok/pt_BR/launcher.kbd
+share/gnome/gok/pt_BR/main.kbd
+share/gnome/gok/pt_BR/mouse.kbd
+share/gnome/gok/pt_BR/move-resize.kbd
+share/gnome/gok/pt_BR/quit.kbd
+share/gnome/gok/pt_BR/text-operations.kbd
 share/gnome/gok/quit.kbd
 share/gnome/gok/qwerty.kbd
+share/gnome/gok/singlekey-automatic-scanning.xam
+share/gnome/gok/singlekey-inverse-scanning.xam
+share/gnome/gok/sl/gok-controls.kbd
+share/gnome/gok/sl/hide.kbd
+share/gnome/gok/sl/launcher.kbd
+share/gnome/gok/sl/main.kbd
+share/gnome/gok/sl/mouse.kbd
+share/gnome/gok/sl/move-resize.kbd
+share/gnome/gok/sl/quit.kbd
+share/gnome/gok/sl/text-operations.kbd
 share/gnome/gok/small-empty.png
+share/gnome/gok/sq/gok-controls.kbd
+share/gnome/gok/sq/hide.kbd
+share/gnome/gok/sq/launcher.kbd
+share/gnome/gok/sq/main.kbd
+share/gnome/gok/sq/mouse.kbd
+share/gnome/gok/sq/move-resize.kbd
+share/gnome/gok/sq/quit.kbd
+share/gnome/gok/sq/text-operations.kbd
+share/gnome/gok/sr/gok-controls.kbd
+share/gnome/gok/sr/hide.kbd
+share/gnome/gok/sr/launcher.kbd
+share/gnome/gok/sr/main.kbd
+share/gnome/gok/sr/mouse.kbd
+share/gnome/gok/sr/move-resize.kbd
+share/gnome/gok/sr/quit.kbd
+share/gnome/gok/sr/text-operations.kbd
+share/gnome/gok/sr@Latn/gok-controls.kbd
+share/gnome/gok/sr@Latn/hide.kbd
+share/gnome/gok/sr@Latn/launcher.kbd
+share/gnome/gok/sr@Latn/main.kbd
+share/gnome/gok/sr@Latn/mouse.kbd
+share/gnome/gok/sr@Latn/move-resize.kbd
+share/gnome/gok/sr@Latn/quit.kbd
+share/gnome/gok/sr@Latn/text-operations.kbd
+share/gnome/gok/sv/gok-controls.kbd
+share/gnome/gok/sv/hide.kbd
+share/gnome/gok/sv/launcher.kbd
+share/gnome/gok/sv/main.kbd
+share/gnome/gok/sv/mouse.kbd
+share/gnome/gok/sv/move-resize.kbd
+share/gnome/gok/sv/quit.kbd
+share/gnome/gok/sv/text-operations.kbd
+share/gnome/gok/ta/gok-controls.kbd
+share/gnome/gok/ta/hide.kbd
+share/gnome/gok/ta/launcher.kbd
+share/gnome/gok/ta/main.kbd
+share/gnome/gok/ta/mouse.kbd
+share/gnome/gok/ta/move-resize.kbd
+share/gnome/gok/ta/quit.kbd
+share/gnome/gok/ta/text-operations.kbd
 share/gnome/gok/text-operations.kbd
+share/gnome/gok/uk/gok-controls.kbd
+share/gnome/gok/uk/hide.kbd
+share/gnome/gok/uk/launcher.kbd
+share/gnome/gok/uk/main.kbd
+share/gnome/gok/uk/mouse.kbd
+share/gnome/gok/uk/move-resize.kbd
+share/gnome/gok/uk/quit.kbd
+share/gnome/gok/uk/text-operations.kbd
+share/gnome/gok/vi/gok-controls.kbd
+share/gnome/gok/vi/hide.kbd
+share/gnome/gok/vi/launcher.kbd
+share/gnome/gok/vi/main.kbd
+share/gnome/gok/vi/mouse.kbd
+share/gnome/gok/vi/move-resize.kbd
+share/gnome/gok/vi/quit.kbd
+share/gnome/gok/vi/text-operations.kbd
+share/gnome/gok/zh_CN/gok-controls.kbd
+share/gnome/gok/zh_CN/hide.kbd
+share/gnome/gok/zh_CN/launcher.kbd
+share/gnome/gok/zh_CN/main.kbd
+share/gnome/gok/zh_CN/mouse.kbd
+share/gnome/gok/zh_CN/move-resize.kbd
+share/gnome/gok/zh_CN/quit.kbd
+share/gnome/gok/zh_CN/text-operations.kbd
+share/gnome/gok/zh_TW/gok-controls.kbd
+share/gnome/gok/zh_TW/hide.kbd
+share/gnome/gok/zh_TW/launcher.kbd
+share/gnome/gok/zh_TW/main.kbd
+share/gnome/gok/zh_TW/mouse.kbd
+share/gnome/gok/zh_TW/move-resize.kbd
+share/gnome/gok/zh_TW/quit.kbd
+share/gnome/gok/zh_TW/text-operations.kbd
 share/gnome/help/gok/C/gok.xml
 share/gnome/omf/gok/gok-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gok/gok-C.omf || /usr/bin/true
 share/gnome/pixmaps/gok.png
 share/locale/am/LC_MESSAGES/gok.mo
+share/locale/ar/LC_MESSAGES/gok.mo
 share/locale/az/LC_MESSAGES/gok.mo
 share/locale/be/LC_MESSAGES/gok.mo
 share/locale/ca/LC_MESSAGES/gok.mo
@@ -142,17 +422,24 @@ share/locale/cy/LC_MESSAGES/gok.mo
 share/locale/da/LC_MESSAGES/gok.mo
 share/locale/de/LC_MESSAGES/gok.mo
 share/locale/el/LC_MESSAGES/gok.mo
+share/locale/en_CA/LC_MESSAGES/gok.mo
+share/locale/en_GB/LC_MESSAGES/gok.mo
 share/locale/es/LC_MESSAGES/gok.mo
 share/locale/fr/LC_MESSAGES/gok.mo
+share/locale/ga/LC_MESSAGES/gok.mo
 share/locale/hi/LC_MESSAGES/gok.mo
+share/locale/hr/LC_MESSAGES/gok.mo
 share/locale/it/LC_MESSAGES/gok.mo
 share/locale/ja/LC_MESSAGES/gok.mo
 share/locale/ko/LC_MESSAGES/gok.mo
+share/locale/lt/LC_MESSAGES/gok.mo
 share/locale/mk/LC_MESSAGES/gok.mo
 share/locale/ml/LC_MESSAGES/gok.mo
+share/locale/mn/LC_MESSAGES/gok.mo
 share/locale/ms/LC_MESSAGES/gok.mo
 share/locale/nl/LC_MESSAGES/gok.mo
 share/locale/no/LC_MESSAGES/gok.mo
+share/locale/pa/LC_MESSAGES/gok.mo
 share/locale/pl/LC_MESSAGES/gok.mo
 share/locale/pt/LC_MESSAGES/gok.mo
 share/locale/pt_BR/LC_MESSAGES/gok.mo
@@ -167,11 +454,50 @@ share/locale/vi/LC_MESSAGES/gok.mo
 share/locale/zh_CN/LC_MESSAGES/gok.mo
 share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/omf/gok
-@dirrm share/gnome/help/gok/C/figures
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
+@dirrm share/gnome/gok/zh_TW
+@dirrm share/gnome/gok/zh_CN
+@dirrm share/gnome/gok/vi
+@dirrm share/gnome/gok/uk
+@dirrm share/gnome/gok/ta
+@dirrm share/gnome/gok/sv
+@dirrm share/gnome/gok/sr@Latn
+@dirrm share/gnome/gok/sr
+@dirrm share/gnome/gok/sq
+@dirrm share/gnome/gok/sl
+@dirrm share/gnome/gok/pt_BR
+@dirrm share/gnome/gok/pt
+@dirrm share/gnome/gok/pl
+@dirrm share/gnome/gok/pa
+@dirrm share/gnome/gok/no
+@dirrm share/gnome/gok/nl
+@dirrm share/gnome/gok/ms
+@dirrm share/gnome/gok/mn
+@dirrm share/gnome/gok/ml
+@dirrm share/gnome/gok/mk
+@dirrm share/gnome/gok/lt
+@dirrm share/gnome/gok/ko
+@dirrm share/gnome/gok/ja
+@dirrm share/gnome/gok/it
+@dirrm share/gnome/gok/hr
+@dirrm share/gnome/gok/hi
+@dirrm share/gnome/gok/ga
+@dirrm share/gnome/gok/fr
+@dirrm share/gnome/gok/es
+@dirrm share/gnome/gok/en_GB
+@dirrm share/gnome/gok/en_CA
+@dirrm share/gnome/gok/el
+@dirrm share/gnome/gok/de
+@dirrm share/gnome/gok/da
+@dirrm share/gnome/gok/cy
+@dirrm share/gnome/gok/cs
+@dirrm share/gnome/gok/ca
+@dirrm share/gnome/gok/be
+@dirrm share/gnome/gok/az
+@dirrm share/gnome/gok/ar
+@dirrm share/gnome/gok/am
 @dirrm share/gnome/gok
-@dirrm %%DOCSDIR%%
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/spy
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/layout
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/none

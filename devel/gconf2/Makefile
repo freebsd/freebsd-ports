@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gconf2
-PORTVERSION=	2.4.0.1
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/GConf/2.4
+MASTER_SITE_SUBDIR=	sources/GConf/2.6
 DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,17 +19,17 @@ COMMENT=	A configuration database system for GNOME
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomehier orbit2 gtk20 libxml2 linc
+USE_GNOME=	gnomehack lthack gnomehier orbit2 gtk20 libxml2 linc
 INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+MAN1=		gconftool-2.1
+
 post-install:
-	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/apps
-	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults/schemas/apps
-	@${MKDIR} ${PREFIX}/etc/gconf/schemas
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

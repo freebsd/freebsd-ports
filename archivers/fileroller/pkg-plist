@@ -1,48 +1,96 @@
 bin/file-roller
 etc/gconf/gconf.xml.defaults/apps/file-roller/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/file-roller/dialogs/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/file-roller/dialogs/batch-add/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/file-roller/dialogs/extract/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/file-roller/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/file-roller/listing/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/file-roller/ui/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/dialogs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/dialogs/batch-add/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/dialogs/extract/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui/%gconf.xml
 etc/gconf/schemas/file-roller.schemas
 lib/bonobo/libfile-roller-component.so
 libdata/bonobo/servers/File_Roller_Component.server
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+share/doc/fileroller/AUTHORS
+share/doc/fileroller/NEWS
+share/doc/fileroller/README
+share/doc/fileroller/TODO
 share/gnome/application-registry/file-roller.applications
 share/gnome/applications/file-roller.desktop
 share/gnome/file-roller/glade/file_roller.glade
 share/gnome/file-roller/glade/file_roller_prop.glade
+share/gnome/help/file-roller/C/figures/file-roller_home.png
+share/gnome/help/file-roller/C/figures/file-roller_leftarrow.png
 share/gnome/help/file-roller/C/figures/file-roller_main_window.png
+share/gnome/help/file-roller/C/figures/file-roller_rightarrow.png
+share/gnome/help/file-roller/C/figures/file-roller_uparrow.png
 share/gnome/help/file-roller/C/file-roller.xml
 share/gnome/help/file-roller/C/legal.xml
+share/gnome/help/file-roller/de/figures/file-roller_main_window.png
+share/gnome/help/file-roller/de/file-roller.xml
+share/gnome/help/file-roller/de/legal.xml
+share/gnome/help/file-roller/es/figures/file-roller_main_window.png
+share/gnome/help/file-roller/es/file-roller.xml
+share/gnome/help/file-roller/es/legal.xml
+share/gnome/help/file-roller/fr/figures/file-roller_main_window.png
+share/gnome/help/file-roller/fr/file-roller.xml
+share/gnome/help/file-roller/fr/legal.xml
+share/gnome/help/file-roller/it/figures/file-roller_main_window.png
+share/gnome/help/file-roller/it/file-roller.xml
+share/gnome/help/file-roller/it/legal.xml
+share/gnome/help/file-roller/ja/figures/file-roller_main_window.png
+share/gnome/help/file-roller/ja/file-roller.xml
+share/gnome/help/file-roller/ja/legal.xml
+share/gnome/help/file-roller/ko/figures/file-roller_main_window.png
+share/gnome/help/file-roller/ko/file-roller.xml
+share/gnome/help/file-roller/ko/legal.xml
 share/gnome/help/file-roller/ru/figures/fr-add-dialog.png
 share/gnome/help/file-roller/ru/figures/fr-extract.png
 share/gnome/help/file-roller/ru/figures/fr-mainwindow.png
 share/gnome/help/file-roller/ru/figures/fr-prefs.png
 share/gnome/help/file-roller/ru/file-roller.xml
 share/gnome/help/file-roller/ru/legal.xml
+share/gnome/help/file-roller/sv/figures/file-roller_main_window.png
+share/gnome/help/file-roller/sv/file-roller.xml
+share/gnome/help/file-roller/sv/legal.xml
 share/gnome/help/file-roller/uk/figures/fr-add-dialog.png
 share/gnome/help/file-roller/uk/figures/fr-extract.png
 share/gnome/help/file-roller/uk/figures/fr-mainwindow.png
 share/gnome/help/file-roller/uk/figures/fr-prefs.png
 share/gnome/help/file-roller/uk/file-roller.xml
 share/gnome/help/file-roller/uk/legal.xml
+share/gnome/help/file-roller/zh_CN/figures/file-roller_main_window.png
+share/gnome/help/file-roller/zh_CN/file-roller.xml
+share/gnome/help/file-roller/zh_CN/legal.xml
+share/gnome/help/file-roller/zh_HK/figures/file-roller_main_window.png
+share/gnome/help/file-roller/zh_HK/file-roller.xml
+share/gnome/help/file-roller/zh_HK/legal.xml
+share/gnome/help/file-roller/zh_TW/figures/file-roller_main_window.png
+share/gnome/help/file-roller/zh_TW/file-roller.xml
+share/gnome/help/file-roller/zh_TW/legal.xml
 share/gnome/mime-info/file-roller.keys
 share/gnome/mime-info/file-roller.mime
 share/gnome/omf/file-roller/file-roller-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/file-roller/file-roller-de.omf
+share/gnome/omf/file-roller/file-roller-es.omf
+share/gnome/omf/file-roller/file-roller-fr.omf
+share/gnome/omf/file-roller/file-roller-it.omf
+share/gnome/omf/file-roller/file-roller-ja.omf
+share/gnome/omf/file-roller/file-roller-ko.omf
 share/gnome/omf/file-roller/file-roller-ru.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/file-roller/file-roller-sv.omf
 share/gnome/omf/file-roller/file-roller-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-uk.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/file-roller/file-roller-zh_CN.omf
+share/gnome/omf/file-roller/file-roller-zh_HK.omf
+share/gnome/omf/file-roller/file-roller-zh_TW.omf
 share/gnome/pixmaps/file-roller.png
 share/locale/am/LC_MESSAGES/file-roller.mo
+share/locale/ar/LC_MESSAGES/file-roller.mo
 share/locale/az/LC_MESSAGES/file-roller.mo
 share/locale/be/LC_MESSAGES/file-roller.mo
 share/locale/bg/LC_MESSAGES/file-roller.mo
@@ -53,6 +101,7 @@ share/locale/cy/LC_MESSAGES/file-roller.mo
 share/locale/da/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/el/LC_MESSAGES/file-roller.mo
+share/locale/en_GB/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
 share/locale/et/LC_MESSAGES/file-roller.mo
 share/locale/eu/LC_MESSAGES/file-roller.mo
@@ -62,6 +111,7 @@ share/locale/fr/LC_MESSAGES/file-roller.mo
 share/locale/ga/LC_MESSAGES/file-roller.mo
 share/locale/he/LC_MESSAGES/file-roller.mo
 share/locale/hi/LC_MESSAGES/file-roller.mo
+share/locale/hr/LC_MESSAGES/file-roller.mo
 share/locale/hu/LC_MESSAGES/file-roller.mo
 share/locale/id/LC_MESSAGES/file-roller.mo
 share/locale/is/LC_MESSAGES/file-roller.mo
@@ -78,6 +128,7 @@ share/locale/ms/LC_MESSAGES/file-roller.mo
 share/locale/nl/LC_MESSAGES/file-roller.mo
 share/locale/nn/LC_MESSAGES/file-roller.mo
 share/locale/no/LC_MESSAGES/file-roller.mo
+share/locale/pa/LC_MESSAGES/file-roller.mo
 share/locale/pl/LC_MESSAGES/file-roller.mo
 share/locale/pt/LC_MESSAGES/file-roller.mo
 share/locale/pt_BR/LC_MESSAGES/file-roller.mo
@@ -88,6 +139,7 @@ share/locale/sl/LC_MESSAGES/file-roller.mo
 share/locale/sq/LC_MESSAGES/file-roller.mo
 share/locale/sr/LC_MESSAGES/file-roller.mo
 share/locale/sr@Latn/LC_MESSAGES/file-roller.mo
+share/locale/sr@ije/LC_MESSAGES/file-roller.mo
 share/locale/sv/LC_MESSAGES/file-roller.mo
 share/locale/ta/LC_MESSAGES/file-roller.mo
 share/locale/th/LC_MESSAGES/file-roller.mo
@@ -97,24 +149,47 @@ share/locale/vi/LC_MESSAGES/file-roller.mo
 share/locale/zh_CN/LC_MESSAGES/file-roller.mo
 share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/omf/file-roller
+@dirrm share/gnome/help/file-roller/zh_TW/figures
+@dirrm share/gnome/help/file-roller/zh_TW
+@dirrm share/gnome/help/file-roller/zh_HK/figures
+@dirrm share/gnome/help/file-roller/zh_HK
+@dirrm share/gnome/help/file-roller/zh_CN/figures
+@dirrm share/gnome/help/file-roller/zh_CN
 @dirrm share/gnome/help/file-roller/uk/figures
 @dirrm share/gnome/help/file-roller/uk
+@dirrm share/gnome/help/file-roller/sv/figures
+@dirrm share/gnome/help/file-roller/sv
 @dirrm share/gnome/help/file-roller/ru/figures
 @dirrm share/gnome/help/file-roller/ru
+@dirrm share/gnome/help/file-roller/ko/figures
+@dirrm share/gnome/help/file-roller/ko
+@dirrm share/gnome/help/file-roller/ja/figures
+@dirrm share/gnome/help/file-roller/ja
+@dirrm share/gnome/help/file-roller/it/figures
+@dirrm share/gnome/help/file-roller/it
+@dirrm share/gnome/help/file-roller/fr/figures
+@dirrm share/gnome/help/file-roller/fr
+@dirrm share/gnome/help/file-roller/es/figures
+@dirrm share/gnome/help/file-roller/es
+@dirrm share/gnome/help/file-roller/de/figures
+@dirrm share/gnome/help/file-roller/de
 @dirrm share/gnome/help/file-roller/C/figures
 @dirrm share/gnome/help/file-roller/C
 @dirrm share/gnome/help/file-roller
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/doc/fileroller
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/dialogs/extract
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/dialogs/batch-add
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/dialogs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/ui
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/listing
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/general
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/dialogs/extract
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/dialogs/batch-add
+@dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/dialogs
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-uk.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-C.omf 2>/dev/null || /usr/bin/true

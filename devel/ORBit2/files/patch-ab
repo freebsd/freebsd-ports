@@ -1,17 +1,17 @@
---- Makefile.in.orig	Sat Jun 14 01:50:29 2003
-+++ Makefile.in	Sat Jun 14 01:51:03 2003
-@@ -35,7 +35,7 @@
- DESTDIR =
- 
+--- Makefile.in.orig	Fri Mar  5 23:34:38 2004
++++ Makefile.in	Fri Mar  5 23:35:59 2004
+@@ -34,7 +34,7 @@
+ includedir = @includedir@
+ oldincludedir = /usr/include
  pkgdatadir = $(datadir)/@PACKAGE@
 -pkglibdir = $(libdir)/@PACKAGE@
 +pkglibdir = $(prefix)/libdata/pkgconfig
  pkgincludedir = $(includedir)/@PACKAGE@
- 
  top_builddir = .
-@@ -115,7 +115,7 @@
  
- AUTOMAKE_OPTIONS = 1.3
+@@ -125,7 +125,7 @@
+ 
+ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
  
 -SUBDIRS = linc2 src include test docs
 +SUBDIRS = linc2 src include docs

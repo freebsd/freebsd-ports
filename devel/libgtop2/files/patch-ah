@@ -1,67 +1,27 @@
---- sysdeps/freebsd/procmap.c.orig	Fri May 28 03:56:48 1999
-+++ sysdeps/freebsd/procmap.c	Tue Sep  9 11:38:18 2003
-@@ -33,7 +33,11 @@
- #include <sys/proc.h>
- #include <sys/resource.h>
- #include <vm/vm_object.h>
-+#if (__FreeBSD_version >= 400011)
-+#include <vm/vm.h>
-+#else
- #include <vm/vm_prot.h>
-+#endif
- #include <vm/vm_map.h>
- 
- #include <sys/vnode.h>
-@@ -91,8 +95,9 @@
+--- sysdeps/freebsd/procmap.c.orig	Wed Mar 10 21:23:52 2004
++++ sysdeps/freebsd/procmap.c	Thu Mar 11 21:45:33 2004
+@@ -104,7 +104,7 @@
  	glibtop_map_entry *maps;
  #if defined __FreeBSD__
  	struct vnode vnode;
+-#if __FreeBSD_version >= 500039
 +#if __FreeBSD_version < 500039
  	struct inode inode;
--	struct mount mount;
-+#endif
  #endif
- 	int count, i = 0;
- 	int update = 0;
-@@ -108,13 +113,19 @@
+ #endif
+@@ -122,8 +122,10 @@
  
  	/* Get the process data */
  	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
 -	if ((pinfo == NULL) || (count < 1))
--		glibtop_error_io_r (server, "kvm_getprocs (%d)", pid);
 +	if ((pinfo == NULL) || (count < 1)) {
-+		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+ 		glibtop_error_io_r (server, "kvm_getprocs (%d)", pid);
 +		return NULL;
 +	}
  
  	/* Now we get the memory maps. */
  
- 	if (kvm_read (server->machine.kd,
-+#if (__FreeBSD_version >= 500013)
-+		      (unsigned long) pinfo [0].ki_vmspace,
-+#else
- 		      (unsigned long) pinfo [0].kp_proc.p_vmspace,
-+#endif
- 		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace))
- 		glibtop_error_io_r (server, "kvm_read (vmspace)");
- 
-@@ -244,6 +255,15 @@
- 			      &vnode, sizeof (vnode)) != sizeof (vnode))
- 			glibtop_error_io_r (server, "kvm_read (vnode)");
- 
-+#if __FreeBSD_version >= 500039
-+		switch (vnode.v_type) {
-+		    case VREG:
-+		    	maps [i-1].inode = vnode.v_cachedid;
-+			maps [i-1].device = vnode.v_cachedfs;
-+		    default:
-+		    	continue;
-+		}
-+#else
- 		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
- 		    !vnode.v_data) continue;
- 
-@@ -252,13 +272,9 @@
+@@ -280,13 +282,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
  
@@ -69,7 +29,7 @@
 -			      (unsigned long) vnode.v_mount,
 -			      &mount, sizeof (mount)) != sizeof (mount))
 -			glibtop_error_io_r (server, "kvm_read (mount)");
--
+-#endif
  		maps [i-1].inode  = inode.i_number;
  		maps [i-1].device = inode.i_dev;
 +#endif

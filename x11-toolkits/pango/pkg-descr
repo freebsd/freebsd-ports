@@ -1,8 +1,6 @@
-The goal of the Pango project is to provide an open-source framework for the
-layout and rendering of internationalized text. Pango is an offshoot of the
-GTK+ and GNOME projects, and the initial focus is operation in those
-environments, however there is nothing fundamentally GTK+ or GNOME specific
-about Pango. Pango uses Unicode for all of its encoding, and will eventually
-support output in all the world's major languages. 
+Pango provides a framework to render and control the layout of
+internationalized text, and is the backend for right-to-left text.
+Pango is an integral part of the GTK+ and GNOME projects, but its
+code is platform- and toolkit-independent.
 
 WWW: http://www.pango.org/

@@ -64,9 +64,9 @@ etc/gconf/schemas/panel-toplevel.schemas
 etc/gconf/schemas/window-list.schemas
 etc/gconf/schemas/workspace-switcher.schemas
 include/panel-2.0/GNOME_Panel.h
+include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
-lib/libclock-applet-2.so
 lib/libpanel-applet-2.a
 lib/libpanel-applet-2.so
 lib/libpanel-applet-2.so.0
@@ -76,21 +76,27 @@ libdata/bonobo/servers/GNOME_NotificationAreaApplet.server
 libdata/bonobo/servers/GNOME_Panel.server
 libdata/bonobo/servers/GNOME_Wncklet_Factory.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
+libexec/clock-applet
 libexec/fish-applet-2
 libexec/notification-area-applet
 libexec/wnck-applet
+share/doc/panel-applet/PanelApplet.html
 share/doc/panel-applet/applet-popups.html
 share/doc/panel-applet/applet-porting.html
 share/doc/panel-applet/applet-writing.html
+share/doc/panel-applet/home.png
+share/doc/panel-applet/index.html
 share/doc/panel-applet/index.sgml
-share/doc/panel-applet/libpanel-applet.html
+share/doc/panel-applet/left.png
 share/doc/panel-applet/multi-applets.html
-share/doc/panel-applet/panel-applet-panel-applet-gconf-utilities.html
+share/doc/panel-applet/panel-applet-Panel-Applet-GConf-Utilities.html
+share/doc/panel-applet/panel-applet.devhelp
 share/doc/panel-applet/panel-applet.html
 share/doc/panel-applet/panel-signals.html
-share/doc/panel-applet/panelapplet.html
+share/doc/panel-applet/right.png
 share/doc/panel-applet/server-files.html
 share/doc/panel-applet/session-saving.html
+share/doc/panel-applet/up.png
 share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
 share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
@@ -129,9 +135,6 @@ share/gnome/help/clock/ko/legal.xml
 share/gnome/help/clock/sv/clock.xml
 share/gnome/help/clock/sv/figures/clock_applet.png
 share/gnome/help/clock/sv/legal.xml
-share/gnome/help/clock/uk/clock.xml
-share/gnome/help/clock/uk/figures/clock_applet.png
-share/gnome/help/clock/uk/legal.xml
 share/gnome/help/clock/zh_CN/clock.xml
 share/gnome/help/clock/zh_CN/figures/clock_applet.png
 share/gnome/help/clock/zh_CN/legal.xml
@@ -168,9 +171,6 @@ share/gnome/help/fish-applet-2/sv/figures/fish_applet.png
 share/gnome/help/fish-applet-2/sv/figures/fish_settings.png
 share/gnome/help/fish-applet-2/sv/fish-applet-2.xml
 share/gnome/help/fish-applet-2/sv/legal.xml
-share/gnome/help/fish-applet-2/uk/figures/fish_applet.png
-share/gnome/help/fish-applet-2/uk/fish-applet-2.xml
-share/gnome/help/fish-applet-2/uk/legal.xml
 share/gnome/help/fish-applet-2/zh_CN/figures/fish_applet.png
 share/gnome/help/fish-applet-2/zh_CN/figures/fish_settings.png
 share/gnome/help/fish-applet-2/zh_CN/fish-applet-2.xml
@@ -217,10 +217,6 @@ share/gnome/help/window-list/sv/figures/window_list_group.png
 share/gnome/help/window-list/sv/figures/window_list_group_applet.png
 share/gnome/help/window-list/sv/legal.xml
 share/gnome/help/window-list/sv/window-list.xml
-share/gnome/help/window-list/uk/figures/window_list_applet.png
-share/gnome/help/window-list/uk/figures/window_list_group_applet.png
-share/gnome/help/window-list/uk/legal.xml
-share/gnome/help/window-list/uk/window-list.xml
 share/gnome/help/window-list/zh_CN/figures/window_list_applet.png
 share/gnome/help/window-list/zh_CN/figures/window_list_group.png
 share/gnome/help/window-list/zh_CN/figures/window_list_group_applet.png
@@ -261,9 +257,6 @@ share/gnome/help/workspace-switcher/sv/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/sv/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/sv/legal.xml
 share/gnome/help/workspace-switcher/sv/workspace-switcher.xml
-share/gnome/help/workspace-switcher/uk/figures/workspace_switcher_applet.png
-share/gnome/help/workspace-switcher/uk/legal.xml
-share/gnome/help/workspace-switcher/uk/workspace-switcher.xml
 share/gnome/help/workspace-switcher/zh_CN/figures/workspace_switcher_applet.png
 share/gnome/help/workspace-switcher/zh_CN/figures/workspacelist_applet.png
 share/gnome/help/workspace-switcher/zh_CN/legal.xml
@@ -289,8 +282,6 @@ share/gnome/omf/gnome-panel/clock-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-sv.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-sv.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/clock-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/clock-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/clock-zh_TW.omf
@@ -311,8 +302,6 @@ share/gnome/omf/gnome-panel/fish-applet-2-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-sv.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/fish-applet-2-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf
@@ -333,8 +322,6 @@ share/gnome/omf/gnome-panel/window-list-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-sv.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-sv.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/window-list-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/window-list-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/window-list-zh_TW.omf
@@ -355,8 +342,6 @@ share/gnome/omf/gnome-panel/workspace-switcher-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-sv.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-sv.omf 2>/dev/null || /usr/bin/true
-share/gnome/omf/gnome-panel/workspace-switcher-uk.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf
@@ -385,7 +370,6 @@ share/gnome/pixmaps/gnome-panel-type-sliding.png
 share/gnome/pixmaps/gnome-panel.png
 share/gnome/pixmaps/gnome-run.png
 share/gnome/pixmaps/gnome-screenshot.png
-share/gnome/pixmaps/gnome-show-desktop.png
 share/gnome/pixmaps/panel-drawer.png
 share/gnome/pixmaps/panel-force-quit.png
 share/locale/am/LC_MESSAGES/gnome-panel-2.0.mo
@@ -400,6 +384,7 @@ share/locale/cy/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/en_CA/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/eo/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-panel-2.0.mo
@@ -412,6 +397,7 @@ share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/hr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
@@ -423,10 +409,12 @@ share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ml/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/mn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/mr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/no/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pa/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-panel-2.0.mo
@@ -437,8 +425,10 @@ share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sq/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sr@ije/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/th/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
 share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
@@ -452,8 +442,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/workspace-switcher/zh_TW
 @dirrm share/gnome/help/workspace-switcher/zh_CN/figures
 @dirrm share/gnome/help/workspace-switcher/zh_CN
-@dirrm share/gnome/help/workspace-switcher/uk/figures
-@dirrm share/gnome/help/workspace-switcher/uk
 @dirrm share/gnome/help/workspace-switcher/sv/figures
 @dirrm share/gnome/help/workspace-switcher/sv
 @dirrm share/gnome/help/workspace-switcher/ko/figures
@@ -475,8 +463,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/window-list/zh_TW
 @dirrm share/gnome/help/window-list/zh_CN/figures
 @dirrm share/gnome/help/window-list/zh_CN
-@dirrm share/gnome/help/window-list/uk/figures
-@dirrm share/gnome/help/window-list/uk
 @dirrm share/gnome/help/window-list/sv/figures
 @dirrm share/gnome/help/window-list/sv
 @dirrm share/gnome/help/window-list/ko/figures
@@ -498,8 +484,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/fish-applet-2/zh_TW
 @dirrm share/gnome/help/fish-applet-2/zh_CN/figures
 @dirrm share/gnome/help/fish-applet-2/zh_CN
-@dirrm share/gnome/help/fish-applet-2/uk/figures
-@dirrm share/gnome/help/fish-applet-2/uk
 @dirrm share/gnome/help/fish-applet-2/sv/figures
 @dirrm share/gnome/help/fish-applet-2/sv
 @dirrm share/gnome/help/fish-applet-2/ko/figures
@@ -521,8 +505,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/clock/zh_TW
 @dirrm share/gnome/help/clock/zh_CN/figures
 @dirrm share/gnome/help/clock/zh_CN
-@dirrm share/gnome/help/clock/uk/figures
-@dirrm share/gnome/help/clock/uk
 @dirrm share/gnome/help/clock/sv/figures
 @dirrm share/gnome/help/clock/sv
 @dirrm share/gnome/help/clock/ko/figures
@@ -601,7 +583,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-uk.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/clock-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-C.omf 2>/dev/null || /usr/bin/true
@@ -612,7 +593,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-uk.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/fish-applet-2-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-C.omf 2>/dev/null || /usr/bin/true
@@ -623,7 +603,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-uk.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/window-list-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-C.omf 2>/dev/null || /usr/bin/true
@@ -634,6 +613,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-uk.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_CN.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-panel/workspace-switcher-zh_TW.omf 2>/dev/null || /usr/bin/true

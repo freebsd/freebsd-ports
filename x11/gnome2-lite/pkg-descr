@@ -1,8 +1,15 @@
 GNU Network Object Model Environment
 
-This package does not contain anything by itself -- it is a
-"meta-port" that depends on other GNOME packages.  Its sole purpose is
-to require dependencies so users can install the basic set of 
-components necessary to start a GNOME 2 desktop session.
+This metaport installs the pieces of the GNOME 2 desktop that
+are needed to provide a functional desktop.  x11/gnome2
+contains the full version of the GNOME 2 desktop environment.
+
+Other popular GNOME applications can be installed from the other
+GNOME 2 metaports:
+
+    * x11/gnome2-fifth-toe
+    * x11/gnome2-power-tools
+    * editors/gnome2-office
+    * devel/gnome2-hacker-tools
 
 WWW: http://www.FreeBSD.org/gnome/

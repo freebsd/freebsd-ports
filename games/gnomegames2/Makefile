@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gnomegames2
-PORTVERSION=	2.4.3
+PORTVERSION=	2.6.0.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-games/2.4
+MASTER_SITE_SUBDIR=	sources/gnome-games/2.6
 DISTNAME=	gnome-games-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -22,7 +23,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier libgnomeui
+USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack lthack libgnomeui \
+		librsvg2
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgnomecanvas
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -21,8 +20,7 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=13
-USE_GNOMENG=	yes
-USE_GNOME=	gnomehack libglade2 libartlgpl2
+USE_GNOME=	gnomehack lthack libglade2 libartlgpl2
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

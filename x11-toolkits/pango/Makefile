@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.2.5
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.2/
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.4,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.3/
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -33,7 +32,7 @@ CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \
 		--enable-static
 PKGINSTALL=	${WRKDIR}/pkg-install
-# Hmm.. tough one.  Found this one when I had science/hdf installed
+# Hmm.. tough one.  Found this one when I had graphics/hdf installed
 # (which installs glist.h) which is picked up before the glib-2.0
 # stuff, with Bad Results[tm]
 #
@@ -42,10 +41,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			${GLIB2_CFLAGS} -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-PLIST_SUB=	VERSION="1.2.0"
+PLIST_SUB=	VERSION="1.4.0"
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
+
+MAN1=		pango-querymodules.1
 
 post-patch:
 	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | ${XARGS} \

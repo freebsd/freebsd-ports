@@ -1,13 +1,5 @@
-This is GLib version 2.0.  GLib, is a library which includes support
-routines for C such as lists, trees, hashes, memory allocation, and
-many other things.
+GLib provides a simple, abstract, and highly portable set of C support
+routines such as lists, trees, hashes, memory allocation, and much, much
+more.  It is a foundation for writing portable applications.
 
 WWW: http://www.gtk.org/
-ftp://ftp.gtk.org/pub/gtk
-
-A mailing list is located at gtk-list@redhat.com for discussion.
-
-GLib-2.0 is a stable release that forms the basis of GTK+-2.0.
-
-- Vanilla
-vanilla@FreeBSD.ORG

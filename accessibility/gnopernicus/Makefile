@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	gnopernicus
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.1
 PORTREVISION=	1
 CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of accessibility apps for GNOME 2
 
 LIB_DEPENDS=	gnome-mag.1:${PORTSDIR}/accessibility/gnomemag \
-		gnomespeech.6:${PORTSDIR}/accessibility/gnomespeech
+		gnomespeech.7:${PORTSDIR}/accessibility/gnomespeech
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui atspi
-USE_LIBTOOL_VER=	13
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui atspi
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=	SED="${SED}"
 
 .include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- icons/Makefile.in.orig	Mon Mar  8 22:22:36 2004
++++ icons/Makefile.in	Mon Mar  8 22:22:53 2004
+@@ -133,7 +133,7 @@
+ 
+ iconsize = 48x48
+ category = apps
+-iconsdir = $(datadir)/icons/hicolor/$(iconsize)/$(category)
++iconsdir = $(prefix)/share/icons/hicolor/$(iconsize)/$(category)
+ icons_DATA = \
+ 	gnome-netstatus-disconn.png	\
+ 	gnome-netstatus-idle.png	\

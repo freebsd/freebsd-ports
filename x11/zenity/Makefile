@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	zenity
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
-DIST_SUBDIR=	gnome2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
+DIST_SUBDIR=    gnome2
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Display GNOME dialogs from the command line
@@ -32,8 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		zenity.1
 
 CONFLICTS=	gtkada-1.2.*
-
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \

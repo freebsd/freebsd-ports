@@ -1,6 +1,6 @@
---- sysdeps/common/mountlist.c.orig	Fri Dec 19 12:23:02 2003
-+++ sysdeps/common/mountlist.c	Fri Dec 19 12:23:41 2003
-@@ -136,7 +136,7 @@
+--- sysdeps/common/mountlist.c.orig	Mon Dec  1 13:59:28 2003
++++ sysdeps/common/mountlist.c	Mon Dec  1 16:13:15 2003
+@@ -127,7 +127,7 @@
  }
  #endif /* MOUNTED_GETMNTENT1.  */
  
@@ -9,12 +9,12 @@
  static char *
  fstype_to_string (t)
       short t;
-@@ -354,7 +354,7 @@
- 	me = (struct mount_entry *) xmalloc (sizeof (struct mount_entry));
- 	me->me_devname = xstrdup (fsp->f_mntfromname);
- 	me->me_mountdir = xstrdup (fsp->f_mntonname);
+@@ -345,7 +345,7 @@
+ 	me = (struct mount_entry *) g_malloc (sizeof (struct mount_entry));
+ 	me->me_devname = g_strdup (fsp->f_mntfromname);
+ 	me->me_mountdir = g_strdup (fsp->f_mntonname);
 -#if defined(__NetBSD__) || defined(__OpenBSD__)
 +#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
- 	me->me_type = xstrdup (fsp->f_fstypename);
+ 	me->me_type = g_strdup (fsp->f_fstypename);
  #else
- 	me->me_type = xstrdup (fstype_to_string (fsp->f_type));
+ 	me->me_type = g_strdup (fstype_to_string (fsp->f_type));

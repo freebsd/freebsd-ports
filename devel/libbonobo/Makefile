@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libbonobo
-PORTVERSION=	2.4.3
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,7 +21,7 @@ USE_BISON=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_GNOME=	gnomehack libxml2 orbit2
+USE_GNOME=	gnomehack intlhack libxml2 orbit2
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
