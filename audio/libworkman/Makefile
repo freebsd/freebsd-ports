@@ -1,16 +1,16 @@
 # New ports collection makefile for:	libworkman
-# Version required:		1.4
 # Date created:			8 August 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libworkman-1999-06-20
-PKGNAME=	libworkman-1.4
+PORTNAME=	libworkman
+PORTVERSION=	1.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/ \
 		http://people.FreeBSD.org/~jim/distfiles/
+DISTNAME=	${PORTNAME}-1999-06-20
 
 MAINTAINER=	jim@FreeBSD.org
 

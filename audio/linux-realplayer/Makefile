@@ -1,15 +1,15 @@
 # New ports collection makefile for:   linux-realplayer
-# Version required:    5.0
 # Date created:        31 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rv50_linux20
-PKGNAME=	linux-realplayer-5.0
+PORTNAME=	linux-realplayer
+PORTVERSION=	5.0
 CATEGORIES=	audio linux
-MASTER_SITES=	
+MASTER_SITES=	# fetch manually
+DISTNAME=	rv50_linux20
 
 MAINTAINER=	kris@FreeBSD.org
 

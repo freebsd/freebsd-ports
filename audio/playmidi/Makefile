@@ -1,12 +1,12 @@
 # New ports collection makefile for:	playmidi
-# Version required:	2.4
 # Date created:		27 Feb 1995
 # Whom:			ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=	playmidi-2.4
+PORTNAME=	playmidi
+PORTVERSION=	2.4
 CATEGORIES=	audio
 MASTER_SITES=	http://nl.linux.org/~diz/playmidi/
 

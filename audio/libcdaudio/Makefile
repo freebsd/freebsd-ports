@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libcdaudio
-# Version required:	0.99.4
 # Date created:		01 June 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libcdaudio-0.99.4
+PORTNAME=	libcdaudio
+PORTVERSION=	0.99.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://cdcd.undergrid.net/libcdaudio/
 

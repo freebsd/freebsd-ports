@@ -1,14 +1,15 @@
 # New ports collection makefile for:	wsoundPrefs
-# Version required:	1.0.2
 # Date created:		12 December 1998
 # Whom:			gljohns@bellsouth.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	WSoundPrefs-1.0.2
+PORTNAME=	wsoundprefs
+PORTVERSION=	1.0.2
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
+DISTFILE=	WSoundPrefs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

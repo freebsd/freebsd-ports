@@ -1,11 +1,11 @@
 # New ports collection makefile for:	snowstar
-# Version required:			0.75.5
 # Date created:				21 April 1999
 # Whom:					fenner
 #
 # $FreeBSD$
 
-DISTNAME=	snowstar-0.75.5
+PORTNAME=	snowstar
+PORTVERSION=	0.75.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.daft.com/~armadilo/projects/snowstar/
 EXTRACT_SUFX=	.tar

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mpg123
-# Version required:		0.59r
 # Date created:			25 June 1997
 # Whom:				Carey Jones <mcj@acquiesce.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mpg123-0.59r
+PORTNAME=	mpg123
+PORTVERSION=	0.59r
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/ \

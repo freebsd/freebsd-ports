@@ -1,5 +1,4 @@
 # New ports collection makefile for:    cdrdao
-# Version required:     1.1.2
 # Date created:         7 April 1999
 # Whom:                 futatuki
 #
@@ -10,10 +9,11 @@
 # If you don't want to use pthreads, set DONT_USE_PTHREADS = yes
 # If you want the graphical X toc file editor, set XCDRDAO = yes
 
-DISTNAME=		cdrdao-1.1.3.src
-PKGNAME=		cdrdao-1.1.3
+PORTNAME=		cdrdao
+PORTVERSION=		1.1.3
 CATEGORIES=		audio
 MASTER_SITES=		http://www.ping.de/sites/daneb/
+EXTRACT_SUFX=		.src.tar.gz
 
 MAINTAINER=		futatuki@debug.gr.jp
 

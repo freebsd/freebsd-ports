@@ -1,15 +1,15 @@
 # New ports collection makefile for:	xmms-liveice
-# Version required:		1.0.0
 # Date created:			5 Febrary 2000
 # Whom:				Espen Skoglund <esk@ira.uka.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	liveice-xmms
-PKGNAME=	xmms-liveice-1.0.0
+PORTNAME=	xmms-liveice
+PORTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	http://star.arm.ac.uk/~spm/software/
+DISTNAME=	liveice-xmms
 
 MAINTAINER=	esk@ira.uka.de
 

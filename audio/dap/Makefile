@@ -1,15 +1,15 @@
 # ports collection makefile for:	dap
-# Version required:			2.0.2
 # Date created:				23 August 1998
 # Whom:					yoshiaki Uchikawa
 #
 # $FreeBSD$
 #
 
-DISTNAME=	DAPSource
-PKGNAME=	dap-2.0.2
+PORTNAME=	dap
+PORTVERSION=	2.0.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cee.hw.ac.uk/~richardk/
+DISTNAME=	DAPSource
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:   sidplay
-# Version required:    1.36.31
 # Date created:        31 October 1996
 # Whom:                Stefan Zehl <sec@42.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sidplay-1_36_35
-PKGNAME=        sidplay-1.36.35
+PORTNAME=	sidplay
+PORTVERSION=	1.36.35
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/
+DISTNAME=	${PORTNAME}-1_36_35
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org

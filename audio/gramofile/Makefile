@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gramofile
-# Version required:	1.6
 # Date created:		Fri Jan 28 18:40:38 CET 2000
 # Whom:			nox@jelal.kn-bremen.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gramofile-1.6
+PORTNAME=	gramofile
+PORTVERSION=	1.6
 CATEGORIES=	audio
 MASTER_SITES=	http://panic.et.tudelft.nl/~costar/gramofile/
 

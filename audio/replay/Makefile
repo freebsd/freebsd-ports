@@ -1,17 +1,17 @@
 # New ports collection makefile for:	replay
-# Version required:		0.61
 # Date created:			Oct 27 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	replay-source-dgtk_0.61
-PKGNAME=	replay-0.61
+PORTNAME=	replay
+PORTVERSION=	0.61
 CATEGORIES=	audio
 MASTER_SITES=	http://replay.replicant.nu/files/ \
 		ftp://ftp.icemark.ch/pub/replay/ \
 		ftp://k2.lund.se/pub/replay/
+DISTNAME=	${PORTNAME}-source-dgtk_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 

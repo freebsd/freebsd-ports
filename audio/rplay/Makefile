@@ -1,22 +1,22 @@
 # New ports collection makefile for:	rplay - Network audio player
-# Version required:     3.2.0b6
 # Date created:		16 March 1995
 # Whom:			rmallory@csusb.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=       rplay-3.2.0b6
+PORTNAME=	rplay
+PORTVERSION=	3.2.0b6
 CATEGORIES=	audio
 MASTER_SITES=	http://rplay.doit.org/dist/
 
 MAINTAINER=	rmallory@csusb.edu
 
-LIB_DEPENDS=    gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
-MAN1=           rplay.1 xrplay.1 rplayd.1 rptp.1
+MAN1=		rplay.1 xrplay.1 rplayd.1 rptp.1
 MAN5=		rplay.conf.5 rplay.hosts.5 rplay.servers.5
 
 post-install:

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    waveplay
-# Version required:     1.0
 # Date created:         23 Jan 1999
 # Whom:                 Yoshihide SONODA <ysonoda@dontaku.csce.kyushu-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		waveplay-19990123
-PKGNAME=		waveplay-1.0
+PORTNAME=		waveplay
+PORTVERSION=		1999.01.23
 CATEGORIES=		audio
 MASTER_SITES=		http://dontaku.csce.kyushu-u.ac.jp/~ysonoda/archives/program/FreeBSD/
+DISTNAME=		waveplay-19990123
 
 MAINTAINER=		ysonoda@dontaku.csce.kyushu-u.ac.jp
 

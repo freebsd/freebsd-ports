@@ -1,22 +1,21 @@
 # New ports collection makefile for:	TiMidity++
-# Version required:	1.3.10
 # Date created:		27 Feb 1999
 # Whom:			Yoichi Asai <yatt@msc.biglobe.ne.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	TiMidity++-${VERSION}
-PKGNAME=	${LANGPREFIX}timidity++-${INTERFACE}-${VERSION}
+PORTNAME=	${LANGPREF}timidity++-${INTERFACE}
+PORTVERSION=	2.9.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
+DISTNAME=	TiMidity++-${PORTVERSION}
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
 RUN_DEPENDS=	${PREFIX}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
 
-VERSION=	2.9.0
 INTERFACE?=	emacs
 .if defined(JAPANESE)
 LANGPREFIX=	ja-

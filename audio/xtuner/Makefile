@@ -1,15 +1,15 @@
-# New ports collection makefile for:	Xtuner-2.1
-# Version required:	2.1
+# New ports collection makefile for:	Xtuner
 # Date created:		19 December 96
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Xtuner-2.1
-PKGNAME=	xtuner-2.1
+PORTNAME=	xtuner
+PORTVERSION=	2.1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
+DISTNAME=	Xtuner-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 

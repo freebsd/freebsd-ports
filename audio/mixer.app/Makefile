@@ -1,15 +1,15 @@
 # New ports collection makefile for:  	mixer.app
-# Version required:	1.4.1
 # Date created:		16 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Mixer.app-1.4.1
-PKGNAME=	mixer.app-1.4.1
+PORTNAME=	mixer.app
+PORTVERSION=	1.4.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.fukt.hk-r.se/~per/mixer/	
+DISTNAME=	Mixer.app-${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 

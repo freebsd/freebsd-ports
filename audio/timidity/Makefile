@@ -1,24 +1,24 @@
 # New ports collection makefile for:    timidity
 # Homepage: http://www.cgs.fi/~tt/timidity/
-# Version required:     0.2i
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       timidity-0.2i
-CATEGORIES=     audio
-MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/ \
+PORTNAME=	timidity
+PORTVERSION=	0.2i
+CATEGORIES=	audio
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/ \
 		http://www.goice.co.jp/member/mo/timidity/dist/
-DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
-
-MAINTAINER=     ports@FreeBSD.org
-
-NO_CDROM=       "Uses copyrighted patches"
-
-TIINS=          goemon.tgz
+DISTFILES=	${TIINS} ${DISTNAME}.tar.gz
 EXTRACT_ONLY=   ${DISTNAME}.tar.gz
+
+MAINTAINER=	ports@FreeBSD.org
+
+NO_CDROM=	"Uses copyrighted patches"
+
+TIINS=		goemon.tgz
 INSTALL_TARGET= install.all
 MAN1=           timidity.1
 

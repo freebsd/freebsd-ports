@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmtune
-# Version required:			1.0
 # Date created:				28 September 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmtune-1.0
+PORTNAME=	wmtune
+PORTVERSION=	1.0
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/ \
 		http://www.soren.org/linux/wmtune/dl/ \
