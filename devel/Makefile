@@ -309,7 +309,6 @@
     SUBDIR += libcii
     SUBDIR += libcoro
     SUBDIR += libdict
-    SUBDIR += libdjbdns
     SUBDIR += libdlmalloc
     SUBDIR += libds
     SUBDIR += libdsp
@@ -682,7 +681,6 @@
     SUBDIR += p5-PAR
     SUBDIR += p5-PAR-Dist
     SUBDIR += p5-POE
-    SUBDIR += p5-POE-Component-Client-DNS
     SUBDIR += p5-POE-Component-Client-HTTP
     SUBDIR += p5-POE-Component-Client-POP3
     SUBDIR += p5-POE-Component-Client-Ping
