@@ -304,7 +304,7 @@
 +		return (-1);
 +	}
 +	report_id = 0;
-+#if __FreeBSD__ >= 5 && __FreeBSD_version < 500111
++#if __FreeBSD_version < 500111
 +	reportlen = hid_report_size(rd, report_id, hid_input);
 +#else
 +	reportlen = hid_report_size(rd, hid_input, report_id);
