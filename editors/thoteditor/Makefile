@@ -19,10 +19,6 @@ COMMENT=	An structured document editor, offering a graphical WYSIWYG interface
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-BROKEN=		"Does not compile on ${OSVERSION}"
-.endif
-
 THOT_SUBDIR=	Target
 USE_MOTIF=	yes
 WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
