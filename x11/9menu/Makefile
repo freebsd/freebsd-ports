@@ -7,7 +7,7 @@
 
 PORTNAME=	9menu
 PORTVERSION=	1.7
-CATEGORIES=	x11-wm plan9
+CATEGORIES=	x11 plan9
 MASTER_SITES=	ftp://freefriends.org/arnold/Source/ \
 		${MASTER_SITE_NETBSD}
 EXTRACT_SUFX=	.shar.gz
