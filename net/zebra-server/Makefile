@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zebra-server
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
@@ -14,13 +14,13 @@ DISTNAME=	idzebra-${PORTVERSION}
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Z39.50/SR server software
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
+BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 LIB_DEPENDS=	yaz.2:${PORTSDIR}/net/yaz
-RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-yazconfig=${LOCALBASE}/bin \
-		--with-tclconfig=${LOCALBASE}/lib/tcl8.3
+		--with-tclconfig=${LOCALBASE}/lib/tcl8.4
 CONFIGURE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN1=		zebraidx.1
