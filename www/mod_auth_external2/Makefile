@@ -5,22 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_external
-PORTVERSION=	2.2.6
+PORTVERSION=	2.2.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.unixpapa.com/software/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+USE_APACHE=	YES
+APACHE_PORT=	www/apache2
 
 LATEST_LINK=	mod_auth_external2
 
-APXS?=		${LOCALBASE}/sbin/apxs
-
-DOC_FILES=	AUTHENTICATORS INSTALL README
+PORTDOCS=	AUTHENTICATORS INSTALL README
 do-build:
 	@(cd ${WRKSRC}/ && ${APXS} -I. -c ${PORTNAME}.c)
 
@@ -28,7 +26,7 @@ do-install:
 	@(cd ${WRKSRC}/ && ${APXS} -A -i ${PORTNAME}.la)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.   for f in ${DOC_FILES}
+.   for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .   endfor
 .endif
