@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamstats
-PORTVERSION=	0.4b3
+PORTVERSION=	0.4b4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gryzor.com/tools/
 
@@ -19,8 +19,7 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${PERL} -pi.bak -e 's,/mail.log,/maillog,g ; s,infiles == 0,infiles == -1,g' \
-		${WRKSRC}/${PORTNAME}${PORTVERSION}.pl
+	@${PERL} -pi.bak -e 's,/mail.log,/maillog,g' ${WRKSRC}/${PORTNAME}${PORTVERSION}.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}${PORTVERSION}.pl ${PREFIX}/bin/${PORTNAME}.pl
