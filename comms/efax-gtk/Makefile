@@ -2,13 +2,11 @@
 # Whom:                                Jean-Baptiste Quenot <jb.quenot@caraldi.com>
 # Date Created:                        2004-02-29 10:33:43
 #
-# ex:ts=20:sw=20
-#
 # $FreeBSD$
 #
 
 PORTNAME=	efax-gtk
-PORTVERSION=	2.2.11
+PORTVERSION=	2.2.12
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,8 +25,6 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome
 MAN1=		efax.1 efix.1 efax-gtk.1
 
-.include <bsd.port.pre.mk>
-
 post-install:
 	@${ECHO}
 	@${ECHO_CMD} "********************************************************************************"
@@ -36,4 +32,4 @@ post-install:
 	@${ECHO_CMD} "********************************************************************************"
 	@${ECHO}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
