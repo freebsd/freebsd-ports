@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.6.3
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,6 +29,7 @@ MAN1=	mlterm.1 mlclient.1
 PKGNAMESUFFIX=	-noaa
 .else
 CONFIGURE_ARGS+=	--enable-anti-alias
+LIB_DEPENDS=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
 .endif
 
 post-configure:
