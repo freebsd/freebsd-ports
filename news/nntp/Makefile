@@ -7,6 +7,7 @@
 
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.academ.com/pub/nntp/server/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
