@@ -1,4 +1,5 @@
 bin/pan
 share/locale/da/LC_MESSAGES/pan.mo
+share/locale/ja/LC_MESSAGES/pan.mo
+share/locale/ko/LC_MESSAGES/pan.mo
 share/gnome/apps/Internet/pan.desktop
-
