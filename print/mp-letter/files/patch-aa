@@ -1,0 +1,50 @@
+--- Makefile.orig	Sat Aug 10 02:48:14 1996
++++ Makefile	Sat Aug 10 02:53:07 1996
+@@ -45,11 +45,14 @@
+ #  Default locations where mp files will be installed.
+ #  You might wish to alter these values.
+ #
+-MPPATH     = /usr/local
++#MPPATH     = /usr/local
++MPPATH     = $(PREFIX)
+ MPBINDIR   = $(MPPATH)/bin
+-MPLIBDIR   = $(MPPATH)/lib
++#MPLIBDIR   = $(MPPATH)/lib
++MPLIBDIR   = $(MPPATH)/share/mp
+ MPMANDIR   = $(MPPATH)/man/man$(MPMANSECT)
+-MPMANSECT  = l
++#MPMANSECT  = l
++MPMANSECT  = 1
+ #---------------------------------------------------------------------
+ #  Alternate names for the mailp frontend
+ #
+@@ -62,6 +65,7 @@
+ CCFLAGS  = $(CCOMP) $(CDEFS)
+ LDFLAGS  =
+ 
++CXXFLAGS = $(CCFLAGS)	# needed for gmake's implicit rule
+ CCC	 = g++
+ #=================================================================
+ 
+@@ -107,10 +111,10 @@
+ 	   @echo "**IMPORTANT NOTE**"
+ 	   @echo
+ 	   @echo "Mp is setup by default to work with US Letter sized paper."
+-	   @echo "If you are using A4 sized paper, you should reinstall, by
++	   @echo "If you are using A4 sized paper, you should reinstall, by"
+ 	   @echo "doing a:"
+ 	   @echo
+-	   @echo "make install-a4"
++	   @echo "make PAPERSIZE=a4 reinstall"
+ 	   @echo
+ 
+ common-install: $(BINARIES)
+@@ -122,6 +126,8 @@
+ 	   -cp mp.1 $(MPMANDIR)/mp.$(MPMANSECT)
+ 	   -chmod 644 $(MPMANDIR)/mp.$(MPMANSECT)
+ #                                                     mp.common.ps
++	   -mkdir $(MPLIBDIR)
++#
+ 	   -cp mp.common.ps $(MPLIBDIR)
+ 	   -chmod 644 $(MPLIBDIR)/mp.common.ps
+ #                                                     mp.pro.ps

@@ -1,0 +1,11 @@
+--- input.cc.orig	Sun Aug  1 13:28:22 1993
++++ input.cc	Sat Aug  3 17:04:16 1996
+@@ -134,6 +134,8 @@
+ 
+       else if (!argcmp(argv[i], "-from", 4))     // Print originators name.
+         print_orig = 1 ;
++      else if (!argcmp(argv[i], "-F", 2))     	// backward compatiblity
++        print_orig = 1 ;
+ 
+       else if (!argcmp(argv[i], "-help", 2))     // Print usage message.
+         usage() ;
