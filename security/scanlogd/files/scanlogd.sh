@@ -12,14 +12,14 @@
 prefix=%%PREFIX%%
 
 scanlogd_enable=${scanlogd_enable:-"NO"}	# Enable scanlogd
-scanlogd_program="${prefix}/sbin/scanlogd"	# Location of scanlogd
+scanlogd_program="${prefix}/bin/scanlogd"	# Location of scanlogd
 scanlogd_flags=${scanlogd_flags:-""}		# Flags to scanlogd
 
 . %%RC_SUBR%%
 
 name="scanlogd"
 rcvar=`set_rcvar`
-command="${prefix}/sbin/${name}"
+command="${prefix}/bin/${name}"
 required_files=""
 
 load_rc_config $name
