@@ -11,7 +11,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Forum/1353/
 DISTNAME=	${PORTNAME}-${PORTVERSION}Ea
 
-MAINTAINER=	ambrisko@whistle.com
+MAINTAINER=	ambrisko@ambrisko.com
 
 WRKSRC=		${WRKDIR}/sdcc219Ea
 GNU_CONFIGURE=	yes
