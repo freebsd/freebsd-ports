@@ -34,6 +34,7 @@ ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 
 USE_GNOME=	orbit gtk12
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -319,6 +320,8 @@ post-extract:
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/../odk/settings/settings.mk
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/../odk/settings/settings.mk
 	@${MAKE} patch-mozilla
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
