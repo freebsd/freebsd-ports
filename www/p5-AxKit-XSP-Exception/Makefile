@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AxKit-XSP-Exception
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.cpan.org/authors/id/M/MS/MSERGEANT/
 PKGNAMEPREFIX=	p5-
