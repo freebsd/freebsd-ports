@@ -156,6 +156,7 @@
     SUBDIR += py-kde
     SUBDIR += py-qt
     SUBDIR += py-tkinter
+    SUBDIR += py-wmgeneral
     SUBDIR += py-wxPython
     SUBDIR += py-xlib
     SUBDIR += qscintilla

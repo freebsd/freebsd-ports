@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/pywmgeneral.so
+%%PYTHON_SITELIBDIR%%/pywmhelpers.py
+%%PYTHON_SITELIBDIR%%/pywmhelpers.pyc
+%%PYTHON_SITELIBDIR%%/pywmhelpers.pyo
