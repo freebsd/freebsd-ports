@@ -7854,6 +7854,7 @@ qmail-remove	ports/mail/qmail-remove
 qmail-scanner	ports/mail/qmail-scanner
 qmail-tls	ports/mail/qmail-tls
 qmailadmin	ports/mail/qmailadmin
+qmailadmin-devel	ports/mail/qmailadmin-devel
 qmailanalog	ports/mail/qmailanalog
 qmake		ports/devel/qmake
 qmc		ports/misc/qmc
