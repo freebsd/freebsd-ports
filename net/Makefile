@@ -183,6 +183,7 @@
     SUBDIR += kdetelnet
     SUBDIR += kicq
     SUBDIR += kinkatta
+    SUBDIR += kio_fish
     SUBDIR += kmsn
     SUBDIR += kmud
     SUBDIR += konverse
