@@ -1,23 +1,15 @@
---- autoconf/fbsd.in.orig	Thu May  6 09:20:45 2004
-+++ autoconf/fbsd.in	Thu May  6 09:31:36 2004
-@@ -21,13 +21,13 @@
- 		 logrotate.dansguardian dansguardianf1.conf
- 
- PASSVARS = -DPROXYUSER=\"${PROXYUSER}\"
--#PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}access.log\"
-+PASSVARS += -DLOGLOCATION=\"${LOGLOCATION}dansguardian.log\"
- PASSVARS += -DCONFFILELOCATION=\"${CONFFILELOCATION}dansguardian.conf\"
- #PASSVARS += -DPIDDIR=\"${PIDDIR}\"
- 
+--- autoconf/fbsd.in.orig	Tue Jun 29 10:21:27 2004
++++ autoconf/fbsd.in	Tue Jun 29 10:23:52 2004
+@@ -28,7 +28,7 @@
  #Some advanced options:
--WARNING = -Wall
--OPTIMISE = -O2
-+#WARNING = -Wall
+ #WARNING = -Wall
+ #OPTIMISE = -O2
+-+OPTIMISE = ${CXXFLAGS}
 +OPTIMISE = ${CXXFLAGS}
  #DEBUG += -DDGDEBUG
  #STATIC = -static
  
-@@ -42,48 +42,37 @@
+@@ -43,48 +43,37 @@
  	$(CPP) -o dansguardian $(DGCFLAGS) $(DEBUG) $(OBJ) $(LIBS) dansguardian.cpp
  
  install:

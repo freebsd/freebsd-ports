@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.7.7.8
+PORTVERSION=	2.7.7.9
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
@@ -34,14 +34,14 @@ CONFIGURE_ARGS=	--bindir=/sbin/ \
 		--piddir=/var/run/
 MAN8=		dansguardian.8
 
-OPTIONS=	DG_GCC3 "Compile using GCC 3.x on FreeBSD 4.x." off \
-		DG_PHRASELISTS "Install new phraselists." off
+OPTIONS=	DG_GCC3 "Compile using GCC 3.3 on FreeBSD 4.x." off \
+		DG_PHRASELISTS "Install new phraselists. (Overwrites existing.)" off
 
 DG_URL=		http://dansguardian.org/index.php?page=copyright2
 CONFDIR=	${PREFIX}/etc/dansguardian
 
 NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
-NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
+#NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
 RESTRICTED=	${NO_PACKAGE}
 
 .include <bsd.port.pre.mk>
@@ -49,6 +49,7 @@ RESTRICTED=	${NO_PACKAGE}
 # On FreeBSD 4.x, user can choose which GCC version to use
 .if ${OSVERSION} > 500000 || defined(WITH_DG_GCC3)
 CONFIGURE_ARGS+=	--gccver=3
+USE_GCC=		3.3
 .else
 CONFIGURE_ARGS+=	--gccver=2
 .endif
