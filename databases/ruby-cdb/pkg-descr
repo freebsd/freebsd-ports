@@ -2,4 +2,4 @@ This module provides Ruby interface to D. J. Bernstein's cdb (constant
 database) library.
 
 Author:	Kazuteru Okahashi <kaz@fan.gr.jp>
-WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=cdb
+WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=cdb

@@ -3,4 +3,4 @@ using a dynamic programming algorithm to compute the Levenstein
 distance between strings.  Written in C for speed.
 
 Author:	Florian Frank <flori@ping.de>
-WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=amatch
+WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=amatch
