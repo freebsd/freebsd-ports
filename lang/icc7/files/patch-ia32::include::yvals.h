@@ -1,7 +1,7 @@
---- ia32/include/yvals.h.orig	Tue Nov 26 22:50:59 2002
-+++ ia32/include/yvals.h	Thu Jan  9 17:27:12 2003
+--- ia32/include/yvals.h.orig	Sat Sep  6 11:58:50 2003
++++ ia32/include/yvals.h	Sat Sep  6 12:03:22 2003
 @@ -1,93 +1,17 @@
--/* static char cvs_id[] = "$Id: yvals.h,v 1.35.2.2 2003/02/21 13:46:50 sne Exp $"; */
+-/* static char cvs_id[] = "$Id: yvals.h,v 1.35.2.3 2003/08/22 00:21:06 dlmoore2 Exp $"; */
 +/* static char cvs_id[] = "$Id: yvals.h,v 1.35.2.1 2002/12/26 08:38:02 grigory Exp $"; */
  /* yvals.h values header for EDG/gcc on various Unix systems */
  #ifndef _YVALS
@@ -95,7 +95,7 @@
   #define _HAS_TRADITIONAL_IOSTREAMS	1
   #define _HAS_TRADITIONAL_ITERATORS	1
   #define _HAS_TRADITIONAL_POS_TYPE	1
-@@ -134,212 +58,9 @@
+@@ -134,211 +58,8 @@
  
   #define _Restrict
  
@@ -191,7 +191,6 @@
 -#define _ILONG		1	/* 0 if 16-bit int */
 -
 -		/* POINTER PROPERTIES */
--#define _NULL		0L	/* 0L if pointer same as long */
 -
 - #ifdef _PDT
 -typedef _PDT _Ptrdifft;
@@ -287,7 +286,7 @@
 -
 -
 -
- 		/* MISCELLANEOUS MACROS */
+-		/* MISCELLANEOUS MACROS */
 -#define _ATEXIT_T	void
 -#define _Mbstinit(x)	mbstate_t x = {0, 0}
 -
