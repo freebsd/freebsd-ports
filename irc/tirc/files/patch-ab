@@ -1,0 +1,11 @@
+--- tirc.1.orig	Sun Aug 22 14:56:21 1999
++++ tirc.1	Sun Aug 22 14:56:40 1999
+@@ -618,7 +618,7 @@
+ .br
+ .SH FILES
+ .TP
+-.I /usr/local/share/tircrc
++.I __PREFIX__/share/tirc/tircrc
+ Global startup file.
+ .TP
+ .I $HOME/.tircrc
