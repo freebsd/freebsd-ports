@@ -8,8 +8,8 @@
 PORTNAME=	coalesce
 PORTVERSION=	1.50
 CATEGORIES=	biology
-MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/lamarc/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/lamarc/coalesce/
+DISTNAME=	${PORTNAME}1.5b
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
