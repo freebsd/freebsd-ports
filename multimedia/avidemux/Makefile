@@ -6,36 +6,65 @@
 #
 
 PORTNAME=	avidemux
-PORTVERSION=	0.9.0.16
-CATEGORIES=	graphics
+PORTVERSION=	0.9.0.101
+CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
-DISTNAME=	avidemux-0.9pre16_gtkfix
+DISTNAME=	avidemux-0.9rc1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	GUI based AVI (DivX) editor
 
-LIB_DEPENDS=	xvidcore.0:${PORTSDIR}/multimedia/xvid \
-		mp3lame.0:${PORTSDIR}/audio/lame \
-		mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
+		mad.1:${PORTSDIR}/audio/mad \
+		freetype.9:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	\
-	${LINUXBASE}/usr/include/divx/decore.h:${PORTSDIR}/multimedia/linux-divx4linux \
 	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 
-WRKSRC=		${WRKDIR}/avidemux-0.9pre16
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-		-I${LINUXBASE}/usr/include/divx" \
+		-I${LOCALASE}/include/ffmpeg \
+		-I${LOCALBASE}/include/a52dec" \
 		LIBFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--with-xvid-as-decoder --disable-warnings
+CONFIGURE_ARGS=	--disable-warnings
 USE_GMAKE=	yes
 
+.if exists(${LOCALBASE}/lib/liba52.so.0)
+WITH_A52=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/xvidcore.so.0)
+WITH_XVID=	yes
+.endif
+
+.if defined(WITH_XVID)
+LIB_DEPENDS+=	xvidcore.0:${PORTSDIR}/graphics/xvid
+CONFIGURE_ARGS+=	--with-xvid-as-decoder
+.endif
+
+.if defined(WITH_A52)
+LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+.endif
+
+pre-everything::
+.if !defined(WITH_XVID)
+	@${ECHO_MSG} "To enable xvid as the decoder define WITH_XVID."
+.endif
+
+.if !defined(WITH_A52)
+	@${ECHO_MSG} "To enable A/52 support define WITH_A52."
+.endif
+
 post-patch:
+	@${TOUCH} ${WRKSRC}/*
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+post-configure:
+	@${SH} ${WRKSRC}/buildLavCodec.sh
 
 .include <bsd.port.mk>
