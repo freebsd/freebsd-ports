@@ -17,12 +17,15 @@
  #include <X11/xpm.h>
  #include <X11/Xlib.h>
  #include <X11/Xutil.h>
-@@ -48,6 +47,10 @@
+@@ -48,6 +47,13 @@
    int fpiopl;
  #endif
  
 +#ifndef TRUE
 +#define TRUE	    1
++#endif
++#ifndef FALSE
++#define FALSE	    0
 +#endif
 +
  #define ON          1
