@@ -12,13 +12,13 @@ MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PKGNAMEPREFIX=	linux-
 DISTNAME=		libmng-${PORTVERSION}-1.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
-EXTRACT_ONLY=	yes
+EXTRACT_ONLY=
 
 MAINTAINER=		mranner@inode.at
 COMMENT=		RPM of libmng
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.6:${PORTSDIR}/graphics/linux-jpeg
+RUN_DEPENDS=	${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
 BASEVERSION=	8.0
 USE_LINUX_RPM=	yes
