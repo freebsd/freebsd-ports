@@ -282,11 +282,6 @@ lib/libdpstk.a
 lib/libpsres.a
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
-man/man1/gs.1.gz
-man/man1/pdf2ps.1.gz
-man/man1/ps2ascii.1.gz
-man/man1/ps2epsi.1.gz
-man/man1/ps2pdf.1.gz
 @dirrm include/DPS
 @dirrm lib/DGS/4.03/doc
 @dirrm lib/DGS/4.03/examples

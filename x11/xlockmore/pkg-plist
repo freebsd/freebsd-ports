@@ -1,3 +1,2 @@
 lib/X11/app-defaults/XLock
-man/man1/xlock.1.gz
 bin/xlock
