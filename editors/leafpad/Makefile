@@ -35,6 +35,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
-	@${X11BASE}/bin/update-desktop-database
+	-@update-desktop-database
 
 .include <bsd.port.mk>

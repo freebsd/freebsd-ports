@@ -113,7 +113,7 @@ pre-everything::
 
 .if defined(GNOME_ENABLED)
 post-install:
-	@${X11BASE}/bin/update-desktop-database
+	@-update-desktop-database
 .endif
 
 .include <bsd.port.post.mk>
