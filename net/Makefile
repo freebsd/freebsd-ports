@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1995/07/12 23:52:29 asami Exp $
+# $Id: Makefile,v 1.49 1995/08/02 11:03:40 asami Exp $
 #
 
     SUBDIR += archie
@@ -22,6 +22,7 @@ RESTRICTED += ivs            # crypto, export controlled
     SUBDIR += nv
     SUBDIR += pcnfsd
     SUBDIR += pmf
+    SUBDIR += rdist6
     SUBDIR += samba
     SUBDIR += scotty
     BROKEN += slirp          # upgraded
