@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.0.6
+PORTVERSION=	0.1.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dc-qt
@@ -16,37 +16,66 @@ DISTNAME=	dc-qt-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Qt GUI for the Direct Connect (TM) dctc text client
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	dctc:${PORTSDIR}/net/dctc
 
 USE_QT_VER=	3
 USE_REINPLACE=	yes
-MAKE_ENV=	QTDIR="${QTDIR}"
-PLIST_FILES=	bin/dc-qt
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+PLIST_FILES=	bin/dc_qt
 
-QTDIR?=	${X11BASE}
-QMAKE?=	${LOCALBASE}/bin/qmake
+OPTIONS=	XINE "Enable support for video preview using libxine" off
+
+XINE_CONFIG?=	${X11BASE}/bin/xine-config
+
+.ifndef(NOPORTDOCS)
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+PORTDOCS=	\
+		about.html \
+		advanced.html \
+		basic.html \
+		config.html \
+		connect.html \
+		index.html \
+		logo.png \
+		mainwindow.png \
+		searchdl.html
+.endif
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -E -e 's|"hublist|"dc_hublist|' \
-		${WRKSRC}/dc_hub.cc
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
 
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ dc-qt.pro
+# with xine preview support
+.ifdef(WITH_XINE)
+LIB_DEPENDS+=		xine:${PORTSDIR}/multimedia/libxine
+CONFIGURE_ENV+=		XINE_CONFIG=${XINE_CONFIG}
+.else
+CONFIGURE_ARGS+=	--disable-preview
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's|(HUBLIST[[:space:]]*=[[:space:]]*")hublist"|\1dc_hublist"|' \
+		${WRKSRC}/src/dc_hub.cc
+.ifdef(NOPORTDOCS)
+	@${REINPLACE_CMD} -E \
+		-e 's|^(SUBDIRS).+$$|\1=|' \
+		${WRKSRC}/src/Makefile.in
+.else
+	@${REINPLACE_CMD} -E \
+		-e 's|^(pkgdatadir).+$$|\1=${DOCSDIR}|' \
+		${WRKSRC}/src/doc/Makefile.in
+.endif
 
 post-configure:
 # uphold CC/CXX/CFLAGS
-# link against correct qt lib
-	@${REINPLACE_CMD} -E -e 's|^CC.+$$|CC=${CC}|; \
-		s|^CXX[[:space:]]*=.*$$|CXX=${CXX}|; \
-		s|^(CFLAGS.+)$$|\1 ${PTHREAD_CFLAGS}|; \
-		s|-lqt |-lqt-mt ${PTHREAD_LIBS:S/"//g} |' \
-		${WRKSRC}/Makefile
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dc-qt ${PREFIX}/bin
+	@${REINPLACE_CMD} -E \
+		-e 's|^(CXXFLAGS.+)$$|\1 ${CXXFLAGS}|' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/src/Makefile
 
 .include <bsd.port.post.mk>
