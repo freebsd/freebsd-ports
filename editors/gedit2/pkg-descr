@@ -5,12 +5,17 @@ It is being developed by Alex Roberts, Evan Lawrence and Chris Lahey
 This version is quite a neat text editor, it contains the following
 features:
 	* Opening/Saving/Creating of files;
+	* File Revert;
 	* Cut/Copy/Paste and Select All text;
+	* Complete integration with the GNOME Environment, including GnomeMDI;
 	* Search and Replace;
+	* Global search;	
 	* A complete preferences interface;
 	* Dynamically loading fonts;
 	* Splitscreen Mode;
 	* Printing support; 
-	* Configurable Plugins system.
+	* Configurable Plugins system;
+	* Configurable window sizing;
+	* Unlimited Undo/Redo.
 
-WWW: http://gedit.pn.org
+WWW: http://gedit.sourceforge.net/
