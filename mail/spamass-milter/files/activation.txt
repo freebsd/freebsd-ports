@@ -6,35 +6,29 @@ In order to activate spamass-milter, follow these steps:
 
 2. If you didn't activate spamd (the SpamAssassin daemon), do so now:
 
-	/usr/local/etc/rc.d/spamd.sh start
+	%%PREFIX%%/etc/rc.d/sa-spamd.sh start
 
 3. Activate spamass-milter:
 
-	/usr/local/etc/rc.d/spamass-milter.sh start
+	%%PREFIX%%/etc/rc.d/spamass-milter.sh start
 
 4. Backup your sendmail.cf (in /etc/mail).
 
 5. If you didn't create your own customized version of Sendmail .mc
-   file, create one from the default template (replace YOURNAME with a
-   suitable name; a good candidate is the output of `hostname -s'):
+   file, create one from the default template (hostname.mc):
 
 	cd /etc/mail
-	cp -p freebsd.mc YOURNAME.mc
-	echo "SENDMAIL_MC = /etc/mail/YOURNAME.mc" >> /etc/make.conf
+	make
 
-   The last line tells the system to use your customized version instead
-   of the default freebsd.mc when you run mergemaster(8) later on.
-
-6. Add the spamass-milter hook to your Sendmail .mc file.  The magic
+6. Add the spamass-milter hook to your hostname.mc file.  The magic
    line to add is:
 
 	INPUT_MAIL_FILTER(`spamassassin', `S=local:/var/run/spamass-milter.sock, F=, T=C:15m;S:4m;R:4m;E:10m')
+	define(`confMILTER_MACROS_CONNECT',`b, j, _, {daemon_name}, {if_name}, {if_addr}')dnl
 
    Everything should go on a single line, no line break/continuation is
-   allowed!
-
-   The best place to add this is right after the dnsbl-related comments.
-   (Hint: Every comment in an .mc file starts with `dnl'.)
+   allowed!  The best place to add this is right after the dnsbl-related
+   comments.  (Hint: Every comment in an .mc file starts with `dnl'.)
 
 7. Rebuild the sendmail.cf from your .mc file:
 
@@ -42,39 +36,31 @@ In order to activate spamass-milter, follow these steps:
 	make
 	make install
 
-   Or you can run mergemaster(8) instead if you want, although it's an
-   overkill.
-
 8. Restart Sendmail:
 
-	kill -HUP `head -1 /var/run/sendmail.pid`
+	cd /etc/mail
+	make stop
+	make start
 
 9. Test the whole piece:
 
-	/usr/sbin/sendmail root < /usr/local/share/doc/p5-Mail-SpamAssassin/sample-nonspam.txt
-	/usr/sbin/sendmail root < /usr/local/share/doc/p5-Mail-SpamAssassin/sample-spam.txt
+	echo "Testing spamass-milter..." | mail -s"Spam test" root
 
-   Each of these commands might take a long time to finish (up to about
-   10-20 seconds), so please be patient.
+   This might take a long time to finish (up to about 10-20 seconds),
+   since spamd has just started, so please be patient.
 
-   You should receive two messages, one from `Keith Dawson' and the
-   other from xl6Ety00V@fismat1.fcfm.buap.mx.  The one from Keith Dawson
-   shouldn't be tagged as a spam, bearing this header line:
+   You (root) should receive a message from root@hostname, bearing this
+   header line:
 
 	X-Spam-Status: No, ...
 
-   On the other hand, the one from xl6Ety00V@fismat1.fcfm.buap.mx should
-   be tagged as a spam, bearing these two header lines:
-
-	X-Spam-Status: Yes, ...
-	X-Spam-Flag: YES
-
-   If things don't work as expected, promptly restore your sendmail.cf
-   from the backup copy then restart sendmail as shown on step 8; you
-   may lose incoming mail otherwise!
+   If things don't work as expected, promptly restore the stock FreeBSD
+   sendmail.cf (/etc/mail/freebsd.cf) as your default sendmail config,
+   or restore your own backup (if you keep one), as shown in step 8;
+   you may lose incoming mail otherwise!
 
 
 Now all messages received by Sendmail are filtered through
 SpamAssassin, and probable spam messages are tagged with the header
 `X-Spam-Flag: YES'.  Tell your users about this so they can set up
-appropriate filters on their mail reader.
+appropriate filters in their mail client.

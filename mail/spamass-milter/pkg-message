@@ -1,5 +1,14 @@
+
 ------------------------------------------------------------------------
-spamass-milter has been installed, but you have to activate it manually
-to use it.  Refer to ${PREFIX}/share/doc/spamass-milter/activation.txt
-for details.
+spamass-milter has been installed, but it must be activated manually.
+Pleae refer to...
+
+  %%DOCSDIR%%/activation.txt
+
+...for details.
+
+You may also want to tweak your spamd rc.subr(8) startup flags to
+specify a username to switch credentials to when delivering mail, if
+applicable.
 ------------------------------------------------------------------------
+
