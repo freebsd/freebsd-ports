@@ -3,9 +3,6 @@
     SUBDIR += xtel
 
     SUBDIR += aspell
-    SUBDIR += cups
-    SUBDIR += cups-base
-    SUBDIR += cups-lpr
     SUBDIR += ispell
     SUBDIR += kde3-i18n
     SUBDIR += netscape7
