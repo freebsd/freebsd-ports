@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May  4 02:17:50 1999
-+++ Makefile	Thu Jan  6 23:55:37 2000
+--- Makefile.orig	Mon May  3 21:17:50 1999
++++ Makefile	Mon Feb 28 22:53:25 2000
 @@ -23,8 +23,8 @@
  #
  # $Id: Makefile,v 1.8 1999/05/03 17:17:50 mleisher Exp $
@@ -11,18 +11,16 @@
  
  OTHER = README CHANGES COPYRIGHTS Makefile Imakefile.lesstif Project.tmpl \
          xmbdfedrc xmbdfed.man
-@@ -47,17 +47,19 @@
+@@ -47,17 +47,17 @@
  # Uncomment these if you have the FreeType library and want to use it to
  # import TrueType fonts.
  #
 -#FTYPE_INCS = -I/usr/local/include
 -#FTYPE_LIBS = -L/user/local/lib -lttf
 -#FTYPE_DEFS = -DHAVE_FREETYPE
-+.if defined(USE_FREETYPE)
 +FTYPE_INCS = -I${LOCALBASE}/include/freetype
 +FTYPE_LIBS = -L${LOCALBASE}/lib -lttf
 +FTYPE_DEFS = -DHAVE_FREETYPE
-+.endif
  
  #
  # Uncomment these if you have the hbf.h and hbf.c files in the current
@@ -37,7 +35,7 @@
  
  #
  # Specify the various defines needed for HBF fonts.  If you do not have GNU
-@@ -65,7 +67,7 @@
+@@ -65,7 +65,7 @@
  # files with a ".gz" extension.  If you don't care about HBF fonts, just
  # comment this line out.
  #
@@ -46,7 +44,7 @@
  
  #
  # Set the defines used for all files except the HBF support.
-@@ -83,9 +85,9 @@
+@@ -83,9 +83,9 @@
  #
  # Uncomment these for Solaris.
  #
@@ -59,7 +57,7 @@
  
  #
  # Uncomment these for Linux.
-@@ -131,7 +133,15 @@
+@@ -131,7 +131,15 @@
  #LIBS = -L/usr/Motif-1.2/lib32 -lXm \
  #       -L/usr/lib/X11 -lXmu -lXt -lXext -lX11 -lSM -lICE $(FTYPE_LIBS)
  

@@ -16,18 +16,11 @@ PATCHFILES=	${DISTNAME}.patch1 ${DISTNAME}.patch2 ${DISTNAME}.patch3
 
 MAINTAINER=	ports@FreeBSD.org
 
-.if defined(USE_FREETYPE)
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
-.endif
 
 USE_X_PREFIX=	yes
 REQUIRES_MOTIF=	yes
 
 MAN1=		xmbdfed.1
-
-.if !defined(USE_FREETYPE)
-pre-extract:
-	@${ECHO_MSG} "You can add the optional FreeType import capability by defining USE_FREETYPE"
-.endif
 
 .include <bsd.port.mk>
