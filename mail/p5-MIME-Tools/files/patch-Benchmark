@@ -1,0 +1,88 @@
+--- lib/MIME/Parser.pm.orig	Wed Aug 25 11:19:44 2004
++++ lib/MIME/Parser.pm	Wed Aug 25 11:23:39 2004
+@@ -582,10 +582,7 @@
+     my ($self, $in, $rdr, $out) = @_;        
+ 
+     ### Parse:
+-    my $bm = benchmark {
+-	$rdr->read_chunk($in, $out);
+-    };
+-    $self->debug("t bound: $bm");
++    $rdr->read_chunk($in, $out);
+     1;
+ }
+ 
+@@ -828,11 +825,8 @@
+ 
+     ### Decode and save the body (using the decoder):
+     my $DECODED = $body->open("w") || die "$ME: body not opened: $!\n"; 
+-    my $bm = benchmark {
+-	eval { $decoder->decode($ENCODED, $DECODED); }; 
+-	$@ and $self->error($@);
+-    };
+-    $self->debug("t decode: $bm");
++    eval { $decoder->decode($ENCODED, $DECODED); }; 
++    $@ and $self->error($@);
+     $DECODED->close;
+     
+     ### Success!  Remember where we put stuff:
+@@ -1134,11 +1128,8 @@
+     my $entity;
+     local $/ = "\n";    ### just to be safe
+ 
+-    my $bm = benchmark {
+-	$self->init_parse;
+-	($entity) = $self->process_part($in, undef);  ### parse!
+-    };
+-    $self->debug("t parse: $bm");
++    $self->init_parse;
++    ($entity) = $self->process_part($in, undef);  ### parse!
+ 
+     $entity;
+ }
+--- lib/MIME/Tools.pm.orig	Wed Aug 25 10:47:32 2004
++++ lib/MIME/Tools.pm	Wed Aug 25 10:50:41 2004
+@@ -24,7 +24,7 @@
+     'config'  => [qw(%CONFIG)],
+     'msgs'    => [qw(usage debug whine error)],
+     'msgtypes'=> [qw($M_DEBUG $M_WARNING $M_ERROR)],		
+-    'utils'   => [qw(benchmark catfile shellquote textual_type tmpopen )],
++    'utils'   => [qw(catfile shellquote textual_type tmpopen )],
+     );
+ Exporter::export_ok_tags('config', 'msgs', 'msgtypes', 'utils');
+ 
+@@ -153,26 +153,6 @@
+ 
+ #------------------------------
+ #
+-# benchmark CODE
+-#
+-# Private benchmarking utility.
+-#
+-sub benchmark(&) {
+-    my ($code) = @_;
+-    if (1) {
+-	my $t0 = new Benchmark;
+-	&$code;
+-	my $t1 = new Benchmark;
+-	return timestr(timediff($t1, $t0));
+-    }
+-    else {
+-	&$code;
+-	return "";
+-    }
+-}
+-
+-#------------------------------
+-#
+ # catfile DIR, FILE
+ #
+ # Directory/file concatenation.
+@@ -1394,7 +1374,6 @@
+        Newlines in the void
+ 
+ Started using Benchmark for benchmarking.
+-
+ 
+ =item Version 5.205   (2000/06/06)
+ 
