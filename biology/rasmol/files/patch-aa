@@ -9,7 +9,7 @@
  
  
  
-@@ -104,8 +104,9 @@
+@@ -104,8 +104,8 @@
  ComplexProgramTarget(rasmol)
  MakeDirectories(install,$(RASMOLDIR))
  InstallNonExec(rasmol.hlp,$(RASMOLDIR))
@@ -21,5 +21,4 @@
 -rasmol.man::	doc/rasmol.1
 -		ln -s doc/rasmol.1 rasmol.man
 +rasmol.man::
-+		gunzip ../doc/rasmol.1.gz
-+		ln -s ../doc/rasmol.man rasmol.man 
++		gunzip -c ../doc/rasmol.1.gz > rasmol.man 
