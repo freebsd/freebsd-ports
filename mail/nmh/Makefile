@@ -3,7 +3,7 @@
 # Date created:		07 Feb 1999
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
-# $Id: Makefile,v 1.10 1998/08/17 00:07:31 steve Exp $
+# $Id: Makefile,v 1.11 1999/02/11 08:57:13 jkoshy Exp $
 #
 
 DISTNAME=	nmh-1.0
@@ -15,7 +15,8 @@ MAINTAINER=     Scott.Blachowicz@seaslug.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libexecdir=${PREFIX}/libexec/nmh \
-		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop
+		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop \
+		--with-mts=sendmail
 
 MAN1= ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
       inc.1 mark.1 mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 \
