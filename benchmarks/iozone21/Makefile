@@ -3,7 +3,7 @@
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1995/07/13 01:09:08 asami Exp $
+# $Id: Makefile,v 1.15 1995/11/22 11:36:56 asami Exp $
 #
 
 DISTNAME=       iozone
@@ -11,6 +11,9 @@ PKGNAME=	iozone-2.01
 CATEGORIES+=	benchmarks
 MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
 DISTFILES=      iozone-2.01.shar.gz
+
+# This site not allows root@<hostname> password
+FETCH_CMD=      FTP_PASSWORD=president@whitehouse.gov /usr/bin/fetch
 
 MAINTAINER=	jmz@FreeBSD.org
 
