@@ -1,0 +1,4 @@
+sbin/ezbounce
+sbin/mdidentd
+etc/ezbounce.conf.default
+@exec if [ ! -f %D/etc/ezbounce.conf ] ; then cp -p %D/%F %B/ezbounce.conf; fi
