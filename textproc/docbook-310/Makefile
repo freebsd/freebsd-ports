@@ -20,6 +20,7 @@ COMMENT=	V3.1 of the DocBook DTD, designed for technical documentation
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=	yes
 NO_MTREE=	yes
 EXTRACT_ONLY=	# empty
