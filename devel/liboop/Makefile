@@ -8,21 +8,25 @@
 
 PORTNAME=	liboop
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.ofb.net/liboop/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	adns:${PORTSDIR}/net/adns \
-		wwwcore:${PORTSDIR}/www/libwww
+LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
+		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_GLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/w3c-libwww" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
+CPPFLAGS=	-I${LOCALBASE}/include/w3c-libwww -I${LOCALBASE}/include 
+LDFLAGS=	-L${LOCALBASE}/lib
+
 post-patch:
-	@${PERL} -pi -e "s,glib-config,${GLIB_CONFIG},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|glib-config|${GLIB_CONFIG:T}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
