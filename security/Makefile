@@ -101,6 +101,7 @@
     SUBDIR += smurflog
     SUBDIR += sniff
     SUBDIR += snort
+    SUBDIR += srm
     SUBDIR += ssh
     SUBDIR += ssh2
     SUBDIR += sslproxy

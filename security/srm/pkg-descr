@@ -1,0 +1,9 @@
+Secure rm (srm) is a command-line utility compatible with rm(1) which destroys
+file contents before unlinking. The goal is to provide drop-in security for
+users who wish to prevent command-line recovery of deleted information, even if
+the machine is compromised.
+
+WWW:  http://sourceforge.net/projects/srm
+
+Keith J. Jones
+keith.jones@ieee.org
