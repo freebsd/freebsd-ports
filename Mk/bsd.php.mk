@@ -225,7 +225,7 @@ add-plist-phpext:
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec cp %D/etc/php/extensions.ini %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec grep -v ${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
+	@${ECHO_CMD} "@unexec grep -v extension=${PHP_MODNAME}\\\.so %D/etc/php/extensions.ini.orig > %D/etc/php/extensions.ini || true" \
 		>> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rm %D/etc/php/extensions.ini.orig" \
 		>> ${TMPPLIST}
