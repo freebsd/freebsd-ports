@@ -24,6 +24,9 @@ MAINTAINER=	obrien@FreeBSD.org
 WRKSRC=		${WRKDIR}/cxterm-5.0
 USE_IMAKE=	yes
 
+MAN1=		cit2tit.1 cxterm.1 hzimctrl.1 tit2cit.1
+MANCOMPRESSED=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} == 4
