@@ -1,0 +1,61 @@
+--- clamav-devel.orig/files/patch-configure.in	Thu Jan  1 01:00:00 1970
++++ clamav-devel/files/patch-configure.in	Sun Feb 29 20:35:49 2004
+@@ -0,0 +1,58 @@
++--- configure.in.orig	Mon Feb 23 18:24:52 2004
+++++ configure.in	Wed Feb 25 17:39:15 2004
++@@ -199,9 +199,9 @@
++ AC_SUBST(CFGDIR)
++ AC_DEFINE_UNQUOTED(CONFDIR,"$cfg_dir",[where to look for the config file])
++ 
++-dnl Do not overwrite the current config file
++-AM_CONDITIONAL(INSTALL_CLAMAV_CONF, test ! -r "$cfg_dir/clamav.conf")
++-AM_CONDITIONAL(INSTALL_FRESHCLAM_CONF, test ! -r "$cfg_dir/freshclam.conf")
+++dnl Do not install config files
+++AM_CONDITIONAL(INSTALL_CLAMAV_CONF, test 0 = 1 )
+++AM_CONDITIONAL(INSTALL_FRESHCLAM_CONF, test 0 = 1 )
++ 
++ if test "$test_urandom" = "yes"
++ then
++@@ -294,10 +294,38 @@
++     ;;
++ freebsd*)
++     if test "$have_pthreads" = "yes"; then
++-	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread -lc_r"
++-	CLAMD_LIBS="-pthread -lc_r"
++-	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread -lc_r"
++-	TH_SAFE="-thread-safe"
+++	if test -n "$with_os_version"; then
+++		OSVERSION="$with_os_version"
+++	else
+++		OSVERSION=`/sbin/sysctl -n kern.osreldate`
+++	fi
+++	if test -z "$PTHREAD_CFLAGS"; then
+++		if test "$OSVERSION" -lt "502102"; then
+++			PTHREAD_CFLAGS="-D_THREAD_SAFE"
+++		else
+++			unset PTHREAD_CFLAGS
+++		fi
+++	fi
+++	if test -z "$PTHREAD_LIBS"; then
+++		if test "$OSVERSION" -lt "502102"; then
+++			PTHREAD_LIBS="-lc_r"
+++		fi
+++		if test "$OSVERSION" -lt "500016"; then
+++			PTHREAD_LIBS="-pthread"
+++		fi
+++		if test "$OSVERSION" -ge "502102"; then
+++			PTHREAD_LIBS="-lpthread"
+++		fi
+++	fi
+++
+++	if test "$OSVERSION" -lt "500016"; then
+++		PTHREAD_LIBS="$PTHREAD_LIBS -lc_r"
+++	fi
+++
+++	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS $PTHREAD_LIBS"
+++	CLAMD_LIBS="$PTHREAD_LIBS"
+++	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS $PTHREAD_LIBS"
+++	TH_SAFE="-thread-safe $PTHREAD_CFLAGS"
++ 	AC_DEFINE(CL_THREAD_SAFE,1,[thread safe])
++ 	AC_DEFINE(_REENTRANT,1,[thread safe])
++     fi

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040210
-PORTREVISION=	1
+PORTVERSION=	20040229
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -29,13 +28,15 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_AUTOCONF=	yes
+WANT_AUTOCONF_VER=257
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--disable-clamav --enable-bigstack
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
@@ -90,6 +91,10 @@ LDFLAGS+=	-lcipher
 .endif
 
 .if defined(WITH_MILTER)
+.if exists(${LOCALBASE}/lib/libmilter.a)
+CPPFLAGS+=     -I${LOCALBASE}/include
+CONFIGURE_ENV+=        CPPFLAGS="${CPPFLAGS}"
+.endif
 CONFIGURE_ARGS+=	--enable-milter
 PLIST_SUB+=	CLAMAV-MILTER:=""
 .else
@@ -97,11 +102,6 @@ PLIST_SUB+=	CLAMAV-MILTER:="@comment "
 .endif
 
 post-patch:
-.if ${OSVERSION} >= 502102
-	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-.else
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-.endif
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		-e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
