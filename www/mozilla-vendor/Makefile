@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.21 1998/04/16 02:05:31 jseger Exp $
+# $Id: Makefile,v 1.22 1998/04/17 09:29:25 jseger Exp $
 #
 
 DISTNAME=	unix_19980408
@@ -19,15 +19,15 @@ WRKSRC=		${WRKDIR}/ns
 USE_GMAKE=	yes
 DIST_SUBDIR=	mozilla
 MAKE_ENV=	NO_SECURITY=1 MOZ_MEDIUM=1 MOZILLA_CLIENT=1 NO_MDUPDATE=1 \
-	LD_LIBRARY_PATH=${LOCALBASE}/lib
+	BUILD_OPT=1 NO_NETSCAPE_STATIC=1 LD_LIBRARY_PATH=${LOCALBASE}/lib
 REQUIRES_MOTIF=	yes
 
 OSNAME=	`uname -s`
 OSVER=	`uname -r | ${SED} 's/-.*//'`
-OBJDIR=	${WRKSRC}/dist/${OSNAME}${OSVER}_DBG.OBJ
+OBJDIR=	${WRKSRC}/dist/${OSNAME}${OSVER}_OPT.OBJ
 
 post-configure:
-	@${ECHO} ${MOTIFLIB} > work/ns/MOTIFLIB
+	@${ECHO} ${MOTIFLIB} > ${WRKSRC}/MOTIFLIB
 do-install:
 	@${MKDIR} ${PREFIX}/lib/mozilla/bin
 	@cd ${OBJDIR}/bin && tar -chf - bsdecho lib* moz-export \
