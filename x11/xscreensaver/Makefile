@@ -12,7 +12,7 @@
 #************************************************************************
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.10
+PORTVERSION=	4.12
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -31,12 +31,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
-		--with-jpeg=${LOCALBASE} --without-gnome --without-kerberos
+		--with-jpeg=${LOCALBASE} --without-gnome --without-kerberos \
+		--without-motif
 
 .include <bsd.port.pre.mk>
 
 .if defined(XS_WITH_ALL_FORTUNES)
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
+.endif
+.if defined(XS_WITH_SETUID_HACKS)
+CONFIGURE_ARGS+=	--with-setuid-hacks
 .endif
 
 .undef HAVE_GNOME
@@ -67,7 +71,8 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
 	endgame.1 glblur.1 halftone.1 barcode.1 eruption.1 flurry.1 metaballs.1 \
 	atunnel.1 piecewise.1 bouncingcow.1 flyingtoasters.1 glslideshow.1 \
-	jigglypuff.1 klein.1 \
+	jigglypuff.1 klein.1 cloudlife.1 hypertorus.1 glmatrix.1 cubestorm.1 \
+	glknots.1 blocktube.1 flipflop.1 antspotlight.1 polytopes.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
@@ -85,14 +90,8 @@ pre-fetch:
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
+		-e 's#malloc.h#stdlib.h#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-.for file in extrusion.c
-	@ ${CP} ${WRKSRC}/hacks/glx/${file} ${WRKSRC}/hacks/glx/${file}.Dist
-	@ ${SED} -e 's/malloc.h/stdlib.h/g' ${WRKSRC}/hacks/glx/${file}.Dist > \
-		${WRKSRC}/hacks/glx/${file}
-.endfor
-	@ ${CP} ${WRKSRC}/hacks/glx/klein.c ${WRKSRC}/hacks/glx/klein.c.presed
-	@ ${SED} -e 's###' ${WRKSRC}/hacks/glx/klein.c.presed > ${WRKSRC}/hacks/glx/klein.c
 
 post-install:
 	@(if test -x ${X11BASE}/bin/xscreensaver-hacks/webcollage-helper; then \

@@ -7,6 +7,7 @@ bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xscreensaver-hacks/anemone
 bin/xscreensaver-hacks/ant
+bin/xscreensaver-hacks/antspotlight
 bin/xscreensaver-hacks/apollonian
 bin/xscreensaver-hacks/atlantis
 bin/xscreensaver-hacks/attraction
@@ -14,6 +15,7 @@ bin/xscreensaver-hacks/atunnel
 bin/xscreensaver-hacks/barcode
 bin/xscreensaver-hacks/blaster
 bin/xscreensaver-hacks/blitspin
+bin/xscreensaver-hacks/blocktube
 bin/xscreensaver-hacks/bouboule
 bin/xscreensaver-hacks/bouncingcow
 bin/xscreensaver-hacks/boxed
@@ -31,6 +33,7 @@ bin/xscreensaver-hacks/coral
 bin/xscreensaver-hacks/critical
 bin/xscreensaver-hacks/crystal
 bin/xscreensaver-hacks/cubenetic
+bin/xscreensaver-hacks/cubestorm
 bin/xscreensaver-hacks/cynosure
 bin/xscreensaver-hacks/dangerball
 bin/xscreensaver-hacks/decayscreen
@@ -49,6 +52,7 @@ bin/xscreensaver-hacks/extrusion
 bin/xscreensaver-hacks/fadeplot
 bin/xscreensaver-hacks/flag
 bin/xscreensaver-hacks/flame
+bin/xscreensaver-hacks/flipflop
 bin/xscreensaver-hacks/flipscreen3d
 bin/xscreensaver-hacks/flow
 bin/xscreensaver-hacks/fluidballs
@@ -60,6 +64,8 @@ bin/xscreensaver-hacks/gears
 bin/xscreensaver-hacks/gflux
 bin/xscreensaver-hacks/glblur
 bin/xscreensaver-hacks/glforestfire
+bin/xscreensaver-hacks/glknots
+bin/xscreensaver-hacks/glmatrix
 bin/xscreensaver-hacks/glplanet
 bin/xscreensaver-hacks/glslideshow
 bin/xscreensaver-hacks/glsnake
@@ -73,6 +79,7 @@ bin/xscreensaver-hacks/helix
 bin/xscreensaver-hacks/hopalong
 bin/xscreensaver-hacks/hyperball
 bin/xscreensaver-hacks/hypercube
+bin/xscreensaver-hacks/hypertorus
 bin/xscreensaver-hacks/ifs
 bin/xscreensaver-hacks/imsmap
 bin/xscreensaver-hacks/interference
@@ -111,6 +118,7 @@ bin/xscreensaver-hacks/phosphor
 bin/xscreensaver-hacks/piecewise
 bin/xscreensaver-hacks/pipes
 bin/xscreensaver-hacks/polyominoes
+bin/xscreensaver-hacks/polytopes
 bin/xscreensaver-hacks/popsquares
 bin/xscreensaver-hacks/pulsar
 bin/xscreensaver-hacks/pyro
@@ -167,17 +175,18 @@ bin/xscreensaver-hacks/xsublim
 bin/xscreensaver-hacks/xteevee
 bin/xscreensaver-hacks/zoom
 lib/X11/app-defaults/XScreenSaver
-share/xscreensaver/xscreensaver.xpm
-share/xscreensaver/screensaver-cmndln.xpm
-share/xscreensaver/screensaver-colorselector.xpm
-share/xscreensaver/screensaver-diagnostic.xpm
-share/xscreensaver/screensaver-locking.xpm
-share/xscreensaver/screensaver-power.xpm
-share/xscreensaver/screensaver-snap.xpm
+share/pixmaps/xscreensaver.xpm
+share/xscreensaver/screensaver-cmndln.png
+share/xscreensaver/screensaver-colorselector.png
+share/xscreensaver/screensaver-diagnostic.png
+share/xscreensaver/screensaver-locking.png
+share/xscreensaver/screensaver-power.png
+share/xscreensaver/screensaver-snap.png
 share/xscreensaver/xscreensaver-demo.glade2
 share/xscreensaver/config/README
 share/xscreensaver/config/anemone.xml
 share/xscreensaver/config/ant.xml
+share/xscreensaver/config/antspotlight.xml
 share/xscreensaver/config/apollonian.xml
 share/xscreensaver/config/atlantis.xml
 share/xscreensaver/config/attraction.xml
@@ -185,6 +194,7 @@ share/xscreensaver/config/atunnel.xml
 share/xscreensaver/config/barcode.xml
 share/xscreensaver/config/blaster.xml
 share/xscreensaver/config/blitspin.xml
+share/xscreensaver/config/blocktube.xml
 share/xscreensaver/config/bouboule.xml
 share/xscreensaver/config/bouncingcow.xml
 share/xscreensaver/config/boxed.xml
@@ -203,6 +213,7 @@ share/xscreensaver/config/cosmos.xml
 share/xscreensaver/config/critical.xml
 share/xscreensaver/config/crystal.xml
 share/xscreensaver/config/cubenetic.xml
+share/xscreensaver/config/cubestorm.xml
 share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
 share/xscreensaver/config/decayscreen.xml
@@ -220,8 +231,10 @@ share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
 share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
+share/xscreensaver/config/fireflies.xml
 share/xscreensaver/config/flag.xml
 share/xscreensaver/config/flame.xml
+share/xscreensaver/config/flipflop.xml
 share/xscreensaver/config/flipscreen3d.xml
 share/xscreensaver/config/flow.xml
 share/xscreensaver/config/fluidballs.xml
@@ -233,6 +246,8 @@ share/xscreensaver/config/gears.xml
 share/xscreensaver/config/gflux.xml
 share/xscreensaver/config/glblur.xml
 share/xscreensaver/config/glforestfire.xml
+share/xscreensaver/config/glknots.xml
+share/xscreensaver/config/glmatrix.xml
 share/xscreensaver/config/glplanet.xml
 share/xscreensaver/config/glslideshow.xml
 share/xscreensaver/config/glsnake.xml
@@ -247,6 +262,7 @@ share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hopalong.xml
 share/xscreensaver/config/hyperball.xml
 share/xscreensaver/config/hypercube.xml
+share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/ifs.xml
 share/xscreensaver/config/imsmap.xml
 share/xscreensaver/config/interference.xml
@@ -285,6 +301,7 @@ share/xscreensaver/config/phosphor.xml
 share/xscreensaver/config/piecewise.xml
 share/xscreensaver/config/pipes.xml
 share/xscreensaver/config/polyominoes.xml
+share/xscreensaver/config/polytopes.xml
 share/xscreensaver/config/popsquares.xml
 share/xscreensaver/config/pulsar.xml
 share/xscreensaver/config/pyro.xml

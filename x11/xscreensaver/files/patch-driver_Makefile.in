@@ -1,6 +1,15 @@
---- driver/Makefile.in.Dist	Wed Oct 23 20:26:18 2002
-+++ driver/Makefile.in	Thu Oct 24 23:20:33 2002
-@@ -216,8 +216,6 @@
+--- driver/Makefile.in.orig	Thu Aug 14 02:52:11 2003
++++ driver/Makefile.in	Sun Sep  7 16:02:47 2003
+@@ -121,7 +121,7 @@
+ 		  test-apm   test-fade   xdpyinfo
+ 
+ MOTIF_LIBS	= @MOTIF_LIBS@ @XPM_LIBS@ $(XMU_LIBS)
+-GTK_LIBS	= @GTK_LIBS@ $(XMU_LIBS)
++GTK_LIBS	= @GTK_LIBS@ @XPM_LIBS@ $(XMU_LIBS)
+ XML_LIBS	= @XML_LIBS@
+ 
+ XDPMS_LIBS	= @XDPMS_LIBS@
+@@ -219,8 +219,6 @@
  EXTRAS		= README Makefile.in XScreenSaver.ad.in xscreensaver.pam \
  		  xscreensaver-demo.glade xscreensaver-demo.glade2 \
  		  xscreensaver-demo.glade2p \
@@ -9,7 +18,7 @@
  		  xscreensaver.kss.in \
  		  .gdbinit
  VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
-@@ -451,107 +449,6 @@
+@@ -454,107 +452,6 @@
   $$e ""									     ;\
  	  fi ;								\
  	fi
@@ -116,4 +125,4 @@
 -	 fi
  
  # xscreensaver.xpm
- install-gnome:: $(LOGO)
+ # into /usr/share/pixmaps/
