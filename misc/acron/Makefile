@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 NO_BUILD=	yes
 
 post-patch:
-	@/usr/bin/perl -pi -e "s|\@\@PREFIX\@\@|${PREFIX}|g;" ${WRKSRC}/whats
+	@${PERL} -pi -e "s|\@\@PREFIX\@\@|${PREFIX}|g;" ${WRKSRC}/whats
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/whats ${PREFIX}/bin
