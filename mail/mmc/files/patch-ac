@@ -1,0 +1,13 @@
+--- src/address.h	2000/07/21 13:28:27	1.1
++++ src/address.h	2000/07/21 13:30:50
+@@ -23,8 +23,8 @@
+ #ifndef __MMC_ADDRESS_H
+ #define __MMC_ADDRESS_H
+ 
+-#include <alloca.h>
+-#include <db1/db.h>
++/*#include <alloca.h>*/
++#include <db.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <stdio.h>
