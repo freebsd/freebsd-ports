@@ -3,7 +3,7 @@
 # Date created:		14 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.22 1999/02/16 12:22:20 thepish Exp $
+# $Id: Makefile,v 1.23 1999/02/18 09:25:29 thepish Exp $
 #
 
 DISTNAME=       xpm-3.4k
@@ -23,5 +23,6 @@ post-install:
 	${LN} -sf libXpm.so.4.11 ${PREFIX}/lib/libXpm.so
 .endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	@ranlib ${PREFIX}/lib/libXpm.a
 
 .include <bsd.port.post.mk>
