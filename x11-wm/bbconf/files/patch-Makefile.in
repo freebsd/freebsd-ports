@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- Makefile.in.orig	Mon Nov  5 06:11:07 2001
-+++ Makefile.in	Mon Nov  5 06:11:27 2001
-@@ -218,7 +218,7 @@
+--- Makefile.in.orig	Mon May 27 20:42:54 2002
++++ Makefile.in	Thu Jun 13 14:17:29 2002
+@@ -234,7 +234,7 @@
  
  MAINTAINERCLEANFILES = subdirs configure.in acinclude.m4 configure.files 
  
@@ -11,17 +11,17 @@ $FreeBSD$
  
  doc_DATA = AUTHORS COPYING ChangeLog README README.html TODO
  
-@@ -304,6 +304,7 @@
- 	-rm -f config.h
- uninstall-info-am:
+@@ -309,6 +309,7 @@
+ maintainer-clean-hdr:
+ 
  install-docDATA: $(doc_DATA)
 +.ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
  	$(mkinstalldirs) $(DESTDIR)$(docdir)
  	@list='$(doc_DATA)'; for p in $$list; do \
-@@ -312,6 +313,7 @@
- 	  echo " $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
- 	  $(INSTALL_DATA) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+@@ -320,6 +321,7 @@
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(docdir)/$$p; \
+ 	  fi; fi; \
  	done
 +.endif
  
