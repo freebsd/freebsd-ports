@@ -47,6 +47,7 @@ lib/libudmsearch-3.1.so
 sbin/cachelogd
 sbin/indexer
 sbin/run-splitter
+sbin/spelld
 sbin/splitter
 bin/udm-config
 share/doc/mnogosearch/HTDB.txt
