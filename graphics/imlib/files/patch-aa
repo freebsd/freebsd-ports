@@ -66,14 +66,3 @@
      fi
  
  
-@@ -2788,8 +2789,8 @@
- if test $GIFTOPPM = "/usr/local/bin/tgatoppm"; then
-   NETPBM_PATH=/usr/local/bin
- fi
--if test $GIFTOPPM = "/usr/openwin/bin/tgatoppm"; then
--  NETPBM_PATH=/usr/openwin/bin
-+if test $GIFTOPPM = "/usr/X11R6/bin/tgatoppm"; then
-+  NETPBM_PATH=/usr/X11R6/bin
- fi
- if test $DJPEG = "/usr/bin/djpeg"; then
-   JPEG_PATH=/usr/bin
