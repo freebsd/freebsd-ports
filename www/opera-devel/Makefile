@@ -8,7 +8,7 @@
 PORTNAME=	opera
 PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www
-MASTER_SITES=	http://snapshot.opera.com/unix/${OPERA_VER}-Preview-1/intel-freebsd/en/
+MASTER_SITES=	http://snapshot.opera.com/unix/${OPERA_VER}-${OPERA_REL}/intel-freebsd/en/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 
@@ -18,7 +18,8 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 OPERA_VER=	7.50
-OPERA_DATE=	20031219
+OPERA_REL=	Preview-2
+OPERA_DATE=	20040218
 
 CONFLICTS=	linux-opera-devel-*
 

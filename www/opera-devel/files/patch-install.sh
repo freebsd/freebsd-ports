@@ -1,5 +1,5 @@
---- install.sh.orig	Fri Dec 19 14:45:42 2003
-+++ install.sh	Sun Feb 15 21:02:32 2004
+--- install.sh.orig	Wed Feb 18 13:42:04 2004
++++ install.sh	Thu Feb 19 21:45:56 2004
 @@ -108,8 +108,8 @@
  
      if test ${os} = 'FreeBSD' -o ${os} = 'OpenBSD'; then
@@ -76,6 +76,15 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
+@@ -1086,7 +1079,7 @@
+     chop "${OPERADESTDIR}" "str_localdirshare"
+     chop "${OPERADESTDIR}" "str_localdirplugin"
+ 
+-    backup ${wrapper_dir}/opera opera
++    #backup ${wrapper_dir}/opera opera
+ 
+     # Executable
+ 	debug_msg 1 "Executable"
 @@ -1115,7 +1108,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera

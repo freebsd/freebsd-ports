@@ -2,7 +2,6 @@
 bin/opera-devel
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/help
-%%DATADIR%%/bin/m2.so
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/opera
 %%DATADIR%%/bin/works
@@ -65,6 +64,7 @@ bin/opera-devel
 %%DATADIR%%/ini/dialog.ini
 %%DATADIR%%/ini/fastforward.ini
 %%DATADIR%%/ini/pluginpath.ini
+%%DATADIR%%/ini/spellcheck.ini
 %%DATADIR%%/ini/standard_keyboard.ini
 %%DATADIR%%/ini/standard_menu.ini
 %%DATADIR%%/ini/standard_mouse.ini
