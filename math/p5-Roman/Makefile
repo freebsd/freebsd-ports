@@ -19,7 +19,13 @@ NO_BUILD=	yes
 PLIST_FILES=	%%SITE_PERL%%/Roman.pm
 USE_PERL5_RUN=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not install"
+.endif
+
 do-install:
 	${CP} ${WRKSRC}/Roman.pm ${SITE_PERL}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
