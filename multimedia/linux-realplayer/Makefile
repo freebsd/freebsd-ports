@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	8.cs2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	http://docs.real.com/docs/playerpatch/unix/:update
 DISTFILES=	${MAINDIST} ${UPDATEDIST:S/$/:update/}
@@ -73,8 +73,8 @@ do-install:
 .endfor
 	${MKDIR} ${RADIR}/Plugins/ExtResources
 	${INSTALL_PROGRAM} ${WRKSRC}/Plugins/ExtResources/* ${RADIR}/Plugins/ExtResources/
-	${INSTALL_PROGRAM} ${WRKDIR}/rv9/codecs/*.so* ${RADIR}/Codecs/
-	${INSTALL_PROGRAM} ${WRKDIR}/rv9/plugins/*.so* ${RADIR}/Plugins/
+	${INSTALL_PROGRAM} ${WRKDIR}/rv9/codecs/drv4.so.6.0 ${RADIR}/Codecs/
+	${INSTALL_PROGRAM} ${WRKDIR}/rv9/codecs/rv40.so.6.0 ${RADIR}/Codecs/
 
 	${LN} -sf ${RADIR}/realplay ${RABINDIR}
 
