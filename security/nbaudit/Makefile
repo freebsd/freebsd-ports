@@ -8,6 +8,7 @@
 
 PORTNAME=	nbaudit
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.auscert.org.au/pub/coast/mirrors/ftp.secnet.com/tools/nat10/ \
 		${MASTER_SITE_PACKETSTORM}
