@@ -268,6 +268,7 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
+	@${RM} ${WRKSRC}/../moz/zipped/*.zip
 
 post-patch:
 .if defined(WITH_TTF_BYTECODE_ENABLED)
