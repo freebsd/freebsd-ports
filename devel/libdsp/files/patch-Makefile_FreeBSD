@@ -1,17 +1,17 @@
---- Makefile.FreeBSD.orig	Thu Jan 11 05:42:13 2001
-+++ Makefile.FreeBSD	Sat Mar 17 00:34:20 2001
-@@ -18,12 +18,11 @@
+--- Makefile.FreeBSD.orig	Mon Apr  2 21:09:48 2001
++++ Makefile.FreeBSD	Mon Apr  2 21:10:41 2001
+@@ -17,13 +17,10 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  #
  
- CXX = g++
+-CXX = g++
 -CXXFLAGS = -mcpu=k6 -march=k6 -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=3 -malign-jumps=3 -malign-functions=3 -mpreferred-stack-boundary=3 -mfancy-math-387 -Wall
-+CXXFLAGS += -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=3 -malign-jumps=3 -malign-functions=3 -mpreferred-stack-boundary=3 -mfancy-math-387 -Wall
- DEFS = -D_REENTRANT -D_THREAD_SAFE -DFREEBSD
+ DEFS = -D_REENTRANT -D_THREAD_SAFE -DBSDSYS
 -INCS = -I.
 +INCS = -I. -I../Inlines-%%INLINE_VER%%
  LIBS = -lm #-ldrfftw -ldfftw
  LIBTOOL = libtool
 -PREFIX = /usr/local
  
- VERSION = 0:5:0
+ VERSION = 0:7:0
  
