@@ -2,6 +2,7 @@
 #
 
     SUBDIR += aish
+    SUBDIR += bkmrkconv
     SUBDIR += btoa
     SUBDIR += fconv
     SUBDIR += i18ntools
