@@ -9,8 +9,7 @@
 # WITH_PASSIVETEX	Enable PassiveTex support for DVI/PDF/PS output
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.17
-PORTREVISION=	2
+PORTVERSION=	0.0.18
 CATEGORIES=	textproc
 MASTER_SITES=	http://cyberelk.net/tim/data/xmlto/stable/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
@@ -50,6 +49,10 @@ DOCS=		AUTHORS NEWS
 post-patch:
 	${REINPLACE_CMD} -e '/format\/fo\//d' ${WRKSRC}/Makefile.in
 .endif
+
+post-build:
+	@${REINPLACE_CMD} -e 's,/usr/bin,${LOCALBASE}/bin,g' \
+		${WRKSRC}/format/docbook/txt
 
 .if !defined(NOPORTDOCS)
 post-install:
