@@ -1,12 +1,13 @@
 # Ports collection makefile for:	py-freebsd
 # Date created:		14 June 2002
-# Whom:			Hye-Shik Chang <perky@fallin.lv>
+# Whom:			Hye-Shik Chang
 #
 # $FreeBSD$
 #
 
 PORTNAME=	freebsd
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	perky
