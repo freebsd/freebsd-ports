@@ -1,10 +1,10 @@
 GDM is installed.
 
 Please note the following:
-- This port has been tested on 5.0-CURRENT and 4.4-STABLE. It only works
-  with XFree86-3.3.x. It will not work on 3.x.
-- You should append these lines to your /etc/pam.conf, otherwise
-  GDM will refuse all logins:
+- This port has been tested on 5.0-CURRENT and 4.4-RELEASE and higher.
+- If you are running a version of FreeBSD prior to 4.5-PRERELEASE, you should 
+  append these lines to your /etc/pam.conf, otherwise GDM will refuse all 
+  logins:
 
 # gdm config
 gdm     auth            requisite       pam_unix.so     try_first_pass
@@ -17,4 +17,4 @@ gdm     session         required        pam_permit.so
 ttyv8   "/usr/X11R6/bin/gdm -nodaemon"  xterm   on
 
 These notes were written by:  Yukihiro Nakai <nakai@FreeBSD.org>
-and updated by: Stijn Hoop <stijn@win.tue.nl>
+and updated by: Joe Marcus Clarke <marcus@marcuscom.com>
