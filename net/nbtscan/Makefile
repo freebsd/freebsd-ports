@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	nbtscan
-PORTVERSION=	1.0.2
+PORTVERSION=	1.5.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=kris
+MASTER_SITES=	http://www.inetcat.org/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NetBIOS name network scanner
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}a
 ALL_TARGET=	nbtscan
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nbtscan ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/nbtscan
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/nbtscan
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
