@@ -1,0 +1,17 @@
+The wizard module makes it easy to write typical desktop GUI-style
+"wizards," where a user is guided through a series of forms and enters
+configuration data. By design, the wizard module tries to shield the
+developer from all aspects of GUI development. This extends to keeping
+the Tkinter names out of the global namespace.
+
+A wizard encapsulates a set of interactions with a user. It contains one
+or more sheets. A sheet can either have text for the user to read, or it
+can have one or more data entry fields. These fields can be text entry,
+file or directory selection, check-boxes or multiple-choice lists. When
+the user indicates that they are finished, the wizard returns a dictionary
+containing the data the user entered. Entries can also be validated by
+calling out to application-specific code. Validation can be done when the
+user tries to move to the next sheet, or at the end after all the data has
+been entered. The wizard module includes several validators.
+
+WWW: http://www.zolera.com/resources/opensrc/wizard/
