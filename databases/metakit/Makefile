@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	metakit
-PORTVERSION=	2.4.7
-PORTREVISION=	37
+PORTVERSION=	2.4.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-${KITREVISION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -22,6 +21,7 @@ LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 .endif
 
+KITREVISION=	38
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 USE_LIBTOOL=	yes
 CONFIGURE_SCRIPT=	../unix/configure
@@ -52,6 +52,7 @@ TCL_SHORT_V=	84
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
 CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/include/tcl${TCL_V}
 MAKE_ENV+=	V=${TCL_V} SHORT_V=${TCL_SHORT_V}
+PLIST_SUB+=	TCL_V="${TCL_V}"
 PLIST_SUB+=	WITH_TCL=""
 .else
 PLIST_SUB+=	WITH_TCL="@comment "
@@ -65,7 +66,7 @@ pre-patch:
 		${WRKSRC}/../MetaKit.html.sed > ${WRKSRC}/../MetaKit.html
 .if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
 	@${MV} ${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/Makefile.in.sed
-	${SED} -e "s/= tclsh/=tclsh${TCL_V}/" \
+	${SED} -e "s/= tclsh/=tclsh${TCL_V}/" -e "s/tcl8.4/tcl${TCL_V}/" \
 		${WRKSRC}/../unix/Makefile.in.sed \
 		> ${WRKSRC}/../unix/Makefile.in
 .endif
@@ -78,7 +79,12 @@ pre-patch:
 
 post-install:
 .if defined(METAKIT_WITH_PYTHON)
-	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PYTHON_SITELIBDIR}/
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.a ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PREFIX}/lib
+.endif
+.if defined(METAKIT_WITH_TCL83) || defined(METAKIT_WITH_TCL84)
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4tcl.a ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4tcl.so ${PREFIX}/lib
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

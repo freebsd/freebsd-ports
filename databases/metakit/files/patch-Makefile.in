@@ -1,0 +1,28 @@
+--- ../unix/Makefile.in.orig	Tue Nov  5 21:21:10 2002
++++ ../unix/Makefile.in	Tue Nov  5 21:37:12 2002
+@@ -39,7 +39,7 @@
+ 
+ tclsh =tclsh8.4
+ tclincludedir = @TCL_INCLUDE_DIR@
+-tcllibdir = @TCL_INCLUDE_DIR@/../lib
++tcllibdir = @TCL_INCLUDE_DIR@/../../lib/tcl8.4
+ 
+ # Compiling without frame pointers can play tricks with exception handling
+ # (e.g. in Mk4py).  This does not affect standard operation, *only* errors.
+@@ -54,6 +54,7 @@
+ INSTALL = @INSTALL@
+ INSTALL_DATA = $L --mode=install @INSTALL_DATA@
+ INSTALL_PROGRAM = $L --mode=install @INSTALL_PROGRAM@
++INSTALL_SCRIPT = $L --mode=install @INSTALL_SCRIPT@
+ 
+ LIBTOOL_FLAGS = @LIBTOOL_FLAGS@
+ 
+@@ -116,7 +117,7 @@
+ 
+ install-python: Mk4py@SHLIB_SUFFIX@
+ 	$(INSTALL_PROGRAM) Mk4py@SHLIB_SUFFIX@ $(DESTDIR)$(pylibdir)
+-	$(INSTALL_PROGRAM) $(srcdir)/../python/metakit.py $$(DESTDIR)(pylibdir)
++	$(INSTALL_SCRIPT) $(srcdir)/../python/metakit.py $(DESTDIR)$(pylibdir)
+ 
+ clean:
+ 	$L rm -f *.la *.o *.lo
