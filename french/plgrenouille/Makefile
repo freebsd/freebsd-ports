@@ -16,8 +16,14 @@ COMMENT=	Un client pour determiner votre bande passante a un raccordement large 
 
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
 RUN_DEPENDS=	${SITE_PERL}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP3
+.else
+RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP
+.endif
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
@@ -110,4 +116,4 @@ display-message:
 configure-package:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
