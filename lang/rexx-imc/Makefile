@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	rexx-imc
-PORTVERSION=	1.75
+PORTVERSION=	1.76
 CATEGORIES=	lang
 MASTER_SITES=	http://users.comlab.ox.ac.uk/ian.collier/distribution/ \
 		ftp://ftp.sai.msu.su/pub/unix/rexx/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/rexx/
 
-MAINTAINER=	jmcoopr@webmail.bmi.net
+MAINTAINER=	coop9211@uidaho.edu
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Make
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}" \
 			PREFIX="${PREFIX}"
 CONFIGURE_ARGS=		o all
+USE_REINPLACE=		yes
 
 # configures and builds in one step
 NO_BUILD=		yes
@@ -30,6 +31,12 @@ MAN1=		rexx.1 rxstack.1 rxque.1
 DOCFILES=	rexx.info rexx.ref rexx.summary rexx.tech
 RMEFILES=       README README.Y2K README.bugreport README.docs \
 		README.files README.make README.news README.platforms
+
+post-patch:
+# CFLAGS safeness for ARCHs other than i386
+	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/Make
+# CC safeness
+	@${REINPLACE_CMD} -E -e 's|^CC=.+$$|CC=${CC}|' ${WRKSRC}/Make
 
 do-install:
 # install interpreter and daemon helpers
