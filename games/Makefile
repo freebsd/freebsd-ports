@@ -236,6 +236,7 @@
     SUBDIR += tux-aqfh
     SUBDIR += tuxkart
     SUBDIR += tuxracer
+    SUBDIR += tuxtype
     SUBDIR += tvp
     SUBDIR += nettoe
     SUBDIR += nighthawk
