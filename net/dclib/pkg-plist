@@ -36,6 +36,7 @@ include/dclib/core/cstring.h
 include/dclib/core/cstringlist.h
 include/dclib/core/cthread.h
 include/dclib/core/cxml.h
+include/dclib/core/czlib.h
 include/dclib/core/filecopy.h
 include/dclib/core/platform.h
 include/dclib/core/types.h

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	valknut
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 
