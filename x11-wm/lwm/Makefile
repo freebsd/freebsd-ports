@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lwm
-PORTVERSION=	1.01
+PORTVERSION=	1.2.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/james/
 
@@ -15,5 +15,13 @@ COMMENT=	A lightweight window manager
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS BUGS ChangeLog README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
