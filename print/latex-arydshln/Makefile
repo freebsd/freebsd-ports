@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	latex-arydshln
-PORTVERSION=	1.6.20030825
+PORTVERSION=	1.71.20040831
+PORTREVISION=	0
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ctan.org/tex-archive/%SUBDIR%/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/arydshln
-DISTFILES=	README arydshln.dtx arydshln.ins arydshln.pdf
+DISTFILES=	README arydshln-man.pdf arydshln.dtx arydshln.ins arydshln.pdf
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -32,7 +33,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:S/^latex-//}
 
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
 CLASS_FILES=	arydshln.dtx arydshln.ins arydshln.sty arydshln-man.tex
-DOC_FILES=	README arydshln.pdf
+DOC_FILES=	README arydshln-man.pdf
 
 do-extract:
 	${MKDIR} ${WRKSRC}
