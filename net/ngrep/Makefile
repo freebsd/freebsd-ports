@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	ngrep
-PORTVERSION=	1.42
-PORTREVISION=	1
+PORTVERSION=	1.43
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,14 +18,16 @@ COMMENT=	Network grep
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre \
 		--disable-pcap-restart \
-		--enable-dropprivs-onlyroot
+		--enable-dropprivs-onlyroot \
+		--mandir=${PREFIX}/man/
 ALL_TARGET=	ngrep
 USE_BZIP2=	yes
 
 MAN8=		ngrep.8
 PLIST_FILES=	bin/ngrep
 
-PORTDOCS=	BUGS CHANGES CREDITS INSTALL LICENSE README README.pcre TODO
+PORTDOCS=	CHANGES.txt CREDITS.txt INSTALL.txt LICENSE.txt \
+		README.txt REGEX.txt
 
 .include <bsd.port.pre.mk>
 
@@ -34,7 +35,11 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@if [ -f ${WRKSRC}/${file} ]; then \
+	    ${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}; \
+	else \
+	    ${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}; \
+	fi
 .endfor
 .endif
 
