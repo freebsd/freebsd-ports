@@ -16,7 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Create SWF movie
 
 BUILD_DEPENDS=	${SITE_PERL}/SWF/Element.pm:${PORTSDIR}/graphics/p5-SWF-File \
-		${SITE_PERL}/Math/Bezier/Convert.pm:${PORTSDIR}/math/p5-Math-Bzier-Convert \
+		${SITE_PERL}/Math/Bezier/Convert.pm:${PORTSDIR}/math/p5-Math-Bezier-Convert \
 		${SITE_PERL}/Font/TTF/Font.pm:${PORTSDIR}/x11-fonts/p5-Font-TTF
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
