@@ -8,7 +8,9 @@
 PORTNAME=	squidpurge
 PORTVERSION=	1.17
 CATEGORIES=	www
-MASTER_SITES=	http://www.cache.dfn.de/DFN-Cache/Development/Purge/
+MASTER_SITES=	http://www.cache.dfn.de/DFN-Cache/Development/Purge/ \
+		http://www.wa.apana.org.au/~dean/sources/ \
+		ftp://ftp.wa.apana.org.au/pub/pc/unix/packages/
 DISTNAME=	purge
 EXTRACT_SUFX=	-20000921-src.tar.gz
 
