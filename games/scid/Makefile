@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	scid
-PORTVERSION=	3.2
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	games databases tk83 tcl83
 MASTER_SITES=	http://scid.sourceforge.net/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -23,7 +22,6 @@ USE_PYTHON=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 
-post-build:
-		@(cd ${WRKSRC}; ${GMAKE} strip)
+ALL_TARGET=	all strip
 
 .include <bsd.port.mk>

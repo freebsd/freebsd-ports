@@ -4,6 +4,7 @@ bin/sc_addmove
 bin/sc_eco
 bin/sc_epgn
 bin/sc_import
+bin/sc_remote
 bin/sc_spell
 bin/sc_tree
 bin/scid
