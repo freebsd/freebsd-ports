@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sdl_image
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/src/
+MASTER_SITES=	http://www.libsdl.org/projects/SDL_image/release/
 DISTNAME=	SDL_image-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
