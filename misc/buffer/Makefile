@@ -3,12 +3,12 @@
 # Date created:         23 February 1998
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id$
+# $Id: Makefile,v 1.8 1999/03/30 02:42:16 asami Exp $
 #
 
 DISTNAME=	buffer-1.17
 CATEGORIES=	misc
-MASTER_SITES=	http://www.freebsd.org/~steve/
+MASTER_SITES=	http://www.freebsd.org/~steve/distfiles/
 
 MAINTAINER=	jonny@jonny.eng.br
 
