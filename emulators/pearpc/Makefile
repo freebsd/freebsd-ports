@@ -19,8 +19,33 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"
-CONFIGURE_ARGS=	--disable-fpo
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=	-O3 -ffast-math
+.else
+CONFIGURE_ARGS+=	--disable-fpo
+.endif
+
+# jitc_x86 is avaible only on x86
+.if ${ARCH} == "i386"
+.if !defined(WITH_JITC)
+CONFIGURE_ARGS+=	--enable-cpu=generic
+.else
+CONFIGURE_ARGS+=	--enable-cpu=jitc_x86
+.endif # WITH_JITC
+.else
+CONFIGURE_ARGS+=	--enable-cpu=generic
+.endif
+
+pre-everything::
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You can do optimized build defining WITH_OPTIMIZED_CFLAGS=yes."
+	@${ECHO_MSG} ""
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
@@ -33,4 +58,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${INSTALL_DATA} ${WRKSRC}/ppccfg.example ${PREFIX}/etc/ppccfg.example
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
