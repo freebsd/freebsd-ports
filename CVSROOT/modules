@@ -7746,8 +7746,8 @@ p5-Tk-Getopt	ports/x11-toolkits/p5-Tk-Getopt
 p5-Tk-HistEntry	ports/x11-toolkits/p5-Tk-HistEntry
 p5-Tk-JPEG-Lite	ports/graphics/p5-Tk-JPEG-Lite
 p5-Tk-ResizeButton	ports/x11-toolkits/p5-Tk-ResizeButton
-p5-Tk-TableMatrix	ports/x11-toolkits/p5-Tk-TableMatrix
 p5-Tk-Splashscreen	ports/x11-toolkits/p5-Tk-Splashscreen
+p5-Tk-TableMatrix	ports/x11-toolkits/p5-Tk-TableMatrix
 p5-Tk-XMLViewer	ports/textproc/p5-Tk-XMLViewer
 p5-TraceFuncs	ports/devel/p5-TraceFuncs
 p5-Tree-Binary	ports/devel/p5-Tree-Binary
