@@ -12,6 +12,9 @@ share/gnome/nabi/themes/KingSejong/none.png
 share/gnome/nabi/themes/MSWindows/english.png
 share/gnome/nabi/themes/MSWindows/hangul.png
 share/gnome/nabi/themes/MSWindows/none.png
+share/gnome/nabi/themes/MSWindows2000/english.png
+share/gnome/nabi/themes/MSWindows2000/hangul.png
+share/gnome/nabi/themes/MSWindows2000/none.png
 share/gnome/nabi/themes/Mac/README
 share/gnome/nabi/themes/Mac/english.png
 share/gnome/nabi/themes/Mac/hangul.png
@@ -32,6 +35,7 @@ share/locale/ko/LC_MESSAGES/nabi.mo
 @dirrm share/gnome/nabi/themes/SimplyRed
 @dirrm share/gnome/nabi/themes/Onion
 @dirrm share/gnome/nabi/themes/Mac
+@dirrm share/gnome/nabi/themes/MSWindows2000
 @dirrm share/gnome/nabi/themes/MSWindows
 @dirrm share/gnome/nabi/themes/KingSejong
 @dirrm share/gnome/nabi/themes
