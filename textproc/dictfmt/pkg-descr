@@ -1,0 +1,5 @@
+dictfmt converts databases in various formats into working databases
+and indices for the DICT server.
+
+- Kimura Fuyuki
+fuyuki@hadaly.org
