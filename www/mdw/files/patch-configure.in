@@ -1,0 +1,11 @@
+--- configure.in.orig	Wed Nov 14 01:42:12 2001
++++ configure.in	Wed Nov 14 01:42:22 2001
+@@ -14,7 +14,7 @@
+ dnl
+ 
+ if test -n "$GCC"; then
+-	CFLAGS="-O2 -Wall -pedantic"
++	CFLAGS="$CFLAGS -Wall -pedantic"
+ else
+ 	case "$host_os" in
+ 		*hpux*)  CFLAGS=" +O3"                      ;;

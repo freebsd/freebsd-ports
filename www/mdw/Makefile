@@ -12,7 +12,7 @@ MASTER_SITES=	http://redbrick.dcu.ie/~colmmacc/mdw/
 
 MAINTAINER=	petef@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
 MAN1=	mdw.1
 
