@@ -9,11 +9,14 @@
 PORTNAME=	cybervrml97
 PORTVERSION=	1.0.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.cyber.koganei.tokyo.jp/vrml/cv97/cv97cc/download/
+# the master site really is SourceForge, but they only have version 1.1.0
+# MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=
+MASTER_SITE_SUBDIR=	cv97cc
 DISTFILES=	cv97r${PORTVERSION:S/.//g}${EXTRACT_SUFX} Makefile
 EXTRACT_ONLY=	cv97r${PORTVERSION:S/.//g}${EXTRACT_SUFX}
 
-MAINTAINER=	3d@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A development library of VRML97/2.0 applications
 
 DIST_SUBDIR=	${PORTNAME}
