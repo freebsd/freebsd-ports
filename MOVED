@@ -1265,3 +1265,4 @@ net/netatalk-devel|net/netatalk|2004-10-12|Netatalk port upgraded to 2.0.0
 textproc/p5-XML-RSS-Parser|textproc/p5-XML-RAI|2004-10-13|Module was integrated into XML-RAI package
 misc/kwordquiz|misc/kdeedu3|2004-10-13|kwordquiz was integrated into the kdeedu3 port
 audio/libvorbis-aotuv|audio/libvorbis|2004-10-13|The aoTuV enhancement has been merged into the mainstream
+graphics/kolourpaint|graphics/kdegraphics3|2004-10-13|kolourpaint was integrated into the kdegraphics3 port
