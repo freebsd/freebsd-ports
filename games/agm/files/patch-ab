@@ -1,5 +1,5 @@
---- xagm	Wed Mar 18 01:02:29 1998
-+++ /home/andy/tmp/wrk/xagm	Sun Mar 22 10:57:38 1998
+--- xagm.orig	Wed Mar 18 01:02:29 1998
++++ xagm	Wed May  3 12:00:00 2000
 @@ -1,1 +1,1 @@
 -#!/usr/bin/wish
-+#!/usr/local/bin/wish8.0
++#!%%LOCALBASE%%/bin/wish8.0

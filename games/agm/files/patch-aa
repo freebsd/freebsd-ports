@@ -1,8 +1,15 @@
---- Makefile	Sat Oct 17 15:21:25 1998
-+++ /home/andy/tmp/wrk/Makefile	Wed Jan  6 16:40:21 1999
-@@ -55,13 +55,13 @@
+--- Makefile.orig	Sun Oct 18 00:21:25 1998
++++ Makefile	Wed May  3 12:00:00 2000
+@@ -50,18 +50,18 @@
+ RELEASE=-DRELEASE=\"$(VER)\"
+ # Set this to the destination directory for the executable
+ #BINDIR=../../bin/`uname`
+-BINDIR=/usr/local/bin
++BINDIR=${PREFIX}/bin
+ # Location of manual pages
  #MANDIR=../../man
- MANDIR=/usr/local/man
+-MANDIR=/usr/local/man
++MANDIR=${PREFIX}/man
  # Location of the word file
 -WORDDIR=/usr/local/lib
 +WORDDIR=/usr/share/dict
