@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.42
-PORTREVISION=	1
+PORTVERSION=	1.45
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	vanilla@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
 .if defined(WITH_PROXY)
@@ -47,6 +46,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::PurePerl.3 \
 		DBI::SQL::Nano.3 \
 		DBI::W32ODBC.3 \
+		Roadmap.3 \
 		Win32::DBIODBC.3
 
 .if !defined(WITH_PROXY)
