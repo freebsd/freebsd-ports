@@ -1,0 +1,16 @@
+--- man/reftex.texi.orig	Sat Jul 24 02:31:43 1999
++++ man/reftex.texi	Sat Jul 24 02:33:26 1999
+@@ -2,10 +2,10 @@
+ @c %**start of header
+ @setfilename ../info/reftex
+ @settitle RefTeX User Manual
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* reftex: (reftex).	Support for LaTeX labels, references, and citations
+-                          with Emacs.
++* reftex: (reftex).		Support for LaTeX labels, references,
++				 and citations with Emacs.
+ @end direntry
+ @synindex ky cp
+ @syncodeindex vr cp

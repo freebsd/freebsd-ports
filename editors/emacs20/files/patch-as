@@ -1,0 +1,15 @@
+--- man/vip.texi.orig	Sun May 17 03:48:50 1998
++++ man/vip.texi	Sat Jul 24 01:03:40 1999
+@@ -2,10 +2,9 @@
+ 
+ @setfilename ../info/vip
+ @settitle VIP
+-
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* VIP: (vip).		An older VI-emulation for Emacs.
++* VIP: (vip).			A VI-emulation for Emacs.
+ @end direntry
+ 
+ @iftex

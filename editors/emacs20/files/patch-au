@@ -1,0 +1,14 @@
+--- man/ediff.texi.orig	Tue Jun  9 12:29:49 1998
++++ man/ediff.texi	Sat Jul 24 01:19:48 1999
+@@ -14,9 +14,9 @@
+ @synindex fn cp
+ @synindex pg cp
+ 
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Ediff: (ediff).       A visual interface for comparing and merging programs.
++* Ediff: (ediff).		A visual interface for comparing and merging programs.
+ @end direntry
+ 
+ @iftex

@@ -1,0 +1,14 @@
+--- man/emacs.texi.orig	Fri Jun 25 02:53:58 1999
++++ man/emacs.texi	Sat Jul 24 01:09:24 1999
+@@ -11,9 +11,9 @@
+ updated for Emacs version 20.4
+ @c Please REMEMBER to update edition number in *three* places in this file.
+ 
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* Emacs: (emacs).	The extensible self-documenting text editor.
++* Emacs: (emacs).		The extensible self-documenting text editor.
+ @end direntry
+ 
+ Published by the Free Software Foundation

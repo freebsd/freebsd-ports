@@ -1,0 +1,26 @@
+--- man/forms.texi.orig	Mon Aug 24 18:43:18 1998
++++ man/forms.texi	Sat Jul 24 01:03:41 1999
+@@ -8,18 +8,17 @@
+ @syncodeindex vr cp
+ @syncodeindex fn cp
+ @syncodeindex ky cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Forms: (forms).		Emacs package for editing data bases
++				by filling in forms.
++@end direntry
+ @iftex
+ @finalout
+ @setchapternewpage odd
+ @end iftex
+ @c      @smallbook
+ @comment %**end of header (This is for running Texinfo on a region.)
+-
+-@dircategory Editors
+-@direntry
+-* Forms: (forms).	Emacs package for editing data bases
+-			  by filling in forms.
+-@end direntry
+ 
+ @ifinfo
+ This file documents Forms mode, a form-editing major mode for GNU Emacs.

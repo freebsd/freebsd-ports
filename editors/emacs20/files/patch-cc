@@ -1,16 +1,16 @@
---- configure.in.orig	Wed Jul  1 07:15:05 1998
-+++ configure.in	Sun Jan  3 21:44:02 1999
-@@ -57,6 +57,9 @@
- AC_ARG_WITH(gssapi,
- [  --with-gssapi           support GSSAPI-authenticated POP],
- [AC_DEFINE(GSSAPI)])
+--- configure.in.orig	Sun May 30 04:26:03 1999
++++ configure.in	Sat Jul 24 01:33:18 1999
+@@ -42,6 +42,9 @@
+ AC_ARG_WITH(hesiod,
+ [  --with-hesiod           support Hesiod to get the POP server host],
+ [AC_DEFINE(HESIOD)])
 +AC_ARG_WITH(xpg4,
 +[  --with-xpg4             support XPG4 library on FreeBSD system],
 +[AC_DEFINE(USE_XPG)])
  dnl This should be the last --with option, because --with-x is
  dnl added later on when we find the path of X, and it's best to
  dnl keep them together visually.
-@@ -162,6 +165,15 @@
+@@ -147,6 +150,15 @@
  machine='' opsys='' unported=no
  case "${canonical}" in
  
@@ -26,7 +26,7 @@
    ## NetBSD ports
    *-*-netbsd* )
      opsys=netbsd
-@@ -939,7 +951,6 @@
+@@ -943,7 +955,6 @@
  				;;
        *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
        *-386bsd* )	        opsys=386bsd ;;

@@ -1,0 +1,17 @@
+--- man/viper.texi.orig	Mon Nov  9 02:13:07 1998
++++ man/viper.texi	Sat Jul 24 01:03:41 1999
+@@ -5,12 +5,9 @@
+ @comment @setfilename viper
+ @comment @setfilename viper.info
+ @setfilename ../info/viper
+-
+-@dircategory Editors
++@dircategory The Emacs editor and associated tools
+ @direntry
+-* VIPER: (viper).       The newest Emacs VI-emulation mode.
+-                          (also, A VI Plan for Emacs Rescue
+-                           or the VI PERil.)
++* VIPER: (viper).		The new VI-emulation mode in Emacs-19.29.
+ @end direntry
+ 
+ @iftex
