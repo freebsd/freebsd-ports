@@ -1,0 +1,5 @@
+A frontend to DejaNews (http://www.dejanews.com/), the popular Usenet
+archive and search engine. It will submit a search for you to
+DejaNews, then retrieve and consolidate all search results into one
+single HTML file, sorted in newsgroup, subject and date (reverse)
+order.
