@@ -14,20 +14,23 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	thierry@pompo.net
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
 
-BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/${APACHE_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/${APACHE_PORT}			\
-		${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
+RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
 		${PBASE}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql		\
 		${PBASE}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
+USE_APACHE=	yes
 USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes
 
-APACHE_PORT?=	www/apache13
-APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
+.if defined(WITH_APACHE2)
+APACHE_CNFDIR=	${LOCALBASE}/etc/apache2
+.else
+APACHE_CNFDIR=	${LOCALBASE}/etc/apache
+.endif
+
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PBASE=		${SITE_PERL}
 
@@ -45,7 +48,9 @@ PLIST_SUB=	FACT_REP=${LFACT_REP}
 SS_REPS=	cgi-bin html lib log sql
 REINPLACE_ARGS=	-i.beforeFacturier
 
-DOCS=		COPYING README.txt todo.txt
+PORTDOCS=	COPYING README.txt todo.txt
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -96,21 +101,23 @@ do-install:
 		${ECHO_CMD} "# Le Facturier's cgi-bin directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${FACT_INC}" >> ${APACHE_CONF} ; \
 	fi)
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 post-install:
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | \
-		${SED} -e "s:/usr/local/www/facturier:${FACT_REP}:"		\
+	@${SED} -e "s:/usr/local/www/facturier:${FACT_REP}:"			\
 			-e "s:/usr/local/share/doc/facturier:${DOCSDIR}:"	\
 			-e "s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:"	\
-			-e "s:%%DBSERV%%:${DBSERV}:"
+			-e "s:%%DBSERV%%:${DBSERV}:"				\
+		${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>

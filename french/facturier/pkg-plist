@@ -1,7 +1,4 @@
 etc/facturier/httpd.conf.facturier
-%%PORTDOCS%%share/doc/facturier/COPYING
-%%PORTDOCS%%share/doc/facturier/README.txt
-%%PORTDOCS%%share/doc/facturier/todo.txt
 %%FACT_REP%%/cgi-bin/cherchcontact.cgi
 %%FACT_REP%%/cgi-bin/clientmodif.cgi
 %%FACT_REP%%/cgi-bin/clients.cgi
@@ -320,7 +317,6 @@ etc/facturier/httpd.conf.facturier
 %%FACT_REP%%/sql/majpropal.sql
 %%FACT_REP%%/sql/majvers2_0tovers2_1.sql
 @dirrm etc/facturier
-%%PORTDOCS%%@dirrm share/doc/facturier
 @dirrm %%FACT_REP%%/cgi-bin
 @dirrm %%FACT_REP%%/html/temp
 @dirrm %%FACT_REP%%/html/UNGI/lang
