@@ -12,18 +12,17 @@ MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
 		http://kyb.homepage.com/perl/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	calle.madestrand@norrgarden.se
+MAINTAINER=	cj@vallcom.net
 
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/indexme
 NO_BUILD=	yes
+MAN1=		indexme.1
 
 do-install:
-		@ ${MKDIR} ${PREFIX}/share/doc/indexme
 		@ ${INSTALL_SCRIPT} ${WRKSRC}/indexme ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-		@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/indexme
+		@ ${INSTALL_MAN} ${WRKSRC}/indexme.1 ${PREFIX}/man/man1
 .endif
-
 .include <bsd.port.mk>
