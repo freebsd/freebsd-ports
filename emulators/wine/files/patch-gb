@@ -1,10 +1,10 @@
-*** Makefile.in.orig	Thu Jun  6 13:16:17 2002
---- Makefile.in	Thu Jun  6 13:17:00 2002
-*************** wine: $(WINEWRAPPER)
-*** 72,89 ****
-  	$(RM) $@ && $(LN_S) $(WINEWRAPPER) $@
+*** Makefile.in.orig	Thu Jul 11 10:36:16 2002
+--- Makefile.in	Thu Jul 11 10:36:38 2002
+*************** install-lib:: $(INSTALLLIBSUBDIRS:%=%/__
+*** 87,104 ****
+  install-dev:: $(INSTALLDEVSUBDIRS:%=%/__install__)
   
-  install:: all $(SUBDIRS:%=%/__install__)
+  install::
 - 	-$(LDCONFIG)
 - 	@if test -n "`LANG=C $(LDD) $(bindir)/wine|grep not.found`";	\
 - 	then								\
@@ -18,6 +18,6 @@
 - 		echo "*************************************************" ; \
 - 	fi
   
-  uninstall:: $(SUBDIRS:%=%/__uninstall__)
+  .PHONY: install-lib install-dev
   
---- 72,77 ----
+--- 87,92 ----

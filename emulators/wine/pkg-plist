@@ -1,5 +1,3 @@
-bin/expand
-bin/fnt2bdf
 bin/function_grep.pl
 bin/notepad
 bin/progman
@@ -241,11 +239,13 @@ lib/wine/compobj.dll.so
 lib/wine/control.exe.so
 lib/wine/crtdll.dll.so
 lib/wine/crypt32.dll.so
+lib/wine/d3d8.dll.so
 lib/wine/dciman32.dll.so
 lib/wine/ddeml.dll.so
 lib/wine/ddraw.dll.so
 lib/wine/devenum.dll.so
 lib/wine/dinput.dll.so
+lib/wine/dinput8.dll.so
 lib/wine/dispdib.dll.so
 lib/wine/display.dll.so
 lib/wine/dplay.dll.so
@@ -275,8 +275,6 @@ lib/wine/libwine_tsx11.so.1
 lib/wine/libwine_unicode.so
 lib/wine/libwine_unicode.so.1
 lib/wine/libwine_uuid.a
-lib/wine/libwinspool.drv.so
-lib/wine/libx11drv.dll.so
 lib/wine/lz32.dll.so
 lib/wine/lzexpand.dll.so
 lib/wine/mapi32.dll.so
@@ -368,6 +366,7 @@ lib/wine/win32s16.dll.so
 lib/wine/win87em.dll.so
 lib/wine/winaspi.dll.so
 lib/wine/windebug.dll.so
+lib/wine/winealsa.drv.so
 lib/wine/winearts.drv.so
 lib/wine/wineconsole.exe.so
 lib/wine/winedbg.exe.so
