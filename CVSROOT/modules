@@ -1993,6 +1993,7 @@ flphoto		ports/graphics/flphoto
 fltk		ports/x11-toolkits/fltk
 fluctuate	ports/biology/fluctuate
 fluidsynth	ports/audio/fluidsynth
+flux-art	ports/x11-themes/flux-art
 fluxbg		ports/x11/fluxbg
 fluxbox		ports/x11-wm/fluxbox
 fluxbox-devel	ports/x11-wm/fluxbox-devel
