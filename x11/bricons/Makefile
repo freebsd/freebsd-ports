@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	-athena-3.0.tar.Z
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick start up utility for applications on an X display
 
 USE_IMAKE=	yes

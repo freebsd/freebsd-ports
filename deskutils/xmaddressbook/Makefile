@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11/Motif-based addressbook program
 
 USE_MOTIF=	yes
