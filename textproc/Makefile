@@ -120,6 +120,7 @@
     SUBDIR += p5-Orchard-Perl
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
+    SUBDIR += p5-RADIUS-UserFile
     SUBDIR += p5-RDF-Notation3
     SUBDIR += p5-Sort-ArbBiLex
     SUBDIR += p5-Sort-Fields
