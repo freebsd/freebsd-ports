@@ -1,27 +1,25 @@
 # New ports collection makefile for:	netscape (navigator only)
-# Version required:     4.06
+# Version required:     4.08
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.29 1998/12/08 21:28:54 billf Exp $
+# $Id: Makefile,v 1.30 1998/12/19 11:20:12 markm Exp $
 #
 
-DISTNAME=       netscape-navigator-4.07
+DISTNAME=       netscape-navigator-4.08
 CATEGORIES=	www
-MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.07/development/english/unix/freebsd/navigator_standalone/
-DISTFILES=      navigator-v407-export.x86-unknown-freebsd.tar.gz
+MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/navigator_standalone
+DISTFILES=	navigator-v408-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     sada@FreeBSD.ORG
 
-BROKEN=		"'Netscape removed the 4.07 distfiles to make space'"
-
-WRKSRC=		${WRKDIR}/navigator-v407.x86-unknown-freebsd
+WRKSRC=		${WRKDIR}/navigator-v408.x86-unknown-freebsd
 NO_BUILD=       Yes
 STRIP=
 
 NDIR=           ${PREFIX}/lib/netscape
 BINDIR=		${PREFIX}/bin
-INFILE_HEAD=	'Navigator,4.07.0.98272,'
+INFILE_HEAD=	'Navigator,4.08.0.98306,'
 
 .if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
@@ -50,9 +48,9 @@ do-install:
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} $${i} -C ${NDIR}; \
 	done
 	${WRKSRC}/vreg ${NDIR}/registry ${WRKSRC}/infile
-	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.07.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.07
-	ln -sf navigator-4.07 ${BINDIR}/navigator-4
+	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.08.bin
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.08
+	ln -sf navigator-4.08 ${BINDIR}/navigator-4
 	ln -sf navigator-4 ${BINDIR}/netscape
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 	    ${INSTALL_DATA} ${FILESDIR}/mailcap ${NDIR}; \
@@ -60,7 +58,7 @@ do-install:
 	${RM} -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.07.bin
+		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/navigator-4.08.bin
 .endif
 	chown -R bin.bin ${NDIR}
 
