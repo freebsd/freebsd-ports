@@ -1,0 +1,10 @@
+--- appl/telnet/telnet/Makefile.in.orig	Sat Dec 18 10:47:05 1999
++++ appl/telnet/telnet/Makefile.in	Sat Dec 18 10:47:13 1999
+@@ -58,7 +58,6 @@
+ 	  $(INSTALL_DATA) $(srcdir)/$$f.1 \
+ 		${DESTDIR}$(CLIENT_MANDIR)/`echo $$f|sed '$(transform)'`.1; \
+ 	done
+-	$(INSTALL_DATA) $(srcdir)/tmac.doc ${DESTDIR}$(CLIENT_MANDIR)/tmac.doc
+ 
+ authenc.o: defines.h externs.h general.h ring.h types.h $(ARPA_TELNET)
+ commands.o: defines.h externs.h general.h ring.h types.h $(ARPA_TELNET)
