@@ -347,6 +347,7 @@
     SUBDIR += skk10-elisp-emacs20
     SUBDIR += skkfep
     SUBDIR += skkinput
+    SUBDIR += skkinput3
     SUBDIR += skkserv
     SUBDIR += slirc
     SUBDIR += slrn

@@ -6,5 +6,7 @@ sends a request to skkinput.  Skkinput receives the request, does
 kana-kanji conversion, and sends the converted text back to the
 client.
 
-The port was done by Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>.
-It requires skk server.
+From version 3.0, skkinput becomes an emacs-lisp like interpreter,
+and uses skk.el in skk-8.6 as an conversion engine.
+
+WWW: http://sourceforge.jp/projects/skkinput3/

@@ -1,12 +1,10 @@
-bin/skkinput
-lib/X11/app-defaults/Skkinput
-share/doc/skkinput/BUGS.jis
-share/doc/skkinput/CHANGES.jis
-share/doc/skkinput/FAQ.jis
-share/doc/skkinput/PROGRAM.jis
-share/doc/skkinput/README.jis
-share/doc/skkinput/TODO.jis
-share/doc/skkinput/dot.skkinput
-share/doc/skkinput/skkinput.doc
-share/doc/skkinput/skkinputlisp.doc
-@dirrm share/doc/skkinput
+bin/skkinput3
+lib/X11/skkinput3/init.el
+lib/X11/skkinput3/skk.el
+lib/X11/skkinput3/skk-startup.el
+lib/X11/skkinput3/skk-trial.el
+@dirrm lib/X11/skkinput3
+%%PORTDOCS%%share/doc/skkinput3/README-lisp.jis
+%%PORTDOCS%%share/doc/skkinput3/README.jis
+%%PORTDOCS%%share/doc/skkinput3/dot.skkinput
+%%PORTDOCS%%@dirrm share/doc/skkinput3
