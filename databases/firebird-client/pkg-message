@@ -1,0 +1,19 @@
+
+---------------------------------------------------------
+Firebird is now installed.  There is a symbolic link from
+/usr/interbase -> %%PREFIX%%/firebird.  Firebird needs this
+link for proper operation.
+
+It is STRONGLY recommended that you change the SYSDBA
+password with:
+
+$ cd /usr/interbase
+$ gsec -user SYSDBA -pass masterkey
+GSEC> modify SYSDBA -pw newpassword
+GSEC> quit
+
+before doing anything serious with Firebird.
+
+See %%PREFIX%%/firebird/RELNOTES for more.
+---------------------------------------------------------
+

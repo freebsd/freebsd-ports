@@ -1,0 +1,145 @@
+#!/bin/sh
+
+# Created in haste by smashing together various
+# files from the port scripts.
+
+if [ "$2" = "PRE-INSTALL" ]; then
+if [ -d $PKG_PREFIX/firebird ]; then
+	if [ -d $PKG_PREFIX/firebird.old ]; then
+		rm -rf $PKG_PREFIX/firebird.old
+	fi
+	mv $PKG_PREFIX/firebird $PKG_PREFIX/firebird.old
+fi
+
+if [ -L /usr/interbase ]; then
+	rm -f /usr/interbase
+fi
+
+if [ -d /usr/interbase ]; then
+	mv /usr/interbase /usr/interbase.old
+fi
+
+ln -fs $PKG_PREFIX/firebird /usr/interbase
+
+perl <<EOF
+eval '(exit \$?0)' && eval 'exec /usr/bin/perl -S \$0 \${1+"\$@"}'
+& eval 'exec /usr/bin/perl -S \$0 \$argv:q'
+if 0;
+
+if( \$> ) {
+	print "\nYou must be root to run this step!\n\n";
+	exit 1;
+} 
+
+if( getpwnam( "firebird" ) ) {
+	( \$null, \$null, \$fbUID ) = getpwnam( "firebird" );
+} else {
+	\$fbUID = 90;
+	while( getpwuid( \$fbUID ) ) {
+		\$fbUID++;
+	}
+}
+
+if( getgrnam( "firebird" ) ) {
+	( \$null, \$null, \$fbGID ) = getgrnam( "firebird" );
+} else {
+	\$fbGID = 90;
+	while( getgrgid( \$fbGID ) ) {
+		\$fbGID++;
+	}
+	&append_file( "/etc/group", "firebird:*:\$fbGID:" );
+}
+
+print "firebird user using uid \$fbUID\n";
+print "firebird user using gid \$fbGID\n";
+
+system( "/usr/bin/chpass -a \"firebird:*:\$fbUID:\$fbGID\:\:0:0:Firebird pseudo-user:\$ENV{'PKG_PREFIX'}/firebird:/bin/sh\"" );
+
+sub append_file {
+	local(\$file,@list) = @_;
+	local(\$LOCK_EX) = 2;
+	local(\$LOCK_NB) = 4;
+	local(\$LOCK_UN) = 8;
+
+	open(F, ">> \$file") || die "\$file: \$!\n";
+	while( ! flock( F, \$LOCK_EX | \$LOCK_NB ) ) {
+		exit 1;
+	}
+	print F join( "\n", @list) . "\n";
+	close F;
+	flock( F, \$LOCK_UN );
+}
+EOF
+elif [ "$2" = "POST-INSTALL" ]; then
+chown -R firebird:firebird $PKG_PREFIX/firebird
+
+# Turn everybody to read only.
+chmod -R o=r $PKG_PREFIX/firebird
+
+# Now fix up the mess.
+
+# fix up directories 
+for i in `find $PKG_PREFIX/firebird -print`
+  do
+    FileName=$i
+    if [ -d $FileName ]
+       then
+         chmod o=rx $FileName
+     fi
+  done
+
+
+
+cd $PKG_PREFIX/firebird/bin
+
+# all users can run everything.
+chmod o=rx * 
+
+# SUID is needed for running server programs.
+
+for i in gds_lock_mgr gds_drop gds_inet_server
+  do
+    chmod ug+s $i
+  done
+
+
+# Lock files
+
+cd $PKG_PREFIX/firebird
+
+for i in isc_init1 isc_lock1 isc_event1 
+  do
+    FileName=$i.`hostname`
+    touch $FileName
+    chmod uga=rw $FileName
+    chown firebird:firebird $FileName
+  done
+
+
+touch interbase.log
+chmod ugo=rw interbase.log
+
+# make databases writable by all
+chmod ugo=rw examples/v5/*.gdb
+chmod ugo=rw help/*.gdb
+chmod ugo=rw isc4.gdb
+
+# remove any existing gds service
+cp /etc/services /etc/services.old
+cp /etc/inetd.conf /etc/inetd.conf.old
+cat /etc/services |grep -v gds_db >/etc/services.new
+cat /etc/inetd.conf |grep -v gds_db >/etc/inetd.conf.new
+mv /etc/services.new /etc/services
+mv /etc/inetd.conf.new /etc/inetd.conf
+
+# add the gds service and restart inetd
+cat >>/etc/services <<EOF
+gds_db		 3050/tcp  #InterBase Database Remote Protocol
+EOF
+cat >>/etc/inetd.conf <<EOF
+gds_db	stream	tcp	nowait	firebird	/usr/interbase/bin/gds_inet_server  gds_inet_server
+EOF
+kill -HUP `cat /var/run/inetd.pid`
+kill -HUP `cat /var/run/inetd.pid`
+
+fi

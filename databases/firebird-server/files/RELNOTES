@@ -1,0 +1,78 @@
+Firebird 0.9_4 FreeBSD Release Notes                       13-Jan-2001
+------------------------------------
+FB-T0.9.4.34 Firebird Test1
+
+Welcome to the FreeBSD Firebird port!  Users should note that there
+was a package called `firebird-1.0.tgz' released in mid-August
+2000.  Unfortunately, that package was released before Firebird
+version numbering conventions were established, so although the
+version number would suggest that it is newer than the current
+release, it is certainly not.  Users of the August 1.0 package
+should upgrade to 0.9_4 or later, which has fixed many bugs and
+security problems, including the recently-discovered back door.
+
+    Firebird originally required a running copy of Firebird (or
+InterBase) in order to build itself.  This port uses a boot kit to
+overcome that, so that it does not require itself to build.
+Unfortunately, the side effect of this is that if you have a lock
+manager running from an already-installed version of Firebird or
+InterBase, this port will not build.
+
+    Firebird is installed SUID with owner and group `firebird'.
+This does affect where you can and cannot create databases when
+connecting remotely, as well as which existing databases you can
+access.  If you want a database to be available remotely, be sure
+it's readable and writeable to group firebird.
+
+    There may be times when you manage to get your system into a
+state where using any of the Firebird utilites (isql, gbak, gsec,
+etc.) gives you the message "semget failed".  One surefire way to
+do this is to build and install the port.  :)  If this happens,
+make sure that the lock manager is not running and its semaphores
+have been removed.  The former can be accomplished with 'ps ax
+|grep gds' and 'kill'; the latter with 'ipcs -s' and 'ipcrm -s'.
+
+    For example, after building and installing the port, you will
+probably go through something like this:
+
+# isql /usr/interbase/isc4.gdb
+Statement failed, SQLCODE = -902
+
+operating system directive semget failed
+-No such file or directory
+
+# ipcs -s
+Semaphores:
+T     ID     KEY        MODE       OWNER    GROUP
+s 1310720  252034728 --rw-rw-rw-     root    wheel
+
+# ipcrm -s 1310720
+
+and you should be in business.
+
+    Once this is done, you should be able to connect normally to
+databases.  Your first connection will restart the lock manager.
+
+    There may be times, however, when you still get "semget failed"
+even though the lock manager is not running and the semaphores have
+been cleaned up.  There seems to be a conflict with this release
+and the PostgreSQL 7 release as installed from the ports collection.
+If you're having trouble with Firebird and you're running PostgreSQL,
+try stopping PostgreSQL:
+
+	/usr/local/etc/rc.d/pgsql.sh stop
+
+and see if that helps.
+
+    Complete documentation for InterBase(tm) is available (free of
+charge) from http://www.interbase.com/ in PDF format.  While
+InterBase and Firebird are two distinct entities, all InterBase
+documentation is pertinent to Firebird.  More information on Firebird
+and InterBase can be found at the following:
+
+	http://sourceforge.net/projects/firebird/
+	http://www.ibphoenix.com/
+	http://www.interbase2000.org/
+
+Geoff Speicher
+<geoff@sea-incorporated.com>

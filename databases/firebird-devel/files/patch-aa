@@ -1,0 +1,11 @@
+--- buildBootDatabases.orig	Tue Oct 10 23:00:39 2000
++++ buildBootDatabases	Tue Oct 10 23:00:46 2000
+@@ -49,7 +49,7 @@
+     DefaultAns=$2
+     echo -n "${1}"
+     Answer="$DefaultAns"
+-    read Answer
++#    read Answer
+ }
+ 
+ #--------------------------------------------------------------------
