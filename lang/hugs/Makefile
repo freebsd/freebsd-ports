@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	hugs98
-PORTVERSION=	200102
-PORTREVISION=	1
+PORTVERSION=	200112
 CATEGORIES=	lang
-MASTER_SITES=	ftp://www.cse.ogi.edu/pub/pacsoft/hugs/
+MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}
 
 MAINTAINER=	obraun@informatik.unibw-muenchen.de
@@ -24,7 +23,7 @@ INSTALL_DIR=	${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 755
 HUGS_DOC=	${WRKDIR}/hugs98-${HUGS_DATE}/docs
 # Little hack to teach it to use our install
 MAKE_ENV+=	HACK_INSTALL_DIR="${INSTALL_DIR}"
-HUGS_DATE=	Feb2001
+HUGS_DATE=	Dec2001
 
 MAN1=		hugs.1
 
@@ -38,6 +37,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_DIR} -d ${PREFIX}/share/doc/hugs
 	${INSTALL_DATA} ${HUGS_DOC}/* ${PREFIX}/share/doc/hugs
+	${INSTALL_DATA} ${WRKSRC}/../Credits ${PREFIX}/share/doc/hugs
+	${INSTALL_DATA} ${WRKSRC}/../License ${PREFIX}/share/doc/hugs
+	${INSTALL_DATA} ${WRKSRC}/../Readme ${PREFIX}/share/doc/hugs
 .endif
 
 .include <bsd.port.mk>
