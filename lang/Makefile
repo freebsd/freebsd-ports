@@ -215,6 +215,7 @@
     SUBDIR += siod
     SUBDIR += sisc
     SUBDIR += slib
+    SUBDIR += slib-guile
     SUBDIR += slisp
     SUBDIR += smalltalk
     SUBDIR += smarteiffel
