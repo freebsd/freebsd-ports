@@ -1,4 +1,5 @@
 bin/erl
+bin/erl_call
 bin/erlc
 @comment Insert PLIST.lib-erlang here
 @comment -=[ begin PLIST.lib-erlang ]=-
