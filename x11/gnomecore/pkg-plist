@@ -533,6 +533,7 @@ share/locale/eu/LC_MESSAGES/gnome-core.mo
 share/locale/fi/LC_MESSAGES/gnome-core.mo
 share/locale/fr/LC_MESSAGES/gnome-core.mo
 share/locale/ga/LC_MESSAGES/gnome-core.mo
+share/locale/gl/LC_MESSAGES/gnome-core.mo
 share/locale/hu/LC_MESSAGES/gnome-core.mo
 share/locale/it/LC_MESSAGES/gnome-core.mo
 share/locale/ja/LC_MESSAGES/gnome-core.mo
@@ -573,24 +574,24 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/asclock/classic
 @dirrm share/gnome/asclock/shaped
 @dirrm share/gnome/asclock
-@dirrm share/gnome/help/mini-commander_applet/C
-@dirrm share/gnome/help/mini-commander_applet
-@dirrm share/gnome/help/help-browser/wa
-@dirrm share/gnome/help/help-browser/no
-@dirrm share/gnome/help/help-browser/ko
-@dirrm share/gnome/help/help-browser/ja
-@dirrm share/gnome/help/help-browser/it
-@dirrm share/gnome/help/help-browser/hu
-@dirrm share/gnome/help/help-browser/fr
-@dirrm share/gnome/help/help-browser/eu
-@dirrm share/gnome/help/help-browser/et
-@dirrm share/gnome/help/help-browser/es
-@dirrm share/gnome/help/help-browser/ca
-@dirrm share/gnome/help/help-browser/C
-@dirrm share/gnome/help/help-browser
 @dirrm share/gnome/help/gnome-intro/C/pix
 @dirrm share/gnome/help/gnome-intro/C
 @dirrm share/gnome/help/gnome-intro
+@dirrm share/gnome/help/help-browser/C
+@dirrm share/gnome/help/help-browser/ca
+@dirrm share/gnome/help/help-browser/es
+@dirrm share/gnome/help/help-browser/et
+@dirrm share/gnome/help/help-browser/eu
+@dirrm share/gnome/help/help-browser/fr
+@dirrm share/gnome/help/help-browser/hu
+@dirrm share/gnome/help/help-browser/it
+@dirrm share/gnome/help/help-browser/ja
+@dirrm share/gnome/help/help-browser/ko
+@dirrm share/gnome/help/help-browser/no
+@dirrm share/gnome/help/help-browser/wa
+@dirrm share/gnome/help/help-browser
+@dirrm share/gnome/help/mini-commander_applet/C
+@dirrm share/gnome/help/mini-commander_applet
 @dirrm share/gnome/help
 @dirrm share/gnome/mc/templates
 @dirrm share/gnome/mc
