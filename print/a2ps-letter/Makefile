@@ -1,13 +1,13 @@
 # New ports collection makefile for:    a2ps
-# Version required:     4.10.2
-# Date created:         17 May 1998
+# Version required:     4.10.3
+# Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.15 1998/04/19 03:39:04 itojun Exp $
+# $Id: Makefile,v 1.16 1998/05/18 02:32:16 chuckr Exp $
 #
 
-DISTNAME=	a2ps-4.10.2
-PKGNAME=	a2ps-${PAPERSIZE}-4.10.2
+DISTNAME=	a2ps-4.10.3
+PKGNAME=	a2ps-${PAPERSIZE}-4.10.3
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 
@@ -15,7 +15,7 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=  PAPERSIZE has to be set to Letter A4
 GNU_CONFIGURE=	yes
-MAN1=		a2ps.1 ogonkify.1
+MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
 
 PAPERSIZE?=	Letter
 STRIP=

@@ -1,4 +1,5 @@
 share/a2ps/README
+etc/a2ps.cfg
 share/a2ps/ps/bw.pro
 share/a2ps/ps/bold.pro
 share/a2ps/ps/gray.pro
@@ -75,9 +76,10 @@ share/locale/ko/LC_MESSAGES/a2ps.mo
 share/locale/nl/LC_MESSAGES/a2ps.mo
 share/locale/pl/LC_MESSAGES/a2ps.mo
 share/locale/pt/LC_MESSAGES/a2ps.mo
-share/locale/tr/LC_MESSAGES/a2ps.mo
+share/locale/ru/LC_MESSAGES/a2ps.mo
 share/locale/sl/LC_MESSAGES/a2ps.mo
 share/locale/sv/LC_MESSAGES/a2ps.mo
+share/locale/tr/LC_MESSAGES/a2ps.mo
 share/a2ps/sheets/sheets.map
 share/a2ps/sheets/ada.ssh
 share/a2ps/sheets/c.ssh
@@ -90,6 +92,7 @@ share/a2ps/sheets/eiffel.ssh
 share/a2ps/sheets/elisp.ssh
 share/a2ps/sheets/fortran.ssh
 share/a2ps/sheets/gnuc.ssh
+share/a2ps/sheets/html.ssh
 share/a2ps/sheets/java.ssh
 share/a2ps/sheets/lex.ssh
 share/a2ps/sheets/mail.ssh
@@ -122,6 +125,7 @@ share/a2ps/sheets/initora.ssh
 share/a2ps/sheets/is5rul.ssh
 share/a2ps/sheets/lace.ssh
 share/a2ps/sheets/matlab4.ssh
+share/a2ps/sheets/mib.ssh
 share/a2ps/sheets/o2c.ssh
 share/a2ps/sheets/octave.ssh
 share/a2ps/sheets/oldperl.ssh
@@ -146,18 +150,21 @@ share/a2ps/sheets/vrml.ssh
 share/a2ps/sheets/zsh.ssh
 share/a2ps/encoding/encoding.map
 share/a2ps/encoding/ascii.edf
-share/a2ps/encoding/hp.edf
-share/a2ps/encoding/iso5.edf
-share/a2ps/encoding/latin1.edf
-share/a2ps/encoding/latin3.edf
-share/a2ps/encoding/latin5.edf
-share/a2ps/encoding/mac.edf
 share/a2ps/encoding/cp1250.edf
+share/a2ps/encoding/hp.edf
 share/a2ps/encoding/ibmpc.edf
+share/a2ps/encoding/iso1.edf
+share/a2ps/encoding/iso2.edf
+share/a2ps/encoding/iso3.edf
+share/a2ps/encoding/iso4.edf
+share/a2ps/encoding/iso5.edf
+share/a2ps/encoding/iso7.edf
+share/a2ps/encoding/iso9.edf
+share/a2ps/encoding/iso10.edf
+share/a2ps/encoding/iso15.edf
 share/a2ps/encoding/koi8.edf
-share/a2ps/encoding/latin2.edf
-share/a2ps/encoding/latin4.edf
-share/a2ps/encoding/latin6.edf
+share/a2ps/encoding/mac.edf
+share/a2ps/encoding/pcg.edf
 share/a2ps/afm/make_fonts_map.sh
 share/a2ps/afm/fonts.map
 share/a2ps/afm/colle10.afm
@@ -216,14 +223,16 @@ share/a2ps/ppd/level1.ppd
 share/a2ps/ppd/level2.ppd
 share/emacs/site-lisp/make-regexp.el
 share/emacs/site-lisp/a2ps.el
+share/emacs/site-lisp/a2ps-print.el
 bin/a2ps
+bin/ogonkify
+bin/compose
+bin/fixnt
 bin/texi2dvi4a2ps
 bin/card
 bin/psmandup
 bin/fixps
 bin/pdiff
-bin/ogonkify
-bin/compose
 @unexec install-info --info-dir=%D/info %D/info/a2ps.info --delete
 @unexec install-info --info-dir=%D/info %D/info/ogonkify.info --delete
 info/ogonkify.info
@@ -233,18 +242,26 @@ info/a2ps.info-2
 info/a2ps.info-3
 info/a2ps.info-4
 info/a2ps.info-5
+info/regex.info
+info/regex.info-1
+info/regex.info-2
+info/regex.info-3
+info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/ogonkify.info
 man/man1/a2ps.1.gz
+man/man1/card.1.gz
+man/man1/psmandup.1.gz
+man/man1/fixps.1.gz
+man/man1/pdiff.1.gz
 man/man1/ogonkify.1.gz
 include/liba2ps.h
-lib/liba2ps.la
 lib/liba2ps.so.1.0
 lib/liba2ps.a
 @exec /bin/ldconfig -m %D/lib
 @dirrm share/a2ps/ps
-@dirrm share/a2ps/afm
-@dirrm share/a2ps/fonts
+@dirrm share/a2ps/afm  
+@dirrm share/a2ps/fonts 
 @dirrm share/a2ps/ogonkify
-@dirrm share/a2ps/sheets
+@dirrm share/a2ps/sheets  
 @dirrm share/a2ps/encoding
