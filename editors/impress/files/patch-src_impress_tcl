@@ -5,7 +5,7 @@
  #
  # restart trick \
 -exec wish "$0" "$@"
-+exec wish8.3 "$0" "$@"
++exec wish8.4 "$0" "$@"
  
  option add *Radiobutton*borderWidth 1
  option add *Button*borderWidth 1
