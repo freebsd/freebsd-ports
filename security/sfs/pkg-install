@@ -8,8 +8,8 @@ KEYFILE="$PKG_PREFIX/etc/sfs/sfs_host_key"
 
 USER=sfs
 GROUP=sfs
-UID=71
-GID=71
+UID=171
+GID=171
 PW=/usr/sbin/pw
 
 SFSDIR=/var/spool/sfs
