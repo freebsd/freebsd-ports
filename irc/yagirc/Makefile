@@ -8,7 +8,7 @@
 
 DISTNAME=	yagirc-0.66.1
 CATEGORIES=	irc
-MASTER_SITES=	http://www.elpaso.net/~spoon/yagirc/
+MASTER_SITES=	http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 
