@@ -1,0 +1,5 @@
+mod_bunzip2 -- an Apache module implementing server-side decompression of bzip2 
+compressed documents. Makes use of libbzip2 functionality.
+
+WWW: 	http://www.oldach.net
+Author:	Helge Oldach <mod_bunzip2@oldach.net>
