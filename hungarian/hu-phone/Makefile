@@ -8,7 +8,7 @@
 PORTNAME=	phone
 PORTVERSION=	20020622
 CATEGORIES=	hungarian misc
-MASTER_SITES=	http://freebsd.ik.bme.hu/~mohacsi/downloads/
+MASTER_SITES=	http://skye.ki.iif.hu/~mohacsi/downloads/
 PKGNAMEPREFIX=	hu-
 DISTNAME=	korzetszam.2002.06.22
 EXTRACT_SUFX=	.gz
