@@ -498,6 +498,7 @@
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += pxe
+    SUBDIR += py-GeoIP
     SUBDIR += py-bittorrent
     SUBDIR += py-bittorrent-core
     SUBDIR += py-fngrab
