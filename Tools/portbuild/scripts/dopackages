@@ -307,16 +307,18 @@ cd ${pb}
 if [ "$nobuild" = 0 ]; then
 ###  rm -rf bak/distfiles
 ###  mv -f distfiles bak
-  mkdir distfiles
+  mkdir -p distfiles
   chown -R ${user} distfiles
   cd ${pb}/${branch}/bak
   rm -rf errors logs packages old-errors
   cd ${pb}/${branch}
   mv -f errors logs packages old-errors make.* bak
-  cd bak/packages/All
-  for i in *.tgz; do
-    cp /dev/null $i
-  done
+###delete old packages -- use when diskspace is scarce
+#  if cd bak/packages/All; then
+#    for i in *.tgz; do
+#      cp /dev/null $i
+#    done
+#  fi
   cd ${pb}/${branch}
   mkdir -p packages/All
   mkdir -p ${pb}/archive/errorlogs
@@ -337,21 +339,23 @@ if [ "$nobuild" = 0 ]; then
       cp -p tarballs/$(cd ${pb}/usr/ports/$dir; make package-name).tgz packages/All
     done
   fi
+
   count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist | sed -e 's/\..*$//')
   cd ${pb}/${branch}/packages/All
+  ln -sf ../../Makefile .
   echo "================================================"
   echo "building packages (phase 1)"
   echo "================================================"
   echo "started at $(date)"
-  make -k -j$count -f ../../Makefile ${quickpkgs} all > ../../make.0 2>&1 </dev/null
+  make -k -j$count ${quickpkgs} all > ../../make.0 2>&1 </dev/null
   echo "ended at $(date)"
   echo $(echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) - 2 | bc) "packages built"
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
   cd ${pb}/${branch}
-  if grep -q 'ptimeout: killing' make.0; then
+  if grep -qE '(ptimeout|pnohang): killing' make.0; then
     echo "The following port(s) timed out:"
-    grep 'ptimeout: killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/'
+    grep -E '(ptimeout|pnohang): killing' make.0 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/' 
   fi
   cp -rp errors old-errors
   cd ${pb}/${branch}/old-errors
@@ -370,13 +374,15 @@ if [ "$nobuild" = 0 ]; then
 
   echo "setting up of nodes ended at $(date)"
 
+  count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist | sed -e 's/\..*$//')
   cd ${pb}/${branch}/packages/All
   echo "================================================"
   echo "building packages (phase 2)"
   echo "================================================"
   echo "started at $(date)"
-  make -k -j$count -f ../../Makefile ${quickpkgs} all > ../../make.1 2>&1 </dev/null
+  make -k -j$count ${quickpkgs} all > ../../make.1 2>&1 </dev/null
   echo "ended at $(date)"
+  rm Makefile
   if [ "$nodummy" = 0 ]; then
     rm ${dummypkgs}
   fi
@@ -396,12 +402,23 @@ if [ "$nobuild" = 0 ]; then
     echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
     echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
   fi
+  rm -rf ${pb}/${branch}/bad
+  mkdir -p ${pb}/${branch}/bad
+  echo "checking packages"
+  for i in *.tgz; do
+    if ! gzip -t $i; then
+      echo "Warning: package $i is bad, moving to ${pb}/${branch}/bad"
+      # the latest link will be left behind...
+      mv $i ${pb}/${branch}/bad
+      rm ../*/$i
+    fi
+  done
   echo "generating CHECKSUM.MD5"
   md5 *.tgz > CHECKSUM.MD5
   cd ${pb}/${branch}
-  if grep -q 'ptimeout: killing' make.1; then
+  if grep -qE '(ptimeout|pnohang): killing' make.1; then
     echo "The following port(s) timed out:"
-    grep 'ptimeout: killing' make.1 | sed -e 's/^.*ptimeout:/ptimeout:/'
+    grep -E '(ptimeout|pnohang): killing' make.1 | sed -e 's/^.*ptimeout:/ptimeout:/' -e 's/^.*pnohang:/pnohang:/'
   fi
   cd ${pb}/${branch}/old-errors
   new=""
@@ -422,26 +439,28 @@ if [ "$nobuild" = 0 ]; then
       echo -n " $(basename $i .log)"
     fi
   done
-  echo
-  echo "================================================"
-  echo "old packages"
-  echo "================================================"
-  cd ${pb}/${branch}/bak/packages/All
-  for i in *.tgz; do
-    if [ ! -f ${pb}/${branch}/packages/All/$i ]; then
-      echo -n " $(basename $i .tgz)"
-    fi
-  done
-  echo
-  echo "================================================"
-  echo "old failures"
-  echo "================================================"
-  cd ${pb}/${branch}/bak/errors
-  for i in *.log; do
-    if [ ! -f ${pb}/${branch}/errors/$i ]; then
-      echo -n " $(basename $i .log)"
-    fi
-  done
+  if cd ${pb}/${branch}/bak/packages/All; then
+    echo
+    echo "================================================"
+    echo "old packages"
+    echo "================================================"
+    for i in *.tgz; do
+      if [ ! -f ${pb}/${branch}/packages/All/$i ]; then
+        echo -n " $(basename $i .tgz)"
+      fi
+    done
+  fi
+  if cd ${pb}/${branch}/bak/errors; then
+    echo
+    echo "================================================"
+    echo "old failures"
+    echo "================================================"
+    for i in *.log; do
+      if [ ! -f ${pb}/${branch}/errors/$i ]; then
+        echo -n " $(basename $i .log)"
+      fi
+    done
+  fi
   echo
   echo "================================================"
   echo "new packages"
@@ -468,6 +487,14 @@ if [ "$nobuild" = 0 ]; then
   rm -rf bak/distfiles
   mv -f distfiles bak
   su ${user} -c ${scripts}/cpdistfiles > ${pb}/cpdistfiles.log 2>&1 </dev/null &
+  # if norestr flag is set, assume it's for ftp and copy the packages over
+  if [ "$norestr" = 1 ]; then
+    echo "ended at $(date)"
+    echo "================================================"
+    echo "copying packages"
+    echo "================================================"
+    su ${user} -c '${scripts}/docppackages ${branch}'
+  fi
 fi
 echo "================================================"
 echo "all done at $(date)"
