@@ -1,9 +1,0 @@
-
-$FreeBSD$
-
---- po/LINGUAS.orig	Mon Jun 28 08:22:50 2004
-+++ po/LINGUAS	Mon Jun 28 08:22:58 2004
-@@ -1,2 +1,2 @@
- # Set of available languages.
--da de en@boldquot en@quot eo fr nl pl ro sr sv
-+da de eo fr nl pl ro sr sv
