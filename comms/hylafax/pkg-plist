@@ -1,0 +1,209 @@
+@comment PLIST by Julian Stacey	<JHS@FreeBSD.Org>
+
+@name hylafax
+
+@pkgdep		ghostscript
+@comment	Ghostscript versions since 3.12 have had a working tiffg32d
+
+@cwd		/usr/local
+@dirrm		/var/spool/fax
+@dirrm		/usr/local/lib/fax
+
+@comment	theres no example of good @mtree syntax in ports yet
+@comment	when such example appears, it will be worth converting this
+@comment	so that mtree can do the mkdir work:
+@comment		@cwd
+@comment		@owner	bin 
+@comment		@group	bin 
+@comment		@mode	755 
+@comment		/usr/local/bin 
+@comment		/usr/local/lib/fax 
+@comment		/usr/local/sbin
+@comment		@owner	uucp 
+@comment		@group	dialer 
+@comment		@mode	755 
+@comment		/var/spool/fax
+@comment		/var/spool/fax/bin 
+@comment		/var/spool/fax/config 
+@comment		/var/spool/fax/etc 
+@comment		/var/spool/fax/recvq 
+@comment		/var/spool/fax/info 	(No pkg file here, but need dir
+@comment		/var/spool/fax/log 	(No pkg file here, but need dir
+@comment		/var/spool/fax/status	(No pkg file here, but need dir
+@comment		@owner	uucp 
+@comment		@group	dialer 
+@comment		@mode	700 
+@comment		/var/spool/fax/sendq 
+@comment		/var/spool/fax/docq 
+@comment		/var/spool/fax/tmp
+
+@cwd		/var/spool/fax
+@mode		600
+@comment	fifo
+FIFO
+@mode		444
+COPYRIGHT
+
+@cwd		/var/spool/fax/bin
+notify
+@mode		444
+ps2fax.gs
+ps2fax.dps
+ps2fax
+notify.awk
+@mode		555
+faxrcvd
+pollrcvd
+mkcover
+transcript
+
+@cwd		/var/spool/fax/config
+@mode		444
+class1
+class2
+class2.0
+skel
+att-dataport-2
+att-dataport-2.0
+att-dataport
+cirrus
+dsi-scout+
+e-tech
+everex-2496d
+exar
+gvc-288
+gvc-288-2
+intel-400e
+moto-288
+mt-1432
+nuvo-voyager
+ppi-pm14400fxmt
+ppi-pm14400fxsa
+rc144ac
+rc144ac-1
+rc288dpi
+rc288dpi-1
+rc32acl
+rc32acl-1
+telebit-t3000
+telebit-qblazer
+telebit-wb
+tricom2842
+uds-fastalk
+usr-2.0
+usr-rts
+usr-xon
+zyxel-1496e
+zyxel-1496e-1
+zyxel-1496e-2.0
+
+@cwd		/var/spool/fax/etc
+@mode		444
+dpsprinter.ps
+cover.templ
+dialrules
+dialrules.sf-ba
+dialrules.europe
+@mode		644
+lutRS18.pcf
+hosts
+xferlog
+
+@cwd		/usr/local/bin
+@mode		555
+sendpage
+fax2ps
+faxalter
+faxcover
+
+@cwd		/usr/local/sbin
+@owner		uucp
+@group		dialer
+@mode		6555
+faxq
+faxgetty
+@owner		uucp
+@group		dialer
+
+@mode		555
+textfmt
+faxmsg
+faxabort
+faxanswer
+faxquit
+faxinfo
+dialtest
+typetest
+xferstats
+recvstats
+faxcron
+faxsend
+pagesend
+tsitest
+tagtest
+lockname
+ondelay
+faxaddmodem
+probemodem
+
+@cwd		/usr/local/lib/fax
+@mode		444
+pagesizes
+typerules
+faxcover.ps
+
+@cwd		/usr/local/man/man1
+@mode		444
+fax2ps.1
+faxalter.1
+faxcover.1
+faxmail.1
+faxrm.1
+faxstat.1
+hylafax.1
+sendfax.1
+sendpage.1
+sgi2fax.1
+textfmt.1
+
+@cwd		/usr/local/man/man5
+pagesizes.5f
+typerules.5f
+cid.5f
+config.5f
+destctrls.5f
+dialrules.5f
+hosts.5f
+hylafax.5f
+info.5f
+log.5f
+recvq.5f
+sendq.5f
+status.5f
+tsi.5f
+xferlog.5f
+
+@cwd		/usr/local/man/man8
+dialtest.8c
+faxabort.8c
+faxaddmodem.8c
+faxanswer.8c
+faxcron.8c
+faxd.recv.8c
+faxgetty.8c
+faxq.8c
+faxquit.8c
+faxrcvd.8c
+faxsend.8c
+mkcover.8c
+notify.8c
+pagesend.8c
+pollrcvd.8c
+ps2fax.8c
+recvstats.8c
+tagtest.8c
+transcript.8c
+tsitest.8c
+xferstats.8c
+
+@comment	end

@@ -1,0 +1,32 @@
+This patch prepared by Julian Stacey <jhs@FreeBSD.Org
+
+Make this a BATCH compilable port, instead of IS_INTERACTIVE
+
+Warning before removing or renaming this patch,
+consult this code segment in ../Makefile:
+	.if !exists(patches/patch-aa)
+	IS_INTERACTIVE= yes  
+	.endif
+
+*** configure	Sat May 20 16:30:29 1995
+--- configure	Sat May 20 16:58:58 1995
+***************
+*** 2889,2895 ****
+  	fi
+  	checkForExecutable $PATH_SENDMAIL
+  	checkForExecutable $PATH_GETTY
+! 	printConfig; prompt "Are these ok [yes]?"; read ok
+  	test -z "$ok" && ok=yes
+  	case "$ok" in
+  	[1-9]|1[0-7])	promptForParameter $ok;;
+--- 2889,2898 ----
+  	fi
+  	checkForExecutable $PATH_SENDMAIL
+  	checkForExecutable $PATH_GETTY
+! 	printConfig
+! 	ok=yes	
+! 	echo "If you do not like this config, uncomment next prompt line in configure."
+! 	# prompt "Are these ok [yes]?"; read ok
+  	test -z "$ok" && ok=yes
+  	case "$ok" in
+  	[1-9]|1[0-7])	promptForParameter $ok;;

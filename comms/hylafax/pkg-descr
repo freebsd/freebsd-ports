@@ -1,0 +1,14 @@
+HylaFAX is a facsimile system for UNIXtm systems. Among
+the features of HylaFAX are:
+-	HylaFAX runs as a network service; this means a fax
+	modem may be effectively shared by a large number of users.
+-	HylaFAX can be configured to work with a wide variety
+	of fax modems on a wide variety of systems.
+-	Access to the system can be restricted by the adminis-
+	trator to selected hosts and/or users.
+-	Transmission requests may be processed immediately (default) or queued 
+	for processing at a later time, in the manner of the at(1) command.
+-	Remote facsimile machines may be polled to retrieve
+	publicly available documents.
+
+					Julian Stacey <jhs@freebsd.org>

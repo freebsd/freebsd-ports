@@ -1,0 +1,225 @@
+	NOTES ON HYLAFAX IN FREEBSD (/usr/ports/comms/hylafax)
+		By Julian Stacey <jhs@freebsd.org> May 1995
+		 
+This port replaces flexfax (which is over a year old).
+Thanks to Sam Leffler of SGI for writing & releasing Hylafax :-)
+I <jhs@freebsd.org> wrote the FreeBSD ports/comm/hylafax/* files,
+
+Copyright Julian Stacey 1995:
+	Please preserve & comply with Sam Leffler's & SGI's legal stuff
+	I hereby release my work in this area for public use, & disclaim
+	all liability !  
+	Leave my name intact please, I'm a freelance, publicity can be useful.
+
+Documentation:
+	- On Line Manuals: 	man hylafax.
+	- World Wide Web site:	(http://www.vix.com/flexfax/
+	- Source tree:		Local copies of web in html & html/FAQ etc.
+
+Mailing List for Support, Development etc:
+	Don't mail me your fax or modem problems, nor post Hylafax
+	software bugs & fax modem problems to a Freebsd mail list.
+	The correct mail list:		flexfax@sgi.com
+
+Patches:
+	Bug reports, accompanied by diff -c patches, will be reviewed &
+	commited to FreeBSD/ports).
+
+Examples:
+	Syntax etc examples are in:  config.jhs config.ttyd1.jhs etc.ttys.jhs
+
+My Test Environment:
+	SupraFax V32bis + FreeBSD-2-current (May 1995)
+
+Outstanding:
+	I'm not sure if the lock file scheme is OK 
+		(It may be, I just used the default).
+	Some of the permissions are not right, 
+		(sometimes I get many email acknowledgements for each fax
+		sent (but fax is only sent once, no horrendous phone bill
+		... yet ;-)
+	My faxgetty will not answer as a normal modem (maybe its the modem,
+	or maybe my config file is wrong).
+
+---
+Julian Stacey  <jhs@freebsd.org>  Tel. +49 89 268616.   Fax Modem: 2608126 
+		http://www.regent.e-technik.tu-muenchen.de/people/jhs.html
+Vector Systems Ltd: an Internet, Unix & C consultancy in Munich Germany
+
+Appended are some example Config files:
+
+etc.ttys
+{-------
+ttyd1 "/usr/local/sbin/faxgetty" vt100 on unsecure
+-------}
+
+config
+{-------
+LogFacility:		daemon
+CountryCode:		49
+AreaCode:		89
+LongDistancePrefix:	0
+InternationalPrefix:	00
+DialStringRules:	etc/dialrules.europe
+ServerTracing:		1
+MaxSendPages:		20
+-------}
+
+config.ttyd1
+{-------
+# /var/spool/fax/etc/config.ttyd1 by jhs@freebsd.org
+# from $Header: /usr/people/sam/fax/config/RCS/rockwell,v 1.25 1995/03/10 23:36:02 sam Exp $
+# this file documented in man config
+
+# Sam says:
+# {
+# If you stop faxq then faxd.recv will remove the job itself;
+# otherwise if it sees faxq is running it passes the remove request on and
+# assumes the task was completed (there is no acknowledgement).
+
+# ServerTracing so that tracing messages are not sent out (listed in the
+# TODO file, a fix is welcome).  If you think this might be happening, try
+# echo "CServerTracing: 0x201">/var/spool/fax/FIFO
+# to force faxq to reset the current value for ServerTracing.
+# }
+
+# Configuration for a Rockwell-based Class 2 modem.
+#    Boca M1440E		firmware V1.270 or newer
+#    Dallas Fax			(throw it away!)
+#    Hayes Optima 24+Fax96	firmware TR00-J260-001 XXX or newer
+#    SupraFAX v.32bis		firmware V1.200-C or newer
+#    Twincom 144/DF		firmware revision V1.200 or newer
+#    Dynalink 1414VE
+# (and others)
+
+# This configuration file sets up the modem to run at 19.2 for
+# sending and for receiving.  XON/XOFF flow control is used on
+# the tty port.  RTS/CTS can be used by switching the flow control
+# setup, but beware of modems that do not support it during
+# facsimile operations.  Also beware that the adaptive-answer
+# facility, when supported, is usually unreliable.
+
+# AdaptiveAnswer	boolean  No   enable adaptive answer of inbound calls
+AdaptiveAnswer		Yes
+# AnswerRotary		string	Any	alternatives for answering calls
+# AnswerRotary		"fax data"
+# DestControls		jhs set later see man destctrls
+
+MaxDials		3 # max calls to transmit a job (presumably doing succesive pages)
+# Wrong numbers cost me 23pf per fail, & earache to whoever answers the phone !
+# MaxTries		3 # max attempts to transmit a job (3 default)
+NoCarrierRetrys		0 # default 1 # number of times to retry dialing on ``NO CARRIER''
+
+# JobReqBusy		integer	300	requeue interval for BUSY dial result
+
+MaxSendPages		20 # max pages to permit in a send
+
+# jhs later		QualifyTSI   file of TSI patterns for qualifying senders
+CountryCode:		49
+AreaCode:		89
+FAXNumber:		+49.89.2608126	# also used to name session log file
+LocalIdentifier:	"+49 89 2608126"
+LongDistancePrefix:	0
+InternationalPrefix:	00
+DialStringRules:	etc/dialrules.europe
+ServerTracing:		1
+SessionTracing:		11
+RecvFileMode:		0644 # if you have nosey users, consider 0600
+LogFileMode:	0644	# make it 0600 if calling card access codes are logged
+DeviceMode:		0600
+RingsBeforeAnswer:	2
+SpeakerVolume:		medium
+
+# Any appearance of ``%l'' is replaced with the tty name and any
+# appearance of ``%s'' is replaced with the serial port speed (in decimal).
+GettyArgs:	"std.%s -" # "std.%s ttyd1" # default is "-h %l dx_%s"
+# FreeBSD man getty says: 	getty [type [tty]]
+# FreeBSD man login says: -h specifies host from which the connection received.
+# kew@timesink.spk.wa.us (FreeBSD 2.1.0) uses "std.%s -".
+
+TagLineFont:		etc/lutRS18.pcf
+# pre jhs default was TagLineFormat:		"From %%l|%c|Page %%p of %%t"
+# %c gives American-only date format, which is confusing in Britain or Germany
+# so I use international accountancy date format: (19)95 08 01 (ie 1st Aug)
+# I use no words in my tag line, as fax may be in German or English.
+#---
+# allow at least 4 spaces before VSL as PCS fax chops left margin
+# dont actually use space char, as entabbing this file will lose it all
+# dont put too much in any one field or will overprint
+# %%l takes LocalIdentifier
+# %%n sender fax ie +49.89.2608126
+# %%d target fax ie +498968004525, from sendfax -d gary@68004.525
+# %%p page number inc. cover sheet
+# %%t total pages inc. cover sheet
+# jhs created `pages' symbol (\241 dec161 xa1) in lutRS18.pcf
+# jhs created `phone' symbol (\244 dec164 xa4) in lutRS18.pcf
+# `phone' & `pages' are inspired by symbols that pcs fax machine prints
+# PCS FAX is "Canon Fax 280" Model H11232, + H11 2325 + HA2 1324, REN=3
+TagLineFormat: "Fax %%n|Tel \244 +49 89 268616|\241 %%p/%%t %Y:%m:%d %H:%M"
+
+# MaxRecvPages:		unlimited
+
+# Modem-related stuff: should reflect modem command interface
+# and hardware connection/cabling (e.g. flow control).
+
+ModemType:		Class2		# use class 2 interface
+ModemRate:		19200		# fax send&recv is locked at 19.2
+ModemFlowControl:	xonxoff		# default
+
+ModemResetCmds:		AT&F2		# what you want for a Supra # JJ I have not checked operation since enabling this
+ModemNoFlowCmd:		AT&K		# disable flow control cmd
+ModemHardFlowCmd:	AT&K3		# hardware flow control cmd
+ModemSoftFlowCmd:	AT&K4		# software flow control cmd
+ModemSetupDTRCmd:	AT&D3		# DTR off causes modem to reset
+#ModemSetupDTRCmd:	AT&D2S25=1S38=0	# Dynalink 1414VE needs this
+ModemSetupDCDCmd:	AT&C1		# DCD follows carrier
+ModemSetupAACmd:	AT+FAA=1+FCLASS=0 # enable in current class
+# FAQ says: AT+FAA=1	Auto answer as facsimile or data depending on call
+
+ModemSendFillOrder:	LSB2MSB		# as expected
+ModemRecvFillOrder:	MSB2LSB		# opposite of what makes sense
+
+ModemDialCmd:		ATDT%s@		# T for tone dialing, @ for silence
+
+# Caller ID configuration setup for Supra.
+
+# QualifyCID:		etc/cid	(off by default) CID access control list file
+CIDNumber:		"NMBR = "	# pattern string for phone number info # JJ I have not checked operation since enabling this
+CIDName:		"NAME = "	# pattern string for identity info # JJ I have not checked operation since enabling this
+
+# DEFAULTS FOR REFERENCE
+# ModemAnswerFaxCmd             string     ATA              command for answering fax call
+# ModemAnswerDataCmd            string     ATA              command for answering data call
+
+# Class1RecvIdentTimer
+#               The time, in milliseconds, to wait for  an  initial
+#               DCS  when receiving a facsimile.  CCITT recommenda-
+#               tion T.30 specifies this as the  value  of  the  T1
+#               timer.  However, adaptive answering schemes such as
+#               that  described  above  under  the   AdaptiveAnswer
+#               parameter may require that this timer be shortened.
+# Class1RecvIdentTimer  35000 Class 1: max wait (ms) for initial ident frame
+Class1RecvIdentTimer	12000
+
+# Supra default wait for carrier is 50/10th sec, change with ats7=255
+# Datatronic default wait for carrier is 45/10th sec.
+# matthias says:	config.ttyd1
+# 
+# FaxT1Timer
+#	should  not be changed without full understanding of the ... server.
+#               The value of the T1 timer  in  milliseconds.   This
+#               timer  is used to time out the initial session con-
+#               tact; i.e. receipt of DIS/DCS.
+# FaxT1Timer             35000            CCITT T.30 T1 timer (ms)
+# 
+# AdaptiveAnswer:
+# Class1RecvIdentTimer  should be set to a value that
+#               is shorter than FaxT1Timer.
+# yet defaults for both are exactly the same: 35000 / 1000 sec.
+
+UUCPLockDir	/var/spool/lock	# jhs added this after seeing where kermit created a lock.
+UUCPLockType	ascii	# jhs added this after seeing what kermit created
+# Note kermit -l /dev/supra created /var/spool/lock/LCK..supra
+# (supra is a link to cua01, so the lock wont really work, as I'm running
+# gettyfax on ttyd1.
+-------}
