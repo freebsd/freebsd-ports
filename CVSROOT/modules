@@ -3996,6 +3996,7 @@ mutella		ports/net/mutella
 mutemix		ports/audio/mutemix
 mutt		ports/mail/mutt
 mutt-devel	ports/mail/mutt-devel
+muttprint	ports/print/muttprint
 muttzilla	ports/mail/muttzilla
 muuz		ports/misc/muuz
 mv		src/bin/mv
