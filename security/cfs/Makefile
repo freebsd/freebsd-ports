@@ -9,8 +9,8 @@
 DISTNAME=	cfs-1.3.3bf
 PKGNAME=	cfs-1.3.3.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://unix.hensa.ac.uk/mirrors/ftp.replay.com/pub/crypto/disk/ \
-		ftp://ftp.tu-chemnitz.de/pub/linux/suse/4.4.1/unsorted/Crypto-Filesystem/
+MASTER_SITES=   ftp://ftp.hacktic.nl/pub/crypto/disk/ \
+		ftp://ftp.uni-bielefeld.de/pub/crypto/replay/disk/
 
 MAINTAINER=	green@FreeBSD.org
 
