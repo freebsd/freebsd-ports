@@ -1,0 +1,16 @@
+--- Makefile.shlib.orig	Wed Feb  3 19:16:02 1999
++++ Makefile.shlib	Wed Feb  3 19:18:28 1999
+@@ -59,10 +59,11 @@
+ ifeq ($(PORTNAME), freebsd)
+   ifdef BSD_SHLIB
+     install-shlib-dep	:= install-shlib
+-    shlib		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION).$(SO_MINOR_VERSION)
+     ifdef ELF_SYSTEM
+-      LDFLAGS_SL	:= -x -Bshareable
++      shlib		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION)
++      LDFLAGS_SL	:= -x -shared -soname $(shlib)
+     else
++      shlib		:= lib$(NAME)$(DLSUFFIX).$(SO_MAJOR_VERSION).$(SO_MINOR_VERSION)
+       LDFLAGS_SL	:= -x -Bshareable -Bforcearchive
+     endif
+     CFLAGS		+= $(CFLAGS_SL)
