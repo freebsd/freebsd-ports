@@ -6,11 +6,11 @@
 
 PORTNAME=	dvipsk-tetex
 PORTVERSION=	5.95a
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
-		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX-beta
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
 DISTNAME=	${TETEX_SRC}
 DIST_SUBDIR=	teTeX
 
@@ -65,7 +65,7 @@ PAPERSIZE=	letter
 PAPERSIZE=	a4
 .endif
 
-TETEX_SRC=	tetex-src-2.99.13.20050204-beta
+TETEX_SRC=	tetex-src-3.0
 MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
 TEXMFDIR=	share/texmf
 TEXMFLOCALDIR=	share/texmf-local

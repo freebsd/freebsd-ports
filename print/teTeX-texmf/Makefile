@@ -5,14 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	teTeX-texmf
-PORTVERSION=	2.99.13.20050204
+PORTVERSION=	3.0
 PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	http://people.freebsd.org/~edwin/ \
-		ftp://ftp.dante.de/tex-archive/systems/unix/teTeX-beta/ \
-		${MASTER_SITE_TEX_CTAN} \
+MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
-MASTER_SITE_SUBDIR=	systems/unix/teTeX-beta
+MASTER_SITE_SUBDIR=	systems/unix/teTeX/3.0/distrib
 DISTFILES=	${TETEX_TEXMF_SRC} dvipsk-jpatch-p1.6a1${EXTRACT_SUFX}:1
 DIST_SUBDIR=	teTeX
 EXTRACT_ONLY=	dvipsk-jpatch-p1.6a1${EXTRACT_SUFX}
@@ -36,7 +34,7 @@ PLIST_SUB=	TEXMFDIR=${TEXMFDIR} \
 		TEXMF_LSR=${TEXMF_LSR}
 CONFLICTS=	ja-ptex-base-[0-9]*
 
-TETEX_TEXMF_SRC=tetex-texmf-${PORTVERSION}-beta.tar.gz
+TETEX_TEXMF_SRC=tetex-texmf-${PORTVERSION}.tar.gz
 TEXMFDIR=	share/texmf
 TEXMF_LSR=	${PREFIX}/${TEXMFDIR}/ls-R
 TEXMFLOCALDIR=	share/texmf-local
