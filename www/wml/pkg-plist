@@ -42,6 +42,7 @@ lib/wml/include/imp/fsview.wml
 lib/wml/include/imp/generic.wml
 lib/wml/include/std/all.wml
 lib/wml/include/std/box.wml
+lib/wml/include/std/case.wml
 lib/wml/include/std/grid.wml
 lib/wml/include/std/href.wml
 lib/wml/include/std/info.wml
@@ -133,6 +134,7 @@ man/man3/wml::imp::fsview.3.gz
 man/man3/wml::imp::generic.3.gz
 man/man3/wml::std::all.3.gz
 man/man3/wml::std::box.3.gz
+man/man3/wml::std::case.3.gz
 man/man3/wml::std::grid.3.gz
 man/man3/wml::std::href.3.gz
 man/man3/wml::std::info.3.gz
