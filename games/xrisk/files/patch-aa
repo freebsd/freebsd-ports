@@ -1,0 +1,11 @@
+--- xrisk.def.orig	Wed Oct 27 19:14:11 1993
++++ xrisk.def	Fri Feb 11 15:46:40 2000
+@@ -3,6 +3,8 @@
+ /* EXTRA_DEFINES = -D_NO_PROTO */
+ RISKBINDIR    = $(BINDIR)
+ RISKLIBDIR    = $(LIBDIR)/xrisk
++MANDIR        = $(MANPATH)/man6
++MANSUFFIX     = 6
+ 
+ /*
+   If you prefere mappings other than english check out if it exists (or write

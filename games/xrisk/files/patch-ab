@@ -1,0 +1,8 @@
+--- doc/Imakefile.orig	Sun Jul 18 00:18:14 1993
++++ doc/Imakefile	Tue Feb  1 22:39:11 2000
+@@ -1,5 +1,3 @@
+ #include "../xrisk.def"
+ 
+-all:
+-
+ InstallManPage(xrisk,$(MANDIR))
