@@ -1,18 +1,55 @@
-apps/ROX-Session/AppIcon.xpm
+apps/ROX-Session/.DirIcon
 apps/ROX-Session/AppInfo.xml
 apps/ROX-Session/AppRun
-apps/ROX-Session/FreeBSD-ix86/ROX-Session
+apps/ROX-Session/%%BINARIES%%/ROX-Session
 apps/ROX-Session/Help/COPYING
 apps/ROX-Session/Help/Changes
+apps/ROX-Session/Help/Guide/.DirIcon
+apps/ROX-Session/Help/Guide/AppInfo.xml
+apps/ROX-Session/Help/Guide/AppRun
+apps/ROX-Session/Help/Guide/Guide.html
+apps/ROX-Session/Help/Guide/Tutorial.html
+apps/ROX-Session/Help/Guide/Tutorial2.html
+apps/ROX-Session/Help/Guide/applets.png
+apps/ROX-Session/Help/Guide/apps.png
+apps/ROX-Session/Help/Guide/archive.png
+apps/ROX-Session/Help/Guide/de/Anleitung.html
+apps/ROX-Session/Help/Guide/de/Leitfaden.html
+apps/ROX-Session/Help/Guide/de/apps.png
+apps/ROX-Session/Help/Guide/de/help.png
+apps/ROX-Session/Help/Guide/de/logout.png
+apps/ROX-Session/Help/Guide/de/mount.png
+apps/ROX-Session/Help/Guide/de/newdir.png
+apps/ROX-Session/Help/Guide/de/shortcut.png
+apps/ROX-Session/Help/Guide/edit.png
+apps/ROX-Session/Help/Guide/help.png
+apps/ROX-Session/Help/Guide/logout.png
+apps/ROX-Session/Help/Guide/mount.png
+apps/ROX-Session/Help/Guide/newdir.png
+apps/ROX-Session/Help/Guide/panel1.png
+apps/ROX-Session/Help/Guide/runaction.png
+apps/ROX-Session/Help/Guide/save.png
+apps/ROX-Session/Help/Guide/shortcut.png
+apps/ROX-Session/Help/Guide/style.css
 apps/ROX-Session/Help/README
 apps/ROX-Session/Login
 apps/ROX-Session/MakeDefault.sh
+apps/ROX-Session/Messages/da.gmo
+apps/ROX-Session/Messages/de.gmo
+apps/ROX-Session/Messages/nl.gmo
 apps/ROX-Session/Options.xml
 apps/ROX-Session/Setup
+apps/ROX-Session/SetupPanel
 apps/ROX-Session/Styles
 apps/ROX-Session/WindowMans
+apps/ROX-Session/images/rox-halt.png
+apps/ROX-Session/images/rox-suspend.png
 bin/rox-session
+@dirrm apps/ROX-Session/images
+@dirrm apps/ROX-Session/Messages
+@dirrm apps/ROX-Session/Help/Guide/de
+@dirrm apps/ROX-Session/Help/Guide
 @dirrm apps/ROX-Session/Help
-@dirrm apps/ROX-Session/FreeBSD-ix86
+@dirrm apps/ROX-Session/%%BINARIES%%
 @dirrm apps/ROX-Session
 @unexec rmdir %D/apps 2>/dev/null || true
