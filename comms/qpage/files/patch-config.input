@@ -1,5 +1,5 @@
---- config.input.orig	Sat Jan 10 00:43:26 2004
-+++ config.input	Sat Jan 10 00:44:05 2004
+--- config.input.orig	Thu Nov  5 07:05:36 1998
++++ config.input	Mon May 17 23:14:53 2004
 @@ -20,7 +20,7 @@
  # See the QuickPage documentation for complete details about
  # the syntax of the configuration file.
@@ -15,6 +15,15 @@
  #
 -SNPP_SERVER_FILE="/etc/qpage.servers"
 +SNPP_SERVER_FILE="%%PREFIX%%/etc/qpage.servers"
+ 
+ 
+ #
+@@ -51,7 +51,7 @@
+ # for that user, QuickPage will assume all group privileges
+ # assigned to that user.
+ #
+-DAEMON_USER="daemon"
++DAEMON_USER="uucp"
  
  
  #

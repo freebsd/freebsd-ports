@@ -7,7 +7,7 @@
 
 PORTNAME=	qpage
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
@@ -37,5 +37,8 @@ post-install:
 		${INSTALL_SCRIPT} -m 640 ${WRKDIR}/${PORTNAME}-${PORTVERSION}/example.cf \
 			${PREFIX}/etc/qpage-example.cf; \
 	fi
+	${MKDIR} /var/spool/${PORTNAME}
+	${CHOWN} uucp:dialer /var/spool/${PORTNAME}
+	${CHMOD} 0775 /var/spool/${PORTNAME}
 
 .include <bsd.port.mk>
