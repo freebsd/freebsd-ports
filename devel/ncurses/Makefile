@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		ncurses
-PORTVERSION=		5.3
+PORTVERSION=		5.4
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ncurses
@@ -28,6 +28,10 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--with-profile --with-shared --without-debug \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-safe-sprintf --disable-root-environ	#--enable-widec
+# needed by devel/py-ncurses port
+.if defined(WITH_TRACE)
+CONFIGURE_ARGS+=	--with-trace
+.endif
 
 CONFIGURE_ENV=	gnat_exists="no" \
 		ac_cv_path_LDCONFIG="${LDCONFIG} -m ${PREFIX}/lib"
@@ -65,75 +69,75 @@ MAN3=	COLOR_PAIR.3x PAIR_NUMBER.3x _nc_tracebits.3x _traceattr.3x \
 	del_curterm.3x del_panel.3x delay_output.3x delch.3x deleteln.3x \
 	delscreen.3x delwin.3x derwin.3x doupdate.3x dup_field.3x dupwin.3x \
 	dynamic_field_info.3x echo.3x echo_wchar.3x echochar.3x endwin.3x \
-	erase.3x erasechar.3x erasewchar.3x field_arg.3x field_back.3x \
-	field_buffer.3x field_count.3x field_fore.3x field_index.3x \
-	field_info.3x field_just.3x field_opts.3x field_opts_off.3x \
-	field_opts_on.3x field_pad.3x field_status.3x field_type.3x \
-	field_userptr.3x filter.3x flash.3x flushinp.3x form.3x form_cursor.3x \
-	form_data.3x form_driver.3x form_field.3x form_field_attributes.3x \
-	form_field_buffer.3x form_field_info.3x form_field_just.3x \
-	form_field_new.3x form_field_opts.3x form_field_userptr.3x \
-	form_field_validation.3x form_fields.3x form_fieldtype.3x form_hook.3x \
-	form_new.3x form_new_page.3x form_opts.3x form_opts_off.3x \
-	form_opts_on.3x form_page.3x form_post.3x form_request_by_name.3x \
-	form_request_name.3x form_requestname.3x form_sub.3x form_userptr.3x \
-	form_win.3x free_field.3x free_fieldtype.3x free_form.3x free_item.3x \
-	free_menu.3x get_wch.3x get_wstr.3x getbegx.3x getbegy.3x getbegyx.3x \
-	getbkgd.3x getbkgrnd.3x getcchar.3x getch.3x getcurx.3x getcury.3x \
-	getmaxx.3x getmaxy.3x getmaxyx.3x getmouse.3x getn_wstr.3x getnstr.3x \
-	getparx.3x getpary.3x getparyx.3x getstr.3x getsyx.3x getwin.3x \
-	getyx.3x halfdelay.3x has_colors.3x has_ic.3x has_il.3x has_key.3x \
-	hide_panel.3x hline.3x hline_set.3x idcok.3x idlok.3x immedok.3x \
-	in_wch.3x in_wchnstr.3x in_wchstr.3x inch.3x inchnstr.3x inchstr.3x \
-	init_color.3x init_pair.3x initscr.3x innstr.3x innwstr.3x \
-	ins_nwstr.3x ins_wch.3x ins_wstr.3x insch.3x insdelln.3x insertln.3x \
-	insnstr.3x insstr.3x instr.3x intrflush.3x inwstr.3x is_linetouched.3x \
-	is_term_resized.3x is_wintouched.3x isendwin.3x item_count.3x \
-	item_description.3x item_index.3x item_name.3x item_opts.3x \
-	item_opts_off.3x item_opts_on.3x item_userptr.3x item_value.3x \
-	item_visible.3x key_name.3x keybound.3x keyname.3x keyok.3x keypad.3x \
-	killchar.3x killwchar.3x leaveok.3x link_field.3x link_fieldtype.3x \
-	longname.3x mcprint.3x menu.3x menu_attributes.3x menu_back.3x \
-	menu_cursor.3x menu_driver.3x menu_fore.3x menu_format.3x menu_grey.3x \
-	menu_hook.3x menu_items.3x menu_mark.3x menu_new.3x menu_opts.3x \
-	menu_opts_off.3x menu_opts_on.3x menu_pad.3x menu_pattern.3x \
-	menu_post.3x menu_request_by_name.3x menu_request_name.3x \
-	menu_requestname.3x menu_spacing.3x menu_sub.3x menu_userptr.3x \
-	menu_win.3x meta.3x mitem_current.3x mitem_name.3x mitem_new.3x \
-	mitem_opts.3x mitem_userptr.3x mitem_value.3x mitem_visible.3x \
-	mouse_trafo.3x mouseinterval.3x mousemask.3x move.3x move_field.3x \
-	move_panel.3x mvadd_wch.3x mvadd_wchnstr.3x mvadd_wchstr.3x mvaddch.3x \
-	mvaddchnstr.3x mvaddchstr.3x mvaddnstr.3x mvaddnwstr.3x mvaddstr.3x \
-	mvaddwstr.3x mvchgat.3x mvcur.3x mvdelch.3x mvderwin.3x mvget_wch.3x \
-	mvget_wstr.3x mvgetch.3x mvgetn_wstr.3x mvgetnstr.3x mvgetstr.3x \
-	mvhline.3x mvhline_set.3x mvin_wch.3x mvin_wchnstr.3x mvin_wchstr.3x \
-	mvinch.3x mvinchnstr.3x mvinchstr.3x mvinnstr.3x mvinnwstr.3x \
-	mvins_nwstr.3x mvins_wch.3x mvins_wstr.3x mvinsch.3x mvinsnstr.3x \
-	mvinsstr.3x mvinstr.3x mvinwstr.3x mvprintw.3x mvscanw.3x mvvline.3x \
-	mvvline_set.3x mvwadd_wch.3x mvwadd_wchnstr.3x mvwadd_wchstr.3x \
-	mvwaddch.3x mvwaddchnstr.3x mvwaddchstr.3x mvwaddnstr.3x \
-	mvwaddnwstr.3x mvwaddstr.3x mvwaddwstr.3x mvwchgat.3x mvwdelch.3x \
-	mvwget_wch.3x mvwget_wstr.3x mvwgetch.3x mvwgetn_wstr.3x mvwgetnstr.3x \
-	mvwgetstr.3x mvwhline.3x mvwhline_set.3x mvwin.3x mvwin_wch.3x \
-	mvwin_wchnstr.3x mvwin_wchstr.3x mvwinch.3x mvwinchnstr.3x \
-	mvwinchstr.3x mvwinnstr.3x mvwinnwstr.3x mvwins_nwstr.3x mvwins_wch.3x \
-	mvwins_wstr.3x mvwinsch.3x mvwinsnstr.3x mvwinsstr.3x mvwinstr.3x \
-	mvwinwstr.3x mvwprintw.3x mvwscanw.3x mvwvline.3x mvwvline_set.3x \
-	napms.3x ncurses.3x new_field.3x new_fieldtype.3x new_form.3x \
-	new_item.3x new_menu.3x new_page.3x new_panel.3x newpad.3x newterm.3x \
-	newwin.3x nl.3x nocbreak.3x nodelay.3x noecho.3x nonl.3x noqiflush.3x \
-	noraw.3x notimeout.3x overlay.3x overwrite.3x pair_content.3x panel.3x \
-	panel_above.3x panel_below.3x panel_hidden.3x panel_userptr.3x \
-	panel_window.3x pechochar.3x pnoutrefresh.3x pos_form_cursor.3x \
-	pos_menu_cursor.3x post_form.3x post_menu.3x prefresh.3x printw.3x \
-	putp.3x putwin.3x qiflush.3x raw.3x redrawwin.3x refresh.3x \
-	replace_panel.3x reset_prog_mode.3x reset_shell_mode.3x resetty.3x \
-	resize_term.3x resizeterm.3x restartterm.3x ripoffline.3x savetty.3x \
-	scale_form.3x scale_menu.3x scanw.3x scr_dump.3x scr_init.3x \
-	scr_restore.3x scr_set.3x scrl.3x scroll.3x scrollok.3x \
-	set_current_field.3x set_current_item.3x set_curterm.3x \
-	set_field_back.3x set_field_buffer.3x set_field_fore.3x \
-	set_field_init.3x set_field_just.3x set_field_opts.3x set_field_pad.3x \
+	erase.3x erasechar.3x erasewchar.3x fgetu8.3 field_arg.3x \
+	field_back.3x field_buffer.3x field_count.3x field_fore.3x \
+	field_index.3x field_info.3x field_just.3x field_opts.3x \
+	field_opts_off.3x field_opts_on.3x field_pad.3x field_status.3x \
+	field_type.3x field_userptr.3x filter.3x flash.3x flushinp.3x form.3x \
+	form_cursor.3x form_data.3x form_driver.3x form_field.3x \
+	form_field_attributes.3x form_field_buffer.3x form_field_info.3x \
+	form_field_just.3x form_field_new.3x form_field_opts.3x \
+	form_field_userptr.3x form_field_validation.3x form_fields.3x \
+	form_fieldtype.3x form_hook.3x form_new.3x form_new_page.3x \
+	form_opts.3x form_opts_off.3x form_opts_on.3x form_page.3x \
+	form_post.3x form_request_by_name.3x form_request_name.3x \
+	form_requestname.3x form_sub.3x form_userptr.3x form_win.3x \
+	free_field.3x free_fieldtype.3x free_form.3x free_item.3x free_menu.3x \
+	get_wch.3x get_wstr.3x getbegyx.3x getbkgd.3x getbkgrnd.3x getcchar.3x \
+	getch.3x getmaxyx.3x getmouse.3x getn_wstr.3x getnstr.3x getparyx.3x \
+	getstr.3x getsyx.3x getwin.3x getyx.3x halfdelay.3x has_colors.3x \
+	has_ic.3x has_il.3x has_key.3x hide_panel.3x hline.3x hline_set.3x \
+	idcok.3x idlok.3x immedok.3x in_wch.3x in_wchnstr.3x in_wchstr.3x \
+	inch.3x inchnstr.3x inchstr.3x init_color.3x init_pair.3x initscr.3x \
+	innstr.3x innwstr.3x ins_nwstr.3x ins_wch.3x ins_wstr.3x insch.3x \
+	insdelln.3x insertln.3x insnstr.3x insstr.3x instr.3x intrflush.3x \
+	inwstr.3x is_linetouched.3x is_term_resized.3x is_wintouched.3x \
+	isendwin.3x item_count.3x item_description.3x item_index.3x \
+	item_name.3x item_opts.3x item_opts_off.3x item_opts_on.3x \
+	item_userptr.3x item_value.3x item_visible.3x key_name.3x keybound.3x \
+	keyname.3x keyok.3x keypad.3x killchar.3x killwchar.3x leaveok.3x \
+	link_field.3x link_fieldtype.3x longname.3x mcprint.3x menu.3x \
+	menu_attributes.3x menu_back.3x menu_cursor.3x menu_driver.3x \
+	menu_fore.3x menu_format.3x menu_grey.3x menu_hook.3x menu_items.3x \
+	menu_mark.3x menu_new.3x menu_opts.3x menu_opts_off.3x menu_opts_on.3x \
+	menu_pad.3x menu_pattern.3x menu_post.3x menu_request_by_name.3x \
+	menu_request_name.3x menu_requestname.3x menu_spacing.3x menu_sub.3x \
+	menu_userptr.3x menu_win.3x meta.3x mitem_current.3x mitem_name.3x \
+	mitem_new.3x mitem_opts.3x mitem_userptr.3x mitem_value.3x \
+	mitem_visible.3x mouse_trafo.3x mouseinterval.3x mousemask.3x move.3x \
+	move_field.3x move_panel.3x mvadd_wch.3x mvadd_wchnstr.3x \
+	mvadd_wchstr.3x mvaddch.3x mvaddchnstr.3x mvaddchstr.3x mvaddnstr.3x \
+	mvaddnwstr.3x mvaddstr.3x mvaddwstr.3x mvchgat.3x mvcur.3x mvdelch.3x \
+	mvderwin.3x mvget_wch.3x mvget_wstr.3x mvgetch.3x mvgetn_wstr.3x \
+	mvgetnstr.3x mvgetstr.3x mvhline.3x mvhline_set.3x mvin_wch.3x \
+	mvin_wchnstr.3x mvin_wchstr.3x mvinch.3x mvinchnstr.3x mvinchstr.3x \
+	mvinnstr.3x mvinnwstr.3x mvins_nwstr.3x mvins_wch.3x mvins_wstr.3x \
+	mvinsch.3x mvinsnstr.3x mvinsstr.3x mvinstr.3x mvinwstr.3x mvprintw.3x \
+	mvscanw.3x mvvline.3x mvvline_set.3x mvwadd_wch.3x mvwadd_wchnstr.3x \
+	mvwadd_wchstr.3x mvwaddch.3x mvwaddchnstr.3x mvwaddchstr.3x \
+	mvwaddnstr.3x mvwaddnwstr.3x mvwaddstr.3x mvwaddwstr.3x mvwchgat.3x \
+	mvwdelch.3x mvwget_wch.3x mvwget_wstr.3x mvwgetch.3x mvwgetn_wstr.3x \
+	mvwgetnstr.3x mvwgetstr.3x mvwhline.3x mvwhline_set.3x mvwin.3x \
+	mvwin_wch.3x mvwin_wchnstr.3x mvwin_wchstr.3x mvwinch.3x \
+	mvwinchnstr.3x mvwinchstr.3x mvwinnstr.3x mvwinnwstr.3x \
+	mvwins_nwstr.3x mvwins_wch.3x mvwins_wstr.3x mvwinsch.3x mvwinsnstr.3x \
+	mvwinsstr.3x mvwinstr.3x mvwinwstr.3x mvwprintw.3x mvwscanw.3x \
+	mvwvline.3x mvwvline_set.3x napms.3x ncurses.3x new_field.3x \
+	new_fieldtype.3x new_form.3x new_item.3x new_menu.3x new_page.3x \
+	new_panel.3x newpad.3x newterm.3x newwin.3x nl.3x nocbreak.3x \
+	nodelay.3x noecho.3x nonl.3x noqiflush.3x noraw.3x notimeout.3x \
+	overlay.3x overwrite.3x pair_content.3x panel.3x panel_above.3x \
+	panel_below.3x panel_hidden.3x panel_userptr.3x panel_window.3x \
+	pechochar.3x pnoutrefresh.3x pos_form_cursor.3x pos_menu_cursor.3x \
+	post_form.3x post_menu.3x prefresh.3x printw.3x putp.3x putwin.3x \
+	qiflush.3x raw.3x redrawwin.3x refresh.3x replace_panel.3x \
+	reset_prog_mode.3x reset_shell_mode.3x resetty.3x resize_term.3x \
+	resizeterm.3x restartterm.3x ripoffline.3x savetty.3x scale_form.3x \
+	scale_menu.3x scanw.3x scr_dump.3x scr_init.3x scr_restore.3x \
+	scr_set.3x scrl.3x scroll.3x scrollok.3x set_current_field.3x \
+	set_current_item.3x set_curterm.3x set_field_back.3x \
+	set_field_buffer.3x set_field_fore.3x set_field_init.3x \
+	set_field_just.3x set_field_opts.3x set_field_pad.3x \
 	set_field_status.3x set_field_term.3x set_field_type.3x \
 	set_field_userptr.3x set_fieldtype_arg.3x set_fieldtype_choice.3x \
 	set_form_fields.3x set_form_init.3x set_form_opts.3x set_form_page.3x \
@@ -174,9 +178,13 @@ MAN3=	COLOR_PAIR.3x PAIR_NUMBER.3x _nc_tracebits.3x _traceattr.3x \
 	wnoutrefresh.3x wprintw.3x wredrawln.3x wrefresh.3x wresize.3x \
 	wscanw.3x wscrl.3x wsetscrreg.3x wstandend.3x wstandout.3x \
 	wsyncdown.3x wsyncup.3x wtimeout.3x wtouchln.3x wunctrl.3x wvline.3x \
-	wvline_set.3x
+	wvline_set.3x field_init.3x field_term.3x form_init.3x form_term.3x \
+	fputu8.3 item_init.3x item_term.3x key_defined.3x menu_init.3x \
+	menu_term.3x pecho_wchar.3x sgetu8.3 sputu8.3
 MAN5=	term.5 terminfo.5
 MAN7=	term.7
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		ANNOUNCE INSTALL NEWS README TO-DO doc/html/announce.html \
 		doc/hackguide.doc doc/html/hackguide.html \
@@ -193,6 +201,16 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 		cursesmain.cc cursesp.cc cursesp.h cursesw.cc \
 		cursesw.h cursslk.cc cursslk.h demo.cc etip.h \
 		internal.h
+
+pre-configure:
+	${MKDIR} ${WRKDIR}
+	${ECHO_CMD} \
+	"Warning:  source code for this version has not been reviewed!" \
+		> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} 
+	@${ECHO_CMD} Waiting ten seconds--press control-C to cancel build.
+	@sleep 10
 
 post-install:
 	@ ${GZIP_CMD} ${PREFIX}/man/man1/tack.1
