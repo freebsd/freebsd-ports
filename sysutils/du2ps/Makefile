@@ -7,8 +7,9 @@
 
 PORTNAME=	du2ps
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.shobi-u.ac.jp/~tnagae/src/ps-c/du2ps/du2ps-2.1/
+MASTER_SITES=	http://www.research.co.jp/software/du2ps/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mistral@imasy.or.jp
