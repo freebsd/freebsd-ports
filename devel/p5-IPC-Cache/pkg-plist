@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Cache.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Cache/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Cache
