@@ -1,5 +1,11 @@
 --- msdosfs_vfsops.c.orig	Mon Apr 10 04:32:37 2000
-+++ msdosfs_vfsops.c	Wed Oct  4 00:21:29 2000
++++ msdosfs_vfsops.c	Fri Nov 16 19:28:30 2001
+@@ -1,4 +1,4 @@
+-/* $FreeBSD: /tmp/pcvs/ports/japanese/msdosfs/patches.4/Attic/patch-af,v 1.2 2001-11-19 14:36:57 sada Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/japanese/msdosfs/patches.4/Attic/patch-af,v 1.2 2001-11-19 14:36:57 sada Exp $ */
+ /*	$NetBSD: msdosfs_vfsops.c,v 1.51 1997/11/17 15:36:58 ws Exp $	*/
+ 
+ /*-
 @@ -48,11 +48,6 @@
   * October 1992
   */
@@ -31,7 +37,26 @@
  #if 1 /*def PC98*/
  /*
   * XXX - The boot signature formatted by NEC PC-98 DOS looks like a
-@@ -635,7 +629,7 @@
+@@ -184,7 +178,8 @@
+ 	bzero((char *)mp, (u_long)sizeof(struct mount));
+ 	mp->mnt_op = &msdosfs_vfsops;
+ 	mp->mnt_flag = 0;
+-	LIST_INIT(&mp->mnt_vnodelist);
++	TAILQ_INIT(&mp->mnt_nvnodelist);
++	TAILQ_INIT(&mp->mnt_reservedvnlist);
+ 
+ 	args.flags = 0;
+ 	args.uid = 0;
+@@ -259,7 +254,7 @@
+ 			flags = WRITECLOSE;
+ 			if (mp->mnt_flag & MNT_FORCE)
+ 				flags |= FORCECLOSE;
+-			error = vflush(mp, NULLVP, flags);
++			error = vflush(mp, 0, flags);
+ 		}
+ 		if (!error && (mp->mnt_flag & MNT_RELOAD))
+ 			/* not yet implemented */
+@@ -635,7 +630,7 @@
  	if (FAT12(pmp))
  		pmp->pm_fatblocksize = 3 * pmp->pm_BytesPerSec;
  	else
@@ -40,7 +65,34 @@
  
  	pmp->pm_fatblocksec = pmp->pm_fatblocksize / DEV_BSIZE;
  	pmp->pm_bnshift = ffs(DEV_BSIZE) - 1;
-@@ -987,8 +981,8 @@
+@@ -761,7 +756,7 @@
+ 	flags = 0;
+ 	if (mntflags & MNT_FORCE)
+ 		flags |= FORCECLOSE;
+-	error = vflush(mp, NULLVP, flags);
++	error = vflush(mp, 0, flags);
+ 	if (error)
+ 		return error;
+ 	pmp = VFSTOMSDOSFS(mp);
+@@ -871,7 +866,7 @@
+ 	 */
+ 	simple_lock(&mntvnode_slock);
+ loop:
+-	for (vp = mp->mnt_vnodelist.lh_first; vp != NULL; vp = nvp) {
++	for (vp = TAILQ_FIRST(&mp->mnt_nvnodelist); vp != NULL; vp = nvp) {
+ 		/*
+ 		 * If the vnode that we are about to sync is no longer
+ 		 * associated with this mount point, start over.
+@@ -880,7 +875,7 @@
+ 			goto loop;
+ 
+ 		simple_lock(&vp->v_interlock);
+-		nvp = vp->v_mntvnodes.le_next;
++		nvp = TAILQ_NEXT(vp, v_nmntvnodes);
+ 		dep = VTODE(vp);
+ 		if (vp->v_type == VNON ||
+ 		    ((dep->de_flag &
+@@ -987,8 +982,8 @@
  	msdosfs_checkexp,
  	msdosfs_vptofh,
  	msdosfs_init,
