@@ -1,47 +1,21 @@
 *** pine/makefile.bsf.orig	Tue Sep 10 14:39:21 2002
---- pine/makefile.bsf	Tue Nov 26 03:26:41 2002
+--- pine/makefile.bsf	Wed Jan 15 23:20:51 2003
 ***************
-*** 50,56 ****
-  PROFILE=     # -pg
-  DEBUG=       -g -DDEBUG -DDEBUGJOURNAL
+*** 67,74 ****
+               `cat $(CCLIENTDIR)/LDFLAGS`
   
-! CCLIENTDIR=  ../c-client
-  PICODIR=     ../pico
-  
-  # Only need to uncomment next two lines if you run make from this directory
---- 50,56 ----
-  PROFILE=     # -pg
-  DEBUG=       -g -DDEBUG -DDEBUGJOURNAL
-  
-! CCLIENTDIR=  $(PREFIX)/include/c-client
-  PICODIR=     ../pico
-  
-  # Only need to uncomment next two lines if you run make from this directory
-***************
-*** 61,73 ****
-  LDAPOFILES=   addrbook.o adrbkcmd.o args.o bldaddr.o init.o \
-  	      mailview.o other.o pine.o strings.o takeaddr.o
-  
-! STDLIBS=     -ltermlib
-! LOCLIBS=     $(PICODIR)/libpico.a $(CCLIENTDIR)/c-client.a
-! LIBS=        $(LOCLIBS) $(LDAPLIBS) $(STDLIBS) \
-!              `cat $(CCLIENTDIR)/LDFLAGS`
-  
-! STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
+  STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
 ! CFLAGS=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
-  	     $(STDCFLAGS)
+! 	     $(STDCFLAGS)
   
   OFILES=	addrbook.o adrbkcmd.o adrbklib.o args.o bldaddr.o context.o filter.o \
---- 61,72 ----
-  LDAPOFILES=   addrbook.o adrbkcmd.o args.o bldaddr.o init.o \
-  	      mailview.o other.o pine.o strings.o takeaddr.o
+  	folder.o help.o helptext.o imap.o init.o mailcap.o mailcmd.o \
+--- 67,74 ----
+               `cat $(CCLIENTDIR)/LDFLAGS`
   
-! STDLIBS=     -ltermlib -lpam -L$(PREFIX)/lib -lc-client4 $(SSL_LINK)
-! LOCLIBS=     $(PICODIR)/libpico.a
-! LIBS=        $(EXTRALIBES) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
-  
-! STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE -I/usr/local/include -I$(PREFIX)/include/c-client
+  STDCFLAGS=   -DBSDI -DSYSTYPE=\"BSF\" -DMOUSE
 ! CFLAGS+=      $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(LDAPCFLAGS) \
-  	     $(STDCFLAGS)
+! 	     $(STDCFLAGS) -static
   
   OFILES=	addrbook.o adrbkcmd.o adrbklib.o args.o bldaddr.o context.o filter.o \
+  	folder.o help.o helptext.o imap.o init.o mailcap.o mailcmd.o \

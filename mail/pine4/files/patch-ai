@@ -1,25 +1,6 @@
 *** pine/send.c.Dist	Mon Aug 27 10:54:33 2001
 --- pine/send.c	Fri Sep 28 00:19:47 2001
 ***************
-*** 47,54 ****
-   ====*/
-  
-  #include "headers.h"
-! #include "../c-client/smtp.h"
-! #include "../c-client/nntp.h"
-  
-  
-  #ifndef TCPSTREAM
---- 47,54 ----
-   ====*/
-  
-  #include "headers.h"
-! #include "c-client/smtp.h"
-! #include "c-client/nntp.h"
-  
-  
-  #ifndef TCPSTREAM
-***************
 *** 7689,7701 ****
   		body->subtype = cpystr("octet-stream");
   	    }

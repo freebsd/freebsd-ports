@@ -1,14 +1,5 @@
 --- pine/init.c.orig	Wed Nov 29 09:57:56 2000
 +++ pine/init.c	Mon Dec 18 02:40:53 2000
-@@ -65,7 +65,7 @@
- 
- 
- #include "headers.h"
--#include "../c-client/imap4r1.h"  /* for LEVELSTATUS() */
-+#include "c-client/imap4r1.h"  /* for LEVELSTATUS() */
- 
- 
- typedef enum {Sapling, Seedling, Seasoned} FeatureLevel;
 @@ -370,7 +370,7 @@
  
  /*----------------------------------------------------------------------
