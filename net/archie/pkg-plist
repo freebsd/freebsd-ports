@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/archie
+man/man1/archie.1

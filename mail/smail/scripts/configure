@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# $Id:$
+
+sed <${FILESDIR}/EDITME >${WRKSRC}/conf/EDITME s+!!PREFIX!!+$PREFIX+g
+sed <${FILESDIR}/freebsd2.0 >${WRKSRC}/conf/os/freebsd2.0 s+!!PREFIX!!+$PREFIX+g
