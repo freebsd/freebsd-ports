@@ -1,4 +1,4 @@
+bin/lasergnu
 bin/gnuplot
 bin/gnuplot_x11
-bin/lasergnu
 share/gnuplot.gih
