@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.12.1
+PORTVERSION=	1.13
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-1.1201
+DISTNAME=	${PORTNAME}-1.13
 
 MAINTAINER=	dsh@vlink.ru
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
-            	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
 		${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container
