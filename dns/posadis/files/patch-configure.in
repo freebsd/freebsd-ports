@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Oct  4 12:52:42 2004
++++ configure.in	Mon Oct  4 12:52:54 2004
+@@ -27,8 +27,6 @@ AC_ENABLE_STATIC(no)
+ 
+ AC_LIBLTDL_INSTALLABLE
+ 
+-AC_CONFIG_SUBDIRS(libltdl)
+-
+ AC_SUBST(LTDLINCL)
+ AC_SUBST(LIBLTDL)
+ 

@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	posadis
-PORTVERSION=	0.60.1
-PORTREVISION=	2
+PORTVERSION=	0.60.5
 CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sergei@FreeBSD.org
-COMMENT=	"Domain Name Server (DNS) implementation"
+COMMENT=	Domain Name Server (DNS) implementation
 
 LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
 
+USE_AUTOCONF_VER=	259
+USE_INC_LIBTOOL_VER=	15
 USE_LIBLTDL=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
 CONFIGURE_ARGS=	--enable-fam
@@ -29,22 +33,11 @@ CONFIGURE_ARGS=	--disable-fam
 PLIST_SUB=	FAM="@comment "
 .endif
 
-USE_LIBTOOL_VER=	13
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
-
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
 MAN1=		getzone.1 posadis.1 posadis-getroots.1 posask.1 poshost.1
 MAN5=		posadisrc.5
 DOCS=		AUTHORS ChangeLog README TODO
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if !defined(NOPORTDOCS)
 post-install:
@@ -52,4 +45,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

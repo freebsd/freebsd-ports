@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Oct  4 13:52:11 2004
++++ Makefile.in	Mon Oct  4 13:52:19 2004
+@@ -89,7 +89,7 @@ poslib_srvcxxflags = @poslib_srvcxxflags
+ poslib_srvldflags = @poslib_srvldflags@
+ poslib_version = @poslib_version@
+ 
+-SUBDIRS = libltdl pos6 tools
++SUBDIRS = pos6 tools
+ 
+ EXTRA_DIST = pos6.kdevprj AUTHORS COPYING ChangeLog INSTALL README TODO              posadis-config.in posadis.1 posadisrc.5 posadisrc              zn.acdam.com.example db.acdam.net.example
+ 
