@@ -14,7 +14,6 @@ MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 
 MAINTAINER?=		jim@FreeBSD.org
 
-BUILD_DEPENDS=		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
 
 # This port has a slave port japanese/xchat.  Do not carelessly overwrite

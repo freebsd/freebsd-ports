@@ -15,8 +15,6 @@ DISTNAME=	bug-buddy-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
