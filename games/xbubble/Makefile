@@ -4,25 +4,24 @@
 #
 # $FreeBSD$
 
-PORTNAME=		xbubble
-PORTVERSION=		0.2
-PORTREVISION=	1
-CATEGORIES=		games
-MASTER_SITES=		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTNAME=	xbubble
+PORTVERSION=	0.5.8
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.gnu.org/pub/savannah/files/xbubble/
 
-MAINTAINER=		klaus.goger@reflex.at
-COMMENT=	Bust-A-Move/Puzzle Bubble clone
+MAINTAINER=	klaus.goger@reflex.at
+COMMENT=	Puzzle Bobble clone for Unix/X11 platforms
 
-LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-MAN6=			xbubble.6
+MAN6=		xbubble.6
 
-USE_X_PREFIX=		Yes
-GNU_CONFIGURE=		Yes
-USE_GMAKE=		Yes
+USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
 
 .include <bsd.port.mk>
