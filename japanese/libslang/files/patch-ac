@@ -1,15 +1,14 @@
---- autoconf/Makefile.in.orig	Wed Aug 30 19:43:10 2000
-+++ autoconf/Makefile.in	Fri Sep  1 04:03:02 2000
-@@ -10,7 +10,7 @@
+--- autoconf/Makefile.in.orig	Sun Feb 24 19:03:54 2002
++++ autoconf/Makefile.in	Sun Feb 24 19:07:01 2002
+@@ -10,7 +10,6 @@
  	cd src; $(MAKE) all
  elf:
  	cd src; $(MAKE) elf
 -	@echo Use make install-elf to install it.
-+
  runtests:
- 	cd src/test; $(MAKE)
+ 	cd src; $(MAKE) runtests
  demos:
-@@ -23,15 +23,8 @@
+@@ -23,15 +22,8 @@
  	cd src; $(MAKE) install
  install-elf:
  	cd src; $(MAKE) install-elf
