@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	caudium-devel
-PORTVERSION=	1.3.18-20030711
+PORTVERSION=	1.3.18.20030711
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.oav.net/caudium/source/ \
 		ftp://ftp.caudium.net/caudium/source/ \
@@ -14,7 +15,7 @@ MASTER_SITES=	ftp://ftp.oav.net/caudium/source/ \
 		http://grendel.firewall.com/caudium-pkg/ \
 		ftp://ftp.oav.net/caudium/source/old/ \
 		ftp://ftp.caudium.net/caudium/snapshot/1.3/
-DISTNAME=	caudium-${PORTVERSION}-cvs
+DISTNAME=	caudium-${PORTVERSION:S/.20/-20/}-cvs
 
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base (development branch)
