@@ -14,7 +14,7 @@ or reboot.
 
 NOTE: The musicpd server is pretty useless without a
       client. You might want to install one of the following
-      ports, too: traymp, mpc or kmp.
+      ports, too: mpc, glurp, gmpc or kmp
 
 ************************************************************
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.10.3
+PORTVERSION=	0.11.0
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +25,7 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		VORBIS "Support for OGG Vorbis Audio" on \
 		WAV "Support for WAV Audio" on \
 		AAC "Support for MP4/AAC Audio" off \
+		MOD "Support for MOD Audio" off \
 		ICONV "Support for international characters" on \
 		IPV6 "Support for IPV6" on
 
@@ -35,10 +36,6 @@ RC_SUBR?=	${DESTDIR}/etc/rc.subr
 .else
 USE_RC_SUBR=	yes
 .endif
-
-#.if ${OSVERSION} < 500000
-#EXTRA_PATCHES+=	${PATCHDIR}/src-mp4ff::mp4ff_int_types.h.patch
-#.endif
 
 .ifdef(WITHOUT_FLAC)
 CONFIGURE_ARGS+=--disable-flac
@@ -62,6 +59,12 @@ LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libaudiofile
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
+.endif
+
+.ifdef(WITH_MOD)
+LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+.else
+CONFIGURE_ARGS+=--disable-mod
 .endif
 
 .ifdef(WITHOUT_ICONV)
@@ -104,16 +107,5 @@ do-install:
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-post-install:
-	@${ECHO_CMD}
-	@${ECHO_CMD} -- IMPORTANT NOTICE ----------------------------------
-	@${ECHO_CMD} If you upgraded from a pre-0.10.0 release, you have to
-	@${ECHO_CMD} rebuild your index now by running
-	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd.sh stop
-	@${ECHO_CMD} ${PREFIX}/bin/mpd --create-db ${PREFIX}/etc/mpd.conf
-	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd.sh start
-	@${ECHO_CMD} ------------------------------------------------------
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>
