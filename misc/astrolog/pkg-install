@@ -1,0 +1,6 @@
+#!/bin/sh
+# installation script for Wnn4.2
+if [ "$2" != "POST-INSTALL" ]; then
+  exit 0
+fi
+echo "See the file ${PKG_PREFIX}/share/astrolog/Helpfile.500 for help."

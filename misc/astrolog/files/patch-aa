@@ -1,0 +1,33 @@
+*** ./Makefile.org	Mon Jul 31 14:01:23 1995
+--- ./Makefile	Mon Jul 31 14:40:51 1995
+***************
+*** 22,31 ****
+   charts0.o charts1.o charts2.o charts3.o intrpret.o\
+   xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
+  # If you don't have X windows, delete the "-lX11" part from the line below:
+! LIBS = -lm -lX11
+! CFLAGS = -O
+  
+  astrolog:: $(OBJ)
+	cc -o $(NAME) $(OBJ) $(LIBS)
+  	strip $(NAME)
+  #
+--- 22,39 ----
+   charts0.o charts1.o charts2.o charts3.o intrpret.o\
+   xdata.o xgeneral.o xdevice.o xcharts0.o xcharts1.o xcharts2.o xscreen.o
+  # If you don't have X windows, delete the "-lX11" part from the line below:
+! LIBS = -lm -L/usr/X11R6/lib -lX11
+! CFLAGS = -O -I/usr/X11R6/include
+  
++ all:	astrolog
++ 
+  astrolog:: $(OBJ)
+	cc -o $(NAME) -I/usr/X11R6/include $(OBJ) $(LIBS)
+  	strip $(NAME)
++ 
++ install:
++ 	/usr/bin/install -c -s astrolog ${PREFIX}/bin
++ 	-mkdir -p ${PREFIX}/share/astrolog
++ 	/usr/bin/install -c Helpfile.500 ${PREFIX}/share/astrolog
++ 	@echo "See the file ${PREFIX}/share/astrolog/Helpfile.500 for help.
+  #
