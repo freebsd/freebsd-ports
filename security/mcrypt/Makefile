@@ -11,14 +11,15 @@ PORTNAME=	mcrypt
 PORTVERSION=	2.6.4
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
-		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
-		ftp://ftp.ntua.gr/pub/security/mcrypt/
+MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
+		ftp://ftp.ntua.gr/pub/security/mcrypt/attic/ \
+		ftp://mcrypt.hellug.gr/pub/mcrypt/attic/
+# distfile on sourceforge is uncompressed
+# MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+# MASTER_SITE_SUBDIR=	mcrypt
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
-
-BROKEN=		Does not configure
 
 BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
@@ -28,7 +29,7 @@ LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lintl -lltdl"
+			LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 GNU_CONFIGURE=		yes
 DOCS=			FORMAT magic
