@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	HTML-Strip
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for strip HTML tag
 
 PERL_CONFIGURE=	yes
@@ -21,8 +21,8 @@ MAN3=		HTML::Strip.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500800
-IGNORE=	This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+.if ${PERL_LEVEL} < 500600
+IGNORE=	The port needs at least perl 5.6. Install lang/perl5.8 or lang/perl5 and try again
 .endif
 
 .include <bsd.port.post.mk>
