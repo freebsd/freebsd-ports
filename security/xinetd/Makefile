@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.xinetd.org/
 
 MAINTAINER=	vanilla@FreeBSD.org
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	build
 CONFIGURE_ARGS+=	--with-loadavg --with-libwrap
