@@ -29,6 +29,12 @@ CONFIGURE_ARGS=	--enable-mpqc
 USE_AUTOCONF=	yes
 USE_AUTOCONF_VER=	253
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 pre-configure:
 	@cd ${WRKDIR}/${DISTNAME} ; ${AUTOCONF}
 
@@ -39,4 +45,4 @@ pre-patch:
 pre-build:
 	@${REINPLACE_CMD} -e 's|f2c.h|g2c.h|g;' ${WRKSRC}/miniMOPAC/*.c
 	@${REINPLACE_CMD} -e 's|f2c.h|g2c.h|g;' ${WRKSRC}/src/common/qm1e_mopac.cpp
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

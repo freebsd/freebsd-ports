@@ -20,4 +20,10 @@ LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20	\
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

@@ -54,6 +54,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 .if ${ARCH} != "i386"
 PLIST_SUB+=	DIVX='@comment '
 .else
