@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	lwm
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/james/
+MASTER_SITES=	http://www.jfc.org.uk/files/lwm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight window manager
 
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
+
+MAN1=		lwm.1
+PORTDOCS=	AUTHORS BUGS ChangeLog README TODO
+PLIST_FILES=	bin/lwm
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS BUGS ChangeLog README TODO
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
