@@ -1,11 +1,11 @@
---- ddd/Makefile.in.orig	Wed Oct 22 15:29:49 2003
-+++ ddd/Makefile.in	Fri Feb 27 13:33:02 2004
-@@ -2170,7 +2170,7 @@
- 	  && $(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) \
- 	       `echo $< | sed 's,.*/,,'`
- 
+--- ddd/Makefile.in.orig	Thu Aug 19 20:39:55 2004
++++ ddd/Makefile.in	Thu Aug 19 20:40:10 2004
+@@ -469,7 +469,7 @@
+ LPR = @LPR@
+ LTLIBOBJS = @LTLIBOBJS@
+ M4 = @M4@
 -MAKEINFO = @MAKEINFO@
 +MAKEINFO = @MAKEINFO@ --no-split
- TEXI2DVI = texi2dvi
- 
- uninstall-info-am:
+ MINIMAL_TOC = @MINIMAL_TOC@
+ NICKNAME = @NICKNAME@
+ OBJEXT = @OBJEXT@
