@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calamaris
-PORTVERSION=	2.57
+PORTVERSION=	2.58
 CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/tools/squid/calamaris/
 
