@@ -303,10 +303,6 @@ if [ "${error}" = 0 ]; then
   fi
 
   if [ "${error}" = 0 ]; then
-    if [ "${branch}" = "4" ]; then
-      echo "Testing package integrity"
-      (gzip -t ${chroot}/tmp/packages/All/*.tgz && echo "Package ${pkgname} OK!") || echo "Package ${pkgname} corrupted!"
-    fi
     tar -C ${chroot}/tmp -cf - packages | \
       ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch} -xvf -
     ssh -a -x ${user}@$master [ -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} ] '&&' touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
