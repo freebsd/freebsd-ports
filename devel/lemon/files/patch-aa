@@ -1,6 +1,10 @@
 --- lemon.c	Tue Dec  5 20:52:24 2000
-+++ lemon.c	Thu Jun  7 21:13:39 2001
-@@ -30,10 +30,11 @@
++++ lemon.c	Mon Jul 14 18:43:15 2003
+@@ -27,13 +27,14 @@
+ */
+ #include <stdio.h>
+-#include <varargs.h>
++#include <stdarg.h>
  #include <string.h>
  #include <ctype.h>
 +#include <unistd.h>
@@ -20,7 +24,37 @@
 -extern void *malloc();
  
  /******** From the file "action.h" *************************************/
-@@ -1168,4 +1168,26 @@
+@@ -90,5 +90,5 @@
+ 
+ /********* From the file "error.h" ***************************************/
+-void ErrorMsg( /* char *, int, char *, ... */ );
++static void ErrorMsg(const char *, int, const char *, ... );
+ 
+ /****** From the file "option.h" ******************************************/
+@@ -1109,10 +1109,7 @@
+ #define LINEWIDTH      79 /* Max width of any output line */
+ #define PREFIXLIMIT    30 /* Max width of the prefix on each line */
+-void ErrorMsg(va_alist)
+-va_dcl
++static void
++ErrorMsg(const char *filename, int lineno, const char *format, ...)
+ {
+-  char *filename;
+-  int lineno;
+-  char *format;
+   char errmsg[ERRMSGSIZE];
+   char prefix[PREFIXLIMIT+10];
+@@ -1123,8 +1120,5 @@
+   int end, restart, base;
+ 
+-  va_start(ap);
+-  filename = va_arg(ap,char*);
+-  lineno = va_arg(ap,int);
+-  format = va_arg(ap,char*);
++  va_start(ap, format);
+   /* Prepare a prefix to be prepended to every output line */
+   if( lineno>0 ){
+@@ -1168,4 +1162,26 @@
  }
  
 +static char *lempar_locations[] = {
@@ -47,7 +81,7 @@
 +}
  
  /* The main program.  Parse the command line and do it... */
-@@ -1185,7 +1207,12 @@
+@@ -1185,7 +1201,12 @@
      {OPT_FLAG, "c", (char*)&compress, "Don't compress the action table."},
      {OPT_FLAG, "g", (char*)&rpflag, "Print grammar without actions."},
 -    {OPT_FLAG, "m", (char*)&mhflag, "Output a makeheaders compatible file"},
@@ -61,13 +95,13 @@
 +				LEMPAR"''."},
      {OPT_FLAG, "x", (char*)&version, "Print the version number."},
      {OPT_FLAG,0,0,0}
-@@ -2305,4 +2332,5 @@
+@@ -2305,4 +2326,5 @@
    }
  }
 +
  /*********************** From the file "report.c" **************************/
  /*
-@@ -2318,13 +2346,14 @@
+@@ -2318,13 +2340,14 @@
  char *suffix;
  {
 -  char *name;
@@ -86,7 +120,7 @@
 +  strcpy(name, fname);
    cp = strrchr(name,'.');
    if( cp ) *cp = 0;
-@@ -2524,47 +2553,14 @@
+@@ -2524,47 +2547,14 @@
  }
  
 -/* Search for the file "name" which is in the same directory as
@@ -142,7 +176,7 @@
 +  return(NULL);
  }
  
-@@ -2630,8 +2626,7 @@
+@@ -2630,8 +2620,7 @@
  struct lemon *lemp;
  {
 -  static char templatename[] = "lempar.c";
@@ -153,7 +187,7 @@
 +  const char *tpltname;
    char *cp;
  
-@@ -2642,12 +2637,11 @@
+@@ -2642,12 +2631,11 @@
      sprintf(buf,"%s.lt",lemp->filename);
    }
 -  if( access(buf,004)==0 ){
@@ -169,7 +203,7 @@
 +    fprintf(stderr,"Can't find the parser driver template file.\n");
      lemp->errorcnt++;
      return 0;
-@@ -2655,5 +2649,5 @@
+@@ -2655,5 +2643,5 @@
    in = fopen(tpltname,"r");
    if( in==0 ){
 -    fprintf(stderr,"Can't open the template file \"%s\".\n",templatename);
