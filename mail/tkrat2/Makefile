@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION=	2.1.2
-CATEGORIES=	mail tk83
+PORTVERSION=	2.1.4
+CATEGORIES=	mail tk84
 MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail user agent for X with a Tcl/Tk user interface
 
-LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
-		tk83:${PORTSDIR}/x11-toolkits/tk83 \
+LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
+		tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		c-client4.8:${PORTSDIR}/mail/cclient
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.3 \
-		--with-tk-config=${PREFIX}/lib/tk8.3 \
-		--with-tcl-include=${PREFIX}/include/tcl8.3 \
-		--with-tk-include=${PREFIX}/include/tk8.3
+CONFIGURE_ARGS=	--with-tcl-config=${PREFIX}/lib/tcl8.4 \
+		--with-tk-config=${PREFIX}/lib/tk8.4 \
+		--with-tcl-include=${PREFIX}/include/tcl8.4 \
+		--with-tk-include=${PREFIX}/include/tk8.4
 MAKE_ARGS+=	-j2 -B
 
 DOCFILES=	CONFIGURATION COPYRIGHT README doc/interface doc/userprocs \
