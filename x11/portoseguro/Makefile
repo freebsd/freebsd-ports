@@ -18,6 +18,7 @@ USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
+USE_XPM=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
