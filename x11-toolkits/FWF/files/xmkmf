@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# An xmkmf that does what I need it to do.
+#
+IMAKEINCLUDE="-I${WRKSRC} -I${X11BASE}/lib/X11/config"
+export IMAKEINCLUDE
+imake -DUseInstalled ${IMAKEINCLUDE} Makefile
+make Makefiles
