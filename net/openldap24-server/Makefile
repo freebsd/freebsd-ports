@@ -52,7 +52,7 @@ OPENLDAP_PKGFILESUFX?=	.client
 .error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
 .endif
 .else
-OPENLDAP_PORTVERSION=	1
+OPENLDAP_PORTVERSION=	2
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
@@ -69,15 +69,18 @@ PLIST=			${WRKDIR}/pkg-plist
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-LOCALSTATEDIR?=		${DESTDIR}/var/db
 LDAP_RUN_DIR?=		${DESTDIR}/var/run/openldap
+LOCALSTATEDIR?=		${DESTDIR}/var/db
+DATABASEDIR?=		${LOCALSTATEDIR}/openldap-data
+SLURPDIR?=		${LOCALSTATEDIR}/openldap-slurp
 
-PLIST_SUB+=		LOCALSTATEDIR=${LOCALSTATEDIR} \
-			LDAP_RUN_DIR=${LDAP_RUN_DIR}
+PLIST_SUB+=		LDAP_RUN_DIR=${LDAP_RUN_DIR} \
+			DATABASEDIR=${DATABASEDIR} \
+			SLURPDIR=${SLURPDIR} \
 
 SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
 			-e 's,%%LDAP_RUN_DIR%%,${LDAP_RUN_DIR},g' \
-			-e 's,%%LOCALSTATEDIR%%,${LOCALSTATEDIR},g'
+			-e 's,%%DATABASEDIR%%,${DATABASEDIR},g'
 
 CONFIGURE_ARGS=		--with-threads \
 			--with-tls=openssl \
