@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		heimdal
-PORTVERSION=	0.4d
+PORTVERSION=	0.4e
 CATEGORIES=		security ipv6
 MASTER_SITES=	ftp://ftp.pdc.kth.se/pub/heimdal/src/ \
 				ftp://ftp.replay.com/pub/replay/crypto/APPS/kerberos/heimdal/ \
@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KRB4)
+CONFIGURE_ENV+=		LIBS="-lcom_err"
 CONFIGURE_ARGS+=	--with-krb4-include=/usr/include --with-krb4-lib=/usr/lib
 .elif !defined(KRB5_KRB4_COMPAT)
 CONFIGURE_ARGS+=	--without-krb4
@@ -58,14 +59,6 @@ OPENSSL_IN_BASE=	YES
 .endif
 
 PLIST:=				${WRKDIR}/PLIST
-
-# Nuke com_err stuff, it is in the base system.
-pre-configure:
-	@(set -e; \
-	cd ${CONFIGURE_WRKSRC}; \
-	find . -type f -name 'Makefile.in' -print | xargs perl -i -p \
-	-e 's,\$$\(top_builddir\)/lib/com_err/compile_et,compile_et,;' \
-	-e 's,../com_err/libcom_err.la,,;';)
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
@@ -83,12 +76,6 @@ pre-install:
 .endif
 
 .include "Makefile.man"
-
-# awful hack to avoid running automake after patching configure
-pre-configure:
-	@find ${WRKSRC} -name Makefile.in -exec ${TOUCH} {} \;
-	@${TOUCH} ${WRKSRC}/include/stamp-h.in
-	@${TOUCH} ${WRKSRC}/include/config.h.in
 
 post-install:
 	install-info ${PREFIX}/info/heimdal.info ${PREFIX}/info/dir

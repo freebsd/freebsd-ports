@@ -1,5 +1,4 @@
 bin/ftp
-bin/kauth
 bin/kdestroy
 bin/kf
 bin/kgetcred
