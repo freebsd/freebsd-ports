@@ -19,6 +19,7 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 WRKSRC=		${WRKDIR}/X-Files
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
+MAN1=		X-Files.1x
 
 pre-install:
 	@tclsh8.2 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
