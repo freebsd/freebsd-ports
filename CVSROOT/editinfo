@@ -28,5 +28,7 @@
 # supported. There can be only one entry that matches a given
 # repository.
 #
-#DEFAULT			$CVSROOT/CVSROOT/edit "%s"
-pst-test			$CVSROOT/CVSROOT/new_edithook "%s"
+#DEFAULT			$CVSROOT/CVSROOT/edit
+#
+# uncomment this to deal with the new edit hook
+#DEFAULT			/home/ncvs/CVSROOT/new_edithook
