@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.5 1995/04/17 20:31:29 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/19 19:42:24 jmz Exp $
 #
 
 DISTNAME=	makeindex
@@ -14,13 +14,11 @@ DISTFILES=	makeindex-3.0.8.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
-build: configure pre-build
-	@echo "===>  Building for ${DISTNAME}"
+do-build: 
 	@(cd ${WRKSRC}/src-3.0/regexp; make)
 	@(cd ${WRKSRC}/src-3.0; make)
 
-install: build
-	@echo "===>  Installing for ${DISTNAME}"
+do-install: 
 	@mkdir -p ${PREFIX}/lib/texmf/makeindx
 	@mkdir -p ${PREFIX}/bin
 	@mkdir -p ${PREFIX}/man/man1

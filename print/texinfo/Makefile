@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.4 1995/04/15 22:36:51 jmz Exp $
+# $Id: Makefile,v 1.5 1995/04/17 20:31:38 asami Exp $
 #
 
 DISTNAME=	texinfo
@@ -38,12 +38,10 @@ pre-configure:
 	@cp ${DISTDIR}/texinfo.tex ${DISTDIR}/lcircle10.tfm ${WRKDIR}
 	@chmod +w ${WRKDIR}/*
 
-build: configure
-	@echo "===>  Building for ${DISTNAME}"
+do-build: 
 	@(cd ${WRKDIR}; initex '&tex texinfo @dump')
 
-install: build
-	@echo "===>  Installing for ${DISTNAME}"
+do-install: 
 	@/usr/bin/install -c -m 644 ${WRKDIR}/texinfo.fmt \
 				${PREFIX}/lib/texmf/ini/
 	@if [ ! -f ${PREFIX}/lib/texmf/fonts/tfm/lcircle10.tfm ]; then \
