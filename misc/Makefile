@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.216 1999/06/27 03:27:06 cpiazza Exp $
+# $Id: Makefile,v 1.217 1999/06/27 16:32:04 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -38,7 +38,6 @@
     SUBDIR += fep
     SUBDIR += figlet
     SUBDIR += fortuneit
-    SUBDIR += generic-nqs
     SUBDIR += git
     SUBDIR += gnomeutils
     SUBDIR += gnuls
