@@ -21,14 +21,15 @@ MAKE_ENV+=	FILESDIR="${FILESDIR}"
 .include <bsd.port.pre.mk>
 
 post-build:
-	@cd ${WRKSRC} && ${MAKE} -f ${FILESDIR}/Makefile.export0_6 clean
-	@cd ${WRKSRC} && ${MAKE} -f ${FILESDIR}/Makefile.export0_6
+	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f \
+		${FILESDIR}/Makefile.export0_6 clean all
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/thirdparty
 
 post-install:
-	@cd ${WRKSRC} && ${MAKE} -f ${FILESDIR}/Makefile.export0_6 install
+	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f \
+		${FILESDIR}/Makefile.export0_6 install
 	@${CAT} ${FILESDIR}/post-install-notes
 
 .include <bsd.port.post.mk>
