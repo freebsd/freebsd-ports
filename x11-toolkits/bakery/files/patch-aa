@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Tue Sep  5 14:24:47 2000
++++ Makefile.in	Tue Sep 12 16:14:59 2000
+@@ -111,3 +111,3 @@
+ # Install the m4 macro to be used by autoconf
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = $(GENERIC_LIBRARY_NAME).m4
