@@ -35,20 +35,28 @@ EMACS_LISPS=	mgp-mode.el mgp-el/COPYING mgp-el/README \
 		mgp-el/mgp.el mgp-el/mgp.sty mgp-el/sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
+.include <bsd.port.pre.mk>
+
 post-configure:
 	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
 
 post-build:
-	(cd ${WRKSRC}/contrib/xmindpath; make; \
+	(cd ${WRKSRC}/contrib/xmindpath; make)
+.if ${XFREE86_VERSION} == 4
+	(cd ${WRKSRC}/contrib/xmindpath; \
 	 ${RM} -f xmindpath.1.html xmindpath-1.html; \
 	 ${X11BASE}/bin/rman -f HTML < xmindpath.1 > xmindpath-1.html && \
 	 ${MV} -f xmindpath-1.html xmindpath.1.html)
+.endif
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
-	(cd ${WRKSRC}/contrib/xmindpath; make install; \
-	 ${INSTALL_MAN} xmindpath.1.html ${PREFIX}/lib/X11/doc/html)
+	(cd ${WRKSRC}/contrib/xmindpath; make install)
 	${GZIP_CMD} ${PREFIX}/man/man1/xmindpath.1
+.if ${XFREE86_VERSION} == 4
+	(cd ${WRKSRC}/contrib/xmindpath;
+	 ${INSTALL_MAN} xmindpath.1.html ${PREFIX}/lib/X11/doc/html)
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mgp
 	for i in $(DOCS); do \
@@ -68,4 +76,4 @@ post-install:
 	done
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
