@@ -1,5 +1,14 @@
 --- makefile.in.orig	Wed Jul 14 20:25:26 1999
-+++ makefile.in	Mon Aug  2 06:50:21 1999
++++ makefile.in	Thu Aug  5 00:12:23 1999
+@@ -306,7 +306,7 @@
+ 	@echo "Use $(MAKE) install-doc to install extra documentation files"
+ 	@echo
+ 
+-install-full: install install-help install-doc
++install-full: install install-doc install-help
+ 	@echo Full installation complete.
+ 
+ install-bin: $(BINDIR)
 @@ -374,7 +374,7 @@
  	chmod 644 $(LIBDIR)/lynx.cfg
  	-rm -f $(LIBDIR)/lynx.tmp
