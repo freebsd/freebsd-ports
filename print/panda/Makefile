@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	panda
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g:S/p/rc/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
