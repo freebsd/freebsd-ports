@@ -7,11 +7,16 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+.if !defined(WITHOUT_ICONS)
+DISTFILES+=	fvwm_icons.tgz
+.endif
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
@@ -45,10 +50,6 @@ CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
 CONFIGURE_ARGS+=	--disable-sm
 .endif
 
-.if defined(WITHOUT_SHAPE)
-CONFIGURE_ARGS+=	--disable-shape
-.endif
-
 .if defined(WITH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-multibyte
 .endif
@@ -65,18 +66,30 @@ CONFIGURE_ARGS+=	--with-iconv-lib=/usr/local/lib \
 			--with-iconv-includes=/usr/local/include
 .endif
 
+.if defined(WITHOUT_BIDI)
+CONFIGURE_ARGS+=        --disable-bidi
+.endif
+
+.if defined(WITHOUT_XINERAMA)
+CONFIGURE_ARGS+=        --disable-xinerama
+.endif
+
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
 .if ${HAVE_GNOME:Mimlib}!=""
 USE_GNOME=	imlib
 PKGNAMESUFFIX=	-imlib
-CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
-			--enable-gtktest --enable-imlibtest
+CONFIGURE_ARGS+=	--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GTK=""
 .else
-CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
-			--disable-gtktest --disable-imlibtest
+CONFIGURE_ARGS+=	--disable-gtktest --disable-imlibtest
 PLIST_SUB+=	GTK="@comment not installed: "
+.endif
+
+.if !defined(WITHOUT_GNOME)
+CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints
+.else
+CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints
 .endif
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
@@ -92,9 +105,14 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmGtkDebug.1
 
 
+.if !defined(WITHOUT_ICONS)
+PLIST_SUB+=	ICONS=""
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
 	@${TAR} -xzf ${DISTDIR}/fvwm_icons.tgz -C ${WRKDIR}/icons
+.else
+PLIST_SUB+=	ICONS="@comment not installed"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},' \
@@ -108,8 +126,11 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc \
 			${PREFIX}/etc/system.fvwm2rc; \
 	fi
+
+.if !defined(WITHOUT_ICONS)
 	@${MKDIR} ${PREFIX}/share/fvwm2/pixmaps
 	${INSTALL_DATA} ${WRKDIR}/icons/fvwm_icons/*.xpm \
 		${PREFIX}/share/fvwm2/pixmaps
+.endif
 
 .include <bsd.port.post.mk>
