@@ -1,5 +1,4 @@
 bin/angband
-lib/X11/angband/CHANGES-2.8.2
 lib/X11/angband/apex/scores.raw
 lib/X11/angband/edit/a_info.txt
 lib/X11/angband/edit/e_info.txt
@@ -22,11 +21,16 @@ lib/X11/angband/user/font-ami.prf
 lib/X11/angband/user/font-ibm.prf
 lib/X11/angband/user/font-mac.prf
 lib/X11/angband/user/font-win.prf
+lib/X11/angband/user/font-dos.prf
+lib/X11/angband/user/font-x11.prf
+lib/X11/angband/user/font-xxx.prf
 lib/X11/angband/user/font.prf
 lib/X11/angband/user/graf-ami.prf
 lib/X11/angband/user/graf-mac.prf
 lib/X11/angband/user/graf-win.prf
 lib/X11/angband/user/graf-xxx.prf
+lib/X11/angband/user/graf-ibm.prf
+lib/X11/angband/user/graf-x11.prf
 lib/X11/angband/user/graf.prf
 lib/X11/angband/user/pref-acn.prf
 lib/X11/angband/user/pref-ami.prf
@@ -38,6 +42,7 @@ lib/X11/angband/user/pref-x11.prf
 lib/X11/angband/user/pref.prf
 lib/X11/angband/user/user-mac.prf
 lib/X11/angband/user/user.prf
+lib/X11/angband/xtra/tiles.raw
 @exec mkdir -p %D/lib/X11/angband/bone
 @exec mkdir -p %D/lib/X11/angband/data
 @exec mkdir -p %D/lib/X11/angband/info

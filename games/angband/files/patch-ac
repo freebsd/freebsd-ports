@@ -1,6 +1,6 @@
---- src/config.h.orig	Tue Mar  4 12:19:58 1997
-+++ src/config.h	Mon Mar 31 20:10:18 1997
-@@ -48,13 +48,13 @@
+--- src/config.h.orig	Fri Feb  6 04:10:31 1998
++++ src/config.h	Mon Feb  9 09:38:23 1998
+@@ -46,13 +46,13 @@
   * OPTION: define "SPECIAL_BSD" for using certain versions of UNIX
   * that use the 4.4BSD Lite version of Curses in "main-gcu.c"
   */

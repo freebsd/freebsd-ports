@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Nov  9 15:27:29 1997
-+++ Makefile	Sun Nov  9 15:32:43 1997
+--- Makefile.orig	Mon Feb  9 09:38:23 1998
++++ Makefile	Mon Feb  9 09:38:23 1998
 @@ -0,0 +1,19 @@
 +# My makefile for Angband
 +# Matthew Hunt <mph@pobox.com>
