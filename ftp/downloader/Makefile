@@ -35,9 +35,9 @@ PORTDOCS=	ChangeLog LICENSE NAMES PLANS THANKS TODO TROUBLES \
 post-install:
 	@${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/downloader
+	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/downloader
+	@${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
 .endfor
 .endif
 
