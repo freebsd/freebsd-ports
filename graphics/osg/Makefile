@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	0.8.45
+PORTVERSION=	0.9.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
+DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,8 +19,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-DISTNAME=       OpenSceneGraph-${PORTVERSION}
-
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
@@ -29,10 +29,16 @@ MAKE_ENV=	OSGHOME=${WRKSRC}
 # opt = optimized ($OPTF added); debug = debug ($DBGF added); opt is default
 ALL_TARGET=	opt
 
+post-patch:
+	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} \
+		-e "s|malloc\.h|stdlib.h|"
+
 post-install:
-	  ${LN} -sf ${PREFIX}/share/osg/bin/sgv     ${PREFIX}/bin
-	  ${LN} -sf ${PREFIX}/share/osg/bin/osgconv ${PREFIX}/bin
-	  @${MKDIR} ${DOCSDIR}
-	  ${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
+	${LN} -sf ${DATADIR}/bin/sgv     ${PREFIX}/bin
+	${LN} -sf ${DATADIR}/bin/osgconv ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${CP} -r ${WRKSRC}/doc/ ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
