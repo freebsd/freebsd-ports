@@ -31,6 +31,8 @@ PATCHFILES=	apache-1.3.27-v6-20021004.diff.gz
 
 MAINTAINER=	sumikawa@FreeBSD.org
 
+USE_PERL5=	yes
+
 DATADIR=${PREFIX}/www
 DOCUMENT_ROOT=${DATADIR}/data
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin

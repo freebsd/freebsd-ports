@@ -33,6 +33,8 @@ DISTNAME=	apache_${PORTVERSION}
 
 MAINTAINER=	ache@freebsd.org
 
+USE_PERL5=	yes
+
 DATADIR=${PREFIX}/www
 DOCUMENT_ROOT=${DATADIR}/data
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
