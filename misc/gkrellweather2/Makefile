@@ -26,7 +26,7 @@ MAKE_ENV=	enable_nls=1 PTHREAD_LIBS=${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 # uses C99 builtin lrintf
-.if ${OSVERSION} < 500000
+.if ${ARCH} != "amd64"
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-lrintf
 .endif
 
