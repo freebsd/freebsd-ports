@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.18
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		http://download.sourceforge.net/gaim/
