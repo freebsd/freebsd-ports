@@ -3,10 +3,11 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1995/04/15 04:33:53 asami Exp $
+# $Id: Makefile,v 1.13 1995/04/17 20:31:23 asami Exp $
 #
 
 DISTNAME=	latex
+PKGNAME=	latex2e-94.12
 CATEGORIES+=	printing
 DISTFILES=	latex_mf.tar.gz latex_tfm.tar.gz latex_base.tar.gz \
 		latex_tools.tar.gz
@@ -66,6 +67,7 @@ install: build
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/documentation; fi; done)
 	@(cd ${WRKSRC}/packages/tools; for f in *.dtx; do \
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/lib/texmf/documentation; fi; done)
+	@touch ${WRKDIR}/.install_done
 
 .include "Makefile.inc"
 
