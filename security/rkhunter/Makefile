@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	rkhunter
-PORTVERSION=	1.1.8
+PORTVERSION=	1.1.9
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.rootkit.nl/
 
-MAINTAINER=	bugghy@SAFe-mail.net
+MAINTAINER=	vaidab@safe-mail.net
 COMMENT=	Rootkit detection tool
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_PERL5=	yes

@@ -53,12 +53,12 @@
  
  # Installation dir to configuration file
 -INSTALLDIRCHECK=`cat /usr/local/etc/rkhunter.conf | grep "INSTALLDIR="`
-+INSTALLDIRCHECK=`cat $INSTALLDIR/etc/rkhunter.conf | grep "INSTALLDIR="`
++INSTALLDIRCHECK=`cat $INSTALLDIR/etc/rkhunter.conf.sample | grep "INSTALLDIR="`
  if [ "${INSTALLDIRCHECK}" = "" ]
    then
 -    echo "" >> /usr/local/etc/rkhunter.conf
 -    echo "INSTALLDIR=${INSTALLDIR}" >> /usr/local/etc/rkhunter.conf
-+    echo "" >> $INSTALLDIR/etc/rkhunter.conf
++    echo "" >> $INSTALLDIR/etc/rkhunter.conf.sample
 +    echo "INSTALLDIR=${INSTALLDIR}" >> $INSTALLDIR/etc/rkhunter.conf.sample
      echo "Configuration updated with installation path (${INSTALLDIR})"
    else
