@@ -1,0 +1,6 @@
+This package contains three new object types for Python: DateTime,
+DateTimeDelta and RelativeDateTime. These can be used to handle and
+store date/time values and also allow some basic date/time
+arithmetic. For full documentation see the home page.
+
+WWW: http://starship.skyport.net/~lemburg/mxDateTime.html
