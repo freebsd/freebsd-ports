@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtksee
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/gtksee/
 
@@ -23,9 +23,12 @@ RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 
 USE_GNOME=	gtk12 gnometarget
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
 MAN1=		gtksee.1
 
