@@ -12,6 +12,7 @@ bin/mk_cmds
 bin/otp
 bin/otpprint
 bin/pfrom
+bin/rcp
 bin/rsh
 bin/string2key
 bin/su
@@ -57,14 +58,14 @@ info/heimdal.info
 @exec install-info %D/info/heimdal.info %D/info/dir
 lib/libasn1.a
 lib/libasn1.so
-lib/libasn1.so.3
+lib/libasn1.so.4
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so
-lib/libgssapi.so.2
+lib/libgssapi.so.3
 lib/libhdb.a
 lib/libhdb.so
-lib/libhdb.so.6
+lib/libhdb.so.7
 lib/libkadm5clnt.a
 lib/libkadm5clnt.so
 lib/libkadm5clnt.so.6
@@ -73,7 +74,7 @@ lib/libkadm5srv.so
 lib/libkadm5srv.so.7
 lib/libkrb5.a
 lib/libkrb5.so
-lib/libkrb5.so.14
+lib/libkrb5.so.15
 lib/libotp.a
 lib/libotp.so
 lib/libotp.so.1
