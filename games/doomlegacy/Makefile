@@ -5,33 +5,30 @@
 # $FreeBSD$
 
 PORTNAME=	doomlegacy
-PORTVERSION=	1.32b4
-PORTREVISION=	1
+PORTVERSION=	141
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR?=	${PORTNAME}
-DISTNAME=	legacy_${FILEVERSION}_src
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	legacy_${PORTVERSION}_src
 DISTFILES=	${DIST} ${WADFILE}
+DIST=		${DISTNAME}${EXTRACT_SUFX}
+WADFILE=	legacy_dat.zip
 EXTRACT_ONLY=	${DIST}
 
 MAINTAINER=	bock@bock.nnov.ru
 COMMENT=	DooM Legacy: popular DooM clone!
 
-BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		nasm:${PORTSDIR}/devel/nasm
-
-WADVER=		132b4
-WADFILE=	doom3_wad_${WADVER}.zip
-FILEVERSION=	132beta4
-DIST=		${DISTNAME}${EXTRACT_SUFX}
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
-USE_MESA=	yes
+USE_GL=		yes
+USE_SDL=	mixer
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/legacy_${PORTVERSION}_src
 MAKEFILE=	makefile
-MAKE_ENV+=	FREEBSD=1 PTHREAD_LIBS="${PTHREAD_LIBS}" \
+MAKE_ENV+=	FREEBSD=1 FBSD_SDL=1 PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 # I have no ideas about build status on other platforms
@@ -39,25 +36,41 @@ ONLY_FOR_ARCHS=		i386
 
 TARGET_DIR=	${PREFIX}/${PORTNAME}
 
-DATA_FILES=	${WRKDIR}/bin/doom3.wad
+DATA_FILES=	${WRKDIR}/bin/legacy.dat
 PROG_FILES=	${WRKDIR}/bin/llsndserv ${WRKDIR}/bin/r_opengl.so
-SGID_FILES=	${WRKDIR}/bin/llxdoom
+SGID_FILES=	${WRKDIR}/bin/lsdldoom
 SGID_ARGS=	-c -s -o root -g kmem -m 2555
+DOC_FILES=	*.html *.txt *.cfg README_SDL copying
 
 post-extract:
-	@cd ${WRKDIR} && ${MKDIR} bin && \
-	unzip -q ${_DISTDIR}/${WADFILE} -d ${WRKDIR}/bin
+	@${MKDIR} ${WRKDIR}/bin
+	${UNZIP_CMD} -q ${DISTDIR}/${WADFILE} -d ${WRKDIR}/bin
+
+post-patch:
+	@${SED} -e "s|%%INSTALLDIR%%|${PREFIX}/${PORTNAME}|" ${FILESDIR}/wrapper.sh > \
+		${WRKDIR}/bin/wrapper.sh
+
+pre-build:
+	cd ${WRKSRC}/linux_x/sndserv && ${GMAKE} clean
+
+post-build:
+	@${LN} -s ${WRKSRC}/linux_x/sndserv/linux/llsndserv ${WRKDIR}/bin
 
 do-install:
-	${LN} -sf ${WRKSRC}/linux_x/sndserv/linux/llsndserv ${WRKDIR}/bin
-	${INSTALL} -d ${TARGET_DIR} && \
-	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR} && \
-	${INSTALL} ${SGID_ARGS} ${SGID_FILES} ${TARGET_DIR} && \
-	${INSTALL_DATA} ${DATA_FILES} ${TARGET_DIR} && \
-	${INSTALL} -d ${DOCSDIR} && \
-	${INSTALL_DATA} ${WRKSRC}/_doc/* ${DOCSDIR}
+	${INSTALL} -d ${TARGET_DIR}
+	${INSTALL_PROGRAM} ${PROG_FILES} ${TARGET_DIR}
+	${INSTALL} ${SGID_ARGS} ${SGID_FILES} ${TARGET_DIR}
+	${INSTALL_DATA} ${DATA_FILES} ${TARGET_DIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/bin/wrapper.sh ${TARGET_DIR}/legacy.sh
+	@${LN} -s ${TARGET_DIR}/legacy.sh ${PREFIX}/bin/legacy
 
 post-install:
-	@${CAT} ${PKGMESSAGE}
+.ifndef(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	${INSTALL_MAN} ${WRKSRC}/_doc/${file} ${DOCSDIR}
+.endfor
+.endif
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
