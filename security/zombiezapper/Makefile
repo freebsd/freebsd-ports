@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zombiezapper
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://razor.bindview.com/tools/files/
-DISTNAME=	zombie
-EXTRACT_SUFX=	.tar
+DISTNAME=	zombie-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Send a terminate command to Trinoo/TFN/Stacheldracht DDoS agents"
