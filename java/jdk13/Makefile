@@ -164,7 +164,7 @@ pre-build:
 	then \
 		${ECHO_MSG} "Please set the value of the sysctl compat.linux.osname"; \
 		${ECHO_MSG} "to 'Linux' with the command:"; \
-		${ECHO_MSG} "	sysctl compat.linux.osname=Linux"; \
+		${ECHO_MSG} "	/sbin/sysctl compat.linux.osname=Linux"; \
 		${ECHO_MSG} "Having it set to other values, such as 'FreeBSD',"; \
 		${ECHO_MSG} "is known to cause problems during bootstrapping."; \
 		exit 1; \
