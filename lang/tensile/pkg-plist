@@ -4,6 +4,10 @@ lib/libnslcore.a
 lib/libnslcore.la
 lib/libnslcore.so
 lib/libnslcore.so.0
+lib/libnslpdt.a
+lib/libnslpdt.la
+lib/libnslpdt.so
+lib/libnslpdt.so.0
 lib/libnslsh.a
 lib/libnslsh.la
 lib/libnslsh.so
@@ -53,8 +57,6 @@ lib/nsl/modules/time.la
 lib/nsl/modules/time.scm
 lib/nsl/modules/time.so
 lib/nsl/modules/time.so.0
-@dirrm lib/nsl/modules
-@dirrm lib/nsl
 share/nsl/automata/arith.aut
 share/nsl/automata/ascii.aut
 share/nsl/automata/base64enc.aut
@@ -117,6 +119,7 @@ share/nsl/scripts/subscribe.sc
 share/nsl/scripts/tagmaster.sc
 share/nsl/scripts/tmr-cgi.sc
 share/nsl/scripts/tmr.sc
+share/nsl/scripts/tsh.sc
 share/nsl/scripts/unicode.sc
 share/nsl/scripts/utf8html.sc
 share/nsl/scripts/version.sc
@@ -137,7 +140,6 @@ share/nsl/test/fields.aut
 share/nsl/test/pattern.aut
 share/nsl/test/pattern2.aut
 share/nsl/test/test.aut
-share/nsl/test/test.sc
 share/nsl/test/test.tm.sc
 share/nsl/test/test1.sc
 share/nsl/test/test11.sc
@@ -209,6 +211,7 @@ share/nsl/test/testa.sc
 share/nsl/test/testcb.sc
 share/nsl/test/testflow.sc
 share/nsl/test/testline.sc
+share/nsl/test/testp.sc
 share/nsl/test/testr.sc
 share/nsl/test/testsess.sc
 share/nsl/test/testsess1.sc
@@ -216,8 +219,11 @@ share/nsl/test/testsql.sc
 share/nsl/test/teststo.sc
 share/nsl/test/testtrie.aut
 share/nsl/test/testx.sc
-@dirrm share/nsl/automata
+@dirrm share/nsl/test
+@dirrm share/nsl/tables
 @dirrm share/nsl/scripts/docstrip
 @dirrm share/nsl/scripts
-@dirrm share/nsl/tables
-@dirrm share/nsl/test
+@dirrm share/nsl/automata
+@dirrm share/nsl
+@dirrm lib/nsl/modules
+@dirrm lib/nsl
