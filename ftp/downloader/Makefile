@@ -19,13 +19,10 @@ DISTNAME=	d4x-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for downloading via ftp or http with GUI
 
-LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
-
-USE_GNOME=	esound
+USE_GNOME=	esound gtk20
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-release
