@@ -1,0 +1,52 @@
+diff -crN config/x86-g++-linux.orig config/x86-g++-linux
+*** config/x86-g++-linux.orig	Thu Oct 28 20:54:54 1999
+--- config/x86-g++-linux	Sat May  6 21:25:19 2000
+***************
+*** 7,13 ****
+  
+  ARCHITECTURE	= x86-g++-linux
+  
+! MPI_DIR		= /net/boltzmann/disk3/mpich
+  
+  RM		= rm -f
+  LN		= ln -s
+--- 7,13 ----
+  
+  ARCHITECTURE	= x86-g++-linux
+  
+! MPI_DIR		= /usr/local/mpich
+  
+  RM		= rm -f
+  LN		= ln -s
+***************
+*** 15,29 ****
+  
+  C++		= g++
+  CC		= gcc
+! F77		= g77
+  C++LINK		= g++
+  #C++LINK	= g++ -static
+  AR		= ar
+  RANLIB		= ranlib
+  
+  MPI_INCLUDE	= $(MPI_DIR)/include
+! #MPI_LIB	 	= $(MPI_DIR)/lib/LINUX/ch_p4
+! MPI_LIB         = $(MPI_DIR)/build/LINUX/ch_p4/lib
+  
+  INCLUDES	= -I. -I$(KELP_HOME)/include -I$(MPI_INCLUDE) $(USR_INCLUDE)
+  ARCH_FLAGS	= -DLINUX 
+--- 15,28 ----
+  
+  C++		= g++
+  CC		= gcc
+! F77		= f77
+  C++LINK		= g++
+  #C++LINK	= g++ -static
+  AR		= ar
+  RANLIB		= ranlib
+  
+  MPI_INCLUDE	= $(MPI_DIR)/include
+! MPI_LIB         = $(MPI_DIR)/lib
+  
+  INCLUDES	= -I. -I$(KELP_HOME)/include -I$(MPI_INCLUDE) $(USR_INCLUDE)
+  ARCH_FLAGS	= -DLINUX 
