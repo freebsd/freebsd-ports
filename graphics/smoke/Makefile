@@ -40,6 +40,11 @@ FREETYPE_INCLUDEPATH!=	${FREETYPE_CONFIG} --cflags | ${SED} -e 's|-I||g'
 SDL_INCLUDEPATH!=	${SDL_CONFIG} --cflags | ${SED} -e 's|-I||g; s|-D[[:graph:]]*||g'
 .endif
 
+pre-everything::
+	@${ECHO_MSG} "This port depends on SDL with OpenGL support."
+	@${ECHO_MSG} "If your SDL does not support OpenGL, hit ^C now and reinstall SDL"
+	@${ECHO_MSG} "with OpenGL support turned on."
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g; \
 			      s|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
