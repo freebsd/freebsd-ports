@@ -13,6 +13,7 @@ share/le/colors-white
 share/le/keymap-emacs
 share/le/le.hlp
 share/le/mainmenu
+share/le/mainmenu-ru
 share/le/syntax
 @dirrm share/le
 %%PORTDOCS%%@dirrm share/doc/le
