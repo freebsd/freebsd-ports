@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maelstrom
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	games
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}
@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ARGS+=--program-transform-name=\'\'
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_gamedocs
