@@ -1,3 +1,5 @@
+etc/rc.d/sshd.sh
+@unexec rm %D/etc/rc.d/sshd.sh
 bin/scp
 bin/slogin
 bin/ssh
