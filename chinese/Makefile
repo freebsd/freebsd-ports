@@ -103,6 +103,7 @@
     SUBDIR += pyDict
     SUBDIR += qe
     SUBDIR += qterm
+    SUBDIR += reciteword
     SUBDIR += scim-chinese
     SUBDIR += scim-tables
     SUBDIR += srecite

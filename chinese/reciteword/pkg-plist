@@ -1,0 +1,6 @@
+bin/reciteword
+share/gnome/applications/reciteword.desktop
+share/gnome/applications/rwdict.desktop
+share/locale/zh_CN/LC_MESSAGES/reciteword.mo
+share/gnome/pixmaps/reciteword.png
+share/gnome/pixmaps/rwdict.png
