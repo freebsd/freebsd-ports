@@ -10,6 +10,7 @@ PORTVERSION=	2.0.2
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	distributions/gentoo/distfiles
 
 MAINTAINER=	olive@oban.frmug.org
 
