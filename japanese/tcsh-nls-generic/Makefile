@@ -3,15 +3,14 @@
 # Date created:		19 August 1998
 # Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/01/06 19:12:20 sada Exp $
+# $Id: Makefile,v 1.5 1999/07/06 23:09:03 sada Exp $
 #
 
 .if !defined(NLSSRC)
 DISTNAME=	tcsh-6.08.05
 PKGNAME=	ja-tcsh-nls-generic-6.08.05
 CATEGORIES=	japanese shells
-MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
-		http://www2.wbs.ne.jp/~znc/tcsh/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ ${MASTER_SITE_PORTS_JP}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.add2${EXTRACT_SUFX}
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
