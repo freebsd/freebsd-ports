@@ -31,6 +31,7 @@ USE_GNOME=	glib12
 .else
 USE_GNOME=	gtk20
 USE_XLIB=	yes
+USE_OPENSSL=	yes
 .endif
 
 USE_BZIP2=	yes
