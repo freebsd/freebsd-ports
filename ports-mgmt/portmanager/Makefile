@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.6
-PORTREVISION=	0
+PORTREVISION=	1
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -41,13 +41,13 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 #CONFIGURE_ARGS= 	--with-debug=yes
 #.endif
 
-CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
-			--with-bindir=/bin			\
-			--with-etcdir=${PREFIX}/etc/portmanager	\
-			--with-pkgdbdir=${PKG_DBDIR}		\
-			--with-portsdir=${PORTSDIR}		\
-			--with-sharedir=${DATADIR}		\
-			--with-tempdir=/tmp
+#CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
+#			--with-bindir=/bin			\
+#			--with-etcdir=${PREFIX}/etc/portmanager	\
+#			--with-pkgdbdir=${PKG_DBDIR}		\
+#			--with-portsdir=${PORTSDIR}		\
+#			--with-sharedir=${DATADIR}		\
+#			--with-tempdir=/tmp
 
 INSTALLS_SHLIB=		yes
 # Need INSTALL_TARGET to install ${PREFIX}/etc/portmanager/pm-020.conf.SAMPLE
