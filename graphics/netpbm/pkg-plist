@@ -9,7 +9,6 @@ bin/eyuvtoppm
 bin/fitstopnm
 bin/fstopgm
 bin/g3topbm
-bin/gemtopbm
 bin/gemtopnm
 bin/giftopnm
 bin/gouldtoppm
@@ -83,7 +82,6 @@ bin/pi3topbm
 bin/picttoppm
 bin/pjtoppm
 bin/pktopbm
-bin/pngtopnm
 bin/pnmalias
 bin/pnmarith
 bin/pnmcat
@@ -99,6 +97,8 @@ bin/pnmgamma
 bin/pnmhisteq
 bin/pnmhistmap
 bin/pnmindex
+bin/pnminterp
+bin/pnminterp-gen
 bin/pnminvert
 bin/pnmmargin
 bin/pnmmerge
@@ -114,7 +114,6 @@ bin/pnmtile
 bin/pnmtoddif
 bin/pnmtofits
 bin/pnmtoplainpnm
-bin/pnmtopng
 bin/pnmtops
 bin/pnmtorast
 bin/pnmtosgi

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	9.1
+PORTVERSION=	9.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.sourceforge.net/netpbm/
 EXTRACT_SUFX=	.tgz
@@ -14,8 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
@@ -36,13 +35,13 @@ MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	pgmbentley.1 pgmcrater.1 pgmedge.1 pgmenhance.1 pgmhist.1 pgmkernel.1 \
 	pgmnoise.1 pgmnorm.1 pgmoil.1 pgmramp.1 pgmtexture.1 pgmtofs.1 \
 	pgmtolispm.1 pgmtopbm.1 pgmtoppm.1 pi1toppm.1 pi3topbm.1 picttoppm.1 \
-	pjtoppm.1 pktopbm.1 pngtopnm.1 pnmalias.1 pnmarith.1 pnmcat.1 \
-	pnmcomp.1 pnmconvol.1 pnmcrop.1 pnmcut.1 pnmdepth.1 pnmenlarge.1 \
-	pnmfile.1 pnmflip.1 pnmgamma.1 pnmhisteq.1 pnmhistmap.1 pnmindex.1 \
-	pnminvert.1 pnmmargin.1 pnmnlfilt.1 pnmpad.1 pnmpaste.1 pnmrotate.1 \
-	pnmscale.1 pnmshear.1 pnmsmooth.1 pnmtile.1 pnmtoddif.1 pnmtofits.1 \
-	pnmtoplainpnm.1 pnmtopng.1 pnmtops.1 pnmtorast.1 pnmtosgi.1 \
-	pnmtosir.1 pnmtotiff.1 pnmtotiffcmyk.1 pnmtoxwd.1 ppm3d.1 \
+	pjtoppm.1 pktopbm.1 pnmalias.1 pnmarith.1 pnmcat.1 pnmcomp.1 \
+	pnmconvol.1 pnmcrop.1 pnmcut.1 pnmdepth.1 pnmenlarge.1 pnmfile.1 \
+	pnmflip.1 pnmgamma.1 pnmhisteq.1 pnmhistmap.1 pnmindex.1 pnminterp.1 \
+	pnminterp-gen.1 pnminvert.1 pnmmargin.1 pnmnlfilt.1 pnmpad.1 \
+	pnmpaste.1 pnmrotate.1 pnmscale.1 pnmshear.1 pnmsmooth.1 pnmtile.1 \
+	pnmtoddif.1 pnmtofits.1 pnmtoplainpnm.1 pnmtops.1 pnmtorast.1 \
+	pnmtosgi.1 pnmtosir.1 pnmtotiff.1 pnmtotiffcmyk.1 pnmtoxwd.1 ppm3d.1 \
 	ppmbrighten.1 ppmchange.1 ppmcie.1 ppmcolormask.1 ppmdim.1 ppmdist.1 \
 	ppmdither.1 ppmfade.1 ppmflash.1 ppmforge.1 ppmhist.1 ppmlabel.1 \
 	ppmmake.1 ppmmix.1 ppmnorm.1 ppmntsc.1 ppmpat.1 ppmquant.1 \
@@ -58,9 +57,6 @@ MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	yuvsplittoppm.1 yuvtoppm.1 zeisstopnm.1
 MAN3=	libpbm.3 libpgm.3 libpnm.3 libppm.3
 MAN5=	pbm.5 pgm.5 pnm.5 ppm.5
-
-post-extract:
-	@find ${WRKSRC} -name Makefile.depend -delete
 
 post-patch:
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/pbmplus.h

@@ -1,77 +1,81 @@
---- pnm/Makefile.orig	Sat May  6 19:03:54 2000
-+++ pnm/Makefile	Mon May  8 00:00:00 2000
-@@ -3,7 +3,7 @@
+--- pnm/Makefile.orig	Tue May 16 10:29:36 2000
++++ pnm/Makefile	Sat May 20 00:00:00 2000
+@@ -3,8 +3,7 @@
  
  LIBROOT = pnm
  LIBPNM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
 -MAJ = 9
-+MAJ = 1
- MIN = 0
+-MIN = 0
++SOVER = 1
  
  PPMDIR = $(SRCDIR)/ppm
-@@ -36,6 +36,8 @@
- # The order of these libraries is important for static library build
- NETPBMLIBS = $(LIBPNM) \
-            $(PPMDIR)/$(LIBPPM) $(PGMDIR)/$(LIBPGM) $(PBMDIR)/$(LIBPBM) 
-+NETPBMLD = -L. -lpnm \
-+           -L$(PPMDIR) -lppm -L$(PGMDIR) -lpgm -L$(PBMDIR) -lpbm
- LIBLIBS =  $(PPMDIR)/$(LIBPPM) $(PGMDIR)/$(LIBPGM) $(PBMDIR)/$(LIBPBM) 
- 
- ifeq ($(JPEGLIB_DIR),NONE)
-@@ -102,6 +104,8 @@
- MERGE_OBJECTS = $(patsubst %,%.o2, $(PORTBINARIES) $(MATHBINARIES))
+ LIBPPM = libppm.$(NETPBMLIBSUFFIX)
+@@ -102,6 +101,8 @@
+ MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o
 +LIBSOBJECTS = libpnm1.so libpnm2.so libpnm3.so libpnm4.so
-+LIBOBJECTS_X = $(SRCDIR)/shhopt/libshhopt.a
++LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -126,27 +130,28 @@
+@@ -113,10 +114,8 @@
+ 
+ .PHONY: all
+ all:      $(BINARIES)
+-	$(MAKE) -C jbig all
+ PHONY: merge
+ merge:    $(MERGENAME) $(NOMERGEBINARIES)
+-	$(MAKE) -C jbig all
+ 
+ ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
+ # We're using the internal Tiff library, so make sure it's built
+@@ -127,18 +126,18 @@
+ endif
  
  # The Tiff library references math functions.
- tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o \
--  $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.$(LIBTIFFSUFFIX)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) -lm -L$(TIFFLIB_DIR) -ltiff \
--	  $(JPEGLD) $(CDEBUG)
-+  $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.$(LIBTIFFSUFFIX) $(LIBOBJECTS_X)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) -lm -L$(TIFFLIB_DIR) -ltiff \
-+	  $(LIBOBJECTS_X) $(JPEGLD) $(CDEBUG)
+-tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o \
+-  $(NETPBMLIBS) $(TIFFLIB_DIR)/libtiff.$(LIBTIFFSUFFIX) $(LIBOPT)
++tifftopnm pnmtotiff pnmtotiffcmyk: %: %.o $(NETPBMLIBS) $(LIBOPT) \
++	$(TIFFLIB_DIR)/libtiff.$(LIBTIFFSUFFIX) $(LIBSHHOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
+-	  -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) -lm $(CDEBUG)
++	  -L$(TIFFLIB_DIR) -ltiff $(JPEGLD) -lm $(LIBSHHOPT) $(CDEBUG)
  
- # Rules for plain programs.
- $(PORTBINARIES): %: %.o $(NETPBMLIBS) 
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) $(CDEBUG)
- 
- # Rule for math-dependent programs.
- $(MATHBINARIES): %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
-+	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
- 
- pngtopnm pnmtopng: %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
+ pngtopnm pnmtopng: %: %.o $(NETPBMLIBS) $(LIBOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
  	  -L$(PNGLIB_DIR) -lpng -lz -lm $(CDEBUG)
  
--jpegtopnm: %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) $(JPEGLD)  $(CDEBUG)
-+jpegtopnm: %: %.o $(NETPBMLIBS) $(LIBOBJECTS_X)
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
-+	  $(LIBOBJECTS_X) $(JPEGLD) $(CDEBUG)
+-jpegtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT)
++jpegtopnm: %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` $(JPEGLD) \
+-	   $(CDEBUG)
++	  $(LIBSHHOPT) $(CDEBUG)
  
- rletopnm pnmtorle: %: %.o $(NETPBMLIBS)
--	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLIBS) \
-+	$(LD) $(LDFLAGS) -o $@ $@.o $(NETPBMLD) \
- 	  -L$(URTLIB_DIR) -lrle $(CDEBUG)
+ rletopnm pnmtorle: %: %.o $(NETPBMLIBS) $(LIBOPT)
+ 	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
+@@ -165,22 +164,20 @@
+ # backward compatibility: program used to be gemtopbm
+ 	rm -f $(INSTALLBINARIES)/gemtopbm
+ 	ln -s $(INSTALLBINARIES)/gemtopnm$(EXE) $(INSTALLBINARIES)/gemtopbm
+-	$(MAKE) -C jbig install.bin
  
- # And libraries.
-@@ -173,6 +178,9 @@
+ .PHONY: install.merge
+ install.merge: install.merge.common
+-	$(MAKE) -C jbig install.bin
  
  .PHONY: install.lib
  install.lib: install.lib.common
-+
+ 
+ .PHONY: install.man
+ install.man: install.man.common
+-	$(MAKE) -C jbig install.man
+ 
 +$(SRCDIR)/shhopt/libshhopt.a:
 +	cd ../shhopt; $(MAKE) libshhopt.a
  
  .PHONY: clean
- clean:
+ clean: clean.common
+-	$(MAKE) -C jbig clean
+ 
+ FORCE:

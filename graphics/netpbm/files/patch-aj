@@ -1,5 +1,5 @@
---- pbmplus.h.orig	Sat May  6 16:37:46 2000
-+++ pbmplus.h	Mon May  8 00:00:00 2000
+--- pbmplus.h.orig	Mon May  8 05:00:47 2000
++++ pbmplus.h	Sat May 20 00:00:00 2000
 @@ -25,6 +25,9 @@
  #include <errno.h>
  #endif
@@ -19,16 +19,16 @@
  /* #define SYSV */
  /* #define MSDOS */
  /* #define AMIGA */
-@@ -50,7 +53,7 @@
-    might be already set right now.  I couldn't figure out how, so I changed
-    their meanings and they are now set unconditionally.  -Bryan 00.05.03.
- */
+@@ -54,7 +57,7 @@
+ #define RGB_DB1 "PBMplus_Dir:RGB.TXT"
+ #define RGB_DB2 "PBMplus_Dir:RGB.TXT"
+ #else
 -#define RGB_DB1 "/usr/lib/X11/rgb.txt"
 +#define RGB_DB1 "%%X11BASE%%/lib/X11/rgb.txt"
  #define RGB_DB2 "/usr/openwin/lib/rgb.txt"
- #ifdef VMS
- #define RGB_DB1 "PBMplus_Dir:RGB.TXT"
-@@ -286,37 +289,6 @@
+ #endif
+ 
+@@ -285,37 +288,6 @@
  int pm_writelittleshort ARGS(( FILE* out, short s ));
  int pm_readlittlelong ARGS(( FILE* in, long* lP ));
  int pm_writelittlelong ARGS(( FILE* out, long l ));
