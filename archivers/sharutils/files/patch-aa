@@ -1,0 +1,89 @@
+*** Makefile.in.orig	Wed Feb 22 22:31:33 1995
+--- Makefile.in	Sun Mar 26 05:58:40 1995
+***************
+*** 18,24 ****
+  
+  PACKAGE = @PACKAGE@
+  VERSION = @VERSION@
+! PROGRAMS = @PROGRAMS@
+  CATALOGS = de.msg fr.msg nl.msg sv.msg
+  
+  @SET_MAKE@
+--- 18,25 ----
+  
+  PACKAGE = @PACKAGE@
+  VERSION = @VERSION@
+! PROGRAMS = shar unshar
+! SCRIPTS = mail-files mailshar remsync
+  CATALOGS = de.msg fr.msg nl.msg sv.msg
+  
+  @SET_MAKE@
+***************
+*** 167,176 ****
+  getopt.o getopt1.o: getopt.h
+  xgetcwd.o: pathmax.h
+  
+! .SUFFIXES: .msg .tt
+! .tt.msg:
+! 	cd $(srcdir) && \
+! 	  make-msg $*.tt $(PACKAGE).cod > $*.tmp && mv $*.tmp $@
+  
+  $(CATALOGS): $(PACKAGE).cod
+  
+--- 168,177 ----
+  getopt.o getopt1.o: getopt.h
+  xgetcwd.o: pathmax.h
+  
+! #.SUFFIXES: .msg .tt
+! #.tt.msg:
+! #        cd $(srcdir) && \
+! #          make-msg $*.tt $(PACKAGE).cod > $*.tmp && mv $*.tmp $@
+  
+  $(CATALOGS): $(PACKAGE).cod
+  
+***************
+*** 215,220 ****
+--- 216,225 ----
+  	  $(INSTALL_PROGRAM) $$name \
+  		$(bindir)/`echo $$name | sed '$(transform)'`; \
+  	done
++ 	for name in $(SCRIPTS); do \
++ 	  $(INSTALL_DATA) $$name $(bindir); \
++ 	  chmod 755 $(bindir)/$$name; \
++ 	done
+  	for name in $(CATALOGS); do \
+  	  lang=`echo $$name | sed 's/.msg$$//'`; \
+  	  $(srcdir)/mkinstalldirs $(localedir)/$$lang; \
+***************
+*** 237,251 ****
+  
+  install-man:
+  	$(srcdir)/mkinstalldirs $(man1dir) $(man5dir)
+! 	for name in shar unshar uuencode; do \
+  	  $(INSTALL_DATA) $(srcdir)/$$name.1 \
+  		$(man1dir)/`echo $$name | sed '$(transform)'`$(man1ext); \
+  	done
+! 	rm -f $(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
+! 	ln $(man1dir)/`echo uuencode | sed '$(transform)'`$(man1ext) \
+! 		$(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
+! 	$(INSTALL_DATA) $(srcdir)/uuencode.5 \
+! 		$(man5dir)/`echo uuencode | sed '$(transform)'`$(man5ext)
+  
+  uninstall-man:
+  	for name in shar unshar uudecode uuencode; do \
+--- 242,256 ----
+  
+  install-man:
+  	$(srcdir)/mkinstalldirs $(man1dir) $(man5dir)
+! 	for name in shar unshar; do \
+  	  $(INSTALL_DATA) $(srcdir)/$$name.1 \
+  		$(man1dir)/`echo $$name | sed '$(transform)'`$(man1ext); \
+  	done
+! #        rm -f $(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
+! #        ln $(man1dir)/`echo uuencode | sed '$(transform)'`$(man1ext) \
+! #                $(man1dir)/`echo uudecode | sed '$(transform)'`$(man1ext)
+! #        $(INSTALL_DATA) $(srcdir)/uuencode.5 \
+! #                $(man5dir)/`echo uuencode | sed '$(transform)'`$(man5ext)
+  
+  uninstall-man:
+  	for name in shar unshar uudecode uuencode; do \

@@ -7,9 +7,3 @@ is initially derived from public domain.  Some modules and other
 code sections are freely borrowed from other GNU distributions,
 bringing `shar' under the terms of the GNU General Public License.
 
-`uuencode' prepares a file for transmission over an electronic
-channel which ignores or otherwise mangles the eight bit (high
-order bit) of bytes.  `uudecode' does the converse transformation.
-They are derived from the BSD NET/2 distribution.  If you have more
-powerful `uuencode' and `uudecode' already available, you may want
-to use `./configure --disable-uucode' to prevent their installation.

@@ -1,10 +1,14 @@
 @cwd /usr/local
 info/sharutils.info
+info/remsync.info
 bin/gshar
 bin/gunshar
+bin/mailshar
+bin/mail-files
+bin/remsync
 man/man1/gshar.1
 man/man1/gunshar.1
-man/man1/guuencode.1
 share/locale/de/sharutils.msg
 share/locale/fr/sharutils.msg
 share/locale/sv/sharutils.msg
+share/locale/nl/sharutils.msg
