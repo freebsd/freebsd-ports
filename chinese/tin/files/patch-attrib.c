@@ -8,7 +8,7 @@
 +		fprintf(fp, _("# set charset to Big5 in all newsgroups\n"));
 +		fprintf(fp, "scope=*\n");
 +		fprintf(fp, "mm_network_charset=Big5\n");
-+		printf(fp, "undeclared_charset=Big5\n");
++		fprintf(fp, "undeclared_charset=Big5\n");
  	} else {
  		char *ptr;
  		char buf[LEN];
