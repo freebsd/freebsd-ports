@@ -1,0 +1,10 @@
+--- OpenEXR.pc.in.orig	Tue Jan 21 15:32:59 2003
++++ OpenEXR.pc.in	Sun Jan 26 17:22:48 2003
+@@ -8,5 +8,5 @@
+ Description: OpenEXR image library
+ Version: @OPENEXR_VERSION@
+ Libs: -L${libdir} -lIlmImf -lImath -lHalf -lIex -lz
+-Cflags: -I${OpenEXR_includedir
+-Cxxflags: -I${OpenEXR_includedir}
++Cflags: -I${OpenEXR_includedir}
++#Cxxflags: -I${OpenEXR_includedir}

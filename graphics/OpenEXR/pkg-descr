@@ -1,0 +1,18 @@
+Industrial Light & Magic(ILM), a division of Lucas Digital
+Ltd. LLC, implemented its own extended dynamic range file
+format in Summer 2000.  The existing 8-bit file format used
+at the time could not accurately reproduce images with
+extreme contrast between the darkest and brightest regions,
+or images with very subtle color gradations.
+
+ILM's extended dynamic range file format has been employed
+successfully in the movies Harry Potter, Men in Black II,
+and Signs. Several shows currently in production at ILM are
+using the new format.
+
+Realizing that various other parties are interested in an
+extended dynamic range file format, ILM decided to polish
+its new file format a bit, and to publish it.  OpenEXR is
+the result.
+
+WWW: http://www.openexr.org/
