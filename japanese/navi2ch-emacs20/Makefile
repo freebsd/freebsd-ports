@@ -19,39 +19,30 @@ MAINTAINER=	sf@FreeBSD.org
 EMACS_PORT_NAME?=	emacs20
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD}
+CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/${LISPDIR}/navi2ch \
+		--with-emacs=${EMACS_CMD}
 
 DOCDIR=		share/doc/ja/navi2ch
-PACKAGESDIR=	lib/xemacs/site-packages
-PLIST_SUB=	LISPDIR=${LISPDIR} \
-		ETCDIR=${ETCDIR} \
-		INFODIR=${INFODIR}
-
-LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
-ETCDIR=		${EMACS_LIBDIR_WITH_VER}/etc/navi2ch
-INFODIR=	info
+PLIST_SUB=	LISPDIR=${LISPDIR}
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule
-LISPDIR=	${PACKAGESDIR}/lisp
-ETCDIR=		${PACKAGESDIR}/etc/navi2ch
-INFODIR=	${PACKAGESDIR}/info
+LISPDIR=	${EMACS_SITE_LISPDIR}
 PLIST_SUB+=	FSF="@comment "
-CONFIGURE_ARGS+=--with-packagedir=${PREFIX}/${PACKAGESDIR}
 .else
+LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 PLIST_SUB+=	FSF=""
-CONFIGURE_ARGS+=--with-lispdir=${PREFIX}/${LISPDIR}/navi2ch \
-		--with-icondir=${PREFIX}/${ETCDIR}
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
+.if !defined(NOPORTDOCS)
 .for i in ChangeLog README TODO
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${DOCDIR}
 .endfor
 .endif
+	@${MKDIR} ${PREFIX}/${DOCDIR}/contrib
 .for i in gikope.el navi2ch-logo.el navi2ch-migemo.el
-	${INSTALL_DATA} ${WRKSRC}/contrib/$i ${PREFIX}/${LISPDIR}/navi2ch
+	${INSTALL_DATA} ${WRKSRC}/contrib/$i ${PREFIX}/${DOCDIR}/contrib
 .endfor
 
 .include <bsd.port.mk>
