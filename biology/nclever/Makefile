@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/ncbi/libncbi.a:${PORTSDIR}/biology/ncbi-toolkit
 do-install:
 	@${MKDIR} ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/nclever ${PREFIX}/bin
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/nclever_manual.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/nclever.citation ${DOCSDIR}
