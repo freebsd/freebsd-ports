@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	junglemonkey
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.8
 CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
@@ -31,6 +31,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		jm.1 jmlite.1 jmsearchserver.1
+MAN1=		jm.1 jmlite.1 jmsearchserver.1 mtprendezvous.1
 
 .include <bsd.port.mk>

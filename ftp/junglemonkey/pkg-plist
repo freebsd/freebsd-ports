@@ -1,6 +1,7 @@
 bin/jm
 bin/jmlite
 bin/jmsearchserver
+bin/mtprendezvous
 share/gnome/apps/Internet/jm.desktop
 share/gnome/help/jm/C/authors.html
 share/gnome/help/jm/C/bugs.html
@@ -34,6 +35,7 @@ share/gnome/help/jm/C/topic.dat
 share/gnome/jm/glade/jm-gnome.glade
 share/gnome/jm/glade/jm.glade
 share/gnome/jm/glade/master_popup.glade
+share/gnome/jm/glade/preferences_dialog.glade
 share/gnome/jm/glade/properties_dialog.glade
 share/gnome/pixmaps/jm-logo.png
 @dirrm share/gnome/help/jm/C/stylesheet-images
