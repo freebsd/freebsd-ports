@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtop
-# Version required:			1.0.1
+# Version required:			1.0.2
 # Date created:				28 September 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.8 1999/03/09 01:09:02 nectar Exp $
+# $Id: Makefile,v 1.9 1999/04/08 18:08:37 steve Exp $
 #
 
-DISTNAME=	gtop-1.0.1
+DISTNAME=	gtop-1.0.2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtop
@@ -16,13 +16,15 @@ MAINTAINER=	nacai@iname.com
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${X11BASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lxpg4"
+		--with-gnome=${PREFIX}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
