@@ -14,10 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eivind@FreeBSD.org
 
-.if ${MACHINE_ARCH} == "alpha"
-BROKEN=		no sound support on the alpha yet
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=yes

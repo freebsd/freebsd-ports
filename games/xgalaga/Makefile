@@ -15,10 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-.if ${MACHINE_ARCH} == "alpha"
-NOSOUND=	yes
-.endif
-
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 # xgalaga has a very strange usage of these variables...
