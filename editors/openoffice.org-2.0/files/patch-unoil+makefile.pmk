@@ -1,0 +1,11 @@
+--- ../unoil/makefile.pmk	Wed Sep 11 11:50:42 2002
++++ ../unoil/makefile.pmk.orig	Wed Sep 11 11:50:26 2002
+@@ -75,7 +75,7 @@
+ .ENDIF          # "$(L10N_framework)"==""
+ 
+ GENJAVAFILES	:= $(foreach,i,$(JAVAFILESLIST) $(GENJAVADIR)$/$(PACKAGE)$/$i)
+-GENCLASSFILES	:= $(foreach,i,$(JAVAFILESLIST:b) $(GENCLASSDIR)$/$(PACKAGE)$/$i.class)
++GENCLASSFILES	+= $(foreach,i,$(JAVAFILESLIST:b) $(GENCLASSDIR)$/$(PACKAGE)$/$i.class)
+ 
+ # --- Targets ------------------------------------------------------
+ 
