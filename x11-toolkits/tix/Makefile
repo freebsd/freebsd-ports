@@ -48,6 +48,8 @@ pre-configure:
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+post-configure:
+	@(cd ${WRKSRC} && ${ECHO} CFLAGS=${CFLAGS} >> Makefile)
 
 post-install:
 	@(cd ${WRKSRC}/.. && \
