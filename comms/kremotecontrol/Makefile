@@ -58,4 +58,8 @@ post-patch:
 .endif
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
+
 .include <bsd.port.post.mk>

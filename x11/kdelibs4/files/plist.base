@@ -560,7 +560,6 @@ include/libkmid/track.h
 include/libkmid/voiceman.h
 include/netwm.h
 include/netwm_def.h
-include/netwm_p.h
 include/qxembed.h
 include/renamedlgplugin.h
 include/scriptclientinterface.h
@@ -630,8 +629,6 @@ lib/kde3/kio_metainfo.la
 lib/kde3/kio_metainfo.so
 lib/kde3/kjavaappletviewer.la
 lib/kde3/kjavaappletviewer.so
-lib/kde3/kjs_html.la
-lib/kde3/kjs_html.so
 lib/kde3/ktexteditor_insertfile.la
 lib/kde3/ktexteditor_insertfile.so
 lib/kde3/ktexteditor_isearch.la
@@ -2244,6 +2241,7 @@ share/icons/crystalsvg/16x16/actions/flag.png
 share/icons/crystalsvg/16x16/actions/folder_new.png
 share/icons/crystalsvg/16x16/actions/fontsizedown.png
 share/icons/crystalsvg/16x16/actions/fontsizeup.png
+share/icons/crystalsvg/16x16/actions/fork.png
 share/icons/crystalsvg/16x16/actions/forward.png
 share/icons/crystalsvg/16x16/actions/frame_edit.png
 share/icons/crystalsvg/16x16/actions/frame_formula.png
@@ -2640,6 +2638,7 @@ share/icons/crystalsvg/22x22/actions/folder.png
 share/icons/crystalsvg/22x22/actions/folder_new.png
 share/icons/crystalsvg/22x22/actions/fontsizedown.png
 share/icons/crystalsvg/22x22/actions/fontsizeup.png
+share/icons/crystalsvg/22x22/actions/fork.png
 share/icons/crystalsvg/22x22/actions/forward.png
 share/icons/crystalsvg/22x22/actions/frame_chart.png
 share/icons/crystalsvg/22x22/actions/frame_edit.png

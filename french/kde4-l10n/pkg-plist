@@ -1482,6 +1482,7 @@ share/locale/fr/LC_MESSAGES/kinetd.mo
 share/locale/fr/LC_MESSAGES/kio_audiocd.mo
 share/locale/fr/LC_MESSAGES/kio_devices.mo
 share/locale/fr/LC_MESSAGES/kio_finger.mo
+share/locale/fr/LC_MESSAGES/kio_fish.mo
 share/locale/fr/LC_MESSAGES/kio_floppy.mo
 share/locale/fr/LC_MESSAGES/kio_help.mo
 share/locale/fr/LC_MESSAGES/kio_imap4.mo

@@ -17,6 +17,7 @@ share/locale/se/LC_MESSAGES/kabc_sql.mo
 share/locale/se/LC_MESSAGES/kabcformat_binary.mo
 share/locale/se/LC_MESSAGES/kaccess.mo
 share/locale/se/LC_MESSAGES/kappfinder.mo
+share/locale/se/LC_MESSAGES/karm.mo
 share/locale/se/LC_MESSAGES/kasbarextension.mo
 share/locale/se/LC_MESSAGES/kate.mo
 share/locale/se/LC_MESSAGES/katepart.mo
@@ -29,6 +30,7 @@ share/locale/se/LC_MESSAGES/kcmemail.mo
 share/locale/se/LC_MESSAGES/kcmenergy.mo
 share/locale/se/LC_MESSAGES/kcmfileshare.mo
 share/locale/se/LC_MESSAGES/kcmfonts.mo
+share/locale/se/LC_MESSAGES/kcmicons.mo
 share/locale/se/LC_MESSAGES/kcmioslaveinfo.mo
 share/locale/se/LC_MESSAGES/kcmkclock.mo
 share/locale/se/LC_MESSAGES/kcmkded.mo

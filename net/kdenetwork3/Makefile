@@ -8,7 +8,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -25,10 +24,17 @@ KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .if !defined(WITHOUT_KTALKD)
 UTMP?=	/var/run/utmp
@@ -36,7 +42,7 @@ UTMP?=	/var/run/utmp
 PLIST_APPEND+=	plist.ktalkd
 .else
 DO_NOT_COMPILE+=	ktalkd
-pre-configure:
+pre-configure::
 	@${ECHO_MSG} "===> \"${UTMP}\" was not found."
 	@${ECHO_MSG} "===> The talk daemon (ktalkd) will not be built."
 .endif # exists(${UTMP})
@@ -48,5 +54,4 @@ DO_NOT_COMPILE+=	ktalkd
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	0
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -45,9 +44,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-ltdl-install	\
 		--enable-mt		\
 		--enable-cups
+KDE_BUILD_PLIST=	yes
 
 FONTSCALE=	${X11BASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
+
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
 
 # fam provides a measurable performance increase for file watching
 # operations within KDE
@@ -60,18 +63,15 @@ LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
-KDE_BUILD_PLIST=	yes
 # kabc (the addressbook backend) can use ldap if it's available
 .if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
 LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
 PLIST_APPEND+=	plist.ldap
 .endif
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	${REINPLACE_CMD} "s, kspell,,g" ${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} "s,-pedantic ,," ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/rc.d

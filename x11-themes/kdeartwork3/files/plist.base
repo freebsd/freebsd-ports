@@ -433,7 +433,6 @@ share/icons/Locolor/16x16/apps/kpm.png
 share/icons/Locolor/16x16/apps/kpoker.png
 share/icons/Locolor/16x16/apps/kppp.png
 share/icons/Locolor/16x16/apps/kpresenter.png
-share/icons/Locolor/16x16/apps/krayon.png
 share/icons/Locolor/16x16/apps/kreversi.png
 share/icons/Locolor/16x16/apps/kruler.png
 share/icons/Locolor/16x16/apps/ksame.png
@@ -755,7 +754,6 @@ share/icons/Locolor/32x32/apps/kpm.png
 share/icons/Locolor/32x32/apps/kpoker.png
 share/icons/Locolor/32x32/apps/kppp.png
 share/icons/Locolor/32x32/apps/kpresenter.png
-share/icons/Locolor/32x32/apps/krayon.png
 share/icons/Locolor/32x32/apps/kreversi.png
 share/icons/Locolor/32x32/apps/kruler.png
 share/icons/Locolor/32x32/apps/ksame.png
@@ -2193,7 +2191,6 @@ share/icons/kdeclassic/16x16/apps/kpoker.png
 share/icons/kdeclassic/16x16/apps/kpovmodeler.png
 share/icons/kdeclassic/16x16/apps/kppp.png
 share/icons/kdeclassic/16x16/apps/kpresenter.png
-share/icons/kdeclassic/16x16/apps/krayon.png
 share/icons/kdeclassic/16x16/apps/kreversi.png
 share/icons/kdeclassic/16x16/apps/krita.png
 share/icons/kdeclassic/16x16/apps/kruler.png
@@ -3545,7 +3542,6 @@ share/icons/kdeclassic/32x32/apps/kpoker.png
 share/icons/kdeclassic/32x32/apps/kpovmodeler.png
 share/icons/kdeclassic/32x32/apps/kppp.png
 share/icons/kdeclassic/32x32/apps/kpresenter.png
-share/icons/kdeclassic/32x32/apps/krayon.png
 share/icons/kdeclassic/32x32/apps/krdc.png
 share/icons/kdeclassic/32x32/apps/kreversi.png
 share/icons/kdeclassic/32x32/apps/krfb.png
@@ -3932,7 +3928,6 @@ share/icons/kdeclassic/48x48/apps/kpilotDaemon.png
 share/icons/kdeclassic/48x48/apps/kpoker.png
 share/icons/kdeclassic/48x48/apps/kppp.png
 share/icons/kdeclassic/48x48/apps/kpresenter.png
-share/icons/kdeclassic/48x48/apps/krayon.png
 share/icons/kdeclassic/48x48/apps/krdc.png
 share/icons/kdeclassic/48x48/apps/krec.png
 share/icons/kdeclassic/48x48/apps/kreversi.png
@@ -4384,7 +4379,6 @@ share/icons/slick/16x16/apps/konsole.png
 share/icons/slick/16x16/apps/kontour.png
 share/icons/slick/16x16/apps/kppp.png
 share/icons/slick/16x16/apps/kpresenter.png
-share/icons/slick/16x16/apps/krayon.png
 share/icons/slick/16x16/apps/kreatecd.png
 share/icons/slick/16x16/apps/kshowmail.png
 share/icons/slick/16x16/apps/kspread.png
@@ -4909,7 +4903,6 @@ share/icons/slick/32x32/apps/kontour.png
 share/icons/slick/32x32/apps/kpf.png
 share/icons/slick/32x32/apps/kppp.png
 share/icons/slick/32x32/apps/kpresenter.png
-share/icons/slick/32x32/apps/krayon.png
 share/icons/slick/32x32/apps/kreatecd.png
 share/icons/slick/32x32/apps/kshowmail.png
 share/icons/slick/32x32/apps/kspread.png
@@ -5316,7 +5309,6 @@ share/icons/slick/48x48/apps/konsole_blue.png
 share/icons/slick/48x48/apps/kontour.png
 share/icons/slick/48x48/apps/kppp.png
 share/icons/slick/48x48/apps/kpresenter.png
-share/icons/slick/48x48/apps/krayon.png
 share/icons/slick/48x48/apps/kreatecd.png
 share/icons/slick/48x48/apps/kshowmail.png
 share/icons/slick/48x48/apps/kspread.png

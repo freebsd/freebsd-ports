@@ -23,6 +23,7 @@ KDE_BUILD_PLIST=yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
@@ -67,6 +68,7 @@ WITH_SANE?=	yes
 .if defined(WITH_SANE)
 LIB_DEPENDS+=	sane.1:${PORTSDIR}/graphics/sane-backends
 PLIST_APPEND+=	plist.sane
+RUN_DEPENDS=	${LOCALBASE}/bin/gocr:${PORTSDIR}/graphics/gocr
 .else
 pre-everything::
 	@${ECHO_MSG}
@@ -76,5 +78,8 @@ pre-everything::
 	@${ECHO_MSG} "======================================================="
 	@${ECHO_MSG}
 .endif # defined(WITH_SANE)
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

@@ -1945,8 +1945,6 @@ share/doc/HTML/en/kwrite/index.docbook
 share/fonts/9x15.pcf.gz
 share/fonts/console8x16.pcf.gz
 share/fonts/console8x8.pcf.gz
-share/fonts/fonts.dir
-share/fonts/override/fonts.dir
 share/icons/crystalsvg/128x128/apps/access.png
 share/icons/crystalsvg/128x128/apps/acroread.png
 share/icons/crystalsvg/128x128/apps/applixware.png
@@ -2953,4 +2951,5 @@ share/wallpapers/kdm_bg.jpg
 share/wallpapers/only_k.jpg
 share/wallpapers/triplegears.jpg
 @exec /bin/mkdir -p %D/share/doc/HTML/en/kdebase-apidocs/libkonq/html
+@exec /bin/mkdir -p %D/share/fonts/override
 @exec /bin/mkdir -p %D/share/templates/.source/emptydir

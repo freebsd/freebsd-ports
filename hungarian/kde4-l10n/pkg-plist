@@ -572,6 +572,7 @@ share/locale/hu/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/hu/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/hu/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/hu/LC_MESSAGES/dirfilterplugin.mo
+share/locale/hu/LC_MESSAGES/dockbarextension.mo
 share/locale/hu/LC_MESSAGES/domtreeviewer.mo
 share/locale/hu/LC_MESSAGES/drkonqi.mo
 share/locale/hu/LC_MESSAGES/dub.mo
@@ -767,6 +768,7 @@ share/locale/hu/LC_MESSAGES/kinetd.mo
 share/locale/hu/LC_MESSAGES/kio_audiocd.mo
 share/locale/hu/LC_MESSAGES/kio_devices.mo
 share/locale/hu/LC_MESSAGES/kio_finger.mo
+share/locale/hu/LC_MESSAGES/kio_fish.mo
 share/locale/hu/LC_MESSAGES/kio_floppy.mo
 share/locale/hu/LC_MESSAGES/kio_imap4.mo
 share/locale/hu/LC_MESSAGES/kio_lan.mo

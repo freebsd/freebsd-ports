@@ -9,6 +9,10 @@ share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_charge.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nobattery.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/laptop_nocharge.png
 share/apps/klaptopdaemon/icons/crystalsvg/16x16/actions/power.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_charge.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nobattery.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_nocharge.png
+share/apps/klaptopdaemon/icons/crystalsvg/22x22/actions/laptop_power.png
 share/apps/klaptopdaemon/icons/crystalsvg/32x32/actions/power.png
 share/icons/crystalsvg/128x128/apps/laptop_battery.png
 share/icons/crystalsvg/16x16/apps/klaptopdaemon.png

@@ -1,4 +1,5 @@
 @unexec /bin/rmdir %D/share/templates/.source/emptydir || true
+@unexec /bin/rmdir %D/share/fonts/override || true
 @unexec /bin/rmdir %D/share/doc/HTML/en/kdebase-apidocs/libkonq/html || true
 @dirrm share/wallpapers
 @dirrm share/templates/.source
@@ -149,7 +150,6 @@
 @dirrm share/icons/crystalsvg/128x128
 @dirrm share/icons/crystalsvg
 @dirrm share/icons
-@dirrm share/fonts/override
 @dirrm share/fonts
 @dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/ksysguard

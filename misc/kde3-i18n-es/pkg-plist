@@ -954,6 +954,18 @@ share/doc/HTML/es/megami/index.docbook
 share/doc/HTML/es/noatun/common
 share/doc/HTML/es/noatun/index.cache.bz2
 share/doc/HTML/es/noatun/index.docbook
+share/doc/HTML/es/quanta/adv-quanta.docbook
+share/doc/HTML/es/quanta/common
+share/doc/HTML/es/quanta/debugging-quanta.docbook
+share/doc/HTML/es/quanta/extending-quanta.docbook
+share/doc/HTML/es/quanta/fundamentals.docbook
+share/doc/HTML/es/quanta/index.cache.bz2
+share/doc/HTML/es/quanta/index.docbook
+share/doc/HTML/es/quanta/installation.docbook
+share/doc/HTML/es/quanta/introduction.docbook
+share/doc/HTML/es/quanta/quanta-menus.docbook
+share/doc/HTML/es/quanta/quanta-projects.docbook
+share/doc/HTML/es/quanta/using-quanta.docbook
 share/locale/es/LC_MESSAGES/aktion.mo
 share/locale/es/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/es/LC_MESSAGES/alsaplayerui.mo
@@ -988,6 +1000,7 @@ share/locale/es/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/es/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/es/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/es/LC_MESSAGES/dirfilterplugin.mo
+share/locale/es/LC_MESSAGES/dockbarextension.mo
 share/locale/es/LC_MESSAGES/domtreeviewer.mo
 share/locale/es/LC_MESSAGES/drkonqi.mo
 share/locale/es/LC_MESSAGES/dub.mo
@@ -1183,6 +1196,7 @@ share/locale/es/LC_MESSAGES/kinetd.mo
 share/locale/es/LC_MESSAGES/kio_audiocd.mo
 share/locale/es/LC_MESSAGES/kio_devices.mo
 share/locale/es/LC_MESSAGES/kio_finger.mo
+share/locale/es/LC_MESSAGES/kio_fish.mo
 share/locale/es/LC_MESSAGES/kio_floppy.mo
 share/locale/es/LC_MESSAGES/kio_imap4.mo
 share/locale/es/LC_MESSAGES/kio_lan.mo
@@ -1378,6 +1392,7 @@ share/locale/es/LC_MESSAGES/webarchiver.mo
 share/locale/es/charset
 share/locale/es/entry.desktop
 share/locale/es/flag.png
+@dirrm share/doc/HTML/es/quanta
 @dirrm share/doc/HTML/es/noatun
 @dirrm share/doc/HTML/es/megami
 @dirrm share/doc/HTML/es/lskat

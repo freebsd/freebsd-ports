@@ -279,6 +279,7 @@ share/locale/he/LC_MESSAGES/kinetd.mo
 share/locale/he/LC_MESSAGES/kio_audiocd.mo
 share/locale/he/LC_MESSAGES/kio_devices.mo
 share/locale/he/LC_MESSAGES/kio_finger.mo
+share/locale/he/LC_MESSAGES/kio_fish.mo
 share/locale/he/LC_MESSAGES/kio_floppy.mo
 share/locale/he/LC_MESSAGES/kio_imap4.mo
 share/locale/he/LC_MESSAGES/kio_lan.mo
@@ -386,6 +387,7 @@ share/locale/he/LC_MESSAGES/ktexteditor_kdatatool.mo
 share/locale/he/LC_MESSAGES/ktimemon.mo
 share/locale/he/LC_MESSAGES/ktimer.mo
 share/locale/he/LC_MESSAGES/ktip.mo
+share/locale/he/LC_MESSAGES/ktouch.mo
 share/locale/he/LC_MESSAGES/ktron.mo
 share/locale/he/LC_MESSAGES/ktuberling.mo
 share/locale/he/LC_MESSAGES/ktux.mo

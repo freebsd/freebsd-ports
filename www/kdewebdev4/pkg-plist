@@ -38,6 +38,33 @@ share/apps/quanta/doc/tips.html
 share/apps/quanta/doc/webdev.png
 share/apps/quanta/plugins.rc
 share/apps/quanta/quantaui.rc
+share/apps/quanta/tags/docbook-4.2/a.tag
+share/apps/quanta/tags/docbook-4.2/b.tag
+share/apps/quanta/tags/docbook-4.2/c.tag
+share/apps/quanta/tags/docbook-4.2/d.tag
+share/apps/quanta/tags/docbook-4.2/description.rc
+share/apps/quanta/tags/docbook-4.2/e.tag
+share/apps/quanta/tags/docbook-4.2/f.tag
+share/apps/quanta/tags/docbook-4.2/g.tag
+share/apps/quanta/tags/docbook-4.2/h.tag
+share/apps/quanta/tags/docbook-4.2/i.tag
+share/apps/quanta/tags/docbook-4.2/j.tag
+share/apps/quanta/tags/docbook-4.2/k.tag
+share/apps/quanta/tags/docbook-4.2/l.tag
+share/apps/quanta/tags/docbook-4.2/m.tag
+share/apps/quanta/tags/docbook-4.2/n.tag
+share/apps/quanta/tags/docbook-4.2/o.tag
+share/apps/quanta/tags/docbook-4.2/p.tag
+share/apps/quanta/tags/docbook-4.2/q.tag
+share/apps/quanta/tags/docbook-4.2/r.tag
+share/apps/quanta/tags/docbook-4.2/s.tag
+share/apps/quanta/tags/docbook-4.2/t.tag
+share/apps/quanta/tags/docbook-4.2/u.tag
+share/apps/quanta/tags/docbook-4.2/v.tag
+share/apps/quanta/tags/docbook-4.2/w.tag
+share/apps/quanta/tags/docbook-4.2/x.tag
+share/apps/quanta/tags/docbook-4.2/y.tag
+share/apps/quanta/tags/docbook-4.2/z.tag
 share/apps/quanta/tags/html-frameset/description.rc
 share/apps/quanta/tags/html-strict/description.rc
 share/apps/quanta/tags/html/a.tag
@@ -556,11 +583,7 @@ share/icons/locolor/32x32/apps/kmdr/executor.png
 @dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/quanta
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
 @dirrm share/apps/quanta/toolbars/xml
 @dirrm share/apps/quanta/toolbars/wml-1-2
 @dirrm share/apps/quanta/toolbars/tagxml
@@ -594,13 +617,12 @@ share/icons/locolor/32x32/apps/kmdr/executor.png
 @dirrm share/apps/quanta/tags/html-strict
 @dirrm share/apps/quanta/tags/html-frameset
 @dirrm share/apps/quanta/tags/html
+@dirrm share/apps/quanta/tags/docbook-4.2
 @dirrm share/apps/quanta/tags
 @dirrm share/apps/quanta/doc
 @dirrm share/apps/quanta
-@dirrm share/apps
 @dirrm share/applnk/Editors
 @dirrm share/applnk/Development
 @dirrm share/applnk/Applications
-@dirrm share/applnk
 @dirrm lib/quanta/plugins
 @dirrm lib/quanta

@@ -92,6 +92,7 @@ share/locale/ro/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/ro/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/ro/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/ro/LC_MESSAGES/dirfilterplugin.mo
+share/locale/ro/LC_MESSAGES/dockbarextension.mo
 share/locale/ro/LC_MESSAGES/domtreeviewer.mo
 share/locale/ro/LC_MESSAGES/drkonqi.mo
 share/locale/ro/LC_MESSAGES/extensionproxy.mo
@@ -227,6 +228,7 @@ share/locale/ro/LC_MESSAGES/kiconedit.mo
 share/locale/ro/LC_MESSAGES/kio_audiocd.mo
 share/locale/ro/LC_MESSAGES/kio_devices.mo
 share/locale/ro/LC_MESSAGES/kio_finger.mo
+share/locale/ro/LC_MESSAGES/kio_fish.mo
 share/locale/ro/LC_MESSAGES/kio_floppy.mo
 share/locale/ro/LC_MESSAGES/kio_imap4.mo
 share/locale/ro/LC_MESSAGES/kio_lan.mo
@@ -247,6 +249,7 @@ share/locale/ro/LC_MESSAGES/kjumpingcube.mo
 share/locale/ro/LC_MESSAGES/klaptopdaemon.mo
 share/locale/ro/LC_MESSAGES/klegacyimport.mo
 share/locale/ro/LC_MESSAGES/klipper.mo
+share/locale/ro/LC_MESSAGES/klock.mo
 share/locale/ro/LC_MESSAGES/kmahjongg.mo
 share/locale/ro/LC_MESSAGES/kmail.mo
 share/locale/ro/LC_MESSAGES/kmailcvt.mo
@@ -274,6 +277,7 @@ share/locale/ro/LC_MESSAGES/kpackage.mo
 share/locale/ro/LC_MESSAGES/kpager.mo
 share/locale/ro/LC_MESSAGES/kpaint.mo
 share/locale/ro/LC_MESSAGES/kpartapp.mo
+share/locale/ro/LC_MESSAGES/kpartsaver.mo
 share/locale/ro/LC_MESSAGES/kpat.mo
 share/locale/ro/LC_MESSAGES/kpersonalizer.mo
 share/locale/ro/LC_MESSAGES/kpilot.mo
@@ -334,6 +338,7 @@ share/locale/ro/LC_MESSAGES/kworldclock.mo
 share/locale/ro/LC_MESSAGES/kwuftpd.mo
 share/locale/ro/LC_MESSAGES/kxkb.mo
 share/locale/ro/LC_MESSAGES/kxmlrpcd.mo
+share/locale/ro/LC_MESSAGES/kxsconfig.mo
 share/locale/ro/LC_MESSAGES/libkdegames.mo
 share/locale/ro/LC_MESSAGES/libkdenetwork.mo
 share/locale/ro/LC_MESSAGES/libkicker.mo

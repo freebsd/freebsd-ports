@@ -32,6 +32,7 @@ share/locale/pl/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/pl/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/pl/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/pl/LC_MESSAGES/dirfilterplugin.mo
+share/locale/pl/LC_MESSAGES/dockbarextension.mo
 share/locale/pl/LC_MESSAGES/domtreeviewer.mo
 share/locale/pl/LC_MESSAGES/drkonqi.mo
 share/locale/pl/LC_MESSAGES/dub.mo
@@ -227,6 +228,7 @@ share/locale/pl/LC_MESSAGES/kinetd.mo
 share/locale/pl/LC_MESSAGES/kio_audiocd.mo
 share/locale/pl/LC_MESSAGES/kio_devices.mo
 share/locale/pl/LC_MESSAGES/kio_finger.mo
+share/locale/pl/LC_MESSAGES/kio_fish.mo
 share/locale/pl/LC_MESSAGES/kio_floppy.mo
 share/locale/pl/LC_MESSAGES/kio_imap4.mo
 share/locale/pl/LC_MESSAGES/kio_lan.mo
@@ -419,3 +421,6 @@ share/locale/pl/LC_MESSAGES/webarchiver.mo
 share/locale/pl/charset
 share/locale/pl/entry.desktop
 share/locale/pl/flag.png
+share/services/searchproviders/onet.desktop
+share/services/searchproviders/wirtualna_polska.desktop
+@dirrm share/services/searchproviders

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	arts
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	audio kde
@@ -26,9 +26,15 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 QTCPPFLAGS+=	-L${LOCALBASE}/lib
+USE_REINPLACE=	yes
 DO_NOT_COMPILE+=gmcop
 
 CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's|-pedantic ||g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

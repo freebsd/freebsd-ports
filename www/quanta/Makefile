@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@freebsd.org
-COMMENT=	Comprehensive html/website development environment.
+COMMENT=	Comprehensive html/website development environment
 
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
 
@@ -25,10 +25,16 @@ PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \
 		--disable-closure --enable-threads --disable-debug
 
 .include <${.CURDIR}/../../x11/kde3/Makefile.kde>
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
+
+.include <bsd.port.post.mk>

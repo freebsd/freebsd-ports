@@ -18,6 +18,7 @@ COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 
 RUN_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
 LIB_DEPENDS+=	cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
+		mp3lame:${PORTSDIR}/audio/lame \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
@@ -28,16 +29,19 @@ KDE_BUILD_PLIST=yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	esound
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 MAKE_ENV=	${CONFIGURE_ENV}
 
-CONFIGURE_ARGS+=	--without-lame \
-			--with-vorbis="${LOCALBASE}" \
+CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}" \
 			--enable-audio=oss,esd
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+pre-configure::
+	${REINPLACE_CMD} -e 's@-pedantic @@g' ${WRKSRC}/configure
 
 .if defined(WITH_MIDI) || defined(WITH_KMIDI)
 PLIST_APPEND+=	plist.midi

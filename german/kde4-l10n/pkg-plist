@@ -768,7 +768,6 @@ share/doc/HTML/de/konq-plugins/index.docbook
 share/doc/HTML/de/konqueror/basics.docbook
 share/doc/HTML/de/konqueror/bookmarks.docbook
 share/doc/HTML/de/konqueror/browser.docbook
-share/doc/HTML/de/konqueror/cmdline.png
 share/doc/HTML/de/konqueror/cmndline.png
 share/doc/HTML/de/konqueror/commands.docbook
 share/doc/HTML/de/konqueror/common
@@ -778,9 +777,6 @@ share/doc/HTML/de/konqueror/dirtree.png
 share/doc/HTML/de/konqueror/dragdrop.png
 share/doc/HTML/de/konqueror/faq.docbook
 share/doc/HTML/de/konqueror/filemanager.docbook
-share/doc/HTML/de/konqueror/filetype1.png
-share/doc/HTML/de/konqueror/filetype3.png
-share/doc/HTML/de/konqueror/filetype4.png
 share/doc/HTML/de/konqueror/index.cache.bz2
 share/doc/HTML/de/konqueror/index.docbook
 share/doc/HTML/de/konqueror/introduction.docbook
@@ -1066,6 +1062,17 @@ share/doc/HTML/de/kworldclock/index.docbook
 share/doc/HTML/de/kwrite/common
 share/doc/HTML/de/kwrite/index.cache.bz2
 share/doc/HTML/de/kwrite/index.docbook
+share/doc/HTML/de/kwuftpd/common
+share/doc/HTML/de/kwuftpd/directories.png
+share/doc/HTML/de/kwuftpd/index.cache.bz2
+share/doc/HTML/de/kwuftpd/index.docbook
+share/doc/HTML/de/kwuftpd/logging.png
+share/doc/HTML/de/kwuftpd/messages.png
+share/doc/HTML/de/kwuftpd/ratios.png
+share/doc/HTML/de/kwuftpd/security.png
+share/doc/HTML/de/kwuftpd/uploads.png
+share/doc/HTML/de/kwuftpd/user_classes.png
+share/doc/HTML/de/kwuftpd/virtual.png
 share/doc/HTML/de/kxconfig/common
 share/doc/HTML/de/kxconfig/index.cache.bz2
 share/doc/HTML/de/kxconfig/index.docbook
@@ -1342,6 +1349,7 @@ share/locale/de/LC_MESSAGES/kinetd.mo
 share/locale/de/LC_MESSAGES/kio_audiocd.mo
 share/locale/de/LC_MESSAGES/kio_devices.mo
 share/locale/de/LC_MESSAGES/kio_finger.mo
+share/locale/de/LC_MESSAGES/kio_fish.mo
 share/locale/de/LC_MESSAGES/kio_floppy.mo
 share/locale/de/LC_MESSAGES/kio_imap4.mo
 share/locale/de/LC_MESSAGES/kio_lan.mo
@@ -1544,6 +1552,7 @@ share/locale/de/flag.png
 @dirrm share/doc/HTML/de/lskat
 @dirrm share/doc/HTML/de/lisa
 @dirrm share/doc/HTML/de/kxconfig
+@dirrm share/doc/HTML/de/kwuftpd
 @dirrm share/doc/HTML/de/kwrite
 @dirrm share/doc/HTML/de/kworldclock
 @dirrm share/doc/HTML/de/kwin4

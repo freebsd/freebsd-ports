@@ -1,6 +1,10 @@
 share/doc/HTML/nn/kaddressbook/common
 share/doc/HTML/nn/kaddressbook/index.cache.bz2
 share/doc/HTML/nn/kaddressbook/index.docbook
+share/doc/HTML/nn/kcontrol/common
+share/doc/HTML/nn/kcontrol/index.cache.bz2
+share/doc/HTML/nn/kcontrol/index.docbook
+share/doc/HTML/nn/kcontrol/screenshot.png
 share/doc/HTML/nn/khelpcenter/common
 share/doc/HTML/nn/khelpcenter/contact.docbook
 share/doc/HTML/nn/khelpcenter/help.docbook
@@ -10,9 +14,23 @@ share/doc/HTML/nn/khelpcenter/links.docbook
 share/doc/HTML/nn/khelpcenter/support.docbook
 share/doc/HTML/nn/khelpcenter/welcome.docbook
 share/doc/HTML/nn/khelpcenter/whatiskde.docbook
+share/doc/HTML/nn/kinfocenter/common
+share/doc/HTML/nn/kinfocenter/index.cache.bz2
+share/doc/HTML/nn/kinfocenter/index.docbook
 share/doc/HTML/nn/klipper/common
 share/doc/HTML/nn/klipper/index.cache.bz2
 share/doc/HTML/nn/klipper/index.docbook
+share/doc/HTML/nn/kmail/common
+share/doc/HTML/nn/kmail/configure.docbook
+share/doc/HTML/nn/kmail/credits-and-licenses.docbook
+share/doc/HTML/nn/kmail/faq.docbook
+share/doc/HTML/nn/kmail/getting-started.docbook
+share/doc/HTML/nn/kmail/importing.docbook
+share/doc/HTML/nn/kmail/index.cache.bz2
+share/doc/HTML/nn/kmail/index.docbook
+share/doc/HTML/nn/kmail/intro.docbook
+share/doc/HTML/nn/kmail/menus.docbook
+share/doc/HTML/nn/kmail/using-kmail.docbook
 share/locale/nn/LC_MESSAGES/aktion.mo
 share/locale/nn/LC_MESSAGES/alarmdaemonctrl.mo
 share/locale/nn/LC_MESSAGES/amor.mo
@@ -417,7 +435,10 @@ share/locale/nn/LC_MESSAGES/webarchiver.mo
 share/locale/nn/charset
 share/locale/nn/entry.desktop
 share/locale/nn/flag.png
+@dirrm share/doc/HTML/nn/kmail
 @dirrm share/doc/HTML/nn/klipper
+@dirrm share/doc/HTML/nn/kinfocenter
 @dirrm share/doc/HTML/nn/khelpcenter
+@dirrm share/doc/HTML/nn/kcontrol
 @dirrm share/doc/HTML/nn/kaddressbook
 @dirrm share/doc/HTML/nn

@@ -116,6 +116,7 @@ share/applnk/Utilities/kpilot.desktop
 share/applnk/Utilities/kpilotdaemon.desktop
 share/apps/kaddressbook/csv-templates/kaddressbook.desktop
 share/apps/kaddressbook/csv-templates/outlook2000.desktop
+share/apps/kaddressbook/csv-templates/outlookxp.desktop
 share/apps/kaddressbook/icons/crystalsvg/16x16/actions/ldap_lookup.png
 share/apps/kaddressbook/icons/crystalsvg/16x16/actions/smallcal.png
 share/apps/kaddressbook/icons/crystalsvg/32x32/actions/gohome.png

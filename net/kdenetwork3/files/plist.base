@@ -596,8 +596,8 @@ share/apps/kppp/Rules/Italy/Infostrada_Libero1055_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Loc_Reg_Naz_SpZero.rst
 share/apps/kppp/Rules/Italy/Infostrada_Locali_Base.rst
 share/apps/kppp/Rules/Italy/Infostrada_Reg_Naz_Base.rst
-share/apps/kppp/Rules/Italy/Tele2_Interurbane.rst
-share/apps/kppp/Rules/Italy/Tele2_Urbane.rst
+share/apps/kppp/Rules/Italy/Tele2_Altri_ISP.rst
+share/apps/kppp/Rules/Italy/Tele2_Internet.rst
 share/apps/kppp/Rules/Italy/Telecom_Interurbane_Fino15Km.rst
 share/apps/kppp/Rules/Italy/Telecom_Interurbane_Oltre15Km.rst
 share/apps/kppp/Rules/Italy/Telecom_Locali.rst
