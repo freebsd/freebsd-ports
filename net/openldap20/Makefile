@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	openldap
+PORTNAME=	openldap20
 PORTVERSION=	2.0.25
 PORTREVISION=	3
 CATEGORIES=	net databases
@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.loxinfo.co.th/pub/unix/LDAP/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.zcu.cz/pub/network/openldap/%SUBDIR%/
 MASTER_SITE_SUBDIR=	openldap-release
+DISTNAME=	openldap-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
