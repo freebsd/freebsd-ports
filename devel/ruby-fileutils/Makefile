@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	fileutils
-PORTVERSION=	0.0.0
+PORTVERSION=	2
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.loveruby.net/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -22,10 +21,15 @@ RUBY_SETUP=	install.rb
 USE_RUBY_RD=	yes
 .endif
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+DOCS_EN=	doc-en.rd	doc-en.html
 DOCS_JA=	doc-ja.rd	doc-ja.html
 
 post-build:
 .if !defined(NOPORTDOCS)
+	@cd ${WRKSRC}; \
+	${RUBY_RD} doc-en.rd > doc-en.html
 	@cd ${WRKSRC}; \
 	${RUBY_RD} doc-ja.rd > doc-ja.html
 .endif
@@ -33,6 +37,9 @@ post-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
 .for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endfor

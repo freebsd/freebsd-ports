@@ -1,4 +1,6 @@
 %%RUBY_SITELIBDIR%%/fileutils.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fileutils/doc-en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fileutils/doc-en.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fileutils/ja/doc-ja.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/fileutils/ja/doc-ja.rd
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fileutils/ja
