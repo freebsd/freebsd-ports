@@ -94,6 +94,7 @@
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
     SUBDIR += gkrellmss
+    SUBDIR += gkrellmss2
     SUBDIR += gkrellmvolume
     SUBDIR += gkrellmvolume2
     SUBDIR += glame
