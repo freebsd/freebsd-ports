@@ -1,0 +1,11 @@
+--- configure.orig	Wed Mar  1 23:41:56 2000
++++ configure	Wed Mar  1 23:42:08 2000
+@@ -2348,7 +2348,7 @@
+ CFLAGS="$CFLAGS -I/usr/local/include -I/opt/include" 
+ 
+ EB_CFLAGS="$CFLAGS -I../"
+-EB_LIBS="$LIBS -L../libicq -licq -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -lpthread"
++EB_LIBS="$LIBS -L../libicq -licq -L../libmsn -lmsn -L../libyahoo -lyahoo -L../libproxy -lproxy -L../libtoc -ltoc -pthread"
+ EB_LDADD="$LDADD"
+ 
+ EB_CFLAGS="$EB_CFLAGS -D_REENTRANT -Wall -g "
