@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	ja-openoffice-
 DISTNAME=	impress_templates
 DIST_SUBDIR?=	openoffice1.1
 
-MAINTAINER=	nork@FreeBSD.org
+MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	OpenOffice 1.1.0 Impress Templates
 PLIST=		${WRKDIR}/pkg-plist
 
