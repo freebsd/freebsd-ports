@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	3.8.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.xfce.org/archive/
 
@@ -35,6 +36,8 @@ pre-patch:
 		's|DATADIRNAME=lib|DATADIRNAME=share|g ; \
 		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|gtk-config|${GTK_CONFIG:T}|g' ${WRKSRC}/xfce/setup.c
+	@${PERL} -pi -e 's|xfplay|internal|g' ${WRKSRC}/other/xfsoundrc.in
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
