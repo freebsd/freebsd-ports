@@ -135,6 +135,7 @@
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
     SUBDIR += gnubile
+    SUBDIR += gnugadu
     SUBDIR += gnut
     SUBDIR += gopher
     SUBDIR += gq
