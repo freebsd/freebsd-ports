@@ -1,0 +1,21 @@
+#!/bin/sh
+env=/usr/bin/env
+fgrep=/usr/bin/fgrep
+ldconfig=/sbin/ldconfig
+if [ x$2 = xINSTALL -a x$ARCH = xi386 ]; then
+	$env OBJFORMAT=aout $ldconfig -r | $fgrep -q -e '-lc.3'
+	if [ $? -ne 0 ]; then
+		cat <<END
+*********************************************************************
+
+    There do not appear to be any a.out libraries on this
+    machine.  Please install the compat22 distribution (via
+    /stand/sysinstall) or build it as part of your 'make world'
+    (see /etc/make.conf).
+
+*********************************************************************
+END
+		exit 1
+	fi
+fi
+exit 0;

@@ -14,11 +14,17 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	reg@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
+
 WRKSRC=		${WRKDIR}/lib
 NO_BUILD=	yes
 PORTOBJFORMAT=	aout
 
 USE_X_PREFIX=	yes
+
+pre-configure:
+	@${SETENV} ${SCRIPTS_ENV} ARCH=${ARCH} ${SH} \
+		${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 do-install:
 	cd ${WRKSRC}; \
