@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.27 1998/07/27 12:29:36 wosch Exp $
+# $Id: log_accum.pl,v 1.28 1998/07/27 12:54:29 wosch Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -659,3 +659,4 @@ if ($rcsidinfo == 1) {
 &mail_notification(@text);
 &cleanup_tmpfiles();
 exit 0;
+# EOF
