@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.85 1999/04/27 13:44:40 taoka Exp $
+# $Id: Makefile,v 1.86 1999/05/03 03:53:35 steve Exp $
 #
 
     SUBDIR += amp
@@ -19,12 +19,12 @@
     SUBDIR += gsm
     SUBDIR += icecast
     SUBDIR += id3ren
+    SUBDIR += juke
     SUBDIR += kdemultimedia
     SUBDIR += kdemultimedia11
     SUBDIR += kmikmod
     SUBDIR += kmp3
     SUBDIR += kmpg
-    SUBDIR += juke
     SUBDIR += lamer
     SUBDIR += libaudiofile
     SUBDIR += linux-realplayer
