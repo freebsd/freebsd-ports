@@ -1,0 +1,13 @@
+This module can be used to determine the mime type of a file. It
+tries to implement the freedesktop specification for a shared
+MIME database.
+
+For this module shared-mime-info-spec 0.12 was used.
+
+This package only uses the globs file. No real magic checking is
+used. The File::MimeInfo::Magic package is provided for magic typing.
+
+If you want to detemine the mimetype of data in a memory buffer
+you should use File::MimeInfo::Magic in combination with IO::Scalar.
+
+WWW: htto://search.cpan.org/dist/File-MimeInfo/
