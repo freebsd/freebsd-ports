@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.5.0
+PORTVERSION=	4.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -33,8 +33,7 @@ CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 .endif
 
 post-patch:
-	@${PERL} -pi -e "s,\@mandir\@,\@mandir\@/man1,g ; \
-		s,\$\(pkgdatadir\),\$\(mandir\),g ; \
+	@${PERL} -pi -e "s,\$\(pkgdatadir\),\$\(mandir\),g ; \
 		s,intl,,g" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
