@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:20 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/16 04:15:59 jseger Exp $
 #
 
 DISTNAME=	xklock-2.7
@@ -17,6 +17,8 @@ MASTER_SITES=	ftp://ftp.tk.mesh.ad.jp/pub/Linux/JE-sources/X/  \
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	xklock-2.7+lx.diff.gz
 PATCH_DIST_STRIP=	-p1
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 MAINTAINER=	nkazushi@highway.or.jp
 
