@@ -13,6 +13,8 @@ lib/libpcre++.so.0
 %%PORTDOCS%%share/doc/pcre++/functions.html
 %%PORTDOCS%%share/doc/pcre++/globals.html
 %%PORTDOCS%%share/doc/pcre++/index.html
+%%PORTDOCS%%share/doc/pcre++/namespaces.html
+%%PORTDOCS%%share/doc/pcre++/namespacestd.html
 %%PORTDOCS%%share/doc/pcre++/pcre++_8cc-source.html
 %%PORTDOCS%%share/doc/pcre++/pcre++_8cc.html
 %%PORTDOCS%%share/doc/pcre++/pcre++_8h-source.html
