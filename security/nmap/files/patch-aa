@@ -1,11 +1,12 @@
---- Makefile.in.orig	Mon May  1 19:17:38 2000
-+++ Makefile.in	Thu May  4 16:42:44 2000
-@@ -16 +16 @@
--INCLS = -I. -I$(LIBPCAPDIR)
-+INCLS = -I. # -I$(LIBPCAPDIR)
-@@ -41 +41 @@
--$(TARGET): $(DEPS) @PCAP_DEPENDS@ $(OBJS)
-+$(TARGET): $(DEPS) $(OBJS)
-@@ -144 +144 @@
+--- Makefile.in.orig	Fri Mar  9 22:25:19 2001
++++ Makefile.in	Sat Apr  7 11:28:49 2001
+@@ -17,3 +17,3 @@
+ LIBPCAPDIR = @libpcapdir@
+-INCLS = -I$(LIBPCAPDIR) 
++#INCLS = -I$(LIBPCAPDIR) 
+ DEFS = @DEFS@ -DNMAP_VERSION=\"$(NMAP_VERSION)\" -DNMAP_NAME=\"$(NMAP_NAME)\" -DNMAP_URL=\"$(NMAP_URL)\" -DNMAP_PLATFORM=\"$(NMAP_PLATFORM)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
+@@ -173,3 +173,3 @@
+ install: $(TARGET)
 -	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir) $(deskdir)
 +	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir)
+ 	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
