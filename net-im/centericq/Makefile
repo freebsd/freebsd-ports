@@ -15,11 +15,12 @@ MAINTAINER=	cpiazza@FreeBSD.org
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400010
 LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
+CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include\
+		-I/usr/include
 .endif
 
 WRKSRC=		${WRKDIR}/center
 USE_GMAKE=	yes
-CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include -I/usr/include
 
 post-patch:
 	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:' ${WRKSRC}/centerICQ.cc
