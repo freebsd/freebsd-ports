@@ -1,0 +1,17 @@
+L-system Explorer is a program used for viewing and creating L-system
+fractals.
+
+The following features are supported:
+
+- Over 500 builtin L-systems, arranged into about 20 groups.
+- Ability to create and save custom L-systems and L-system groups.
+- Abilty to save images of L-systems (in PNG or JPEG format).
+- Multiple L-systems can be viewed at the same time.
+- Able to use custom colors and gradients.
+- Can also generate random gradients, or completely random colors. 
+- Able to draw using lines, points, or a random combination of both.
+
+WWW: http://www.cs.pdx.edu/~coscorrr/programs/lsysexp/
+
+- David
+dyeske@yahoo.com

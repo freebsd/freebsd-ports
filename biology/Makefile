@@ -29,6 +29,7 @@
     SUBDIR += kinemage
     SUBDIR += lamarc
     SUBDIR += libgenome
+    SUBDIR += lsysexp
     SUBDIR += migrate
     SUBDIR += molden
     SUBDIR += mopac
