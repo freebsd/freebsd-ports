@@ -1,6 +1,6 @@
 bin/libusb-config
 include/usb.h
-lib/libusb-0.1.so.5
+lib/libusb-0.1.so.7
 lib/libusb-0.1.so
 lib/libusb.so
 lib/libusb.a
