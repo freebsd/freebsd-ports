@@ -1,0 +1,9 @@
+--- old/lexique/version.dic	Thu Jan  1 01:00:00 1970
++++ new/lexique/version.dic	Wed Oct 11 04:40:35 2000
+@@ -0,0 +1,6 @@
++Derniere mise a jour:   21 Octobre 1992
++Realisee par        :   Rene Cougnenc
++Jeu de caracteres   :   ISO 8859-1 ( 8 bits Latin-1) 
++
++   94836 mots
+++  39072 communes de France

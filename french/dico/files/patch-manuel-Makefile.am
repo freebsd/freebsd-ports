@@ -1,0 +1,10 @@
+--- old/manuel/Makefile.am	Thu Jan  1 01:00:00 1970
++++ new/manuel/Makefile.am	Wed Oct 11 03:46:58 2000
+@@ -0,0 +1,7 @@
++docdir = $(datadir)/doc/dico
++doc_DATA = copying.doc
++
++man_MANS = dico.1
++
++EXTRA_DISTS =	install.doc.msdos manuel.txt msdos.doc readme.txt.msdos \
++		unix.doc

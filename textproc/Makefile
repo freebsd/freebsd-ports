@@ -16,6 +16,7 @@
     SUBDIR += code2html
     SUBDIR += cole
     SUBDIR += cost
+    SUBDIR += dico
     SUBDIR += dict
     SUBDIR += diff-mode.el
     SUBDIR += diffstat

@@ -1,0 +1,34 @@
+@name dico-1.1
+@cwd /usr/local
+bin/dico
+share/dico/a.dic
+share/dico/b.dic
+share/dico/c.dic
+share/dico/d.dic
+share/dico/e.dic
+share/dico/f.dic
+share/dico/g.dic
+share/dico/h.dic
+share/dico/i.dic
+share/dico/j.dic
+share/dico/k.dic
+share/dico/l.dic
+share/dico/m.dic
+share/dico/n.dic
+share/dico/o.dic
+share/dico/p.dic
+share/dico/q.dic
+share/dico/r.dic
+share/dico/s.dic
+share/dico/t.dic
+share/dico/u.dic
+share/dico/v.dic
+share/dico/version.dic
+share/dico/w.dic
+share/dico/x.dic
+share/dico/y.dic
+share/dico/z.dic
+@dirrm share/dico
+share/doc/dico/README.TXT
+share/doc/dico/copying.doc
+@dirrm share/doc/dico
