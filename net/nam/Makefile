@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nam
-PORTVERSION=	1.0a8
+PORTVERSION=	1.0a9
 CATEGORIES=	net
-MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/vint/
+MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTFILES=	nam-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
