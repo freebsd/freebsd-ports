@@ -15,4 +15,6 @@ also a number of user-visible changes:
 	. shiny-new rlpr progress meter, useful for printing over slow links
         . all printing commands default to `lp' printer now, like bsd 
 
-Will use the installed gettext (see devel/gettext port) or its own.
+Gettext  (-lintl) is  ripped  out by  this port  because  it adds  bloat
+without functionality -- there are  no language files supplied with this
+package yet. May be in future versions.
