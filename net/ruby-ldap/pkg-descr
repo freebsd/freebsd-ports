@@ -3,5 +3,5 @@ based on RFC1823.
 
 Supported LDAP libraries are OpenLDAP, Michigan LDAP, and NetscapeSDK.
 
-Author:	Takaaki Tateishi <ttate@jaist.ac.jp>
-WWW:	http://ruby-ldap.sourceforge.net/
+Author:	Takaaki Tateishi <ttate@users.sourceforge.net>
+WWW:	http://sourceforge.net/projects/ruby-ldap/
