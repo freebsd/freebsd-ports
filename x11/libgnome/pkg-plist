@@ -67,31 +67,6 @@ lib/libgnome-2.so
 lib/libgnome-2.so.600
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
-share/doc/libgnome/ch01s02.html
-share/doc/libgnome/ch01s03.html
-share/doc/libgnome/ch01s04.html
-share/doc/libgnome/ch01s05.html
-share/doc/libgnome/home.png
-share/doc/libgnome/index.html
-share/doc/libgnome/index.sgml
-share/doc/libgnome/left.png
-share/doc/libgnome/libgnome.html
-share/doc/libgnome/libgnome-gnome-config.html
-share/doc/libgnome/libgnome-gnome-exec.html
-share/doc/libgnome/libgnome-gnome-gconf.html
-share/doc/libgnome/libgnome-gnome-help.html
-share/doc/libgnome/libgnome-gnome-i18n.html
-share/doc/libgnome/libgnome-gnome-init.html
-share/doc/libgnome/libgnome-gnome-program.html
-share/doc/libgnome/libgnome-gnome-score.html
-share/doc/libgnome/libgnome-gnome-sound.html
-share/doc/libgnome/libgnome-gnome-triggers.html
-share/doc/libgnome/libgnome-gnome-url.html
-share/doc/libgnome/libgnome-gnome-util.html
-share/doc/libgnome/libgnome-libgnometypebuiltins.html
-share/doc/libgnome/libgnome.devhelp
-share/doc/libgnome/right.png
-share/doc/libgnome/up.png
 share/locale/am/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnome-2.0.mo
 share/locale/az/LC_MESSAGES/libgnome-2.0.mo
@@ -156,6 +131,6 @@ share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
-@dirrm share/doc/libgnome
+@dirrm %%DOCSDIR%%
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
