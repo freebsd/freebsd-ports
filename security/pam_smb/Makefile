@@ -6,6 +6,7 @@
 
 PORTNAME=	pam_smb
 PORTVERSION=	2.0.0.r5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://pamsmb.sourceforge.net/v2/ \
 		http://www.csn.ul.ie/~airlied/pam_smb/v2/
@@ -25,6 +26,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 post-patch:
 	@${REINPLACE_CMD} -e s,%%PREFIX%%,${PREFIX}, ${WRKSRC}/pamsmbd/pam_read_conf.c
+	@${REINPLACE_CMD} -e "s,-fPIC,-fPIC -DPIC," \
+		${WRKSRC}/configure ${WRKSRC}/configure.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pamsmbd/pamsmbd ${PREFIX}/sbin/
