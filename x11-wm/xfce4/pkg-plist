@@ -20,10 +20,5 @@ share/XFCE/doc/FAQ
 share/XFCE/doc/INSTALL
 share/XFCE/doc/MANUAL
 share/XFCE/doc/README
-man/man1/xfce.1.gz
-man/man1/xfmouse.1.gz
-man/man1/xfpager.1.gz
-man/man1/xfsound.1.gz
-man/man1/xfwm.1.gz
 @dirrm share/XFCE/doc
 @dirrm share/XFCE
