@@ -1,0 +1,49 @@
+bin/browse
+bin/mDNSResponder
+bin/publish
+include/howl-0.6.1/corby/buffer.h
+include/howl-0.6.1/corby/channel.h
+include/howl-0.6.1/corby/corby.h
+include/howl-0.6.1/corby/dll.h
+include/howl-0.6.1/corby/message.h
+include/howl-0.6.1/corby/object.h
+include/howl-0.6.1/corby/orb.h
+include/howl-0.6.1/rendezvous/dll.h
+include/howl-0.6.1/rendezvous/rendezvous.h
+include/howl-0.6.1/salt/address.h
+include/howl-0.6.1/salt/assert.h
+include/howl-0.6.1/salt/dll.h
+include/howl-0.6.1/salt/log.h
+include/howl-0.6.1/salt/salt.h
+include/howl-0.6.1/salt/socket.h
+include/howl-0.6.1/salt/verrno.h
+include/howl-0.6.1/salt/vstdlib.h
+include/howl-0.6.1/salt/vstring.h
+include/howl-0.6.1/salt/vtime.h
+include/howl-0.6.1/salt/vtypes.h
+lib/libcorby.a
+lib/libcorby.la
+lib/libcorby.so
+lib/libcorby.so.0
+lib/librendezvous.a
+lib/librendezvous.la
+lib/librendezvous.so
+lib/librendezvous.so.0
+lib/libsalt.a
+lib/libsalt.la
+lib/libsalt.so
+lib/libsalt.so.0
+share/howl/help/address-summary.html
+share/howl/help/address.html
+share/howl/help/index.html
+share/howl/help/overall.html
+share/howl/help/rendezvous-summary.html
+share/howl/help/rendezvous.html
+share/howl/help/salt-summary.html
+share/howl/help/salt.html
+@dirrm share/howl/help
+@dirrm share/howl
+@dirrm include/howl-0.6.1/salt
+@dirrm include/howl-0.6.1/rendezvous
+@dirrm include/howl-0.6.1/corby
+@dirrm include/howl-0.6.1

@@ -215,6 +215,7 @@
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += host
+    SUBDIR += howl
     SUBDIR += http_ping
     SUBDIR += hx
     SUBDIR += icb
