@@ -1,12 +1,5 @@
 --- cgi-bin/ipp-var.c.orig	Sat Jan 25 10:07:30 2003
 +++ cgi-bin/ipp-var.c	Sat Jan 25 10:08:15 2003
-@@ -1,5 +1,5 @@
- /*
-- * "$Id: ipp-var.c,v 1.30 2002/12/17 18:56:36 swdev Exp $"
-+ * "$Id: ipp-var.c,v 1.31 2003/01/15 20:30:28 mike Exp $"
-  *
-  *   IPP variable routines for the Common UNIX Printing System (CUPS).
-  *
 @@ -103,14 +103,35 @@
    int			port;		/* URI data */
    int			ishttps;	/* Using encryption? */
@@ -58,10 +51,3 @@
  		  {
  		   /*
  		    * Make URI relative to the current server...
-@@ -300,5 +322,5 @@
- 
- 
- /*
-- * End of "$Id: ipp-var.c,v 1.30 2002/12/17 18:56:36 swdev Exp $".
-+ * End of "$Id: ipp-var.c,v 1.31 2003/01/15 20:30:28 mike Exp $".
-  */
