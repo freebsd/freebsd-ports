@@ -1,0 +1,10 @@
+This perl module constructs a graph for a database showing tables and
+connecting them if they are related. While or after constructing the
+object, pass an open database handle, then call `graph_tables' to
+determine database metadata and construct a GraphViz graph from the
+table and field information.
+
+WWW: http://search.cpan.org/search?dist=GraphViz-DBI
+
+-Anton
+<tobez@FreeBSD.org>
