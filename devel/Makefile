@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.148 1998/12/18 03:10:29 jseger Exp $
+# $Id: Makefile,v 1.149 1998/12/20 18:00:32 jseger Exp $
 #
 
     SUBDIR += ElectricFence
@@ -116,6 +116,7 @@
     SUBDIR += portlint
     SUBDIR += prc-tools
     SUBDIR += prcs
+    SUBDIR += qtarch
     SUBDIR += qtez
     SUBDIR += re2c
     SUBDIR += rinfo
