@@ -1,0 +1,86 @@
+*** src/Imakefile	Tue Oct 17 10:26:22 1995
+--- src/Imakefile	Tue Oct 17 10:48:34 1995
+***************
+*** 36,96 ****
+  /* The object files that will be generated */
+  OBJS =  $(SRCS:.c=.o)
+   
+- /*
+-  * Specify this line if you want the program to be compiled with Debugging.	* 
+-  *
+-  */
+- 
+- CDEBUGFLAGS = -g -Wall 
+- 
+- CC = gcc
+- 
+- /*
+-  * Change the name of the compiler here. The default version is 
+-  * 'gcc'. (the Motif libraries needed to be built with it.)
+-  * If you are changing the compiler to 'cc', you may also need to 
+-  * redefine the EXTRA_LOAD_FLAGS envariable
+-  *
+-  * Uncomment this section if GCC is not the compiler.
+-  *
+-  * CC=gcc 
+-  *
+-  *  EXTRA_LOAD_FLAGS=
+-  * 
+-  */
+- 
+- /*
+-  * This section tells it which Client library to use.
+-  * Use 'XawClientLibs' and 'XawClientDepLibs' for the Athena Widget set.
+-  * Use 'XmClientLibs'  and 'XmClientDepLibs'  for the Motif  widget set.
+-  * LCL_LIB = XawClientLibs 
+-  * DEPLIBS = XawClientDepLibs 
+-  */
+- 
+- 
+  /* 
+   * This is the Directory of the HTML Widget Library. (Please change it)
+   * and CCI library
+   */
+! LCL_LIB = -L/fs5/grads12/puninj/HTML/libhtmlw \
+! 	 -L/fs5/grads12/puninj/HTML/CCI/libcci
+  /* 
+   * This is the Directory of the HTML Widget Include Files (Please change it)
+   * and CCI library
+   */
+! INCLUDES = -I/fs5/grads12/puninj/HTML/libhtmlw \
+! 	-I/fs5/grads12/puninj/HTML/CCI/libcci
+  
+- 
+- #EXTRA_LIBRARIES =  -lcci -lhtmlw -lXm -lXt -lXext -lX11
+  EXTRA_LIBRARIES =  -lcci -lhtmlw -lXm -lXaw -lXmu -lXt -lXext -lX11
+  
+! #
+! # This is what is built when you say 'make all'
+! AllTarget($(TARGETS))
+!  
+! NormalProgramTarget( $(TARGETS), $(OBJS), $(DEPLIBS), $(LCL_LIB), $(SYS_LIB))
+!  
+! DependTarget()
+! 
+! 
+--- 36,55 ----
+  /* The object files that will be generated */
+  OBJS =  $(SRCS:.c=.o)
+   
+  /* 
+   * This is the Directory of the HTML Widget Library. (Please change it)
+   * and CCI library
+   */
+! LOCAL_LDFLAGS = -L../libhtmlw-src -L../libcci
+! 
+  /* 
+   * This is the Directory of the HTML Widget Include Files (Please change it)
+   * and CCI library
+   */
+! INCLUDES = -I../libhtmlw-src -I../libcci
+  
+  EXTRA_LIBRARIES =  -lcci -lhtmlw -lXm -lXaw -lXmu -lXt -lXext -lX11
+  
+! ComplexProgramTarget(xhtml)
+! InstallNonExecFile(help.html,$(LIBDIR)/xhtml)
+! InstallNonExecFile(XHTML.ad,$(XAPPLOADDIR))

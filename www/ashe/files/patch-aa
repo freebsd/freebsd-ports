@@ -1,0 +1,19 @@
+*** libhtmlw-src/Makefile.orig	Tue Oct 17 10:17:29 1995
+--- libhtmlw-src/Makefile	Tue Oct 17 10:18:35 1995
+***************
+*** 1,9 ****
+  LIBTARGET = libhtmlw.a
+! 
+! INCLUDES = -I/usr/include/X11
+! 
+! CC=gcc -g $(INCLUDES)
+! 
+  RANLIB=ranlib
+  
+  all: $(LIBTARGET)
+--- 1,5 ----
+  LIBTARGET = libhtmlw.a
+! CFLAGS+=-I/usr/X11R6/include -DMOTIF1_2
+  RANLIB=ranlib
+  
+  all: $(LIBTARGET)
