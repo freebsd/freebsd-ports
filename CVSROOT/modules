@@ -3342,6 +3342,7 @@ libesmtp	ports/mail/libesmtp
 libevent	ports/devel/libevent
 libexec		src/libexec
 libf2c		src/lib/libf2c
+libfame		ports/graphics/libfame
 libfetch	src/lib/libfetch
 libffi		ports/devel/libffi
 libflash	ports/graphics/libflash
