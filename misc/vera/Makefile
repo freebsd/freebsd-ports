@@ -14,11 +14,13 @@ MASTER_SITE_SUBDIR=	vera
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Virtual Entity of Relevant Acronyms
 
+INFO=		vera
+
 do-build:
-		@ cd ${WRKSRC} && makeinfo --no-split vera.texi
+	@ cd ${WRKSRC} && makeinfo --no-split vera.texi
 
 do-install:
-		@ ${INSTALL_DATA} ${WRKSRC}/vera.info ${PREFIX}/info
+	@ ${INSTALL_DATA} ${WRKSRC}/vera.info ${PREFIX}/info
 
 post-install:
 	@ install-info ${PREFIX}/info/vera.info ${PREFIX}/info/dir
