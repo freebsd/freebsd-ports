@@ -23,7 +23,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -71,7 +71,12 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-ldap_tls.patch \
 		squid-2.5.STABLE4-ldap_group_bufsize.patch \
 		squid-2.5.STABLE4-http_workarounds.patch \
-		squid-2.5.STABLE4-empty_proxy_auth.patch
+		squid-2.5.STABLE4-empty_proxy_auth.patch \
+		squid-2.5.STABLE4-ftp_telnet.patch \
+		squid-2.5.STABLE4-ntlm_auth_popups.patch \
+		squid-2.5.STABLE4-ldap_group-S.patch \
+		squid-2.5.STABLE4-ipcache_purge.patch \
+		squid-2.5.STABLE4-cache_peer_access_ntlm.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -103,9 +108,11 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_VIA_DB "Enable forward/via database" off \
 		SQUID_CACHE_DIGESTS "Enable cache digests" off \
 		SQUID_WCCP "Enable Web Cache Coordination Protocol" on \
+		SQUID_UNDERSCORES "Allow underscores in hostnames" on \
 		SQUID_STRICT_HTTP "Be strictly HTTP compliant" off \
 		SQUID_IDENT "Enable ident (RFC 931) lookups" on \
-		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off
+		SQUID_USERAGENT_LOG "Enable User-Agent-header logging" off \
+		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off
 
 PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
 		etc/squid/msntauth.conf.default etc/squid/squid.conf.default \
@@ -117,7 +124,6 @@ CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid \
 		--enable-storeio="ufs diskd null" \
 		--enable-removal-policies="lru heap" \
-		--enable-underscores
 
 .include <bsd.port.pre.mk>
 
@@ -140,7 +146,7 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB winbind"
 
-# Options set via 'make config':
+# Other options set via 'make config':
 
 .if defined(WITH_SQUID_DELAY_POOLS)
 CONFIGURE_ARGS+=	--enable-delay-pools
@@ -172,6 +178,9 @@ CONFIGURE_ARGS+=	--enable-cache-digests
 .if defined(WITHOUT_SQUID_WCCP)
 CONFIGURE_ARGS+=	--disable-wccp
 .endif
+.if defined(WITH_SQUID_UNDERSCORES)
+CONFIGURE_ARGS+=	--enable-underscores
+.endif
 .if defined(WITH_SQUID_STRICT_HTTP)
 CONFIGURE_ARGS+=	--disable-http-violations
 .endif
@@ -181,11 +190,14 @@ CONFIGURE_ARGS+=	--disable-ident-lookups
 .if defined(WITH_SQUID_USERAGENT_LOG)
 CONFIGURE_ARGS+=	--enable-useragent-log
 .endif
+.if defined(WITH_SQUID_ARP_ACL)
+CONFIGURE_ARGS+=	--enable-arp-acl
+.endif
 
 # Languages:
 #
 # If you do not define SQUID_LANGUAGES yourself, all available language files
-# will be installed; the default language will be english.
+# will be installed; the default language will be English.
 
 SQUID_LANGUAGES?=	\
 	Bulgarian Catalan Czech Danish Dutch English Estonian Finnish      \
@@ -223,11 +235,8 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 # --enable-stacktraces
 #  Enable automatic call backtrace on fatal errors
 #
-# These options do not yet work on FreeBSD:
+# This option does not yet work on FreeBSD:
 #
-# --enable-arp-acl
-#  Enable ACL based on ethernet address (eg: for machines with dynamic DHCP
-#  assigned IP addresses)
 # --enable-ipf-transparent
 #  Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
 #  (IPFilter headers are not currently installed to the base system,
@@ -254,12 +263,12 @@ pre-install:
 	    >${WRKDIR}/squid.sh
 
 pre-su-install:
-	@${SETENV} SQUID_UID=${SQUID_UID} SQUID_GID=${SQUID_GID} \
+	@${SETENV} SQUID_USER=${SQUID_UID} SQUID_GROUP=${SQUID_GID} \
 	    PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if defined(WITH_SQUID_PINGER)
-	${CHMOD} 4710 ${PREFIX}/libexec/squid/pinger; \
+	${CHMOD} 4510 ${PREFIX}/libexec/squid/pinger; \
 	${CHGRP} ${SQUID_GID} ${PREFIX}/libexec/squid/pinger
 .endif
 	${INSTALL_SCRIPT} ${WRKDIR}/squid.sh ${PREFIX}/etc/rc.d
