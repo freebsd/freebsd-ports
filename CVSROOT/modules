@@ -8010,6 +8010,7 @@ uds		ports/devel/uds
 uemacs		ports/editors/uemacs
 uf-view		ports/misc/uf-view
 uisp		ports/devel/uisp
+uk-aspell	ports/ukrainian/aspell
 uk-gd		ports/ukrainian/gd
 uk-phone	ports/misc/uk-phone
 uk-postcodes	ports/misc/uk-postcodes
