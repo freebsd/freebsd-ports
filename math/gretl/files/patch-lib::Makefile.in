@@ -1,8 +1,8 @@
---- lib/Makefile.in.orig	Thu Jul 11 00:20:39 2002
-+++ lib/Makefile.in	Sat Jul 27 08:40:14 2002
-@@ -11,8 +11,8 @@
- XML_CFLAGS = @XML_CFLAGS@
+--- lib/Makefile.in.orig	Mon Aug 26 02:31:58 2002
++++ lib/Makefile.in	Wed Aug 28 00:42:18 2002
+@@ -12,8 +12,8 @@
  XML_LIBS = @XML_LIBS@
+ have_gtk = @have_gtk@
  
 -ifeq ($(INSTALL_PROGRAM),)
 -  INSTALL_PROGRAM = $(INSTALL) -m 755
@@ -11,16 +11,25 @@
  endif
  ifeq ($(INSTALL_DATA),)
    INSTALL_DATA = $(INSTALL) -m 644
-@@ -28,7 +28,7 @@
+@@ -26,7 +26,7 @@
+ libdir = $(prefix)/lib
+ includedir = $(prefix)/include/gretl
+ aclocaldir = $(prefix)/share/aclocal
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
  
- # General compile options and libs:
- LIBGRETL = libgretl.la
+ INSTALLDIRS = $(libdir) $(includedir) $(aclocaldir)
+ 
+@@ -40,7 +40,7 @@
+   LIBGRETL = libgretl.la
+   INSTALL_CFG = install-cfg-old
+ endif
 -LIBS = -lm -ldl -L/usr/local/lib -lz $(XML_LIBS)
 +LIBS = -lm -lz $(XML_LIBS)
  
  #### End of system configuration section. ####
  
-@@ -65,15 +65,15 @@
+@@ -77,17 +77,17 @@
  .PHONY: 
  
  install: $(LIBGRETL) install-data
@@ -31,11 +40,13 @@
 -	$(LIBTOOL) $(INSTALL_PROGRAM) -s $< $(libdir)/$<
 +	$(LIBTOOL) $(INSTALL_DATA) -s $< $(libdir)/$<
  
- install-data: installdirs
+ install-data: installdirs $(INSTALL_CFG)
  	$(INSTALL_DATA) $(srcdir)/*.h $(includedir)
  	$(INSTALL_DATA) ../gretl.m4 $(aclocaldir)
+ 
+ install-cfg-old: ../gretl-config
 -	$(INSTALL_PROGRAM) ../gretl-config $(bindir)
 +	$(INSTALL_SCRIPT) ../gretl-config $(bindir)
  
- installdirs:
- 	$(topsrc)/tools/mkinstalldirs $(libdir) $(includedir) $(aclocaldir)
+ install-cfg-new: ../gretl2.pc
+ 	$(INSTALL_DATA) ../gretl2.pc $(pkgconfigdir)

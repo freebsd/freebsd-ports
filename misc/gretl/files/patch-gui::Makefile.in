@@ -1,17 +1,6 @@
---- gui/Makefile.in.orig	Thu Jul 11 00:20:39 2002
-+++ gui/Makefile.in	Sat Jul 27 09:04:18 2002
-@@ -44,8 +44,8 @@
-   LIBS = $(GNOME_LIBS) $(GTK_EXTRA_LIBS) ../lib/libgretl.la
-   GUI_CFLAGS = $(GNOME_CFLAGS) $(GTK_EXTRA_CFLAGS)
-   desktopdir = $(gnome_prefix)/share/gnome/apps/Applications
--  mimedir = $(gnome_prefix)/share/mime-info
--  gpixmaps = $(gnome_prefix)/share/pixmaps
-+  mimedir = $(gnome_prefix)/share/gnome/mime-info
-+  gpixmaps = $(gnome_prefix)/share/gnome/pixmaps
-   ghelpdir = $(gnome_prefix)/share/gnome/help/gretl
-   query_install_gnome = install-gnome
- else
-@@ -54,7 +54,7 @@
+--- gui/Makefile.in.orig	Mon Aug 26 02:32:00 2002
++++ gui/Makefile.in	Wed Aug 28 00:40:11 2002
+@@ -57,7 +57,7 @@
  endif
  ifeq ($(USE_NLS),yes)
    datadir = @datadir@
@@ -20,7 +9,7 @@
    DEFS = -DLOCALEDIR=\"$(localedir)\"
  endif
  
-@@ -63,7 +63,7 @@
+@@ -66,7 +66,7 @@
  
  # Directories
  bindir	= $(prefix)/bin
@@ -29,12 +18,12 @@
  tooldir = $(topsrc)/tools
  libsrc = $(topsrc)/lib/src
  clisrc = $(topsrc)/cli
-@@ -94,7 +94,7 @@
+@@ -100,7 +100,7 @@
  	$(LIBTOOL) $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
  
  install-data: installdirs
 -	$(INSTALL_PROGRAM) $(topsrc)/gretl_sh $(bindir)/gretl
 +	$(INSTALL_SCRIPT) $(topsrc)/gretl_sh $(bindir)/gretl
- 	$(INSTALL_DATA) gretl-logo.xpm $(gretldir)
+ 	$(INSTALL_DATA) ../pixmaps/gretl-logo.xpm $(gretldir)
  	$(INSTALL_DATA) $(topsrc)/COPYING $(gretldir)
  
