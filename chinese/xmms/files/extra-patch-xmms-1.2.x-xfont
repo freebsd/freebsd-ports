@@ -1,520 +1,75 @@
-diff -ru po/zh_TW.Big5.po po/zh_TW.Big5.po
---- po/zh_TW.Big5.po	Tue Sep 19 14:32:28 2000
-+++ po/zh_TW.Big5.po	Thu Sep 21 11:39:59 2000
-@@ -3231,17 +3231,17 @@
- msgid "Credits"
- msgstr "感謝"
+diff -ru xmms/playlist_list.c xmms/playlist_list.c
+--- xmms/playlist_list.c	Thu Nov  9 03:12:08 2000
++++ xmms/playlist_list.c.orig	Mon Nov 27 22:00:03 2000
+@@ -269,25 +269,24 @@
+ 				*(wtmp++) = *(wtmp2++);
+ 			*wtmp = L'\0';
+ 		}
+-	len = wcslen(wtext);
  
--#~ msgid "Select playinfo font:"
--#~ msgstr "選擇播放資訊字形:"
-+msgid "Select playinfo font:"
-+msgstr "選擇播放資訊字形:"
+ 	/*
+ 	 * Convert the wide string to a GdkWChar string that someone,
+ 	 * for some unknown reason has desided to make uncompatible
+ 	 * with wchar_t strings.
+ 	 */
+-	if (sizeof(wchar_t) != sizeof(GdkWChar))
+-	{
+-		int i;
++	len = wcstombs(NULL, wtext, 0);
++	text = g_malloc(len + 3);
++	len = wcstombs(text, wtext, len);
++	text[len] = '\0';
++
++	len = wcslen(wtext);
++	gwtext = g_malloc((len + 3) * sizeof(GdkWChar));
++	gdk_mbstowcs(gwtext, text, len + 2);
++
++	g_free(text);
++	g_free(wtext);
  
--#~ msgid "Main Window"
--#~ msgstr "主要視窗"
-+msgid "Main Window"
-+msgstr "主要視窗"
- 
--#~ msgid "Enable X font display on main window"
--#~ msgstr "在主要視窗使用 X 字形"
-+msgid "Enable X font display on main window"
-+msgstr "在主要視窗使用 X 字形"
- 
--#~ msgid "Playinfo font"
--#~ msgstr "播放資訊字形"
-+msgid "Playinfo font"
-+msgstr "播放資訊字形"
- 
--#~ msgid "Chun-Chung Chen (xfont patch)"
--#~ msgstr "陳俊仲 (xfont 補丁)"
-+msgid "Chun-Chung Chen (xfont patch)"
-+msgstr "陳俊仲 (xfont 補丁)"
-diff -ru xmms/about.c xmms/about.c
---- xmms/about.c	Tue Sep  5 06:30:24 2000
-+++ xmms/about.c	Thu Sep 21 11:39:59 2000
-@@ -36,6 +36,7 @@
- 	N_("Sean Atkinson"),
- 	N_("James M. Cape"),
- 	N_("Anders Carlsson (effect plugins)"),
-+	N_("Chun-Chung Chen (xfont patch)"),
- 	N_("Tim Ferguson (joystick plugin)"),
- 	N_("Ben Gertzfield"),
- 	N_("Vesa Halttunen"),
-diff -ru xmms/main.c xmms/main.c
---- xmms/main.c	Fri Sep 15 06:36:10 2000
-+++ xmms/main.c	Thu Sep 21 11:39:59 2000
-@@ -319,8 +319,8 @@
- 	cfg.always_on_top = FALSE;
+-		gwtext = g_malloc((len + 3) * sizeof(GdkWChar));
+-		for (i = 0; i <= len; i++)
+-			gwtext[i] = wtext[i];
+-		g_free(wtext);
+-	}
+-	else
+-		gwtext = (GdkWChar*) wtext;
+-	
+ 	newlen = len + 2;
+ 	
+ 	while (gdk_text_width_wc(font, gwtext, len) > width && len > 4)
+--- xmms/main.c.orig	Fri Dec  1 02:22:22 2000
++++ xmms/main.c	Fri Dec  1 02:23:45 2000
+@@ -320,8 +320,8 @@
  	cfg.sticky = FALSE;
  	cfg.always_show_cb = TRUE;
--	cfg.convert_underscore = TRUE;
+ 	cfg.convert_underscore = TRUE;
 -	cfg.convert_twenty = TRUE;
-+	cfg.convert_underscore = FALSE;
+-	cfg.show_numbers_in_pl = TRUE;
 +	cfg.convert_twenty = FALSE;
- 	cfg.show_numbers_in_pl = TRUE;
++	cfg.show_numbers_in_pl = FALSE;
  	cfg.snap_windows = TRUE;
  	cfg.save_window_position = TRUE;
-@@ -333,6 +333,8 @@
+ 	cfg.dim_titlebar = TRUE;
+@@ -333,7 +333,8 @@
  	cfg.no_playlist_advance = FALSE;
  	cfg.smooth_title_scroll = TRUE;
  	cfg.random_skin_on_play = FALSE;
-+	cfg.xfont_for_playinfo = TRUE;
+-	cfg.mainwin_use_xfont = FALSE;
++	cfg.mainwin_use_xfont = TRUE;
 +	cfg.use_fontsets = TRUE;
  
  	cfg.playlist_x = 295;
  	cfg.playlist_y = 20;
-@@ -410,6 +412,8 @@
- 		xmms_cfg_read_boolean(cfgfile, "xmms", "playlist_visible", &cfg.playlist_visible);
- 		xmms_cfg_read_string(cfgfile, "xmms", "playlist_font", &cfg.playlist_font);
- 		xmms_cfg_read_boolean(cfgfile, "xmms", "use_fontsets", &cfg.use_fontsets);
-+		xmms_cfg_read_boolean(cfgfile, "xmms", "xfont_for_playinfo", &cfg.xfont_for_playinfo);
-+		xmms_cfg_read_string(cfgfile, "xmms", "playinfo_font", &cfg.playinfo_font);
- 		xmms_cfg_read_int(cfgfile, "xmms", "playlist_position", &cfg.playlist_position);
- 		xmms_cfg_read_int(cfgfile, "xmms", "equalizer_x", &cfg.equalizer_x);
- 		xmms_cfg_read_int(cfgfile, "xmms", "equalizer_y", &cfg.equalizer_y);
-@@ -458,9 +462,10 @@
- 		
- 		xmms_cfg_free(cfgfile);
+@@ -463,9 +464,9 @@
  	}
--
+ 
  	if (cfg.playlist_font == NULL)
 -		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*");
-+		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,*-*-medium-r-*-*-10-*");
-+	if (cfg.playinfo_font == NULL)
-+		cfg.playinfo_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,*-*-medium-r-*-*-8-*");
++		cfg.playlist_font = g_strdup("-adobe-helvetica-bold-r-*-*-10-*,-*-big5-0");
+ 	if (cfg.mainwin_font == NULL)
+-		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*");
++		cfg.mainwin_font = g_strdup("-adobe-helvetica-medium-r-*-*-8-*,-*-big5-0");
  	if (cfg.outputplugin == NULL)
  	{
  #if defined(HAVE_SYS_SOUNDCARD_H) || defined(HAVE_MACHINE_SOUNDCARD_H)
-@@ -558,6 +563,8 @@
- 	xmms_cfg_write_boolean(cfgfile, "xmms", "playlist_visible", cfg.playlist_visible);
- 	xmms_cfg_write_string(cfgfile, "xmms", "playlist_font", cfg.playlist_font);
- 	xmms_cfg_write_boolean(cfgfile, "xmms", "use_fontsets", cfg.use_fontsets);
-+	xmms_cfg_write_boolean(cfgfile, "xmms", "xfont_for_playinfo", cfg.xfont_for_playinfo);
-+	xmms_cfg_write_string(cfgfile, "xmms", "playinfo_font", cfg.playinfo_font);
- 	xmms_cfg_write_int(cfgfile, "xmms", "playlist_position", get_playlist_position());
- 	dock_get_widget_pos(equalizerwin, &cfg.equalizer_x, &cfg.equalizer_y);
- 	xmms_cfg_write_int(cfgfile, "xmms", "equalizer_x", cfg.equalizer_x);
-@@ -2645,6 +2652,7 @@
- 	tbutton_set_toggled(mainwin_pl, cfg.playlist_visible);
- 
- 	mainwin_info = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 112, 27, 153, 1, SKIN_TEXT);
-+	config_textbox(mainwin_info, 27);
- 	textbox_set_scroll(mainwin_info, cfg.autoscroll);
- 	mainwin_rate_text = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 111, 43, 15, 0, SKIN_TEXT);
- 	mainwin_freq_text = create_textbox(&mainwin_wlist, mainwin_bg, mainwin_gc, 156, 43, 10, 0, SKIN_TEXT);
---- xmms/main.h	Tue Aug 29 11:18:19 2000
-+++ xmms/main.h	Thu Sep 21 11:39:59 2000
-@@ -45,8 +45,9 @@
- 	gboolean no_playlist_advance, smooth_title_scroll;
- 	gboolean use_backslash_as_dir_delimiter, enable_dga;
- 	gboolean random_skin_on_play, use_fontsets;
-+	gboolean xfont_for_playinfo;
- 	gfloat equalizer_preamp, equalizer_bands[10];
--	gchar *skin, *outputplugin, *filesel_path, *playlist_path, *playlist_font;
-+	gchar *skin, *outputplugin, *filesel_path, *playlist_path, *playlist_font, *playinfo_font;
- 	gchar *effectplugin;
- 	gchar *disabled_iplugins, *enabled_gplugins, *enabled_vplugins;
- 	gchar *eqpreset_default_file, *eqpreset_extension;
-diff -ru xmms/prefswin.c xmms/prefswin.c
---- xmms/prefswin.c	Tue Sep 12 06:26:38 2000
-+++ xmms/prefswin.c	Thu Sep 21 11:39:59 2000
-@@ -61,6 +61,11 @@
- GtkWidget *prefswin_options_font_vbox;
- GtkWidget *prefswin_options_font_entry, *prefswin_options_font_browse;
- GtkWidget *prefswin_options_fontsel, *prefswin_options_fontset;
-+GtkWidget *prefswin_mainwin_frame, *prefswin_mainwin_vbox, *prefswin_mainwin_table;
-+GtkWidget *prefswin_mainwin_xfont;
-+GtkWidget *prefswin_mainwin_font_frame, *prefswin_mainwin_font_hbox;
-+GtkWidget *prefswin_mainwin_font_entry, *prefswin_mainwin_font_browse;
-+GtkWidget *prefswin_mainwin_fontsel;
- GtkWidget *prefswin_vbox, *prefswin_hbox, *prefswin_ok, *prefswin_cancel,
-          *prefswin_apply;
- GtkWidget *prefswin_options_mouse_box, *prefswin_options_mouse_label,
-@@ -298,6 +303,7 @@
- void prefswin_apply_changes(void)
- {
- 	g_free(cfg.playlist_font);
-+	g_free(cfg.playinfo_font);
- 	cfg.allow_multiple_instances = GTK_TOGGLE_BUTTON(prefswin_options_ami)->active;
- 	cfg.always_show_cb = GTK_TOGGLE_BUTTON(prefswin_options_asc)->active;
- 	cfg.convert_underscore = GTK_TOGGLE_BUTTON(prefswin_options_cus)->active;
-@@ -308,6 +314,7 @@
- 	cfg.save_window_position = GTK_TOGGLE_BUTTON(prefswin_options_swp)->active;
- 	cfg.dim_titlebar = GTK_TOGGLE_BUTTON(prefswin_options_dim)->active;
- 	cfg.playlist_font = g_strdup(gtk_entry_get_text(GTK_ENTRY(prefswin_options_font_entry)));
-+	cfg.playinfo_font = g_strdup(gtk_entry_get_text(GTK_ENTRY(prefswin_mainwin_font_entry)));
- 	cfg.save_playlist_position = GTK_TOGGLE_BUTTON(prefswin_options_pl_pos)->active;
- 	cfg.open_rev_order = GTK_TOGGLE_BUTTON(prefswin_options_oro)->active;
- 	cfg.get_info_on_load = GTK_TOGGLE_BUTTON(prefswin_options_giol)->active;
-@@ -321,7 +328,7 @@
- 	cfg.pause_between_songs_time = atoi(gtk_entry_get_text(GTK_ENTRY(prefswin_options_pbs_entry)));
- 	cfg.use_backslash_as_dir_delimiter = GTK_TOGGLE_BUTTON(prefswin_options_ubsd)->active;
- 	cfg.enable_dga = GTK_TOGGLE_BUTTON(prefswin_options_edga)->active;
--	
-+	cfg.xfont_for_playinfo = GTK_TOGGLE_BUTTON(prefswin_mainwin_xfont)->active;
- 	cfg.use_eplugins = GTK_TOGGLE_BUTTON(prefswin_egplugins_euse_cbox)->active;
- 	cfg.mouse_change = (gint) GTK_ADJUSTMENT(prefswin_options_mouse_entry)->value;
- 
-@@ -359,6 +366,10 @@
- 		textbox_set_scroll(mainwin_info, TRUE);
- 	}
- 
-+	config_textbox(mainwin_info, 27);
-+	g_free(mainwin_info->tb_old_skin_path);
-+	mainwin_info->tb_old_skin_path = NULL;
-+
- 	draw_main_window(TRUE);
- 	draw_playlist_window(TRUE);
- 	draw_equalizer_window(TRUE);
-@@ -402,6 +413,30 @@
- 	}
- }
- 
-+void prefswin_mainwin_font_browse_ok(GtkWidget * w, gpointer data)
-+{
-+	gtk_entry_set_text(GTK_ENTRY(prefswin_mainwin_font_entry), gtk_font_selection_dialog_get_font_name(GTK_FONT_SELECTION_DIALOG(prefswin_mainwin_fontsel)));
-+	gtk_widget_destroy(prefswin_mainwin_fontsel);
-+}
-+
-+void prefswin_mainwin_font_browse_cb(GtkWidget * w, gpointer data)
-+{
-+	if (!prefswin_mainwin_fontsel)
-+	{
-+		prefswin_mainwin_fontsel = gtk_font_selection_dialog_new(_("Select playinfo font:"));
-+		gtk_font_selection_dialog_set_font_name(GTK_FONT_SELECTION_DIALOG(prefswin_mainwin_fontsel), cfg.playinfo_font);
-+		gtk_signal_connect(GTK_OBJECT(GTK_FONT_SELECTION_DIALOG(prefswin_mainwin_fontsel)->ok_button), "clicked", GTK_SIGNAL_FUNC(prefswin_mainwin_font_browse_ok), NULL);
-+		gtk_signal_connect_object(GTK_OBJECT(GTK_FONT_SELECTION_DIALOG(prefswin_mainwin_fontsel)->cancel_button), "clicked", GTK_SIGNAL_FUNC(gtk_widget_destroy), GTK_OBJECT(prefswin_mainwin_fontsel));
-+		gtk_signal_connect(GTK_OBJECT(prefswin_mainwin_fontsel), "destroy", GTK_SIGNAL_FUNC(gtk_widget_destroyed), &prefswin_mainwin_fontsel);
-+		gtk_widget_show(prefswin_mainwin_fontsel);
-+	}
-+}
-+
-+void prefswin_egplugins_euse_cb(GtkWidget * w, gpointer data)
-+{
-+	cfg.use_eplugins = GTK_TOGGLE_BUTTON(w)->active;
-+}
-+
- void prefswin_egplugins_guse_cb(GtkWidget * w, gpointer data)
- {
- 	gint sel;
-@@ -714,6 +749,37 @@
- 	gtk_box_pack_start(GTK_BOX(prefswin_vplugins_hbox), prefswin_vplugins_use_cbox, TRUE, TRUE, 0);
- 
- 	gtk_notebook_append_page(GTK_NOTEBOOK(prefswin_notebook), prefswin_vplugins_box, gtk_label_new(_("Visualization Plugins")));
-+
-+	/*
-+	 * Mainwin page
-+	 */
-+
-+	prefswin_mainwin_vbox = gtk_vbox_new(FALSE, 0);
-+	prefswin_mainwin_frame = gtk_frame_new(_("Main Window"));
-+	gtk_box_pack_start(GTK_BOX(prefswin_mainwin_vbox), prefswin_mainwin_frame, FALSE, FALSE, 0);
-+	gtk_container_border_width(GTK_CONTAINER(prefswin_mainwin_frame), 5);
-+	prefswin_mainwin_table = gtk_table_new(2, 10, FALSE);
-+	gtk_container_add(GTK_CONTAINER(prefswin_mainwin_frame), prefswin_mainwin_table);
-+	gtk_container_border_width(GTK_CONTAINER(prefswin_mainwin_table), 5);
-+
-+	prefswin_mainwin_xfont = gtk_check_button_new_with_label(_("Enable X font display on main window"));
-+	gtk_table_attach_defaults(GTK_TABLE(prefswin_mainwin_table), prefswin_mainwin_xfont, 0, 1, 0, 1);
-+
-+	prefswin_mainwin_font_frame = gtk_frame_new(_("Playinfo font"));
-+	gtk_container_set_border_width(GTK_CONTAINER(prefswin_mainwin_font_frame), 5);
-+	gtk_box_pack_start(GTK_BOX(prefswin_mainwin_vbox), prefswin_mainwin_font_frame, FALSE, FALSE, 0);
-+	prefswin_mainwin_font_hbox = gtk_hbox_new(FALSE, 5);
-+	gtk_container_border_width(GTK_CONTAINER(prefswin_mainwin_font_hbox), 5);
-+	gtk_container_add(GTK_CONTAINER(prefswin_mainwin_font_frame), prefswin_mainwin_font_hbox);
-+	prefswin_mainwin_font_entry = gtk_entry_new();
-+	gtk_box_pack_start(GTK_BOX(prefswin_mainwin_font_hbox), prefswin_mainwin_font_entry, TRUE, TRUE, 0);
-+	prefswin_mainwin_font_browse = gtk_button_new_with_label(_("Browse"));
-+	gtk_signal_connect(GTK_OBJECT(prefswin_mainwin_font_browse), "clicked", GTK_SIGNAL_FUNC(prefswin_mainwin_font_browse_cb), NULL);
-+	gtk_widget_set_usize(prefswin_mainwin_font_browse, 85, 17);
-+	gtk_box_pack_start(GTK_BOX(prefswin_mainwin_font_hbox), prefswin_mainwin_font_browse, FALSE, TRUE, 0);
-+
-+	gtk_notebook_append_page(GTK_NOTEBOOK(prefswin_notebook), prefswin_mainwin_vbox, gtk_label_new(_("Main Window")));
-+
- 	
- 	/*
- 	 * Options page
-@@ -1106,6 +1172,7 @@
- 	is_opening = TRUE;
- 
- 	gtk_entry_set_text(GTK_ENTRY(prefswin_options_font_entry), cfg.playlist_font);
-+	gtk_entry_set_text(GTK_ENTRY(prefswin_mainwin_font_entry), cfg.playinfo_font);
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_ami), cfg.allow_multiple_instances);
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_asc), cfg.always_show_cb);
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_cus), cfg.convert_underscore);
-@@ -1128,6 +1195,7 @@
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_ubsd), cfg.use_backslash_as_dir_delimiter);
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_edga), cfg.enable_dga);
- 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_options_fontset), cfg.use_fontsets);
-+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(prefswin_mainwin_xfont), cfg.xfont_for_playinfo);
- 	sprintf(temp, "%u", cfg.pause_between_songs_time);
- 	gtk_entry_set_text(GTK_ENTRY(prefswin_options_pbs_entry), temp);
- 
-diff -ru xmms/skin.c xmms/skin.c
---- xmms/skin.c	Fri Sep 15 06:36:10 2000
-+++ xmms/skin.c	Thu Sep 21 11:41:23 2000
-@@ -94,6 +94,56 @@
- 	gdk_window_get_size(skinpixmap->def_pixmap, &skinpixmap->width, &skinpixmap->height);
- }
- 
-+static void _find_textbg_textfg(GdkPixmap *text, GdkColor *bgc, GdkColor *fgc)
-+{
-+	GdkImage *gi;
-+	GdkColormap *cm;
-+	int i;
-+	int j;
-+
-+	if (text == NULL) return;
-+	gi = gdk_image_get(text, 0, 0, 155, 6);
-+	cm = gdk_colormap_get_system();
-+	for (i = 0; i < 6; i ++) {
-+		GdkColor c;
-+		gint maxd = -1;
-+		gint x;
-+		gint y;
-+		gint k = 0;
-+		bgc[i].pixel = gdk_image_get_pixel(gi, 151, i);
-+		if (cm->colors) {
-+			for (j = 0; j < cm->size; j ++) if (bgc[i].pixel == cm->colors[j].pixel) {
-+					bgc[i].red = cm->colors[j].red;
-+					bgc[i].green = cm->colors[j].green;
-+					bgc[i].blue = cm->colors[j].blue;
-+					break;
-+			}
-+		}
-+		while (maxd < 4 && (i + k) >= 0 && (i + k) < 6) {
-+			gint d;
-+			for (x = 1; x < 150; x ++) {
-+				c.pixel = gdk_image_get_pixel(gi, x, i);
-+				if (cm->colors) {
-+					for (j = 0; j < cm->size; j ++) if (c.pixel == cm->colors[j].pixel) {
-+						c.red = cm->colors[j].red;
-+						c.green = cm->colors[j].green;
-+						c.blue = cm->colors[j].blue;
-+						break;
-+					}
-+					d = abs(c.red - bgc[i].red) + abs(c.green - bgc[i].green) + abs(c.blue - bgc[i].blue);
-+				} else  d = abs((c.pixel & 0xff) - (bgc[i].pixel & 0xff)) + abs(((c.pixel >> 8) & 0xff) - ((bgc[i].pixel >> 8) & 0xff)) + abs(((c.pixel >> 16) & 0xff) - ((bgc[i].pixel >> 16) & 0xff));
-+				if (d > maxd) {
-+					if (cm->colors) fgc[i] = cm->colors[j];
-+					else fgc[i] = c;
-+					maxd = d;
-+				}
-+			}
-+			if (i < 3) k ++;
-+			else k --;
-+		}
-+	}
-+}
-+
- void init_skins(void)
- {
- 	gint i;
-@@ -104,6 +154,7 @@
- 	load_def_pixmap(&skin->titlebar, skin_titlebar);
- 	load_def_pixmap(&skin->shufrep, skin_shufrep);
- 	load_def_pixmap(&skin->text, skin_text);
-+	_find_textbg_textfg(skin->text.def_pixmap, skin->def_textbg, skin->def_textfg);
- 	load_def_pixmap(&skin->volume, skin_volume);
- 	load_def_pixmap(&skin->balance, skin_volume);
- 	load_def_pixmap(&skin->monostereo, skin_monoster);
-@@ -513,6 +564,7 @@
- 		load_skin_pixmap(&skin->titlebar, path, "titlebar.bmp");
- 		load_skin_pixmap(&skin->shufrep, path, "shufrep.bmp");
- 		load_skin_pixmap(&skin->text, path, "text.bmp");
-+		_find_textbg_textfg(skin->text.pixmap, skin->textbg, skin->textfg);
- 		load_skin_pixmap(&skin->volume, path, "volume.bmp");
- 		load_skin_pixmap(&skin->balance, path, "balance.bmp");
- 		if (skin->balance.pixmap == NULL)
-@@ -713,6 +765,18 @@
- 			ret = skin->pledit_selectedbg;
- 			if (!ret)
- 				ret = &skin->def_pledit_selectedbg;
-+			break;
-+	        case SKIN_TEXTBG:
-+			if (skin->text.pixmap)
-+				ret = skin->textbg;
-+			else
-+				ret = skin->def_textbg;
-+			break;
-+	        case SKIN_TEXTFG:
-+			if (skin->text.pixmap)
-+				ret = skin->textfg;
-+			else
-+				ret = skin->def_textfg;
- 			break;
- 	}
- 	return ret;
-diff -ru xmms/skin.h xmms/skin.h
---- xmms/skin.h	Sat Aug  5 07:10:37 2000
-+++ xmms/skin.h	Thu Sep 21 11:39:59 2000
-@@ -33,7 +33,7 @@
- typedef enum
- {
- 	SKIN_PLEDIT_NORMAL, SKIN_PLEDIT_CURRENT, SKIN_PLEDIT_NORMALBG,
--	SKIN_PLEDIT_SELECTEDBG
-+	SKIN_PLEDIT_SELECTEDBG, SKIN_TEXTBG, SKIN_TEXTFG
- } SkinColorIndex;
- 
- typedef struct
-@@ -64,6 +64,8 @@
- 	SkinPixmap pledit;
- 	SkinPixmap eqmain;
- 	SkinPixmap eq_ex;
-+	GdkColor textbg[6], def_textbg[6];
-+	GdkColor textfg[6], def_textfg[6];
- 	GdkColor *pledit_normal, def_pledit_normal;
- 	GdkColor *pledit_current, def_pledit_current;
- 	GdkColor *pledit_normalbg, def_pledit_normalbg;
-diff -ru xmms/textbox.c xmms/textbox.c
---- xmms/textbox.c	Sat Aug  5 07:10:38 2000
-+++ xmms/textbox.c	Thu Sep 21 11:39:59 2000
-@@ -55,9 +55,9 @@
- 		cw = tb->tb_pixmap_width - tb->tb_offset;
- 		if (cw > tb->tb_widget.width)
- 			cw = tb->tb_widget.width;
--		gdk_draw_pixmap(obj, tb->tb_widget.gc, src, tb->tb_offset, 0, tb->tb_widget.x, tb->tb_widget.y, cw, 6);
-+		gdk_draw_pixmap(obj, tb->tb_widget.gc, src, tb->tb_offset, 0, tb->tb_widget.x, tb->tb_widget.y, cw, tb->tb_widget.height);
- 		if (cw < tb->tb_widget.width)
--			gdk_draw_pixmap(obj, tb->tb_widget.gc, src, 0, 0, tb->tb_widget.x + cw, tb->tb_widget.y, tb->tb_widget.width - cw, 6);
-+			gdk_draw_pixmap(obj, tb->tb_widget.gc, src, 0, 0, tb->tb_widget.x + cw, tb->tb_widget.y, tb->tb_widget.width - cw, tb->tb_widget.height);
- 	}
- }
- 
-@@ -157,6 +157,27 @@
- 	if (wl * 5 != tb->tb_widget.width)
- 		wl++;
- 
-+	tb->tb_is_scrollable = FALSE;
-+	if (tb->tb_font) {
-+		if (gdk_text_width(tb->tb_font, tb->tb_text, length) <= tb->tb_widget.width) {
-+			tb->tb_is_scrollable = FALSE;
-+			if (tb->tb_timeout_tag) {
-+				gtk_timeout_remove(tb->tb_timeout_tag);
-+				tb->tb_timeout_tag = 0;
-+			}
-+		} else if (tb->tb_scroll_allowed) {
-+			tb->tb_is_scrollable = TRUE;
-+			length += 7;
-+			tb->tb_text = (gchar *) g_realloc(tb->tb_text, length + 1);
-+			strcat(tb->tb_text, "  ***  ");
-+			if (tb->tb_scroll_enabled && !tb->tb_timeout_tag) {
-+				if (cfg.smooth_title_scroll)
-+					tb->tb_timeout_tag = gtk_timeout_add(TEXTBOX_SCROLL_SMOOTH_TIMEOUT, textbox_scroll, tb);
-+				else
-+					tb->tb_timeout_tag = gtk_timeout_add(TEXTBOX_SCROLL_TIMEOUT, textbox_scroll, tb);
-+			}
-+		}
-+	} else
- 	if (length <= wl)
- 	{
- 		tb->tb_is_scrollable = FALSE;
-@@ -178,6 +199,48 @@
- 	draw_widget(tb);
- }
- 
-+void generate_xfont_pixmap(TextBox * tb)
-+{
-+	gint length, i, x, y;
-+	GdkGC *gc;
-+	GdkColor *c;
-+	GdkBitmap *b;
-+
-+	length = strlen(tb->tb_text);
-+
-+	tb->tb_pixmap_width = gdk_text_width(tb->tb_font, tb->tb_text, length);
-+	if (tb->tb_pixmap_width < tb->tb_widget.width) tb->tb_pixmap_width = tb->tb_widget.width;
-+	tb->tb_pixmap = gdk_pixmap_new(mainwin->window, tb->tb_pixmap_width, tb->tb_widget.height, gdk_rgb_get_visual()->depth);
-+	gc = tb->tb_widget.gc;
-+	c = get_skin_color(SKIN_TEXTBG);
-+	for (i = 0; i < tb->tb_widget.height; i++) {
-+		gdk_gc_set_foreground(gc, &c[6 * i / tb->tb_widget.height]);
-+		gdk_draw_line(tb->tb_pixmap, gc, 0, i, tb->tb_pixmap_width, i);
-+	}
-+
-+	b = gdk_pixmap_new(mainwin->window, tb->tb_pixmap_width, tb->tb_widget.height, 1);
-+	c = calloc(sizeof(GdkColor),1);
-+	gc = gdk_gc_new(b);
-+	c->pixel = 0;
-+	gdk_gc_set_foreground(gc, c);
-+	gdk_draw_rectangle(b, gc, TRUE, 0, 0, tb->tb_pixmap_width, tb->tb_widget.height);
-+	c->pixel = 1;
-+	gdk_gc_set_foreground(gc, c);
-+	gdk_draw_text(b, tb->tb_font, gc, 0, tb->tb_font->ascent, tb->tb_text, length);
-+	gdk_gc_unref(gc);
-+	free(c);
-+
-+	gc = tb->tb_widget.gc;
-+	gdk_gc_set_clip_mask(gc, b);
-+	c = get_skin_color(SKIN_TEXTFG);
-+	for (i = 0; i < tb->tb_widget.height; i++) {
-+		gdk_gc_set_foreground(gc, &c[6 * i / tb->tb_widget.height]);
-+		gdk_draw_line(tb->tb_pixmap, gc, 0, i, tb->tb_pixmap_width, i);
-+	}
-+	gdk_pixmap_unref(b);
-+	gdk_gc_set_clip_mask(gc, NULL);
-+}
-+
- void textbox_generate_pixmap(TextBox * tb)
- {
- 	gint length, i, x, y;
-@@ -189,6 +252,11 @@
- 	g_free(tb->tb_pixmap_text);
- 	tb->tb_pixmap_text = g_strdup(tb->tb_text);
- 
-+	if (tb->tb_font) {
-+		generate_xfont_pixmap(tb);
-+		return;
-+	}
-+
- 	length = strlen(tb->tb_text);
- 
- 	if(tb->tb_is_scrollable && tb->tb_scroll_allowed)
-@@ -378,6 +446,19 @@
- 
- }
- 
-+void config_textbox(TextBox *tb, gint y) {
-+	if (tb->tb_font) gdk_font_unref(tb->tb_font);
-+	tb->tb_font = NULL;
-+	tb->tb_widget.y = y;
-+	tb->tb_widget.height = 6;
-+	if (!(cfg.xfont_for_playinfo && strlen(cfg.playinfo_font) > 0)) return;
-+	tb->tb_font = gdk_fontset_load(cfg.playinfo_font);
-+	if (tb->tb_font == NULL) return;
-+	tb->tb_widget.height = tb->tb_font->ascent + tb->tb_font->descent;
-+	if (tb->tb_widget.height > 6) tb->tb_widget.y -= (tb->tb_widget.height - 6) / 2;
-+	else tb->tb_widget.height = 6;
-+}
-+
- TextBox *create_textbox(GList ** wlist, GdkPixmap * parent, GdkGC * gc, gint x, gint y, gint w, gboolean allow_scroll, SkinIndex si)
- {
- 	TextBox *tb;
-@@ -405,6 +486,8 @@
- {
- 	if (tb->tb_pixmap)
- 		gdk_pixmap_unref(tb->tb_pixmap);
-+	if (tb->tb_font)
-+		gdk_font_unref(tb->tb_font);	
- 	g_free(tb->tb_text);
- 	g_free(tb);
- }
-diff -ru xmms/textbox.h xmms/textbox.h
---- xmms/textbox.h	Wed Feb 16 13:05:59 2000
-+++ xmms/textbox.h	Thu Sep 21 11:39:59 2000
-@@ -33,12 +33,14 @@
- 	         tb_is_dragging;
- 	gint tb_timeout_tag, tb_drag_x, tb_drag_off;
- 	SkinIndex tb_skin_index;
-+	GdkFont *tb_font;
- }
- TextBox;
- 
- void textbox_set_text(TextBox * tb, gchar * text);
- void textbox_set_scroll(TextBox * tb, gboolean s);
- TextBox *create_textbox(GList ** wlist, GdkPixmap * parent, GdkGC * gc, gint x, gint y, gint w, gboolean allow_scroll, SkinIndex si);
-+void config_textbox(TextBox * tb, gint y);
- void free_textbox(TextBox * tb);
- 
- #endif
