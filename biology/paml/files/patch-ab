@@ -1,0 +1,11 @@
+--- evolver.c-orig	Thu Jun 15 14:42:52 2000
++++ evolver.c	Fri Jul  7 06:40:09 2000
+@@ -63,7 +63,7 @@
+ static double Qfactor=-1, Qrates[5];  /* Qrates[] hold kappa's for nucleotides */
+ 
+ 
+-void main(int argc, char*argv[])
++main(int argc, char*argv[])
+ {
+    char *MCctlf=NULL, outf[]="evolver.out";
+    int i, option=6, ntree=1,rooted, BD=0;
