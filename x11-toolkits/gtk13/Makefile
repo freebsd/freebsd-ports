@@ -3,13 +3,13 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.13 1998/04/04 13:46:25 vanilla Exp $
+# $Id: Makefile,v 1.14 1998/04/11 12:08:06 vanilla Exp $
 #
 
-DISTNAME=      gtk+-0.99.10
-PKGNAME=       gtk-0.99.10
+DISTNAME=      gtk+-1.0.0
+PKGNAME=       gtk-1.0.0
 CATEGORIES=    x11
-MASTER_SITES=  ftp://ftp.gimp.org/pub/gtk/v0.99/
+MASTER_SITES=  ftp://ftp.gimp.org/pub/gtk/v1.0/
 
 MAINTAINER=    vanilla@FreeBSD.ORG
 
