@@ -1135,7 +1135,7 @@ MAIN:{
 	       )
 	or usage();
 
-    if (!@ARGV &&
+    if (!@ARGV && !$installed &&
 	($build || $fetch || $list || $packages || $plist || $website)) {
 	usage();
     }
