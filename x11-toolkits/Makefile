@@ -53,6 +53,7 @@
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
     SUBDIR += gtkmathview
+    SUBDIR += gtkmm24
     SUBDIR += gtkscintilla
     SUBDIR += gtksourceview
     SUBDIR += gtoolkit
