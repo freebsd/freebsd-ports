@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fprobe
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,18 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool that collects network traffic data
 
-MAN1=		fprobe.1
-
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
+MAN8=		fprobe.8
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		 ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 PORTDOCS=	ChangeLog README
-PLIST_FILES=	bin/fprobe
+PLIST_FILES=	sbin/fprobe
 
 post-install:
 .if !defined(NOPORTDOCS)
