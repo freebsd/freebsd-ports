@@ -1,0 +1,5 @@
+Judy is a general purpose dynamic array implemented as a C callable
+library.  Judy's speed and memory usage are typically better than other
+data storage models and improves with very large data sets.
+
+WWW: http://judy.sourceforge.net/

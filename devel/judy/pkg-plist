@@ -1,0 +1,23 @@
+include/Judy.h
+lib/libJudy.a
+lib/libJudy.so
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/Judy1_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/Judy1_funcs_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/JudyHS_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/JudyHS_funcs_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/JudyL_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/JudyL_funcs_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/JudySL_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/JudySL_funcs_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/Judy_3x.htm
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/run_demo
+%%PORTDOCS%%%%EXAMPLESDIR%%/interSL.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/interL.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/funhist.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/JudySort.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
