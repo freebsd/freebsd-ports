@@ -22,7 +22,7 @@ EXAMPLES=	7LES_DROME amino.null globins50.msf nucleic.pri rrm.sto \
 		Artemia.fa amino.pri globins630.fa pkinase.sto RU1A_HUMAN \
 		fn3.sto nucleic.null rrm.hmm
 MAN1=		hmmalign.1 hmmbuild.1 hmmcalibrate.1 hmmconvert.1 hmmemit.1 \
-		hmmer.1 hmmfetch.1 hmmindex.1 hmmpfam.1 hmmsearch.1 
+		hmmer.1 hmmfetch.1 hmmindex.1 hmmpfam.1 hmmsearch.1
 
 .if defined(WITH_PVM)
 CONFIGURE_ENV+=		PVM_ROOT="${LOCALBASE}/lib/pvm" PVM_ARCH="FREEBSD"
