@@ -1,0 +1,11 @@
+--- configure.py.orig	Thu Mar 18 23:49:10 2004
++++ configure.py	Thu Mar 18 23:49:34 2004
+@@ -696,7 +696,7 @@
+     sipconfig.ParentMakefile(
+         configuration=cfg,
+         subdirs=["sipgen", "siplib"],
+-        installs=("sipconfig.py", cfg.sip_mod_dir)
++        installs=(["sipconfig.py", "sipconfig.pyc"], cfg.sip_mod_dir)
+     ).generate()
+ 
+     sipconfig.inform("Creating sip code generator Makefile...")
