@@ -10,7 +10,7 @@ REPLACES_BINARIES="/usr/bin/lpr
 case $2 in
 POST-INSTALL)
 	for FILE in ${REPLACES_BINARIES}; do
-		[ -e "${FILE}" ] && chmod 000 "${FILE}"
+		[ -e "${FILE}" ] && mv "${FILE}" "${FILE}.bak" && ln -s "/usr/local/${FILE#/usr/}" "${FILE}"
 	done
 ;;
 esac

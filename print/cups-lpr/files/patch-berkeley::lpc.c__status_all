@@ -1,0 +1,18 @@
+--- berkeley/lpc.c.orig	Wed Feb 25 17:14:50 2004
++++ berkeley/lpc.c	Mon Nov 15 17:54:38 2004
+@@ -339,6 +339,15 @@
+       }
+ 
+      /*
++      * A single 'all' printer name is special, meaning all printers.
++      */
++
++      if (dests != NULL && compare_strings(dests, "all", 3) == 0)
++      {
++        dests = NULL;
++      }
++
++     /*
+       * See if this is a printer we're interested in...
+       */
+ 

@@ -10,6 +10,7 @@ REPLACES_BINARIES="/usr/bin/lpr
 case $2 in
 POST-DEINSTALL)
 	for FILE in ${REPLACES_BINARIES}; do
+		[ -L "${FILE}" ] && rm "${FILE}"
 		[ -e "${FILE}.bak" ] && mv "${FILE}.bak" "${FILE}"
 	done
 ;;
