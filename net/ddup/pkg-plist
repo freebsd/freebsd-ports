@@ -1,6 +1,4 @@
 sbin/ddup
-sbin/testip
+sbin/ddupcron.sh
 share/doc/ddup/README
-share/doc/ddup/INSTALL-C
-share/doc/ddup/COPYING
 @dirrm share/doc/ddup

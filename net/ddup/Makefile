@@ -6,45 +6,40 @@
 #
 
 PORTNAME=	ddup
-PORTVERSION=	2.2
+PORTVERSION=	3.0.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ddup.sourceforge.net/pub/ddup/
-DISTNAME=	ddup-2.2Dm
+MASTER_SITES=	http://www.ddup.org/download/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
 MAINTAINER=	cjm2@altavista.net
 
 MAN1=		ddup.1
-MANCOMPRESSED=	yes
+MANCOMPRESSED=	maybe
 
-WRKSRC=		${WRKDIR}/ddup-2.2Dm
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 # Uncomment this if you want to enable debugging.
 #DEBUG=		-g
 
+MAKE_ARGS=	DEBUG="${DEBUG}"
+
+post-extract:
+	cd ${WRKSRC}; ${GUNZIP_CMD} ddup.1.gz
+
+post-patch:
+	${PERL} -i -pe 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/ddupcron.sh
+	${PERL} -i -pe 's,/etc\b,${PREFIX}$$&,' ${WRKSRC}/ddup.1
+
 pre-build:
-	${ECHO} "char *file_name = \"${PREFIX}/etc/ddup.conf\";" > ${WRKSRC}/options.h
-
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c ddup.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c ddup_functions.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c getopt.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c getopt1.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c parse_config.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c parse_option.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -c update.c
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEBUG} -o ddup ddup.o ddup_functions.o getopt.o getopt1.o parse_config.o parse_option.o update.o ${LIBS}
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ddup ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${WRKSRC}/testip ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/ddup.1.gz ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/doc/ddup
-	${INSTALL_MAN} ${WRKSRC}/INSTALL-C ${PREFIX}/share/doc/ddup
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/ddup
-	${INSTALL_MAN} ${WRKSRC}/COPYING ${PREFIX}/share/doc/ddup
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
+	${ECHO} "#define file_name \"${PREFIX}/etc/ddup.conf\"" > ${WRKSRC}/options.h
 
 post-install:
-	strip ${PREFIX}/sbin/ddup
-	${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/ddupcron.sh ${PREFIX}/sbin/
+.if !defined(NOPORTSDOC)
+	${MKDIR} ${PREFIX}/share/doc/ddup
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ddup/
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
