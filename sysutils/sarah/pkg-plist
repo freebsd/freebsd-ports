@@ -1,6 +1,0 @@
-bin/sarah
-etc/sarah.conf.sample
-share/doc/sarah/README
-share/doc/sarah/CHANGES
-share/doc/sarah/TODO
-@dirrm share/doc/sarah

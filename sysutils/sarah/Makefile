@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sarah
-PORTVERSION=	0.8b
+PORTVERSION=	0.9b
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.conundrum.com/pub/sarah/
 
@@ -17,20 +17,21 @@ USE_PERL5=	yes
 NO_BUILD=	yes
 
 MAN1=		sarah.1
+PLIST_FILES=	bin/sarah etc/sarah.conf.sample
+PORTDOCS=	README CHANGES TODO
 
 do-configure:
 	@${PERL} -pi.orig -e "s|/usr/local|${PREFIX}|" ${WRKSRC}/sarah
 
 do-install:
-	cd ${WRKSRC} && \
-		${INSTALL_SCRIPT} sarah ${PREFIX}/bin && \
-		${INSTALL_DATA} sarah.conf.sample ${PREFIX}/etc && \
-		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/sarah ${PREFIX}/bin && \
+	${INSTALL_DATA} ${WRKSRC}/sarah.conf.sample ${PREFIX}/etc && \
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/sarah
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/sarah
-	${INSTALL_MAN} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/sarah
-	${INSTALL_MAN} ${WRKSRC}/TODO ${PREFIX}/share/doc/sarah
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
