@@ -25,6 +25,7 @@ PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://ftp.nuxi.com/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://riemann.iam.uni-bonn.de/pub/mutt/
 PATCHFILES=
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=     obrien@FreeBSD.org
 
@@ -46,7 +47,6 @@ RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 .endif
 
 DIST_SUBDIR=	mutt
-PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
