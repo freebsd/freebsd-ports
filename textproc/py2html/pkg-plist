@@ -1,0 +1,4 @@
+bin/py2html
+bin/py2html.pyc
+%%PYTHON_SITELIBDIR%%/PyFontify.py
+%%PYTHON_SITELIBDIR%%/PyFontify.pyc
