@@ -9,6 +9,7 @@ lib/libvte.so.4
 lib/vte/decset
 lib/vte/interpret
 lib/vte/iso8859mode
+lib/vte/nativeecho
 lib/vte/osc
 lib/vte/slowcat
 lib/vte/utf8echo
@@ -21,10 +22,12 @@ share/locale/cs/LC_MESSAGES/vte.mo
 share/locale/da/LC_MESSAGES/vte.mo
 share/locale/de/LC_MESSAGES/vte.mo
 share/locale/fr/LC_MESSAGES/vte.mo
+share/locale/ms/LC_MESSAGES/vte.mo
 share/locale/nl/LC_MESSAGES/vte.mo
 share/locale/no/LC_MESSAGES/vte.mo
 share/locale/pt_BR/LC_MESSAGES/vte.mo
 share/locale/sv/LC_MESSAGES/vte.mo
+share/locale/uk/LC_MESSAGES/vte.mo
 share/locale/vi/LC_MESSAGES/vte.mo
 @dirrm share/gnome/vte/termcap
 @dirrm share/gnome/vte

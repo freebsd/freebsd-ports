@@ -1,0 +1,13 @@
+--- gnome-pty-helper/Makefile.in.orig	Wed Nov 27 13:30:48 2002
++++ gnome-pty-helper/Makefile.in	Wed Nov 27 13:31:05 2002
+@@ -425,8 +425,8 @@
+ 
+ 
+ install-exec-hook:
+-	chown root.utmp $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
+-	chmod g+s       $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
++	chown root:wheel $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
++	chmod u+s       $(DESTDIR)$(libexecdir)/gnome-pty-helper || true
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
