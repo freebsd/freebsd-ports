@@ -348,6 +348,7 @@
     SUBDIR += ruby-amatch
     SUBDIR += ruby-amrita
     SUBDIR += ruby-csv
+    SUBDIR += ruby-diff
     SUBDIR += ruby-format
     SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
