@@ -30,6 +30,7 @@
     SUBDIR += demime
     SUBDIR += distribute
     SUBDIR += dkimap4
+    SUBDIR += dovecot
     SUBDIR += drac
     SUBDIR += drbl
     SUBDIR += ecartis
