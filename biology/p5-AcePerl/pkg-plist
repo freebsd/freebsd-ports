@@ -9,9 +9,11 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Fk.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/anchored_arrow.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/arrow.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/box.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/crossbox.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/dot.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/ex.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/graded_segments.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/group.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/line.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Graphics/Glyph/primers.pm
@@ -33,11 +35,11 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Feature.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/FeatureList.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/GappedAlignment.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Gene.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Homol.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Multi.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/Sequence/Transcript.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ace/SocketServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GFF/Filehandle.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ace/Freesubs/Freesubs.so
