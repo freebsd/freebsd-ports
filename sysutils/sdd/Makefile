@@ -7,7 +7,7 @@
 PORTNAME=	sdd
 PORTVERSION=	1.31
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
 
 MAINTAINER=	naddy@FreeBSD.org
 
