@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.create.ucsb.edu/pub/MixViews/source/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
 
-MAINTAINER=	davidn@blaze.net.au
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Does not build"
 
