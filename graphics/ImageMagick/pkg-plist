@@ -46,6 +46,7 @@ include/magick/module.h
 include/magick/monitor.h
 include/magick/quantize.h
 include/magick/registry.h
+include/magick/render.h
 include/magick/semaphore.h
 include/magick/timer.h
 include/magick/utility.h
@@ -273,6 +274,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.fig
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.png
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.svg
+%%PORTDOCS%%share/doc/ImageMagick/www/Magick++/ChangeLog.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/CoderInfo.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Color.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Documentation.html
@@ -331,6 +333,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/api/montage.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/quantize.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/registry.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/render.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/segment.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/shear.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/signature.html

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.3.11
-PORTREVISION=   2
+PORTVERSION=	5.4.4
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -27,7 +26,6 @@ MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -43,8 +41,6 @@ LIB_DEPENDS=	fpx:${PORTSDIR}/graphics/libfpx \
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2:${PORTSDIR}/archivers/bzip2
 .endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
