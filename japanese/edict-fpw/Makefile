@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	edict-fpw
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/fpwbooks/edict/ \
 		ftp://ftp.cc.monash.edu.au/pub/nihongo/ \
@@ -16,20 +16,22 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/fpwbooks/edict/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		edict.gz \
-		edict.doc
+		edict_doc.txt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=    	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		catdump:${PORTSDIR}/japanese/epwutil
+		catdump:${PORTSDIR}/japanese/epwutil \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
 
 post-extract:
 	${MKDIR} ${WRKSRC}/source
 	${CP} -f ${DISTDIR}/edict.gz ${WRKSRC}/source
-	${CP} -f ${DISTDIR}/edict.doc ${WRKSRC}/source
+	${CP} -f ${DISTDIR}/edict_doc.txt ${WRKSRC}/source
 	${GZIP_CMD} -d ${WRKSRC}/source/edict.gz
 
 do-build:
@@ -42,8 +44,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/edict-fpw
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/edict-fpw
-	${INSTALL_DATA} ${WRKSRC}/source/edict.doc ${PREFIX}/share/doc/edict-fpw
-	${INSTALL_DATA} ${WRKSRC}/README.pkg ${PREFIX}/share/doc/edict-fpw
+	${INSTALL_DATA} ${WRKSRC}/source/edict_doc.txt ${PREFIX}/share/doc/edict-fpw
+	${INSTALL_DATA} ${WRKSRC}/README.PKG ${PREFIX}/share/doc/edict-fpw
 .endif
 
 .include <bsd.port.mk>
