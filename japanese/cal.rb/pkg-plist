@@ -1,4 +1,4 @@
 bin/cal.rb
-libdata/cal/Calendar.rb
-libdata/cal/era_name
-@dirrm libdata/cal
+%%RUBY_SITELIBDIR%%/Calendar.rb
+%%DATADIR%%/era_name
+@dirrm %%DATADIR%%
