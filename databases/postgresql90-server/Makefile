@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
 		ftp://ftp.de.postgresql.org/ \
 		ftp://ftp.digex.net/pub/packages/database/postgresql/ \
-		ftp://ftp.incoma.ru/pub/unix/postgresql/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/
 
 MAINTAINER=	andreas@FreeBSD.org
