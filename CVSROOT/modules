@@ -597,6 +597,7 @@ bochs		ports/emulators/bochs
 boclient	ports/net/boclient
 boehm-gc	ports/devel/boehm-gc
 bogged		ports/games/bogged
+bogofilter	ports/mail/bogofilter
 bogosort	ports/misc/bogosort
 boiling-egg	ports/editors/boiling-egg
 bomb		ports/games/bomb
