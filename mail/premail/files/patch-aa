@@ -1,8 +1,8 @@
---- premail.old	Thu Oct 31 06:25:10 1996
-+++ premail	Sat Feb 14 19:22:24 1998
+--- premail.orig	Thu Oct 31 06:25:10 1996
++++ premail	Fri Oct  2 10:26:02 1998
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
-+#!/usr/local/bin/perl -w
++#!%PERL5% -w
  #
  # premail, an e-mail privacy package
  #
@@ -158,7 +158,51 @@
      my (@mime_fields, $prefix);
      my ($sign_type, $sign);
      my ($invoc, $errfile);
-@@ -1687,7 +1707,7 @@
+@@ -1487,6 +1507,16 @@
+     } else {
+ 	$num_shuf = 3;
+     }
++    if ($config{"reliability-threshold"}) {
++        $rel_thres = $config{"reliability-threshold"};
++    } else {
++        $rel_thres = 100;
++    }
++    if ($config{"latency-threshold"}) {
++        $lat_thres = $config{"latency-threshold"};
++    } else {
++        $lat_thres = 0;
++    }
+     foreach $hop (@chain) {
+ 	if ($hop =~ /^\d+$/) {
+ 	    for ($i = 0; $i < $hop; $i++) {
+@@ -1498,8 +1528,14 @@
+ 			  || &member ('eric', @options))) {
+ 			next;
+ 		    }
+-		    $score = $reliability{$remailer};
+-		    $score -= $latency{$remailer} * 1e-5;
++                    if ( $reliability{$remailer}>=$rel_thres ) {
++                        $score = 100 ;
++                    } else {
++		        $score = $reliability{$remailer};
++                    }
++                    if ( $latency{$remailer}>=$lat_thres ) {
++		        $score -= $latency{$remailer} * 1e-5;
++                    }
+ 		    if ($config{'encrypt'} &&
+ 			(&member ('pgp', @options)
+ 			 || &member ('pgp.', @options))) {
+@@ -1511,7 +1547,8 @@
+ 			     || &member ('pgponly', @options)) { next; }
+ 		    if ($config{'no-middle'}
+ 			&& &member ('middle', @options)) { next; }
+-		    if (&member ('reord', @options)) { $score += 0.1; }
++		    if (&member ('reord', @options)
++			&& $rel_thres==100) { $score += 0.1; }
+ 		    if (&member ('filter', @options)) { $score -= 10; }
+ 		    if (&member ('mon', @options)) { $score -= 10; }
+ 		    if ($#new_chain < 0 && !$erb
+@@ -1687,7 +1724,7 @@
  	    }
  	}
  	if ($put_open) { close (PUT); }
@@ -167,7 +211,7 @@
      }
  }
  
-@@ -1817,7 +1837,7 @@
+@@ -1817,7 +1854,7 @@
  	}
      }
      push (@deliver_headers, "To\: $new_to\n");
@@ -176,7 +220,7 @@
  	$hash = "$1\n".$hash;
  	$body = &cat_tail ($body, "\*\*\n");
      }
-@@ -2214,7 +2234,7 @@
+@@ -2214,7 +2251,7 @@
  	# we know it's sendmail
  	$invoc = &bin_sendmail ();
  	if ($#sendmail_args >= 0) {
@@ -185,7 +229,7 @@
  	}
  	$invoc .= ' -oi';
  	foreach $recip (@the_recips) {
-@@ -2252,11 +2272,11 @@
+@@ -2252,11 +2289,11 @@
      &close_body ($body);
      if ($post) {
  	close (DELIVER);
@@ -201,7 +245,15 @@
  	unlink $tmpfile;
      } elsif ($edit && !$prezilla) {
  	close (DELIVER);
-@@ -2801,6 +2821,7 @@
+@@ -2441,6 +2478,7 @@
+     }
+     $strip =~ s/^\s+//s;
+     $strip =~ s/\s+$//s;
++    return ($strip, '') if ($config{'no-caret'}) ;
+     return ($strip, $caret);
+ }
+ 
+@@ -2801,6 +2839,7 @@
  # (@new_dict) = &delete_field ($key, @dict)
      my ($key, @dict) = @_;
      my (@new_dict);
@@ -209,7 +261,7 @@
  
      @new_dict = ();
      foreach $field (@dict) {
-@@ -2972,8 +2993,8 @@
+@@ -2972,8 +3011,8 @@
  
      $data = '';
      if (open (ERRFILE, $file)) {
@@ -219,7 +271,7 @@
  	    $data .= $_;
  	}
  	close (ERRFILE);
-@@ -3040,7 +3061,7 @@
+@@ -3040,7 +3079,7 @@
  	$pass = '';
      }
      if ($pubring) { $invoc .= ' +pubring='.&shell_quote ($pubring); }
@@ -228,7 +280,7 @@
      if ($sign) {
  	$invoc .= 's -u '.&shell_quote ($signuser);
  	&load_secrets ();
-@@ -3126,7 +3147,7 @@
+@@ -3126,7 +3165,7 @@
  	$signuser = '0x';
  	$pass = '';
      }
@@ -237,7 +289,7 @@
      $invoc .= ' -u '.&shell_quote ($signuser);
      unless (defined $pass) {
  	if (defined $pgppass{$signuser}) {
-@@ -3182,7 +3203,7 @@
+@@ -3182,7 +3221,7 @@
  	$signuser = '0x';
  	$pass = '';
      }
@@ -246,7 +298,7 @@
      $invoc .= ' -u '.&shell_quote ($signuser);
      unless (defined $pass) {
  	if (defined $pgppass{$signuser}) {
-@@ -3238,7 +3259,7 @@
+@@ -3238,7 +3277,7 @@
      return ($mimefile, $err, $boundary);
  }
  
@@ -255,7 +307,7 @@
  sub pgp_decrypt {
  # ($out_body, $err) = &pgp_decrypt ($body, $pass)
  # Try to decrypt $body using passphrase $pass. $out_body is null on error.
-@@ -3251,7 +3272,7 @@
+@@ -3251,7 +3290,7 @@
      $outfile = &tmp_filename ();
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -264,7 +316,7 @@
      $invoc .= " +pubring=$PUBRING" if $PUBRING;
      $invoc .= " +secring=$SECRING" if $SECRING;
  #    if ($pass =~ /^RING$;/) {
-@@ -3299,7 +3320,7 @@
+@@ -3299,7 +3338,7 @@
  
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -273,7 +325,7 @@
      $invoc .= ' '.$pgp_file;
      $invoc .= ' '.$signed_file;
      $invoc .= ' > '.$errfile.' 2>&1';
-@@ -3390,7 +3411,7 @@
+@@ -3390,7 +3429,7 @@
      $chars_needed = 2 + sprintf ("%d", $bits / 8);
      &pdv ($config{'pgp'}." +makerandom=$chars_needed $outf"
  	." >/dev/null 2>&1\n");
@@ -282,7 +334,7 @@
  	." >/dev/null 2>&1";
      &pdv ($status."\n");
      if (!$status) {
-@@ -3626,11 +3647,14 @@
+@@ -3626,11 +3665,14 @@
  
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -298,7 +350,7 @@
      $status = &open_pgp ($invoc, $pass, '');
      $err = &read_and_delete ($errfile);
      &pdv ($err);
-@@ -3647,7 +3671,7 @@
+@@ -3647,7 +3689,7 @@
  	unlink $ps_pgp;
      }
      $invoc = &tilde_expand ($config{'pgp'});
@@ -307,7 +359,7 @@
      $invoc .= ' < '.$ps;
      $invoc .= ' > '.$ps_pgp;
      $invoc .= ' 2> '.$errfile;
-@@ -3910,7 +3934,8 @@
+@@ -3910,7 +3952,8 @@
  		&replace_field ('Content-Type: text/plain; charset='
  				.$config{'charset'}."\n",
  				@deliver_headers);
@@ -317,7 +369,7 @@
  	    # Should we detect other charsets which are supersets of us-ascii?
  	    if (!$mv_present) {
  		push (@deliver_headers, 'MIME-Version: 1.0'."\n");
-@@ -3923,7 +3948,8 @@
+@@ -3923,7 +3966,8 @@
  	}
      }
      # must deal with existing cte, charset, etc.
@@ -327,7 +379,7 @@
  	# Do the QP
  	&pdv ("Doing QP encoding!\n");
  	if (!$mv_present) {
-@@ -4336,6 +4362,8 @@
+@@ -4336,6 +4380,8 @@
      exit 0;
  }
  
@@ -336,7 +388,7 @@
  sub decode_msg {
  # &decode_msg ($msg)
  # This is possibly the ugliest function in all of premail. Most of it is
-@@ -5129,7 +5157,7 @@
+@@ -5129,7 +5175,7 @@
      &load_secrets ();
      foreach (keys %pgpring) {
  	my ($tpr, $tsr) = &makerings ($pgpring{$_});
@@ -345,7 +397,7 @@
  	#filecat ($tpr, $pr);
  	filecat ($tsr, $sr);
  	&delete_tmpfile ($tpr);
-@@ -5157,12 +5185,12 @@
+@@ -5157,12 +5203,12 @@
  #   &pdv ('&makerings ("'.join ('", "', @_)."\")\n");
      foreach ([$pr, $pk], [$sr, $sk]) {
  	open TMP, ">$$_[0]";
@@ -360,7 +412,7 @@
  	    . "$id $pr $pubring 2>&1";
  	&pdv ("$invoc > /dev/null\n");
  	system "$invoc > /dev/null";
-@@ -5189,7 +5217,7 @@
+@@ -5189,7 +5235,7 @@
      $outfile = &tmp_filename ();
      $errfile = &tmp_filename ();
      $invoc = &tilde_expand ($config{'pgp'});
@@ -369,7 +421,7 @@
      $invoc .= " +pubring=$pr +secring=$sr ";
      $invoc .= $cmd;
      $invoc .= ' < ' . $infile if $infile;
-@@ -5248,7 +5276,7 @@
+@@ -5248,7 +5294,7 @@
  EOF
      <STDIN>;
  
@@ -378,7 +430,7 @@
  	print STDERR "\nKey generation failed.\n";
  	&killbaks ($pr, $sr);
  	&delete_open_tmpfiles ();
-@@ -5272,7 +5300,7 @@
+@@ -5272,7 +5318,7 @@
      foreach $a ("$kid $pr",
  		"$remid $pr " . &tilde_expand ($config{'pubring'}),
  		"$kid $sr $defsr") {
@@ -387,7 +439,7 @@
  #	print STDERR "+ $invoc\n";
  	my $result = `$invoc`;
  	unless ($result =~ /^Key extracted/m) {
-@@ -5300,7 +5328,7 @@
+@@ -5300,7 +5346,7 @@
  EOF
      <STDIN>;
  
@@ -396,7 +448,7 @@
  #    print STDERR "+ $invoc\n";
      if (system ($invoc)) {
  	print STDERR "Edit failed.\n";
-@@ -5495,6 +5523,7 @@
+@@ -5495,6 +5541,7 @@
  	    }
  	}
      }
@@ -404,7 +456,7 @@
      if ($#args >= 1) {
  	$to = $args[1];
      } elsif ($#args < 0) {
-@@ -5609,7 +5638,6 @@
+@@ -5609,7 +5656,6 @@
  		$fullname = &query ('Full name of pseudonym (not just '
  				    . 'E-mail address)', $fullname);
  		$fullname =~ s/[\'\^\n]//g;  # kludge for secrets file
@@ -412,7 +464,16 @@
  		$signsend = &query ('Sign mail with (R)emailer key, '
  				    . '(P)seudonym key or (N)o key?',
  				    $signsend);
-@@ -5771,6 +5799,7 @@
+@@ -5652,7 +5698,7 @@
+     }
+ #   print "Here's the encrypted block:\n";
+ #   system "cat $replyblock_fn";
+-    $time = time;
++    $time = CORE::time();
+     if (&member ('newnym', @options)) {
+ 	$secret = "\$nym\{\'$time\,$remailer\=$nym\'\} \= ".
+ 	    "\'chain=$chain\^to=$to^"
+@@ -5771,6 +5817,7 @@
      if (!open (IN, $body)) {
  	&error ("Internal error opening replyblock\n");
      }
@@ -420,7 +481,7 @@
      @in_headers = ("To: $to\n");
      push (@in_headers, "Chain: $chain\n") if $chain;
      $header_sep = "\n";
-@@ -5784,6 +5813,7 @@
+@@ -5784,6 +5831,7 @@
      }
      &send_group ($groups[0]);
      close (IN);
@@ -428,7 +489,7 @@
  }
  
  sub find_nym {
-@@ -5997,7 +6027,7 @@
+@@ -5997,7 +6045,7 @@
  
      # The main loop
      $quit = 0;
@@ -437,7 +498,7 @@
      while (!$quit) {
  	$rin = $win = $ein = '';
  	vec ($rin, fileno(STDIN), 1) = 1 unless $ineof;
-@@ -6315,7 +6345,7 @@
+@@ -6315,7 +6363,7 @@
  # Open a Web connection for the file as file handle WWW.
      my ($url) = @_;
      my ($host, $port, $suf);
@@ -446,7 +507,7 @@
      my ($name, $proto);
      my ($that, $thataddr);
      my ($savesel, $gotsep);
-@@ -6330,7 +6360,7 @@
+@@ -6330,7 +6378,7 @@
  	$host = $1;
  	$port = $2;
  	$suf = $3;
@@ -455,7 +516,7 @@
  	else { $port = 80; }
  	($fqdn, $aliases, $type, $len, $thataddr) = gethostbyname ($host);
  	return &pdv ("Host not found: $host\n") if ($thataddr eq '');
-@@ -6345,7 +6375,7 @@
+@@ -6345,7 +6393,7 @@
  		       unpack ('C4', $thataddr), $port));
  	eval {
  	    $SIG{'ALRM'} = sub { die "Timeout error on $url\n" };
@@ -464,12 +525,21 @@
  #	    bind(WWW, $this) || &die_disarm ("bind: $!\n");
  #	    &pdv ("bound the socket...\n");
  	    connect(WWW, $that) || &die_disarm ("connect: $!\n");
-@@ -6368,6 +6398,21 @@
+@@ -6356,7 +6404,7 @@
+ 	        ."User-Agent: premail/$version (perl; unix)\n"
+ 		."\n";
+ 	    $response = <WWW>;
+-	    if ($response !~ /^HTTP\/1\.0 200/) {
++	    if ($response !~ /^HTTP\/1\.[01] 200/) {
+ 		&die_disarm ("Remote server error: $response");
+ 	    }
+ 	    $gotsep = 0;
+@@ -6368,6 +6416,21 @@
  	};
  	if ($@) { return &pdv ($@); }
  	return &pdv ("No response from server\n") unless $gotsep;
 +    } elsif ($url =~ /^finger:(.*)$/) {
-+	my $target = @RELAYS ? $1 . '@' . $RELAYS[time % @RELAYS] : $1;
++	my $target = @RELAYS ? $1 . '@' . $RELAYS[CORE::time() % @RELAYS] : $1;
 +	&error("`$target' contains no hostname\n") unless ($target =~ /(.*)@([^@]+)/);
 +	my ($user,$host,$port,$ipaddr,$sin) = ($1, $2);
 +	return &pdv ("Unknown host: $host\n") unless ($ipaddr = inet_aton ($host));
