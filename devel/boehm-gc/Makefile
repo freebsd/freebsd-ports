@@ -7,6 +7,7 @@
 
 PORTNAME=	boehm-gc
 PORTVERSION=	6.2.a4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
@@ -18,7 +19,7 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-threads
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-threads --enable-cplusplus
 
 MAN3=		gc.3
 

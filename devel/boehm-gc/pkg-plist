@@ -16,7 +16,9 @@ include/gc/leak_detector.h
 include/gc/new_gc_alloc.h
 include/gc/weakpointer.h
 include/gc.h
+include/gc_allocator.h
 include/gc_config_macros.h
+include/gc_cpp.h
 include/gc_local_alloc.h
 include/gc_pthread_redirects.h
 include/gc_typed.h
@@ -54,4 +56,5 @@ share/doc/gc/gcinterface.html
 share/doc/gc/leak.html
 share/doc/gc/scale.html
 share/doc/gc/tree.html
+@dirrm share/doc/gc
 @dirrm include/gc
