@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Aug 31 22:57:28 1998
-+++ Makefile	Fri Sep 11 14:14:35 1998
+--- Makefile.orig	Mon Aug 31 07:57:28 1998
++++ Makefile	Tue Mar 16 12:13:10 1999
 @@ -1,5 +1,5 @@
  # Choose your C compiler
 -CC = gcc 
@@ -23,3 +23,12 @@
  
  # Flags for the linker
  LD = $(CC) 
+@@ -22,7 +22,7 @@
+ # For Solaris
+ #LDFLAGS = -o echoping -lsocket -lnsl
+ 
+-INSTALL=install
++INSTALL=install -c
+ INSTALL_BIN_FLAGS=-m 755
+ INSTALL_MAN_FLAGS=-m 644
+ 
