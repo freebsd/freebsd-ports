@@ -8,11 +8,13 @@
 PORTNAME=	cvsmapfs
 PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.pn.com/pub/bb/cvsmapfs/
+MASTER_SITES=	http://www.netsw.org/softeng/versioncontrol/repository/cvs/cvsmapfs/
 
 MAINTAINER=	rip@pinetec.co.za
 COMMENT=	Helps keep track of modes and permissions of files in cvs
 
+EXTRACT_CMD=	${CAT}	# despite .tar.gz suffix, only tarball
+EXTRACT_BEFORE_ARGS=
 USE_PERL5=	YES
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
