@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSIONRAW=	2.2-20050218
+PORTVERSIONRAW=	2.2-20050227
 PORTVERSION=	${PORTVERSIONRAW:S/-/./}
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
@@ -110,7 +110,7 @@ pre-patch:
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
 		${WRKSRC}/man/man5/${f} ${WRKSRC}/html/${f}.html
 .endfor
-.for f in ${MAN8base}
+.for f in ${MAN8}
 	@${REINPLACE_CMD} -e "s|/etc/postfix|${PREFIX}/etc/postfix|g" \
 		${WRKSRC}/man/man8/${f} ${WRKSRC}/html/${f}.html
 .endfor
