@@ -1,46 +1,46 @@
-%%HLDSDIR%%/frontline/1024_textscheme.txt
-%%HLDSDIR%%/frontline/1152_textscheme.txt
-%%HLDSDIR%%/frontline/1280_textscheme.txt
-%%HLDSDIR%%/frontline/1600_textscheme.txt
-%%HLDSDIR%%/frontline/320_textscheme.txt
-%%HLDSDIR%%/frontline/400_textscheme.txt
-%%HLDSDIR%%/frontline/512_textscheme.txt
-%%HLDSDIR%%/frontline/640_textscheme.txt
-%%HLDSDIR%%/frontline/800_textscheme.txt
-%%HLDSDIR%%/frontline/FLF.ico
-%%HLDSDIR%%/frontline/FLF2.ico
-%%HLDSDIR%%/frontline/FLF3.ico
+%%PORTDOCS%%%%HLDSDIR%%/frontline/1024_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/1152_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/1280_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/1600_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/320_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/400_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/512_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/640_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/800_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/FLF.ico
+%%PORTDOCS%%%%HLDSDIR%%/frontline/FLF2.ico
+%%PORTDOCS%%%%HLDSDIR%%/frontline/FLF3.ico
 %%HLDSDIR%%/frontline/cached.wad
 %%HLDSDIR%%/frontline/cl_dlls/client.dll
-%%HLDSDIR%%/frontline/commandmenu.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/commandmenu.txt
 %%HLDSDIR%%/frontline/config.cfg
 %%HLDSDIR%%/frontline/delta.lst
-%%HLDSDIR%%/frontline/descriptions/classes/commandosassault.txt
-%%HLDSDIR%%/frontline/descriptions/classes/commandosrecon.txt
-%%HLDSDIR%%/frontline/descriptions/classes/commandossupport.txt
-%%HLDSDIR%%/frontline/descriptions/classes/natoassault.txt
-%%HLDSDIR%%/frontline/descriptions/classes/natorecon.txt
-%%HLDSDIR%%/frontline/descriptions/classes/natosupport.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons/hk21.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta92f.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/pistols/hkpistol.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/pistols/mk23.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/rifles.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/rifles/ak5.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/rifles/famas.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/rifles/m4.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/rifles/msg90.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/rifles/sako.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/shotguns.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/rs202m2.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/spas12.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/submachines.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mac10.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5a2.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5sd.txt
-%%HLDSDIR%%/frontline/descriptions/weapons/submachines/ump45.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/commandosassault.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/commandosrecon.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/commandossupport.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/natoassault.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/natorecon.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/classes/natosupport.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons/hk21.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/beretta92f.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/hkpistol.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/pistols/mk23.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/ak5.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/famas.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/m4.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/msg90.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/rifles/sako.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/shotguns.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/rs202m2.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/shotguns/spas12.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mac10.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5a2.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/mp5sd.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/descriptions/weapons/submachines/ump45.txt
 %%HLDSDIR%%/frontline/dlls/front_i386.so
 %%HLDSDIR%%/frontline/events/ak5.sc
 %%HLDSDIR%%/frontline/events/ammocount.sc
@@ -388,18 +388,18 @@
 %%HLDSDIR%%/frontline/gfx/vgui/640_ump45_sm.tga
 %%HLDSDIR%%/frontline/liblist.gam
 %%HLDSDIR%%/frontline/listenserver.cfg
-%%HLDSDIR%%/frontline/manual/cappoints.jpg
-%%HLDSDIR%%/frontline/manual/extrastuff.jpg
-%%HLDSDIR%%/frontline/manual/index.html
-%%HLDSDIR%%/frontline/manual/manual1.jpg
-%%HLDSDIR%%/frontline/manual/new.html
-%%HLDSDIR%%/frontline/manual/radar.jpg
-%%HLDSDIR%%/frontline/manual/room1.jpg
-%%HLDSDIR%%/frontline/manual/room2a.jpg
-%%HLDSDIR%%/frontline/manual/room2b.jpg
-%%HLDSDIR%%/frontline/manual/stamina.jpg
-%%HLDSDIR%%/frontline/manual/teambonus.jpg
-%%HLDSDIR%%/frontline/manual/time.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/cappoints.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/extrastuff.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/index.html
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/manual1.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/new.html
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/radar.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/room1.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/room2a.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/room2b.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/stamina.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/teambonus.jpg
+%%PORTDOCS%%%%HLDSDIR%%/frontline/manual/time.jpg
 %%HLDSDIR%%/frontline/mapcycle.txt
 %%HLDSDIR%%/frontline/maps/flf_ascension.bsp
 %%HLDSDIR%%/frontline/maps/flf_ascension.loc
@@ -904,7 +904,7 @@
 %%HLDSDIR%%/frontline/sprites/woodpuff.spr
 %%HLDSDIR%%/frontline/titles.txt
 %%HLDSDIR%%/frontline/user.scr
-%%HLDSDIR%%/frontline/version_info.txt
+%%PORTDOCS%%%%HLDSDIR%%/frontline/version_info.txt
 @dirrm %%HLDSDIR%%/frontline/sprites
 @dirrm %%HLDSDIR%%/frontline/sound/weapons
 @dirrm %%HLDSDIR%%/frontline/sound/sfx
@@ -926,20 +926,22 @@
 @dirrm %%HLDSDIR%%/frontline/maptutorial/Images
 @dirrm %%HLDSDIR%%/frontline/maptutorial
 @dirrm %%HLDSDIR%%/frontline/maps
-@dirrm %%HLDSDIR%%/frontline/manual
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/manual
 @dirrm %%HLDSDIR%%/frontline/gfx/vgui
 @dirrm %%HLDSDIR%%/frontline/gfx/shell
 @dirrm %%HLDSDIR%%/frontline/gfx/env
 @dirrm %%HLDSDIR%%/frontline/gfx
 @dirrm %%HLDSDIR%%/frontline/events
 @dirrm %%HLDSDIR%%/frontline/dlls
-@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/submachines
-@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/shotguns
-@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/rifles
-@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/pistols
-@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons
-@dirrm %%HLDSDIR%%/frontline/descriptions/weapons
-@dirrm %%HLDSDIR%%/frontline/descriptions/classes
-@dirrm %%HLDSDIR%%/frontline/descriptions
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/submachines
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/shotguns
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/rifles
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/pistols
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons/heavyweapons
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/weapons
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions/classes
+%%PORTDOCS%%@dirrm %%HLDSDIR%%/frontline/descriptions
 @dirrm %%HLDSDIR%%/frontline/cl_dlls
-@dirrm %%HLDSDIR%%/frontline
+@unexec rmdir %D/%%HLDSDIR%%frontline/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%frontline/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%frontline 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%frontline`` to remove any configuration files and logs left." | fmt

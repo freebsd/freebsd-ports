@@ -1,6 +1,6 @@
-%%HLDSDIR%%dod/Day of Defeat.lnk
-%%HLDSDIR%%dod/DoD.txt
-%%HLDSDIR%%dod/Titles.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/Day of Defeat.lnk
+%%PORTDOCS%%%%HLDSDIR%%dod/DoD.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/Titles.txt
 %%HLDSDIR%%dod/Tuts/dod_explosion.rmf
 %%HLDSDIR%%dod/bliss.wad
 %%HLDSDIR%%dod/buffer.dat
@@ -15,9 +15,9 @@
 %%HLDSDIR%%dod/classes/short_randompc.txt
 %%HLDSDIR%%dod/classes/short_sniper.txt
 %%HLDSDIR%%dod/classes/short_sturmtrup.txt
-%%HLDSDIR%%dod/commandmenu.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/commandmenu.txt
 %%HLDSDIR%%dod/config.cfg
-%%HLDSDIR%%dod/credits.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/credits.txt
 %%HLDSDIR%%dod/cust.cst
 %%HLDSDIR%%dod/custom.hpk
 %%HLDSDIR%%dod/decals.wad
@@ -189,25 +189,25 @@
 %%HLDSDIR%%dod/gfx/vgui/640_sturmtrup.tga
 %%HLDSDIR%%dod/liblist.gam
 %%HLDSDIR%%dod/mapcycle.txt
-%%HLDSDIR%%dod/maps/dod_VN61.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_VN61.txt
 %%HLDSDIR%%dod/maps/dod_bliss.bsp
-%%HLDSDIR%%dod/maps/dod_bliss.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_bliss.txt
 %%HLDSDIR%%dod/maps/dod_caen.bsp
-%%HLDSDIR%%dod/maps/dod_caen.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_caen.txt
 %%HLDSDIR%%dod/maps/dod_dam.bsp
-%%HLDSDIR%%dod/maps/dod_dam.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_dam.txt
 %%HLDSDIR%%dod/maps/dod_mainz.bsp
-%%HLDSDIR%%dod/maps/dod_mainz.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_mainz.txt
 %%HLDSDIR%%dod/maps/dod_omaha.bsp
-%%HLDSDIR%%dod/maps/dod_omaha.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_omaha.txt
 %%HLDSDIR%%dod/maps/dod_oslo.bsp
-%%HLDSDIR%%dod/maps/dod_oslo.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_oslo.txt
 %%HLDSDIR%%dod/maps/dod_snowtown.bsp
-%%HLDSDIR%%dod/maps/dod_snowtown.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_snowtown.txt
 %%HLDSDIR%%dod/maps/dod_tstation.bsp
-%%HLDSDIR%%dod/maps/dod_tstation.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_tstation.txt
 %%HLDSDIR%%dod/maps/dod_valley.bsp
-%%HLDSDIR%%dod/maps/dod_valley.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/maps/dod_valley.txt
 %%HLDSDIR%%dod/maps/dod_vn61.bsp
 %%HLDSDIR%%dod/media/launch_deny1.wav
 %%HLDSDIR%%dod/media/launch_dnmenu1.wav
@@ -655,23 +655,23 @@
 %%HLDSDIR%%dod/sprites/tree3.spr
 %%HLDSDIR%%dod/sprites/tree4.spr
 %%HLDSDIR%%dod/sprites/tree5.spr
-%%HLDSDIR%%dod/sprites/weapon_amerknife.txt
-%%HLDSDIR%%dod/sprites/weapon_bar.txt
-%%HLDSDIR%%dod/sprites/weapon_colt.txt
-%%HLDSDIR%%dod/sprites/weapon_garand.txt
-%%HLDSDIR%%dod/sprites/weapon_germanknife.txt
-%%HLDSDIR%%dod/sprites/weapon_gewehr.txt
-%%HLDSDIR%%dod/sprites/weapon_handgrenade.txt
-%%HLDSDIR%%dod/sprites/weapon_kar.txt
-%%HLDSDIR%%dod/sprites/weapon_knife.txt
-%%HLDSDIR%%dod/sprites/weapon_luger.txt
-%%HLDSDIR%%dod/sprites/weapon_mp40.txt
-%%HLDSDIR%%dod/sprites/weapon_mp44.txt
-%%HLDSDIR%%dod/sprites/weapon_mp45.txt
-%%HLDSDIR%%dod/sprites/weapon_p38.txt
-%%HLDSDIR%%dod/sprites/weapon_spring.txt
-%%HLDSDIR%%dod/sprites/weapon_stickgrenade.txt
-%%HLDSDIR%%dod/sprites/weapon_thompson.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_amerknife.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_bar.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_colt.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_garand.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_germanknife.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_gewehr.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_handgrenade.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_kar.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_knife.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_luger.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_mp40.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_mp44.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_mp45.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_p38.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_spring.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_stickgrenade.txt
+%%PORTDOCS%%%%HLDSDIR%%dod/sprites/weapon_thompson.txt
 %%HLDSDIR%%dod/sprites/wpns1.spr
 %%HLDSDIR%%dod/sprites/wpns2.spr
 %%HLDSDIR%%dod/sprites/wpns3.spr
@@ -713,4 +713,6 @@
 @dirrm %%HLDSDIR%%dod/classes
 @dirrm %%HLDSDIR%%dod/cl_dlls
 @dirrm %%HLDSDIR%%dod/Tuts
-@dirrm %%HLDSDIR%%dod
+@unexec rmdir %D/%%HLDSDIR%%dod/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%dod/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%dod 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%dod`` to remove any configuration files and logs left." | fmt

@@ -1,12 +1,12 @@
-%%HLDSDIR%%si/1024_textscheme.txt
-%%HLDSDIR%%si/1152_textscheme.txt
-%%HLDSDIR%%si/1280_textscheme.txt
-%%HLDSDIR%%si/1600_textscheme.txt
-%%HLDSDIR%%si/320_textscheme.txt
-%%HLDSDIR%%si/400_textscheme.txt
-%%HLDSDIR%%si/512_textscheme.txt
-%%HLDSDIR%%si/640_textscheme.txt
-%%HLDSDIR%%si/800_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/1024_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/1152_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/1280_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/1600_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/320_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/400_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/512_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/640_textscheme.txt
+%%PORTDOCS%%%%HLDSDIR%%si/800_textscheme.txt
 %%HLDSDIR%%si/cached.wad
 %%HLDSDIR%%si/cl_dlls/client.dll
 %%HLDSDIR%%si/config.cfg
@@ -157,9 +157,6 @@
 @dirrm %%HLDSDIR%%si/events
 @dirrm %%HLDSDIR%%si/dlls
 @dirrm %%HLDSDIR%%si/cl_dlls
-@dirrm %%HLDSDIR%%si/SAVE
-@exec mkdir -p %D/%%HLDSDIR%%si/SAVE
-@exec mkdir -p %D/%%HLDSDIR%%si/events
-@exec mkdir -p %D/%%HLDSDIR%%si/models/player/afd
-@exec mkdir -p %D/%%HLDSDIR%%si/models/player/mcl
-@unexec rmdir %D/%%HLDSDIR%%si 2>/dev/null || echo "If you are permanently removing this port, you should also ``rm -Rf ${PKG_PREFIX}/%%HLDSDIR%%si'' removing any configuration files left." | fmt
+@unexec rmdir %D/%%HLDSDIR%%si/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%si/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%si 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%si`` to remove any configuration files and logs left." | fmt

@@ -19,6 +19,7 @@ DISTFILES=	frontline_linux_12a.zip \
 		frontline_12a_fix_linux.zip
 
 USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-o -qq
 
 WRKSRC=		${WRKDIR}/frontline
 

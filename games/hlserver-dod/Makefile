@@ -11,6 +11,8 @@ MASTER_SITES=	http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/
 DISTNAME=	dod_linux_beta11_full
 EXTRACT_SUFX=	.tgz
 
+WRKSRC=		${WRKDIR}/dod
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

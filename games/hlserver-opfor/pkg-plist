@@ -1,21 +1,21 @@
-%%HLDSDIR%%gearbox/Sierra.inf
+%%PORTDOCS%%%%HLDSDIR%%gearbox/Sierra.inf
 %%HLDSDIR%%gearbox/cached.wad
 %%HLDSDIR%%gearbox/cl_dlls/client.dll
-%%HLDSDIR%%gearbox/classes/short_adrian.txt
-%%HLDSDIR%%gearbox/classes/short_barney.txt
-%%HLDSDIR%%gearbox/classes/short_civ_random.txt
-%%HLDSDIR%%gearbox/classes/short_cleansuit.txt
-%%HLDSDIR%%gearbox/classes/short_drillsgt.txt
-%%HLDSDIR%%gearbox/classes/short_gina.txt
-%%HLDSDIR%%gearbox/classes/short_gordon.txt
-%%HLDSDIR%%gearbox/classes/short_grunt.txt
-%%HLDSDIR%%gearbox/classes/short_op4_random.txt
-%%HLDSDIR%%gearbox/classes/short_otis.txt
-%%HLDSDIR%%gearbox/classes/short_random.txt
-%%HLDSDIR%%gearbox/classes/short_recruit.txt
-%%HLDSDIR%%gearbox/classes/short_scientist.txt
-%%HLDSDIR%%gearbox/classes/short_squadleader.txt
-%%HLDSDIR%%gearbox/classes/short_tower.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_adrian.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_barney.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_civ_random.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_cleansuit.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_drillsgt.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_gina.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_gordon.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_grunt.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_op4_random.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_otis.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_random.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_recruit.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_scientist.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_squadleader.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/classes/short_tower.txt
 %%HLDSDIR%%gearbox/custom.hpk
 %%HLDSDIR%%gearbox/decals.wad
 %%HLDSDIR%%gearbox/delta.lst
@@ -530,16 +530,16 @@
 %%HLDSDIR%%gearbox/sprites/sprite_c_1.spr
 %%HLDSDIR%%gearbox/sprites/tinyspit.spr
 %%HLDSDIR%%gearbox/sprites/tongue.spr
-%%HLDSDIR%%gearbox/sprites/weapon_displacer.txt
-%%HLDSDIR%%gearbox/sprites/weapon_eagle.txt
-%%HLDSDIR%%gearbox/sprites/weapon_grapple.txt
-%%HLDSDIR%%gearbox/sprites/weapon_knife.txt
-%%HLDSDIR%%gearbox/sprites/weapon_m249.txt
-%%HLDSDIR%%gearbox/sprites/weapon_penguin.txt
-%%HLDSDIR%%gearbox/sprites/weapon_pipewrench.txt
-%%HLDSDIR%%gearbox/sprites/weapon_shockrifle.txt
-%%HLDSDIR%%gearbox/sprites/weapon_sniperrifle.txt
-%%HLDSDIR%%gearbox/sprites/weapon_sporelauncher.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_displacer.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_eagle.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_grapple.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_knife.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_m249.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_penguin.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_pipewrench.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_shockrifle.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_sniperrifle.txt
+%%PORTDOCS%%%%HLDSDIR%%gearbox/sprites/weapon_sporelauncher.txt
 %%HLDSDIR%%gearbox/sprites/wep_smoke_01.spr
 %%HLDSDIR%%gearbox/sprites/xpl_001.spr
 %%HLDSDIR%%gearbox/stats/stats_blackmesa.ost
@@ -588,6 +588,8 @@
 @dirrm %%HLDSDIR%%gearbox/gfx
 @dirrm %%HLDSDIR%%gearbox/events
 @dirrm %%HLDSDIR%%gearbox/dlls
-@dirrm %%HLDSDIR%%gearbox/classes
+%%PORTDOCS%%@dirrm %%HLDSDIR%%gearbox/classes
 @dirrm %%HLDSDIR%%gearbox/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%gearbox 2>/dev/null || echo "If you are permanently removing this port, you should also ``rm -Rf ${PKG_PREFIX}/%%HLDSDIR%%gearbox'' removing any configuration files left." | fmt
+@unexec rmdir %D/%%HLDSDIR%%gearbox/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%gearbox/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%gearbox 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%gearbox`` to remove any configuration files and logs left." | fmt

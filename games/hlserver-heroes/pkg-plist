@@ -19,39 +19,39 @@
 %%HLDSDIR%%Heroes/Sprites/sabre.spr
 %%HLDSDIR%%Heroes/Sprites/smokebomb.spr
 %%HLDSDIR%%Heroes/Sprites/vgrenade.spr
-%%HLDSDIR%%Heroes/Sprites/weapon_357.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_barehand.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_bolter.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_crowbar.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_flamer.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_mortar.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_smokebomb.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_turret.txt
-%%HLDSDIR%%Heroes/Sprites/weapon_variousg.txt
-%%HLDSDIR%%Heroes/Titles.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_357.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_barehand.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_bolter.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_crowbar.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_flamer.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_mortar.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_smokebomb.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_turret.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_variousg.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/Titles.txt
 %%HLDSDIR%%Heroes/cl_dlls/client.dll
-%%HLDSDIR%%Heroes/classes/short_hunter.txt
-%%HLDSDIR%%Heroes/classes/short_jet_man.txt
-%%HLDSDIR%%Heroes/classes/short_magician.txt
-%%HLDSDIR%%Heroes/classes/short_metamorph.txt
-%%HLDSDIR%%Heroes/classes/short_pyros.txt
-%%HLDSDIR%%Heroes/classes/short_shadow.txt
-%%HLDSDIR%%Heroes/classes/short_spider.txt
-%%HLDSDIR%%Heroes/classes/short_storm.txt
-%%HLDSDIR%%Heroes/classes/short_the_shadow.txt
-%%HLDSDIR%%Heroes/classes/short_the_spider.txt
-%%HLDSDIR%%Heroes/classes/short_weaponeer.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_hunter.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_jet_man.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_magician.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_metamorph.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_pyros.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_shadow.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_spider.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_storm.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_the_shadow.txt
-%%HLDSDIR%%Heroes/classes_en_francais/short_weaponeer.txt
-%%HLDSDIR%%Heroes/commandmenu.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_hunter.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_jet_man.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_magician.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_metamorph.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_pyros.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_shadow.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_spider.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_storm.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_the_shadow.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_the_spider.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_weaponeer.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_hunter.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_jet_man.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_magician.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_metamorph.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_pyros.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_shadow.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_spider.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_storm.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_the_shadow.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_weaponeer.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/commandmenu.txt
 %%HLDSDIR%%Heroes/config.cfg
 %%HLDSDIR%%Heroes/custom.hpk
 %%HLDSDIR%%Heroes/dlls/mp.dll
@@ -232,10 +232,12 @@
 @dirrm %%HLDSDIR%%Heroes/gfx/Shell
 @dirrm %%HLDSDIR%%Heroes/gfx
 @dirrm %%HLDSDIR%%Heroes/dlls
-@dirrm %%HLDSDIR%%Heroes/classes_en_francais
-@dirrm %%HLDSDIR%%Heroes/classes
+%%PORTDOCS%%@dirrm %%HLDSDIR%%Heroes/classes_en_francais
+%%PORTDOCS%%@dirrm %%HLDSDIR%%Heroes/classes
 @dirrm %%HLDSDIR%%Heroes/cl_dlls
 @dirrm %%HLDSDIR%%Heroes/Sprites
 @exec mkdir -p %D/%%HLDSDIR%%Heroes/maps
 @unexec rmdir %D/%%HLDSDIR%%Heroes/maps 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%Heroes 2>/dev/null || echo "If you are permanently removing this port, you should also ``rm -Rf ${PKG_PREFIX}/%%HLDSDIR%%Heroes'' removing any configuration files left." | fmt
+@unexec rmdir %D/%%HLDSDIR%%Heroes/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%Heroes/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%Heroes 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%Heroes`` to remove any configuration files and logs left." | fmt
