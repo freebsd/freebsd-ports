@@ -1,0 +1,377 @@
+%%WACKODIR%%/README
+%%WACKODIR%%/_cache/.htaccess
+%%WACKODIR%%/actions/a.php
+%%WACKODIR%%/actions/admincache.php
+%%WACKODIR%%/actions/allpageindex.php
+%%WACKODIR%%/actions/allrecentchanges.php
+%%WACKODIR%%/actions/anchor.php
+%%WACKODIR%%/actions/backlinks.php
+%%WACKODIR%%/actions/changepassword.php
+%%WACKODIR%%/actions/changes.php
+%%WACKODIR%%/actions/files.php
+%%WACKODIR%%/actions/flash.php
+%%WACKODIR%%/actions/hits.php
+%%WACKODIR%%/actions/include.php
+%%WACKODIR%%/actions/index.php
+%%WACKODIR%%/actions/interwikilist.php
+%%WACKODIR%%/actions/j.php
+%%WACKODIR%%/actions/lastusers.php
+%%WACKODIR%%/actions/linkstree.php
+%%WACKODIR%%/actions/login.php
+%%WACKODIR%%/actions/mostpopular.php
+%%WACKODIR%%/actions/mychanges.php
+%%WACKODIR%%/actions/mychangeswatches.php
+%%WACKODIR%%/actions/mypages.php
+%%WACKODIR%%/actions/mywatches.php
+%%WACKODIR%%/actions/mywatchespages.php
+%%WACKODIR%%/actions/nocomments.php
+%%WACKODIR%%/actions/orphaned.php
+%%WACKODIR%%/actions/orphanedpages.php
+%%WACKODIR%%/actions/p.php
+%%WACKODIR%%/actions/pageindex.php
+%%WACKODIR%%/actions/pageindex2.php
+%%WACKODIR%%/actions/randomphrase.php
+%%WACKODIR%%/actions/recentchanges.php
+%%WACKODIR%%/actions/recentcomments.php
+%%WACKODIR%%/actions/recentlycommented.php
+%%WACKODIR%%/actions/redirect.php
+%%WACKODIR%%/actions/registration.php
+%%WACKODIR%%/actions/search.php
+%%WACKODIR%%/actions/searchfor.php
+%%WACKODIR%%/actions/showparagraphs.php
+%%WACKODIR%%/actions/tableofcontents.php
+%%WACKODIR%%/actions/textsearch.php
+%%WACKODIR%%/actions/toc.php
+%%WACKODIR%%/actions/topicsearch.php
+%%WACKODIR%%/actions/tree.php
+%%WACKODIR%%/actions/upload.php
+%%WACKODIR%%/actions/usersettings.php
+%%WACKODIR%%/actions/wanted.php
+%%WACKODIR%%/actions/wantedpages.php
+%%WACKODIR%%/actions/watchers.php
+%%WACKODIR%%/classes/cache.php
+%%WACKODIR%%/classes/wacko.php
+%%WACKODIR%%/db/mssql.php
+%%WACKODIR%%/db/mysql.php
+%%WACKODIR%%/docs/INSTALL
+%%WACKODIR%%/docs/LICENSE
+%%WACKODIR%%/docs/UPGRADE
+%%WACKODIR%%/files/.htaccess
+%%WACKODIR%%/files/perpage/.htaccess
+%%WACKODIR%%/formatters/classes/DelphiHightlighter.php
+%%WACKODIR%%/formatters/classes/JavaHighlighter.php
+%%WACKODIR%%/formatters/classes/SafeHtml.php
+%%WACKODIR%%/formatters/classes/WackoFormatter.php
+%%WACKODIR%%/formatters/classes/paragrafica.php
+%%WACKODIR%%/formatters/classes/post_wacko.php
+%%WACKODIR%%/formatters/classes/typografica.php
+%%WACKODIR%%/formatters/free_symbols
+%%WACKODIR%%/formatters/highlight/box.php
+%%WACKODIR%%/formatters/highlight/code.php
+%%WACKODIR%%/formatters/highlight/comments.php
+%%WACKODIR%%/formatters/highlight/css.php
+%%WACKODIR%%/formatters/highlight/email.php
+%%WACKODIR%%/formatters/highlight/hl.php
+%%WACKODIR%%/formatters/highlight/html.php
+%%WACKODIR%%/formatters/highlight/icq.php
+%%WACKODIR%%/formatters/highlight/icq_l.php
+%%WACKODIR%%/formatters/highlight/icq_m.php
+%%WACKODIR%%/formatters/highlight/icq_t.php
+%%WACKODIR%%/formatters/highlight/ini.php
+%%WACKODIR%%/formatters/highlight/java.php
+%%WACKODIR%%/formatters/highlight/noautolinks.php
+%%WACKODIR%%/formatters/highlight/notypo.php
+%%WACKODIR%%/formatters/highlight/pascal.php
+%%WACKODIR%%/formatters/highlight/php.php
+%%WACKODIR%%/formatters/highlight/small.php
+%%WACKODIR%%/formatters/highlight/sql.php
+%%WACKODIR%%/formatters/msword.php
+%%WACKODIR%%/formatters/paragrafica.php
+%%WACKODIR%%/formatters/post_wacko.php
+%%WACKODIR%%/formatters/preformat.php
+%%WACKODIR%%/formatters/safehtml.php
+%%WACKODIR%%/formatters/translit.php
+%%WACKODIR%%/formatters/typografica.php
+%%WACKODIR%%/formatters/wacko.php
+%%WACKODIR%%/formatters/wakka.php
+%%WACKODIR%%/handlers/page/_diff.php
+%%WACKODIR%%/handlers/page/acls.php
+%%WACKODIR%%/handlers/page/addcomment.php
+%%WACKODIR%%/handlers/page/claim.php
+%%WACKODIR%%/handlers/page/diff.php
+%%WACKODIR%%/handlers/page/edit.php
+%%WACKODIR%%/handlers/page/files.php
+%%WACKODIR%%/handlers/page/massacls.php
+%%WACKODIR%%/handlers/page/msword.php
+%%WACKODIR%%/handlers/page/print.php
+%%WACKODIR%%/handlers/page/referrers.php
+%%WACKODIR%%/handlers/page/referrers_sites.php
+%%WACKODIR%%/handlers/page/remove.php
+%%WACKODIR%%/handlers/page/rename.php
+%%WACKODIR%%/handlers/page/revisions.php
+%%WACKODIR%%/handlers/page/revisions.xml.php
+%%WACKODIR%%/handlers/page/settings.php
+%%WACKODIR%%/handlers/page/show.php
+%%WACKODIR%%/handlers/page/upload.php
+%%WACKODIR%%/handlers/page/watch.php
+%%WACKODIR%%/images/.htaccess
+%%WACKODIR%%/images/upload403.gif
+%%WACKODIR%%/images/upload404.gif
+%%WACKODIR%%/images/wikiedit/bold.gif
+%%WACKODIR%%/images/wikiedit/center.gif
+%%WACKODIR%%/images/wikiedit/copy.gif
+%%WACKODIR%%/images/wikiedit/createimage.gif
+%%WACKODIR%%/images/wikiedit/createlink.gif
+%%WACKODIR%%/images/wikiedit/createtable.gif
+%%WACKODIR%%/images/wikiedit/cut.gif
+%%WACKODIR%%/images/wikiedit/forecolor.gif
+%%WACKODIR%%/images/wikiedit/h1-1.gif
+%%WACKODIR%%/images/wikiedit/h1.gif
+%%WACKODIR%%/images/wikiedit/h2.gif
+%%WACKODIR%%/images/wikiedit/h3.gif
+%%WACKODIR%%/images/wikiedit/help.gif
+%%WACKODIR%%/images/wikiedit/hilitecolor.gif
+%%WACKODIR%%/images/wikiedit/hr.gif
+%%WACKODIR%%/images/wikiedit/indent.gif
+%%WACKODIR%%/images/wikiedit/italic.gif
+%%WACKODIR%%/images/wikiedit/justify.gif
+%%WACKODIR%%/images/wikiedit/left.gif
+%%WACKODIR%%/images/wikiedit/ol.gif
+%%WACKODIR%%/images/wikiedit/outdent.gif
+%%WACKODIR%%/images/wikiedit/paste.gif
+%%WACKODIR%%/images/wikiedit/quote.gif
+%%WACKODIR%%/images/wikiedit/redo.gif
+%%WACKODIR%%/images/wikiedit/right.gif
+%%WACKODIR%%/images/wikiedit/sel.htc
+%%WACKODIR%%/images/wikiedit/strike.gif
+%%WACKODIR%%/images/wikiedit/textred.gif
+%%WACKODIR%%/images/wikiedit/ul.gif
+%%WACKODIR%%/images/wikiedit/underline.gif
+%%WACKODIR%%/images/wikiedit/undo.gif
+%%WACKODIR%%/images/wikiedit/word.gif
+%%WACKODIR%%/images/z.gif
+%%WACKODIR%%/index.php
+%%WACKODIR%%/interwiki.conf.sample
+%%WACKODIR%%/js/.htaccess
+%%WACKODIR%%/js/default.js
+%%WACKODIR%%/js/protoedit.js
+%%WACKODIR%%/js/wikiedit.js
+%%WACKODIR%%/js/wikiedit2.js
+%%WACKODIR%%/lang/lang.de.php
+%%WACKODIR%%/lang/lang.en.php
+%%WACKODIR%%/lang/lang.es.php
+%%WACKODIR%%/lang/lang.fr.php
+%%WACKODIR%%/lang/lang.it.php
+%%WACKODIR%%/lang/lang.md.php
+%%WACKODIR%%/lang/lang.nl.php
+%%WACKODIR%%/lang/lang.pl.php
+%%WACKODIR%%/lang/lang.ru.php
+%%WACKODIR%%/lang/wakka.all.php
+%%WACKODIR%%/lang/wakka.de.php
+%%WACKODIR%%/lang/wakka.en.php
+%%WACKODIR%%/lang/wakka.es.php
+%%WACKODIR%%/lang/wakka.fr.php
+%%WACKODIR%%/lang/wakka.it.php
+%%WACKODIR%%/lang/wakka.md.php
+%%WACKODIR%%/lang/wakka.nl.php
+%%WACKODIR%%/lang/wakka.pl.php
+%%WACKODIR%%/lang/wakka.ru.php
+%%WACKODIR%%/lib/HTMLSax/HTMLSax.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/CSS.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/DIFF.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/DTD.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/JAVASCRIPT.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/MYSQL.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/PHP.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/PYTHON.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/SQL.php
+%%WACKODIR%%/lib/Text_Highlighter/Highlighter/XML.php
+%%WACKODIR%%/readme.rus
+%%WACKODIR%%/setup/default.php
+%%WACKODIR%%/setup/footer.php
+%%WACKODIR%%/setup/header.php
+%%WACKODIR%%/setup/inserts.php
+%%WACKODIR%%/setup/install.php
+%%WACKODIR%%/setup/lang.php
+%%WACKODIR%%/setup/lang/inserts.de.php
+%%WACKODIR%%/setup/lang/inserts.en.php
+%%WACKODIR%%/setup/lang/inserts.es.php
+%%WACKODIR%%/setup/lang/inserts.fr.php
+%%WACKODIR%%/setup/lang/inserts.it.php
+%%WACKODIR%%/setup/lang/inserts.nl.php
+%%WACKODIR%%/setup/lang/inserts.pl.php
+%%WACKODIR%%/setup/lang/inserts.ru.php
+%%WACKODIR%%/setup/lang/installer.de.php
+%%WACKODIR%%/setup/lang/installer.en.php
+%%WACKODIR%%/setup/lang/installer.es.php
+%%WACKODIR%%/setup/lang/installer.fr.php
+%%WACKODIR%%/setup/lang/installer.it.php
+%%WACKODIR%%/setup/lang/installer.nl.php
+%%WACKODIR%%/setup/lang/installer.pl.php
+%%WACKODIR%%/setup/lang/installer.ru.php
+%%WACKODIR%%/setup/writeconfig.php
+%%WACKODIR%%/themes/coffee/.readme
+%%WACKODIR%%/themes/coffee/appearance/footer.php
+%%WACKODIR%%/themes/coffee/appearance/footermsword.php
+%%WACKODIR%%/themes/coffee/appearance/footerprint.php
+%%WACKODIR%%/themes/coffee/appearance/header.php
+%%WACKODIR%%/themes/coffee/appearance/headermsword.php
+%%WACKODIR%%/themes/coffee/appearance/headerprint.php
+%%WACKODIR%%/themes/coffee/css/.htaccess
+%%WACKODIR%%/themes/coffee/css/wakka.css
+%%WACKODIR%%/themes/coffee/css/wakkamsword.css
+%%WACKODIR%%/themes/coffee/css/wakkaprint.css
+%%WACKODIR%%/themes/coffee/icons/.htaccess
+%%WACKODIR%%/themes/coffee/icons/1del.gif
+%%WACKODIR%%/themes/coffee/icons/1print.gif
+%%WACKODIR%%/themes/coffee/icons/1unvisibl.gif
+%%WACKODIR%%/themes/coffee/icons/file.gif
+%%WACKODIR%%/themes/coffee/icons/key.gif
+%%WACKODIR%%/themes/coffee/icons/lock.gif
+%%WACKODIR%%/themes/coffee/icons/login.gif
+%%WACKODIR%%/themes/coffee/icons/login1.gif
+%%WACKODIR%%/themes/coffee/icons/mail.gif
+%%WACKODIR%%/themes/coffee/icons/referer.gif
+%%WACKODIR%%/themes/coffee/icons/rename.gif
+%%WACKODIR%%/themes/coffee/icons/toolbar1.gif
+%%WACKODIR%%/themes/coffee/icons/toolbar2.gif
+%%WACKODIR%%/themes/coffee/icons/user.gif
+%%WACKODIR%%/themes/coffee/icons/visibl.gif
+%%WACKODIR%%/themes/coffee/icons/wacko.ico
+%%WACKODIR%%/themes/coffee/icons/web.gif
+%%WACKODIR%%/themes/coffee/icons/xml.gif
+%%WACKODIR%%/themes/coffee/lang/wakka.de.php
+%%WACKODIR%%/themes/coffee/lang/wakka.en.php
+%%WACKODIR%%/themes/coffee/lang/wakka.es.php
+%%WACKODIR%%/themes/coffee/lang/wakka.fr.php
+%%WACKODIR%%/themes/coffee/lang/wakka.it.php
+%%WACKODIR%%/themes/coffee/lang/wakka.nl.php
+%%WACKODIR%%/themes/coffee/lang/wakka.ru.php
+%%WACKODIR%%/themes/default/.readme
+%%WACKODIR%%/themes/default/appearance/footer.php
+%%WACKODIR%%/themes/default/appearance/footermsword.php
+%%WACKODIR%%/themes/default/appearance/footerprint.php
+%%WACKODIR%%/themes/default/appearance/header.php
+%%WACKODIR%%/themes/default/appearance/headermsword.php
+%%WACKODIR%%/themes/default/appearance/headerprint.php
+%%WACKODIR%%/themes/default/css/.htaccess
+%%WACKODIR%%/themes/default/css/wakka.css
+%%WACKODIR%%/themes/default/css/wakkamsword.css
+%%WACKODIR%%/themes/default/css/wakkaprint.css
+%%WACKODIR%%/themes/default/icons/.htaccess
+%%WACKODIR%%/themes/default/icons/1del.gif
+%%WACKODIR%%/themes/default/icons/1print.gif
+%%WACKODIR%%/themes/default/icons/1unvisibl.gif
+%%WACKODIR%%/themes/default/icons/file.gif
+%%WACKODIR%%/themes/default/icons/key.gif
+%%WACKODIR%%/themes/default/icons/lock.gif
+%%WACKODIR%%/themes/default/icons/login.gif
+%%WACKODIR%%/themes/default/icons/login1.gif
+%%WACKODIR%%/themes/default/icons/mail.gif
+%%WACKODIR%%/themes/default/icons/referer.gif
+%%WACKODIR%%/themes/default/icons/rename.gif
+%%WACKODIR%%/themes/default/icons/toolbar1.gif
+%%WACKODIR%%/themes/default/icons/toolbar2.gif
+%%WACKODIR%%/themes/default/icons/visibl.gif
+%%WACKODIR%%/themes/default/icons/wacko.ico
+%%WACKODIR%%/themes/default/icons/web.gif
+%%WACKODIR%%/themes/default/icons/xml.gif
+%%WACKODIR%%/themes/default/lang/wakka.de.php
+%%WACKODIR%%/themes/default/lang/wakka.en.php
+%%WACKODIR%%/themes/default/lang/wakka.es.php
+%%WACKODIR%%/themes/default/lang/wakka.fr.php
+%%WACKODIR%%/themes/default/lang/wakka.it.php
+%%WACKODIR%%/themes/default/lang/wakka.nl.php
+%%WACKODIR%%/themes/default/lang/wakka.ru.php
+%%WACKODIR%%/themes/tabs/.readme
+%%WACKODIR%%/themes/tabs/appearance/footer.php
+%%WACKODIR%%/themes/tabs/appearance/footermsword.php
+%%WACKODIR%%/themes/tabs/appearance/footerprint.php
+%%WACKODIR%%/themes/tabs/appearance/header.php
+%%WACKODIR%%/themes/tabs/appearance/headermsword.php
+%%WACKODIR%%/themes/tabs/appearance/headerprint.php
+%%WACKODIR%%/themes/tabs/css/.htaccess
+%%WACKODIR%%/themes/tabs/css/wakka.css
+%%WACKODIR%%/themes/tabs/css/wakkamsword.css
+%%WACKODIR%%/themes/tabs/css/wakkaprint.css
+%%WACKODIR%%/themes/tabs/icons/.htaccess
+%%WACKODIR%%/themes/tabs/icons/bookmark.gif
+%%WACKODIR%%/themes/tabs/icons/del.gif
+%%WACKODIR%%/themes/tabs/icons/del_.gif
+%%WACKODIR%%/themes/tabs/icons/edit.gif
+%%WACKODIR%%/themes/tabs/icons/file.gif
+%%WACKODIR%%/themes/tabs/icons/guest.gif
+%%WACKODIR%%/themes/tabs/icons/key.gif
+%%WACKODIR%%/themes/tabs/icons/lock.gif
+%%WACKODIR%%/themes/tabs/icons/mail.gif
+%%WACKODIR%%/themes/tabs/icons/msword.gif
+%%WACKODIR%%/themes/tabs/icons/norole.gif
+%%WACKODIR%%/themes/tabs/icons/person.gif
+%%WACKODIR%%/themes/tabs/icons/print.gif
+%%WACKODIR%%/themes/tabs/icons/rename.gif
+%%WACKODIR%%/themes/tabs/icons/role.gif
+%%WACKODIR%%/themes/tabs/icons/shade1.gif
+%%WACKODIR%%/themes/tabs/icons/shade2.gif
+%%WACKODIR%%/themes/tabs/icons/tabbg.gif
+%%WACKODIR%%/themes/tabs/icons/tabbg1.gif
+%%WACKODIR%%/themes/tabs/icons/tabbgdel.gif
+%%WACKODIR%%/themes/tabs/icons/tabl.gif
+%%WACKODIR%%/themes/tabs/icons/tabl1.gif
+%%WACKODIR%%/themes/tabs/icons/tabl1del.gif
+%%WACKODIR%%/themes/tabs/icons/tabldel.gif
+%%WACKODIR%%/themes/tabs/icons/tabr.gif
+%%WACKODIR%%/themes/tabs/icons/tabr1.gif
+%%WACKODIR%%/themes/tabs/icons/tabr1del.gif
+%%WACKODIR%%/themes/tabs/icons/tabrdel.gif
+%%WACKODIR%%/themes/tabs/icons/unbookmark.gif
+%%WACKODIR%%/themes/tabs/icons/web.gif
+%%WACKODIR%%/themes/tabs/icons/xml.gif
+%%WACKODIR%%/themes/tabs/lang/wakka.all.php
+%%WACKODIR%%/themes/tabs/lang/wakka.de.php
+%%WACKODIR%%/themes/tabs/lang/wakka.en.php
+%%WACKODIR%%/themes/tabs/lang/wakka.es.php
+%%WACKODIR%%/themes/tabs/lang/wakka.ru.php
+%%WACKODIR%%/wakka.php
+%%WACKODIR%%/.htaccess
+%%WACKODIR%%/xml/.htaccess
+@dirrm %%WACKODIR%%/xml
+@dirrm %%WACKODIR%%/themes/tabs/lang
+@dirrm %%WACKODIR%%/themes/tabs/icons
+@dirrm %%WACKODIR%%/themes/tabs/css
+@dirrm %%WACKODIR%%/themes/tabs/appearance
+@dirrm %%WACKODIR%%/themes/tabs
+@dirrm %%WACKODIR%%/themes/default/lang
+@dirrm %%WACKODIR%%/themes/default/icons
+@dirrm %%WACKODIR%%/themes/default/css
+@dirrm %%WACKODIR%%/themes/default/appearance
+@dirrm %%WACKODIR%%/themes/default
+@dirrm %%WACKODIR%%/themes/coffee/lang
+@dirrm %%WACKODIR%%/themes/coffee/icons
+@dirrm %%WACKODIR%%/themes/coffee/css
+@dirrm %%WACKODIR%%/themes/coffee/appearance
+@dirrm %%WACKODIR%%/themes/coffee
+@dirrm %%WACKODIR%%/themes
+@dirrm %%WACKODIR%%/setup/lang
+@dirrm %%WACKODIR%%/setup
+@dirrm %%WACKODIR%%/lib/Text_Highlighter/Highlighter
+@dirrm %%WACKODIR%%/lib/Text_Highlighter
+@dirrm %%WACKODIR%%/lib/HTMLSax
+@dirrm %%WACKODIR%%/lib
+@dirrm %%WACKODIR%%/lang
+@dirrm %%WACKODIR%%/js
+@dirrm %%WACKODIR%%/images/wikiedit
+@dirrm %%WACKODIR%%/images
+@dirrm %%WACKODIR%%/handlers/page
+@dirrm %%WACKODIR%%/handlers
+@dirrm %%WACKODIR%%/formatters/highlight
+@dirrm %%WACKODIR%%/formatters/classes
+@dirrm %%WACKODIR%%/formatters
+@dirrm %%WACKODIR%%/files/perpage
+@dirrm %%WACKODIR%%/files
+@dirrm %%WACKODIR%%/docs
+@dirrm %%WACKODIR%%/db
+@dirrm %%WACKODIR%%/classes
+@dirrm %%WACKODIR%%/actions
+@dirrm %%WACKODIR%%/_cache
+@dirrm %%WACKODIR%%
