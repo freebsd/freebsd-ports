@@ -7,12 +7,9 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.54
-PORTREVISION=	1
+PORTVERSION=	1.0.55
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://yacas.sourceforge.net/backups/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
@@ -20,32 +17,34 @@ COMMENT=	Yet Another Computer Algebra System
 LIB_DEPENDS=	gsl.4:${PORTSDIR}/math/gsl
 
 USE_PERL5_BUILD=	yes
-USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GMP)
-.if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-.endif
 CONFIGURE_ARGS+=	--with-numlib=gmp
+PLIST_SUB+=	GMP="" NOGMP="@comment "
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--with-numlib=native
+PLIST_SUB+=	GMP="@comment " NOGMP=""
 .endif
 
-.if defined(WITH_X)
-USE_XLIB=	yes
+.if defined(WITH_X11)
 USE_MESA=	yes
 CONFIGURE_ARGS+=	--with-x
-PLIST_SUB+=	WITH_X=""
+PLIST_SUB+=	X11=""
+CPPFLAGS+=	-I${X11BASE}/include
+LDFLAGS+=	-L${X11BASE}/lib
 .else
 CONFIGURE_ARGS+=	--without-x
-PLIST_SUB+=	WITH_X="@comment "
+PLIST_SUB+=	X11="@comment "
 .endif
 
 .include <bsd.port.post.mk>
