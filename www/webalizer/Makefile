@@ -3,7 +3,7 @@
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.3 1998/07/31 08:48:02 andreas Exp $
+# $Id: Makefile,v 1.4 1998/08/17 00:34:42 steve Exp $
 
 DISTNAME=	webalizer-1.20-07-src
 PKGNAME=	webalizer-1.20
@@ -17,6 +17,10 @@ MAINTAINER=	dirk.meyer@dinoex.sub.org
 BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 
 BIN1=		webalizer
+MAN1=		webalizer.1
+DOC1=		CHANGES COPYING Copyright INSTALL \
+		README country-codes.txt webalizer.LSM
+SUPP_LANG=	english german french spanish dutch italian polish
 WRKSRC=		${WRKDIR}
 
 .if defined(BATCH)
@@ -26,40 +30,32 @@ WEBALIZER_LANG=english
 pre-fetch:
 .if !defined(WEBALIZER_LANG)
 	@${ECHO_MSG} "You can customize the language by typing"
-	@${ECHO_MSG} "make WEBALIZER_LANG=english"
-	@${ECHO_MSG} "make WEBALIZER_LANG=german"
-	@${ECHO_MSG} "make WEBALIZER_LANG=french"
-	@${ECHO_MSG} "make WEBALIZER_LANG=spanish"
-	@${ECHO_MSG} "make WEBALIZER_LANG=dutch"
+.for i in ${SUPP_LANG}
+		@${ECHO_MSG} "make WEBALIZER_LANG=${i}"
+.endfor
 .endif
 
 post-configure:
-.if defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == english
-	@${ECHO_MSG} "===> customizing for english"
-	${LN} -sf ${WRKSRC}/webalizer_lang.english ${WRKSRC}/webalizer_lang.h
-.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == german
-	@${ECHO_MSG} "===> customizing for german"
-	${LN} -sf ${WRKSRC}/webalizer_lang.german ${WRKSRC}/webalizer_lang.h
-.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == french
-	@${ECHO_MSG} "===> customizing for french"
-	${LN} -sf ${WRKSRC}/webalizer_lang.french ${WRKSRC}/webalizer_lang.h
-.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == spanish
-	@${ECHO_MSG} "===> customizing for spanish"
-	${LN} -sf ${WRKSRC}/webalizer_lang.spanish ${WRKSRC}/webalizer_lang.h
-.elif defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == dutch
-	@${ECHO_MSG} "===> customizing for dutch"
-	${LN} -sf ${WRKSRC}/webalizer_lang.dutch ${WRKSRC}/webalizer_lang.h
+.for i in ${SUPP_LANG}
+.if defined(WEBALIZER_LANG) && ${WEBALIZER_LANG} == ${i}
+		@${ECHO_MSG} "===> customizing for ${i}"
+		${LN} -sf ${WRKSRC}/webalizer_lang.${i} \
+			  ${WRKSRC}/webalizer_lang.h
 .endif
+.endfor
 
 do-install:
 .for i in ${BIN1}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/bin/${i}
 .endfor
 
 post-install:
+.for i in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man1
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/webalizer
-.for i in CHANGES COPYING Copyright README webalizer.LSM
+.for i in ${DOC1}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/webalizer/${i}
 .endfor
 .endif
