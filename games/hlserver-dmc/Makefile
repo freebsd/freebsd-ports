@@ -7,7 +7,8 @@
 
 PORTNAME=	dmc
 PORTVERSION=	1.0
-MASTER_SITES=	ftp://ftp.bluesnews.com/half-life/dmc/ \
+MASTER_SITES=	http://games.velocity.net/files/Halflife/ \
+		ftp://ftp.bluesnews.com/half-life/dmc/ \
 		http://www.smidge.com/data/files/17/ \
 		http://www.planetmirror.com/pub/bluesnews/half-life/dmc/
 DISTNAME=	${PORTNAME}_v1_i386
