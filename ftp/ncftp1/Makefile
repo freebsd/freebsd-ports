@@ -3,7 +3,7 @@
 # Date created:         20 Jun 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.7 1997/12/16 20:02:01 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/01/31 17:49:32 jseger Exp $
 #
 
 DISTNAME=       ncftp-1.9.5
@@ -12,6 +12,7 @@ MASTER_SITES=   ftp://ftp.ncftp.com/ncftp/
 
 MAINTAINER=	obrien@FreeBSD.org
 
+NO_LATEST_LINK=	yes
 MAN1=		ncftp.1
 
 do-install:

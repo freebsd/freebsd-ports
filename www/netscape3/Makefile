@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.20 1998/03/15 15:10:38 markm Exp $
+# $Id: Makefile,v 1.21 1998/03/16 15:38:37 markm Exp $
 #
 
 DISTNAME=       netscape-3.04
@@ -13,6 +13,7 @@ DISTFILES=      netscape-v304-export.x86-unknown-bsd.tar.gz
 
 MAINTAINER=     ports@FreeBSD.ORG
 
+NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
 
 .if defined(GOLD)
