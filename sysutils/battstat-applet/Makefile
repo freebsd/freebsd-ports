@@ -11,7 +11,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://spektr.eu.org/~jp/battstat/
 DISTNAME=	battstat_applet-${PORTVERSION}
 
-MAINTAINER=	jim@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
