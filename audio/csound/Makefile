@@ -42,6 +42,8 @@ post-build:
 
 post-patch:
 	${PERL} -pi -e "s:/usr/local/lib:${DATADIR}:g" ${WRKSRC}/getstring.c
+	${FIND} ${WRKSRC} -type f -exec \
+		${PERL} -pi -e "s:<malloc.h>:<stdlib.h>:g" {} \;
 
 do-install:
 	${MKDIR} ${PREFIX}/share/csound
