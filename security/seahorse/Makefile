@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
-MAINTAINER=	dave@mu.org
+MAINTAINER=	asa@gascom.ru
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme \
