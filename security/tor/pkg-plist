@@ -1,0 +1,6 @@
+bin/tor
+bin/torify
+etc/tor/dirservers
+etc/tor/torrc.sample
+etc/tor/tor-tsocks.conf.sample
+@dirrm etc/tor
