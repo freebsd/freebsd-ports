@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xmradio
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://core.de/~coto/radio/
 
-MAINTAINER=	runge@core.de	
+MAINTAINER=	gonter@wu-wien.ac.at
 
 # This program does not actually depend on the below, but they are pretty
 # useful if you are into digital audio recording and playback.
