@@ -3,11 +3,11 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1999/02/28 06:06:25 obrien Exp $
+# $Id: Makefile,v 1.21 1999/05/03 22:28:34 se Exp $
 #
 
 DISTNAME=	kdesupport-1.1.1
-CATEGORIES=	x11 kde
+CATEGORIES=	converters kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
