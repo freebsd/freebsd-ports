@@ -424,6 +424,7 @@
     SUBDIR += utserver-asu
     SUBDIR += utserver-to
     SUBDIR += vamos
+    SUBDIR += vavoom
     SUBDIR += vectoroids
     SUBDIR += virt
     SUBDIR += wesnoth

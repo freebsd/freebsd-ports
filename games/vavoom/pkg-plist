@@ -1,0 +1,30 @@
+bin/Vavoom
+bin/VavoomSV
+%%DATADIR%%/basev/doom/wad0.wad
+@dirrm %%DATADIR%%/basev/doom
+%%DATADIR%%/basev/doom1/base.txt
+%%DATADIR%%/basev/doom1/wad0.wad
+@dirrm %%DATADIR%%/basev/doom1
+%%DATADIR%%/basev/doom2/base.txt
+%%DATADIR%%/basev/doom2/wad0.wad
+@dirrm %%DATADIR%%/basev/doom2
+%%DATADIR%%/basev/heretic/wad0.wad
+@dirrm %%DATADIR%%/basev/heretic
+%%DATADIR%%/basev/hexen/wad0.wad
+@dirrm %%DATADIR%%/basev/hexen
+%%DATADIR%%/basev/plutonia/base.txt
+%%DATADIR%%/basev/plutonia/wad0.wad
+@dirrm %%DATADIR%%/basev/plutonia
+%%DATADIR%%/basev/strife/wad0.wad
+@dirrm %%DATADIR%%/basev/strife
+%%DATADIR%%/basev/tnt/base.txt
+%%DATADIR%%/basev/tnt/wad0.wad
+@dirrm %%DATADIR%%/basev/tnt
+%%DATADIR%%/basev/default.cfg
+%%DATADIR%%/basev/games.txt
+%%DATADIR%%/basev/startup.vs
+@dirrm %%DATADIR%%/basev
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/vavmref.txt
+%%PORTDOCS%%%%DOCSDIR%%/vavoom.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

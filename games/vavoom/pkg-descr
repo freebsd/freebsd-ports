@@ -1,0 +1,23 @@
+Vavoom is a source port based on sources of Doom, Heretic, Hexen
+and a little bit from Quake. To play Vavoom you need main wad file
+from Doom, Ultimate Doom, Doom II, Heretic, Hexen or Strife.
+
+Differences from original game:
+* Polygonal engine with colored lighting, with software mode, OpenGL support;
+* Translucency;
+* Complete support for freelook (look up & down) in all games;
+* A powerful language to describe game logic;
+* 100% client/server architecture with in-game joining;
+* Quake-style console, with key bindings;
+* Indirect support for DeHackEd;
+* Crosshair;
+* Jumping;
+....
+
+No music support is available in SDL compiled version at the moment.
+Sound effects are 8 bit, 44100KHz, stereo.
+
+WWW:	http://www.vavoom-engine.com/
+
+- Igor Pokrovsky
+tiamat@comset.net
