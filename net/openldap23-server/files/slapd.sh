@@ -5,7 +5,7 @@
 
 # PROVIDE: slapd
 # REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# BEFORE: securelevel
 # KEYWORD: FreeBSD shutdown
 
 #
@@ -24,15 +24,15 @@
 #slapd_owner="DEFAULT"
 #
 
-. %%RC_SUBR%%
+. "%%RC_SUBR%%"
 
-name=slapd
+name="slapd"
 rcvar=`set_rcvar`
 
-command=%%PREFIX%%/libexec/slapd
-pidfile=%%LDAP_RUN_DIR%%/slapd.pid
-required_dirs=%%LDAP_RUN_DIR%%
-required_files=%%PREFIX%%/etc/openldap/slapd.conf
+command="%%PREFIX%%/libexec/slapd"
+pidfile="%%LDAP_RUN_DIR%%/slapd.pid"
+required_dirs="%%LDAP_RUN_DIR%%"
+required_files="%%PREFIX%%/etc/openldap/slapd.conf"
 
 start_precmd=start_precmd
 start_postcmd=start_postcmd
@@ -41,10 +41,12 @@ start_postcmd=start_postcmd
 
 start_precmd()
 {
+  local slapd_ownername slapd_groupname
+
   case x"$slapd_owner" in
-  x|x[Nn][Oo][Nn][Ee]|x[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
+  ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
     ;;
-  x*)
+  *)
     chown "$slapd_owner" "%%LDAP_RUN_DIR%%"
     chown -RL "$slapd_owner" "%%DATABASEDIR%%"
     chown "$slapd_owner" "%%PREFIX%%/etc/openldap/slapd.conf"
@@ -66,38 +68,39 @@ start_precmd()
 
 start_postcmd()
 {
+  local socket seconds
+
   for socket in $slapd_sockets; do
     for seconds in 1 2 3 4 5; do
       [ -e "$socket" ] && break
       sleep 1
     done
     if [ -S "$socket" ]; then
-      case x"$slapd_owner" in
-      x|x[Nn][Oo][Nn][Ee]|x[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
+      case "$slapd_owner" in
+      ""|[Nn][Oo][Nn][Ee]|[Dd][Ee][Ff][Aa][Uu][Ll][Tt])
         ;;
-      x*)
+      *)
         chown "$slapd_owner" "$socket"
         ;;
       esac
       chmod "$slapd_sockets_mode" "$socket"
+    else
+      warn "slapd: Can't find socket $socket"
     fi
   done
 }
 
-# set defaults
-
-[ -z "$slapd_enable" ]       && slapd_enable=NO
-[ -z "$slapd_flags" ]        && slapd_flags=
-
-[ -z "$slapd_owner" ]        && slapd_owner=ldap:ldap
-[ -z "$slapd_sockets" ]      && slapd_sockets=
-[ -z "$slapd_sockets_mode" ] && slapd_sockets_mode=666
-
+# read settings, set defaults
 load_rc_config $name
-
-if [ -n "$slapd_args" ]; then
+: ${slapd_enable="NO"}
+if [ -n "${slapd_args+set}" ]; then
   warn "slapd_args is deprecated, use slapd_flags"
-  slapd_flags="$slapd_args"
+  : ${slapd_flags="$slapd_args"}
+else
+  : ${slapd_flags=""}
 fi
+: ${slapd_owner="ldap:ldap"}
+: ${slapd_sockets=""}
+: ${slapd_sockets_mode="666"}
 
 run_rc_command "$1"
