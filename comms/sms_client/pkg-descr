@@ -1,0 +1,15 @@
+A simple UNIX client allowing you to send SMS messages to mobile phones 
+and pagers. The software currently supports a number of providers
+and protocols from various countries.
+
+Using an unlisted provider that allow TAP access should be quite straight 
+forward. 
+
+There are a large number of services that do not appear to use TAP
+but instead simple user interfaces for interactive use by a user dialing up
+with a modem. For several UK based services such as these drivers have been
+written, note that providers often offer more that one service and as such 
+you may require a different driver for each one.
+
+- George Reid
+greid@ukug.uk.freebsd.org

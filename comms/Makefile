@@ -20,6 +20,7 @@
     SUBDIR += qico
     SUBDIR += qpage
     SUBDIR += seyon
+    SUBDIR += sms_client
     SUBDIR += snooper
     SUBDIR += sredird
     SUBDIR += tkhylafax
