@@ -1,4 +1,3 @@
 lib/perl5/site_perl/%%PERL_VER%%/Exporter/Lite.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exporter/Lite/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/perllocal.pod-Exporter-Lite
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Exporter/Lite
