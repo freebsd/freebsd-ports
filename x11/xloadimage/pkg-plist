@@ -1,0 +1,10 @@
+@cd /usr/X11R6
+@owner bin
+@group bin
+@mode 755
+bin/xloadimage
+bin/xview
+bin/xsetbg
+@mode 644
+app-defaults/Xloadimage
+man/man1/xloadimage.1.gz
