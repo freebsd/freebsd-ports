@@ -48,3 +48,5 @@ MD5 (squid2.5/squid-2.5.STABLE5-CONNECT_log_size.patch) = 9bc3c39ca19ae2a4922d4a
 SIZE (squid2.5/squid-2.5.STABLE5-CONNECT_log_size.patch) = 2011
 MD5 (squid2.5/squid-2.5.STABLE5-proxy_abuse.patch) = 8b169a288a0491a760f4d04c4f5eab21
 SIZE (squid2.5/squid-2.5.STABLE5-proxy_abuse.patch) = 761
+MD5 (squid2.5/squid-2.5.STABLE5-ntlm_auth_overflow.patch) = 30c7c5e2ba03655dbde9d3e65409baed
+SIZE (squid2.5/squid-2.5.STABLE5-ntlm_auth_overflow.patch) = 3198
