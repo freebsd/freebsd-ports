@@ -1,0 +1,132 @@
+*** TIMING/EIG/zeispack.f~	Fri Sep 23 18:36:18 1994
+--- TIMING/EIG/zeispack.f	Wed Jul  5 01:01:51 1995
+***************
+*** 3062,3068 ****
+        DREAL(ZDUMR) = ZDUMR
+        DIMAG(ZDUMI) = (0.0D0,-1.0D0)*ZDUMI
+        CABS1(ZDUM) = DABS(DREAL(ZDUM)) + DABS(DIMAG(ZDUM))
+!       CSIGN(ZDUM1,ZDUM2) = CDABS(ZDUM1)*(ZDUM2/CDABS(ZDUM2))
+  *
+  *     GET EPS FROM DLAMCH FOR NEW STOPPING CRITERION
+        IF (N.LE.0 .OR. P.LE.0) RETURN
+--- 3062,3068 ----
+        DREAL(ZDUMR) = ZDUMR
+        DIMAG(ZDUMI) = (0.0D0,-1.0D0)*ZDUMI
+        CABS1(ZDUM) = DABS(DREAL(ZDUM)) + DABS(DIMAG(ZDUM))
+!       CSIGN(ZDUM1,ZDUM2) = ABS(ZDUM1)*(ZDUM2/ABS(ZDUM2))
+  *
+  *     GET EPS FROM DLAMCH FOR NEW STOPPING CRITERION
+        IF (N.LE.0 .OR. P.LE.0) RETURN
+***************
+*** 3281,3287 ****
+  *           INCREMENT OP COUNT
+              IOPS = IOPS + 23
+              IF (WANTU) IOPS = IOPS + 6*N
+!             T = DCMPLX(CDABS(S(I)),0.0D0)
+              R = S(I)/T
+              S(I) = T
+              IF (I .LT. M) E(I) = E(I)/R
+--- 3281,3287 ----
+  *           INCREMENT OP COUNT
+              IOPS = IOPS + 23
+              IF (WANTU) IOPS = IOPS + 6*N
+!             T = DCMPLX(ABS(S(I)),0.0D0)
+              R = S(I)/T
+              S(I) = T
+              IF (I .LT. M) E(I) = E(I)/R
+***************
+*** 3294,3300 ****
+  *           INCREMENT OP COUNT
+              IOPS = IOPS + 20
+              IF (WANTV) IOPS = IOPS + 6*P
+!             T = DCMPLX(CDABS(E(I)),0.0D0)
+              R = T/E(I)
+              E(I) = T
+              S(I+1) = S(I+1)*R
+--- 3294,3300 ----
+  *           INCREMENT OP COUNT
+              IOPS = IOPS + 20
+              IF (WANTV) IOPS = IOPS + 6*P
+!             T = DCMPLX(ABS(E(I)),0.0D0)
+              R = T/E(I)
+              E(I) = T
+              S(I+1) = S(I+1)*R
+***************
+*** 3346,3358 ****
+  *
+  *           INCREMENT OP COUNT
+              IOPST = IOPST + 17
+!             TEST = CDABS(S(L)) + CDABS(S(L+1))
+  *
+  *           REPLACE STOPPING CRITERION WITH NEW ONE
+  *
+! *           ZTEST = TEST + CDABS(E(L))
+  *           IF (ZTEST .NE. TEST) GO TO 420
+!             IF (CDABS(E(L)) .GT. EPS * TEST) GOTO 420
+  *
+                 E(L) = (0.0D0,0.0D0)
+  C        ......EXIT
+--- 3346,3358 ----
+  *
+  *           INCREMENT OP COUNT
+              IOPST = IOPST + 17
+!             TEST = ABS(S(L)) + ABS(S(L+1))
+  *
+  *           REPLACE STOPPING CRITERION WITH NEW ONE
+  *
+! *           ZTEST = TEST + ABS(E(L))
+  *           IF (ZTEST .NE. TEST) GO TO 420
+!             IF (ABS(E(L)) .GT. EPS * TEST) GOTO 420
+  *
+                 E(L) = (0.0D0,0.0D0)
+  C        ......EXIT
+***************
+*** 3374,3387 ****
+  *
+  *              INCREMENT OP COUNT
+                 IOPST = IOPST + 18
+!                IF (LS .NE. M) TEST = TEST + CDABS(E(LS))
+!                IF (LS .NE. L + 1) TEST = TEST + CDABS(E(LS-1))
+  *
+  *              REPLACE STOPPING CRITERION WITH NEW ONE AS IN LAPACK
+  *
+! *              ZTEST = TEST + CDABS(S(LS))
+  *              IF (ZTEST .NE. TEST) GO TO 460
+!                IF (CDABS(S(LS))  .GT. EPS * TEST) GOTO 460
+  *
+                    S(LS) = (0.0D0,0.0D0)
+  C           ......EXIT
+--- 3374,3387 ----
+  *
+  *              INCREMENT OP COUNT
+                 IOPST = IOPST + 18
+!                IF (LS .NE. M) TEST = TEST + ABS(E(LS))
+!                IF (LS .NE. L + 1) TEST = TEST + ABS(E(LS-1))
+  *
+  *              REPLACE STOPPING CRITERION WITH NEW ONE AS IN LAPACK
+  *
+! *              ZTEST = TEST + ABS(S(LS))
+  *              IF (ZTEST .NE. TEST) GO TO 460
+!                IF (ABS(S(LS))  .GT. EPS * TEST) GOTO 460
+  *
+                    S(LS) = (0.0D0,0.0D0)
+  C           ......EXIT
+***************
+*** 3458,3465 ****
+  *
+  *           INCREMENT OP COUNT
+              IOPST = IOPST + 48
+!             SCALE = DMAX1(CDABS(S(M)),CDABS(S(M-1)),CDABS(E(M-1)),
+!      *                    CDABS(S(L)),CDABS(E(L)))
+              SM = DREAL(S(M))/SCALE
+              SMM1 = DREAL(S(M-1))/SCALE
+              EMM1 = DREAL(E(M-1))/SCALE
+--- 3458,3465 ----
+  *
+  *           INCREMENT OP COUNT
+              IOPST = IOPST + 48
+!             SCALE = DMAX1(ABS(S(M)),ABS(S(M-1)),ABS(E(M-1)),
+!      *                    ABS(S(L)),ABS(E(L)))
+              SM = DREAL(S(M))/SCALE
+              SMM1 = DREAL(S(M-1))/SCALE
+              EMM1 = DREAL(E(M-1))/SCALE

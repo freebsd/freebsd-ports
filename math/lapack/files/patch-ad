@@ -1,0 +1,22 @@
+*** BLAS/SRC/zrotg.f~	Fri Oct 30 21:09:39 1992
+--- BLAS/SRC/zrotg.f	Mon Jul  3 01:28:54 1995
+***************
+*** 10,17 ****
+           go to 20
+     10 continue
+           scale = cdabs(ca) + cdabs(cb)
+!          norm = scale*dsqrt((cdabs(ca/dcmplx(scale,0.0d0)))**2 +
+!      *                      (cdabs(cb/dcmplx(scale,0.0d0)))**2)
+           alpha = ca /cdabs(ca)
+           c = cdabs(ca) / norm
+           s = alpha * dconjg(cb) / norm
+--- 10,18 ----
+           go to 20
+     10 continue
+           scale = cdabs(ca) + cdabs(cb)
+!          c = (cdabs(ca/dcmplx(scale,0.0d0)))**2 +
+!      *                      (cdabs(cb/dcmplx(scale,0.0d0)))**2
+!          norm = scale*dsqrt(c)
+           alpha = ca /cdabs(ca)
+           c = cdabs(ca) / norm
+           s = alpha * dconjg(cb) / norm

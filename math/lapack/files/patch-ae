@@ -1,0 +1,41 @@
+*** BLAS/SRC/zrotg.f~	Mon Jul  3 19:23:21 1995
+--- BLAS/SRC/zrotg.f	Tue Jul  4 13:11:24 1995
+***************
+*** 3,20 ****
+        double precision c
+        double precision norm,scale
+        double complex alpha
+!       if (cdabs(ca) .ne. 0.0d0) go to 10
+           c = 0.0d0
+           s = (1.0d0,0.0d0)
+           ca = cb
+           go to 20
+     10 continue
+!          scale = cdabs(ca) + cdabs(cb)
+!          c = (cdabs(ca/dcmplx(scale,0.0d0)))**2 +
+!      *                      (cdabs(cb/dcmplx(scale,0.0d0)))**2
+           norm = scale*dsqrt(c)
+!          alpha = ca /cdabs(ca)
+!          c = cdabs(ca) / norm
+           s = alpha * dconjg(cb) / norm
+           ca = alpha * norm
+     20 continue
+--- 3,20 ----
+        double precision c
+        double precision norm,scale
+        double complex alpha
+!       if (abs(ca) .ne. 0.0d0) go to 10
+           c = 0.0d0
+           s = (1.0d0,0.0d0)
+           ca = cb
+           go to 20
+     10 continue
+!          scale = abs(ca) + abs(cb)
+!          c = (abs(ca/dcmplx(scale,0.0d0)))**2 +
+!      *                      (abs(cb/dcmplx(scale,0.0d0)))**2
+           norm = scale*dsqrt(c)
+!          alpha = ca /abs(ca)
+!          c = abs(ca) / norm
+           s = alpha * dconjg(cb) / norm
+           ca = alpha * norm
+     20 continue

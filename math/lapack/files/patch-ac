@@ -1,0 +1,37 @@
+*** Makefile.orig	Tue Oct  4 16:42:15 1994
+--- Makefile	Mon Oct  9 03:11:46 1995
+***************
+*** 6,12 ****
+  
+  include make.inc
+  
+! all: install lib testing blas_testing timing blas_timing
+  
+  lib: blaslib lapacklib tmglib
+  
+--- 6,12 ----
+  
+  include make.inc
+  
+! all: install lib              # testing blas_testing timing blas_timing
+  
+  lib: blaslib lapacklib tmglib
+  
+***************
+*** 17,23 ****
+  	  testdlamch; testsecond; testdsecnd; \
+  	  cp lsame.f ../BLAS/SRC/; cp lsame.f ../SRC; \
+  	  cp slamch.f ../SRC/; cp dlamch.f ../SRC/; \
+! 	  cp second.f ../SRC/; cp dsecnd.f ../SRC/ )
+  
+  blaslib:
+  	( cd BLAS/SRC; $(MAKE) )
+--- 17,24 ----
+  	  testdlamch; testsecond; testdsecnd; \
+  	  cp lsame.f ../BLAS/SRC/; cp lsame.f ../SRC; \
+  	  cp slamch.f ../SRC/; cp dlamch.f ../SRC/; \
+! 	  cp second.f ../SRC/; cp dsecnd.f ../SRC/; \
+! 	  cp etime_.c ../SRC/ )
+  
+  blaslib:
+  	( cd BLAS/SRC; $(MAKE) )
