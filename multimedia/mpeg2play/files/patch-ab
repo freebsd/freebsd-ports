@@ -1,0 +1,11 @@
+--- Imakefile.orig	Fri Oct 28 12:39:48 1994
++++ Imakefile	Sat Nov 14 16:29:42 1998
+@@ -15,7 +15,7 @@
+ 
+ EXTRA_DEFINES = $(USE_SHMEM) $(USE_TIME)
+ EXTRA_INCLUDES = -I. -Ibitmaps
+-LOCAL_LIBRARIES = $(SHM_LIB) -lXm -lXt -lX11 -lm 
++LOCAL_LIBRARIES = $(SHM_LIB) ${MOTIFLIB} -lXt -lX11 -lm 
+ 
+ PROGRAM = mpeg2play
+ SRCS = mpeg2play.c getpic.c motion.c getvlc.c gethdr.c getblk.c \
