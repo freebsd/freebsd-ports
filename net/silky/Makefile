@@ -24,8 +24,8 @@ CONFIGURE_ARGS=	--with-silc-include=${LOCALBASE}/include/silc \
 		--with-silc-libs=${LOCALBASE}/lib \
 		--with-docdir=${DOCSDIR} \
 		--with-libintl-prefix=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 USE_GNOME=	gtk20 libglade2 gnomelibs
 USE_GMAKE=	yes
