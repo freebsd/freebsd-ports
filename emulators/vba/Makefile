@@ -56,7 +56,7 @@ do-install:
 
 post-install:
 .ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL} -d ${DOCSDIR}
 .for filename in ${DOC_FILES}
 	${INSTALL_MAN} ${WRKSRC}/${filename} ${DOCSDIR}
 .endfor
