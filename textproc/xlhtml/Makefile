@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlhtml
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xlhtml.org/
 DISTNAME=	xlHtml-${PORTVERSION}
