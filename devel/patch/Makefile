@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	patch
-PORTVERSION=	2.5
-PORTREVISION=	1
+PORTVERSION=	2.5.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	patch
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
 MAN1=		gpatch.1
+
+post-patch:
+	@${PERL} -pi -e 's!HAVE_SETMODE!HAVE_SETMODE_DISABLE!' \
+		${WRKSRC}/config.hin
 
 .include <bsd.port.mk>
