@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	muttprint
-PORTVERSION=	0.61
-PORTREVISION=	3
+PORTVERSION=	0.62a
 CATEGORIES=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
@@ -20,8 +19,9 @@ PAPERSIZE=	letter
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
-		uncompface:${PORTSDIR}/graphics/compface \
-		convert:${PORTSDIR}/graphics/ImageMagick
+		uncompface:${PORTSDIR}/mail/faces \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 
 MAN1=		muttprint.1
 MANCOMPRESSED=	yes

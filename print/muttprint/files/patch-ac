@@ -1,5 +1,5 @@
---- doc/manual/Makefile.orig	Fri Jan  4 15:06:22 2002
-+++ doc/manual/Makefile	Fri Jan  4 15:07:23 2002
+--- doc/manual/Makefile.orig	Mon Feb 18 00:01:26 2002
++++ doc/manual/Makefile	Mon Feb 18 00:02:48 2002
 @@ -1,40 +1,37 @@
  #
  # This is the main makefile for documentation
