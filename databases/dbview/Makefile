@@ -7,6 +7,7 @@
 
 PORTNAME=	dbview
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.infodrom.north.de/pub/Linux/Devel/dbview/

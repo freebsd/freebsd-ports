@@ -1,0 +1,21 @@
+--- db_dump.c.orig	Tue Oct  8 02:25:54 1996
++++ db_dump.c	Fri Aug 16 14:24:09 2002
+@@ -116,7 +116,7 @@
+ {
+     char *c=var;
+ 
+-    for (c+=strlen(var); isspace (*c); c--);
++    for (c+=strlen(var)-1; isspace (*c); c--);
+ 
+     *(++c) = '\0';
+     return var;
+@@ -210,7 +210,9 @@
+ 	stack_field(fld);
+     }
+     read(dbfile,Buffer,1);              /* read the silly little \r 0x0d character */
++#ifdef I_USE_A_LAME_OS_LIKE_DOS
+     read(dbfile,Buffer,1);              /* strange, it only works if we read another byte */
++#endif
+ 
+     return;
+ }
