@@ -1,6 +1,6 @@
 bin/sced
-lib/sced/scenerc
-share/doc/sced/guide.dvi
-share/doc/sced/guide.tex
-@dirrm lib/sced
-@dirrm share/doc/sced
+%%PORTDOCS%%share/doc/sced/guide.dvi
+%%PORTDOCS%%share/doc/sced/guide.tex
+share/sced/sample.scenerc
+@dirrm share/sced
+%%PORTDOCS%%@dirrm share/doc/sced
