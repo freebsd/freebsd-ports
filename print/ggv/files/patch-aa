@@ -1,20 +1,43 @@
---- configure.orig	Thu Oct 15 04:18:51 1998
-+++ configure	Thu Oct 15 04:19:37 1998
-@@ -925,12 +925,12 @@
+--- configure.orig	Wed Dec 16 23:06:18 1998
++++ configure	Tue Jan 26 14:13:02 1999
+@@ -1076,13 +1076,13 @@
+ 	    fi
+ 	
+ 	    if test "$no_gnome_config" = "yes"; then
+-              echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
+-echo "configure:1081: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-	      if test -f $gnome_prefix/gnomeConf.sh; then
++              echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
++echo "configure:1081: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++	      if test -f $prefix/share/gnome/gnomeConf.sh; then
+ 	        echo "$ac_t""found" 1>&6
+ 	        echo "loading gnome configuration from" \
+-		     "$gnome_prefix/gnomeConf.sh"
+-	        . $gnome_prefix/gnomeConf.sh
++		     "$prefix/share/gnome/gnomeConf.sh"
++	        . $prefix/share/gnome/gnomeConf.sh
+ 	        
+ 	      else
+ 	        echo "$ac_t""not found" 1>&6
+@@ -4024,15 +4024,15 @@
+ fi
  
+         
+-	USE_INCLUDED_LIBINTL=yes
++#	USE_INCLUDED_LIBINTL=yes
+         CATOBJEXT=.gmo
+         INSTOBJEXT=.mo
+         DATADIRNAME=share
+-	INTLDEPS='$(top_builddir)/intl/libintl.a'
+-	INTLLIBS=$INTLDEPS
+-	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
+-        nls_cv_header_intl=intl/libintl.h
+-        nls_cv_header_libgt=intl/libgettext.h
++#	INTLDEPS='$(top_builddir)/intl/libintl.a'
++#	INTLLIBS=$INTLDEPS
++#	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
++#        nls_cv_header_intl=intl/libintl.h
++#        nls_cv_header_libgt=intl/libgettext.h
+       fi
  
- 	if test "$no_gnome_config" = "yes"; then
--          echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
--echo "configure:930: checking for gnomeConf.sh file in $gnome_prefix" >&5
--	  if test -f $gnome_prefix/gnomeConf.sh; then
-+          echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
-+echo "configure:930: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
-+	  if test -f $prefix/share/gnome/gnomeConf.sh; then
- 	    echo "$ac_t""found" 1>&6
--	    echo "loading gnome configuration from $gnome_prefix/gnomeConf.sh"
--	    . $gnome_prefix/gnomeConf.sh
-+	    echo "loading gnome configuration from $prefix/share/gnome/gnomeConf.sh"
-+	    . $prefix/share/gnome/gnomeConf.sh
- 	    
- 	  else
- 	    echo "$ac_t""not found" 1>&6
+             if test "$XGETTEXT" != ":"; then

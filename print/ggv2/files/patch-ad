@@ -1,0 +1,35 @@
+--- ps.h.orig	Tue Jan 26 13:58:49 1999
++++ ps.h	Tue Jan 26 13:59:06 1999
+@@ -40,6 +40,7 @@
+ 	/* Constants used to store keywords that are scanned. */
+ 	/* NONE is not a keyword, it tells when a field was not set */
+ 
++#undef NONE
+ enum {ATEND = -1, NONE = 0, PORTRAIT, LANDSCAPE, ASCEND, DESCEND, SPECIAL};
+ 
+ #define PSLINELENGTH 257	/* 255 characters + 1 newline + 1 NULL */
+--- ps.c.orig	Tue Jan 26 14:19:36 1999
++++ ps.c	Tue Jan 26 14:20:12 1999
+@@ -54,7 +54,10 @@
+ #endif
+ #include <ctype.h>
+ #include <X11/Xos.h>		/* #includes the appropriate <string.h> */
++#include <sys/stat.h>
++#include <glib.h>
+ #include "ps.h"
++#include "file.h"
+ 
+ #ifdef BSD4_2
+ #define memset(a,b,c) bzero(a,c)
+@@ -208,11 +211,6 @@
+ /* Jake Hamby patch 18/3/98 */
+ /* Following text added */
+  
+-#include <sys/stat.h>
+-
+-#include <glib.h>
+-
+-#include "file.h"
+ 
+ int
+ file_fileIsNotUseful(fn)
