@@ -1,0 +1,9 @@
+@cwd /usr/X11R6
+@owner bin
+@group bin
+@mode 755
+/bin/xfig
+@mode 644
+lib/X11/xfig/CompKeyDB
+lib/X11/app-defaults/Fig
+lib/X11/app-defaults/Fig-color
