@@ -156,10 +156,7 @@ pre-everything::
 	@${ECHO_MSG} "Define NO_SKINS to stop from installing skins"
 .endif
 .if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to opimize for speed"
-.endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to opimize for speed"
+	@${ECHO_MSG} "Define WITH_OPTIMIZED_CFLAGS to optimize for speed"
 .endif
 .if !defined(WITH_SVGALIB)
 	@${ECHO_MSG} "Define WITH_SVGALIB to use svgalib"
