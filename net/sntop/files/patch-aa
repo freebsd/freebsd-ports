@@ -1,0 +1,48 @@
+*** Makefile.in.orig	Sat Aug  5 22:01:28 2000
+--- Makefile.in	Sat Aug  5 22:03:43 2000
+***************
+*** 31,37 ****
+  CFLAGS = -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer @DEFS@
+  INCLUDE = .
+  INSTDIR = @bindir@
+! ETCDIR = /etc
+  LIBS = @LIBS@
+  OBJS = @LIBOBJS@
+  DOWENEEDGETOPT = @LIBOBJS@
+--- 31,37 ----
+  CFLAGS = -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer @DEFS@
+  INCLUDE = .
+  INSTDIR = @bindir@
+! ETCDIR = @sysconfdir@
+  LIBS = @LIBS@
+  OBJS = @LIBOBJS@
+  DOWENEEDGETOPT = @LIBOBJS@
+***************
+*** 64,77 ****
+  	fi
+  	@if [ -d $(ETCDIR) ]; \
+  		then \
+! 		if [ ! -f $(ETCDIR)/sntoprc ]; \
+  			then \
+! 			cp sntoprc.EXAMPLE $(ETCDIR)/sntoprc; \
+! 			chmod 644 $(ETCDIR)/sntoprc; \
+! 			echo "sntop: Config installed in $(ETCDIR)"; \
+! 		else \
+! 			echo "sntop: conf file exists at $(ETCDIR)/sntoprc, we wont overwrite it"; \
+! 		fi \
+  	else \
+  		echo "sntop: $(ETCDIR) does not exist"; false; \
+  	fi
+--- 64,75 ----
+  	fi
+  	@if [ -d $(ETCDIR) ]; \
+  		then \
+! 		if [ ! -f $(ETCDIR)/sntoprc.sample ]; \
+  			then \
+! 			cp sntoprc.EXAMPLE $(ETCDIR)/sntoprc.sample; \
+! 			chmod 644 $(ETCDIR)/sntoprc.sample; \
+! 		fi; \
++ 		echo "sntop: Sample config exists at $(ETCDIR)/sntoprc.sample"; \
+  	else \
+  		echo "sntop: $(ETCDIR) does not exist"; false; \
+  	fi

@@ -1,0 +1,13 @@
+
+********************************************************************
+A sample configuration file (sntoprc.sample) has been placed in 
+$(PREFIX)/etc.
+
+You must edit this file and do one of the following:
+ for a per-user config:      move to ~/.sntoprc
+ for a system-wide config:   move to /etc/sntoprc
+ for any other directory:    run sntop with the -f <configfile>
+                              command-line option.
+
+********************************************************************
+
