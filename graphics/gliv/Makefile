@@ -32,6 +32,6 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		gliv.1
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS} -lgnugetopt|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
