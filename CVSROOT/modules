@@ -3930,6 +3930,7 @@ kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
+kicker-applets	ports/misc/kicker-applets
 kickpim		ports/deskutils/kickpim
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
