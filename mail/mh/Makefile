@@ -3,7 +3,7 @@
 # Date created:		Oct 4, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.11 1996/11/17 07:42:37 obrien Exp $
+# $Id: Makefile,v 1.12 1997/07/17 15:12:51 max Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -26,6 +26,6 @@ MAN5=	mh-alias.5 mh-format.5 mh-mail.5 mh-profile.5 mh-sequence.5 mh-tailor.5
 MAN8=	ap.8 conflict.8 dp.8 install-mh.8 post.8 fmtdump.8
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
