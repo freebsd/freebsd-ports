@@ -53,6 +53,7 @@ lib/postgresql/timetravel.so
 lib/postgresql/tsearch.so
 lib/postgresql/tsearch2.so
 lib/postgresql/user_locks.so
+%%DOCSDIR%%/README-contrib
 %%DOCSDIR%%/contrib/README
 %%DOCSDIR%%/contrib/README.apachelog
 %%DOCSDIR%%/contrib/README.btree_gist
@@ -137,7 +138,6 @@ share/postgresql/contrib/tsearch.sql
 share/postgresql/contrib/tsearch2.sql
 share/postgresql/contrib/untsearch2.sql
 share/postgresql/contrib/user_locks.sql
-share/postgresql/README-contrib
 @unexec rmdir %D/share/postgresql/contrib >&2 2> /dev/null || true
 @unexec rmdir %D/share/postgresql >&2 2> /dev/null || true
 @unexec rmdir %D/%%DOCSDIR%%/contrib >&2 2> /dev/null || true

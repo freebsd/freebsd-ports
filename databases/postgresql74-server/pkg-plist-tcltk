@@ -7,5 +7,6 @@ lib/libpgtcl.a
 lib/libpgtcl.so
 lib/libpgtcl.so.2
 %%TK%%bin/pgtksh
-share/postgresql/README-tcltk
+%%DOCSDIR%%/README-tcltk
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

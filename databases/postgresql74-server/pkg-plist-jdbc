@@ -1,3 +1,4 @@
+%%DOCSDIR%%/README-jdbc
 %%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer.java
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/Unicode.java
@@ -23,5 +24,5 @@ share/java/classes/postgresql.jar
 share/postgresql/java/postgresql-examples.jar
 share/postgresql/java/postgresql.jar
 @dirrm share/postgresql/java
-share/postgresql/README-jdbc
 @unexec rmdir %D/share/postgresql 2>/dev/null || true
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true

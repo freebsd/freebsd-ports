@@ -1,0 +1,12 @@
+--- src/test/regress/pg_regress.sh~	Wed Nov 13 17:40:29 2002
++++ src/test/regress/pg_regress.sh	Sat Jan  8 05:31:17 2005
+@@ -348,6 +348,9 @@
+         (exit 2); exit
+     fi
+ 
++    # make rest of this script happy
++    echo "syslog = 0"          >> $PGDATA/postgresql.conf
++    echo "silent_mode = false" >> $PGDATA/postgresql.conf
+ 
+     # ----------
+     # Start postmaster
