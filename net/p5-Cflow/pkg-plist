@@ -1,0 +1,7 @@
+bin/flowdumper
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cflow/Cflow.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cflow/Cflow.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cflow/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cflow.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cflow/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cflow
