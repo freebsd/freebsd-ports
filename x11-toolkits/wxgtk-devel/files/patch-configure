@@ -1,27 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Wed Aug 27 18:55:50 2003
-+++ configure	Wed Aug 27 18:57:06 2003
-@@ -13300,14 +13300,14 @@
-         TOOLKIT=GTK
-         GUIDIST=GTK_DIST
- 
--                echo $ac_n "checking for gdk_im_open in -lgdk""... $ac_c" 1>&6
--echo "configure:13305: checking for gdk_im_open in -lgdk" >&5
-+                echo $ac_n "checking for gdk_im_open in -lgdk12""... $ac_c" 1>&6
-+echo "configure:13305: checking for gdk_im_open in -lgdk12" >&5
- ac_lib_var=`echo gdk'_'gdk_im_open | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgdk  $LIBS"
-+LIBS="-lgdk12  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 13313 "configure"
- #include "confdefs.h"
-@@ -15897,8 +15897,8 @@
+--- configure.orig	Sat Oct  4 02:17:08 2003
++++ configure	Sat Oct  4 02:37:10 2003
+@@ -16048,8 +16048,8 @@
  
  WX_VERSION_TAG=`echo WX${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}_${WX_RELEASE} | tr "[a-z]" "[A-Z]"`
  
@@ -32,7 +11,7 @@ $FreeBSD$
  
  if test "$cross_compiling" = "yes"; then
      TOOLCHAIN_NAME="${TOOLCHAIN_NAME}-${host_alias}"
-@@ -15909,13 +15909,11 @@
+@@ -16060,13 +16060,11 @@
  WX_LIBRARY_GL="wx_${TOOLCHAIN_NAME_GL}"
  WX_LIBRARY_BASENAME="wx_${TOOLKIT_DIR}${TOOLKIT_VERSION}${WIDGET_SET}${lib_unicode_suffix}${lib_debug_suffix}"
  
@@ -50,7 +29,7 @@ $FreeBSD$
  
  case "${host}" in
      *-*-cygwin* | *-*-mingw32* )
-@@ -18512,7 +18510,7 @@
+@@ -18669,7 +18667,7 @@
                  fi
                  ;;
            *-*-freebsd*)
@@ -59,15 +38,7 @@ $FreeBSD$
                  ;;
            *-*-darwin* | *-*-cygwin* )
                                                  THREAD_OPTS=""
-@@ -19269,6 +19267,7 @@
-   fi
- fi
- 
-+WXGTK20=
- if test "$WXGTK20" = 1 ; then
-   cat >> confdefs.h <<EOF
- #define __WXGTK20__ $WXGTK20
-@@ -19369,21 +19368,6 @@
+@@ -19531,21 +19530,6 @@
      esac
  fi
  
@@ -89,7 +60,7 @@ $FreeBSD$
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      cat >> confdefs.h <<\EOF
  #define WXWIN_COMPATIBILITY_2 1
-@@ -22600,13 +22584,11 @@
+@@ -22780,13 +22764,11 @@
  s%@WX_LIBRARY_IMPORTLIB@%$WX_LIBRARY_IMPORTLIB%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
