@@ -6,6 +6,7 @@ bin/gst-inspect
 bin/gst-launch
 bin/gst-md5sum
 bin/gst-register
+bin/gst-typefind
 bin/gst-xmllaunch
 include/gstreamer-%%VERSION%%/gst/bytestream/bytestream.h
 include/gstreamer-%%VERSION%%/gst/control/control.h
