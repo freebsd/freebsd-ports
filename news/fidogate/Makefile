@@ -8,10 +8,10 @@
 PORTNAME=	fidogate
 PORTVERSION=	4.4.1
 CATEGORIES=	news mail
-MASTER_SITES=	ftp://ftp.fido.de/pub/fidogate/ \
-		ftp://ftp.gwdg.de/pub/linux/fido/fidogate/ \
+MASTER_SITES=	ftp://ftp.fidogate.org/pub/fidogate/ \
 		ftp://ftp.fu-berlin.de/unix/news/fidogate/ \
-		${MASTER_SITE_SUNSITE}
+		http://www.fidogate.org/pub/fidogate/
+
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
