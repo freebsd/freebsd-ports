@@ -1,0 +1,9 @@
+--- data/sets.txt.orig	Thu Apr 15 21:16:44 2004
++++ data/sets.txt	Thu Apr 15 21:17:18 2004
+@@ -7,6 +7,3 @@
+ levels-mym.txt scores-mym.txt .neverballhs-mym shot-mym/descent.jpg
+ Mehdi's Levels
+ Difficulty: Expert through Insane\\25 levels with even greater challenge.\Author: Mehdi Yousfi Monod\ \
+-levels-putt.txt scores-putt.txt .neverballhs-putt shot-putt/01_easy.jpg
+-Neverputt Holes
+-Difficulty: Trivial\Golf becomes pretty easy when you get to\tilt the entire course.  There are no coins here\or records to be broken.  Just take a leisurely\roll through Neverputt's 18-holes.\

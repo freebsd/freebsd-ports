@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	neverball
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/neverball/
 
@@ -23,11 +22,14 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_SDL=	image mixer ttf sdl
 
-DIRS=		bgm map-rlk mtrl png shot-rlk snd sol-rlk ttf
+TXT=		levels-easy levels-hard levels-misc levels-mym scores-easy \
+		scores-hard scores-mym sets
+DIRS=		bgm map-mym map-rlk mtrl png shot-mym shot-rlk snd sol-mym \
+		sol-rlk ttf
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|./data|${DATADIR}/data|g' \
-		${WRKSRC}/config.h
+		${WRKSRC}/share/config.h
 	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g' \
 		${WRKSRC}/Makefile
 
@@ -36,7 +38,9 @@ do-install:
 	@${MKDIR} ${DATADIR}/data/${ii}
 	@${INSTALL_DATA} ${WRKSRC}/data/${ii}/* ${DATADIR}/data/${ii}/
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/data/*.txt ${DATADIR}/data/
+.for tt in ${TXT}
+	@${INSTALL_DATA} ${WRKSRC}/data/${tt}.txt ${DATADIR}/data/
+.endfor
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 
 .include <bsd.port.mk>

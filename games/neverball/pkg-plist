@@ -6,6 +6,33 @@ share/neverball/data/bgm/snow.ogg
 share/neverball/data/bgm/title.ogg
 share/neverball/data/levels-easy.txt
 share/neverball/data/levels-hard.txt
+share/neverball/data/levels-misc.txt
+share/neverball/data/levels-mym.txt
+share/neverball/data/map-mym/assault_course.map
+share/neverball/data/map-mym/bombman.map
+share/neverball/data/map-mym/circuit1.map
+share/neverball/data/map-mym/circuit2.map
+share/neverball/data/map-mym/climb.map
+share/neverball/data/map-mym/comeback.map
+share/neverball/data/map-mym/dance.map
+share/neverball/data/map-mym/descent.map
+share/neverball/data/map-mym/drive1.map
+share/neverball/data/map-mym/drive2.map
+share/neverball/data/map-mym/earth_quake.map
+share/neverball/data/map-mym/free_fall.map
+share/neverball/data/map-mym/glass_tower.map
+share/neverball/data/map-mym/hard.map
+share/neverball/data/map-mym/loop1.map
+share/neverball/data/map-mym/loop2.map
+share/neverball/data/map-mym/maze1.map
+share/neverball/data/map-mym/maze2.map
+share/neverball/data/map-mym/maze3.map
+share/neverball/data/map-mym/narrow.map
+share/neverball/data/map-mym/running.map
+share/neverball/data/map-mym/scrambling.map
+share/neverball/data/map-mym/trust.map
+share/neverball/data/map-mym/turn.map
+share/neverball/data/map-mym/up.map
 share/neverball/data/map-rlk/angle.map
 share/neverball/data/map-rlk/bumper.map
 share/neverball/data/map-rlk/bumps.map
@@ -101,6 +128,8 @@ share/neverball/data/mtrl/red
 share/neverball/data/mtrl/red.jpg
 share/neverball/data/mtrl/switch
 share/neverball/data/mtrl/switch.tga
+share/neverball/data/mtrl/thwomp
+share/neverball/data/mtrl/thwomp.tga
 share/neverball/data/mtrl/timer
 share/neverball/data/mtrl/timer.tga
 share/neverball/data/mtrl/turf-blue
@@ -117,6 +146,8 @@ share/neverball/data/mtrl/turf-red
 share/neverball/data/mtrl/turf-red.jpg
 share/neverball/data/mtrl/turf-small-green
 share/neverball/data/mtrl/turf-small-green.jpg
+share/neverball/data/mtrl/white
+share/neverball/data/mtrl/white.jpg
 share/neverball/data/mtrl/wood
 share/neverball/data/mtrl/wood-check
 share/neverball/data/mtrl/wood-check.jpg
@@ -141,7 +172,33 @@ share/neverball/data/png/skyline.png
 share/neverball/data/png/tropic.png
 share/neverball/data/scores-easy.txt
 share/neverball/data/scores-hard.txt
+share/neverball/data/scores-mym.txt
 share/neverball/data/sets.txt
+share/neverball/data/shot-mym/assault_course.jpg
+share/neverball/data/shot-mym/bombman.jpg
+share/neverball/data/shot-mym/circuit1.jpg
+share/neverball/data/shot-mym/circuit2.jpg
+share/neverball/data/shot-mym/climb.jpg
+share/neverball/data/shot-mym/comeback.jpg
+share/neverball/data/shot-mym/dance.jpg
+share/neverball/data/shot-mym/descent.jpg
+share/neverball/data/shot-mym/drive1.jpg
+share/neverball/data/shot-mym/drive2.jpg
+share/neverball/data/shot-mym/earth_quake.jpg
+share/neverball/data/shot-mym/free_fall.jpg
+share/neverball/data/shot-mym/glass_tower.jpg
+share/neverball/data/shot-mym/hard.jpg
+share/neverball/data/shot-mym/loop1.jpg
+share/neverball/data/shot-mym/loop2.jpg
+share/neverball/data/shot-mym/maze1.jpg
+share/neverball/data/shot-mym/maze2.jpg
+share/neverball/data/shot-mym/maze3.jpg
+share/neverball/data/shot-mym/narrow.jpg
+share/neverball/data/shot-mym/running.jpg
+share/neverball/data/shot-mym/scrambling.jpg
+share/neverball/data/shot-mym/trust.jpg
+share/neverball/data/shot-mym/turn.jpg
+share/neverball/data/shot-mym/up.jpg
 share/neverball/data/shot-rlk/angle.jpg
 share/neverball/data/shot-rlk/bumper.jpg
 share/neverball/data/shot-rlk/bumps.jpg
@@ -193,22 +250,60 @@ share/neverball/data/shot-rlk/title.jpg
 share/neverball/data/shot-rlk/wakka.jpg
 share/neverball/data/shot-rlk/zigzag.jpg
 share/neverball/data/snd/ball.ogg
+share/neverball/data/snd/bink.wav
+share/neverball/data/snd/birdie.ogg
+share/neverball/data/snd/bogey.ogg
 share/neverball/data/snd/bump.ogg
 share/neverball/data/snd/coin.wav
+share/neverball/data/snd/double.ogg
+share/neverball/data/snd/eagle.ogg
 share/neverball/data/snd/fall.ogg
 share/neverball/data/snd/go.ogg
 share/neverball/data/snd/goal.wav
 share/neverball/data/snd/jump.ogg
 share/neverball/data/snd/menu.wav
+share/neverball/data/snd/one.ogg
 share/neverball/data/snd/over.ogg
+share/neverball/data/snd/par.ogg
+share/neverball/data/snd/penalty.ogg
+share/neverball/data/snd/player1.ogg
+share/neverball/data/snd/player2.ogg
+share/neverball/data/snd/player3.ogg
+share/neverball/data/snd/player4.ogg
 share/neverball/data/snd/ready.ogg
 share/neverball/data/snd/record.ogg
 share/neverball/data/snd/select.ogg
 share/neverball/data/snd/set.ogg
+share/neverball/data/snd/success.ogg
 share/neverball/data/snd/switch.wav
 share/neverball/data/snd/tick.ogg
 share/neverball/data/snd/time.ogg
 share/neverball/data/snd/tock.ogg
+share/neverball/data/sol-mym/assault_course.sol
+share/neverball/data/sol-mym/bombman.sol
+share/neverball/data/sol-mym/circuit1.sol
+share/neverball/data/sol-mym/circuit2.sol
+share/neverball/data/sol-mym/climb.sol
+share/neverball/data/sol-mym/comeback.sol
+share/neverball/data/sol-mym/dance.sol
+share/neverball/data/sol-mym/descent.sol
+share/neverball/data/sol-mym/drive1.sol
+share/neverball/data/sol-mym/drive2.sol
+share/neverball/data/sol-mym/earth_quake.sol
+share/neverball/data/sol-mym/free_fall.sol
+share/neverball/data/sol-mym/glass_tower.sol
+share/neverball/data/sol-mym/hard.sol
+share/neverball/data/sol-mym/loop1.sol
+share/neverball/data/sol-mym/loop2.sol
+share/neverball/data/sol-mym/maze1.sol
+share/neverball/data/sol-mym/maze2.sol
+share/neverball/data/sol-mym/maze3.sol
+share/neverball/data/sol-mym/narrow.sol
+share/neverball/data/sol-mym/running.sol
+share/neverball/data/sol-mym/scrambling.sol
+share/neverball/data/sol-mym/trust.sol
+share/neverball/data/sol-mym/turn.sol
+share/neverball/data/sol-mym/up.sol
 share/neverball/data/sol-rlk/angle.sol
 share/neverball/data/sol-rlk/bumper.sol
 share/neverball/data/sol-rlk/bumps.sol
@@ -262,11 +357,14 @@ share/neverball/data/sol-rlk/zigzag.sol
 share/neverball/data/ttf/VeraBd.ttf
 @dirrm share/neverball/data/ttf
 @dirrm share/neverball/data/sol-rlk
+@dirrm share/neverball/data/sol-mym
 @dirrm share/neverball/data/snd
 @dirrm share/neverball/data/shot-rlk
+@dirrm share/neverball/data/shot-mym
 @dirrm share/neverball/data/png
 @dirrm share/neverball/data/mtrl
 @dirrm share/neverball/data/map-rlk
+@dirrm share/neverball/data/map-mym
 @dirrm share/neverball/data/bgm
 @dirrm share/neverball/data
 @dirrm share/neverball
