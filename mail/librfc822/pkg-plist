@@ -1,7 +1,0 @@
-include/rfc822.hh
-lib/librfc822.a
-%%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/user-manual.html
-%%PORTDOCS%%%%DOCSDIR%%/user-manual.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
