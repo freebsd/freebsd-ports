@@ -14,7 +14,7 @@ compiler-specific tools (hbcmake, lmlmake, nhc13make).  The
 installation process automatically detects which Haskell compilers you
 have, and sets up hmake to use any of them. 
 
-WWW: http://www.cs.york.ac.uk/fp/hmake/
+WWW: http://www.haskell.org/hmake/
 
 -- 
 mwest@uct.ac.za
