@@ -1,4 +1,4 @@
-# New ports collection makefile for:	kile
+# New ports collection makefile for: kile
 # Date created:		21 Jun 2002
 # Whom:			Stefan Jahn <stefan.jahn@nemesis-sektor.de>
 #
@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	kile
-PORTVERSION=	1.31
+PORTVERSION=	1.5
 CATEGORIES=	editors kde
-MASTER_SITES=	http://perso.club-internet.fr/pascal.brachet/kile/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=stable/apps/KDE3.x/office
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	A LaTeX source editor for KDE
