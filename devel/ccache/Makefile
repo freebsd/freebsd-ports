@@ -21,7 +21,9 @@ PLIST_FILES=	bin/ccache
 PORTDOCS=	index.html \
 		ccache-man.html
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
