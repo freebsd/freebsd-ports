@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scmail
-PORTVERSION=	0.2
+PORTVERSION=	1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.namazu.org/~satoru/scmail/
 
@@ -14,16 +14,27 @@ MAINTAINER=	fuyuki@nigredo.org
 COMMENT=	A mail filter written in Scheme
 
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/share/gauche/${GAUCHE_VER}/lib/dbm/gdbm.scm:${PORTSDIR}/databases/gauche-gdbm
 
 USE_REINPLACE=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" DATADIR="${EXAMPLESDIR}"
 
-post-patch:
-	${REINPLACE_CMD} -e "s|cp -p|${CP}|g" ${WRKSRC}/Makefile
+.if !defined(NOPORTDOCS)
+PORTDOCS=	scbayes-ja.html scbayes.html scmail-ja.html scmail.html
+.endif
 
-pre-install:
-	${MKDIR} `gauche-config --sitelibdir`
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/gauche-config)
+GAUCHE_VER!=	gauche-config -V
+.else
+GAUCHE_VER=	none
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -E -e "s,cp -f?p,${CP},g;s,/dot.scmail,," \
+		${WRKSRC}/Makefile
+	${TOUCH} ${WRKSRC}/scmail/bayesian-filter.scm.in
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -31,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,10 +1,14 @@
+bin/scbayes
 bin/scmail-deliver
 bin/scmail-refile
 share/gauche/site/lib/scmail.scm
-%%EXAMPLESDIR%%/scmailrc-deliver.sample
-%%EXAMPLESDIR%%/scmailrc-refile.sample
-%%EXAMPLESDIR%%/scmailrc.sample
+share/gauche/site/lib/scmail/bayesian-filter.scm
+share/gauche/site/lib/scmail/config.scm
+share/gauche/site/lib/scmail/mail.scm
+share/gauche/site/lib/scmail/progress.scm
+share/gauche/site/lib/scmail/util.scm
+@dirrm share/gauche/site/lib/scmail
+%%EXAMPLESDIR%%/config.sample
+%%EXAMPLESDIR%%/deliver-rules.sample
+%%EXAMPLESDIR%%/refile-rules.sample
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/scmail-ja.html
-%%PORTDOCS%%%%DOCSDIR%%/scmail.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
