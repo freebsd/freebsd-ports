@@ -1,8 +1,21 @@
 #!/bin/sh
-PID_FILE=/var/run/jakarta-tomcat.pid
-if [ -e ${PID_FILE} ]; then
-	echo -n "Jakarta Tomcat is still running."
-	/bin/kill `cat ${PID_FILE}`
-	rm -f ${PID_FILE}
-	echo " Stopped."
+#
+# This script does the following.
+#
+# Checks if the 'www' user exists. If it does, then it displays
+# a message.
+#
+# $FreeBSD$
+#
+
+# Make sure we're called during the 'make deinstall' process
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
 fi
+
+# If the user exists, then display a message
+if pw usershow "www" 2>/dev/null 1>&2; then
+	echo "To delete the www user permanently, use 'pw userdel www'"
+fi
+
+exit 0
