@@ -23,8 +23,8 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 # Stage 1: Define constants
 # Stage 2: Deal with JAVA_HOME if it is already set
 # Stage 3: Determine which JDK ports are installed
-# Stage 4: Decide the exact JDK version if only a minimum version is specified
-# Stage 5: Decide the exact JDK to use
+# Stage 4: Determine which JDK ports are suitable
+# Stage 5: Decide the exact JDK to use (or install)
 # Stage 6: Define all settings for the port to use
 # Stage 7: Add any dependencies if necessary
 #
@@ -40,38 +40,66 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 JAVASHAREDIR?=	${PREFIX}/share/java
 JAVAJARDIR?=	${JAVASHAREDIR}/classes
 
-# The complete list of Java versions supported.
+# The complete list of Java versions, os and vendors supported.
 _JAVA_VERSIONS=		1.1 1.2 1.3 1.4
+_JAVA_VERSIONS_ALL=		${_JAVA_VERSIONS} ${_JAVA_VERSIONS:S/$/+/}
+_JAVA_OS_LIST=		native linux
+_JAVA_VENDORS=		freebsd bsdjava sun blackdown ibm
+
+# Set all meta-information about JDK ports:
+# port location, corresponding JAVA_HOME, JDK version, OS, vendor
+_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO=		java/diablo-jdk13			${LOCALBASE}/diablo-jdk1.3.1			1.3	native	freebsd
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO=		java/jdk11					${LOCALBASE}/jdk1.1.8					1.1	native	bsdjava
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO=		java/jdk12					${LOCALBASE}/jdk1.2.2					1.2	native	bsdjava
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO=		java/jdk13					${LOCALBASE}/jdk1.3.1					1.3	native	bsdjava
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO=		java/jdk14					${LOCALBASE}/jdk1.4.2					1.4	native	bsdjava
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO=	java/linux-blackdown-jdk12	${LOCALBASE}/linux-blackdown-jdk1.2.2	1.2	linux	blackdown
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO=	java/linux-blackdown-jdk13	${LOCALBASE}/linux-blackdown-jdk1.3.1	1.3	linux	blackdown
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO=	java/linux-blackdown-jdk14	${LOCALBASE}/linux-blackdown-jdk1.4.2	1.3	linux	blackdown
+_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO=			java/linux-ibm-jdk13		${LOCALBASE}/linux-ibm-jdk1.3.1			1.3	linux	ibm
+_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO=			java/linux-ibm-jdk14		${LOCALBASE}/linux-ibm-jdk1.4.1			1.4	linux	ibm
+_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO=			java/linux-sun-jdk12		${LOCALBASE}/linux-sun-jdk1.2.2			1.2	linux	sun
+_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO=			java/linux-sun-jdk13		${LOCALBASE}/linux-sun-jdk1.3.1			1.3	linux	sun
+_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO=			java/linux-sun-jdk14		${LOCALBASE}/linux-sun-jdk1.4.2			1.4	linux	sun
+
+_JAVA_VENDOR_freebsd=		"FreeBSD Foundation"
+_JAVA_VENDOR_bsdjava=		"FreeBSD Java porting team"
+_JAVA_VENDOR_blackdown=		Blackdown
+_JAVA_VENDOR_ibm=			IBM
+_JAVA_VENDOR_sun=			Sun
+
+_JAVA_OS_native=	Native
+_JAVA_OS_linux=		Linux
 
 # Set the JAVA_HOME directories for all recognized JDK's
-_JAVA_HOME_FREEBSD_1_1=			${LOCALBASE}/jdk1.1.8
-_JAVA_HOME_FREEBSD_1_2=			${LOCALBASE}/jdk1.2.2
-_JAVA_HOME_FREEBSD_1_3=			${LOCALBASE}/jdk1.3.1
-_JAVA_HOME_FREEBSD_1_4=			${LOCALBASE}/jdk1.4.2
-_JAVA_HOME_DIABLO_FREEBSD_1_3=		${LOCALBASE}/diablo-jdk1.3.1
-_JAVA_HOME_BLACKDOWN_LINUX_1_2=	${LOCALBASE}/linux-blackdown-jdk1.2.2
-_JAVA_HOME_BLACKDOWN_LINUX_1_3=	${LOCALBASE}/linux-blackdown-jdk1.3.1
-_JAVA_HOME_BLACKDOWN_LINUX_1_4=	${LOCALBASE}/linux-blackdown-jdk1.4.1
-_JAVA_HOME_IBM_LINUX_1_3=		${LOCALBASE}/linux-ibm-jdk1.3.1
-_JAVA_HOME_IBM_LINUX_1_4=		${LOCALBASE}/linux-ibm-jdk1.4.1
-_JAVA_HOME_SUN_LINUX_1_2=		${LOCALBASE}/linux-sun-jdk1.2.2
-_JAVA_HOME_SUN_LINUX_1_3=		${LOCALBASE}/linux-sun-jdk1.3.1
-_JAVA_HOME_SUN_LINUX_1_4=		${LOCALBASE}/linux-sun-jdk1.4.2
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_1!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_2!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_4!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_NATIVE_FREEBSD_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_2!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_3!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_4!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_IBM_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_IBM_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_SUN_JDK_1_2!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_SUN_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO}" | awk '{ print $$2 }'
+_JAVA_HOME_LINUX_SUN_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO}" | awk '{ print $$2 }'
 
 # Set the JDK ports for all recognized JDK's
-_JAVA_PORT_FREEBSD_1_1=			java/jdk11
-_JAVA_PORT_FREEBSD_1_2=			java/jdk12
-_JAVA_PORT_FREEBSD_1_3=			java/jdk13
-_JAVA_PORT_FREEBSD_1_4=			java/jdk14
-_JAVA_PORT_DIABLO_FREEBSD_1_3=		java/diablo-jdk13
-_JAVA_PORT_BLACKDOWN_LINUX_1_2=	java/linux-blackdown-jdk12
-_JAVA_PORT_BLACKDOWN_LINUX_1_3=	java/linux-blackdown-jdk13
-_JAVA_PORT_BLACKDOWN_LINUX_1_4=	java/linux-blackdown-jdk14
-_JAVA_PORT_IBM_LINUX_1_3=		java/linux-ibm-jdk13
-_JAVA_PORT_IBM_LINUX_1_4=		java/linux-ibm-jdk14
-_JAVA_PORT_SUN_LINUX_1_2=		java/linux-sun-jdk12
-_JAVA_PORT_SUN_LINUX_1_3=		java/linux-sun-jdk13
-_JAVA_PORT_SUN_LINUX_1_4=		java/linux-sun-jdk14
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4!=		echo "${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3!=		echo "${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4!=	echo "${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_IBM_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_3_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_IBM_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_IBM_JDK_1_4_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_SUN_JDK_1_2!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_2_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_SUN_JDK_1_3!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO}" | awk '{ print $$1 }'
+_JAVA_PORT_LINUX_SUN_JDK_1_4!=			echo "${_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO}" | awk '{ print $$1 }'
 
 # Set the name of the file that indicates that a JDK is indeed installed, as a
 # relative path within the JAVA_HOME directory.
@@ -81,63 +109,50 @@ _JDK_FILE=bin/javac
 _JIKES_PATH=	${LOCALBASE}/bin/jikes
 _DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
 
-
 #-----------------------------------------------------------------------------
 # Stage 2: Determine which JDK ports are installed
 #
 
-.		undef HAVE_JAVA_FREEBSD_1_1
-.		undef HAVE_JAVA_FREEBSD_1_2
-.		undef HAVE_JAVA_FREEBSD_1_3
-.		undef HAVE_JAVA_FREEBSD_1_4
-.		undef HAVE_JAVA_DIABLO_FREEBSD_1_3
-.		undef HAVE_JAVA_BLACKDOWN_LINUX_1_2
-.		undef HAVE_JAVA_BLACKDOWN_LINUX_1_3
-.		undef HAVE_JAVA_BLACKDOWN_LINUX_1_4
-.		undef HAVE_JAVA_IBM_LINUX_1_3
-.		undef HAVE_JAVA_IBM_LINUX_1_4
-.		undef HAVE_JAVA_SUN_LINUX_1_2
-.		undef HAVE_JAVA_SUN_LINUX_1_3
-.		undef HAVE_JAVA_SUN_LINUX_1_4
+.		undef _JAVA_PORTS_INSTALLED
 
-.		if exists(${_JAVA_HOME_FREEBSD_1_1}/${_JDK_FILE})
-HAVE_JAVA_FREEBSD_1_1=	YES
+.		if exists(${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_1}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1
 .		endif
-.		if exists(${_JAVA_HOME_FREEBSD_1_2}/${_JDK_FILE})
-HAVE_JAVA_FREEBSD_1_2=	YES
+.		if exists(${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_2}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2
 .		endif
-.		if exists(${_JAVA_HOME_FREEBSD_1_3}/${_JDK_FILE})
-HAVE_JAVA_FREEBSD_1_3=	YES
+.		if exists(${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_3}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3
 .		endif
-.		if exists(${_JAVA_HOME_FREEBSD_1_4}/${_JDK_FILE})
-HAVE_JAVA_FREEBSD_1_4=	YES
+.		if exists(${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_4}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4
 .		endif
-.		if exists(${_JAVA_HOME_DIABLO_FREEBSD_1_3}/${_JDK_FILE})
-HAVE_JAVA_DIABLO_FREEBSD_1_3=	YES
+.		if exists(${_JAVA_HOME_NATIVE_FREEBSD_JDK_1_3}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_NATIVE_FREEBSD_JDK_1_3
 .		endif
-.		if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_2}/${_JDK_FILE})
-HAVE_JAVA_BLACKDOWN_LINUX_1_2=	YES
+.		if exists(${_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_2}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2
 .		endif
-.		if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_3}/${_JDK_FILE})
-HAVE_JAVA_BLACKDOWN_LINUX_1_3=	YES
+.		if exists(${_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_3}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3
 .		endif
-.		if exists(${_JAVA_HOME_BLACKDOWN_LINUX_1_4}/${_JDK_FILE})
-HAVE_JAVA_BLACKDOWN_LINUX_1_4=	YES
+.		if exists(${_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_4}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4
 .		endif
-.		if exists(${_JAVA_HOME_IBM_LINUX_1_3}/${_JDK_FILE})
-HAVE_JAVA_IBM_LINUX_1_3=	YES
+.		if exists(${_JAVA_HOME_LINUX_IBM_JDK_1_3}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_IBM_JDK_1_3
 .		endif
-.		if exists(${_JAVA_HOME_IBM_LINUX_1_4}/${_JDK_FILE})
-HAVE_JAVA_IBM_LINUX_1_4=	YES
+.		if exists(${_JAVA_HOME_LINUX_IBM_JDK_1_4}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_IBM_JDK_1_4
 .		endif
-.		if exists(${_JAVA_HOME_SUN_LINUX_1_2}/${_JDK_FILE})
-HAVE_JAVA_SUN_LINUX_1_2=	YES
+.		if exists(${_JAVA_HOME_LINUX_SUN_JDK_1_2}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_SUN_JDK_1_2
 .		endif
-.		if exists(${_JAVA_HOME_SUN_LINUX_1_3}/${_JDK_FILE})
-HAVE_JAVA_SUN_LINUX_1_3=	YES
+.		if exists(${_JAVA_HOME_LINUX_SUN_JDK_1_3}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_SUN_JDK_1_3
 .		endif
-.		if exists(${_JAVA_HOME_SUN_LINUX_1_4}/${_JDK_FILE})
-HAVE_JAVA_SUN_LINUX_1_4=	YES
+.		if exists(${_JAVA_HOME_LINUX_SUN_JDK_1_4}/${_JDK_FILE})
+_JAVA_PORTS_INSTALLED+=		JAVA_PORT_LINUX_SUN_JDK_1_4
 .		endif
 
 
@@ -151,32 +166,32 @@ HAVE_JAVA_SUN_LINUX_1_4=	YES
 .		if defined(JAVA_HOME)
 _JAVA_HOME=	${JAVA_HOME}
 .			undef(JAVA_HOME)
-.			if ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_1}
-JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_1}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_2}
-JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_2}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_3}
-JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_3}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_FREEBSD_1_4}
-JAVA_PORT=	${_JAVA_PORT_FREEBSD_1_4}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_DIABLO_FREEBSD_1_3}
-JAVA_PORT=	${_JAVA_PORT_DIABLO_FREEBSD_1_3}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_BLACKDOWN_LINUX_1_2}
-JAVA_PORT=	${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_BLACKDOWN_LINUX_1_3}
-JAVA_PORT=	${_JAVA_PORT_BLACKDOWN_LINUX_1_3}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_BLACKDOWN_LINUX_1_4}
-JAVA_PORT=	${_JAVA_PORT_BLACKDOWN_LINUX_1_4}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_IBM_LINUX_1_3}
-JAVA_PORT=	${_JAVA_PORT_IBM_LINUX_1_3}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_IBM_LINUX_1_4}
-JAVA_PORT=	${_JAVA_PORT_IBM_LINUX_1_4}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_SUN_LINUX_1_2}
-JAVA_PORT=	${_JAVA_PORT_SUN_LINUX_1_2}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_SUN_LINUX_1_3}
-JAVA_PORT=	${_JAVA_PORT_SUN_LINUX_1_3}
-.			elif ${_JAVA_HOME} == ${_JAVA_HOME_SUN_LINUX_1_4}
-JAVA_PORT=	${_JAVA_PORT_SUN_LINUX_1_4}
+.			if ${_JAVA_HOME} == ${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_1}
+JAVA_PORT=	${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_2}
+JAVA_PORT=	${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_3}
+JAVA_PORT=	${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_NATIVE_BSDJAVA_JDK_1_4}
+JAVA_PORT=	${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_NATIVE_FREEBSD_JDK_1_3}
+JAVA_PORT=	${_JAVA_PORT_NATIVE_FREEBSD_JDK_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_2}
+JAVA_PORT=	${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_3}
+JAVA_PORT=	${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_BLACKDOWN_JDK_1_4}
+JAVA_PORT=	${_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_IBM_JDK_1_3}
+JAVA_PORT=	${_JAVA_PORT_LINUX_IBM_JDK_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_IBM_JDK_1_4}
+JAVA_PORT=	${_JAVA_PORT_LINUX_IBM_JDK_1_4}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_SUN_JDK_1_2}
+JAVA_PORT=	${_JAVA_PORT_LINUX_SUN_JDK_1_2}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_SUN_JDK_1_3}
+JAVA_PORT=	${_JAVA_PORT_LINUX_SUN_JDK_1_3}
+.			elif ${_JAVA_HOME} == ${_JAVA_HOME_LINUX_SUN_JDK_1_4}
+JAVA_PORT=	${_JAVA_PORT_LINUX_SUN_JDK_1_4}
 .			else
 JAVA_HOME=	${_JAVA_HOME}
 .			endif
@@ -184,258 +199,208 @@ JAVA_HOME=	${_JAVA_HOME}
 
 
 #-----------------------------------------------------------------------------
-# Stage 4: Decide the exact JDK version if only a minimum version is specified
+# Stage 4: Determine which JDK ports are suitable
 #
-# If USE_JAVA is 1.1+, 1.2+, 1.3+ or 1.4+, then set it to 1.1, 1.2, 1.3 or
-# 1.4, depending on what JDK's are already installed. The FreeBSD JDK will be
-# preferred. Any JDK 1.4 for Linux are always the least preferred JDK.
-# However, the most respected rule is that if a JDK is already installed, then
-# no JDK will be downloaded unless necessary.
-#
-# The following rules will be used, per setting:
-#
-# If the setting is 1.1+, then use an existing 1.2, 1.3 or 1.4 JDK if installed,
-# otherwise use the JDK 1.1.8 for FreeBSD if it is already installed. The
-# FreeBSD JDK 1.4 is preferred over any JDK's.
-#
-# If the setting is 1.2+, then use an already installed 1.2, 1.3 or 1.4 JDK.
-# If there is no such JDK, then set USE_JAVA to 1.2. The FreeBSD JDK 1.4 or
-# any of 1.3 JDK is preferred over 1.2 JDK's.
-#
-# If the setting is 1.3+, then use an already installed 1.3 or 1.4 JDK. If
-# there is no such JDK, then set USE_JAVA to 1.3. The FreeBSD JDK 1.4 is
-# preferred over all other JDK's.
-#
-# If the setting is 1.4+, then set it to 1.4 right away. There is no other
-# option at the moment.
 
-.		if (${USE_JAVA} == "1.1+")
-.			if defined(HAVE_JAVA_FREEBSD_1_4)
-USE_JAVA=	1.4
-.			elif defined(HAVE_JAVA_DIABLO_FREEBSD_1_3) || \
-			   defined(HAVE_JAVA_FREEBSD_1_3) || \
-			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
-			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) || \
-			   defined(HAVE_JAVA_IBM_LINUX_1_3)
-USE_JAVA=	1.3
-.			elif defined(HAVE_JAVA_FREEBSD_1_2) || \
-			     defined(HAVE_JAVA_BLACKDOWN_LINUX_1_2) || \
-			     defined(HAVE_JAVA_SUN_LINUX_1_2)
-USE_JAVA=	1.2
-.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4) && \
-				 !defined(HAVE_JAVA_BLACKDOWN_LINUX_1_4) && \
-				 !defined(HAVE_JAVA_IBM_LINUX_1_4)
-USE_JAVA=	1.1
-.			else
-USE_JAVA=	1.4
+# First detect if we are using bsd.java.mk v1.0
+_USE_BSD_JAVA_MK_1_0!=	echo "${_JAVA_VERSIONS_ALL}" \
+						| tr " " "\n" \
+						| grep -q "^${USE_JAVA}$$" && echo "yes" || echo "no"
+.		if (${_USE_BSD_JAVA_MK_1_0} == "yes") && !defined(JAVA_VERSION)
+# Then affect the variables so that we may use v2.0
+JAVA_VERSION=	${USE_JAVA}
+.		endif
+# From here, the port is using bsd.java.mk v2.0
+
+# List JDK ports by version
+_JAVA_PORTS_1_4= JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
+				 JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4 \
+				 JAVA_PORT_LINUX_SUN_JDK_1_4 \
+				 JAVA_PORT_LINUX_IBM_JDK_1_4
+_JAVA_PORTS_1_3= JAVA_PORT_NATIVE_FREEBSD_JDK_1_3 \
+				 JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
+				 JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3 \
+				 JAVA_PORT_LINUX_SUN_JDK_1_3 \
+				 JAVA_PORT_LINUX_IBM_JDK_1_3
+_JAVA_PORTS_1_2= JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2 \
+				 JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2 \
+				 JAVA_PORT_LINUX_SUN_JDK_1_2
+_JAVA_PORTS_1_1= JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1
+
+# List JDK ports by OS
+_JAVA_PORTS_NATIVE=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1 \
+					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2 \
+					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
+					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
+					JAVA_PORT_NATIVE_FREEBSD_JDK_1_3
+_JAVA_PORTS_LINUX=	JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2 \
+					JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3 \
+					JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4 \
+					JAVA_PORT_LINUX_IBM_JDK_1_3 \
+					JAVA_PORT_LINUX_IBM_JDK_1_4 \
+					JAVA_PORT_LINUX_SUN_JDK_1_2 \
+					JAVA_PORT_LINUX_SUN_JDK_1_3 \
+					JAVA_PORT_LINUX_SUN_JDK_1_4
+
+# List JDK ports by vendor
+_JAVA_PORTS_FREEBSD= JAVA_PORT_NATIVE_FREEBSD_JDK_1_3
+_JAVA_PORTS_BSDJAVA= JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1 \
+					 JAVA_PORT_NATIVE_BSDJAVA_JDK_1_2 \
+					 JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
+					 JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4
+_JAVA_PORTS_BLACKDOWN= JAVA_PORT_LINUX_BLACKDOWN_JDK_1_2 \
+					   JAVA_PORT_LINUX_BLACKDOWN_JDK_1_3 \
+					   JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4
+_JAVA_PORTS_SUN= JAVA_PORT_LINUX_SUN_JDK_1_2 \
+				 JAVA_PORT_LINUX_SUN_JDK_1_3 \
+				 JAVA_PORT_LINUX_SUN_JDK_1_4
+_JAVA_PORTS_IBM= JAVA_PORT_LINUX_IBM_JDK_1_3 \
+				 JAVA_PORT_LINUX_IBM_JDK_1_4
+
+# List all JDK ports
+_JAVA_PORTS_ALL= ${_JAVA_PORTS_1_1} \
+				 ${_JAVA_PORTS_1_2} \
+				 ${_JAVA_PORTS_1_3} \
+				 ${_JAVA_PORTS_1_4}
+
+# Build the list of possible JDK ports by version
+.		if defined(JAVA_VERSION)
+_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.1 1.2 1.3 1.4/:S/1.2+/1.2 1.3 1.4/:S/1.3+/1.3 1.4/:S/1.4+/1.4/}
+.			undef(_JAVA_PORTS_BY_VERSION)
+.			if ${_JAVA_VERSION:M1.1} == "1.1"
+_JAVA_PORTS_BY_VERSION+= ${_JAVA_PORTS_1_1}
 .			endif
-
-.		elif (${USE_JAVA} == "1.2+")
-.			if defined(HAVE_JAVA_FREEBSD_1_4)
-USE_JAVA=	1.4
-.			elif defined(HAVE_JAVA_DIABLO_FREEBSD_1_3) || \
-			   defined(HAVE_JAVA_FREEBSD_1_3) || \
-			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
-			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) || \
-			   defined(HAVE_JAVA_IBM_LINUX_1_3)
-USE_JAVA=	1.3
-.			elif !defined(HAVE_JAVA_SUN_LINUX_1_4) && \
-				 !defined(HAVE_JAVA_BLACKDOWN_LINUX_1_4) && \
-				 !defined(HAVE_JAVA_IBM_LINUX_1_4)
-USE_JAVA=	1.2
-.			else
-USE_JAVA=	1.4
+.			if ${_JAVA_VERSION:M1.2} == "1.2"
+_JAVA_PORTS_BY_VERSION+= ${_JAVA_PORTS_1_2}
 .			endif
-
-.		elif (${USE_JAVA} == "1.3+")
-.			if defined(HAVE_JAVA_FREEBSD_1_4)
-USE_JAVA=	1.4
-.			elif defined(HAVE_JAVA_DIABLO_FREEBSD_1_3) || \
-			   defined(HAVE_JAVA_FREEBSD_1_3) || \
-			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
-			   defined(HAVE_JAVA_IBM_LINUX_1_3) || \
-			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3)
-USE_JAVA=	1.3
-.			elif defined(HAVE_JAVA_SUN_LINUX_1_4) || \
-			   defined(HAVE_JAVA_IBM_LINUX_1_4) || \
-			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_4)
-USE_JAVA=	1.4
-.			else
-USE_JAVA=	1.3
+.			if ${_JAVA_VERSION:M1.3} == "1.3"
+_JAVA_PORTS_BY_VERSION+= ${_JAVA_PORTS_1_3}
 .			endif
-
-.		elif (${USE_JAVA} == "1.4+")
-USE_JAVA=	1.4
+.			if ${_JAVA_VERSION:M1.4} == "1.4"
+_JAVA_PORTS_BY_VERSION+= ${_JAVA_PORTS_1_4}
+.			endif
+.			if !defined(_JAVA_PORTS_BY_VERSION)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
+	@${FALSE}
+.			endif
+.		else
+_JAVA_PORTS_BY_VERSION= ${_JAVA_PORTS_ALL}
 .		endif
 
+# Build the list of possible JDK ports by OS
+.		if defined(JAVA_OS)
+.			undef(_JAVA_PORTS_BY_OS)
+.			if ${JAVA_OS:Mnative} == "native"
+_JAVA_PORTS_BY_OS+= ${_JAVA_PORTS_NATIVE}
+.			endif
+.			if ${JAVA_OS:Mlinux} == "linux"
+_JAVA_PORTS_BY_OS+= ${_JAVA_PORTS_LINUX}
+.			endif
+.			if !defined(_JAVA_PORTS_BY_OS)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}";
+	@${FALSE}
+.			endif
+.		else
+_JAVA_PORTS_BY_OS= ${_JAVA_PORTS_ALL}
+.		endif
+
+# Build the list of possible JDK ports by vendor
+.		if defined(JAVA_VENDOR)
+.			undef(_JAVA_PORTS_BY_VENDOR)
+.			if ${JAVA_VENDOR:Mfreebsd} == "freebsd"
+_JAVA_PORTS_BY_VENDOR+= ${_JAVA_PORTS_FREEBSD}
+.			endif
+.			if ${JAVA_VENDOR:Mbsdjava} == "bsdjava"
+_JAVA_PORTS_BY_VENDOR+= ${_JAVA_PORTS_BSDJAVA}
+.			endif
+.			if ${JAVA_VENDOR:Mblackdown} == "blackdown"
+_JAVA_PORTS_BY_VENDOR+= ${_JAVA_PORTS_BLACKDOWN}
+.			endif
+.			if ${JAVA_VENDOR:Msun} == "sun"
+_JAVA_PORTS_BY_VENDOR+= ${_JAVA_PORTS_SUN}
+.			endif
+.			if ${JAVA_VENDOR:Mibm} == "ibm"
+_JAVA_PORTS_BY_VENDOR+= ${_JAVA_PORTS_IBM}
+.			endif
+.			if !defined(_JAVA_PORTS_BY_VENDOR)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDORS}";
+	@${FALSE}
+.			endif
+.		else
+_JAVA_PORTS_BY_VENDOR= ${_JAVA_PORTS_ALL}
+.		endif
+
+_MY_JAVA_PORTS:=		${_JAVA_PORTS_ALL:S/^/\${_/:S/$/_INFO} @ /}
+
+# Build the list of possible JDK ports by version, OS and vendor
+_JAVA_PORTS_BY_VERSION!=	echo "${_JAVA_PORTS_BY_VERSION}" | tr " " "\n" | sort | uniq
+_JAVA_PORTS_BY_OS!=			echo "${_JAVA_PORTS_BY_OS}" | tr " " "\n" | sort | uniq
+_JAVA_PORTS_BY_VENDOR!=		echo "${_JAVA_PORTS_BY_VENDOR}" | tr " " "\n" | sort | uniq
+_JAVA_PORTS_POSSIBLE!=		echo "${_JAVA_PORTS_BY_VERSION} ${_JAVA_PORTS_BY_OS} ${_JAVA_PORTS_BY_VENDOR}" \
+							| tr " " "\n" \
+							| sort -r \
+							| uniq -c \
+							| sed "s/^\( *\)//" \
+							| grep "^3 " \
+							| awk '{ print $$2 }'
 
 #-----------------------------------------------------------------------------
-# Stage 5: Decide the exact JDK to use
+# Stage 5: Decide the exact JDK to use (or install)
 #
 
-# Apply different settings for different values of USE_JAVA.
-#
-# If the port needs Java 1.1, then there's only one choice, the JDK 1.1.8 for
-# FreeBSD.
-.		if (${USE_JAVA} == "1.1")
-JAVA_VENDOR=	FreeBSD
-JAVA_VER=		1.1.8
-JAVA_OS=		FreeBSD
-JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_1}
-JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_1}
+# Find an installed JDK port that matches the requirements of the port
+_JAVA_PORTS_INSTALLED_POSSIBLE!=	echo "${_JAVA_PORTS_POSSIBLE} ${_JAVA_PORTS_INSTALLED}" \
+									| tr " " "\n" \
+									| sort -r \
+									| uniq -c \
+									| sed "s/^\( *\)//" \
+									| grep "^2 " \
+									| awk '{ print $$2 }'
+.		if ${_JAVA_PORTS_INSTALLED_POSSIBLE} != ""
+_JAVA_PORT!=	echo "${_JAVA_PORTS_INSTALLED_POSSIBLE}" \
+				| awk '{ print $$1 }'
 
-# If the port needs Java 1.2, then there are 3 choices. They are, in order or
-# preference:
-#
-#    (1) JDK 1.2.2 for FreeBSD
-#    (2) Blackdown JDK 1.2.2 for Linux
-#    (3) Sun JDK 1.2.2 for Linux
-#
-# If either the Blackdown or Sun JDK 1.2.2 (both for Linux) is installed, but
-# the FreeBSD JDK 1.2.2 is *not* installed, then the installed Linux JDK will
-# be used as the dependency. Otherwise the FreeBSD JDK 1.2.2 will be used as
-# the dependency.
-#
-# The FreeBSD JDK 1.2 is preferred over the Linux JDK's. Among these, the
-# Blackdown JDK is preferred over the Sun JDK.
-#
-.		elif ${USE_JAVA} == "1.2"
-.			if defined(HAVE_JAVA_BLACKDOWN_LINUX_1_2) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_2)
-JAVA_VENDOR=	Blackdown
-JAVA_VER=		1.2.2
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_BLACKDOWN_LINUX_1_2}
-JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_2}
-.			elif defined(HAVE_JAVA_SUN_LINUX_1_2) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_2)
-JAVA_VENDOR=	Sun
-JAVA_VER=		1.2.2
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_2}
-JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_2}
-.			else
-JAVA_VENDOR=	FreeBSD
-JAVA_VER=		1.2.2
-JAVA_OS=		FreeBSD
-JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_2}
-JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_2}
-.			endif
-
-# If the port needs Java 1.3, then there are 4 choices. They are, in order or
-# preference:
-#
-#    (1) Diablo JDK 1.3.1 for FreeBSD
-#    (2) JDK 1.3.1 for FreeBSD
-#    (3) Sun JDK 1.3.1 for Linux
-#    (4) IBM JDK 1.3.1 for Linux
-#    (5) Blackdown JDK 1.3.1 for Linux
-#
-# If the FreeBSD JDK 1.3.1 is installed or if none of the 1.3.1 JDK's is
-# installed, then the FreeBSD JDK 1.3.1 is used as a dependency for the port.
-#
-# Otherwise, one of the installed Linux JDKs is chosen, based on their
-# preferences.
-#
-.		elif ${USE_JAVA} == "1.3"
-.			if defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) \
-			&& !defined(HAVE_JAVA_IBM_LINUX_1_3) \
-			&& !defined(HAVE_JAVA_SUN_LINUX_1_3) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_3) \
-			&& !defined(HAVE_JAVA_DIABLO_FREEBSD_1_3)
-JAVA_VENDOR=	Blackdown
-JAVA_VER=		1.3.1
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_BLACKDOWN_LINUX_1_3}
-JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_3}
-.			elif defined(HAVE_JAVA_IBM_LINUX_1_3) \
-			&& !defined(HAVE_JAVA_SUN_LINUX_1_3) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_3) \
-			&& !defined(HAVE_JAVA_DIABLO_FREEBSD_1_3)
-JAVA_VENDOR=	IBM
-JAVA_VER=		1.3.1
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_IBM_LINUX_1_3}
-JAVA_PORT=		${_JAVA_PORT_IBM_LINUX_1_3}
-.			elif defined(HAVE_JAVA_SUN_LINUX_1_3) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_3) \
-			&& !defined(HAVE_JAVA_DIABLO_FREEBSD_1_3)
-JAVA_VENDOR=	Sun
-JAVA_VER=		1.3.1
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_3}
-JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_3}
-.			elif defined(HAVE_JAVA_FREEBSD_1_3) \
-			&& !defined(HAVE_JAVA_DIABLO_FREEBSD_1_3)
-JAVA_VENDOR=	FreeBSD
-JAVA_VER=		1.3.1
-JAVA_OS=		FreeBSD
-JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_3}
-JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_3}
-.			else
-JAVA_VENDOR=	FreeBSD Foundation
-JAVA_VER=		1.3.1
-JAVA_OS=		FreeBSD
-JAVA_HOME=		${_JAVA_HOME_DIABLO_FREEBSD_1_3}
-JAVA_PORT=		${_JAVA_PORT_DIABLO_FREEBSD_1_3}
-.			endif
-
-# If the port needs Java 1.4, then there are 4 choices. They are, in order or
-# preference:
-#
-#    (1) JDK 1.4.2 for FreeBSD
-#    (2) Sun JDK 1.4.2 for Linux
-#    (3) IBM JDK 1.4.1 for Linux
-#    (4) Blackdown JDK 1.4.1 for Linux
-#
-# If the FreeBSD JDK 1.4.2 is installed or if none of the 1.4.1 JDK's is
-# installed, then the FreeBSD JDK 1.4.2 is used as a dependency for the port.
-#
-# Otherwise, one of the installed Linux JDKs is chosen, based on their
-# preferences.
-#
-.		elif ${USE_JAVA} == "1.4"
-.			if defined(HAVE_JAVA_BLACKDOWN_LINUX_1_4) \
-			&& !defined(HAVE_JAVA_IBM_LINUX_1_4) \
-			&& !defined(HAVE_JAVA_SUN_LINUX_1_4) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_4)
-JAVA_VENDOR=	Blackdown
-JAVA_VER=		1.4.1
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_BLACKDOWN_LINUX_1_4}
-JAVA_PORT=		${_JAVA_PORT_BLACKDOWN_LINUX_1_4}
-.			elif defined(HAVE_JAVA_IBM_LINUX_1_4) \
-			&& !defined(HAVE_JAVA_SUN_LINUX_1_4) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_4)
-JAVA_VENDOR=	IBM
-JAVA_VER=		1.4.1
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_IBM_LINUX_1_4}
-JAVA_PORT=		${_JAVA_PORT_IBM_LINUX_1_4}
-.			elif defined(HAVE_JAVA_SUN_LINUX_1_4) \
-			&& !defined(HAVE_JAVA_FREEBSD_1_4)
-JAVA_VENDOR=	Sun
-JAVA_VER=		1.4.2
-JAVA_OS=		Linux
-JAVA_HOME=		${_JAVA_HOME_SUN_LINUX_1_4}
-JAVA_PORT=		${_JAVA_PORT_SUN_LINUX_1_4}
-.			else
-JAVA_VENDOR=	FreeBSD
-JAVA_VER=		1.4.2
-JAVA_OS=		FreeBSD
-JAVA_HOME=		${_JAVA_HOME_FREEBSD_1_4}
-JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_4}
-.			endif
-
-#
-# Port wants something that we do not understand.  Stop here.
-#
+# If no installed JDK port fits, then pick one from the list of possible ones
 .		else
-check-makevers::
-	@${ECHO} "${PKGNAME}: Makefile error: \"${USE_JAVA}\" is not a valid value for USE_JAVA. It should be one of: ${_JAVA_VERSIONS} (with an optional \"+\" suffix.)";
-	@${FALSE}
+_JAVA_PORT!=	echo "${_JAVA_PORTS_POSSIBLE}" \
+				| awk '{ print $$1 }'
 .		endif
+_JAVA_PORT_INFO:=	${_JAVA_PORT:S/^/\${_/:S/$/_INFO}/}
+JAVA_PORT!=				echo "${_JAVA_PORT_INFO}" | awk '{ print $$1 }'
+JAVA_HOME!=				echo "${_JAVA_PORT_INFO}" | awk '{ print $$2 }'
+JAVA_PORT_VERSION!=		echo "${_JAVA_PORT_INFO}" | awk '{ print $$3 }'
+JAVA_PORT_OS!=			echo "${_JAVA_PORT_INFO}" | awk '{ print $$4 }'
+JAVA_PORT_VENDOR!=		echo "${_JAVA_PORT_INFO}" | awk '{ print $$5 }'
 
+JAVA_PORT_VENDOR_DESCRIPTION:=	${JAVA_PORT_VENDOR:S/^/\${_JAVA_VENDOR_/:S/$/}/}
+JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
+
+# Debug target
+# (will probably get removed in the final version)
+java-debug:
+	@${ECHO} "_USE_BSD_JAVA_MK_1_0=           ${_USE_BSD_JAVA_MK_1_0}"
+	@${ECHO}
+	@${ECHO} "# User specified parameters:"
+	@${ECHO} "JAVA_VERSION=                   ${JAVA_VERSION}	(${_JAVA_VERSION})"
+	@${ECHO} "JAVA_OS=                        ${JAVA_OS}"
+	@${ECHO} "JAVA_VENDOR=                    ${JAVA_VENDOR}"
+	@${ECHO}
+	@${ECHO} "# JDK port dependency selection process:"
+	@${ECHO} "_JAVA_PORTS_POSSIBLE=           ${_JAVA_PORTS_POSSIBLE}"
+	@${ECHO} "_JAVA_PORTS_INSTALLED=          ${_JAVA_PORTS_INSTALLED}"
+	@${ECHO} "_JAVA_PORTS_INSTALLED_POSSIBLE= ${_JAVA_PORTS_INSTALLED_POSSIBLE}"
+	@${ECHO} "_JAVA_PORT=                     ${_JAVA_PORT}"
+	@${ECHO} "_JAVA_PORT_INFO=                ${_JAVA_PORT_INFO:S/\t/ /}"
+	@${ECHO}
+	@${ECHO} "# Selected JDK port:"
+	@${ECHO} "JAVA_PORT=                      ${JAVA_PORT}"
+	@${ECHO} "JAVA_HOME=                      ${JAVA_HOME}"
+	@${ECHO} "JAVA_PORT_VERSION=              ${JAVA_PORT_VERSION}"
+	@${ECHO} "JAVA_PORT_OS=                   ${JAVA_PORT_OS}	(${JAVA_PORT_OS_DESCRIPTION})"
+	@${ECHO} "JAVA_PORT_VENDOR=               ${JAVA_PORT_VENDOR}	(${JAVA_PORT_VENDOR_DESCRIPTION})"
 
 #-----------------------------------------------------------------------------
 # Stage 6: Define all settings for the port to use
@@ -451,7 +416,8 @@ check-makevers::
 # Only define JAVAC if NEED_JAVAC is defined
 .		undef JAVAC
 
-# By default a port does not need the Java compiler
+# The default value for NEED_JAVAC is temporarily (!) YES
+# This will change as soon as the affecting ports have NEED_JAVAC=YES
 .		if !defined(NEED_JAVAC)
 NEED_JAVAC=	NO
 .		endif
@@ -462,8 +428,8 @@ NEED_JAVAC=	NO
 JAVAC=		${_JIKES_PATH}
 WITH_JIKES=	YES
 .				elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
-check-makevers::
-	@${ECHO} "${PKGNAME}: Makefile error: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
+.BEGIN:
+	@${ECHO} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
 .				endif
 .			elif exists(${_JIKES_PATH}) && !defined(NO_BUILD)
@@ -488,14 +454,14 @@ RMIC=			${JAVA_HOME}/bin/rmic
 RMIREGISTRY=	${JAVA_HOME}/bin/rmiregistry
 
 # Some executables only exists in JDK 1.2 and up
-.		if defined(USE_JAVA) && ${USE_JAVA} != 1.1
+.		if ${JAVA_PORT} != ${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1}
 JAVA_KEYTOOL=		${JAVA_HOME}/bin/keytool
 JAVA_POLICYTOOL=	${JAVA_HOME}/bin/policytool
 RMID=				${JAVA_HOME}/bin/rmid
 .		endif
 
 # Set the location of the ZIP or JAR file with all standard Java classes.
-.		if defined(USE_JAVA) && ${USE_JAVA} == "1.1"
+.		if ${JAVA_PORT} == ${_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_1}
 JAVA_CLASSES=	${JAVA_HOME}/lib/classes.zip
 .		else
 JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
@@ -517,16 +483,30 @@ RUN_DEPENDS+=		${_DEPEND_JIKES}
 
 # Add the JDK port to the dependencies
 .		if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
-check-makevers::
-	@${ECHO} "${PKGNAME}: Makefile error: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
+.BEGIN:
+	@${ECHO} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
+	@${FALSE}
+.		endif
+.		if defined(JAVA_BUILD) && defined(NO_BUILD)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
 	@${FALSE}
 .		endif
 _DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
-.		if !defined(NO_BUILD_DEPENDS_JAVA)
+.		if !defined(JAVA_BUILD) && !defined(JAVA_RUN)
+.			if !defined(NO_BUILD_DEPENDS_JAVA) && !defined(NO_BUILD)
 BUILD_DEPENDS+=		${_DEPEND_JAVA}
-.		endif
-.		if !defined(NO_RUN_DEPENDS_JAVA)
+.			endif
+.			if !defined(NO_RUN_DEPENDS_JAVA)
 RUN_DEPENDS+=		${_DEPEND_JAVA}
+.			endif
+.		else
+.			if defined(JAVA_BUILD)
+BUILD_DEPENDS+=		${_DEPEND_JAVA}
+.			endif
+.			if defined(JAVA_RUN)
+RUN_DEPENDS+=		${_DEPEND_JAVA}
+.			endif
 .		endif
 .	endif
 .endif
