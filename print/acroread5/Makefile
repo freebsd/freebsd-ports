@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	acroread
-PORTVERSION=	5.09
+PORTVERSION=	5.10
 CATEGORIES=	print linux
 MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/ \
 		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "i386"
-DISTNAME=	linux-509
+DISTNAME=	linux-5010
 .endif
 CONFLICTS=	acroread-3*
 DIST_SUBDIR=	acroread
@@ -35,17 +35,17 @@ NO_FILTER_SHLIBS=	yes
 .if ${ARCH} == "i386"
 PLIST_SUB=	"ARCHDIR=intellinux"
 .endif
-WRKSRC=		${WRKDIR}
+WRKSRC=		${WRKDIR}/installers
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
 
 do-install:
 	@${MKDIR} ${PREFIX}/Acrobat5
-	@ReadInstallDir=${PREFIX}/Acrobat5 ${WRKDIR}/INSTALL
+	@ReadInstallDir=${PREFIX}/Acrobat5 ${WRKSRC}/INSTALL
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	strings -1 ${WRKDIR}/README > ${DOCSDIR}/README
+	strings -1 ${WRKSRC}/README > ${DOCSDIR}/README
 .endif
 
 post-install:
