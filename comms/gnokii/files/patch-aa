@@ -1,0 +1,23 @@
+*** Makefile.orig	Fri Mar  5 00:21:14 1999
+--- Makefile	Wed Mar 17 00:02:57 1999
+***************
+*** 7,15 ****
+  CC = gcc
+  
+  # Set up compilation/linking flags.
+! CFLAGS = -D_REENTRANT -Wall -g -O0 -pthread 
+  
+! LDFLAGS = -lpthread
+  
+  GNOKII_OBJS = gnokii.o gsm-api.o fbus-3810.o fbus-6110.o
+  
+--- 7,15 ----
+  CC = gcc
+  
+  # Set up compilation/linking flags.
+! CFLAGS = -D_THREAD_SAFE -Wall -g -O0 -pthread 
+  
+! LDFLAGS = -pthread
+  
+  GNOKII_OBJS = gnokii.o gsm-api.o fbus-3810.o fbus-6110.o
+  

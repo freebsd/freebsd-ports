@@ -1,0 +1,29 @@
+*** fbus-3810.c.orig	Wed Mar 17 00:02:05 1999
+--- fbus-3810.c	Wed Mar 17 00:04:20 1999
+***************
+*** 24,30 ****
+  #include	<unistd.h>
+  #include	<fcntl.h>
+  #include	<ctype.h>
+! #include	<sys/signal.h>
+  #include	<sys/types.h>
+  #include	<sys/time.h>
+  #include	<string.h>
+--- 24,30 ----
+  #include	<unistd.h>
+  #include	<fcntl.h>
+  #include	<ctype.h>
+! #include	<signal.h>
+  #include	<sys/types.h>
+  #include	<sys/time.h>
+  #include	<string.h>
+***************
+*** 537,543 ****
+  		/* Set up and install handler before enabling async IO on port. */
+  	sig_io.sa_handler = FB38_SigHandler;
+  	sig_io.sa_flags = 0;
+- 	sig_io.sa_restorer = NULL;
+  	sigaction (SIGIO, &sig_io, NULL);
+  
+  		/* Allow process/thread to receive SIGIO */
+--- 537,542 ----
