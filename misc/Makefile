@@ -225,6 +225,7 @@
     SUBDIR += koffice-i18n-zu
     SUBDIR += kp
     SUBDIR += kwatch
+    SUBDIR += kwordquiz
     SUBDIR += latex-mk
     SUBDIR += lc
     SUBDIR += less
