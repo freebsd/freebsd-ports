@@ -1,0 +1,3 @@
+bin/wtail
+%%PORTDOCS%%share/doc/wtail/README
+%%PORTDOCS%%@dirrm share/doc/wtail
