@@ -7,6 +7,7 @@
 
 PORTNAME=	mkxvcd
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kvcd4nix
@@ -23,16 +24,9 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/mkxvcd
 
-DOC_FILES=	AUTHORS COPYING Changelog INSTALL README TODO
+PORTDOCS=	AUTHORS Changelog INSTALL README TODO
 
 .include <bsd.port.pre.mk>
-
-.ifndef(PORTDOCS)
-.for plistfile in ${DOC_FILES}
-PLIST_FILES+=	share/doc/${PORTNAME}/${plistfile}
-.endfor
-PLIST_DIRS+=	share/doc/${PORTNAME}
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!${LOCALBASE}/bin/bash|' \
@@ -40,9 +34,9 @@ post-patch:
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/mkxvcd.sh ${PREFIX}/bin/mkxvcd
-.ifndef(PORTDOCS)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for docfile in ${DOC_FILES}
+.for docfile in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif
