@@ -17,10 +17,12 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 MAN1=		everybuddy.1
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+		s|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
