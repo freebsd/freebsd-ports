@@ -20,6 +20,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		FLAC.5:${PORTSDIR}/audio/flac
 
 MAN1=		easytag.1
+CONFLICTS=	easytag-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
