@@ -1,0 +1,12 @@
+Steak is a german <-> english translator under GPL.
+A command line tool allows the translation of words in
+both directions. Additionally steak can call ispell 
+to correct mistyped words. 
+
+If build with make -D xsteak ... a small xwindows 
+programm allows the translation of words interactively
+
+WWW: http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/steak.html
+
+--
+h.eichmann@gmx.de
