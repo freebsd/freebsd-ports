@@ -13,7 +13,7 @@
  
  # Timeout for communication operations (in seconds)
 -Timeout = 60
-+Timeout = 90
++Timeout = 160
  
  #########################
  # Communication section #
