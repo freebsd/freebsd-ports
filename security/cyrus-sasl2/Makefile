@@ -48,7 +48,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--mandir=${MANPREFIX}/man \
 		--enable-static \
 		--enable-login \
-		--enable-ntlm \
 		--with-saslauthd \
 		--enable-auth-sasldb \
 		--with-rc4=openssl
@@ -80,6 +79,13 @@ CRAM=	"@comment "
 .if defined(WITHOUT_DIGEST)
 CONFIGURE_ARGS+=	--disable-digest
 DIGEST=	"@comment "
+.endif
+
+.if defined(WITHOUT_NTLM)
+CONFIGURE_ARGS+=	--disable-ntlm
+NTLM=	"@comment "
+.else
+CONFIGURE_ARGS+=	--enable-ntlm
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
@@ -133,6 +139,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		OTP=${OTP} \
 		CRAM=${CRAM} \
 		DIGEST=${DIGEST} \
+		NTLM=${NTLM} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
