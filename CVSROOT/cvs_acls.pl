@@ -84,31 +84,49 @@ my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 my $debug = $cfg::DEBUG;
 my $availfile = "$CVSROOT/CVSROOT/avail";
 
+my $exit_val = 0;	# Good Exit value
+my $universal_off = 0;
+
+
+#######################################
+# process any variable=value switches
+#######################################
 my $die = '';
 eval "print STDERR \$die='Unknown parameter $1\n' if !defined \$$1; \$$1=\$';"
     while ($ARGV[0] =~ /^(\w+)=/ && shift(@ARGV));
-exit 255 if $die;		# process any variable=value switches
+exit 255 if $die;
 
+
+#######################################
+# Work out where in the repo we're at.
+#######################################
 my $repos = shift;
 $repos =~ s:^$CVSROOT/::;
 grep($_ = $repos . '/' . $_, @ARGV);
 
 print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;
 
-my $exit_val = 0;			# Good Exit value
 
-my $universal_off = 0;
-open (AVAIL, $availfile) || exit(0);	# It is ok for avail file not to exist
+#######################################
+# Check that the user has permission.
+#######################################
+
+# It is ok for the avail file not to exist.
+exit 0 unless -e $availfile;
+
+open (AVAIL, $availfile) || die "Can't open $availfile!\n";
 while (<AVAIL>) {
-	chop;
+	chomp;
 	next if /^\s*\#/;
 	next if /^\s*$/;
 
 	my ($flagstr, $u, $m) = split(/[\s,]*\|[\s,]*/, $_);
 
 	# Skip anything not starting with "avail" or "unavail" and complain.
-	(print "Bad avail line: $_\n"), next
-	    if ($flagstr !~ /^avail/ && $flagstr !~ /^unavail/);
+	if ($flagstr !~ /^avail/ && $flagstr !~ /^unavail/) {
+		print "Bad avail line: $_\n";
+		next;
+	}
 
 	# Set which bit we are playing with. ('0' is OK == Available).
 	my $flag = (($& eq "avail") ? 0 : 1);
