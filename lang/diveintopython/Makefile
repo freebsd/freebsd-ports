@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diveintopython
-PORTVERSION=	3.8.1
+PORTVERSION=	3.9.1
 CATEGORIES=	lang python
 MASTER_SITES=	http://diveintopython.org/download/
 DISTNAME=	${PORTNAME}
@@ -26,6 +26,7 @@ WRKSRC=		${WRKDIR}/html
 DIPDLDIR=	${DOCSDIR}/download
 CPIO=		cpio --quiet -pdum -R
 VERSIONSTR=	${PORTVERSION:C|\.([^.]*)$|-\1|}
+PLIST_SUB+=	VERSION=${VERSIONSTR}
 
 post-patch:
 	@ ${PERL} -pi.orig -e \
