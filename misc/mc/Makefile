@@ -7,17 +7,20 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.5.55
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fjoe@FreeBSD.org
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .if !defined(WITHOUT_SLANG)
-LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
+.endif
+.if !defined(WITHOUT_ICONV)
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 USE_GMAKE=	yes
@@ -30,6 +33,10 @@ CONFIGURE_ARGS=	--with-slang --without-gnome
 .else
 CONFIGURE_ARGS=	--with-ncurses --without-gnome
 .endif
+.if !defined(WITHOUT_ICONV)
+CONFIGURE_ARGS+=--enable-charset --with-libiconv-prefix=${LOCALBASE}
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
@@ -43,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|DRAR=/usr/bin|DRAR=${LOCALBASE}/bin|' \
 		${WRKSRC}/vfs/extfs/urar.in
 	@${REINPLACE_CMD} -e 's|/usr/bin/\(.*\)zip|${LOCALBASE}/bin/\1zip|' \
-		${WRKSRC}/vfs/extfs/uzip 
+		${WRKSRC}/vfs/extfs/uzip
 
 post-install:
 	@${LN} -sf mc ${PREFIX}/bin/midc
