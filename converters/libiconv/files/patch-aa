@@ -1,17 +1,40 @@
---- Makefile.in.orig	Tue Dec 12 13:39:43 2000
-+++ Makefile.in	Thu Feb  8 22:56:38 2001
-@@ -40,3 +40,3 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Feb 20 21:43:19 2001
++++ Makefile.in	Mon Aug 27 12:25:03 2001
+@@ -31,14 +31,14 @@
+ 	cd lib && $(MAKE) all
+ 	cd src && $(MAKE) all
+ 	cd man && $(MAKE) all
+-	if test -d tests; then cd tests && $(MAKE) all; fi
++	#if test -d tests; then cd tests && $(MAKE) all; fi
+ 
+ # Installs the library and include files only. Typically called with only
+ # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
+ install-lib : all force
+ 	cd lib && $(MAKE) install-lib libdir='$(libdir)' includedir='$(includedir)'
  	if [ ! -d $(includedir) ] ; then mkdir $(includedir) ; fi
 -	$(INSTALL_DATA) include/iconv.h $(includedir)/iconv.h
 +	$(INSTALL_DATA) include/iconv.h $(includedir)/giconv.h
  
-@@ -49,3 +49,3 @@
+ install : force
+ 	cd libcharset && $(MAKE) install prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
+@@ -47,7 +47,7 @@
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(exec_prefix) ] ; then mkdir $(DESTDIR)$(exec_prefix) ; fi
  	if [ ! -d $(DESTDIR)$(includedir) ] ; then mkdir $(DESTDIR)$(includedir) ; fi
 -	$(INSTALL_DATA) include/iconv.h $(DESTDIR)$(includedir)/iconv.h
 +	$(INSTALL_DATA) include/iconv.h $(DESTDIR)$(includedir)/giconv.h
  	cd man && $(MAKE) install prefix='$(prefix)' exec_prefix='$(exec_prefix)' mandir='$(mandir)'
-@@ -65,3 +65,3 @@
+ 
+ installdirs : force
+@@ -63,7 +63,7 @@
+ 	cd libcharset && $(MAKE) uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
+ 	cd lib && $(MAKE) uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
  	cd src && $(MAKE) uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
 -	$(RM) $(DESTDIR)$(includedir)/iconv.h
 +	$(RM) $(DESTDIR)$(includedir)/giconv.h
  	cd man && $(MAKE) uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' mandir='$(mandir)'
+ 
+ check : all force

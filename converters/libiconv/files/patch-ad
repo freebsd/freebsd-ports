@@ -1,11 +1,23 @@
---- lib/Makefile.in	Wed Jun 27 18:37:49 2001
-+++ lib/Makefile.in	Thu Aug 23 10:24:29 2001
+
+$FreeBSD$
+
+--- lib/Makefile.in.orig	Thu Jun 28 01:37:49 2001
++++ lib/Makefile.in	Mon Aug 27 12:31:31 2001
 @@ -1,4 +1,4 @@
 -# Makefile for libiconv/lib
 +# Makefile for libgiconv/lib
  
  #### Start of system configuration section. ####
  
+@@ -39,7 +39,7 @@
+ 
+ # Before making a release, change this according to the libtool documentation,
+ # section "Library interface versions".
+-LIBICONV_VERSION_INFO = 2:4:0
++LIBICONV_VERSION_INFO = 2
+ 
+ # Needed by $(LIBTOOL).
+ top_builddir = ..
 @@ -50,31 +50,31 @@
  
  LIBCHARSET_OBJECTS = ../libcharset/lib/localcharset.lo

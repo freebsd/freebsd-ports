@@ -1,17 +1,37 @@
---- man/Makefile.in.orig	Fri Dec  8 08:49:07 2000
-+++ man/Makefile.in	Thu Feb  8 23:00:54 2001
-@@ -32,5 +32,5 @@
+
+$FreeBSD$
+
+--- man/Makefile.in.orig	Mon May 21 15:30:41 2001
++++ man/Makefile.in	Mon Aug 27 12:28:49 2001
+@@ -10,7 +10,7 @@
+ local_prefix = /usr/local
+ exec_prefix = @exec_prefix@
+ mandir = @mandir@
+-docdir = $(prefix)/doc/libiconv
++docdir = $(prefix)/share/doc/libiconv
+ htmldir = $(docdir)
+ 
+ # Programs used by "make":
+@@ -32,9 +32,9 @@
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(mandir) ] ; then mkdir $(DESTDIR)$(mandir) ; fi
  	if [ ! -d $(DESTDIR)$(mandir)/man1 ] ; then mkdir $(DESTDIR)$(mandir)/man1 ; fi
 -	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; done
 +	cd $(srcdir) && for f in *.1 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man1/g$$f ; done
  	if [ ! -d $(DESTDIR)$(mandir)/man3 ] ; then mkdir $(DESTDIR)$(mandir)/man3 ; fi
 -	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; done
 +	cd $(srcdir) && for f in *.3 ; do echo $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/$$f ; $(INSTALL_DATA) $$f $(DESTDIR)$(mandir)/man3/g$$f ; done
+ 	if [ ! -d $(DESTDIR)$(prefix)/doc ] ; then mkdir $(DESTDIR)$(prefix)/doc ; fi
+ 	if [ ! -d $(DESTDIR)$(docdir) ] ; then mkdir $(DESTDIR)$(docdir) ; fi
+ 	if [ ! -d $(DESTDIR)$(htmldir) ] ; then mkdir $(DESTDIR)$(htmldir) ; fi
+@@ -50,8 +50,8 @@
+ 	if [ ! -d $(DESTDIR)$(htmldir) ] ; then mkdir $(DESTDIR)$(htmldir) ; fi
  
-@@ -43,4 +43,4 @@
  uninstall : force
 -	cd $(srcdir) && for f in *.1 ; do echo $(RM) $(DESTDIR)$(mandir)/man1/$$f ; $(RM) $(DESTDIR)$(mandir)/man1/$$f ; done
 -	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/$$f ; done
 +	cd $(srcdir) && for f in *.1 ; do echo $(RM) $(DESTDIR)$(mandir)/man1/$$f ; $(RM) $(DESTDIR)$(mandir)/man1/g$$f ; done
 +	cd $(srcdir) && for f in *.3 ; do echo $(RM) $(DESTDIR)$(mandir)/man3/$$f ; $(RM) $(DESTDIR)$(mandir)/man3/g$$f ; done
+ 	cd $(srcdir) && for f in *.html ; do echo $(RM) $(DESTDIR)$(htmldir)/$$f ; $(RM) $(DESTDIR)$(htmldir)/$$f ; done
  
+ check :
