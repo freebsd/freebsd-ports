@@ -1,12 +1,12 @@
 # ports collection makefile for:	xmysqladmin
-# Version required:		1.0
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmysqladmin-1.0
+PORTNAME=	xmysqladmin
+PORTVERSION=	1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \

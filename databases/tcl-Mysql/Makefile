@@ -1,12 +1,12 @@
 # New ports collection makefile for:    p5-Mysql-modules
-# Version required:			990813
 # Date created:				24 August 1999
 # Whom:	      				Mikhail Teterin <mi@aldan.algebra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcl-sql-20000114
+PORTNAME=	tcl-sql
+PORTVERSION=	20000114
 CATEGORIES=	databases tcl80
 MASTER_SITES=	http://www.binevolve.com/~tdarugar/tcl-sql/download/
 EXTRACT_SUFX=	.tgz

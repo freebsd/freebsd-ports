@@ -1,5 +1,4 @@
 # New ports collection makefile for:    p5-GDBM
-# Version required:			1.0
 # Date created:				Nov 9 1999
 # Whom:	      				Nick Sayer <nsayer@FreeBSD.ORG>
 #
@@ -8,11 +7,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=       perl5.005_03
-PKGNAME=        p5-GDBM-1.00
-CATEGORIES=     databases perl5
-MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=   ../../src
+PORTNAME=	p5-GDBM
+PORTVERSION=	1.00
+CATEGORIES=	databases perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	../../src
+DISTNAME=	perl5.005_03
 
 MAINTAINER=	nsayer@FreeBSD.ORG
 

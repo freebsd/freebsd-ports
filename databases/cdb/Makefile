@@ -1,12 +1,12 @@
 # ports collection makefile for:	Constant DataBase
-# Version required:			0.75
 # Date created:				18th July 1998
 # Whom:					Gary Palmer <gpalmer@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdb-0.75
+PORTNAME=	cdb
+PORTVERSION=	0.75
 CATEGORIES=	databases
 MASTER_SITES=	http://cr.yp.to/cdb/
 

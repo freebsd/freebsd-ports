@@ -1,15 +1,15 @@
 # New ports collection makefile for:    gadfly
-# Version required:     1.0
 # Date created:         30 October 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       kwP
-PKGNAME=	gadfly-1.0
+PORTNAME=	gadfly
+PORTVERSION=	1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.chordate.com/kwParsing/
+DISTNAME=       kwP
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-DBD-CSV
-# Version required:			0.1022
 # Date created:				20 June 1999
 # Whom:	      				dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	DBD-CSV-0.1022
-PKGNAME=	p5-DBD-CSV-0.1022
+PORTNAME=	p5-DBD-CSV
+PORTVERSION=	0.1022
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
+DISTNAME=	DBD-CSV-${PORTVERSION}
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 

@@ -1,21 +1,21 @@
 # ports collection makefile for:	Berkeley DB
-# Version required:                     v2.*
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       db-2.7.7
+PORTNAME=	db
+PORTVERSION=	2.7.7
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/2.7.7/
+MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 
 MAINTAINER=	josh@ican.net
 
 Y2K=		http://www.sleepycat.com/faq.html#A8
 
-MANUAL_PACKAGE_BUILD= incompatible with libc internal db calls
-WRKSRC=         ${WRKDIR}/${DISTNAME}/build_unix
+MANUAL_PACKAGE_BUILD=	incompatible with libc internal db calls
+WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 GNU_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	../dist/configure

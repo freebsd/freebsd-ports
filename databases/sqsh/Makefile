@@ -1,11 +1,11 @@
 # New ports collection makefile for:   sqsh
-# Version required:	1.7
 # Date created:		14 Jan 2000
 # Whom:			Domas Mituzas <midom@dammit.lt>
 #
 # $FreeBSD$
 
-DISTNAME=	sqsh-1.7
+PORTNAME=	sqsh
+PORTVERSION=	1.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.voicenet.com/~gray/
 EXTRACT_SUFX=	-src.tar.gz

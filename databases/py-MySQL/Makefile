@@ -1,15 +1,15 @@
 # New ports collection makefile for:	py-MySQL
-# Version required:			1.4
 # Date created:				05 September 1999
 # Whom:                 		Dominik Rothert <dr@domix.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MySQLmodule-1.4
-PKGNAME=	py-MySQL-1.4
+PORTNAME=	py-MySQL
+PORTVERSION=	1.4
 CATEGORIES=	databases python
 MASTER_SITES=	http://www.mysql.com/Contrib/
+DISTNAME=	MySQLmodule-${PORTVERSION}
 
 MAINTAINER=	dr@domix.de
 

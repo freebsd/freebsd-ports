@@ -1,17 +1,17 @@
 # New ports collection makefile for:	dbf2mysql
-# Version required:			1.13
 # Date created:				02 October 1999
 # Whom:					jedgar@fxp.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       dbf2mysql-1.13
+PORTNAME=	dbf2mysql
+PORTVERSION=	1.13
 CATEGORIES=	databases
-MASTER_SITES=   http://www.mysql.com/Contrib/
+MASTER_SITES=	http://www.mysql.com/Contrib/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=jedgar@fxp.org
 
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
