@@ -6,25 +6,35 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.23.20031119
-PORTREVISION=	1
+PORTVERSION=	${OPERA_VER}.${OPERA_DATE}
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/723/final/en/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/unix/freebsd/723/final/en/ \
-		http://mirrors.pmmf.hu/mirror/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.task.gda.pl/pub/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/723/final/en/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/unix/freebsd/723/final/en/ \
-		ftp://ftp.opera.com/pub/opera/unix/freebsd/723/final/en/
-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/3./3-/}.1-static-qt.i386.freebsd-en
+MASTER_SITES=	http://ftp.scarlet.be/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		http://www.mehok.uni-miskolc.hu/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://ftp.heanet.ie/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://opera.nsc.no/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		http://ftp.task.gda.pl/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://ftp.idilis.ro/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		http://www.fastmirrors.org/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		http://ftp.sunet.se/pub/www/clients/Opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://mirror.switch.ch/mirror/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		http://ftp.ankara.edu.tr/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://files.downloadthat.com/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/ \
+		ftp://ftp.opera.com/pub/opera/unix/freebsd/${OPERA_VER:S/.//}/${OPERA_REL}/en/static/
+DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_DATE}.1-static-qt.i386.freebsd-en
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
+OPERA_VER=	7.50
+OPERA_REL=	final
+OPERA_DATE=	20040511
+
 CONFLICTS=	linux-opera-*
+
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -41,33 +51,33 @@ LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .if exists(/etc/X11/applnk)
-PLIST_SUB+=	APPLNK:=""
+PLIST_SUB+=	APPLNK=""
 .else
-PLIST_SUB+=	APPLNK:="@comment "
+PLIST_SUB+=	APPLNK="@comment "
 .endif
 
 .if exists(${X11BASE}/share/gnome)
-PLIST_SUB+=	GNOME:=""
+PLIST_SUB+=	GNOME=""
 .else
-PLIST_SUB+=	GNOME:="@comment "
+PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if exists(${X11BASE}/share/applnk/Internet)
-PLIST_SUB+=	KDE:=""
+PLIST_SUB+=	KDE=""
 .else
-PLIST_SUB+=	KDE:="@comment "
+PLIST_SUB+=	KDE="@comment "
 .endif
 
 .if exists(${X11BASE}/share/applnk/Networking)
-PLIST_SUB+=	KDE2:=""
+PLIST_SUB+=	KDE2=""
 .else
-PLIST_SUB+=	KDE2:="@comment "
+PLIST_SUB+=	KDE2="@comment "
 .endif
 
 .if exists(${X11BASE}/share/gnome/apps)
-PLIST_SUB+=	GNOMELNK:=""
+PLIST_SUB+=	GNOMELNK=""
 .else
-PLIST_SUB+=	GNOMELNK:="@comment "
+PLIST_SUB+=	GNOMELNK="@comment "
 .endif
 
 post-patch:
