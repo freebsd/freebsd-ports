@@ -3,7 +3,6 @@
 * to your own .emacs file.                                    *
 *                                                             *
 * (require 'wanderlust-startup)                               *
-* (load "mime-setup")                                         *
 *                                                             *
 * And if you use APOP authentication, Wanderlust requires     *
 * md5.el. md5.el is contained in Emacs/W3 package. Please get *
