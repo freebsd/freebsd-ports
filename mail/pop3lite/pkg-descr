@@ -1,0 +1,10 @@
+This is  POP3Lite, a flexible, RFC 1939  compliant Post Office
+Protocol 3 daemon.
+
+It  implements   everything  mentioned  in   the  RFC  (either
+natively, or via modules), and  some other things that are not
+strictly  POP3  related  capabilities  (such as  modules,  PAM
+support, SQL configuration, etc).
+
+- George Reid
+greid@ukug.uk.freebsd.org

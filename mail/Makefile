@@ -95,6 +95,7 @@
     SUBDIR += pine4-ssl
     SUBDIR += pmail
     SUBDIR += pop3gwd
+    SUBDIR += pop3lite
     SUBDIR += popa3d
     SUBDIR += poppassd
     SUBDIR += popper

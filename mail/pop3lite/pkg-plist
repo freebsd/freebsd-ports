@@ -1,0 +1,51 @@
+include/pop3lite.h
+include/pop3lite/alias.h
+include/pop3lite/apop.h
+include/pop3lite/mailbox.h
+include/pop3lite/userconf.h
+@unexec install-info --delete %D/info/pop3lite-admin %D/info/dir
+info/pop3lite-admin.info
+@unexec install-info --delete %D/info/pop3lite-hacker %D/info/dir
+info/pop3lite-hacker.info
+@exec install-info %D/info/pop3lite-admin.info %D/info/dir
+@exec install-info %D/info/pop3lite-hacker.info %D/info/dir
+lib/pop3lite/alias.so
+lib/pop3lite/apop.so
+lib/pop3lite/capa.so
+lib/pop3lite/connectlog.so
+lib/pop3lite/disable.so
+lib/pop3lite/expire.so
+lib/pop3lite/filelog.so
+lib/pop3lite/homebox.so
+lib/pop3lite/pam.so
+lib/pop3lite/sabotage.so
+lib/pop3lite/userconf.so
+lib/pop3lite/vhost.so
+sbin/pop3lite
+share/doc/pop3lite/AUTHORS
+share/doc/pop3lite/BUGS
+share/doc/pop3lite/COPYING
+share/doc/pop3lite/COPYING.DOC
+share/doc/pop3lite/ChangeLog
+share/doc/pop3lite/MACHINES
+share/doc/pop3lite/NEWS
+share/doc/pop3lite/README
+share/doc/pop3lite/THANKS
+share/doc/pop3lite/TODO
+share/doc/pop3lite/modules/ALIAS
+share/doc/pop3lite/modules/APOP
+share/doc/pop3lite/modules/CAPA
+share/doc/pop3lite/modules/CONNECTLOG
+share/doc/pop3lite/modules/DISABLE
+share/doc/pop3lite/modules/EXPIRE
+share/doc/pop3lite/modules/FILELOG
+share/doc/pop3lite/modules/HOMEBOX
+share/doc/pop3lite/modules/MAILBOX
+share/doc/pop3lite/modules/PAM
+share/doc/pop3lite/modules/SABOTAGE
+share/doc/pop3lite/modules/USERCONF
+share/doc/pop3lite/modules/VHOST
+@dirrm include/pop3lite
+@dirrm lib/pop3lite
+@dirrm share/doc/pop3lite/modules
+@dirrm share/doc/pop3lite
