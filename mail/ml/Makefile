@@ -3,7 +3,7 @@
 # Date created:		15 March 1998
 # Whom:			Jeroen Hogeveen <albast@xs4all.nl>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/11 05:13:09 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		ml-3.4

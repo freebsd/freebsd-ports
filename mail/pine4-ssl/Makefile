@@ -3,7 +3,7 @@
 # Date created:		29 Jul 1999
 # Whom:			Nick Sayer <nsayer@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1999/07/02 18:03:12 nsayer Exp $
+# $FreeBSD$
 #
 # I spent a <strong>very frustrating</strong> half hour with portlint
 # on this one and could never get it to fewer than 8 frigging warnings.

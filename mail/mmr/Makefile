@@ -3,7 +3,7 @@
 # Date created:				23 October 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/10/13 02:44:51 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		mmr-1.5.2

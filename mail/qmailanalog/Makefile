@@ -3,7 +3,7 @@
 # Date created:		29 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/03 02:46:44 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	qmailanalog-0.70
 CATEGORIES=	mail

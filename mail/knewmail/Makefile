@@ -3,7 +3,7 @@
 # Date created:        6 June 1999
 # Whom:                Tomer Weller
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=      knewmail-3.1

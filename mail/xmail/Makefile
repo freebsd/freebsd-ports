@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Stephen Roznowski <sjr1@flash.net>
 #
-# $Id: Makefile,v 1.3 1998/08/25 00:44:27 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmail_1.6

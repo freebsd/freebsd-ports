@@ -3,7 +3,7 @@
 # Date created:		16 January 1999
 # Whom:			Paul Chvostek <paul@it.ca>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:20:56 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rlytest

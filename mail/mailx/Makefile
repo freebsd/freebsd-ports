@@ -3,7 +3,7 @@
 # Date created:         18 Febrary 1999
 # Whom:                 Issei Suzuki <issei@jp.FreeBSD.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	mailx-0.5

@@ -3,7 +3,7 @@
 # Date created:		24 October 1997
 # Whom:			Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.16 1999/04/27 20:15:37 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tkrat-1.2

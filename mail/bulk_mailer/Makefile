@@ -3,7 +3,7 @@
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
-# $Id: Makefile,v 1.6 1998/10/13 01:32:55 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bulk_mailer-1.12

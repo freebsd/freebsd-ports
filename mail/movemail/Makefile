@@ -3,7 +3,7 @@
 # Date created:        1997/09/09
 # Whom:                wosch
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/06 22:26:19 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      movemail-1.0

@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1998/08/23 13:45:04 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MailFolder-0.07

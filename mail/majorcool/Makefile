@@ -3,7 +3,7 @@
 # Date created:			Wed Aug 13 18:34:14 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1998/08/31 21:33:29 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	majorcool-1.30

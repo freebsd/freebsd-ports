@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 MAINTAINER=	nobutaka@nobutaka.com

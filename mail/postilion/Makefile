@@ -3,7 +3,7 @@
 # Date created:		20 February 1999
 # Whom:			Glenn Johnson <gljohns@bellsouth.net>
 #
-# $Id: Makefile,v 1.2 1999/04/22 16:35:46 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	postilion-0.9.2

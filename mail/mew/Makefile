@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.9 1998/12/01 03:06:31 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	mew-emacs-1.93

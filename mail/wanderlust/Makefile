@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id: Makefile,v 1.2 1999/08/14 22:41:06 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wl-1.0.3

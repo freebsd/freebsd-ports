@@ -3,7 +3,7 @@
 # Date created:				April 27th 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/09/15 21:31:47 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	MIME-tools-4.122

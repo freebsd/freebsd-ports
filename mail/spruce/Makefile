@@ -3,7 +3,7 @@
 # Date created:		05 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1999/07/14 03:03:20 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	spruce-0.4.8c

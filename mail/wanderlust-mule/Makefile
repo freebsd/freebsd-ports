@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1999
 # Whom: 		MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/25 21:22:09 sada Exp $
+# $FreeBSD$
 #
 
 MAINTAINER=	nobutaka@nobutaka.com

@@ -4,7 +4,7 @@
 # Date created:         26 June 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.52 1999/04/07 18:28:33 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       elm-2.4ME+54

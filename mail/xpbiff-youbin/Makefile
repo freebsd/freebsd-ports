@@ -3,7 +3,7 @@
 # Date created:         7 April 1997
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1997/08/24 15:46:06 itojun Exp $
+# $FreeBSD$
 #
 
 # can't use PORTSDIR here, since we haven't included bsd.port.mk

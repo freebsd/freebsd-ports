@@ -3,7 +3,7 @@
 # Date created:		28 November 1998
 # Whom:			Neil Blakey-Milner <nbm@rucus.ru.ac.za>
 #
-# $Id$
+# $FreeBSD$
 
 DISTNAME=       qmail-contrib-0.1
 CATEGORIES=	mail

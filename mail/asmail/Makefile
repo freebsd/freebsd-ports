@@ -3,7 +3,7 @@
 # Date created:		15 August 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.6 1999/01/18 06:38:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asmail-0.54

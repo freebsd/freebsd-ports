@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.26 1999/03/06 05:22:03 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	smtpfeed-1.00

@@ -3,7 +3,7 @@
 # Date created:		Oct 4, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1997/07/17 15:12:51 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mh-6.8.3

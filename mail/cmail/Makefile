@@ -3,7 +3,7 @@
 # Date created:		31 Dec 1998
 # Whom:			Chip Marshall <chip@eboai.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       cmail-2.5

@@ -3,7 +3,7 @@
 # Date created:					May 4th 1997
 # Whom:						jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.19 1999/05/28 16:38:38 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cyrus-imapd-v1.5.19

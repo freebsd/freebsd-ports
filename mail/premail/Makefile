@@ -5,7 +5,7 @@
 # Date created:         31 Jan 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1999/01/13 12:14:53 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       premail-0.46

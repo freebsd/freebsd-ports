@@ -3,7 +3,7 @@
 # Date created:         2 April 1997
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/09/17 00:32:46 asami Exp $
+# $FreeBSD$
 
 DISTNAME=	xpbiff
 PKGNAME?=	xpbiff-1.27

@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.27 1999/03/15 01:38:35 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	imap-4.5

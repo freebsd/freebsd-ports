@@ -3,7 +3,7 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.9 1998/11/28 05:38:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mm2.7

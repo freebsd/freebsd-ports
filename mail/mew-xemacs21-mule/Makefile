@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/05 22:11:54 kuriyama Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	mew-xemacs-mule-1.93

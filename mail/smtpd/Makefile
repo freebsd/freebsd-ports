@@ -3,7 +3,7 @@
 # Date created:			06 Feb 1998
 # Whom:				Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: Makefile,v 1.2 1998/07/03 23:30:14 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      smtpd-2.0

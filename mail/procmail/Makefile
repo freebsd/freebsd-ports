@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.25 1999/03/07 18:02:08 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       procmail-3.13.1

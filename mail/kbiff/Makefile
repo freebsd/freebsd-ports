@@ -3,7 +3,7 @@
 # Date created:		So  14 Jun 1998 13:09:18 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.10 1999/04/24 17:01:40 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kbiff-2.3

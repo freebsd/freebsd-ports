@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.8 1998/10/09 03:31:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	glbiff-0.2.11

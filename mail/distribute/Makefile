@@ -3,7 +3,7 @@
 # Date created:		1 Oct 1997
 # Whom:			itojun@itojun.org
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	distribute-2.1-pl19

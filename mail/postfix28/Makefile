@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1999
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1999/08/22 18:59:00 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	postfix-19990601

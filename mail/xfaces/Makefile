@@ -5,7 +5,7 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1998/10/20 01:43:11 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xfaces-3.3
