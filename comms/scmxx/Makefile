@@ -6,35 +6,36 @@
 #
 
 PORTNAME=	scmxx
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	scmxx
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Data exchange utility for Siemens mobile phones
 
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_GETTEXT=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GMAKE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		scmxx.1
 MANLANG=	"" ru de
+DOCS=		README docs/*.txt
+EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
 
-.ifndef(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in sms.txt vCalendar.vcs vCard.vcf
-	${INSTALL_DATA} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
-.endfor
+	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
