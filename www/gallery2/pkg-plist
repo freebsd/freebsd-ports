@@ -465,12 +465,6 @@
 %%NLS%%%%GALLERYDIR%%/locale/pt_PT/pt_PT-gallery_config.po
 %%NLS%%%%GALLERYDIR%%/locale/pt_PT/pt_PT-gallery_core.po
 %%NLS%%%%GALLERYDIR%%/locale/pt_PT/pt_PT-nls.php
-%%NLS%%%%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/ru_RU-gallery_config.mo
-%%NLS%%%%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES/ru_RU-gallery_core.mo
-%%NLS%%%%GALLERYDIR%%/locale/ru_RU/flagimage/ru_RU.gif
-%%NLS%%%%GALLERYDIR%%/locale/ru_RU/ru_RU-gallery_config.po
-%%NLS%%%%GALLERYDIR%%/locale/ru_RU/ru_RU-gallery_core.po
-%%NLS%%%%GALLERYDIR%%/locale/ru_RU/ru_RU-nls.php
 %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/ru_RU.koi8r-gallery_config.mo
 %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES/ru_RU.koi8r-gallery_core.mo
 %%NLS%%%%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage/ru_RU.koi8r.gif
@@ -871,9 +865,6 @@
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU.koi8r
-%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU/flagimage
-%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU/LC_MESSAGES
-%%NLS%%@dirrm %%GALLERYDIR%%/locale/ru_RU
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_PT/flagimage
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_PT/LC_MESSAGES
 %%NLS%%@dirrm %%GALLERYDIR%%/locale/pt_PT
