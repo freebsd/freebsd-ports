@@ -1,8 +1,16 @@
+bin/dbimon
+bin/pmsql
+lib/perl5/man/man3/DBD::mysql.3.gz
 lib/perl5/man/man3/Mysql.3.gz
+lib/perl5/site_perl/DBD/mysql.pm
 lib/perl5/site_perl/Mysql.pm
 lib/perl5/site_perl/Mysql/Statement.pm
+lib/perl5/site_perl/i386-freebsd/auto/DBD/mysql/mysql.bs
+lib/perl5/site_perl/i386-freebsd/auto/DBD/mysql/mysql.so
 lib/perl5/site_perl/i386-freebsd/auto/Mysql/Mysql.bs
 lib/perl5/site_perl/i386-freebsd/auto/Mysql/Mysql.so
+man/man1/pmsql.1.gz
+man/man1/dbimon.1.gz
 lib/perl5/site_perl/i386-freebsd/auto/Mysql/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/DBD/mysql
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Mysql
-@dirrm lib/perl5/site_perl/Mysql

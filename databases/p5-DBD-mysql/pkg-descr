@@ -1,58 +1,13 @@
-What you achieve with MysqlPerl
-------------------------------
+Msql.pm and DBD::mSQL implement two different approaches to
+communicate with an mSQL server. DBD::mSQL is built upon the DBI, the
+generic Perl Database Interface. It brings you an identical interface
+to a broad variety of databases and is in this regard comparable to
+ODBC. The advantage of the DBI approach is portability and
+interoperability. Msql.pm is the elder species. It was written before
+DBI was available but it was inspired by an early draft of the DBI
+specification. As it has been circulating longer it is more mature and
+pretty stable. It's also more complete than DBD::mSQL.
 
-MysqlPerl is an interface between the perl programming language and the
-MySQL programming API that comes with the MySQL relational database
-management system. All functions provided by the MySQL programming API
-are supported.
-
-From perl you activate the interface with the statement
-
-    use Mysql;
-
-After that you can connect to multiple msql database servers and send
-multiple queries to any of them via an simple object oriented
-interface. Two types of objects are available: database handles and
-statement handles. Perl returns a database handle to the Connect
-method like so:
-
-    $dbh = Mysql->connect($hostname,$databasename);
-
-Once you have connected to a database, you get a statement handle
-with:
-
-    $sth = $dbh->query("select foo from bar");
-
-You can open as many queries as you like simultaneously by selecting a
-different scalar to hold the object:
-
-    $another_sth = $dbh->Query("select bar from foo");
-
-
-The statement handle allows you to step through the virtual table
-returned from the database with the FetchRow method:
-
-    @row = $sth->fetchrow;
-or
-    %hash = $sth->fetchhash;
-
-You can access all metadata that MySQL supplies for a given table. To
-find out the number of rows or the number of fields returned by a
-query you simply say:
-
-    $numrows = $sth->numrows;
-    $numfields = $sth->numfields;
-
-To find out the size in bytes for the field with the offset 0 (the
-first field of a query), you say:
-
-    $length = $sth->length->[0];
-
-The list of the names for each column is returned by
-
-    @list => $sth->name;
-
-As for other metadata available, consult the manpage that comes with
-MysqlPerl and study the examples in the file t/msql.t, which is the
-extensive testscript to test your installation, but is heavily
-commented, so you may use it as a tutorial.
+Some day in the future DBD::mSQL will probably be the clearly superior
+competitor in this package. Today you have to decide on your own about
+the trade-offs.

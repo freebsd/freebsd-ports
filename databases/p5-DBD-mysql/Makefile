@@ -1,27 +1,29 @@
-# New ports collection makefile for:    p5-MySQL
-# Version required:			1.17
-# Date created:				June 17th 1997
+# New ports collection makefile for:    p5-Mysql-modules
+# Version required:			1.1809
+# Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1997/06/18 19:39:25 jfitz Exp $
+#   $Id: Makefile,v 1.14 1997/09/13 17:55:20 jfitz Exp $
 #
 
-DISTNAME=	Mysqlperl-1.17
-PKGNAME=	p5-Mysql-1.17
+DISTNAME=	Mysql-modules-1.1809
+PKGNAME=	p5-Mysql-modules-1.1809
 CATEGORIES=	databases perl5
-MASTER_SITES=	http://www.tcx.se/Contrib/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	DBD
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql
+BUILD_DEPENDS=	${PREFIX}/lib/libmysqlclient.a:${PORTSDIR}/databases/mysql/ \
+		${PREFIX}/lib/perl5/site_perl/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable/ \
+		${PREFIX}/lib/perl5/site_perl/DBI.pm:${PORTSDIR}/databases/p5-DBI/
+CONFIGURE_ENV+=	PREFIX=${PREFIX} MSQL_HOME=${PREFIX}
 
 USE_PERL5=	YES
 
-MAN3=		Mysql.3
-MANPREFIX=	${PREFIX}/lib/perl5
-
-CONFIGURE_ENV+=	PREFIX=${PREFIX}
+MAN1=		pmsql.1 dbimon.1
+MAN3=		Mysql.3 DBD::mSQL.3
+MAN3PREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
 		@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${PREFIX}/bin/perl Makefile.PL
