@@ -35,23 +35,44 @@ PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
 BUILD_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
 RUN_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
 EXTRA_PATCHES=	${PATCH_WRKSRC}/uty/suidperl2speedy.diff
+.else
+_CUSTOMIZED=	yes
 .endif
 
 .if defined(WITH_PAM)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-Authen-PAM
+_CUSTOMIZED=	yes
+.endif
+
+.if defined(WITH_ZLIB)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Compress/ZLIB.pm:${PORTSDIR}/archivers/p5-Compress-ZLIB
+_CUSTOMIZED=	yes
+.endif
+
+.if defined(WITH_QUOTA)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota
+_CUSTOMIZED=	yes
 .endif
 
 .if defined(WITH_ISPELL)
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+_CUSTOMIZED=	yes
 .endif
 
 .if defined(WITH_IMAGEMAGICK)
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+_CUSTOMIZED=	yes
 .endif
 
 pre-fetch:
 .if defined(WITH_PAM)
 	@${ECHO} "PAM support will be added."
+.endif
+.if defined(WITH_ZLIB)
+	@${ECHO} "Zlib support will be added."
+.endif
+.if defined(WITH_QUOTA)
+	@${ECHO} "Quota support will be added."
 .endif
 .if defined(WITH_ISPELL)
 	@${ECHO} "ISpell support will be added."
@@ -62,9 +83,11 @@ pre-fetch:
 .if defined(WITH_IMAGEMAGICK)
 	@${ECHO} "ImageMagick support will be added."
 .endif
-.if !defined(WITH_PAM) && !defined(WITH_ISPELL) && !defined(WITH_IMAGEMAGICK) && !defined(WITHOUT_SPEEDYCGI)
+.if !defined(_CUSTOMIZED)
 	@${ECHO} ""
 	@${ECHO} "Type \"make WITH_PAM=yes\" if you want PAM support."
+	@${ECHO} "Type \"make WITH_ZLIB=yes\" if you want Zlib support."
+	@${ECHO} "Type \"make WITH_QUOTA=yes\" if you want Quota support."
 	@${ECHO} "Type \"make WITH_ISPELL=yes\" if you want ISpell support."
 	@${ECHO} "Type \"make WITHOUT_SPEEDYCGI=yes\" if you DONT want SpeedyCGI support."
 	@${ECHO} "Type \"make WITH_IMAGEMAGICK=yes\" if you want ImageMagick support."
