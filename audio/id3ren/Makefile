@@ -4,24 +4,17 @@
 # Date created:         28 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1999/04/27 13:02:51 taoka Exp $
 #
 
 DISTNAME=	id3ren97a
 PKGNAME=	id3ren-0.97a
 CATEGORIES=	audio
 MASTER_SITES=	http://tscnet.com/pages/badcrc/apps/id3ren/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jonny@jonny.eng.br
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
+USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/id3ren/src
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@unzip -q -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -d ${WRKDIR}
 
 .include <bsd.port.mk>

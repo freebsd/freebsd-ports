@@ -3,19 +3,17 @@
 # Date created:         20 July 1997
 # Whom:                 Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1999/02/03 11:11:42 asami Exp $
+# $Id: Makefile,v 1.8 1999/03/31 14:01:18 flathill Exp $
 #
 
 DISTNAME=	snes118e
 PKGNAME=	snes9x-118e
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nacai@iname.com
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	egcc:${PORTSDIR}/lang/pgcc
+BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/pgcc
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386
@@ -25,9 +23,7 @@ USE_X_PREFIX=	YES
 MAKEFILE=	Makefile.linux
 ALL_TARGET=	snes9x s9xserver
 
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/release
 

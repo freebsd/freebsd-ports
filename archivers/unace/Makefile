@@ -4,30 +4,23 @@
 # Date created:         23 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/02 04:19:20 steve Exp $
 #
 
 DISTNAME=	unacepub
 PKGNAME=	unace-1.2b
 CATEGORIES=	archivers
 MASTER_SITES=	http://members.aol.com/mlemke6413/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jonny@jonny.eng.br
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 FETCH_BEFORE_ARGS=	-t
 
+USE_ZIP=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	unace
 MAKEFILE=	unix/makefile
-
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@${MKDIR} ${WRKSRC}
-	@unzip -q -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -d ${WRKSRC}
+NO_WRKSUBDIR=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin

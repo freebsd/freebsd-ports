@@ -3,21 +3,18 @@
 # Date created:         Mon Dec 14 21:03:01 MET 1998
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1999/02/10 03:52:47 jmz Exp $
+# $Id: Makefile,v 1.12 1999/02/10 05:07:58 jmz Exp $
 #
 
-DISTNAME=	doomsrc-1.8
+DISTNAME=	doomsrc
 PKGNAME=	doom-1.8
 CATEGORIES=	games
 MASTER_SITES?=	ftp://ftp.idsoftware.com/idstuff/source/ \
 		ftp://ftp.stomped.com/pub/idmirror/idstuff/source/ \
 		ftp://ftp.cdrom.com/pub/idgames/idstuff/source/ \
 		ftp://ftp.gamesnet.net/idsoftware/source/
-DISTFILES?=	doomsrc.zip
 
 MAINTAINER=	jmz@FreeBSD.org
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_CDROM=	requested by IDsoftware
 
@@ -27,9 +24,7 @@ MASTER_SITES2=	ftp://sunsite.unc.edu/pub/Linux/games/doom/ \
 DISTFILES2=	doom1v18.wad.gz
 
 USE_XLIB=	yes
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	-q
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 

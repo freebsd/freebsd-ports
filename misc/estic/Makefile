@@ -1,9 +1,9 @@
-# FreeBSD ports collection makefile for:	estic
-# Version required:				1.40
-# Date created:					21 Sep 1996
-# Whom:						Julian Stacey <jhs@freebsd.org>
+# ports collection makefile for:	estic
+# Version required:			1.40
+# Date created:				21 Sep 1996
+# Whom:					Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1998/11/29 12:43:11 asami Exp $
+# $Id: Makefile,v 1.4 1999/02/03 11:11:54 asami Exp $
 #
 
 DISTNAME=		estic-1.40-sources
@@ -12,16 +12,11 @@ CATEGORIES=		misc
 MASTER_SITES=		ftp://linux01.gwdg.de/pub/isdn/estic/  \
 			ftp://ftp.franken.de/pub/isdn4linux/estic/  \
 			http://www.fast.de/~uli/isdn/estic/
-EXTRACT_SUFX=		.zip
 
 MAINTAINER=		jhs@FreeBSD.org
 
-BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
-
 USE_XLIB=		yes
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
 
 #			maybe one of them depends on the vga font from pcemu ?
@@ -56,7 +51,7 @@ do-install:
 	@# estic.doc is not nroff format, & is in German, volunteers to create
 	@# _and maintain_ nroff formatted English should contact ${AUTHOR}
 	${INSTALL_MAN} ${FILESDIR}/README ${PBX_DOC}
-	@# files/README is not in nroff, but is a temporary document.
+	@# ${FILESDIR}/README is not in nroff, but is a temporary document.
 	@${MKDIR} ${PBX_ETC} ${PBX_VAR}
 	${INSTALL_DATA} ${ESTIC}/estic.ini ${PBX_ETC}/estic.ini.generic_example
 	${INSTALL_DATA} ${FILESDIR}/estic.ini ${PBX_ETC}/estic.ini.freebsd_example
@@ -72,18 +67,18 @@ post-install:
 
 demo:
 	@echo "If you want to try this under X-Windows, do this:"
-	@echo " setenv SPUNK_LANGUAGE 001"
-	@echo " setenv SPUNK_XFONT 8x13"
+	@echo " ${SETENV} SPUNK_LANGUAGE 001"
+	@echo " ${SETENV} SPUNK_XFONT 8x13"
 	@echo " cd ${PBX_ETC}"
 	@echo " vi estic.ini"
 	@echo " chmod 666 /dev/cuaaX, or su"
 	@echo " ${ESTIC}/xestic -display :0"
 	@echo " (If you have no Istec 100[38] connected, append -n )"
-	@echo " A BUGS & PROBLEMS section exists in files/README == man estic_freebsd"
+	@echo " A BUGS & PROBLEMS section exists in ${FILESDIR}/README == man estic_freebsd"
 
 # Ref. NO_CDROM= & NO_PACKAGE=
 # It is not necessary to prevent inclusion of source or binary on FreeBSD
 # CDROMs, # (despite the original German phraseology) as I (<jhs@freebsd.org>)
-# have obtained a waiver.  See files/README for explanation.
+# have obtained a waiver.  See ${FILESDIR}/README for explanation.
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id: Makefile,v 1.4 1998/10/16 03:42:28 jseger Exp $
+# $Id: Makefile,v 1.5 1999/02/03 11:11:49 asami Exp $
 #
 
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
@@ -11,18 +11,14 @@ PKGNAME=	jp-pgp-2.6.3
 CATEGORIES=	japanese security
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/pgp/2.x/lang/ \
 		ftp://ftp.ifi.uio.no/pub/pgp/2.x/lang/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	hikura@kaisei.org
 
 RESTRICTED=	"Crypto"
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	-q
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	YES
 NO_BUILD=	YES
 
 # version and language specifications

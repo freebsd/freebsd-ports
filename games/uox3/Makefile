@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/25 06:55:49 dburr Exp $
+# $Id: Makefile,v 1.2 1999/02/28 09:30:56 dburr Exp $
 #
 
 DISTNAME=	uox3v6902-linux
@@ -11,18 +11,12 @@ PKGNAME=	uox3-0.69.02
 CATEGORIES=	games
 MASTER_SITES=	ftp://provolone.dynip.com/pub/ \
 		http://users.1st.net/magda/
-EXTRACT_SUFX=	.zip
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tqpsworld${EXTRACT_SUFX}
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 DIST_SUBDIR=		uox3
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	-qa
-EXTRACT_AFTER_ARGS=	# This space left intentionally blank.
-
+USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
 
 USE_GMAKE=	YES

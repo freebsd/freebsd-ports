@@ -3,21 +3,17 @@
 # Date created:		6 March 1998
 # Whom:			Jeroen Hogeveen <albast@xs4all.nl>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/20 05:34:41 taoka Exp $
 #
 
 DISTNAME=		yacl-0170-beta
 PKGNAME=		yacl-1.7b
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.cs.sc.edu/pub/yacl/
-EXTRACT_SUFX=		.zip
 
 MAINTAINER=		albast@xs4all.nl
 
-BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
-
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	-qq -La
+USE_ZIP=		yes
 WRKSRC=			${WRKDIR}
 MAKE_ENV=		YACLPATH=${WRKDIR}
 
@@ -48,7 +44,7 @@ do-install:
 	@( cd ${PREFIX}/share/yacl; ln -s ${PREFIX}/lib/yacl lib; \
 	ln -s ${PREFIX}/include/yacl/io; ln -s ${PREFIX}/include/yacl/ui )
 	@${ECHO} "Done. Don't forget to set your YACLPATH environment "
-	@${ECHO} -n "variable to "; ${ECHO} -n ${PREFIX}; ${ECHO} "/share/yacl!"
+	@${ECHO} -n "variable to ${PREFIX}/share/yacl!"
 
 post-install:
 	@strip ${PREFIX}/share/yacl/apps/bmpview
