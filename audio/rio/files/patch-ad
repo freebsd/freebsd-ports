@@ -1,0 +1,20 @@
+--- app.cpp.orig	Tue Apr  1 19:32:47 2003
++++ app.cpp	Fri Jun 11 10:26:46 1999
+@@ -46,7 +46,7 @@
+ #elif defined(__FreeBSD__)
+ 	// FreeBSD g++
+ 	#include	<unistd.h>
+-	#include	<sys/syslimits.h>
++	#include	<limits.h>
+ 	#define		SIZE_MAXPATH			PATH_MAX
+ 	#define		DELETEARRAY				delete[]
+ 
+@@ -97,7 +97,7 @@
+ 
+ ///////////////////////////////////////////////////////////////////////////////
+ // return pointer to static string containing datetime
+-static char* TimeStr( long lValue )
++static char* TimeStr( time_t lValue )
+ {
+ 	static char szBuf[ 64 ];
+ 	struct tm* psDateTime;

@@ -2,7 +2,7 @@
 --- rio.cpp	Fri Feb 18 11:02:11 2000
 ***************
 *** 53,58 ****
---- 53,76 ----
+--- 53,78 ----
   	#define		CLOCK_SECOND			1000
   	#define		DELETEARRAY				delete[]
   
@@ -11,7 +11,9 @@
 + 	// (anybody know if this stuff applies more generally to other BSDs?)
 + 	#include	<fcntl.h>
 + 	#include	<unistd.h>
++	#define		ffs _ffs_hack
 + 	#include	<machine/cpufunc.h>
++	#undef		ffs
 + 	#if defined(__alpha__)
 + 		#include <sys/types.h>
 + 		extern "C" {
