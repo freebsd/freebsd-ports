@@ -3,7 +3,7 @@
 # Date created:		16 Aug 1996
 # Whom:			joerg@freebsd.org
 #
-# $Id: Makefile,v 1.4 1998/09/28 02:25:12 steve Exp $
+# $Id: Makefile,v 1.5 1998/10/03 13:39:46 jseger Exp $
 #
 
 DISTNAME=	xmahjongg
@@ -22,7 +22,18 @@ MAN6=		xmahjongg.6
 
 NO_CDROM=	"Restrictive copyright"
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@${CP} ${WRKSRC}/xmahjongg.6 ${WRKSRC}/xmahjongg.man
 
-.include <bsd.port.mk>
+pre-install:
+.if !exists(${X11BASE}/lib/X11/fonts/local)
+	@${ECHO} "*********************************************************"
+	@${ECHO} "Please update your XFree86 to version 3.3.3 or later"
+	@${ECHO} "or add ${X11BASE}/lib/X11/fonts/local to your font path"
+	@${ECHO} "in /etc/XF86Config."
+	@${ECHO} "*********************************************************"
+.endif
+
+.include <bsd.port.post.mk>
