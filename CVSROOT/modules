@@ -4816,6 +4816,7 @@ pgpsendmail	ports/mail/pgpsendmail
 phalanx		ports/games/phalanx
 phantasia	src/games/phantasia
 pharmacy	ports/devel/pharmacy
+phex		ports/net/phex
 phluid		ports/x11-wm/phluid
 photopc		ports/graphics/photopc
 php-sqlrelay	ports/databases/php-sqlrelay
