@@ -1,3 +1,4 @@
+%%RUBY_SITELIBDIR%%/mime/type.rb
 %%RUBY_SITELIBDIR%%/mime/types.rb
 @dirrm %%RUBY_SITELIBDIR%%/mime
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
@@ -14,16 +15,22 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000011.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000012.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000013.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000014.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000015.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000016.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000018.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000019.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000020.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000021.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src/M000022.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.src/M000002.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.src/M000003.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.src/M000004.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/f_0.dot
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/f_0.jpg
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/m_0_0.dot
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/dot/m_0_0.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/mime/type_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/mime/types_rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
@@ -33,7 +40,6 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib/mime
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/dot
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MIME/Types.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MIME/Type.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/MIME
