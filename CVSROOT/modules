@@ -2068,6 +2068,7 @@ git		ports/misc/git
 gkermit		ports/comms/gkermit
 gkrellflynn	ports/sysutils/gkrellflynn
 gkrellkam	ports/graphics/gkrellkam
+gkrellkam2	ports/graphics/gkrellkam2
 gkrellm		ports/sysutils/gkrellm
 gkrellm2	ports/sysutils/gkrellm2
 gkrellm-reminder	ports/misc/gkrellm-reminder
