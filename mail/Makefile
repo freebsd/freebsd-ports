@@ -110,6 +110,7 @@
     SUBDIR += mew2-xemacs21
     SUBDIR += mew2-xemacs21-mule
     SUBDIR += mh
+    SUBDIR += mimedefang
     SUBDIR += minimalist
     SUBDIR += ml
     SUBDIR += mmc

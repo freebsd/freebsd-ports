@@ -1,0 +1,29 @@
+#!/bin/sh
+
+[ $# != 2 ] && exit 1
+[ -z "${PKG_PREFIX}" ] && exit 1
+[ -n "${BATCH}" ] && exit 0
+
+PKG_NAME=$1
+PKG_ACTION=$2
+SPOOLDIR=/var/spool/MIMEDefang
+
+case "$PKG_ACTION" in
+POST-INSTALL)
+	if [ ! -d ${SPOOLDIR} ]; then
+		mkdir -p ${SPOOLDIR}
+		chown mailnull:mailnull ${SPOOLDIR}
+		chmod 700 ${SPOOLDIR}
+	fi
+	;;
+
+PRE-INSTALL|POST-DEINSTALL|DEINSTALL)
+	;;
+
+*)
+echo "usage: $0 <PKG_NAME> {PRE-INSTALL|POST-INSTALL|DEINSTALL|POST-DEINSTALL}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

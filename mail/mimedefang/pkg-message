@@ -1,0 +1,5 @@
+To finish installation please reconfigure sendmail to use
+ MIMEDefang filter, for example add this lines to your sendmail.mc
+
+ MAIL_FILTER(`mimedefang', `S=local:/var/spool/MIMEDefang/mimedefang.sock, F=T, T=C:15m;S:4m;R:4m;E:10m')dnl
+ define(`confINPUT_MAIL_FILTERS', `mimedefang')dnl
