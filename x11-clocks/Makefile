@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1998/09/06 07:47:53 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/11/22 13:42:22 flathill Exp $
 #
 
     SUBDIR += asclock
@@ -12,6 +12,7 @@
     SUBDIR += rclock
     SUBDIR += swisswatch
     SUBDIR += t3d
+    SUBDIR += wmitime
     SUBDIR += wmtime
     SUBDIR += xalarm
     SUBDIR += xdaliclock
