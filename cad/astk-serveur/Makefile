@@ -36,7 +36,7 @@ COMMENT?=	Graphical interface for Code_Aster (server side)
 # There exists a "logical" RUN_DEPENDS towards french/aster and french/eficas
 # for the server part, but it is not set to avoid circular dependences.
 RUN_DEPENDS=	${LOCALBASE}/lib/Tktable${TKTAB_VER}:${PORTSDIR}/x11-toolkits/tktable	\
-		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIA}
+		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
 .if defined(WITH_PBS) && !defined(CLIENT_SEUL)
 RUN_DEPENDS+=	${LOCALBASE}bin/pbs_tclsh:misc/pbs
 .endif
@@ -73,15 +73,20 @@ SHIA=		zsh
 .elif defined(WITH_BASH)
 SHIA=		bash
 .elif defined(WITH_KSH)
-SHIA=		ksh
+SHIA=		ksh93
 .elif exists(${LOCALBASE}/bin/zsh)
 SHIA=		zsh
 .elif exists(${LOCALBASE}/bin/bash)
 SHIA=		bash
-.elif exists(${LOCALBASE}/bin/ksh)
-SHIA=		ksh
+.elif exists(${LOCALBASE}/bin/ksh93)
+SHIA=		ksh93
 .else
 SHIA=		zsh
+.endif
+.if ${SHIA} == "bash"
+SHIADEP=	bash2
+.else
+SHIADEP=	${SHIA}
 .endif
 
 .if !defined(WITH_ED)
