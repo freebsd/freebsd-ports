@@ -1,0 +1,54 @@
+--- main.c.orig	Mon Apr  6 15:30:43 1992
++++ main.c	Wed Dec  4 23:58:14 1996
+@@ -25,7 +25,7 @@
+ int		Debug = 0;
+ #endif
+ 
+-extern		trapint(); /* defined below */
++/* extern		trapint(); /* defined below */
+ extern char	*getenv();
+ jmp_buf		jmpenv;
+ 
+@@ -307,7 +307,7 @@
+ 			/* Maybe we just aborted a change? */
+ 			abortdo();
+ 		}
+-#if TURBOC
++#if TURBOC || (BSD >= 199306)
+ 		signal(SIGINT, (void(*)()) trapint);
+ #else
+ 		signal(SIGINT, trapint);
+@@ -350,7 +350,12 @@
+ 
+ 
+ /*ARGSUSED*/
+-int trapint(signo)
++#if TURBO_C || (BSD >= 199306)
++void
++#else
++int 
++#endif
++trapint(signo)
+ 	int	signo;
+ {
+ 	resume_curses(FALSE);
+@@ -358,14 +363,18 @@
+ #if OSK
+ 	sigmask(-1);
+ #endif
+-#if TURBO_C
++#if TURBO_C || (BSD >= 199306)
+ 	signal(signo, (void (*)())trapint);
+ #else
+ 	signal(signo, trapint);
+ #endif
+ 	longjmp(jmpenv, 1);
+ 
++#if TURBO_C || (BSD >= 199306)
++	return;
++#else
+ 	return 0;
++#endif
+ }
+ 
+ 
