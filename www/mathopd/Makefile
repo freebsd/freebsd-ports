@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	mathopd-1.3
+DISTNAME=	mathopd-1.3pl2
 CATEGORIES=	www
 MASTER_SITES=	http://mathop.diva.nl/dist/ \
 		ftp://ftp.prima.eu.org/pub/mirrored_files/mathop.diva.nl/

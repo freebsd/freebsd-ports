@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 31 18:25:08 1999
-+++ Makefile	Sun Oct 31 19:03:04 1999
+--- Makefile.orig	Fri Dec 17 11:09:22 1999
++++ Makefile	Fri Dec 17 11:09:08 1999
 @@ -1,23 +1,7 @@
 -BIN=mathopd
 -CC=gcc
@@ -21,7 +21,7 @@
 -
 -all: $(BIN)
 -install: $(BIN)
--	install $(BIN) $(SBINDIR)
+-	install -c $(BIN) $(SBINDIR)
 -$(BIN): $(OBJS)
 -	$(CC) $(LDFLAGS) -o $(BIN) $(OBJS) $(LDLIBS)
 -$(OBJS): $(DEPENDS)
