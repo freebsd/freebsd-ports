@@ -1,3 +1,4 @@
 bin/ispell-ru
-share/ispell/russian.hash
 share/ispell/russian.aff
+share/ispell/russian.dict
+share/ispell/russian.hash
