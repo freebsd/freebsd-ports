@@ -19,6 +19,9 @@ EXTRA_PATCHES+=	${QMAIL_PORT_PATCHDIR}/patch-ab ${QMAIL_PORT_PATCHDIR}/patch-ac
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH LDAP support
 
+# openldap12 is about to be removed
+WITH_LDAP2=	yes
+
 .if !defined(WITH_LDAP2)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
