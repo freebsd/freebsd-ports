@@ -1,0 +1,8 @@
+--- mrtg-ping-probe.org	Sat Jan 17 22:27:33 2004
++++ mrtg-ping-probe	Sat Jan 17 22:27:53 2004
+@@ -1,4 +1,4 @@
+-#!/bin/perl
++#!%%PERL%%
+ ##################################################################
+ # @(#) $Id: mrtg-ping-probe,v 2.5 2003/09/13 18:04:29 pwo Exp $
+ # @(#) mrtg-ping-probe release $Name: Release_2_2_0 $
