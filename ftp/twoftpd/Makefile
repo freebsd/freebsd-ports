@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	twoftpd
-PORTVERSION=	1.17
-PORTREVISION=	2
+PORTVERSION=	1.20
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -17,11 +16,16 @@ COMMENT=	A simple, secure, efficient FTP server
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs \
 		${LOCALBASE}/lib/libcvm-client.a:${PORTSDIR}/security/cvm
 
+USE_REINPLACE=	yes
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO
-MAN1=		twoftpd-auth.1 twoftpd-xfer.1
+MAN1=		twoftpd-auth.1 twoftpd-switch.1 twoftpd-xfer.1
+
+do-patch:
+	${REINPLACE_CMD} -e 's,timezone,tm.tm_gmtoff,' ${WRKSRC}/statmod.c
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
