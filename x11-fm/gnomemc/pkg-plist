@@ -126,6 +126,7 @@ share/gnome/pixmaps/mc/gnome-manpage.png
 share/gnome/pixmaps/mc/gnome-objectfile.png
 share/gnome/pixmaps/mc/gnome-pack-deb.png
 share/gnome/pixmaps/mc/gnome-pack-rpm.png
+share/gnome/pixmaps/mc/gnome-pack-slp.png
 share/gnome/pixmaps/mc/gnome-package.png
 share/gnome/pixmaps/mc/gnome-tex.png
 share/gnome/pixmaps/mc/gnome-text-html.png
@@ -136,6 +137,7 @@ share/gnome/pixmaps/mc/gnome-text-x-install.png
 share/gnome/pixmaps/mc/gnome-text-x-makefile.png
 share/gnome/pixmaps/mc/gnome-text-x-readme.png
 share/gnome/pixmaps/mc/gnome-textfile.png
+share/gnome/pixmaps/mc/gnome-trashcan.png
 share/gnome/pixmaps/mc/gnome-video-mpeg.png
 share/gnome/pixmaps/mc/gnome-video-quicktime.png
 share/gnome/pixmaps/mc/gnome-video-x-msvideo.png
@@ -179,6 +181,7 @@ share/locale/pt_BR/LC_MESSAGES/mc.mo
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
 share/locale/sk/LC_MESSAGES/mc.mo
+share/locale/sl/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/tr/LC_MESSAGES/mc.mo
 share/locale/uk/LC_MESSAGES/mc.mo
