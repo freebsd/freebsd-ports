@@ -148,7 +148,7 @@ CONFIGURE_ARGS+=--enable-mbstring
 
 OPTIONS=	REGEX "Enable multibyte regex support" on
 
-PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls mbstring/oniguruma
+PHP_HEADER_DIRS=libmbfl libmbfl/filters libmbfl/mbfl libmbfl/nls oniguruma
 .endif
 
 .if ${PHP_MODNAME} == "mcrypt"
