@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	libgnomeprintui
-PORTVERSION=	1.116.3
+PORTVERSION=	2.2.1.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.116
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprint-2.0:${PORTSDIR}/print/libgnomeprint \
-		gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas
+LIB_DEPENDS=	gnomeprint-2-2.0:${PORTSDIR}/print/libgnomeprint \
+		gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -25,7 +25,7 @@ USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

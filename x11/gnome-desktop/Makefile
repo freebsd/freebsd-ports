@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gnomedesktop
-PORTVERSION=	2.0.10
+PORTVERSION=	2.2.0.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.2
 DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -1,4 +1,6 @@
 bin/gnumeric
+etc/gconf/gconf.xml.defaults/apps/gnome-settings/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-settings/gnumeric/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/autocorrect/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/autoformat/%gconf.xml
@@ -25,6 +27,8 @@ etc/gconf/gconf.xml.defaults/apps/gnumeric/plugins/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/printing/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/printsetup/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnumeric/undo/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings/gnumeric/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autocorrect/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autoformat/%gconf.xml
@@ -85,6 +89,8 @@ lib/gnumeric/%%VERSION%%/plugins/fn-stat/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-stat/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.so
 lib/gnumeric/%%VERSION%%/plugins/fn-string/plugin.xml
+lib/gnumeric/%%VERSION%%/plugins/gdaif/gdaif.so
+lib/gnumeric/%%VERSION%%/plugins/gdaif/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
@@ -681,6 +687,7 @@ share/gnome/pixmaps/gnumeric/stock.xpm
 share/gnome/pixmaps/gnumeric/surface.xpm
 share/gnome/pixmaps/gnumeric/top_border
 share/gnome/pixmaps/gnumeric_splash.jpg
+share/locale/am/LC_MESSAGES/gnumeric.mo
 share/locale/bg/LC_MESSAGES/gnumeric.mo
 share/locale/ca/LC_MESSAGES/gnumeric.mo
 share/locale/cs/LC_MESSAGES/gnumeric.mo
@@ -797,6 +804,8 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autoformat
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric/autocorrect
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnumeric
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings/gnumeric
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-settings
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/undo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/printsetup
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/printing
@@ -823,4 +832,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/autoformat
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric/autocorrect
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnumeric
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-settings/gnumeric
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-settings
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnumeric/gnumeric-C.omf 2>/dev/null || /usr/bin/true

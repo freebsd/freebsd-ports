@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	libgnomeprint
-PORTVERSION=	1.116.3
+PORTVERSION=	2.2.1.1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.116
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	bonobo-2.0:${PORTSDIR}/devel/libbonobo \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -29,6 +29,8 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+
+PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

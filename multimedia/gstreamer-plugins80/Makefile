@@ -16,10 +16,10 @@ DISTNAME=	gst-plugins-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		gconf-2.5:${PORTSDIR}/devel/gconf2 \
 		gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
-		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		popt.0:${PORTSDIR}/devel/popt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 

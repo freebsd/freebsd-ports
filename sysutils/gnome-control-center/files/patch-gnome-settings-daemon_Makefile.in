@@ -1,0 +1,11 @@
+--- gnome-settings-daemon/Makefile.in.orig	Fri Jan 17 12:30:39 2003
++++ gnome-settings-daemon/Makefile.in	Fri Jan 17 12:33:06 2003
+@@ -195,7 +195,7 @@
+ 	$(GNOME_SETTINGS_DAEMON_LIBS)					\
+ 	$(top_builddir)/libbackground/libbackground.la			\
+ 	$(top_builddir)/libsounds/libsounds.a				\
+-	-L$(top_builddir)/libwindow-settings/ -lgnome-window-settings 	\
++	-L$(top_builddir)/libwindow-settings/.libs -lgnome-window-settings 	\
+ 	$(XF86MISC_LIBS)
+ 
+ 

@@ -3,9 +3,11 @@ bin/gnome-text-editor
 etc/gconf/gconf.xml.defaults/apps/gedit-2/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/auto_indent/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/colors/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/font/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/line_numbers/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/load/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/save/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/tabs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/undo/%gconf.xml
@@ -20,9 +22,11 @@ etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/ui/toolbar/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/auto_indent/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/colors/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/font/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/line_numbers/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/load/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/save/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/tabs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/undo/%gconf.xml
@@ -35,41 +39,66 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/recents/%gconf.
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/statusbar/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/ui/toolbar/%gconf.xml
 etc/gconf/schemas/gedit.schemas
+lib/gedit-2/plugins/ascii.gedit-plugin
+lib/gedit-2/plugins/cvschangelog.gedit-plugin
+lib/gedit-2/plugins/diff.gedit-plugin
+lib/gedit-2/plugins/docinfo.gedit-plugin
+lib/gedit-2/plugins/indent.gedit-plugin
 lib/gedit-2/plugins/libasciitable.so
 lib/gedit-2/plugins/libcvschangelog.so
 lib/gedit-2/plugins/libdiff.so
 lib/gedit-2/plugins/libdocinfo.so
+lib/gedit-2/plugins/libindent.so
 lib/gedit-2/plugins/libsample.so
 lib/gedit-2/plugins/libshell_output.so
+lib/gedit-2/plugins/libsort.so
+lib/gedit-2/plugins/libspell.so
 lib/gedit-2/plugins/libtaglist.so
 lib/gedit-2/plugins/libtime.so
+lib/gedit-2/plugins/sample.gedit-plugin
+lib/gedit-2/plugins/shell_output.gedit-plugin
+lib/gedit-2/plugins/sort.gedit-plugin
+lib/gedit-2/plugins/spell.gedit-plugin
+lib/gedit-2/plugins/taglist.gedit-plugin
+lib/gedit-2/plugins/time.gedit-plugin
 libdata/bonobo/servers/GNOME_Gedit.server
+share/gnome/application-registry/gedit.applications
 share/gnome/applications/gedit.desktop
 share/gnome/gedit-2/glade/asciitable.glade2
 share/gnome/gedit-2/glade/diff.glade2
 share/gnome/gedit-2/glade/docinfo.glade2
+share/gnome/gedit-2/glade/gedit-encodings-dialog.glade2
 share/gnome/gedit-2/glade/gedit-preferences.glade2
 share/gnome/gedit-2/glade/goto-line.glade2
+share/gnome/gedit-2/glade/languages-dialog.glade2
 share/gnome/gedit-2/glade/plugin-manager.glade2
 share/gnome/gedit-2/glade/program-location-dialog.glade2
 share/gnome/gedit-2/glade/replace.glade2
 share/gnome/gedit-2/glade/shell_output.glade2
+share/gnome/gedit-2/glade/sort.glade2
+share/gnome/gedit-2/glade/spell-checker.glade2
 share/gnome/gedit-2/glade/time.glade2
 share/gnome/gedit-2/glade/uri.glade2
 share/gnome/gedit-2/taglist/HTML.tags
 share/gnome/gedit-2/taglist/Latex.tags
+share/gnome/gedit-2/taglist/XSLT.tags
 share/gnome/gedit-2/ui/gedit-ui.xml
 share/gnome/help/gedit/C/figures/gedit_window.png
 share/gnome/help/gedit/C/gedit.xml
 share/gnome/help/gedit/C/legal.xml
-share/gnome/help/gedit/C/topic.dat
+share/gnome/help/gedit/ro/figures/gedit_window.png
+share/gnome/help/gedit/ro/gedit.xml
+share/gnome/help/gedit/ro/legal.xml
 share/gnome/idl/GNOME_Gedit.idl
 share/gnome/mime-info/gedit.keys
 share/gnome/omf/gedit/gedit-C.omf
+share/gnome/omf/gedit/gedit-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-C.omf 2>/dev/null || /usr/bin/true
+@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gedit-icon.png
 share/gnome/pixmaps/gedit-logo.png
 share/gnome/pixmaps/gedit-plugin-manager.png
-share/gnome/pixmaps/shell-output-logo.png
+share/locale/am/LC_MESSAGES/gedit-2.0.mo
 share/locale/ar/LC_MESSAGES/gedit-2.0.mo
 share/locale/az/LC_MESSAGES/gedit-2.0.mo
 share/locale/be/LC_MESSAGES/gedit-2.0.mo
@@ -86,6 +115,7 @@ share/locale/fi/LC_MESSAGES/gedit-2.0.mo
 share/locale/fr/LC_MESSAGES/gedit-2.0.mo
 share/locale/ga/LC_MESSAGES/gedit-2.0.mo
 share/locale/gl/LC_MESSAGES/gedit-2.0.mo
+share/locale/he/LC_MESSAGES/gedit-2.0.mo
 share/locale/hi/LC_MESSAGES/gedit-2.0.mo
 share/locale/hu/LC_MESSAGES/gedit-2.0.mo
 share/locale/it/LC_MESSAGES/gedit-2.0.mo
@@ -93,6 +123,8 @@ share/locale/ja/LC_MESSAGES/gedit-2.0.mo
 share/locale/ko/LC_MESSAGES/gedit-2.0.mo
 share/locale/lt/LC_MESSAGES/gedit-2.0.mo
 share/locale/lv/LC_MESSAGES/gedit-2.0.mo
+share/locale/mk/LC_MESSAGES/gedit-2.0.mo
+share/locale/mn/LC_MESSAGES/gedit-2.0.mo
 share/locale/ms/LC_MESSAGES/gedit-2.0.mo
 share/locale/nl/LC_MESSAGES/gedit-2.0.mo
 share/locale/nn/LC_MESSAGES/gedit-2.0.mo
@@ -106,6 +138,7 @@ share/locale/sk/LC_MESSAGES/gedit-2.0.mo
 share/locale/sl/LC_MESSAGES/gedit-2.0.mo
 share/locale/sv/LC_MESSAGES/gedit-2.0.mo
 share/locale/ta/LC_MESSAGES/gedit-2.0.mo
+share/locale/th/LC_MESSAGES/gedit-2.0.mo
 share/locale/tr/LC_MESSAGES/gedit-2.0.mo
 share/locale/uk/LC_MESSAGES/gedit-2.0.mo
 share/locale/vi/LC_MESSAGES/gedit-2.0.mo
@@ -113,6 +146,8 @@ share/locale/wa/LC_MESSAGES/gedit-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gedit-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gedit-2.0.mo
 @dirrm share/gnome/omf/gedit
+@dirrm share/gnome/help/gedit/ro/figures
+@dirrm share/gnome/help/gedit/ro
 @dirrm share/gnome/help/gedit/C/figures
 @dirrm share/gnome/gedit-2/ui
 @dirrm share/gnome/gedit-2/taglist
@@ -132,8 +167,10 @@ share/locale/zh_TW/LC_MESSAGES/gedit-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/tabs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/save
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/line_numbers
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/load
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/font
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/colors
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor/auto_indent
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences/editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2/preferences
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gedit-2
@@ -149,8 +186,12 @@ share/locale/zh_TW/LC_MESSAGES/gedit-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/tabs
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/save
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/line_numbers
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/load
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/font
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/colors
+@dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/auto_indent
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences
 @dirrm etc/gconf/gconf.xml.defaults/apps/gedit-2
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-ro.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-C.omf 2>/dev/null || /usr/bin/true

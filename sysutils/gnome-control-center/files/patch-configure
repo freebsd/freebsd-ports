@@ -1,6 +1,6 @@
---- configure.orig	Tue Aug  6 01:33:52 2002
-+++ configure	Wed Aug  7 01:22:14 2002
-@@ -5768,6 +5768,7 @@
+--- configure.orig	Wed Dec 18 16:10:09 2002
++++ configure	Sun Dec 22 16:36:03 2002
+@@ -8516,6 +8516,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,12 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9090,7 +9091,7 @@
- fi
+@@ -12607,7 +12608,7 @@
  
- cat >> confdefs.h <<EOF
+ 
+ cat >>confdefs.h <<_ACEOF
 -#define GNOMECC_DATA_DIR "${real_prefix}/share/${GETTEXT_PACKAGE}"
 +#define GNOMECC_DATA_DIR "${datadir}/${GETTEXT_PACKAGE}"
- EOF
+ _ACEOF
  
  GNOMECC_ICONS_DIR='$(datadir)/'${GETTEXT_PACKAGE}'/icons'

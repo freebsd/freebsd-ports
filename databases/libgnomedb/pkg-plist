@@ -1,9 +1,9 @@
 bin/gnome-database-properties
 etc/gconf/gconf.xml.defaults/apps/gnome-db/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-db/Shell/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-db/Editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-db/UI/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Shell/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI/%gconf.xml
 etc/gconf/schemas/libgnomedb.schemas
 etc/gnome-vfs-2.0/modules/database-module.conf
@@ -17,18 +17,19 @@ include/libgnomedb/gnome-db-control.h
 include/libgnomedb/gnome-db-data-source-selector.h
 include/libgnomedb/gnome-db-dsn-config-druid.h
 include/libgnomedb/gnome-db-dsn-config.h
+include/libgnomedb/gnome-db-editor.h
 include/libgnomedb/gnome-db-error-dialog.h
 include/libgnomedb/gnome-db-error.h
 include/libgnomedb/gnome-db-form.h
 include/libgnomedb/gnome-db-gray-bar.h
 include/libgnomedb/gnome-db-grid.h
+include/libgnomedb/gnome-db-icon-list.h
 include/libgnomedb/gnome-db-list.h
 include/libgnomedb/gnome-db-login-dialog.h
 include/libgnomedb/gnome-db-login.h
 include/libgnomedb/gnome-db-model.h
 include/libgnomedb/gnome-db-provider-selector.h
 include/libgnomedb/gnome-db-report-editor.h
-include/libgnomedb/gnome-db-sql-editor.h
 include/libgnomedb/gnome-db-stock.h
 include/libgnomedb/gnome-db-table-editor.h
 include/libgnomedb/gnome-db-util.h
@@ -73,11 +74,13 @@ share/doc/libgnomedb/libgnomedb-gnomedbcontrolwidget.html
 share/doc/libgnomedb/libgnomedb-gnomedbdatasourceselector.html
 share/doc/libgnomedb/libgnomedb-gnomedbdsnconfig.html
 share/doc/libgnomedb/libgnomedb-gnomedbdsnconfigdruid.html
+share/doc/libgnomedb/libgnomedb-gnomedbeditor.html
 share/doc/libgnomedb/libgnomedb-gnomedberror.html
 share/doc/libgnomedb/libgnomedb-gnomedberrordialog.html
 share/doc/libgnomedb/libgnomedb-gnomedbform.html
 share/doc/libgnomedb/libgnomedb-gnomedbgraybar.html
 share/doc/libgnomedb/libgnomedb-gnomedbgrid.html
+share/doc/libgnomedb/libgnomedb-gnomedbiconlist.html
 share/doc/libgnomedb/libgnomedb-gnomedblist.html
 share/doc/libgnomedb/libgnomedb-gnomedblogin.html
 share/doc/libgnomedb/libgnomedb-gnomedblogindialog.html
@@ -101,6 +104,7 @@ share/gnome/pixmaps/libgnomedb/gnome-db-database_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-designer_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-disconnect_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-indexes_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-no-transaction_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-procedures_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-procedures_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-query_16x16.png
@@ -116,6 +120,7 @@ share/gnome/pixmaps/libgnomedb/gnome-db-triggers_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-types_16x16.png
 share/gnome/pixmaps/libgnomedb/gnome-db-types_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db-views_16x16.png
+share/gnome/pixmaps/libgnomedb/gnome-db-within-transaction_24x24.png
 share/gnome/pixmaps/libgnomedb/gnome-db.png
 share/locale/az/LC_MESSAGES/libgnomedb-2.mo
 share/locale/be/LC_MESSAGES/libgnomedb-2.mo
@@ -154,8 +159,8 @@ share/locale/zh_TW/LC_MESSAGES/libgnomedb-2.mo
 @dirrm share/doc/libgnomedb
 @dirrm include/libgnomedb
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Shell
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db/UI
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db/Shell
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db/Editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-db

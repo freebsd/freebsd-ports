@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gdm2
-PORTVERSION=	2.4.0.12
-PORTREVISION=	1
+PORTVERSION=	2.4.1.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.4
@@ -16,8 +15,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		rsvg-2.2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		rsvg-2.4:${PORTSDIR}/graphics/librsvg2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -56,6 +55,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/locale|(prefix)/share/locale|g' \
+		${WRKSRC}/po/Makefile.in.in
 
 post-install:
 .if !defined(PACKAGE_BUILDING)

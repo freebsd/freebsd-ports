@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-applets/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-applets/2.2
 DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomehier gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.0.4.1
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.2
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,14 +26,17 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier gnomemimedata
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		BSD_PTHREAD_LIB=${PTHREAD_LIBS}
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
+		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "*info.in" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "*info.in" | xargs ${REINPLACE_CMD} -e \
 		's|\@datadir\@/gnome|\@datadir\@|g'
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/libgnomevfs/Makefile.in
 
 .include <bsd.port.mk>

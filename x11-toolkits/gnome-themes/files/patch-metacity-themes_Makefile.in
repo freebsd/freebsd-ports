@@ -1,0 +1,11 @@
+--- metacity-themes/Makefile.in.orig	Mon Feb  3 20:16:59 2003
++++ metacity-themes/Makefile.in	Mon Feb  3 20:17:33 2003
+@@ -120,7 +120,7 @@
+ THEMES =  	Mist			Sandwish		Smokey
+ 
+ 
+-THEME_DIR = $(datadir)/themes
++THEME_DIR = $(datadir)/gnome/themes
+ THEME_SUBDIR = metacity-1
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

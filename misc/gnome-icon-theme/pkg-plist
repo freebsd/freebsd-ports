@@ -76,7 +76,6 @@ share/icons/gnome/48x48/filesystems/gnome-fs-ssh.png
 share/icons/gnome/48x48/filesystems/gnome-fs-trash-empty.png
 share/icons/gnome/48x48/filesystems/gnome-fs-trash-full.png
 share/icons/gnome/48x48/filesystems/gnome-fs-web.png
-share/icons/gnome/48x48/mimetypes/gnome-compressed.png
 share/icons/gnome/48x48/mimetypes/gnome-library.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-msword.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-pdf.png
@@ -102,6 +101,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-applix-word.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-arj.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-backup.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bzip.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bzip-compressed-tar.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-compress.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-compressed-tar.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-core-file.png

@@ -18,9 +18,18 @@ share/gnome/help/gnome-terminal/C/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/C/figures/terminal_window.png
 share/gnome/help/gnome-terminal/C/gnome-terminal.xml
 share/gnome/help/gnome-terminal/C/legal.xml
+share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/ro/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/ro/figures/terminal_window.png
+share/gnome/help/gnome-terminal/ro/gnome-terminal.xml
+share/gnome/help/gnome-terminal/ro/legal.xml
 share/gnome/omf/gnome-terminal/gnome-terminal-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-terminal.png
 share/locale/am/LC_MESSAGES/gnome-terminal.mo
+share/locale/ar/LC_MESSAGES/gnome-terminal.mo
 share/locale/be/LC_MESSAGES/gnome-terminal.mo
 share/locale/bg/LC_MESSAGES/gnome-terminal.mo
 share/locale/ca/LC_MESSAGES/gnome-terminal.mo
@@ -34,12 +43,17 @@ share/locale/et/LC_MESSAGES/gnome-terminal.mo
 share/locale/fi/LC_MESSAGES/gnome-terminal.mo
 share/locale/fr/LC_MESSAGES/gnome-terminal.mo
 share/locale/gl/LC_MESSAGES/gnome-terminal.mo
+share/locale/he/LC_MESSAGES/gnome-terminal.mo
 share/locale/hu/LC_MESSAGES/gnome-terminal.mo
+share/locale/it/LC_MESSAGES/gnome-terminal.mo
 share/locale/ja/LC_MESSAGES/gnome-terminal.mo
 share/locale/ko/LC_MESSAGES/gnome-terminal.mo
 share/locale/lt/LC_MESSAGES/gnome-terminal.mo
 share/locale/lv/LC_MESSAGES/gnome-terminal.mo
+share/locale/mk/LC_MESSAGES/gnome-terminal.mo
+share/locale/mn/LC_MESSAGES/gnome-terminal.mo
 share/locale/ms/LC_MESSAGES/gnome-terminal.mo
+share/locale/nl/LC_MESSAGES/gnome-terminal.mo
 share/locale/no/LC_MESSAGES/gnome-terminal.mo
 share/locale/pl/LC_MESSAGES/gnome-terminal.mo
 share/locale/pt/LC_MESSAGES/gnome-terminal.mo
@@ -48,15 +62,16 @@ share/locale/ro/LC_MESSAGES/gnome-terminal.mo
 share/locale/ru/LC_MESSAGES/gnome-terminal.mo
 share/locale/sk/LC_MESSAGES/gnome-terminal.mo
 share/locale/sl/LC_MESSAGES/gnome-terminal.mo
+share/locale/sq/LC_MESSAGES/gnome-terminal.mo
 share/locale/sv/LC_MESSAGES/gnome-terminal.mo
-share/locale/ta/LC_MESSAGES/gnome-terminal.mo
 share/locale/tr/LC_MESSAGES/gnome-terminal.mo
 share/locale/uk/LC_MESSAGES/gnome-terminal.mo
 share/locale/vi/LC_MESSAGES/gnome-terminal.mo
 share/locale/wa/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
-@dirrm share/gnome/omf/gnome-terminal
+@dirrm share/gnome/help/gnome-terminal/ro/figures
+@dirrm share/gnome/help/gnome-terminal/ro
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles/Default
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/profiles
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-terminal/keybindings
@@ -67,3 +82,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/keybindings
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal/global
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-terminal
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-ro.omf 2>/dev/null || /usr/bin/true

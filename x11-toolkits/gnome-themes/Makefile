@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	gnome-themes
-PORTVERSION=	1.0
+PORTVERSION=	2.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.2.0/engines/libthinice.so:${PORTSDIR}/x11-toolkits/gtk-thinice-engine
+LIB_DEPENDS=	metacity-private.0:${PORTSDIR}/x11-wm/metacity
+RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.2.0/engines/libthinice.so:${PORTSDIR}/x11-toolkits/gtk-thinice-engine
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -45,19 +45,23 @@ libdata/bonobo/servers/GNOME_MiniCommanderApplet.server
 libdata/bonobo/servers/GNOME_MixerApplet.server
 libdata/bonobo/servers/GNOME_ModemLightsApplet.server
 libdata/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
+libdata/bonobo/servers/GNOME_Panel_WirelessApplet.server
 %%BATTERY%%libexec/battstat-applet-2
 libexec/cdplayer_applet2
 libexec/charpick_applet2
 libexec/drivemount_applet2
 libexec/geyes_applet2
 libexec/gkb-applet-2
+libexec/gnome-applets/mc-install-default-macros
 libexec/gtik2_applet2
 libexec/gweather-applet-2
 libexec/mini_commander_applet
 libexec/mixer_applet2
 libexec/modemlights_applet2
 libexec/multiload-applet-2
+libexec/wireless-applet
 %%BATTERY%%share/gnome/battstat_applet/battstat_applet.glade
+share/gnome/gen_util/mini-commander.glade
 share/gnome/geyes/Bizarre/Bizarre-eye.png
 share/gnome/geyes/Bizarre/Bizarre-pupil.png
 share/gnome/geyes/Bizarre/config
@@ -75,6 +79,7 @@ share/gnome/geyes/Horrid/horrid_eye.png
 share/gnome/geyes/Horrid/horrid_pupil.png
 share/gnome/gkb/AM_Armenian.keyprop
 share/gnome/gkb/AR_Arabic.keyprop
+share/gnome/gkb/AR_Arabic_x.keyprop
 share/gnome/gkb/AZ_Azerbaidjani_Turkic.keyprop
 share/gnome/gkb/Armenian.keyprop
 share/gnome/gkb/BE_Dutch.keyprop
@@ -100,10 +105,12 @@ share/gnome/gkb/Dvorak.keyprop
 share/gnome/gkb/EE_Estonian.keyprop
 share/gnome/gkb/EE_Estonian_x.keyprop
 share/gnome/gkb/ES_Spanish.keyprop
+share/gnome/gkb/ES_Spanish-x86.keyprop
 share/gnome/gkb/ES_Spanish_x.keyprop
 share/gnome/gkb/FI_Finnish.keyprop
 share/gnome/gkb/FI_Finnish_x.keyprop
 share/gnome/gkb/FR_French.keyprop
+share/gnome/gkb/FR_French-x86.keyprop
 share/gnome/gkb/FR_French_x.keyprop
 share/gnome/gkb/FrenchCanadian.keyprop
 share/gnome/gkb/FrenchCanadian2.keyprop
@@ -119,10 +126,12 @@ share/gnome/gkb/GeorgianLatin.keyprop
 share/gnome/gkb/GeorgianRussian.keyprop
 share/gnome/gkb/German.keyprop
 share/gnome/gkb/GermanSwiss.keyprop
+share/gnome/gkb/HR_Croatian.keyprop
 share/gnome/gkb/HU_Hungarian.keyprop
 share/gnome/gkb/Hungarian-101.keyprop
 share/gnome/gkb/Hungarian-lat1.keyprop
 share/gnome/gkb/Hungarian-sun.keyprop
+share/gnome/gkb/Hungarian-x86.keyprop
 share/gnome/gkb/Hungarian.keyprop
 share/gnome/gkb/Hungarian101-1.keyprop
 share/gnome/gkb/Hungarian101.keyprop
@@ -134,6 +143,7 @@ share/gnome/gkb/IT_Italian.keyprop
 share/gnome/gkb/IT_Italian_x.keyprop
 share/gnome/gkb/JP_Japanese.keyprop
 share/gnome/gkb/JP_Japanese_x.keyprop
+share/gnome/gkb/KR_Korean.keyprop
 share/gnome/gkb/LA_Lao_x.keyprop
 share/gnome/gkb/LT_Lithuanian.keyprop
 share/gnome/gkb/LT_Lithuanian_x.keyprop
@@ -171,7 +181,9 @@ share/gnome/gkb/TR_Turkish_x.keyprop
 share/gnome/gkb/Thai.keyprop
 share/gnome/gkb/Thai2.keyprop
 share/gnome/gkb/UA_Ukrainian.keyprop
+share/gnome/gkb/UK-x86.keyprop
 share/gnome/gkb/UK.keyprop
+share/gnome/gkb/US-101A-x86.keyprop
 share/gnome/gkb/US-101.keyprop
 share/gnome/gkb/US-84.keyprop
 share/gnome/gkb/US-dec.keyprop
@@ -184,8 +196,9 @@ share/gnome/gkb/US.keyprop
 share/gnome/gkb/US_English.keyprop
 share/gnome/gkb/US_international.keyprop
 share/gnome/gkb/VN_Vietnamese.keyprop
-share/gnome/gkb/YU_Serbo-Croatian_x.keyprop
+share/gnome/gkb/YU_Serb_x.keyprop
 share/gnome/gkb/Yugoslav.keyprop
+share/gnome/gkb/presets.xml
 %%BATTERY%%share/gnome/gnome-2.0/ui/GNOME_BattstatApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_CDPlayerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_CharpickerApplet.xml
@@ -198,6 +211,7 @@ share/gnome/gnome-2.0/ui/GNOME_MiniCommanderApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_MixerApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_ModemlightsApplet.xml
 share/gnome/gnome-2.0/ui/GNOME_MultiloadApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_WirelessApplet.xml
 share/gnome/gweather/Locations
 %%BATTERY%%share/gnome/help/battstat/C/battstat.xml
 %%BATTERY%%share/gnome/help/battstat/C/figures/battstat-apperance.png
@@ -223,6 +237,12 @@ share/gnome/help/char-palette/C/legal.xml
 share/gnome/help/command-line/C/command-line.xml
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
+share/gnome/help/drivemount/C/drivemount.xml
+share/gnome/help/drivemount/C/figures/drivemount_applet_all.png
+share/gnome/help/drivemount/C/figures/drivemount_applet_floppy.png
+share/gnome/help/drivemount/C/figures/drivemount_applet_settings.png
+share/gnome/help/drivemount/C/figures/drivemount_applet_tooltip.png
+share/gnome/help/drivemount/C/legal.xml
 share/gnome/help/geyes/C/figures/geyes_applet.png
 share/gnome/help/geyes/C/geyes.xml
 share/gnome/help/geyes/C/legal.xml
@@ -242,14 +262,25 @@ share/gnome/help/mixer_applet2/C/legal.xml
 share/gnome/help/mixer_applet2/C/mixer_applet2.xml
 share/gnome/help/mixer_applet2/C/topic.dat
 %%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf
+@exec scrollkeeper-install -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/cdplayer-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/command-line-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/drivemount-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/geyes-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gkb-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gkb-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/gweather-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/gweather-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/mixer_applet2-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/mixer_applet2-C.omf 2>/dev/null || /usr/bin/true
 %%BATTERY%%share/gnome/pixmaps/battstat.png
 share/gnome/pixmaps/charpick.png
 share/gnome/pixmaps/drivemount-applet.png
@@ -293,7 +324,9 @@ share/gnome/pixmaps/gkb/it.png
 share/gnome/pixmaps/gkb/jo.png
 share/gnome/pixmaps/gkb/jp.png
 share/gnome/pixmaps/gkb/km.png
+share/gnome/pixmaps/gkb/kr.png
 share/gnome/pixmaps/gkb/kw.png
+share/gnome/pixmaps/gkb/lam.png
 share/gnome/pixmaps/gkb/la.png
 share/gnome/pixmaps/gkb/lb.png
 share/gnome/pixmaps/gkb/lt.png
@@ -316,6 +349,7 @@ share/gnome/pixmaps/gkb/se.png
 share/gnome/pixmaps/gkb/si.png
 share/gnome/pixmaps/gkb/sk.png
 share/gnome/pixmaps/gkb/so.png
+share/gnome/pixmaps/gkb/sr.png
 share/gnome/pixmaps/gkb/su.png
 share/gnome/pixmaps/gkb/sv.png
 share/gnome/pixmaps/gkb/sy.png
@@ -343,7 +377,16 @@ share/gnome/pixmaps/mixer/volume-medium.png
 share/gnome/pixmaps/mixer/volume-min.png
 share/gnome/pixmaps/mixer/volume-mute.png
 share/gnome/pixmaps/mixer/volume-zero.png
+share/gnome/pixmaps/wireless-applet/broken-0.png
+share/gnome/pixmaps/wireless-applet/no-link-0.png
+share/gnome/pixmaps/wireless-applet/signal-1-40.png
+share/gnome/pixmaps/wireless-applet/signal-41-60.png
+share/gnome/pixmaps/wireless-applet/signal-61-80.png
+share/gnome/pixmaps/wireless-applet/signal-81-100.png
+share/gnome/pixmaps/wireless-applet/wireless-applet.png
+share/gnome/wireless-applet/wireless-applet.glade
 share/gnome/xmodmap/xmodmap.am
+share/gnome/xmodmap/xmodmap.ar
 share/gnome/xmodmap/xmodmap.be
 share/gnome/xmodmap/xmodmap.bg
 share/gnome/xmodmap/xmodmap.br
@@ -357,9 +400,11 @@ share/gnome/xmodmap/xmodmap.dk
 share/gnome/xmodmap/xmodmap.dvorak
 share/gnome/xmodmap/xmodmap.ee
 share/gnome/xmodmap/xmodmap.es
+share/gnome/xmodmap/xmodmap.es_x86
 share/gnome/xmodmap/xmodmap.fi
 share/gnome/xmodmap/xmodmap.fr
 share/gnome/xmodmap/xmodmap.fr-2
+share/gnome/xmodmap/xmodmap.fr_x86
 share/gnome/xmodmap/xmodmap.gb
 share/gnome/xmodmap/xmodmap.gb-102
 share/gnome/xmodmap/xmodmap.gb-105
@@ -374,11 +419,13 @@ share/gnome/xmodmap/xmodmap.hu-lat1
 share/gnome/xmodmap/xmodmap.hu-sun-lat2
 share/gnome/xmodmap/xmodmap.hu.old
 share/gnome/xmodmap/xmodmap.hu_latin1
+share/gnome/xmodmap/xmodmap.hu_x86
 share/gnome/xmodmap/xmodmap.il
 share/gnome/xmodmap/xmodmap.il_phonetic
 share/gnome/xmodmap/xmodmap.is
 share/gnome/xmodmap/xmodmap.it
 share/gnome/xmodmap/xmodmap.jp
+share/gnome/xmodmap/xmodmap.kr
 share/gnome/xmodmap/xmodmap.la
 share/gnome/xmodmap/xmodmap.lt
 share/gnome/xmodmap/xmodmap.lt_b
@@ -405,7 +452,9 @@ share/gnome/xmodmap/xmodmap.th
 share/gnome/xmodmap/xmodmap.tr_f
 share/gnome/xmodmap/xmodmap.tr_q
 share/gnome/xmodmap/xmodmap.uk
+share/gnome/xmodmap/xmodmap.uk_x86
 share/gnome/xmodmap/xmodmap.us
+share/gnome/xmodmap/xmodmap.us101A_x86
 share/gnome/xmodmap/xmodmap.us-101
 share/gnome/xmodmap/xmodmap.us-84
 share/gnome/xmodmap/xmodmap.us-dec
@@ -435,12 +484,15 @@ share/locale/fi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/he/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/hi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ja/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ko/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lt/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/lv/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/mn/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ms/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nl/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-applets-2.0.mo
@@ -461,6 +513,7 @@ share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/xmodmap
+@dirrm share/gnome/wireless-applet
 @dirrm share/gnome/pixmaps/mixer
 @dirrm share/gnome/pixmaps/mini-commander
 @dirrm share/gnome/pixmaps/gweather
@@ -475,12 +528,12 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/gtik2_applet2/C/figures
 @dirrm share/gnome/help/gtik2_applet2/C
 @dirrm share/gnome/help/gtik2_applet2
-@dirrm share/gnome/help/gkb/C/figures
-@dirrm share/gnome/help/gkb/C
-@dirrm share/gnome/help/gkb
 @dirrm share/gnome/help/geyes/C/figures
 @dirrm share/gnome/help/geyes/C
 @dirrm share/gnome/help/geyes
+@dirrm share/gnome/help/drivemount/C/figures
+@dirrm share/gnome/help/drivemount/C
+@dirrm share/gnome/help/drivemount
 @dirrm share/gnome/help/command-line/C/figures
 @dirrm share/gnome/help/command-line/C
 @dirrm share/gnome/help/command-line
@@ -490,18 +543,11 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/cdplayer/C/figures
 @dirrm share/gnome/help/cdplayer/C
 @dirrm share/gnome/help/cdplayer
-%%BATTERY%%@dirrm share/gnome/help/battstat/C/figures
-%%BATTERY%%@dirrm share/gnome/help/battstat/C
-%%BATTERY%%@dirrm share/gnome/help/battstat
 @dirrm share/gnome/gweather
 @dirrm share/gnome/gkb
-@dirrm share/gnome/geyes/Horrid
-@dirrm share/gnome/geyes/Default-tiny
-@dirrm share/gnome/geyes/Default
-@dirrm share/gnome/geyes/Bloodshot
-@dirrm share/gnome/geyes/Bizarre
-@dirrm share/gnome/geyes
+@dirrm share/gnome/gen_util
 %%BATTERY%%@dirrm share/gnome/battstat_applet
+@dirrm libexec/gnome-applets
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/prefs
@@ -524,3 +570,13 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/cdplayer-applet
 %%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet/prefs
 %%BATTERY%%@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/battstat-applet
+@unexec scrollkeeper-uninstall -q %D/%%BATTERY%%share/gnome/omf/gnome-applets/battstat-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/cdplayer-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/command-line-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/drivemount-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/geyes-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gkb-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gtik2_applet2-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/gweather-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/mixer_applet2-C.omf 2>/dev/null || /usr/bin/true

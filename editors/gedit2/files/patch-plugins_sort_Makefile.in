@@ -1,0 +1,11 @@
+--- plugins/sort/Makefile.in.orig	Tue Oct 15 01:25:09 2002
++++ plugins/sort/Makefile.in	Tue Oct 15 01:25:22 2002
+@@ -152,7 +152,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libsort_la_LDFLAGS = 
++libsort_la_LDFLAGS = -module -avoid-version
+ libsort_la_LIBADD = 
+ libsort_la_OBJECTS =  sort.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

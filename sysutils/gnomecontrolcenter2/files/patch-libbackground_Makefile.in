@@ -1,0 +1,11 @@
+--- libbackground/Makefile.in.orig	Fri Jan 17 12:33:42 2003
++++ libbackground/Makefile.in	Fri Jan 17 12:34:13 2003
+@@ -151,7 +151,7 @@
+ 
+ INCLUDES = \
+         -DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 		\
+-	-DGNOME_ICONDIR=\""${prefix}/share/pixmaps"\"			\
++	-DGNOME_ICONDIR=\""${datadir}/pixmaps"\"			\
+ 	-DG_LOG_DOMAIN=\"capplet-common\"				\
+ 	-I$(top_srcdir)/						\
+ 	@CAPPLET_CFLAGS@

@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- gtk/Makefile.in.orig	Sat Jun  1 14:27:02 2002
-+++ gtk/Makefile.in	Sat Jun  1 14:29:10 2002
-@@ -182,7 +182,7 @@
+--- gtk/Makefile.in.orig	Thu Dec 12 12:07:53 2002
++++ gtk/Makefile.in	Thu Dec 12 12:08:43 2002
+@@ -183,7 +183,7 @@
  	-DG_LOG_DOMAIN=\"Gtk\"				\
  	-DGTK_LIBDIR=\"$(libdir)\"			\
  	-DGTK_DATA_PREFIX=\"$(prefix)\"			\
 -	-DGTK_SYSCONFDIR=\"$(sysconfdir)\"		\
 +	-DGTK_SYSCONFDIR=\"$(datadir)/themes/Default/gtk-2.0\"		\
- 	-DGTK_LOCALEDIR=\"$(gtklocaledir)\"		\
  	-DGTK_VERSION=\"@GTK_VERSION@\"			\
  	-DGTK_BINARY_VERSION=\"@GTK_BINARY_VERSION@\"	\
+ 	-DGTK_HOST=\"@host@\"	                        \

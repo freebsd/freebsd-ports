@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	gal2
-PORTVERSION=	0.0.7
+PORTVERSION=	1.99.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gal2-0/0.0
-DISTNAME=	${PORTNAME}-0-${PORTVERSION}
+MASTER_SITE_SUBDIR=	sources/gal/1.99
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	libwnck
-PORTVERSION=	0.18
+PORTVERSION=	2.2.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.18
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

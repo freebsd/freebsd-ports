@@ -1,6 +1,6 @@
---- configure.orig	Tue May  7 01:02:03 2002
-+++ configure	Tue May  7 01:04:35 2002
-@@ -7978,6 +7978,7 @@
+--- configure.orig	Thu Jan 23 17:55:03 2003
++++ configure	Tue Feb  4 20:31:01 2003
+@@ -8336,6 +8336,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"

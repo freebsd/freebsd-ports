@@ -1,0 +1,10 @@
+--- docs/Makefile.in.orig	Fri Jan 24 16:45:09 2003
++++ docs/Makefile.in	Fri Jan 24 16:45:09 2003
+@@ -274,6 +274,7 @@
+ dist-hook-local: all-local
+ 
+ @ENABLE_GTK_DOC_TRUE@all-local: html-build.stamp
++@ENABLE_GTK_DOC_FALSE@all-local:
+ 
+ #### scan ####
+ 
