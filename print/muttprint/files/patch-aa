@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May 27 19:37:30 2003
-+++ Makefile	Tue May 27 22:40:28 2003
+--- Makefile.orig	Fri Aug  1 13:58:29 2003
++++ Makefile	Sun May 23 17:32:32 2004
 @@ -7,35 +7,35 @@
  
  # Change this for local installation, 
@@ -46,8 +46,8 @@
 +#INSTALL = $(install) -m 0644 
  
  
- nothing:
-@@ -44,15 +44,17 @@
+ all:
+@@ -43,17 +43,17 @@
  
  install: 
  	mkdir -p $(docdir)/$(docdirname) $(bindir) $(sharedir)/muttprint/translations \
@@ -62,13 +62,14 @@
 +	$(MAKE) -C doc/manpages mandir=$(mandir) install
 +
 +install-with-doc: install
-+	mkdir -p $(docdir)/$(docdirname)
 +	${BSD_INSTALL_DATA} CHANGES COPYING INSTALL README* sample-muttprintrc-* \
  		$(docdir)/$(docdirname)
 -	$(INSTALL) `find pics -type f -print` $(sharedir)/muttprint/
 -	$(INSTALL) `find translations -type f -print` $(sharedir)/muttprint/translations
+ 	$(MAKE) -C langinfo bindir=$(bindir) install
  	$(MAKE) -C doc/manual docdir=$(docdir) docdirname=$(docdirname) install
 -	$(MAKE) -C doc/manpages mandir=$(mandir) install
+-
  
  uninstall:
- 	rm $(bindir)/muttprint
+ 	rm $(bindir)/muttprint*

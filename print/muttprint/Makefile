@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	muttprint
-PORTVERSION=	0.71
-PORTREVISION=	1
+PORTVERSION=	0.72a
 CATEGORIES?=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
@@ -24,16 +23,27 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if defined(WITH_CUPS)
 RUN_DEPENDS+=	cupstestppd:${PORTSDIR}/print/cups-lpr \
 		espgs:${PORTSDIR}/print/cups-pstoraster
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+MAKE_ENV+=	CCFLAGS="-I${PREFIX}/include"
+PLIST_SUB+=	LANGINFO=""
+.else
+NO_BUILD=	yes
+PLIST_SUB+=	LANGINFO="@comment "
+.endif
+
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 USE_GMAKE=	yes
-ALL_TARGET=	nothing
 
 MAN1=		muttprint.1
 MANCOMPRESSED=	yes
@@ -79,4 +89,4 @@ post-patch:
 .endif
 	@${GZIP_CMD} ${WRKSRC}/doc/manpages/*/muttprint.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
