@@ -7,48 +7,37 @@ ${BSD_INSTALL_PROGRAM} ${BJAM} ${PREFIX}/bin/
 ${FIND} ${WRKSRC}/bin/boost/libs -type f -name "*.a"\
     -exec ${BSD_INSTALL_DATA} \{\} ${PREFIX}/lib \;
 
-${FIND} ${WRKSRC}/bin/boost/libs -type f -name "*.so.1"\
+${FIND} ${WRKSRC}/bin/boost/libs -type f -name "*.so.2"\
 	-exec ${BSD_INSTALL_DATA} \{\} ${PREFIX}/lib \; 
 
 # Create symlinks for shared libraries
 cd ${PREFIX}/lib;
-for i in libboost*.so.1; do
-	${LN} -s $i ${i%%.1};
+for i in libboost*.so.2; do
+	${LN} -s $i ${i%%.2};
 done;
 
 # Install headers
-cd ${WRKSRC} && ${FIND} boost -type d\
+cd ${WRKSRC} && ${FIND} boost -type d -a \! -name "*.orig"\
     -exec ${MKDIR} ${PREFIX}/include/\{\} \;
-cd ${WRKSRC} && ${FIND} boost -type f\
+cd ${WRKSRC} && ${FIND} boost -type f -a \! -name "*.orig"\
     -exec ${BSD_INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \;
 
 # Documentation & examples
-if [ -n ${NOPORTDOCS+xyz} ]; then
-    # Fix links to example files
-    cd ${WRKSRC}/libs && for dir in *; do
-	if [ -d $dir/doc ]; then
-	    for file in $dir/doc/*; do
-		${GREP} -s -q '\.\./example/' $file && \
-		${REINPLACE_CMD} -e\
-		"s|../example/|${PREFIX}/share/examples/boost/$dir/|g" $file
-	    done;
-	fi;
-    done;
-
+if [ "${NOPORTDOCS}xyz" = "xyz" ]; then
     # Installation
-    ${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
+    ${MKDIR} ${DOCSDIR}
 
     ${FIND} ${WRKSRC} -type f -exec chmod 0444 {} \;
+    ${FIND} ${WRKSRC} -type d -exec chmod 0555 {} \;
     cd ${WRKSRC} &&\
 	${FIND} . -name "*.htm" -o -name "*.html"  -o -name "*.css"\
 	    -o -name "*.jp*g" -o -name "*.png" -o -name "*.gif"\
 	    | ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR} -
 
-    cd ${WRKSRC}/libs && for dir in *; do
-	if [ -d ${WRKSRC}/libs/${dir}/example ]; then
-	    ${MKDIR} ${EXAMPLESDIR}/${dir};
-	    cd ${WRKSRC}/libs/${dir}/example && ${TAR} cf  - *  \
-		| ${TAR} xUCf ${EXAMPLESDIR}/${dir} -;
-	fi;
-    done;
+    cd ${WRKSRC}/libs &&\
+    ${FIND} . -name "example" -o -name "examples" -o -name "*example*.cpp"\
+	    -o -name "*example*.c" -o -name "*example*.hpp" | ${UNIQ} |\
+	    ${GREP} -v "assign/test" | ${GREP} -v "iterator/test" | \
+ 	    ${GREP} -v "range/test" |\
+	    ${TAR} cTf - - | ${TAR} xUCf ${DOCSDIR}/libs -
 fi;

@@ -85,6 +85,7 @@
     SUBDIR += bonobo
     SUBDIR += bonobo-conf
     SUBDIR += boost
+    SUBDIR += boost-python
     SUBDIR += bugbuddy2
     SUBDIR += bugzilla
     SUBDIR += buildtool
@@ -1365,7 +1366,6 @@
     SUBDIR += sparc-rtems-gdb
     SUBDIR += sparc-rtems-objc
     SUBDIR += spin
-    SUBDIR += spirit
     SUBDIR += splint
     SUBDIR += st
     SUBDIR += stlfilt

@@ -1,0 +1,11 @@
+--- tools/build/v1/gcc-stlport-tools.jam.orig	Mon Dec 13 19:13:56 2004
++++ tools/build/v1/gcc-stlport-tools.jam	Mon Dec 13 19:14:18 2004
+@@ -40,7 +40,7 @@
+         }
+     case *BSD :
+         {
+-        flags gcc LINKFLAGS <stlport-iostream>on : -pthread ;
++        flags gcc LINKFLAGS <stlport-iostream>on : %%PTHREAD_LIBS%% ;
+         }
+     case IRIX :
+         {
