@@ -19,6 +19,11 @@ MAN1=	camediaplay.1
 
 DOC=	README.english README.japanese PROTOCOL
 
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} pkg-install
+.endif
+
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/camediaplay
 	for i in ${DOC}; do \
