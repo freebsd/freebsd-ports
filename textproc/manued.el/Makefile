@@ -8,8 +8,8 @@
 PORTNAME=	manued.el
 PORTVERSION=	0.9.4
 CATEGORIES=	textproc elisp
-MASTER_SITES=	http://www.mpi-sb.mpg.de/~hitoshi/projects/manued/arcs/ \
-		http://www.archi.is.tohoku.ac.jp/~yamauchi/projects/manued/arcs/
+MASTER_SITES=	http://www.mpi-sb.mpg.de/~hitoshi/otherprojects/manued/arcs/ \
+		http://www.archi.is.tohoku.ac.jp/~yamauchi/otherprojects/manued/arcs/
 DISTFILES=	${EL}
 EXTRACT_ONLY=	# empty
 .if !defined(NOPORTDOCS)
