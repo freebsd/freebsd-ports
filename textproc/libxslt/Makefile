@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxslt
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -22,7 +22,8 @@ INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget libxml2
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN3=		libexslt.3 libxslt.3
 MAN1=		xsltproc.1
@@ -45,11 +46,20 @@ PKGNAMESUFFIX=	-nopython
 CONFIGURE_ARGS+=	--with-mem-debug
 .endif
 
+.if exists(${LOCALBASE}/lib/libgcrypt.so)
+WITH_GCRYPT=	yes
+.endif
+
+.if defined(WITH_GCRYPT)
+LIB_DEPENDS+=	gcrypt.12:${PORTSDIR}/security/libgcrypt
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Libxslt has the following additional tunables:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITHOUT_PYTHON=yes		Turns off python support"
+	@${ECHO_MSG} "	WITH_GCRYPT=yes			Turns on libgcrypt support"
 	@${ECHO_MSG} ""
 
 post-patch:
