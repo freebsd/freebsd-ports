@@ -3,13 +3,13 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.25 1998/05/22 17:09:05 andreas Exp $
+# $Id: Makefile,v 1.26 1998/05/24 11:29:13 andreas Exp $
 #
 
-DISTNAME=	bb-1.06c
+DISTNAME=	bb-1.08
 CATEGORIES=	net
-MASTER_SITES=	http://freefall.freebsd.org/~andreas/download/
-
+MASTER_SITES=	http://maclawran.ca/~sean/bb-dnld/ \
+		http://freefall.freebsd.org/~andreas/download/
 MAINTAINER=	andreas@FreeBSD.ORG
 
 # The FreeBSD Ports Team has permission to include this in our CDROM
@@ -21,8 +21,8 @@ WRKSRC=		${WRKDIR}/bb
 pre-configure:
 	@echo "==================================================="
 	@echo "You need to install a WWW Server to use this port"
-	@echo "For example: - apache or "
-	@echo "             - apache-ssl
+	@echo "For example: - apache13 or "
+	@echo "             - apache13-modssl
 	@echo "port."
 	@echo "==================================================="
 
@@ -119,7 +119,7 @@ do-install:
 	@echo "        http://localhost/bb"
 	@echo ""
 	@echo "Look here for a life sample:"
-	@echo "        http://www.menet.umn.edu/~clolson/bb/bb.html"
+	@echo "        http://maclawran.ca/bb/bb.html"
 	@echo ""
 
 .include <bsd.port.mk>
