@@ -1,5 +1,5 @@
-# New ports collection makefile for:   cim
-# Version required:		2.10
+# New ports collection makefile for:	cim
+# Version required:		3.29
 # Date created:			21 Sept 1996
 # Whom:				giffunip
 #
@@ -8,10 +8,7 @@
 
 DISTNAME=	cim-3.29
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/  \
-		ftp://ftp.fenk.wau.nl/pub/lang/simula/compilers/cim/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	devel/lang/simula
+MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 
 MAINTAINER=	ports@FreeBSD.org
 
