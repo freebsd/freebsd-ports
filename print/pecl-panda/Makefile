@@ -7,6 +7,7 @@
 
 PORTNAME=	panda
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -19,16 +20,8 @@ COMMENT=	A PECL extension to create PDF documents
 LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda
 
 USE_PHP=	yes
-USE_PHPIZE=	yes
+USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-panda=${LOCALBASE}
-
-do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/panda.so \
-	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
