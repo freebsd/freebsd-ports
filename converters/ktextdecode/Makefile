@@ -11,7 +11,7 @@ CATEGORIES=	converters kde
 MASTER_SITES=	http://webua.net/zavolzhsky/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	The simple text conversion utility for KDE 3
 
 USE_BZIP2=	yes

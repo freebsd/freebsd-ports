@@ -11,7 +11,7 @@ PORTVERSION=	0.2.20
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Direct connect interface library for dcgui
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

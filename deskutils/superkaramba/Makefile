@@ -11,7 +11,7 @@ CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netdragon
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		KDE tool that allows interactive eye-candy on the desktop
 
 .if defined(WITH_XMMS)

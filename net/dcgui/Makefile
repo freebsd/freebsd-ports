@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 DISTNAME=	dcgui-qt-${PORTVERSION}
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A Direct Connect client QT GUI
 
 LIB_DEPENDS=	dc.0:${PORTSDIR}/net/dclib \

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=		multimedia kde
 MASTER_SITES=		http://www.hakubi.us/hayes/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		A filesystem-based playlist for Noatun
 
 LIB_DEPENDS=		noatun:${PORTSDIR}/multimedia/kdemultimedia3

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=		print kde
 MASTER_SITES=		http://lisas.de/kover/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		WYSIWYG CD cover printer
 
 USE_KDELIBS_VER=	3

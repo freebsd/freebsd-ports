@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://home.tiscali.de/rainerb/ktagebuch/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		A diary program for KDE 3
 
 USE_KDELIBS_VER=	3

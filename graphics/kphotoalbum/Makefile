@@ -9,7 +9,7 @@ PORTVERSION=		1.1
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://ktown.kde.org/kimdaba/download/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Image database for KDE
 
 USE_KDELIBS_VER=	3
