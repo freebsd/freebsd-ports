@@ -31,7 +31,7 @@ WRKSRC=		${WRKDIR}/ssh
 
 do-fetch:
 .if !exists(${WRKDIR}/.fetch_done)
-	@${SETENV} WRKDIR=${WRKDIR} ${SCRIPTDIR}/fetchit)
+	@${SETENV} WRKDIR=${WRKDIR} ${SCRIPTDIR}/fetchit
 .endif
 	@${TOUCH} ${WRKDIR}/.fetch_done
 
