@@ -9,22 +9,27 @@ PORTNAME=	twoftpd
 PORTVERSION=	1.17
 PORTREVISION=	2
 CATEGORIES=	ftp
-MASTER_SITES=	http://untroubled.org/twoftpd/
+MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	A simple, secure, efficient FTP server
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-unix.a:${PORTSDIR}/devel/bglibs \
+		${LOCALBASE}/lib/libcvm-client.a:${PORTSDIR}/security/cvm
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO
 MAN1=		twoftpd-auth.1 twoftpd-xfer.1
 
 do-configure:
+	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${MANPREFIX}/man"	> ${WRKSRC}/conf-man
+	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${CC} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${LOCALBASE}/include/bglibs" > ${WRKSRC}/conf-bgincs
-	${ECHO_CMD} "${LOCALBASE}/lib"		> ${WRKSRC}/conf-bglibs
-	${ECHO_CMD} "${PREFIX}/bin"		> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${MANPREFIX}/man"		> ${WRKSRC}/conf-man
-	${ECHO_CMD} "${CC} ${CFLAGS}"		> ${WRKSRC}/conf-cc
+	${ECHO_CMD} "${LOCALBASE}/lib"	> ${WRKSRC}/conf-bglibs
 
 do-install:
 	cd ${WRKSRC} && ./installer
