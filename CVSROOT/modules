@@ -400,6 +400,7 @@ atlast		ports/lang/atlast
 atlc		ports/cad/atlc
 atomix		ports/games/atomix
 atp		ports/news/atp
+atr3d		ports/games/atr3d
 aub		ports/news/aub
 aube		ports/audio/aube
 auctex		ports/print/auctex
