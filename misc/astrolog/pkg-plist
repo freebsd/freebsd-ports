@@ -1,5 +1,6 @@
 bin/astrolog
 lib/astrolog/astrolog.dat-dist
+lib/astrolog/astrolog.dat
 lib/astrolog/LRZ5_24
 lib/astrolog/CHI_24
 lib/astrolog/CPJV_24
