@@ -240,6 +240,7 @@
     SUBDIR += sting
     SUBDIR += suckblow
     SUBDIR += sup
+    SUBDIR += svnc
     SUBDIR += tac_plus4
     SUBDIR += tcpflow
     SUBDIR += tcpillust
