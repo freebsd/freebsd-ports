@@ -6,11 +6,14 @@
 %%MICO_SERVICE%%bin/extcriteriad
 %%MICO_SERVICE%%bin/extnoded
 %%MICO_SERVICE%%bin/extreferenced
+%%MICO_SERVICE%%bin/factoryfinderd
+%%MICO_SERVICE%%bin/genericfactory
 bin/idl
 bin/imr
 bin/iordump
 bin/ird
 %%MICO_SERVICE%%bin/lifecontainmentd
+%%MICO_SERVICE%%bin/lifecriteriad
 %%MICO_SERVICE%%bin/lifenoded
 %%MICO_SERVICE%%bin/lifereferenced
 bin/mico-ar
