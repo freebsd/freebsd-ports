@@ -5,9 +5,6 @@ user. It is designed to look good and work well, but takes a
 feature-rich approach rather than one of minimalism while still
 maintaining speed and efficiency.
 
-If you want the KANJI feature enable, use
-make -DKANJI install
-
 WWW: http://www.eterm.org/
 
 - Murray Stokely
