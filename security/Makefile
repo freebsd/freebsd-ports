@@ -12,6 +12,7 @@
     SUBDIR += cfs
     SUBDIR += checkpassword
     SUBDIR += chrootuid
+    SUBDIR += cksfv
     SUBDIR += cops
     SUBDIR += crack
     SUBDIR += cyrus-sasl
