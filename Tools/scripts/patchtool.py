@@ -108,7 +108,7 @@ def locateportdir(path, wrkdirprefix= '', strict = False):
 #
 # Get value of a make(1) variable called varname. Optionally maintain a cache
 # for resolved varname:makepath pairs to speed-up operation if the same variable
-# from the exactly same file is requiested repeatedly (invocation of make(1) is
+# from the exactly same file is requested repeatedly (invocation of make(1) is
 # very expensive operation...)
 #
 def querymakevar(varname, path = 'Makefile', strict = False, cache = {}):
@@ -456,6 +456,31 @@ class PatchesCollection:
 		return self.patches.values()
 
 
+#
+# Resolve all symbolic links in the given path to a file
+#
+def truepath(path):
+	if not os.path.isfile(path):
+		raise IOError(errno.ENOENT, path)
+
+	result = ''
+	while len(path) > 0:
+		path, lastcomp = os.path.split(path)
+		if len(lastcomp) == 0:
+			lastcomp = path
+			path = ''
+		result = os.path.join(lastcomp, result)
+		if len(path) == 0:
+			break
+		if os.path.islink(path):
+			linkto = os.path.normpath(os.readlink(path))
+			if linkto[0] != '/':
+				path = os.path.join(path, linkto)
+			else:
+				path = linkto
+	return result[:-1]
+
+
 def main():
 	try:
 		opts, args = getopt.getopt(sys.argv[1:], 'afui')
@@ -507,6 +532,8 @@ def generate(args, automatic, force, ignoremtime):
 		if not os.path.isfile(filepath):
 			raise IOError(errno.ENOENT, filepath)
 			# Not reached #
+
+		filepath = truepath(filepath)
 
 		wrkdirprefix = querymakevar('WRKDIRPREFIX', Vars.ETC_MAKE_CONF, False)
 		portdir = locateportdir(os.path.dirname(filepath), wrkdirprefix, True)
