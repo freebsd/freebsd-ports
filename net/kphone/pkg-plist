@@ -11,6 +11,7 @@ bin/kphone
 %%DATADIR%%/icons/videocall.png
 %%DATADIR%%/translations/kphone_de.qm
 %%DATADIR%%/translations/kphone_fi.qm
+%%DATADIR%%/translations/kphone_fr.qm
 %%DATADIR%%/translations/kphone_pt_BR.qm
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/icons
