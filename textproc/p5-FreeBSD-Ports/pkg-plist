@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/FreeBSD/Ports/Port.pm
+lib/perl5/site_perl/%%PERL_VER%%/FreeBSD/Ports.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/FreeBSD/Ports
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/FreeBSD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeBSD/Ports
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeBSD

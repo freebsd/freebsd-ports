@@ -1,0 +1,17 @@
+FreeBSD::Ports and FreeBSD::Ports::Port are modules for parsing
+FreeBSD's Ports INDEX file and selecting ports that match certain
+criteria.
+
+For example, you might want to list ports maintained by tom@FreeBSD.org
+sorted alphabetically:
+  my $ports = tie my %port, 'FreeBSD::Ports', '/usr/ports/INDEX';
+  $ports->maintainer('tom@FreeBSD.org');
+  $ports->sort('alpha');
+  foreach my $p (keys %port) {
+      print $p->as_ascii,"\n";
+  }
+
+WWW: http://people.FreeBSD.org/~tom/portpm/
+
+- Tom
+tom@FreeBSD.org
