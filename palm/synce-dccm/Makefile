@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	synce-dccm
-PORTVERSION=	0.8
+PORTVERSION=	0.8.9
 CATEGORIES=	palm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	synce
@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=	synce
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	Listener daemon for connections from WinCE devices
 
-LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 
 MAN1=		dccm.1 synce-sound.1
@@ -22,7 +21,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-libsynce=${LOCALBASE}
+USE_ICONV=	yes
 
 INSTALLS_SHLIB=	yes
+
+post-install:
+	@${ECHO_CMD} "*******************************************************************************"
+	@${ECHO_CMD} "*** Edit ${PREFIX}/bin/synce-sound and substitute 'playwave' "
+	@${ECHO_CMD} "*** for your wavefile player of choice."
+	@${ECHO_CMD} "*******************************************************************************"
 
 .include <bsd.port.mk>
