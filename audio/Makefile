@@ -73,6 +73,7 @@
     SUBDIR += wmcdplay
     SUBDIR += wmmixer
     SUBDIR += wmsound
+    SUBDIR += wmtune
     SUBDIR += workman
     SUBDIR += wsoundprefs
     SUBDIR += x11amp
