@@ -12,7 +12,7 @@
  SHELL= /bin/sh
  
  
-@@ -39,21 +39,17 @@
+@@ -39,21 +39,23 @@
  # Get local definitions from c-client directory
  
  C = ../c-client

@@ -1,5 +1,5 @@
---- src/ipopd/ipop3d.c.old	Wed Oct 25 01:15:46 2000
-+++ src/ipopd/ipop3d.c	Sun Jan  7 21:40:25 2001
+--- src/ipopd/ipop3d.c.orig	Sun Dec 10 14:31:14 2000
++++ src/ipopd/ipop3d.c	Tue Mar 27 07:10:35 2001
 @@ -35,6 +35,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -17,12 +17,12 @@
  /* Global storage */
  
 +#ifdef DRAC_AUTH
-+#define DRACTIMEOUT 10*60       /* check every 10 minutes */
-+time_t lastdrac = 0;          /* time of last drac check */
++#define DRACTIMEOUT 10*60	/* check every 10 minutes */
++time_t lastdrac = 0;		/* time of last drac check */
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
-+
- char *version = "2000.69";	/* server version */
++ 
+ char *version = "2000.70";	/* server version */
  short state = AUTHORIZATION;	/* server state */
  short critical = NIL;		/* non-zero if in critical code */
 @@ -104,7 +115,7 @@

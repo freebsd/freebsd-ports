@@ -1,5 +1,5 @@
---- src/imapd/imapd.c.old	Sat Nov 18 05:16:29 2000
-+++ src/imapd/imapd.c	Sun Dec 31 18:53:25 2000
+--- src/imapd/imapd.c.orig	Tue Jan  9 16:11:44 2001
++++ src/imapd/imapd.c	Tue Mar 27 07:16:48 2001
 @@ -17,7 +17,7 @@
   * The full text of our legal notices is contained in the file called
   * CPYRIGHT, included with this Distribution.
@@ -44,15 +44,15 @@
  /* Global storage */
  
 +#ifdef DRAC_AUTH
-+#define DRACTIMEOUT 10*60       /* check every 10 minutes */
-+time_t lastdrac = 0;          /* time of last drac check */
++#define DRACTIMEOUT 10*60	/* check every 10 minutes */
++time_t lastdrac = 0;		/* time of last drac check */
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2000.284";	/* version number of this server */
+ char *version = "2000.287";	/* version number of this server */
  time_t alerttime = 0;		/* time of last alert */
  time_t sysalerttime = 0;	/* time of last system alert */
-@@ -1131,6 +1142,44 @@
+@@ -1139,6 +1150,44 @@
  	      lasterror ());
        return;
      }
