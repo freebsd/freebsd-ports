@@ -1,7 +1,0 @@
-You will need to add the relevent MIME information to your browser:
-
-     MIME type: application/x-bittorrent
-File extension: .torrent
-       Program: PREFIX/bin/BitTorrent
-
-Please refer to the BitTorrent(1) manual page for additional arguments.
