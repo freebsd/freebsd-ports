@@ -8,12 +8,12 @@ fi
 case "$1" in
 start)
 	if [ -x ${PREFIX}/sbin/oopsctl ]; then
-		${PREFIX}/sbin/oopsctl start 2>&1 > /dev/null; echo -n ' oops'
+		${PREFIX}/sbin/oopsctl $1 2>&1 > /dev/null; echo -n ' oops'
 	fi
 	;;
 stop)
 	if [ -x ${PREFIX}/sbin/oopsctl ]; then
-		${PREFIX}/sbin/oopsctl -s /tmp/oopsctl stop
+		${PREFIX}/sbin/oopsctl $1
 	fi
 	;;
 *)

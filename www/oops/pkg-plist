@@ -12,7 +12,7 @@ etc/oops/select.sql.sample
 etc/oops/tables/koi-alt.tab
 etc/oops/tables/koi-iso.tab
 etc/oops/tables/koi-win.tab
-etc/rc.d/oops.sh
+etc/rc.d/oops.sh.sample
 libexec/oops/accel.so
 libexec/oops/berkeley_db_api.so
 libexec/oops/custom_log.so
