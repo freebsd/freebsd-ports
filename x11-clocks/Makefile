@@ -9,6 +9,7 @@
     SUBDIR += asclock-gtk
     SUBDIR += asclock-xlib
     SUBDIR += astime
+    SUBDIR += astzclock
     SUBDIR += bbdate
     SUBDIR += bclock
     SUBDIR += dclock
