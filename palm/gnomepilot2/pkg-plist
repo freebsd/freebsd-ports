@@ -9,10 +9,12 @@ bin/gpilotd
 bin/gpilotd-client
 bin/gpilotd-control-applet
 bin/gpilotd-session-wrapper
+bin/gpilotdcm-client
 bin/memo_file_capplet
 bin/pilot_applet
 etc/CORBA/servers/gpilotd.gnorba
 etc/CORBA/servers/pilot_applet.gnorba
+include/gpilotd/gnome-pilot-client.h
 include/gpilotd/gnome-pilot-conduit-backup.h
 include/gpilotd/gnome-pilot-conduit-file.h
 include/gpilotd/gnome-pilot-conduit-standard-abs.h
@@ -25,6 +27,8 @@ include/gpilotd/gpilot-userinfo.h
 include/gpilotd/gpilotd-app-dummy-callbacks.h
 include/gpilotd/gpilotd-app.h
 include/gpilotd/gpilotd-conduit-mgmt.h
+include/libgpilotdCM/gnome-pilot-conduit-config.h
+include/libgpilotdCM/gnome-pilot-conduit-management.h
 lib/gnome-pilot/conduits/libbackup_conduit.a
 lib/gnome-pilot/conduits/libbackup_conduit.so
 lib/gnome-pilot/conduits/libbackup_conduit.so.0
@@ -40,15 +44,20 @@ lib/gnome-pilot/conduits/libfile_conduit.so.0
 lib/gnome-pilot/conduits/libmemo_file_conduit.a
 lib/gnome-pilot/conduits/libmemo_file_conduit.so
 lib/gnome-pilot/conduits/libmemo_file_conduit.so.0
-lib/libgconduit.a
-lib/libgconduit.so
-lib/libgconduit.so.0
 lib/libgpilotd.a
 lib/libgpilotd.so
 lib/libgpilotd.so.0
-lib/libgpilotdconduitmgmt.a
-lib/libgpilotdconduitmgmt.so
-lib/libgpilotdconduitmgmt.so.0
+lib/libgpilotdcm.a
+lib/libgpilotdcm.so
+lib/libgpilotdcm.so.0
+lib/libgpilotdconduit.a
+lib/libgpilotdconduit.so
+lib/libgpilotdconduit.so.0
+lib/libgpilotdconduitmgmtOLD.a
+lib/libgpilotdconduitmgmtOLD.so
+lib/libgpilotdconduitmgmtOLD.so.0
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/applets/Utility/pilot_applet.desktop
 share/gnome/control-center/Peripherals/PalmPilot/.directory
 share/gnome/control-center/Peripherals/PalmPilot/Conduits/.directory
@@ -58,6 +67,18 @@ share/gnome/control-center/Peripherals/PalmPilot/Conduits/expense-conduit-contro
 share/gnome/control-center/Peripherals/PalmPilot/Conduits/file-conduit-control-applet.desktop
 share/gnome/control-center/Peripherals/PalmPilot/Conduits/memo_file_capplet.desktop
 share/gnome/control-center/Peripherals/PalmPilot/gpilotd-control-applet.desktop
+share/gnome/gnome-pilot/conduits/backup.conduit
+share/gnome/gnome-pilot/conduits/expense.conduit
+share/gnome/gnome-pilot/conduits/file.conduit
+share/gnome/gnome-pilot/conduits/memofile.conduit
+share/gnome/gnome-pilot/conduits/sendmail.conduit
+share/gnome/gnome-pilot/glade/gnome-palm.png
+share/gnome/gnome-pilot/glade/gnome-pilot-watermark.png
+share/gnome/gnome-pilot/glade/gpilotd-capplet.glade
+share/gnome/gnome-pilot/glade/pilot-applet.glade
+share/gnome/gob/gnome-pilot-client.gob
+share/gnome/gob/gnome-pilot-conduit-config.gob
+share/gnome/gob/gnome-pilot-conduit-management.gob
 share/gnome/idl/gnome-pilot.idl
 share/gnome/mime-info/palm.keys
 share/gnome/mime-info/palm.mime
@@ -73,10 +94,14 @@ share/locale/no/LC_MESSAGES/gnome-pilot.mo
 share/locale/pl/LC_MESSAGES/gnome-pilot.mo
 share/locale/pt_PT/LC_MESSAGES/gnome-pilot.mo
 share/locale/sv/LC_MESSAGES/gnome-pilot.mo
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/locale/uk/LC_MESSAGES/gnome-pilot.mo
+@dirrm share/gnome/gob
+@dirrm share/gnome/gnome-pilot/glade
+@dirrm share/gnome/gnome-pilot/conduits
+@dirrm share/gnome/gnome-pilot
 @dirrm share/gnome/control-center/Peripherals/PalmPilot/Conduits
 @dirrm share/gnome/control-center/Peripherals/PalmPilot
 @dirrm lib/gnome-pilot/conduits
 @dirrm lib/gnome-pilot
+@dirrm include/libgpilotdCM
 @dirrm include/gpilotd
