@@ -1,9 +1,9 @@
---- Makefile.in.dist	Thu Jan 10 03:50:32 2002
-+++ Makefile.in	Sat Feb  9 18:07:56 2002
+--- Makefile.in.dist	Fri May  3 02:29:27 2002
++++ Makefile.in	Thu Sep 12 21:41:33 2002
 @@ -99,7 +99,7 @@
  sgid = @sgid@
  
- EXTRA_DIST = include/*.h example/jwhois.conf macros/*.m4 jwhois.spec.in jwhois.spec
+ EXTRA_DIST = include/*.h example/jwhois.conf macros/*.m4 jwhois.spec.in jwhois.spec debian/*
 -SUBDIRS = doc intl src example @POSUB@
 +SUBDIRS = doc intl src @POSUB@
  subdir = .

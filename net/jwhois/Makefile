@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	jwhois
-PORTVERSION=	3.1.0
-PORTREVISION=	2
+PORTVERSION=	3.2.0
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	jwhois
-
-PATCH_SITES=	http://galileo.spaceports.com/~jharris/distfiles/
-PATCHFILES=	jwhois.rel_3_1_0-to-2002-04-20@2000UTC.patch.asc.gz
 
 MAINTAINER=	matusita@FreeBSD.org
 
