@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	1.85
+PORTVERSION=	1.86
 CATEGORIES=	devel www
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://stud.fh-heilbronn.de/~zeller/download/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
