@@ -337,6 +337,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver
+    SUBDIR += phoenix
     SUBDIR += php-dyn
     SUBDIR += php-screw
     SUBDIR += php-templates
@@ -377,6 +378,7 @@
     SUBDIR += smb_auth
     SUBDIR += snarf
     SUBDIR += sqmgrlog
+    SUBDIR += squid
     SUBDIR += squid24
     SUBDIR += squidclients
     SUBDIR += squidguard
