@@ -834,7 +834,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_8)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_9)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
@@ -1376,7 +1376,7 @@ XFREE86_HTML_MAN?=	no
 .if defined(INSTALLS_SHLIB)
 LDCONFIG_DIRS?=	%%PREFIX%%/lib
 LDCONFIG_PLIST!=	${ECHO} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
-LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!"
+LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 .endif
 
 DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
