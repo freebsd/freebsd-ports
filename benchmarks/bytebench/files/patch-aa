@@ -25,18 +25,18 @@
 ***************
 *** 36,40 ****
   TESTDIR = ./testdir
-  RESULTDIR = ./results
+! RESULTDIR = ./results
 ! TMPDIR = ./tmp
   # other directories
   INCLDIR = /usr/include
 --- 37,41 ----
   TESTDIR = ./testdir
-  RESULTDIR = ./results
-! # TMPDIR = ./tmp
+! # RESULTDIR = ./results
+! # TMPDIR = /var/tmp
   # other directories
   INCLDIR = /usr/include
 *** Run.orig	Wed Feb  5 11:08:46 1992
---- Run	Mon Jan  1 23:26:00 1996
+--- Run	Wed Jan  3 00:13:43 1996
 ***************
 *** 41,45 ****
   #	awk cat cc chmod comm cp date dc df echo ed expr
@@ -63,6 +63,38 @@
 !    Fcount=`/usr/bin/time date 2>&1 | wc -l | sed 's/ //g'`
      case "$Fcount"
      in
+***************
+*** 68,75 ****
+  export FLAVOR
+  # check that the required files are in the proper places
+! if make check 
+!         then :
+!         else make all
+! fi
+  #
+  #
+--- 68,75 ----
+  export FLAVOR
+  # check that the required files are in the proper places
+! #if make check 
+! #        then :
+! #        else make all
+! #fi
+  #
+  #
+***************
+*** 93,97 ****
+  cd $PWD
+  
+! TMPDIR=${HOMEDIR}/tmp
+  cd $TMPDIR
+  TMPDIR=`pwd`
+--- 93,97 ----
+  cd $PWD
+  
+! TMPDIR=${TMPDIR-${HOMEDIR}/tmp}
+  cd $TMPDIR
+  TMPDIR=`pwd`
 ***************
 *** 418,426 ****
             if test "$stdin" = ""  
