@@ -1,12 +1,10 @@
 bin/frost
-bin/frost-convert
 share/java/jar/frost/frost.jar
 share/java/jar/frost/fecImpl.jar
 share/java/jar/frost/genChkImpl.jar
 share/java/jar/frost/xercesImpl.jar
 share/java/jar/frost/xml-apis.jar
 share/java/jar/frost/xmlParserAPIs.jar
-share/java/jar/frost/converter.jar
 share/frost/boards.xml.default
 %%PORTDOCS%%%%DOCSDIR%%/Frost.tex
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
