@@ -45,7 +45,6 @@
     SUBDIR += x3arth
     SUBDIR += xearth
     SUBDIR += xephem
-    SUBDIR += xglobe
     SUBDIR += xphoon
     SUBDIR += xplanet
     SUBDIR += xtide

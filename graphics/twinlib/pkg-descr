@@ -1,9 +1,0 @@
-Twinlib is a small but powerful C++ graphics
-library that makes its base on the Qt Image I/O
-extensions, which are found in Qt 1.44 and later.
-It is somewhat useful for simple graphics programs.
-
-WWW: http://nroard.free.fr/twinlib/
-Author: Nicolas Roard <nroard@e-motive.com>
-
---Will <andrews@technologist.com>

@@ -11,7 +11,6 @@
     SUBDIR += fsv
     SUBDIR += gentoo
     SUBDIR += gnomemc
-    SUBDIR += jafm
     SUBDIR += mtoolsfm
     SUBDIR += nautilus
     SUBDIR += offix-files

@@ -219,7 +219,6 @@
     SUBDIR += jakarta-ant
     SUBDIR += jam
     SUBDIR += kdbg
-    SUBDIR += kdelibdocs
     SUBDIR += kdesdk
     SUBDIR += kdestudio
     SUBDIR += kdevelop
@@ -227,8 +226,6 @@
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
     SUBDIR += korelib
-    SUBDIR += kpp
-    SUBDIR += ktranslator
     SUBDIR += lemon
     SUBDIR += leoarg
     SUBDIR += libIDL
@@ -302,7 +299,6 @@
     SUBDIR += m68k-rtems-objc
     SUBDIR += make++
     SUBDIR += makedepend
-    SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mingw
     SUBDIR += mingw-bin-msvcrt
@@ -566,7 +562,6 @@
     SUBDIR += py-xoltar-toolkit
     SUBDIR += pychecker
     SUBDIR += qt-designer
-    SUBDIR += qtarch
     SUBDIR += qtez
     SUBDIR += qtk
     SUBDIR += re2c

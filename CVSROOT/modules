@@ -527,7 +527,6 @@ bkmrkconv	ports/www/bkmrkconv
 bkpupsd		ports/sysutils/bkpupsd
 blackbox	ports/x11-wm/blackbox
 blackened	ports/irc/blackened
-blackjack	ports/games/blackjack
 bladeenc	ports/audio/bladeenc
 blas		ports/math/blas
 blast		ports/x11/blast
@@ -641,7 +640,6 @@ cabextract	ports/archivers/cabextract
 cadaver		ports/www/cadaver
 cadubi		ports/graphics/cadubi
 caesar		src/games/caesar
-caitoo		ports/ftp/caitoo
 cal		src/usr.bin/cal
 calamaris	ports/www/calamaris
 calc		ports/math/calc
@@ -2284,7 +2282,6 @@ iconv-rfc1345	ports/converters/iconv-rfc1345
 icqlib		ports/net/icqlib
 icqlib0		ports/net/icqlib0
 icqmail		ports/mail/icqmail
-icqnix		ports/net/icqnix
 icradius	ports/net/icradius
 icu		ports/devel/icu
 icukrell	ports/net/icukrell
@@ -2314,7 +2311,6 @@ im		ports/mail/im
 imagesort	ports/graphics/imagesort
 imake		ports/devel/imake
 imake-4		ports/devel/imake-4
-imanager	ports/graphics/imanager
 imap-uw		ports/mail/imap-uw
 imaze		ports/games/imaze
 imgvtopgm	ports/palm/imgvtopgm
@@ -2579,7 +2575,6 @@ ja-kdelibs2	ports/japanese/kdelibs2
 ja-kdenetwork2	ports/japanese/kdenetwork2
 ja-kdevelop	ports/japanese/kdevelop
 ja-kdrill	ports/japanese/kdrill
-ja-kebook	ports/japanese/kebook
 ja-kinput2-canna	ports/japanese/kinput2-canna
 ja-kinput2-canna+freewnn	ports/japanese/kinput2-canna+freewnn
 ja-kinput2-canna+freewnn+sj3	ports/japanese/kinput2-canna+freewnn+sj3
@@ -2866,7 +2861,6 @@ jad		ports/java/jad
 jade		ports/textproc/jade
 jadetex		ports/print/jadetex
 jaf		ports/java/jaf
-jafm		ports/x11-fm/jafm
 jags		ports/net/jags
 jail		src/usr.sbin/jail
 jakarta-ant	ports/devel/jakarta-ant
@@ -2968,7 +2962,6 @@ kbdcontrol	src/usr.sbin/kbdcontrol
 kbdmap		src/usr.sbin/kbdmap
 kbedic		ports/textproc/kbedic
 kbiff		ports/mail/kbiff
-kbubbles	ports/games/kbubbles
 kcd		ports/misc/kcd
 kdb		src/eBones/kdb
 kdb_destroy	src/eBones/kdb_destroy
@@ -2983,12 +2976,9 @@ kde2-i18n	ports/misc/kde2-i18n
 kdeaddons	ports/misc/kdeaddons
 kdeadmin	ports/sysutils/kdeadmin
 kdeartwork	ports/x11-wm/kdeartwork
-kdebase11	ports/x11/kdebase11
 kdebase2	ports/x11/kdebase2
 kdegames2	ports/games/kdegames2
 kdegraphics2	ports/graphics/kdegraphics2
-kdelibdocs	ports/devel/kdelibdocs
-kdelibs11	ports/x11/kdelibs11
 kdelibs2	ports/x11/kdelibs2
 kdemultimedia2		ports/audio/kdemultimedia2
 kdenetwork2	ports/net/kdenetwork2
@@ -2996,13 +2986,11 @@ kdepim		ports/deskutils/kdepim
 kdesdk		ports/devel/kdesdk
 kdestroy	src/eBones/kdestroy
 kdestudio	ports/devel/kdestudio
-kdesupport11	ports/converters/kdesupport11
 kdesupport2	ports/converters/kdesupport2
 kdetelnet	ports/net/kdetelnet
 kdetoys2	ports/x11-clocks/kdetoys2
 kdeutils2	ports/misc/kdeutils2
 kdevelop	ports/devel/kdevelop
-kdirstat	ports/misc/kdirstat
 kdoc		ports/textproc/kdoc
 kdump		src/usr.bin/kdump
 kelp		ports/devel/kelp
@@ -3031,7 +3019,6 @@ kgmon		src/usr.sbin/kgmon
 kgzip		src/usr.sbin/kgzip
 kgzldr		src/sys/boot/i386/kgzldr
 khordpro	ports/audio/khordpro
-kicq		ports/net/kicq
 kill		src/bin/kill
 killall		src/usr.bin/killall
 kiltdown	ports/mail/kiltdown
@@ -3092,18 +3079,10 @@ kldxref		src/usr.sbin/kldxref
 klist		src/eBones/klist
 klondike	ports/games/klondike
 klone		ports/lang/klone
-klyx		ports/print/klyx
 kmago		ports/ftp/kmago
-kmamerun	ports/emulators/kmamerun
-kmap		ports/security/kmap
-kmikmod		ports/audio/kmikmod
-kmp3		ports/audio/kmp3
-kmpg		ports/audio/kmpg
 kmsn		ports/net/kmsn
-kmud		ports/net/kmud
 kmymoney2	ports/deskutils/kmymoney2
 knapster	ports/audio/knapster
-knewmail	ports/mail/knewmail
 knews		ports/news/knews
 knocker		ports/security/knocker
 knowledgekit	ports/www/knowledgekit
@@ -3187,8 +3166,6 @@ koog		ports/audio/koog
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kpasswdd	src/libexec/kpasswdd
-kpp		ports/devel/kpp
-kproject	ports/deskutils/kproject
 kprop		src/eBones/kprop
 kpropd		src/eBones/kpropd
 kpuzzle		ports/games/kpuzzle
@@ -3197,37 +3174,26 @@ krb5		ports/security/krb5
 krb5-beta	ports/security/krb5-beta
 krbinclude	src/eBones/include
 krbman		src/eBones/man
-krio		ports/audio/krio
-krn		ports/news/krn
-krogue		ports/games/krogue
 kronolith	ports/deskutils/kronolith
 krss		ports/deskutils/krss
-krubik		ports/games/krubik
-ksamba		ports/net/ksamba
 kseg		ports/math/kseg
 ksetispy	ports/astro/ksetispy
 ksetiwatch	ports/astro/ksetiwatch
 ksh93		ports/shells/ksh93
 ksmp3play	ports/audio/ksmp3play
-ksnes9x		ports/emulators/ksnes9x
 ksrvtgt		src/eBones/ksrvtgt
 kssh		ports/security/kssh
 kstars		ports/astro/kstars
 kstash		src/eBones/kstash
-ktamaga		ports/games/ktamaga
 ktexshell	ports/print/ktexshell
 ktrace		src/usr.bin/ktrace
-ktranslator	ports/devel/ktranslator
 kuickshow	ports/graphics/kuickshow
-kvidtune	ports/x11/kvidtune
 kvirc		ports/irc/kvirc
 kvm_mkdb	src/usr.sbin/kvm_mkdb
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwebwatch	ports/www/kwebwatch
 kwix		ports/x11-wm/kwix
-kworldwatch	ports/x11/kworldwatch
-kxicq		ports/net/kxicq
 kxicq2		ports/net/kxicq2
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
@@ -3842,7 +3808,6 @@ mhc		ports/deskutils/mhc
 mhc-emacs20	ports/deskutils/mhc-emacs20
 mhc-xemacs21-mule	ports/deskutils/mhc-xemacs21-mule
 mhonarc		ports/www/mhonarc
-mico		ports/devel/mico
 micq		ports/net/micq
 micro_httpd	ports/www/micro_httpd
 midimountain	ports/audio/midimountain
@@ -4107,7 +4072,6 @@ mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
 mupad		ports/math/mupad
 muse		ports/sysutils/muse
-musicbox	ports/audio/musicbox
 musicbrainz	ports/audio/musicbrainz
 musixtex	ports/print/musixtex
 mussh		ports/security/mussh
@@ -5164,7 +5128,6 @@ penguin-command	ports/games/penguin-command
 pentix		ports/games/pentix
 penv		ports/sysutils/penv
 peps		ports/graphics/peps
-peq		ports/misc/peq
 perdition	ports/mail/perdition
 perf		ports/sysutils/perf
 perforce	ports/devel/perforce
@@ -5446,7 +5409,6 @@ powerpc-rtems-gcj	ports/devel/powerpc-rtems-gcj
 powerpc-rtems-gdb	ports/devel/powerpc-rtems-gdb
 powerpc-rtems-objc	ports/devel/powerpc-rtems-objc
 powershell	ports/x11/powershell
-pp		ports/games/pp
 ppbus		src/sys/dev/ppbus
 ppgen		ports/security/ppgen
 ppm2fli		ports/graphics/ppm2fli
@@ -5456,7 +5418,6 @@ ppp		src/usr.sbin/ppp
 ppp-nt		ports/net/ppp-nt
 pppctl		src/usr.sbin/pppctl
 pppd		src/usr.sbin/pppd
-pppload		ports/net/pppload
 pppoa		ports/net/pppoa
 pppoed		src/libexec/pppoed
 pppstats	src/usr.sbin/pppstats
@@ -5596,7 +5557,6 @@ py-ipy		ports/net/py-ipy
 py-irclib	ports/irc/py-irclib
 py-jabber	ports/net/py-jabber
 py-jaxml	ports/textproc/py-jaxml
-py-kde		ports/x11-toolkits/py-kde
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
 py-ldap1	ports/net/py-ldap1
@@ -5728,10 +5688,8 @@ qscanplot	ports/math/qscanplot
 qslim		ports/graphics/qslim
 qstat		ports/games/qstat
 qt-designer	ports/devel/qt-designer
-qt145		ports/x11-toolkits/qt145
 qt2-static	ports/x11-toolkits/qt2-static
 qt23		ports/x11-toolkits/qt23
-qtarch		ports/devel/qtarch
 qtella		ports/net/qtella
 qtez		ports/devel/qtez
 qtfw		ports/security/qtfw
@@ -6042,7 +6000,6 @@ ruby-imlib2	ports/graphics/ruby-imlib2
 ruby-interbase	ports/databases/ruby-interbase
 ruby-intl	ports/devel/ruby-intl
 ruby-irc	ports/irc/ruby-irc
-ruby-kde	ports/x11/ruby-kde
 ruby-ldap	ports/net/ruby-ldap
 ruby-libglade	ports/devel/ruby-libglade
 ruby-libgtop	ports/devel/ruby-libgtop
@@ -6083,7 +6040,6 @@ ruby-postgres	ports/databases/ruby-postgres
 ruby-programmingruby	ports/lang/ruby-programmingruby
 ruby-property	ports/devel/ruby-property
 ruby-python	ports/lang/ruby-python
-ruby-qt		ports/x11-toolkits/ruby-qt
 ruby-qt2	ports/x11-toolkits/ruby-qt2
 ruby-qt2canvas	ports/x11-toolkits/ruby-qt2canvas
 ruby-qt2gl	ports/graphics/ruby-qt2gl
@@ -7007,7 +6963,6 @@ tvision		ports/devel/tvision
 tvp		ports/games/tvp
 tvtwm		ports/x11-wm/tvtwm
 twin		ports/emulators/twin
-twinlib		ports/graphics/twinlib
 twitch		ports/games/twitch
 twoftpd		ports/ftp/twoftpd
 txt2html	ports/textproc/txt2html
@@ -7288,7 +7243,6 @@ wlconfig	src/usr.sbin/wlconfig
 wm2		ports/x11-wm/wm2
 wmScoreBoard	ports/misc/wmScoreBoard
 wmakerconf	ports/x11-wm/wmakerconf
-wmanager	ports/x11-wm/wmanager
 wmapm		ports/sysutils/wmapm
 wmappl		ports/x11/wmappl
 wmavgload	ports/sysutils/wmavgload
@@ -7416,7 +7370,6 @@ xabacus		ports/games/xabacus
 xalan-j		ports/java/xalan-j
 xalarm		ports/x11-clocks/xalarm
 xalf		ports/x11/xalf
-xamp		ports/audio/xamp
 xanim		ports/graphics/xanim
 xaniroc		ports/x11/xaniroc
 xantfarm	ports/x11/xantfarm
@@ -7556,8 +7509,6 @@ xg		ports/x11-toolkits/xg
 xgalaga		ports/games/xgalaga
 xgammon		ports/games/xgammon
 xgas		ports/misc/xgas
-xgfe		ports/math/xgfe
-xglobe		ports/astro/xglobe
 xgobi		ports/math/xgobi
 xgolgo		ports/games/xgolgo
 xgospel		ports/games/xgospel
@@ -7608,7 +7559,6 @@ xlhtml		ports/textproc/xlhtml
 xli		ports/graphics/xli
 xlife		ports/games/xlife
 xlifegame	ports/games/xlifegame
-xlines		ports/games/xlines
 xlint		src/usr.bin/xlint
 xlispstat	ports/math/xlispstat
 xloadface	ports/sysutils/xloadface

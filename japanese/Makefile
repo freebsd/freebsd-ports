@@ -160,7 +160,6 @@
     SUBDIR += kdenetwork2
     SUBDIR += kdevelop
     SUBDIR += kdrill
-    SUBDIR += kebook
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+freewnn
     SUBDIR += kinput2-canna+freewnn+sj3
