@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	0.30
+PORTVERSION=	0.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -18,6 +18,6 @@ COMMENT=	Recursively scan Perl code for dependencies
 PERL_CONFIGURE=	yes
 
 MAN1=		scandeps.pl.1
-MAN3=		Module::ScanDeps.3
+MAN3=		Module::ScanDeps.3 Module::ScanDeps::DataFeed.3
 
 .include <bsd.port.mk>
