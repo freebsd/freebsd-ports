@@ -4,11 +4,11 @@
  
  
  
--APR_VER_REGEX="0\.9\.[4-9]"
-+APR_VER_REGEX="0\.9\.[3-9]"
+-APR_VER_REGEX="0\.9\.[5-9]"
++APR_VER_REGEX="0\.9\.[4-9]"
  APR_VER_REGEX_TOO="1\.0"
--APU_VER_REGEX="0\.9\.[4-9]"
-+APU_VER_REGEX="0\.9\.[3-9]"
+-APU_VER_REGEX="0\.9\.[5-9]"
++APU_VER_REGEX="0\.9\.[4-9]"
  APU_VER_REGEX_TOO="1\.0"
  
  

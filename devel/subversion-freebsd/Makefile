@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.32.1
-PORTREVISION=	2
+PORTVERSION=	0.35.1
 CATEGORIES=	devel
-MASTER_SITES=	http://svn.collab.net/tarballs/
+MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
@@ -19,7 +18,6 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 
 INSTALLS_SHLIB=	yes
 
-WRKSRC=	${WRKDIR}/subversion-${PORTVERSION}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -28,7 +26,9 @@ CONFIGURE_ARGS=	--with-ssl \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
 		--with-swig=no
 
-MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnserve.1 svnversion.1
+MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnversion.1
+MAN5=		svnserve.conf.5
+MAN8=		svnserve.8
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
@@ -68,25 +68,9 @@ PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 
 pre-extract:
 .if !defined (BATCH)
-	@${ECHO_MSG} "!!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!!"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you upgrade Subversion from pre-0.28.0 version, please,"
-	@${ECHO_MSG} "dump you repository with old (pre-0.28.0) svnadmin command."
-	@${ECHO_MSG} "After this, install new version, remove old repository, create new"
-	@${ECHO_MSG} "one with svnadmin & load dump created from old repository"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Versions after 0.28.0 have different repository format and"
-	@${ECHO_MSG} "your old repository could not be used with versions 0.28.0 and up."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Read"
-	@${ECHO_MSG} "http://svn.collab.net/repos/svn/trunk/notes/repos_upgrade_HOWTO"
-	@${ECHO_MSG} "for details."
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Did you dump you repository and ready to install new version?"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "!!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!! WARNING !!!"
-	@${ECHO_MSG} ""
-	@sleep 5
+	@dialog --title "-- URGENT UPGRADE INFORMATION --" --clear --yesno \
+	 "If you upgrade Subversion from pre-0.34.0 version, please,\ndump you repository with old (pre-0.34.0) svnadmin command.\nAfter this, install new version, remove old repository, create new\none with svnadmin & load dump created from old repository\n\nVersions after 0.34.0 have different repository format and\nyour old repository could not be used with versions 0.34.0 and up.\n\nRead\nhttp://svn.collab.net/repos/svn/trunk/notes/repos_upgrade_HOWTO\nfor details.\n\nDid you dump you repository and ready to install new version?" \
+	 18 70
 .endif
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
