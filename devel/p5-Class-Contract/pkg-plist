@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Contract/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Class/Contract.pm
+lib/perl5/site_perl/%%PERL_VER%%/Class/Contract/Production.pm
+%%PORTDOCS%%share/examples/Class-Contract/demo.pl
+%%PORTDOCS%%@dirrm share/examples/Class-Contract
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Class/Contract
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Contract
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Class 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>/dev/null || true

@@ -314,6 +314,7 @@
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Cache-Cache
     SUBDIR += p5-Cdk
+    SUBDIR += p5-Class-Contract
     SUBDIR += p5-Class-Date
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MethodMaker
