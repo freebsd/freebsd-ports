@@ -3,13 +3,13 @@
 # Date created:		25 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.2 1998/11/21 18:17:55 flathill Exp $
+# $Id: Makefile,v 1.3 1998/11/22 03:40:19 flathill Exp $
 #
 
 DISTNAME=	xpx141
 PKGNAME=	xpx-1.41
 CATEGORIES=	graphics
-MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/xpx/
+MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/xpx/
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
