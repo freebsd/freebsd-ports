@@ -1,0 +1,243 @@
+#!/usr/bin/perl
+#
+# addport - perl script that adds new ports to the
+# FreeBSD Ports Collection.
+# Created by: Will Andrews <will@FreeBSD.org>
+#             and Michael Haro <mharo@FreeBSD.org>
+# 
+# $Id: addport,v 1.5 2000/04/22 22:19:43 mharo Exp $
+# $FreeBSD$
+#
+# MAINTAINER= mharo@FreeBSD.org
+#
+
+use Getopt::Std;
+use vars qw/ $opt_d $opt_h $opt_l $opt_n $opt_r $opt_u $opt_t /;
+use strict;
+
+getopts('c:d:h:l:nrtu:');
+
+my $dir = $opt_d;
+my $h = "freefall.FreeBSD.org";
+$h = $opt_h if ($opt_h ne "");
+my $n = $opt_n;
+my $use_rsh = $opt_r;
+my $u = $ENV{USER};
+$u = $opt_u if ($opt_u ne "");
+my $more_testing = $opt_t;
+my $portname = $opt_d;
+
+my $tmpdir;
+my $pwd;
+my $repo = "$u\@$h:/home/ncvs";
+my $ssh = "ssh $u\@$h";
+$ENV{CVS_RSH} = "ssh";
+my $cvs = "cvs -d $repo";
+my $make = "make";
+my $portlint = "portlint -N -a -c";
+my $perl = "perl";
+my $cp = "cp";
+my $mv = "mv";
+my $rm = "rm";
+
+my $category;
+
+# enough with the global vars
+
+sub usage {
+#addport,v \$Revision: 1.5 $
+print <<EOF;
+authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
+
+SYNOPSIS
+	$0 [-u user] [-h host] [-nrt] -d directory
+
+	Where directory is the root directory containing the new port
+	that you wish to add to the Ports Collection.
+
+OPTIONS
+	-l repo		Use a local repository as necessary.
+	-n		Do not actually commit anything.
+	-r		Use rsh(1) instead of ssh(1) for committing.
+			Note: This will not work on *.FreeBSD.org.
+	-u user		Use a different username (default: $u).
+	-t		Do more port testing
+
+EOF
+}
+
+sub warnx {
+	my ($msg) = @_;
+	print STDERR $0 . ": " . $msg . "\n";
+}
+
+
+sub err {
+	my ($ex, $msg) = @_;
+
+	warnx("WARNING: err called incorrectly") if (($ex !~ m/^\d+/) || ($msg eq ""));
+	print STDERR $0 . ": " . $msg . ": $!\n";
+	exit $ex;
+}
+
+sub errx {
+	my ($ex,$msg) = @_;
+
+	warnx("WARNING: errx called incorrectly") if (($ex !~ m/^\d+/) || ($msg eq ""));
+	print STDERR $0 . ": " . $msg . "\n";
+	exit $ex;
+}
+
+sub prompt {
+	my ($msg) = @_;
+
+	print "$msg:\n";
+	while(1) {
+		print "Continue? ";
+		my $reply = <>;
+		return 0 if ($reply =~ m/^[Yy]/);
+		return 1 if ($reply =~ m/^[Nn]/);
+	}
+	
+}
+
+sub contains {
+    # look if the first parameter is contained in the list following it
+    my($item, @list) = @_;
+
+    foreach my $i (@list) {
+	return 1 if $i eq $item;
+    }
+    return 0;
+}
+
+sub lsports {
+    my @rv = ();
+
+    open(F, "Makefile") || die "can't open Makefile: $!";
+    while(<F>) {
+	chomp;
+	chomp;
+	next if $_ !~ m/SUBDIR/;
+	s/^[ \t]+SUBDIR[ \t]+\+?=[\ \t]+//;
+	push(@rv, $_);
+    }
+    close(F);
+
+    return @rv;
+}
+
+
+# stuff that always happens when we start
+BEGIN {
+	$tmpdir=`mktemp -d -t ap`;
+	chomp $tmpdir;
+	if ($tmpdir eq "") {
+		errx(1,"making random tmpdir didn't work, aborting.");
+	}
+	$pwd = `pwd`;
+	chomp $pwd;
+	chdir $tmpdir or err(1,"$tmpdir");
+}
+
+# stuff that always happens when we exit
+END {
+	# only remove $tmpdir if it points to something in /tmp
+	# this is a silly little security thing
+	if (defined($rm) && defined($tmpdir)) {
+		system("$rm -rf $tmpdir") if ($tmpdir =~ m,/tmp/,);
+	}
+}
+
+
+if ($dir eq "") {
+	errx(1, "Please specify a directory to import a new port from.");
+}
+
+$dir = "$pwd/$dir" if ($dir !~ m,^/,);
+$dir =~ s,/$,,g;
+
+if (! -d "$dir") {
+	errx(1,"$dir is either not a directory or does not exist");
+}
+
+chdir $dir or err(1, "$dir");
+
+if ($more_testing) {
+my @commands = split(/\n/, <<EOF);
+$make distclean
+$make build
+EOF
+for (@commands) {
+	system("$_") && errx(1, "'$_' had problems. aborting.");
+}
+}
+# commands to run before adding port
+my @commands = split(/\n/, <<EOF);
+$make clean
+$make check-categories
+$portlint
+$make FETCH_BEFORE_ARGS="-btsA" checksum
+EOF
+for (@commands) {
+	system("$_") && errx(1, "'$_' had problems. aborting.");
+}
+
+$_ = `grep CATEGORIES Makefile`;
+m/\w+\W+([\w-]+)/;
+$category = $1;
+
+prompt("Adding port to $category.") && errx(1, "user abort requested");
+
+chdir $tmpdir or err(1,"$tmpdir");
+
+my $cvs_category = $category;
+$cvs_category =~ s/-/_/g;
+system("$cvs co -l ports_$cvs_category") && errx(1, "can't get temporary category directory, aborting.");
+system("$mv ports_$cvs_category $category");
+chdir $category or err(1,"$category");
+system("$cp -PRp $dir .");
+
+system("$cvs add `find $portname -type d | grep -v CVS`") && errx(1, "cvs add for dirs failed, aborting.");
+system("$cvs add `find $portname -type f | grep -v CVS`") && errx(1, "cvs add for files failed, aborting.");
+
+my @ports = &lsports;
+
+if (&contains($portname, @ports)) {
+	print "Error: $portname already exists in $category\'s Makefile\n";
+	&goodbye(1);
+}
+
+my $port = "";
+foreach my $tmp (sort(@ports)) {
+    if ($tmp gt $portname) {
+        $port = $tmp;
+        last;
+    }
+}
+
+my $cmd;
+if ($port eq "") {
+    # we are going to append our port
+    $cmd = "\$\na\n";
+} else {
+    # we can insert it
+    $cmd = "/^    SUBDIR += $port/\ni\n";
+}
+
+print "Inserting new port into $category/Makefile...\n";
+open(ED, "|ed Makefile") || die "Cannot start ed\n";
+print ED "$cmd    SUBDIR += $portname\n.\nw\nq\n";
+close(ED);
+
+chdir $tmpdir or err(1,"$tmpdir");
+
+system("$cvs ci") && errx(1, "cvs commit failed, aborting.");
+
+system("$ssh $perl ~mharo/bin/modulesupdate $portname ports/$category/$portname") && errx(1, "adding port to modules or category Makefile failed, aborting.");
+
+print <<EOF;
+You're done! The new port $portname has been completely imported in
+the tree. Don't forget to add the creator's name and email address to
+the Contributors' List if they are not already there.
+EOF
