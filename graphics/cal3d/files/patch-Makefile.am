@@ -1,0 +1,12 @@
+--- Makefile.am.orig	Mon Jul 12 19:40:09 2004
++++ Makefile.am	Mon Jul 12 19:41:07 2004
+@@ -16,7 +16,8 @@
+ 
+ SUBDIRS = src docs
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++#pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = cal3d.pc
+ 
+ 

@@ -1,0 +1,12 @@
+--- src/cal3d/Makefile.am.orig	Mon Jul 12 17:34:29 2004
++++ src/cal3d/Makefile.am	Mon Jul 12 17:35:04 2004
+@@ -13,7 +13,8 @@
+ INCLUDES = $(all_includes) -I$(top_srcdir)/src
+ 
+ all_libraries = @all_libraries@
+-LDFLAGS = @LDFLAGS@
++#LDFLAGS = @LDFLAGS@
++AM_LDFLAGS = @AM_LDFLAGS@
+ 
+ EXTRA_DIST = cal3d.rc cal3d.dsp SConscript
+ 
