@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	tcl8.1b1
-PKGNAME=	tcl-8.1.b1-thread
+PKGNAME=	tcl-thread-8.1.b1
 CATEGORIES=	lang tcl81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
