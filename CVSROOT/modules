@@ -327,6 +327,7 @@ archie		ports/net/archie
 archie.el	ports/net/archie.el
 archivemail	ports/mail/archivemail
 arena		ports/www/arena
+argouml		ports/devel/argouml
 argparse	ports/misc/argparse
 argus		ports/net/argus
 ari-yahoo	ports/net/ari-yahoo
