@@ -1,6 +1,6 @@
 # New ports collection makefile for:    xcoral
 # Version required:	3.2
-# Date created:         
+# Date created:         1995/10/02
 # Whom:                 erich@rrnet.com
 #
 # $FreeBSD$
