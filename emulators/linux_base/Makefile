@@ -166,7 +166,7 @@ do-install:
 	@${ECHO_MSG} ""
 	@sh -c "read line"
 .endif
-	@for R in ${UPD_SET1} ${DISTFILES} ${UPD_SET2}; do \
+	@for R in ${UPD_SET1} ${DISTFILES:C/:.*//} ${UPD_SET2}; do \
 		${ECHO_MSG} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
