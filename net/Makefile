@@ -124,6 +124,7 @@
     SUBDIR += p5-URI
     SUBDIR += p5-pRPC
     SUBDIR += pathchar
+    SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += perldap
     SUBDIR += pipsecd
