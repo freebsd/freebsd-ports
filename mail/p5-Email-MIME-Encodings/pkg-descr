@@ -1,0 +1,5 @@
+This module simply wraps MIME::Base64 and MIME::QuotedPrint so that you
+can throw the contents of a Content-Transfer-Encoding header at some
+text and have the right thing happen.
+
+WWW: http://search.cpan.org/dist/Email-MIME-Encodings
