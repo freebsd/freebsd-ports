@@ -1,0 +1,6 @@
+One drawback to RRDTool, is that by itself it is not a complete package for 
+users wanting to graph their own networks. This is where cacti's job comes 
+in. Cacti brings the power of RRDTool to a friendly web interface making it 
+easy to graph anything using RRDTool.
+
+WWW: http://www.raxnet.net/products/cacti/

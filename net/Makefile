@@ -53,6 +53,7 @@
     SUBDIR += braa
     SUBDIR += bsd-airtools
     SUBDIR += bsdproxy
+    SUBDIR += cacti
     SUBDIR += cap
     SUBDIR += ccmsn
     SUBDIR += cdonkey
