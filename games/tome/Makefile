@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
 
-PORTCOMMENT=	ToME is a roguelike dungeon exploration game based on JRR Tolkien\'s works
-
 ALL_TARGET=	# empty
 MAKEFILE=	makefile.org
 USE_GMAKE=	yes
