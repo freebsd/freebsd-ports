@@ -263,6 +263,7 @@
     SUBDIR += libPropList
     SUBDIR += libU77
     SUBDIR += libafterbase
+    SUBDIR += libargparse
     SUBDIR += libast
     SUBDIR += libavl
     SUBDIR += libbonobo
