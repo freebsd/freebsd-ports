@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A programmer's text editor for GTK+ 2.0
 
+BROKEN=			"Incomplete pkg-plist (does not use gettext correctly)"
+
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	13
