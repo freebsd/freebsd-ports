@@ -23,6 +23,10 @@ COMMENT=	A toolkit from Stanford University and Silicon Graphics + Japanese patc
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 502112
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 # Warning: we cannot use USE_IMAKE.
 .if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
