@@ -32,6 +32,36 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadLine.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadWrite.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Run.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
+share/examples/p5-POE/create.perl
+share/examples/p5-POE/fakelogin.perl
+share/examples/p5-POE/filterchange.perl
+share/examples/p5-POE/followtail.perl
+share/examples/p5-POE/forkbomb.perl
+share/examples/p5-POE/httpd.perl
+share/examples/p5-POE/names.perl
+share/examples/p5-POE/neural-net.perl
+share/examples/p5-POE/objmaps.perl
+share/examples/p5-POE/objsessions.perl
+share/examples/p5-POE/packagesessions.perl
+share/examples/p5-POE/preforkedserver.perl
+share/examples/p5-POE/proxy.perl
+share/examples/p5-POE/queue.perl
+share/examples/p5-POE/readline.perl
+share/examples/p5-POE/ref-type.perl
+share/examples/p5-POE/refsender.perl
+share/examples/p5-POE/refserver.perl
+share/examples/p5-POE/selects.perl
+share/examples/p5-POE/sessions.perl
+share/examples/p5-POE/signals.perl
+share/examples/p5-POE/socketfactory.perl
+share/examples/p5-POE/thrash.perl
+share/examples/p5-POE/tk.perl
+share/examples/p5-POE/tutorial-chat.perl
+share/examples/p5-POE/udp.perl
+share/examples/p5-POE/watermarks.perl
+share/examples/p5-POE/wheels.perl
+share/examples/p5-POE/wheels2.perl
+@dirrm share/examples/p5-POE
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver
