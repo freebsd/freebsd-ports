@@ -1238,6 +1238,7 @@ e2fsprogs	ports/sysutils/e2fsprogs
 e3		ports/editors/e3
 e4graph		ports/devel/e4graph
 e93		ports/editors/e93
+easydiff	ports/textproc/easydiff
 earthview	ports/misc/earthview
 easygtk		ports/x11-toolkits/easygtk
 easysoap	ports/net/easysoap
