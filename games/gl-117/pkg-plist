@@ -1,4 +1,6 @@
 bin/gl-117
+share/gl-117/models/aster1.3ds
+share/gl-117/models/base1.3ds
 share/gl-117/models/cannon1.3ds
 share/gl-117/models/cannon2.3ds
 share/gl-117/models/container1.3ds
@@ -47,6 +49,8 @@ share/gl-117/sounds/hit1.wav
 share/gl-117/sounds/missile1.wav
 share/gl-117/sounds/plane1.wav
 share/gl-117/sounds/thunder1.wav
+share/gl-117/textures/aster1_n.tga
+share/gl-117/textures/base1_no.tga
 share/gl-117/textures/cactus1.tga
 share/gl-117/textures/cross.tga
 share/gl-117/textures/cross2.tga
@@ -55,11 +59,15 @@ share/gl-117/textures/fig1_fra.tga
 share/gl-117/textures/fig2_fra.tga
 share/gl-117/textures/fig3_fra.tga
 share/gl-117/textures/fig4_fra.tga
+share/gl-117/textures/fig5_fra.tga
 share/gl-117/textures/fig6_fra.tga
 share/gl-117/textures/fig7_fra.tga
 share/gl-117/textures/fig8_noi.tga
 share/gl-117/textures/fig9_noi.tga
 share/gl-117/textures/flare1.tga
+share/gl-117/textures/flare2.tga
+share/gl-117/textures/flare3.tga
+share/gl-117/textures/flare4.tga
 share/gl-117/textures/font1.tga
 share/gl-117/textures/font2.tga
 share/gl-117/textures/gl-117_c.tga
@@ -86,8 +94,8 @@ share/gl-117/textures/tree4.tga
 share/gl-117/textures/walls_co.tga
 share/gl-117/textures/water1.tga
 share/gl-117/textures/water2.tga
-@dirrm share/gl-117/models
-@dirrm share/gl-117/music
-@dirrm share/gl-117/sounds
 @dirrm share/gl-117/textures
+@dirrm share/gl-117/sounds
+@dirrm share/gl-117/music
+@dirrm share/gl-117/models
 @dirrm share/gl-117
