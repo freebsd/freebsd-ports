@@ -1,0 +1,15 @@
+lib/%%PORTNAME%%/libshape04.so.1
+lib/%%PORTNAME%%/pkgIndex.tcl
+lib/%%PORTNAME%%/demos/dragger.tcl
+lib/%%PORTNAME%%/demos/fancytext.tcl
+lib/%%PORTNAME%%/demos/fingerprint.tcl
+lib/%%PORTNAME%%/demos/images/doc-img.gif
+lib/%%PORTNAME%%/demos/images/doc-mask.xbm
+lib/%%PORTNAME%%/demos/images/fingerprint.xbm
+lib/%%PORTNAME%%/demos/images/none.cur
+lib/%%PORTNAME%%/demos/images/ptr-green.gif
+lib/%%PORTNAME%%/demos/images/ptr-mask.xbm
+lib/%%PORTNAME%%/demos/images/ptr-red.gif
+@dirrm lib/%%PORTNAME%%/demos/images
+@dirrm lib/%%PORTNAME%%/demos
+@dirrm lib/%%PORTNAME%%
