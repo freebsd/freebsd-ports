@@ -13,6 +13,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Locker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/UnixLocker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Win32Locker.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Conf.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Replier.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Bayes.pm
@@ -26,7 +30,6 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/HTML.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/MailingList.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/ArchiveIterator.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/CmdLearn.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/ExposedMessage.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PerMsgLearner.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EncappedMIME.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/BayesStore.pm
@@ -41,7 +44,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Message.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EvalTests.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Locales.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/README.sql
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/BUGS
 %%PORTDOCS%%share/doc/p5-Mail-SpamAssassin/COPYRIGHT
@@ -60,7 +63,10 @@ share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_compensate.cf
 share/spamassassin/20_head_tests.cf
+share/spamassassin/20_html_tests.cf
 share/spamassassin/20_meta_tests.cf
+share/spamassassin/20_phrases.cf
+share/spamassassin/20_porn.cf
 share/spamassassin/20_ratware.cf
 share/spamassassin/20_uri_tests.cf
 share/spamassassin/23_bayes.cf
