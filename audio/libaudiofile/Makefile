@@ -16,4 +16,6 @@ MAINTAINER=	vanilla@FreeBSD.org
 
 USE_LIBTOOL=	yes
 
+MAKE_ARGS=	"-E CFLAGS"
+
 .include <bsd.port.mk>
