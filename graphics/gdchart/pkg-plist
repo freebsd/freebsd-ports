@@ -1,0 +1,11 @@
+lib/libgdchart.a
+include/gdchart.h
+include/gdc.h
+include/gdcpie.h
+%%PORTDOCS%%share/doc/gdchart/gdc_samp1.c
+%%PORTDOCS%%share/doc/gdchart/gdc_samp2.c
+%%PORTDOCS%%share/doc/gdchart/README.txt
+%%PORTDOCS%%share/doc/gdchart/NOTES-092b.txt
+%%PORTDOCS%%share/doc/gdchart/NOTES-093b.txt
+%%PORTDOCS%%share/doc/gdchart/NOTES-094b.txt
+%%PORTDOCS%%@dirrm share/doc/gdchart
