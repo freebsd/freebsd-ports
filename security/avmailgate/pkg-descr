@@ -1,0 +1,34 @@
+AntiVir MailGate for  FreeBSD protects your  electronic post office 
+against viruses.
+It is  working  with  numerous common  Mail Transport Agents (MTA), 
+like  sendmail,  postfix,  qmail and exim.  Operates at high speed,
+is easy to configure and  checks both incoming and outgoing emails.
+
+AntiVir  MailGate  is  a  store-and-forward  agent,  in  which  the 
+workload is shared by the two programs avgated and avgatefwd.
+
+Avgated  receives  the  emails  and  stores  them  in  a  specified 
+directory. This program can be  run as an independent server  which 
+occupies port 25 (SMTP) or is  started by the  internet superdaemon
+inetd.
+
+Avgatefwd reads the temporarily  stored emails, decodes the attach-
+ments and initiates the virus scan.  If no viruses are found in the 
+emails, they are forwarded immediately.
+
+If an email is found to be infected,  it will not be forwarded.  In 
+this case, the postmaster receives an e-mail with a detailed report, 
+and the sender and recipient are also notified of the infection.
+
+*********************************************************************
+     For more information on AntiVir please visit our web site
+                      http://www.antivir.de/
+                                or
+                       http://www.hbedv.com/
+
+               AntiVir is a registered trademark of
+                    H+BEDV Datentechnik GmbH
+*********************************************************************
+
+WWW: http://www.antivir.de/
+WWW: http://www.hbedv.com/
