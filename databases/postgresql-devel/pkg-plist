@@ -437,7 +437,7 @@ share/postgresql/post-install-notes
 %%GETTEXT%%share/locale/de/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/es/LC_MESSAGES/pg_controldata.mo
-%%GETTEXT%%share/locale/es/LC_MESSAGES/postgres.mos
+%%GETTEXT%%share/locale/es/LC_MESSAGES/postgres.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/libpq.mo
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/psql.mo
 %%GETTEXT%%share/locale/hu/LC_MESSAGES/postgres.mo
