@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.72 1996/07/06 09:21:52 gpalmer Exp $
+# $Id: Makefile,v 1.73 1996/07/10 22:33:44 asami Exp $
 #
 
     SUBDIR += archie
+    SUBDIR += cvsup
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dgd-net
