@@ -26,6 +26,7 @@
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += lukemftp
+    SUBDIR += lukemftpd
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += ncftp
