@@ -4,7 +4,7 @@ bug in the ezm3 port.
 
 --- language/modula3/m3compiler/m3cc/gcc/gcc/Makefile.in.orig	Fri Apr 18 14:31:46 2003
 +++ language/modula3/m3compiler/m3cc/gcc/gcc/Makefile.in	Fri Apr 18 14:32:11 2003
-@@ -690,8 +690,8 @@
+@@ -691,8 +691,8 @@
  	-e 's|%% *|../|g' \
  	-e 's|%||g'
  SUBDIR_FLAGS_TO_PASS = $(ORDINARY_FLAGS_TO_PASS) \
