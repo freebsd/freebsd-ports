@@ -1,0 +1,10 @@
+--- tga.c.orig	Thu Oct  7 01:19:46 1999
++++ tga.c	Thu Oct  7 13:52:49 1999
+@@ -48,7 +48,6 @@
+ 
+ 
+ #include <stdio.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <db.h>
+ #include <sys/types.h>

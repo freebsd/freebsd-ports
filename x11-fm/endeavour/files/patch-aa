@@ -1,0 +1,41 @@
+--- Makefile.orig	Thu Oct  7 01:19:46 1999
++++ Makefile	Thu Oct  7 13:52:49 1999
+@@ -15,9 +15,9 @@
+ # ########################################################################
+ # Libraries:
+ #
+-INC     = -I/usr/include
+-LIB     = -lImlib -lpng -ltiff -lgif -ljpeg -lXpm -lXext -lX11 -lz -lm
+-LIB_DIR = -L/usr/X11/lib
++INC     = -I/usr/local/include -I/usr/X11R6/include
++LIB     = `imlib-config --libs` -lXpm
++LIB_DIR = -L/usr/X11R6/lib -L/usr/local/lib
+ 
+ 
+ # ########################################################################
+@@ -37,14 +37,14 @@
+ #				internal viewing of many graphics
+ #				formats.
+ #
+-CFLAGS  = -O2 -DUSE_XSHM -DUSE_IMLIB -D__USE_BSD -funroll-loops
++CFLAGS  += -DUSE_XSHM -DUSE_IMLIB -D__USE_BSD -funroll-loops
+ 
+ 
+ # ########################################################################
+ # Program source and header files:
+ #
+ 
+-CC  = gcc
++CC  ?= gcc
+ BIN = endeavour
+ SRC = comfdialog.c cursor.c devrec.c dither.c disk.c drag.c edwalloc.c \
+       edwcb.c edwevent.c edwlist.c edwmacros.c edwselect.c fass.c \
+@@ -79,7 +79,7 @@
+ INSTMANFLAGS = -m 0444
+ INSTDATFLAGS = -m 0444
+ 
+-DIR_XBIN     = /usr/X11/bin
++DIR_XBIN     = /usr/X11R6/bin
+ 
+ 
+ # ########################################################################

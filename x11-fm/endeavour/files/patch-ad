@@ -1,0 +1,30 @@
+--- endeavour.h.orig	Thu Oct  7 01:19:46 1999
++++ endeavour.h	Thu Oct  7 13:52:49 1999
+@@ -9,17 +9,16 @@
+ 
+ 
+ 
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <errno.h>
+ extern int errno;
+ #include <unistd.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <time.h>
+ extern char *tzname[2];
+ #include <signal.h>
+-#include <asm/types.h>
+ 
+ #ifdef USE_IMLIB
+ 	#include "../include/Imlibosw.h"
+@@ -475,7 +474,7 @@
+ 
+ 	/* Stats. */
+         ino_t inode;        /* Inode. */
+-        umode_t mode;       /* Mode/permissions/type. */
++        unsigned short mode;       /* Mode/permissions/type. */
+  
+         nlink_t nlink;      /* Number of hard links. */
+         uid_t uid;          /* User ID of owner */

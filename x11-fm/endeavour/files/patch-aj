@@ -1,0 +1,20 @@
+--- propdialog.c.orig	Thu Oct  7 01:19:47 1999
++++ propdialog.c	Thu Oct  7 13:52:49 1999
+@@ -457,7 +457,7 @@
+ {
+ 	int i, len;
+ 	int status;
+-	umode_t mode;
++	unsigned short mode;
+ 	char stringa[1024];
+ 	char old_name[PATH_MAX + NAME_MAX];
+ 	char tmp_path[PATH_MAX + NAME_MAX];
+@@ -1388,7 +1388,7 @@
+ 	static win_attr_t wattr;
+ 	char stringa[1024];
+ 	static image_t *image, *image2;
+-	static umode_t mode;
++	static unsigned short mode;
+ 
+ 
+         if(!IDC() ||

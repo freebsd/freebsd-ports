@@ -1,0 +1,16 @@
+--- fass.h.orig	Thu Oct  7 01:19:46 1999
++++ fass.h	Thu Oct  7 13:52:49 1999
+@@ -2,12 +2,10 @@
+ #define FASS_H
+ 
+ 
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <malloc.h>
+-
+-#include <sys/bitypes.h>
+ 
+ #ifdef __linux__
+     #include <linux/limits.h>

@@ -1,0 +1,14 @@
+--- devrec.c.orig	Thu Oct  7 01:19:47 1999
++++ devrec.c	Thu Oct  7 13:52:49 1999
+@@ -389,8 +389,9 @@
+ 			capacity_available = atol(strv[3]);
+ 
+ 			/* Calculate capacity percent. */
+-			capacity_percent = (double)capacity_used /
+-			    (double)capacity_total * 100;
++			if ((double)capacity_total)
++				capacity_percent = (double)capacity_used /
++				    (double)capacity_total * 100;
+ 
+                         strncpy(path, strv[5], PATH_MAX + NAME_MAX);
+                         path[PATH_MAX + NAME_MAX - 1] = '\0';

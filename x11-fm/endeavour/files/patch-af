@@ -1,0 +1,10 @@
+--- id.h.orig	Thu Oct  7 01:19:47 1999
++++ id.h	Thu Oct  7 13:52:49 1999
+@@ -5,7 +5,6 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <string.h>
+-#include <malloc.h>
+ #include <grp.h>
+ #include <pwd.h>
+ #include <sys/types.h>

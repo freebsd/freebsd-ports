@@ -1,0 +1,10 @@
+--- disk.c.orig	Thu Oct  7 01:19:46 1999
++++ disk.c	Thu Oct  7 13:52:49 1999
+@@ -39,7 +39,6 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <malloc.h>
+ #include <string.h>
+ #include <ctype.h>
+ #include <fcntl.h>
