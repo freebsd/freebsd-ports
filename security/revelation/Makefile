@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	revelation
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	security gnome
 MASTER_SITES=	ftp://oss.codepoet.no/revelation/
 
@@ -28,5 +28,7 @@ post-patch:
 		${WRKSRC}/setup.py ${WRKSRC}/src/lib/__init__.py
 	@${REINPLACE_CMD} 's#sys\.prefix#"${PREFIX}"#g' \
 		${WRKSRC}/src/lib/__init__.py
+	@${REINPLACE_CMD} 's#/etc/#${PREFIX}/etc/#' \
+		${WRKSRC}/setup.py ${WRKSRC}/src/lib/data.py
 
 .include <bsd.port.mk>

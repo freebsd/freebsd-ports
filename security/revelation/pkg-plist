@@ -25,6 +25,9 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/fpm.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.pyo
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.py
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/datahandler
 %%PYTHON_SITELIBDIR%%/revelation/dialog.pyc
 %%PYTHON_SITELIBDIR%%/revelation/data.pyc
@@ -62,3 +65,6 @@ share/gnome/revelation/pixmaps/revelation.png
 share/gnome/revelation/pixmaps/revelation-16x16.png
 @dirrm share/gnome/revelation/pixmaps
 @dirrm share/gnome/revelation
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/revelation.schemas >/dev/null || /usr/bin/true
+etc/gconf/schemas/revelation.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/revelation.schemas >/dev/null || /usr/bin/true
