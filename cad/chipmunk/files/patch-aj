@@ -1,5 +1,5 @@
---- until/V1.2/Makefile.orig	Wed Sep 23 07:04:47 1998
-+++ until/V1.2/Makefile	Mon Sep 20 07:01:56 1999
+--- until/V1.2/Makefile.orig	Tue Sep 22 19:04:26 1998
++++ until/V1.2/Makefile	Tue Feb 20 14:20:29 2001
 @@ -41,7 +41,8 @@
  ##
  
@@ -47,12 +47,20 @@
  
  OBJS = bb_stuff.o cnf_stuff.o  crt_stuff.o data_types.o datawalk.o \
  dispmod.o ffman.o gr_stuff.o main.o mat_stuff.o menu.o menu_stuff.o \
-@@ -195,7 +196,7 @@
+@@ -195,11 +196,15 @@
  ## Until as its moved to bin; non ksh-users may wish to change it back.
  
  install: until
 -	cp until $(BINDIR)/Until
 +	install -c -s until $(BINDIR)/Until
  	cp pensps.map $(LIBDIR)/pensps.map
++	chmod 0444 $(LIBDIR)/pensps.map
  	cp system.untilrc $(LIBDIR)/system.untilrc
++	chmod 0444 $(LIBDIR)/system.untilrc
  	cp until.pro  $(LIBDIR)/until.pro
++	chmod 0444  $(LIBDIR)/until.pro
+ 	cp until.ps  $(LIBDIR)/until.ps
++	chmod 0444  $(LIBDIR)/until.ps
+ 
+ 
+ bb_stuff.o : bb_stuff.c bb_stuff.h 
