@@ -274,6 +274,7 @@ share/swat/images/status.gif
 share/swat/images/viewconfig.gif
 share/swat/include/footer.html
 share/swat/include/header.html
+@dirrm etc/codepages
 @dirrm share/doc/samba/faq
 @dirrm share/doc/samba/htmldocs
 @dirrm share/doc/samba/textdocs
