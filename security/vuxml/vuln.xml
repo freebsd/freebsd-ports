@@ -30,6 +30,105 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7a3b18c-624c-4703-9756-b6b27429e5b0">
+    <topic>Remote denial of service in leafnode</topic>
+    <affects>
+      <package>
+	<name>leafnode</name>
+	<range><ge>1.9.20</ge><lt>1.9.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The leafnode NNTP server may go into an unterminated loop with 100%
+	  CPU use when an article is requested by Message-ID that has been
+	  crossposted to several news groups when one of the group names is the
+	  prefix of another group name that the article was cross-posted
+	  to. Found by Jan Knutar.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2002-01</url>
+      <url>http://sourceforge.net/mailarchive/message.php?msg_id=2796226</url>
+      <url>http://article.gmane.org/gmane.network.leafnode.announce/8</url>
+      <!--
+      <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=2796226</mlist>
+      <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/8</mlist>
+      -->
+      <bid>6490</bid>
+      <freebsdpr>46613</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2002-11-06</discovery>
+      <entry>2004-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7b0208ff-3f65-4e16-8d4d-48fd9851f085">
+    <topic>Remote denial of service in leafnode's fetchnews program</topic>
+    <affects>
+      <package>
+	<name>leafnode</name>
+	<range><ge>1.9.3</ge><le>1.9.41</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fetchnews could hang when a news article to be downloaded lacked one
+	  of the mandatory headers. Found by Joshua Crawford.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2003-01</url>
+      <url>http://sourceforge.net/mailarchive/message.php?msg_id=5975563</url>
+      <url>http://article.gmane.org/gmane.network.leafnode.announce/21</url>
+      <!--
+      <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=5975563</mlist>
+      <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/21</mlist>
+      -->
+      <bid>8541</bid>
+      <freebsdpr>53838</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2003-06-20</discovery>
+      <entry>2004-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a051a4ec-3aa1-4dd1-9bdc-a61eb5700153">
+    <topic>Remote denial of service in leafnode's fetchnews program</topic>
+    <affects>
+      <package>
+	<name>leafnode</name>
+	<range><le>1.9.47</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When a downloaded news article ends prematurely, i. e. when the
+	  server sends [CR]LF.[CR]LF before sending a blank line, fetchnews may
+	  wait indefinitely for data that never arrives. Workaround: configure
+	  "minlines=1" (or use a bigger value) in the configuration file. Found
+	  by Toni Viemerö.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://leafnode.sourceforge.net/leafnode-SA-2004-01</url>
+      <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=873149&amp;group_id=57767&amp;atid=485349</url>
+      <url>http://article.gmane.org/gmane.network.leafnode.announce/32</url>
+      <url>http://sourceforge.net/mailarchive/message.php?msg_id=6922570</url>
+      <!--
+      <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/32</mlist>
+      <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=6922570</mlist>
+      -->
+      <freebsdpr>61105</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2004-01-08</discovery>
+      <entry>2004-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d36ef32-a9cf-11d8-9c6d-0020ed76ef5a">
     <topic>subversion date parsing vulnerability</topic>
     <affects>
