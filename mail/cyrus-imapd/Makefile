@@ -24,7 +24,7 @@ FORBIDDEN=	http://vuxml.freebsd.org/114d70f3-3d16-11d9-8818-008088034841.html \
 		http://vuxml.freebsd.org/c0a269d5-3d16-11d9-8818-008088034841.html \
 		'(security)'
 DEPRECATED=	${FORBIDDEN}
-EXPIRATION_DATE=February 8, 2004
+EXPIRATION_DATE=2005-02-08
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^0].*
 
