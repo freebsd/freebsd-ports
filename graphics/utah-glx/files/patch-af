@@ -1,0 +1,33 @@
+--- configure.in.orig	Fri Jun 23 12:23:13 2000
++++ configure.in	Fri Jun 23 12:30:06 2000
+@@ -879,7 +879,7 @@
+ ])
+ 
+ dnl agp driver support
+-AC_CHECK_HEADER(linux/agpgart.h,
++AC_CHECK_HEADER(sys/agpio.h,
+ [
+   if test "$enable_agp" = "no"
+    then
+@@ -887,9 +887,9 @@
+    else
+     dnl see which version of the gart module we've found
+     AC_MSG_CHECKING(validity of agpgart.h)
+-    AC_EGREP_CPP([/dev/agpgart],[
+-#include <linux/agpgart.h>
+-AGP_DEVICE
++    AC_EGREP_CPP([],[
++#include <sys/agpio.h>
++AGPIOC_INFO
+     ],
+     [
+       AC_MSG_RESULT([new agpgart module])
+@@ -906,7 +906,7 @@
+   fi
+ ],
+ [
+-  dnl *didn't* find linux/agpgart.h on the system
++  dnl *didn't* find sys/agpio.h on the system
+   if test "$enable_agp" = "yes"
+    then
+     AC_MSG_RESULT([  enabling agpgart support anyway (manual override)])

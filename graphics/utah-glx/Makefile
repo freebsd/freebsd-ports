@@ -25,6 +25,9 @@ GNU_CONFIGURE=	yes
 GLVER?=		14
 GLUTVER?=	3
 
+AGP_DEVICE=	/dev/agpgart
+
+CFLAGS+=	-DAGP_DEVICE=\\\"${AGP_DEVICE}\\\"
 CONFIGURE_SCRIPT=autogen.sh
 CONFIGURE_ARGS=	--enable-extra \
 		--with-mesa=${WRKDIRPREFIX}${.CURDIR}/../../graphics/Mesa3/work/Mesa-3.2 \
@@ -49,6 +52,10 @@ post-extract:
 	@${ECHO_MSG} "         Users of XFree86 4.0 and above should use DRI instead."
 	@${ECHO_MSG}
 
+pre-build:
+	@find ${WRKSRC} -type f | xargs grep -l linux/agpgart | \
+		xargs perl -pi -e "s|linux/agpgart|sys/agpio|"
+
 pre-install:
 .if exists(${PREFIX}/lib/libGL.so.${GLVER}) && !defined(GL_CHECK_OVERRIDE)
 	@${ECHO_MSG}
@@ -61,6 +68,13 @@ pre-install:
 .endif
 
 post-install:
+.if exists(/usr/include/sys/agpio.h)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "The module has been built with experimental AGP support. To use it you should"
+	@${ECHO_MSG} "create device node for agp driver (mknod ${AGP_DEVICE} c 148 0) and enable"
+	@${ECHO_MSG} "AGP support in ${PREFIX}/etc/glx.conf file."
+	@${ECHO_MSG}
+.endif
 	${MKDIR} ${PREFIX}/share/doc/utah-glx
 	${INSTALL_MAN} ${WRKSRC}/docs/README.* ${PREFIX}/share/doc/utah-glx
 
