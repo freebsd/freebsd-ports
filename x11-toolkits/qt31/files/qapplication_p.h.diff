@@ -1,0 +1,16 @@
+===================================================================
+RCS file: /home2/webcvs/mirror/qt-copy/src/kernel/qapplication_p.h,v
+retrieving revision 1.21
+retrieving revision 1.22
+diff -u -p -r1.21 -r1.22
+--- qt-copy/src/kernel/qapplication_p.h	2002/11/13 16:46:34	1.21
++++ qt-copy/src/kernel/qapplication_p.h	2002/11/14 08:57:34	1.22
+@@ -83,7 +83,6 @@ extern int qt_ncols_option;
+ 
+ 
+ extern void qt_dispatchEnterLeave( QWidget*, QWidget* );
+-
+-
++extern bool qt_tryModalHelper( QWidget *, QWidget ** = 0 );
+ 
+ #endif

@@ -1,0 +1,23 @@
+===================================================================
+RCS file: /home2/webcvs/mirror/qt-copy/src/widgets/qeffects.cpp,v
+retrieving revision 1.18
+retrieving revision 1.19
+diff -u -p -r1.18 -r1.19
+--- qt-copy/src/widgets/qeffects.cpp	2002/10/30 01:54:25	1.18
++++ qt-copy/src/widgets/qeffects.cpp	2002/11/21 01:30:32	1.19
+@@ -275,6 +275,7 @@ void QAlphaWidget::render()
+ 	q_blend = 0;
+ 	deleteLater();
+     } else {
++        widget->clearWState( WState_ForceHide );
+ 	alphaBlend();
+ 	pm = mixed;
+ 	repaint( FALSE );
+@@ -505,6 +506,7 @@ void QRollEffect::run( int time )
+ void QRollEffect::scroll()
+ {
+     if ( !done ) {
++        widget->clearWState( WState_ForceHide );
+         int tempel = checkTime.elapsed();
+         if ( elapsed >= tempel )
+             elapsed++;

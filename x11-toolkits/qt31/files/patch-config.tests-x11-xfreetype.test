@@ -1,0 +1,11 @@
+--- config.tests/x11/xfreetype.test.orig	Wed Nov 13 04:52:27 2002
++++ config.tests/x11/xfreetype.test	Sun Dec 29 07:11:17 2002
+@@ -37,7 +37,7 @@
+ LIBDIRS="$IN_LIBDIRS $XDIRS /usr/shlib /usr/lib /lib"
+ F=
+ for LIBDIR in $LIBDIRS; do
+-    LIBS="Xft2 Xft"
++    LIBS="Xft Xft2"
+     for LIB in $LIBS; do
+ 	FOUND_LIB=`ls ${LIBDIR}/lib${LIB}.* 2>/dev/null`
+ 	if [ ! -z "$FOUND_LIB" ]; then

@@ -1,0 +1,15 @@
+===================================================================
+RCS file: /home2/webcvs/mirror/qt-copy/src/kernel/qwidget_x11.cpp,v
+retrieving revision 1.55
+retrieving revision 1.56
+diff -u -p -r1.55 -r1.56
+--- qt-copy/src/kernel/qwidget_x11.cpp	2002/11/13 16:46:35	1.55
++++ qt-copy/src/kernel/qwidget_x11.cpp	2002/11/13 17:28:42	1.56
+@@ -1561,7 +1561,6 @@ void QWidget::showMinimized()
+ 	else {
+ 	    topData()->showMode = 1;
+ 	    show();
+-	    hideChildren( FALSE );
+ 	}
+     } else {
+ 	show();
