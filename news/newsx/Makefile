@@ -7,6 +7,7 @@
 
 PORTNAME=	newsx
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.kvaleberg.com/pub/
 
