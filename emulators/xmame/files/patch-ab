@@ -1,0 +1,29 @@
+diff -ruN ../../OLD/xmame-0.30.1/./conv2zip ./conv2zip
+--- ../../OLD/xmame-0.30.1/./conv2zip	Wed Dec 31 16:00:00 1969
++++ ./conv2zip	Fri Jan 30 19:54:06 1998
+@@ -0,0 +1,25 @@
++#!/bin/sh
++
++if [ ! -x /usr/local/bin/zip ]
++then
++	echo "ZIP program not installed.  Check /usr/ports/archivers."
++	exit 1
++fi
++
++cd /usr/local/lib/mame
++find . -type d -print | sed 's/^\.\///g' | grep -v ^\\. | grep -v cfg | \
++grep -v hi | grep -v roms | grep -v samples > /tmp/dirs.$$
++
++for D in `cat /tmp/dirs.$$`
++do
++	cd ${D}
++	echo "Converting: ${D}"
++	zip -9 ../roms/${D}.zip *
++	echo ""
++	cd ..
++	rm -rf ${D}
++done
++
++echo "All ROM directories have been converted to zipfiles."
++
++rm -f /tmp/dirs.$$
