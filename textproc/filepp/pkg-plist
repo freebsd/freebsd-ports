@@ -1,7 +1,15 @@
 bin/filepp
 share/filepp/modules/bigdef.pm
+share/filepp/modules/bigfunc.pm
+share/filepp/modules/blc.pm
 share/filepp/modules/c-comment.pm
+share/filepp/modules/cmacros.pm
+share/filepp/modules/comment.pm
+share/filepp/modules/cpp.pm
+share/filepp/modules/defplus.pm
+share/filepp/modules/filedb.pm
 share/filepp/modules/for.pm
+share/filepp/modules/foreach.pm
 share/filepp/modules/format.pm
 share/filepp/modules/function.pm
 share/filepp/modules/hash-comment.pm
