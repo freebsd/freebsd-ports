@@ -1,5 +1,5 @@
 --- Imakefile.orig	Tue Aug 14 09:30:24 2001
-+++ Imakefile	Fri Aug 24 07:48:14 2001
++++ Imakefile	Sat Dec  8 19:39:45 2001
 @@ -1,15 +1,17 @@
  XCOMM Should install to /usr or /usr/local ??
 -DESTDIR=/usr
@@ -21,7 +21,7 @@
  XCOMM
  XCOMM Compile options:
  XCOMM
-@@ -38,13 +40,12 @@
+@@ -38,13 +40,13 @@
  #CCOPTIONS=-O -DZLIB -DNEW_CTIME -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
  
  # Solaris, Linux
@@ -38,10 +38,11 @@
 +ZLIBDIR=-L${LOCALBASE}/lib
 +JINC=-I${LOCALBASE}/include
 +CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\" -DNEW_CTIME -I${LOCALBASE}/include
++INCLUDES+=	-I${LOCALBASE}/include
  #endif
  
  SRCS=sunclock.c astro.c widgets.c tildepath.c dirlist.c \
-@@ -52,7 +53,7 @@
+@@ -52,7 +54,7 @@
  OBJS=sunclock.o astro.o widgets.o tildepath.o dirlist.o \
       readvmf.o readxpm.o readjpeg.o
  LOCAL_LIBRARIES=$(XLIB) $(XPMLIBDIR) -lXpm $(ZLIBDIR) -lz \
