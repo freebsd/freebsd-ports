@@ -1,50 +1,32 @@
---- configure.orig	Wed Apr  4 12:45:36 2001
-+++ configure	Sat Apr 14 18:25:08 2001
-@@ -3760,7 +3760,9 @@
-       -e "s/[ 	]*$/'/g" \
-       $srcdir/config.layout > $pldconf
-   layout_name=$LAYOUT
-+  prefix_backup=$prefix # poor patch to prevent override prefix arg with default
-   . $pldconf
-+  prefix=$prefix_backup
-   rm $pldconf
-   for var in prefix exec_prefix bindir sbindir libexecdir mandir \
-              sysconfdir datadir iconsdir htdocsdir cgidir includedir \
-@@ -3777,7 +3779,7 @@
-         ;;
-     esac
-     val=`echo $val | sed -e 's:\(.\)/*$:\1:'`
--    val=`echo $val | sed -e 's:$\([a-z_]*\):$(\1):g'`
-+    val=`echo $val | sed -e 's:$\([a-z_]*\):${\1}:g'`
-     if test "$autosuffix" = "yes"; then
-       if echo $val | grep apache >/dev/null; then
-         addtarget=no
-@@ -3788,7 +3790,7 @@
-         val="$val/apache"
-       fi
-     fi
--    eval "$var='$val'"
-+    eval "$var=\"$val\""
-   done
-   
+--- configure.orig	Tue Nov 13 04:07:39 2001
++++ configure	Fri Nov 16 23:32:52 2001
+@@ -1084,7 +1084,7 @@
+   esac
  
-@@ -9678,6 +9680,10 @@
+   # The eval makes quoting arguments work.
+-  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir "$apache_apr_flags --prefix=$prefix $disable_shared"
++  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir --includedir=$includedir "$apache_apr_flags --prefix=$prefix $disable_shared"
+   then :
+     echo "srclib/apr configured properly"
+   else
+@@ -1175,7 +1175,7 @@
+   esac
  
-   
-   APACHE_VAR_SUBST="$APACHE_VAR_SUBST sysconfdir"
-+  APACHE_VAR_SUBST="$APACHE_VAR_SUBST runtimedir"
-+  APACHE_VAR_SUBST="$APACHE_VAR_SUBST logfiledir"
-+  APACHE_VAR_SUBST="$APACHE_VAR_SUBST mandir"
-+  APACHE_VAR_SUBST="$APACHE_VAR_SUBST libdir"
-   
- 
-   
-@@ -9814,7 +9820,7 @@
+   # The eval makes quoting arguments work.
+-  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir "--with-apr=../apr --prefix=$prefix $disable_shared"
++  if eval $ac_abs_srcdir/configure $ac_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_abs_srcdir --includedir=$includedir "--with-apr=../apr --prefix=$prefix $disable_shared"
+   then :
+     echo "srclib/apr-util configured properly"
+   else
+@@ -10508,7 +10508,10 @@
  EOF
  
  cat >> confdefs.h <<EOF
 -#define SERVER_CONFIG_FILE "conf/$progname.conf"
 +#define SERVER_CONFIG_FILE "etc/apache/$progname.conf"
++#define DEFAULT_ERRORLOG "/var/log/httpd-error.log"
++#define AP_TYPES_CONFIG_FILE "etc/apache/mime.types"
++#define DOCUMENT_LOCATION HTTPD_ROOT "/www/data"
  EOF
  
  cat >> confdefs.h <<EOF

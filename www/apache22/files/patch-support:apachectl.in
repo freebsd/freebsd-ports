@@ -1,23 +1,22 @@
---- support/apachectl.in.orig	Fri Feb 16 13:26:53 2001
-+++ support/apachectl.in	Sun Apr  8 03:49:34 2001
+--- support/apachectl.in.orig	Fri Nov 16 21:22:36 2001
++++ support/apachectl.in	Fri Nov 16 22:07:31 2001
 @@ -25,10 +25,10 @@
  # --------------------                              --------------------
  # 
  # the path to your PID file
--PIDFILE=@prefix@/logs/httpd.pid
-+PIDFILE=/var/run/httpd.pid
+-PIDFILE=@prefix@/logs/@progname@.pid
++PIDFILE=/var/run/@progname@.pid
  #
  # the path to your httpd binary, including options if necessary
--HTTPD='@prefix@/bin/httpd'
-+HTTPD='@prefix@/sbin/httpd'
+-HTTPD='@prefix@/bin/@progname@'
++HTTPD='@prefix@/sbin/@progname@'
  #
  # a command that outputs a formatted text version of the HTML at the
  # url given on the command line.  Designed for lynx, however other
-@@ -41,6 +41,8 @@
+@@ -41,6 +41,7 @@
  #
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
-+
 +eval `limits -e -C daemon` >/dev/null 2>&1
  
  ERROR=0

@@ -1,6 +1,6 @@
---- config.layout.orig	Sat Apr  7 04:19:44 2001
-+++ config.layout	Sat Apr  7 04:20:28 2001
-@@ -249,3 +249,22 @@
+--- config.layout.orig	Fri Oct 26 11:59:26 2001
++++ config.layout	Fri Nov 16 18:36:14 2001
+@@ -285,3 +285,25 @@
      logfiledir:    $prefix/logs
      proxycachedir: $prefix/proxy
  </Layout>
@@ -14,8 +14,11 @@
 +    mandir:        $prefix/man
 +    sysconfdir:    $prefix/etc/apache
 +    datadir:       $prefix/www
++    installbuilddir: $prefix/share/mk/apache
++    errordir:      $datadir/error
 +    iconsdir:      $datadir/icons
 +    htdocsdir:     $datadir/data
++    manualdir:     ${prefix}/share/doc/apache
 +    cgidir:        $datadir/cgi-bin
 +    includedir:    $prefix/include/apache
 +    localstatedir: /var
