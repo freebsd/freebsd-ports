@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	roottail
-PORTVERSION=	0.2
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.goof.com/pcg/marc/data/
 DISTNAME=	root-tail-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
-COMMENT=	Simple utility to tail files/logs to a root X window
+COMMENT=	Print text directly to X11 root window
 
 MAN1=		root-tail.1
 PLIST_FILES=	bin/root-tail
 USE_IMAKE=	yes
+MAKE_ARGS=	CC="${CC}"
 
 .include <bsd.port.mk>
