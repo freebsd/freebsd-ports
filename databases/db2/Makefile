@@ -10,6 +10,7 @@ PORTVERSION=	2.7.7
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+DISTNAME=	db-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 2
