@@ -17,7 +17,7 @@ include/sizeindicator.h
 lib/libkscan.la
 lib/libkscan.so
 lib/libkscan.so.1
-share/applnk/Graphics/kooka.desktop
+share/applications/kde/kooka.desktop
 share/apps/kooka/kookaui.rc
 share/apps/kooka/pics/mirror-both.png
 share/apps/kooka/pics/mirror-horiz.png
