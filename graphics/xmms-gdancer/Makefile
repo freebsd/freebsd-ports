@@ -13,7 +13,7 @@ DISTNAME=	gdancer-$(PORTVERSION)
 
 MAINTAINER=	netchild@FreeBSD.org
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms \
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 USE_X_PREFIX=	yes

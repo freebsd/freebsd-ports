@@ -12,7 +12,7 @@ MASTER_SITES=	http://lpn.rnbhq.org/download/
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread \
+LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 HAS_CONFIGURE=	yes

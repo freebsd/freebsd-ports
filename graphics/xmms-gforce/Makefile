@@ -13,8 +13,8 @@ DISTNAME=	gforce-1.1.6xp3
 
 MAINTAINER=	erwin@lansing.dk
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

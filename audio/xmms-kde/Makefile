@@ -14,7 +14,7 @@ DISTNAME=	xmmskde-${PORTVERSION}
 
 MAINTAINER=	jan@jungnickel.com
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_KDELIBS_VER=3
 WRKSRC=		${WRKDIR}/${DISTNAME:S/0.0/0/}

@@ -16,7 +16,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

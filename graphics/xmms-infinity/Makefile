@@ -13,9 +13,9 @@ DISTNAME=	infinity-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms \
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
 		SDL-1.1.4:${PORTSDIR}/devel/sdl12
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 

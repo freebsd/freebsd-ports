@@ -14,7 +14,7 @@ DISTNAME=	xmms-a52dec-1.0
 
 MAINTAINER=	verm@drunkmonk.net
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR=	xmms-mad
 MAINTAINER=	dyeske@yahoo.com
 
 LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

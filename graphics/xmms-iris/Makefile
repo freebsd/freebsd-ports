@@ -13,8 +13,8 @@ PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	dyeske@yahoo.com
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes

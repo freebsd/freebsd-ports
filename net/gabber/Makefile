@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 
 .if defined(WITH_XMMS)
-BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
 .endif
 LIB_DEPENDS=	gnomemm.9:${PORTSDIR}/x11-toolkits/gnome--
 

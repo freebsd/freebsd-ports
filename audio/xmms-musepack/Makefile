@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.musepack.info/dl/
 
 MAINTAINER=	walter@binity.com
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -8,7 +8,7 @@
 PORTNAME=	plugger
 PORTVERSION=	4.0
 PORTREVISION=	2
-CATEGORIES=	www audio graphics
+CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		${MASTER_SITE_NETSCAPE}
 MASTER_SITE_SUBDIR=	sdk/plugin/unix
@@ -50,7 +50,7 @@ WITH_GNOME2 =	yes
 .endif
 
 .if defined(WITH_MPLAYER)
-RUN_DEPENDS+=	${LOCALBASE}/bin/mplayer:${PORTSDIR}/graphics/mplayer
+RUN_DEPENDS+=	${LOCALBASE}/bin/mplayer:${PORTSDIR}/multimedia/mplayer
 .endif
 
 .if defined(WITH_MTV)

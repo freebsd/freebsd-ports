@@ -18,7 +18,7 @@ MAINTAINER=	calle.madestrand@norrgarden.se
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 .if defined(WITH_XMMS)
-BUILD_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 .endif
 
 WRKSRC=		${WRKDIR}/TekNap

@@ -5,9 +5,9 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	chinese
+CATEGORIES=	chinese multimedia
 
-MASTERDIR=	${.CURDIR}/../../audio/xmms
+MASTERDIR=	${.CURDIR}/../../multimedia/xmms
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	sobomax

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/graphics/ffmpeg \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libavcodec.a:${PORTSDIR}/multimedia/ffmpeg \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \

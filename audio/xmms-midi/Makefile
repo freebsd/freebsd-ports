@@ -11,7 +11,7 @@ MASTER_SITES=	http://ban.joh.cam.ac.uk/~cr212/xmms-midi/
 
 MAINTAINER=	hendrik@scholz.net
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=    timidity:${PORTSDIR}/audio/timidity
 
 USE_GNOMENG=	yes

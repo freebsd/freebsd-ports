@@ -17,9 +17,9 @@ DISTNAME=	GOPchop-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libvo.a:${PORTSDIR}/graphics/libmpeg2
+BUILD_DEPENDS=	${LOCALBASE}/lib/libvo.a:${PORTSDIR}/multimedia/libmpeg2
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		mpeg2.0:${PORTSDIR}/graphics/libmpeg2
+		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

@@ -24,7 +24,7 @@ EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER?=	arved@FreeBSD.org
 
 .if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
 .endif
 
 WRKSRC=		${WRKDIR}/BitchX

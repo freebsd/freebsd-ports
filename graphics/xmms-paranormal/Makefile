@@ -16,8 +16,8 @@ MAINTAINER=	dyeske@yahoo.com
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		SDL-1.1.4:${PORTSDIR}/devel/sdl12
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include/libxml2/libxml" SDL_CONFIG="${SDL_CONFIG}"

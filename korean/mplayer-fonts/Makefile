@@ -6,7 +6,7 @@
 
 PORTNAME=	mplayer-fonts
 PORTVERSION=	1.0
-CATEGORIES=	korean graphics
+CATEGORIES=	korean multimedia
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/ \
 		http://www.yonsei.ac.kr/yu/intro/symbol/:yonsei

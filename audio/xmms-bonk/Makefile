@@ -12,7 +12,7 @@ DISTNAME=	bonk-xmms-${PORTVERSION}
 
 MAINTAINER=	naddy@FreeBSD.org
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 ALL_TARGET=

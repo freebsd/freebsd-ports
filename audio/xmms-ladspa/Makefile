@@ -13,7 +13,7 @@ DISTNAME=	xmms_ladspa-${PORTVERSION}
 MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
+LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/xmms_ladspa
 USE_X_PREFIX=	yes
