@@ -25,4 +25,7 @@ PERL_CONFIGURE=	yes
 MAN3=		Class::Tangram.3 Class::Tangram::Containers.3 \
 		Class::Tangram::Generator.3
 
+post-patch:
+		@${PERL} -pi -e 's/\@/\\@/' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
