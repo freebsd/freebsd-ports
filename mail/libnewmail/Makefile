@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnewmail
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
 
@@ -23,6 +23,7 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--disable-doxygen --disable-lynx
 
 DOC_FILES=	README \
 		README.html \
@@ -39,7 +40,7 @@ post-install:
 .for doc in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
 .endfor
-	@${CP} -R ${WRKSRC}/doc/reference ${DOCSDIR}
+	@${CP} -R ${WRKSRC}/doc/reference/html/ ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
