@@ -357,7 +357,13 @@ bin/doxytag
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_logo_low.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/doxygen_usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/doxytag_usage.html
-%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_expert.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_main.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_menu.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_page1.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_page2.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_page3.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_page4.png
 %%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_usage.html
 %%PORTDOCS%%%%DOCSDIR%%/html/external.html
 %%PORTDOCS%%%%DOCSDIR%%/html/faq.html
@@ -368,6 +374,7 @@ bin/doxytag
 %%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_3.png
 %%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_4.png
 %%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_5.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_6.png
 %%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/formula.repository
 %%PORTDOCS%%%%DOCSDIR%%/html/formulas.html
 %%PORTDOCS%%%%DOCSDIR%%/html/grouping.html
