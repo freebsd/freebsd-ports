@@ -1,0 +1,17 @@
+wcl-01.ttf 新潮體-波浪
+wcl-02.ttf 特明體-標準
+wcl-03.ttf 波卡體-空陰
+wcl-04.ttf 綜藝體-雙空陰
+wcl-05.ttf 標楷體-空心
+wcl-06.ttf 仿宋體-標準
+wcl-07.ttf 粗剛體-標準
+wcl-08.ttf 粗黑體-實陰
+wcl-09.ttf 粗圓體-雙空
+wcl-10.ttf 海報體-半天水
+
+Version: 王漢宗字集(Linux版), 欲購買完整字集者, 請洽電話 (03)463-0383
+
+版權隸屬數學博士王漢宗先生, 本字型資料必須遵守 General Public License(GPL)
+的規定方可使用
+
+(C)Copyright Dr. Hann-Tzong Wang, 1999

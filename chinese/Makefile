@@ -54,6 +54,7 @@
     SUBDIR += tocps
     SUBDIR += ttfm
     SUBDIR += ve
+    SUBDIR += wangttf
     SUBDIR += xa+cv
     SUBDIR += xcin
     SUBDIR += xcin25
