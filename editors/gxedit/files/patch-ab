@@ -1,32 +1,40 @@
---- Makefile.orig	Mon Nov 23 04:54:57 1998
-+++ Makefile	Tue Nov 24 02:02:35 1998
-@@ -1,9 +1,9 @@
+--- Makefile.orig	Mon Jan 18 02:19:50 1999
++++ Makefile	Mon Jan 18 02:20:38 1999
+@@ -1,8 +1,8 @@
  BIN_DIR =
  INSTALL_DIR = /usr/X11R6/bin/
--CFLAGS = `gtk-config --cflags` -I/usr/local/include -I. -O -Wall
-+CFLAGS += `gtk11-config --cflags` -I/usr/local/include -I.
- GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.3
- GNOME_CFLAGS = -DUSE_GNOME
+-CFLAGS = `gtk-config --cflags` -I/usr/local/include -I. -O -Wall -DVERSION=\"1.19\"
++CFLAGS += `gtk11d-config --cflags` -I/usr/local/include -I. -DVERSION=\"1.19\"
+ GTKEDITOR_CFLAGS = -I../gtkeditor-0.0.4
 -LIBS = `gtk-config --libs`
-+LIBS = `gtk11-config --libs`
- GNOME_LIBS = -lgnomesupport -lgnome -lgnomeui
- OBJS = bindings.o gxedit.o net.o utils.o
- GTKEDITOR_OBJS = ../gtkeditor-0.0.3/gtkeditor.o ../gtkeditor-0.0.3/regex.o -L../gtkeditor-0.0.3 -lgtkeditor -lregex
-@@ -23,7 +23,7 @@
++LIBS = `gtk11d-config --libs`
+ OBJS = gxedit.o net.o utils.o
+ GTKEDITOR_OBJS = ../gtkeditor-0.0.4/gtkeditor/gtkeditor.o ../gtkeditor-0.0.4/regex/regex.o -L../gtkeditor-0.0.4 -lgtkeditor -lregex
+ CC = gcc
+@@ -20,7 +20,6 @@
  	$(CC) $(CFLAGS) -c utils.c
  	$(CC) $(CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(LIBS)
  	@(rm -f ./.chk_config)
 -	(cd xproc-src; make BIN_DIR=../; cd ..)
-+#	(cd xproc-src; make BIN_DIR=../; cd ..)
+ 	(cd gtk-shell-src; make BIN_DIR=../; cd ..)
  	@echo "You should delete your ~/.gxedit file to allow GXedit to re-create it if you're upgrading GXedit."
  
- gxe-with-gtkeditor:
-@@ -58,7 +58,7 @@
+@@ -30,7 +29,6 @@
+ 	$(CC) $(CFLAGS) $(GTKEDITOR_CFLAGS) -c utils.c
+ 	$(CC) $(CFLAGS) $(GTKEDITOR_CFLAGS) -o $(BIN_DIR)gxedit $(OBJS) $(GTKEDITOR_OBJS) $(LIBS)
+ 	@(rm -f ./.chk_config)
+-	(cd xproc-src; make BIN_DIR=../; cd ..)
+ 	(cd gtk-shell-src; make BIN_DIR=../; cd ..)
+ 	@echo "You should delete your ~/.gxedit file to allow GXedit to re-create it if you're upgrading GXedit."
  
- install:
- 	cp $(BIN_DIR)gxedit $(INSTALL_DIR)gxedit
--	cp $(BIN_DIR)xproc $(INSTALL_DIR)xproc
-+#	cp $(BIN_DIR)xproc $(INSTALL_DIR)xproc
- 	cp ftp.sh $(INSTALL_DIR)ftp.sh
- 	cp ftp-ls.sh $(INSTALL_DIR)ftp-ls.sh
+--- gtk-shell-src/Makefile.orig	Wed Nov 25 07:10:44 1998
++++ gtk-shell-src/Makefile	Mon Jan 18 02:25:08 1999
+@@ -1,6 +1,6 @@
+ BIN_DIR = 
+-CFLAGS = `gtk-config --cflags` -O -I. -Wall
+-LIBS = `gtk-config --libs`
++CFLAGS += `gtk11d-config --cflags` -I.
++LIBS = `gtk11d-config --libs`
+ CC = gcc
  
+ all:

@@ -1,3 +1,5 @@
 bin/ftp-ls.sh
+bin/ftp-put.sh
 bin/ftp.sh
+bin/gtk-shell
 bin/gxedit
