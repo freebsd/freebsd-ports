@@ -1,0 +1,11 @@
+
+-------------------------------------------------------------------------------
+If you are using a 3dfx Voodoo-based card, you must make a symlink to libglide.
+
+Voodoo3/Banshee:
+ln -sf %%PREFIX%%/usr/X11R6/lib/libglide3-v3.so.0 %%PREFIX%%/usr/X11R6/lib/libglide3.so.3
+
+Voodoo4/5:
+ln -sf %%PREFIX%%/usr/X11R6/lib/libglide3-v5.so.0 %%PREFIX%%/usr/X11R6/lib/libglide3.so.3
+-------------------------------------------------------------------------------
+
