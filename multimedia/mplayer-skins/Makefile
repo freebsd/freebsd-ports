@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	1.0.5
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/:Skin \
 		http://ftp.lug.udel.edu/MPlayer/Skin/:Skin \
@@ -15,7 +14,29 @@ MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/:Skin \
 		ftp://ftp.lug.udel.edu/MPlayer/Skin/:Skin \
 		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/:mini
 PKGNAMESUFFIX=	-skins
-DISTFILES=
+DISTFILES=	default-1.7.tar.bz2:Skin \
+		AlienMind-1.1.tar.bz2:Skin \
+		avifile-1.5.tar.bz2:Skin \
+		BlueHeart-1.4.tar.bz2:Skin \
+		CornerMP-1.0.tar.bz2:Skin \
+		CornerMP-aqua-1.0.tar.bz2:Skin \
+		Cyrus-1.0.tar.bz2:Skin \
+		gnome-1.1.tar.bz2:Skin \
+		hayraphon-1.0.tar.bz2:Skin \
+		hwswskin-1.0.tar.bz2:Skin \
+		mentalic-1.1.tar.bz2:Skin \
+		MidnightLove-1.5.tar.bz2:Skin \
+		neutron-1.4.tar.bz2:Skin \
+		phony-1.0.tar.bz2:Skin \
+		plastic-1.1.1.tar.bz2:Skin \
+		proton-1.1.tar.bz2:Skin \
+		slim-1.0.tar.bz2:Skin \
+		trium-1.1.tar.bz2:Skin \
+		WindowsMediaPlayer6-1.2.tar.bz2:Skin \
+		xanim-1.5.tar.bz2:Skin \
+		xine-lcd-1.0.tar.bz2:Skin \
+		Orange-1.1.tar.bz2:Skin \
+		mini-0.1.tar.bz2:mini
 EXTRACT_ONLY=
 DIST_SUBDIR=	mplayer
 
@@ -48,7 +69,7 @@ WITH_SKIN_DEFAULT=yes
 .endif	# BATCH
 
 .if !defined(BATCH)
-pre-fetch:
+pre-everything::
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/choice
 
@@ -87,118 +108,101 @@ WITH_SKIN_TRIUM=yes
 WITH_SKIN_WINDOWSMEDIAPLAYER6=yes
 WITH_SKIN_XANIM=yes
 WITH_SKIN_XINE_LCD=yes
+WITH_SKIN_ORANGE=yes
 WITH_SKIN_MINI=yes
 . endif # WITH_SKIN_ALL
 
 #
-# files to fetch
+# files to extract
 #
-DISTFILES+=	default-1.7.tar.bz2:Skin
 .ifdef(WITH_SKIN_DEFAULT)
 EXTRACT_ONLY+=	default-1.7.tar.bz2
 .endif
 
-DISTFILES+=	AlienMind-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_ALIENMIND)
 EXTRACT_ONLY+=	AlienMind-1.1.tar.bz2
 .endif
 
-DISTFILES+=	avifile-1.5.tar.bz2:Skin
 .ifdef(WITH_SKIN_AVIFILE)
 EXTRACT_ONLY+=	avifile-1.5.tar.bz2
 .endif
 
-DISTFILES+=	BlueHeart-1.4.tar.bz2:Skin
 .ifdef(WITH_SKIN_BLUEHEART)
 EXTRACT_ONLY+=	BlueHeart-1.4.tar.bz2
 .endif
 
-DISTFILES+=	CornerMP-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_CORNERMP)
 EXTRACT_ONLY+=	CornerMP-1.0.tar.bz2
 .endif
 
-DISTFILES+=	CornerMP-aqua-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_CORNERMP_AGUA)
 EXTRACT_ONLY+=	CornerMP-aqua-1.0.tar.bz2
 .endif
 
-DISTFILES+=	Cyrus-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_CYRUS)
 EXTRACT_ONLY+=	Cyrus-1.0.tar.bz2
 .endif
 
-DISTFILES+=	gnome-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_CYRUS)
 EXTRACT_ONLY+=	gnome-1.1.tar.bz2
 .endif
 
-DISTFILES+=	hayraphon-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_CYRUS)
 EXTRACT_ONLY+=	hayraphon-1.0.tar.bz2
 .endif
 
-DISTFILES+=	hwswskin-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_HWSW_SKIN)
 EXTRACT_ONLY+=	hwswskin-1.0.tar.bz2
 .endif
 
-DISTFILES+=	mentalic-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_MENTALIC)
 EXTRACT_ONLY+=	mentalic-1.1.tar.bz2
 .endif
 
-DISTFILES+=	MidnightLove-1.5.tar.bz2:Skin
 .ifdef(WITH_SKIN_MIDNIGHTLOVE)
 EXTRACT_ONLY+=	MidnightLove-1.5.tar.bz2
 .endif
 
-DISTFILES+=	neutron-1.4.tar.bz2:Skin
 .ifdef(WITH_SKIN_NEUTRON)
 EXTRACT_ONLY+=	neutron-1.4.tar.bz2
 .endif
 
-DISTFILES+=	phony-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_PHONY)
 EXTRACT_ONLY+=	phony-1.0.tar.bz2
 .endif
 
-DISTFILES+=	plastic-1.1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_PLASTIC)
 EXTRACT_ONLY+=	plastic-1.1.1.tar.bz2
 .endif
 
-DISTFILES+=	proton-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_PROTON)
 EXTRACT_ONLY+=	proton-1.1.tar.bz2
 .endif
 
-DISTFILES+=	slim-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_SLIM)
 EXTRACT_ONLY+=	slim-1.0.tar.bz2
 .endif
 
-DISTFILES+=	trium-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_TRIUM)
 EXTRACT_ONLY+=	trium-1.1.tar.bz2
 .endif
 
-DISTFILES+=	WindowsMediaPlayer6-1.2.tar.bz2:Skin
 .ifdef(WITH_SKIN_WINDOWSMEDIAPLAYER6)
 EXTRACT_ONLY+=	WindowsMediaPlayer6-1.2.tar.bz2
 .endif
 
-DISTFILES+=	xanim-1.5.tar.bz2:Skin
 .ifdef(WITH_SKIN_XANIM)
 EXTRACT_ONLY+=	xanim-1.5.tar.bz2
 .endif
 
-DISTFILES+=	xine-lcd-1.0.tar.bz2:Skin
 .ifdef(WITH_SKIN_XINE_LCD)
 EXTRACT_ONLY+=	xine-lcd-1.0.tar.bz2
 .endif
 
-DISTFILES+=	mini-0.1.tar.bz2:mini
+.ifdef(WITH_SKIN_ORANGE)
+EXTRACT_ONLY+=	Orange-1.1.tar.bz2
+.endif
+
 .ifdef(WITH_SKIN_MINI)
 EXTRACT_ONLY+=	mini-0.1.tar.bz2
 .endif
