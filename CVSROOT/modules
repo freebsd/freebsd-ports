@@ -9676,6 +9676,7 @@ q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
 qalculate	ports/math/qalculate
 qbrew		ports/misc/qbrew
+qca		ports/devel/qca
 qca-tls		ports/security/qca-tls
 qcad		ports/cad/qcad
 qcad-partslib	ports/cad/qcad-partslib
