@@ -65,6 +65,15 @@ pre-extract:
 	@ ${ECHO}
 	@ ${FALSE}
 .endif
+.if !exists(/usr/include/langinfo.h)
+	@${ECHO}
+	@${ECHO} langinfo.h is missing !
+	@${ECHO}
+	@${ECHO} Please upgrade to 4.5 STABLE or
+	@${ECHO} 4.6 RELEASE.
+	@${ECHO}
+	@${FALSE}
+.endif
 
 post-extract:
 	@for file in ${EXTRACT_REST}; do \
