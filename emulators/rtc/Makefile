@@ -15,11 +15,10 @@ MAINTAINER=	freebsd-emulation@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/files
 
-LINUX_DIR=	/compat/linux
 KMODDIR=	${PREFIX}/modules
 
 CDEV_MAJOR=	202
-DEVDIR=		${LINUX_DIR}/dev
+DEVDIR=		${LINUXBASE}/dev
 
 STARTUP=	rtc.sh
 MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"

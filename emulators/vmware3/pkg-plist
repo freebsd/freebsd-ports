@@ -112,17 +112,17 @@ share/doc/vmware/INSTALL
 share/doc/vmware/README
 share/doc/vmware/README.FreeBSD
 share/doc/vmware/SAMBA-LICENSE
-@exec mkdir -p /compat/linux/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n /compat/linux/dev/tty$n;done
-@exec ln -s /dev/ttyva /compat/linux/dev/tty10
-@exec ln -s /dev/ttyvb /compat/linux/dev/tty11
-@exec mknod /compat/linux/dev/null c 2 2
-@exec chmod 666 /compat/linux/dev/null
-@exec mknod /compat/linux/dev/hda b 0 0x00010002
-@exec mknod /compat/linux/dev/hdb b 0 0x0001000a
+@exec mkdir -p %%LINUXBASE%%/dev;for n in 0 1 2 3 4 5 6 7 8 9; do ln -s /dev/ttyv$n %%LINUXBASE%%/dev/tty$n;done
+@exec ln -s /dev/ttyva %%LINUXBASE%%/dev/tty10
+@exec ln -s /dev/ttyvb %%LINUXBASE%%/dev/tty11
+@exec mknod %%LINUXBASE%%/dev/null c 2 2
+@exec chmod 666 %%LINUXBASE%%/dev/null
+@exec mknod %%LINUXBASE%%/dev/hda b 0 0x00010002
+@exec mknod %%LINUXBASE%%/dev/hdb b 0 0x0001000a
 @exec ln -s %D/etc/vmware /etc/vmware
-@exec mknod /compat/linux/dev/vmmon c 200 0
-@exec mknod /compat/linux/dev/vmnet1 c 149 65537
-@unexec rm -f /etc/vmware /compat/linux/dev/vmmon /compat/linux/dev/vmnet1 /compat/linux/bin/df /compat/linux/dev/tty[0-9]* /compat/linux/dev/hd? /compat/linux/dev/null
+@exec mknod %%LINUXBASE%%/dev/vmmon c 200 0
+@exec mknod %%LINUXBASE%%/dev/vmnet1 c 149 65537
+@unexec rm -f /etc/vmware %%LINUXBASE%%/dev/vmmon %%LINUXBASE%%/dev/vmnet1 %%LINUXBASE%%/bin/df %%LINUXBASE%%/dev/tty[0-9]* %%LINUXBASE%%/dev/hd? %%LINUXBASE%%/dev/null
 @dirrm etc/vmware
 @dirrm lib/vmware/bin
 @dirrm lib/vmware/lib/floppies
