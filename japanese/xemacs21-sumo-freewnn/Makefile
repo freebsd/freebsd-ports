@@ -1,16 +1,13 @@
-# New ports collection makefile for:	XEmacs with Wnn4
-# Version required:	20.4
-# Date created:		25 January 1998
-# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
+# New ports collection makefile for:   Meta port of XEmacs mule with sumo package
+# Version required:    1.0
+# Date created:        19 August 1999
+# Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $FreeBSD$
+# $Id$
 #
 
-PKGNAME=	ja-xemacs-wnn4-20.4
+NAMEEXT=	-wnn4
 
-WNN4=		yes
-
-MASTERDIR=	${.CURDIR}/../../japanese/xemacs
-PKGDIR=		${.CURDIR}/pkg
+MASTERDIR=	${.CURDIR}/../../japanese/xemacs-sumo
 
 .include	"${MASTERDIR}/Makefile"

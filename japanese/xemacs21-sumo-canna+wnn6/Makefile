@@ -1,17 +1,13 @@
-# New ports collection makefile for:	XEmacs with Canna and Wnn6
-# Version required:	20.4
-# Date created:		5 Dec 1997
-# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
+# New ports collection makefile for:   Meta port of XEmacs mule with sumo package
+# Version required:    1.0
+# Date created:        19 August 1999
+# Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $FreeBSD$
+# $Id$
 #
 
-PKGNAME=	ja-xemacs-canna+wnn6-20.4
+NAMEEXT=	-canna+wnn6
 
-CANNA=		yes
-WNN6=		yes
-
-MASTERDIR=	${.CURDIR}/../../japanese/xemacs
-PKGDIR=		${.CURDIR}/pkg
+MASTERDIR=	${.CURDIR}/../../japanese/xemacs-sumo
 
 .include	"${MASTERDIR}/Makefile"

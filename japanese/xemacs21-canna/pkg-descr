@@ -1,16 +1,16 @@
-This is a package containing only the executables for xemacs-20.4, the
+This is a package containing only the executables for xemacs-21.1.6, the
 next generation of Emacs.
 
-You need to install a package, xemacs-common-20.4, containing emacs
+You need to install a package, xemacs-common-21.1.6, containing emacs
 lisp files, info pages, and so on (except executables) for
-xemacs-20.4.
+xemacs-21.1.6.
 
 This package is built with Japanese support by using Canna or SJ3 as
 an external input engine. If you use with SJ3, you should be installed 
 sj3serv in advance. SKK is supported as already builtin. Also it will
 support several input methods under leim. 
 
-This package and the package xemacs-common-20.4, might clobber any
+This package and the package xemacs-common-21.1.6, might clobber any
 existing emacs installation.  In particular, the executables and man
 pages of etags/ctags are installed, and the info pages that come with
 the original emacs will be overwritten too.

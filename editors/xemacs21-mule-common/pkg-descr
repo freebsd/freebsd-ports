@@ -1,9 +1,9 @@
 This is XEmacs lisp files, info pages, and so on (except executables)
-for XEmacs 20.4, the next generation of Emacs.
+for XEmacs 21.1.6, the next generation of Emacs.
 
-You must install one of packages, xemacs, jp-xemacs-*-20.4 (
-jp-xemacs-canna-20.4, jp-xemacs-canna+sj3-20.4, etc.), each of which
-contains only the executables for xemacs-20.4.
+You must install one of packages, xemacs, jp-xemacs-*-21.1.6 (
+jp-xemacs-canna-21.1.6, jp-xemacs-canna+sj3-21.1.6, etc.), each of which
+contains only the executables for xemacs-21.1.6.
 
 This package and the above package of the executables *will* clobber any
 existing XEmacs installation.  In particular, the executables and man
@@ -13,11 +13,6 @@ the original emacs get installed too.
 Although this shouldn't cause any problems to run both mule and emacs,
 it may cause some confusion when one of them is pkg_delete'd.  If
 someone has a solution to this, please tell me.
-
-A "dir" file is supplied in the ${PORTSDIR}/editors/xemacs-common/files/
-subdirectory of the ports package.  Copy it into your /usr/local/info
-to read mule info pages, but also make sure you also add everything
-that may have been added to that file!
 
 -- 
 Kazz

@@ -6,8 +6,6 @@
 # $FreeBSD$
 #
 
-PKGNAME=	ja-xemacs-wnn6-20.4
-
 WNN6=		yes
 
 MASTERDIR=	${.CURDIR}/../../japanese/xemacs

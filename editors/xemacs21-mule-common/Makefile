@@ -1,22 +1,23 @@
 # New ports collection makefile for:	files except executables for xemacs with mule
-# Version required:	20.4
+# Version required:	21.1.6
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xemacs-20.4
-PKGNAME=	xemacs-mule-common-20.4
+DISTNAME=	xemacs-${VERSION}
+PKGNAME=	xemacs-mule-common-${VERSION}
 CATEGORIES=	editors japanese
-MASTER_SITES=	ftp://unipro.jsys.co.jp/pub/editor/xemacs/20.4/ \
-		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-20.4/ \
-		ftp://ftp.xemacs.org/pub/xemacs-20.4/ \
-		ftp://ftp2.xemacs.org/pub/xemacs/xemacs-20.4/ \
+MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/xemacs/${FTP_DIR}/ \
+		ftp://ftp.xemacs.org/pub/xemacs/${FTP_DIR}/ \
+		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${FTP_DIR}/ \
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/${FTP_DIR}/ \
 		ftp://ftp.jpl.org/pub/elisp/
-DISTFILES=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
-		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz \
+DISTFILES=	xemacs-${VERSION}.tar.gz xemacs-${VERSION}-elc.tar.gz \
+		xemacs-${VERSION}-info.tar.gz \
 		ps-print-jp.el.gz
+DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
@@ -27,8 +28,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		compface.1:${PORTSDIR}/mail/faces
 USE_AUTOCONF=	yes
 
-EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
-		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz
+EXTRACT_ONLY=	xemacs-${VERSION}.tar.gz xemacs-${VERSION}-elc.tar.gz \
+		xemacs-${VERSION}-info.tar.gz
 
 .include <bsd.port.pre.mk>
 
@@ -46,7 +47,7 @@ WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 .endif
 .endfor
-WRKSRC= ${WRKDIR}/xemacs-20.4
+WRKSRC= ${WRKDIR}/xemacs-${VERSION}
 
 .if !defined(WRKDIR)
 .if defined(PACKAGE_BUILDING)
@@ -69,13 +70,17 @@ CONFIGURE_ARGS=	i386-unknown-freebsd \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
-STRIP=
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 
+STRIP=
 INSTALL_TARGET=	install-arch-indep
+PLIST_SUB=	XEMACS_DIR=${XEMACS_DIR}
 
-PLIST_SUB=	XEMACS_DIR=xemacs-20.4
+MAJOR_VERSION=	21.1
+VERSION=	21.1.6
+XEMACS_DIR=	xemacs-${VERSION}
+FTP_DIR=	xemacs-${MAJOR_VERSION}
 
 pre-build:
 	${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
@@ -90,7 +95,7 @@ pre-install:
 post-install:
 # install xemacs-mule.sh into ${PREFIX}/etc/rc.d
 	@${MKDIR} /var/run/emacs/lock
-	${CHMOD} 1777 /var/run/emacs/lock
+	chmod 1777 /var/run/emacs/lock
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/xemacs-mule.sh ${PREFIX}/etc/rc.d
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}

@@ -6,8 +6,6 @@
 # $FreeBSD$
 #
 
-PKGNAME?=	ja-xemacs-canna-20.4
-
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../../japanese/xemacs
