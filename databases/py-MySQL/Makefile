@@ -22,18 +22,22 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_VERSION} != "python2.1" && ${PYTHON_VERSION} != "python2.2"
+.if ${PYTHON_REL} < 210
 ALL_TARGET=	MySQLmodule.so
 .endif
-.if ${PYTHON_VERSION} == "python2.2"
+.if ${PYTHON_REL} >= 220
 MAKEFILE_PREIN=	${FILESDIR}/Makefile.pre.in
 .else
-MAKEFILE_PREIN=	${LOCALBASE}/lib/${PYTHON_VERSION}/config/Makefile.pre.in
+MAKEFILE_PREIN=	${PYTHONPREFIX_LIBDIR}/config/Makefile.pre.in
 .endif
 
 pre-configure:
 	${CP} ${FILESDIR}/Setup ${WRKSRC}/Setup
+.if ${PYTHON_REL} >= 230
+	${SED} -e 's,@DEFS@,,g' ${MAKEFILE_PREIN} > ${WRKSRC}/Makefile.pre.in
+.else
 	${LN} -s ${MAKEFILE_PREIN} ${WRKSRC}/
+.endif
 
 do-configure:
 	cd ${WRKSRC} && ${MAKE} -f Makefile.pre.in boot
