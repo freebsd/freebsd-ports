@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%SITE_PERL%%/ExtUtils/CBuilder.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Base.pm
 %%SITE_PERL%%/ExtUtils/CBuilder/Platform/Unix.pm
