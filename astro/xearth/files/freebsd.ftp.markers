@@ -20,7 +20,7 @@
 56.2,	10.2,	"ftp.FreeBSD.org"	# Skejby, Aarhus, Denmark (TDC Internet)
 48,	16,	"ftp.at.FreeBSD.org"	# Vienna, Austria (WU Wien)
 54.0,	-7.0,	"ftp.ie.FreeBSD.org"	# Dublin, Ireland
-#		"ftp.de.FreeBSD.org"	# Aachen, DE (rwth-aachen)
+50.46,	6.03,	"ftp8.de.FreeBSD.org"	# Aachen, DE (RWTH Aachen)
 53.5,	-0.2,	"ftp.uk.FreeBSD.org"	# UK (Imperial College)
 53.5,	0.0,	"ftp3.uk.FreeBSD.org"	# UK (Demon Internet@Thus)
 56.1,	10.1,	"ftp.dk.FreeBSD.org"	# Slet, Aarhus, Denmark (TDC Tele Danmark)
