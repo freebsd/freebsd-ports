@@ -1,16 +1,9 @@
-           Geographical Resources Analysis Support System
-                              (GRASS)
+          Geographic Resources Analysis Support System
+                           (GRASS GIS)
 
-A public domain, image processing and geographic information system (GIS)
-originally developed by researchers in the Environmental Division of the US
-Army Construction Engineering Research Laboratories in Champaign, Illinois,
-with enhancements and support now performed by the GRASS Research Group at
-Baylor University.
+An open source Geographical Information System (GIS) with raster,
+topological vector, image processing, and graphics production functionality
+that operates on various platforms through a graphical user interface and
+shell in X-Windows. It is released under GNU General Public License (GPL). 
 
-The GRASS system is used to input, manipulate, analyze, and output
-geographic data by users in both military and nonmilitary, public and
-private agencies based in North America, Europe, and other parts of the
-world.
-
-WWW: http://www.baylor.edu/~grass/
-
+WWW: http://grass.itc.it/

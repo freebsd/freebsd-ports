@@ -1,0 +1,42 @@
+--- configure.in.orig	Tue Feb 12 01:01:28 2002
++++ configure.in	Tue Feb 12 01:27:53 2002
+@@ -247,7 +247,7 @@
+ 	AC_MSG_ERROR([*** You must supply a directory list to --with-libs.])
+ 	;;
+ esac
+-AC_MSG_RESULT($LIBRARY_DIRS)
++AC_MSG_RESULT($with_libs)
+ 
+ if test -n "$with_libs"; then
+     for dir in $with_libs; do
+@@ -392,9 +392,9 @@
+ ])])
+ AC_SUBST(DLLIB)
+ 
+-AC_CHECK_FUNC(iconv, ICONVLIB=, [
+-AC_CHECK_LIB(giconv, iconv, ICONVLIB=-lgiconv, [
+-    AC_MSG_WARN([*** Unable to locate iconv() function.])
++AC_CHECK_FUNC(libiconv, ICONVLIB=, [
++AC_CHECK_LIB(giconv, libiconv, ICONVLIB=-lgiconv, [
++    AC_MSG_WARN([*** Unable to locate libiconv() function.])
+     ICONVLIB=
+ ])])
+ AC_SUBST(ICONVLIB)
+@@ -439,7 +439,7 @@
+ 
+ LOC_CHECK_INC_PATH(dbm,DBM,DBMINCPATH)
+ 
+-LOC_CHECK_INCLUDES(dbm.h,DBM,$DBMINCPATH)
++LOC_CHECK_INCLUDES(gdbm.h,DBM,$DBMINCPATH)
+ 
+ # With DBM library directory
+ 
+@@ -745,7 +745,7 @@
+ 
+ LOC_CHECK_LIB_PATH(opengl,OpenGL,OPENGL_LIB_PATH)
+ 
+-LOC_CHECK_LIBS(GL,glBegin,OpenGL,$OPENGL_LIB_PATH,OPENGLLIB,$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS $MATHLIB,,,-lpthread)
++LOC_CHECK_LIBS(GL,glBegin,OpenGL,$OPENGL_LIB_PATH,OPENGLLIB,$X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS $MATHLIB,,,-pthread -lXext)
+ 
+ LOC_CHECK_LIBS(GLU,gluBeginCurve,GLU,$OPENGL_LIB_PATH,OPENGLULIB,$OPENGLLIB $X_LIBS $X_PRE_LIBS -lX11 $X_EXTRA_LIBS $MATHLIB,,)
+ 
