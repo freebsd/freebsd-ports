@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.20 1998/08/05 09:31:46 asami Exp $
+# $Id: Makefile,v 1.21 1998/08/07 22:56:39 asami Exp $
 #
 
 DISTNAME=	qt-${MAJ}.${MIN}
@@ -116,10 +116,10 @@ post-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-shared
 
 do-install:
-	${INSTALL_PROGRAM} $(WRKDIR)/qt-${MAJ}.${MIN}/bin/moc $(X11BASE)/bin
+	${INSTALL_PROGRAM} $(WRKDIR)/qt-${MAJ}.${MIN}/bin/moc $(PREFIX)/bin
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${MAJ}.${MIN} \
-		$(X11BASE)/lib
-	${LN} -sf $(X11BASE)/lib/libqt.so.${MAJ}.${MIN} $(X11BASE)/lib/libqt.so
+		$(PREFIX)/lib
+	${LN} -sf $(PREFIX)/lib/libqt.so.${MAJ}.${MIN} $(PREFIX)/lib/libqt.so
 	${LDCONFIG} -m $(PREFIX)/lib
 	${MKDIR} $(PREFIX)/include/X11/qt
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/include/* \
