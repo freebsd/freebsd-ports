@@ -14,4 +14,10 @@ share/gftp/man.xpm
 share/gftp/open_dir.xpm
 share/gftp/tar.xpm
 share/gftp/txt.xpm
+share/gnome/apps/Internet/gftp.desktop
+share/locale/de/LC_MESSAGES/gftp.mo
+share/locale/fr/LC_MESSAGES/gftp.mo
+share/locale/ja/LC_MESSAGES/gftp.mo
+share/locale/ko/LC_MESSAGES/gftp.mo
+share/pixmaps/gftp.png
 @dirrm share/gftp
