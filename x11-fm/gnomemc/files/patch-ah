@@ -1,0 +1,20 @@
+--- gnome/gutil.c.orig	Mon Dec  6 17:50:05 1999
++++ gnome/gutil.c	Sat Feb  5 10:27:43 2000
+@@ -70,12 +70,17 @@
+ gnome_sigchld_handler (int sig)
+ {
+ 	char c;
++	pid_t p;
++	int s;
+ 	
+ 	if (previous_sigchld.sa_handler != SIG_IGN &&
+ 	    previous_sigchld.sa_handler != SIG_DFL){
+ 		(*previous_sigchld.sa_handler)(sig);
+ 	}
+ 	write (child_died_notify_handler, &c, sizeof (c));
++
++	while ((p = waitpid(-1, &s, WNOHANG)) > 0)
++		continue;
+ }
+ 
+ /*
