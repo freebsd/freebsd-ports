@@ -29,4 +29,15 @@ MLINKS=		authlib.8 authpwd.8 \
 		makeuserdb.8 pw2userdb.8 \
 		makeuserdb.8 vchkpw2userdb.8
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+	@perl -i -pe s'@^if test -w confmdtest1$$@if test -z 0@' \
+		${WRKSRC}/configure
+.if ${OSVERSION} >= 400016
+	@perl -i -pe 's@^#include\s*<netinet6/in6.h>$$@@' \
+		${WRKSRC}/rfc1035/configure \
+		${WRKSRC}/rfc1035/rfc1035.h.in
+.endif
+
+.include <bsd.port.post.mk>
