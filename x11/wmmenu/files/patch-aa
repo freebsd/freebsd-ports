@@ -1,0 +1,11 @@
+--- options.c.BACKUP	Thu Nov 16 21:11:16 2000
++++ options.c	Thu Nov 16 21:11:25 2000
+@@ -4,7 +4,7 @@
+ #include <string.h>
+ #include <assert.h>
+ /* POSIX */
+-#include <getopt.h>
++#include <unistd.h>
+ 
+ #include "options.h"
+ #include "version.h"

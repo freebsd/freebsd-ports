@@ -1,0 +1,13 @@
+--- example/defaults.Dist	Sat Aug  5 00:40:06 2000
++++ example/defaults	Sun Nov 19 18:28:53 2000
+@@ -12,4 +12,10 @@
+ 
+ xpmpath	/usr/local/share/WindowMaker/Icons
+ xpmpath /usr/local/share/pixmaps
++
++xpmpath %%PREFIX%%/share/WindowMaker/Backgrounds
++xpmpath %%PREFIX%%/share/WindowMaker/Icons
++xpmpath %%PREFIX%%/share/WindowMaker/Pixmaps
++xpmpath %%PREFIX%%/include/X11/pixmaps
++
+ tile	tile2.xpm
