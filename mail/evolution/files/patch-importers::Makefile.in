@@ -1,0 +1,38 @@
+
+$FreeBSD$
+
+--- importers/Makefile.in	2002/01/22 13:48:11	1.1
++++ importers/Makefile.in	2002/01/22 13:49:10
+@@ -300,12 +300,12 @@
+ evolution_netscape_importer_DEPENDENCIES =  \
+ $(top_builddir)/shell/importer/libevolution-importer.la \
+ $(top_builddir)/e-util/libeutil.la
+-evolution_netscape_importer_LDFLAGS = 
++evolution_netscape_importer_LDFLAGS = -module -avoid-version
+ evolution_elm_importer_OBJECTS =  elm-importer.$(OBJEXT)
+ evolution_elm_importer_DEPENDENCIES =  \
+ $(top_builddir)/shell/importer/libevolution-importer.la \
+ $(top_builddir)/e-util/libeutil.la
+-evolution_elm_importer_LDFLAGS = 
++evolution_elm_importer_LDFLAGS = -module -avoid-version
+ evolution_pine_importer_OBJECTS =  pine-importer.$(OBJEXT)
+ evolution_pine_importer_DEPENDENCIES =  \
+ $(top_builddir)/shell/importer/libevolution-importer.la \
+@@ -314,7 +314,7 @@
+ $(top_builddir)/e-util/libeutil.la \
+ $(top_builddir)/e-util/ename/libename.la \
+ $(top_builddir)/libversit/libversit.la
+-evolution_pine_importer_LDFLAGS = 
++evolution_pine_importer_LDFLAGS = -module -avoid-version
+ evolution_gnomecard_importer_OBJECTS =  \
+ evolution-gnomecard-importer.$(OBJEXT)
+ evolution_gnomecard_importer_DEPENDENCIES =  \
+@@ -324,7 +324,7 @@
+ $(top_builddir)/e-util/libeutil.la \
+ $(top_builddir)/e-util/ename/libename.la \
+ $(top_builddir)/libversit/libversit.la
+-evolution_gnomecard_importer_LDFLAGS = 
++evolution_gnomecard_importer_LDFLAGS = -module -avoid-version
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
