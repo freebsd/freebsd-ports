@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- Makefile.orig	Sun Apr 16 15:40:03 2000
 +++ Makefile	Tue Oct 17 18:06:00 2000
 @@ -10,23 +10,23 @@
@@ -10,7 +12,7 @@
 -    `gtk-config --libs` -lgdbm -lgdk_imlib
 -CFLAGS   = \
 -    -O -g -D_GNU_SOURCE $(DEVFLAGS)
-+    `${GTK_CONFIG} --libs` -lgdbm -lgdk_imlib
++    `${GTK_CONFIG} --libs` -lgdbm -lgdk_imlib -lImlib
 +CFLAGS   += \
 +    -D_GNU_SOURCE $(DEVFLAGS)
  #CFLAGS   = \
