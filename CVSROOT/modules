@@ -5780,6 +5780,7 @@ pdmenu		ports/misc/pdmenu
 pdnmesh		ports/cad/pdnmesh
 pdnsd		ports/net/pdnsd
 pdq		ports/print/pdq
+pdss		ports/lang/pdss
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear		ports/devel/pear
