@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--disable-gssapi
 GSSAPI=	"@comment "
 .endif
 
-.if exists(/usr/lib/libkrb.a)
+.if exists(/usr/lib/libkrb.a) && !defined(WITHOUT_KERBEROS)
 CONFIGURE_ARGS+=	--enable-krb4
 .else
 CONFIGURE_ARGS+=	--disable-krb4
