@@ -1,11 +1,11 @@
-bin/dotlock
+bin/lockmail
 bin/mailbot
 bin/maildirmake
 bin/maildrop
 bin/makemime
 bin/reformail
 bin/reformime
-%%PORTDOCS%%share/doc/maildrop/dotlock.html
+%%PORTDOCS%%share/doc/maildrop/lockmail.html
 %%PORTDOCS%%share/doc/maildrop/mailbot.html
 %%PORTDOCS%%share/doc/maildrop/maildirmake.html
 %%PORTDOCS%%share/doc/maildrop/maildrop.html
