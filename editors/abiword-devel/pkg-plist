@@ -2,6 +2,7 @@ bin/AbiWord
 bin/AbiWord_d
 bin/AbiWord_s
 bin/abiword
+bin/ttftool
 share/AbiSuite/AbiWord/help/de-DE/about.html
 share/AbiSuite/AbiWord/help/de-DE/aboutabi.html
 share/AbiSuite/AbiWord/help/de-DE/aboutos.html
@@ -370,6 +371,7 @@ share/AbiSuite/AbiWord/help/images/zoom.png
 share/AbiSuite/AbiWord/help/index.html
 share/AbiSuite/AbiWord/readme.txt
 share/AbiSuite/AbiWord/scripts/abw2html.pl
+share/AbiSuite/AbiWord/strings/bg-BG.strings
 share/AbiSuite/AbiWord/strings/ca-ES.strings
 share/AbiSuite/AbiWord/strings/cs-CZ.strings
 share/AbiSuite/AbiWord/strings/cy-CY.strings
@@ -404,6 +406,7 @@ share/AbiSuite/AbiWord/system.profile
 share/AbiSuite/AbiWord/system.profile-KOI8-R
 share/AbiSuite/AbiWord/system.profile-KOI8-U
 share/AbiSuite/AbiWord/system.profile-KOI8-UB
+share/AbiSuite/AbiWord/system.profile-bg-BG
 share/AbiSuite/AbiWord/system.profile-ca-ES
 share/AbiSuite/AbiWord/system.profile-cs-CZ
 share/AbiSuite/AbiWord/system.profile-da-DK
@@ -555,6 +558,7 @@ share/AbiSuite/fonts/s050000l.u2g
 share/AbiSuite/fonts/symbol.e2u
 share/AbiSuite/fonts/z003034l.afm
 share/AbiSuite/fonts/z003034l.pfb
+share/AbiSuite/icons/abiword_16.xpm
 share/AbiSuite/icons/abiword_48.png
 share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
