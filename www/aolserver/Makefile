@@ -39,9 +39,9 @@ post-install:
 # Startup file
 	@if [ ! -f ${PREFIX}/etc/rc.d/aolserver.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/aolserver.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/aolserver.sh; \
-		${ECHO} "[ -x ${PREFIX}/aolserver/bin/nsd8x  ] && ${PREFIX}/aolserver/bin/nsd8x -u nobody -t ${PREFIX}/aolserver/nsd.tcl && ${ECHO} -n ' aolserver'" >> ${PREFIX}/etc/rc.d/aolserver.sh; \
-		${CHMOD} 751 ${PREFIX}/etc/rc.d/aolserver.sh; \
+		${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/aolserver.sh \
+			>${PREFIX}/etc/rc.d/aolserver.sh ; \
+		${CHMOD} 755 ${PREFIX}/etc/rc.d/aolserver.sh; \
 	fi
 	@${CAT} ${PKGDIR}/MESSAGE
 
