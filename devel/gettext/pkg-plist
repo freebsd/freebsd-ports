@@ -29,12 +29,10 @@ lib/libgettextsrc.so
 lib/libintl.a
 lib/libintl.so
 lib/libintl.so.2
-libdata/charset.alias
 libdata/gettext/hostname
 libdata/gettext/project-id
 libdata/gettext/urlget
 libdata/gettext/user-email
-@comment libdata/charset.alias
 share/aclocal/codeset.m4
 share/aclocal/gettext.m4
 share/aclocal/glibc21.m4

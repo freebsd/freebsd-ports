@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- intl/Makefile.in.orig	Thu Jan 31 16:11:48 2002
-+++ intl/Makefile.in	Tue Apr 30 00:00:15 2002
++++ intl/Makefile.in	Tue Apr 30 11:18:46 2002
 @@ -52,7 +52,7 @@
  YFLAGS = --name-prefix=__gettext
  
@@ -21,7 +21,7 @@ $FreeBSD$
  	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
  	  -rpath $(libdir) \
  	  -no-undefined
-@@ -153,11 +153,11 @@
+@@ -153,22 +153,6 @@
  	  : ; \
  	fi
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
@@ -30,15 +30,21 @@ $FreeBSD$
 -	  dest=$(DESTDIR)$(libdir)/charset.alias; \
 -	  if test -f $(DESTDIR)$(libdir)/charset.alias; then \
 -	    orig=$(DESTDIR)$(libdir)/charset.alias; \
-+	  test @GLIBC21@ != no || $(mkinstalldirs) $(DESTDIR)$(prefix)/libdata; \
-+	  temp=$(DESTDIR)$(prefix)/libdata/t-charset.alias; \
-+	  dest=$(DESTDIR)$(prefix)/libdata/charset.alias; \
-+	  if test -f $(DESTDIR)$(prefix)/libdata/charset.alias; then \
-+	    orig=$(DESTDIR)$(prefix)/libdata/charset.alias; \
- 	    sed -f ref-add.sed $$orig > $$temp; \
- 	    $(INSTALL_DATA) $$temp $$dest; \
- 	    rm -f $$temp; \
-@@ -240,9 +240,9 @@
+-	    sed -f ref-add.sed $$orig > $$temp; \
+-	    $(INSTALL_DATA) $$temp $$dest; \
+-	    rm -f $$temp; \
+-	  else \
+-	    if test @GLIBC21@ = no; then \
+-	      orig=charset.alias; \
+-	      sed -f ref-add.sed $$orig > $$temp; \
+-	      $(INSTALL_DATA) $$temp $$dest; \
+-	      rm -f $$temp; \
+-	    fi; \
+-	  fi; \
+ 	  $(mkinstalldirs) $(DESTDIR)$(localedir); \
+ 	  test -f $(DESTDIR)$(localedir)/locale.alias \
+ 	    && orig=$(DESTDIR)$(localedir)/locale.alias \
+@@ -240,9 +224,9 @@
  	  : ; \
  	fi
  	if test '@USE_INCLUDED_LIBINTL@' = yes; then \
