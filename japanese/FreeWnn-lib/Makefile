@@ -113,8 +113,8 @@ CONFIGURE_ARGS+= --with-libkwnn=-lkwnn --with-kwnn-libraries="${PREFIX}/lib"
 
 post-extract:
 	${CP} ${LOCALBASE}/share/libtool/libltdl/aclocal.m4 ${WRKSRC}
-	${CP} ${LOCALBASE}/share/autoconf/config.sub ${WRKSRC}
-	${CP} ${LOCALBASE}/share/autoconf/config.guess ${WRKSRC}
+	${CP} ${AUTOCONF_DIR}/config.sub ${WRKSRC}
+	${CP} ${AUTOCONF_DIR}/config.guess ${WRKSRC}
 
 .if (${PKGNAMESUFFIX} == -server)
 pre-install:
