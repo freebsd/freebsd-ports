@@ -25,7 +25,6 @@ lib/bonobo/monikers
 lib/bonobo/plugin
 lib/gnome-vfs-2.0
 lib/gnome-vfs-2.0/modules
-lib/gtk-2.0
 lib/libglade
 lib/libglade/2.0
 lib/vfs
