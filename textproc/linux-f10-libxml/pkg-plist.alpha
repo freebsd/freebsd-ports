@@ -1,26 +1,32 @@
-usr/doc/libxml-1.7.3/AUTHORS
-usr/doc/libxml-1.7.3/COPYING
-usr/doc/libxml-1.7.3/COPYING.LIB
-usr/doc/libxml-1.7.3/ChangeLog
-usr/doc/libxml-1.7.3/NEWS
-usr/doc/libxml-1.7.3/README
-usr/doc/libxml-1.7.3/TODO
-usr/doc/libxml-1.7.3/html/book1.html
-usr/doc/libxml-1.7.3/html/gnome-xml-entities.html
-usr/doc/libxml-1.7.3/html/gnome-xml-error.html
-usr/doc/libxml-1.7.3/html/gnome-xml-htmlparser.html
-usr/doc/libxml-1.7.3/html/gnome-xml-htmltree.html
-usr/doc/libxml-1.7.3/html/gnome-xml-nanohttp.html
-usr/doc/libxml-1.7.3/html/gnome-xml-parser.html
-usr/doc/libxml-1.7.3/html/gnome-xml-parserinternals.html
-usr/doc/libxml-1.7.3/html/gnome-xml-tree.html
-usr/doc/libxml-1.7.3/html/gnome-xml-valid.html
-usr/doc/libxml-1.7.3/html/gnome-xml-xml-error.html
-usr/doc/libxml-1.7.3/html/gnome-xml-xmlmemory.html
-usr/doc/libxml-1.7.3/html/gnome-xml-xpath.html
-usr/doc/libxml-1.7.3/html/index.sgml
-usr/doc/libxml-1.7.3/html/libxml.html
+usr/lib/libxml.so.1.8.10
+usr/share/doc/libxml-1.8.10/AUTHORS
+usr/share/doc/libxml-1.8.10/COPYING
+usr/share/doc/libxml-1.8.10/COPYING.LIB
+usr/share/doc/libxml-1.8.10/ChangeLog
+usr/share/doc/libxml-1.8.10/NEWS
+usr/share/doc/libxml-1.8.10/README
+usr/share/doc/libxml-1.8.10/TODO
+usr/share/doc/libxml-1.8.10/html/book1.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-debugxml.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-encoding.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-entities.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-error.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-htmlparser.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-htmltree.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-nanoftp.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-nanohttp.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-parser.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-parserinternals.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-sax.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-tree.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-valid.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-xml-error.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-xmlio.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-xmlmemory.html
+usr/share/doc/libxml-1.8.10/html/gnome-xml-xpath.html
+usr/share/doc/libxml-1.8.10/html/index.sgml
+usr/share/doc/libxml-1.8.10/html/libxml-lib.html
+usr/share/doc/libxml-1.8.10/html/libxml-notes.html
 usr/lib/libxml.so.1
-usr/lib/libxml.so.1.7.3
-@dirrm usr/doc/libxml-1.7.3/html
-@dirrm usr/doc/libxml-1.7.3
+@dirrm usr/share/doc/libxml-1.8.10/html
+@dirrm usr/share/doc/libxml-1.8.10

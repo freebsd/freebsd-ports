@@ -9,7 +9,7 @@
 
 PORTNAME?=	gtk
 PORTVERSION?=	1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	x11-toolkits linux
 MASTER_SITES?=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PKGNAMEPREFIX=	linux-
@@ -28,13 +28,20 @@ NO_FILTER_SHLIBS=	yes
 PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
-RPM_MIRRORS=	${MASTER_SITE_BACKUP}
-STDDIR=		redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
-UPDDIR=		updates/6.1/${MACHINE_ARCH}
+# Let's avoid hardcoding 'en' as the language.
+LANG=		en
+# Set the version of linux_base
+BASEVERSION=	7.1
+RPM_MIRRORS=	\
+	ftp://ftp.redhat.com/pub/redhat/__DIR__/ \
+	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/
+STDDIR=		linux/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
+UPDDIR=		linux/updates/${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}
 .if (${MACHINE_ARCH} == "i386")
-RPM_SET?=	gtk+-1.2.5-2.${MACHINE_ARCH}.rpm
+RPM_SET?=	gtk+-1.2.9-4.${MACHINE_ARCH}.rpm
 .elif (${MACHINE_ARCH} == "alpha")
-RPM_SET?=	gtk+-1.2.6-1.${MACHINE_ARCH}.rpm
+RPM_SET?=	gtk+-1.2.9-4.${MACHINE_ARCH}.rpm
 .endif
 DBPATH=		/var/lib/rpm
 RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
@@ -44,7 +51,7 @@ RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
 do-install:
 	@for R in ${RPM_SET}; do \
 		${ECHO} $$R; \
-		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
+		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R || true ; \
 	done
 
 .include <bsd.port.mk>

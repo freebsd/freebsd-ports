@@ -1,9 +1,10 @@
-usr/doc/libpng-1.0.3/CHANGES
-usr/doc/libpng-1.0.3/README
-usr/doc/libpng-1.0.3/TODO
-usr/doc/libpng-1.0.3/example.c
-usr/doc/libpng-1.0.3/libpng.txt
-@dirrm usr/doc/libpng-1.0.3
-usr/lib/libpng.so.2.1.0.3
-usr/lib/libpng.so.2
-usr/man/man5/png.5
+usr/lib/libpng.so.2.1.0.9
+@exec ln -sf %D/usr/lib/libpng.so.2.1.0.9 %D/usr/lib/libpng.so.2
+@unexec rm -f %D/usr/lib/libpng.so.2
+usr/share/doc/libpng-1.0.9/CHANGES
+usr/share/doc/libpng-1.0.9/README
+usr/share/doc/libpng-1.0.9/TODO
+usr/share/doc/libpng-1.0.9/example.c
+usr/share/doc/libpng-1.0.9/libpng.txt
+usr/share/man/man5/png.5.gz
+@dirrm usr/share/doc/libpng-1.0.9
