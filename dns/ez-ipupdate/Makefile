@@ -24,6 +24,6 @@ post-install:
 	done
 	${INSTALL_DATA} ${WRKSRC}/example.conf \
 			${PREFIX}/etc/ez-ipupdate.conf.sample
-	${INSTALL_SCRIPT} ${WRKDIR}/ez-ipupdate.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${FILESDIR}/ez-ipupdate.sh ${PREFIX}/etc/rc.d
 
 .include <bsd.port.mk>
