@@ -1,0 +1,12 @@
+--- sockstream.h.orig	Tue Oct 17 17:07:29 1995
++++ sockstream.h	Wed Feb  5 14:04:17 1997
+@@ -119,7 +119,9 @@
+ 	msg_peek	= MSG_PEEK,
+ 	msg_dontroute	= MSG_DONTROUTE,
+ 	
++#if !(defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__))
+ 	msg_maxiovlen	= MSG_MAXIOVLEN
++#endif
+     };
+     enum shuthow {
+ 	shut_read,
