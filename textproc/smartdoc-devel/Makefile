@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smartdoc
-PORTVERSION=	1.0.0.20020701
+PORTVERSION=	1.0.0.20020826
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri/smartdoc
@@ -15,9 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kunishi@acm.org
 
-BUILD_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
-RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \
-		javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 SCRIPTS_ENV=	JAVALIBDIR=${JAVALIBDIR}
 WRKSRC=		${WRKDIR}/sdoc
@@ -64,7 +62,6 @@ do-install:
 	${MKDIR} ${DTDDIR} ${EMACSLISPDIR} ${XEMACSLISPDIR}
 	${INSTALL_DATA} ${FILESDIR}/catalog ${DTDDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/pure/PureSmartDoc.dtd ${DTDDIR}
-	${MKCATALOG} -c ${LOCALBASE}/share/xml/catalog -q install ${PORTNAME}
 .for file in ${ELISPS}
 	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${EMACSLISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/etc/${file} ${XEMACSLISPDIR}
