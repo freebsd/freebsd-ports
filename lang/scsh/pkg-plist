@@ -243,7 +243,6 @@ lib/scsh/big/random.scm
 lib/scsh/big/receive.scm
 lib/scsh/big/search-tree.scm
 lib/scsh/big/socket.scm
-lib/scsh/big/sort.scm
 lib/scsh/big/strong.scm
 lib/scsh/big/thread-fluid.scm
 
@@ -308,6 +307,7 @@ lib/scsh/scsh/bufpol.scm
 lib/scsh/scsh/ccp-pack.scm
 lib/scsh/scsh/ccp.scm
 lib/scsh/scsh/char-package.scm
+lib/scsh/scsh/configure.scm
 lib/scsh/scsh/db.scm
 lib/scsh/scsh/dbm.scm
 lib/scsh/scsh/defrec.scm
@@ -332,6 +332,7 @@ lib/scsh/scsh/generate-constants.scm
 lib/scsh/scsh/glob.scm
 lib/scsh/scsh/here.scm
 lib/scsh/scsh/let-opt.scm
+lib/scsh/scsh/lib-dirs.scm
 lib/scsh/scsh/libscsh.scm
 lib/scsh/scsh/low-interrupt.scm
 lib/scsh/scsh/md5.scm
