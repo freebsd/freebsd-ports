@@ -227,6 +227,7 @@
     SUBDIR += qtpkg
     SUBDIR += rclean
     SUBDIR += rdate
+    SUBDIR += rdiff-backup
     SUBDIR += readlink
     SUBDIR += rlogview
     SUBDIR += rmonitor
