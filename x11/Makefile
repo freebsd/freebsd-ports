@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.77 1995/09/28 02:08:30 jmz Exp $
+# $Id: Makefile,v 1.78 1995/10/03 11:45:15 asami Exp $
 #
 
     SUBDIR += FWF
@@ -28,6 +28,7 @@
     SUBDIR += xearth
     SUBDIR += xfed
     SUBDIR += xfm
+    SUBDIR += xforms
     SUBDIR += xgrab
     SUBDIR += xkeycaps
     SUBDIR += xloadimage
