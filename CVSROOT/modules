@@ -4859,6 +4859,7 @@ mtf		ports/archivers/mtf
 mtl		ports/math/mtl
 mtools		ports/emulators/mtools
 mtoolsfm	ports/x11-fm/mtoolsfm
+mtop		ports/databases/mtop
 mtr		ports/net/mtr
 mtrxmath	ports/math/mtrxmath
 mtv		ports/multimedia/mtv
