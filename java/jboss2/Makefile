@@ -7,6 +7,7 @@
 
 PORTNAME=	${APP_TITLE:L}
 PORTVERSION= 	2.4.10
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -49,8 +50,19 @@ WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${ECHO_CMD} -n ">> Removing unneeded files..."
-	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
+	@${ECHO_CMD} -n ">> Deleting the symbol CR (carriage return) in some files and removing unneeded files..."
+	@${FIND} ${WRKSRC} -type f \
+	-iname '*.mf' -or \
+	-iname '*.dtd' -or \
+	-iname '*.txt' -or \
+	-iname '*.xml' -or \
+	-iname '*.conf' -or \
+	-iname '*.java' -or \
+	-iname '*.html' -or \
+	-iname '*.policy' -or \
+	-iname '*.properties' | \
+	${XARGS} -n 10 -x ${SED} -i .orig -e "s|"`printf '\015'`"||g"
+	@cd ${WRKSRC} && ${FIND} . -type f -name "*.orig" -print -or -iname "*.bat" -print -or -iname "*.exe" -print | ${XARGS} ${RM} -f
 	@${ECHO_CMD} " [ DONE ]"
 
 .for f in ${REPLACE_FILES}
@@ -139,7 +151,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating PID file..."
