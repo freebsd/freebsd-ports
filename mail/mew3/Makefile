@@ -43,6 +43,12 @@ INFO?=		mew${MEW_MAJOR_VER} mew${MEW_MAJOR_VER}.jis
 # manuals
 MAN1=		mewcat.1 mewdecode.1 mewencode.1 mewls.1 incm.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
 post-patch:
 	for f in mew-key.el info/mew.texi; do \
 		${REINPLACE_CMD} -i "" -E \
@@ -61,4 +67,4 @@ post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
