@@ -17,5 +17,10 @@ COMMENT=	Python binding for the LZMA compression library
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+USE_REINPLACE=	yes
+
+post-patch:
+	${FIND} ${WRKSRC} -name '*.cpp' -or -name '*.c' -or \
+		-name '*.h' | ${XARGS} -n1 ${REINPLACE_CMD} 's///g'
 
 .include <bsd.port.mk>
