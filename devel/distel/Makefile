@@ -7,10 +7,14 @@
 
 PORTNAME=	distel
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	devel elisp
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.bluetail.com/%7Eluke/distel/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	distel
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTEL_MANUALS}
 DIST_SUBDIR=	erlang
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
@@ -21,6 +25,7 @@ USE_GMAKE=	yes
 ALL_TARGET=	base
 EMACS_PORT_NAME?=	emacs21
 
+DISTEL_MANUALS=	distel-euc.pdf distel-euc.ps.gz
 DISTEL_DOCS=	config/emacs-init-snippet.el AUTHORS ChangeLog NEWS README README.ie-session
 
 do-install:
@@ -32,6 +37,9 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${DISTEL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
+	done
+	@for FILE in ${DISTEL_MANUALS}; do \
+		${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/$${FILE} ${DOCSDIR}; \
 	done
 	@${MKDIR} ${DATADIR}/ebin ${DATADIR}/src
 	@${INSTALL_DATA} ${WRKSRC}/erl/*.erl ${DATADIR}/src

@@ -27,7 +27,10 @@ share/doc/distel/ChangeLog
 share/doc/distel/NEWS
 share/doc/distel/README
 share/doc/distel/README.ie-session
+share/doc/distel/distel-euc.pdf
+share/doc/distel/distel-euc.ps.gz
 share/doc/distel/emacs-init-snippet.el
+@dirrm share/doc/distel
 @dirrm share/distel/src
 @dirrm share/distel/ebin
 @dirrm share/distel
