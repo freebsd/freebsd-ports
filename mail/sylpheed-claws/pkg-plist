@@ -1,7 +1,184 @@
+share/sylpheed-claws/update-po
+share/sylpheed-claws/uudec
 bin/sylpheed-claws
 bin/sylpheed-switcher
 bin/sylprint.pl
 etc/sylprint.rc.example
+include/sylpheed-claws/account.h
+include/sylpheed-claws/action.h
+include/sylpheed-claws/adbookbase.h
+include/sylpheed-claws/addr_compl.h
+include/sylpheed-claws/addrbook.h
+include/sylpheed-claws/addrcache.h
+include/sylpheed-claws/addrclip.h
+include/sylpheed-claws/addrdefs.h
+include/sylpheed-claws/addressadd.h
+include/sylpheed-claws/addressbook.h
+include/sylpheed-claws/addressitem.h
+include/sylpheed-claws/addrgather.h
+include/sylpheed-claws/addrharvest.h
+include/sylpheed-claws/addrindex.h
+include/sylpheed-claws/addritem.h
+include/sylpheed-claws/addrquery.h
+include/sylpheed-claws/addrselect.h
+include/sylpheed-claws/alertpanel.h
+include/sylpheed-claws/browseldap.h
+include/sylpheed-claws/codeconv.h
+include/sylpheed-claws/common/base64.h
+include/sylpheed-claws/common/defs.h
+include/sylpheed-claws/common/hooks.h
+include/sylpheed-claws/common/intl.h
+include/sylpheed-claws/common/log.h
+include/sylpheed-claws/common/md5.h
+include/sylpheed-claws/common/mgutils.h
+include/sylpheed-claws/common/nntp.h
+include/sylpheed-claws/common/passcrypt.h
+include/sylpheed-claws/common/plugin.h
+include/sylpheed-claws/common/prefs.h
+include/sylpheed-claws/common/progressindicator.h
+include/sylpheed-claws/common/quoted-printable.h
+include/sylpheed-claws/common/session.h
+include/sylpheed-claws/common/smtp.h
+include/sylpheed-claws/common/socket.h
+include/sylpheed-claws/common/ssl.h
+include/sylpheed-claws/common/ssl_certificate.h
+include/sylpheed-claws/common/string_match.h
+include/sylpheed-claws/common/stringtable.h
+include/sylpheed-claws/common/sylpheed.h
+include/sylpheed-claws/common/template.h
+include/sylpheed-claws/common/utils.h
+include/sylpheed-claws/common/uuencode.h
+include/sylpheed-claws/common/version.h
+include/sylpheed-claws/common/xml.h
+include/sylpheed-claws/common/xmlprops.h
+include/sylpheed-claws/compose.h
+include/sylpheed-claws/config.h
+include/sylpheed-claws/crash.h
+include/sylpheed-claws/customheader.h
+include/sylpheed-claws/displayheader.h
+include/sylpheed-claws/editaddress.h
+include/sylpheed-claws/editbook.h
+include/sylpheed-claws/editgroup.h
+include/sylpheed-claws/editjpilot.h
+include/sylpheed-claws/editldap.h
+include/sylpheed-claws/editldap_basedn.h
+include/sylpheed-claws/editvcard.h
+include/sylpheed-claws/enriched.h
+include/sylpheed-claws/exphtmldlg.h
+include/sylpheed-claws/expldifdlg.h
+include/sylpheed-claws/export.h
+include/sylpheed-claws/exporthtml.h
+include/sylpheed-claws/exportldif.h
+include/sylpheed-claws/filtering.h
+include/sylpheed-claws/folder.h
+include/sylpheed-claws/folder_item_prefs.h
+include/sylpheed-claws/foldersel.h
+include/sylpheed-claws/folderutils.h
+include/sylpheed-claws/folderview.h
+include/sylpheed-claws/grouplistdialog.h
+include/sylpheed-claws/gtk/about.h
+include/sylpheed-claws/gtk/colorlabel.h
+include/sylpheed-claws/gtk/colorsel.h
+include/sylpheed-claws/gtk/description_window.h
+include/sylpheed-claws/gtk/filesel.h
+include/sylpheed-claws/gtk/gtkaspell.h
+include/sylpheed-claws/gtk/gtksctree.h
+include/sylpheed-claws/gtk/gtkshruler.h
+include/sylpheed-claws/gtk/gtkstext.h
+include/sylpheed-claws/gtk/gtkutils.h
+include/sylpheed-claws/gtk/gtkvscrollbutton.h
+include/sylpheed-claws/gtk/logwindow.h
+include/sylpheed-claws/gtk/manage_window.h
+include/sylpheed-claws/gtk/menu.h
+include/sylpheed-claws/gtk/pluginwindow.h
+include/sylpheed-claws/gtk/prefswindow.h
+include/sylpheed-claws/gtk/progressdialog.h
+include/sylpheed-claws/gtk/sslcertwindow.h
+include/sylpheed-claws/headerview.h
+include/sylpheed-claws/html.h
+include/sylpheed-claws/imap.h
+include/sylpheed-claws/import.h
+include/sylpheed-claws/importldif.h
+include/sylpheed-claws/importmutt.h
+include/sylpheed-claws/importpine.h
+include/sylpheed-claws/inc.h
+include/sylpheed-claws/inputdialog.h
+include/sylpheed-claws/jpilot.h
+include/sylpheed-claws/ldapctrl.h
+include/sylpheed-claws/ldaplocate.h
+include/sylpheed-claws/ldapquery.h
+include/sylpheed-claws/ldapserver.h
+include/sylpheed-claws/ldaputil.h
+include/sylpheed-claws/ldif.h
+include/sylpheed-claws/localfolder.h
+include/sylpheed-claws/main.h
+include/sylpheed-claws/mainwindow.h
+include/sylpheed-claws/manual.h
+include/sylpheed-claws/matcher.h
+include/sylpheed-claws/matcher_parser.h
+include/sylpheed-claws/matcher_parser_lex.h
+include/sylpheed-claws/matcher_parser_parse.h
+include/sylpheed-claws/mbox.h
+include/sylpheed-claws/message_search.h
+include/sylpheed-claws/messageview.h
+include/sylpheed-claws/mh.h
+include/sylpheed-claws/mimeview.h
+include/sylpheed-claws/msgcache.h
+include/sylpheed-claws/mutt.h
+include/sylpheed-claws/news.h
+include/sylpheed-claws/noticeview.h
+include/sylpheed-claws/passphrase.h
+include/sylpheed-claws/pgpmime.h
+include/sylpheed-claws/pine.h
+include/sylpheed-claws/pop.h
+include/sylpheed-claws/prefs_account.h
+include/sylpheed-claws/prefs_actions.h
+include/sylpheed-claws/prefs_common.h
+include/sylpheed-claws/prefs_customheader.h
+include/sylpheed-claws/prefs_display_header.h
+include/sylpheed-claws/prefs_ext_prog.h
+include/sylpheed-claws/prefs_filtering.h
+include/sylpheed-claws/prefs_filtering_action.h
+include/sylpheed-claws/prefs_folder_item.h
+include/sylpheed-claws/prefs_fonts.h
+include/sylpheed-claws/prefs_gtk.h
+include/sylpheed-claws/prefs_matcher.h
+include/sylpheed-claws/prefs_spelling.h
+include/sylpheed-claws/prefs_summary_column.h
+include/sylpheed-claws/prefs_template.h
+include/sylpheed-claws/prefs_themes.h
+include/sylpheed-claws/prefs_toolbar.h
+include/sylpheed-claws/privacy.h
+include/sylpheed-claws/procheader.h
+include/sylpheed-claws/procmime.h
+include/sylpheed-claws/procmsg.h
+include/sylpheed-claws/quote_fmt.h
+include/sylpheed-claws/quote_fmt_lex.h
+include/sylpheed-claws/quote_fmt_parse.h
+include/sylpheed-claws/recv.h
+include/sylpheed-claws/remotefolder.h
+include/sylpheed-claws/rfc2015.h
+include/sylpheed-claws/select-keys.h
+include/sylpheed-claws/send_message.h
+include/sylpheed-claws/setup.h
+include/sylpheed-claws/sgpgme.h
+include/sylpheed-claws/sourcewindow.h
+include/sylpheed-claws/ssl_manager.h
+include/sylpheed-claws/statusbar.h
+include/sylpheed-claws/stock_pixmap.h
+include/sylpheed-claws/summary_search.h
+include/sylpheed-claws/summaryview.h
+include/sylpheed-claws/textview.h
+include/sylpheed-claws/toolbar.h
+include/sylpheed-claws/undo.h
+include/sylpheed-claws/unmime.h
+include/sylpheed-claws/vcard.h
+libdata/pkgconfig/sylpheed-claws.pc
+lib/sylpheed-claws/plugins/dillo_viewer.so
+lib/sylpheed-claws/plugins/trayicon.so
+@dirrm include/sylpheed-claws/common
+@dirrm include/sylpheed-claws/gtk
+@dirrm include/sylpheed-claws
 %%IMAGE%%lib/sylpheed-claws/plugins/image_viewer.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin.so
 %%SA_PLUG%%lib/sylpheed-claws/plugins/spamassassin_gtk.so
@@ -183,6 +360,7 @@ share/sylpheed-claws/newscache_clean.pl
 share/sylpheed-claws/outlook2sylpheed.pl
 share/sylpheed-claws/tb2sylpheed
 share/sylpheed-claws/vcard2xml.py
+%%THEMES%%share/sylpheed-claws/themes/Crystal/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/Crystal/close.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/continue.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/dir-close.xpm
@@ -207,6 +385,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Crystal/properties.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/search.xpm
 %%THEMES%%share/sylpheed-claws/themes/Crystal/up_arrow.xpm
+%%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/README
 %%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/address_book.xpm
@@ -310,6 +489,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/Graphitte-0.9.7/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/GurUnix/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/GurUnix/ChangeLog
 %%THEMES%%share/sylpheed-claws/themes/GurUnix/INSTALL
 %%THEMES%%share/sylpheed-claws/themes/GurUnix/README.txt
@@ -390,7 +570,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/GurUnix/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/GurUnix/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/GurUnix/work_online.xpm
-%%THEMES%%share/sylpheed-claws/themes/INSTALL
+%%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/close.xpm
@@ -439,6 +619,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/Kovico-sylpheed/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/New_Session/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/New_Session/Readme.txt
 %%THEMES%%share/sylpheed-claws/themes/New_Session/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/New_Session/address_book.xpm
@@ -488,6 +669,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/New_Session/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/New_Session/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/New_Session/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/Phoenity/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/Phoenity/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Phoenity/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/Phoenity/book.xpm
@@ -568,6 +750,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Phoenity/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/Phoenity/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/Phoenity/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/close.xpm
@@ -617,6 +800,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/Plain_and_Bluish/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/README
+%%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/README
 %%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/address_book.xpm
@@ -699,6 +883,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/Skypilot Clawssic/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/SylZilla/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/SylZilla/ChangeLog
 %%THEMES%%share/sylpheed-claws/themes/SylZilla/README
 %%THEMES%%share/sylpheed-claws/themes/SylZilla/address.xpm
@@ -802,6 +987,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/SylZilla/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/SylZilla/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/SylZilla/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/XeNtish/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/README
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/address_book.xpm
@@ -851,6 +1037,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/XeNtish/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/black/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/black/README
 %%THEMES%%share/sylpheed-claws/themes/black/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/black/address_book.xpm
@@ -912,6 +1099,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/black/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/black/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/black/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/blue_anarchy/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/blue_anarchy/Readme.txt
 %%THEMES%%share/sylpheed-claws/themes/blue_anarchy/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/blue_anarchy/address_book.xpm
@@ -953,6 +1141,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/blue_anarchy/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/blue_anarchy/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/blue_anarchy/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/mongrel/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/close.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/dir_close.xpm
@@ -977,6 +1166,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/mongrel/news_compose.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/mongrel2/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/mongrel2/INSTALL
 %%THEMES%%share/sylpheed-claws/themes/mongrel2/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel2/address_book.xpm
@@ -1055,6 +1245,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/mongrel2/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel2/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/mongrel2/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/mozilla/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/mozilla/README
 %%THEMES%%share/sylpheed-claws/themes/mozilla/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/close.xpm
@@ -1080,6 +1271,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/mozilla/news_compose.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/mozilla/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/orbit-claws/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/orbit-claws/README
 %%THEMES%%share/sylpheed-claws/themes/orbit-claws/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/orbit-claws/address_book.xpm
@@ -1161,6 +1353,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/orbit-claws/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/orbit-claws/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/orbit-claws/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/stw/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/stw/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/book.xpm
@@ -1221,6 +1414,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/stw/unread.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/up_arrow.xpm
 %%THEMES%%share/sylpheed-claws/themes/stw/vcard.xpm
+%%THEMES%%share/sylpheed-claws/themes/tml02c/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/tml02c/address.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/book.xpm
@@ -1288,6 +1482,7 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/tml02c/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/tml02c/work_online.xpm
+%%THEMES%%share/sylpheed-claws/themes/tom_2.1/.sylpheed_themeinfo
 %%THEMES%%share/sylpheed-claws/themes/tom_2.1/README
 %%THEMES%%share/sylpheed-claws/themes/tom_2.1/address_book.xpm
 %%THEMES%%share/sylpheed-claws/themes/tom_2.1/book.xpm
@@ -1350,8 +1545,6 @@ share/sylpheed-claws/vcard2xml.py
 %%THEMES%%share/sylpheed-claws/themes/tom_2.1/vcard.xpm
 %%THEMES%%share/sylpheed-claws/themes/tom_2.1/work_offline.xpm
 %%THEMES%%share/sylpheed-claws/themes/tom_2.1/work_online.xpm
-share/sylpheed-claws/update-po
-share/sylpheed-claws/uudec
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Crystal
 %%THEMES%%@dirrm share/sylpheed-claws/themes/Graphitte-0.9.7
 %%THEMES%%@dirrm share/sylpheed-claws/themes/GurUnix
@@ -1387,5 +1580,5 @@ share/sylpheed-claws/uudec
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq/de
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws/faq
 %%PORTDOCS%%@dirrm share/doc/sylpheed-claws
-%%SA_PLUG%%@dirrm lib/sylpheed-claws/plugins
-%%SA_PLUG%%@dirrm lib/sylpheed-claws
+@dirrm lib/sylpheed-claws/plugins
+@dirrm lib/sylpheed-claws
