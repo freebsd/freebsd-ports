@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-FTP-Common
-PORTVERSION=	2.28
-PORTREVISION=	2
+PORTVERSION=	3.8
 CATEGORIES=	ftp perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/T/TB/TBONE
@@ -23,5 +22,8 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::FTP::Common.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+
+post-patch:
+	${RM} ${WRKSRC}/lib/Net/FTP/Common.pm.orig
 
 .include <bsd.port.mk>
