@@ -66,6 +66,7 @@
     SUBDIR += netscape46-navigator
     SUBDIR += npc
     SUBDIR += p5-Apache
+    SUBDIR += p5-Apache-Radius
     SUBDIR += p5-CGI
     SUBDIR += p5-CGI_Lite
     SUBDIR += p5-HTML
