@@ -94,6 +94,7 @@ share/locale/ar/LC_MESSAGES/setup-tools-backends.mo
 share/locale/az/LC_MESSAGES/gnome-system-tools.mo
 share/locale/az/LC_MESSAGES/setup-tools-backends.mo
 share/locale/bg/LC_MESSAGES/gnome-system-tools.mo
+share/locale/bg/LC_MESSAGES/setup-tools-backends.mo
 share/locale/bn/LC_MESSAGES/setup-tools-backends.mo
 share/locale/bn/LC_MESSAGES/gnome-system-tools.mo
 share/locale/bs/LC_MESSAGES/setup-tools-backends.mo
@@ -119,6 +120,7 @@ share/locale/eu/LC_MESSAGES/setup-tools-backends.mo
 share/locale/fi/LC_MESSAGES/gnome-system-tools.mo
 share/locale/fi/LC_MESSAGES/setup-tools-backends.mo
 share/locale/fr/LC_MESSAGES/gnome-system-tools.mo
+share/locale/fr/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ga/LC_MESSAGES/gnome-system-tools.mo
 share/locale/gl/LC_MESSAGES/gnome-system-tools.mo
 share/locale/gu/LC_MESSAGES/setup-tools-backends.mo
@@ -126,7 +128,10 @@ share/locale/gu/LC_MESSAGES/gnome-system-tools.mo
 share/locale/hr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/hr/LC_MESSAGES/setup-tools-backends.mo
 share/locale/hu/LC_MESSAGES/gnome-system-tools.mo
+share/locale/id/LC_MESSAGES/gnome-system-tools.mo
+share/locale/id/LC_MESSAGES/setup-tools-backends.mo
 share/locale/it/LC_MESSAGES/gnome-system-tools.mo
+share/locale/it/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ja/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ja/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ko/LC_MESSAGES/gnome-system-tools.mo
@@ -139,6 +144,7 @@ share/locale/ml/LC_MESSAGES/gnome-system-tools.mo
 share/locale/mn/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ms/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ms/LC_MESSAGES/setup-tools-backends.mo
+share/locale/nb/LC_MESSAGES/gnome-system-tools.mo
 share/locale/nb/LC_MESSAGES/setup-tools-backends.mo
 share/locale/nl/LC_MESSAGES/gnome-system-tools.mo
 share/locale/nl/LC_MESSAGES/setup-tools-backends.mo
