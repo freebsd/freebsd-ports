@@ -42,6 +42,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_PERL5_BUILD=yes
+USE_PERL5_RUN=	yes
 
 .if defined(NOPORTDOCS)
 # Just install the binary and man pages, no extra documentation
