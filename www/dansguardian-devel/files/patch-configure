@@ -1,0 +1,11 @@
+--- configure.orig	Tue Apr  2 12:45:16 2002
++++ configure	Tue Apr  2 12:46:34 2002
+@@ -2663,7 +2663,7 @@
+ $extendedecho "SYSVLOCATION = \${PREFIX}$sysvdir" >>Makefile
+ $extendedecho "CGIBINLOCATION = \${PREFIX}$cgidir" >>Makefile
+ $extendedecho "MANUALFILES = \${PREFIX}$mandir" >>Makefile
+-$extendedecho "LOGLOCATION = \${PREFIX}$logdir" >>Makefile
++$extendedecho "LOGLOCATION = $logdir" >>Makefile
+ echo "PROXYUSER = $runas_usr" >>Makefile
+ echo "PROXYGROUP = $runas_grp" >>Makefile
+ echo "PIDDIR = $piddir" >>Makefile
