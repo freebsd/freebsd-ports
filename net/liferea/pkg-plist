@@ -1,5 +1,11 @@
 bin/liferea
 bin/liferea-bin
+etc/gconf/gconf.xml.defaults/apps/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/liferea/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/liferea/%gconf.xml
+etc/gconf/schemas/liferea.schemas
 lib/liferea/liblihtmlg.so
 %%MOZ%%lib/liferea/liblihtmlm.so
 share/gnome/applications/liferea.desktop
@@ -35,3 +41,5 @@ share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/gnome/liferea/css
 @dirrm share/gnome/liferea
 @dirrm lib/liferea
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/liferea
+@dirrm etc/gconf/gconf.xml.defaults/apps/liferea
