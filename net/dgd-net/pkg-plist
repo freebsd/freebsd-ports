@@ -121,3 +121,20 @@ dgd/mud/kernel/sys/driver.c
 dgd/mud/kernel/sys/objregd.c
 dgd/mud/kernel/sys/rsrcd.c
 dgd/mud/kernel/sys/userd.c
+@dirrm dgd/bin
+@dirrm dgd/doc/kfun
+@dirrm dgd/doc
+@dirrm dgd/mud/doc/kernel/efun
+@dirrm dgd/mud/doc/kernel/hook
+@dirrm dgd/mud/doc/kernel/lfun
+@dirrm dgd/mud/doc/kernel
+@dirrm dgd/mud/doc
+@dirrm dgd/mud/include/kernel
+@dirrm dgd/mud/include
+@dirrm dgd/mud/kernel/lib/api
+@dirrm dgd/mud/kernel/lib
+@dirrm dgd/mud/kernel/obj
+@dirrm dgd/mud/kernel/sys
+@dirrm dgd/mud/kernel
+@dirrm dgd/mud
+@dirrm dgd
