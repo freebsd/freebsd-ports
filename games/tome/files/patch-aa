@@ -1,0 +1,76 @@
+--- makefile.org.orig	Sun May 12 05:40:28 2002
++++ makefile.org	Mon Nov  4 02:27:48 2002
+@@ -78,7 +78,7 @@
+ ##
+ 
+ # Where lib/ files goes
+-LIBDIR = /usr/lib/games/tome/
++LIBDIR = $(PREFIX)/share/tome/
+ # Sysadmins of commercial Unix and/or BSD might prefer this
+ #LIBDIR = /usr/local/lib/tome/
+ # If you like the old default, use this one
+@@ -88,12 +88,13 @@
+ 
+ 
+ # Where PernAngband binary goes
+-BINDIR = /usr/local/games
++BINDIR = $(PREFIX)/bin
+ # Another common location
+ #BINDIR = /usr/local/bin
+ 
+ # The game will run suid to this user
+-OWNER = games
++OWNER = root
++GROUP = games
+ 
+ ##
+ ## 3. Some "system" definitions
+@@ -120,7 +121,7 @@
+ #
+ # This is my compiler of choice, it seems to work most everywhere
+ #
+-CC = gcc
++CC ?= cc
+ 
+ #
+ # Standard version (see main-x11.c and main-gcu.c)
+@@ -146,11 +147,11 @@
+ # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
+ # attempt to "guess" at many of these flags based on your system.
+ #
+-COPTS = -Wall -O1 -pipe -g
+-INCLUDES = -I/usr/X11R6/include
++COPTS = -Wall -g
++INCLUDES = -I$(X11BASE)/include
+ DEFINES = -DUSE_X11 -DUSE_GCU \
+ 	-DUSE_EGO_GRAPHICS -DUSE_TRANSPARENCY -DSUPPORT_GAMMA
+-LIBS = -lX11 -lcurses -L/usr/X11R6/lib
++LIBS = -lX11 -lcurses -L$(X11BASE)/lib
+ 
+ 
+ ##
+@@ -366,7 +367,7 @@
+ # Compiler options
+ #
+ 
+-CFLAGS = $(COPTS) $(INCLUDES) $(DEFINES) -DDEFAULT_PATH=\"$(LIBDIR)\"
++CFLAGS += $(COPTS) $(INCLUDES) $(DEFINES) -DDEFAULT_PATH=\"$(LIBDIR)\"
+ 
+ 
+ #
+@@ -441,10 +442,12 @@
+ 	[ -d $(LIBDIR) ] || mkdir -p $(LIBDIR)
+ 	[ -d $(BINDIR) ] || mkdir -p $(BINDIR)
+ 	cp -r ../lib/* $(LIBDIR)
+-	chown -R $(OWNER) $(LIBDIR)
++	chown -R $(OWNER):$(GROUP) $(LIBDIR)
++	chmod -R g+w $(LIBDIR)
+ 	cp -f $(TARGET) $(BINDIR)/$(TARGET)
+-	chown $(OWNER) $(BINDIR)/$(TARGET)
+-	chmod 4755 $(BINDIR)/$(TARGET)
++	strip $(BINDIR)/$(TARGET)
++	chown $(OWNER):$(GROUP) $(BINDIR)/$(TARGET)
++	chmod 2755 $(BINDIR)/$(TARGET)
+ 
+ # old-install: $(TARGET)
+ #	cp $(TARGET) ..

@@ -291,6 +291,7 @@
     SUBDIR += tinymux
     SUBDIR += tkmoo
     SUBDIR += tksol
+    SUBDIR += tome
     SUBDIR += toppler
     SUBDIR += tornado
     SUBDIR += trojka
