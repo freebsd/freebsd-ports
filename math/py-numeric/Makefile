@@ -3,11 +3,11 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1998/06/24 06:09:13 tg Exp $
+# $Id: Makefile,v 1.9 1998/06/25 06:43:27 tg Exp $
 #
 
 DISTNAME=	LLNLPython4
-PKGNAME=	numpy-1.3
+PKGNAME=	py-numeric-1.3
 CATEGORIES=	math python
 MASTER_SITES=	ftp://ftp-icf.llnl.gov/pub/python/
 EXTRACT_SUFX=	.tgz
