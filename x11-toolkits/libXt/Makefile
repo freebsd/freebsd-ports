@@ -15,7 +15,8 @@ COMMENT=	X Toolkit library
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11 \
 		${X11BASE}/libdata/pkgconfig/sm.pc:${PORTSDIR}/x11/libSM
-BUILD_DEPENDS=	${LIB_PC_DEPENDS}
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
+		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
 CONFLICTS=	XFree86-libraries-*
