@@ -1,2 +1,4 @@
-MD5 (jls-0.4.tar.gz) = d491a741c5f07e7fb30a5c1e0b0cb6e7
-SIZE (jls-0.4.tar.gz) = 16934
+MD5 (freebsd-ls.releng_4_9_0_release.tar.gz) = 3b49345d4df0baeab3a7232b94c80b01
+SIZE (freebsd-ls.releng_4_9_0_release.tar.gz) = 16923
+MD5 (jls-0.5.patch.gz) = db4a516d7a2f6f8f260eb8c48adb0558
+SIZE (jls-0.5.patch.gz) = 7073

@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	ls
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	shige
-DISTNAME=	j${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.angels.vg/bsd/
+DISTNAME=	freebsd-ls.releng_4_9_0_release
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	j${PORTNAME}-${PORTVERSION}.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	shige@FreeBSD.org
 COMMENT=	Japanized ls
@@ -19,5 +21,10 @@ COMMENT=	Japanized ls
 MAN1=		jls.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/jls
+
+WRKSRC=	${WRKDIR}/ls
+
+pre-patch:
+	cd ${WRKSRC}; ${MV} ls.1 jls.1
 
 .include <bsd.port.mk>
