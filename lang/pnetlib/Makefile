@@ -33,8 +33,6 @@ PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 .include <bsd.port.pre.mk>
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/lib/cscc/lib/libXsharpSupport.so.0
-	${STRIP_CMD} ${PREFIX}/lib/cscc/lib/libXsharpSupport.a
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
