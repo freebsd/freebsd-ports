@@ -1,0 +1,23 @@
+LIBDIR= ${PREFIX}/lib
+NOPROFILE= no
+CFLAGS+=-D_TIMES
+FFLAGS+=-D_TIMES
+
+SHLIB_MAJOR= 1
+SHLIB_MINOR= 0
+
+LIB= U77
+
+SRCS =	src/access.c src/alarm.c src/bit.c src/chdir.c src/chmod.c         \
+	src/ctime.c src/drand.c src/dsecnd.c src/dtime.c src/etime.c       \
+	src/exit.c src/falloc.c src/fdate.c src/fork.c src/free.c          \
+	src/fstat.f src/gerror.c src/getarg.c src/getcwd.c src/getenv.c    \
+	src/getgid.c src/getlog.c src/getpid.c src/getuid.c src/gmtime.c   \
+	src/hostnm.c src/iargc.c src/idate.c src/ierrno.c src/irand.c      \
+	src/itime.c src/kill.c src/len.c src/link.c src/lnblnk.f src/loc.c \
+	src/lstat.c src/ltime.c src/malloc.c src/mclock.c src/perror.c     \
+	src/qsort.c src/rand.c src/rename.c src/second.c src/seterr.c      \
+	src/sleep.c src/stat.c src/symlnk.c src/system.c src/time.c        \
+	src/unlink.c src/util.c src/wait.c src/wclock.c
+
+.include <bsd.lib.mk>

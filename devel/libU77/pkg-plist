@@ -1,0 +1,7 @@
+lib/libU77.a
+lib/libU77.so
+lib/libU77.so.1
+share/doc/libU77/manual.ps
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm share/doc/libU77
