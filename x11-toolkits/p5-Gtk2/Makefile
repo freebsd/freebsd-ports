@@ -11,7 +11,7 @@ PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl/:cpan \
+MASTER_SITE_SUBDIR=	../by-authors/id/T/TS/TSCH/:cpan \
 		gtk2-perl/:sf
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
