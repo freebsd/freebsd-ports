@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tarfile
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	archivers python
 MASTER_SITES=	http://www.gustaebel.de/lars/tarfile/ \
 		http://www3.kr.freebsd.org/~perky/distfiles/
