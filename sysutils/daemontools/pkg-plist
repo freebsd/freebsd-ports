@@ -15,5 +15,4 @@ bin/envuidgid
 bin/envdir
 bin/setlock
 bin/readproctitle
-share/examples/daemontools/svscan.sh.sample
-@dirrm share/examples/daemontools
+etc/rc.d/svscan.sh.sample
