@@ -167,3 +167,4 @@ x11-toolkits/crux||2003-02-07|deleted: added to GNOME 2.2 desktop
 textproc/ruby-erb||2003-02-09|ERb 1.x is obsolete: use the one included in ruby 1.8 or ruby16-shim-ruby18
 audio/lame-devel||2003-02-09|obsolete
 x11-fm/gnomemc||2003-02-10|obsolete
+x11/wmshutdown|sysutils/wmshutdown|2003-02-13|fix category
