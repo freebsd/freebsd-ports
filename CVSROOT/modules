@@ -3306,6 +3306,7 @@ jzip		ports/games/jzip
 kadmin		src/eBones/kadmin
 kadmind		src/eBones/kadmind
 kaffe		ports/java/kaffe
+kallery		ports/graphics/kallery
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
 kaskade		ports/cad/kaskade
