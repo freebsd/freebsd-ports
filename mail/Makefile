@@ -24,6 +24,7 @@
     SUBDIR += cyrus-imapd
     SUBDIR += demime
     SUBDIR += distribute
+    SUBDIR += dkimap4
     SUBDIR += drac
     SUBDIR += elm
     SUBDIR += elm+ME

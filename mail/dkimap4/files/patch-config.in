@@ -1,0 +1,19 @@
+--- config.in.orig	Wed May 16 18:41:08 2001
++++ config.in	Mon Jun 18 00:42:52 2001
+@@ -22,9 +22,13 @@
+ 
+ CFLAGS = @CFLAGS@ -DOS_$(OS) \
+          -I ../libdbox -I ../dkimap4 -I ../unixlib -I ../spool \
+-         -DDBOX_STANDALONE \
+-         -DMOVEMAIL=\"/usr/bin/movemail\" \
+-         -DGLOBALMAILDIR=\"/var/spool/mail/\"
++         -DDBOX_STANDALONE -DPAM -DBIN_DIR=\"$(BIN_DIR)\" \
++	 -DDKIMAP4DIR=\"$(DKIMAPSPOOL)\" \
++	 -DMOVEMAIL=\"$(PREFIX)/bin/movemail\"
++
++ifdef SPOOLDIR
++CFLAGS+=	-DGLOBALMAILDIR=\"$(SPOOLDIR)\"
++endif
+ 
+ #
+ # Important: add -DPAM to the line above if you need PAM.
