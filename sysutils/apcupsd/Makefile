@@ -7,7 +7,7 @@
 
 PORTNAME=	apcupsd
 PORTVERSION=	3.10.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,6 +24,7 @@ PLIST_SUB=	STARTUP_SCRIPT=${STARTUP_SCRIPT}
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --sbindir=${PREFIX}/sbin \
+		--with-nologin=/var/run \
 		--disable-install-distdir --enable-usb \
 		--sysconfdir=${PREFIX}/etc/apcupsd \
 		--with-serial-dev=/dev/usv \
