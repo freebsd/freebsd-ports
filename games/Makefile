@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.57 1997/02/16 10:56:28 andreas Exp $
+# $Id: Makefile,v 1.58 1997/03/04 09:37:31 tg Exp $
 #
 
     SUBDIR += acm
+    SUBDIR += an
     SUBDIR += angband
     SUBDIR += cgoban
     SUBDIR += crossfire
