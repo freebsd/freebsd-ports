@@ -1,0 +1,14 @@
+--- lib/ftw/scandir.c.orig	Sun Oct 10 17:51:58 1999
++++ lib/ftw/scandir.c	Sun Oct 10 17:52:24 1999
+@@ -12,6 +12,11 @@
+  */
+ 
+ #include "config.h"
++
++#ifdef __FreeBSD__
++#define HAS_SCANDIR 1
++#endif
++
+ #ifndef HAS_SCANDIR
+ 
+ /*

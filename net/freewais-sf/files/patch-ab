@@ -1,0 +1,18 @@
+--- lib/Makefile.SH.orig	Tue Oct  5 01:46:11 1999
++++ lib/Makefile.SH	Tue Oct  5 02:00:50 1999
+@@ -157,6 +157,7 @@
+ 	$(RANLIB) $@
+ 
+ install:: libwais.a
++	if test ! -d $(PRIVLIB); then mkdir $(PRIVLIB); else true; fi
+ 	$(INSTALL) -c -m 644 libwais.a $(PRIVLIB)
+ 	$(RANLIB) $(PRIVLIB)/libwais.a
+ 	chmod 444 $(PRIVLIB)/libwais.a
+@@ -188,6 +189,7 @@
+ install:: wais.h
++	if test ! -d $(PRIVINC); then mkdir $(PRIVINC); else true; fi
+ 	@case '${MFLAGS}' in *[i]*) set +e;; esac; \
+ 	for i in wais.h; do \
+ 	(set -x; $(INSTALL) -c -m 664 $$i $(PRIVINC)); \
+ 	done
+ 

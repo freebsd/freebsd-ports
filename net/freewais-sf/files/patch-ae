@@ -1,0 +1,13 @@
+--- lib/ftw/alphasort.c.orig	Sun Oct 10 17:50:02 1999
++++ lib/ftw/alphasort.c	Sun Oct 10 17:51:33 1999
+@@ -13,6 +13,10 @@
+ 
+ #include "config.h"
+ 
++#ifdef __FreeBSD__
++#define HAS_ALPHASORT 1
++#endif
++
+ #ifndef HAS_ALPHASORT
+ 
+ /*

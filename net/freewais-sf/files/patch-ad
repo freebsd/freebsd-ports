@@ -1,0 +1,13 @@
+--- lib/cutil.c.orig	Sun Oct 10 17:46:37 1999
++++ lib/cutil.c	Sun Oct 10 17:47:45 1999
+@@ -788,6 +788,10 @@
+ }
+ 
+ 
++#ifdef __FreeBSD__
++#define HAS_VPRINTF 1
++#endif
++
+ #ifndef HAS_VPRINTF
+ /* Portable vsprintf  by Robert A. Larson <blarson@skat.usc.edu> */
+ 
