@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Feb  9 08:57:03 2003
-+++ Makefile	Thu Feb 13 21:34:14 2003
+--- Makefile.orig	Tue Feb 18 08:57:03 2003
++++ Makefile	Tue Feb 18 21:59:51 2003
 @@ -58,8 +58,8 @@
  PROJECT=tidy
  
@@ -11,7 +11,16 @@
  
  bininst = ${runinst_prefix}/bin
  libinst = ${devinst_prefix}/lib
-@@ -76,8 +76,9 @@
+@@ -67,7 +67,7 @@
+ maninst = ${devinst_prefix}/man
+ 
+ # Internal variables. - No spaces allowed: libtool chokes on spaces in directory names.
+-TOPDIR = ../..
++TOPDIR = .
+ INCDIR = ${TOPDIR}/include
+ APPDIR = ${TOPDIR}/console
+ SRCDIR = ${TOPDIR}/src
+@@ -76,10 +76,11 @@
  BINDIR = ${TOPDIR}/bin
  
  # CFLAGS etc..
@@ -21,5 +30,8 @@
 +#CFLAGS= -Wall -Wno-switch -Wno-parentheses -Wno-unused -I $(INCDIR)
 +CFLAGS+= -I $(INCDIR)
  
- # OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
+-# OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
++OTHERCFLAGS= -DSUPPORT_ACCESSIBILITY_CHECKS=1 -DSUPPORT_UTF16_ENCODINGS=1 -DSUPPORT_ASIAN_ENCODINGS=1
  ifdef SUPPORT_UTF16_ENCODINGS
+ CFLAGS += -DSUPPORT_UTF16_ENCODINGS=$(SUPPORT_UTF16_ENCODINGS)
+ endif

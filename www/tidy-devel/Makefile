@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tidy
-PORTVERSION=	030208
+PORTVERSION=	030217
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/
@@ -17,6 +17,7 @@ EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Utility to clean up and pretty print HTML/XHTML/XML
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -25,7 +26,7 @@ USE_GMAKE=	yes
 #MAN1=		tidy.1
 
 .if !defined(NOPORTDOCS)
-DOCVER=		021222
+DOCVER=		030216
 DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}
 DOCFILES=	Overview.html faq.html grid.gif pending.html	\
 		quickref.html release-notes.html tidy.css tidy.gif
@@ -33,6 +34,9 @@ APIEXT=		css html js png
 .endif
 
 BIN2STRIP=	tidy tab2space
+
+post-extract:
+	@${CP} -p ${WRKSRC}/build/gmake/Makefile ${WRKSRC}
 
 pre-install:
 	@if [ -f ${LOCALBASE}/bin/tidy ]; then \
