@@ -1,4 +1,4 @@
 sbin/chrootuid
-share/doc/chrootuid/README
-share/doc/chrootuid/chrootuid_license
-@dirrm share/doc/chrootuid
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/chrootuid_license
+@dirrm %%DOCSDIR%%
