@@ -7,30 +7,33 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	2.16.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Bug-tracking system developed by Mozilla Project
+MAINTAINER?=	ports@FreeBSD.org
+COMMENT?=	Bug-tracking system developed by Mozilla Project
 
-RUN_DEPENDS=	${PERL_SITEDIR}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
-		${PERL_SITEDIR}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${PERL_SITEDIR}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
-		${PERL_SITEDIR}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql \
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
 
 .if !defined(WITHOUT_BUG_CHARTING_MODULES)
-RUN_DEPENDS+=	${PERL_SITEDIR}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
-		${PERL_SITEDIR}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD \
+		${SITE_PERL}/Chart/Base.pm:${PORTSDIR}/graphics/p5-chart
 .endif
 
 .if defined(WITH_BUG_MAILING_MODULES)
-RUN_DEPENDS+=	${PERL_SITEDIR}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
+RUN_DEPENDS+=	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools
 .endif
 
 .if defined(WITH_BUG_EXPORT_AND_IMPORT)
-RUN_DEPENDS+=	${PERL_SITEDIR}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 .endif
+
+CONFLICTS?=	ja-bugzilla-*
 
 .if defined(WITH_CONTRIB)
 PLIST_SUB+=	CONTRIB=""
@@ -43,8 +46,6 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 BINMODE=	700
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-PERL_SITEDIR=	${SITE_PERL}
 
 BUGZILLADIR?=	www/data/bugzilla
 BUGZILLADOCS=	html images txt rel_notes.txt
@@ -117,7 +118,11 @@ do-install:
 .endif
 
 post-install:
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" pkg-message >${PKGMESSAGE}
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
+		-e "s:%%BUGZILLADIR%%:${BUGZILLADIR}:g" \
+		-e "s:%%PORTDOCS%%:${PORTDOCS}:g" \
+		-e "s:%%DOCSDIR%%:${DOCSDIR}:g" \
+		${MASTERDIR}/pkg-message >${PKGMESSAGE}
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
