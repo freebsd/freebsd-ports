@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sftp
-# Version required:	0.5
+# Version required:	0.6
 # Date created:		30 December 1999
 # Whom:			Cy Shubert <Cy.Shubert@uumail.gov.bc.ca>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sftp-0.5
+DISTNAME=	sftp-0.6
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
 
@@ -21,12 +21,23 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--enable-remotepath=${PREFIX}/libexec
 
-MAN1=		sftp.1
+MAN1=		secftp.1
+
+PLIST=		${WRKDIR}/PLIST
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sftp ${PREFIX}/bin/sftp
-	${LN} -s ${PREFIX}/bin/sftp ${PREFIX}/bin/rsftp
+	${INSTALL_PROGRAM} ${WRKSRC}/sftp ${PREFIX}/bin/secftp
+	${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/rsftp
 	${INSTALL_PROGRAM} ${WRKSRC}/sftpserv ${PREFIX}/libexec/sftpserv
-	${INSTALL_MAN} ${WRKSRC}/sftp.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/sftp.1 ${PREFIX}/man/man1/secftp.1
+	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@if [ ! -f ${PREFIX}/bin/sftp ]; then \
+		${ECHO} "No other sftp found, linking sftp to secftp"; \
+		${LN} -s ${PREFIX}/bin/secftp ${PREFIX}/bin/sftp; \
+		${LN} -s ${PREFIX}/man/man1/secftp.1.gz ${PREFIX}/man/man1/sftp.1.gz; \
+		@${ECHO} bin/sftp >> ${PLIST}; \
+	else \
+		${ECHO} "Other sftp found, not linking sftp to secftp"; \
+	fi
 
 .include <bsd.port.mk>
