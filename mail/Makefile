@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1998/08/09 00:40:16 steve Exp $
+# $Id: Makefile,v 1.74 1998/11/05 22:14:12 kuriyama Exp $
 #
 
     SUBDIR += adcomplain
@@ -22,6 +22,7 @@
     SUBDIR += mailcrypt
     SUBDIR += majorcool
     SUBDIR += majordomo
+    SUBDIR += mbx2mbox
     SUBDIR += metamail
     SUBDIR += mew
     SUBDIR += mew-common
