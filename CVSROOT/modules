@@ -925,6 +925,8 @@ cu-prolog	ports/lang/cu-prolog
 cucipop		ports/mail/cucipop
 cuecat		ports/misc/cuecat
 cups		ports/print/cups
+cups-base	ports/print/cups-base
+cups-lpr	ports/print/cups-lpr
 curl		ports/ftp/curl
 cursive		ports/games/cursive
 custom-emacs	ports/editors/custom-emacs

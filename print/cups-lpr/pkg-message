@@ -1,17 +1,18 @@
 
-CUPS is now installed.
+CUPS BSD and system V print compatibility system is installed.
 
-Please read the documentation in %%PREFIX%%/share/doc/cups/ for information
-on how to set up your printer to use CUPS. Basic template configuration files
-have been installed in %%PREFIX%%/etc/cups/
+This port installs binaries (lpr, lpc, etc) which have the same names as
+binaries in /usr/bin and /usr/sbin. Assuming you installed this port to use
+cups fully, the minimum you need to do is make sure all users PATH variable
+has %%PREFIX%%/bin before /usr/bin. As this is not always easy to do,
+a you may consider removing the FreeBSD printing system completely. To do this,
+remove the binaries and man pages listed below, and set NO_LPR=true in your
+/etc/make.conf. This will prevent future buildworlds from re-installing the
+binaries, but will not prevent them from getting re-installed during a binary
+upgrade.
 
-Please note that the cups port installs tools with conflicting names to the
-freebsd printing system. At a minimum users PATH environment should have
-%%PREFIX%%/bin before /usr/bin to use the correct tools. You may also
-consider removing the freebsd printing tools and set NO_LPR=true in your
-/etc/make.conf to prevent them building in future make world's. This would
-not of course prevent them from being reinstalled during a binary upgrade.
-
-The relevant files for the freebsd printing system are:
+The relevant files for the FreeBSD printing system are:
+(with wildcards to make it easier)
 /usr/bin/lp* /usr/sbin/lpc /usr/sbin/lpd /usr/share/man/cat*/lp*
 /usr/share/man/man1/lp.* /usr/share/man/man1/lp[a-s,u-z]*
+

@@ -5,13 +5,8 @@ Please read the documentation in %%PREFIX%%/share/doc/cups/ for information
 on how to set up your printer to use CUPS. Basic template configuration files
 have been installed in %%PREFIX%%/etc/cups/
 
-Please note that the cups port installs tools with conflicting names to the
-freebsd printing system. At a minimum users PATH environment should have
-%%PREFIX%%/bin before /usr/bin to use the correct tools. You may also
-consider removing the freebsd printing tools and set NO_LPR=true in your
-/etc/make.conf to prevent them building in future make world's. This would
-not of course prevent them from being reinstalled during a binary upgrade.
+To install the BSD and system V compatibility binaries look to the port
+print/cups-bin. These are no longer installed as part of the base cups port
+because they have conflicting names with the native print binaries, and with
+other ports, suck as lprNG.
 
-The relevant files for the freebsd printing system are:
-/usr/bin/lp* /usr/sbin/lpc /usr/sbin/lpd /usr/share/man/cat*/lp*
-/usr/share/man/man1/lp.* /usr/share/man/man1/lp[a-s,u-z]*

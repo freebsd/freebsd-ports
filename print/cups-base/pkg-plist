@@ -1,14 +1,4 @@
-bin/cancel
 bin/cups-config
-bin/disable
-bin/enable
-bin/lp
-bin/lpoptions
-bin/lppasswd
-bin/lpq
-bin/lpr
-bin/lprm
-bin/lpstat
 etc/rc.d/cupsd.sh.sample
 @unexec if cmp -s %D/etc/cups/classes.conf %D/etc/cups/classes.conf.sample; then rm -f %D/etc/cups/classes.conf; fi
 etc/cups/classes.conf.sample
@@ -59,14 +49,7 @@ libexec/cups/filter/rastertodymo
 libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
 libexec/cups/filter/texttops
-sbin/accept
-sbin/cupsaddsmb
 sbin/cupsd
-sbin/lpadmin
-sbin/lpc
-sbin/lpinfo
-sbin/lpmove
-sbin/reject
 share/cups/banners/classified
 share/cups/banners/confidential
 share/cups/banners/secret

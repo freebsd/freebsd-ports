@@ -1,0 +1,118 @@
+--- Makefile.orig	Tue Oct 30 15:37:13 2001
++++ Makefile	Wed Nov 28 22:43:18 2001
+@@ -28,15 +28,14 @@
+ # Directories to make...
+ #
+ 
+-DIRS	=	cups backend berkeley cgi-bin filter man pdftops pstoraster \
+-		scheduler systemv
++DIRS	=	berkeley systemv man
+ 
+ #
+ # Make all targets...
+ #
+ 
+ all:
+-	for dir in $(DIRS); do\
++	for dir in cups $(DIRS); do\
+ 		echo Making all in $$dir... ;\
+ 		(cd $$dir ; $(MAKE) $(MFLAGS)) || exit 1;\
+ 	done
+@@ -46,7 +45,7 @@
+ #
+ 
+ clean:
+-	for dir in $(DIRS); do\
++	for dir in cups $(DIRS); do\
+ 		echo Cleaning in $$dir... ;\
+ 		(cd $$dir; $(MAKE) $(MFLAGS) clean) || exit 1;\
+ 	done
+@@ -60,47 +59,47 @@
+ 		echo Installing in $$dir... ;\
+ 		(cd $$dir; $(MAKE) $(MFLAGS) install) || exit 1;\
+ 	done
+-	echo Installing in conf...
+-	(cd conf; $(MAKE) $(MFLAGS) install)
+-	echo Installing in data...
+-	(cd data; $(MAKE) $(MFLAGS) install)
+-	echo Installing in doc...
+-	(cd doc; $(MAKE) $(MFLAGS) install)
+-	echo Installing in fonts...
+-	(cd fonts; $(MAKE) $(MFLAGS) install)
+-	echo Installing in locale...
+-	(cd locale; $(MAKE) $(MFLAGS) install)
+-	echo Installing in ppd...
+-	(cd ppd; $(MAKE) $(MFLAGS) install)
+-	echo Installing in templates...
+-	(cd templates; $(MAKE) $(MFLAGS) install)
+-	echo Installing cups-config script...
+-	$(INSTALL_DIR) $(bindir)
+-	$(INSTALL_SCRIPT) cups-config $(bindir)/cups-config
+-	echo Installing startup script...
+-	if test "x$(INITDIR)" != "x"; then \
+-		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/init.d; \
+-		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/init.d/cups; \
+-		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc0.d; \
+-		$(INSTALL_SCRIPT) cups.sh  $(BUILDROOT)$(INITDIR)/rc0.d/K00cups; \
+-		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc2.d; \
+-		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc2.d/S99cups; \
+-		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc3.d; \
+-		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc3.d/S99cups; \
+-		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc5.d; \
+-		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc5.d/S99cups; \
+-	fi
+-	if test "x$(INITDIR)" = "x" -a "x$(INITDDIR)" != "x"; then \
+-		$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR); \
+-		if test "$(INITDDIR)" = "/System/Library/StartupItems/CUPS"; then \
+-			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/CUPS; \
+-			$(INSTALL_DATA) cups.plist $(BUILDROOT)$(INITDDIR)/StartupParameters.plist; \
+-			$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR)/Resources/English.lproj; \
+-			$(INSTALL_DATA) cups.strings $(BUILDROOT)$(INITDDIR)/Resources/English.lproj/Localizable.strings; \
+-		else \
+-			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
+-		fi \
+-	fi
++#	echo Installing in conf...
++#	(cd conf; $(MAKE) $(MFLAGS) install)
++#	echo Installing in data...
++#	(cd data; $(MAKE) $(MFLAGS) install)
++#	echo Installing in doc...
++#	(cd doc; $(MAKE) $(MFLAGS) install)
++#	echo Installing in fonts...
++#	(cd fonts; $(MAKE) $(MFLAGS) install)
++#	echo Installing in locale...
++#	(cd locale; $(MAKE) $(MFLAGS) install)
++#	echo Installing in ppd...
++#	(cd ppd; $(MAKE) $(MFLAGS) install)
++#	echo Installing in templates...
++#	(cd templates; $(MAKE) $(MFLAGS) install)
++#	echo Installing cups-config script...
++#	$(INSTALL_DIR) $(bindir)
++#	$(INSTALL_SCRIPT) cups-config $(bindir)/cups-config
++#	echo Installing startup script...
++#	if test "x$(INITDIR)" != "x"; then \
++#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/init.d; \
++#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/init.d/cups; \
++#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc0.d; \
++#		$(INSTALL_SCRIPT) cups.sh  $(BUILDROOT)$(INITDIR)/rc0.d/K00cups; \
++#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc2.d; \
++#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc2.d/S99cups; \
++#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc3.d; \
++#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc3.d/S99cups; \
++#		$(INSTALL_DIR) $(BUILDROOT)$(INITDIR)/rc5.d; \
++#		$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDIR)/rc5.d/S99cups; \
++#	fi
++#	if test "x$(INITDIR)" = "x" -a "x$(INITDDIR)" != "x"; then \
++#		$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR); \
++#		if test "$(INITDDIR)" = "/System/Library/StartupItems/CUPS"; then \
++#			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/CUPS; \
++#			$(INSTALL_DATA) cups.plist $(BUILDROOT)$(INITDDIR)/StartupParameters.plist; \
++#			$(INSTALL_DIR) $(BUILDROOT)$(INITDDIR)/Resources/English.lproj; \
++#			$(INSTALL_DATA) cups.strings $(BUILDROOT)$(INITDDIR)/Resources/English.lproj/Localizable.strings; \
++#		else \
++#			$(INSTALL_SCRIPT) cups.sh $(BUILDROOT)$(INITDDIR)/cups; \
++#		fi \
++#	fi
+ 
+ 
+ #

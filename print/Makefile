@@ -33,6 +33,8 @@
     SUBDIR += cmpsfont
     SUBDIR += cpp2latex
     SUBDIR += cups
+    SUBDIR += cups-base
+    SUBDIR += cups-lpr
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += dvi2xx
