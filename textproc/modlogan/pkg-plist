@@ -24,6 +24,7 @@ lib/libmla_input_ipchains.so
 lib/libmla_input_ippl.so
 lib/libmla_input_isdn4bsd.so
 lib/libmla_input_isdnlog.so
+lib/libmla_input_mod_log_sql.so
 lib/libmla_input_msiis.so
 lib/libmla_input_msmedia.so
 lib/libmla_input_netscape.so
@@ -86,6 +87,7 @@ share/locale/cs/LC_MESSAGES/modlogan.mo
 share/locale/de/LC_MESSAGES/modlogan.mo
 share/locale/es/LC_MESSAGES/modlogan.mo
 share/locale/fr/LC_MESSAGES/modlogan.mo
+share/locale/hu/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
 share/locale/pl/LC_MESSAGES/modlogan.mo
 share/locale/ru/LC_MESSAGES/modlogan.mo
