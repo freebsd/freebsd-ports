@@ -36,19 +36,3 @@
        break;
      }
  
-@@ -1338,15 +1319,7 @@
-   if ((mode >= MODE_UPDATE) && (constend>0))
-     rebuildConstantPool();
- 
--  if (targetIndent==1)
--  {
--    --indent;
--    println("end");
--    targetIndent = 0;
--  }
--
-   --indent;
--
-   if (frameNum!=-1) println("end // of frame %i",frameNum);
-   free(buffer);
- }
