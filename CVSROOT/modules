@@ -5993,6 +5993,7 @@ p5-ORBit	ports/devel/p5-ORBit
 p5-Object-MultiType	ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later	ports/devel/p5-Object-Realize-Later
 p5-OpenCA-CRR	ports/security/p5-OpenCA-CRR
+p5-OpenCA-PKCS7	ports/security/p5-OpenCA-PKCS7
 p5-OpenGL	ports/graphics/p5-OpenGL
 p5-Orchard-Perl	ports/textproc/p5-Orchard-Perl
 p5-P4		ports/devel/p5-P4
