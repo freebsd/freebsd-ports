@@ -14,6 +14,8 @@ DISTNAME=	hping2-beta54
 
 MAINTAINER=	roman@xpert.com
 
+BROKEN=		See PR 28974
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--force-libpcap
 
