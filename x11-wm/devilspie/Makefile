@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		devilspie
-PORTVERSION=		0.4
+PORTVERSION=		0.5.1
 CATEGORIES=		x11-wm
 MASTER_SITES=		http://www.burtonini.com/computing/
 
