@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	net python
 MASTER_SITES=	http://diveintomark.org/projects/pygoogle/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ DISTNAME=	pygoogle-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python wrapper for the Google web API
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_xmlplus/sax/__init__.py:${PORTSDIR}/textproc/py-xml
+RUN_DEPENDS=	${PYXML}
 
 USE_PYTHON=	yes
 USE_ZIP=	yes
