@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	xerces-c2
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
+PORTREVISION=	0
 CATEGORIES=	textproc
-MASTER_SITES=	http://xml.apache.org/dist/xerces-c/stable/
+MASTER_SITES=	${MASTER_SITE_APACHE_XML}
+MASTER_SITE_SUBDIR=	xerces-c/stable
 DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
 
 MAINTAINER?=	bzeeb+freebsdports@zabbadoz.net
@@ -22,13 +23,15 @@ PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .else
 .if (${TRANSCODER} == "icu")
-LIB_DEPENDS+=		icuuc.22:${PORTSDIR}/devel/icu
+PKGNAMESUFFIX+=		-icu
+LIB_DEPENDS+=		icuuc.24:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ENV+=		ICUROOT=${ICUROOT} LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB+=		TRANSICONV="@comment "
 PLIST_SUB+=		TRANSICU=""
 .elif (${TRANSCODER} == "native")
+PKGNAMESUFFIX+=		-native
 PLIST_SUB+=		TRANSICONV=""
 PLIST_SUB+=		TRANSICU="@comment "
 .else
@@ -79,6 +82,8 @@ XERCES_BINS?=	CreateDOMDocument DOMCount DOMPrint EnumVal MemParse PParse \
 SAMPLES_CONFIG_ARGS+=	-p freebsd -c ${CC} -x ${CXX}
 .if defined(NO_THREADS)
 SAMPLES_CONFIG_ARGS+=	-r none
+.else
+SAMPLES_CONFIG_ARGS+=	-r pthread
 .endif
 .else
 PLIST_SUB+=	NO_SAMPLES="@comment "
@@ -95,6 +100,8 @@ pre-fetch:
 	@${ECHO} 'NO_THREADS	do not build a thread enabled shared library'
 	@${ECHO} 'NO_SAMPLES	do not copy sample binaries and sources'
 	@${ECHO} 'NOPORTDOCS	do not copy documentation'
+	@${ECHO} ''
+	@${ECHO} 'Also you may set TRANSODER to the following values (without -D):'
 	@${ECHO} ''
 	@${ECHO} 'TRANSCODER=[icu|IconvFBSD|native]	default: IconvFBSD'
 	@${ECHO} ''
@@ -129,9 +136,6 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_LIB}
-	@${LN} -sf ${XERCESC_LIB} ${PREFIX}/lib/libxerces-c.so
-	@${LN} -sf ${XERCESC_LIB} \
-		${PREFIX}/lib/libxerces-c.so.${XERCESC_LIB_VERSION}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xerces-c
 	@${CP} -r ${WRKSRC}/doc/ ${PREFIX}/share/doc/xerces-c/
