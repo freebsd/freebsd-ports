@@ -5811,6 +5811,7 @@ p5-File-Temp	ports/devel/p5-File-Temp
 p5-File-Which	ports/sysutils/p5-File-Which
 p5-File-chdir	ports/devel/p5-File-chdir
 p5-FileHandle-Unget	ports/devel/p5-FileHandle-Unget
+p5-Filesys-DiskFree	ports/sysutils/p5-Filesys-DiskFree
 p5-Filesys-DiskSpace	ports/sysutils/p5-Filesys-DiskSpace
 p5-Filesys-SmbClient	ports/net/p5-Filesys-SmbClient
 p5-Filter	ports/devel/p5-Filter
