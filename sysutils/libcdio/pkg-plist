@@ -1,6 +1,13 @@
+bin/cd-drive
+bin/cd-info
+bin/iso-info
+bin/iso-read
+include/cdio/bytesex.h
+include/cdio/bytesex_asm.h
 include/cdio/cd_types.h
 include/cdio/cdio.h
 include/cdio/cdtext.h
+include/cdio/ds.h
 include/cdio/dvd.h
 include/cdio/iso9660.h
 include/cdio/logging.h
@@ -13,11 +20,11 @@ include/cdio/xa.h
 lib/libcdio.a
 lib/libcdio.la
 lib/libcdio.so
-lib/libcdio.so.2
+lib/libcdio.so.3
 lib/libiso9660.a
 lib/libiso9660.la
 lib/libiso9660.so
-lib/libiso9660.so.2
+lib/libiso9660.so.3
 libdata/pkgconfig/libcdio.pc
 libdata/pkgconfig/libiso9660.pc
 @unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
