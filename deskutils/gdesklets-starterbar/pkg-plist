@@ -8,9 +8,9 @@ share/gnome/gdesklets/Displays/StarterBar/gfx/bg-se.png
 share/gnome/gdesklets/Displays/StarterBar/gfx/bg-sw.png
 share/gnome/gdesklets/Displays/StarterBar/gfx/bg-w.png
 share/gnome/gdesklets/Displays/StarterBar/gfx/bg.png
+share/gnome/gdesklets/Displays/StarterBar/gfx/preview.png
+share/gnome/gdesklets/Displays/StarterBar/gfx/waterbath.png
 share/gnome/gdesklets/Displays/StarterBar/starterbar.display
-share/gnome/gdesklets/Sensors/StarterBar/.#ChangeLog.1.2
-share/gnome/gdesklets/Sensors/StarterBar/.#__init__.py.1.3
 share/gnome/gdesklets/Sensors/StarterBar/.order
 share/gnome/gdesklets/Sensors/StarterBar/Animator.py
 share/gnome/gdesklets/Sensors/StarterBar/ChangeLog
