@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Net_IMAP
-PORTVERSION=	0.7.1
+PORTVERSION=	1.0.3
 CATEGORIES=	mail net pear
 
-MAINTAINER=	bra@fsn.hu
+MAINTAINER=	rafan@infor.org
 COMMENT=	PEAR class that provides an implementation of the IMAP protocol
 
 BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
