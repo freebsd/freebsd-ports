@@ -16,11 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A Free Implementation of the Unicode Bidirectional Algorithm
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

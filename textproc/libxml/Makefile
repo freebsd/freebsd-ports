@@ -15,16 +15,14 @@ MASTER_SITE_SUBDIR=	sources/libxml/1.8
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Xml parser library for GNOME
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>

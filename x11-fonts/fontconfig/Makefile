@@ -14,17 +14,15 @@ MASTER_SITES=	http://www.fontconfig.org/release/ \
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An XML-based font configuration API for X Windows
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.4:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
