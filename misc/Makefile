@@ -169,6 +169,7 @@
     SUBDIR += wmmand
     SUBDIR += wmstock
     SUBDIR += wmweather
+    SUBDIR += wmx10
     SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xenmenu
