@@ -1,0 +1,37 @@
+--- config/cf/bsdLib.rules.orig	Wed Jul 10 17:25:29 2002
++++ config/cf/bsdLib.rules	Wed Jul 10 17:25:32 2002
+@@ -306,6 +306,34 @@
+ 
+ #endif /* SharedDepLibraryTarget */
+ 
++/*
++ * SharedDepCplusplusLibraryTarget - generate rules to create a shared library.
++ */
++#ifndef SharedDepCplusplusLibraryTarget
++#define SharedDepCplusplusLibraryTarget(libname,rev,deplist,solist,down,up) @@\
++AllTarget(Concat(lib,libname.so.rev))					@@\
++									@@\
++Concat(lib,libname.so.rev):  deplist					@@\
++	$(RM) $@~							@@\
++	@SONAME=`echo $@ | sed 's/\.[^\.]*$$//'`; set -x; \		@@\
++		(cd down; $(CXX) -o up/$@~ $(SHLIBLDFLAGS) -Wl,-soname,$$SONAME solist $(REQUIREDLIBS) BaseShLibReqs); \ @@\
++		$(RM) $$SONAME; $(LN) $@ $$SONAME; \			@@\
++		LinkBuildSonameLibrary($$SONAME)			@@\
++	$(RM) $@							@@\
++	$(MV) $@~ $@							@@\
++	$(RM) Concat(lib,libname.so)					@@\
++	$(LN) $@ Concat(lib,libname.so)					@@\
++	LinkBuildLibrary($@)						@@\
++	LinkBuildLibrary(Concat(lib,libname.so))			@@\
++									@@\
++clean::									@@\
++	@SONAME=`echo Concat(lib,libname.so.rev) | sed 's/\.[^\.]*$$//'`; \ @@\
++	set -x; $(RM) $$SONAME						@@\
++	$(RM) Concat(lib,libname.so)					@@\
++	$(RM) Concat(lib,libname.so.rev)
++
++#endif /* SharedDepLibraryTarget */
++
+ #ifndef SharedDepModuleTarget
+ #define SharedDepModuleTarget(name,deps,solist)				@@\
+ AllTarget(name)								@@\

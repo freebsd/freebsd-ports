@@ -1,0 +1,8 @@
+dri-devel installs development DRI drivers from a CVS snapshot,
+replacing parts of your existing XFree86-4 install.
+
+Current major updates include r200 (8500) support, Transform and
+Lighting for radeons, and pageflipping support for radeons.  Requires
+updated DRM to use.  See pkg-message for information.
+
+WWW: http://people.freebsd.org/~anholt/dri/
