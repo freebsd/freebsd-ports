@@ -59,6 +59,11 @@ post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
 	@${ECHO} "exit 0" >> ${WRKSRC}/mkpamserv
 
+.if ${MACHINE_ARCH} == "alpha"
+pre-configure:
+	${PERL} -pi -e "s@-O2@-O@g" ${WRKSRC}/admin/acinclude.m4.in
+.endif
+
 post-configure:
 	${PERL} -pi -e "s@444@644@g" ${WRKSRC}/kdesktop/init/Templates/Makefile
 
