@@ -270,6 +270,7 @@
     SUBDIR += p5-Mail-Spool
     SUBDIR += p5-Mail-Tools
     SUBDIR += p5-Mail-Verify
+    SUBDIR += p5-Mail-Webmail-Gmail
     SUBDIR += p5-Net-QMTP
     SUBDIR += p5-Net-SMTP-Server
     SUBDIR += p5-Net-Server-Mail

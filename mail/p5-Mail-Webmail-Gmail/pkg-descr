@@ -1,0 +1,14 @@
+This perl module uses objects to make it easy to interface with Gmail. 
+I eventually hope to implement all of the functionality of the Gmail 
+website, plus additional features.
+
+Because Gmail is currently in Beta testing, expect this module to 
+break as they make updates to thier interface. I will attempt to 
+keep this module in line with the changes they make, but, if after 
+updating to the newest version of this module, the feature that you 
+require still doesn't work, please contact me with the issue.
+
+WWW: http://search.cpan.org/dist/Mail-Webmail-Gmail
+
+- Cheng-Lung Sung
+clsung at dragon2.net
