@@ -146,12 +146,12 @@ LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
-BUILD=		unset noclobber && dmake debug="true"
+BUILD=		dmake debug="true"
 .else
-BUILD=		unset noclobber && dmake
+BUILD=		dmake
 .endif
 .else
-BUILD=		unset noclobber && dmake strip="true"
+BUILD=		dmake strip="true"
 .endif
 
 .if !defined(DISPLAY)
@@ -477,7 +477,7 @@ do-build:
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
 .endif
-	@cd ${WRKSRC}/.. && unset noclobber && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
+	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if defined(L10NHELP)
 	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
 	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
