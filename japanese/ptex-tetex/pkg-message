@@ -1,9 +1,12 @@
-*** NOTICE **********************************************************
+=== IMPORTANT NOTICE ===
 
- - The default texmf.cnf for pTeX is installed in
-   texmf/web2c-ptex/texmf.cnf.
+ - The standard texmf.cnf for pTeX is installed into
+   texmf/web2c-ptex/texmf.cnf and this is used by default.
+   Do not edit it directly; instead put the file to
+   texmf-var/web2c-ptex/texmf.cnf and edit it if you want
+   to customize it.
 
  - Japanized versions of "pltotf" and "tftopl" are installed
    as "pltotf-ptex" and "tftopl-ptex".
 
-*********************************************************************
+ - pLaTeX2e is now based on LaTeX2e as of 2003/12/01.

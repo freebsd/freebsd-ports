@@ -241,7 +241,6 @@ bin/virptex
 %%TEXMFDIR%%/ptex/plain/config/ptex.ini
 @dirrm %%TEXMFDIR%%/ptex/plain/config
 @dirrm %%TEXMFDIR%%/ptex/plain
-%%TEXMFDIR%%/ptex/platex/base/.cvsignore
 %%TEXMFDIR%%/ptex/platex/base/Changes.txt
 %%TEXMFDIR%%/ptex/platex/base/README.txt
 %%TEXMFDIR%%/ptex/platex/base/README2.txt
@@ -296,6 +295,7 @@ bin/virptex
 %%TEXMFDIR%%/ptex/platex/base/plnews05.tex
 %%TEXMFDIR%%/ptex/platex/base/plnews06.tex
 %%TEXMFDIR%%/ptex/platex/base/plnews07.tex
+%%TEXMFDIR%%/ptex/platex/base/plnews08.tex
 %%TEXMFDIR%%/ptex/platex/base/plpatch.ltx
 %%TEXMFDIR%%/ptex/platex/base/plvers.dtx
 %%TEXMFDIR%%/ptex/platex/base/ptrace.sty
@@ -318,8 +318,8 @@ bin/virptex
 @dirrm %%TEXMFDIR%%/ptex/platex/config
 @dirrm %%TEXMFDIR%%/ptex/platex
 @dirrm %%TEXMFDIR%%/ptex
-%%TEXMFDIR%%/dvips/ptex/jis.map
-%%TEXMFDIR%%/dvips/ptex/morisawa.map
-@unexec rmdir %D/%%TEXMFDIR%%/dvips/ptex > /dev/null 2>&1
+%%TEXMFDIR%%/dvips-ptex/jis.map
+%%TEXMFDIR%%/dvips-ptex/morisawa.map
+@unexec rmdir %D/%%TEXMFDIR%%/dvips-ptex 2> /dev/null || true
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
