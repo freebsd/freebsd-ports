@@ -7,6 +7,7 @@
 
 PORTNAME=	lcdproc
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lcdproc.omnipotent.net/download/ \
 		${MASTER_SITE_SOURCEFORGE}

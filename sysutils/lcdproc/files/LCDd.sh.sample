@@ -2,12 +2,12 @@
 
 case "$1" in
 	start)		
-		%%PREFIX%%/bin/LCDd -c %%PREFIX%%/etc/LCDd.conf
-		echo -n " drm-kmod"
+		%%PREFIX%%/sbin/LCDd -c %%PREFIX%%/etc/LCDd.conf
+		echo -n " LCDd"
 		;;
 	stop)
 		killall LCDd
-		echo -n " drm-kmod"
+		echo -n " LDCd"
 		;;
 	*)
 		echo ""
