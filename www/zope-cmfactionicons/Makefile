@@ -15,7 +15,7 @@ DISTNAME=	CMFActionIcons-${PORTVERSION}
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	CMFActionIcons product for Zope/CMF
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
