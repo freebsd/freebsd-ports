@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MT
-PORTVERSION=	2.64
-PORTREVISION=	2
+PORTVERSION=	2.65
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,7 +20,7 @@ CGIDIR=		www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
 DB_DIR=		/var/db/mysql/blog
-RUN_DEPENDS=	${PREFIX}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server
+USE_MYSQL=	yes
 .elif defined(WITH_POSTGRES)
 DB_DIR=		${PREFIX}/pgsql/data/blog	# Or somewhere defined in $PGDATA
 RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql7

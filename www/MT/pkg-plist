@@ -1,6 +1,5 @@
 %%CGIDIR%%/extlib/Apache/SOAP.pm
 %%CGIDIR%%/extlib/Apache/XMLRPC/Lite.pm
-%%CGIDIR%%/extlib/Bundle/LWP.pm
 %%CGIDIR%%/extlib/CGI.pm
 %%CGIDIR%%/extlib/CGI/Apache.pm
 %%CGIDIR%%/extlib/CGI/Carp.pm
@@ -85,6 +84,7 @@
 %%CGIDIR%%/extlib/URI.pm
 %%CGIDIR%%/extlib/URI/Escape.pm
 %%CGIDIR%%/extlib/URI/Heuristic.pm
+%%CGIDIR%%/extlib/URI/QueryParam.pm
 %%CGIDIR%%/extlib/URI/URL.pm
 %%CGIDIR%%/extlib/URI/WithBase.pm
 %%CGIDIR%%/extlib/URI/_foreign.pm
@@ -113,9 +113,17 @@
 %%CGIDIR%%/extlib/URI/nntp.pm
 %%CGIDIR%%/extlib/URI/pop.pm
 %%CGIDIR%%/extlib/URI/rlogin.pm
+%%CGIDIR%%/extlib/URI/rtsp.pm
+%%CGIDIR%%/extlib/URI/rtspu.pm
 %%CGIDIR%%/extlib/URI/rsync.pm
+%%CGIDIR%%/extlib/URI/sips.pm
+%%CGIDIR%%/extlib/URI/sip.pm
 %%CGIDIR%%/extlib/URI/snews.pm
+%%CGIDIR%%/extlib/URI/ssh.pm
 %%CGIDIR%%/extlib/URI/telnet.pm
+%%CGIDIR%%/extlib/URI/urn.pm
+%%CGIDIR%%/extlib/URI/urn/oid.pm
+%%CGIDIR%%/extlib/URI/urn/isbn.pm
 %%CGIDIR%%/extlib/WWW/RobotRules.pm
 %%CGIDIR%%/extlib/WWW/RobotRules/AnyDBM_File.pm
 %%CGIDIR%%/extlib/XML/Parser/Lite.pm
@@ -314,7 +322,6 @@
 %%DATADIR%%/styles.css
 @dirrm %%CGIDIR%%/extlib/Apache/XMLRPC
 @dirrm %%CGIDIR%%/extlib/Apache
-@dirrm %%CGIDIR%%/extlib/Bundle
 @dirrm %%CGIDIR%%/extlib/CGI
 @dirrm %%CGIDIR%%/extlib/File/Spec
 @dirrm %%CGIDIR%%/extlib/File
@@ -339,6 +346,7 @@
 @dirrm %%CGIDIR%%/extlib/SOAP
 @dirrm %%CGIDIR%%/extlib/UDDI
 @dirrm %%CGIDIR%%/extlib/URI/file
+@dirrm %%CGIDIR%%/extlib/URI/urn
 @dirrm %%CGIDIR%%/extlib/URI
 @dirrm %%CGIDIR%%/extlib/WWW/RobotRules
 @dirrm %%CGIDIR%%/extlib/WWW
