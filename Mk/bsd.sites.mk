@@ -72,7 +72,6 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.plig.net/pub/apache/dist/%SUBDIR%/ \
 	ftp://mirrors.rmplc.co.uk/pub/apache/dist/%SUBDIR%/ \
 	ftp://apache.secsup.org/pub/apache/dist/%SUBDIR%/ \
-	ftp://ftp.apache.inetcosmos.org/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/%SUBDIR%/ \
 	ftp://ftp.tux.org/pub/net/apache/dist/%SUBDIR%/ \
 	ftp://ftp.saix.net/pub/apache/dist/%SUBDIR%/ \
