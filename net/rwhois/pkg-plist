@@ -15,7 +15,6 @@ lib/rwhois/a.com/data/org/org.txt
 lib/rwhois/a.com/data/referral/referral.txt
 lib/rwhois/a.com/schema
 lib/rwhois/a.com/soa
-lib/rwhois/bin/Xpgp
 lib/rwhois/bin/rwhois_deleter
 lib/rwhois/bin/rwhois_indexer
 lib/rwhois/net-10.0.0.0-8/attribute_defs/contact.tmpl
