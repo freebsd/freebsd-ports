@@ -10,6 +10,7 @@ libexec/splashsetter/splash_set_gui_lib.pyc
 libexec/splashsetter/splash_set_gui_lib.pyo
 libexec/splashsetter/splashsetter
 share/gnome/applications/splashsetter.desktop
+share/gnome/pixmaps/splashsetter.svg
 share/gnome/pixmaps/splashsetter/splashsetter_icon.svg
 share/gnome/pixmaps/splashsetter/splashsetter_logo.svg
 share/gnome/pixmaps/splashsetter/splash/splashsetter_splash.png
