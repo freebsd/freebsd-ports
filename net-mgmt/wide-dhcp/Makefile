@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.st.ryukoku.ac.jp/pub/network/dhcp/wide/ \
 		ftp://ftp.sage-au.org.au/pub/network/boot/wide-dhcp/
 
-MAINTAINER=     hideyuki@sat.t.u-tokyo.ac.jp
+MAINTAINER=     obrien@FreeBSD.org
 
 MAKE_ENV=	OSTYPE=${OPSYS}
 
