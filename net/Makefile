@@ -133,6 +133,7 @@
     SUBDIR += icqlib0
     SUBDIR += icqnix
     SUBDIR += ip-tun
+    SUBDIR += ipcad
     SUBDIR += ipcheck
     SUBDIR += ipfm
     SUBDIR += iplog
