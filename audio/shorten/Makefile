@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	shorten
-PORTVERSION=	3.4
+PORTVERSION=	3.5.0
 CATEGORIES=	audio archivers
-MASTER_SITES=	http://shnutils.etree.org/shorten/source/
+MASTER_SITES=	http://shnutils.freeshell.org/shorten/source/
 
 MAINTAINER=	sec@42.org
 
