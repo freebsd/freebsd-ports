@@ -289,4 +289,6 @@ share/netpbm/palmgray1.map
 share/netpbm/palmgray2.map
 share/netpbm/palmgray4.map
 share/netpbm/rgb.txt
+%%PORTDOCS%%share/doc/netpbm/USERDOC
+%%PORTDOCS%%@dirrm share/doc/netpbm
 @dirrm share/netpbm

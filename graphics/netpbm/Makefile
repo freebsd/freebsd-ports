@@ -29,6 +29,8 @@ INSTALL_TARGET=	install.bin install.lib install.data install-dev
 INSTALLS_SHLIB=	yes
 NO_CDROM=	"Not allowed to sell"
 
+MAN1=		netpbm.1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
@@ -37,5 +39,12 @@ post-patch:
 	@${CP} ${FILESDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
 	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
 	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
+
+post-install:
+	@${ECHO_MSG} "===>  Installing man pages..."
+	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' ${WRKSRC}/doc/netpbm.1
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
