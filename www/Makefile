@@ -125,6 +125,7 @@
     SUBDIR += frontpage-sv
     SUBDIR += frontpage-th
     SUBDIR += frontpage-zh
+    SUBDIR += fswiki
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
