@@ -36,6 +36,7 @@
     SUBDIR += guppi
     SUBDIR += hexcalc
     SUBDIR += lapack
+    SUBDIR += libgmp3
     SUBDIR += libneural
     SUBDIR += libranlib
     SUBDIR += linalg
