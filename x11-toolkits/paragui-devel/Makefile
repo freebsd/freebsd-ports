@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	paragui
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
@@ -21,7 +21,8 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -34,10 +35,10 @@ post-extract:
 	@${RM} -f ${WRKSRC}/src/physfs/platform.c
 
 post-patch:
-	@${PERL} -pi -e 's|LT_CURRENT=.*$$|LT_CURRENT=${SHLIB_VER}|g ; \
+	${REINPLACE_CMD} -e 's|LT_CURRENT=.*$$|LT_CURRENT=${SHLIB_VER}|g ; \
 		 s|`sdl-config |`\$$\{SDL_CONFIG\} |g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$$\(SDL_CFLAGS\)|\$$\(PARAGUI_CFLAGS\)|g ; \
-		 s|-release \$$\(LT_RELEASE\)||g'
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|[$][(]SDL_CFLAGS[)]|\$\(PARAGUI_CFLAGS\)|g ; \
+		 s|lib/pkgconfig|libdata/pkgconfig|g'
 
 .include <bsd.port.mk>

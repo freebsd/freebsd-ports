@@ -13,6 +13,7 @@ include/paragui/pgdatacontainer.h
 include/paragui/pgdraw.h
 include/paragui/pgdropdown.h
 include/paragui/pgeventobject.h
+include/paragui/pgtimerobject.h
 include/paragui/pgfile.h
 include/paragui/pgfilearchive.h
 include/paragui/pgfont.h
@@ -50,7 +51,7 @@ include/paragui/pgwindow.h
 lib/libparagui.a
 lib/libparagui.so
 lib/libparagui.so.%%SHLIB_VER%%
-lib/pkgconfig/paragui.pc
+libdata/pkgconfig/paragui.pc
 share/aclocal/paragui.m4
 share/paragui/default.zip
 share/paragui/simple.zip
