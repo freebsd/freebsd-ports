@@ -1,8 +1,0 @@
---- frontend/main.h	Mon Oct 29 17:00:15 2001
-+++ frontend/main.h	Fri Sep 27 18:15:33 2002
-@@ -25,3 +25,3 @@
- 
--#define         MAX_NAME_SIZE           1000
-+#include	<sys/param.h>
-+#define	MAX_NAME_SIZE		MAXPATHLEN
--
