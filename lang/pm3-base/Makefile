@@ -1,18 +1,18 @@
 # New ports collection makefile for:	pm3-base
 # Version required:	1.1.13
 # Date created:		6 Feb 2000
-# Whom:			John Polstra <jdp@freebsd.org>
+# Whom:			John Polstra <jdp@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 DISTNAME=	pm3-base-${VERSION}
 CATEGORIES=	lang
-MASTER_SITES=	http://www.freebsd.org/~jdp/distfiles/pm3/
+MASTER_SITES=	http://www.FreeBSD.org/~jdp/distfiles/pm3/
 DISTFILES=	${BOOTSTRAP} \
 		pm3-${VERSION}-src.tar.bz2
 
-MAINTAINER=	jdp@polstra.com
+MAINTAINER=	jdp@FreeBSD.org
 
 DIST_SUBDIR=	pm3
 INSTALL_TARGET=	all
@@ -82,13 +82,16 @@ do-build:
 	@${ECHO_MSG} "This port does everything in the install step."
 	@${ECHO_MSG} "The build step is a no-op."
 
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check_conflicts
+
 do-install:
 	@${RM} -rf ${WRKSRC}/${TARGET}
 	@(ulimit -d `ulimit -Hd` && ulimit -m `ulimit -Hm` && \
 	    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 	@for i in ${PROGS}; do strip ${PREFIX}/$$i; done
-	@${MKDIR} ${PREFIX}/share/pm3
-	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/pm3
+	@${MKDIR} ${PREFIX}/share/pm3-base
+	@${INSTALL_DATA} ${WRKSRC}/src/COPYRIGHT ${PREFIX}/share/pm3-base
 
 .include <bsd.port.post.mk>

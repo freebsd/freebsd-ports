@@ -1,0 +1,18 @@
+#! /bin/sh
+#
+# check_conflicts - Checks for an SRC modula-3-lib port
+# installed into the same PREFIX.
+
+portnames=$(pkg_info -aI | sed -n -e '/^modula-3-/s/[ 	].*$//p')
+for port in ${portnames}; do
+    prefixes=$(pkg_info -p ${port} |\
+	sed -n -e 's/^[ 	]*CWD to \([^ 	]*\).*$/\1/p')
+    for prefix in ${prefixes}; do
+	if [ X${prefix} = X${PREFIX} ]; then
+	    echo "This port conflicts with your installed \"${port}\" port."
+	    echo "Please remove \"${port}\" before continuing."
+	    exit 1;
+	fi
+    done
+done
+exit 0
