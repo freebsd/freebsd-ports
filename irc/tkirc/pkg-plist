@@ -1,0 +1,6 @@
+bin/tkirc
+share/doc/tkirc/tkircrc-example
+share/doc/tkirc/README
+share/doc/tkirc/CHANGES
+share/doc/tkirc/COPYING
+@dirrm share/doc/tkirc
