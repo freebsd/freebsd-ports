@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lukemftpd
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
