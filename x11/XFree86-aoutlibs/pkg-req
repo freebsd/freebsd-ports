@@ -1,4 +1,9 @@
 #!/bin/sh
+
+if [ -n "${BATCH}" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
 env=/usr/bin/env
 fgrep=/usr/bin/fgrep
 ldconfig=/sbin/ldconfig
