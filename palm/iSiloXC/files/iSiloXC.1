@@ -1,0 +1,98 @@
+.\" $FreeBSD$
+.\"
+.Dd August 17, 2002
+.Os FreeBSD 4.6
+.Dt iSiloXC 1
+.Sh NAME
+.Nm iSiloXC
+.Nd Convert text and HTML to iSilo Palm Pilot format
+.Sh SYNOPSIS
+.Nm iSiloXC
+.Op Ar -h | -?
+.Nm iSiloXC
+.Fl x Ar filename
+.Op Fl o Ar filename
+.Op Fl a Ar path
+.Op Fl q
+.Op Fl v Ns Op Cm v
+.Op Fl u
+.Sh DESCRIPTION
+.Nm
+is the command-line tool for creating iSilo documents.
+It takes as input a conversion list file that specifies the information
+needed to create a set of documents.
+.Pp
+The following options are provided:
+.Bl -tag -width XXXXXXXXXXXXXX
+.It Fl h | Fl ?
+Display the
+.Nm
+usage help information.
+.It Fl x Ar filename
+Convert the documents specified in the conversion list file.
+For the format of this file, see
+.Xr ixl 5
+file format.
+.It Fl o Ar filename
+Specify settings for additional options in the settings file
+For the format of this file, see
+.Xr ixl 5
+file format.
+.It Fl a Ar path
+Specify the application directory that contains supporting files for 
+.Nm .
+One such supporting file is the html40.css file,
+which specifies default HTML style settings.
+If the application directory is not specified or if the application directory
+does not have this file in its CSS subdirectory, then
+.Nm
+uses default HTML style settings.
+.It Fl q
+Specify quiet mode.
+Quiet mode suppresses progress messages during conversion.
+Note that this option does not suppress error messages and that
+if you specify 
+.Fl v
+for verbose, it overrides the quiet option.
+.It Fl v Ns Op Cm v
+Use
+.Fl v
+to specify verbose mode or
+.Fl vv
+to specify very verbose mode. During conversion
+.Nm
+normally only outputs one line for each document in the document list.
+The line shows the index of the document, the total number of documents
+in the list, and the title of the document.
+.Pp
+In verbose mode,
+.Nm
+outputs the major steps of converting a document as it happens and also outputs path of each source file as it is processed.
+.Pp
+In very verbose mode,
+.Nm
+first outputs the options you have specified on the command line followed by
+the settings and conversion list. Then during conversion,
+.Nm
+outputs more detailed progress information.
+.It Fl u
+Update the conversion status information for each document in the list.
+This information includes the date and time of conversion,
+the resulting document size, and whether the conversion was successful or not.
+Note that if you specify this option,
+.Nm
+must be able to write to the conversion list file.
+.El
+.Sh SEE ALSO
+.Xr ixl 5
+.Sh AUTHORS
+ISilo, and
+.Nm
+are copyright
+.Tn DC & Co.
+For more information about iSilo, and to download
+the Palm Pilot reader for iSilo format documents, go to
+http://www.iSilo.com/.
+.Pp
+This manual page was written by
+.An Sergey Skvortsov Aq skv@FreeBSD.org .

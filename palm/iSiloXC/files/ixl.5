@@ -1,0 +1,1968 @@
+.\" $FreeBSD$
+.\"
+.Dd August 17, 2002
+.Os FreeBSD 4.6
+.Dt ixl 5
+.Sh NAME
+.Nm .ixl
+.Nd file format for
+.Xr iSiloXC 1
+.Sh DESCRIPTION
+\&.ixl is the file extension convention for a conversion list file.
+A conversion list file is a file in XML format that holds document conversion
+specifications for
+.Nm .
+XML provides a human-readable conventional file format for structured data
+that can be easily edited with a simple text editor.
+For more about XML, visit the W3C (http://www.w3c.org/).
+.Sh Top-level structure
+The first line of the file should specify that the file contains XML:
+.Bd -literal
+<?xml version="1.0"?>
+.Ed
+.Pp
+Next, should be the
+.Em document list element
+that contains the document specifications.
+The document list element begins with the following tag:
+.Bd -literal
+<iSiloXDocumentList>
+.Ed
+.Pp
+Within the document list element should be one or more
+.Em document elements.
+A document element specifies how to create a document and begins with the following tag:
+.Bd -literal
+  <iSiloXDocument>
+.Ed
+.Pp
+Each document element generally consists of several container elements
+that specify the information needed in order to create the document,
+such as the URLs and file paths of the source content and settings for options.
+.Sh Full document list element example
+This example is a list with one document that shows all of
+the possible elements explicitly specified.
+.Sh XML conventions used
+The following explanation of conventions should help you in understanding the
+.Nm \&.ixl
+file format.
+.Ss Data types
+The
+.Nm
+file uses the following three general types of data:
+.Bl -tag -width 15
+.It Em value
+When a field takes a numeric value or a string from a limited set, then the tag uses an attribute named value to specify that value. An example of a field that takes a numeric value is the MaximumWidth element:
+.Bd -literal
+  <MaximumWidth             value="144"/>
+.Ed
+.Pp
+An example of a field that takes a string from a limited set is the FollowOffsite element. This element takes a value string that is equal to either
+.Sy yes
+or
+.Sy no
+:
+.Bd -literal
+  <FollowOffsite            value="yes"/>
+.Ed
+.Pp
+Note that all such elements are of the following form:
+.Bd -literal
+  <tag                      value="value"/>
+.Ed
+.Pp
+In the above,
+.Em tag
+ is the name of the element's tag, and
+.Em value
+is the value to assign to the element. Note that a slash (e.g., '/') terminates the element since the element has no content.
+.It Em string
+When a field takes an arbitrary string value, the string value is enclosed as content within the element between the start tag and the end tag of the element. An example is the Title element:
+.Bd -literal
+  <Title>My Document</Title>
+.Ed
+.Pp
+Note that that all such elements are of the following form:
+.Bd -literal
+  <tag>content</tag>
+.Ed
+.Pp
+In the above,
+.Em tag
+is the name of the element's tag, and
+.Em content
+is the string value.
+.It Em multi-string
+When a field takes an arbitrary number of strings, the strings are enclosed as content within sub-elements of the containing element for the field. An example is the Sources element, which specifies the source URLs and file paths of the content comprising the document:
+.Bd -literal
+  <Sources>
+    <Path>http://www.iSilo.com</Path>
+    <Path>http://www.iSiloX.com</Path>
+  </Sources>
+.Ed
+.Pp
+Note that that all such elements are of the following form:
+.Bd -literal
+  <tag>
+    <subTag>content</subTag>
+    <subTag>content</subTag>
+    ...
+    <subTag>content</subTag>
+  </tag>
+.Ed
+.Pp
+In the above,
+.Em tag
+is the name of the element's tag,
+.Em subTag
+is the name of the tag for the sub-elements, and
+.Em content
+is the string value for a sub-element.
+.El
+.Ss Default values
+Most elements have default values. If you create a .ixl file, you do not have to explicitly specify values for every single possible element because the default value will be used in those cases. In the detailed element descriptions, the default value is provided for reference. For example, in the LinkOptions container element, if you do not provide a MaximumDepth element, it defaults to one.
+.Sh Document sub-element summary
+This table summarizes the option groups within the document element.
+Click on the tag of an option group to see details about the elements in the corresponding group.
+.Bl -tag -width " <SecurityOptions> "
+.\".It Sy Tag Ta Sy Description
+.It Em <Source>
+Specifies the URLs and file paths of the source content used to create
+the document. In addition, the Source element specifies
+the user name and password for accessing web sites that utilize
+the HTTP Basic Authentication mechanism.
+.It Em <Destination>
+Specifies the document title, HotSyncR destinations, and file destinations for the converted document.
+.It Em <LinkOptions>
+Specifies options for handling hyperlinks.
+.It Em <ImageOptions>
+Specifies options for handling images.
+.It Em <TableOptions>
+Specifies options for handling tables.
+.It Em <ColorOptions>
+Specifies options for handling background and text color.
+.It Em <MarginOptions>
+Specifies options for handling margins.
+.It Em <SecurityOptions>
+Specifies settings for securing the content of a document.
+.Nm
+add indicators to the converted document so that conforming applications
+that utilize the document can determine what types of actions to allow
+on the document.
+.It Em <TextOptions>
+Specifies settings that apply to the conversion of plain text files.
+Examples of plain text files include files with the extension .txt and Palm Doc files.
+.It Em <DocumentOptions>
+Miscellaneous options for the document.
+.It Em <Bookmarks>
+Specifies settings for adding predefined bookmarks to a document.
+.It Em <LastConversion>
+Stores information about the last conversion.
+.El
+.Sh Multiple document element example
+This example is a list with two document elements.
+Notice that most elements are missing. Missing elements take default values.
+This simplifies manual creation of a conversion list.
+.Bd -literal -offset left
+<?xml version="1.0"?>
+
+<iSiloXDocumentList>
+
+  <iSiloXDocument>
+    <Source>
+      <Sources>
+        <Path>http://www.iSilo.com</Path>
+      </Sources>
+    </Source>
+    <Destination>
+      <Title>iSilo Website</Title>
+      <HotSync>
+        <Path>John Doe</Path>
+      </HotSync>
+    </Destination>
+  </iSiloXDocument>
+
+  <iSiloXDocument>
+    <Source>
+      <Sources>
+        <Path>/home/john/Pictures/birthday.jpg</Path>
+        <Path>http://www.johndoe.com/hiking.gif</Path>
+      </Sources>
+    </Source>
+    <Destination>
+      <Title>Personal Pictures</Title>
+      <Files>
+        <Path>/home/john/Pictures.pdb</Path>
+      </Files>
+    </Destination>
+    <ImageOptions>
+      <ResizeLargeImages        value="no"/>
+    </ImageOptions>
+    <SecurityOptions>
+      <CopyBeam                 value="disallow"/>
+    </SecurityOptions>
+  </iSiloXDocument>
+
+</iSiloXDocumentList>
+.Ed
+.\" ---------------------------------------------------------------------------
+.Sh <Source> ELEMENT
+The Source element specifies the URLs and file paths of the source content used to create the document. In addition, the Source element specifies the user name and password for accessing web sites that utilize the HTTP Basic Authentication mechanism.
+.Ss Full element example
+.Bd -literal -offset left
+    <Source>
+      <Sources>
+        <Path>http://www.iSilo.com</Path>
+        <Path>http://www.iSiloX.com</Path>
+      </Sources>
+      <UserName>Joe</UserName>
+      <Password>Joe's Password</Password>
+    </Source>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent "<Password>" "multi-string" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description 
+.It Em <Sources> Ta multi-string Ta Em n/a Ta Source URLs and file paths
+.It Em <UserName> Ta string Ta Em n/a Ta Authentication user name
+.It Em <Password> Ta string Ta Em n/a Ta Authentication password
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <Sources>
+.Bl -ohang
+.It Em Description
+Within the <Sources> start tag and the </Sources> end tag, specify one or more Path elements. Each Path element consists of the source URL or file path string enclosed within the <Path> start tag and the </Path> end tag.
+.It Em Examples
+This example specifies the iSilo.com web site as the source content.
+.Bd -literal
+  <Sources>
+    <Path>http://www.iSilo.com</Path>
+  </Sources>
+.Ed
+.El
+.It Sy <UserName>
+.Bl -ohang
+.It Em Description
+If the source web site requires a user name and password, use this tag to specify the user name.
+Note that
+.Xr iSiloXC 1
+only support the HTTP Basic Authentication mechanism. You can usually tell that a web site uses this mechanism if when you access the site, your browser pops up a dialog asking for your user name and password. You can usually tell that a web site does not use this mechanism if when you access the site, you get a page with a form for you to enter your user name and password.
+.It Em Examples
+This example specifies that the user name for authentication is Joe. 
+.Bd -literal
+  <UserName>Joe</UserName>
+.Ed
+.El
+.It Sy <Password>
+.Bl -ohang
+.It Em Description
+If the source web site requires a user name and password, use this tag to specify the password.
+.Pp
+Also see the notes for the
+.Sy <UserName>
+tag.
+.It Em Examples
+This example specifies that the password for authentication is appleTree12. 
+.Bd -literal
+  <Password>appleTree12</Password>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <Destination> ELEMENT
+The Destination element specifies the document title, HotSyncR destinations, and file destinations for the converted document.
+.Ss Full element example
+.Bd -literal -offset left
+    <Destination>
+      <Title>My Document</Title>
+      <HotSync>
+        <Path>John Doe</Path>
+        <Path>Jane Doe:</Path>
+      </HotSync>
+      <Files>
+        <Path>/home/john/documents/my_document.pdb</Path>
+        <Path>/home/john/backup/my_document.pdb</Path>
+      </Files>
+    </Destination>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent "<HotSync>" "multi-string" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description 
+.It Em <Title> Ta string Ta Em n/a Ta Document title
+.\" .It Em <HotSync> Ta multi-string Ta Em n/a Ta HotSync destinations
+.It Em <Files> Ta multi-string Ta Em n/a Ta File destinations
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <Title>
+.Bl -ohang
+.It Em Description
+The Title element is mandatory. Its content is a string up to 31 characters in length. The title is also used for constructing the default file name of the destination document.
+.It Em Examples
+This example specifies the title for the document to be "Short Stories of Yore".
+.Bd -literal
+  <Title>Short Stories of Yore</Title>
+.Ed
+.El
+.It Sy <Files>
+.Bl -ohang
+.It Em Description
+Use the Files element to specify one or more file destinations. A file destination results in the converted document being written to a file. If you do not want the converted document written to a file then do not specify the Files element.
+.Pp
+Within the <Files> start tag and the </Files> end tag, specify one or more Path elements. Each Path element consists of the path to a destination file or directory/folder enclosed within the <Path> start tag and the </Path> end tag. 
+.Pp
+To specify a destination directory or folder, end the path string with the path separation character. The file name will be composed of the title as given by the <Title> tag and the extension .pdb.
+.It Em Examples
+This example results in the converted document being written to the
+.Li ~/Docs
+folder under the file name
+.Li news.pdb . 
+.Bd -literal
+  <Files>
+    <Path>~/Docs/news.pdb</Path>
+  </Files>
+.Ed
+.Pp
+This example results in the converted document being written to the
+.Li ~/Stories
+folder.
+Notice that the path to the folder below ends with a slash.
+If the title was specified as
+.Li Horror,
+then the resulting file name would be
+.Li Horror.pdb .
+.Bd -literal
+  <Files>
+    <Path>~/Stories/</Path>
+  </Files>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <LinkOptions> ELEMENT
+The LinkOptions element specifies options for handling hyperlinks.
+.Ss Full element example
+.Bd -literal -offset left
+    <LinkOptions>
+      <MaximumDepth             value="1"/>
+      <SubDirOnly               value="no"/>
+      <FollowOffsite            value="yes"/>
+      <UnresolvedDetail         value="include"/>
+    </LinkOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <UnresolvedDetail>" "multi-string" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <MaximumDepth> Ta value Ta 1 Ta Maximum link depth to follow
+.It Em <SubDirOnly> Ta value Ta no Ta Whether to limit followed links to subdirectories.
+.It Em <FollowOffsite> Ta value Ta yes Ta Whether to follow offsite links
+.It Em <UnresolvedDetail> Ta value Ta include Ta Whether to include unresolved URLs
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <MaximumDepth>
+.Bl -ohang
+.It Em Description
+Provide a positive integer in the value attribute of the
+MaximumDepth element to specify how far to follow hyperlinks.
+If you do not specify the MaximumDepth element, it defaults to one.
+The root source files are considered to be at a depth of zero.  Files
+to which they link are at a depth of one.  Files to which those files
+link are at a depth of two, and so on.
+.Pp
+If you are creating a document based on a Web site, you are
+recommended to use a maximum depth value of one because each
+additional increment in depth beyond one will likely cause an
+exponential increase in the size of the document. For example,
+at a link depth of one, if the converted document is one megabyte
+in size, at a link depth of two, it might be ten megabytes, and
+at a link depth of three, it could be 100 megabytes. 
+.It Em Examples
+This example specifies a maximum depth value of three, which results
+in all content up to a link depth of three being included in the
+converted document.
+.Bd -literal -offset left
+  <MaximumDepth             value="3"/>
+.Ed
+.Pp
+This example specifies a maximum depth value of zero, which results
+in no additional content other than the root source file content
+being included in the converted document.
+.Bd -literal -offset left
+  <MaximumDepth             value="0"/>
+.Ed
+.El
+.It Sy <SubDirOnly>
+.Bl -ohang
+.It Em Description
+In the value attribute of the SubDirOnly element, specify the value
+.Em yes
+to limit followed links to those matching the subdirectory of the root
+source path. Specify the value
+.Em no
+to allow all links to be followed.
+.Pp
+In many cases, websites are structured hierarchically within
+folders and sub-folders.  And in such cases, it is also probably
+the case that the URLs referencing the pages of such a site
+are also orgznied as such, with slashes separating the different
+levels of folders.  For example, the iSiloX.com website has
+all support pages within a folder named "support".  Within the
+support folder, there are sub-folders for different categories
+of support, such as a sub-folder named "manual" where the
+manuals are located.  However, such sub-folder pages may also
+have links to pages outside of the folder.  If you want
+to limit followed links to only sub-folders of the
+root source pages then you can
+set the value attribute of the SubDirOnly element
+to the value
+.Em yes .
+If you do, then
+.Xr iSiloXC 1
+only follows links which match up to the
+last slash of any of the root source URLs.
+.Pp
+As an example, if you wanted to get all the support pages
+from the iSiloX.com website, you might specify
+http://www.iSiloX.com/support/index.htm as the root source
+URL and set the value attribute of the SubDirOnly element to the value
+.Em yes .
+The page http://www.iSiloX.com/support/index.htm
+has a reference to the home page of the site http://www.iSiloX.com.
+However, because you have set the value attribute of the SubDirOnly
+element to the value
+.Em yes ,
+that link will not be followed.  However, a link such as
+http://www.iSiloX.com/support/faq.htm to the frequently asked
+questions page will be followed.
+.It Em Examples
+This example specifies that only links to targets within
+subdirectories should be followed.
+.Bd -literal -offset left
+  <SubDirOnly               value="yes"/>
+.Ed
+.Pp
+This example specifies that even links to targets outside
+of the root subdirectories can be followed.
+.Bd -literal -offset left
+  <SubDirOnly               value="no"/>
+.Ed
+.El
+.It Sy <FollowOffsite>
+.Bl -ohang
+.It Em Description
+In the value attribute of the FollowOffsite element, specify the value
+.Em yes
+to follow off-site links or provide the value
+.Em no
+to not follow off-site links.
+.Pp
+An off-site link is defined as a link to a target in a different domain.
+.Xr iSiloXC 1
+treat all file paths as belonging to the same domain.
+For URLs, they treat the the protocol (e.g., http://) and the
+hostname as comprising the domain. To tell
+.Xr iSiloXC 1
+to not follow links to targets in different domains, set the value attribute
+of the FollowOffsite element to 
+.Em no .
+This is useful to limit the amount of irrelevant content brought into the document.
+.Pp
+.Xr iSiloXC 1
+perform the off-site link check anew for each
+root source file. What this means is that you can have root source
+files in different domains. For example, you can have two root source
+files, one with the URL <http://www.iSilo.com> and another with
+the URL <http://www.palm.com>. Assuming that you have set the
+value attribute of the FollowOffsite element to
+.Em no ,
+then when
+.Xr iSiloXC 1
+convert the content at
+<http://www.iSilo.com>, only links from there with
+target URLs that begin with <http://www.iSilo.com> are followed.
+When either converts the content at <http://www.palm.com>,
+only links from there with target URLs that begin with
+<http://www.palm.com> are followed. If the content
+at <http://www.palm.com> had a link to
+<http://www.iSilo.com/whatsnew.htm>, the link will not be followed.
+.It Em Examples
+This example specifies that off-site links should be followed.
+.Bd -literal -offset left
+  <FollowOffsite            value="yes"/>
+.Ed
+.Pp
+This example specifies that off-site links should not be followed.
+.Bd -literal -offset left
+  <FollowOffsite            value="no"/>
+.Ed
+.El
+.It Sy <UnresolvedDetail>
+.Bl -ohang
+.It Em Description
+In most cases, since you can tell
+.Xr iSiloXC 1
+to only follow
+links up to a given maximum depth and to not follow off-site links,
+you end up with a document that has hyperlinks to content not brought
+into the document. These hyperlinks are referred to as unresolved
+links. You can choose whether to include the target URLs of these
+unresolved links in the document or not by setting the value
+attribute of the UnresolvedDetail element to either
+.Em include
+or
+.Em exclude ,
+respectively.
+.Pp
+If you choose to include the unresolved link detail,
+.Xr iSiloXC 1
+create a document with an additional page at the end that
+lists the URLs of all unresolved links.   The target of each unresolved
+link in the document jumps to its corresponding target URL on this
+last page. This is useful for later reference and for finding broken
+hyperlinks.
+.Pp
+If you choose not to include the unresolved link detail, the
+unresolved hyperlinks essentially have no target. When viewing the
+document within a reader and attempting to follow such a hyperlink,
+the reader will tell you that the hyperlink was unresolved, but
+gives no indication of the target URL.
+.Pp
+The most common sources of unresolved links are the following:
+.Bl -bullet
+.It
+Links that are at a depth greater than that specified by the MaximumDepth element.
+.It
+Links that are outdated and thus are broken because the target has moved.
+.It
+Links whose targets are specified incorrectly.
+.El
+.It Em Examples
+This example specifies that unresolved link detail should be included.
+.Bd -literal -offset left
+  <UnresolvedDetail         value="include"/>
+.Ed
+.Pp
+This example specifies that unresolved link detail should not be included.
+.Bd -literal -offset left
+  <UnresolvedDetail         value="exclude"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <ImageOptions> ELEMENT
+The ImagesOptions element specifies options for handling images.
+.Ss Full element example
+.Bd -literal -offset left
+    <ImageOptions>
+      <AltText                  value="exclude"/>
+      <Images                   value="include"/>
+      <ResizeLargeImages        value="yes"/>
+      <MaximumWidth             value="144"/>
+      <MaximumHeight            value="144"/>
+      <ImproveContrast          value="yes"/>
+      <Dither                   value="yes"/>
+      <Compress                 value="yes"/>
+      <BitDepth1                value="exclude"/>
+      <BitDepth2                value="exclude"/>
+      <BitDepth4                value="include"/>
+      <BitDepth8                value="exclude"/>
+      <BitDepth16               value="include"/>
+    </ImageOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <ResizeLargeImages>" "multi-string" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <AltText> Ta value Ta exclude Ta Whether to include the alternative text of images
+.It Em <Images> Ta value Ta yes Ta Whether to include images
+.It Em <ResizeLargeImages> Ta value Ta yes Ta Whether to resize large images
+.It Em <MaximumWidth> Ta value Ta 144 Ta Maximum image width
+.It Em <MaximumHeight> Ta value Ta 144 Ta Maximum image height
+.It Em <ImproveContrast> Ta value Ta yes Ta Whether to improve the image contrast
+.It Em <Dither> Ta value Ta yes Ta Whether to dither images
+.It Em <Compress> Ta value Ta yes Ta Whether to compress images
+.It Em <BitDepth1> Ta value Ta exclude Ta Whether to include 1-bit versions of images
+.It Em <BitDepth2> Ta value Ta exclude Ta Whether to include 2-bit versions of images
+.It Em <BitDepth4> Ta value Ta include Ta Whether to include 4-bit versions of images
+.It Em <BitDepth8> Ta value Ta exclude Ta Whether to include 8-bit versions of images
+.It Em <BitDepth16> Ta value Ta include Ta Whether to include 16-bit versions of images
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <AltText>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em include
+or
+.Em exclude
+to respectively include or exclude the alternative text of images.
+.Pp
+In an HTML file, references to images often also include alternative
+text that can be used in place of the image. If you choose not to
+include images, you are recommended to include the alternative
+text of images so that images that serve as hyperlinks can still
+be utilized.
+.It Em Examples
+This example specifies that the alternative text of images
+should be included.
+.Bd -literal -offset left
+  <AltText                  value="include"/>
+.Ed
+.Pp
+This example specifies that the alternative text of images
+should not be included.
+.Bd -literal -offset left
+  <AltText                  value="exclude"/>
+.Ed
+.El
+.It Sy <Images>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em include
+or
+.Em exclude
+to respectively include or exclude images.
+.Pp
+This setting applies to root source file images, images referenced
+through HTML <img> tags, and images that are hyperlink targets.
+If you include images, you can also set various options for them.
+.It Em Examples
+This example specifies that images should be included.
+.Bd -literal -offset left
+  <Images                   value="include"/>
+.Ed
+.Pp
+This example specifies that images should not be included.
+.Bd -literal -offset left
+  <Images                   value="exclude"/>
+.Ed
+.El
+.It Sy <ResizeLargeImages>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+or
+.Em no
+to respectively enable or disable
+resizing of images larger than the specified maximum width
+or height as given by the MaximumWidth and MaximumHeight
+elements.
+.It Em Examples
+This example specifies that images should be included.
+.Bd -literal -offset left
+  <ResizeLargeImages        value="include"/>
+.Ed
+.Pp
+This example specifies that images should not be included.
+.Bd -literal -offset left
+  <ResizeLargeImages        value="exclude"/>
+.Ed
+.El
+.It Sy <MaximumWidth>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to a positive integer that
+specifies the maximum width in pixels for images.  The value only
+has an effect on images if image resizing is enabled as specified
+by the ResizeLargeImages element, in which case, images with a
+width greater than the specified maximum width are resized
+so that their resulting width is no greater than the
+specified maximum width.
+.It Em Examples
+This example specifies a maximum width of 144 pixels for images.
+.Bd -literal -offset left
+  <MaximumWidth             value="144"/>
+.Ed
+.Pp
+This example specifies a maximum width of 304 pixels for images.
+.Bd -literal -offset left
+  <MaximumWidth             value="304"/>
+.Ed
+.El
+.It Sy <MaximumHeight>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to a positive integer that
+specifies the maximum height in pixels for images.  The value only
+has an effect on images if image resizing is enabled as specified
+by the ResizeLargeImages element, in which case, images with a
+height greater than the specified maximum height are resized
+so that their resulting height is no greater than the
+specified maximum height.
+.It Em Examples
+This example specifies a maximum height of 144 pixels for images.
+.Bd -literal -offset left
+  <MaximumHeight            value="144"/>
+.Ed
+This example specifies a maximum height of 304 pixels for images.
+.Bd -literal -offset left
+  <MaximumHeight            value="304"/>
+.Ed
+.El
+.It Sy <ImproveContrast>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+to improve the contrast for black and white and grayscale images.
+Set the value attribute of the tag to
+.Em no
+to leave the contrast as it is.
+.It Em Examples
+This example specifies that black and white and grayscale images
+should have their contrast improved.
+.Bd -literal -offset left
+  <ImproveContrast          value="yes"/>
+.Ed
+.Pp
+This example specifies that the contrast of images should not be
+changed.
+.Bd -literal -offset left
+  <ImproveContrast          value="no"/>
+.Ed
+.El
+.It Sy <Dither>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+or
+.Em no
+to respectively enable or disable dithering of images.
+.Pp
+Dithering improves the look of an image when converting
+it to a lower color bit depth by diffusing the error introduced
+in lowering the number of colors available for use.
+Dithering has no effect when the image only consists of colors
+from the target color bit depth.
+.It Em Examples
+This example specifies that images should be dithered.
+.Bd -literal -offset left
+  <Dither                   value="yes"/>
+.Ed
+This example specifies that images should not be dithered.
+.Bd -literal -offset left
+  <Dither                   value="no"/>
+.Ed
+.El
+.It Sy <Compress>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+or
+.Em no
+to respectively enable or disable compression of images.
+Compressing images generally reduces the space required to store the images,
+resulting in smaller document sizes.
+.It Em Examples
+This example specifies that images should be compressed.
+.Bd -literal -offset left
+  <Compress                 value="yes"/>
+.Ed
+.Pp
+This example specifies that images should not be compressed.
+.Bd -literal -offset left
+  <Compress                 value="no"/>
+.Ed
+.El
+.It Sy <BitDepth1> Sy <BitDepth2> Sy <BitDepth4> Sy <BitDepth8> Sy <BitDepth16>
+.Bl -ohang
+.It Em Description
+Set the value attribute of each tag to
+.Em include
+or
+.Em exclude
+to respectively include or exclude
+versions of images at the corresponding bit depth.
+.Pp
+If you are creating a document for use on different devices
+with different types of displays and different versions of Palm OSî,
+then you may need to include images at more than one color bit depth.
+If you are creating a document for use on only one device, then it is
+usually sufficient for you to include images at only one color bit
+depth. You can include images at the following bit depths:
+.Bl -bullet
+.It
+1-bit (black and white)
+.It
+2-bit (four shades of gray)
+.It
+4-bit (16 shades of gray)
+.It
+8-bit (the websafe palette, 256 colors)
+.It
+16-bit (64K colors)
+.El
+.Pp
+Each additional bit depth you include generally increases the size
+of the resulting document, but not always, because
+.Xr iSiloXC 1
+always try to use the lowest possible maximum color bit depth possible
+for a given image. So even if you include 16-bit images but all your
+images are pure black and white 1-bit images,
+.Xr iSiloXC 1
+will only store 1-bit versions of those images.
+.Pp
+The following table lists the Palm OSî versions and
+the maximum image color bit depths supported.
+.Bl -column -offset indent ".Sy Palm OS version" ".Sy Maximum depth" ".Sy Description"
+.It Sy Palm OS version Ta Sy Maximum depth Ta Sy Notes
+.It 3.0/3.1/3.2 Ta 4-bit Ta None
+.It 3.5 Ta 4-bit/8-bit/16-bit Ta Non-color devices display images at a maximum color depth of 4-bit. The only color device running Palm OS 3.5 that can display images with 16-bit color is the Visor Prism.
+.It 4.0 Ta 4-bit/16-bit Ta Non-color devices display images at a maximum color depth of 4-bit.
+.El
+.Pp
+The above table may help you decide which color bit depths
+to include in a document if your audience is wide.  One thing
+you can be sure of is that 1-bit images work across all devices.
+.Pp
+On any supported device, regardless of the color depths supported
+and regardless of what bit depths are included for the images,
+.Xr iSiloXC 1
+will still display each image by either choosing the
+highest supported bit depth of the image or using the closest available
+colors to display each color of the image.  No dithering is applied in the
+latter case, so the image may not appear as good, but the effect
+is usually usable.
+.It Em Examples
+This example specifies that only 4-bit and 16-bit versions of images
+should be included.
+.Bd -literal -offset left
+  <BitDepth1                value="exclude"/>
+  <BitDepth2                value="exclude"/>
+  <BitDepth4                value="include"/>
+  <BitDepth8                value="exclude"/>
+  <BitDepth16               value="include"/>
+.Ed
+.Pp
+This example specifies that only 2-bit versions of images
+should be included.
+.Bd -literal -offset left
+  <BitDepth1                value="exclude"/>
+  <BitDepth2                value="include"/>
+  <BitDepth4                value="exclude"/>
+  <BitDepth8                value="exclude"/>
+  <BitDepth16               value="exclude"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <TableOptions> ELEMENT
+The TableOptions element specifies options for handling tables.
+.Ss Full element example
+.Bd -literal -offset left
+    <TableOptions>
+      <IgnoreTables             value="no"/>
+      <AddSeparators            value="no"/>
+      <UseMinimumDepth          value="no"/>
+      <MinimumDepth             value="1"/>
+      <UseMaximumBottomReach    value="no"/>
+      <MaximumBottomReach       value="1"/>
+      <UnfoldFullPageTables     value="no"/>
+      <IgnorePixelWidths        value="no"/>
+    </TableOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <UseMaximumBottomReach>" "value" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <IgnoreTables> Ta value Ta no Ta Whether to ignore table formatting
+.It Em <AddSeparators> Ta value Ta no Ta Whether to add horizontal borders separating cells.
+.It Em <UseMinimumDepth> Ta value Ta no Ta Whether to only include tables at a minimum depth
+.It Em <MinimumDepth> Ta value Ta 1 Ta Minimum depth of tables to include
+.It Em <UseMaximumBottomReach> Ta value Ta no Ta Whether to only include innermost tables
+.It Em <MaximumBottomReach> Ta value Ta 1 Ta Maximum innermost table level to include
+.It Em <UnfoldFullPageTables> Ta value Ta no Ta Whether to unfold full-page top-level tables
+.It Em <IgnorePixelWidths> Ta value Ta no Ta Whether to table pixel width specifications
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <IgnoreTables>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+to exclude all table formatting data.
+The rows and cells of all tables unfold so that the content of each cell
+outputs to a new line.
+.Pp
+Set the value attribute of the tag to
+.Em no
+to enable table formatting.
+.It Em Examples
+This example specifies that table formatting should be ignored.
+.Bd -literal -offset left
+  <IgnoreTables             value="no"/>
+.Ed
+.Pp
+This example specifies that table formatting should be included.
+.Bd -literal -offset left
+  <IgnoreTables             value="yes"/>
+.Ed
+.El
+.It Sy <AddSeparators>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+to add horizontal borders separating table cells when ignoring
+table formatting as specified by the <IgnoreTables> element.
+This option does nothing if table formatting is not ignored.
+Otherwise, if set to yes, thick horizontal borders are added
+at the top and bottom of the table, medium borders are added
+between rows, and thin borders are added between cells so that
+you can more easily see where one cell ends and another begins.
+.Pp
+Set the value attribute of the tag to
+.Em no
+to not add horizontal borders between cells when ignoring table formatting.
+.It Em Examples
+This example specifies that separators should not be added between
+table cells.
+.Bd -literal -offset left
+  <AddSeparators            value="no"/>
+.Ed
+This example specifies that separators should be added between
+table cells.
+.Bd -literal -offset left
+  <AddSeparators            value="yes"/>
+.Ed
+.El
+.It Sy <UseMinimumDepth> Sy <MinimumDepth>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the <UseMinimumDepth> tag to
+.Em yes
+to include only tables at a minimum depth
+as specified by the value attribute of the <MinimumDepth> tag.
+Set the value attribute of the <UseMinimumDepth> tag
+to
+.Em no
+to not exclude tables based on a minimum depth.
+.Pp
+A table not embedded in any other table (e.g., an outermost table)
+is also called a 
+.Em top-level table
+and is considered to be at a depth of zero.
+Each additional embedding level adds one to a table's depth.
+Formatting for tables at levels less than the minimum depth will be excluded.
+.Pp
+This option is particularly useful for the case where the outermost
+set of tables up to a given depth are used only for layout.
+.It Em Examples
+The following shows a top-level table (Table A) with embedded
+tables.  Tables B and C are embedded within Table A, while
+Table D, at a depth of two, is embedded within Table C.
+.Bd -literal -offset left
++----------------------------------------------------------+
+| Table A (depth: 0)                                       |
++------------------------+---------------------------------+
+|                        | +-----------------------------+ |
+| +--------------------+ | | Table C (depth: 1)          | |
+| | Table B (depth: 1) | | +-----------------------------+ |
+| +---------+----------+ | | +--------------------+ +--+ | |
+| | B1      | B2       | | | | Table D (depth: 2) | |  | | |
+| +---------+----------+ | | +---------+----------+ |C2| | |
+|                        | | | D1      | D2       | |  | | |
+|                        | | +---------+----------+ +--+ | |
+|                        | +-----------------------------+ |
++------------------------+---------------------------------+
+.Ed
+.Pp
+If you specify a minimum depth of one for converting the above
+table, the result will look like what is shown here below.
+Notice that the content of the outermost table is no longer
+formatted in tabular format.
+.Bd -literal -offset left
+  <UseMinimumDepth          value="yes"/>
+  <MinimumDepth             value="1"/>
+.Ed
+.Pp
+Table A (depth: 0)
+.Bd -literal -offset left
++--------------------+
+| Table B (depth: 1) |
++---------+----------+
+| B1      | B2       |
++---------+----------+
+
++-----------------------------+
+| Table C (depth: 1)          |
++-----------------------------+
+| +--------------------+ +--+ |
+| | Table D (depth: 2) | |  | |
+| +---------+----------+ |C2| |
+| | D1      | D2       | |  | |
+| +---------+----------+ +--+ |
++-----------------------------+
+.Ed
+.Pp
+This example specifies no table exclusions based on minimum depth.
+.Bd -literal -offset left
+  <UseMinimumDepth          value="no"/>
+.Ed
+.El
+.It Sy <UseMaximumBottomReach> Sy <MaximumBottomReach>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the <UseMaximumBottomReach> tag to
+.Em yes
+to only include table formatting
+for the given number of innermost levels of tables
+as specified by the value attribute of the <MaximumBottomReach> tag.
+Set the value attribute of the <UseMaximumBottomReach> tag
+to
+.Em no
+to not exclude tables based on innermost table level.
+.Pp
+One use for this option is in the case where it is only
+important for the innermost tables to be displayed in tabular
+format.
+.It Em Examples
+The following shows a top-level table (Table A) with embedded
+tables.  Tables B and C are embedded within Table A, while
+Table D, at a depth of two, is embedded within Table C.
+.Bd -literal -offset left
++----------------------------------------------------------+
+| Table A (depth: 0)                                       |
++------------------------+---------------------------------+
+|                        | +-----------------------------+ |
+| +--------------------+ | | Table C (depth: 1)          | |
+| | Table B (depth: 1) | | +-----------------------------+ |
+| +---------+----------+ | | +--------------------+ +--+ | |
+| | B1      | B2       | | | | Table D (depth: 2) | |  | | |
+| +---------+----------+ | | +---------+----------+ |C2| | |
+|                        | | | D1      | D2       | |  | | |
+|                        | | +---------+----------+ +--+ | |
+|                        | +-----------------------------+ |
++------------------------+---------------------------------+
+.Ed
+.Pp
+If you specify a reachable depth of one for converting the above
+table, the result will look like what is shown here below.
+Notice that only Tables B and D retain their tabular formatting.
+.Bd -literal -offset left
+  <UseMaximumBottomReach    value="yes"/>
+  <MaximumBottomReach       value="1"/>
+.Ed
+.Pp
+Table A (depth: 0)
+.Bd -literal -offset left
++--------------------+
+| Table B (depth: 1) |
++---------+----------+
+| B1      | B2       |
++---------+----------+
+.Ed
+.Pp 
+Table C (depth: 1)
+.Bd -literal -offset left
++--------------------+
+| Table D (depth: 2) |
++---------+----------+
+| D1      | D2       |
++---------+----------+
+
+C2
+
+.Ed
+.Pp
+This example specifies no table exclusions based on innermost level.
+.Bd -literal -offset left
+  <UseMaximumBottomReach    value="no"/>
+.Ed
+.El
+.It Sy <UnfoldFullPageTables>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+to enable automatic determination of whether or not a given table is a
+.Em full-page top-level table ,
+and if so, to exclude its formatting information.  A full-page top-level
+table is an outermost table that occupies the entire page.
+Set the value attribute of the tag to
+.Em no
+to disable this check.
+.Pp
+Oftentimes, when a top-level table occupies the entire page,
+the tabular formatting is used only for layout.  Furthermore,
+in such cases, the layout is oftentimes meant for display on
+suitably large screens.  When such content is viewed on a
+smaller screen, it usually results in the need for frequent
+horizontal scrolling.  The option to unfold full-page top-level
+tables can be used to help address the issue.
+.It Em Examples
+This example specifies that full-page top-level table formatting
+should be ignored.
+.Bd -literal -offset left
+  <UnfoldFullPageTables     value="yes"/>
+.Ed
+.Pp
+This example specifies no checking for full-page top-level tables.
+.Bd -literal -offset left
+  <UnfoldFullPageTables     value="no"/>
+.Ed
+.El
+.It Sy <IgnorePixelWidths>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+to disregard any widths specified in pixels for tables.
+Set the value attribute of the tag to
+.Em no
+to respect any specified pixel widths.
+Usually, when a table has pixel widths specified, it was designed
+for display on a screen of a certain size.
+For smaller screens, such pixel width specifications often
+result in the need to scroll horizontally to view the content.
+.It Em Examples
+This example specifies that table pixel widths should be ignored.
+.Bd -literal -offset left
+  <IgnorePixelWidths        value="yes"/>
+.Ed
+.Pp
+This example specifies that table pixel widths should be respected.
+.Bd -literal -offset left
+  <IgnorePixelWidths        value="no"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <ColorOptions> ELEMENT
+The ColorOptions element specifies options for handling background
+and text color.
+.Ss Full element example
+.Bd -literal -offset left
+    <ColorOptions>
+      <BackgroundColors         value="keep"/>
+      <TextColors               value="keep"/>
+    </ColorOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <BackgroundColors>" "value" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <BackgroundColors> Ta value Ta keep Ta Whether to keep or ignore background colors
+.It Em <TextColors> Ta value Ta keep Ta Whether to keep or ignore text colors
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <BackgroundColors>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to one of the following values
+to specify whether to keep or ignore background colors:
+.Bl -bullet
+.It
+.Em keep :
+Keep all background colors.
+.It
+.Em ignore :
+Ignore all background colors.
+.It
+.Em IgnoreBody :
+Ignore the background
+color specified for the entire body of a page.  In this
+case, sub-blocks of content within a page retain
+their individual background colors.
+.El
+.Pp
+The default background color is white.
+.It Em Examples
+This example specifies that all background colors should be kept.
+.Bd -literal -offset left
+  <BackgroundColors         value="keep"/>
+.Ed
+.Pp
+This example specifies that all background colors should be ignored.
+.Bd -literal -offset left
+  <BackgroundColors         value="ignore"/>
+.Ed
+.Pp
+This example specifies that only colors specified
+for the page body background should be ignored.
+.Bd -literal -offset left
+  <IgnoreColors             value="IgnoreBody"/>
+.Ed
+.El
+.It Sy <TextColors>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em keep
+to keep all
+text colors or to
+.Em ignore
+to ignore all text colors.
+The default text color is black.
+.It Em Examples
+This example specifies that all text colors should be kept.
+.Bd -literal -offset left
+  <TextColors               value="keep"/>
+.Ed
+.Pp
+This example specifies that all text colors should be ignored.
+.Bd -literal -offset left
+  <TextColors               value="ignore"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <MarginOptions> ELEMENT
+The MarginOptions element specifies options for handling margins.
+.Ss Full element example
+.Bd -literal -offset left
+    <MarginOptions>
+      <LeftRightMargins         value="keep"/>
+    </MarginOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <LeftRightMargins>" "value" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <LeftRightMargins> Ta value Ta keep Ta Whether to keep or ignore left and right margins
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <LeftRightMargins>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to one of the following values
+to specify whether to keep or ignore left and right margins:
+.Bl -bullet
+.It
+.Em keep :
+Keep all left and right margins.
+.It
+.Em ignore :
+Ignore all left and right margins.
+.It
+.Em IgnoreBody :
+Ignore left and right margins
+specified for the entire body of a page.  In this
+case, blocks of content within a page retain
+their individual left and right margins.
+.It
+.Em IgnoreBDP :
+Ignore only the left and right
+margins specified for the entire body of a page and
+for any blocks marked as divisions or paragraphs.
+Any other blocks of content within a page retain their
+individual left and right margins.
+.El
+.Pp
+The default left and right margins are zero.
+.It Em Examples
+This example specifies that all left and right margins should be kept.
+.Bd -literal -offset left
+  <LeftRightMargins          value="keep"/>
+.Ed
+.Pp
+This example specifies that all left and right margins should be ignored.
+.Bd -literal -offset left
+  <LeftRightMargins          value="ignore"/>
+.Ed
+.Pp
+This example specifies that only left and right margins specified
+for the entire body of a page should be ignored.
+.Bd -literal -offset left
+  <LeftRightMargins          value="IgnoreBody"/>
+.Ed
+.Pp
+This example specifies that only left and right margins specified
+for the entire body of a page and for blocks marked as divisions
+or paragraphs should be ignored.
+.Bd -literal -offset left
+  <LeftRightMargins          value="IgnoreBDP"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <SecurityOptions> ELEMENT
+The SecurityOptions element specifies settings for securing the
+content of a document.
+.Xr iSiloXC 1
+add indicators to the
+converted document so that conforming applications that utilize
+the document can determine what types of actions to allow on
+the document.
+.Ss Full element example
+.Bd -literal -offset left
+    <SecurityOptions>
+      <CopyBeam                 value="allow"/>
+      <CopyAndPaste             value="allow"/>
+      <Modify                   value="allow"/>
+      <Convert                  value="allow"/>
+      <Print                    value="allow"/>
+    </SecurityOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <CopyAndPaste>" "value" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <CopyBeam> Ta value Ta allow Ta Whether to allow copying and beaming of the document
+.It Em <CopyAndPaste> Ta value Ta allow Ta Whether to allow copying of content to the clipboard
+.It Em <Modify> Ta value Ta allow Ta Whether allow modification of the document
+.It Em <Convert> Ta value Ta allow Ta Whether to allow conversion to other formats
+.It Em <Print> Ta value Ta allow Ta Whether to allow printing of the document.
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <CopyBeam>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em allow
+or
+.Em disallow
+to respectively allow or disallow
+copying and beaming of the document.
+.It Em Examples
+This example specifies that copying and beaming should be allowed.
+.Bd -literal -offset left
+  <CopyBeam                 value="allow"/>
+.Ed
+.Pp
+This example specifies that copying and beaming should not be allowed.
+.Bd -literal -offset left
+  <CopyBeam                 value="disallow"/>
+.Ed
+.El
+.It Sy <CopyAndPaste>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em allow
+or
+.Em disallow
+to respectively allow copying of content from the document to the system
+clipboard or disallow the operation so that content can not be copied and
+pasted elsewhere.
+.It Em Examples
+This example specifies that copying to the clipboard should be allowed.
+.Bd -literal -offset left
+  <CopyAndPaste             value="allow"/>
+.Ed
+.Pp
+This example specifies that copying to the clipboard should not be allowed.
+.Bd -literal -offset left
+  <CopyAndPaste             value="disallow"/>
+.Ed
+.El
+.It Sy <Modify>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em allow
+or
+.Em disallow
+to respectively allow or disallow modification of the document.
+This includes modification of the
+document's global and document bookmarks.
+.It Em Examples
+This example specifies that the document can be modified.
+.Bd -literal -offset left
+  <Modify                   value="allow"/>
+.Ed
+.Pp
+This example specifies that the document may not be modified.
+.Bd -literal -offset left
+  <Modify                   value="disallow"/>
+.Ed
+.El
+.It Sy <Convert>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em allow
+or
+.Em disallow
+to respectively allow or disallow conversion of the document to other formats.
+Saving the content
+of a document to a text file is also considered a conversion
+of the document to another format.
+.It Em Examples
+This example specifies that the document can be converted
+to other formats.
+.Bd -literal -offset left
+  <Convert                  value="allow"/>
+.Ed
+.Pp
+This example specifies that the document may not be converted
+to other formats.
+.Bd -literal -offset left
+  <Convert                  value="disallow"/>
+.Ed
+.El
+.It Sy <Print>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em allow
+or
+.Em disallow
+to respectively allow or disallow
+printing of the document.  Though at this time you can not directly
+print a document from all platforms for which iSilo
+is available, it may become possible to do so in the
+future.  If you know now that you do not want to allow printing
+regardless of the case, set the value attribute
+of this tag to
+.Em disallow .
+.It Em Examples
+This example specifies that the document can be printed.
+.Bd -literal -offset left
+  <Print                    value="allow"/>
+.Ed
+.Pp
+This example specifies that the document may not be printed.
+.Bd -literal -offset left
+  <Print                    value="disallow"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <TextOptions> ELEMENT
+The TextOptions element specifies settings that apply to the
+conversion of plain text files. Examples of plain text files
+include files with the extension .txt and Palm Doc files.
+.Ss Full element example
+.Bd -literal -offset left
+    <TextOptions>
+      <ProcessLineBreaks        value="yes"/>
+      <ConvertSingleLineBreaks  value="no"/>
+      <TabStopWidth             value="8"/>
+      <Preformatted             value="no"/>
+      <UseMonospaceFont         value="no"/>
+      <MonospaceFontSize        value="10"/>
+    </TextOptions>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent ".Em <ConvertSingleLineBreaks>" "value" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <ProcessLineBreaks> Ta value Ta yes Ta Whether to interpret line breaks
+.It Em <ConvertSingleLineBreaks> Ta value Ta no Ta Whether to remove single line breaks
+.It Em <TabStopWidth> Ta value Ta 8 Ta The tab stop width to use
+.It Em <Preformatted> Ta value Ta no Ta Whether to interpret the text as preformatted
+.It Em <UseMonospaceFont> Ta value Ta no Ta Whether to use a monospace font for the text
+.It Em <MonospaceFontSize> Ta value Ta 10 Ta The monospace font size to use
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <ProcessLineBreaks>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to
+.Em yes
+so that line breaks are processed or
+.Em no
+to leave
+line break characters as they are.
+.Pp
+The iSilo document format uses linefeed characters
+(ASCII 10) to indicate line breaks.  If you set the value attribute
+of the ProcessLineBreaks tag to
+.Em yes ,
+which is recommended,
+.Xr iSiloXC 1
+correctly convert line breaks in text files that utilize either carriage return
+characters (ASCII 13) alone as line breaks or carriage return
+and linefeed characters in pairs as line breaks.
+If you set the value attribute to
+.Em no ,
+the resulting document may display incorrectly.
+.It Em Examples
+This example turns line break processing on.
+.Bd -literal -offset left
+  <ProcessLineBreaks        value="yes"/>
+.Ed
+.Pp
+This example turns line break processing off.
+.Bd -literal -offset left
+  <ProcessLineBreaks        value="no"/>
+.Ed
+.El
+.It Sy <ConvertSingleLineBreaks>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to <code>.It Em yes</b></code>
+to remove single line breaks or
+.Em no
+to leave
+single line breaks as they are.
+.Pp
+Some text files are formatted with a given screen size in mind,
+such as an 80 column wide screen and line breaks occur on each line
+before column 80.  When such a file is displayed on a narrower screen,
+the reader needs to scroll horizontally to read the part of the line
+that is wider than the screen.  Moreover, if the application that
+displays the content does not have the ability to provide horizontal
+scrolling, the text will likely look like it is ill-formatted.  As an
+example, consider the following block of text formatted for a 60
+column screen:
+.Bd -literal -offset left
+Some text files are formatted with a given screen size in
+mind, such as an 80 column wide screen and line breaks
+occur on each line before column 80.
+
+When such a file is displayed on a narrower screen, the
+reader needs to scroll horizontally to read the part of the
+line that is wider than the screen.
+.Ed
+.Pp
+When the content is displayed on a 40 column wide screen
+with no horizontal scrolling, the output may look like this:
+.Bd -literal -offset left
+Some text files are formatted with a
+given screen size in
+mind, such as an 80 column wide screen
+and line breaks
+occur on each line before column 80.
+
+When such a file is displayed on a
+narrower screen, the
+reader needs to scroll horizontally to
+read the part of the
+line that is wider than the screen.
+.Ed
+.Pp
+Oftentimes, in such files, paragraphs will be double-spaced
+with respect to one another.  In this case, you can set
+the value attribute of the ConvertSingleLineBreaks tag
+to
+.Em yes
+and
+.Xr iSiloXC 1
+will replace
+the single line breaks within a paragraph to spaces so that
+the document can be reflowed evenly for a screen of any width.
+The above example would then look like this on a 40 column
+wide screen:
+.Bd -literal -offset left
+Some text files are formatted with a
+given screen size in mind, such as an
+80 column wide screen and line breaks
+occur on each line before column 80.
+
+When such a file is displayed on a
+narrower screen, the reader needs to
+scroll horizontally to read the part of
+the line that is wider than the screen.
+.Ed
+.It Em Examples
+This example specifies that single line breaks should be removed.
+.Bd -literal -offset left
+  <ConvertSingleLineBreaks  value="yes"/>
+.Ed
+.Pp
+This example specifies that single line breaks should not be removed.
+.Bd -literal -offset left
+  <ConvertSingleLineBreaks  value="no"/>
+.Ed
+.El
+.It Sy <TabStopWidth>
+.Bl -ohang
+.It Em Description
+Within text files, tab characters are often used to align
+text.  Set the value attribute of the TabStopWidth tag
+to the tab stop width for which the text file was written.
+.It Em Examples
+This example specifies that the tab stop width should be eight.
+.Bd -literal -offset left
+  <TabStopWidth             value="8"/>
+.Ed
+.Pp
+This example specifies that the tab stop width should be four.
+.Bd -literal -offset left
+  <TabStopWidth             value="4"/>
+.Ed
+.El
+.It Sy <Preformatted>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to <code>.It Em yes</b></code>
+to interpret the text as preformatted or
+.Em no
+to not.
+.Pp
+If a text file is preformatted, it means that the content
+should not be reflowed and that the position of line
+breaks should not be modified.  Performing either of these
+operations may mess up the original desired appearance
+of the content.  In this case, you want to set the value
+attribute of the Preformatted tag to
+.Em yes
+so that
+.Xr iSiloXC 1
+honors the preformatting.
+.It Em Examples
+This example specifies that the text should be treated as being
+preformatted.
+.Bd -literal -offset left
+  <Preformatted             value="yes"/>
+.Ed
+.Pp
+This example specifies that the text should not be treated as being
+preformatted.
+.Bd -literal -offset left
+  <Preformatted             value="no"/>
+.Ed
+.El
+.It Sy <UseMonospaceFont>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to <code>.It Em yes</b></code>
+to have the text displayed using a monospace font or
+.Em no
+to not.
+.Pp
+The text file may have been designed to be displayed using a
+monospace font as opposed to a proportional font.  Using a monospace
+font makes it possible to align text along columns and to create
+tabular data (e.g., tables).  Set the value attribute of the
+UseMonospaceFont tag to
+.Em yes
+and specify a desired font size using the MonospaceFontSize tag.
+.It Em Examples
+This example specifies that the text should be displayed using
+a monospace font.
+.Bd -literal -offset left
+  <UseMonospaceFont         value="yes"/>
+.Ed
+.Pp
+This example specifies that the text should be displayed using
+a proportional font.
+.Bd -literal -offset left
+  <UseMonospaceFont         value="no"/>
+.Ed
+.El
+.It Sy <MonospaceFontSize>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the tag to a positive integer in the
+range from 1 to 255 for the desired monospace font size in points
+for displaying the text.
+.Pp
+This setting only has an effect when the value attribute of the
+UseMonospaceFont tag is set to
+.Em yes .
+Note that the value you provide is only a desired setting.
+The actual display device may or may not be able to honor the given font size you set.
+.It Em Examples
+This example specifies a desired monospace font size of 10 points.
+.Bd -literal -offset left
+  <MonospaceFontSize        value="10"/>
+.Ed
+This example specifies a desired monospace font size of 14 points.
+.Bd -literal -offset left
+  <MonospaceFontSize        value="14"/>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <Bookmarks> ELEMENT
+The Bookmarks element specifies settings for adding predefined bookmarks to a document.
+.Ss Full element example
+.Bd -literal -offset left
+    <Bookmarks>
+      <Document>
+        <UseFile                value="no"/>
+        <Path>~/docs/bookmarks.htm</Path>
+        <UseNamedAnchors        value="no"/>
+        <NamedAnchorType        value="WordWebPage"/>
+        <UseIncludeFilter       value="no"/>
+        <IncludePrefix>bm</IncludePrefix>
+        <UseExcludeFilter       value="no"/>
+        <ExcludePrefix>bm_</ExcludePrefix>
+      </Document>
+    </Bookmarks>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent "<HotSync>" "multi-string" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <Document> Ta container Ta Em n/a Ta Specifies document bookmarks to add to the document.
+.El
+.Ss <Document> sub-element summary
+The elements in the <Document> container element specify the
+document bookmarks to add to a document.  A document may have up
+to 1024 bookmarks.  The bookmarks you specify in this element
+are also known as
+.Em predefined bookmarks .
+Predefined bookmarks may be generated from hyperlinks in an HTML file
+and/or from the named anchors in the document source files.
+If both are specified, bookmarks specified in the HTML file
+are added before those from named anchors in the document
+source files.
+.Bl -column -offset indent ".Em <UseExcludeFilter>" "string" "WordWebPage" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description
+.It Em <UseFile> Ta value Ta no Ta Whether to create bookmarks from hyperlinks in an HTML file
+.It Em <Path> Ta string Ta Em n/a Ta Path to HTML file containing hyperlinks to use as bookmarks
+.It Em <UseNamedAnchors> Ta value Ta no Ta Whether to create bookmarks from named anchors
+.It Em <NamedAnchorType> Ta value Ta WordWebPage Ta Types of named anchors to use for bookmarks
+.It Em <UseIncludeFilter> Ta value Ta no Ta Whether to apply named anchor inclusion filtering
+.It Em <IncludePrefix> Ta string Ta Em n/a Ta Inclusion prefix for named anchor filtering
+.It Em <UseExcludeFilter> Ta value Ta no Ta Whether to apply named anchor exclusion filtering
+.It Em <ExcludePrefix> Ta string Ta Em n/a Ta Exclusion prefix for named anchor filtering
+.El
+.Ss <Document> sub-element descriptions
+.Bl -tag -width 10
+.It Sy <UseFile> Sy <Path>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the <UseFile> tag to
+.Em yes
+and provide the path to an HTML file in the Path element
+to add the hyperlinks in the file as bookmarks to the document.
+Each hyperlink in the file adds a bookmark to the document
+in the same order as the hyperlinks appear in the file.
+The hyperlink text (e.g., the content between the opening
+.Em target
+tag and the closing tag) serves as the bookmark name.
+.Pp
+Set the value attribute of the <UseFile> tag
+to
+.Em no
+to not create bookmarks from the
+hyperlinks of an HTML file.
+.It Em Examples
+This example specifies that the bookmarks are to be created
+from the hyperlinks in the file whose path is
+.Li ~/docs/bookmarks.htm .
+.Bd -literal -offset left
+  <UseFile                value="yes"/>
+  <Path>~/docs/bookmarks.htm</Path>
+.Ed
+.Pp
+This example specifies that no bookmarks are to be created
+from a file.  In this case, the Path element is ignored,
+so it is not shown nor needed.
+.Bd -literal -offset left
+  <UseFile                value="no"/>
+.Ed
+.El
+.It Sy <UseNamedAnchors> Sy <NamedAnchorType>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the <UseNamedAnchors> tag to
+.Em yes
+to generate bookmarks based on
+named anchors (e.g., 
+.Em anchorName
+> tags in HTML source files) from the document source files.
+Then set the value attribute of the <NamedAnchorType> tag
+to one of the following values to specify which named anchors
+to add:
+.Bl -bullet
+.It
+.Sy WordWebPage
+: If the document source
+files were generated using Microsoft Word and saved in
+Web Page format, then use this value.  In this case, only
+named anchors that do not begin with an underscore
+character (e.g., '_') are added as bookmarks.  The anchor
+names serve as the bookmark names.
+.It
+.Sy all
+: All named anchors are added
+as bookmarks and the anchor names serve as the bookmark names.
+.It
+.Sy filtered
+: All named anchors are added
+as bookmarks subject to optional inclusion and/or exclusion
+filtering criteria.  See the descriptions for
+.Sy <UseIncludeFilter>
+and
+.Sy <UseExcludeFilter>
+for how to specify the inclusion and exclusion filters, respectively.
+.El
+.Pp
+Set the value attribute of the <UseNamedAnchors> tag
+to
+.Em no
+to not create bookmarks from the
+named anchors of the document source files.
+.It Em Examples
+This example specifies that bookmarks are to be created
+from named anchors that match the format of bookmarks in
+a Microsoft Word Web Page file.
+.Bd -literal -offset left
+  <UseNamedAnchors        value="yes"/>
+  <NamedAnchorType        value="WordWebPage"/>
+.Ed
+.Pp
+This example specifies that bookmarks are to be created
+from all named anchors from all document source files.
+.Bd -literal -offset left
+  <UseNamedAnchors        value="yes"/>
+  <NamedAnchorType        value="all"/>
+.Ed
+.Pp
+This example specifies that no bookmarks are to be created
+from named anchors.
+.Bd -literal -offset left
+  <UseNamedAnchors        value="no"/>
+.Ed
+.El
+.It Sy <UseIncludeFilter> Sy <IncludePrefix>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the <UseIncludeFilter> tag to
+.Em yes
+to generate bookmarks from only
+those named anchors that begin with the prefix given in
+the IncludePrefix element.  For each named
+anchor having the given prefix, a bookmark is added,
+with the anchor name minus the prefix serving as the
+bookmark name.
+.Pp
+Note that the UseIncludeFilter and IncludePrefix elements
+have effect only if the value attribute of the <NamedAnchorType>
+tag is set to
+.Em filtered .
+.Pp
+Set the value attribute of the <UseIncludeFilter> tag
+to
+.Em no
+to not use an inclusion filter.
+.It Em Examples
+This example specifies that only named anchors beginning with
+the two character sequence 'bm' should be used as bookmarks.
+.Bd -literal -offset left
+  <UseNamedAnchors        value="yes"/>
+  <NamedAnchorType        value="filtered"/>
+  <UseIncludeFilter       value="yes"/>
+  <IncludePrefix>bm</IncludePrefix>
+.Ed
+.El
+.It Sy <UseExcludeFilter> Sy <ExcludePrefix>
+.Bl -ohang
+.It Em Description
+Set the value attribute of the <UseExcludeFilter> tag to
+.Em yes
+to prevent the generation of bookmarks
+from named anchors that begin with the prefix given in
+the ExcludePrefix element.
+.Pp
+Note that the UseExcludeFilter and ExcludePrefix elements
+have effect only if the value attribute of the <NamedAnchorType>
+tag is set to
+.Em filtered .
+.Pp
+Set the value attribute of the <UseExcludeFilter> tag
+to
+.Em no
+to not use an exclusion filter.
+.It Em Examples
+This example specifies that all named anchors except those
+beginning with the underscore character (e.g., '_')
+should be used as bookmarks.
+.Bd -literal -offset left
+  <UseNamedAnchors        value="yes"/>
+  <NamedAnchorType        value="filtered"/>
+  <UseExcludeFilter       value="yes"/>
+  <ExcludePrefix>_</ExcludePrefix>
+.Ed
+.Pp
+This example specifies that only named anchors beginning with
+the two character sequence 'bm' should be used as bookmarks.
+However, named anchors beginning with the three character
+sequence 'bm_' should not be used as bookmarks.
+.Bd -literal -offset left
+  <UseNamedAnchors        value="yes"/>
+  <NamedAnchorType        value="filtered"/>
+  <UseIncludeFilter       value="yes"/>
+  <IncludePrefix>bm</IncludePrefix>
+  <UseExcludeFilter       value="yes"/>
+  <ExcludePrefix>bm_</ExcludePrefix>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh <LastConversion> ELEMENT
+The LastConversion element stores information about the last conversion.
+.Ss Full element example
+.Bd -literal -offset left
+    <LastConversion>
+      <Date>2002/08/01 08:12:02</Date>
+      <Size value="123456789"/>
+      <Status>Conversion successful</Status>
+    </LastConversion>
+.Ed
+.Ss Sub-element summary
+.Bl -column -offset indent "<HotSync>" "multi-string" ".Sy Default" ".Sy Description"
+.It Sy Tag Ta Sy Type Ta Sy Default Ta Sy Description 
+.It Em <Date> Ta string Ta Em n/a Ta Date of last conversion
+.It Em <Size> Ta value Ta Em n/a Ta Converted file byte size
+.It Em <Status> Ta string Ta Em n/a Ta Readable last conversion status result
+.El
+.Ss Sub-element descriptions
+.Bl -tag -width 10
+.It Sy <Date>
+.Bl -ohang
+.It Em Description
+The content of the Date element is a string in the form
+YYYY/MM/DD HH:MM:SS that indicates the time of the last
+conversion.  YYYY/MM/DD is the year, month, and day
+and HH:MM:SS is the hour minute and second.
+The time is generally interpreted as local time.
+.It Em Examples
+This example specifies that the last conversion occurred on
+August 1, 2002 at about 8:12AM.
+.Bd -literal -offset left
+  <Date>2002/08/01 08:12:02</Date>
+.Ed
+This example specifies that the last conversion occurred on
+October 10, 2010 at 10:10AM.
+.Bd -literal -offset left
+  <Date>2010/10/10 10:10:00</Date>
+.Ed
+.El
+.It Sy <Size>
+.Bl -ohang
+.It Em Description
+The value attribute of the Size tag holds the size in bytes
+of the resulting document from the last conversion.
+.It Em Examples
+This example specifies that the last conversion resulted in a
+file with a size of 492132 bytes.
+.Bd -literal -offset left
+  <Size value="492132"/>
+.Ed
+.Pp
+This example specifies that the last conversion resulted in a
+file with a size of 4356 bytes.
+.Bd -literal -offset left
+  <Size value="4356"/>
+.Ed
+.El
+.It Sy <Status>
+.Bl -ohang
+.It Em Description
+The Status element provides a short textual description of the result
+of the last conversion.
+.It Em Examples
+This example specifies that the last conversion was successful.
+.Bd -literal -offset left
+  <Status>Conversion successful</Status>
+.Ed
+.Pp
+This example specifies that the last conversion was cancelled.
+.Bd -literal -offset left
+  <Status>Conversion cancelled</Status>
+.Ed
+.El
+.El
+.\" ---------------------------------------------------------------------------
+.Sh SEE ALSO
+.Xr iSiloXC 1
+.Sh AUTHORS
+ISilo are copyright
+.Tn DC & Co.
+For more information about iSilo, and to download
+the Palm Pilot reader for iSilo format documents, go to
+http://www.iSilo.com/.
+.Pp
+This manual page was written by
+.An Sergey Skvortsov Aq skv@FreeBSD.org .
