@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	flac
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,8 @@ MAINTAINER=	ijliao@FreeBSD.org
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
 LIB_DEPENDS+=	xmms.1:${PORTSDIR}/audio/xmms
 .endif
+
+ONLY_FOR_ARCHS=	i386
 
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
@@ -33,7 +35,11 @@ INSTALLS_SHLIB=	yes
 post-install:
 .if !defined(NO_PORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/flac
-	${CP} -R ${WRKSRC}/doc/ ${PREFIX}/share/doc/flac
+	${MKDIR} ${PREFIX}/share/doc/flac/images
+	${CP} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/flac
+.for file in logo.jpg 1x1.gif
+	${CP} ${WRKSRC}/doc/images/${file} ${PREFIX}/share/doc/flac/images
+.endfor
 .endif
 
 .include <bsd.port.mk>
