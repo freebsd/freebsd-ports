@@ -1,0 +1,24 @@
+####################################################################
+######################## MPLAYER NOTE ##############################
+####################################################################
+#
+# Since mplayer is run with "nokill" by plugger, it is necessary to
+# kill off the remaining mplayer processes.  Something like the
+# following diff will do the trick.  It's not perfect but it works.
+#
+# As suggested by D.J. Hawkey Jr.<hawkeyd@visi.com>
+#
+####################################################################
+--- run-mozilla.sh.orig	Sun Jun 22 09:57:27 2003
++++ run-mozilla.sh	Sun Jun 22 10:00:25 2003
+@@ -193,6 +193,10 @@
+ 	##
+ 	"$prog" ${1+"$@"}
+ 	exitcode=$?
++	##
++	## Kill any plugger artifacts
++	##
++	ps -axww | awk '/mplayer.*-wid/ {print $1}' | xargs kill -9
+ 	if [ "$DEBUG_CORE_FILES" ]
+ 	then
+ 		if [ -f core ]

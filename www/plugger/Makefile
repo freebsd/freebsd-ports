@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		${MASTER_SITE_NETSCAPE}
@@ -17,16 +17,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A multimedia front-end plugin for Mozilla or Opera
 
-RUN_DEPENDS=	${X11BASE}/bin/xanim:${PORTSDIR}/multimedia/xanim \
-		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \
+RUN_DEPENDS=	${LOCALBASE}/bin/nspptview:${PORTSDIR}/textproc/xlhtml \
 		${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
+		${LOCALBASE}/bin/sidplay:${PORTSDIR}/audio/sidplay \
 		${LOCALBASE}/bin/wavplay:${PORTSDIR}/audio/wavplay \
 		${LOCALBASE}/bin/xmp:${PORTSDIR}/audio/xmp \
-		${LOCALBASE}/bin/sidplay:${PORTSDIR}/audio/sidplay \
-		${LOCALBASE}/bin/display:${PORTSDIR}/graphics/ImageMagick \
 		${X11BASE}/bin/gqview:${PORTSDIR}/graphics/gqview \
+		${LOCALBASE}/bin/display:${PORTSDIR}/graphics/ImageMagick \
+		${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++ \
 		${X11BASE}/bin/gv:${PORTSDIR}/print/gv \
-		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord \
+		${X11BASE}/bin/xanim:${PORTSDIR}/multimedia/xanim \
 		${LOCALBASE}/bin/acroread5:${PORTSDIR}/print/acroread5
 
 USE_X_PREFIX=	yes
@@ -46,7 +46,7 @@ WITH_MPLAYER =	yes
 WITH_MTV =	yes
 .endif
 
-.if exists(${X11BASE}/lib/libgnomeprintui-2.so.0)
+.if exists(${X11BASE}/lib/libgnomeprintui-2-2.so.0)
 WITH_GNOME2 =	yes
 .endif
 
@@ -59,9 +59,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/mtvp:${PORTSDIR}/multimedia/mtv
 .endif
 
 .if defined(WITH_GNOME2)
-RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric2
+RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric2 \
+		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord2
 .else
-RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric
+RUN_DEPENDS+=	${X11BASE}/bin/gnumeric:${PORTSDIR}/math/gnumeric \
+		${X11BASE}/bin/abiword:${PORTSDIR}/editors/AbiWord
 .endif
 
 pre-extract:
@@ -98,5 +100,8 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g'
+.if defined(WITH_MPLAYER)
+	@${CAT} ${PKGMESSAGE}-mplayer
+.endif
 
 .include <bsd.port.post.mk>
