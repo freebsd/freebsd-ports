@@ -1,0 +1,40 @@
+--- sample/get.news.innxmit.orig	Thu Feb 15 15:05:38 1996
++++ sample/get.news.innxmit	Thu Mar 28 21:03:59 1996
+@@ -7,13 +7,13 @@
+ REMOTE_HOST=news.pixi.com
+ LOCAL_HOST=localhost
+ 
+-SPOOLDIR=/usr/spool/news		# base directory for articles to be rposted
+-NEWSDIR=/usr/lib/news			# base directory for news binaries 
+-BINDIR=/home/boby/doNews		# base directory for suck rpost and scripts
++SPOOLDIR=/var/spool/news		# base directory for articles to be rposted
++NEWSDIR=/usr/local/news			# base directory for news binaries 
++BINDIR=/usr/local/bin			# base directory for suck rpost and scripts
+ 
+-TMPDIR=${BINDIR}			# location for suck.* files
+-DATADIR=${BINDIR}			# location of sucknewsrc and killfile
+-MSGDIR=${BINDIR}/Msgs			# where to put MultiFile messages when getting them
++TMPDIR=/usr/local/etc			# location for suck.* files
++DATADIR=/usr/local/etc			# location of sucknewsrc and killfile
++MSGDIR=${TMPDIR}/Msgs			# where to put MultiFile messages when getting them
+ 
+ BATCHFILE=${TMPDIR}/batch		# Name of batchfile to build for rnews or innxmit
+ SITE=pixi				# name of site
+--- sample/get.news.rnews.orig	Thu Feb 15 15:06:17 1996
++++ sample/get.news.rnews	Thu Mar 28 21:03:47 1996
+@@ -10,11 +10,11 @@
+ 
+ SPOOLDIR=/usr/spool/news		# base directory for articles to be rposted
+ NEWSDIR=/usr/lib/news			# base directory for news binaries 
+-BINDIR=/home/boby/doNews		# base directory for suck rpost and scripts
++BINDIR=/usr/local/bin			# base directory for suck rpost and scripts
+ 
+-TMPDIR=${BINDIR}			# location for suck.* files
+-DATADIR=${BINDIR}			# location of sucknewsrc and killfile
+-MSGDIR=${BINDIR}/Msgs			# where to put MultiFile messages when getting them
++TMPDIR=/usr/local/etc			# location for suck.* files
++DATADIR=/usr/local/etc			# location of sucknewsrc and killfile
++MSGDIR=${TMPDIR}/Msgs			# where to put MultiFile messages when getting them
+ 
+ BATCHFILE=${TMPDIR}/batch		# Name of batchfile to build for rnews or innxmit
+ OUTGOING=${SPOOLDIR}/out.going/pixi	# location of the list of articles to upload

@@ -1,0 +1,80 @@
+--- Makefile.orig	Mon Mar 11 15:11:45 1996
++++ Makefile	Sat Mar 30 01:02:42 1996
+@@ -5,15 +5,15 @@
+ CC=gcc
+ 
+ #stuff related to the executables (suck rpost testhost)
+-INSTALLDIR = /home/boby/doNews	# location for the executables
+-INSTALL_OWNER=boby		# user of the installed files
+-INSTALL_GROUP=users		# group for the installed files
++INSTALLDIR = ${PREFIX}/bin	# location for the executables
++INSTALL_OWNER=bin		# user of the installed files
++INSTALL_GROUP=bin		# group for the installed files
+ INSTALL_MODE=755		# mode for the installed files
+ 
+ #stuff related to the man pages 
+-MANDIR=/usr/man/man1		# location for the man pages
+-MAN_OWNER=root			# owner of the man pages
+-MAN_GROUP=root			# group for the man pages
++MANDIR=${PREFIX}/man/man1	# location for the man pages
++MAN_OWNER=bin			# owner of the man pages
++MAN_GROUP=bin			# group for the man pages
+ MAN_MODE=644			# mode for the man pages
+ 
+ #XXGDB=1			# uncomment this to get it ready for use by xxgdb or gdb
+@@ -55,7 +55,7 @@
+ LINK = $(CC)
+ LIBS = -lm $(DBLIB)
+ OPTS = $(CFLAGS) $(GCC_FLAGS) $(DVERSION) $(DBOPTION)
+-INSTALL = install
++INSTALL = install -c
+ 
+ MAN = ./man
+ SAMPLE = ./sample
+@@ -92,13 +92,13 @@
+ 
+ installbin: $(TARGETS)
+ 	mkdir -p $(INSTALLDIR)	
+-	$(INSTALL) -o $(INSTALL_OWNER) -g $(INSTALL_GROUP) -m $(INSTALL_MODE) $(TARGETS) $(INSTALLDIR)
++	$(INSTALL) -s -o $(INSTALL_OWNER) -g $(INSTALL_GROUP) -m $(INSTALL_MODE) $(TARGETS) $(INSTALLDIR)
+ 
+ installman: $(MANPGS)
+ 	- $(INSTALL) -o $(MAN_OWNER) -g $(MAN_GROUP) -m $(MAN_MODE) $(MANPGS) $(MANDIR)
+ 
+ installall: install lpost
+-	$(INSTALL) -o $(INSTALL_OWNER) -g $(INSTALL_GROUP) -m $(INSTALL_MODE) $(LPOST_TARGET) $(INSTALLDIR)
++	$(INSTALL) -s -o $(INSTALL_OWNER) -g $(INSTALL_GROUP) -m $(INSTALL_MODE) $(LPOST_TARGET) $(INSTALLDIR)
+ 	- $(INSTALL) -o $(MAN_OWNER) -g $(MAN_GROUP) -m $(MAN_MODE) $(LPOST_MANPGS) $(MANDIR)
+ 	
+ clean:
+--- config.h.orig	Wed Mar  6 14:46:13 1996
++++ config.h	Sat Mar 30 01:06:55 1996
+@@ -12,6 +12,10 @@
+ /* #define DEBUG2 */
+ /* #define DEBUG3 */
+ 
++/*  BSD Option  */
++/*  If system has no sys/param.h, comment this out */
++#define _HAVE_PARAM_H
++
+ /*  TIMER Option */
+ /* To see the approximate BPS while downloading msgs, uncomment this */
+ /* If you don't like it, or want a tiny speed increase, comment this out */
+@@ -61,7 +65,7 @@
+ #define CHECK_HISTORY
+ 
+ /* don't comment this out */
+-#define HISTORY_FILE "/usr/lib/news/history"
++#define HISTORY_FILE "/usr/local/news/lib/history"
+ 
+ /* If your system doesn't like the lock file stuff in suck.c  */
+ /* comment this out */
+@@ -101,10 +105,10 @@
+ #define RPOST_MAXARGS 128
+ 
+ /* RNEWS program called by lpost */
+-#define RNEWS "/usr/lib/news/rnews"
++#define RNEWS "/usr/local/bin/rnews"
+ 
+ /* character used as a comment in sucknewsrc */
+ #define SUCKNEWSRC_COMMENT_CHAR '#'

@@ -1,0 +1,12 @@
+bin/suck
+bin/rpost
+bin/testhost
+bin/put.news
+sbin/get.news.innxmit
+sbin/get.news.rnews
+etc/suckkillfile.sample
+etc/sucknewsrc.sample
+etc/suckothermsgs.sample
+man/man1/suck.1.gz
+man/man1/rpost.1.gz
+man/man1/testhost.1.gz
