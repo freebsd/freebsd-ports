@@ -16,7 +16,7 @@ This version of the client places all binaries in ROOTDIR/nsr/bin-
 adjust your PATH environment variable to reflect this.
 
 Also- very important- please remember to edit ROOTDIR/etc/rc.d/networker.sh
-to restrict the access rights to servers you want to have access to this
-machine.
+to restrict the access rights to servers you want to have access
+to this machine.
 
 -------------------------------------------------------------------------------
