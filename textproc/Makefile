@@ -85,6 +85,7 @@
     SUBDIR += linuxdoc
     SUBDIR += lotusxsl
     SUBDIR += ltxml
+    SUBDIR += makepatch
     SUBDIR += man2html
     SUBDIR += mgdiff
     SUBDIR += mguesser
