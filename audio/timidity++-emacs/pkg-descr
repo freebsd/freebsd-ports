@@ -1,0 +1,10 @@
+This port allows you to operate TiMidity++ on Emacs buffer.
+Please place timidity.el on load-path.
+
+Formerly, the original version of this program was written by Tuuka
+Toivonen(until version 0.2i).
+Now, Masanao Izumo and many hackers are developing "TiMidity++".
+Official site is
+http://www.goice.co.jp/member/mo/timidity/
+
+Yoichi Asai <yatt@msc.biglobe.ne.jp>
