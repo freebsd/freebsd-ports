@@ -3,4 +3,4 @@ courier-tcpd from Courier-IMAP. This is small, and supports limiting
 the number of concurrent connections and refusing further connections
 with a configurable message.
 
-WWW: http://azz.us-lot.org/code.html
+WWW: http://offog.org/code/onenetd.html
