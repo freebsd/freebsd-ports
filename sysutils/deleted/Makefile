@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	deleted
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://links.ru/FreeBSD/
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/sysutl/ \
+		http://www.links.ru/soft/
 
 MAINTAINER=	.@babolo.ru
 
