@@ -1,0 +1,24 @@
+--- output.c.orig	Sun Mar 19 02:37:06 2000
++++ output.c	Sun Sep 24 14:28:15 2000
+@@ -1447,10 +1447,17 @@
+       rptr=*pointer++;
+       if (rptr->flag == OBJ_REG)
+       {
+-         fprintf(out_fp,"%-8lu %6.02f%%  %s\n",
+-            rptr->count,
+-            (t_hit==0)?0:((float)rptr->count/t_hit)*100.0,
+-            rptr->string);
++	 if (strstr(rptr->string,"://")!=NULL)
++	    fprintf(out_fp,"%-8lu %6.02f%%  <A HREF=\"%s\">%s</A>\n",
++	       rptr->count,
++	       (t_hit==0)?0:((float)rptr->count/t_hit)*100.0,
++	       rptr->string,
++	       rptr->string);
++	 else
++	    fprintf(out_fp,"%-8lu %6.02f%%  %s\n",
++	       rptr->count,
++	       (t_hit==0)?0:((float)rptr->count/t_hit)*100.0,
++	       rptr->string);
+          r_reg--;
+       }
+    }
