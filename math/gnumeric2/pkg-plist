@@ -865,6 +865,7 @@ share/gnome/mc/templates/gnumeric.desktop
 share/gnome/mime-info/gnumeric.keys
 share/gnome/mime-info/gnumeric.mime
 share/gnome/oaf/GNOME_Gnumeric.oaf
+share/gnome/omf/gnumeric/gnumeric-C.omf
 share/gnome/pixmaps/gnome-application-x-gnumeric.png
 share/gnome/pixmaps/gnome-application-x-xls.png
 share/gnome/pixmaps/gnome-gnumeric.png

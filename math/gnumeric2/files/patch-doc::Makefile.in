@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in.orig	Wed Mar 13 00:26:49 2002
++++ doc/Makefile.in	Wed Mar 13 00:25:45 2002
+@@ -185,7 +185,7 @@
+ perl_val = @perl_val@
+ python_val = @python_val@
+ 
+-SUBDIRS = C de es hu ja nl no pl pt ru sk sv
++SUBDIRS = C
+ 
+ EXTRA_DIST =  	sgmldocs.make gnumeric-doc.make make-func-list.pl 	translating.sgml			Design					Future-Roadmap				README					saving.txt				writing-functions.sgml			excel-format-doc.txt			linux-expo-99-gnumeric.tex      	linuxexpo.sty 				Dependencies.txt 			Styles.txt 				features.txt 				pref-attributes.txt 			guile-gnumeric.txt			python-gnumeric.txt 			stf-export.txt 				stf-parser.txt
+ 
