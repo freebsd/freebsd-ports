@@ -8,38 +8,58 @@
 
 PORTNAME=	rascal
 PORTVERSION=	0.3.2
-PORTREVISION=   1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Rascal, the Advanced Scientific CALculator
+COMMENT=	The Advanced Scientific CALculator
 
-BROKEN=		Does not compile
-
-USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
-USE_BISON=	yes
-#USE_GNOME=	yes
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
+
+USE_GETOPT_LONG=	yes
+USE_BISON=	yes
+WANT_GNOME=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-#ALL_TARGET=	rascal grascal
+MAKE_ENV=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
+		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+ALL_TARGET=	${PROGRAMS}
 
 MAN1=	rascal.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500018
+BROKEN=		"Requires readline 4.2 or newer"
+.endif
+
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+PKGNAMESUFFIX=	-gnome
+USE_GNOME+=	gnomelibs
+PROGRAMS=	rascal grascal
+.else
+PROGRAMS=	rascal
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
-		s,g\+\+,${CXX},g ; \
-		s,doc/,share/doc/,g ; \
-		s,gnome-config,${GNOME_CONFIG},g ; \
-		s,CC,CXX,g" ${WRKSRC}/Makefile
-.for file in hoc.y rascal.1
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|^CC=|CC?=|g ; \
+		 s|^CFLAGS=-|CFLAGS+=$${CPPFLAGS} -|g ; \
+		 s|-O0 -fno-rtti -g||g ; \
+		 s|^LIBS=-|LIBS+=$${LDFLAGS} -|g ; \
+		 s|doc/|share/doc/|g ; \
+		 s|g++|$${CC}|g ; \
+		 s|-Os||g ; \
+		 s|gnome-config|$${GNOME_CONFIG}|g' ${WRKSRC}/Makefile
+.for file in hoc.y rascal.1 grascal.cpp
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${file}
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rascal ${PREFIX}/bin
+.for file in ${PROGRAMS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/rascal.rc ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/rascal.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
@@ -50,4 +70,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/rascal_html/* ${DOCSDIR}/html
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
