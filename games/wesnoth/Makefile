@@ -13,12 +13,7 @@ MASTER_SITES=	http://www.wesnoth.org/files/
 MAINTAINER=	mezz7@cox.net
 COMMENT=	A fantasy turn-based strategy game
 
-LIB_DEPENDS=	SDL_net.0:${PORTSDIR}/net/sdl_net \
-		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
-USE_SDL=	yes
+USE_SDL=	image mixer net ttf sdl
 USE_GNOME=	gnometarget
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
