@@ -1,0 +1,18 @@
+--- configure.orig	Mon Aug  4 01:28:11 2003
++++ configure	Thu Aug 21 21:13:45 2003
+@@ -8480,6 +8480,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -13429,6 +13430,7 @@
+       ;;
+     freebsd*)
+       ZINF_OS="freebsd";
++      UNIX_AUDIO_API="linux"
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define ZINF_OS_BSD 1

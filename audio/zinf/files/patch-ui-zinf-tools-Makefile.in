@@ -1,0 +1,11 @@
+--- ui/zinf/tools/Makefile.in.orig	Mon Aug  4 03:57:33 2003
++++ ui/zinf/tools/Makefile.in	Mon Aug 18 19:02:48 2003
+@@ -213,7 +213,7 @@
+ 
+ maketheme_SOURCES = MakeTheme.cpp $(top_srcdir)/ui/zinf/src/ThemeZip.cpp
+ maketheme_LDADD = $(top_builddir)/lib/unzip/libunzip.la \
+-		  $(top_builddir)/base/unix/libunix.la $(ZLIB_LIBS) -ldl
++		  $(top_builddir)/base/unix/libunix.la $(ZLIB_LIBS)
+ 
+ 
+ AM_CPPFLAGS = $(THREAD_CFLAGS) $(base_includes) \

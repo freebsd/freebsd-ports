@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zinf
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,28 +15,44 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MP3 player
 
 LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
-		musicbrainz.2:${PORTSDIR}/audio/musicbrainz
+		musicbrainz.3:${PORTSDIR}/audio/libmusicbrainz \
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier gdkpixbuf
+USE_GNOME=	gdkpixbuf gnomehack gnometarget
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_FREETYPE=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	213
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-ipv6
 
-CPPFLAGS=	-I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}
+CPPFLAGS=	-I${LOCALBASE}/include/freetype1/freetype \
+		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+CFLAGS+=	-O0
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CPPFLAGS+=	"-D_M_IX86"
-.elif ${ARCH} == "alpha"
+.else
+CONFIGURE_ARGS+=	--disable-x86opts
+.endif
+
+.if ${ARCH} == "alpha"
 CPPFLAGS+=	"-D_M_ALPHA"
+.endif
+
+.if ${OSVERSION} < 500035
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+CPPFLAGS+=	-I${LOCALBASE}/include/stlport
+LDFLAGS+=	-lstlport_gcc
 .endif
 
 .if ${HAVE_GNOME:Mesound}!="" || defined(WITH_ALL_PLUGINS)
@@ -74,9 +90,9 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_LIBARTS		build with libArts output plugin"
+	@${ECHO_MSG} "WITH_LIBARTS=yes		build with libArts output plugin"
 	@${ECHO_MSG} "WITHOUT_GNOME=esound	do NOT build with esd support"
-	@${ECHO_MSG} "WITHOUT_VORBIS		do NOT build with Ogg/Vorbis codec plugin"
+	@${ECHO_MSG} "WITHOUT_VORBIS=yes	do NOT build with Ogg/Vorbis codec plugin"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes	build with all plugins"
 	@${ECHO_MSG}
