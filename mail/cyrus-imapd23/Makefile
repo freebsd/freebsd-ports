@@ -59,10 +59,6 @@ CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
 .endif
 
-.if defined(WITHOUT_SKIPLIST)
-CONFIGURE_ARGS+=--with-mboxlist-db=berkeley --with-seen-db=flat
-.endif
-
 .if defined(WITH_NNTP)
 CONFIGURE_ARGS+=--enable-nntp
 PLIST_SUB+=	NNTP=""
