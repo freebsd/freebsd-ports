@@ -1,6 +1,15 @@
---- configure.orig	Mon Jan 21 17:09:59 2002
-+++ configure	Mon Jan 21 17:10:05 2002
-@@ -12567,7 +12567,7 @@
+--- configure.orig	Wed Jul 17 18:17:54 2002
++++ configure	Wed Jul 17 18:19:32 2002
+@@ -2623,7 +2623,7 @@
+ # Distribution definition. ./prepare will automatically add here a correct
+ # value. Do not edit!
+ silc_dist=silc-server
+-SILC_DIST_SUBDIRS="lib silcd doc includes"
++SILC_DIST_SUBDIRS="lib silcd includes"
+ cat >>confdefs.h <<\EOF
+ #define SILC_DIST_SERVER 1
+ EOF
+@@ -11313,7 +11313,7 @@
        fi
        ;;
      *-freebsd2.2*)

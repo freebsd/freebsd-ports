@@ -1,6 +1,6 @@
---- silcd/Makefile.in.orig	Mon Jan 21 17:11:17 2002
-+++ silcd/Makefile.in	Mon Jan 21 17:12:21 2002
-@@ -260,8 +260,8 @@
+--- silcd/Makefile.in.orig	Wed Jul 17 18:20:09 2002
++++ silcd/Makefile.in	Wed Jul 17 18:20:33 2002
+@@ -259,8 +259,8 @@
  	     || test -f $$p1 \
  	  ; then \
  	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
