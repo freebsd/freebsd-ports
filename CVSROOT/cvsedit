@@ -6,7 +6,7 @@
 # To use this, make it executable, and set your editinfo DEFAULT line:
 # DEFAULT   /path/to/this/program
 #
-# $Id: cvsedit,v 1.2 1995/08/05 09:00:19 peter Exp $
+# $Id: cvsedit,v 1.3 1995/08/05 10:58:54 peter Exp $
 #
 
 # same rules as CVS
@@ -77,11 +77,22 @@ while(<IN>) {
 close(IN);
 close(OUT);
 
-rename("$tmpfile", "$filename") ||
-	die("cvsedit: Could not rename $tmpfile to $filename: $!");
-
 # sanity check...
 if (!$first) {
 	die("cvsedit: Empty log message not permitted!\n");
 }
+
+unlink($filename . "~");	# Nuke likely editor backups..
+unlink($filename . ".bak");	# Nuke likely editor backups..
+
+# Check to see if any differences. preserve stat() info if not.
+$different = system("cmp -s $tmpfile $filename");
+if (!$different) {
+	unlink($tmpfile);
+	exit(0);
+}
+
+rename("$tmpfile", "$filename") ||
+	die("cvsedit: Could not rename $tmpfile to $filename: $!");
+
 exit(0);
