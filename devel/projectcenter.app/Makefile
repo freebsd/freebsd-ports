@@ -10,8 +10,8 @@ PORTVERSION=	0.3.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
-DISTNAME=	ProjectCenter-${PORTVERSION}
 MASTER_SITE_SUBDIR=	dev-apps
+DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A development environment for GNUstep
@@ -33,15 +33,15 @@ FIXME=		GNUmakefile.bundles GNUmakefile.preamble \
 
 # Quick workaround until I find out how to set the real path in the code
 post-patch:
-.for file in PCLib/PCBundleLoader.m PCAppController.m
-	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.sed
+.for i in PCLib/PCBundleLoader.m PCAppController.m
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
 	${SED} -e "s=@\"/usr/GNUstep=@\"${PREFIX}=g" \
-		${WRKSRC}/${file}.sed > ${WRKSRC}/${file}
+		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
-.for file in ${FIXME}
-	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.sed
+.for i in ${FIXME}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
 	${SED} -e "s=-Werror==g" \
-		${WRKSRC}/${file}.sed > ${WRKSRC}/${file}
+		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
 
 .include <bsd.port.mk>

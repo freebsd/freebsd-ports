@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpwiki
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	a PHP WikiWikiWeb
+COMMENT=	A PHP WikiWikiWeb
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/${PHP4_PORT}
 
@@ -36,8 +36,8 @@ do-configure:
 do-install:
 	-${MKDIR} ${PREFIX}/${PHPWIKI}/lib
 	-${MKDIR} ${PREFIX}/${PHPWIKI}/pages
-	@chown www:www ${PREFIX}/${PHPWIKI}/pages
-	@chmod 755 ${PREFIX}/${PHPWIKI}/pages
+	@${CHOWN} www:www ${PREFIX}/${PHPWIKI}/pages
+	@${CHMOD} 755 ${PREFIX}/${PHPWIKI}/pages
 	@(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${PHPWIKI}/ )
 .for i in ${ROOTDIRS}
 	@(cd ${WRKSRC} && ${CP} -R ${i} ${PREFIX}/${PHPWIKI}/ )
