@@ -1,0 +1,33 @@
+# New ports collection makefile for:   atk
+# Date Created:			14 May 2001
+# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	atk
+PORTVERSION=	0.1
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
+		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
+		http://www.ameth.org/gimp/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
+MASTER_SITE_SUBDIR=	gtk/v1.3
+
+MAINTAINER=	gnome@FreeBSD.org
+
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+LIB_DEPENDS=	pango.0:${PORTSDIR}/x11-toolkits/pango \
+		glib-1.3.5:${PORTSDIR}/devel/glib13
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-patch:
+	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
+		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+
+.include <bsd.port.mk>
