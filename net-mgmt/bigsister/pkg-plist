@@ -72,6 +72,7 @@ bigsister/bin/StatusLog.pm
 bigsister/bin/Statusmon/BBLog.pm
 bigsister/bin/Statusmon/Display.pm
 bigsister/bin/Statusmon/DisplayCFG.pm
+bigsister/bin/Statusmon/DisplayCFG.pm.orig
 bigsister/bin/Statusmon/Grapher.pm
 bigsister/bin/Statusmon/HTMLLog.pm
 bigsister/bin/Statusmon/RRDi.pm
@@ -80,6 +81,7 @@ bigsister/bin/Statusmon/Rsync.pm
 bigsister/bin/Statusmon/Statusmon.pm
 bigsister/bin/Statusmon/TrackLast.pm
 bigsister/bin/Statusmon/bs_evgen.pm
+bigsister/bin/Statusmon/bs_evgen.pm.orig
 bigsister/bin/Statusmon/grouping.pm
 bigsister/bin/Statusmon/history.pm
 bigsister/bin/Statusmon/test.pm
