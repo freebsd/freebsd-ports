@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsmonitor
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,10 +16,12 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Monitor activity on a CVS Repository
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
+		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/Time/Duration.pm:${PORTSDIR}/devel/p5-Time-Duration \
 		${SITE_PERL}/Class/Autouse.pm:${PORTSDIR}/devel/p5-Class-Autouse \
 		${SITE_PERL}/Class/Default.pm:${PORTSDIR}/devel/p5-Class-Default \
 		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
+		${SITE_PERL}/Class/Handle.pm:${PORTSDIR}/devel/p5-Class-Handle \
 		${SITE_PERL}/Sort/Versions.pm:${PORTSDIR}/devel/p5-Sort-Versions \
 		${SITE_PERL}/${PERL_ARCH}/Proc/ProcessTable.pm:${PORTSDIR}/devel/p5-Proc-ProcessTable \
 		${SITE_PERL}/Net/Telnet.pm:${PORTSDIR}/net/p5-Net-Telnet \
@@ -27,14 +29,22 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storab
 		${SITE_PERL}/Validate/Net.pm:${PORTSDIR}/net/p5-Validate-Net \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/Chart/Math/Axis.pm:${PORTSDIR}/math/p5-Chart-Math-Axis \
+		${SITE_PERL}/File/NCopy.pm:${PORTSDIR}/devel/p5-File-NCopy \
+		${SITE_PERL}/File/Remove.pm:${PORTSDIR}/devel/p5-File-Remove \
 		${SITE_PERL}/File/Flat.pm:${PORTSDIR}/devel/p5-File-Flat \
 		${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
+		${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
+		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules \
 		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/Clone.pm:${PORTSDIR}/devel/p5-Clone \
 		${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \
 		${SITE_PERL}/Array/Window.pm:${PORTSDIR}/devel/p5-Array-Window \
 		${SITE_PERL}/${PERL_ARCH}/List/Util.pm:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		${SITE_PERL}/Number/Compare.pm:${PORTSDIR}/math/p5-Number-Compare \
+		${SITE_PERL}/Text/Glob.pm:${PORTSDIR}/textproc/p5-Text-Glob \
+		${SITE_PERL}/XML/Generator.pm:${PORTSDIR}/textproc/p5-XML-Generator \
+		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -54,8 +64,7 @@ CGIDIR?=	www/cgi-bin
 PLIST_SUB=	CVSMON="${CGIDIR}/cvsmonitor"
 
 DIRS_DATA=	html html/Admin html/Browse html/Error html/Search \
-		modules modules/AppLib modules/AppLib/CGI \
-		modules/AppLib/HTML modules/AppLib/Interface \
+		modules modules/AppLib modules/AppLib/Interface \
 		modules/CVSMonitor modules/CVSMonitor/Graph \
 		modules/CVSMonitor/Range modules/CVSMonitor/MetaData \
 		modules/CVSMonitor/MetaData/Abstract setup \
