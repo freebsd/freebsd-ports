@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Apr  3 05:41:44 2001
-+++ Makefile.in	Fri May 25 04:47:52 2001
+--- Makefile.in.orig	Sat Dec  8 13:29:30 2001
++++ Makefile.in	Sat Dec  8 13:29:36 2001
 @@ -4,7 +4,7 @@
  mandir = @mandir@/man1
  LIBS = @LIBS@
  
--CFLAGS = -O -Wall
-+CFLAGS += -Wall
+-CFLAGS = -O
++CFLAGS ?= -O
  RM = rm -f
  INSTALL  = install -c -m
  
