@@ -66,7 +66,7 @@ PLIST_SUB+=	QT="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if (${ARCH} != "i386") && (${ARCH} != "amd64")
 WITHOUT_A52=yes
 WITHOUT_XVID=yes
 BROKEN=		"Does not compile on !i386"
@@ -276,19 +276,28 @@ post-configure:
 post-install:
 	@${FMT} < ${PKGMESSAGE}
 
-.if ${ARCH} == "i386"
+.if (${ARCH} == "i386")
 RUN_DEPENDS+=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
-CONFIGURE_ARGS+=	--enable-x86opt \
-			--enable-win32 \
+CONFIGURE_ARGS+=	--enable-win32 \
 			--with-win32-path=${LOCALBASE}/lib/win32
 
-PLIST_SUB+=	FFMPEG="" WIN32=""
+PLIST_SUB+=	WIN32=""
 .else
-CONFIGURE_ARGS+=	--disable-x86opt --disable-win32 \
+CONFIGURE_ARGS+=	--disable-win32
+
+PLIST_SUB+=	WIN32="@comment "
+.endif
+
+.if (${ARCH} == "i386") || (${ARCH} == "amd64")
+CONFIGURE_ARGS+=	--enable-x86opt
+
+PLIST_SUB+=	FFMPEG=""
+.else
+CONFIGURE_ARGS+=	--disable-x86opt \
 			--disable-ffmpeg
 
-PLIST_SUB+=	FFMPEG="@comment " WIN32="@comment "
+PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 # hack taken from ogle to make it work with liba52 + djbfft
