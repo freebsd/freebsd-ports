@@ -1,0 +1,13 @@
+This module is a unified framework to craft, send and receive packets at
+layers 2, 3, 4 and 7.
+
+Basically, you forge each layer of a frame (Net::Packet::IPv4 for layer 3,
+Net::Packet::TCP for layer 4 ; for example), and pack all of this into a
+Net::Packet::Frame object. Then, you can send the frame to the network, and
+receive it easily, since the response is automatically searched for and
+matched against the request.
+
+WWW: http://search.cpan.org/~gomor/
+
+- GomoR
+netpkt@gomor.org

@@ -1,0 +1,35 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/ARP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Consts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Desc.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/DescL2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/DescL3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/DescL4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Dump.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/ETH.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Env.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Frame.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/ICMPv4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/IPv4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/IPv6.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Layer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Layer2.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Layer3.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Layer4.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Layer7.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/NULL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/RAW.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/SLL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/TCP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/UDP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet/VLAN.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Net/Pkt.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet/Packet.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet/Packet.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet/autosplit.ix
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Packet
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Packet
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
