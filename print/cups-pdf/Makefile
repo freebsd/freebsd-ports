@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups-pdf
-PORTVERSION=	1.6.5
+PORTVERSION=	1.7.0
 CATEGORIES=	print
 MASTER_SITES=	http://cip.physik.uni-wuerzburg.de/~vrbehr/cups-pdf/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -24,8 +24,7 @@ USE_REINPLACE=	yes
 USE_GHOSTSCRIPT_RUN=	yes
 
 SUBST_CMD=		-e "s,/usr/bin/gs,${LOCALBASE}/bin/gs," \
-			-e 's,-s /bin/sh,,' \
-			-e 's,/bin/su,/usr/bin/su,' \
+			-e 's,/var/tmp,/tmp,' \
 			-e 's,"lp","daemon",' \
 			-e 's,/var/spool/cups-pdf/SPOOL,/var/spool/cups-pdf,'
 
@@ -76,7 +75,7 @@ post-configure:
 	@${GUNZIP_CMD} ${WRKSRC}/extra/PostscriptColor.ppd.gz
 
 do-build:
-	cd ${WRKSRC}/src; gcc ${CFLAGS} -o cups-pdf cups-pdf.c
+	cd ${WRKSRC}/src; ${CC} ${CFLAGS} -o cups-pdf cups-pdf.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/cups-pdf ${LOCALBASE}/libexec/cups/backend
