@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Aug  6 11:38:11 1999
-+++ Makefile	Mon Aug 23 13:13:58 1999
+--- Makefile.orig	Thu Nov 11 09:19:29 1999
++++ Makefile	Thu Dec  2 15:50:05 1999
 @@ -23,7 +23,7 @@
  #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
  #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
@@ -9,7 +9,7 @@
  #   
  #   The next options are optimizations inside Crafty that you will have
  #   test to see if they help.  on some machines, these will slow things
-@@ -72,13 +72,15 @@
+@@ -83,13 +83,13 @@
  # asm     = X86.o
  
  # FreeBSD (gcc 2.6.3)
@@ -17,37 +17,34 @@
 +target  = FreeBSD
  #CC      = gcc
  #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
- #CXX	 = $(CC)
+-#CPP	 = $(CC)
 -#LDFLAGS = 
 -#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
++CPP	 = $(CXX)
 +LDFLAGS = 
-+opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS
-+.if ${MACHINE_ARCH} == "i386"
-+opt     +=-DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
-+.endif
++opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
++          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
  
  # FreeBSD (pgcc)
  #target  = FreeBSD
-@@ -100,23 +102,28 @@
+@@ -111,20 +111,25 @@
   
- # LINUX (pgcc)
+ # LINUX (gcc 2.95)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
 -target  = LINUX
 -CC      = gcc
--CXX	= $(CC)
-+#target  = LINUX
-+#CC      = gcc
-+#CXX	= $(CC)
- #CFLAGS = -Wall -pipe -D_REENTRANT -march=i686 -O \
- #         -malign-double -malign-loops=4 -malign-jumps=4 -malign-functions=4\
- #         -mpreferred-stack-boundary=4
--CFLAGS = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem -fomit-frame-pointer
-+#CFLAGS = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem -fomit-frame-pointer
- 
+-CPP	= g++
+-CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
+-          -fomit-frame-pointer
 -LDFLAGS = -lpthread
 -opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
++#target  = LINUX
++#CC      = gcc
++#CPP	= g++
++#CFLAGS  = -Wall -pipe -D_REENTRANT -march=i686 -O -fforce-mem \
++#          -fomit-frame-pointer
 +#LDFLAGS = -lpthread
 +#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 +#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
@@ -64,9 +61,9 @@
 +.endif
 +.endif
   
- # LINUX (gcc)
- # Note: You have to uncomment exactly ONE of the `asm' lines below.
-@@ -177,7 +184,7 @@
+ # NEXT
+ #target  = NEXT
+@@ -169,7 +174,7 @@
  
  # Do not change anything below this line!
  
@@ -74,4 +71,4 @@
 +CFLAGS += $(opt) -D$(target)
  
  objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
-         nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o       \
+        nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o hash.o \
