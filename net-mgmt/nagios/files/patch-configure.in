@@ -1,0 +1,19 @@
+--- configure.in.orig	Thu Feb 10 02:00:10 2005
++++ configure.in	Sat Feb 12 14:11:54 2005
+@@ -6,7 +6,6 @@
+ 
+ AC_INIT(base/nagios.c)
+ AC_CONFIG_HEADER(include/config.h include/snprintf.h include/nagios.h include/cgiutils.h)
+-AC_PREFIX_DEFAULT(/usr/local/nagios)
+ 
+ PKG_NAME=nagios
+ PKG_VERSION="2.0b2"
+@@ -137,7 +136,7 @@
+ AC_SUBST(nagios_grp)
+ AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_USER,"$nagios_user")
+ AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_GROUP,"$nagios_grp")
+-INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
++INSTALL_OPTS="-o root -g wheel"
+ AC_SUBST(INSTALL_OPTS)
+ 
+ AC_ARG_WITH(command_user,--with-command-user=<user> sets user name for command access,command_user=$withval,command_user=$nagios_user)
