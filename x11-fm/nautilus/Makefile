@@ -7,7 +7,7 @@
 
 PORTNAME=	nautilus
 PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/nautilus
@@ -19,6 +19,10 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 RUN_DEPENDS=	${X11BASE}/share/gnome/ui/nautilus-galeon-view-ui.xml:${PORTSDIR}/www/galeon
+
+.if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so.0)
+LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
+.endif
 
 WITHOUT_MOZILLA=	"Doesn't work with Mozilla-0.9.9"
 
