@@ -15,6 +15,7 @@ DISTNAME=	OB-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CORBA 2 implementation
 
+RESTRICTED=	"Non-commercial use only"
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes

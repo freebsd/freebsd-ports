@@ -1,54 +1,5 @@
 ORBacus for C++ and Java (formerly known as OmniBroker for C++ and
 Java) is an Object Request Broker (ORB) that is compliant with the
-Common Object Request Broker Architecture (CORBA) specification as
-defined in:
+CORBA 2.0 specification.
 
-  The Common Object Request Broker: Architecture and Specification
-  Revision 2.0, OMG document 97-02-25
-
-and
-
-  IDL/Java Language Mapping, OMG document 97-03-01
-
-ORBacus for C++ and Java is free for non-commercial use and available
-with full source code. See the file LICENSE for details. For commercial
-licenses, please visit our Web site at http://www.ooc.com or send email
-to support@ooc.com.
-
-Some highlights of ORBacus 3.2.1 are:
-
-- Full CORBA IDL support
-- Complete CORBA IDL-to-C++ mapping
-- Complete CORBA IDL-to-Java mapping
-- Includes the following Basic Services:
-  * Interoperable Naming
-  * Event
-  * Property
-- Pluggable Protocols with IIOP as default plug-in
-- Single- and Multi-Threaded with many different concurrency models:
-  * Blocking
-  * Reactive
-  * Threaded
-  * Thread per Client
-  * Thread per Request
-  * Thread Pool
-- Nested method invocations even in the single-threaded version
-- Support for timeouts
-- Seamless event loop integration with X11 and Windows
-- Full support for dynamic programming:
-  * Dynamic Invocation Interface
-  * Dynamic Skeleton Interface
-  * Interface Repository
-  * DynAny for dynamic Any type handling
-- IDL-to-HTML and IDL-to-RTF translator for generating "javadoc"-like
-  documentation
-
-The current release has the following limitations:
-
-- Only persistent (i.e., manually launched) servers are currently
-  supported
-
-For more information on ORBacus, please see the ORBacus manual or
-visit the ORBacus Home Page at http://www.ooc.com/ob/.
-
-For installation instructions, please see the file ../INSTALL.
+WWW:	http://www.orbacus.com/
