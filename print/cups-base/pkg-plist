@@ -544,6 +544,14 @@ share/locale/sv/cups_sv
 share/locale/uk/cups_uk
 share/locale/uk_UA/cups_uk_UA
 share/locale/zh_CN/cups_zh_CN
+@unexec rmdir %D/man/fr/man8 2>/dev/null || true
+@unexec rmdir %D/man/fr/man5 2>/dev/null || true
+@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+@unexec rmdir %D/man/fr 2>/dev/null || true
+@unexec rmdir %D/man/es/man8 2>/dev/null || true
+@unexec rmdir %D/man/es/man5 2>/dev/null || true
+@unexec rmdir %D/man/es/man1 2>/dev/null || true
+@unexec rmdir %D/man/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk_UA 2>/dev/null || true
 @unexec rmdir %D/share/locale/uk 2>/dev/null || true
