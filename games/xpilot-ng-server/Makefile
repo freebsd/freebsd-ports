@@ -7,7 +7,7 @@
 
 PORTNAME=		xpilot-ng
 PORTVERSION=		4.5.4X2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		games
 MASTER_SITES=		http://www.hut.fi/~ksoderbl/xpilot/
 DISTNAME=		xpilot-${PORTVERSION}
