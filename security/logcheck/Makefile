@@ -7,32 +7,50 @@
 
 PORTNAME=	logcheck
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://sensimilia.eu.org/pub/software/sys/ \
 		http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
-		http://www.psionic.com/downloads/ \
 		http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	logsentry-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@kolobov.com
 COMMENT=	Auditing tool for system logs on Unix boxes
 
-BROKEN=		"Changes permissions on /tmp to mode 0700"
-
 USE_REINPLACE=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PKGMESSAGE=	${WRKDIR}/MESSAGE
 
-pre-configure:
-	${REINPLACE_CMD} -e "s@/usr/local/etc/tmp@/tmp@g; \
-		s@/usr/local@${PREFIX}@" ${WRKSRC}/Makefile \
+# Install binaries and config files readable to root only
+BINMODE=	700
+SHAREMODE=	600
+
+LOGCHECK_TMP?=	/var/run/logcheck
+PLIST_SUB+=	LOGCHECK_TMP=${LOGCHECK_TMP}
+
+CONFIG_FILES=	logcheck.hacking logcheck.ignore \
+		logcheck.violations logcheck.violations.ignore
+DOCS=		CREDITS INSTALL README README.how.to.interpret README.keywords
+
+do-build:
+	cd ${WRKSRC}/src && ${CC} ${CFLAGS} -o logtail logtail.c
+	${REINPLACE_CMD} -e 's!/usr/local/bin/logtail!${PREFIX}/bin/logtail!' \
+		-e 's!/usr/local/etc/tmp!${LOGCHECK_TMP}!' \
+		-e 's!/usr/local/etc/logcheck!${PREFIX}/etc/logcheck!' \
 		${WRKSRC}/systems/freebsd/logcheck.sh
-	${REINPLACE_CMD} -e "s@/bin/mkdir@${MKDIR}@g" ${WRKSRC}/Makefile
 
-post-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/logtail ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/systems/freebsd/logcheck.sh ${PREFIX}/etc
+	${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/systems/freebsd && \
+		${INSTALL_DATA} ${CONFIG_FILES} ${EXAMPLESDIR} && \
+		${INSTALL_DATA} ${CONFIG_FILES} ${PREFIX}/etc
+	${TEST} -d ${LOGCHECK_TMP} || ${MKDIR} -m 700 ${LOGCHECK_TMP}
+	${CHOWN} root:wheel ${LOGCHECK_TMP}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

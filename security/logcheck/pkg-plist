@@ -1,8 +1,20 @@
 bin/logtail
-etc/logcheck.hacking.sample
-etc/logcheck.ignore.sample
 etc/logcheck.sh
-etc/logcheck.violations.ignore.sample
-etc/logcheck.violations.sample
-@dirrm var/tmp
-@dirrm var
+etc/logcheck.hacking
+etc/logcheck.ignore
+etc/logcheck.violations
+etc/logcheck.violations.ignore
+%%EXAMPLESDIR%%/logcheck.hacking
+%%EXAMPLESDIR%%/logcheck.ignore
+%%EXAMPLESDIR%%/logcheck.violations.ignore
+%%EXAMPLESDIR%%/logcheck.violations
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.how.to.interpret
+%%PORTDOCS%%%%DOCSDIR%%/README.keywords
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@cwd /
+@exec test -d %%LOGCHECK_TMP%% || mkdir -m 700 %%LOGCHECK_TMP%% && chown root:wheel %%LOGCHECK_TMP%%
+@unexec rmdir %%LOGCHECK_TMP%% 2>/dev/null || true
