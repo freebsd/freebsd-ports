@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	jhead
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	jhead
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	jamie@hermans.ca
 
-USE_ZIP=	yes
-
-NO_WRKSUBDIR=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 
 do-install:
