@@ -11091,16 +11091,18 @@ misc.c:
       </body>
     </description>
     <references> 
+      <cvename>CAN-2004-1315</cvename>
       <freebsdpr>ports/74106</freebsdpr> 
       <uscertta>TA04-356A</uscertta>
+      <certvu>497400</certvu>
+      <mlist msgid="20041113030542.11396.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110029415208724</mlist>
+      <mlist msgid="20041118123055.28647.qmail@mail.securityfocus.com>">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110079436714518</mlist>
       <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=240636</url>
-      <url>http://www.kb.cert.org/vuls/id/497400</url>
-      <url>http://www.us-cert.gov/cas/techalerts/TA04-356A.html</url>
     </references>
     <dates>
       <discovery>2004-11-18</discovery>
       <entry>2004-12-22</entry>
-      <modified>2004-12-30</modified>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
