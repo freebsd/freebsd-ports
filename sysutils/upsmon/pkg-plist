@@ -1,0 +1,5 @@
+bin/upsstat
+sbin/upsmond
+etc/rc.d/upsmon.sh
+share/doc/upsmon/INSTALL
+@dirrm share/doc/upsmon

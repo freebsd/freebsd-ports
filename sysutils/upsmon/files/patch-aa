@@ -1,0 +1,20 @@
+--- makefile.bsdi.orig	Wed Aug  5 01:18:38 1998
++++ makefile.bsdi	Mon Oct  5 20:11:38 1998
+@@ -33,13 +33,13 @@
+ .SUFFIXES: .cc .o #rules for .c and .o
+ 
+ CC = gcc
+-CFLAGS_DEBUG = -O2 -Wall -DDEBUG -g
+-CFLAGS_NODEBUG = -O2 -Wall -g
++CFLAGS_DEBUG = -DDEBUG
++CFLAGS_NODEBUG = 
+ 
+ .ifdef DEBUG
+-CFLAGS = $(CFLAGS_DEBUG)
++CFLAGS += $(CFLAGS_DEBUG)
+ .else
+-CFLAGS = $(CFLAGS_NODEBUG)
++CFLAGS += $(CFLAGS_NODEBUG)
+ .endif
+ 
+ UPSMOND_TARGET = upsmond
