@@ -1,0 +1,6 @@
+%%RUBY_ARCHLIBDIR%%/PCSC.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pcsc-lite/README.txt
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pcsc-lite/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pcsc-lite/pcsclient.rb
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pcsc-lite
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pcsc-lite

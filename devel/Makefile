@@ -564,6 +564,7 @@
     SUBDIR += ruby-mo
     SUBDIR += ruby-mock
     SUBDIR += ruby-optparse
+    SUBDIR += ruby-pcsc-lite
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-racc-runtime
