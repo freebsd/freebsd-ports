@@ -7,13 +7,12 @@
 
 PORTNAME=	lush
 PORTVERSION=	0.1.0
-MASTER_SITES=	http://www.icon-king.com/files/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	lioux
+DISTNAME=	${PORTNAME}-${PORTVERSION}dave
 
 COMMENT=	KDE Lush complete iconset
 
 WRKSRC=		"${WRKDIR}/${PORTNAME}"
-
-BROKEN=		"Unfetchable"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
