@@ -1,5 +1,5 @@
---- daemon-init.in.orig	Sun Feb 18 23:33:21 2001
-+++ daemon-init.in	Tue Apr  3 20:58:18 2001
+--- daemon-init.in.orig	Sat Mar 24 19:58:26 2001
++++ daemon-init.in	Tue May  1 19:38:52 2001
 @@ -68,12 +68,9 @@
  
  
@@ -16,12 +16,12 @@
  
  prefix=@prefix@
  exec_prefix=@exec_prefix@
-@@ -101,7 +98,7 @@
+@@ -102,7 +99,7 @@
  
  	start)
  		echo "Starting network monitor: netsaint"
 -		su $Netsaint -c "touch $NetsaintVar/netsaint.log $NetsaintSav"
 +		su -m $Netsaint -c "touch $NetsaintVar/netsaint.log $NetsaintSav"
+ 		rm -f $NetsaintCmd
  		$NetsaintBin -d $NetsaintCfg
  		if [ -d $NetsaintLckDir ]; then touch $NetsaintLckDir/$NetsaintLckFile; fi
- 		sleep 1

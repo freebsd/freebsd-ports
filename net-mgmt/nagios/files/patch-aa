@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Mar  1 05:49:19 2001
-+++ Makefile.in	Tue Apr  3 10:02:31 2001
+--- Makefile.in.orig	Mon Apr 30 17:22:35 2001
++++ Makefile.in	Tue May  1 19:58:50 2001
 @@ -27,7 +27,7 @@
  INSTALL_OPTS=@INSTALL_OPTS@
  COMMAND_OPTS=@COMMAND_OPTS@
@@ -9,7 +9,7 @@
  CGICFGDIR=$(CGIDIR)
  PERLDIR=@PERLDIR@
  
-@@ -99,16 +99,16 @@
+@@ -99,20 +99,20 @@
  
  install-config:
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CFGDIR)
@@ -32,3 +32,8 @@
  
  install-commandmode:
  	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(LOGDIR)/rw
+-	chmod g+s $(DESTDIR)$(LOGDIR)/rw
++#	chmod g+s $(DESTDIR)$(LOGDIR)/rw
+ 
+ fullinstall: install install-init install-commandmode
+ 

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	netsaint
-PORTVERSION=	0.0.7b3
+PORTVERSION=	0.0.7b4
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/
 
-MAINTAINER=	blaz@amis.net
+MAINTAINER=	blaz@si.FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgd -lgnugetopt"
-CONFIGURE_ARGS=	--with-command-user=nobody \
+CONFIGURE_ARGS=	--with-command-user=netsaint \
 		--with-command-grp=nogroup \
 		--with-netsaint-user=netsaint \
 		--with-netsaint-grp=netsaint \
@@ -36,6 +36,6 @@ pre-fetch:
 	@${SH} ${SCRIPTDIR}/checkps
 
 pre-install:
-	${PERL} ${SCRIPTDIR}/createuser
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.mk>
