@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	1.63
+PORTVERSION=	1.64
 CATEGORIES=	mail
 MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
