@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/28 10:49:50 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.01
@@ -36,6 +36,7 @@ RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
+NO_CDROM=	YES
 
 do-extract:
 		@ ${MKDIR} -p work/quake
