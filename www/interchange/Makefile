@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.interchange.redhat.com/interchange/4.8/tar/
 
-MAINTAINER=	netchild@FreeBSB.org
+MAINTAINER=	netchild@FreeBSD.org
 
 BUILD_DEPENDS=	${SITE_PERL}/SQL/Statement.pm:${PORTSDIR}/databases/p5-SQL-Statement
 
