@@ -1,0 +1,20 @@
+--- unix/Makefile.orig	Thu Nov 19 13:59:08 1998
++++ unix/Makefile	Sat Jan 22 17:23:42 2000
+@@ -42,7 +42,7 @@
+ # such as -DDOSWILD).
+ 
+ # UnZip flags
+-CC = cc#	try using "gcc" target rather than changing this (CC and LD
++CC ?= cc#	try using "gcc" target rather than changing this (CC and LD
+ LD = $(CC)#	must match, else "unresolved symbol:  ___main" is possible)
+ AS = as
+ LOC = $(LOCAL_UNZIP)
+@@ -680,7 +680,7 @@
+ # FreeBSD on Intel:
+ freebsd:		unix_make
+ 	@echo 'NOTE:  use bsd target for non-Intel FreeBSD compiles (if any).'
+-	$(MAKE) unzips CC=gcc LD=gcc AS=gcc\
++	$(MAKE) unzips CC=$(CC) LD=$(CC) AS=$(CC)\
+ 	 CF="-O3 -Wall -I. -DASM_CRC -DBSD $(LOC)"\
+ 	 AF="-Di386 $(AF)" CRC32=crc_gcc
+ 
