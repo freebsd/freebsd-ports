@@ -1,0 +1,11 @@
+--- texk/kpathsea/texmf.in-teTeX.orig	Sun Feb  6 09:04:35 2005
++++ texk/kpathsea/texmf.in-teTeX	Sun Feb 13 03:44:45 2005
+@@ -489,7 +489,7 @@
+ 
+ % Extra space for the hash table of control sequences (which allows 10K
+ % names as distributed).
+-hash_extra = 50000
++hash_extra = 100000
+ 
+ % Max number of characters in all strings, including all error messages,
+ % help texts, font names, control sequences.  These values apply to TeX and MP.
