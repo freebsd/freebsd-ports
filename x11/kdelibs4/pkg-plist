@@ -751,7 +751,6 @@ share/apps/LICENSES/LGPL_V2
 share/apps/LICENSES/QPL_V1.0
 share/apps/kabc/formats/binary.desktop
 share/apps/kabc/plugins/dir.desktop
-share/apps/kabc/plugins/ldap.desktop
 share/apps/katepart/katepartreadonlyui.rc
 share/apps/katepart/katepartui.rc
 share/apps/katepart/syntax/ada.xml
