@@ -7,8 +7,9 @@
 # $FreeBSD$
 #
 
+PKGVER=		5.5.38
 DISTNAME=	vim-5.5
-PKGNAME?=	vim-5.5.38
+PKGNAME?=	vim-${PKGVER}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
