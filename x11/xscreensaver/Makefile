@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	4.00
-PORTREVISION=	2
+PORTVERSION=	4.01
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -55,11 +54,17 @@ MAN1=		attraction.1 blitspin.1 bouboule.1 braid.1 \
 		xscreensaver-gl-helper.1 xscreensaver.1 xsublim.1 xteevee.1 \
 		zoom.1 molecule.1 rotzoomer.1 bumps.1 xscreensaver-getimage.1 \
 		xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
-		speedmine.1 whirlygig.1 penetrate.1
+		speedmine.1 whirlygig.1 penetrate.1 glforestfire.1 \
+		glsnake.1 sballs.1 twang.1 xspirograph.1
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
-		's|malloc\.h|stdlib.h|g'
+	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
+	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
+		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
+.for file in extrusion.c
+	@ ${CP} ${WRKSRC}/hacks/glx/${file} ${WRKSRC}/hacks/glx/${file}.Dist
+	@ ${SED} -e 's/malloc.h/stdlib.h/g' ${WRKSRC}/hacks/glx/${file}.Dist > \
+		${WRKSRC}/hacks/glx/${file}
+.endfor
 
 .include <bsd.port.post.mk>
