@@ -1,6 +1,6 @@
---- scripts/safe_mysqld.sh.orig	Wed Nov 22 12:58:59 2000
-+++ scripts/safe_mysqld.sh	Fri Dec  1 00:53:26 2000
-@@ -61,26 +61,9 @@
+--- scripts/safe_mysqld.sh.orig	Thu Jan  4 03:03:55 2001
++++ scripts/safe_mysqld.sh	Fri Jan  5 14:05:04 2001
+@@ -64,26 +64,9 @@
    done
  }
  
@@ -30,7 +30,7 @@
  
  MYSQL_UNIX_PORT=${MYSQL_UNIX_PORT:-@MYSQL_UNIX_ADDR@}
  MYSQL_TCP_PORT=${MYSQL_TCP_PORT:-@MYSQL_TCP_PORT@}
-@@ -206,34 +189,6 @@
+@@ -220,34 +203,6 @@
    if test ! -f $pid_file		# This is removed if normal shutdown
    then
      break
@@ -43,12 +43,12 @@
 -    # but should work for the rest of the servers.
 -    # The only thing is ps x => redhat 5 gives warnings when using ps -x.
 -    # kill -9 is used or the process won't react on the kill.
--    numofproces=`ps xa | grep -v "grep" | grep -c $ledir/mysqld`
+-    numofproces=`ps xa | grep -v "grep" | grep -c $ledir/$MYSQLD`
 -    echo -e "\nNumber of processes running now: $numofproces" | tee -a $err_log
 -    I=1
 -    while test "$I" -le "$numofproces"
 -    do 
--      PROC=`ps xa | grep $ledir/mysqld | grep -v "grep" | tail -1` 
+-      PROC=`ps xa | grep $ledir/$MYSQLD | grep -v "grep" | tail -1` 
 -	for T in $PROC
 -	do
 -	  break
@@ -56,7 +56,7 @@
 -	#    echo "TEST $I - $T **"
 -	if kill -9 $T
 -	then
--	  echo "mysqld process hanging, pid $T - killed" | tee -a $err_log
+-	  echo "$MYSQLD process hanging, pid $T - killed" | tee -a $err_log
 -	else 
 -	  break
 -	fi
