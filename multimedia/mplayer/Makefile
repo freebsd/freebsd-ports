@@ -134,6 +134,9 @@
 # WITH_FAAD
 # default: autodetect
 #
+# WITH_LZO
+# default: autodetect
+#
 # WITHOUT_WIN32_CODECS
 # default: undefined
 # By default, mplayer depends on and uses the win32-codecs collection.
@@ -277,6 +280,10 @@ WITH_XVID=	yes
 WITH_FAAD=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/liblzo.so)
+WITH_LZO=	yes
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
@@ -395,6 +402,12 @@ BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/live
 CONFIGURE_ARGS+=	--enable-xvid \
 			--with-xvidcore=${LOCALBASE}/lib/libxvidcore.so
 LIB_DEPENDS+=		xvidcore.0:${PORTSDIR}/multimedia/xvid
+.endif
+
+.if defined(WITH_LZO)
+LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
+.else
+CONFIGURE_ARGS+=	--disable-liblzo
 .endif
 
 .if defined(WITH_FAAD)
