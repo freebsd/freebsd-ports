@@ -118,6 +118,7 @@
     SUBDIR += h2n
     SUBDIR += hagelslag
     SUBDIR += hesiod
+    SUBDIR += hx
     SUBDIR += icb
     SUBDIR += icmpinfo
     SUBDIR += icmpquery
