@@ -37,9 +37,9 @@ libexec/hpijs
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/gs-pcl3.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/how-to-report.txt
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/pcl3/pcl3opts.html
-share/ghostscript/%%GS_VERSION%%/doc/Bug-form.htm
 share/ghostscript/%%GS_VERSION%%/doc/Bug-info.htm
 share/ghostscript/%%GS_VERSION%%/doc/C-style.htm
+share/ghostscript/%%GS_VERSION%%/doc/COPYING
 share/ghostscript/%%GS_VERSION%%/doc/Changes.htm
 share/ghostscript/%%GS_VERSION%%/doc/Commprod.htm
 share/ghostscript/%%GS_VERSION%%/doc/Copying.htm
@@ -78,14 +78,6 @@ share/ghostscript/%%GS_VERSION%%/doc/Tester.htm
 share/ghostscript/%%GS_VERSION%%/doc/Unix-lpr.htm
 share/ghostscript/%%GS_VERSION%%/doc/Use.htm
 share/ghostscript/%%GS_VERSION%%/doc/Xfonts.htm
-share/ghostscript/%%GS_VERSION%%/gimp-print/README
-share/ghostscript/%%GS_VERSION%%/hpdj/README.hpdj
-share/ghostscript/%%GS_VERSION%%/hpdj/example.mdf
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4Rotated.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-Letter.ps
-share/ghostscript/%%GS_VERSION%%/hpdj/margins-LetterRotated.ps
-share/ghostscript/%%GS_VERSION%%/hpijs/hpijs_readme.html
 share/ghostscript/%%GS_VERSION%%/examples/alphabet.ps
 share/ghostscript/%%GS_VERSION%%/examples/cheq.ps
 share/ghostscript/%%GS_VERSION%%/examples/chess.ps
@@ -99,6 +91,14 @@ share/ghostscript/%%GS_VERSION%%/examples/snowflak.ps
 share/ghostscript/%%GS_VERSION%%/examples/tiger.ps
 share/ghostscript/%%GS_VERSION%%/examples/vasarely.ps
 share/ghostscript/%%GS_VERSION%%/examples/waterfal.ps
+share/ghostscript/%%GS_VERSION%%/gimp-print/README
+share/ghostscript/%%GS_VERSION%%/hpdj/README.hpdj
+share/ghostscript/%%GS_VERSION%%/hpdj/example.mdf
+share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4.ps
+share/ghostscript/%%GS_VERSION%%/hpdj/margins-A4Rotated.ps
+share/ghostscript/%%GS_VERSION%%/hpdj/margins-Letter.ps
+share/ghostscript/%%GS_VERSION%%/hpdj/margins-LetterRotated.ps
+share/ghostscript/%%GS_VERSION%%/hpijs/hpijs_readme.html
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap
 share/ghostscript/%%GS_VERSION%%/lib/Fontmap.GS
 share/ghostscript/%%GS_VERSION%%/lib/acctest.ps
@@ -481,6 +481,7 @@ share/ghostscript/fonts/u004006t.pfm
 share/ghostscript/fonts/z003034l.afm
 share/ghostscript/fonts/z003034l.pfb
 share/ghostscript/fonts/z003034l.pfm
+@dirrm share/ghostscript/fonts
 @dirrm share/ghostscript/%%GS_VERSION%%/pcl3
 @dirrm share/ghostscript/%%GS_VERSION%%/lib
 @dirrm share/ghostscript/%%GS_VERSION%%/hpijs
@@ -489,7 +490,6 @@ share/ghostscript/fonts/z003034l.pfm
 @dirrm share/ghostscript/%%GS_VERSION%%/examples
 @dirrm share/ghostscript/%%GS_VERSION%%/doc
 @dirrm share/ghostscript/%%GS_VERSION%%
-@dirrm share/ghostscript/fonts
 @dirrm share/ghostscript
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/pcl3
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj

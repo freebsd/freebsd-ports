@@ -1,5 +1,5 @@
---- src/unix-gcc.mak.orig	Tue Jun  5 16:54:10 2001
-+++ src/unix-gcc.mak	Wed Sep 12 22:41:20 2001
+--- src/unix-gcc.mak.orig	Tue Jul 10 12:01:06 2001
++++ src/unix-gcc.mak	Sat Nov  3 05:10:14 2001
 @@ -27,14 +27,15 @@
  # source, generated intermediate file, and object directories
  # for the graphics library (GL) and the PostScript/PDF interpreter (PS).
@@ -46,7 +46,23 @@
  datadir = $(prefix)/share
  gsdir = $(datadir)/ghostscript
  gsdatadir = $(gsdir)/$(GS_DOT_VERSION)
-@@ -129,7 +130,7 @@
+@@ -104,6 +105,15 @@
+ 
+ GENOPT=
+ 
++# Choose capability options.
++
++# -DHAVE_MKSTEMP
++#	uses mkstemp instead of mktemp
++#		This gets rid of several security warnings that look
++#		ominous.  Enable this if you wish to get rid of them.
++
++CAPOPT= -DHAVE_MKSTEMP
++
+ # Define the name of the executable file.
+ 
+ GS=gs
+@@ -129,7 +139,7 @@
  # You may need to change this if the IJG library version changes.
  # See jpeg.mak for more information.
  
@@ -55,13 +71,13 @@
  JVERSION=6
  
  # Choose whether to use a shared version of the IJG JPEG library (-ljpeg).
-@@ -149,14 +150,14 @@
+@@ -149,14 +159,14 @@
  # You may need to change this if the libpng version changes.
  # See libpng.mak for more information.
  
 -PSRCDIR=libpng
 +PSRCDIR=${LOCALBASE}/include
- PVERSION=10008
+ PVERSION=10012
  
  # Choose whether to use a shared version of the PNG library, and if so,
  # what its name is.
@@ -72,7 +88,7 @@
  LIBPNG_NAME=png
  
  # Define the directory where the zlib sources are stored.
-@@ -168,7 +169,7 @@
+@@ -168,7 +178,7 @@
  # what its name is (usually libz, but sometimes libgz).
  # See gs.mak and Make.htm for more information.
  
@@ -81,7 +97,7 @@
  #ZLIB_NAME=gz
  ZLIB_NAME=z
  
-@@ -183,7 +184,7 @@
+@@ -183,7 +193,7 @@
  
  # Define the name of the C compiler.
  
@@ -90,7 +106,7 @@
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -216,9 +217,11 @@
+@@ -216,9 +226,11 @@
  # We don't include -ansi, because this gets in the way of the platform-
  #   specific stuff that <math.h> typically needs; nevertheless, we expect
  #   gcc to accept ANSI-style function prototypes and function definitions.
@@ -104,7 +120,7 @@
  
  # Define platform flags for ld.
  # SunOS 4.n may need -Bstatic.
-@@ -227,7 +230,7 @@
+@@ -227,7 +239,7 @@
  #	-R /usr/local/xxx/lib:/usr/local/lib
  # giving the full path names of the shared library directories.
  # XLDFLAGS can be set from the command line.
@@ -113,7 +129,7 @@
  
  LDFLAGS=$(XLDFLAGS) -fno-common
  
-@@ -260,7 +263,7 @@
+@@ -260,7 +272,7 @@
  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
  # not in $(XINCLUDE).
  
@@ -122,7 +138,7 @@
  
  # Define the directory/ies and library names for the X11 library files.
  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -272,12 +275,12 @@
+@@ -272,12 +284,12 @@
  # Solaris and other SVR4 systems with dynamic linking probably want
  #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
  # X11R6 (on any platform) may need
@@ -138,3 +154,12 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
+@@ -406,7 +418,7 @@
+ 
+ # Define the compilation rules and flags.
+ 
+-CCFLAGS=$(GENOPT) $(CFLAGS)
++CCFLAGS=$(GENOPT) $(CAPOPT) $(CFLAGS)
+ CC_=$(CC) `cat $(AK)` $(CCFLAGS)
+ CCAUX=$(CC) `cat $(AK)`
+ CC_LEAF=$(CC_) -fomit-frame-pointer
