@@ -1,5 +1,14 @@
---- btc.c.orig	Sun Jul 30 15:55:16 2000
-+++ btc.c	Sun Jul 30 15:56:41 2000
+--- btc.c.orig	Sat Oct  2 00:24:02 1993
++++ btc.c	Mon Jul 26 16:40:04 2004
+@@ -705,7 +705,7 @@
+ /*
+  *  GLOBALS
+  */
+-UINT max_line_length;       /* Length of line in characters   */
++UINT max_line_length,       /* Length of line in characters   */
+      num_of_lines_read;     /* Number of lines read from file */
+ 
+ /*
 @@ -1583,7 +1583,7 @@
  
  #if FONT == NO_CUSTOM_FONT
