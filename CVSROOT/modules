@@ -3826,6 +3826,7 @@ mouseclock	ports/x11-clocks/mouseclock
 moused		src/usr.sbin/moused
 movemail	ports/mail/movemail
 moviedb		ports/misc/moviedb
+mowitz		ports/x11-toolkits/mowitz
 moxftp		ports/ftp/moxftp
 mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
