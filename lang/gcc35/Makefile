@@ -33,7 +33,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -42,16 +41,12 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-# fscking Linux & GNU $*!%
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
+.else
+CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-.if ${ARCH} == sparc64
-BROKEN=	"libgcj is not supported/packaging is broken on this platform"
-WITHOUT_LIBJAVA=	yes
-.endif
-
-.if ${ARCH} == ia64
+.if ${ARCH} == ia64  ||  ${ARCH} == sparc64
 WITHOUT_LIBJAVA=	yes
 .endif
 
@@ -73,11 +68,6 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib ${TARGLIB}
 EXTRA_SHLIB=	libgcc_s
 .else
 CONFIGURE_ARGS+=	--disable-shared
-.endif
-.if defined(WANT_THREADS_SUPPORT)
-CONFIGURE_ARGS+=	--enable-threads
-#	?is this an ObjC only thing?
-CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap-lean
 PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
