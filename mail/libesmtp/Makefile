@@ -5,7 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	libesmtp
-PORTVERSION=	1.0rc1
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stafford.uklinux.net/libesmtp/ \
 		http://www.tobez.org/download/port-mirrors/mail/libesmtp/ \
@@ -23,14 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 
-# require-all-recipients (implied by enable-all) is required for Balsa-1.3.x
-CONFIGURE_ARGS=	--enable-all
-
-pre-configure:
-	@${CP} ${LOCALBASE}/share/libtool/ltconfig ${WRKSRC}
-
-post-configure:
-	@cd ${WRKSRC} && ./ltconfig ./ltmain.sh
+# require-all-recipients (implied by enable-all) is required for Balsa
+CONFIGURE_ARGS=	--enable-all --disable-isoc
 
 post-install:
 .ifndef(NOPORTDOCS)
