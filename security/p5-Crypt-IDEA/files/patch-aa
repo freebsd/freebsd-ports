@@ -1,0 +1,8 @@
+--- idea.h.ORIG	Sat Sep 26 15:55:53 1998
++++ idea.h	Sat Sep 26 15:56:43 1998
+@@ -1,4 +1,4 @@
+-#include <machine/types.h>
++#include <sys/types.h>
+ 
+ #define IDEA_KS_SIZE 104
+ 
