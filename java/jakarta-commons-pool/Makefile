@@ -7,46 +7,49 @@
 
 PORTNAME=	commons-pool
 PORTVERSION=	1.2
-CATEGORIES=	java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/commons/pool/source/
+CATEGORIES=	java devel
+MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
+MASTER_SITE_SUBDIR=	${PORTNAME:S,-,/,}/source
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
-DIST_SUBDIR=	jakarta
 
 MAINTAINER=	toha@toha.org.ua
 COMMENT=	Jakarta Object-pooling API
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
-		${JAVAJARDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
+BUILD_DEPENDS=	${JAR_DEPENDS}
+RUN_DEPENDS=	${JAR_DEPENDS}
 
-USE_JAVA=	1.2+
+JAR_DEPENDS=	${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-ANT?=		${LOCALBASE}/bin/ant
+
+USE_ANT=	yes
+MAKE_ENV+=	ANT_INCLUDE_SHARED_JARS=YES
 .if defined(NOPORTDOCS)
-ANT_TARGET=	build-jar
+ALL_TARGET=	build-jar
 .else
-ANT_TARGET=	build-jar javadoc
+ALL_TARGET=	build-jar javadoc
 PORTDOCS=	*
 .endif
 JARFILE=	${PORTNAME}.jar
 DESTJARFILE=	${PORTNAME}.jar
 
-do-build:
-	@cd ${WRKSRC} && \
-		${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
+PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/dist/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/dist/docs/api/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/dist/docs/api \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
