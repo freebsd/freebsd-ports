@@ -1,0 +1,20 @@
+$FreeBSD$
+
+--- test/Makefile.orig	Mon Dec  8 20:30:52 2003
++++ test/Makefile	Tue Mar 30 10:19:02 2004
+@@ -1,10 +1,13 @@
+-CFLAGS= -g -Wall -I../src
++#CFLAGS= -g -Wall -I../src
++CFLAGS+= -Wall -I../src
+ VICEOBJS = vicebox.o wrappers.o error.o debug.o
+ 
+ all: vpcd
+ 
+ vpcd: vpcd.o
+-	$(CC) -o $@ $< -lpthread
++	$(CC) -o $@ $< ${LDFLAGS} ${PTHREAD_LIBS}
++vpcd.o: vpcd.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) ${PTHREAD_CFLAGS} -c -o $@ $<
+ 
+ vicebox : $(VICEOBJS)
+ 	$(CC) $(CFLAGS) -o $@ $(VICEOBJS)

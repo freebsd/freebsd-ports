@@ -1,0 +1,90 @@
+$FreeBSD$
+
+--- scripts/powerman.init.orig	Thu Jun 10 08:16:04 2004
++++ scripts/powerman.init	Thu Jun 10 08:28:08 2004
+@@ -1,61 +1,27 @@
+ #!/bin/sh
+-##
+-# powerman.init,v 1.3 2001/12/12 20:08:46 dun Exp
+-##
+-# chkconfig:	345 95 5
+-# description:	PowerMan manages Remote Power Controller (RPC) devices
+-# processname:	/usr/sbin/powermand
+-# config:	/etc/powerman/powerman.conf
+-##
++# $FreeBSD$
+ 
+-# Source function library.
+-. /etc/rc.d/init.d/functions
++# PROVIDE: powermand
++# REQUIRE: DAEMON
++# BEFORE: LOGIN
++# KEYWORD: FreeBSD shutdown
++
++# Define these powermand_* variables in one of these files:
++#	/etc/rc.conf
++#	/etc/rc.conf.local
++#	/etc/rc.conf.d/powermand
++#
++# DO NOT CHANGE THESE DEFAULT VALUES HERE
++#
++powermand_enable=${powermand_enable:-"NO"}
++powermand_flags=${powermand_flags:-""}
++
++. %%RC_SUBR%%
++
++name="powermand"
++rcvar=`set_rcvar`
++command="%%PREFIX%%/sbin/powermand"
++required_files="%%PREFIX%%/etc/powerman.conf"
+ 
+-# Source networking configuration.
+-. /etc/sysconfig/network
+-
+-# Check that networking is up.
+-[ ${NETWORKING} = "no" ] && exit 0
+-
+-DAEMON=powermand
+-RETVAL=0
+-
+-[ -x "/usr/sbin/$DAEMON" ] || exit 0
+-
+-# See how we were called.
+-case "$1" in
+-  start)
+-	echo -n "Starting PowerMan: "
+-	daemon $DAEMON
+-	RETVAL=$?
+-	echo
+-	[ $RETVAL -eq 0 ] && touch /var/lock/subsys/$DAEMON
+-	;;
+-  stop)
+-	echo -n "Shutting down PowerMan: "
+-	killproc $DAEMON
+-	RETVAL=$?
+-	echo
+-	[ $RETVAL -eq 0 ] && rm -f /var/lock/subsys/$DAEMON
+-	;;
+-  status)
+-	status $DAEMON
+-	RETVAL=$?
+-	;;
+-  restart)
+-	$0 stop
+-	$0 start
+-	RETVAL=$?
+-	;;
+-  reload)
+-	echo -n "Reloading PowerMan: "
+-	killproc $DAEMON -HUP
+-	RETVAL=$?
+-	echo
+-	;;
+-  *)
+-	echo "Usage: $DAEMON {start|stop|status|restart|reload}"
+-	exit 1
+-esac
+-
+-exit $RETVAL
++load_rc_config $name
++run_rc_command "$1"
