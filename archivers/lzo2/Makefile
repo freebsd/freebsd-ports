@@ -3,13 +3,12 @@
 # Date created:				21 Feb 1998
 # Whom:					giffunip@asme.org
 #
-# $Id: Makefile,v 1.2 1998/12/01 23:12:55 billf Exp $
+# $Id: Makefile,v 1.3 1998/12/10 17:24:31 vanilla Exp $
 #
 
 DISTNAME=       lzo-1.04
 CATEGORIES=	archivers devel
-MASTER_SITES=   ftp://wildsau.idv.uni-linz.ac.at/pub/mfx/lzo/ \
-		ftp://ftp.uni-koeln.de/util/arc/ \
+MASTER_SITES= 	ftp://ftp.uni-koeln.de/util/arc/ \
 		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/util/arc/ \
 		ftp://ftp.all.de/pub/unix/tools/archivers/lzo/ \
 		ftp://ftp.fu-berlin.de/pub/unix/tools/archivers/lzo/ \
