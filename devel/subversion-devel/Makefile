@@ -9,6 +9,8 @@ PORTVERSION=	r3987	# 0.16.0
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/files/documents/15/2123/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=		bmah
 
 MAINTAINER=	rodrigc@attbi.com
 COMMENT=	Version control system
