@@ -1,49 +1,96 @@
---- app/fileops.c~	Mon Nov 18 09:57:19 1996
-+++ app/fileops.c	Mon Nov 18 09:58:01 1996
-@@ -289,7 +289,7 @@
-       gtk_file_selection_set_ok_callback (filesel, file_open_ok_callback, open_options);
-       gtk_file_selection_set_cancel_callback (filesel, file_cancel_callback, open_options);
+--- plug-ins/script-fu/scripts/Makefile.in.orig	Fri Feb 28 09:09:07 1997
++++ plug-ins/script-fu/scripts/Makefile.in	Fri Feb 28 09:07:40 1997
+@@ -51,17 +51,17 @@
+ scriptdatadir = $(pkgdatadir)/scripts
  
--      if (gdisp && gdisp->gimage->has_filename)
-+      if (gdisp && gdisp->gimage && gdisp->gimage->has_filename)
- 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisp->gimage));
+ scriptdata_DATA = \
+-	alien-glow.scm		\
+-	bds-logo-textured.scm	\
+-	blend-logo.scm		\
+-	chrome.scm		\
+-	chrome-it.scm		\
+-	chrome2.scm		\
+-	ds-logo.scm		\
+-	frozen-text.scm		\
+-	hds-logo.scm		\
+-	neon.scm		\
+-	sphere.scm		\
++	alien-glow.sed		\
++	bds-logo-textured.sed	\
++	blend-logo.sed		\
++	chrome.sed		\
++	chrome-it.sed		\
++	chrome2.sed		\
++	ds-logo.sed		\
++	frozen-text.sed		\
++	hds-logo.sed		\
++	neon.sed		\
++	sphere.sed		\
+ 	beavis.jpg
  
-       gtk_widget_show (filesel);
-@@ -297,7 +297,7 @@
+ EXTRA_DIST = $(scriptdata_DATA)
+@@ -79,7 +79,7 @@
+ TAR = tar
+ default: all
  
-   if (! GTK_WIDGET_VISIBLE (filesel))
-     {
--      if (gdisp && gdisp->gimage->has_filename)
-+      if (gdisp && gdisp->gimage && gdisp->gimage->has_filename)
- 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisp->gimage));
-       gtk_widget_show (filesel);
-     }
-@@ -353,7 +353,7 @@
-       gtk_file_selection_set_ok_callback (filesel, file_save_ok_callback, save_options);
-       gtk_file_selection_set_cancel_callback (filesel, file_cancel_callback, save_options);
+-.SUFFIXES:
++.SUFFIXES: .sed
+ $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL) 
+ 	cd $(top_srcdir) && automake --gnu plug-ins/script-fu/scripts/Makefile
  
--      if (gdisplay && gdisplay->gimage->has_filename)
-+      if (gdisplay && gdisplay->gimage && gdisplay->gimage->has_filename)
- 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisplay->gimage));
+@@ -87,17 +87,18 @@
+ 	cd $(top_builddir) \
+ 	  && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
  
-       gtk_widget_show (filesel);
-@@ -363,7 +363,7 @@
+-
+ install-scriptdataDATA: $(scriptdata_DATA)
+ 	$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(scriptdatadir)
+-	@list="$(scriptdata_DATA)"; for p in $$list; do \
+-	  if test -f $(srcdir)/$$p; then \
+-	    echo "$(INSTALL_DATA) $(srcdir)/$$p $(scriptdatadir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(scriptdatadir)/$$p; \
+-	  else if test -f $$p; then \
+-	    echo "$(INSTALL_DATA) $$p $(scriptdatadir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(scriptdatadir)/$$p; \
++	@list="$(scriptdata_DATA)"; for s in $$list; do \
++	  p=$$(basename $$s .sed); \
++	  if [ $$p != $$s ]; then p=$$p.scm; fi; \
++	  if test -f $(srcdir)/$$s; then \
++	    echo "$(INSTALL_DATA) $(srcdir)/$$s $(scriptdatadir)/$$p"; \
++	    $(INSTALL_DATA) $(srcdir)/$$s $(scriptdatadir)/$$p; \
++	  else if test -f $$s; then \
++	    echo "$(INSTALL_DATA) $$s $(scriptdatadir)/$$p"; \
++	    $(INSTALL_DATA) $$s $(scriptdatadir)/$$p; \
+ 	  fi; fi; \
+ 	done
  
-   if (! GTK_WIDGET_VISIBLE (filesel))
-     {
--      if (gdisplay && gdisplay->gimage->has_filename)
-+      if (gdisplay && gdisplay->gimage && gdisplay->gimage->has_filename)
- 	gtk_file_selection_set_filename (filesel, gimage_filename (gdisplay->gimage));
+@@ -184,3 +184,7 @@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
++
++
++%.sed : %.scm
++	sed 's,@_prefix_@,${prefix},' $< > $@
+--- plug-ins/script-fu/scripts/chrome-it.scm.orig	Wed Feb 26 22:51:31 1997
++++ plug-ins/script-fu/scripts/chrome-it.scm	Fri Feb 28 09:01:38 1997
+@@ -153,5 +153,5 @@
+     (gimp-displays-flush)
+     (gimp-image-enable-undo img)))
  
-       gtk_widget_show (filesel);
---- app/progress.c~	Mon Nov 18 11:03:58 1996
-+++ app/progress.c	Mon Nov 18 11:04:07 1996
-@@ -57,7 +57,7 @@
-   progress->callback_data = callback_data;
-   progress->pixmap = NULL;
+-(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Gold Trim)" "Input Image" "1" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
+-(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Copper Trim)" "Input Image" "1" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Gold Trim)" "Input Image" "1" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Environment Map" "\"@_prefix_@/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Copper Trim)" "Input Image" "1" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75" "Environment Map" "\"@_prefix_@/share/gimp/scripts/beavis.jpg\"")
+--- plug-ins/script-fu/scripts/chrome2.scm.orig	Wed Feb 26 20:57:57 1997
++++ plug-ins/script-fu/scripts/chrome2.scm	Fri Feb 28 09:01:38 1997
+@@ -161,6 +161,6 @@
+     (gimp-image-enable-undo img)
+     (gimp-display-new img)))
  
--  progress->shell = gtk_window_new (title, GTK_WINDOW_TOPLEVEL);
-+  progress->shell = gtk_window_new (title, GTK_WINDOW_DIALOG);
-   gtk_widget_set_uposition (progress->shell, progress_x, progress_y);
-   main_vbox = gtk_vbox_new (FALSE, 5);
-   gtk_container_add (progress->shell, main_vbox);
+-(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Gold Trim)" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"GoodCityModern(kbd)\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Gold Trim)" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"GoodCityModern(kbd)\"" "Environment Map" "\"@_prefix_@/share/gimp/scripts/beavis.jpg\"")
+ 
+-(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Copper Trim)" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75"  "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"RoostHeavy\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
++(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Copper Trim)" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75"  "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"RoostHeavy\"" "Environment Map" "\"@_prefix_@/share/gimp/scripts/beavis.jpg\"")
