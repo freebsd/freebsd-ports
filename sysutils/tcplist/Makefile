@@ -4,10 +4,10 @@
 # Date created:			  Mon Apr 14, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/04/24 16:31:42 obrien Exp $
 #
 
-DISTNAME=	tcplist-2.1
+DISTNAME=	tcplist-2.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/tcplist/  \
 		ftp://ftp.ece.uc.edu/pub/sun-faq/FAQs/mirrors/ftp.cdf.toronto.edu/tcplist/  \
