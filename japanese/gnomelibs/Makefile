@@ -6,7 +6,7 @@
 #
 
 # This port does not work with another version of master port.
-#PORTVERSION=	1.2.13
+#PORTVERSION=	1.4.1.1
 CATEGORIES=	japanese x11 gnome
 
 MASTERDIR=	${.CURDIR}/../../x11/gnomelibs
@@ -15,7 +15,11 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-*
 
 MAINTAINER=	nakai@FreeBSD.org
 
-PLIST=		${.CURDIR}/pkg-plist
+PLIST=		${WRKDIR}/pkg-plist
+
+post-extract:
+	${ECHO} bin/gnome-libs-jp > ${PLIST}
+	${CAT} ${MASTERDIR}/pkg-plist >> ${PLIST}
 
 post-install:
 	${TOUCH} ${PREFIX}/bin/gnome-libs-jp
