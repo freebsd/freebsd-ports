@@ -1,75 +1,75 @@
 # New ports collection makefile for:    a2ps
-# Version required:     4.9.7
-# Date created:         18 August 1997
-# Whom:                 Chuck Robey (chuckr@freebsd.org)
+# Version required:     4.3
+# Date created:         6 November 1994
+# Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.9 1997/08/19 03:43:55 chuckr Exp $
+# $Id: Makefile,v 1.8 1996/11/17 08:44:16 obrien Exp $
 #
 
 DISTNAME=	a2ps
-PKGNAME=	a2ps-${PAPERSIZE}-4.9.8
+PKGNAME=	a2ps-${PAPERSIZE}-4.3
 CATEGORIES=	print
-MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
-DISTFILES=	a2ps-4.9.8.tar.gz
+MASTER_SITES=	ftp://ftp.imag.fr/archive/postscript/format.translators/
+DISTFILES=	a2ps.V4.3.tar.gz
 
-MAINTAINER=	chuckr@FreeBSD.org
+MAINTAINER=	jmz@FreeBSD.org
 
-WRKSRC=		$(WRKDIR)/$(DISTNAME)-4.9.8
-GNU_CONFIGURE=	yes
-MAN1=		a2ps.1 ogonkify.1
-
-PAPERSIZE?=
-STRIP=
-CONFIGURE_ARGS=	--with-medium=$(PAPERSIZE)
-
-
-Letter::
-	$(MAKE) PAPERSIZE=Letter
+MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
+NO_WRKSUBDIR=	yes
+MAN1=		a2ps.1
 
 letter::
-	$(MAKE) PAPERSIZE=Letter
+	${MAKE} PAPERSIZE=letter
 
-Letterdj::
-	$(MAKE) PAPERSIZE=Letterdj
-
-letterdj::
-	$(MAKE) PAPERSIZE=Letterdj
-
-A4::
-	$(MAKE) PAPERSIZE=A4
+letter-install::
+	${MAKE} PAPERSIZE=letter install
 
 a4::
-	$(MAKE) PAPERSIZE=A4
+	${MAKE} PAPERSIZE=a4
 
-pre-build:
-	/usr/bin/touch $(WRKSRC)/doc/*.info
-	/usr/bin/touch $(WRKSRC)/doc/*.dvi
+a4-install::
+	${MAKE} PAPERSIZE=a4 install
 
-pre-configure:
-.if empty(PAPERSIZE)
-	@echo
-	@echo "PAPERSIZE not specified."
-	@echo
-	@echo "Must specify PAPERSIZE as one of A4, Letter, or Letterdj, either"
-	@echo "using setenv, or via Makefile targets of the same name.  Note"
-	@echo "that each PAPERSIZE has a leading capital letter, and Letterdj"
-	@echo "allows a slightly larger margins for DeskJets."
-	@false
-.elif $(PAPERSIZE)!=A4 && $(PAPERSIZE)!=Letter && $(PAPERSIZE)!=Letterdj
-	@echo
-	@echo "PAPERSIZE incorrect value: $(PAPERSIZE)."
-	@echo
-	@echo "Must specify PAPERSIZE as one of A4, Letter, or Letterdj, either"
-	@echo "using setenv, or via Makefile targets of the same name.  Note"
-	@echo "that each PAPERSIZE has a leading capital letter, and Letterdj"
-	@echo "allows a slightly larger margins for DeskJets."
-	@false
+
+.if !defined(PAPERSIZE)
+PAPERSIZE=a4
+WIDTH=8.27
+HEIGHT=11.64
+A4_PAPERSIZE=1
+PAPERSIZE_UNSPECIFIED=	yes
+.elif ${PAPERSIZE} == A4 || ${PAPERSIZE} == a4 
+PAPERSIZE=a4
+WIDTH=8.27
+HEIGHT=11.64
+A4_PAPERSIZE=1
+.elif ${PAPERSIZE} == letter || ${PAPERSIZE} == LETTER
+PAPERSIZE=letter
+WIDTH=8.5
+HEIGHT=11.0
+A4_PAPERSIZE=0
+.else
+PAPERSIZE_INVALID= yes
+.endif	# not defined PAPERSIZE
+
+
+pre-fetch:
+.if defined(PAPERSIZE_UNSPECIFIED)
+	@echo "Defaulting to ${PAPERSIZE} sized paper."
+	@echo ""
+	@echo "Set the environment variable PAPERSIZE if you want to use other sizes."
+	@echo "Possible values are:  A4 (default) or letter"
+.elif defined(PAPERSIZE_INVALID)
+	@echo "Error: invalid value for PAPERSIZE: \"${PAPERSIZE}\"" 
+	@echo "Possible values are:  A4 (default) or letter"
+	@/usr/bin/false
 .endif
-	echo $(PAPERSIZE) > $(WRKDIR)/.media
+
+pre-install:
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/man/man1
+	@(cd ${WRKSRC}; make install.man)
+
+post-install:
+	strip ${PREFIX}/bin/a2ps
 
 .include <bsd.port.mk>
-
-.if exists($(WRKDIR)/.media)
-PAPERSIZE=
-PAPERSIZE!=	cat $(WRKDIR)/.media
-.endif
