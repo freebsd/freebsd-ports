@@ -13,12 +13,26 @@ MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CDEBUG="${CFLAGS}" LINK="${CC}" EPSLIB=""
 ALL_TARGET=	${PORTNAME}
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-extract:
 	@${RM} -f ${WRKSRC}/epstool
