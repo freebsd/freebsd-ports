@@ -118,6 +118,7 @@
     SUBDIR += p5-Class-DBI-Oracle
     SUBDIR += p5-Class-DBI-Pager
     SUBDIR += p5-Class-DBI-Pg
+    SUBDIR += p5-Class-DBI-Plugin-RetrieveAll
     SUBDIR += p5-Class-DBI-Replication
     SUBDIR += p5-Class-DBI-SAK
     SUBDIR += p5-Class-DBI-SQLite
