@@ -3,12 +3,12 @@
 # Date created:		31 Jan 1998
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/10/16 02:04:48 jseger Exp $
+# $Id: Makefile,v 1.4 1998/10/20 12:41:01 asami Exp $
 #
 
 DISTNAME=	diclookup-mule-2.3.3
 PKGNAME=	ja-diclookup-mule-2.3.3
-CATEGORIES=	japanese
+CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tools/diclookup-mule/
 
 PATCH_SITES=	${MASTER_SITES}

@@ -3,12 +3,12 @@
 # Date created:		04 Mar 1997
 # Whom:			Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.8 1997/06/08 12:55:02 asami Exp $
+# $Id: Makefile,v 1.9 1997/09/14 21:36:00 max Exp $
 #
 
 DISTNAME=	skk9.6
 PKGNAME=	ja-skk-9.6
-CATEGORIES=	japanese
+CATEGORIES=	japanese elisp
 MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/9.6/
 
 MAINTAINER=	matusita@jp.freebsd.org

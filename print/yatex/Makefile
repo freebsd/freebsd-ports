@@ -3,12 +3,12 @@
 # Date created:		Oct 9 1998
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/10/21 07:09:58 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/11 14:33:01 kuriyama Exp $
 #
 
 DISTNAME=	yatex9805062331
 PKGNAME?=	yatex-1.65.6
-CATEGORIES?=	print
+CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.comp.ae.keio.ac.jp/~yuuji/yatex/ \
 		http://www.comp.ae.keio.ac.jp/~yuuji/tmp/
 
