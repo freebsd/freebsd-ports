@@ -22,6 +22,7 @@ etc/bioinformatics/seqdatabase.ini.sample
 %%RUBY_SITELIBDIR%%/bio/db/embl.rb
 %%RUBY_SITELIBDIR%%/bio/db/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank.rb
+%%RUBY_SITELIBDIR%%/bio/db/genpept.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/brite.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/cell.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/compound.rb
