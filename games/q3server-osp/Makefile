@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	osp
-PORTVERSION=	1.0
-MASTER_SITES=	http://mollusk.speakeasy.net/osp/ \
-		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/q3/mod/osp/ \
-		http://ftp.gigabell.net/pub/exp/q3/mod/osp/ \
-		http://aoh-www.hhhr.ision.net/files/osp/ \
-		ftp://www.fragland.net/quake3/mods/ \
-		http://www.fleckz.com/files/
-DISTNAME=	${PORTNAME}-q3-FULL
+PORTVERSION=	1.01
+MASTER_SITES=	http://www.orangesmoothie.org/downloads/ \
+		http://aoh-www.hhhr.ision.net/files/osp/
+DISTNAME=	osp-Quake3-${PORTVERSION}_full
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
 

@@ -27,16 +27,19 @@
 %%PORTDOCS%%%%Q3DIR%%Docs/ESP/osp-q3-Variables.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/ESP/osp-q3-Viewcam.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/ESP/osp-q3-mapConfigInfo.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/README.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/INSTALL.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/OSP Match Quick Start.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/README.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/_RUSSIAN_TRANSLATIONS_
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-CQ3Info.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-ClientReadme.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Commands.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-PlayerFilters.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-ServerGfx.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Variables.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Viewcam.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-CQ3Info.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-ClientReadme.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Commands.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-DecalEditing.txt
@@ -63,10 +66,10 @@
 %%Q3DIR%%cfg-GfxExample/gfxdef.cfg
 %%Q3DIR%%cfg-GfxExample/z-osp-misc.pk3
 %%Q3DIR%%cfg-maps/1v1maps.txt
+%%Q3DIR%%cfg-maps/cbmaps.txt
 %%Q3DIR%%cfg-maps/clanarenamaps.txt
 %%Q3DIR%%cfg-maps/ctfmaps.txt
 %%Q3DIR%%cfg-maps/ffamaps.txt
-%%Q3DIR%%cfg-maps/qilmaps.txt
 %%Q3DIR%%cfg-maps/teammaps.txt
 %%Q3DIR%%clanarena.cfg
 %%Q3DIR%%ctf-public.cfg
@@ -248,13 +251,16 @@
 %%Q3DIR%%voodoo/html/images/maps/q3wxs3.jpg
 %%Q3DIR%%voodoo/html/images/maps/wnoise.jpg
 %%Q3DIR%%voodoo/log-backup/log-backup
-%%Q3DIR%%voodoo/server/voodoostats40-linux-OSP.zip
-%%Q3DIR%%voodoo/server/voodoostats40-win32-OSP.zip
-%%Q3DIR%%voodoo/voodoostats40-c.bat
-%%Q3DIR%%voodoo/voodoostats40-c.exe
+%%Q3DIR%%voodoo/server/voodoostats42-c-linux.zip
+%%Q3DIR%%voodoo/server/voodoostats42-linux.zip
+%%Q3DIR%%voodoo/server/voodoostats42-win32.zip
+%%Q3DIR%%voodoo/voodoostats.bat
+%%Q3DIR%%voodoo/voodoostats42-c.exe
 %%Q3DIR%%voodoo/vs-preparse.exe
 %%Q3DIR%%zz-osp-pak0.pk3
+%%Q3DIR%%zz-osp-pak1.pk3
 %%Q3DIR%%zz-osp-server0.pk3
+%%Q3DIR%%zz-osp-server1.pk3
 @dirrm %%Q3DIR%%voodoo/server
 @dirrm %%Q3DIR%%voodoo/log-backup
 @dirrm %%Q3DIR%%voodoo/html/images/maps
