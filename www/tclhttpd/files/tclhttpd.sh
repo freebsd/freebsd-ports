@@ -12,7 +12,7 @@ case $1 in
 		fi
 		;;
 	''|start)
-		COMMAND_LINE &
+		env LANG=C COMMAND_LINE &
 		sleep 2
 		if kill -0 $! ; then
 			echo -n ' tclhttpd'

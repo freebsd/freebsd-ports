@@ -7,7 +7,6 @@ int Tclhttpdbin_Init(Tcl_Interp *I) {
 	Crypt_Init(I);
 	Limit_Init(I);
 	Setuid_Init(I);
-	Utime_Init(I);
 
 	return TCL_OK;
 }
