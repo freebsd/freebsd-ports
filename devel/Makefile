@@ -6,8 +6,6 @@
     SUBDIR += ORBit
     SUBDIR += ORBit2
     SUBDIR += SN
-    SUBDIR += SWIG
-    SUBDIR += SWIG-devel
     SUBDIR += SpecTcl
     SUBDIR += a2dev
     SUBDIR += ac-archive
@@ -777,6 +775,8 @@
     SUBDIR += styx
     SUBDIR += subversion
     SUBDIR += swarm
+    SUBDIR += swig11
+    SUBDIR += swig13
     SUBDIR += swigruby
     SUBDIR += sysconftool
     SUBDIR += t1lib
