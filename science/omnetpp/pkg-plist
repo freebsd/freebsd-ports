@@ -55,16 +55,16 @@ include/omnetpp/onstartup.h
 include/omnetpp/protocol.h
 include/omnetpp/random.h
 include/omnetpp/util.h
-lib/omnetpp/libcmdenv.so
-lib/omnetpp/libcmdenv.so.2.3p1
-lib/omnetpp/libenvir.so
-lib/omnetpp/libenvir.so.2.3p1
-lib/omnetpp/libnedxml.so
-lib/omnetpp/libnedxml.so.2.3p1
-lib/omnetpp/libsim_std.so
-lib/omnetpp/libsim_std.so.2.3p1
-lib/omnetpp/libtkenv.so
-lib/omnetpp/libtkenv.so.2.3p1
+lib/libcmdenv.so
+lib/libcmdenv.so.2.3p1
+lib/libenvir.so
+lib/libenvir.so.2.3p1
+lib/libnedxml.so
+lib/libnedxml.so.2.3p1
+lib/libsim_std.so
+lib/libsim_std.so.2.3p1
+lib/libtkenv.so
+lib/libtkenv.so.2.3p1
 %%DATADIR%%/bitmaps/README
 %%DATADIR%%/bitmaps/app.gif
 %%DATADIR%%/bitmaps/ball.gif
@@ -892,7 +892,6 @@ lib/omnetpp/libtkenv.so.2.3p1
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/omnetpp
-@dirrm lib/omnetpp
 @dirrm %%DATADIR%%/tkenv
 @dirrm %%DATADIR%%/bitmaps
 @dirrm %%DATADIR%%/plove
