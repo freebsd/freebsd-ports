@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	tuxcards
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~ut3c/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://www.tifskom.de/tux/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for managing notes within a hierarchical tree
 
-QTDIR?=		${X11BASE}
 USE_QT_VER=	3
 USE_REINPLACE=	yes
-MAKE_ENV=	QTDIR="${QTDIR}"
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|warn_on|warn_on thread|g' ${WRKSRC}/tuxcards.pro
@@ -32,6 +30,5 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/en/*.* ${DOCSDIR}
 .endif
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
