@@ -341,6 +341,7 @@ apinger		ports/net/apinger
 apotheke	ports/x11-fm/apotheke
 apr		ports/devel/apr
 apsfilter	ports/print/apsfilter
+apwal		ports/x11/apwal
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
 aquaosk		ports/x11-wm/aquaosk
