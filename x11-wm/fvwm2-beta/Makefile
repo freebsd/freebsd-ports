@@ -42,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
 		${PREFIX}/lib/X11/fvwm2/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
