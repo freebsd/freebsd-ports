@@ -19,6 +19,8 @@ COMMENT=	C/C++ IDE for Eclipse
 
 RUN_DEPENDS=	${LOCALBASE}/eclipse:${PORTSDIR}/java/eclipse
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes
