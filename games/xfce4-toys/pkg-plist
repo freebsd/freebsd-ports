@@ -66,3 +66,5 @@ share/xfce4/tips/tips.dat
 @dirrm share/xfce4/tips
 @unexec rmdir %D/share/xfce4 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nb_NO 2>/dev/null || true
