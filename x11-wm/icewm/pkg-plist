@@ -1,5 +1,6 @@
 bin/genpref
 bin/icehelp
+%%ESOUND%%bin/icesound
 bin/icesh
 bin/icewm
 bin/icewmbg

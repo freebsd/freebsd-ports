@@ -1,6 +1,34 @@
---- src/wmapp.cc.orig	Wed Feb 20 20:16:15 2002
-+++ src/wmapp.cc	Wed Feb 20 20:16:48 2002
-@@ -1308,6 +1308,9 @@
+--- src/wmapp.cc.orig	Tue Oct  9 23:54:03 2001
++++ src/wmapp.cc	Wed Feb 20 20:55:39 2002
+@@ -220,10 +220,10 @@
+ 	    char ** fontPath(XGetFontPath(app->display(), &ndirs));
+ 
+ 	    char ** newFontPath = new char *[ndirs + 1];
+-	    newFontPath[0] = fontsdir;
++	    newFontPath[ndirs] = fontsdir;
+ 
+ 	    if (fontPath)
+-		memcpy(newFontPath + 1, fontPath, ndirs * sizeof (char *));
++		memcpy(newFontPath, fontPath, ndirs * sizeof (char *));
+ 	    else
+ 		warn(_("Unable to get current font path."));
+ 
+@@ -245,11 +245,10 @@
+ 				   (unsigned char **) &icewmFontPath) ==
+ 				   Success && icewmFontPath) {
+ 		if (r_type == XA_STRING && r_format == 8) {
+-		    for (int n(ndirs); n > 0; --n) // ---- remove death paths ---
++		    for (int n(ndirs-1); n > 0; --n) // ---- remove death paths ---
+ 			if (!strcmp(icewmFontPath, newFontPath[n])) {
+-			    if (n != ndirs)
+-				memmove(newFontPath + n, newFontPath + n + 1,
+-					(ndirs - n) * sizeof(char *));
++			    memmove(newFontPath + n, newFontPath + n + 1,
++				(ndirs - n) * sizeof(char *));
+ 			    --ndirs;
+ 			}
+ 		} else
+@@ -1308,6 +1307,9 @@
  }
  
  int main(int argc, char **argv) {

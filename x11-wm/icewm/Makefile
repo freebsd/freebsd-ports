@@ -7,7 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -35,7 +35,8 @@ CONFIGURE_ARGS=	--enable-i18n --enable-nls \
 		--with-cfgdir=${PREFIX}/share/icewm \
 		--with-libdir=${PREFIX}/share/icewm \
 		--with-kdedatadir=${LOCALBASE}/share \
-		--with-docdir=${PREFIX}/share/doc
+		--with-docdir=${PREFIX}/share/doc \
+		--with-mkfontdir=${NONEXISTENT}
 
 .include <bsd.port.pre.mk>
 
@@ -48,14 +49,22 @@ USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
 .endif
 
+.if defined(HAVE_ESOUND)
+USE_ESOUND=	yes
+CONFIGURE_ARGS+=	--enable-guievents --with-icesound=esound
+PLIST_SUB+=	ESOUND=""
+.else
+PLIST_SUB+=	ESOUND="@comment "
+.endif
+
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar
+	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${DATADIR}/taskbar
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/icewm
 .for file in CHANGES FAQ INSTALL README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/icewm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/icewm
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
 	${CHOWN} root.kmem ${PREFIX}/bin/icewm
 	${CHMOD} 2555 ${PREFIX}/bin/icewm
