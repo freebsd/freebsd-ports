@@ -9098,6 +9098,7 @@ py-istring	ports/devel/py-istring
 py-jabber	ports/net/py-jabber
 py-jaxml	ports/textproc/py-jaxml
 py-kde		ports/x11-toolkits/py-kde
+py-kenosis	ports/net/py-kenosis
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
 py-ldap2	ports/net/py-ldap2
