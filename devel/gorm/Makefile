@@ -10,8 +10,8 @@ PORTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
-DISTNAME=	Gorm-${PORTVERSION}
 MASTER_SITE_SUBDIR=	dev-apps
+DISTNAME=	Gorm-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Graphical Object Relationship Modeller
@@ -23,7 +23,7 @@ USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
-MAKEFILE=	
+MAKEFILE=
 ALL_TARGET=
 
 .include <bsd.port.mk>
