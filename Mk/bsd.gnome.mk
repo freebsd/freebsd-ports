@@ -292,7 +292,7 @@ atspi_LIB_DEPENDS=	spi.8:${PORTSDIR}/x11-toolkits/at-spi
 atspi_DETECT=		${X11BASE}/libdata/pkgconfig/cspi-1.0.pc
 atspi_USE_GNOME_IMPL=gail libbonobo
 
-libgailgnome_RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/modules/libgail-gnome.so
+libgailgnome_RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/modules/libgail-gnome.so:${PORTSDIR}/x11-toolkits/libgail-gnome
 libgailgnome_DETECT=		${X11BASE}/libdata/pkgconfig/libgail-gnome.pc
 libgailgnome_USE_GNOME_IMPL=	libgnomeui atspi
 
