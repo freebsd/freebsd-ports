@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	 \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Unicode/CharName.pm:${PORTSDIR}/converters/p5-Unicode-String
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PORTCOMMENT="Set of programs to process TV (tvguide) listings in XML format"
+PORTCOMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
 IS_INTERACTIVE=	yes
 USE_REINPLACE=	yes
