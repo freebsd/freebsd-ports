@@ -10,6 +10,18 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040314:
+	USE_LIBTOOL, USE_AUTOCONF, and USE_AUTOMAKE are now considered
+	deprecated, and will be removed on or around June 1st 2004.
+	All ports should now choose the specific version of the tool,
+	using USE_LIBTOOL_VER, USE_AUTOCONF_VER, and USE_AUTOMAKE_VER.
+	The old "system default" behavior can be written as follows:
+
+	Old			New
+	USE_LIBTOOL=yes		USE_LIBTOOL_VER=13
+	USE_AUTOCONF=yes	USE_AUTOCONF_VER=213
+	USE_AUTOMAKE=yes	USE_AUTOMAKE_VER=14
+
 20040304:
 	New variable MASTER_SITE_SOURCEFORGE_EXTENDED. It has the
 	ten official sourceforge.net download mirrors, whereas
