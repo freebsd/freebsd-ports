@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	soundtracker
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.5
 CATEGORIES=	audio gnome
 MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.5/
 
