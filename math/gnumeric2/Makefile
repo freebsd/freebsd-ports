@@ -30,7 +30,8 @@ USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-guile --with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}"
+		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
+		DEFS="-I${X11BASE}/include/gal-2-0"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
