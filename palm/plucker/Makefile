@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plucker
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	palm www
 MASTER_SITES=	http://downloads.plkr.org/${PORTVERSION}/ \
 		http://downloads.hideho.org/${PORTNAME}/${PORTVERSION}/
@@ -31,6 +31,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		plucker-build.1 plucker-decode.1 plucker-dump.1
 FIND?=		find
 NO_BUILD=	yes
+
+MYPORTDOCS=	AUTHORS BUGREPORT CREDITS ChangeLog FAQ NEWS README REQUIREMENTS TODO
 
 .include <bsd.port.pre.mk>
 
@@ -70,7 +72,9 @@ do-install:
 .for F in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/parser/${F} ${MAN1PREFIX}/man/man1
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/[A-Z]* ${DOCSDIR}
+.for F in ${MYPORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/manual
 .endif
 
