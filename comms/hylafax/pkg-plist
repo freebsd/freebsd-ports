@@ -128,9 +128,9 @@ sbin/xferfaxstats
 %%PORTDOCS%%share/doc/hylafax/overview.html
 %%PORTDOCS%%share/doc/hylafax/sam.gif
 %%PORTDOCS%%share/doc/hylafax/sam.html
-%%PORTDOCS%%share/doc/hylafax/setup.html
 %%PORTDOCS%%share/doc/hylafax/setup-advanced.html
 %%PORTDOCS%%share/doc/hylafax/setup-client.html
+%%PORTDOCS%%share/doc/hylafax/setup.html
 %%PORTDOCS%%share/doc/hylafax/source.html
 %%PORTDOCS%%share/doc/hylafax/toc.html
 %%PORTDOCS%%share/doc/hylafax/troubleshooting.html
@@ -184,7 +184,7 @@ hylafax/bin/archive
 hylafax/bin/faxrcvd
 hylafax/bin/mkcover
 hylafax/bin/notify
-hylafax/bin/notify.awk
+hylafax/bin/notify-4.1
 @unexec if [ -f %D/hylafax/bin/pdf2fax ]; then rm %D/hylafax/bin/pdf2fax; fi
 hylafax/bin/pdf2fax.gs
 hylafax/bin/pcl2fax
@@ -194,10 +194,13 @@ hylafax/bin/ps2fax.dps
 hylafax/bin/ps2fax.gs
 hylafax/bin/ps2fax.imp
 hylafax/bin/tiff2fax
+hylafax/bin/tiff2pdf
 hylafax/bin/wedged
 @exec mkdir %D/hylafax/client
 @exec chown uucp:dialer %D/hylafax/client
 @exec chmod 0755 %D/hylafax/client
+hylafax/config/agere-mp-2
+hylafax/config/agere-mp-21
 hylafax/config/att-dataport
 hylafax/config/att-dataport-2
 hylafax/config/att-dataport-2.0
@@ -225,6 +228,7 @@ hylafax/config/hayes
 hylafax/config/intel-400e
 hylafax/config/lucent
 hylafax/config/lucent-isa
+hylafax/config/lucent-mt-10
 hylafax/config/lucent-mt-2
 hylafax/config/lucent-mt-20
 hylafax/config/lucent-mt-21
@@ -244,6 +248,7 @@ hylafax/config/rockwell-k56
 hylafax/config/rockwell-rc
 hylafax/config/sierra
 hylafax/config/skel
+hylafax/config/t38modem
 hylafax/config/telebit-qblazer
 hylafax/config/telebit-t3000
 hylafax/config/telebit-wb
