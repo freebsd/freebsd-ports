@@ -7,8 +7,6 @@ bin/gensym.pl
 bin/mapconv
 bin/mktable
 bin/tcpsockets.pl
-man/man6/crossfire.6.gz
-man/man6/crossedit.6.gz
 lib/crossfire/fonts/crossfire.pcf
 lib/crossfire/fonts/fonts.dir
 lib/crossfire/lib/README

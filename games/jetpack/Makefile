@@ -3,7 +3,7 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1996/11/18 11:24:42 asami Exp $
+# $Id: Makefile,v 1.16 1997/01/03 09:36:43 obrien Exp $
 #
 
 DISTNAME=	jetpack
@@ -16,6 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	PREFIX=${PREFIX} -f
+MAN6=		jetpack.6
 
 post-install:
 	@/usr/sbin/chown games ${PREFIX}/bin/jetpack

@@ -3,7 +3,7 @@
 # Date created:				12 Jul 1996
 # Whom:					searle
 #
-# $Id: Makefile,v 1.2 1996/11/18 10:35:57 asami Exp $
+# $Id: Makefile,v 1.3 1997/05/28 05:31:23 fenner Exp $
 #
 
 DISTNAME=	flying-6.20
@@ -15,5 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	searle@longacre.demon.co.uk
 
 USE_IMAKE=	yes
+MAN1=		flying.1
 
 .include <bsd.port.mk>

@@ -2,10 +2,6 @@ bin/imaze
 bin/ninja
 bin/genlab
 bin/imazesrv
-man/man6/imaze.6.gz
-man/man6/ninja.6.gz
-man/man6/genlab.6.gz
-man/man6/imazesrv.6.gz
 lib/imaze/labs/10x10.lab
 lib/imaze/labs/12x12.lab
 lib/imaze/labs/15x15.lab
