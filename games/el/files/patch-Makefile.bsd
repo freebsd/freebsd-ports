@@ -1,0 +1,23 @@
+--- Makefile.bsd.orig	Mon Nov  1 00:30:24 2004
++++ Makefile.bsd	Sat Jan 29 19:06:27 2005
+@@ -2,7 +2,7 @@
+ 
+ # tune these for your setup & compile options
+ OPTIONS=-DBSD -DELC -I/usr/X11R6/include
+-PLATFORM=-march=i686
++#PLATFORM=-march=i686
+ XDIR=-L/usr/X11R6/lib
+ 
+ # basic compiling and linking - rarely changed
+@@ -24,9 +24,9 @@
+ 	new_actors.o new_character.o	\
+ 	options.o	\
+ 	particles.o paste.o pathfinder.o pm_log.o	\
+-	questlog.o reflection.o	\
++	questlog.o reflection.o rules.o	\
+ 	shadows.o sound.o spells.o stats.o	\
+-	text.o textures.o tile_map.o translate.o trade.o	\
++	text.o textures.o tile_map.o timers.o translate.o trade.o	\
+ 	weather.o widgets.o
+ 
+ el.x86.bsd.bin: $(OBJS)
