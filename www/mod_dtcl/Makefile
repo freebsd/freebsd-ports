@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	mod_dtcl
-PORTVERSION=	0.11.5
+PORTVERSION=	0.12.0
 CATEGORIES=	www tcl83
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 
 MAINTAINER=	mi@aldan.algebra.com
-
-BROKEN=		"Does not compile"
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
