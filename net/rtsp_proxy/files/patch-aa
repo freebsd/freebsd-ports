@@ -15,7 +15,7 @@
 +
 +freebsd:	$(NAME)
 +$(NAME):	$(SRC) $(HDR)
-+	$(CC) $(CFLAGS) $(BSDFLAGS) $(SRC) -o $(NAME) -lc_r
++	$(CC) $(CFLAGS) $(BSDFLAGS) $(SRC) -o $(NAME) -pthread
  
  sgi:	$(NAME).sgi
  $(NAME).sgi:	$(SRC) $(HDR)
