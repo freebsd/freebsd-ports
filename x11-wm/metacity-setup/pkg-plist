@@ -1,2 +1,3 @@
 bin/metacity-setup
-share/gnome/metacity-setup/pixmaps/Metacity-Setup-Icon2.png
+share/gnome/control-center-2.0/capplets/metacity-setup.desktop
+share/gnome/pixmaps/metacity-setup-icon.png
