@@ -69,6 +69,7 @@ share/gnome/rhythmbox/art/rhythmbox-album.png
 share/gnome/rhythmbox/art/rhythmbox-audiocd.png
 share/gnome/rhythmbox/art/rhythmbox-automatic-playlist.png
 share/gnome/rhythmbox/art/rhythmbox-dnd.png
+share/gnome/rhythmbox/art/rhythmbox-ipod.png
 share/gnome/rhythmbox/art/rhythmbox-iradio.png
 share/gnome/rhythmbox/art/rhythmbox-library.png
 share/gnome/rhythmbox/art/rhythmbox-next.png
@@ -93,25 +94,19 @@ share/gnome/rhythmbox/art/rhythmbox-volume-medium.png
 share/gnome/rhythmbox/art/rhythmbox-volume-min.png
 share/gnome/rhythmbox/art/rhythmbox-volume-mute.png
 share/gnome/rhythmbox/art/rhythmbox-volume-zero.png
-share/gnome/rhythmbox/glade/buffering-dialog.glade
 share/gnome/rhythmbox/glade/create-playlist.glade
 share/gnome/rhythmbox/glade/druid.glade
 share/gnome/rhythmbox/glade/general-prefs.glade
 share/gnome/rhythmbox/glade/library-prefs.glade
 share/gnome/rhythmbox/glade/load-failure.glade
+share/gnome/rhythmbox/glade/song-info-multiple.glade
 share/gnome/rhythmbox/glade/song-info.glade
 share/gnome/rhythmbox/glade/station-new.glade
 share/gnome/rhythmbox/glade/station-properties.glade
 share/gnome/rhythmbox/glade/uri.glade
 share/gnome/rhythmbox/iradio-initial.pls
-share/gnome/rhythmbox/node-views/rb-node-view-albums.xml
-share/gnome/rhythmbox/node-views/rb-node-view-artists.xml
-share/gnome/rhythmbox/node-views/rb-node-view-cdaudio.xml
-share/gnome/rhythmbox/node-views/rb-node-view-genres.xml
-share/gnome/rhythmbox/node-views/rb-node-view-iradio-genres.xml
-share/gnome/rhythmbox/node-views/rb-node-view-iradio-stations.xml
-share/gnome/rhythmbox/node-views/rb-node-view-songs.xml
 share/locale/am/LC_MESSAGES/rhythmbox.mo
+share/locale/ar/LC_MESSAGES/rhythmbox.mo
 share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/bg/LC_MESSAGES/rhythmbox.mo
@@ -121,18 +116,26 @@ share/locale/cy/LC_MESSAGES/rhythmbox.mo
 share/locale/da/LC_MESSAGES/rhythmbox.mo
 share/locale/de/LC_MESSAGES/rhythmbox.mo
 share/locale/el/LC_MESSAGES/rhythmbox.mo
+share/locale/en_CA/LC_MESSAGES/rhythmbox.mo
+share/locale/en_GB/LC_MESSAGES/rhythmbox.mo
 share/locale/es/LC_MESSAGES/rhythmbox.mo
+share/locale/et/LC_MESSAGES/rhythmbox.mo
 share/locale/fi/LC_MESSAGES/rhythmbox.mo
 share/locale/fr/LC_MESSAGES/rhythmbox.mo
 share/locale/ga/LC_MESSAGES/rhythmbox.mo
+share/locale/hr/LC_MESSAGES/rhythmbox.mo
+share/locale/hu/LC_MESSAGES/rhythmbox.mo
 share/locale/id/LC_MESSAGES/rhythmbox.mo
 share/locale/it/LC_MESSAGES/rhythmbox.mo
 share/locale/ja/LC_MESSAGES/rhythmbox.mo
 share/locale/ko/LC_MESSAGES/rhythmbox.mo
+share/locale/lt/LC_MESSAGES/rhythmbox.mo
 share/locale/lv/LC_MESSAGES/rhythmbox.mo
+share/locale/mn/LC_MESSAGES/rhythmbox.mo
 share/locale/ms/LC_MESSAGES/rhythmbox.mo
 share/locale/nl/LC_MESSAGES/rhythmbox.mo
 share/locale/no/LC_MESSAGES/rhythmbox.mo
+share/locale/pa/LC_MESSAGES/rhythmbox.mo
 share/locale/pl/LC_MESSAGES/rhythmbox.mo
 share/locale/pt/LC_MESSAGES/rhythmbox.mo
 share/locale/pt_BR/LC_MESSAGES/rhythmbox.mo
@@ -142,9 +145,10 @@ share/locale/sr/LC_MESSAGES/rhythmbox.mo
 share/locale/sr@Latn/LC_MESSAGES/rhythmbox.mo
 share/locale/sv/LC_MESSAGES/rhythmbox.mo
 share/locale/tr/LC_MESSAGES/rhythmbox.mo
+share/locale/uk/LC_MESSAGES/rhythmbox.mo
 share/locale/vi/LC_MESSAGES/rhythmbox.mo
+share/locale/zh_CN/LC_MESSAGES/rhythmbox.mo
 share/locale/zh_TW/LC_MESSAGES/rhythmbox.mo
-@dirrm share/gnome/rhythmbox/node-views
 @dirrm share/gnome/rhythmbox/glade
 @dirrm share/gnome/rhythmbox/art
 @dirrm share/gnome/rhythmbox
