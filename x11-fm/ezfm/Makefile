@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ezfm
-PORTVERSION= 	0.4
+PORTVERSION= 	0.4.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
-DISTNAME=	EZFM-${PORTVERSION}-src
+DISTNAME=	EZFM-0.4-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,11 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		EZ.1:${PORTSDIR}/graphics/EZWGL
 
-WRKSRC=		${WRKDIR}/EZFM-0.4
+WRKSRC=		${WRKDIR}/EZFM-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-
-BROKEN=		"Distfile changed: patches no longer apply"
 
 MAN1=		ezfm.1
 

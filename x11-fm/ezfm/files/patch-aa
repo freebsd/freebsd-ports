@@ -1,67 +1,35 @@
---- Makefile	Wed Dec  9 23:31:06 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue Mar 16 17:13:19 1999
-@@ -1,36 +1,49 @@
--#-------------------------------------------------------------------------------
+--- Makefile.orig	Thu Jul 15 00:31:35 1999
++++ Makefile	Sat May 27 14:40:42 2000
+@@ -2,7 +2,10 @@
  #
--# Where to install ezfm files
-+# X11 base directory
-+#
-+X11BASE?=/usr/X11R6
-+
-+#
-+# Local packages directory
+ # Where to install ezfm files
  #
 -DEST_DIR=/usr/local
 +LOCALBASE?=/usr/local
-+
++X11BASE?=/usr/X11R6
++PREFIX?=${LOCALBASE}
++DEST_DIR=${PREFIX}
  #
-+# Installation prefix
-+#
-+PREFIX?=/usr/X11R6
-+
-+#-------------------------------------------------------------------------------
-+#
-+# Where to install ezfm files
  #
--EZFM_MAGIC=$(DEST_DIR)/lib/ezfm/ezfmMagic
--EZFM_EXTENSION=$(DEST_DIR)/lib/ezfm/ezfmExtension
-+EZFM_MAGIC=$(PREFIX)/share/ezfm/ezfmMagic
-+EZFM_EXTENSION=$(PREFIX)/share/ezfm/ezfmExtension
- #
- # Where to install default initialization file
- # this file is consulted if ~/.ezfmrc $EZFMRC
- # are not found.
- #
--EZFM_RC=$(DEST_DIR)/lib/ezfm/ezfmrc
-+EZFM_RC=$(PREFIX)/share/ezfm/ezfmrc
- 
- #
- # Where to install the icons
- #
--EZFM_ICONS=$(DEST_DIR)/lib/ezfm/ezfmIcons
-+EZFM_ICONS=$(PREFIX)/share/ezfm/ezfmIcons
- #
- # Where to install the binary
- #
--BIN=$(DEST_DIR)/bin
-+BIN=$(PREFIX)/bin
+ EZFM_MAGIC=$(DEST_DIR)/lib/ezfm/ezfmMagic
+@@ -25,12 +28,13 @@
  #
  #----------------------------------------------------------------------------------
  #
--CC= gcc  -O2 -DLINUX -I../include
-+CC?= cc
+-CC= gcc  -g -DLINUX -I../include
++CC?= gcc  -g -DLINUX -I../include
 +CFLAGS+= -I$(LOCALBASE)/include -I$(X11BASE)/include
  
  #
  #----------------------------------------------------------------------------------
--LIBS = libfile.a -L../EZWGL/lib -lEZ -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
+-LIBS = libfile.a -L../EZWGL/lib -lEZ -L/usr/X11R6/lib -lX11 -lXext  -ljpeg -ltiff -lpng -lz -lm  -lc
 -STATICLIBS = libfile.a /usr/local/lib/libEZ.a -L/usr/X11R6/lib -lX11 -lXext  -lm  -lc
-+LIBS = libfile.a -lEZ -ljpeg -L$(LOCALBASE)/lib -L$(X11BASE)/lib -lX11 -lXext  -lm  -lc
-+STATICLIBS = libfile.a $(LOCALBASE)/lib/libEZ.a -L$(X11BASE)/lib -lX11 -lXext  -lm  -lc
++LIBS = libfile.a -L../EZWGL/lib -lEZ -L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext  -ljpeg -ltiff -lpng -lz -lm  -lc
++STATICLIBS = libfile.a ${LOCALBASE}/lib/libEZ.a -L${X11BASE}/lib -lX11 -lXext  -lm  -lc
  
  SRC= action.c folder.c atoms.c clientMessage.c main.c icons.c items.c finfo.c \
       signal.c info.c infoBtn.c printer.c misc.c mbtnFile.c mbtnView.c mbtnHelp.c popup.c\
-@@ -45,10 +58,10 @@
+@@ -45,10 +49,10 @@
  all: ezfm  ezfmMagic
  
  ezfm: libfile.a $(OBJECTS)
@@ -74,7 +42,7 @@
  
  
  install: ezfm ezfmMagic ezfmExtension ezfmrc ezfmIcons
-@@ -62,7 +75,7 @@
+@@ -62,7 +66,7 @@
  	cp ezfm $(BIN)
  
  libfile.a:
@@ -83,7 +51,7 @@
  	- ranlib libfile.a
  
  ezfmMagic:
-@@ -79,13 +92,13 @@
+@@ -79,13 +83,13 @@
  	$(RM)  $(OBJECTS) ezfm
   
  .c.o:
