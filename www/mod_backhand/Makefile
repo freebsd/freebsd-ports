@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cnds.jhu.edu/pub/backhand/
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

@@ -13,7 +13,7 @@ MASTER_SITES=	http://jabberd.jabberstudio.org/downloads/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

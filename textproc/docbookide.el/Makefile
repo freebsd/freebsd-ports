@@ -1,6 +1,6 @@
 # New ports collection makefile for:	docbookide
 # Date created:		2 July 2002
-# Whom:			Sean Chittenden <sean@chittenden.org>
+# Whom:			Sean Chittenden <seanc@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	textproc elisp
 MASTER_SITES=	http://nwalsh.com/emacs/docbookide/
 DISTNAME=	docbookide01
 
-MAINTAINER=	sean@chittenden.org
+MAINTAINER=	seanc@FreeBSD.org
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/docbookide
