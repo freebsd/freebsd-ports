@@ -7,7 +7,7 @@
 
 PORTNAME=	libglade2
 PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.5
@@ -48,5 +48,8 @@ post-patch:
 	@${REINPLACE_CMD} -E 's/in (python.*)+ none/in none/' \
 		${WRKSRC}/configure
 .endif
+
+post-install:
+	${MKDIR} ${PREFIX}/lib/libglade/2.0
 
 .include <bsd.port.mk>
