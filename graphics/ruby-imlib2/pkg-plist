@@ -1,0 +1,16 @@
+%%RUBY_SITEARCHLIBDIR%%/imlib2.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/checkerboard.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/checkerboard2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/fonts/20thcent.ttf
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/images/bill_gates.jpg
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/images/clown.jpg
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/test_font.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/imlib2/test_imlib2.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/imlib2/fonts
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/imlib2/images
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/imlib2
+%%PORTDOCS%%%%RUBY_DOCDIR%%/imlib2/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/imlib2/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/imlib2/TODO
+%%PORTDOCS%%%%RUBY_DOCDIR%%/imlib2/api.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/imlib2
