@@ -1,0 +1,6 @@
+%%RUBY_SITELIBDIR%%/mutexm.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mutexm/mutexm_test.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mutexm/ja/mutexm.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/mutexm/ja/mutexm.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mutexm/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/mutexm
