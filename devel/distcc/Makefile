@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.12
+PORTVERSION=	2.12.1
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
