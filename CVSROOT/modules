@@ -369,6 +369,7 @@ arping		ports/net/arping
 arprelease	ports/net/arprelease
 arpwatch	ports/net/arpwatch
 arrow		ports/mail/arrow
+arson		ports/sysutils/arson
 artemis		ports/biology/artemis
 arts++		ports/net/arts++
 artwiz-fonts	ports/x11-fonts/artwiz-fonts
