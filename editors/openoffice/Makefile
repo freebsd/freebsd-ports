@@ -9,7 +9,7 @@ PORTNAME=	openoffice
 PORTVERSION=	641d
 CATEGORIES=	editors
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
-		http://sf1.mirror.openoffice.org/641c/ \
+		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
 DISTFILES=	oo_${PORTVERSION}_src.tar.bz2 gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
@@ -21,7 +21,7 @@ BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
-BROKEN=		'Work in progress -- does not build yet till the end'
+BROKEN=		'Work in progress -- does build - but does not start yet'
 
 USE_XLIB=	yes
 USE_BZIP2=	yes
@@ -39,6 +39,7 @@ JAVAVM=         ${JDK13DIR}/bin/java
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WRKSRC=	${WRKDIR}/oo_${PORTVERSION}_src/config_office
+LD_PATH=	${WRKSRC}/../vos/unxfbsd.pro/lib:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib
 
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
 			--with-jdk-home=${JDK13DIR} \
@@ -56,15 +57,6 @@ pre-fetch:
 	@ ${ECHO}
 	@ ${FALSE}
 .endif
-.if ${OSVERSION} < 500031
-	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION}
-	@${ECHO}
-	@${ECHO} Openoffice depends on OS-Fixes which are
-	@${ECHO} not yet available.
-	@${FALSE}
-.endif
-
 pre-extract:
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
@@ -98,7 +90,14 @@ do-build:
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		tcsh -c 'source FreeBSDEnv.Set && dmake'
 
+pre-install:
+	${SH} -c "cd ${WRKSRC}/../instsetoo/*.pro/01/normal && \
+		${SED} -e 's#@@PREFIX@@#${PREFIX}#g' \
+		< ${FILESDIR}/oo_setup.resp > oo_setup.resp"
+
 do-install:
-	@cd ${WRKSRC}/.. && ./setup -r:oo_setup.resp
+	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
+		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
 
 .include <bsd.port.post.mk>
