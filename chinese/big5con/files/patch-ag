@@ -1,0 +1,22 @@
+--- big5con.cfg.orig	Sun Apr  2 18:43:27 2000
++++ big5con.cfg	Sun Apr  2 18:43:42 2000
+@@ -157,7 +157,7 @@
+ 	1200
+ # Mouse device file name
+ MouseDev:
+-	/dev/mouse
++	/dev/sysmouse
+ 
+ # Use hard scroll
+ HardScroll:
+--- big5con.mk.orig	Sun Apr  2 18:43:25 2000
++++ big5con.mk	Sun Apr  2 18:43:35 2000
+@@ -29,7 +29,7 @@
+ 	  -DXCIN_DIR=\"$(XCIN_DIR)\" $(ALT_META) $(EXTRA_OPTS)
+ CC	= gcc
+ #CFLAGS  = -O2 -m486 $(OPTS)
+-CFLAGS  += -O2 $(OPTS)
++CFLAGS  += $(OPTS)
+ LD      = gcc $(CFLAGS)
+ RM      = rm -f
+ INSTALL = install -c
