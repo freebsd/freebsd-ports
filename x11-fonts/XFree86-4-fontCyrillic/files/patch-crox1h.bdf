@@ -1,0 +1,81 @@
+
+$FreeBSD$
+
+--- crox1h.bdf	2002/08/26 18:16:12	1.1
++++ crox1h.bdf	2002/08/26 20:49:20
+@@ -2654,25 +2654,20 @@
+ 20
+ 00
+ ENDCHAR
+-STARTCHAR sterling
++STARTCHAR cyr-ie
+ ENCODING 163
+-SWIDTH 461 0
+-DWIDTH 6 0
+-BBX 6 13 0 -2
++SWIDTH 468 0
++DWIDTH 5 0
++BBX 5 8 1 0
+ BITMAP
++50
+ 00
+-00
+-30
+-48
+-40
+-20
+ 70
+-20
+-40
+-40
+-7c
+-00
+-00
++88
++F8
++80
++88
++70
+ ENDCHAR
+ STARTCHAR currency
+ ENCODING 164
+@@ -2974,25 +2969,23 @@
+ 00
+ 00
+ ENDCHAR
+-STARTCHAR threesuperior
++STARTCHAR cyr-Ie
+ ENCODING 179
+-SWIDTH 230 0
+-DWIDTH 3 0
+-BBX 3 13 0 -2
++SWIDTH 468 0
++DWIDTH 5 0
++BBX 5 11 1 0
+ BITMAP
++D8
+ 00
+-00
+-c0
+-20
+-40
+-20
+-c0
+-00
+-00
+-00
+-00
+-00
+-00
++F8
++80
++80
++80
++F0
++80
++80
++80
++F8
+ ENDCHAR
+ STARTCHAR acute
+ ENCODING 180
