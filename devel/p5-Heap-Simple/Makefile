@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Heap-Simple
-PORTVERSION=	0.06
+PORTVERSION=	0.09
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Heap
@@ -24,5 +24,8 @@ MAN3=		Heap::Simple.3
 .if ${PERL_LEVEL} < 500600
 IGNORE=		Uses ??{} in regexps, which came with perl5.6, install lang/perl5 or lang/perl5.8
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,21 +1,21 @@
 A heap is a partially sorted structure where it's always easy to extract the
-smallest element. If the collection of elements is changing dynamically, a
-heap has less overhead than keeping the collection fully sorted.
+smallest element. If the collection of elements is changing dynamically, a heap
+has less overhead than keeping the collection fully sorted.
 
 The order in which equal elements get extracted is unspecified.
 
-The main order relations supported by this module are "<" (numeric compare)
-and "lt" (string compare).
-
-The module allows you to manage data where the elements are of several
-allowed types, in particular array references, hash references, objects or
-just the keys themselves.
+The main order relations supported by this module are "<" (numeric compare) and
+"lt" (string compare).
 
 The internals of the module do nothing with the elements inserted except
 inspecting the key. This means that if you for example store a blessed object,
-that's what you will get back on extract. It's also ok to keep references to
-the elements around and make changes to them while they are in the heap as
-long as you don't change the key.
+that's what you will get back on extract. It's also ok to keep references to the
+elements around and make changes to them while they are in the heap as long as
+you don't change the key.
+
+Heap::Simple itself is just a loader for the code that will actually implement
+the functionality mentioned above. You will need to install something like
+Heap::Simple::XS or Heap::Simple::Perl to be able to actually do anything.
 
 WWW: http://search.cpan.org/dist/Heap-Simple/
 Author: Ton Hospel <cpan@ton.iguana.be>
