@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Mar 21 07:55:41 2004
-+++ configure.in	Sun Apr  4 15:36:24 2004
+--- configure.in.orig	Fri Jul 16 00:52:52 2004
++++ configure.in	Sun Aug 29 22:09:21 2004
 @@ -21,9 +21,9 @@
  dnl ---------------------------------------------------
  dnl Check standard libraries
@@ -12,28 +12,27 @@
  
  dnl ---------------------------------------------------
  dnl Find X
-@@ -52,9 +52,14 @@
- 
- FLTK_EXTRA=
+@@ -50,9 +50,13 @@
+ dnl Find FLTK
+ dnl
  
 +saved_LIBS="${LIBS}"
 +
 +LIBS="$LIBS -lGL"
 +
+ have_fltk=false
  AC_CHECK_LIB(fltk,main,LIBFLTK="-lfltk")
--AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" FLTK_EXTRA=show])
-+AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL -lstdc++" FLTK_EXTRA=show])
- 
-+LIBS="${saved_LIBS}"
+-AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" have_fltk=true])
++AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL -lstdc++" have_fltk=true])
+ AM_CONDITIONAL(BUILD_SHOW, test x$have_fltk = xtrue)
  
  dnl ---------------------------------------------------
- dnl Find libtiff
-@@ -62,7 +67,7 @@
+@@ -61,7 +65,7 @@
  
- saved_LIBS="${LIBS}"
+ saved_LIBS="$LIBS"
  
 -AC_CHECK_HEADER(tiffio.h,,AC_MSG_ERROR([tiffio.h not found]))
 +dnl AC_CHECK_HEADER(tiffio.h,,AC_MSG_ERROR([tiffio.h not found]))
  AC_CHECK_LIB(tiff,TIFFOpen,,[AC_MSG_ERROR([libtiff not found])],)
  
- TIFF_LIBS="${LIBS}"
+ TIFF_LIBS="$LIBS"
