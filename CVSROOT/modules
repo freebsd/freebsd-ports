@@ -8047,6 +8047,7 @@ p5-Term-Shell	ports/devel/p5-Term-Shell
 p5-Term-Size	ports/devel/p5-Term-Size
 p5-Test-Builder-Tester	ports/devel/p5-Test-Builder-Tester
 p5-Test-Class	ports/devel/p5-Test-Class
+p5-Test-ClassAPI	ports/devel/p5-Test-ClassAPI
 p5-Test-Cmd	ports/devel/p5-Test-Cmd
 p5-Test-Deep	ports/devel/p5-Test-Deep
 p5-Test-Differences	ports/devel/p5-Test-Differences
