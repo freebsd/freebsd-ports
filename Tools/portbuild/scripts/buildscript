@@ -158,6 +158,8 @@ else
 ./tmp/*
 ./etc/make.conf.bak
 ./etc/make.conf
+./work/*
+./compat/linux/proc
 EOF
   mtree -X /tmp/mtree.exclude -xcn -k uid,gid,mode -p / > /tmp/mtree
   cd $dir
@@ -167,7 +169,7 @@ EOF
     prefix=$(make -V PREFIX)
     del_pkg ${pkgname}
 
-    mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v '^(usr/local/var|usr/local/www/|usr/X11R6/lib/X11/xserver/SecurityPolicy|usr/local/share/nls/POSIX|usr/local/share/nls/en_US.US-ASCII|etc/shells.bak|etc/services|compat |usr/X11R6 |etc/manpath.config|usr/local/info/dir)' > /tmp/list3
+    mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v '^(usr/local/var|usr/local/www/|usr/X11R6/lib/X11/xserver/SecurityPolicy|usr/local/share/nls/POSIX|usr/local/share/nls/en_US.US-ASCII|etc/services|compat |usr/X11R6 |etc/manpath.config|etc/.*.bak|usr/local/info/dir|usr/X11R6/lib/X11/fonts/.*/fonts\.|usr/X11R6/(include|share)/pixmaps|usr/local/lib/xemacs|usr/(X11R6|local)/man/..( |/man. )|usr/X11R6/lib/X11/fonts/TrueType )' > /tmp/list3
 
     if [ -s /tmp/list3 ]; then
       cd /
