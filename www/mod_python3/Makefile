@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	2.7.2
-PORTREVISION=	2
+PORTVERSION=	2.7.3
 CATEGORIES=	www python
 MASTER_SITES=	http://www.python.org/ftp/python/${PYTHON_VERSION:S/python//g}/ \
 		http://www.modpython.org/dist/ \
