@@ -6,7 +6,7 @@
    }
 +#ifdef HAVE_MKSTEMP
 +  strcpy(tmpname,"/tmp/KMid.XXXXXXXX");
-+  int fd=mkstemps(tmpname);
++  int fd=mkstemp(tmpname);
 +  if (fd<0)
 +  {
 +    pclose(infile);
