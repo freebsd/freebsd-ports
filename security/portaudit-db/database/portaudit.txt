@@ -23,3 +23,4 @@ ircd-hybrid-ru<=7.1_2|http://lists.netsys.com/pipermail/full-disclosure/2004-Jun
 {,??-}aspell<=0.50.5_2|http://nettwerked.mg2.org/advisories/wlc http://marc.theaimsgroup.com/?l=bugtraq&m=108761564006503&w=2|Buffer overflow in word-list-compress|b7b03bab-c296-11d8-bfb2-000bdb1444a4
 linux-aspell<=0.50.4.1|http://nettwerked.mg2.org/advisories/wlc http://marc.theaimsgroup.com/?l=bugtraq&m=108761564006503&w=2|Buffer overflow in word-list-compress|b7b03bab-c296-11d8-bfb2-000bdb1444a4
 bnbt<7.5b3|http://www.osvdb.org/6336|BNBT Authorization Header DoS|0f9b3542-c35f-11d8-8898-000d6111a684
+scorched3d<0.37.2|http://marc.theaimsgroup.com/?l=bugtraq&m=108152473130133&w=2 http://www.osvdb.org/5086 http://www.freebsd.org/cgi/query-pr.cgi?pr=67541|Scorched 3D server chat box format string vulnerability|36808860-c363-11d8-8898-000d6111a684
