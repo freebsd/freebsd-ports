@@ -23,6 +23,8 @@ DISTFILES?=	VTK-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 MAINTAINER=	ko@irfu.se
 COMMENT?=	The Visualization Toolkit shared libs
 
+BROKEN=		Unfetchable
+
 USE_REINPLACE=	yes
 
 LIBVER=		1

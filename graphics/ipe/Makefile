@@ -17,6 +17,8 @@ COMMENT=	Extensible drawing editor
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
+BROKEN=		Unfetchable
+
 USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

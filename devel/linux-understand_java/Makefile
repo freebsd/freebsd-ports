@@ -19,6 +19,8 @@ COMMENT=	Understand can parse a Java project helping reverse engineer it
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

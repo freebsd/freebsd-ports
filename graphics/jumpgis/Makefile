@@ -18,6 +18,8 @@ EXTRACT_ONLY=	jump-${PORTVERSION}.zip
 MAINTAINER=	boris@brooknet.com.au
 COMMENT=	A GUI based application for viewing and processing spatial data
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/jump
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 TARGET_DIR=	${PREFIX}/${PORTNAME}

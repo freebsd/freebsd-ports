@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Common API for XML Pull Parsing (XmlPull)
 
+BROKEN=		Unfetchable
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
 DISTNAME_PREFX=	${PORTNAME}_${PORTVERSION:S/./_/g}

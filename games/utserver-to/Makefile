@@ -24,6 +24,8 @@ COMMENT?=	Unreal Tournament mod Tactical Ops full server package for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/games/ut-server/System/ucc-bin:${UTSERVER_PORT}
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 USE_LINUX?=	yes

@@ -19,6 +19,8 @@ COMMENT=	A scientific data plotting package
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
+BROKEN=		Unfetchable
+
 ONLY_FOR_ARCHS=	i386 alpha
 NO_BUILD=	yes
 INSTALLS_SHLIB=	yes

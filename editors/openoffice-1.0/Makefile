@@ -26,6 +26,8 @@ DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 \
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
+BROKEN=		Unfetchable
+
 NO_LATEST_LINK=	yes
 FIND?=	/usr/bin/find
 CUT?=	/usr/bin/cut

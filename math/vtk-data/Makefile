@@ -10,6 +10,8 @@ DISTFILES=	VTKData-${PORTVERSION}-cvs${CVSDATE}.tar.gz
 
 COMMENT=	The Visualization Toolkit examples data
 
+BROKEN=		Unfetchable
+
 MASTERDIR=	${.CURDIR}/../vtk
 
 MD5_FILE=	${.CURDIR}/distinfo
