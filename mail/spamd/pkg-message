@@ -1,0 +1,9 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+In order to use spamd greylisting feature you have to have a mounted fdescfs(5)
+at /dev/fd.  This is done by adding:
+
+        fdescfs /dev/fd fdescfs rw 0 0
+
+to /etc/fstab.  You may need either a customised kernel, or kldload the fdescfs
+kernel module.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
