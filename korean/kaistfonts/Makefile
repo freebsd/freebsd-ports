@@ -16,6 +16,14 @@ DISTFILES=	kaist-newmj18.bdf.gz ks_philgi16.bdf.gz \
 MAINTAINER=	cjh@FreeBSD.org
 
 USE_X_PREFIX=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	DISTDIR=${DISTDIR} DISTFILES="${DISTFILES}"
@@ -31,4 +39,4 @@ do-extract:
 post-install:
 	${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

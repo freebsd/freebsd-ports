@@ -17,6 +17,13 @@ MAINTAINER=	cjh@FreeBSD.org
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 WRKSRC=		${WRKDIR}/pinetree.precomposed/bdf
 
 FONTS=		ptpR08 ptpR10 ptpR12 ptpR14 ptpR18 ptpR24 \
@@ -37,4 +44,4 @@ do-install:
 	done; \
 	mkfontdir ${PREFIX}/lib/X11/fonts/local
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

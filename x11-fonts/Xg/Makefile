@@ -16,4 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
+.include <bsd.port.post.mk>

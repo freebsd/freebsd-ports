@@ -24,7 +24,14 @@ DISTNAME=	pcemu1.01alpha
 
 MAINTAINER=	joerg@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 USE_XLIB=	yes
 MAKE_ENV=	FILESDIR=${FILESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

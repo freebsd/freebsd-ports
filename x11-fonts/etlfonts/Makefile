@@ -19,10 +19,17 @@ EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/*.gz
 
 post-install:
 	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

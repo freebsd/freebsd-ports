@@ -29,6 +29,13 @@ USE_XPM=	yes
 PREFIX=		${LOCALBASE}
 MAN6=		crossfire.6 crossedit.6
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 # Do you want to be able to rebuild documentation after installing the game
 # to produce Postscript documentation with colored icons ?! You have to go
 # into the workdir and to build everything manually.

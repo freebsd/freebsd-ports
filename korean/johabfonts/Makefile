@@ -15,9 +15,17 @@ DISTNAME=       hanterm304fonts
 MAINTAINER=	cjh@FreeBSD.org
 
 USE_IMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 NO_INSTALL_MANPAGES= yes
 
 pre-install:
 	-${MKDIR} ${PREFIX}/lib/X11/fonts/local
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
