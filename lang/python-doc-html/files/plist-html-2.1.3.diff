@@ -1,0 +1,597 @@
+--- pkg-plist_html	Wed May  2 21:01:35 2001
++++ pkg-plist_html_2.1.3	Thu Apr 11 07:41:22 2002
+@@ -1,6 +1,7 @@
+ share/doc/%%PYTHON_VERSION%%/about.html
+ share/doc/%%PYTHON_VERSION%%/acks.html
+ share/doc/%%PYTHON_VERSION%%/api/about.html
++share/doc/%%PYTHON_VERSION%%/api/abstract-buffer.html
+ share/doc/%%PYTHON_VERSION%%/api/abstract.html
+ share/doc/%%PYTHON_VERSION%%/api/api.css
+ share/doc/%%PYTHON_VERSION%%/api/api.html
+@@ -15,6 +16,7 @@
+ share/doc/%%PYTHON_VERSION%%/api/countingRefs.html
+ share/doc/%%PYTHON_VERSION%%/api/dictObjects.html
+ share/doc/%%PYTHON_VERSION%%/api/embedding.html
++share/doc/%%PYTHON_VERSION%%/api/example-cycle-support.html
+ share/doc/%%PYTHON_VERSION%%/api/exceptionHandling.html
+ share/doc/%%PYTHON_VERSION%%/api/exceptions.html
+ share/doc/%%PYTHON_VERSION%%/api/fileObjects.html
+@@ -26,6 +28,7 @@
+ share/doc/%%PYTHON_VERSION%%/api/includes.html
+ share/doc/%%PYTHON_VERSION%%/api/index.html
+ share/doc/%%PYTHON_VERSION%%/api/initialization.html
++share/doc/%%PYTHON_VERSION%%/api/instanceObjects.html
+ share/doc/%%PYTHON_VERSION%%/api/intObjects.html
+ share/doc/%%PYTHON_VERSION%%/api/intro.html
+ share/doc/%%PYTHON_VERSION%%/api/listObjects.html
+@@ -40,8 +43,11 @@
+ share/doc/%%PYTHON_VERSION%%/api/moduleObjects.html
+ share/doc/%%PYTHON_VERSION%%/api/newTypes.html
+ share/doc/%%PYTHON_VERSION%%/api/node15.html
+-share/doc/%%PYTHON_VERSION%%/api/node44.html
+-share/doc/%%PYTHON_VERSION%%/api/node45.html
++share/doc/%%PYTHON_VERSION%%/api/node35.html
++share/doc/%%PYTHON_VERSION%%/api/node36.html
++share/doc/%%PYTHON_VERSION%%/api/node67.html
++share/doc/%%PYTHON_VERSION%%/api/node68.html
++share/doc/%%PYTHON_VERSION%%/api/node69.html
+ share/doc/%%PYTHON_VERSION%%/api/noneObject.html
+ share/doc/%%PYTHON_VERSION%%/api/number-structs.html
+ share/doc/%%PYTHON_VERSION%%/api/number.html
+@@ -59,6 +65,7 @@
+ share/doc/%%PYTHON_VERSION%%/api/sequenceObjects.html
+ share/doc/%%PYTHON_VERSION%%/api/standardExceptions.html
+ share/doc/%%PYTHON_VERSION%%/api/stringObjects.html
++share/doc/%%PYTHON_VERSION%%/api/supporting-cycle-detection.html
+ share/doc/%%PYTHON_VERSION%%/api/threads.html
+ share/doc/%%PYTHON_VERSION%%/api/tupleObjects.html
+ share/doc/%%PYTHON_VERSION%%/api/typeObjects.html
+@@ -68,56 +75,15 @@
+ share/doc/%%PYTHON_VERSION%%/api/utilities.html
+ share/doc/%%PYTHON_VERSION%%/api/veryhigh.html
+ share/doc/%%PYTHON_VERSION%%/dist/about.html
+-share/doc/%%PYTHON_VERSION%%/dist/bdist-cmds.html
+-share/doc/%%PYTHON_VERSION%%/dist/build-clib-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/build-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/build-cmds.html
+-share/doc/%%PYTHON_VERSION%%/dist/build-ext-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/build-py-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/built-dist.html
+-share/doc/%%PYTHON_VERSION%%/dist/clean-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/concepts.html
+-share/doc/%%PYTHON_VERSION%%/dist/contents.html
+-share/doc/%%PYTHON_VERSION%%/dist/creating-dumb.html
+-share/doc/%%PYTHON_VERSION%%/dist/creating-rpms.html
+ share/doc/%%PYTHON_VERSION%%/dist/creating-wininst.html
+-share/doc/%%PYTHON_VERSION%%/dist/describing-extensions.html
+ share/doc/%%PYTHON_VERSION%%/dist/dist.css
+ share/doc/%%PYTHON_VERSION%%/dist/dist.html
+-share/doc/%%PYTHON_VERSION%%/dist/distutils-term.html
+-share/doc/%%PYTHON_VERSION%%/dist/examples.html
+-share/doc/%%PYTHON_VERSION%%/dist/extend-existing.html
+-share/doc/%%PYTHON_VERSION%%/dist/extending.html
+ share/doc/%%PYTHON_VERSION%%/dist/index.html
+-share/doc/%%PYTHON_VERSION%%/dist/install-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/install-data-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/install-lib-cmd.html
+-share/doc/%%PYTHON_VERSION%%/dist/install-scripts-cmd.html
+ share/doc/%%PYTHON_VERSION%%/dist/intro.html
+-share/doc/%%PYTHON_VERSION%%/dist/listing-modules.html
+-share/doc/%%PYTHON_VERSION%%/dist/listing-packages.html
+-share/doc/%%PYTHON_VERSION%%/dist/manifest-options.html
+-share/doc/%%PYTHON_VERSION%%/dist/manifest.html
+-share/doc/%%PYTHON_VERSION%%/dist/multiple-ext.html
+-share/doc/%%PYTHON_VERSION%%/dist/new-commands.html
+-share/doc/%%PYTHON_VERSION%%/dist/node11.html
+-share/doc/%%PYTHON_VERSION%%/dist/node12.html
+-share/doc/%%PYTHON_VERSION%%/dist/node13.html
+-share/doc/%%PYTHON_VERSION%%/dist/node14.html
+-share/doc/%%PYTHON_VERSION%%/dist/node28.html
+-share/doc/%%PYTHON_VERSION%%/dist/node45.html
+-share/doc/%%PYTHON_VERSION%%/dist/node46.html
+-share/doc/%%PYTHON_VERSION%%/dist/node47.html
+-share/doc/%%PYTHON_VERSION%%/dist/node48.html
+-share/doc/%%PYTHON_VERSION%%/dist/pure-mod.html
+-share/doc/%%PYTHON_VERSION%%/dist/pure-pkg.html
+-share/doc/%%PYTHON_VERSION%%/dist/python-terms.html
+-share/doc/%%PYTHON_VERSION%%/dist/reference.html
+ share/doc/%%PYTHON_VERSION%%/dist/sdist-cmd.html
+ share/doc/%%PYTHON_VERSION%%/dist/setup-config.html
+ share/doc/%%PYTHON_VERSION%%/dist/setup-script.html
+ share/doc/%%PYTHON_VERSION%%/dist/simple-example.html
+-share/doc/%%PYTHON_VERSION%%/dist/single-ext.html
+ share/doc/%%PYTHON_VERSION%%/dist/source-dist.html
+ share/doc/%%PYTHON_VERSION%%/doc/about.html
+ share/doc/%%PYTHON_VERSION%%/doc/classes.html
+@@ -131,18 +97,20 @@
+ share/doc/%%PYTHON_VERSION%%/doc/info-units.html
+ share/doc/%%PYTHON_VERSION%%/doc/latex-primer.html
+ share/doc/%%PYTHON_VERSION%%/doc/meta-info.html
+-share/doc/%%PYTHON_VERSION%%/doc/node10.html
+-share/doc/%%PYTHON_VERSION%%/doc/node11.html
+ share/doc/%%PYTHON_VERSION%%/doc/node12.html
+ share/doc/%%PYTHON_VERSION%%/doc/node13.html
+ share/doc/%%PYTHON_VERSION%%/doc/node14.html
+-share/doc/%%PYTHON_VERSION%%/doc/node17.html
+-share/doc/%%PYTHON_VERSION%%/doc/node18.html
++share/doc/%%PYTHON_VERSION%%/doc/node15.html
++share/doc/%%PYTHON_VERSION%%/doc/node16.html
+ share/doc/%%PYTHON_VERSION%%/doc/node19.html
+ share/doc/%%PYTHON_VERSION%%/doc/node2.html
+ share/doc/%%PYTHON_VERSION%%/doc/node20.html
++share/doc/%%PYTHON_VERSION%%/doc/node21.html
++share/doc/%%PYTHON_VERSION%%/doc/node22.html
+ share/doc/%%PYTHON_VERSION%%/doc/node3.html
++share/doc/%%PYTHON_VERSION%%/doc/node5.html
+ share/doc/%%PYTHON_VERSION%%/doc/node6.html
++share/doc/%%PYTHON_VERSION%%/doc/node8.html
+ share/doc/%%PYTHON_VERSION%%/doc/preamble-info.html
+ share/doc/%%PYTHON_VERSION%%/doc/references.html
+ share/doc/%%PYTHON_VERSION%%/doc/structured.html
+@@ -156,7 +124,10 @@
+ share/doc/%%PYTHON_VERSION%%/ext/contents.html
+ share/doc/%%PYTHON_VERSION%%/ext/cplusplus.html
+ share/doc/%%PYTHON_VERSION%%/ext/custom-interps.html
++share/doc/%%PYTHON_VERSION%%/ext/defining-new-types.html
+ share/doc/%%PYTHON_VERSION%%/ext/distributing.html
++share/doc/%%PYTHON_VERSION%%/ext/dnt-basics.html
++share/doc/%%PYTHON_VERSION%%/ext/dnt-type-methods.html
+ share/doc/%%PYTHON_VERSION%%/ext/dynamic-linking.html
+ share/doc/%%PYTHON_VERSION%%/ext/embedding.html
+ share/doc/%%PYTHON_VERSION%%/ext/embeddingInCplusplus.html
+@@ -170,6 +141,9 @@
+ share/doc/%%PYTHON_VERSION%%/ext/methodTable.html
+ share/doc/%%PYTHON_VERSION%%/ext/module-defn-example.html
+ share/doc/%%PYTHON_VERSION%%/ext/module-defn-options.html
++share/doc/%%PYTHON_VERSION%%/ext/node36.html
++share/doc/%%PYTHON_VERSION%%/ext/node37.html
++share/doc/%%PYTHON_VERSION%%/ext/node38.html
+ share/doc/%%PYTHON_VERSION%%/ext/nullPointers.html
+ share/doc/%%PYTHON_VERSION%%/ext/ownershipRules.html
+ share/doc/%%PYTHON_VERSION%%/ext/parseTuple.html
+@@ -185,41 +159,21 @@
+ share/doc/%%PYTHON_VERSION%%/icons/blank.gif
+ share/doc/%%PYTHON_VERSION%%/icons/contents.gif
+ share/doc/%%PYTHON_VERSION%%/icons/index.gif
+-share/doc/%%PYTHON_VERSION%%/icons/labslogo.gif
+ share/doc/%%PYTHON_VERSION%%/icons/modules.gif
+ share/doc/%%PYTHON_VERSION%%/icons/next.gif
+-share/doc/%%PYTHON_VERSION%%/icons/offsite.gif
+ share/doc/%%PYTHON_VERSION%%/icons/previous.gif
+-share/doc/%%PYTHON_VERSION%%/icons/pythonlabs.gif
+ share/doc/%%PYTHON_VERSION%%/icons/up.gif
+ share/doc/%%PYTHON_VERSION%%/index.html
+ share/doc/%%PYTHON_VERSION%%/inst/about.html
+-share/doc/%%PYTHON_VERSION%%/inst/alt-install-home.html
+-share/doc/%%PYTHON_VERSION%%/inst/alt-install-macos.html
+-share/doc/%%PYTHON_VERSION%%/inst/alt-install-prefix.html
+ share/doc/%%PYTHON_VERSION%%/inst/alt-install-windows.html
+-share/doc/%%PYTHON_VERSION%%/inst/alt-install.html
+-share/doc/%%PYTHON_VERSION%%/inst/building-ext.html
+-share/doc/%%PYTHON_VERSION%%/inst/config-files.html
+-share/doc/%%PYTHON_VERSION%%/inst/contents.html
++share/doc/%%PYTHON_VERSION%%/inst/config-syntax.html
+ share/doc/%%PYTHON_VERSION%%/inst/custom-install.html
+-share/doc/%%PYTHON_VERSION%%/inst/how-build-works.html
+-share/doc/%%PYTHON_VERSION%%/inst/how-install-works.html
+ share/doc/%%PYTHON_VERSION%%/inst/index.html
+ share/doc/%%PYTHON_VERSION%%/inst/inst.css
+ share/doc/%%PYTHON_VERSION%%/inst/inst.html
+-share/doc/%%PYTHON_VERSION%%/inst/intro.html
+-share/doc/%%PYTHON_VERSION%%/inst/makefile-pre-in.html
+-share/doc/%%PYTHON_VERSION%%/inst/manual-install.html
+-share/doc/%%PYTHON_VERSION%%/inst/new-standard.html
+ share/doc/%%PYTHON_VERSION%%/inst/non-ms-compilers.html
+-share/doc/%%PYTHON_VERSION%%/inst/old-way.html
+-share/doc/%%PYTHON_VERSION%%/inst/platform-variations.html
+-share/doc/%%PYTHON_VERSION%%/inst/pre-distutils.html
+-share/doc/%%PYTHON_VERSION%%/inst/splitting-up.html
+ share/doc/%%PYTHON_VERSION%%/inst/standard-install.html
+ share/doc/%%PYTHON_VERSION%%/inst/trivial-install.html
+-share/doc/%%PYTHON_VERSION%%/inst/tweak-flags.html
+ share/doc/%%PYTHON_VERSION%%/lib/AST_Errors.html
+ share/doc/%%PYTHON_VERSION%%/lib/AST_Examples.html
+ share/doc/%%PYTHON_VERSION%%/lib/AST_Objects.html
+@@ -231,7 +185,6 @@
+ share/doc/%%PYTHON_VERSION%%/lib/Deterministic_Profiling.html
+ share/doc/%%PYTHON_VERSION%%/lib/FL_Functions.html
+ share/doc/%%PYTHON_VERSION%%/lib/Functions_in_cgi_module.html
+-share/doc/%%PYTHON_VERSION%%/lib/HTTP_Examples.html
+ share/doc/%%PYTHON_VERSION%%/lib/MimeWriter-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/MultiFile-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/PrettyPrinter_Objects.html
+@@ -249,6 +202,8 @@
+ share/doc/%%PYTHON_VERSION%%/lib/Wave-read-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/Wave-write-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/about.html
++share/doc/%%PYTHON_VERSION%%/lib/abstract-basic-auth-handler.html
++share/doc/%%PYTHON_VERSION%%/lib/abstract-digest-auth-handler.html
+ share/doc/%%PYTHON_VERSION%%/lib/addresslist-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/al-config-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/al-port-objects.html
+@@ -260,6 +215,7 @@
+ share/doc/%%PYTHON_VERSION%%/lib/au-read-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/au-write-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/audio-device-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/base-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/binhex-notes.html
+ share/doc/%%PYTHON_VERSION%%/lib/bisect-example.html
+ share/doc/%%PYTHON_VERSION%%/lib/bitstring-ops.html
+@@ -274,6 +230,7 @@
+ share/doc/%%PYTHON_VERSION%%/lib/built-in-funcs.html
+ share/doc/%%PYTHON_VERSION%%/lib/builtin.html
+ share/doc/%%PYTHON_VERSION%%/lib/bytecodes.html
++share/doc/%%PYTHON_VERSION%%/lib/cacheftp-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/cd-parser-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/cgi-intro.html
+ share/doc/%%PYTHON_VERSION%%/lib/codec-objects.html
+@@ -287,38 +244,77 @@
+ share/doc/%%PYTHON_VERSION%%/lib/cookie-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/crypto.html
+ share/doc/%%PYTHON_VERSION%%/lib/curses-functions.html
++share/doc/%%PYTHON_VERSION%%/lib/curses-panel-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/curses-textpad-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/curses-window-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/cursespanel-functions.html
+ share/doc/%%PYTHON_VERSION%%/lib/dbhash-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/debugger-commands.html
++share/doc/%%PYTHON_VERSION%%/lib/difflib-examples.html
+ share/doc/%%PYTHON_VERSION%%/lib/dircmp-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/dl-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-accessor-methods.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-attr-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-attributelist-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-comment-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-conformance.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-document-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-documenttype-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-element-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-example.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-exceptions.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-implementation-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-node-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-nodelist-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-pi-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-text-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/dom-type-mapping.html
++share/doc/%%PYTHON_VERSION%%/lib/domeventstream-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/dtd-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/embedding-locale.html
+ share/doc/%%PYTHON_VERSION%%/lib/entity-resolver-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/event-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/examples-imp.html
++share/doc/%%PYTHON_VERSION%%/lib/expat-content-models.html
+ share/doc/%%PYTHON_VERSION%%/lib/expat-errors.html
+ share/doc/%%PYTHON_VERSION%%/lib/expat-example.html
++share/doc/%%PYTHON_VERSION%%/lib/expaterror-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/file-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/form-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/formatter-impls.html
+ share/doc/%%PYTHON_VERSION%%/lib/formatter-interface.html
+ share/doc/%%PYTHON_VERSION%%/lib/forms-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/fpectl-example.html
+ share/doc/%%PYTHON_VERSION%%/lib/front.html
++share/doc/%%PYTHON_VERSION%%/lib/ftp-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/ftp-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/genindex.html
++share/doc/%%PYTHON_VERSION%%/lib/gopher-handler.html
+ share/doc/%%PYTHON_VERSION%%/lib/handle-object.html
+ share/doc/%%PYTHON_VERSION%%/lib/html-parser-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/http-basic-auth-handler.html
++share/doc/%%PYTHON_VERSION%%/lib/http-digest-auth-handler.html
++share/doc/%%PYTHON_VERSION%%/lib/http-handler-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/http-password-mgr.html
++share/doc/%%PYTHON_VERSION%%/lib/http-redirect-handler.html
++share/doc/%%PYTHON_VERSION%%/lib/httplib-examples.html
++share/doc/%%PYTHON_VERSION%%/lib/https-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/imap4-example.html
+ share/doc/%%PYTHON_VERSION%%/lib/imap4-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/img1.gif
+ share/doc/%%PYTHON_VERSION%%/lib/incremental-parser-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/index.html
+ share/doc/%%PYTHON_VERSION%%/lib/input-source-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/inspect-classes-functions.html
++share/doc/%%PYTHON_VERSION%%/lib/inspect-source.html
++share/doc/%%PYTHON_VERSION%%/lib/inspect-stack.html
++share/doc/%%PYTHON_VERSION%%/lib/inspect-types.html
+ share/doc/%%PYTHON_VERSION%%/lib/internet.html
+ share/doc/%%PYTHON_VERSION%%/lib/interpreter-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/intro.html
+ share/doc/%%PYTHON_VERSION%%/lib/language.html
++share/doc/%%PYTHON_VERSION%%/lib/legacy-unit-tests.html
+ share/doc/%%PYTHON_VERSION%%/lib/lib.css
+ share/doc/%%PYTHON_VERSION%%/lib/lib.html
+ share/doc/%%PYTHON_VERSION%%/lib/locator-objects.html
+@@ -332,6 +328,7 @@
+ share/doc/%%PYTHON_VERSION%%/lib/mh-message-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/mh-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/mimetools-message-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/minidom-and-dom.html
+ share/doc/%%PYTHON_VERSION%%/lib/misc.html
+ share/doc/%%PYTHON_VERSION%%/lib/mmedia.html
+ share/doc/%%PYTHON_VERSION%%/lib/modindex.html
+@@ -384,13 +381,16 @@
+ share/doc/%%PYTHON_VERSION%%/lib/module-crypt.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-curses.ascii.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-curses.html
++share/doc/%%PYTHON_VERSION%%/lib/module-curses.panel.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-curses.textpad.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-curses.wrapper.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-dbhash.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-dbm.html
++share/doc/%%PYTHON_VERSION%%/lib/module-difflib.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-dircache.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-dis.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-dl.html
++share/doc/%%PYTHON_VERSION%%/lib/module-doctest.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-dumbdbm.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-errno.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-exceptions.html
+@@ -403,6 +403,7 @@
+ share/doc/%%PYTHON_VERSION%%/lib/module-fm.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-fnmatch.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-formatter.html
++share/doc/%%PYTHON_VERSION%%/lib/module-fpectl.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-fpformat.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-ftplib.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-gc.html
+@@ -424,6 +425,7 @@
+ share/doc/%%PYTHON_VERSION%%/lib/module-imgfile.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-imghdr.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-imp.html
++share/doc/%%PYTHON_VERSION%%/lib/module-inspect.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-jpeg.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-keyword.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-linecache.html
+@@ -512,22 +514,30 @@
+ share/doc/%%PYTHON_VERSION%%/lib/module-tty.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-types.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-unicodedata.html
++share/doc/%%PYTHON_VERSION%%/lib/module-unittest.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-urllib.html
++share/doc/%%PYTHON_VERSION%%/lib/module-urllib2.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-urlparse.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-user.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-uu.html
++share/doc/%%PYTHON_VERSION%%/lib/module-warnings.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-wave.html
++share/doc/%%PYTHON_VERSION%%/lib/module-weakref.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-webbrowser.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-whichdb.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-whrandom.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-winsound.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xdrlib.html
++share/doc/%%PYTHON_VERSION%%/lib/module-xml.dom.html
++share/doc/%%PYTHON_VERSION%%/lib/module-xml.dom.minidom.html
++share/doc/%%PYTHON_VERSION%%/lib/module-xml.dom.pulldom.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xml.parsers.expat.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xml.sax.handler.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xml.sax.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xml.sax.saxutils.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xml.sax.xmlreader.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-xmllib.html
++share/doc/%%PYTHON_VERSION%%/lib/module-xreadlines.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-zipfile.html
+ share/doc/%%PYTHON_VERSION%%/lib/module-zlib.html
+ share/doc/%%PYTHON_VERSION%%/lib/morsel-objects.html
+@@ -539,41 +549,55 @@
+ share/doc/%%PYTHON_VERSION%%/lib/netdata.html
+ share/doc/%%PYTHON_VERSION%%/lib/netrc-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/nntp-objects.html
+-share/doc/%%PYTHON_VERSION%%/lib/node128.html
+-share/doc/%%PYTHON_VERSION%%/lib/node141.html
+-share/doc/%%PYTHON_VERSION%%/lib/node144.html
+-share/doc/%%PYTHON_VERSION%%/lib/node145.html
+-share/doc/%%PYTHON_VERSION%%/lib/node146.html
+-share/doc/%%PYTHON_VERSION%%/lib/node147.html
+-share/doc/%%PYTHON_VERSION%%/lib/node148.html
+-share/doc/%%PYTHON_VERSION%%/lib/node149.html
+-share/doc/%%PYTHON_VERSION%%/lib/node150.html
+-share/doc/%%PYTHON_VERSION%%/lib/node151.html
+-share/doc/%%PYTHON_VERSION%%/lib/node152.html
+-share/doc/%%PYTHON_VERSION%%/lib/node153.html
+-share/doc/%%PYTHON_VERSION%%/lib/node154.html
+-share/doc/%%PYTHON_VERSION%%/lib/node155.html
+-share/doc/%%PYTHON_VERSION%%/lib/node215.html
+-share/doc/%%PYTHON_VERSION%%/lib/node216.html
+-share/doc/%%PYTHON_VERSION%%/lib/node222.html
+-share/doc/%%PYTHON_VERSION%%/lib/node241.html
+-share/doc/%%PYTHON_VERSION%%/lib/node243.html
+-share/doc/%%PYTHON_VERSION%%/lib/node244.html
+-share/doc/%%PYTHON_VERSION%%/lib/node245.html
+-share/doc/%%PYTHON_VERSION%%/lib/node246.html
+-share/doc/%%PYTHON_VERSION%%/lib/node247.html
+-share/doc/%%PYTHON_VERSION%%/lib/node252.html
+-share/doc/%%PYTHON_VERSION%%/lib/node366.html
+-share/doc/%%PYTHON_VERSION%%/lib/node376.html
+-share/doc/%%PYTHON_VERSION%%/lib/node377.html
+-share/doc/%%PYTHON_VERSION%%/lib/node413.html
+-share/doc/%%PYTHON_VERSION%%/lib/node422.html
+-share/doc/%%PYTHON_VERSION%%/lib/node423.html
+-share/doc/%%PYTHON_VERSION%%/lib/node424.html
+-share/doc/%%PYTHON_VERSION%%/lib/node425.html
+-share/doc/%%PYTHON_VERSION%%/lib/node427.html
+-share/doc/%%PYTHON_VERSION%%/lib/node80.html
++share/doc/%%PYTHON_VERSION%%/lib/node100.html
++share/doc/%%PYTHON_VERSION%%/lib/node109.html
++share/doc/%%PYTHON_VERSION%%/lib/node110.html
++share/doc/%%PYTHON_VERSION%%/lib/node111.html
++share/doc/%%PYTHON_VERSION%%/lib/node112.html
++share/doc/%%PYTHON_VERSION%%/lib/node113.html
++share/doc/%%PYTHON_VERSION%%/lib/node114.html
++share/doc/%%PYTHON_VERSION%%/lib/node115.html
++share/doc/%%PYTHON_VERSION%%/lib/node116.html
++share/doc/%%PYTHON_VERSION%%/lib/node167.html
++share/doc/%%PYTHON_VERSION%%/lib/node183.html
++share/doc/%%PYTHON_VERSION%%/lib/node186.html
++share/doc/%%PYTHON_VERSION%%/lib/node187.html
++share/doc/%%PYTHON_VERSION%%/lib/node188.html
++share/doc/%%PYTHON_VERSION%%/lib/node189.html
++share/doc/%%PYTHON_VERSION%%/lib/node190.html
++share/doc/%%PYTHON_VERSION%%/lib/node191.html
++share/doc/%%PYTHON_VERSION%%/lib/node192.html
++share/doc/%%PYTHON_VERSION%%/lib/node193.html
++share/doc/%%PYTHON_VERSION%%/lib/node194.html
++share/doc/%%PYTHON_VERSION%%/lib/node195.html
++share/doc/%%PYTHON_VERSION%%/lib/node196.html
++share/doc/%%PYTHON_VERSION%%/lib/node197.html
++share/doc/%%PYTHON_VERSION%%/lib/node255.html
++share/doc/%%PYTHON_VERSION%%/lib/node256.html
++share/doc/%%PYTHON_VERSION%%/lib/node262.html
++share/doc/%%PYTHON_VERSION%%/lib/node281.html
++share/doc/%%PYTHON_VERSION%%/lib/node283.html
++share/doc/%%PYTHON_VERSION%%/lib/node284.html
++share/doc/%%PYTHON_VERSION%%/lib/node285.html
++share/doc/%%PYTHON_VERSION%%/lib/node286.html
++share/doc/%%PYTHON_VERSION%%/lib/node287.html
++share/doc/%%PYTHON_VERSION%%/lib/node312.html
++share/doc/%%PYTHON_VERSION%%/lib/node392.html
++share/doc/%%PYTHON_VERSION%%/lib/node393.html
++share/doc/%%PYTHON_VERSION%%/lib/node40.html
++share/doc/%%PYTHON_VERSION%%/lib/node456.html
++share/doc/%%PYTHON_VERSION%%/lib/node466.html
++share/doc/%%PYTHON_VERSION%%/lib/node467.html
++share/doc/%%PYTHON_VERSION%%/lib/node503.html
++share/doc/%%PYTHON_VERSION%%/lib/node512.html
++share/doc/%%PYTHON_VERSION%%/lib/node513.html
++share/doc/%%PYTHON_VERSION%%/lib/node514.html
++share/doc/%%PYTHON_VERSION%%/lib/node515.html
++share/doc/%%PYTHON_VERSION%%/lib/node517.html
+ share/doc/%%PYTHON_VERSION%%/lib/obsolete-modules.html
++share/doc/%%PYTHON_VERSION%%/lib/opener-director-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/operator-map.html
++share/doc/%%PYTHON_VERSION%%/lib/organizing-tests.html
+ share/doc/%%PYTHON_VERSION%%/lib/os-fd-ops.html
+ share/doc/%%PYTHON_VERSION%%/lib/os-file-dir.html
+ share/doc/%%PYTHON_VERSION%%/lib/os-newstreams.html
+@@ -595,6 +619,9 @@
+ share/doc/%%PYTHON_VERSION%%/lib/profile-old.html
+ share/doc/%%PYTHON_VERSION%%/lib/profile-stats.html
+ share/doc/%%PYTHON_VERSION%%/lib/profile.html
++share/doc/%%PYTHON_VERSION%%/lib/proxy-basic-auth-handler.html
++share/doc/%%PYTHON_VERSION%%/lib/proxy-digest-auth-handler.html
++share/doc/%%PYTHON_VERSION%%/lib/proxy-handler.html
+ share/doc/%%PYTHON_VERSION%%/lib/pyclbr-class-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/python.html
+ share/doc/%%PYTHON_VERSION%%/lib/pyzipfile-objects.html
+@@ -602,12 +629,16 @@
+ share/doc/%%PYTHON_VERSION%%/lib/re-syntax.html
+ share/doc/%%PYTHON_VERSION%%/lib/readline-example.html
+ share/doc/%%PYTHON_VERSION%%/lib/reporting-bugs.html
++share/doc/%%PYTHON_VERSION%%/lib/request-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/restricted.html
++share/doc/%%PYTHON_VERSION%%/lib/rexec-extension.html
++share/doc/%%PYTHON_VERSION%%/lib/rexec-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/rlock-objects.html
+-share/doc/%%PYTHON_VERSION%%/lib/rng-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/sax-error-handler.html
+ share/doc/%%PYTHON_VERSION%%/lib/sax-exception-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/scheduler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/semaphore-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/sequence-matcher.html
+ share/doc/%%PYTHON_VERSION%%/lib/sgi.html
+ share/doc/%%PYTHON_VERSION%%/lib/shlex-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/shutil-example.html
+@@ -627,6 +658,10 @@
+ share/doc/%%PYTHON_VERSION%%/lib/telnet-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/template-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/termios_Example.html
++share/doc/%%PYTHON_VERSION%%/lib/testcase-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/testloader-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/testresult-objects.html
++share/doc/%%PYTHON_VERSION%%/lib/testsuite-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/thread-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/traceback-example.html
+ share/doc/%%PYTHON_VERSION%%/lib/truth.html
+@@ -644,14 +679,23 @@
+ share/doc/%%PYTHON_VERSION%%/lib/typesseq-xrange.html
+ share/doc/%%PYTHON_VERSION%%/lib/typesseq.html
+ share/doc/%%PYTHON_VERSION%%/lib/undoc.html
++share/doc/%%PYTHON_VERSION%%/lib/unittest-contents.html
+ share/doc/%%PYTHON_VERSION%%/lib/unix.html
++share/doc/%%PYTHON_VERSION%%/lib/unknown-handler-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/urlopener-objs.html
++share/doc/%%PYTHON_VERSION%%/lib/warning-categories.html
++share/doc/%%PYTHON_VERSION%%/lib/warning-filter.html
++share/doc/%%PYTHON_VERSION%%/lib/warning-functions.html
++share/doc/%%PYTHON_VERSION%%/lib/weakref-example.html
++share/doc/%%PYTHON_VERSION%%/lib/weakref-extension.html
++share/doc/%%PYTHON_VERSION%%/lib/weakref-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/writer-impls.html
+ share/doc/%%PYTHON_VERSION%%/lib/writer-interface.html
+ share/doc/%%PYTHON_VERSION%%/lib/xdr-exceptions.html
+ share/doc/%%PYTHON_VERSION%%/lib/xdr-packer-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/xdr-unpacker-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/xml-namespace.html
++share/doc/%%PYTHON_VERSION%%/lib/xmlparser-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/xmlreader-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/zipfile-objects.html
+ share/doc/%%PYTHON_VERSION%%/lib/zipinfo-objects.html
+@@ -686,6 +730,7 @@
+ share/doc/%%PYTHON_VERSION%%/mac/modindex.html
+ share/doc/%%PYTHON_VERSION%%/mac/module-AE.html
+ share/doc/%%PYTHON_VERSION%%/mac/module-Cm.html
++share/doc/%%PYTHON_VERSION%%/mac/module-ColorPicker.html
+ share/doc/%%PYTHON_VERSION%%/mac/module-Ctl.html
+ share/doc/%%PYTHON_VERSION%%/mac/module-Dlg.html
+ share/doc/%%PYTHON_VERSION%%/mac/module-EasyDialogs.html
+@@ -740,6 +785,9 @@
+ share/doc/%%PYTHON_VERSION%%/mac/node43.html
+ share/doc/%%PYTHON_VERSION%%/mac/node6.html
+ share/doc/%%PYTHON_VERSION%%/mac/node7.html
++share/doc/%%PYTHON_VERSION%%/mac/node90.html
++share/doc/%%PYTHON_VERSION%%/mac/node91.html
++share/doc/%%PYTHON_VERSION%%/mac/node92.html
+ share/doc/%%PYTHON_VERSION%%/mac/scripting-with-BBedit.html
+ share/doc/%%PYTHON_VERSION%%/mac/scrolledwindow-object.html
+ share/doc/%%PYTHON_VERSION%%/mac/search-path.html
+@@ -774,9 +822,11 @@
+ share/doc/%%PYTHON_VERSION%%/ref/conversions.html
+ share/doc/%%PYTHON_VERSION%%/ref/customization.html
+ share/doc/%%PYTHON_VERSION%%/ref/datamodel.html
++share/doc/%%PYTHON_VERSION%%/ref/defintions.html
+ share/doc/%%PYTHON_VERSION%%/ref/del.html
+ share/doc/%%PYTHON_VERSION%%/ref/delimiters.html
+ share/doc/%%PYTHON_VERSION%%/ref/dict.html
++share/doc/%%PYTHON_VERSION%%/ref/dynamic-features.html
+ share/doc/%%PYTHON_VERSION%%/ref/exceptions.html
+ share/doc/%%PYTHON_VERSION%%/ref/exec.html
+ share/doc/%%PYTHON_VERSION%%/ref/execframes.html
+@@ -791,6 +841,8 @@
+ share/doc/%%PYTHON_VERSION%%/ref/for.html
+ share/doc/%%PYTHON_VERSION%%/ref/front.html
+ share/doc/%%PYTHON_VERSION%%/ref/function.html
++share/doc/%%PYTHON_VERSION%%/ref/future-statements.html
++share/doc/%%PYTHON_VERSION%%/ref/futures.html
+ share/doc/%%PYTHON_VERSION%%/ref/genindex.html
+ share/doc/%%PYTHON_VERSION%%/ref/global.html
+ share/doc/%%PYTHON_VERSION%%/ref/id-classes.html
+@@ -811,6 +863,11 @@
+ share/doc/%%PYTHON_VERSION%%/ref/lists.html
+ share/doc/%%PYTHON_VERSION%%/ref/literals.html
+ share/doc/%%PYTHON_VERSION%%/ref/logical.html
++share/doc/%%PYTHON_VERSION%%/ref/module-future.html
++share/doc/%%PYTHON_VERSION%%/ref/nested-scopes.html
++share/doc/%%PYTHON_VERSION%%/ref/node100.html
++share/doc/%%PYTHON_VERSION%%/ref/node98.html
++share/doc/%%PYTHON_VERSION%%/ref/node99.html
+ share/doc/%%PYTHON_VERSION%%/ref/notation.html
+ share/doc/%%PYTHON_VERSION%%/ref/numbers.html
+ share/doc/%%PYTHON_VERSION%%/ref/numeric-types.html
+@@ -843,6 +900,7 @@
+ share/doc/%%PYTHON_VERSION%%/ref/try.html
+ share/doc/%%PYTHON_VERSION%%/ref/types.html
+ share/doc/%%PYTHON_VERSION%%/ref/unary.html
++share/doc/%%PYTHON_VERSION%%/ref/unicode.html
+ share/doc/%%PYTHON_VERSION%%/ref/while.html
+ share/doc/%%PYTHON_VERSION%%/ref/whitespace.html
+ share/doc/%%PYTHON_VERSION%%/tut/about.html
+@@ -853,6 +911,7 @@
+ share/doc/%%PYTHON_VERSION%%/tut/node12.html
+ share/doc/%%PYTHON_VERSION%%/tut/node13.html
+ share/doc/%%PYTHON_VERSION%%/tut/node14.html
++share/doc/%%PYTHON_VERSION%%/tut/node15.html
+ share/doc/%%PYTHON_VERSION%%/tut/node2.html
+ share/doc/%%PYTHON_VERSION%%/tut/node3.html
+ share/doc/%%PYTHON_VERSION%%/tut/node4.html
