@@ -17,7 +17,7 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Perl extension for generic DBI database access
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
-		${SITE_PERL}/${PERL_ARCH}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX
+		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX
 		
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
