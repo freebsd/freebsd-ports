@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	commons-collections
-PORTVERSION=	3.0
-CATEGORIES=	java
+PORTVERSION=	3.1
+CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	commons/collections/source/
 PKGNAMEPREFIX=	jakarta-
@@ -16,43 +16,35 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Classes that extend/augment the Java Collections Framework
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
-
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
+USE_ANT=	yes
 
-WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-ANT?=		${LOCALBASE}/bin/ant
-ANT_TARGET=	jar
+ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)
-ANT_TARGET+=	javadoc
+ALL_TARGET+=	javadoc
 OTHERDOCS=	DEVELOPERS-GUIDE.html LICENSE.txt PROPOSAL.html README.txt RELEASE-NOTES.html STATUS.html
 PORTDOCS=	apidocs ${OTHERDOCS}
 .endif
 JARFILE=	${PORTNAME}-${PORTVERSION}.jar
 DESTJARFILE=	${PORTNAME}.jar
-PLIST_FILES+=	${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
-
-do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+PLIST_FILES+=	%%JAVAJARDIR%%/${DESTJARFILE}
 
 do-install:
-	@${ECHO_CMD} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${DESTJARFILE}..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${CP} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
-	@${ECHO_CMD} " [ DONE ]"
+	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/${DESTJARFILE}
+	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/docs/apidocs ${DOCSDIR}
-	@${ECHO_CMD} -n " apidocs"
-.for DOCFILE in ${OTHERDOCS}
-	@${CP} ${WRKSRC}/${DOCFILE} ${DOCSDIR}
-	@${ECHO_CMD} -n " ${DOCFILE}"
-.endfor
-	@${ECHO_CMD} " [ DONE ]"
+	@cd ${WRKSRC}/build/docs && ${FIND} apidocs \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
