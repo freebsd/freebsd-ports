@@ -18,7 +18,8 @@ DISTNAME=	vanessa_socket-${PORTVERSION}
 
 MAINTAINER=	kkonstan@daemon.gr
 
-LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger
+LIB_DEPENDS=	vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
+		popt.0:${PORTSDIR}/devel/popt
 
 MAN1=		vanessa_socket_pipe.1
 
