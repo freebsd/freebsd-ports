@@ -1897,6 +1897,7 @@ fox-devel		ports/x11-toolkits/fox-devel
 fpc		ports/lang/fpc
 fpc-gdbint	ports/devel/fpc-gdbint
 fpc-odbc	ports/databases/fpc-odbc
+fpc-regexpr	ports/devel/fpc-regexpr
 fping		ports/net/fping
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
