@@ -1,0 +1,95 @@
+.\" $Id: tcpmssd.8,v 1.1 2000/07/17 17:58:03 ru Exp $
+.Dd July 17, 2000
+.Dt TCPMSSD 8
+.Os FreeBSD
+.Sh NAME
+.Nm tcpmssd
+.Nd TCP Maximum Segment Size option corrector
+.Sh SYNOPSIS
+.Nm
+.Op Fl v
+.Fl p Ar port
+.Eo \&{
+.Fl i Ar iface | Fl m Ar mtu
+.Ec \&}
+.Sh DESCRIPTION
+.Nm
+is a program that adjusts outgoing TCP SYN packets so that the maximum
+receive segment size is not greater than the amount allowed by the
+interface MTU.
+.Pp
+This is necessary in many setups to avoid problems caused by routers that
+drop ICMP
+.Dq Datagram Too Big
+messages, thus breaking Path MTU discovery algorithm (RFC 1191).
+Without these messages, the originating machine sends data, it passes
+the rogue router then hits a machine that has an MTU that is not big
+enough for the data.
+Because the IP
+.Dq don't fragment
+option is set, this machine sends an ICMP
+.Dq Datagram Too Big
+message back to the originator and drops the packet.
+The rogue router drops the ICMP and the originator never gets to
+discover that it must reduce the Path MTU value or exclude the IP
+.Dq don't fragment
+option from its outgoing data.
+.Pp
+.Nm
+normally runs in the background as a daemon.
+It intercepts TCP packets
+from a
+.Xr divert 4
+socket bound to the
+.Ar port
+specified with the
+.Fl p
+option and reduces the value of TCP MSS option if necessary so that
+the incoming TCP messages will pass through this host without need to
+send ICMP
+.Dq Datagram Too Big
+messages.
+.Pp
+The maximum value for the TCP MSS option is determined based on a MTU
+given either as an absolute value with the
+.Fl m
+option or derived from a network interface specified with the
+.Fl i
+option.
+.Pp
+If run with the
+.Fl v
+option,
+.Nm
+does not detach from its controlling terminal and writes various diagnostic
+messages to the standard error output.
+.Pp
+The following steps are necessary to run
+.Nm No :
+.Bl -enum
+.It
+Build your kernel with the following options:
+.Bd -literal -offset indent
+options IPFIREWALL
+options IPDIVERT
+.Ed
+.Pp
+Refer to the Handbook for detailed instructions on building a custom
+kernel.
+.It
+Make sure to redirect TCP traffic to the
+.Xr divert 4
+port
+.Ar port .
+Refer to the
+.Xr ipfw 8
+manual page for details.
+.El
+.Sh SEE ALSO
+.Xr divert 4 ,
+.Xr ipfw 8 .
+.Sh AUTHORS
+This program was written by
+.An Ruslan Ermilov Aq ru@FreeBSD.org
+based on work done by
+.An Patrick Bihan-Faou Aq patrick@mindstep.com .
