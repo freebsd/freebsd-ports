@@ -6,22 +6,29 @@
 #
 
 PORTNAME=	xenon
-PORTVERSION=	0.6.7
+PORTVERSION=	1.0.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.proximity.com.au/pub/xenon/
+MASTER_SITES=	http://sydney.proximity.com.au/~ben/xenon/dist/ \
+		ftp://yankee.proximitygroup.com/pub/xenon/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
+USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+MAKEFILE=	${WRKSRC}/makefiles/Makefile.Linux
 
 MAN1=		xe.1
 
-pre-patch:
-	@${CP} ${WRKSRC}/makefiles/Makefile.Linux ${WRKSRC}/makefiles/Makefile.FreeBSD
+FIX_FILES=	Xe.h XeApp.h XeFontTable.C XeFontTable.h XeKeyTable.C \
+		XeKeyTable.h XeObjectTable.h
 
 do-configure:
-	@cd ${WRKSRC}; ${LN} -sf makefiles/Makefile.FreeBSD Makefile
+.for file in ${FIX_FILES}
+	@${REINPLACE_CMD} -e 's|#include <ext/|#include <|' \
+		-e 's|ulong|u_long|g' -e 's|uint|u_int|g' ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xe ${PREFIX}/bin

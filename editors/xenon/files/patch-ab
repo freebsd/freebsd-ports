@@ -1,10 +1,10 @@
---- makefiles/Makefile.FreeBSD.orig	Wed Feb 16 22:55:41 2000
-+++ makefiles/Makefile.FreeBSD	Wed Feb 16 22:58:34 2000
+--- makefiles/Makefile.Linux.orig	Sun Jul 29 17:28:57 2001
++++ makefiles/Makefile.Linux	Tue Oct  8 20:50:18 2002
 @@ -6,19 +6,19 @@
  
  include makefiles/Makefile.common
  
--CC = c++
+-CC = g++
 +CC = $(CXX)
  #CC = /usr/local/bin/c++
  
@@ -20,8 +20,8 @@
  
 -INCLUDES = -I$(XEINC)
 -LIBS = -L/usr/X11R6/lib -lXpm -lX11
-+INCLUDES = -I$(XEINC) -I${X11BASE}/include
-+LIBS = -L${X11BASE}/lib -lXpm -lX11
++INCLUDES = -I$(XEINC) -I$(X11BASE)/include
++LIBS = -L$(X11BASE)/lib -lXpm -lX11
  
  backup:
  	cd ..;tar -cvzf xenon.tar.gz $(BACKUP)
