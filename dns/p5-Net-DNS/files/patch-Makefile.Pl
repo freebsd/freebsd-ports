@@ -1,15 +1,20 @@
---- Makefile.PL.Dist	Thu Aug  1 02:57:10 2002
-+++ Makefile.PL	Sun Aug  4 18:27:55 2002
+--- Makefile.PL.orig	Mon Aug  5 13:06:55 2002
++++ Makefile.PL	Tue Aug  6 17:09:56 2002
 @@ -13,29 +13,29 @@
  
-  # Check if we have internet connection
-  # (I lifted this code from LWP... many thanks for this and more!)
+ # Check if we have internet connection
+ # (I lifted this code from LWP... many thanks for this and more!)
 -require IO::Socket;
 -my $s = IO::Socket::INET->new(
 -	PeerAddr => "www.google.com:80",
 -	Timeout  => 10,
 -);
--
++#require IO::Socket;
++#my $s = IO::Socket::INET->new(
++#	PeerAddr => "www.google.com:80",
++#	Timeout  => 10,
++#);
+ 
 -if ($s) {
 -	close($s);
 -
@@ -24,15 +29,9 @@
 -		open(ENABLED, ">t/online.enabled") || die "Can't touch ./t/online.enabled $!";
 -		close(ENABLED);
 -	} else {
--		unlink("t/online.enabled"); # just to shure...
+-		unlink("t/online.enabled"); # just to be shure...
 -	}
 -}
-+#require IO::Socket;
-+#my $s = IO::Socket::INET->new(
-+#	PeerAddr => "www.google.com:80",
-+#	Timeout  => 10,
-+#);
-+#
 +#if ($s) {
 +#	close($s);
 +#
@@ -47,7 +46,7 @@
 +#		open(ENABLED, ">t/online.enabled") || die "Can't touch ./t/online.enabled $!";
 +#		close(ENABLED);
 +#	} else {
-+#		unlink("t/online.enabled"); # just to shure...
++#		unlink("t/online.enabled"); # just to be shure...
 +#	}
 +#}
  
