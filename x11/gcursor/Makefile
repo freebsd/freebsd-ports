@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcursor
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 
@@ -18,14 +18,24 @@ RUN_DEPENDS=	file-roller:${PORTSDIR}/archivers/fileroller
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+DOCS=		AUTHORS COPYING ChangeLog INSTALL TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
 			${WRKSRC}/src/gcursor.c
 	@${REINPLACE_CMD} -e 's|share/applications|share/gnome/capplets|g' \
 			${WRKSRC}/data/Makefile.in
+
+.ifndef (NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
