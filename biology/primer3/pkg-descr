@@ -1,0 +1,23 @@
+"Primer3 is a complete rewrite of the original PRIMER program
+(Primer 0.5), written by Steve Lincoln, Mark Daly, and Eric
+Lander.  See DIFFERENCES FROM EARLIER VERSIONS for a discussion
+of how Primer3 differs from its predecessors, Primer 0.5 and
+Primer v2.
+
+Primer3 picks primers for PCR reactions, considering as criteria:
+
+o oligonucleotide melting temperature, size, GC content,
+  and primer-dimer possibilities,
+o PCR product size,
+o positional constraints within the source sequence, and
+o miscellaneous other constraints.
+
+All of these criteria are user-specifiable as constraints, and
+some are specifiable as terms in an objective function that
+characterizes an optimal primer pair."
+- from the README file
+
+WWW: http://www-genome.wi.mit.edu/genome_software/other/primer3.html
+
+--
+Tony Maher <tonym@biolateral.com.au>
