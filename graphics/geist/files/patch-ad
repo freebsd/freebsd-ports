@@ -1,0 +1,117 @@
+--- src/geist_line.c.orig	Sun Oct 22 00:05:45 2000
++++ src/geist_line.c	Sat Feb 12 20:39:50 2005
+@@ -406,6 +406,114 @@
+ 
+ }
+ 
++/*
++ * Recent versions of Imlib2 lack imlib_clip_line() function, which was
++ * around at Imlib2-1.1.0 times.  Dig it and some related stuff from
++ * old sources and paste here, so we're buildable again with new Imlib2.
++ */
++
++enum { TOP = 0x1, BOTTOM = 0x2, RIGHT = 0x4, LEFT = 0x8 };
++
++unsigned int
++__imlib_comp_outcode(double x, double y, double xmin,
++                     double xmax, double ymin, double ymax)
++{
++   unsigned int        code = 0;
++
++   if (y > ymax)
++      code |= TOP;
++   else if (y < ymin)
++      code |= BOTTOM;
++   if (x > xmax)
++      code |= RIGHT;
++   else if (x < xmin)
++      code |= LEFT;
++   return code;
++}
++
++int
++imlib_clip_line(int x0, int y0, int x1, int y1, int xmin, int xmax, int ymin,
++                int ymax, int *clip_x0, int *clip_y0, int *clip_x1,
++                int *clip_y1)
++{
++   unsigned int        outcode0, outcode1, outcode_out;
++   unsigned char       accept = FALSE, done = FALSE;
++   double              dx0, dy0, dx1, dy1;
++
++   dx0 = x0;
++   dx1 = x1;
++   dy0 = y0;
++   dy1 = y1;
++
++   outcode0 = __imlib_comp_outcode(dx0, dy0, xmin, xmax, ymin, ymax);
++   outcode1 = __imlib_comp_outcode(dx1, dy1, xmin, xmax, ymin, ymax);
++
++   do
++     {
++        if (!(outcode0 | outcode1))
++          {
++             accept = TRUE;
++             done = TRUE;
++          }
++        else if (outcode0 & outcode1)
++           done = TRUE;
++        else
++          {
++             double              x, y;
++
++             outcode_out = outcode0 ? outcode0 : outcode1;
++             if (outcode_out & TOP)
++               {
++                  x = dx0 + (dx1 - dx0) * ((double)ymax - dy0) / (dy1 - dy0);
++                  y = ymax;
++               }
++             else if (outcode_out & BOTTOM)
++               {
++                  x = dx0 + (dx1 - dx0) * ((double)ymin - dy0) / (dy1 - dy0);
++                  y = ymin;
++               }
++             else if (outcode_out & RIGHT)
++               {
++                  y = dy0 + (dy1 - dy0) * ((double)xmax - dx0) / (dx1 - dx0);
++                  x = xmax;
++               }
++             else
++               {
++                  y = dy0 + (dy1 - dy0) * ((double)xmin - dx0) / (dx1 - dx0);
++                  x = xmin;
++               }
++             if (outcode_out == outcode0)
++               {
++                  dx0 = x;
++                  dy0 = y;
++                  outcode0 =
++                      __imlib_comp_outcode(dx0, dy0, xmin, xmax, ymin, ymax);
++               }
++             else
++               {
++                  dx1 = x;
++                  dy1 = y;
++                  outcode1 =
++                      __imlib_comp_outcode(dx1, dy1, xmin, xmax, ymin, ymax);
++               }
++          }
++     }
++   while (done == FALSE);
++
++   /* round up before converting down to ints */
++   dx0 = floor(dx0 + 0.5);
++   dx1 = floor(dx1 + 0.5);
++   dy0 = floor(dy0 + 0.5);
++   dy1 = floor(dy1 + 0.5);
++
++   *clip_x0 = dx0;
++   *clip_y0 = dy0;
++   *clip_x1 = dx1;
++   *clip_y1 = dy1;
++
++   return accept;
++}
++
+ int
+ geist_line_get_clipped_line(geist_line * line, int *clip_x0, int *clip_y0,
+                             int *clip_x1, int *clip_y1)
