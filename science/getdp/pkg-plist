@@ -21,6 +21,7 @@ bin/getdp
 %%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_15.html
 %%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_16.html
 %%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_17.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_18.html
 %%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_2.html
 %%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_3.html
 %%PORTDOCS%%%%DOCSDIR%%/texinfo/getdp_4.html
