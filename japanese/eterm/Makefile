@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+CATEGORIES=	japanese
+
 MASTERDIR=      ${.CURDIR}/../../x11/eterm
 
 MAINTAINER=	nobutaka@nobutaka.com
@@ -27,7 +29,7 @@ THEMES=		Eterm auto chooser trans
 post-configure:
 	for theme in ${THEMES} ; do \
 		${CP} ${WRKSRC}/themes/$$theme/theme.cfg ${WRKSRC}/themes/$$theme/theme.cfg.bak ; \
-		${SED} -e "s,term_name Eterm,term_name kterm," < ${WRKSRC}/themes/$$theme/theme.cfg.bak > ${WRKSRC}/themes/$$theme/theme.cfg ; \
+		${SED} -e "s,term_name xterm-color,term_name kterm," < ${WRKSRC}/themes/$$theme/theme.cfg.bak > ${WRKSRC}/themes/$$theme/theme.cfg ; \
 		${RM} ${WRKSRC}/themes/$$theme/theme.cfg.bak ; \
 	done
 
