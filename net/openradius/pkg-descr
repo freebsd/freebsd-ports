@@ -1,0 +1,20 @@
+This is a relatively simple port of OpenRADIUS. From the faq...
+
+------------------------------
+What is OpenRADIUS?
+
+OpenRADIUS is a piece of software that links your network access
+devices to your user-, service profile-, and usage databases.
+
+As such, OpenRADIUS isn't unique; other servers that speak the
+RADIUS protocol do the same. But it is unique in the flexibility
+it offers you in building this link, because it puts you in full
+control of the business rules used inside the server and the ways
+it talks to your databases - without anybody having to hack the
+source code.
+------------------------------
+
+WWW: http://www.openradius.net/
+
+- aj
+jettea46@yahoo.com
