@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gdk-pixbuf
-PORTVERSION=	0.8.0.7
-PORTREVISION=	1
+PORTVERSION=	0.22.0.11.3.5
 CATEGORIES=	graphics linux
-MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	${BASEVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=fedora/fedora/${BASEVERSION}/${MACHINE_ARCH}/RPMS.updates/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/-\1/}.${MACHINE_ARCH}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+)\./\1-/}.${MACHINE_ARCH}
 EXTRACT_SUFX=	.rpm
 EXTRACT_ONLY=
 
@@ -21,20 +20,16 @@ COMMENT=	Linux version of the graphic library for GTK+
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-USE_LINUX_PREFIX=	yes
-ONLY_FOR_ARCHS=	alpha i386
+USE_LINUX_PREFIX=yes
+ONLY_FOR_ARCHS=	i386
 DIST_SUBDIR=	rpm
 NO_BUILD=	yes
-NO_FILTER_SHLIBS=	yes
-PLIST=		${PKGDIR}/pkg-plist.${MACHINE_ARCH}
-PLIST_SUB=	VERSION=${PORTVERSION:C/^(.+)\.[^\.]+$/\1/}
-MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
+NO_FILTER_SHLIBS=yes
+PLIST_SUB=	VERSION=${PORTVERSION:C/^([^\.]+\.[^\.]+\.[^\.]+).+/\1/}
 
-# Let's avoid hardcoding 'en' as the language.
-LANG=		en
-# Set the version of linux_base
-BASEVERSION?=	7.1
-RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath /var/lib/rpm \
+# Set the version of Fedora Core
+BASEVERSION?=	2
+RPMFLAGS=	--ignoreos --root ${PREFIX} --dbpath /var/lib/rpm\
 		--nodeps --replacepkgs
 
 do-install:
