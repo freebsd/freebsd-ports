@@ -69,151 +69,151 @@ libexec/fidogate/send-ffx
 libexec/fidogate/send-fidogate
 libexec/fidogate/sumcrc
 @dirrm libexec/fidogate
-%%PORTDOCS%%share/doc/fidogate/dirs.html
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0018.txt
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0028.txt
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0035.txt
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0039.004
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0043.002
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0047.001
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0048.002
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0054.txt
-%%PORTDOCS%%share/doc/fidogate/fido/fsc-0057.002
-%%PORTDOCS%%share/doc/fidogate/fido/fts-0001.015
-%%PORTDOCS%%share/doc/fidogate/fido/fts-0004.txt
-%%PORTDOCS%%share/doc/fidogate/fido/fts-0009.001
-%%PORTDOCS%%share/doc/fidogate/fidogate.texi
-%%PORTDOCS%%share/doc/fidogate/fidogate.txt
-%%PORTDOCS%%share/doc/fidogate/gatebau/msgid.sgml
-%%PORTDOCS%%share/doc/fidogate/gatebau/msgid.tex
-%%PORTDOCS%%share/doc/fidogate/gatebau/msgid.txt
-%%PORTDOCS%%share/doc/fidogate/gatebau94.txt
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-1.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-10.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-11.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-12.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-13.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-2.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-3.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-4.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-5.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-6.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-7.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-8.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode-9.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode.html
-%%PORTDOCS%%share/doc/fidogate/howto/FidoNode.sgml
-%%PORTDOCS%%share/doc/fidogate/howto/Makefile
-%%PORTDOCS%%share/doc/fidogate/html/ANNOUNCE
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_1.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_2.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_3.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_4.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_5.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_6.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_7.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_8.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_abt.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_ovr.html
-%%PORTDOCS%%share/doc/fidogate/html/fidogate_toc.html
-%%PORTDOCS%%share/doc/fidogate/html/gate.cgi
-%%PORTDOCS%%share/doc/fidogate/html/msgid-1.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid-2.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid-3.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid-4.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid-5.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid-6.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid-7.html
-%%PORTDOCS%%share/doc/fidogate/html/msgid.html
-%%PORTDOCS%%share/doc/fidogate/index.html
-%%PORTDOCS%%share/doc/fidogate/info/fidogate.info
-%%PORTDOCS%%share/doc/fidogate/info/fidogate.info-1
-%%PORTDOCS%%share/doc/fidogate/info/fidogate.info-2
-%%PORTDOCS%%share/doc/fidogate/info/fidogate.info-3
-%%PORTDOCS%%share/doc/fidogate/kludge-rfc.doc
-%%PORTDOCS%%share/doc/fidogate/misc/ifmail-and-fidogate.doc
-%%PORTDOCS%%share/doc/fidogate/misc/roland.doc
-%%PORTDOCS%%share/doc/fidogate/misc/smail.doc
-%%PORTDOCS%%share/doc/fidogate/misc/smail2.doc
-%%PORTDOCS%%share/doc/fidogate/misc/smail3.doc
-%%PORTDOCS%%share/doc/fidogate/misc/unpack-script.doc
-%%PORTDOCS%%share/doc/fidogate/msgid.doc
-%%PORTDOCS%%share/doc/fidogate/qmail.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc-index.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc1036.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc1123.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc2045.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc2046.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc2047.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc2048.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc2049.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/rfc822.txt
-%%PORTDOCS%%share/doc/fidogate/rfc/son-of-1036.html
-%%PORTDOCS%%share/doc/fidogate/template.html
-%%PORTDOCS%%share/doc/fidogate/texinfo.tex
-%%PORTDOCS%%@dirrm share/doc/fidogate/html
-%%PORTDOCS%%@dirrm share/doc/fidogate/info
-%%PORTDOCS%%@dirrm share/doc/fidogate/fido
-%%PORTDOCS%%@dirrm share/doc/fidogate/howto
-%%PORTDOCS%%@dirrm share/doc/fidogate/misc
-%%PORTDOCS%%@dirrm share/doc/fidogate/gatebau
-%%PORTDOCS%%@dirrm share/doc/fidogate/rfc
-%%PORTDOCS%%@dirrm share/doc/fidogate
-%%PORTDOCS%%share/examples/fidogate/README
-%%PORTDOCS%%share/examples/fidogate/morannon/aliases
-%%PORTDOCS%%share/examples/fidogate/morannon/areas
-%%PORTDOCS%%share/examples/fidogate/morannon/bounce.down
-%%PORTDOCS%%share/examples/fidogate/morannon/bounce.insecure
-%%PORTDOCS%%share/examples/fidogate/morannon/bounce.noto
-%%PORTDOCS%%share/examples/fidogate/morannon/bounce.restricted
-%%PORTDOCS%%share/examples/fidogate/morannon/fidogate.conf
-%%PORTDOCS%%share/examples/fidogate/morannon/hosts
-%%PORTDOCS%%share/examples/fidogate/morannon/packing
-%%PORTDOCS%%share/examples/fidogate/morannon/passwd
-%%PORTDOCS%%share/examples/fidogate/morannon/routing
-%%PORTDOCS%%share/examples/fidogate/orodruin/README
-%%PORTDOCS%%share/examples/fidogate/orodruin/aliases
-%%PORTDOCS%%share/examples/fidogate/orodruin/areas
-%%PORTDOCS%%share/examples/fidogate/orodruin/areas.bbs
-%%PORTDOCS%%share/examples/fidogate/orodruin/fareas.bbs
-%%PORTDOCS%%share/examples/fidogate/orodruin/fidogate.conf
-%%PORTDOCS%%share/examples/fidogate/orodruin/hosts
-%%PORTDOCS%%share/examples/fidogate/orodruin/packing
-%%PORTDOCS%%share/examples/fidogate/orodruin/passwd
-%%PORTDOCS%%share/examples/fidogate/orodruin/routing
-%%PORTDOCS%%share/examples/fidogate/point/areas
-%%PORTDOCS%%share/examples/fidogate/point/areas.bbs
-%%PORTDOCS%%share/examples/fidogate/point/fidogate.conf
-%%PORTDOCS%%share/examples/fidogate/point/newsfeeds
-%%PORTDOCS%%share/examples/fidogate/point/packing
-%%PORTDOCS%%share/examples/fidogate/point/routing
-%%PORTDOCS%%share/examples/fidogate/rpm/Makefile
-%%PORTDOCS%%share/examples/fidogate/rpm/README
-%%PORTDOCS%%share/examples/fidogate/rpm/aliases
-%%PORTDOCS%%share/examples/fidogate/rpm/areas
-%%PORTDOCS%%share/examples/fidogate/rpm/areas.bbs
-%%PORTDOCS%%share/examples/fidogate/rpm/fareas.bbs
-%%PORTDOCS%%share/examples/fidogate/rpm/fidogate.conf
-%%PORTDOCS%%share/examples/fidogate/rpm/hosts
-%%PORTDOCS%%share/examples/fidogate/rpm/newsfeeds.fidogate
-%%PORTDOCS%%share/examples/fidogate/rpm/packing
-%%PORTDOCS%%share/examples/fidogate/rpm/passwd
-%%PORTDOCS%%share/examples/fidogate/rpm/routing
-%%PORTDOCS%%share/examples/fidogate/win32/README.WIN32
-%%PORTDOCS%%share/examples/fidogate/win32/aliases
-%%PORTDOCS%%share/examples/fidogate/win32/areas
-%%PORTDOCS%%share/examples/fidogate/win32/areas.bbs
-%%PORTDOCS%%share/examples/fidogate/win32/config.make
-%%PORTDOCS%%share/examples/fidogate/win32/fareas.bbs
-%%PORTDOCS%%share/examples/fidogate/win32/fidogate.conf
-%%PORTDOCS%%share/examples/fidogate/win32/hosts
-%%PORTDOCS%%share/examples/fidogate/win32/packing
-%%PORTDOCS%%share/examples/fidogate/win32/passwd
-%%PORTDOCS%%share/examples/fidogate/win32/routing
-%%PORTDOCS%%share/examples/fidogate/win32/test-win32
-%%PORTDOCS%%@dirrm share/examples/fidogate/morannon
-%%PORTDOCS%%@dirrm share/examples/fidogate/orodruin
-%%PORTDOCS%%@dirrm share/examples/fidogate/point
-%%PORTDOCS%%@dirrm share/examples/fidogate/rpm
-%%PORTDOCS%%@dirrm share/examples/fidogate/win32
-%%PORTDOCS%%@dirrm share/examples/fidogate
+%%PORTDOCS%%%%DOCSDIR%%/dirs.html
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0018.txt
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0028.txt
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0035.txt
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0039.004
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0043.002
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0047.001
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0048.002
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0054.txt
+%%PORTDOCS%%%%DOCSDIR%%/fido/fsc-0057.002
+%%PORTDOCS%%%%DOCSDIR%%/fido/fts-0001.015
+%%PORTDOCS%%%%DOCSDIR%%/fido/fts-0004.txt
+%%PORTDOCS%%%%DOCSDIR%%/fido/fts-0009.001
+%%PORTDOCS%%%%DOCSDIR%%/fidogate.texi
+%%PORTDOCS%%%%DOCSDIR%%/fidogate.txt
+%%PORTDOCS%%%%DOCSDIR%%/gatebau/msgid.sgml
+%%PORTDOCS%%%%DOCSDIR%%/gatebau/msgid.tex
+%%PORTDOCS%%%%DOCSDIR%%/gatebau/msgid.txt
+%%PORTDOCS%%%%DOCSDIR%%/gatebau94.txt
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-1.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-10.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-11.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-12.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-13.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-2.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-3.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-4.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-5.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-6.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-7.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-8.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode-9.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode.html
+%%PORTDOCS%%%%DOCSDIR%%/howto/FidoNode.sgml
+%%PORTDOCS%%%%DOCSDIR%%/howto/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/html/ANNOUNCE
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_ovr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fidogate_toc.html
+%%PORTDOCS%%%%DOCSDIR%%/html/gate.cgi
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-2.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-4.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-5.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-6.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid-7.html
+%%PORTDOCS%%%%DOCSDIR%%/html/msgid.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info
+%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info-1
+%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info-2
+%%PORTDOCS%%%%DOCSDIR%%/info/fidogate.info-3
+%%PORTDOCS%%%%DOCSDIR%%/kludge-rfc.doc
+%%PORTDOCS%%%%DOCSDIR%%/misc/ifmail-and-fidogate.doc
+%%PORTDOCS%%%%DOCSDIR%%/misc/roland.doc
+%%PORTDOCS%%%%DOCSDIR%%/misc/smail.doc
+%%PORTDOCS%%%%DOCSDIR%%/misc/smail2.doc
+%%PORTDOCS%%%%DOCSDIR%%/misc/smail3.doc
+%%PORTDOCS%%%%DOCSDIR%%/misc/unpack-script.doc
+%%PORTDOCS%%%%DOCSDIR%%/msgid.doc
+%%PORTDOCS%%%%DOCSDIR%%/qmail.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc-index.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1036.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc1123.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2045.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2046.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2047.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2048.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc2049.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc822.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/son-of-1036.html
+%%PORTDOCS%%%%DOCSDIR%%/template.html
+%%PORTDOCS%%%%DOCSDIR%%/texinfo.tex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/info
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fido
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/howto
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gatebau
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rfc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/aliases
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/areas
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.down
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.insecure
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.noto
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/bounce.restricted
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/fidogate.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/hosts
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/packing
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/passwd
+%%PORTDOCS%%%%EXAMPLESDIR%%/morannon/routing
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/aliases
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/areas
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/areas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/fareas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/fidogate.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/hosts
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/packing
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/passwd
+%%PORTDOCS%%%%EXAMPLESDIR%%/orodruin/routing
+%%PORTDOCS%%%%EXAMPLESDIR%%/point/areas
+%%PORTDOCS%%%%EXAMPLESDIR%%/point/areas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/point/fidogate.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/point/newsfeeds
+%%PORTDOCS%%%%EXAMPLESDIR%%/point/packing
+%%PORTDOCS%%%%EXAMPLESDIR%%/point/routing
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/aliases
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/areas
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/areas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/fareas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/fidogate.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/hosts
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/newsfeeds.fidogate
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/packing
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/passwd
+%%PORTDOCS%%%%EXAMPLESDIR%%/rpm/routing
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/README.WIN32
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/aliases
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/areas
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/areas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/config.make
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/fareas.bbs
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/fidogate.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/hosts
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/packing
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/passwd
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/routing
+%%PORTDOCS%%%%EXAMPLESDIR%%/win32/test-win32
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/morannon
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/orodruin
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/point
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/rpm
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/win32
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
