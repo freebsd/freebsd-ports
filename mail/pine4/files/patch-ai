@@ -1,0 +1,41 @@
+*** imap/ANSI/ipopd/Makefile.orig	Thu Mar 14 15:20:20 1996
+--- imap/ANSI/ipopd/Makefile	Fri Jun 14 00:13:07 1996
+***************
+*** 33,37 ****
+  
+  C = ../c-client
+! CCLIENTLIB = $C/c-client.a
+  SHELL = /bin/sh
+  
+--- 33,37 ----
+  
+  C = ../c-client
+! CCLIENTLIB = $C/libc-client.so.1.3
+  SHELL = /bin/sh
+  
+***************
+*** 40,44 ****
+  CC = `cat $C/CCTYPE`
+  CFLAGS = -I$C `cat $C/CFLAGS`
+! LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
+  
+  ipopd: ipop2d ipop3d
+--- 40,44 ----
+  CC = `cat $C/CCTYPE`
+  CFLAGS = -I$C `cat $C/CFLAGS`
+! LDFLAGS = -L$C -lc-client `cat $C/LDFLAGS`
+  
+  ipopd: ipop2d ipop3d
+***************
+*** 55,59 ****
+  
+  $(CCLIENTLIB):
+! 	cd $C;make
+  
+  clean:
+--- 55,59 ----
+  
+  $(CCLIENTLIB):
+! 	cd $C;make $(OS)
+  
+  clean:
