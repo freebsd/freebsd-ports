@@ -5,4 +5,9 @@ interface.
 To use libtool, add the new generic library building commands to your
 Makefile, Makefile.in, or Makefile.am.
 
+This port is specifically designed for developers that want to create
+cross-platform software distributions on FreeBSD.  This version of libtool
+should _NEVER_ be used with the FreeBSD ports system as a replacement for the
+versioned copies of libtool.
+
 WWW: http://www.gnu.org/software/libtool/
