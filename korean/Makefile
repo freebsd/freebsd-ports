@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.25 1998/10/10 08:05:04 steve Exp $
+# $Id: Makefile,v 1.26 1998/12/13 22:00:17 kuriyama Exp $
 #
 
     SUBDIR += Wnn
@@ -6,6 +6,8 @@
     SUBDIR += elm
     SUBDIR += ftghostscript5
     SUBDIR += fvwm95
+    SUBDIR += gau
+    SUBDIR += gtk10
     SUBDIR += h2ps
     SUBDIR += han
     SUBDIR += hanemacs
