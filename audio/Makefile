@@ -22,6 +22,7 @@
     SUBDIR += dap
     SUBDIR += esound
     SUBDIR += extace
+    SUBDIR += fcplay
     SUBDIR += festdoc
     SUBDIR += festival
     SUBDIR += festlex-cmu
