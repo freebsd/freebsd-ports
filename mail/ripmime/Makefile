@@ -12,8 +12,10 @@ MASTER_SITES=	http://www.pldaniels.com/ripmime/
 
 MAINTAINER=	jus@security.za.net
 
+USE_REINPLACE=	yes
+
 pre-build:
-	@${PERL} -pi -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \
+	@${REINPLACE_CMD} -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \
 		s!CFLAGS= -Wall -O2!CFLAGS+= -Wall!' \
 		${WRKSRC}/Makefile
 

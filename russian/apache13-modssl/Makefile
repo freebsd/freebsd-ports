@@ -48,6 +48,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	lev@serebryakov.spb.ru
 
 USE_OPENSSL=	YES
+USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 

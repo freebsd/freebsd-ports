@@ -19,6 +19,7 @@ MAINTAINER=	lioux@FreeBSD.org
 RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
+USE_REINPLACE=	yes
 USE_LINUX_PREFIX=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME:S/501-/-/}
 NO_BUILD=	yes
@@ -29,7 +30,7 @@ RELEASE_DATE=	20020418
 
 post-patch:
 .for ext in ${DOC_EXT}
-	@${PERL} -pi -e "s///" ${WRKSRC}/*.${ext}
+	@${REINPLACE_CMD} -e "s///" ${WRKSRC}/*.${ext}
 .endfor
 
 do-install:

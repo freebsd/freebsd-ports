@@ -23,6 +23,7 @@ BZIP2BASE=	/usr
 .endif
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 MAN1=		code2html.1
 
@@ -32,7 +33,7 @@ do-configure:
 		-e 's|/bin/gzip|/usr/bin/gzip|' \
 		-e 's|/etc/code|${PREFIX}/etc/code|' \
 		< ${WRKSRC}/code2html.orig > ${WRKSRC}/code2html
-	@${PERL} -pi.orig -e 's|/etc/code|${PREFIX}/etc/code|' \
+	@${REINPLACE_CMD} -e 's|/etc/code|${PREFIX}/etc/code|' \
 	    ${WRKSRC}/code2html.1
 
 do-install:

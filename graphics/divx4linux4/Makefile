@@ -18,6 +18,7 @@ RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
+USE_REINPLACE=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME:C/_.+$//}
 NO_BUILD=	yes
 NO_LATEST_LINK=	yes
@@ -29,7 +30,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 
 post-patch:
 .for ext in h linux txt
-	@${PERL} -pi -e "s///" ${WRKSRC}/*.${ext}
+	@${REINPLACE_CMD} -e "s///" ${WRKSRC}/*.${ext}
 .endfor
 
 do-install:

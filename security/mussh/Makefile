@@ -17,9 +17,10 @@ MAINTAINER=	leeym@FreeBSD.org
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" \
+	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" \
 		${WRKSRC}/${PORTNAME}
 
 do-install:

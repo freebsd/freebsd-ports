@@ -34,7 +34,7 @@ PROGRAM_FILES=	easter nowutc leapsecs yearcal
 HEADER_FILES=	caldate.h caltime.h leapsecs.h tai.h taia.h uint64.h
 
 do-configure:
-	@${PERL} -pi -e "s!%%PREFIX%%!${PREFIX}!g" \
+	@${REINPLACE_CMD} -e "s!%%PREFIX%%!${PREFIX}!g" \
 		${WRKSRC}/leapsecs.3 ${WRKSRC}/leapsecs_read.c
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} -s" > ${WRKSRC}/conf-ld

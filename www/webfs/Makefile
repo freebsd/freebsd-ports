@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jedgar@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
+USE_REINPLACE=	yes
+
 MAN1=		webfsd.1
 MIMEFILE?=	${PREFIX}/etc/webfsd/mime.types
 
@@ -24,8 +26,8 @@ BROKEN=		"Requires FreeBSD 4.x or greater due to ipv6 support"
 .endif
 
 do-configure:
-	@${PERL} -pi.orig -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
+	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/etc/mime.types|${MIMEFILE}|' ${WRKSRC}/webfsd.man
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/webfsd ${PREFIX}/sbin

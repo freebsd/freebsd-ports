@@ -19,10 +19,11 @@ RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11 \
 
 NO_BUILD=	yes
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's/\015//' ${WRKSRC}/bin/NetRexxC.sh
-	@${PERL} -pi -e 's/\015//' ${WRKSRC}/read.me.first
+	@${REINPLACE_CMD} -e 's/\015//' ${WRKSRC}/bin/NetRexxC.sh
+	@${REINPLACE_CMD} -e 's/\015//' ${WRKSRC}/read.me.first
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${PREFIX}/bin

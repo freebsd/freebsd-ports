@@ -18,6 +18,7 @@ WRKSRC=	${WRKDIR}/${DISTNAME:C/-.*//}
 
 USE_LINUX=	yes
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 STRIP=
 RESTRICTED=	no response from developer on licensing issues
 
@@ -26,7 +27,7 @@ DOCS=	german_readme.txt license.txt readme.txt
 BRANDELF=	/usr/bin/brandelf
 
 post-patch:
-	@${PERL} -pi -e "s|\r\n|\n|;s|email|username|" ${WRKSRC}/*.txt
+	@${REINPLACE_CMD} -e "s|\r\n|\n|;s|email|username|" ${WRKSRC}/*.txt
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" ${FILESDIR}/wrapper.sh > \
 		${WRKDIR}/wrapper.sh
 

@@ -15,10 +15,11 @@ DISTNAME=	id3ren97a
 MAINTAINER=	jonny@jonny.eng.br
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/id3ren/src
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/id3ren.c ${WRKSRC}/misc.c
 
 .include <bsd.port.mk>

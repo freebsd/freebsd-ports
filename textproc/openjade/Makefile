@@ -17,6 +17,7 @@ RUN_DEPENDS=	${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 USE_GMAKE=	YES
 USE_LIBTOOL=	YES
+USE_PERL5=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade
 INSTALLS_SHLIB=	yes

@@ -20,13 +20,14 @@ RESTRICTED=     License does not allow redistribution in any form\
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
 
 post-patch:
-	@${PERL} -pi -e "s///" ${WRKDIR}/${DISTFILES}
+	@${REINPLACE_CMD} -e "s///" ${WRKDIR}/${DISTFILES}
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}

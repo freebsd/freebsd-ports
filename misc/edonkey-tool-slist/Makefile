@@ -15,10 +15,11 @@ DISTNAME=	ed2k_slist-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 
 WRKSRC=	${WRKDIR}/ed2k_slist
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|\r\n|\n|' ${WRKSRC}/*.[ch]
-	@${PERL} -pi -e 's|(#include <unistd.h>)|\1\n#include\
+	@${REINPLACE_CMD} -e 's|\r\n|\n|' ${WRKSRC}/*.[ch]
+	@${REINPLACE_CMD} -e 's|(#include <unistd.h>)|\1\n#include\
 		<sys/time.h>|' ${WRKSRC}/linux_net.c
 
 # I could have written a Makefile but I would rather

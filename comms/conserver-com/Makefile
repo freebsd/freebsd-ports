@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-com
 MAINTAINER=	kuriyama@FreeBSD.org
 
 GNU_CONFIGURE=	YES
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
 		--with-libwrap
 
@@ -25,7 +26,7 @@ DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
 post-patch:
-	${PERL} -pi.orig \
+	${REINPLACE_CMD} \
 		-e 's@/usr/local/bin@${PREFIX}/sbin@' \
 		${WRKSRC}/conserver/conserver.rc
 
