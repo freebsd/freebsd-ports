@@ -7,6 +7,7 @@
 
 PORTNAME=	echoping
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
 
