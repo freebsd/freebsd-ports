@@ -15,6 +15,10 @@ All ports committers are allowed to commit to this file.
 	with "USE_GNOME=gtk20" which is preferable to LIB_DEPENDS because the
 	GTK+ library version only needs to be changed in bsd.gnome.mk.
 
+	Please see http://www.FreeBSD.org/gnome/docs/porting.html for all
+	the available GNOME components as well as detailed instructions on
+	creating ports that use the GNOME infrastructure.
+
 20040404:
 	The glib20 and gtk20 ports were updated to 2.4.0.  This new version
 	is completely source and binary compatible with the previous 2.2.x
