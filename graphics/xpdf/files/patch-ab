@@ -1,20 +1,25 @@
 --- Makefile.config.orig	Sat Jan 13 11:11:45 1996
 +++ Makefile.config	Mon Feb  5 17:44:39 1996
-@@ -15,14 +15,15 @@
+@@ -15,18 +15,19 @@
  # Extra flags for C compiler
  # This can include things like -I and -L if your include files or
  # libraries are in non-standard places.
 +# For FreeBSD, need -DHAVE_PARAM_H
  #CFLAGS2 = 
 -CFLAGS2 = -Wno-unused
-+CFLAGS2 = -Wno-unused -DHAVE_PARAM_H -I/usr/X11R6/include
++CFLAGS2 = -Wno-unused -DHAVE_PARAM_H -I${X11BASE}/include
  
  # Extra flags for C++ compiler
  # This can include things like -I and -L if your include files or
  # libraries are in non-standard places.
  #CXXFLAGS2 = 
 -CXXFLAGS2 = -Wno-unused
-+CXXFLAGS2 = -Wno-unused -I/usr/X11R6/include
++CXXFLAGS2 = -Wno-unused -I${X11BASE}/include
  
  # Any flags necessary to link in libX11.
  #XLIBS = -lX11
+-XLIBS = -L/usr/X11/lib -lX11
++XLIBS = -L${X11BASE}/lib -lX11
+ #XLIBS = -lX11-mit
+ 
+ # Different versions of make have different C++ rules.
