@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	2.02.1
+PORTVERSION=	2.03
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
