@@ -1,17 +1,17 @@
---- mpg123.c.orig	Tue Nov 24 08:46:40 1998
-+++ mpg123.c	Tue Nov 24 08:47:25 1998
-@@ -14,6 +14,10 @@
- #include <sys/resource.h>
+--- mpg123.c.orig	Tue Jan 26 12:47:05 1999
++++ mpg123.c	Mon Feb  1 14:03:44 1999
+@@ -20,6 +20,10 @@
+ #include <sched.h>
  #endif
  
 +#ifdef __FreeBSD__
 +#include <floatingpoint.h>
 +#endif
 +
- /* #define SET_PRIO */
- 
  #include "mpg123.h"
-@@ -652,6 +656,10 @@
+ #include "getlopt.h"
+ 
+@@ -723,6 +727,10 @@
  
  #ifdef OS2
          _wildcard(&argc,&argv);
@@ -22,4 +22,3 @@
  #endif
  
  	if(sizeof(short) != 2) {
-

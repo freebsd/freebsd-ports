@@ -1,37 +1,43 @@
---- Makefile.orig	Sun Feb  8 23:53:04 1998
-+++ Makefile	Tue Jan 19 09:32:21 1999
-@@ -21,6 +21,7 @@
- 	@echo ""
- 	@echo "make linux-help     Linux, more help"
- 	@echo "make freebsd        FreeBSD"
-+	@echo "make freebsd-elf    FreeBSD ELF"
- 	@echo "make solaris        Solaris 2.x (tested: 2.5 and 2.5.1) using SparcWorks cc"
- 	@echo "make solaris-gcc    Solaris 2.x using GNU cc (somewhat slower)"
- 	@echo "make sunos          SunOS 4.x (tested: 4.1.4)"
-@@ -140,9 +141,19 @@
+--- Makefile.orig	Tue Jan 26 14:35:18 1999
++++ Makefile	Mon Feb  1 14:01:26 1999
+@@ -247,24 +247,32 @@
+ #CFLAGS='-DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
+ #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
+ 
++.if $(PORTOBJFORMAT) == "elf"
++GETBITS=getbits.o
++.else
++GETBITS=getbits_.o
++.endif
++
  freebsd:
  	$(MAKE) CC=cc LDFLAGS= \
- 		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
--		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
--			-funroll-all-loops -ffast-math -DROT_I386 \
+-		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
++		OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_oss.o' \
+ 		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+ 			-funroll-all-loops -ffast-math -DROT_I386 \
+ 			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
-+		CFLAGS+='-Wall -O2 -ansi -pedantic -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
-+			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS \
-+			$(CFLAGS)' \
-+		mpg123-make
-+
-+freebsd-elf:
-+	$(MAKE) CC=cc LDFLAGS= \
-+		OBJECTS='decode_i386.o dct64_i386.o getbits.o audio_oss.o' \
-+		CFLAGS+='-Wall -O2 -ansi -pedantic -fomit-frame-pointer \
-+			-funroll-all-loops -ffast-math -DROT_I386 -DREAD_MMAP \
 +			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS \
 +			$(CFLAGS)' \
  		mpg123-make
  
- solaris:
-@@ -251,7 +262,7 @@
+ 
+ freebsd-frontend:
+ 	$(MAKE) CC=cc LDFLAGS= \
+-		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o \
++		OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_oss.o \
+ 			control_sajber.o control_tk3play.o' \
+ 		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
+ 			-funroll-all-loops -ffast-math -DROT_I386 \
+ 			-DFRONTEND \
+-			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
++			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS \
++			$(CFLAGS)' \
+ 		$(FRONTEND)
+  
+ 
+@@ -414,7 +422,7 @@
  	@ $(MAKE) BINNAME=mpg123m mpg123
  
  mpg123-make:
