@@ -1,5 +1,5 @@
---- modules/mod_auth.c.orig	Tue Nov 11 09:17:23 1997
-+++ modules/mod_auth.c	Fri Feb 20 00:38:05 1998
+--- modules//mod_auth.c.orig	Sun Jun  7 16:17:57 1998
++++ modules/mod_auth.c	Sun Jun  7 16:21:29 1998
 @@ -177,7 +177,7 @@
    /* Is this the proper behavior when timing out? */
    send_response_async(R_421,"Login Timeout (%d seconds): closing control connection.",
@@ -9,7 +9,7 @@
             (void*)0,NULL);
    remove_timer(TIMER_IDLE,ANY_MODULE);
    remove_timer(TIMER_NOXFER,ANY_MODULE);
-@@ -731,10 +731,10 @@
+@@ -763,10 +763,10 @@
    }
  
    if(c)
@@ -22,7 +22,7 @@
      origuser,session.c->remote_name,inet_ntoa(*session.c->remote_ipaddr));
  
    session.user = pstrdup(permanent_pool,auth_map_uid(pw->pw_uid));
-@@ -955,7 +955,7 @@
+@@ -987,7 +987,7 @@
        send_response(R_530,"%s",
                      sreplace(cmd->tmp_pool,maxstr,"%m",maxn,NULL));
  

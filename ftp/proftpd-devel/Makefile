@@ -1,12 +1,13 @@
 # New ports collection makefile for:	proftpd
-# Version required:	1.0.0
+# Version required:	1.0.3pl1
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/13 17:39:02 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/02/20 06:39:07 obrien Exp $
 #
 
-DISTNAME=	proftpd-1.0.0
+DISTNAME=	proftpd-1.0.3pl1
+PKGNAME=	proftpd-1.0.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/
 
@@ -20,17 +21,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 
 #
-# Ugly but "configure --prefix=..." doesn't seem work :(
-# So, do a "sed" to set prefix to $PREFIX
+# - "configure --prefix=..." doesn't seem to work :(
+#   do a "sed" to set prefix to $PREFIX
 #
-# Ugly again, do a "sed" to set the config dir to ${PREFIX}/etc
+# - do a "sed" to set the config dir to ${PREFIX}/etc
 #
 
 post-configure:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
 	${SED}	-e "s:^prefix=\/usr:prefix=${PREFIX}:" \
 		-e "s:^etcdir=\/etc:etcdir=${PREFIX}\/etc:" \
-		-e "s:^libexecdir=\/libexec:libexecdir=${PREFIX}\/libexec:" \
 		< ${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
 
 	${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.pre_sed
@@ -61,6 +61,6 @@ post-install:
 	strip ${PREFIX}/bin/ftpcount \
 		${PREFIX}/bin/ftpwho \
 		${PREFIX}/libexec/proftpd \
-		${PREFIX}/sbin/ftpshut
+		${PREFIX}/sbin/ftpshut \
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- src/proftpd.8.orig	Wed Oct 29 10:51:30 1997
-+++ src/proftpd.8	Fri Feb 20 00:48:52 1998
+--- src/proftpd.8.orig	Sun Jun  7 16:26:39 1998
++++ src/proftpd.8	Sun Jun  7 16:27:44 1998
 @@ -19,6 +19,12 @@
  may be invoked by the Internet "super-server" inetd(8) each time a
  connection to the FTP service is made, or alternatively it can be run as a
