@@ -69,7 +69,6 @@
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-editor
     SUBDIR += mysql-gui
-    SUBDIR += mysql-jdbc-mm
     SUBDIR += mysql-navigator
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
