@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tgif
-PORTVERSION=	4.1.39
+PORTVERSION=	4.1.40
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/ \
@@ -45,7 +45,7 @@ pre-install:
 		  ${MV} tgif.Xdefaults tgif.Xdefaults.org; \
 		  ${SED} -e "s#/usr/local#${PREFIX}#" \
 		         -e "s#/usr/share/lib#${PREFIX}/share/locale#" \
-		         tgif.Xdefaults.org > tgif.Xdefaults ;\
+		         tgif.Xdefaults.org > tgif.Xdefaults \
 		)
 
 post-install:
@@ -53,7 +53,7 @@ post-install:
 		${MKDIR} ${TGIFDOC}; ${MKDIR} ${TGIFDEMO}
 		(cd ${WRKSRC} ;\
 		  ${INSTALL_DATA} ${DEMO_FILES} ${TGIFDEMO} ;\
-		  ${INSTALL_DATA} ${READMES} ${TGIFDOC} ;\
+		  ${INSTALL_DATA} ${READMES} ${TGIFDOC} \
 		)
 		${MKDIR} ${TGIFDEMO}/spice
 		(cd ${WRKSRC}/spice ;\
