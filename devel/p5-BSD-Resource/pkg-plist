@@ -1,4 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/_g.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/get_rlimits.al
@@ -8,6 +11,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/getrusage.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/hard.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/idrss.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/inblock.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/isrss.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/ixrss.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/majflt.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/maxrss.al
@@ -25,9 +29,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/soft.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/stime.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/times.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/utime.al
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/Resource.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD/Resource
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/BSD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/BSD 2>/dev/null || true

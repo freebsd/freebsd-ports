@@ -1,78 +1,18 @@
-       getrusage
+This Perl extension implements the BSD process resource limit functions
 
-       For a detailed description about the values returned by
-       getrusage() please consult your usual C programming
-       documentation about getrusage() and also the header file
-       sys/resource.h.  The $ru_who argument is either
-       RUSAGE_SELF (the current process) or RUSAGE_CHILDREN (all
-       the child processes of the current process).  On some
-       (very few) systems (those supporting both getrusage() and
-       the POSIX threads) there is also RUSAGE_THREAD. The
-       BSD::Resource supports the _THREAD flag if it is present
-       but understands nothing about the POSIX threads
-       themselves.
+	getrusage()	getrlimit()	setrlimit()
 
-       Note 1: officially HP-UX 9 does not support getrusage() at
-       all but for the time being, it does seem to.
+and the BSD process priority functions.  These are available also via
+core Perl but here we do more tricks so that the PRIO_* are available.
 
-       Note 2: Solaris claims in sys/rusage.h that the ixrss and
-       the isrss fields are always zero.
+	getpriority()	setpriority()
 
-       getrlimit
+Also is provided
 
-       Processes have soft and hard resource limits.  At soft
-       limit they receive a signal (XCPU or XFSZ, normally) they
-       can trap and handle and at hard limit they will be
-       ruthlessly killed by the KILL signal.  The $resource
-       argument can be one of
+	times()
 
-               RLIMIT_CPU RLIMIT_FSIZE
-               RLIMIT_DATA RLIMIT_STACK RLIMIT_CORE RLIMIT_RSS
-               RLIMIT_NOFILE RLIMIT_OPEN_MAX
-               RLIMIT_AS RLIMIT_VMEM
+which provides the same functionality as the one in core Perl, only with
+better time resolution.
 
-       The last two pairs (NO_FILE, OPEN_MAX) and (AS, VMEM) mean
-       the same, the former being the BSD names and the latter
-       SVR4 names.  Two meta-resource-symbols might exist
-
-               RLIM_NLIMITS
-               RLIM_INFINITY
-
-       NLIMITS being the number of possible (but not necessarily
-       fully supported) resource limits, INFINITY being useful in
-       setrlimit().
-
-       NOTE: the level of 'support' for a resource varies. Not
-       all the systems
-
-               a) even recognise all those limits
-               b) really track the consumption of a resource
-               c) care (send those signals) if a resource limit get exceeded
-
-       Again, please consult your usual C programming
-       documentation.
-
-       One notable exception: officially HP-UX 9 does not support
-       getrlimit() at all but for the time being, it does seem
-       to.
-
-       getpriority
-
-       The priorities returned by getpriority() are
-       [PRIO_MIN,PRIO_MAX].  The $which argument can be any of
-       PRIO_PROCESS (a process) PRIO_USER (a user), or PRIO_PGRP
-       (a process group). The $pr_who argument tells which
-       process/user/process group, 0 signifying the current one.
-
-       setrlimit
-
-       A normal user process can only lower its resource limits.
-       Soft or hard limit RLIM_INFINITY means as much as
-       possible, the real limits are normally buried inside the
-       kernel.
-
-       setpriority
-
-       The priorities handled by setpriority() are
-       [PRIO_MIN,PRIO_MAX].  A normal user process can only lower
-       its priority (make it more positive).
+Author: Jarkko Hietaniemi <jhi@iki.fi>
+WWW: http://search.cpan.org/search?dist=BSD-Resource
