@@ -18,7 +18,7 @@ Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 
 _USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
 		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
-		gnomecanvas oaf gnomemimedata gconf gnomevfs gnomecc \
+		gnomecanvas oaf gnomemimedata gconf gnomevfs libcapplet \
 		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
 		gnomecore
 
@@ -146,10 +146,10 @@ gnomevfs_PKGNAMESUFFIX=	-gnomevfs
 gnomevfs_DETECT=	${GNOME_VFS_CONFIG}
 gnomevfs_USE_GNOME_IMPL=gnomemimedata gconf gnomelibs
 
-gnomecc_LIB_DEPENDS=	capplet.5:${PORTSDIR}/sysutils/gnomecontrolcenter
-gnomecc_PKGNAMESUFFIX=	-gnomecc
-gnomecc_DETECT=		${X11BASE}/etc/cappletConf.sh
-gnomecc_USE_GNOME_IMPL=	gnomevfs
+libcapplet_LIB_DEPENDS=	capplet.5:${PORTSDIR}/x11/libcapplet
+libcapplet_PKGNAMESUFFIX=-libcapplet
+libcapplet_DETECT=	${X11BASE}/etc/cappletConf.sh
+libcapplet_USE_GNOME_IMPL=gnomelibs
 
 gnomeprint_LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint
 gnomeprint_PKGNAMESUFFIX=-gnomeprint
@@ -198,12 +198,12 @@ glibwww_USE_GNOME_IMPL=	gnomelibs
 gtkhtml_LIB_DEPENDS=	gtkhtml.21:${PORTSDIR}/www/gtkhtml
 gtkhtml_PKGNAMESUFFIX=	-gtkhtml
 gtkhtml_DETECT=		${X11BASE}/etc/gtkhtmlConf.sh
-gtkhtml_USE_GNOME_IMPL=	glibwww gal ghttp gnomecc
+gtkhtml_USE_GNOME_IMPL=	glibwww gal ghttp libcapplet
 
 gnomecore_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/gnomecore
 gnomecore_PKGNAMESUFFIX=-gnome
 gnomecore_DETECT=	${X11BASE}/etc/appletsConf.sh
-gnomecore_USE_GNOME_IMPL=gnomecc libglade
+gnomecore_USE_GNOME_IMPL=libcapplet libglade
 
 # This section keeps tests for optional software.  These work off four
 # types of of variables.  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
