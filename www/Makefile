@@ -204,6 +204,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver
+    SUBDIR += phpnuke
     SUBDIR += plugger
     SUBDIR += pruby
     SUBDIR += publicfile
