@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Nov  1 21:07:14 2002
-+++ configure.in	Sun Nov  3 17:33:21 2002
+--- configure.in.orig	Fri Dec  6 19:02:05 2002
++++ configure.in	Wed Jan  1 19:53:58 2003
 @@ -15,7 +15,8 @@
  AC_REQUIRE_CPP
  dnl AC_CHECK_HEADER(ladspa.h, [], [AC_MSG_ERROR([Cannot find ladspa.h, please install the LADSPA_SDK, or put ladspa.h somewhere it can be found]);])
@@ -10,11 +10,11 @@
  
  AC_CHECK_LIB(sfftw,fftw_one,
      [
-@@ -41,7 +42,6 @@
- 
+@@ -43,7 +44,6 @@
  dnl For gcc use:
- MACHINE=${build_cpu}
--CFLAGS="-Wall -O6 -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -ffast-math -fPIC -DPIC -mcpu=${MACHINE} -march=${MACHINE}"
+ MACHINE="-mcpu=${build_cpu} -march=${build_cpu}"
+ if test ${build_cpu} = "powerpc"; then MACHINE=""; fi
+-CFLAGS="-Wall -O6 -fomit-frame-pointer -fstrength-reduce -funroll-loops -fmove-all-movables -ffast-math -fPIC -DPIC ${MACHINE} ${USE_SSE}"
  
  dnl For Intel's C compiler use:
  dnl CC="icc"

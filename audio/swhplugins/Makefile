@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		swhplugins
-PORTVERSION=		0.3.0
+PORTVERSION=		0.3.3
 CATEGORIES=		audio
 MASTER_SITES=		http://plugin.org.uk/releases/${PORTVERSION}/
 DISTNAME=		swh-plugins-${PORTVERSION}
@@ -26,5 +26,7 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 pre-extract:
 	@${ECHO_CMD} "NOTE: This port does not build all \
 			Plugins, due to missing lrintf() function on FreeBSD"
+post-patch:
+	${REINPLACE_CMD} -e 's,Bsymbolic,Bsymbolic -L${LOCALBASE}/lib,' ${WRKSRC}/Makefile.am
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 lib/ladspa/alias_1407.so
 lib/ladspa/amp_1181.so
+lib/ladspa/chebstortion_1430.so
 lib/ladspa/comb_1190.so
 lib/ladspa/comb_splitter_1411.so
 lib/ladspa/crossover_dist_1404.so
