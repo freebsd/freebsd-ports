@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	ncftp
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.8
 PORTREVISION?=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=	ncftp-317-v6-20040108b.diff.gz
+PATCHFILES=	ncftp-318-v6-20040720b.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -30,6 +30,7 @@ LATEST_LINK=	ncftp3
 LATEST_LINK=	ncftp
 .endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ncurses
@@ -48,6 +49,8 @@ pre-fetch:
 	@${ECHO} ""
 
 pre-build:
+	${REINPLACE_CMD} -e 's|u_decodeurl.so u_decodeurl.so|u_decodeurl.so|' \
+	    ${WRKSRC}/libncftp/Makefile
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
 	cd ${WRKSRC}/sio; make so
