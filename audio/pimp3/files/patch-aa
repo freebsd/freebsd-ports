@@ -1,0 +1,8 @@
+--- pimp3.py.orig	Sun Feb 11 19:17:02 2001
++++ pimp3.py	Sun Feb 11 19:17:20 2001
+@@ -1,4 +1,4 @@
+-#! /usr/bin/python
++#! /usr/local/bin/python
+ import sys, getopt, os, string, gdbm, struct, commands
+ programname = 'pimp3'
+ versionnumber = '0.5.8'

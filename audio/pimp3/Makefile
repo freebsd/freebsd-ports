@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pimp3
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	audio
 MASTER_SITES=	ftp://pimp3.sourceforge.net/pub/pimp3/
 
