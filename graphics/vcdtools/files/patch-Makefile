@@ -1,7 +1,18 @@
---- Makefile.orig	Fri Mar  9 01:43:44 2001
-+++ Makefile	Fri Mar  9 01:43:47 2001
-@@ -1,4 +1,3 @@
+--- Makefile	Fri Mar 24 17:57:31 2000
++++ Makefile	Sat Mar  2 17:39:52 2002
+@@ -1,14 +1,10 @@
 -CFLAGS = -O2
  
  OBJS = mkvcdfs.o vcdisofs.o edc_ecc.o
  
+ all:	mkvcdfs vcdmplex
+ 
+ mkvcdfs: $(OBJS)
+-	cc -o mkvcdfs $(OBJS)
+-
+-vcdmplex: vcdmplex.c
+-	cc -O2 -o vcdmplex vcdmplex.c
++	${CC} -o mkvcdfs $(OBJS)
+ 
+ clean:
+ 	rm -f *.o mkvcdfs vcdmplex
