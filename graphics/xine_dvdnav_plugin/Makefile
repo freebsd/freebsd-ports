@@ -7,6 +7,7 @@
 
 PORTNAME=	xine_dvdnav_plugin
 PORTVERSION=	0.9.8.b
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dvd
@@ -15,7 +16,7 @@ DISTNAME=	xine-dvdnav-${PORTVERSION:C/b/beta/}
 MAINTAINER=	nobutaka@FreeBSD.org
 
 LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
-		dvdcss.0:${PORTSDIR}/graphics/libdvdcss \
+		dvdcss.1:${PORTSDIR}/graphics/libdvdcss \
 		dvdread.2:${PORTSDIR}/graphics/libdvdread
 
 GNU_CONFIGURE=	yes
