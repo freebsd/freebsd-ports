@@ -10,8 +10,7 @@ PORTVERSION=	5.0.${RELEASE_DATE}
 CATEGORIES=	multimedia linux
 MASTER_SITES=	http://download.divx.com/divx/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}501-${RELEASE_DATE}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-std-${RELEASE_DATE}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Linux binary release of DivX (TM) Codec
@@ -21,12 +20,12 @@ RESTRICTED=	unsure of licensing issues
 ONLY_FOR_ARCHS=	i386
 USE_REINPLACE=	yes
 USE_LINUX_PREFIX=	yes
-WRKSRC=	${WRKDIR}/${DISTNAME:S/501-/-/}
+WRKSRC=	${WRKDIR}/${PORTNAME}-${RELEASE_DATE}
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME="${PKGNAME}"
 
-DOC_EXT=	htm linux txt
-RELEASE_DATE=	20020418
+DOC_EXT=	htm
+RELEASE_DATE=	20030428
 
 post-patch:
 .for ext in ${DOC_EXT}
