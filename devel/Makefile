@@ -196,6 +196,7 @@
     SUBDIR += directfb
     SUBDIR += distcc
     SUBDIR += distel
+    SUBDIR += dits
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++

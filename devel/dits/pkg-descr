@@ -1,0 +1,8 @@
+Dits is a tool for validating disk drivers, file systems, and
+lock managers.  More than a simple exerciser, dits is able to
+verify that no detectable data integrity errors have occurred.
+
+WWW: http://vdmvm.org
+
+Greg
+greg@codeconcepts.com
