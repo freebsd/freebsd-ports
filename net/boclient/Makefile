@@ -8,9 +8,8 @@
 PORTNAME=	boclient
 PORTVERSION=	1.21
 CATEGORIES=	net security
-MASTER_SITES=	http://www.ennui.net/~crioux/ \
-		http://orifice.rotten.com/cDc/ \
-		http://www.cultdeadcow.com/tools/
+MASTER_SITES=	http://www2.ennui.net/~crioux/ \
+		http://orifice.rotten.com/cDc/
 DISTNAME=	bo121unix
 
 MAINTAINER=	darius@dons.net.au
