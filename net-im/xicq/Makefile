@@ -11,9 +11,9 @@ PKGNAME=	xicq-071298
 CATEGORIES=	net
 MASTER_SITES=	http://www.xtrophy.dk/xicq/
 
-MAINTAINER=	scrappy@freebsd.org
+MAINTAINER=	scrappy@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xicq-071298
+WRKSRC=		${WRKDIR}/${PKGNAME}
 
 USE_GMAKE=	yes
 MAKE_ENV=	OPT="${CFLAGS}"
