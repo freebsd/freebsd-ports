@@ -1,0 +1,5 @@
+libggigcp is a libggi extension for advanced color and palette handling.
+It adds features for conversion between different color spaces such as RGBA,
+YUV, HSV and CMYK and some manipulation functions like brightness.
+
+WWW: http://www.ggi-project.org/
