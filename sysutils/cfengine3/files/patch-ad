@@ -1,8 +1,8 @@
 This moves the documentation out of /usr/local/share/cfengine/{doc,html} into
 /usr/local/shared/doc/cfengine to keep it inline with the rest of the ports.
 
---- doc/Makefile.am.orig	Fri Dec  1 19:24:39 2000
-+++ doc/Makefile.am	Tue Jan 23 02:07:04 2001
+--- doc/Makefile.am.orig	Fri Dec  1 02:24:39 2000
++++ doc/Makefile.am	Thu Sep 19 08:39:57 2002
 @@ -2,7 +2,7 @@
  info_TEXINFOS = cfengine-Reference.texinfo cfengine-Tutorial.texinfo
  
@@ -12,7 +12,7 @@ This moves the documentation out of /usr/local/share/cfengine/{doc,html} into
  htmlfiles = cfengine-Reference.html cfengine-Tutorial.html 
  html_DATA = $(htmlfiles) cf-security.html
  
-@@ -14,18 +14,19 @@
+@@ -14,21 +14,22 @@
  # then uncomment the reference to ps2
  psfiles = $(ps1)	# $(ps2)
  
@@ -34,4 +34,8 @@ This moves the documentation out of /usr/local/share/cfengine/{doc,html} into
 +SUFFIXES = .html .latex
  
  %.html : %.texinfo
- 	${MAKEINFO} --html $<
+-	${MAKEINFO} --html $<
++	${MAKEINFO} --html --no-split $<
+ 
+ %.dvi : %.latex
+ 	${LATEX} $<
