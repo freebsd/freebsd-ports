@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1997/03/04 10:30:58 tg Exp $
+# $Id: Makefile,v 1.60 1997/03/05 12:29:24 asami Exp $
 #
 
     SUBDIR += acm
@@ -49,6 +49,7 @@
     SUBDIR += xneko
     SUBDIR += xonix
     SUBDIR += xpacman
+    SUBDIR += xpat2
     SUBDIR += xpilot
     SUBDIR += xpipeman
     SUBDIR += xpuyo
