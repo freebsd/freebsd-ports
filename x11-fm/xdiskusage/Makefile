@@ -22,13 +22,12 @@ USE_X_PREFIX=	yes
 
 do-build:
 .for i in panels xdiskusage
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -c \
-		-DFLTK_1_0_COMPAT ${WRKSRC}/${i}.C -o ${WRKSRC}/${i}.o
+	${CXX} ${CXXFLAGS} -I${X11BASE}/include -c \
+		${WRKSRC}/${i}.C -o ${WRKSRC}/${i}.o
 .endfor
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -L${X11BASE}/lib -o \
+	${CXX} ${CXXFLAGS} -L${X11BASE}/lib -o \
 		${WRKSRC}/xdiskusage ${WRKSRC}/panels.o \
-		${WRKSRC}/xdiskusage.o -lfltk  -lm -lMesaGL \
-		${PTHREAD_LIBS} -lXext -lX11
+		${WRKSRC}/xdiskusage.o -lfltk -lm -lXext -lX11
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xdiskusage ${PREFIX}/bin
