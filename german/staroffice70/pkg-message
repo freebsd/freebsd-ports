@@ -17,8 +17,7 @@ and crashes.
 
 Workaround:
 
-# chmod 777 $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
-# chmod +s $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
+# chmod a=rwx,+s $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
 
 $PREFIX is in most cases "/usr/local". Adding +s on the
 config directory does make it writable for later.
