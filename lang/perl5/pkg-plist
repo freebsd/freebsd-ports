@@ -902,7 +902,8 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/sys 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/machine 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%% 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/5.6.1 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%% 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl 2>/dev/null || true
 %%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/Sys 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/IO 2>/dev/null || true
@@ -981,3 +982,4 @@ lib/perl5/%%PERL_VER%%/warnings/register.pm
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%%/BSDPAN 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/%%PERL_VER%% 2>/dev/null || true
+@unexec rmdir %D/lib/perl5 2>/dev/null || true
