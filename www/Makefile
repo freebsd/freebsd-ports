@@ -110,6 +110,7 @@
     SUBDIR += p5-FastCGI
     SUBDIR += p5-HTML
     SUBDIR += p5-HTML-Embperl
+    SUBDIR += p5-HTML-Mason
     SUBDIR += p5-HTML-Parser
     SUBDIR += p5-HTML-QuickCheck
     SUBDIR += p5-HTML-Stream

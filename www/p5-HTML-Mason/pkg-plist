@@ -1,0 +1,36 @@
+lib/perl5/site_perl/%%PERL_VER%%/Apache/Mason.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bundle/HTML/Mason.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Admin.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/ApacheHandler.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/ApacheHandler.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Commands.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Commands.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component/FileBased.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component/Subcomponent.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Components.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Devel.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/FakeApache.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Interp.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Interp.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Parser.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Preview.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Request.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Request.pod
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Tools.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/makeconfig.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/HTML
