@@ -1,5 +1,5 @@
---- config/install.sh.orig	Thu Oct 28 17:44:01 2004
-+++ config/install.sh	Wed Nov  3 13:36:09 2004
+--- config/install.sh.orig	Wed Dec 15 00:23:38 2004
++++ config/install.sh	Thu Dec 16 04:30:19 2004
 @@ -12,6 +12,8 @@
  # Author: Matthias Blume (blume@tti-c.org)
  #
@@ -38,7 +38,7 @@
  this=$0
  
  
-@@ -299,7 +323,12 @@
+@@ -300,7 +324,12 @@
  # the name of the bin files directory
  #
  BOOT_ARCHIVE=boot.$ARCH-unix
@@ -52,35 +52,35 @@
  
  #
  # build the run-time system
-@@ -308,12 +337,17 @@
+@@ -309,12 +338,17 @@
      vsay $this: Run-time system already exists.
  else
-     $CONFIGDIR/unpack $ROOT runtime
+     "$CONFIGDIR"/unpack "$ROOT" runtime
 +    [ -n "$MLRUNTIMEPATCHES" ] && \
 +    for p in $MLRUNTIMEPATCHES
 +    do
 +	do_patch $p
 +    done
-     cd $SRCDIR/runtime/objs
+     cd "$SRCDIR"/runtime/objs
      echo $this: Compiling the run-time system.
      $MAKE -f mk.$ARCH-$OPSYS $EXTRA_DEFS
      if [ -x run.$ARCH-$OPSYS ]; then
- 	mv run.$ARCH-$OPSYS $RUNDIR
+ 	mv run.$ARCH-$OPSYS "$RUNDIR"
 -	$MAKE MAKE=$MAKE clean
 +	[ "$MLNORUNTIMECLEAN" ] || $MAKE MAKE=$MAKE clean
      else
  	complain "$this: !!! Run-time system build failed for some reason."
      fi
-@@ -330,7 +364,7 @@
+@@ -331,7 +365,7 @@
      export CM_DIR_ARC
      CM_DIR_ARC=$ORIG_CM_DIR_ARC
  else
--    $CONFIGDIR/unpack $ROOT $BOOT_ARCHIVE
-+    [ -n "$RECOMPILEDIR" ] || $CONFIGDIR/unpack $ROOT $BOOT_ARCHIVE
+-    "$CONFIGDIR"/unpack "$ROOT" "$BOOT_ARCHIVE"
++    [ -n "$RECOMPILEDIR" ] || "$CONFIGDIR"/unpack "$ROOT" "$BOOT_ARCHIVE"
  
-     fish $ROOT/$BOOT_FILES/basis.cm
+     fish "$ROOT"/"$BOOT_FILES"/basis.cm
  
-@@ -399,5 +433,18 @@
+@@ -400,5 +434,18 @@
  else
      complain "$this: !!! Installation of libraries and programs failed."
  fi
@@ -89,7 +89,7 @@
 +[ -n "$MLSOURCEUNPACKTARGETS" ] && \
 +for t in $MLSOURCEUNPACKTARGETS
 +do
-+	$CONFIGDIR/unpack $ROOT $t
++	"$CONFIGDIR"/unpack "$ROOT" $t
 +done
 +# apply source patches
 +[ -n "$MLSOURCEPATCHES" ] && \
