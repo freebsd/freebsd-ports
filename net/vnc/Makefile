@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vnc
-PORTVERSION=	3.3.6
-PORTREVISION=	1
+PORTVERSION=	3.3.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unixsrc
