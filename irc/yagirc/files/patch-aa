@@ -1,0 +1,46 @@
+--- Makefile.orig	Sun Jul  5 13:57:46 1998
++++ Makefile	Tue Jul  7 15:11:24 1998
+@@ -18,7 +18,7 @@
+ 
+ ifdef USE_SCRIPT
+ perl_cflags = -DUSE_SCRIPT -I$(perl_path)
+-perl_lflags = -L$(perl_path) -lperl
++perl_lflags = -L$(perl_path) -lperl -lcrypt
+ ifdef USE_CRYPT
+ perl_lflags += -lcrypt
+ endif
+@@ -36,13 +36,13 @@
+ 
+ ifdef USE_PTHREADS
+ thread_cflags = -DUSE_PTHREADS
+-thread_lflags = -lpthread
++thread_lflags = -lc_r
+ endif
+ 
+-cp = $(cc)
+-cflags = -Wall -g -O2 -m486 -pipe -DUNIX -DPREFIX=\"$(prefix)\" $(thread_cflags) $(gui_cflags) $(perl_cflags) $(gui_cflags) $(gnome_cflags)
++cp = $(CC)
++cflags = $(CFLAGS) -DUNIX -DPREFIX=\"$(prefix)\" $(thread_cflags) $(gui_cflags) $(perl_cflags) $(gui_cflags) $(gnome_cflags)
+ 
+-ld = cc
++ld = $(CC)
+ lflags = $(gui_lflags) $(perl_lflags) $(gnome_lflags) $(thread_lflags) -lm
+ 
+ .SUFFIXES: .c .cpp .o
+@@ -65,11 +65,11 @@
+ install: all
+ 	mkdir -p $(prefix)/bin
+ 	mkdir -p $(prefix)/etc
+-	mkdir -p $(prefix)/lib/yagirc
+-	install -s $(exe) $(prefix)/bin
+-	install -m 0644 irc.pl $(prefix)/lib/yagirc
+-	install -m 0644 startup.pm $(prefix)/lib/yagirc
+-	install -m 0644 yagirc.conf $(prefix)/etc
++	mkdir -p $(prefix)/share/examples/yagirc
++	${BSD_INSTALL_PROGRAM} $(exe) $(prefix)/bin
++	${BSD_INSTALL_DATA} irc.pl $(prefix)/share/examples/yagirc
++	${BSD_INSTALL_DATA} startup.pm $(prefix)/share/examples/yagirc
++	${BSD_INSTALL_DATA} yagirc.conf $(prefix)/etc
+ 
+ clean:
+ 	/bin/rm -f core *.o $(exe)
