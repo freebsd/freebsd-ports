@@ -4,7 +4,7 @@
 # Date created:			  Fri Jan 24, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.4 1998/02/21 05:14:09 steve Exp $
+# $Id: Makefile,v 1.5 1998/05/09 18:52:33 obrien Exp $
 #
 
 DISTNAME=	xwpe-1.5.9a
@@ -20,9 +20,9 @@ MAINTAINER=     obrien@FreeBSD.org
 # LD_LIBRARY_PATH is to deal with a braindead libX11.a search in configure
 # (once again author assumes too many Linux'isms)
 # it is not exptected to be set at runtime.
-MAKE_ENV+=	LD_LIBRARY_PATH="${X11BASE}/lib"
+MAKE_ENV=	LD_LIBRARY_PATH="${X11BASE}/lib"
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	LD_LIBRARY_PATH="${X11BASE}/lib"
+CONFIGURE_ENV=	LD_LIBRARY_PATH="${X11BASE}/lib"
 USE_GMAKE=	yes
 ALL_TARGET=
 MAN1=		xwpe.1
