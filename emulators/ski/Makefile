@@ -9,7 +9,7 @@
 PORTNAME=	ski
 PORTVERSION=	0.943l.2
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://www.software.hp.com/dist/swdepot/
+MASTER_SITES=	# ftp://www.software.hp.com/dist/swdepot/
 DISTNAME=	ski-0.943l-2.i386
 EXTRACT_SUFX=	.rpm
 
