@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rice
-PORTVERSION=	0.0.0.1
+PORTVERSION=	0.0.0.2
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://arika.org/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,8 +23,9 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.rb ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${RUBY_MODDOCDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.jp ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>
