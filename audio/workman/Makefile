@@ -14,6 +14,8 @@ DISTNAME=	WorkMan-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
 
+BROKEN=		"Fails to package (html manpages)"
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
