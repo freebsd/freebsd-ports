@@ -1,0 +1,71 @@
+--- doc/Makefile.in.orig	Tue Jan  6 22:53:45 2004
++++ doc/Makefile.in	Tue Jan  6 22:55:11 2004
+@@ -101,7 +101,6 @@
+ TEXINFOS = libidn.texi
+ TEXI2DVI = texi2dvi
+ TEXI2PDF = $(TEXI2DVI) --pdf --batch
+-MAKEINFOHTML = $(MAKEINFO) --html
+ DVIPS = dvips
+ RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \
+ 	html-recursive info-recursive install-data-recursive \
+@@ -169,7 +168,6 @@
+ LT_AGE = @LT_AGE@
+ LT_CURRENT = @LT_CURRENT@
+ LT_REVISION = @LT_REVISION@
+-MAKEINFO = @MAKEINFO@
+ NM = @NM@
+ OBJEXT = @OBJEXT@
+ PACKAGE = @PACKAGE@
+@@ -231,7 +229,6 @@
+ 
+ info_TEXINFOS = libidn.texi
+ libidn_TEXINFOS = fdl.texi $(gdoc_TEXINFOS)
+-AM_MAKEINFOHTMLFLAGS = --no-split --number-sections
+ 
+ # Man pages.
+ dist_man_MANS = idn.1 $(gdoc_MANS)
+@@ -390,32 +387,16 @@
+ 	  fi; \
+ 	done; \
+ 	cd "$$am__cwd"; \
+-	if $(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir) \
+-	 -o $@ $<; \
+-	then \
+-	  rc=0; \
+-	  cd $(srcdir); \
+-	else \
+-	  rc=$$?; \
+-	  cd $(srcdir) && \
+-	  $$restore $$backupdir/* `echo "./$@" | sed 's|[^/]*$$||'`; \
+-	fi; \
+ 	rm -rf $$backupdir; \
+ 	exit $$rc
+ 
+ .texi.dvi:
+-	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
+-	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
+-	$(TEXI2DVI) $<
++	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS"
+ 
+ .texi.pdf:
+-	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS" \
+-	MAKEINFO='$(MAKEINFO) $(AM_MAKEINFOFLAGS) $(MAKEINFOFLAGS) -I $(srcdir)' \
+-	$(TEXI2PDF) $<
++	TEXINPUTS="$(am__TEXINFO_TEX_DIR)$(PATH_SEPARATOR)$$TEXINPUTS"
+ 
+ .texi.html:
+-	$(MAKEINFOHTML) $(AM_MAKEINFOHTMLFLAGS) $(MAKEINFOFLAGS) -I $(srcdir) \
+-	 -o $@ $<
+ 	if test ! -d $@ && test -d $(@:.html=); then \
+ 	  mv $(@:.html=) $@; else :; fi
+ $(srcdir)/libidn.info: libidn.texi $(srcdir)/version.texi $(libidn_TEXINFOS)
+@@ -1106,9 +1087,6 @@
+ 	$(PERL) $(top_srcdir)/doc/gdoc -man $(GDOC_MAN_EXTRA_ARGS) -function stringprep_check_version $< > $@
+ 
+ # DocBook
+-
+-libidn-db.xml: libidn.texi $(libidn_TEXINFOS)
+-	$(MAKEINFO) --docbook --output $@ libidn.texi
+ 
+ libidn-db.txt: libidn-db.xml
+ 	$(DOCBOOK2TXT) $^
