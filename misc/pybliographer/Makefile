@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pybliographer
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/pyblio/
