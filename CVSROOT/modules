@@ -2796,6 +2796,7 @@ gtodo		ports/deskutils/gtodo
 gtoolkit	ports/x11-toolkits/gtoolkit
 gtranslator	ports/devel/gtranslator
 gts		ports/graphics/gts
+gtstarter	ports/x11/gtstarter
 gturing		ports/games/gturing
 gtypist		ports/games/gtypist
 guavac		ports/java/guavac
