@@ -1,21 +1,23 @@
 # New ports collection makefile for:    Mesa
-# Version required:     2.2
+# Version required:     2.4
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.18 1997/09/30 19:20:00 max Exp $
+# $Id: Makefile,v 1.19 1997/09/30 19:21:40 max Exp $
 #
 
-DISTNAME=       Mesa-2.2
+DISTNAME=       MesaLib-2.4
+PKGNAME=	Mesa-2.4
 CATEGORIES=	graphics
 MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	jseger@FreeBSD.ORG
+WRKSRC=		${WRKDIR}/${PKGNAME}
 
 ALL_TARGET=	freebsd
 USE_X11=	yes
-LIBS=		libMesaGL libMesaGLU libMesaaux libMesatk
-SHLIB_VERSION=	13.2
+LIBS=		libMesaGL libMesaGLU
+SHLIB_VERSION=	13.4
 
 do-install:
 .for file in ${LIBS}
@@ -29,12 +31,6 @@ do-install:
 .endfor
 	@${MKDIR} ${PREFIX}/include/GL
 	${INSTALL_DATA} ${WRKSRC}/include/GL/* ${PREFIX}/include/GL
-	@${MKDIR} ${PREFIX}/share/examples/Mesa
-	${CP} -Rp ${WRKSRC}/samples ${PREFIX}/share/examples/Mesa
-	${CP} -Rp ${WRKSRC}/demos ${PREFIX}/share/examples/Mesa
-	${CP} -Rp ${WRKSRC}/book ${PREFIX}/share/examples/Mesa
-	${CP} -Rp ${WRKSRC}/widgets-sgi ${PREFIX}/share/examples/Mesa
-	@${RM} -f ${PREFIX}/share/examples/Mesa/widgets-sgi/Makefile~
 	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
