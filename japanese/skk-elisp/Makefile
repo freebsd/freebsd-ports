@@ -37,7 +37,6 @@ PLIST_SUB=	EMACS=${EMACS} ELISPSUBDIR=${ELISPSUBDIR}
 post-install:
 	(cd ${WRKSRC}; make SUBDIRS='doc' install)
 	(cd ${WRKSRC}; make SUBDIRS='etc' install)
-
 	install-info ${PREFIX}/info/skk.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
