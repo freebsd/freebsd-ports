@@ -1,0 +1,24 @@
+In administrating a large scale PC cluster, installation and updating
+both of kernel and utility software to whole the system are very
+troublesome, especially if the numbers of PC exceeds a hundred. In
+installation, people usually make dead copies of a hard disk image
+in which software systems are previously installed and then they
+are distributed among node PCs by CDs or hard disk themselves.
+
+Though some software do such a process through networks, they
+commonly have an performance bottleneck at server where the original
+image are hold.
+
+A cloning program `dolly' developed in ETH(Swiss Federal Institute
+of Technology) avoids such bottleneck by using a "ring" type
+connection rather than 'hub' type connection among one server and
+many clients .
+
+I have extended its concept with multi-threading and pipeline
+technique. It speeds up installation process very much. One-to-ten
+copying, for example, finishes in almost same minutes for one-to-one
+copy. In addition, time out sensing 'bypass' mechanism makes the
+copy process pretty robust in the case of a client machine trouble.
+
+Author: Atsushi Manabe <manabe@corvus.kek.jp>
+WWW: http://corvus.kek.jp/~manabe/pcf/dolly/

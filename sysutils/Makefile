@@ -95,6 +95,7 @@
     SUBDIR += dmidecode
     SUBDIR += doconfig
     SUBDIR += dolly
+    SUBDIR += dolly+
     SUBDIR += dt
     SUBDIR += dtc
     SUBDIR += du2ps
