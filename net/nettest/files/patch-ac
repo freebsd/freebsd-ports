@@ -1,5 +1,23 @@
 *** nettestd.c.orig	Thu Nov  5 15:52:58 1992
---- nettestd.c	Mon Oct 20 13:28:06 1997
+--- nettestd.c	Sun Sep 19 17:31:20 1999
+***************
+*** 107,113 ****
+  } name;
+  int namesize;
+  
+! int read(), recv();
+  int (*rfunc)() = read;
+  
+  main(argc, argv)
+--- 107,114 ----
+  } name;
+  int namesize;
+  
+! int read();
+! ssize_t recv();
+  int (*rfunc)() = read;
+  
+  main(argc, argv)
 ***************
 *** 416,422 ****
   			    )
@@ -9,7 +27,7 @@
   			error("bind");
   			exit(1);
   		}
---- 416,422 ----
+--- 417,423 ----
   			    )
   			error("setsockopt (IP_OPTIONS)");
   #endif
@@ -29,7 +47,7 @@
   		if (s2 < 0) {
   			extern int errno;
   			if (errno == EINTR)
---- 447,456 ----
+--- 448,457 ----
   #endif
   	listen(s, 5);
   
@@ -49,7 +67,7 @@
   				 &namesize);
   		}
   		if (t < 0) {
---- 723,729 ----
+--- 724,730 ----
   #endif
   		{
   			namesize = sizeof(name.d_inet);
