@@ -8,3 +8,4 @@ share/examples/prom-wl/dot.emacs
 share/examples/prom-wl/dot.procmailrc
 @dirrm lib/xemacs/site-packages/lisp/prom-wl
 @dirrm share/doc/prom-wl
+@dirrm share/examples/prom-wl
