@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 
 MAINTAINER=	stb@FreeBSD.org
 
-Y2K=		http://andrew2.andrew.cmu.edu/cyrus/imapd/y2k.html
+Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
