@@ -1,0 +1,9 @@
+ncat is much like cat(1), but either its input or output is a TCP/IP socket
+rather than a file descriptor.  If the input is from a socket, ncat reads data
+from the specified socket and sends the data to stdout.  If the output is to a
+socket, ncat reads data from stdin and sends the data to the specified socket.
+
+ncat can log the data stream in three formats.  Which format to use (if any)
+should be chosen according to the nature of the data being streamed.
+
+http://www.canonware.com/canonware/

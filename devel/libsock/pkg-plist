@@ -1,0 +1,9 @@
+include/libsock/libsock.h
+include/libsock/libsock_incs.h
+include/libsock/sock.h
+include/libsock/socks.h
+include/libsock/libsock_defs.h
+lib/libsock.a
+lib/libsock_p.a
+lib/libsock_d.a
+@dirrm include/libsock

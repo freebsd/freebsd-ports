@@ -1,0 +1,6 @@
+The libsock library implements a streamlined interface for multi-threaded TCP/IP
+socket programming.  The main purpose of the library is to abstract the
+complexities of threaded network server programming without compromising
+performance.  libsock centrally handles all of the poll() waiting in one thread
+to improve performance, at the same time as making reading and writing seem
+completely asynchronous at the sock interface level.
