@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	exact
-PORTVERSION=	1.38
+PORTVERSION=	1.41
 CATEGORIES=	mail
-MASTER_SITES=	http://www.britishsteal.com/dist/exact/
+MASTER_SITES=	http://adju.st/dist/exact/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that implements POP Before SMTP Relay Authentication
@@ -18,6 +18,7 @@ MAILGROUP?=	mailnull
 MAILLOG?=	/var/log/maillog
 EXACTDIR?=	/var/exact
 
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=${MAILUSER} \
 		--with-group=${MAILGROUP} \
