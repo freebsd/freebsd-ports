@@ -27,7 +27,7 @@
  maintainer-clean-hdr:
 -gtk-config: $(top_builddir)/config.status gtk-config.in
 +gtk11d-config.in: gtk-config.in
-+	cp gtk-config.in gtk11-config.in
++	cp gtk-config.in gtk11d-config.in
 +
 +gtk11d-config: $(top_builddir)/config.status gtk11d-config.in
  	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= ./config.status
