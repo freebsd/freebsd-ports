@@ -2,6 +2,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/XML/Stream.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Hash.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Namespace.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Node.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Parser/DTD.pm
 lib/perl5/site_perl/%%PERL_VER%%/XML/Stream/Tree.pm
