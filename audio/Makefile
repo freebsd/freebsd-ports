@@ -31,6 +31,7 @@
     SUBDIR += bladeenc
     SUBDIR += blop
     SUBDIR += bonk
+    SUBDIR += boodler
     SUBDIR += btc
     SUBDIR += cam
     SUBDIR += cantus

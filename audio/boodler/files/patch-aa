@@ -1,0 +1,12 @@
+diff -ruN wrapper.orig/boodler wrapper/boodler
+--- wrapper.orig/boodler	Wed Dec 31 19:00:00 1969
++++ wrapper/boodler         Tue Dec 30 14:46:19 2003
+@@ -0,0 +1,8 @@
++#!/bin/sh
++
++booroot=/home/USER/boodler
++
++export BOODLER_SOUND_PATH=${booroot}/boodler-snd/
++export BOODLER_EFFECTS_PATH=${booroot}/effects/
++
++python ${booroot}/boodler.py "$@"

@@ -1,0 +1,10 @@
+The wrapper "boodler" has been installed. Use it to create
+soundscapes.
+
+Wherever the boodler documentation says you
+should run:
+
+python boodler.py module.ClassName
+
+You can instead run:
+boodler module.ClassName
