@@ -22,7 +22,7 @@ PATCHVERSION=	20031109
 MASTERDIR=	${.CURDIR}/../../mail/squirrelmail
 MD5_FILE=	${.CURDIR}/distinfo
 
-post-patch:
+slaveport-post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include "${MASTERDIR}/Makefile"

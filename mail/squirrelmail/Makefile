@@ -38,22 +38,30 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		SQUIRRELDIR="${SQUIRRELDIR:S,^${PREFIX}/,,}"
 
+.if !defined(MASTERDIR)
+MASTERDIR=	${.CURDIR}
+.endif 
+
 pre-everything::
 	@${ECHO_CMD} "SquirrelMail is installed into ${SQUIRRELDIR}"
 	@${ECHO_CMD} "To use the old location ${PREFIX}/squirrelmail define"
 	@${ECHO_CMD} "WITHOUT_WWWDIR when patching or installing"
 	@${ECHO_CMD}
 
-post-patch:
+.if !target(slaveport-post-patch)
+slaveport-post-patch:
+.endif
+
+post-patch: slaveport-post-patch
 .ifndef PATCH_DEBUG
-	@${RM} ${WRKSRC}/config/config_default.php.orig
+	@${RM} -f ${WRKSRC}/config/config_default.php.orig
 .endif
 	@${SED} -e "s;%%SQUIRRELDIR%%;${SQUIRRELDIR};g" \
-		${.CURDIR}/pkg-install > ${PKGINSTALL}
+		${MASTERDIR}/pkg-install > ${PKGINSTALL}
 	@${SED} -e "s;%%SQUIRRELDIR%%;${SQUIRRELDIR};g" \
-		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
+		${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "s;%%SQUIRRELDIR%%;${SQUIRRELDIR};g" \
-		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
 
 # Rearrange the documentation
 do-build:

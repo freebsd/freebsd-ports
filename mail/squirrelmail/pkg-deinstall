@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+#	$FreeBSD$
+#
+
+#set -vx
+
+PKG_BATCH=${BATCH:=NO}
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
+SQUIRRELDIR=%%SQUIRRELDIR%%
+
+checkfile() {
+        diff -bBqw $1 $2 >/dev/null 2>&1
+        case $? in
+                0)      # config file exists, but is the same
+			rm $1
+                        ;;
+                1)      # config file exists and differs
+                        ;;
+                *)      # no config file exists
+                        ;;
+        esac
+}
+
+case $2 in
+	DEINSTALL)
+		cd ${PKG_PREFIX}
+		checkfile /var/spool/squirrelmail/prefs/default_pref \
+			${SQUIRRELDIR}/data/default_pref
+		;;
+	POST-DEINSTALL)
+		if [ "${PKG_BATCH}" = "NO" ]; then
+			echo "If you are no longer going to use SquirrelMail"
+			echo "you should remove the /var/spool/squirrelmail"
+			echo "directory with:"
+			echo
+			echo "	rm -rf /var/spool/squirrelmail"
+		fi
+		;;
+
+esac
