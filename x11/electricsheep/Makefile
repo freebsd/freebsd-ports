@@ -15,16 +15,14 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A nice distributed screensaver
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/graphics/xli \
 		curl:${PORTSDIR}/ftp/curl
 
-BROKEN=		Missing LIB_DEPENDS
-
 USE_X_PREFIX=	yes
 USE_SDL=	sdl
-USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 
