@@ -124,6 +124,7 @@
     SUBDIR += oooqs
     SUBDIR += p5-X11-IdleTime
     SUBDIR += p5-X11-Protocol
+    SUBDIR += panoramixext
     SUBDIR += peeper
     SUBDIR += portoseguro
     SUBDIR += powershell
