@@ -1,4 +1,4 @@
-	An Internet Relay Chat client written in perl, that uses a 
+	An Internet Relay Chat client written in perl, that uses a
 perl-based scripting language.  It is small (150k or less), fast, and
 gives you a good chance to practice your perl skills. :)
 
@@ -8,7 +8,7 @@ knowledge of perl is necessary to run the client although it is helpful
 if you plan to do any scripting.
 
 Author: Roger Espel Llima (aka orabidoo)
-WWW: http://www.iagora.com/~espel/sirc/
+WWW: http://www.iagora.com/~espel/sirc.html
 
 - Author of port: Doug Barton
-- Doug@gorean.org
+- DougB@FreeBSD.org
