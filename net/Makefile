@@ -478,6 +478,7 @@
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket
     SUBDIR += pear-Net_URL
+    SUBDIR += pebrot
     SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfflowd
