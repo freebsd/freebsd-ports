@@ -1,0 +1,41 @@
+*** config.h.orig	Thu Aug 28 19:28:16 1997
+--- config.h	Sat Aug 30 23:08:31 1997
+***************
+*** 8,25 ****
+  #ifdef OS2
+  #define hfile "harmonic"
+  #else
+! #define hfile "harmonics"
+  #endif
+  
+  /* Default location to show tides for */
+  /* This is overridden by the LOCATION environment variable or by the
+     -location switch. */
+! #define deflocation "Baltimore (Fort McHenry)"
+  
+  /* System default config file, read only if neither ~/.[x]tiderc nor
+     -config is present.  sysconfig is for tide, xsysconfig is for xtide. */
+! #define sysconfig "/usr/lib/tiderc"
+! #define xsysconfig "/usr/lib/xtiderc"
+  
+  /* This gives the location of the compiled java classes tide.class and
+     xtide.class.  You should change it to point to your local copies if
+--- 8,25 ----
+  #ifdef OS2
+  #define hfile "harmonic"
+  #else
+! #define hfile "/usr/X11R6/lib/xtide/harmonics"
+  #endif
+  
+  /* Default location to show tides for */
+  /* This is overridden by the LOCATION environment variable or by the
+     -location switch. */
+! #define deflocation "San Francisco, California"
+  
+  /* System default config file, read only if neither ~/.[x]tiderc nor
+     -config is present.  sysconfig is for tide, xsysconfig is for xtide. */
+! #define sysconfig "/usr/X11R6/lib/xtide/tiderc"
+! #define xsysconfig "/usr/X11R6/lib/xtide/xtiderc"
+  
+  /* This gives the location of the compiled java classes tide.class and
+     xtide.class.  You should change it to point to your local copies if
