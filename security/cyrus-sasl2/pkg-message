@@ -1,10 +1,5 @@
 
-You may need to start the saslauthd daemon for authentication with
-the system password files:
-
-	%%PREFIX%%/etc/rc.d/saslauthd.sh start
-
-or you can use sasldb2 for authentication, to add users use:
+You can use sasldb2 for authentication, to add users use:
 
 	saslpasswd2 -c username
 
