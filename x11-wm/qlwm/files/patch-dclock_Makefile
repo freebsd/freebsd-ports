@@ -1,0 +1,11 @@
+--- dclock/Makefile.orig	Tue Oct 17 05:05:22 2000
++++ dclock/Makefile	Thu Jan 25 16:52:37 2001
+@@ -6,7 +6,7 @@
+ #CXXFLAGS	= -Wall -pipe
+ 
+ # include files
+-INCPATH		= -I$(QTDIR)/include
++INCPATH		= -I$(QTDIR)/include -I${X11BASE}/include/qt2
+ 
+ # libraries
+ LFLAGS		= -L$(QTDIR)/lib
