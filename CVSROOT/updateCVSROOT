@@ -2,7 +2,7 @@
 #
 # Called in place of mkmodules to take care of files mkmodules doesn't know.
 #
-# $Id: updateCVSROOT,v 1.6 1995/11/27 07:48:19 peter Exp $
+# $Id: updateCVSROOT,v 1.7 1995/11/27 08:31:00 peter Exp $
 
 PATH=$PATH:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH
@@ -24,4 +24,5 @@ cmp -s cvs-committers /home/mail/cvs-committers || {
   echo "please check to see what needs to be updated..."
 }
 
+echo Executing: mkmodules $1
 exec mkmodules $1
