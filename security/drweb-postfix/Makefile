@@ -5,92 +5,85 @@
 # $FreeBSD$
 #
 
-PORTNAME=	drweb_postfix
-PORTVERSION=	4.31
+PORTNAME=	drweb-postfix
+PORTVERSION=	4.32.1
 CATEGORIES=	security mail
-MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/ \
-		ftp://ftp.drweb.ru/pub/unix/archive/ \
-		ftp://ftp.drweb.ru/pub/unix/archive/drweb-clients-${PORTVERSION}/
-DISTNAME=	drweb-clients-${PORTVERSION}-sources
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/FreeBSD/49/ \
+		ftp://ftp.drweb.ru/pub/unix/FreeBSD/53/
 
-MAINTAINER=	zaa@ulstu.ru
+MAINTAINER=	support@spectrum.ru
 COMMENT=	Postfix message filter for virus processing through DrWeb daemon
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+NO_BUILD=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd49
+.else
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd53
+.endif
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 INST_PREFIX=	${PREFIX}/${PORTNAME}
+DOC_DIR=	${PREFIX}/share/doc/${PORTNAME}
+CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
-LANGS=en-ru
-CONFS=drweb_postfix users viruses addresses
-TMPLS=archive-admin archive-sender error-admin error-sender skip-sender \
-      virus-admin virus-rcpts virus-sender rule-admin
-PORTDOCS=	FAQ.rus.txt addresses_list.rus.txt addresses_list.txt conf_file.rus.txt \
-	conf_file.txt notify.rus.txt notify.txt readme readme.rus \
-	users_list.rus.txt users_list.txt viruses_list.rus.txt viruses_list.txt
-
-post-patch:
-	cd ${WRKSRC} && \
-	${SED} "s#%PREFIX%#${PREFIX}#g" < dw_options.c > ndwo.c && \
-		${MV} ndwo.c dw_options.c
-	cd ${WRKSRC}/etc && \
-	${SED} -e "s#%PREFIX%#${PREFIX}#g" -e "s#%HOSTNAME%#${HOST}#g" \
-		< drweb_postfix.conf > nconf && \
-		${MV} nconf drweb_postfix.conf
-
-post-configure:
-	cd ${WRKSRC} && { \
-		${ECHO_CMD} ${PORTVERSION}; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} n; \
-		${ECHO_CMD} y; \
-		${ECHO_CMD} ${CFLAGS} ; \
-		${ECHO_CMD} y; \
-	} | ./configure
+LANGS=		en en-ru en-pl en-jp
+CONFS=		drweb_postfix users viruses addresses
+TMPLS=		archive-admin archive-sender cured-admin cured-sender error-admin \
+		error-sender rule-admin skip-sender virus-admin virus-rcpts \
+		virus-sender license-admin
 
 do-install:
+	${MKDIR} ${INST_PREFIX}
+	${MKDIR} ${INST_PREFIX}/run
+	${CHOWN} drweb:drweb ${INST_PREFIX}/run
+	${MKDIR} ${CONFDIR}
+	${MKDIR} ${DOC_DIR}
+	${MKDIR} ${DOC_DIR}/postfix
+	${INSTALL_PROGRAM} ${WRKSRC}/usr/local/drweb/drweb-postfix.static \
+		${INST_PREFIX}/drweb-postfix
+	${SED} 's#%INSTALL%#${INST_PREFIX}#g' \
+		< ${FILESDIR}/01.drweb-postfix.sh \
+		> ${PREFIX}/etc/rc.d/01.drweb-postfix.sh-dist
+	${CHMOD} 750 ${PREFIX}/etc/rc.d/01.drweb-postfix.sh-dist
 .for LANG in ${LANGS}
-	${MKDIR} ${PREFIX}/etc/drweb/templates/${LANG}/postfix
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}/templates/${LANG}/postfix
 .endfor
 .for CONF in ${CONFS}
-	${INSTALL_DATA} -m 640 -o drweb -g drweb ${WRKSRC}/etc/${CONF}.conf \
-	    ${PREFIX}/etc/drweb/${CONF}.conf-dist
-	if [ ! -f ${PREFIX}/etc/drweb/${CONF}.conf ]; then \
-	   ${INSTALL_DATA} -m 640 -o drweb -g drweb ${WRKSRC}/etc/${CONF}.conf \
-		${PREFIX}/etc/drweb/${CONF}.conf; \
-	fi
+	${SED} 's#%CONFDIR%#${CONFDIR}#g' \
+		< ${WRKSRC}/usr/local/etc/drweb/${CONF}.conf \
+		> ${CONFDIR}/${CONF}.conf-dist
+	${CHMOD} 640 ${CONFDIR}/${CONF}.conf-dist
+.if !exists( ${PREFIX}/etc/${PORTNAME}/${CONF}.conf )
+	${CP} ${CONFDIR}/${CONF}.conf-dist ${CONFDIR}/${CONF}.conf
+	${CHMOD} 600 ${CONFDIR}/${CONF}.conf
+.endif
 .endfor
 .for LANG in ${LANGS}
 .for TMPL in ${TMPLS}
-	cd ${WRKSRC}/etc/templates/${LANG}/postfix && \
-	    ${INSTALL_DATA} ${TMPL}.msg \
-		${PREFIX}/etc/drweb/templates/${LANG}/postfix/${TMPL}.msg-dist
-	if [ ! -f ${PREFIX}/etc/drweb/templates/${LANG}/postfix/${TMPL}.msg ]; then \
-		cd ${PREFIX}/etc/drweb/templates/${LANG}/postfix && \
-		${CP} ${TMPL}.msg-dist ${TMPL}.msg; \
-	fi
-.endfor
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/drweb-postfix ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/postfix && \
-		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/usr/local/etc/drweb/templates/${LANG}/postfix/${TMPL}.msg \
+		${PREFIX}/etc/${PORTNAME}/templates/${LANG}/postfix/${TMPL}.msg-dist
+.if !exists( ${PREFIX}/etc/${PORTNAME}/templates/${LANG}/postfix/${TMPL}.msg )
+	${INSTALL_DATA} -o drweb -g drweb -m 640 ${WRKSRC}/usr/local/etc/drweb/templates/${LANG}/postfix/${TMPL}.msg \
+		${PREFIX}/etc/${PORTNAME}/templates/${LANG}/postfix/${TMPL}.msg
 .endif
+.endfor
+.endfor
+	${CP} ${WRKSRC}/usr/local/drweb/doc/postfix/*.txt \
+		${DOC_DIR}/postfix/
+	${CP} ${WRKSRC}/usr/local/drweb/doc/postfix/read* \
+		${DOC_DIR}/postfix/
 
 post-install:
+	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 	@${ECHO} "Read documentation about additional Postfix tuning needed"
 	@${ECHO} "in ${DOCSDIR}."
 	@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

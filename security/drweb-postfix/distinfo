@@ -1,2 +1,4 @@
-MD5 (drweb-clients-4.31-sources.tar.gz) = 7215ff50a75d088eab210bcdb257effe
-SIZE (drweb-clients-4.31-sources.tar.gz) = 537926
+MD5 (drweb-postfix-4.32.1-freebsd49.tar.gz) = 2beb13632fc2be2ab4885a631f3a0918
+SIZE (drweb-postfix-4.32.1-freebsd49.tar.gz) = 312129
+MD5 (drweb-postfix-4.32.1-freebsd53.tar.gz) = f1c5a37d51cb120ba043f38d10220262
+SIZE (drweb-postfix-4.32.1-freebsd53.tar.gz) = 397819
