@@ -9158,6 +9158,7 @@ tinyldap	ports/net/tinyldap
 tinymux		ports/games/tinymux
 tinyproxy	ports/www/tinyproxy
 tinyq		ports/devel/tinyq
+tipa		ports/print/tipa
 tipograf	ports/print/tipograf
 tirc		ports/irc/tirc
 tircproxy	ports/irc/tircproxy
