@@ -184,8 +184,6 @@
     SUBDIR += myth2_demo
     SUBDIR += mythserver
     SUBDIR += nadar
-    SUBDIR += nethack32
-    SUBDIR += nethack32-gtk
     SUBDIR += nethack33
     SUBDIR += nethack33-gnome
     SUBDIR += nethack33-nox11
