@@ -3,7 +3,7 @@
 # Date created:		24 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/11/28 09:07:13 asami Exp $
+# $Id: Makefile,v 1.5 1999/03/24 17:52:16 steve Exp $
 #
 
 DISTNAME=	ocaml-2.02
@@ -11,10 +11,10 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 
 MAINTAINER=	ortmann@isl.net
 
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
