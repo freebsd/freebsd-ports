@@ -1,5 +1,5 @@
---- acsite.m4.orig	Thu Aug  5 10:04:21 2004
-+++ acsite.m4	Sat Sep 11 21:58:33 2004
+--- ./acsite.m4.orig	Thu Aug  5 08:04:21 2004
++++ ./acsite.m4	Sat Dec 11 22:01:02 2004
 @@ -396,7 +396,7 @@
  dnl sets the substitution variable PTHREADLIBS
  AC_DEFUN([FW_CHECK_PTHREAD],
@@ -20,6 +20,17 @@
  FW_INCLUDES(pthreads,[$PTHREADINCLUDES])
  FW_LIBS(pthreads,[$PTHREADLIBS])
  
+@@ -1857,8 +1859,8 @@
+ 
+ 		if ( test -n "$PYTHONPATH" )
+ 		then
+-		
+-			for i in "2.3" "2.2" "2.1" "2.0" "1.6" "1.5"
++
++			for i in "2.4" "2.3" "2.2" "2.1" "2.0" "1.6" "1.5"
+ 			do
+ 				if ( test -d "$PYTHONPATH/include/python$i" -a -d "$PYTHONPATH/lib/python$i/config" )
+ 				then
 @@ -2149,13 +2151,7 @@
  			FW_CHECK_FILE("$JAVAPATH/include/jni.h",[JAVAINCLUDES=\"-I$JAVAPATH/include\"])
  			if ( test -n "$JAVAINCLUDES" )
