@@ -6634,6 +6634,7 @@ p5-Net-FTP-Common	ports/ftp/p5-Net-FTP-Common
 p5-Net-FTPServer	ports/ftp/p5-Net-FTPServer
 p5-Net-Finger	ports/net/p5-Net-Finger
 p5-Net-Google	ports/net/p5-Net-Google
+p5-Net-Gopher	ports/net/p5-Net-Gopher
 p5-Net-ICQ2000	ports/net/p5-Net-ICQ2000
 p5-Net-IP	ports/net-mgmt/p5-Net-IP
 p5-Net-IPv4Addr	ports/net-mgmt/p5-Net-IPv4Addr
