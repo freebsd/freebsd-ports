@@ -1,11 +1,9 @@
 bin/yaz-asncomp
 bin/yaz-client
-bin/yaz-client-ssl
 bin/yaz-config
 bin/yaz-iconv
 bin/yaz-marcdump
 bin/yaz-ztest
-bin/yaz-ztest-ssl
 bin/zoomsh
 include/yaz/backend.h
 include/yaz/ccl.h
@@ -77,10 +75,6 @@ lib/libyaz.a
 lib/libyaz.la
 lib/libyaz.so
 lib/libyaz.so.2
-lib/libyazssl.a
-lib/libyazssl.la
-lib/libyazssl.so
-lib/libyazssl.so.2
 lib/libyazthread.a
 lib/libyazthread.la
 lib/libyazthread.so
@@ -103,6 +97,7 @@ share/doc/yaz/comstack.diagnostics.html
 share/doc/yaz/comstack.html
 share/doc/yaz/comstack.introduction.html
 share/doc/yaz/comstack.server.html
+share/doc/yaz/comstack.ssl.html
 share/doc/yaz/comstack.summary.html
 share/doc/yaz/credits.html
 share/doc/yaz/future.html
@@ -130,6 +125,7 @@ share/doc/yaz/soap.http.html
 share/doc/yaz/soap.srw.html
 share/doc/yaz/soap.xml.html
 share/doc/yaz/tools.html
+share/doc/yaz/tools.marc.html
 share/doc/yaz/tools.nmem.html
 share/doc/yaz/tools.oid.html
 share/doc/yaz/yaz.css
