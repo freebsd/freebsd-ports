@@ -1,0 +1,18 @@
+%%SITE_PERL%%/Net/XMPP.pm
+%%SITE_PERL%%/Net/XMPP/Client.pm
+%%SITE_PERL%%/Net/XMPP/Connection.pm
+%%SITE_PERL%%/Net/XMPP/Debug.pm
+%%SITE_PERL%%/Net/XMPP/IQ.pm
+%%SITE_PERL%%/Net/XMPP/JID.pm
+%%SITE_PERL%%/Net/XMPP/Message.pm
+%%SITE_PERL%%/Net/XMPP/Namespaces.pm
+%%SITE_PERL%%/Net/XMPP/Presence.pm
+%%SITE_PERL%%/Net/XMPP/PrivacyLists.pm
+%%SITE_PERL%%/Net/XMPP/Protocol.pm
+%%SITE_PERL%%/Net/XMPP/Roster.pm
+%%SITE_PERL%%/Net/XMPP/Stanza.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/XMPP/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/XMPP
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Net 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Net/XMPP
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
