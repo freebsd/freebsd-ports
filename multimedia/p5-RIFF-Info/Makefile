@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video/ALLENDAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Probe DivX and AVI files for attributes
 
 BUILD_DEPENDS=	${SITE_PERL}/Video/Info/RIFF.pm:${PORTSDIR}/multimedia/p5-Video-Info
