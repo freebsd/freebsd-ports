@@ -11,13 +11,4 @@ $FreeBSD$
 +		   DATADIRNAME=share
  fi
  rm -f conftest*
- 		INSTOBJEXT=.mo
-@@ -3852,7 +3852,7 @@
- 	    # Added by Martin Baulig 12/15/98 for libc5 systems
- 	    if test "$gt_cv_func_dgettext_libc" != "yes" \
- 	       && test "$gt_cv_func_dgettext_libintl" = "yes"; then
--	       INTLLIBS=-lintl
-+	       INTLLIBS="-lintl -lxpg4"
- 	       LIBS=`echo $LIBS | sed -e 's/-lintl//'`
- 	    fi
- 	
+ 		INSTOBJEXT=.mo 	
