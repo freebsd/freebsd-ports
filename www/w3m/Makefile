@@ -1,40 +1,83 @@
 # New ports collection makefile for:   w3m
-# Version required:		990928
+# Version required:		991028-2
 # Date Created:			7 Oct 1999
 # Whom:				MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	w3m-990928
+DISTNAME=	w3m-${W3M_DIST_VER}
+PKGNAME?=	w3m-${W3M_VER}
+W3M_DIST_VER=	991028-2
+W3M_VER=	991028.2
 CATEGORIES?=	www
 MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
-		ftp://ftp.firedrake.org/w3m/
+		ftp://ftp.firedrake.org/w3m/ \
+		http://www.instinct.org/~pgl/w3m/ \
+		http://grilli.net/mirrors/w3m/download/
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-WRKSRC=		${WRKDIR}/w3m
-TARGET=		${WRKSRC}/config.h
+RESTRICTED=     "Contains cryptography"
 
-.if !defined(JAPANESE_MSG)
-pre-extract:
-	@${ECHO} "Try ports/japanese/w3m if you prefer Japanese messages."
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
+
+WRKSRC=		${WRKDIR}/w3m
+MAN1=		w3m.1
+MANLANG=	""
+
+TARGET=		${WRKSRC}/config.h
+DOCS=		FAQ.html MANUAL.html MANUAL_lynx.html README \
+		README.dict README.func STORY.html keymap.default \
+		keymap.lynx menu.default menu.submenu
+SED_CMD=	-e "s,%%PREFIX%%,${PREFIX},g" \
+		-e "s,%%LOCALBASE%%,${LOCALBASE},g"
+
+.if defined(JAPANESE)
+SED_CMD+=	-e "s,undef JAPANESE,define JAPANESE,g" \
+		-e "s,w3mhelp_en.html,w3mhelp_ja.html,g"
+MANLANG+=	ja
+DOCS_JP=	${DOCS} HISTORY HISTORY.kokb README.keymap README.kokb \
+		README.menu
 .endif
+
+.if defined(USE_SSL)
+BUILD_DEPENDS+=  ${LOCALBASE}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
+		${LOCALBASE}/lib/libssl.a:${PORTSDIR}/security/openssl
+
+SSL_CFLAGS=	-I${LOCALBASE}/include/openssl
+SSL_LIBS=	-lssl -lcrypto
+.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
+EXTRA_SSL_LIBS=	-lRSAglue -lrsaref
+.endif
+
+SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g"
+.endif
+
+MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include ${SSL_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -lgc ${SSL_LIBS} ${EXTRA_SSL_LIBS}"
 
 post-configure:
 	@${CP} ${TARGET} ${TARGET}.in
-.if defined(JAPANESE_MSG)
-	@${SED} \
-		-e "s,%%PREFIX%%,${PREFIX},g" \
-		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-		-e "s,#undef JAPANESE_MSG,#define JAPANESE_MSG,g" \
-		-e "s,w3mhelp_en.html,w3mhelp_ja.html,g" \
-	< ${TARGET}.in > ${TARGET}
-.else
-	@${SED} \
-		-e "s,%%PREFIX%%,${PREFIX},g" \
-		-e "s,%%LOCALBASE%%,${LOCALBASE},g" \
-	< ${TARGET}.in > ${TARGET}
+	@${SED} ${SED_CMD} < ${TARGET}.in > ${TARGET}
+
+post-install:
+.if !defined(NOPORTDOCS)
+.if defined(JAPANESE)
+	@${MKDIR} ${PREFIX}/share/doc/ja/w3m
+	@(cd ${WRKSRC}/doc-jp; \
+	for i in ${DOCS_JP} ; do \
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/ja/w3m/ ; \
+	done)
+.endif
+	@(cd ${WRKSRC}/doc; \
+	for i in ${DOCS} ; do \
+		${INSTALL_DATA} $$i ${PREFIX}/share/doc/w3m/ ; \
+	done)
+.endif
+	@${INSTALL_MAN} ${WRKSRC}/doc/w3m.1 ${PREFIX}/man/man1
+.if defined(JAPANESE)
+	@${INSTALL_MAN} ${WRKSRC}/doc-jp/w3m.1 ${PREFIX}/man/ja/man1
 .endif
 
 .include <bsd.port.mk>

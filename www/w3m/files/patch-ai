@@ -1,0 +1,11 @@
+--- w3mhelp-lynx_en.html.orig	Thu Oct  7 12:18:43 1999
++++ w3mhelp-lynx_en.html	Fri Oct 15 20:40:03 1999
+@@ -12,7 +12,7 @@
+              ***** Key assign table *****
+ </CENTER>
+ 
+-<A HREF="w3mhelp_ja.html">Japanese</A>
++<A HREF="../ja/w3m/w3mhelp_ja.html">Japanese</A>
+ 
+ <H3>Page/Cursor motion</H3>
+ <table>
