@@ -1,2 +1,7 @@
 MD5 (mutt/mutt-1.3.23.2i.tar.gz) = 8c78e7caab878890fdbc2500c2b5e4be
+MD5 (mutt/patch-1.3.23.2.rr.compressed.gz) = ab200bddffedf3bfcbdc34abb706d93d
+MD5 (mutt/patch-1.3.23.2.vvv.nntp.gz) = 8ea008de78e4a54ce430cb3acd806c62
+MD5 (mutt/patch-1.3.23.2.vvv.initials.gz) = edd65a44f71302e296bdfe3cc38f4319
+MD5 (mutt/patch-1.3.23.2.vvv.quote.gz) = e0046191258bee10f85b37c3909960ce
+MD5 (mutt/patch-1.3.23.2.vvv.ru.gz) = 7e2e5b8a01320804cb03eecf5901c654
 MD5 (mutt/zh-mutt-1.3.23.2.diff.gz) = ce9a80d2b83c6073c8fbe0e0daf6c686
