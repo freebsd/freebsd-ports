@@ -1589,6 +1589,7 @@ flim113-emacs20	ports/editors/flim113-emacs20
 flim113-mule	ports/editors/flim113-mule
 flim113-xemacs21-mule	ports/editors/flim113-xemacs21-mule
 flip		ports/graphics/flip
+floatator	ports/misc/floatator
 flog		ports/sysutils/flog
 flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
