@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gavl
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gmerlin
@@ -14,9 +14,10 @@ MASTER_SITE_SUBDIR=	gmerlin
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for handling uncompressed video and audio data
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+		samplerate.1:${PORTSDIR}/audio/libsamplerate
 
-USE_INC_LIBTOOL_VER=	15
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -38,8 +39,8 @@ pre-everything::
 
 post-patch:
 # No llrintf in freebsd (yet)
-	@${REINPLACE_CMD} -e 's|llrintf|rintf|' \
-		${WRKSRC}/gavl/c/sampleformat_c.c
+	@${REINPLACE_CMD} -e 's|llrintf|rintf|g' \
+		${WRKSRC}/gavl/c/*.*
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${REINPLACE_CMD} -e \
 	's|-fomit-frame-pointer -funroll-all-loops -falign-functions=2 -falign-loops=2 -falign-jumps=2||; \
