@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.206 1999/06/16 18:12:39 sada Exp $
+# $Id: Makefile,v 1.207 1999/06/17 09:36:58 taoka Exp $
 #
 
     SUBDIR += Canna
@@ -249,6 +249,7 @@
     SUBDIR += xnetmaj
     SUBDIR += xshodo
     SUBDIR += xshodou
+    SUBDIR += xt	
     SUBDIR += xv
     SUBDIR += zipcodes
 
