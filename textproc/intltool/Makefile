@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	intltool
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/${PORTNAME}
@@ -18,10 +18,11 @@ LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN8=		intltool-extract.8 intltool-merge.8 intltool-prepare.8 \
-		intltoolize.8
+		intltool-update.8 intltoolize.8
 
 pre-patch:
 	@find ${WRKSRC} -name "intltool-*.in" | xargs ${PERL} -pi -e \
