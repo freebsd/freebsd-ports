@@ -1,6 +1,6 @@
---- configure.orig	Fri May  1 07:48:25 1998
-+++ configure	Wed Feb 17 02:05:55 1999
-@@ -837,13 +837,13 @@
+--- configure.orig	Fri May  1 01:48:25 1998
++++ configure	Tue Jan  1 07:05:49 2002
+@@ -837,52 +837,52 @@
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -19,7 +19,24 @@
  
  echo $ac_n "checking for working autoconf""... $ac_c" 1>&6
  echo "configure:850: checking for working autoconf" >&5
-@@ -863,13 +863,13 @@
+ # Run test in a subshell; some versions of sh will print an error if
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (autoconf --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOCONF=autoconf
+-   echo "$ac_t""found" 1>&6
+-else
++#if (autoconf --version) < /dev/null > /dev/null 2>&1; then
++#   AUTOCONF=autoconf
++#   echo "$ac_t""found" 1>&6
++#else
+    AUTOCONF="$missing_dir/missing autoconf"
+    echo "$ac_t""missing" 1>&6
+-fi
++#fi
+ 
+ echo $ac_n "checking for working automake""... $ac_c" 1>&6
+ echo "configure:863: checking for working automake" >&5
  # Run test in a subshell; some versions of sh will print an error if
  # an executable is not found, even if stderr is redirected.
  # Redirect stdin to placate older versions of autoconf.  Sigh.
@@ -38,6 +55,24 @@
  
  echo $ac_n "checking for working autoheader""... $ac_c" 1>&6
  echo "configure:876: checking for working autoheader" >&5
+ # Run test in a subshell; some versions of sh will print an error if
+ # an executable is not found, even if stderr is redirected.
+ # Redirect stdin to placate older versions of autoconf.  Sigh.
+-if (autoheader --version) < /dev/null > /dev/null 2>&1; then
+-   AUTOHEADER=autoheader
+-   echo "$ac_t""found" 1>&6
+-else
++#if (autoheader --version) < /dev/null > /dev/null 2>&1; then
++#   AUTOHEADER=autoheader
++#   echo "$ac_t""found" 1>&6
++#else
+    AUTOHEADER="$missing_dir/missing autoheader"
+    echo "$ac_t""missing" 1>&6
+-fi
++#fi
+ 
+ echo $ac_n "checking for working makeinfo""... $ac_c" 1>&6
+ echo "configure:889: checking for working makeinfo" >&5
 @@ -3958,7 +3958,7 @@
     fi
     
