@@ -1,0 +1,32 @@
+diff -ud work/plor/main.c src/main.c
+--- work/plor/main.c	Sun Oct 27 09:24:00 1996
++++ ./main.c	Mon Dec 30 09:40:07 1996
+@@ -19,10 +19,15 @@
+ 
+  */
+ 
++#ifdef _HAVE_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
++#if !defined(BSD)
+ #include <getopt.h>
++#endif
+ 
+ /* will be included when we will have locale support
+ #include <locale.h>
+@@ -75,10 +80,10 @@
+       Show_SConf();
+       break;
+     case '3':
+-      printf("Help on Line, not yet supported!!!");
++      printf("Help on Line, not yet supported!!!\n");
+       continue;
+     case '4':
+-      printf("Replies not yet implemented!!!");
++      printf("Replies not yet implemented!!!\n");
+       continue;
+     case '5':
+     case 'q':
