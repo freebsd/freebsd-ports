@@ -25,7 +25,8 @@ post-configure:
 		${PERL} -pi.fbsd -e 's/^install-data-am:.*/install-data-am:/' ${WRKSRC}/Makefile
 
 post-install:
-		cd ${WRKSRC} && ${GMAKE} install-docDATA
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${GMAKE} install-docDATA
 .endif
 
 .include <bsd.port.mk>
