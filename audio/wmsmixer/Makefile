@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmsmixer
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.hibernaculum.net/download/
 
