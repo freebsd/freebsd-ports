@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 INSTALLS_SHLIB=	yes
 
+pre-patch: build-depends
+
 post-patch:
 # make sure everything is prepared prior to configure stage
 # pre-configure will not work since *AUTO* tools happen in-between
