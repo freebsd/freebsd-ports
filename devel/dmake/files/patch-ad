@@ -1,0 +1,8 @@
+--- unix/startup.h.orig	Wed Jul 16 01:02:34 1997
++++ unix/startup.h	Fri Dec 17 05:36:20 1999
+@@ -24,4 +24,4 @@
+ --      Use cvs log to obtain detailed change logs.
+ */
+ 
+-"MAKESTARTUP := $(ROOTDIR)/usr/local/lib/dmake/startup/startup.mk",
++"MAKESTARTUP := $(ROOTDIR)%%PREFIX%%/share/dmake/startup/startup.mk",
