@@ -27,7 +27,16 @@ NO_BUILD=	yes
 DEST=${PREFIX}/include/X11/extensions
 
 do-install:
+	${MKDIR} ${DEST}
 	${INSTALL_DATA} ${WRKSRC}/Print.h ${DEST}
 	${INSTALL_DATA} ${WRKSRC}/Printstr.h ${DEST}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${X_WINDOW_SYSTEM:L} == xorg
+PLIST_SUB+=	NEWMTREE=""
+.else
+PLIST_SUB+=	NEWMTREE="@comment "
+.endif
+
+.include <bsd.port.post.mk>

@@ -30,3 +30,4 @@ lib/libXmuu.so
 lib/libXmuu.so.1
 libdata/pkgconfig/xmu.pc
 libdata/pkgconfig/xmuu.pc
+%%NEWMTREE%%@dirrm include/X11/Xmu

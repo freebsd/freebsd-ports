@@ -1,2 +1,3 @@
 include/X11/extensions/XResproto.h
 libdata/pkgconfig/resourceext.pc
+%%NEWMTREE%%@unexec rmdir %D/include/X11/extensions 2>/dev/null || true

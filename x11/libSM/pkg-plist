@@ -6,3 +6,4 @@ lib/libSM.la
 lib/libSM.so
 lib/libSM.so.6
 libdata/pkgconfig/sm.pc
+%%NEWMTREE%%@dirrm include/X11/SM

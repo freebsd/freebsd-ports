@@ -4,3 +4,4 @@ libdata/pkgconfig/render.pc
 %%DOCSDIR%%/library
 %%DOCSDIR%%/protocol
 @dirrm %%DOCSDIR%%
+%%NEWMTREE%%@unexec rmdir %D/include/X11/extensions 2>/dev/null || true
