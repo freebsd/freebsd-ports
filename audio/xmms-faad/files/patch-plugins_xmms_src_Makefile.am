@@ -1,0 +1,18 @@
+--- plugins/xmms/src/Makefile.am.orig	Thu Nov  6 06:04:13 2003
++++ plugins/xmms/src/Makefile.am	Sun Mar 14 23:57:12 2004
+@@ -1,13 +1,11 @@
+ libdir = `xmms-config --input-plugin-dir`
+ lib_LTLIBRARIES = libaac.la
+ 
+-libaac_la_CFLAGS = `xmms-config --cflags` `$GTK_CONFIG --cflags` -Wall \
++libaac_la_CFLAGS = `xmms-config --cflags` `${GTK_CONFIG} --cflags` ${CFLAGS} \
+ 	-I$(top_builddir)/include 
+ 	
+-libaac_la_LIBADD = $(top_builddir)/libfaad/libfaad.la
+-
+ libaac_la_LDFLAGS = -module -avoid-version `xmms-config --libs` \
+-	`$GTK_CONFIG --libs` -lpthread -lz -lid3 -lstdc++
++	`${GTK_CONFIG} --libs` -lfaad -lz -lid3 -lstdc++
+ libaac_la_SOURCES = libaac.c id3.cpp dialog_gtk1.c aac_utils.c \
+ 	aac_utils.h
+ 
