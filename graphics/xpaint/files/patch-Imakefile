@@ -1,6 +1,6 @@
---- Imakefile.orig	Sun Aug 22 00:15:08 2004
-+++ Imakefile	Sat Aug 28 02:46:25 2004
-@@ -90,7 +90,7 @@
+--- Imakefile.orig	Mon Mar 14 05:42:26 2005
++++ Imakefile	Mon Mar 14 20:22:16 2005
+@@ -101,7 +101,7 @@
  #endif
  
  DEPLIBS = always xpaint.man XPaint.ad
@@ -9,7 +9,16 @@
  
  SUBDIRS = rw
  
-@@ -172,7 +172,7 @@
+@@ -163,7 +163,7 @@
+ 
+ xaw3d::
+ 	-$(RM) $(XAW3DDEPENDS)
+-	-$(RM) xaw_incdir ; ln -sf /usr/include/X11/Xaw3d xaw_incdir	
++	-$(RM) xaw_incdir ; ln -sf $(INCDIR)/X11/Xaw3d xaw_incdir	
+ 	echo "XAWLIB_DEFINES = -DXAW3D" > Local.xawdefs
+ 	echo "SYS_LIBRARIES = -lXaw3d -L." >> Local.xawdefs
+ 	xmkmf ; cd rw ; xmkmf ; cd .. ; make
+@@ -219,7 +219,7 @@
  		    XPAINT_PRINT_COMMAND "$(PRINT_COMMAND)" \
  		    XPAINT_POSTSCRIPT_VIEWER "$(POSTSCRIPT_VIEWER)" \
  		    XPAINT_EXTERN_VIEWER "$(EXTERN_VIEWER)"
