@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hspell
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	hebrew
 MASTER_SITES=	http://www.ivrix.org.il/projects/spell-checker/
 
@@ -16,8 +15,11 @@ COMMENT=	Hebrew spellchecker and morphology engine
 
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=
 
 MAN1=		hspell.1
+MAN3=		hspell.3
 
 post-install:
 	@${SED} -e "s:%%PORTSDIR%%:${PORTSDIR}:g" ${PKGMESSAGE}
