@@ -6,46 +6,36 @@
 #
 
 PORTNAME=	xdvik-vflib
-PORTVERSION=	22.15
-PORTREVISION=	1
+PORTVERSION=	22.40.w.1.17
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
-		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
-		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/xdvi/ \
-		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/xdvi/ \
-		ftp://ftp.iij.ad.jp/pub/TeX/CTAN/dviware/xdvik/ \
-		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
-		ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
-DISTNAME=	xdvik-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,xdvi,}
+DISTNAME=	xdvik-22.40w
 
-PATCH_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
-		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
-		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/xdvi/ \
-		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/xdvi/ \
-		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	asami/LOCAL_PORTS
-PATCHFILES=	${DISTNAME}-j1.04.patch.gz
+PATCH_SITES=	http://www.nn.iij4u.or.jp/~tutimura/tex/
+PATCHFILES=	xdvik-22.40w-j1.17.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
 COMMENT=	DVI Previewer(kpathsearch) for X. + jp-patch
 
-LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib
-RUN_DEPENDS+=	makejvf:${PORTSDIR}/japanese/makejvf
-
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib \
+		wwwcore.1:${PORTSDIR}/www/libwww \
+		t1.5:${PORTSDIR}/devel/t1lib
+#RUN_DEPENDS+=	makejvf:${PORTSDIR}/japanese/makejvf
 
 DIST_SUBDIR=	xdvik
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
+CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--enable-a4 --enable-bdpi=${BDPI} --enable-shrink=${SHRINK} \
 		--with-dvifilter=${DVIPS} \
 		--enable-xdviprint=${PREFIX}/libexec/xdviprint \
 		--enable-smallpanel --enable-zoombutton \
-		--enable-vikey
+		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
+		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
+		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
+		--with-t1lib-include=${LIBT1_PREFIX}/include \
+		--enable-vikey --disable-multiplatform
 CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -54,8 +44,10 @@ CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 SCRIPTS_ENV=	MV=${MV} SED=${SED}
 #MAKE_ENV=	'XDEFS=${XDEFS}'
 PATCH_STRIP=	-p1
-MAN1=		xdvi.1
+MAN1=		xdvi.1 xdvizilla.1 t1mapper.1
 
+LIBWWW_PREFIX?=	${LOCALBASE}
+LIBT1_PREFIX?=	${LOCALBASE}
 TEXMF=		${PREFIX}/share/texmf
 #VARTEXFONTS=	/var/tmp/texfonts
 XDVIDIR=	${TEXMF}/xdvi
@@ -68,7 +60,10 @@ XDVIDIR=	${TEXMF}/xdvi
 #XDEFS+=		-DDEFAULT_PKFONTS=\"\\\"${PKFONTS}\\\"\"
 
 DOCS=		FAQ xdvi.icon CHANGES.xdvik-jp \
-		README README.xdvik-jp \
+		README.xdvik-jp \
+		README.src-specials \
+		README.t1fonts \
+		README.t1mapper \
 		READMEs/ChangeLog.xdvik20a-j1.1 \
 		READMEs/ChangeLog.xdvik20c-j1.0 \
 		READMEs/HEADERS.DOC \
@@ -84,7 +79,9 @@ DOCS=		FAQ xdvi.icon CHANGES.xdvik-jp \
 		READMEs/README.xdvik18f-j1.1p5.patch \
 		READMEs/README.xdvik20a-j1.1.patch \
 		READMEs/README.xdvik20c-j1.0+hal2+dvisel \
-		READMEs/README.xdvik20c-j1.0p1.patch
+		READMEs/README.xdvik20c-j1.0p1.patch \
+		READMEs/README.vf2ft \
+		READMEs/README.xdvik-22.15-j1.04.patch
 
 # ******************
 # USEPK_MODE:

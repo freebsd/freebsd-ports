@@ -1,5 +1,4 @@
 Japanese dvi file previewer for X.
-(xdvik-22.15 + xdvik-22.15-j1.03)
 
     1. support dvi file of ASCII Japanese TeX(and pTeX) and NTT jTeX.
     2. require METAFONT and VFlib (vector font library).
@@ -12,4 +11,4 @@ Japanese dvi file previewer for X.
 
 - Kentaro Inagaki <inagaki@tg.rim.or.jp>
 
-WWW: http://www.ipc.chiba-u.ac.jp/~yamaga/index-j.html
+WWW: http://www.nn.iij4u.or.jp/~tutimura/tex/xdvi.html

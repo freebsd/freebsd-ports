@@ -1,27 +1,28 @@
---- xdvik-22.02.orig/texk/xdvik/Makefile.in.orig	Thu Apr  8 21:47:48 1999
-+++ xdvik-22.02/texk/xdvik/Makefile.in	Thu Apr  8 21:48:39 1999
-@@ -65,7 +65,7 @@
-   paper.o tategaki.o vfontmap.o \
-   $(ALLOCA)
+--- xdvik-22.40w/texk/xdvik/Makefile.in.orig	Wed Apr 16 23:26:11 2003
++++ xdvik-22.40w/texk/xdvik/Makefile.in	Wed Apr 16 23:29:12 2003
+@@ -80,7 +80,7 @@
+   paper.o tategaki.o vfontmap.o vf2ft.o \
+   $(ALLOCA) dvips.o tfmload.o
  
 -program = xdvi.bin
 +program = xdvi
- programs = $(program)
+ perlprog = t1mapper
  
- default all: $(programs) xdvi.1 xdviprint
-@@ -109,14 +109,13 @@
- install-exec: $(programs) xdviprint
+ default all: $(program) $(perlprog) xdvi.1 t1mapper.1 xdviprint
+@@ -148,7 +148,6 @@
  	$(SHELL) $(top_srcdir)/../mkinstalldirs $(bindir)
- 	for p in $(programs); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
+ 	for p in $(program); do $(INSTALL_LIBTOOL_PROG) $(bindir) $$p; done
+ 	$(INSTALL_SCRIPT) $(srcdir)/$(perlprog) $(scriptdir)/$(perlprog)
 -	$(INSTALL_SCRIPT) $(srcdir)/xdvi-sh $(scriptdir)/xdvi
- 	if test "@XDVIPRINTCMD@" != no; then \
- 	  if test ! -x @XDVIPRINTCMD@; then \
- 	    $(INSTALL_SCRIPT) $(srcdir)/xdviprint @XDVIPRINTCMD@; \
- 	  fi; \
+ ### fix wrong CVS permissions for shell script
+ 	chmod +x $(srcdir)/xdvizilla
+ 	$(INSTALL_SCRIPT) $(srcdir)/xdvizilla $(scriptdir)/xdvizilla
+@@ -159,7 +158,7 @@
  	fi
- uninstall-exec:
--	for p in $(programs) xdvi; do rm -f $(bindir)/$$p; done
-+	for p in $(programs) ; do rm -f $(bindir)/$$p; done
  
- install-data: xdvi.1 vfontmap.sample
- 	$(SHELL) $(top_srcdir)/../mkinstalldirs $(mandir) $(psheaderdir) $(XDVIETCDIR)
+ uninstall-exec:
+-	for p in $(program) $(perlprog) xdvi; do rm -f $(bindir)/$$p; done
++	for p in $(program) $(perlprog); do rm -f $(bindir)/$$p; done
+ 
+ ### //FIXME: add installation for encoding.map here!! (same place where psfonts.map is?)
+ install-data: xdvi.1 t1mapper.1 vfontmap.sample
