@@ -5119,6 +5119,7 @@ pfaedit		ports/print/pfaedit
 pfe-devel	ports/lang/pfe-devel
 pfinger		ports/net/pfinger
 pflogsumm	ports/mail/pflogsumm
+pftpd		ports/ftp/pftpd
 pg		ports/misc/pg
 pgcc		ports/lang/pgcc
 pgdriver	ports/www/pgdriver
