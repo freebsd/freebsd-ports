@@ -1,0 +1,19 @@
+--- src/configure.orig	Thu Apr 25 19:16:29 2002
++++ src/configure	Fri May 24 23:12:20 2002
+@@ -2655,6 +2655,16 @@ fi
+ 
+ 
+ 
++if test `uname -s` = FreeBSD;
++then
++    LDFLAGS="-Wl,-export-dynamic"
++    EXT=pd_freebsd
++    MORECFLAGS=-DDL_OPEN
++    SYSSRC=s_freebsd.c
++    STRIPFLAG=-s
++    GUINAME="pd-gui"
++    OSNUMBER=0
++fi
+ 
+ if test `uname -s` = Linux;
+ then
