@@ -13,7 +13,7 @@ MAINTAINER=	girgen@pingpong.net
 
 POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES
-.include <${PORTSDIR}/${POSTGRESQL_PORT}/Makefile>
+.include "../../${POSTGRESQL_PORT}/Makefile"
 
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
