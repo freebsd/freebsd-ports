@@ -29,7 +29,7 @@ post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
 			${ECHO} "===> Unpacking updated module: $${webmin_module}"; \
-			${TAR} xfz ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
+			${TAR} --unlink -xzf ${DISTDIR}/$${webmin_module} -C ${WRKSRC}; \
 		done; \
 	fi
 	@find ${WRKSRC} -name "*.bak" | xargs ${RM}
