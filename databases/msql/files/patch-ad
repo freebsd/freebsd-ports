@@ -18,7 +18,7 @@
 -scripts/mkinstalldirs 0755    $INST_DIR/makegen
 -scripts/mkinstalldirs 0755    $INST_DIR/modules
 +scripts/mkinstalldirs 0755    $INST_DIR/etc/msql2
-+scripts/mkinstalldirs 0700    /var/spool/msql
++scripts/mkinstalldirs 0755    /var/spool/msql
 +scripts/mkinstalldirs 0700    /var/db/msqldb
 +scripts/mkinstalldirs 0700    /var/db/msqldb/.tmp
 +scripts/mkinstalldirs 0755    $INST_DIR/share/doc/msql
