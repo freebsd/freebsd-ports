@@ -1,0 +1,5 @@
+IIIMECF -- Internet/Intranet Input Method Emacs Client Framework
+
+  IIIMECF conforms IIIM Protocol Specification defined by Sun Microsystems,
+and consists of a library to create IIIM awarded applications and a simple
+input method library controlled by IIIM server(s).

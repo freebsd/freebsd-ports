@@ -1,0 +1,13 @@
+To use IIIMECF, please put one line as below:
+
+  (require 'iiimcf-sc)
+
+in your .emacs, site-start.el, or any other start up configuration file.
+Then, you can configure client setting by executing: 
+
+  M-x customize-group iiimcf-server-control
+
+See PREFIX/share/doc/iiimecf/README for details.
+
+IIIMECF is installed under the following directory:
+	PREFIX/share/emacs/20.x/site-lisp/iiimecf/	--- IIIMECF
