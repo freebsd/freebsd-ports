@@ -1,0 +1,12 @@
+--- Modules/Setup.dist	Thu Aug  8 15:52:42 2002
++++ Modules/Setup.dist.new	Thu Nov 21 10:40:05 2002
+@@ -356,8 +356,7 @@
+ # it is a highly experimental and dangerous device for calling
+ # *arbitrary* C functions in *arbitrary* shared libraries:
+ 
+-#dl dlmodule.c
+-
++dl dlmodule.c
+ 
+ # Modules that provide persistent dictionary-like semantics.  You will
+ # probably want to arrange for at least one of them to be available on
