@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="32d4f0f1-85c3-11d9-b6dc-0007e900f747">
+    <topic>mkbold-mkitalic -- format string vulnerability</topic>
+    <affects>
+      <package>
+	<name>mkbold-mkitalic</name>
+	<range><lt>0.07</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The version 0.06_1 and prior
+	  have a format string vulnerability which can be triggered
+	  by using a carefully-crafted BDF font file.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://home.jp.FreeBSD.org/cgi-bin/showmail/ports-jp/15568</url>
+    </references>
+    <dates>
+      <discovery>2005-02-23</discovery>
+      <entry>2005-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="03653079-8594-11d9-afa0-003048705d5a">
     <topic>phpbb -- multiple information disclosure vulnerabilities</topic>
     <affects>
