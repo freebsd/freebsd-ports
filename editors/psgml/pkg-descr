@@ -18,3 +18,4 @@ To use psgml, put the following setup into your ~/.emacs:
 	(require 'psgml-startup)
 
 --- Porting by shige <shige@FreeBSD.ORG>.
+WWW: http://www.lysator.liu.se/~lenst/about_psgml/
