@@ -1,0 +1,21 @@
+*** Makefile.in.orig	Sun Jan 23 03:30:33 2000
+--- Makefile.in	Sun Jan 23 03:30:56 2000
+***************
+*** 90,97 ****
+  
+  # This command will be used to install the BitchX help files.  If you don't
+  # want to install them, replace with the following:
+! # INSTALL_HELP_CMD = @echo The help files have not been installed.
+! INSTALL_HELP_CMD = cp -pr $(srcdir)/bitchx-docs/* $(HELPDIR)
+  
+  # This program allows you to use screen/xterm's to put new BitchX windows
+  # on new screen/xterm windows.
+--- 90,97 ----
+  
+  # This command will be used to install the BitchX help files.  If you don't
+  # want to install them, replace with the following:
+! INSTALL_HELP_CMD = @echo 
+! # INSTALL_HELP_CMD = cp -pr $(srcdir)/bitchx-docs/* $(HELPDIR)
+  
+  # This program allows you to use screen/xterm's to put new BitchX windows
+  # on new screen/xterm windows.
