@@ -3,7 +3,7 @@
 # Date created:		12 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/28 05:18:59 itojun Exp $
 #
 
 DISTNAME=	vftool-1.2
@@ -19,11 +19,11 @@ BUILD_DEPENDS=	${JFMDIR}/goth10.tfm:${PORTSDIR}/japanese/ptex-${JACODE} \
 		${PKDIR}/dmjsy10.${RESOLUTION}pk:${PORTSDIR}/japanese/pkfonts
 
 ALL_TARGET=	n2a a2n a2bk p2pn tjsy tjsypk rot
-SCRIPTS_ENV+=	SED=${SED} \
+SCRIPTS_ENV=	SED=${SED} \
 		PKDIR=${PKDIR} WRKSRC=${WRKSRC} \
 		AFMDIR=${AFMDIR} GOTTFMDIR=${GOTTFMDIR} \
 		JFMDIR=${JFMDIR} MINTFMDIR=${MINTFMDIR}
-MAKE_ENV+=	AFM=${AFMDIR} GOTTFM=${GOTTFMDIR} JFM=${JFMDIR} \
+MAKE_ENV=	AFM=${AFMDIR} GOTTFM=${GOTTFMDIR} JFM=${JFMDIR} \
 		MINTFM=${MINTFMDIR} PK=${PKDIR}
 
 AFMDIR=		${PREFIX}/share/fonts/afm
