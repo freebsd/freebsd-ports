@@ -4,7 +4,6 @@
     COMMENT = Multimedia software
 
     SUBDIR += acidrip
-    SUBDIR += acme
     SUBDIR += avidemux
     SUBDIR += avidemux2
     SUBDIR += avifile
