@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xmms
 
     SUBDIR += CJK
     SUBDIR += Wnn
