@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libh
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	misc
 # ${MASTER_SITES} is unavailable for CVS only projects.
 # MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	nra@FreeBSD.org
+MAINTAINER=	anarcat@anarcat.dyndns.org
 
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		tvision.0:${PORTSDIR}/devel/tvision
@@ -27,9 +27,8 @@ INSTALLS_SHLIB=	yes
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-# arbitrary date for now.
-CVS_DATE=	Thu December 21 18:20:00 GMT 2001
-CVS_DATE_!=	${ECHO_CMD} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
+# use the newly introduced release tag
+CVS_TAG=	r0_2_2
 CVS_SITES?=	:pserver:anonymous@usw4.freebsd.org:/home/libh/cvs
 STAMPFILE=	${DISTDIR}/${DISTNAME}/.stamp
 
@@ -44,13 +43,13 @@ do-fetch: fetchsrctarball
 .else
 do-fetch:
 	@if [ ! -f ${STAMPFILE} ] || \
-		[ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
+		[ "X${CVS_TAG}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
 		${ECHO_MSG} "No stamp file (or out of date)"; \
-		if [ -f ${DISTDIR}/${DISTNAME}.${CVS_DATE_}.tar.gz ]; then \
+		if [ -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
 			cd ${DISTDIR}; \
-			${TAR} xfz ${DISTNAME}.${CVS_DATE_}.tar.gz \
+			${TAR} xfz ${DISTNAME}.tar.gz \
 				${DISTFILES}; \
-			${ECHO_CMD} -n "${CVS_DATE}" > ${STAMPFILE}; \
+			${ECHO_CMD} -n "${CVS_TAG}" > ${STAMPFILE}; \
 			exit; \
 		fi; \
 		unset CVS_RSH CVS_SERVER CVS_LOGIN || ${TRUE}; \
@@ -76,11 +75,11 @@ do-fetch:
 				${ECHO_MSG} ">> *** Please hit enter here for the password."; \
 				${CVS_CMD} -d $${CVS_SITE} login < /dev/null; \
 			fi ; \
-			if ${CVS_CMD} -d $${CVS_SITE} co -D '${CVS_DATE}' ${PORTNAME}; then \
+			if ${CVS_CMD} -d $${CVS_SITE} co -r '${CVS_TAG}' ${PORTNAME}; then \
 				if [ "X$${CVS_LOGIN}" = "Xyes" ]; then \
 					${CVS_CMD} -d $${CVS_SITE} logout < /dev/null; \
 				fi; \
-				${ECHO_CMD} -n ${CVS_DATE} > ${STAMPFILE}; \
+				${ECHO_CMD} -n ${CVS_TAG} > ${STAMPFILE}; \
 				${ECHO_MSG} ">> CVS checkout successful." ;\
 				exit; \
 			fi ;\
@@ -96,12 +95,12 @@ do-fetch:
 makesrctarball:	fetch
 	@cd ${DISTDIR}; \
 	${ECHO_MSG} ">> Creating source tarball in ${DISTDIR}"; \
-	${ECHO_MSG} ">> \"${DISTNAME}.${CVS_DATE_}.tar.gz\"."; \
-	${TAR} cfz ${DISTNAME}.${CVS_DATE_}.tar.gz ${DISTNAME}
+	${ECHO_MSG} ">> \"${DISTNAME}.tar.gz\"."; \
+	${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 fetchsrctarball:
 	@cd ${DISTDIR}; \
-	file=${DISTNAME}.${CVS_DATE_}.tar.gz; \
+	file=${DISTNAME}.tar.gz; \
 	if [ -e $$file ]; then \
 		exit; \
 	fi; \
@@ -129,35 +128,6 @@ do-extract:
 		cpio -pdmu ${WRKSRC} > /dev/null 2>&1)
 
 do-build:
-	@cd ${WRKSRC}; ${MAKE} ${ALL_TARGET}
-
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh.a ${PREFIX}/lib/libh.a
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh.so.0 ${PREFIX}/lib/libh.so.0
-	${LN} -sf ${PREFIX}/lib/libh.so.0 ${PREFIX}/lib/libh.so
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libhui.a ${PREFIX}/lib/libhui.a
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libhui.so.0 ${PREFIX}/lib/libhui.so.0
-	${LN} -sf ${PREFIX}/lib/libhui.so.0 ${PREFIX}/lib/libhui.so
-.for H_NAME in disk file database sysinstall
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${H_NAME}.a ${PREFIX}/lib/libh${H_NAME}.a
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${H_NAME}.so.0 ${PREFIX}/lib/libh${H_NAME}.so.0
-	${LN} -sf ${PREFIX}/lib/libh${H_NAME}.so.0 ${PREFIX}/lib/libh${H_NAME}.so
-.endfor
-.for T_NAME in tclhui tcl tclfile tcldisk tclsysinstall
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${T_NAME}.a ${PREFIX}/lib/libh${T_NAME}.a
-	${INSTALL_DATA} ${WRKSRC}/compile/${UITYPE}/libh${T_NAME}.so.0 ${PREFIX}/lib/libh${T_NAME}.so.0
-	${LN} -sf ${PREFIX}/lib/libh${T_NAME}.so.0 ${PREFIX}/lib/libh${T_NAME}.so
-.endfor
-
-	${MKDIR} ${PREFIX}/share/libh
-	${INSTALL_DATA} ${WRKSRC}/release/*.tcl ${PREFIX}/share/libh
-
-.for DIR in diskedit scripts pkgtools
-	${MKDIR} ${PREFIX}/share/libh/${DIR}
-	${INSTALL_DATA} ${WRKSRC}/release/${DIR}/*.tcl \
-		${PREFIX}/share/libh/${DIR} 
-.endfor
-
-	${INSTALL_PROGRAM} ${WRKSRC}/compile/${UITYPE}/tclh.static ${PREFIX}/bin/tclh
+	(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 .include <bsd.port.post.mk>
