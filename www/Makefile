@@ -521,6 +521,7 @@
     SUBDIR += phpbb
     SUBDIR += phpgedview
     SUBDIR += phpnuke
+    SUBDIR += phpwebapp
     SUBDIR += phpwiki
     SUBDIR += plone
     SUBDIR += plugger
