@@ -1,5 +1,5 @@
 --- libjack/client.c.orig	Sun Jan 11 20:07:14 2004
-+++ libjack/client.c	Wed Mar 10 12:32:47 2004
++++ libjack/client.c	Wed Mar 10 13:13:55 2004
 @@ -26,20 +26,23 @@
  #else
      #include <sys/poll.h>
@@ -79,7 +79,7 @@
  	FILE *f = fopen("/proc/cpuinfo", "r");
  	if (f == 0)
  	{
-@@ -1803,6 +1823,24 @@
+@@ -1803,6 +1823,25 @@
  			return (jack_time_t)mhz;
  		}
  	}
@@ -88,6 +88,7 @@
 +       int64_t tsc_start, tsc_end;
 +       struct timeval tv_start, tv_end;
 +       int usec_delay;
++       jack_time_t mhz;
 +                     
 +       tsc_start = rdtsc();   
 +       gettimeofday(&tv_start, NULL);
@@ -97,9 +98,9 @@
 +                
 +       usec_delay = 1000000 * (tv_end.tv_sec - tv_start.tv_sec)
 +           + (tv_end.tv_usec - tv_start.tv_usec);
-+                         
-+       printf("cpu MHz\t\t: %.3f\n",
-+           (double)(tsc_end-tsc_start) / usec_delay);
++       mhz = (tsc_end - tsc_start) / usec_delay;
++       printf("cpu MHz:\t %.3f\n",(double) mhz);                  
++       return mhz;
 +#endif 
  }
  
