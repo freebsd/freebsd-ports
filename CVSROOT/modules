@@ -6571,6 +6571,7 @@ tcl-Mysql	ports/databases/tcl-Mysql
 tcl-manual	ports/lang/tcl-manual
 tcl-memchan	ports/devel/tcl-memchan
 tcl-neo		ports/devel/tcl-neo
+tcl-trf		ports/devel/tcl-trf
 tcl80		ports/lang/tcl80
 tcl82		ports/lang/tcl82
 tcl83		ports/lang/tcl83
