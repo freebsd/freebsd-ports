@@ -1,0 +1,29 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/04/20 12:18:18	1.1
++++ Makefile.in	2001/04/20 12:18:51
+@@ -3,18 +3,18 @@
+ all:	wmpal
+ 
+ wmpal:
+-	cd src && make wmpal
++	cd src && $(MAKE) wmpal
+ 
+ clean:
+ 	rm -f *~ *.o core
+-	cd src && make clean
++	cd src && $(MAKE) clean
+ 
+ distclean:	clean
+ 	rm -f config.status config.log Makefile config.cache
+-	cd src && make distclean
++	cd src && $(MAKE) distclean
+ 
+ install:
+-	cd src && make install
++	cd src && $(MAKE) install
+ 
+ uninstall:
+-	cd src && make uninstall
++	cd src && $(MAKE) uninstall

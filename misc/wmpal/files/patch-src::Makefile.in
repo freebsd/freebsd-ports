@@ -1,0 +1,38 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Fri Apr 20 03:56:43 2001
++++ src/Makefile.in	Fri Apr 20 15:19:46 2001
+@@ -5,7 +5,7 @@
+ SRCS = wmpal.c xsay.c
+ OBJS = $(SRCS:.c=.o)
+ 
+-CFLAGS = -Wall -O2 -I.
++CFLAGS = @CFLAGS@ @CPPFLAGS@ -Wall -I.
+ 
+ LDFLAGS = @LDFLAGS@
+ 
+@@ -17,18 +17,13 @@
+ 	$(CC) $(LDFLAGS) $(CFLAGS) -c $< -o $*.o
+ 
+ install:	all
+-	if test ! -d $(PREFIX); then mkdir -p $(PREFIX); fi
+-
+-	if test ! -d $(PREFIX)/bin; then mkdir -p $(PREFIX)/bin; fi
+-
+-	@INSTALL@ -c -m 755 -s wmpal $(PREFIX)/bin
+-
+-	@INSTALL@ -c -m 755 -s xsay $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) wmpal $(PREFIX)/bin
++	$(BSD_INSTALL_PROGRAM) xsay $(PREFIX)/bin
+ 
+ wmpal:	        $(IFLAGS)
+-	gcc -g -o wmpal wmpal.c $(LIBS) $(CFLAGS)
+-	gcc -DHAVE_CONFIG_H -g xsay.c -g -O2 -Wall $(LDFLAGS) -c xsay.c
+-	gcc  -g -O2 -Wall $(LDFLAGS) -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXi -lXext -lX11 -lm -o xsay xsay.o
++	$(CC) $(CFLAGS) -o wmpal wmpal.c $(LDFLAGS) $(LIBS)
++	$(CC) $(CFLAGS) -c -DHAVE_CONFIG_H xsay.c -o xsay.o
++	$(CC) $(CFLAGS) -o xsay xsay.o $(LDFLAGS) $(LIBS)
+ 	strip wmpal
+ 	strip xsay
+ 

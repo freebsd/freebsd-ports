@@ -167,6 +167,7 @@
     SUBDIR += whichman
     SUBDIR += wmcp
     SUBDIR += wmmand
+    SUBDIR += wmpal
     SUBDIR += wmstock
     SUBDIR += wmweather
     SUBDIR += wmx10
