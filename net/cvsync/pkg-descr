@@ -1,5 +1,8 @@
 cvsync is a portable CVS repository synchronization utility,
-written in C and POSIX pthread library. This is very similar to
-CVSup but not compatible with it.
+written in C and POSIX pthread library, released under BSD license.
+It is very similar to CVSup but not compatible with it.
 
 Note that this utility is still experimental.
+
+Author:	MAEKAWA Masahide <maekawa at daemon-systems dot org>
+WWW:	http://www.daemon-systems.org/cvsync/

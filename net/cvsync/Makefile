@@ -15,13 +15,17 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A portable CVS repository synchronization utility
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		cvscan.1 cvsync.1 cvsyncd.1 rcscan.1 rcscmp.1
+DOCS=		doc/COPYRIGHT doc/ChangeLog doc/FAQ doc/TODO
+EXAMPLES=	samples/cvsync.conf samples/cvsyncd.conf
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/cvsync.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/cvsyncd.conf ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
