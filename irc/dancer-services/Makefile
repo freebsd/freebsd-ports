@@ -7,7 +7,7 @@
 
 PORTNAME=	dancer-services
 PORTVERSION=	1.8.0.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,8 @@ COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
 BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf \
 			${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
+
+USE_RC_SUBR=	yes
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -41,6 +43,10 @@ pre-configure:
 
 pre-build:
 	cd ${WRKSRC}; ${MAKE} depend
+
+post-build:
+	${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		${FILESDIR}/dancer-services.sh > ${WRKDIR}/dancer-services.sh
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/dancer-services
@@ -68,8 +74,6 @@ post-install:
 	${FIND} ${PREFIX}/etc/dancer-services -type f -print0 | \
 		${XARGS} -0 ${CHMOD} 600
 	${CHOWN} -R ircservices:ircservices ${PREFIX}/etc/dancer-services
-	${SED} -e "s,%PREFIX%,${PREFIX},g" ${FILESDIR}/dancer-services.sh \
-		> ${WRKDIR}/dancer-services.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/dancer-services.sh ${PREFIX}/etc/rc.d/
 	${SED} -e "s,/usr/local/,${PREFIX}/,g" ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
