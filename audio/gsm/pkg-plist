@@ -1,14 +1,8 @@
 bin/toast
 @exec ln -f %D/%F %B/untoast
 @exec ln -f %D/%F %B/tcat
-@exec ln -fs toast.1.gz %D/man/man1/untoast.1.gz
-@exec ln -fs toast.1.gz %D/man/man1/tcat.1.gz
 @unexec rm %D/bin/untoast
 @unexec rm %D/bin/tcat
-@unexec rm %D/man/man1/untoast.1.gz
-@unexec rm %D/man/man1/untoast.1 2> /dev/null || true
-@unexec rm %D/man/man1/tcat.1.gz
-@unexec rm %D/man/man1/tcat.1 2> /dev/null || true
 lib/libgsm.so.1.0.10
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
