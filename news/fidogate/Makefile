@@ -29,7 +29,7 @@ USE_PERL5=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300000
-EXTRA_PATCHES+=	${PATCHDIR}/patch-perl
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-perl
 .endif
 
 pre-configure:
