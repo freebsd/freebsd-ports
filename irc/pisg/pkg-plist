@@ -3,6 +3,7 @@ etc/pisg/pisg.cfg.sample
 lib/perl5/site_perl/%%PERL_VER%%/Pisg.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Common.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/HTMLGenerator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/DCpp.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/bxlog.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/Template.pm
 lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/Trillian.pm
