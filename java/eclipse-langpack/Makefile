@@ -9,10 +9,11 @@ PORTNAME=	eclipse
 PORTVERSION=	2.1.2
 PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download2.eclipse.org/downloads/drops/L-${PORTVERSION}_Translations-200312151300/:langpack
+MASTER_SITES=	${MASTER_SITE_ECLIPSE}
+MASTER_SITE_SUBDIR=	L-${PORTVERSION}_Translations-200312151300
 PKGNAMESUFFIX=	-langpack
 DISTNAME=	eclipse${PORTVERSION}.1-SDK-linux-gtk-LanguagePackFeature
-DISTFILES=	${DISTNAME}.zip:langpack
+DISTFILES=	${DISTNAME}.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	java@FreeBSD.ORG
