@@ -152,7 +152,7 @@ libudbc			ports/databases/libudbc		Downloading and redistribution
 lsh*			ports/security/lsh	Crypto; export-controlled
 mew-*.tar.gz		ports/mail/mew		ITAR export-controlled
 						(hooks to pgp)
-mikachan-ttfonts/ver8.5.lzh	ports/japanese/mikachan-ttfonts	detailed condition is not clear
+mikachan-ttfonts/ver8.6.lzh	ports/japanese/mikachan-ttfonts	Do not sell distfile
 mindfocus-*		ports/games/mindfocus	contains commercial
 						character data
 mindtermbin-*		ports/security/mindterm-binary	Do not sell for profit.
