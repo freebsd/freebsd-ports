@@ -2,9 +2,9 @@ etc/rc.d/000.compat3x.sh
 lib/compat/libalias.so.3
 lib/compat/libc.so.3
 lib/compat/libc_r.so.3
-%%CURRENT_ONLY:%%@unexec if [ -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/libc_r.so.4.compat4x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
+%%CURRENT_ONLY:%%@unexec if [ -e %B/libc_r.so.4.compat4x ]; then ln -sf libc_r.so.4.compat4x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
 %%CURRENT_ONLY:%%lib/compat/libc_r.so.4.compat3x
-%%CURRENT_ONLY:%%@exec if [ ! -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/%f %B/libc_r.so.4; fi
+%%CURRENT_ONLY:%%@exec if [ ! -e %B/libc_r.so.4.compat4x ]; then ln -sf %f %B/libc_r.so.4; fi
 lib/compat/libcurses.so.2
 lib/compat/libdialog.so.3
 lib/compat/libedit.so.2
@@ -15,6 +15,9 @@ lib/compat/libg++.so.4
 lib/compat/libhistory.so.3
 lib/compat/libmytinfo.so.2
 lib/compat/libncurses.so.3
+%%CURRENT_ONLY:%%@unexec if [ -e %B/libperl.so.3.compat4x ]; then ln -sf libperl.so.3.compat4x %B/libperl.so.3; else rm %B/libperl.so.3; fi
+%%CURRENT_ONLY:%%lib/compat/libperl.so.3.compat3x
+%%CURRENT_ONLY:%%@exec if [ ! -e %B/libperl.so.3.compat4x ]; then ln -sf %f %B/libperl.so.3; fi
 lib/compat/libreadline.so.3
 lib/compat/libss.so.2
 lib/compat/libstdc++.so.2
