@@ -457,6 +457,7 @@
     SUBDIR += ucspi-tcp
     SUBDIR += ucspi-unix
     SUBDIR += udesc_dump
+    SUBDIR += udfclient
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
