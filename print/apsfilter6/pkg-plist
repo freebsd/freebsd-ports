@@ -1,8 +1,6 @@
 share/apsfilter/SETUP
 share/apsfilter/bin/apsfilter
 share/apsfilter/bin/setup_dvips.sh
-share/apsfilter/filter/.keep_me
-share/apsfilter/lib/redir_gs_msg.ps
 share/apsfilter/setup/README
 share/apsfilter/setup/devices-5.50
 share/apsfilter/setup/devices-6.01
@@ -23,9 +21,6 @@ share/doc/apsfilter/features
 share/doc/apsfilter/methods
 share/doc/apsfilter/paper
 @dirrm share/apsfilter/bin
-@dirrm share/apsfilter/filter
-@dirrm share/apsfilter/global
-@dirrm share/apsfilter/lib
 @dirrm share/apsfilter/setup
 @dirrm share/apsfilter/template
 @dirrm share/apsfilter
