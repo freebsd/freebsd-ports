@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	latex-layouts
-PORTVERSION=	2.6.20031125
+PORTVERSION=	2.6.20040422
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib/layouts
@@ -15,8 +15,6 @@ EXTRACT_ONLY=	#empty
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package for the display of layout elements
-
-BROKEN=		Size mismatch
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
 BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
