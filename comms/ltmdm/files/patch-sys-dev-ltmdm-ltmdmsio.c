@@ -1,5 +1,5 @@
 --- sys/dev/ltmdm/ltmdmsio.c.orig	Tue Mar 12 04:47:31 2002
-+++ sys/dev/ltmdm/ltmdmsio.c	Mon Oct 25 15:31:51 2004
++++ sys/dev/ltmdm/ltmdmsio.c	Tue Feb  8 12:52:10 2005
 @@ -60,7 +60,9 @@
  #include <sys/proc.h>
  #include <sys/module.h>
@@ -140,6 +140,32 @@
  };
  
  static  u_int   com_events; /* input chars + weighted output completions */
+@@ -566,8 +614,8 @@
+ u_int32_t Get_PCI_BASE_ADDRESS_IO_MASK(void);
+ u_int8_t  Get_PCI_BASE_ADDRESS_SPACE_IO(void);
+ u_int32_t VMODEM_Get_System_Time(void);
+-u_int8_t  inp(u_int16_t addr);
+-void      outp(u_int16_t addr, u_int8_t value);
++u_char    inp(u_int addr);
++void      outp(u_int addr, u_char value);
+ u_int16_t inpw(u_int16_t addr);
+ void      outpw(u_int16_t addr, u_int16_t value);
+ u_int32_t inpd(u_int16_t addr);
+@@ -836,12 +884,12 @@
+     return t;
+ }
+ 
+-u_int8_t inp(u_int16_t addr)
++u_char inp(u_int addr)
+ {
+     return inb(addr);
+ }
+ 
+-void outp(u_int16_t addr, u_int8_t value)
++void outp(u_int addr, u_char value)
+ {
+     outb(addr, value);
+ }
 @@ -968,8 +1016,6 @@
  {
      {   SWI_TTY     ,   "SWI_TTY"       },
