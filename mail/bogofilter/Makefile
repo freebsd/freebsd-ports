@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.9.1.2
+PORTVERSION=	0.10.2
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -22,29 +22,40 @@ GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db4" \
 		LDFLAGS="-L${PREFIX}/lib"
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --with-db=defeat-guessing
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1
 
 post-build:
 	cd ${WRKSRC} && make check SHELL=${SH}
 
 do-install:
-	cd ${WRKSRC} && make install prefix=${PREFIX}
+	cd ${WRKSRC} && make install-strip prefix=${PREFIX}
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for i in AUTHORS COPYING INSTALL NEWS README TODO UPGRADE \
-	doc/integrating-with-qmail contrib/README.unbase64 \
-	contrib/dot-qmail-bogofilter-default \
-	README.freebsd README.hp-ux README.dcdflib \
-	README.Robinson bogofilter-SA-2002-01 METHODS
+	@${MKDIR} ${DOCSDIR}/contrib
+	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}/programmer
+	@${MKDIR} ${DOCSDIR}/xml
+.for i in AUTHORS CHANGES-0.10 COPYING INSTALL NEWS README README.cvs \
+	TODO UPGRADE \
+	doc/integrating-with-qmail \
+	doc/README.Robinson doc/bogofilter-SA-2002-01 METHODS
 	  ${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.for i in bogo.R contrib/bogofilter-qfe contrib/unbase64 \
-	contrib/bogopass
-	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}
+.for i in contrib/bogo.R contrib/bogofilter-qfe \
+		contrib/randomtrain contrib/scramble
+	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/contrib
 .endfor
+.for i in contrib/README.randomtrain contrib/dot-qmail-bogofilter-default
+	${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}/contrib
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/bogogrep ${DOCSDIR}/contrib
+	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
+	${INSTALL_MAN} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
+	${INSTALL_MAN} ${WRKSRC}/doc/programmer/README.* ${DOCSDIR}/programmer
 .endif
 
 .include <bsd.port.mk>
