@@ -1,8 +1,8 @@
+include/%%PYTHON_VERSION%%/pygame/CPS.h
 include/%%PYTHON_VERSION%%/pygame/font.h
 include/%%PYTHON_VERSION%%/pygame/mixer.h
 include/%%PYTHON_VERSION%%/pygame/pygame.h
-lib/%%PYTHON_VERSION%%/site-packages/pygame/UserRect.py
-lib/%%PYTHON_VERSION%%/site-packages/pygame/UserRect.pyc
+include/%%PYTHON_VERSION%%/pygame/setproctitle.h
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/base.so
@@ -26,6 +26,10 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer_music.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mouse.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/movie.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame.ico
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.bmp
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.icns
+lib/%%PYTHON_VERSION%%/site-packages/pygame/pygame_icon.tiff
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rect.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rwobject.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/sprite.py
@@ -38,9 +42,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/transform.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/LGPL
-%%PORTDOCS%%share/doc/py-game/fullinstall.txt
 %%PORTDOCS%%share/doc/py-game/index.html
-%%PORTDOCS%%share/doc/py-game/init.txt
 %%PORTDOCS%%share/doc/py-game/logos.html
 %%PORTDOCS%%share/doc/py-game/pygame_logo.gif
 %%PORTDOCS%%share/doc/py-game/pygame_powered.gif
@@ -56,7 +58,6 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/ref/Sound.html
 %%PORTDOCS%%share/doc/py-game/ref/Surface.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame.html
-%%PORTDOCS%%share/doc/py-game/ref/pygame_UserRect.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_cdrom.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_constants.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_cursors.html
@@ -79,6 +80,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/tut/ChimpLineByLine.html
 %%PORTDOCS%%share/doc/py-game/tut/DisplayModes.html
 %%PORTDOCS%%share/doc/py-game/tut/Executable.html
+%%PORTDOCS%%share/doc/py-game/tut/ImportInit.html
 %%PORTDOCS%%share/doc/py-game/tut/MoveIt.html
 %%PORTDOCS%%share/doc/py-game/tut/SpriteIntro.html
 %%PORTDOCS%%share/doc/py-game/tut/SurfarrayIntro.html
@@ -98,7 +100,6 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/util/listlate.html
 %%PORTDOCS%%share/doc/py-game/util/makedocs.py
 %%PORTDOCS%%share/doc/py-game/util/pagelate.html
-%%PORTDOCS%%share/examples/py-game/Readme.txt
 %%PORTDOCS%%share/examples/py-game/aliens.py
 %%PORTDOCS%%share/examples/py-game/arraydemo.py
 %%PORTDOCS%%share/examples/py-game/chimp.py
@@ -127,6 +128,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/examples/py-game/liquid.py
 %%PORTDOCS%%share/examples/py-game/moveit.py
 %%PORTDOCS%%share/examples/py-game/oldalien.py
+%%PORTDOCS%%share/examples/py-game/readme.txt
 %%PORTDOCS%%share/examples/py-game/sdllogos.zip
 %%PORTDOCS%%share/examples/py-game/sound.py
 %%PORTDOCS%%share/examples/py-game/stars.py
