@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-defuserpath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
 		--with-defsystempath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
+CONFIGURE_ARGS+=--enable-pam
 
 MAN1=	wdm.1 wdmLogin.1
 
@@ -37,6 +38,7 @@ DAEMONPIC=	daemon1-HQ-1280x960.jpg
 
 post-patch:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/doc/*.man
+	cp ${FILESDIR}/xdm-3.3.2-pamwdm[23].patch ${WRKSRC}/patches
 
 pre-configure:
 	@(cd ${WRKSRC}; automake -a --include-deps)

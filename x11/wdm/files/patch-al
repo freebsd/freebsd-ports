@@ -1,0 +1,13 @@
+--- src/config/Makefile.am.orig	Tue Sep 21 23:16:21 1999
++++ src/config/Makefile.am	Thu Feb 24 01:44:12 2000
+@@ -118,8 +118,8 @@
+ 
+ install-data-local:
+ if INSTALLPAM
+-	$(INSTALL) -d $(DESTDIR)$(PAMDIR)
+-	$(INSTALL) -m 644 $(srcdir)/wdm.pamd $(DESTDIR)$(PAMDIR)/wdm
++	[ x$(PAMDIR) = xnone ] || $(INSTALL) -d $(DESTDIR)$(PAMDIR)
++	[ x$(PAMDIR) = xnone ] || $(INSTALL) -m 644 $(srcdir)/wdm.pamd $(DESTDIR)$(PAMDIR)/wdm
+ else
+ 	
+ endif
