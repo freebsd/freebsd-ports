@@ -7,7 +7,7 @@
 
 PORTNAME=	liece
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -16,7 +16,8 @@ MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current \
 		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current
+RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim-${EMACS_PORT_NAME}-current \
+		${LOCALBASE}/bin/ldcc:${PORTSDIR}/irc/liece-dcc
 
 EMACS_PORT_NAME?=	emacs20
 LISPDIR?=		${EMACS_LIBDIR}/site-lisp/${PORTNAME}
