@@ -1,0 +1,5 @@
+lib/libidpapp.so
+lib/libidpapp.so.1
+bin/saferpay
+share/examples/saferpay/settings.template
+@dirrm share/examples/saferpay

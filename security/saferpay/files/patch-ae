@@ -1,0 +1,11 @@
+--- saferpay/saferpay.mk.orig	Fri Sep  7 00:16:00 2001
++++ saferpay/saferpay.mk	Fri Sep  7 00:16:10 2001
+@@ -13,7 +13,7 @@
+ CXXFLAGS=	-pipe -O2
+ INCPATH	=	
+ LINK	=	g++
+-LFLAGS	=	
++LFLAGS	=	-Lout
+ LIBS	=	-lidpapp
+ MOC	=	$(QTDIR)/bin/moc
+ 
