@@ -1,3 +1,4 @@
+bin/wmd
 bin/wmk
 bin/wml
 bin/wml_p1_ipp
@@ -9,6 +10,7 @@ bin/wml_p6_asubst
 bin/wml_p7_htmlfix
 bin/wml_p8_htmlstrip
 bin/wml_p9_slice
+bin/wml_aux_iselect
 bin/wml_aux_linklint
 bin/wml_aux_txt2html
 bin/wml_aux_wwwtable
@@ -19,6 +21,7 @@ lib/wml/aux/txt2html.dict
 lib/wml/aux/weblintrc
 lib/wml/aux/generated-via-wml-1.gif
 lib/wml/aux/generated-via-wml-2.gif
+lib/wml/aux/wmd.txt
 lib/wml/include/all.wml
 lib/wml/include/des/all.wml
 lib/wml/include/des/gfont.wml
@@ -52,7 +55,7 @@ lib/wml/include/std/tags.wml
 lib/wml/include/std/toc.wml
 lib/wml/include/sup/all.wml
 lib/wml/include/sup/hextriple.wml
-lib/wml/include/sup/relpath.wml
+lib/wml/include/sup/path.wml
 lib/wml/include/sup/stack.wml
 lib/wml/include/sys/all.wml
 lib/wml/include/sys/boot.wml
@@ -94,6 +97,7 @@ lib/wml/perl/lib/site_perl/IO/Seekable.pm
 lib/wml/perl/lib/site_perl/IO/Dir.pm
 lib/wml/perl/lib/site_perl/IO/Poll.pm
 lib/wml/perl/lib/site_perl/IO.pm
+man/man1/wmd.1.gz
 man/man1/wmk.1.gz
 man/man1/wml.1.gz
 man/man1/wml_p1_ipp.1.gz
@@ -105,6 +109,7 @@ man/man1/wml_p6_asubst.1.gz
 man/man1/wml_p7_htmlfix.1.gz
 man/man1/wml_p8_htmlstrip.1.gz
 man/man1/wml_p9_slice.1.gz
+man/man1/wml_aux_iselect.1.gz
 man/cat1/wml_aux_linklint.1.gz
 man/cat1/wml_aux_txt2html.1.gz
 man/cat1/wml_aux_wwwtable.1.gz
@@ -144,7 +149,7 @@ man/man3/wml::std::tags.3.gz
 man/man3/wml::std::toc.3.gz
 man/man3/wml::sup::all.3.gz
 man/man3/wml::sup::hextriple.3.gz
-man/man3/wml::sup::relpath.3.gz
+man/man3/wml::sup::path.3.gz
 man/man3/wml::sup::stack.3.gz
 man/man3/wml::sys::all.3.gz
 man/man3/wml::sys::boot.3.gz

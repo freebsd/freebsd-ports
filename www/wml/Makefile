@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wml
-# Version required:	1.3.5
+# Version required:	1.4.3
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.7 1997/11/10 11:02:48 rse Exp $
+# $Id: Makefile,v 1.8 1997/11/14 19:59:09 rse Exp $
 #
 
-DISTNAME=	wml-1.3.5
+DISTNAME=	wml-1.4.3
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
 		ftp://ftp.engelschall.com/sw/
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CAT1=	wml_aux_linklint.1 wml_aux_txt2html.1 \
 	wml_aux_wwwtable.1 wml_p2_mhc.1 wml_p4_gm4.1
 
-MAN1=	wmk.1 wml.1 wml_aux_htmlinfo.1 \
+MAN1=	wmd.1 wmk.1 wml.1 wml_aux_htmlinfo.1 wml_aux_iselect.1 \
 	wml_aux_map2html.1 wml_aux_weblint.1 wml_p1_ipp.1 \
 	wml_p3_eperl.1 wml_p5_divert.1 wml_p6_asubst.1 \
 	wml_p7_htmlfix.1 wml_p8_htmlstrip.1 wml_p9_slice.1
@@ -37,7 +37,7 @@ MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::std::case.3 wml::std::grid.3 wml::std::href.3 \
 	wml::std::info.3 wml::std::page.3 wml::std::tags.3 \
 	wml::std::toc.3 wml::sup::all.3 wml::sup::hextriple.3 \
-	wml::sup::relpath.3 wml::sup::stack.3 wml::sys::all.3 \
+	wml::sup::path.3 wml::sup::stack.3 wml::sys::all.3 \
 	wml::sys::boot.3 wml::usr::all.3 wml::usr::rse.3
 
 MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7
