@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	diffstat
-PORTVERSION= 	1.27
+PORTVERSION= 	1.28
 CATEGORIES=	textproc devel
-MASTER_SITES=	ftp://ftp.clark.net/pub/dickey/diffstat/ \
-		http://www.clark.net/pub/dickey/diffstat/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	ftp://dickey.his.com/diffstat/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	trevor@jpj.net
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
-#USE_AUTOCONF=	yes
 
 MAN1=		diffstat.1
 
