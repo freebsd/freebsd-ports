@@ -8,8 +8,9 @@
 PORTNAME=	spambnc
 PORTVERSION=	20010514
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.spambouncer.org/
+MASTER_SITES=	http://www.spambouncer.org/
 DISTFILES=	sb.tar.Z index.shtml
+DIST_SUBDIR=	spambnc
 EXTRACT_ONLY=	sb.tar.Z
 
 MAINTAINER=	greid@FreeBSD.org
@@ -42,7 +43,8 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spambnc/
-	${INSTALL_DATA} ${DISTDIR}/index.shtml ${PREFIX}/share/doc/spambnc/documentation.html
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/index.shtml \
+		${PREFIX}/share/doc/spambnc/documentation.html
 .endif
 
 post-install:
