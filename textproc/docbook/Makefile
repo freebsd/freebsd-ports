@@ -3,16 +3,17 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/22 21:06:40 jfieber Exp $
 #
 
 DISTNAME=	docbook-3.0
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
+DISTFILES=	docbk241.tar.Z docbk30.tar.Z
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
-DISTFILES=	docbk241.tar.Z docbk30.tar.Z
+RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
 NO_MTREE=       yes
 NO_EXTRACT=     yes
@@ -21,7 +22,6 @@ NO_PATCH=	yes
 NO_CONFIGURE=	yes
 NO_WRKDIR=      yes
 
-RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
 INSTDIR=	${PREFIX}/share/sgml/docbook
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
@@ -39,6 +39,6 @@ do-install:
 	@echo "CATALOG \"${ISOCAT}\"" >> ${INSTDIR}/3.0/catalog
 	@chmod ${SHAREMODE} ${INSTDIR}/2.4.1/*
 	@chmod ${SHAREMODE} ${INSTDIR}/3.0/*
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

@@ -3,16 +3,18 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/22 21:01:27 jfieber Exp $
 #
 
-DISTNAME=	iso8879-1.0
+DISTNAME=	isoENTS
+PKGNAME=	iso8879-1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sil.org/sgml/
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jfieber@FreeBSD.ORG
 
-DISTFILES=	isoENTS.zip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_MTREE=       yes
 NO_EXTRACT=     yes
@@ -20,8 +22,6 @@ NO_BUILD=       yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
 NO_WRKDIR=      yes
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 INSTDIR=	${PREFIX}/share/sgml/iso8879/
 
@@ -32,6 +32,6 @@ do-install:
 	@unzip -a -q -o -d ${INSTDIR} ${DISTDIR}/${DISTFILES}
 	@${INSTALL_DATA} ${FILESDIR}/catalog ${INSTDIR}/catalog
 	@chmod ${SHAREMODE} ${INSTDIR}/*
-	@chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@/usr/sbin/chown -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
