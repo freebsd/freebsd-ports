@@ -8940,6 +8940,7 @@ qvplay		ports/graphics/qvplay
 qvwm		ports/x11-wm/qvwm
 qwdtools	ports/games/qwdtools
 qwt		ports/x11-toolkits/qwt
+qwtplot3d	ports/math/qwtplot3d
 race		ports/games/race
 racoon		ports/security/racoon
 radiator	ports/net/radiator
