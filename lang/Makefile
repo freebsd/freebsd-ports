@@ -54,6 +54,7 @@
     SUBDIR += forth
     SUBDIR += fpc
     SUBDIR += fpc-devel
+    SUBDIR += fpc-docs
     SUBDIR += freetxl
     SUBDIR += gauche
     SUBDIR += gawk
