@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ x$2 = xPOST-INSTALL ]; then
+sed s+%%PKG_PREFIX%%+${PKG_PREFIX}+ >${PKG_PREFIX}/bin/jasmin.sh << 'EOF'
+#!/bin/sh
+java -jar %%PKG_PREFIX%%/share/java/jasmin.jar $*
+EOF
+chmod 755 ${PKG_PREFIX}/bin/jasmin.sh
+fi
