@@ -9,12 +9,12 @@
 # on this one and could never get it to fewer than 8 frigging warnings.
 # Good luck to you. :-P
 
-PKGNAME=        pine4-ssl-4.10.1.3
+PKGNAME=        pine4-ssl-4.21.1.3
 
 DISTNAME=	pine4+ssl-1.3
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		pine4.10${EXTRACT_SUFX}
+		pine4.21${EXTRACT_SUFX}
 
 CATEGORIES=	mail news
 
@@ -24,11 +24,11 @@ BUILD_DEPENDS=	${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
 LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
 		ssl.1:${PORTSDIR}/security/openssl
 
-EXTRACT_ONLY=	pine4.10${EXTRACT_SUFX}
+EXTRACT_ONLY=	pine4.21${EXTRACT_SUFX}
 
 RESTRICTED=	"Contains cryptography - no export from US"
 
-WRKSRC=		${WRKDIR}/pine4.10
+WRKSRC=		${WRKDIR}/pine4.21
 
 MASTERDIR=	${.CURDIR}/../pine4
 
