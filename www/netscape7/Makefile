@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_NETSCAPE}
 DIST_SUBDIR=	${MAJ}/${NETSCAPE_LANG}/${VER}
 MASTER_SITE_SUBDIR?=${DIST_SUBDIR}/unix/linux22/jgksyc
 
+FORBIDDEN=	"http://vuxml.freebsd.org/c1d97a8b-05ed-11d9-b45d-000c41e2cdad.html (security)"
+
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	${PKGNAMEPREFIX}${MAJ}-${VER}-generated-files.tar.bz2
