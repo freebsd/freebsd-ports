@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.80 1998/10/31 15:36:18 jseger Exp $
+# $Id: Makefile,v 1.81 1998/11/06 02:41:06 jseger Exp $
 #
 
 DISTNAME=       lynx2.8.1rel.1
@@ -25,5 +25,6 @@ WRKSRC=		${WRKDIR}/lynx2-8-1
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/lynx_help
 	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/etc/lynx.cfg
+	${INSTALL_DATA} ${WRKSRC}/lynx.cfg ${PREFIX}/etc/lynx.cfg.default
 
 .include <bsd.port.mk>
