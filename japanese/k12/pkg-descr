@@ -1,12 +1,22 @@
 Japanese 12 dot font named `kanamecho'.
+kaname-latin1.pcf:-MNKANAME-Fixed-Medium-R-Normal--12-110-75-75-C-60-\
+ISO8859-1
 knmhn12x.pcf:-MNKANAME-Fixed-Medium-R-Normal--12-110-75-75-C-60-\
 JISX0201.1976-0
+knm12p.pcf:-MNKANAME-Fixed-Medium-R-Normal--12-110-75-75-P-120-\
+JISX0208.1983-0
+knm12pb.pcf:-MNKANAME-Fixed-Bold-R-Normal--12-110-75-75-P-120-\
+JISX0208.1983-0
 knmzn12x.pcf:-MNKANAME-Fixed-Medium-R-Normal--12-110-75-75-C-120-\
 JISX0208.1983-0
+knmzn12xb.pcf:-MNKANAME-Fixed-Bold-R-Normal--12-110-75-75-C-120-\
+JISX0208.1983-0
 
-You can also use 'k12' as an alias for knmzn12x.pcf,
-and 'r12' for knmhn12x.pcf.
+You can also use 'k12' as an alias for knmzn12x.pcf, 'k12b' for knmzn12xb.pcf,
+'r12' for knmhn12x.pcf, and 'a12' for kaname-latin1.pcf.
 
 Simple usage:
-	% kterm -fn r12 -fk k12 -fl r12
-	% mule -fn r12 
+	% kterm -fn a12 -fk k12 -fl r12
+	% mule -fn r12
+
+WWW: http://www.din.or.jp/~storm/fonts/
