@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
-MAINTAINER=	chris@shagged.org
+MAINTAINER=	boris@tagnet.ru
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL,PgSQL etc auth
 
 USE_OPENSSL=	yes
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--enable-auth-perl
 CONFIGURE_ARGS+=	--enable-auth-flatfile
 .endif
 
-.if !defined(WITHOUT_MAILDIR)
+.if defined(WITH_MAILDIR) && !defined(WITHOUT_MAILDIR)
 CONFIGURE_ARGS+=	--enable-mbox-maildir
 .endif
 
