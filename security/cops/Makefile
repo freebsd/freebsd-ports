@@ -3,11 +3,11 @@
 # Date created:				29 August 1996
 # Whom:					oly
 #
-# $Id$
+# $Id: Makefile,v 1.2 1996/11/17 19:29:55 obrien Exp $
 #
 
-PKGNAME=	cops-1.04
 DISTNAME=	cops_104
+PKGNAME=	cops-1.04
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cert.org/pub/tools/cops/1.04/
 EXTRACT_SUFX=	.tar.Z
