@@ -174,7 +174,6 @@
     SUBDIR += ruby-bitvector
     SUBDIR += ruby-gmp
     SUBDIR += ruby-gnuplot
-    SUBDIR += ruby-gsl
     SUBDIR += ruby-math3d
     SUBDIR += ruby-narray
     SUBDIR += ruby-netcdf
