@@ -1,0 +1,41 @@
+--- libGeoIP/Makefile.am.orig	Wed Jan 15 09:36:37 2003
++++ libGeoIP/Makefile.am	Wed Jan 15 09:36:58 2003
+@@ -1,15 +1,15 @@
+ lib_LTLIBRARIES = libGeoIP.la libGeoIPUpdate.la libGeoIPBitReader.la
+ 
+-EXTRA_DIST = md5.h global.h GeoIPUpdate.h
++EXTRA_DIST = md5.h global.h
+ 
+ AM_CPPFLAGS = -DGEOIPDATADIR=\"$(pkgdatadir)\" -Wall
+ 
+ if WITH_CITY
+ libGeoIP_la_SOURCES = GeoIP.c GeoIPCity.c
+-include_HEADERS = GeoIP.h GeoIPCity.h GeoIPBitReader.h
++include_HEADERS = GeoIP.h GeoIPCity.h GeoIPBitReader.h GeoIPUpdate.h
+ else
+ libGeoIP_la_SOURCES = GeoIP.c
+-include_HEADERS = GeoIP.h GeoIPBitReader.h
++include_HEADERS = GeoIP.h GeoIPBitReader.h GeoIPUpdate.h
+ endif
+ 
+ libGeoIPUpdate_la_SOURCES = GeoIPUpdate.c md5.c
+--- libGeoIP/Makefile.in.orig	Wed Jan 15 09:37:09 2003
++++ libGeoIP/Makefile.in	Wed Jan 15 09:38:35 2003
+@@ -87,14 +87,14 @@
+ install_sh = @install_sh@
+ lib_LTLIBRARIES = libGeoIP.la libGeoIPUpdate.la libGeoIPBitReader.la
+ 
+-EXTRA_DIST = md5.h global.h GeoIPUpdate.h
++EXTRA_DIST = md5.h global.h
+ 
+ AM_CPPFLAGS = -DGEOIPDATADIR=\"$(pkgdatadir)\" -Wall
+ 
+ @WITH_CITY_TRUE@libGeoIP_la_SOURCES = GeoIP.c GeoIPCity.c
+ @WITH_CITY_FALSE@libGeoIP_la_SOURCES = GeoIP.c
+-@WITH_CITY_TRUE@include_HEADERS = GeoIP.h GeoIPCity.h GeoIPBitReader.h
+-@WITH_CITY_FALSE@include_HEADERS = GeoIP.h GeoIPBitReader.h
++@WITH_CITY_TRUE@include_HEADERS = GeoIP.h GeoIPCity.h GeoIPBitReader.h GeoIPUpdate.h
++@WITH_CITY_FALSE@include_HEADERS = GeoIP.h GeoIPBitReader.h GeoIPUpdate.h
+ 
+ libGeoIPUpdate_la_SOURCES = GeoIPUpdate.c md5.c
+ libGeoIPBitReader_la_SOURCES = GeoIPBitReader.c
