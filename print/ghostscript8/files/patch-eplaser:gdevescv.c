@@ -1,16 +1,15 @@
---- eplaser/gdevescv.c.orig	Wed Jul  3 13:17:26 2002
-+++ eplaser/gdevescv.c	Fri Nov 29 21:59:00 2002
-@@ -37,8 +37,7 @@
+--- eplaser/gdevescv.c.orig	Fri Jan 24 13:35:28 2003
++++ eplaser/gdevescv.c	Tue Mar 25 18:03:39 2003
+@@ -37,8 +37,6 @@
  
   */
  
 -#include <stdlib.h>
 -#include <unistd.h>
-+#include <string.h>
+ #include <string.h>
  
  #include "math_.h"
- #include "gx.h"
-@@ -305,30 +304,30 @@
+@@ -321,30 +319,30 @@
  };
  
  /* Vector device implementation */
@@ -59,16 +58,7 @@
  private int escv_setlinewidth(gx_device_vector * vdev, floatp width);
  private int escv_setlinecap(gx_device_vector * vdev, gs_line_cap cap);
  private int escv_setlinejoin(gx_device_vector * vdev, gs_line_join join);
-@@ -585,6 +584,8 @@
-     {421, 595, 15, "A5"},		/* A5 */
-     {709, 1002, 24, "B4"},		/* B4 */
-     {501, 709, 25, "B5"},		/* B5 */
-+    {729, 1032, 24, "B5"},		/* JIS B4 */
-+    {516, 729, 25, "B5"},		/* JIS B5 */
-     {612, 792, 30, "LT"},		/* Letter */
-     {396, 612, 31, "HLT"},		/* Half Letter */
-     {612, 1008, 32, "LGL"},		/* Legal */
-@@ -1849,13 +1850,13 @@
+@@ -1879,13 +1877,13 @@
  
  /* Process the next piece of an image. */
  private int
@@ -84,7 +74,7 @@
      gx_device *dev = info->dev;
  #endif
      gx_device_vector *const	vdev = (gx_device_vector *) dev;
-@@ -1873,7 +1874,7 @@
+@@ -1903,7 +1901,7 @@
  
      {
  
@@ -93,7 +83,7 @@
  	if (height == 260)
  	    height = 1;
  #endif
-@@ -2011,13 +2012,13 @@
+@@ -2041,13 +2039,13 @@
  
  
  private int

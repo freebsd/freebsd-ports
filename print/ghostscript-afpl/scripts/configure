@@ -31,7 +31,7 @@ else
 		epag \
 		escpage lp2000 \
 		alc8600 alc8500 alc2000 alc4000 \
-		lp8800c lp8300c lp8500c lp3000c lp8200c lp8000c \
+		lp9500c lp8800c lp8300c lp8500c lp3000c lp8200c lp8000c \
 		epl5900 epl5800 epl2050 epl2050p epl2120 \
 		lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 lp8100 lp7700 \
 		lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 lp9600 lp8600 \
@@ -148,6 +148,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "alc8500"  "Epson AL-C8500 color laser printer [EPLASER]" "$status_alc8500" \
   "alc2000"  "Epson AL-C2000 color laser printer [EPLASER]" "$status_alc2000" \
   "alc4000"  "Epson AL-C4000 color laser printer [EPLASER]" "$status_alc4000" \
+  "lp9500c"  "Epson LP-9500C color laser printer [EPLASER]" "$status_lp9500c" \
   "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" "$status_lp8800c" \
   "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" "$status_lp8300c" \
   "lp8500c"  "Epson LP-8500C color laser printer [EPLASER]" "$status_lp8500c" \
