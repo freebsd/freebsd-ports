@@ -395,6 +395,7 @@
     SUBDIR += p5-HTTP-BrowserDetect
     SUBDIR += p5-HTTP-DAV
     SUBDIR += p5-HTTP-GHTTP
+    SUBDIR += p5-HTTP-Lite
     SUBDIR += p5-HTTP-MobileAgent
     SUBDIR += p5-HTTP-WebTest
     SUBDIR += p5-HTTPD-Log-Filter
