@@ -18,6 +18,8 @@ COMMENT=	Official AT&T release of KornShell 93
 VERSION=	2004-02-29
 RESTRICTED=	"Source recipient must acknowledge license"
 
+BROKEN=		Unfetchable
+
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	CCFLAGS="${CFLAGS}" SHELL="${SH}"
 .if defined(WANT_STATIC)
