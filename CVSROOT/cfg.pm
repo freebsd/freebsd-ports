@@ -14,11 +14,11 @@
 package cfg;
 use strict;
 use vars qw(
-	$ADD_TO_LINE $CHECK_HEADERS $COMMITCHECK_EXTRA $COMMITTER $DEBUG
-	$EXCLUDE_FILE $FILE_PREFIX $IDHEADER $LAST_FILE $MAILADDRS $MAILBANNER
-	$MAILCMD $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM
-	$MINCVSVERSION $PID $PROG_CVS $PROG_MV $TMPDIR $UNEXPAND_RCSID
-	%TEMPLATE_HEADERS @COMMIT_HOSTS
+	$ADD_TO_LINE $AVAIL_FILE $CHECK_HEADERS $COMMITCHECK_EXTRA $COMMITTER
+	$DEBUG $EXCLUDE_FILE $FILE_PREFIX $IDHEADER $LAST_FILE $MAILADDRS
+	$MAILBANNER $MAILCMD $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION
+	$MAIL_TRANSFORM $MINCVSVERSION $PID $PROG_CVS $PROG_MV $TMPDIR
+	$UNEXPAND_RCSID %TEMPLATE_HEADERS @COMMIT_HOSTS
 );
 
 my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
@@ -71,6 +71,15 @@ $MINCVSVERSION = "1090900";  # 1.9.9p0
 # that gets called early on in the validation process to see whether
 # the committer is allowed to commit.
 $COMMITCHECK_EXTRA = "";
+
+
+###################
+### cvs_acls.pl ###
+###################
+
+# The name of the avail file that defines who's allow to
+# commit to what.
+$AVAIL_FILE = "$CVSROOT/CVSROOT/avail";
 
 
 ################

@@ -82,7 +82,6 @@ use CVSROOT::cfg;
 my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
 my $debug = $cfg::DEBUG;
-my $availfile = "$CVSROOT/CVSROOT/avail";
 
 my $exit_val = 0;	# Good Exit value
 my $universal_off = 0;
@@ -112,9 +111,9 @@ print "$$ Repos: $repos\n","$$ ==== ",join("\n$$ ==== ",@ARGV),"\n" if $debug;
 #######################################
 
 # It is ok for the avail file not to exist.
-exit 0 unless -e $availfile;
+exit 0 unless -e $cfg::AVAIL_FILE;
 
-open (AVAIL, $availfile) || die "Can't open $availfile!\n";
+open (AVAIL, $cfg::AVAIL_FILE) || die "Can't open $cfg::AVAIL_FILE!\n";
 while (<AVAIL>) {
 	chomp;
 	next if /^\s*\#/;
