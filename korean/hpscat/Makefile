@@ -3,11 +3,11 @@
 # Date created:         4 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 08:35:44 asami Exp $
 #
 
 DISTNAME=	hpscat-jshin
-PKGNAME=	kr-hpscat-1.3jshin
+PKGNAME=	ko-hpscat-1.3jshin
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/print/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/editor/ked/ \

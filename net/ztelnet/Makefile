@@ -3,11 +3,11 @@
 # Date created:         4 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 09:02:45 asami Exp $
 #
 
 DISTNAME=	ztelnet
-PKGNAME=	kr-ztelnet-1.0p1
+PKGNAME=	ko-ztelnet-1.0p1
 CATEGORIES=	korean net
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/network/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/network/ \

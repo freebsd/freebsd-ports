@@ -3,11 +3,11 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 08:46:49 asami Exp $
+# $Id: Makefile,v 1.2 1997/06/05 00:06:32 asami Exp $
 #
 
 DISTNAME=	nh2ps-1.0p1
-PKGNAME=	kr-nh2ps-${PAPERSIZE}-1.0p1
+PKGNAME=	ko-nh2ps-${PAPERSIZE}-1.0p1
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nh2ps/
 

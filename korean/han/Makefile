@@ -3,11 +3,11 @@
 # Date created:		12 Apr 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 08:12:07 asami Exp $
+# $Id: Makefile,v 1.2 1997/07/21 19:21:06 max Exp $
 #
 
 DISTNAME=	han-1.0fb
-PKGNAME=	kr-han-1.0fb
+PKGNAME=	ko-han-1.0fb
 CATEGORIES=	korean
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/FreeBSD-kr/source/han/
 

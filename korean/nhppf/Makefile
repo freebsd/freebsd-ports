@@ -3,11 +3,11 @@
 # Date created:         19 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 09:06:45 asami Exp $
+# $Id: Makefile,v 1.2 1997/07/18 05:04:14 asami Exp $
 #
 
 DISTNAME=	nhppf-1.2
-PKGNAME=	kr-nhppf-1.2
+PKGNAME=	ko-nhppf-1.2
 CATEGORIES=	korean
 MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/
 

@@ -3,11 +3,11 @@
 # Date created:         25 May 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/28 05:40:38 max Exp $
+# $Id: Makefile,v 1.2 1997/04/28 08:46:19 max Exp $
 #
 
 DISTNAME=	nhpf-1.42
-PKGNAME=	kr-nhpf-1.42
+PKGNAME=	ko-nhpf-1.42
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/applications/
 
