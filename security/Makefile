@@ -164,6 +164,7 @@
     SUBDIR += libwhisker
     SUBDIR += liedentd
     SUBDIR += linux-pam-docs
+    SUBDIR += lockdown
     SUBDIR += logcheck
     SUBDIR += lsh
     SUBDIR += lxnb
