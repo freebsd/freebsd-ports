@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	sendmail
-PORTVERSION=	8.12.11
+PORTVERSION=	8.13.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
-
-.if defined(SENDMAIL_WITH_CONNECTION_RATE)
-PATCH_SITES=	http://j-chkmail.ensmp.fr/sm/
-PATCHFILES=	ratectrl.src-v2.patch ratectrl.cf.patch
-.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Reliable, highly configurable mail transfer agent with utilities
@@ -52,7 +47,6 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 # SENDMAIL_WITH_SOCKETMAP=yes
 # SENDMAIL_WITH_CYRUSLOOKUP=yes
 # SENDMAIL_WITH_PICKY_HELO_CHECK=yes
-# SENDMAIL_WITH_CONNECTION_RATE=yes
 
 .if defined(SENDMAIL_WITH_SMTPS) && !defined(SENDMAIL_WITH_TLS) && !defined(WITH_TLS)
 SENDMAIL_WITH_TLS=yes
@@ -197,11 +191,6 @@ do-configure:
 	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-DPICKY_HELO_CHECK'\'')' \
 		>> ${WCONF}/site.config.m4
 .endif
-.if defined(SENDMAIL_WITH_CONNECTION_RATE)
-	${ECHO_CMD} \
-	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_CONNECTION_RATE_CONTROL'\'')' \
-		>> ${WCONF}/site.config.m4
-.endif
 .if defined(SENDMAIL_WITHOUT_SHMEM)
 	${ECHO_CMD} \
 	 'APPENDDEF(`confENVDEF'\'', `-DSM_CONF_SHM=0'\'')' \
@@ -232,9 +221,6 @@ pre-install:
 	@${ECHO_CMD} `${BASENAME} ${i}` | \
 	${AWK} '{print "%%DOCSDIR%%/" $$1}' >>${PLIST}
 .endfor
-.if defined(SENDMAIL_WITH_CONNECTION_RATE)
-	@${ECHO_CMD} "share/doc/sendmail/CONNECTION_RATE_CONTROL" >>${PLIST}
-.endif
 .if defined(SENDMAIL_WITH_CYRUSLOOKUP)
 	@${ECHO_CMD} "share/doc/sendmail/CYRUS_LOOKUP" >>${PLIST}
 .endif
@@ -292,10 +278,6 @@ post-install:
 	${MKDIR} ${DOCSDIR}/libmilter
 	@${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
 		${TAR} -C ${DOCSDIR}/libmilter -xf -
-.endif
-.if defined(SENDMAIL_WITH_CONNECTION_RATE)
-	${INSTALL_DATA} ${FILESDIR}/CONNECTION_RATE_CONTROL \
-		 ${DOCSDIR}/CONNECTION_RATE_CONTROL
 .endif
 .if defined(SENDMAIL_WITH_CYRUSLOOKUP)
 	${INSTALL_DATA} ${FILESDIR}/CYRUS_LOOKUP ${DOCSDIR}/CYRUS_LOOKUP
