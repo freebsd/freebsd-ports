@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfed
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/graphics/systems/X11.old/pub/R6untarred/contrib/programs/
 DISTNAME=	${PORTNAME}

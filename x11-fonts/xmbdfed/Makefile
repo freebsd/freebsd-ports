@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmbdfed
-PORTVERSION= 	4.4
+PORTVERSION=	4.4
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
