@@ -5,6 +5,7 @@ include/freetype2/freetype/cache/ftcimage.h
 include/freetype2/freetype/cache/ftcmanag.h
 include/freetype2/freetype/cache/ftcsbits.h
 include/freetype2/freetype/cache/ftlru.h
+include/freetype2/freetype/config/ftbuild.h
 include/freetype2/freetype/config/ftconfig.h
 include/freetype2/freetype/config/ftmodule.h
 include/freetype2/freetype/config/ftoption.h
@@ -25,6 +26,8 @@ include/freetype2/freetype/ftsynth.h
 include/freetype2/freetype/ftsystem.h
 include/freetype2/freetype/fttypes.h
 include/freetype2/freetype/internal/autohint.h
+include/freetype2/freetype/internal/internal.h
+include/freetype2/freetype/internal/fnttypes.h
 include/freetype2/freetype/internal/ftcalc.h
 include/freetype2/freetype/internal/ftdebug.h
 include/freetype2/freetype/internal/ftdriver.h
