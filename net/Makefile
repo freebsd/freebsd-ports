@@ -34,6 +34,7 @@
     SUBDIR += coda_doc
     SUBDIR += coda_intro
     SUBDIR += coda_server
+    SUBDIR += crescendo
     SUBDIR += cricket
     SUBDIR += cvsup
     SUBDIR += cvsup-bin
