@@ -243,6 +243,7 @@
     SUBDIR += fpc-gdbint
     SUBDIR += fpc-regexpr
     SUBDIR += fpp
+    SUBDIR += freebase
     SUBDIR += freelibiberty
     SUBDIR += freescope
     SUBDIR += frink
