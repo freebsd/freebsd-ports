@@ -1,0 +1,11 @@
+--- Programs/Makefile.orig	Sat Apr 25 23:44:50 1998
++++ Programs/Makefile	Sat Apr 25 23:46:35 1998
+@@ -3,7 +3,7 @@
+ BINDIR = ..
+ 
+ INCLUDES = -I../Lib 
+-CFLAGS = $(COPTIONS) $(OPTFLAGS) $(INCLUDES)
++CFLAGS += $(COPTIONS) $(OPTFLAGS) $(INCLUDES)
+ 
+ LIBS = -lmetis -lm
+ LD = $(CC) $(LDOPTIONS) -L./ -L../ 

@@ -1,0 +1,27 @@
+--- Makefile.in.orig	Sat Apr 25 23:41:58 1998
++++ Makefile.in	Sat Apr 25 23:43:23 1998
+@@ -1,9 +1,9 @@
+ 
+ # Which compiler to use
+-CC = cc
++# CC = cc
+ 
+ # What optimization level to use
+-OPTFLAGS = -O2
++# OPTFLAGS = -O2
+ 
+ # What options to be used by the compiler
+ COPTIONS = 
+@@ -12,10 +12,10 @@
+ LDOPTIONS = 
+ 
+ # What archiving to use
+-AR = ar rv
++# AR = ar rv
+ 
+ # What to use for indexing the archive
+-RANLIB = ranlib
++# RANLIB = ranlib
+ # RANLIB = ar -ts
+ # RANLIB = 
+ 
