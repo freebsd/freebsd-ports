@@ -1,0 +1,18 @@
+--- refman.cc.orig	Mon Jun 15 15:01:37 1998
++++ refman.cc	Sun Nov 12 20:10:06 2000
+@@ -3,7 +3,6 @@
+ /* Main Module            */
+ /* Last change 15.06.1998 */
+ 
+-#include <X11/Xmu/Editres.h>
+ #include <Xm/MainW.h>
+ #include <Xm/RowColumn.h>
+ #include <Xm/CascadeB.h>
+@@ -15,6 +14,7 @@
+ #include <Xm/Label.h>
+ #include <Xm/MessageB.h>
+ #include <Xm/Text.h>
++#include <X11/Xmu/Editres.h>
+ #include <stdio.h>
+ 
+ #include "nrutil.c"
