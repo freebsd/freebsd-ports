@@ -1,68 +1,68 @@
-# New ports collection makefile for:    apache HTTPD
-# Date created:         Fri Aug 25 16:42:36 CDT 1995
-# Whom:                 ache@freebsd.org
+# New ports collection makefile for:	apache2
+# Date created:				7 April 2001
+# Whom:					Hye-Shik Chang <perky@python.or.kr>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	apache
-PORTVERSION=    1.3.19
-PORTREVISION=   1
+PORTVERSION=	2.0.16
 CATEGORIES=	www
-MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
-		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
-		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
-		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
+MASTER_SITES=	http://httpd.apache.org/dist/httpd/ \
+		http://www.cybernic.com/mirror/dist/httpd/ \
+		http://mirrors.partnersforever.net/apache/dist/httpd/ \
+		http://www.technotopia.com/vroom/apache/dist/httpd/ \
+		http://www.tux.org/pub/net/apache/dist/httpd/ \
 		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
-		ftp://www3.service.digital.com/apache/dist/httpd/ \
-		ftp://galileo.galilei.com/pub/apache/httpd/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
-		ftp://apache.nextpath.com/pub/apache/dist/httpd/
-DISTNAME=	apache_${PORTVERSION}
+		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
+		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
+		ftp://ftp.digex.net/pub/packages/network/apache/httpd/ \
+		ftp://ftp.cuckoo.com/pub/mirrors/apache/httpd/
+DISTNAME=	httpd-${PORTVERSION:S/./_/g}-beta
 
-#PATCH_SITES=    ${MASTER_SITES}
-#PATCHFILES=     apache_${PORTVERSION}-fix.diff
+MAINTAINER?=	perky@python.or.kr
 
-MAINTAINER=	ache@freebsd.org
+WRKSRC=		${WRKDIR}/httpd-${PORTVERSION:S/./_/g}
+FIND?=		find
+XARGS?=		xargs
 
-#
-# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
-#
+# apache2 doesn't process '--enable-share=max' option yet.
+# and some modules are very unstable at DSO mode.
+SHARED_MODS?=	unique_id mime_magic rewrite speling auth_db \
+		auth_anon digest headers cern_meta expires include \
+		cgid status info usertrack dav dav_fs imap proxy \
+		auth_digest file_cache echo optional_fn_import \
+		optional_fn_export
+STATIC_MODS?=	so env setenvif dir autoindex access auth negotiation \
+		userdir alias asis cgi mime log_config vhost_alias actions
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
-		--server-gid=nogroup \
+		--enable-layout=FreeBSD \
 		--with-perl=${PERL} \
-		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
-		--suexec-docroot=${PREFIX}/www/data \
-		--without-confadjust \
-		--enable-module=most \
-		--enable-module=auth_db \
-		--enable-module=mmap_static \
-		--disable-module=auth_dbm \
-		--enable-shared=max
+		--with-suexec-docroot=${PREFIX}/www/data \
+		--enable-shared \
+		--disable-threads \
+		--with-mpm=prefork  # Apache's thread doesn't work well in FreeBSD
 
-OPTIM=		-DHARD_SERVER_LIMIT=512 \
-		-DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
-		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\" \
-		-DACCEPT_FILTER_NAME=\\"httpready\\"
-
-.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+=		-DBUFFERED_LOGS
-CFLAGS+=	-O6 -fomit-frame-pointer
-.endif
+OPTIM+=		-DHARD_SERVER_LIMIT=512 \
+		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 CONFIGURE_ENV=	OPTIM='${OPTIM}'
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
+
+.for mod in ${SHARED_MODS}
+CONFIGURE_ARGS+= --enable-${mod}=shared
+.endfor
+.for mod in ${STATIC_MODS}
+CONFIGURE_ARGS+= --enable-${mod}=yes
+.endfor
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.orig"|${XARGS} ${RM} -f
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \

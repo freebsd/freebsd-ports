@@ -1,0 +1,24 @@
+--- support/log_server_status.in.orig	Mon Mar 12 08:40:47 2001
++++ support/log_server_status.in	Sat Apr  7 05:45:42 2001
+@@ -63,10 +63,10 @@
+ #
+ require 'sys/socket.ph';
+ 
+-$wherelog = "/var/log/graph/";  # Logs will be like "/var/log/graph/19960312"
++$wherelog = "/var/log/httpd-status-";
+ $server = "localhost";          # Name of server, could be "www.foo.com"
+ $port = "80";                   # Port on server
+-$request = "/status/?auto";     # Request to send
++$request = "/server-status/?auto";     # Request to send
+ 
+ sub tcp_connect
+ {
+@@ -96,7 +96,7 @@
+ 	chomp($date);
+ 	($day,$time)=split(/:/,$date);
+ 	$res=&tcp_connect($server,$port);
+-	open(OUT,">>$wherelog$day");
++	open(OUT,">>$wherelog$day.log");
+ 	if ($res) {
+ 		print OUT "$time:-1:-1:-1:-1:$res\n";
+ 		exit 1;
