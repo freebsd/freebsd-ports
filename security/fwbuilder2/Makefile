@@ -7,10 +7,10 @@
 
 PORTNAME=	fwbuilder
 PORTVERSION=	1.0.10
-PORTREVISION=   RC5
+PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://downloads.fwbuilder.org/pub/fwbuilder/nightly_builds/current/ \
-		${MASTER_SITE_SOURCEFORGE}/fwbuilder/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
+MASTER_SITE_SUBDIR=	fwbuilder
 
 MAINTAINER=	devnull@uptsoft.com
 COMMENT=	Firewall Builder GUI and policy compilers
@@ -27,11 +27,11 @@ USE_GTK=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-MAN1=		fwbuilder.1 fwblookup.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 \
-		fwb_pf.1 fwb_install.1
+MAN1=		fwbuilder.1 fwblookup.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 fwb_pf.1 \
+		fwb_install.1
 
 post-extract:
 	@${ECHO_CMD} "===! Running aclocal"
-	cd ${WRKDIR}/fwbuilder-1.0.10; aclocal; autoconf
+	@(cd ${WRKSRC}; aclocal; autoconf)
 
 .include <bsd.port.mk>
