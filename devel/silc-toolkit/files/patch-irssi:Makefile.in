@@ -1,0 +1,11 @@
+--- irssi/Makefile.in.orig	Fri Nov  9 18:23:24 2001
++++ irssi/Makefile.in	Fri Nov  9 18:25:33 2001
+@@ -486,7 +486,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-confDATA
++install-data-am:
+ 
+ install-exec-am:
+ 
