@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b8943e61-6e68-11d9-a9e7-0001020eed82">
+    <topic>evolution -- arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>evolution</name>
+	<range><lt>2.0.3_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Martin <q>Joey</q> Schulze reports:</p>
+	<blockquote>
+	  <p>Max Vozeler discovered an integer overflow in the helper
+	    application camel-lock-helper which runs setuid root or
+	    setgid mail inside of Evolution, a free groupware suite.
+	    A local attacker can cause the setuid root helper to
+	    execute arbitrary code with elevated privileges via a
+	    malicious POP server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0102</cvename>
+      <url>http://cvs.gnome.org/viewcvs/evolution/camel/camel-lock-helper.c?rev=1.7&amp;view=log#rev1.5.74.1</url>
+    </references>
+    <dates>
+      <discovery>2005-01-20</discovery>
+      <entry>2005-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="88ff90f2-6e43-11d9-8c87-000a95bc6fae">
     <topic>mod_dosevasive -- insecure temporary file creation</topic>
     <affects>
