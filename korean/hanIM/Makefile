@@ -10,7 +10,7 @@ PORTVERSION=	1.2.1
 CATEGORIES=     korean x11
 MASTER_SITES=   ftp://ftp.mizi.com/pub/hanIM/
 
-MAINTAINER=     cjh@kr.freebsd.org
+MAINTAINER=     cjh@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
