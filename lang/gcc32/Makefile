@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-11
+SNAPDATE=	2002-03-18
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc
@@ -24,6 +24,9 @@ DISTFILES=	\
 		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 #		gcc-ss-3.1-0_${SNAPVER}.src.rpm
+
+PATCH_SITES=	ftp://relay.nuxi.com/obrien/
+PATCHFILES=	port_gcc31_20020318.diff
 
 MAINTAINER=	obrien@FreeBSD.org
 
