@@ -19,4 +19,10 @@ PERL_CONFIGURE=	YES
 
 MAN3=		Include.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500800
+BROKEN=		Does not install
+.endif
+
+.include <bsd.port.post.mk>
