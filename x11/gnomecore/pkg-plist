@@ -202,7 +202,7 @@ share/gnome/help/gnome-terminal/C/docbook.css
 share/gnome/help/gnome-terminal/C/environment.html
 share/gnome/help/gnome-terminal/C/index.html
 share/gnome/help/gnome-terminal/C/license.html
-share/gnome/help/gnome-terminal/C/ln11.html
+share/gnome/help/gnome-terminal/C/ln7.html
 share/gnome/help/gnome-terminal/C/menus.html
 share/gnome/help/gnome-terminal/C/options.html
 share/gnome/help/gnome-terminal/C/pointerusage.html
@@ -705,6 +705,7 @@ share/gnome/pixmaps/gnome-xterm.png
 share/gnome/pixmaps/gtkvim.png
 share/gnome/pixmaps/kterm.xpm
 share/gnome/pixmaps/launcher-program.png
+share/gnome/pixmaps/mailcheck/eclouds.png
 share/gnome/pixmaps/mailcheck/email-e.png
 share/gnome/pixmaps/mailcheck/email-eclouds.png
 share/gnome/pixmaps/mailcheck/email-tiny.png
@@ -768,6 +769,9 @@ share/locale/pt/LC_MESSAGES/gnome-core.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-core.mo
 share/locale/ru/LC_MESSAGES/gnome-core.mo
 share/locale/sk/LC_MESSAGES/gnome-core.mo
+share/locale/sl/LC_MESSAGES/gnome-core.mo
+share/locale/sp/LC_MESSAGES/gnome-core.mo
+share/locale/sr/LC_MESSAGES/gnome-core.mo
 share/locale/sv/LC_MESSAGES/gnome-core.mo
 share/locale/tr/LC_MESSAGES/gnome-core.mo
 share/locale/uk/LC_MESSAGES/gnome-core.mo

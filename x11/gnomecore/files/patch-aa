@@ -1,21 +1,13 @@
---- configure.orig	Wed Aug  2 00:21:00 2000
-+++ configure	Wed Aug  2 00:22:18 2000
-@@ -6074,9 +6074,9 @@
- LIBS="$oLIBS"
- 
- oLIBS="$LIBS"
+--- configure.orig	Wed Sep 20 00:25:30 2000
++++ configure	Mon Sep 25 14:24:15 2000
+@@ -6095,4 +6095,4 @@
+ BZ_LIBS=""
 -echo $ac_n "checking for bzopen in -lbz2""... $ac_c" 1>&6
--echo "configure:6079: checking for bzopen in -lbz2" >&5
--ac_lib_var=`echo bz2'_'bzopen | sed 'y%./+-%__p_%'`
+-echo "configure:6098: checking for bzopen in -lbz2" >&5
 +echo $ac_n "checking for BZ2_bzopen in -lbz2""... $ac_c" 1>&6
-+echo "configure:6079: checking for BZ2_bzopen in -lbz2" >&5
-+ac_lib_var=`echo bz'_'bzopen | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-@@ -6088,10 +6088,10 @@
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
++echo "configure:6098: checking for BZ2_bzopen in -lbz2" >&5
+ ac_lib_var=`echo bz2'_'bzopen | sed 'y%./+-%__p_%'`
+@@ -6109,6 +6109,6 @@
      builtin and then its argument prototype would still apply.  */
 -char bzopen();
 +char BZ2_bzopen();
@@ -24,8 +16,6 @@
 -bzopen()
 +BZ2_bzopen()
  ; return 0; }
- EOF
- if { (eval echo configure:6098: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
 --- app-docs.make.orig	Thu Apr 20 02:25:57 2000
 +++ app-docs.make	Fri May 26 16:31:01 2000
 @@ -1,4 +1,4 @@
