@@ -1,4 +1,5 @@
 bin/gmc
+bin/gmc-client
 bin/plain-gmc
 etc/CORBA/servers/gmc.gnorba
 etc/mc.global
@@ -31,10 +32,14 @@ share/gnome/mc/extfs/uzip
 share/gnome/mc/extfs/uzoo
 share/gnome/mc/layout
 share/gnome/mc/mc-gnome.ext
+share/gnome/mc/mc.csh
 share/gnome/mc/mc.ext
 share/gnome/mc/mc.hint
+share/gnome/mc/mc.hint.es
 share/gnome/mc/mc.lib
+share/gnome/mc/mc.sh
 share/gnome/mc/mc.menu
+share/gnome/mc/syntax/ada95.syntax
 share/gnome/mc/syntax/c.syntax
 share/gnome/mc/syntax/changelog.syntax
 share/gnome/mc/syntax/diff.syntax
@@ -43,6 +48,7 @@ share/gnome/mc/syntax/html.syntax
 share/gnome/mc/syntax/java.syntax
 share/gnome/mc/syntax/latex.syntax
 share/gnome/mc/syntax/lsm.syntax
+share/gnome/mc/syntax/mail.syntax
 share/gnome/mc/syntax/makefile.syntax
 share/gnome/mc/syntax/ml.syntax
 share/gnome/mc/syntax/nroff.syntax
@@ -51,9 +57,13 @@ share/gnome/mc/syntax/perl.syntax
 share/gnome/mc/syntax/python.syntax
 share/gnome/mc/syntax/sh.syntax
 share/gnome/mc/syntax/smalltalk.syntax
+share/gnome/mc/syntax/swig.syntax
+share/gnome/mc/syntax/texinfo.syntax
+share/gnome/mc/syntax/unknown.syntax
 share/gnome/mime-info/mc.keys
 share/gnome/pixmaps/mc/directory.xpm
 share/gnome/pixmaps/mc/gnome-application-encapsulated_postscript.png
+share/gnome/pixmaps/mc/gnome-application-pdf.png
 share/gnome/pixmaps/mc/gnome-application-postscript.png
 share/gnome/pixmaps/mc/gnome-application-x-c-header.png
 share/gnome/pixmaps/mc/gnome-application-x-c-source.png
@@ -126,6 +136,7 @@ share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
+share/locale/el/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
 share/locale/es_ES/LC_MESSAGES/mc.mo
 share/locale/fi/LC_MESSAGES/mc.mo
@@ -134,10 +145,13 @@ share/locale/hu/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
+share/locale/nl/LC_MESSAGES/mc.mo
 share/locale/no/LC_MESSAGES/mc.mo
 share/locale/pl/LC_MESSAGES/mc.mo
+share/locale/pt_BR/LC_MESSAGES/mc.mo
 share/locale/ro/LC_MESSAGES/mc.mo
 share/locale/ru/LC_MESSAGES/mc.mo
+share/locale/sv/LC_MESSAGES/mc.mo
 share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/mc.mo
 @dirrm share/gnome/pixmaps/mc

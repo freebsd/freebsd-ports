@@ -1,6 +1,6 @@
---- Make.common.in.orig	Tue Mar 30 08:34:33 1999
-+++ Make.common.in	Wed Apr  7 23:18:45 1999
-@@ -24,9 +24,9 @@
+--- Make.common.in.orig	Thu Sep 23 12:01:07 1999
++++ Make.common.in	Fri Sep 24 17:16:22 1999
+@@ -24,17 +24,17 @@
  gnomeicondir = @gnomeicondir@
  xv_bindir  = @xv_bindir@
  corbadir   = $(sysconfdir)/CORBA/servers
@@ -10,10 +10,11 @@
 -idldir     = $(prefix)/share/idl
 +idldir     = $(datadir)/idl
  suppbindir = $(mclibdir)/bin
- gnewdir	   = $(prefix)/share/mc/templates
+-gnewdir	   = $(prefix)/share/mc/templates
++gnewdir	   = $(datadir)/mc/templates
  tidir      = $(mclibdir)/term
-@@ -34,7 +34,7 @@
- confdir    = $(prefix)/etc
+ extfsdir   = $(mclibdir)/extfs
+ confdir    = $(sysconfdir)
  icondir    = $(datadir)/pixmaps/mc
  syntaxdir  = $(mclibdir)/syntax
 -localedir  = $(datadir)/locale
