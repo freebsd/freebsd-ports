@@ -1,0 +1,11 @@
+--- src/gtk/gftp-gtk.h.orig	Tue Mar 20 17:46:01 2001
++++ src/gtk/gftp-gtk.h	Mon Apr 30 00:18:12 2001
+@@ -197,7 +197,7 @@
+ void ftp_log					( gftp_logging_level level,
+ 						  void *ptr,
+ 						  const char *string,
+-						  ... );
++						  ... ) __attribute__((format(printf, 3, 4)));
+ 
+ void refresh 					( gftp_window_data * wdata );
+ 
