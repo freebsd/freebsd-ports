@@ -2560,6 +2560,7 @@ hangman		src/games/hangman
 happydoc	ports/devel/happydoc
 harvest		ports/www/harvest
 hashish		ports/security/hashish
+hawk		ports/net/hawk
 hb		ports/misc/hb
 hbiff		ports/mail/hbiff
 hdconv		ports/palm/hdconv
