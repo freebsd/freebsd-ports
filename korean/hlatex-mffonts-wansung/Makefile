@@ -8,7 +8,7 @@
 PORTNAME=	HLaTeX-${FONT_TYPE}fonts-${FONT_ENCODING}
 PORTVERSION=	0.98
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/unsupported/
+MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/hlatex/
 DISTFILES=	${HLATEX_FONTS_BASE}
 DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=

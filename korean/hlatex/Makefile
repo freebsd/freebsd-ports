@@ -8,7 +8,7 @@
 PORTNAME=	HLaTeX
 PORTVERSION=	0.991
 CATEGORIES=	korean print
-MASTER_SITES=	ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/
+MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/hlatex/
 DISTFILES=	HLaTeX-0.991.tar.gz ${HLATEX_FONTS_BASE}
 DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=	HLaTeX-0.991.tar.gz

@@ -8,7 +8,7 @@
 PORTNAME=	uniksc
 PORTVERSION=	0.9
 CATEGORIES=	korean converters
-MASTER_SITES=	http://kldp.org/~bangjy/hangul/
+MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@freebsd.org
 COMMENT=	Converts data between Korean KSC-5601 and Unicode 3.0 UTF-16
