@@ -1,3 +1,4 @@
+@unexec if test -L %D/bin/gnome-calculator; then rm -f %D/bin/gnome-calculator; fi
 bin/gcalctool
 etc/gconf/gconf.xml.defaults/apps/gcalctool/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool/%gconf.xml
@@ -23,6 +24,8 @@ share/locale/nl/LC_MESSAGES/gcalctool.mo
 share/locale/no/LC_MESSAGES/gcalctool.mo
 share/locale/pt/LC_MESSAGES/gcalctool.mo
 share/locale/pt_BR/LC_MESSAGES/gcalctool.mo
+share/locale/sr/LC_MESSAGES/gcalctool.mo
+share/locale/sr@Latn/LC_MESSAGES/gcalctool.mo
 share/locale/sv/LC_MESSAGES/gcalctool.mo
 share/locale/uk/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
