@@ -22,6 +22,7 @@
     SUBDIR += cdplay
     SUBDIR += cdplayer.app
     SUBDIR += cdrdao
+    SUBDIR += chordpack
     SUBDIR += cmp3
     SUBDIR += csound
     SUBDIR += csound-manual
