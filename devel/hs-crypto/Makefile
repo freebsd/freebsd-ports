@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	crypto
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/crypto/downloads/
 PKGNAMEPREFIX=	hs-
@@ -28,11 +27,16 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
 
+GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
+PLIST_SUB+=	GHC_VERSION="${GHC_VERSION}"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/Makefile ${WRKSRC}/package.conf
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/Makefile ${WRKSRC}/package.conf
+	@${REINPLACE_CMD} -e 's|ghc-pkg|-ghc-pkg|' \
+		${WRKSRC}/Makefile
 
 do-configure:
 	@(cd ${WRKSRC} && ${GMAKE} depend)
@@ -40,8 +44,12 @@ do-configure:
 .if !defined(NOPORTDOCS)
 post-build:
 	@(cd ${WRKSRC} && ${GMAKE} doc)
+.endif
 
 post-install:
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/package.conf ${DATADIR}
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC} && \
 		${INSTALL_DATA} *.html ReadMe.* haddock.css haskell_icon.gif ${DOCSDIR})
