@@ -1,0 +1,15 @@
+--- app/Makefile.in.orig	Mon Jan 12 01:21:51 2004
++++ app/Makefile.in	Thu Jan 29 19:28:09 2004
+@@ -230,9 +230,9 @@
+ 
+ stdir = $(datadir)/soundtracker
+ 
+-#INCLUDES = -DDATADIR=\"$(stdir)\" \
+-#	-DLOCALEDIR=\"$(prefix)/share/locale\"
+-INCLUDES = -DLOCALEDIR=\"$(prefix)/share/locale\"
++INCLUDES = -DDATADIR=\"$(stdir)\" \
++	-DLOCALEDIR=\"$(prefix)/share/locale\"
++#INCLUDES = -DLOCALEDIR=\"$(prefix)/share/locale\"
+ subdir = app
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
