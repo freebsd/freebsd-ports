@@ -1,5 +1,5 @@
 *** soundbyte.c.orig	Wed Mar  5 23:04:49 1997
---- soundbyte.c	Wed Jun 11 22:50:54 1997
+--- soundbyte.c	Wed Sep 24 02:39:23 1997
 ***************
 *** 15,21 ****
 --- 15,23 ----
@@ -13,8 +13,19 @@
   #endif
   
 ***************
+*** 72,77 ****
+--- 74,81 ----
+  static unsigned char *playbuf= NULL;  /* Current play pointer */
+  static int squelch = 0; 	      /* Squelch value */
+  
++ void soundplayvol();
++ 
+  /* Convert local gain into device parameters */
+  
+  static unsigned scale_gain(g)
+***************
 *** 96,101 ****
---- 98,108 ----
+--- 100,110 ----
   }
   #endif
   
@@ -28,7 +39,7 @@
   		   access.  Return TRUE if successful, FALSE
 ***************
 *** 145,150 ****
---- 152,172 ----
+--- 154,174 ----
   	    }
   	    ioctl(Audio_fd, AUDIO_SETINFO, &Audio_info);
   #endif
@@ -52,7 +63,7 @@
   	if (errno != EINTR) {
 ***************
 *** 160,165 ****
---- 182,196 ----
+--- 184,198 ----
   void soundterm()
   {
   	if (audiof >= 0) {
@@ -80,7 +91,7 @@
   
   /*  SOUNDRECGAIN  --  Set recording gain from 0 (minimum) to 100 (maximum).  */
   
---- 241,270 ----
+--- 243,272 ----
   
      arg	 = (value << 8) | value;
   
