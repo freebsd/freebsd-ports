@@ -13,9 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX class to create a beamer presentation
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${LOCALBASE}/${TEXMFLOCAL}/tex/latex/xcolor/xcolor.sty:${PORTSDIR}/print/latex-xcolor \
 		${LOCALBASE}/${TEXMFLOCAL}/tex/latex/pgf/pgf.sty:${PORTSDIR}/print/latex-pgf \
 		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
