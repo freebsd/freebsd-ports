@@ -6,6 +6,7 @@
 
 PORTNAME=	libksba
 PORTVERSION=	0.4.6
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/aegypten/ \
 		ftp://ftp.gnupg.org/gcrypt/alpha/aegypten/ \

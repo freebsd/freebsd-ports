@@ -9,3 +9,4 @@ lib/libksba.la
 lib/libksba.so.7
 lib/libksba.so
 lib/libksba.a
+share/aclocal/ksba.m4
