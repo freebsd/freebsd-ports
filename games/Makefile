@@ -180,6 +180,7 @@
     SUBDIR += ishido
     SUBDIR += jetpack
     SUBDIR += jfk
+    SUBDIR += jtans
     SUBDIR += jumpnbump
     SUBDIR += jzip
     SUBDIR += kdegames3
