@@ -1,3 +1,8 @@
 bin/nps-config
 include/nps.h
 lib/libnps.a
+lib/libnps.la
+lib/libnps.so
+lib/libnps.so.9
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
