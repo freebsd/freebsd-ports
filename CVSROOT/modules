@@ -7681,6 +7681,7 @@ xmlppm		ports/textproc/xmlppm
 xmlrpc-c	ports/net/xmlrpc-c
 xmmix		ports/audio/xmmix
 xmms		ports/audio/xmms
+xmms-alarm	ports/x11-clocks/xmms-alarm
 xmms-avi	ports/graphics/xmms-avi
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
