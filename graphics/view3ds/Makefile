@@ -13,6 +13,10 @@ MASTER_SITE_SUBDIR=	lib3ds
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+LIB_DEPENDS=	3ds.0:${PORTSDIR}/graphics/lib3ds
+
+BROKEN=		Currently QT2 port doesn't compile Qgl module :(. Please flame Will Andrews <will@FreeBSD.org>
+
 USE_X_PREFIX=	yes
 USE_QT2=	yes
 USE_MESA=	yes
