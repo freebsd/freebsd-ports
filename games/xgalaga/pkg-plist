@@ -1,0 +1,11 @@
+bin/xgal
+lib/X11/xgalaga/.xgalscores
+lib/X11/xgalaga/xgal.sndsrv.freebsd
+lib/X11/xgalaga/sounds/ddloo.raw
+lib/X11/xgalaga/sounds/explode.raw
+lib/X11/xgalaga/sounds/explode_big.raw
+lib/X11/xgalaga/sounds/firetorp.raw
+lib/X11/xgalaga/sounds/shield.raw
+lib/X11/xgalaga/sounds/smart.raw
+lib/X11/xgalaga/sounds/torphit.raw
+lib/X11/xgalaga/sounds/warp.raw

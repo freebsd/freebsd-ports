@@ -1,0 +1,8 @@
+xgalaga is a rework of the Galaga shooting game.
+
+The package is built to use the sound device in /dev/dsp.  If you don't
+have a sound card and are getting core dumps, try recompiling it with
+"make nosound".
+
+- Satoshi
+asami@cs.berkeley.edu
