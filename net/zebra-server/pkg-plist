@@ -5,6 +5,7 @@ include/zebraapi.h
 include/zebraver.h
 share/doc/zebra-server/zebra.html
 share/doc/zebra-server/zebra.pdf
+share/doc/zebra-server/zebra.png
 share/doc/zebra-server/administration.html
 share/doc/zebra-server/apps.html
 share/doc/zebra-server/example1.html
