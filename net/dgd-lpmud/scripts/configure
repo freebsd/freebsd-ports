@@ -1,11 +1,6 @@
 cd ${WRKDIR}
-find . -name '*.orig' -or -name '*.i' | xargs rm
-mv 2.4.5/doc/LPC/closures doc/LPC
-rm -r ACCESS.* OBJ_DUMP doc/previous_object *.log log 2.4.5/diff* 2.4.5/doc
-mv 2.4.5/Copyright dgd
-mv 2.4.5/lpmud .
-mkdir -p lpmud-2.4.5/log; mv [A-Za-km-z]* lpmud-2.4.5
-mkdir -p bin; mv 2.4.5/hname.c 2.4.5/convert.c bin
+mv 2.4.5 lpmud-2.4.5
+mkdir -p bin; mv hname.c bin
+cp ${FILESDIR}/oconv.c bin
 cp ${FILESDIR}/Makefile.bin bin/Makefile
-cp ${FILESDIR}/Copyright.lp lpmud-2.4.5/Copyright
-mv 2.4.5/rundgd runlpmud
+mv rundgd runlpmud
