@@ -1,12 +1,11 @@
---- Makefile.in.orig	Tue Mar 12 14:51:22 2002
-+++ Makefile.in	Fri Mar 15 18:42:49 2002
-@@ -40,3 +40,3 @@
+--- Makefile.in.orig	Wed Jul 17 20:45:19 2002
++++ Makefile.in	Fri Jul 19 03:41:08 2002
+@@ -155,7 +155,7 @@
+ gettextsrc_DATA = ABOUT-NLS
+ gettextsrc_SCRIPTS = config.rpath mkinstalldirs
  
--ACLOCAL = @ACLOCAL@
-+ACLOCAL = /usr/bin/true
- AUTOCONF = @AUTOCONF@
-@@ -152,3 +152,3 @@
+-SUBDIRS = doc intl intl-java lib libuniname src po projects misc man m4 tests
++SUBDIRS = doc intl lib libuniname src po projects misc man m4 tests
  
--SUBDIRS = doc intl intl-java lib libuniname src po man m4 projects misc tests
-+SUBDIRS = doc intl lib libuniname src po man m4 projects misc tests
- 
+ EXTRA_DIST = config.rpath BUGS DISCLAIM PACKAGING README.gemtext \
+              djgpp/COPYING.DJ djgpp/Makefile.maint djgpp/README.DJ \
