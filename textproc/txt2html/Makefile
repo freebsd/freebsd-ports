@@ -7,6 +7,7 @@
 
 PORTNAME=	txt2html
 PORTVERSION=	1.28
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.aigeek.com/txt2html/
 
@@ -15,15 +16,17 @@ MAINTAINER=	croyle@gelemna.org
 NO_BUILD=	yes
 
 do-configure:
-	cd ${WRKSRC} && perl -pi -e "s|/usr/local|${PREFIX}|g" txt2html.pl
+	@${PERL} -pi -e "s|/usr/local|${PREFIX}|g; \
+		s|${PREFIX}/lib|${DATADIR}|" ${WRKSRC}/txt2html.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/txt2html.pl ${PREFIX}/bin/txt2html
-	${MKDIR} ${PREFIX}/share/doc/txt2html
-	${INSTALL_DATA} ${WRKSRC}/txt2html.dict ${PREFIX}/share/doc/txt2html/
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/txt2html.dict ${DATADIR}
 .if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for file in INSTALL LICENSE README changes.html sample.foot sample.html sample.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/txt2html/
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 	@${ECHO_MSG} "To install the sample links dictionary as the default"
