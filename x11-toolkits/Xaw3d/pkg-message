@@ -1,0 +1,8 @@
+*******************************************************************
+If you want Xaw3d to replace the default Athena Widget Set
+so most X applications will get a 3-D look, do this (as root):
+
+cd /usr/X11R6/lib
+mv libXaw.so.6 libXaw2d.so.6
+ln -s libXaw3d.so.6 libXaw.so.6
+*******************************************************************
