@@ -14,18 +14,18 @@ MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
 MAINTAINER=     obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-.if defined(USE_INET6)
-CONFIGURE_ARGS= --with-ipv6
-.endif
 MAN8=		pchar.8
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pchar ${PREFIX}/sbin
-	@${PERL} -pi.orig -e 's/pchar 1/pchar 8/g' ${WRKSRC}/pchar.1
-	${INSTALL_MAN} ${WRKSRC}/pchar.1 ${PREFIX}/man/man8/pchar.8
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS= --with-ipv6
+.endif
+
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${PREFIX}/share/doc/pchar
 	cd ${WRKSRC} ; ${INSTALL_DATA} README FAQ ${PREFIX}/share/doc/pchar
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
