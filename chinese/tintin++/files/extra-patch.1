@@ -1,0 +1,200 @@
+--- src/llist.c	Sun Aug 28 22:12:04 1994
++++ llist.c	Thu Mar 19 15:32:01 1998
+@@ -48,6 +48,9 @@
+ {
+   struct listnode *nexttodel;
+ 
++  if(nptr==NULL);
++    return;
++    
+   nexttodel=nptr->next;
+   free(nptr);
+ 
+--- src/main.c	Sun Aug 28 22:12:06 1994
++++ main.c	Thu Mar 19 15:32:08 1998
+@@ -306,6 +326,43 @@
+   if (!*k_input)
+     text_came=FALSE;
+   while (*tptr) {
++     /* 按灰色方向鍵  和 home ..等鍵 */
++    if (*tptr==27 && *(tptr+1)=='[' && 
++        ( (*(tptr+2)>='A' && *(tptr+2)<='D') ||
++          ( *(tptr+2)>='1' && *(tptr+2)<='6' && *(tptr+3)=='~' )
++         )
++       ) {
++      text_came=FALSE;
++      input_row=split_line+1;
++      input_col=1;
++      if( *(tptr+2) == 'A' )
++         sprintf(strng," north");
++      else if( *(tptr+2) == 'B' )
++         sprintf(strng," south");
++      else if( *(tptr+2) == 'C' )
++          sprintf(strng," east");
++      else if( *(tptr+2) == 'D' )
++          sprintf(strng," west");
++      else if( *(tptr+2) == '1' && *(tptr+3)=='~' )
++          sprintf(strng," up");
++      else if( *(tptr+2) == '2' && *(tptr+3)=='~' )
++          sprintf(strng," northwest");
++      else if( *(tptr+2) == '3' && *(tptr+3)=='~' )
++          sprintf(strng," southwest");
++      else if( *(tptr+2) == '4' && *(tptr+3)=='~' )
++          sprintf(strng," down");
++      else if( *(tptr+2) == '5' && *(tptr+3)=='~' )
++          sprintf(strng," northeast");
++      else if( *(tptr+2) == '6' && *(tptr+3)=='~' )
++          sprintf(strng," southeast");
++      
++      sprintf(done_input,"%s %s\n\r",k_input,strng);
++      write(1,strng,strlen(strng));
++      
++      *strng='\0';
++      *k_input='\0';
++      return 1; 
++   }
+     /* return was pressed, get ready to send line */
+     if (*tptr=='\n' || *tptr=='\r') {
+       text_came=FALSE;
+--- src/parse.c	Sun Aug 28 22:12:10 1994
++++ parse.c	Thu Mar 19 15:32:24 1998
+@@ -57,6 +57,7 @@
+ extern char *cryptkey;
+ extern char *get_arg_all();
+ extern void tstphandler();
++int iscspace();
+ 
+ /**************************************************************************/
+ /* parse input, check for TINTIN commands and aliases and send to session */
+@@ -472,14 +479,13 @@
+   s=space_out(s);
+   while(*s) {
+ 
+-    if(*s=='\\') {
++   /* if(*s=='\\') {
+       *arg++=*s++;
+       if(*s)
+ 	*arg++=*s++;
+-    }
+-
+-
+-    else if(*s==';' && nest<1) {
++    } 
++    else */ 
++    if(*s==';' && nest<1) {
+ 	break;
+     }
+ 
+@@ -493,8 +499,11 @@
+       *arg++=*s++;
+     }
+ 
+-    else
++    else {
++      if(*s & 128)
++        *arg++=*s++;
+       *arg++=*s++;
++    }
+   }
+ 
+   *arg='\0';
+@@ -517,13 +526,12 @@
+   s=space_out(s);
+   while(*s) {
+ 
+-    if(*s=='\\') {
++   /* if(*s=='\\') {
+       if(*++s)
+ 	*arg++=*s++;
+     }
+-
+-
+-    else if(*s==';' && nest==0) {
++    else */
++    if(*s==';' && nest==0) {
+ 	break;
+     }
+     else if(*s==DEFAULT_OPEN) {
+@@ -533,9 +541,18 @@
+     else if(*s==DEFAULT_CLOSE) {
+       *arg++=*s++;
+       nest--;
+-    }
+-    else
++    } else 
++    if(*s == '`' && *(s+1) == '^' && *(s+2) == '[' )
++    {
++            s += 3;
++            *arg++=27;    
++            *arg++='[';
++    }
++    else { 
++      if(*s & 128 )
++         *arg++=*s++;
+       *arg++=*s++;
++     }
+   }
+ *arg='\0'; 
+ return s;
+@@ -568,7 +585,10 @@
+        else if(*s==DEFAULT_CLOSE) {
+          nest--;
+        } 
++       else if(*s & 128)
++          *arg++=*s++;
+        *arg++=*s++;
++        
+      }
+    if (!*s)
+      tintin_puts2("#Unmatched braces error!", (struct session *)NULL);
+@@ -590,11 +610,12 @@
+   s=space_out(s);
+   
+   while(*s) {
+-    if(*s=='\\') {
++  /* if(*s=='\\') {
+       if(*++s)
+ 	*arg++=*s++;
+     }
+-    else if(*s=='"') {
++   else */
++   if(*s=='"') {
+       s++;
+       inside=!inside;
+     }
+@@ -608,8 +629,11 @@
+ 
+     else if(!inside && *s==' ')
+       break;
+-    else
++    else {
++      if(*s & 128)
++        *arg++=*s++;
+       *arg++=*s++;
++      }
+   }
+ 
+   *arg='\0';
+@@ -623,7 +647,7 @@
+ char *space_out(s)
+      char *s;
+ {
+-  while(isspace(*s))
++  while(iscspace(*s))
+     s++;
+   return s;
+ }
+@@ -678,6 +702,10 @@
+   } 
+ }
+ 
+-
+-
+-
++int iscspace(c)
++       char c;
++{
++   if (c==' '||c==9||c==13||c==10) 
++      {return(1);} 
++   else {return(0);}
++}
