@@ -7,6 +7,7 @@
 
 PORTNAME=	sharity-light
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.obdev.at/pub/Products/Sharity-Light/	\
 		ftp://ftp.warpnet.ro/mirrors/ftp.obdev.at/pub/Products/Sharity-Light/ \
