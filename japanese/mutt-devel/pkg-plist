@@ -82,6 +82,8 @@ etc/mime.types
 %%PORTDOCS%%share/doc/mutt/samples/sample.muttrc-tt
 %%PORTDOCS%%share/doc/mutt/samples/smime.rc
 %%PORTDOCS%%share/doc/mutt/samples/smime_keys_test.pl
+%%PORTDOCS%%share/doc/mutt/samples/colors.default
+%%PORTDOCS%%share/doc/mutt/samples/colors.linux
 %%PORTDOCS%%share/doc/mutt/smime-notes.txt
 %%PORTDOCS%%share/doc/mutt/smime-notes.ja.txt
 share/locale/ca/LC_MESSAGES/mutt.mo
