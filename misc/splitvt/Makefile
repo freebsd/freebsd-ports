@@ -11,7 +11,7 @@ PORTVERSION=	1.6.5
 CATEGORIES=	misc
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/splitvt/
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 HAS_CONFIGURE=		yes
 ALL_TARGET=

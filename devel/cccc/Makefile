@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c++
 DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 
-MAINTAINER=		obrien@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
 			dlg:${PORTSDIR}/devel/pccts
