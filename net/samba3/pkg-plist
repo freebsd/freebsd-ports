@@ -61,6 +61,8 @@ sbin/swat
 %%EXAMPLESDIR%%/dce-dfs/README
 %%EXAMPLESDIR%%/dce-dfs/smb.conf
 %%EXAMPLESDIR%%/genlogon/genlogon.pl
+%%EXAMPLESDIR%%/misc/adssearch.pl
+%%EXAMPLESDIR%%/misc/check_multiple_LDAP_entries.pl
 %%EXAMPLESDIR%%/misc/extra_smbstatus
 %%EXAMPLESDIR%%/misc/swat.pl
 %%EXAMPLESDIR%%/misc/wall.perl
@@ -238,6 +240,7 @@ share/swat/help/Samba-Guide/index.html
 share/swat/help/Samba-Guide/ix01.html
 share/swat/help/Samba-Guide/kerberos.html
 share/swat/help/Samba-Guide/migration.html
+share/swat/help/Samba-Guide/nw4migration.html
 share/swat/help/Samba-Guide/pr01.html
 share/swat/help/Samba-Guide/pr02.html
 share/swat/help/Samba-Guide/pr03.html
@@ -335,6 +338,7 @@ share/swat/help/Samba-HOWTO-Collection/install.html
 share/swat/help/Samba-HOWTO-Collection/integrate-ms-networks.html
 share/swat/help/Samba-HOWTO-Collection/introduction.html
 share/swat/help/Samba-HOWTO-Collection/ix01.html
+share/swat/help/Samba-HOWTO-Collection/largefile.html
 share/swat/help/Samba-HOWTO-Collection/locking.html
 share/swat/help/Samba-HOWTO-Collection/migration.html
 share/swat/help/Samba-HOWTO-Collection/msdfs.html
@@ -577,12 +581,10 @@ share/swat/using_samba/toc.html
 @dirrm share/swat/using_samba
 @dirrm share/swat/include
 @dirrm share/swat/images
-@dirrm share/swat/help/images
 @dirrm share/swat/help/Samba-HOWTO-Collection/images
 @dirrm share/swat/help/Samba-HOWTO-Collection
 @dirrm share/swat/help/Samba-Guide/images
 @dirrm share/swat/help/Samba-Guide
-@dirrm share/swat/help/Samba-Developers-Guide/images
 @dirrm share/swat/help/Samba-Developers-Guide
 @dirrm share/swat/help
 @dirrm share/swat

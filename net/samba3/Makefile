@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		samba
-PORTVERSION?=		3.0.11
+PORTVERSION?=		3.0.12
 PORTREVISION?=		0
 PORTEPOCH?=		1
 CATEGORIES?=		net
@@ -59,9 +59,16 @@ CONFIGURE_ARGS+=	--exec-prefix=${PREFIX} \
 CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 
 .if !defined(SAMBA_SUBPORT)
-OPTIONS=	LDAP		"With LDAP support" on \
-		ADS		"With Active Directory support" on \
-		CUPS		"With CUPS printing support" on \
+
+OPTIONS=	LDAP		"With LDAP support" on
+.if defined(PACKAGE_BUILDING)
+# Kerberos5 setup is very box specific, we don't
+# want artificial dependencies in the packages
+OPTIONS+=	ADS		"With Active Directory support" off
+.else
+OPTIONS+=	ADS		"With Active Directory support" on
+.endif
+OPTIONS+=	CUPS		"With CUPS printing support" on \
 		WINBIND		"With WinBIND support" on \
 		ACL_SUPPORT	"With ACL support" off \
 		SYSLOG		"With Syslog support" off \
@@ -293,8 +300,8 @@ post-patch:
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/examples/libsmbclient
 	@${RM} -rf ${WRKDIR}/${DISTNAME}/swat/lang
 	@${FIND} ${WRKSRC} -name CVS -o -name .cvsignore | ${XARGS} ${RM}
-	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} 0755
-	@${FIND} ${WRKDIR}/${DISTNAME}/examples -type f | ${XARGS} ${CHMOD} 0644
+	@${FIND} ${WRKDIR}/${DISTNAME} -type d | ${XARGS} ${CHMOD} u+w,a+rx
+	@${FIND} ${WRKDIR}/${DISTNAME} -type f | ${XARGS} ${CHMOD} u+w,a+r
 
 pre-install:
 	-@${FIND} ${SAMBA_LIBDIR} -type f 2>/dev/null | ${SORT} | ${SED} -e 's|^${PREFIX}||; s|^/||' >> ${WRKDIR}/.PLIST.exclude

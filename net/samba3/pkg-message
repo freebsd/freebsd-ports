@@ -1,5 +1,5 @@
-******************************************************************************
-NOTICE: *.tdb files have been moved from /var/run/samba/ to /var/db/samba/!
-NOTICE: Please, move them manually, if necessary, at least winbind_*.tdb.
-******************************************************************************
+Samba3 package now doesn't include ADS support due the portability problems
+with Kerberos5 libraries on different installations. You need to compile port
+yourself to get this functionality.
+
 For additional hints and directions, please, look into the README.FreeBSD file.

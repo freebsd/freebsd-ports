@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Nov 16 04:03:30 2004
-+++ configure.in	Fri Nov 26 02:04:59 2004
-@@ -691,7 +691,9 @@
+--- configure.in.orig	Fri Mar 11 14:47:05 2005
++++ configure.in	Sun Mar 20 01:24:25 2005
+@@ -724,7 +724,9 @@
  AC_CHECK_HEADERS(nss.h nss_common.h nsswitch.h ns_api.h sys/security.h security/pam_appl.h)
  AC_CHECK_HEADERS(stropts.h poll.h)
  AC_CHECK_HEADERS(sys/capability.h syscall.h sys/syscall.h)
@@ -11,29 +11,22 @@
  # These faile to compile on Solaris so just check for their presence
  AC_CHECK_HEADERS(security/pam_modules.h net/if.h netinet/ip.h, [], [], -)
  
-@@ -829,6 +831,13 @@
-    AC_DEFINE(HAVE_SIG_ATOMIC_T_TYPE,1,[Whether we have the atomic_t variable type])
- fi
- 
-+AC_CACHE_CHECK([for optreset], samba_cv_var_optreset, [
-+  AC_TRY_LINK([#include <unistd.h>],[optreset = 1],
-+  [samba_cv_var_optreset=yes],[samba_cv_var_optreset=no])])
-+if test x"$samba_cv_var_optreset" = x"yes"; then
-+  AC_DEFINE(HAVE_OPTRESET,1,[Whether the system has optreset])
-+fi
-+
- # stupid headers have the functions but no declaration. grrrr.
- AC_HAVE_DECL(errno, [#include <errno.h>])
- AC_HAVE_DECL(setresuid, [#include <unistd.h>])
-@@ -1125,6 +1134,11 @@
+@@ -1159,6 +1161,18 @@
  AC_CHECK_FUNCS(setxattr lsetxattr fsetxattr)
  AC_CHECK_FUNCS(attr_get attr_list attr_set attr_remove)
  AC_CHECK_FUNCS(attr_getf attr_listf attr_setf attr_removef)
 +# Check if we have extattr
-+AC_CHECK_FUNCS(extattr_delete_fd extattr_delete_file extattr_delete_link)
-+AC_CHECK_FUNCS(extattr_get_fd extattr_get_file extattr_get_link)
-+AC_CHECK_FUNCS(extattr_list_fd extattr_list_file extattr_list_link)
-+AC_CHECK_FUNCS(extattr_set_fd extattr_set_file extattr_set_link)
++case "$host_os" in
++  *freebsd4* | *DragonFly* )
++    AC_DEFINE(BROKEN_EXTATTR, 1, [Does extattr API work])
++    ;;
++  *)
++    AC_CHECK_FUNCS(extattr_delete_fd extattr_delete_file extattr_delete_link)
++    AC_CHECK_FUNCS(extattr_get_fd extattr_get_file extattr_get_link)
++    AC_CHECK_FUNCS(extattr_list_fd extattr_list_file extattr_list_link)
++    AC_CHECK_FUNCS(extattr_set_fd extattr_set_file extattr_set_link)
++    ;;
++esac
  
  # Assume non-shared by default and override below
  BLDSHARED="false"
