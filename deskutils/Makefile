@@ -29,6 +29,7 @@
     SUBDIR += kronolith
     SUBDIR += krss
     SUBDIR += libmrproject
+    SUBDIR += ljcharm
     SUBDIR += logjam
     SUBDIR += logjam2
     SUBDIR += loserjabber

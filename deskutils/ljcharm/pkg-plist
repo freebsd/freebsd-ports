@@ -1,0 +1,9 @@
+bin/charm
+%%PYTHON_SITELIBDIR%%/ljcharm.py
+%%PYTHON_SITELIBDIR%%/ljcharm.pyc
+%%PYTHON_SITELIBDIR%%/ljcharm.pyo
+%%PORTDOCS%%share/doc/charm/CHANGES
+%%PORTDOCS%%share/doc/charm/README
+%%PORTDOCS%%@dirrm share/doc/charm
+share/examples/charm/sample.charmrc
+@dirrm share/examples/charm
