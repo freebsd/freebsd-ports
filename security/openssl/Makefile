@@ -6,12 +6,19 @@
 #
 
 PORTNAME=	openssl
+.if defined(OPENSSL_SNAPSHOT)
+PORTREVISION!=	date -v-1d +%Y%m%d
+.else
 PORTVERSION=	0.9.7d
+.endif
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.openssl.org/source/ \
-		ftp://ftp.openssl.org/source/ \
-		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
-		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
+MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
+		ftp://ftp.openssl.org/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/security/tools/net/openssl/%SUBDIR%/ \
+		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR2}
+PKGNAMESUFFIX?=	${BETA_SUFFIX}${BASE_SUFFIX}${PKGNAMESUFFIX2}
+DISTNAME=	${DISTNAME2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
@@ -20,11 +27,27 @@ COMMENT=	SSL and crypto library
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.if defined(OPENSSL_SNAPSHOT)
+MASTER_SITE_SUBDIR2=	snapshot
+DISTNAME2=	${PORTNAME}-${PORTVERSION}-stable-SNAP-${PORTREVISION}
+.else
+MASTER_SITE_SUBDIR2=	source
+DISTNAME2=	${PORTNAME}-${PORTVERSION}
+.endif
+
+.if defined(WITH_OPENSSL_BETA)
+BETA_SUFFIX=		-beta
+CONFLICTS?=		openssl-0.*
+OPENSSL_SHLIBVER?=	4
+NO_LATEST_LINK=		yes
+.else
 CONFLICTS?=		openssl-beta-0.*
+OPENSSL_SHLIBVER?=	3
+.endif
+
 MAKE_ENV+=		MANPREFIX=${MANPREFIX}
 NOPRECIOUSMAKEVARS=	Too many _MLINKS for fetch
 USE_PERL5_BUILD=	yes
-OPENSSL_SHLIBVER?=	3
 CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 crl.1 crl2pkcs7.1 dgst.1 dhparam.1 \
@@ -849,7 +872,7 @@ pre-everything::
 	@${FALSE}
 
 .endif
-PKGNAMESUFFIX=	-overwrite-base
+BASE_SUFFIX=	-overwrite-base
 PREFIX=		/usr
 OPENSSLDIR=	/etc/ssl
 MANPREFIX=	${PREFIX}/openssl
