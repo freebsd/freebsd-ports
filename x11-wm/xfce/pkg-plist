@@ -40,6 +40,7 @@ etc/xfce/xfce3rc.ja
 etc/xfce/xfce3rc.ko
 etc/xfce/xfce3rc.nl
 etc/xfce/xfce3rc.sr
+etc/xfce/xfce3rc.uk
 etc/xfce/xfce3rc.zh_CN.GB2312
 etc/xfce/xfce3rc.zh_TW.Big5
 etc/xfce/xfclockrc
@@ -50,7 +51,6 @@ etc/xfce/xinitrc
 etc/xfce/xinitrc.mwm
 etc/xfce/xsession
 etc/xfce/xtree.reg
-lib/gtk/themes/engines/libxfce.la
 lib/gtk/themes/engines/libxfce.so
 share/locale/ca/LC_MESSAGES/xfce.mo
 share/locale/cs/LC_MESSAGES/xfce.mo
@@ -73,8 +73,10 @@ share/locale/ru/LC_MESSAGES/xfce.mo
 share/locale/sk/LC_MESSAGES/xfce.mo
 share/locale/sr/LC_MESSAGES/xfce.mo
 share/locale/sv/LC_MESSAGES/xfce.mo
+share/locale/uk/LC_MESSAGES/xfce.mo
 share/locale/zh/LC_MESSAGES/xfce.mo
 share/locale/zh_CN/LC_MESSAGES/xfce.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/xfce.mo
 share/xfce/COPYING
 share/xfce/XFce3.logo
 share/xfce/backdrops/A-Little-Exercise-3.jpg
@@ -124,10 +126,13 @@ share/xfce/backdrops/Greydrops.xpm
 share/xfce/backdrops/Greysea.xpm
 share/xfce/backdrops/Hardblue.xpm
 share/xfce/backdrops/Honey.xpm
+share/xfce/backdrops/Horizon.png
 share/xfce/backdrops/Leaves.xpm
+share/xfce/backdrops/Linea.xpm
 share/xfce/backdrops/Marbled.xpm
 share/xfce/backdrops/Master-Plan.jpg
 share/xfce/backdrops/Maze.xpm
+share/xfce/backdrops/MiceBlue.jpg
 share/xfce/backdrops/Nebula.xpm
 share/xfce/backdrops/Notes.xpm
 share/xfce/backdrops/Overdriven.jpg
@@ -138,7 +143,9 @@ share/xfce/backdrops/Pool.xpm
 share/xfce/backdrops/Psy.xpm
 share/xfce/backdrops/Psy2.xpm
 share/xfce/backdrops/Psy3.xpm
+share/xfce/backdrops/Purple.xpm
 share/xfce/backdrops/PurpleStripes.xpm
+share/xfce/backdrops/Reader.xpm
 share/xfce/backdrops/Rotin.xpm
 share/xfce/backdrops/Rough.xpm
 share/xfce/backdrops/Sandy-ridges.xpm
@@ -182,6 +189,7 @@ share/xfce/backdrops/Weave-red.xpm
 share/xfce/backdrops/Weird.xpm
 share/xfce/backdrops/Whirl.xpm
 share/xfce/backdrops/WhiteStripes.xpm
+share/xfce/backdrops/WipeBlue.png
 share/xfce/backdrops/Wood-floor.xpm
 share/xfce/backdrops/Wood.xpm
 share/xfce/backdrops/Wood2.xpm
@@ -191,8 +199,53 @@ share/xfce/backdrops/Xfce.xpm
 share/xfce/backdrops/XfceStellar.xpm
 share/xfce/backdrops/Xfcelogo.xpm
 share/xfce/backdrops/Xfcemice.jpg
-share/xfce/fonts/cursor2.pcf
+share/xfce/cursors/cursor2.pcf
+share/xfce/cursors/fonts.dir
 share/xfce/fonts/fonts.dir
+share/xfce/fonts/uniread-variable-05-b-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-05-b-i.pcf.gz
+share/xfce/fonts/uniread-variable-05-b-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-05-b-r.pcf.gz
+share/xfce/fonts/uniread-variable-05-m-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-05-m-i.pcf.gz
+share/xfce/fonts/uniread-variable-05-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-05-m-r.pcf.gz
+share/xfce/fonts/uniread-variable-07-b-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-07-b-i.pcf.gz
+share/xfce/fonts/uniread-variable-07-b-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-07-b-r.pcf.gz
+share/xfce/fonts/uniread-variable-07-m-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-07-m-i.pcf.gz
+share/xfce/fonts/uniread-variable-07-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-07-m-r.pcf.gz
+share/xfce/fonts/uniread-variable-09-b-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-09-b-i.pcf.gz
+share/xfce/fonts/uniread-variable-09-b-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-09-b-r.pcf.gz
+share/xfce/fonts/uniread-variable-09-m-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-09-m-i.pcf.gz
+share/xfce/fonts/uniread-variable-09-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-09-m-r.pcf.gz
+share/xfce/fonts/uniread-variable-10-b-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-10-b-i.pcf.gz
+share/xfce/fonts/uniread-variable-10-b-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-10-b-r.pcf.gz
+share/xfce/fonts/uniread-variable-10-m-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-10-m-i.pcf.gz
+share/xfce/fonts/uniread-variable-10-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-10-m-r.pcf.gz
+share/xfce/fonts/uniread-variable-12-b-i-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-12-b-i.pcf.gz
+share/xfce/fonts/uniread-variable-12-b-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-12-b-r.pcf.gz
+share/xfce/fonts/uniread-variable-12-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-12-m-r.pcf.gz
+share/xfce/fonts/uniread-variable-14-b-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-14-b-r.pcf.gz
+share/xfce/fonts/uniread-variable-14-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-14-m-r.pcf.gz
+share/xfce/fonts/uniread-variable-18-m-r-ISO8859-1.pcf.gz
+share/xfce/fonts/uniread-variable-18-m-r.pcf.gz
 share/xfce/help/html/adv-wm-appearance.html
 share/xfce/help/html/adv-wm-bindings.html
 share/xfce/help/html/adv-wm-commands.html
@@ -208,6 +261,27 @@ share/xfce/help/html/copyright.html
 share/xfce/help/html/fileman.html
 share/xfce/help/html/gpl.html
 share/xfce/help/html/help.html
+share/xfce/help/html/images/buttons.jpg
+share/xfce/help/html/images/xfbd.jpg
+share/xfce/help/html/images/xfbdmgr.jpg
+share/xfce/help/html/images/xfce_panel.jpg
+share/xfce/help/html/images/xfce_popup.jpg
+share/xfce/help/html/images/xfce_setup1.jpg
+share/xfce/help/html/images/xfce_setup2.jpg
+share/xfce/help/html/images/xfce_setup3.jpg
+share/xfce/help/html/images/xfce_setup4.jpg
+share/xfce/help/html/images/xfce_slogan.jpg
+share/xfce/help/html/images/xfce_snap.jpg
+share/xfce/help/html/images/xfclock.jpg
+share/xfce/help/html/images/xfdiff.jpg
+share/xfce/help/html/images/xfglob.jpg
+share/xfce/help/html/images/xfmouse.jpg
+share/xfce/help/html/images/xfpager.jpg
+share/xfce/help/html/images/xfrun.jpg
+share/xfce/help/html/images/xfsamba.jpg
+share/xfce/help/html/images/xfsound.jpg
+share/xfce/help/html/images/xftree.jpg
+share/xfce/help/html/images/xfumed.jpg
 share/xfce/help/html/install.html
 share/xfce/help/html/intro.html
 share/xfce/help/html/license.html
@@ -247,27 +321,6 @@ share/xfce/help/html/utils-xfsound.html
 share/xfce/help/html/utils-xfumed.html
 share/xfce/help/html/wm-examples-2.html
 share/xfce/help/html/wm.html
-share/xfce/help/images/buttons.jpg
-share/xfce/help/images/xfbd.jpg
-share/xfce/help/images/xfbdmgr.jpg
-share/xfce/help/images/xfce_panel.jpg
-share/xfce/help/images/xfce_popup.jpg
-share/xfce/help/images/xfce_setup1.jpg
-share/xfce/help/images/xfce_setup2.jpg
-share/xfce/help/images/xfce_setup3.jpg
-share/xfce/help/images/xfce_setup4.jpg
-share/xfce/help/images/xfce_slogan.jpg
-share/xfce/help/images/xfce_snap.jpg
-share/xfce/help/images/xfclock.jpg
-share/xfce/help/images/xfdiff.jpg
-share/xfce/help/images/xfglob.jpg
-share/xfce/help/images/xfmouse.jpg
-share/xfce/help/images/xfpager.jpg
-share/xfce/help/images/xfrun.jpg
-share/xfce/help/images/xfsamba.jpg
-share/xfce/help/images/xfsound.jpg
-share/xfce/help/images/xftree.jpg
-share/xfce/help/images/xfumed.jpg
 share/xfce/icons/3dpaint.xpm
 share/xfce/icons/ABC.xpm
 share/xfce/icons/AZ.xpm
@@ -384,30 +437,38 @@ share/xfce/palettes/BeHappy
 share/xfce/palettes/BeHappy2
 share/xfce/palettes/BeHappy3
 share/xfce/palettes/BeHappy4
+share/xfce/palettes/Blue
 share/xfce/palettes/BlueX
 share/xfce/palettes/BlueX2
 share/xfce/palettes/BlueX3
 share/xfce/palettes/BlueX4
 share/xfce/palettes/Bronze
 share/xfce/palettes/Bronze2
+share/xfce/palettes/CandyBox
 share/xfce/palettes/Cheese
+share/xfce/palettes/Chrome
 share/xfce/palettes/Citrouille
 share/xfce/palettes/Classic
 share/xfce/palettes/Classic2
 share/xfce/palettes/Clinky
 share/xfce/palettes/Craters
+share/xfce/palettes/DarkMetal
 share/xfce/palettes/Default
 share/xfce/palettes/Defcon
+share/xfce/palettes/Desert
 share/xfce/palettes/Dolly
 share/xfce/palettes/Dust
 share/xfce/palettes/Eaz-l
 share/xfce/palettes/Fall
 share/xfce/palettes/GTK+Default
+share/xfce/palettes/GTK+Default2
 share/xfce/palettes/Glass
 share/xfce/palettes/Golden
 share/xfce/palettes/GoldenBoy
+share/xfce/palettes/GoldenBoy2
 share/xfce/palettes/Grayscale
 share/xfce/palettes/GreenIron
+share/xfce/palettes/GreySlate
 share/xfce/palettes/Ground
 share/xfce/palettes/Helice
 share/xfce/palettes/HiContrast
@@ -418,6 +479,11 @@ share/xfce/palettes/Jazza
 share/xfce/palettes/Jazza2
 share/xfce/palettes/Kdetheme
 share/xfce/palettes/LightBulb
+share/xfce/palettes/LightBulb2
+share/xfce/palettes/LightBulb3
+share/xfce/palettes/Linea
+share/xfce/palettes/Linea2
+share/xfce/palettes/Linea3
 share/xfce/palettes/Liquid
 share/xfce/palettes/Liquid2
 share/xfce/palettes/Mauve
@@ -440,6 +506,8 @@ share/xfce/palettes/Power2
 share/xfce/palettes/Prairie
 share/xfce/palettes/Prune
 share/xfce/palettes/PruneDark
+share/xfce/palettes/Quartz
+share/xfce/palettes/Reader
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
 share/xfce/palettes/Sand
@@ -447,11 +515,16 @@ share/xfce/palettes/Silver
 share/xfce/palettes/Silver2
 share/xfce/palettes/Smooth
 share/xfce/palettes/SmoothBW
+share/xfce/palettes/SmoothGreen
+share/xfce/palettes/SoftBlue
 share/xfce/palettes/Spring
 share/xfce/palettes/Standard
+share/xfce/palettes/Standard2
 share/xfce/palettes/Stellar
 share/xfce/palettes/Stellar2
 share/xfce/palettes/Stripe
+share/xfce/palettes/Stripe2
+share/xfce/palettes/Stripe3
 share/xfce/palettes/Sunny
 share/xfce/palettes/Symbiose
 share/xfce/palettes/TBlue
@@ -460,9 +533,14 @@ share/xfce/palettes/Thinice
 share/xfce/palettes/Tiny
 share/xfce/palettes/Tommy
 share/xfce/palettes/Tradition
+share/xfce/palettes/Tradition2
 share/xfce/palettes/Troica
 share/xfce/palettes/Typhoon
+share/xfce/palettes/Ultrafina
+share/xfce/palettes/Vanadium
 share/xfce/palettes/Win
+share/xfce/palettes/Win2
+share/xfce/palettes/Win3
 share/xfce/palettes/Xfce-1
 share/xfce/palettes/Xfce-2
 share/xfce/sounds/alert01.wav
@@ -517,9 +595,13 @@ share/xfce/sounds/zap02.wav
 share/xfce/sounds/zap03.wav
 share/xfce/sounds/zap04.wav
 share/xfce/textures/Aluminium.xpm
+share/xfce/textures/BWGrad.xpm
 share/xfce/textures/BlueX.xpm
 share/xfce/textures/BlueX2.xpm
 share/xfce/textures/Bronze2.xpm
+share/xfce/textures/Chrome.xpm
+share/xfce/textures/DarkMetal.xpm
+share/xfce/textures/DefaultGrad.xpm
 share/xfce/textures/Glass.xpm
 share/xfce/textures/GoldenBoy.xpm
 share/xfce/textures/Kdetheme.xpm
@@ -530,6 +612,7 @@ share/xfce/textures/Power.xpm
 share/xfce/textures/Power2.xpm
 share/xfce/textures/Smooth.xpm
 share/xfce/textures/SmoothBW.xpm
+share/xfce/textures/Ultrafina.xpm
 share/xfce/textures/Xfcemetal.xpm
 share/xfce/textures/bronze.xpm
 share/xfce/textures/cheese.xpm
@@ -542,15 +625,16 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@dirrm etc/xfce
-@dirrm share/xfce/backdrops
-@dirrm share/xfce/fonts
-@dirrm share/xfce/help/html/stylesheet-images
-@dirrm share/xfce/help/html
-@dirrm share/xfce/help/images
-@dirrm share/xfce/help
-@dirrm share/xfce/icons
-@dirrm share/xfce/palettes
-@dirrm share/xfce/sounds
 @dirrm share/xfce/textures
+@dirrm share/xfce/sounds
+@dirrm share/xfce/palettes
+@dirrm share/xfce/icons
+@dirrm share/xfce/help/html/stylesheet-images
+@dirrm share/xfce/help/html/images
+@dirrm share/xfce/help/html
+@dirrm share/xfce/help
+@dirrm share/xfce/fonts
+@dirrm share/xfce/cursors
+@dirrm share/xfce/backdrops
 @dirrm share/xfce
+@dirrm etc/xfce
