@@ -45,6 +45,7 @@
     SUBDIR += gate
     SUBDIR += gedit
     SUBDIR += ghex
+    SUBDIR += glimmer
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
     SUBDIR += gxedit
@@ -55,7 +56,6 @@
     SUBDIR += joe
     SUBDIR += jove
     SUBDIR += koffice
-    SUBDIR += latte
     SUBDIR += le
     SUBDIR += leim20
     SUBDIR += lpe
