@@ -18,6 +18,7 @@ USE_PHP=	yes
 NO_BUILD=	yes
 FETCH_SITE=	http://high5.net/postfixadmin/download.php
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+DISABLE_SIZE=	yes
 
 do-fetch:
 		@${ECHO_MSG} ">> Attempting to fetch from ${FETCH_SITE}."
