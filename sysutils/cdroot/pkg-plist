@@ -1,0 +1,8 @@
+bin/mkcdroot
+share/cdroot/README
+share/cdroot/cdroot_initdisk
+share/cdroot/cdroot_inst
+share/cdroot/cdroot_mount
+share/cdroot/cdroot_site_overrides.sample
+share/cdroot/rc.replacement
+@dirrm share/cdroot
