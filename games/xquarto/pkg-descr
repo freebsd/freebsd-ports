@@ -1,0 +1,18 @@
+   Xquarto is a board game designed for the X windows environment.
+The game is a two-player game, although for the moment, it is only
+possible  to  play against  the computer. The board is composed of
+4x4 squares and 16 pieces. Each  piece  has four properties: black
+or  brown, horizontal  or  vertical, solid  or  hollow,  round  or
+square.  This  makes  up  16  possible  combinations  and there is
+exactly one piece for each possibility.
+
+   Initially the board is empty. Now the two  players try to place 
+out pieces in a way  that  the  opponent  has  to  complete a row, 
+column or diagonal  with a common  property (e.g. all black). This
+makes  the  opponent lose. The players do not choose what piece to
+put but it is rather player 1 who gives  a piece  to player 2, who
+then has to place this  piece  somewhere  and  choose  a piece for
+player 1 to put somewhere etc.
+
+   Any suggestions, bug reports, complaints etc. should be sent to
+mjo@math.kth.se. Feedback is appreciated!
