@@ -1,4 +1,6 @@
 This module returns the sunrise/sunset for a given day.
 
+WWW: http://search.cpan.org/search?dist=Astro-Sunrise
+
 -Anton
 <tobez@FreeBSD.org>
