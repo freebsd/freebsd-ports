@@ -1,0 +1,8 @@
+This package provides complete HTML documentation for the yorick
+interpreted language.  It will be installed in (prefix)/share/yorick-doc;
+point your Web browser at index.html in that directory.  The
+information in this package duplicates what is included in the yorick
+package, but provides cross referencing, indexing, and accessibility
+to a Web browser.
+
+WWW: ftp://ftp-icf.llnl.gov/pub/Yorick/doc/index.html
