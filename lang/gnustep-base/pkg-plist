@@ -6,6 +6,7 @@ System/Library/DTDs/gsdoc-0_6_6.dtd
 System/Library/DTDs/gsdoc-0_6_7.dtd
 System/Library/DTDs/gsdoc-1_0_0.dtd
 System/Library/DTDs/gsdoc-1_0_1.dtd
+%%GNUSTEP_STABLE%%System/Library/DTDs/gsdoc-1_0_1.rnc
 System/Library/DTDs/plist-0_9.dtd
 System/Library/Documentation/man/man1/autogsdoc.1.gz
 System/Library/Documentation/man/man1/cvtenc.1.gz
@@ -87,6 +88,7 @@ System/Library/Headers/Foundation/NSUndoManager.h
 System/Library/Headers/Foundation/NSUserDefaults.h
 System/Library/Headers/Foundation/NSUtilities.h
 System/Library/Headers/Foundation/NSValue.h
+%%GNUSTEP_STABLE%%System/Library/Headers/Foundation/NSXMLParser.h
 System/Library/Headers/Foundation/NSZone.h
 System/Library/Headers/GNUstepBase/unicode/caseconv.h
 System/Library/Headers/GNUstepBase/unicode/cop.h
@@ -136,6 +138,7 @@ System/Library/Headers/GSConfig.h
 System/Library/Libraries/Resources/gnustep-base/English.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/French.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/German.lproj/Localizable.strings
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/Info-gnustep.plist
 System/Library/Libraries/Resources/gnustep-base/Italian.lproj/Localizable.strings
 System/Library/Libraries/Resources/gnustep-base/Languages/Dutch
 System/Library/Libraries/Resources/gnustep-base/Languages/English
@@ -170,6 +173,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/create-abbrevs.m
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/create-regions.m
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/nstimezone.m
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/regions
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/.README.swp
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Africa/Abidjan
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Africa/Accra
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Africa/Addis_Ababa
@@ -227,6 +231,17 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Anchor
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Anguilla
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Antigua
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Araguaina
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Buenos_Aires
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Cordoba
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Tucuman
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/La_Rioja
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/San_Juan
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Jujuy
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Catamarca
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Mendoza
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/ComodRivadavia
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Rio_Gallegos
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina/Ushuaia
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Aruba
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Asuncion
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Atka
@@ -562,6 +577,7 @@ System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/London
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Luxembourg
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Madrid
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Malta
+%%GNUSTEP_STABLE%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Mariehamn
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Minsk
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Monaco
 System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Europe/Moscow
@@ -775,6 +791,7 @@ System/Tools/xmlparse
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/North_Dakota
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Kentucky
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Indiana
+%%GNUSTEP_STABLE%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America/Argentina
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/America
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Africa
 @dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones
