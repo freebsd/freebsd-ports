@@ -1,0 +1,5 @@
+This is the AVL tree class for Ruby which works like a Hash,
+implemented as a wrapper for libavl.
+
+Author:	Filip Pizlo <pizlo@purdue.edu>
+WWW:	http://bocks.dhs.org/~pizman/avl/
