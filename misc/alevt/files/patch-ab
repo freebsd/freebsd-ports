@@ -1,15 +1,19 @@
-*** alevt-date.c.orig	Wed Aug 18 13:33:52 1999
---- alevt-date.c	Wed Aug 18 13:33:31 1999
-*************** chk_time(int t)
-*** 32,39 ****
---- 32,41 ----
+*** exp-txt.c.orig	Tue Oct 12 10:28:27 1999
+--- exp-txt.c	Tue Oct 12 10:31:59 1999
+*************** txt_option(struct export *e, int opt, ch
+*** 87,92 ****
+--- 87,100 ----
+      return 0;
+  }
   
-      t = t/100/100 * 60*60 + t/100%100 * 60 + t%100;
-      t += timezone;
-+ /*
-      if (daylight)
-  	t -= 60*60;
-+ */
++ /* stpcpy is only defined on Linux systems */
++ /* create a local function for BSD Unix systems */
++ char *stpcpy(char *dst, char *src)
++ {
++     while (*dst++ = *src++)
++       ;
++     return dst-1;
++ }
   
-      sys_t = time(0);
-      dt = t - sys_t % (24*60*60);
+  static void
+  put_attr(struct export *e, struct fmt_char *new)

@@ -1,9 +1,65 @@
-*** search.c.orig	Wed Aug 18 13:29:10 1999
---- search.c	Wed Aug 18 13:29:31 1999
-***************
-*** 1,3 ****
---- 1,4 ----
-+ #include <sys/types.h>
-  #include <stdlib.h>
-  #include "vt.h"
-  #include "misc.h"
+*** Makefile.orig	Fri Oct  8 22:49:26 1999
+--- Makefile	Tue Oct 12 10:54:23 1999
+*************** VER=1.5.0
+*** 2,8 ****
+  OPT=-O2 -s
+  DEFS=-DWITH_PNG
+  
+! CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I/usr/X11R6/include -W
+  
+  EXPOBJS=export.o exp-txt.o exp-html.o exp-gfx.o font.o
+  OBJS=main.o ui.o xio.o fdset.o vbi.o cache.o help.o edline.o search.o edit.o misc.o hamm.o lang.o $(EXPOBJS)
+--- 2,8 ----
+  OPT=-O2 -s
+  DEFS=-DWITH_PNG
+  
+! CFLAGS=$(OPT) -DVERSION=\"$(VER)\" $(DEFS) -I/usr/X11R6/include -I/usr/local/include -W
+  
+  EXPOBJS=export.o exp-txt.o exp-html.o exp-gfx.o font.o
+  OBJS=main.o ui.o xio.o fdset.o vbi.o cache.o help.o edline.o search.o edit.o misc.o hamm.o lang.o $(EXPOBJS)
+*************** TOBJS=alevt-date.o vbi.o fdset.o misc.o 
+*** 10,16 ****
+  COBJS=alevt-cap.o vbi.o fdset.o misc.o hamm.o lang.o $(EXPOBJS)
+  
+  ifneq ($(findstring WITH_PNG,$(DEFS)),)
+! EXPLIBS=-lpng -lz -lm
+  endif
+  
+  all: alevt alevt-date alevt-cap alevt.1x alevt-date.1 alevt-cap.1
+--- 10,16 ----
+  COBJS=alevt-cap.o vbi.o fdset.o misc.o hamm.o lang.o $(EXPOBJS)
+  
+  ifneq ($(findstring WITH_PNG,$(DEFS)),)
+! EXPLIBS=-L/usr/local/lib -lpng -lz -lm
+  endif
+  
+  all: alevt alevt-date alevt-cap alevt.1x alevt-date.1 alevt-cap.1
+*************** rpm-install: all
+*** 65,77 ****
+  # anything below this line is just for me!
+  
+  install: all
+! 	cp alevt	/usr/local/bin
+! 	cp alevt-date	/usr/local/bin
+! 	cp alevt-cap	/usr/local/bin
+! 	cp alevt.1x	/usr/local/man/man1
+! 	cp alevt-date.1	/usr/local/man/man1
+! 	cp alevt-cap.1	/usr/local/man/man1
+! 	cp contrib/mini-alevt.xpm /usr/include/X11/pixmaps
+  	sync
+  
+  depend:
+--- 65,77 ----
+  # anything below this line is just for me!
+  
+  install: all
+! 	cp alevt	$(X11BASE)/bin
+! 	cp alevt-date	$(X11BASE)/bin
+! 	cp alevt-cap	$(X11BASE)/bin
+! 	cp alevt.1x	$(X11BASE)/man/man1
+! 	cp alevt-date.1	$(X11BASE)/man/man1
+! 	cp alevt-cap.1	$(X11BASE)/man/man1
+! 	cp contrib/mini-alevt.xpm $(X11BASE)/include/X11/pixmaps
+  	sync
+  
+  depend:
