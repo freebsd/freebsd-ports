@@ -3,13 +3,13 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.4 1996/05/13 09:43:23 asami Exp $
+# $Id: Makefile,v 1.5 1996/06/17 10:00:38 asami Exp $
 #
 
 DISTNAME=	tclX7.5.0
 PKGNAME=	tclX-7.5
 CATEGORIES+=	lang
-MASTER_SITES=	ftp://mirror.neosoft.com/pub/tcl/tclx-distrib/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/tclx-distrib/
 
 TCL_DIR=	${PORTSDIR}/lang/tcl75
 TCL_SRC=	${TCL_DIR}/work/tcl7.5
