@@ -12,6 +12,8 @@ MASTER_SITES=	http://gmail.linuxpower.org/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		gmime.6:${PORTSDIR}/mail/gmime
 
