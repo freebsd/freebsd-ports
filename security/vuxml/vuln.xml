@@ -268,6 +268,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>neon</name>
 	<range><lt>0.24.5_1</lt></range>
       </package>
+      <package>
+	<name>sitecopy</name>
+	<range><le>0.13.4_1</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -288,10 +292,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0398</cvename>
       <url>http://security.e-matters.de/advisories/062004.html</url>
+      <url>http://secunia.com/advisories/11785</url>
     </references>
     <dates>
       <discovery>2004-05-19</discovery>
       <entry>2004-05-19</entry>
+      <modified>2004-06-25</modified>
     </dates>
   </vuln>
 
@@ -1230,7 +1236,11 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>tla</name>
-	<range><lt>tla-1.2_1</lt></range>
+	<range><lt>1.2_1</lt></range>
+      </package>
+      <package>
+	<name>sitecopy</name>
+	<range><le>0.13.4_1</le></range>
       </package>
     </affects>
     <description>
@@ -1249,11 +1259,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0179</cvename>
       <url>http://www.webdav.org/neon/</url>
+      <url>http://secunia.com/advisories/11785</url>
     </references>
     <dates>
       <discovery>2004-04-14</discovery>
       <entry>2004-04-15</entry>
-      <modified>2004-04-30</modified>
+      <modified>2004-06-25</modified>
     </dates>
   </vuln>
 
