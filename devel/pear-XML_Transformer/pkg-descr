@@ -1,0 +1,5 @@
+The XML Transformer allows the binding of PHP functionality to XML tags
+to transform an XML document without the need for and the limitations
+of XSLT.
+
+WWW: http://pear.php.net/package/XML_Transformer/
