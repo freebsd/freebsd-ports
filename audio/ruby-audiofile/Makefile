@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	audiofile
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.4
 CATEGORIES=	audio ruby
-MASTER_SITES=	http://ruby-${PORTNAME}.sourceforge.net/download/
-#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CDDB_DISTNAME}${EXTRACT_SUFX}
@@ -28,7 +28,7 @@ CDDB_WRKSRC=	${WRKDIR}/example
 
 INSTALL_TARGET=	site-install
 
-DOCS=		audiofile.html audiofile.rd
+DOCS=		audiofile.rd
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|/home/jaredj/ruby-lib/cddb\b|, "cddb"' \
