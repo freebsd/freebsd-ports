@@ -111,6 +111,8 @@ post-install:
 			${ECHO_CMD} "DICT $$LANGUAGE AT $${ABRV}" >> ${DICT_LIST} ; \
 			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type f | \
 			    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
+			cd ${PREFIX} && ${FIND} -s ${DICT_DIR} -type l | \
+			    ${GREP} $${LANGUAGE}_AT >> ${TMPPLIST} ; \
 			${ECHO} "@unexec ${CP} ${DICT_LIST} \
 			    ${DICT_LIST}.$${LANGUAGE}_AT" >> ${TMPPLIST} ; \
 			${ECHO} "@unexec \
