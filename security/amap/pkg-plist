@@ -5,10 +5,8 @@ share/amap/appdefs.resp
 share/amap/appdefs.rpc
 share/amap/appdefs.trig
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/IGNORE
 %%PORTDOCS%%%%DOCSDIR%%/VOTE
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/amap

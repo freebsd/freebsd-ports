@@ -1,11 +1,32 @@
---- configure.orig	Tue Jul 29 14:10:16 2003
-+++ configure	Tue Jul 29 14:15:56 2003
-@@ -135,7 +135,7 @@
+--- configure.orig	Sun Sep 14 11:10:24 2003
++++ configure	Sun Sep 14 11:16:41 2003
+@@ -33,7 +33,9 @@
+ echo
+ 
+ echo "Checking for openssl ..."
+-for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib \
++# FreeBSD: Try port version of openssl first. LIBDIRS is irrelevant for us
++# Since we don't have /etc/ld.so.conf
++for i in ${PREFIX}/lib $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib \
+ /*ssl /usr/*ssl /opt/*ssl /usr/local/*ssl /opt/local/*ssl \
+ /*ssl/lib /usr/*ssl/lib /opt/*ssl/lib /usr/local/*ssl/lib /opt/local/*ssl/lib
+ do
+@@ -61,7 +63,8 @@
+     fi
+ done
+ 
+-for i in /usr/local/include /*ssl/include /usr/include \
++# FreeBSD: Change to prefer installed port over base-system openssl.
++for i in ${PREFIX}/include /usr/local/include /*ssl/include /usr/include \
+ /opt/*ssl/include /usr/*ssl/include /usr/local/*ssl/include
+ do
+     if [ "X" = "X$SSL_IPATH" ]; then
+@@ -152,7 +155,7 @@
      XLIBS="$XLIBS -lresolv"
  fi
  
 -for i in /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
-+for i in ${MANPPREFIX}/man /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
++for i in ${PREFIX}/man /usr/man /usr/share/man /usr/local/man /usr/local/share/man ; do
    if [ -d $i ]; then
      MANDIR=$i
    fi
