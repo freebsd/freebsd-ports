@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
 IS_INTERACTIVE=	yes
 
-EXEC_DEPENDS=   munpack:${PORTSDIR}/mail/mpack
+RUN_DEPENDS=  munpack:${PORTSDIR}/mail/mpack
 
 pre-configure:
 	@echo "===> Running pre-configure target for ${DISTNAME}"
