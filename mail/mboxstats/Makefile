@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mboxstats
-PORTVERSION=	1.3
+PORTVERSION=	2.2
 CATEGORIES=	mail
 MASTER_SITES=	http://vanheusden.com/mboxstats/
 EXTRACT_SUFX=	.tgz
@@ -18,11 +18,18 @@ COMMENT=	Creates top-10 lists of the messages in a mailbox
 PLIST_FILES=	bin/mboxstats
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|ssize_t|size_t|g' ${WRKSRC}/io.h
 	@${REINPLACE_CMD} -e 's|PATH_MAX|FILENAME_MAX|g' ${WRKSRC}/main.cpp
+	@${REINPLACE_CMD} -e 's|^CC=|CC?=|g' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|^CPPFLAGS|CXXFLAGS|g' ${WRKSRC}/${MAKEFILE}
+.if ${ARCH} == "i386" || ${ARCH} == "alpha"
+	@${REINPLACE_CMD} -Ee 's,(stat|open)64,\1,g' ${WRKSRC}/main.cpp
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mboxstats ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
