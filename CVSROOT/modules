@@ -84,6 +84,7 @@ Cgraph		ports/graphics/Cgraph
 Coin		ports/graphics/Coin
 DarwinStreamingServer	ports/net/DarwinStreamingServer
 EZWGL		ports/graphics/EZWGL
+Ebnf2ps		ports/textproc/Ebnf2ps
 ElectricFence	ports/devel/ElectricFence
 FSViewer	ports/x11-fm/FSViewer
 GIFgraph	ports/graphics/GIFgraph
