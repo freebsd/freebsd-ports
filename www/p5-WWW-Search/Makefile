@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/w
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/User.pm:${PORTSDIR}/sysutils/p5-User \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
@@ -40,4 +39,15 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Simple.3 \
 		WWW::Search::Test.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
+PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
+PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
+
+.if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif # ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+
+.include <bsd.port.post.mk>
