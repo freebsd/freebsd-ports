@@ -61,10 +61,8 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .endif
 
-.if !defined(_NO_KDE_FINAL)
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
+.if !defined(_NO_KDE_FINAL) && defined(WANT_KDE_FINAL)
 CONFIGURE_ARGS+=--enable-final
-.endif
 .endif
 
 .if !defined(_NO_KDE_NDEBUG)
