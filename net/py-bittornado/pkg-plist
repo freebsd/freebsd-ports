@@ -144,6 +144,9 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/parsedir.py
 %%PYTHON_SITELIBDIR%%/BitTornado/parsedir.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/parsedir.pyo
+%%PYTHON_SITELIBDIR%%/BitTornado/piecebuffer.py
+%%PYTHON_SITELIBDIR%%/BitTornado/piecebuffer.pyc
+%%PYTHON_SITELIBDIR%%/BitTornado/piecebuffer.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/selectpoll.py
 %%PYTHON_SITELIBDIR%%/BitTornado/selectpoll.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/selectpoll.pyo
