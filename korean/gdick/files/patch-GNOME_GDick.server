@@ -1,0 +1,14 @@
+--- GNOME_GDick.server.orig	Mon May  3 11:43:50 2004
++++ GNOME_GDick.server	Mon May  3 11:45:08 2004
+@@ -18,8 +18,11 @@
+                 <item value="IDL:Bonobo/Unknown:1.0"/>
+         </oaf_attribute>
+         <oaf_attribute name="name" type="string" value="GDick"/>
++        <oaf_attribute name="name-ko" type="string" value="한영/영한사전"/>
+         <oaf_attribute name="description" type="string" value="Dictionary"/>
++        <oaf_attribute name="description-ko" type="string" value="야후코리아 한영/영한사전"/>
+         <oaf_attribute name="panel:category" type="string" value="Utility"/>
++        <oaf_attribute name="panel:category-ko" type="string" value="유틸리티"/>
+         <oaf_attribute name="panel:icon" type="string" value="bug-buddy.png"/>
+ </oaf_server>
+ </oaf_info>
