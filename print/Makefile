@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.72 1998/11/18 15:54:20 smace Exp $
+# $Id: Makefile,v 1.73 1998/11/20 04:14:17 asami Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -34,6 +34,7 @@
     SUBDIR += gv
     SUBDIR += html2latex
     SUBDIR += html2ps
+    SUBDIR += jadetex
     SUBDIR += klyx
     SUBDIR += latex
     SUBDIR += lout
