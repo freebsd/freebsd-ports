@@ -6,7 +6,10 @@
 # This is a default configuration file which will operate correctly in
 # uncomplicated installations. Please see the manual for a complete list
 # of all the runtime configuration options that can be included in a
-# configuration file.
+# configuration file. There are many more than are mentioned here. The
+# manual is in the file doc/spec.txt in the Exim distribution as a plain
+# ASCII file. Other formats (PostScript, Texinfo, HTML, PDF) are available
+# from the Exim ftp sites. The manual is also online via the Exim web sites.
 
 
 # This file is divided into several parts, all but the last of which are
@@ -20,14 +23,18 @@
 #                    MAIN CONFIGURATION SETTINGS                     #
 ######################################################################
 
-# Specify your host's canonical name here. If this option is not set, the
+# Specify your host's canonical name here. This should normally be the fully
+# qualified "official" name of your host. If this option is not set, the
 # uname() function is called to obtain the name.
 
 # primary_hostname =
 
 
 # Specify the domain you want to be added to all unqualified addresses
-# here. Unqualified addresses are accepted only from local callers by
+# here. An unqualified address is one that does not contain an "@" character
+# followed by a domain. For example, "caesar@rome.ex" is a fully qualified
+# address, but the string "caesar" (i.e. just a login name) is an unqualified
+# email address. Unqualified addresses are accepted only from local callers by
 # default. See the receiver_unqualified_{hosts,nets} options if you want
 # to permit unqualified addresses from remote sources. If this option is
 # not set, the primary_hostname value is used for qualification.
@@ -71,7 +78,28 @@
 
 exim_user = XX_BINOWN_XX
 exim_group = mail
-never_users = root
+never_users = root : XX_BINOWN_XX
+
+
+# The use of your host as a mail relay by any host, including the local host
+# calling its own SMTP port, is locked out by default. If you want to permit
+# relaying from the local host, you should set
+#
+# host_accept_relay = localhost
+#
+# If you want to permit relaying through your host from certain hosts or IP
+# networks, you need to set the option appropriately, for example
+#
+# host_accept_relay = my.friends.host : 131.111.0.0/16
+#
+# If you are an MX backup or gateway of some kind for some domains, you must
+# set relay_domains to match those domains. This will allow any host to
+# relay through your host to those domains.
+#
+# See the section of the manual entitled "Control of relaying" for more
+# information.
+
+host_accept_relay = "127.0.0.1/32"
 
 
 # The setting below causes Exim to do a reverse DNS lookup on all incoming
@@ -82,24 +110,47 @@ never_users = root
 host_lookup = 0.0.0.0/0
 
 
+# By default, Exim expects all envelope addresses to be fully qualified, that
+# is, they must contain both a local part and a domain. If you want to accept
+# unqualified addresses (just a local part) from certain hosts, you can specify
+# these hosts by setting one or both of
+#
+# receiver_unqualified_hosts =
+# sender_unqualified_hosts =
+#
+# to control sender and receiver addresses, respectively. When this is done,
+# unqualified addresses are qualified using the settings of qualify_domain
+# and/or qualify_recipient (see above).
+
+
+# By default, Exim does not make any checks, other than syntactic ones, on
+# incoming addresses during the SMTP dialogue. This reduces delays in SMTP
+# transactions, but it does mean that you might accept messages with unknown
+# recipients, and/or bad senders.
+
+# Uncomment this line if you want incoming recipient addresses to be verified
+# during the SMTP dialogue. Unknown recipients are then rejected at this stage,
+# and the generation of a failure message is the job of the sending host.
+
+# receiver_verify
+
+# Uncomment this line if you want incoming sender addresses (return-paths) to
+# be verified during the SMTP dialogue. Verification can normally only check
+# that the domain exists.
+
+# sender_verify
+
+
 # Exim contains support for the Realtime Blocking List (RBL) that is being
 # maintained as part of the DNS. See http://maps.vix.com/rbl/ for background.
-# Uncommenting the following line will make Exim reject mail from any
-# host whose IP address is blacklisted in the RBL at maps.vix.com.
+# Uncommenting the first line below will make Exim reject mail from any
+# host whose IP address is blacklisted in the RBL at maps.vix.com. Some
+# others have followed the RBL lead and have produced other lists: DUL is
+# a list of dial-up addresses, and ORBS is a list of open relay systems. The
+# second line below checks all three lists.
 
 # rbl_domains = rbl.maps.vix.com
-
-
-# The setting below locks out the use of your host as a mail relay by any
-# other host. If you want to permit relaying through your host from certain
-# hosts or IP networks, you need to vary this option and/or make use of the
-# other three options in the set sender_{host,net}_{accept,reject}_relay.
-# See the section of the manual entitled "Control of relaying" for more info.
-# Removing this setting altogether is not recommended, because there are many
-# unscrupulous people out there who will make use of open relays to try to
-# disguise the source of unsolicited bulk mail.
-
-host_accept_relay = "127.0.0.1/32"
+# rbl_domains = rbl.maps.vix.com:dul.maps.vix.com:relays.orbs.org
 
 
 # If you want Exim to support the "percent hack" for all your local domains,
@@ -107,7 +158,7 @@ host_accept_relay = "127.0.0.1/32"
 # to x%y@z (where z is one of your local domains) is locally rerouted to
 # x@y and sent on. Otherwise x%y is treated as an ordinary local part.
 
-# percent_hack_domains=*
+# percent_hack_domains = *
 
 pid_file_path = /var/run/exim%s.pid
 
@@ -150,22 +201,20 @@ local_delivery:
   mode = 0660
 
 
-# This transport is used for handling pipe addresses generated by alias
-# or .forward files. It has a conventional name, since it is not actually
-# mentioned elsewhere in this configuration file. (A different name *can*
-# be specified via the "address_pipe_transport" option if you really want
-# to.) If the pipe generates any standard output, it is returned to the sender
-# of the message as a delivery error. Set return_fail_output instead if you
-# want this to happen only when the pipe fails to complete normally.
+# This transport is used for handling pipe deliveries generated by alias
+# or .forward files. If the pipe generates any standard output, it is returned
+# to the sender of the message as a delivery error. Set return_fail_output
+# instead of return_output if you want this to happen only when the pipe fails
+# to complete normally. You can set different transports for aliases and
+# forwards if you want to - see the references to address_pipe below.
 
 address_pipe:
   driver = pipe
   return_output
 
 
-# This transport is used for handling file addresses generated by alias
-# or .forward files. It has a conventional name, since it is not actually
-# mentioned elsewhere in this configuration file.
+# This transport is used for handling deliveries directly to files that are
+# generated by aliassing or forwarding.
 
 address_file:
   driver = appendfile
@@ -174,35 +223,8 @@ address_file:
   return_path_add
 
 
-# This transport is used for handling file addresses generated by alias
-# or .forward files if the path ends in "/", which causes it to be treated
-# as a directory name rather than a file name. Each message is then delivered
-# to a unique file in the directory. If instead you want all such deliveries to
-# be in the "maildir" format that is used by some other mail software,
-# uncomment the final option below. If this is done, the directory specified
-# in the .forward or alias file is the base maildir directory.
-#
-# Should you want to be able to specify either maildir or non-maildir
-# directory-style deliveries, then you must set up yet another transport,
-# called address_directory2. This is used if the path ends in "//" so should
-# be the one used for maildir, as the double slash suggests another level
-# of directory. In the absence of address_directory2, paths ending in //
-# are passed to address_directory.
-
-address_directory:
-  driver = appendfile
-  delivery_date_add
-  envelope_to_add
-  return_path_add
-  no_from_hack
-  prefix = ""
-  suffix = ""
-# maildir_format
-
-
 # This transport is used for handling autoreplies generated by the filtering
-# option of the forwardfile director. It has a conventional name, since it
-# is not actually mentioned elsewhere in this configuration file.
+# option of the forwardfile director.
 
 address_reply:
   driver = autoreply
@@ -229,35 +251,49 @@ end
 # If any of your aliases expand to pipes or files, you will need to set
 # up a user and a group for these deliveries to run under. You can do
 # this by uncommenting the "user" option below (changing the user name
-# as appropriate) and adding a "group" option if necessary.
+# as appropriate) and adding a "group" option if necessary. Alternatively, you
+# can specify "user" on the transports that are used. Note that those
+# listed below are the same as are used for .forward files; you might want
+# to set up different ones for pipe and file deliveries from aliases.
 
 system_aliases:
   driver = aliasfile
-  file_transport = address_file
-  pipe_transport = address_pipe
   file = /etc/aliases
   search_type = lsearch
-# user = XX_BINOWN_XX
+  file_transport = address_file
+  pipe_transport = address_pipe
+  user = XX_BINOWN_XX
 
 
 # This director handles forwarding using traditional .forward files.
 # If you want it also to allow mail filtering when a forward file
 # starts with the string "# Exim filter", uncomment the "filter" option.
+
+# The no_verify setting means that this director will be skipped when
+# verifying addresses if sender_verify or receiver_verify is set (though
+# they are not set by default). Similarly, no_expn means that this director
+# will be skipped if smtp_expn_hosts is set to allow any hosts to use the
+# EXPN command.
+
 # The check_ancestor option means that if the forward file generates an
 # address that is an ancestor of the current one, the current one gets
 # passed on instead. This covers the case where A is aliased to B and B
 # has a .forward file pointing to A.
 
+# The three transports specified at the end are those that are used when
+# forwarding generates a direct delivery to a file, or to a pipe, or sets
+# up an auto-reply, respectively.
+
 userforward:
   driver = forwardfile
-  file_transport = address_file
-  pipe_transport = address_pipe
-  reply_transport = address_reply
   file = .forward
   no_verify
   no_expn
   check_ancestor
 # filter
+  file_transport = address_file
+  pipe_transport = address_pipe
+  reply_transport = address_reply
 
 
 # This director matches local user mailboxes.

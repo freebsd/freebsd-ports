@@ -1,6 +1,6 @@
---- scripts/exim_install.orig	Tue Dec  8 16:05:07 1998
-+++ scripts/exim_install	Tue Dec  8 16:09:49 1998
-@@ -186,25 +186,39 @@
+--- scripts/exim_install.orig	Mon Aug  2 17:43:03 1999
++++ scripts/exim_install	Tue Aug  3 14:31:20 1999
+@@ -195,25 +195,40 @@
    fi
  done
  
@@ -9,11 +9,12 @@
 +# ${PREFIX}/etc/exim/configure is in place.
  
 +echo $com ""
-+
+ 
+-# If there is no configuration file, install the default.
 +if [ -f ${PREFIX}/etc/rc.d/exim.sh ]; then
 +  echo $com "${PREFIX}/etc/rc.d/exim.sh exists, not overwritten"
 +else
-+  echo $com "Installing exim.sh startup script in $PREFIX/etc/rc.d"
++  echo $com "Installing exim.sh startup script in ${PREFIX}/etc/rc.d"
 +  ${real} mkdir -p ${PREFIX}/etc/rc.d
 +  echo ${CP} -p exim.sh ${PREFIX}/etc/rc.d/
 +  ${real} ${CP} -p exim.sh ${PREFIX}/etc/rc.d/
@@ -23,8 +24,9 @@
 +    exit 1
 +  fi
 +fi
- 
- # If there is no configuration file, install the default.
++
++# Install only a sample configuration, which encourages the admin to look
++# at it, since Exim won't run without a configure file.
  
  echo $com ""
  
@@ -39,7 +41,7 @@
 +  ${real} ${CP} ../src/configure.default ${CONFIGURE_FILE}.sample
    if [ $? -ne 0 ]; then
      echo $com ""
-     echo $com "**** Exim installation ${ver}failed ****"
+     echo $com "*** Exim installation ${ver}failed ***"
      exit 1
    fi
 -else
@@ -48,7 +50,7 @@
  
  # Install info files if the directory is defined and the Texinfo
  # source documentation is present.
-@@ -226,19 +240,21 @@
+@@ -235,19 +250,21 @@
    echo $com Info installation directory is ${INFO_DIRECTORY}
    echo $com ""
  
