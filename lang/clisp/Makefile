@@ -26,7 +26,7 @@ USE_GETTEXT=	yes
 # invokes a configure script, which encounters a different CC variable than
 # the one the top-level configure cached.  We'll explicitly set CC to avoid
 # this.
-MAKE_ENV+= CC="${CC}"
+MAKE_ENV+= CC="${CC}" LANG=C
 CONFIGURE_ENV+= CC="${CC}"
 
 # The build uses INSTALL_* to copy files around, but since the Ports
