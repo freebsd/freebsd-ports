@@ -1,3 +1,4 @@
 bin/imagesort
 %%PORTDOCS%%share/doc/imagesort/README
 %%PORTDOCS%%share/doc/imagesort/imagesortrc.sample
+%%PORTDOCS%%@dirrm share/doc/imagesort
