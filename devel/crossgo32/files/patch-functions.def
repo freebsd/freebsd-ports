@@ -1,6 +1,6 @@
---- libiberty/functions.def.old	Thu Jul  4 19:16:36 1996
-+++ libiberty/functions.def	Wed May 19 18:21:14 2004
-@@ -34,15 +34,12 @@
+--- libiberty/functions.def.orig	Thu Jul  4 19:16:36 1996
++++ libiberty/functions.def	Sat Aug 14 13:32:43 2004
+@@ -34,15 +34,11 @@
  DEF(strchr, char*, (s, c), CONST char *s AND int c)
  DEF(strdup, char*, (s1), char * s1)
  DEF(strrchr, char*, (s, c), CONST char *s AND int c)
@@ -10,7 +10,7 @@
  DEF(strtoul, unsigned long, (), NOTHING)
  DEF(tmpnam, char *, (s), char * s)
  DEF(vfork, int, (), NOTHING)
- DEF(vfprintf, int, (), NOTHING)
+-DEF(vfprintf, int, (), NOTHING)
 -DEF(vprintf, int, (), NOTHING)
 -DEF(vsprintf, int, (), NOTHING)
  DEF(sigsetmask, int, (), NOTHING)
