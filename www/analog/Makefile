@@ -3,7 +3,7 @@
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.4 1996/10/22 00:48:59 jfitz Exp $
+# $Id: Makefile,v 1.5 1996/11/18 11:40:28 asami Exp $
 #
 
 DISTNAME=	analog.1.92.1
@@ -22,6 +22,7 @@ MAINTAINER=	jfitz@freebsd.org
 WRKSRC=		${WRKDIR}/analog
 
 do-install:
+	@mkdir -p ${PREFIX}/bin
 	@mkdir -p ${PREFIX}/share/analog
 	@(cd ${WRKSRC}; cp -r Readme.html domains.tab primes.tab images ${PREFIX}/share/analog; cp analog ${PREFIX}/bin)
 	@(cd ${PREFIX}/share/analog; chmod +r *)
