@@ -1,0 +1,14 @@
+Set of modules:
+
+* Class::Fields - inspect the fields of a class
+* Class::Fields::Fuxor - low level manipuation of object data members
+* base - establish IS-A relationship with base class at compile time
+* fields - compile-time class fields
+* private - add private data members to Perl classes
+* protected - "private" data fields which are inherited by child classes
+* public - add public data members to Perl classes
+
+WWW: http://search.cpan.org/search?dist=Class-Fields
+
+-- Sergey Skvortsov
+skv@protey.ru
