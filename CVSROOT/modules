@@ -7024,6 +7024,7 @@ p5-Math-TrulyRandom	ports/math/p5-Math-TrulyRandom
 p5-MatrixReal	ports/math/p5-MatrixReal
 p5-Maypole	ports/www/p5-Maypole
 p5-Maypole-Authentication-UserSessionCookie	ports/www/p5-Maypole-Authentication-UserSessionCookie
+p5-Maypole-Component	ports/www/p5-Maypole-Component
 p5-Memoize	ports/devel/p5-Memoize
 p5-Memoize-ExpireLRU	ports/devel/p5-Memoize-ExpireLRU
 p5-Metadata	ports/databases/p5-Metadata
