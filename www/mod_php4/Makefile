@@ -77,7 +77,7 @@ post-install:
 	@${ECHO} "DirectoryIndex index.php index.html"
 	@${ECHO} "[...]"
 	@${ECHO} "AddType application/x-httpd-php .php"
-	@${ECHO} "AddType application/x-httpd-php-source .php3"
+	@${ECHO} "AddType application/x-httpd-php-source .phps"
 	@${ECHO} "[...]"
 	@${ECHO} "*****************************************************************************"
 
