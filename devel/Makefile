@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.66 1997/06/27 02:00:30 jfitz Exp $
+# $Id: Makefile,v 1.67 1997/06/30 12:14:02 tg Exp $
 #
 
     SUBDIR += SWIG
@@ -64,6 +64,7 @@
     SUBDIR += p5-Term-ReadKey
     SUBDIR += p5-Time
     SUBDIR += p5-TraceFuncs
+    SUBDIR += pccts
     SUBDIR += portlint
     SUBDIR += prcs
     SUBDIR += sawt
