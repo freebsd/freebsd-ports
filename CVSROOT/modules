@@ -9339,6 +9339,7 @@ teapop		ports/mail/teapop
 teapop-devel	ports/mail/teapop-devel
 teapot		ports/deskutils/teapot
 ted		ports/editors/ted
+teddy		ports/graphics/teddy
 teg		ports/games/teg
 tei-guidelines-p3	ports/textproc/tei-guidelines-p3
 tei-guidelines-p4	ports/textproc/tei-guidelines-p4
