@@ -3,11 +3,11 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.34 1999/03/19 04:40:00 nectar Exp $
+# $Id: Makefile,v 1.35 1999/05/03 22:29:15 se Exp $
 #
 
 DISTNAME=	kdebase-1.1.1
-CATEGORIES=	misc kde
+CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
