@@ -1,15 +1,19 @@
---- configure.orig	Thu Dec 11 14:28:41 2003
-+++ configure	Thu Dec 11 14:28:48 2003
-@@ -48,6 +48,8 @@
+--- configure.orig	Wed Nov  5 03:04:26 2003
++++ configure	Sun Jan  4 16:20:01 2004
+@@ -48,6 +48,12 @@
      QSLANG="en_GB"
  fi
  
 +QSLANG=`echo $QSLANG|sed 's/\..*//'`
++if [ "$QSLANG" = "ja_JP" ]; then
++    #reset all Japanese to jp_JP.EUC
++    QSLANG="jp_JP.EUC"
++fi
 +
  if [ ! -d "./locale/$QSLANG" ]; then
      echo "
  
-@@ -83,7 +83,8 @@ DEBUG_LEVEL="1"
+@@ -81,7 +87,8 @@
  FORCE_UNZIP="0"
  DESCRIPTIVE_HEADERS="0"
  NOTIFY_ADDRESSES="sender,admin"
@@ -19,7 +23,7 @@
  MANUAL_INSTALL="0"
  INSTALLIT="0"
  DONOTCONFIRM="0"
-@@ -100,8 +101,10 @@ do
+@@ -98,8 +105,10 @@
          --spooldir) if [ "$2" != "" ] ; then  shift ; fi ; AS_QQ="$1" ;;
  	--qmaildir) if [ "$2" != "" ]; then shift ; fi ; QMAILDIR="$1" ;;
  	--bindir) if [ "$2" != "" ] ; then  shift ; fi ; BINDIR="$1" ;;
@@ -32,7 +36,7 @@
  	--notify) if [ "$2" != "" ]; then shift ; fi ; NOTIFY_ADDRESSES="$1" ;;
  	--batch) DONOTCONFIRM="1" ; if [ "$2" != "" -a "`echo $2|grep '\-'`" = "" ] ; then  shift ; fi ;;
  	--silent-viruses) if [ "$2" != "" ]; then shift ; fi ; FIND_SILENT_VIRUSES="$1" ;;
-@@ -130,9 +133,17 @@ valid options:
+@@ -128,9 +137,17 @@
    --spooldir <spooldir> defaults to $AS_QQ/
    --bindir <installdir> where to install qmail-scanner-queue.pl
                          Defaults to /var/qmail/bin/
@@ -53,7 +57,7 @@
    --scanners <list of installed content scanners>
  				    Defaults to "auto" - will use
  				    whatever scanners are found on system.
-@@ -911,12 +922,16 @@ fi
+@@ -909,12 +926,16 @@
  if [ "$UNAME" ] ; then FQDN="$UNAME" ; fi
  if [ "$HOST" ] ; then FQDN="$HOST" ; fi
  
@@ -74,7 +78,7 @@
  if [ "$MANUAL_INSTALL" = "1" ]; then
      CMDLINE="$CMDLINE --no-QQ-check $MANUAL_INSTALL"
  fi
-@@ -1286,7 +1301,7 @@ if [ "$SPAMC_BINARY" != "" ]; then
+@@ -1284,7 +1305,7 @@
      fi
  fi
  
@@ -83,7 +87,7 @@
  
  SCANNER_ARRAY=`echo $SCANNER_ARRAY|sed 's/^,//g'`
  
-@@ -1360,7 +1375,13 @@ if [ "$ARCHIVEIT" != "0" ]; then
+@@ -1358,7 +1379,13 @@
      fi
      echo "archiving $ASTRING into $AS_QQ/$ARCHIVEDIR/"
  fi
@@ -98,7 +102,7 @@
  echo "local-domains=$LOCAL_DOMAINS_ARRAY"
  echo "silent-viruses=$FIND_SILENT_VIRUSES_ARRAY"
  echo "scanners=$SCANNER_ARRAY"
-@@ -1506,10 +1527,12 @@ s?SPAMASSASSIN_BINARY?$SPAMASSASSIN_BINA
+@@ -1504,10 +1531,12 @@
  s?SPAMC_BINARY?$SPAMC_BINARY?g;
  s?SPAMC_OPTIONS?$SPAMC_OPTIONS?g;
  s?SPAMC_SUBJECT?$SPAMC_SUBJECT?g;
