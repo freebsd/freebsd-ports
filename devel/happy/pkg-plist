@@ -1,15 +1,15 @@
 bin/happy
-bin/happy-1.11
-lib/happy-1.11/happy.bin
-lib/happy-1.11/happy/HappyTemplate
-lib/happy-1.11/happy/HappyTemplate-arrays
-lib/happy-1.11/happy/HappyTemplate-arrays-coerce
-lib/happy-1.11/happy/HappyTemplate-arrays-coerce-debug
-lib/happy-1.11/happy/HappyTemplate-arrays-debug
-lib/happy-1.11/happy/HappyTemplate-arrays-ghc
-lib/happy-1.11/happy/HappyTemplate-arrays-ghc-debug
-lib/happy-1.11/happy/HappyTemplate-coerce
-lib/happy-1.11/happy/HappyTemplate-ghc
+bin/happy-%%HAPPY_VERSION%%
+lib/happy-%%HAPPY_VERSION%%/happy.bin
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-coerce
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-coerce-debug
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-debug
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-ghc
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-arrays-ghc-debug
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-coerce
+lib/happy-%%HAPPY_VERSION%%/happy/HappyTemplate-ghc
 share/doc/happy/docbook.css
 share/doc/happy/happy-introduction.html
 share/doc/happy/happy.html
@@ -34,6 +34,7 @@ share/doc/happy/sec-sequences.html
 share/doc/happy/sec-tips.html
 share/doc/happy/sec-type-signatures.html
 share/doc/happy/sec-using.html
+share/doc/happy/sec-happy-ghci.html
 share/doc/happy/stylesheet-images/caution.gif
 share/doc/happy/stylesheet-images/home.gif
 share/doc/happy/stylesheet-images/important.gif
@@ -46,7 +47,7 @@ share/doc/happy/stylesheet-images/toc-minus.gif
 share/doc/happy/stylesheet-images/toc-plus.gif
 share/doc/happy/stylesheet-images/up.gif
 share/doc/happy/stylesheet-images/warning.gif
-@dirrm lib/happy-1.11/happy
-@dirrm lib/happy-1.11
+@dirrm lib/happy-%%HAPPY_VERSION%%/happy
+@dirrm lib/happy-%%HAPPY_VERSION%%
 @dirrm share/doc/happy/stylesheet-images
 @dirrm share/doc/happy
