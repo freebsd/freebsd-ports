@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e69ba632-326f-11d9-b5b7-000854d03344">
+    <topic>ez-ipupdate -- format string vulnerability</topic>
+    <affects>
+      <package>
+         <name>ez-ipupdate</name>
+         <range><lt>3.0.11b8_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Data supplied by a remote server is used as the format string
+          instead of as parameters in a syslog() call.  This may lead
+          to crashes or potential running of arbitrary code.  It is
+          only a problem when running in daemon mode (very common) and
+          when using some service types.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0980</cvename>
+      <mlist>http://lists.netsys.com/pipermail/full-disclosure/2004-November/028590.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-11</discovery>
+      <entry>2004-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eeb1c128-33e7-11d9-a9e7-0001020eed82">
     <topic>ImageMagick -- EXIF parser buffer overflow</topic>
     <affects>
