@@ -3,10 +3,16 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.2 1998/08/07 23:56:47 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/21 22:15:58 steve Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
+
+# Note: the original source comes from Sun, via this web page:
+#    http://skip.incog.com/src-form.html
+# The site below is outside of the U.S.
+
+MASTER_SITES=		ftp://ftp.replay.com/pub/replay/crypto/APPS/skip/
 
 DISTFILES=		skipsrc-1.0.tar.Z
 EXTRACT_SUFX=		tar.Z
@@ -37,21 +43,6 @@ MAN1=			certreq.1 skiphost.1 skipstat.1 skiptool.1 skipd.1 \
 			skipd_restart.1 skipif.1 skip_conf.1 skiplog.1 \
 			print_cert.1
 MAN4=			skipd.conf.4 raw_keys.4
-
-# The user must 'fetch' the sources manually
-pre-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	  echo ""; \
-	  echo "***"; \
-	  echo "***    NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE NOTE"; \
-	  echo "***"; \
-	  echo "*** You must get the source yourself from this web page:"; \
-	  echo "***     http://skip.incog.com/src-form.html"; \
-	  echo "*** and put it into ${DISTDIR} with the name ${DISTFILES}."; \
-	  echo "***"; \
-	  echo ""; \
-	  false; \
-	fi
 
 # SKIP has a lot of hard coded paths in it. Our patches replace
 # them with @@PREFIX@@, which we then replace with ${PREFIX}.
