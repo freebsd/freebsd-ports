@@ -121,6 +121,7 @@
     SUBDIR += hlserver-admin
     SUBDIR += hlserver-cs
     SUBDIR += hlserver-dod
+    SUBDIR += hlserver-existence
     SUBDIR += hlserver-fa
     SUBDIR += hlserver-flf
     SUBDIR += hlserver-glbwar
