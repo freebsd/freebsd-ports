@@ -7,12 +7,13 @@
 
 PORTNAME=	Image-Imlib2
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the Imlib2 image library
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2
