@@ -8,7 +8,7 @@
 
 PORTNAME=	sdl_gui
 PORTVERSION=	0.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.newimage.com/~rhk/SDL_gui/
 DISTNAME=	SDL_gui-${PORTVERSION}
@@ -16,15 +16,14 @@ DISTNAME=	SDL_gui-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12 \
-		SDL_image:${PORTSDIR}/graphics/sdl_image \
-		SDL_ttf:${PORTSDIR}/graphics/sdl_ttf
+LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
+		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+USE_SDL=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 post-configure:
 	${REINPLACE_CMD} -e "s/^CC=\"cc\"/CC=\"${CXX}\"/" ${WRKSRC}/libtool
