@@ -63,6 +63,7 @@
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gno3dtet
+    SUBDIR += gnocatan
     SUBDIR += gnomechess
     SUBDIR += gnomegames
     SUBDIR += gnuchess
