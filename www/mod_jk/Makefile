@@ -8,7 +8,7 @@
 PORTNAME=	mod_jk
 PORTVERSION=	3.2.3
 CATEGORIES=	www
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/src/
+MASTER_SITES=	http://www.apache.org/dist/jakarta/jakarta-tomcat/release/v${PORTVERSION}/src/
 DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
 MAINTAINER=	dirk@FreeBSD.org
