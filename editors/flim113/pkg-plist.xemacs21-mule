@@ -11,6 +11,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/flim/eword-decode.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/eword-encode.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/eword-encode.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/luna.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/luna.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/mailcap.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/mailcap.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/mel-b-ccl.el
@@ -37,8 +39,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/flim/mmbuffer.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/mmcooked.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/mmcooked.elc
-%%EMACS_PACKAGESDIR%%/lisp/flim/mmgeneric.el
-%%EMACS_PACKAGESDIR%%/lisp/flim/mmgeneric.elc
+%%EMACS_PACKAGESDIR%%/lisp/flim/mmdbuffer.el
+%%EMACS_PACKAGESDIR%%/lisp/flim/mmdbuffer.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/std11.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/std11.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/smtp.el
