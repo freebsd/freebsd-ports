@@ -1,0 +1,4 @@
+bin/lspci
+bin/setpci
+sbin/update-pciids
+share/pci.ids
