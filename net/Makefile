@@ -132,7 +132,6 @@
     SUBDIR += ethereal
     SUBDIR += ettercap
     SUBDIR += eudc-emacs20
-    SUBDIR += everybuddy
     SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += firetalk
