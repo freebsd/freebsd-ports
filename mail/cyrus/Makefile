@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrus
 PORTVERSION= 	1.6.24
+PORTREVISION=	1
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
@@ -26,11 +27,12 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-auth=unix \
 		--with-com-err
 
-MAN1=		cyradm.1
+MAN1=		cyradm.1 imtest.1 installsieve.1
 MAN3=		imclient.3
-MAN5=		imapd.conf.5
-MAN8=		arbitron.8 collectnews.8 cyrquota.8 deliver.8 imapd.8 \
-		pop3d.8 reconstruct.8 rmnews.8 syncnews.8
+MAN5=		imapd.conf.5 krb.equiv.5
+MAN8=		arbitron.8 collectnews.8 cyrquota.8 deliver.8 fud.8 \
+		imapd.8 mbpath.8 pop3d.8 reconstruct.8 rmnews.8 syncnews.8 \
+		timsieved.8
 
 post-configure:
 		@ ${SETENV} ${MAKE_ENV} perl -pi -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/imap/config.c ${WRKSRC}/imap/krbck.c
@@ -80,6 +82,7 @@ post-install:
 		@${ECHO} "@exec ${MKDIR} %D/etc/imap/${dir}" >>${TMPPLIST}
 		@${ECHO} "@dirrm etc/imap/${dir}" >>${TMPPLIST}
 .endfor
+		@${ECHO} "@dirrm etc/imap" >>${TMPPLIST}
 		@${ECHO} "@exec ${CP} /dev/null %D/etc/imap/mailboxes" >>${TMPPLIST}
 		@${ECHO} "@exec ${CHOWN} -R cyrus:cyrus %D/etc/imap" >>${TMPPLIST}
 		@${ECHO} "@exec ${CHMOD} -R g-w,o= %D/etc/imap" >>${TMPPLIST}
