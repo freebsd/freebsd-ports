@@ -1,7 +1,7 @@
---- config/cf/FreeBSD.cf.orig	Fri Dec  3 10:35:04 1999
-+++ config/cf/FreeBSD.cf	Fri Aug  4 04:06:42 2000
-@@ -69,7 +69,7 @@
- #define MkdirHierCmd		mkdir -p
+--- config/cf/FreeBSD.cf.orig	Wed Jan  9 15:04:16 2002
++++ config/cf/FreeBSD.cf	Wed Jan  9 16:17:59 2002
+@@ -78,7 +78,7 @@
+ #endif
  
  #define CcCmd			cc
 -#define CppCmd			/usr/libexec/cpp
@@ -9,7 +9,7 @@
  #define PreProcessCmd		CppCmd
  #define StandardCppDefines	-traditional
  #if defined(UseInstalled) && (!defined(XF86LinkKit) || !XF86LinkKit)
-@@ -132,12 +132,12 @@
+@@ -141,12 +141,12 @@
   * reason for FreeBSD to assume that it knows where X libraries are installed 
   * and they can remove it from the list of directories they add to ld.so.cache 
   * in their /etc/rc file.
@@ -25,7 +25,7 @@
  #define ExtraLoadFlags		-Wl,-R,$(USRLIBDIRPATH)
  #endif
  #endif
-@@ -317,7 +317,12 @@
+@@ -330,7 +330,13 @@
  # define AsmDefines		AsmElfDefines
  #endif
  
@@ -34,11 +34,12 @@
 +#endif
 +#ifdef AlphaArchitecture
 +#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#define	XFree86ConsoleDefines	-DSYSCONS_SUPPORT
 +#endif
  
  #define StandardDefines	-DCSRG_BASED
  
-@@ -342,14 +347,14 @@
+@@ -355,14 +361,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
@@ -55,7 +56,7 @@
  #endif
  
  #ifndef PreIncDir
-@@ -458,14 +463,18 @@
+@@ -471,14 +477,18 @@
  #define DlLibrary		/**/
  #endif
  
