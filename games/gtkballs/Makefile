@@ -32,7 +32,7 @@ post-patch:
 post-install:
 	${CHMOD} 2755 ${PREFIX}/bin/gtkballs
 	${CHOWN} root:games ${PREFIX}/bin/gtkballs
-	${CHMOD} 0666 ${DATADIR}/gtkballs-scores
+	${CHMOD} 0664 ${DATADIR}/gtkballs-scores
 	${CHOWN} root:games ${DATADIR}/gtkballs-scores
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
