@@ -24,10 +24,4 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501106
-BROKEN=		"Broken by new ATA driver"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
