@@ -39,5 +39,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|[(]datadir[)]/locale|(prefix)/share/locale|g" ${WRKSRC}/po/Makefile
 	@${GREP} -lR "/usr/bin/python2.2" ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -e "s,/usr/bin/python2.2,${SETENV} python,"
+	@${REINPLACE_CMD} -e "s|python2.2|${PYTHON_CMD}|" ${WRKSRC}/online-docs/Rules.make
+	@${REINPLACE_CMD} -e 's|\(python2.2 python2.1\)|${PYTHON_VERSION} \1|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
