@@ -1,0 +1,12 @@
+************************************************************************
+
+The BSDI FrontPage Extentions require that libcrypt.* be linked to the
+libdescrypt.* libraries.  The fpsrvadm.exe program can only create DES
+passwords, but the Apache server is unable to use them when libcrypt.*
+are linked to the libscrypt.* libraries.
+
+A new apache.sh.sample has been installed. Please replace your own
+apache.sh with this script. The frontpage suid key generation is
+needed by mod_frontpage. Without it it doesn't work.
+
+************************************************************************
