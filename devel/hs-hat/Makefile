@@ -76,9 +76,6 @@ pre-everything::
 	@${ECHO_CMD} ""
 
 post-patch:
-.if defined(WITH_NHC98)
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-configure
-.endif
 	@${REINPLACE_CMD} -e "s|glib-config|${GLIB_CONFIG}|" \
 		${WRKSRC}/configure ${WRKSRC}/src/hattools/Makefile
 
@@ -86,9 +83,10 @@ post-install:
 .if !defined(WITH_NHC98)
 	@${INSTALL_DATA} ${WRKSRC}/lib/ix86-FreeBSD/hatlib/ghc/hat-package.conf \
 		${PREFIX}/lib/ix86-FreeBSD
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 .endif
 .if !defined(NOPORTDOCS)
-	@rm -rf ${PREFIX}/share/doc/hat/CVS
+	@${RM} -rf ${PREFIX}/share/doc/hat/CVS
 .endif
 
 .include <bsd.port.post.mk>
