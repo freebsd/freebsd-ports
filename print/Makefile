@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.42 1997/03/25 11:03:18 obrien Exp $
+# $Id: Makefile,v 1.43 1997/04/11 10:06:34 obrien Exp $
 #
 
     SUBDIR += a2ps
@@ -33,7 +33,6 @@
     SUBDIR += texinfo
     SUBDIR += tr2latex
     SUBDIR += transfig
-    SUBDIR += unroff
     SUBDIR += virtualpaper
     SUBDIR += xdvi
     SUBDIR += xmgr
