@@ -35,6 +35,7 @@ FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Doit être téléchargé depuis le site web de Sun'
+CD_MOUNTPT=	'/cdrom'
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 DIST_SUBDIR=	staroffice52
