@@ -120,6 +120,7 @@ bin/pycolor
 %%DOCSDIR%%/examples/example-gnuplot.py
 %%DOCSDIR%%/examples/example-magic.py
 %%DOCSDIR%%/examples/magic_grepl.py
+%%DOCSDIR%%/homedir_info.txt
 %%DOCSDIR%%/ipython.el
 %%DOCSDIR%%/manual.pdf
 %%DOCSDIR%%/manual/footnode.html
