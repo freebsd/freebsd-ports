@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_layout
-PORTVERSION=	4.0.1a
+PORTVERSION=	4.0.2a
 CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/
 
@@ -16,6 +16,8 @@ COMMENT=	Apache2 module to wrap served pages with a header and/or footer
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
 
+LATEST_LINK=	mod_layout2
+
 USE_REINPLACE=	yes
 MAKE_ARGS+=	builddir=${WRKSRC}
 
@@ -24,6 +26,5 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
