@@ -1,9 +1,9 @@
 #!/bin/sh
 
 
-H=${WRKSRC}/policy.h
+H=$WRKSRC/policy.h
 trap "rm -f $H; exit 1" 1 2 3
-cp ${WRKSRC}/policy.h-dist $H || exit 1
+cp $WRKSRC/policy.h-dist $H || exit 1
 
 
 ww () {
@@ -57,12 +57,13 @@ cat <<END
  You could use it to call "uucico" for all users starting with "U*"
  (works only with Taylor UUCP 1.04 with my patch), or to call a fido
  mailer for fido calls (only if -DFIDO defined)...
- See the samples in the example mgetty.login file.
+ See the samples in the example login.config file (built from login.cfg.in).
 
  WARNING: make sure that this file isn't world-accessable (SECURITY!)
 
- If you want to call /bin/login in any case, do not define this
+ If you want to call /usr/bin/login in any case, do not define this
 END
+echo "#undef LOGIN_CFG_FILE" >>$H
 wn "config file:" LOGIN_CFG_FILE  
 
 ww DEFAULT_LOGIN_PROGRAM \"/usr/bin/login\"
@@ -296,7 +297,7 @@ this is the command to set the modem to use the desired flow control.
  For hardware handshake, this could be &H3 for the ZyXEL, &K3 for
  Rockwell-Based modems or \\Q3&S0 for Exar-Based Modems (i.e. some GVC's)
 END
-wq command: "&H3" FAX_MODEM_HANDSHAKE 
+wq command: "AT&H3" FAX_MODEM_HANDSHAKE 
 
 cat <<END
  When sending a fax, if the other side says "page bad, retrain

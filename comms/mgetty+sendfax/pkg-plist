@@ -1,4 +1,5 @@
 @cd /usr/local
+@mode 775
 @owner bin
 @group bin
 bin/faxspool
@@ -18,7 +19,8 @@ lib/mgetty+sendfax/login.config
 @owner bin
 @mode 644 
 lib/mgetty+sendfax/faxheader 
-lib/mgetty+sendfax/cour24i.pbm
+lib/mgetty+sendfax/cour25.pbm
+lib/mgetty+sendfax/cour25n.pbm
 man/man1/g3topbm.1
 man/man1/pbmtog3.1
 man/man1/g3cat.1
@@ -26,6 +28,8 @@ man/man1/faxspool.1
 man/man1/faxrunq.1
 man/man1/faxq.1
 man/man1/faxrm.1
+man/man1/fax.1
+man/man1/coverpg.1
 man/man4/mgettydefs.4 
 man/man5/faxqueue.5
 man/man8/sendfax.8
@@ -36,6 +40,6 @@ info/mgetty.info-2
 info/mgetty.info-3
 @cd /var/spool
 @exec mkdir -p %D/fax/incoming
-@exec mkdir -p %D/fax/outging
+@exec mkdir -p %D/fax/outgoing
 @exec chmod -R 775 %D/fax
 @unexec rm -r %D/fax
