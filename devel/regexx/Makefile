@@ -16,12 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-USE_LIBTOOL=	yes
-USE_AUTOMAKE=	yes
-USE_AUTOCONF=	yes
-
 USE_GMAKE=	yes
-
+USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
