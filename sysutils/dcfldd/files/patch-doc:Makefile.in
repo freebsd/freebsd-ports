@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	Fri Oct 19 01:33:03 2001
++++ doc/Makefile.in	Mon Jan 10 01:06:44 2005
+@@ -136,7 +136,7 @@
+ TEXINFOS = fileutils.texi
+ DIST_COMMON = Makefile.am Makefile.in mdate-sh stamp-vti texinfo.tex \
+ 	version.texi
+-all: all-am
++all:
+ 
+ .SUFFIXES:
+ .SUFFIXES: .dvi .info .ps .texi
+@@ -269,7 +269,7 @@
+ installdirs:
+ 	$(mkinstalldirs) $(DESTDIR)$(infodir)
+ 
+-install: install-am
++install:
+ install-exec: install-exec-am
+ install-data: install-data-am
+ uninstall: uninstall-am
