@@ -156,6 +156,7 @@
     SUBDIR += ncplib
     SUBDIR += nemesis
     SUBDIR += neoupdate
+    SUBDIR += net-snmp
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
     SUBDIR += netcat
@@ -292,7 +293,6 @@
     SUBDIR += ttcp
     SUBDIR += ttt
     SUBDIR += tund
-    SUBDIR += ucd-snmp
     SUBDIR += unison
     SUBDIR += vnc
     SUBDIR += vtun
