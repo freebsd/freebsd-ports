@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpsdrive
-PORTVERSION=	1.28
+PORTVERSION=	1.31
 CATEGORIES=	astro
 MASTER_SITES=	http://gpsdrive.kraftvoll.at/     \
 		http://gpsdrive.dotdeguy.de/      \
@@ -27,7 +27,7 @@ USE_GNOME=	gdkpixbuf
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-garmin
+CONFIGURE_ARGS=	--disable-garmin --disable-mysql
 INSTALLS_SHLIB=	yes
 
 MAN1=		gpsdrive.1
