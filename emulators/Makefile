@@ -42,6 +42,7 @@
     SUBDIR += rtc
     SUBDIR += sim
     SUBDIR += sim6811
+    SUBDIR += ski
     SUBDIR += snes9x
     SUBDIR += spim
     SUBDIR += stella
