@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-0.5.14-bw6
 
 MAINTAINER=	sumikawa@kame.net
 
-LIB_DEPENDS=	wmf.1:${PORTSDIR}/gaphics/libwmf
+LIB_DEPENDS=	wmf.1:${PORTSDIR}/graphics/libwmf
 
 WRKSRC=		${WRKDIR}/mswordview
 GNU_CONFIGURE=	yes
