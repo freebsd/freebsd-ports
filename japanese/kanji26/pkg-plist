@@ -3,6 +3,5 @@ share/doc/kanji26/26to24.sed
 share/doc/kanji26/README.kanji26
 share/doc/kanji26/kanji24.alias
 share/doc/kanji26/kanji26.alias
-@exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
-@unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
 @dirrm share/doc/kanji26

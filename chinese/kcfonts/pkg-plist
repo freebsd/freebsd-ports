@@ -6,3 +6,5 @@ lib/X11/fonts/local/kc_fonts.alias
 @exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
 @exec cd %D/lib/X11/fonts/local ; cat kc_fonts.alias >> fonts.alias ; cp fonts.alias ..fonts.alias.. ; sort ..fonts.alias.. | uniq > fonts.alias ; rm ..fonts.alias..
 @unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
+@unexec if [ ! -s %D/lib/X11/fonts/local/fonts.alias ]; then rm -f %D/lib/X11/fonts/local/fonts.alias; fi
