@@ -3,7 +3,7 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1997/04/21 01:17:14 asami Exp $
+#   $Id: Makefile,v 1.3 1997/04/25 13:54:01 jfitz Exp $
 #
 
 DISTNAME=	mrtg-2.2
@@ -12,7 +12,8 @@ MASTER_SITES=	http://www.ee.ethz.ch/~oetiker/webtools/mrtg/pub/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
+BUILD_DEPENDS=	${PREIFX}/bin/perl5.004:${PORTSDIR}/lang/perl5 \
+		${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/PV.pm:${PORTSDIR}/devel/p5-PV
 
 ALL_TARGET=	rateup substitute
