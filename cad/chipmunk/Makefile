@@ -29,6 +29,10 @@ USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Broken pkg-plist on alpha"
+.endif
+
 post-extract:
 	@${CP} -f ${DISTDIR}/${DIST_SUBDIR}/Makefile ${WRKSRC}/Makefile
 
