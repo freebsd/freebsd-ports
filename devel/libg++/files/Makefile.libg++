@@ -11,6 +11,9 @@ DESTDIR=	${PREFIX}
 LIBDIR=		/lib
 
 CFLAGS+=	-I./libg++/src -I./librx -I/usr/include/g++
+#	work around a nasty interaction between bsd.port.mk which prevents
+#	sys.mk from crafting a proper CXXFLAGS
+CXXFLAGS+=	${CFLAGS}
 
 #	This Makefile was created extracting the libstdc++-2.8.1.1 distribution
 #	and then extracting the libg++-2.8.1.3 distribution w/in that.
