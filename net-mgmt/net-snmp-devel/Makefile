@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snmp
-PORTVERSION=	5.1.1
-PORTREVISION=	6
+PORTVERSION=	5.1.2
 PKGNAMEPREFIX=	net-
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -127,7 +126,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		netsnmp_old_api.3 netsnmp_read_only.3 netsnmp_scalar.3 \
 		netsnmp_serialize.3 netsnmp_table.3 netsnmp_table_array.3 \
 		netsnmp_table_data.3 netsnmp_table_dataset.3 \
-		netsnmp_table_iterator.3 netsnmp_todo.3 netsnmp_watcher.3 \
+		netsnmp_table_iterator.3 netsnmp_watcher.3 \
 		print_description.3 print_mib.3 print_objid.3 print_value.3 \
 		print_variable.3 read_all_mibs.3 read_config.3 read_mib.3 \
 		read_module.3 read_module_node.3 read_objid.3 shutdown_mib.3 \
@@ -142,9 +141,10 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
 		snmp_timeout.3 snmp_trap_api.3 \
-		netsnmp_Container_iterator.3 netsnmp_baby_steps.3 \
+		netsnmp_Container_iterator.3 \
+		netsnmp_asn1_packet_parse.3 netsnmp_baby_steps.3 \
 		netsnmp_cache_handler.3 netsnmp_container.3 \
-		netsnmp_deprecated.3 netsnmp_iterator_info_s.3 \
+		netsnmp_iterator_info_s.3 \
 		netsnmp_leaf.3 \
 		netsnmp_row_merge.3 netsnmp_scalar_group_group.3 \
 		netsnmp_stash_cache.3 netsnmp_utilities.3
