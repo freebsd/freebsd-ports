@@ -10,14 +10,10 @@ CFLAGS+=	-I${.CURDIR}/../../include -I$(TCL_INCDIR)
 
 LDADD=		-L../lib -lwn1 -L${PREFIX}/lib -ltcl${TCL_VER} -ltk${TCL_VER}
 
-LIB=		tclwn1
-SHLIB_MAJOR=	7
-SHLIB_MINOR=	0
+SHLIB_NAME=	libtclwn1.so.7
 SRCS=		stubs.c
 
-INTERNALLIB=	True	# To avoid building the useless static library
-
-all: ${SHLIB_NAME} pkgIndex.tcl
+all: pkgIndex.tcl
 
 pkgIndex.tcl:
 	echo "package ifneeded Wordnet 1.7 [list load \
