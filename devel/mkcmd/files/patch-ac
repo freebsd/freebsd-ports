@@ -1,15 +1,15 @@
---- lib/mkcmd/Make.host.orig	Thu Dec 30 15:43:51 1999
-+++ lib/mkcmd/Make.host	Thu Dec 30 15:48:50 1999
-@@ -2,7 +2,7 @@
- # 	Makefile for mkcmd
+--- lib/mkcmd/Make.host.orig	Sun Jul 30 16:56:24 2000
++++ lib/mkcmd/Make.host	Mon Aug  7 15:26:05 2000
+@@ -3,7 +3,7 @@
  #			Kevin S Braunsdorf, PUCC
  
+ SHELL=/bin/sh
 -LIB=	${DESTDIR}/usr/local/lib/mkcmd
 +LIB=	${DESTDIR}/usr/local/share/mkcmd
  
  TEMPL=	Template.m bytes.m bytes.mi client.m \
  bsd.m \
-@@ -88,7 +88,7 @@
+@@ -90,7 +90,7 @@
  
  install: all FRC
  	-[ -d ${LIB} ] || install -d ${LIB}

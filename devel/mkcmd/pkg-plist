@@ -40,6 +40,8 @@ share/mkcmd/type/service.m
 share/mkcmd/type/service.mc
 share/mkcmd/type/server.m
 share/mkcmd/type/server.mi
+share/mkcmd/type/shared.m
+share/mkcmd/type/shared.mi
 share/mkcmd/type/socket.m
 share/mkcmd/type/socket.mh
 share/mkcmd/type/socket.mi
@@ -87,6 +89,7 @@ share/mkcmd/example/lex.m
 share/mkcmd/example/macro.m
 share/mkcmd/example/mult.m
 share/mkcmd/example/nettime.m
+share/mkcmd/example/ppm.m
 share/mkcmd/example/rc.m
 share/mkcmd/example/rls.m
 share/mkcmd/example/rls.x
@@ -95,6 +98,8 @@ share/mkcmd/example/server.m
 share/mkcmd/example/time.m
 share/mkcmd/example/timebox.m
 @dirrm share/mkcmd/example
+share/mkcmd/getopt/key.m
+@dirrm share/mkcmd/getopt
 share/mkcmd/enum.info
 share/mkcmd/glob/ieee.m
 share/mkcmd/glob/ieee.mc
@@ -135,6 +140,7 @@ share/mkcmd/util/cgi.m
 share/mkcmd/util/cgi.mc
 share/mkcmd/util/client.m
 share/mkcmd/util/client.mc
+share/mkcmd/util/client.mi
 share/mkcmd/util/daemon.m
 share/mkcmd/util/daemon.mc
 share/mkcmd/util/daemon.mh
@@ -168,6 +174,7 @@ share/mkcmd/util/home.mi
 share/mkcmd/util/mult.m
 share/mkcmd/util/mult.mc
 share/mkcmd/util/mult.mi
+share/mkcmd/util/ppm.m
 share/mkcmd/util/rc.m
 share/mkcmd/util/rc.mc
 share/mkcmd/util/rc.mi
