@@ -1,0 +1,45 @@
+--- Makefile.orig	Thu Jul 27 22:05:19 2000
++++ Makefile	Fri Jul 28 20:56:30 2000
+@@ -1,7 +1,7 @@
+ VERSION = XFireworks-1.1
+ PKGNAME = xfireworks-1.1
+-PREFIX = /usr/X11R6
+-X11BASE = /usr/X11R6
++#PREFIX = /usr/X11R6
++#X11BASE = /usr/X11R6
+ 
+ BINDIR = $(PREFIX)/bin
+ LIBDIR = $(PREFIX)/lib/X11/xfireworks
+@@ -10,9 +10,9 @@
+ XINCLUDEDIR = $(X11BASE)/include
+ XLIBDIR = $(X11BASE)/lib
+ 
+-CFLAGS = -O
++#CFLAGS = -O
+ LFLAGS = -lm -lX11
+-CC = cc
++#CC = cc
+ CP = cp
+ RM = rm -f
+ MKDIR = mkdir -p
+@@ -78,17 +78,14 @@
+ install :	install-bin install-lib install-man
+ 
+ install-bin :	xfireworks
+-		$(CP) xfireworks $(BINDIR)
+-		$(CHMOD) 0755 $(BINDIR)/xfireworks
++		${BSD_INSTALL_PROGRAM} xfireworks $(BINDIR)
+ 
+ install-lib :
+ 		$(MKDIR) $(LIBDIR)
+-		$(CP) xfireworks.conf $(LIBDIR)
+-		$(CHMOD) 0644 $(LIBDIR)/xfireworks.conf
++		${BSD_INSTALL_DATA} xfireworks.conf $(LIBDIR)
+ 
+ install-man :	manual
+-		$(CP) xfireworks.1.gz $(MANDIR)
+-		$(CHMOD) 0444 $(MANDIR)/xfireworks.1.gz
++		${BSD_INSTALL_MAN} xfireworks.1.gz $(MANDIR)
+ 
+ uninstall :	uninstall-bin uninstall-lib uninstall-man
+ 
