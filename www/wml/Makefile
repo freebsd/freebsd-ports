@@ -17,6 +17,8 @@ COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		Does not compile
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL5}
