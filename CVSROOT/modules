@@ -4554,6 +4554,7 @@ libgnomecanvasmm26	ports/graphics/libgnomecanvasmm26
 libgnomecups	ports/print/libgnomecups
 libgnomedb	ports/databases/libgnomedb
 libgnomemm	ports/x11/libgnomemm
+libgnomemm26	ports/x11/libgnomemm26
 libgnomeprint	ports/print/libgnomeprint
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
 libgnomeui	ports/x11-toolkits/libgnomeui
