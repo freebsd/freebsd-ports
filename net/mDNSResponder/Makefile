@@ -8,7 +8,7 @@
 
 PORTNAME=	mDNSResponder
 PORTVERSION=	62
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://darwinsource.opendarwin.org/tarballs/apsl/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -22,5 +22,14 @@ USE_GMAKE=	YES
 MAKE_ARGS+=	os=freebsd
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
+EXTRA_PROGS=	mDNSClientPosix \
+		mDNSIdentify \
+		mDNSNetMonitor \
+		mDNSProxyResponderPosix \
+		mDNSResponderPosix
+
+post-install:
+	cd ${INSTALL_WRKSRC}/build/prod && \
+	    ${INSTALL_PROGRAM} ${EXTRA_PROGS} ${PREFIX}/bin
 
 .include <bsd.port.mk>
