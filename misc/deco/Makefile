@@ -3,11 +3,11 @@
 # Date created:				16 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
 #
 
-DISTNAME=		deco38
-PKGNAME=		deco-3.8
+DISTNAME=		deco382
+PKGNAME=		deco-3.8.2
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.cronyx.ru/cronyx/deco/
 EXTRACT_SUFX=		.tgz
@@ -17,6 +17,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 WRKSRC=			${WRKDIR}/deco
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--libdir=${PREFIX}/share
+CONFIGURE_ENV=		ac_cv_lib_ncurses_tgetent=no
 MAN1=			deco.1 deco-r.1
 
 .include <bsd.port.mk>
