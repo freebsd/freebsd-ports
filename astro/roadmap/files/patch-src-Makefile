@@ -1,0 +1,25 @@
+--- src/Makefile.orig	Tue Feb 18 21:55:28 2003
++++ src/Makefile	Tue Feb 18 21:58:51 2003
+@@ -1,11 +1,11 @@
+ 
+ 
+-CFLAGS=-O2 -ffast-math -fomit-frame-pointer -Wall
++CFLAGS+=-O2 -ffast-math -fomit-frame-pointer -Wall -I${LOCALBASE}/include
+ # CFLAGS=-g -Wall -DROADMAP_DEBUG_HEAP
+ # CFLAGS=-g -Wall -pg -fprofile-arcs -g
+ 
+ RDMLIBS=libroadmap.a unix/libosroadmap.a
+-LIBS=$(RDMLIBS) -lpopt -lm
++LIBS=$(RDMLIBS) -lpopt -lm -L${LOCALBASE}/lib
+ 
+ # LDFLAGS=-pg $(LDFLAGS)
+ 
+@@ -88,7 +88,7 @@
+ SCRIPTS=rdmdownload rdmgetall rdmgenmaps rdmcompare
+ RUNTIME=libroadmap.a libguiroadgps.a libguiroadmap.a
+ 
+-INSTALLDIR=/usr/local
++INSTALLDIR=${LOCLBASE}
+ 
+ 
+ # --- Conventional targets ----------------------------------------
