@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.6
+PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -21,6 +21,7 @@ DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack
 
 MAN3=		cpu_percent_usage.3 get_cpu_diff.3 get_cpu_totals.3 \
 		get_diskio_stats.3 get_diskio_stats_diff.3 get_general_stats.3 \
@@ -29,8 +30,7 @@ MAN3=		cpu_percent_usage.3 get_cpu_diff.3 get_cpu_totals.3 \
 		get_page_stats_diff.3 get_process_stats.3 get_swap_stats.3 \
 		get_user_stats.3 statgrab.3
 
-CONFIGURE_ARGS+=	--disable-examples \
-			--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
+CONFIGURE_ARGS+=	--disable-examples
 
 .if defined(WITHOUT_STATGRAB)
 CONFIGURE_ARGS+=	--disable-statgrab
