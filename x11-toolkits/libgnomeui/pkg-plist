@@ -79,9 +79,6 @@ share/doc/libgnomeui/index.sgml
 share/doc/libgnomeui/libgnomeui-gnome-app-helper.html
 share/doc/libgnomeui/libgnomeui-gnome-app-util.html
 share/doc/libgnomeui/libgnomeui-gnome-dialog-util.html
-share/doc/libgnomeui/libgnomeui-gnome-gconf-ui.html
-share/doc/libgnomeui/libgnomeui-gnome-ice.html
-share/doc/libgnomeui/libgnomeui-gnome-macros.html
 share/doc/libgnomeui/libgnomeui-gnome-mdi-session.html
 share/doc/libgnomeui/libgnomeui-gnome-popup-menu.html
 share/doc/libgnomeui/libgnomeui-gnome-stock-icons.html
@@ -93,8 +90,6 @@ share/doc/libgnomeui/libgnomeui-gnome-window.html
 share/doc/libgnomeui/libgnomeui-gnometypebuiltins.html
 share/doc/libgnomeui/libgnomeui-objects.html
 share/doc/libgnomeui/x1495.html
-share/doc/libgnomeui/x15995.html
-share/doc/libgnomeui/x18488.html
 share/doc/libgnomeui/x6263.html
 share/doc/libgnomeui/x8080.html
 share/gnome/pixmaps/gnome-about-logo.png
@@ -104,9 +99,12 @@ share/gnome/pixmaps/gnome-info.png
 share/gnome/pixmaps/gnome-question.png
 share/gnome/pixmaps/gnome-warning.png
 share/locale/az/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/am/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/be/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/da/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/de/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/el/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/en_GB/LC_MESSAGES/libgnomeui-2.0.mo
