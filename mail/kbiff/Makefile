@@ -10,7 +10,7 @@ PORTVERSION=	3.6.1
 CATEGORIES=	mail kde
 MASTER_SITES=	http://devel-home.kde.org/~granroth/kbiff/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	tilman@arved.de
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
