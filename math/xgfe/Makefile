@@ -3,12 +3,13 @@
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.7 1998/08/12 06:29:30 asami Exp $
+# $Id: Makefile,v 1.8 1998/11/08 20:27:52 mph Exp $
 #
 
-DISTNAME=	xgfe-2.0
-CATEGORIES=	math
-MASTER_SITES=	http://jasper.he.net/~dmishee/xgfe/download/
+DISTNAME=		xgfe-2.0
+CATEGORIES=		math
+MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/graphics/visualization
 
 MAINTAINER=	mph@freebsd.org
 
