@@ -1,0 +1,98 @@
+--- Makefile.orig	Thu Nov  9 01:42:05 2000
++++ Makefile	Fri Apr 13 14:18:09 2001
+@@ -3,25 +3,25 @@
+ 
+ ifndef _NANOX
+   # your version of FLTK (1.0.7, please!)
+-  FLTK = /home/davet/src/fltk/flmwin
++  FLTK = $(X11BASE)
+ else
+   # your version of Nano-X FLTK (0.88, please!)
+   FLTK = /home/jasonk/projects/flnx
+ endif
+ 
+ # Where your Xlibs are (not needed for Nano-X/Mwin builds)
+-XLIBS = -L/usr/X11R6/lib -lX11
++XLIBS = -L$(X11BASE)/lib -lX11
+ 
+ # Where Nano-X is (not needed if building for X only)
+ NANOX = /home/jasonk/projects/microwin
+ 
+ # Various support libraries
+-IMLIBS = `imlib-config --libs`
+-WWWLIBS = `/usr/bin/libwww-config --libs`
++IMLIBS = `$(X11BASE)/bin/imlib-config --libs`
++WWWLIBS = `$(LOCALBASE)/bin/libwww-config --libs`
+ 
+ # The everpresent CFLAGS
+ ifndef _NANOX
+-  CFLAGS = -g `/usr/bin/libwww-config --cflags`
++  CFLAGS += `$(LOCALBASE)/bin/libwww-config --cflags`
+ else
+   CFLAGS = -g -DNANOX -D_NANOX `libwww-config --cflags`
+ endif
+@@ -32,7 +32,7 @@
+ ################################################################
+ 
+ ifndef _NANOX
+-  LIBS = $(FLTK)/lib/libfltk.a -lfl $(XLIBS) -lpthread $(WWWLIBS) $(IMLIBS) 
++  LIBS = $(FLTK)/lib/libfltk.a -lfl $(XLIBS) -pthread $(WWWLIBS) $(IMLIBS) 
+ else
+   LIBS = $(FLTK)/lib/libfltk.a -lfl -lpthread $(NANOXLIBS) $(WWWLIBS)
+ endif
+@@ -40,7 +40,7 @@
+ KDEINC = -I../kdecore -I../kimgio -I../kdeui -I../jscript
+ 
+ ifndef _NANOX
+-  INCLUDES = -I$(FLTK)/FL -I$(FLTK) -I./fltk -I. $(KDEINC)
++  INCLUDES = -I$(LOCALBASE)/include/w3c-libwww -I$(FLTK)/include/FL -I$(X11BASE)/include -I$(X11BASE)/include/X11 -I./fltk -I. $(KDEINC)
+ else
+   INCLUDES = -I$(FLTK)/FL -I$(FLTK) -I$(NANOX)/src/include -I./fltk -I. $(KDEINC)
+ endif
+@@ -48,17 +48,18 @@
+ CPPFILES = html.cpp htmlchain.cpp htmlclue.cpp htmldata.cpp htmlfont.cpp \
+ 	htmliter.cpp htmltable.cpp htmltoken.cpp jscript.cpp htmlview.cpp \
+ 	htmlframe.cpp htmlobj.cpp debug.cpp htmlform.cpp main.cpp http.cpp \
+-	http_.cpp
++	http_.cpp vmlapp.cpp
+ 
+ OTHERCPP = ../kdecore/kurl.cpp ../kdeui/kcursor.cpp fltk/qtimer.cpp \
+ 	fltk/qobject.cpp fltk/qpainter.cpp fltk/qdrawutil.cpp \
+ 	fltk/qfont.cpp fltk/qrect.cpp fltk/qregexp.cpp fltk/qstring.cpp \
+ 	fltk/kcharsets.cpp fltk/qcolor.cpp fltk/qpixmap.cpp \
+-	fltk/qfontinfo.cpp fltk/qwidget.cpp fltk/history.cpp fltk/qscrollbar.cpp
++	fltk/qfontinfo.cpp fltk/qwidget.cpp fltk/history.cpp fltk/qscrollbar.cpp \
++	fltk/drag.cpp fltk/qpushbutton.cpp fltk/qlineedit.cpp
+ 
+ OBJS = html.o htmlchain.o htmlclue.o htmldata.o htmlfont.o htmliter.o \
+ 	htmltable.o htmltoken.o jscript.o htmlview.o htmlframe.o htmlobj.o \
+-	debug.o htmlform.o main.o http.o http_.o
++	debug.o htmlform.o main.o http.o http_.o vmlapp.o
+ 
+ OTHEROBJS = ../kdecore/kurl.o ../jscript/builtin.o ../jscript/cpp2bison.o \
+ 	../jscript/jsexec.o ../jscript/jstree.o ../jscript/t2.o \
+@@ -66,7 +67,7 @@
+ 	fltk/qpainter.o fltk/qdrawutil.o fltk/qfont.o fltk/qrect.o \
+ 	fltk/qregexp.o fltk/qstring.o fltk/kcharsets.o fltk/qcolor.o \
+ 	fltk/qpixmap.o fltk/qfontinfo.o fltk/qwidget.o fltk/history.o \
+-	fltk/qscrollbar.o
++	fltk/qscrollbar.o fltk/drag.o fltk/qpushbutton.o fltk/qlineedit.o
+ 
+ ################################################################
+ 
+@@ -75,13 +76,13 @@
+ all: jscript $(OBJS) $(OTHEROBJS) main
+ 
+ jscript:
+-	cd ../jscript && make
++	cd ../jscript && $(MAKE)
+ 
+ main: $(OBJS) $(OTHEROBJS)
+ 	$(CXX) $(OBJS) $(OTHEROBJS) -o viewml $(LIBS)
+ 
+ depend:
+-	makedepend -I/usr/include/g++2 -I/usr/include/g++2/std \
++	makedepend -I/usr/include/g++ -I/usr/include/g++/std \
+ 	$(INCLUDES) $(CPPFILES) $(OTHERCPP)
+ 
+ .SUFFIXES:	.cpp .h .o

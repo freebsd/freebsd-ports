@@ -1,0 +1,17 @@
+ViewML (Viewable Markup Language) is the first freely available, open source
+web browser targeted specifically at the embedded platform. The web browser,
+known as The ViewML Project will be developed and maintained with source code
+made available to the public, as well as with contributions from the embedded
+community.
+
+As of now, the ViewML browser along with its interface requires 2.1 MB of RAM,
+with a small disk image foot-print requiring only 760K.
+
+The ViewML Project selected the KDE Desktop's kfm HTML display engine because
+of its superior design and display capabilities. The HTML engine was extracted,
+then ported, using a thin glue layer, to the small but fast FLTK (Fast Light
+Tool Kit, www.fltk.org) applications framework to keep the RAM usage extremely
+small, but still allows to fully implement all of the necessary user interface
+controls. 
+
+WWW: http://www.viewml.com/

@@ -253,6 +253,7 @@
     SUBDIR += tinyproxy
     SUBDIR += transproxy
     SUBDIR += udmsearch
+    SUBDIR += viewml
     SUBDIR += vrweb
     SUBDIR += w3
     SUBDIR += w3-4
