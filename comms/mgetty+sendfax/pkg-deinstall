@@ -11,8 +11,12 @@ now.
 
 END
 
-echo -n "do you want to deinstall the package ? [y] "
-read answ; if [ "$answ" = "" ]; then answ=y; fi
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  echo -n "do you want to deinstall the package ? [y] "
+  read answ; if [ "$answ" = "" ]; then answ=y; fi
+else
+  answ=y
+fi
 case $answ in
   y*|Y*) exit 0;;
   *) exit 1;;
