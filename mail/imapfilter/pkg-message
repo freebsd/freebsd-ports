@@ -1,3 +1,0 @@
-You can install imapfilter suid root, in order to lock memory pages and
-avoid swapping sensitive data.  By default it is not installed suid root,
-so this must be done manually.

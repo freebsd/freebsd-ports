@@ -1,31 +1,24 @@
---- Makefile.orig	Sat Oct  5 12:28:37 2002
-+++ Makefile	Sat Oct  5 12:30:57 2002
-@@ -1,9 +1,9 @@
+--- Makefile.orig	Wed Aug  6 22:00:14 2003
++++ Makefile	Wed Aug  6 22:03:56 2003
+@@ -1,10 +1,9 @@
 -CC = cc
 -CFLAGS = -O
-+DESTDIR = $(PREFIX)
-+BINDIR = $(PREFIX)/bin
-+MANDIR = $(PREFIX)/man
- 
+-LDFLAGS =
+-
 -DESTDIR = /usr/local
 -BINDIR = /usr/local/bin
 -MANDIR = /usr/local/man
++DESTDIR = $(PREFIX)
++BINDIR = $(PREFIX)/bin
++MANDIR = $(PREFIX)/man
++
 +INST_BIN = $(BSD_INSTALL_PROGRAM)
 +INST_DOC = $(BSD_INSTALL_MAN)
  
  MAN_BIN = imapfilter.1
  MAN_RC = imapfilterrc.5
-@@ -14,6 +14,8 @@
- 
- LIBS =  -lssl -lcrypto
- 
-+all: imapfilter
-+
- imapfilter: $(OBJ)
- 	$(CC) $(LIBS) $(CFLAGS) -o $(BIN) $(OBJ)
- 
-@@ -22,12 +24,9 @@
- data.o imapfilter.o imap.o file.o passwd.o request.o socket.o: data.h
+@@ -32,12 +31,9 @@
+ imapfilter.o: version.h
  
  install: imapfilter
 -	if test ! -d $(BINDIR); then mkdir -p $(BINDIR); fi
@@ -38,5 +31,5 @@
 +	$(INST_DOC) $(MAN_BIN) $(MANDIR)/man1
 +	$(INST_DOC) $(MAN_RC) $(MANDIR)/man5
  
- uninstall:
+ deinstall:
  	rm -f $(BINDIR)/$(BIN) $(MANDIR)/man1/$(MAN_BIN) $(MANDIR)/man5/$(MAN_RC)
