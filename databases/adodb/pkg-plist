@@ -23,6 +23,7 @@
 %%ADODB_DIR%%/contrib/toxmlrpc.inc.php
 %%ADODB_DIR%%/datadict/datadict-access.inc.php
 %%ADODB_DIR%%/datadict/datadict-db2.inc.php
+%%ADODB_DIR%%/datadict/datadict-firebird.inc.php
 %%ADODB_DIR%%/datadict/datadict-generic.inc.php
 %%ADODB_DIR%%/datadict/datadict-ibase.inc.php
 %%ADODB_DIR%%/datadict/datadict-informix.inc.php
@@ -43,11 +44,13 @@
 %%ADODB_DIR%%/drivers/adodb-ibase.inc.php
 %%ADODB_DIR%%/drivers/adodb-informix.inc.php
 %%ADODB_DIR%%/drivers/adodb-informix72.inc.php
+%%ADODB_DIR%%/drivers/adodb-ldap.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssql.inc.php
 %%ADODB_DIR%%/drivers/adodb-mssqlpo.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysql.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqli.inc.php
 %%ADODB_DIR%%/drivers/adodb-mysqlt.inc.php
+%%ADODB_DIR%%/drivers/adodb-netezza.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci805.inc.php
 %%ADODB_DIR%%/drivers/adodb-oci8po.inc.php
@@ -55,7 +58,9 @@
 %%ADODB_DIR%%/drivers/adodb-odbc_mssql.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbc_oracle.inc.php
 %%ADODB_DIR%%/drivers/adodb-odbtp.inc.php
+%%ADODB_DIR%%/drivers/adodb-odbtp_unicode.inc.php
 %%ADODB_DIR%%/drivers/adodb-oracle.inc.php
+%%ADODB_DIR%%/drivers/adodb-pdo.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres64.inc.php
 %%ADODB_DIR%%/drivers/adodb-postgres7.inc.php
@@ -63,8 +68,11 @@
 %%ADODB_DIR%%/drivers/adodb-sapdb.inc.php
 %%ADODB_DIR%%/drivers/adodb-sqlanywhere.inc.php
 %%ADODB_DIR%%/drivers/adodb-sqlite.inc.php
+%%ADODB_DIR%%/drivers/adodb-sqlitepo.inc.php
 %%ADODB_DIR%%/drivers/adodb-sybase.inc.php
 %%ADODB_DIR%%/drivers/adodb-vfp.inc.php
+%%ADODB_DIR%%/lang/adodb-bg.inc.php
+%%ADODB_DIR%%/lang/adodb-bgutf8.inc.php
 %%ADODB_DIR%%/lang/adodb-ca.inc.php
 %%ADODB_DIR%%/lang/adodb-cn.inc.php
 %%ADODB_DIR%%/lang/adodb-cz.inc.php
@@ -74,7 +82,9 @@
 %%ADODB_DIR%%/lang/adodb-fr.inc.php
 %%ADODB_DIR%%/lang/adodb-it.inc.php
 %%ADODB_DIR%%/lang/adodb-nl.inc.php
+%%ADODB_DIR%%/lang/adodb-pl.inc.php
 %%ADODB_DIR%%/lang/adodb-pt-br.inc.php
+%%ADODB_DIR%%/lang/adodb-ro.inc.php
 %%ADODB_DIR%%/lang/adodb-ru1251.inc.php
 %%ADODB_DIR%%/lang/adodb-sv.inc.php
 %%ADODB_DIR%%/perf/perf-db2.inc.php
@@ -104,7 +114,12 @@
 %%ADODB_DIR%%/xsl/convert-0.2-0.1.xsl
 %%TESTS%%%%ADODB_DIR%%/tests/benchmark.php
 %%TESTS%%%%ADODB_DIR%%/tests/client.php
+%%TESTS%%%%ADODB_DIR%%/tests/pdo.php
 %%TESTS%%%%ADODB_DIR%%/tests/test-datadict.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-pref.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-pgblob.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-php5.php
+%%TESTS%%%%ADODB_DIR%%/tests/test-xmlschema.php
 %%TESTS%%%%ADODB_DIR%%/tests/test.php
 %%TESTS%%%%ADODB_DIR%%/tests/test2.php
 %%TESTS%%%%ADODB_DIR%%/tests/test3.php

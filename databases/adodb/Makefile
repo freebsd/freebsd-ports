@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	4.21
+PORTVERSION=	4.50
 CATEGORIES=	databases www
-MASTER_SITES=	http://phplens.com/lens/dl/
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	adodb
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
@@ -30,8 +31,10 @@ PLIST_SUB+=	TESTS="@comment "
 .endif
 
 DOCS=	docs-adodb.htm docs-datadict.htm docs-perf.htm docs-session.htm \
-	license.txt old-changelog.htm readme.htm readme.txt tips_portable_sql.htm \
+	old-changelog.htm readme.htm tips_portable_sql.htm \
 	tute.htm
+
+TXTDOCS=license.txt readme.txt
 
 ICONS=	adodb.gif adodb2.gif
 
@@ -45,28 +48,34 @@ BASE=	adodb-csvlib.inc.php adodb-datadict.inc.php adodb-error.inc.php \
 
 CONTRIB=toxmlrpc.inc.php
 
-DATADICT=datadict-access.inc.php datadict-db2.inc.php datadict-generic.inc.php \
-	datadict-ibase.inc.php datadict-informix.inc.php datadict-mssql.inc.php \
-	datadict-mysql.inc.php datadict-oci8.inc.php datadict-postgres.inc.php \
-	datadict-sybase.inc.php
+DATADICT=datadict-access.inc.php datadict-db2.inc.php datadict-firebird.inc.php \
+	datadict-generic.inc.php datadict-ibase.inc.php datadict-informix.inc.php \
+	datadict-mssql.inc.php datadict-mysql.inc.php datadict-oci8.inc.php \
+	datadict-postgres.inc.php datadict-sybase.inc.php
 
 DRIVERS=adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
 	adodb-ado_mssql.inc.php adodb-borland_ibase.inc.php adodb-csv.inc.php \
 	adodb-db2.inc.php adodb-fbsql.inc.php adodb-firebird.inc.php \
 	adodb-ibase.inc.php adodb-informix.inc.php adodb-informix72.inc.php \
-	adodb-mssql.inc.php adodb-mssqlpo.inc.php adodb-mysql.inc.php \
-	adodb-mysqli.inc.php adodb-mysqlt.inc.php adodb-oci8.inc.php \
+	adodb-ldap.inc.php adodb-mssql.inc.php adodb-mssqlpo.inc.php \
+	adodb-mysql.inc.php adodb-mysqli.inc.php adodb-mysqlt.inc.php \
+	adodb-netezza.inc.php adodb-oci8.inc.php \
 	adodb-oci805.inc.php adodb-oci8po.inc.php adodb-odbc.inc.php \
-	adodb-odbc_mssql.inc.php adodb-odbc_oracle.inc.php adodb-oracle.inc.php \
-	adodb-postgres.inc.php adodb-postgres64.inc.php adodb-postgres7.inc.php \
+	adodb-odbc_mssql.inc.php \
+	adodb-odbc_oracle.inc.php adodb-oracle.inc.php \
+	adodb-odbtp.inc.php adodb-odbtp_unicode.inc.php adodb-pdo.inc.php \
+	adodb-postgres.inc.php adodb-postgres64.inc.php \
+	adodb-postgres7.inc.php \
 	adodb-proxy.inc.php adodb-sapdb.inc.php adodb-sqlanywhere.inc.php \
-	adodb-sqlite.inc.php adodb-sybase.inc.php adodb-vfp.inc.php \
-	adodb-odbtp.inc.php
+	adodb-sqlite.inc.php adodb-sqlitepo.inc.php adodb-sybase.inc.php \
+	adodb-vfp.inc.php adodb-odbtp.inc.php
 
-LANG=	adodb-ca.inc.php adodb-cn.inc.php adodb-cz.inc.php \
+LANG=	adodb-bg.inc.php adodb-bgutf8.inc.php \
+	adodb-ca.inc.php adodb-cn.inc.php adodb-cz.inc.php \
 	adodb-de.inc.php adodb-en.inc.php adodb-es.inc.php \
 	adodb-fr.inc.php adodb-it.inc.php adodb-nl.inc.php \
-	adodb-pt-br.inc.php adodb-ru1251.inc.php adodb-sv.inc.php
+	adodb-pl.inc.php adodb-pt-br.inc.php adodb-ro.inc.php \
+	adodb-ru1251.inc.php adodb-sv.inc.php
 
 PERF=	perf-db2.inc.php perf-informix.inc.php perf-mssql.inc.php \
 	perf-mysql.inc.php perf-oci8.inc.php perf-postgres.inc.php
@@ -128,6 +137,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/cute_icons_for_site
 .for FILE in ${DOCS}
+	${INSTALL_MAN} ${WRKSRC}/docs/${FILE} ${DOCSDIR}/${FILE}
+.endfor
+.for FILE in ${TXTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
 .endfor
 .for FILE in ${ICONS}
