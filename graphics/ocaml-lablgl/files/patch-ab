@@ -1,7 +1,7 @@
---- Makefile.config.orig	Fri Aug  2 20:48:31 2002
-+++ Makefile.config	Fri Aug  2 20:52:28 2002
-@@ -7,28 +7,28 @@
- ##### Adjust these always
+--- Makefile.config.orig	Sun Aug 17 09:16:13 2003
++++ Makefile.config	Sun Aug 17 09:15:43 2003
+@@ -11,28 +11,28 @@
+ #CAMLOPT = ocamlopt.opt
  
  # Where to put the lablgl script
 -BINDIR = /usr/local/bin
@@ -28,7 +28,7 @@
  # The following libraries may be required (try to add them one at a time)
  #GLLIBS = -lGL -lGLU -lXmu -lXext -lpthread
  
- # How to index a library after installing (required on MacOSX)
+ # How to index a library after installing (ranlib required on MacOSX)
 -RANLIB = :
 -#RANLIB = ranlib
 +#RANLIB = :
@@ -36,7 +36,7 @@
  
  ##### Uncomment these for windows
  #TKLIBS = tk83.lib tcl83.lib gdi32.lib user32.lib
-@@ -55,4 +55,4 @@
+@@ -59,4 +59,4 @@
  #TOGLDIR = Togl
  
  # C Compiler options

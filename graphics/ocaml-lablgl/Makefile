@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lablgl
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	graphics
 MASTER_SITES=	http://wwwfun.kurims.kyoto-u.ac.jp/soft/olabl/dist/ \
 		ftp://ftp.inria.fr/lang/caml-light/bazar-ocaml/
