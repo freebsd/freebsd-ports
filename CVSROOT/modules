@@ -8515,6 +8515,7 @@ zh-cmexfonts	ports/chinese/cmexfonts
 zh-cwtex	ports/chinese/cwtex
 zh-cxterm	ports/chinese/cxterm
 zh-dia		ports/chinese/dia
+zh-dictd	ports/chinese/dictd
 zh-dictd-database	ports/chinese/dictd-database
 zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
