@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += ziarc
 
     SUBDIR += atlc
     SUBDIR += cascade
