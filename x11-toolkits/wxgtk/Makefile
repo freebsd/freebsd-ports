@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION= 	2.1.11
+PORTVERSION=	2.1.11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
 		http://www.nectar.com/distfiles/
 DISTNAME=	wxGTK-${PORTVERSION}
-EXTRACT_SUFX=   .tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nectar@FreeBSD.ORG
 
@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
 
-WRKSRC=         ${WRKDIR}/wxGTK
+WRKSRC=		${WRKDIR}/wxGTK
 
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 

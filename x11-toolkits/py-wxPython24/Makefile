@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-wxPython
-PORTVERSION= 	2.1.11
+PORTVERSION=	2.1.11
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://alldunn.com/wxPython/dist/ \
 		http://www.nectar.com/distfiles/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pike-gtk
-PORTVERSION= 	1.1.3
+PORTVERSION=	1.1.3
 CATEGORIES=	x11-toolkits lang
 MASTER_SITES=	http://pike-community.org/sites/pigtk/download/
 DISTNAME=	pigtk_${PORTVERSION}
