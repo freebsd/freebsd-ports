@@ -1,6 +1,9 @@
---- configure.orig	Tue Feb 22 19:46:17 2000
-+++ configure	Mon May  8 00:23:05 2000
-@@ -761,7 +761,7 @@
+
+$FreeBSD$
+
+--- configure.orig	Tue Jan 23 19:57:28 2001
++++ configure	Tue Apr 10 12:17:23 2001
+@@ -763,7 +763,7 @@
  mips-irix6*)	opt_bash_malloc=no ;;	# needs 8-byte alignment
  m68k-sysv)	opt_bash_malloc=no ;;	# fixes file descriptor leak in closedir
  sparc-linux*)	opt_bash_malloc=no ;;	# sparc running linux; requires ELF
@@ -8,13 +11,4 @@
 +*-freebsd*)     opt_bash_malloc=no ;;   # they claim it's better
  *-aix*)		opt_bash_malloc=no ;;	# AIX machines
  *-nextstep*)	opt_bash_malloc=no ;;	# NeXT machines running NeXTstep
- *-rhapsody*)	opt_bash_malloc=no ;;	# Apple Rhapsody
-@@ -8099,7 +8099,7 @@
- then
- 	echo $ac_n "checking shared object configuration for loadable builtins""... $ac_c" 1>&6
- echo "configure:8102: checking shared object configuration for loadable builtins" >&5
--	eval `${CONFIG_SHELL-/bin/sh} ${srcdir}/support/shobj-conf -C "${CC}" -c ${host_cpu} -o ${host_os} -v ${host_vendor}`
-+	eval `${CONFIG_SHELL-/bin/sh} ${srcdir}/support/shobj-conf -C "${CC}" -c "${host_cpu}" -o "${host_os}" -v "${host_vendor}"`
- 	
- 	
- 	
+ *-macos*)	opt_bash_malloc=no ;;	# Apple MacOS X
