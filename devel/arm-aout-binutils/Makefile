@@ -19,6 +19,10 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=arm-aout
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
+		gas/configure gprof/configure intl/configure ld/configure \
+		libiberty/configure opcodes/configure
 MAN1=	arm-aout-addr2line.1 arm-aout-ar.1 arm-aout-as.1	\
 	arm-aout-c++filt.1 arm-aout-ld.1 arm-aout-nlmconv.1	\
 	arm-aout-nm.1 arm-aout-objcopy.1 arm-aout-objdump.1	\
