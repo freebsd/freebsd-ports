@@ -1,0 +1,40 @@
+bin/nana
+bin/nana-c++lg
+bin/nana-clg
+bin/nana-run
+bin/nana-trace
+include/DI.h
+include/DL.h
+include/GDB.h
+include/I.h
+include/L.h
+include/L_buffer.h
+include/Q.h
+include/Qstl.h
+include/calls.h
+include/eiffel.h
+include/nana-config.h
+include/nana.h
+include/nana_error.h
+include/now.h
+@unexec install-info --delete %D/info/nana.info %D/info/dir
+info/nana.info
+info/nana.info-1
+info/nana.info-2
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/nana.info %D/info/dir
+lib/libnana.a
+libexec/nana-trace.gdb
+libexec/nanafilter
+man/man1/nana-clg.1.gz
+man/man1/nana.1.gz
+man/man3/DI.3.gz
+man/man3/DL.3.gz
+man/man3/I.3.gz
+man/man3/L.3.gz
+man/man3/Q.3.gz
+man/man3/Qstl.3.gz
+man/man3/nana.3.gz
+share/nana/nana-run-init.gdb
+share/nana/nana-run.gdb
+@dirrm share/nana
