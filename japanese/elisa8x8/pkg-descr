@@ -1,0 +1,7 @@
+Japanese 8 dot font named `elisa font'.
+
+You can use 'k8', 'r8', 'a8' as an alias for elisa font, 4x8 dots
+jis.x0201 font, 4x8 dots iso8859-1 font.
+
+A simple usage:
+	% kterm -fn a8 -fr r8 -fk k8
