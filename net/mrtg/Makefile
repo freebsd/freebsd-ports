@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.9.18.p9
+PORTVERSION=	2.9.18.p11
 CATEGORIES=	net
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	net/mrtg
-DISTNAME=	${PORTNAME}-2.9.18pre9
+DISTNAME=	${PORTNAME}-2.9.18pre11
 
 MAINTAINER=	demon@FreeBSD.org
 
