@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spoon
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/I/IN/INGY/
@@ -25,11 +25,12 @@ PERL_CONFIGURE=	yes
 MAN3=		Spoon.3 \
 		Spoon::Base.3 \
 		Spoon::CGI.3 \
+		Spoon::Command.3 \
 		Spoon::ContentObject.3 \
 		Spoon::Cookie.3 \
 		Spoon::DataObject.3 \
 		Spoon::Formatter.3 \
-		Spoon::Hook.3 \
+		Spoon::Hooks.3 \
 		Spoon::Hub.3 \
 		Spoon::Installer.3 \
 		Spoon::MetadataObject.3 \
@@ -38,6 +39,15 @@ MAN3=		Spoon.3 \
 		Spoon::Template.3 \
 		Spoon::Template::TT2.3 \
 		Spoon::Utils.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
