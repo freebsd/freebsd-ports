@@ -5957,6 +5957,7 @@ spigot		ports/graphics/spigot
 spim		ports/emulators/spim
 spin		ports/math/spin
 spiralsynth	ports/audio/spiralsynth
+spirit		ports/devel/spirit
 spkrtest	src/usr.sbin/spkrtest
 splay		ports/audio/splay
 splaytk		ports/audio/splaytk
