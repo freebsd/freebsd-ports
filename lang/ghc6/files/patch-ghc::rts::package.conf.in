@@ -1,0 +1,10 @@
+--- ghc/rts/package.conf.in.orig	Tue Dec 16 17:58:38 2003
++++ ghc/rts/package.conf.in	Thu Jan 15 00:00:31 2004
+@@ -140,6 +140,7 @@
+          , "-u", "GHCziWeak_runFinalizzerBatch_closure"
+          , "-u", "__stginit_Prelude"
+ #endif
++         , "-L%%LOCALBASE%%/lib"
+ #if defined(THREADED_RTS) && defined(freebsd_TARGET_OS)
+ 	 , "-pthread"
+ #endif

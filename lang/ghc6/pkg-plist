@@ -9,6 +9,7 @@ bin/hsc2hs
 bin/hp2ps
 bin/ghcprof
 bin/stat2resid
+lib/ghc-%%GHC_VERSION%%/HSQuickCheck.o
 lib/ghc-%%GHC_VERSION%%/HSbase.o
 lib/ghc-%%GHC_VERSION%%/HSbase_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSconcurrent.o
@@ -20,12 +21,12 @@ lib/ghc-%%GHC_VERSION%%/HSlang.o
 lib/ghc-%%GHC_VERSION%%/HSlang_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSnet.o
 lib/ghc-%%GHC_VERSION%%/HSnetwork.o
+lib/ghc-%%GHC_VERSION%%/HSparsec.o
 lib/ghc-%%GHC_VERSION%%/HSposix.o
 lib/ghc-%%GHC_VERSION%%/HSposix_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSreadline.o
 lib/ghc-%%GHC_VERSION%%/HSrts.o
 lib/ghc-%%GHC_VERSION%%/HStext.o
-lib/ghc-%%GHC_VERSION%%/HStext_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSunix.o
 lib/ghc-%%GHC_VERSION%%/HSunix_cbits.o
 lib/ghc-%%GHC_VERSION%%/HSutil.o
@@ -36,6 +37,7 @@ lib/ghc-%%GHC_VERSION%%/ghc-asm
 lib/ghc-%%GHC_VERSION%%/ghc-pkg.bin
 lib/ghc-%%GHC_VERSION%%/ghc-split
 lib/ghc-%%GHC_VERSION%%/ghc-usage.txt
+lib/ghc-%%GHC_VERSION%%/ghci-usage.txt
 lib/ghc-%%GHC_VERSION%%/hsc2hs-bin
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/concurrent/CVar.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/concurrent/CVar.p_hi
@@ -145,10 +147,6 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/Arrow.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/Arrow.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/ByteArray.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/ByteArray.p_hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/CCall.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/CCall.p_hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/CStringDeprec.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/CStringDeprec.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/CTypesISO.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/CTypesISO.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/lang/DiffArray.hi
@@ -263,8 +261,6 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Html.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Html.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/HtmlBlockTable.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/HtmlBlockTable.p_hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/MatchPS.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/MatchPS.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Parsec.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Parsec.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/ParsecChar.hi
@@ -287,14 +283,10 @@ lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/ParsecToken.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/ParsecToken.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Pretty.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Pretty.p_hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Regex.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/Regex.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/RegexString.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/text/RegexString.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/GetOpt.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/GetOpt.p_hi
-lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/MD5.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/MD5.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/Memo.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/Memo.p_hi
 lib/ghc-%%GHC_VERSION%%/hslibs-imports/util/Observe.hi
@@ -436,6 +428,18 @@ lib/ghc-%%GHC_VERSION%%/imports/Data/FiniteMap.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/FiniteMap.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Generics.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Aliases.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Aliases.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Basics.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Basics.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Reify.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Reify.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Schemes.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Schemes.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Text.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Text.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Twins.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Generics/Twins.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Graph.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Graph.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/HashTable.hi
@@ -468,6 +472,8 @@ lib/ghc-%%GHC_VERSION%%/imports/Data/Tree.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Tree.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Tuple.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Tuple.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/Data/Typeable.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Typeable.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Unique.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Data/Unique.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Data/Word.hi
@@ -494,8 +500,6 @@ lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/String.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/String.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/Types.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/Types.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/TypesISO.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/C/TypesISO.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Foreign/Concurrent.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/Foreign/Concurrent.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Foreign/ForeignPtr.hi
@@ -526,6 +530,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Base.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Base.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/Conc.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Conc.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/GHC/Dotnet.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Dotnet.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/Enum.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Enum.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/Err.hi
@@ -574,6 +580,8 @@ lib/ghc-%%GHC_VERSION%%/imports/GHC/Storable.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Storable.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/TopHandler.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/TopHandler.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/GHC/Unicode.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Unicode.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/Weak.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/GHC/Weak.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/GHC/Word.hi
@@ -648,6 +656,8 @@ lib/ghc-%%GHC_VERSION%%/imports/System/Console/GetOpt.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Console/GetOpt.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Console/Readline.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Console/Readline.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Console/SimpleLineEditor.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Console/SimpleLineEditor.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Directory.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Directory.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Environment.hi
@@ -694,6 +704,8 @@ lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Resource.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Resource.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Signals.p_hi
+lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Temp.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Temp.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Terminal.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Terminal.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Posix/Time.hi
@@ -706,8 +718,6 @@ lib/ghc-%%GHC_VERSION%%/imports/System/Posix/User.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Posix/User.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Random.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Random.p_hi
-lib/ghc-%%GHC_VERSION%%/imports/System/Sendfile.hi
-%%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Sendfile.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/System/Time.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/imports/System/Time.p_hi
 lib/ghc-%%GHC_VERSION%%/imports/Text/Html.hi
@@ -766,10 +776,11 @@ lib/ghc-%%GHC_VERSION%%/include/ClosureMacros.h
 lib/ghc-%%GHC_VERSION%%/include/ClosureTypes.h
 lib/ghc-%%GHC_VERSION%%/include/Closures.h
 lib/ghc-%%GHC_VERSION%%/include/Constants.h
+lib/ghc-%%GHC_VERSION%%/include/DNInvoke.h
 lib/ghc-%%GHC_VERSION%%/include/Derived.h
 lib/ghc-%%GHC_VERSION%%/include/DerivedConstants.h
 lib/ghc-%%GHC_VERSION%%/include/DietHEP.h
-lib/ghc-%%GHC_VERSION%%/include/Dynamic.h
+lib/ghc-%%GHC_VERSION%%/include/Dotnet.h
 lib/ghc-%%GHC_VERSION%%/include/GranSim.h
 lib/ghc-%%GHC_VERSION%%/include/Hooks.h
 lib/ghc-%%GHC_VERSION%%/include/HsBase.h
@@ -778,7 +789,6 @@ lib/ghc-%%GHC_VERSION%%/include/HsLang.h
 lib/ghc-%%GHC_VERSION%%/include/HsNet.h
 lib/ghc-%%GHC_VERSION%%/include/HsPosix.h
 lib/ghc-%%GHC_VERSION%%/include/HsReadline.h
-lib/ghc-%%GHC_VERSION%%/include/HsText.h
 lib/ghc-%%GHC_VERSION%%/include/HsUnix.h
 lib/ghc-%%GHC_VERSION%%/include/HsUtil.h
 lib/ghc-%%GHC_VERSION%%/include/InfoMacros.h
@@ -811,6 +821,7 @@ lib/ghc-%%GHC_VERSION%%/include/StgTicky.h
 lib/ghc-%%GHC_VERSION%%/include/StgTypes.h
 lib/ghc-%%GHC_VERSION%%/include/TSO.h
 lib/ghc-%%GHC_VERSION%%/include/TailCalls.h
+lib/ghc-%%GHC_VERSION%%/include/Typeable.h
 lib/ghc-%%GHC_VERSION%%/include/Updates.h
 lib/ghc-%%GHC_VERSION%%/include/config.h
 lib/ghc-%%GHC_VERSION%%/include/consUtils.h
@@ -820,6 +831,8 @@ lib/ghc-%%GHC_VERSION%%/include/gmp.h
 lib/ghc-%%GHC_VERSION%%/include/ieee-flpt.h
 lib/ghc-%%GHC_VERSION%%/include/lockFile.h
 lib/ghc-%%GHC_VERSION%%/include/timeUtils.h
+lib/ghc-%%GHC_VERSION%%/libHSQuickCheck.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSQuickCheck_p.a
 lib/ghc-%%GHC_VERSION%%/libHSbase.a
 lib/ghc-%%GHC_VERSION%%/libHSbase_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSbase_p.a
@@ -840,6 +853,8 @@ lib/ghc-%%GHC_VERSION%%/libHSnet.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSnet_p.a
 lib/ghc-%%GHC_VERSION%%/libHSnetwork.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSnetwork_p.a
+lib/ghc-%%GHC_VERSION%%/libHSparsec.a
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSparsec_p.a
 lib/ghc-%%GHC_VERSION%%/libHSposix.a
 lib/ghc-%%GHC_VERSION%%/libHSposix_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSposix_p.a
@@ -848,7 +863,6 @@ lib/ghc-%%GHC_VERSION%%/libHSreadline.a
 lib/ghc-%%GHC_VERSION%%/libHSrts.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSrts_p.a
 lib/ghc-%%GHC_VERSION%%/libHStext.a
-lib/ghc-%%GHC_VERSION%%/libHStext_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHStext_p.a
 lib/ghc-%%GHC_VERSION%%/libHSunix.a
 lib/ghc-%%GHC_VERSION%%/libHSunix_cbits.a
@@ -856,7 +870,6 @@ lib/ghc-%%GHC_VERSION%%/libHSunix_cbits.a
 lib/ghc-%%GHC_VERSION%%/libHSutil.a
 lib/ghc-%%GHC_VERSION%%/libHSutil_cbits.a
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/libHSutil_p.a
-lib/ghc-%%GHC_VERSION%%/libgmp.a
 lib/ghc-%%GHC_VERSION%%/package.conf
 lib/ghc-%%GHC_VERSION%%/parse-gcstats.prl
 lib/ghc-%%GHC_VERSION%%/process-gcstats.prl
@@ -886,6 +899,7 @@ lib/ghc-%%GHC_VERSION%%/unlit
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug/QuickCheck
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Debug
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/STRef
+@dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Generics
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array/IO
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data/Array
 @dirrm lib/ghc-%%GHC_VERSION%%/imports/Data

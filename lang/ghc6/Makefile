@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ghc6
-PORTVERSION=	6.0.1
+PORTVERSION=	6.2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
@@ -27,11 +27,14 @@ DISTFILES+=	${BOOT_DIST}
 DISTFILES+=	${BOOT_DIST5}
 .endif
 
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
+
 MAINTAINER=	simonmar@microsoft.com
 COMMENT=	A Compiler for the functional language Haskell
 
 WRKSRC=		${WRKDIR}/ghc-${PORTVERSION}
 USE_PERL5=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
@@ -47,9 +50,11 @@ PLIST_SUB+=	PROFILE=""
 BOOT_DIR=	${WRKDIR}/ghc-${PORTVERSION}-boot
 BOOT_GHC=	${BOOT_DIR}/bin/i386-unknown-freebsd/ghc-${PORTVERSION}
 
-CONFIGURE_ARGS= --with-ghc=${BOOT_GHC}
+CONFIGURE_ARGS= --with-ghc=${BOOT_GHC} --with-gcc=${CC}
 # specifying CONFIGURE_TARGET doesn't work for some reason.
 CONFIGURE_TARGET=
+# libgmp:
+CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
 # override TMPDIR because /tmp often doesn't have enough space
 # to build some of the larger libraries.
@@ -73,6 +78,10 @@ pre-everything::
 post-extract:
 	@${ECHO} >>${WRKSRC}/mk/build.mk GhcLibWays=
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} s+%%LOCALBASE%%+${LOCALBASE}+ \
+		${WRKSRC}/ghc/rts/package.conf.in
 
 pre-configure:
 	@(cd ${BOOT_DIR} && ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
