@@ -1,90 +1,48 @@
-# New ports collection makefile for:	rubytk
+# New ports collection makefile for:	ruby-tk
 # Date created:		15 March 1999
 # Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	rubytk
-PORTVERSION=	1.4.6
-CATEGORIES+=	x11-toolkits ruby
+PORTNAME=	tk
+PORTVERSION=	${RUBY_VERSION}.p3
+CATEGORIES+=	x11-toolkits ruby tk${TK_VERSION}
 MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	1.4
-DISTNAME=	ruby-${PORTVERSION}
+#MASTER_SITE_SUBDIR=	${RUBY_VER}
+PKGNAMEPREFIX=  ${RUBY_PKGNAMEPREFIX}
+DISTNAME=	ruby-${PORTVERSION:S/.p/-preview/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER?=	yasuf@bsdclub.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-LIB_DEPENDS=	${TCL_LIB}.1:${PORTSDIR}/${TCL_CATEGORY}/tcl${TCL_VERSION} \
-		${TK_LIB}.1:${PORTSDIR}/${TK_CATEGORY}/tk${TK_VERSION}
+RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/tcltklib.so:${PORTSDIR}/${TCLTKLIB_CATEGORY}/ruby-tcltklib
 
-USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/ext
-CONFIGURE_ARGS=	--with-tcllib="${TCL_LIB}" --with-tklib="${TK_LIB}" \
-		--with-tcl-lib="${LOCALBASE}/lib/${TCL_DIR}" \
-		--with-tk-lib="${LOCALBASE}/lib/${TK_DIR}" \
-		--with-tcl-include="${LOCALBASE}/include/${TCL_DIR}" \
-		--with-tk-include="${LOCALBASE}/include/${TK_DIR}" \
-		--with-X11-dir="${X11BASE}"
-PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
+WRKSRC=		${WRKDIR}/ruby-${PORTVERSION:R}/ext/tk
 
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
-DOCDIR=		${PREFIX}/share/doc/ruby
-EXAMPLESDIR=	${PREFIX}/share/examples/ruby
-
-# Set these vars as the version numbers (without decimal points) of Tcl/Tk
-# you want to use with Ruby/Tk.
-# e.g.: make TCL_VERSION=42 TK_VERSION=76 WITH_TCL_JP=yes build
-TCL_VERSION?=	82
 TK_VERSION?=	82
-.if defined(WITH_TCL_JP)
-TCL_CATEGORY=	japanese
-TK_CATEGORY=	japanese
-TCL_JP=		jp
+.if defined(WITH_TCLTK_JP)
+TCLTKLIB_CATEGORY?=	japanese
 .else
-TCL_CATEGORY=	lang
-TK_CATEGORY=	x11-toolkits
-TCL_JP=		# empty
+TCLTKLIB_CATEGORY?=	lang
 .endif
 
-TCL_LIB=	tcl${TCL_VERSION}${TCL_JP}
-TK_LIB=		tk${TK_VERSION}${TCL_JP}
-TCL_DIR=	`echo "${TCL_LIB}" | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
-TK_DIR=		`echo "${TK_LIB}"  | ${SED} 's/\([0-9]\)\([0-9]\)/\1.\2/'`
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
-RUBY?=		${LOCALBASE}/bin/ruby
-EXTS=		tcltklib tk
+.if defined(PKGNAMEPREFIX)
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
+.else
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+.endif
 
-do-configure:
-.for dir in ${EXTS}
-	@${ECHO_MSG} "Configuring in ${dir}..."
-	@cd ${WRKSRC}/${dir}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
-.endfor
-
-do-build:
-.for dir in ${EXTS}
-	@${ECHO_MSG} "Building in ${dir}..."
-	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE} ${ALL_TARGET}
-.endfor
-
-do-install:
-.for dir in ${EXTS}
-	@${ECHO_MSG} "Installing in ${dir}..."
-	@cd ${WRKSRC}/${dir}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/sample/* ${EXAMPLESDIR}/${dir}
-.endif
-.endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}/tcltklib/demo
-	${INSTALL_DATA} ${WRKSRC}/tcltklib/demo/* ${EXAMPLESDIR}/tcltklib/demo
-	${MKDIR} ${DOCDIR}/tcltklib
-	${INSTALL_DATA} ${WRKSRC}/tcltklib/*.euc ${DOCDIR}/tcltklib
+	${MKDIR} ${RUBY_EXAMPLESDIR}/tk
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/tk/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

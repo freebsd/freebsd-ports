@@ -1,4 +1,4 @@
-# New ports collection makefile for:    ja-rubytk
+# New ports collection makefile for:    ja-ruby-tcltklib
 # Date created:         15 March 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
@@ -11,8 +11,8 @@ MAINTAINER=	yasuf@bsdclub.org
 
 TCL_VERSION?=	80
 TK_VERSION?=	80
-WITH_TCL_JP=	yes
+WITH_TCLTK_JP=	yes
 
-MASTERDIR=	${.CURDIR}/../../x11-toolkits/rubytk
+MASTERDIR=	${.CURDIR}/../../lang/ruby-tcltklib
 
 .include "${MASTERDIR}/Makefile"
