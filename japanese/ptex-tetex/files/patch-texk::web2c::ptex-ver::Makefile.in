@@ -1,5 +1,5 @@
---- texk/web2c/ptex-3.1.3/Makefile.in.orig	Tue Jun 17 14:30:40 2003
-+++ texk/web2c/ptex-3.1.3/Makefile.in	Sat Jun 12 13:06:37 2004
+--- texk/web2c/ptex-3.1.4/Makefile.in.orig	Tue Jun 17 14:30:40 2003
++++ texk/web2c/ptex-3.1.4/Makefile.in	Wed Sep 15 18:09:11 2004
 @@ -5,7 +5,7 @@
  
  default: programs formats
@@ -32,7 +32,7 @@
  	$(SHELL) $(thisdir)/mkconf $(kpathsea_dir)/texmf.cnf > texmf.cnf
  
 -dumpenv = TEXMFCNF=$(thisdir) TEXMF=$(texmf)
-+dumpenv = TEXMFCNF=$(thisdir) TEXMF=\{$(texmf),${TEXMFLOCAL}\}
++dumpenv = TEXMFCNF=$(thisdir) TEXMF=\{${TEXMFDUMP},$(texmf),${TEXMFLOCAL}\}
  
  ptex-euc.fmt: ptex texmf.cnf
  	$(dumpenv) $(MAKE) $(makeargs) files="--progname=ptex ptex.tex min10.tfm" prereq-check
