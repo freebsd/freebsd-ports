@@ -1,0 +1,15 @@
+bin/elvis
+bin/ctags
+bin/ref
+bin/elvrec
+bin/elvprsv
+bin/vi
+bin/ex
+bin/view
+bin/input
+man/man1/elvis.1.gz
+man/man1/ctags.1.gz
+man/man1/ref.1.gz
+man/man1/elvrec.1.gz
+man/man1/elvprsv.1.gz
+share/jp-elvis/README.j18

@@ -1,0 +1,18 @@
+Elvis is a clone of vi/ex, the standard UNIX editor.  Elvis supports
+nearly all of the vi/ex commands, in both visual mode and colon mode.
+
+This is version 1.8pl4 with a kanji patch to display & Edit Japanese. 
+It understands JIS/EUC/Shift-JIS. It display Kanji character with JIS
+code by default: if you want to display with EUC/Shift-JIS, add "-kdeuc"
+/"-ksjis" to the command line option.
+
+        You can obtain elvis 1.8 patchlevel 4, from:
+
+ftp://ftp.cs.pdx.edu/pub/elvis/
+
+	and patchkit for making original jelvis 1.8p4+j1.1 from:
+
+ftp://ftp.foretune.co.jp/pub/tools/jelvis/
+
+- Yoshiro MIHIRA
+(sanpei@yy.cs.keio.ac.jp)
