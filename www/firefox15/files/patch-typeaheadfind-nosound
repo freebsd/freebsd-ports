@@ -1,0 +1,72 @@
+--- extensions/typeaheadfind/src/nsTypeAheadFind.cpp.orig	Sun Feb  8 01:13:31 2004
++++ extensions/typeaheadfind/src/nsTypeAheadFind.cpp	Sun Feb  8 01:19:17 2004
+@@ -323,11 +323,11 @@
+   prefBranch->GetBoolPref("accessibility.typeaheadfind.startlinksonly",
+                           &mStartLinksOnlyPref);
+ 
+-  PRBool isSoundEnabled = PR_TRUE;
++  mIsSoundEnabled = PR_TRUE;
+   prefBranch->GetBoolPref("accessibility.typeaheadfind.enablesound",
+-                           &isSoundEnabled);
++                           &mIsSoundEnabled);
+   nsXPIDLCString soundStr;
+-  if (isSoundEnabled) {
++  if (mIsSoundEnabled) {
+     prefBranch->GetCharPref("accessibility.typeaheadfind.soundURL",
+                              getter_Copies(soundStr));
+   }
+@@ -612,7 +612,7 @@
+     return NS_OK;
+   }
+ 
+-  if (!mIsSoundInitialized) {
++  if (!mIsSoundInitialized && mIsSoundEnabled) {
+     // This makes sure system sound library is loaded so that
+     // there's no lag before the first sound is played
+     // by waiting for the first keystroke, we still get the startup time benefits.
+@@ -760,11 +760,13 @@
+         // It keeps us from accidentally hitting backspace too many times and
+         // going back in history when we really just wanted to clear 
+         // the find string.
++	if (mIsSoundEnabled) {
+         nsCOMPtr<nsISound> soundInterface =
+           do_CreateInstance("@mozilla.org/sound;1");
+         if (soundInterface) {
+           soundInterface->Beep(); // beep to warn
+         }
++	}
+         mIsBackspaceProtectOn = PR_FALSE;
+       }
+       else {
+@@ -1009,7 +1011,9 @@
+ 
+     // Error sound (don't fire when backspace is pressed, they're 
+     // trying to correct the mistake!)
+-    PlayNotFoundSound();
++    if (mIsSoundEnabled) {
++      PlayNotFoundSound();
++    }
+ 
+     // Remove bad character from buffer, so we can continue typing from
+     // last matched character
+@@ -1056,7 +1060,7 @@
+ void
+ nsTypeAheadFind::PlayNotFoundSound()
+ {
+-  if (mNotFoundSoundURL.IsEmpty())    // no sound
++  if (mNotFoundSoundURL.IsEmpty() || !mIsSoundEnabled)    // no sound
+     return;
+   if (!mSoundInterface) {
+     mSoundInterface = do_CreateInstance("@mozilla.org/sound;1");
+--- extensions/typeaheadfind/src/nsTypeAheadFind.h.orig	Sun Feb  8 01:11:53 2004
++++ extensions/typeaheadfind/src/nsTypeAheadFind.h	Sun Feb  8 01:19:29 2004
+@@ -194,6 +194,9 @@
+ 
+   nsCString mNotFoundSoundURL;
+ 
++  // Move the sound enabled boolean out for all methods to access.
++  PRBool mIsSoundEnabled;
++
+   // PRBool's are used instead of PRPackedBool's where the address of the
+   // boolean variable is getting passed into a method. For example:
+   // GetBoolPref("accessibility.typeaheadfind.linksonly", &mLinksOnlyPref);
