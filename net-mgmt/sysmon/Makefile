@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	sysmon
-PORTVERSION=	0.91.19
+PORTVERSION=	0.91.20
 CATEGORIES=	net
-MASTER_SITES=	ftp://puck.nether.net/pub/jared/
+MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
+		http://titan.oxeo.com/mirror/sysmon.org/
 
-MAINTAINER=	mk@nomtec.net
+MAINTAINER=	mk@oxeo.com
 COMMENT=	A network tool designed for high performance and accurate monitoring
 
 DOCS=		Changes.html binaries.html config.html docs.html index.html \
