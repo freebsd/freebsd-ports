@@ -227,6 +227,7 @@
     SUBDIR += tclmidi
     SUBDIR += teknap
     SUBDIR += tempest_for_eliza
+    SUBDIR += terminatorx
     SUBDIR += timidity
     SUBDIR += timidity++
     SUBDIR += timidity++-emacs
