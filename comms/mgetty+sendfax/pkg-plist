@@ -46,23 +46,6 @@ info/mgetty.info-4
 @exec install-info %D/info/mgetty.info %D/info/dir
 lib/mgetty+sendfax/cour25.pbm
 lib/mgetty+sendfax/cour25n.pbm
-man/man1/coverpg.1.gz
-man/man1/fax.1.gz
-man/man1/faxq.1.gz
-man/man1/faxrm.1.gz
-man/man1/faxrunq.1.gz
-man/man1/faxspool.1.gz
-man/man1/g3cat.1.gz
-man/man1/g32pbm.1.gz
-man/man1/pbm2g3.1.gz
-man/man1/pvf.1.gz
-man/man1/zplay.1.gz
-man/man4/mgettydefs.4.gz
-man/man5/faxqueue.5.gz
-man/man8/callback.8.gz
-man/man8/faxrunqd.8.gz
-man/man8/mgetty.8.gz
-man/man8/sendfax.8.gz
 sbin/faxrunqd
 sbin/mgetty
 sbin/sendfax
