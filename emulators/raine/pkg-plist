@@ -1,0 +1,28 @@
+bin/raine
+%%DATADIR%%/cheats.cfg
+%%DATADIR%%/languages/Brasil.cfg
+%%DATADIR%%/languages/CZECH.CFG
+%%DATADIR%%/languages/Catala.cfg
+%%DATADIR%%/languages/Dansk.cfg
+%%DATADIR%%/languages/Dutch.cfg
+%%DATADIR%%/languages/English.cfg
+%%DATADIR%%/languages/Español.cfg
+%%DATADIR%%/languages/Euskera.cfg
+%%DATADIR%%/languages/Finnish.cfg
+%%DATADIR%%/languages/French.cfg
+%%DATADIR%%/languages/French2.cfg
+%%DATADIR%%/languages/German.cfg
+%%DATADIR%%/languages/German2.cfg
+%%DATADIR%%/languages/Italian.cfg
+%%DATADIR%%/languages/Japanese.cfg
+%%DATADIR%%/languages/POLISH.CFG
+%%DATADIR%%/languages/Portugal.cfg
+%%DATADIR%%/languages/Spanish.cfg
+%%DATADIR%%/languages/Svenska.cfg
+%%DATADIR%%/languages/Template.cfg
+%%DATADIR%%/languages/Turkish.cfg
+%%DATADIR%%/languages/galego.cfg
+%%DATADIR%%/raine.dat
+@dirrm %%DATADIR%%/roms
+@dirrm %%DATADIR%%/languages
+@dirrm %%DATADIR%%

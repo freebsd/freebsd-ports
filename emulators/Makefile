@@ -69,6 +69,7 @@
     SUBDIR += qcl
     SUBDIR += qemu
     SUBDIR += quasi88
+    SUBDIR += raine
     SUBDIR += rtc
     SUBDIR += sim
     SUBDIR += sim6811
