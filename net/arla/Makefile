@@ -10,7 +10,7 @@ PORTVERSION=	0.35.6
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
-MAINTAINER=	assar@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free AFS client implementation
 
 BROKEN=		"Does not build"
