@@ -8,8 +8,7 @@
 
 DISTNAME=	libmikmod-3.1.8
 CATEGORIES=	audio
-# The files at multimania.com seem to be corrupted
-MASTER_SITES=	http://mikmod.darkorb.net/libmikmod/
+MASTER_SITES=	http://www.mikmod.darkorb.net/libmikmod/
 
 MAINTAINER=	mharo@FreeBSD.org
 
@@ -18,10 +17,9 @@ LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 
-pre-build:
-	${RM} -rf ${WRKSRC}/info/mikmod.info-*
+MAN1=	libmikmod-config.1
 
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+pre-build:
+	${RM} -rf ${WRKSRC}/docs/mikmod.info-*
 
 .include <bsd.port.mk>
