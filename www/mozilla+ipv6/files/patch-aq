@@ -1,5 +1,5 @@
---- nsprpub/pr/include/md/_pth.h.orig	Sat Jan 20 17:28:34 2001
-+++ nsprpub/pr/include/md/_pth.h	Sat Jan 20 17:29:04 2001
+--- nsprpub/pr/include/md/_pth.h.orig	Mon Apr  3 17:25:43 2000
++++ nsprpub/pr/include/md/_pth.h	Fri Feb 16 00:30:46 2001
 @@ -183,7 +183,7 @@
  #define PT_PRIO_MAX            sched_get_priority_max(SCHED_OTHER)
  #endif /* defined(_PR_DCETHREADS) */
