@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/krn/ \
 
 MAINTAINER=	adsharma@sharmas.dhs.org
 
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
+		uu.1:${PORTSDIR}/converters/uulib \
+		mimelib.2:${PORTSDIR}/converters/kdesupport11
+
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
