@@ -16,7 +16,7 @@ $FreeBSD$
 +INCLUDE = -I$(X11BASE)/include -I$(X11BASE)/include/GL
  
 -CFLAGS = $(INCLUDE) $(ARCH) -O2 -m486 -Wall -pipe \
-+CFLAGS += $(INCLUDE) $(ARCH) -DSOUND -Wall -pipe \
++CFLAGS += $(INCLUDE) $(ARCH) -DSOUND -Wall -pipe ${PTHREAD_CFLAGS} \
  	-pedantic -funroll-loops -mieee-fp
  
 -LDFLAGS = -L/usr/X11R6/lib -L$(MESA)/lib
@@ -38,7 +38,7 @@ $FreeBSD$
  	$(CC) -o $(EXECNAME) $(Obj) $(LDFLAGS) \
 -	-lMesaaux -lMesatk -lMesaGLU -lMesaGL \
 -	-lXext -lX11 -lm
-+	-laux -lGLU -lGL -lXext -lX11 -lm -pthread
++	-laux -lGLU -lGL -lXext -lX11 -lm $(PTHREAD_LIBS)
  	@echo "****** Done ******"
  
  linux: $(Obj)
