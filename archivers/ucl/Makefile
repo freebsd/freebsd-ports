@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucl
-PORTVERSION=	0.92
+PORTVERSION=	1.01
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/ \
 		${MASTER_SITE_SUNSITE}
