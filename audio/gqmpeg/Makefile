@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	lyngbol@wheel.dk
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 .if defined(WITH_MPG321)
 RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
 .else
@@ -25,16 +24,26 @@ USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		USE_GNOME="${USE_GNOME}"
 
 MAN1=		gqmpeg.1
 
 .include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME+=	gnomeprefix gnomelibs
+PKGNAMESUFFIX=	-gnome
+CONFIGURE_ENV+=	USE_GNOME="yes"
+PLIST_SUB+=	DATATDIR="share/gnome"
+.else
+CONFIGURE_ENV+=	USE_GNOME=""
+PLIST_SUB+=	DATADIR="share"
+.endif
 
 .if !defined(WITH_MPG321)
 pre-everything::
