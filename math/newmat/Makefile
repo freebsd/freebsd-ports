@@ -19,13 +19,10 @@ NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	nm_gnu.mak
+MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	everything
 
 .include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,^CXX,#CXX,g ; \
-		s,^CXXFLAGS,#CXXFLAGS,g" ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
