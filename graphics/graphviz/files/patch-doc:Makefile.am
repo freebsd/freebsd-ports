@@ -5,6 +5,6 @@
  DOCS = dotguide.ps dotty.ps gd.html lefty.ps neatoguide.ps tcldot.html
  
 -docdir = $(prefix)/doc
-+docdir = $(datadir)/doc/graphviz
++docdir = $(datadir)/doc/@PACKAGE@
  doc_DATA = $(DOCS)
  EXTRA_DIST = $(DOCS)

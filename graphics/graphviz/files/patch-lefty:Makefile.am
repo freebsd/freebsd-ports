@@ -1,0 +1,10 @@
+--- lefty/Makefile.am.orig	Sun Oct 15 16:53:05 2000
++++ lefty/Makefile.am	Fri Nov  3 03:24:02 2000
+@@ -21,6 +21,7 @@
+ 	nmakefile makefile.old
+ 
+ INCLUDES = \
++	@X_CFLAGS@ \
+ 	-I$(srcdir)/ws/x11 \
+ 	-I$(srcdir)/os/unix \
+ 	-I$(srcdir)/dot2l
