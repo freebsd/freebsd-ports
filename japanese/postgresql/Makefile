@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/ \
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
+NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLISTS=
 
