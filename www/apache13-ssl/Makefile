@@ -37,14 +37,11 @@ DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=     adam@algroup.co.uk
 
-BUILD_DEPENDS=  openssl:${PORTSDIR}/security/openssl
-
-LIB_DEPENDS=	crypto.1:${PORTSDIR}/security/openssl \
-		ssl.1:${PORTSDIR}/security/openssl
-RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
+USE_OPENSSL=	RSA
+.include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=	yes
-CFLAGS+=	-I${PREFIX}/include/openssl
+CFLAGS+=	-I${OPENSSLINC}/openssl
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
 		--with-layout=GNU \
@@ -71,13 +68,11 @@ CFLAGS+= -O6 -fomit-frame-pointer
 .endif
 
 CONFIGURE_ENV= OPTIM='${OPTIM}'
-.if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-MAKE_ENV+=EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
+.if defined(OPENSSL_RSAREF)
+CONFIGURE_ENV+= EXTRA_SSL_LIBS="-L${OPENSSLLIB} -lRSAglue -L${LOCALBASE}/lib -lrsaref"
 .endif
 
 EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
-
-RESTRICTED=     "Contains cryptography"
 
 MAN1= 		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8= 		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
@@ -86,24 +81,13 @@ post-extract:
 	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
 post-patch:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch
-
-pre-configure:
-.if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES
-	@${ECHO}
-	@${ECHO} "*** Warning!"
-	@${ECHO} You must set variable USA_RESIDENT to YES if you are USA
-	@${ECHO} resident and are using RSAREF otherwise package will not link
-	@${ECHO} correctly.
-	@${ECHO} 
-	@${ECHO} 
-.endif
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
 
 certificate:
-	@if [ -f ${PREFIX}/lib/openssl.cnf ]; then \
+	@if [ -f ${OPENSSLDIR}/openssl.cnf ]; then \
 		cd ${WRKSRC}; ${MAKE} ${MAKE_ENV} $@; \
 		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem; \
 	else \
-		${ECHO} "You must create the file ${PREFIX}/lib/openssl.cnf first."; \
+		${ECHO} "You must create the file ${OPENSSLDIR}/openssl.cnf first."; \
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
