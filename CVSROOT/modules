@@ -10804,6 +10804,7 @@ xorg-fonts-encodings	ports/x11-fonts/xorg-fonts-encodings
 xorg-fonts-miscbitmaps	ports/x11-fonts/xorg-fonts-miscbitmaps
 xorg-fonts-truetype	ports/x11-fonts/xorg-fonts-truetype
 xorg-fonts-type1	ports/x11-fonts/xorg-fonts-type1
+xorg-fontserver	ports/x11-servers/xorg-fontserver
 xorg-libraries	ports/x11/xorg-libraries
 xorg-manpages	ports/x11/xorg-manpages
 xorg-server	ports/x11-servers/xorg-server
