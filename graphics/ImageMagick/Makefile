@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	6.1.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -34,6 +35,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
+USE_LIBLTDL=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
