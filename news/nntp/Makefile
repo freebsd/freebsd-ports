@@ -27,6 +27,8 @@ PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
 PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
 
 MODIFY=		conf.h Makefile
+DOCSFILES1=	AUTHORIZE CHANGES README README-conf.h SYSLOG doc/rfc977
+DOCSFILES2=	server support xfer xmit
 
 NEWSBIN?=	${PREFIX}/news/cnewsbin
 NEWSCTL?=	${PREFIX}/news/lib
@@ -53,5 +55,15 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/overview.fmt ${NEWSCTL}/overview.fmt
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in ${DOCSFILES1}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+.endfor
+.for i in ${DOCSFILES2}
+	${INSTALL_DATA} ${WRKSRC}/${i}/README ${DOCSDIR}/${i}-README
+.endfor
+.endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
