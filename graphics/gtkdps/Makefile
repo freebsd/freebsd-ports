@@ -22,7 +22,4 @@ CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-
 .include <bsd.port.mk>
