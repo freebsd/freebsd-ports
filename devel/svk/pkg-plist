@@ -53,6 +53,7 @@ bin/svk
 %%SITE_PERL%%/SVK/Target.pm
 %%SITE_PERL%%/SVK/Util.pm
 %%SITE_PERL%%/SVK/XD.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK/.packlist
 @dirrm %%SITE_PERL%%/SVK/I18N
 @dirrm %%SITE_PERL%%/SVK/Editor
 @dirrm %%SITE_PERL%%/SVK/Command

@@ -1,0 +1,8 @@
+***WANRING***
+
+Mirrored path states incompatible with previous versions (<= 0.17)
+of SVK. Run
+
+svk mirror --upgrade // (and other depots if you have).
+
+***WANRING***

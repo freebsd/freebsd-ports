@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	svk
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
 DISTNAME=	SVK-${PORTVERSION}
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	rafan@infor.org
 COMMENT=	A Distributed Version Control System
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversio
 		${SITE_PERL}/Locale/Maketext/Lexicon.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Lexicon \
 		${SITE_PERL}/Locale/Maketext/Simple.pm:${PORTSDIR}/devel/p5-Locale-Maketext-Simple \
 		${SITE_PERL}/PerlIO/via/dynamic.pm:${PORTSDIR}/devel/p5-PerlIO-via-dynamic \
+		${SITE_PERL}/PerlIO/via/symlink.pm:${PORTSDIR}/devel/p5-PerlIO-via-symlink \
 		${SITE_PERL}/Pod/Escapes.pm:${PORTSDIR}/textproc/p5-Pod-Escapes \
 		${SITE_PERL}/Pod/Simple.pm:${PORTSDIR}/textproc/p5-Pod-Simple \
 		${SITE_PERL}/Regexp/Shellish.pm:${PORTSDIR}/devel/p5-Regexp-Shellish \
@@ -93,12 +94,19 @@ MAN3=		SVK.3 \
 IGNORE=		This program only support perl 5.8.0 or above
 .endif
 
+PPERL=		${PERL}
+
 .if defined(WITH_PPERL)
 RUN_DEPENDS+=	pperl:${PORTSDIR}/devel/p5-PPerl
-PERL=		${LOCALBASE}/bin/pperl
+PPERL=		${LOCALBASE}/bin/pperl
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,%%PERL%%,${PERL}," ${WRKSRC}/bin/svk
+	@${REINPLACE_CMD} -e "s,%%PPERL%%,${PPERL}," ${WRKSRC}/bin/svk
+
+post-install:
+	@${ECHO}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO}
 
 .include <bsd.port.post.mk>
