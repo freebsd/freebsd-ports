@@ -33,7 +33,8 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.0";
+my $VERSION	= "2.1";
+my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
 sub ANONCVS_ROOT	{ ":pserver:anoncvs\@anoncvs.FreeBSD.org:/home/ncvs" }
@@ -59,7 +60,6 @@ my $cvsroot   = 0;		# CVS root directory
 my $exclude   = 0;		# Do not list installed ports
 my $fetch     = 0;		# Fetch ports
 my $force     = 0;		# Force package registration
-my $help      = 0;		# Show help text
 my $info      = 0;		# Show port info
 my $dontclean = 0;		# Don't clean after build
 my $packages  = 0;		# Build packages
@@ -67,8 +67,6 @@ my $list      = 0;		# List ports
 my $build     = 0;		# Build ports
 my $update    = 0;		# Update ports tree from CVS
 my $verbose   = 0;		# Verbose mode
-my $version   = 0;		# Show version
-my $ecks      = 0;		# The undocumented option.
 
 # Global variables
 my %ports;			# Maps ports to their directory.
@@ -338,11 +336,11 @@ sub find_port($) {
 
     my @suggest;		# Suggestions
     
-    stderr("can't find required port '$port'");
+    stderr("Can't find required port '$port'");
     @suggest = grep(/^$port/i, keys(%ports));
     if (@suggest == 1 && $suggest[0] =~ m/^$port[0-9.-]/) {
 	$port = $ports{$suggest[0]};
-	stderr(", assuming you mean '$port'.\n");
+	stderr(", assuming you mean $strop{$port}.\n");
 	return $port;
     } elsif (@suggest) {
 	stderr(", maybe you mean:\n  " . (join("\n  ", @suggest)));
@@ -477,7 +475,7 @@ sub find_dependencies($) {
 	or bsd::errx(1, "failed to obtain dependency list");
     %depends = ();
     foreach $item (split(' ', $dependvars)) {
-	if ($item !~ m|^([^:]+):$portsdir/([^/]+/[^/]+)(:[^:]+)?$|) {
+	if ($item !~ m|^([^:]+):$portsdir/([^/:]+/[^/:]+)(:[^:]+)?$|) {
 	    bsd::warnx("invalid dependency: %s", $item);
 	}
 	($lhs, $rhs) = ($1, $2);
@@ -715,8 +713,10 @@ sub usage() {
 # Print version
 #
 sub version() {
-    
-    stderr("porteasy $VERSION\n");
+
+    stderr("This is porteasy $VERSION.
+$COPYRIGHT
+");
     exit(1);
 }
 
@@ -724,8 +724,9 @@ sub version() {
 # Print help text
 #
 sub help() {
-    
-    stderr("porteasy $VERSION
+
+    stderr("This is porteasy $VERSION.
+$COPYRIGHT
 
 Options:
   -a, --anoncvs            Use the FreeBSD project's anoncvs server
@@ -759,6 +760,13 @@ MAIN:{
     my $err = 0;		# Error count
     my $need_index;		# Need the index
 
+    # Get option defaults
+    if ($ENV{'PORTEASY_OPTIONS'}) {
+	foreach (split(' ', $ENV{'PORTEASY_OPTIONS'})) {
+	    unshift(@ARGV, $_);
+	}
+    }
+    
     # Scan command line options
     Getopt::Long::Configure("auto_abbrev", "bundling");
     GetOptions(
@@ -771,7 +779,7 @@ MAIN:{
 	       "e|exclude-installed"	=> \$exclude,
 	       "F|force-pkg-register"	=> \$force,
 	       "f|fetch"		=> \$fetch,
-	       "h|help"			=> \$help,
+	       "h|help"			=> \&help,
 	       "i|info"			=> \$info,
 	       "k|packages"		=> \$packages,
 	       "l|list"			=> \$list,
@@ -779,22 +787,14 @@ MAIN:{
 	       "r|cvsroot=s"		=> \$cvsroot,
 	       "t|tag=s"		=> \$tag,
 	       "u|update"		=> \$update,
-	       "V|version"		=> \$version,
+	       "V|version"		=> \&version,
 	       "v|verbose"		=> \$verbose,
-	       "x|ecks"			=> \$ecks,
+	       "x|ecks"			=> \&ecks,
 	       )
 	or usage();
 
-    if ($help) {
-	help();
-    }
-
-    if ($version) {
-	version();
-    }
-    
-    if ($ecks) {
-	ecks();
+    if (!$clean && !$info && !$build && !$fetch) {
+	$build = 1;
     }
     
     if (!@ARGV && (!$clean && !$info || $build || $fetch)) {
@@ -818,7 +818,7 @@ MAIN:{
     }
     
     # Set and check CVS root
-    if ($anoncvs) {
+    if ($anoncvs && !$cvsroot) {
 	$cvsroot = &ANONCVS_ROOT;
     }
     if (!$cvsroot) {
