@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
+# $Id: Makefile,v 1.52 1997/11/30 10:36:37 max Exp $
 #
 
     SUBDIR += adcomplain
@@ -19,6 +19,8 @@
     SUBDIR += majordomo
     SUBDIR += metamail
     SUBDIR += mew
+    SUBDIR += mew-common
+    SUBDIR += mew-mule
     SUBDIR += mh
     SUBDIR += mmr
     SUBDIR += movemail
