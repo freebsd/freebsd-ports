@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	twig
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	www mail
-MASTER_SITES=	http://www.informationgateway.org/download/ \
+MASTER_SITES=	http://informationgateway.org/download/ \
 		ftp://ftp.informationgateway.org/pub/
 
 MAINTAINER=	dinoex@FreeBSD.org
