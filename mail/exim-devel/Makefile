@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	3.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		http://www.exim.org/ftp/ \

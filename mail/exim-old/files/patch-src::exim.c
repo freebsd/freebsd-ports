@@ -10,3 +10,11 @@
       (list_queue && queue_list_requires_admin) ||
       (queue_interval >= 0 && prod_requires_admin))
      {
+@@ -3462,6 +3463,7 @@
+     }
+ 
+   /* The loop will repeat if more is TRUE. */
++  while (waitpid(-1, NULL, WNOHANG) > 0);
+   }
+ 
+ exim_exit(EXIT_SUCCESS);   /* Never returns */
