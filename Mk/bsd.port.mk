@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.314 1999/06/11 11:59:10 asami Exp $
+#	$Id: bsd.port.mk,v 1.315 1999/07/23 09:36:54 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -117,6 +117,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #				  compression.
 # USE_ZIP		- Says that the port distfile uses zip, not tar w/[bg]zip
 #				  for compression.
+# USE_NEWGCC	- Says that the port requirest the latest gcc, either in
+#				  the system or installed from a port.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
 # USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
@@ -331,6 +333,11 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # EXTRACT_AFTER_ARGS -
 #				  Arguments to ${EXTRACT_CMD} following filename
 #				  (default: "| tar -xf -").
+# EXTRACT_PRESERVE_OWNERSHIP -
+#				  Normally, when run as "root", the extract stage will
+#				  change the owner and group of all files under ${WRKDIR}
+#				  to 0:0.  Set this variable if you want to turn off this
+#				  feature.
 #
 # For configure:
 #
@@ -597,6 +604,11 @@ LIBTOOLFILES?=		aclocal.m4
 LIBTOOLFILES?=		configure
 .endif
 .endif
+.if defined(USE_NEWGCC) && ${OSVERSION} < 400004
+CC=				gcc295
+CXX=			g++295
+BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/egcs
+.endif
 
 .if defined(REQUIRES_MOTIF)
 LIB_DEPENDS+=		Xpm.4:${PORTSDIR}/graphics/xpm
@@ -824,6 +836,8 @@ MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 AWK?=		/usr/bin/awk
 BASENAME?=	/usr/bin/basename
 CAT?=		/bin/cat
+CHMOD?=		/bin/chmod
+CHOWN?=		/usr/sbin/chown
 CP?=		/bin/cp
 ECHO?=		/bin/echo
 EXPR?=		/bin/expr
@@ -854,18 +868,23 @@ INSTALL_TARGET?=	install
 # Popular master sites
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.eu.net/X11/contrib/%SUBDIR%/
+	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
+	ftp://sunsite.sut.ac.jp/pub/archives/X11/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
-	ftp://prep.ai.mit.edu/pub/gnu/%SUBDIR%/ \
-	ftp://wuarchive.wustl.edu/systems/gnu/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.cs.ubc.ca/mirror2/gnu/%SUBDIR%/ \
+	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	ftp://ftp.cdrom.com/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.duke.edu/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.gamma.ru/pub/gnu/%SUBDIR%/ \
-	ftp://tron.um.u-tokyo.ac.jp/pub/GNU/prep/%SUBDIR%/
+	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
+	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
+	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.ecrc.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
+	ftp://ftp.leo.org/pub/comp/os/unix/gnu/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.wustl.edu/systems/gnu/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -1043,6 +1062,26 @@ maintainer:
 .BEGIN:
 	@${ECHO_MSG} "CATEGORIES is mandatory."
 	@${FALSE}
+.else
+VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
+	cad chinese comms converters databases deskutils devel \
+	editors elisp emulators ftp games german gnome graphics \
+	irc japanese java kde korean lang \
+	mail math mbone misc net news \
+	offix palm perl5 plan9 print python russian \
+	security shells sysutils \
+	tcl75 tcl76 tcl80 tcl81 textproc tk41 tk42 tk80 tk81 tkstep80 \
+	vietnamese windowmaker www \
+	x11 x11-clocks x11-fm x11-fonts x11-servers x11-toolkits x11-wm
+check-categories:
+.for cat in ${CATEGORIES}
+	@if ${ECHO} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
+		${TRUE}; \
+	else \
+		${ECHO_MSG} "Error: category ${cat} not in list of valid categories."; \
+		${FALSE}; \
+	fi
+.endfor
 .endif
 
 # Note this has to start with a capital letter (or more accurately, it
@@ -1349,6 +1388,16 @@ DEPENDS_TARGET=	reinstall
 .else
 DEPENDS_TARGET=	install
 .endif
+.if defined(DEPENDS_CLEAN)
+DEPENDS_TARGET+=	clean
+DEPENDS_ARGS+=	NOCLEANDEPENDS=yes
+.endif
+.else
+DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
+.endif
+.if defined(DEPENDS)
+# pretty much guarantees overwrite of existing installation
+DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
 .endif
 
 ################################################################
@@ -1469,6 +1518,12 @@ do-extract:
 			exit 1; \
 		fi \
 	done
+.if !defined(EXTRACT_PRESERVE_OWNERSHIP)
+	@if [ `id -u` = 0 ]; then \
+		${CHMOD} -R ug-s ${WRKDIR}; \
+		${CHOWN} -R 0:0 ${WRKDIR}; \
+	fi
+.endif
 .endif
 
 # Patch
@@ -1667,6 +1722,7 @@ _PORT_USE: .USE
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build-depends lib-depends misc-depends
 .endif
 .if make(real-install)
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} check-categories
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
 		${ECHO_MSG} "===>  ${PKGNAME} is already installed - perhaps an older version?"; \
@@ -2104,7 +2160,8 @@ _DEPENDS_USE:	.USE
 			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
 			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
 		else \
-			target=${DEPENDS_TARGET}; \
+			target="${DEPENDS_TARGET}"; \
+			depends_args="${DEPENDS_ARGS}"; \
 		fi; \
 		if ${EXPR} "$$prog" : \\/ >/dev/null; then \
 			if [ -e "$$prog" ]; then \
@@ -2138,7 +2195,7 @@ _DEPENDS_USE:	.USE
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$prog.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} $$target) ; \
+				(cd $$dir; ${MAKE} $$target $$depends_args) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 			fi; \
 		fi; \
@@ -2162,7 +2219,8 @@ lib-depends:
 			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
 			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
 		else \
-			target=${DEPENDS_TARGET}; \
+			target="${DEPENDS_TARGET}"; \
+			depends_args="${DEPENDS_ARGS}"; \
 		fi; \
 		if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
 			${ECHO_MSG} "===>   ${PKGNAME} depends on shared library: $$lib - found"; \
@@ -2181,7 +2239,7 @@ lib-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$lib.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} $$target) ; \
+				(cd $$dir; ${MAKE} $$target $$depends_args) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 				if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
 					${TRUE}; \
@@ -2205,14 +2263,15 @@ misc-depends:
 			target=`${ECHO} $$dir | ${SED} -e 's/.*://'`; \
 			dir=`${ECHO} $$dir | ${SED} -e 's/:.*//'`; \
 		else \
-			target=${DEPENDS_TARGET}; \
+			target="${DEPENDS_TARGET}"; \
+			depends_args="${DEPENDS_ARGS}"; \
 		fi; \
 		${ECHO_MSG} "===>   ${PKGNAME} depends on: $$dir"; \
 		${ECHO_MSG} "===>    Verifying $$target for $$dir"; \
 		if [ ! -d $$dir ]; then \
 			${ECHO_MSG} "     >> No directory for $$dir.  Skipping.."; \
 		else \
-			(cd $$dir; ${MAKE} $$target) ; \
+			(cd $$dir; ${MAKE} $$target $$depends_args) ; \
 		fi \
 	done
 	@${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"
