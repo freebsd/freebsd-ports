@@ -15,4 +15,5 @@ include/smpeg/smpeg.h
 lib/libsmpeg.a
 lib/libsmpeg.so
 lib/libsmpeg.so.1
+share/aclocal/smpeg.m4
 @dirrm include/smpeg
