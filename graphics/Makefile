@@ -259,6 +259,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libpano12
     SUBDIR += libpcd
     SUBDIR += libpixman
     SUBDIR += libqglviewer
