@@ -1,0 +1,72 @@
+--- doc/example_silcd.conf.in.orig	Mon Oct 27 12:06:06 2003
++++ doc/example_silcd.conf.in	Mon Oct 27 12:07:47 2003
+@@ -22,7 +22,6 @@
+ # Include global algorithms from the "silcalgs.conf" file.  This file defines
+ # ciphers, hash functions, HMACs and PKCS algorithms that can be used.
+ #
+-Include "@ETCDIR@/silcalgs.conf";
+ 
+ #
+ # General configuration options
+@@ -32,11 +31,6 @@
+ # for different connections.
+ #
+ General {
+-	# This is the default path where to search modules.  If omitted
+-	# built-in modules will be used.  Built-in modules will also be
+-	# used if a module file cannot be located.
+-	module_path = "@MODULESDIR@";
+-
+ 	# If both passphrase and public key authentication is set for a
+ 	# connection the public key authentication is the preferred one
+ 	# to use.  Set this to `true' to prefer passphrase authentication
+@@ -466,13 +460,13 @@
+ # to true.  For normal connections set it false.  If it is set to true then
+ # your server will be backup router.
+ #
+-ServerConnection {
+-	Host = "10.2.1.7";
+-	Passphrase = "verysecret";
+-	#PublicKey = "/path/to/the/public.pub";
+-	Params = "normal";
+-	Backup = false;
+-};
++#ServerConnection {
++#	Host = "10.2.1.7";
++#	Passphrase = "verysecret";
++#	#PublicKey = "/path/to/the/public.pub";
++#	Params = "normal";
++#	Backup = false;
++#};
+ 
+ #
+ # Configured router connections
+@@ -502,17 +496,17 @@
+ # backup router is in our cell then set the "BackupLocal" option to true.
+ # If the backup router is in other cell then set it to false.
+ #
+-RouterConnection {
+-	Host = "10.2.1.100";
+-	Port = 706;
+-	Passphrase = "verysecret";
+-	#PublicKey = "/path/to/the/public.pub";
+-	Params = "normal";
+-	Initiator = true;
+-	#BackupHost = "10.2.1.6";
+-	#BackupPort = 706;
+-	#BackupLocal = true;
+-};
++#RouterConnection {
++#	Host = "10.2.1.100";
++#	Port = 706;
++#	Passphrase = "verysecret";
++#	#PublicKey = "/path/to/the/public.pub";
++#	Params = "normal";
++#	Initiator = true;
++#	#BackupHost = "10.2.1.6";
++#	#BackupPort = 706;
++#	#BackupLocal = true;
++#};
+ 
+ #
+ # Denied connections
