@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1998/08/27 16:02:03 rse Exp $
+# $Id: Makefile,v 1.94 1998/09/08 17:28:57 ache Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -33,6 +33,7 @@
     SUBDIR += ijb
     SUBDIR += libpics
     SUBDIR += libwww
+    SUBDIR += linbot
     SUBDIR += linemode
     SUBDIR += linux-netscape4
     SUBDIR += lynx
