@@ -8,12 +8,12 @@
 
 DISTNAME=	xfce-3.2.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.xfce.org/archive/ \
-		http://www.baysurf.net/linux/xfce/archive/
+MASTER_SITES=	http://www.xfce.org/archive/
 
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
+		Imlib.5:${PORTSDIR}/graphics/imlib \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
