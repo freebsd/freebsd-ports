@@ -19,6 +19,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
 		--with-readline-libraries=/usr/lib
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
 PLIST_SUB=	VERSION=${PORTVERSION}
@@ -43,7 +44,7 @@ pre-patch:
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} \
-		${PERL} -pi -e "s|-O2|-g|"
+		${REINPLACE_CMD} -e "s|-O2|-g|"
 
 post-configure:
 	${ECHO_CMD} "LIBXM = ${MOTIFLIB}" >> ${WRKSRC}/ddd/Makefile
