@@ -35,11 +35,6 @@ do-configure:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-# this is gcc 2.x
-CFLAGS+= -DNO_WSTRING
-.endif
-
 # gcc 3.2 was available on 5.x before this OSVERSION
 # do not build gcc 3.3 unless necessary
 .if ${OSVERSION} < 501103
@@ -48,6 +43,12 @@ USE_GCC=3.2
 .else
 # default for 5.x series
 USE_GCC=3.3
+.endif
+
+.if ${OSVERSION} < 500000
+USE_GCC=2.95
+# this is gcc 2.x
+CFLAGS+= -DNO_WSTRING
 .endif
 
 .include <bsd.port.post.mk>
