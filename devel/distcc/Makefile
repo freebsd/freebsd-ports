@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.7
+PORTVERSION=	2.9
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -34,10 +34,8 @@ PLIST_SUB+=	WITH_GNOME="@comment "
 .endif
 
 MAN1=	distcc.1 distccd.1
-DOC_FILES=	AUTHORS COPYING COPYING.FDL DEPENDENCIES INSTALL NEWS README \
-		linuxdoc/distcc.sgml doc/protocol-1.txt doc/status-1.txt
-HTML_DOC_FILES=	distcc.html distcc-1.html distcc-2.html distcc-3.html \
-		distcc-4.html distcc-5.html
+DOC_FILES=	AUTHORS COPYING COPYING.FDL INSTALL NEWS README \
+		doc/protocol-1.txt doc/status-1.txt
 
 pre-fetch:
 .if !defined(WITHOUT_GNOME)
@@ -49,6 +47,10 @@ pre-fetch:
 	@${ECHO_MSG} ""
 .endif
 
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
@@ -56,8 +58,12 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
+	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/distccd.sh.sample \
+		${PREFIX}/etc/rc.d/distccd.sh.sample
 
-post-install: install-doc install-html-doc install-man
+post-install: install-doc install-man
+	@${TOUCH} /var/run/distccd.pid
+	@${CHOWN} distcc:distcc /var/run/distccd.pid
 	@${CAT} ${PKGMESSAGE}
 
 install-doc:
@@ -65,14 +71,6 @@ install-doc:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
-
-install-html-doc:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
-.for file in ${HTML_DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/linuxdoc/html/${file} ${DOCSDIR}/html
 .endfor
 .endif
 
