@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-#BROKEN=	"just makes a humming noise"
+BROKEN=	"just makes a humming noise"
 .endif
 
 PLIST=		${WRKDIR}/plist
