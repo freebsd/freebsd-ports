@@ -1,0 +1,17 @@
+Getopt::Declare is yet another command-line argument parser, one which
+is specifically designed to be powerful but exceptionally easy to use.
+
+To parse the command-line in @ARGV, one simply creates a Getopt::Declare
+object, by passing Getopt::Declare::new() a specification of the various
+parameters that may be encountered.
+
+The specification is a single string, in which the syntax of each
+parameter is declared, along with a description and (optionally) one or
+more actions to be performed when the parameter is encountered. The
+specification string may also include other usage formatting information
+(such as group headings or separators) as well as standard Perl comments
+(which are ignored).
+
+WWW: http://search.cpan.org/search?dist=Getopt-Declare
+
+-Anton
