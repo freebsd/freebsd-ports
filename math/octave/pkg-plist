@@ -1,7 +1,9 @@
 bin/mkoctfile
+bin/mkoctfile-%%OCTAVE_VERSION%%
 bin/octave
 bin/octave-%%OCTAVE_VERSION%%
 bin/octave-bug
+bin/octave-bug-%%OCTAVE_VERSION%%
 include/octave-%%OCTAVE_VERSION%%/octave/Array-flags.h
 include/octave-%%OCTAVE_VERSION%%/octave/Array-idx.h
 include/octave-%%OCTAVE_VERSION%%/octave/Array.cc
@@ -278,6 +280,9 @@ info/octave.info-9
 info/octave.info-10
 info/octave.info-11
 info/octave.info-12
+info/octave.info-13
+info/octave.info-14
+info/octave.info-15
 info/liboctave.info
 info/liboctave.info-1
 info/liboctave.info-2
