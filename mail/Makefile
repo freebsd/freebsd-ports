@@ -122,6 +122,7 @@
     SUBDIR += solidpop3d
     SUBDIR += sonicmail
     SUBDIR += spruce
+    SUBDIR += sqwebmail
     SUBDIR += sylpheed
     SUBDIR += teapop
     SUBDIR += tkrat
