@@ -18,6 +18,7 @@ ONLY_FOR_ARCHS=	i386
 
 BUILD_WRKSRC=	${WRKSRC}/bld/fbx86
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # KSITS_ prefix for Komputer Small Incompatible Timesharing System
 # a KLH10 configuration.
@@ -85,11 +86,11 @@ pre-install:
 	@ ${MKDIR} ${KSITS_DRIVER_DIR}
 	@ ${MKDIR} ${KSITS_DOCDIR}
 	@ ${ECHO} KLH10 contains a setuid that accepts network connections. \
-		> ${PKGDIR}/pkg-message
+		> ${PKGMESSAGE}
 	@ ${ECHO} Consider using a firewall to limit access to KLH10. \
-		>> ${PKGDIR}/pkg-message
-	@ ${ECHO} See the ${KSITS_DOCDIR}/pubits/adm 	>> ${PKGDIR}/pkg-message
-	@ ${ECHO} for firewall documentation. 	>> ${PKGDIR}/pkg-message
+		>> ${PKGMESSAGE}
+	@ ${ECHO} See the ${KSITS_DOCDIR}/pubits/adm 	>> ${PKGMESSAGE}
+	@ ${ECHO} for firewall documentation. 		>> ${PKGMESSAGE}
 
 post-install:
 .for file in ${KSITS_NATIVE_PROGS} ${KSITS_EM_DRIVERS} ${KSITS_EM_SDRIVERS}
