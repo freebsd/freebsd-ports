@@ -7,24 +7,28 @@
 
 PORTNAME=	camediaplay
 PORTVERSION=	20010211
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
+MASTER_SITES=	ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/camediaplay/build
-HAS_CONFIGURE=	yes
-MAN1=	camediaplay.1
+WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
-DOC=	README.english README.japanese PROTOCOL
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	OPTFLAG=""
+MAN1=		camediaplay.1
+
+post-patch:
+	@${PERL} -pi -e "s|<sys/dir.h>|<dirent.h>|g" ${WRKSRC}/../src/*.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/camediaplay
-	for i in ${DOC}; do \
-		${INSTALL_DATA} ${WRKSRC}/../$$i \
-			${PREFIX}/share/doc/camediaplay; \
-	done
-	${SED} -e 's@\/usr\/local@${PREFIX}@' < ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/camediaplay
+.for file in PROTOCOL README.english README.japanese
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/camediaplay
+.endfor
+.endif
 
 .include <bsd.port.mk>
