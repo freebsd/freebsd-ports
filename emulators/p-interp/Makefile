@@ -23,6 +23,7 @@ BUILD_DEPENDS=	gccmakedep:${X_IMAKE_PORT}
 USE_XLIB=	yes
 
 RESTRICTED=	"Redistribution rights for Apple Pascal disk images are unclear"
+BROKEN=		Unfetchable
 
 MAN1=	ucsd.1 svolio.1 svolcvt.1
 
