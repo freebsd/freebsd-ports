@@ -136,7 +136,7 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
    ADDRESS *tmp = NULL, *addr = NULL;
    ADDRESS **last = &tmp;
    ADDRESS *p, *q;
-@@ -1084,70 +1086,96 @@
+@@ -1084,70 +1086,97 @@
      char buf[LONG_STRING];
  
      q = p;
@@ -156,6 +156,7 @@ Base: http://home.woolridge.ca/mutt/patches/patch-1.5.3.dw.confirm-crypt-hook.1
 -      if ((r = mutt_yesorno (buf, M_YES)) == M_YES)
 +
 +      k_info = NULL;
++      key = NULL;
 +
 +      if (hook)
        {
