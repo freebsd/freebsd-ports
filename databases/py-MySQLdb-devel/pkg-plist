@@ -1,6 +1,3 @@
-lib/%%PYTHON_VERSION%%/site-packages/CompatMysqldb.py
-lib/%%PYTHON_VERSION%%/site-packages/CompatMysqldb.pyc
-lib/%%PYTHON_VERSION%%/site-packages/CompatMysqldb.pyo
 lib/%%PYTHON_VERSION%%/site-packages/MySQLdb/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/MySQLdb/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/MySQLdb/__init__.pyo
