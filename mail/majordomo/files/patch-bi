@@ -1,6 +1,34 @@
---- resend.orig	Wed Aug 27 23:59:24 1997
-+++ resend	Wed Sep 10 00:57:38 1997
-@@ -111,7 +111,7 @@
+--- resend.Dist	Fri Jan  7 07:32:39 2000
++++ resend	Sun Apr 16 23:15:50 2000
+@@ -84,11 +84,23 @@
+ # Despite not having a place to send the remains of the body,
+ # it would be nice to send a message to root or postmaster, at least...
+ #
+-if (! -r $cf) {
+-    die("$cf not readable; stopped");
+-}
+ 
+-require "$cf";
++if (not sysopen CONFIG,$cf,O_RDONLY)
++{
++  die sprintf qq|Unable to sysopen config file "$cf"%s.\n|,$! ? ": $!" : '';
++}
++elsif ((stat CONFIG)[4] != $>)
++{
++  die qq|Config file "$cf" not owned by effective UID.\n|;
++}
++elsif (eval(join '',<CONFIG>),$@)
++{
++  die qq|Unable to eval "$cf": $@.\n|;
++}
++else
++{
++  close CONFIG;
++}
+ 
+ chdir($homedir) || die("Can't chdir(\"$homedir\"): $!");
+ 
+@@ -111,7 +123,7 @@
  # XXX It is possible that owner-$opt_l won't be the right address, but we
  # have little choice.  Sending the bounces to $whoami_owner is an option,
  # but might not clearly indicate the list name.
@@ -9,7 +37,7 @@
  $bounce_mailer = $bounce_mailer || "$sendmail_command -f\$sender -t";
  &set_mail_from("owner-$opt_l");
  &set_mail_sender("owner-$opt_l");
-@@ -924,7 +924,7 @@
+@@ -936,7 +948,7 @@
      else {
  	# Painful, but we have to provide some kind of backwards
  	# compatibility and this is what 1.93 used
