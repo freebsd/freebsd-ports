@@ -1,0 +1,8 @@
+Landscape is a program to create and render fractal landscapes.  A
+choice of different generation algorithms are available, as well
+as an OpenGL preview or the final render.
+
+WWW: http://www.witchspace.com
+
+- J. Belson
+jon@witchspace.com
