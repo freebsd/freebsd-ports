@@ -1,6 +1,8 @@
---- Makefile.vars.in.orig	Wed Feb 12 03:16:22 2003
-+++ Makefile.vars.in	Tue Dec  9 09:40:47 2003
-@@ -11,12 +11,12 @@
+--- Makefile.vars.in.orig	Wed Feb 12 11:16:22 2003
++++ Makefile.vars.in	Fri Dec 12 13:47:16 2003
+@@ -9,14 +9,14 @@
+ 
+ TOPDIR       = @prefix@
  BIN_DIR      = ${TOPDIR}/bin/
 -INCLUDE_DIR  = ${TOPDIR}/include/
 +INCLUDE_DIR  = ${TOPDIR}/share/panorama/include/
@@ -20,3 +22,12 @@
  
  #
  # Don't change anything below this line.
+@@ -46,7 +46,7 @@
+ ifeq (@DEBUG_INFO@,1)
+ OPT = -ggdb
+ else
+-OPT = -O
++OPT =
+ # -O6 -fexpensive-optimizations
+ # -fno-math-errno
+ endif

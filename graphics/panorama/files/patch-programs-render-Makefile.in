@@ -1,18 +1,11 @@
---- programs/render/Makefile.in.orig	Wed Feb 12 02:56:36 2003
-+++ programs/render/Makefile.in	Tue Dec  9 15:40:21 2003
+--- programs/render/Makefile.in.orig	Wed Feb 12 10:56:36 2003
++++ programs/render/Makefile.in	Fri Dec 12 17:22:25 2003
 @@ -23,7 +23,7 @@
  
  install:        all
  		@echo Installing program render...
 -		@@INSTALL_PROGRAM@ ${EXE} ${BIN_DIR}
-+		@@INSTALL_PROGRAM@ .libs/${EXE} ${BIN_DIR}
++		${LIBTOOL} --mode=install @INSTALL_PROGRAM@ ${EXE} ${BIN_DIR}
  
  ${EXE}:		${OBJ}
  		@echo Making program ${EXE}...
-@@ -38,4 +38,4 @@
- distclean:      clean
- 		@rm -f Makefile
- 
--include ${BUILD_TOP}/Makefile.deps
-\ No newline at end of file
-+include ${BUILD_TOP}/Makefile.deps
