@@ -1,32 +1,15 @@
---- scripts/ltmain.sh.orig	Sat Mar  8 14:36:10 2003
-+++ scripts/ltmain.sh	Sun Apr  6 15:01:17 2003
-@@ -1065,14 +1065,14 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd* | *-*-freebsd*)
-+	  *-*-openbsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
+--- scripts/ltmain.sh.orig	Tue Apr 22 04:13:43 2003
++++ scripts/ltmain.sh	Tue Nov 11 21:24:05 2003
+@@ -1277,7 +1277,7 @@
  	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
+ 	elif test "X$arg" = "X-lc_r"; then
+ 	 case $host in
 -	 *-*-openbsd* | *-*-freebsd*)
 +	 *-*-openbsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
-@@ -2495,7 +2495,7 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
--	  *-*-openbsd* | *-*-freebsd*)
-+	  *-*-openbsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    ;;
- 	  *)
-@@ -4325,10 +4325,12 @@
+ 	   # Do not include libc_r directly, use -pthread flag.
+ 	   continue
+ 	   ;;
+@@ -5425,10 +5425,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
