@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	getmail
-PORTVERSION=	4.3.2
+PORTVERSION=	4.3.3
 CATEGORIES=	mail python
-MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-4/%SUBDIR%/
+MASTER_SITES=	http://pyropus.ca/software/getmail/%SUBDIR%/
 MASTER_SITE_SUBDIR=	old-versions
 
 MAINTAINER=	question+fbsdports@closedsrc.org
