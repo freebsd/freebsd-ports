@@ -907,7 +907,6 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-6
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-7
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-8
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-9
-lib/xemacs-%%XEMACS_VER%%/lisp/.cvsignore
 lib/xemacs-%%XEMACS_VER%%/lisp/ChangeLog
 lib/xemacs-%%XEMACS_VER%%/lisp/ChangeLog.1
 lib/xemacs-%%XEMACS_VER%%/lisp/ChangeLog.GTK
