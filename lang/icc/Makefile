@@ -7,7 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	8.1.026
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
@@ -219,6 +219,9 @@ do-build:
 .for file in crtbegin.o crtend.o libgcc.a
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/lib && ${LN} -s /usr/lib/${file} ${file}
 .endfor
+# The static linking case expects a crtbeginT.o. Based upon inspection of
+# /usr/src/contrib/gnu/crtstuff.c it seems it's the same as crtbegin.o.
+	@cd ${WRKSRC}/opt/${COMPILERDIR}/lib && ${LN} -s crtbegin.o crtbeginT.o
 
 do-install:
 	@cd ${WRKSRC}/opt && ${FIND} . -print | \

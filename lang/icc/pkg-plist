@@ -930,6 +930,7 @@
 %%COMPILERDIR%%/include/xmmintrin.h
 @dirrm %%COMPILERDIR%%/include
 %%COMPILERDIR%%/lib/crtbegin.o
+%%COMPILERDIR%%/lib/crtbeginT.o
 %%COMPILERDIR%%/lib/crtend.o
 %%COMPILERDIR%%/lib/crtxi.o
 %%COMPILERDIR%%/lib/crtxn.o
