@@ -14,6 +14,8 @@ DISTNAME=	fsp.281-B3
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	FSP daemon
 
+FORBIDDEN=	"buffer overflow (CAN-2004-0011) and directory traversal (CAN-2003-1022) bugs"
+
 ALL_TARGET=	fspserver
 DOCDIR=		share/doc/${PORTNAME}
 DOCFILES=	BETA.README ChangeLog FILES INFO TODO INSTALL MACHINES
