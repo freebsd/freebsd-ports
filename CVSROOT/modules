@@ -9215,8 +9215,9 @@ semi113-mule	ports/editors/semi113-mule
 semi113-xemacs21-mule	ports/editors/semi113-xemacs21-mule
 sendfile	ports/net/sendfile
 sendip		ports/net-mgmt/sendip
+sendmail811	ports/mail/sendmail811
+sendmail812	ports/mail/sendmail812
 sendmail-ldap	ports/mail/sendmail-ldap
-sendmail-old	ports/mail/sendmail-old
 sendmail-sasl	ports/mail/sendmail-sasl
 senken		ports/games/senken
 senso		ports/games/senso
