@@ -96,6 +96,7 @@
     SUBDIR += py-HTMLgen
     SUBDIR += roxen
     SUBDIR += ruboard
+    SUBDIR += screem
     SUBDIR += sitecopy
     SUBDIR += snarf
     SUBDIR += squid11
