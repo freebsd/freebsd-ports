@@ -1,7 +1,7 @@
 --- doc/screen.texinfo.orig	Tue Nov 21 03:03:15 1995
 +++ doc/screen.texinfo	Mon Jun 16 15:16:36 1997
-@@ -2,6 +2,9 @@
- @c %**start of header
+@@ -3,6 +3,9 @@
+ @c vi:set wm=5
  @setfilename screen.info
  @settitle Screen User's Manual
 +@direntry
