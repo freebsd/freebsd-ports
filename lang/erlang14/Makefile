@@ -3,17 +3,16 @@
 # Date created:		11 Dec 1998
 # Whom:			ruslan@shevchenko.kiev.ua
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 18:11:50 flathill Exp $
+# $Id: Makefile,v 1.2 1998/12/26 20:06:51 obrien Exp $
 #
 
 DISTNAME=	erlang-47.4.0.base
 PKGNAME=	erlang-47.4.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.erlang.org/download/
+MASTER_SITES=	http://www.erlang.org/download/ \
+		http://www.freebsd.org/~flathill/distfiles/
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
-
-BROKEN='single fetch site, which is currently behind a routing loop'
 
 WRKSRC=		${WRKDIR}/erlang-47.4.0
 
