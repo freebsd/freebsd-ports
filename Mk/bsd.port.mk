@@ -1407,7 +1407,7 @@ _MASTER_SITE_BACKUP=	${MASTER_SITE_BACKUP}
 # Search CDROM first if mounted, symlink instead of copy if
 # FETCH_SYMLINK_DISTFILES is set
 CD_MOUNTPTS?=	/cdrom ${CD_MOUNTPT}
-.for MOUNTPT in ${CD_MOUNPTS}
+.for MOUNTPT in ${CD_MOUNTPTS}
 .if exists(${MOUNTPT}/ports/distfiles)
 _MASTER_SITE_OVERRIDE:=	file:${MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${_MASTER_SITE_OVERRIDE}
 .if defined(FETCH_SYMLINK_DISTFILES)
