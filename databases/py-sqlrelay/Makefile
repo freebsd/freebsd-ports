@@ -34,10 +34,6 @@ CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Configure fails on amd64"
-.endif
-
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
@@ -47,5 +43,7 @@ post-patch:
 	${PERL} -i -p \
 		-e 's,"1\.5" "1\.6" "2\.0" "2\.1",${PYTHON_VERSION:S/^python//},g;' \
 			${WRKSRC}/configure
+	${CP} ${TEMPLATES}/config.sub ${WRKSRC}
+	${CP} ${TEMPLATES}/config.guess ${WRKSRC}
 
 .include <bsd.port.post.mk>
