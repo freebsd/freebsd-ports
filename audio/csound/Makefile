@@ -15,6 +15,8 @@ DIST_SUBDIR=	csound
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83
 
