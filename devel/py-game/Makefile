@@ -26,14 +26,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
-.include <bsd.port.pre.mk>
-
-.if (${PYTHON_VERSION} == "python2.1" || ${PYTHON_VERSION} == "python2.2")
-PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
-.else
-PYNUMERIC=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric17
-.endif
-
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
 
@@ -47,4 +39,4 @@ post-install:
 		${TAR} --unlink -C ${PREFIX}/share/doc/py-game -xf -
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

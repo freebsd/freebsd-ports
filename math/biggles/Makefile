@@ -15,7 +15,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric.pth:${PORTSDIR}/math/py-numeric
+BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	plot:${PORTSDIR}/graphics/plotutils
 
 USE_PYTHON=	yes

@@ -14,9 +14,9 @@ DISTNAME=	Gnuplot-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric
+BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		${PYTHON_SITELIBDIR}/Numeric/_numpy.so:${PORTSDIR}/math/py-numeric
+		${PYNUMERIC}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -16,8 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	wjv@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Martel/__init__.py:${PORTSDIR}/textproc/py-martel \
-		${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric \
+RUN_DEPENDS=	${PYNUMERIC} \
+		${PYTHON_SITELIBDIR}/Martel/__init__.py:${PORTSDIR}/textproc/py-martel \
 		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 USE_PYTHON=	yes
