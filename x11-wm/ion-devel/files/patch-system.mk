@@ -1,5 +1,5 @@
---- system.mk.orig	Thu Dec 28 21:42:07 2000
-+++ system.mk	Sun Jan 21 05:24:15 2001
+--- system.mk.orig	Mon Mar  5 09:16:01 2001
++++ system.mk	Thu Mar 29 11:37:26 2001
 @@ -7,13 +7,13 @@
  ## Installation paths
  ##
@@ -16,7 +16,15 @@
  # Not used
  INCDIR=$(PREFIX)/include
  LIBDIR=$(PREFIX)/lib
-@@ -23,7 +23,7 @@
+@@ -24,14 +24,14 @@
+ ##
+ 
+ #MODULE_SUPPORT=-DCF_NO_MODULE_SUPPORT
+-MODULE_SUPPORT_LDFLAGS=-export-dynamic -ldl
++MODULE_SUPPORT_LDFLAGS=-export-dynamic
+ 
+ 
+ ##
  ## X libraries, includes and options
  ##
  
@@ -25,7 +33,7 @@
  
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
-@@ -78,8 +78,8 @@
+@@ -86,8 +86,8 @@
  	-Wparentheses -pedantic-errors -Wuninitialized
  
  
@@ -36,7 +44,7 @@
  
  
  ##
-@@ -104,9 +104,9 @@
+@@ -112,9 +112,9 @@
  ##
  
  # Should work almost everywhere
@@ -47,3 +55,4 @@
 +INSTALL=install -c
  
  INSTALLDIR=mkdir -p
+ 
