@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	plugger
-PORTVERSION= 	3.0
+PORTVERSION= 	3.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.hubbe.net/~hubbe/plugger/ \
+MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} unix-sdk-3.0b5.tar.Z
 
@@ -18,15 +18,18 @@ RUN_DEPENDS=	${LOCALBASE}/lib/netscape/plugins:${PORTSDIR}/www/netscape47-naviga
 
 MAN7=		plugger.7
 MANCOMPRESSED=	no
+ALL_TARGET=	freebsd-aout
 
 post-patch:
-	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.old
+	${MV} ${WRKSRC}/plugger.c ${WRKSRC}/plugger.c.orig
 	${SED} \
 	  -e 's#/usr/local/#${PREFIX}/#' \
-	  -e 's#/usr/X11/#${X11BASE}/#' \
-	  -e 's#/etc/pluggerrc#${PREFIX}/etc/pluggerrc.sample#' \
-	  -e 's# /etc/ # ${PREFIX}/etc/pluggerrc.sample #' \
-	  ${WRKSRC}/Makefile.old > ${WRKSRC}/Makefile
+	  ${WRKSRC}/plugger.c.orig > ${WRKSRC}/plugger.c
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/plugger.so ${PREFIX}/lib/netscape/plugins
+	${INSTALL_MAN}  ${WRKSRC}/plugger.7  ${MANPREFIX}/man/man7
+	${INSTALL_DATA} ${WRKSRC}/pluggerrc  ${PREFIX}/etc/pluggerrc.sample
 
 post-install:
 	@${CAT} ${PKGMESSAGE} | ${SED} -e 's:/usr/local:${PREFIX}:'
