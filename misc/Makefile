@@ -1,6 +1,8 @@
-# $Id: Makefile,v 1.19 1994/12/13 09:09:50 asami Exp $
+# $Id: Makefile,v 1.20 1994/12/14 06:19:06 ache Exp $
+#
+# restricted: pgp
 #
 SUBDIR= Wnn calc hfs iozone ispell less mshell mtools netpbm \
-	pgp top unzip xsysstats zoo screen
+	top unzip xsysstats zoo screen
 
 .include <bsd.port.subdir.mk>
