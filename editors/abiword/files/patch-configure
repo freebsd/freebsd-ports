@@ -1,0 +1,11 @@
+--- configure.orig	Mon Aug 30 00:05:51 2004
++++ configure	Mon Aug 30 00:06:11 2004
+@@ -8178,7 +8178,7 @@
+ 			echo "$as_me:$LINENO: checking for pspell >= $_abi_pspell_major.$_abi_pspell_minor.$_abi_pspell_micro" >&5
+ echo $ECHO_N "checking for pspell >= $_abi_pspell_major.$_abi_pspell_minor.$_abi_pspell_micro... $ECHO_C" >&6
+ 
+-			abi_pspell_version="0`$abi_pspell_config --version | cut -d. -f1,2,3`"
++			abi_pspell_version="0`$abi_pspell_config --version | cut -d. -f1,2,3`.0"
+ 			abi_pspell_major=`echo $abi_pspell_version | sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
+ 			abi_pspell_minor=`echo $abi_pspell_version | sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\2/'`
+ 			abi_pspell_micro=`echo $abi_pspell_version | sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\3/'`
