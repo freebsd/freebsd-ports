@@ -1,12 +1,9 @@
 This is a port of lingoteach, which aims to be a language
-teaching program. Until now, chinese, german, spanish and
-english are supported. You ca add your own lessons by using
-an integrated editor or editing the xml-files yourself.
-Different types of learning are available for actually 825
-words and sentences.
-For the soundsnippets, you have to download the sound tarball
-separately ad copy the content of its data-dir to
-$PREFIX/lingoteach/data.
+teaching program. Until now nearly 17 languages are supported, 
+some with sound of native speakers. You can add your own lessons
+by using an integrated editor or edit the XML-files manually.
+Different types of learning are available for many words and
+sentences.
 
 WWW: http://www.lingoteach.org
 
