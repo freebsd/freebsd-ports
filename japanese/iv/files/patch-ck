@@ -1,0 +1,31 @@
+diff -Ncr src/bin/idraw/idarrowhead.c src/bin/idraw/idarrowhead.c
+*** src/bin/idraw/idarrowhead.c	Thu Dec 12 08:49:18 1991
+--- src/bin/idraw/idarrowhead.c	Sat Feb  6 19:05:49 1999
+***************
+*** 51,56 ****
+--- 51,75 ----
+  
+  Graphic* Arrowhead::Copy () { return new Arrowhead(_x, _y, this); }
+  Graphic& Arrowhead::operator = (Graphic& g) { return Graphic::operator=(g); }
++ Arrowhead& Arrowhead::operator = (Arrowhead& a) {
++     Graphic::operator=(a);
++ 
++     _count = 0;
++     if (_y)
++ 	delete[] _y;
++     if (_x)
++ 	delete[] _x;
++     _x = _y = nil;
++     if (! a._count)
++ 	return *this;
++ 
++     _count = a._count;
++     _x = new Coord[_count];
++     _y = new Coord[_count];
++     ::memcpy(_x, a._x, sizeof(Coord) * _count);
++     ::memcpy(_y, a._y, sizeof(Coord) * _count);
++     return *this;
++ }
+  
+  Coord Arrowhead::CorrectedHeight (float t) {
+      float w = _x[BOTRIGHT] - _x[BOTCTR];

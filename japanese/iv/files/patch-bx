@@ -1,0 +1,11 @@
+--- src/lib/Unidraw/stencilcomp.c.org	Wed Mar 25 10:18:16 1992
++++ src/lib/Unidraw/stencilcomp.c	Mon Jan  3 15:30:38 2000
+@@ -169,7 +169,7 @@
+     StencilComp* comp = (StencilComp*) GetSubject();
+     Bitmap* image, *mask;
+     comp->GetStencil()->GetOriginal(image, mask);
+-    char* tag = (image == mask) ? "SSten" : "FSten";
++    const char* tag = (image == mask) ? "SSten" : "FSten";
+     Coord w = image->Width();
+     Coord h = image->Height();
+ 

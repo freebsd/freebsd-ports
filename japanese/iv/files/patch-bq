@@ -1,0 +1,12 @@
+--- src/lib/IV-2_6/matcheditor.c.org	Thu Jun 25 03:30:20 1992
++++ src/lib/IV-2_6/matcheditor.c	Mon Jan  3 14:32:28 2000
+@@ -53,7 +53,8 @@
+ }
+ 
+ void MatchEditor::Match (const char* p, boolean m) {
+-    for (char* pp = pattern; *p != '\0'; ++p, ++pp) {
++    char* pp;
++    for (pp = pattern; *p != '\0'; ++p, ++pp) {
+         *pp = *p;
+         if (*p == '%') {
+             ++p;

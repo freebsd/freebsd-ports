@@ -1,0 +1,117 @@
+diff -Ncr src/bin/idraw/idarrows.c src/bin/idraw/idarrows.c
+*** src/bin/idraw/idarrows.c	Sat Feb  6 19:11:32 1999
+--- src/bin/idraw/idarrows.c	Sat Feb  6 19:05:49 1999
+***************
+*** 295,311 ****
+  }
+  
+  boolean ArrowMultiLine::contains (PointObj& po, Graphic* gs) {
+!     return 
+!         SF_MultiLine::contains(po, gs) || 
+!         Head() && ArrowheadContains(_head, po, gs) ||
+!         Tail() && ArrowheadContains(_tail, po, gs);
+  }
+  
+  boolean ArrowMultiLine::intersects (BoxObj& bo, Graphic* gs) {
+!     return 
+!         SF_MultiLine::intersects(bo, gs) || 
+!         Head() && ArrowheadIntersects(_head, bo, gs) ||
+!         Tail() && ArrowheadIntersects(_tail, bo, gs);
+  }
+  
+  void ArrowMultiLine::draw (Canvas* c, Graphic* gs) {
+--- 295,331 ----
+  }
+  
+  boolean ArrowMultiLine::contains (PointObj& po, Graphic* gs) {
+!     PSPattern *pat;
+!     boolean ret;
+! 
+!     if (Head() || Tail()) {
+! 	pat = gs->GetPattern();
+! 	gs->SetPattern(psnonepat);
+!     }	
+!     ret = (SF_MultiLine::contains(po, gs)
+! 	   || (Head() && ArrowheadContains(_head, po, gs))
+! 	   || (Tail() && ArrowheadContains(_tail, po, gs)));
+!     if (Head() || Tail()) {
+! 	gs->SetPattern(pat);
+!     }
+!     return ret;
+  }
+  
+  boolean ArrowMultiLine::intersects (BoxObj& bo, Graphic* gs) {
+!     PSPattern *pat;
+!     boolean ret;
+! 
+!     if (Head() || Tail()) {
+! 	pat = gs->GetPattern();
+! 	gs->SetPattern(psnonepat);
+!     }	
+!     ret = (SF_MultiLine::intersects(bo, gs)
+! 	   || (Head() && ArrowheadIntersects(_head, bo, gs))
+! 	   || (Tail() && ArrowheadIntersects(_tail, bo, gs)));
+!     if (Head() || Tail()) {
+! 	gs->SetPattern(pat);
+!     }
+!     return ret;
+  }
+  
+  void ArrowMultiLine::draw (Canvas* c, Graphic* gs) {
+***************
+*** 486,502 ****
+  }
+  
+  boolean ArrowOpenBSpline::contains (PointObj& po, Graphic* gs) {
+!     return 
+!         SFH_OpenBSpline::contains(po, gs) || 
+!         Head() && ArrowheadContains(_head, po, gs) ||
+!         Tail() && ArrowheadContains(_tail, po, gs);
+  }
+  
+  boolean ArrowOpenBSpline::intersects (BoxObj& bo, Graphic* gs) {
+!     return 
+!         SFH_OpenBSpline::intersects(bo, gs) || 
+!         Head() && ArrowheadIntersects(_head, bo, gs) ||
+!         Tail() && ArrowheadIntersects(_tail, bo, gs);
+  }
+  
+  void ArrowOpenBSpline::draw (Canvas* c, Graphic* gs) {
+--- 506,542 ----
+  }
+  
+  boolean ArrowOpenBSpline::contains (PointObj& po, Graphic* gs) {
+!     PSPattern *pat;
+!     boolean ret;
+! 
+!     if (Head() || Tail()) {
+! 	pat = gs->GetPattern();
+! 	gs->SetPattern(psnonepat);
+!     }	
+!     ret = (SFH_OpenBSpline::contains(po, gs)
+! 	   || (Head() && ArrowheadContains(_head, po, gs))
+! 	   || (Tail() && ArrowheadContains(_tail, po, gs)));
+!     if (Head() || Tail()) {
+! 	gs->SetPattern(pat);
+!     }
+!     return ret;
+  }
+  
+  boolean ArrowOpenBSpline::intersects (BoxObj& bo, Graphic* gs) {
+!     PSPattern *pat;
+!     boolean ret;
+! 
+!     if (Head() || Tail()) {
+! 	pat = gs->GetPattern();
+! 	gs->SetPattern(psnonepat);
+!     }	
+!     ret = (SFH_OpenBSpline::intersects(bo, gs)
+! 	   || (Head() && ArrowheadIntersects(_head, bo, gs))
+! 	   || (Tail() && ArrowheadIntersects(_tail, bo, gs)));
+!     if (Head() || Tail()) {
+! 	gs->SetPattern(pat);
+!     }
+!     return ret;
+  }
+  
+  void ArrowOpenBSpline::draw (Canvas* c, Graphic* gs) {

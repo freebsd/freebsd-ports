@@ -1,0 +1,20 @@
+--- src/bin/ibuild/ibslider.c.org	Tue Jun  9 04:44:50 1992
++++ src/bin/ibuild/ibslider.c	Wed Jan  5 22:47:49 2000
+@@ -416,7 +416,7 @@
+                 strcpy(SliderClass, coreclass);
+                 strcat(SliderClass, "_Slider");
+                 
+-                boolean export = icomp->GetMemberNameVar()->GetExport();
++                boolean getexport = icomp->GetMemberNameVar()->GetExport();
+                 const char* classname = icomp->GetClassNameVar()->GetName();
+ 
+ 		int w = icomp->GetCanvasVar()->Width();
+@@ -426,7 +426,7 @@
+                     BeginInstantiate(out);
+                     out << "(";
+                 } else {
+-                    if (export && !_emitMain) {
++                    if (getexport && !_emitMain) {
+                         out << "    " << mname << " = new " << SliderClass;
+                         out << "(";
+                     } else {

@@ -1,0 +1,72 @@
+--- src/bin/doc/Document.c.org	Sat Dec 12 08:36:37 1992
++++ src/bin/doc/Document.c	Mon Jan  3 14:10:55 2000
+@@ -450,7 +450,8 @@
+         return nil;
+     } else {
+         long count = _families->count();
+-        for (long i = 0; i < count; ++i) {
++	long i;
++        for (i = 0; i < count; ++i) {
+             FontFamilyInfo& info = _families->item_ref(0);
+             if (strcmp(info._name, name) == 0) {
+                 break;
+@@ -590,7 +591,8 @@
+ void Document::remove_float (Item* item) {
+     touch(true);
+     long count = _viewer->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         DocumentViewerInfo& info = _viewer->item_ref(i);
+         info._viewer->float_removed(item);
+     }
+@@ -2277,7 +2279,8 @@
+ 
+ long Document::find_macro (const char* name) {
+     long count = _macro->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         MacroInfo& info = _macro->item_ref(i);
+         if (strcmp(info._name, name) == 0) {
+             break;
+@@ -2314,7 +2317,8 @@
+ 
+ long Document::find_counter (const char* name) {
+     long count = _counter->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         CounterInfo& info = _counter->item_ref(i);
+         if (strcmp(info._name, name) == 0) {
+             break;
+@@ -2365,7 +2369,8 @@
+ 
+ long Document::find_parameter (const char* name) {
+     long count = _parameter->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         DocumentParameterInfo& info = _parameter->item_ref(i);
+         if (strcmp(info._name, name) == 0) {
+             break;
+@@ -2406,7 +2411,8 @@
+ 
+ long Document::find_label (const char* name) {
+     long count = _label->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         LabelInfo& info = _label->item_ref(i);
+         if (strcmp(info._name, name) == 0) {
+             break;
+@@ -2447,7 +2453,8 @@
+ 
+ long Document::find_float (Item* item) {
+     long count = _float->count();
+-    for (long i = 0; i < count; ++i) {
++    long i;
++    for (i = 0; i < count; ++i) {
+         FloatInfo& info = _float->item_ref(i);
+         if (info._item == item) {
+             break;

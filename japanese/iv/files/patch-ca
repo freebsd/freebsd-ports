@@ -1,0 +1,20 @@
+--- src/bin/ibuild/ibvars.h.org	Thu Jul 16 07:36:21 1992
++++ src/bin/ibuild/ibvars.h	Wed Jan  5 22:08:03 2000
+@@ -232,7 +232,7 @@
+ 
+ inline boolean MemberSharedName::GetExport() { return _export; }
+ inline SubclassNameVar* MemberSharedName::GetSubclass () { return _subclass; }
+-inline void MemberSharedName::SetExport(boolean export) { _export = export;}
++inline void MemberSharedName::SetExport(boolean m_export) { _export = m_export;}
+ inline int& MemberSharedName::GetSerial () { return _mSerial; }
+ inline IDVar* MemberSharedName::GetIDVar () { return _idVar; }
+ 
+@@ -326,7 +326,7 @@
+ inline int ButtonSharedName::GetInitial() { return _initial; }
+ inline void ButtonSharedName::SetInitial(int initial) { _initial = initial;}
+ inline boolean ButtonSharedName::GetExport() { return _export; }
+-inline void ButtonSharedName::SetExport(boolean export) { _export = export;}
++inline void ButtonSharedName::SetExport(boolean m_export) { _export = m_export;}
+ inline const char* ButtonSharedName::GetFuncName() { return _func; }
+ inline int& ButtonSharedName::GetSerial() { return _bsSerial; }
+ inline SubclassNameVar* ButtonSharedName::GetSubclass () { return _subclass; }

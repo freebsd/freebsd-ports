@@ -1,0 +1,28 @@
+--- src/bin/ibuild/ibvars.c.org	Wed Sep  9 07:33:42 1992
++++ src/bin/ibuild/ibvars.c	Wed Jan  5 22:49:34 2000
+@@ -371,9 +371,9 @@
+ /*****************************************************************************/
+ 
+ MemberSharedName::MemberSharedName (
+-    const char* name, boolean export, boolean machgen
++    const char* name, boolean b_export, boolean machgen
+ ) : SharedName(name, machgen) {
+-    _export = export;
++    _export = b_export;
+     _subclass = new SubclassNameVar("", false, false);
+     _subclass->ref();
+     _idVar = nil;
+@@ -471,11 +471,11 @@
+ 
+ /*****************************************************************************/
+ MemberNameVar::MemberNameVar (
+-    const char* name, boolean export, boolean machgen
++    const char* name, boolean b_export, boolean machgen
+ ) {
+     _msharedname = nil;
+     if (name != nil) {
+-        _msharedname = new MemberSharedName(name, export, machgen);
++        _msharedname = new MemberSharedName(name, b_export, machgen);
+         _msharedname->ref();
+     }
+ }

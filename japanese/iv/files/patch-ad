@@ -910,6 +910,24 @@ diff -rc --exclude=Makefile --exclude=FREEBSD work-orig/iv/src/lib/IV-2_6/xpaint
   
   PainterRep::PainterRep() {
       display = Session::instance()->default_display();
+***************
+*** 1231,1237 ****
+  	return;
+      }
+      register XPoint* v = AllocPts(n+1);
+!     for (register int i = 0; i < n; i++) {
+  	Map(c, x[i], y[i], v[i].x, v[i].y);
+      }
+      if (x[i-1] != x[0] || y[i-1] != y[0]) {
+--- 1232,1239 ----
+  	return;
+      }
+      register XPoint* v = AllocPts(n+1);
+!     register int i;
+!     for (i = 0; i < n; i++) {
+  	Map(c, x[i], y[i], v[i].x, v[i].y);
+      }
+      if (x[i-1] != x[0] || y[i-1] != y[0]) {
 diff -rc --exclude=Makefile --exclude=FREEBSD work-orig/iv/src/lib/TIFF/prototypes.h ./src/lib/TIFF/prototypes.h
 *** work-orig/iv/src/lib/TIFF/prototypes.h	Wed May 31 08:52:12 1995
 --- ./src/lib/TIFF/prototypes.h	Sun May 28 14:21:04 1995

@@ -1,0 +1,16 @@
+--- src/lib/IV-X11/xdrag.c.org	Sat Nov 14 14:14:37 1992
++++ src/lib/IV-X11/xdrag.c	Mon Jan  3 14:44:07 2000
+@@ -230,11 +230,12 @@
+     XWindow *children;
+     unsigned int kids;
+     Status status;
++    int i;
+     status = XQueryTree(display, root, &root, &parent, &children, &kids);
+     if (status == 0) {
+ 	return None;
+     }
+-    for (int i = kids - 1; i >= 0 && children[i] != under ; --i);
++    for (i = kids - 1; i >= 0 && children[i] != under ; --i);
+     for (--i; i >= 0; --i) {
+ 	XWindowAttributes attributes;
+ 	XGetWindowAttributes(display, children[i], &attributes);

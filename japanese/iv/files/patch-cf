@@ -1,0 +1,29 @@
+--- src/bin/ibuild/ibmenu.c.org	Wed Sep  9 07:34:15 1992
++++ src/bin/ibuild/ibmenu.c	Wed Jan  5 22:45:28 2000
+@@ -403,7 +403,7 @@
+             
+             const char* proc = menuItem->GetTrackNameVar()->GetName();
+             const char* text = menuItem->GetMenuItemGraphic()->GetText();
+-            boolean export = icomp->GetMemberNameVar()->GetExport();
++            boolean getexport = icomp->GetMemberNameVar()->GetExport();
+             Shape* shape = icomp->GetShapeVar()->GetShape();
+             
+             if (icomp->GetClassNameVar()->IsSubclass()) {
+@@ -411,7 +411,7 @@
+                 out << "(";
+                 
+             } else {
+-                if (export && !_emitMain) {
++                if (getexport && !_emitMain) {
+                     out << "    " << mname << " = ";
+                     out << "new " << MenuClass;
+                 } else {
+@@ -431,7 +431,7 @@
+             EndInstantiate(out);
+             
+             if (!_emitMain && proc != nil && *proc != '\0') {
+-                if (!export || icomp->GetClassNameVar()->IsSubclass()) {
++                if (!getexport || icomp->GetClassNameVar()->IsSubclass()) {
+                     out << "    " << mname << "->SetCoreClass(this);\n";
+                     out <<"    "<< mname <<"->SetCoreFunc("<< "&" << coreclass;
+                     out << "::" << proc << ");\n";

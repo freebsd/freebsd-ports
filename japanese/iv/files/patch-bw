@@ -1,0 +1,12 @@
+--- src/lib/IV-X11/xfont.c.org	Mon Jan  3 15:17:24 2000
++++ src/lib/IV-X11/xfont.c	Mon Jan  3 15:21:01 2000
+@@ -706,7 +706,8 @@
+     int sublength = strlen(substring);
+     int length = strlen(string) - sublength;
+     for (int i = 0; i <= length; ++i) {
+-        for (int j = 0; j < sublength; ++j) {
++	int j;
++        for (j = 0; j < sublength; ++j) {
+             if (string[i+j] != substring[j]) {
+                 break;
+             }

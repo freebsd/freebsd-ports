@@ -1,0 +1,11 @@
+--- src/lib/IV-2_6/control.c.org	Wed Feb 12 05:48:58 1992
++++ src/lib/IV-2_6/control.c	Mon Jan  3 14:18:03 2000
+@@ -162,7 +162,7 @@
+ 	    return true;
+ 	}
+     }
+-    for (c = state_->Prev(); c != nil; c = c->Prev()) {
++    for (ControlState* c = state_->Prev(); c != nil; c = c->Prev()) {
+ 	if (c->IsView(i)) {
+ 	    return true;
+ 	}

@@ -1,0 +1,18 @@
+--- src/bin/ibuild/ibpanelctrl.c.org	Wed Nov 11 03:16:39 1992
++++ src/bin/ibuild/ibpanelctrl.c	Wed Jan  5 22:46:29 2000
+@@ -871,13 +871,13 @@
+     } else if (_emitBSInits) {
+         ButtonStateVar* bsVar = pcComp->GetButtonStateVar();
+ 	const char* name = bsVar->GetName();
+-        boolean export = bsVar->GetExport();
++        boolean getexport = bsVar->GetExport();
+         const char* subclass = bsVar->GetSubclassName();
+ 
+ 	if (!_bsinitslist->Search(name)) {
+ 	    _bsinitslist->Append(name);
+ 
+-            if (export && !_emitMain) {
++            if (getexport && !_emitMain) {
+                 out << "    " << name;
+ 
+             } else {

@@ -1,0 +1,30 @@
+--- src/bin/ibuild/ibdialog.c.org	Wed Oct 28 10:19:27 1992
++++ src/bin/ibuild/ibdialog.c	Wed Jan  5 22:39:32 2000
+@@ -35,6 +35,9 @@
+ #include <Unidraw/unidraw.h>
+ #include <Unidraw/viewer.h>
+ #include <Unidraw/catalog.h>
++#if __FreeBSD_cc_version >= 400003
++#include <stdio.h>
++#endif
+ #include <stream.h>
+ #include <string.h>
+ 
+@@ -380,7 +383,7 @@
+     strcat(ButtonClass, "_Button");
+     const char* proc = bsVar->GetFuncName();
+     
+-    boolean export = bsVar->GetExport();
++    boolean getexport = bsVar->GetExport();
+     CodeView* kidview = GetKidView();
+     MemberNameVar* kidname;
+     if (kidview != nil) {
+@@ -407,7 +410,7 @@
+ 
+     out << "Interactor*" << coreclass;
+     out << "::Interior() {\n";
+-    if (export) {
++    if (getexport) {
+         out << "    " << bsVar->GetName() << " = state;\n";
+     } else {
+         out << "    ButtonState* ";

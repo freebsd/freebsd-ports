@@ -26,6 +26,7 @@
 
 	FURUKAWA <yasu@on.cs.keio.ac.jp>
 	He created fixcmpfont patch from fixeucfont-1.2.
+	And, he fixed critical bug under egcs g++.
 	http://www.on.cs.keio.ac.jp/~yasu/linux/interviews/
 
 Yoshiro MIHIRA
