@@ -17,7 +17,7 @@ COMMENT=	An object-based web application platform
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_xmlplus/sax/expatreader.py:${PORTSDIR}/textproc/py-xml
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3-
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 DIST_SUBDIR=	zope
@@ -63,7 +63,9 @@ ISBATCH=	""
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,^\(ACCEPTABLE="\)\(.*"\)$$,\1 2.3.4 \2,g' \
+	@${REINPLACE_CMD} -e 's,^\(ACCEPTABLE="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
+		-e 's,^\(TARGET="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
+		-e 's,^\(EXENAMES="\).*"$$,\1${PYTHON_VERSION}",g' \
 		${WRKSRC}/configure
 
 post-install:
