@@ -14,6 +14,8 @@ lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/Factory.pod
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer.pod
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FailOver.pm
+lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FailBack.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/FallBack.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/LeastUsage.pm
 lib/perl5/site_perl/%%PERL_VER%%/ResourcePool/LoadBalancer/RoundRobin.pm
