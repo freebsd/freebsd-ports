@@ -1,5 +1,4 @@
 bin/LinNeighborhood
-lib/charset.alias
 share/locale/de/LC_MESSAGES/LinNeighborhood.mo
 share/locale/sv/LC_MESSAGES/LinNeighborhood.mo
 share/locale/ja/LC_MESSAGES/LinNeighborhood.mo
@@ -12,4 +11,4 @@ share/locale/pl/LC_MESSAGES/LinNeighborhood.mo
 share/locale/it/LC_MESSAGES/LinNeighborhood.mo
 share/locale/zh_TW/LC_MESSAGES/LinNeighborhood.mo
 share/icons/LinNeighborhood.xpm
-@unexec rmdir %D/share/icons
+@dirrm share/icons
