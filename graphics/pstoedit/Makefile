@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 MAINTAINER=	jseger@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
 		plotter.4:${PORTSDIR}/graphics/plotutils
 

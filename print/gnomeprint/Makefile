@@ -14,7 +14,7 @@ DISTNAME=	gnome-print-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

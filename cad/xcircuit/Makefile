@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes

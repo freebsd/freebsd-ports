@@ -9,13 +9,13 @@ PORTNAME=	moefonts-cid
 PORTVERSION=	1.0
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/moefonts-cid/ \
-				ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
-				ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
+		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/ \
+		ftp://ftp.ora.com/pub/examples/nutshell/cjkv/adobe/samples/
 DISTFILES=	MOEKai-Regular MOESung-Regular ac13.tar.Z ag13.tar.Z
 
 MAINTAINER=	keith@FreeBSD.org
 
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 NO_BUILD=	YES
 

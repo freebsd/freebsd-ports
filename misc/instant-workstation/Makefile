@@ -18,7 +18,7 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		dos2unix:${PORTSDIR}/converters/unix2dos \
 		emacs:${PORTSDIR}/editors/emacs20 \
 		fetchmail:${PORTSDIR}/mail/fetchmail \
-		ghostscript:${PORTSDIR}/print/ghostscript6 \
+		ghostscript:${PORTSDIR}/print/ghostscript-gnu \
 		grip:${PORTSDIR}/audio/grip \
 		gimp:${PORTSDIR}/graphics/gimp1 \
 		gv:${PORTSDIR}/print/gv \
