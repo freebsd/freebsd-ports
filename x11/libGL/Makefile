@@ -18,6 +18,8 @@ COMMENT=	OpenGL library that renders using GLX or DRI
 
 LIB_DEPENDS=	Xxf86vm.1:${PORTSDIR}/x11/libXxf86
 
+BROKEN=		Build fails
+
 CONFLICTS=	XFree86-libraries-*
 
 EXTRA_PATCHES=	${CF_PATCHES}
