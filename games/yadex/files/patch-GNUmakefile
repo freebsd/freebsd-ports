@@ -1,0 +1,23 @@
+--- GNUmakefile.orig	Tue Dec 12 16:49:00 2000
++++ GNUmakefile	Sun Jun 17 22:43:27 2001
+@@ -22,7 +22,10 @@
+ 
+ # Where you want "make install" to put things.
+ # Typical values : "/usr", "/usr/local" and "/opt".
+-PREFIX = /usr/local
++PREFIX?= /usr/local
++
++# Make a PREFIX def available to the source
++DEFINES += -DPREFIX=\"$(PREFIX)\"
+ 
+ # Which OS ?
+ OS := $(shell uname -s | tr A-Z a-z)
+@@ -352,7 +355,7 @@
+ else
+   INST_CFGDIR = $(PREFIX)/etc/yadex/$(VERSION)
+ endif
+-INST_YGDDIR = $(PREFIX)/share/games/yadex/$(VERSION)
++INST_YGDDIR = $(PREFIX)/share/yadex/$(VERSION)
+ ifdef FHS_MAN
+   INST_MANDIR = $(PREFIX)/share/man/man6
+ else

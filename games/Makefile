@@ -363,6 +363,7 @@
     SUBDIR += xvmines
     SUBDIR += xworm
     SUBDIR += xzip
+    SUBDIR += yadex
     SUBDIR += yahtzee
     SUBDIR += yamsweeper
     SUBDIR += zangband
