@@ -190,6 +190,9 @@
 # WITH_THEORA
 # default: autodetect
 #
+# WITH_X264
+# default: autodetect
+#
 # WITH_TREMOR
 # default: autodetect
 # By setting this option mplayer will use libtremor (integer only vorbis
@@ -257,6 +260,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.6
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -389,6 +393,10 @@ WITH_SVGALIB=	yes
 WITH_THEORA=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/libx264.so.0)
+WITH_X264=	yes
+.endif
+
 .if exists(${LOCALBASE}/lib/libaa.so.1)
 WITH_AALIB=	yes
 .endif
@@ -478,6 +486,8 @@ CONFIGURE_ARGS+=	--disable-libdv
 CONFIGURE_ARGS+=	--disable-mad
 #Theora
 CONFIGURE_ARGS+=	--disable-theora
+#x264
+CONFIGURE_ARGS+=	--disable-x264
 #Svgalib
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 #Aalib
@@ -488,8 +498,6 @@ USE_SDL=	sdl
 CONFIGURE_ARGS+=	--disable-esd
 #Vorbis
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
-#Real
-CONFIGURE_ARGS+=	--disable-real
 #Live media
 CONFIGURE_ARGS+=	--disable-live
 #XviD
@@ -659,6 +667,12 @@ LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
+.if defined(WITH_X264)
+LIB_DEPENDS+=	x264.0:${PORTSDIR}/multimedia/x264
+.else
+CONFIGURE_ARGS+=	--disable-x264
+.endif
+
 #.if defined(WITH_TREMOR)
 #LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
 #CONFIGURE_ARGS+=	--enable-tremor
@@ -690,8 +704,6 @@ CONFIGURE_ARGS+=	--enable-real \
 			--with-reallibdir=${LOCALBASE}/lib/RealPlayer8/Codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
-.else
-CONFIGURE_ARGS+=	--disable-real
 .endif
 
 .if defined(WITH_LIVEMEDIA)
@@ -897,4 +909,3 @@ install-user:
 	@${PERL} ${FILESDIR}/install-user
 
 .include <bsd.port.post.mk>
-
