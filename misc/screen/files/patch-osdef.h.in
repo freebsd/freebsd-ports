@@ -1,0 +1,11 @@
+--- osdef.h.in.orig	Sat Apr 28 22:26:43 2001
++++ osdef.h.in	Tue Apr  9 10:24:18 2002
+@@ -111,7 +111,7 @@
+ extern int   setpgid __P((int, int));
+ extern int   tcsetpgrp __P((int, int));
+ #endif
+-extern int   ioctl __P((int, int, char *));
++extern int   ioctl __P((int, unsigned long, ...));
+ 
+ extern int   kill __P((int, int));
+ 
