@@ -1,3 +1,5 @@
 bin/mergelogs
 bin/pen
 bin/penctl
+bin/penlog
+bin/penlogd
