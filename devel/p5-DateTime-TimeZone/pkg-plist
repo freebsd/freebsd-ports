@@ -58,6 +58,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Araguaina.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Aruba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Asuncion.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Bahia.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Barbados.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Belem.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Belize.pm
@@ -66,6 +67,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Boise.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Buenos_Aires.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cambridge_Bay.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Campo_Grande.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cancun.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Caracas.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Catamarca.pm
@@ -160,6 +162,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Thule.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Thunder_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Tijuana.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Toronto.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Tortola.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Vancouver.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Whitehorse.pm
