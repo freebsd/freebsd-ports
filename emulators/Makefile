@@ -30,6 +30,7 @@
     SUBDIR += ia64sim
     SUBDIR += ines
     SUBDIR += libvm68k
+    SUBDIR += linux-peops-softgpu
     SUBDIR += linux-vmware-toolbox
     SUBDIR += linux-winetools
     SUBDIR += linux_base
