@@ -2,8 +2,43 @@ include/libxklavier/xklavier.h
 include/libxklavier/xklavier_config.h
 lib/libxklavier.a
 lib/libxklavier.so
-lib/libxklavier.so.8
+lib/libxklavier.so.7
 libdata/pkgconfig/libxklavier.pc
+share/doc/libxklavier-%%VERSION%%/html/annotated.html
+share/doc/libxklavier-%%VERSION%%/html/doxygen.css
+share/doc/libxklavier-%%VERSION%%/html/doxygen.png
+share/doc/libxklavier-%%VERSION%%/html/files.html
+share/doc/libxklavier-%%VERSION%%/html/functions.html
+share/doc/libxklavier-%%VERSION%%/html/globals.html
+share/doc/libxklavier-%%VERSION%%/html/group__activation.html
+share/doc/libxklavier-%%VERSION%%/html/group__callbacks.html
+share/doc/libxklavier-%%VERSION%%/html/group__currents.html
+share/doc/libxklavier-%%VERSION%%/html/group__debugerr.html
+share/doc/libxklavier-%%VERSION%%/html/group__enum.html
+share/doc/libxklavier-%%VERSION%%/html/group__lookup.html
+share/doc/libxklavier-%%VERSION%%/html/group__props.html
+share/doc/libxklavier-%%VERSION%%/html/group__settings.html
+share/doc/libxklavier-%%VERSION%%/html/group__wininfo.html
+share/doc/libxklavier-%%VERSION%%/html/group__xkbevents.html
+share/doc/libxklavier-%%VERSION%%/html/group__xkbgroup.html
+share/doc/libxklavier-%%VERSION%%/html/group__xkbinfo.html
+share/doc/libxklavier-%%VERSION%%/html/group__xklconfig.html
+share/doc/libxklavier-%%VERSION%%/html/group__xklconfiginitterm.html
+share/doc/libxklavier-%%VERSION%%/html/group__xklinitterm.html
+share/doc/libxklavier-%%VERSION%%/html/index.html
+share/doc/libxklavier-%%VERSION%%/html/modules.html
+share/doc/libxklavier-%%VERSION%%/html/structXklState-members.html
+share/doc/libxklavier-%%VERSION%%/html/structXklState.html
+share/doc/libxklavier-%%VERSION%%/html/struct__XklConfigItem-members.html
+share/doc/libxklavier-%%VERSION%%/html/struct__XklConfigItem.html
+share/doc/libxklavier-%%VERSION%%/html/struct__XklConfigRec-members.html
+share/doc/libxklavier-%%VERSION%%/html/struct__XklConfigRec.html
+share/doc/libxklavier-%%VERSION%%/html/xklavier_8h-source.html
+share/doc/libxklavier-%%VERSION%%/html/xklavier_8h.html
+share/doc/libxklavier-%%VERSION%%/html/xklavier__config_8h-source.html
+share/doc/libxklavier-%%VERSION%%/html/xklavier__config_8h.html
 share/libxklavier/xfree86.xml
 @dirrm share/libxklavier
+@dirrm share/doc/libxklavier-%%VERSION%%/html
+@dirrm share/doc/libxklavier-%%VERSION%%
 @dirrm include/libxklavier
