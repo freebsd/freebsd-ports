@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	kdeutils
-PORTVERSION=	1.90
+PORTVERSION=	20000829A
 CATEGORIES=	misc kde
-MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
+MASTER_SITES=	http://www.physics.purdue.edu/~will/
 
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.4:${PORTSDIR}/x11/kdelibs2
-
-BROKEN=		"Does not compile/run properly"
+		kdecore.4:${PORTSDIR}/x11/kdelibs2 \
+		qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
-USE_QT2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib
-CONFIGURE_ENV+=	MOC="${MOC}"
+CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt2" LIBQTFILE="libqt2" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt2 -ljpeg -lstdc++ -lgcc" \
+		USER_LDFLAGS="-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt2 -ljpeg -lstdc++ -lgcc"
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

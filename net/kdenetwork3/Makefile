@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	kdenetwork
-PORTVERSION=	20000724A
+PORTVERSION=	20000829A
 CATEGORIES=	net news kde
-MASTER_SITES=	$(MASTER_SITE_LOCAL)
+MASTER_SITES=	http://www.physics.purdue.edu/~will/
 MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	uu.1:${PORTSDIR}/converters/uulib \
 		qt2.4:${PORTSDIR}/x11-toolkits/qt22 \
-		kdecore.4:${PORTSDIR}/x11/kdelibs2 \
-		QwSpriteField.8:${PORTSDIR}/converters/kdesupport2
+		kdecore.4:${PORTSDIR}/x11/kdelibs2
 
-BROKEN=		"Does not use current snapshot"
-WRKSRC=		${WRKDIR}/kdenetwork
 MOC?=		${X11BASE}/bin/moc2
 USE_BZIP2=	yes
 USE_NEWGCC=	yes
