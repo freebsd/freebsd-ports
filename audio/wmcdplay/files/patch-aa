@@ -1,0 +1,287 @@
+--- cdctl.h.orig	Sat Dec  5 23:23:28 1998
++++ cdctl.h	Sat Dec  5 23:23:27 1998
+@@ -11,7 +11,7 @@
+ // define these if you have troubles, otherwise they slow responses
+ // #define _CDCTL_STOP_BEFORE_PLAY
+ // #define _CDCTL_START_BEFORE_PLAY
+-// #define _CDCTL_HARD_STOP
++#define _CDCTL_HARD_STOP
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
+@@ -20,8 +20,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+-#include <malloc.h>
+-#include <linux/cdrom.h>
++#include <sys/cdio.h>
+ 
+ // CD status values
+ #define ssData     0
+@@ -67,6 +66,9 @@
+ #define FALSE 0
+ #endif
+ 
++#define CD_MSF_OFFSET	150
++#define CDROM_DATA_TRACK	4
++
+ class CDCtl
+ {
+ public:
+@@ -102,12 +104,11 @@
+ 	  case acStop:
+ 
+              #ifdef _CDCTL_HARD_STOP
+-             ioctl(cdfd,CDROMSTOP);
++             ioctl(cdfd,CDIOCSTOP);
+              #endif
+              #ifndef _CDCTL_HARD_STOP
+-             ioctl(cdfd,CDROMSTART);
++             ioctl(cdfd,CDIOCSTART);
+              #endif
+-
+           break;
+ 	  case acPlay:
+              status_state=ssPlaying;
+@@ -115,10 +116,10 @@
+              tskOurPlay=TRUE;
+           break;
+           case acPause:
+-             ioctl(cdfd,CDROMPAUSE);
++             ioctl(cdfd,CDIOCPAUSE);
+           break;
+ 	  case acResume:
+-             ioctl(cdfd,CDROMRESUME);
++             ioctl(cdfd,CDIOCRESUME);
+           break;
+ 	  case acPrev:
+              newtrk--;
+@@ -145,13 +146,13 @@
+             }
+           break;
+ 	  case acEject:
+-             if(ioctl(cdfd,CDROMEJECT))
++             if(ioctl(cdfd,CDIOCEJECT))
+                 status_state=ssNoCD;
+              else
+                 status_state=ssTrayOpen;
+           break;
+ 	  case acClose:
+-             ioctl(cdfd,CDROMCLOSETRAY);
++             ioctl(cdfd,CDIOCCLOSE);
+              status_state=ssNoCD;
+           break;
+          }
+@@ -160,9 +161,15 @@
+    }
+    void doStatus(){
+       if(cdfdopen){
+-         struct cdrom_subchnl sc;
+-         sc.cdsc_format=CDROM_LBA;
+-         if(ioctl(cdfd, CDROMSUBCHNL, &sc)){
++         struct ioc_read_subchannel irs;
++         struct cd_sub_channel_info csci;
++         
++         memset(&irs, 0, sizeof(irs));
++         irs.data=&csci;
++         irs.data_len=sizeof(csci);
++         irs.address_format=CD_LBA_FORMAT;
++         irs.data_format=CD_MEDIA_CATALOG;
++         if(ioctl(cdfd, CDIOCREADSUBCHANNEL, &irs)){
+             if(status_state!=ssNoCD)
+                status_state=ssTrayOpen;
+ 	    status_track=0;
+@@ -171,18 +178,18 @@
+          else{
+             if(status_state==ssNoCD || status_state==ssTrayOpen)
+ 	       readTOC();
+-            switch(sc.cdsc_audiostatus){
+-             case CDROM_AUDIO_PLAY:
++            switch(csci.header.audio_status){
++             case CD_AS_PLAY_IN_PROGRESS:
+                 if(status_state==ssStopped)
+                    tskOurPlay=FALSE;
+                 status_state=ssPlaying;
+              break;
+-             case CDROM_AUDIO_PAUSED:
++             case CD_AS_PLAY_PAUSED:
+                 if(status_state==ssStopped)
+                    tskOurPlay=FALSE;
+                 status_state=ssPaused;
+              break;
+-             case CDROM_AUDIO_COMPLETED:
++             case CD_AS_PLAY_COMPLETED:
+                 if(tskOurPlay){
+                    selecttrack();
+                    doStatus();
+@@ -194,7 +201,7 @@
+              default:
+                 status_state=ssStopped;
+             }
+-            trackinfo(&sc);
++            trackinfo(&csci);
+             if(cd_trklist[status_track].track_data)
+                status_state=ssData;
+          }
+@@ -202,19 +209,21 @@
+    }
+    void setVolume(int l, int r){
+       if(cdfdopen){
+-         struct cdrom_volctrl vol;
+-         vol.channel0=l;
+-         vol.channel1=r;
+-         ioctl(cdfd,CDROMVOLCTRL,&vol);
++         struct ioc_vol vol;
++         vol.vol[0]=l;
++         vol.vol[1]=r;
++         vol.vol[2]=0;
++         vol.vol[3]=0;
++         ioctl(cdfd,CDIOCSETVOL,&vol);
+          readVolume();
+       }
+    }
+    void readVolume(){
+       if(cdfdopen){
+-         struct cdrom_volctrl vol;
+-         ioctl(cdfd,CDROMVOLREAD,&vol);
+-         status_volumel=vol.channel0;
+-         status_volumer=vol.channel1;
++         struct ioc_vol vol;
++         ioctl(cdfd,CDIOCGETVOL,&vol);
++         status_volumel=vol.vol[0];
++         status_volumer=vol.vol[1];
+       }
+    }
+    int getVolumeL(){
+@@ -260,36 +269,67 @@
+       return status_pos-cd_trklist[status_track].track_start;
+    }
+ private:
++#if 0
+    void readTOC(){
+       if(cd_trklist!=NULL)
+          free(cd_trklist);
+-      struct cdrom_tochdr hdr;
+-      ioctl(cdfd, CDROMREADTOCHDR, &hdr);
+-      cd_tracks=hdr.cdth_trk1;
++      struct ioc_toc_header hdr;
++      ioctl(cdfd, CDIOREADTOCHEADER, &hdr);
++      cd_tracks=hdr.ending_track - hdr.starting_track + 1;
+       cd_trklist=(struct CDTrack *)malloc(cd_tracks*sizeof(struct CDTrack));
+-      struct cdrom_tocentry te;
++      struct ioc_read_toc_single_entry te;
+       int prev_addr=0;
+       for(int i=0;i<=cd_tracks;i++){
+          if(i==cd_tracks)
+-            te.cdte_track=CDROM_LEADOUT;
++            te.track=CDROM_LEADOUT;
+          else
+-            te.cdte_track=i+1;
+-         te.cdte_format=CDROM_LBA;
+-         ioctl(cdfd, CDROMREADTOCENTRY, &te);
++            te.track=i+1;
++         te.address_format=CD_LBA_FORMAT;
++         ioctl(cdfd, CDIOREADTOCENTRY, &te);
+          if(i>0)
+-	    cd_trklist[i-1].track_len = te.cdte_addr.lba - prev_addr;
+-         prev_addr=te.cdte_addr.lba;
++	    cd_trklist[i-1].track_len = ntohl(te.entry.addr.lba) - prev_addr;
++         prev_addr=ntohl(te.entry.addr.lba);
+          if(i<cd_tracks){
+-            cd_trklist[i].track_data = te.cdte_ctrl & CDROM_DATA_TRACK ? TRUE : FALSE;
+-	    cd_trklist[i].track_start = te.cdte_addr.lba;
++            cd_trklist[i].track_data = te.entry.control & CDROM_DATA_TRACK ? TRUE : FALSE;
++	    cd_trklist[i].track_start = ntohl(te.entry.addr.lba);
+          }
+          else
+-            cd_len = te.cdte_addr.lba;
++            cd_len = ntohl(te.entry.addr.lba);
+       }
++      
+    }
+-   void trackinfo(struct cdrom_subchnl *subchnl){
++#else
++void readTOC(void) {
++	struct ioc_toc_header hdr;
++	struct ioc_read_toc_entry te;
++	int i;
++	
++	if(cdfd != -1) {
++		if(cd_trklist != NULL) free(cd_trklist);
++	
++		ioctl(cdfd, CDIOREADTOCHEADER, &hdr);
++		cd_tracks = hdr.ending_track;
++		cd_trklist = (struct CDTrack *)malloc(cd_tracks * sizeof(struct CDTrack));
++
++		te.data_len = (cd_tracks + 1) * sizeof(struct cd_toc_entry);
++		te.data = (struct cd_toc_entry *)malloc(te.data_len);
++     	te.address_format = CD_LBA_FORMAT;
++     	te.starting_track = 0;
++		ioctl(cdfd, CDIOREADTOCENTRYS, &te);
++		for(i = 0; i < cd_tracks; i++) {
++			cd_trklist[i].track_start = ntohl(te.data[i].addr.lba);
++			cd_trklist[i].track_len = ntohl(te.data[i + 1].addr.lba) -
++				cd_trklist[i].track_start;
++			cd_trklist[i].track_data = (te.data[i].control & 4);
++		}
++		free(te.data);
++	}
++}
++#endif
++
++   void trackinfo(struct cd_sub_channel_info *subchnl){
+       if(status_state==ssPlaying || status_state==ssPaused){
+-         status_pos=subchnl->cdsc_absaddr.lba;
++         status_pos=ntohl(subchnl->what.position.absaddr.lba);
+          for(status_track=0;status_track<cd_tracks;status_track++){
+             if(status_pos<cd_trklist[status_track].track_start+cd_trklist[status_track].track_len)
+                break;
+@@ -297,24 +337,24 @@
+       }
+    }
+    void play(){
+-      struct cdrom_msf pmsf;
++      struct ioc_play_msf pmsf;
+       int abs0=status_pos+CD_MSF_OFFSET;
+       int abs1=cd_trklist[status_track].track_start+cd_trklist[status_track].track_len-1+CD_MSF_OFFSET;
+-      pmsf.cdmsf_min0=abs0/(75*60);
+-      pmsf.cdmsf_min1=abs1/(75*60);
+-      pmsf.cdmsf_sec0=(abs0%(75*60))/75;
+-      pmsf.cdmsf_sec1=(abs1%(75*60))/75;
+-      pmsf.cdmsf_frame0=abs0%75;
+-      pmsf.cdmsf_frame1=abs1%75;
++      pmsf.start_m=abs0/(75*60);
++      pmsf.end_m=abs1/(75*60);
++      pmsf.start_s=(abs0%(75*60))/75;
++      pmsf.end_s=(abs1%(75*60))/75;
++      pmsf.start_f=abs0%75;
++      pmsf.end_f=abs1%75;
+ 
+       #ifdef _CDCTL_STOP_BEFORE_PLAY
+-      ioctl(cdfd,CDROMSTOP);
++      ioctl(cdfd,CDIOCSTOP);
+       #endif
+       #ifdef _CDCTL_START_BEFORE_PLAY
+-      ioctl(cdfd,CDROMSTART);
++      ioctl(cdfd,CDIOCSTART);
+       #endif
+ 
+-      ioctl(cdfd,CDROMPLAYMSF,&pmsf);
++      ioctl(cdfd,CDIOCPLAYMSF,&pmsf);
+    }
+    void select(int trk){
+       status_track=trk;
+@@ -323,10 +363,10 @@
+ 	 if(cd_trklist[status_track].track_data){
+ 
+              #ifdef _CDCTL_HARD_STOP
+-             ioctl(cdfd,CDROMSTOP);
++             ioctl(cdfd,CDIOCSTOP);
+              #endif
+              #ifndef _CDCTL_HARD_STOP
+-             ioctl(cdfd,CDROMSTART);
++             ioctl(cdfd,CDIOCSTART);
+              #endif
+ 
+          }
