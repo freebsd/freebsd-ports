@@ -1,1 +1,3 @@
 bin/tiff2png
+share/doc/tiff2png/README
+@dirrm share/doc/tiff2png
