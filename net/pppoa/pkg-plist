@@ -13,4 +13,6 @@ share/doc/speedtouch/INSTALL-nl
 share/doc/speedtouch/ppp.conf.sample
 share/doc/speedtouch/quick-install
 @exec cat %D/share/doc/speedtouch/quick-install
+share/speedtouch/boot.v123.bin
 @dirrm share/doc/speedtouch
+@dirrm share/speedtouch
