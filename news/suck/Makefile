@@ -9,7 +9,9 @@ PORTNAME=	suck
 PORTVERSION=	4.3.2
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	http://www.sucknews.org/
+MASTER_SITES=	http://www.sucknews.org/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
