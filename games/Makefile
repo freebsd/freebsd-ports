@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.173 1998/12/14 21:02:32 jseger Exp $
+# $Id: Makefile,v 1.174 1998/12/14 21:20:09 jmz Exp $
 #
 
     SUBDIR += 3dc
@@ -164,7 +164,6 @@
     SUBDIR += xspacewarp
     SUBDIR += xspringies
     SUBDIR += xteddy
-    SUBDIR += xtetris
     SUBDIR += xtic
     SUBDIR += xtriangles
     SUBDIR += xtris
