@@ -1,22 +1,15 @@
---- Makefile.orig	Thu Jul 25 05:37:27 2002
-+++ Makefile	Wed Aug  7 13:07:21 2002
-@@ -24,12 +24,12 @@
+--- Makefile.orig	Mon Sep  9 13:47:54 2002
++++ Makefile	Thu Sep 19 12:54:34 2002
+@@ -24,7 +24,7 @@
  endif
- 
- #prefix = /usr/local
--BINDIR = ${prefix}/bin
-+BINDIR = $(PREFIX)/bin
- # BINDIR = /usr/local/bin
--MANDIR = ${prefix}/man
-+MANDIR = $(PREFIX)/man
  
  # a BSD compatible 'install' program
 -INSTALL = install
 +INSTALL = @${BSD_INSTALL_PROGRAM}
  
- SRCS_COMMON = xacodec.c cpudetect.c codec-cfg.c cfgparser.c my_profile.c spudec.c playtree.c playtreeparser.c asxparser.c vobsub.c subreader.c sub_cc.c find_sub.c
- SRCS_MENCODER = mencoder.c mp_msg-mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/osd.c libvo/sub.c libvo/font_load.c me-opt-reg.c
-@@ -226,44 +226,11 @@
+ SRCS_COMMON = cpudetect.c codec-cfg.c cfgparser.c my_profile.c spudec.c playtree.c playtreeparser.c asxparser.c vobsub.c subreader.c sub_cc.c find_sub.c
+ SRCS_MENCODER = mencoder.c mp_msg-mencoder.c $(SRCS_COMMON) libao2/afmt.c divx4_vbr.c libvo/aclib.c libvo/osd.c libvo/sub.c libvo/font_load.c libvo/font_load_ft.c me-opt-reg.c xvid_vbr.c
+@@ -193,44 +193,11 @@
  ifeq ($(VIDIX),yes)
  	$(DO_MAKE)
  endif
@@ -50,7 +43,7 @@
 -ifeq ($(DVDKIT),yes)
 -ifeq ($(DVDKIT_SHARED),yes)
 -	if test ! -d $(LIBDIR) ; then mkdir -p $(LIBDIR) ; fi
--	$(INSTALL) -m 755 $(INSTALLSTRIP) libmpdvdkit/libmpdvdkit.so $(LIBDIR)/libmpdvdkit.so
+-	$(INSTALL) -m 755 $(INSTALLSTRIP) libmpdvdkit2/libmpdvdkit.so $(LIBDIR)/libmpdvdkit.so
 -endif
 -endif
 -ifeq ($(CSS_USE),yes)

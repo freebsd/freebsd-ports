@@ -1,13 +1,6 @@
 bin/mplayer
 bin/mencoder
-lib/libdha-0.1.so
-lib/libdha.so
-lib/mplayer/vidix/mach64_vid.so
-lib/mplayer/vidix/mga_crtc2_vid.so
-lib/mplayer/vidix/mga_vid.so
-lib/mplayer/vidix/pm3_vid.so
-lib/mplayer/vidix/radeon_vid.so
-lib/mplayer/vidix/rage128_vid.so
+%%GMPLAYER%%bin/gmplayer
 %%PORTDOCS%%share/doc/mplayer/bugreports.html
 %%PORTDOCS%%share/doc/mplayer/cd-dvd.html
 %%PORTDOCS%%share/doc/mplayer/codecs-in.html
@@ -24,5 +17,3 @@ share/mplayer/codecs.conf
 share/mplayer/example.conf
 share/mplayer/input.conf
 %%PORTDOCS%%@dirrm share/doc/mplayer
-@dirrm lib/mplayer/vidix
-@dirrm lib/mplayer
