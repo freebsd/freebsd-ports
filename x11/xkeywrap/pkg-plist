@@ -1,0 +1,5 @@
+bin/xkeywrap
+share/doc/xkeywrap/README
+share/doc/xkeywrap/demo.dat
+share/doc/xkeywrap/xkeywrap_demo.c
+@dirrm share/doc/xkeywrap
