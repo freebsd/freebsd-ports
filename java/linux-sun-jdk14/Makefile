@@ -43,14 +43,12 @@ APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION:R}
 
 .include <bsd.port.pre.mk>
 
-#.BEGIN:
-#	@${ECHO} "******** WARNING ********"
-#	@${ECHO} "This JDK is currently unstable, especially when run as a non-root user. You are advised to use either the Sun JDK 1.3 for Linux (${PORTSDIR}/java/linux-sun-jdk13) or the FreeBSD JDK 1.3 (${PORTSDIR}/java/jdk13) instead."
-#	@${ECHO}
-
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=You must manually fetch the J2SE v1.4 SDK Linux GNUZIP Tar shell script (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
+
+pre-everything:
+	@${CAT} ${PKGMESSAGE}
 
 post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}

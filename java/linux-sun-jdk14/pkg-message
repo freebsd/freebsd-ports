@@ -1,0 +1,5 @@
+Warning: This JDK is currently unstable, especially if not run as root.
+
+You are advised to use either of the following JDK ports instead:
+o Sun JDK 1.3 for Linux (java/linux-sun-jdk13)
+o FreeBSD JDK 1.3 (java/jdk13)
