@@ -1,7 +1,50 @@
 bin/showimg
 share/applnk/Graphics/showimg.desktop
 share/apps/konqueror/servicemenus/konqshowimg.desktop
-share/apps/showimg/logo.png
+share/apps/showimg/convert2png.pl
+share/apps/showimg/icons/hicolor/16x16/actions/flip.png
+share/apps/showimg/icons/hicolor/16x16/actions/item_rename.png
+share/apps/showimg/icons/hicolor/16x16/actions/miror.png
+share/apps/showimg/icons/hicolor/16x16/actions/rotation_acw.png
+share/apps/showimg/icons/hicolor/16x16/actions/rotation_cw.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_bis+.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_factor.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_full.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_h.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_lock.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/16x16/actions/viewmag_w.png
+share/apps/showimg/icons/hicolor/22x22/actions/flip.png
+share/apps/showimg/icons/hicolor/22x22/actions/largethumbnails.png
+share/apps/showimg/icons/hicolor/22x22/actions/medthumbnails.png
+share/apps/showimg/icons/hicolor/22x22/actions/miror.png
+share/apps/showimg/icons/hicolor/22x22/actions/rotation_acw.png
+share/apps/showimg/icons/hicolor/22x22/actions/rotation_cw.png
+share/apps/showimg/icons/hicolor/22x22/actions/smallthumbnails.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_bis+.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_factor.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_full.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_lock.png
+share/apps/showimg/icons/hicolor/22x22/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/22x22/mimetypes/psd.png
+share/apps/showimg/icons/hicolor/32x32/actions/flip.png
+share/apps/showimg/icons/hicolor/32x32/actions/miror.png
+share/apps/showimg/icons/hicolor/32x32/actions/rotation_acw.png
+share/apps/showimg/icons/hicolor/32x32/actions/rotation_cw.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_bis+.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_factor.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_full.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_h.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_lock.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_w.png
+share/apps/showimg/icons/hicolor/32x32/mimetypes/psd.png
+share/apps/showimg/icons/hicolor/48x48/mimetypes/psd.png
+share/apps/showimg/icons/hicolor/64x64/mimetypes/psd.png
+share/apps/showimg/pics/logo.png
 share/apps/showimg/showimgui.rc
 share/doc/HTML/de/showimg/but-back.png
 share/doc/HTML/de/showimg/but-copy.png
@@ -32,6 +75,7 @@ share/doc/HTML/de/showimg/index.docbook
 share/doc/HTML/de/showimg/main-window.png
 share/doc/HTML/en/showimg/but-back.png
 share/doc/HTML/en/showimg/but-copy.png
+share/doc/HTML/en/showimg/but-cut.png
 share/doc/HTML/en/showimg/but-forward.png
 share/doc/HTML/en/showimg/but-fullscreen.png
 share/doc/HTML/en/showimg/but-go_up.png
@@ -70,48 +114,9 @@ share/doc/HTML/en/showimg/comparison.png
 share/doc/HTML/en/showimg/index.cache.bz2
 share/doc/HTML/en/showimg/index.docbook
 share/doc/HTML/en/showimg/main-window.png
-share/icons/hicolor/16x16/actions/flip.png
-share/icons/hicolor/16x16/actions/item_rename.png
-share/icons/hicolor/16x16/actions/miror.png
-share/icons/hicolor/16x16/actions/rotation_acw.png
-share/icons/hicolor/16x16/actions/rotation_cw.png
-share/icons/hicolor/16x16/actions/viewmag_bis+.png
-share/icons/hicolor/16x16/actions/viewmag_bis-.png
-share/icons/hicolor/16x16/actions/viewmag_factor.png
-share/icons/hicolor/16x16/actions/viewmag_full.png
-share/icons/hicolor/16x16/actions/viewmag_h.png
-share/icons/hicolor/16x16/actions/viewmag_lock.png
-share/icons/hicolor/16x16/actions/viewmag_no.png
-share/icons/hicolor/16x16/actions/viewmag_w.png
-share/icons/hicolor/22x22/actions/flip.png
-share/icons/hicolor/22x22/actions/largethumbnails.png
-share/icons/hicolor/22x22/actions/medthumbnails.png
-share/icons/hicolor/22x22/actions/miror.png
-share/icons/hicolor/22x22/actions/rotation_acw.png
-share/icons/hicolor/22x22/actions/rotation_cw.png
-share/icons/hicolor/22x22/actions/smallthumbnails.png
-share/icons/hicolor/22x22/actions/viewmag_bis+.png
-share/icons/hicolor/22x22/actions/viewmag_bis-.png
-share/icons/hicolor/22x22/actions/viewmag_factor.png
-share/icons/hicolor/22x22/actions/viewmag_full.png
-share/icons/hicolor/22x22/actions/viewmag_lock.png
-share/icons/hicolor/22x22/actions/viewmag_no.png
-share/icons/hicolor/32x32/actions/flip.png
-share/icons/hicolor/32x32/actions/miror.png
-share/icons/hicolor/32x32/actions/rotation_acw.png
-share/icons/hicolor/32x32/actions/rotation_cw.png
-share/icons/hicolor/32x32/actions/viewmag_bis+.png
-share/icons/hicolor/32x32/actions/viewmag_bis-.png
-share/icons/hicolor/32x32/actions/viewmag_factor.png
-share/icons/hicolor/32x32/actions/viewmag_full.png
-share/icons/hicolor/32x32/actions/viewmag_h.png
-share/icons/hicolor/32x32/actions/viewmag_lock.png
-share/icons/hicolor/32x32/actions/viewmag_no.png
-share/icons/hicolor/32x32/actions/viewmag_w.png
 share/icons/hicolor/32x32/apps/showimg.png
 share/icons/hicolor/48x48/apps/showimg.png
 share/icons/hicolor/64x64/apps/showimg.png
-share/locale/cs/LC_MESSAGES/showimg.mo
 share/locale/de/LC_MESSAGES/showimg.mo
 share/locale/es/LC_MESSAGES/showimg.mo
 share/locale/fr/LC_MESSAGES/showimg.mo
@@ -120,6 +125,22 @@ share/locale/ja/LC_MESSAGES/showimg.mo
 share/locale/nl/LC_MESSAGES/showimg.mo
 share/locale/sk/LC_MESSAGES/showimg.mo
 share/locale/sv/LC_MESSAGES/showimg.mo
+share/mimelnk/image/x-psd.desktop
 @dirrm share/doc/HTML/en/showimg
 @dirrm share/doc/HTML/de/showimg
+@dirrm share/apps/showimg/pics
+@dirrm share/apps/showimg/icons/hicolor/64x64/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/64x64
+@dirrm share/apps/showimg/icons/hicolor/48x48/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/48x48
+@dirrm share/apps/showimg/icons/hicolor/32x32/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/32x32/actions
+@dirrm share/apps/showimg/icons/hicolor/32x32
+@dirrm share/apps/showimg/icons/hicolor/22x22/mimetypes
+@dirrm share/apps/showimg/icons/hicolor/22x22/actions
+@dirrm share/apps/showimg/icons/hicolor/22x22
+@dirrm share/apps/showimg/icons/hicolor/16x16/actions
+@dirrm share/apps/showimg/icons/hicolor/16x16
+@dirrm share/apps/showimg/icons/hicolor
+@dirrm share/apps/showimg/icons
 @dirrm share/apps/showimg
