@@ -1,6 +1,6 @@
 # New ports collection makefile for:    xasteroids
-# Date created:         3 Jan 1995
-# Whom:                 swallace
+# Date created:		3 Jan 1995
+# Whom:			swallace
 #
 # $FreeBSD$
 #
@@ -9,8 +9,8 @@ PORTNAME=	xasteroids
 PORTVERSION=	5.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/ \
-		ftp://ftp.belgium.eu.net/pub/X11/R5contrib/
-DISTFILES=       xasteroids.sh.Z
+		ftp://ftp.x.org/pub/R5contrib/
+DISTFILES=	xasteroids.sh.Z
 
 MAINTAINER=	swallace@FreeBSD.org
 
@@ -20,5 +20,9 @@ EXTRACT_CMD=	( cd ${WRKDIR}; zcat | sh -s )
 EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	# empty
 MAN6=		xasteroids.6
+
+post-extract:
+	${CP} ${FILESDIR}/Imakefile ${WRKSRC}
+	${CP} ${WRKSRC}/xast.man ${WRKSRC}/xasteroids.man
 
 .include <bsd.port.mk>
