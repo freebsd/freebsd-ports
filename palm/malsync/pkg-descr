@@ -12,4 +12,4 @@ need to use the MobileLink application on the device.
 MALSync only operates from the command line.  If you want to build it
 into some Unix-based, HotSync-like GUI, more power to you.
 
-WWW: http://www.tomw.org/malsync.html
+WWW: http://www.tomw.org/malsync/
