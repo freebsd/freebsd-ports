@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sendip
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
