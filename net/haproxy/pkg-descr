@@ -1,0 +1,9 @@
+HAproxy is a high-performance and highly-robust TCP/HTTP load balancer which 
+provides cookie-based persistence, automatic failover, header insertion, 
+deletion, modification on the fly, advanced logging contents to help trouble- 
+shooting buggy applications and/or networks, and a few other features. It uses 
+its own state machine to achieve up to ten thousands hits per second on modern 
+hardware, even with thousands simultaneous connections. It currently lacks SSL 
+and keep-alive, both of which are planned.
+
+WWW: http://w.ods.org/tools/haproxy/

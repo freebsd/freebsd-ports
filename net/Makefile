@@ -204,6 +204,7 @@
     SUBDIR += gutenfetch
     SUBDIR += h2n
     SUBDIR += hagelslag
+    SUBDIR += haproxy
     SUBDIR += hawk
     SUBDIR += hesiod
     SUBDIR += hinfo
