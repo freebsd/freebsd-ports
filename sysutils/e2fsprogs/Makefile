@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.27
+PORTVERSION=	1.32
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-Derrcode_t=long"
 
 MAN1=	chattr.1 lsattr.1 uuidgen.1
 MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 fsck.8 \
-	mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
+	findfs.8 mke2fs.8 mklost+found.8 resize2fs.8 tune2fs.8 \
 	fsck.ext2.8 fsck.ext3.8 mkfs.ext2.8 mkfs.ext3.8
 
 post-patch:
