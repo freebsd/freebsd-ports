@@ -1,0 +1,13 @@
+--- Makefile.orig	Mon May 21 21:21:47 2001
++++ Makefile	Mon May 21 21:22:44 2001
+@@ -7,8 +7,8 @@
+ X11_BINDIR = /usr/X11R6/bin
+ 
+ CXX=c++
+-CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -O2 -I/usr/X11R6/include
+-LDFLAGS += -L/usr/X11R6/lib -lXpm -lXext -lX11
++CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -I${X11BASE}/include
++LDFLAGS += -L${X11BASE}/lib -lXpm -lXext -lX11
+ 
+ OBJECTS = Main.o Mixer.o Xpm.o
+ 

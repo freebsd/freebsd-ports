@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	mixer.app
-PORTVERSION=	1.4.1
+PORTVERSION=	1.6.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.fukt.hk-r.se/~per/mixer/	
+MASTER_SITES=	http://www.fukt.bth.se/~per/mixer/
 DISTNAME=	Mixer.app-${PORTVERSION}
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
-USE_IMAKE=	yes
 USE_XPM=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Mixer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${PREFIX}/bin
 
 .include <bsd.port.mk>
