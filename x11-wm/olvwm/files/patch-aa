@@ -1,43 +1,3 @@
-*** Imakefile.orig	Fri Oct 21 23:45:49 1994
---- Imakefile	Fri Oct 21 00:04:23 1994
-***************
-*** 48,55 ****
-  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
-  
-  /**/# For a generic Solaris 2.x system, I'd suggest
-! MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
-! 
-  /**/#
-  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
-  /**/# want to include XPM support.  For a generic Solaris 1.x
---- 48,55 ----
-  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
-  
-  /**/# For a generic Solaris 2.x system, I'd suggest
-! #MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
-! MORECCFLAGS= -DOW_I18N_L3 -DSHAPE -DREGEXP
-  /**/#
-  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
-  /**/# want to include XPM support.  For a generic Solaris 1.x
-***************
-*** 57,64 ****
-  /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
-  /**/#
-  /**/# For Solaris 2.x, I'd suggest
-! MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
-! 
-  
-  /**/# No more changes needed
-  
---- 57,64 ----
-  /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
-  /**/#
-  /**/# For Solaris 2.x, I'd suggest
-! #MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
-! MORELDFLAGS=-L${OPENWINHOME}/lib 
-  
-  /**/# No more changes needed
-  
 *** defaults.c.orig	Thu Jan 13 14:36:03 1994
 --- defaults.c	Thu Oct 20 21:17:55 1994
 ***************
@@ -366,3 +326,53 @@
   /***************************************************************************
   * private data
   ***************************************************************************/
+*** Imakefile.orig	Mon Feb 27 18:22:32 1995
+--- Imakefile	Mon Feb 27 18:39:18 1995
+***************
+*** 48,55 ****
+  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
+  
+  /**/# For a generic Solaris 2.x system, I'd suggest
+! MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
+! 
+  /**/#
+  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
+  /**/# want to include XPM support.  For a generic Solaris 1.x
+--- 48,55 ----
+  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
+  
+  /**/# For a generic Solaris 2.x system, I'd suggest
+! #MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
+! MORECCFLAGS= -DOW_I18N_L3 -DSHAPE -DREGEXP
+  /**/#
+  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
+  /**/# want to include XPM support.  For a generic Solaris 1.x
+***************
+*** 57,64 ****
+  /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
+  /**/#
+  /**/# For Solaris 2.x, I'd suggest
+! MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
+! 
+  
+  /**/# No more changes needed
+  
+--- 57,64 ----
+  /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
+  /**/#
+  /**/# For Solaris 2.x, I'd suggest
+! #MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
+! MORELDFLAGS=-L${OPENWINHOME}/lib 
+  
+  /**/# No more changes needed
+  
+***************
+*** 143,148 ****
+--- 143,149 ----
+  	do \
+  	echo "installing $$i"; \
+  	$(INSTALL) -c $(INSTMANFLAGS) $$i $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
++ 	$(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
+  	done
+  
+  #include <XView.prog>
