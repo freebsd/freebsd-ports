@@ -20,6 +20,7 @@ share/mmix/halves.mmix
 share/mmix/halves.mms
 share/mmix/harm.mms
 share/mmix/hello.mms
+share/mmix/hptest.mms
 share/mmix/inout.mms
 share/mmix/iotest.mms
 share/mmix/iotest1.mms
@@ -37,6 +38,10 @@ share/mmix/mmixal.w
 share/mmix/mmmix.w
 share/mmix/mmotype.w
 share/mmix/number1.mms
+share/mmix/permu-heap.mms
+share/mmix/permu-langdon.mms
+share/mmix/permu-plain.mms
+share/mmix/permu-st.mms
 share/mmix/phi.mms
 share/mmix/plain.mmconfig
 share/mmix/popup.mms
@@ -61,7 +66,6 @@ share/mmix/sortx.mms
 share/mmix/strcpy.mms
 share/mmix/sub1.mms
 share/mmix/sub2.mms
-share/mmix/tem.mms
 share/mmix/test.mmconfig
 share/mmix/test.mmix
 share/mmix/test.mms
