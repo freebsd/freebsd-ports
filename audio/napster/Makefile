@@ -20,10 +20,10 @@ WRKSRC=		${WRKDIR}/nap
 NO_BUILD=	yes
 
 do-patch:
-	brandelf -t Linux ${WRKSRC}/nap
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nap ${PREFIX}/bin/nap
+	brandelf -t Linux ${PREFIX}/bin/nap
 	${MKDIR} ${PREFIX}/share/nap
 	${INSTALL_DATA} ${WRKSRC}/nap.conf ${PREFIX}/share/nap
 .if (!defined(NOPORTDOCS))
