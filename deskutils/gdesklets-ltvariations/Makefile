@@ -7,7 +7,7 @@
 
 PORTNAME=	ltvariations
 PORTVERSION=	0.26
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -43,6 +43,7 @@ do-install:
 	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${ii}
 	@${INSTALL_DATA} ${WRKSRC}/${ii}/*.py ${DATADIR}/gdesklets/Sensors/${ii}/
 .endfor
+	@${INSTALL_DATA} ${WRKSRC}/LTVClock/timezones.dat ${DATADIR}/gdesklets/Sensors/LTVClock/
 	@${INSTALL_DATA} ${WRKSRC}/Displays/${DISPLAY}/*.display ${DATADIR}/gdesklets/Displays/${DISPLAY}/
 	@${INSTALL_DATA} ${WRKSRC}/Displays/${DISPLAY}/gfx/*.png ${DATADIR}/gdesklets/Displays/${DISPLAY}/gfx/
 	@${INSTALL_DATA} ${WRKSRC}/Displays/${DISPLAY}/gfx/bg/*.png ${DATADIR}/gdesklets/Displays/${DISPLAY}/gfx/bg/

@@ -33,6 +33,7 @@ share/gnome/gdesklets/Sensors/LTVBorder/__init__.pyo
 share/gnome/gdesklets/Sensors/LTVClock/__init__.py
 share/gnome/gdesklets/Sensors/LTVClock/__init__.pyc
 share/gnome/gdesklets/Sensors/LTVClock/__init__.pyo
+share/gnome/gdesklets/Sensors/LTVClock/timezones.dat
 share/gnome/gdesklets/Sensors/LTVCommand/__init__.py
 share/gnome/gdesklets/Sensors/LTVCommand/__init__.pyc
 share/gnome/gdesklets/Sensors/LTVCommand/__init__.pyo
