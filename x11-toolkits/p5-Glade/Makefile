@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Glade
-PORTVERSION=	0.7008
+PORTVERSION=	0.7009
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -23,7 +23,6 @@ USE_GNOME=	yes
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-MAN3PREFIX=     ${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Gtk::GladeXML::reference.3pm
 
 .include <bsd.port.mk>

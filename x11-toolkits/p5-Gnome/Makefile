@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Gnome
-PORTVERSION=	0.7008
+PORTVERSION=	0.7009
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -16,15 +16,16 @@ DISTNAME=	Gtk-Perl-${PORTVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	The main Gnome module of Gtk-Perl
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
+BUILD_DEPENDS=	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
+		${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk/Gdk/ImlibImage.pm:${PORTSDIR}/x11-toolkits/p5-GdkImlib \
+		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 USE_GNOME=	gnomelibs
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
-MAN3PREFIX=     ${LOCALBASE}/lib/perl5/${PERL_VERSION}
 MAN3=		Gnome.3pm \
 		Gnome::reference.3pm
 

@@ -1,5 +1,5 @@
---- Gtk/Makefile.PL.orig	Sun May 27 00:08:38 2001
-+++ Gtk/Makefile.PL	Tue Jan 21 11:07:55 2003
+--- Gtk/Makefile.PL.orig	Tue Jun 17 17:47:56 2003
++++ Gtk/Makefile.PL	Sun Oct 26 13:42:15 2003
 @@ -40,8 +40,8 @@
  	$threadl = "";
  }
@@ -36,13 +36,13 @@
 -sub MY::c_o {
 -	package MY; # so that "SUPER" works right
 -	my $inherited = shift->SUPER::c_o(@_);
--	$inherited =~ s/CCCMD.*$/$&\n\t\@if test -f `basename \$*.o` -a "`basename \$*.o`" != "\$*.o"; then mv `basename \$*.o` \$*.o; fi/m;
+-	$inherited =~ s/CCCMD.*$/$&\n\t\@if test -f `basename \$*.o` -a "`basename \$*.o`" != "\$*.o"; then mv `basename \$*.o` \$*.o; fi/mg;
 -    $inherited;
 -}
 +#sub MY::c_o {
 +#	package MY; # so that "SUPER" works right
 +#	my $inherited = shift->SUPER::c_o(@_);
-+#	$inherited =~ s/CCCMD.*$/$& -o \$*\n\t\@if test -f `basename \$*.o` -a "`basename \$*.o`" != "\$*.o"; then mv `basename \$*.o` \$*.o; fi/m;
++#	$inherited =~ s/CCCMD.*$/$&\n\t\@if test -f `basename \$*.o` -a "`basename \$*.o`" != "\$*.o"; then mv `basename \$*.o` \$*.o; fi/mg;
 +#    $inherited;
 +#}
  

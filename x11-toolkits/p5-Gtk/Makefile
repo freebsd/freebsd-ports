@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Gtk
-PORTVERSION=	0.7008
-PORTREVISION=	1
+PORTVERSION=	0.7009
+PORTREVISION=	0
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -23,7 +23,6 @@ USE_GNOME=	gtk12
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-guessing --lazy-load
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Gtk.3pm \
 		Gtk::CListModel.3pm \
 		Gtk::cookbook.3pm \
