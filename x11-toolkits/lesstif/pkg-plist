@@ -149,36 +149,22 @@ share/doc/LessTif/NEWS
 share/doc/LessTif/README
 share/doc/LessTif/RELEASE-POLICY
 share/doc/LessTif/TODO
-share/doc/LessTif/doc/COPYING.LIB.html
-share/doc/LessTif/doc/FAQ.html
 share/doc/LessTif/doc/INSTALL.html
-share/doc/LessTif/doc/agenda.html
-share/doc/LessTif/doc/bug-reporting.html
-share/doc/LessTif/doc/core.html
-share/doc/LessTif/doc/current.html
-share/doc/LessTif/doc/download.html
-share/doc/LessTif/doc/get.html
 share/doc/LessTif/doc/images/hungry.gif
 share/doc/LessTif/doc/images/lesstif-realsmall.gif
 share/doc/LessTif/doc/images/lesstif-small.gif
 share/doc/LessTif/doc/images/lesstif.gif
 share/doc/LessTif/doc/images/ltsunlogo.gif
-share/doc/LessTif/doc/lesstif.html
-share/doc/LessTif/doc/links.html
-share/doc/LessTif/doc/mailing-lists.html
 share/doc/LessTif/doc/man/man1/lesstif.1
 share/doc/LessTif/doc/man/man1/mwm.1
 share/doc/LessTif/doc/man/man1/xmbind.1
 share/doc/LessTif/doc/man/man5/mwmrc.5
-share/doc/LessTif/doc/platforms.html
-share/doc/LessTif/doc/release-policy.html
-share/doc/LessTif/doc/versions.html
-share/doc/LessTif/doc/working.html
 @dirrm lib/X11/mwm
 @dirrm lib/X11/lesstif
 @dirrm include/Xm
 @dirrm include/Mrm
 @dirrm share/doc/LessTif/doc/man/man5
+@dirrm share/doc/LessTif/doc/man/man3
 @dirrm share/doc/LessTif/doc/man/man1
 @dirrm share/doc/LessTif/doc/man
 @dirrm share/doc/LessTif/doc/images
