@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	1.4.1b2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -32,7 +33,7 @@ RUN_DEPENDS=	another_clock_applet:${PORTSDIR}/x11/gnomeapplets \
 		${PYTHON_SITELIBDIR}/_appletmodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		gnomeg:${PORTSDIR}/x11-toolkits/guile-gnome \
 		${X11BASE}/etc/panelmmConf.sh:${PORTSDIR}/x11-toolkits/panel-- \
-		gmc:${PORTSDIR}/x11-fm/gnomemc \
+		nautilus:${PORTSDIR}/x11-fm/nautilus \
 		xscreensaver:${PORTSDIR}/x11/xscreensaver
 
 NO_BUILD=	yes
