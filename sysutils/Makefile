@@ -150,6 +150,7 @@
     SUBDIR += krename
     SUBDIR += lavaps
     SUBDIR += lcdproc
+    SUBDIR += ldap-account-manager
     SUBDIR += lfm
     SUBDIR += libchk
     SUBDIR += libretto-config

@@ -1,0 +1,12 @@
+LDAP Account Manager (lam) is a webfrontend for managing accounts stored 
+in an openLDAP server.
+
+Features:
+- management of Unix user and group accounts (posixAccount/posixGroup)
+- management of Samba 2.x user and host accounts (sambaAccount)
+- automatic creation/deletion of home directories (experimental)
+- setting quotas (experimental)
+- support for LDAP+SSL
+- multi-language support (default language: English, German only partial)
+
+WWW: http://lam.sf.net/
