@@ -9,7 +9,7 @@ PORTVERSION=	1.12d
 CATEGORIES=	games
 MASTER_SITES=	http://www.teaser.fr/~jlgailly/
 
-MAINTAINER=	shaoz@asia.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 Go (weiqi, baduk) client for the Internet Go Server
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d

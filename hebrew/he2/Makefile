@@ -12,7 +12,7 @@ CATEGORIES=	hebrew editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nadav@libagent.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An editor for editing (primarily LaTeX) Hebrew files
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/hebrew:${PORTSDIR}/hebrew/elmar-fonts
