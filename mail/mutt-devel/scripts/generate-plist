@@ -153,7 +153,7 @@ EOF
       html=$(($html + 1))
     fi
     if [ "$MUTT_PGP_PATCH" = "yes" ]; then
-      html=$(($html + 2))
+      html=$(($html + 3))
     fi
     echo "%%DOCSDIR%%/html/manual.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/manual_toc.html" >> $tmp_first 
