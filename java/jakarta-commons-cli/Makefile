@@ -20,10 +20,10 @@ COMMENT=	Java library for command line arguments and options
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/commons-lang.jar:${PORTSDIR}/java/jakarta-commons-lang
 
-USE_JAVA=	1.2+
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
 ANT_TARGET=	jar -Dnoget
@@ -34,9 +34,10 @@ JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}-${PORTVERSION}-beta-2-dev.jar
 DESTJARFILE=	${PORTNAME}.jar
+PLIST_FILES+=   ${JAVAJARDIR:S,^${PREFIX}/,,}/${DESTJARFILE}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	${WRKSRC}/target/docs/apidocs
+PORTDOCS=	apidocs LICENSE.txt
 .endif
 
 do-build:
@@ -51,7 +52,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/target/docs/apidocs/* ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/target/docs/apidocs ${DOCSDIR}/
+	@${CP} -r ${WRKSRC}/LICENSE.txt ${DOCSDIR}/
 	@${ECHO} " [ DONE ]"
 .endif
 
