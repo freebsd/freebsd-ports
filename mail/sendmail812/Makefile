@@ -163,6 +163,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/smrsh/README ${DOCSDIR}/SMRSH
 .if defined(SENDMAIL_WITH_MILTER)
 	${INSTALL_DATA} ${WRKSRC}/libmilter/README ${DOCSDIR}/MILTER
+	${MKDIR} ${DOCSDIR}/libmilter
+	@${TAR} -C ${WRKSRC}/libmilter/docs -cf - . | \
+		${TAR} -C ${DOCSDIR}/libmilter -xf -
 .endif
 .endif
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
