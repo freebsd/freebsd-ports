@@ -22,7 +22,6 @@
 %%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization/autosplit.ix
 %%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization/deserialize.al
 %%SITE_PERL%%/auto/Data/Serializer/PHP/Serialization/serialize.al
-%%SITE_PERL%%/auto/Data/Serializer/Storable/DumpMeth.al
 %%SITE_PERL%%/auto/Data/Serializer/Storable/autosplit.ix
 %%SITE_PERL%%/auto/Data/Serializer/Storable/deserialize.al
 %%SITE_PERL%%/auto/Data/Serializer/Storable/serialize.al
