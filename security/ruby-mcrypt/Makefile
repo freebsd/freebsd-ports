@@ -9,9 +9,7 @@ PORTNAME=	mcrypt
 PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	security ruby
-MASTER_SITES=	http://www.rubylinks.de/download/ \
-		http://www.no.rubylinks.de/download/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
