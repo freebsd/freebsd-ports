@@ -24,10 +24,10 @@ MAN8=	arpspoof.8 dsniff.8 macof.8 mailsnarf.8 tcpkill.8 \
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 PLIST_SUB+=	X11=''
+MAN8+=	webspy.8
 .else
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=	X11='@comment '
-MAN8+=	webspy.8
 .endif
 
 .include <bsd.port.mk>
