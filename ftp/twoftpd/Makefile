@@ -6,16 +6,27 @@
 #
 
 PORTNAME=	twoftpd
-PORTVERSION=	1.15
+PORTVERSION=	1.17
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/twoftpd/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	A simple, secure, efficient FTP server
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-str.a:${PORTSDIR}/devel/bglibs
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_REINPLACE=	yes
+
 MAN1=		twoftpd-auth.1 twoftpd-xfer.1
 
-BIN=		twoftpd-anon twoftpd-anon-conf twoftpd-auth twoftpd-conf twoftpd-xfer
+BIN=		twoftpd-anon twoftpd-anon-conf twoftpd-auth	\
+		twoftpd-bind-port twoftpd-conf twoftpd-xfer
+
+post-patch:
+	${REINPLACE_CMD} -e 's,/usr/local/bglibs/,${LOCALBASE}/,'	\
+	${WRKSRC}/conf-bgincs ${WRKSRC}/conf-bglibs
+	${REINPLACE_CMD} -e 's,/usr/local/,${PREFIX}/,' ${WRKSRC}/conf-bin
 
 do-install:
 .for FILE in ${MAN1}
