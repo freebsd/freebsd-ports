@@ -1,15 +1,16 @@
-# New ports collection makefile for:    mkisofs
-# Version required:     1.11.1
-# Date created:         07 Aug 1996
-# Whom:                 jkh
+# New ports collection makefile for:	mkisofs
+# Version required:	1.12b4
+# Date created:		07 Aug 1996
+# Whom:			jhk
 #
-# $Id: Makefile,v 1.9 1999/02/22 16:09:52 dirk Exp $
+# $Id: Makefile,v 1.10 1999/02/23 16:18:44 dirk Exp $
 #
 
-DISTNAME=       mkisofs-1.11.3
+DISTNAME=	mkisofs-1.12b4
 CATEGORIES=	sysutils
-MASTER_SITES=   ftp://ftp.cdrom.com/pub/linux/tsx-11/packages/mkisofs/ \
-		ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/mkisofs/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/mkisofs/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/mkisofs/
 
 MAINTAINER=	dirk@FreeBSD.ORG
 
