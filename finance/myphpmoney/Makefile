@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	myphpmoney
 DISTNAME=		${PORTNAME}-${PORTVERSION}RC2
 
 MAINTAINER=		courou@users.sourceforge.net
-COMMENT=		A php script for managed your accounts
+COMMENT=		A PHP script for managing your accounts
 
 RUN_DEPENDS=		${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=		mysqlclient:${PORTSDIR}/databases/mysql323-client
