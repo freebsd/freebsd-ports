@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	swig
-PORTVERSION=	1.3a3
-CATEGORIES=	devel perl5 python tcl82
+PORTVERSION=	1.3a4
+CATEGORIES=	devel perl5 python ruby tcl82
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
@@ -17,7 +17,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
-		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82 \
+		${LOCALBASE}/bin/ruby:${PORTSDIR}/lang/ruby
 
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
