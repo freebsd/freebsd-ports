@@ -12,7 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/masafu-o/xwipower/
 EXTRACT_SUFX=	.tgz
 
-NOT_FOR_ARCHS=	sparc64 alpha
+ONLY_FOR_ARCHS=	i386
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Wave power level meter for wi(4)
