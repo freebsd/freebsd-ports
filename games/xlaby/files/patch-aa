@@ -1,0 +1,21 @@
+--- Imakefile.orig	Tue Dec  2 02:59:02 1997
++++ Imakefile	Fri Oct 13 21:00:22 2000
+@@ -13,17 +13,8 @@
+ 
+ INSTALLFLAGS = -c -o $(OWNER) -g $(GROUP)
+ 
+-# This will install xlaby in /usr/local/bin
+-# and man page in /usr/local/man/man6
+-DESTDIR = /usr/local
+-BINDIR = /bin
+-MANPATH = /man
+-MANSOURCEPATH = $(MANPATH)/man
+-MANDIR = $(MANSOURCEPATH)6
+-MANSUFFIX = 6x
++MANSUFFIX = 6
+ 
+ LOCAL_LIBRARIES = $(XONLYLIB)
+ 
+ SimpleProgramTarget(xlaby)
+-
+-install:: install.man
