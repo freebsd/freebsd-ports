@@ -1,0 +1,34 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+[ "$INST_USER" ] || INST_USER=moinmoin
+[ "$INST_GROUP" ] || INST_GROUP=${INST_USER}
+[ "$INST_UID" ] || INST_UID=192
+[ "$INST_GID" ] || INST_GID=${INST_UID}
+
+if ! pw groupshow "${INST_GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${INST_GROUP} -g ${INST_GID}; then
+		echo "Added group \"${INST_GROUP}\"."
+	else
+		echo "Adding group \"${INST_GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+if ! pw usershow "${INST_USER}" 2>/dev/null 1>&2; then
+	if pw useradd ${INST_USER} -u ${INST_UID} -g ${INST_GROUP} -h - \
+		-s "/sbin/nologin" -d "/nonexistent" \
+		-c "MoinMoin User"; \
+	then
+		echo "Added user \"${INST_USER}\"."
+	else
+		echo "Adding user \"${INST_USER}\" failed..."
+		exit 1
+	fi
+fi
+exit 0
