@@ -64,6 +64,10 @@ CONFDIR=	${PREFIX}/etc/click/conf
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha 4.x"
+.endif
+
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
 .endif
