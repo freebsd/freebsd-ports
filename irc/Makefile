@@ -23,6 +23,7 @@
     SUBDIR += quirc
     SUBDIR += roxirc
     SUBDIR += ruby-irc
+    SUBDIR += ruby-rica
     SUBDIR += scrollz
     SUBDIR += sic
     SUBDIR += sirc
