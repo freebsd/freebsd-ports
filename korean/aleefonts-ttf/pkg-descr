@@ -1,0 +1,9 @@
+Eunjin and Ongdalsam are general purpose Hangul truetype fonts and
+contain ascii and Korean syllable characters. These fonts are looks
+good in 12px (9pt in 96dpi screen) size without antialiasing.
+
+Hmfs is not a real Hangul font. It is specially designed truetype
+ascii font in the manner of Hangul 3-bul-sik typewriter which is
+invented by Ph.D Kong Byeong-woo.
+
+WWW: http://packages.debian.org/unstable/x11/ttf-alee
