@@ -1,0 +1,4 @@
+This module provides access to the musicbrainz client API using a
+perl-ish OO interface.
+
+WWW: http://www.musicbrainz.org/

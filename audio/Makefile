@@ -189,6 +189,7 @@
     SUBDIR += p5-MP3-ID3v1Tag
     SUBDIR += p5-MP3-Info
     SUBDIR += p5-MPEG-ID3v2Tag
+    SUBDIR += p5-MusicBrainz-Client
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
     SUBDIR += p5-libvorbis
