@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-03-10
+SNAPDATE=	2002-03-15
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	psim-freebsd
@@ -15,16 +15,13 @@ PORTREVISION=	${SNAPVER}
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 #MASTER_SITE_SUBDIR=	gdb/releases
-MASTER_SITE_SUBDIR=	gdb/snapshots/current
+MASTER_SITE_SUBDIR=	gdb/snapshots/branch
 #DISTNAME=	gdb-${PORTVERSION}
-DISTNAME=	gdb+dejagnu-${SNAPVER}
+DISTNAME=	gdb+dejagnu-5.1.90_${SNAPVER}
 
 MAINTAINER=	mp@FreeBSD.org
 
 USE_BZIP2=	yes
-
-.include <bsd.port.pre.mk>
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
@@ -48,4 +45,4 @@ cklatest:
 	    ftp://mirrors.rcn.net/mirrors/sources.redhat.com/${MASTER_SITE_SUBDIR}/  \
 	    | grep gdb+dejagnu-
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
