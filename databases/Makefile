@@ -92,6 +92,7 @@
     SUBDIR += mysql41-scripts
     SUBDIR += mysql41-server
     SUBDIR += mysql50-client
+    SUBDIR += mysql50-scripts
     SUBDIR += mysql50-server
     SUBDIR += mysql_last_value
     SUBDIR += mysqlcc
