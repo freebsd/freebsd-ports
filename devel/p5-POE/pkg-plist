@@ -1,7 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Devel/Null.pm
-lib/perl5/site_perl/%%PERL_VER%%/Devel/Trace.pm
-lib/perl5/site_perl/%%PERL_VER%%/MyOtherFreezer.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Component.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server/TCP.pm
@@ -35,9 +32,6 @@ lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadLine.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/ReadWrite.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/Run.pm
 lib/perl5/site_perl/%%PERL_VER%%/POE/Wheel/SocketFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/TestSetup.pm
-lib/perl5/site_perl/%%PERL_VER%%/coverage.perl
-lib/perl5/site_perl/%%PERL_VER%%/deptest.perl
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Server
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Driver

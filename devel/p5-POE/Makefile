@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -29,6 +29,6 @@ MAN3=		POE::Driver::SysRW.3 POE::Wheel::ListenAccept.3\
 		POE::Wheel::Run.3 POE::Filter::HTTPD.3 POE::Filter::Line.3\
 		POE::Filter::Stackable.3 POE::Filter::RecordBlock.3\
 		POE::Filter::Block.3 POE::Wheel::FollowTail.3 POE::Kernel.3\
-		POE::Filter::Stream.3
+		POE::Filter::Stream.3 POE::Wheel::Curses.3
 
 .include <bsd.port.mk>
