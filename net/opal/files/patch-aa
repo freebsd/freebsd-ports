@@ -1,57 +1,29 @@
-*** ../pwlib/src/ptlib/unix/tlibthrd.cxx.orig	Sun Nov 12 08:22:06 2000
---- ../pwlib/src/ptlib/unix/tlibthrd.cxx	Sun Nov 12 08:22:17 2000
-*************** static void sigSuspendHandler(int)
-*** 261,266 ****
---- 261,273 ----
-  }
-  
-  
-+ static void sigResumeHandler(int)
-+ {
-+   // do nothing. This is here so the 'signal' is consumed
-+   // and stops the application terminating with "User signal 2"
-+ }
-+ 
-+ 
-  void HouseKeepingThread::Main()
-  {
-    PProcess & process = PProcess::Current();
-*************** void * PThread::PX_ThreadStart(void * ar
-*** 437,446 ****
-    }
-  
-    // set the signal handler for SUSPEND_SIG
-!   struct sigaction action;
-!   memset(&action, 0, sizeof(action));
-!   action.sa_handler = sigSuspendHandler;
-!   sigaction(SUSPEND_SIG, &action, 0);
-  
-    // now call the the thread main routine
-    //PTRACE(1, "tlibthrd\tAbout to call Main");
---- 444,453 ----
-    }
-  
-    // set the signal handler for SUSPEND_SIG
-!   struct sigaction suspend_action;
-!   memset(&suspend_action, 0, sizeof(suspend_action));
-!   suspend_action.sa_handler = sigSuspendHandler;
-!   sigaction(SUSPEND_SIG, &suspend_action, 0);
-  
-    // now call the the thread main routine
-    //PTRACE(1, "tlibthrd\tAbout to call Main");
-*************** void PThread::Suspend(BOOL susp)
-*** 559,564 ****
---- 566,578 ----
-  {
-    PAssertOS(pthread_mutex_lock(&PX_suspendMutex) == 0);
-    BOOL unlock = TRUE;
+*** ../pwlib/src/ptlib/unix/tlibthrd.cxx.orig	Thu Nov 16 11:14:48 2000
+--- ../pwlib/src/ptlib/unix/tlibthrd.cxx	Thu Nov 16 11:15:21 2000
+*************** void PThread::PX_NewThread(BOOL startSus
+*** 386,391 ****
+--- 386,409 ----
+  //  pthread_attr_t threadAttr;
+  //  pthread_attr_init(&threadAttr);
+    PAssertOS(pthread_create(&PX_threadId, NULL, PX_ThreadStart, this) == 0);
 + 
 + #if defined(P_FREEBSD)
-+   struct sigaction resume_action;
-+   memset(&resume_action, 0, sizeof(resume_action));
-+   resume_action.sa_handler = sigResumeHandler;
-+   sigaction(RESUME_SIG, &resume_action, 0);
++   // There is a potential race condition here which shows up with FreeBSD 4.2
++   // and later, but really applies to all pthread libraries.
++   // If a thread is started in suspend mode, we need to make sure
++   // the thread (PX_ThreadStart) has had a chance to execute and block on the
++   // sigwait() (blocking on the Resume Signal) before this function returns.
++   // Otherwise the main program may issue a Resume Signal on the thread
++   // by calling PThread::Resume() before the thread is ready for it.
++   // If that happens the program will abort with an unhandled signal error.
++   // A workaround (not 100% guaranteed) is to yield here, which gives
++   // the newly created thread (PX_ThreadStart) a chance to execute.
++  
++   if (startSuspended) {
++     sched_yield();
++   }
 + #endif
++ 
+  }
   
-    if (pthread_kill(PX_threadId, 0) == 0) {
   
