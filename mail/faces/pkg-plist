@@ -1,14 +1,13 @@
 @cwd /usr/local
-share/faces/machine.tab
-share/faces/people.tab
 bin/compface
 bin/uncompface
 lib/libcompface.a
+lib/libcompface.so
 lib/libcompface.so.1.0
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/compface.h
-bin/icon2ikon 
+bin/icon2ikon
 bin/ikon2icon
 bin/rs2icon
 bin/fs2ikon
@@ -30,5 +29,7 @@ bin/newsfrom.faces
 bin/faces
 bin/face_update
 bin/faces.sendmail
+share/faces/machine.tab
+share/faces/people.tab
 @cwd /usr/X11R6
 lib/X11/app-defaults/Faces

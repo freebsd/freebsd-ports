@@ -4,22 +4,26 @@
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #			Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/03/15 15:03:45 andreas Exp $
+# $Id: Makefile,v 1.7 1998/09/19 01:51:19 hoek Exp $
 #
 
 DISTNAME=	faces-1.6.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/faces/
 EXTRACT_SUFX=	.tar.Z
-		
+
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 WRKSRC=		$(WRKDIR)/faces
 MAN1=		compface.1 faces.1 face_update.1
-MAN3=		compface.3 
-MLINKS=		compface.1 uncompface.1		compface.3 uncompface.3
+MAN3=		compface.3
+MLINKS=		compface.1 uncompface.1 \
+		compface.3 uncompface.3
+
+pre-patch:
+	@${CP} ${WRKSRC}/Makefile.dist ${WRKSRC}/Makefile
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
