@@ -7,7 +7,7 @@ You have to have:
 options		PFIL_HOOKS
 options		RANDOM_IP_ID	# Recommend, but may work without
 =========================================================================
-in your kernel in oder to use pf.
+in your kernel in order to use pf.
 
 WWW: http://pf4freebsd.love2party.net/
 
