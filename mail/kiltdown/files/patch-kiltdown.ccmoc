@@ -1,0 +1,11 @@
+--- kiltdown/kiltdown.ccmoc.orig	Mon May 14 05:25:23 2001
++++ kiltdown/kiltdown.ccmoc	Mon Sep  9 12:11:24 2002
+@@ -1115,7 +1115,7 @@
+                                              this, mainToolBarData[i].member,
+                                              mainToolBar, NULL);
+                 } else {
+-                    button = new QToolButton(NULL,
++                    button = new QToolButton((const QIconSet &)NULL,
+                                              label ? QString(label) : QString::null,
+                                              QString::null,
+                                              this, mainToolBarData[i].member,
