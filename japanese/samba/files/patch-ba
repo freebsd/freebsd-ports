@@ -1,40 +1,15 @@
---- configure.in.orig	Mon Dec 16 12:00:04 2002
-+++ configure.in	Mon Dec 16 22:56:30 2002
-@@ -510,9 +510,23 @@
- ############################################
- # we need dlopen/dlclose/dlsym/dlerror for PAM, the password database plugins and the new VFS code
- AC_CHECK_FUNCS(dlopen)
-+case "$host_os" in
-+	*bsd*)
-+		AC_CHECK_LIB(c, dlopen, [LIBS="$LIBS -lc";
-+		AC_DEFINE(HAVE_DLOPEN)])
-+		;;
-+esac
- if test x"$ac_cv_func_dlopen" = x"no"; then
--	AC_CHECK_LIB(dl, dlopen, [LIBS="$LIBS -ldl";
--	AC_DEFINE(HAVE_DLOPEN)])
-+	case "$host_os" in
-+	 *bsd*)
-+		AC_CHECK_LIB(c, dlopen, [LIBS="$LIBS -lc";
-+		AC_DEFINE(HAVE_DLOPEN)])
-+		;;
-+	     *)
-+		AC_CHECK_LIB(dl, dlopen, [LIBS="$LIBS -ldl";
-+		AC_DEFINE(HAVE_DLOPEN)])
-+		;;
-+	esac
- fi
- # dlopen/dlclose/dlsym/dlerror will be checked again later and defines will be set then
+--- configure.in.orig	Wed Feb 26 17:32:32 2003
++++ configure.in	Wed Feb 26 17:33:13 2003
+@@ -170,7 +170,7 @@
+ AC_SUBST(INSTALLCLIENTLIB)
  
-@@ -972,6 +986,7 @@
- 		*osf*) AC_DEFINE(OSF1)
- 			BLDSHARED="true"
- 			LDSHFLAGS="-shared"
-+			DYNEXP="-Wl,--export-dynamic"
- 			SONAMEFLAG="-Wl,-soname,"
- 			PICFLAG="-fPIC"
- 			AC_DEFINE(STAT_ST_BLOCKSIZE,512)
-@@ -1981,7 +1996,7 @@
+ # compile with optimization and without debugging by default
+-CFLAGS="-O ${CFLAGS}"
++CFLAGS="${CFLAGS}"
+ 
+ AC_ARG_ENABLE(debug, 
+ [  --enable-debug          Turn on compiler debugging information (default=no)],
+@@ -1981,7 +1981,7 @@
    yes)
      AC_MSG_RESULT(yes)
      AC_DEFINE(KRB5_AUTH)
