@@ -12,18 +12,6 @@ diff -u src.dist/auxil.c src/auxil.c
  
  #include "auxil.h"
 Only in src.dist: auxil.o
-diff -u src.dist/bdf.c src/bdf.c
---- src.dist/bdf.c	Thu Dec 27 06:00:20 2001
-+++ src/bdf.c	Thu Dec 27 06:01:59 2001
-@@ -18,7 +18,7 @@
- #include <gtk/gtk.h>
- 
- #include <ctype.h>
--#include <malloc.h>
-+#include <stdlib.h>
- 
- #include "auxil.h"
- #include "bdf.h"
 diff -u src.dist/bitmap.c src/bitmap.c
 --- src.dist/bitmap.c	Thu Dec 27 06:00:20 2001
 +++ src/bitmap.c	Thu Dec 27 06:01:59 2001

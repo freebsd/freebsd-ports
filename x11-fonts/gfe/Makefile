@@ -19,6 +19,4 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_XPM=	yes
 
-NO_MAN=
-
 .include <bsd.port.mk>
