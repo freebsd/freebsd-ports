@@ -16,7 +16,7 @@ COMMENT=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
-SLAVEDIRS=	french/php_doc german/php_doc japanese/php_doc
+SLAVEDIRS=	french/php_doc german/php_doc japanese/php_doc polish/php_doc
 
 PHP_LANG?=	en
 PHPDOCDIR=	${PREFIX}/share/doc/php-${PHP_LANG}
@@ -35,6 +35,7 @@ pre-fetch:
 	@${ECHO} "	es (spanish),"
 	@${ECHO} "	fr (french) or"
 	@${ECHO} "	ja (japanese)"
+	@${ECHO} "	pl (polish)"
 	@${ECHO} "to get a different language than the default one (english)."
 	@${ECHO}
 .endif
