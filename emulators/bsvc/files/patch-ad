@@ -1,0 +1,28 @@
+--- Makefile.common.orig	Sun Nov  8 22:39:28 1998
++++ Makefile.common	Mon Sep  6 21:43:02 1999
+@@ -12,14 +12,14 @@
+ ###############################################################################
+ 
+ ## Base Directory of the BSVC distribution
+-PROJECT_BASE = /home/bwmott/projects/bsvc/development/bsvc
++PROJECT_BASE? = /home/bwmott/projects/bsvc/development/bsvc
+ 
+ ## Directory to install the BSVC system
+ INSTALL_DIR = $(PROJECT_BASE)/bin
+ 
+ ## Name or path and Name of the Tcl/Tk "wish" executable
+ #WISH        = /usr/bin/wish
+-WISH         = wish
++WISH         = wish8.2
+ 
+ ## Name of WWW Browser and URL of the BSVC Home Page (or blank)
+ WWW_BROWSER   = 
+@@ -37,7 +37,7 @@
+ ######################### END OF CONFIGURATION ################################
+ 
+ INDEPENDENT_PARMS = PROJECT_BASE='$(PROJECT_BASE)' WISH='$(WISH)' \
+-	INCLUDES='-I$(PROJECT_BASE)/src/Framework $(SYS_INCLUDE)' \
++	INCLUDES='-I$(WRKSRC)/Framework $(SYS_INCLUDE)' \
+ 	LIBS='$(SYS_LIBS)' INSTALL_DIR='$(INSTALL_DIR)' \
+ 	WWW_BROWSER='$(WWW_BROWSER)' WWW_HOME_PAGE='$(WWW_HOME_PAGE)'
+ 
