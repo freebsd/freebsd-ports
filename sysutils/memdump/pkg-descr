@@ -1,0 +1,5 @@
+This program dumps system memory to the standard output stream,
+skipping over holes in memory maps.
+By default, the program dumps the contents of physical memory.
+
+WWW: http://www.porcupine.org/forensics/
