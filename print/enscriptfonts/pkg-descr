@@ -1,0 +1,22 @@
+
+	To the best of my knowledge, every fontfile in this package
+	is either freeware or shareware.  Most are free and unencumbered;
+	the best of the hundreds that I've found.
+
+	If you know that a font in this list is stolen or for any
+	other reason should  not be included in this distribution,
+	please write me, Gary Kline,
+
+			kline@thought.org
+
+	with supporting documentation.  Inappropriate fonts will be
+	stricken in the next Xenscript distribution.
+
+	In the README file in the ${DESTDIR} which defaults to 
+	/usr/local/share/enscript/xenscript  is a list of the font
+	names for the 120+ fonts in v 0.75.  Also in this directory
+	are many *.readme files from the shareware distributions.
+
+
+	Gary Kline
+	31 May, 1998
