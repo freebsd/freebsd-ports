@@ -25,7 +25,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	des@FreeBSD.org
 
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 .if defined(WITH_ICONV)
 MAKE_ARGS+=	WITH_ICONV=yes
@@ -49,9 +50,10 @@ MAN1=		mpg123.1
 MAKE_ENV+=	USE_INET6=yes
 .endif
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
 ALL_TARGET=	freebsd-esd
+PKGNAMESUFFIX=	-esound
 .elif defined(HAVE_NAS)
 PKGNAMESUFFIX=	-nas
 ALL_TARGET=	freebsd-nas

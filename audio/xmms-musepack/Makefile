@@ -16,7 +16,8 @@ LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 
 post-install:

@@ -8,7 +8,7 @@
 PORTNAME=	TekNap
 PORTVERSION=	1.2
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	
+MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
@@ -24,16 +24,18 @@ WRKSRC=		${WRKDIR}/TekNap
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 USE_GMAKE=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=--with-gtk
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif

@@ -20,7 +20,8 @@ BUILD_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 BUILD_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
 .endif
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 pre-everything:

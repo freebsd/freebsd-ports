@@ -19,6 +19,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 WRKSRC=		${WRKDIR}/volume
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 
 .include <bsd.port.mk>

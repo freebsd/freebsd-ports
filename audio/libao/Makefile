@@ -32,7 +32,7 @@ MAN5=		libao.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mesound}
+.if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND=""
 PKGNAMESUFFIX=	-esound

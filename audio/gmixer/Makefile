@@ -15,7 +15,8 @@ MAINTAINER=	cpiazza@FreeBSD.org
 
 ALL_TARGET=	gmixer
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gmixer ${PREFIX}/bin

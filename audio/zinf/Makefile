@@ -18,8 +18,9 @@ LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/musicbrainz \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		ttf.4:${PORTSDIR}/print/freetype
 
-USE_GTK=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS} \
@@ -34,9 +35,10 @@ CFLAGS+=	"-D_M_IX86"
 CFLAGS+=	"-D_M_ALPHA"
 .endif
 
-.if defined(HAVE_ESOUND) || defined(WITH_ALL_PLUGINS)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!="" || defined(WITH_ALL_PLUGINS)
+USE_GNOME+=	esound
 PLIST_SUB+=	ESOUND=""
+PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESOUND="@comment "
@@ -69,11 +71,11 @@ pre-everything::
 	@${ECHO_MSG} "WITH_ALL_PLUGINS=yes  build with all plugins"
 	@${ECHO_MSG}
 
-# Stop a flood of complaints and PRs from people who can't be bothered 
+# Stop a flood of complaints and PRs from people who can't be bothered
 # to keep their ports and packages up to date.
 pre-extract:
 	@test -d ${LOCALBASE}/include/freetype1/freetype && true \
-	  || { echo '===> UPGRADE print/freetype TO CURRENT VERSION!';false; }
+	  || { ${ECHO_MSG} '===> UPGRADE print/freetype TO CURRENT VERSION!';false; }
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins

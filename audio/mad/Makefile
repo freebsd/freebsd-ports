@@ -17,7 +17,8 @@ MAINTAINER=	jason@mastaler.com
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
@@ -35,8 +36,9 @@ MAN1=		abxtest.1 madplay.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+= --without-esd
 .endif

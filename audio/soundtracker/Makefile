@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://ftp.soundtracker.org/pub/soundtracker/v0.6/
 MAINTAINER=	kzentner@u.washington.edu
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-USE_ESOUND=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -22,9 +21,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgnomelibs}!=""
+USE_GNOME=	gtk12 esound
 CONFIGURE_ARGS+=--enable-gnome
+PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=--disable-gnome
 .endif

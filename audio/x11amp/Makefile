@@ -14,10 +14,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 
 MAINTAINER=	dburr@FreeBSD.org
 
-
 USE_XLIB=	yes
-USE_GTK=	yes
-USE_ESOUND=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12 esound
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libx11amp/configure
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"

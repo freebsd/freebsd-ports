@@ -19,7 +19,8 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 WRKSRC=		${WRKDIR}/LiveIce-1.0.0
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>

@@ -23,10 +23,10 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gdkpixbuf
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
-WANT_GNOME=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -35,10 +35,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAN1=		gqmpeg.1
 
 .include <bsd.port.pre.mk>
-
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-.endif
 
 .if !defined(WITH_MPG321)
 pre-everything::
