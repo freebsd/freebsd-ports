@@ -8,7 +8,7 @@
 
 MASTERDIR=	${.CURDIR}/../../news/tin
 
-MAINTAINER=     yssu@CCCA.NCTU.edu.tw
+MAINTAINER=	yssu@CCCA.NCTU.edu.tw
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-charset.c \
 		${.CURDIR}/files/patch-cook.c \

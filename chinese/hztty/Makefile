@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ifcss.org/pub/software/unix/convert/  \
 		ftp://ftp.edu.tw/Chinese/ifcss/software/unix/convert/  \
 		ftp://ftp.mpi-sb.mpg.de/pub/chinese/mirror/ftp.ifcss.org/software/unix/convert/
 
-MAINTAINER=     ada@bsd.org
+MAINTAINER=	ada@bsd.org
 
 ALL_TARGET= 	bsd
 MAN1=		hztty.1

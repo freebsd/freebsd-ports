@@ -4,21 +4,16 @@
 #
 # $FreeBSD$
 #
-MASTERDIR=      ${.CURDIR}/../../x11/rxvt
+MASTERDIR=	${.CURDIR}/../../x11/rxvt
 .include "${MASTERDIR}/Makefile"
 
-PORTNAME= rxvt
-PORTVERSION= 2.6.3
+PORTNAME=	rxvt
+PORTVERSION=	2.6.3
 
 #.include <bsd.port.pre.mk>
-PKGNAMEPREFIX:= ${PKGNAMEPREFIX}cn-
-
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}cn-
 
 MAINTAINER=	keichii@iteration.net
 
-
-CONFIGURE_ARGS+= --enable-xim --enable-big5 \
-		--enable-next-scroll --with-term=xterm-color
-
-
-
+CONFIGURE_ARGS+=	--enable-xim --enable-big5 \
+			--enable-next-scroll --with-term=xterm-color
