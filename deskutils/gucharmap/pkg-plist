@@ -1,17 +1,12 @@
 bin/charmap
 @unexec if test -L %D/bin/gnome-character-map; then rm -f %D/bin/gnome-character-map; fi
 bin/gucharmap
-include/gucharmap/charmap.h
-include/gucharmap/chartable.h
 include/gucharmap/gucharmap-charmap.h
 include/gucharmap/gucharmap-mini-fontsel.h
 include/gucharmap/gucharmap-table.h
 include/gucharmap/gucharmap-unicode-info.h
 include/gucharmap/gucharmap-window.h
 include/gucharmap/gucharmap.h
-include/gucharmap/gucharmap_window.h
-include/gucharmap/mini_fontsel.h
-include/gucharmap/unicode_info.h
 lib/gtk-2.0/2.2.0/immodules/im-gucharmap.so
 lib/libgucharmap.a
 lib/libgucharmap.so
@@ -45,6 +40,5 @@ share/locale/uk/LC_MESSAGES/gucharmap.mo
 share/locale/zh_CN/LC_MESSAGES/gucharmap.mo
 share/locale/zh_TW/LC_MESSAGES/gucharmap.mo
 @dirrm include/gucharmap
-@dirrm etc/gucharmap
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules 2>/dev/null || /usr/bin/true
