@@ -6,16 +6,55 @@
 #
 
 PORTNAME=	db43
-PORTVERSION=	4.3.21
+PORTVERSION=	4.3.27
 CATEGORIES=	databases
+MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
 PKGNAMESUFFIX?=
+DISTNAME?=	db-${PORTVERSION}
+DIST_SUBDIR=	bdb
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	The Berkeley DB package, revision 4.3
 
-MASTERDIR?=	${.CURDIR}
+WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-.include <${MASTERDIR}/Makefile.db>
+USE_REINPLACE=		yes
+INSTALLS_SHLIB=		yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_SCRIPT=	../dist/configure
+LIBTOOLFILES=		${CONFIGURE_SCRIPT}
+CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
+BDBVER=			${PORTVERSION:R}
+BDBMINOR=		${BDBVER:E:S/^\.//}
+BDBDIR=			BerkeleyDB.${BDBVER}
+CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
+			--enable-cxx --enable-dynamic \
+			--enable-rpc \
+			--includedir=${PREFIX}/include/${PORTNAME} \
+			--libdir=${PREFIX}/lib/${PORTNAME} \
+			--bindir=${PREFIX}/bin/${PORTNAME}
+INSTALL_TARGET=		install_include install_lib install_utilities
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
+PORTDOCS=		*
+.endif
+
+pre-patch:
+	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+pre-configure:
+	${CHMOD} u+w ${WRKSRC}/../dist/configure
+
+post-install:
+.for i in libdb libdb_cxx
+	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
+.endfor
+.if !defined(NOPORTDOCS)
+	@${RMDIR} ${DOCSDIR}/ref/splash 2>/dev/null || :
+.endif
+	cd ${PREFIX}/bin/${PORTNAME} ; \
+	for i in * ; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
