@@ -151,6 +151,7 @@
     SUBDIR += html2fo
     SUBDIR += html2text
     SUBDIR += htmldoc
+    SUBDIR += htmlize.el
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
     SUBDIR += ia-aspell
