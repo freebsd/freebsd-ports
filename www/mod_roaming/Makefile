@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.klomp.org/mod_roaming/
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 APXS=		${LOCALBASE}/sbin/apxs
 
