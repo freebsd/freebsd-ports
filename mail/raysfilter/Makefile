@@ -18,7 +18,7 @@ COMMENT=	A configurable filter for Sendmail
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_PORT}
 .endif
 
-SENDMAIL_PORT?=	sendmail812
+SENDMAIL_PORT?=	sendmail
 CTARGETS+=	rays-filter
 CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
 LIBS+=		${PTHREAD_LIBS}
