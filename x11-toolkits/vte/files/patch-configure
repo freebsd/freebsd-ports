@@ -1,0 +1,18 @@
+--- configure.orig	Wed Sep 11 02:36:11 2002
++++ configure	Sat Oct  5 21:12:04 2002
+@@ -8137,6 +8137,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -12188,6 +12189,7 @@
+   cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ #include "confdefs.h"
++#include <wchar.h>
+ $ac_includes_default
+ #ifdef F77_DUMMY_MAIN
+ #  ifdef __cplusplus
