@@ -1,14 +1,20 @@
---- src/gtkhtml.c.orig	Mon Jul 10 17:52:30 2000
-+++ src/gtkhtml.c	Wed Aug  2 15:38:46 2000
-@@ -1130,3 +1130,3 @@
+--- src/gtkhtml.c.orig	Tue Jul 11 01:52:30 2000
++++ src/gtkhtml.c	Fri Aug  4 14:35:57 2000
+@@ -1128,7 +1128,7 @@
+ 	klass->properties = gtk_html_class_properties_new ();
+ #ifdef GTKHTML_HAVE_GCONF
  	if (gconf_is_initialized ()) {
 -		gconf_client = gconf_client_new ();
 +		gconf_client = gconf_client_get_default ();
  		if (!gconf_client)
---- capplet/main.c.orig	Mon Jun 19 16:33:41 2000
-+++ capplet/main.c	Wed Aug  2 15:40:19 2000
-@@ -197,3 +197,3 @@
+ 			g_error ("cannot create gconf_client\n");
+ 		gconf_client_add_dir (gconf_client, GTK_HTML_GCONF_DIR, GCONF_CLIENT_PRELOAD_ONELEVEL, &gconf_error);
+@@ -2259,7 +2259,7 @@
  
--	client = gconf_client_new ();
-+	client = gconf_client_get_default ();
- 	gconf_client_add_dir(client, GTK_HTML_GCONF_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
+ 	if (strcmp (klass->properties->keybindings_theme, "custom")) {
+ 		base = g_strconcat ("keybindingsrc.", klass->properties->keybindings_theme, NULL);
+-		rcfile = g_concat_dir_and_file (PREFIX "/share/gtkhtml", base);
++		rcfile = g_concat_dir_and_file (PREFIX "/share/gnome/gtkhtml", base);
+ 		g_free (base);
+ 	} else {
+ 		rcfile = g_strconcat (gnome_util_user_home (), "/.gnome/gtkhtml-bindings-custom", NULL);
