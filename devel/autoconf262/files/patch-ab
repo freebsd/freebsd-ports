@@ -1,5 +1,5 @@
---- autoconf.texi.orig	Wed Nov 27 03:09:46 1996
-+++ autoconf.texi	Fri Jun 13 16:29:42 1997
+--- autoconf.texi.orig	Tue Jan  5 08:28:37 1999
++++ autoconf.texi	Sat Jan 23 23:34:43 1999
 @@ -4,6 +4,7 @@
  @settitle Autoconf
  @c For double-sided printing, uncomment:
@@ -7,4 +7,4 @@
 +@dircategory Programming & development tools
  @c %**end of header
  
- @set EDITION 2.12
+ @set EDITION 2.13

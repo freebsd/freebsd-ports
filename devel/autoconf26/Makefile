@@ -1,14 +1,15 @@
 # New ports collection makefile for:	autoconf
-# Version required:     2.12
+# Version required:     2.13
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1998/09/16 22:33:10 vanilla Exp $
+# $Id: Makefile,v 1.15 1998/09/23 16:10:37 vanilla Exp $
 #
 
-DISTNAME=       autoconf-2.12
+DISTNAME=       autoconf-2.13
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	autoconf
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
