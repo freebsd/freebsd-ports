@@ -14,7 +14,7 @@ CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 MASTER_SITE_SUBDIR=	LOCAL_PORTS
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@hack.org
 
 # this is not compatible with cross build - there's no other way
 .if !exists(/usr/include/netinet6/ipsec.h)
