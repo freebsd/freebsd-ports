@@ -3,13 +3,14 @@
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1995/04/15 22:48:25 jmacd Exp $
+# $Id: Makefile,v 1.6 1995/04/15 22:55:30 jmacd Exp $
 #
 
 DISTNAME=	ucblogo
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=	ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+PKGNAME=	ucblogo-3.1
 CATEGORIES+=	languages
+MASTER_SITES=	ftp://anarres.cs.berkeley.edu/pub/ucblogo/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmacd@FreeBSD.ORG
 
