@@ -105,6 +105,8 @@ usr/X11R6/lib/libXmu.so.6
 usr/X11R6/lib/libXmu.so.6.0
 usr/X11R6/lib/libXp.so.6
 usr/X11R6/lib/libXp.so.6.2
+usr/X11R6/lib/libXpm.so.4
+usr/X11R6/lib/libXpm.so.4.10
 usr/X11R6/lib/libXt.so.6
 usr/X11R6/lib/libXt.so.6.0
 usr/X11R6/lib/libXtst.so.6
