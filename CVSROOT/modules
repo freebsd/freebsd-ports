@@ -5667,6 +5667,7 @@ ruboard		ports/www/ruboard
 ruby		ports/lang/ruby
 ruby-X11	ports/x11/ruby-X11
 ruby-acl	ports/security/ruby-acl
+ruby-aes	ports/security/ruby-aes
 ruby-algebra	ports/math/ruby-algebra
 ruby-amstd	ports/devel/ruby-amstd
 ruby-application.rb	ports/sysutils/ruby-application.rb
