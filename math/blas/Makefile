@@ -3,11 +3,12 @@
 # Date created:         27 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.5 1995/04/11 01:18:39 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/22 11:29:56 asami Exp $
 #
 
 DISTNAME=	blas
 PKGNAME=	blas-1.0
+CATEGORIES=	math
 
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 
