@@ -359,6 +359,7 @@
     SUBDIR += projectcenter.app
     SUBDIR += pth
     SUBDIR += pth-devel
+    SUBDIR += ptl
     SUBDIR += py-coro
     SUBDIR += py-functional
     SUBDIR += py-game
