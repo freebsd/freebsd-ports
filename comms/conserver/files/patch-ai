@@ -5,7 +5,7 @@
  
  DESTDIR=
 -BINDIR=	${DESTDIR}/usr/local/etc
-+BINDIR=	${DESTDIR}/usr/local/sbin
++BINDIR=	${PREFIX}/sbin
  
  INCLUDE=
 -DEBUG=	-g
