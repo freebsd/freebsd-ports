@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/11/03 20:33:34 erich Exp $
 #
 
 DISTNAME=	linux_lib
@@ -12,5 +12,8 @@ MAINTAINER=	erich@FreeBSD.org
 
 PREFIX=		/compat/linux/
 WRKSRC=		${WRKDIR}
+
+build:
+	@mkdir -p ${PREFIX}
 
 .include <bsd.port.mk>
