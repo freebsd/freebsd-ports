@@ -1,0 +1,23 @@
+--- Makefile.in.orig	Sat May 18 21:23:03 2002
++++ Makefile.in	Sat Jul 17 21:03:08 2004
+@@ -113,7 +113,7 @@
+ 		$(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p;\
+ 	done
+ 	for p in $(SCRIPTS); do\
+-		$(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p;\
++		$(INSTALL_SCRIPT) $$p $(DESTDIR)$(sbindir)/$$p;\
+ 	done
+ 	$(INSTALL_DIRECTORY) $(DESTDIR)$(mandir)/man1
+ 	for p in $(MAN1PAGES); do\
+@@ -125,10 +125,9 @@
+ 	done
+ 	$(INSTALL_VARDIR) $(spooldir)
+ 	$(INSTALL_VARDIR) $(confdir)
+-	$(INSTALL_VARDIR) $(confdir)/suck
+ 	for d in $(DATA); do\
+ 		if test ! -e $(DESTDIR)$(confdir)/$$d; then\
+-			$(INSTALL_VARDATA) data/$$d $(DESTDIR)$(confdir)/$$d;\
++			$(INSTALL_VARDATA) data/$$d $(DESTDIR)$(confdir)/$$d.sample;\
+ 		fi;\
+ 	done
+ 	if test ! -e $(DESTDIR)$(confdir)/put.news; then\

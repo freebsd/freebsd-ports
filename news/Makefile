@@ -69,6 +69,7 @@
     SUBDIR += pyne
     SUBDIR += rawdog
     SUBDIR += rkive
+    SUBDIR += s-news
     SUBDIR += slnr
     SUBDIR += slrn
     SUBDIR += slrnconf

@@ -1,0 +1,19 @@
+S-news is a simple news server for hosts with one or two users.  It is intened
+to supply spool and offline news reading for a configured selection of
+newsgroups.  S-news does the minimum required to maintain a conventional news
+spool and makes use of suck for news transport.
+
+Features
+--------
+
+It provdes a NNTP service and /var/spool/news for local news readers.
+It supports any number of incoming news feeds via NNTP either by IHAVE or
+suck(1).
+Outgoing news feeds are made from locally posted articles and reposted remotly
+by rpost(1).
+It expires articles by how long they have been in the spool.
+It has NNTP access configuration to allow and deny read, post and transfer
+access to remote hosts.
+It is very light weight and relatively easy to configure.
+
+WWW: http://www.lost.org.uk/snews.html

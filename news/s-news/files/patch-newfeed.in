@@ -1,0 +1,11 @@
+--- newfeed.in.old	Thu Jul 15 16:31:44 2004
++++ newfeed.in	Thu Jul 15 16:33:15 2004
+@@ -52,7 +52,7 @@
+ 	umask $UMASK
+ fi
+ 
+-if mkdir $SUCKDIR/$host
++if mkdir -p $SUCKDIR/$host
+ then
+ 	echo junk >$SUCKDIR/$host/active-ignore
+ 	mkdir $SUCKDIR/$host/incoming
