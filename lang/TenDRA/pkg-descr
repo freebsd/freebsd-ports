@@ -9,7 +9,7 @@ The compiler has strong static checking capabilities, including the
 ability to check programs for conformance to APIs which are not
 directly supported by system headers.
 
-WWW: http://www.TenDRA.org/
+WWW: http://www.ten15.org/
 
 -----
 * TenDRA is a registered trademark of the UK Defence Evaluation
