@@ -1,0 +1,17 @@
+--- Makefile.common.orig	Tue May 14 17:14:18 2002
++++ Makefile.common	Tue May 14 17:14:28 2002
+@@ -19,12 +19,12 @@
+ 	scummvm.dsp scummvm.dsw sound/fmopl.h gui.h sound.h
+ 
+ .cpp.o:
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
++	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $(<) -o $*.o
+ 
+ all: scummvm$(EXEEXT)
+ 
+ scummvm$(EXEEXT): $(OBJS)
+-	$(CC) $(LDFLAGS) -o $(@) $(OBJS) $(LIBS)
++	$(CXX) $(LDFLAGS) -o $(@) $(OBJS) $(LIBS)
+ 
+ clean:
+ 	rm -f $(OBJS) scummvm$(EXEEXT)
