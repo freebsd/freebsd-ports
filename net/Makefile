@@ -502,7 +502,6 @@
     SUBDIR += satellite
     SUBDIR += scdp
     SUBDIR += scli
-    SUBDIR += scotty
     SUBDIR += scotty3
     SUBDIR += sdl_net
     SUBDIR += sendfile
