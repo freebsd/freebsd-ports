@@ -1,12 +1,5 @@
-bin/BasicAuthTransport
-bin/getmasterpages2
-bin/getsystempages
-bin/getsystempages2
 bin/moin-create
 bin/moin-dump
-bin/moin-usercheck
-bin/wikibackup
-bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/Page.py
 %%PYTHON_SITELIB%%/MoinMoin/Page.pyc
 %%PYTHON_SITELIB%%/MoinMoin/Page.pyo
@@ -70,6 +63,9 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/action/LocalSiteMap.py
 %%PYTHON_SITELIB%%/MoinMoin/action/LocalSiteMap.pyc
 %%PYTHON_SITELIB%%/MoinMoin/action/LocalSiteMap.pyo
+%%PYTHON_SITELIB%%/MoinMoin/action/RenamePage.py
+%%PYTHON_SITELIB%%/MoinMoin/action/RenamePage.pyc
+%%PYTHON_SITELIB%%/MoinMoin/action/RenamePage.pyo
 %%PYTHON_SITELIB%%/MoinMoin/action/SpellCheck.py
 %%PYTHON_SITELIB%%/MoinMoin/action/SpellCheck.pyc
 %%PYTHON_SITELIB%%/MoinMoin/action/SpellCheck.pyo
@@ -79,6 +75,9 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/action/links.py
 %%PYTHON_SITELIB%%/MoinMoin/action/links.pyc
 %%PYTHON_SITELIB%%/MoinMoin/action/links.pyo
+%%PYTHON_SITELIB%%/MoinMoin/action/rss_rc.py
+%%PYTHON_SITELIB%%/MoinMoin/action/rss_rc.pyc
+%%PYTHON_SITELIB%%/MoinMoin/action/rss_rc.pyo
 %%PYTHON_SITELIB%%/MoinMoin/action/titleindex.py
 %%PYTHON_SITELIB%%/MoinMoin/action/titleindex.pyc
 %%PYTHON_SITELIB%%/MoinMoin/action/titleindex.pyo
@@ -91,24 +90,24 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/config.py
 %%PYTHON_SITELIB%%/MoinMoin/config.pyc
 %%PYTHON_SITELIB%%/MoinMoin/config.pyo
-%%PYTHON_SITELIB%%/MoinMoin/editlog.py
-%%PYTHON_SITELIB%%/MoinMoin/editlog.pyc
-%%PYTHON_SITELIB%%/MoinMoin/editlog.pyo
-%%PYTHON_SITELIB%%/MoinMoin/eventlog.py
-%%PYTHON_SITELIB%%/MoinMoin/eventlog.pyc
-%%PYTHON_SITELIB%%/MoinMoin/eventlog.pyo
 %%PYTHON_SITELIB%%/MoinMoin/formatter/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/formatter/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/formatter/__init__.pyo
 %%PYTHON_SITELIB%%/MoinMoin/formatter/base.py
 %%PYTHON_SITELIB%%/MoinMoin/formatter/base.pyc
 %%PYTHON_SITELIB%%/MoinMoin/formatter/base.pyo
+%%PYTHON_SITELIB%%/MoinMoin/formatter/dom_xml.py
+%%PYTHON_SITELIB%%/MoinMoin/formatter/dom_xml.pyc
+%%PYTHON_SITELIB%%/MoinMoin/formatter/dom_xml.pyo
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_html.py
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_html.pyc
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_html.pyo
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_plain.py
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_plain.pyc
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_plain.pyo
+%%PYTHON_SITELIB%%/MoinMoin/formatter/text_python.py
+%%PYTHON_SITELIB%%/MoinMoin/formatter/text_python.pyc
+%%PYTHON_SITELIB%%/MoinMoin/formatter/text_python.pyo
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_xml.py
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_xml.pyc
 %%PYTHON_SITELIB%%/MoinMoin/formatter/text_xml.pyo
@@ -118,18 +117,18 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/i18n/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/__init__.pyo
-%%PYTHON_SITELIB%%/MoinMoin/i18n/_check.py
-%%PYTHON_SITELIB%%/MoinMoin/i18n/_check.pyc
-%%PYTHON_SITELIB%%/MoinMoin/i18n/_check.pyo
-%%PYTHON_SITELIB%%/MoinMoin/i18n/_sync.py
-%%PYTHON_SITELIB%%/MoinMoin/i18n/_sync.pyc
-%%PYTHON_SITELIB%%/MoinMoin/i18n/_sync.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/check_i18n.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/check_i18n.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/check_i18n.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/da.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/da.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/da.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/de.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/de.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/de.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/dummy.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/dummy.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/dummy.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/es.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/es.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/es.pyo
@@ -142,6 +141,9 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/i18n/he.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/he.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/he.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/hr.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/hr.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/hr.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/it.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/it.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/it.pyo
@@ -151,21 +153,48 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ko.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ko.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/ko.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/mail_i18n-maintainers.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/mail_i18n-maintainers.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/mail_i18n-maintainers.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/meta.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/meta.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/meta.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/nl.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/nl.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/nl.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/pt.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/pt.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/pt.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/ru.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/ru.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/ru.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/sr.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/sr.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/sr.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/sv.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/sv.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/sv.pyo
+%%PYTHON_SITELIB%%/MoinMoin/i18n/vi.py
+%%PYTHON_SITELIB%%/MoinMoin/i18n/vi.pyc
+%%PYTHON_SITELIB%%/MoinMoin/i18n/vi.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/zh.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/zh.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/zh.pyo
 %%PYTHON_SITELIB%%/MoinMoin/i18n/zh_tw.py
 %%PYTHON_SITELIB%%/MoinMoin/i18n/zh_tw.pyc
 %%PYTHON_SITELIB%%/MoinMoin/i18n/zh_tw.pyo
+%%PYTHON_SITELIB%%/MoinMoin/logfile/__init__.py
+%%PYTHON_SITELIB%%/MoinMoin/logfile/__init__.pyc
+%%PYTHON_SITELIB%%/MoinMoin/logfile/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/logfile/editlog.py
+%%PYTHON_SITELIB%%/MoinMoin/logfile/editlog.pyc
+%%PYTHON_SITELIB%%/MoinMoin/logfile/editlog.pyo
+%%PYTHON_SITELIB%%/MoinMoin/logfile/eventlog.py
+%%PYTHON_SITELIB%%/MoinMoin/logfile/eventlog.pyc
+%%PYTHON_SITELIB%%/MoinMoin/logfile/eventlog.pyo
+%%PYTHON_SITELIB%%/MoinMoin/logfile/logfile.py
+%%PYTHON_SITELIB%%/MoinMoin/logfile/logfile.pyc
+%%PYTHON_SITELIB%%/MoinMoin/logfile/logfile.pyo
 %%PYTHON_SITELIB%%/MoinMoin/macro/AbandonedPages.py
 %%PYTHON_SITELIB%%/MoinMoin/macro/AbandonedPages.pyc
 %%PYTHON_SITELIB%%/MoinMoin/macro/AbandonedPages.pyo
@@ -193,6 +222,9 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/macro/OrphanedPages.py
 %%PYTHON_SITELIB%%/MoinMoin/macro/OrphanedPages.pyc
 %%PYTHON_SITELIB%%/MoinMoin/macro/OrphanedPages.pyo
+%%PYTHON_SITELIB%%/MoinMoin/macro/PageHits.py
+%%PYTHON_SITELIB%%/MoinMoin/macro/PageHits.pyc
+%%PYTHON_SITELIB%%/MoinMoin/macro/PageHits.pyo
 %%PYTHON_SITELIB%%/MoinMoin/macro/PageSize.py
 %%PYTHON_SITELIB%%/MoinMoin/macro/PageSize.pyc
 %%PYTHON_SITELIB%%/MoinMoin/macro/PageSize.pyo
@@ -256,39 +288,45 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/request.py
 %%PYTHON_SITELIB%%/MoinMoin/request.pyc
 %%PYTHON_SITELIB%%/MoinMoin/request.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/BasicAuthTransport.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/BasicAuthTransport.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/BasicAuthTransport.pyo
 %%PYTHON_SITELIB%%/MoinMoin/scripts/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/__init__.pyo
 %%PYTHON_SITELIB%%/MoinMoin/scripts/_util.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/_util.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/_util.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getmasterpages2.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getmasterpages2.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getmasterpages2.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getsystempages.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getsystempages.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getsystempages.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getsystempages2.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getsystempages2.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/getsystempages2.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/__init__.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/__init__.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/moin_usercheck-jh-new.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/moin_usercheck-jh-new.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/moin_usercheck-jh-new.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/moin_usercheck.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/moin_usercheck.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/accounts/moin_usercheck.pyo
 %%PYTHON_SITELIB%%/MoinMoin/scripts/moin_create.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/moin_create.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/moin_create.pyo
 %%PYTHON_SITELIB%%/MoinMoin/scripts/moin_dump.py
 %%PYTHON_SITELIB%%/MoinMoin/scripts/moin_dump.pyc
 %%PYTHON_SITELIB%%/MoinMoin/scripts/moin_dump.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/moin_usercheck.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/moin_usercheck.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/moin_usercheck.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/wikibackup.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/wikibackup.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/wikibackup.pyo
-%%PYTHON_SITELIB%%/MoinMoin/scripts/wikirestore.py
-%%PYTHON_SITELIB%%/MoinMoin/scripts/wikirestore.pyc
-%%PYTHON_SITELIB%%/MoinMoin/scripts/wikirestore.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/__init__.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/__init__.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getmasterpages2.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getmasterpages2.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getmasterpages2.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/getsystempages2.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikibackup.pyo
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikirestore.py
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikirestore.pyc
+%%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools/wikirestore.pyo
 %%PYTHON_SITELIB%%/MoinMoin/security.py
 %%PYTHON_SITELIB%%/MoinMoin/security.pyc
 %%PYTHON_SITELIB%%/MoinMoin/security.pyo
@@ -307,18 +345,15 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/stats/useragents.py
 %%PYTHON_SITELIB%%/MoinMoin/stats/useragents.pyc
 %%PYTHON_SITELIB%%/MoinMoin/stats/useragents.pyo
+%%PYTHON_SITELIB%%/MoinMoin/support/BasicAuthTransport.py
+%%PYTHON_SITELIB%%/MoinMoin/support/BasicAuthTransport.pyc
+%%PYTHON_SITELIB%%/MoinMoin/support/BasicAuthTransport.pyo
 %%PYTHON_SITELIB%%/MoinMoin/support/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/support/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/support/__init__.pyo
 %%PYTHON_SITELIB%%/MoinMoin/support/cgitb.py
 %%PYTHON_SITELIB%%/MoinMoin/support/cgitb.pyc
 %%PYTHON_SITELIB%%/MoinMoin/support/cgitb.pyo
-%%PYTHON_SITELIB%%/MoinMoin/support/difflib.py
-%%PYTHON_SITELIB%%/MoinMoin/support/difflib.pyc
-%%PYTHON_SITELIB%%/MoinMoin/support/difflib.pyo
-%%PYTHON_SITELIB%%/MoinMoin/support/inspect.py
-%%PYTHON_SITELIB%%/MoinMoin/support/inspect.pyc
-%%PYTHON_SITELIB%%/MoinMoin/support/inspect.pyo
 %%PYTHON_SITELIB%%/MoinMoin/support/optik/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/support/optik/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/support/optik/__init__.pyo
@@ -334,15 +369,24 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/support/optik/option_parser.py
 %%PYTHON_SITELIB%%/MoinMoin/support/optik/option_parser.pyc
 %%PYTHON_SITELIB%%/MoinMoin/support/optik/option_parser.pyo
-%%PYTHON_SITELIB%%/MoinMoin/support/pydoc.py
-%%PYTHON_SITELIB%%/MoinMoin/support/pydoc.pyc
-%%PYTHON_SITELIB%%/MoinMoin/support/pydoc.pyo
-%%PYTHON_SITELIB%%/MoinMoin/support/xmlrpclib.py
-%%PYTHON_SITELIB%%/MoinMoin/support/xmlrpclib.pyc
-%%PYTHON_SITELIB%%/MoinMoin/support/xmlrpclib.pyo
-%%PYTHON_SITELIB%%/MoinMoin/twisted/__init__.py
-%%PYTHON_SITELIB%%/MoinMoin/twisted/__init__.pyc
-%%PYTHON_SITELIB%%/MoinMoin/twisted/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/support/thfcgi.py
+%%PYTHON_SITELIB%%/MoinMoin/support/thfcgi.pyc
+%%PYTHON_SITELIB%%/MoinMoin/support/thfcgi.pyo
+%%PYTHON_SITELIB%%/MoinMoin/theme/__init__.py
+%%PYTHON_SITELIB%%/MoinMoin/theme/__init__.pyc
+%%PYTHON_SITELIB%%/MoinMoin/theme/__init__.pyo
+%%PYTHON_SITELIB%%/MoinMoin/theme/classic.py
+%%PYTHON_SITELIB%%/MoinMoin/theme/classic.pyc
+%%PYTHON_SITELIB%%/MoinMoin/theme/classic.pyo
+%%PYTHON_SITELIB%%/MoinMoin/theme/rightsidebar.py
+%%PYTHON_SITELIB%%/MoinMoin/theme/rightsidebar.pyc
+%%PYTHON_SITELIB%%/MoinMoin/theme/rightsidebar.pyo
+%%PYTHON_SITELIB%%/MoinMoin/theme/starshine.py
+%%PYTHON_SITELIB%%/MoinMoin/theme/starshine.pyc
+%%PYTHON_SITELIB%%/MoinMoin/theme/starshine.pyo
+%%PYTHON_SITELIB%%/MoinMoin/theme/viewonly.py
+%%PYTHON_SITELIB%%/MoinMoin/theme/viewonly.pyc
+%%PYTHON_SITELIB%%/MoinMoin/theme/viewonly.pyo
 %%PYTHON_SITELIB%%/MoinMoin/user.py
 %%PYTHON_SITELIB%%/MoinMoin/user.pyc
 %%PYTHON_SITELIB%%/MoinMoin/user.pyo
@@ -361,6 +405,9 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/util/diff.py
 %%PYTHON_SITELIB%%/MoinMoin/util/diff.pyc
 %%PYTHON_SITELIB%%/MoinMoin/util/diff.pyo
+%%PYTHON_SITELIB%%/MoinMoin/util/diff3.py
+%%PYTHON_SITELIB%%/MoinMoin/util/diff3.pyc
+%%PYTHON_SITELIB%%/MoinMoin/util/diff3.pyo
 %%PYTHON_SITELIB%%/MoinMoin/util/filesys.py
 %%PYTHON_SITELIB%%/MoinMoin/util/filesys.pyc
 %%PYTHON_SITELIB%%/MoinMoin/util/filesys.pyo
@@ -382,18 +429,9 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/webapi/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/webapi/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/webapi/__init__.pyo
-%%PYTHON_SITELIB%%/MoinMoin/webapi/cgiMoin.py
-%%PYTHON_SITELIB%%/MoinMoin/webapi/cgiMoin.pyc
-%%PYTHON_SITELIB%%/MoinMoin/webapi/cgiMoin.pyo
-%%PYTHON_SITELIB%%/MoinMoin/webapi/cliMoin.py
-%%PYTHON_SITELIB%%/MoinMoin/webapi/cliMoin.pyc
-%%PYTHON_SITELIB%%/MoinMoin/webapi/cliMoin.pyo
 %%PYTHON_SITELIB%%/MoinMoin/webapi/color.py
 %%PYTHON_SITELIB%%/MoinMoin/webapi/color.pyc
 %%PYTHON_SITELIB%%/MoinMoin/webapi/color.pyo
-%%PYTHON_SITELIB%%/MoinMoin/webapi/twistedMoin.py
-%%PYTHON_SITELIB%%/MoinMoin/webapi/twistedMoin.pyc
-%%PYTHON_SITELIB%%/MoinMoin/webapi/twistedMoin.pyo
 %%PYTHON_SITELIB%%/MoinMoin/widget/__init__.py
 %%PYTHON_SITELIB%%/MoinMoin/widget/__init__.pyc
 %%PYTHON_SITELIB%%/MoinMoin/widget/__init__.pyo
@@ -412,21 +450,18 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/wikiaction.py
 %%PYTHON_SITELIB%%/MoinMoin/wikiaction.pyc
 %%PYTHON_SITELIB%%/MoinMoin/wikiaction.pyo
+%%PYTHON_SITELIB%%/MoinMoin/wikidicts.py
+%%PYTHON_SITELIB%%/MoinMoin/wikidicts.pyc
+%%PYTHON_SITELIB%%/MoinMoin/wikidicts.pyo
 %%PYTHON_SITELIB%%/MoinMoin/wikiform.py
 %%PYTHON_SITELIB%%/MoinMoin/wikiform.pyc
 %%PYTHON_SITELIB%%/MoinMoin/wikiform.pyo
-%%PYTHON_SITELIB%%/MoinMoin/wikigroup.py
-%%PYTHON_SITELIB%%/MoinMoin/wikigroup.pyc
-%%PYTHON_SITELIB%%/MoinMoin/wikigroup.pyo
 %%PYTHON_SITELIB%%/MoinMoin/wikimacro.py
 %%PYTHON_SITELIB%%/MoinMoin/wikimacro.pyc
 %%PYTHON_SITELIB%%/MoinMoin/wikimacro.pyo
 %%PYTHON_SITELIB%%/MoinMoin/wikirpc.py
 %%PYTHON_SITELIB%%/MoinMoin/wikirpc.pyc
 %%PYTHON_SITELIB%%/MoinMoin/wikirpc.pyo
-%%PYTHON_SITELIB%%/MoinMoin/wikirpc2.py
-%%PYTHON_SITELIB%%/MoinMoin/wikirpc2.pyc
-%%PYTHON_SITELIB%%/MoinMoin/wikirpc2.pyo
 %%PYTHON_SITELIB%%/MoinMoin/wikitest.py
 %%PYTHON_SITELIB%%/MoinMoin/wikitest.pyc
 %%PYTHON_SITELIB%%/MoinMoin/wikitest.pyo
@@ -448,18 +483,28 @@ bin/wikirestore
 %%PYTHON_SITELIB%%/MoinMoin/wikixml/xsltutil.py
 %%PYTHON_SITELIB%%/MoinMoin/wikixml/xsltutil.pyc
 %%PYTHON_SITELIB%%/MoinMoin/wikixml/xsltutil.pyo
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/HelloWorld.py
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/HelloWorld.pyc
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/HelloWorld.pyo
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/__init__.py
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/__init__.pyc
+%%PYTHON_SITELIB%%/MoinMoin/xmlrpc/__init__.pyo
+@dirrm %%PYTHON_SITELIB%%/MoinMoin/xmlrpc
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/wikixml
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/widget
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/webapi
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/util
-@dirrm %%PYTHON_SITELIB%%/MoinMoin/twisted
+@dirrm %%PYTHON_SITELIB%%/MoinMoin/theme
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/support/optik
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/support
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/stats
+@dirrm %%PYTHON_SITELIB%%/MoinMoin/scripts/xmlrpc-tools
+@dirrm %%PYTHON_SITELIB%%/MoinMoin/scripts/accounts
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/scripts
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/processor
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/parser
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/macro
+@dirrm %%PYTHON_SITELIB%%/MoinMoin/logfile
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/i18n
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/formatter
 @dirrm %%PYTHON_SITELIB%%/MoinMoin/action
@@ -470,6 +515,14 @@ share/moin/cgi-bin/moin.cgi
 share/moin/cgi-bin/moin_config.py.default
 @exec [ -f %B/moin_config.py ] || cp %B/%f %B/moin_config.py
 share/moin/data/intermap.txt
+share/moin/data/plugin/__init__.py
+share/moin/data/plugin/action/__init__.py
+share/moin/data/plugin/formatter/__init__.py
+share/moin/data/plugin/macro/__init__.py
+share/moin/data/plugin/parser/__init__.py
+share/moin/data/plugin/processor/__init__.py
+share/moin/data/plugin/theme/__init__.py
+share/moin/data/plugin/xmlrpc/__init__.py
 @exec [ -d %D/share/moin/data/text/ ] || ln -fs %B %D/share/moin/data/text
 @unexec if [ -L %D/share/moin/data/text ]; then rm -f %D/share/moin/data/text; fi
 share/moin/data/text.default/AbandonedPages
@@ -488,8 +541,8 @@ share/moin/data/text.default/AiutoSuAmministrazione
 share/moin/data/text.default/AiutoSuAspettoSito
 share/moin/data/text.default/AiutoSuAzioni
 share/moin/data/text.default/AiutoSuAzioni_2fAllegaFile
-share/moin/data/text.default/AiutoSuCollegamenti
 share/moin/data/text.default/AiutoSuCancellazionePagina
+share/moin/data/text.default/AiutoSuCollegamenti
 share/moin/data/text.default/AiutoSuControlloOrtografico
 share/moin/data/text.default/AiutoSuCreazionePagina
 share/moin/data/text.default/AiutoSuFaccine
@@ -504,13 +557,12 @@ share/moin/data/text.default/AiutoSuModificaPagina_2fSottoPagine
 share/moin/data/text.default/AiutoSuNavigazione
 share/moin/data/text.default/AiutoSuPagineXml
 share/moin/data/text.default/AiutoSuPreferenzeUtente
-share/moin/data/text.default/AiutoSuTabelle
 share/moin/data/text.default/AiutoSuProcessoriDiCodice
+share/moin/data/text.default/AiutoSuTabelle
 share/moin/data/text.default/AiutoSuTitoliSezioni
 share/moin/data/text.default/AiutoVarie
 share/moin/data/text.default/AiutoVarie_2fDomandePosteFrequentemente
 share/moin/data/text.default/Aktuelle_c4nderungen
-share/moin/data/text.default/AllSystemPagesGroup
 share/moin/data/text.default/Anv_e4ndarInst_e4llningar
 share/moin/data/text.default/AufgegebeneSeiten
 share/moin/data/text.default/BenutzerEinstellungen
@@ -532,8 +584,6 @@ share/moin/data/text.default/For_e6ldrel_f8seSider
 share/moin/data/text.default/FortuneCookies
 share/moin/data/text.default/FrontPage
 share/moin/data/text.default/GesuchteSeiten
-share/moin/data/text.default/GroupePagesSyst_e8me
-share/moin/data/text.default/GruppoPagineSistema
 share/moin/data/text.default/H_e4ndelseStatistik
 share/moin/data/text.default/H_e4ndelseStatistik_2fAnv_e4ndarAgenter
 share/moin/data/text.default/H_e4ndelseStatistik_2fSidStorlek
@@ -562,9 +612,12 @@ share/moin/data/text.default/HelpOnInstalling
 share/moin/data/text.default/HelpOnInstalling_2fApacheOnMacOsx
 share/moin/data/text.default/HelpOnInstalling_2fApacheOnUnix
 share/moin/data/text.default/HelpOnInstalling_2fApacheOnWin32
+share/moin/data/text.default/HelpOnInstalling_2fApacheWithFastCgi
+share/moin/data/text.default/HelpOnInstalling_2fApacheWithModPython
 share/moin/data/text.default/HelpOnInstalling_2fBasicInstallation
 share/moin/data/text.default/HelpOnInstalling_2fInternetInformationServer
 share/moin/data/text.default/HelpOnInstalling_2fTroubleShooting
+share/moin/data/text.default/HelpOnInstalling_2fTwistedWeb
 share/moin/data/text.default/HelpOnLinking
 share/moin/data/text.default/HelpOnLists
 share/moin/data/text.default/HelpOnMacros
@@ -584,6 +637,7 @@ share/moin/data/text.default/HelpOnSlideShows_2f900_20Last_20but_20not_20least_3
 share/moin/data/text.default/HelpOnSmileys
 share/moin/data/text.default/HelpOnSpellCheck
 share/moin/data/text.default/HelpOnTables
+share/moin/data/text.default/HelpOnThemes
 share/moin/data/text.default/HelpOnUpdating
 share/moin/data/text.default/HelpOnUserPreferences
 share/moin/data/text.default/HelpOnXmlPages
@@ -599,12 +653,12 @@ share/moin/data/text.default/HilfeZuAktionen_2fDateiAnh_e4nge
 share/moin/data/text.default/HilfeZuBenutzerEinstellungen
 share/moin/data/text.default/HilfeZuDiaShow
 share/moin/data/text.default/HilfeZuEditierSperren
-share/moin/data/text.default/Hj_e4lpMall
 share/moin/data/text.default/HilfeZuLayouts
 share/moin/data/text.default/HilfeZuListen
 share/moin/data/text.default/HilfeZuMakros
 share/moin/data/text.default/HilfeZuMakros_2fInclude
 share/moin/data/text.default/HilfeZuMakros_2fMailTo
+share/moin/data/text.default/HilfeZuProzessoren
 share/moin/data/text.default/HilfeZuSmileys
 share/moin/data/text.default/HilfeZuTabellen
 share/moin/data/text.default/HilfeZuTrennlinien
@@ -617,12 +671,13 @@ share/moin/data/text.default/HilfeZumEditieren_2fUnterSeiten
 share/moin/data/text.default/HilfeZumFormatieren
 share/moin/data/text.default/HilfeZumUpdaten
 share/moin/data/text.default/HilfeZurAdministration
-share/moin/data/text.default/IndexMot
 share/moin/data/text.default/HilfeZurInstallation
+share/moin/data/text.default/HilfeZurInstallation_2fApacheAufMacOsx
 share/moin/data/text.default/HilfeZurInstallation_2fApacheAufUnix
 share/moin/data/text.default/HilfeZurInstallation_2fApacheAufWin32
 share/moin/data/text.default/HilfeZurInstallation_2fBasisInstallation
 share/moin/data/text.default/HilfeZurInstallation_2fFehlerBehebung
+share/moin/data/text.default/HilfeZurInstallation_2fInternetInformationServer
 share/moin/data/text.default/HilfeZurKonfiguration
 share/moin/data/text.default/HilfeZurKonfiguration_2fEmailUnterst_fctzung
 share/moin/data/text.default/HilfeZurNavigation
@@ -630,10 +685,11 @@ share/moin/data/text.default/HilfeZurRechtschreibpr_fcfung
 share/moin/data/text.default/HilfeZurSeitenErzeugung
 share/moin/data/text.default/HilfeZurSeitenL_f6schung
 share/moin/data/text.default/Hj_e4lpDiverse
-share/moin/data/text.default/Hj_e4lpF_f6rNyb_f6rjare
 share/moin/data/text.default/Hj_e4lpDiverse_2fVanligaFr_e5gor
+share/moin/data/text.default/Hj_e4lpF_f6rNyb_f6rjare
 share/moin/data/text.default/Hj_e4lpF_f6rUtvecklare
 share/moin/data/text.default/Hj_e4lpInneh_e5ll
+share/moin/data/text.default/Hj_e4lpMall
 share/moin/data/text.default/Hj_e4lpMedAdministration
 share/moin/data/text.default/Hj_e4lpMedAnpassning
 share/moin/data/text.default/Hj_e4lpMedAnpassning_2fEpostSt_f6d
@@ -669,10 +725,12 @@ share/moin/data/text.default/HjemmesideSkabelon
 share/moin/data/text.default/HomepageImWiki
 share/moin/data/text.default/HomepageTemplate
 share/moin/data/text.default/HomepageVorlage
+share/moin/data/text.default/IndexMot
 share/moin/data/text.default/IndexTitre
 share/moin/data/text.default/IndiceDeiTitoli
 share/moin/data/text.default/IndicePerParola
 share/moin/data/text.default/InterWiki
+share/moin/data/text.default/InterWikiMap
 share/moin/data/text.default/KategoriHjemmeside
 share/moin/data/text.default/KategoriKategori
 share/moin/data/text.default/KategorieHomepage
@@ -681,8 +739,8 @@ share/moin/data/text.default/LocalSpellingWords
 share/moin/data/text.default/ModificheRecenti
 share/moin/data/text.default/MoinMoin
 share/moin/data/text.default/MoinMoin_2fInstallDocs
-share/moin/data/text.default/MoinMoin_2fTextFormatting
 share/moin/data/text.default/MoinMoin_2fInstallationsAnleitung
+share/moin/data/text.default/MoinMoin_2fTextFormatting
 share/moin/data/text.default/NavigaIlSito
 share/moin/data/text.default/NavigationSite
 share/moin/data/text.default/NomeWiki
@@ -704,9 +762,6 @@ share/moin/data/text.default/PaginePerDimensione
 share/moin/data/text.default/PlatsNavigering
 share/moin/data/text.default/Pr_e9f_e9rencesUtilisateur
 share/moin/data/text.default/PreferenzeUtente
-share/moin/data/text.default/Python4Suite
-share/moin/data/text.default/PythonLanguage
-share/moin/data/text.default/R_e9centesModifications
 share/moin/data/text.default/RandomPage
 share/moin/data/text.default/RecentChanges
 share/moin/data/text.default/S_f6kSida
@@ -721,16 +776,21 @@ share/moin/data/text.default/SiteNavigation
 share/moin/data/text.default/SiteNavigering
 share/moin/data/text.default/SlideShowHandOutTemplate
 share/moin/data/text.default/SlideShowTemplate
-share/moin/data/text.default/StartSeite
 share/moin/data/text.default/SlideTemplate
 share/moin/data/text.default/SlumpvisSida
 share/moin/data/text.default/SommaireAide
+share/moin/data/text.default/StartSeite
 share/moin/data/text.default/StructuredText
 share/moin/data/text.default/StruktureradText
+share/moin/data/text.default/SyntaxReference
 share/moin/data/text.default/SystemInfo
 share/moin/data/text.default/SystemPagesGroup
-share/moin/data/text.default/SystemSeitenGruppe
-share/moin/data/text.default/SystemSiderGruppe
+share/moin/data/text.default/SystemPagesInDanishGroup
+share/moin/data/text.default/SystemPagesInEnglishGroup
+share/moin/data/text.default/SystemPagesInFrenchGroup
+share/moin/data/text.default/SystemPagesInGermanGroup
+share/moin/data/text.default/SystemPagesInItalianGroup
+share/moin/data/text.default/SystemPagesInSwedishGroup
 share/moin/data/text.default/Tilf_e6ldigSide
 share/moin/data/text.default/TitelIndex
 share/moin/data/text.default/TitelListe
@@ -748,19 +808,19 @@ share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f000_20What_20is_20
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f050_20First_20Steps
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f060_20How_20do_20I_20navigate_3f
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f090_20The_20Editor
-share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f130_20Lists
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f091_20Tips_20on_20the_20Editor
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f100_20Text_20markup
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f110_20Headlines_20and_20Paragraphs
+share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f130_20Lists
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f150_20Tables
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f180_20Macros
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f191_20Creating_20new_20Pages
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f195_20Actions
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f200_20Wikiquette
 share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f210_20Organisation_20and_20Structure
+share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f900_20Exercises
 share/moin/data/text.default/WikiHjemmeSide
 share/moin/data/text.default/WikiHomePage
-share/moin/data/text.default/WikiCourse_2fBasicIntroduction_2f900_20Exercises
 share/moin/data/text.default/WikiName
 share/moin/data/text.default/WikiNamn
 share/moin/data/text.default/WikiNavn
@@ -774,7 +834,6 @@ share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrungHandOut
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f000_20Was_20ist_20denn_20Wiki_3f
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f050_20Das_20erste_20Mal
-share/moin/data/text.default/WikiWikiWebb
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f060_20Wie_20finde_20ich_20mich_20zurecht_3f
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f090_20Der_20Editor
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f091_20Tipps_20zum_20Editor
@@ -782,7 +841,6 @@ share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f100_20Textauszei
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f110_20_dcberschriften_20und_20Abs_e4tze
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f130_20Listen
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f150_20Tabellen
-share/moin/data/text.default/WikiWikiWeb
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f180_20Makros
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f191_20Seiten_20anlegen
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f195_20Aktionen
@@ -790,6 +848,8 @@ share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f200_20Wikiquette
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f210_20Organisation_20und_20Struktur
 share/moin/data/text.default/WikiSchulung_2fBasisEinf_fchrung_2f900_20_dcbung
 share/moin/data/text.default/WikiTippDesTages
+share/moin/data/text.default/WikiWikiWeb
+share/moin/data/text.default/WikiWikiWebb
 share/moin/data/text.default/WordIndex
 share/moin/data/text.default/WortIndex
 share/moin/data/text.default/XsltVersion
@@ -797,106 +857,257 @@ share/moin/data/text.default/ZufallsSeite
 share/moin/data/text.default/_d6nskadeSidor
 share/moin/data/text.default/_d6vergivnaSidor
 share/moin/data/text.default/_d8nskedeSider
+share/moin/data/user/README
 share/moin/htdocs/applets/TWikiDrawPlugin/twikidraw.jar
-share/moin/htdocs/css/moinmoin.css
-share/moin/htdocs/css/projection.css
-share/moin/htdocs/css/ui.css
-share/moin/htdocs/css/xmlverbatim.css
-share/moin/htdocs/img/PythonPowered.gif
-share/moin/htdocs/img/alert.gif
-share/moin/htdocs/img/angry.gif
-share/moin/htdocs/img/attention.gif
-share/moin/htdocs/img/biggrin.gif
-share/moin/htdocs/img/checkmark.gif
-share/moin/htdocs/img/devil.gif
-share/moin/htdocs/img/draft.png
-share/moin/htdocs/img/eek.gif
-share/moin/htdocs/img/eyes.gif
-share/moin/htdocs/img/flag-da.gif
-share/moin/htdocs/img/flag-de.gif
-share/moin/htdocs/img/flag-en.gif
-share/moin/htdocs/img/flag-es.gif
-share/moin/htdocs/img/flag-fi.gif
-share/moin/htdocs/img/flag-fr.gif
-share/moin/htdocs/img/flag-it.gif
-share/moin/htdocs/img/flag-ja.gif
-share/moin/htdocs/img/flag-ko.gif
-share/moin/htdocs/img/flag-nl.gif
-share/moin/htdocs/img/flag-pt.gif
-share/moin/htdocs/img/flag-sv.gif
-share/moin/htdocs/img/flag-us.gif
-share/moin/htdocs/img/lol.gif
-share/moin/htdocs/img/flag-zh.gif
-share/moin/htdocs/img/frown.gif
-share/moin/htdocs/img/icon-error.gif
-share/moin/htdocs/img/icon-info.gif
-share/moin/htdocs/img/idea.gif
-share/moin/htdocs/img/moin-attach.png
-share/moin/htdocs/img/moin-bottom.gif
-share/moin/htdocs/img/moin-deleted.gif
-share/moin/htdocs/img/moin-diff.gif
-share/moin/htdocs/img/moin-edit.gif
-share/moin/htdocs/img/moin-email-x.gif
-share/moin/htdocs/img/moin-email.gif
-share/moin/htdocs/img/moin-ftp.gif
-share/moin/htdocs/img/moin-help.gif
-share/moin/htdocs/img/moin-home.gif
-share/moin/htdocs/img/moin-icon.gif
-share/moin/htdocs/img/moin-info.gif
-share/moin/htdocs/img/moin-inter.gif
-share/moin/htdocs/img/moin-new.gif
-share/moin/htdocs/img/moin-news.gif
-share/moin/htdocs/img/moin-parent.gif
-share/moin/htdocs/img/moin-popup.gif
-share/moin/htdocs/img/moin-print.gif
-share/moin/htdocs/img/moin-rss.gif
-share/moin/htdocs/img/moin-search.gif
-share/moin/htdocs/img/moin-show.gif
-share/moin/htdocs/img/moin-telnet.gif
-share/moin/htdocs/img/moin-top.gif
-share/moin/htdocs/img/moin-up.gif
-share/moin/htdocs/img/moin-updated.gif
-share/moin/htdocs/img/moin-www.gif
-share/moin/htdocs/img/moin-xml.gif
-share/moin/htdocs/img/moin-xml2.gif
-share/moin/htdocs/img/moinmoin.gif
-share/moin/htdocs/img/ohwell.gif
-share/moin/htdocs/img/prio1.gif
-share/moin/htdocs/img/prio2.gif
-share/moin/htdocs/img/prio3.gif
-share/moin/htdocs/img/redface.gif
-share/moin/htdocs/img/sad.gif
-share/moin/htdocs/img/smile.gif
-share/moin/htdocs/img/smile2.gif
-share/moin/htdocs/img/smile3.gif
-share/moin/htdocs/img/smile4.gif
-share/moin/htdocs/img/thumbs-up.gif
-share/moin/htdocs/img/tired.gif
-share/moin/htdocs/img/tongue.gif
+share/moin/htdocs/classic/css/common.css
+share/moin/htdocs/classic/css/print.css
+share/moin/htdocs/classic/css/projection.css
+share/moin/htdocs/classic/css/screen.css
+share/moin/htdocs/classic/img/PythonPowered.png
+share/moin/htdocs/classic/img/alert.png
+share/moin/htdocs/classic/img/angry.png
+share/moin/htdocs/classic/img/attention.png
+share/moin/htdocs/classic/img/biggrin.png
+share/moin/htdocs/classic/img/checkmark.png
+share/moin/htdocs/classic/img/devil.png
+share/moin/htdocs/classic/img/draft.png
+share/moin/htdocs/classic/img/flag-da.png
+share/moin/htdocs/classic/img/flag-de.png
+share/moin/htdocs/classic/img/flag-en.png
+share/moin/htdocs/classic/img/flag-es.png
+share/moin/htdocs/classic/img/flag-fi.png
+share/moin/htdocs/classic/img/flag-fr.png
+share/moin/htdocs/classic/img/flag-it.png
+share/moin/htdocs/classic/img/flag-ja.png
+share/moin/htdocs/classic/img/flag-ko.png
+share/moin/htdocs/classic/img/flag-nl.png
+share/moin/htdocs/classic/img/flag-pt.png
+share/moin/htdocs/classic/img/flag-sv.png
+share/moin/htdocs/classic/img/flag-us.png
+share/moin/htdocs/classic/img/flag-zh.png
+share/moin/htdocs/classic/img/frown.png
+share/moin/htdocs/classic/img/icon-error.png
+share/moin/htdocs/classic/img/icon-info.png
+share/moin/htdocs/classic/img/idea.png
+share/moin/htdocs/classic/img/moin-attach.png
+share/moin/htdocs/classic/img/moin-bottom.png
+share/moin/htdocs/classic/img/moin-deleted.png
+share/moin/htdocs/classic/img/moin-diff.png
+share/moin/htdocs/classic/img/moin-edit.png
+share/moin/htdocs/classic/img/moin-email.png
+share/moin/htdocs/classic/img/moin-ftp.png
+share/moin/htdocs/classic/img/moin-help.png
+share/moin/htdocs/classic/img/moin-home.png
+share/moin/htdocs/classic/img/moin-icon.png
+share/moin/htdocs/classic/img/moin-info.png
+share/moin/htdocs/classic/img/moin-inter.png
+share/moin/htdocs/classic/img/moin-new.png
+share/moin/htdocs/classic/img/moin-news.png
+share/moin/htdocs/classic/img/moin-parent.png
+share/moin/htdocs/classic/img/moin-print.png
+share/moin/htdocs/classic/img/moin-raw.png
+share/moin/htdocs/classic/img/moin-rss.png
+share/moin/htdocs/classic/img/moin-search.png
+share/moin/htdocs/classic/img/moin-show.png
+share/moin/htdocs/classic/img/moin-subscribe.png
+share/moin/htdocs/classic/img/moin-telnet.png
+share/moin/htdocs/classic/img/moin-top.png
+share/moin/htdocs/classic/img/moin-unsubscribe.png
+share/moin/htdocs/classic/img/moin-up.png
+share/moin/htdocs/classic/img/moin-updated.png
+share/moin/htdocs/classic/img/moin-www.png
+share/moin/htdocs/classic/img/moin-xml.png
+share/moin/htdocs/classic/img/moin-xml2.png
+share/moin/htdocs/classic/img/moinmoin.png
+share/moin/htdocs/classic/img/ohwell.png
+share/moin/htdocs/classic/img/prio1.png
+share/moin/htdocs/classic/img/prio2.png
+share/moin/htdocs/classic/img/prio3.png
+share/moin/htdocs/classic/img/redface.png
+share/moin/htdocs/classic/img/sad.png
+share/moin/htdocs/classic/img/smile.png
+share/moin/htdocs/classic/img/smile2.png
+share/moin/htdocs/classic/img/smile3.png
+share/moin/htdocs/classic/img/smile4.png
+share/moin/htdocs/classic/img/thumbs-up.png
+share/moin/htdocs/classic/img/tired.png
+share/moin/htdocs/classic/img/tongue.png
 share/moin/htdocs/index.html
-@dirrm share/moin/htdocs/img
-@dirrm share/moin/htdocs/css
+share/moin/htdocs/rightsidebar/css/common.css
+share/moin/htdocs/rightsidebar/css/print.css
+share/moin/htdocs/rightsidebar/css/projection.css
+share/moin/htdocs/rightsidebar/css/screen.css
+share/moin/htdocs/rightsidebar/img/PythonPowered.png
+share/moin/htdocs/rightsidebar/img/alert.png
+share/moin/htdocs/rightsidebar/img/angry.png
+share/moin/htdocs/rightsidebar/img/attention.png
+share/moin/htdocs/rightsidebar/img/biggrin.png
+share/moin/htdocs/rightsidebar/img/checkmark.png
+share/moin/htdocs/rightsidebar/img/devil.png
+share/moin/htdocs/rightsidebar/img/draft.png
+share/moin/htdocs/rightsidebar/img/flag-da.png
+share/moin/htdocs/rightsidebar/img/flag-de.png
+share/moin/htdocs/rightsidebar/img/flag-en.png
+share/moin/htdocs/rightsidebar/img/flag-es.png
+share/moin/htdocs/rightsidebar/img/flag-fi.png
+share/moin/htdocs/rightsidebar/img/flag-fr.png
+share/moin/htdocs/rightsidebar/img/flag-it.png
+share/moin/htdocs/rightsidebar/img/flag-ja.png
+share/moin/htdocs/rightsidebar/img/flag-ko.png
+share/moin/htdocs/rightsidebar/img/flag-nl.png
+share/moin/htdocs/rightsidebar/img/flag-pt.png
+share/moin/htdocs/rightsidebar/img/flag-sv.png
+share/moin/htdocs/rightsidebar/img/flag-us.png
+share/moin/htdocs/rightsidebar/img/flag-zh.png
+share/moin/htdocs/rightsidebar/img/frown.png
+share/moin/htdocs/rightsidebar/img/icon-error.png
+share/moin/htdocs/rightsidebar/img/icon-info.png
+share/moin/htdocs/rightsidebar/img/idea.png
+share/moin/htdocs/rightsidebar/img/logout.png
+share/moin/htdocs/rightsidebar/img/moin-attach.png
+share/moin/htdocs/rightsidebar/img/moin-bottom.png
+share/moin/htdocs/rightsidebar/img/moin-deleted.png
+share/moin/htdocs/rightsidebar/img/moin-diff.png
+share/moin/htdocs/rightsidebar/img/moin-edit.png
+share/moin/htdocs/rightsidebar/img/moin-email.png
+share/moin/htdocs/rightsidebar/img/moin-ftp.png
+share/moin/htdocs/rightsidebar/img/moin-help.png
+share/moin/htdocs/rightsidebar/img/moin-home.png
+share/moin/htdocs/rightsidebar/img/moin-icon.png
+share/moin/htdocs/rightsidebar/img/moin-info.png
+share/moin/htdocs/rightsidebar/img/moin-inter.png
+share/moin/htdocs/rightsidebar/img/moin-new.png
+share/moin/htdocs/rightsidebar/img/moin-news.png
+share/moin/htdocs/rightsidebar/img/moin-parent.png
+share/moin/htdocs/rightsidebar/img/moin-print.png
+share/moin/htdocs/rightsidebar/img/moin-raw.png
+share/moin/htdocs/rightsidebar/img/moin-rss.png
+share/moin/htdocs/rightsidebar/img/moin-search.png
+share/moin/htdocs/rightsidebar/img/moin-show.png
+share/moin/htdocs/rightsidebar/img/moin-subscribe.png
+share/moin/htdocs/rightsidebar/img/moin-telnet.png
+share/moin/htdocs/rightsidebar/img/moin-top.png
+share/moin/htdocs/rightsidebar/img/moin-unsubscribe.png
+share/moin/htdocs/rightsidebar/img/moin-up.png
+share/moin/htdocs/rightsidebar/img/moin-updated.png
+share/moin/htdocs/rightsidebar/img/moin-www.png
+share/moin/htdocs/rightsidebar/img/moin-xml.png
+share/moin/htdocs/rightsidebar/img/moin-xml2.png
+share/moin/htdocs/rightsidebar/img/moinmoin.png
+share/moin/htdocs/rightsidebar/img/ohwell.png
+share/moin/htdocs/rightsidebar/img/prio1.png
+share/moin/htdocs/rightsidebar/img/prio2.png
+share/moin/htdocs/rightsidebar/img/prio3.png
+share/moin/htdocs/rightsidebar/img/redface.png
+share/moin/htdocs/rightsidebar/img/sad.png
+share/moin/htdocs/rightsidebar/img/smile.png
+share/moin/htdocs/rightsidebar/img/smile2.png
+share/moin/htdocs/rightsidebar/img/smile3.png
+share/moin/htdocs/rightsidebar/img/smile4.png
+share/moin/htdocs/rightsidebar/img/thumbs-up.png
+share/moin/htdocs/rightsidebar/img/tired.png
+share/moin/htdocs/rightsidebar/img/tongue.png
+share/moin/htdocs/starshine/css/projection.css
+share/moin/htdocs/starshine/css/screen.css
+share/moin/htdocs/starshine/img/PythonPowered.png
+share/moin/htdocs/starshine/img/alert.png
+share/moin/htdocs/starshine/img/angry.png
+share/moin/htdocs/starshine/img/attention.png
+share/moin/htdocs/starshine/img/biggrin.png
+share/moin/htdocs/starshine/img/checkmark.png
+share/moin/htdocs/starshine/img/devil.png
+share/moin/htdocs/starshine/img/draft.png
+share/moin/htdocs/starshine/img/flag-da.png
+share/moin/htdocs/starshine/img/flag-de.png
+share/moin/htdocs/starshine/img/flag-en.png
+share/moin/htdocs/starshine/img/flag-es.png
+share/moin/htdocs/starshine/img/flag-fi.png
+share/moin/htdocs/starshine/img/flag-fr.png
+share/moin/htdocs/starshine/img/flag-it.png
+share/moin/htdocs/starshine/img/flag-ja.png
+share/moin/htdocs/starshine/img/flag-ko.png
+share/moin/htdocs/starshine/img/flag-nl.png
+share/moin/htdocs/starshine/img/flag-pt.png
+share/moin/htdocs/starshine/img/flag-sv.png
+share/moin/htdocs/starshine/img/flag-us.png
+share/moin/htdocs/starshine/img/flag-zh.png
+share/moin/htdocs/starshine/img/frown.png
+share/moin/htdocs/starshine/img/icon-error.png
+share/moin/htdocs/starshine/img/icon-info.png
+share/moin/htdocs/starshine/img/idea.png
+share/moin/htdocs/starshine/img/moin-attach.png
+share/moin/htdocs/starshine/img/moin-bottom.png
+share/moin/htdocs/starshine/img/moin-deleted.png
+share/moin/htdocs/starshine/img/moin-diff.png
+share/moin/htdocs/starshine/img/moin-edit.png
+share/moin/htdocs/starshine/img/moin-email.png
+share/moin/htdocs/starshine/img/moin-find.png
+share/moin/htdocs/starshine/img/moin-ftp.png
+share/moin/htdocs/starshine/img/moin-help.png
+share/moin/htdocs/starshine/img/moin-home.png
+share/moin/htdocs/starshine/img/moin-icon.png
+share/moin/htdocs/starshine/img/moin-info.png
+share/moin/htdocs/starshine/img/moin-inter.png
+share/moin/htdocs/starshine/img/moin-new.png
+share/moin/htdocs/starshine/img/moin-news.png
+share/moin/htdocs/starshine/img/moin-parent.png
+share/moin/htdocs/starshine/img/moin-print.png
+share/moin/htdocs/starshine/img/moin-rss.png
+share/moin/htdocs/starshine/img/moin-search.png
+share/moin/htdocs/starshine/img/moin-show.png
+share/moin/htdocs/starshine/img/moin-subscribe.png
+share/moin/htdocs/starshine/img/moin-telnet.png
+share/moin/htdocs/starshine/img/moin-top.png
+share/moin/htdocs/starshine/img/moin-unsubscribe.png
+share/moin/htdocs/starshine/img/moin-up.png
+share/moin/htdocs/starshine/img/moin-updated.png
+share/moin/htdocs/starshine/img/moin-www.png
+share/moin/htdocs/starshine/img/moin-xml.png
+share/moin/htdocs/starshine/img/moin-xml2.png
+share/moin/htdocs/starshine/img/moinmoin.png
+share/moin/htdocs/starshine/img/ohwell.png
+share/moin/htdocs/starshine/img/prio1.png
+share/moin/htdocs/starshine/img/prio2.png
+share/moin/htdocs/starshine/img/prio3.png
+share/moin/htdocs/starshine/img/redface.png
+share/moin/htdocs/starshine/img/sad.png
+share/moin/htdocs/starshine/img/smile.png
+share/moin/htdocs/starshine/img/smile2.png
+share/moin/htdocs/starshine/img/smile3.png
+share/moin/htdocs/starshine/img/smile4.png
+share/moin/htdocs/starshine/img/thumbs-up.png
+share/moin/htdocs/starshine/img/tired.png
+share/moin/htdocs/starshine/img/tongue.png
+share/moin/htdocs/viewonly/css/screen.css
+@dirrm share/moin/htdocs/viewonly/css
+@dirrm share/moin/htdocs/viewonly
+@dirrm share/moin/htdocs/starshine/img
+@dirrm share/moin/htdocs/starshine/css
+@dirrm share/moin/htdocs/starshine
+@dirrm share/moin/htdocs/rightsidebar/img
+@dirrm share/moin/htdocs/rightsidebar/css
+@dirrm share/moin/htdocs/rightsidebar
+@dirrm share/moin/htdocs/classic/img
+@dirrm share/moin/htdocs/classic/css
+@dirrm share/moin/htdocs/classic
 @dirrm share/moin/htdocs/applets/TWikiDrawPlugin
 @dirrm share/moin/htdocs/applets
 @dirrm share/moin/htdocs
 @dirrm share/moin/data/user
 @dirrm share/moin/data/text.default
+@dirrm share/moin/data/plugin/xmlrpc
+@dirrm share/moin/data/plugin/theme
+@dirrm share/moin/data/plugin/processor
+@dirrm share/moin/data/plugin/parser
 @dirrm share/moin/data/plugin/macro
+@dirrm share/moin/data/plugin/formatter
 @dirrm share/moin/data/plugin/action
 @dirrm share/moin/data/plugin
-@dirrm share/moin/data/pages
-@dirrm share/moin/data/cache
 @dirrm share/moin/data/backup
 @dirrm share/moin/data
 @dirrm share/moin/cgi-bin
 @dirrm share/moin
 @exec [ -d %D/share/moin/data/backup ] || mkdir -p %D/share/moin/data/backup
-@exec [ -d %D/share/moin/data/cache ] || mkdir -p %D/share/moin/data/cache
-@exec [ -d %D/share/moin/data/pages ] || mkdir -p %D/share/moin/data/pages
-@exec [ -d %D/share/moin/data/plugin ] || mkdir -p %D/share/moin/data/plugin
-@exec [ -d %D/share/moin/data/plugin/action ] || mkdir -p %D/share/moin/data/plugin/action
-@exec [ -d %D/share/moin/data/plugin/macro ] || mkdir -p %D/share/moin/data/plugin/macro
-@exec [ -d %D/share/moin/data/user ] || mkdir -p %D/share/moin/data/user
 www/cgi-bin/moin
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
 @exec chmod -R u+rw,go-wxs %D/share/moin/data
