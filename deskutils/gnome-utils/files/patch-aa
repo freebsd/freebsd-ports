@@ -1,24 +1,6 @@
---- configure.orig	Wed Mar  8 09:07:49 2000
-+++ configure	Sat Mar 11 15:35:52 2000
-@@ -2480,7 +2480,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  PTHREAD_LIB="-lc_r"
-+  PTHREAD_LIB=""
- else
-   echo "$ac_t""no" 1>&6
- echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -3277,7 +3277,7 @@
-   
- 	echo $ac_n "checking for an obGnomeConf.sh""... $ac_c" 1>&6
- echo "configure:3280: checking for an obGnomeConf.sh" >&5
--	my_gnome_libdir=`$GNOME_CONFIG --libdir`
-+	my_gnome_libdir=`$GNOME_CONFIG --sysconfdir`
- 	if test -f $my_gnome_libdir/obGnomeConf.sh; then
- 	    . $my_gnome_libdir/obGnomeConf.sh
- 	    echo "$ac_t""found $my_gnome_libdir" 1>&6
-@@ -5531,7 +5531,7 @@
+--- configure.orig	Fri May 19 14:49:06 2000
++++ configure	Tue May 30 13:31:24 2000
+@@ -5101,7 +5101,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -27,3 +9,32 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -6350,17 +6350,13 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   build_gfloppy=true
++  subdirs="gfloppy"
+ else
++  build_gfloppy=false
+   echo "$ac_t""no" 1>&6
+ echo "configure: warning: *** gfloppy will not be built." 1>&2
+ fi
+ 
+-if $build_gfloppy; then
+-  subdirs="gfloppy"
+-
+-fi
+-
+-
+ if test "$build_gfloppy" = true; then
+   BUILD_GFLOPPY_TRUE=
+   BUILD_GFLOPPY_FALSE='#'
+@@ -8453,7 +8449,7 @@
+     esac
+   done
+ 
+-  for ac_config_dir in gfloppy; do
++  for ac_config_dir in $subdirs ; do
+ 
+     # Do not complain, so a configure script can configure whichever
+     # parts of a large source tree are present.

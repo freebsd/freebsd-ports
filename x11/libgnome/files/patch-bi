@@ -5,7 +5,7 @@
  
  
 -libart_lgpl_la_LDFLAGS = -version-info @LIBART_VERSION_INFO@
-+libart_lgpl_la_LDFLAGS = -version-info 3:0:0
++libart_lgpl_la_LDFLAGS = -version-info 4:0:0
  
  libart_lgplincdir = $(includedir)/libart_lgpl
  libart_lgplinc_HEADERS =  	art_affine.h 	art_alphagamma.h 	art_bpath.h 	art_filterlevel.h 	art_gray_svp.h 	art_misc.h 	art_pathcode.h 	art_pixbuf.h 	art_point.h 	art_rect.h 	art_rect_svp.h 	art_rect_uta.h 	art_rgb.h 	art_rgb_affine.h 	art_rgb_bitmap_affine.h 	art_rgb_pixbuf_affine.h 	art_rgb_rgba_affine.h 	art_rgb_svp.h 	art_svp.h 	art_svp_ops.h 	art_svp_render_aa.h 	art_svp_vpath.h 	art_svp_vpath_stroke.h 	art_uta.h 	art_uta_ops.h 	art_uta_rect.h 	art_uta_vpath.h 	art_uta_svp.h 	art_vpath.h 	art_vpath_bpath.h 	art_vpath_svp.h

@@ -16,7 +16,7 @@ etc/cappletConf.sh
 include/capplet-widget.h
 lib/libcapplet.a
 lib/libcapplet.so
-lib/libcapplet.so.1
+lib/libcapplet.so.4
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/apps/Settings/Desktop/.directory
@@ -24,6 +24,10 @@ share/gnome/apps/Settings/Desktop/background-properties.desktop
 share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/gnome/apps/Settings/Desktop/theme-selector.desktop
 share/gnome/apps/Settings/Desktop/wm-properties.desktop
+share/gnome/apps/Settings/Documents/.directory
+share/gnome/apps/Settings/Documents/gnome-edit-properties.desktop
+share/gnome/apps/Settings/Documents/mime-type.desktop
+share/gnome/apps/Settings/Documents/url-properties.desktop
 share/gnome/apps/Settings/Multimedia/.directory
 share/gnome/apps/Settings/Multimedia/sound-properties.desktop
 share/gnome/apps/Settings/Peripherals/.directory
@@ -35,10 +39,7 @@ share/gnome/apps/Settings/UIOptions/.directory
 share/gnome/apps/Settings/UIOptions/application.desktop
 share/gnome/apps/Settings/UIOptions/dialogs.desktop
 share/gnome/apps/Settings/UIOptions/mdi.desktop
-share/gnome/apps/Settings/gnome-edit-properties.desktop
 share/gnome/apps/Settings/gnomecc.desktop
-share/gnome/apps/Settings/mime-type.desktop
-share/gnome/apps/Settings/url-properties.desktop
 share/gnome/control-center/.data/3d.desktop
 share/gnome/control-center/.data/3d.png
 share/gnome/control-center/.data/Ant.desktop
@@ -174,6 +175,10 @@ share/gnome/control-center/Desktop/background-properties.desktop
 share/gnome/control-center/Desktop/screensaver-properties.desktop
 share/gnome/control-center/Desktop/theme-selector.desktop
 share/gnome/control-center/Desktop/wm-properties.desktop
+share/gnome/control-center/Documents/.directory
+share/gnome/control-center/Documents/gnome-edit-properties.desktop
+share/gnome/control-center/Documents/mime-type.desktop
+share/gnome/control-center/Documents/url-properties.desktop
 share/gnome/control-center/Multimedia/.directory
 share/gnome/control-center/Multimedia/sound-properties.desktop
 share/gnome/control-center/Peripherals/.directory
@@ -185,29 +190,52 @@ share/gnome/control-center/UIOptions/.directory
 share/gnome/control-center/UIOptions/application.desktop
 share/gnome/control-center/UIOptions/dialogs.desktop
 share/gnome/control-center/UIOptions/mdi.desktop
-share/gnome/control-center/gnome-edit-properties.desktop
-share/gnome/control-center/mime-type.desktop
-share/gnome/control-center/url-properties.desktop
+share/gnome/help/control-center/C/figs/bg-capplet.png
+share/gnome/help/control-center/C/figs/gccappdef.png
+share/gnome/help/control-center/C/figs/gccdialog.png
+share/gnome/help/control-center/C/figs/gccedit.png
+share/gnome/help/control-center/C/figs/gcchints.png
+share/gnome/help/control-center/C/figs/gccmdi.png
+share/gnome/help/control-center/C/figs/gccmime.png
+share/gnome/help/control-center/C/figs/gccsession-props.png
+share/gnome/help/control-center/C/figs/gccsound1.png
+share/gnome/help/control-center/C/figs/gccsound2.png
+share/gnome/help/control-center/C/figs/gccstartup.png
+share/gnome/help/control-center/C/figs/gccurl.png
+share/gnome/help/control-center/C/figs/glob_pref_anim.png
+share/gnome/help/control-center/C/figs/keyboard-capplet.png
+share/gnome/help/control-center/C/figs/mouse-capplet.png
+share/gnome/help/control-center/C/figs/screensave-capplet.png
+share/gnome/help/control-center/C/figs/theme-select.png
+share/gnome/help/control-center/C/figs/wm-main.png
+share/gnome/help/control-center/C/index.html
+share/gnome/help/control-center/C/topic.dat
 share/gnome/idl/control-center.idl
+share/gnome/pixmaps/ccsplash.png
 share/gnome/pixmaps/control-center.png
 share/gnome/wm-properties/Enlightenment.desktop
 share/gnome/wm-properties/IceWM.desktop
 share/gnome/wm-properties/WindowMaker.desktop
 share/gnome/wm-properties/Scwm.desktop
 share/gnome/wm-properties/twm.desktop
+share/locale/ca/LC_MESSAGES/control-center.mo
 share/locale/cs/LC_MESSAGES/control-center.mo
 share/locale/da/LC_MESSAGES/control-center.mo
 share/locale/de/LC_MESSAGES/control-center.mo
+share/locale/el/LC_MESSAGES/control-center.mo
 share/locale/en_GB/LC_MESSAGES/control-center.mo
 share/locale/es/LC_MESSAGES/control-center.mo
 share/locale/et/LC_MESSAGES/control-center.mo
 share/locale/fi/LC_MESSAGES/control-center.mo
 share/locale/fr/LC_MESSAGES/control-center.mo
 share/locale/ga/LC_MESSAGES/control-center.mo
+share/locale/gl/LC_MESSAGES/control-center.mo
+share/locale/hr/LC_MESSAGES/control-center.mo
 share/locale/hu/LC_MESSAGES/control-center.mo
 share/locale/it/LC_MESSAGES/control-center.mo
 share/locale/ja/LC_MESSAGES/control-center.mo
 share/locale/ko/LC_MESSAGES/control-center.mo
+share/locale/lt/LC_MESSAGES/control-center.mo
 share/locale/nl/LC_MESSAGES/control-center.mo
 share/locale/no/LC_MESSAGES/control-center.mo
 share/locale/pl/LC_MESSAGES/control-center.mo
@@ -216,11 +244,21 @@ share/locale/pt_BR/LC_MESSAGES/control-center.mo
 share/locale/ro/LC_MESSAGES/control-center.mo
 share/locale/ru/LC_MESSAGES/control-center.mo
 share/locale/sv/LC_MESSAGES/control-center.mo
+share/locale/tr/LC_MESSAGES/control-center.mo
+share/locale/uk/LC_MESSAGES/control-center.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/control-center.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/wm-properties
+@dirrm share/gnome/help/control-center/C/stylesheet-images
+@dirrm share/gnome/help/control-center/C/figs
+@dirrm share/gnome/help/control-center/C
+@dirrm share/gnome/help/control-center
+@dirrm share/gnome/help
 @dirrm share/gnome/control-center/UIOptions
 @dirrm share/gnome/control-center/Session
 @dirrm share/gnome/control-center/Peripherals
 @dirrm share/gnome/control-center/Multimedia
+@dirrm share/gnome/control-center/Documents
 @dirrm share/gnome/control-center/Desktop
 @dirrm share/gnome/control-center/.data
 @dirrm share/gnome/control-center
@@ -228,4 +266,9 @@ share/locale/sv/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/apps/Settings/Session
 @dirrm share/gnome/apps/Settings/Peripherals
 @dirrm share/gnome/apps/Settings/Multimedia
+@dirrm share/gnome/apps/Settings/Documents
 @dirrm share/gnome/apps/Settings/Desktop
+@dirrm share/gnome/apps/Settings
+@dirrm share/gnome/apps
+@dirrm etc/CORBA/servers
+@dirrm etc/CORBA

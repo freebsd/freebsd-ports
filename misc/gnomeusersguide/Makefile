@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gnomeusersguide
-PORTVERSION=	1.1.9
+PORTVERSION=	1.2
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/users-guide
-DISTNAME=	users-guide-1.1-9
+DISTNAME=	users-guide-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 

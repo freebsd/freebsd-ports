@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomecore
-PORTVERSION= 	1.0.55
+PORTVERSION= 	1.2.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-core
@@ -14,10 +14,8 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio
-LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
-		ghttp.1:${PORTSDIR}/www/libghttp
+LIB_DEPENDS=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -26,10 +24,12 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX} \
 		--with-kde-datadir=${LOCALBASE}/share
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+MAN1=		gnome-session.1 gnome-wm.1 save-session.1
+MAN5=		default.session.5
 
 .include <bsd.port.mk>

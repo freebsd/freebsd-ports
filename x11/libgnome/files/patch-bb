@@ -14,7 +14,7 @@
  
  
 -libgtkxmhtml_la_LDFLAGS = -version-info 1:1:0 -rpath $(libdir)
-+libgtkxmhtml_la_LDFLAGS = -version-info 3:0:0 -rpath $(libdir)
++libgtkxmhtml_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  libgtkxmhtml_la_LIBADD = $(LIBGTKXMHTML_LIBS)
  
  noinst_PROGRAMS = htmltest

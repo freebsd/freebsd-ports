@@ -19,13 +19,17 @@ MAINTAINER=	nectar@FreeBSD.org
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python ${PYGTK_DEP}
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
-		capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
+		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
 RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python ${PYGTK_DEP}
 
-GTK_CONFIG=	${X11BASE}/bin/gtk12-config
-GNU_CONFIGURE=	yes
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_GMAKE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure pygnome/configure pygtk/configure
+CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}"
 CONFIGURE_ARGS=	--with-python=python1.5                                 \
 		--with-gnome-config=${X11BASE}/bin/gnome-config
 

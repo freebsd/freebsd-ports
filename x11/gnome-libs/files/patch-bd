@@ -5,7 +5,7 @@
  
  
 -libgnomeui_la_LDFLAGS = -version-info 43:2:11 -rpath $(libdir)
-+libgnomeui_la_LDFLAGS = -version-info 3:0:0 -rpath $(libdir)
++libgnomeui_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  libgnomeui_la_LIBADD = $(LIBGNOMEUI_LIBS)
  
  gnome_segv_LDADD =  	libgnomeui.la 						$(top_builddir)/libgnome/libgnome.la 			$(top_builddir)/libart_lgpl/libart_lgpl.la 		@LIBSUPPORT@ $(LIBGNOMEUI_LIBS) 	$(INTLLIBS)

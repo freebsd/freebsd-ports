@@ -13,16 +13,14 @@ MASTER_SITE_SUBDIR=	stable/sources/ggv
 
 MAINTAINER=	ade@FreeBSD.org
 
-BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS= --localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"

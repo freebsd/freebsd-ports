@@ -14,7 +14,7 @@
  
  
 -libzvt_la_LDFLAGS = -version-info 4:7:2 -rpath $(libdir)
-+libzvt_la_LDFLAGS = -version-info 3:0:0 -rpath $(libdir)
++libzvt_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  
  libzvtinclude_HEADERS =  	lists.h				vt.h				vtx.h				zvtterm.h
  

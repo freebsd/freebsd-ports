@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomecontrolcenter
-PORTVERSION=	1.0.53
+PORTVERSION=	1.2.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/control-center
@@ -14,8 +14,7 @@ DISTNAME=	control-center-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

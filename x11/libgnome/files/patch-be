@@ -5,7 +5,7 @@
  
  
 -libgnorba_la_LDFLAGS = -version-info 28:8:1 -rpath $(libdir)
-+libgnorba_la_LDFLAGS = -version-info 3:0:0 -rpath $(libdir)
++libgnorba_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  libgnorba_la_LIBADD = $(ORBIT_LIBS) $(GLIB_LIBS) -lm
  
  loadshlib_SOURCES = loadshlib.c
@@ -14,7 +14,7 @@
  gnome-unknown-skels.lo gnome-unknown-stubs.lo gnome-unknown-common.lo \
  goad.lo orbitgtk.lo orbitgnome.lo orbitns.lo
 -libgnorbagtk_la_LDFLAGS = 
-+libgnorbagtk_la_LDFLAGS = -version-info 3:0:0 -rpath $(libdir)
++libgnorbagtk_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  libgnorbagtk_la_LIBADD = 
  libgnorbagtk_la_OBJECTS =  gnome-factory-skels.lo gnome-factory-stubs.lo \
  gnome-factory-common.lo Table-skels.lo Table-stubs.lo Table-common.lo \

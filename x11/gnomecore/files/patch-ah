@@ -1,17 +1,72 @@
---- gmenu/main.c.orig	Thu May  6 11:44:25 1999
-+++ gmenu/main.c	Thu May  6 11:44:43 1999
-@@ -271,7 +271,7 @@
+--- panel/Makefile.in.orig	Tue May 23 04:25:47 2000
++++ panel/Makefile.in	Fri May 26 15:30:48 2000
+@@ -147,7 +147,7 @@
  
- 	gnome_init ("GNOME menu editor", VERSION, argc, argv);
+ SUBDIRS = doc help
  
--	system_apps_dir = gnome_unconditional_datadir_file("gnome/apps");
-+	system_apps_dir = gnome_unconditional_datadir_file("apps");
- 	system_pixmap_dir = gnome_unconditional_datadir_file("pixmaps");
- 	if (!g_file_exists(system_apps_dir) || !g_file_exists(system_pixmap_dir))
- 		{
---- panel/menu.c.orig	Mon Sep 20 18:49:14 1999
-+++ panel/menu.c	Fri Sep 24 10:55:55 1999
-@@ -504,7 +504,7 @@
+-INCLUDES = -I. -I$(srcdir) 	-I$(top_srcdir)/intl 	-I$(top_builddir)/intl 	-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR) $(ORB_CFLAGS) 	@PIXBUF_CFLAGS@
++INCLUDES = -I. -I$(srcdir) 	-I$(top_srcdir)/intl 	-I$(top_builddir)/intl 	-I$(top_builddir)/panel 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir) $(GNOME_INCLUDEDIR) $(ORB_CFLAGS) 	@PIXBUF_CFLAGS@
+ 
+ 
+ bin_PROGRAMS = panel gnome-panel-properties-capplet
+@@ -169,7 +169,7 @@
+ libpanel_appletinclude_HEADERS =  	applet-widget.h			gnome-panel.h
+ 
+ 
+-libpanel_applet_la_LDFLAGS = -version-info 0:1:0 -rpath $(libdir)
++libpanel_applet_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
+ libpanel_applet_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
+ 
+ libpanel_status_la_SOURCES =  	status-docklet.c 	$(CORBA_SRCLIST)
+@@ -178,7 +178,7 @@
+ libpanel_statusinclude_HEADERS =  	status-docklet.h
+ 
+ 
+-libpanel_status_la_LDFLAGS = -version-info 0:0:0 -rpath $(libdir)
++libpanel_status_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
+ libpanel_status_la_LIBADD = $(ORB_LIBS) -lm $(DL_LIB)
+ 
+ BUILT_SOURCES = $(CORBA_SRCLIST)
+@@ -210,7 +210,7 @@
+ EXTRA_DIST =  	panelrc.in				panel.in				appletsConf.sh.in			dockletsConf.sh.in			panel.gnorba				panel.soundlist				APPLET_WRITING				panel.hints				gnome-panel-properties.desktop		nothing.cP				title-item.gob
+ 
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = appletsConf.sh dockletsConf.sh
+ 
+ panelgnorbadir = $(sysconfdir)/CORBA/servers
+@@ -219,13 +219,13 @@
+ soundlistdir = $(sysconfdir)/sound/events
+ soundlist_DATA = panel.soundlist
+ 
+-hintsdir = $(datadir)/gnome/hints
++hintsdir = $(datadir)/hints
+ hints_DATA = panel.hints
+ 
+ sysdir = $(datadir)/control-center/Desktop/
+ sys_DATA = gnome-panel-properties.desktop
+ 
+-deskdir = $(datadir)/gnome/apps/Settings/Desktop/
++deskdir = $(datadir)/apps/Settings/Desktop/
+ desk_DATA = gnome-panel-properties.desktop
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+
+--- panel/foobar-widget.c.orig	Sat May  6 20:48:27 2000
++++ panel/foobar-widget.c	Wed May 31 12:51:56 2000
+@@ -557,7 +557,7 @@
+ 
+ 	append_folder_menu  (menu_bar, _("Favorites"), NULL, FALSE, "apps/.");
+ 	append_folder_menu  (menu_bar, _("Settings"),  NULL, TRUE,
+-			     "gnome/apps/Settings/.");
++			     "apps/Settings/.");
+ 	append_desktop_menu (menu_bar);
+ 
+ 	gtk_box_pack_start (GTK_BOX (foo->hbox), menu_bar, FALSE, FALSE, 0);
+--- panel/menu.c.orig	Tue May 23 01:00:43 2000
++++ panel/menu.c	Fri May 26 15:10:21 2000
+@@ -82,7 +82,7 @@
  	/*just load the menus from disk, don't make the widgets
  	  this just reads the .desktops of the top most directory
  	  and a level down*/
@@ -20,39 +75,62 @@
  	if(menu)
  		fr_read_dir(NULL,menu,NULL,2);
  	g_free(menu);
-@@ -2078,7 +2078,7 @@
- static GtkWidget *
- create_system_menu(GtkWidget *menu, int fake_submenus, int fake)
+@@ -2709,7 +2709,7 @@
+ create_system_menu(GtkWidget *menu, gboolean fake_submenus, gboolean fake,
+ 		   gboolean title)
  {
--	char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
-+	char *menu_base = gnome_unconditional_datadir_file ("apps");
- 	char *menudir, *pixmap;
- 	
- 	menudir = g_concat_dir_and_file (menu_base, ".");
-@@ -3111,7 +3111,7 @@
- 	current_panel = PANEL_WIDGET(menu->button->parent);
+-	char *menudir = gnome_datadir_file ("gnome/apps");
++	char *menudir = gnome_datadir_file ("apps");
  
- 	if(!menu->menu) {
--		char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
-+		char *menu_base = gnome_unconditional_datadir_file ("apps");
- 		char *this_menu = get_real_menu_path(menu->path,menu_base);
- 		GSList *list = g_slist_append(NULL,this_menu);
- 		
-@@ -3220,7 +3220,7 @@
- 	Menu *menu;
- 	int main_menu;
+ 	if (menudir &&
+ 	    g_file_test (menudir, G_FILE_TEST_ISDIR)) {
+@@ -3598,8 +3598,8 @@
+ 	gtk_menu_append (GTK_MENU (submenu), submenuitem);
+ 	gtk_signal_connect(GTK_OBJECT(submenuitem), "activate",
+ 			   GTK_SIGNAL_FUNC(add_menu_to_panel),
+-			   "gnome/apps/");
+-	setup_internal_applet_drag(submenuitem, "MENU:gnome/apps/");
++			   "apps/");
++	setup_internal_applet_drag(submenuitem, "MENU:apps/");
  
--	char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
-+	char *menu_base = gnome_unconditional_datadir_file ("apps");
- 	char *this_menu = get_real_menu_path(arguments,menu_base);
+ 	submenuitem = gtk_menu_item_new ();
+ 	gtk_widget_lock_accelerators (menuitem);
+--- panel/menu-properties.c.orig	Mon Apr  3 18:03:29 2000
++++ panel/menu-properties.c	Wed May 31 12:50:41 2000
+@@ -40,7 +40,7 @@
+ 		arguments = ".";
  
- 	if (!this_menu) {
-@@ -3340,7 +3340,7 @@
- 	menu->menu = NULL;
+ 	if(strcmp(arguments,".")==0)
+-		this_menu = gnome_unconditional_datadir_file ("gnome/apps");
++		this_menu = gnome_unconditional_datadir_file ("apps");
+ 	else if (*arguments == '/')
+ 		this_menu = g_strdup (arguments);
+ 	else if (*arguments == '~')
+--- panel/session.c.orig	Fri May 19 00:29:47 2000
++++ panel/session.c	Wed May 31 12:49:09 2000
+@@ -777,10 +777,10 @@
+ load_default_applets1(PanelWidget *panel)
+ {
+ 	char *def_launchers[] =
+-	      { "gnome/apps/gnome-help.desktop",
+-		"gnome/apps/System/gnome-terminal.desktop",
+-		"gnome/apps/Settings/gnomecc.desktop",
+-		"gnome/apps/Internet/Netscape.desktop",
++	      { "apps/gnome-help.desktop",
++		"apps/System/gnome-terminal.desktop",
++		"apps/Settings/gnomecc.desktop",
++		"apps/Internet/Netscape.desktop",
+ 		NULL };
+ 	int i;
+ 	char *p;
+--- panel/doc/Makefile.in.orig	Tue May 23 04:25:49 2000
++++ panel/doc/Makefile.in	Fri May 26 16:45:35 2000
+@@ -150,7 +150,7 @@
+ CFLAGS = "`gnome-config --cflags gnomeui applets docklets`"
+ LDFLAGS = "`gnome-config --libs gnomeui applets docklets`"
  
- 	{
--		char *menu_base = gnome_unconditional_datadir_file ("gnome/apps");
-+		char *menu_base = gnome_unconditional_datadir_file ("apps");
- 		char *this_menu = get_real_menu_path(menu->path,menu_base);
- 		GSList *list = g_slist_append(NULL,this_menu);
- 		char *pixmap_name = get_pixmap(this_menu,
+-HTML_DIR = $(datadir)/gnome/html
++HTML_DIR = $(datadir)/html
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 

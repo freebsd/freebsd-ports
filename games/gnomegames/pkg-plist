@@ -10,6 +10,7 @@ bin/gnome-xbill
 bin/gnometris
 bin/gnomine
 bin/gnotravex
+bin/gnotski
 bin/gtali
 bin/gturing
 bin/iagno
@@ -35,6 +36,7 @@ share/gnome/apps/Games/gnome-stones.desktop
 share/gnome/apps/Games/gnometris.desktop
 share/gnome/apps/Games/gnomine.desktop
 share/gnome/apps/Games/gnotravex.desktop
+share/gnome/apps/Games/gnotski.desktop
 share/gnome/apps/Games/gtali.desktop
 share/gnome/apps/Games/gturing.desktop
 share/gnome/apps/Games/iagno.desktop
@@ -73,6 +75,26 @@ share/gnome/games/gnotravex.3x3.scores
 share/gnome/games/gnotravex.4x4.scores
 share/gnome/games/gnotravex.5x5.scores
 share/gnome/games/gnotravex.6x6.scores
+share/gnome/games/gnotski.1.scores
+share/gnome/games/gnotski.11.scores
+share/gnome/games/gnotski.12.scores
+share/gnome/games/gnotski.13.scores
+share/gnome/games/gnotski.14.scores
+share/gnome/games/gnotski.15.scores
+share/gnome/games/gnotski.16.scores
+share/gnome/games/gnotski.17.scores
+share/gnome/games/gnotski.2.scores
+share/gnome/games/gnotski.21.scores
+share/gnome/games/gnotski.22.scores
+share/gnome/games/gnotski.23.scores
+share/gnome/games/gnotski.24.scores
+share/gnome/games/gnotski.25.scores
+share/gnome/games/gnotski.26.scores
+share/gnome/games/gnotski.3.scores
+share/gnome/games/gnotski.4.scores
+share/gnome/games/gnotski.5.scores
+share/gnome/games/gnotski.6.scores
+share/gnome/games/gnotski.7.scores
 share/gnome/games/gtali.scores
 share/gnome/games/iagno.b1.scores
 share/gnome/games/iagno.b2.scores
@@ -132,12 +154,36 @@ share/gnome/gturing/examples/dec2bin.tur
 share/gnome/gturing/examples/subst.tur
 share/gnome/help/gnobots2/C/index.html
 share/gnome/help/gnobots2/C/topic.dat
+share/gnome/help/gnobots2/da/index.html
+share/gnome/help/gnobots2/da/topic.dat
 share/gnome/help/gnobots2/es/index.html
 share/gnome/help/gnobots2/es/topic.dat
 share/gnome/help/gnobots2/it/index.html
 share/gnome/help/gnobots2/it/topic.dat
 share/gnome/help/gtali/C/index.html
 share/gnome/help/gtali/C/topic.dat
+share/gnome/help/gtali/da/index.html
+share/gnome/help/gtali/da/topic.dat
+share/gnome/help/iagno/C/ANIMATION.png
+share/gnome/help/iagno/C/BLOCK.png
+share/gnome/help/iagno/C/FIRST.png
+share/gnome/help/iagno/C/PLAYER.png
+share/gnome/help/iagno/C/START.png
+share/gnome/help/iagno/C/animations.html
+share/gnome/help/iagno/C/bugs.html
+share/gnome/help/iagno/C/credits.html
+share/gnome/help/iagno/C/docbook.css
+share/gnome/help/iagno/C/index.html
+share/gnome/help/iagno/C/license.html
+share/gnome/help/iagno/C/ln7.html
+share/gnome/help/iagno/C/playing.html
+share/gnome/help/iagno/C/settings.html
+share/gnome/help/iagno/C/stylesheet-images/caution.png
+share/gnome/help/iagno/C/stylesheet-images/important.png
+share/gnome/help/iagno/C/stylesheet-images/note.png
+share/gnome/help/iagno/C/stylesheet-images/tip.png
+share/gnome/help/iagno/C/stylesheet-images/warning.png
+share/gnome/help/iagno/C/topic.dat
 share/gnome/help/samegnome/C/authors.html
 share/gnome/help/samegnome/C/book1.html
 share/gnome/help/samegnome/C/bugs.html
@@ -147,6 +193,15 @@ share/gnome/help/samegnome/C/index.html
 share/gnome/help/samegnome/C/ln9.html
 share/gnome/help/samegnome/C/newthemes.html
 share/gnome/help/samegnome/C/topic.dat
+share/gnome/help/samegnome/ru/authors.html
+share/gnome/help/samegnome/ru/book1.html
+share/gnome/help/samegnome/ru/bugs.html
+share/gnome/help/samegnome/ru/c11.html
+share/gnome/help/samegnome/ru/docbook.css
+share/gnome/help/samegnome/ru/index.html
+share/gnome/help/samegnome/ru/ln9.html
+share/gnome/help/samegnome/ru/newthemes.html
+share/gnome/help/samegnome/ru/topic.dat
 share/gnome/mime-info/gnome-stones.keys
 share/gnome/mime-info/gnome-stones.mime
 share/gnome/pixmaps/cards/backs/beige.png
@@ -240,6 +295,7 @@ share/gnome/pixmaps/gnometris/bg/vortex-bg.png
 share/gnome/pixmaps/gnometris/bg/weirdo-bg.png
 share/gnome/pixmaps/gnotravex/gnotravex.png
 share/gnome/pixmaps/gnotravex/gnome-gnotravex.png
+share/gnome/pixmaps/gnotski/gnotski.png
 share/gnome/pixmaps/iagno.png
 share/gnome/pixmaps/iagno/blend.png
 share/gnome/pixmaps/iagno/classic.png
@@ -277,6 +333,7 @@ share/gnome/sol-games/hopscotch.scm
 share/gnome/sol-games/kansas.scm
 share/gnome/sol-games/klondike.scm
 share/gnome/sol-games/lady_jane.scm
+share/gnome/sol-games/maze.scm
 share/gnome/sol-games/neighbor.scm
 share/gnome/sol-games/odessa.scm
 share/gnome/sol-games/osmosis.scm
@@ -313,21 +370,28 @@ share/gnome/sounds/gnobots2/yahoo.wav
 share/gnome/sounds/iagno/flip-piece.wav
 share/gnome/sounds/iagno/gameover.wav
 share/gnome/xbill/cursors/apple.xpm
+share/gnome/xbill/cursors/beos.xpm
 share/gnome/xbill/cursors/bsd.xpm
 share/gnome/xbill/cursors/bucket.xpm
+share/gnome/xbill/cursors/caldera.xpm
+share/gnome/xbill/cursors/debian.xpm
 share/gnome/xbill/cursors/hand_down.xpm
 share/gnome/xbill/cursors/hand_down_mask.xpm
 share/gnome/xbill/cursors/hand_up.xpm
 share/gnome/xbill/cursors/hand_up_mask.xpm
 share/gnome/xbill/cursors/hurd.xpm
 share/gnome/xbill/cursors/linux.xpm
+share/gnome/xbill/cursors/mandrake.xpm
 share/gnome/xbill/cursors/next.xpm
 share/gnome/xbill/cursors/os2.xpm
 share/gnome/xbill/cursors/redhat.xpm
 share/gnome/xbill/cursors/sgi.xpm
 share/gnome/xbill/cursors/sun.xpm
+share/gnome/xbill/cursors/suse.xpm
+share/gnome/xbill/cursors/turbolinux.xpm
 share/gnome/xbill/pixmaps/about.xpm
 share/gnome/xbill/pixmaps/apple.xpm
+share/gnome/xbill/pixmaps/beos.xpm
 share/gnome/xbill/pixmaps/billA_0.xpm
 share/gnome/xbill/pixmaps/billA_1.xpm
 share/gnome/xbill/pixmaps/billA_10.xpm
@@ -355,11 +419,14 @@ share/gnome/xbill/pixmaps/billR_2.xpm
 share/gnome/xbill/pixmaps/bsd.xpm
 share/gnome/xbill/pixmaps/bsdcpu.xpm
 share/gnome/xbill/pixmaps/bucket.xpm
+share/gnome/xbill/pixmaps/caldera.xpm
+share/gnome/xbill/pixmaps/debian.xpm
 share/gnome/xbill/pixmaps/hurd.xpm
 share/gnome/xbill/pixmaps/icon.xpm
 share/gnome/xbill/pixmaps/linux.xpm
 share/gnome/xbill/pixmaps/logo.xpm
 share/gnome/xbill/pixmaps/maccpu.xpm
+share/gnome/xbill/pixmaps/mandrake.xpm
 share/gnome/xbill/pixmaps/next.xpm
 share/gnome/xbill/pixmaps/nextcpu.xpm
 share/gnome/xbill/pixmaps/os2.xpm
@@ -371,21 +438,26 @@ share/gnome/xbill/pixmaps/spark_0.xpm
 share/gnome/xbill/pixmaps/spark_1.xpm
 share/gnome/xbill/pixmaps/sun.xpm
 share/gnome/xbill/pixmaps/suncpu.xpm
+share/gnome/xbill/pixmaps/suse.xpm
 share/gnome/xbill/pixmaps/toaster.xpm
+share/gnome/xbill/pixmaps/turbolinux.xpm
 share/gnome/xbill/pixmaps/wingdows.xpm
 share/locale/cs/LC_MESSAGES/gnome-games.mo
 share/locale/da/LC_MESSAGES/gnome-games.mo
 share/locale/de/LC_MESSAGES/gnome-games.mo
+share/locale/el/LC_MESSAGES/gnome-games.mo
 share/locale/en_GB/LC_MESSAGES/gnome-games.mo
 share/locale/es/LC_MESSAGES/gnome-games.mo
 share/locale/et/LC_MESSAGES/gnome-games.mo
 share/locale/fi/LC_MESSAGES/gnome-games.mo
 share/locale/fr/LC_MESSAGES/gnome-games.mo
 share/locale/ga/LC_MESSAGES/gnome-games.mo
+share/locale/gl/LC_MESSAGES/gnome-games.mo
 share/locale/hu/LC_MESSAGES/gnome-games.mo
 share/locale/it/LC_MESSAGES/gnome-games.mo
 share/locale/ja/LC_MESSAGES/gnome-games.mo
 share/locale/ko/LC_MESSAGES/gnome-games.mo
+share/locale/lt/LC_MESSAGES/gnome-games.mo
 share/locale/nl/LC_MESSAGES/gnome-games.mo
 share/locale/no/LC_MESSAGES/gnome-games.mo
 share/locale/pl/LC_MESSAGES/gnome-games.mo
@@ -393,7 +465,9 @@ share/locale/pt/LC_MESSAGES/gnome-games.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-games.mo
 share/locale/ru/LC_MESSAGES/gnome-games.mo
 share/locale/sv/LC_MESSAGES/gnome-games.mo
+share/locale/uk/LC_MESSAGES/gnome-games.mo
 share/locale/wa/LC_MESSAGES/gnome-games.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-games.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/xbill/pixmaps
 @dirrm share/gnome/xbill/cursors
@@ -407,6 +481,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/mahjongg/bg
 @dirrm share/gnome/pixmaps/mahjongg
 @dirrm share/gnome/pixmaps/iagno
+@dirrm share/gnome/pixmaps/gnotski
 @dirrm share/gnome/pixmaps/gnotravex
 @dirrm share/gnome/pixmaps/gnometris/bg
 @dirrm share/gnome/pixmaps/gnometris
@@ -424,12 +499,18 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/cards/honors
 @dirrm share/gnome/pixmaps/cards/backs
 @dirrm share/gnome/pixmaps/cards
+@dirrm share/gnome/help/samegnome/ru
 @dirrm share/gnome/help/samegnome/C
 @dirrm share/gnome/help/samegnome
+@dirrm share/gnome/help/iagno/C/stylesheet-images
+@dirrm share/gnome/help/iagno/C
+@dirrm share/gnome/help/iagno
+@dirrm share/gnome/help/gtali/da
 @dirrm share/gnome/help/gtali/C
 @dirrm share/gnome/help/gtali
 @dirrm share/gnome/help/gnobots2/it
 @dirrm share/gnome/help/gnobots2/es
+@dirrm share/gnome/help/gnobots2/da
 @dirrm share/gnome/help/gnobots2/C
 @dirrm share/gnome/help/gnobots2
 @dirrm share/gnome/gturing/examples

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomemedia
-PORTVERSION=	1.0.51
+PORTVERSION=	1.2.0
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-media
@@ -22,8 +22,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-ncurses \
 		--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
