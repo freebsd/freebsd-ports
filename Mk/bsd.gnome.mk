@@ -578,10 +578,12 @@ GNOME_PRE_PATCH+=	; ${${component}_PRE_PATCH}
 . endfor
 .endif
 
-.if defined(GNOME_PRE_PATCH) && !target(pre-patch)
+.if defined(GNOME_PRE_PATCH)
 USE_REINPLACE=	yes
 
-pre-patch:
+pre-patch: gnome-pre-patch
+
+gnome-pre-patch:
 	@${GNOME_PRE_PATCH:C/^;//1}
 .endif
 
