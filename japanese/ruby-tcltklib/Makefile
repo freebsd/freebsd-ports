@@ -13,11 +13,6 @@ MAINTAINER=	yasuf@big.or.jp
 
 WITH_TCL_JP=	yes
 
-# Temporarily use version 8.0.x of Tcl/Tk until we get the japanese
-# equivalents of version 8.2.x.
-TCL_VERSION?=	80
-TK_VERSION?=	80
-
 MASTERDIR=	${.CURDIR}/../../x11-toolkits/rubytk
 
 .include "${MASTERDIR}/Makefile"
