@@ -173,6 +173,7 @@
     SUBDIR += tdir
     SUBDIR += ticker.app
     SUBDIR += timelimit
+    SUBDIR += tmpwatch
     SUBDIR += tree
     SUBDIR += truncate
     SUBDIR += ttyload
