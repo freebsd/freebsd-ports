@@ -16,24 +16,22 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A LaTeX package allows several bibliographies in a document
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX
-BUILD_DEPENDS+=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
+		latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL} MKTEXLSR=${MKTEXLSR}
-PLIST_SUB+=	CLASSDIR=${CLASSDIR}
+PLIST=		${WRKDIR}/pkg-plist
 
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 TEX_BIN=	${LOCALBASE}/bin/latex
+
 CLASSDIR=	${TEXMFLOCAL}/tex/latex/${PORTNAME:S/^latex-//}
+CLASS_FILES=	bibtopic.sty bibtopic.ins bibtopic.dtx
 
 DOC_FILES=	README
-
-CLASS_FILES=	bibtopic.sty
-CLASS_FILES+=	bibtopic.ins bibtopic.dtx
 
 do-extract:
 	${MKDIR} ${WRKSRC}
@@ -41,6 +39,18 @@ do-extract:
 
 do-build:
 	cd ${WRKSRC} && ${TEX_BIN} bibtopic.ins
+	(for F in ${CLASS_FILES}; do \
+			${ECHO_CMD} "${CLASSDIR}/$${F}"; \
+		done;\
+	${ECHO_CMD} "@dirrm ${CLASSDIR}" ) > ${PLIST}
+.if !defined(NOPORTDOCS)
+	(for F in ${DOC_FILES}; do \
+			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
+		done;\
+	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
+.endif
+	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
+	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
