@@ -5,6 +5,7 @@
     SUBDIR += at
     SUBDIR += bblimage
     SUBDIR += cdcl
+    SUBDIR += cdcl-gtk
     SUBDIR += chemtool
     SUBDIR += chemtool-devel
     SUBDIR += clhep
