@@ -7,8 +7,8 @@
 
 PORTNAME=	libnids
 PORTVERSION=	1.13
-CATEGORIES=	net
-MASTER_SITES=	http://www.packetfactory.net/libnids/dist/
+CATEGORIES=	net security
+MASTER_SITES=	http://www.packetfactory.net/Projects/libnids/dist/
 
 MAINTAINER=	kris@FreeBSD.org
 
