@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	pstree
-PORTVERSION=	2.17
-CATEGORIES=    	sysutils
-MASTER_SITES=	http://www.go.dlr.de/fresh/unix/src/misc/
+PORTVERSION=	2.20
+CATEGORIES=	sysutils
+MASTER_SITES=	http://fresh.t-systems-sfr.com/unix/src/misc/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	List processes as a tree
+
+NO_WRKSUBDIR=	yes
 
 do-build:
 	cd ${WRKDIR} && ${CC} ${CFLAGS} -o pstree pstree.c
