@@ -6,6 +6,7 @@
 
 PORTNAME=	antivir-milter
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.antivir.de/freebsd/
 DISTNAME=	avfbmlt
@@ -21,6 +22,8 @@ NO_CDROM=	${RESTRICTED}
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+# Auto re-fetch sucks!
+FETCH_CMD=	/usr/bin/fetch -A
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

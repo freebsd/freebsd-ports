@@ -1,0 +1,16 @@
+--- script/avq.orig	Sat Oct 11 13:26:02 2003
++++ script/avq	Sat Oct 11 13:31:54 2003
+@@ -49,6 +49,13 @@
+ systeme="`uname`"
+ date_param="-d"
+ 
++# Make sure the user running this program is root.
++procowner=${procowner:-`/usr/bin/id -u`}
++if [ "$procowner" != "0" ]; then
++	echo "${pname}: you must be the super-user (uid 0) to use this utility."
++	exit 2
++fi
++
+ usage() {
+     echo "${pname} usage:"
+     echo "    ${pname} [--queue=DIR] "

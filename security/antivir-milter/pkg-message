@@ -12,7 +12,7 @@ Don't forget to rebuild sendmail.cf and to restart Sendmail afterwards.
 
 For automated updates of the virus definition file add the following
 line to your /etc/crontab:
-25 0 * * * root %%PREFIX%%/sbin/antivirupdater >/dev/null
+25 0 * * * root %%PREFIX%%/sbin/antivirupdater -q
 
 For full functionality of AntiVir Milter you need to obtain a license
 key from H+BEDV Datentechnik GmbH. To install it, execute the following
