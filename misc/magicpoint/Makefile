@@ -13,17 +13,12 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/MagicPoint/
 
 MAINTAINER?=	mita@jp.FreeBSD.org
 
-LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype
+LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \
+		png.3:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-vflib
-
-post-configure:
-	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
-
-post-build:
-	(cd ${WRKSRC}/contrib/xmindpath; make)
 
 MAN1=	mgp.1 mgp2ps.1 mgpembed.1 mgpnet.1 xwintoppm.1 xmindpath.1
 
@@ -39,6 +34,12 @@ SAMPLES=	README README.jp cloud.jpg dad.eps dad.jpg default.mgp \
 EMACS_LISPS=	mgp-mode.el mgp-el/COPYING mgp-el/README \
 		mgp-el/mgp.el mgp-el/mgp.sty mgp-el/sample.tex
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
+
+post-configure:
+	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
+
+post-build:
+	(cd ${WRKSRC}/contrib/xmindpath; make)
 
 # NOTE: there are some discussions/twists in gzip'ing xmindpath.1.
 post-install:
