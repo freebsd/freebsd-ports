@@ -127,6 +127,7 @@
     SUBDIR += cvsbook
     SUBDIR += cvsd
     SUBDIR += cvsdelta
+    SUBDIR += cvsdiff2patch
     SUBDIR += cvsgraph
     SUBDIR += cvslines
     SUBDIR += cvsmapfs
