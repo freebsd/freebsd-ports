@@ -69,6 +69,8 @@ jre/lib/pjava.jar
 jre/lib/servlet.jar
 jre/lib/microsoft.jar
 jre/lib/rmi.jar
+lib/kjc.jar
+lib/tools.jar
 share/kaffe/BUILD_ENVIRONMENT
 share/kaffe/license.terms
 @dirrm include/kaffe
