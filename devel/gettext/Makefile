@@ -58,7 +58,7 @@ INFO=		autosprintf gettext
 pre-extract:
 .if exists(${PREFIX}/bin/kaffe)
 	@${ECHO_MSG} "Gettext won't build with Kaffe's jar utility.  Doing:"
-	${MV} ${PREFIX}/bin/jar ${PREFIX}/bin/jar.backup
+	-${MV} ${PREFIX}/bin/jar ${PREFIX}/bin/jar.backup
 	@${ECHO_MSG} "Be sure to mv" ${PREFIX}/bin/jar.backup ${PREFIX}/bin/jar
 	@${ECHO_MSG} "if you abandon your attempt to build gettext.
 	@sleep 5
@@ -66,7 +66,7 @@ pre-extract:
 
 post-build:
 .if exists(${PREFIX}/bin/kaffe)
-	${MV} ${PREFIX}/bin/jar.backup ${PREFIX}/bin/jar
+	-${MV} ${PREFIX}/bin/jar.backup ${PREFIX}/bin/jar
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Your" ${PREFIX}/bin/jar "has been restored."
 	@sleep 5
