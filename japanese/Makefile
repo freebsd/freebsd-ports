@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.178 1999/01/06 20:29:39 sada Exp $
+# $Id: Makefile,v 1.179 1999/01/11 14:16:17 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -33,10 +33,6 @@
     SUBDIR += expect
     SUBDIR += gawk
     SUBDIR += gd
-    SUBDIR += ghostscript118
-    SUBDIR += ghostscript240
-    SUBDIR += ghostscript300
-    SUBDIR += ghostscript400
     SUBDIR += gicq
     SUBDIR += gimp
     SUBDIR += gn-gnspool
@@ -145,10 +141,6 @@
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
-    SUBDIR += pkfonts118
-    SUBDIR += pkfonts240
-    SUBDIR += pkfonts300
-    SUBDIR += pkfonts400
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-common
@@ -205,26 +197,12 @@
     SUBDIR += vfghostscript55
     SUBDIR += vflib
     SUBDIR += vftool
-    SUBDIR += vftool-misc118
-    SUBDIR += vftool-misc240
-    SUBDIR += vftool-misc300
-    SUBDIR += vftool-misc400
-    SUBDIR += vfxdvi118
-    SUBDIR += vfxdvi240
-    SUBDIR += vfxdvi300
-    SUBDIR += vfxdvi360
-    SUBDIR += vfxdvi400
-    SUBDIR += vfxdvi600
     SUBDIR += vfxdvik
     SUBDIR += vje-trial
     SUBDIR += w3
     SUBDIR += weblint97
     SUBDIR += wine
     SUBDIR += x0212fonts
-    SUBDIR += xdvi118
-    SUBDIR += xdvi240
-    SUBDIR += xdvi300
-    SUBDIR += xdvi400
     SUBDIR += xemacs
     SUBDIR += xemacs-canna
     SUBDIR += xemacs-canna+wnn4
