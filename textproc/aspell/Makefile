@@ -3,11 +3,11 @@
 # Date created:		7 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/24 16:29:00 flathill Exp $
 #
 
-DISTNAME=	aspell-.24
-PKGNAME=	aspell-0.24
+DISTNAME=	aspell-.27
+PKGNAME=	aspell-0.27
 CATEGORIES=	textproc
 MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 		ftp://ftp.kddlabs.co.jp/pub/Tools/aspell/ \
@@ -15,11 +15,20 @@ MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 
 MAINTAINER=	josh@quick.net
 
+.if defined(HAVE_EGCS)
+BUILD_DEPENDS=	eg++:${PORTSDIR}/lang/egcs
+CC=	egcc
+CXX=	eg++
+.else
 BUILD_DEPENDS=	${PREFIX}/include/stlport/hash_map:${PORTSDIR}/devel/stlport
+.endif
 
-WRKSRC=		${WRKDIR}/aspell
 GNU_CONFIGURE=	yes
+.if defined(HAVE_EGCS)
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${WRKSRC}"
+.else
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include/stlport"
+.endif
 USE_GMAKE=	yes
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 
@@ -36,11 +45,11 @@ post-patch:
 	@${ECHO_MSG} "===>  Using ${WORDLIST} as English word list."
 
 pre-install:
-	@${RM} -f ${WRKSRC}/man-html/3_aspell.html \
-	          ${WRKSRC}/man-html/4_Libray.html \
-	          ${WRKSRC}/man-html/manual2.html \
-	          ${WRKSRC}/man-text/3_aspell.txt \
-	          ${WRKSRC}/man-text/4_Libray.txt \
-	          ${WRKSRC}/man-text/manual2.txt
+	@${RM} -f ${WRKSRC}/manual/man-html/C_Credits.html \
+	          ${WRKSRC}/manual/man-html/D_Glossary.html \
+	          ${WRKSRC}/manual/man-html/E_Copyright.html \
+	          ${WRKSRC}/manual/man-text/C_Credits.txt \
+	          ${WRKSRC}/manual/man-text/D_Glossary.txt \
+	          ${WRKSRC}/manual/man-text/E_Copyright.txt
 
 .include <bsd.port.mk>
