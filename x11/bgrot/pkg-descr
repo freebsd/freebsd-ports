@@ -1,0 +1,9 @@
+bgrot is a simple suite of scripts to handle rotation of your X
+background, using (at present) xv.  It takes a series of images, puts
+them in random order, and rotates them at given intervals.  Why?  Heck,
+why not?
+
+Home page: http://www.futuresouth.com/~fullermd/bgrot/
+
+- Matthew Fuller
+<fullermd@futuresouth.com>
