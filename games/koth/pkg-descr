@@ -1,0 +1,14 @@
+King of the Hill (KOTH) is a multiplayer, networked artillery game of 
+little tanks with really big weapons set out to destroy one another. 
+
+Best-known games of this type include the classic DOS game "Scorched 
+Earth: The Mother of All Games" and "Scorched Tanks" for the Amiga, but 
+the concept has been implemented on everything from the TI-85 graphing 
+calculator on up. KOTH seeks to build on the best ideas from these games 
+while also taking a fresh approach including an open, network-centric 
+architecture and concurrent progressive event modeling.
+
+WWW: http://www.nongnu.org/koth/index.html
+
+- Travis Poppe
+tlp@liquidx.org

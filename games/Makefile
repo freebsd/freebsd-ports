@@ -248,6 +248,7 @@
     SUBDIR += klondike
     SUBDIR += knights
     SUBDIR += kobodeluxe
+    SUBDIR += koth
     SUBDIR += kpacman
     SUBDIR += kpicframer
     SUBDIR += kpictorial
