@@ -22,7 +22,7 @@ EXTRACT_ONLY=	${DISTNAME}-html-${VERSIONSTR}.tgz \
 		${DISTNAME}-pdf-${VERSIONSTR}.tgz \
 		${DISTNAME}-text-${VERSIONSTR}.tgz
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 NO_BUILD=	YES
 DIPDIR=		${PREFIX}/share/doc/diveintopython

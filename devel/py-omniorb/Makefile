@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.uk.research.att.com/pub/omniORB/omniORBpy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	omniORBpy_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 LIB_DEPENDS=	omniORB3.0:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB

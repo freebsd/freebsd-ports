@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.biopython.org/~dalke/Martel/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Martel-${PORTVERSION}
 
-MAINTAINER=	johann@egenetics.com
+MAINTAINER=	wjv@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
