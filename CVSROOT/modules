@@ -8798,6 +8798,7 @@ wakeonlan	ports/net/wakeonlan
 walker		ports/net/walker
 wall		src/usr.bin/wall
 wamcc		ports/lang/wamcc
+wampager	ports/x11-wm/wampager
 wanderlust	ports/mail/wanderlust
 wanderlust-emacs20	ports/mail/wanderlust-emacs20
 wanderlust-xemacs21-mule	ports/mail/wanderlust-xemacs21-mule
