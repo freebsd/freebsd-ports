@@ -16,8 +16,10 @@ EXTRACT_ONLY=	aspell-0.50.1.tar.gz
 
 MAINTAINER?=	thierry@pompo.net
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
-		bzip2:${PORTSDIR}/archivers/bzip2
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+.if exists(/usr/bin/bzip2)
+BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
