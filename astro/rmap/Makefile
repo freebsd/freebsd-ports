@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.reza.net/rmap/
 
-MAINTAINER=	trevor@jpj.net
+MAINTAINER=	trevor@FreeBSD.org
 
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
