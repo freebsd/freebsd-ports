@@ -1,0 +1,61 @@
+*** Makefile.orig	Fri Oct  4 12:01:36 1996
+--- Makefile	Fri Nov  8 21:35:39 1996
+***************
+*** 1,11 ****
+  # The following file and directory specifications may need changing at
+  # your site:
+  #
+  # where dvi2ps is installed
+! BINAREA=/usr/local/bin
+  #
+  # directory for dvi2ps: where the auxiliary files are installed
+! DVI2LIB=/usr/local/lib/dvi2ps
+  #
+  # name of default fontdesc file in your site
+  FONTDESC=fontdesc
+--- 1,12 ----
+  # The following file and directory specifications may need changing at
+  # your site:
+  #
++ PREFIX?=	/usr/local
+  # where dvi2ps is installed
+! BINAREA=${PREFIX}/bin
+  #
+  # directory for dvi2ps: where the auxiliary files are installed
+! DVI2LIB=${PREFIX}/lib/dvi2ps
+  #
+  # name of default fontdesc file in your site
+  FONTDESC=fontdesc
+***************
+*** 36,50 ****
+  # optional font formats
+  FONTF = -DVFLIB
+  # VFlib library (comment out next line if -DFVLIB is not included)
+! VFLIB = VFlib.a
+  
+  #
+  CC=cc
+  #
+! CCFLAGS = -g
+  #CCFLAGS = -O		# SUN etc ...
+  #CCFLAGS = -O -traditional -DPOSIX	# 386bsd (gcc 1.X)
+! #CCFLAGS = -O -DPOSIX	# NetBSD FreeBSD (gcc 2.X), Linux
+  #CCFLAGS = -O -bsd	# NeXT
+  #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
+  #CCFLAGS = -O -DSYSV	# SysV
+--- 37,51 ----
+  # optional font formats
+  FONTF = -DVFLIB
+  # VFlib library (comment out next line if -DFVLIB is not included)
+! VFLIB = ${PREFIX}/lib/VFlib.a
+  
+  #
+  CC=cc
+  #
+! #CCFLAGS = -g
+  #CCFLAGS = -O		# SUN etc ...
+  #CCFLAGS = -O -traditional -DPOSIX	# 386bsd (gcc 1.X)
+! CCFLAGS = -O -DPOSIX -m486	# NetBSD FreeBSD (gcc 2.X), Linux
+  #CCFLAGS = -O -bsd	# NeXT
+  #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
+  #CCFLAGS = -O -DSYSV	# SysV
