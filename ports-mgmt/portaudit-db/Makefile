@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit-db
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	security
 DISTFILES=
 
