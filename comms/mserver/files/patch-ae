@@ -1,0 +1,12 @@
+--- tcpconn.c.orig	Thu Aug 26 00:22:26 1999
++++ tcpconn.c	Thu Aug 26 00:30:52 1999
+@@ -44,6 +44,9 @@
+ 	char buff[BUFF_SIZE], device[128], *s;
+ 
+ 	*device = 0;
++	if (argc < 2)
++		errorf ("tcpconn: error: hostname required\n" \
++			"Usage: tcpconn [-d pty] [-p port] hostname[:port]\n");
+ 	for (n = 1; *argv[n] == '-'; n++)
+ 		switch (argv[n][1])
+ 		{
