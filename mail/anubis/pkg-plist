@@ -1,0 +1,8 @@
+sbin/anubis
+etc/rc.d/anubis.sh
+%%PORTDOCS%%share/doc/anubis/TUTORIAL
+%%PORTDOCS%%@dirrm share/doc/anubis
+%%PORTDOCS%%share/examples/anubis/1anubisrc
+%%PORTDOCS%%share/examples/anubis/2anubisrc
+%%PORTDOCS%%share/examples/anubis/defaultrc
+%%PORTDOCS%%@dirrm share/examples/anubis
