@@ -1,13 +1,13 @@
 # New ports collection makefile for:	perl5
-# Version required:	5.004_01
+# Version required:	5.004_04
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.20 1997/07/18 06:16:44 markm Exp $
+# $Id: Makefile,v 1.21 1997/10/06 05:17:47 obrien Exp $
 #
 
-DISTNAME=	perl5.004_01
-PKGNAME=	perl-5.00401
+DISTNAME=	perl5.004_04
+PKGNAME=	perl-5.00404
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	ftp://ftp.digital.com/pub/plan/perl/CPAN/src/5.0/ \
 		ftp://ftp.cdrom.com/pub/perl/CPAN/src/5.0/
@@ -53,9 +53,9 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 Benchmark.3 Bundle::CPAN.3 \
 	Text::Soundex.3 Text::Tabs.3 Text::Wrap.3 Tie::Hash.3 \
 	Tie::RefHash.3 Tie::Scalar.3 Tie::SubstrHash.3 Time::Local.3 \
 	Time::gmtime.3 Time::localtime.3 Time::tm.3 UNIVERSAL.3 \
-	User::grent.3 User::pwent.3 autouse.3 blib.3 constant.3 diagnostics.3 \
-	integer.3 less.3 lib.3 locale.3 ops.3 overload.3 sigtrap.3 strict.3 \
-	subs.3 vars.3
+	User::grent.3 User::pwent.3 autouse.3 base.3 blib.3 constant.3 \
+	diagnostics.3 integer.3 less.3 lib.3 locale.3 ops.3 overload.3 \
+	sigtrap.3 strict.3 subs.3 vars.3
 
 MAN3PREFIX=	${PREFIX}/lib/perl5
 
