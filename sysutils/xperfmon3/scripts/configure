@@ -1,3 +1,4 @@
 #! /bin/sh
 
 cp ${FILESDIR}/freebsd_system.c ${WRKSRC}/freebsd_system.c
+cp ${FILESDIR}/fbsd_vers.h       ${WRKSRC}/fbsd_vers.h

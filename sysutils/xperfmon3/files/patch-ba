@@ -1,0 +1,146 @@
+*** ../xperfmon++/StripCharP.h	Wed Jul 27 22:29:30 1994
+--- ./StripCharP.h	Sun Jan 10 18:07:37 1999
+***************
+*** 1,7 ****
+  /*
+! * $XConsortium: StripCharP.h,v 1.3 89/11/11 14:53:47 kit Exp $
+! */
+! 
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+--- 1,9 ----
+  /*
+!  * Enhancement and error correction for FreeBSD-3.X
+!  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
+!  *
+!  *      $Id: StripCharP.h,v 3.2 1999/01/10 17:07:24 lkoeller Exp lkoeller $
+!  */
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+***************
+*** 9,21 ****
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its 
+! documentation for any purpose and without fee is hereby granted, 
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in 
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.  
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+--- 11,23 ----
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its
+! documentation for any purpose and without fee is hereby granted,
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+***************
+*** 31,37 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 33,39 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 42,48 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 44,50 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 62,71 ****
+  #define HIGHLIGHT  1 << 1
+  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
+  
+  /* New fields for the PerfChart widget instance record */
+  
+  typedef struct {
+!     double valuedata[2048];	/* record of data points */
+      Pixel	fgpixel;	/* color index for graph */
+      Pixel	hipixel;	/* color index for lines */
+      Pixel       warnColor;
+--- 64,75 ----
+  #define HIGHLIGHT  1 << 1
+  #define ALL_GCS (FOREGROUND | HIGHLIGHT)
+  
++ #define NUM_VALUES 2048
++ 
+  /* New fields for the PerfChart widget instance record */
+  
+  typedef struct {
+!     double valuedata[NUM_VALUES]; /* record of data points */
+      Pixel	fgpixel;	/* color index for graph */
+      Pixel	hipixel;	/* color index for lines */
+      Pixel       warnColor;
+***************
+*** 74,90 ****
+      Pixel       currentBG;
+      GC	fgGC;			/* graphics context for fgpixel */
+      GC	hiGC;			/* graphics context for hipixel */
+!     
+  /* start of graph stuff */
+!     
+      int highWarn;		/* warning alert occurrs above this limit */
+      int highAlarm;		/* alarm alert occurrs above this limit */
+      int lowWarn;		/* low warning alert occurrs below this limit */
+      int lowAlarm;		/* low alarm alert occurrs below this limit */
+      Boolean immediate;		/* background is current point */
+      int	update;			/* update frequence */
+!     int	scale;			/* scale factor */
+!     int	min_scale;		/* smallest scale factor */
+      int	interval;		/* data point interval */
+      XPoint * points ;		/* Poly point for repairing graph lines. */
+      Boolean reverse_video;	/* display in reverse video */
+--- 78,94 ----
+      Pixel       currentBG;
+      GC	fgGC;			/* graphics context for fgpixel */
+      GC	hiGC;			/* graphics context for hipixel */
+! 
+  /* start of graph stuff */
+! 
+      int highWarn;		/* warning alert occurrs above this limit */
+      int highAlarm;		/* alarm alert occurrs above this limit */
+      int lowWarn;		/* low warning alert occurrs below this limit */
+      int lowAlarm;		/* low alarm alert occurrs below this limit */
+      Boolean immediate;		/* background is current point */
+      int	update;			/* update frequence */
+!     int scale;                  /* scale factor */
+!     int min_scale;              /* smallest scale factor */
+      int	interval;		/* data point interval */
+      XPoint * points ;		/* Poly point for repairing graph lines. */
+      Boolean reverse_video;	/* display in reverse video */

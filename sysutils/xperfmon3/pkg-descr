@@ -1,38 +1,22 @@
-This package contains the binary release of xperfmon++ V2.0 a X based
-system performance meter for several systems, ported to FreeBSD 2.2.X
-and FreeBSD-3.X.
+This package contains the binary release of xperfmon++ V3.0 a X based
+system performance meter for several systems, ported to FreeBSD-3.X
+with addition of many new features.
 
 The program monitors:
   system load, user-, nice-, system-, interrupt-, idle-cputime,
-  free swap, disk io, number of interrupts,
-  network-input, -output, -collision packets and
-  NFS client and server activity.
+  free swap, disk/tape/cdrom transfers, disktape/cdrom io in MB/s,
+  number of interrupts,  network-input, -output, -collision packets and
+  NFS client and server activity and cache hits/misses.
 
 Please send BUGS and annotations to: Lars.Koeller@Uni-Bielefeld.DE
 
-Major changes in xperfmon++ V1.3 due to xperfmon++ V1.1:
+Changes from xperfmon++ V2.0 to xperfmon++ V3.0:
 
-	- Clean fix of the -geometry option bug, now there is only
-	  a MIN_WIDTH of 185 pixels. The MIN_HEIGTH is calculated
-	  dynamically out of the number of active graphs.
-	- Display 'Free Swap' in percent without resizing of the graph
-	- Close some memory leaks
-	- Display unit of graph in label field.
+	- Complete rewirte of freebsd_system.c (now it has a clear structure,
+	  separate procedures for each different type of statistic gathered)
+	- Integration of devstat library first appeared in FreeBSD-3.X
+	- Add many graphs, now there are a total of 25 graphs
+	- Change scaling of graphs from integer to float.
+	- Problems during first resize of the window are fixed
 
-Changes from xperfmon++ V1.3 to xperfmon++ V1.33:
-
-	- Fix event bug when resizing or moving the window.
-	  (High cpu consumption when running xperfmon++ with mwm)
-	- Changes in get_swapspace to compile with FreeBSD 2.2 (-current)
-
-Changes from xperfmon++ V1.33 to xperfmon++ V1.40:
-
-	- Fix -geometry option. Changing the size of the window now wokes
-	  well. The start frame of the window has the correct size.
-	- Changes in freebsd_system.c to compile with FreeBSD 30-current.
-	- Clean the FreeBSD version number #if's
-
-Changes from xperfmon++ V1.40 to xperfmon++ V2.0:
-
-	- Add System Load graph
-	- Add Nice and Interrupt CPU percentage graph
+See also /usr/ports/sysutils/xperfmon/pkg/DESCR for older change information.

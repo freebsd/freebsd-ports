@@ -1,0 +1,365 @@
+*** ../xperfmon++/TimeChart.c	Wed Jul 27 22:29:31 1994
+--- ./TimeChart.c	Sun Jan 10 18:08:06 1999
+***************
+*** 1,4 ****
+! /* $XConsortium: TimeChart.c,v 1.20 91/05/24 17:20:42 converse Exp $ */
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+--- 1,9 ----
+! /*
+!  * Enhancement and error correction for FreeBSD-3.X
+!  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
+!  *
+!  *      $Id: TimeChart.c,v 1.4 1999/01/10 17:07:57 lkoeller Exp lkoeller $
+!  */
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+***************
+*** 6,18 ****
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its 
+! documentation for any purpose and without fee is hereby granted, 
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in 
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.  
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+--- 11,23 ----
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its
+! documentation for any purpose and without fee is hereby granted,
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+***************
+*** 28,34 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 33,39 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 39,45 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 44,50 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 47,52 ****
+--- 52,61 ----
+   *                   Moffett Field, California, rsmith@proteus.arc.nasa.gov
+  ******************************************************************/
+  
++ #ifndef LINT
++ static char rcsid[] = "$Id: TimeChart.c,v 1.4 1999/01/10 17:07:57 lkoeller Exp lkoeller $";
++ #endif
++ 
+  #include <stdio.h>
+  #include <X11/IntrinsicP.h>
+  #include <X11/StringDefs.h>
+***************
+*** 97,103 ****
+  extern void handleResize();
+  static Boolean SetValues();
+  static int repaint_window();
+- static int firstTime=TRUE;
+  Dimension oldHeight, oldWidth;
+  time_t timeStamp;
+  char numstring[32];
+--- 106,111 ----
+***************
+*** 190,199 ****
+  TimeChartWidget w;
+  unsigned int which;
+  {
+!   if (which & FOREGROUND) 
+      XtReleaseGC((Widget) w, w->time_chart.fgGC);
+  
+!   if (which & HIGHLIGHT) 
+      XtReleaseGC((Widget) w, w->time_chart.hiGC);
+  }
+  
+--- 198,207 ----
+  TimeChartWidget w;
+  unsigned int which;
+  {
+!   if (which & FOREGROUND)
+      XtReleaseGC((Widget) w, w->time_chart.fgGC);
+  
+!   if (which & HIGHLIGHT)
+      XtReleaseGC((Widget) w, w->time_chart.hiGC);
+  }
+  
+***************
+*** 239,245 ****
+  }
+  
+  /*
+!  * NOTE: This function really needs to recieve graphics exposure 
+   *       events, but since this is not easily supported until R4 I am
+   *       going to hold off until then.
+   */
+--- 247,253 ----
+  }
+  
+  /*
+!  * NOTE: This function really needs to recieve graphics exposure
+   *       events, but since this is not easily supported until R4 I am
+   *       going to hold off until then.
+   */
+***************
+*** 251,263 ****
+       Region region;
+  {
+      TimeChartWidget ww = (TimeChartWidget)w;
+!     if ( firstTime ) {
+! 	XtInsertEventHandler(appData.toplevel, StructureNotifyMask, FALSE, handleResize, (Opaque)NULL, XtListHead);
+! 	firstTime = FALSE;
+! 	oldHeight = (int)ww->core.parent->core.parent->core.height;
+! 	oldWidth = (int)ww->core.parent->core.parent->core.width;
+! /*	printf("oldHeight=%d, oldWidth=%d\n", oldHeight, oldWidth);*/
+!     }
+      if (event->type == GraphicsExpose)
+  	(void) repaint_window ((TimeChartWidget)w, event->xgraphicsexpose.x,
+  			       event->xgraphicsexpose.width);
+--- 259,268 ----
+       Region region;
+  {
+      TimeChartWidget ww = (TimeChartWidget)w;
+! 
+!     oldHeight = (int)ww->core.parent->core.parent->core.height;
+!     oldWidth = (int)ww->core.parent->core.parent->core.width;
+! 
+      if (event->type == GraphicsExpose)
+  	(void) repaint_window ((TimeChartWidget)w, event->xgraphicsexpose.x,
+  			       event->xgraphicsexpose.width);
+***************
+*** 364,388 ****
+  
+        SetPoints(w);
+  
+!       if (XtIsRealized ((Widget) w)) 
+  	XClearWindow (XtDisplay (w), XtWindow (w));
+  
+      }
+  #endif
+!     if (XtIsRealized ((Widget) w)) 
+  	XClearWindow (XtDisplay (w), XtWindow (w));
+  
+      if ( left == 0 || left < LABEL_ROOM ) left = LABEL_ROOM;
+!     
+      if (XtIsRealized((Widget)w)) {
+  	Display *dpy = XtDisplay(w);
+  	Window win = XtWindow(w);
+! 	
+  	width += left - 1;
+  	if (!scalewidth) scalewidth = width;
+! 	
+  	if (next < ++width) width = next;
+! 	
+  	w->time_chart.next_x = 0;
+  	w->time_chart.last_end = 0;
+  	w->time_chart.num_timestamps = 0;
+--- 369,393 ----
+  
+        SetPoints(w);
+  
+!       if (XtIsRealized ((Widget) w))
+  	XClearWindow (XtDisplay (w), XtWindow (w));
+  
+      }
+  #endif
+!     if (XtIsRealized ((Widget) w))
+  	XClearWindow (XtDisplay (w), XtWindow (w));
+  
+      if ( left == 0 || left < LABEL_ROOM ) left = LABEL_ROOM;
+! 
+      if (XtIsRealized((Widget)w)) {
+  	Display *dpy = XtDisplay(w);
+  	Window win = XtWindow(w);
+! 
+  	width += left - 1;
+  	if (!scalewidth) scalewidth = width;
+! 
+  	if (next < ++width) width = next;
+! 
+  	w->time_chart.next_x = 0;
+  	w->time_chart.last_end = 0;
+  	w->time_chart.num_timestamps = 0;
+***************
+*** 425,431 ****
+  		}
+  	    }
+  	}
+! 	if ( oldInterval ) 
+  	    w->time_chart.interval = oldInterval;
+      }
+      return(next);
+--- 430,436 ----
+  		}
+  	    }
+  	}
+! 	if ( oldInterval )
+  	    w->time_chart.interval = oldInterval;
+      }
+      return(next);
+***************
+*** 461,474 ****
+      next = w->time_chart.interval = j;
+  
+      XCopyArea(XtDisplay((Widget)w), XtWindow((Widget)w), XtWindow((Widget)w),
+! 	      w->time_chart.hiGC, 
+  	      (int) (w->core.width - j), 0,		     /* source x, y */
+  	      (unsigned int) j, (unsigned int) w->core.height, /* width, height */
+  	      0, 0);					     /* dest x, y */
+  
+  
+!     XClearArea(XtDisplay((Widget)w), XtWindow((Widget)w), 
+! 	       (int) j, 0, 
+  	       (unsigned int) w->core.width - j, (unsigned int)w->core.height,
+  	       FALSE);
+  
+--- 466,479 ----
+      next = w->time_chart.interval = j;
+  
+      XCopyArea(XtDisplay((Widget)w), XtWindow((Widget)w), XtWindow((Widget)w),
+! 	      w->time_chart.hiGC,
+  	      (int) (w->core.width - j), 0,		     /* source x, y */
+  	      (unsigned int) j, (unsigned int) w->core.height, /* width, height */
+  	      0, 0);					     /* dest x, y */
+  
+  
+!     XClearArea(XtDisplay((Widget)w), XtWindow((Widget)w),
+! 	       (int) j, 0,
+  	       (unsigned int) w->core.width - j, (unsigned int)w->core.height,
+  	       FALSE);
+  
+***************
+*** 480,489 ****
+  	if ( j > 31 ) break;
+  	w->time_chart.timestamp_end[j]--;
+      }
+!     
+      if (w->time_chart.timestamp_end[0] <= LABEL_ROOM ) {
+! 	XClearArea(XtDisplay((Widget)w), XtWindow((Widget)w), 
+! 		   0, 0, 
+  		   LABEL_ROOM, (unsigned int)w->core.height,
+  		   FALSE);
+  	for ( j=1; j < w->time_chart.num_timestamps; j++ ) {
+--- 485,494 ----
+  	if ( j > 31 ) break;
+  	w->time_chart.timestamp_end[j]--;
+      }
+! 
+      if (w->time_chart.timestamp_end[0] <= LABEL_ROOM ) {
+! 	XClearArea(XtDisplay((Widget)w), XtWindow((Widget)w),
+! 		   0, 0,
+  		   LABEL_ROOM, (unsigned int)w->core.height,
+  		   FALSE);
+  	for ( j=1; j < w->time_chart.num_timestamps; j++ ) {
+***************
+*** 491,497 ****
+  	}
+  	w->time_chart.num_timestamps--;
+      }
+!     
+      return;
+  }
+  
+--- 496,502 ----
+  	}
+  	w->time_chart.num_timestamps--;
+      }
+! 
+      return;
+  }
+  
+***************
+*** 516,532 ****
+  */
+      if ( w->time_chart.min_scale > (int) ((w->time_chart.max_value) + 1) )
+        ret_val = TRUE;
+!      
+      if ( w->time_chart.fgpixel != old->time_chart.fgpixel ) {
+        new_gc |= FOREGROUND;
+        ret_val = True;
+      }
+!     
+      if ( w->time_chart.hipixel != old->time_chart.hipixel ) {
+        new_gc |= HIGHLIGHT;
+        ret_val = True;
+      }
+!     
+      DestroyGC(old, new_gc);
+      CreateGC(w, new_gc);
+  
+--- 521,537 ----
+  */
+      if ( w->time_chart.min_scale > (int) ((w->time_chart.max_value) + 1) )
+        ret_val = TRUE;
+! 
+      if ( w->time_chart.fgpixel != old->time_chart.fgpixel ) {
+        new_gc |= FOREGROUND;
+        ret_val = True;
+      }
+! 
+      if ( w->time_chart.hipixel != old->time_chart.hipixel ) {
+        new_gc |= HIGHLIGHT;
+        ret_val = True;
+      }
+! 
+      DestroyGC(old, new_gc);
+      CreateGC(w, new_gc);
+  
+***************
+*** 554,560 ****
+  	w->time_chart.points = NULL;
+  	return;
+      }
+!     
+      size = sizeof(XPoint) * (w->time_chart.scale - 1);
+  
+      points = (XPoint *) XtRealloc( (XtPointer) w->time_chart.points, size);
+--- 559,565 ----
+  	w->time_chart.points = NULL;
+  	return;
+      }
+! 
+      size = sizeof(XPoint) * (w->time_chart.scale - 1);
+  
+      points = (XPoint *) XtRealloc( (XtPointer) w->time_chart.points, size);

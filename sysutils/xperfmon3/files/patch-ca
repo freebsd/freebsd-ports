@@ -1,0 +1,40 @@
+*** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
+--- ./Imakefile	Wed Dec  2 23:33:54 1998
+***************
+*** 17,31 ****
+  SYS_MODULE=	sgi_system
+  #endif
+  
+! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS)
+  
+     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
+! LOCAL_LIBRARIES = $(XAWLIB) $(XTOOLLIB) $(XMULIB) $(XLIB)
+         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
+! #       INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11 -I/usr/include/bsd
+!      CDEBUGFLAGS = -O
+!            SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c nfs.c
+!            OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o nfs.o
+  
+  ComplexProgramTarget(xperfmon++)
+  
+--- 17,36 ----
+  SYS_MODULE=	sgi_system
+  #endif
+  
+! #if defined (FreeBSDArchitecture)
+! FreeBSDFLAGS=	-lkvm -ldevstat
+! SYS_MODULE=     freebsd_system
+! CC=		gcc
+! EXTRA_DEFINES=  -DHAVE_SYS_PARAM_H
+! #endif
+! 
+! EXTRA_LIBRARIES =     $(SUNFLAGS) $(MIPSFLAGS) $(SGIFLAGS) $(FreeBSDFLAGS)
+  
+     INSTPGMFLAGS =  $(INSTKMEMFLAGS)
+! LOCAL_LIBRARIES = -lXaw -lXt -lXmu -lX11
+         INCLUDES = -I. -I$(TOOLKITSRC) -I$(TOP) -I$(TOP)/X11
+!        SRCS = TimeChart.c StripChart.c misc.c $(SYS_MODULE).c xperfmon.c
+!        OBJS = TimeChart.o StripChart.o misc.o $(SYS_MODULE).o xperfmon.o
+  
+  ComplexProgramTarget(xperfmon++)
+  

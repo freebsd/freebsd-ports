@@ -1,0 +1,631 @@
+*** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
+--- ./xperfmon++.man	Sun Jan 10 21:28:14 1999
+***************
+*** 1,5 ****
+! ./" .TH XPERFMON++ 1 "19 January 1988" "X Version 11"
+! .TH XPERFMON++ 1 "January 1994" "X Version 11"
+  .SH NAME
+  xperfmon++ - X Window System-based performance monitor
+  .SH SYNOPSIS
+--- 1,4 ----
+! .TH XPERFMON++ 1 "10 Oct 1998" "V3.0 for FreeBSD-3.X"
+  .SH NAME
+  xperfmon++ - X Window System-based performance monitor
+  .SH SYNOPSIS
+***************
+*** 20,51 ****
+  The program can produce a filled graph or a line graph and the update interval can be set in
+  seconds or 100-millisecond intervals.
+  .PP
+! While 
+  .I xperfmon++
+  is running, it is possible to perform certain tasks by pressing keys over
+  the window:
+  .PP
+  .br
+! .B Q/q: 
+  Quit... Exit gracefully
+  .br
+! .B l | L: 
+  Print out a chart of all current limit settings. This chart will appear in the
+  window from which xperfmon++ was invoked.
+  .br
+! .B s: 
+  Decrease update interval (slower) by a small amount
+  .br
+! .B S: 
+  Decrease update interval (slower) by a large amount
+  .br
+! .B f: 
+  Increase update interval (faster) by a small amount
+  .br
+! .B F: 
+  Increase update interval (faster) by a large amount
+  .br
+! .B ?: 
+  Help
+  .SH OPTIONS
+  .PP
+--- 19,50 ----
+  The program can produce a filled graph or a line graph and the update interval can be set in
+  seconds or 100-millisecond intervals.
+  .PP
+! While
+  .I xperfmon++
+  is running, it is possible to perform certain tasks by pressing keys over
+  the window:
+  .PP
+  .br
+! .B Q/q:
+  Quit... Exit gracefully
+  .br
+! .B l | L:
+  Print out a chart of all current limit settings. This chart will appear in the
+  window from which xperfmon++ was invoked.
+  .br
+! .B s:
+  Decrease update interval (slower) by a small amount
+  .br
+! .B S:
+  Decrease update interval (slower) by a large amount
+  .br
+! .B f:
+  Increase update interval (faster) by a small amount
+  .br
+! .B F:
+  Increase update interval (faster) by a large amount
+  .br
+! .B ?:
+  Help
+  .SH OPTIONS
+  .PP
+***************
+*** 79,108 ****
+  .PP
+  The following options specify the list of statistics to be displayed.
+  If none are present on the command line, then all statistics are displayed.
+! If any "+" options are listed the default list is cleared and only those 
+  listed as "+" options are displayed.
+  If any "-" options are listed, then they are taken away from the
+  default list. Specifying both "-" and "+" options will produce unpredictable
+  results.
+  .TP 26
+  .B \-usercpu | \+usercpu
+  Graph percentage of \fIUser CPU Time\fP.
+  .TP 26
+  .B \-systemcpu  | \+systemcpu
+! Graph \fISystem\fP CPU Percentage.
+  .TP 26
+  .B \-idlecpu | \+idlecpu
+! Graph \fIIdle\fP CPU Percentage.
+  .TP 26
+! .B \-freemem | \+freemem
+! Graph \fIFree Memory\fP.
+  .TP 26
+! .B \-diskxfr | \+diskxfr
+! Graph \fIDisk Transfers\fP per interval period.
+  .TP 26
+  .B \-interrputs | \+interrupts
+  Graph \fISystem Interrupts\fP.
+  .TP 26
+  .B \-inputpkts | \+inputpkts
+  Graph number of network \fIInput Packets\fP.
+  .TP 26
+--- 78,137 ----
+  .PP
+  The following options specify the list of statistics to be displayed.
+  If none are present on the command line, then all statistics are displayed.
+! If any "+" options are listed the default list is cleared and only those
+  listed as "+" options are displayed.
+  If any "-" options are listed, then they are taken away from the
+  default list. Specifying both "-" and "+" options will produce unpredictable
+  results.
+  .TP 26
++ .B \-sysload | \+sysload
++ Graph percentage of \fISystem Load\fP (avaraged over 1 minute).
++ .TP 26
+  .B \-usercpu | \+usercpu
+  Graph percentage of \fIUser CPU Time\fP.
+  .TP 26
++ .B \-nicecpu | \+nicecpu
++ Graph percentage of \fINice CPU Time\fP.
++ .TP 26
+  .B \-systemcpu  | \+systemcpu
+! Graph percentage of \fISystem CPU Time\fP.
+! .TP 26
+! .B \-intercpu | \+intercpu
+! Graph percentage of \fIInterrupt CPU Time\fP.
+  .TP 26
+  .B \-idlecpu | \+idlecpu
+! Graph percentage of \fIIdle CPU Time\fP.
+  .TP 26
+! .B \-ttyin | \+ttyin
+! Graph \fItty input characters\fP per second of.
+  .TP 26
+! .B \-ttyout | \+ttyout
+! Graph \fItty output characters\fP per second of.
+  .TP 26
+  .B \-interrputs | \+interrupts
+  Graph \fISystem Interrupts\fP.
+  .TP 26
++ .B \-freeswap | \+freeswap
++ Graph \fIFree Swap in %\fP.
++ .TP 26
++ .B \-diskxfr | \+diskxfr
++ Graph \fIDisk Transfers\fP per second.
++ .TP 26
++ .B \-diskmb | \+diskmb
++ Graph \fIamount of Data tranfered from/to Disk\fP in MByte per second.
++ .TP 26
++ .B \-tapexfr | \+tapexfr
++ Graph \fITape Transfers\fP per second.
++ .TP 26
++ .B \-tapemb | \+tapemb
++ Graph \fIamount of Data tranfered from/to Tape\fP in MByte per second.
++ .TP 26
++ .B \-cdromxfr | \+cdromxfr
++ Graph \fICDRom Transfers\fP per second.
++ .TP 26
++ .B \-cdrommb | \+cdrommb
++ Graph \fIamount of Data tranfered from CDRom\fP in MByte per second.
++ .TP 26
+  .B \-inputpkts | \+inputpkts
+  Graph number of network \fIInput Packets\fP.
+  .TP 26
+***************
+*** 112,132 ****
+  .B \-collpkts | \+collpkts
+  Graph number of network \fICollision Packets\fP.
+  .TP 26
+! .B \-nfsclient | \+nfsclient
+! Graph Number of \fINFS Client\fP transactions.
+  .TP 26
+! .B \-nfsserver | \+nfsserver
+! Graph number of \fINFS Server\fP transactions.
+  .SH LIMIT OPTIONS
+  .PP
+  .sp
+  \fIxperfmon++\fP will accept a number of \fIlimit\fP options. When a data point
+  exceeds a high or low limit the background of that graph changes color to visually reflect
+! the condition. The background color is an indication of the min (low limit) or max (high limit) 
+  value currently contained
+  in the graph. When no limit has been exceeded the background color is set to green. If no limits have
+! been set for that graph its background color remains the same as the applications default color, 
+! which is usually white. 
+  .PP
+  WARNING: High and Low limits are mutually exclusive, i.e., you can set high limits or low limits, but
+  not both. If both are inadvertently set, the high limits are checked first, and the low limit will be
+--- 141,173 ----
+  .B \-collpkts | \+collpkts
+  Graph number of network \fICollision Packets\fP.
+  .TP 26
+! .B \-nfsservercalls | \+nfsservercalls
+! Graph Number of \fINFS Server transactions\fP.
+! .TP 26
+! .B \-nfsserverhits | \+nfsserverhits
+! Graph Number of \fINFS Server Cache Hits\fP.
+! .TP 26
+! .B \-nfsservermisses | \+nfsservermisses
+! Graph Number of \fINFS Server Cache Misses\fP.
+! .TP 26
+! .B \-nfsclientcalls | \+nfsclientcalls
+! Graph Number of \fINFS Client transactions\fP.
+! .TP 26
+! .B \-nfsclienthits | \+nfsclienthits
+! Graph Number of \fINFS Client Cache Hits\fP.
+  .TP 26
+! .B \-nfsclientmisses | \+nfsclientmisses
+! Graph Number of \fINFS Client Cache Misses\fP.
+  .SH LIMIT OPTIONS
+  .PP
+  .sp
+  \fIxperfmon++\fP will accept a number of \fIlimit\fP options. When a data point
+  exceeds a high or low limit the background of that graph changes color to visually reflect
+! the condition. The background color is an indication of the min (low limit) or max (high limit)
+  value currently contained
+  in the graph. When no limit has been exceeded the background color is set to green. If no limits have
+! been set for that graph its background color remains the same as the applications default color,
+! which is usually white.
+  .PP
+  WARNING: High and Low limits are mutually exclusive, i.e., you can set high limits or low limits, but
+  not both. If both are inadvertently set, the high limits are checked first, and the low limit will be
+***************
+*** 135,141 ****
+  There are four possible \fIlimit\fP conditions:
+  .TP 16
+  .B High Warning
+! When any value in the current graph exceeds the  \fIhigh warning\fP limit 
+  the background color of that graph is changed to \fIyellow\fP.
+  .TP 16
+  .B Low Warning
+--- 176,182 ----
+  There are four possible \fIlimit\fP conditions:
+  .TP 16
+  .B High Warning
+! When any value in the current graph exceeds the  \fIhigh warning\fP limit
+  the background color of that graph is changed to \fIyellow\fP.
+  .TP 16
+  .B Low Warning
+***************
+*** 164,190 ****
+  .TP 26
+  .B \-high*Warn \fIvalue\fP
+  Set high Warning value for *.
+! .PP 
+  Where "*" is one of the following:
+  .TP 12
+  .B user
+  Set \fIlimit\fP value for User CPU Percentage.
+  .TP 12
+  .B sys
+  Set \fIlimit\fP value for System CPU Percentage.
+  .TP 12
+  .B idle
+  Set \fIlimit\fP value for Idle CPU Percentage.
+  .TP 12
+! .B mem
+! Set \fIlimit\fP value for Free Memory.
+  .TP 12
+! .B disk
+! Set \fIlimit\fP value for Disk Transfers.
+  .TP 12
+  .B intrpts
+  Set \fIlimit\fP value for System Interrupts.
+  .TP 12
+  .B input
+  Set \fIlimit\fP value for network Input Packets.
+  .TP 12
+--- 205,261 ----
+  .TP 26
+  .B \-high*Warn \fIvalue\fP
+  Set high Warning value for *.
+! .PP
+  Where "*" is one of the following:
+  .TP 12
++ .B load
++ Set \fIlimit\fP value for Load Average.
++ .TP 12
+  .B user
+  Set \fIlimit\fP value for User CPU Percentage.
+  .TP 12
++ .B nice
++ Set \fIlimit\fP value for Nice CPU Percentage.
++ .TP 12
+  .B sys
+  Set \fIlimit\fP value for System CPU Percentage.
+  .TP 12
++ .B inter
++ Set \fIlimit\fP value for Interrupt CPU Percentage.
++ .TP 12
+  .B idle
+  Set \fIlimit\fP value for Idle CPU Percentage.
+  .TP 12
+! .B ttyin
+! Set \fIlimit\fP value for TTY input characters per second.
+  .TP 12
+! .B ttyout
+! Set \fIlimit\fP value for TTY output characters per second.
+  .TP 12
+  .B intrpts
+  Set \fIlimit\fP value for System Interrupts.
+  .TP 12
++ .B swap
++ Set \fIlimit\fP value for Free Swap.
++ .TP 12
++ .B diskxfr
++ Set \fIlimit\fP value for Disk Transfers.
++ .TP 12
++ .B diskmb
++ Set \fIlimit\fP value for Disk Transfers.
++ .TP 12
++ .B tapexfr
++ Set \fIlimit\fP value for Tape Transfers.
++ .TP 12
++ .B tapemb
++ Set \fIlimit\fP value for Tape Transfers.
++ .TP 12
++ .B cdromxfr
++ Set \fIlimit\fP value for CDRom Transfers.
++ .TP 12
++ .B cdrommb
++ Set \fIlimit\fP value for CDRom Transfers.
++ .TP 12
+  .B input
+  Set \fIlimit\fP value for network Input Packets.
+  .TP 12
+***************
+*** 194,204 ****
+  .B collision
+  Set \fIlimit\fP value for network Collision Packets.
+  .TP 12
+! .B nfsclient
+  Set \fIlimit\fP value for NFS Client Transactions.
+  .TP 12
+! .B nfsserver
+! Set \fIlimit\fP value for NFS Server Transactions.
+  .PP
+  For example:
+  .TP 16
+--- 265,287 ----
+  .B collision
+  Set \fIlimit\fP value for network Collision Packets.
+  .TP 12
+! .B nfsservercalls
+! Set \fIlimit\fP value for NFS Server Transactions.
+! .TP 12
+! .B nfssserverhits
+! Set \fIlimit\fP value for NFS Server Cache Hits.
+! .TP 12
+! .B nfsservermisses
+! Set \fIlimit\fP value for NFS Server Cache Misses.
+! .TP 12
+! .B nfsclientcalls
+  Set \fIlimit\fP value for NFS Client Transactions.
+  .TP 12
+! .B nfsclienthits
+! Set \fIlimit\fP value for NFS Client Cache Hits.
+! .TP 12
+! .B nfsclientmisses
+! Set \fIlimit\fP value for NFS Client Cache Misses.
+  .PP
+  For example:
+  .TP 16
+***************
+*** 206,212 ****
+  Set \fIlow user Alarm\fP value to 25.
+  .PP
+  As with any X-based command line specification you only need specify the minimum number of
+! characters required to make the string unique. 
+  See below for a description of setting \fIlimit\fP values using application resource specifications.
+  .SH TOOLKIT OPTIONS
+  .PP
+--- 289,295 ----
+  Set \fIlow user Alarm\fP value to 25.
+  .PP
+  As with any X-based command line specification you only need specify the minimum number of
+! characters required to make the string unique.
+  See below for a description of setting \fIlimit\fP values using application resource specifications.
+  .SH TOOLKIT OPTIONS
+  .PP
+***************
+*** 304,327 ****
+  .PP
+  Where "&" is one of the following (Note: \fICase\fP IS important):
+  .TP 16
+! .B Idle
+! Set Idle CPU Percentage resource.
+  .TP 16
+  .B User
+  Set User CPU Percentage resource.
+  .TP 16
+  .B System
+  Set System CPU Percentage resource.
+  .TP 16
+! .B Free
+! Set Free Memory resource.
+  .TP 16
+! .B Disk
+! Set Disk Transfer count resource.
+  .TP 16
+  .B Intrpts
+  Set System Interrupts resource.
+  .TP 16
+  .B Input
+  Set network Input Packets resource.
+  .TP 16
+--- 387,440 ----
+  .PP
+  Where "&" is one of the following (Note: \fICase\fP IS important):
+  .TP 16
+! .B Load
+! Set System Load resource.
+  .TP 16
+  .B User
+  Set User CPU Percentage resource.
+  .TP 16
++ .B Nice
++ Set Nice CPU Percentage resource.
++ .TP 16
+  .B System
+  Set System CPU Percentage resource.
+  .TP 16
+! .B Inter
+! Set Interrupt CPU Percentage resource.
+  .TP 16
+! .B Idle
+! Set Idle CPU Percentage resource.
+! .TP 16
+! .B Ttyin
+! Set TTY characters input resource.
+! .TP 16
+! .B Ttyout
+! Set TTY output characters resource.
+  .TP 16
+  .B Intrpts
+  Set System Interrupts resource.
+  .TP 16
++ .B Swap
++ Set Free Swap resource.
++ .TP 16
++ .B DiskXfr
++ Set Disk Transfer count resource.
++ .TP 16
++ .B DiskMB
++ Set Disk Transfer MByte/s resource.
++ .TP 16
++ .B TapeXfr
++ Set Tape Transfer count resource.
++ .TP 16
++ .B TapeMB
++ Set Tape Transfer MByte/s resource.
++ .TP 16
++ .B CDRomXfr
++ Set CDRom Transfer count resource.
++ .TP 16
++ .B CDRomMB
++ Set CDRom Transfer MByte/s resource.
++ .TP 16
+  .B Input
+  Set network Input Packets resource.
+  .TP 16
+***************
+*** 331,341 ****
+  .B Collision
+  Set network Collision Packets resource.
+  .TP 16
+! .B NFSClient
+  Set NFS Client Transactions resource.
+  .TP 16
+! .B NFSServer
+! Set NFS Server Transactions resource.
+  .PP
+  For example:
+  .TP 29
+--- 444,466 ----
+  .B Collision
+  Set network Collision Packets resource.
+  .TP 16
+! .B NFSServerCalls
+! Set NFS Server Transactions resource.
+! .TP 16
+! .B NFSServerHits
+! Set NFS Server Cache Hits resource.
+! .TP 16
+! .B NFSServerMisses
+! Set NFS Server Cache Misses resource.
+! .TP 16
+! .B NFSClientCalls
+  Set NFS Client Transactions resource.
+  .TP 16
+! .B NFSClientHits
+! Set NFS Client Cache Hits resource.
+! .TP 16
+! .B NFSClientMisses
+! Set NFS Client Cache Misses resource.
+  .PP
+  For example:
+  .TP 29
+***************
+*** 354,366 ****
+  .SH BUGS
+  .I xperfmon++
+  requires the ability to open and read the special system file
+! .I /dev/kmem. 
+  On most systems, this requires the
+  .I suid
+  (set user id) bit to be set with root ownership, or the
+  .I sgid
+! (set group id) bit to be set and membership in the same group as 
+! .I /dev/kmem. 
+  .PP
+  Reading /dev/kmem is inherently non-portable.  Therefore, the widget upon
+  which this application is based must be ported to each new operating system.
+--- 479,491 ----
+  .SH BUGS
+  .I xperfmon++
+  requires the ability to open and read the special system file
+! .I /dev/kmem.
+  On most systems, this requires the
+  .I suid
+  (set user id) bit to be set with root ownership, or the
+  .I sgid
+! (set group id) bit to be set and membership in the same group as
+! .I /dev/kmem.
+  .PP
+  Reading /dev/kmem is inherently non-portable.  Therefore, the widget upon
+  which this application is based must be ported to each new operating system.
+***************
+*** 371,377 ****
+  by fully covering the xperfmon++ window and then exposing it, or by iconifying the
+  xperfmon++ window and then de-iconifying it.
+  .SH AUTHORS
+! The X11 version of 
+  .I xperfmon
+  was written by Emanuel Jay Berkenbilt, Project Athena on
+  1/21/1988.
+--- 496,502 ----
+  by fully covering the xperfmon++ window and then exposing it, or by iconifying the
+  xperfmon++ window and then de-iconifying it.
+  .SH AUTHORS
+! The X11 version of
+  .I xperfmon
+  was written by Emanuel Jay Berkenbilt, Project Athena on
+  1/21/1988.
+***************
+*** 381,387 ****
+  was modified by Thomas Bagli, PCS Computer Systeme GmbH, West Germany, to
+  be a toolkit-based client.
+  .PP
+! .I xperfmon++ 
+  was created from \fIxperfmon\fP, and the Athena StripChart Widget,
+  by Roger Smith, Sterling Software @ NASA-Ames Research Center, Moffett Field, California. Version 1.0
+  was released in January, 1994.
+--- 506,512 ----
+  was modified by Thomas Bagli, PCS Computer Systeme GmbH, West Germany, to
+  be a toolkit-based client.
+  .PP
+! .I xperfmon++
+  was created from \fIxperfmon\fP, and the Athena StripChart Widget,
+  by Roger Smith, Sterling Software @ NASA-Ames Research Center, Moffett Field, California. Version 1.0
+  was released in January, 1994.
+***************
+*** 389,398 ****
+  If you like this program, or if you have difficulties, I would like to hear your comments.
+  E-Mail me at rsmith@proteus.arc.nasa.gov.
+  .PP
+! .I xperfmon++ 
+  was written for Suns running SunOs and X11R5 Windows software. If some energetic soul
+  out there would like to port this program to any other operating system or architecture I would be
+  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
+  above address.
+  .PP
+  Enjoy!
+--- 514,561 ----
+  If you like this program, or if you have difficulties, I would like to hear your comments.
+  E-Mail me at rsmith@proteus.arc.nasa.gov.
+  .PP
+! .I xperfmon++
+  was written for Suns running SunOs and X11R5 Windows software. If some energetic soul
+  out there would like to port this program to any other operating system or architecture I would be
+  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
+  above address.
++ .PP
++ .I xperfmon++ V1.2 for FreeBSD
++ was written by Lars Köller with a lot of helpful notes by Jörg Wunsch.
++ .PP
++ .I xperfmon++ V1.31 for FreeBSD
++ closes some memory leaks, fix geometry (resize) bug, display free swap
++ in percent and avoids resizing of the graph.
++ .PP
++ .I xperfmon++ V1.33 for FreeBSD
++ contains some fixes due to event problems and compiles fine under
++ FreeBSD 2.2 (changes in get_swapspace).
++ Now the -geometry switch works well!
++ .PP
++ .I xperfmon++ V1.40 for FreeBSD
++ contains some fixes due to changes in the networking structs and
++ cleans up the FreeBSD version number #if's. Now it should compile fine
++ from FreeBSD 2.0 up to FreeBSD-3.0-current.
++ .PP
++ .I xperfmon++ V2.0 for FreeBSD 2.2.X and 3.X
++ added System Load, Nice and Interrupt CPU graphs.
++ Should compile fine from FreeBSD 2.2 up to FreeBSD-3.X with CAM and devstat
++ library (Many thanks to Gary Jennejohn <garyj@muc.de> and
++ Simon Shapiro <shimon@simon-shapiro.org> for integrating the devstat
++ changes into xperfmon++.
++ .PP
++ .I xperfmon++ V3.0 for FreeBSD 3.X
++ added graphs for terminal IO, disk/tape/cdrom transfers and IO in MByte/s.
++ Further NFS server/client cache hits and misses. Rewriting of freebsd_system.c
++ and migration to the devstat library (Many thanks to Kenneth D. Merry
++ <ken@plutotech.com>). Scaling of the graphs changed from integer to floating
++ point values (-> system load is now displayed as is, and not mutliplied with
++ 100!, this improvement was also necessary to display useful tranfer rates in
++ MBytes/s). Further bugs in autocalculating the window size dependent on the
++ number of graphs and rescaling the window fixed (hope this was the last time).
++ Output of Warn/Alarm values (press L|l in xperfmon++ window) corrected.
++ .PP
++ Please E-Mail any bugs or comments with the subject
++ "xperfmon++ V3: ..." to Lars.Koeller@Uni-Bielefeld.DE or lkoeller@cc.FH-Lippe.DE.
+  .PP
+  Enjoy!

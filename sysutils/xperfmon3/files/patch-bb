@@ -1,0 +1,115 @@
+*** ../xperfmon++/TimeChart.h	Wed Jul 27 22:29:31 1994
+--- ./TimeChart.h	Sun Jan 10 18:07:14 1999
+***************
+*** 1,7 ****
+  /*
+! * $XConsortium: TimeChart.h,v 1.2 89/08/24 11:52:00 kit Exp $
+! */
+! 
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+--- 1,9 ----
+  /*
+!  * Enhancement and error correction for FreeBSD-3.X
+!  * COPYRIGHT 1998 by Lars Köller <Lars.Koeller@Uni-Bielefeld.de>
+!  *
+!  *      $Id: TimeChart.h,v 3.2 1999/01/10 17:07:04 lkoeller Exp lkoeller $
+!  */
+  
+  /***********************************************************
+  Copyright 1987, 1988 by Digital Equipment Corporation, Maynard, Massachusetts,
+***************
+*** 9,21 ****
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its 
+! documentation for any purpose and without fee is hereby granted, 
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in 
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.  
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+--- 11,23 ----
+  
+                          All Rights Reserved
+  
+! Permission to use, copy, modify, and distribute this software and its
+! documentation for any purpose and without fee is hereby granted,
+  provided that the above copyright notice appear in all copies and that
+! both that copyright notice and this permission notice appear in
+  supporting documentation, and that the names of Digital or MIT not be
+  used in advertising or publicity pertaining to distribution of the
+! software without specific, written prior permission.
+  
+  DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING
+  ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL
+***************
+*** 31,37 ****
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively 
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+--- 33,39 ----
+   * documentation for any purpose and without fee is hereby granted, provided that
+   * the above copyright notice appear in all copies and that both that
+   * copyright notice and this permission notice appear in supporting
+!  * documentation, and that the name of NASA and Sterling Software (collectively
+   * or individually) are not be used in advertising or
+   * publicity pertaining to distribution of the software without specific,
+   * written prior permission.  NASA and Sterling Software makes no representations about the
+***************
+*** 42,48 ****
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+--- 44,50 ----
+   * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL NASA & STERLING SOFTWARE
+   * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+   * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
+!  * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+   * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+   *
+   * 1994 Revision
+***************
+*** 88,101 ****
+  #define XtCFillRect "FillRect"
+  
+  #define XtNgetValue "getValue"
+! #define XtNhighlight "highlight"
+  #define XtNjumpScroll "jumpScroll"
+  #define XtNminScale "minScale"
+  #define XtNscale "scale"
+  #define XtNfillRect "fillRect"
+! #define XtNupdate "update"
+  #define XtNvmunix "vmunix"
+!  
+  typedef struct _TimeChartRec *TimeChartWidget;
+  typedef struct _TimeChartClassRec *TimeChartWidgetClass;
+  
+--- 90,103 ----
+  #define XtCFillRect "FillRect"
+  
+  #define XtNgetValue "getValue"
+! /* #define XtNhighlight "highlight" in /usr/X11/include/X11/StringDefs.h */
+  #define XtNjumpScroll "jumpScroll"
+  #define XtNminScale "minScale"
+  #define XtNscale "scale"
+  #define XtNfillRect "fillRect"
+! /* #define XtNupdate "update" in /usr/X11/include/X11/StringDefs.h */
+  #define XtNvmunix "vmunix"
+! 
+  typedef struct _TimeChartRec *TimeChartWidget;
+  typedef struct _TimeChartClassRec *TimeChartWidgetClass;
+  
