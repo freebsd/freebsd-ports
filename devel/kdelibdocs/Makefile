@@ -21,6 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--with-qtdoc-dir=${X11BASE}/share/doc/qt/html" \
 		"--with-qt-includes=${X11BASE}/include/X11/qt"
 
-PATCHDIR=	${.CURDIR}/patches
+PATCHDIR=	${.CURDIR}/files
 
 .include <bsd.port.mk>

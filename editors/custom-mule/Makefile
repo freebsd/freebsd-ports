@@ -16,8 +16,8 @@ MASTERDIR=	${.CURDIR}/../../editors/custom-emacs
 EMACS_PORT_NAME=	mule
 
 # pkg/* files but PLIST are used in ${.CURDIR}
-PKGDIR=		${.CURDIR}/pkg
-PATCHDIR=	${.CURDIR}/patches
-PLIST=		${MASTERDIR}/pkg/PLIST
+PKGDIR=		${.CURDIR}
+PATCHDIR=	${.CURDIR}/files
+PLIST=		${MASTERDIR}/pkg-plist
 
 .include <${MASTERDIR}/Makefile>

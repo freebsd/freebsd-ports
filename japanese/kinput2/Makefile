@@ -17,7 +17,7 @@ MAINTAINER=	taoka@FreeBSD.org
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
-PATCHDIR=	${.CURDIR}/../kinput2-freewnn/patches
+PATCHDIR=	${.CURDIR}/../kinput2-freewnn/files
 FILESDIR=	${.CURDIR}/../kinput2-freewnn/files
 USE_IMAKE=	yes
 MAN1=		kinput2.1

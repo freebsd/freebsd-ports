@@ -19,9 +19,9 @@ MAINTAINER=	taoka@FreeBSD.org
 USE_XLIB=	yes
 
 NO_LATEST_LINK=	YES	# waiting for jgrep, jfold, jcat
-PATCHDIR=	${.CURDIR}/../jvim3/patches
+PATCHDIR=	${.CURDIR}/../jvim3/files
 FILESDIR=	${.CURDIR}/../jvim3/files
-PLIST=		${.CURDIR}/../jvim3/pkg/PLIST
+PLIST=		${.CURDIR}/../jvim3/pkg-plist
 EXTRACT_ONLY=	vim-3.0.tar.gz
 WRKSRC=		${WRKDIR}/vim
 MAKEFILE=	makjunix.mak

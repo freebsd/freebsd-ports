@@ -13,7 +13,7 @@ DISTNAME=	GP-2.5p2
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
-PATCHDIR=	${.CURDIR}/../../print/gp/patches
+PATCHDIR=	${.CURDIR}/../../print/gp/files
 FILESDIR=	${.CURDIR}/../../print/gp/files
 SCRIPTDIR=	${.CURDIR}/../../print/gp/scripts
 
