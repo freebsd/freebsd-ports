@@ -12,7 +12,7 @@
 #
 
 PORTNAME=	bincimap
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 		http://www.bincimap.andreas.hanssen.name/%SUBDIR%/ \
@@ -20,7 +20,7 @@ MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	dl/tarballs/1.2
 
 PATCH_SITES=	${MASTER_SITES:S!%SUBDIR%!${MASTER_SITE_SUBDIR}!}
-PATCHFILES=	bincimap-1.2.1-patch000-mimeparser
+#PATCHFILES=	bincimap-1.2.1-patch000-mimeparser
 
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Light-weight IMAP server for Maildir
@@ -84,17 +84,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
-.if !defined(WITHOUT_OPENSSL)
-	@${ECHO_MSG} "==========================================="
-	@${ECHO_MSG} "Type 'make cert' to create SSL certificates"
-	@${ECHO_MSG} "==========================================="
-.endif
-
-cert:
-# Generate sample CA and Binc IMAP certificates if we use SSL
-.if !defined(WITHOUT_OPENSSL)
-	@cd ${WRKSRC} && ${MAKE} cacert
 .endif
 
 .include <bsd.port.mk>
