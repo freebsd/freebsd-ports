@@ -17,6 +17,8 @@ COMMENT=	A GNU project to create a free Java class library
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GNOME=	gtk20 libartlgpl2 pkgconfig
 USE_JAVA=	yes
 USE_JIKES=	yes
