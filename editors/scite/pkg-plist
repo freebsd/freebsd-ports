@@ -56,5 +56,6 @@ share/gnome/pixmaps/Sci48M.png
 %%DATADIR%%/tcl.properties
 %%DATADIR%%/tex.properties
 %%DATADIR%%/vb.properties
+%%DATADIR%%/verilog.properties
 %%DATADIR%%/yaml.properties
 @dirrm %%DATADIR%%
