@@ -190,6 +190,7 @@
     SUBDIR += whistlerk
     SUBDIR += wmapp
     SUBDIR += wxgtk
+    SUBDIR += wxgtk-contrib
     SUBDIR += wxgtk-devel
     SUBDIR += wxgtk-docs
     SUBDIR += xbae
