@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	taxipilot
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A Spacetaxi clone
 
+LIB_DEPENDS=	noatun.0:${PORTSDIR}/multimedia/kdemultimedia3
+
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
