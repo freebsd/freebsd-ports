@@ -274,6 +274,7 @@
     SUBDIR += moonlander
     SUBDIR += moria
     SUBDIR += mt_dolphin_ia
+    SUBDIR += mt_gtk_client
     SUBDIR += mvdsv
     SUBDIR += mythserver
     SUBDIR += nInvaders
