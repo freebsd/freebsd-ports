@@ -6659,6 +6659,7 @@ p5-POE-Session-MultiDispatch	ports/devel/p5-POE-Session-MultiDispatch
 p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
 p5-Palm		ports/palm/p5-Palm
+p5-Palm-PalmDoc	ports/palm/p5-Palm-PalmDoc
 p5-Parallel-ForkManager	ports/devel/p5-Parallel-ForkManager
 p5-Parallel-MPI	ports/net/p5-Parallel-MPI
 p5-Parallel-Pvm	ports/net/p5-Parallel-Pvm
