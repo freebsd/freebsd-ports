@@ -140,6 +140,7 @@
     SUBDIR += xperfmon3
     SUBDIR += xsysinfo
     SUBDIR += xsysstats
+    SUBDIR += xw
     SUBDIR += xwatch
     SUBDIR += xwipower
 
