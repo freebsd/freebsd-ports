@@ -1,4 +1,4 @@
-# New ports collection makefile for:	giflib
+# New ports collection makefile for:	libungif
 # Version required:	4.1.0
 # Date created:		03 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
@@ -6,24 +6,33 @@
 # $FreeBSD$
 #
 
-DISTNAME=	giflib-4.1.0
+DISTNAME=	libungif-4.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs/giflib
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://prtr-13.ucsc.edu/pub/libungif/
+MASTER_SITE_SUBDIR=	libs/graphics
+
+PATCH_SITES=	http://www.arrakeen.demon.co.uk/giflib/
+PATCHFILES=	libungif-4.1.0-19990224.patch.gz \
+		libungif-4.1.0-19990305.patch.gz \
+		libungif-4.1.0-19990322.patch.gz \
+		libungif-4.1.0-19990523.patch.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
+DOCDIR=		${PREFIX}/share/doc/libungif
+
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/giflib
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/giflib
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${PREFIX}/share/doc/giflib
-	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/giflib
+	@${MKDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/UNCOMPRESSED_GIF ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCDIR}
 .endif
 
 .include <bsd.port.mk>
