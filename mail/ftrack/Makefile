@@ -8,7 +8,7 @@
 PORTNAME=	ftrack
 PORTVERSION=	3.01
 CATEGORIES=	mail
-MASTER_SITES=	http://gonza.nm.ru/ports/
+MASTER_SITES=	http://gonza.bizhost.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}s
 
 MAINTAINER=	gonza@techline.ru
