@@ -7,7 +7,7 @@
 
 PORTNAME=	drac
 PORTVERSION=	1.12
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		http://atreides.freenix.no/~anders/ \
@@ -24,6 +24,8 @@ LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN3=		dracauth.3
 MAN1=		rpc.dracd.1
@@ -37,9 +39,9 @@ pre-everything::
 	@${ECHO_MSG} "============================================================="
 	@${ECHO_MSG} "For databases compatible with other MTAs than sendmail, use:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "WITH_POSTFIX=yes	(Postfix)"
-	@${ECHO_MSG} "WITH_POSTFIX_DB3=yes	(Postfix with DB3 database maps)"
-	@${ECHO_MSG} "WITH_EXIM=yes		(Exim)"
+	@${ECHO_MSG} "WITH_POSTFIX=yes        (Postfix)"
+	@${ECHO_MSG} "WITH_POSTFIX_DB3=yes    (Postfix with DB3 database maps)"
+	@${ECHO_MSG} "WITH_EXIM=yes           (Exim)"
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in"
 	@${ECHO_MSG} "foreground instead of detaching itself. This breaks the"
@@ -57,7 +59,13 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${PREFIX}/man/man3/
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
 .endif
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/dracd.sh startup file."
-	@${INSTALL_SCRIPT} ${FILESDIR}/dracd.sh ${PREFIX}/etc/rc.d/dracd.sh
+
+post-build:
+	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/dracd.sh > ${WRKSRC}/dracd.sh
+
+post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/dracd.sh ${PREFIX}/etc/rc.d/dracd.sh
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
