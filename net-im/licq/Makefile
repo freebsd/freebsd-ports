@@ -43,6 +43,12 @@ CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
 CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
 .endif
 
+.if defined(WITHOUT_NLS)
+PLIST_SUB+=	NLS="@comment "
+.else
+PLIST_SUB+=	NLS=""
+.endif
+
 pre-configure:
 	${REINPLACE_CMD} -e 's=/usr/share/licq=${PREFIX}/share/licq=' \
 		${WRKSRC}/src/licq.conf.h
