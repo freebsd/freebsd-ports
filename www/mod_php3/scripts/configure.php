@@ -28,6 +28,7 @@ OpenLDAP	"OpenLDAP support" OFF \
 SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
+gettext		"gettext library support" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -148,6 +149,10 @@ while [ "$1" ]; do
 			;;
 		\"FTP\")
 			echo "CONFIGURE_ARGS+=--with-ftp"
+			;;
+		\"gettext\")
+			echo "LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext"
+			echo "CONFIGURE_ARGS+=--with-gettext=${PREFIX}"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
