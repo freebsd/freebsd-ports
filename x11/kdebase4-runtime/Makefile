@@ -34,10 +34,6 @@ KERAMIK_DATE=	20021008.1942
 
 MASTER_SITE_LOCAL_keramik=${MASTER_SITE_LOCAL:S@%SUBDIR%/@alane/:keramik@g}
 
-.if defined(PACKAGE_BUILDING)
-WITHOUT_KERAMIK=	yes
-.endif # defined(PACKAGE_BUILDING)
-
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 .include <bsd.port.pre.mk>
