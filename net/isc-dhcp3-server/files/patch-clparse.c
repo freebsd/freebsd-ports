@@ -1,5 +1,11 @@
---- client/clparse.c.orig	Wed Jul 19 21:13:10 2000
-+++ client/clparse.c	Thu Jul 20 21:52:53 2000
-@@ -46 +46 @@
+--- client/clparse.c.orig	Thu Jan 25 09:17:17 2001
++++ client/clparse.c	Fri Jan 26 06:11:01 2001
+@@ -50,7 +50,7 @@
+ 
+ static TIME parsed_time;
+ 
 -char client_script_name [] = "/etc/dhclient-script";
-+char client_script_name [] = CL_DEFAULT_SCRIPT_NAME;
++const char *client_script_name = CL_DEFAULT_SCRIPT_NAME;
+ 
+ struct client_config top_level_config;
+ 
