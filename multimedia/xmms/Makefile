@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.3
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.uk.xmms.org/xmms/1.2.x/ \
@@ -16,9 +15,6 @@ MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.md.us.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.nl.xmms.org/xmms/1.2.x/ \
 		ftp://ftp.de.xmms.org/xmms/1.2.x/
-
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	esk@ira.uka.de
 
@@ -33,7 +29,8 @@ LIBTOOLFILES=	configure libxmms/configure
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
-		HAVE_MIKMOD=${HAVE_MIKMOD}
+		HAVE_MIKMOD="${HAVE_MIKMOD}" \
+		HAVE_VORBIS="${HAVE_VORBIS}"
 
 .include <bsd.port.pre.mk>
 
@@ -43,6 +40,14 @@ HAVE_MIKMOD=	yes
 PLIST_SUB+=	MIKMODPLUGIN:=""
 .else
 PLIST_SUB+=	MIKMODPLUGIN:="@comment "
+.endif
+
+.if !defined(WITHOUT_VORBIS)
+LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
+HAVE_VORBIS=	yes
+PLIST_SUB+=	VORBISPLUGIN:=""
+.else
+PLIST_SUB+=	VORBISPLUGIN:="@comment "
 .endif
 
 .if defined(HAVE_GNOME)
@@ -59,7 +64,6 @@ PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-PATCHFILES=	xmms-${PORTVERSION}-3dnow.patch.gz
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
@@ -73,13 +77,16 @@ post-extract:
 .endif
 
 pre-extract:
-.if !defined(WITHOUT_MIKMOD) || ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 )
+.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 )
 	@${ECHO_MSG}
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
 .endif
+.if !defined(WITHOUT_VORBIS)
+	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
+.endif
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable 3DNOW optimized decoding routines by defining WITHOUT_3DNOW."
+	@${ECHO_MSG} "You can disable 3DNow! optimized decoding routines by defining WITHOUT_3DNOW."
 .endif
 	@${ECHO_MSG}
 .endif

@@ -1,28 +1,38 @@
---- configure.orig	Wed Sep 20 00:30:29 2000
-+++ configure	Wed Sep 27 12:22:43 2000
-@@ -4022,7 +4022,9 @@
-   echo "$ac_t""no" 1>&6
+--- configure.orig	Tue Nov 28 16:12:16 2000
++++ configure	Tue Nov 28 16:12:52 2000
+@@ -4033,6 +4033,9 @@
  fi
  
--
+ 
 +if [ x"${HAVE_ESOUND}" != x"yes" ]; then
 +  have_esd=no
 +fi
  
  if test "x$have_esd" = xyes; then
    HAVE_ESD_TRUE=
-@@ -4303,7 +4305,9 @@
-   
+@@ -4314,6 +4317,9 @@
    rm -f conf.mikmodtest
  
--
+ 
 +if [ x"${HAVE_MIKMOD}" != x"yes" ]; then
 +  have_mikmod=no
 +fi
  
  if test "x$have_mikmod" = xyes; then
    HAVE_MIKMOD_TRUE=
-@@ -7171,14 +7175,14 @@
+@@ -4574,6 +4580,11 @@
+   
+   rm -f conf.vorbistest
+ 
++if [ x"${HAVE_VORBIS}" != x"yes" ]; then
++  have_ogg=no
++  have_vorbis=no
++fi
++
+ have_oggvorbis=no
+ if test "x$have_ogg" = xyes
+ then
+@@ -7551,14 +7562,14 @@
  
  if test -n "$GCC"
  then
@@ -39,7 +49,7 @@
  		ARCH_DEFINES="-DI386_ASSEM"
  		arch_type=ix86
  	;;
-@@ -7885,10 +7889,6 @@
+@@ -8315,10 +8326,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
