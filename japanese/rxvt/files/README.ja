@@ -1,0 +1,139 @@
+rxvt-2.4.9のportについて
+-------------------------------------------------------------------------------
+
+目次:
+
+  1. 概要
+  2. portに含まれているパッチによって追加されている機能
+  3. 日本語の表示
+  4. 日本語入力の方法
+  5. 背景に画像を張り付ける
+  6. マニュアルには書かれていない .Xresourcesの設定
+  7. 問題点
+  8. その他いろいろ
+
+-------------------------------------------------------------------------------
+
+1. 概要
+
+このportを使ってインストールしたrxvtは、kinput2やVJE-Deltaなどの
+X Input Method Protocolをサポートしているinput methodで
+OverTheSpotスタイルで日本語を入力する事ができます。
+このREADMEでは、日本語の表示や入力に関する説明をします。
+
+
+2. portに含まれているパッチによって追加されている機能
+
+このportに含まれているパッチによってrxvtに追加されている機能は以下の通りです。
+
+  OverTheSpotスタイルで日本語入力が可能
+  rxvtを起動した後にinput methodを起動してinput methodが有効になる
+  一旦input methodを殺してから再び起動してinput methodが有効になる
+  .Xresources でinput methodと入力のスタイルを指定可能 (OverTheSpot, Root)
+
+
+3. 日本語の表示
+
+このportでコンパイルしたrxvtはデフォルトの状態で
+日本語(文字コード ISO-2022-JP, 日本語EUC)を表示できます。
+デフォルトではシフトJISは表示する事ができません。
+シフトJISを表示したい場合は、コマンドラインのオプションで
+-km sjis を付けて起動します。
+
+(例)
+% rxvt -km sjis &
+
+起動する時にいちいちオプションを付けるのが面倒な場合は、
+ホームディレクトリの .Xresources に以下のように書いておきましょう。
+
+(例)
+Rxvt*multichar_encoding: sjis
+
+表示する文字コードをシフトJISにすると逆に日本語EUCを表示する事が
+できなくなります。ISO-2022-JPでは表示できます。
+表示する文字コードがシフトJISの時はkinput2などで日本語を
+入力する時に文字を確定すると文字が読めなくなってしまいます。
+
+
+4. 日本語入力の方法
+
+例えば、kinput2を使って日本語を入力したい場合は、
+以下のようにコマンドを入力します。
+
+% setenv XMODIFIERS @im=kinput2
+% rxvt &
+% kinput2 &
+
+(例はcshでの場合です。)
+
+kinput2はrxvtより先に起動しても後に起動しても構いません。
+Shift + Space キーで日本語入力を開始する事ができます。
+.Xresourcesを使ってinput methodの設定を行っている場合は
+環境変数 XMODIFIERS は設定しなくても構いません。
+他のinput methodを使用する場合は、上の例の"kinput2"の所を
+使用するinput methodのコマンド名に置き換えて下さい。
+
+
+5. 背景に画像を張り付ける
+
+rxvtは背景にXPM形式の画像を張り付けることができます。
+せっかくデスクトップの他の部分は派手でかっこいいのに、
+何でrxvtだけ真っ白の背景なんだー! かっこ悪い!!
+とお嘆きのあなたは -pixmap オプションを付けて起動するか、
+
+(例)
+% rxvt -pixmap ~/background.xpm
+
+ホームディレクトリの .Xresources に以下のような感じで
+書いておきましょう。
+
+(例)
+Rxvt*backgroundPixmap: ~/background.xpm
+
+上の例の"background.xpm"の所は張り付けたい画像のファイル名に
+置き換えて下さい。背景に画像を張り付けたら、foregroundの色と
+backgroundの色を見やすいように変えておきましょう。
+そのあたりの設定の方法はマニュアルをごらん下さい。
+
+
+6. マニュアルには書かれていない .Xresourcesの設定
+
+このportでインストールしたrxvtはマニュアルに書かれている
+リソース以外にportに含まれているパッチにによって"inputMethod"と
+"preeditType" の2つのリソースを設定する事ができます。
+例えば、kinput2を使って、OverTheSpotスタイルで
+日本語を入力する場合、ホームディレクトリの .Xresourcesに
+以下のように書いておきます。
+
+(例)
+Rxvt*inputMethod: kinput2
+Rxvt*preeditType: OverTheSpot
+
+inputMethodには使用するinput methodを、preeditTypeには入力のスタイル
+("Root"または"OverTheSpot"のどちらか)を指定して下さい。 
+preeditTypeはデフォルトではOverTheSpotになっています。
+
+
+7. 問題点
+
+input methodが有効になっているrxvtの上でkillコマンドを使って
+input methodを殺すと、 rxvtがエラーメッセージを吐いて
+終了してしまう事があります。
+
+
+8. その他いろいろ
+
+このportに含まれているパッチは、京都大学の阪本さんのrxvt-2.4.4非公式patch
+を参考にさせて頂きました。阪本さんには心より感謝致します。
+
+現在、このportでインストールしたrxvtは kinput2 version2.0 fix4 と
+VJE-Delta Ver 2.5 for Linux/BSD [FREE TRIAL VERSION] で
+日本語の入力ができる事を確認しています。
+
+また、このportに関するWebページは 
+http://www.nobutaka.com/programs/rxvt.html にあります。
+もし、このportに関するご意見などがございましたら、
+nobutaka@nobutaka.com までお願いします。
+
+-------------------------------------------------------------------------------
+1998年11月6日                               萬谷 暢崇 <nobutaka@nobutaka.com>

@@ -1,0 +1,54 @@
+*** doc/Makefile.in.orig	Thu Oct 22 12:02:09 1998
+--- doc/Makefile.in	Thu Nov  5 17:21:57 1998
+***************
+*** 37,43 ****
+  
+  #-------------------------------------------------------------------------
+  
+! all:
+  
+  SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+  	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+--- 37,43 ----
+  
+  #-------------------------------------------------------------------------
+  
+! all: alldoc
+  
+  SEDREPLACE = -e 's%@RXVT_VERSION@%$(VERSION)%g;'\
+  	     -e 's%@RXVT_LSMDATE@%$(LSMDATE)%g;'\
+***************
+*** 55,61 ****
+  
+  tags allbin:
+  
+! alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
+  
+  $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
+  	$(SED) $(SEDREPLACE) < $(srcdir)/LSM.in > $@
+--- 55,61 ----
+  
+  tags allbin:
+  
+! alldoc:	rxvt.1
+  
+  $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
+  	$(SED) $(SEDREPLACE) < $(srcdir)/LSM.in > $@
+***************
+*** 63,70 ****
+  rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+  	yodl2man -orxvt.tbl yodl/rxvt.yo
+  
+! rxvt.1: rxvt.tbl
+! 	tbl rxvt.tbl > $@
+  
+  rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+  	yodl2html -o$@ yodl/rxvt.yo
+--- 63,69 ----
+  rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+  	yodl2man -orxvt.tbl yodl/rxvt.yo
+  
+! rxvt.1: 
+  
+  rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
+  	yodl2html -o$@ yodl/rxvt.yo
