@@ -2003,6 +2003,7 @@ gdam		ports/audio/gdam
 gdb52		ports/devel/gdb52
 gdb53		ports/devel/gdb53
 gdb53-act	ports/devel/gdb53-act
+gdb6		ports/devel/gdb6
 gdbm		ports/databases/gdbm
 gdbmods		ports/devel/gdbmods
 gdcalc		ports/math/gdcalc
