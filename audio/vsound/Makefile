@@ -8,7 +8,7 @@
 PORTNAME=	vsound
 PORTVERSION=	0.5
 CATEGORIES=	audio
-MASTER_SITES=	http://www.zip.com.au/~erikd/vsound/
+MASTER_SITES=	http://rsidd.online.fr/
 
 MAINTAINER=	rsidd@online.fr
 
