@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdoc
-PORTVERSION=	0.0.0.a4
+PORTVERSION=	0.0.0.aa
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS=		ChangeLog README ToDo
+DOCS=		ChangeLog NEW_FEATURES README ToDo
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} ./install.rb
