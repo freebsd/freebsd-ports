@@ -197,6 +197,7 @@
     SUBDIR += libart
     SUBDIR += libart_lgpl2
     SUBDIR += libaux
+    SUBDIR += libcaca
     SUBDIR += libdjvu++
     SUBDIR += libemf
     SUBDIR += libexif
