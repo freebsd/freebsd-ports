@@ -22,6 +22,6 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/texmf/documentation
 
 post-install:
-	@${LOCALBASE}/bin/texhash
+	@${LOCALBASE}/bin/texhash || ${TRUE}
 
 .include <bsd.port.mk>
