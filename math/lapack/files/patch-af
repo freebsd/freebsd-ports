@@ -1,0 +1,102 @@
+*** ./TIMING/EIG/stimee.f~	Fri Nov 18 19:49:14 1994
+--- ./TIMING/EIG/stimee.f	Tue Jul  4 19:24:06 1995
+***************
+*** 243,250 ****
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK = MAX( MAXN*( 4*MAXN+2 ),
+!      $                   2*LDAMAX+1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) )
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+--- 243,249 ----
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK = MAXN*( 4*MAXN+2 ))
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+*** ./TIMING/EIG/ctimee.f~	Fri Nov 18 19:49:34 1994
+--- ./TIMING/EIG/ctimee.f	Tue Jul  4 22:37:16 1995
+***************
+*** 262,275 ****
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK = MAX( MAXN*( 4*MAXN+2 ),
+!      $                   2*LDAMAX+1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) )
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+        INTEGER            LRWORK
+!       PARAMETER          ( LRWORK = MAX( MAXIN*MAXT*MAXPRM,
+!      $                   1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) ) 
+        INTEGER            NIN, NOUT
+        PARAMETER          ( NIN = 5, NOUT = 6 )
+  *     ..
+--- 262,273 ----
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK = MAXN*( 4*MAXN+2 ))
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+        INTEGER            LRWORK
+!       PARAMETER          ( LRWORK = 1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) 
+        INTEGER            NIN, NOUT
+        PARAMETER          ( NIN = 5, NOUT = 6 )
+  *     ..
+*** ./TIMING/EIG/dtimee.f~	Fri Nov 18 19:49:24 1994
+--- ./TIMING/EIG/dtimee.f	Tue Jul  4 23:41:44 1995
+***************
+*** 243,250 ****
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK = MAX( MAXN*( 4*MAXN+2 ),
+!      $                   2*LDAMAX+1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) )
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+--- 243,249 ----
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK =  MAXN*( 4*MAXN+2 ))
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+*** ./TIMING/EIG/ztimee.f~	Fri Nov 18 19:49:43 1994
+--- ./TIMING/EIG/ztimee.f	Wed Jul  5 00:55:56 1995
+***************
+*** 262,275 ****
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK = MAX( MAXN*( 4*MAXN+2 ),
+!      $                   2*LDAMAX+1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) )
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+        INTEGER            LRWORK
+!       PARAMETER          ( LRWORK = MAX( MAXIN*MAXT*MAXPRM,
+!      $                   1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) )
+        INTEGER            NIN, NOUT
+        PARAMETER          ( NIN = 5, NOUT = 6 )
+  *     ..
+--- 262,273 ----
+        INTEGER            LIWRK2
+        PARAMETER          ( LIWRK2 = 6+6*MAXN+5*MAXN*LG2MXN )
+        INTEGER            LWORK
+!       PARAMETER          ( LWORK =  MAXN*( 4*MAXN+2 ))
+        INTEGER            MAXIN, MAXPRM, MAXT, MAXSUB
+        PARAMETER          ( MAXIN = 12, MAXPRM = 10, MAXT = 10,
+       $                   MAXSUB = 20 )
+        INTEGER            LRWORK
+!       PARAMETER          ( LRWORK = 1+3*MAXN+2*MAXN*LG2MXN+3*MAXN**2 ) 
+        INTEGER            NIN, NOUT
+        PARAMETER          ( NIN = 5, NOUT = 6 )
+  *     ..

@@ -1,0 +1,47 @@
+*** INSTALL/Makefile~	Fri Sep 23 18:10:06 1994
+--- INSTALL/Makefile	Mon Jul  3 00:49:05 1995
+***************
+*** 11,21 ****
+  testdlamch: dlamch.o lsame.o dlamchtst.o
+  	$(LOADER) -o testdlamch dlamch.o lsame.o dlamchtst.o
+  
+! testsecond: second.o secondtst.o
+! 	$(LOADER) -o testsecond second.o secondtst.o
+  
+! testdsecnd: dsecnd.o dsecndtst.o
+! 	$(LOADER) -o testdsecnd dsecnd.o dsecndtst.o
+  
+  slamch.o: slamch.f ; $(FORTRAN) $(NOOPT) -c $<
+  dlamch.o: dlamch.f ; $(FORTRAN) $(NOOPT) -c $<
+--- 11,21 ----
+  testdlamch: dlamch.o lsame.o dlamchtst.o
+  	$(LOADER) -o testdlamch dlamch.o lsame.o dlamchtst.o
+  
+! testsecond: second.o secondtst.o etime_.o
+! 	$(LOADER) -o testsecond second.o secondtst.o etime_.o
+  
+! testdsecnd: dsecnd.o dsecndtst.o etime_.o
+! 	$(LOADER) -o testdsecnd dsecnd.o dsecndtst.o etime_.o
+  
+  slamch.o: slamch.f ; $(FORTRAN) $(NOOPT) -c $<
+  dlamch.o: dlamch.f ; $(FORTRAN) $(NOOPT) -c $<
+*** /dev/null	Sun Jul  2 04:00:02 1995
+--- INSTALL/etime_.c	Mon Jul  3 00:47:16 1995
+***************
+*** 0 ****
+--- 1,15 ----
++ #include <sys/types.h>
++ #include <sys/time.h>
++ #include <sys/resource.h>
++ 
++ float
++ etime_ (float *a)
++ {
++     struct rusage r;
++     float f;
++ 
++     getrusage(RUSAGE_SELF, &r);
++     f = r.ru_utime.tv_sec + (float) r.ru_utime.tv_usec/1000000;
++     *a = f;
++     return f;
++ }

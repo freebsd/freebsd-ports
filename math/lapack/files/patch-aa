@@ -1,0 +1,57 @@
+*** make.inc.old	Fri Sep 23 18:09:30 1994
+--- make.inc	Mon Jul  3 03:37:56 1995
+***************
+*** 6,12 ****
+  #
+  #  The machine (platform) identifier to append to the library names
+  #
+! PLAT = _sun4
+  #  
+  #  Modify the FORTRAN and OPTS definitions to refer to the
+  #  compiler and desired compiler options for your machine.  NOOPT
+--- 6,12 ----
+  #
+  #  The machine (platform) identifier to append to the library names
+  #
+! #PLAT = _sun4
+  #  
+  #  Modify the FORTRAN and OPTS definitions to refer to the
+  #  compiler and desired compiler options for your machine.  NOOPT
+***************
+*** 15,22 ****
+  #  desired load options for your machine.
+  #
+  FORTRAN  = f77
+! OPTS     = -O -u
+! NOOPT    = -u
+  LOADER   = f77
+  LOADOPTS =
+  #
+--- 15,22 ----
+  #  desired load options for your machine.
+  #
+  FORTRAN  = f77
+! #OPTS     = -O2
+! #NOOPT    = -u
+  LOADER   = f77
+  LOADOPTS =
+  #
+***************
+*** 31,38 ****
+  #  machine-specific, optimized BLAS library should be used whenever
+  #  possible.)
+  #
+! BLASLIB      = ../../blas$(PLAT).a
+  #BLASLIB     = -lblas
+! LAPACKLIB    = lapack$(PLAT).a
+  TMGLIB       = tmglib$(PLAT).a
+  EIGSRCLIB    = eigsrc$(PLAT).a
+--- 31,38 ----
+  #  machine-specific, optimized BLAS library should be used whenever
+  #  possible.)
+  #
+! BLASLIB      = ../../BLAS/SRC/libblas.a
+  #BLASLIB     = -lblas
+! LAPACKLIB    = SRC/liblapack.a
+  TMGLIB       = tmglib$(PLAT).a
+  EIGSRCLIB    = eigsrc$(PLAT).a
