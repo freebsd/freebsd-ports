@@ -26,7 +26,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS?=--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
-		--with-backspace=bs --without-terminfo
+		--with-backspace=bs --without-terminfo \
+		--enable-multi-charset
 
 MAN1=		Eterm.1
 
