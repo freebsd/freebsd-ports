@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 1996/12/03 10:41:49 asami Exp $
+# $Id: Makefile,v 1.6 1998/01/05 19:01:23 fenner Exp $
 #
 
     SUBDIR += imm
@@ -7,6 +7,7 @@
     SUBDIR += rtpmon
     SUBDIR += rtptools
     SUBDIR += sdr
+    SUBDIR += sdr25
     SUBDIR += speak_freely
     SUBDIR += vat
     SUBDIR += vic
