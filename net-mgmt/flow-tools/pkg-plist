@@ -9,13 +9,20 @@ bin/flow-gen
 bin/flow-header
 bin/flow-import
 bin/flow-merge
+bin/flow-mirror
 bin/flow-print
 bin/flow-receive
+bin/flow-rsync
+bin/flow-search
 bin/flow-send
 bin/flow-split
 bin/flow-stat
+bin/flow-tag
 bin/flow-xlate
-bin/flow-mirror
-bin/flow-rsync
-bin/flow-search
-@dirrm /var/ft
+etc/flow-tools/map
+etc/flow-tools/filter-acl
+share/flow-tools/asn
+share/flow-tools/ip-prot
+share/flow-tools/tcp-port
+@dirrm etc/flow-tools
+@dirrm share/flow-tools
