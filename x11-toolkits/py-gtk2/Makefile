@@ -3,7 +3,7 @@
 # Date created:				12/26/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.14 1998/11/11 05:37:38 asami Exp $
+# $Id: Makefile,v 1.15 1998/12/31 05:40:03 nectar Exp $
 #
 
 DISTNAME=	pygtk-0.5.9
@@ -20,6 +20,8 @@ MAINTAINER=	nectar@FreeBSD.ORG
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+
+BROKEN=		repository copy
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk11d-config
