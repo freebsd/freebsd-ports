@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.36 1999/01/23 14:28:21 simokawa Exp $
+# $Id: Makefile,v 1.37 1999/01/27 07:41:11 fenner Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	jseger@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 EMACS_ARCH=	${MACHINE_ARCH}--freebsd
