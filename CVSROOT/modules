@@ -1053,6 +1053,7 @@ clean		ports/sysutils/clean
 clean-theme-gtk	ports/x11-themes/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
 cleanscore	ports/news/cleanscore
+clearlooks	ports/x11-themes/clearlooks
 clearsilver	ports/www/clearsilver
 clearsilver-python	ports/www/clearsilver-python
 clementine	ports/x11-wm/clementine
