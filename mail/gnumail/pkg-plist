@@ -80,9 +80,9 @@ Local/Applications/GNUMail.app/Resources/up.tiff
 Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GNUMail
 Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 Local/Applications/GNUMail.app/stamp.make
-Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
-Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
-Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
+%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so
+%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1
+%%LOCALLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGNUMail.so.1.0.0
 Local/Library/GNUMail/Clock.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Clock
 Local/Library/GNUMail/Clock.bundle/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Clock.bundle/Resources/Date-0.tiff
