@@ -9,3 +9,20 @@
  
  if NEEDS_PGPEWRAP
  bin_SCRIPTS = pgpewrap muttbug flea
+--- doc/Makefile.in.orig2	Wed Oct  2 17:38:36 2002
++++ doc/Makefile.in	Wed Oct  2 17:40:59 2002
+@@ -89,14 +89,6 @@
+ 		$(DESTDIR)$(mandir)/man1/mutt_dotlock.1
+ 	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
+ 	./instdoc $(srcdir)/mbox.man $(DESTDIR)$(mandir)/man5/mbox.5
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
+-	for f in $(srcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	for f in $(topsrcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+ 
+ uninstall:
+ 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
