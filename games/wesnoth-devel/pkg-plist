@@ -3092,7 +3092,7 @@ share/wesnoth/sounds/zombie-hit.wav
 @dirrm share/wesnoth
 @unexec rmdir %D/man/de/man6 2> /dev/null || true
 @unexec rmdir %D/man/de/ 2> /dev/null || true
-%%GNOME:%%share/gnome/apps/Games/wesnoth.desktop
+%%GNOME:%%share/gnome/applications/wesnoth.desktop
 %%GNOME:%%share/gnome/pixmaps/wesnoth-icon.png
 
 %%KDE:%%@cwd %%LOCALBASE%%
