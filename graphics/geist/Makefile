@@ -11,12 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An object-based image creation/layout application
-
-BROKEN=		"Does not build"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
