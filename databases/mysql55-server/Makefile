@@ -16,8 +16,6 @@ DISTNAME=	mysql-${PORTVERSION}-gamma
 
 MAINTAINER=	dirk@FreeBSD.org
 
-Y2K=		http://www.mysql.com/documentation/mysql/bychapter/manual_Introduction.html#Year_2000_compliance
-
 SLAVEDIRS=	databases/mysql323-client
 MASTERPORTNAME=	mysql-server
 DB_DIR?=	/var/db/mysql

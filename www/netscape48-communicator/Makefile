@@ -15,8 +15,6 @@ MAINTAINER?=	sada@FreeBSD.org
 
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
 
-Y2K=		http://home.netscape.com/products/year2000/faq/client.html
-
 .if !defined(INFILE_HEAD)
 # not included from master ports
 NO_LATEST_LINK=	yes

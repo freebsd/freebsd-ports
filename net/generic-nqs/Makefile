@@ -14,8 +14,6 @@ MASTER_SITES=	http://ftp.gnqs.org/pub/gnqs/source/by-version-number/v3.50/
 
 MAINTAINER=		tony.maher@ebioinformatics.com
 
-Y2K=			http://www.gnqs.org/Year2000.htm
-
 USE_BZIP2=	yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=		have to build on site due to the descriptors created in\

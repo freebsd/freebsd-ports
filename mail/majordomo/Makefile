@@ -14,8 +14,6 @@ EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-Y2K=		http://www.greatcircle.com/majordomo/majordomo-faq.html#1.8
-
 # Needs to create a user and group
 IS_INTERACTIVE= yes
 NO_PACKAGE=	"User and group need to be created"

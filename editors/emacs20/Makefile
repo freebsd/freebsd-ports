@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	jseger@FreeBSD.org
 
-Y2K=            http://www.gnu.org/software/year2000.html
-
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd

@@ -20,8 +20,6 @@ MAINTAINER=	billf@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/www/apache13
 
-Y2K=		http://www.htdig.org/FAQ.html#q1.7
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-cgi-bin-dir=${PREFIX}/share/apache/cgi-bin \
 		--with-image-dir=${PREFIX}/share/apache/icons \

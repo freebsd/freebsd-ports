@@ -13,8 +13,6 @@ DISTNAME=	tcl8.2.3
 
 MAINTAINER=	jseger@FreeBSD.org
 
-Y2K=            http://www.scriptics.com/Y2K.html
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

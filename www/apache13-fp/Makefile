@@ -56,9 +56,6 @@ IMAGES_DIR=	${AP_SHARE}/manual/images
 
 INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
 
-Y2K=		http://www.apache.org/foundation/Y2K.html
-Y2K+=		http://computingcentral.msn.com/guide/year2000/msy2k/productinfo/frontpage.asp
-
 PLIST=		${WRKDIR}/PLIST
 PLIST_SUB=	FP_REV=${FP_REV}
 

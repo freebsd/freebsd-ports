@@ -17,8 +17,6 @@ MASTER_SITES=	ftp://ftp.samba.org/pub/samba/ \
 
 MAINTAINER=	hosokawa@jp.FreeBSD.org
 
-Y2K=		http://us1.samba.org/samba/docs/sambay2k.html
-
 # directories
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba

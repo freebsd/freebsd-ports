@@ -39,8 +39,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	adam@algroup.co.uk
 
-Y2K=		http://www.apache-ssl.org/#Y2K
-
 APACHE_VERSION=		1.3.12
 APACHE_SSL_VERSION=	1.40
 

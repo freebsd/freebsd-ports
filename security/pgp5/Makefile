@@ -15,8 +15,6 @@ EXTRACT_SUFX=	-unix-src.tar.gz
 
 MAINTAINER=	markm@FreeBSD.org
 
-Y2K=		http://www.pgpi.com/faq/pgpi.shtml#Year2000
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
 RESTRICTED=	"Crypto"

@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}541
 
 MAINTAINER=	ache@FreeBSD.org
 
-Y2K=		ftp://ftp.info-zip.org/pub/infozip/FAQ.html#Y2K
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
 MAKE_FLAGS=	LOCAL_UNZIP="${CFLAGS} -DUSE_SMITH_CODE -DUSE_UNSHRINK" -f

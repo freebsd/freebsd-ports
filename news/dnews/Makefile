@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-Y2K=		http://netwinsite.com/dnews_y2k.htm
-
 # NOTE: this won't work for fetching files from the CDROM.  However since
 # we don't have permission to put this on the CDROM it shouldn't matter much.
 FETCH_CMD=		ftp

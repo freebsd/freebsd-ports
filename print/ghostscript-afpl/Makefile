@@ -24,8 +24,6 @@ MAINTAINER=	andreas@FreeBSD.org
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
-Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
-
 WRKSRC=		${WRKDIR}/gs${PORTVERSION}
 USE_XLIB=	yes
 USE_GMAKE=	yes

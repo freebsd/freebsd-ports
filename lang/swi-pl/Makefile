@@ -13,8 +13,6 @@ DISTNAME=	pl-${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
 
-Y2K=		http://www.hio.hen.nl/faq/SWI-Prolog.html#7.__warranty
-
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes

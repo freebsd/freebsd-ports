@@ -17,8 +17,6 @@ MAINTAINER=	ache@FreeBSD.org
 
 BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
-Y2K=            ftp://ftp.info-zip.org/pub/infozip/FAQ.html#Y2K
-
 WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=   zip23${EXTRACT_SUFX}
 MAKEFILE=	unix/Makefile
