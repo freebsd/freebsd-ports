@@ -333,6 +333,7 @@ share/doc/html/stlport/vendor_interface.html
 share/doc/html/stlport/wrappers.html
 @dirrm share/doc/html/stlport/images
 @dirrm share/doc/html/stlport
+@unexec rmdir %D/share/doc/html 2>/dev/null || true
 @dirrm include/stlport/wrap_std/h
 @dirrm include/stlport/wrap_std
 @dirrm include/stlport/using/h
