@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
-PORTVERSION=	5.13.4.7.4
+PORTVERSION=	5.15.4.8.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
@@ -19,7 +19,7 @@ USE_REINPLACE=	yes
 
 MAN1=		growisofs.1
 
-# This software is installed setuid-root (mode 4755) by default under Linux.
+# This software is installed setuid-root (mode 4755) by default.
 INSTALL_TARGET=		BIN_MODE=00755 install
 
 post-patch:
