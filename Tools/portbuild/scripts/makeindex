@@ -1,5 +1,9 @@
 #!/bin/sh
 # usage: $0 branch
+
+# -j# to make index
+INDEXJOBS=4
+
 usage () {
   echo "usage: makeindex branch"
   exit 1
@@ -40,4 +44,5 @@ export PACKAGE_BUILDING=t
 export PARALLEL_PACKAGE_BUILD=t
 export NO_RESTRICTED=t
 #export FOR_CDROM=t
-make index
+#export INDEX_NOSORT=t
+make -j${INDEXJOBS} index
