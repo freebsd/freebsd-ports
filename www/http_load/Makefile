@@ -6,15 +6,23 @@
 #
 
 PORTNAME=	http_load
-PORTVERSION=	1.0
+PORTVERSION=	20010405
 CATEGORIES=	www
 MASTER_SITES=	http://www.acme.com/software/http_load/
-DISTNAME=	http_load_10nov99
+DISTNAME=	http_load_05apr2001
 
 MAINTAINER=	ask@valueclick.com
 
 WRKSRC=		${WRKDIR}/http_load
+MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 MAN1=		http_load.1
+MANCOMPRESSED=	maybe
+
+.ifndef NO_OPENSSL
+USE_OPENSSL=	yes
+.else
+PKGNAMESUFFIX=	-nossl
+.endif
 
 .include <bsd.port.mk>
