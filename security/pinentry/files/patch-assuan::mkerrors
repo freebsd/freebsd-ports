@@ -1,0 +1,10 @@
+--- assuan/mkerrors.orig	Thu Jan 30 07:49:26 2003
++++ assuan/mkerrors	Thu Jan 30 07:50:41 2003
+@@ -68,4 +68,5 @@
+   return s;
+ }
+ 
+-EOF
+\ No newline at end of file
++EOF
++

@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Thu Jan 30 07:49:00 2003
++++ Makefile.am	Thu Jan 30 07:50:41 2003
+@@ -39,7 +39,7 @@
+ pinentry_qt = 
+ endif
+ 
+-SUBDIRS = assuan secmem pinentry ${pinentry_curses} \
++SUBDIRS = jnlib assuan common secmem pinentry ${pinentry_curses} \
+ 	${pinentry_gtk} ${pinentry_qt} doc
+ 
+ signed-dist: $(distdir).tar.gz.sig

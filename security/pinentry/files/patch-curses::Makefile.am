@@ -1,0 +1,12 @@
+--- curses/Makefile.am.orig	Thu Jan 30 07:49:42 2003
++++ curses/Makefile.am	Thu Jan 30 07:50:41 2003
+@@ -23,7 +23,7 @@
+ 
+ AM_CPPFLAGS = $(NCURSES_INCLUDE) -I$(top_srcdir)/pinentry
+ LDADD = ../pinentry/libpinentry.a ../pinentry/libpinentry-curses.a \
+-	../assuan/libassuan.a ../secmem/libsecmem.a \
+-	$(LIBCAP) $(LIBCURSES) $(LIBICONV)
++	../assuan/libassuan.a ../secmem/libsecmem.a ../common/libcommon.a \
++	$(LIBCAP) $(LIBCURSES) $(LIBICONV) -lgnugetopt
+ 
+ pinentry_curses_SOURCES = pinentry-curses.c
