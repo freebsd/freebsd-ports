@@ -40,7 +40,8 @@ while true; do
   	  num=99
         fi
       else
-        num=99
+        # Don't ever want to list machines we couldn't connect to
+        num=999
       fi
 
       num=$(($num / $l))
@@ -58,5 +59,4 @@ while true; do
     echo "$mach" > ${buildroot}/${i}/ulist
 
   done
-  sleep 15
 done
