@@ -1,4 +1,4 @@
-# New ports collection makefile for:	groach
+# New ports collection makefile for:	cvs2html
 # Date created:				Sun 02 Jul 2000
 # Whom:					will
 #
