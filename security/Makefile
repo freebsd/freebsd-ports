@@ -193,6 +193,7 @@
     SUBDIR += mcrypt
     SUBDIR += md5deep
     SUBDIR += mdcrack
+    SUBDIR += metasploit
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += mussh
