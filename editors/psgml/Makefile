@@ -7,15 +7,15 @@
 
 PORTNAME=	psgml
 PORTVERSION=	${PSGML_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psgml
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	max
-PATCHFILES=	psgml-symbol-conflict-040817.gz
+PATCH_SITES=	http://dist.bsdlab.org/
+PATCHFILES=	psgml-symbol-conflict-041015.gz
 
 MAINTAINER?=	shige@FreeBSD.org
 COMMENT?=	A major mode for editing SGML and XML documents for emacs21
