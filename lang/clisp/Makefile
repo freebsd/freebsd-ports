@@ -7,14 +7,13 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.33.2
+PORTREVISION=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
 
 MAINTAINER=	jakub@rehor.net
 COMMENT=	An ANSI Common Lisp
-
-BROKEN=		Incomplete pkg-plist
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
@@ -30,10 +29,11 @@ MAKEMAKE_ARGS=--prefix=${PREFIX} --with-readline --with-gettext \
 
 .include <bsd.port.pre.mk>
 
-# If you have an Alpha machine, you may want to test this port and let
-# me know if you succeed.
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+# Does not compile on 64-bit architectures
+# See http://sourceforge.net/mailarchive/message.php?msg_id=7103089
+# for discussion.
+.if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64" || ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on 64-bit architectures"
 .endif
 
 # The source doesn't include a top-level Makefile, so we'll fake one.
