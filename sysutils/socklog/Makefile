@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	socklog
-PORTVERSION=	0.10.1
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://smarden.org/socklog/
 
@@ -17,25 +17,16 @@ WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
 ALL_TARGET=	default
 
 PROGS=		socklog-conf socklog tryto uncat
-.if !defined(NOPORTDOCS)
 MAN1=		tryto.1 uncat.1
 MAN8=		socklog-conf.8 socklog.8
-.endif
 
 do-install:
-.for file in ${PROGS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-.endfor
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PROGS} ${PREFIX}/bin
+	@${MKDIR} ${MANPREFIX}/man/man1 ${MANPREFIX}/man/man8
+	cd ${WRKSRC}/../man && ${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
+	cd ${WRKSRC}/../man && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${MANPREFIX}/man/man1
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/../man/${file} ${MANPREFIX}/man/man1
-.endfor
-	${MKDIR} ${MANPREFIX}/man/man8
-.for file in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/../man/${file} ${MANPREFIX}/man/man8
-.endfor
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
 .endif
 
