@@ -236,6 +236,8 @@ MASTER_SITE_FREEBSD_ORG+=	\
 
 MASTER_SITE_GCC+=	\
 	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,}  \
+	http://gcc.software-archive.net/%SUBDIR%/ \
+	http://gcc.get-software.com/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/
