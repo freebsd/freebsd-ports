@@ -1,0 +1,15 @@
+savelogs is a flexible and robust log file archival system. Its
+logic is simple: move (rename) the log file, filter data from
+the log file, store the log file in an archive (via tar or
+gtar), and compress the archive (via gzip or compress). After
+successful compression, the original log file is deleted.
+
+All of the above phases are optional. This means that you may
+simply delete files if you wish. Or you may simply compress
+existing log files. Or you may move files and add them to a tar
+file but leave the tar file uncompressed, etc. You pick ;o)
+
+savelogs has many options yet retains a high degree of dwimitude.
+
+Author: Scott Wiersdorf <scott@perlcode.org>	
+WWW:	http://search.cpan.org/~scottw/

@@ -324,6 +324,7 @@
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += sarah
+    SUBDIR += savelogs
     SUBDIR += sb16config
     SUBDIR += sbniconfig
     SUBDIR += scan_ffs
