@@ -7,6 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -25,6 +26,7 @@ CONFIGURE_ARGS=	--without-authldap --with-authldaprc=filename \
 		--without-authvchkpw --without-authcram \
 		--with-userdb=${PREFIX}/etc/userdb \
 		--datadir=${PREFIX}/share/courier-imap \
+		--libexecdir=${PREFIX}/libexec/courier-imap \
 		--disable-root-check
 
 MAN1=		maildirmake.1

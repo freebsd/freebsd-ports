@@ -4,14 +4,14 @@ bin/maildirmake
 etc/imapd-ssl.config.dist
 etc/imapd.cnf.dist
 etc/imapd.config.dist
-libexec/authlib/authpwd
-libexec/authlib/authuserdb
-libexec/couriertcpd
-libexec/deliverquota
-libexec/imapd-ssl.rc
-libexec/imapd.rc
-libexec/logger
-libexec/makedatprog
+libexec/courier-imap/authlib/authpwd
+libexec/courier-imap/authlib/authuserdb
+libexec/courier-imap/couriertcpd
+libexec/courier-imap/deliverquota
+libexec/courier-imap/imapd-ssl.rc
+libexec/courier-imap/imapd.rc
+libexec/courier-imap/logger
+libexec/courier-imap/makedatprog
 sbin/imaplogin
 sbin/makeuserdb
 sbin/mkimapdcert
@@ -28,6 +28,7 @@ share/doc/courier-imap/AUTHORS
 share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
-@unexec rmdir %D/libexec/authlib
+@unexec rmdir %D/libexec/courier-imap/authlib
+@unexec rmdir %D/libexec/courier-imap
 @unexec rmdir %D/share/courier-imap
 @unexec rmdir %D/share/doc/courier-imap
