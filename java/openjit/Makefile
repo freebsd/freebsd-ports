@@ -13,7 +13,7 @@ DISTNAME=	OpenJIT-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 
 ONLY_FOR_ARCHS=	i386
 

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.shudo.net/jit/dist/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk11
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -24,7 +24,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmcoopr@webmail.bmi.net
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/adagcc:${PORTSDIR}/lang/gnat \
-		${LOCALBASE}/jdk1.2.2/bin/javac:${PORTSDIR}/java/jdk12-beta
+		${LOCALBASE}/jdk1.2.2/bin/javac:${PORTSDIR}/java/jdk12
 
 USE_GMAKE=	yes
 

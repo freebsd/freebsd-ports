@@ -14,7 +14,7 @@ DISTNAME=	ApacheJServ-${PORTVERSION}
 
 MAINTAINER=	greg@greg.rim.or.jp
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk\
+BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk11\
 		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\

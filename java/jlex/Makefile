@@ -15,7 +15,7 @@ EXTRACT_ONLY=	#
 
 MAINTAINER=	jake@checker.org
 
-BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 
 JAVADIR=	jdk1.1.8
 JAVAC=		${LOCALBASE}/${JAVADIR}/bin/javac

@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mike@vee.net
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
+RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
 
 PLIST_SUB+=	XP_VERSION=${PORTVERSION}
 
