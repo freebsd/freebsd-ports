@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -19,7 +19,7 @@ PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	distcc.1 distccd.1
 DOC_FILES=	AUTHORS COPYING COPYING.FDL NEWS OLDNEWS README \
@@ -52,7 +52,7 @@ install-html-doc:
 
 install-man:
 .for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/man/${file} ${MANPREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>
