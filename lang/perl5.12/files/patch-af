@@ -1,8 +1,8 @@
 $FreeBSD$
 
---- Configure.ORIG	Mon Mar 19 05:03:33 2001
-+++ Configure	Tue Apr 10 20:31:56 2001
-@@ -296,7 +296,7 @@
+--- Configure.orig	Fri Jul 19 00:55:15 2002
++++ Configure	Tue Dec 10 12:12:35 2002
+@@ -308,7 +308,7 @@ cppflags=''
  ldflags=''
  lkflags=''
  locincpth=''
@@ -11,3 +11,15 @@ $FreeBSD$
  cf_email=''
  cf_by=''
  cf_time=''
+@@ -9933,8 +9933,9 @@ eval $setvar
+ 
+ : see if crypt exists
+ echo " "
+-set crypt d_crypt
+-eval $inlibc
++: no, crypt is NOT in libc on FreeBSD
++: set crypt d_crypt
++: eval $inlibc
+ case "$d_crypt" in
+ $define) cryptlib='' ;;
+ *)	if set crypt val -f d_crypt; eval $csym; $val; then
