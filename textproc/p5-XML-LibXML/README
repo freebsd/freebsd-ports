@@ -1,9 +1,0 @@
-This module is a minimal interface to the Gnome libxml2 library which you
-can find at http://www.xmlsoft.org/
-
-Currently this is just a helper module for XML::LibXSLT (and as such is
-included with the XML::LibXSLT distribution), but libxml2 has a full DOM
-API, and so I hope to be able to offer full access to that API one day.
-
-This is free software, you may use it and distribute it under the same
-terms as Perl itself. Copyright 2001 AxKit.com Ltd, All rights reserved.
