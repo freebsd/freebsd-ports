@@ -59,6 +59,12 @@ DATA_PATHS=${PREFIX}/lib/clisp ${PREFIX}/share/doc/clisp \
 PROG_PATHS=${PREFIX}/bin/clisp
 MAN_PATHS=${PREFIX}/man/man1/clisp.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"Does not compile on alpha"
+.endif
+
 # The source doesn't include a top-level Makefile, so we'll fake one.
 post-extract:
 	@cd ${WRKSRC} && \
@@ -80,4 +86,4 @@ post-install:
 
 MAN1=	clisp.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
