@@ -19,12 +19,16 @@ share/pygmy/folderops.pyc
 share/pygmy/folderops.pyo
 share/pygmy/headers.pyc
 share/pygmy/headers.pyo
+share/pygmy/icons/configure_mail.xpm
 share/pygmy/icons/dir-close.xpm
 share/pygmy/icons/dir-open.xpm
 share/pygmy/icons/directory.xpm
+share/pygmy/icons/encrypt.xpm
 share/pygmy/icons/forwarded.xpm
 share/pygmy/icons/fulltrash.xpm
 share/pygmy/icons/inbox.xpm
+share/pygmy/icons/mark.xpm
+share/pygmy/icons/move_message.xpm
 share/pygmy/icons/outbox.xpm
 share/pygmy/icons/trash.xpm
 share/pygmy/icons/tray_empty.xpm
@@ -47,6 +51,8 @@ share/pygmy/pygmymailbox.pyc
 share/pygmy/pygmymailbox.pyo
 share/pygmy/pygmymultifile.pyc
 share/pygmy/pygmymultifile.pyo
+share/pygmy/quote_pri.pyc
+share/pygmy/quote_pri.pyo
 share/pygmy/sendmail.pyc
 share/pygmy/sendmail.pyo
 share/pygmy/smileys.pyc
