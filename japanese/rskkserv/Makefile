@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.3.2
+PORTVERSION=	2.90.1
 CATEGORIES=	japanese ruby
-MASTER_SITES=	http://www.ruby-lang.org/~shugo/rskkserv/
+MASTER_SITES=	http://www.unixuser.org/~ysjj/rskkserv/
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -24,21 +24,27 @@ SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
 MAKE_ARGS=	prefix="${PREFIX}" \
-		dicfile="${LOCALBASE}/share/skk/${SKKJISYO}"
+		skkdicsize="${SKKJISYO_SIZE}" \
+		epwdicbase="${PREFIX}/share/dict" \
+		skkdicbase="${PREFIX}/share/skk" \
+		SKKSERV=rskkserv
 
-pre-build:
-	cd ${WRKSRC} && ${MAKE} clean
+DOCS_EN=	ChangeLog
+DOCS_JA=	README		TODO
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/skkserv.rb ${PREFIX}/sbin/rskkserv
+post-patch:
+	${MV} ${WRKSRC}/rskkserv.conf ${WRKSRC}/rskkserv.conf.in
+
+post-install:
+	${CP} -R ${WRKSRC}/skkserv ${RUBY_SITELIBDIR}/
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		${ECHO} "#!/bin/sh" > ${STARTUP_SCRIPT}; \
 		${ECHO} 'case $$1 in' >> ${STARTUP_SCRIPT}; \
 		${ECHO} "start)" >> ${STARTUP_SCRIPT}; \
-		${ECHO} "	if [ -f ${PREFIX}/sbin/rskkserv ]; then" >> \
+		${ECHO} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then" >> \
 			${STARTUP_SCRIPT}; \
-		${ECHO} "		${ECHO} -n ' rskkserv'; ${PREFIX}/sbin/rskkserv" >> \
+		${ECHO} "		${ECHO} -n ' rskkserv'; ${PREFIX}/libexec/rskkserv" >> \
 			${STARTUP_SCRIPT}; \
 		${ECHO} "	fi" >> ${STARTUP_SCRIPT}; \
 		${ECHO} "	;;" >> ${STARTUP_SCRIPT}; \
@@ -50,5 +56,14 @@ do-install:
 		${ECHO} 'esac' >> ${STARTUP_SCRIPT}; \
 		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
 	fi
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_DOCDIR}/rskkserv/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rskkserv/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/rskkserv/ja/
+.endfor
+.endif
 
 .include <bsd.port.mk>

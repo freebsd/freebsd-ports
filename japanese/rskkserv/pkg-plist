@@ -1,3 +1,12 @@
-sbin/rskkserv
 etc/rc.d/rskkserv.sh
+etc/rskkserv.conf
+%%RUBY_SITELIBDIR%%/skkserv/skkdic.rb
+%%RUBY_SITELIBDIR%%/skkserv/ebdic.rb
+@dirrm %%RUBY_SITELIBDIR%%/skkserv
+libexec/rskkserv
 @unexec rm -f %D/share/skk/SKK-JISYO.[LMS].[an] 2>/dev/null || true
+%%RUBY_DOCDIR%%/rskkserv/ChangeLog
+%%RUBY_DOCDIR%%/rskkserv/ja/README
+%%RUBY_DOCDIR%%/rskkserv/ja/TODO
+@dirrm %%RUBY_DOCDIR%%/rskkserv/ja
+@dirrm %%RUBY_DOCDIR%%/rskkserv
