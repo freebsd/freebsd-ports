@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTNAME=	de-webalizer
+PORTNAME=	webalizer
 PORTVERSION=	1.30.4
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \

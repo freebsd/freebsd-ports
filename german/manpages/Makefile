@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	de-manpages
+PORTNAME=	manpages
 PORTVERSION=	1.0
 CATEGORIES=	german
 MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/ \

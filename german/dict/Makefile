@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	de-dict
+PORTNAME=	dict
 PORTVERSION=	1.2
 CATEGORIES=	german
 MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
