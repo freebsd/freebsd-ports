@@ -13,13 +13,13 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://ftp.bitchx.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/source/ \
 		ftp://ftp.cyberpunkz.org/pub/BitchX/tcl-o/:tcl
-.if !defined(WITH_TCL)
-DISTNAME=	ircii-pana-${PORTVERSION}
-.else
 DISTFILES=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX} \
-		freebsd4-tcl83-bx1.0c19-tcl.o:tcl
-EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
+		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig
+.if defined(WITH_TCL)
+DISTFILES+=	freebsd4-tcl83-bx1.0c19-tcl.o:tcl \
+		freebsd4-tcl83-bx1.0c19-tcl.o.sig:tcl
 .endif
+EXTRACT_ONLY=	ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	arved@FreeBSD.org
 COMMENT?=	"An alternative ircII color client with optional GTK/GNOME support"
@@ -103,6 +103,20 @@ INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
 .endif
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
+
+.if exists(${PREFIX}/bin/gpg)
+pre-extract:
+	@${ECHO_CMD} "===> Verifying GnuPG Signatures."
+	-gpg --keyserver pgp.mit.edu --recv-key 42D1F77C
+	cd ${DISTDIR}; gpg --verify ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig \
+		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
+.if defined(WITH_TCL)
+	cd ${DISTDIR}; gpg --verify freebsd4-tcl83-bx1.0c19-tcl.o.sig \
+		freebsd4-tcl83-bx1.0c19-tcl.o
+.endif
+.else
+	@${ECHO_CMD} "===> GnuPG not installed. Signatures can not be verified"	
+.endif
 
 pre-patch:
 .if defined(WITH_LATIN)
