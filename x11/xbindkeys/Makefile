@@ -25,6 +25,11 @@ MAN1=		xbindkeys.1
 
 WISH=		${LOCALBASE}/bin/wish8.4
 
+OPTIONS=	GUILE "Guile support" off \
+		TCLTK "Tcl/Tk support" off
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GUILE)
 LIB_DEPENDS+=	guile.15:${PORTSDIR}/lang/guile
 .else
@@ -40,14 +45,6 @@ CONFIGURE_ARGS+=	--disable-tk
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "XbindKeys has the following tunable options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_GUILE=yes			Turns on Guile support"
-	@${ECHO_MSG} "	WITH_TCLTK=yes			Turns on Tcl/Tk support"
-	@${ECHO_MSG} ""
-
 post-patch:
 	@${REINPLACE_CMD} -e 's| wish | ${WISH} |g' ${WRKSRC}/xbindkeys_show
 
@@ -57,4 +54,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/xbindkeysrc ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
