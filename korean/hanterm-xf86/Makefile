@@ -6,11 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	hanterm-xf-p16
-PKGNAME=	ko-hanterm-xf-16
+DISTNAME=	hanterm-xf-p17
+PKGNAME=	ko-hanterm-xf-17
 CATEGORIES=	korean x11
-MASTER_SITES=	http://pseudo.snu.ac.kr/~hwang/ \
-		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
+MASTER_SITES=	http://www.kr.FreeBSD.org/~hwang/hanterm/
 
 MAINTAINER=	cjh@kr.freebsd.org
 
