@@ -1,49 +1,140 @@
 #!/bin/sh
-# installation script for Wnn4.2
-if [ X"$2" != X"POST-INSTALL" ]; then
-  exit 0
-fi
-case $1 in
-  jp-Wnn-4.2)
-    sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons"
-    usr_dirs=${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
-    wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
-    wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
-    wnnname=Wnn
+# an installation script for Wnn4.2
+
+check_pw()
+{
+    if which -s pw; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  We see that it
+is missing the "pw" utility.  We need this utility.  Please get and
+install it, and try again.  You can get the source from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+}
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} (y/n) [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+case $2 in
+PRE-INSTALL)
+
+    ## Hack /etc/master.passwd ##
+    # check
+    id_69=`id -u 69 2> /dev/null`
+    id_wnn=`id -u wnn 2> /dev/null`
+    if [ X"$id_wnn" != X ];then
+	exit 0
+    elif [ X"$id_69" != X ]; then
+cat <<EOF
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+This system already has an account whose name is not 'wnn' and ID
+number is 69.
+
+   '`id 69`'
+
+For Wnn4.2 in this port or package, ID number of 'wnn' has to be 69.
+Please try again after you delete the account.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+EOF
+	exit 1
+    fi
+
+    # add an account 'wnn' to this system
+    echo ""
+    echo "You need an account 'wnn' whose ID number is 69"
+    if yesno "Would you like to create it automatically?" y; then
+	# We need a command 'pw(8)'
+	check_pw
+	pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
+		-s /nonexistent -c Wnn || exit
+    else
+	echo "Please create it, and try again."
+	exit 1
+    fi
     ;;
-  cn-Wnn-4.2)
-    sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
-    usr_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr"
-    wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
-    wnnserver=${PKG_PREFIX}/bin/cWnn4/cserver
-    wnnname=cWnn
-    ;;
-  kr-Wnn-4.2)
-    sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
-    usr_dirs=${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
-    wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
-    wnnserver=${PKG_PREFIX}/bin/kWnn4/kserver
-    wnnname=kWnn
+
+POST-INSTALL)
+
+    case $1 in
+      ja-Wnn-4.2)
+	sys_dirs="${PKG_PREFIX}/lib/wnn/ja_JP/dic/pubdic ${PKG_PREFIX}/lib/wnn/ja_JP/dic/wnncons"
+	usr_dirs=${PKG_PREFIX}/lib/wnn/ja_JP/dic/usr
+	wnntouch=${PKG_PREFIX}/bin/Wnn4/wnntouch
+	wnnserver=${PKG_PREFIX}/bin/Wnn4/jserver
+	wnnname=Wnn
+	;;
+      cn-Wnn-4.2)
+	sys_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/sys ${PKG_PREFIX}/lib/wnn/zh_TW/dic/sys"
+	usr_dirs="${PKG_PREFIX}/lib/wnn/zh_CN/dic/usr ${PKG_PREFIX}/lib/wnn/zh_TW/dic/usr"
+	wnntouch=${PKG_PREFIX}/bin/cWnn4/cwnntouch
+	wnnserver=${PKG_PREFIX}/bin/cWnn4/cserver
+	wnnname=cWnn
+	;;
+      kr-Wnn-4.2)
+	sys_dirs="${PKG_PREFIX}/lib/wnn/ko_KR/dic/sys"
+	usr_dirs=${PKG_PREFIX}/lib/wnn/ko_KR/dic/usr
+	wnntouch=${PKG_PREFIX}/bin/kWnn4/kwnntouch
+	wnnserver=${PKG_PREFIX}/bin/kWnn4/kserver
+	wnnname=kWnn
+	;;
+    esac
+
+    for dir in $sys_dirs; do
+      $wnntouch $dir/*
+    done
+    for dir in $usr_dirs; do
+      if [ ! -d $dir ]; then
+	mkdir -p $dir
+      fi
+      chown wnn $dir
+    done
+
+    ## create a startup script ##
+    startup_script=${PKG_PREFIX}/etc/rc.d/${wnnname}.sh
+    if [ ! -f ${startup_script} ]; then
+      echo "Installing ${startup_script} startup file.";
+      echo '#!/bin/sh' > ${startup_script};
+      echo "wnn=${wnnserver}" >> ${startup_script};
+      echo 'if [ -f $wnn ]; then' >> ${startup_script};
+      echo "    echo -n ' ${wnnname}'" >> ${startup_script};
+      echo '    $wnn' >> ${startup_script};
+      echo "fi" >> ${startup_script};
+      chmod 755 ${startup_script};
+      chown bin.bin ${startup_script};
+    fi
     ;;
 esac
-for dir in $sys_dirs; do
-  $wnntouch $dir/*
-done
-for dir in $usr_dirs; do
-  if [ ! -d $dir ]; then
-    mkdir -p $dir
-  fi
-  chown wnn $dir
-done
-startup_script=${PKG_PREFIX}/etc/rc.d/${wnnname}.sh
-if [ ! -f ${startup_script} ]; then
-  echo "Installing ${startup_script} startup file.";
-  echo '#!/bin/sh' > ${startup_script};
-  echo "wnn=${wnnserver}" >> ${startup_script};
-  echo 'if [ -f $wnn ]; then' >> ${startup_script};
-  echo "    echo -n ' ${wnnname}'" >> ${startup_script};
-  echo '     $wnn' >> ${startup_script};
-  echo "fi" >> ${startup_script};
-  chmod 755 ${startup_script};
-  chown bin.bin ${startup_script};
-fi

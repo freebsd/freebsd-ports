@@ -1,4 +1,4 @@
-@cwd %%LOCALBASE%%
+@cwd /usr/local
 etc/rc.d/cWnn.sh
 lib/wnn/zh_CN/cserverrc
 lib/wnn/zh_CN/cixing.data
@@ -203,7 +203,7 @@ share/doc/cn-Wnn/manual.en/preface
 @dirrm share/doc/cn-Wnn/manual.en
 @dirrm share/doc/cn-Wnn/manual
 @dirrm share/doc/cn-Wnn
-@cwd %%X11BASE%%
+@cwd /usr/X11R6
 lib/libcwnn.a
 include/cwnn/jllib.h
 include/cwnn/jslib.h
