@@ -1,0 +1,18 @@
+This module has an easy way to access/create XML data. It's based on the HASH
+tree that is made of the XML data, and enable a dynamic access to it with the
+Perl syntax for Hashe and Array, without needing to care if you have a Hashe or
+an Array in the tree. In other words, each point in the tree work as a Hash and
+an Array at the same time!
+
+The module alson handle automatically binary data (encoding/decoding to/from
+base64), CDATA (like contents with <tags>) and Unicode.  It can be used to
+create XML files, load XML from the Web (just pasting an URL as a file path)
+and it has an easy way to send XML data through socket, just adding the length
+of the data in the <?xml?> header.
+
+You can use XML::Smart with XML::Parser, or with the 2 standart parsers of
+XML::Smart:
+
+WWW: http://search.cpan.org/dist/XML-Smart/
+
+Author: Graciliano M. P. <gm@virtuasites.com.br>

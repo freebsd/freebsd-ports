@@ -1,0 +1,13 @@
+%%SITE_PERL%%/XML/Smart.pm
+%%SITE_PERL%%/XML/Smart/Base64.pm
+%%SITE_PERL%%/XML/Smart/Data.pm
+%%SITE_PERL%%/XML/Smart/HTMLParser.pm
+%%SITE_PERL%%/XML/Smart/Parser.pm
+%%SITE_PERL%%/XML/Smart/Tie.pm
+%%SITE_PERL%%/XML/Smart/Tree.pm
+%%SITE_PERL%%/XML/Smart/XPath.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Smart
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/Smart
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
