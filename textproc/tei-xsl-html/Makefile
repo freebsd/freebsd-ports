@@ -7,7 +7,7 @@
 
 PORTNAME=	tei
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Stylesheets/
 PKGNAMESUFFIX=	-xsl-html
@@ -16,8 +16,6 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	henrik.motakef@web.de
 COMMENT=	XSLT Stylesheets to convert TEI to HTML
-
-BROKEN=		Checksum mismatch
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
