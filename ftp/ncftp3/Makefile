@@ -49,7 +49,8 @@ pre-fetch:
 	@${ECHO} ""
 
 pre-build:
-	${REINPLACE_CMD} -e 's|u_decodeurl.so u_decodeurl.so|u_decodeurl.so|' \
+	${REINPLACE_CMD} -e \
+	    's|u_decodeurl.so u_decodeurl.so|u_decodeurl.so u_decodehost.so|' \
 	    ${WRKSRC}/libncftp/Makefile
 	cd ${WRKSRC}/Strn ; make so
 	cd ${WRKSRC}/libncftp ; make so
