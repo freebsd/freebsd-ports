@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	vuxml
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 PORTREVISION=	0
 CATEGORIES=	security textproc
 MASTER_SITES=	http://www.vuxml.org/dtd/vuxml-1/
-DISTFILES=	vuxml-10.dtd vuxml-model-10.mod
+DISTFILES=	vuxml-10.dtd  vuxml-model-10.mod \
+		vuxml-11.dtd  vuxml-model-11.mod \
+		catalog catalog.xml
+DIST_SUBDIR=	vuxml
 
 MAINTAINER=	nectar@FreeBSD.org
 COMMENT=	Vulnerability and eXposure Markup Language DTD
@@ -34,9 +37,9 @@ XMLCAT_ADD=	${XMLCATMGR} -c ${XMLCAT} add nextCatalog \
 XMLCAT_RM=	${XMLCATMGR} -c ${XMLCAT} remove nextCatalog \
 		    ${PREFIX}/${dir_DTD}/catalog.xml
 SGMLCAT_ADD=	${XMLCATMGR} -sc ${SGMLCAT} add CATALOG \
-		    ${PREFIX}/${dir_DTD}/vuxml.cat
+		    ${PREFIX}/${dir_DTD}/catalog
 SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove CATALOG \
-		    ${PREFIX}/${dir_DTD}/vuxml.cat
+		    ${PREFIX}/${dir_DTD}/catalog
 
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
@@ -68,10 +71,6 @@ do-install:
 .for f in ${DISTFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${dir_DTD}/${f}
 .endfor
-	${SED} -e "s;@@PREFIX@@;${PREFIX};g" ${FILESDIR}/catalog.xml > \
-	    ${WRKDIR}/catalog.xml
-	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${PREFIX}/${dir_DTD}/catalog.xml
-	${INSTALL_DATA} ${FILESDIR}/vuxml.cat ${PREFIX}/${dir_DTD}/vuxml.cat
 	${XMLCAT_ADD}
 	${SGMLCAT_ADD}
 
