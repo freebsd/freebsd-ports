@@ -3,15 +3,15 @@
 # Date created:		18 August 1997
 # Whom:			Jonathan Hanna
 #
-# $Id: Makefile,v 1.3 1998/12/12 04:18:46 asami Exp $
+# $Id: Makefile,v 1.4 1999/02/22 03:15:56 steve Exp $
 #
 
-DISTNAME=	edict-19981007
-PKGNAME=	ja-edict-19981007
+DISTNAME=	edict-19990714
+PKGNAME=	ja-edict-19990714
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/japanese/monash/
-MASTER_SITES+=	ftp://ftp.sedl.org/pub/mirrors/nihongo/
-MASTER_SITES+=	ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/japanese/monash/ \
+		ftp://ftp.sedl.org/pub/mirrors/nihongo/ \
+		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
@@ -21,64 +21,27 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=	edict
 
-DOCFILES=	edict.doc
-DOCFILES+=	edicth.doc
-DOCFILES+=	enamdict.doc
-DOCFILES+=	compdic.doc
-DOCFILES+=	jddict.doc
-DOCFILES+=	kanjidic.doc
-DOCFILES+=	lifscdic.doc
-DOCFILES+=	lawgldoc.new
-DOCFILES+=	geodic.doc
-DOCFILES+=	aviation.doc
-DOCFILES+=	findic.doc
-DOCFILES+=	mktdic.doc
-DOCFILES+=	compverb.doc
-DOCFILES+=	4jwords.doc
-
-DICTFILES=	edict.gz
-DICTFILES+=	edicth
-DICTFILES+=	enamdict.gz
-DICTFILES+=	compdic.gz
-DICTFILES+=	jddict.v02.gz
-DICTFILES+=	lifscdic.Z
-DICTFILES+=	kanjidic.gz
-DICTFILES+=	lawgledt.zip
-DICTFILES+=	geodic.gz
-DICTFILES+=	pandpdic.zip
-DICTFILES+=	aviation.zip
-DICTFILES+=	findic.zip
-DICTFILES+=	mktdic.zip
-DICTFILES+=	compverb.gz
-DICTFILES+=	4jwords.gz
+DICTFILES=	edict.gz edicth enamdict.gz compdic.gz \
+		jddict.v02.gz j_places.gz ediclsd3.zip \
+		kanjidic.gz kanjd212.gz lawgledt.zip \
+		lingdic.zip geodic.gz pandpdic.zip \
+		aviation.zip findic.zip mktdic.zip \
+		compverb.gz 4jwords.gz concrete.zip
 
 SRCFILES=	xjdic23.tgz
 
-DOCFILES=	edict.doc
-DOCFILES+=	edicth.doc
-DOCFILES+=	enamdict.doc
-DOCFILES+=	compdic.doc
-DOCFILES+=	jddict.doc
-DOCFILES+=	kanjidic.doc
-DOCFILES+=	lifscdic.doc
-DOCFILES+=	lawgldoc.new
-DOCFILES+=	geodic.doc
-DOCFILES+=	aviation.doc
-DOCFILES+=	findic.doc
-DOCFILES+=	mktdic.doc
-DOCFILES+=	compverb.doc
-DOCFILES+=	4jwords.doc
+DOCFILES=	edict.doc edicth.doc enamdict.doc jddict.doc \
+		j_places.inf kanjidic.doc kanjd212.doc ediclsd3.rme \
+		lawgldoc.new lingdic.txt geodic.doc aviation.doc \
+		findic.doc mktdic.doc compverb.doc 4jwords.doc \
+		concrete.doc
 
 #
 # These change too often and are not made into executables.
 #
 IGNOREFILES=	$(DICTFILES) $(DOCFILES)
 
-BINFILES=	exjdxgen
-BINFILES+=	xjdic_cl
-BINFILES+=	xjdic_sa
-BINFILES+=	xjdserver
-BINFILES+=	xjdxgen
+BINFILES=	exjdxgen xjdic_cl xjdic_sa xjdserver xjdxgen
 
 # Where to install the data files
 DATADIR=	${PREFIX}/share/dict/edict
@@ -165,16 +128,19 @@ do-install:
 	@${ECHO} dicfile edict >> ${DATADIR}/.xjdicrc
 	@${ECHO} dicfile enamdict >> ${DATADIR}/.xjdicrc
 	@${ECHO} dicfile compdic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile lifscdic >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile ediclsd3 >> ${DATADIR}/.xjdicrc
 	# @${ECHO} dicfile jddict.v02 >> ${DATADIR}/.xjdicrc
+	@${ECHO} dicfile j_places >> ${DATADIR}/.xjdicrc
 	# @${ECHO} dicfile lawgledt >> ${DATADIR}/.xjdicrc
 	@${ECHO} dicfile geodic >> ${DATADIR}/.xjdicrc
-	@${ECHO} dicfile pandpdic >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile pandpdic >> ${DATADIR}/.xjdicrc
 	@${ECHO} dicfile aviation >> ${DATADIR}/.xjdicrc
 	# @${ECHO} dicfile findic >> ${DATADIR}/.xjdicrc
 	# @${ECHO} dicfile mktdic >> ${DATADIR}/.xjdicrc
 	@${ECHO} dicfile compverb >> ${DATADIR}/.xjdicrc
 	@${ECHO} dicfile 4jwords >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile concrete.doc >> ${DATADIR}/.xjdicrc
+	# @${ECHO} dicfile lingdic >> ${DATADIR}/.xjdicrc
 	@chown ${SHAREOWN}.${SHAREGRP} ${DATADIR}/.xjdicrc
 	@chmod ${SHAREMODE} ${DATADIR}/.xjdicrc
 	${INSTALL_MAN} ${WRKSRC}/xjdic.1 ${PREFIX}/man/man1
