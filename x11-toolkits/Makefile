@@ -14,6 +14,7 @@
     SUBDIR += eel
     SUBDIR += eel2
     SUBDIR += engradient
+    SUBDIR += erlgtk
     SUBDIR += fl_editor
     SUBDIR += fltk
     SUBDIR += flvw

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gnome/Makefile.in.orig	Sat Jul 19 12:03:17 2003
++++ gnome/Makefile.in	Sat Jul 19 12:04:00 2003
+@@ -10,7 +10,7 @@
+ 
+ MODULES = gnome_stock gnome_druid gnome_canvas
+ 
+-IDIR        = @prefix@/erlgtk-$(VSN)
++IDIR        = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ X           =
+ O           = .o
+ SO          = .so

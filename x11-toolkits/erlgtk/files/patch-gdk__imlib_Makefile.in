@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gdk_imlib/Makefile.in.orig	Sat Jul 19 12:03:17 2003
++++ gdk_imlib/Makefile.in	Sat Jul 19 12:04:11 2003
+@@ -10,7 +10,7 @@
+ 
+ MODULES = gdk_imlib
+ 
+-IDIR        = @prefix@/erlgtk-$(VSN)
++IDIR        = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ X           =
+ O           = .o
+ SO          = .so

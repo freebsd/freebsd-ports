@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- gdk_pixbuf/Makefile.in.orig	Sat Jul 19 12:03:17 2003
++++ gdk_pixbuf/Makefile.in	Sat Jul 19 12:04:15 2003
+@@ -10,7 +10,7 @@
+ 
+ MODULES = gdk_pixbuf gdk_pixbuf_loader
+ 
+-IDIR        = @prefix@/erlgtk-$(VSN)
++IDIR        = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ X           =
+ O           = .o
+ SO          = .so

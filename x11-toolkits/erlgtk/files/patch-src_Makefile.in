@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Sat Jul 19 12:03:17 2003
++++ src/Makefile.in	Sat Jul 19 12:03:47 2003
+@@ -9,7 +9,7 @@
+ ERLC_FLAGS = @ERLC_FLAGS@ -pa ../../erlgtk@BUILD_VSN@/ebin
+ 
+ INSTALL = @INSTALL@
+-IDIR        = @prefix@/erlgtk-$(VSN)
++IDIR        = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ 
+ RDIR	      = ../releases/erlgtk-$(VSN)
+ RFILES	      = \

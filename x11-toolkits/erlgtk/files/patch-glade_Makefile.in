@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- glade/Makefile.in.orig	Thu May  2 08:42:20 2002
++++ glade/Makefile.in	Sat Jul 19 12:19:25 2003
+@@ -9,7 +9,7 @@
+ ERLC_FLAGS = @ERLC_FLAGS@ -pa ../../erlgtk@BUILD_VSN@/ebin
+ 
+ INSTALL = @INSTALL@
+-IDIR        = @prefix@/erlgtk-$(VSN)
++IDIR        = @prefix@/lib/erlang/lib/erlgtk-$(VSN)
+ 
+ RDIR	      = ../releases/erlgtk-$(VSN)
+ RFILES	      = \
+@@ -61,7 +61,7 @@
+ 	@INSTALL_DIR@ $(IDIR)/ebin
+ 	@INSTALL_DIR@ $(IDIR)/priv/bin
+ 	@INSTALL_DATA@ $(OBJS) $(IDIR)/ebin
+-	@INSTALL_PROGRAM@ ../priv/bin/glade2erl $(IDIR)/priv/bin
++	@INSTALL_SCRIPT@ ../priv/bin/glade2erl $(IDIR)/priv/bin
+ 
+ release: all
+ 	@INSTALL_DIR@ $(RDIR)/glade
