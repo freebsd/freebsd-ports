@@ -1,4 +1,14 @@
+www/cgi-bin/openwebmail/.checkmail.pl
+www/cgi-bin/openwebmail/.openwebmail-folder.pl
+www/cgi-bin/openwebmail/.openwebmail-main.pl
+www/cgi-bin/openwebmail/.openwebmail-prefs.pl
+www/cgi-bin/openwebmail/.openwebmail-read.pl
+www/cgi-bin/openwebmail/.openwebmail-send.pl
+www/cgi-bin/openwebmail/.openwebmail-spell.pl
+www/cgi-bin/openwebmail/.openwebmail-viewatt.pl
+www/cgi-bin/openwebmail/.openwebmail.pl
 www/cgi-bin/openwebmail/auth_ldap.pl
+www/cgi-bin/openwebmail/auth_mysql.pl
 www/cgi-bin/openwebmail/auth_pam.pl
 www/cgi-bin/openwebmail/auth_pop3.pl
 www/cgi-bin/openwebmail/auth_unix.pl
@@ -30,6 +40,7 @@ www/cgi-bin/openwebmail/etc/lang/uk
 www/cgi-bin/openwebmail/etc/lang/zh_CN.GB2312
 www/cgi-bin/openwebmail/etc/lang/zh_TW.Big5
 www/cgi-bin/openwebmail/etc/openwebmail.conf
+www/cgi-bin/openwebmail/etc/openwebmail.conf.default
 www/cgi-bin/openwebmail/etc/sites.conf/README
 www/cgi-bin/openwebmail/etc/styles/BlueHue
 www/cgi-bin/openwebmail/etc/styles/BlueHue.Small
@@ -45,6 +56,7 @@ www/cgi-bin/openwebmail/etc/styles/DarkBlue
 www/cgi-bin/openwebmail/etc/styles/DarkBlue.Small
 www/cgi-bin/openwebmail/etc/styles/Default
 www/cgi-bin/openwebmail/etc/styles/Default.Small
+www/cgi-bin/openwebmail/etc/styles/Default.Unix.Mozilla
 www/cgi-bin/openwebmail/etc/styles/Hotmail
 www/cgi-bin/openwebmail/etc/styles/Hotmail.Small
 www/cgi-bin/openwebmail/etc/styles/JuicyOrange
@@ -87,6 +99,7 @@ www/cgi-bin/openwebmail/etc/templates/ca/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/ca/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/ca/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/ca/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/ca/timeout.template
 www/cgi-bin/openwebmail/etc/templates/ca/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/cs/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/cs/chpwd.template
@@ -114,6 +127,7 @@ www/cgi-bin/openwebmail/etc/templates/cs/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/cs/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/cs/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/cs/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/cs/timeout.template
 www/cgi-bin/openwebmail/etc/templates/cs/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/da/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/da/chpwd.template
@@ -141,6 +155,7 @@ www/cgi-bin/openwebmail/etc/templates/da/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/da/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/da/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/da/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/da/timeout.template
 www/cgi-bin/openwebmail/etc/templates/da/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/de/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/de/chpwd.template
@@ -168,6 +183,7 @@ www/cgi-bin/openwebmail/etc/templates/de/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/de/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/de/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/de/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/de/timeout.template
 www/cgi-bin/openwebmail/etc/templates/de/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/en/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/en/chpwd.template
@@ -195,6 +211,7 @@ www/cgi-bin/openwebmail/etc/templates/en/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/en/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/en/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/en/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/en/timeout.template
 www/cgi-bin/openwebmail/etc/templates/en/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/es/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/es/chpwd.template
@@ -222,6 +239,7 @@ www/cgi-bin/openwebmail/etc/templates/es/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/es/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/es/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/es/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/es/timeout.template
 www/cgi-bin/openwebmail/etc/templates/es/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/fi/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/fi/chpwd.template
@@ -249,6 +267,7 @@ www/cgi-bin/openwebmail/etc/templates/fi/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/fi/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/fi/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/fi/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/fi/timeout.template
 www/cgi-bin/openwebmail/etc/templates/fi/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/fr/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/fr/chpwd.template
@@ -276,6 +295,7 @@ www/cgi-bin/openwebmail/etc/templates/fr/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/fr/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/fr/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/fr/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/fr/timeout.template
 www/cgi-bin/openwebmail/etc/templates/fr/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/hu/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/hu/chpwd.template
@@ -303,6 +323,7 @@ www/cgi-bin/openwebmail/etc/templates/hu/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/hu/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/hu/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/hu/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/hu/timeout.template
 www/cgi-bin/openwebmail/etc/templates/hu/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/it/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/it/chpwd.template
@@ -330,6 +351,7 @@ www/cgi-bin/openwebmail/etc/templates/it/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/it/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/it/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/it/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/it/timeout.template
 www/cgi-bin/openwebmail/etc/templates/it/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/kr/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/kr/chpwd.template
@@ -357,6 +379,7 @@ www/cgi-bin/openwebmail/etc/templates/kr/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/kr/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/kr/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/kr/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/kr/timeout.template
 www/cgi-bin/openwebmail/etc/templates/kr/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/lt/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/lt/chpwd.template
@@ -384,6 +407,7 @@ www/cgi-bin/openwebmail/etc/templates/lt/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/lt/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/lt/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/lt/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/lt/timeout.template
 www/cgi-bin/openwebmail/etc/templates/lt/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/nl/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/nl/chpwd.template
@@ -411,6 +435,7 @@ www/cgi-bin/openwebmail/etc/templates/nl/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/nl/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/nl/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/nl/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/nl/timeout.template
 www/cgi-bin/openwebmail/etc/templates/nl/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/no_NY/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/no_NY/chpwd.template
@@ -438,6 +463,7 @@ www/cgi-bin/openwebmail/etc/templates/no_NY/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/no_NY/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/no_NY/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/no_NY/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/no_NY/timeout.template
 www/cgi-bin/openwebmail/etc/templates/no_NY/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/pl/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/pl/chpwd.template
@@ -465,6 +491,7 @@ www/cgi-bin/openwebmail/etc/templates/pl/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/pl/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/pl/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/pl/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/pl/timeout.template
 www/cgi-bin/openwebmail/etc/templates/pl/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/pt/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/pt/chpwd.template
@@ -492,6 +519,7 @@ www/cgi-bin/openwebmail/etc/templates/pt/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/pt/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/pt/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/pt/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/pt/timeout.template
 www/cgi-bin/openwebmail/etc/templates/pt/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/chpwd.template
@@ -519,8 +547,8 @@ www/cgi-bin/openwebmail/etc/templates/pt_BR/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/pt_BR/timeout.template
 www/cgi-bin/openwebmail/etc/templates/pt_BR/viewfolder.template
-www/cgi-bin/openwebmail/etc/templates/r
 www/cgi-bin/openwebmail/etc/templates/ro/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/ro/chpwd.template
 www/cgi-bin/openwebmail/etc/templates/ro/chpwdconfirmmismatch.template
@@ -547,6 +575,7 @@ www/cgi-bin/openwebmail/etc/templates/ro/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/ro/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/ro/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/ro/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/ro/timeout.template
 www/cgi-bin/openwebmail/etc/templates/ro/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/ru/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/ru/chpwd.template
@@ -574,6 +603,7 @@ www/cgi-bin/openwebmail/etc/templates/ru/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/ru/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/ru/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/ru/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/ru/timeout.template
 www/cgi-bin/openwebmail/etc/templates/ru/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/sk/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/sk/chpwd.template
@@ -601,6 +631,7 @@ www/cgi-bin/openwebmail/etc/templates/sk/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/sk/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/sk/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/sk/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/sk/timeout.template
 www/cgi-bin/openwebmail/etc/templates/sk/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/sv/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/sv/chpwd.template
@@ -628,6 +659,7 @@ www/cgi-bin/openwebmail/etc/templates/sv/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/sv/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/sv/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/sv/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/sv/timeout.template
 www/cgi-bin/openwebmail/etc/templates/sv/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/uk/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/uk/chpwd.template
@@ -655,6 +687,7 @@ www/cgi-bin/openwebmail/etc/templates/uk/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/uk/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/uk/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/uk/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/uk/timeout.template
 www/cgi-bin/openwebmail/etc/templates/uk/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/chpwd.template
@@ -682,6 +715,7 @@ www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/timeout.template
 www/cgi-bin/openwebmail/etc/templates/zh_CN.GB2312/viewfolder.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/addressbook.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/chpwd.template
@@ -709,12 +743,15 @@ www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/readmessage.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/rebuildfailed.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/sessiontimeout.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/spellcheck.template
+www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/timeout.template
 www/cgi-bin/openwebmail/etc/templates/zh_TW.Big5/viewfolder.template
 www/cgi-bin/openwebmail/etc/users.conf/SAMPLE
+www/cgi-bin/openwebmail/etc/users.conf/guest
 www/cgi-bin/openwebmail/filelock.pl
 www/cgi-bin/openwebmail/maildb.pl
 www/cgi-bin/openwebmail/mailfilter.pl
 www/cgi-bin/openwebmail/mime.pl
+www/cgi-bin/openwebmail/openwebmail-folder.pl
 www/cgi-bin/openwebmail/openwebmail-main.pl
 www/cgi-bin/openwebmail/openwebmail-prefs.pl
 www/cgi-bin/openwebmail/openwebmail-read.pl
@@ -730,14 +767,17 @@ www/cgi-bin/openwebmail/uty/filelock.pl.diff
 www/cgi-bin/openwebmail/uty/makedb.pl
 www/cgi-bin/openwebmail/uty/migrate.pl
 www/cgi-bin/openwebmail/uty/mktgz.sh
+www/cgi-bin/openwebmail/uty/notify.sh
 www/cgi-bin/openwebmail/uty/openwebmail.conf.diff
 www/cgi-bin/openwebmail/uty/pamtest.pl
+www/cgi-bin/openwebmail/uty/wrapsuid.pl
 www/cgi-bin/openwebmail/vacation.pl
 www/data/openwebmail/doc/RedHat-README.txt
 www/data/openwebmail/doc/changes.txt
 www/data/openwebmail/doc/copyright.txt
 www/data/openwebmail/doc/faq.txt
 www/data/openwebmail/doc/memory.usage
+www/data/openwebmail/doc/owmvirtual.txt
 www/data/openwebmail/doc/readme.txt
 www/data/openwebmail/images/backgrounds/Cursive.gif
 www/data/openwebmail/images/backgrounds/DSLab.gif
@@ -843,6 +883,55 @@ www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/unread.a.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/unread.gif
 www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional/up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/addrbook.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/addrbook.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/attach.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/backtofolder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/big52gb.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/blockemail.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/blockrelay.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/compose.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/download.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/download.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/download.s.ow.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/editdraft.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/export.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/filtersetup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/first-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/first.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/folder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/follow.down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/follow.up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/forward.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/forwardasatt.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/gb2big5.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/group.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/import.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/import.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/important.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/last-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/last.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/left-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/logout.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/pop3.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/pop3setup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/prefs.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/print.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/read.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/read.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/refresh.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/reply.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/replyall.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/right-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/trash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/unread.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/unread.gif
+www/data/openwebmail/images/iconsets/Cool3D.Danish/up.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/addrbook.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.English/attach.gif
@@ -941,6 +1030,55 @@ www/data/openwebmail/images/iconsets/Cool3D.Francais/trash.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/unread.a.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/unread.gif
 www/data/openwebmail/images/iconsets/Cool3D.Francais/up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/addrbook.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/addrbook.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/attach.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/backtofolder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/big52gb.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/blockemail.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/blockrelay.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/clearaddress.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/compose.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/download.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/download.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/download.s.ow.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/editdraft.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/editfroms.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/export.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/filtersetup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/first-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/first.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/folder.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/follow.down.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/follow.up.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/forward.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/forwardasatt.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/gb2big5.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/group.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/import.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/import.s.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/important.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/last-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/last.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/left-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/left.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/logout.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/pop3.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/pop3setup.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/prefs.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/print.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/read.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/read.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/refresh.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/reply.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/replyall.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/right-grey.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/right.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/trash.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/unread.a.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/unread.gif
+www/data/openwebmail/images/iconsets/Cool3D.Korean/up.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/addrbook.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/addrbook.s.gif
 www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian/attach.gif
@@ -1263,8 +1401,10 @@ www/data/openwebmail/yougotmail.wav
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Spanish
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Slovak
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Portuguese.Brazilian
+@dirrm www/data/openwebmail/images/iconsets/Cool3D.Korean
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Francais
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.English
+@dirrm www/data/openwebmail/images/iconsets/Cool3D.Danish
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Chinese.Traditional
 @dirrm www/data/openwebmail/images/iconsets/Cool3D.Catalan
 @dirrm www/data/openwebmail/images/iconsets/Cool3D
