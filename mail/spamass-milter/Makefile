@@ -36,6 +36,8 @@ WITH_LDAP=yes
 
 .if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
 USE_OPENLDAP=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
 .if !defined(WITH_SENDMAIL_BASE) && \
