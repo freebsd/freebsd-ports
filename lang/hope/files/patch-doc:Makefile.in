@@ -1,0 +1,19 @@
+--- doc/Makefile.in.orig	Sat Apr 17 04:14:06 1999
++++ doc/Makefile.in	Tue Sep 25 00:12:51 2001
+@@ -58,7 +58,7 @@
+ 	sed -n 's/^#define[ 	][ 	]*\(M[IA][NX]PREC\)[ 	][ 	]*\([0-9]*\).*/\\newcommand{\\\1}{\2}/p' ../src/op.h >$@
+ 
+ ../src/op.h:
+-	cd ../src; make op.h
++	cd ../src; $(MAKE) op.h
+ 
+ # can't use echo here as BSD and SYSV versions treat backslashes differently.
+ Standard.tex: ../lib/Standard.hop h2l.awk
+@@ -83,6 +83,7 @@
+ 	for file in $(docs); do gzip <$$file >$(docdir)/$$file.gz; done
+ 	$(INSTALL) -d $(htmldir)
+ 	for dir in $(dirs); do rm -rf $(htmldir)/$$dir; done
++	for dir in $(dirs); do rm -rf $$dir/*.pl $$dir/WARNINGS; done
+ 	cp -r $(dirs) $(htmldir)
+ 	# cp $(src_srcs) $(srcdir)
+ 
