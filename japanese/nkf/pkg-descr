@@ -1,0 +1,15 @@
+Nkf is a yet another kanji code converter among networks, hosts and
+terminals.  It converts input kanji code to designated kanji code such
+as 7-bit JIS, shifted-JIS or EUC.
+
+One of the most unique facicility of nkf is the guess of the input
+kanji code.  It currently recognizes 7-bit JIS, shifted-JIS and EUC.
+So users needn't the input kanji code specification.
+
+The original author is Itaru Ichikawa (ichikawa@flab.fujitsu.co.jp).
+This port for FreeBSD includes patches posted to fj.sources by
+Kusakabe Youichi (void@merope.pleiades.or.jp) and NIDE Naoyuki
+(nide@ics.nara-wu.ac.jp).
+
+- Satoshi
+(asami@cs.berkeley.edu)
