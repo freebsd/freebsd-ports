@@ -6632,6 +6632,7 @@ p5-Data-Dump	ports/devel/p5-Data-Dump
 p5-Data-Dump-Streamer	ports/devel/p5-Data-Dump-Streamer
 p5-Data-DumpXML	ports/devel/p5-Data-DumpXML
 p5-Data-Dumper	ports/devel/p5-Data-Dumper
+p5-Data-Dumper-Simple	ports/devel/p5-Data-Dumper-Simple
 p5-Data-Flow	ports/devel/p5-Data-Flow
 p5-Data-FormValidator	ports/textproc/p5-Data-FormValidator
 p5-Data-HexDump	ports/devel/p5-Data-HexDump
