@@ -1,31 +1,62 @@
 bin/AutoSearch
 bin/WebSearch
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/SearchResult.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AOL/Classifieds/Employment.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Dejanews.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Gopher.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/HotBot.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Lycos.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Magellan.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/PLweb.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/SFgate.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Verity.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/WebCrawler.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Yahoo.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedNews.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedWeb.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Careers.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Intranet.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/News.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Web.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Crawler.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Dice.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Euroseek.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite/News.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/ExciteForWebServers.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Fireball.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/FolioViews.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/GoTo.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Google.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Gopher.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/HeadHunter.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/HotFiles.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/Companies.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/Email.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/News.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek/Web.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Livelink.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/LookSmart.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Lycos.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Lycos/Pages.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Lycos/Sites.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/MSIndexServer.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Magellan.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/MetaCrawler.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Metapedia.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Monster.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/NetFind.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/NorthernLight.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/OpenDirectory.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/PLweb.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/SFgate.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Search97.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Snap.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Verity.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/WebCrawler.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Yahoo/Classifieds/Employment.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/ZDNet.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AOL/Classifieds
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AOL
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Infoseek
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Lycos
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Yahoo/Classifieds
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Yahoo
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
