@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/ \
+MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/:db \
 		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/evolution
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		db-3.1.17.tar.gz
+		db-3.1.17.tar.gz:db
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -49,7 +49,7 @@ PLIST_SUB=	PILOT:=""
 PLIST_SUB=	PILOT:="@comment "
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-pthread -L${LOCALBASE}/lib"
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
