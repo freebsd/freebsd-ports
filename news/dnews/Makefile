@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dnews
-PORTVERSION=	5.5b3
+PORTVERSION=	5.5h2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.netwinsite.com/pub/dnews/
-DISTNAME=	dnews55b3_freebsd4
+DISTNAME=	dnews55h2_freebsd4
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
