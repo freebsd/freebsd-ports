@@ -1,0 +1,20 @@
+--- Makefile.orig	Thu May 27 08:46:10 2004
++++ Makefile	Mon Aug 16 10:27:36 2004
+@@ -27,7 +27,7 @@
+ 
+ GKRELL1FLAG=1
+ #find out if we have gkrellm 2 or 1 (from the gtk+ version)
+-GKRELL1FLAG=$(shell bash -c 'pkg-config gtk+-2.0 --cflags &>/dev/null && echo 0')
++GKRELL1FLAG=$(shell sh -c 'pkg-config gtk+-2.0 --cflags >/dev/null && echo 0')
+ GKRELLTOP= gkrelltop.so
+ OBJ = top_three.o gkrelltop.o 
+ 
+@@ -65,7 +65,7 @@
+ LIBSD = `pkg-config glib-2.0 --libs`
+ endif
+ INSTALLDIRD=$(HOME)/.gkrellm2/plugins-gkrellmd
+-CCD = gcc $(CFLAGSD)
++CCD = gcc -I${X11BASE}/include $(CFLAGSD)
+ OBJD = gkrelltopd.o top_three.o
+ 
+ DUMMY_VAR := $(shell ./configure $(CONFIGURE_ARGS))
