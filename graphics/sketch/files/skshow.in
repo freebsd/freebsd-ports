@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec @PREFIX@/bin/python @PREFIX@/share/sketch/skshow.py $@

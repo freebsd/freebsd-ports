@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sketch
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.sourceforge.net/sketch/
 
@@ -21,6 +21,7 @@ SKETCHDIR=	${PREFIX}/share/sketch
 SKETCHDOCDIR=	${PREFIX}/share/doc/sketch
 SKETCHDOCS=	BUGS Doc NEWS PROJECTS README TODO
 SKETCHEXDIR=	${PREFIX}/share/examples/sketch
+SKETCHSCRIPTS=	finishinst.py sk2ps.py sketch.py skshow.py
 
 post-patch:
 	@${PERL} -pi -e "s;%%PORTSDIR%%;${PORTSDIR};" ${WRKSRC}/setup.py
@@ -37,7 +38,7 @@ do-install:
 	(cd ${WRKSRC}; ${TAR} -cf - -X ${FILESDIR}/excludelist ${dir}) | \
 	    (cd ${SKETCHDIR}; ${TAR} xf -)
 .endfor
-	(cd ${WRKSRC}; ${INSTALL_SCRIPT} finishinst.py sk2ps.py sketch.py ${SKETCHDIR})
+	(cd ${WRKSRC}; ${INSTALL_SCRIPT} ${SKETCHSCRIPTS} ${SKETCHDIR})
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${SKETCHDOCDIR}
 	(cd ${WRKSRC}; ${TAR} cf - ${SKETCHDOCS}) | (cd ${SKETCHDOCDIR}; ${TAR} xf -)
@@ -45,9 +46,11 @@ do-install:
 	@${MKDIR} ${SKETCHEXDIR}
 	(cd ${WRKSRC}/Examples; ${TAR} cf - .) | (cd ${SKETCHEXDIR}; ${TAR} xf -)
 	(cd ${SKETCHDIR}; python finishinst.py)
-	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
-	${CHMOD} ${BINMODE} ${PREFIX}/bin/sketch
 	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sk2ps.in > ${PREFIX}/bin/sk2ps
 	${CHMOD} ${BINMODE} ${PREFIX}/bin/sk2ps
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/sketch.in > ${PREFIX}/bin/sketch
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/sketch
+	${SED} -e "s|@PREFIX@|${PREFIX}|g" < ${FILESDIR}/skshow.in > ${PREFIX}/bin/skshow
+	${CHMOD} ${BINMODE} ${PREFIX}/bin/skshow
 
 .include <bsd.port.mk>
