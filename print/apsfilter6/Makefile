@@ -9,7 +9,7 @@ PORTNAME=	apsfilter
 PORTVERSION=	6.0.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
-DISTFILES=	apsfilter-current-09.09.2000.tar.bz2
+DISTFILES=	apsfilter-current-09.12.2000.tar.bz2
 
 MAINTAINER=	andreas@FreeBSD.org
 
@@ -58,10 +58,6 @@ post-clean:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
-.else
-post-install:
-	@${MKDIR} ${PREFIX}/apsfilter/filter
-	@${TOUCH} ${PREFIX}/apsfilter/filter/.keep_me
 .endif
 
 .include <bsd.port.mk>

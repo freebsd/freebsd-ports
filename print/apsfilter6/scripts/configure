@@ -149,8 +149,6 @@ if [ "$BATCH" = "yes" ]; then
 	exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 fi
 echo "post-install:"
-echo "	@\${MKDIR} ${PREFIX}/apsfilter/filter"
-echo "	@touch ${PREFIX}/apsfilter/filter/.keep_me"
  echo "	@\${ECHO} \"========================================================\""
  echo "	@\${ECHO} \"************ Post Installation Tasks *******************\""
  echo "	@\${ECHO} \"========================================================\""
@@ -169,4 +167,9 @@ fi
  echo "	@\${ECHO} \"apply the patch for lpr.c, see file INSTALL !!!         \""
  echo "	@\${ECHO} \"--------------------------------------------------------\""
  echo "	@\${ECHO} \"*** Printer installation / apsfilter setup         ***  \""
- echo "	@\${ECHO} \"    cd ${PREFIX}/share/apsfilter; ./SETUP                     \""
+ echo "	@\${ECHO} \"    cd ${PREFIX}/share/apsfilter; ./SETUP               \""
+ echo "	@\${ECHO} \"--------------------------------------------------------\""
+ echo "	@\${ECHO} \"*** In any case of trouble please read             ***  \""
+ echo "	@\${ECHO} \"   FAQ, HOWTO-BUGREPORTS, TROUBLESHOOTING               \""
+ echo "	@\${ECHO} \"   under ${PREFIX}/share/doc/apsfilter/                 \""
+ echo "	@\${ECHO} \"   or visit http://www.apsfilter.org/support.html       \""
