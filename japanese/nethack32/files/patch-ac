@@ -5,7 +5,7 @@
  # by issei(94/6/12)
  #
 -CFLAGS = -g -I../include -I/usr/local/X11R6/include
-+CFLAGS = -O2 -I../include -I/usr/local/X11R6/include
++CFLAGS = -O2 -I../include -I/usr/X11R6/include
  LFLAGS =
  
  
