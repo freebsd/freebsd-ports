@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctpp
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://www.reki.ru/products/ctpp/download/
 
