@@ -21,16 +21,16 @@ USE_GMAKE=	yes
 MAN8=		lspci.8 setpci.8 update-pciids.8
 
 pre-everything::
-	@${ECHO} ""
-	@${ECHO} "              W  A  R  N  I  N  G"
-	@${ECHO} "************************************************"
-	@${ECHO} "* pciutils requires that you have your kernel  *"
-	@${ECHO} "* sources installed. If your kernel sources    *"
-	@${ECHO} "* are somewhere other than /usr/src/sys, you   *"
-	@${ECHO} "* may set the FREEBSD_SYS variable to the      *"
-	@${ECHO} "* correct path.                                *"
-	@${ECHO} "************************************************"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "              W  A  R  N  I  N  G"
+	@${ECHO_MSG} "************************************************"
+	@${ECHO_MSG} "* pciutils requires that you have your kernel  *"
+	@${ECHO_MSG} "* sources installed. If your kernel sources    *"
+	@${ECHO_MSG} "* are somewhere other than /usr/src/sys, you   *"
+	@${ECHO_MSG} "* may set the FREEBSD_SYS variable to the      *"
+	@${ECHO_MSG} "* correct path.                                *"
+	@${ECHO_MSG} "************************************************"
+	@${ECHO_MSG} ""
 
 do-install:
 	@${INSTALL_MAN} ${WRKSRC}/lspci.8 ${PREFIX}/man/man8
