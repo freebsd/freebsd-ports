@@ -5,19 +5,13 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../graphics/gd
+MASTERDIR=	${.CURDIR}/../../graphics/gd2
 CATEGORIES=	ukrainian
 
-MAINTAINER=	mike@LITech.lviv.ua
+MAINTAINER=	mi@aldan.algebra.com
 
-EXTRA_PATCHES+=	${.CURDIR}/files/patch-gdfontg.c \
-		${.CURDIR}/files/patch-gdfontl.c \
-		${.CURDIR}/files/patch-gdfontl.h \
-		${.CURDIR}/files/patch-gdfontmb.c \
-		${.CURDIR}/files/patch-gdfontmb.h \
-		${.CURDIR}/files/patch-gdfonts.c \
-		${.CURDIR}/files/patch-gdfonts.h \
-		${.CURDIR}/files/patch-gdfontt.c \
-		${.CURDIR}/files/patch-gdfontt.h
+BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/x11-fonts/geminifonts:fetch
+GD_FONTS=	${DISTDIR}/x-koi8u.tgz koi6x10.bdf koi6x13.bdf \
+		koi10x16b.bdf koi9x15.bdf koi10x20.bdf
 
 .include "${MASTERDIR}/Makefile"
