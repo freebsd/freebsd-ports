@@ -1,6 +1,6 @@
 bin/konversation
-share/applnk/Internet/konversation.desktop
-share/apps/konversation/images/close_pane.png
+share/applications/kde/konversation.desktop
+share/apps/konversation/eventsrc
 share/apps/konversation/images/led_blue_off.png
 share/apps/konversation/images/led_blue_on.png
 share/apps/konversation/images/led_green_off.png
@@ -10,11 +10,19 @@ share/apps/konversation/images/led_red_on.png
 share/apps/konversation/images/led_yellow_off.png
 share/apps/konversation/images/led_yellow_on.png
 share/apps/konversation/konversationui.rc
+share/icons/hicolor/16x16/apps/konversation.png
+share/icons/hicolor/32x32/apps/konversation.png
 share/locale/de/LC_MESSAGES/konversation.mo
+share/locale/it/LC_MESSAGES/konversation.mo
+share/locale/ko/LC_MESSAGES/konversation.mo
 share/locale/ru/LC_MESSAGES/konversation.mo
+share/locale/sl/LC_MESSAGES/konversation.mo
 share/locale/sv/LC_MESSAGES/konversation.mo
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @dirrm share/apps/konversation/images
 @dirrm share/apps/konversation
-@unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/applnk 2>/dev/null || true
