@@ -21,7 +21,8 @@
 %%PORTDOCS%%%%DOCDIR%%/PIC.relaybad
 %%PORTDOCS%%%%DOCDIR%%/PIC.relaygood
 %%PORTDOCS%%%%DOCDIR%%/PIC.rem2local
-%%PORTDOCS%%%%DOCDIR%%/TLS.readme
+%%PORTDOCS%%%%DOCDIR%%/README.auth
+%%PORTDOCS%%%%DOCDIR%%/SMTP_AUTH+TLS.readme
 boot/home
 boot/home+df
 boot/proc
