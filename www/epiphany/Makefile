@@ -7,6 +7,7 @@
 
 PORTNAME=	epiphany
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.4.1"
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.5"
 
 MOZILLA=	mozilla-gtk2
 HEADERS_SUFX=
