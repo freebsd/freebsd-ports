@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xzx
-# Version required:     2.8.1
+# Version required:     2.9.0
 # Date created:         13 Nov 1997
 # Whom:                 Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.11 1999/06/21 11:06:58 sheldonh Exp $
+# $Id: Makefile,v 1.12 1999/06/23 13:19:27 sheldonh Exp $
 #
 
 DISTNAME=	xzx-2.9.0
