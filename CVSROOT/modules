@@ -7073,6 +7073,7 @@ tn5250		ports/net/tn5250
 tnef		ports/converters/tnef
 tnef2txt	ports/textproc/tnef2txt
 togl		ports/graphics/togl
+toolame		ports/audio/toolame
 toolbox		ports/x11-wm/toolbox
 tools		src/tools
 top		src/usr.bin/top
