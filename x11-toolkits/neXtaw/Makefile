@@ -3,7 +3,7 @@
 # Date created:		16 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1997/11/06 08:55:35 tg Exp $
+# $Id: Makefile,v 1.7 1998/08/07 22:56:38 asami Exp $
 #
 
 DISTNAME=	neXtaw-0.5.1
@@ -29,6 +29,9 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/neXtaw
 	${INSTALL_DATA} ${WRKSRC}/README.neXtaw ${PREFIX}/share/doc/neXtaw
 .endif
-	${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libneXtaw.so.6.1 ${PREFIX}/lib/libneXtaw.so; \
+	fi
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
