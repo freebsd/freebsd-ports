@@ -7,7 +7,7 @@
 
 PORTNAME=		linux_base
 PORTVERSION=		7.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -85,7 +85,7 @@ RPM_COMPAT_LIBSTDCXX=	compat-libstdc++-6.2-2.9.0.14.i386.rpm
 RPM_SETSERIAL=		setserial-2.17-2.i386.rpm
 RPM_SETUP=		setup-2.4.7-1.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-5.i386.rpm
-UPDATES+=		libstdc++-2.96-112.7.1.i386.rpm
+UPD_SET2+=		libstdc++-2.96-112.7.1.i386.rpm
 .else
 RPM_BZIP2=		bzip2-1.0.1-4.alpha.rpm
 RPM_FREETYPE=		freetype-2.0.1-5.alpha.rpm
@@ -95,7 +95,7 @@ RPM_COMPAT_LIBSTDCXX=
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.0.3-21.alpha.rpm
-UPDATES+=
+UPD_SET2+=
 .endif
 
 DBPATH=			/var/lib/rpm
