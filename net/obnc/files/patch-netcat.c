@@ -1,5 +1,5 @@
---- netcat.c.orig	Tue Feb 19 22:42:04 2002
-+++ netcat.c	Thu Feb 21 23:37:07 2002
+--- netcat.c.orig	Tue Feb 19 23:42:04 2002
++++ netcat.c	Wed Jul 30 11:41:11 2003
 @@ -37,6 +37,9 @@
  #include <sys/un.h>
  
@@ -10,7 +10,7 @@
  #include <arpa/telnet.h>
  
  #include <err.h>
-@@ -53,6 +56,7 @@
+@@ -53,10 +56,12 @@
  #define PORT_MAX 65535
  
  /* Command Line Options */
@@ -18,7 +18,12 @@
  int	iflag;					/* Interval Flag */
  int	kflag;					/* More than one connect */
  int	lflag;					/* Bind to local port */
-@@ -84,10 +88,16 @@
+ int	nflag;					/* Dont do name lookup */
++int	oflag;					/* Once only: stop on EOF */
+ char   *pflag;					/* Localport flag */
+ int	rflag;					/* Random ports flag */
+ char   *sflag;					/* Source Address */
+@@ -84,10 +89,16 @@
  int	unix_listen(char *);
  void	usage(int);
  
@@ -36,7 +41,7 @@
  	char *host, *uport, *endp;
  	struct addrinfo hints;
  	struct servent *sv;
-@@ -99,12 +109,13 @@
+@@ -99,12 +110,13 @@
  
  	ret = 1;
  	s = 0;
@@ -47,11 +52,11 @@
  	sv = NULL;
  
 -	while ((ch = getopt(argc, argv, "46Uhi:klnp:rs:tuvw:x:z")) != -1) {
-+	while ((ch = getopt(argc, argv, "46e:EUhi:klnp:rs:tuvw:x:z")) != -1) {
++	while ((ch = getopt(argc, argv, "46e:EUhi:klnop:rs:tuvw:x:z")) != -1) {
  		switch (ch) {
  		case '4':
  			family = AF_INET;
-@@ -115,6 +126,21 @@
+@@ -115,6 +127,21 @@
  		case 'U':
  			family = AF_UNIX;
  			break;
@@ -73,7 +78,17 @@
  		case 'h':
  			help();
  			break;
-@@ -422,6 +448,12 @@
+@@ -132,6 +159,9 @@
+ 		case 'n':
+ 			nflag = 1;
+ 			break;
++		case 'o':
++			oflag = 1;
++			break;
+ 		case 'p':
+ 			pflag = optarg;
+ 			break;
+@@ -422,6 +452,12 @@
  		if ((s = socket(res0->ai_family, res0->ai_socktype,
  		    res0->ai_protocol)) < 0)
  			continue;
@@ -86,7 +101,7 @@
  
  		/* Bind to a local port or source address if specified */
  		if (sflag || pflag) {
-@@ -497,6 +529,12 @@
+@@ -497,6 +533,12 @@
  		ret = setsockopt(s, SOL_SOCKET, SO_REUSEPORT, &x, sizeof(x));
  		if (ret == -1)
  			err(1, NULL);
@@ -99,7 +114,17 @@
  
  		if (bind(s, (struct sockaddr *)res0->ai_addr,
  		    res0->ai_addrlen) == 0)
-@@ -690,7 +728,13 @@
+@@ -561,7 +603,8 @@
+ 		}
+ 
+ 		if (pfd[1].revents & POLLIN) {
+-			if ((n = read(wfd, buf, sizeof(buf))) < 0) {
++			if ((n = read(wfd, buf, sizeof(buf))) < 0 ||
++			    (oflag && n == 0)) {
+ 				return;
+ 			} else
+ 				if((ret = atomicio(write, nfd, buf, n)) != n)
+@@ -690,7 +733,13 @@
  	usage(0);
  	fprintf(stderr, "\tCommand Summary:\n\
  	\t-4		Use IPv4\n\
@@ -114,7 +139,7 @@
  	\t-U		Use UNIX domain socket\n\
  	\t-h		This help text\n\
  	\t-i secs\t	Delay interval for lines sent, ports scanned\n\
-@@ -707,13 +751,42 @@
+@@ -707,13 +756,42 @@
  	\t-x addr[:port]\tSpecify socks5 proxy address and port\n\
  	\t-z		Zero-I/O mode [used for scanning]\n\
  	Port numbers can be individual or ranges: lo-hi [inclusive]\n");
