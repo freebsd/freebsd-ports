@@ -146,6 +146,7 @@
     SUBDIR += linux-lesstif-ns
     SUBDIR += linux-mozilla
     SUBDIR += linux-opera
+    SUBDIR += linux-opera7
     SUBDIR += linux-phoenix
     SUBDIR += logtools
     SUBDIR += lws
