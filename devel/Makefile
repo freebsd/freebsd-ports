@@ -6,6 +6,7 @@
     SUBDIR += ORBit
     SUBDIR += SN
     SUBDIR += SWIG
+    SUBDIR += SWIG-devel
     SUBDIR += SpecTcl
     SUBDIR += a2dev
     SUBDIR += adabroker
