@@ -25,8 +25,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
 GNU_CONFIGURE=	yes
-# USE_LIBTOOL=	yes
-# LIBTOOLFLAGS=	# none
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lintl"
 INSTALLS_SHLIB=	yes
