@@ -17,9 +17,9 @@ MASTER_SITES=	ftp://ftp.linuxpowered.com/pub/Vorbis/unix/ \
 
 MAINTAINER=	naddy@FreeBSD.org
 
-WANT_ESOUND=	yes
-
-GNU_CONFIGURE=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 .if defined(NOPORTDOCS)
@@ -32,12 +32,13 @@ MAN5=		libao.conf.5
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
-PLIST_SUB=	ESOUND=""
+.if ${HAVE_GNOME:Mesound}
+USE_GNOME+=	esound
+PLIST_SUB+=	ESOUND=""
+PKGNAMESUFFIX=	-esound
 .else
-PLIST_SUB=	ESOUND="@comment "
 CONFIGURE_ARGS+= --disable-esd
+PLIST_SUB+=	ESOUND="@comment "
 .endif
 
 # XXX  This needs a better check.

@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Aug 13 13:39:05 2001
-+++ configure	Tue Aug 14 17:40:12 2001
-@@ -1510,7 +1510,7 @@
+--- configure.orig	Fri Jul 19 16:16:55 2002
++++ configure	Fri Aug 23 16:47:25 2002
+@@ -5386,6 +5386,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5412,7 +5413,7 @@
                  PROFILE="-v -xpg -g -xO4 -fast -native -fsimple -xcg92 -Dsuncc" ;;
          *)
                  DEBUG="-g"
@@ -12,9 +20,9 @@ $FreeBSD$
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -1525,9 +1525,9 @@
-                 CFLAGS="-O20 -ffast-math -D__NO_MATH_INLINES -fsigned-char -mv8"
-                 PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
+@@ -5432,9 +5433,9 @@
+                 CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char $SILLY_CARBON_PATH"
+                 PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char $SILLY_CARBON_PATH" ;;
          *)
 -                DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
 -                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
