@@ -18,10 +18,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=		yasu@asuka.net
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common \
-			${LOCALBASE}/share/doc/cmpsfont/READ.ME:${PORTSDIR}/print/cmpsfont
+			${LOCALBASE}/share/doc/cmpsfont/README:${PORTSDIR}/print/cmpsfont
 LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		kpsewhich:${PORTSDIR}/japanese/ptex-common \
-			${LOCALBASE}/share/doc/cmpsfont/READ.ME:${PORTSDIR}/print/cmpsfont
+			${LOCALBASE}/share/doc/cmpsfont/README:${PORTSDIR}/print/cmpsfont
 
 MAN1=			dvipdfm.1
 
