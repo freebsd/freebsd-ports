@@ -1,38 +1,21 @@
---- configure.h.dist	Wed Nov 15 02:59:28 1995
-+++ configure.h	Sat Jan 20 10:46:27 1996
-@@ -21,12 +21,11 @@
- #ifdef RENAME_FVWM2
- #define FVWM fvwm2
- #define FVWMRC ".fvwm2rc"
--#define FVWMDIR "/usr/lib/X11/fvwm2"
--/* #define FVWMDIR "/usr/local/X11R6/lib/X11/fvwm2" */
-+#define FVWMDIR "/usr/X11R6/lib/X11/fvwm2"
- #else
- #define FVWM fvwm
- #define FVWMRC ".fvwmrc"
--#define FVWMDIR "/usr/lib/X11/fvwm"
-+#define FVWMDIR "/usr/X11R6/lib/X11/fvwm"
- #endif /* RENAME_FVWM2 */
- 
- /***************************************************************************
-@@ -49,8 +48,7 @@
- /* #define FVWM_MANSUFFIX 1 */
- 
- /* Where do you want the fvwm icons to go. */
--#define FVWM_ICONDIR "/usr/include/X11/bitmaps:/usr/include/X11/pixmaps"
--/* #define FVWM_ICONDIR "/usr/local/X11R6/include/X11/bitmaps:/usr/local/X11R6/include/X11/pixmaps" */
-+#define FVWM_ICONDIR "/usr/X11R6/include/X11/bitmaps:/usr/X11R6/include/X11/pixmaps"
- 
- /* What compiler over-ride's do you want. */
- /* #define FVWM_COMPILER gcc -g -Wall */
-@@ -192,8 +190,8 @@
- /***************************************************************************
-  * Define if you have uname. Otherwise, define gethostname
-  ***************************************************************************/
--#define HAVE_UNAME 1
--/* #define HAVE_GETHOSTNAME 1 */
-+/* #define HAVE_UNAME 1 */
-+#define HAVE_GETHOSTNAME 1
- 
- #endif /* End of do-it-yourself OS support section */
- 
+*** configure.h.dist	Sat Feb 17 09:13:18 1996
+--- configure.h	Mon Mar 11 18:50:57 1996
+***************
+*** 47,54 ****
+  /***************************************************************************
+   * Define if you have uname. Otherwise, define gethostname
+   ***************************************************************************/
+! #define HAVE_UNAME 1
+! /* #define HAVE_GETHOSTNAME 1 */
+  
+  #endif /* End of do-it-yourself OS support section */
+  
+--- 47,54 ----
+  /***************************************************************************
+   * Define if you have uname. Otherwise, define gethostname
+   ***************************************************************************/
+! /* #define HAVE_UNAME 1 */
+! #define HAVE_GETHOSTNAME 1
+  
+  #endif /* End of do-it-yourself OS support section */
+  
