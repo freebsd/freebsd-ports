@@ -24,7 +24,11 @@ d_rename='define'
 d_symlink='define'
 d_whoami='undef'
 d_poll='define'
+d_select='define'
 d_mmap='define'
+d_socket='define'
+d_netdb='define'
+d_netinet_in='define'
 d_inttypes='define'
 d_nointtypes='undef'
 n='-n'
@@ -40,8 +44,10 @@ cat
 chgrp
 chmod
 cp
+dirname
 echo
 expr
+egrep
 grep
 fgrep
 head
@@ -78,6 +84,7 @@ date
 emacs
 execmail
 finger
+gpg
 ispell
 line
 lint
@@ -110,7 +117,7 @@ vi
 test='/bin/test'
 inews=''
 ispell="${PREFIX}/bin/ispell"
-egrep=''
+egrep='/usr/bin/egrep'
 more='/usr/bin/more'
 pg='pg'
 Mcc='Mcc'
@@ -153,7 +160,7 @@ compress='/usr/bin/compress'
 execmail=''
 libswanted='sun intl nls c_s'
 noaddlib='yes'
-c_date='Wed Sep  8 21:06:00 MSD 1999'
+c_date='Sat Jan 22 15:43:26 MSK 2000'
 d_ascii='undef'
 d_broke_ctype='undef'
 d_calendar='define'
@@ -168,7 +175,7 @@ d_domname='define'
 d_usegetdom='undef'
 d_errlst='define'
 d_flock='define'
-d_dotlock='undef'
+d_dotlock='define'
 d_fcntlock='undef'
 has_flock='define'
 has_fcntl='define'
@@ -298,8 +305,10 @@ d_bsd='define'
 locale='locale'
 d_pgp='define'
 pgp="${PREFIX}/bin/pgp"
-pgp_path="${PREFIX}/bin/pgp"
-special_path='/usr/local/bin'
+pgp2_path="${PREFIX}/bin/pgp"
+pgp5_dir='none'
+gpg_path='none'
+special_path='${PREFIX}/bin'
 CONFIG=true
 EOF
 

@@ -15,6 +15,7 @@ bin/readmsg
 lib/prlong
 lib/elm.mimecharsets
 lib/elm.mimetypes
+lib/elmcharset
 lib/elmrc-info
 lib/elm-help.0
 lib/elm-help.1
