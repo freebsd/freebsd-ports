@@ -1,0 +1,13 @@
+freeglut is a completely OpenSourced alternative to the OpenGL Utility
+Toolkit (GLUT) library. GLUT was originally written by Mark Kilgard to
+support the sample programs in the second edition OpenGL 'RedBook'.
+Since then, GLUT has been used in a wide variety of practical applications
+because it is simple, universally available and highly portable.
+
+GLUT (and hence freeglut) allows the user to create and manage windows
+containing OpenGL contexts on a wide range of platforms and also read the
+mouse, keyboard and joystick functions.
+
+freeglut is released under the X-Consortium license.
+
+WWW: http://freeglut.sourceforge.net/

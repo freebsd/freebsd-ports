@@ -1,0 +1,8 @@
+bin/genfonts
+bin/genstroke
+bin/one
+include/GL/freeglut.h
+lib/libfreeglut-1.3.so.0
+lib/libfreeglut-1.3.so
+lib/libfreeglut-1.3.a
+@dirrm include/GL
