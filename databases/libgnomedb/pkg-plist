@@ -10,6 +10,7 @@ etc/gnome-vfs-2.0/modules/database-module.conf
 include/libgnomedb/gnome-db-browser.h
 include/libgnomedb/gnome-db-combo.h
 include/libgnomedb/gnome-db-config.h
+include/libgnomedb/gnome-db-connection-properties.h
 include/libgnomedb/gnome-db-connection-selector.h
 include/libgnomedb/gnome-db-control-widget.h
 include/libgnomedb/gnome-db-control.h
@@ -64,6 +65,7 @@ share/doc/libgnomedb/libgnomedb-gnome-db-stock.html
 share/doc/libgnomedb/libgnomedb-gnome-db-util.html
 share/doc/libgnomedb/libgnomedb-gnomedbbrowser.html
 share/doc/libgnomedb/libgnomedb-gnomedbcombo.html
+share/doc/libgnomedb/libgnomedb-gnomedbconnectionproperties.html
 share/doc/libgnomedb/libgnomedb-gnomedbconnectionselector.html
 share/doc/libgnomedb/libgnomedb-gnomedbcontrol.html
 share/doc/libgnomedb/libgnomedb-gnomedbcontrolwidget.html
