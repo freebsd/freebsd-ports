@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.50.20040511
+PORTVERSION=	7.51.20040602
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/750/final/en/i386/static/ \
-		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/750/final/en/i386/static/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/750/final/en/i386/static/ \
-		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/750/final/en/i386/static/ \
-		ftp://ftp.ntua.gr/pub/www/Opera/linux/750/final/en/i386/static/ \
-		http://mirrors.pmmf.hu/mirror/opera/linux/750/final/en/i386/static/ \
-		ftp://ftp.task.gda.pl/pub/opera/linux/750/final/en/i386/static/ \
-		ftp://ftp.planetmirror.com/pub/opera/linux/750/final/en/i386/static/ \
-		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/750/final/en/i386/static/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/750/final/en/i386/static/&,}
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/751/final/en/i386/static/ \
+		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/751/final/en/i386/static/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/opera/linux/751/final/en/i386/static/ \
+		ftp://ftp.tiscali.nl/pub/mirrors/opera/linux/751/final/en/i386/static/ \
+		ftp://ftp.ntua.gr/pub/www/Opera/linux/751/final/en/i386/static/ \
+		http://mirrors.pmmf.hu/mirror/opera/linux/751/final/en/i386/static/ \
+		ftp://ftp.task.gda.pl/pub/opera/linux/751/final/en/i386/static/ \
+		ftp://ftp.planetmirror.com/pub/opera/linux/751/final/en/i386/static/ \
+		http://gd.tuwien.ac.at/infosys/browsers/opera/linux/751/final/en/i386/static/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/linux/751/final/en/i386/static/&,}
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2004/-2004/}.1-static-qt.i386-en
 
