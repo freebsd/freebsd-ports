@@ -1,0 +1,28 @@
+
+$FreeBSD$
+
+--- Makefile	2001/03/14 14:45:39	1.1
++++ Makefile	2001/03/14 14:46:41
+@@ -1,9 +1,9 @@
+ 
+ VERSION = 0.0.1
+ 
+-CC = gcc
+-CFLAGS = -Wall -g
+-PREFIX = /usr/local
++CC ?= gcc
++CFLAGS += -Wall
++PREFIX ?= /usr/local
+ BINDIR = $(PREFIX)/bin
+ 
+ webresolve: webresolve.c
+@@ -17,7 +17,8 @@
+ 	rm -rf webresolve-$(VERSION)
+ 
+ install: webresolve
+-	cp webresolve splitwr $(BINDIR)
++	$(BSD_INSTALL_PROGRAM) webresolve $(BINDIR)
++	$(BSD_INSTALL_SCRIPT) splitwr $(BINDIR)
+ 
+ uninstall:
+ 	rm -f $(BINDIR)/webresolve $(BINDIR)/splitwr

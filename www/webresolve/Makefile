@@ -13,9 +13,5 @@ MASTER_SITES=	ftp://siag.nu/pub/webresolve/
 MAINTAINER=	joseph@randomnetworks.com
 
 ALL_TARGET=	webresolve
-MAKE_ARGS=	PREFIX=${PREFIX}
-
-post-install:
-	@strip ${PREFIX}/bin/webresolve
 
 .include <bsd.port.mk>
