@@ -1,7 +1,11 @@
 bin/tegclient
 bin/tegrobot
 bin/tegserver
+etc/gconf/gconf.xml.defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/teg/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/teg/%gconf.xml
 etc/gconf/schemas/teg.schemas
 share/gnome/apps/Games/teg.desktop
@@ -270,4 +274,10 @@ share/locale/pt_BR/LC_MESSAGES/teg.mo
 @dirrm share/gnome/help/teg/C
 @dirrm share/gnome/help/teg
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/teg
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps
+@dirrm etc/gconf/gconf.xml.defaults/schemas
 @dirrm etc/gconf/gconf.xml.defaults/apps/teg
+@dirrm etc/gconf/gconf.xml.defaults/apps
+@dirrm etc/gconf/gconf.xml.defaults
+@dirrm etc/gconf/schemas
+@dirrm etc/gconf

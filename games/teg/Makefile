@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	teg
-PORTVERSION=	0.11.0
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn-based strategy game for GNOME
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui lthack
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.[ch]" -type f | ${XARGS} \
-		${REINPLACE_CMD} -e 's|LIST_NEXT|TEG_LIST_NEXT|g'
+	@${GREP} -lR " LIST_NEXT" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's| LIST_NEXT| TEG_LIST_NEXT|g'
 
 .include <bsd.port.mk>
