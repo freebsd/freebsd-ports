@@ -1,3 +1,3 @@
 bin/rxvt
-share/doc/rxvt/README.ja
-@dirrm share/doc/rxvt
+share/doc/ja/rxvt/README.ja
+@dirrm share/doc/ja/rxvt
