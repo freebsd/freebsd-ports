@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.221 1999/01/29 23:59:05 billf Exp $
+# $Id: Makefile,v 1.222 1999/01/30 02:05:12 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -30,6 +30,7 @@
     SUBDIR += coda_doc
     SUBDIR += coda_intro
     SUBDIR += coda_server
+    SUBDIR += curl
     SUBDIR += cvsup
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
