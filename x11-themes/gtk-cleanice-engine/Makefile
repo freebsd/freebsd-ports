@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-cleanice-engine
-PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	elysium-project
@@ -19,7 +18,7 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gtk20
 
 THEME=		cleanice-theme-1.2.7
