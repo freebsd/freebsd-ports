@@ -5,10 +5,10 @@
   * include / library / definition
   */
 -SYS_LIBRARIES   = -lm `gtk-config --libs`
-+SYS_LIBRARIES   = -lm `gtk11-config --libs`
++SYS_LIBRARIES   = -lm `gtk12-config --libs`
  EXTRA_LIBRARIES = $(OSDEPLIB)
 -EXTRA_INCLUDES  = `gtk-config --cflags` $(OSDEPINC)
-+EXTRA_INCLUDES  = `gtk11-config --cflags` $(OSDEPINC)
++EXTRA_INCLUDES  = `gtk12-config --cflags` $(OSDEPINC)
  EXTRA_DEFINES   = $(OSDEPDEF)
  
  /*
