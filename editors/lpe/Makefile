@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://cdsmith.twu.net/opensource/lpe/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	cj@vallcom.net
+MAINTAINER=	LoRd_CJ@dalusers.com
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		intl.1:${PORTSDIR}/devel/gettext
