@@ -30,7 +30,7 @@ WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 # Assign with `+=' for slave ports
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib -lintl -lgiconv" \
+			LIBS="-L${LOCALBASE}/lib -lintl -liconv" \
 			MSGFMT=${LOCALBASE}/bin/msgfmt-new
 CONFIGURE_ARGS+=	--disable-python \
 			--without-included-gettext \

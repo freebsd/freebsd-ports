@@ -27,7 +27,7 @@ USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgiconv"
+		LIBS="-L${LOCALBASE}/lib -liconv"
 USE_GMAKE=	yes
 
 MAN1=	poedit.1

@@ -22,7 +22,7 @@ USE_GNOME=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debug
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lgiconv -lgnuregex" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv -lgnuregex" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
 		XGETTEXT=${LOCALBASE}/bin/xgettext-new
 

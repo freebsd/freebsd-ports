@@ -19,7 +19,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include ${PTHREAD_FLAGS}" \
-		LIBS="-L${PREFIX}/lib -lgiconv ${PTHREAD_LIBS}"
+		LIBS="-L${PREFIX}/lib -liconv ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/styx \
 		--datadir=${PREFIX}/share/doc/styx
 

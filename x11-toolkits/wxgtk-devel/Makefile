@@ -36,7 +36,7 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgiconv \
+		LDFLAGS="-L${LOCALBASE}/lib -liconv \
 			 -L${X11BASE}/lib" \
 		GTK_CONFIG_2_0="no"
 

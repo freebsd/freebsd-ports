@@ -37,7 +37,7 @@ SOCKSLIBS=	-lsocks5
 
 CONFIGURE_ARGS= --with-statusmenu
 CONFIGURE_ENV=	CPPFLAGS="${SOCKSFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-lgiconv ${SOCKSLIBS}" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv ${SOCKSLIBS}" \
 		CFLAGS="${CFLAGS}"
 
 pre-patch:

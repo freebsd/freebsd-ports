@@ -17,7 +17,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 do-build:
-	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -o ${WRKSRC}/siconv ${WRKSRC}/siconv.c -lgiconv
+	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib -o ${WRKSRC}/siconv ${WRKSRC}/siconv.c -liconv
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/siconv ${PREFIX}/bin
