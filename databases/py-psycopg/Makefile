@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psycopg
-PORTVERSION=	1.1.17
+PORTVERSION=	1.1.18
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -44,10 +44,10 @@ DATETIME_INC=	${PYTHON_SITELIBDIR}/mx/DateTime/mxDateTime/
 DOCSDIR=	${PREFIX}/share/doc/py-psycopg
 EXAMPLESDIR=	${PREFIX}/share/examples/py-psycopg
 
-EXAMPLES=	binary.py bool.py commit.py copy_from.py copy_from2.py \
-		copy_to.py dictfetch.py dt.py first.py integrity.py \
-		oid.py notify.py somehackers.jpg threads.py usercast.py \
-		whereareyou.jpg work.py
+EXAMPLES=	binary.py bool.py bounded.py commit.py copy_from.py \
+		copy_from2.py copy_to.py dictfetch.py dt.py first.py \
+		integrity.py interval.py notify.py oid.py somehackers.jpg \
+		threads.py usercast.py whereareyou.jpg work.py
 
 DOCS=		AUTHORS COPYING CREDITS ChangeLog FAQ INSTALL NEWS \
 		README RELEASE-1.0 SUCCESS TODO
