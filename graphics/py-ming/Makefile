@@ -24,7 +24,7 @@ MD5_FILE=	${.CURDIR}/../ming/distinfo
 WRKSRC=		${WRKDIR}/${DISTNAME}/py_ext
 MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VERSION}"
 
-EXAMPLES=	shape.py test.py ../examples/python/*.py
+EXAMPLES=	../examples/python/*.py
 
 do-extract:
 	${MKDIR} ${WRKDIR}
