@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.37 1997/08/05 09:01:53 obrien Exp $
+# $Id: Makefile,v 1.38 1997/10/01 11:27:35 obrien Exp $
 
 DISTNAME=	${PKGNAME}e
-PKGNAME=	mutt-0.84
+PKGNAME=	mutt-0.88
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
@@ -28,7 +28,7 @@ DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-8bitmime --enable-flock \
+CONFIGURE_ARGS= --enable-dsn --enable-pop --enable-flock \
 		--disable-fcntl --enable-hidden-host
 MAN1=		mutt.1
 
@@ -38,7 +38,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && chmod a+rx ${PREFIX}/share/doc/mutt
-	@${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${WRKSRC}/doc/*.html  \
+	@${INSTALL_MAN} ${WRKSRC}/doc/*.txt  \
 		${PREFIX}/share/doc/mutt
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc  \
 		${PREFIX}/share/doc/mutt)
