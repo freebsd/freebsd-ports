@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fmio
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.8
 CATEGORIES=	audio
-MASTER_SITES=	http://www.jumbo.narod.ru/src/fmio/
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+MASTER_SITES=	http://www.aliasnet.ru/~pva/src/fmio/ \
+		http://www.jumbo.narod.ru/src/fmio/
 
 MAINTAINER=	kunia@istc.kiev.ua
 COMMENT=	FM radio card manipulation utility
@@ -17,6 +17,8 @@ COMMENT=	FM radio card manipulation utility
 MAN1=		fmio.1
 MANCOMPRESSED=	no
 ONLY_FOR_ARCHS=	i386
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 pre-build:
 .if !defined(WITH_BKTR)
