@@ -8,7 +8,7 @@
 PORTNAME=	metar
 PORTVERSION=	0.4
 CATEGORIES=	astro python
-MASTER_SITES=	http://unattached.i-no.de/english/packages/
+MASTER_SITES=	http://unattached.i-no.de/pkgs/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pymetar-${PORTVERSION}
 
