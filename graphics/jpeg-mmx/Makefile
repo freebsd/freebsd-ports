@@ -3,7 +3,7 @@
 # Date created:		6 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.14 1997/07/17 15:12:43 max Exp $
+# $Id: Makefile,v 1.15 1998/04/15 21:32:49 jseger Exp $
 #
 
 DISTNAME=       jpegsrc.v6b
@@ -19,6 +19,6 @@ CONFIGURE_ARGS=	--enable-shared --enable-static
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

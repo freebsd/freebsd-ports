@@ -8,8 +8,9 @@ include/jerror.h
 include/jmorecfg.h
 include/jpeglib.h
 lib/libjpeg.a
+@exec ranlib %D/%F
 lib/libjpeg.la
 lib/libjpeg.so
-lib/libjpeg.so.9.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+lib/libjpeg.so.9
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
