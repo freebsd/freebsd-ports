@@ -1,0 +1,32 @@
+# New ports collection makefile for:	libtabe
+# Version required:	1.0
+# Date created:		1/1/00
+# Whom:			Keith Jang <jtjang@gcn.net.tw>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	libtabe-0.1-pre2
+PKGNAME=	zh-libtabe-0.1b2
+CATEGORIES=	chinese
+MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
+
+MAINTAINER=	jtjang@gcn.net.tw
+
+BUILD_DEPENDS=	${PREFIX}/lib/libdb2.a:${PORTSDIR}/databases/db
+RUN_DEPENDS=	${PREFIX}/lib/libdb2.a:${PORTSDIR}/databases/db
+
+WRKSRC=		${WRKDIR}/libtabe
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--includedir=${PREFIX}/include/tabe \
+		--with-dbinc=${PREFIX}/include/db2 \
+		--with-dblib=${PREFIX}/lib
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/tabe
+	${CP} ${WRKSRC}/doc/libtabe.sgml ${PREFIX}/share/doc/tabe
+.endif
+
+.include <bsd.port.mk>

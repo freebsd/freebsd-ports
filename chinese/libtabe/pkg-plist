@@ -1,0 +1,15 @@
+bin/tsiadd
+bin/tsidel
+bin/tsidump
+bin/tsiyindump
+include/tabe/bims.h
+include/tabe/tabe.h
+lib/libbims.a
+lib/libtabe.a
+share/doc/tabe/libtabe.sgml
+share/tabe/tsiyin/tsi.db
+share/tabe/tsiyin/yin.db
+@dirrm include/tabe
+@dirrm share/doc/tabe
+@dirrm share/tabe/tsiyin
+@dirrm share/tabe
