@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.116 1997/01/03 12:26:03 asami Exp $
+# $Id: Makefile,v 1.117 1997/01/03 13:15:05 asami Exp $
 #
 
     SUBDIR += FWF
@@ -10,7 +10,7 @@
     SUBDIR += blast
     SUBDIR += blt
     SUBDIR += bricons
-    SUBDIR += camltk
+    SUBDIR += camltk41
     SUBDIR += ctwm
     SUBDIR += dclock
     SUBDIR += etlfonts
