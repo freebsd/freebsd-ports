@@ -1,21 +1,17 @@
 #!/bin/sh
 
 echo "# Configuration at ${HOSTNAME}" > ${WRKSRC}/config.param
-echo prefix=${PREFIX} >> ${WRKSRC}/config.param
-echo def_bindir=${PREFIX}/bin >> ${WRKSRC}/config.param
-echo def_libdir=${PREFIX}/libexec/w3m >> ${WRKSRC}/config.param
-echo def_helpdir=${PREFIX}/share/doc/w3m >> ${WRKSRC}/config.param
-echo def_helpdir_ja=${PREFIX}/share/doc/ja/w3m >> ${WRKSRC}/config.param
 echo ftppass_hostnamegen=y >> ${WRKSRC}/config.param
-echo show_params=y >> ${WRKSRC}/config.param
 echo use_nntp=y >> ${WRKSRC}/config.param
-echo ansi_color=y >> ${WRKSRC}/config.param
+echo use_ansi_color=y >> ${WRKSRC}/config.param
 echo dmodel=5 >> ${WRKSRC}/config.param
 echo use_ssl_verify=y >> ${WRKSRC}/config.param
 echo ded=/usr/bin/vi >> ${WRKSRC}/config.param
 echo dmail=/usr/bin/mail >> ${WRKSRC}/config.param
-echo dbrowser=${PREFIX}/bin/netscape >> ${WRKSRC}/config.param
-echo dcc=/usr/bin/cc >> ${WRKSRC}/config.param
+echo dbrowser=${LOCALBASE}/bin/netscape >> ${WRKSRC}/config.param
+echo dcc=${CC} >> ${WRKSRC}/config.param
+echo emacs_like_lineedit=y >> ${WRKSRC}/config.param
+echo use_bundled_gclib=n >> ${WRKSRC}/config.param
 
 if [ "x${USE_OPENSSL}" = "xyes" ] ; then
     echo dcflags="\"${SSL_CFLAGS} -I${LOCALBASE}/include\"" >> ${WRKSRC}/config.param
@@ -26,9 +22,9 @@ else
 fi
 
 if [ "x${JAPANESE}" = "xYes" ] ; then
-    echo pref_lang=1 >> ${WRKSRC}/config.param
+    echo lang=JA >> ${WRKSRC}/config.param
 else
-    echo pref_lang=2 >> ${WRKSRC}/config.param
+    echo lang=EN >> ${WRKSRC}/config.param
 fi
 
 if [ "x${INLINE_IMAGE}" = "xyes" ] ; then
@@ -36,8 +32,7 @@ if [ "x${INLINE_IMAGE}" = "xyes" ] ; then
 fi
 
 if [ "x${M17N}" = "xyes" ] ; then
-    echo suffix=  >> ${WRKSRC}/config.param
     echo charset=UTF-8 >> ${WRKSRC}/config.param
 else
-    echo def_dcode=E >> ${WRKSRC}/config.param
+    echo display_code=E >> ${WRKSRC}/config.param
 fi
