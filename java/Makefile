@@ -13,6 +13,7 @@
     SUBDIR += infobus
     SUBDIR += jad
     SUBDIR += jaf
+    SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
     SUBDIR += janosvm
     SUBDIR += java-cup
