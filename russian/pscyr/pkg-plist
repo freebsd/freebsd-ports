@@ -1,4 +1,5 @@
 share/texmf/doc/fonts/pscyr/LICENSE
+share/texmf/doc/fonts/pscyr/PROBLEMS
 share/texmf/doc/fonts/pscyr/README.koi
 share/texmf/dvips/base/t2a.enc
 share/texmf/dvips/config/pscyr.map
@@ -318,9 +319,9 @@ share/texmf/tex/latex/pscyr/t2aflz.fd
 share/texmf/tex/latex/pscyr/t2afma.fd
 share/texmf/tex/latex/pscyr/t2aftm.fd
 share/texmf/tex/latex/pscyr/t2aftx.fd
-@dirrm share/texmf/doc/fonts/pscyr
-@dirrm share/texmf/fonts/afm/public/pscyr
-@dirrm share/texmf/fonts/tfm/public/pscyr
-@dirrm share/texmf/fonts/type1/public/pscyr
-@dirrm share/texmf/fonts/vf/public/pscyr
 @dirrm share/texmf/tex/latex/pscyr
+@dirrm share/texmf/fonts/vf/public/pscyr
+@dirrm share/texmf/fonts/type1/public/pscyr
+@dirrm share/texmf/fonts/tfm/public/pscyr
+@dirrm share/texmf/fonts/afm/public/pscyr
+@dirrm share/texmf/doc/fonts/pscyr
