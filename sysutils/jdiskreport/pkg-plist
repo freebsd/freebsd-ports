@@ -1,0 +1,3 @@
+bin/jdiskreport
+%%JDISKDIR%%/jdiskreport.jar
+@dirrm %%JDISKDIR%%
