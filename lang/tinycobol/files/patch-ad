@@ -1,0 +1,8 @@
+--- compiler/createver.sh.orig	Thu Oct 26 09:41:52 2000
++++ compiler/createver.sh	Thu Oct 26 09:41:59 2000
+@@ -1,4 +1,4 @@
+-#!/bin/bash - 
++#!/bin/sh - 
+ #
+ #  This shell script create a version number, system, compiled date.  
+ #
