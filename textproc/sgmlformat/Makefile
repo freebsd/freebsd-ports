@@ -10,7 +10,7 @@ PORTVERSION= 	1.7
 CATEGORIES=	textproc print
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 
 # There are two ports that satisfy the nsgmls requirement.
 # Jade is preferred, but it currently doesn't compile on 2.1.x
