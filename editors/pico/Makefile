@@ -8,7 +8,7 @@
 # All patch files have been taken from mail/pine4
 
 PORTNAME=	pico
-PORTVERSION= 	3.9
+PORTVERSION= 	4.0
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME=	pine${pineversion}
@@ -18,7 +18,7 @@ MAINTAINER=	jeremy@external.org
 WRKSRC=		${WRKDIR}/pine${pineversion}/pico
 PATCH_WRKSRC=	${WRKSRC}/..
 
-pineversion=	4.31
+pineversion=	4.32
 
 MAKEFILE=	makefile.bsf
 ALL_TARGET=	pico
