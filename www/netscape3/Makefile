@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.29 1999/01/26 02:37:15 steve Exp $
+# $Id: Makefile,v 1.30 1999/08/09 18:47:50 sada Exp $
 #
 
 DISTNAME?=	netscape-3.04
@@ -19,6 +19,7 @@ NOT_FOR_ARCHS=	alpha
 
 NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
+PKGREQ=		${PORTSDIR}/www/netscape4-communicator/pkg/REQ
 
 .if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
