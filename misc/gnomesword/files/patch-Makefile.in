@@ -1,11 +1,30 @@
---- Makefile.in.orig	Tue Mar 25 22:35:58 2003
-+++ Makefile.in	Sun May  4 08:12:53 2003
-@@ -388,7 +388,7 @@
+--- Makefile.in.orig	Wed Jul 14 23:34:10 2004
++++ Makefile.in	Sat Aug 21 16:34:24 2004
+@@ -61,7 +61,7 @@
+ 	install-recursive installcheck-recursive installdirs-recursive \
+ 	pdf-recursive ps-recursive uninstall-info-recursive \
+ 	uninstall-recursive
+-am__installdirs = "$(DESTDIR)$(gnomemenudir)" "$(DESTDIR)$(gnomesworddocdir)"
++am__installdirs = "$(DESTDIR)$(gnomemenudir)"
+ gnomemenuDATA_INSTALL = $(INSTALL_DATA)
+ gnomesworddocDATA_INSTALL = $(INSTALL_DATA)
+ DATA = $(gnomemenu_DATA) $(gnomesworddoc_DATA)
+@@ -627,7 +627,7 @@
+ all-am: Makefile $(DATA) config.h
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	for dir in "$(DESTDIR)$(gnomemenudir)" "$(DESTDIR)$(gnomesworddocdir)"; do \
++	for dir in "$(DESTDIR)$(gnomemenudir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
+ install: install-recursive
+@@ -674,8 +674,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-gnomemenuDATA \
+-	install-gnomesworddocDATA
++install-data-am: install-data-local install-gnomemenuDATA
+ 
  install-exec-am:
- install-exec: install-exec-recursive
  
--install-data-am: install-gnomesworddocDATA install-data-local
-+install-data-am: install-data-local
- install-data: install-data-recursive
- 
- install-am: all-am

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomesword
-PORTVERSION=	0.7.9
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,17 +14,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bible interface utilizing the sword framework
 
-BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
-LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
-RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+BUILD_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
+LIB_DEPENDS=	sword.4:${PORTSDIR}/misc/sword
+RUN_DEPENDS=	${X11BASE}/lib/gnome-spell/libgnome-spell-component-0.3.so:${PORTSDIR}/textproc/gnomespell
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gal gnomehack gnomeprefix gtkhtml
+USE_GNOME=	gnomehack gnomeprefix gnometarget gtkhtml3 intlhack
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DUSE_GTKHTML1" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|=share/pix|=share/gnome/pix|g ; \
+		 s|=share/app|=share/gnome/app|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
