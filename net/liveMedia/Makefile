@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2004.01.28
+PORTVERSION=	2004.02.03
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
@@ -95,6 +95,7 @@ liveMedia=		\
 		liveMedia/include/MPEG1or2AudioStreamFramer.hh \
 		liveMedia/include/MPEG1or2Demux.hh \
 		liveMedia/include/MPEG1or2DemuxedElementaryStream.hh \
+		liveMedia/include/MPEG1or2DemuxedServerMediaSubsession.hh \
 		liveMedia/include/MPEG1or2FileServerDemux.hh \
 		liveMedia/include/MPEG1or2VideoFileServerMediaSubsession.hh \
 		liveMedia/include/MPEG1or2VideoHTTPSink.hh \
@@ -115,6 +116,7 @@ liveMedia=		\
 		liveMedia/include/MediaSource.hh \
 		liveMedia/include/MultiFramedRTPSink.hh \
 		liveMedia/include/MultiFramedRTPSource.hh \
+		liveMedia/include/OnDemandServerMediaSubsession.hh \
 		liveMedia/include/PassiveServerMediaSubsession.hh \
 		liveMedia/include/PrioritizedRTPStreamSelector.hh \
 		liveMedia/include/QCELPAudioRTPSource.hh \
