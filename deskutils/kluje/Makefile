@@ -13,16 +13,12 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A KDE application for submitting updates to livejournal.com
+COMMENT=	A KDE client for the popular online journal site LiveJournal
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 USE_REINPLACE=		yes
-
-BROKEN=		"Does not compile"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e 's|-lpthread|${PTHREAD_LIBS}|g' \
