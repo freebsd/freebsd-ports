@@ -15,8 +15,6 @@ PATCH_SITES=	ftp://ftp.azkey.org/pub/misc/skkfep/
 PATCHFILES=	skkfep111.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	azuki@azkey.org
-
 RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 
 NO_WRKSUBDIR=	yes
