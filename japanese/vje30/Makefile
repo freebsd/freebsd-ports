@@ -7,7 +7,7 @@
 
 PORTNAME=	vje
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	${CD_MOUNTPTS:S,^,file:,:S,$,/freebsd/,} \
 		${CD_MOUNTPTS:S,^,file:,:S,$,/source/delta/:source,} \
@@ -30,6 +30,8 @@ NO_CDROM=	"You must purchase a licensed copy from VACS Corporation."
 NO_PACKAGE=	"You must purchase a licensed copy from VACS Corporation."
 
 ONLY_FOR_ARCHS=	i386
+
+USE_RC_SUBR=	yes
 
 USE_XLIB=	yes
 USE_REINPLACE=	yes
@@ -78,7 +80,8 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
-	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' -e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		${FILESDIR}/vje.sh > ${WRKSRC}/etc/rc.d/vje.sh
 	@${REINPLACE_CMD} 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
 .if defined(NOPORTDOCS)
 	@cd ${WRKSRC}/vje30 && ${RM} -rf doc README FAQ REQUEST
@@ -88,7 +91,7 @@ post-build:
 	@${CP} ${BUILD_WRKSRC}/vje ${WRKSRC}/vje30/bin/
 
 do-install:
-	@cd ${WRKSRC} && ${TAR} -cf - . | ${TAR} -xf - -C ${PREFIX}
+	@${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${PREFIX} -xf -
 .for f in ${BINSTUFF}
 	@${LN} -fs ${PREFIX}/vje30/bin/$f ${PREFIX}/bin/$f
 .endfor
