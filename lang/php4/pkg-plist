@@ -54,6 +54,7 @@ include/php/Zend/zend_ptr_stack.h
 include/php/Zend/zend_qsort.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
+include/php/Zend/zend_strtod.h
 include/php/Zend/zend_types.h
 include/php/Zend/zend_variables.h
 include/php/acconfig.h

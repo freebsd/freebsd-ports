@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.9
-PORTREVISION?=	1
+PORTVERSION=	4.3.10
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -163,8 +163,6 @@ PHP_PORT=	${.CURDIR:S|^${_PORTSDIR}||:S|^/||}
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
-	@${REINPLACE_CMD} "s|<crypt.h>|<unistd.h>|g;s|HAVE_CRYPT_H|HAVE_UNISTD_H|g" \
-		${WRKSRC}/configure
 
 .if ${PHP_SAPI} == "full"
 pre-configure:
