@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 
-DOC_FILES=      CHANGES COPYING FUTURE GPL HISTORY README README.VBR
+DOC_FILES=	CHANGES COPYING FUTURE GPL HISTORY README README.VBR
 
 pre-everything::
 .ifndef(WITH_OPTIMIZED_CFLAGS)
@@ -62,6 +62,5 @@ do-install:
 .endfor
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/toolame ${PREFIX}/bin
-
 
 .include <bsd.port.post.mk>
