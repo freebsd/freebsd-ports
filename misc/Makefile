@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.110 1997/06/28 00:56:34 jmz Exp $
+# $Id: Makefile,v 1.111 1997/07/02 13:54:15 tg Exp $
 #
 
     SUBDIR += amanda
@@ -45,6 +45,7 @@
     SUBDIR += xgas
     SUBDIR += xless
     SUBDIR += xmaddressbook
+    SUBDIR += xopps
     SUBDIR += xpns
     SUBDIR += xtar
     SUBDIR += xtimer
