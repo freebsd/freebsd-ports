@@ -8,7 +8,7 @@
 PORTNAME=	luasocket
 PORTVERSION=	1.4
 CATEGORIES=	net
-MASTER_SITES=	http://www.tecgraf.puc-rio.br/~diego/luasocket/
+MASTER_SITES=	http://www.cs.princeton.edu/~diego/professional/luasocket/old/luasocket-1.4/
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	IPv4 Sockets support for the Lua language
