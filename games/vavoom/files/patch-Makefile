@@ -1,0 +1,112 @@
+--- Makefile.orig	Fri Dec 19 20:00:14 2003
++++ Makefile	Fri Jan 23 16:41:34 2004
+@@ -8,7 +8,7 @@
+ #DEBUG = 1
+ 
+ # Uncomment to compile using SDL
+-#USE_SDL = 1
++USE_SDL = 1
+ 
+ # Uncomment to compile without OpenGL driver
+ #NOGL = 1
+@@ -70,7 +70,7 @@
+ 	obj/sys_i386.o \
+ 	obj/sys_sdl.o
+ GL_SYS_OBJ = obj/gl_sdl.o
+-LIBS := `sdl-config --libs` -lSDL_mixer -lm -lstdc++
++LIBS := `${SDL_CONFIG} --libs` -lSDL_mixer -lm -lstdc++
+ else
+ #-- Linux with Allegro --
+ SYS_OBJS = \
+@@ -214,7 +214,7 @@
+ ifdef MESAGL
+ LIBS := -lMesaGL $(LIBS)
+ else
+-LIBS := -lGL $(LIBS)
++LIBS := -lGL -L${X11BASE}/lib $(LIBS)
+ endif
+ endif
+ 
+@@ -308,8 +308,8 @@
+ 
+ # ---------------------------------------
+ 
+-C_ARGS   = -c -W -Wall -march=pentiumpro -ffast-math
+-CPP_ARGS = -c -W -Wall -march=pentiumpro -ffast-math
++C_ARGS   = -c ${CFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall -ffast-math
++CPP_ARGS = -c ${CFLAGS} -I${X11BASE}/include `${SDL_CONFIG} --cflags` -W -Wall -ffast-math
+ ASM_ARGS = -c -W -Wall -x assembler-with-cpp
+ LINK_ARGS = -Wall
+ 
+@@ -337,7 +337,7 @@
+ exe: Vavoom$(EXE)
+ 
+ Vavoom$(EXE): $(OBJ_FILES) $(LIB_FILES)
+-	gcc $(LINK_ARGS) -o $@ $^ $(LIBS)
++	${CC} $(LINK_ARGS) -o $@ $^ $(LIBS)
+ 
+ suid:
+ 	chown root.root Vavoom
+@@ -347,13 +347,13 @@
+ 	addr2line -e Vavoom -f < crash.txt >> basev/debug.txt
+ 
+ obj/%.o : source/%.c
+-	gcc $(C_ARGS) -o $@ $<
++	${CC} $(C_ARGS) -o $@ $<
+ 
+ obj/%.o : source/%.cpp source/*.h
+-	gcc $(CPP_ARGS) -o $@ $<
++	${CC} $(CPP_ARGS) -o $@ $<
+ 
+ obj/%.o : source/%.s source/asm_i386.h
+-	gcc $(ASM_ARGS) -o $@ $<
++	${CC} $(ASM_ARGS) -o $@ $<
+ 
+ # ---------------------------------------
+ 
+@@ -370,16 +370,16 @@
+ svexe: VavoomSV$(EXE)
+ 
+ VavoomSV$(EXE): $(SV_OBJ_FILES)
+-	gcc $(LINK_ARGS) -o $@ $(SV_OBJ_FILES) $(SV_LIBS)
++	${CC} $(LINK_ARGS) -o $@ $(SV_OBJ_FILES) $(SV_LIBS)
+ 
+ obj/sv/%.o : source/%.c
+-	gcc $(C_ARGS) -DSERVER -o $@ $<
++	${CC} $(C_ARGS) -DSERVER -o $@ $<
+ 
+ obj/sv/%.o : source/%.cpp source/*.h
+-	gcc $(CPP_ARGS) -DSERVER -o $@ $<
++	${CC} $(CPP_ARGS) -DSERVER -o $@ $<
+ 
+ obj/sv/%.o : source/%.s
+-	gcc $(ASM_ARGS) -DSERVER -o $@ $<
++	${CC} $(ASM_ARGS) -DSERVER -o $@ $<
+ 
+ # ---------------------------------------
+ 
+@@ -415,11 +415,11 @@
+ # ---------------------------------------
+ 
+ ifndef INSTALL
+-INSTALL = ginstall
++INSTALL = install -c
+ endif
+ 
+ ifndef INSTALL_DIR
+-INSTALL_DIR = /usr/local/games/Vavoom
++INSTALL_DIR = ${DATADIR}
+ endif
+ 
+ ifndef INSTALL_GROUP
+@@ -511,8 +511,8 @@
+ asm: $(ASM_FILES)
+ 
+ source/%.asm : source/%.s source/asm_i386.h source/gas2tasm.exe
+-	gcc -x assembler-with-cpp -E -P -DGAS2TASM $< -o - | source/gas2tasm.exe > $@
++	${CC} -x assembler-with-cpp -E -P -DGAS2TASM $< -o - | source/gas2tasm.exe > $@
+ 
+ source/gas2tasm.exe : source/gas2tasm.c
+-	gcc -O3 -ffast-math -fomit-frame-pointer -s -o $@ $<
++	${CC} -O3 -ffast-math -fomit-frame-pointer -s -o $@ $<
+ 

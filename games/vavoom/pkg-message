@@ -1,0 +1,17 @@
+*****************************************************************************
+* In order to run Vavoom you will need original IWAD file from either:
+* 	Doom, Doom II, TNT, Plutonia, Heretic, Hexen or Strife.
+*
+* Manually do the following:
+*  1. Make directory for Vavoom data
+*	mkdir ${HOME}/vavoom
+*  2. Copy Vavoom data into this directory
+*	cp -r %%DATADIR%%/basev ${HOME}/vavoom
+*  3. Copy IWAD from original game here as well
+*	cp /where/is/doom.wad ${HOME}/vavoom
+*  4. Execute Vavoom from directory with game data
+*	cd ${HOME}/vavoom && %%PREFIX%%/bin/Vavoom -opengl
+*		or
+*	cd ${HOME}/vavoom && %%PREFIX%%/bin/Vavoom -opengl -openal
+*     if you compiled Vavoom with OpenAL support	
+*****************************************************************************
