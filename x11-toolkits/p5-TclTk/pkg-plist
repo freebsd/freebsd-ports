@@ -1,0 +1,6 @@
+lib/perl5/man/man3/Tcl::Tk.3.gz
+lib/perl5/site_perl/Tcl/Tk.pm
+lib/perl5/site_perl/i386-freebsd/auto/Tcl/Tk/Tk.bs
+lib/perl5/site_perl/i386-freebsd/auto/Tcl/Tk/Tk.so
+lib/perl5/site_perl/i386-freebsd/auto/Tcl/Tk/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Tcl/Tk
