@@ -111,8 +111,6 @@ RC_DIR=		${PREFIX}/etc/rc.d
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 DATADIR=	/var/db
 
-STRIP_CMD?=	strip
-
 # Post-extract
 #
 
@@ -162,53 +160,53 @@ post-install: strip-binary-files install-startup-files \
 	      display-message
 
 strip-binary-files:
-.for file in ${BIN_FILES}
-.if exists(${PREFIX}/bin/${file})
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.for f in ${BIN_FILES}
+.if exists(${PREFIX}/bin/${f})
+	@${STRIP_CMD} ${PREFIX}/bin/${f}
 .endif
-.if exists(${PREFIX}/sbin/${file})
-	@${STRIP_CMD} ${PREFIX}/sbin/${file}
+.if exists(${PREFIX}/sbin/${f})
+	@${STRIP_CMD} ${PREFIX}/sbin/${f}
 .endif
 .endfor
 
 install-startup-files:
-.for file in ${RC_FILES}
-.if exists(${FILESDIR}/rc.${file}.conf${SAMP_SUFX})
-	@${INSTALL_DATA} ${FILESDIR}/rc.${file}.conf${SAMP_SUFX} ${CONF_DIR}
-.if !exists(${CONF_DIR}/rc.${file}.conf)
-	@${INSTALL_DATA} ${FILESDIR}/rc.${file}.conf${SAMP_SUFX} \
-		${CONF_DIR}/rc.${file}.conf
+.for f in ${RC_FILES}
+.if exists(${FILESDIR}/rc.${f}.conf${SAMP_SUFX})
+	@${INSTALL_DATA} ${FILESDIR}/rc.${f}.conf${SAMP_SUFX} ${CONF_DIR}
+.if !exists(${CONF_DIR}/rc.${f}.conf)
+	@${INSTALL_DATA} ${FILESDIR}/rc.${f}.conf${SAMP_SUFX} \
+		${CONF_DIR}/rc.${f}.conf
 .endif
 .endif
-.if exists(${FILESDIR}/${file}.sh${SAMP_SUFX})
-	@${INSTALL_SCRIPT} ${FILESDIR}/${file}.sh${SAMP_SUFX} ${RC_DIR}
+.if exists(${FILESDIR}/${f}.sh${SAMP_SUFX})
+	@${INSTALL_SCRIPT} ${FILESDIR}/${f}.sh${SAMP_SUFX} ${RC_DIR}
 .endif
 .endfor
 
 install-doc-files:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
 install-sample-files:
-.for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${CONF_DIR}/${file:T}${SAMP_SUFX}
+.for f in ${SAMP_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${CONF_DIR}/${f:T}${SAMP_SUFX}
 .endfor
 
 create-conf-files:
-.for file in ${CONF_FILES}
-.if !exists(${CONF_DIR}/${file})
-	@${TOUCH} ${CONF_DIR}/${file}
+.for f in ${CONF_FILES}
+.if !exists(${CONF_DIR}/${f})
+	@${TOUCH} ${CONF_DIR}/${f}
 .endif
 .endfor
 
 create-data-files:
-.for file in ${DATA_FILES}
-.if !exists(${DATADIR}/${file})
-	@${TOUCH} ${DATADIR}/${file}
+.for f in ${DATA_FILES}
+.if !exists(${DATADIR}/${f})
+	@${TOUCH} ${DATADIR}/${f}
 .endif
 .endfor
 
