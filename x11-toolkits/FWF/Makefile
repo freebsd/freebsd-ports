@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1998/09/17 00:32:55 asami Exp $
+# $Id: Makefile,v 1.15 1998/10/15 11:13:04 jseger Exp $
 #
 
 DISTNAME=	fwf-4.0
@@ -18,6 +18,7 @@ BROKEN_ELF=	yes
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF
 XMKMF=		env X11BASE=${X11BASE} WRKSRC=${WRKSRC} sh ${FILESDIR}/xmkmf
