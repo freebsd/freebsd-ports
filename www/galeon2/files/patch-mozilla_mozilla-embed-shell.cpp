@@ -28,7 +28,7 @@
  
 -        rv = permissionManager->Add (nsDependentCString(url),
 -        			     allow ? PR_TRUE : PR_FALSE, type);
-+#if MOZILLA_SNAPSHOT >= 6
++#if MOZILLA_SNAPSHOT > 6
 +	nsCOMPtr<nsIURI> uri;
 +	rv = NS_NewURI(getter_AddRefs(uri), url);
 +	if (NS_FAILED(rv) || !uri) return G_FAILED;
@@ -62,7 +62,7 @@
 +                result = permissionEnumerator->GetNext(getter_AddRefs(nsPermission));
                  if (NS_FAILED(result)) return G_FAILED;
  
-+#if MOZILLA_SNAPSHOT >= 6
++#if MOZILLA_SNAPSHOT > 6
 +		PRUint32 cType;
 +#else
                  PRInt32 cType;
@@ -79,7 +79,7 @@
 -                        b->domain = g_strdup (tmp);
 -                        nsMemory::Free (tmp);
 +                        PermissionInfo *b = g_new0(PermissionInfo, 1);
-+#if MOZILLA_SNAPSHOT >= 6
++#if MOZILLA_SNAPSHOT > 6
 +			nsCString host;
 +			nsPermission->GetHost(host);
 +			b->domain = g_strdup(host.get());
