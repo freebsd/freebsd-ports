@@ -6,7 +6,6 @@ bin/y2racc
 %%RUBY_SITELIBDIR%%/racc/info.rb
 %%RUBY_SITELIBDIR%%/racc/iset.rb
 %%RUBY_SITELIBDIR%%/racc/output.rb
-%%RUBY_SITELIBDIR%%/racc/parser.rb
 %%RUBY_SITELIBDIR%%/racc/raccp.rb
 %%RUBY_SITELIBDIR%%/racc/raccs.rb
 %%RUBY_SITELIBDIR%%/racc/state.rb
