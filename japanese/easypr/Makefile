@@ -16,7 +16,7 @@ MAINTAINER=	taoka@FreeBSD.org
 RUN_DEPENDS=	e2ps:${PORTSDIR}/japanese/e2ps \
 		wish4.2jp:${PORTSDIR}/japanese/tk42 \
 		psnup:${PORTSDIR}/print/psutils-a4 \
-		giftopnm::${PORTSDIR}/graphics/netpbm
+		giftopnm:${PORTSDIR}/graphics/netpbm
 
 do-build:
 	${ECHO} '#!${PREFIX}/bin/wish4.2jp' > ${WRKSRC}/easypr
