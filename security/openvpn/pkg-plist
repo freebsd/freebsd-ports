@@ -1,0 +1,36 @@
+sbin/openvpn
+%%PORTDOCS%%share/doc/openvpn/AUTHORS
+%%PORTDOCS%%share/doc/openvpn/COPYING
+%%PORTDOCS%%share/doc/openvpn/COPYRIGHT.GPL
+%%PORTDOCS%%share/doc/openvpn/ChangeLog
+%%PORTDOCS%%share/doc/openvpn/INSTALL
+%%PORTDOCS%%share/doc/openvpn/NEWS
+%%PORTDOCS%%share/doc/openvpn/PORTS
+%%PORTDOCS%%share/doc/openvpn/README
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/README
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/build-ca
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/build-dh
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/build-key
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/build-key-pass
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/build-req
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/build-req-pass
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/clean-all
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/openssl.cnf
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/sign-req
+%%PORTDOCS%%share/doc/openvpn/easy-rsa/vars
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/README
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/firewall.sh
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/home.up
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/office.up
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/openvpn-shutdown.sh
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/openvpn-startup.sh
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/static-home.conf
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/static-office.conf
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/tls-home.conf
+%%PORTDOCS%%share/doc/openvpn/sample-config-files/tls-office.conf
+%%PORTDOCS%%share/doc/openvpn/sample-scripts/openvpn.init
+%%PORTDOCS%%share/doc/openvpn/sample-scripts/verify-cn
+%%PORTDOCS%%@dirrm share/doc/openvpn/sample-scripts
+%%PORTDOCS%%@dirrm share/doc/openvpn/sample-config-files
+%%PORTDOCS%%@dirrm share/doc/openvpn/easy-rsa
+%%PORTDOCS%%@dirrm share/doc/openvpn/
