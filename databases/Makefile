@@ -9,6 +9,7 @@
     SUBDIR += gdbm
     SUBDIR += gmysql
     SUBDIR += gnats
+    SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += interbase4
     SUBDIR += metakit
