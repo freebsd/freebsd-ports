@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		openldap
-PORTVERSION=		2.2.10
+PORTVERSION=		2.2.11
 PORTREVISION=		${OPENLDAP_PORTREVISION}
 CATEGORIES=		net databases
 MASTER_SITES=		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
@@ -71,13 +71,11 @@ OPENLDAP_PKGNAMESUFFIX=	${PKGNAMESUFFIX_SERVER}
 OPENLDAP_PKGFILESUFX=
 
 .if defined(WITH_SASL)
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.202:${PORTSDIR}/net/openldap22-sasl-client
-#RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-sasl-client
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-sasl-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.[!2].*
 .else
-RUN_DEPENDS=		${LOCALBASE}/lib/libldap.so.202:${PORTSDIR}/net/openldap22-client
-#RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-client
+RUN_DEPENDS=		${LOCALBASE}/lib/libldap-2.2.so.7:${PORTSDIR}/net/openldap22-client
 CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[!2].* \
 			${PKGNAMEPREFIX}${PORTNAME}-sasl-server-2.*
 .endif
