@@ -23,7 +23,7 @@ RUN_DEPENDS=    ${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/ha
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOME=	imlib
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  LIBS="-L${LOCALBASE}/lib -lxpg4" LOCALBASE="${LOCALBASE}"
