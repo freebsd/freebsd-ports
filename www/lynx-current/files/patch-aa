@@ -1,19 +1,36 @@
-*** makefile.in.bak	Sun Dec 14 02:30:40 1997
---- makefile.in	Mon Dec 15 17:48:54 1997
+*** makefile.in.orig	Mon Sep  7 14:02:16 1998
+--- makefile.in	Mon Sep  7 23:23:06 1998
 ***************
-*** 37,43 ****
+*** 43,49 ****
   libdir= @libdir@
   
   ## Where you want the help-files installed
 ! helpdir= @libdir@/lynx_help
   
-  installbin= @INSTALL_PROGRAM@ -s -m 755
-  installdoc= @INSTALL_DATA@
---- 37,43 ----
+  ##set the relative location of the WWW library Implementation directory,
+  ##from this directory
+--- 43,49 ----
   libdir= @libdir@
   
   ## Where you want the help-files installed
 ! helpdir= $(prefix)/lib/lynx_help
   
-  installbin= @INSTALL_PROGRAM@ -s -m 755
-  installdoc= @INSTALL_DATA@
+  ##set the relative location of the WWW library Implementation directory,
+  ##from this directory
+***************
+*** 319,325 ****
+  
+  install-log : $(libdir) config.cache
+  	-@sed	-e '/^#/d' \
+! 		-e 's/^.._cv_\(.*\)=.*=\(.*\)\}/\1=\2/g' \
+  		config.cache | \
+  	$(AWK) -F= '{printf "%-30s = %s\n",$$1,$$2}' |sort > $(libdir)/lynx_site.txt
+  
+--- 319,325 ----
+  
+  install-log : $(libdir) config.cache
+  	-@sed	-e '/^#/d' \
+! 		-e 's/^.._cv_\(.*\)=.*=\(.*\)}/\1=\2/g' \
+  		config.cache | \
+  	$(AWK) -F= '{printf "%-30s = %s\n",$$1,$$2}' |sort > $(libdir)/lynx_site.txt
+  
