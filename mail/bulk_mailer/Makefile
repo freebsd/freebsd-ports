@@ -3,18 +3,17 @@
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/26 02:14:00 jfitz Exp $
 #
 
 DISTNAME=	bulk_mailer-1.5
 CATEGORIES=	mail
-
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
-
 EXTRACT_SUFX=	.tar
-EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
-NO_WRKSUBDIR=	YES
 
 MAINTAINER=	dlowe@saturn5.com
+
+EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
+NO_WRKSUBDIR=	YES
 
 .include <bsd.port.mk>
