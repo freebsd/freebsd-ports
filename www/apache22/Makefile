@@ -134,7 +134,7 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 
 pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache2.sh ]; then \
