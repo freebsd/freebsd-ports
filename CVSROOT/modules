@@ -10773,6 +10773,7 @@ yawmppp		ports/comms/yawmppp
 yaws		ports/www/yaws
 yaz		ports/net/yaz
 yaz++		ports/net/yaz++
+yazproxy	ports/net/yazproxy
 yelp		ports/x11/yelp
 yencode		ports/news/yencode
 ymessenger	ports/net/ymessenger
