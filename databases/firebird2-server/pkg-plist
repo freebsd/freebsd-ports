@@ -1,3 +1,4 @@
+etc/rc.d/000.firebird.sh
 firebird/intl/gdsintl
 firebird/examples/v5/ib_udf.sql
 firebird/examples/v5/README
@@ -65,6 +66,7 @@ firebird/lib/libgds.so
 firebird/lib/libgds.so.1
 firebird/lib/libgds_pyxis.a
 firebird/lib/libgds.a
+firebird/lib/libib_util.so
 firebird/lib/gds_pyxis.a
 firebird/help/help.gbak
 firebird/help/help.gdb

@@ -20,6 +20,8 @@ MAINTAINER=	chris@aims.com.au
 WRKSRC=		${WRKDIR}/interbase
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 ONLY_FOR_ARCHS=	i386
 
@@ -28,14 +30,18 @@ ONLY_FOR_ARCHS=	i386
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@(								\
-	cd ${WRKDIR}; tar zxf ${DISTDIR}/interbase0.9-4src.tar.gz;	\
-	cd interbase; tar zxf ${DISTDIR}/firebird-boot-kit.tar.gz;	\
+	cd ${WRKDIR}; ${TAR} -xzf ${DISTDIR}/interbase0.9-4src.tar.gz;	\
+	cd interbase; ${TAR} -xzf ${DISTDIR}/firebird-boot-kit.tar.gz;	\
 	${CP} msgs/msg.gbak misc/msg.gbak				\
 	)
 
-.if ${OSVERSION} >= 500016
 post-patch:
-	${PERL} -pi -e 's,\-ldescrypt,\-lcrypt,g' ${WRKSRC}/builds/original/prefix.freebsd
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
+.if ${OSVERSION} >= 500016 || ${OSVERSION} >= 430001
+	@${PERL} -pi -e 's,\-ldescrypt,\-lcrypt,g' \
+		 ${WRKSRC}/builds/original/prefix.freebsd
+.else
+	@${PERL} -pi -e 's,^crypt_set_format.*,,' ${WRKSRC}/jrd/enc.c
 .endif
 
 do-configure:
@@ -48,6 +54,10 @@ do-configure:
 	)
 
 do-build:
+	@(								\
+	 ${ECHO} '#!/bin/sh'; ${ECHO}					\
+	'[ -d ${LDCONFIG_RUNLIST} ] && ${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
+	) > ${WRKDIR}/000.${PORTNAME}.sh
 	@(								\
 	cd ${WRKDIR}/interbase;						\
 	INTERBASE=${WRKDIR}/interbase/interbase; export INTERBASE;	\
@@ -62,11 +72,10 @@ do-install:
 	${RM} ${PREFIX}/firebird/install;				\
 	${RM} ${PREFIX}/firebird/lib/libgds.so.1.0;			\
 	${LN} -fs gds.so ${PREFIX}/firebird/lib/libgds.so.1;		\
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/firebird/lib	\
-	${CHMOD} -R g-w ${PREFIX}/firebird/lib				\
 	cd ${PREFIX}/firebird/examples;					\
-	tar zxf ${DISTDIR}/interbase0.9-4-v5examples.tar.gz;		\
-	${CP} ${FILESDIR}/RELNOTES ${PREFIX}/firebird/			\
+	${TAR} -xzf ${DISTDIR}/interbase0.9-4-v5examples.tar.gz;	\
+	${CP} ${FILESDIR}/RELNOTES ${PREFIX}/firebird/;			\
+	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/ \
 	)
 
 .include <bsd.port.post.mk>

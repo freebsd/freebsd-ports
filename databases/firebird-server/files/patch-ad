@@ -1,0 +1,13 @@
+--- jrd/enc.c.orig	Fri Aug  4 06:50:03 2000
++++ jrd/enc.c	Sun Nov 18 19:17:19 2001
+@@ -31,6 +31,10 @@
+  *
+  **************************************/
+
++#ifdef FREEBSD
++crypt_set_format("des");
++#endif
++
+ return CRYPT_FUNC( string, salt);
+ }
+ #endif

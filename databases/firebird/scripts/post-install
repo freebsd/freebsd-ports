@@ -17,7 +17,13 @@ for i in `find $PREFIX/firebird -print`
      fi
   done
 
+# make lib ldconfig-compatible
+chown -R root:wheel $PREFIX/firebird/lib
+chmod -R g-w $PREFIX/firebird/lib
 
+# Fix UDF load problem
+cd $PREFIX/firebird/lib
+ln -sf ib_util.so libib_util.so
 
 cd $PREFIX/firebird/bin
 
@@ -58,7 +64,9 @@ sh $SCRIPTDIR/rmservice
 
 # add the gds service and restart inetd
 sh $SCRIPTDIR/addservice
-kill -HUP `cat /var/run/inetd.pid`
+if [ -f /var/run/inetd.pid ]; then
+	kill -HUP `cat /var/run/inetd.pid`
+fi
 
 sed "s|%%PREFIX%%|$PREFIX|" $SCRIPTDIR/../pkg-message
 
