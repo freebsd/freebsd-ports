@@ -1,21 +1,20 @@
-# New ports collection makefile for:    gnustep
-# Date created:         03 October 1998
+# New ports collection makefile for:    gnustep-objc
+# Date created:         17 April 2001
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnustep
-PORTVERSION=	0.6.6
-CATEGORIES=	devel
-MASTER_SITES=	http://ftp.codefactory.se/pub/gnu/gstep/ \
-		http://planetmirror.com/pub/gnustep/core/
-DISTNAME=	gstep-core-${PORTVERSION}
+PORTNAME=	gnustep-objc
+PORTVERSION=	1.0.1
+CATEGORIES=	lang devel
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
+		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
+RUN_DEPENDS=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
 
 .include <bsd.port.pre.mk>
 
@@ -23,22 +22,11 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .endif
 
-USE_NEWGCC=	yes
 PREFIX=		${LOCALBASE}/GNUstep
-WRKSRC=		${WRKDIR}/${DISTNAME}
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c"
-CONFIGURE_ARGS=	--with-library-combo=gnu-gnu-gnu-xgps \
-		--with-jpeg-library=${LOCALBASE}/lib \
-		--with-jpeg-include=${LOCALBASE}/include \
-		--with-tiff-library=${LOCALBASE}/lib \
-		--with-tiff-include=${LOCALBASE}/include # --enable-threads=posix
-CONFIGURE_TARGET=
-USE_BISON=	yes
+USE_NEWGCC=	yes
 USE_GMAKE=	yes
-USE_XLIB=	yes
-MAKEFILE=
-MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
+MAKEFILE=	GNUmakefile
+ALL_TARGET=
 NO_MTREE=	yes
 
 .if ${MACHINE_ARCH} == "i386"
@@ -46,18 +34,16 @@ GNU_ARCH=	ix86
 .else
 GNU_ARCH=	${MACHINE_ARCH}
 .endif
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} VERSION=${PORTVERSION}
+PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION}
 
-ETCDIR=		${PREFIX}/../etc
+SYSTEMDIR=	${PREFIX}/System
 
-post-patch:
-.for f in bundle gswapp gswbundle woapp wobundle
-	${PERL} -pi -e 's/\$$\(TAR\) ch --exclude=CVS --to-stdout/\$$\(TAR\) -ch --exclude=CVS -f -/g' ${WRKSRC}/make/${f}.make
-.endfor
+do-build:
+	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
 
-post-install:
-	@${MKDIR} ${ETCDIR}
-	${INSTALL_SCRIPT} ${FILESDIR}/GNUstep.sh ${ETCDIR}/rc.d
-	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
+do-install:
+	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 .include <bsd.port.post.mk>
