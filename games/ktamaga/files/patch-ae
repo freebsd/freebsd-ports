@@ -1,0 +1,12 @@
+--- confData.cpp.orig	Fri Aug 29 08:41:08 1997
++++ confData.cpp	Sat Feb 12 03:46:47 2000
+@@ -17,6 +17,9 @@
+ #include <qbttngrp.h>
+ #include <qpushbt.h>
+ 
++#define QColor(i)		(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ confData::confData
+ (
+ 	QWidget* parent,
