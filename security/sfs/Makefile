@@ -36,6 +36,10 @@ CONFIGURE_ARGS+=--with-gmp=${PREFIX}
 CONFIGURE_ARGS+=--with-gmp=/usr
 .endif
 
+.if ${OSVERSION} > 501000
+BROKEN=		Does not compile
+.endif
+
 MAN1=	\
 		dirsearch.1 \
 		newaid.1 \
