@@ -1,0 +1,11 @@
+--- song/Makefile.in.orig	Thu Oct 10 05:32:55 1996
++++ song/Makefile.in	Mon Mar 15 16:39:34 2004
+@@ -15,7 +15,7 @@
+ 
+ CFLAGS = @CFLAGS@ @DEFS@
+ CC_SWITCHES = @CFLAGS@ @DEFS@ -I${TCL_GENERIC_DIR} ${SHLIB_CFLAGS} \
+-    -I$(srcdir)/../events -I$(srcdir)/../rb -I$(srcdir)/../smf -I$(srcdir)
++    -I$(srcdir)/../events -I$(srcdir)/../rb -I$(srcdir)/../smf -I$(srcdir)/.. -I$(srcdir)
+ 
+ SONGFILES = EvntTree.o Song.o
+ SONGFILES_SRC = EvntTree.cxx Song.cxx

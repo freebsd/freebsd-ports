@@ -36,7 +36,10 @@ MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
+EXTRA_PATCHES=	${PATCHDIR}/smf.patch ${PATCHDIR}/song.patch
+
+post-extract:
+	@${CP} -f ${FILESDIR}/strstream.h ${WRKSRC}
 .endif
 
 post-install:
