@@ -35,8 +35,10 @@ MAN7=		gnupg.7
 .if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
-.if defined(WITH_LDAP) || exists(${PREFIX}/lib/libldap.so.2)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+.if defined(USE_OPENLDAP) || exists(${PREFIX}/lib/libldap.so.2)
+WITH_LDAP=	yes
+.endif
+.if defined(WITH_LDAP)
 PLIST_SUB+=	WITH_LDAP=""
 .else
 PLIST_SUB+=	WITH_LDAP="@comment "
