@@ -7,7 +7,7 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 

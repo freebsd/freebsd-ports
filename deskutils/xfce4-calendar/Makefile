@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-calendar
 PORTVERSION=	0.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.6/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-4.0.6/src/

@@ -7,6 +7,7 @@
 
 PORTNAME=	vep
 PORTVERSION=	1.0.0.20040730
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/ve/downloads/drops/S-1.0M2-200407301410/
 PKGNAMEPREFIX=	eclipse-

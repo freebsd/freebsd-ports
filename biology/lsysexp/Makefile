@@ -7,7 +7,7 @@
 
 PORTNAME=	lsysexp
 PORTVERSION=	0.67
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	http://coscorrosa.com/programs/${PORTNAME}/download/
 

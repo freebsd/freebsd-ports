@@ -7,7 +7,7 @@
 
 PORTNAME=	praytime
 PORTVERSION=	0.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-clocks gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

@@ -6,6 +6,7 @@
 
 PORTNAME=	QtPixmap
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.cpdrummond.freeuk.com/
 

@@ -8,6 +8,7 @@
 
 PORTNAME=	clarence
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://clay.ll.pl/download/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomemm
 PORTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel gnome
 MASTER_SITES=   # empty
 DISTFILES=      # empty

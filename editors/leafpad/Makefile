@@ -7,6 +7,7 @@
 
 PORTNAME=	leafpad
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://tarot.freeshell.org/leafpad/
 

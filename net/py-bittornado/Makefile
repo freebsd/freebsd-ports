@@ -7,7 +7,7 @@
 
 PORTNAME=	BitTornado
 PORTVERSION=	0.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://e.scarywater.net/bt/download/ \

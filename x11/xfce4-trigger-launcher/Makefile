@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-trigger-launcher
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-${PORTVERSION}/src/

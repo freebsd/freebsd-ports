@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.8.a3
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www33.ocn.ne.jp/~snip/mozilla/jlp/ \
 		http://n.jpn.ph/mozilla/download/jlp/

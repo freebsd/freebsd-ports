@@ -7,6 +7,7 @@
 
 PORTNAME=	seti
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	astro gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-

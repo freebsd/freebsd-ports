@@ -7,6 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.65
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \

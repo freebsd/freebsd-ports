@@ -7,6 +7,7 @@
 
 PORTNAME=	scim-chinese
 PORTVERSION=	0.4.2
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~suzhe/scim-chinese/

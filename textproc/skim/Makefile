@@ -7,6 +7,7 @@
 
 PORTNAME=	skim
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://freedesktop.org/~cougar/skim/downloads/

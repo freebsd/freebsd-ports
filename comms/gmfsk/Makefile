@@ -7,6 +7,7 @@
 
 PORTNAME=	gmfsk
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	comms audio
 MASTER_SITES=	http://gmfsk.connect.fi/
 
