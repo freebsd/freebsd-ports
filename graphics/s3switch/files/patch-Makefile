@@ -1,0 +1,15 @@
+--- Makefile.orig	Sun Mar 16 03:08:16 2003
++++ Makefile	Sun Mar 16 03:08:38 2003
+@@ -1,5 +1,11 @@
+ CC = gcc -g
+ 
++ifdef FREEBSD
++LRMIOBJ=
++else
++LRMIOBJ=lrmi.o
++endif
++
+ all: s3switch
+ 
+-s3switch: s3switch.o lrmi.o
++s3switch: s3switch.o $(LRMIOBJ)
