@@ -7,11 +7,16 @@
 
 PORTNAME=	psgml
 PORTVERSION=	${PSGML_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psgml
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	kuriyama
+PATCHFILES=	psgml-symbol-conflict-020120.gz
 
 MAINTAINER?=	shige@FreeBSD.org
 
