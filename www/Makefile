@@ -303,6 +303,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver
+    SUBDIR += php-screw
     SUBDIR += php-templates
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
