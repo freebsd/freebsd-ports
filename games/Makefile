@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.190 1999/03/15 23:02:09 dburr Exp $
+# $Id: Makefile,v 1.191 1999/03/30 01:41:31 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -19,6 +19,7 @@
     SUBDIR += bogged
     SUBDIR += bs
     SUBDIR += bugsx
+    SUBDIR += CaribbeanStud
     SUBDIR += cgoban
     SUBDIR += connect4
     SUBDIR += cosmo
