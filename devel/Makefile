@@ -972,6 +972,7 @@
     SUBDIR += p5-VCP
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
+    SUBDIR += p5-WWW-Mechanize-FormFiller
     SUBDIR += p5-Want
     SUBDIR += p5-base
     SUBDIR += p5-enum

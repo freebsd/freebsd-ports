@@ -1,0 +1,20 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/FormFiller/.packlist
+%%SITE_PERL%%/WWW/Mechanize/FormFiller.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Keep.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Fixed.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Default.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Interactive.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Callback.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random/Date.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random/Chars.pm
+%%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random/Word.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/FormFiller
+@dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value/Random
+@dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller/Value
+@dirrm %%SITE_PERL%%/WWW/Mechanize/FormFiller
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW/Mechanize 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
