@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	NetPIPE
-PORTVERSION=	3.2
+PORTVERSION=	3.5
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://www.scl.ameslab.gov/Projects/Netpipe/code/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	jkoshy@freebsd.org
 COMMENT=	A self-scaling network benchmark
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 MAKEFILE=	makefile
 
 # The default port builds and installs only the TCP version of
