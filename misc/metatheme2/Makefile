@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	metatheme
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	misc gnome
-MASTER_SITES=	ftp://ftp.helixcode.com/pub/obsolete/metatheme/
+MASTER_SITES=	ftp://ftp.ximian.com/pub/metatheme/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
