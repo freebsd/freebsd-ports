@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.14
 CATEGORIES=	graphics linux
 
-FORBIDDEN=	"security bug--see <URL:http://rhn.redhat.com/errata/RHSA-2002-151.html>
+MASTER_SITES=	${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
 
-RPM_SET=	libpng-${PORTVERSION}-1.${MACHINE_ARCH}.rpm
+RPM_SET=	libpng-${PORTVERSION}-0.7x.3.${MACHINE_ARCH}.rpm
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
