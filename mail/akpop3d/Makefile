@@ -7,6 +7,7 @@
 
 PORTNAME=	akpop3d
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.synflood.at/akpop3d/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -28,7 +29,7 @@ LDFLAGS+=	-L${OPENSSLBASE}/lib -lssl -lcrypto
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/akpop3d ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/akpop3d.8 ${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/akpop3d ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/akpop3d.8 ${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
