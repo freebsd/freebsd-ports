@@ -1,0 +1,6 @@
+This is a wrapper module for Spread.pm (part of the standard Spread
+distribution), providing an object-oriented interface to the Spread
+messaging toolkit instead of Spread.pm's more direct interface
+to the C API's.
+
+- Joshua Goodall <joshua@roughtrade.net>

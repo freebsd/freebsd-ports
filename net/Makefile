@@ -354,6 +354,7 @@
     SUBDIR += p5-SOAP-Lite
     SUBDIR += p5-Socket6
     SUBDIR += p5-Socks
+    SUBDIR += p5-Spread-Session
     SUBDIR += p5-Telnet-Cisco
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += p5-URI
