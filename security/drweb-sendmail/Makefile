@@ -77,7 +77,10 @@ post-configure:
 		${ECHO} y; \
 	} | ./configure
 
-pre-install:
+do-install:
+	${MKDIR} ${DOC_DIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
 	cd ${WRKSRC}/../sendmail && { \
 		${ECHO} y; \
 		${ECHO} "${PREFIX}/sbin"; \
@@ -93,7 +96,7 @@ pre-install:
 		${ECHO} postmaster@${WITH_DRWEBSMF_HOSTNAME}; \
 		${ECHO} y; \
 		${ECHO} y; \
-		${ECHO} d; \
+		${ECHO} c; \
 		${ECHO} t; \
 		${ECHO} t; \
 		${ECHO} t; \
@@ -105,11 +108,6 @@ pre-install:
 		${ECHO} y; \
 		${ECHO} ; \
 	} | ./configure
-
-do-install:
-	${MKDIR} ${DOC_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/drwebdc ${PREFIX}/sbin/
 	cd ${WRKSRC}/../sendmail; \
 		${INSTALL_DATA} example* readme.* sendmail.*.addon ${DOC_DIR}
 	cd ${WRKSRC}/../sendmail; \
