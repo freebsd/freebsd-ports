@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pawm
-PORTVERSION=	1.9.3
+PORTVERSION=	1.9.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.pleyades.net/pawm/files/
 
@@ -34,10 +34,10 @@ pre-install:
 	${ECHO_CMD} @dirrm share/pawm/icons >> ${PLIST}
 	${ECHO_CMD} @dirrm share/pawm >> ${PLIST}
 .if !defined(NOPORTDOCS)
-	${ECHO_CMD} @dirrm share/doc/pawm >> ${PLIST}
 .for ii in ${DOCS}
 	${ECHO_CMD} share/doc/pawm/${ii} >> ${PLIST}
 .endfor
+	${ECHO_CMD} @dirrm share/doc/pawm >> ${PLIST}
 .endif
 
 do-install:
