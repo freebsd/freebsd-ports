@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libslang
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.4/
 DISTNAME=	slang-${PORTVERSION}
 
-MAINTAINER=	xaa+ports@madison-gurkha.com
+MAINTAINER=	xaa+ports@timewasters.nl
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

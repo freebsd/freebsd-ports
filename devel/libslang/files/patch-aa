@@ -1,67 +1,28 @@
---- configure.orig	Sun Feb 10 08:39:19 2002
-+++ configure	Sun Feb 17 18:24:45 2002
-@@ -1832,8 +1832,8 @@
- #define HAVE_DLFCN_H 1
- EOF
- 
--  echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
--echo "configure:1837: checking for dlopen in -ldl" >&5
-+  echo $ac_n "checking for dlopenl""... $ac_c" 1>&6
-+echo "configure:1837: checking for dlopen" >&5
- ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
-@@ -1868,7 +1868,7 @@
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
-   
--    DYNAMIC_LINK_LIB="-ldl"
-+    DYNAMIC_LINK_LIB=""
-     cat >> confdefs.h <<\EOF
- #define HAVE_DLOPEN 1
- EOF
-@@ -1943,7 +1943,7 @@
- 
- ELFLIB="lib\$(THIS_LIB).so"
- ELFLIB_MAJOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
--ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION)"
-+ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
- 
- case "$host_os" in
-   *linux* )
-@@ -2038,7 +2038,7 @@
-     ELF_CFLAGS="$CFLAGS -fPIC"
-     ELF_LINK="$CC -shared"
-     ELF_LINK_CMD="\$(ELF_LINK)"
--    ELF_DEP_LIBS="\$(DL_LIB) -lm -lc"
-+    ELF_DEP_LIBS="\$(DL_LIB) -lm"
-     CC_SHARED="$CC $CFLAGS -shared -fPIC"
- esac
- 
-@@ -2063,6 +2063,19 @@
-       IEEE_CFLAGS="-ieee_with_no_inexact"
-     fi
-     ;;
-+  *freebsd* )
+--- configure.orig	Wed Oct 30 03:37:23 2002
++++ configure	Wed Oct 30 03:56:57 2002
+@@ -2033,6 +2033,18 @@
+      ELFLIB_MAJOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).dylib"
+      ELFLIB_MAJOR_MINOR="lib\$(THIS_LIB).\$(ELF_MAJOR_VERSION).\$(ELF_MINOR_VERSION).dylib"
+      ;;
++  *freebsd* ) 
++    ELFLIB_MAJOR_MINOR="\$(ELFLIB).\$(ELF_MAJOR_VERSION)"
++    ELF_CC="\$(CC)"
++    ELF_CFLAGS="\$(CFLAGS) -fPIC"
 +    if [ $PORTOBJFORMAT = elf ]; then
-+      ELF_CC="\$(CC)"
-+      ELF_CFLAGS="\$(CFLAGS) -fPIC"
 +      ELF_LINK="\$(CC) -shared -Wl,-soname,\$(ELFLIB_MAJOR)"
-+      ELF_LINK_CMD="\$(ELF_LINK)"
 +    else
-+      ELF_CC="\$(CC)"
-+      ELF_CFLAGS="\$(CFLAGS) -fPIC"
 +      ELF_LINK="ld -Bshareable -x"
-+      ELF_LINK_CMD="\$(ELF_LINK)"
 +    fi
++    ELF_LINK_CMD="\$(ELF_LINK)"
++    ELF_DEP_LIBS="\$(DL_LIB) -lm"
 +    ;;
    * )
-     IEEE_CFLAGS=""
- esac
-@@ -2432,16 +2445,8 @@
+     echo "Note: ELF compiler for host_os=$host_os may be wrong"
+     ELF_CC="$CC"
+@@ -2438,16 +2489,8 @@
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
- echo "configure:2435: checking SLANG_VERSION" >&5
+ echo "configure:2441: checking SLANG_VERSION" >&5
 -slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
 -               awk '{ print $3 }'`
 -slang_major_version=`echo $slang_version |
@@ -73,7 +34,7 @@
 -
 -slang_minor_version="$slang_minor_version.$slang_mminor_version"
 +slang_major_version=1
-+slang_miner_version=5
++slang_minor_version=5
  slang_version="$slang_major_version.$slang_minor_version"
  echo "$ac_t""$slang_version" 1>&6
  
