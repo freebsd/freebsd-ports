@@ -8,14 +8,12 @@
 PORTNAME=	SPIP
 PORTVERSION=	1.5
 CATEGORIES=	french
-MASTER_SITES=	http://rezo.net/spip-dev/devel/
+MASTER_SITES=	http://rezo.net/spip-dev/devel/archive/
 DISTNAME= 	SPIP-v1-5
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A web publication system
-
-BROKEN=		"Does not fetch"
 
 BUILD_DEPENDS= 	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/lang/php3
