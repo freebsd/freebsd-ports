@@ -1,0 +1,74 @@
+*** Makefile.orig	Tue Jan 24 16:30:54 1995
+--- Makefile	Sat Feb 11 10:11:05 1995
+***************
+*** 5,16 ****
+  
+  # The base manpages directory to put the man pages in
+  # Note: $(MANDIR)/man1, $(MANDIR)/man5 and $(MANDIR)/man8 must exist.
+! MANDIR = /usr/local/man
+  
+  # The directories to put things in. If you use multiple
+  # architectures or share the samba binaries across NFS then
+  # you will probably want to change this layout.
+! BASEDIR = /usr/local/samba
+  BINDIR = $(BASEDIR)/bin
+  LIBDIR = $(BASEDIR)/lib
+  VARDIR = $(BASEDIR)/var
+--- 5,16 ----
+  
+  # The base manpages directory to put the man pages in
+  # Note: $(MANDIR)/man1, $(MANDIR)/man5 and $(MANDIR)/man8 must exist.
+! MANDIR = ${PREFIX}/man
+  
+  # The directories to put things in. If you use multiple
+  # architectures or share the samba binaries across NFS then
+  # you will probably want to change this layout.
+! BASEDIR = ${PREFIX}/samba
+  BINDIR = $(BASEDIR)/bin
+  LIBDIR = $(BASEDIR)/lib
+  VARDIR = $(BASEDIR)/var
+***************
+*** 195,202 ****
+  
+  # This is for FreeBSD
+  # contributed by kuku@acds.physik.rwth-aachen.de
+! # FLAGSM = -DFreeBSD -DUSE_DIRECT
+! # LIBSM = -lcrypt 
+  
+  
+  # This is for NeXT. Note that versions of NeXT less than 3.2 
+--- 195,202 ----
+  
+  # This is for FreeBSD
+  # contributed by kuku@acds.physik.rwth-aachen.de
+! FLAGSM = -DFreeBSD -DUSE_DIRECT
+! LIBSM = -lcrypt 
+  
+  
+  # This is for NeXT. Note that versions of NeXT less than 3.2 
+***************
+*** 380,386 ****
+  	chmod u=rw,go=r $(MANDIR)/man5/smb.conf.5
+  	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
+  	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
+! 	
+  source:
+  	tar cfv sources.tar COPYING README THANKS \
+                              Makefile announce bugs change-log \
+--- 380,395 ----
+  	chmod u=rw,go=r $(MANDIR)/man5/smb.conf.5
+  	chmod u=rw,go=r $(MANDIR)/man8/smbd.8
+  	chmod u=rw,go=r $(MANDIR)/man8/nmbd.8
+! 	@echo "Comrpessing manpages"
+! 	@gzip -9f $(MANDIR)/man1/smbstatus.1
+! 	@gzip -9f $(MANDIR)/man1/smbclient.1
+! 	@gzip -9f $(MANDIR)/man1/smbrun.1
+! 	@gzip -9f $(MANDIR)/man1/testparm.1
+! 	@gzip -9f $(MANDIR)/man1/testprns.1
+! 	@gzip -9f $(MANDIR)/man5/smb.conf.5
+! 	@gzip -9f $(MANDIR)/man8/smbd.8
+! 	@gzip -9f $(MANDIR)/man8/nmbd.8
+! 
+  source:
+  	tar cfv sources.tar COPYING README THANKS \
+                              Makefile announce bugs change-log \
