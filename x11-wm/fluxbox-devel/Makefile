@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -59,6 +59,8 @@ pre-everything::
 post-patch::
 	@${REINPLACE_CMD} -e 's|PACKAGE=fluxbox|PACKAGE=fluxbox-devel|' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|fluxbox-generate_menu|fluxbox-generate_menu-devel|g; \
+		s|fbrun|fbrun-devel|g' ${WRKSRC}/util/fluxbox-generate_menu
 
 post-configure::
 .for i in ${NLSMAKEFILES}
