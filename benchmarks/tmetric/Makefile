@@ -9,12 +9,13 @@ PORTNAME=	tmetric
 PORTVERSION=	v0.5
 PORTEPOCH=	1
 CATEGORIES=	benchmarks net
-MASTER_SITES=	http://michael.bacarella.com/software/tmetric/
+MASTER_SITES=	http://michael.bacarella.com/projects/tmetric/
 
 MAINTAINER=	mbac@nyct.net
 
 HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
+USE_BZIP2=	yes
 
 MAN8=		tmetric.8
 
