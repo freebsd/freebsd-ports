@@ -19,6 +19,8 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
+NOPORTDOCS=	# XXX
+
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes \
