@@ -25,6 +25,8 @@ PLIST_FILE = '+CONTENTS'
 ORIGIN_PREF = '@comment ORIGIN:'
 MAKEFILE = 'Makefile'
 MAKE = 'make'
+ERR_PREF = 'Error:'
+WARN_PREF = 'Warning:'
 
 # Global variables
 #
@@ -121,13 +123,11 @@ def getpi(path):
 def formatmsg(msg, wrapat = 78, seclindent = 0):
     words = msg.split()
     result = ''
-    isfirstline = 1
     position = 0
     for word in words:
         if position + 1 + len(word) > wrapat:
             result += '\n' + ' ' * seclindent + word
             position = seclindent + len(word)
-            isfirstline = 0
         else:
             if position != 0:
                 result += ' '
@@ -225,7 +225,7 @@ def main():
 
     # Parse command line arguments
     try:
-        opts, args = getopt.getopt(sys.argv[1:], 'rbl:L:s:')
+        opts, args = getopt.getopt(sys.argv[1:], 'erbl:L:s:')
     except getopt.GetoptError, msg:
         usage(2, msg)
 
@@ -235,6 +235,7 @@ def main():
     cachefile = None
     chk_bt_deps = 0
     chk_rt_deps = 0
+    warn_as_err = 0
     for o, a in opts:
         if o == '-b':
             chk_bt_deps = 1
@@ -253,6 +254,8 @@ def main():
                 pass
         elif o == '-s':
             cachefile = a
+        elif o == '-e':
+            warn_as_err = 1
 
     # Load origins of all installed packages
     instpkgs = os.listdir(PKG_DBDIR)
@@ -272,22 +275,27 @@ def main():
     # Perform validation
     nerrs = 0
     nwarns = 0
+    if warn_as_err == 0:
+        warn_pref = WARN_PREF
+    else:
+        warn_pref = ERR_PREF
+    err_pref = ERR_PREF
     for dep in deps:
         pi = getpi(dep)
         if pi.PKGORIGIN not in origins.values():
             print formatmsg(seclindent = 7 * 0, msg = \
-              'Error: package %s (%s) belongs to dependency chain, but ' \
-              'isn\'t installed.' % (pi.PKGNAME, pi.PKGORIGIN))
+              '%s package %s (%s) belongs to dependency chain, but ' \
+              'isn\'t installed.' % (err_pref, pi.PKGNAME, pi.PKGORIGIN))
             nerrs += 1
         elif pi.PKGNAME not in origins.keys():
             for instpkg in origins.keys():
                 if origins[instpkg] == pi.PKGORIGIN:
                     break
             print formatmsg(seclindent = 9 * 0, msg = \
-              'Warning: package %s (%s) belongs to dependency chain, but ' \
+              '%s package %s (%s) belongs to dependency chain, but ' \
               'package %s is installed instead. Perhaps it\'s an older ' \
-              'version - update is highly recommended.' % (pi.PKGNAME, \
-              pi.PKGORIGIN, instpkg))
+              'version - update is highly recommended.' % (warn_pref, \
+              pi.PKGNAME, pi.PKGORIGIN, instpkg))
             nwarns += 1
 
     # Save PortInfo cache if requested
@@ -296,6 +304,9 @@ def main():
             pickle.dump(picache, open(cachefile, 'w'))
         except:
             pass
+
+    if warn_as_err != 0:
+        nerrs += nwarns
 
     return nerrs
 
