@@ -10,4 +10,8 @@ install or pkg_add.  This creates the configuration files and a working
 directory required to run Leafnode+, typically PREFIX/lib/leafnode and
 /var/spool/leafnode.
 
+NOTE: This software contains a number of data-loss bugs and does not
+appear to be actively maintained.  For new installations, the
+news/leafnode port is likely to serve your needs better.
+
 WWW: http://www.io.com/~kazushi/leafnode+/
