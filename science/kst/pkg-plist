@@ -1,0 +1,168 @@
+bin/d2asc
+bin/kst
+bin/kstplugineditor
+include/kstdatasource.h
+include/kstobject.h
+lib/kde3/kstdata_ascii.la
+lib/kde3/kstdata_ascii.so
+lib/kde3/kstdata_dirfile.la
+lib/kde3/kstdata_dirfile.so
+lib/kde3/kstdata_frame.la
+lib/kde3/kstdata_frame.so
+lib/kde3/kstdata_indirect.la
+lib/kde3/kstdata_indirect.so
+lib/kde3/kstdata_lfiio.la
+lib/kde3/kstdata_lfiio.so
+lib/kde3/kstplugins/autocorrelation.la
+lib/kde3/kstplugins/autocorrelation.so
+lib/kde3/kstplugins/autocorrelation.xml
+lib/kde3/kstplugins/chop.la
+lib/kde3/kstplugins/chop.so
+lib/kde3/kstplugins/chop.xml
+lib/kde3/kstplugins/crosscorrelation.la
+lib/kde3/kstplugins/crosscorrelation.so
+lib/kde3/kstplugins/crosscorrelation.xml
+lib/kde3/kstplugins/kstfit_exponential.la
+lib/kde3/kstplugins/kstfit_exponential.so
+lib/kde3/kstplugins/kstfit_exponential.xml
+lib/kde3/kstplugins/kstfit_exponential_weighted.la
+lib/kde3/kstplugins/kstfit_exponential_weighted.so
+lib/kde3/kstplugins/kstfit_exponential_weighted.xml
+lib/kde3/kstplugins/kstfit_gaussian.la
+lib/kde3/kstplugins/kstfit_gaussian.so
+lib/kde3/kstplugins/kstfit_gaussian.xml
+lib/kde3/kstplugins/kstfit_gaussian_weighted.la
+lib/kde3/kstplugins/kstfit_gaussian_weighted.so
+lib/kde3/kstplugins/kstfit_gaussian_weighted.xml
+lib/kde3/kstplugins/kstfit_gradient_unweighted.la
+lib/kde3/kstplugins/kstfit_gradient_unweighted.so
+lib/kde3/kstplugins/kstfit_gradient_unweighted.xml
+lib/kde3/kstplugins/kstfit_gradient_weighted.la
+lib/kde3/kstplugins/kstfit_gradient_weighted.so
+lib/kde3/kstplugins/kstfit_gradient_weighted.xml
+lib/kde3/kstplugins/kstfit_linear_unweighted.la
+lib/kde3/kstplugins/kstfit_linear_unweighted.so
+lib/kde3/kstplugins/kstfit_linear_unweighted.xml
+lib/kde3/kstplugins/kstfit_linear_weighted.la
+lib/kde3/kstplugins/kstfit_linear_weighted.so
+lib/kde3/kstplugins/kstfit_linear_weighted.xml
+lib/kde3/kstplugins/kstfit_lorentzian.la
+lib/kde3/kstplugins/kstfit_lorentzian.so
+lib/kde3/kstplugins/kstfit_lorentzian.xml
+lib/kde3/kstplugins/kstfit_lorentzian_weighted.la
+lib/kde3/kstplugins/kstfit_lorentzian_weighted.so
+lib/kde3/kstplugins/kstfit_lorentzian_weighted.xml
+lib/kde3/kstplugins/kstfit_polynomial_unweighted.la
+lib/kde3/kstplugins/kstfit_polynomial_unweighted.so
+lib/kde3/kstplugins/kstfit_polynomial_unweighted.xml
+lib/kde3/kstplugins/kstfit_polynomial_weighted.la
+lib/kde3/kstplugins/kstfit_polynomial_weighted.so
+lib/kde3/kstplugins/kstfit_polynomial_weighted.xml
+lib/kde3/kstplugins/kstfit_sinusoid_unweighted.la
+lib/kde3/kstplugins/kstfit_sinusoid_unweighted.so
+lib/kde3/kstplugins/kstfit_sinusoid_unweighted.xml
+lib/kde3/kstplugins/kstfit_sinusoid_weighted.la
+lib/kde3/kstplugins/kstfit_sinusoid_weighted.so
+lib/kde3/kstplugins/kstfit_sinusoid_weighted.xml
+lib/kde3/kstplugins/kstinterp_akima.la
+lib/kde3/kstplugins/kstinterp_akima.so
+lib/kde3/kstplugins/kstinterp_akima.xml
+lib/kde3/kstplugins/kstinterp_akima_periodic.la
+lib/kde3/kstplugins/kstinterp_akima_periodic.so
+lib/kde3/kstplugins/kstinterp_akima_periodic.xml
+lib/kde3/kstplugins/kstinterp_cspline.la
+lib/kde3/kstplugins/kstinterp_cspline.so
+lib/kde3/kstplugins/kstinterp_cspline.xml
+lib/kde3/kstplugins/kstinterp_cspline_periodic.la
+lib/kde3/kstplugins/kstinterp_cspline_periodic.so
+lib/kde3/kstplugins/kstinterp_cspline_periodic.xml
+lib/kde3/kstplugins/kstinterp_linear.la
+lib/kde3/kstplugins/kstinterp_linear.so
+lib/kde3/kstplugins/kstinterp_linear.xml
+lib/kde3/kstplugins/kstinterp_polynomial.la
+lib/kde3/kstplugins/kstinterp_polynomial.so
+lib/kde3/kstplugins/kstinterp_polynomial.xml
+lib/kde3/kstplugins/linefit.la
+lib/kde3/kstplugins/linefit.so
+lib/kde3/kstplugins/linefit.xml
+lib/kde3/kstplugins/periodogram.la
+lib/kde3/kstplugins/periodogram.so
+lib/kde3/kstplugins/periodogram.xml
+lib/kde3/kstplugins/phase.la
+lib/kde3/kstplugins/phase.so
+lib/kde3/kstplugins/phase.xml
+lib/kde3/kstplugins/statistics.la
+lib/kde3/kstplugins/statistics.so
+lib/kde3/kstplugins/statistics.xml
+lib/libkst.la
+lib/libkst.so
+lib/libkst.so.1
+share/applnk/Applications/Sciences/kst.desktop
+share/apps/kst/kstui.rc
+share/config/colors/Kst Colors
+share/doc/HTML/en/kst/common
+share/doc/HTML/en/kst/index.cache.bz2
+share/doc/HTML/en/kst/index.docbook
+share/icons/hicolor/16x16/mimetypes/kst.png
+share/icons/hicolor/22x22/actions/kst_advance.png
+share/icons/hicolor/22x22/actions/kst_back.png
+share/icons/hicolor/22x22/actions/kst_changefile.png
+share/icons/hicolor/22x22/actions/kst_changenpts.png
+share/icons/hicolor/22x22/actions/kst_datamanager.png
+share/icons/hicolor/22x22/actions/kst_datamode.png
+share/icons/hicolor/22x22/actions/kst_datawizard.png
+share/icons/hicolor/22x22/actions/kst_editplots.png
+share/icons/hicolor/22x22/actions/kst_graphfile.png
+share/icons/hicolor/22x22/actions/kst_quickcurves.png
+share/icons/hicolor/22x22/actions/kst_quickpsd.png
+share/icons/hicolor/22x22/actions/kst_zoomtie.png
+share/icons/hicolor/22x22/actions/kst_zoomx.png
+share/icons/hicolor/22x22/actions/kst_zoomxy.png
+share/icons/hicolor/22x22/actions/kst_zoomy.png
+share/icons/hicolor/32x32/mimetypes/kst.png
+share/icons/locolor/16x16/apps/kst.png
+share/icons/locolor/16x16/mimetypes/kst.png
+share/icons/locolor/32x32/apps/kst.png
+share/icons/locolor/32x32/mimetypes/kst.png
+share/mimelnk/application/x-kst.desktop
+share/services/kst/kstdata_ascii.desktop
+share/services/kst/kstdata_dirfile.desktop
+share/services/kst/kstdata_frame.desktop
+share/services/kst/kstdata_indirect.desktop
+share/services/kst/kstdata_lfiio.desktop
+share/servicetypes/kst/kstdatasourceplugin.desktop
+share/servicetypes/kst/kstextension.desktop
+share/servicetypes/kst/kstfilter.desktop
+share/servicetypes/kst/kstplugin.desktop
+@dirrm share/servicetypes/kst
+@unexec rmdir %D/share/servicetypes 2>/dev/null || true
+@dirrm share/services/kst
+@unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/actions 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kst
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config/colors 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true
+@dirrm share/apps/kst
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications/Sciences 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
+@dirrm lib/kde3/kstplugins

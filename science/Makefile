@@ -25,6 +25,7 @@
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += kmovisto
+    SUBDIR += kst
     SUBDIR += libctl
     SUBDIR += libsvm
     SUBDIR += mayavi
