@@ -1,0 +1,12 @@
+Tmetric is a (still raw) tool to aid in determining the available bandwidth 
+from one host to another. It is inspired by the (closed source) pathchar 
+utility. Please do not assume that this program works exactly like pathchar 
+does. It only attempts to report the bandwidth between 2 hosts, and not the 
+bandwidth available at every hop on a route along the way.
+
+I've only tried compiling this on FreeBSD and Linux. There is some strange 
+behavior if your system has an outdated or limited FPU. My (oldassed) sparc 
+(this web server), for example, doesn't handle the floating point precision 
+types correctly for my tests. Oh well.
+
+Michael Bacarella <mbac@nyct.net>

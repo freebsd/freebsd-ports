@@ -14,6 +14,7 @@
     SUBDIR += postmark
     SUBDIR += rawio
     SUBDIR += tcpblast
+    SUBDIR += tmetric
     SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>
