@@ -3,7 +3,7 @@
 # Date created:		June 15, 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.17 1999/03/08 20:57:39 steve Exp $
+# $Id: Makefile,v 1.18 1999/03/22 08:38:59 jkoshy Exp $
 #
 
 DISTNAME=	blackbox-0.50.4
