@@ -10,7 +10,7 @@ DISTNAME=	gnome-games-1.0.51
 PKGNAME=	gnomegames-1.0.51
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-games
+MASTER_SITE_SUBDIR=	stable/sources/gnome-games
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -9,7 +9,7 @@
 DISTNAME=	gnumeric-0.44
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnumeric
+MASTER_SITE_SUBDIR=	stable/sources/gnumeric
 
 MAINTAINER=	nakai@FreeBSD.org
 

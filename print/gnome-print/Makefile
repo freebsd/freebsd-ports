@@ -10,7 +10,7 @@ DISTNAME=	gnome-print-0.10
 PKGNAME=	gnomeprint-0.10
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-print
+MASTER_SITE_SUBDIR=	stable/sources/gnome-print
 
 MAINTAINER=	nakai@FreeBSD.org
 

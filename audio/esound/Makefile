@@ -9,7 +9,7 @@
 DISTNAME=	esound-0.2.16
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/esound
+MASTER_SITE_SUBDIR=	stable/sources/esound
 
 MAINTAINER=	vanilla@FreeBSD.org
 

@@ -9,7 +9,7 @@
 DISTNAME=	ORBit-0.5.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/ORBit
+MASTER_SITE_SUBDIR=	stable/sources/ORBit
 
 MAINTAINER=	nakai@FreeBSD.org
 

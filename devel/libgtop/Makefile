@@ -9,7 +9,7 @@
 DISTNAME=	libgtop-1.0.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libgtop
+MASTER_SITE_SUBDIR=	stable/sources/libgtop
 
 MAINTAINER=	nakai@FreeBSD.org
 

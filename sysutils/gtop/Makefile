@@ -9,7 +9,7 @@
 DISTNAME=	gtop-1.0.5
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gtop
+MASTER_SITE_SUBDIR=	stable/sources/gtop
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -10,7 +10,7 @@ DISTNAME=	gnome-media-1.0.51
 PKGNAME=	gnomemedia-1.0.51
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-media
+MASTER_SITE_SUBDIR=	stable/sources/gnome-media
 
 MAINTAINER=	reg@shale.csir.co.za
 
