@@ -1,0 +1,22 @@
+--- ../rinetd.orig/Makefile	Mon Mar  1 13:41:50 1999
++++ Makefile	Fri Jun 11 19:56:19 1999
+@@ -1,9 +1,14 @@
+-CFLAGS=-DLINUX -g
++CFLAGS+=-I.
+ 
+-rinetd: rinetd.o match.o
+-	gcc rinetd.o match.o -o rinetd
++all: rinetd
++
++rinetd: rinetd.o match.o getopt.o
++	cc ${CFLAGS} rinetd.o match.o getopt.o -o rinetd
++
++getopt.o:
++	cc ${CFLAGS} -c getopt.c
+ 
+ install: rinetd
+-	install -m 700 rinetd /usr/sbin
+-	install -m 644 rinetd.8 /usr/man/man8
++	install -C -o root -g wheel -m 700 rinetd /usr/local/sbin
++	install -C -o root -g wheel -m 644 rinetd.8 /usr/local/man/man8
+ 

@@ -1,0 +1,4 @@
+sbin/rinetd
+share/doc/rinetd/index.html
+share/doc/rinetd/README
+@dirrm share/doc/rinetd
