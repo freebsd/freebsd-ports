@@ -40,33 +40,33 @@ LIB_DEPENDS+=	c_r.4:${PORTSDIR}/misc/compat4x
 .endif
 
 .if exists(/etc/X11/applnk)
-PLIST_SUB+=	APPLNK:=""
+PLIST_SUB+=	APPLNK=""
 .else
-PLIST_SUB+=	APPLNK:="@comment "
+PLIST_SUB+=	APPLNK="@comment "
 .endif
 
 .if exists(${X11BASE}/share/gnome)
-PLIST_SUB+=	GNOME:=""
+PLIST_SUB+=	GNOME=""
 .else
-PLIST_SUB+=	GNOME:="@comment "
+PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if exists(${X11BASE}/share/applnk/Internet)
-PLIST_SUB+=	KDE:=""
+PLIST_SUB+=	KDE=""
 .else
-PLIST_SUB+=	KDE:="@comment "
+PLIST_SUB+=	KDE="@comment "
 .endif
 
 .if exists(${X11BASE}/share/applnk/Networking)
-PLIST_SUB+=	KDE2:=""
+PLIST_SUB+=	KDE2=""
 .else
-PLIST_SUB+=	KDE2:="@comment "
+PLIST_SUB+=	KDE2="@comment "
 .endif
 
 .if exists(${X11BASE}/share/gnome/apps)
-PLIST_SUB+=	GNOMELNK:=""
+PLIST_SUB+=	GNOMELNK=""
 .else
-PLIST_SUB+=	GNOMELNK:="@comment "
+PLIST_SUB+=	GNOMELNK="@comment "
 .endif
 
 post-patch:
