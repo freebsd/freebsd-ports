@@ -13,6 +13,7 @@
     SUBDIR += ah-tty
     SUBDIR += and
     SUBDIR += anteater
+    SUBDIR += apachetop
     SUBDIR += apcpwr
     SUBDIR += apcupsd
     SUBDIR += asapm
