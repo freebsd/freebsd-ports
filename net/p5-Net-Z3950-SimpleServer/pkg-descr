@@ -1,0 +1,19 @@
+SimpleServer is a Perl module which is intended to make it as simple as
+possible to develop new Z39.50 servers over any type of database
+imaginable.  All you have to do is implement a function for initialising your
+database (optional), searching the database, and returning "database
+records" on request.  The module takes care of everything else and
+automatically starts a server for you, listens to incoming connections,
+and implements the Z39.50 protocol.  It couldn't really be easier.
+
+SimpleServer is based on the popular YAZ toolkit which means it is
+robust, efficient, widely portable, and it interoperates with all known
+Z39.50 clients.
+
+Use SimpleServer together with other Perl modules to provide gateways
+to relational databases, local file stores, SOAP/RDF-servers, etc.
+
+SimpleServer currently supports the Init, Search, Present, Scan and
+Close services.
+
+WWW: http://www.indexdata.dk/simpleserver/
