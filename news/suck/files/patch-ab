@@ -1,0 +1,125 @@
+--- suck.c.orig	Wed Mar  6 14:58:34 1996
++++ suck.c	Sat Mar 30 01:10:57 1996
+@@ -11,6 +11,10 @@
+ #include "suck.h"
+ #include "suckutils.h"
+ 
++#ifdef _HAVE_PARAM_H
++#include <sys/param.h>
++#endif
++
+ #ifdef KILLFILE
+ #include "killfile.h"
+ #endif
+@@ -501,7 +505,9 @@
+ 			}
+ #endif				
+ 		}
+-		fclose(ifp);
++		if( ifp != NULL ){
++			fclose(ifp);
++		}
+ 	}
+ #ifdef KILLFILE
+ 	free_killfile(killp);
+@@ -768,7 +774,11 @@
+ 					}
+ 					if(retval == RETVAL_OK) {
+ 						/* first put #! rnews size */
++#if (defined(BSD) && (BSD >= 199306))
++						fprintf(fptr, "#! rnews %qd\n", sbuf.st_size);
++#else
+ 						fprintf(fptr, "#! rnews %ld\n", sbuf.st_size);
++#endif
+ 		
+ 						/* use fread/fwrite in case lines are longer than MAXLINLEN */
+ 						while((i = fread(buf, 1, MAXLINLEN, fpin)) > 0) {
+--- suckutils.c.orig	Wed Mar  6 14:48:18 1996
++++ suckutils.c	Sat Mar 30 01:12:01 1996
+@@ -13,6 +13,10 @@
+ #include "both.h"
+ #include "suckutils.h"
+ 
++#ifdef _HAVE_PARAM_H
++#include <sys/param.h>
++#endif
++
+ /*------------------------------------------------------------------------*/
+ /* check if directory exists, if not, try to create it.			  */
+ /* return TRUE if made/exists and can write to it			  */
+@@ -148,7 +152,11 @@
+ 	lockfile = full_path(FP_GET, FP_TMPDIR, N_LOCKFILE);
+ 	if((f_lock = fopen(lockfile, "r")) != NULL) {
+ 		/* okay, let's try and see if this sucker is truly alive */
++# if (defined(BSD) && (BSD >= 199306))
++		fscanf(f_lock, "%ld", &pid);
++# else
+ 		fscanf(f_lock, "%d", &pid);
++# endif
+ 		fclose(f_lock);
+ 		if(pid <= 0) {
+ 			error_log(ERRLOG_REPORT, "Lock File %s , Invalid PID, aborting.\n", lockfile);
+@@ -160,21 +168,37 @@
+ 		else if(kill(pid, 0) == -1 && errno == ESRCH) {
+ 			/* no pid found */
+ 			if(unlink(lockfile) == 0) {
++# if (defined(BSD) && (BSD >= 199306))
++				error_log(ERRLOG_REPORT, "Lock File %s , stale PID %ld removed.\n", lockfile, pid);
++# else
+ 				error_log(ERRLOG_REPORT, "Lock File %s , stale PID %d removed.\n", lockfile, pid);
++# endif
+ 			}
+ 			else {
++# if (defined(BSD) && (BSD >= 199306))
++				error_log(ERRLOG_REPORT, "Unable to remove Lock File %s , stale PID %d, Aborting.\n", lockfile, pid);
++# else
+ 				error_log(ERRLOG_REPORT, "Unable to remove Lock File %s , stale PID %d, Aborting.\n", lockfile, pid);
++# endif
+ 				retval = RETVAL_ERROR;
+ 			}
+ 		}
+ 		else {
++# if (defined(BSD) && (BSD >= 199306))
++			error_log(ERRLOG_REPORT, "Lock File %s , PID %ld exists, aborting.\n", lockfile, pid);
++# else
+ 			error_log(ERRLOG_REPORT, "Lock File %s , PID %d exists, aborting.\n", lockfile, pid);
++# endif
+ 			retval = RETVAL_ERROR;
+ 		}
+ 	}
+ 	if(retval == RETVAL_OK) {
+ 		if((f_lock = fopen(lockfile, "w")) != NULL) { 
++# if (defined(BSD) && (BSD >= 199306))
++			fprintf(f_lock, "%ld", getpid());
++# else
+ 			fprintf(f_lock, "%d", getpid());
++# endif
+ 			fclose(f_lock);
+ 		}
+ 		else {
+--- both.c.orig	Wed Mar  6 14:48:28 1996
++++ both.c	Sat Mar 30 01:18:19 1996
+@@ -12,6 +12,10 @@
+ #include "config.h"
+ #include "both.h"
+ 
++#ifdef _HAVE_PARAM_H
++#include <sys/param.h>
++#endif
++
+ #ifdef TIMEOUT
+ #include <sys/time.h>
+ #include <sys/types.h>
+@@ -238,7 +242,12 @@
+ 			if(i < 1) {
+ 				if(i == 0) {
+ 					/* in case recv has no data */
++#if (defined(BSD) && (BSD >= 199306))
++					/* I don't know, is this appropriate conversion */
++					errno = ENOTCONN;
++#else
+ 					errno = ENODATA;
++#endif
+ 				}
+ 				MyPerror("Socket error");
+ 				ret = -1;
