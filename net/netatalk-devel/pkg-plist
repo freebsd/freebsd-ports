@@ -82,7 +82,7 @@ etc/nls/maccode.437
 etc/nls/maccode.850
 etc/nls/maccode.iso8859-1
 etc/nls/maccode.iso8859-1.adapted
-etc/rc.d/netatalk.sh
+etc/rc.d/netatalk.sh.sample
 etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.so
