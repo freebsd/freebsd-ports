@@ -25,9 +25,9 @@ share/apps/kmedia/pics/poweroff.xbm
 share/apps/kmedia/pics/prevtrk.xbm
 share/apps/kmedia/pics/rew.xbm
 share/apps/kmedia/pics/stop.xbm
-share/apps/kmid/AlwaysLookOnTheBrightSideOfLife.kar
-share/apps/kmid/TakingCareOfBusiness.kar
-share/apps/kmid/UnVeleroLlamadoLibertad.kar
+share/apps/kmid/IfICantHaveYou.kar
+share/apps/kmid/SinDocumentos.kar
+share/apps/kmid/Waterloo.kar
 share/apps/kmid/fm/drums.o3
 share/apps/kmid/fm/drums.sb
 share/apps/kmid/fm/std.o3
@@ -35,15 +35,18 @@ share/apps/kmid/fm/std.sb
 share/apps/kmid/maps/YamahaPSR500.map
 share/apps/kmid/maps/YamahaPSS790.map
 share/apps/kmid/maps/gm.map
-share/apps/kmid/toolbar/kmid_delcol.xpm
+share/apps/kmid/pics/button1.xpm
+share/apps/kmid/pics/button2.xpm
+share/apps/kmid/pics/keyboard.xpm
+share/apps/kmid/toolbar/kmid_chn.xpm
 share/apps/kmid/toolbar/kmid_fforward.xpm
 share/apps/kmid/toolbar/kmid_frewind.xpm
-share/apps/kmid/toolbar/kmid_newcol.xpm
 share/apps/kmid/toolbar/kmid_next.xpm
 share/apps/kmid/toolbar/kmid_pause.xpm
 share/apps/kmid/toolbar/kmid_play.xpm
 share/apps/kmid/toolbar/kmid_prev.xpm
 share/apps/kmid/toolbar/kmid_stop.xpm
+share/apps/kmid/toolbar/kmid_volume.xpm
 share/apps/kmidi/config/chaos12-voices
 share/apps/kmidi/config/chaos8-voices
 share/apps/kmidi/config/gravis.cfg
@@ -88,12 +91,17 @@ share/doc/HTML/en/kmedia/index-4.html
 share/doc/HTML/en/kmedia/index-5.html
 share/doc/HTML/en/kmedia/index.html
 share/doc/HTML/en/kmedia/logotp3.gif
+share/doc/HTML/en/kmid/index-1.html
+share/doc/HTML/en/kmid/index-2.html
+share/doc/HTML/en/kmid/index-3.html
+share/doc/HTML/en/kmid/index-4.html
+share/doc/HTML/en/kmid/index-5.html
+share/doc/HTML/en/kmid/index-6.html
+share/doc/HTML/en/kmid/index-7.html
+share/doc/HTML/en/kmid/index-8.html
+share/doc/HTML/en/kmid/index-9.html
 share/doc/HTML/en/kmid/index.html
-share/doc/HTML/en/kmid/index1.html
-share/doc/HTML/en/kmid/index2.html
-share/doc/HTML/en/kmid/index3.html
-share/doc/HTML/en/kmid/index4.html
-share/doc/HTML/en/kmid/index5.html
+share/doc/HTML/en/kmid/logotp3.gif
 share/doc/HTML/en/kmidi/kmidi-1.html
 share/doc/HTML/en/kmidi/kmidi-2.html
 share/doc/HTML/en/kmidi/kmidi-3.html
@@ -108,6 +116,7 @@ share/doc/HTML/en/kmix/index-2.html
 share/doc/HTML/en/kmix/index-3.html
 share/doc/HTML/en/kmix/index-4.html
 share/doc/HTML/en/kmix/index-5.html
+share/doc/HTML/en/kmix/index-6.html
 share/doc/HTML/en/kmix/index.html
 share/doc/HTML/en/kmix/logotp3.gif
 share/doc/HTML/en/kscd/kscd-1.html
@@ -137,12 +146,17 @@ share/doc/HTML/en/kscd/kscd7.gif
 share/doc/HTML/en/kscd/kscd8.gif
 share/doc/HTML/en/kscd/kscd9.gif
 share/doc/HTML/en/kscd/logotp3.gif
+share/doc/HTML/es/kmid/index-1.html
+share/doc/HTML/es/kmid/index-2.html
+share/doc/HTML/es/kmid/index-3.html
+share/doc/HTML/es/kmid/index-4.html
+share/doc/HTML/es/kmid/index-5.html
+share/doc/HTML/es/kmid/index-6.html
+share/doc/HTML/es/kmid/index-7.html
+share/doc/HTML/es/kmid/index-8.html
+share/doc/HTML/es/kmid/index-9.html
 share/doc/HTML/es/kmid/index.html
-share/doc/HTML/es/kmid/index1.html
-share/doc/HTML/es/kmid/index2.html
-share/doc/HTML/es/kmid/index3.html
-share/doc/HTML/es/kmid/index4.html
-share/doc/HTML/es/kmid/index5.html
+share/doc/HTML/es/kmid/logotp3.gif
 share/icons/cd.xpm
 share/icons/kmedia.xpm
 share/icons/kmid.xpm
@@ -159,8 +173,13 @@ share/locale/cs/LC_MESSAGES/kmid.mo
 share/locale/cs/LC_MESSAGES/kmix.mo
 share/locale/cs/LC_MESSAGES/kscd.mo
 share/locale/de/LC_MESSAGES/kmedia.mo
+share/locale/de/LC_MESSAGES/kmid.mo
 share/locale/de/LC_MESSAGES/kmix.mo
 share/locale/de/LC_MESSAGES/kscd.mo
+share/locale/eo/LC_MESSAGES/kmedia.mo
+share/locale/eo/LC_MESSAGES/kmid.mo
+share/locale/eo/LC_MESSAGES/kmix.mo
+share/locale/eo/LC_MESSAGES/kscd.mo
 share/locale/es/LC_MESSAGES/kmedia.mo
 share/locale/es/LC_MESSAGES/kmid.mo
 share/locale/es/LC_MESSAGES/kmix.mo
@@ -169,12 +188,20 @@ share/locale/fi/LC_MESSAGES/kmid.mo
 share/locale/fi/LC_MESSAGES/kmix.mo
 share/locale/fi/LC_MESSAGES/kscd.mo
 share/locale/fr/LC_MESSAGES/kmedia.mo
+share/locale/fr/LC_MESSAGES/kmid.mo
+share/locale/fr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kmedia.mo
 share/locale/hr/LC_MESSAGES/kmid.mo
 share/locale/hr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kscd.mo
+share/locale/is/LC_MESSAGES/kmix.mo
+share/locale/is/LC_MESSAGES/kscd.mo
 share/locale/it/LC_MESSAGES/kmedia.mo
 share/locale/it/LC_MESSAGES/kmix.mo
+share/locale/ko/LC_MESSAGES/kmedia.mo
+share/locale/ko/LC_MESSAGES/kmid.mo
+share/locale/ko/LC_MESSAGES/kmix.mo
+share/locale/ko/LC_MESSAGES/kscd.mo
 share/locale/nl/LC_MESSAGES/kmedia.mo
 share/locale/nl/LC_MESSAGES/kscd.mo
 share/locale/no/LC_MESSAGES/kmedia.mo
@@ -200,6 +227,7 @@ share/locale/sk/LC_MESSAGES/kscd.mo
 share/locale/sv/LC_MESSAGES/kmedia.mo
 share/locale/sv/LC_MESSAGES/kmid.mo
 share/locale/sv/LC_MESSAGES/kmix.mo
+share/locale/sv/LC_MESSAGES/kscd.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmedia.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmid.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmix.mo
@@ -240,6 +268,7 @@ share/mimelnk/text/xmcd.kdelnk
 @dirrm share/apps/kmidi/config
 @dirrm share/apps/kmidi
 @dirrm share/apps/kmid/toolbar
+@dirrm share/apps/kmid/pics
 @dirrm share/apps/kmid/maps
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid

@@ -1,0 +1,15 @@
+*** kdm/config/kdmrc~	Thu Dec 31 14:59:39 1998
+--- kdm/config/kdmrc	Sun Jan  3 15:41:31 1999
+***************
+*** 9,13 ****
+  SortUsers=true
+  #Users=root;johndoe
+! NoUsers=bin;daemon;games;halt;mail;man;news;nobody;reboot;shutdown;sync;uucp;xten;
+  GreetString=K Desktop Environment [HOSTNAME]
+  UserView=true
+--- 9,13 ----
+  SortUsers=true
+  #Users=root;johndoe
+! NoUsers=bin;bind;daemon;games;halt;kmem;mail;man;mta;news;nobody;operator;pop;reboot;shutdown;sync;tty;uucp;xten;
+  GreetString=K Desktop Environment [HOSTNAME]
+  UserView=true

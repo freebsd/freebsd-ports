@@ -1,0 +1,44 @@
+*** kwmmodules/kpager/Makefile.in~	Sat Dec 19 22:29:36 1998
+--- kwmmodules/kpager/Makefile.in	Tue Dec 29 01:29:59 1998
+***************
+*** 217,221 ****
+  
+  .SUFFIXES:
+! .SUFFIXES: .S .c .cpp .lo .o .s
+  $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+  	cd $(top_srcdir) && $(AUTOMAKE) --foreign --include-deps kwmmodules/kpager/Makefile
+--- 217,225 ----
+  
+  .SUFFIXES:
+! .SUFFIXES: .S .c .cpp .lo .o .s .h .moc
+! 
+! .h.moc:
+! 	$(MOC) $< -o $@
+! 
+  $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+  	cd $(top_srcdir) && $(AUTOMAKE) --foreign --include-deps kwmmodules/kpager/Makefile
+***************
+*** 419,425 ****
+  mostlyclean distclean maintainer-clean
+  
+- 
+- %.moc: %.h
+- 	$(MOC) $< -o $@
+  
+  kpager.cpp:kpager.moc
+--- 423,426 ----
+*** kdm/Makefile.in~	Fri Jul 10 20:35:33 1998
+--- kdm/Makefile.in	Fri Oct 30 20:34:51 1998
+***************
+*** 507,511 ****
+  
+  #CFLAGS   = -Wall -Wno-implicit -Wno-return-type
+  CFLAGS   += -DHAVE_CONFIG_H
+! CXXFLAGS += -DHAVE_CONFIG_H
+  
+--- 507,511 ----
+  
+  #CFLAGS   = -Wall -Wno-implicit -Wno-return-type
+  CFLAGS   += -DHAVE_CONFIG_H
+! CXXFLAGS += -DHAVE_CONFIG_H -DHAVE_GETUSERSHELL
+  

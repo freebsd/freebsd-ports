@@ -1,19 +1,29 @@
+bin/ark
+bin/kab
+bin/kabapi_test
 bin/karm
 bin/kcalc
 bin/kedit
 bin/khexdit
 bin/kjots
+bin/klipper
 bin/kljettool
+bin/klpq
 bin/knotes
-bin/kzip
+bin/kwrite
 share/applnk/Applications/KEdit.kdelnk
+share/applnk/Applications/kwrite.kdelnk
 share/applnk/Utilities/KArm.kdelnk
 share/applnk/Utilities/KLJetTool.kdelnk
+share/applnk/Utilities/KLpq.kdelnk
 share/applnk/Utilities/Kjots.kdelnk
+share/applnk/Utilities/ark.kdelnk
+share/applnk/Utilities/kab.kdelnk
 share/applnk/Utilities/kcalc.kdelnk
 share/applnk/Utilities/khexdit.kdelnk
+share/applnk/Utilities/klipper.kdelnk
 share/applnk/Utilities/knotes.kdelnk
-share/applnk/Utilities/kzip.kdelnk
+share/apps/kab/pics/addressbook_logo.jpg
 share/apps/kcalc/pics/kcalclogo.xpm
 share/apps/kedit/pics/keditlogo.xpm
 share/apps/kedit/toolbar/filenew2.xpm
@@ -22,6 +32,8 @@ share/apps/kjots/pics/OpenBook.xpm
 share/apps/kjots/pics/filedel.xpm
 share/apps/knotes/pics/knotesclose.xpm
 share/apps/knotes/pics/knoteslogo.xpm
+share/doc/HTML/de/kab/fehler.gif
+share/doc/HTML/de/kab/index.html
 share/doc/HTML/de/kcalc/index-1.html
 share/doc/HTML/de/kcalc/index-2.html
 share/doc/HTML/de/kcalc/index-3.html
@@ -33,6 +45,13 @@ share/doc/HTML/de/kcalc/index-8.html
 share/doc/HTML/de/kcalc/index-9.html
 share/doc/HTML/de/kcalc/index.html
 share/doc/HTML/de/kcalc/logotp3.gif
+share/doc/HTML/en/ark/index-1.html
+share/doc/HTML/en/ark/index-2.html
+share/doc/HTML/en/ark/index-3.html
+share/doc/HTML/en/ark/index-4.html
+share/doc/HTML/en/ark/index.html
+share/doc/HTML/en/ark/logotp3.gif
+share/doc/HTML/en/kab/index.html
 share/doc/HTML/en/karm/index-1.html
 share/doc/HTML/en/karm/index-2.html
 share/doc/HTML/en/karm/index-3.html
@@ -81,6 +100,15 @@ share/doc/HTML/en/kljettool/kljettool.nif
 share/doc/HTML/en/kljettool/kljettool.sgml
 share/doc/HTML/en/kljettool/logotp3.gif
 share/doc/HTML/en/kljettool/magic
+share/doc/HTML/en/klpq/index-1.html
+share/doc/HTML/en/klpq/index-2.html
+share/doc/HTML/en/klpq/index-3.html
+share/doc/HTML/en/klpq/index-4.html
+share/doc/HTML/en/klpq/index-5.html
+share/doc/HTML/en/klpq/index-6.html
+share/doc/HTML/en/klpq/index-7.html
+share/doc/HTML/en/klpq/index.html
+share/doc/HTML/en/klpq/logotp3.gif
 share/doc/HTML/en/knotes/index-1.html
 share/doc/HTML/en/knotes/index-2.html
 share/doc/HTML/en/knotes/index-3.html
@@ -88,29 +116,31 @@ share/doc/HTML/en/knotes/index-4.html
 share/doc/HTML/en/knotes/index-5.html
 share/doc/HTML/en/knotes/index.html
 share/doc/HTML/en/knotes/logotp3.gif
-share/doc/HTML/en/kzip/index-1.html
-share/doc/HTML/en/kzip/index-2.html
-share/doc/HTML/en/kzip/index-3.html
-share/doc/HTML/en/kzip/index-4.html
-share/doc/HTML/en/kzip/index.html
-share/doc/HTML/en/kzip/logotp3.gif
 share/doc/HTML/it/khexdit/index.html
+share/icons/ark.xpm
+share/icons/kab.xpm
 share/icons/karm.xpm
 share/icons/kcalc.xpm
 share/icons/kedit.xpm
 share/icons/khexdit.xpm
 share/icons/kjots.xpm
 share/icons/kljetlogo.xpm
+share/icons/klpq.xpm
 share/icons/knotes.xpm
-share/icons/kzip.xpm
+share/icons/kwrite.xpm
+share/icons/mini/ark.xpm
+share/icons/mini/kab.xpm
 share/icons/mini/karm.xpm
 share/icons/mini/kcalc.xpm
 share/icons/mini/kedit.xpm
 share/icons/mini/khexdit.xpm
 share/icons/mini/kjots.xpm
 share/icons/mini/kljettool.xpm
+share/icons/mini/klpq.xpm
 share/icons/mini/knotes.xpm
-share/icons/mini/kzip.xpm
+share/icons/mini/kwrite.xpm
+share/locale/ca/LC_MESSAGES/ark.mo
+share/locale/ca/LC_MESSAGES/kab.mo
 share/locale/ca/LC_MESSAGES/karm.mo
 share/locale/ca/LC_MESSAGES/kcalc.mo
 share/locale/ca/LC_MESSAGES/kedit.mo
@@ -118,88 +148,137 @@ share/locale/ca/LC_MESSAGES/kfloppy.mo
 share/locale/ca/LC_MESSAGES/khexdit.mo
 share/locale/ca/LC_MESSAGES/kljettool.mo
 share/locale/ca/LC_MESSAGES/knotes.mo
-share/locale/ca/LC_MESSAGES/kzip.mo
+share/locale/cs/LC_MESSAGES/ark.mo
+share/locale/cs/LC_MESSAGES/kab.mo
 share/locale/cs/LC_MESSAGES/karm.mo
 share/locale/cs/LC_MESSAGES/kcalc.mo
 share/locale/cs/LC_MESSAGES/kedit.mo
 share/locale/cs/LC_MESSAGES/kfloppy.mo
 share/locale/cs/LC_MESSAGES/khexdit.mo
+share/locale/cs/LC_MESSAGES/kjots.mo
 share/locale/cs/LC_MESSAGES/kljettool.mo
+share/locale/cs/LC_MESSAGES/klpq.mo
 share/locale/cs/LC_MESSAGES/knotes.mo
-share/locale/cs/LC_MESSAGES/kzip.mo
+share/locale/cs/LC_MESSAGES/kpm.mo
+share/locale/da/LC_MESSAGES/ark.mo
 share/locale/da/LC_MESSAGES/karm.mo
 share/locale/da/LC_MESSAGES/kedit.mo
 share/locale/da/LC_MESSAGES/khexdit.mo
 share/locale/da/LC_MESSAGES/knotes.mo
-share/locale/da/LC_MESSAGES/kzip.mo
+share/locale/de/LC_MESSAGES/ark.mo
+share/locale/de/LC_MESSAGES/kab.mo
 share/locale/de/LC_MESSAGES/karm.mo
 share/locale/de/LC_MESSAGES/kcalc.mo
 share/locale/de/LC_MESSAGES/kedit.mo
 share/locale/de/LC_MESSAGES/kfloppy.mo
 share/locale/de/LC_MESSAGES/khexdit.mo
+share/locale/de/LC_MESSAGES/kjots.mo
+share/locale/de/LC_MESSAGES/klipper.mo
 share/locale/de/LC_MESSAGES/kljettool.mo
+share/locale/de/LC_MESSAGES/klpq.mo
 share/locale/de/LC_MESSAGES/knotes.mo
-share/locale/de/LC_MESSAGES/kzip.mo
 share/locale/el/LC_MESSAGES/kcalc.mo
 share/locale/el/LC_MESSAGES/kedit.mo
 share/locale/el/LC_MESSAGES/khexdit.mo
+share/locale/eo/LC_MESSAGES/ark.mo
+share/locale/eo/LC_MESSAGES/karm.mo
+share/locale/eo/LC_MESSAGES/kcalc.mo
+share/locale/eo/LC_MESSAGES/kedit.mo
+share/locale/eo/LC_MESSAGES/kfloppy.mo
+share/locale/eo/LC_MESSAGES/khexdit.mo
+share/locale/eo/LC_MESSAGES/kljettool.mo
+share/locale/eo/LC_MESSAGES/knotes.mo
+share/locale/es/LC_MESSAGES/ark.mo
+share/locale/es/LC_MESSAGES/kab.mo
 share/locale/es/LC_MESSAGES/karm.mo
 share/locale/es/LC_MESSAGES/kcalc.mo
 share/locale/es/LC_MESSAGES/kedit.mo
 share/locale/es/LC_MESSAGES/kfloppy.mo
+share/locale/es/LC_MESSAGES/kfract.mo
 share/locale/es/LC_MESSAGES/khexdit.mo
+share/locale/es/LC_MESSAGES/kjots.mo
+share/locale/es/LC_MESSAGES/klipper.mo
+share/locale/es/LC_MESSAGES/kljettool.mo
+share/locale/es/LC_MESSAGES/klpq.mo
 share/locale/es/LC_MESSAGES/knotes.mo
-share/locale/es/LC_MESSAGES/kzip.mo
+share/locale/es/LC_MESSAGES/kpm.mo
+share/locale/es/LC_MESSAGES/kwrite.mo
+share/locale/fi/LC_MESSAGES/ark.mo
+share/locale/fi/LC_MESSAGES/kab.mo
 share/locale/fi/LC_MESSAGES/karm.mo
 share/locale/fi/LC_MESSAGES/kcalc.mo
 share/locale/fi/LC_MESSAGES/kedit.mo
 share/locale/fi/LC_MESSAGES/kfloppy.mo
 share/locale/fi/LC_MESSAGES/khexdit.mo
+share/locale/fi/LC_MESSAGES/kjots.mo
 share/locale/fi/LC_MESSAGES/kljettool.mo
+share/locale/fi/LC_MESSAGES/klpq.mo
 share/locale/fi/LC_MESSAGES/knotes.mo
-share/locale/fi/LC_MESSAGES/kzip.mo
+share/locale/fi/LC_MESSAGES/kpm.mo
+share/locale/fr/LC_MESSAGES/ark.mo
+share/locale/fr/LC_MESSAGES/kab.mo
 share/locale/fr/LC_MESSAGES/karm.mo
+share/locale/fr/LC_MESSAGES/kcalc.mo
 share/locale/fr/LC_MESSAGES/kedit.mo
 share/locale/fr/LC_MESSAGES/kfloppy.mo
 share/locale/fr/LC_MESSAGES/khexdit.mo
+share/locale/fr/LC_MESSAGES/klpq.mo
 share/locale/fr/LC_MESSAGES/knotes.mo
-share/locale/fr/LC_MESSAGES/kzip.mo
+share/locale/fr/LC_MESSAGES/kwrite.mo
+share/locale/he/LC_MESSAGES/kedit.mo
+share/locale/hr/LC_MESSAGES/ark.mo
 share/locale/hr/LC_MESSAGES/karm.mo
 share/locale/hr/LC_MESSAGES/kcalc.mo
 share/locale/hr/LC_MESSAGES/kedit.mo
 share/locale/hr/LC_MESSAGES/kfloppy.mo
 share/locale/hr/LC_MESSAGES/khexdit.mo
 share/locale/hr/LC_MESSAGES/kljettool.mo
+share/locale/hr/LC_MESSAGES/klpq.mo
 share/locale/hr/LC_MESSAGES/knotes.mo
-share/locale/hr/LC_MESSAGES/kzip.mo
+share/locale/hu/LC_MESSAGES/ark.mo
 share/locale/hu/LC_MESSAGES/kedit.mo
 share/locale/hu/LC_MESSAGES/khexdit.mo
 share/locale/hu/LC_MESSAGES/knotes.mo
-share/locale/hu/LC_MESSAGES/kzip.mo
+share/locale/it/LC_MESSAGES/ark.mo
 share/locale/it/LC_MESSAGES/karm.mo
 share/locale/it/LC_MESSAGES/kcalc.mo
 share/locale/it/LC_MESSAGES/kedit.mo
 share/locale/it/LC_MESSAGES/khexdit.mo
 share/locale/it/LC_MESSAGES/knotes.mo
-share/locale/it/LC_MESSAGES/kzip.mo
+share/locale/ko/LC_MESSAGES/ark.mo
+share/locale/ko/LC_MESSAGES/karm.mo
+share/locale/ko/LC_MESSAGES/kcalc.mo
+share/locale/ko/LC_MESSAGES/kedit.mo
+share/locale/ko/LC_MESSAGES/kfloppy.mo
+share/locale/ko/LC_MESSAGES/khexdit.mo
+share/locale/ko/LC_MESSAGES/kljettool.mo
+share/locale/ko/LC_MESSAGES/knotes.mo
 share/locale/mk/LC_MESSAGES/kedit.mo
 share/locale/mk/LC_MESSAGES/khexdit.mo
+share/locale/nl/LC_MESSAGES/ark.mo
 share/locale/nl/LC_MESSAGES/karm.mo
 share/locale/nl/LC_MESSAGES/kcalc.mo
 share/locale/nl/LC_MESSAGES/kedit.mo
 share/locale/nl/LC_MESSAGES/kfloppy.mo
 share/locale/nl/LC_MESSAGES/khexdit.mo
 share/locale/nl/LC_MESSAGES/kljettool.mo
+share/locale/nl/LC_MESSAGES/klpq.mo
 share/locale/nl/LC_MESSAGES/knotes.mo
-share/locale/nl/LC_MESSAGES/kzip.mo
+share/locale/no/LC_MESSAGES/ark.mo
+share/locale/no/LC_MESSAGES/kab.mo
 share/locale/no/LC_MESSAGES/karm.mo
 share/locale/no/LC_MESSAGES/kcalc.mo
 share/locale/no/LC_MESSAGES/kedit.mo
 share/locale/no/LC_MESSAGES/kfloppy.mo
 share/locale/no/LC_MESSAGES/khexdit.mo
+share/locale/no/LC_MESSAGES/kjots.mo
+share/locale/no/LC_MESSAGES/klipper.mo
 share/locale/no/LC_MESSAGES/kljettool.mo
+share/locale/no/LC_MESSAGES/klpq.mo
 share/locale/no/LC_MESSAGES/knotes.mo
-share/locale/no/LC_MESSAGES/kzip.mo
+share/locale/no/LC_MESSAGES/kpm.mo
+share/locale/no/LC_MESSAGES/kwrite.mo
+share/locale/pl/LC_MESSAGES/ark.mo
 share/locale/pl/LC_MESSAGES/karm.mo
 share/locale/pl/LC_MESSAGES/kcalc.mo
 share/locale/pl/LC_MESSAGES/kedit.mo
@@ -207,15 +286,16 @@ share/locale/pl/LC_MESSAGES/kfloppy.mo
 share/locale/pl/LC_MESSAGES/khexdit.mo
 share/locale/pl/LC_MESSAGES/kljettool.mo
 share/locale/pl/LC_MESSAGES/knotes.mo
-share/locale/pl/LC_MESSAGES/kzip.mo
+share/locale/pt/LC_MESSAGES/ark.mo
 share/locale/pt/LC_MESSAGES/karm.mo
 share/locale/pt/LC_MESSAGES/kcalc.mo
 share/locale/pt/LC_MESSAGES/kedit.mo
 share/locale/pt/LC_MESSAGES/kfloppy.mo
 share/locale/pt/LC_MESSAGES/khexdit.mo
 share/locale/pt/LC_MESSAGES/kljettool.mo
+share/locale/pt/LC_MESSAGES/klpq.mo
 share/locale/pt/LC_MESSAGES/knotes.mo
-share/locale/pt/LC_MESSAGES/kzip.mo
+share/locale/pt_BR/LC_MESSAGES/ark.mo
 share/locale/pt_BR/LC_MESSAGES/karm.mo
 share/locale/pt_BR/LC_MESSAGES/kcalc.mo
 share/locale/pt_BR/LC_MESSAGES/kedit.mo
@@ -223,104 +303,83 @@ share/locale/pt_BR/LC_MESSAGES/kfloppy.mo
 share/locale/pt_BR/LC_MESSAGES/khexdit.mo
 share/locale/pt_BR/LC_MESSAGES/kljettool.mo
 share/locale/pt_BR/LC_MESSAGES/knotes.mo
-share/locale/pt_BR/LC_MESSAGES/kzip.mo
+share/locale/ro/LC_MESSAGES/ark.mo
 share/locale/ro/LC_MESSAGES/karm.mo
 share/locale/ro/LC_MESSAGES/kcalc.mo
 share/locale/ro/LC_MESSAGES/kfloppy.mo
 share/locale/ro/LC_MESSAGES/khexdit.mo
 share/locale/ro/LC_MESSAGES/kljettool.mo
-share/locale/ro/LC_MESSAGES/kzip.mo
+share/locale/ru/LC_MESSAGES/ark.mo
+share/locale/ru/LC_MESSAGES/kab.mo
+share/locale/ru/LC_MESSAGES/karm.mo
+share/locale/ru/LC_MESSAGES/kcalc.mo
+share/locale/ru/LC_MESSAGES/kedit.mo
+share/locale/ru/LC_MESSAGES/kfloppy.mo
 share/locale/ru/LC_MESSAGES/khexdit.mo
+share/locale/ru/LC_MESSAGES/kjots.mo
+share/locale/ru/LC_MESSAGES/kljettool.mo
+share/locale/ru/LC_MESSAGES/klpq.mo
 share/locale/ru/LC_MESSAGES/knotes.mo
-share/locale/ru/LC_MESSAGES/kzip.mo
+share/locale/ru/LC_MESSAGES/kpm.mo
+share/locale/sk/LC_MESSAGES/ark.mo
+share/locale/sk/LC_MESSAGES/kab.mo
 share/locale/sk/LC_MESSAGES/karm.mo
 share/locale/sk/LC_MESSAGES/kcalc.mo
 share/locale/sk/LC_MESSAGES/kedit.mo
 share/locale/sk/LC_MESSAGES/kfloppy.mo
 share/locale/sk/LC_MESSAGES/khexdit.mo
+share/locale/sk/LC_MESSAGES/kjots.mo
 share/locale/sk/LC_MESSAGES/kljettool.mo
+share/locale/sk/LC_MESSAGES/klpq.mo
 share/locale/sk/LC_MESSAGES/knotes.mo
-share/locale/sk/LC_MESSAGES/kzip.mo
+share/locale/sv/LC_MESSAGES/ark.mo
+share/locale/sv/LC_MESSAGES/kab.mo
+share/locale/sv/LC_MESSAGES/karm.mo
 share/locale/sv/LC_MESSAGES/kcalc.mo
 share/locale/sv/LC_MESSAGES/kedit.mo
 share/locale/sv/LC_MESSAGES/kfloppy.mo
 share/locale/sv/LC_MESSAGES/khexdit.mo
+share/locale/sv/LC_MESSAGES/kjots.mo
+share/locale/sv/LC_MESSAGES/klipper.mo
+share/locale/sv/LC_MESSAGES/kljettool.mo
+share/locale/sv/LC_MESSAGES/knotes.mo
+share/locale/tr/LC_MESSAGES/ark.mo
+share/locale/tr/LC_MESSAGES/karm.mo
+share/locale/tr/LC_MESSAGES/kcalc.mo
+share/locale/tr/LC_MESSAGES/kedit.mo
+share/locale/tr/LC_MESSAGES/kfloppy.mo
+share/locale/tr/LC_MESSAGES/khexdit.mo
+share/locale/tr/LC_MESSAGES/kljettool.mo
+share/locale/tr/LC_MESSAGES/knotes.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ark.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/karm.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kcalc.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kedit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kfloppy.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/khexdit.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kljettool.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/klpq.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/knotes.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/kzip.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/ark.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/karm.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kcalc.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kedit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/khexdit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/knotes.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/kzip.mo
 share/toolbar/filedel.xpm
-@dirrm share/locale/zh_TW.Big5/LC_MESSAGES
-@dirrm share/locale/zh_TW.Big5
-@dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
-@dirrm share/locale/zh_CN.GB2312
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sv
-@dirrm share/locale/sk/LC_MESSAGES
-@dirrm share/locale/sk
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/no/LC_MESSAGES
-@dirrm share/locale/no
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/nl
-@dirrm share/locale/mk/LC_MESSAGES
-@dirrm share/locale/mk
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/hr
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fr
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/es
-@dirrm share/locale/el/LC_MESSAGES
-@dirrm share/locale/el
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/de
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/da
-@dirrm share/locale/cs/LC_MESSAGES
-@dirrm share/locale/cs
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/icons/mini
 @dirrm share/doc/HTML/it/khexdit
-@dirrm share/doc/HTML/it
-@dirrm share/doc/HTML/en/kzip
 @dirrm share/doc/HTML/en/knotes
+@dirrm share/doc/HTML/en/klpq
 @dirrm share/doc/HTML/en/kljettool
 @dirrm share/doc/HTML/en/kjots
 @dirrm share/doc/HTML/en/khexdit
 @dirrm share/doc/HTML/en/kedit
 @dirrm share/doc/HTML/en/kcalc
 @dirrm share/doc/HTML/en/karm
-@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML/en/kab
+@dirrm share/doc/HTML/en/ark
 @dirrm share/doc/HTML/de/kcalc
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML
+@dirrm share/doc/HTML/de/kab
 @dirrm share/apps/knotes/pics
 @dirrm share/apps/knotes
 @dirrm share/apps/kjots/pics
@@ -330,5 +389,6 @@ share/toolbar/filedel.xpm
 @dirrm share/apps/kedit
 @dirrm share/apps/kcalc/pics
 @dirrm share/apps/kcalc
+@dirrm share/apps/kab/pics
+@dirrm share/apps/kab
 @dirrm share/applnk/Utilities
-@dirrm share/applnk/Applications

@@ -1,45 +1,54 @@
-*** kmail/kmacctlocal.cpp.orig	Tue Mar  3 01:42:57 1998
---- kmail/kmacctlocal.cpp	Sat May  9 20:37:49 1998
+*** kppp/requester.cpp~	Sat Dec 19 22:28:23 1998
+--- kppp/requester.cpp	Thu Dec 31 00:38:12 1998
 ***************
-*** 13,16 ****
---- 13,22 ----
-  #include <stdio.h>
-  #include <errno.h>
-+ #ifdef __FreeBSD__
-+ #include <paths.h>	/* defines _PATH_MAILDIR */
-+ #endif
-+ #ifndef _PATH_MAILDIR
-+ #define _PATH_MAILDIR "/var/spool/mail"
-+ #endif
+*** 74,78 ****
+    msg.msg_iovlen = 2;
   
+!   iov[0].iov_base = &response;
+    iov[0].iov_len = sizeof(struct ResponseHeader);
+    iov[1].iov_base = filename;
+--- 74,78 ----
+    msg.msg_iovlen = 2;
+  
+!   iov[0].iov_base = (char *) &response;
+    iov[0].iov_len = sizeof(struct ResponseHeader);
+    iov[1].iov_base = filename;
+***************
+*** 87,91 ****
+    control.cmsg.cmsg_type = MY_SCM_RIGHTS;
+  
+!   msg.msg_control = &control;
+    msg.msg_controllen = control.cmsg.cmsg_len;
+  
+--- 87,91 ----
+    control.cmsg.cmsg_type = MY_SCM_RIGHTS;
+  
+!   msg.msg_control = (char *) &control;
+    msg.msg_controllen = control.cmsg.cmsg_len;
   
 ***************
-*** 40,45 ****
-  void KMAcctLocal::init(void)
-  {
-!   mLocation = "/var/spool/mail/";
-    mLocation.detach();
-    mLocation += getenv("USER");
-  }
---- 46,52 ----
-  void KMAcctLocal::init(void)
-  {
-!   mLocation = _PATH_MAILDIR;
-    mLocation.detach();
-+   mLocation += "/";
-    mLocation += getenv("USER");
-  }
+*** 137,141 ****
+    msg.msg_controllen = 0;
+  
+!   iov.iov_base = &response;
+    iov.iov_len = sizeof(struct ResponseHeader);
+    Debug("recvResponse(): waiting for message");
+--- 137,141 ----
+    msg.msg_controllen = 0;
+  
+!   iov.iov_base = (char *) &response;
+    iov.iov_len = sizeof(struct ResponseHeader);
+    Debug("recvResponse(): waiting for message");
 ***************
-*** 104,108 ****
-  void KMAcctLocal::readConfig(KConfig& config)
-  {
-!   QString defaultPath("/var/spool/mail/");
-    defaultPath += getenv("USER");
+*** 281,285 ****
+    struct iovec iov;
   
---- 111,116 ----
-  void KMAcctLocal::readConfig(KConfig& config)
-  {
-!   QString defaultPath(_PATH_MAILDIR);
-!   defaultPath += "/";
-    defaultPath += getenv("USER");
+!   iov.iov_base = (void *) request;
+    iov.iov_len = len;
+    
+--- 281,285 ----
+    struct iovec iov;
   
+!   iov.iov_base = (char *) request;
+    iov.iov_len = len;
+    

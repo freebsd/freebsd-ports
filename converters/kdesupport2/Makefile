@@ -6,14 +6,18 @@
 # $Id: Makefile,v 1.13 1998/10/01 18:35:36 brian Exp $
 #
 
-DISTNAME=	kdesupport-1.0
+DISTNAME=	kdesupport
+PKGNAME=	kdesupport-1.1a1
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source 
+MASTER_SITE_SUBDIR= stable/1.1pre1/distribution/tar/generic/source
+EXTRACT_SUFX=	-1.1-alpha1.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
 
-BROKEN=		upgrade
+EXTRACT_CMD=	bzip2
+EXTRACT_BEFORE_ARGS= -cd
+EXTRACT_AFTER_ARGS= | tar xf -
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes
@@ -21,8 +25,7 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--without-libjpeg" \
 		"--without-libgif" \
 		"--without-libgdbm" \
-		"--without-libuulib" \
-#		"--with-extra-includes=$(PREFIX)/include/giflib"
+		"--without-libuulib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 

@@ -6,23 +6,22 @@
 # $Id: Makefile,v 1.15 1998/10/01 18:35:40 brian Exp $
 #
 
-DISTNAME=	kdegraphics-1.0
+DISTNAME=	kdegraphics
+PKGNAME=	kdegraphics-1.1a1
 CATEGORIES=	graphics kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source 
+MASTER_SITE_SUBDIR= stable/1.1pre1/distribution/tar/generic/source
+EXTRACT_SUFX=	-1.1-alpha1.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
 
-BROKEN=		upgrade
-
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		jscript.0:${PORTSDIR}/x11/kdelibs \
-		khtmlw.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs \
-		mediatool.1:${PORTSDIR}/x11/kdelibs
+		kdecore.2:${PORTSDIR}/x11/kdelibs
+
+EXTRACT_CMD=	bzip2
+EXTRACT_BEFORE_ARGS= -cd
+EXTRACT_AFTER_ARGS= | tar xf -
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

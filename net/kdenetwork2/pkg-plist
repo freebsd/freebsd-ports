@@ -1,15 +1,37 @@
+bin/karchie
+bin/kbiff
+bin/kcmktalkd
 bin/kdecode
+bin/kfinger
 bin/kmail
 bin/knu
 bin/korn
+bin/kotalkd
 bin/kppp
+bin/kppp.bin
 bin/kppplogview
 bin/krn
+bin/ktalkd
+bin/ktalkdlg
+bin/mail.local
+bin/newkrn
 share/applnk/Internet/KMail.kdelnk
 share/applnk/Internet/KOrn.kdelnk
 share/applnk/Internet/Kppp.kdelnk
 share/applnk/Internet/Krn.kdelnk
+share/applnk/Internet/karchie.kdelnk
+share/applnk/Internet/kbiff.kdelnk
+share/applnk/Internet/kfinger.kdelnk
 share/applnk/Internet/knu.kdelnk
+share/applnk/Settings/Network/kcmktalkd.kdelnk
+share/apps/kbiff/pics/delete.xpm
+share/apps/kbiff/pics/mailbox.xpm
+share/apps/kbiff/pics/mini-newmail.xpm
+share/apps/kbiff/pics/mini-nomail.xpm
+share/apps/kbiff/pics/mini-oldmail.xpm
+share/apps/kbiff/pics/newmail.xpm
+share/apps/kbiff/pics/nomail.xpm
+share/apps/kbiff/pics/oldmail.xpm
 share/apps/kmail/pics/attach.xpm
 share/apps/kmail/pics/checkmail.xpm
 share/apps/kmail/pics/closed.xpm
@@ -34,6 +56,7 @@ share/apps/kmail/pics/kmmsgreplied.xpm
 share/apps/kmail/pics/kmmsgsent.xpm
 share/apps/kmail/pics/kmmsgunseen.xpm
 share/apps/kmail/pics/kmtrash.xpm
+share/apps/kmail/pics/pgp-keys.xpm
 share/apps/kmail/pics/pub_key_red.xpm
 share/apps/kmail/pics/red-bullet.xpm
 share/apps/kmail/pics/send.xpm
@@ -76,6 +99,12 @@ share/apps/kppp/Rules/Czechia/Czech_Telecom_City.rst
 share/apps/kppp/Rules/Czechia/Czech_Telecom_Tarifni_pasmo1.rst
 share/apps/kppp/Rules/Czechia/Czech_Telecom_Tarifni_pasmo2.rst
 share/apps/kppp/Rules/Czechia/Czech_Telecom_Tarifni_pasmo3.rst
+share/apps/kppp/Rules/Denmark/1001_Internet.rst
+share/apps/kppp/Rules/Denmark/CyberCity_1033.rst
+share/apps/kppp/Rules/Denmark/Get2Net_1001.rst
+share/apps/kppp/Rules/Denmark/Image_1049.rst
+share/apps/kppp/Rules/Denmark/Teledanmark_Local.rst
+share/apps/kppp/Rules/Denmark/Teledanmark_Regional.rst
 share/apps/kppp/Rules/England/BirminghamCable_Local.rst
 share/apps/kppp/Rules/England/BirminghamCable_National.rst
 share/apps/kppp/Rules/England/BirminghamCable_SameTelco.rst
@@ -98,6 +127,9 @@ share/apps/kppp/Rules/Germany/Telekom_Regio_Call.rst
 share/apps/kppp/Rules/Greece/Hellas_local.rst
 share/apps/kppp/Rules/Hong_Kong/Hong_Kong_Telecom.rst
 share/apps/kppp/Rules/Hungary/Local.rst
+share/apps/kppp/Rules/Indonesia/Lokal_1_Metropolitan.rst
+share/apps/kppp/Rules/Indonesia/Lokal_2_Metropolitan.rst
+share/apps/kppp/Rules/Indonesia/Lokal_non_metropolitan.rst
 share/apps/kppp/Rules/Italy/Telecom_0-15_km.rst
 share/apps/kppp/Rules/Italy/Telecom_15-30_km.rst
 share/apps/kppp/Rules/Italy/Telecom_30-60_km.rst
@@ -108,9 +140,14 @@ share/apps/kppp/Rules/Italy/Telecom_Urbana.rst
 share/apps/kppp/Rules/Jamaica/CWJ_InterParish.rst
 share/apps/kppp/Rules/Jamaica/CWJ_Local.rst
 share/apps/kppp/Rules/Japan/NTT_Local.rst
+share/apps/kppp/Rules/Kazakhstan/Akparat_Sprint.rst
+share/apps/kppp/Rules/Luxembourg/Local.rst
+share/apps/kppp/Rules/Malaysia/malaysia.rst
 share/apps/kppp/Rules/Netherlands/BelBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/BelBudget_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/BelPlus_Lokaal.rst
+share/apps/kppp/Rules/Netherlands/NedpointBasis_Lokaal.rst
+share/apps/kppp/Rules/Netherlands/NedpointBelBespaar_Lokaal.rst
 share/apps/kppp/Rules/Norway/Local_Area.rst
 share/apps/kppp/Rules/Norway/Long_Distance.rst
 share/apps/kppp/Rules/Poland/Poland.rst
@@ -119,20 +156,29 @@ share/apps/kppp/Rules/Portugal/Local+Activation_rate.rst
 share/apps/kppp/Rules/Portugal/Local.rst
 share/apps/kppp/Rules/Romania/Telecom_Interurban.rst
 share/apps/kppp/Rules/Romania/Telecom_Local.rst
+share/apps/kppp/Rules/Singapore/SingTel_Local.rst
 share/apps/kppp/Rules/Slovakia/Slovenske_Telekomunikacie_1_pasmo.rst
 share/apps/kppp/Rules/Slovakia/Slovenske_Telekomunikacie_2_pasmo.rst
 share/apps/kppp/Rules/Slovakia/Slovenske_Telekomunikacie_Mesto.rst
 share/apps/kppp/Rules/South_Afrika/South_Afrika.rst
 share/apps/kppp/Rules/Spain/Infovia.rst
+share/apps/kppp/Rules/Spain/Infovia_IVA.rst
+share/apps/kppp/Rules/Spain/Telefonica_Interprovincial.rst
+share/apps/kppp/Rules/Spain/Telefonica_Interprovincial_IVA.rst
 share/apps/kppp/Rules/Spain/Telefonica_Local.rst
+share/apps/kppp/Rules/Spain/Telefonica_Metropolitana.rst
+share/apps/kppp/Rules/Spain/Telefonica_Metropolitana_IVA.rst
 share/apps/kppp/Rules/Spain/Telefonica_Nacional.rst
 share/apps/kppp/Rules/Spain/Telefonica_Provincial.rst
+share/apps/kppp/Rules/Spain/Telefonica_Provincial_IVA.rst
 share/apps/kppp/Rules/Sweden/Local.rst
 share/apps/kppp/Rules/Sweden/Local_Telebonus_1.rst
 share/apps/kppp/Rules/Sweden/Local_Telebonus_2.rst
 share/apps/kppp/Rules/Sweden/Long_Distance.rst
 share/apps/kppp/Rules/Sweden/Long_Distance_Telebonus_1.rst
 share/apps/kppp/Rules/Sweden/Long_Distance_Telebonus_2.rst
+share/apps/kppp/Rules/Switzerland/Sunrise_Internet.rst
+share/apps/kppp/Rules/Switzerland/Sunrise_Local.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Local.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Remote.rst
 share/apps/kppp/Rules/TEMPLATE
@@ -143,6 +189,7 @@ share/apps/kppp/pics/dock_both.xpm
 share/apps/kppp/pics/dock_left.xpm
 share/apps/kppp/pics/dock_none.xpm
 share/apps/kppp/pics/dock_right.xpm
+share/apps/kppp/pics/exclamation.xpm
 share/apps/kppp/pics/exit.xpm
 share/apps/kppp/pics/fileopen.xpm
 share/apps/kppp/pics/finish.xpm
@@ -187,6 +234,38 @@ share/apps/krn/toolbar/send.xpm
 share/apps/krn/toolbar/subscr.xpm
 share/apps/krn/toolbar/tagged.xpm
 share/apps/krn/toolbar/thumb_up.xpm
+share/config/karchierc
+share/config/kfingerrc
+share/config/ktalkdrc
+share/doc/HTML/el/ktalkd/ktalkd-1.html
+share/doc/HTML/el/ktalkd/ktalkd-2.html
+share/doc/HTML/el/ktalkd/ktalkd-3.html
+share/doc/HTML/el/ktalkd/ktalkd-4.html
+share/doc/HTML/el/ktalkd/ktalkd-5.html
+share/doc/HTML/el/ktalkd/ktalkd-6.html
+share/doc/HTML/el/ktalkd/ktalkd.html
+share/doc/HTML/el/ktalkd/logotp3.gif
+share/doc/HTML/en/karchie/index-1.html
+share/doc/HTML/en/karchie/index-2.html
+share/doc/HTML/en/karchie/index-3.html
+share/doc/HTML/en/karchie/index-4.html
+share/doc/HTML/en/karchie/index-5.html
+share/doc/HTML/en/karchie/index-6.html
+share/doc/HTML/en/karchie/index.html
+share/doc/HTML/en/kbiff/kbiff-1.html
+share/doc/HTML/en/kbiff/kbiff-2.html
+share/doc/HTML/en/kbiff/kbiff-3.html
+share/doc/HTML/en/kbiff/kbiff-4.html
+share/doc/HTML/en/kbiff/kbiff-5.html
+share/doc/HTML/en/kbiff/kbiff-6.html
+share/doc/HTML/en/kbiff/kbiff.html
+share/doc/HTML/en/kbiff/logotp3.gif
+share/doc/HTML/en/kfinger/Kfingerset.html
+share/doc/HTML/en/kfinger/formatex.gif
+share/doc/HTML/en/kfinger/formatw.gif
+share/doc/HTML/en/kfinger/index.html
+share/doc/HTML/en/kfinger/mainw.gif
+share/doc/HTML/en/kfinger/setupw.gif
 share/doc/HTML/en/kmail/index-1.html
 share/doc/HTML/en/kmail/index-2.html
 share/doc/HTML/en/kmail/index-3.html
@@ -228,88 +307,227 @@ share/doc/HTML/en/krn/groups.html
 share/doc/HTML/en/krn/index.html
 share/doc/HTML/en/krn/offline.html
 share/doc/HTML/en/krn/overview.html
+share/doc/HTML/en/ktalkd/ktalkd-1.html
+share/doc/HTML/en/ktalkd/ktalkd-2.html
+share/doc/HTML/en/ktalkd/ktalkd-3.html
+share/doc/HTML/en/ktalkd/ktalkd-4.html
+share/doc/HTML/en/ktalkd/ktalkd-5.html
+share/doc/HTML/en/ktalkd/ktalkd-6.html
+share/doc/HTML/en/ktalkd/ktalkd.html
+share/doc/HTML/en/ktalkd/logotp3.gif
+share/doc/HTML/fr/ktalkd/ktalkd-1.html
+share/doc/HTML/fr/ktalkd/ktalkd-2.html
+share/doc/HTML/fr/ktalkd/ktalkd-3.html
+share/doc/HTML/fr/ktalkd/ktalkd-4.html
+share/doc/HTML/fr/ktalkd/ktalkd-5.html
+share/doc/HTML/fr/ktalkd/ktalkd-6.html
+share/doc/HTML/fr/ktalkd/ktalkd.html
+share/doc/HTML/fr/ktalkd/logotp3.gif
+share/doc/HTML/it/ktalkd/ktalkd-1.html
+share/doc/HTML/it/ktalkd/ktalkd-2.html
+share/doc/HTML/it/ktalkd/ktalkd-3.html
+share/doc/HTML/it/ktalkd/ktalkd-4.html
+share/doc/HTML/it/ktalkd/ktalkd-5.html
+share/doc/HTML/it/ktalkd/ktalkd-6.html
+share/doc/HTML/it/ktalkd/ktalkd.html
+share/doc/HTML/it/ktalkd/logotp3.gif
+share/icons/kbiff.xpm
 share/icons/kmail.xpm
 share/icons/knu.xpm
 share/icons/korn.xpm
 share/icons/kppp.xpm
 share/icons/krn.xpm
+share/icons/mini/kbiff.xpm
 share/icons/mini/kmail.xpm
 share/icons/mini/knu.xpm
 share/icons/mini/korn.xpm
 share/icons/mini/kppp.xpm
 share/icons/mini/krn.xpm
+share/locale/ca/LC_MESSAGES/kmail.mo
+share/locale/ca/LC_MESSAGES/knu.mo
 share/locale/ca/LC_MESSAGES/kppp.mo
+share/locale/ca/LC_MESSAGES/krn.mo
+share/locale/cs/LC_MESSAGES/karchie.mo
+share/locale/cs/LC_MESSAGES/kbiff.mo
+share/locale/cs/LC_MESSAGES/kcmktalkd.mo
+share/locale/cs/LC_MESSAGES/kfinger.mo
 share/locale/cs/LC_MESSAGES/kmail.mo
 share/locale/cs/LC_MESSAGES/knu.mo
+share/locale/cs/LC_MESSAGES/korn.mo
 share/locale/cs/LC_MESSAGES/kppp.mo
 share/locale/cs/LC_MESSAGES/krn.mo
+share/locale/cs/LC_MESSAGES/ktalkd.mo
 share/locale/da/LC_MESSAGES/kppp.mo
+share/locale/de/LC_MESSAGES/karchie.mo
+share/locale/de/LC_MESSAGES/kcmktalkd.mo
+share/locale/de/LC_MESSAGES/kfinger.mo
 share/locale/de/LC_MESSAGES/kmail.mo
 share/locale/de/LC_MESSAGES/knu.mo
+share/locale/de/LC_MESSAGES/korn.mo
 share/locale/de/LC_MESSAGES/kppp.mo
 share/locale/de/LC_MESSAGES/krn.mo
+share/locale/de/LC_MESSAGES/ksirc.mo
+share/locale/de/LC_MESSAGES/ktalkd.mo
 share/locale/el/LC_MESSAGES/kmail.mo
 share/locale/el/LC_MESSAGES/knu.mo
 share/locale/el/LC_MESSAGES/kppp.mo
 share/locale/el/LC_MESSAGES/krn.mo
+share/locale/eo/LC_MESSAGES/kmail.mo
+share/locale/eo/LC_MESSAGES/knu.mo
+share/locale/eo/LC_MESSAGES/kppp.mo
+share/locale/eo/LC_MESSAGES/krn.mo
+share/locale/es/LC_MESSAGES/kfinger.mo
 share/locale/es/LC_MESSAGES/kmail.mo
 share/locale/es/LC_MESSAGES/knu.mo
+share/locale/es/LC_MESSAGES/korn.mo
 share/locale/es/LC_MESSAGES/kppp.mo
 share/locale/es/LC_MESSAGES/krn.mo
+share/locale/es/LC_MESSAGES/ktalkd.mo
+share/locale/fi/LC_MESSAGES/karchie.mo
+share/locale/fi/LC_MESSAGES/kbiff.mo
+share/locale/fi/LC_MESSAGES/kcmktalkd.mo
+share/locale/fi/LC_MESSAGES/kfinger.mo
 share/locale/fi/LC_MESSAGES/kmail.mo
 share/locale/fi/LC_MESSAGES/knu.mo
+share/locale/fi/LC_MESSAGES/korn.mo
 share/locale/fi/LC_MESSAGES/kppp.mo
 share/locale/fi/LC_MESSAGES/krn.mo
+share/locale/fi/LC_MESSAGES/ksirc.mo
+share/locale/fi/LC_MESSAGES/ktalkd.mo
+share/locale/fr/LC_MESSAGES/kbiff.mo
 share/locale/fr/LC_MESSAGES/kmail.mo
 share/locale/fr/LC_MESSAGES/knu.mo
+share/locale/fr/LC_MESSAGES/korn.mo
 share/locale/fr/LC_MESSAGES/kppp.mo
 share/locale/fr/LC_MESSAGES/krn.mo
+share/locale/fr/LC_MESSAGES/ktalkd.mo
+share/locale/he/LC_MESSAGES/kppp.mo
+share/locale/hr/LC_MESSAGES/kfinger.mo
 share/locale/hr/LC_MESSAGES/kmail.mo
 share/locale/hr/LC_MESSAGES/knu.mo
 share/locale/hr/LC_MESSAGES/kppp.mo
 share/locale/hr/LC_MESSAGES/krn.mo
+share/locale/hr/LC_MESSAGES/ktalkd.mo
+share/locale/hu/LC_MESSAGES/kbiff.mo
+share/locale/hu/LC_MESSAGES/kfinger.mo
 share/locale/hu/LC_MESSAGES/kmail.mo
 share/locale/hu/LC_MESSAGES/knu.mo
+share/locale/hu/LC_MESSAGES/ktalkd.mo
+share/locale/is/LC_MESSAGES/kmail.mo
+share/locale/it/LC_MESSAGES/kfinger.mo
 share/locale/it/LC_MESSAGES/kmail.mo
 share/locale/it/LC_MESSAGES/knu.mo
 share/locale/it/LC_MESSAGES/kppp.mo
 share/locale/it/LC_MESSAGES/krn.mo
+share/locale/it/LC_MESSAGES/ktalkd.mo
+share/locale/ko/LC_MESSAGES/kmail.mo
+share/locale/ko/LC_MESSAGES/knu.mo
+share/locale/ko/LC_MESSAGES/kppp.mo
+share/locale/ko/LC_MESSAGES/krn.mo
 share/locale/nl/LC_MESSAGES/kmail.mo
 share/locale/nl/LC_MESSAGES/knu.mo
 share/locale/nl/LC_MESSAGES/kppp.mo
 share/locale/nl/LC_MESSAGES/krn.mo
+share/locale/nl/LC_MESSAGES/ktalkd.mo
+share/locale/no/LC_MESSAGES/karchie.mo
+share/locale/no/LC_MESSAGES/kbiff.mo
+share/locale/no/LC_MESSAGES/kcmktalkd.mo
+share/locale/no/LC_MESSAGES/kfinger.mo
 share/locale/no/LC_MESSAGES/kmail.mo
 share/locale/no/LC_MESSAGES/knu.mo
+share/locale/no/LC_MESSAGES/korn.mo
 share/locale/no/LC_MESSAGES/kppp.mo
 share/locale/no/LC_MESSAGES/krn.mo
+share/locale/no/LC_MESSAGES/ksirc.mo
+share/locale/no/LC_MESSAGES/ktalkd.mo
+share/locale/pl/LC_MESSAGES/kbiff.mo
 share/locale/pl/LC_MESSAGES/kmail.mo
 share/locale/pl/LC_MESSAGES/knu.mo
 share/locale/pl/LC_MESSAGES/kppp.mo
 share/locale/pl/LC_MESSAGES/krn.mo
+share/locale/pt/LC_MESSAGES/kfinger.mo
 share/locale/pt/LC_MESSAGES/kmail.mo
 share/locale/pt/LC_MESSAGES/knu.mo
 share/locale/pt/LC_MESSAGES/kppp.mo
 share/locale/pt/LC_MESSAGES/krn.mo
+share/locale/pt/LC_MESSAGES/ktalkd.mo
+share/locale/pt_BR/LC_MESSAGES/kbiff.mo
+share/locale/pt_BR/LC_MESSAGES/kcmtalkd.mo
 share/locale/pt_BR/LC_MESSAGES/kmail.mo
 share/locale/pt_BR/LC_MESSAGES/knu.mo
 share/locale/pt_BR/LC_MESSAGES/kppp.mo
 share/locale/pt_BR/LC_MESSAGES/krn.mo
+share/locale/pt_BR/LC_MESSAGES/ktalkd.mo
+share/locale/ro/LC_MESSAGES/kfinger.mo
 share/locale/ro/LC_MESSAGES/kmail.mo
 share/locale/ro/LC_MESSAGES/kppp.mo
 share/locale/ro/LC_MESSAGES/krn.mo
+share/locale/ru/LC_MESSAGES/kbiff.mo
+share/locale/ru/LC_MESSAGES/kcmktalkd.mo
+share/locale/ru/LC_MESSAGES/kfinger.mo
+share/locale/ru/LC_MESSAGES/kmail.mo
+share/locale/ru/LC_MESSAGES/knu.mo
+share/locale/ru/LC_MESSAGES/kppp.mo
+share/locale/ru/LC_MESSAGES/krn.mo
+share/locale/ru/LC_MESSAGES/ksirc.mo
+share/locale/ru/LC_MESSAGES/ktalkd.mo
+share/locale/sk/LC_MESSAGES/karchie.mo
+share/locale/sk/LC_MESSAGES/kbiff.mo
+share/locale/sk/LC_MESSAGES/kcmtalkd.mo
+share/locale/sk/LC_MESSAGES/kfinger.mo
 share/locale/sk/LC_MESSAGES/kmail.mo
 share/locale/sk/LC_MESSAGES/knu.mo
+share/locale/sk/LC_MESSAGES/korn.mo
 share/locale/sk/LC_MESSAGES/kppp.mo
 share/locale/sk/LC_MESSAGES/krn.mo
+share/locale/sk/LC_MESSAGES/ksirc.mo
+share/locale/sk/LC_MESSAGES/ktalkd.mo
+share/locale/sv/LC_MESSAGES/karchie.mo
+share/locale/sv/LC_MESSAGES/kbiff.mo
+share/locale/sv/LC_MESSAGES/kcmtalkd.mo
+share/locale/sv/LC_MESSAGES/kfinger.mo
+share/locale/sv/LC_MESSAGES/kmail.mo
+share/locale/sv/LC_MESSAGES/knu.mo
+share/locale/sv/LC_MESSAGES/korn.mo
+share/locale/sv/LC_MESSAGES/kppp.mo
+share/locale/sv/LC_MESSAGES/krn.mo
+share/locale/sv/LC_MESSAGES/ksirc.mo
+share/locale/sv/LC_MESSAGES/ktalkd.mo
+share/locale/tr/LC_MESSAGES/kmail.mo
+share/locale/tr/LC_MESSAGES/knu.mo
+share/locale/tr/LC_MESSAGES/kppp.mo
+share/locale/tr/LC_MESSAGES/krn.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/kfinger.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kmail.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/knu.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kppp.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/krn.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ktalkd.mo
+share/sounds/ktalkd.wav
+share/toolbar/kcontrol.xpm
+share/toolbar/mini-clock.xpm
+share/toolbar/mini-connect.xpm
+share/toolbar/mini-ktalk.xpm
+@exec ln -sf index.html %D/share/doc/HTML/en/kppp/kppp.html
+@unexec rm -f %D/share/doc/HTML/en/kppp/index.html
+@dirrm share/sounds
+@dirrm share/doc/HTML/it/ktalkd
+@dirrm share/doc/HTML/it
+@dirrm share/doc/HTML/fr/ktalkd
+@dirrm share/doc/HTML/fr
+@dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/krn
 @dirrm share/doc/HTML/en/kppp
 @dirrm share/doc/HTML/en/korn
 @dirrm share/doc/HTML/en/knu
 @dirrm share/doc/HTML/en/kmail
+@dirrm share/doc/HTML/en/kfinger
+@dirrm share/doc/HTML/en/kbiff
+@dirrm share/doc/HTML/en/karchie
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML/el/ktalkd
+@dirrm share/doc/HTML/el
+@dirrm share/doc/HTML
 @dirrm share/apps/krn/toolbar
 @dirrm share/apps/krn
 @dirrm share/apps/kppp/pics
@@ -318,20 +536,26 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/krn.mo
 @dirrm share/apps/kppp/Rules/Spain
 @dirrm share/apps/kppp/Rules/South_Afrika
 @dirrm share/apps/kppp/Rules/Slovakia
+@dirrm share/apps/kppp/Rules/Singapore
 @dirrm share/apps/kppp/Rules/Romania
 @dirrm share/apps/kppp/Rules/Portugal
 @dirrm share/apps/kppp/Rules/Poland
 @dirrm share/apps/kppp/Rules/Norway
 @dirrm share/apps/kppp/Rules/Netherlands
+@dirrm share/apps/kppp/Rules/Malaysia
+@dirrm share/apps/kppp/Rules/Luxembourg
+@dirrm share/apps/kppp/Rules/Kazakhstan
 @dirrm share/apps/kppp/Rules/Japan
 @dirrm share/apps/kppp/Rules/Jamaica
 @dirrm share/apps/kppp/Rules/Italy
+@dirrm share/apps/kppp/Rules/Indonesia
 @dirrm share/apps/kppp/Rules/Hungary
 @dirrm share/apps/kppp/Rules/Hong_Kong
 @dirrm share/apps/kppp/Rules/Greece
 @dirrm share/apps/kppp/Rules/Germany
 @dirrm share/apps/kppp/Rules/France
 @dirrm share/apps/kppp/Rules/England
+@dirrm share/apps/kppp/Rules/Denmark
 @dirrm share/apps/kppp/Rules/Czechia
 @dirrm share/apps/kppp/Rules/Croatia
 @dirrm share/apps/kppp/Rules/Brasil
@@ -346,4 +570,7 @@ share/locale/zh_CN.GB2312/LC_MESSAGES/krn.mo
 @dirrm share/apps/kppp
 @dirrm share/apps/kmail/pics
 @dirrm share/apps/kmail
+@dirrm share/apps/kbiff/pics
+@dirrm share/apps/kbiff
+@dirrm share/applnk/Settings/Network
 @dirrm share/applnk/Internet

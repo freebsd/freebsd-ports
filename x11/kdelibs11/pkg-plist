@@ -1,29 +1,36 @@
+include/addressbook.h
 include/bison2cpp.h
-include/bookmark.h
 include/booktoken.h
 include/builtin.h
 include/ckey.h
+include/configDB.h
 include/dither.h
 include/drag.h
-include/formats.h
 include/html.h
 include/htmlclue.h
 include/htmldata.h
 include/htmlfont.h
 include/htmlform.h
 include/htmlframe.h
+include/htmliter.h
 include/htmlobj.h
+include/htmltable.h
 include/htmltoken.h
 include/htmlview.h
 include/jscript.h
 include/jserror.h
 include/jsexec.h
 include/jstree.h
+include/kab.h
+include/kabapi.h
+include/kaccel.h
 include/kapp.h
 include/kaudio.h
 include/kbutton.h
 include/kbuttonbox.h
 include/kcharsets.h
+include/kckey.h
+include/kclipboard.h
 include/kcolorbtn.h
 include/kcolordlg.h
 include/kcolorgroup.h
@@ -34,6 +41,7 @@ include/kconfigbase.h
 include/kconfigdata.h
 include/kcontainer.h
 include/kcontrol.h
+include/kcursor.h
 include/kdatepik.h
 include/kdatetbl.h
 include/kdbtn.h
@@ -42,8 +50,11 @@ include/kdebug.h
 include/kdir.h
 include/kdirlistbox.h
 include/keditcl.h
+include/keyvaluemap.h
+include/kfilebookmark.h
 include/kfiledetaillist.h
 include/kfiledialog.h
+include/kfilefilter.h
 include/kfileinfo.h
 include/kfileinfocontents.h
 include/kfilepreview.h
@@ -52,11 +63,12 @@ include/kfm.h
 include/kfmclient_ipc.h
 include/kfmipc.h
 include/kfontdialog.h
+include/kglobalaccel.h
 include/kiconloader.h
 include/kiconloaderdialog.h
+include/kimgio.h
 include/kintegerline.h
-include/kkeyconf.h
-include/kkeydata.h
+include/kkeydialog.h
 include/kled.h
 include/kledlamp.h
 include/klined.h
@@ -68,19 +80,28 @@ include/knewpanner.h
 include/knotebook.h
 include/kpanner.h
 include/kpixmap.h
+include/kpoint.h
 include/kpopmenu.h
 include/kpreview.h
 include/kprocctrl.h
 include/kprocess.h
+include/kprocio.h
 include/kprogress.h
+include/kquickhelp.h
+include/krect.h
 include/kremotefile.h
 include/krestrictedline.h
 include/krootprop.h
+include/kruler.h
+include/ksconfig.h
 include/kselect.h
 include/kseparator.h
 include/ksimpleconfig.h
+include/ksize.h
 include/kslider.h
 include/ksock.h
+include/kspell.h
+include/kspelldlg.h
 include/kspinbox.h
 include/kstatusbar.h
 include/kstdaccel.h
@@ -94,32 +115,36 @@ include/ktoolboxmgr.h
 include/ktopwidget.h
 include/ktreelist.h
 include/kurl.h
+include/kurllabel.h
 include/kwizard.h
 include/kwm.h
 include/kwmmapp.h
 include/mediatool.h
+include/sections.h
+include/stl_headers.h
 include/xview.h
 lib/libjscript.la
-lib/libjscript.so
-lib/libjscript.so.0.90
+lib/libjscript.so.2
+lib/libkab.la
+lib/libkab.so.2
 lib/libkdecore.la
-lib/libkdecore.so
-lib/libkdecore.so.1
+lib/libkdecore.so.2
 lib/libkdeui.la
-lib/libkdeui.so
-lib/libkdeui.so.1
+lib/libkdeui.so.2
 lib/libkfile.la
-lib/libkfile.so
-lib/libkfile.so.1
+lib/libkfile.so.2
 lib/libkfm.la
-lib/libkfm.so
-lib/libkfm.so.1
+lib/libkfm.so.2
 lib/libkhtmlw.la
-lib/libkhtmlw.so
-lib/libkhtmlw.so.1
+lib/libkhtmlw.so.2
+lib/libkimgio.la
+lib/libkimgio.so.2
+lib/libkspell.la
+lib/libkspell.so.2
 lib/libmediatool.la
-lib/libmediatool.so
-lib/libmediatool.so.1
+lib/libmediatool.so.2
+share/apps/kab/pics/background_1.jpg
+share/apps/kab/pics/dialog_background.jpg
 share/apps/kde/pics/arrow_down.xbm
 share/apps/kde/pics/arrow_left.xbm
 share/apps/kde/pics/arrow_right.xbm
@@ -131,6 +156,8 @@ share/apps/kde/pics/question.xpm
 share/apps/kde/pics/stopsign.xpm
 share/apps/khtmlw/pics/khtmlw_dnd.xpm
 share/config/charsets
+share/config/kdebug.areas
+share/doc/HTML/default
 share/doc/HTML/en/kdelibs/kdebug.html
 share/doc/HTML/en/kfiledialog/back.gif
 share/doc/HTML/en/kfiledialog/bottom.gif
@@ -145,9 +172,11 @@ share/doc/HTML/en/kfiledialog/toolbar-h.gif
 share/doc/HTML/en/kfiledialog/toolbar.gif
 share/doc/HTML/en/kfiledialog/up.gif
 share/doc/HTML/en/kfiledialog/viewmag.gif
-@exec ln -sf en %D/share/doc/HTML/default
-@unexec rm -f %D/share/doc/HTML/default
+share/doc/HTML/en/kspell/ksconfig.html
+share/doc/HTML/en/kspell/ksdialog.html
+share/doc/HTML/en/kspell/kspell.html
 share/locale/ca/LC_MESSAGES/kde.mo
+share/locale/ca/charset
 share/locale/cs/LC_MESSAGES/kde.mo
 share/locale/cs/charset
 share/locale/da/LC_MESSAGES/kde.mo
@@ -156,19 +185,28 @@ share/locale/de/LC_MESSAGES/kde.mo
 share/locale/de/charset
 share/locale/el/LC_MESSAGES/kde.mo
 share/locale/en_UK/LC_MESSAGES/kde.mo
+share/locale/eo/LC_MESSAGES/kde.mo
+share/locale/eo/charset
 share/locale/es/LC_MESSAGES/kde.mo
 share/locale/es/charset
 share/locale/fi/LC_MESSAGES/kde.mo
 share/locale/fi/charset
 share/locale/fr/LC_MESSAGES/kde.mo
 share/locale/fr/charset
+share/locale/he/LC_MESSAGES/kde.mo
+share/locale/he/charset
 share/locale/hr/LC_MESSAGES/kde.mo
+share/locale/hr/charset
 share/locale/hu/LC_MESSAGES/kde.mo
 share/locale/hu/charset
+share/locale/is/LC_MESSAGES/kde.mo
+share/locale/is/charset
 share/locale/it/LC_MESSAGES/kde.mo
+share/locale/ko/LC_MESSAGES/kde.mo
 share/locale/mk/LC_MESSAGES/kde.mo
 share/locale/nl/LC_MESSAGES/kde.mo
 share/locale/no/LC_MESSAGES/kde.mo
+share/locale/no/charset
 share/locale/pl/LC_MESSAGES/kde.mo
 share/locale/pl/charset
 share/locale/pt/LC_MESSAGES/kde.mo
@@ -181,8 +219,10 @@ share/locale/ru/charset
 share/locale/sk/LC_MESSAGES/kde.mo
 share/locale/sk/charset
 share/locale/sl/LC_MESSAGES/kde.mo
+share/locale/sl/charset
 share/locale/sv/LC_MESSAGES/kde.mo
 share/locale/sv/charset
+share/locale/tr/LC_MESSAGES/kde.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kde.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kde.mo
 share/toolbar/back.xpm
@@ -216,6 +256,7 @@ share/toolbar/prev.xpm
 share/toolbar/reload.xpm
 share/toolbar/rightjust.xpm
 share/toolbar/send.xpm
+share/toolbar/spellcheck.xpm
 share/toolbar/start.xpm
 share/toolbar/stop.xpm
 share/toolbar/tick.xpm
@@ -225,12 +266,24 @@ share/toolbar/viewmag+.xpm
 share/toolbar/viewmag-.xpm
 share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
+@exec ln -sf libjscript.so %D/lib/libjscript.so.2
+@exec ln -sf libkab.so %D/lib/libkab.so.2
+@exec ln -sf libkdecore.so %D/lib/libkdecore.so.2
+@exec ln -sf libkdeui.so %D/lib/libkdeui.so.2
+@exec ln -sf libkfile.so %D/lib/libkfile.so.2
+@exec ln -sf libkfm.so %D/lib/libkfm.so.2
+@exec ln -sf libkhtmlw.so %D/lib/libkhtmlw.so.2
+@exec ln -sf libkimgio.so %D/lib/libkimgio.so.2
+@exec ln -sf libkspell.so %D/lib/libkspell.so.2
+@exec ln -sf libmediatool.so %D/lib/libmediatool.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm share/toolbar
 @dirrm share/locale/zh_TW.Big5/LC_MESSAGES
 @dirrm share/locale/zh_TW.Big5
 @dirrm share/locale/zh_CN.GB2312/LC_MESSAGES
 @dirrm share/locale/zh_CN.GB2312
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/tr
 @dirrm share/locale/sv/LC_MESSAGES
 @dirrm share/locale/sv
 @dirrm share/locale/sl/LC_MESSAGES
@@ -241,9 +294,9 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/ru
 @dirrm share/locale/ro/LC_MESSAGES
 @dirrm share/locale/ro
-@dirrm share/locale/pt/LC_MESSAGES
 @dirrm share/locale/pt_BR/LC_MESSAGES
 @dirrm share/locale/pt_BR
+@dirrm share/locale/pt/LC_MESSAGES
 @dirrm share/locale/pt
 @dirrm share/locale/pl/LC_MESSAGES
 @dirrm share/locale/pl
@@ -253,18 +306,26 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/nl
 @dirrm share/locale/mk/LC_MESSAGES
 @dirrm share/locale/mk
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
 @dirrm share/locale/it/LC_MESSAGES
 @dirrm share/locale/it
+@dirrm share/locale/is/LC_MESSAGES
+@dirrm share/locale/is
 @dirrm share/locale/hu/LC_MESSAGES
 @dirrm share/locale/hu
 @dirrm share/locale/hr/LC_MESSAGES
 @dirrm share/locale/hr
+@dirrm share/locale/he/LC_MESSAGES
+@dirrm share/locale/he
 @dirrm share/locale/fr/LC_MESSAGES
 @dirrm share/locale/fr
 @dirrm share/locale/fi/LC_MESSAGES
 @dirrm share/locale/fi
 @dirrm share/locale/es/LC_MESSAGES
 @dirrm share/locale/es
+@dirrm share/locale/eo/LC_MESSAGES
+@dirrm share/locale/eo
 @dirrm share/locale/en_UK/LC_MESSAGES
 @dirrm share/locale/en_UK
 @dirrm share/locale/el/LC_MESSAGES
@@ -278,14 +339,25 @@ share/toolbar/viewzoom.xpm
 @dirrm share/locale/ca/LC_MESSAGES
 @dirrm share/locale/ca
 @dirrm share/locale
+@dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/kfiledialog
 @dirrm share/doc/HTML/en/kdelibs
 @dirrm share/doc/HTML/en
 @dirrm share/doc/HTML
 @dirrm share/config
 @dirrm share/apps/khtmlw/pics
-@dirrm share/apps/khtmlw
 @dirrm share/apps/kde/pics
-@dirrm share/apps/kde
+@dirrm share/apps/kab/pics
+@dirrm share/apps/kab
 @dirrm share/apps
+@unexec rm -f %D/lib/libjscript.so
+@unexec rm -f %D/lib/libkab.so
+@unexec rm -f %D/lib/libkdecore.so
+@unexec rm -f %D/lib/libkdeui.so
+@unexec rm -f %D/lib/libkfile.so
+@unexec rm -f %D/lib/libkfm.so
+@unexec rm -f %D/lib/libkhtmlw.so
+@unexec rm -f %D/lib/libkimgio.so
+@unexec rm -f %D/lib/libkspell.so
+@unexec rm -f %D/lib/libmediatool.so
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

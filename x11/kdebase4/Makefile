@@ -6,24 +6,24 @@
 # $Id: Makefile,v 1.22 1998/12/01 02:57:27 asami Exp $
 #
 
-DISTNAME=	kdebase-1.0
-CATEGORIES=	x11 kde
+DISTNAME=	kdebase
+PKGNAME=	kdebase-1.1a1
+CATEGORIES=	misc kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
+MASTER_SITE_SUBDIR= stable/1.1pre1/distribution/tar/generic/source
+EXTRACT_SUFX=	-1.1-alpha1.src.tar.bz2
 
 MAINTAINER=	se@freebsd.org
 
-BROKEN=		upgrade
-
+BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		jscript.0:${PORTSDIR}/x11/kdelibs \
-		khtmlw.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs \
-		mediatool.1:${PORTSDIR}/x11/kdelibs \
+		kdecore.2:${PORTSDIR}/x11/kdelibs \
 		Xpm.4:${PORTSDIR}/graphics/xpm
+
+EXTRACT_CMD=	bzip2
+EXTRACT_BEFORE_ARGS= -cd
+EXTRACT_AFTER_ARGS= | tar xf -
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

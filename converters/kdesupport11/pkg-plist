@@ -1,11 +1,13 @@
-lib/libmimelib.la
-lib/libmimelib.so.1
-lib/libmimelib.a
-lib/libQwSpriteField.la
-lib/libQwSpriteField.so.5.2
-lib/libQwSpriteField.a
+bin/cdbmake
+include/Pix.h
+include/QwCluster.h
+include/QwPublicList.h
+include/QwSpriteField.h
+include/js.h
+include/jsint.h
 include/mimelib/address.h
 include/mimelib/addrlist.h
+include/mimelib/binhex.h
 include/mimelib/body.h
 include/mimelib/bodypart.h
 include/mimelib/boyermor.h
@@ -37,11 +39,32 @@ include/mimelib/text.h
 include/mimelib/token.h
 include/mimelib/utility.h
 include/mimelib/uuencode.h
-include/mimelib/binhex.h
-include/Pix.h
-include/QwCluster.h
-include/QwPublicList.h
-include/QwSpriteField.h
+include/rdb/cdb.h
+include/rdb/cdbmake.h
+include/rdb/hash.h
+include/rdb/rdb.h
+include/rdb/uint32.h
+lib/libQwSpriteField.a
+lib/libQwSpriteField.la
+lib/libQwSpriteField.so.6
+lib/libjs.a
+lib/libjs.la
+lib/libjs.so.2
+lib/libmimelib.a
+lib/libmimelib.la
+lib/libmimelib.so.1
+lib/librdb.a
+lib/librdb.la
+lib/librdb.so.55
+@exec ln -sf libQwSpriteField.so %D/lib/libQwSpriteField.so.6
+@exec ln -sf libjs.so %D/lib/libjs.so.2
+@exec ln -sf libmimelib.so %D/lib/libmimelib.so.1
+@exec ln -sf librdb.so %D/lib/librdb.so.55
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@dirrm include/mimelib
+@dirrm /usr/local/include/rdb
+@dirrm /usr/local/include/mimelib
+@unexec rm -f %D/lib/libQwSpriteField.so
+@unexec rm -f %D/lib/libjs.so
+@unexec rm -f %D/lib/libmimelib.so
+@unexec rm -f %D/lib/librdb.so
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
