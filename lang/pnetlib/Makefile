@@ -34,7 +34,7 @@ PORTDOCS=	ChangeLog-1 ChangeLog-2 ChangeLog-3 ChangeLog-4 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-IGNORE=		"cscc core dumps durring build"
+IGNORE=		Coredump during build on alpha
 .endif
 
 post-install:

@@ -47,7 +47,7 @@ MAN1=	clrwrap.1 csant.1 cscc.1 csdoc.1 csdoc2hier.1 csdoc2html.1 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "alpha"
-BROKEN=		"cscc core dumps"
+BROKEN=		Coredump during build on alpha
 .endif
 
 post-everything::
