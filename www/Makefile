@@ -94,6 +94,7 @@
     SUBDIR += mod_perl
     SUBDIR += mod_php3
     SUBDIR += mod_php4
+    SUBDIR += mod_roaming
     SUBDIR += momspider
     SUBDIR += mozilla
     SUBDIR += netscape-remote
