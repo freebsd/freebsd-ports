@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.3.23.1
+PORTVERSION=	1.3.23.2
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -132,6 +132,8 @@ MAN5=		muttrc.5 mbox.5
 post-patch::
 	 @${PERL} -pi.fbsd -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
+	 @${CP} ${PATCHDIR}/extra-patchlist.sh ${WRKSRC}/patchlist.sh
+	 @${CHMOD} 700 ${WRKSRC}/patchlist.sh
 
 pre-configure::
 	(cd ${WRKSRC}; aclocal -I m4)
