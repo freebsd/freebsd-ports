@@ -1,6 +1,6 @@
 # New ports collection makefile for:	linux_base-rh-9
 # Date created:				2004-11-15
-# Whom:					Xin Li
+# Whom:					delphij
 # based on linux_base-8 port by Marcel Moolenaar, Trevor Johnson and others
 #
 # $FreeBSD$
