@@ -392,6 +392,7 @@
     SUBDIR += sntop
     SUBDIR += socks5
     SUBDIR += spat
+    SUBDIR += spread
     SUBDIR += ssldump
     SUBDIR += sting
     SUBDIR += stone
