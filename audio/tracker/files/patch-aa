@@ -1,74 +1,53 @@
-*** Makefile.orig	Mon Sep 18 03:16:20 1995
---- Makefile	Thu Oct  5 01:45:00 1995
+*** Makefile.orig	Sat Oct 21 04:06:58 1995
+--- Makefile	Tue Jan 16 04:15:15 1996
 ***************
-*** 30,36 ****
-  MAN_DIR = $(PREFIX)/man
+*** 165,171 ****
+  UI_linux = Unix/
+  SHELL_linux = /bin/sh
   
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/lib/compression_methods
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions -fno-strength-reduce
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
+--- 165,171 ----
+  UI_linux = Unix/
+  SHELL_linux = /bin/sh
   
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
---- 30,36 ----
-  MAN_DIR = $(PREFIX)/man
-  
-  # Where to put the compression methods description
-! COMPRESSION_FILE=$(PREFIX)/etc/compression_methods
-  
-  # How to install the binaries and manpage. If you have a unix system,
-  # use the GNU install program if you have it, otherwise try 'cp'. For
+! CFLAGS_freebsd = -O2 -funroll-loops -finline-functions
+  LIBS_freebsd = -lm
+  AUDIODIR_freebsd=PCux/
+  CONFIG_freebsd = PCux/freebsd_
 ***************
-*** 51,58 ****
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! INST_BIN_OPT = -c -s -m 555 -o store -g store
-! INST_MAN_OPT = -c -m 444 -o store -g store
-  ###############################################################################
-  #
-  # C compiler flags and libraries for each machine.
---- 51,60 ----
-  #
-  # If you don't wish to use the 'make install' and 'make install.man'
-  # commands, you can ignore these.
-! #INST_BIN_OPT = -c -s -m 555 -o store -g store
-! #INST_MAN_OPT = -c -m 444 -o store -g store
-! INST_BIN_OPT = -c -s -m 555 -o bin -g bin
-! INST_MAN_OPT = -c -m 644 -o bin -g bin
-  ###############################################################################
-  #
-  # C compiler flags and libraries for each machine.
-***************
-*** 239,245 ****
+*** 247,253 ****
   display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
   st_virt$O automaton$O
   
-! all:    version.c config.h tracker${EXE} randomize${EXE} splitmod${EXE} doc
+! all:    tracker${EXE} randomize${EXE} splitmod${EXE} Docs/tracker.text
   
   config.h: $(CONFIG)config.h Makefile
   	rm -f config.h
---- 241,247 ----
+--- 247,253 ----
   display$O prefs$O autoinit$O $(UI)ui$O empty$O color$O version$O \
   st_virt$O automaton$O
   
-! all:    version.c config.h tracker${EXE} randomize${EXE} splitmod${EXE}
+! all:    tracker${EXE} randomize${EXE} splitmod${EXE}
   
   config.h: $(CONFIG)config.h Makefile
   	rm -f config.h
 ***************
-*** 257,263 ****
+*** 271,277 ****
   	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
   	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
   	[ -f ${COMPRESSION_FILE} ] || \
 ! 		$(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
   
+  # no manpage available, use the texinfo manual.
   install.man:
-  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
---- 259,265 ----
+--- 271,277 ----
   	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
   	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
   	[ -f ${COMPRESSION_FILE} ] || \
 ! 		$(INSTALL) $(INST_MAN_OPT) Lib/compression_methods ${COMPRESSION_FILE}
   
+  # no manpage available, use the texinfo manual.
   install.man:
-  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
