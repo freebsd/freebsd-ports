@@ -49,6 +49,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
+.if ${RUBY_VER} >= 1.8
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.fork ${RUBY_MODDOCDIR}/
+.endif
 .endif
 
 .include <bsd.port.post.mk>

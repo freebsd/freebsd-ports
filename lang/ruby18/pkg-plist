@@ -71,17 +71,6 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/ludcmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/math.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/newton.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/ri_generator.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_flow.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_cache.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_descriptions.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_formatter.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_options.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_paths.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_reader.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_util.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_writer.rb
-%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cgi.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/nlsolve.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/util.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi-lib.rb
@@ -215,11 +204,13 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/dot/dot.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/chm_generator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/html_generator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/ri_generator.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/chm/chm.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/hefss.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/html.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/kilmer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/old_html.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/html/one_page_html.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/xml/rdf.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/template/xml/xml.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/xml_generator.rb
@@ -230,6 +221,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/inline.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/lines.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/preprocess.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_flow.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_html.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_latex.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/test/AllTests.rb
@@ -242,6 +234,16 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parse_simple.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/parsers/parserfactory.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/rdoc.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_cache.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_descriptions.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_display.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_driver.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_formatter.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_options.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_paths.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_reader.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_util.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_writer.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/template.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/tokenstream.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/readbytes.rb
@@ -393,6 +395,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/weakref.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/accesslog.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cgi.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/compat.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/config.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cookie.rb
@@ -635,6 +638,50 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/msgbox2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dl/stream.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/README.rd
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/README.rd.ja
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darray.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darrayc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dbiff.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dcdbiff.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchatc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchats.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasen.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dhasenc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dlogc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dlogd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqin.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqlib.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqout.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqueue.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbm.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbmc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs-acl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbssl_c.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbssl_s.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/extserv_test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/gw_ct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/gw_cu.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/gw_s.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holderc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/holders.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/http0.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/http0serv.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/name.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/namec.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/old_tuplespace.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rinda_ts.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindac.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/rindas.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/ring_echo.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/ring_inspect.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/ring_place.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/simpletuple.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speedc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/speeds.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-fetch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dualstack-httpd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/eval.rb
@@ -727,6 +774,14 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/trojan.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/tsvr.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/uumerge.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/demo-app.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/demo-multipart.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/demo-servlet.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/demo-urlencoded.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/hello.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/hello.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/webrick/httpsd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/AmazonSearch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/AmazonSearchDriver.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/wsdl/amazon/sampleClient.rb
@@ -744,6 +799,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/googleSearch
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl/amazon
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/wsdl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/testunit
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/sampleStruct
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/raa
@@ -756,6 +812,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/optparse
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/logger
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%RUBY_EXAMPLESDIR%%/.keep_me
