@@ -6,42 +6,9 @@
 pb=/var/portbuild
 
 . ${pb}/portbuild.conf
+. ${pb}/scripts/buildenv
 
 buildroot=${scratchdir}
-
-export BATCH=t
-export USA_RESIDENT=YES
-export PARALLEL_PACKAGE_BUILD=t
-export PACKAGE_BUILDING=t
-export WRKDIRPREFIX=${scratchdir}
-#export NO_RESTRICTED=t
-#export FOR_CDROM=t
-#export FORCE_PKG_REGISTER=t
-#export FORCE_PACKAGE=t
-#export PKG_NOCOMPRESS=t
-# to catch missing dependencies
-#export DEPENDS_TARGET=/usr/bin/true
-# don't pass -j, -k etc. to sub-makes
-unset MAKEFLAGS
-unset PORTSDIR
-# wait 1 hour before killing build with no output
-export TIMEOUT=3600
-# to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
-ulimit -f 524288
-ulimit -t 3600
-
-# directories to clean
-cleandirs="/usr/local /usr/X11R6 /compat"
-
-# 15 minutes
-export FTP_TIMEOUT=900
-export HTTP_TIMEOUT=900
-
-# ssh -x doesn't work on some machines
-unset DISPLAY
-
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
-#export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:/usr/pkg/bin:.
 
 branch=$1
 shift
@@ -54,54 +21,54 @@ fi
 norestr=0
 if [ "x$1" = "x-norestr" ]; then
   norestr=1
-  export NO_RESTRICTED=t
+  export NO_RESTRICTED=1
   shift
 fi
 plistcheck=0
 if [ "x$1" = "x-plistcheck" ]; then
   plistcheck=1
-  export PLISTCHECK=t
+  export PLISTCHECK=1
   shift
 fi
 nodummy=0
 if [ "x$1" = "x-nodummy" ]; then
   nodummy=1
-  export NODUMMY=t
-  export MOTIF_OPEN=t
-  export XFREE86_VERSION=4
+  export NODUMMY=1
   shift
 fi
-
-# these should not be necessary because OSREL is
-# set in bsd.port.mk from uname's output
-case ${branch} in
-  5*)
-#    export OSREL=5.0
-    export OSVERSION=500027
-    # export PORTOBJFORMAT=elf
-    ;;
-  4*)
-    export OSREL=4.5
-    export OSVERSION=450000
-    # export PORTOBJFORMAT=elf
-    ;;
-  3*)
-#    export OSREL=3.5
-    export OSVERSION=350001
-    # export PORTOBJFORMAT=elf
-    ;;
-  *)
-#    export OSREL=2.2.8
-    export OSVERSION=228001
-    export PORTOBJFORMAT=aout
-    ;;
-esac
 
 args="$*"
 
 pkgname=$(basename $1 .tgz)
 dirname=$2
 shift 2
+
+buildenv ${branch}
+
+export WRKDIRPREFIX=${scratchdir}
+
+# to catch missing dependencies
+#export DEPENDS_TARGET=/usr/bin/true
+
+# don't pass -j, -k etc. to sub-makes
+unset MAKEFLAGS
+unset PORTSDIR
+
+# wait 1 hour before killing build with no output
+export TIMEOUT=3600
+
+# to prevent runaway processes -- 256 meg file size limit, one hour CPU limit
+ulimit -f 524288
+ulimit -t 3600
+
+# directories to clean
+cleandirs="/usr/local /usr/X11R6 /compat"
+
+# 15 minutes
+export FTP_TIMEOUT=900
+export HTTP_TIMEOUT=900
+
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
 
 echo "building $pkgname"
 
@@ -142,7 +109,7 @@ if [ ${found} != 1 ]; then
   cp -p /usr/bin/killall ${chroot}/usr/bin
 
   # Set up desired uname version
-  cp ${bakdir}/UNAME_VERSION ${chroot}/usr/bin
+  cp ${bakdir}/UNAME_TARGET ${chroot}/usr/bin
 
 fi
 
