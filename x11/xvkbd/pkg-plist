@@ -1,0 +1,5 @@
+bin/xvkbd
+lib/X11/app-defaults/XVkbd-common
+lib/X11/app-defaults/XVkbd-german
+lib/X11/app-defaults/XVkbd-latin1
+lib/X11/app-defaults/XVkbd-small
