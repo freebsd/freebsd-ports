@@ -1,0 +1,10 @@
+--- configure.orig	Sun Nov  6 16:59:26 1994
++++ configure	Thu Sep 18 02:08:30 1997
+@@ -1159,6 +1159,7 @@
+ 
+ 
+ 
++LIBS="$saved_LIBS -ltermcap"
+ for ac_func in strerror tputs
+ do
+ echo $ac_n "checking for $ac_func""... $ac_c" 1>&4

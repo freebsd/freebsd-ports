@@ -1,0 +1,11 @@
+--- Makefile.in.org	Sun Nov  6 16:45:13 1994
++++ Makefile.in	Thu Sep 18 01:40:06 1997
+@@ -129,7 +129,7 @@
+ check: wdiff
+ 	$(srcdir)/check_it
+ 
+-install: all
++install: all install-man
+ 	$(srcdir)/mkinstalldirs $(bindir) $(infodir)
+ 	for name in $(PROGRAMS); do \
+ 	  $(INSTALL_PROGRAM) $$name \
