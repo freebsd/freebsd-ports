@@ -1,0 +1,17 @@
+--- x11_common.h	Sun Jun 10 00:43:32 2001
++++ ../../x11_common.h	Thu Jun 14 00:23:37 2001
+@@ -32,12 +32,13 @@
+ #include <X11/Intrinsic.h>
+ 
+ #include <unistd.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/wait.h>
+ #include <sys/fcntl.h>
+ #include <netdb.h>
+-#include <netinet/in.h>
+ #include <signal.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <sys/ioctl.h>
+ 
