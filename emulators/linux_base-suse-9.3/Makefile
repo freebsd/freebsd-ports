@@ -46,6 +46,8 @@ PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
 
+FORBIDDEN=		"security bug--see <URL:http://rhn.redhat.com/errata/RHSA-2002-166.html>"
+
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=		alpha i386
