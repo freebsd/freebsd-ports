@@ -15,14 +15,12 @@ DISTNAME=	Yap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-do-configure:
-	@(${MKDIR} ${WRKSRC}/arch ; cd ${WRKSRC}/arch ; \
-	  ../configure)
+WRKSRC=		${WRKDIR}/Yap-${PORTVERSION}/arch
 
-do-build:
-	@(cd ${WRKSRC}/arch ; make)
+GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	../configure
 
-do-install:
-	@(cd ${WRKSRC}/arch ; make install)
+post-extract:
+	@${MKDIR} ${WRKSRC}
 
 .include <bsd.port.mk>
