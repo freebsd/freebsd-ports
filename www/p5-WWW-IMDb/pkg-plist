@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/IMDb/Title.pm
+lib/perl5/site_perl/%%PERL_VER%%/IMDb/Generique.pm
+lib/perl5/site_perl/%%PERL_VER%%/IMDb/People.pm
+lib/perl5/site_perl/%%PERL_VER%%/IMDb.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMDb/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IMDb
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/IMDb
