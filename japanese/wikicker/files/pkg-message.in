@@ -1,0 +1,16 @@
+
+=============================================================================
+Explanation assuming there being public_html under home directory of a user.
+Work habits to do after introduction:
+  % mkdir -p ~/public_html/wiki
+  % cp %%EXAMPLESDIR%%/* ~/public_html/wiki
+  % mv ~/public_html/wiki/htaccess ~/public_html/wiki/.htaccess
+  % sed -i '' -e 's,HOGE,User,' -e 's,EXAMPLE.JP,%%HostName%%,' ~/public_html/wiki/wiki.cgi.properties
+
+Operation person is connected to 
+  http://%%HostName%%/~User/wiki/ , and please operate "edit".
+
+
+See http://www.naney.org/wiki/WiKicker/INSTALL.html"
+=============================================================================
+
