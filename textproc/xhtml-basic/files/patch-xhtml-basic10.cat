@@ -1,0 +1,23 @@
+--- xhtml-basic10.cat.orig	Tue Dec 19 23:08:04 2000
++++ xhtml-basic10.cat	Tue Aug 10 16:23:28 2004
+@@ -17,17 +17,19 @@
+ 
+ OVERRIDE YES
+ 
+-SGMLDECL "xml1.dcl"
++-- SGMLDECL "xml1.dcl" --
+ 
+ -- :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: --
+ 
+ -- XHTML Basic DTD modular driver file  ..................................... --
+ 
+ PUBLIC "-//W3C//DTD XHTML Basic 1.0//EN"                       "xhtml-basic10.dtd"
++DTDDECL "-//W3C//DTD XHTML Basic 1.0//EN" "xml1.dcl"
+ 
+ -- XHTML Basic framework module ............................................. --
+ 
+ PUBLIC "-//W3C//ENTITIES XHTML Basic 1.0 Document Model 1.0//EN"  "xhtml-basic10-model-1.mod"
++DTDDECL "-//W3C//ENTITIES XHTML Basic 1.0 Document Model 1.0//EN" "xml1.dcl"
+ 
+ 
+ -- End of catalog data  ..................................................... --
