@@ -16,6 +16,7 @@ MAINTAINER=	cracauer@cons.org
 BUILD_DEPENDS=	/compat/linux/usr/lib/libglide2x.so:${PORTSDIR}/emulators/linux_glide \
 		/compat/linux/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools
 
+BROKEN=		linux crosscompilation needs to be fixed first
 ONLY_FOR_ARCHS=	i386
 
 ALL_TARGET=	linux-glide
