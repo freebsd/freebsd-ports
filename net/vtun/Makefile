@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vtun
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	net
 MASTER_SITES=	http://vtun.sourceforge.net/
 
@@ -27,7 +27,9 @@ CONFIGURE_ARGS+=--localstatedir=/var \
 		--with-lzo-headers=${LOCALBASE}/include \
 		--with-lzo-lib=${LOCALBASE}/lib
 
-ALL_TARGET= 	vtund
+WRKSRC=		${WRKDIR}/vtun
+
+ALL_TARGET=	vtund
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/vtund.conf ${PREFIX}/etc/vtund.conf.example
