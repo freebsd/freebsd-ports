@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0.20040225
-PORTREVISION=	1
+PORTVERSION=	1.2.0.20041202
 PORTEPOCH=	2
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jtcfrost
-DISTNAME=	${PORTNAME}-25-Feb-2004
+DISTNAME=	${PORTNAME}-02-Dec-2004-java14
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.4
 USE_ZIP=	yes
 NO_BUILD=	yes
 #WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -34,6 +33,7 @@ JAR_DIR=	${JAVAJARDIR:S,^${PREFIX}/,,}/${PORTNAME}
 JAR_FILE=	frost.jar
 JAR_FILES=	frost.jar lib/fecImpl.jar \
 		lib/BCastle.jar \
+		lib/fec-native.jar \
 		lib/genChkImpl.jar lib/xercesImpl.jar \
 		lib/jocache.jar \
 		lib/mailapi.jar lib/smtp.jar \
@@ -42,10 +42,12 @@ JAR_FILES=	frost.jar lib/fecImpl.jar \
 
 DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
 		doc/SkinLFLicense.txt \
+		doc/hypersonic_lic.txt doc/HISTORY.txt \
 		help/faq.txt help/history.txt
 PORTDOCS=	${DOC_FILES:C,^.*/,,}
 
 DATA_FILES=	config/boards.xml.default \
+		themes/aquathemepack.zip \
 		themes/themepack.zip
 
 PLIST_FILES=	bin/${PORTNAME}
