@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	dagrab
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/cdrom
-
-PATCH_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
-PATCHFILES=	${DISTNAME}-freebsd.patch.gz
 
 MAINTAINER=	clkao@CirX.ORG
 
