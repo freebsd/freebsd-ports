@@ -3,7 +3,7 @@
 # Date created:		06 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1998/10/26 07:45:01 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/14 09:43:24 asami Exp $
 #
 
 DISTNAME=	ranlib.c
@@ -28,6 +28,6 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libranlib.so.1.0 ${PREFIX}/lib/libranlib.so
 .endif
-	@${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
