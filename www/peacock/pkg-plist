@@ -1,15 +1,29 @@
 bin/peacock
 share/gnome/apps/Development/peacock.desktop
+share/gnome/help/peacock/C/authors.html
+share/gnome/help/peacock/C/bugs.html
 share/gnome/help/peacock/C/docbook.css
+share/gnome/help/peacock/C/features.html
 share/gnome/help/peacock/C/peacock.html
 share/gnome/help/peacock/C/topic.dat
+share/gnome/help/peacock/C/x34.html
 share/gnome/pixmaps/peacock/anchor.xpm
 share/gnome/pixmaps/peacock/br.xpm
 share/gnome/pixmaps/peacock/font_base.xpm
+share/gnome/pixmaps/peacock/font_em.xpm
+share/gnome/pixmaps/peacock/font_kbd.xpm
 share/gnome/pixmaps/peacock/font_minus.xpm
 share/gnome/pixmaps/peacock/font_plus.xpm
+share/gnome/pixmaps/peacock/font_pre.xpm
 share/gnome/pixmaps/peacock/font_sub.xpm
 share/gnome/pixmaps/peacock/font_sup.xpm
+share/gnome/pixmaps/peacock/font_tt.xpm
+share/gnome/pixmaps/peacock/form_chkbtn.xpm
+share/gnome/pixmaps/peacock/form_entry.xpm
+share/gnome/pixmaps/peacock/form_form.xpm
+share/gnome/pixmaps/peacock/form_options.xpm
+share/gnome/pixmaps/peacock/form_rdbtn.xpm
+share/gnome/pixmaps/peacock/form_text.xpm
 share/gnome/pixmaps/peacock/h1.xpm
 share/gnome/pixmaps/peacock/h2.xpm
 share/gnome/pixmaps/peacock/h3.xpm
@@ -19,8 +33,20 @@ share/gnome/pixmaps/peacock/h6.xpm
 share/gnome/pixmaps/peacock/help.xpm
 share/gnome/pixmaps/peacock/hr.xpm
 share/gnome/pixmaps/peacock/image.xpm
+share/gnome/pixmaps/peacock/list_dd.xpm
+share/gnome/pixmaps/peacock/list_dir.xpm
+share/gnome/pixmaps/peacock/list_dl.xpm
+share/gnome/pixmaps/peacock/list_dt.xpm
+share/gnome/pixmaps/peacock/list_li.xpm
+share/gnome/pixmaps/peacock/list_menu.xpm
+share/gnome/pixmaps/peacock/list_ol.xpm
+share/gnome/pixmaps/peacock/list_ul.xpm
 share/gnome/pixmaps/peacock/nbsp.xpm
 share/gnome/pixmaps/peacock/paragraph.xpm
+share/gnome/pixmaps/peacock/table_table.xpm
+share/gnome/pixmaps/peacock/table_td.xpm
+share/gnome/pixmaps/peacock/table_th.xpm
+share/gnome/pixmaps/peacock/table_tr.xpm
 @dirrm share/gnome/pixmaps/peacock
 @dirrm share/gnome/help/peacock/C/images
 @dirrm share/gnome/help/peacock/C

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	peacock
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www gnome
-MASTER_SITES=	http://peacock.sourceforge.net/sources/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ade@FreeBSD.org
 
