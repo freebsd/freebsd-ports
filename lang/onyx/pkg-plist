@@ -19,11 +19,13 @@ include/libonyx/nxn.h
 include/libonyx/nxo.h
 include/libonyx/nxo_array.h
 include/libonyx/nxo_boolean.h
+include/libonyx/nxo_class.h
 include/libonyx/nxo_condition.h
 include/libonyx/nxo_dict.h
 include/libonyx/nxo_file.h
 include/libonyx/nxo_fino.h
-include/libonyx/nxo_hook.h
+include/libonyx/nxo_handle.h
+include/libonyx/nxo_instance.h
 include/libonyx/nxo_integer.h
 include/libonyx/nxo_mark.h
 include/libonyx/nxo_mutex.h
@@ -45,7 +47,7 @@ include/libonyx/tsd.h
 include/libonyx/xep.h
 lib/libonyx.a
 lib/libonyx.so
-lib/libonyx.so.12
+lib/libonyx.so.13
 share/onyx
 share/onyx-%%ONYX_VERSION%%/doc/html/contents.png
 share/onyx-%%ONYX_VERSION%%/doc/html/img1.png
@@ -85,7 +87,17 @@ share/onyx-%%ONYX_VERSION%%/doc/html/node111.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node112.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node113.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node114.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node115.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node116.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node117.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node118.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node119.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node12.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node120.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node121.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node122.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node123.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node124.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node13.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node14.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node15.html
@@ -188,14 +200,8 @@ share/onyx-%%ONYX_VERSION%%/doc/html/prev_g.png
 share/onyx-%%ONYX_VERSION%%/doc/html/up.png
 share/onyx-%%ONYX_VERSION%%/doc/html/up_g.png
 share/onyx-%%ONYX_VERSION%%/doc/pdf/onyx.pdf
-share/onyx-%%ONYX_VERSION%%/doc/ps/onyx.ps
-share/onyx-%%ONYX_VERSION%%/nx/modprompt/modprompt.nx
-share/onyx-%%ONYX_VERSION%%/nx/modprompt/modprompt_defs.nx
-share/onyx-%%ONYX_VERSION%%/nxm/modprompt.nxm
-@dirrm share/onyx-%%ONYX_VERSION%%/nxm
-@dirrm share/onyx-%%ONYX_VERSION%%/nx/modprompt
-@dirrm share/onyx-%%ONYX_VERSION%%/nx
-@dirrm share/onyx-%%ONYX_VERSION%%/doc/ps
+share/onyx-%%ONYX_VERSION%%/libonyx/libonyx_init.nx
+@dirrm share/onyx-%%ONYX_VERSION%%/libonyx
 @dirrm share/onyx-%%ONYX_VERSION%%/doc/pdf
 @dirrm share/onyx-%%ONYX_VERSION%%/doc/html
 @dirrm share/onyx-%%ONYX_VERSION%%/doc
