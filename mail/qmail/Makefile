@@ -41,12 +41,9 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.teleglobe.net/%SUBDIR%/ \
 	http://qmail.homegrownhost.net/%SUBDIR%/ \
 	http://qmail.webmast.com/%SUBDIR%/ \
-	http://qmail.xanthor.net/%SUBDIR%/ \
 	http://qmail.glasswings.com.au/%SUBDIR%/ \
 	http://qmail.planetmirror.com/%SUBDIR%/ \
-	http://www2.linuxforum.net/mirror/qmail/%SUBDIR%/ \
 	http://qmail.404-not-found.net/%SUBDIR%/ \
-	http://qmail.gremlins.com.hk/%SUBDIR%/ \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
 	http://www9.jp.qmail.org/%SUBDIR%/ \
@@ -58,7 +55,6 @@ MASTER_SITE_QMAIL+= \
 	http://d2.nctu.edu.tw/qmail/%SUBDIR%/ \
 	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
 	http://qmail.ssi.bg/%SUBDIR%/ \
-	http://qmail.interbgc.com/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
 	http://qmail.xinus.net/%SUBDIR%/ \
 	http://qmail.lightwerk.com/%SUBDIR%/ \
