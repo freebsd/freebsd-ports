@@ -1,0 +1,40 @@
+bin/workrave
+etc/sound/events/workrave.soundlist
+share/gnome/pixmaps/workrave/workrave-icon-small.png
+share/gnome/sounds/workrave/break-ignored.wav
+share/gnome/sounds/workrave/break-prelude.wav
+share/gnome/sounds/workrave/daily-limit.wav
+share/gnome/sounds/workrave/micropause-ended.wav
+share/gnome/sounds/workrave/micropause-started.wav
+share/gnome/sounds/workrave/restbreak-ended.wav
+share/gnome/sounds/workrave/restbreak-started.wav
+share/gnome/workrave/images/daily-limit.png
+share/gnome/workrave/images/display.png
+share/gnome/workrave/images/micropause.png
+share/gnome/workrave/images/monitoring.png
+share/gnome/workrave/images/network.png
+share/gnome/workrave/images/prelude-hint-sad.png
+share/gnome/workrave/images/prelude-hint.png
+share/gnome/workrave/images/restbreak.png
+share/gnome/workrave/images/time.png
+share/gnome/workrave/images/timer-daily.png
+share/gnome/workrave/images/timer-micropause.png
+share/gnome/workrave/images/timer-restbreak.png
+share/gnome/workrave/images/workrave-icon-large.png
+share/gnome/workrave/images/workrave-icon-medium.png
+share/gnome/workrave/images/workrave-icon-small.png
+share/gnome/workrave/images/workrave.ico
+share/gnome/workrave/images/workrave.png
+share/locale/de/LC_MESSAGES/workrave.mo
+share/locale/eo/LC_MESSAGES/workrave.mo
+share/locale/nl/LC_MESSAGES/workrave.mo
+@unexec rmdir share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/nl 2>/dev/null || true
+@unexec rmdir share/locale/eo/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/eo 2>/dev/null || true
+@unexec rmdir share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir share/locale/de 2>/dev/null || true
+@dirrm share/gnome/workrave/images
+@dirrm share/gnome/workrave
+@dirrm share/gnome/pixmaps/workrave
+@dirrm share/gnome/sounds/workrave

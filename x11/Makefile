@@ -120,6 +120,7 @@
     SUBDIR += wmmenu
     SUBDIR += wmoldmenu2new
     SUBDIR += wmxss
+    SUBDIR += workrave
     SUBDIR += wrapper
     SUBDIR += wscan
     SUBDIR += wterm
