@@ -9,3 +9,13 @@
  
  # The mkdir below is for installation on OpenBSD pre 2.7
  install:
+--- Makefile.orig	Wed Oct  9 17:15:53 2002
++++ Makefile	Wed Oct  9 17:16:26 2002
+@@ -164,6 +164,7 @@
+ USE_LIBDES=	yes
+ LDADD+=		-lkeynote -lm
+ DPADD+=		${LIBKEYNOTE} ${LIBM}
++POLICY=         policy.c
+ CFLAGS+=	-DUSE_KEYNOTE
+ .endif
+ 
