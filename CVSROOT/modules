@@ -2168,6 +2168,7 @@ gnome-fifth-toe	ports/x11/gnome-fifth-toe
 gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
+gnome-pkgview	ports/sysutils/gnome-pkgview
 gnome-themes	ports/x11-toolkits/gnome-themes
 gnome-vnc	ports/net/gnome-vnc
 gnome2		ports/x11/gnome2
