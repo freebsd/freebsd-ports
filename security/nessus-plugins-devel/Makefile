@@ -4,24 +4,20 @@
 #
 
 PORTNAME=	nessus-plugins-devel
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://cvs.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.esiea.fr/pub/mirrors/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.chg.ru/pub/security/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
+MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/nessus/unstable/nessus-${PORTVERSION}/src/ \
+		http://ftp.gwdg.de/pub/linux/misc/nessus/unstable/nessus-${PORTVERSION}/src/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/nessus/unstable/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.chg.ru/pub/security/nessus/unstable/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.sekure.net/pub/nessus/unstable/nessus-${PORTVERSION}/src/
 DISTNAME=	nessus-plugins-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
 
-FORBIDDEN=	security/nessus-plugins is newer
-
-BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel
+BUILD_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel \
+		libnet-config:${PORTSDIR}/net/libnet
 RUN_DEPENDS=	${LOCALBASE}/include/nessus/nessus-devel.h:${PORTSDIR}/security/nessus-devel \
 		nmap:${PORTSDIR}/security/nmap \
 		wget:${PORTSDIR}/ftp/wget
