@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +25,20 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-pthread=yes --with-zlib=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libogg.so.4)
+WITH_LIBOGG=     yes
+.endif
+
+.if defined(WITH_LIBOGG)
+LIB_DEPENDS+=   ogg.4:${PORTSDIR}/audio/libogg
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "You can specify WITH_LIBOGG to include Ogg support"
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
