@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Buffer/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Data/Buffer.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data/Buffer
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Data
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Data
