@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	autocd
-PORTVERSION=	3.02.11b
+PORTVERSION=	3.02.12b
 CATEGORIES=	audio sysutils
 MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 
