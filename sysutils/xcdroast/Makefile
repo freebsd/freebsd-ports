@@ -21,23 +21,25 @@ USE_GMAKE=	yes
 USE_GTK=	yes
 USE_IMLIB=	yes
 
+MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
+		IMLIB_CONFIG="${IMLIB_CONFIG}"
+
 post-patch:
 	for i in xcdroast.h Makefile ; do \
 	  ${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/$$i ; \
 	done
 
-post-install:
+	for i in Makefile ; do \
+	  ${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/$$i ; \
+	done
 
-	${LN} -sf ${LOCALBASE}/bin/cdrecord ${PREFIX}/lib/xcdroast-0.98/bin/cdrecord
-	${LN} -sf ${LOCALBASE}/bin/mkisofs ${PREFIX}/lib/xcdroast-0.98/bin/mkisofs
-	${LN} -sf ${LOCALBASE}/bin/cdda2wav ${PREFIX}/lib/xcdroast-0.98/bin/cdda2wav
-	${LN} -sf ${LOCALBASE}/bin/readcd ${PREFIX}/lib/xcdroast-0.98/bin/readcd
+post-install:
 
 	/usr/sbin/pw groupadd -n cdwrite
 
-	for i in cdrecord cdda2wav mkisofs readcd ; do \
-	    ${CHOWN} root:cdwrite ${PREFIX}/bin/$i && \
-	    ${CHMOD} 4710 ${PREFIX}/bin/$i ; \
+	for i in cdrecord cdda2wav mkisofs readcd; do \
+	    ${CHOWN} root:cdwrite ${LOCALBASE}/bin/$$i ; \
+	    ${CHMOD} 4710 ${LOCALBASE}/bin/$$i ; \
 	done
 
 	${CHOWN} root:cdwrite ${PREFIX}/lib/xcdroast-0.98/bin/xcdrwrap

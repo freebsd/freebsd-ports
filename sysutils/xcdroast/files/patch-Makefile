@@ -1,6 +1,6 @@
 --- Makefile.orig	Tue Jul 17 23:46:26 2001
-+++ Makefile	Sat Aug 18 20:15:52 2001
-@@ -6,7 +6,7 @@
++++ Makefile	Tue Aug 21 13:07:40 2001
+@@ -6,13 +6,13 @@
  # Installation prefix directory:
  
  #PREFIX=/usr
@@ -9,17 +9,25 @@
  PRE_LIBDIR=$(PREFIX)/lib/xcdroast-0.98
  
  # put here the prefix where you want xcdroast to look for 
+ # cdrecord/mkisofs/readcd/cdda2wav. 
+ # e.g. /usr
+-CDRTOOLS_PREFIX=$(PREFIX)
++CDRTOOLS_PREFIX=%%LOCALBASE%%
+ 
+ # for linux
+ INSTALL=/usr/bin/install -c
 @@ -23,10 +23,10 @@
  
  #---
  
 -CFLAGS=-Wall `gtk-config --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
-+CFLAGS=-Wall `gtk12-config --cflags` `imlib-config --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
- CFLAGS2=-Wall `glib-config --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
+-CFLAGS2=-Wall `glib-config --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
 -LIBS=`gtk-config --libs` `imlib-config --libs` -lgdk_imlib 
 -TOOLLIBS=`gtk-config --libs`
-+LIBS=`gtk12-config --libs` `imlib-config --libs` -lgdk_imlib 
-+TOOLLIBS=`gtk12-config --libs`
++CFLAGS=-Wall `${GTK_CONFIG} --cflags` `${IMLIB_CONFIG} --cflags` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
++CFLAGS2=-Wall `${GTK_CONFIG} --cflags --libs` -DPRE_PREFIX="\"$(PREFIX)\"" -DPRE_LIBDIR="\"$(PRE_LIBDIR)\"" -DCDRTOOLS_PREFIX="\"$(CDRTOOLS_PREFIX)\""
++LIBS=`${GTK_CONFIG} --libs` `${IMLIB_CONFIG} --libs` -lgdk_imlib 
++TOOLLIBS=`${GTK_CONFIG} --libs`
  CC=gcc
  
  OBJ = main.o language.o init.o tools.o xtools.o menus.o setup.o io.o duplicate.o wav_frontend.o wav_id.o create.o
