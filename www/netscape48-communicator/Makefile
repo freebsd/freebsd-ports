@@ -15,8 +15,6 @@ MAINTAINER?=	sada@FreeBSD.org
 
 Y2K=		http://home.netscape.com/products/year2000/faq/client.html
 
-ONLY_FOR_ARCHS=	i386
-
 USE_XLIB=	yes
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
