@@ -1,11 +1,11 @@
---- libgnomevfs/Makefile.in.orig	Tue Jan 14 00:50:29 2003
-+++ libgnomevfs/Makefile.in	Tue Jan 14 00:51:03 2003
-@@ -341,7 +341,7 @@
+--- libgnomevfs/Makefile.in.orig	Wed May 21 12:54:14 2003
++++ libgnomevfs/Makefile.in	Wed May 21 12:55:26 2003
+@@ -216,7 +216,7 @@
  # CLEANFILES = $(BUILT_SOURCES)
  
  # Platform specific includes
 -libgnomevfsplatformincludedir = $(libdir)/gnome-vfs-2.0/include
 +libgnomevfsplatformincludedir = $(includedir)/gnome-vfs-2.0/libgnomevfs
- libgnomevfsplatforminclude_HEADERS = \
- 	gnome-vfs-file-size.h
+ libgnomevfsplatforminclude_HEADERS =  	gnome-vfs-file-size.h
+ 
  
