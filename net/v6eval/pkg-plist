@@ -144,6 +144,7 @@ v6eval/bin/kame-freebsd/mip6EnableCN.rmt
 v6eval/bin/kame-freebsd/mip6EnableHA.rmt
 v6eval/bin/kame-freebsd/mip6EnableMN.rmt
 v6eval/bin/kame-freebsd/mtuconfig.rmt
+v6eval/bin/kame-freebsd/multicastConfig.rmt
 v6eval/bin/kame-freebsd/ping6.rmt
 v6eval/bin/kame-freebsd/reboot.rmt
 v6eval/bin/kame-freebsd/reboot_async.rmt
@@ -182,33 +183,41 @@ v6eval/bin/linux-v6/cleardefr.rmt
 v6eval/bin/linux-v6/clearnc.rmt
 v6eval/bin/linux-v6/clearprefix.rmt
 v6eval/bin/linux-v6/clearroute.rmt
+v6eval/bin/linux-v6/dhcp6c.rmt
+v6eval/bin/linux-v6/dhcp6s.rmt
 v6eval/bin/linux-v6/loginout.rmt
 v6eval/bin/linux-v6/manualaddrconf.rmt
 v6eval/bin/linux-v6/ping6.rmt
 v6eval/bin/linux-v6/reboot.rmt
 v6eval/bin/linux-v6/reboot_async.rmt
 v6eval/bin/linux-v6/route.rmt
+v6eval/bin/linux-v6/rtadvd.rmt
 v6eval/bin/linux-v6/tunnel.rmt
 v6eval/bin/manual/cleardefr.rmt
 v6eval/bin/manual/clearnc.rmt
 v6eval/bin/manual/clearprefix.rmt
 v6eval/bin/manual/clearroute.rmt
 v6eval/bin/manual/dhcp6c.rmt
+v6eval/bin/manual/dhcp6s.rmt
 v6eval/bin/manual/ipsecClearAll.rmt
 v6eval/bin/manual/ipsecEnable.rmt
 v6eval/bin/manual/ipsecSetSAD.rmt
 v6eval/bin/manual/ipsecSetSPD.rmt
 v6eval/bin/manual/loginout.rmt
 v6eval/bin/manual/manualaddrconf.rmt
-v6eval/bin/manual/multicastConfig.rmt
 v6eval/bin/manual/mip6EnableCN.rmt
 v6eval/bin/manual/mip6EnableHA.rmt
 v6eval/bin/manual/mip6EnableMN.rmt
+v6eval/bin/manual/mldv2.rmt
+v6eval/bin/manual/mldv2config.rmt
 v6eval/bin/manual/mtuconfig.rmt
+v6eval/bin/manual/multicastConfig.rmt
 v6eval/bin/manual/natpt.rmt
 v6eval/bin/manual/ping6.rmt
 v6eval/bin/manual/reboot.rmt
 v6eval/bin/manual/reboot_async.rmt
+v6eval/bin/manual/ripng_start.rmt
+v6eval/bin/manual/ripng_stop.rmt
 v6eval/bin/manual/route.rmt
 v6eval/bin/manual/rtadvd.rmt
 v6eval/bin/manual/setDNS.rmt
@@ -375,11 +384,38 @@ v6eval/bin/telebit-tbc2k/reboot_async.rmt
 v6eval/bin/telebit-tbc2k/route.rmt
 v6eval/bin/telebit-tbc2k/rtadvd.rmt
 v6eval/bin/telebit-tbc2k/tunnel.rmt
+v6eval/bin/unitedlinux/cleardefr.rmt
+v6eval/bin/unitedlinux/clearnc.rmt
+v6eval/bin/unitedlinux/clearprefix.rmt
+v6eval/bin/unitedlinux/clearroute.rmt
+v6eval/bin/unitedlinux/dhcp6c.rmt
+v6eval/bin/unitedlinux/dhcp6s.rmt
+v6eval/bin/unitedlinux/ipsecClearAll.rmt
+v6eval/bin/unitedlinux/ipsecEnable.rmt
+v6eval/bin/unitedlinux/ipsecSetSAD.rmt
+v6eval/bin/unitedlinux/ipsecSetSPD.rmt
+v6eval/bin/unitedlinux/loginout.rmt
+v6eval/bin/unitedlinux/manualaddrconf.rmt
+v6eval/bin/unitedlinux/mip6EnableCN.rmt
+v6eval/bin/unitedlinux/mip6EnableHA.rmt
+v6eval/bin/unitedlinux/mip6EnableMN.rmt
+v6eval/bin/unitedlinux/mldv2.rmt
+v6eval/bin/unitedlinux/mldv2config.rmt
+v6eval/bin/unitedlinux/multicastConfig.rmt
+v6eval/bin/unitedlinux/ping6.rmt
+v6eval/bin/unitedlinux/reboot.rmt
+v6eval/bin/unitedlinux/reboot_async.rmt
+v6eval/bin/unitedlinux/route.rmt
+v6eval/bin/unitedlinux/rtadvd.rmt
+v6eval/bin/unitedlinux/setDNS.rmt
+v6eval/bin/unitedlinux/showAddr.rmt
+v6eval/bin/unitedlinux/tunnel.rmt
 v6eval/bin/unknown/cleardefr.rmt
 v6eval/bin/unknown/clearnc.rmt
 v6eval/bin/unknown/clearprefix.rmt
 v6eval/bin/unknown/clearroute.rmt
 v6eval/bin/unknown/dhcp6c.rmt
+v6eval/bin/unknown/dhcp6s.rmt
 v6eval/bin/unknown/ipsecClearAll.rmt
 v6eval/bin/unknown/ipsecEnable.rmt
 v6eval/bin/unknown/ipsecSetSAD.rmt
@@ -389,12 +425,16 @@ v6eval/bin/unknown/manualaddrconf.rmt
 v6eval/bin/unknown/mip6EnableCN.rmt
 v6eval/bin/unknown/mip6EnableHA.rmt
 v6eval/bin/unknown/mip6EnableMN.rmt
+v6eval/bin/unknown/mldv2.rmt
+v6eval/bin/unknown/mldv2config.rmt
 v6eval/bin/unknown/mtuconfig.rmt
 v6eval/bin/unknown/multicastConfig.rmt
 v6eval/bin/unknown/natpt.rmt
 v6eval/bin/unknown/ping6.rmt
 v6eval/bin/unknown/reboot.rmt
 v6eval/bin/unknown/reboot_async.rmt
+v6eval/bin/unknown/ripng_start.rmt
+v6eval/bin/unknown/ripng_stop.rmt
 v6eval/bin/unknown/route.rmt
 v6eval/bin/unknown/rtadvd.rmt
 v6eval/bin/unknown/setDNS.rmt
@@ -443,62 +483,62 @@ v6eval/include/stdconst.def
 v6eval/include/stdpacket.def
 v6eval/man/man1/pktctl.1.gz
 v6eval/man/man1/pktsend.1.gz
-@unexec rmdir %D/v6eval/etc 2>/dev/null || true
-@dirrm v6eval/bin/kame-freebsd
-@dirrm v6eval/bin/hitachi-nr60
-@dirrm v6eval/bin/hitachi-nr60-v2
-@dirrm v6eval/bin/hitachi-gr2k
-@dirrm v6eval/bin/linux-v6
-@dirrm v6eval/bin/ms-win2k
-@dirrm v6eval/bin/nec-libra
-@dirrm v6eval/bin/nec-libra-utcpip
-@dirrm v6eval/bin/sun-solaris
-@dirrm v6eval/bin/yamaha-ws-one
+@dirrm v6eval/bin/aix
 @dirrm v6eval/bin/cisco-ios
-@dirrm v6eval/bin/iij-seil
-@dirrm v6eval/bin/netbsd-i386
-@dirrm v6eval/bin/mgcs-sj6
-@dirrm v6eval/bin/telebit-tbc2k
-@dirrm v6eval/bin/manual
 @dirrm v6eval/bin/freebsd-i386
 @dirrm v6eval/bin/freebsd43-i386
-@dirrm v6eval/bin/unknown
-@dirrm v6eval/bin/aix
+@dirrm v6eval/bin/hitachi-gr2k
+@dirrm v6eval/bin/hitachi-nr60
+@dirrm v6eval/bin/hitachi-nr60-v2
 @dirrm v6eval/bin/hpux
+@dirrm v6eval/bin/iij-seil
+@dirrm v6eval/bin/kame-freebsd
 @dirrm v6eval/bin/kame-netbsd-i386
-@dirrm v6eval/bin/nec-mip6
-@dirrm v6eval/bin/sfc-mip6
 @dirrm v6eval/bin/lcna
+@dirrm v6eval/bin/linux-v6
+@dirrm v6eval/bin/manual
+@dirrm v6eval/bin/mgcs-sj6
 @dirrm v6eval/bin/mipl
+@dirrm v6eval/bin/ms-win2k
 @dirrm v6eval/bin/nec-ix1k
+@dirrm v6eval/bin/nec-libra
+@dirrm v6eval/bin/nec-libra-utcpip
+@dirrm v6eval/bin/nec-mip6
+@dirrm v6eval/bin/netbsd-i386
 @dirrm v6eval/bin/openbsd-i386
+@dirrm v6eval/bin/sfc-mip6
+@dirrm v6eval/bin/sun-solaris
+@dirrm v6eval/bin/telebit-tbc2k
+@dirrm v6eval/bin/unitedlinux
+@dirrm v6eval/bin/unknown
 @dirrm v6eval/bin/usagi-i386
+@dirrm v6eval/bin/yamaha-ws-one
 @dirrm v6eval/bin
-@dirrm v6eval/man/man1
-@dirrm v6eval/man/cat1
-@dirrm v6eval/man/man2
-@dirrm v6eval/man/cat2
-@dirrm v6eval/man/man3
-@dirrm v6eval/man/cat3
-@dirrm v6eval/man/man4
-@dirrm v6eval/man/cat4
-@dirrm v6eval/man/man5
-@dirrm v6eval/man/cat5
-@dirrm v6eval/man/man6
-@dirrm v6eval/man/cat6
-@dirrm v6eval/man/man7
-@dirrm v6eval/man/cat7
-@dirrm v6eval/man/man8
-@dirrm v6eval/man/cat8
-@dirrm v6eval/man/man9
-@dirrm v6eval/man/cat9
-@dirrm v6eval/man/mann
-@dirrm v6eval/man/catn
-@dirrm v6eval/man
 @dirrm v6eval/doc
-@unexec rmdir %D/v6eval/etc 2>/dev/null || true
 @dirrm v6eval/include
+@dirrm v6eval/man/cat1
+@dirrm v6eval/man/cat2
+@dirrm v6eval/man/cat3
+@dirrm v6eval/man/cat4
+@dirrm v6eval/man/cat5
+@dirrm v6eval/man/cat6
+@dirrm v6eval/man/cat7
+@dirrm v6eval/man/cat8
+@dirrm v6eval/man/cat9
+@dirrm v6eval/man/catn
+@dirrm v6eval/man/man1
+@dirrm v6eval/man/man2
+@dirrm v6eval/man/man3
+@dirrm v6eval/man/man4
+@dirrm v6eval/man/man5
+@dirrm v6eval/man/man6
+@dirrm v6eval/man/man7
+@dirrm v6eval/man/man8
+@dirrm v6eval/man/man9
+@dirrm v6eval/man/mann
+@dirrm v6eval/man
+@unexec rmdir %D/v6eval/etc 2>/dev/null || true
 @dirrm v6eval
-%%SITE_PERL%%/V6evalTool.pm
 %%SITE_PERL%%/V6evalCommon.pm
 %%SITE_PERL%%/V6evalRemote.pm
+%%SITE_PERL%%/V6evalTool.pm
