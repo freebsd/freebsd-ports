@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xlhtml
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.gate.net/~ddata/xlHtml/
+MASTER_SITES=	http://www.xlhtml.org/
 DISTNAME=	xlHtml-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
