@@ -1,0 +1,15 @@
+include/qDecoder.h
+lib/libqDecoder.a
+share/examples/qDecoder/Makefile
+share/examples/qDecoder/README
+share/examples/qDecoder/arglist.c
+share/examples/qDecoder/examples.html
+share/examples/qDecoder/fetch.c
+share/examples/qDecoder/multivalue.c
+share/examples/qDecoder/streamedit-header.html.in
+share/examples/qDecoder/streamedit-tailer.html.in
+share/examples/qDecoder/streamedit.c
+share/examples/qDecoder/streamedit.html
+share/examples/qDecoder/streamedit.html.in
+share/examples/qDecoder/upload.c
+@dirrm share/examples/qDecoder

@@ -107,6 +107,7 @@
     SUBDIR += plugger
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
+    SUBDIR += qdecoder
     SUBDIR += roxen
     SUBDIR += ruboard
     SUBDIR += screem

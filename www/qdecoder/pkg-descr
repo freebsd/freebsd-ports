@@ -1,0 +1,14 @@
+qDecoder
+========
+
+"qDecoder is a CGI library for C/C++ language programming and
+ a solution product for developers. The Query Fetch algorithm
+ of qDecoder which is based on linked-list gives developers
+ more simple library interface without regard to a method of GET
+ or POST. Also because it gives transperance with a subordinate
+ layer, web-based softwares - CGI - is designed and embodied in
+ reliability further. The source code for qDecoder is freely
+ available to everyone."
+
+--
+Ports by CHOI Junho <cjh@kr.freebsd.org>
