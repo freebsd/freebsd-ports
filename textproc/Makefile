@@ -24,6 +24,7 @@
     SUBDIR += glimpse
     SUBDIR += grap
     SUBDIR += gxditview
+    SUBDIR += hevea
     SUBDIR += htdig
     SUBDIR += html
     SUBDIR += info2html
