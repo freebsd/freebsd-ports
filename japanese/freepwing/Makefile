@@ -15,5 +15,6 @@ MAINTAINER=	taoka@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
+USE_PERL5=	yes
 
 .include <bsd.port.mk>
