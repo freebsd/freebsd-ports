@@ -8,7 +8,7 @@
 PORTNAME=	xdms
 PORTVERSION=	1.3
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.ee.tut.fi/~o159219/xdms/
+MASTER_SITES=	http://www.ee.tut.fi/~orsila/xdms/
 DISTNAME=	xdms
 
 MAINTAINER=	mark@kyne.com.au
