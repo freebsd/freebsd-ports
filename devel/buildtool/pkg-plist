@@ -1,15 +1,20 @@
-bin/buildtool-0
 bin/buildtool
+bin/buildtool-0
 libexec/buildtool-0/bt_config
 libexec/buildtool-0/bt_dist
 libexec/buildtool-0/bt_doc
 libexec/buildtool-0/bt_lint
 libexec/buildtool-0/bt_logic
 libexec/buildtool-0/bt_make
+libexec/buildtool-0/bt_pkgflags
 share/buildtool-0/bt_config/base.subr
 share/buildtool-0/bt_config/pkgconfig.subr
 share/buildtool-0/bt_config/pthread.subr
 share/buildtool-0/bt_config/x11.subr
+share/buildtool-0/licenses/apache
+share/buildtool-0/licenses/artistic
+share/buildtool-0/licenses/bsd
+share/buildtool-0/licenses/gplv2
 share/buildtool-0/mk/bt.clean.mk
 share/buildtool-0/mk/bt.dep.mk
 share/buildtool-0/mk/bt.inc.mk
@@ -21,10 +26,6 @@ share/buildtool-0/mk/bt.prog.mk
 share/buildtool-0/mk/bt.subdir.mk
 share/buildtool-0/mk/qt.moc.mk
 share/buildtool-0/mk/sys.mk
-share/buildtool-0/licenses/apache
-share/buildtool-0/licenses/artistic
-share/buildtool-0/licenses/bsd
-share/buildtool-0/licenses/gplv2
 share/buildtool-0/templates/README.bt
 share/buildtool-0/templates/config
 share/buildtool-0/templates/config_init
@@ -33,10 +34,10 @@ share/buildtool-0/templates/docs
 share/buildtool-0/templates/mk_bin
 share/buildtool-0/templates/mk_top
 @dirrm libexec/buildtool-0
-@dirrm share/buildtool-0/bt_config
+@dirrm share/buildtool-0/templates
 @dirrm share/buildtool-0/mk
 @dirrm share/buildtool-0/licenses
-@dirrm share/buildtool-0/templates
+@dirrm share/buildtool-0/bt_config
 @dirrm share/buildtool-0
 @unexec install-info --delete %D/info/buildtool.info %D/info/dir
 info/buildtool.info
