@@ -3,13 +3,13 @@
 # Date created:		October 29th 1996
 # Whom:			jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.21 1998/09/15 11:13:34 asami Exp $
+# $Id: Makefile,v 1.22 1998/09/17 00:32:56 asami Exp $
 #
 
 DISTNAME=	AfterStep-1.0
 PKGNAME=	afterstep-1.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://afterstep.foo.net/pub/AfterStep/
+MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
