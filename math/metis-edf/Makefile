@@ -8,7 +8,8 @@
 PORTNAME=	metis-edf
 PORTVERSION=	3.1
 CATEGORIES=	math
-MASTER_SITES=	http://www.code-aster.org/FICHIERS/metis/
+MASTER_SITES=	http://www.code-aster.org/FICHIERS/
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-1.noarch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meshes partionning tool used by Code_Aster
@@ -22,6 +23,8 @@ REINPLACE_ARGS=	-i ""
 
 F77?=		f77
 FFLAGS?=	-O2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
 .if ${MACHINE_ARCH} != "i386"
