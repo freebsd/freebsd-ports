@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gngb
-PORTVERSION=	20020111
+PORTVERSION=	20030809
 CATEGORIES=	emulators
-MASTER_SITES=	http://membres.lycos.fr/frogus/gngb/download/
+MASTER_SITES=	http://membres.lycos.fr/frogus/gngb/download/ \
+		http://m.peponas.free.fr/gngb/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
