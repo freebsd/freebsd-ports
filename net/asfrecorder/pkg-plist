@@ -1,0 +1,3 @@
+bin/asfrecorder
+%%PORTDOCS%%share/doc/asfrecorder/README.TXT
+%%PORTDOCS%%@dirrm share/doc/asfrecorder
