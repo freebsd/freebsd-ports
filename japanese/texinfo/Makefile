@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texinfo
-PORTVERSION=	4.0
+PORTVERSION=	4.5
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	mitsuru@riken.go.jp
 COMMENT=	Typeset Texinfo files for printing. Uses TeX
 
-RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex-euc
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-euc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j
