@@ -380,6 +380,7 @@
     SUBDIR += xdelta
     SUBDIR += xdf
     SUBDIR += xenmenu
+    SUBDIR += xfce4-artwork
     SUBDIR += xfce4-iconbox
     SUBDIR += xfce4-panel-themes
     SUBDIR += xfce4-wm-themes
