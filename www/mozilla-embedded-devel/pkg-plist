@@ -113,12 +113,10 @@ lib/mozilla-embedded/components/xpcom_threads.xpt
 lib/mozilla-embedded/components/xpcom_xpti.xpt
 lib/mozilla-embedded/components/xpconnect.xpt
 lib/mozilla-embedded/components/xpti.dat
-lib/mozilla-embedded/components/xptitemp.dat
 lib/mozilla-embedded/defaults/pref/all.js
 lib/mozilla-embedded/defaults/pref/initpref.js
 lib/mozilla-embedded/defaults/pref/security-prefs.js
 lib/mozilla-embedded/defaults/pref/unix.js
-lib/mozilla-embedded/gtkEmbed
 lib/mozilla-embedded/libgkgfx.so
 lib/mozilla-embedded/libgtkembedmoz.so
 lib/mozilla-embedded/libgtksuperwin.so
@@ -127,13 +125,17 @@ lib/mozilla-embedded/libnspr4.so
 lib/mozilla-embedded/libplc4.so
 lib/mozilla-embedded/libplds4.so
 lib/mozilla-embedded/libxpcom.so
-lib/mozilla-embedded/res/acceptlanguage.properties
 lib/mozilla-embedded/res/arrow.gif
 lib/mozilla-embedded/res/builtin/htmlBindings.xml
 lib/mozilla-embedded/res/builtin/platformHTMLBindings.xml
 lib/mozilla-embedded/res/builtin/xbl-forms.css
 lib/mozilla-embedded/res/charsetData.properties
 lib/mozilla-embedded/res/charsetalias.properties
+lib/mozilla-embedded/res/entityTables/html40Latin1.properties
+lib/mozilla-embedded/res/entityTables/html40Special.properties
+lib/mozilla-embedded/res/entityTables/html40Symbols.properties
+lib/mozilla-embedded/res/entityTables/htmlEntityVersions.properties
+lib/mozilla-embedded/res/entityTables/transliterate.properties
 lib/mozilla-embedded/res/forms.css
 lib/mozilla-embedded/res/html.css
 lib/mozilla-embedded/res/langGroups.properties
@@ -143,6 +145,7 @@ lib/mozilla-embedded/res/ua.css
 lib/mozilla-embedded/res/unixcharset.properties
 lib/mozilla-embedded/res/viewsource.css
 lib/mozilla-embedded/run-mozilla.sh
+@dirrm lib/mozilla-embedded/res/entityTables
 @dirrm lib/mozilla-embedded/res/builtin
 @dirrm lib/mozilla-embedded/res
 @dirrm lib/mozilla-embedded/defaults/pref
