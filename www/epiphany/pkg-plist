@@ -70,6 +70,7 @@ share/gnome/omf/epiphany/epiphany-nl.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-nl.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/epiphany-bookmarks.png
 share/locale/am/LC_MESSAGES/epiphany.mo
+share/locale/az/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
 share/locale/be/LC_MESSAGES/epiphany.mo
 share/locale/ca/LC_MESSAGES/epiphany.mo
