@@ -91,6 +91,7 @@
     SUBDIR += gonvert
     SUBDIR += gplbp
     SUBDIR += granulate
+    SUBDIR += graphthing
     SUBDIR += grc
     SUBDIR += grdb
     SUBDIR += grun
