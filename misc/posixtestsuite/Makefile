@@ -10,7 +10,7 @@ PORTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= posixtest
+MASTER_SITE_SUBDIR=	posixtest
 
 MAINTAINER=	phantom@FreeBSD.org
 COMMENT=	Open POSIX Test Suite
@@ -26,9 +26,9 @@ USE_GMAKE=	YES
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-REGR_LOG= log.run-4stable
+REGR_LOG=	log.run-4stable
 .else
-REGR_LOG= log.run-5current
+REGR_LOG=	log.run-5current
 .endif
 
 RUN_RESULT=	${WRKSRC}/run.result
@@ -43,7 +43,7 @@ THEPIPE= | tee 2>&1
 .if defined(WITH_THRLIB)
 THRLIB=${WITH_THRLIB}
 .else
-THRLIB=	-lpthread
+THRLIB=	${PTHREAD_LIBS}
 .endif
 
 pre-everything::
@@ -58,7 +58,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "  * QUIET - don't print progress messages while running"
 	@${ECHO} "  * WITH_THRLIB - choose thread library to run test against"
-	@${ECHO} "    (NB: by default 'libpthread' is used)"
+	@${ECHO} "    (NB: by default '"${PTHREAD_LIBS}"' is used)"
 	@${ECHO} ""
 	@${ECHO} "Examples:"
 	@${ECHO} ""
