@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Pg
-PORTVERSION=	0.03
-PORTREVISION=	1
+PORTVERSION=	0.04
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -23,5 +22,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI::Pg.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
