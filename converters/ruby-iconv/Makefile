@@ -24,6 +24,7 @@ BUILD_DEPENDS+=	rd2:${PORTSDIR}/textproc/ruby-rdtool
 .endif
 
 INSTALL_TARGET=	site-install
+CONFIGURE_ARGS=	--with-opt-dir="${LOCALBASE}"
 
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
@@ -33,7 +34,7 @@ RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 do-configure:
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 .if !defined(NOPORTDOCS)
 post-build:
