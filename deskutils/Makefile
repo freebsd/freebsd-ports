@@ -90,6 +90,7 @@
     SUBDIR += plan
     SUBDIR += planner
     SUBDIR += preferences.app
+    SUBDIR += remind
     SUBDIR += rolo
     SUBDIR += rox-memo
     SUBDIR += rubrica
