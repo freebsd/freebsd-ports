@@ -7,28 +7,27 @@
 
 PORTNAME=	portell
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
-MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
-		http://www.seekrut.com/rk/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Quick display of FreeBSD port descriptions
 
-PATCH_WRKSRC=	${WRKDIR}
+USE_ZIP=	YES
 USE_PYTHON=	YES
 USE_REINPLACE=	YES
 
 do-build:
-	${REINPLACE_CMD} -e 's/portell.py/portell/' ${WRKDIR}/README
+	${REINPLACE_CMD} -e 's/portell.py/portell/' ${WRKSRC}/README.txt
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/portell.py ${PREFIX}/bin/portell
+	${INSTALL_SCRIPT} ${WRKSRC}/portell.py ${PREFIX}/bin/portell
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
 
 post-install:
@@ -36,7 +35,7 @@ post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "###############################################################################"
 	@${ECHO_MSG} "# You must run 'portell -u' to initialize the DB"
-	@${ECHO_MSG} "# ${DOCSDIR}/README for more information."
+	@${ECHO_MSG} "# ${DOCSDIR}/README.txt for more information."
 	@${ECHO_MSG} "###############################################################################"
 	@${ECHO_MSG} ""
 .endif
