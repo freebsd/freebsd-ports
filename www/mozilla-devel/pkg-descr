@@ -1,8 +1,6 @@
 This is the netscape web-surfboard.  Please read the file
 "/usr/local/lib/netscape/LICENSE" for the licensing terms.
 
-Note: Java does not work in 8bpp mode; run `X -bpp 16' if you need it
-
 Note: If Java applets fail to display.  Type this as root:
 		cd /usr/X11R6/lib/X11/fonts/misc
 		/usr/X11R6/bin/mkfontdir
