@@ -91,6 +91,7 @@
     SUBDIR += rdate
     SUBDIR += rotate
     SUBDIR += rtty
+    SUBDIR += rmonitor
     SUBDIR += roottail
     SUBDIR += ruby-syslog
     SUBDIR += safecat

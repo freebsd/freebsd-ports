@@ -1,0 +1,7 @@
+Rmonitor is a client-server application for monitoring a couple of (or even
+more) remote hosts. It prints gathered system statistics on a standard
+terminal display or within an xterm window; using one line for each host
+monitored.
+
+Konrad Heuer
+kheuer@gwdu60.gwdg.de
