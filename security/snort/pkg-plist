@@ -1,6 +1,7 @@
 bin/snort
 @unexec if [ -f %D/etc/snort.conf ] && cmp -s %D/etc/snort.conf %D/etc/snort.conf-sample; then rm -f %D/etc/snort.conf; fi
 etc/snort.conf-sample
+etc/rc.d/snort.sh.sample
 @exec [ -f %B/snort.conf ] || cp %B/%f %B/snort.conf
 %%PORTDOCS%%share/doc/snort/AUTHORS
 %%PORTDOCS%%share/doc/snort/NEWS

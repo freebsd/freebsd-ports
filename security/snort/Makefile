@@ -80,6 +80,8 @@ post-install:
 	    ${CP} ${DATADIR}/reference.config-sample \
 		${DATADIR}/reference.config; \
 	fi; \
+	${INSTALL_DATA} ${FILESDIR}/snort.sh.sample \
+		${PREFIX}/etc/rc.d/snort.sh.sample; \
 	${INSTALL_DATA} ${WRKSRC}/etc/snort.conf \
 		${PREFIX}/etc/snort.conf-sample; \
 	if [ ! -f ${PREFIX}/etc/snort.conf ]; then \
