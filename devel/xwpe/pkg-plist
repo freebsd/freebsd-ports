@@ -6,6 +6,6 @@ man/man1/xwpe.1.gz
 man/man1/xwe.1.gz
 man/man1/wpe.1.gz
 man/man1/we.1.gz
-share/wpe/help.key
-share/wpe/help.xwpe
-share/wpe/syntax_def 
+share/xwpe/help.key
+share/xwpe/help.xwpe
+share/xwpe/syntax_def 
