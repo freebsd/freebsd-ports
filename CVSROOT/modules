@@ -9673,6 +9673,7 @@ wmnetselect	ports/www/wmnetselect
 wmoldmenu2new	ports/x11/wmoldmenu2new
 wmpal		ports/misc/wmpal
 wmpccard	ports/sysutils/wmpccard
+wmpiki		ports/net/wmpiki
 wmpinboard	ports/deskutils/wmpinboard
 wmpop3		ports/mail/wmpop3
 wmproxyper	ports/misc/wmproxyper
