@@ -8,7 +8,7 @@
 PORTNAME=	lambdamoo
 PORTVERSION=	1.8.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.place.org/pub/moo/
+MASTER_SITES=	http://download.sourceforge.net/lambdamoo/
 DISTNAME=	LambdaMOO-${PORTVERSION}
 
 MAINTAINER=	flathill@FreeBSD.ORG

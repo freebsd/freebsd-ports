@@ -8,7 +8,7 @@
 PORTNAME=	lambdamoo
 PORTVERSION=	1.8.1
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://ftp.place.org/pub/moo/ \
+MASTER_SITES=	http://download.sourceforge.net/lambdamoo/
 		ftp://ftp.leo.chubu.ac.jp/pub/network/mnews/
 DISTNAME=	LambdaMOO-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
