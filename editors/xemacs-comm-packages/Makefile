@@ -6,27 +6,27 @@
 #
 
 PORTNAME=	xemacs-comm-packages
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
-		bbdb-1.09-pkg.tar.gz \
-		eicq-1.01-pkg.tar.gz \
-		eudc-1.31-pkg.tar.gz \
+		bbdb-1.10-pkg.tar.gz \
+		eicq-1.02-pkg.tar.gz \
+		eudc-1.32-pkg.tar.gz \
 		footnote-1.12-pkg.tar.gz \
-		gnats-1.10-pkg.tar.gz \
-		gnus-1.50-pkg.tar.gz \
-		mew-1.10-pkg.tar.gz \
+		gnats-1.11-pkg.tar.gz \
+		gnus-1.51-pkg.tar.gz \
+		mew-1.11-pkg.tar.gz \
 		mh-e-1.12-pkg.tar.gz \
 		rmail-1.11-pkg.tar.gz \
-		supercite-1.15-pkg.tar.gz \
-		tm-1.23-pkg.tar.gz \
-		vm-1.24-pkg.tar.gz \
-		zenirc-1.07-pkg.tar.gz
+		supercite-1.16-pkg.tar.gz \
+		tm-1.24-pkg.tar.gz \
+		vm-1.25-pkg.tar.gz \
+		zenirc-1.08-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xemacs-packages
@@ -51,7 +51,7 @@ post-install:
 	@${ECHO_MSG} "xemacs-packages, xemacs-basic-packages and xemacs-additional-packages. Where"
 	@${ECHO_MSG} "xemacs-additional-packages is a meta ports for packages out of xemacs, xemacs"
 	@${ECHO_MSG} "mule-basic and xemacs mule category packages."
-	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packes'"
+	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
 	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
 	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
 
