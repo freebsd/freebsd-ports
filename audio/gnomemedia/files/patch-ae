@@ -1,5 +1,5 @@
---- tcd/callbacks.c.orig	Sun Feb 21 20:32:04 1999
-+++ tcd/callbacks.c	Wed Mar  3 10:57:00 1999
+--- tcd/callbacks.c.orig	Tue Feb 23 21:03:37 1999
++++ tcd/callbacks.c	Mon Jul 12 15:20:13 1999
 @@ -10,7 +10,7 @@
  
  void play_cb(GtkWidget *widget, gpointer data)
@@ -18,31 +18,31 @@
      if(cd.isplayable)
      {
  	make_goto_menu();
---- tcd/cddb.c.orig	Sat Feb 20 23:08:10 1999
-+++ tcd/cddb.c	Wed Mar  3 10:57:00 1999
-@@ -120,16 +120,16 @@
+--- tcd/cddb.c.orig	Mon May 31 22:18:28 1999
++++ tcd/cddb.c	Mon Jul 12 15:23:19 1999
+@@ -199,16 +199,16 @@
  	{
  		int min, sec;
  		
--		min = cd->trk[i].toc.cdte_addr.msf.minute;
--		sec = cd->trk[i].toc.cdte_addr.msf.second;
-+		min = TOC_MINUTE(cd->trk[i]);
-+		sec = TOC_MINUTE(cd->trk[i]);
+-		min = cd->trk[trk].toc.cdte_addr.msf.minute;
+-		sec = cd->trk[trk].toc.cdte_addr.msf.second;
++		min = TOC_MINUTE(cd->trk[trk]);
++		sec = TOC_SECOND(cd->trk[trk]);
  	
  		n = (min*60)+sec;
--		fprintf( fp, "# %u\n", (n*75)+cd->trk[i].toc.cdte_addr.msf.frame );
-+		fprintf( fp, "# %u\n", (n*75)+TOC_FRAME(cd->trk[i]) );
+-		fprintf( fp, "# %u\n", (n*75)+cd->trk[trk].toc.cdte_addr.msf.frame );
++		fprintf( fp, "# %u\n", (n*75)+TOC_FRAME(cd->trk[trk]) );
  	}
  	/* Print the number of seconds */
  	fprintf( fp, "#\n# Disc length: %i seconds\n", 
 -		(cd->trk[cd->last_t+1].toc.cdte_addr.msf.minute*60)
 -                +(cd->trk[cd->last_t+1].toc.cdte_addr.msf.second) );
 +		(TOC_MINUTE(cd->trk[cd->last_t+1])*60)
-+		+(TOC_SECOND(cd->trk[cd->last_t+1])) );
++                +(TOC_SECOND(cd->trk[cd->last_t+1])) );
  
- 	/* FIXME increment revision. sigh, lousy cddb */
- 	fprintf( fp, "#\n# Revision: 0\n" );
-@@ -160,10 +160,10 @@
+ 	fprintf( fp, "#\n# Revision: %lu\n", cd->cddb_rev );
+ 	fprintf( fp, "# Submitted via: tcd 2.0b\n" );
+@@ -245,10 +245,10 @@
      {
  	int min, sec;
  	
@@ -56,7 +56,7 @@
  	
  	if(blen>l)
  	{
-@@ -172,8 +172,8 @@
+@@ -257,8 +257,8 @@
  	}
      }
      l=sprintf( tmp, "%i\n",
@@ -67,7 +67,7 @@
      if(blen>l)
  	strcat( buf,tmp );
  
-@@ -203,9 +203,9 @@
+@@ -298,9 +298,9 @@
  
  	for( i=0; i <= cd->last_t+1; i++ )
  	{
@@ -80,8 +80,8 @@
   	}
   	
  
---- tcd/gtcd.c.orig	Wed Feb 24 02:48:49 1999
-+++ tcd/gtcd.c	Wed Mar  3 10:57:00 1999
+--- tcd/gtcd.c.orig	Tue May 25 22:58:38 1999
++++ tcd/gtcd.c	Mon Jul 12 15:20:13 1999
 @@ -408,8 +408,8 @@
  	break;
      case DISC_R:
@@ -102,7 +102,7 @@
  	{
  	case CDROM_AUDIO_INVALID:
  	    strcpy(tmp, _("No Disc"));
-@@ -577,8 +577,8 @@
+@@ -579,8 +579,8 @@
      }
  
      /* see if we need to repeat */
@@ -113,7 +113,7 @@
      {
  	if( cd.play_method == REPEAT_CD )
  	    tcd_playtracks( &cd, cd.first_t, cd.last_t, prefs.only_use_trkind);
-@@ -593,14 +593,14 @@
+@@ -597,14 +597,14 @@
  
  void status_changed(void)
  {
@@ -130,31 +130,31 @@
  	g_snprintf(tmp, 255, "tcd/%s.xpm", 
  		    (old_status==CDROM_AUDIO_PLAY)?"pause":"play");
  
---- tcd/gtracked.c.orig	Thu Feb 11 18:48:56 1999
-+++ tcd/gtracked.c	Wed Mar  3 10:57:00 1999
-@@ -166,8 +166,8 @@
+--- tcd/gtracked.c.orig	Tue May 11 09:35:44 1999
++++ tcd/gtracked.c	Mon Jul 12 15:24:02 1999
+@@ -206,8 +206,8 @@
+     
      /* Disc area */
-     disc_table  = gtk_table_new(2, 2, FALSE);
      g_snprintf(tmp, 63, _("Disc Information (%02u:%02u minutes)"),
 -	       cd.trk[cd.last_t+1].toc.cdte_addr.msf.minute,
 -	       cd.trk[cd.last_t+1].toc.cdte_addr.msf.second);
 +	       TOC_MINUTE(cd.trk[cd.last_t+1]),
 +	       TOC_SECOND(cd.trk[cd.last_t+1]));
- 	              
+ 
      disc_frame = gtk_frame_new(tmp);
-     label 	   = gtk_label_new(_("Artist / Title"));
---- tcd/linux-cdrom.c.orig	Tue Feb 23 06:52:46 1999
-+++ tcd/linux-cdrom.c	Wed Mar  3 10:57:00 1999
-@@ -77,7 +77,7 @@
-     if(!homedir)
- 	homedir = "/";
+     disc_vbox  = gtk_vbox_new(FALSE, GNOME_PAD_SMALL);
+--- tcd/linux-cdrom.c.orig	Tue May 25 22:58:39 1999
++++ tcd/linux-cdrom.c	Mon Jul 12 15:35:56 1999
+@@ -71,7 +71,7 @@
+     debug("cdrom.c: tcd_init_disc(%p) top\n", cd );
+     tcd_opencddev( cd, msg_cb );
      
 -#if defined(TCD_CHANGER_ENABLED)
 +#if defined(TCD_CHANGER_ENABLED) && !defined(TCD_BSD)
      cd->nslots = ioctl( cd->cd_dev, CDROM_CHANGER_NSLOTS );
  #else
      cd->nslots = 0;
-@@ -120,34 +120,58 @@
+@@ -114,34 +114,58 @@
  
  int tcd_readtoc( cd_struct *cd )
  {
@@ -214,7 +214,7 @@
      {
  	strcpy(cd->errmsg, "Can't read disc.");
  	cd->err = TRUE;
-@@ -155,40 +179,65 @@
+@@ -149,40 +173,65 @@
  	debug("cdrom.c: tcd_readtoc exiting prematurly. CDROMREADTOCENTRY ioctl error.\n" );
  	cd->cur_t = 0;
  	cd->cddb_id = 0;
@@ -287,7 +287,7 @@
  
  	cd->trk[C(i)].tot_min = delsecs / 60;
  	cd->trk[C(i)].tot_sec = delsecs - (delsecs/60)*60;
-@@ -207,7 +256,7 @@
+@@ -201,7 +250,7 @@
  
      cd->isplayable=TRUE;
      debug("cdrom.c: tcd_readtoc exiting normally\n" );
@@ -296,7 +296,7 @@
  }
  
  void tcd_recalculate(cd_struct *cd)
-@@ -215,9 +264,8 @@
+@@ -209,9 +258,8 @@
      int result;
  
      /* calculate various timing values */
@@ -308,7 +308,7 @@
          
      cd->cur_pos_rel = (cd->cur_frame - cd->trk[C(cd->cur_t)].start) / 75;
  	
-@@ -235,42 +283,83 @@
+@@ -229,42 +277,83 @@
      cd->cd_sec = cd->cur_pos_abs % 60;
      cd->cd_min = cd->cur_pos_abs / 60;
  
@@ -396,7 +396,7 @@
  	return FALSE;
  
      return TRUE;
-@@ -278,6 +367,14 @@
+@@ -272,6 +361,14 @@
  
  int tcd_get_volume(cd_struct *cd)
  {
@@ -411,7 +411,7 @@
  #ifdef CDROMVOLREAD
      struct cdrom_volctrl vol;
  
-@@ -287,13 +384,40 @@
+@@ -281,13 +378,40 @@
      return vol.channel0;
  #else
      return 0;
@@ -452,7 +452,7 @@
      int tmp;
      debug("cdrom.c: tcd_playtracks( %p, %d, %d )\n", cd, start_t, end_t );
      cd->err = FALSE;
-@@ -302,7 +426,7 @@
+@@ -296,7 +420,7 @@
      tcd_gettime(cd);
      if(cd->err) 
      {
@@ -461,7 +461,7 @@
  	tcd_ejectcd(cd);
  
  	if(cd->err) 
-@@ -312,64 +436,88 @@
+@@ -306,64 +430,88 @@
  	}
      }
  
@@ -539,11 +539,11 @@
 -    msf.cdmsf_sec1 %= 60;
 +    MSF_END_MIN += (MSF_END_SEC / 60);
 +    MSF_END_SEC %= 60;
- 
++
 +#ifdef TCD_BSD
 +    ioctl( cd->cd_dev, CDIOCPREVENT);
 +#endif
-+
+ 
 +#ifdef TCD_BSD
 +    if(only_use_trkind || ioctl( cd->cd_dev, CDIOCPLAYMSF, &msf))
 +#else
@@ -577,35 +577,68 @@
  	    return -1;
  	}
      }
-@@ -381,7 +529,11 @@
+@@ -373,75 +521,68 @@
+     return tmp;
+ }       
  
+-static int msf_2_frame( cd_min_sec_frame *msf )
+-{
+-	return( ( msf->minute * CD_SECS + msf->second )
+-			* CD_FRAMES + msf->frame );
+-}
+-
+-static void frame_2_msf( int frame, cd_min_sec_frame *msf )
+-{
+-	msf->frame = frame % CD_FRAMES;
+-	frame /= CD_FRAMES;
+-	msf->second = frame % CD_SECS;
+-	msf->minute = frame / CD_SECS;
+-}
+-
  int tcd_play_seconds( cd_struct *cd, long int offset )
  {
 +#ifdef TCD_BSD
 +    struct ioc_play_msf msf;
 +#else
      struct cdrom_msf msf;
+-    cd_min_sec_frame msf0;
+-    int cur_frame, start_frame, end_frame;
 +#endif
-     int tmp;
++    int tmp;
  
-     debug("cdrom.c: tcd_playseconds( %p, %ld )\n", cd, offset );
-@@ -390,42 +542,53 @@
+     debug("cdrom.c: tcd_play_seconds( %p, %ld )\n", cd, offset );
+ 
+     cd->err = FALSE;
      cd->isplayable=FALSE;
  
-     /* got subchannel? */
--    msf.cdmsf_sec0 = cd->sc.cdsc_absaddr.msf.second+offset;
--    msf.cdmsf_min0 = cd->sc.cdsc_absaddr.msf.minute;
--    msf.cdmsf_frame0 = cd->sc.cdsc_absaddr.msf.frame;
+-    /* converting msf to frames makes life much easier */
+-    start_frame = msf_2_frame( &cd->trk[C(cd->first_t)].toc.cdte_addr.msf );
+-    end_frame = msf_2_frame( &cd->trk[C(cd->last_t+1)].toc.cdte_addr.msf ) - 1;
+-    cur_frame = cd->cur_frame + ( offset * CD_FRAMES );
+-
+-    /* keep the cur_frame within the boundaries of the first and last track */
+-    if ( cur_frame < start_frame ) {
+-	    cur_frame = start_frame;
+-    } else if ( cur_frame > end_frame ) {
+-	    cur_frame = end_frame;
+-    }
+-
+-    /* convert frames back to msf */
+-    frame_2_msf( cur_frame, &msf0 );
+-    msf.cdmsf_min0 = msf0.minute;
+-    msf.cdmsf_sec0 = msf0.second;
+-    msf.cdmsf_frame0 = msf0.frame;
 -    msf.cdmsf_min1 = cd->trk[C(cd->last_t+1)].toc.cdte_addr.msf.minute;
 -    msf.cdmsf_sec1 = cd->trk[C(cd->last_t+1)].toc.cdte_addr.msf.second;
 -    msf.cdmsf_frame1 = cd->trk[C(cd->last_t+1)].toc.cdte_addr.msf.frame - 1;
++    /* got subchannel? */
 +    MSF_START_SEC = SC_SECOND(cd->sc)+offset;
 +    MSF_START_MIN = SC_MINUTE(cd->sc);
 +    MSF_START_FRM = SC_FRAME(cd->sc);
 +    MSF_END_MIN = TOC_MINUTE(cd->trk[C(cd->last_t+1)]);
 +    MSF_END_SEC = TOC_SECOND(cd->trk[C(cd->last_t+1)]);
 +    MSF_END_FRM = TOC_FRAME(cd->trk[C(cd->last_t+1)]) - 1;
- 
+  
  #ifdef UNSIGNED_NUMBERS_CAN_BE_NEGATIVE
 -    if(msf.cdmsf_frame1 < 0)
 +    if(MSF_END_FRM < 0)
@@ -630,20 +663,18 @@
 +	MSF_END_MIN = 0;
      }
  #endif
- 	
--    if( msf.cdmsf_sec0 > 60 && (offset<0) )
-+    if( MSF_START_SEC > 60 && (offset<0) )
-     {
--	msf.cdmsf_sec0 = 60-abs(offset);
--	msf.cdmsf_min0--;
+-	
++
++    if(MSF_START_SEC > 60 && (offset<0))
++    {
 +	MSF_START_SEC = 60-abs(offset);
 +	MSF_START_MIN--;
-     }
++    }
 +
 +#ifdef TCD_BSD
-+    ioctl( cd->cd_dev, CDIOCPREVENT);
++    ioctl( cd->cd_dev, CDIOCPREVENT );
 +#endif
- 	
++
 +#ifdef TCD_BSD
 +    if(ioctl(cd->cd_dev, CDIOCPLAYMSF, &msf))
 +#else
@@ -655,12 +686,12 @@
  
  	debug("cdrom.c: tcd_play_seconds error. CDROMPLAYMSF ioctl error.\n" );
 +#ifdef TCD_BSD
-+	ioctl( cd->cd_dev, CDIOCALLOW);
++	ioctl( cd->cd_dev, CDIOCALLOW );
 +#endif
  	return(-1);
      }
      cd->isplayable=TRUE;                                                 
-@@ -442,7 +605,15 @@
+@@ -458,7 +613,15 @@
      if(cd->isplayable) tcd_stopcd(cd);
      cd->err = FALSE;
  
@@ -676,7 +707,7 @@
      {
  	cd->isplayable = FALSE;
  	strcpy(cd->errmsg, "No disc in drive ");
-@@ -450,9 +621,17 @@
+@@ -466,9 +629,17 @@
      } 
      else 
      {
@@ -694,7 +725,7 @@
  
  	if(tcd_post_init(cd))
  	{
-@@ -461,6 +640,9 @@
+@@ -477,6 +648,9 @@
  			
  	    debug("cdrom.c: tcd_eject - disc init error. %s\n",  
  		  strerror(errno) );
@@ -704,7 +735,7 @@
  
  	    return(-1);
  	}
-@@ -479,11 +661,19 @@
+@@ -495,11 +669,19 @@
      debug("cdrom.c: tcd_stopcd(%p)\n", cd );
  	
      /* SDH: Makes things cleaner on eject */
@@ -725,7 +756,7 @@
      {
  	strcpy( cd->errmsg, "Can't stop disc." );
  	cd->err = TRUE;
-@@ -501,31 +691,51 @@
+@@ -517,31 +699,51 @@
      int tmp;
      cd->err = FALSE;
  	
@@ -779,8 +810,8 @@
      int tmp;
      cd->err = FALSE;
  
---- tcd/linux-cdrom.h.orig	Thu Feb 11 18:49:43 1999
-+++ tcd/linux-cdrom.h	Wed Mar  3 10:57:00 1999
+--- tcd/linux-cdrom.h.orig	Thu Apr 29 23:16:37 1999
++++ tcd/linux-cdrom.h	Mon Jul 12 15:39:14 1999
 @@ -27,11 +27,26 @@
  
  #include <sys/types.h>
@@ -793,8 +824,7 @@
 +#define TCD_BSD
 +
 +#include <sys/cdio.h>
- 
--#ifdef linux
++
 +#define CDROM_AUDIO_INVALID	CD_AS_AUDIO_INVALID
 +#define CDROM_AUDIO_PLAY	CD_AS_PLAY_IN_PROGRESS
 +#define CDROM_AUDIO_PAUSED	CD_AS_PLAY_PAUSED
@@ -807,7 +837,8 @@
 +#else
 +
 +#define TCD_LINUX
-+
+ 
+-#ifdef linux
 +#if defined(linux)
  #include <linux/cdrom.h>
  #endif
@@ -820,30 +851,30 @@
  
  #define TRK_NAME_LEN 	512
  #define DISC_INFO_LEN	512
-@@ -106,7 +122,17 @@
- struct cd_track
+@@ -108,7 +124,17 @@
  {
  	char name[TRK_NAME_LEN+1];
+ 	char extd[EXT_DATA_LEN+1];      /* extra information for this track */
 +#ifdef TCD_BSD
-+	struct cd_toc_entry toc;
-+#define TOC_MINUTE(trk)	(trk.toc.addr.msf.minute)
-+#define TOC_SECOND(trk)	(trk.toc.addr.msf.second)
-+#define TOC_FRAME(trk)	(trk.toc.addr.msf.frame)
++        struct cd_toc_entry toc;
++#define TOC_MINUTE(trk)		(trk.toc.addr.msf.minute)
++#define	TOC_SECOND(trk)		(trk.toc.addr.msf.second)
++#define TOC_FRAME(trk)		(trk.toc.addr.msf.frame)
 +#else
  	struct cdrom_tocentry toc;
-+#define TOC_MINUTE(trk)	(trk.toc.cdte_addr.msf.minute)
-+#define TOC_SECOND(trk)	(trk.toc.cdte_addr.msf.second)
-+#define TOC_FRAME(trk)	(trk.toc.cdte_addr.msf.frame)
++#define TOC_MINUTE(trk)		(trk.toc.cdte_addr.msf.minute)
++#define	TOC_SECOND(trk)		(trk.toc.cdte_addr.msf.second)
++#define TOC_FRAME(trk)		(trk.toc.cdte_addr.msf.frame)
 +#endif
  	int titled;
  	int start, length;
  	int tot_min, tot_sec;
-@@ -130,10 +156,27 @@
- 	char dtitle[DISC_INFO_LEN+1];	/* Disc title */
+@@ -134,10 +160,28 @@
  	char album[DISC_INFO_LEN+1], artist[DISC_INFO_LEN+1];
- 	
+ 	char extd[EXT_DATA_LEN+1];      /* extra information for this disc */
+ 
 +#ifdef TCD_BSD
-+	/* See /usr/include/sys/cdio.h */
++        /* See /usr/include/sys/cdio.h */
 +	struct ioc_play_track ti;
 +	struct ioc_toc_header tochdr;
 +	struct cd_sub_channel_info sc;
@@ -853,6 +884,7 @@
 +#define SC_SECOND(sc)		(sc.what.position.absaddr.msf.second)
 +#define SC_FRAME(sc)		(sc.what.position.absaddr.msf.frame)
 +#else
++
  	/* See /usr/src/linux/include/linux/cdrom.h */
  	struct cdrom_ti ti;		/* Track info */
  	struct cdrom_tochdr tochdr; 	/* TOC header */
@@ -866,8 +898,8 @@
  	int volume;			/* Must range 0-100 */
  
  	int cd_min, cd_sec;		/* Total CD time */
---- tcd/tcd.c.orig	Mon Feb  8 21:13:22 1999
-+++ tcd/tcd.c	Wed Mar  3 10:57:00 1999
+--- tcd/tcd.c.orig	Mon Feb  8 21:12:29 1999
++++ tcd/tcd.c	Mon Jul 12 15:20:13 1999
 @@ -139,8 +139,8 @@
  		
  	/* if the user hasn't stopped the cd, but it is 

@@ -1,10 +1,12 @@
 bin/cddbslave
+bin/cddbsubmit
 bin/gmix
 bin/gtcd
 bin/vumeter
 share/gnome/apps/Multimedia/gmix.desktop
 share/gnome/apps/Multimedia/gtcd.desktop
 share/gnome/apps/Multimedia/vumeter.desktop
+share/gnome/cddb-submit-methods
 share/gnome/pixmaps/tcd/cdrom.xpm
 share/gnome/pixmaps/tcd/eject.xpm
 share/gnome/pixmaps/tcd/ff.xpm
@@ -17,6 +19,7 @@ share/gnome/pixmaps/tcd/rw.xpm
 share/gnome/pixmaps/tcd/stop.xpm
 share/locale/da/LC_MESSAGES/gnome-media.mo
 share/locale/de/LC_MESSAGES/gnome-media.mo
+share/locale/en_GB/LC_MESSAGES/gnome-media.mo
 share/locale/es/LC_MESSAGES/gnome-media.mo
 share/locale/fi/LC_MESSAGES/gnome-media.mo
 share/locale/fr/LC_MESSAGES/gnome-media.mo
@@ -29,4 +32,5 @@ share/locale/nl/LC_MESSAGES/gnome-media.mo
 share/locale/no/LC_MESSAGES/gnome-media.mo
 share/locale/pt/LC_MESSAGES/gnome-media.mo
 share/locale/ru_RU/LC_MESSAGES/gnome-media.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gnome-media.mo
 @dirrm share/gnome/pixmaps/tcd/
