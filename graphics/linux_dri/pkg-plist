@@ -2,7 +2,10 @@ usr/X11R6/bin/gears
 usr/X11R6/bin/glxinfo
 usr/X11R6/lib/libGL.so.1
 usr/X11R6/lib/libGLU.so.1
+usr/X11R6/lib/libglide3.so.3
+usr/X11R6/lib/libglide3-v3.so
 usr/X11R6/lib/libglide3-v3.so.0
+usr/X11R6/lib/libglide3-v5.so
 usr/X11R6/lib/libglide3-v5.so.0
 usr/X11R6/lib/libglut.so.3.7.0
 usr/X11R6/lib/libglut.so.3

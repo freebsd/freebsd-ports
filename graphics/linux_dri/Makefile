@@ -7,12 +7,14 @@
 
 PORTNAME=	linux_dri
 PORTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/binaries/Linux-ix86-glibc22/:x \
 		http://people.freebsd.org/~anholt/dri/files/:anholt
-DISTFILES=	Xmod.tgz:x Xbin.tgz:x \
+DISTFILES=	Xbin.tgz:x \
 		linux-libglide.tar.gz:anholt \
-		linux-dri-tools.tar.gz:anholt
+		linux-dri-tools.tar.gz:anholt \
+		linux_dri-${PORTVERSION}.tar.gz:anholt
 DIST_SUBDIR=	linux_dri-${PORTVERSION}
 
 MAINTAINER=	anholt@freebsd.org
@@ -34,8 +36,11 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/modules/dri/${i} \
 		${PREFIX}/usr/X11R6/lib/modules/dri
 .endfor
+	#The libglide3 distributed with linux_base is broken and is symlinked poorly, supply our own.
 	${INSTALL_PROGRAM} ${WRKDIR}/linux-libglide/libglide3-v3.so.0 ${PREFIX}/usr/X11R6/lib
 	${INSTALL_PROGRAM} ${WRKDIR}/linux-libglide/libglide3-v5.so.0 ${PREFIX}/usr/X11R6/lib
+	${LN} -sf libglide3-v3.so.0 ${PREFIX}/usr/X11R6/lib/libglide3-v3.so
+	${LN} -sf libglide3-v5.so.0 ${PREFIX}/usr/X11R6/lib/libglide3-v5.so
 	${INSTALL_PROGRAM} ${WRKDIR}/linux-dri-tools/libglut.so.3.7.0 ${PREFIX}/usr/X11R6/lib
 	${INSTALL_PROGRAM} ${WRKDIR}/linux-dri-tools/gears ${PREFIX}/usr/X11R6/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/linux-dri-tools/glxinfo ${PREFIX}/usr/X11R6/bin
