@@ -30,6 +30,7 @@
     SUBDIR += antipolix
     SUBDIR += asc
     SUBDIR += atitd
+    SUBDIR += atlantikdesigner
     SUBDIR += atomix
     SUBDIR += atr3d
     SUBDIR += awele
