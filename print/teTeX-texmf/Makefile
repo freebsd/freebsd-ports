@@ -6,14 +6,15 @@
 
 PORTNAME=	teTeX-texmf
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
-DISTFILES=	${TETEX_TEXMF} dvipsk-jpatch-p1.6${EXTRACT_SUFX}:1
+DISTFILES=	${TETEX_TEXMF} dvipsk-jpatch-p1.6a${EXTRACT_SUFX}:1
 DIST_SUBDIR=	teTeX
-EXTRACT_ONLY=	dvipsk-jpatch-p1.6${EXTRACT_SUFX}
+EXTRACT_ONLY=	dvipsk-jpatch-p1.6a${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends (texmf tree)
