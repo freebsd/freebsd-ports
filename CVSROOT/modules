@@ -2463,6 +2463,7 @@ gltron		ports/games/gltron
 gltt		ports/graphics/gltt
 glui		ports/devel/glui
 glunarclock	ports/astro/glunarclock
+glurp		ports/audio/glurp
 gm4		ports/devel/m4
 gma		ports/games/gma
 gmake		ports/devel/gmake
