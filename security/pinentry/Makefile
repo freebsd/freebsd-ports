@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pinentry
-PORTVERSION=	0.6.8
-PORTREVISION=	1
+PORTVERSION=	0.6.9
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_GNUPG} \
+MASTER_SITES=	ftp://ftp.klaralvdalens-datakonsult.se/pub/aegypten/alpha/latest/ \
+		${MASTER_SITE_GNUPG} \
 		http://tigress.com/lofi/:lofi
 MASTER_SITE_SUBDIR=	alpha/aegypten
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
