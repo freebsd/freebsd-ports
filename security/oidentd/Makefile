@@ -7,7 +7,7 @@
 
 PORTNAME=	oidentd
 PORTVERSION=	2.0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
@@ -29,7 +29,7 @@ PLIST_FILES=	sbin/oidentd
 USE_RC_SUBR=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/,${PREFIX}/,g' ${WRKSRC}/src/oidentd.h
+	@${REINPLACE_CMD} -e 's,/etc/,${PREFIX}&,g' ${WRKSRC}/src/oidentd.h
 
 post-build:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
