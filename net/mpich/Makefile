@@ -3,10 +3,10 @@
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.6 1998/11/11 05:37:28 asami Exp $
+# $Id: Makefile,v 1.7 1999/01/11 05:05:24 steve Exp $
 #
 
-DISTNAME=	mpich-1.1.1
+DISTNAME=	mpich-1.1.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 
@@ -15,14 +15,14 @@ MAINTAINER=	dbader@eece.unm.edu
 .include <bsd.port.pre.mk>
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--cflags="$(CFLAGS)"
+CONFIGURE_ARGS=	--cflags="$(CFLAGS)" -prefix=$(PREFIX)/mpich
 WRKSRC=		${WRKDIR}/mpich
 ALL_TARGET=
 MANPREFIX=	$(PREFIX)/mpich
-MAN1=		MPI.1 chp4_servs.1 mpiCC.1 mpicc.1 mpif77.1 mpif90.1 \
-		mpiman.1 mpireconfig.1 mpirun.1 tstmachines.1
+MAN1=		Jumpshot.1 MPI.1 chp4_servs.1 mpiCC.1 mpicc.1 mpif77.1 \
+		mpif90.1 mpiman.1 mpireconfig.1 mpirun.1 tstmachines.1
 MAN3=		Constants.3 MPIO_Request_c2f.3 MPIO_Request_f2c.3 \
-		MPIO_Test.3 MPIO_Wait.3 MPIR_Init.3 MPI_2COMPLEX.3 \
+		MPIO_Test.3 MPIO_Wait.3 MPI_2COMPLEX.3 \
 		MPI_2DOUBLE_COMPLEX.3 MPI_2DOUBLE_PRECISION.3 MPI_2INT.3 \
 		MPI_2INTEGER.3 MPI_2REAL.3 MPI_ANY_SOURCE.3 \
 		MPI_ANY_TAG.3 MPI_Abort.3 MPI_Address.3 MPI_Aint.3 \
@@ -142,25 +142,27 @@ MAN4=		CLOG_Finalize.4 CLOG_Init.4 CLOG_Output.4 \
 		CLOG_get_new_event.4 CLOG_get_new_state.4 \
 		CLOG_mergelogs.4 CLOG_mergend.4 CLOG_msgtype.4 \
 		CLOG_newbuff.4 CLOG_procbuf.4 CLOG_reclen.4 \
-		CLOG_rectype.4 CLOG_treesetup.4 MPE_Add_RGB_color.4 \
+		CLOG_rectype.4 CLOG_treesetup.4 \
+		MPE.4 MPE_Add_RGB_color.4 \
 		MPE_CaptureFile.4 MPE_Close_graphics.4 \
 		MPE_Comm_global_rank.4 MPE_Counter_create.4 \
 		MPE_Counter_free.4 MPE_Counter_nxtval.4 MPE_Decomp1d.4 \
 		MPE_Describe_event.4 MPE_Describe_state.4 \
 		MPE_Draw_circle.4 MPE_Draw_line.4 MPE_Draw_logic.4 \
 		MPE_Draw_point.4 MPE_Draw_points.4 MPE_Draw_string.4 \
-		MPE_Errors_call_debugger.4 MPE_Fill_circle.4 \
+		MPE_Fill_circle.4 \
 		MPE_Fill_rectangle.4 MPE_Finish_log.4 MPE_GetTags.4 \
 		MPE_Get_mouse_press.4 MPE_IO_Stdout_to_file.4 \
 		MPE_Iget_mouse_press.4 MPE_Init_log.4 \
+		MPE_Initialized_logging.4 \
 		MPE_Line_thickness.4 MPE_Log_event.4 \
 		MPE_Log_get_event_number.4 MPE_Log_receive.4 \
 		MPE_Log_send.4 MPE_Make_color_array.4 MPE_Num_colors.4 \
 		MPE_Open_graphics.4 MPE_Print_datatype_pack_action.4 \
-		MPE_Print_datatype_unpack_action.4 MPE_Ptime.4 \
+		MPE_Print_datatype_unpack_action.4 \
 		MPE_ReturnTags.4 MPE_Seq_begin.4 MPE_Seq_end.4 \
-		MPE_Signals_call_debugger.4 MPE_Start_log.4 \
-		MPE_Stop_log.4 MPE_TagsEnd.4 MPE_Update.4 MPE_Wtime.4
-INSTALL_TARGET=	install PREFIX=$(PREFIX)/mpich
+		MPE_Start_log.4 \
+		MPE_Stop_log.4 MPE_TagsEnd.4 MPE_Update.4
+INSTALL_TARGET=	install
 
 .include <bsd.port.post.mk>
