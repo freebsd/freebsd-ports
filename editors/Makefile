@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.9 1995/02/18 22:53:47 ats Exp $
+# $Id: Makefile,v 1.10 1995/03/03 08:25:12 jkh Exp $
 #
-SUBDIR=	axe emacs jove mule vile xemacs xvile
+SUBDIR=	axe emacs jove mule uemacs vile xemacs xvile
 
 .include <bsd.port.subdir.mk>
