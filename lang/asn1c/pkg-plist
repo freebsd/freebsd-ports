@@ -61,7 +61,6 @@ bin/unber
 %%DATADIR%%/VideotexString.h
 %%DATADIR%%/VisibleString.c
 %%DATADIR%%/VisibleString.h
-%%DATADIR%%/asn-decoder-template.c
 %%DATADIR%%/asn_SEQUENCE_OF.c
 %%DATADIR%%/asn_SEQUENCE_OF.h
 %%DATADIR%%/asn_SET_OF.c
@@ -94,15 +93,20 @@ bin/unber
 %%DATADIR%%/constraints.h
 %%DATADIR%%/der_encoder.c
 %%DATADIR%%/der_encoder.h
-%%DATADIR%%/file-dependencies
+%%DATADIR%%/xer_decoder.c
+%%DATADIR%%/xer_decoder.h
 %%DATADIR%%/xer_encoder.c
 %%DATADIR%%/xer_encoder.h
+%%DATADIR%%/xer_support.c
+%%DATADIR%%/xer_support.h
+%%DATADIR%%/asn-decoder-template.c
+%%DATADIR%%/file-dependencies
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asn1c-usage.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1c-usage.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
