@@ -4,7 +4,7 @@ archives.  They are particularily useful with gimp.
 You'll have to add /usr/X11R6/lib/X11/fonts/freefont
 to you're X font path by either:
 
-$ xset fp+ /usr/X11R6/lib/fonts/freefont
+$ xset fp+ /usr/X11R6/lib/X11/fonts/freefont
 $ xset fp rehash
 
 or by adding it to you're X-server configuration file (usually
