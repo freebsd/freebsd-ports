@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.25 1997/11/13 23:33:49 jraynard Exp $
+# $Id: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 #
 
     SUBDIR += LPRng
@@ -26,6 +26,7 @@
     SUBDIR += xbatt
     SUBDIR += xcpustate
     SUBDIR += xdu
+    SUBDIR += xfsm
     SUBDIR += xloadface
     SUBDIR += xosview
     SUBDIR += xperfmon
