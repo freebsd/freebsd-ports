@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -276,6 +277,7 @@ do-install:
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
+	${INSTALL_DATA} ${FILESDIR}/cacerts ${PREFIX}/jdk${JDK_VERSION}/jre/lib/security/cacerts
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}/jre/lib/ext
 	${MKDIR} ${PREFIX}/share/doc/java
 
