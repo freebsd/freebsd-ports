@@ -28,6 +28,7 @@ bin/sun2mime.orig
 lib/metamail/fonts/heb6x13.pcf
 lib/metamail/fonts/heb8x13.pcf
 lib/metamail/fonts/heb8x13B.pcf
+lib/metamail/fonts/fonts.dir
 etc/mailcap
 man/man1/audiocompose.1.gz
 man/man1/audiosend.1.gz
