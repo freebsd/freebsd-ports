@@ -3,6 +3,7 @@ vpopmail/bin/vaddaliasdomain
 vpopmail/bin/vadddomain
 vpopmail/bin/vadduser
 vpopmail/bin/valias
+vpopmail/bin/vchangepw
 vpopmail/bin/vchkpw
 vpopmail/bin/vconvert
 vpopmail/bin/vdeldomain
@@ -40,6 +41,8 @@ vpopmail/doc/man_html/vsetuserquota.html
 vpopmail/etc/inc_deps
 vpopmail/etc/lib_deps
 @unexec if [ -f %D/vpopmail/etc/tcp.smtp -a ! -s %D/vpopmail/etc/tcp.smtp ]; then rm -f %D/vpopmail/etc/tcp.smtp; fi
+@unexec if cmp -s %D/vpopmail/etc/vlimits.default %D/vpopmail/etc/vlimits.default-dist; then rm -f %D/vpopmail/etc/vlimits.default; fi
+vpopmail/etc/vlimits.default-dist
 @unexec if [ -f %D/vpopmail/etc/vpopmail.mysql ]; then rm -f %D/vpopmail/etc/vpopmail.mysql; fi
 vpopmail/include/config.h
 vpopmail/include/vauth.h
@@ -49,7 +52,7 @@ vpopmail/include/vpopmail_config.h
 vpopmail/lib/libvpopmail.a
 @dirrm vpopmail/lib
 @dirrm vpopmail/include
-@dirrm vpopmail/etc
+@unexec rmdir %D/vpopmail/etc 2>/dev/null || true
 @unexec rmdir %D/vpopmail/domains 2>/dev/null || true
 @dirrm vpopmail/doc/man_html
 @dirrm vpopmail/doc/doc_html
