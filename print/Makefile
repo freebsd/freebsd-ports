@@ -42,6 +42,7 @@
     SUBDIR += html2latex
     SUBDIR += html2ps-a4
     SUBDIR += html2ps-letter
+    SUBDIR += ifhp
     SUBDIR += jadetex
     SUBDIR += klyx
     SUBDIR += latex
