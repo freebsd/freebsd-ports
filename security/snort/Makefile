@@ -10,7 +10,7 @@ PORTVERSION=	2.0.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight network intrusion detection system
 
 GNU_CONFIGURE=	yes
