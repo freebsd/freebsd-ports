@@ -1,0 +1,11 @@
+--- terminal.c.orig	Sun Oct  8 18:03:19 2000
++++ terminal.c		Sun Oct  8 18:03:24 2000
+@@ -15,7 +15,7 @@
+ #include <unistd.h>
+ #include <termios.h>
+ #include <sys/ioctl.h>
+-#include <sys/vt.h>
++#include <sys/consio.h>
+ #include "vlock.h"
+ 
+ 

@@ -1,0 +1,5 @@
+This is a utility which locks a terminal so it can only be unlocked with the
+user's password (or the root password).  It uses PAM authentication by default.
+
+- George Reid
+services@nevernet.net
