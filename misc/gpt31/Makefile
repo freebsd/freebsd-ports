@@ -7,12 +7,13 @@
 
 PORTNAME=	gpt
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	misc archivers devel parallel
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/aces/gpt/releases/gpt-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	"Grid Packaging Tools (used to install Globus)"
+COMMENT=	Grid Packaging Tools (used to install Globus)
 
 RUN_DEPENDS+=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \

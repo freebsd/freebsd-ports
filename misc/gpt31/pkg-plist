@@ -132,5 +132,5 @@ share/gpt_amdir
 @dirrm share/gpt/aclocal
 @dirrm share/gpt/amdir
 @dirrm share/gpt
-@exec PATH=%%LOCALBASE%%/bin:${PATH} %D/sbin/gpt-config -probe -perl=%%PERL%%
+@exec PATH=%%LOCALBASE%%/bin:${PATH} GPT_LOCATION=%D %D/sbin/gpt-config -probe -perl=%%PERL%%
 @unexec echo "Configuration information saved.  If you will *NOT* use this package" && echo "anymore, please remove /var/db/gpt and its contents manually."
