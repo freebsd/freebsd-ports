@@ -1,16 +1,24 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Thu Nov 20 19:41:33 2003
-+++ Makefile.in	Fri Nov 21 11:04:35 2003
-@@ -156,8 +156,8 @@
+--- Makefile.in.orig	Thu Apr  1 05:40:35 2004
++++ Makefile.in	Thu Apr 15 03:26:01 2004
+@@ -156,13 +156,15 @@
  
  @BUILD_TRUESPEECH_TRUE@WIN32ACM_DIR = win32acm
  
--SUBDIRS = support pixmaps ffmpeg po macros debian ipkg oRTP gsmlib lpc10-1.5 \
--                speex $(WIN32ACM_DIR) mediastreamer \
-+SUBDIRS = support pixmaps ffmpeg po macros debian ipkg oRTP lpc10-1.5 \
-+                $(WIN32ACM_DIR) mediastreamer \
- 		media_api osipua coreapi console gnome share developer-docs
++ifndef SUBDIRS
+ @BUILD_SPEEX_TRUE@SUBDIRS = support pixmaps ffmpeg po debian ipkg oRTP gsmlib lpc10-1.5 \
+ @BUILD_SPEEX_TRUE@                $(WIN32ACM_DIR) speex mediastreamer \
+ @BUILD_SPEEX_TRUE@		media_api osipua coreapi console gnome share developer-docs
+ 
+-@BUILD_SPEEX_FALSE@SUBDIRS = support pixmaps ffmpeg po debian ipkg oRTP gsmlib lpc10-1.5 \
+-@BUILD_SPEEX_FALSE@                $(WIN32ACM_DIR) speex mediastreamer \
+-@BUILD_SPEEX_FALSE@		media_api osipua coreapi console gnome share developer-docs
++@BUILD_SPEEX_FALSE@SUBDIRS = support ffmpeg po debian ipkg oRTP lpc10-1.5 \
++@BUILD_SPEEX_FALSE@                $(WIN32ACM_DIR) mediastreamer \
++@BUILD_SPEEX_FALSE@		media_api osipua coreapi console gnome developer-docs
++endif
  
  
+ EXTRA_DIST = linphone2.glade BUGS linphone.kdevprj \

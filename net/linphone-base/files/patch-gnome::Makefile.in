@@ -3,11 +3,47 @@ $FreeBSD$
 
 --- gnome/Makefile.in.orig	Wed Aug 20 17:47:19 2003
 +++ gnome/Makefile.in	Sat Aug 23 01:16:42 2003
-@@ -162,7 +162,6 @@
+@@ -160,7 +160,6 @@
  @BUILD_GNOME_TRUE@	-I$(top_srcdir)/oRTP/src \
  @BUILD_GNOME_TRUE@	-I$(top_srcdir)/oRTP/ \
  @BUILD_GNOME_TRUE@	-I$(top_srcdir)/mediastreamer \
 -@BUILD_GNOME_TRUE@	-I$(top_srcdir)/speex/libspeex \
  @BUILD_GNOME_TRUE@	-I$(top_srcdir)/coreapi \
  @BUILD_GNOME_TRUE@	-I$(top_srcdir)/osipua/ \
- @BUILD_GNOME_TRUE@	-I$(top_srcdir)/osipua/src 
+ @BUILD_GNOME_TRUE@	-I$(top_srcdir)/osipua/src \
+@@ -183,7 +182,7 @@
+ 
+ @BUILD_GNOME_TRUE@linphone_LDADD = $(LIBGNOMEUI_LIBS) $(INTLLIBS) \
+ @BUILD_GNOME_TRUE@				$(LIBGNOME_LIBS) \
+-@BUILD_GNOME_TRUE@				$(top_srcdir)/coreapi/liblinphonegnome.la 							
++@BUILD_GNOME_TRUE@				-llinphonegnome 							
+ 
+ 
+ AM_CFLAGS = $(LIBGNOMEUI_CFLAGS) $(LIBGNOME_CFLAGS) $(GNOME_APPLETS_CFLAGS) $(IPV6_CFLAGS)	
+@@ -206,7 +205,7 @@
+ 
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_LDADD = \
+ @BUILD_GNOME_APPLET_TRUE@				$(GNOME_APPLETS_LIBS) \
+-@BUILD_GNOME_APPLET_TRUE@				$(top_srcdir)/coreapi/liblinphonegnome.la
++@BUILD_GNOME_APPLET_TRUE@				-llinphonegnome
+ 
+ 
+ 
+@@ -241,7 +240,7 @@
+ @BUILD_GNOME_TRUE@	propertybox.$(OBJEXT) addressbook.$(OBJEXT)
+ linphone_OBJECTS = $(am_linphone_OBJECTS)
+ @BUILD_GNOME_TRUE@linphone_DEPENDENCIES = \
+-@BUILD_GNOME_TRUE@	$(top_srcdir)/coreapi/liblinphonegnome.la
++@BUILD_GNOME_TRUE@	-llinphonegnome
+ @BUILD_GNOME_FALSE@linphone_DEPENDENCIES =
+ linphone_LDFLAGS =
+ @BUILD_GNOME_APPLET_TRUE@am_linphone_applet_OBJECTS = \
+@@ -256,7 +255,7 @@
+ @BUILD_GNOME_APPLET_TRUE@	linphone_applet-applet.$(OBJEXT)
+ linphone_applet_OBJECTS = $(am_linphone_applet_OBJECTS)
+ @BUILD_GNOME_APPLET_TRUE@linphone_applet_DEPENDENCIES = \
+-@BUILD_GNOME_APPLET_TRUE@	$(top_srcdir)/coreapi/liblinphonegnome.la
++@BUILD_GNOME_APPLET_TRUE@	-llinphonegnome
+ @BUILD_GNOME_APPLET_FALSE@linphone_applet_DEPENDENCIES =
+ linphone_applet_LDFLAGS =
+ 
