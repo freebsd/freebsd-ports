@@ -14,11 +14,13 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ZGabor@CoDe.HU
 COMMENT=	Another SSL Wrapper application, which uses SSLEay/OpenSSL
 
-BROKEN=		"Does not compile"
-
 USE_OPENSSL=	YES
+USE_REINPLACE=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
+
+post-patch:
+	${REINPLACE_CMD} -e 's/SSL_OP_NON_EXPORT_FIRST/SSL_OP_CIPHER_SERVER_PREFERENCE/g' ${WRKSRC}/s_server.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sslwrap ${PREFIX}/bin/sslwrap
