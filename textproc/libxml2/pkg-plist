@@ -42,8 +42,44 @@ include/libxml2/libxml/xpointer.h
 lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.5
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/drv_libxml2.py
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.py
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4
+%%PYTHON:%%share/doc/libxml2-python/TODO
+%%PYTHON:%%share/doc/libxml2-python/examples/attribs.py
+%%PYTHON:%%share/doc/libxml2-python/examples/build.py
+%%PYTHON:%%share/doc/libxml2-python/examples/ctxterror.py
+%%PYTHON:%%share/doc/libxml2-python/examples/cutnpaste.py
+%%PYTHON:%%share/doc/libxml2-python/examples/error.py
+%%PYTHON:%%share/doc/libxml2-python/examples/inbuf.py
+%%PYTHON:%%share/doc/libxml2-python/examples/invalid.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/outbuf.py
+%%PYTHON:%%share/doc/libxml2-python/examples/push.py
+%%PYTHON:%%share/doc/libxml2-python/examples/pushSAX.py
+%%PYTHON:%%share/doc/libxml2-python/examples/pushSAXhtml.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader2.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader3.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader4.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader5.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader6.py
+%%PYTHON:%%share/doc/libxml2-python/examples/readererr.py
+%%PYTHON:%%share/doc/libxml2-python/examples/regexp.py
+%%PYTHON:%%share/doc/libxml2-python/examples/relaxng.py
+%%PYTHON:%%share/doc/libxml2-python/examples/resolver.py
+%%PYTHON:%%share/doc/libxml2-python/examples/serialize.py
+%%PYTHON:%%share/doc/libxml2-python/examples/thread2.py
+%%PYTHON:%%share/doc/libxml2-python/examples/tst.py
+%%PYTHON:%%share/doc/libxml2-python/examples/tst.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/tstURI.py
+%%PYTHON:%%share/doc/libxml2-python/examples/tstxpath.py
+%%PYTHON:%%share/doc/libxml2-python/examples/valid.xml
+%%PYTHON:%%share/doc/libxml2-python/examples/validate.py
+%%PYTHON:%%share/doc/libxml2-python/examples/xpath.py
+%%PYTHON:%%share/doc/libxml2-python/examples/xpathext.py
+%%PYTHON:%%share/doc/libxml2-python/examples/xpathret.py
 share/doc/libxml2/Copyright
 share/doc/libxml2/examples/testHTML.c
 share/doc/libxml2/examples/testSAX.c
@@ -149,6 +185,8 @@ share/doc/libxml2/html/xml.html
 @dirrm share/doc/libxml2/html/tutorial/images
 @dirrm share/doc/libxml2/html/tutorial
 @dirrm share/doc/libxml2/html
+%%PYTHON:%%@dirrm share/doc/libxml2-python/examples
+%%PYTHON:%%@dirrm share/doc/libxml2-python
 @dirrm share/doc/libxml2/examples
 @dirrm share/doc/libxml2
 @dirrm include/libxml2/libxml
