@@ -1,0 +1,19 @@
+%%DATADIR%%/catalogs/sky2000/sky2000-m10.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m11.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m12.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m13.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m14.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m15.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m16.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m17.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m18.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m19.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m20.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m6.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m7.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m8.noc
+%%DATADIR%%/catalogs/sky2000/sky2000-m9.noc
+%%DATADIR%%/catalogs/sky2000.ncd
+@dirrm %%DATADIR%%/catalogs/sky2000
+@dirrm %%DATADIR%%/catalogs
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
