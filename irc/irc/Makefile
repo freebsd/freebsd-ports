@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
 		ftp://tau.ac.il/pub/unix/irc/server/ \
 		ftp://ftp.ut.ee/pub/unix/irc/server/ \
 		ftp://ftp.ntua.gr/pub/net/irc/server/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	torstenb@FreeBSD.org
 
@@ -24,7 +25,6 @@ MAINTAINER=	torstenb@FreeBSD.org
 # default:
 SYSLOG_FACILITY=LOG_LOCAL5
 
-EXTRACT_SUFX=	.tgz
 SCRIPTS_ENV=	SYSLOG_FACILITY="${SYSLOG_FACILITY}"
 
 MAN1=		irc.1
@@ -49,11 +49,11 @@ do-install:
 
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
-		echo "Installing ${STARTUP_SCRIPT} startup file.";	\
-		echo '#!/bin/sh' > ${STARTUP_SCRIPT};			\
-		echo "[ -f ${PREFIX}/etc/ircd/ircd.conf ] && ${PREFIX}/sbin/ircd && echo -n ' ircd'" >> ${STARTUP_SCRIPT} ;	\
-		chmod 755 ${STARTUP_SCRIPT} ;				\
-		chown bin.bin ${STARTUP_SCRIPT};			\
+		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
+		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT};		\
+		${ECHO} "[ -f ${PREFIX}/etc/ircd/ircd.conf ] && ${PREFIX}/sbin/ircd && ${ECHO} -n ' ircd'" >> ${STARTUP_SCRIPT} ;			\
+		${CHMOD} 755 ${STARTUP_SCRIPT} ;			\
+		${CHOWN} bin.bin ${STARTUP_SCRIPT};			\
 	fi
 
 .include <bsd.port.post.mk>
