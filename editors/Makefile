@@ -41,6 +41,7 @@
     SUBDIR += flim-xemacs21-mule-current
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
+    SUBDIR += fte
     SUBDIR += gedit
     SUBDIR += gnotepad+
     SUBDIR += gxedit

@@ -1,0 +1,13 @@
+--- src/c_hilit.h	Mon Aug 25 03:11:28 1997
++++ src/c_hilit.h.new	Thu Jun  8 22:08:05 2000
+@@ -128,10 +128,6 @@
+     int TabSize = BFI(BF, BFI_TabSize); \
+     int ExpandTabs = BFI(BF, BFI_ExpandTabs);
+ 
+-//#define HILIT_VARS2() \
+-//    int len1 = len;
+-//    char *last = p + len1 - 1;
+-
+ #define IF_TAB() \
+     if (*p == '\t' && ExpandTabs) { \
+     NC = NextTab(C, TabSize); \
