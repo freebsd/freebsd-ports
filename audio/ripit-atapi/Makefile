@@ -3,7 +3,7 @@
 # Date created:         9 Sep 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ripit-1.5
