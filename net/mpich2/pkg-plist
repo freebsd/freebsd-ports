@@ -36,6 +36,7 @@ mpich/bin/mpirun.ch_p4
 mpich/bin/mpirun.ch_p4.args
 mpich/bin/mpirun.p4shmem
 mpich/bin/mpirun.pg
+mpich/bin/mpirun_dbg.totalview.in.orig
 mpich/bin/serv_p4
 mpich/bin/tarch
 mpich/bin/tdevice
