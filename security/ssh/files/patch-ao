@@ -1,27 +1,28 @@
---- newchannels.c.orig	Wed May 12 20:19:27 1999
-+++ newchannels.c	Sun Jun  6 01:49:22 1999
-@@ -282,6 +282,10 @@
+--- newchannels.c.orig	Wed May 12 12:19:27 1999
++++ newchannels.c	Fri Jun 18 12:10:26 1999
+@@ -282,6 +282,11 @@
  #endif /* NEED_SYS_SYSLOG_H */
  #endif /* LIBWRAP */
  
 +#ifdef __FreeBSD__
 +#include <utmp.h>
++#include <osreldate.h>
 +#endif
 +
  /* Directory in which the fake unix-domain X11 displays reside. */
  #ifndef X11_DIR
  #define X11_DIR "/tmp/.X11-unix"
-@@ -1891,6 +1895,9 @@
+@@ -1891,6 +1896,9 @@
      fatal("gethostname: %.100s", strerror(errno));
    snprintf(buf, sizeof(buf),
             "%.400s:%d.%d", hostname, display_number, screen_number);
-+#ifdef __FreeBSD__
++#if __FreeBSD_version >= 320000
 +  trimdomain(buf, UT_HOSTSIZE);
 +#endif
  #else /* HAVE_GETHOSTNAME */
    if (uname(&uts) < 0)
      fatal("uname: %.100s", strerror(errno));
-@@ -2412,6 +2419,10 @@
+@@ -2412,6 +2420,10 @@
       ssh-agent connections on your system */
    old_umask = umask(S_IRUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH|S_IXOTH);
    
