@@ -1,0 +1,11 @@
+--- pine/mailcmd.c.orig	Mon Dec 18 02:48:49 2000
++++ pine/mailcmd.c	Mon Dec 18 02:49:08 2000
+@@ -51,7 +51,7 @@
+   ====*/
+ 
+ #include "headers.h"
+-#include "../c-client/imap4r1.h"
++#include "c-client/imap4r1.h"
+ 
+ 
+ /*
