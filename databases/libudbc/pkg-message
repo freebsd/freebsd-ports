@@ -1,0 +1,13 @@
+
+/****************************************************************
+You may want to install udbc.ini to /etc/udbc.ini or ~/.udbc.ini.
+You will find well commented sample of udbc.ini installed as 
+PREFIX/share/doc/libudbc/udbc.ini.sample
+
+A sample application using libudbc is also installed as
+PREFIX/share/examples/libudbc/udbctest.c
+
+Ready-to-work binary of udbctest is installed to
+PREFIX/bin
+****************************************************************/
+

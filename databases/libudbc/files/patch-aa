@@ -1,0 +1,11 @@
+--- udbcsdk/examples/Makefile.orig	Mon Oct 22 23:25:13 2001
++++ udbcsdk/examples/Makefile	Mon Oct 22 23:25:43 2001
+@@ -24,7 +24,7 @@
+ ######################################################################
+ 
+ ##   Generic	######################################################
+-CFLAGS	= -O -I../include
++CFLAGS	+= -O -I../include
+ 
+ ##   HP/UX	######################################################
+ #CFLAGS	= -O -Aa +ESlit -I../include
