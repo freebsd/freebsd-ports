@@ -53,7 +53,7 @@ POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libpcre.a
 .if defined(WITH_SASL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libsasl.a:${PORTSDIR}/security/cyrus-sasl
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libsasl.a
+POSTFIX_AUXLIBS+=	${LOCALBASE}/lib/libsasl.a -lpam -lcrypt
 .endif
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
@@ -76,7 +76,7 @@ post-patch:
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
-	@${SH} @${PKGDIR}/INSTALL Postfix PRE-INSTALL
+	@/bin/sh @${PKGDIR}/INSTALL Postfix PRE-INSTALL
 
 do-install:
 	@${MKDIR} -m 755 ${PREFIX}/etc/postfix
