@@ -33,7 +33,7 @@
  #define _POSIX_PTHREAD_SEMANTICS 1
  EOF
  
-+TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
++TCL_SRC_DIR=${prefix}/include/tcl${TCLVERSION}
  
  	    SHLIB_CFLAGS="-KPIC"
  	    LDFLAGS=""
