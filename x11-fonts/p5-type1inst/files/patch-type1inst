@@ -1,5 +1,5 @@
---- type1inst.orig	Thu Jul 24 13:53:19 2003
-+++ type1inst	Sat Jul 26 20:57:53 2003
+--- type1inst.orig	Wed Feb 11 20:00:13 1998
++++ type1inst	Mon Jun 14 16:44:27 2004
 @@ -78,15 +78,18 @@
  @foundries = (
  	      "Adobe:adobe",
@@ -64,16 +64,17 @@
  	  $fullname = $1;
  
  	  # Convert to lower case
-@@ -385,7 +390,7 @@
+@@ -385,7 +390,8 @@
        }
        # Note : some fonts have a suspect /FontName declaration where there
        # is no space between /FontName and the name of the font itself....
 -      if (/\/FontName\s*[\/\(]([^\)]+)\)?\s+def\s*/) {
-+      if (/\/FontName\s*[\/\(]([^\)]+)\)?\s*def\s*/) {
++      if (/\/FontName\s*[\/\(]([^\)]+)\)?\s*def\s*/
++		or ($gsfont and /^\/([^ ]+)\s+\d+\s+\[107\s+0/)) {
  	  $fontname = $1;
  
  	  # Remove any embedded spaces
-@@ -515,8 +520,8 @@
+@@ -515,8 +521,8 @@
        if (/\/BlendAxisTypes\s+\[([^\]]+)\]\s*def/) {
  	  $axis = $1;
  	  # Remove axises we don't need
@@ -84,7 +85,26 @@
  	  # Are there still some axises left?
  	  if ($axis =~ /\//) {
  	      # Remove trailing spaces
-@@ -784,7 +789,7 @@
+@@ -532,12 +538,12 @@
+ 	  &try_another_way();
+ 	  # This is for .pfa and .pfb fonts
+ 	  last;
+-      } elsif (($gsfont) && (/currentdict\s+end/)) {
+-	  &try_another_way();
+-	  # This is for ghostscript .gsf fonts.  Why don't all these have a
+-	  # currentfile eexec ?
+-	  last;
+-      }
++      } #elsif (($gsfont) && (/currentdict\s+end/)) {
++	#  &try_another_way();
++	#  # This is for ghostscript .gsf fonts.  Why don't all these have a
++	#  # currentfile eexec ?
++	#  last;
++      #}
+   }
+   close(IN);
+ 
+@@ -784,7 +790,7 @@
      log_only_msg("Reading Fontmap ....\n");
  
      while (<FONTMAP>) {
@@ -93,7 +113,7 @@
  	    chop;
  	    $fontname = $1;
  	    $filename = $2;
-@@ -1183,10 +1188,17 @@
+@@ -1183,10 +1189,17 @@
      }
  }
  
