@@ -7,7 +7,7 @@
 
 PORTNAME=	nethack
 PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nethack
@@ -23,14 +23,14 @@ NO_LATEST_LINK=	yes
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
+MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}" LDFLAGS="${LDFLAGS}"
 
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
 .if defined(WITH_GNOME_GRAPHICS)
 CATEGORIES=	games gnome
 PKGNAMESUFFIX=	-gnome
-LIB_DEPENDS+=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 USE_GNOME=	yes
 GRAPHICS=	GNOME_GRAPHICS
 .elif defined(WITH_QT_GRAPHICS)
@@ -49,7 +49,7 @@ GRAPHICS=	X11_GRAPHICS
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_QT_GRAPHICS) && ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
+BROKEN=		"Does not build"
 .endif
 
 pre-everything::

@@ -5,26 +5,26 @@
 # $FreeBSD$
 #
 
-PORTNAME=       authforce
-PORTVERSION=    0.9.6
-CATEGORIES=     security www
-MASTER_SITES=   http://kapheine.hypa.net/authforce/
+PORTNAME=	authforce
+PORTVERSION=	0.9.6
+PORTREVISION=	1
+CATEGORIES=	security www
+MASTER_SITES=	http://kapheine.hypa.net/authforce/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=	ache@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
-LIB_DEPENDS=    gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		curl.2:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl \
 		intl.4:${PORTSDIR}/devel/gettext
 
-USE_BZIP2=      yes
-
-GNU_CONFIGURE=  yes
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
+USE_BZIP2=	yes
+USE_GETOPT_LONG=yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lgnugetopt -lintl"
+		LIBS="-lintl"
 
-MAN1=           authforce.1
-MANCOMPRESSED=  yes
+MAN1=		authforce.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

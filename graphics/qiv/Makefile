@@ -7,6 +7,7 @@
 
 PORTNAME=	qiv
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,8 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib image viewer
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
@@ -30,10 +30,9 @@ do-configure:
 		${WRKSRC}/qiv.1.pre_sed > ${WRKSRC}/qiv.1
 	@ ${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
 	@ ${SED} -e 's#\/usr\/local#${PREFIX}#' \
-	         -e 's#RANDOM GETOPT_LONG#RANDOM#' \
 	         -e 's#gcc#${CC}#' \
-	         -e 's#-O2#${CFLAGS}#' \
-	         -e 's#libs-gdk`#libs-gdk` -lgnugetopt#' \
+	         -e 's#-O2#${CPPFLAGS} ${CFLAGS}#' \
+	         -e 's#libs-gdk`#libs-gdk` ${LDFLAGS}#' \
 		${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
 
 do-install:

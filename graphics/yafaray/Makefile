@@ -6,6 +6,7 @@
 
 PORTNAME=	yafray
 PORTVERSION=	0.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.coala.uniovi.es/~jandro/noname/downloads/
 
@@ -14,6 +15,7 @@ COMMENT=	A fast XML based raytracer
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
@@ -30,12 +32,6 @@ pre-everything::
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|' \
@@ -48,4 +44,4 @@ post-patch:
 		s|-Wall|${CXXFLAGS}|' \
 		${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

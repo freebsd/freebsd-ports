@@ -7,19 +7,17 @@
 
 PORTNAME=	psiconv
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	converters devel
 MASTER_SITES=	http://huizen.dds.nl/~frodol/psiconv/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-imagemagick=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 .include <bsd.port.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	xosd
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}
@@ -15,20 +16,20 @@ MASTER_SITE_SUBDIR=	perky
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	X On-Screen-Display Library and XMMS plug-in
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 .if !defined(WITHOUT_XMMS)
 LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
 .endif
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
+USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib -lgnugetopt' \
+CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib' \
 		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' \
 		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
 		XMMS_PLUGINDIR=${X11BASE}/lib/xmms

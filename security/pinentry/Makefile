@@ -7,6 +7,7 @@
 
 PORTNAME=	pinentry
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.klaralvdalens-datakonsult.se/pub/aegypten/alpha/latest/ \
 		${MASTER_SITE_GNUPG} \
@@ -20,9 +21,9 @@ MAINTAINER=	michaelnottebrock@gmx.net
 COMMENT=	A collection of simple PIN or passphrase entry dialogs
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		ksba.7:${PORTSDIR}/security/libksba
 
+USE_GETOPT_LONG=yes
 USE_AUTOMAKE_VER=	15
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes

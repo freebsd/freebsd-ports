@@ -7,14 +7,14 @@
 
 PORTNAME=	quelcom
 PORTVERSION=	0.3.0
+PORTREVISION=   1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.etse.urv.es/~dmanye/quelcom/src/
 
 MAINTAINER=	greid@FreeBSD.org
 COMMENT=	A set of command-line utilities for MP3 and wave files
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
@@ -25,7 +25,7 @@ MAN1=		qmp3check.1 qmp3cut.1 qmp3info.1 qmp3join.1 qmp3report.1 \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-BROKEN=         "does not build on FreeBSD 5.x; cout.form cannot be used with GCC 3.x"
+BROKEN=		"does not build on FreeBSD 5.x; cout.form cannot be used with GCC 3.x"
 .endif
 
 do-install:

@@ -6,8 +6,8 @@
  LOCALBASE ?= /usr/local
 -CFLAGS += -Wall -Werror
 -OPT_FLAGS = -L${LOCALBASE}/lib 
-+CFLAGS += -Wall -I${LOCALBASE}/include
-+OPT_FLAGS = -L${LOCALBASE}/lib -lgnugetopt 
++CFLAGS += -Wall ${CPPFLAGS}
++OPT_FLAGS = -L${LOCALBASE}/lib ${LDFLAGS}
  OBJS = 	mp3_check.o \
  	mp3_check_misc.o
  

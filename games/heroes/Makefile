@@ -7,6 +7,7 @@
 
 PORTNAME=	heroes
 PORTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +22,6 @@ MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
 DATAVERSION=	1.5
@@ -37,13 +37,15 @@ INSTPREFIX=	${PREFIX}/share/heroes
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
+USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE}
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt ${PTHREAD_LIBS} -lsmpeg" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lsmpeg
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN6=		heroes.6 heroeslvl.6

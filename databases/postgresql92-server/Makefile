@@ -7,7 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.3.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_GNUGETOPT)
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 .endif
 
 .if !defined(WITHOUT_GETTEXT)

@@ -7,18 +7,21 @@
 
 PORTNAME=	burgerspace
 PORTVERSION=	1.6.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A BurgerTime clone
 
-LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng
 
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt"
+CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CCONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-gengameng-prefix="${X11BASE}"
 
 MAN6=		burgerspace.6

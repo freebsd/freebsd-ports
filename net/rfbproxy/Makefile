@@ -8,18 +8,16 @@
 
 PORTNAME=	rfbproxy
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://cyberelk.net/tim/data/rfbproxy/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple tool for recording VNC sessions
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 MAN1=	rfbproxy.1
 

@@ -7,15 +7,18 @@
 
 PORTNAME=	pwgen
 PORTVERSION=	1.15
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
 COMMENT=	A simple password generator
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		pwgen.1
 

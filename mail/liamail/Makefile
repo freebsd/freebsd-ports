@@ -8,6 +8,7 @@
 
 PORTNAME=	liamail
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,20 +16,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A graphical mail client
 
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
-
 USE_REINPLACE=	yes
 USE_QT_VER=	2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgnugetopt" \
-		QTDIR="${X11BASE}"
+CONFIGURE_ENV=	QTDIR="${X11BASE}"
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 post-patch:

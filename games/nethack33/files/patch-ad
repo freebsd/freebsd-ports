@@ -79,7 +79,7 @@
  #
  # libraries for Gnome
 -WINGNOMELIB = -lgnomeui -lgnome -lart_lgpl -lgtk -lgdk -lpopt
-+WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) -lgnugetopt
++WINGNOMELIB = $(shell ${GNOME_CONFIG} --libs gnomeui) ${LDFLAGS}
  #
  # libraries for Gem port
  WINGEMLIB = -le_gem -lgem

@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.2.4
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -36,9 +37,7 @@ CONFIGURE_ARGS=	--enable-locale --enable-syslog --with-CXX \
 		--with-includes=${LOCALBASE}/include
 
 .if !defined(WITHOUT_GNUGETOPT)
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
 .endif
 
 # if you want localized messages, make -DWITH_GETTEXT

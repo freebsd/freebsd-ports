@@ -8,7 +8,7 @@
 
 PORTNAME=	rawrec
 PORTVERSION=	0.9.97
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -18,15 +18,14 @@ MASTER_SITE_SUBDIR=	apps/sound/recorders \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility to record and playback raw audio data
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-lgnugetopt -lm ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
+		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -lm ${PTHREAD_LIBS}"
 
 MAN1=	rawrec.1
 MLINKS=	rawrec.1 rawplay.1

@@ -7,7 +7,7 @@
 -	$(top_builddir)/secmem/libsecmem.a $(LIBCAP) \
 -	$(QT_LIBS) $(libcurses)
 +	$(top_builddir)/secmem/libsecmem.a $(top_builddir)/common/libcommon.a \
-+	$(LIBCAP) $(QT_LIBS) $(libcurses) -lgnugetopt
++	$(LIBCAP) $(QT_LIBS) $(libcurses)
  pinentry_qt_LDFLAGS = $(QT_LDFLAGS)
  
  pinentry_qt_SOURCES = pinentrydialog.h pinentrydialog.cpp \

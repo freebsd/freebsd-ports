@@ -8,6 +8,7 @@
 
 PORTNAME=	ccrypt
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/download/
@@ -16,12 +17,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	A command-line utility for encrypting and decrypting files and streams
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
+USE_GETOPT_LONG=yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
 MAN1=	ccrypt.1
 MLINKS=	ccrypt.1 ccencrypt.1 \

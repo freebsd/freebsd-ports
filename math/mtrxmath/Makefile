@@ -5,15 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=       	mtrxmath
+PORTNAME=		mtrxmath
 PORTVERSION=		0.9.3
-CATEGORIES=     	math
+PORTREVISION=	1
+CATEGORIES=		math
 MASTER_SITES=		http://www.angelfire.com/linux/linuxjeff/mtrxmath/files/
 
 MAINTAINER=		greid@ukug.uk.freebsd.org
 COMMENT=	A small tool for matrix mathemetics
 
-LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mtrxmath ${PREFIX}/bin
