@@ -3,17 +3,17 @@ bin/gvd
 info/gvd.info
 @exec install-info %D/info/gvd.info %D/info/dir
 share/locale/fr/LC_MESSAGES/gvd.mo
-share/doc/gvd/gvd.html
-share/doc/gvd/gvd.ps
-share/doc/gvd/gvd.txt
-share/doc/gvd/assembly.gif
-share/doc/gvd/canvas.gif
-share/doc/gvd/explorer.gif
-share/doc/gvd/memory-view.gif
-share/doc/gvd/tasks.gif
-share/doc/gvd/breakpoints.gif
-share/doc/gvd/colors.gif
-share/doc/gvd/main-window.gif
-share/doc/gvd/process.gif
-share/doc/gvd/tooltips.gif
-@dirrm share/doc/gvd
+%%DOCSDIR%%/gvd.html
+%%DOCSDIR%%/gvd.ps
+%%DOCSDIR%%/gvd.txt
+%%DOCSDIR%%/assembly.gif
+%%DOCSDIR%%/canvas.gif
+%%DOCSDIR%%/explorer.gif
+%%DOCSDIR%%/memory-view.gif
+%%DOCSDIR%%/tasks.gif
+%%DOCSDIR%%/breakpoints.gif
+%%DOCSDIR%%/colors.gif
+%%DOCSDIR%%/main-window.gif
+%%DOCSDIR%%/process.gif
+%%DOCSDIR%%/tooltips.gif
+@dirrm %%DOCSDIR%%

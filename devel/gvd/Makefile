@@ -7,14 +7,14 @@
 
 PORTNAME=		gvd
 PORTVERSION=		1.2.5
-PORTREVISION=	1
+PORTREVISION=		1
 CATEGORIES=		devel
 MASTER_SITES=		http://libre.act-europe.fr/gvd/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		sam@inf.enst.fr
-COMMENT=	GNU Visual Debugger, a graphical front-end to gdb and jdb
+COMMENT=		GNU Visual Debugger, a graphical front-end to gdb and jdb
 
 BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat \
 			tex:${PORTSDIR}/print/teTeX
@@ -27,6 +27,10 @@ CONFIGURE_ENV=		CC=adagcc
 MAKE_ENV=		CC=adagcc
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
+USE_REINPLACE=		yes
+
+post-patch:
+	${REINPLACE_CMD} -e "s#doc/gvd#share/doc/gvd#" ${WRKSRC}/docs/Makefile.in
 
 post-install:
 	${GMAKE} -C ${WRKSRC}/docs docdir=${PREFIX}/share/doc/gvd install
