@@ -16,8 +16,7 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/${
 		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
 MASTER_SITE_SUBDIR=	gcc
-DISTFILES=	gcc-chill-${GCC_REV}${EXTRACT_SUFX} \
-		gcc-core-${GCC_REV}${EXTRACT_SUFX} \
+DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
