@@ -75,6 +75,7 @@
     SUBDIR += gifsicle
     SUBDIR += giftool
     SUBDIR += giftrans
+    SUBDIR += gimageview
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
     SUBDIR += gimp-manual-ps
