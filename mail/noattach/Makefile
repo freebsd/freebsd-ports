@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 DISTNAME=	${PORTNAME}-1.1p1
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A attatchment filter for Sendmail
+COMMENT=	An attachment filter for Sendmail
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
