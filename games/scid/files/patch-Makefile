@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Feb 22 11:39:00 2002
-+++ Makefile	Mon Mar  4 23:02:42 2002
-@@ -8,11 +8,11 @@
+--- Makefile.orig	Wed Jan 22 03:54:00 2003
++++ Makefile	Mon Jan 27 17:02:06 2003
+@@ -9,11 +9,11 @@
  
  # BINDIR: where the Scid programs are copied for "make install".
  #
@@ -14,7 +14,7 @@
  
  ### TCL_VERSION: Set this according to the version of Tcl/Tk you have
  #   installed that you want Scid to use: 8.0, 8.1, 8.2, 8.3, etc.
-@@ -26,9 +26,9 @@
+@@ -27,9 +27,9 @@
  #
  # You have not run "./configure" yet.  The default settings are:
  #
@@ -27,20 +27,29 @@
  
  ### Here are other commonly used settings for the Tcl/Tk compiler options:
  
-@@ -50,9 +50,9 @@
+@@ -51,9 +51,9 @@
  
  # Someone sent me these settings for FreeBSD with Tcl/Tk 8.0:
  ### FreeBSD:
 -# TCL_INCLUDE = -I /usr/local/include/tcl8.0 -I /usr/local/include/tk8.0
 -# TCL_LIBRARY = -L /usr/local/lib -ltcl80 -ldl
 -# TK_LIBRARY  = $(TCL_LIBRARY) -ltk80 -L /usr/X11/lib -lX11
-+TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3 -I${X11BASE}/include
-+TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl83
-+TK_LIBRARY  = $(TCL_LIBRARY) -ltk83 -L${X11BASE}/lib -lX11
++TCL_INCLUDE = -I${LOCALBASE}/include/tcl8.4 -I${LOCALBASE}/include/tk8.4 -I${X11BASE}/include
++TCL_LIBRARY = -L${LOCALBASE}/lib -ltcl84
++TK_LIBRARY  = $(TCL_LIBRARY) -ltk84 -L${X11BASE}/lib -lX11
  
  
  ########################################
-@@ -79,7 +79,7 @@
+@@ -71,7 +71,7 @@
+ #      to include the code in the src/zlib directory.
+ #      The default is to use the system zlib library.
+ #
+-SCIDFLAGS =  -DZLIB
++#SCIDFLAGS =  -DZLIB
+ 
+ ### OPTIMIZE: Optimization options for C++ compiler.
+ #      -O4 is the most optimization for g++. I have found -O2 to do
+@@ -80,7 +80,7 @@
  #      On some systems, adding "-fno-rtti" and "-fno-exceptions" produces
  #      smaller, faster programs since Scid does not use those C++ features.
  #
@@ -49,3 +58,25 @@
  
  ### DEBUG: Defining the macro ASSERTIONS will turn on assertions, which
  #       helps to track bugs after modifications, but the programs will run 
+@@ -135,15 +135,15 @@
+ 
+ ### ZLIBOBJS: object files in the zlib compression library.
+ #
+-ZLIBOBJS= src/zlib/adler32.o src/zlib/compress.o src/zlib/crc32.o \
+-      src/zlib/gzio.o src/zlib/uncompr.o src/zlib/deflate.o src/zlib/trees.o \
+-      src/zlib/zutil.o src/zlib/inflate.o src/zlib/infblock.o \
+-      src/zlib/inftrees.o src/zlib/infcodes.o src/zlib/infutil.o \
+-      src/zlib/inffast.o
++#ZLIBOBJS= src/zlib/adler32.o src/zlib/compress.o src/zlib/crc32.o \
++#      src/zlib/gzio.o src/zlib/uncompr.o src/zlib/deflate.o src/zlib/trees.o \
++#      src/zlib/zutil.o src/zlib/inflate.o src/zlib/infblock.o \
++#      src/zlib/inftrees.o src/zlib/infcodes.o src/zlib/infutil.o \
++#      src/zlib/inffast.o
+ 
+ ### ZLIB: Should be "-lz" if your system has zlib, "" otherwise.
+ #
+-ZLIB = 
++ZLIB = -lz 
+ 
+ ### OBJS: Will be "$(SCIDOBJS)", and also "$(ZLIBOBJS)" if they are
+ #      needed on your system.
