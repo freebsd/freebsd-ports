@@ -27,9 +27,6 @@ do-install:
 .endfor
 
 post-install:
-	@echo -----------------------------------------------------------
-	@echo Copy ${PREFIX}/share/doc/bg5ps/bg5ps.conf to ~/.bg5ps.conf.
-	@echo Then run "bg5ps -h" for help.
-	@echo -----------------------------------------------------------
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

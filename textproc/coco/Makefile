@@ -148,7 +148,7 @@ post-install:
 	if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; \
 		${ECHO} '#!/bin/sh' > ${STARTUP_SCRIPT}; \
-		${ECHO} '#echo -n " Mule"' >> ${STARTUP_SCRIPT}; \
+		${ECHO} '#${ECHO} -n " Mule"' >> ${STARTUP_SCRIPT}; \
 		${ECHO} 'if [ -d /var/run/emacs/lock ]; then' >> ${STARTUP_SCRIPT}; \
 		${ECHO} '     rm -f /var/run/emacs/lock/*' >> ${STARTUP_SCRIPT}; \
 		${ECHO} "else" >> ${STARTUP_SCRIPT}; \

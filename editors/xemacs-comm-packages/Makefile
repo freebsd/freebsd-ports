@@ -39,7 +39,7 @@ NO_WRKSUBDIR=	yes
 # Have
 .if !defined(USE_MULE)
 pre-fetch:
-	@echo "To install the MULE support files, set the environment variable USE_MULE"
+	@${ECHO_MSG} "To install the MULE support files, set the environment variable USE_MULE"
 .endif
 
 do-install:
@@ -47,10 +47,10 @@ do-install:
 		${CP} -Rp ${WRKDIR}/* ${PREFIX}/lib/xemacs/xemacs-packages
 
 post-install:
-	@echo "This is only a subset of the available packages for xemacs."
-	@echo "You can install additional packages yourself from within xemacs by"
-	@echo "running it as root and using the 'Manage Packes' menu within"
-	@echo "the 'Options' menu of the menubar."
+	@${ECHO_MSG} "This is only a subset of the available packages for xemacs."
+	@${ECHO_MSG} "You can install additional packages yourself from within xemacs by"
+	@${ECHO_MSG} "running it as root and using the 'Manage Packes' menu within"
+	@${ECHO_MSG} "the 'Options' menu of the menubar."
 
 .if defined(USE_MULE)
 MULEDISTFILES=	mule-base-1.30-pkg.tar.gz

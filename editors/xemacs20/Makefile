@@ -42,13 +42,13 @@ PLIST_SUB=	XEMACS_VER=20.4 XEMACS_ARCH=${XEMACS_ARCH}
 
 # Have
 pre-configure:
-	@echo "To compile in the MULE features, set the environment variable USE_MULE"
+	@${ECHO_MSG} "To compile in the MULE features, set the environment variable USE_MULE"
 .if defined(HAVE_MOTIF)
-	@echo ""
-	@echo "If your MOTIF library is actually lesstif, you might occasionally"
-	@echo "experience locked-up frames."
-	@echo "In this case, set the environment variable MOTIF_STATIC and recompile, "
-	@echo "which will force the use of athena widgets for dialogs."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If your MOTIF library is actually lesstif, you might occasionally"
+	@${ECHO_MSG} "experience locked-up frames."
+	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
+	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
 
 .if defined(USE_MULE)

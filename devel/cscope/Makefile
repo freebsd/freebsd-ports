@@ -60,7 +60,7 @@ post-extract:
 	@(${CHMOD} +w ${WRKSRC})
 	@(for file in ${WRKSRC}/* ; do ${TR} -d '\015' < $$file > $$file.x ; ${MV} -f $$file.x $$file ; done)
 	@(for file in ${TRUNCATED_NAMES} ; do \
-		x=`echo $$file | ${SED} -e 's/^\(......\).*/\1/'` ; \
+		x=`${ECHO} $$file | ${SED} -e 's/^\(......\).*/\1/'` ; \
 		y=$${file#*.} ; \
 		${MV} ${WRKSRC}/$${x}*.$${y} ${WRKSRC}/$$file; \
 	done)

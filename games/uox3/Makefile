@@ -39,9 +39,9 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/WSC\ Changes.txt ${PREFIX}/uox3/wsc_changes.txt
 	${INSTALL_SCRIPT} ${FILESDIR}/uox3.sh ${PREFIX}/etc/rc.d/uox3.sh
 .ifdef NOPORTDOCS
-	@echo "==> Extra documentation WILL NOT be installed."
+	@${ECHO_MSG} "==> Extra documentation WILL NOT be installed."
 .else
-	@echo "==> Installing extra documentation..."
+	@${ECHO_MSG} "==> Installing extra documentation..."
 	${MKDIR} ${PREFIX}/uox3/docs
 	for FILE in ${WRKDIR}/docs/* ; do \
 		${INSTALL_DATA} $${FILE} ${PREFIX}/uox3/docs ;\

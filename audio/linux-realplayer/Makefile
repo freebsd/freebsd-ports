@@ -62,17 +62,17 @@ do-install:
 
 	${INSTALL_DATA} ${WRKSRC}/welcome.rm ${PREFIX}/share/rvplayer5.0/
 
-	@echo ---------------------------------------------------------------
-	@echo You must add ${PREFIX}/lib/rvplayer5.0 to your
-	@echo LD_LIBRARY_PATH environment variable to use RealPlayer 5.0.
-	@echo
-	@echo To use the Netscape plugin, you must have a Linux version of
-	@echo netscape \(e.g., ${PORTSDIR}/www/linux-netscape4/\) - see
-	@echo ${PREFIX}/share/doc/rvplayer5.0/plugin.html for instructions.
-	@echo
-	@echo To use rvplayer as an external helper app for Netscape \(any
-	@echo version\), follow the instructions in
-	@echo ${PREFIX}/share/doc/rvplayer5.0/browser.htm.
-	@echo ---------------------------------------------------------------
+	@${ECHO_MSG} ---------------------------------------------------------------
+	@${ECHO_MSG} You must add ${PREFIX}/lib/rvplayer5.0 to your
+	@${ECHO_MSG} LD_LIBRARY_PATH environment variable to use RealPlayer 5.0.
+	@${ECHO_MSG}
+	@${ECHO_MSG} To use the Netscape plugin, you must have a Linux version of
+	@${ECHO_MSG} netscape \(e.g., ${PORTSDIR}/www/linux-netscape4/\) - see
+	@${ECHO_MSG} ${PREFIX}/share/doc/rvplayer5.0/plugin.html for instructions.
+	@${ECHO_MSG}
+	@${ECHO_MSG} To use rvplayer as an external helper app for Netscape \(any
+	@${ECHO_MSG} version\), follow the instructions in
+	@${ECHO_MSG} ${PREFIX}/share/doc/rvplayer5.0/browser.htm.
+	@${ECHO_MSG} ---------------------------------------------------------------
 
 .include <bsd.port.post.mk>

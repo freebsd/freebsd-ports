@@ -30,9 +30,9 @@ pre-patch:
 	cd  $(WRKSRC) && tar xzpf ${DISTDIR}/xmdfix.gz
 
 post-patch:
-	@echo removing the "malloc.h" includes
+	@${ECHO_MSG} removing the "malloc.h" includes
 	${SCRIPTDIR}/nomalloc $(WRKSRC) 2>&1 > /dev/zero
-	@echo removing unneccessary DependTarget from Imakefile-s
+	@${ECHO_MSG} removing unneccessary DependTarget from Imakefile-s
 	${SCRIPTDIR}/noextradepend $(WRKSRC) 2>&1 > /dev/zero
 
 .include <bsd.port.mk>

@@ -17,6 +17,6 @@ USE_IMAKE=	yes
 MAN6=		oneko.6
 
 pre-configure:
-	@echo "MANSUFFIX=6" >>${WRKSRC}/Imakefile
+	@${ECHO} "MANSUFFIX=6" >>${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

@@ -19,8 +19,8 @@ DOCFILES= BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 MAN6=		gnushogi.6
 
 post-configure:
-	echo "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
-	echo "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
+	${ECHO} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/src/${MAKEFILE}
+	${ECHO} "prefix=${PREFIX}" >> ${WRKSRC}/src/${MAKEFILE}
 
 do-build:
 	(cd ${WRKSRC}/src; \

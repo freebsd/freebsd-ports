@@ -21,8 +21,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/zorro ${PREFIX}/bin/zorro
 	${MKDIR} ${PREFIX}/share/zorro
 	${INSTALL_DATA} ${WRKSRC}/DOTzorrorc ${PREFIX}/share/zorro
-	@echo ""
-	@echo "Take a look at ${PREFIX}/share/zorro/DOTzorrorc"
-	@echo ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Take a look at ${PREFIX}/share/zorro/DOTzorrorc"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

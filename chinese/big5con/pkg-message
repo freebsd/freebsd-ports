@@ -1,0 +1,6 @@
+
+---------------------------------------------------------------
+You need to add a line 'options SYSVSHM' to your kernel config.
+Use 'b5c' to run the big5 console.
+---------------------------------------------------------------
+

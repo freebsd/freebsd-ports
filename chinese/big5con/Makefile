@@ -37,11 +37,6 @@ pre-install:
 	fi
 
 post-install:
-	@echo
-	@echo "---------------------------------------------------------------"
-	@echo "You need to add a line 'options SYSVSHM' to your kernel config."
-	@echo "Use 'b5c' to run the big5 console."
-	@echo "---------------------------------------------------------------"
-	@echo
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

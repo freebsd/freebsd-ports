@@ -21,8 +21,8 @@ MAKEFILE=	Makefile.custom
 MAN6=		xshogi.6
 
 post-configure:
-	@echo "DISTDIR=${WRKDIR}" >> ${WRKSRC}/${MAKEFILE}
-	@echo "LOCALBASE=${LOCALBASE}" >> ${WRKSRC}/${MAKEFILE}
+	@${ECHO} "DISTDIR=${WRKDIR}" >> ${WRKSRC}/${MAKEFILE}
+	@${ECHO} "LOCALBASE=${LOCALBASE}" >> ${WRKSRC}/${MAKEFILE}
 
 post-install:
 	@strip ${PREFIX}/bin/xshogi

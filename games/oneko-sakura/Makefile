@@ -23,6 +23,6 @@ MAN6=		oneko.6
 NO_CDROM=	"Including a derivative from CARDCAPTOR SAKURA. See http://www.clamp.f-2.co.jp/"
 
 pre-configure:
-	@echo "MANSUFFIX=6" >>${WRKSRC}/Imakefile
+	@${ECHO} "MANSUFFIX=6" >>${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>

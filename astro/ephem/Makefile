@@ -27,6 +27,6 @@ do-install:
 	[ ! -f ${PREFIX}/share/ephem/ephem.cfg ] && ${INSTALL_DATA} ephem.cfg ${PREFIX}/share/ephem/
 
 post-install:
-	@echo Don\'t forget to edit ${PREFIX}/share/ephem/ephem.cfg!
+	@${ECHO_MSG} Don\'t forget to edit ${PREFIX}/share/ephem/ephem.cfg!
 
 .include <bsd.port.mk>
