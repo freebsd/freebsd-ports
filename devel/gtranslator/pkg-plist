@@ -1,0 +1,38 @@
+bin/gtranslator
+bin/gtranslatord
+include/libgtranslator/handle-db.h
+include/libgtranslator/parse-db.h
+include/libgtranslator/team-handle.h
+lib/libgtranslator.so
+share/gnome/apps/Development/gtranslator.desktop
+share/gnome/gtranslator/message-db.d/example.xml
+share/gnome/gtranslator/message-db.d/teams.xml
+share/gnome/gtranslator/message-db.d/tr.xml
+share/gnome/help/gtranslator/C/index.html
+share/gnome/help/gtranslator/C/topic.dat
+share/gnome/help/gtranslator/tr/index.html
+share/gnome/help/gtranslator/tr/topic.dat
+share/gnome/idl/gtranslator/gtranslatord.idl
+share/gnome/oaf/gtranslatord.oafinfo
+share/gnome/pixmaps/gtranslator.png
+share/gnome/pixmaps/mc/application-x-po.png
+share/locale/da/LC_MESSAGES/gtranslator.mo
+share/locale/de/LC_MESSAGES/gtranslator.mo
+share/locale/es/LC_MESSAGES/gtranslator.mo
+share/locale/hu/LC_MESSAGES/gtranslator.mo
+share/locale/ja/LC_MESSAGES/gtranslator.mo
+share/locale/ko/LC_MESSAGES/gtranslator.mo
+share/locale/lt/LC_MESSAGES/gtranslator.mo
+share/locale/nl/LC_MESSAGES/gtranslator.mo
+share/locale/no/LC_MESSAGES/gtranslator.mo
+share/locale/ru/LC_MESSAGES/gtranslator.mo
+share/locale/sv/LC_MESSAGES/gtranslator.mo
+share/locale/tr/LC_MESSAGES/gtranslator.mo
+share/locale/uk/LC_MESSAGES/gtranslator.mo
+@dirrm share/gnome/idl/gtranslator
+@dirrm share/gnome/help/gtranslator/tr
+@dirrm share/gnome/help/gtranslator/C
+@dirrm share/gnome/help/gtranslator
+@dirrm share/gnome/gtranslator/message-db.d
+@dirrm share/gnome/gtranslator
+@dirrm include/libgtranslator

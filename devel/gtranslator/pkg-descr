@@ -1,0 +1,6 @@
+Gtranslator is a translation-supporting programm for the Gnome project. Simply
+speaking it is a helper for developing ".pot" files used with GNU Gettext
+library to provide i18n and l10n features. It is offering little funtionability
+yet but it will be more useful and complex later on.
+
+WWW: http://gtranslator.sourceforge.net/
