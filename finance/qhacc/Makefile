@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	3.0
+PORTVERSION=	3.2
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,13 +14,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple QT-based financial manager
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	259
+USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
 		--with-qt-libs=${QT_PREFIX}/lib
@@ -89,8 +90,7 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in accounts accounttypes jobs journals namedtrans preferences \
-	splits transactions
+.for file in accounts jobs journals namedtrans preferences splits transactions
 	${INSTALL_DATA} ${WRKSRC}/contrib/easysetup/${file} ${EXAMPLESDIR}
 .endfor
 .endif

@@ -1,11 +1,11 @@
---- lib/qhacc.cpp.orig	Sun Sep 28 01:08:13 2003
-+++ lib/qhacc.cpp	Sun Nov  2 10:53:38 2003
-@@ -31,7 +31,7 @@
- #include "plugins.h"
+--- lib/qhacc.cpp.orig	Thu Jul  8 07:06:55 2004
++++ lib/qhacc.cpp	Thu Aug 12 03:10:59 2004
+@@ -55,7 +55,7 @@
+ #include "localfileplugin.h"
  #include "qhacc.moc"
  
 -#include <math.h>
 +#include <cmath>
  
- #include <qdir.h>
- #include <qfile.h>
+ //const int QHacc::ROLLOVER=( int )std::pow( ( double )10, QC::DECIMALS );
+ const int QHacc::ROLLOVER=100;

@@ -1,16 +1,15 @@
---- src/Makefile.in.orig	Sat Feb 14 22:19:19 2004
-+++ src/Makefile.in	Fri Feb 20 13:31:57 2004
-@@ -177,10 +177,10 @@
+--- src/Makefile.in.orig	Sun Aug  1 07:29:01 2004
++++ src/Makefile.in	Thu Aug 12 14:42:06 2004
+@@ -255,9 +255,9 @@
+ noinst_HEADERS = qhaccview.h qhaccrecwin.h qhaccdialogs.h qhaccacctchsr.h transeditor.h qhaccwidget.h qhaccgrwin.h qhaccsubsetwin.h qhaccjrnlchsr.h qhacccli.h qhacclineedits.h splitdialog.h copystore.h guiconstants.h qhacclistview.h qhaccacctbox.h qhaccacctboxchsr.h qhaccacctdlg.h qhaccprefdlg.h
  EXTRA_DIST = lupdate.info
- 
  SUBDIRS = pixmaps
 -INCLUDES = $(all_includes) -I$(QTINCDIR) -I$(top_srcdir)/lib
-+INCLUDES = -I$(top_srcdir)/lib $(all_includes) -I$(QTINCDIR)
- 
 -qhacc_gui_LDFLAGS = -L$(QTLIBDIR) -L$(top_builddir)/lib $(LDFLAGS) -L.
 -qhacc_cli_LDFLAGS = -L$(QTLIBDIR) -L$(top_builddir)/lib $(LDFLAGS) -L.
-+qhacc_gui_LDFLAGS = -L$(top_builddir)/lib -L. -L$(QTLIBDIR) $(LDFLAGS)
-+qhacc_cli_LDFLAGS = -L$(top_builddir)/lib -L. -L$(QTLIBDIR) $(LDFLAGS)
++INCLUDES = -I$(top_srcdir)/lib $(all_includes) -I$(QTINCDIR)
++qhacc_gui_LDFLAGS = -L$(top_builddir)/lib -L. -L$(QTLIBDIR) $(LDFLAGS) 
++qhacc_cli_LDFLAGS = -L$(top_builddir)/lib -L. -L$(QTLIBDIR) $(LDFLAGS) 
  
+ #qhacc_gui_LDADD =	-l$(QHACCQT) -lqhacc -lqhaccutils -lmpatrol -lbfd -liberty
  qhacc_gui_LDADD = -l$(QHACCQT) -lqhacc -lqhaccutils
- qhacc_cli_LDADD = -l$(QHACCQT) -lqhacc -lqhaccutils -lqhaccext 
