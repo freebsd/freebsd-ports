@@ -66,6 +66,15 @@ share/doc/HTML/en/kfandango/index.docbook
 share/doc/HTML/en/kfandango/introduction.docbook
 share/doc/HTML/en/kfandango/using.docbook
 @dirrm share/doc/HTML/en/kfandango
+share/doc/HTML/es/kfandango/appendix.docbook
+share/doc/HTML/es/kfandango/commands.docbook
+share/doc/HTML/es/kfandango/common
+share/doc/HTML/es/kfandango/credits.docbook
+share/doc/HTML/es/kfandango/devel.docbook
+share/doc/HTML/es/kfandango/index.cache.bz2
+share/doc/HTML/es/kfandango/index.docbook
+share/doc/HTML/es/kfandango/introduction.docbook
+@dirrm share/doc/HTML/es/kfandango
 share/icons/hicolor/16x16/apps/kfandango.png
 share/icons/hicolor/32x32/apps/kfandango.png
 share/icons/hicolor/48x48/apps/kfandango.png
