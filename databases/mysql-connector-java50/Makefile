@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	mysql-connector-java
-PORTVERSION=	3.0.13
+PORTVERSION=	3.0.14
 CATEGORIES=	databases java
-MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/Connector-J/ \
-		http://mysql.tzone.it/Downloads/Connector-J/ \
-		ftp://planetmirror.com/pub/mysql/Downloads/Connector-J/ \
+MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/Connector-J/ \
 		http://www.softagency.co.jp/MySQL/Downloads/Connector-J/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/Connector-J/ \
 		http://mysql.mediatraffic.fi/Downloads/Connector-J/ \
@@ -19,7 +17,7 @@ MASTER_SITES=	ftp://mysql.secsup.org/pub/software/mysql/Downloads/Connector-J/ \
 		ftp://ftp.rtfm.no/pub/mysql/Downloads/Connector-J/ \
 		http://www.mysql.cz/Downloads/Connector-J/ \
 		ftp://ftp.u-paris10.fr/mysql.com/Downloads/Connector-J/ \
-		http://mysql.oms-net.nl/Downloads/Connector-J/ \
+		http://mysql.proserve.nl/Downloads/Connector-J/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/Connector-J/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-production
 
