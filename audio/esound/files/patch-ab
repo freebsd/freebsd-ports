@@ -1,44 +1,36 @@
---- ltmain.sh.orig	Tue Sep 22 23:31:41 1998
-+++ ltmain.sh	Tue Sep 22 23:35:18 1998
-@@ -967,6 +967,16 @@
+--- ltmain.sh.orig	Tue Dec 15 01:22:13 1998
++++ ltmain.sh	Wed Dec 23 03:12:43 1998
+@@ -923,6 +923,18 @@
          versuffix="$current.$revision"
          ;;
  
-+      freebsd)
++      freebsd-aout)
 +        version_vars="$version_vars major versuffix"
 +        major="$current"
-+	if [ $PORTOBJFORMAT = elf ]; then
-+        versuffix="$current";
-+	else
-+        versuffix="$current.$revision";
-+	fi
++        versuffix="$current.$revision"
++        ;;
++
++      freebsd-elf)
++        version_vars="$version_vars major versuffix"
++        major="$current"
++        versuffix="$current"
 +        ;;
 +
        *)
          $echo "$modename: unknown library version type \`$version_type'" 1>&2
          echo "Fatal configuration error.  See the $PACKAGE docs for more information." 1>&2
---- ltconfig.orig	Tue Sep 22 23:31:38 1998
-+++ ltconfig	Tue Sep 22 23:37:19 1998
-@@ -1123,10 +1123,21 @@
-   finish_eval='for lib in `ls $libdir/*.ixlibrary 2>/dev/null`; do libname=`$echo "X$lib" | $Xsed -e '\''s%^.*/\([^/]*\)\.ixlibrary$%\1%'\''`; test $rm /sys/libs/${libname}_ixlibrary.a; $show "(cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a)"; (cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a) || exit 1; done'
+--- ltconfig.orig	Tue Dec 15 01:22:13 1998
++++ ltconfig	Wed Dec 23 03:14:11 1998
+@@ -1106,9 +1106,10 @@
    ;;
  
--freebsd2* | freebsd3*)
-+freebsd2*)
-   version_type=sunos
-   library_names_spec='${libname}${release}.so.$versuffix $libname.so'
-   finish_cmds='PATH="$PATH:/sbin" ldconfig -m $libdir'
-+  shlibpath_var=LD_LIBRARY_PATH
-+  ;;
-+
-+freebsd3*)
-+  version_type=freebsd
-+  library_names_spec='${libname}${release}.so.$versuffix $libname.so'
-+  if [ $PORTOBJFORMAT = elf ]; then
-+  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$PORTOBJFORMAT" ldconfig -m $libdir'
-+  else
-+  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-+  fi
+ freebsd2* | freebsd3*)
+-  version_type=sunos
++  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
++  version_type=freebsd-$objformat
+   library_names_spec='$libname.so.$versuffix $libname.so'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$objformat" ldconfig -m $libdir'
    shlibpath_var=LD_LIBRARY_PATH
    ;;
  
