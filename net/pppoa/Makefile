@@ -32,10 +32,6 @@ USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=			"Configure fails on FreeBSD >= 6.x"
-.endif
-
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/${ALCATELDRIVER} -C ${WRKSRC}
 	@${REINPLACE_CMD} s/-lkse/${PTHREAD_LIBS}/g ${WRKSRC}/configure
