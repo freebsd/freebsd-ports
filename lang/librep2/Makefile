@@ -7,6 +7,7 @@
 
 PORTNAME=	librep2
 PORTVERSION=	2002.05.02
+PORTREVISION=	1
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
@@ -26,7 +27,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl" \
+		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl ${PTHREAD_LIBS}" \
 		LOCALBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
