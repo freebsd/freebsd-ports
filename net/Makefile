@@ -475,6 +475,7 @@
     SUBDIR += xbone
     SUBDIR += xferstats
     SUBDIR += xicq
+    SUBDIR += xipdump
     SUBDIR += xipmsg
     SUBDIR += xisp
     SUBDIR += xmlrpc-c
