@@ -17,7 +17,8 @@ USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-mt
+CONFIGURE_ARGS=	--enable-mt \
+		--program-transform-name=''
 
 post-patch:
 	@${REINPLACE_CMD} -E \
