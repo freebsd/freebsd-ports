@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	jadetex
 MAINTAINER=		nik@FreeBSD.org
 COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
-BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
+BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
