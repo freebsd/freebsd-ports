@@ -5285,6 +5285,7 @@ p5-Religion	ports/devel/p5-Religion
 p5-ResourcePool	ports/devel/p5-ResourcePool
 p5-ResourcePool-Resource-DBI	ports/databases/p5-ResourcePool-Resource-DBI
 p5-ResourcePool-Resource-Net-LDAP	ports/net/p5-ResourcePool-Resource-Net-LDAP
+p5-ResourcePool-Resource-SOAP-Lite	ports/net/p5-ResourcePool-Resource-SOAP-Lite
 p5-Resources	ports/devel/p5-Resources
 p5-Roman	ports/math/p5-Roman
 p5-SDL		ports/devel/p5-SDL
