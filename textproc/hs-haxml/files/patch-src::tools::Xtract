@@ -1,0 +1,34 @@
+Index: src/tools/Xtract.hs
+===================================================================
+RCS file: /home/cvs/root/HaXml/src/tools/Xtract.hs,v
+retrieving revision 1.3
+diff -u -r1.3 Xtract.hs
+--- src/tools/Xtract.hs	2 Oct 2002 10:24:06 -0000	1.3
++++ src/tools/Xtract.hs	27 Aug 2003 16:27:55 -0000
+@@ -11,7 +11,7 @@
+ import Text.XML.HaXml.Parse         (xmlParse)
+ import Text.XML.HaXml.Html.Parse    (htmlParse)
+ import Text.XML.HaXml.Xtract.Parse  (parseXtract)
+-import Text.PrettyPrint.HughesPJ    (render, vcat)
++import Text.PrettyPrint.HughesPJ    (render, vcat, hcat, empty)
+ import Text.XML.HaXml.Pretty        (content)
+ import Text.XML.HaXml.Html.Generate (htmlprint)
+ 
+@@ -40,7 +40,7 @@
+                    ( if isHTML x then
+                           hPutStrLn stdout . render . htmlprint .
+                           dfilter htmlSelection . getElem . htmlParse x
+-                     else hPutStrLn stdout . render . vcat . map content .
++                     else hPutStrLn stdout . render . format .
+                           dfilter xmlSelection  . getElem . xmlParse x) c)
+           files
+ 
+@@ -48,3 +48,8 @@
+ isHTML x = ".html" `isSuffixOf` x  ||  ".htm"  `isSuffixOf` x
+ 
+ dfilter f = \x-> f x x
++
++format [] = empty
++format cs@(CString _ _:_) = hcat . map content $ cs
++format cs@(CRef _:_)      = hcat . map content $ cs
++format cs                 = vcat . map content $ cs
