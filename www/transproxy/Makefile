@@ -9,7 +9,7 @@
 DISTNAME=	transproxy-0.3
 CATEGORIES=	www net
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/linux/www/
-DISTFILES=	transproxy-0.3.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	peter@FreeBSD.ORG
 
