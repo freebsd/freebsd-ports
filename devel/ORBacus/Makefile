@@ -10,7 +10,7 @@ PORTVERSION=	3.2.1
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2/ \
-		http://ftp.us.sinuspl.net/pub/src/
+		http://ftp.de.sinuspl.net/pub/src/
 DISTNAME=	OB-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
