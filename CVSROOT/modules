@@ -7215,6 +7215,7 @@ p5-OOTools	ports/devel/p5-OOTools
 p5-ORBit	ports/devel/p5-ORBit
 p5-Object-MultiType	ports/devel/p5-Object-MultiType
 p5-Object-Realize-Later	ports/devel/p5-Object-Realize-Later
+p5-Ogg-Vorbis-Header	ports/audio/p5-Ogg-Vorbis-Header
 p5-OpenCA-CRL	ports/security/p5-OpenCA-CRL
 p5-OpenCA-CRR	ports/security/p5-OpenCA-CRR
 p5-OpenCA-PKCS7	ports/security/p5-OpenCA-PKCS7
