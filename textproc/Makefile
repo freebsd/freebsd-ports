@@ -187,6 +187,7 @@
     SUBDIR += p5-XML-Encoding
     SUBDIR += p5-XML-Filter-Base
     SUBDIR += p5-XML-Filter-BufferText
+    SUBDIR += p5-XML-Filter-DetectWS
     SUBDIR += p5-XML-Filter-XSLT
     SUBDIR += p5-XML-Generator-DBI
     SUBDIR += p5-XML-Handler-Trees

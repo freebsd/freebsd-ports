@@ -1,0 +1,7 @@
+This a PerlSAX filter that detects which character data contains
+ignorable whitespace and optionally filters it.
+
+WWW: http://search.cpan.org/search?dist=XML-Filter-DetectWS
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
