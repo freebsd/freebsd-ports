@@ -1,0 +1,7 @@
+The PerlIO layer symlink allows you to create a symbolic link by
+writing to the file handle.
+
+You need to write C"link $name" to the file handle. If the format
+does not match, close will fail with EINVAL.
+
+Currently only writing is supported.
