@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.7
+PORTVERSION=	2.9
 CATEGORIES=	dns
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
@@ -16,7 +16,7 @@ COMMENT=	A caching DNS forwarder
 USE_REINPLACE=	yes
 
 MAN8=		dnsmasq.8
-PLIST_FILES=	sbin/dnsmasq etc/dnsmasq.conf.example
+PLIST_FILES=	sbin/dnsmasq etc/dnsmasq.conf.example etc/rc.d/dnsmasq.sh
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -26,6 +26,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/etc/dnsmasq.conf.example
+	${INSTALL_SCRIPT} files/dnsmasq.sh ${PREFIX}/etc/rc.d/dnsmasq.sh
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
