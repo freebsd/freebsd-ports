@@ -10,7 +10,6 @@
     SUBDIR += NeTraMet
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
-    SUBDIR += adns
     SUBDIR += aget
     SUBDIR += aggregate
     SUBDIR += aguri
@@ -38,10 +37,6 @@
     SUBDIR += bbsnet
     SUBDIR += bfilter
     SUBDIR += bgpq
-    SUBDIR += bind8
-    SUBDIR += bind84
-    SUBDIR += bind9
-    SUBDIR += bind9-dlz
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += bmon
@@ -95,8 +90,6 @@
     SUBDIR += dctc-gui
     SUBDIR += dctc-gui-qt
     SUBDIR += ddc
-    SUBDIR += ddclient
-    SUBDIR += ddup
     SUBDIR += delegate
     SUBDIR += despoof
     SUBDIR += dgd
@@ -105,25 +98,12 @@
     SUBDIR += dhcpconf
     SUBDIR += dhcpdump
     SUBDIR += dhcping
-    SUBDIR += dhid
-    SUBDIR += dhisd
     SUBDIR += dictd
     SUBDIR += dictd-database
     SUBDIR += diradmin
     SUBDIR += disco
-    SUBDIR += djbdns
-    SUBDIR += dlint
-    SUBDIR += dnrd
-    SUBDIR += dns_balance
-    SUBDIR += dnsmasq
-    SUBDIR += dnssecwalker
-    SUBDIR += dnstop
-    SUBDIR += dnstracer
-    SUBDIR += dnsutl
-    SUBDIR += dnswalk
     SUBDIR += doc
     SUBDIR += docsis
-    SUBDIR += domtools
     SUBDIR += driftnet
     SUBDIR += dtcp
     SUBDIR += dtcpclient
@@ -142,10 +122,8 @@
     SUBDIR += ettercap
     SUBDIR += eudc-emacs20
     SUBDIR += everybuddy
-    SUBDIR += ez-ipupdate
     SUBDIR += fcptools
     SUBDIR += fidelio
-    SUBDIR += firedns
     SUBDIR += firetalk
     SUBDIR += flow-extract
     SUBDIR += flow-tools
@@ -171,7 +149,6 @@
     SUBDIR += geotrace
     SUBDIR += geta
     SUBDIR += ggsd
-    SUBDIR += ghtool
     SUBDIR += gicq
     SUBDIR += gini
     SUBDIR += gkrellm_snmp
@@ -205,15 +182,12 @@
     SUBDIR += gtkhx
     SUBDIR += gtkyahoo
     SUBDIR += gutenfetch
-    SUBDIR += h2n
     SUBDIR += hagelslag
     SUBDIR += haproxy
     SUBDIR += hawk
-    SUBDIR += hesiod
     SUBDIR += hinfo
     SUBDIR += hlmaster
     SUBDIR += honeyd
-    SUBDIR += host
     SUBDIR += howl
     SUBDIR += http_ping
     SUBDIR += hx
@@ -226,7 +200,6 @@
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
-    SUBDIR += idnkit
     SUBDIR += ifstat
     SUBDIR += iftop
     SUBDIR += imapproxy
@@ -237,7 +210,6 @@
     SUBDIR += ipaudit
     SUBDIR += ipcad
     SUBDIR += ipcalc
-    SUBDIR += ipcheck
     SUBDIR += iperf
     SUBDIR += ipex
     SUBDIR += ipfm
@@ -321,10 +293,8 @@
     SUBDIR += loudmouth
     SUBDIR += luasocket
     SUBDIR += magictun
-    SUBDIR += maradns
     SUBDIR += mars_nwe
     SUBDIR += mbrowse
-    SUBDIR += mdnsd
     SUBDIR += merlinmon
     SUBDIR += micq
     SUBDIR += mldonkey
@@ -344,7 +314,6 @@
     SUBDIR += mtr
     SUBDIR += mudix
     SUBDIR += mutella
-    SUBDIR += mydns
     SUBDIR += nagios
     SUBDIR += nagios-plugins
     SUBDIR += naim
@@ -387,14 +356,10 @@
     SUBDIR += nitpicker
     SUBDIR += nload
     SUBDIR += nocol
-    SUBDIR += noip
     SUBDIR += nrpe
     SUBDIR += nrpep
     SUBDIR += ns
     SUBDIR += nsc
-    SUBDIR += nsd
-    SUBDIR += nslint
-    SUBDIR += nsping
     SUBDIR += nss_ldap
     SUBDIR += nstreams
     SUBDIR += ntalk
@@ -405,7 +370,6 @@
     SUBDIR += nylon
     SUBDIR += obnc
     SUBDIR += ocaml-jabbr
-    SUBDIR += odsclient
     SUBDIR += ohphone
     SUBDIR += onenetd
     SUBDIR += openam
@@ -429,10 +393,7 @@
     SUBDIR += p0f
     SUBDIR += p5-Altoids
     SUBDIR += p5-Archie
-    SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-Cflow
-    SUBDIR += p5-DNS-Config
-    SUBDIR += p5-DNS-Zone
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-Filesys-SmbClient
@@ -450,9 +411,6 @@
     SUBDIR += p5-Net-BGP
     SUBDIR += p5-Net-CIDR
     SUBDIR += p5-Net-DLookup
-    SUBDIR += p5-Net-DNS
-    SUBDIR += p5-Net-DNS-SEC
-    SUBDIR += p5-Net-DNS-ZoneFile
     SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-Dict
     SUBDIR += p5-Net-Divert
@@ -508,7 +466,6 @@
     SUBDIR += p5-Socks
     SUBDIR += p5-Spread-Session
     SUBDIR += p5-Telnet-Cisco
-    SUBDIR += p5-Tie-DNS
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += p5-URI
     SUBDIR += p5-Validate-Net
@@ -522,7 +479,6 @@
     SUBDIR += pathchar
     SUBDIR += pchar
     SUBDIR += pcnfsd
-    SUBDIR += pdnsd
     SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_SMTP
     SUBDIR += pear-Net_Sieve
@@ -545,8 +501,6 @@
     SUBDIR += pork
     SUBDIR += portfwd
     SUBDIR += portmon
-    SUBDIR += posadis
-    SUBDIR += powerdns
     SUBDIR += pppload
     SUBDIR += pppoa
     SUBDIR += ppptraf
@@ -558,9 +512,7 @@
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += pxe
-    SUBDIR += py-adns
     SUBDIR += py-bittorrent
-    SUBDIR += py-dns
     SUBDIR += py-fngrab
     SUBDIR += py-google
     SUBDIR += py-ipy
@@ -644,7 +596,6 @@
     SUBDIR += simicq
     SUBDIR += sing
     SUBDIR += sipcalc
-    SUBDIR += sleuth
     SUBDIR += slirp
     SUBDIR += slurm
     SUBDIR += smbfs
@@ -659,7 +610,6 @@
     SUBDIR += spread
     SUBDIR += spread-j
     SUBDIR += ssldump
-    SUBDIR += staticcharge
     SUBDIR += sting
     SUBDIR += stone
     SUBDIR += subcalc
@@ -697,7 +647,6 @@
     SUBDIR += tinyfugue
     SUBDIR += tn3270
     SUBDIR += tn5250
-    SUBDIR += totd
     SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += trafd
@@ -727,7 +676,6 @@
     SUBDIR += vtun
     SUBDIR += wais
     SUBDIR += wakeonlan
-    SUBDIR += walker
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
     SUBDIR += wmlj
