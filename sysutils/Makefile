@@ -150,6 +150,7 @@
     SUBDIR += maint
     SUBDIR += manck
     SUBDIR += medusa
+    SUBDIR += memgrep
     SUBDIR += memtest
     SUBDIR += metalog
     SUBDIR += mgeupsd
