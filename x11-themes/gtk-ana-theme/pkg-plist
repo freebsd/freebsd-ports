@@ -71,8 +71,70 @@
 %%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/trough-h.svg
 %%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/trough-v.svg
 %%GTK20%%share/themes/%%THEME_NAME%%/index.theme
+%%GTK20%%share/themes/Ana/icons/iconrc
+%%GTK20%%share/themes/Ana/icons/stock_about.svg
+%%GTK20%%share/themes/Ana/icons/stock_add (kopia).svg
+%%GTK20%%share/themes/Ana/icons/stock_add.svg
+%%GTK20%%share/themes/Ana/icons/stock_apply.svg
+%%GTK20%%share/themes/Ana/icons/stock_cancel.svg
+%%GTK20%%share/themes/Ana/icons/stock_close.svg
+%%GTK20%%share/themes/Ana/icons/stock_convert.svg
+%%GTK20%%share/themes/Ana/icons/stock_copy.svg
+%%GTK20%%share/themes/Ana/icons/stock_cut.svg
+%%GTK20%%share/themes/Ana/icons/stock_delete.svg
+%%GTK20%%share/themes/Ana/icons/stock_dialog_error.svg
+%%GTK20%%share/themes/Ana/icons/stock_dialog_info.svg
+%%GTK20%%share/themes/Ana/icons/stock_dialog_question.svg
+%%GTK20%%share/themes/Ana/icons/stock_dialog_warning.svg
+%%GTK20%%share/themes/Ana/icons/stock_dnd (kopia).svg
+%%GTK20%%share/themes/Ana/icons/stock_dnd.svg
+%%GTK20%%share/themes/Ana/icons/stock_edit.svg
+%%GTK20%%share/themes/Ana/icons/stock_ep-history.svg
+%%GTK20%%share/themes/Ana/icons/stock_find-and-replace.svg
+%%GTK20%%share/themes/Ana/icons/stock_find.svg
+%%GTK20%%share/themes/Ana/icons/stock_floppy.svg
+%%GTK20%%share/themes/Ana/icons/stock_go-back.svg
+%%GTK20%%share/themes/Ana/icons/stock_go-down.svg
+%%GTK20%%share/themes/Ana/icons/stock_go-forward.svg
+%%GTK20%%share/themes/Ana/icons/stock_go-up.svg
+%%GTK20%%share/themes/Ana/icons/stock_goto-bottom.svg
+%%GTK20%%share/themes/Ana/icons/stock_goto-first.svg
+%%GTK20%%share/themes/Ana/icons/stock_goto-last.svg
+%%GTK20%%share/themes/Ana/icons/stock_goto-top.svg
+%%GTK20%%share/themes/Ana/icons/stock_help.svg
+%%GTK20%%share/themes/Ana/icons/stock_home (kopia).svg
+%%GTK20%%share/themes/Ana/icons/stock_home.svg
+%%GTK20%%share/themes/Ana/icons/stock_new-tab.svg
+%%GTK20%%share/themes/Ana/icons/stock_new-template.svg
+%%GTK20%%share/themes/Ana/icons/stock_new.svg
+%%GTK20%%share/themes/Ana/icons/stock_no.svg
+%%GTK20%%share/themes/Ana/icons/stock_ok.svg
+%%GTK20%%share/themes/Ana/icons/stock_open (kolejna kopia).svg
+%%GTK20%%share/themes/Ana/icons/stock_open.svg
+%%GTK20%%share/themes/Ana/icons/stock_paste.svg
+%%GTK20%%share/themes/Ana/icons/stock_preferences.svg
+%%GTK20%%share/themes/Ana/icons/stock_print-preview.svg
+%%GTK20%%share/themes/Ana/icons/stock_print.svg
+%%GTK20%%share/themes/Ana/icons/stock_quit.svg
+%%GTK20%%share/themes/Ana/icons/stock_redo.svg
+%%GTK20%%share/themes/Ana/icons/stock_refresh.svg
+%%GTK20%%share/themes/Ana/icons/stock_remove.svg
+%%GTK20%%share/themes/Ana/icons/stock_revert-to-saved.svg
+%%GTK20%%share/themes/Ana/icons/stock_save-as.svg
+%%GTK20%%share/themes/Ana/icons/stock_save.svg
+%%GTK20%%share/themes/Ana/icons/stock_select-color.svg
+%%GTK20%%share/themes/Ana/icons/stock_stop.svg
+%%GTK20%%share/themes/Ana/icons/stock_undo.svg
+%%GTK20%%share/themes/Ana/icons/stock_yes.svg
+%%GTK20%%share/themes/Ana/icons/stock_zoom-1.svg
+%%GTK20%%share/themes/Ana/icons/stock_zoom-fit.svg
+%%GTK20%%share/themes/Ana/icons/stock_zoom-in.svg
+%%GTK20%%share/themes/Ana/icons/stock_zoom-out.svg
+%%GTK20%%share/themes/Ana/icons/stock_zoom.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/index.theme
 %%GTK20%%@dirrm share/themes/%%THEME_NAME%%/gtk-2.0
 %%GTK20%%@dirrm share/themes/%%THEME_NAME%%/gtk
+%%GTK20%%@dirrm share/themes/%%THEME_NAME%%/icons
 %%GTK20%%@dirrm share/themes/%%THEME_NAME%%
 %%METACITY%%share/gnome/themes/Ana/metacity-1/metacity-theme-1.xml
 %%METACITY%%@dirrm share/gnome/themes/%%THEME_NAME%%/metacity-1
