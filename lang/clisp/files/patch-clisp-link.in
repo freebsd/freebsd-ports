@@ -1,0 +1,20 @@
+--- src/clisp-link.in.orig	Sun Jan  5 18:38:36 2003
++++ src/clisp-link.in	Sun Jan  5 18:39:24 2003
+@@ -282,7 +282,7 @@
+     verbose "$destinationdir"/${LISPRUN} -B "$installbasedir" -M "$lispinitdir"/lispinit.mem -norc -q -i $to_load -x "(saveinitmem \"$destinationdir/lispinit.mem\")"
+     # Generate new makevars
+     LIBS=`echo $LIBS | sed s/','/'\\,'/g`
+-    sed -e "s,^LIBS=.*\$,LIBS='${LIBS}'," -e "s,^FILES=.*\$,FILES='${FILES}'," < "$sourcedir"/makevars > "$destinationdir"/makevars
++    sed -e "s;^LIBS=.*\$;LIBS='${LIBS}';" -e "s;^FILES=.*\$;FILES='${FILES}';" < "$sourcedir"/makevars > "$destinationdir"/makevars
+     # Done.
+     trap '' 1 2 15
+     ;;
+@@ -421,7 +421,7 @@
+       fi
+       # Generate new makevars
+       LIBS=`echo $LIBS | sed s/','/'\\,'/g`
+-      sed -e "s,^LIBS=.*\$,LIBS='${LIBS}'," -e "s,^FILES=.*\$,FILES='${FILES}'," < "$sourcedir"/makevars > "$destinationdir"/makevars
++      sed -e "s;^LIBS=.*\$;LIBS='${LIBS}';" -e "s;^FILES=.*\$;FILES='${FILES}';" < "$sourcedir"/makevars > "$destinationdir"/makevars
+     fi
+     # Done.
+     trap '' 1 2 15
