@@ -11,6 +11,10 @@ CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/
 DISTNAME=	xcin-2.5.2-pre5
 
+PATCH_SITES=   	ftp://xcin.linux.org.tw/pub/xcin/xcin/patch/
+PATCHFILES=     xcin-2.5.2.pre5.diff3.gz
+PATCH_DIST_STRIP=       -p1
+
 MAINTAINER=	keith@freebsd.sinica.edu.tw
 
 LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
