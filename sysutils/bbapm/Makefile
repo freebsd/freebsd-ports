@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 do-install:
 	@${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g operator \
 		-m 2555 ${WRKSRC}/bbapm ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/share/bbtools
 .for a in README.bbapm bbapm.conf bbapm.nobb bbapm.style bbtoolsrc.in
 	@${INSTALL_DATA} ${WRKSRC}/data/${a} ${PREFIX}/share/bbtools
 .endfor
