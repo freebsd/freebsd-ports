@@ -34,11 +34,13 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientBase.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientEasySoap++.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientFrontier7.0b26.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientGLUE.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientHPSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientIDOOXWASP1.0.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientKafkaXSLTInteropService.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientMS.NETBeta2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientMS.NETRemoting.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientMSATLServer.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientMSSOAPToolkit2.0.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientPhalanx.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientSOAP.py.rb
