@@ -67,7 +67,7 @@
 +  set -- "$@" "$val1"
 +  i=$(($i+1))
 + done
-+ exec ${PREFIX}/intel/compiler70/ia32/bin/icpcbin "$@";
++ exec ${PREFIX}/intel/compiler70/ia32/bin/icpcbin -I${PREFIX}/intel/compiler70/ia32/include -I${PREFIX}/intel/compiler70/ia32/include/substitute_headers "$@";
  else
 - exec -a "<INSTALLDIR>/compiler70/ia32/bin/icpc" <INSTALLDIR>/compiler70/ia32/bin/icpcbin;
 + exec ${PREFIX}/intel/compiler70/ia32/bin/icpcbin;
