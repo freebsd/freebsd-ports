@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- pygnome/Makefile.in	2001/11/12 11:58:04	1.1
++++ pygnome/Makefile.in	2001/11/12 12:00:19
+@@ -134,7 +134,7 @@
+ SUBDIRS = generate gnome
+ 
+ INCLUDES = $(PYTHON_INCLUDES) $(GNOME_INCLUDEDIR) \
+-	$(LIBGLADE_CFLAGS)
++	$(LIBGLADE_CFLAGS) `$(GNOME_CONFIG) --cflags gtkhtml`
+ 
+ 
+ @WITH_APPLETS_TRUE@appletmodule = _appletmodule.la

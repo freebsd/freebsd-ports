@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- guile-gnome/bonobo/Makefile.in.orig	Fri Mar  9 19:07:48 2001
++++ guile-gnome/bonobo/Makefile.in	Mon Nov 12 14:05:21 2001
+@@ -98,10 +98,10 @@
+ VERSION = @VERSION@
+ ZVT_LIBS = @ZVT_LIBS@
+ 
+-INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR)
++INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR) `$(GNOME_CONFIG) --cflags bonobo`
+ 
+ 
+-BONOBO_LIBS = -lbonobo 
++BONOBO_LIBS = `$(GNOME_CONFIG) --libs bonobo`
+ 
+ lib_LTLIBRARIES = libguilebonobo.la
+ libguilebonobo_la_SOURCES = bonobo-glue.c 
