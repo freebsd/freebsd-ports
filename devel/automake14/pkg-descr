@@ -4,3 +4,5 @@ conform to the GNU standards for Makefile variables and targets.
 
 Automake assumes the project uses autoconf.  If you want automatic
 dependency tracking support, the use of GNU make is also required.
+
+WWW: http://sources.redhat.com/automake/
