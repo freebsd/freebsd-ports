@@ -1,0 +1,3 @@
+@cwd /usr/local
+@mode 755
+bin/www

@@ -1,0 +1,24 @@
+
+	   WELCOME TO THE WORLD-WIDE WEB LINE MODE BROWSER
+	   ===============================================
+
+(c) COPYRIGHT CERN 1994.
+Please first read the full copyright statement in the file COPYRIGH.
+
+The CERN Line Mode Browser is a character based World-Wide Web
+Browser. It is developed for use on dumb terminals and as a test tool
+for the CERN Common Code Library. It can be run in interactive mode,
+non- interactive mode and as a proxy client. Furthermore it gives a
+variety of possibilities for data format conversion, filtering etc. It
+is primarily intended as a test-tool for quick access to the Web or
+used in batch jobs.
+
+For more information on the Line Mode Browser, please look at the page
+
+	http://info.cern.ch/hypertext/WWW/LineMode/Status.html
+
+Have fun!
+
+--
+
+www-bug@info.cern.ch, November 1994
