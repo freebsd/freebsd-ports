@@ -24,8 +24,14 @@ USE_GMAKE=	yes
 
 DATAVERSION=	0.8.6
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 post-install:
 	@cd ${WRKDIR}/amph && ${FIND} . | \
 		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/amph
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
