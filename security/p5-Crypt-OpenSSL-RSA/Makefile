@@ -17,8 +17,6 @@ MAINTAINER=	nork@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/OpenSSL/Random.pm:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OpenSSL::RSA.3

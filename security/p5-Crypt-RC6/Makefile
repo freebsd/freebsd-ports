@@ -16,8 +16,6 @@ MAINTAINER=	nork@FreeBSD.org
 
 USE_REINPLACE=	YES
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::RC6.3

@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	nork@FreeBSD.org
 
-RESTRICTED=	"Crypto; export-controlled"
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::Serpent.3
