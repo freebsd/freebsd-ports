@@ -3,10 +3,10 @@
 # Date created:         23 Dec 1998
 # Whom:                 imp
 #
-# $Id: Makefile,v 1.2 1998/12/26 21:38:43 asami Exp $
+# $Id: Makefile,v 1.3 1998/12/28 17:40:02 imp Exp $
 #
 
-DISTNAME=	seahaven-1.04
+DISTNAME=	seahaven-1.41
 CATEGORIES=	games
 MASTER_SITES=	http://www.cinenet.net/users/spitzak/seahaven/
 EXTRACT_SUFX=	.tgz
