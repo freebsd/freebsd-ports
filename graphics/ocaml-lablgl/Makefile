@@ -50,7 +50,7 @@ post-install:
 	    ${EXAMPLESDIR}/LablGlut/nehe
 	${INSTALL_DATA} ${WRKSRC}/Togl/examples/* \
 	    ${EXAMPLESDIR}/Togl
-.if !defined(NO_PORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
