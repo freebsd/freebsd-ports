@@ -68,3 +68,5 @@ share/icons/hicolor/48x48/apps/ktritoc.png
 @dirrm share/apps/ktritoc/pics
 @dirrm share/apps/ktritoc
 @dirrm share/doc/HTML/en/ktritoc
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
