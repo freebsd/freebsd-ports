@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
 
 MAINTAINER=	dinoex@FreeBSD.org
-COMMENT=	A RADIUS-compliant remote authentication and accouting server
+COMMENT=	A RADIUS-compliant remote authentication and accounting server
 
 CONFLICTS?=	freeradius-0.* gnu-radius-1.* openradius-0.*
 MAKEFILE=	Makefile.BSD
