@@ -4431,6 +4431,7 @@ mozilla-fonts	ports/x11-fonts/mozilla-fonts
 mozilla-gtk2	ports/www/mozilla-gtk2
 mozilla-headers	ports/www/mozilla-headers
 mozilla-headers-devel	ports/www/mozilla-headers-devel
+mozilla-thunderbird	ports/mail/mozilla-thunderbird
 mp		ports/editors/mp
 mp-a4		ports/print/mp-a4
 mp-letter	ports/print/mp-letter
