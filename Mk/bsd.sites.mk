@@ -728,11 +728,11 @@ MASTER_SITE_SAVANNAH+= \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
-	http://us.dl.sourceforge.net/%SUBDIR%/ \
 	http://eu.dl.sourceforge.net/%SUBDIR%/ \
-	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	http://us.dl.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
+	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/ \
+	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE_JP+= \
 	http://osdn.dl.sourceforge.jp/%SUBDIR%/ \
