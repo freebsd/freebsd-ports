@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.27 1998/11/19 05:17:44 obrien Exp $
+# $Id: Makefile,v 1.28 1998/12/08 05:11:25 asami Exp $
 #
 
 DISTNAME=       netscape-navigator-4.07
@@ -12,6 +12,8 @@ MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.07/development/english
 DISTFILES=      navigator-v407-export.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     sada@FreeBSD.ORG
+
+BROKEN=		"'Netscape removed the 4.07 distfiles to make space'"
 
 WRKSRC=		${WRKDIR}/navigator-v407.x86-unknown-freebsd
 NO_BUILD=       Yes
