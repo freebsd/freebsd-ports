@@ -35,7 +35,7 @@ STRIP=
 IGNORE=		may not be automatically fetched due to licensing\
 		restrictions.  You MUST manually fetch the Linux RPM version after\
 		reading and agreeing to the license at:\
-		http://www.real.com/ \
+		http://scopes.real.com/real/player/unix/unix.html\
 		- once ${DISTFILES} has been downloaded, move it to\
 		${DISTDIR} and then restart this build.
 .endif
