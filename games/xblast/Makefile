@@ -16,11 +16,7 @@ MAINTAINER=	se@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/XBlast-2.6-sound
 USE_IMAKE=      yes
-NO_INSTALL_MANPAGES=	yes
-MANN=		xblast.n
-MANCOMPRESSED=	no
-
-post-install:
-	@${INSTALL_MAN} ${WRKSRC}/xblast.man ${MANNPREFIX}/man/mann/xblast.n
+MAN1=		xblast.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
