@@ -1,0 +1,28 @@
+# ex:ts=8
+# Ports collection makefile for:  slurpie
+# Version required:		  2.0b
+# Date created:			  Sun Feb 12, 2000
+# Whom:				  David O'Brien (obrien@NUXI.com)
+#
+# $FreeBSD$
+#
+
+DISTNAME=	slurpie
+PKGNAME=	slurpie-2.0b
+CATEGORIES=	security
+MASTER_SITES=	http://www.jps.net/coati/archives/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	obrien@FreeBSD.org
+
+NO_PACKAGE=	"links against crypt() [thus is crypto in package form]"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/slurp ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/slurpie ${PREFIX}/sbin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/slurpie
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/slurpie/README
+.endif
+
+.include <bsd.port.mk>
