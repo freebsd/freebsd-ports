@@ -9,7 +9,8 @@ PORTNAME=	ftrack
 PORTVERSION=	3.01
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://gonza.bizhost.ru/ports/
+# mastersite disappeared in August 2003
+MASTER_SITES=	# http://gonza.bizhost.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}s
 
 MAINTAINER=	ports@FreeBSD.org
