@@ -3,7 +3,7 @@
 # Date created:		Mon Oct  3 22:06:21 EDT 1994
 # Whom:			rww
 #
-# $Id: Makefile,v 1.4 1995/04/01 12:46:55 jkh Exp $
+# $Id: Makefile,v 1.5 1995/04/15 05:44:39 asami Exp $
 #
 
 DISTNAME=	itcl-1.5
@@ -11,8 +11,8 @@ HAS_CONFIGURE=	yes
 CATEGORIES+=	languages
 MASTER_SITES=	ftp://ftp.aud.alcatel.com/tcl/extensions/
 
-LIB_DEPENDS=	tcl\\.7\\.:${PORTSDIR}/lang/tcl \
-		tk\\.3\\.:${PORTSDIR}/x11/tk
+DEPENDS=	${PORTSDIR}/lang/tcl
+LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
 
 PATCH_STRIP=	-p1
 
