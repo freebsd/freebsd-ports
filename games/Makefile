@@ -107,6 +107,7 @@
     SUBDIR += krubik
     SUBDIR += ktamaga
     SUBDIR += ladder
+    SUBDIR += lbreakout
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linuxdoom

@@ -1,0 +1,11 @@
+--- lbreakout/Makefile.in	2000/10/20 06:56:24	1.1
++++ lbreakout/Makefile.in	2000/10/20 06:56:47
+@@ -80,7 +80,7 @@
+ 
+ bin_PROGRAMS = lbreakout
+ lbreakout_SOURCES = hiscore.cpp dynlist.c level.cpp breakout.cpp sndsrv.c sdl.c menumanager.cpp menuitem.cpp menu.cpp game.cpp main.cpp
+-lbreakout_LDADD = -lpthread -lm @thread_flag@
++lbreakout_LDADD = @thread_flag@
+ 
+ EXTRA_SUBDIRS = manual
+ 
