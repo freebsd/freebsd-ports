@@ -117,6 +117,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/fonts/afms
 @dirrm share/gnome/fonts
 @dirrm include/gnome-1.0/libgnomeprint
-@dirrm include/gnome-1.0
 @dirrm etc/gnome/fonts
 @dirrm etc/gnome
