@@ -32,7 +32,7 @@ OPTIONS=        PEAR_VALIDATE "PEAR::Validate support" off
 PHP_VERS=       ${PHP_VERSION:S/.//g}
 
 .if defined(PHP_VERS) && ${PHP_VERS} < 420
-BROKEN=         "You need PHP 4.2.0 or later to install PEAR::DB_DataObject"
+IGNORE=         "You need PHP 4.2.0 or later to install PEAR::DB_DataObject"
 .endif
 
 .if defined(WITH_PEAR_VALIDATE)
