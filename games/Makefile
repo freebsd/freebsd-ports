@@ -316,6 +316,7 @@
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
     SUBDIR += openglad
+    SUBDIR += openmortal
     SUBDIR += orbital_eunuchs_sniper
     SUBDIR += p5-Games-Bingo
     SUBDIR += p5-Games-Bingo-Bot
