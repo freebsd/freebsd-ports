@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Nov  9 16:18:10 2003
-+++ Makefile	Fri Nov 21 12:59:50 2003
+--- Makefile.orig	Tue Apr 20 00:16:34 2004
++++ Makefile	Thu Apr 22 16:31:02 2004
 @@ -1,10 +1,10 @@
 -prefix = /usr/local
 +prefix = $(PREFIX)
@@ -14,7 +14,7 @@
  #elispdir = $(prefix)/lib/$(EMACS)/site-lisp
  #elispdir = $(prefix)/lib/emacs
  
-@@ -12,8 +12,10 @@
+@@ -12,8 +12,8 @@
  elc = yc.elc
  PROGRAM = icanna$(exesuffix)
  OBJS = icanna.o
@@ -22,12 +22,10 @@
 -INSTALL = install
 +#CC = gcc
 +#INSTALL = install
-+
-+.SUFFIXES: .el .elc
  
- all: $(PROGRAM) $(elc)
+ .SUFFIXES: .el .elc
  
-@@ -29,11 +31,13 @@
+@@ -31,11 +31,13 @@
  install: install-bin install-el
  
  install-bin: $(PROGRAM)
