@@ -60,6 +60,7 @@ share/gnome/help/rhythmbox/C/quick-reference.xml
 share/gnome/help/rhythmbox/C/rhythmbox.xml
 share/gnome/help/rhythmbox/C/user-guide.xml
 share/gnome/idl/Rhythmbox.idl
+share/gnome/mime-info/rhythmbox.keys
 share/gnome/omf/rhythmbox/rhythmbox-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/rhythmbox/rhythmbox-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/rhythmbox.png
@@ -109,8 +110,10 @@ share/gnome/rhythmbox/node-views/rb-node-view-iradio-genres.xml
 share/gnome/rhythmbox/node-views/rb-node-view-iradio-stations.xml
 share/gnome/rhythmbox/node-views/rb-node-view-songs.xml
 share/locale/am/LC_MESSAGES/rhythmbox.mo
+share/locale/az/LC_MESSAGES/rhythmbox.mo
 share/locale/be/LC_MESSAGES/rhythmbox.mo
 share/locale/cs/LC_MESSAGES/rhythmbox.mo
+share/locale/cy/LC_MESSAGES/rhythmbox.mo
 share/locale/da/LC_MESSAGES/rhythmbox.mo
 share/locale/de/LC_MESSAGES/rhythmbox.mo
 share/locale/el/LC_MESSAGES/rhythmbox.mo
