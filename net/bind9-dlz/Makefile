@@ -22,8 +22,8 @@ COMMENT=	The Berkeley Internet Name Daemon, with DLZ extensions
 POSTGRESQL_PORT?=	databases/postgresql7
 MASTER_SITES_DLZ=	${MASTER_SITE_SOURCEFORGE}
 
-ISCVERSION=	9.2.1
-DLZVERSION=	0.4.1
+ISCVERSION=	9.2.2
+DLZVERSION=	0.4.2
 USE_SUBMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
@@ -126,7 +126,7 @@ pre-patch:
 .for FILE in dlz.patch
 	@ ${MV} ${WRKDIR}/${FILE} ${WRKDIR}/${FILE}.sed
 	${SED} -e "s=bind-${ISCVERSION}/==" \
-		${WRKDIR}/${FILE}.sed > ${WRKDIR}/${FILE}
+		${WRKDIR}/${FILE}.sed | tr -d '\r' > ${WRKDIR}/${FILE}
 .endfor
 
 post-patch:
@@ -140,6 +140,7 @@ post-patch:
 		-e 's#/etc/rndc.conf#${PREFIX}/etc/rndc.conf#g' \
 		${WRKSRC}/bin/${FILE}.sed > ${WRKSRC}/bin/${FILE}
 .endfor
+	${MV} -f ${WRKSRC}/bin/Makefile.in.orig ${WRKSRC}/bin/Makefile.in 
 
 pre-configure:
 	@${ECHO_CMD} "configure: ${CONFIGURE_ARGS}"
