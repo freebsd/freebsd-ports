@@ -49,5 +49,6 @@ post-patch:
 	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/libguile/load.c
+	@${REINPLACE_CMD} -e 's^sparc-\*-\*^sparc-*-*|sparc64-*-*^' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
