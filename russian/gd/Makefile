@@ -11,7 +11,7 @@ CATEGORIES=	russian graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/
 
-MAINTAINER=	gsm@infosite.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics library for fast PNG creation (uses fonts in KOI8-R encoding)
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
