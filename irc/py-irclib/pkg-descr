@@ -1,0 +1,7 @@
+This library is intended to encapsulate the IRC protocol at a quite 
+low level.  It provides an event-driven IRC client framework.  It has  
+a fairly thorough support for the basic IRC protocol and CTCP, but DCC 
+connection support is not yet implemented. It actually does CTCP
+parsing exactly as the CTCP specifications describe it.
+
+WWW: http://joel.rosdahl.net/hacks/
