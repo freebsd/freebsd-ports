@@ -1,0 +1,24 @@
+heartbeat is a basic high-availability subsystem.  It will run
+scripts at initialization, and when machines go up or down.  This
+version will also perform IP address takeover using gratuitous ARPs.
+
+It implements the following kinds of heartbeats:
+        - Bidirectional Serial Rings ("raw" serial ports)
+        - UDP/IP broadcast (ethernet, etc)
+        - Unicast heartbeats
+        - "ping" heartbeats (for routers, switches, etc.)
+           (to be used for breaking ties in 2-node systems)
+
+ldirectord is a stand-alone daemon to monitor services.
+
+The STONITH module (a.k.a. STOMITH) provides an extensible interface
+for remotely powering down a node in the cluster.
+
+PILS is an generalized and portable open source Plugin and Interface
+Loading System.  PILS manages both plugins (loadable objects), and
+the interfaces these plugins implement.  PILS is designed to support
+any number of plugins implementing any number of interfaces.
+
+WWW: http://linux-ha.org/
+
+Scott Kleihege <scott-ports@tummy.com>
