@@ -3,7 +3,7 @@
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.7 1998/11/18 11:40:41 asami Exp $
+# $Id: Makefile,v 1.8 1998/11/20 04:14:58 asami Exp $
 #
 
 DISTNAME=	R-0.62.2
@@ -25,6 +25,7 @@ MAINTAINER=	maurice@serc.rmit.edu.au
 BROKEN=		package
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 USE_PERL5=	yes
 
 CONFIGURE_ENV=		R_PAPERSIZE=${PAPERSIZE}
