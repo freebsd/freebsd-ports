@@ -7,9 +7,9 @@ GNUSTEP_SYSTEM_ROOT="${PREFIX}/GNUstep/System"
 
 case "$1" in
 start)
-	if [ -e ${GNUSTEP_SYSTEM_ROOT}/Makefiles/GNUstep.sh ]; then
+	if [ -e ${GNUSTEP_SYSTEM_ROOT}/Library/Makefiles/GNUstep.sh ]; then
 		ldconfig -m %%TARGLIB%%
-		. ${GNUSTEP_SYSTEM_ROOT}/Makefiles/GNUstep.sh
+		. ${GNUSTEP_SYSTEM_ROOT}/Library/Makefiles/GNUstep.sh
 		rm -f ${PIDFILE}
 		opentool gdomap -a ${IFFILE} -I ${PIDFILE}
 		opentool gdnc

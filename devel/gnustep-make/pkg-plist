@@ -1,115 +1,115 @@
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Makefiles
-%%GNUSTEP_DEVEL%%@exec ln -s Library/Makefiles %D/System
-System/Makefiles/GNUstep-reset.sh
-System/Makefiles/GNUstep.csh
-System/Makefiles/GNUstep.sh
-System/Makefiles/Instance/Documentation/autogsdoc.make
-System/Makefiles/Instance/Documentation/gsdoc.make
-System/Makefiles/Instance/Documentation/install_files.make
-System/Makefiles/Instance/Documentation/javadoc.make
-System/Makefiles/Instance/Documentation/latex.make
-System/Makefiles/Instance/Documentation/texi.make
-System/Makefiles/Instance/Shared/bundle.make
-System/Makefiles/Instance/Shared/headers.make
-System/Makefiles/Instance/Shared/java.make
-System/Makefiles/Instance/Shared/stamp-string.make
-System/Makefiles/Instance/Shared/strings.make
-System/Makefiles/Instance/application.make
-System/Makefiles/Instance/bundle.make
-System/Makefiles/Instance/clibrary.make
-System/Makefiles/Instance/ctool.make
-System/Makefiles/Instance/documentation.make
-System/Makefiles/Instance/framework.make
-System/Makefiles/Instance/gswapp.make
-System/Makefiles/Instance/gswbundle.make
-System/Makefiles/Instance/java-tool.make
-System/Makefiles/Instance/java.make
-System/Makefiles/Instance/library.make
-System/Makefiles/Instance/objc.make
-System/Makefiles/Instance/palette.make
-System/Makefiles/Instance/resource-set.make
-System/Makefiles/Instance/rules.make
-System/Makefiles/Instance/service.make
-System/Makefiles/Instance/subproject.make
-System/Makefiles/Instance/test-application.make
-System/Makefiles/Instance/test-library.make
-System/Makefiles/Instance/test-tool.make
-System/Makefiles/Instance/tool.make
-System/Makefiles/Master/aggregate.make
-System/Makefiles/Master/application.make
-System/Makefiles/Master/bundle.make
-System/Makefiles/Master/clibrary.make
-System/Makefiles/Master/ctool.make
-System/Makefiles/Master/documentation.make
-System/Makefiles/Master/framework.make
-System/Makefiles/Master/gswapp.make
-System/Makefiles/Master/gswbundle.make
-System/Makefiles/Master/java-tool.make
-System/Makefiles/Master/java.make
-System/Makefiles/Master/library.make
-System/Makefiles/Master/objc.make
-System/Makefiles/Master/palette.make
-System/Makefiles/Master/resource-set.make
-System/Makefiles/Master/rpm.make
-System/Makefiles/Master/rules.make
-System/Makefiles/Master/service.make
-System/Makefiles/Master/source-distribution.make
-System/Makefiles/Master/subproject.make
-System/Makefiles/Master/test-application.make
-System/Makefiles/Master/test-library.make
-System/Makefiles/Master/test-tool.make
-System/Makefiles/Master/tool.make
-System/Makefiles/aggregate.make
-System/Makefiles/application.make
-System/Makefiles/bundle.make
-System/Makefiles/clean_cpu.sh
-System/Makefiles/clean_os.sh
-System/Makefiles/clean_vendor.sh
-System/Makefiles/clibrary.make
-System/Makefiles/common.make
-System/Makefiles/config.guess
-System/Makefiles/config.sub
-System/Makefiles/cpu.sh
-System/Makefiles/ctool.make
-System/Makefiles/documentation.make
-System/Makefiles/executable.template
-System/Makefiles/fixpath.sh
-System/Makefiles/framework.make
-System/Makefiles/gswapp.make
-System/Makefiles/gswbundle.make
-System/Makefiles/install-sh
-System/Makefiles/%%NOFLAT2%%config.make
-System/Makefiles/%%NOFLAT2%%user_home
-System/Makefiles/%%NOFLAT2%%which_lib
-System/Makefiles/java-executable.template
-System/Makefiles/java-tool.make
-System/Makefiles/java.make
-System/Makefiles/jni.make
-System/Makefiles/ld_lib_path.csh
-System/Makefiles/ld_lib_path.sh
-System/Makefiles/library-combo.make
-System/Makefiles/library.make
-System/Makefiles/messages.make
-System/Makefiles/mkinstalldirs
-System/Makefiles/names.make
-System/Makefiles/objc.make
-System/Makefiles/os.sh
-System/Makefiles/palette.make
-System/Makefiles/relative_path.sh
-System/Makefiles/resource-set.make
-System/Makefiles/rules.make
-System/Makefiles/service.make
-System/Makefiles/spec-debug-alone-rules.template
-System/Makefiles/spec-debug-rules.template
-System/Makefiles/spec-rules.template
-System/Makefiles/subproject.make
-System/Makefiles/target.make
-System/Makefiles/test-application.make
-System/Makefiles/test-library.make
-System/Makefiles/test-tool.make
-System/Makefiles/tool.make
-System/Makefiles/transform_paths.sh
-System/Makefiles/vendor.sh
+@exec mkdir -p %D/System/Library/Makefiles
+@exec ln -s Library/Makefiles %D/System
+System/Library/Makefiles/GNUstep-reset.sh
+System/Library/Makefiles/GNUstep.csh
+System/Library/Makefiles/GNUstep.sh
+System/Library/Makefiles/Instance/Documentation/autogsdoc.make
+System/Library/Makefiles/Instance/Documentation/gsdoc.make
+System/Library/Makefiles/Instance/Documentation/install_files.make
+System/Library/Makefiles/Instance/Documentation/javadoc.make
+System/Library/Makefiles/Instance/Documentation/latex.make
+System/Library/Makefiles/Instance/Documentation/texi.make
+System/Library/Makefiles/Instance/Shared/bundle.make
+System/Library/Makefiles/Instance/Shared/headers.make
+System/Library/Makefiles/Instance/Shared/java.make
+System/Library/Makefiles/Instance/Shared/stamp-string.make
+System/Library/Makefiles/Instance/Shared/strings.make
+System/Library/Makefiles/Instance/application.make
+System/Library/Makefiles/Instance/bundle.make
+System/Library/Makefiles/Instance/clibrary.make
+System/Library/Makefiles/Instance/ctool.make
+System/Library/Makefiles/Instance/documentation.make
+System/Library/Makefiles/Instance/framework.make
+System/Library/Makefiles/Instance/gswapp.make
+System/Library/Makefiles/Instance/gswbundle.make
+System/Library/Makefiles/Instance/java-tool.make
+System/Library/Makefiles/Instance/java.make
+System/Library/Makefiles/Instance/library.make
+System/Library/Makefiles/Instance/objc.make
+System/Library/Makefiles/Instance/palette.make
+System/Library/Makefiles/Instance/resource-set.make
+System/Library/Makefiles/Instance/rules.make
+System/Library/Makefiles/Instance/service.make
+System/Library/Makefiles/Instance/subproject.make
+System/Library/Makefiles/Instance/test-application.make
+System/Library/Makefiles/Instance/test-library.make
+System/Library/Makefiles/Instance/test-tool.make
+System/Library/Makefiles/Instance/tool.make
+System/Library/Makefiles/Master/aggregate.make
+System/Library/Makefiles/Master/application.make
+System/Library/Makefiles/Master/bundle.make
+System/Library/Makefiles/Master/clibrary.make
+System/Library/Makefiles/Master/ctool.make
+System/Library/Makefiles/Master/documentation.make
+System/Library/Makefiles/Master/framework.make
+System/Library/Makefiles/Master/gswapp.make
+System/Library/Makefiles/Master/gswbundle.make
+System/Library/Makefiles/Master/java-tool.make
+System/Library/Makefiles/Master/java.make
+System/Library/Makefiles/Master/library.make
+System/Library/Makefiles/Master/objc.make
+System/Library/Makefiles/Master/palette.make
+System/Library/Makefiles/Master/resource-set.make
+System/Library/Makefiles/Master/rpm.make
+System/Library/Makefiles/Master/rules.make
+System/Library/Makefiles/Master/service.make
+System/Library/Makefiles/Master/source-distribution.make
+System/Library/Makefiles/Master/subproject.make
+System/Library/Makefiles/Master/test-application.make
+System/Library/Makefiles/Master/test-library.make
+System/Library/Makefiles/Master/test-tool.make
+System/Library/Makefiles/Master/tool.make
+System/Library/Makefiles/aggregate.make
+System/Library/Makefiles/application.make
+System/Library/Makefiles/bundle.make
+System/Library/Makefiles/clean_cpu.sh
+System/Library/Makefiles/clean_os.sh
+System/Library/Makefiles/clean_vendor.sh
+System/Library/Makefiles/clibrary.make
+System/Library/Makefiles/common.make
+System/Library/Makefiles/config.guess
+System/Library/Makefiles/config.sub
+System/Library/Makefiles/cpu.sh
+System/Library/Makefiles/ctool.make
+System/Library/Makefiles/documentation.make
+System/Library/Makefiles/executable.template
+System/Library/Makefiles/fixpath.sh
+System/Library/Makefiles/framework.make
+System/Library/Makefiles/gswapp.make
+System/Library/Makefiles/gswbundle.make
+System/Library/Makefiles/install-sh
+System/Library/Makefiles/config.make
+System/Library/Makefiles/user_home
+System/Library/Makefiles/which_lib
+System/Library/Makefiles/java-executable.template
+System/Library/Makefiles/java-tool.make
+System/Library/Makefiles/java.make
+System/Library/Makefiles/jni.make
+System/Library/Makefiles/ld_lib_path.csh
+System/Library/Makefiles/ld_lib_path.sh
+System/Library/Makefiles/library-combo.make
+System/Library/Makefiles/library.make
+System/Library/Makefiles/messages.make
+System/Library/Makefiles/mkinstalldirs
+System/Library/Makefiles/names.make
+System/Library/Makefiles/objc.make
+System/Library/Makefiles/os.sh
+System/Library/Makefiles/palette.make
+System/Library/Makefiles/relative_path.sh
+System/Library/Makefiles/resource-set.make
+System/Library/Makefiles/rules.make
+System/Library/Makefiles/service.make
+System/Library/Makefiles/spec-debug-alone-rules.template
+System/Library/Makefiles/spec-debug-rules.template
+System/Library/Makefiles/spec-rules.template
+System/Library/Makefiles/subproject.make
+System/Library/Makefiles/target.make
+System/Library/Makefiles/test-application.make
+System/Library/Makefiles/test-library.make
+System/Library/Makefiles/test-tool.make
+System/Library/Makefiles/tool.make
+System/Library/Makefiles/transform_paths.sh
+System/Library/Makefiles/vendor.sh
 System/Tools/debugapp
 System/Tools/openapp
 System/Tools/opentool
@@ -118,42 +118,37 @@ System/share/config.site
 @dirrm System/Tools/Resources
 @dirrm System/Tools/Java
 @dirrm System/Tools
-%%GNUSTEP_STABLE%%@dirrm System/Makefiles/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Makefiles/%%GNU_ARCH%%
-@dirrm System/Makefiles/Master
-@dirrm System/Makefiles/Instance/Shared
-@dirrm System/Makefiles/Instance/Documentation
-@dirrm System/Makefiles/Instance
-@dirrm System/Makefiles/Auxiliary
-@dirrm System/Makefiles/Additional
-%%GNUSTEP_STABLE%%@dirrm System/Makefiles
-%%GNUSTEP_DEVEL%%@unexec rm -f %D/System/Makefiles
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Makefiles
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Sounds
+@unexec rm -f %D/System/Makefiles
+@dirrm System/Library/Makefiles/%%GNU_ARCH%%
+@dirrm System/Library/Makefiles/Master
+@dirrm System/Library/Makefiles/Instance/Shared
+@dirrm System/Library/Makefiles/Instance/Documentation
+@dirrm System/Library/Makefiles/Instance
+@dirrm System/Library/Makefiles/Auxiliary
+@dirrm System/Library/Makefiles/Additional
+@dirrm System/Library/Makefiles
+@dirrm System/Library/Sounds
 @dirrm System/Library/Services
 @dirrm System/Library/PostScript
-@comment @dirrm System/Library/Makefiles
-@dirrm %%SYSTEMLIBRARY%%/Libraries/Resources
-@dirrm %%SYSTEMLIBRARY%%/Libraries/Java
-@dirrm %%SYSTEMLIBRARY%%/Libraries
-%%GNUSTEP_DEVEL%%@dirrm System/Library/KeyBindings
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Images
-@dirrm %%SYSTEMLIBRARY%%/Headers
+@dirrm System/Library/Libraries/Resources
+@dirrm System/Library/Libraries/Java
+@dirrm System/Library/Libraries
+@dirrm System/Library/KeyBindings
+@dirrm System/Library/Images
+@dirrm System/Library/Headers
 @dirrm System/Library/Frameworks
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Fonts
-@dirrm %%SYSTEMLIBRARY%%/Documentation/man
-@dirrm %%SYSTEMLIBRARY%%/Documentation/info
-@dirrm %%SYSTEMLIBRARY%%/Documentation/User
-@dirrm %%SYSTEMLIBRARY%%/Documentation/Developer
-@dirrm %%SYSTEMLIBRARY%%/Documentation
-%%GNUSTEP_DEVEL%%@dirrm System/Library/DocTemplates
+@dirrm System/Library/Fonts
+@dirrm System/Library/Documentation/man
+@dirrm System/Library/Documentation/info
+@dirrm System/Library/Documentation/User
+@dirrm System/Library/Documentation/Developer
+@dirrm System/Library/Documentation
+@dirrm System/Library/DocTemplates
 @dirrm System/Library/Colors
-%%GNUSTEP_DEVEL%%@dirrm System/Library/ColorPickers
+@dirrm System/Library/ColorPickers
 @dirrm System/Library/Bundles
-%%GNUSTEP_DEVEL%%@dirrm System/Library/ApplicationSupport
+@dirrm System/Library/ApplicationSupport
 @dirrm System/Library
-%%GNUSTEP_STABLE%%@dirrm System/Developer/Palettes
-%%GNUSTEP_STABLE%%@dirrm System/Developer
 @dirrm System/Applications
 @dirrm System
 @dirrm Network
@@ -162,27 +157,25 @@ System/share/config.site
 @exec mkdir -p %D/Local
 @exec mkdir -p %D/Network
 @exec mkdir -p %D/System/Applications
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/ApplicationSupport
+@exec mkdir -p %D/System/Library/ApplicationSupport
 @exec mkdir -p %D/System/Library/Bundles
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/ColorPickers
+@exec mkdir -p %D/System/Library/ColorPickers
 @exec mkdir -p %D/System/Library/Colors
-%%GNUSTEP_STABLE%%@exec mkdir -p %D/System/Developer/Palettes
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/DocTemplates
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/Developer
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/User
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/info
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Documentation/man
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Fonts
+@exec mkdir -p %D/System/Library/DocTemplates
+@exec mkdir -p %D/System/Library/Documentation/Developer
+@exec mkdir -p %D/System/Library/Documentation/User
+@exec mkdir -p %D/System/Library/Documentation/info
+@exec mkdir -p %D/System/Library/Documentation/man
+@exec mkdir -p %D/System/Library/Fonts
 @exec mkdir -p %D/System/Library/Frameworks
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Headers
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Images
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/KeyBindings
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Java
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Makefiles/%%GNU_ARCH%%
-@exec mkdir -p %D/%%SYSTEMLIBRARY%%/Libraries/Resources
-@comment @exec mkdir -p %D/System/Library/Makefiles
+@exec mkdir -p %D/System/Library/Headers
+@exec mkdir -p %D/System/Library/Images
+@exec mkdir -p %D/System/Library/KeyBindings
+@exec mkdir -p %D/System/Library/Libraries/Java
+@exec mkdir -p %D/System/Library/Makefiles/%%GNU_ARCH%%
+@exec mkdir -p %D/System/Library/Libraries/Resources
 @exec mkdir -p %D/System/Library/PostScript
-%%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Sounds
+@exec mkdir -p %D/System/Library/Sounds
 @exec mkdir -p %D/System/Library/Services
 @exec mkdir -p %D/System/Makefiles/Additional
 @exec mkdir -p %D/System/Makefiles/Auxiliary

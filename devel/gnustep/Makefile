@@ -7,9 +7,9 @@
 
 PORTNAME=	gnustep
 .if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 .else
-PORTVERSION=	1.6.0
+PORTVERSION=	1.8.0
 .endif
 CATEGORIES=	devel lang
 MASTER_SITES=	# empty
@@ -44,15 +44,9 @@ GNU_ARCH=	${MACHINE_ARCH}
 .endif
 
 COMBOPATH=	${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
-.if defined(WITH_GNUSTEP_DEVEL)
 SYSLIBDIR=	${SYSTEMDIR}/Library/Libraries
 COMBOLIBDIR=	${SYSLIBDIR}
 BACKBUNDLEDIR=	${BUNDLEDIR}/libgnustep-back.bundle
-.else
-SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
-COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
-BACKBUNDLEDIR=	${BUNDLEDIR}/libgnustep-back.bundle/${COMBOPATH}
-.endif
 
 do-install:	# empty
 
