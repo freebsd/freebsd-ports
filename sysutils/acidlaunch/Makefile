@@ -16,10 +16,15 @@ COMMENT=	An application launcher with simple XML-based configuration syntax
 
 HAS_CONFIGURE=	yes
 USE_GNOME=	gtk12 gdkpixbuf libxml2
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 MAN1=		${PORTNAME}.1
+
+post-extract:
+	@${REINPLACE_CMD} -e 's/enum GdkWMDecoration/GdkWMDecoration/' \
+		${WRKSRC}/src/launcherwindow.cc
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
