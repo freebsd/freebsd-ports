@@ -1,0 +1,29 @@
+bin/cssort
+bin/cstocs
+bin/dbfcstocs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz/.packlist
+%%SITE_PERL%%/Cz/Cstocs/enc/1250.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/1252.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/accent
+%%SITE_PERL%%/Cz/Cstocs/enc/alias
+%%SITE_PERL%%/Cz/Cstocs/enc/ascii.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/cork.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/il1.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/il2.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/kam.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/koi8.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/mac.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/macce.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/pc2.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/pc2a.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/tex.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/vga.enc
+%%SITE_PERL%%/Cz/Cstocs/enc/utf8.enc
+%%SITE_PERL%%/Cz/Cstocs/Getopt.pm
+%%SITE_PERL%%/Cz/Cstocs.pm
+%%SITE_PERL%%/Cz/Sort.pm
+%%SITE_PERL%%/Cz/Time.pm
+@dirrm %%SITE_PERL%%/Cz/Cstocs/enc
+@dirrm %%SITE_PERL%%/Cz/Cstocs
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cz 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Cz 2>/dev/null || true
