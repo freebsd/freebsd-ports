@@ -1,0 +1,16 @@
+--- Makefile.orig	Thu Jan 15 10:34:31 2004
++++ Makefile	Thu Jan 15 10:34:31 2004
+@@ -23,8 +23,12 @@
+ endif
+ 
+ KERNOBJ:=compressed_loop.o
++ALL_TARGETS = create_compressed_fs extract_compressed_fs
++ifndef APPSONLY
++ALL_TARGETS += cloop.o
++endif
+ 
+-all: cloop.o create_compressed_fs extract_compressed_fs
++all: $(ALL_TARGETS)
+ 
+ cloop.o: compressed_loop.o
+ 	$(LD) -r -o $@ $^
