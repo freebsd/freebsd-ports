@@ -4,20 +4,27 @@
 #
 # $FreeBSD$
 #
+POSTGRESQL_PORT?=	databases/postgresql7
 
-PORTNAME=	postgresql-jdbc
+PORTNAME=	postgresql
+PORTVERSION!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V PORTVERSION
+PORTREVISION?=	0
 CATEGORIES=	databases java
-PORTREVISION=	0
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V MASTER_SITE_SUBDIR
+PKGNAMESUFFIX=	-jdbc
+DISTFILES!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V DISTFILES
+DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	The Java JDBC implementation for PostgreSQL
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
+MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
 
+USE_GMAKE=	YES
+GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-java
 
 USE_JAVA=	1.1+
@@ -31,12 +38,12 @@ post-install:
 	  ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/jars/postgresql.jar \
 			  ${PREFIX}/share/java/classes/postgresql.jar
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} -m 0555 ${PREFIX}/share/examples/postgresql ;\
+	@ ${MKDIR} -m 0555 ${EXAMPLESDIR} ;\
 	  cd ${WRKSRC}/src/interfaces/jdbc/example ;\
-	  pax -rw . ${PREFIX}/share/examples/postgresql
+	  pax -rw . ${EXAMPLESDIR}
 .for i in README
 	@ ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/$i \
-			  ${PREFIX}/share/examples/postgresql
+			  ${EXAMPLESDIR}
 .endfor
 .endif
 	@ ${ECHO} ==================================== ;\

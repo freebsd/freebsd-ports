@@ -1,23 +1,23 @@
-%%PORTDOCS%%share/examples/postgresql/ImageViewer.java
-%%PORTDOCS%%share/examples/postgresql/README
-%%PORTDOCS%%share/examples/postgresql/Unicode.java
-%%PORTDOCS%%share/examples/postgresql/basic.java
-%%PORTDOCS%%share/examples/postgresql/blobtest.java
-%%PORTDOCS%%share/examples/postgresql/corba/StockClient.java
-%%PORTDOCS%%share/examples/postgresql/corba/StockDB.java
-%%PORTDOCS%%share/examples/postgresql/corba/StockDispenserImpl.java
-%%PORTDOCS%%share/examples/postgresql/corba/StockItemImpl.java
-%%PORTDOCS%%share/examples/postgresql/corba/StockServer.java
-%%PORTDOCS%%share/examples/postgresql/corba/readme
-%%PORTDOCS%%share/examples/postgresql/corba/stock.idl
-%%PORTDOCS%%share/examples/postgresql/corba/stock.sql
-%%PORTDOCS%%share/examples/postgresql/datestyle.java
-%%PORTDOCS%%share/examples/postgresql/metadata.java
-%%PORTDOCS%%share/examples/postgresql/psql.java
-%%PORTDOCS%%share/examples/postgresql/threadsafe.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/Unicode.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/basic.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/blobtest.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/StockClient.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/StockDB.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/StockDispenserImpl.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/StockItemImpl.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/StockServer.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/readme
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/stock.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/corba/stock.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/datestyle.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/metadata.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/psql.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/threadsafe.java
 share/java/classes/postgresql.jar
-%%PORTDOCS%%@dirrm share/examples/postgresql/corba
-@unexec rmdir %D/share/examples/postgresql 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/corba
+@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
 share/postgresql/java/postgresql-examples.jar
 share/postgresql/java/postgresql.jar
 @dirrm share/postgresql/java
