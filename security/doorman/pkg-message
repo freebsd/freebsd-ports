@@ -1,0 +1,12 @@
+
+******************************************************************************
+
+To configure Doorman, please edit the files guestlist and doormand.cf found in
+%%PREFIX%%/etc/doormand.  Documentation can be found using:
+	
+	$ man guestlist
+	$ man doormand.cf
+
+or by visiting the Doorman website at http://doorman.sourceforge.net.
+
+******************************************************************************

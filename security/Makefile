@@ -66,6 +66,7 @@
     SUBDIR += digest
     SUBDIR += dirmngr
     SUBDIR += donkey
+    SUBDIR += doorman
     SUBDIR += doscan
     SUBDIR += dropbear
     SUBDIR += drweb
