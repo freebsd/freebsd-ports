@@ -7,14 +7,15 @@
 #
 
 PORTNAME=	dict
-PORTVERSION=	1.5.5
+PORTVERSION=	1.7.1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.cs.unc.edu/pub/users/faith/dict/ \
-		ftp://ftp.dict.org/pub/dict/
+MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
 MAINTAINER=	dd@FreeBSD.org
 
+USE_PERL5=	yes
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-local-zlib --with-cflags="${CFLAGS}" \
 		--with-etcdir=${PREFIX}/etc
