@@ -3,16 +3,18 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.18 1997/10/04 14:53:02 andreas Exp $
+# $Id: Makefile,v 1.19 1997/10/13 20:31:28 andreas Exp $
 #
 
-DISTNAME=	crossfire-0.93.0
+DISTNAME=	crossfire-${MAJ}.${MIN}.${PL}
 CATEGORIES=	games
-MASTER_SITES=	ftp://ra.pyramid.com/pub/crossfire/ \
+MASTER_SITES=	ftp://ftp.real-time.com/pub/games/crossfire/ \
 		ftp://ftp.ifi.uio.no/pub/crossfire/ \
-		ftp://ftp.real-time.com/pub/games/crossfire/ \
-		ftp://ftp.sunet.se:/pub/unix/games/crossfire/ \
-		ftp://ftp.cs.titech.ac.jp:/pub/games/crossfire/
+		ftp://ftp.pyramid.com/pub/crossfire/ \
+		ftp://yoyo.cc.monash.edu.au/pub/crossfire/ \
+		ftp://ftp.cs.city.ac.uk/pub/games/crossfire/ \
+		ftp://ftp.sunet.se/pub/unix/games/crossfire/ \
+		ftp://ftp.cs.titech.ac.jp/pub/games/crossfire/
 DISTFILES=	${CF_SOURCES} ${CF_DOC} ${CF_MAPS} ${CF_SOUNDS} \
 		${CF_ARCH} ${CF_CLSERV}
 
@@ -32,38 +34,47 @@ PREFIX=		${LOCALBASE}
 # You need TeX to do this ! Please read the README's !
 WANT_CF_ARCH=	NO
 
-CF_SOURCES=	crossfire-0.93.0.tar.gz
-CF_MAPS=	crossfire-0.93.0.maps.tar.gz
-CF_DOC=		crossfire-0.93.0.doc.tar.gz	# crossfire doc ready for use
-CF_SOUNDS=	crossfire-0.92.7.sounds.tar.gz	# no newer sounds available
+MAJ=		0
+MIN=		94
+PL=		1
+CF_SOURCES=	crossfire-${MAJ}.${MIN}.${PL}.tar.gz
+CF_MAPS=	crossfire-${MAJ}.${MIN}.${PL}.maps.tar.gz
+# crossfire doc ready for use
+CF_DOC=		crossfire-${MAJ}.${MIN}.${PL}.doc.tar.gz
+# no newer sounds available
+CF_SOUNDS=	crossfire-${MAJ}.92.7.sounds.tar.gz
 .if ${WANT_CF_ARCH} == YES || ${WANT_CF_ARCH} == yes
-CF_ARCH=	crossfire-0.93.0.arch.tar.gz	# only for rebuild of doc
+# only for rebuild of doc
+CF_ARCH=	crossfire-${MAJ}.${MIN}.${PL}.arch.tar.gz
 .endif
-#CF_CLSERV=	eutl.tar.gz			# only for client/server
-CFDIR=		${PREFIX}/crossfire	# crossfire base directory
+#CF_CLSERV=	eutl.tar.gz		# only for client/server
+CFDIR=		${PREFIX}/lib/crossfire	# crossfire base directory
 
 # If you want to re-make playbook and spoiler you need the ARCH
 # files and a TeX version with a ,great' amount of max_mem
 # (I had to rebuild teTeX, that already is in fact ,BigTeX')
 .if ${WANT_CF_ARCH} == YES || ${WANT_CF_ARCH} == yes
 post-configure:
-	(cd ${WRKSRC}/lib; tar -xzf ${DISTDIR}/${CF_ARCH})
+	(cd ${CFDIR}; tar -xzf ${DISTDIR}/${CF_ARCH})
 .endif
 
 post-install:
 	@(cd ${CFDIR}/lib; tar -xzf ${DISTDIR}/${CF_MAPS})
 	@(cd ${CFDIR}; tar -xzf ${DISTDIR}/${CF_SOUNDS})
-	@${MKDIR} ${CFDIR}/doc
-	@${CP} -r ${WRKDIR}/crossfire-0.93.0-doc/* ${CFDIR}/doc
-	@touch ${PREFIX}/crossfire/lib/bookarch
-	@chmod 664 ${PREFIX}/crossfire/lib/bookarch
-	@touch ${PREFIX}/crossfire/lib/forbid
-	@chmod 664 ${PREFIX}/crossfire/lib/forbid
-	@touch ${PREFIX}/crossfire/lib/players/.keep_me
-	@touch ${PREFIX}/crossfire/lib/unique-items/.keep_me
+	@${MKDIR} ${PREFIX}/share/doc/crossfire
+	@${CP} -r ${WRKDIR}/crossfire-${MAJ}.${MIN}.${PL}-doc/* \
+		${PREFIX}/share/doc/crossfire
+	@touch ${CFDIR}/lib/bookarch
+	@chmod 664 ${CFDIR}/lib/bookarch
+	@touch ${CFDIR}/lib/forbid
+	@chmod 664 ${CFDIR}/lib/forbid
+	@touch ${CFDIR}/lib/players/.keep_me
+	@touch ${CFDIR}/lib/unique-items/.keep_me
 	@chown -R games.games ${CFDIR}
-	@chmod 0664 ${PREFIX}/crossfire/lib/highscore
+	@chmod 0664 ${CFDIR}/lib/highscore
 	@chown games.games ${PREFIX}/bin/crossfire
 	@chmod 6555 ${PREFIX}/bin/crossfire
+	${ECHO} "Note: to start crossfire in clientmode"
+	${ECHO} "	crossfire -xpm"
 
 .include <bsd.port.mk>
