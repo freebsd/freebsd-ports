@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.0.5
+PORTVERSION=	2.0.6
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -22,6 +22,7 @@ BUILD_DEPENDS+=	libtool:${PORTSDIR}/devel/libtool
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	freetype.8:${PORTSDIR}/print/freetype2
 
+USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	TOP="${FREETYPE_WRKSRC}"
