@@ -1,11 +1,22 @@
---- src/adduserdlg.cpp	Fri Oct 30 14:29:03 1998
-+++ src/adduserdlg.cpp	Fri Oct 30 19:23:23 1998
-@@ -13,7 +13,7 @@
-    edtUin->setGeometry(100, 15, 120, 20);
-    edtUin->setValidator(new QIntValidator(0, 2147483647, edtUin));
-    chkAlert = new QCheckBox("Alert User", this);
--   chkAlert->setStyle(WindowsStyle);
-+   chkAlert->setStyle(MotifStyle);
-    chkAlert->setGeometry(10, 50, 80, 20);
-    chkAlert->setEnabled(false);  //for now
-    btnOk = new QPushButton("Ok", this);
+--- acconfig.h.old	Wed Mar 10 10:05:47 1999
++++ acconfig.h	Wed Mar 10 10:06:26 1999
+@@ -14,7 +14,7 @@
+ 
+ /* Change this to MotifStyle if you want the old-school Motif
+    widget look. */
+-#define STYLE WindowsStyle
++#define STYLE MotifStyle
+ 
+ /* The name of the package we're compiling */
+ #undef PACKAGE
+--- config.h.in.old	Wed Mar 10 10:05:53 1999
++++ config.h.in	Wed Mar 10 10:06:17 1999
+@@ -15,7 +15,7 @@
+ 
+ /* Change this to MotifStyle if you want the old-school Motif
+    widget look. */
+-#define STYLE WindowsStyle
++#define STYLE MotifStyle
+ 
+ /* The name of the package we're compiling */
+ #undef PACKAGE
