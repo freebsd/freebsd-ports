@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	logilab-common
-PORTVERSION=	0.5.0
+PORTVERSION=	0.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,8 @@ COMMENT=	Common low-level libraries shared among logilab projects
 
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=yes
+
+post-extract:
+	${TOUCH} ${WRKSRC}/test/__init__.py
 
 .include <bsd.port.mk>
