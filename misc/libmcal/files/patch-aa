@@ -1,0 +1,15 @@
+--- mstore/Makefile.orig	Sat Feb  5 06:48:22 2000
++++ mstore/Makefile	Mon Oct 15 12:05:54 2001
+@@ -1,9 +1,8 @@
+ # $Id: Makefile.FreeBSD,v 1.1 2000/02/05 05:48:22 mayo Exp $
+ 
+-CC=gcc
+-FLEX=flex
+-INCLUDE=-I..
+-CFLAGS=-O0 -Wall -g $(INCLUDE)
++FLEX=/usr/bin/flex
++INCLUDE=-I.. -I/usr/include/rpcsvc/
++CFLAGS+=-Wall $(INCLUDE)
+ ALLOBJS=mstore.o
+ TARGET=mstore_driver.o
+ 

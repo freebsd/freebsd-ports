@@ -1,0 +1,80 @@
+# New ports collection makefile for:	libmcal
+# Date created:		Sat Oct 13 08:45:04 GMT 2001
+# Whom:			thierry@thomas.as
+#
+# $FreeBSD$
+#
+
+PORTNAME=	libmcal
+PORTVERSION=	0.6
+CATEGORIES=	misc
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mcaldrivers-0.8.tar.gz
+
+MAINTAINER=	thierry@thomas.as
+
+LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
+
+HAS_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+CONFIGURE_ARGS=	--with-mstore --with-icap \
+		--prefix=${PREFIX} --exec-prefix=${PREFIX}
+INSTALLS_SHLIB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRCDRV=	${WRKDIR}/mcal-drivers
+
+DOCS=		CHANGELOG FAQ-MCAL FEATURE-IMPLEMENTATION FUNCTION-REF.html \
+		HOW-TO-MCAL LICENSE README mstore/README.mstore
+
+post-extract:
+	${CP} -pR ${WRKSRCDRV}/mstore ${WRKSRC}
+	${CP} -pR ${WRKSRCDRV}/icap ${WRKSRC}
+	${MV} ${WRKSRC}/mstore/Makefile ${WRKSRC}/mstore/Makefile.dist
+	${MV} ${WRKSRC}/mstore/Makefile.FreeBSD ${WRKSRC}/mstore/Makefile
+	${PERL} -pi -e "s:/etc/mpasswd:${PREFIX}/etc/mpasswd:" ${WRKSRC}/mstore/mstore.c
+	${MV} ${WRKSRC}/icap/Makefile ${WRKSRC}/icap/Makefile.dist
+	${MV} ${WRKSRC}/icap/Makefile.FreeBSD ${WRKSRC}/icap/Makefile
+	${MV} ${WRKSRC}/configure ${WRKSRC}/configure.dist
+	${MV} ${WRKSRC}/configure.FreeBSD ${WRKSRC}/configure
+	${CHMOD} u+x ${WRKSRC}/configure
+	${MV} ${WRKSRC}/mstore/README ${WRKSRC}/mstore/README.mstore
+
+pre-configure:
+	@${ECHO_MSG} "===>  Building the driver mstore"
+	cd ${WRKSRC}/mstore ; \
+		${MAKE}
+	@${ECHO_MSG} "===>  Building the driver icap"
+	cd ${WRKSRC}/icap ; \
+		${MAKE}
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${PERL} -pi -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:" ${WRKSRC}/FAQ-MCAL
+	${PERL} -pi -e "s:/etc/mpasswd:${LOCALBASE}/etc/mpasswd:" ${WRKSRC}/mstore/README.mstore
+	${MKDIR} ${DOCSDIR}
+.for FILE in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+.endfor
+	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
+.endif
+	@${ECHO} "*****************************************************************************"
+	@${ECHO} " libmcap has been installed. In order to end its configuration,"
+	@${ECHO} " please enter the following commands:"
+	@${ECHO} ""
+	@${ECHO} "	mkdir /var/calendar"
+	@${ECHO} "	chmod 1777 /var/calendar"
+	@${ECHO} ""
+	@${ECHO} " To work with the mstore driver, using the Apache's htpasswd utility,"
+	@${ECHO} " you may create the mpasswd file with the command below:"
+	@${ECHO} ""
+	@${ECHO} "	htpasswd -c ${LOCALBASE}/etc/mpasswd username"
+	@${ECHO} ""
+	@${ECHO} " To add or update this file you would execute as follows:"
+	@${ECHO} ""
+	@${ECHO} "	htpasswd ${LOCALBASE}/etc/mpasswd username"
+	@${ECHO} "*****************************************************************************"
+
+.include <bsd.port.mk>

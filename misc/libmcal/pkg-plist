@@ -1,0 +1,19 @@
+include/mcal/bool.h
+include/mcal/cal_misc.h
+include/mcal/datetime.h
+include/mcal/drivers.h
+include/mcal/icalroutines.h
+include/mcal/mcal.h
+lib/libmcal.a
+lib/libmcal.so
+lib/libmcal.so.0
+@dirrm include/mcal
+%%PORTDOCS%%share/doc/libmcal/CHANGELOG
+%%PORTDOCS%%share/doc/libmcal/FAQ-MCAL
+%%PORTDOCS%%share/doc/libmcal/FEATURE-IMPLEMENTATION
+%%PORTDOCS%%share/doc/libmcal/FUNCTION-REF.html
+%%PORTDOCS%%share/doc/libmcal/HOW-TO-MCAL
+%%PORTDOCS%%share/doc/libmcal/LICENSE
+%%PORTDOCS%%share/doc/libmcal/README
+%%PORTDOCS%%share/doc/libmcal/README.mstore
+%%PORTDOCS%%@dirrm share/doc/libmcal
