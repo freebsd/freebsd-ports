@@ -14,4 +14,5 @@ etc/nut/hosts.conf.sample
 etc/nut/multimon.conf.sample
 etc/nut/upsd.conf.sample
 etc/nut/upsmon.conf.sample
+etc/nut/upsset.passwd.sample
 etc/rc.d/upsd.sh.sample

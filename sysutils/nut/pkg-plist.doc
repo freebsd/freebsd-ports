@@ -1,6 +1,8 @@
+share/doc/nut/Changes.trust
 share/doc/nut/FAQ
 share/doc/nut/access.txt
 share/doc/nut/commands.txt
+share/doc/nut/data-room.txt
 share/doc/nut/generic-ups.txt
 share/doc/nut/new-modules.txt
 share/doc/nut/pager.txt
