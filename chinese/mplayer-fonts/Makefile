@@ -15,6 +15,8 @@ DISTFILES=	big5-kai.tar.bz big5-ming.tar.bz \
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
+RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
