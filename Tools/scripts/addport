@@ -39,7 +39,7 @@ if( !defined $ENV{"CVS_RSH"} ) {
 	$ENV{CVS_RSH} = "ssh";
 }
 my $make = "make";
-my $portlint = "portlint -N -a -c";
+my $portlint = "portlint -N -a -c -t";
 my $perl = "perl";
 my $cp = "cp";
 my $mv = "mv";
