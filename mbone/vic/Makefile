@@ -3,7 +3,7 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.18 1998/09/25 10:05:11 asami Exp $
+# $Id: Makefile,v 1.19 1998/10/13 03:05:40 jseger Exp $
 #
 
 DISTNAME=	vic-2.8
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
 DISTFILES=	vicsrc-2.8.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.ORG
-
-BROKEN_ELF=	yes
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 

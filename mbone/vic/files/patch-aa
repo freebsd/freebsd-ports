@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Jun 20 23:36:47 1996
-+++ configure.in	Tue Sep  9 11:20:32 1997
+--- configure.in.orig	Fri Jun 21 01:36:47 1996
++++ configure.in	Mon Oct 12 23:20:51 1998
 @@ -34,7 +34,7 @@
  
  V_LIB_GRABBER=""
@@ -9,6 +9,15 @@
  V_LIB_XIL=""
  V_OBJ_XIL=""
  
+@@ -69,7 +69,7 @@
+ if test -r /usr/include/machine/ioctl_meteor.h ; then
+ 	V_OBJ_GRABBER="$V_OBJ_GRABBER grabber-meteor.o"
+ fi
+-if test -r /usr/local/lib/libspigot.a ; then
++if test -r /usr/local/lib/libspigot.a -a ${PORTOBJFORMAT} != elf; then
+ 	V_OBJ_GRABBER="$V_OBJ_GRABBER grabber-spigot.o"
+ 	V_LIB_GRABBER="$V_LIB_GRABBER -lspigot"
+ 	V_INCLUDE_GRABBER="$V_INCLUDE_GRABBER -I/usr/local/include"
 @@ -87,9 +87,6 @@
  	V_OBJ_GRABBER="$V_OBJ_GRABBER grabber-qcam.o"
  	V_DEFINE="$V_DEFINE -DQCAMDEV"
@@ -19,16 +28,16 @@
  vpix_dir=/usr/src/local/vfc-1.0
  vpix_lib=$vpix_dir/vfc_lib
  if test -d /import/VideoPix ; then
-@@ -228,6 +228,9 @@
+@@ -227,6 +224,9 @@
+ *-*-netbsd*)
  	V_TARCMD="tar -h -c -f"
  	V_LIB="$V_LIB -L/usr/local/lib"
- 	;;
++	;;
 +*-*-freebsd*)
 +	V_STATIC=""
-+	;;
+ 	;;
  *-*-hpux*)
  	V_CCOPT="-O"
- 	;;
 --- configure.in.tk.orig	Thu May 16 01:06:05 1996
 +++ configure.in.tk	Tue Sep  9 11:01:36 1997
 @@ -12,8 +12,8 @@
