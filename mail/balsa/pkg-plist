@@ -1,0 +1,10 @@
+bin/balsa
+share/gnome/pixmaps/balsa/attachment.png
+share/gnome/pixmaps/balsa/balsa_logo.png
+share/gnome/pixmaps/balsa/balsa_icon.png
+share/locale/de/LC_MESSAGES/balsa.mo
+share/locale/fi/LC_MESSAGES/balsa.mo
+share/locale/fr/LC_MESSAGES/balsa.mo
+share/locale/ga/LC_MESSAGES/balsa.mo
+share/locale/ko/LC_MESSAGES/balsa.mo
+@dirrm share/gnome/pixmaps/balsa

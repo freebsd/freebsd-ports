@@ -1,0 +1,60 @@
+--- configure.orig	Sat Oct 17 09:06:56 1998
++++ configure	Sun Dec  6 23:12:45 1998
+@@ -939,12 +939,12 @@
+ 
+ 
+ 	if test "$no_gnome_config" = "yes"; then
+-          echo $ac_n "checking for gnomeConf.sh file in $gnome_prefix""... $ac_c" 1>&6
+-echo "configure:944: checking for gnomeConf.sh file in $gnome_prefix" >&5
+-	  if test -f $gnome_prefix/gnomeConf.sh; then
++          echo $ac_n "checking for gnomeConf.sh file in $prefix/share/gnome""... $ac_c" 1>&6
++echo "configure:944: checking for gnomeConf.sh file in $prefix/share/gnome" >&5
++	  if test -f $prefix/share/gnome/gnomeConf.sh; then
+ 	    echo "$ac_t""found" 1>&6
+-	    echo "loading gnome configuration from $gnome_prefix/gnomeConf.sh"
+-	    . $gnome_prefix/gnomeConf.sh
++	    echo "loading gnome configuration from $prefix/share/gnome/gnomeConf.sh"
++	    . $prefix/share/gnome/gnomeConf.sh
+ 	    
+ 	  else
+ 	    echo "$ac_t""not found" 1>&6
+@@ -2307,14 +2307,14 @@
+ LDFLAGS="$LDFLAGS `echo $GTK_LIBS | sed 's/\(.*\)\(-lgtk.*\)/\1/'`"
+ LIBS="$LIBS $GTK_LIBS"
+ 
+-echo $ac_n "checking for PLGetProplistWithPath in -lPropList""... $ac_c" 1>&6
+-echo "configure:2312: checking for PLGetProplistWithPath in -lPropList" >&5
+-ac_lib_var=`echo PropList'_'PLGetProplistWithPath | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for PLGetProplistWithPath in -lPropListgnome""... $ac_c" 1>&6
++echo "configure:2312: checking for PLGetProplistWithPath in -lPropListgnome" >&5
++ac_lib_var=`echo PropListgnome'_'PLGetProplistWithPath | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lPropList  $LIBS"
++LIBS="-lPropListgnome  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2320 "configure"
+ #include "confdefs.h"
+@@ -2342,17 +2342,17 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo PropList | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    ac_tr_lib=HAVE_LIB`echo PropListgnome | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+   cat >> confdefs.h <<EOF
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lPropList $LIBS"
++  LIBS="-lPropListgnome $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+-{ echo "configure: error: *** libPropList not found.  Please check http://www.balsa.net for information on the required files." 1>&2; exit 1; }
++{ echo "configure: error: *** libPropListgnome not found.  Please check http://www.balsa.net for information on the required files." 1>&2; exit 1; }
+ fi
+ 
+ 
