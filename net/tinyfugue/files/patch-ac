@@ -1,6 +1,6 @@
---- tfconfig.old	Fri Mar 22 19:03:14 1996
-+++ unix/tfconfig	Fri Mar 22 19:02:34 1996
-@@ -225,17 +225,17 @@
+--- unix/tfconfig.orig	Fri Apr  4 11:51:58 1997
++++ unix/tfconfig	Mon Jun 16 18:00:45 1997
+@@ -211,17 +211,17 @@
  echo
  
  echo 'To change these locations type "n" now and edit the unix/Config file.'
