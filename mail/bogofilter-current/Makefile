@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	0.92.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -105,6 +105,7 @@ post-install::
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/*.xml ${DOCSDIR}/xml
 	${INSTALL_DATA} ${WRKSRC}/doc/programmer/README.freebsd ${DOCSDIR}/programmer
+	${INSTALL_DATA} ${FILESDIR}/ChangeLog.port ${DOCSDIR}
 .endif
 .if !defined(WITHOUT_BASH)
 .for i in randomtrain scramble trainbogo.sh
