@@ -3,7 +3,7 @@
 # Date created:         20 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1996/11/18 13:58:43 asami Exp $
+# $Id: Makefile,v 1.7 1997/01/03 09:36:40 obrien Exp $
 #
 
 DISTNAME=	golddig2
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
+USE_XLIB=	yes
 MAN6=		golddig.6
 
 pre-patch:

@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.13 1998/10/08 18:48:56 cracauer Exp $
+# $Id: Makefile,v 1.14 1998/11/14 09:43:07 asami Exp $
 #
 
 DISTNAME=	ilu-2.0alpha12
@@ -15,6 +15,8 @@ PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/
 PATCHFILES=	${DISTNAME}-patches.html.gz
 
 MAINTAINER=	cracauer@cons.org
+
+BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
 CONFIGURE_ARGS=	--enable-http-protocol --enable-os-threads=posix
 

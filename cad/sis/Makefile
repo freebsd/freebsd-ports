@@ -3,7 +3,7 @@
 # Date created:         10 October 1997
 # Whom:                 volf@oasis.IAEhv.nl
 #
-# $Id: Makefile,v 1.4 1998/10/11 19:27:08 jseger Exp $
+# $Id: Makefile,v 1.5 1998/10/20 01:27:48 steve Exp $
 #
 
 DISTNAME=		sis-1.2
@@ -18,6 +18,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		volf@oasis.IAEhv.nl
 
+USE_XLIB=		yes
 MAKEFILE=		Makefile.FreeBSD
 MAN1=			espresso.1 jedi.1 nova.1 sis.1 sred.1 stamina.1 \
 			vst2blif.1 xsis.1

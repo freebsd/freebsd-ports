@@ -3,7 +3,7 @@
 # Date created:         6 May 1995
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.6 1998/08/23 07:34:41 hoek Exp $
 #
 
 PKGNAME=	xevil-1.5
@@ -14,6 +14,7 @@ DISTFILES=	xevil1.5.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
 
+USE_XLIB=	yes
 MAN6=		xevil.6
 MANCOMPRESSED=	yes
 
