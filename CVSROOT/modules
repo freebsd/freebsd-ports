@@ -8164,6 +8164,7 @@ siod		ports/lang/siod
 sip		ports/devel/sip
 sipcalc		ports/net/sipcalc
 siphon		ports/security/siphon
+sipsak		ports/net/sipsak
 sirc		ports/irc/sirc
 sircd		ports/irc/sircd
 sisc		ports/lang/sisc
