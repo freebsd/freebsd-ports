@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-FixedLength-Extra
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
@@ -17,15 +17,15 @@ MAINTAINER=	tobez@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/FixedLength.pm:${PORTSDIR}/textproc/p5-Text-FixedLength
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500007
-BROKEN="Requires perl that has 'our' keyword"
-.endif
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::FixedLength::Extra.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.post.mk>
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
+		-e '$$_="" if /require 5/;' \
+		-e '$$_="" if /use warnings/;' \
+		${WRKSRC}/Extra.pm
+
+.include <bsd.port.mk>
