@@ -16,6 +16,8 @@ MAINTAINER=	obrien@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/bind/res_update.h:${PORTSDIR}/net/bind8
 
+FORBIDDEN=	security hole found
+
 Y2K=		http://www.isc.org/y2k.html
 
 HAS_CONFIGURE=	yes
