@@ -32,7 +32,7 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		mozilla:${PORTSDIR}/www/mozilla \
 		${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		xtset:${PORTSDIR}/x11/xtset \
-		xmms:${PORTSDIR}/audio/xmms \
+		xmms:${PORTSDIR}/multimedia/xmms \
 		xv:${PORTSDIR}/graphics/xv
 
 NO_WRKSUBDIR=	YES
