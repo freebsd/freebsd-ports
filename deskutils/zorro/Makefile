@@ -3,12 +3,12 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/04 00:22:21 chuckr Exp $
+# $Id: Makefile,v 1.2 1996/08/04 00:27:01 chuckr Exp $
 #
 
 DISTNAME=	zorro-1.1p8
-PKGNAME=	zorro-1.1
-CATEGORIES+=	misc x11
+PKGNAME=	zorro-1.1.8
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	shanee@rabbit.augusta.de
@@ -19,11 +19,11 @@ LIB_DEPENDS=	tcl75\\.1\\.:${PORTSDIR}/lang/tcl75 \
 NO_BUILD=	yes
 
 do-install:
-	cp ${WRKDIR}/zorro-1.1p8/zorro $(PREFIX)/bin/zorro
-
-post-install:
+	install -c -m 755 -g bin -o bin  ${WRKSRC}/zorro $(PREFIX)/bin/zorro
+	mkdir -p $(PREFIX)/share/zorro
+	install -c -m 644 -g bin -o bin $(WRKSRC)/DOTzorrorc $(PREFIX)/share/zorro
 	@echo ""
-	@echo "Take a look at work/zorro-1.1p8/DOTzorrorc
+	@echo "Take a look at $(PREFIX)/share/zorro/DOTzorrorc"
 	@echo ""
 
 .include <bsd.port.mk>
