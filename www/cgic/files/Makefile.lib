@@ -1,0 +1,18 @@
+LIB=		cgic
+
+SHLIB_MAJOR?=	1
+NOPROFILE=	yes
+
+LIBDIR=		${PREFIX}/lib
+INCDIR=		${PREFIX}/include
+CFLAGS+=	-I${.CURDIR}
+
+SRCS=		cgic.c
+
+HEADERS=	cgic.h
+
+afterinstall:
+	${INSTALL} ${COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
+		${HEADERS} ${INCDIR}
+
+.include <bsd.lib.mk>

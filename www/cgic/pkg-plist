@@ -1,13 +1,14 @@
 include/cgic.h
+lib/libcgic.a
 lib/libcgic.so
 lib/libcgic.so.1
-share/doc/cgic/cgic.html
-share/doc/cgic/cgic.txt
-share/doc/cgic/license.txt
-share/doc/cgic/readme.txt
-share/doc/cgic/support.txt
-share/doc/cgic/testform.html
-share/examples/cgic/capture.c
-share/examples/cgic/cgictest.c
-@dirrm share/doc/cgic
-@dirrm share/examples/cgic
+%%PORTDOCS%%share/doc/cgic/cgic.html
+%%PORTDOCS%%share/doc/cgic/cgic.txt
+%%PORTDOCS%%share/doc/cgic/license.txt
+%%PORTDOCS%%share/doc/cgic/readme.txt
+%%PORTDOCS%%share/doc/cgic/support.txt
+%%PORTDOCS%%share/doc/cgic/testform.html
+%%PORTDOCS%%share/examples/cgic/capture.c
+%%PORTDOCS%%share/examples/cgic/cgictest.c
+%%PORTDOCS%%@dirrm share/examples/cgic
+%%PORTDOCS%%@dirrm share/doc/cgic
