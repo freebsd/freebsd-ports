@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turck-mmcache
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	An opcode cache for PHP
 
-BUILD_DEPENDS=	phpize:${PORTSDIR}/www/mod_php4
+EXTRACT_DEPENDS=phpize:${PORTSDIR}/www/mod_php4
+BUILD_DEPENDS=	${LOCALBASE}/include/php/Zend/zend.h:${PORTSDIR}/www/mod_php4
 LIB_DEPENDS=	mm.12:${PORTSDIR}/devel/mm
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${APACHE_PORT} \
 		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
@@ -43,11 +44,10 @@ APACHE_PORT?=	${PORTSDIR}/www/apache13
 .endif
 
 post-extract:
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/config.m4
+	@${REINPLACE_CMD} -e 's,[[:cntrl:]]$$,,g' ${WRKSRC}/mmcache.c
 	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
-
-post-patch:
-	${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 
 post-build:
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
