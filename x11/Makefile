@@ -243,6 +243,7 @@
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
     SUBDIR += xscreensaver-kde
+    SUBDIR += xscreensaver.app
     SUBDIR += xsel
     SUBDIR += xskyroot
     SUBDIR += xsnow
