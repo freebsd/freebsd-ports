@@ -73,9 +73,9 @@ CONFIGURE_ARGS+=--disable-scp-compat
 .endif
 
 .if defined(WITH_SCPONLY_GFTP)
-CONFIGURE_ARGS+=--enable-gftp
+CONFIGURE_ARGS+=--enable-gftp-compat
 .else
-CONFIGURE_ARGS+=--disable-gftp
+CONFIGURE_ARGS+=--disable-gftp-compat
 .endif
 
 .if defined(WITH_SCPONLY_WINSCP)
