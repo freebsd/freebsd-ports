@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 DISTNAME=	firebird-1.5.2.4731
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	renato@galle.com.br
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
 USE_BISON=	yes
@@ -28,7 +28,7 @@ PLIST_SUB=	FIREBIRD_VERSION=${PORTVERSION}
 # Don't use ld for linking, use gcc
 LD=	gcc
 
-CONFLICTS=	firebird-devel-*
+CONFLICTS=	firebird-devel-[0-9]*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 INSTALLS_SHLIB=	yes
