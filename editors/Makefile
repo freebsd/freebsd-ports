@@ -65,6 +65,7 @@
     SUBDIR += jove
     SUBDIR += koffice
     SUBDIR += le
+    SUBDIR += led
     SUBDIR += leim20
     SUBDIR += lpe
     SUBDIR += manedit
