@@ -1,2 +1,4 @@
 MD5 (rsync-2.6.2.tar.gz) = bcacd9a9108a9e4760832212ec3d658d
 SIZE (rsync-2.6.2.tar.gz) = 515402
+MD5 (rsync-2.6.2-2.6.3pre1.diffs.gz) = 2ecd11b83c06a18c764ccee5dbdb25ab
+SIZE (rsync-2.6.2-2.6.3pre1.diffs.gz) = 102947
