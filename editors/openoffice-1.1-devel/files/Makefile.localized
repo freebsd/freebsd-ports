@@ -1,6 +1,6 @@
 # localized makefile
 # Whom:         Maho Nakata <maho@FreeBSD.org>
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.1-devel/files/Attic/Makefile.localized,v 1.3 2004-08-11 00:36:27 maho Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.1-devel/files/Attic/Makefile.localized,v 1.4 2004-08-13 03:04:04 maho Exp $
 
 ################################################################
 .if defined(LOCALIZED_LANG)
@@ -275,5 +275,11 @@ LANG_EXT=       28
 LANG_CONFIGURE_ARG=     ZULU
 .endif
 ################################################################
+.if defined(LANG_PKGNAME)
+PKGNAMEPREFIX=		${LANG_PKGNAME}-
+.endif
+.if defined(LANG_SUFFIX)
+PKGNAMESUFFIX?=		-${LANG_SUFFIX}
+.endif
 .endif
 

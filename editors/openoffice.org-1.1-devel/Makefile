@@ -34,6 +34,9 @@ USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
 
+LANG_EXT?=	01
+LANG_CONFIGURE_ARG?=	ENUS
+
 .if defined(ALL_LOCALIZED_LANGS)
 DISTFILES+=	helpcontent_31_unix.tgz:help helpcontent_33_unix.tgz:help \
 		helpcontent_34_unix.tgz:help helpcontent_39_unix.tgz:help \
@@ -52,7 +55,7 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 .endif
 
 .if ${OSVERSION} > 502010
-BROKEN=		"Does not compile on 5-current"
+WITHOUT_MOZILLA=	yes	#workaround for mozilla subproject
 .endif
 
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
@@ -62,12 +65,7 @@ RELEASE_NR=		1.1.3
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//' | ${SED} -e 's/\..*//'
-.if defined(LANG_PKGNAME)
-PKGNAMEPREFIX=		${LANG_PKGNAME}-
-.endif
-.if defined(LANG_SUFFIX)
-PKGNAMESUFFIX?=		-${LANG_SUFFIX}
-.endif
+
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
 .if defined(WITH_CCACHE)
@@ -114,15 +112,10 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --with-jdk-home=${JDKDIR}
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
 .endif
-
-.if defined(LANG_EXT)
-CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
-.else
-LANG_EXT=		01
-.endif
-
 .if defined(ALL_LOCALIZED_LANGS)
 CONFIGURE_ARGS+=	--with-lang=ALL
+.else
+CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
 .endif
 
 .if defined(WITH_DEBUG)
@@ -250,15 +243,9 @@ do-build:
 		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
+.endif
 	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
 		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
-.endif
-.if defined(LANG_PKGNAME)
-	@cd ${WRKSRC}/.. ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd instsetoo/util ; ${BUILD} LANGEXT=${LANG_EXT}'
-.endif
-
 do-install:
 .if !defined(DISPLAY)
 	#
@@ -281,17 +268,13 @@ install-user:
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
-	@${CP} ${FILESDIR}/freebsd-local.sh ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
 			-e 's#%%LANG%%#${USE_LANG}#g' \
 			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
-			${WRKDIR}/openoffice-wrapper \
-			${WRKDIR}/freebsd-local.sh
+			${WRKDIR}/openoffice-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${PREFIX}/bin/openoffice-${RELEASE_NR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/freebsd-local.sh \
-		${PREFIX}/${INSTALLATION_BASEDIR}/program/freebsd-local.sh
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
@@ -324,15 +307,8 @@ package-rename:
 
 sdk:
 	@${ECHO_MSG} "===>   Make SDK of OOo"
-.if !defined(DISPLAY)
-	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd sdk_oo ; build.pl ; deliver.pl'
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
 	@cd ${WRKSRC}/.. ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
 		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd sdk_oo ; build.pl ; deliver.pl'
-.endif
 	@${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
 
 solver:
