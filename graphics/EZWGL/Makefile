@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/08/04 00:55:57 mph Exp $
+# $Id: Makefile,v 1.6 1998/08/05 09:31:05 asami Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -136,18 +136,15 @@ MAN3=	EZ.3 EZ_ActivateNoteBookPage.3 EZ_ActivateWidget.3 \
 	EZ_WorkAreaClear.3 EZ_WorkAreaFindItemAtXY.3
 
 pre-install:
-	@ ${RM} ${WRKSRC}/examples/Makefile.orig
-	@ ${RM} ${WRKSRC}/examples/ExampleMsg
+	@ ${RM} ${WRKSRC}/examples/Makefile.orig || true
+	@ ${RM} ${WRKSRC}/examples/ExampleMsg || true
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/include/EZ.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.so.1.3 ${PREFIX}/lib
-	@ ln -sf ${PREFIX}/lib/libEZ.so.1.3 ${PREFIX}/lib/libEZ.so
-	@ ln -sf ${PREFIX}/lib/libEZ.so.1.3 ${PREFIX}/lib/libEZ.so.1
 .for file in ${MAN3}
 	@ ${INSTALL_MAN} ${WRKSRC}/man3/${file} ${PREFIX}/man/man3
-	@ ${RM} ${WRKSRC}/man3/${file}
 .endfor
 .for file in \
 	EZ_AllocateColorFromRGB.3 EZ_AppendListBoxItem.3 EZ_BindLightSrc.3 \
@@ -249,13 +246,10 @@ do-install:
 	EZ_WorkAreaInsertItemUsingIdx.3 EZ_WorkAreaRearrange.3 \
 	EZ_WorkAreaSelectItem.3 EZ_WorkAreaSelectItemUsingIdx.3 EZ_ZeroMatrix.3
 	@ cd ${WRKSRC}/man3; ln -sf ${PREFIX}/man/man3/`ls -l ${file} | ${AWK} '{print $$11}'`.gz ${PREFIX}/man/man3/${file}.gz
-	@ ${RM} ${WRKSRC}/man3/${file}
 .endfor
-	@ ${MKDIR} ${PREFIX}/share/examples/EZ
 	@ ${MKDIR} ${PREFIX}/share/examples/EZ/pixmaps
+	@ ${INSTALL_DATA} `find ${WRKSRC}/examples \! -type d | grep -v pixmaps` ${PREFIX}/share/examples/EZ
 	@ ${INSTALL_DATA} ${WRKSRC}/examples/pixmaps/* ${PREFIX}/share/examples/EZ/pixmaps
-	@ ${RM} -rf ${WRKSRC}/examples/pixmaps
-	@ ${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/EZ
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/EZ
 	@ ${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/EZ
@@ -264,4 +258,5 @@ do-install:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+
 .include <bsd.port.mk>
