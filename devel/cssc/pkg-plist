@@ -12,9 +12,3 @@ libexec/cssc/unget
 libexec/cssc/val
 libexec/cssc/what
 @dirrm libexec/cssc
-@unexec install-info --delete %D/info/cssc.info %D/info/dir
-info/cssc.info
-info/cssc.info-1
-info/cssc.info-2
-info/cssc.info-3
-@exec install-info %D/info/cssc.info %D/info/dir
