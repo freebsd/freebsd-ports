@@ -12,6 +12,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 
 MAINTAINER=	ume@FreeBSD.org
+COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 
 .if !defined(DTCP_CLIENT_ONLY)
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
