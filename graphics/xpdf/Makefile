@@ -1,9 +1,9 @@
 # New ports collection makefile for:	xpdf
-# Version required:     0.4
+# Version required:     0.5
 # Date created:         02 Feb 1996
 # Whom:                 chuckr@glue.umd.edu
 #
-# $Id: Makefile,v 1.4 1996/05/04 01:42:19 asami Exp $
+# $Id: Makefile,v 1.5 1996/05/30 11:11:10 peter Exp $
 #
 
 DISTNAME=       xpdf-0.5
