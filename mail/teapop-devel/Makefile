@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teapop
-PORTVERSION= 	0.25
+PORTVERSION= 	0.26
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 		http://www.toontown.org/pub/teapop/
