@@ -1,0 +1,9 @@
+BTreeFolder2 is a Zope product that acts like a Zope folder but can store many
+more items.
+
+It also includes CMFBTreeFolder if you have CMF installed.
+
+WWW:    http://hathaway.freezope.org/Software/BTreeFolder2
+
+- Khairil Yusof
+kaeru@inigo-tech.com
