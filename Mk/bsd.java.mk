@@ -231,14 +231,14 @@ _USE_BSD_JAVA_MK_1_0!=	${ECHO_CMD} "${_JAVA_VERSION_LIST}" \
 .			if !defined(JAVA_VERSION)
 JAVA_VERSION=	${USE_JAVA}
 .			else
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: The port is using bsd.java.mk 1.0 but sets a value for JAVA_VERSION. This may cause problems."
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: The port is using bsd.java.mk 1.0 but sets a value for JAVA_VERSION. This may cause problems."
 	@${FALSE}
 .			endif
 # NO_{BUILD|RUN}_DEPENDS_JAVA --> JAVA_{BUILD|RUN}
 .			if defined(NO_BUILD_DEPENDS_JAVA) && defined(NO_RUN_DEPENDS_JAVA)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: NO_BUILD_DEPENDS_JAVA and NO_RUN_DEPENDS_JAVA cannot be set at the same time.";
 	@${FALSE}
 .			else
 .				if !defined(NO_BUILD_DEPENDS_JAVA) && !defined(NO_BUILD)
@@ -255,8 +255,8 @@ JAVA_BUILD=		jdk
 .				elif (${NEED_JAVAC} == "NO") || (${NEED_JAVAC} == "no")
 JAVA_BUILD=		jre
 .				else
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: \"${NEED_JAVAC}\" is not a valid value for NEED_JAVAC. It should be YES or NO, or it should be undefined.";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${NEED_JAVAC}\" is not a valid value for NEED_JAVAC. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
 .				endif
 .			endif
@@ -275,8 +275,8 @@ _JAVA_VERSION_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_VERSION_LIST}" | ${SED} "s/ /\
 _ERROR_CHECKING_JAVA_VERSION!=	${ECHO_CMD} "${JAVA_VERSION}" | ${TR} " " "\n" \
 								| ${GREP} -v "${_JAVA_VERSION_LIST_REGEXP}" || true
 .		if (${_ERROR_CHECKING_JAVA_VERSION} != "")
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VERSION}\" is not a valid value for JAVA_VERSION. It should be one or more of: ${__JAVA_VERSION_LIST} (with an optional \"+\" suffix.)";
 	@${FALSE}
 .		endif
 
@@ -285,8 +285,8 @@ _JAVA_VENDOR_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_VENDOR_LIST}" | ${SED} "s/ /\\\
 _ERROR_CHECKING_JAVA_VENDOR!=	${ECHO_CMD} "${JAVA_VENDOR}" | ${TR} " " "\n" \
 								| ${GREP} -v "${_JAVA_VENDOR_LIST_REGEXP}" || true
 .		if (${_ERROR_CHECKING_JAVA_VENDOR} != "")
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDOR_LIST}";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_VENDOR}\" is not a valid value for JAVA_VENDOR. It should be one or more of: ${_JAVA_VENDOR_LIST}";
 	@${FALSE}
 .		endif
 
@@ -295,8 +295,8 @@ _JAVA_OS_LIST_REGEXP!=		${ECHO_CMD} "${_JAVA_OS_LIST}" | ${SED} "s/ /\\\|/g"
 _ERROR_CHECKING_JAVA_OS!=	${ECHO_CMD} "${JAVA_OS}" | ${TR} " " "\n" \
 							| ${GREP} -v "${_JAVA_OS_LIST_REGEXP}" || true
 .		if (${_ERROR_CHECKING_JAVA_OS} != "")
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${JAVA_OS}\" is not a valid value for JAVA_OS. It should be one or more of: ${_JAVA_OS_LIST}";
 	@${FALSE}
 .		endif
 
@@ -394,8 +394,8 @@ EXTRACT_DEPENDS+=	${DEPEND_JAVA}
 .			endif
 .		if defined(JAVA_BUILD)
 .			if defined(NO_BUILD)
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: JAVA_BUILD and NO_BUILD cannot be set at the same time.";
 	@${FALSE}
 .				endif
 BUILD_DEPENDS+=		${DEPEND_JAVA}
@@ -425,8 +425,8 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 JAVAC?=		${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
 BUILD_DEPENDS+=	${DEPEND_JIKES}
 .			elif !((${USE_JIKES} == "NO") || (${USE_JIKES} == "no"))
-.BEGIN:
-	@${ECHO_CMD} "${PKGNAME}: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
+check-makevars::
+	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
 	@${FALSE}
 .			endif
 .		endif
