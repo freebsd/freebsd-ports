@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.50
-PORTREVISION=	1
+PORTVERSION=	2.53
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -21,7 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		razor-client:${PORTSDIR}/mail/razor-agents
 
 .include <bsd.port.pre.mk>
@@ -29,6 +27,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 .if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+.endif
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 .endif
 
 PERL_CONFIGURE=	yes
