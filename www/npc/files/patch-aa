@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Dec 11 06:15:32 1997
++++ Makefile	Sun Jul  2 20:06:47 2000
+@@ -2,8 +2,8 @@
+ # npc.cgi -- Animation counter cgi
+ #
+ 
+-CC		= gcc
+-CFLAGS		= -O
++CC		?= gcc
++CFLAGS		?= -O
+ MAKEFILE	= Makefile
+ 
+ INDEX_DIR  = /usr/local/etc/httpd/index
