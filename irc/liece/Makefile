@@ -7,16 +7,16 @@
 
 PORTNAME=	liece
 PORTVERSION=	1.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS+=	${LOCALBASE}/${LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
 		msgfmt:${PORTSDIR}/devel/gettext
-RUN_DEPENDS+=	${LOCALBASE}/${LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/apel/install.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX} \
 		ldcc:${PORTSDIR}/irc/liece-dcc
 
 HAS_CONFIGURE=	yes
@@ -30,43 +30,19 @@ INFOENTRY?=		"* Liece: (liece).		IRC client on Emacsen."
 .if ${EMACS_PORT_NAME} == "emacs21"
 DEPPORT_SUFFIX=		
 .else
-DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
+DEPPORT_SUFFIX=	-${EMACS_PORT_NAME}
 .endif
 
-.if ${EMACS_PORT_NAME} == xemacs21-mule
-EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
-LISPDIR=		${EMACS_PACKAGESDIR}/lisp
-EMACS_ETCDIR=		${EMACS_PACKAGESDIR}/etc
-EMACS_INFODIR=		${EMACS_PACKAGESDIR}/info
-PKGINFODIR=		${EMACS_PACKAGESDIR}/pkginfo
-CONFIGURE_ARGS=		--with-xemacs=${EMACS_CMD} \
-			--with-packagedir=${EMACS_PACKAGESDIR} \
-			--datadir=${PREFIX}/${EMACS_ETCDIR}
-ALL_TARGET=		package
-INSTALL_TARGET=		install-package
-XEMACS_ONLY=		""
-EMACS_ONLY=		"@comment "
-.else
-LISPDIR=		${EMACS_VERSION_SITE_LISPDIR}
-EMACS_ETCDIR=		share
-EMACS_INFODIR=		info
-PKGINFODIR=		"@comment "
-CONFIGURE_ARGS=		--with-emacs=${EMACS_CMD} \
-			--with-lispdir=${PREFIX}/${LISPDIR} \
-			--datadir=${PREFIX}/${EMACS_ETCDIR}
-MAKE_ARGS+=		LISPDIR=${PREFIX}/${LISPDIR}
-XEMACS_ONLY=		"@comment "
-EMACS_ONLY=		""
-.endif
-LIECE_ETCDIR=	${EMACS_ETCDIR}/${PORTNAME}
+CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
+		--with-lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
+		--datadir=${PREFIX}/share
+MAKE_ARGS+=	LISPDIR=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}
+LIECE_ETCDIR=	share/${PORTNAME}
 
 BUILD_WRKSRC=	${WRKSRC}/lisp
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-PLIST_SUB=	EMACS_NAME=${EMACS_NAME} \
-		XEMACS_ONLY=${XEMACS_ONLY} EMACS_ONLY=${EMACS_ONLY} \
-		LISPDIR=${LISPDIR}/${PORTNAME} LIECE_ETCDIR=${LIECE_ETCDIR} \
-		PKGINFODIR=${PKGINFODIR} \
-		EMACS_INFODIR=${EMACS_INFODIR} \
+PLIST_SUB=	LIECE_LISPDIR=${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME} \
+		LIECE_ETCDIR=${LIECE_ETCDIR} \
 		DIRSECTION=${DIRSECTION} INFOENTRY=${INFOENTRY}
 
 DOCS=		AUTHORS lisp/ChangeLog
@@ -79,15 +55,16 @@ post-install:
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/etc/icons/*.xpm ${PREFIX}/${LIECE_ETCDIR}/icons
 	${LN} -sf ja ${PREFIX}/${LIECE_ETCDIR}/locale/ja_JP.EUC
+	${LN} -sf ja ${PREFIX}/${LIECE_ETCDIR}/locale/ja_JP.eucJP
 .if !defined(NOPORTDOCS)
 #	${INSTALL_DATA} ${WRKSRC}/etc/sample.dot.emacs ${PREFIX}/${LIECE_ETCDIR}/
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/doc
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${LIECE_ETCDIR}/doc/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/liece.info ${PREFIX}/${EMACS_INFODIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/liece.info ${PREFIX}/info/
 	install-info --section=${DIRSECTION} --entry=${INFOENTRY} \
-		${PREFIX}/${EMACS_INFODIR}/liece.info ${PREFIX}/${EMACS_INFODIR}/dir
+		${PREFIX}/info/liece.info ${PREFIX}/info/dir
 .endif
 
 .include <bsd.port.mk>
