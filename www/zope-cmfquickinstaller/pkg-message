@@ -1,0 +1,7 @@
+CMFQuickInstaller
+
+	To complete the installation of CMFQuickInstaller:
+
+	- Restart Zope.  This may be done from the Zope Control Panel.
+
+	- inside the portal instantiate a CMFQuickInstaller Tool 
