@@ -1,0 +1,19 @@
+psbook            rearranges pages into signatures
+psselect          selects pages and page ranges
+pstops            performs general page rearrangement and selection
+psnup             put multiple pages per physical sheet of paper
+psresize          alter document paper size
+epsffit           fits an EPSF file to a given bounding box
+getafm     (sh)   outputs PostScript to retrieve AFM file from printer
+showchar   (sh)   outputs PostScript to draw a character with metric info
+fixdlsrps  (perl) filter to fix DviLaser/PS output so that PSUtils works
+fixfmps    (perl) filter to fix framemaker documents so that psselect etc. work
+fixmacps   (perl) filter to fix Macintosh documents with saner version of md
+fixpsditps (perl) filter to fix Transcript psdit documents to work with PSUtils
+fixpspps   (perl) filter to fix PSPrint PostScript so that psselect etc. work
+fixtpps    (perl) filter to fix Troff Tpscript documents
+fixwfwps   (perl) filter to fix Word for Windows documents for PSUtils
+fixwpps    (perl) filter to fix WordPerfect documents for PSUtils
+fixwwps    (perl) filter to fix Windows Write documents for PSUtils
+extractres (perl) filter to extract resources from PostScript files
+includeres (perl) filter to include resources into PostScript files

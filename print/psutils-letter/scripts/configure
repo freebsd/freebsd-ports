@@ -1,0 +1,3 @@
+#!/bin/sh
+chmod +x $3/maketext
+exit 0
