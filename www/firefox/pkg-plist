@@ -3111,10 +3111,8 @@ lib/firebird/share/idl/mozilla-1.5/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/pippki/content/pippki || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-platform || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-region || true
-@exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global/bindings || true
 @exec /bin/mkdir -p %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global/widgets || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global/widgets || true
-@unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global/bindings || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-region || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/toolkit/content/global-platform || true
 @unexec /bin/rmdir %D/lib/firebird/lib/mozilla-1.5/chrome/pippki/content/pippki || true
