@@ -3,6 +3,7 @@
     SUBDIR += kde-icons-amaranth
     SUBDIR += kde-icons-amaranth-althaea
     SUBDIR += kde-icons-crystalosx
+    SUBDIR += kde-icons-gorilla_svg
     SUBDIR += kde-icons-graphite-rade8
     SUBDIR += kde-icons-icosx
     SUBDIR += kde-icons-kids
