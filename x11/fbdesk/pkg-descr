@@ -1,0 +1,18 @@
+fbdesk is a small application designed for the Fluxbox windowmanager that
+allows management of icons on the desktop.
+
+current features:
+
+ o XPM and PNG image loading
+ o Antialias text
+ o UTF-8 and multibyte support
+ o Vertical text
+ o Grid snapping
+ o GUI for icon management
+ o Fluxbox menu style
+
+
+WWW: http://fluxbox.sourceforge.net/fbdesk/
+
+- Hendrik Scholz
+hendrik@scholz.net
