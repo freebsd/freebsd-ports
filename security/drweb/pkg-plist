@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/drweb
 drweb/CHANGES
+drweb/ChangeLog
 drweb/README
 drweb/README.RUS
 drweb/bases/drwebase.vdb
@@ -12,6 +13,7 @@ drweb/clients/demo/drwebdc-ex3.c
 drweb/clients/demo/drwebdc-tools.c
 drweb/clients/demo/make-all.sh
 drweb/clients/drwebd-api
+drweb/clients/drwebdc
 drweb/doc/readme.daemon
 drweb/doc/readme.daemon.rus
 drweb/doc/readme.eicar
