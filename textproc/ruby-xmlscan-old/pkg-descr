@@ -1,0 +1,4 @@
+This a set of pure Ruby XML/HTML scanner and XPath processor/compiler
+modules.
+
+Author:	Ueno Katsuhiro <katsu@blue.sky.or.jp>
