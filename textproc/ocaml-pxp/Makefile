@@ -18,8 +18,8 @@ COMMENT=	Validating XML parser for OCaml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
-		${LOCALBASE}/lib/ocaml/site-lib/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
 		${LOCALBASE}/lib/ocaml/site-lib/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
+RUN_DEPENDS=	${LOCALBASE}/lib/ocaml/site-lib/netstring/netstring.a:${PORTSDIR}/www/ocaml-net
 
 USE_GMAKE=	yes
 
