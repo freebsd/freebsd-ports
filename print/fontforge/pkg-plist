@@ -5,6 +5,7 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV.png
 %%PORTDOCS%%share/doc/pfaedit/Anna.gif
 %%PORTDOCS%%share/doc/pfaedit/Antigone.gif
+%%PORTDOCS%%share/doc/pfaedit/BDFgrey.html
 %%PORTDOCS%%share/doc/pfaedit/BitmapView.png
 %%PORTDOCS%%share/doc/pfaedit/C1.png
 %%PORTDOCS%%share/doc/pfaedit/C10.png
@@ -51,6 +52,9 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/Print.png
 %%PORTDOCS%%share/doc/pfaedit/Problems-MacOSX.html
 %%PORTDOCS%%share/doc/pfaedit/ReviewHints.png
+%%PORTDOCS%%share/doc/pfaedit/Shades.png
+%%PORTDOCS%%share/doc/pfaedit/Shades2.png
+%%PORTDOCS%%share/doc/pfaedit/Shades4.png
 %%PORTDOCS%%share/doc/pfaedit/Spacem_1.png
 %%PORTDOCS%%share/doc/pfaedit/Spacem_2.png
 %%PORTDOCS%%share/doc/pfaedit/aacutebase.png
@@ -105,6 +109,8 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/fontview.ru.png
 %%PORTDOCS%%share/doc/pfaedit/future.html
 %%PORTDOCS%%share/doc/pfaedit/getinfo.html
+%%PORTDOCS%%share/doc/pfaedit/greymapedit.png
+%%PORTDOCS%%share/doc/pfaedit/greymapsavail.png
 %%PORTDOCS%%share/doc/pfaedit/helpmenu.html
 %%PORTDOCS%%share/doc/pfaedit/hexley.png
 %%PORTDOCS%%share/doc/pfaedit/hinting.html
@@ -115,6 +121,7 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/layers.png
 %%PORTDOCS%%share/doc/pfaedit/license.html
 %%PORTDOCS%%share/doc/pfaedit/locale.html
+%%PORTDOCS%%share/doc/pfaedit/logo3.gif
 %%PORTDOCS%%share/doc/pfaedit/macformats.html
 %%PORTDOCS%%share/doc/pfaedit/metricsmenu.html
 %%PORTDOCS%%share/doc/pfaedit/metricsview.html
@@ -137,7 +144,10 @@ bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/privatekeymenu.png
 %%PORTDOCS%%share/doc/pfaedit/problems.html
 %%PORTDOCS%%share/doc/pfaedit/quotations.html
+%%PORTDOCS%%share/doc/pfaedit/rplref.png
+%%PORTDOCS%%share/doc/pfaedit/rplserifs.png
 %%PORTDOCS%%share/doc/pfaedit/scripting.html
+%%PORTDOCS%%share/doc/pfaedit/search.html
 %%PORTDOCS%%share/doc/pfaedit/serif.png
 %%PORTDOCS%%share/doc/pfaedit/serif2.png
 %%PORTDOCS%%share/doc/pfaedit/setwidth.png
@@ -163,9 +173,9 @@ share/pfaedit/Adobe-Identity-0.cidmap
 share/pfaedit/Adobe-Japan1-4.cidmap
 share/pfaedit/Adobe-Japan2-0.cidmap
 share/pfaedit/Adobe-Korea1-2.cidmap
-share/pfaedit/pfaedit.de.ui
-share/pfaedit/pfaedit.en.ui
-share/pfaedit/pfaedit.fr.ui
-share/pfaedit/pfaedit.ru.ui
+share/pfaedit/pfaedit-de.ui
+share/pfaedit/pfaedit-en.ui
+share/pfaedit/pfaedit-fr.ui
+share/pfaedit/pfaedit-ru.ui
 @dirrm share/pfaedit
 %%PORTDOCS%%@dirrm share/doc/pfaedit
