@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Fri Apr 25 11:02:01 1997
++++ Makefile.in	Wed Jul  1 17:47:52 1998
+@@ -44,7 +44,7 @@
+ CC = @CC@
+ CCOPT = @V_CCOPT@
+ INCLS = -I. @V_INCLS@
+-DEFS = -DDEBUG @DEFS@ -DARPDIR=\"$(ARPDIR)\"
++DEFS = @DEFS@ -DARPDIR=\"$(ARPDIR)\"
+ 
+ # Standard CFLAGS
+ CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
+@@ -109,8 +109,8 @@
+ 	$(CC) $(CFLAGS) -o $@ zap.o intoa.o -lutil
+ 
+ install: force
+-	$(INSTALL) -m 555 -o bin -g bin arpwatch $(DESTDIR)$(BINDEST)
+-	$(INSTALL) -m 555 -o bin -g bin arpsnmp $(DESTDIR)$(BINDEST)
++	$(INSTALL) -s -m 555 -o bin -g bin arpwatch $(DESTDIR)$(BINDEST)
++	$(INSTALL) -s -m 555 -o bin -g bin arpsnmp $(DESTDIR)$(BINDEST)
+ 
+ install-man: force
+ 	$(INSTALL) -m 444 -o bin -g bin $(srcdir)/arpwatch.8 \
