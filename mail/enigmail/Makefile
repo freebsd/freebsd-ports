@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION=	0.83.3
+PORTVERSION=	0.83.5
 PORTREVISION=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://mozdev.secsup.org/enigmail/src/ \
@@ -30,6 +30,7 @@ LOCAL_PREFIX=	${PREFIX}/${LOCAL_SUBDIR}
 
 COMPONENTS=	ipc.xpt enigmime.xpt libenigmime.so enigmail.xpt enigmail.js enigprefs-service.js
 CHROME=		enigmail.jar enigmail-skin.jar enigmail-skin-tbird.jar
+PREF=		enigmail.js
 
 PLIST_SUB=	LOCAL_SUBDIR=${LOCAL_SUBDIR}
 
@@ -56,6 +57,9 @@ do-install:
 	done
 	@for file in ${CHROME}; do \
 		${INSTALL_DATA} ${WRKSRC}/dist/bin/chrome/$$file ${LOCAL_PREFIX}/chrome; \
+	done
+	@for file in ${PREF}; do \
+		${INSTALL_DATA} ${WRKSRC}/dist/bin/defaults/pref/$$file ${LOCAL_PREFIX}/defaults/pref; \
 	done
 
 post-install:
