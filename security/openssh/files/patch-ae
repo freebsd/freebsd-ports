@@ -1,0 +1,43 @@
+--- sshconnect.c.orig	Fri Nov 19 23:54:54 1999
++++ sshconnect.c	Fri Nov 19 23:56:22 1999
+@@ -1496,6 +1496,40 @@
+ 	  return; /* Successful connection. */
+     }
+   
++  /* Support for TIS authentication server obtained from
++     Andre April <Andre.April@cediti.be>. */
++  if ((supported_authentications & (1 << SSH_AUTH_TIS)) &&
++      options.tis_authentication && !options.batch_mode)
++    {
++      char *prompt;
++      debug("Doing TIS authentication.");
++      if (options.cipher == SSH_CIPHER_NONE)
++	log("WARNING: Encryption is disabled! Password will be transmitted in clear text.");
++      packet_start(SSH_CMSG_AUTH_TIS);
++      packet_send();
++      packet_write_wait();
++      type = packet_read(&payload_len);
++      if (type == SSH_SMSG_FAILURE)
++	debug("User cannot be identifier on authentication server.");
++      else {
++	if (type != SSH_SMSG_AUTH_TIS_CHALLENGE)
++	  packet_disconnect("Protocol error: got %d in response to TIS auth request", type);
++	prompt = packet_get_string(NULL);
++	password = read_passphrase(prompt, 0);
++	packet_start(SSH_CMSG_AUTH_TIS_RESPONSE);
++	packet_put_string(password, strlen(password));
++	memset(password, 0, strlen(password));
++	xfree(password);
++	packet_send();
++	packet_write_wait();
++        type = packet_read(&payload_len);
++	if (type == SSH_SMSG_SUCCESS)
++	  return;
++	if (type != SSH_SMSG_FAILURE)
++	  packet_disconnect("Protocol error: got %d in response to TIS auth", type);
++      }
++    }
++
+   /* Try password authentication if the server supports it. */
+   if ((supported_authentications & (1 << SSH_AUTH_PASSWORD)) &&
+       options.password_authentication && !options.batch_mode)
