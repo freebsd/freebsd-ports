@@ -65,6 +65,7 @@
     SUBDIR += htmlsection
     SUBDIR += info2html
     SUBDIR += info_to_html
+    SUBDIR += intltool
     SUBDIR += isearch
     SUBDIR += iso12083
     SUBDIR += iso8879
