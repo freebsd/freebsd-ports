@@ -225,9 +225,11 @@
 %%CACTIDIR%%/lib/adodb/datadict/datadict-mysql.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-oci8.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-postgres.inc.php
+%%CACTIDIR%%/lib/adodb/datadict/datadict-sapdb.inc.php
 %%CACTIDIR%%/lib/adodb/datadict/datadict-sybase.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-access.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-ado.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-ado5.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-ado_access.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-ado_mssql.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-borland_ibase.inc.php
@@ -254,6 +256,7 @@
 %%CACTIDIR%%/lib/adodb/drivers/adodb-odbtp.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-odbtp_unicode.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-oracle.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-pdo.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-postgres.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-postgres64.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-postgres7.inc.php
@@ -261,8 +264,11 @@
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sapdb.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sqlanywhere.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sqlite.inc.php
+%%CACTIDIR%%/lib/adodb/drivers/adodb-sqlitepo.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-sybase.inc.php
 %%CACTIDIR%%/lib/adodb/drivers/adodb-vfp.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-ar.inc.php
+%%CACTIDIR%%/lib/adodb/lang/adodb-hu.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-bg.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-bgutf8.inc.php
 %%CACTIDIR%%/lib/adodb/lang/adodb-ca.inc.php
@@ -371,6 +377,8 @@
 @dirrm %%CACTIDIR%%/lib
 @dirrm %%CACTIDIR%%/install
 @dirrm %%CACTIDIR%%/include/treeview
+@dirrm %%CACTIDIR%%/include/lang/en
+@dirrm %%CACTIDIR%%/include/lang
 @dirrm %%CACTIDIR%%/include/jscalendar/lang
 @dirrm %%CACTIDIR%%/include/jscalendar
 @dirrm %%CACTIDIR%%/include/html
