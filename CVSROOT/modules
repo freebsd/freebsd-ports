@@ -7325,6 +7325,7 @@ xephem		ports/astro/xephem
 xerces-j	ports/textproc/xerces-j
 xevil		ports/games/xevil
 xeyesplus	ports/games/xeyesplus
+xface.el	ports/graphics/xface.el
 xfaces		ports/mail/xfaces
 xfce		ports/x11-wm/xfce
 xfed		ports/x11-fonts/xfed
