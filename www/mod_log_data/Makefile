@@ -10,8 +10,8 @@ PORTVERSION=	0.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://loghttp.sourceforge.net/files/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
-COMMENT=	Module for Apache 2.0 to log incoming and outgoing data
+MAINTAINER=	clement@FreeBSD.org
+COMMENT=	Module for Apache 2.0 which logs incoming and outgoing data
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
 RUN_DEPENDS=	${BUILD_DEPENDS}
