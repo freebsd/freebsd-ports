@@ -4218,6 +4218,7 @@ libbonobo	ports/devel/libbonobo
 libbonobomm	ports/devel/libbonobomm
 libbonoboui	ports/x11-toolkits/libbonoboui
 libbonobouimm	ports/x11-toolkits/libbonobouimm
+libbt		ports/net/libbt
 libcabinet	ports/archivers/libcabinet
 libcaca		ports/graphics/libcaca
 libcache	ports/devel/libcache
