@@ -56,6 +56,7 @@ share/ttf2pt1/encodings/russian/iso8859-5.tbl
 share/ttf2pt1/encodings/russian/koi8-r.tbl
 share/ttf2pt1/maps/CP1250.map
 share/ttf2pt1/maps/CP1251.map
+share/ttf2pt1/maps/T2A_compact.map
 share/ttf2pt1/maps/adobe-standard-encoding.map
 share/ttf2pt1/maps/unicode-sample.map
 share/ttf2pt1/other/Makefile
