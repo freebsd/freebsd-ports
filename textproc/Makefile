@@ -159,6 +159,7 @@
     SUBDIR += libtre
     SUBDIR += libuninameslist
     SUBDIR += libwpd
+    SUBDIR += libxdiff
     SUBDIR += libxml
     SUBDIR += libxml++
     SUBDIR += libxml2

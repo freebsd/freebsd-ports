@@ -1,0 +1,15 @@
+The LibXDiff library implements basic and yet complete functionalities to
+create file differences/patches to both binary and text files. The library
+uses memory files as file abstraction to achieve both performance and
+portability. For binary files, LibXDiff implements (with some modification)
+the algorithm described in File System Support for Delta Compression by
+Joshua P. MacDonald, while for text files it follows directives described in
+An O(ND) Difference Algorithm and Its Variations by Eugene W. Myers. Memory
+files used by the library are basically a collection of buffers that store the
+file content. There are two different requirements for memory files when passed
+to diff/patch functions. Text files for diff/patch functions require that a
+single line do not have to spawn across two different memory file blocks.
+Binary diff/patch functions require memory files to be compact. A compact
+memory files is a file whose content is stored inside a single block.
+
+WWW: http://www.xmailserver.org/xdiff-lib.html
