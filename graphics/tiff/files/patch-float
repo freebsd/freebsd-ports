@@ -7,3 +7,11 @@
 +	float xres = 0.0, yres = 0.0;
  
  	TIFFGetField(tif, TIFFTAG_IMAGEWIDTH, pw);
+@@ -543,5 +543,6 @@
+ {
+ 	uint32 w, h;
+-	double ox, oy, prw, prh;
++	float ox, oy;
++	double prw, prh;
+ 	double scale = 1.0;
+ 	double left_offset = lm * PS_UNIT_SIZE;
