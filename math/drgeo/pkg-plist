@@ -10,6 +10,7 @@ share/gnome/drgeo/examples/figures/duality.fgeo
 share/gnome/drgeo/examples/figures/euler-line.fgeo
 share/gnome/drgeo/examples/figures/fonctions_associees.fgeo
 share/gnome/drgeo/examples/figures/lens.fgeo
+share/gnome/drgeo/examples/figures/light6.fgeo
 share/gnome/drgeo/examples/figures/mercedes.fgeo
 share/gnome/drgeo/examples/figures/moyenne-prop.fgeo
 share/gnome/drgeo/examples/figures/orthocenter-locus.fgeo
@@ -30,6 +31,7 @@ share/gnome/drgeo/examples/figures/triangle_rectangle1.fgeo
 share/gnome/drgeo/examples/figures/triangles-homothetiques.fgeo
 share/gnome/drgeo/examples/figures/trigo1.fgeo
 share/gnome/drgeo/examples/figures/varignon.fgeo
+share/gnome/drgeo/examples/figures/wheel.fgeo
 share/gnome/drgeo/examples/macros/bissectrice.mgeo
 share/gnome/drgeo/examples/macros/centre1.mgeo
 share/gnome/drgeo/examples/macros/orthocentre.mgeo
@@ -148,6 +150,7 @@ share/gnome/drgeo/scm/drgeo_scm_interface.scm
 share/gnome/drgeo/scm/drgeo_scm_interface_constant.scm
 share/gnome/drgeo/scm/drgeo_scm_interface_constant_es.scm
 share/gnome/drgeo/scm/drgeo_scm_interface_constant_fr.scm
+share/gnome/drgeo/scm/drgeo_scm_interface_constant_nl.scm
 share/gnome/drgeo/scm/drgeo_scm_interface_constant_sr.scm
 share/gnome/drgeo/scm/preferences.scm
 share/gnome/pixmaps/drgeo-book.png
@@ -179,6 +182,7 @@ share/locale/pt/LC_MESSAGES/drgeo.mo
 share/locale/pt_BR/LC_MESSAGES/drgeo.mo
 share/locale/ru/LC_MESSAGES/drgeo.mo
 share/locale/sl/LC_MESSAGES/drgeo.mo
+share/locale/sq/LC_MESSAGES/drgeo.mo
 share/locale/sr/LC_MESSAGES/drgeo.mo
 share/locale/sr@Latn/LC_MESSAGES/drgeo.mo
 share/locale/sv/LC_MESSAGES/drgeo.mo
