@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 include/gn/gnABISource.h
 include/gn/gnBaseFeature.h
 include/gn/gnBaseFilter.h
@@ -43,16 +44,11 @@ include/gn/gnStringSpec.h
 include/gn/gnStringTools.h
 include/gn/gnTranslator.h
 include/gn/gnVersion.h
-@dirrm include/gn
 lib/libGenome.a
-lib/libGenome.la
 lib/libGenome.so
 lib/libGenome.so.0
 %%PORTDOCS%%share/doc/libgenome/GNPREC_8H-source.html
 %%PORTDOCS%%share/doc/libgenome/GNPREC_8H.html
-%%PORTDOCS%%share/doc/libgenome/Makefile
-%%PORTDOCS%%share/doc/libgenome/Makefile.am
-%%PORTDOCS%%share/doc/libgenome/Makefile.in
 %%PORTDOCS%%share/doc/libgenome/TestRevComp_8cpp-source.html
 %%PORTDOCS%%share/doc/libgenome/TestRevComp_8cpp.html
 %%PORTDOCS%%share/doc/libgenome/TestgpSeqConverter_8cpp-source.html
@@ -338,3 +334,4 @@ lib/libGenome.so.0
 %%PORTDOCS%%share/doc/libgenome/testgpSequence_8cpp-source.html
 %%PORTDOCS%%share/doc/libgenome/testgpSequence_8cpp.html
 %%PORTDOCS%%@dirrm share/doc/libgenome
+@dirrm include/gn
