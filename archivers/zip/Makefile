@@ -8,7 +8,7 @@
 
 PORTNAME=	zip
 PORTVERSION=	2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.uu.net/pub/archiving/zip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
