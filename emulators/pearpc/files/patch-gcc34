@@ -1,0 +1,41 @@
+--- src/cpu/cpu_jitc_x86/ppc_cpu.h.orig	Tue Oct  5 15:48:01 2004
++++ src/cpu/cpu_jitc_x86/ppc_cpu.h	Tue Oct  5 17:03:40 2004
+@@ -112,7 +112,8 @@
+ 	uint32 current_code_base;
+ } PACKED;
+ 
+-enum PPC_Register {
++
++/*enum PPC_Register {
+ 	PPC_REG_NO = 0,
+ 	PPC_GPR0 = offsetof(PPC_CPU_State, gpr),
+ 	PPC_FPR1 = offsetof(PPC_CPU_State, fpr),
+@@ -132,7 +133,27 @@
+ 	PPC_PVR = offsetof(PPC_CPU_State, pvr),
+ 	PPC_HID0 = offsetof(PPC_CPU_State, hid),
+ 	PPC_HID1 = offsetof(PPC_CPU_State, hid)+sizeof (uint32),
+-};
++};*/
++#define PPC_Register size_t
++#define PPC_REG_NO 0
++#define PPC_GPR0  offsetof(PPC_CPU_State, gpr)
++#define PPC_FPR1  offsetof(PPC_CPU_State, fpr)
++#define PPC_CR  offsetof(PPC_CPU_State, cr)
++#define PPC_FPSCR  offsetof(PPC_CPU_State, fpscr)
++#define PPC_XER  offsetof(PPC_CPU_State, xer)
++#define PPC_LR  offsetof(PPC_CPU_State, lr)
++#define PPC_CTR  offsetof(PPC_CPU_State, ctr)
++#define PPC_MSR  offsetof(PPC_CPU_State, msr)
++#define PPC_SRR0  offsetof(PPC_CPU_State, srr)
++#define PPC_SRR1  offsetof(PPC_CPU_State, srr)+sizeof (uint32)
++#define PPC_DSISR  offsetof(PPC_CPU_State, dsisr)
++#define PPC_DAR  offsetof(PPC_CPU_State, dar)
++#define PPC_DEC  offsetof(PPC_CPU_State, dec)
++#define PPC_SDR1  offsetof(PPC_CPU_State, sdr1) 
++#define PPC_EAR  offsetof(PPC_CPU_State, ear)
++#define PPC_PVR  offsetof(PPC_CPU_State, pvr)
++#define PPC_HID0  offsetof(PPC_CPU_State, hid)
++#define PPC_HID1  offsetof(PPC_CPU_State, hid)+sizeof (uint32)
+ 
+ enum PPC_CRx {
+ 	PPC_CR0=0,

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pearpc
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -42,6 +42,13 @@ CONFIGURE_ARGS+=	--disable-fpo
 #CONFIGURE_ARGS+=	--enable-ui=nogui
 #.endif
 
+.if defined(WITH_SDL)
+CONFIGURE_ARGS+=	--enable-ui=sdl
+USE_SDL=	sdl
+.else
+CONFIGURE_ARGS+=	--enable-ui=x11
+.endif
+
 .include <bsd.port.pre.mk>
 
 # jitc_x86 is avaible only on x86
@@ -66,11 +73,6 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can do optimized build defining WITH_OPTIMIZED_CFLAGS=yes."
 	@${ECHO_MSG} ""
-.endif
-
-post-patch:
-.if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|stdint.h|inttypes.h|' ${WRKSRC}/src/system/osapi/posix/types.h
 .endif
 
 post-configure:
