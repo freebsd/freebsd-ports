@@ -1,0 +1,13 @@
+XW is an X app to list all the current users logged in to
+the local system. Clicking on a user pops up a window
+displaying various information on that user.
+
+Future plans do include to expand this to remote systems
+as well.
+
+It also provides various information on the logged in users.
+
+WWW: http://www.gurubox.com/xw
+
+- Daniel Hemmerich
+dan@spot.org
