@@ -97,12 +97,6 @@ lib/gambas/lib.gb.vb.component
 lib/gambas/lib.gb.vb.la
 lib/gambas/lib.gb.vb.so
 lib/gambas/lib.gb.vb.so.0
-%%PORTDOCS%%%%EXAMPLESDIR%%/AnalogWatch/.gambas/FRMCLOCK
-%%PORTDOCS%%%%EXAMPLESDIR%%/AnalogWatch/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/AnalogWatch/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/AnalogWatch/AnalogWatch
-%%PORTDOCS%%%%EXAMPLESDIR%%/AnalogWatch/FrmClock.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/AnalogWatch/FrmClock.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.gambas/FBROWSER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.kdbgrc.gbx
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.lang/.pot
@@ -113,7 +107,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/arrow.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.gambas/FSCRIPT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/FScript.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/Scripting/FScript.form
@@ -146,25 +139,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/Timer
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/.gambas/FCLOCK
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/Clock
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/FClock.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/FClock.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/arrow_hour.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/arrow_min.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/arrow_sec.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/clock_bg_big1.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/clock_bg_big2.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/clock_bg_big3.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Clock/img/clock_bg_big4.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FABOUT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FCONN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FPREVIEW
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/MGLOBAL
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.lock
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/DataReportExample
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/Fabout.class
@@ -191,14 +171,39 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FMain.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FRequest.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/Database/FRequest.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/.gambas/FEVAL
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/.kdbgrc.gbx
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/.lang/.pot
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/Evaluator
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/FEval.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/FEval.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/Evaluator/FEval.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/.gambas/FRMCLOCK
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/.kdbgrc.gbx
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/AnalogWatch
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/FrmClock.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/AnalogWatch/FrmClock.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.gambas/FCLOCK
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.icon/16.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.icon/32.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.icon/48.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/CHANGELOG
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/Clock
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/FClock.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/FClock.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/arrow_hour.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/arrow_min.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/arrow_sec.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big1.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big2.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big3.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/Clock/img/clock_bg_big4.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/.gambas/FVIEWER
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/.project~
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/FViewer.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/ImageViewer/ImageViewer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.gambas/FONSCREENDISPLAY
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/FOnScreenDisplay.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/FOnScreenDisplay.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Drawing/OnScreenDisplay/OnScreenDisplay
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.gambas/FCONSOLE
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.kdbgrc.gbx
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/Console/.lang/.pot
@@ -217,15 +222,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/MoviePlayer/pause.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/MoviePlayer/play.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Exec/MoviePlayer/stop.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/.gambas/FEXPLORER
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/Explorer
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/FExplorer.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/FExplorer.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/file.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/folder.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/quit.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/Explorer/refresh.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/RobotFindsKitten/.gambas/FRFK
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/RobotFindsKitten/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/RobotFindsKitten/COPYING
@@ -247,13 +243,54 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Snake/eat.wav
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Snake/head.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Games/Snake/start.wav
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/.gambas/FVIEWER
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/.lang/.pot
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/.project~
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/FViewer.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/FViewer.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/ImageViewer/ImageViewer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.gambas/CBOARDDESIGN
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.gambas/CMOVE
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.gambas/FBOARDSELECT
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.gambas/FGAMEAREA
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.gambas/GLOBAL
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.gambas/MBOARDS
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/CBoardDesign.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/CMove.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/FBoardSelect.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/FBoardSelect.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/FGameArea.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/FGameArea.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/Global.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/MBoards.module
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/Solitaire
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/ball.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/new.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/quit.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/redo.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Games/Solitaire/undo.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.gambas/FEVAL
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.kdbgrc.gbx
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.lang/.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/Evaluator
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/.gambas/FEXPLORER
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/Explorer
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/FExplorer.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/FExplorer.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/file.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/folder.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/quit.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/refresh.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas/FABOUT
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas/FNOTEPAD
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.lang/.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FAbout.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FAbout.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FNotepad.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/FNotepad.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/Notepad
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Notepad/notepad.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/.gambas/FRMMAIN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/ClientSocket/ClientSocket
@@ -300,26 +337,11 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmServer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/FrmServer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/UDPServerClient/UDPServerClient
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/.gambas/FABOUT
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/.gambas/FNOTEPAD
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/.lang/.pot
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/FAbout.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/FAbout.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/FNotepad.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/FNotepad.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/Notepad
-%%PORTDOCS%%%%EXAMPLESDIR%%/Notepad/notepad.png
-%%PORTDOCS%%%%EXAMPLESDIR%%/OnScreenDisplay/.gambas/FONSCREENDISPLAY
-%%PORTDOCS%%%%EXAMPLESDIR%%/OnScreenDisplay/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/OnScreenDisplay/FOnScreenDisplay.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/OnScreenDisplay/FOnScreenDisplay.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/OnScreenDisplay/OnScreenDisplay
-%%PORTDOCS%%%%EXAMPLESDIR%%/WebBrowser/.gambas/FBROWSER
-%%PORTDOCS%%%%EXAMPLESDIR%%/WebBrowser/.project
-%%PORTDOCS%%%%EXAMPLESDIR%%/WebBrowser/FBrowser.class
-%%PORTDOCS%%%%EXAMPLESDIR%%/WebBrowser/FBrowser.form
-%%PORTDOCS%%%%EXAMPLESDIR%%/WebBrowser/WebBrowser
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/.gambas/FBROWSER
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/FBrowser.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/FBrowser.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/WebBrowser
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/ChristopheBONNET/ALL_OBJECT.tar.gz,v
 %%PORTDOCS%%%%DATADIR%%/help/.rsrc/DifferencesFromVB/vbdiff.png
@@ -3175,7 +3197,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/WebSiteIntroduction.html
 %%PORTDOCS%%%%DATADIR%%/help/WebSiteScreenshots.html
 %%PORTDOCS%%%%DATADIR%%/help/WebStatistics.html
-%%PORTDOCS%%%%DATADIR%%/help/WebTopicList.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiExportTodoList.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiName.html
 %%PORTDOCS%%%%DATADIR%%/help/WikiRon.html
@@ -3184,19 +3205,34 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%DATADIR%%/help/YvickMiossec.html
 %%PORTDOCS%%%%DATADIR%%/help/ZenoDotus.html
 %%DATADIR%%/info/gb.compress.info
+%%DATADIR%%/info/gb.compress.list
 %%DATADIR%%/info/gb.db.info
+%%DATADIR%%/info/gb.db.list
 %%DATADIR%%/info/gb.debug.info
+%%DATADIR%%/info/gb.debug.list
 %%DATADIR%%/info/gb.eval.info
+%%DATADIR%%/info/gb.eval.list
 %%DATADIR%%/info/gb.info
+%%DATADIR%%/info/gb.list
 %%DATADIR%%/info/gb.net.curl.info
+%%DATADIR%%/info/gb.net.curl.list
 %%DATADIR%%/info/gb.net.info
+%%DATADIR%%/info/gb.net.list
 %%DATADIR%%/info/gb.qt.editor.info
+%%DATADIR%%/info/gb.qt.editor.list
 %%DATADIR%%/info/gb.qt.ext.info
+%%DATADIR%%/info/gb.qt.ext.list
 %%DATADIR%%/info/gb.qt.info
 %%DATADIR%%/info/gb.qt.kde.html.info
+%%DATADIR%%/info/gb.qt.kde.html.list
 %%DATADIR%%/info/gb.qt.kde.info
+%%DATADIR%%/info/gb.qt.kde.list
+%%DATADIR%%/info/gb.qt.list
 %%DATADIR%%/info/gb.sdl.info
+%%DATADIR%%/info/gb.sdl.list
 %%DATADIR%%/info/gb.vb.info
+%%DATADIR%%/info/gb.vb.list
+@dirrm %%DATADIR%%/info
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/hello-world
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/ZenoDotus
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/YvickMiossec
@@ -5870,14 +5906,9 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc/AhmadKamal
 %%PORTDOCS%%@dirrm %%DATADIR%%/help/.rsrc
 %%PORTDOCS%%@dirrm %%DATADIR%%/help
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/WebBrowser/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/WebBrowser
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/OnScreenDisplay/.lang
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/OnScreenDisplay/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/OnScreenDisplay
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Notepad/.lang
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Notepad/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Notepad
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/WebBrowser/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/WebBrowser
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/UDPServerClient/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/UDPServerClient/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/UDPServerClient
@@ -5894,17 +5925,23 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking/ClientSocket
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Networking
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ImageViewer/.lang
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ImageViewer/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/ImageViewer
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Notepad
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Explorer
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Evaluator/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Evaluator/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous/Evaluator
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Miscellaneous
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/Solitaire/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/Solitaire
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/Snake/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/Snake
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/RobotFindsKitten/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games/RobotFindsKitten
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Games
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Explorer/.lang
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Explorer/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Explorer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/MoviePlayer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/MoviePlayer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/MoviePlayer
@@ -5912,9 +5949,19 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/Console/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec/Console
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Exec
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Evaluator/.lang
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Evaluator/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Evaluator
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/OnScreenDisplay
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer/.lang
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/ImageViewer
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/Clock/img
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/Clock/.icon
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/Clock/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/Clock
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/AnalogWatch/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing/AnalogWatch
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Drawing
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/Database
@@ -5922,9 +5969,6 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Clock/img
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Clock/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Clock
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer
@@ -5945,9 +5989,5 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation/KateBrowser
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Automation
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/AnalogWatch/.gambas
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/AnalogWatch
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%DATADIR%%/info
-@dirrm %%DATADIR%%
 @dirrm lib/gambas

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Tue May 18 22:53:43 2004
-+++ Makefile.in	Wed May 19 21:49:17 2004
+--- Makefile.in.orig	Tue Jun 22 12:45:17 2004
++++ Makefile.in	Tue Jun 22 23:51:34 2004
 @@ -35,6 +35,7 @@
  DESTDIR =
  
@@ -8,7 +8,7 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  
-@@ -379,25 +380,25 @@
+@@ -379,16 +380,16 @@
  
  install-exec-local:
  	@echo
@@ -26,14 +26,16 @@
 +	 echo "Making symbolic links in %%PREFIX%%/bin..."; \
 +	 rm -f %%PREFIX%%/bin/gbx; \
 +	 ln -sf $(bindir)/gbx %%PREFIX%%/bin/gbx; \
-+	 rm -f %%PREFIX%%/gbc; \
++	 rm -f %%PREFIX%%/bin/gbc; \
 +	 ln -sf $(bindir)/gbc %%PREFIX%%/bin/gbc; \
-+	 rm -f %%PREFIX%%/gba; \
++	 rm -f %%PREFIX%%/bin/gba; \
 +	 ln -sf $(bindir)/gba %%PREFIX%%/bin/gba; \
-+	 rm -f %%PREFIX%%/gbi; \
++	 rm -f %%PREFIX%%/bin/gbi; \
 +	 ln -sf $(bindir)/gbi %%PREFIX%%/bin/gbi; \
  	fi
  
+ 	@echo
+@@ -401,28 +402,28 @@
  	@echo
  	@echo "Installing the development environment..."
  	@(cd $(srcdir)/app; d=`pwd`; for p in *; do echo "Compiling $$p..."; cd $$d/$$p; \
@@ -41,16 +43,11 @@
 -	@if test "$(bindir)" != "/usr/bin" && test "$(bindir)" != "/usr/bin/"; then \
 -	 rm -f /usr/bin/gambas; \
 -	 ln -s $(bindir)/gambas /usr/bin/gambas; \
-+	  $(bindir)/gbc -ag; $(bindir)/gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
++	  %%PREFIX%%/bin/gbc -ag; %%PREFIX%%/bin/gba; rm -rf .gambas; $(INSTALL) $$p $(bindir); done)
 +	@if test "$(bindir)" != "%%PREFIX%%/bin" && test "$(bindir)" != "%%PREFIX%%/bin/"; then \
 +	 rm -f %%PREFIX%%/bin/gambas; \
-+	 ln -s $(bindir)/gambas %%PREFIX%%/bin/gambas; \
++	 ln -sf $(bindir)/gambas %%PREFIX%%/bin/gambas; \
          fi
- 
- 	@echo
-@@ -407,22 +408,22 @@
- 	@rm -f $(pkglibdir)/lib.gb.la
- 	@rm -f $(pkglibdir)/lib.gb.so*
  
 -	@echo
 -	@echo "Installing the gambas help files..."
