@@ -60,8 +60,8 @@ MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Build fails on amd64 (needs to build shared libraries with -fPIC)"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Build fails on amd64 or ia64 (needs to build shared libraries with -fPIC)"
 .endif
 
 .if ${PERL_LEVEL} < 500600
