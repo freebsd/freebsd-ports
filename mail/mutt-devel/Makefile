@@ -127,7 +127,6 @@ pre-configure:
 	(cd ${WRKSRC}; aclocal -I m4)
 
 .if !defined(NOPORTDOCS)
-PLIST_SUB+=	SUB_DOCS=""
 post-build:
 	${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
@@ -716,7 +715,6 @@ PLIST_SUB+=	SUB_ADD_M="@comment "
 PLIST_SUB+=	SUB_ADD_N="@comment "
 .endif
 .else 	# NOPORTDOCS
-PLIST_SUB+=	SUB_DOCS="@comment "
 PLIST_SUB+=	SUB_HTML="@comment "
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
