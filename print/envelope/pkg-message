@@ -1,0 +1,10 @@
+======================================================================
+NOTE: In order to use this program, you will need to copy the
+file ${PREFIX}/share/doc/envelope/samplerc to ~/.enveloperc.
+
+You may then modify ~/.enveloperc according to the instructions in
+the file. 
+
+Additional configuration examples can be found in the directory
+${PREFIX}/share/examples/envelope.
+======================================================================

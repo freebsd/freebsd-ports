@@ -1,0 +1,12 @@
+--- samplerc.orig	Mon Jan 29 22:20:06 2001
++++ samplerc	Sat May 18 00:33:08 2002
+@@ -25,6 +25,9 @@
+ $feedcenter = $normalwidth/2 - $eheight/2
+ 
+ $leftmargin = 0.25
++# if you use a program (like kprinter) that tells the printer 
++# to expect an envelope of the correct size, do not add the $feed* 
++# offset to $topmargin. 
+ $topmargin = 0.30 + $feedcenter
+ 
+ 
