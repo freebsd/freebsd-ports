@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8eabaad9-641f-11d9-92a7-000a95bc6fae">
+    <topic>hylafax -- unauthorized login vulnerability</topic>
+    <affects>
+      <package>
+	<name>hylafax</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A flaw in HylaFAX may allow an attacker to bypass normal
+	  authentication by spoofing their DNS PTR records.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1182</cvename>
+      <mlist msgid="20050111155949.GU9853@bilbo.x101.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110546971307585</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-11</discovery>
+      <entry>2005-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="56971fa6-641c-11d9-a097-000854d03344">
     <topic>xshisen -- local buffer overflows</topic>
     <affects>
