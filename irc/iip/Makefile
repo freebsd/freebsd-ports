@@ -7,21 +7,39 @@
 
 PORTNAME=	iip
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	irc security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	invisibleip
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED} \
+		${MASTER_SITE_LOCAL:S/$/:node_update/}
+MASTER_SITE_SUBDIR=	invisibleip \
+			lioux/:node_update
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+		node-${NODE_REF_VERSION_DATE}.ref.bz2:node_update
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Secure and Anonymous Instant Messaging
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+DEPRECATED=     'IIP network has been resurrected but it is no\
+		longer stable. It should work but be warned. Use\
+		at your own risk!'
 
 MAN1=	isproxy.1
 
+NODE_REF_VERSION_DATE=	20050110
 DOC_FILES=	AUTHORS CHANGELOG COPYING INSTALL README
+
+post-extract:
+	@${BZCAT} \
+		${DISTDIR}/${DIST_SUBDIR}/node-${NODE_REF_VERSION_DATE}.ref.bz2 \
+		> ${WRKSRC}/node.ref
 
 do-configure:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; \
