@@ -1,0 +1,160 @@
+%%PORTDOCS%%share/doc/kronolith/CHANGES
+%%PORTDOCS%%share/doc/kronolith/COPYING
+%%PORTDOCS%%share/doc/kronolith/CREDITS
+%%PORTDOCS%%share/doc/kronolith/INSTALL
+%%PORTDOCS%%share/doc/kronolith/README
+%%KRONOLITHDIR%%/addevent.php
+%%KRONOLITHDIR%%/addeventaction.php
+%%KRONOLITHDIR%%/config/conf.php
+%%KRONOLITHDIR%%/config/conf.php.dist
+%%KRONOLITHDIR%%/config/conf.php.dist.orig
+%%KRONOLITHDIR%%/config/html.php
+%%KRONOLITHDIR%%/config/html.php.dist
+%%KRONOLITHDIR%%/config/keywords.php
+%%KRONOLITHDIR%%/config/keywords.php.dist
+%%KRONOLITHDIR%%/config/menu.php
+%%KRONOLITHDIR%%/config/menu.php.dist
+%%KRONOLITHDIR%%/config/prefs.php
+%%KRONOLITHDIR%%/config/prefs.php.dist
+%%KRONOLITHDIR%%/data.php
+%%KRONOLITHDIR%%/day.php
+%%KRONOLITHDIR%%/delevent.php
+%%KRONOLITHDIR%%/editevent.php
+%%KRONOLITHDIR%%/editeventaction.php
+%%KRONOLITHDIR%%/graphics/alarm.gif
+%%KRONOLITHDIR%%/graphics/alarm_small.gif
+%%KRONOLITHDIR%%/graphics/bullet.gif
+%%KRONOLITHDIR%%/graphics/clear.gif
+%%KRONOLITHDIR%%/graphics/dayview.gif
+%%KRONOLITHDIR%%/graphics/delete.gif
+%%KRONOLITHDIR%%/graphics/edit.gif
+%%KRONOLITHDIR%%/graphics/event.gif
+%%KRONOLITHDIR%%/graphics/goto.gif
+%%KRONOLITHDIR%%/graphics/kronolith.gif
+%%KRONOLITHDIR%%/graphics/monthview.gif
+%%KRONOLITHDIR%%/graphics/new.gif
+%%KRONOLITHDIR%%/graphics/next.gif
+%%KRONOLITHDIR%%/graphics/prev.gif
+%%KRONOLITHDIR%%/graphics/recur.gif
+%%KRONOLITHDIR%%/graphics/today.gif
+%%KRONOLITHDIR%%/graphics/weekview.gif
+%%KRONOLITHDIR%%/graphics/workweekview.gif
+%%KRONOLITHDIR%%/index.php
+%%KRONOLITHDIR%%/lib/Day.php
+%%KRONOLITHDIR%%/lib/DayView.php
+%%KRONOLITHDIR%%/lib/Driver.php
+%%KRONOLITHDIR%%/lib/Driver/mcal.php
+%%KRONOLITHDIR%%/lib/Driver/sql.php
+%%KRONOLITHDIR%%/lib/Event.php
+%%KRONOLITHDIR%%/lib/Kronolith.php
+%%KRONOLITHDIR%%/lib/Month.php
+%%KRONOLITHDIR%%/lib/MonthView.php
+%%KRONOLITHDIR%%/lib/WeekView.php
+%%KRONOLITHDIR%%/lib/api.php
+%%KRONOLITHDIR%%/lib/base.php
+%%KRONOLITHDIR%%/lib/version.php
+%%KRONOLITHDIR%%/locale/cs_CZ/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/de_DE/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/el_GR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/es_ES/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/fr_FR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/nl_NL/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/pt_BR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/ru_win/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/zh_TW/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/menu.php
+%%KRONOLITHDIR%%/mini_month.php
+%%KRONOLITHDIR%%/month.php
+%%KRONOLITHDIR%%/po/Makefile
+%%KRONOLITHDIR%%/po/README
+%%KRONOLITHDIR%%/po/cs_CZ.po
+%%KRONOLITHDIR%%/po/de_DE.po
+%%KRONOLITHDIR%%/po/el_GR.po
+%%KRONOLITHDIR%%/po/es_ES.po
+%%KRONOLITHDIR%%/po/extract.pl
+%%KRONOLITHDIR%%/po/fr_FR.po
+%%KRONOLITHDIR%%/po/it_IT.po
+%%KRONOLITHDIR%%/po/nl_NL.po
+%%KRONOLITHDIR%%/po/pt_BR.po
+%%KRONOLITHDIR%%/po/ru_win.po
+%%KRONOLITHDIR%%/po/shtool
+%%KRONOLITHDIR%%/po/xgettext.sh
+%%KRONOLITHDIR%%/po/zh_TW.po
+%%KRONOLITHDIR%%/prefs.php
+%%KRONOLITHDIR%%/scripts/kronolith.sql
+%%KRONOLITHDIR%%/status.php
+%%KRONOLITHDIR%%/templates/common-footer.inc
+%%KRONOLITHDIR%%/templates/common-header.inc
+%%KRONOLITHDIR%%/templates/data/export.inc
+%%KRONOLITHDIR%%/templates/data/import.inc
+%%KRONOLITHDIR%%/templates/day/all_day.inc
+%%KRONOLITHDIR%%/templates/day/foot.inc
+%%KRONOLITHDIR%%/templates/day/head.inc
+%%KRONOLITHDIR%%/templates/day/row.inc
+%%KRONOLITHDIR%%/templates/day/row_half.inc
+%%KRONOLITHDIR%%/templates/edit/edit.inc
+%%KRONOLITHDIR%%/templates/edit/javascript.inc
+%%KRONOLITHDIR%%/templates/index/css.inc
+%%KRONOLITHDIR%%/templates/index/index.inc
+%%KRONOLITHDIR%%/templates/index/notconfigured.inc
+%%KRONOLITHDIR%%/templates/javascript/delete.inc
+%%KRONOLITHDIR%%/templates/menu/goto.inc
+%%KRONOLITHDIR%%/templates/menu/menu.inc
+%%KRONOLITHDIR%%/templates/month/head.inc
+%%KRONOLITHDIR%%/templates/month_begin_week.inc
+%%KRONOLITHDIR%%/templates/month_day.inc
+%%KRONOLITHDIR%%/templates/month_end_week.inc
+%%KRONOLITHDIR%%/templates/month_foot.inc
+%%KRONOLITHDIR%%/templates/month_head.inc
+%%KRONOLITHDIR%%/templates/week/head.inc
+%%KRONOLITHDIR%%/week.php
+%%KRONOLITHDIR%%/workweek.php
+@dirrm %%KRONOLITHDIR%%/config
+@dirrm %%KRONOLITHDIR%%/graphics/alerts
+@dirrm %%KRONOLITHDIR%%/graphics
+@dirrm %%KRONOLITHDIR%%/lib/Driver
+@dirrm %%KRONOLITHDIR%%/lib/scripts
+@dirrm %%KRONOLITHDIR%%/lib
+@dirrm %%KRONOLITHDIR%%/locale/cs_CZ/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/cs_CZ
+@dirrm %%KRONOLITHDIR%%/locale/de/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/de
+@dirrm %%KRONOLITHDIR%%/locale/de_DE/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/de_DE
+@dirrm %%KRONOLITHDIR%%/locale/el_GR/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/el_GR
+@dirrm %%KRONOLITHDIR%%/locale/en
+@dirrm %%KRONOLITHDIR%%/locale/es_ES/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/es_ES
+@dirrm %%KRONOLITHDIR%%/locale/fr_FR/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/fr_FR
+@dirrm %%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/it_IT
+@dirrm %%KRONOLITHDIR%%/locale/local
+@dirrm %%KRONOLITHDIR%%/locale/nl/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/nl
+@dirrm %%KRONOLITHDIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/nl_NL
+@dirrm %%KRONOLITHDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/pt_BR
+@dirrm %%KRONOLITHDIR%%/locale/ru_win/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/ru_win
+@dirrm %%KRONOLITHDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/zh_TW
+@dirrm %%KRONOLITHDIR%%/locale
+@dirrm %%KRONOLITHDIR%%/po
+@dirrm %%KRONOLITHDIR%%/scripts
+@dirrm %%KRONOLITHDIR%%/templates/data
+@dirrm %%KRONOLITHDIR%%/templates/day
+@dirrm %%KRONOLITHDIR%%/templates/edit
+@dirrm %%KRONOLITHDIR%%/templates/index
+@dirrm %%KRONOLITHDIR%%/templates/javascript
+@dirrm %%KRONOLITHDIR%%/templates/login
+@dirrm %%KRONOLITHDIR%%/templates/menu
+@dirrm %%KRONOLITHDIR%%/templates/month
+@dirrm %%KRONOLITHDIR%%/templates/week
+@dirrm %%KRONOLITHDIR%%/templates
+@dirrm %%KRONOLITHDIR%%
+etc/horde/httpd.conf.kronolith
+%%PORTDOCS%%@dirrm share/doc/kronolith
