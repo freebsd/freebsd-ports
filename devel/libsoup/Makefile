@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsoup
-PORTVERSION=	1.99.20
+PORTVERSION=	1.99.22
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.99
@@ -24,7 +24,7 @@ USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
