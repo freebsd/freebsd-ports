@@ -1,0 +1,19 @@
+*** Makefile.in.bak	Mon May 25 17:11:27 1998
+--- Makefile.in	Tue Aug 18 10:18:42 1998
+***************
+*** 9,15 ****
+  CC = @CC@
+  CCOPT = 
+  LIBPCAPDIR = @libpcapdir@
+! INCLS = -I. -I$(LIBPCAPDIR)
+  DEFS = @DEFS@
+  CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+  LDFLAGS = @LDFLAGS@
+--- 9,15 ----
+  CC = @CC@
+  CCOPT = 
+  LIBPCAPDIR = @libpcapdir@
+! INCLS = -I.
+  DEFS = @DEFS@
+  CFLAGS = @CFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+  LDFLAGS = @LDFLAGS@
