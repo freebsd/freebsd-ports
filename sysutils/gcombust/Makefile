@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gcombust
-PORTVERSION=	0.1.49
-PORTREVISION=	1
+PORTVERSION=	0.1.53
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
