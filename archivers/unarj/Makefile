@@ -7,6 +7,7 @@
 
 PORTNAME=	unarj
 PORTVERSION=	2.65
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ache
@@ -14,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Allows files to be extracted from ARJ archives
+
+post-patch:
+	${CP} ${FILESDIR}/sanitize.c ${WRKSRC}
 
 do-install:
 	${INSTALL} -d -m 755 -o ${SHAREOWN} -g ${SHAREGRP} \
