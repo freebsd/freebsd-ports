@@ -37,7 +37,9 @@ lib/X11/xshisen/s9.xpm
 lib/X11/xshisen/sha.xpm
 lib/X11/xshisen/ton.xpm
 lib/X11/app-defaults/XShisen
-lib/X11/ja_JP.EUC/app-defaults/XShisen
-@unexec rmdir %D/lib/X11/ja_JP.EUC/app-defaults 2>/dev/null || true
-@unexec rmdir %D/lib/X11/ja_JP.EUC 2>/dev/null || true
+lib/X11/ja_JP.eucJP/app-defaults/XShisen
+@unexec rmdir %D/lib/X11/ja_JP.eucJP/app-defaults 2>/dev/null || true
+@unexec rmdir %D/lib/X11/ja_JP.eucJP 2>/dev/null || true
 @dirrm lib/X11/xshisen
+@exec [ -d %D/lib/X11/ja_JP.EUC/ -a -d %D/lib/X11/ja_JP.EUC/app-defaults ] && ln -s %D/lib/X11/ja_JP.eucJP/app-defaults/XShisen %D/lib/X11/ja_JP.EUC/app-defaults || true
+@unexec rm %D/lib/X11/ja_JP.EUC/app-defaults/XShisen 2>/dev/null || true

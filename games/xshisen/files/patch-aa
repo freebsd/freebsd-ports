@@ -9,12 +9,3 @@
      if [ -d "$i/$j" ]; then
        JAPANESE="$j"
        break 2;
-@@ -1603,7 +1603,7 @@
- case "${JAPANESE}" in
- j*) ;;
- *) if [ "${enable_japanese}" = "euc" ]; then
--     JAPANESE="ja_JP.eucJP"
-+     JAPANESE="ja_JP.EUC"
-    elif [ "${enable_japanese}" = "sjis" ]; then
-      JAPANESE="ja_JP.SJIS"
-    else
