@@ -1,14 +1,14 @@
 This is the port which contains the superset of
-the fonts for the mplay on screen display and
+the fonts for the mplayer on-screen display and
 the sub title.
 
 In this stage it supports the following charsets:
 
-ISO for dutch, french, german, hungarian, italian
-    and portugese
+ISO-8859-1 (arial) in 4 sizes
+ISO-8859-2 (arial) in 4 sizes
 
 cyrillic
 
 russian (koi8r)
 
-WWW: http://mplayer.sourceforge.net
+WWW: http://www.mplayerhq.hu/

@@ -1,31 +1,70 @@
-share/mplayer/fonts/iso/README
-share/mplayer/fonts/iso/arial-12-00_a.raw
-share/mplayer/fonts/iso/arial-12-00_b.raw
-share/mplayer/fonts/iso/arial-12.desc
-share/mplayer/fonts/iso/arial-16-00_a.raw
-share/mplayer/fonts/iso/arial-16-00_b.raw
-share/mplayer/fonts/iso/arial-16.desc
-share/mplayer/fonts/iso/arialbd-12-00_a.raw
-share/mplayer/fonts/iso/arialbd-12-00_b.raw
-share/mplayer/fonts/iso/arialbd-12.desc
-share/mplayer/fonts/iso/arialbd-16-00_a.raw
-share/mplayer/fonts/iso/arialbd-16-00_b.raw
-share/mplayer/fonts/iso/arialbd-16.desc
-share/mplayer/fonts/iso/arpi_osd_a.raw
-share/mplayer/fonts/iso/arpi_osd_b.raw
-share/mplayer/fonts/iso/arpi_progress_a.raw
-share/mplayer/fonts/iso/arpi_progress_b.raw
-share/mplayer/fonts/iso/font.desc
 share/mplayer/fonts/cyrillic/bgfont_a.raw
 share/mplayer/fonts/cyrillic/bgfont_b.raw
 share/mplayer/fonts/cyrillic/font.desc
 share/mplayer/fonts/cyrillic/font.desc.koi8-r
 share/mplayer/fonts/cyrillic/test.sub
-share/mplayer/fonts/koi8r/font.desc
-share/mplayer/fonts/koi8r/koi8-r-a.raw
-share/mplayer/fonts/koi8r/koi8-r-b.raw
-@dirrm share/mplayer/fonts/iso
+share/mplayer/fonts/iso-8859-1/arial-14/font.desc
+share/mplayer/fonts/iso-8859-1/arial-14/iso-8859-1-a.raw
+share/mplayer/fonts/iso-8859-1/arial-14/iso-8859-1-b.raw
+share/mplayer/fonts/iso-8859-1/arial-14/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-1/arial-14/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-1/arial-14/runme
+share/mplayer/fonts/iso-8859-1/arial-18/font.desc
+share/mplayer/fonts/iso-8859-1/arial-18/iso-8859-1-a.raw
+share/mplayer/fonts/iso-8859-1/arial-18/iso-8859-1-b.raw
+share/mplayer/fonts/iso-8859-1/arial-18/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-1/arial-18/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-1/arial-18/runme
+share/mplayer/fonts/iso-8859-1/arial-24/font.desc
+share/mplayer/fonts/iso-8859-1/arial-24/iso-8859-1-a.raw
+share/mplayer/fonts/iso-8859-1/arial-24/iso-8859-1-b.raw
+share/mplayer/fonts/iso-8859-1/arial-24/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-1/arial-24/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-1/arial-24/runme
+share/mplayer/fonts/iso-8859-1/arial-28/font.desc
+share/mplayer/fonts/iso-8859-1/arial-28/iso-8859-1-a.raw
+share/mplayer/fonts/iso-8859-1/arial-28/iso-8859-1-b.raw
+share/mplayer/fonts/iso-8859-1/arial-28/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-1/arial-28/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-1/arial-28/runme
+share/mplayer/fonts/iso-8859-2/arial-14/font.desc
+share/mplayer/fonts/iso-8859-2/arial-14/iso-8859-2-a.raw
+share/mplayer/fonts/iso-8859-2/arial-14/iso-8859-2-b.raw
+share/mplayer/fonts/iso-8859-2/arial-14/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-2/arial-14/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-2/arial-14/runme
+share/mplayer/fonts/iso-8859-2/arial-18/font.desc
+share/mplayer/fonts/iso-8859-2/arial-18/iso-8859-2-a.raw
+share/mplayer/fonts/iso-8859-2/arial-18/iso-8859-2-b.raw
+share/mplayer/fonts/iso-8859-2/arial-18/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-2/arial-18/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-2/arial-18/runme
+share/mplayer/fonts/iso-8859-2/arial-24/font.desc
+share/mplayer/fonts/iso-8859-2/arial-24/iso-8859-2-a.raw
+share/mplayer/fonts/iso-8859-2/arial-24/iso-8859-2-b.raw
+share/mplayer/fonts/iso-8859-2/arial-24/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-2/arial-24/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-2/arial-24/runme
+share/mplayer/fonts/iso-8859-2/arial-28/font.desc
+share/mplayer/fonts/iso-8859-2/arial-28/iso-8859-2-a.raw
+share/mplayer/fonts/iso-8859-2/arial-28/iso-8859-2-b.raw
+share/mplayer/fonts/iso-8859-2/arial-28/osd-mplayer-a.raw
+share/mplayer/fonts/iso-8859-2/arial-28/osd-mplayer-b.raw
+share/mplayer/fonts/iso-8859-2/arial-28/runme
+share/mplayer/fonts/koi8r-font/font.desc
+share/mplayer/fonts/koi8r-font/koi8-r-a.raw
+share/mplayer/fonts/koi8r-font/koi8-r-b.raw
+@dirrm share/mplayer/fonts/koi8r-font
+@dirrm share/mplayer/fonts/iso-8859-2/arial-28
+@dirrm share/mplayer/fonts/iso-8859-2/arial-24
+@dirrm share/mplayer/fonts/iso-8859-2/arial-18
+@dirrm share/mplayer/fonts/iso-8859-2/arial-14
+@dirrm share/mplayer/fonts/iso-8859-2
+@dirrm share/mplayer/fonts/iso-8859-1/arial-28
+@dirrm share/mplayer/fonts/iso-8859-1/arial-24
+@dirrm share/mplayer/fonts/iso-8859-1/arial-18
+@dirrm share/mplayer/fonts/iso-8859-1/arial-14
+@dirrm share/mplayer/fonts/iso-8859-1
 @dirrm share/mplayer/fonts/cyrillic
-@dirrm share/mplayer/fonts/koi8r
 @dirrm share/mplayer/fonts
 @dirrm share/mplayer

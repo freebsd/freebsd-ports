@@ -6,27 +6,34 @@
 #
 
 PORTNAME=	mplayer-fonts
-PORTVERSION=	0.18
+PORTVERSION=	0.50
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/mplayer/
+MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uedc/mplayer/ \
+		http://www.rrr.de/~riggs/mplayer/
 
 MAINTAINER=	riggs@rrr.de
 
-ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
+
+FONTDIRS=	cyrillic koi8r-font iso-8859-1/arial-14 \
+		iso-8859-1/arial-18 iso-8859-1/arial-24 \
+		iso-8859-1/arial-28 iso-8859-2/arial-14 \
+		iso-8859-2/arial-18 iso-8859-2/arial-24 \
+		iso-8859-2/arial-28
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/mplayer/fonts
 	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts
-	@${MKDIR} ${PREFIX}/share/mplayer/fonts/iso
-	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/iso
-	@${MKDIR} ${PREFIX}/share/mplayer/fonts/cyrillic
-	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/cyrillic
-	@${MKDIR} ${PREFIX}/share/mplayer/fonts/koi8r
-	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/koi8r
-	@${INSTALL_DATA} ${WRKDIR}/iso/* ${PREFIX}/share/mplayer/fonts/iso
-	@${INSTALL_DATA} ${WRKDIR}/cyrillic/* ${PREFIX}/share/mplayer/fonts/cyrillic
-	@${INSTALL_DATA} ${WRKDIR}/koi8r/* ${PREFIX}/share/mplayer/fonts/koi8r/
+.for dir in iso-8859-1 iso-8859-2
+	@${MKDIR} ${PREFIX}/share/mplayer/fonts/${dir}
+	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/${dir}
+.endfor
+.for dir in ${FONTDIRS}
+	@${MKDIR} ${PREFIX}/share/mplayer/fonts/${dir}
+	@${CHMOD} 0555 ${PREFIX}/share/mplayer/fonts/${dir}
+	@${INSTALL_DATA} ${WRKDIR}/${dir}/* \
+		${PREFIX}/share/mplayer/fonts/${dir}
+.endfor
 
 .include <bsd.port.mk>
