@@ -6,12 +6,19 @@
 CHOWN=/usr/sbin/chown
 ECHO_CMD=echo
 GREP=/usr/bin/grep
+PKG_INFO=/usr/sbin/pkg_info
 PW=/usr/sbin/pw
 
 FTPUSERS=/etc/ftpusers
 
 case $2 in
 PRE-INSTALL)
+  if ! ${PKG_INFO} -e '%%PKGNAME_CLIENT%%'; then
+    ${ECHO_CMD} "===>  %%PKGNAME%% requires %%PKGNAME_CLIENT%%."
+    ${ECHO_CMD}
+    ${ECHO_CMD} "      Please install %%PKGNAME_CLIENT%% manually."
+    exit 1
+  fi
   if ! ${PW} usershow -n ldap >/dev/null 2>&1; then
     ${ECHO_CMD}
     if ! ${PW} groupshow -n ldap >/dev/null 2>&1; then
