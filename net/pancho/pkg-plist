@@ -1,17 +1,18 @@
 bin/pancho
 etc/pancho.conf.sample
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Util.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Snmp.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Log.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Nortel.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Foundry.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Arrowpoint.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Cisco.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Avaya.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pancho/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pancho 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pancho 2>/dev/null || true
+%%SITE_PERL%%/Pancho/Util.pm
+%%SITE_PERL%%/Pancho/Snmp.pm
+%%SITE_PERL%%/Pancho/Log.pm
+%%SITE_PERL%%/Pancho/Plugins/Nortel.pm
+%%SITE_PERL%%/Pancho/Plugins/Foundry.pm
+%%SITE_PERL%%/Pancho/Plugins/Arrowpoint.pm
+%%SITE_PERL%%/Pancho/Plugins/Cisco.pm
+%%SITE_PERL%%/Pancho/Plugins/Avaya.pm
+%%SITE_PERL%%/Pancho/Plugins/DellPowerConnect.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pancho/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Pancho/Plugins 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Pancho 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pancho 2>/dev/null || true
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.plugins
 %%PORTDOCS%%%%DOCSDIR%%/Plugin.sample
