@@ -9,19 +9,23 @@
 
 DISTNAME=	ups-3.32
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
+		ftp://unix.hensa.ac.uk/pub/misc/unix/ups/  \
+		http://www.concerto.demon.co.uk/UPS/
 MASTER_SITE_SUBDIR= utilities
+
+PATCHFILES=	rga-332-patch-17jul98.txt
+PATCH_SITES=	http://www.concerto.demon.co.uk/UPS/
 
 MAINTAINER=     obrien@FreeBSD.org
 
 OSVERSION!=	sysctl -n kern.osreldate
 .if ${OSVERSION} >= 300000
 BROKEN=	"During build: Libvar_addrs[0] is not constant"
-.else
-BROKEN=	"xc_builtins.c cannot find X11/Xlib.h"
 .endif
 
-ALL_TARGET=	ups ups
+USE_GMAKE=	yes
+ALL_TARGET=	ups
 MAN1=		ups.1
 
 .include <bsd.port.mk>
