@@ -8,8 +8,7 @@
 PORTNAME=	jmirror
 PORTVERSION=	1.0b
 CATEGORIES=	ftp
-MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
-		ftp://ftp.ruin.org/pub/All/
+MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP mirroring program written in PERL (REQUIRES PERL5,Net::FTP)
