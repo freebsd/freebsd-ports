@@ -8,7 +8,7 @@
 
 PORTNAME=	opendx
 PORTVERSION=	4.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics math
 MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
@@ -16,7 +16,7 @@ DISTNAME=	dx-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
-LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 OPTIONS=	HDF "Build hdf-support (only hdf OR netcdf is supported)" on \

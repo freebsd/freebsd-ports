@@ -7,7 +7,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics print
 MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 
@@ -16,7 +16,7 @@ COMMENT=	Convert PostScript to other vector graphic formats
 
 USE_GHOSTSCRIPT=	yes
 
-LIB_DEPENDS=	Magick++.6:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick++.7:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
 		plotter.4:${PORTSDIR}/graphics/plotutils \
 		EMF.1:${PORTSDIR}/graphics/libemf

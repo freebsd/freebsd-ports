@@ -7,6 +7,7 @@
 
 PORTNAME=	imagick
 PORTVERSION=	0.9.11
+PORTREVISION=	1
 CATEGORIES=	graphics pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -16,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A PECL extension to manipulate images
 
-LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

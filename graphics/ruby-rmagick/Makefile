@@ -7,6 +7,7 @@
 
 PORTNAME=	rmagick
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://rubyforge.org/frs/download.php/550/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby binding for ImageMagick
 
-LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick
 
 BROKEN=		"Does not compile"
 
