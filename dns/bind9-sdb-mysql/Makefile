@@ -28,7 +28,7 @@ CONFLICTS=	bind-8.3.* bind84-8.4.* bind9-9.2.* bind9-dlz-9.2.* host-* skalibs-0.
 ISCVERSION=	9.2.3
 
 DEPRECATED=	Developement has been stopped and it's not yet finished
-EXPIRATION_DATE=20041017
+EXPIRATION_DATE=2004-10-17
 
 USE_MYSQL=	YES
 USE_OPENSSL=	YES
