@@ -28,8 +28,8 @@ pre-patch:
 		${PATCH} -sp1 < ${.CURDIR}/files/emacs20-xim-20000713.diff ; )
 
 post-patch:
-	@${ECHO} "share/emacs/%%EMACS_VER%%/etc/Emacs" >> ${WRKDIR}/pkg-plist
-	@${ECHO} "share/emacs/%%EMACS_VER%%/etc/dot.emacs" >> ${WRKDIR}/pkg-plist
+	@${ECHO_CMD} "share/emacs/%%EMACS_VER%%/etc/Emacs" >> ${WRKDIR}/pkg-plist
+	@${ECHO_CMD} "share/emacs/%%EMACS_VER%%/etc/dot.emacs" >> ${WRKDIR}/pkg-plist
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/pkg-plist
 
 post-install:

@@ -17,12 +17,12 @@ do-install:
 	-${MKDIR} $(PREFIX)/lib/bytebench
 	for f in Makefile README Run doc pgms results testdir; \
 		do ${CP} -R $(WRKSRC)/$$f $(PREFIX)/lib/bytebench; done
-	${ECHO} "#!/bin/sh"		   >  $(PREFIX)/bin/bytebench
-	${ECHO} "TMPDIR=\$${TMPDIR-/var/tmp}" >> $(PREFIX)/bin/bytebench
-	${ECHO} "RESULTDIR=/tmp"		   >> $(PREFIX)/bin/bytebench
-	${ECHO} "export TMPDIR RESULTDIR"	   >> $(PREFIX)/bin/bytebench
-	${ECHO} "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
-	${ECHO} "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
+	${ECHO_CMD} "#!/bin/sh"		   >  $(PREFIX)/bin/bytebench
+	${ECHO_CMD} "TMPDIR=\$${TMPDIR-/var/tmp}" >> $(PREFIX)/bin/bytebench
+	${ECHO_CMD} "RESULTDIR=/tmp"		   >> $(PREFIX)/bin/bytebench
+	${ECHO_CMD} "export TMPDIR RESULTDIR"	   >> $(PREFIX)/bin/bytebench
+	${ECHO_CMD} "cd $(PREFIX)/lib/bytebench"  >> $(PREFIX)/bin/bytebench
+	${ECHO_CMD} "exec ./Run \"\$$@\""	   >> $(PREFIX)/bin/bytebench
 	${CHMOD} 755 $(PREFIX)/bin/bytebench
 	${CHMOD} 644 $(PREFIX)/lib/bytebench/Makefile
 	${CHMOD} 644 $(PREFIX)/lib/bytebench/README

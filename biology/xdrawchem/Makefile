@@ -25,17 +25,17 @@ pre-build:
 		${CXX} ${CXXFLAGS} -O0 -c -DRINGHOME="\"${PREFIX}/share/xdrawchem/\"" -I${X11BASE}/include/qt2 -o molecule_tools.o molecule_tools.cpp
 
 pre-install:
-	${ECHO} bin/xdrawchem > ${PLIST}
+	${ECHO_CMD} bin/xdrawchem > ${PLIST}
 	${LS} ${WRKSRC}/ring | \
 		${SED} -e 's:^:share/xdrawchem/:' >> ${PLIST}
-	${ECHO} @dirrm share/xdrawchem >> ${PLIST}
+	${ECHO_CMD} @dirrm share/xdrawchem >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${LS} *txt | \
 		${SED} -e 's:^:share/doc/xdrawchem/:' >> ${PLIST}
-	${ECHO} @dirrm share/doc/xdrawchem >> ${PLIST}
+	${ECHO_CMD} @dirrm share/doc/xdrawchem >> ${PLIST}
 	${LS} ${WRKSRC}/save | \
 		${SED} -e 's:^:share/examples/xdrawchem/:' >> ${PLIST}
-	${ECHO} @dirrm share/examples/xdrawchem >> ${PLIST}
+	${ECHO_CMD} @dirrm share/examples/xdrawchem >> ${PLIST}
 .endif
 
 do-install:
