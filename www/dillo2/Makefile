@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       dillo
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.4
 CATEGORIES=     www
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,8 +19,12 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--includedir="${LOCALBASE}/include" \
-		--libdir="${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
+			--libdir="${LOCALBASE}/lib" \
+			--with-jpeg-inc="${LOCALBASE}/include"
 USE_GMAKE=	yes
+
+post-patch:
+	${PERL} -pi -e "s@-lpthread@${PTHREAD_LIBS}@g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
