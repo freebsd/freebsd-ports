@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	2.0.0/sources/gnome-panel
@@ -22,26 +21,20 @@ LIB_DEPENDS=	wnck-1.4:${PORTSDIR}/x11-toolkits/libwnck \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomehier
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--disable-gtk-doc \
-		--with-kde-datadir=${LOCALBASE}/share \
+CONFIGURE_ARGS=	--with-kde-datadir=${LOCALBASE}/share \
 		--with-kde-docdir=${LOCALBASE}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=	gnome-panel-2.1 gnome-panel-properties.1
+MAN1=	gnome-panel.1 gnome-panel-preferences.1
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/gnome/|(datadir)/|g ; \
-		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
-		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g ; \
-		 s|[(]datadir[)]/locale|(prefix)/share/locale|g'
 
 .include <bsd.port.mk>
