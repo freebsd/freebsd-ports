@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-core
+PKGNAMESUFFIX=	-core-devel
 
 COMMENT=	Client 'core' for the BitTorrent peer-to-peer network
 
 # build only the CORE
 WITHOUT_GUI=	yes
 
-MASTERDIR=	${.CURDIR}/../py-bittorrent
+MASTERDIR=	${.CURDIR}/../py-bittorrent-devel
 
 .include "${MASTERDIR}/Makefile"
