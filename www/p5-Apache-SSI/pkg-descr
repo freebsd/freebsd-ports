@@ -1,0 +1,2 @@
+Apache::SSI implements the functionality of mod_include for handling
+server-parsed html documents.  It runs under Apache's mod_perl.
