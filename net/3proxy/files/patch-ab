@@ -1,12 +1,15 @@
---- 3proxy.cfg.sample.orig	Wed Oct  8 19:35:48 2003
-+++ 3proxy.cfg.sample	Wed Oct  8 20:56:52 2003
-@@ -332,12 +332,12 @@
+--- 3proxy.cfg.sample.orig	Fri Feb 13 18:09:36 2004
++++ 3proxy.cfg.sample	Fri Feb 13 18:11:20 2004
+@@ -341,14 +341,14 @@
  # this example shows you how to include passwd file. For included files
  # <CR> and <LF> are treated as field separators.
  
 -service
 +#service
  # service is required under NT if you want 3proxy to start as service
+-#daemon
++daemon
+ # now we will not depend on any console (daemonize).
  
  
  #log /usr/local/etc/3proxy/logs/3proxy.log D
@@ -14,13 +17,4 @@
 +log /var/log/3proxy.log D
  # log allows to specify log file location and rotation, D means logfile
  # is created daily
- 
-@@ -455,7 +455,7 @@
- #setuid 65535
- # now we needn't any root rights. We can chroot and setgid/setuid.
- 
--#daemon
-+daemon
- # now we will not depend on any console (daemonize).
- 
  
