@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	2.1.50
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/bleeding-edge/
@@ -18,8 +18,7 @@ COMMENT=	High-level interactive language for numerical computations
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		f77blas.1:${PORTSDIR}/math/atlas \
-		lapack.3:${PORTSDIR}/math/lapack
+		f77blas.1:${PORTSDIR}/math/atlas
 
 USE_BZIP2=	yes
 
@@ -33,17 +32,18 @@ GNU_HOST=	${ARCH}-portbld-freebsdaout${OSREL}
 OCTAVE_VERSION=	${PORTVERSION}
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 
-BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -latlas"
+BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -lcblas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
-		--with-fftw --with-blas=${BLAS_LIBS} --with-lpack \
+		--with-fftw --with-blas=${BLAS_LIBS} --with-lapack=-lalapack \
 		--enable-shared
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		FFLAGS="${FFLAGS}"
 
 .if ${OSVERSION} < 400004
 CONFIGURE_ARGS+=	--with-f2c
