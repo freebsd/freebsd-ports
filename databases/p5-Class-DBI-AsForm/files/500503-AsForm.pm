@@ -16,8 +16,8 @@
 +use vars qw(@ISA);@ISA = qw(Exporter);
 +use vars qw(@EXPORT);@EXPORT = qw( to_cgi to_field _to_textarea _to_textfield _to_select
  type_of );
--our $VERSION = '2.2';
-+use vars qw($VERSION);$VERSION = '2.2';
+-our $VERSION = '2.3';
++use vars qw($VERSION);$VERSION = '2.3';
  
  =head1 NAME
  
@@ -42,8 +42,8 @@
      for (@objs) { 
          my $sel = HTML::Element->new("option", value => $_->id);
          $sel->attr("selected" => "selected") if ref $self 
--                                                and eval { $_->id == $self->$col->id };
-+                                                and eval { $_->id == $self->$col()->id };
+-                                                and eval { $_->id eq $self->$col->id };
++                                                and eval { $_->id eq $self->$col()->id };
          $sel->push_content($_->stringify_self);
          $a->push_content($sel);
      }
