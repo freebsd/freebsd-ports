@@ -28,9 +28,9 @@ NO_BUILD=	yes
 STRIP=		# empty: do not strip linux binary during INSTALL_PROGRAM
 WRKSRC=		${WRKDIR}
 STUFFIT_FILES=	bin/unstuff bin/stuff
-STUFFIT_MAN=    man/man1/stuff.1 man/man1/unstuff.1
+STUFFIT_MAN=	man/man1/stuff.1 man/man1/unstuff.1
 
-MAN1 = stuff.1 unstuff.1
+MAN1=		stuff.1 unstuff.1
 
 post-fetch:
 	@${CHMOD} a+x ${DISTDIR}/${DISTFILES}

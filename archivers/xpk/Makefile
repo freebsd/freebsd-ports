@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.jormas.com/~vesuri/xpk/ \
 		http://energyhq.homeip.net/files/
 
-MAINTAINER=     adamw@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	The eXternal PacKer (XPK) library system
 
 USE_LIBTOOL=	yes

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=    3.20
-PORTEPOCH=      1
+PORTVERSION=	3.20
+PORTEPOCH=	1
 CATEGORIES=	archivers
-MASTER_SITES=   http://www.rarlab.com/rar/
-DISTNAME=       rarbsd-3.2.0
-FETCH_CMD=      /usr/bin/fetch
+MASTER_SITES=	http://www.rarlab.com/rar/
+DISTNAME=	rarbsd-3.2.0
+FETCH_CMD=	/usr/bin/fetch
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	File archiver (binary port)
@@ -21,7 +21,7 @@ CAT1=		rar.1
 ONLY_FOR_ARCHS=	i386
 NO_PACKAGE=	Only unmodified original package can be distributed
 NO_BUILD=	yes
-WRKSRC=         ${WRKDIR}/rar
+WRKSRC=		${WRKDIR}/rar
 
 .include <bsd.port.pre.mk>
 
