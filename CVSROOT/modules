@@ -3901,6 +3901,7 @@ muse		ports/sysutils/muse
 musicbox	ports/audio/musicbox
 musicbrainz	ports/audio/musicbrainz
 musixtex	ports/print/musixtex
+mutella		ports/net/mutella
 mutemix		ports/audio/mutemix
 mutt		ports/mail/mutt
 mutt-devel	ports/mail/mutt-devel
