@@ -1,3 +1,6 @@
+bin/add_file_priv
+bin/add_long_password
+bin/make_binary_distribution
 bin/comp_err
 bin/isamchk
 bin/isamlog
@@ -10,6 +13,7 @@ bin/mysqladmin
 bin/mysqlbug
 bin/mysqldump
 bin/mysqlshow
+bin/mysqlimport
 bin/perror
 bin/replace
 bin/safe_mysqld
@@ -22,6 +26,8 @@ include/mysql/my_sys.h
 include/mysql/mysql.h
 include/mysql/mysql_com.h
 include/mysql/dbug.h
+include/mysql/errmsg.h
+include/mysql/mysql_version.h
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
@@ -29,57 +35,19 @@ lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
 lib/mysql/libdbug.a
-lib/mysql/bench/data-ATIS/aircraft.txt
-lib/mysql/bench/data-ATIS/airline.txt
-lib/mysql/bench/data-ATIS/airport.txt
-lib/mysql/bench/data-ATIS/airport_service.txt
-lib/mysql/bench/data-ATIS/city.txt
-lib/mysql/bench/data-ATIS/class_of_service.txt
-lib/mysql/bench/data-ATIS/code_description.txt
-lib/mysql/bench/data-ATIS/compound_class.txt
-lib/mysql/bench/data-ATIS/connect_leg.txt
-lib/mysql/bench/data-ATIS/connection.txt
-lib/mysql/bench/data-ATIS/date_day.txt
-lib/mysql/bench/data-ATIS/day_name.txt
-lib/mysql/bench/data-ATIS/dual_carrier.txt
-lib/mysql/bench/data-ATIS/fare.txt
-lib/mysql/bench/data-ATIS/flight.txt
-lib/mysql/bench/data-ATIS/flight_class.txt
-lib/mysql/bench/data-ATIS/flight_day.txt
-lib/mysql/bench/data-ATIS/flight_fare.txt
-lib/mysql/bench/data-ATIS/food_service.txt
-lib/mysql/bench/data-ATIS/ground_service.txt
-lib/mysql/bench/data-ATIS/month_name.txt
-lib/mysql/bench/data-ATIS/restrict_carrier.txt
-lib/mysql/bench/data-ATIS/restrict_class.txt
-lib/mysql/bench/data-ATIS/restriction.txt
-lib/mysql/bench/data-ATIS/state.txt
-lib/mysql/bench/data-ATIS/stop.txt
-lib/mysql/bench/data-ATIS/time_interval.txt
-lib/mysql/bench/data-ATIS/time_zone.txt
-lib/mysql/bench/data-ATIS/transport.txt
-lib/mysql/bench/data-Wisconsin/onek.data
-lib/mysql/bench/data-Wisconsin/tenk.data
-lib/mysql/bench/run-all-tests
-lib/mysql/bench/test-ATIS
-lib/mysql/bench/test-big-tables
-lib/mysql/bench/test-connect
-lib/mysql/bench/test-create
-lib/mysql/bench/test-insert
-lib/mysql/bench/test-select
-lib/mysql/bench/wisconsin-test
 libexec/mysqld
-share/doc/mysql/mysql-faq.html
-share/doc/mysql/mysql-faq.ps
-share/doc/mysql/mysql-faq.texi
-share/doc/mysql/mysql-faq.txt
-share/doc/mysql/mysql-faq_toc.html
+share/doc/mysql/manual.html
+share/doc/mysql/manual.ps
+share/doc/mysql/manual.texi
+share/doc/mysql/manual.txt
+share/doc/mysql/manual_toc.html
+share/doc/mysql/include.texi
 share/mysql/english/errmsg.sys
 share/mysql/english/errmsg.txt
 share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
-share/mysql/germany/errmsg.sys
-share/mysql/germany/errmsg.txt
+share/mysql/german/errmsg.sys
+share/mysql/german/errmsg.txt
 share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
 share/mysql/czech/errmsg.sys
@@ -95,19 +63,15 @@ share/mysql/norwegian-ny/errmsg.txt
 share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
 share/mysql/dutch/errmsg.sys
-share/mysql/dutch/errmsg.txt
-share/mysql/russian/errmsg.sys
+share/mysql/dutch/errmsg.sys
+share/mysql/russian/errmsg.txt
 share/mysql/russian/errmsg.txt
 @dirrm include/mysql
-@dirrm lib/mysql/bench/Results
-@dirrm lib/mysql/bench/data-ATIS
-@dirrm lib/mysql/bench/data-Wisconsin
-@dirrm lib/mysql/bench
 @dirrm lib/mysql
 @dirrm share/doc/mysql
 @dirrm share/mysql/english
 @dirrm share/mysql/french
-@dirrm share/mysql/germany
+@dirrm share/mysql/german
 @dirrm share/mysql/swedish
 @dirrm share/mysql/czech
 @dirrm share/mysql/polish

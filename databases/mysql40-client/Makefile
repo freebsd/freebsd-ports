@@ -1,14 +1,14 @@
 # ports collection makefile for:	mySQL
-# Version required:			v3.20.32a
-# Date created:				28 Oct 1997
+# Version required:			v3.21.19
+# Date created:				29 Dec 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.11 1997/11/26 23:35:27 jseger Exp $
+# $Id: Makefile,v 1.12 1997/12/04 11:44:46 asami Exp $
 #
 
-DISTNAME=	mysql-3.20.32a
+DISTNAME=	mysql-3.21.19-beta
 CATEGORIES=	databases
-MASTER_SITES=	http://www.tcx.se/ \
+MASTER_SITES=	http://www.tcx.se/Downloads/MySQL-3.21/ \
 		http://www.buoy.com/mysql/ \
 		http://web.tryc.on.ca/mysql/
 
@@ -42,8 +42,8 @@ post-install:
 	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ /bin/chmod 750 ${PREFIX}/etc/rc.d/mysql.sh
 	${MKDIR} ${PREFIX}/share/doc/mysql
-.for doc in mysql-faq.html mysql-faq.ps mysql-faq_toc.html mysql-faq.txt mysql-faq.texi
-	${INSTALL_DATA} ${WRKSRC}/FAQs/${doc} ${PREFIX}/share/doc/mysql
+.for doc in manual.html manual.ps manual_toc.html manual.txt manual.texi include.texi
+	${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${PREFIX}/share/doc/mysql
 .endfor
 
 .include <bsd.port.mk>
