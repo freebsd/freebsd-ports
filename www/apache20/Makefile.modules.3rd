@@ -79,17 +79,28 @@ AP_EXTRAS+=	-I ${AP_INC}
 AP_EXTRAS+=	-L ${AP_LIB}
 .endif
 
+.if exists(${APXS})
+APXS_PREFIX!=	${APXS} -q prefix
+.else
+APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
+.endif
+
 .if defined(AP_FAST_BUILD)
 
 ap-gen-plist:
 .if defined(AP_GENPLIST)
+.   if !exists(${PLIST})
 	@${ECHO} "===>  Generating apache plist"
-	@${ECHO} "@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%%APACHEMODDIR%%/%%AP_MODULE%%" > ${PLIST}
+	@${ECHO} "@cwd ${APXS_PREFIX}" > ${PLIST}
+	@${ECHO} "@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
+	@${ECHO} "@cwd ${PREFIX}" >> ${PLIST}	
+.   endif
 .else
 	@${DO_NADA}
 .endif
+
 do-build: ap-gen-plist
 	@cd ${WRKSRC} && ${APXS} -c ${AP_EXTRAS} -o ${MODULENAME}.${AP_BUILDEXT} ${SRC_FILE}
 
