@@ -26,6 +26,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		recode.1
+INFO=		recode
 
 post-extract: copy-po-files remove-info-files
 
@@ -35,18 +36,12 @@ copy-po-files:
 remove-info-files:
 	@${RM} -f ${WRKSRC}/doc/${PORTNAME}.info*
 
-post-patch: patch-po-files patch-makeinfo
-
-patch-po-files:
+post-patch:
 	@${PERL} -pi -e '\
 		if (/Project-Id-Version/) { \
 			s/3\.[45](r|\.[0-9])?/3.6/; \
 			s/: (Free )?recode/: GNU recode/; \
 		} \
 	' ${WRKSRC}/i18n/*.po
-
-patch-makeinfo:
-	@${REINPLACE_CMD} -e 's|\@MAKEINFO\@|\@MAKEINFO\@ --no-split|g' \
-		${WRKSRC}/doc/Makefile.in
 
 .include <bsd.port.mk>
