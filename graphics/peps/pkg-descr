@@ -1,0 +1,10 @@
+peps is a utility to Print Encapsulated PostScript files.
+Specifically, it allows you to convert an EPS file into an anti-aliased
+PGM bitmap (with a variable resolution and anti-aliasing level).
+If the -p option is specified, the resulting bitmap is piped through
+pnmtopng to create a PNG image.
+
+WWW: http://www.whizkidtech.net/peps/
+
+- Pete
+petef@databits.net

@@ -177,6 +177,7 @@
     SUBDIR += p5-Imlib2
     SUBDIR += p5-chart
     SUBDIR += panorama
+    SUBDIR += peps
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc
