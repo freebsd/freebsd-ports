@@ -1,0 +1,5 @@
+bin/SpiralSynth
+share/doc/spiralsynth/CHANGES
+share/doc/spiralsynth/COPYING
+share/doc/spiralsynth/README
+@dirrm share/doc/spiralsynth

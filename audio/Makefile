@@ -117,6 +117,7 @@
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += sphinx
+    SUBDIR += spiralsynth
     SUBDIR += splay
     SUBDIR += splaytk
     SUBDIR += streamripper
