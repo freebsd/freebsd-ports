@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	6.5.3
+PORTVERSION=	7.0beta5
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.postgresql.org/pub/ \
+MASTER_SITES=	ftp://ftp.de.postgresql.org/ \
+		ftp://ftp.postgresql.org/pub/ \
 		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
-		ftp://ftp.de.postgresql.org/ \
 		ftp://ftp.digex.net/pub/packages/database/postgresql/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/
 
@@ -44,6 +44,7 @@ SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+DOCDIR=		${WRKDIR}/${DISTNAME}/doc
 
 USE_GMAKE=	YES
 MAKEFILE=	GNUmakefile
@@ -55,26 +56,22 @@ CONFIGURE_ARGS= --prefix=${PREFIX}/pgsql \
 		${CONFIGURE_TCL} \
 		--with-libraries=${PREFIX}/lib
 
-INSTALL_TARGET= install install-man
-
-MAN1=		cleardbdir.1 createdb.1 createuser.1 destroydb.1 \
-		destroyuser.1 ecpg.1 initdb.1 initlocation.1 \
-		ipcclean.1 pg_dump.1 pg_dumpall.1 pg_passwd.1 \
-		pg_upgrade.1 postgres.1 postmaster.1 psql.1
-MAN3=		catalogs.3 libpq.3
-MAN5=		pg_hba.conf.5
+MAN1=		createdb.1 createlang.1 createuser.1 destroydb.1 destroylang.1 \
+		destroyuser.1 initdb.1 initlocation.1 ipcclean.1 pg_dump.1 \
+		pg_dumpall.1 pg_upgrade.1 pgaccess.1 pgadmin.1 pgtclsh.1 \
+		pgtksh.1 postgres.1 postmaster.1 psql.1 vacuumdb.1
 MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 		commit.l copy.l create_aggregate.l create_database.l \
 		create_function.l create_index.l create_language.l \
 		create_operator.l create_rule.l create_sequence.l \
-		create_table.l create_trigger.l create_type.l create_user.l \
-		create_version.l create_view.l declare.l delete.l drop.l \
+		create_table.l create_table_as.l create_trigger.l \
+		create_type.l create_user.l create_view.l declare.l delete.l \
 		drop_aggregate.l drop_database.l drop_function.l drop_index.l \
 		drop_language.l drop_operator.l drop_rule.l drop_sequence.l \
 		drop_table.l drop_trigger.l drop_type.l drop_user.l \
-		drop_view.l end.l explain.l fetch.l grant.l insert.l listen.l \
-		load.l lock.l move.l notify.l reset.l revoke.l rollback.l \
-		select.l set.l show.l sql.l update.l vacuum.l
+		drop_view.l explain.l fetch.l grant.l insert.l listen.l load.l \
+		lock.l move.l notify.l reset.l revoke.l rollback.l select.l \
+		select_into.l set.l show.l unlisten.l update.l vacuum.l
 
 MANPREFIX=	${PREFIX}/pgsql
 
@@ -133,6 +130,11 @@ pre-install:
 	@ ${SETENV} ${MAKE_ENV} perl ${SCRIPTDIR}/createuser
 
 post-install:
+.if defined(NOPORTDOCS)
+	@ ( cd ${DOCDIR}; ${GMAKE} man )
+.else
+	@ ( cd ${DOCDIR}; ${GMAKE} install )
+.endif
 	@ if [ ! -f ${PREFIX}/pgsql/.profile ]; then \
 		${ECHO} "PATH=${PATH}:${PREFIX}/pgsql/bin" \
 			> ${PREFIX}/pgsql/.profile; \
@@ -194,7 +196,7 @@ post-install:
 	@ ${GMAKE} -C ${WRKDIR}/${DISTNAME}/doc install
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/FAQ* ${PREFIX}/share/doc/pgsql
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/README* ${PREFIX}/share/doc/pgsql
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO* ${PREFIX}/share/doc/pgsql
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/TODO ${PREFIX}/share/doc/pgsql
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/doc/*ps.gz ${PREFIX}/share/doc/pgsql
 .endif
 .if !defined(BATCH)
