@@ -1,22 +1,23 @@
 --- Makefile.orig	Tue Jul 26 18:29:53 1994
-+++ Makefile	Wed Jul 29 18:49:18 1998
++++ Makefile	Sun Dec 26 12:00:15 1999
 @@ -1,14 +1,15 @@
  #### ack 1993,94 H.Ogasawara (COR.)
  ####
  #### -- install directory
 -BINARY	= /usr/local/bin
 -MANUAL	= /usr/local/man/man1
-+PREFIX?= /usr/local
++PREFIX	?= /usr/local
 +BINARY	= ${PREFIX}/bin
 +MANUAL	= ${PREFIX}/man/ja/man1
  
  ####
  #### -- UNIX
- CC	= cc
+-CC	= cc
 -CFLAGS	= -O -DDEFCODE=2 -DDEFJIS=2 -DENVACK=1
 -#CFLAGS	= -O -DDEFCODE=1 -DDEFJIS=2 -DENVACK=1 -DLANGCHK=1 -DJCONVSW=1
++CC	?= cc
 +#CFLAGS	= -O -DDEFCODE=2 -DDEFJIS=2 -DENVACK=1
-+CFLAGS	= -O -DDEFCODE=1 -DDEFJIS=2 -DENVACK=1 -DLANGCHK=1 -DJCONVSW=1
++CFLAGS	+= -DDEFCODE=1 -DDEFJIS=2 -DENVACK=1 -DLANGCHK=1 -DJCONVSW=1
  ####
  #### -- Human68k
  #CC	= gcc
