@@ -1,34 +1,22 @@
---- sshd.c.orig	Fri Jan  7 01:32:03 2000
-+++ sshd.c	Fri Jan  7 01:40:05 2000
-@@ -26,6 +26,8 @@
- #include "servconf.h"
- #include "uidswap.h"
- #include "compat.h"
-+#include <poll.h>
-+#include <time.h>
- 
- #ifdef LIBWRAP
- #include <tcpd.h>
-@@ -34,6 +36,16 @@
+--- sshd.c.orig	Thu Apr 20 17:11:24 2000
++++ sshd.c	Thu Apr 20 17:17:12 2000
+@@ -48,6 +48,13 @@
  int deny_severity = LOG_WARNING;
  #endif /* LIBWRAP */
  
 +#ifdef __FreeBSD__
 +#include <libutil.h>
++#include <poll.h>
 +#include <syslog.h>
-+#define	LOGIN_CAP
++#include <time.h>
 +#endif /* __FreeBSD__ */
-+
-+#ifdef LOGIN_CAP
-+#include <login_cap.h>
-+#endif /* LOGIN_CAP */
 +
  #ifndef O_NOCTTY
  #define O_NOCTTY	0
  #endif
-@@ -128,6 +140,32 @@
-    the private key. */
- RSA *public_key;
+@@ -128,6 +135,32 @@
+ /* session identifier, used by RSA-auth */
+ unsigned char session_id[16];
  
 +/* These are used to implement connections_per_period. */
 +struct magic_connection {
@@ -57,19 +45,19 @@
 +}
 +
  /* Prototypes for various functions defined later in this file. */
- void do_connection();
- void do_authentication(char *user);
-@@ -301,6 +339,7 @@
- 	extern int optind;
- 	int opt, sock_in = 0, sock_out = 0, newsock, i, fdsetsz, pid, on = 1;
+ void do_ssh1_kex();
+ void do_ssh2_kex();
+@@ -395,6 +428,7 @@
+ 	int opt, sock_in = 0, sock_out = 0, newsock, i, fdsetsz, on = 1;
+ 	pid_t pid;
  	socklen_t fromlen;
-+ 	int connections_per_period_exceeded = 0;
- 	int remote_major, remote_minor;
++	int connections_per_period_exceeded = 0;
  	int silentrsa = 0;
  	fd_set *fdset;
-@@ -620,6 +659,12 @@
- 		fdsetsz = howmany(maxfd, NFDBITS) * sizeof(fd_mask);         
- 		fdset = (fd_set *)xmalloc(fdsetsz);                                  
+ 	struct sockaddr_storage from;
+@@ -709,6 +743,12 @@
+ 		fdsetsz = howmany(maxfd, NFDBITS) * sizeof(fd_mask);
+ 		fdset = (fd_set *)xmalloc(fdsetsz);
  
 +		/* Initialize the magic_connections table.  It's magical! */
 +		magic_connections = calloc(MAGIC_CONNECTIONS_SIZE,
@@ -80,7 +68,7 @@
  		/*
  		 * Stay listening for connections until the system crashes or
  		 * the daemon is killed with a signal.
-@@ -651,9 +696,31 @@
+@@ -740,9 +780,31 @@
  				error("newsock del O_NONBLOCK: %s", strerror(errno));
  				continue;
  			}
@@ -114,7 +102,7 @@
  			 */
  			if (debug_flag) {
  				/*
-@@ -667,6 +734,12 @@
+@@ -756,6 +818,12 @@
  				sock_out = newsock;
  				pid = getpid();
  				break;
@@ -127,235 +115,3 @@
  			} else {
  				/*
  				 * Normal production daemon.  Fork, and have
-@@ -1152,6 +1225,14 @@
- 				return 0;
- 		}
- 	}
-+	/* Fail if the account's expiration time has passed. */
-+	if (pw->pw_expire != 0) {
-+		struct timeval tv;
-+
-+		(void)gettimeofday(&tv, NULL);
-+		if (tv.tv_sec >= pw->pw_expire)
-+			return 0;
-+	}
- 	/* We found no reason not to let this user try to log on... */
- 	return 1;
- }
-@@ -1187,6 +1268,9 @@
- 	pwcopy.pw_gid = pw->pw_gid;
- 	pwcopy.pw_dir = xstrdup(pw->pw_dir);
- 	pwcopy.pw_shell = xstrdup(pw->pw_shell);
-+	pwcopy.pw_class = xstrdup(pw->pw_class);
-+	pwcopy.pw_expire = pw->pw_expire;
-+	pwcopy.pw_change = pw->pw_change;
- 	pw = &pwcopy;
- 
- 	/*
-@@ -1983,6 +2067,10 @@
- 	struct sockaddr_storage from;
- 	socklen_t fromlen;
- 	struct pty_cleanup_context cleanup_context;
-+#ifdef LOGIN_CAP
-+	login_cap_t *lc;
-+	char *fname;
-+#endif /* LOGIN_CAP */
- 
- 	/* Get remote host name. */
- 	hostname = get_canonical_hostname();
-@@ -2047,6 +2135,12 @@
- 		/* Check if .hushlogin exists. */
- 		snprintf(line, sizeof line, "%.200s/.hushlogin", pw->pw_dir);
- 		quiet_login = stat(line, &st) >= 0;
-+#ifdef LOGIN_CAP
-+		lc = login_getpwclass(pw);
-+		if (lc == NULL)
-+			lc = login_getclassbyname(NULL, pw);
-+		quiet_login = login_getcapbool(lc, "hushlogin", quiet_login);
-+#endif /* LOGIN_CAP */
- 
- 		/*
- 		 * If the user has logged in before, display the time of last
-@@ -2070,6 +2164,20 @@
- 			else
- 				printf("Last login: %s from %s\r\n", time_string, buf);
- 		}
-+#ifdef LOGIN_CAP
-+		if (command == NULL && !quiet_login && !options.use_login) {
-+			fname = login_getcapstr(lc, "copyright", NULL, NULL);
-+			if (fname != NULL && (f = fopen(fname, "r")) != NULL) {
-+				while (fgets(line, sizeof(line), f) != NULL)
-+					fputs(line, stdout);
-+				fclose(f);
-+			} else
-+				(void)printf("%s\n\t%s %s\n",
-+		"Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
-+		    "The Regents of the University of California. ",
-+		    "All rights reserved.");
-+		}
-+#endif /* LOGIN_CAP */
- 		/*
- 		 * Print /etc/motd unless a command was specified or printing
- 		 * it was disabled in server options or login(1) will be
-@@ -2078,14 +2186,22 @@
- 		 */
- 		if (command == NULL && options.print_motd && !quiet_login &&
- 		    !options.use_login) {
--			/* Print /etc/motd if it exists. */
-+#ifdef LOGIN_CAP
-+			fname = login_getcapstr(lc, "welcome", NULL, NULL);
-+			login_close(lc);
-+			if (fname == NULL || (f = fopen(fname, "r")) == NULL)
-+				f = fopen("/etc/motd", "r");
-+#else /* LOGIN_CAP */
- 			f = fopen("/etc/motd", "r");
-+#endif /* LOGIN_CAP */
-+			/* Print /etc/motd if it exists. */
- 			if (f) {
- 				while (fgets(line, sizeof(line), f))
- 					fputs(line, stdout);
- 				fclose(f);
- 			}
- 		}
-+
- 		/* Do common processing for the child, such as execing the command. */
- 		do_child(command, pw, term, display, auth_proto, auth_data, ttyname);
- 		/* NOTREACHED */
-@@ -2221,7 +2337,8 @@
- 	 const char *display, const char *auth_proto,
- 	 const char *auth_data, const char *ttyname)
- {
--	const char *shell, *cp = NULL;
-+	char *shell;
-+	const char *cp = NULL;
- 	char buf[256];
- 	FILE *f;
- 	unsigned int envsize, i;
-@@ -2229,15 +2346,34 @@
- 	extern char **environ;
- 	struct stat st;
- 	char *argv[10];
-+#ifdef LOGIN_CAP
-+	login_cap_t *lc;
-+
-+	lc = login_getpwclass(pw);
-+	if (lc == NULL)
-+		lc = login_getclassbyname(NULL, pw);
-+#endif /* LOGIN_CAP */
- 
- 	f = fopen("/etc/nologin", "r");
-+#ifdef __FreeBSD__
-+	if (f == NULL)
-+		f = fopen("/var/run/nologin", "r");
-+#endif /* __FreeBSD__ */
- 	if (f) {
- 		/* /etc/nologin exists.  Print its contents and exit. */
--		while (fgets(buf, sizeof(buf), f))
--			fputs(buf, stderr);
--		fclose(f);
--		if (pw->pw_uid != 0)
--			exit(254);
-+#ifdef LOGIN_CAP
-+		/* On FreeBSD, etc., allow overriding nologin via login.conf. */
-+		if (!login_getcapbool(lc, "ignorenologin", 0)) {
-+#else /* LOGIN_CAP */
-+		if (1) {
-+#endif /* LOGIN_CAP */
-+			while (fgets(buf, sizeof(buf), f))
-+				fputs(buf, stderr);
-+			fclose(f);
-+			if (pw->pw_uid != 0)
-+				exit(254);
-+		}
-+
- 	}
- 	/* Set login name in the kernel. */
- 	if (setlogin(pw->pw_name) < 0)
-@@ -2247,6 +2383,13 @@
- 	/* Login(1) does this as well, and it needs uid 0 for the "-h"
- 	   switch, so we let login(1) to this for us. */
- 	if (!options.use_login) {
-+#ifdef LOGIN_CAP
-+		if (setclasscontext(pw->pw_class, LOGIN_SETPRIORITY |
-+		    LOGIN_SETRESOURCES | LOGIN_SETUMASK) == -1) {
-+			perror("setclasscontext");
-+			exit(1);
-+		}
-+#endif /* LOGIN_CAP */
- 		if (getuid() == 0 || geteuid() == 0) {
- 			if (setgid(pw->pw_gid) < 0) {
- 				perror("setgid");
-@@ -2269,7 +2412,14 @@
- 	 * Get the shell from the password data.  An empty shell field is
- 	 * legal, and means /bin/sh.
- 	 */
-+#ifdef LOGIN_CAP
-+	shell = pw->pw_shell;
-+	shell = login_getcapstr(lc, "shell", shell, shell);
-+	if (shell[0] == '\0')
-+		shell = _PATH_BSHELL;
-+#else /* LOGIN_CAP */
- 	shell = (pw->pw_shell[0] == '\0') ? _PATH_BSHELL : pw->pw_shell;
-+#endif /* LOGIN_CAP */
- 
- #ifdef AFS
- 	/* Try to get AFS tokens for the local cell. */
-@@ -2293,7 +2443,12 @@
- 		child_set_env(&env, &envsize, "USER", pw->pw_name);
- 		child_set_env(&env, &envsize, "LOGNAME", pw->pw_name);
- 		child_set_env(&env, &envsize, "HOME", pw->pw_dir);
-+#ifdef LOGIN_CAP
-+		child_set_env(&env, &envsize, "PATH",
-+		    login_getpath(lc, "path", _PATH_STDPATH));
-+#else /* LOGIN_CAP */
- 		child_set_env(&env, &envsize, "PATH", _PATH_STDPATH);
-+#endif /* LOGIN_CAP */
- 
- 		snprintf(buf, sizeof buf, "%.200s/%.50s",
- 			 _PATH_MAILDIR, pw->pw_name);
-@@ -2383,13 +2538,17 @@
- 	 */
- 	endpwent();
- 
-+#ifdef LOGIN_CAP
-+ 	login_close(lc);
-+#endif /* LOGIN_CAP */
-+
- 	/*
- 	 * Close any extra open file descriptors so that we don\'t have them
- 	 * hanging around in clients.  Note that we want to do this after
- 	 * initgroups, because at least on Solaris 2.3 it leaves file
- 	 * descriptors open.
- 	 */
--	for (i = 3; i < 64; i++)
-+	for (i = 3; i < getdtablesize(); i++)
- 		close(i);
- 
- 	/* Change current directory to the user\'s home directory. */
-@@ -2408,6 +2567,26 @@
- 	 * in this order).
- 	 */
- 	if (!options.use_login) {
-+#ifdef __FreeBSD__
-+		/*
-+		 * If the password change time is set and has passed, give the
-+		 * user a password expiry notice and chance to change it.
-+		 */
-+		if (pw->pw_change != 0) {
-+			struct timeval tv;
-+
-+			(void)gettimeofday(&tv, NULL);
-+			if (tv.tv_sec >= pw->pw_change) {
-+				(void)printf(
-+				    "Sorry -- your password has expired.\n");
-+				syslog(LOG_INFO,
-+				    "%s Password expired - forcing change",
-+				    pw->pw_name);
-+				if (system("/usr/bin/passwd") != 0)
-+					perror("/usr/bin/passwd");
-+			}
-+		}
-+#endif /* __FreeBSD__ */
- 		if (stat(SSH_USER_RC, &st) >= 0) {
- 			if (debug_flag)
- 				fprintf(stderr, "Running /bin/sh %s\n", SSH_USER_RC);
