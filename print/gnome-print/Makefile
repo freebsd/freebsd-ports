@@ -16,9 +16,19 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
+.if defined(WITH_GHOSTSCRIPT_AFPL)
+.if ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
@@ -30,7 +40,15 @@ USE_GNOME=	gnomehack gnomeprefix gnomehier gnomelibs gnomecanvas
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-everything::
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO_MSG} ""
+.endif
 
 post-install:
 	@${TOUCH} ${PREFIX}/etc/gnome/fonts/gnome-print-x11.fontmap
