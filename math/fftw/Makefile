@@ -7,6 +7,7 @@
 
 PORTNAME=	fftw
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 		ftp://ftp.fftw.org/pub/fftw/old/ 	\
@@ -16,23 +17,26 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 COMMENT=	Fast C routines to compute the Discrete Fourier Transform
 
-.include <bsd.port.pre.mk>
-
-USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == "i386"
-CONFIGURE_ARGS=	--enable-i386-hacks
+CONFIGURE_ARGS+=	--enable-i386-hacks
 .endif
-CONFIGURE_ARGS+=--enable-shared
+
+post-extract:
+	@${RM} ${WRKSRC}/doc/fftw.info*
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fftw
-	${CP} ${WRKSRC}/doc/fftw.ps ${PREFIX}/share/doc/fftw
-	install-info ${PREFIX}/info/fftw.info ${PREFIX}/info/dir
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/fftw.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

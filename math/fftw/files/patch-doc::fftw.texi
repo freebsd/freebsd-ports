@@ -1,0 +1,13 @@
+--- doc/fftw.texi.orig	Mon Mar 17 08:43:18 2003
++++ doc/fftw.texi	Fri Jul 25 11:26:48 2003
+@@ -3,6 +3,10 @@
+ @c %**start of header
+ @setfilename fftw.info
+ @settitle FFTW
++@dircategory Libraries
++@direntry
++* FFTW: (fftw).		Fast fourier transform library
++@end direntry
+ @c %**end of header
+ 
+ @include version.texi
