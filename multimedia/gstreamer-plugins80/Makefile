@@ -131,8 +131,8 @@ WITH_GNOMEVFS=	yes
 WITH_AALIB=yes
 .endif
 
-# arts
-.if exists(${LOCALBASE}/lib/libartsc.so.0)
+# aRts
+.if exists(${LOCALBASE}/lib/libartsc.so.0) && !defined(WITHOUT_ARTS)
 WITH_ARTS=yes
 .endif
 
@@ -294,8 +294,8 @@ CONFIGURE_ARGS+=	--with-aalib-prefix=${LOCALBASE}  \
 PLIST_SUB+=	AALIB=""
 .endif
 
-# arts
-.ifndef(WITH_ARTS)
+# aRts
+.if (!defined(WITH_ARTS) || defined(WITHOUT_ARTS))
 CONFIGURE_ARGS+=	--disable-arts \
 			--disable-artsc \
 			--disable-artstest
@@ -631,9 +631,12 @@ pre-everything::
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_AALIB to enable aalib Video plugin'
 .endif
-.ifndef(WITH_ARTS)
+.ifdef(WITH_ARTS)
 	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Define WITH_ARTS to enable arts Audio plugin'
+	@${ECHO_MSG} '===> Define WITHOUT_ARTS to disable aRts Audio plugin'
+.else
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_ARTS to enable aRts Audio plugin'
 .endif
 .ifndef(WITH_AVIFILE)
 	@${ECHO_MSG} '===>'
