@@ -1,4 +1,5 @@
 lib/ladspa/tap_autopan.so
+lib/ladspa/tap_chorusflanger.so
 lib/ladspa/tap_deesser.so
 lib/ladspa/tap_doubler.so
 lib/ladspa/tap_dynamics_m.so
@@ -12,7 +13,9 @@ lib/ladspa/tap_pitch.so
 lib/ladspa/tap_reflector.so
 lib/ladspa/tap_reverb.so
 lib/ladspa/tap_rotspeak.so
+lib/ladspa/tap_sigmoid.so
 lib/ladspa/tap_tremolo.so
+lib/ladspa/tap_tubewarmth.so
 lib/ladspa/tap_vibrato.so
 share/ladspa/rdf/tap-plugins.rdf
 @unexec rmdir %D/share/ladspa/rdf 2>/dev/null || true
