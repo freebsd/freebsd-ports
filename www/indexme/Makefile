@@ -9,7 +9,8 @@
 DISTNAME=	indexme
 PKGNAME=	indexme-0.1
 CATEGORIES=	www
-MASTER_SITES=	http://kyb.homepage.com/perl/
+MASTER_SITES=	ftp://ukug.uk.freebsd.org/pub/lord_cj/	\
+		http://kyb.homepage.com/perl/
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
