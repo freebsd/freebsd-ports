@@ -1,0 +1,117 @@
+--- vdk/Makefile.in.orig	Mon May 19 17:19:53 2003
++++ vdk/Makefile.in	Mon Nov 17 14:29:13 2003
+@@ -139,7 +139,7 @@
+ #	vdktextview.h
+ #	vdkpacker.h
+ 
+-vdkinclude_HEADERS =  	regex.h 	gtksourcebuffer.h 	gtktextsearch.h 	gtksourcetag.h 	gtksourceview.h 	gtkundomanager.h 	gtksourceview-marshal.h 	gtktextregion.h 	vdkeditor.h 	gtkdatabox.h 	gtkdataboxmarshal.h 	FileDialog.h 	FileSaveAsDialog.h 	abstract_button.h 	application.h 	boxes.h 	button.h 	canvas.h 	chart.h 	checkbutton.h 	colors.h 	combo.h 	container.h 	dlist.h 	entry.h 	evbrowser.h 	evhandle.h 	evlisthandle.h 	evobjhandle.h 	filedlg.h 	fixed.h 	forms.h 	frame.h 	handlebox.h 	image.h 	label.h 	menu.h 	messagebox.h 	notebook.h 	numentry.h 	paned.h 	panelbar.h 	pixmaps.h 	progressbar.h 	radiobtngroup.h 	rawpixbuf.h 	rawobj.h 	rawpixmap.h 	scrolled.h 	separator.h 	siglisthandle.h 	slider.h 	spins.h 	statusbar.h 	tables.h 	timer.h 	toolbar.h 	tooltips.h 	value_sem_list.h 	vdk.h 	vdkarray.h 	vdkbtrees.h 	vdkcalendar.h 	vdkclist.h 	vdkcsortlist.h 	vdkctree.h 	vdkcursor.h 	vdkcustom.h 	vdkcustombutton.h 	vdkdatabox.h 	vdkdate.h 	vdkdrawarea.h 	vdkdnd.h 	vdkfont.h 	vdkfeatures.h 	vdkheap.h 	vdkhlbutton.h 	vdkhlbuttonbar.h 	vdkinchannel.h 	vdkobj.h 	vdkprops.h 	vdkstring.h 	vdktextview.h 	vdktreeview.h 	vdkthread.h 	vdktypes.h 	vdkutils.h 	widcontain.h 	eventbox.h 	sigc_addon.h 	sigc_events.h 	sigc_eventsignals.h 	sigc_eventtraits.h 	vdkgnomeapp.h 	vdkgnomeform.h 	vdkgnomeappbar.h 	vdkgnomededit.h 	vdkgnomeentry.h 	vdkfileicondlg.h 	vdkdockable.h
++vdkinclude_HEADERS =  	gtksourcebuffer.h 	gtktextsearch.h 	gtksourcetag.h 	gtksourceview.h 	gtkundomanager.h 	gtksourceview-marshal.h 	gtktextregion.h 	vdkeditor.h 	gtkdatabox.h 	gtkdataboxmarshal.h 	FileDialog.h 	FileSaveAsDialog.h 	abstract_button.h 	application.h 	boxes.h 	button.h 	canvas.h 	chart.h 	checkbutton.h 	colors.h 	combo.h 	container.h 	dlist.h 	entry.h 	evbrowser.h 	evhandle.h 	evlisthandle.h 	evobjhandle.h 	filedlg.h 	fixed.h 	forms.h 	frame.h 	handlebox.h 	image.h 	label.h 	menu.h 	messagebox.h 	notebook.h 	numentry.h 	paned.h 	panelbar.h 	pixmaps.h 	progressbar.h 	radiobtngroup.h 	rawpixbuf.h 	rawobj.h 	rawpixmap.h 	scrolled.h 	separator.h 	siglisthandle.h 	slider.h 	spins.h 	statusbar.h 	tables.h 	timer.h 	toolbar.h 	tooltips.h 	value_sem_list.h 	vdk.h 	vdkarray.h 	vdkbtrees.h 	vdkcalendar.h 	vdkclist.h 	vdkcsortlist.h 	vdkctree.h 	vdkcursor.h 	vdkcustom.h 	vdkcustombutton.h 	vdkdatabox.h 	vdkdate.h 	vdkdrawarea.h 	vdkdnd.h 	vdkfont.h 	vdkfeatures.h 	vdkheap.h 	vdkhlbutton.h 	vdkhlbuttonbar.h 	vdkinchannel.h 	vdkobj.h 	vdkprops.h 	vdkstring.h 	vdktextview.h 	vdktreeview.h 	vdkthread.h 	vdktypes.h 	vdkutils.h 	widcontain.h 	eventbox.h 	sigc_addon.h 	sigc_events.h 	sigc_eventsignals.h 	sigc_eventtraits.h 	vdkgnomeapp.h 	vdkgnomeform.h 	vdkgnomeappbar.h 	vdkgnomededit.h 	vdkgnomeentry.h 	vdkfileicondlg.h 	vdkdockable.h
+ 
+ 
+ #	coolbar.cc
+@@ -171,10 +171,10 @@
+ #	vdkregex.cc
+ #	vdkpacker.cc
+ 
+-libvdk_la_SOURCES =  	regex.c 	gtksourcebuffer.c 	gtktextsearch.c 	gtksourcetag.c 	gtksourceview.c 	gtkundomanager.c 	gtksourceview-marshal.c 	gtktextregion.c 	vdkeditor.cc 	gtkdatabox.c 	gtkdataboxmarshal.c 	abstract_button.cc 	application.cc 	boxes.cc 	button.cc 	canvas.cc 	checkbutton.cc 	colors.cc 	entry.cc 	filedlg.cc 	fixed.cc 	forms.cc 	frame.cc 	handlebox.cc 	image.cc 	label.cc 	menu.cc 	msgdialog.cc 	notebook.cc 	numentry.cc 	paned.cc 	pixdata.cc 	pixmaps.cc 	progressbar.cc 	radiobtngroup.cc 	rawobj.cc 	rawpixbuf.cc 	rawpixmap.cc 	scrolled.cc 	separator.cc 	slider.cc 	spins.cc 	statusbar.cc 	tables.cc 	timer.cc 	toolbar.cc 	tooltips.cc 	vdkcalendar.cc 	vdkclist.cc 	vdkcsortlist.cc 	vdkctree.cc 	vdkcustom.cc 	vdkcustombutton.cc 	vdkdate.cc 	vdkdatabox.cc 	vdkdrawarea.cc 	vdkdnd.cc 	vdkinchannel.cc 	vdkfont.cc 	vdkhlbutton.cc 	vdkhlbuttonbar.cc 	vdkobj.cc 	vdkstring.cc 	vdktextview.cc 	vdktreeview.cc 	vdkthread.cc 	widcontain.cc 	eventbox.cc 	vdkdockable.cc 	FileDialog.cc 	FileSaveAsDialog.cc 	chart.cc 	combo.cc 	folder_collapsed.xpm 	folder_expanded.xpm 	panelbar.cc 	vdkgnomeapp.cc 	vdkgnomeform.cc 	vdkgnomeappbar.cc 	vdkgnomededit.cc 	vdkgnomeentry.cc
++libvdk_la_SOURCES =  	gtksourcebuffer.c 	gtktextsearch.c 	gtksourcetag.c 	gtksourceview.c 	gtkundomanager.c 	gtksourceview-marshal.c 	gtktextregion.c 	vdkeditor.cc 	gtkdatabox.c 	gtkdataboxmarshal.c 	abstract_button.cc 	application.cc 	boxes.cc 	button.cc 	canvas.cc 	checkbutton.cc 	colors.cc 	entry.cc 	filedlg.cc 	fixed.cc 	forms.cc 	frame.cc 	handlebox.cc 	image.cc 	label.cc 	menu.cc 	msgdialog.cc 	notebook.cc 	numentry.cc 	paned.cc 	pixdata.cc 	pixmaps.cc 	progressbar.cc 	radiobtngroup.cc 	rawobj.cc 	rawpixbuf.cc 	rawpixmap.cc 	scrolled.cc 	separator.cc 	slider.cc 	spins.cc 	statusbar.cc 	tables.cc 	timer.cc 	toolbar.cc 	tooltips.cc 	vdkcalendar.cc 	vdkclist.cc 	vdkcsortlist.cc 	vdkctree.cc 	vdkcustom.cc 	vdkcustombutton.cc 	vdkdate.cc 	vdkdatabox.cc 	vdkdrawarea.cc 	vdkdnd.cc 	vdkinchannel.cc 	vdkfont.cc 	vdkhlbutton.cc 	vdkhlbuttonbar.cc 	vdkobj.cc 	vdkstring.cc 	vdktextview.cc 	vdktreeview.cc 	vdkthread.cc 	widcontain.cc 	eventbox.cc 	vdkdockable.cc 	FileDialog.cc 	FileSaveAsDialog.cc 	chart.cc 	combo.cc 	folder_collapsed.xpm 	folder_expanded.xpm 	panelbar.cc 	vdkgnomeapp.cc 	vdkgnomeform.cc 	vdkgnomeappbar.cc 	vdkgnomededit.cc 	vdkgnomeentry.cc
+ 
+ 
+-libvdk_la_LDFLAGS =  		-version-info $(LT_VDK_CURRENT):$(LT_VDK_REVISION):$(LT_VDK_AGE)
++libvdk_la_LDFLAGS =  		-version-info 4:0:0
+ 
+ #		-release $(GTK_RELEASE)
+ 
+@@ -195,7 +195,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+ CPPFLAGS = @CPPFLAGS@
+ libvdk_la_LIBADD = 
+-libvdk_la_OBJECTS =  regex.lo gtksourcebuffer.lo gtktextsearch.lo \
++libvdk_la_OBJECTS =  gtksourcebuffer.lo gtktextsearch.lo \
+ gtksourcetag.lo gtksourceview.lo gtkundomanager.lo \
+ gtksourceview-marshal.lo gtktextregion.lo vdkeditor.lo gtkdatabox.lo \
+ gtkdataboxmarshal.lo abstract_button.lo application.lo boxes.lo \
+@@ -403,7 +403,7 @@
+ 	evobjhandle.h siglisthandle.h value_sem_list.h evlisthandle.h \
+ 	application.h forms.h boxes.h widcontain.h label.h button.h \
+ 	abstract_button.h pixmaps.h vdkeditor.h ../config.h \
+-	gtksourceview.h gtksourcebuffer.h regex.h gtksourcetag.h \
++	gtksourceview.h gtksourcebuffer.h gtksourcetag.h \
+ 	rawpixbuf.h separator.h menu.h rawpixmap.h tooltips.h \
+ 	vdkclist.h vdkcustom.h vdkarray.h colors.h vdkcsortlist.h \
+ 	entry.h numentry.h tables.h vdkdate.h timer.h progressbar.h \
+@@ -437,7 +437,7 @@
+ 	value_sem_list.h evlisthandle.h application.h forms.h boxes.h \
+ 	widcontain.h label.h button.h abstract_button.h pixmaps.h \
+ 	vdkeditor.h ../config.h gtksourceview.h gtksourcebuffer.h \
+-	regex.h gtksourcetag.h rawpixbuf.h separator.h menu.h \
++	gtksourcetag.h rawpixbuf.h separator.h menu.h \
+ 	rawpixmap.h tooltips.h vdkclist.h vdkcustom.h vdkarray.h \
+ 	colors.h vdkcsortlist.h entry.h numentry.h tables.h vdkdate.h \
+ 	timer.h progressbar.h canvas.h vdkcursor.h paned.h notebook.h \
+@@ -457,7 +457,7 @@
+ 	vdkfont.h evobjhandle.h siglisthandle.h value_sem_list.h \
+ 	evlisthandle.h application.h forms.h boxes.h widcontain.h \
+ 	label.h button.h abstract_button.h pixmaps.h vdkeditor.h \
+-	../config.h gtksourceview.h gtksourcebuffer.h regex.h \
++	../config.h gtksourceview.h gtksourcebuffer.h \
+ 	gtksourcetag.h rawpixbuf.h separator.h menu.h rawpixmap.h \
+ 	tooltips.h vdkclist.h vdkcustom.h vdkarray.h colors.h \
+ 	vdkcsortlist.h entry.h numentry.h tables.h vdkdate.h timer.h \
+@@ -482,17 +482,17 @@
+ 	gtkdataboxmarshal.h
+ gtkdataboxmarshal.lo gtkdataboxmarshal.o : gtkdataboxmarshal.c
+ gtksourcebuffer.lo gtksourcebuffer.o : gtksourcebuffer.c \
+-	gtkundomanager.h gtksourcebuffer.h regex.h gtksourcetag.h \
++	gtkundomanager.h gtksourcebuffer.h gtksourcetag.h \
+ 	gtksourceview-marshal.h gtktextregion.h
+-gtksourcetag.lo gtksourcetag.o : gtksourcetag.c gtksourcetag.h regex.h
++gtksourcetag.lo gtksourcetag.o : gtksourcetag.c gtksourcetag.h
+ gtksourceview-marshal.lo gtksourceview-marshal.o : \
+ 	gtksourceview-marshal.c gtksourceview-marshal.h
+ gtksourceview.lo gtksourceview.o : gtksourceview.c gtksourceview.h \
+-	gtksourcebuffer.h regex.h gtksourcetag.h
++	gtksourcebuffer.h gtksourcetag.h
+ gtktextregion.lo gtktextregion.o : gtktextregion.c gtktextregion.h
+ gtktextsearch.lo gtktextsearch.o : gtktextsearch.c gtktextsearch.h
+ gtkundomanager.lo gtkundomanager.o : gtkundomanager.c gtkundomanager.h \
+-	gtksourcebuffer.h regex.h gtksourcetag.h
++	gtksourcebuffer.h gtksourcetag.h
+ handlebox.lo handlebox.o : handlebox.cc handlebox.h widcontain.h \
+ 	vdkobj.h vdktypes.h dlist.h vdkutils.h rawobj.h vdkprops.h \
+ 	vdkstring.h vdkfont.h forms.h application.h
+@@ -541,7 +541,6 @@
+ rawpixmap.lo rawpixmap.o : rawpixmap.cc rawpixmap.h vdkobj.h vdktypes.h \
+ 	dlist.h vdkutils.h rawobj.h vdkprops.h vdkstring.h vdkfont.h \
+ 	forms.h application.h
+-regex.lo regex.o : regex.c ../config.h regex.h
+ scrolled.lo scrolled.o : scrolled.cc scrolled.h vdkobj.h vdktypes.h \
+ 	dlist.h vdkutils.h rawobj.h vdkprops.h vdkstring.h vdkfont.h \
+ 	widcontain.h forms.h application.h
+@@ -575,7 +574,7 @@
+ 	value_sem_list.h evlisthandle.h application.h forms.h boxes.h \
+ 	widcontain.h label.h button.h abstract_button.h pixmaps.h \
+ 	vdkeditor.h ../config.h gtksourceview.h gtksourcebuffer.h \
+-	regex.h gtksourcetag.h rawpixbuf.h separator.h menu.h \
++	gtksourcetag.h rawpixbuf.h separator.h menu.h \
+ 	rawpixmap.h tooltips.h vdkclist.h vdkcustom.h vdkarray.h \
+ 	colors.h vdkcsortlist.h entry.h numentry.h tables.h vdkdate.h \
+ 	timer.h progressbar.h canvas.h vdkcursor.h paned.h notebook.h \
+@@ -612,7 +611,7 @@
+ 	value_sem_list.h evlisthandle.h application.h forms.h boxes.h \
+ 	widcontain.h label.h button.h abstract_button.h pixmaps.h \
+ 	vdkeditor.h ../config.h gtksourceview.h gtksourcebuffer.h \
+-	regex.h gtksourcetag.h rawpixbuf.h separator.h menu.h \
++	gtksourcetag.h rawpixbuf.h separator.h menu.h \
+ 	rawpixmap.h tooltips.h vdkclist.h vdkcustom.h vdkarray.h \
+ 	colors.h vdkcsortlist.h entry.h numentry.h tables.h vdkdate.h \
+ 	timer.h progressbar.h canvas.h vdkcursor.h paned.h notebook.h \
+@@ -651,7 +650,7 @@
+ 	vdkcustombutton.h image.h vdkhlbuttonbar.h vdkfeatures.h \
+ 	vdkinchannel.h vdktextview.h vdkdatabox.h gtkdatabox.h vdkdnd.h \
+ 	vdktreeview.h vdkdockable.h gtksourceview.h gtksourcebuffer.h \
+-	regex.h gtksourcetag.h
++	gtksourcetag.h
+ vdkfont.lo vdkfont.o : vdkfont.cc vdkfont.h rawobj.h forms.h \
+ 	application.h vdktypes.h vdkstring.h dlist.h vdkprops.h \
+ 	vdkutils.h vdkobj.h

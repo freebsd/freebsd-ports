@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vdk
-PORTVERSION=	1.2.5
+PORTVERSION=	2.0.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vdkbuilder
@@ -16,24 +16,21 @@ COMMENT=	C++ wrapper for GTK+ toolkit
 
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk20
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnuregex ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-opt=no --enable-doc-html=no
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		vdk-config.1
+MAN1=		vdk-config-2.1
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.for file in vdk/FileDialog.h vdk/gtksourcebuffer.h vdk/gtksourcetag.h
+	@${REINPLACE_CMD} -e 's|<regex\.h>|<gnuregex.h>|g' ${WRKSRC}/${file}
+.endfor
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
-
-.if ${HAVE_GNOME:Mgnomelibs}!=""
-USE_GNOME=	gnomelibs
-PKGNAMESUFFIX=	-gnome
-CONFIGURE_ARGS+=	--enable-gnome
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
