@@ -618,6 +618,7 @@ bubblemon-dockapp	ports/sysutils/bubblemon-dockapp
 buffer		ports/misc/buffer
 buffy		ports/x11-toolkits/buffy
 bugbuddy	ports/devel/bugbuddy
+bugbuddy2	ports/devel/bugbuddy2
 bugfiler	src/libexec/bugfiler
 bugs		ports/security/bugs
 bugseeker	ports/java/bugseeker
