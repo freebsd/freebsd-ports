@@ -1,11 +1,14 @@
 sbin/apcsmart
+sbin/belkin
 sbin/bestfort
 sbin/bestups
+sbin/engetron
 sbin/fentonups
 sbin/genericups
 sbin/ipt-anzen
 sbin/mustekups                       
 sbin/optiups
+sbin/powercom
 sbin/ups-trust425+625
 sbin/victronups
 sbin/upsc
