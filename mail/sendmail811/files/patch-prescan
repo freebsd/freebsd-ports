@@ -1,0 +1,125 @@
+Index: conf.c
+===================================================================
+RCS file: /cvs/sendmail/conf.c,v
+retrieving revision 8.646.2.2.2.87
+retrieving revision 8.646.2.2.2.92
+diff -c -r8.646.2.2.2.87 -r8.646.2.2.2.92
+*** sendmail/conf.c	20 Jul 2001 23:56:52 -0000	8.646.2.2.2.87
+--- sendmail/conf.c	28 Mar 2003 06:02:46 -0000	8.646.2.2.2.92
+***************
+*** 381,386 ****
+--- 381,388 ----
+  	DontLockReadFiles = TRUE;
+  	DoubleBounceAddr = "postmaster";
+  	MaxHeadersLength = MAXHDRSLEN;
++ 	MaxMimeHeaderLength = MAXLINE;
++ 	MaxMimeFieldLength = MaxMimeHeaderLength / 2;
+  	MaxForwardEntries = 0;
+  #if SASL
+  	AuthMechanisms = newstr(AUTH_MECHANISMS);
+Index: parseaddr.c
+===================================================================
+RCS file: /cvs/sendmail/parseaddr.c,v
+retrieving revision 8.234.4.13
+retrieving revision 8.234.4.18
+diff -c -r8.234.4.13 -r8.234.4.18
+*** sendmail/parseaddr.c	14 Aug 2001 23:08:13 -0000	8.234.4.13
+--- sendmail/parseaddr.c	27 Mar 2003 19:40:12 -0000	8.234.4.18
+***************
+*** 446,452 ****
+  };
+  
+  
+! #define NOCHAR		-1	/* signal nothing in lookahead token */
+  
+  char **
+  prescan(addr, delim, pvpbuf, pvpbsize, delimptr, toktab)
+--- 446,452 ----
+  };
+  
+  
+! #define NOCHAR		(-1)	/* signal nothing in lookahead token */
+  
+  char **
+  prescan(addr, delim, pvpbuf, pvpbsize, delimptr, toktab)
+***************
+*** 532,537 ****
+--- 532,538 ----
+  				/* see if there is room */
+  				if (q >= &pvpbuf[pvpbsize - 5])
+  				{
++ 	addrtoolong:
+  					usrerr("553 5.1.1 Address too long");
+  					if (strlen(addr) > (SIZE_T) MAXNAME)
+  						addr[MAXNAME] = '\0';
+***************
+*** 543,553 ****
+  				}
+  
+  				/* squirrel it away */
+  				*q++ = c;
+  			}
+  
+  			/* read a new input character */
+! 			c = *p++;
+  			if (c == '\0')
+  			{
+  				/* diagnose and patch up bad syntax */
+--- 544,558 ----
+  				}
+  
+  				/* squirrel it away */
++ #if !ALLOW_255
++ 				if ((char) c == (char) -1 && !tTd(82, 101))
++ 					c &= 0x7f;
++ #endif /* !ALLOW_255 */
+  				*q++ = c;
+  			}
+  
+  			/* read a new input character */
+! 			c = (*p++) & 0x00ff;
+  			if (c == '\0')
+  			{
+  				/* diagnose and patch up bad syntax */
+***************
+*** 602,607 ****
+--- 607,615 ----
+  				}
+  				else if (c != '!' || state == QST)
+  				{
++ 					/* see if there is room */
++ 					if (q >= &pvpbuf[pvpbsize - 5])
++ 						goto addrtoolong;
+  					*q++ = '\\';
+  					continue;
+  				}
+***************
+*** 686,691 ****
+--- 694,702 ----
+  		/* new token */
+  		if (tok != q)
+  		{
++ 			/* see if there is room */
++ 			if (q >= &pvpbuf[pvpbsize - 5])
++ 				goto addrtoolong;
+  			*q++ = '\0';
+  			if (tTd(22, 36))
+  			{
+Index: version.c
+===================================================================
+RCS file: /cvs/sendmail/version.c,v
+retrieving revision 8.43.4.39
+diff -c -r8.43.4.39 version.c
+*** sendmail/version.c	20 Aug 2001 14:45:34 -0000	8.43.4.39
+--- sendmail/version.c	19 Mar 2003 21:29:32 -0000
+***************
+*** 15,18 ****
+  static char id[] = "@(#)$Id: version.c,v 8.43.4.39 2001/08/20 14:45:34 gshapiro Exp $";
+  #endif /* ! lint */
+  
+! char	Version[] = "8.11.6";
+--- 15,18 ----
+  static char id[] = "@(#)$Id: version.c,v 8.43.4.39 2001/08/20 14:45:34 gshapiro Exp $";
+  #endif /* ! lint */
+  
+! char	Version[] = "8.11.6p2";
