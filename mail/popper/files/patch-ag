@@ -1,5 +1,23 @@
---- pop_msg.c.orig	Sat Jun 27 03:09:47 1998
-+++ pop_msg.c	Sat Jun 27 14:35:49 1998
+--- pop_log.c.orig	Wed Nov 19 13:20:38 1997
++++ pop_log.c	Sat Jun 27 14:46:17 1998
+@@ -47,12 +47,12 @@
+ #endif
+ 
+ #ifdef HAVE_VPRINTF
+-        vsprintf(msgbuf,format,ap);
++        vsnprintf(msgbuf,sizeof msgbuf,format,ap);
+ #else
+ # ifdef PYRAMID
+-        (void)sprintf(msgbuf,format, arg1, arg2, arg3, arg4, arg5, arg6);
++        (void)snprintf(msgbuf,sizeof msgbuf,format, arg1, arg2, arg3, arg4, arg5, arg6);
+ # else
+-        (void)sprintf (msgbuf,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
++        (void)snprintf (msgbuf,sizeof msgbuf,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
+                 ((int *)ap)[3],((int *)ap)[4],((int *)ap)[5]);
+ # endif
+     va_end(ap);
+--- pop_msg.c.orig	Wed Nov 19 13:20:38 1997
++++ pop_msg.c	Sun Jun 28 01:35:05 1998
 @@ -27,6 +27,7 @@
  {
      POP             *   p;
@@ -49,21 +67,3 @@
          
      /*  Send the message to the client */
      (void)fputs(message,p->output);
---- pop_log.c.orig	Wed Nov 19 13:20:38 1997
-+++ pop_log.c	Sat Jun 27 14:46:17 1998
-@@ -47,12 +47,12 @@
- #endif
- 
- #ifdef HAVE_VPRINTF
--        vsprintf(msgbuf,format,ap);
-+        vsnprintf(msgbuf,sizeof msgbuf,format,ap);
- #else
- # ifdef PYRAMID
--        (void)sprintf(msgbuf,format, arg1, arg2, arg3, arg4, arg5, arg6);
-+        (void)snprintf(msgbuf,sizeof msgbuf,format, arg1, arg2, arg3, arg4, arg5, arg6);
- # else
--        (void)sprintf (msgbuf,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
-+        (void)snprintf (msgbuf,sizeof msgbuf,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
-                 ((int *)ap)[3],((int *)ap)[4],((int *)ap)[5]);
- # endif
-     va_end(ap);
