@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sec
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	simple-evcorr
@@ -19,7 +19,8 @@ NO_BUILD=	YES
 USE_REINPLACE=	YES
 
 MAN8=		sec.8
-DOCS=		ChangeLog README convert.pl itostream.c
+PORTDOCS=	ChangeLog README convert.pl itostream.c
+PLIST_FILES=	bin/sec
 
 post-patch:
 	${REINPLACE_CMD} -e \
@@ -30,7 +31,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/sec.pl.man ${PREFIX}/man/man8/sec.8
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
