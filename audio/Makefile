@@ -169,6 +169,7 @@
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
     SUBDIR += p5-tagged
+    SUBDIR += pd
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi
