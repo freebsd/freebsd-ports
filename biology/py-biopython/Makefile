@@ -76,7 +76,7 @@ PLIST_FNORB=	"@comment "
 
 pre-fetch:
 .if !defined(BATCH) && !defined(WITH_CORBA)
-	@ ${CAT} files/corba.msg
+	@ ${CAT} ${FILESDIR}/corba.msg
 .endif
 
 post-configure:
