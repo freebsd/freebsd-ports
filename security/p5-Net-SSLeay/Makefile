@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 DISTNAME=	Net_SSLeay.pm-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	andreas@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"Cryptography"
 USE_PERL5=	yes
