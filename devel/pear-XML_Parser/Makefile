@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_Parser
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	ports@FreeBSD.org
