@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ncftp2
-# Version required:     2.0.7
+# Version required:     2.1.0
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.23 1995/05/07 20:57:43 ache Exp $
+# $Id: Makefile,v 1.24 1995/06/13 22:14:10 ache Exp $
 #
 
-DISTNAME=       ncftp-2.0.7
+DISTNAME=       ncftp-2.1.0
 CATEGORIES+=	networking
 MASTER_SITES=   ftp://ftp.cs.unl.edu/pub/ncftp/
 EXTRACT_SUFX=   .tgz
