@@ -1,0 +1,4 @@
+bin/coalesce
+%%PORTDOCS%%share/doc/coalesce/coalesce.doc
+%%PORTDOCS%%share/doc/coalesce/errors.doc
+%%PORTDOCS%%@dirrm share/doc/coalesce
