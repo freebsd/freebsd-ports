@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psiconv
-PORTVERSION=	0.9.6
+PORTVERSION=	0.9.7
 CATEGORIES=	converters devel
 MASTER_SITES=	http://www.frodol.dds.nl/psiconv/
 
