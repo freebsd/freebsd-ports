@@ -1,4 +1,7 @@
 bin/ark
+bin/efax
+bin/efix
+bin/fax
 bin/kab
 bin/karm
 bin/kcalc
@@ -14,23 +17,29 @@ bin/kjots
 bin/klaptopdaemon
 bin/kljettool
 bin/klpq
+bin/klprfax
+bin/klprfax_filter
+bin/klprfax_lpd
 bin/knotes
+bin/ktimer
 bin/kwikdisk
-include/knotesdcop.h
+include/KNotesIface.h
 lib/kcalc.la
 lib/kcalc.so
-lib/kedit.la
-lib/kedit.so
-lib/kedit.so.0
+lib/kde2/kedit.la
+lib/kde2/kedit.so
 lib/kfind.la
 lib/kfind.so
+lib/libark.la
+lib/libark.so
+lib/libark.so.1
+lib/libkcharselectapplet.la
+lib/libkcharselectapplet.so
+lib/libkcharselectapplet.so.1
 lib/libkcm_kdf.la
 lib/libkcm_kdf.so
 lib/libkcm_laptop.la
 lib/libkcm_laptop.so
-lib/libktimemon.la
-lib/libktimemon.so
-lib/libktimemon.so.1
 share/applnk/Editors/KEdit.desktop
 share/applnk/Kfind.desktop
 share/applnk/Settings/Information/kcmdf.desktop
@@ -52,18 +61,21 @@ share/applnk/Utilities/karm.desktop
 share/applnk/Utilities/kcalc.desktop
 share/applnk/Utilities/kdepasswd.desktop
 share/applnk/Utilities/khexedit.desktop
+share/applnk/Utilities/klprfax.desktop
 share/applnk/Utilities/knotes.desktop
+share/applnk/Utilities/ktimer.desktop
+share/apps/ark/ark_part.rc
 share/apps/ark/arkui.rc
-share/apps/ark/icons/locolor/22x22/actions/ark_adddir.png
-share/apps/ark/icons/locolor/22x22/actions/ark_addfile.png
-share/apps/ark/icons/locolor/22x22/actions/ark_delete.png
-share/apps/ark/icons/locolor/22x22/actions/ark_extract.png
-share/apps/ark/icons/locolor/22x22/actions/ark_help.png
-share/apps/ark/icons/locolor/22x22/actions/ark_new.png
-share/apps/ark/icons/locolor/22x22/actions/ark_open.png
-share/apps/ark/icons/locolor/22x22/actions/ark_options.png
-share/apps/ark/icons/locolor/22x22/actions/ark_selectall.png
-share/apps/ark/icons/locolor/22x22/actions/ark_view.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_adddir.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_addfile.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_delete.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_extract.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_help.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_new.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_open.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_options.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_selectall.png
+share/apps/ark/icons/hicolor/22x22/actions/ark_view.png
 share/apps/kab/htmlexport/templates/index.html
 share/apps/kab/htmlexport/templates/kab_address.html
 share/apps/kab/htmlexport/templates/kab_background.gif
@@ -98,280 +110,120 @@ share/apps/kfloppy/pics/kfloppylogo.png
 share/apps/khexedit/toolbar/hexdrag.png
 share/apps/khexedit/toolbar/hexmask.png
 share/apps/khexedit/toolbar/hexwrite.png
-share/apps/kicker/applets/ktimemon.desktop
+share/apps/kicker/applets/kcharselectapplet.desktop
 share/apps/kjots/pics/filedel.png
-share/apps/klaptopdaemon/icons/locolor/16x16/actions/laptop_charge.png
-share/apps/klaptopdaemon/icons/locolor/16x16/actions/laptop_nobattery.png
-share/apps/klaptopdaemon/icons/locolor/16x16/actions/laptop_nocharge.png
-share/apps/klaptopdaemon/icons/locolor/16x16/actions/power.png
-share/apps/klaptopdaemon/icons/locolor/32x32/actions/laptop_charge.png
-share/apps/klaptopdaemon/icons/locolor/32x32/actions/laptop_nobattery.png
-share/apps/klaptopdaemon/icons/locolor/32x32/actions/laptop_nocharge.png
-share/apps/klaptopdaemon/icons/locolor/32x32/actions/power.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_charge.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nobattery.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/laptop_nocharge.png
+share/apps/klaptopdaemon/icons/hicolor/16x16/actions/power.png
+share/apps/klaptopdaemon/icons/hicolor/32x32/actions/power.png
 share/apps/kljettool/pics/kljetlogo.png
+share/apps/knotes/knotesui.rc
 share/apps/knotes/pics/knotesclose.png
+share/apps/knotes/pics/knotesdelete.png
 share/apps/knotes/pics/knoteslogo.png
+share/apps/konqueror/servicemenus/arkservicemenu.desktop
 share/config/knotesrc
-share/doc/HTML/en/ark/.anchors
-share/doc/HTML/en/ark/actionmenu.html
-share/doc/HTML/en/ark/ark-create.html
-share/doc/HTML/en/ark/ark-extract.html
-share/doc/HTML/en/ark/ark-work-files.html
-share/doc/HTML/en/ark/commands.html
 share/doc/HTML/en/ark/common
-share/doc/HTML/en/ark/compilation.html
-share/doc/HTML/en/ark/credits.html
-share/doc/HTML/en/ark/editmenu.html
+share/doc/HTML/en/ark/index.cache.bz2
 share/doc/HTML/en/ark/index.docbook
-share/doc/HTML/en/ark/index.html
-share/doc/HTML/en/ark/installation.html
-share/doc/HTML/en/ark/introduction.html
-share/doc/HTML/en/ark/requirements.html
-share/doc/HTML/en/ark/settingsmenu.html
-share/doc/HTML/en/ark/using-ark.html
-share/doc/HTML/en/kab/.anchors
-share/doc/HTML/en/kab/commands.html
 share/doc/HTML/en/kab/common
-share/doc/HTML/en/kab/credits.html
-share/doc/HTML/en/kab/faq.html
+share/doc/HTML/en/kab/index.cache.bz2
 share/doc/HTML/en/kab/index.docbook
-share/doc/HTML/en/kab/index.html
-share/doc/HTML/en/kab/installation.html
-share/doc/HTML/en/kab/introduction.html
-share/doc/HTML/en/kab/kab-edit.html
 share/doc/HTML/en/kab/kab-edit.png
 share/doc/HTML/en/kab/kab-using.png
-share/doc/HTML/en/karm/.anchors
 share/doc/HTML/en/karm/common
-share/doc/HTML/en/karm/credits.html
-share/doc/HTML/en/karm/general-use.html
+share/doc/HTML/en/karm/index.cache.bz2
 share/doc/HTML/en/karm/index.docbook
-share/doc/HTML/en/karm/index.html
-share/doc/HTML/en/karm/installation.html
-share/doc/HTML/en/karm/interface.html
-share/doc/HTML/en/karm/introduction.html
 share/doc/HTML/en/karm/karm.png
-share/doc/HTML/en/karm/menus.html
-share/doc/HTML/en/karm/status-bar.html
-share/doc/HTML/en/karm/tool-bar.html
-share/doc/HTML/en/karm/using-karm.html
-share/doc/HTML/en/kcalc/.anchors
-share/doc/HTML/en/kcalc/and-or-xor.html
-share/doc/HTML/en/kcalc/comments-on-specific-functions.html
 share/doc/HTML/en/kcalc/common
-share/doc/HTML/en/kcalc/copyright.html
-share/doc/HTML/en/kcalc/enable-long-double-precision.html
+share/doc/HTML/en/kcalc/index.cache.bz2
 share/doc/HTML/en/kcalc/index.docbook
-share/doc/HTML/en/kcalc/index.html
-share/doc/HTML/en/kcalc/installation.html
-share/doc/HTML/en/kcalc/introduction.html
 share/doc/HTML/en/kcalc/kcalc_on_Aix.txt
 share/doc/HTML/en/kcalc/kcalc_on_OSF.txt
-share/doc/HTML/en/kcalc/key-accels.html
-share/doc/HTML/en/kcalc/lsh-rsh.html
-share/doc/HTML/en/kcalc/percent.html
-share/doc/HTML/en/kcalc/questions-and-answers.html
-share/doc/HTML/en/kcalc/trigonometric-mode.html
-share/doc/HTML/en/kcalc/usage.html
-share/doc/HTML/en/kdf/.anchors
 share/doc/HTML/en/kdf/common
-share/doc/HTML/en/kdf/credits.html
+share/doc/HTML/en/kdf/index.cache.bz2
 share/doc/HTML/en/kdf/index.docbook
-share/doc/HTML/en/kdf/index.html
-share/doc/HTML/en/kdf/installation.html
-share/doc/HTML/en/kdf/introduction.html
 share/doc/HTML/en/kdf/kdf.png
 share/doc/HTML/en/kdf/kdf_config.png
-share/doc/HTML/en/kdf/main-window.html
-share/doc/HTML/en/kdf/the-menus.html
-share/doc/HTML/en/kdf/using-kdf.html
-share/doc/HTML/en/kedit/.anchors
-share/doc/HTML/en/kedit/command-line-options.html
 share/doc/HTML/en/kedit/common
-share/doc/HTML/en/kedit/credits.html
-share/doc/HTML/en/kedit/edit.html
-share/doc/HTML/en/kedit/go.html
-share/doc/HTML/en/kedit/help.html
+share/doc/HTML/en/kedit/index.cache.bz2
 share/doc/HTML/en/kedit/index.docbook
-share/doc/HTML/en/kedit/index.html
-share/doc/HTML/en/kedit/installation.html
-share/doc/HTML/en/kedit/introduction.html
-share/doc/HTML/en/kedit/keybindings.html
-share/doc/HTML/en/kedit/on-screen-fundamentals.html
-share/doc/HTML/en/kedit/pref-dialog.html
-share/doc/HTML/en/kedit/prefcolors.html
-share/doc/HTML/en/kedit/prefmisc.html
-share/doc/HTML/en/kedit/prefspellchecker.html
-share/doc/HTML/en/kedit/settings.html
-share/doc/HTML/en/kedit/the-menu-entries.html
-share/doc/HTML/en/kedit/tools.html
-share/doc/HTML/en/kfind/.anchors
-share/doc/HTML/en/kfind/authors.html
 share/doc/HTML/en/kfind/common
-share/doc/HTML/en/kfind/compilation-and-installation.html
-share/doc/HTML/en/kfind/configuration.html
-share/doc/HTML/en/kfind/edit.html
-share/doc/HTML/en/kfind/epilog.html
-share/doc/HTML/en/kfind/help.html
+share/doc/HTML/en/kfind/index.cache.bz2
 share/doc/HTML/en/kfind/index.docbook
-share/doc/HTML/en/kfind/index.html
-share/doc/HTML/en/kfind/installation.html
-share/doc/HTML/en/kfind/introduction.html
-share/doc/HTML/en/kfind/onscreenfundamentals.html
-share/doc/HTML/en/kfind/options.html
-share/doc/HTML/en/kfind/requirements.html
-share/doc/HTML/en/kfind/search-parameters-dialog.html
-share/doc/HTML/en/kfind/themenuentries.html
-share/doc/HTML/en/kfind/viewing-area.html
-share/doc/HTML/en/kfloppy/.anchors
-share/doc/HTML/en/kfloppy/buttons.html
-share/doc/HTML/en/kfloppy/command-line.html
 share/doc/HTML/en/kfloppy/common
-share/doc/HTML/en/kfloppy/credits.html
-share/doc/HTML/en/kfloppy/formatting-options.html
+share/doc/HTML/en/kfloppy/index.cache.bz2
 share/doc/HTML/en/kfloppy/index.docbook
-share/doc/HTML/en/kfloppy/index.html
-share/doc/HTML/en/kfloppy/installation.html
-share/doc/HTML/en/kfloppy/introduction.html
-share/doc/HTML/en/kfloppy/usingkfloppy.html
-share/doc/HTML/en/khexedit/.anchors
-share/doc/HTML/en/khexedit/bookmarks.html
 share/doc/HTML/en/khexedit/common
-share/doc/HTML/en/khexedit/credits.html
-share/doc/HTML/en/khexedit/document-menu.html
-share/doc/HTML/en/khexedit/edit-menu.html
-share/doc/HTML/en/khexedit/help-menu.html
+share/doc/HTML/en/khexedit/index.cache.bz2
 share/doc/HTML/en/khexedit/index.docbook
-share/doc/HTML/en/khexedit/index.html
-share/doc/HTML/en/khexedit/installation.html
-share/doc/HTML/en/khexedit/introduction.html
 share/doc/HTML/en/khexedit/khexedit1.png
-share/doc/HTML/en/khexedit/menu-commands.html
-share/doc/HTML/en/khexedit/nutshell.html
-share/doc/HTML/en/khexedit/settings-menu.html
-share/doc/HTML/en/khexedit/starting-khexedit.html
-share/doc/HTML/en/khexedit/toolbar.html
-share/doc/HTML/en/khexedit/tools-menu.html
-share/doc/HTML/en/khexedit/view-menu.html
-share/doc/HTML/en/kjots/.anchors
-share/doc/HTML/en/kjots/commands.html
 share/doc/HTML/en/kjots/common
-share/doc/HTML/en/kjots/compilation.html
-share/doc/HTML/en/kjots/configuration.html
-share/doc/HTML/en/kjots/credits.html
+share/doc/HTML/en/kjots/index.cache.bz2
 share/doc/HTML/en/kjots/index.docbook
-share/doc/HTML/en/kjots/index.html
-share/doc/HTML/en/kjots/installation.html
-share/doc/HTML/en/kjots/introduction.html
-share/doc/HTML/en/kjots/kjots-pages.html
-share/doc/HTML/en/kjots/menu-edit.html
-share/doc/HTML/en/kjots/menu-help.html
-share/doc/HTML/en/kjots/menu-hotlist.html
-share/doc/HTML/en/kjots/menu-options.html
-share/doc/HTML/en/kjots/requirements.html
-share/doc/HTML/en/kjots/using-kjots.html
-share/doc/HTML/en/kljettool/.anchors
 share/doc/HTML/en/kljettool/README
 share/doc/HTML/en/kljettool/common
-share/doc/HTML/en/kljettool/compilation-and-installation.html
-share/doc/HTML/en/kljettool/credits.html
 share/doc/HTML/en/kljettool/djcdoscommands.txt
 share/doc/HTML/en/kljettool/filter
-share/doc/HTML/en/kljettool/getting-kljettool-to-work.html
 share/doc/HTML/en/kljettool/hp690c.zip
+share/doc/HTML/en/kljettool/index.cache.bz2
 share/doc/HTML/en/kljettool/index.docbook
-share/doc/HTML/en/kljettool/index.html
-share/doc/HTML/en/kljettool/installation.html
-share/doc/HTML/en/kljettool/introduction.html
 share/doc/HTML/en/kljettool/magic
-share/doc/HTML/en/kljettool/requirements.html
 share/doc/HTML/en/kljettool/screenshot.png
-share/doc/HTML/en/kljettool/usage.html
-share/doc/HTML/en/klpq/.anchors
-share/doc/HTML/en/klpq/author.html
 share/doc/HTML/en/klpq/common
-share/doc/HTML/en/klpq/compilation-and-installation.html
+share/doc/HTML/en/klpq/index.cache.bz2
 share/doc/HTML/en/klpq/index.docbook
-share/doc/HTML/en/klpq/index.html
-share/doc/HTML/en/klpq/installation.html
-share/doc/HTML/en/klpq/introduction.html
-share/doc/HTML/en/klpq/mainwindow.html
-share/doc/HTML/en/klpq/requirements.html
-share/doc/HTML/en/klpq/spooler-dialog.html
-share/doc/HTML/en/klpq/todo.html
-share/doc/HTML/en/klpq/usage.html
-share/doc/HTML/en/knotes/.anchors
+share/doc/HTML/en/klprfax/common
+share/doc/HTML/en/klprfax/index.cache.bz2
+share/doc/HTML/en/klprfax/index.docbook
 share/doc/HTML/en/knotes/common
-share/doc/HTML/en/knotes/compilation.html
-share/doc/HTML/en/knotes/configuration.html
-share/doc/HTML/en/knotes/configuring-actions.html
-share/doc/HTML/en/knotes/configuring-editor.html
-share/doc/HTML/en/knotes/credits.html
-share/doc/HTML/en/knotes/customizing-actions.html
-share/doc/HTML/en/knotes/customizing-display.html
-share/doc/HTML/en/knotes/customizing-editor.html
-share/doc/HTML/en/knotes/deleting-a-note.html
-share/doc/HTML/en/knotes/desktop-functions.html
-share/doc/HTML/en/knotes/displaying-notes.html
-share/doc/HTML/en/knotes/hiding-a-note.html
+share/doc/HTML/en/knotes/index.cache.bz2
 share/doc/HTML/en/knotes/index.docbook
-share/doc/HTML/en/knotes/index.html
-share/doc/HTML/en/knotes/inserting-the-date.html
-share/doc/HTML/en/knotes/installation.html
-share/doc/HTML/en/knotes/introduction.html
-share/doc/HTML/en/knotes/mailing-a-note.html
-share/doc/HTML/en/knotes/printing-a-note.html
-share/doc/HTML/en/knotes/quit-knotes.html
-share/doc/HTML/en/knotes/renaming-a-note.html
-share/doc/HTML/en/knotes/requirements.html
-share/doc/HTML/en/knotes/typing-the-note.html
-share/doc/HTML/en/knotes/using-knotes.html
-share/doc/HTML/en/kpm/.anchors
-share/doc/HTML/en/kpm/commands.html
 share/doc/HTML/en/kpm/common
-share/doc/HTML/en/kpm/compilation.html
-share/doc/HTML/en/kpm/credits.html
-share/doc/HTML/en/kpm/faq.html
+share/doc/HTML/en/kpm/index.cache.bz2
 share/doc/HTML/en/kpm/index.docbook
-share/doc/HTML/en/kpm/index.html
-share/doc/HTML/en/kpm/installation.html
-share/doc/HTML/en/kpm/introduction.html
 share/doc/HTML/en/kpm/kpmjobs.png
 share/doc/HTML/en/kpm/kpmmemory.png
 share/doc/HTML/en/kpm/kpmstart.png
 share/doc/HTML/en/kpm/kpmtext.png
-share/doc/HTML/en/kpm/managing-processes.html
-share/doc/HTML/en/kpm/monitoring-processes.html
-share/doc/HTML/en/kpm/monitoring-resources.html
-share/doc/HTML/en/kpm/other-signals.html
 share/doc/HTML/en/kpm/qps.1
-share/doc/HTML/en/kpm/requirements.html
-share/doc/HTML/en/kpm/signals.html
-share/doc/HTML/en/kpm/using-kpm.html
-share/doc/HTML/en/ktimemon/.anchors
-share/doc/HTML/en/ktimemon/autoscaling.html
-share/doc/HTML/en/ktimemon/common
-share/doc/HTML/en/ktimemon/config.html
-share/doc/HTML/en/ktimemon/fund.html
-share/doc/HTML/en/ktimemon/index.docbook
-share/doc/HTML/en/ktimemon/index.html
-share/doc/HTML/en/ktimemon/installation.html
-share/doc/HTML/en/ktimemon/introduction.html
-share/doc/HTML/en/ktimemon/menu.html
-share/doc/HTML/en/ktimemon/revisionhistory.html
-share/doc/HTML/en/ktimemon/thanksandacknowledgements.html
+share/icons/hicolor/16x16/apps/ark.png
+share/icons/hicolor/16x16/apps/kab.png
+share/icons/hicolor/16x16/apps/karm.png
+share/icons/hicolor/16x16/apps/kcalc.png
+share/icons/hicolor/16x16/apps/kcharselect.png
+share/icons/hicolor/16x16/apps/kcmdf.png
+share/icons/hicolor/16x16/apps/kdf.png
+share/icons/hicolor/16x16/apps/kedit.png
 share/icons/hicolor/16x16/apps/kfind.png
+share/icons/hicolor/16x16/apps/kfloppy.png
+share/icons/hicolor/16x16/apps/khexedit.png
+share/icons/hicolor/16x16/apps/kjots.png
+share/icons/hicolor/16x16/apps/klaptopdaemon.png
+share/icons/hicolor/16x16/apps/kljettool.png
+share/icons/hicolor/16x16/apps/klpq.png
+share/icons/hicolor/16x16/apps/klprfax.png
+share/icons/hicolor/16x16/apps/knotes.png
+share/icons/hicolor/16x16/apps/kwikdisk.png
+share/icons/hicolor/16x16/apps/laptop_battery.png
+share/icons/hicolor/16x16/apps/laptop_pcmcia.png
 share/icons/hicolor/32x32/apps/ark.png
 share/icons/hicolor/32x32/apps/kab.png
 share/icons/hicolor/32x32/apps/karm.png
 share/icons/hicolor/32x32/apps/kcalc.png
+share/icons/hicolor/32x32/apps/kcmdf.png
+share/icons/hicolor/32x32/apps/kdf.png
 share/icons/hicolor/32x32/apps/kedit.png
 share/icons/hicolor/32x32/apps/kfind.png
 share/icons/hicolor/32x32/apps/kfloppy.png
 share/icons/hicolor/32x32/apps/khexedit.png
 share/icons/hicolor/32x32/apps/kjots.png
+share/icons/hicolor/32x32/apps/kljettool.png
 share/icons/hicolor/32x32/apps/klpq.png
+share/icons/hicolor/32x32/apps/klprfax.png
 share/icons/hicolor/32x32/apps/knotes.png
+share/icons/hicolor/32x32/apps/kwikdisk.png
 share/icons/hicolor/32x32/apps/laptop_battery.png
 share/icons/hicolor/32x32/apps/laptop_pcmcia.png
 share/icons/hicolor/48x48/apps/ark.png
@@ -389,53 +241,17 @@ share/icons/hicolor/48x48/apps/klpq.png
 share/icons/hicolor/48x48/apps/knotes.png
 share/icons/hicolor/48x48/apps/laptop_battery.png
 share/icons/hicolor/48x48/apps/laptop_pcmcia.png
-share/icons/locolor/16x16/apps/ark.png
-share/icons/locolor/16x16/apps/kab.png
-share/icons/locolor/16x16/apps/karm.png
-share/icons/locolor/16x16/apps/kcalc.png
-share/icons/locolor/16x16/apps/kcharselect.png
-share/icons/locolor/16x16/apps/kcmdf.png
-share/icons/locolor/16x16/apps/kdf.png
-share/icons/locolor/16x16/apps/kedit.png
-share/icons/locolor/16x16/apps/kfind.png
-share/icons/locolor/16x16/apps/kfloppy.png
-share/icons/locolor/16x16/apps/khexedit.png
-share/icons/locolor/16x16/apps/kjots.png
-share/icons/locolor/16x16/apps/klaptopdaemon.png
-share/icons/locolor/16x16/apps/kljettool.png
-share/icons/locolor/16x16/apps/klpq.png
-share/icons/locolor/16x16/apps/knotes.png
-share/icons/locolor/16x16/apps/ktimemon.png
-share/icons/locolor/16x16/apps/kwikdisk.png
-share/icons/locolor/16x16/apps/laptop_battery.png
-share/icons/locolor/16x16/apps/laptop_pcmcia.png
-share/icons/locolor/32x32/apps/ark.png
-share/icons/locolor/32x32/apps/kab.png
-share/icons/locolor/32x32/apps/karm.png
-share/icons/locolor/32x32/apps/kcalc.png
-share/icons/locolor/32x32/apps/kcharselect.png
-share/icons/locolor/32x32/apps/kcmdf.png
-share/icons/locolor/32x32/apps/kdf.png
-share/icons/locolor/32x32/apps/kedit.png
-share/icons/locolor/32x32/apps/kfind.png
-share/icons/locolor/32x32/apps/kfloppy.png
-share/icons/locolor/32x32/apps/khexedit.png
-share/icons/locolor/32x32/apps/kjots.png
-share/icons/locolor/32x32/apps/kljettool.png
-share/icons/locolor/32x32/apps/klpq.png
-share/icons/locolor/32x32/apps/knotes.png
-share/icons/locolor/32x32/apps/ktimemon.png
-share/icons/locolor/32x32/apps/kwikdisk.png
-share/icons/locolor/32x32/apps/laptop_battery.png
-share/icons/locolor/32x32/apps/laptop_pcmcia.png
+share/icons/locolor/16x16/apps/klprfax.png
+share/icons/locolor/32x32/apps/klprfax.png
+share/services/arkpart.desktop
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/16x16/apps
-@dirrm share/doc/HTML/en/ktimemon
 @dirrm share/doc/HTML/en/kpm
 @dirrm share/doc/HTML/en/knotes
+@dirrm share/doc/HTML/en/klprfax
 @dirrm share/doc/HTML/en/klpq
 @dirrm share/doc/HTML/en/kljettool
 @dirrm share/doc/HTML/en/kjots
@@ -448,17 +264,17 @@ share/icons/locolor/32x32/apps/laptop_pcmcia.png
 @dirrm share/doc/HTML/en/karm
 @dirrm share/doc/HTML/en/kab
 @dirrm share/doc/HTML/en/ark
-@dirrm share/doc/HTML/en
-@dirrm share/config
+@dirrm share/apps/konqueror/servicemenus
+@dirrm share/apps/konqueror
 @dirrm share/apps/knotes/pics
 @dirrm share/apps/knotes
 @dirrm share/apps/kljettool/pics
 @dirrm share/apps/kljettool
-@dirrm share/apps/klaptopdaemon/icons/locolor/32x32/actions
-@dirrm share/apps/klaptopdaemon/icons/locolor/32x32
-@dirrm share/apps/klaptopdaemon/icons/locolor/16x16/actions
-@dirrm share/apps/klaptopdaemon/icons/locolor/16x16
-@dirrm share/apps/klaptopdaemon/icons/locolor
+@dirrm share/apps/klaptopdaemon/icons/hicolor/32x32/actions
+@dirrm share/apps/klaptopdaemon/icons/hicolor/32x32
+@dirrm share/apps/klaptopdaemon/icons/hicolor/16x16/actions
+@dirrm share/apps/klaptopdaemon/icons/hicolor/16x16
+@dirrm share/apps/klaptopdaemon/icons/hicolor
 @dirrm share/apps/klaptopdaemon/icons
 @dirrm share/apps/klaptopdaemon
 @dirrm share/apps/kjots/pics
@@ -479,10 +295,9 @@ share/icons/locolor/32x32/apps/laptop_pcmcia.png
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab/htmlexport/templates
 @dirrm share/apps/kab/htmlexport
-@dirrm share/apps/kab
-@dirrm share/apps/ark/icons/locolor/22x22/actions
-@dirrm share/apps/ark/icons/locolor/22x22
-@dirrm share/apps/ark/icons/locolor
+@dirrm share/apps/ark/icons/hicolor/22x22/actions
+@dirrm share/apps/ark/icons/hicolor/22x22
+@dirrm share/apps/ark/icons/hicolor
 @dirrm share/apps/ark/icons
 @dirrm share/apps/ark
 @dirrm share/apps
@@ -492,3 +307,4 @@ share/icons/locolor/32x32/apps/laptop_pcmcia.png
 @dirrm share/applnk/Settings/Information
 @dirrm share/applnk/Editors
 @dirrm share/applnk
+@dirrm lib/kde2

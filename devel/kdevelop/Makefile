@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	kdevelop
-PORTVERSION=	1.4.1
+PORTVERSION=	2.0
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/2.1.1/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/2.2/distribution/tar/generic/src
 
 MAINTAINER=	demon@FreeBSD.org
 
@@ -43,5 +43,8 @@ pre-everything::
 	@${ECHO_MSG} "to automatically build the suggested programs to compliment kdevelop."
 	@${ECHO_MSG}
 .endif
+
+pre-build:
+	${PERL} -pi -e "s@libkdeui.so.3@libkdeui.so@g" ${WRKSRC}/kdevelop/main.cpp
 
 .include <bsd.port.mk>

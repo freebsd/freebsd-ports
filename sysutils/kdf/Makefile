@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdeutils
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
@@ -18,5 +18,6 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+MAN1=		efax.1 efix.1 fax.1
 
 .include <bsd.port.mk>
