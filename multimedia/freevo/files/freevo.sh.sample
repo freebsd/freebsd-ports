@@ -1,0 +1,26 @@
+#!/bin/sh
+
+PREFIX=%%PREFIX%%
+RUN="/usr/bin/su freevo -c"
+PATH=${PATH}:%%PREFIX%%/bin
+
+case "$1" in
+start)
+	${RUN} "${PREFIX}/bin/freevo recordserver start" \
+		&& echo -n " freevo-recordserver"
+	${RUN} "${PREFIX}/bin/freevo webserver start" \
+		&& echo -n " freevo-webserver"
+	${RUN} "${PREFIX}/bin/freevo -fs start" > /dev/null 2>&1 &
+		   echo -n " freevo"
+	;;
+stop)
+	${RUN} "${PREFIX}/bin/freevo stop"
+	${RUN} "${PREFIX}/bin/freevo webserver stop"
+	${RUN} "${PREFIX}/bin/freevo recordserver stop"
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

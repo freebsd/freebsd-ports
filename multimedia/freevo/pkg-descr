@@ -1,0 +1,15 @@
+Freevo is an open-source digital video jukebox (PVR, DVR) based on Linux
+in addition to a number of open-source audio/video tools. MPlayer is
+used to play audio and video files. MPlayer is an excellent media player
+that can play most popular file formats. Freevo can be used both for a
+standalone PVR computer with a TV+remote, as well as on a regular
+desktop computer using the monitor and keyboard.
+
+Freevo is easy to download and install for new users. Most hardware is
+supported (graphic boards, sound cards and video capture devices).
+
+The Freevo core is under heavy development. It is mostly written in the
+Python programming language which is very well suited for high-level
+control applications like Freevo.
+
+WWW: http://freevo.sourceforge.net/

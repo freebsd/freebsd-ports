@@ -1,0 +1,99 @@
+#!/bin/sh
+# Stolen by lewiz from mail/nullmailer
+
+user=freevo
+group=freevo
+uid=523
+gid=523
+home=/var/db/freevo
+perm=775
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+      read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+      answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    if [ ! -n "$BATCH" ]; then
+      question=$1
+      dflt=$2
+      while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+      done
+    else
+      return ${dflt}
+    fi
+}
+
+creategroup() {
+    if /usr/sbin/pw groupshow "${group}" 2>/dev/null; then
+	echo "You already have a group \"${group}\", so I will use it."
+    else
+	echo "You need a group \"${group}\"."
+	if (yesno "Would you like me to create it" y); then
+	    /usr/sbin/pw groupadd ${group} -g ${gid} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+}
+
+createuser() {
+    if /usr/sbin/pw user show "${user}" 2>/dev/null; then
+	echo "You already have a user \"${user}\", so I will use it."
+	pw usermod "${user}" -d ${home}
+    else
+	echo "You need a user \"${user}\"."
+	if (yesno "Would you like me to create it" y); then
+	    /usr/sbin/pw useradd ${user} -u ${uid} -g ${group} -d ${home} \
+		-s /bin/sh -c "Freevo Owner" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+}
+
+createhome() {
+    if [ -d ${home} ]; then
+	echo "You already have a cache directory \"${home}\", so I will use it."
+	chown ${user}:${group} ${home} # Should we recurse?
+	chmod ${perm} ${home} # Should we recurse?
+    else
+	echo "You need a cache directory \"${home}\"."
+	if (yesno "Would you like me to create it" y); then
+	    mkdir ${home}
+	    chown ${user}:${group} ${home}
+	    chmod ${perm} ${home}
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+}
+
+if [ x"$1" = xPRE-INSTALL ]; then
+    creategroup;
+    createuser;
+    createhome;
+fi
