@@ -85,10 +85,10 @@ lib/libpspell_aspell.so.1
 share/aspell/ASCII.dat
 share/aspell/ASCII.map
 share/aspell/SGML.map
+share/aspell/american
 share/aspell/english
 share/aspell/english.dat
 share/aspell/english_phonet.dat
-share/aspell/german.dat
 share/aspell/iso8859-1.dat
 share/aspell/iso8859-1.map
 share/aspell/iso8859-10.dat
