@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	3.6
+PORTVERSION=	4.0
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.netbeans.org/download/release36/promoted/FCS/
-DISTNAME=	netbeans-3_6
+DISTNAME=	netbeans-4_0-bin
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
@@ -21,7 +21,7 @@ RESTRICTED=	"Restrictive license"
 
 WRKSRC=		${WRKDIR}/netbeans
 
-DOWNLOAD_URL?=	http://www.netbeans.org/download/release36/promoted/FCS/release36-build-tar-bz2.html
+DOWNLOAD_URL?=	http://www.netbeans.info/downloads/download.php?p=1&a=bd&os=2&lang=1&rv=4.0&b_bt=2
 
 .include <bsd.port.pre.mk>
 
@@ -29,16 +29,10 @@ DOWNLOAD_URL?=	http://www.netbeans.org/download/release36/promoted/FCS/release36
 IGNORE=	You must manually fetch the source distribution (${DISTFILES}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
-.if ${OSVERSION} >= 500000
-post-patch:
-		@${CAT} ${FILESDIR}/bin_runide.sh.diff | ${PATCH} ${WRKSRC}/bin/runide.sh
-		@${RM} ${WRKSRC}/bin/runide.sh.orig
-.endif
-
 do-install:
 		@${MKDIR} ${PREFIX}/netbeans
 		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
 		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
-		@${LN} -sf ${PREFIX}/netbeans/bin/runide.sh ${PREFIX}/bin/netbeans
+		@${LN} -sf ${PREFIX}/netbeans/bin/netbeans ${PREFIX}/bin/netbeans
 
 .include <bsd.port.post.mk>
