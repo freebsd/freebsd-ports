@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	martin@tradex.sk
-COMMENT=	Database library for PHP4
+COMMENT=	Database library for PHP
 
 USE_PHP=	yes
 
