@@ -12,3 +12,5 @@ To produce an etherboot floppy (or HD partition) do
 
 Replace <device> with the specific code for your card, and /dev/fd0
 with your hard disk partition.
+
+WWW: http://etherboot.sourceforge.net/
