@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	tdir
-PORTVERSION=	1.18l
+PORTVERSION=	1.18n
 CATEGORIES=	games
-MASTER_SITES=	http://xtsl.free.fr/118l/
+MASTER_SITES=	http://xtsl.free.fr/118n/
 DISTNAME=	traindir-${PORTVERSION}-src
-WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Train controller simulation
+
+WRKSRC=		${WRKDIR}/traindir-${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
