@@ -3,7 +3,7 @@
 # Date created:		24 October 1997
 # Whom:			Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.10 1998/10/12 21:11:48 jseger Exp $
+# $Id: Makefile,v 1.11 1998/10/14 00:24:23 jseger Exp $
 #
 
 DISTNAME=	tkrat-1.1
@@ -17,6 +17,11 @@ BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
 		tk80.1:${PORTSDIR}/x11-toolkits/tk80 \
 		c-client.2:${PORTSDIR}/mail/imap-uw
+
+VERSION!=	sysctl -n kern.osreldate
+.if ${VERSION} < 300000
+BROKEN=		depends on imap-uw
+.endif
 
 GNU_CONFIGURE=	yes
 
