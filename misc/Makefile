@@ -317,7 +317,6 @@
     SUBDIR += screen
     SUBDIR += seizedesktop
     SUBDIR += seq2
-    SUBDIR += sh-utils
     SUBDIR += shared-mime-info
     SUBDIR += shc
     SUBDIR += shuffle
