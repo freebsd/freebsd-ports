@@ -1,0 +1,34 @@
+--- Makefile.orig	Tue Dec 17 06:48:54 1996
++++ Makefile	Mon Apr 27 21:55:29 1998
+@@ -20,7 +20,7 @@
+ 
+ # Unless you have a nonstandard Emacs installation, these shouldn't have to 
+ # be changed.
+-prefix = /usr/local
++prefix = ${PREFIX}
+ infodir = ${prefix}/info
+ 
+ # The name of the manual:
+@@ -53,10 +53,9 @@
+ # We depend on makeinfo.c rather than makeinfo -- there's no need to rebuild
+ # everything just because makeinfo isn't part of the distribution.
+ 
+-elisp: $(srcs) index.texi makeinfo.c
+-	$(MAKE) makeinfo
++elisp: $(srcs) index.texi
+ 	rm -f elisp-*
+-	./makeinfo elisp.texi
++	makeinfo elisp.texi
+ 
+ elisp.dvi: $(srcs) index.texi texindex
+ 	# Avoid losing old contents of aux file entirely.
+@@ -82,8 +81,7 @@
+ 
+ install: elisp
+ 	./mkinstalldirs $(infodir)
+-	cp elisp elisp-* $(infodir)
+-	@echo also add the line for elisp to $(infodir)/dir.
++	${BSD_INSTALL_DATA} elisp elisp-* $(infodir)
+ 
+ installall: install
+ 	install -c texinfo.tex $(texmacrodir)

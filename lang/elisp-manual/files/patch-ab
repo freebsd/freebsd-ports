@@ -1,0 +1,15 @@
+*** ../elisp-manual-19-2.4.2/elisp.texi.orig	Mon Dec 16 17:37:22 1996
+--- ../elisp-manual-19-2.4.2/elisp.texi	Tue Nov 18 19:33:09 1997
+***************
+*** 3,8 ****
+--- 3,12 ----
+  @setfilename elisp
+  @settitle GNU Emacs Lisp Reference Manual
+  @c %**end of header
++ @dircategory Emacs Lisp programming
++ @direntry
++ * Elisp manual: (elisp).        The Emacs Lisp Reference Manual.
++ @end direntry
+  
+  @ifinfo
+  This version is the edition 2.4.2 of the GNU Emacs Lisp
