@@ -1,0 +1,44 @@
+bin/elm
+bin/answer
+bin/checkalias
+bin/elmalias
+bin/fastmail
+bin/frm
+@exec ln -f %D/%F %D/bin/nfrm
+@unexec rm -f %D/bin/nfrm
+bin/listalias
+bin/messages
+bin/newalias
+bin/newmail
+@exec ln -f %D/%F %D/bin/wnewmail
+@unexec rm -f %D/bin/wnewmail
+bin/printmail
+bin/readmsg
+bin/prlong
+bin/mmencode
+lib/elmrc-info
+lib/help-main
+lib/help-options
+lib/help-alias
+lib/help-pager
+lib/help-status
+lib/help-fbrowser
+lib/help-attach
+lib/help-selfolder
+lib/mime-types
+lib/mlists.eg
+@comment This is to fix the catman install during de-install
+man/cat1/answer.1
+man/cat1/checkalias.1
+man/cat1/elm.1
+man/cat1/elmalias.1
+man/cat1/fastmail.1
+man/cat1/frm.1
+man/cat1/listalias.1
+man/cat1/messages.1
+man/cat1/mmencode.1
+man/cat1/newalias.1
+man/cat1/newmail.1
+man/cat1/printmail.1
+man/cat1/readmsg.1
+man/cat1/wnewmail.1
