@@ -200,33 +200,31 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.nectec.or.th/pub/bsd-distributions/NetBSD/packages/distfiles/%SUBDIR%/
 
 MASTER_SITE_NETSCAPE+= \
-	ftp://ftpnscp.newaol.com/pub/%SUBDIR%/ \
 	ftp://ftp.ciril.fr/pub2/netscape/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/network/www/netscape/%SUBDIR%/ \
-	ftp://ftp.hu-berlin.de/pub/www/netscape/%SUBDIR%/ \
-	ftp://ftp.nsysu.edu.tw/Netscape/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/www/Netscape/%SUBDIR%/ \
 	ftp://ftp.uit.no/pub/www/Netscape/%SUBDIR%/ \
 	ftp://ftp.uni-bielefeld.de/pub/netscape/%SUBDIR%/ \
 	ftp://ftp.uniovi.es/pub/netscape/%SUBDIR%/ \
-	ftp://ftp.unipi.it/pub/mirror/netscape/%SUBDIR%/ \
-	ftp://ftp.uniroma2.it/%7bC/Netscape/%SUBDIR%/ \
-	ftp://ftp.ut.ee/pub/WWW/netscape/%SUBDIR%/ \
 	ftp://sunsite.cnlab-switch.ch/mirror/netscape/%SUBDIR%/ \
 	ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/www/Netscape/%SUBDIR%/ \
 	ftp://ftp.fct.unl.pt/.1/Netscape/%SUBDIR%/ \
-	ftp://ftp.skynet.be/mirror2/netscape/%SUBDIR%/ \
 	ftp://sunsite.tut.fi/pub/Mirror/mirrorsite.netscape.com/pub/%SUBDIR%/ \
 	ftp://sunfreeware.unam.mx/pub/Netscape/%SUBDIR%/ \
 	ftp://ftp.fh-wolfenbuettel.de/pub/www/netscape/%SUBDIR%/ \
-	ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/%SUBDIR%/ \
-	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/ \
 	ftp://ftp.cyf-kr.edu.pl/pub/mirror/netscape/%SUBDIR%/ \
 	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/ \
-	ftp://ftp.informatik.uni-hamburg.de/pub/soft/infosystems/www/clients/netscape/%SUBDIR%/ \
-	ftp://ftp.gftp.netscape.com/pub/%SUBDIR%/
+	ftp://ftp.gftp.netscape.com/pub/%SUBDIR%/ \
+	ftp://ftpnscp.newaol.com/pub/%SUBDIR%/ \
+	ftp://ftp.hu-berlin.de/pub/www/netscape/%SUBDIR%/ \
+	ftp://ftp.nsysu.edu.tw/Netscape/%SUBDIR%/ \
+	ftp://ftp.uniroma2.it/%7bC/Netscape/%SUBDIR%/ \
+	ftp://ftp.ut.ee/pub/WWW/netscape/%SUBDIR%/ \
+	ftp://ftp.skynet.be/mirror2/netscape/%SUBDIR%/ \
+	ftp://ftp.uni-bremen.de/pub/mirrors/ftp.netscape.com/pub/%SUBDIR%/ \
+	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.netscape.com/pub/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
