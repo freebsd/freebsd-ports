@@ -1,8 +1,8 @@
-D=examples/
+# $FreeBSD$
 all:
-	make -f Makefile.flib
+	make -f Makefile.flib X11BASE="${X11BASE}"
 	make -f Makefile.clib
-	make -f Makefile.bin 
+	make -f Makefile.bin X11BASE="${X11BASE}"
 	make -f Makefile.doc
 
 install:
@@ -13,4 +13,3 @@ install:
 	install -c  Makefile.demo examples/pgdemo*.f cpg/cpgdemo.c  ${PREFIX}/share/pgplot
 	cp pgdispd/aaaread.me ${PREFIX}/share/pgplot/readme.pgdisp
 	install -c -s  pgxwin_server pgdisp ${PREFIX}/bin
-

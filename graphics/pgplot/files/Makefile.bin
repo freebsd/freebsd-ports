@@ -1,7 +1,6 @@
 DRVDIR=./drivers
-
-LIBS=-L/usr/X11R6/lib -lX11 -lm
-XINCL=-I/usr/X11R6/include
+LIBS=-L${X11BASE}/lib -lX11 -lm
+XINCL=-I${X11BASE}/include
 
 CFLAGS+= $(XINCL) -DPGDISP 
 .PATH: . ./pgdispd
