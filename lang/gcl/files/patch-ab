@@ -1,0 +1,21 @@
+*** makefile.0	Sat Feb 11 18:34:50 1995
+--- makefile	Sat Feb 11 18:46:19 1995
+***************
+*** 122,129 ****
+  	echo ${INSTALL_LIB_DIR}/unixport/saved_gcl -dir ${INSTALL_LIB_DIR}/unixport/ -libdir ${INSTALL_LIB_DIR}/ >> \
+  	${PREFIX_DIR}/bin/gcl)
+  	chmod a+x ${PREFIX_DIR}/bin/gcl
+! 	tar cvf - unixport/saved_gcl doc/DOC doc/*.el ${LISP_LIB} | \
+! 	  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
+  	-(cd doc ; make install)
+  
+  
+--- 122,129 ----
+  	echo ${INSTALL_LIB_DIR}/unixport/saved_gcl -dir ${INSTALL_LIB_DIR}/unixport/ -libdir ${INSTALL_LIB_DIR}/ >> \
+  	${PREFIX_DIR}/bin/gcl)
+  	chmod a+x ${PREFIX_DIR}/bin/gcl
+! 	tar cvf - unixport/saved_gcl doc/DOC doc/*.el ${LISP_LIB} \
+! 	  h/cmpinclude.h | (cd ${INSTALL_LIB_DIR} ;tar xvf -)
+  	-(cd doc ; make install)
+  
+  

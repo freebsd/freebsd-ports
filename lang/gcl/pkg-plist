@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/gcl
+lib/gcl-1.1
