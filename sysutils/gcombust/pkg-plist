@@ -1,7 +1,7 @@
 bin/gcombust
 share/doc/gcombust/README
 share/doc/gcombust/NEWS
-share/gnome/apps/Applications/gcombust.desktop
+share/applications/gcombust.desktop
 share/locale/da/LC_MESSAGES/gcombust.mo
 share/locale/de/LC_MESSAGES/gcombust.mo
 share/locale/es/LC_MESSAGES/gcombust.mo
