@@ -1,26 +1,26 @@
---- configure.orig	Tue Aug 18 21:10:09 1998
-+++ configure	Tue Oct 20 22:42:43 1998
-@@ -2298,6 +2298,9 @@
-  $blt_ckcmd_tcl_home \
-  $blt_ckcmd_tcl_home/lib \
+--- configure.orig	Fri Mar  5 08:21:28 1999
++++ configure	Mon Apr 12 14:21:22 1999
+@@ -2301,6 +2301,9 @@
   $blt_cv_tcl_lib \
+  $prefix/lib \
+  $exec_prefix/lib \
 + /usr/local/lib/tcl8.0 \
 + /usr/local/lib/tcl7.6 \
 + /usr/local/lib/tcl7.5 \
   /usr/local/tcl/lib \
   /usr/local/tcl/tcl8.0/lib \
   /usr/local/tcl/tcl7.6/lib \
-@@ -2337,6 +2340,9 @@
-  $blt_ckcmd_tcl_home \
-  $blt_ckcmd_tcl_home/lib \
+@@ -2340,6 +2343,9 @@
   $blt_cv_tk_lib \
+  $prefix/lib \
+  $exec_prefix/lib \
 + /usr/local/lib/tk8.0 \
 + /usr/local/lib/tk4.2 \
 + /usr/local/lib/tk4.1 \
   /usr/local/tcl/lib \
   /usr/local/tcl/tk8.0/lib \
   /usr/local/tcl/tk4.2/lib \
-@@ -2432,6 +2438,13 @@
+@@ -2433,6 +2439,13 @@
  tclLibDir=${TCL_PREFIX}/lib
  tkLibDir=${TK_PREFIX}/lib
  
@@ -34,7 +34,7 @@
  itclLibSpec=""
  itclIncSpec=""
  itclSuffix=""
-@@ -2448,7 +2461,7 @@
+@@ -2451,7 +2464,7 @@
  tkLibSpec=${TK_LIB_SPEC}
  
  case $target in
@@ -43,12 +43,11 @@
      tclLib="-ltcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}${itclSuffix}"
      tkLib="-ltk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}${itclSuffix}"
      ;;
-@@ -3169,8 +3182,13 @@
+@@ -3170,7 +3183,13 @@
      if test "$test_ok" = yes; then
        SHLIB_CFLAGS="-fpic"
        SHLIB_LD="ld"
 -      SHLIB_LD_FLAGS="-Bshareable -x"
--      SHLIB_SUFFIX=".so"
 +      if test `objformat` = "elf"; then
 +        SHLIB_LD_FLAGS="-Bshareable -x -soname \$@"
 +        SHLIB_SUFFIX=".so.${bltMajor}"
