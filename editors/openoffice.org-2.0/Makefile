@@ -132,6 +132,11 @@ BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
 
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		mng.1:${PORTSDIR}/graphics/libmng \
+		freetype.9:${PORTSDIR}/print/freetype2
+
 USE_PERL5=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
