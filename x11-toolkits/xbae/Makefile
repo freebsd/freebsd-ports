@@ -5,7 +5,7 @@
 # With some
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/08 13:28:21 tg Exp $
 #
 
 DISTNAME=	Xbae-4.6.2
@@ -18,5 +18,8 @@ MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
 REQUIRES_MOTIF= YES
 USE_IMAKE=	YES
+
+post-install:
+	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
