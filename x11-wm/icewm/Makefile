@@ -1,14 +1,15 @@
 # New ports collection makefile for:   icewm
-# Version required:    0.9.16
+# Version required:    0.9.17
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.20 1998/11/15 14:21:55 vanilla Exp $
+# $Id: Makefile,v 1.21 1998/11/16 05:44:57 asami Exp $
 #
 
-DISTNAME=	icewm-0.9.16
+DISTNAME=	icewm-0.9.17
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/
+MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
+		http://www.freebsd.org/~vanilla/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	Nakai@technologist.com
@@ -19,8 +20,6 @@ BUILD_DEPENDS+=	imlib-config:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
 .endif
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
-
-BROKEN=		fetch
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
