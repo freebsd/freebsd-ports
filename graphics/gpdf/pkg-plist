@@ -38,6 +38,7 @@ share/gnome/pixmaps/gpdf/stock_book-closed.png
 share/gnome/pixmaps/gpdf/stock_book-opened-mark.png
 share/gnome/pixmaps/gpdf/stock_book-opened.png
 share/gnome/pixmaps/gpdf/stock_bookmarks.png
+share/locale/af/LC_MESSAGES/gpdf.mo
 share/locale/am/LC_MESSAGES/gpdf.mo
 share/locale/ar/LC_MESSAGES/gpdf.mo
 share/locale/az/LC_MESSAGES/gpdf.mo
@@ -59,6 +60,7 @@ share/locale/fi/LC_MESSAGES/gpdf.mo
 share/locale/fr/LC_MESSAGES/gpdf.mo
 share/locale/ga/LC_MESSAGES/gpdf.mo
 share/locale/gl/LC_MESSAGES/gpdf.mo
+share/locale/gu/LC_MESSAGES/gpdf.mo
 share/locale/he/LC_MESSAGES/gpdf.mo
 share/locale/hi/LC_MESSAGES/gpdf.mo
 share/locale/hr/LC_MESSAGES/gpdf.mo
