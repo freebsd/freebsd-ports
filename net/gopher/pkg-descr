@@ -1,2 +1,9 @@
-Gopher - a system to connect and maintain a distributed document
-delivery service all over the world.
+The Internet Gopher is a distributed document delivery service. It 
+allows a neophyte user to access various types of data residing on 
+multiple hosts in a seamless fashion. This is accomplished by 
+presenting the user a hierarchical arrangement of documents and by
+using a client-server communications model. The Internet Gopher 
+Server accepts simple queries, and responds by sending the client 
+a document.
+
+	University of Minnesota

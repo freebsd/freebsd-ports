@@ -1,19 +1,14 @@
-*** gopher/upload.c.dist	Tue Feb 18 17:31:30 1997
---- gopher/upload.c	Tue Feb 18 17:40:22 1997
+*** gopher/gopher.c.orig	Wed Jan 22 21:10:11 1997
+--- gopher/gopher.c	Wed Jan 22 21:11:29 1997
 ***************
-*** 123,129 ****
-  		    CURenter();
-  		    return;
-  	       }
-! 	       while(gets(inputline)) {
-  		    ZapCRLF(inputline);
-  		    if (strcmp(inputline, ".") == 0) 
-  			 break;
---- 123,129 ----
-  		    CURenter();
-  		    return;
-  	       }
-! 	       while(fgets(inputline, 256, stdin)) {
-  		    ZapCRLF(inputline);
-  		    if (strcmp(inputline, ".") == 0) 
-  			 break;
+*** 1182,1188 ****
+--- 1182,1190 ----
+  #else
+  extern int h_errno;
+  extern int sys_nerr;
++ #ifndef __FreeBSD__
+  extern char *sys_errlist[];
++ #endif
+  extern int  errno;
+  #endif
+  
