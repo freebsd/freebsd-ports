@@ -3,7 +3,7 @@
 # Date created:        21 August 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/06 06:45:28 vanilla Exp $
 #
 
 DISTNAME=	ee-0.2
@@ -18,7 +18,7 @@ LIB_DEPENDS=	panel_applet\\.0:${PORTSDIR}/x11/gnomecore
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--localstatedir=${PREFIX}/share/gnome \
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${X11BASE}
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I./intl" \
