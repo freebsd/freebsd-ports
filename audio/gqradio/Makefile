@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gtk12 gdkpixbuf
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	LIBS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include
 
@@ -45,5 +46,8 @@ pre-everything::
 	@${ECHO_CMD} "      WITHOUT_PNG=yes  Don't depend on libpng. Skin editor will not"
 	@${ECHO_CMD} "                       be able to save 'internal' skins"
 	@${ECHO_CMD} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
