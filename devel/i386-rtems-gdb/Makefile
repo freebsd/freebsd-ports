@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -43,6 +43,13 @@ CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${GDBNAME}/configure
 
 PATCH_DIST_STRIP?=	-p1
+
+# Need to patch a patch file
+.if ${LCLTARGET} == powerpc-rtems
+PATCHFILES+=	powerpc-gdb-5.2-hw_sem.c.diff:THN \
+		powerpc-gdb-5.2-hw_shm.c.diff:THN
+PATCH_SITES+=	http://rtems.thehousleys.net/:THN
+.endif
 
 MAN1+=		${LCLTARGET}-gdb.1
 
