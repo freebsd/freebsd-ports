@@ -1,0 +1,3 @@
+bin/nenscript
+share/doc/nenscript/readme
+@dirrm share/doc/nenscript
