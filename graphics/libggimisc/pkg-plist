@@ -1,0 +1,19 @@
+@unexec if cmp -s %D/etc/ggi/libggimisc.conf %D/etc/ggi/libggimisc.conf.dist; then rm -f %D/etc/ggi/libggimisc.conf; fi
+etc/ggi/libggimisc.conf.dist
+@exec [ -f %B/libggimisc.conf ] || cp %B/%f %B/libggimisc.conf
+include/ggi/internal/misc.h
+include/ggi/misc-defs.h
+include/ggi/misc.h
+lib/ggi/ggimisc/display/pseudo_stubs_ggimisc.la
+lib/ggi/ggimisc/display/pseudo_stubs_ggimisc.so
+%%WITH_SVGALIB%%lib/ggi/ggimisc/display/svgalib_ggimisc.la
+%%WITH_SVGALIB%%lib/ggi/ggimisc/display/svgalib_ggimisc.so
+lib/libggimisc.la
+lib/libggimisc.so
+lib/libggimisc.so.2
+@dirrm etc/ggi
+@dirrm include/ggi/internal
+@dirrm include/ggi
+@dirrm lib/ggi/ggimisc/display
+@dirrm lib/ggi/ggimisc
+@dirrm lib/ggi

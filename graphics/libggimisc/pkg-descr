@@ -1,0 +1,5 @@
+libggimisc is a libggi extension providing support for a range of hard to
+categorize features.
+vga splitline and wait-for-vsync are two examples.
+
+WWW: http://www.ggi-project.org/
