@@ -137,8 +137,6 @@ share/locale/it/LC_MESSAGES/kplayer.mo
 share/locale/pl/LC_MESSAGES/kplayer.mo
 share/locale/ru/LC_MESSAGES/kplayer.mo
 share/locale/zh_CN/LC_MESSAGES/kplayer.mo
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 share/services/kfile_kplayer.desktop
 share/services/kplayerpart.desktop
 share/services/mms.protocol
