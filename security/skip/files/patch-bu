@@ -13,27 +13,26 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h work.
  #include <errno.h>
  #include <fcntl.h>
  #include <unistd.h>
-@@ -69,6 +68,12 @@
+@@ -69,6 +68,11 @@
  #include <dirent.h>
  #endif
  
-+#include <osreldate.h>
-+
 +#if defined(KERNEL) || defined(_KERNEL)
 +#include <sys/cdefs.h>
 +#endif
 +
++#include <sys/param.h>
  #include <sys/types.h>
  #include <sys/errno.h>
  #include <sys/time.h>
-@@ -78,15 +82,20 @@
+@@ -78,15 +82,19 @@
  #include <sys/stat.h>
  #include <sys/socket.h>
  #include <sys/syslog.h>
+-#include <sys/param.h>
 +#if defined(KERNEL) || defined(_KERNEL) || __FreeBSD_version < 410000
 +#include <sys/socketvar.h> 
 +#endif
- #include <sys/param.h>
  #include <sys/uio.h>
  #include <sys/file.h>
  #include <sys/sockio.h>
