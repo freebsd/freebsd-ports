@@ -30,14 +30,8 @@ CONFIGURE_ARGS=		--with-python=none \
 			--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" || ${OSVERSION} > 502105
-BROKEN=			"Does not compile on !i386 or FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DOPENSSL_NO_KRB5||' -e 's|-O2|${CFLAGS}|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|$$(DATADIR)/locale|$$(DESTDIR)/share/locale|' ${WRKSRC}/locale/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
