@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.3 1997/03/25 10:48:15 obrien Exp $
+# $Id: Makefile,v 1.4 1997/03/29 14:38:05 max Exp $
 #
 
     SUBDIR += Wnn
     SUBDIR += h2ps
+    SUBDIR += hanyangfonts
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
     SUBDIR += pinetreefonts
