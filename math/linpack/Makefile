@@ -3,19 +3,22 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.9 1996/03/10 09:01:03 asami Exp $
+# $Id: Makefile,v 1.10 1996/11/18 11:32:26 asami Exp $
 #
 
 DISTNAME=	linpack
 PKGNAME=	linpack-1.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://netlib.att.com/netlib/linpack/
+MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/linpack/ \
+		ftp://ftp.netlib.org/linpack/
 
 DIST_SUBDIR=	${DISTNAME}
 
-EXTRACT_CMD=${.CURDIR}/scripts/uncomp
-EXTRACT_SUFX=.Z
-EXTRACT_ARGS= ${WRKDIR}
+RUN_DEPENDS=    ${PREFIX}/lib/libcor.so.1.0:${PORTSDIR}/math/blas
+
+EXTRACT_CMD=	${SCRIPTDIR}/uncomp
+EXTRACT_SUFX=	.Z
+EXTRACT_ARGS=	${WRKDIR}
 
 NO_WRKSUBDIR=	yes
 
@@ -49,7 +52,7 @@ pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
 
 pre-extract:
-	chmod +x scripts/uncomp
+	chmod +x ${SCRIPTDIR}/uncomp
 
 post-install:
 	ldconfig -m ${PREFIX}/lib
