@@ -1,25 +1,26 @@
 # New ports collection makefile for:   gnomecore
-# Version required:    0.99.1
+# Version required:    0.99.3.1
 # Date created:        17 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/01/06 12:19:42 obrien Exp $
+# $Id: Makefile,v 1.10 1999/01/12 16:50:33 vanilla Exp $
 #
 
-DISTNAME=	gnome-core-0.99.1
-PKGNAME=	gnomecore-0.99.1
+DISTNAME=	gnome-core-0.99.3.1
+PKGNAME=	gnomecore-0.99.3.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
+		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
+		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
 
 MAINTAINER=	nacai@iname.com
 
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/duck.wav:${PORTSDIR}/audio/gnomeaudio
 LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
-		gtop.0:${PORTSDIR}/devel/libgtop \
+		gtop.1:${PORTSDIR}/devel/libgtop \
 		esd.1:${PORTSDIR}/audio/esound \
 		ghttp.0:${PORTSDIR}/www/libghttp
-
-BROKEN=	'gnome-core-0.99.2 is the currently available'
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
