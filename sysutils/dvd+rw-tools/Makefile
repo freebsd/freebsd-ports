@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvd+rw-tools
-PORTVERSION=	5.19.4.9.7
-PORTREVISION=	2
+PORTVERSION=	5.20.4.10.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pkix.net/mirror/fy.chalmers.se/ \
 		http://fy.chalmers.se/~appro/linux/DVD+RW/tools/
@@ -19,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mkisofs:${PORTSDIR}/sysutils/cdrtools
 USE_REINPLACE=	yes
 
 MAN1=		growisofs.1
-BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo
+BIN_FILES=	growisofs dvd+rw-format dvd+rw-booktype dvd+rw-mediainfo dvd-ram-control
 PLIST_FILES=	${BIN_FILES:S|^|bin/|}
 PORTDOCS=	index.html
 
