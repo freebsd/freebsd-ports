@@ -25,6 +25,6 @@ MAKEFILE=	GNUmakefile
 ALL_TARGET=
 NO_MTREE=	yes
 INSTALLS_SHLIB=	yes
-NOT_FOR_ARCHS=	ia64
+NOT_FOR_ARCHS=	ia64 amd64
 
 .include <bsd.port.mk>
