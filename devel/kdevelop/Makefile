@@ -18,7 +18,7 @@ BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 .if defined(WITH_OPTIONAL_DEPENDS)
 RUN_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/deve/automake \
+		automake:${PORTSDIR}/devel/automake \
 		kdbg:${PORTSDIR}/devel/kdbg \
 		${LOCALBASE}/share/doc/HTML/en/kdelibs/kdecore/index.html:${PORTSDIR}/devel/kdelibdocs \
 		ktranslator:${PORTSDIR}/devel/ktranslator \
