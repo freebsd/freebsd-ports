@@ -1,18 +1,18 @@
-*** xwin.c.orig	Mon Nov  9 03:06:06 1998
---- xwin.c	Sat Nov 14 21:07:52 1998
+*** xwin.c.orig	Wed May 31 20:27:01 2000
+--- xwin.c	Wed Jun  7 02:34:50 2000
 ***************
-*** 13,19 ****
-  #include <X11/Xos.h>
+*** 15,21 ****
   #include <X11/keysym.h>
   #include <X11/cursorfont.h>
+  #include <X11/Xatom.h>
 ! #include <malloc.h>
   #endif
   
   #include <stdio.h>
---- 13,19 ----
-  #include <X11/Xos.h>
+--- 15,21 ----
   #include <X11/keysym.h>
   #include <X11/cursorfont.h>
+  #include <X11/Xatom.h>
 ! /* #include <malloc.h> */
   #endif
   
