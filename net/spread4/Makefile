@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spread
-PORTVERSION=	3.17.1
+PORTVERSION=	3.17.2
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	joshua@roughtrade.net
 COMMENT=	The Spread Group Communication System, a network toolkit
 
+WRKSRC=		${WRKDIR}/${PORTNAME}_src-${PORTVERSION}
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 

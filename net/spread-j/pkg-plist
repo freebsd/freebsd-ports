@@ -1,5 +1,6 @@
-%%JAVALIBDIR%%/spread-3.17.1.jar
-%%PORTDOCS%%%%EXAMPLESDIR%%/Flooder.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/recThread.java
-%%PORTDOCS%%%%EXAMPLESDIR%%/User.java
-%%PORTDOCS%%@dirrm share/examples/spread-j
+%%JAVAJARDIR%%/%%PORTNAME%%-%%PORTVERSION%%.jar
+%%PORTDOCS%%%%EXAMPLESDIR%%/java/Flooder.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/java/recThread.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/java/User.java
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/java
+%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
