@@ -1,5 +1,14 @@
---- sim/Makefile.orig	Tue Mar 15 16:37:49 1994
-+++ sim/Makefile	Mon Nov 18 21:11:13 1996
+--- sim/Makefile.orig	Wed Mar 16 09:37:49 1994
++++ sim/Makefile	Sat Apr 26 06:21:50 1997
+@@ -19,7 +19,7 @@
+ 	ranlib $(MARSDIR)/lib/libMaRSSim.a
+ 
+ stat: 
+-	make_stat_headers $(CC) $(CC) $(CFLAGS) > ../include/stat.h
++	./make_stat_headers $(CC) $(CC) $(CFLAGS) > ../include/stat.h
+ 	$(CC) $(CFLAGS) -c stat.c
+ 
+ lint:
 @@ -40,114 +40,5 @@
  
  # make dependencies
@@ -20,8 +29,7 @@
 -	echo '# DEPENDENCIES MUST END AT END OF FILE' >> Makefile
 -	echo '# IF YOU PUT STUFF HERE IT WILL GO AWAY' >> Makefile
 -	echo '# see make depend above' >> Makefile
-+	mkdep $(CFLAGS) ${SRCS}
- 
+-
 -# DO NOT DELETE THIS LINE
 -main.o: ./include/component.h ./include/comptypes.h ./include/event.h
 -main.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
@@ -116,3 +124,5 @@
 -# DEPENDENCIES MUST END AT END OF FILE
 -# IF YOU PUT STUFF HERE IT WILL GO AWAY
 -# see make depend above
++	mkdep $(CFLAGS) ${SRCS}
++
