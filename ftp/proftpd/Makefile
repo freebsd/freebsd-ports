@@ -7,17 +7,17 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
 		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}p
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mharo@FreeBSD.org
 COMMENT=	Highly configurable ftp daemon
-
-FORBIDDEN=	Remotely exploitable vulnerability.  http://xforce.iss.net/xforce/alerts/id/154
 
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
