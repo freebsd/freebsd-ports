@@ -293,6 +293,7 @@
     SUBDIR += oaf
     SUBDIR += ocamlweb
     SUBDIR += omniORB
+    SUBDIR += orbitcpp
     SUBDIR += p4.el
     SUBDIR += p4db
     SUBDIR += p5-Agent
