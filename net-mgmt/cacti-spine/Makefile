@@ -7,6 +7,7 @@
 
 PORTNAME=	cactid
 PORTVERSION=	0.8.6.d
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.cacti.net/downloads/cactid/
 DISTNAME=	cacti-${PORTNAME}-0.8.6d

@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Wed Jan 19 06:04:10 2005
++++ Makefile.in	Mon Mar 21 16:41:51 2005
+@@ -227,12 +227,12 @@
+ includeHEADERS_INSTALL = $(INSTALL_HEADER)
+ install-includeHEADERS: $(include_HEADERS)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(includedir)
++	$(mkinstalldirs) $(DESTDIR)$(pkgincludedir)
+ 	@list='$(include_HEADERS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(includeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(includedir)/$$f"; \
+-	  $(includeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(includedir)/$$f; \
++	  echo " $(includeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(pkgincludedir)/$$f"; \
++	  $(includeHEADERS_INSTALL) $$d$$p $(DESTDIR)$(pkgincludedir)/$$f; \
+ 	done
+ 
+ uninstall-includeHEADERS:
