@@ -3,7 +3,7 @@
 # Date created:         7 November 1996
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.8 1998/04/03 22:51:57 jmz Exp $
+# $Id: Makefile,v 1.9 1998/04/13 14:32:13 markm Exp $
 #
 
 DISTNAME=	X332contrib
@@ -19,7 +19,7 @@ MAINTAINER=	jmz@FreeBSD.ORG
 
 # Define FORCE_PACKAGE from the command line if you want to override
 # this and build a package
-#NO_PACKAGE=	"Binary package distributed by XFree86 already"
+NO_PACKAGE=	"Binary package distributed by XFree86 already"
 USE_IMAKE=	yes
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/contrib
