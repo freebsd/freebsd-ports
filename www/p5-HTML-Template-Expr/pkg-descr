@@ -1,0 +1,10 @@
+This module provides an extension to HTML::Template which allows
+expressions in the template syntax.  This is purely an addition - all
+the normal HTML::Template options, syntax and behaviors will still
+work.  See HTML::Template for details.
+
+Expression support includes comparisons, math operations, string
+operations and a mechanism to allow you add your own functions at
+runtime.
+
+WWW: http://sourceforge.net/projects/html-template/
