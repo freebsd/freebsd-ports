@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 MAINTAINER=	jaeger16@yahoo.com
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		MesaGL.14:${PORTSDIR}/graphics/Mesa3
+		GL.14:${PORTSDIR}/graphics/Mesa3
 
 FETCH_BEFORE_ARGS=	-b
 USE_LIBTOOL=	yes

@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 MAINTAINER=	sobomax@altavista.net
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
+		GL.14:${PORTSDIR}/graphics/Mesa3 \
 		gtkgl.4:${PORTSDIR}/x11-toolkits/gtkglarea \
 		tiff.4:${PORTSDIR}/graphics/tiff
 

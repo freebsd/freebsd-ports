@@ -16,7 +16,7 @@ MAINTAINER=	aa8vb@ipass.net
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		tcl82.1:${PORTSDIR}/lang/tcl82 \
-		MesaGL.14:${PORTSDIR}/graphics/Mesa3
+		GL.14:${PORTSDIR}/graphics/Mesa3
 
 ALL_TARGET=	default
 

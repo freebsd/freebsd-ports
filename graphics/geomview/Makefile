@@ -15,7 +15,7 @@ DISTFILES=	geomview-1.6.1-src.tar.gz
 MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
+		GL.14:${PORTSDIR}/graphics/Mesa3 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/Geomview

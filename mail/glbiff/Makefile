@@ -13,8 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/Mesa3 \
-		MesaGLU:${PORTSDIR}/graphics/Mesa3 \
+LIB_DEPENDS=	GL:${PORTSDIR}/graphics/Mesa3 \
+		GLU:${PORTSDIR}/graphics/Mesa3 \
 		glut:${PORTSDIR}/graphics/Mesa3
 
 GNU_CONFIGURE=	yes

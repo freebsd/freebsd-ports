@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.fltk.org/pub/fltk/${VERSION}/ \
 
 MAINTAINER=	dima@chg.ru
 
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 VERSION=	1.0.7
 USE_BZIP2=	yes

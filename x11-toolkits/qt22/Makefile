@@ -15,7 +15,7 @@ MAINTAINER=	imura@FreeBSD.org
 
 LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		MesaGL.14:${PORTSDIR}/graphics/Mesa3
+		GL.14:${PORTSDIR}/graphics/Mesa3
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
