@@ -19,6 +19,7 @@
 
 PORTNAME=	maildrop
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -68,7 +69,13 @@ CONFIGURE_ARGS+=	--enable-trusted-users="${MAILDROP_TRUSTED_USERS}"
 .if defined(WITH_AUTHLIB)
 BUILD_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
 RUN_DEPENDS=	${LOCALBASE}/bin/courierauthconfig:${PORTSDIR}/mail/courier-authlib
-LDFLAGS+=	-L${LOCALBASE}/lib/courier-authlib -rpath ${LOCALBASE}/lib/courier-authlib
+USE_REINPLACE=	yes
+CONFIGURE_ARGS+=	--enable-authlib
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|@LIBS@|@LIBS@ \
+		-rpath=:${LOCALBASE}/lib/courier-authlib|' \
+		${WRKSRC}/maildrop/Makefile.in
 .else
 CONFIGURE_ARGS+=	--disable-authlib
 .endif
