@@ -8,8 +8,8 @@
 PORTNAME=	arj
 PORTVERSION=	3.10b
 CATEGORIES=	archivers
-MASTER_SITES=	http://testcase.newmail.ru/files/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://testcase.newmail.ru/files/
 MASTER_SITE_SUBDIR=	keramida
 
 MAINTAINER=	kot@premierbank.dp.ua
