@@ -202,6 +202,7 @@ lib/libkpathsea.a
 %%TEXMFDIR%%/texconfig/tcfmgr
 %%TEXMFDIR%%/texconfig/tcfmgr.map
 %%TEXMFDIR%%/release-tetex-src.txt
+@exec %%MKTEXLSR%%
 @exec %%UPDMAP_SYS%%
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/download35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/builtin35.map
