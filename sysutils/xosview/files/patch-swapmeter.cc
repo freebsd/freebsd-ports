@@ -3,5 +3,5 @@
 @@ -76,3 +76,3 @@
  void SwapMeter::getswapinfo( void ){
 -  int total_int, free_int;
-+  long total_int, free_int;
++  int64_t total_int, free_int;
  

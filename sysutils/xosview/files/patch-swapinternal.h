@@ -5,8 +5,8 @@
  
  void
 -BSDGetSwapInfo(int* total, int* free);
-+BSDGetSwapInfo(long* total, long* free);
++BSDGetSwapInfo(int64_t* total, int64_t* free);
  
  void
 -BSDGetSwapCtlInfo(int* total, int* free);
-+BSDGetSwapCtlInfo(long* total, long* free);
++BSDGetSwapCtlInfo(int64_t* total, int64_t* free);

@@ -5,11 +5,11 @@
  
  void
 -BSDGetSwapInfo(int* total, int* free)
-+BSDGetSwapInfo(long* total, long* free)
++BSDGetSwapInfo(int64_t* total, int64_t* free)
  {
 -        int i, avail, npfree, used=0, xsize, xfree;
 +        int i, npfree, xsize, xfree;
-+        long avail, used=0;
++        int64_t avail, used=0;
  
  	fetchswap();
  #ifdef USE_KVM_GETSWAPINFO
@@ -17,8 +17,8 @@
  	if (kvnsw == 0) {
 -		avail += pagesize * kvmsw[0].ksw_total;
 -		used += pagesize * kvmsw[0].ksw_used;
-+		avail += pagesize * (long)kvmsw[0].ksw_total;
-+		used += pagesize * (long)kvmsw[0].ksw_used;
++		avail += pagesize * (int64_t)kvmsw[0].ksw_total;
++		used += pagesize * (int64_t)kvmsw[0].ksw_used;
  	}
  	*total = avail;
  	*free = avail - used;

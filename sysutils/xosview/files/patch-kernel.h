@@ -5,7 +5,7 @@
  #ifdef HAVE_SWAPCTL
  void
 -BSDGetSwapCtlInfo(int* total, int* free);
-+BSDGetSwapCtlInfo(long* total, long* free);
++BSDGetSwapCtlInfo(int64_t* total, int64_t* free);
  #endif
  
  int
