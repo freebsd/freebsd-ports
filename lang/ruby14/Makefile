@@ -18,7 +18,7 @@ RUBY_VER=	1.4
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-shared --program-suffix="${RUBY_SUFFIX}"
+CONFIGURE_ARGS=	--enable-shared
 MAN1=		${RUBY_NAME}.1
 
 ELISP_FILES=	inf-ruby.el ruby-mode.el rubydb3x.el
@@ -30,6 +30,7 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 .if !empty(RUBY_SUFFIX)
+CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 MLINKS=		${RUBY_NAME}.1 ruby.1
 .endif
 
