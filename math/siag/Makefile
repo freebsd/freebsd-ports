@@ -14,6 +14,7 @@ MASTER_SITES=	http://siag.nu/pub/siag/ \
 		ftp://ftp.edu.stockholm.se/pub/siag/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Scheme-based "office" for X and curses. Sexy interface using Xaw3d
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		sdb:${PORTSDIR}/databases/libsdb \

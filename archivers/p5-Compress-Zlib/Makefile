@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Compress
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 interface to zlib compression library
 
 PERL_CONFIGURE=	YES
 

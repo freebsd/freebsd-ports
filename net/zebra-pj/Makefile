@@ -18,6 +18,7 @@ MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
 		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes

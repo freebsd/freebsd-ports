@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
 WRKSRC=		$(WRKDIR)/$(DISTNAME)/src
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Msql-Mysql-modules-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Perl5 modules for accessing MySQL databases
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI

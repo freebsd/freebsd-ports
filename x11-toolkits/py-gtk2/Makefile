@@ -14,6 +14,7 @@ DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A set of Python bindings for GTK
 
 LIB_DEPENDS=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		gtkgl-2.0:${PORTSDIR}/x11-toolkits/gtkglarea2

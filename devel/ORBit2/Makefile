@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	High-performance CORBA ORB with support for the C language
 
 LIB_DEPENDS=	IDL-2.0:${PORTSDIR}/devel/libIDL \
 		popt.0:${PORTSDIR}/devel/popt \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	String
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	Perl module that calculates the similarity of two strings
 
 PERL_CONFIGURE=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.all-day-breakfast.com/wm2/
 DISTNAME=	${PORTNAME}-4
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A very simple window manager for X
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	depend wm2

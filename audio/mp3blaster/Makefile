@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.stack.nl/~brama/mp3blaster/src/
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	MP3 console ncurses-based player
 
 .include <bsd.port.pre.mk>
 

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyao-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A python wrapper for ao, an audio device abstraction library
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 

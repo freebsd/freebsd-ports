@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/src
 DIST_SUBDIR=	KDE/koffice
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Office Suite for KDE3
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Tools and library routines for working with TIFF images
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

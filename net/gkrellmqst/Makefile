@@ -13,6 +13,7 @@ MASTER_SITES=	http://tadpol.org/unxware/
 DISTNAME=	gkrellm_qst-${PORTVERSION:S/.p/pre_/}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Plugin for Gkrellm that displays updated info on several game servers
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm \

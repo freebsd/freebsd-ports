@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Set
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module to manage an interval on the integer line
 
 PERL_CONFIGURE=	yes
 

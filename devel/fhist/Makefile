@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.canb.auug.org.au/~millerp/		\
 		http://gd.tuwien.ac.at/softeng/Aegis/
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	Utilities to maintain file history, do file comparisions and merges
 
 .include <bsd.port.pre.mk>
 

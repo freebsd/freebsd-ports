@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	hoek
 
 MAINTAINER=	hoek@FreeBSD.org
+COMMENT=	The pager installed with FreeBSD before less(1) was imported
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

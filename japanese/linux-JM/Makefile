@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.linux.or.jp/JM/per-pkg/
 DISTFILES=	${DISTFILES_GNU} ${DISTFILES_OTHERS}
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Japanese translated man pages by JM Project
 
 DIST_SUBDIR=	${PORTNAME}
 MANSECS=	1 3 4 5 8

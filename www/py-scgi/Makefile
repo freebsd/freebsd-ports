@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/files/scgi/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Python server implementation of the Simple Common Gateway Protocol
 
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 

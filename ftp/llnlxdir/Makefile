@@ -13,6 +13,7 @@ DISTNAME=	latest_xdir
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dima@FreeBSD.org
+COMMENT=	Motif FTP client with drag-and-drop file transfer
 
 MAN1=	xdir.1
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 .if defined(WITH_CHINESE)

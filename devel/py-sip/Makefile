@@ -11,6 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Python convenience link to sip library
 
 LIB_DEPENDS=	sip.9:${PORTSDIR}/devel/sip
 

@@ -14,6 +14,7 @@ MASTER_SITES=   http://files10.rarlab.com/rar/ \
 DISTNAME=       rarbsd-3.1.1
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	File archiver (binary port)
 
 CAT1=		rar.1
 

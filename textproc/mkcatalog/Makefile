@@ -14,6 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	A maintainance utility for sgml catalog files
 
 NO_WRKSUBDIR=	yes
 NO_CHECKSUM=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	scop
 
 MAINTAINER=	freebsd-cvsweb@FreeBSD.org
+COMMENT=	WWW CGI script to browse CVS repository trees
 
 NO_BUILD=	yes
 

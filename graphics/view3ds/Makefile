@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib3ds
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A simple realtime 3DS file previewer based on the Lib3ds Library
 
 LIB_DEPENDS=	3ds.1:${PORTSDIR}/graphics/lib3ds
 

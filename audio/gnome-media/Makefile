@@ -15,6 +15,7 @@ DISTNAME=	gnome-media-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Multimedia applications for the GNOME 2.0 desktop
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 LIB_DEPENDS=	gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop \

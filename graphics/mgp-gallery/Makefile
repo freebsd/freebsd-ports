@@ -20,6 +20,7 @@ DISTFILES=	mgp-midgard-${PORTVERSION}.tgz \
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	A collection of various templates for magicpoint
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes

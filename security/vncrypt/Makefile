@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Cryptographic disk driver for FreeBSD
 
 NO_PACKAGE=	"Depends on kernel"
 PLIST_SUB=	KMODDIR=${KMODDIR} DOCSDIR="share/doc/${PORTNAME}"

@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	SLang-based newsreader
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		intl.4:${PORTSDIR}/devel/gettext \

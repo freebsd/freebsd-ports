@@ -12,6 +12,7 @@ MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Allows users to use PAM modules for user authentication
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

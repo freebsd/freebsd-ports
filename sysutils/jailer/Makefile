@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/nielsen/freebsd/jails/jailer/
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Manage FreeBSD jail startup, shutdown and console
 
 GNU_CONFIGURE=	YES
 

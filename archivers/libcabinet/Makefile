@@ -11,6 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://trill.cis.fordham.edu/~barbacha/cabinet_library/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A portable library and utility to use Microsoft cabinet files (.cab)
 
 INSTALLS_SHLIB=	yes
 

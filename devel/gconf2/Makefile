@@ -14,6 +14,7 @@ DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A configuration database system for GNOME
 
 LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.river-bank.demon.co.uk/download/sip/
 DISTNAME=	sip-x11-gpl-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Python to C++ bindings generator
 
 USE_PYTHON=	yes
 USE_QT_VER=	3

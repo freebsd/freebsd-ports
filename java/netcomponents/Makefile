@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.savarese.org/oro/downloads/download/
 DISTNAME=	NetComponents-${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java library with common network protocol implementations
 
 USE_JAVA=	1.1+
 USE_ZIP=	yes

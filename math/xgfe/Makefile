@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mph
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	An X11 front-end for Gnuplot
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 

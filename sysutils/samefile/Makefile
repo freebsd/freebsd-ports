@@ -11,6 +11,7 @@ CATEGORIES=    sysutils
 MASTER_SITES=  http://www.schweikhardt.net/
 
 MAINTAINER=    schweikh@FreeBSD.org
+COMMENT=	Find files with identical contents
 
 MAN1=          samefile.1
 GNU_CONFIGURE= yes

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lip6.fr/pub/networking/
 
 MAINTAINER=	jseger@freebsd.org
+COMMENT=	A point-to-point bandwith measurement tool
 
 MAN8= 		bing.8
 

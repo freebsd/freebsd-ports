@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.openjit.org/dist/
 DISTNAME=	OpenJIT-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A high-performance reflective Java Just-In-Time (JIT) bytecode compiler
 
 BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 

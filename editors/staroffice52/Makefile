@@ -30,6 +30,7 @@ DISTFILES+=	soa-5_2-ga-bin-linux-en.bin
 EXTRACT_ONLY=	109939-03.tar.Z
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 FETCH_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

@@ -15,6 +15,7 @@ DISTNAME=	RubyInline-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Inline::C allows you to embed C/Ruby directly in ruby scripts
 
 USE_RUBY=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Modules to work with POD (Plain Old Documentation)
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	phpBB-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4
 

@@ -11,6 +11,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.kusa.ac.jp/~yukio-m/dbs/software1.1.5/
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A distributed network benchmarking system
 
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 

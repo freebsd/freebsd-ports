@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Math::BigInt - Arbitrary size integer math package
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INSTALLDIRS='site'

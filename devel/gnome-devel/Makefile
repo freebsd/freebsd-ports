@@ -13,6 +13,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The "meta-port" for the GNOME development API
 
 RUN_DEPENDS=	intltool-merge:${PORTSDIR}/textproc/intltool
 LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--

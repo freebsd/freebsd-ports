@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.ee.tut.fi/%7Eheikki/uade/pre/
 DISTFILES=	uade-${PORTVERSION}-pre3-antiwar${EXTRACT_SUFX}
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Unix Amiga Delitracker Emulator with XMMS Input plugin.
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha

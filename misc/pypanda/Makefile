@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www3.telus.net/futility/futility/warez/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Viewer for San Diego Zoo Pandacam written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
 

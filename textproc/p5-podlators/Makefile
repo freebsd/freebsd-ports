@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Pod
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Modules to convert and parse POD (Plain Old Documentation)
 
 RUN_DEPENDS=	${SITE_PERL}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 BUILD_DEPENDS=	${RUN_DEPENDS}

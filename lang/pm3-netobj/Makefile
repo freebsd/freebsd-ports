@@ -11,6 +11,7 @@ CATEGORIES=	lang
 DISTFILES=
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT=	PM3 distributed objects package supporting robust distributed applications
 
 BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net \
 		${L1}libm3tk${L2}:${PORTSDIR}/lang/pm3-m3tk

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S/lib//}
 DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A source code editor widget for GTK+
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	criticalmass
 DISTNAME=	CriticalMass-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	An SDL/OpenGL space shoot'em up game
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \

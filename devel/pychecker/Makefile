@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A python source code checking tool to help hunting common bugs
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/code/hmconv/ \
 DISTNAME=	hmconv1.0pl3
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Hangul code conversion utility for E-mail
 
 WRKSRC=		${WRKDIR}/hmconv
 

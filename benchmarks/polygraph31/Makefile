@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A benchmarking tool for Web proxies
 
 IS_INTERACTIVE=	yes
 

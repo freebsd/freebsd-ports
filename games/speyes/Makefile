@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://okb-1.org/speyes/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	WindowMaker dockapp/xeyes clone using SouthPark characters
 
 USE_IMAKE=	yes
 USE_XPM=	yes

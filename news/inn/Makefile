@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	inn
 NO_LATEST_LINK=	yes
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	InterNetNews -- the Internet meets Netnews
 
 USE_GMAKE=YES
 USE_PERL5=	yes

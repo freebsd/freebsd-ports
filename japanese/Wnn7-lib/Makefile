@@ -13,6 +13,7 @@ DISTNAME=	Wnn7SDK
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Include files and a library of Wnn7
 
 .include <bsd.port.pre.mk>
 

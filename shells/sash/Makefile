@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.pcug.org.au/~dbell/programs/ \
 MASTER_SITE_SUBDIR=	patrick
 
 MAINTAINER=	patrick@freebsd.org
+COMMENT=	A Stand-Alone shell combining many common utilities
 
 MAN1=		sash.1
 

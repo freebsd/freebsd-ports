@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	. old-versions
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
+COMMENT=	A free SMB and CIFS client and server for UNIX
 
 USE_BZIP2=	YES
 USE_SUBMAKE=	YES

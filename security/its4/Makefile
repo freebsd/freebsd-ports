@@ -12,6 +12,7 @@ MASTER_SITES=
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Tool to scan C/C++ source for potential vulnerabilities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

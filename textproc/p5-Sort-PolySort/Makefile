@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Sort
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	General rules-based sorting of lists
 
 PERL_CONFIGURE=	yes
 

@@ -1,1 +1,0 @@
-POSIX pthreads implementation using rfork to generate kernel threads

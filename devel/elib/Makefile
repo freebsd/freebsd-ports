@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	emacs
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	okazaki@FreeBSD.org
+COMMENT=	Collection of useful routines for Emacs lisp programs
 
 # setupel filename
 PORT_SETUPEL=	elib-startup.el

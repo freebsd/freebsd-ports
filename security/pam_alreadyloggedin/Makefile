@@ -20,6 +20,7 @@ MANCOMPRESSED=	yes
 BROKEN=	"only works on systems with OpenPAM (5.0-CURRENT)"
 .endif
 MAINTAINER=	green@FreeBSD.org
+COMMENT=	PAM module based on whether a user is already logged in
 
 .if defined(NOPROFILE)
 PLIST_SUB+=	PROFILE="@comment "

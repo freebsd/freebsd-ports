@@ -11,6 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	A C library for dynamically generating PDF
 
 BROKEN=		"Distfile has disappeared"
 

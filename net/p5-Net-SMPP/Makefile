@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jhay@FreeBSD.org
+COMMENT=	Net::SMPP - pure Perl implementation of SMPP 3.4 over TCP
 
 PERL_CONFIGURE=	yes
 

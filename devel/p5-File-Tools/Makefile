@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module for several file operations: Copy, Recurse and Tools
 
 PERL_CONFIGURE=	YES
 

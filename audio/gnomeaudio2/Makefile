@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-audio/1.4
 DISTNAME=	gnome-audio-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Sound files for use with GNOME
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

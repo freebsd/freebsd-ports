@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-crash/0.0
 DISTNAME=	gnome-crash-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A small coredump analysis tool for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

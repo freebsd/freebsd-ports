@@ -14,6 +14,7 @@ PKGNAMEPREFIX=		p5-
 DISTNAME=		Mail-Cclient-${PORTVERSION}
 
 MAINTAINER=		kbyanc@posi.net
+COMMENT=	Perl interface to the c-client mailbox API
 
 LIB_DEPENDS=		c-client4.8:${PORTSDIR}/mail/cclient
 

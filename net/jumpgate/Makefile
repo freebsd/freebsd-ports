@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://jumpgate.sourceforge.net/
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	TCP connection forwarder
 
 GNU_CONFIGURE=	yes
 

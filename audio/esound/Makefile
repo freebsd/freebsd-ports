@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/esound/0.2
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A sound library for enlightenment package
 
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A library for writing networked servers & clients
 
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 

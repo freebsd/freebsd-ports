@@ -12,6 +12,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.svgalib.org/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A low level console graphics library
 
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

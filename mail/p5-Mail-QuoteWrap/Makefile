@@ -15,6 +15,7 @@ DISTNAME=	MailQuoteWrap${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Provides wrapping functionality for quoted Email and Usenet messages
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Text/Format.pm:${PORTSDIR}/textproc/p5-Text-Format
 

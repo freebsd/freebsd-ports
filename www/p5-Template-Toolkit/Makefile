@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Template
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Extensive Toolkit for template processing
 
 BUILD_DEPENDS=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
 		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp

@@ -14,6 +14,7 @@ DISTNAME=	l_fc_p_6.0.1.304
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	maho@FreeBSD.org
+COMMENT=	Intel's Fortran compiler, set up to produce native FreeBSD objects
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 

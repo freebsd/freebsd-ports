@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://shadowmere.student.utwente.nl/pub/WindowMaker/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	Standard library for Window Maker dock apps
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

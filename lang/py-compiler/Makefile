@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A Python source to bytecode compiler
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes

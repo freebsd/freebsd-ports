@@ -13,6 +13,7 @@ DISTNAME=	stylesheets
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	DocBook DSSSL stylesheets of Cygnus Slution
 
 RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/dsssl/modular/frames/navbar.htm:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		jade:${PORTSDIR}/textproc/jade

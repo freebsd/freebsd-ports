@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/Johan_Vromans
 
 MAINTAINER=	nik@freebsd.org
+COMMENT=	Converts EPS images to PNG
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.penguinhosting.net/~ian/firetalk/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A multi-protocol chat/instant messaging library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

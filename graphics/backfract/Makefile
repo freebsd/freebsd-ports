@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.inetarena.com/~wms/comp/backfract/
 
 MAINTAINER=	patrick@FreeBSD.org
+COMMENT=	Fractal image animated wallpaper program
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

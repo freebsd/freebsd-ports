@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 		${MASTER_SITE_LOCAL}
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Tcp connection logger daemon
 
 WRKSRC=		${WRKDIR}/clog
 ALL_TARGET=	freebsd

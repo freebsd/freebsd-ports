@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Read/write buffer class
 
 PERL_CONFIGURE=	yes
 

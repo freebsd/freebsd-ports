@@ -12,6 +12,7 @@ MASTER_SITES=	http://people.FreeBSD.org/~tom/portpm/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tom@FreeBSD.org
+COMMENT=	Perl modules for parsing FreeBSD's Ports INDEX file
 
 USE_BZIP2=	yes
 

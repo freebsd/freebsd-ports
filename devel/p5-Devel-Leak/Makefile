@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Utility for looking for perl objects that are not reclaimed
 
 PERL_CONFIGURE=	yes
 

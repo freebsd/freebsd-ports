@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.rz.uni-karlsruhe.de/pub/net/www/tools/giftrans/
 DISTFILES=	giftrans.c giftrans.1
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A tool for GIF89a transparent option and interlace mode
 
 DIST_SUBDIR=	giftrans
 NO_WRKSUBDIR=	yes

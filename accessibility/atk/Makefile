@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A GNOME accessibility toolkit (ATK)
 
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 

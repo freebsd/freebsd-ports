@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtop/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME system moniter program
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 

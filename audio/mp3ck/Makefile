@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yar@FreeBSD.org
+COMMENT=	A consistency check utility for MPEG Layer 2 or 3 files or streams
 
 MAN1=		mp3ck.1
 

@@ -14,6 +14,7 @@ DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	An object-based web application platform with DB access, WebDAV, & more
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1

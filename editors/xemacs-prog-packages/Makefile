@@ -24,6 +24,7 @@ DISTFILES=	\
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	XEmacs elisp packages for Programing(prog)
 
 RUN_DEPENDS=	${XEMACSDIR}/mule-packages/lisp/elib/avltree.el:${.CURDIR}/../xemacs-basic-mule-packages
 

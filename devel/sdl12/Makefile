@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.libsdl.org/release/ \
 DISTNAME=	SDL-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Cross-platform multi-media development API (developm. vers.)
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

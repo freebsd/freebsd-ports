@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://members.home.com/housel/
 
 MAINTAINER=	roger@freebsd.org
+COMMENT=	Grab images from USB Cameras using the OV511 and OV511+ chipset
 
 .include <bsd.port.pre.mk>
 

@@ -11,6 +11,7 @@ MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSIO
 DISTNAME=	bcel-${PORTVERSION}
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	A library for generating Java bytecode
 
 NO_BUILD=	yes
 USE_JAVA=	1.2+

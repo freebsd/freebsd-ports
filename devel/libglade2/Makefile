@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME glade library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:S/./-/}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Network Kanji code conversion Filter
 
 MAN1=		nkf.1
 MANLANG=	"" ja

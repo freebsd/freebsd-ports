@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/ \
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Pure TCL code for command line options parsing
 
 NO_BUILD=	YES
 

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.zip
 BROKEN=		use docbook-xsl instead
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	XSL stylesheets for the DocBook DTD by Norman Walsh
 
 RUN_DEPENDS=	${LOCALBASE}/share/xml/docbook/readme.txt:${PORTSDIR}/textproc/docbook-xml \
 		${LOCALBASE}/share/xml/docbook/sdocbook/test.xml:${PORTSDIR}/textproc/sdocbook-xml \

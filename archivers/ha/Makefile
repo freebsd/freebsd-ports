@@ -13,6 +13,7 @@ DISTNAME=	ha0999
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	The HA archiver using the HSC compression method
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.nix

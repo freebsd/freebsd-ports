@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A POE logging class
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA

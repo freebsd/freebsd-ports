@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 
 MAINTAINER=	archie@freebsd.org
+COMMENT=	Two companion utilities for transferring data over a TCP socket
 
 MAN1=		suck.1
 MLINKS=		suck.1 blow.1

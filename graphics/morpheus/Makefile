@@ -11,6 +11,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	http://wine.sexcity.pl/morpheus/meat/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A mesh (3D model) viewer for GNOME desktop
 
 LIB_DEPENDS=	morph.0:${PORTSDIR}/graphics/libmorph \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	GNU screen like utility on Emacsen
 
 EMACS_PORT_NAME?=	emacs21
 .if (${EMACS_PORT_NAME} == "emacs21")

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pmt
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	An optimizer for PNG files
 
 MAKEFILE=	Makefile.gcc
 

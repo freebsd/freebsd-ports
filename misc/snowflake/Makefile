@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.infomatch.com/~donaldj/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A snowflake image generator
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

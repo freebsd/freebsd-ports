@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	moleskine
 DISTNAME=	PyGtkScintilla-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A Python bindings for gtkscintilla library
 
 LIB_DEPENDS=	gtkscintilla.0:${PORTSDIR}/x11-toolkits/gtkscintilla
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GStreamer-based multimedia views for Nautilus
 
 LIB_DEPENDS=	nautilus.2:${PORTSDIR}/x11-fm/nautilus2 \
 		gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins

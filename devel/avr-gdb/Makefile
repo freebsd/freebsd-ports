@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gdb/releases
 DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	GNU GDB 5.2.1 for the AVR target
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

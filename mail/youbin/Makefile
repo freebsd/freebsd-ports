@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.agusa.nuie.nagoya-u.ac.jp/software/agusalab/youbin/arch
 DISTNAME=	${PORTNAME}${PORTVERSION}-unix
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Mail arrival notification service package
 
 USE_IMAKE=		yes
 USE_X_PREFIX=		no

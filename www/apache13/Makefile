@@ -32,6 +32,7 @@ DISTNAME=	apache_${PORTVERSION}
 #PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 
 MAINTAINER=	ache@freebsd.org
+COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
 USE_PERL5=      yes
 

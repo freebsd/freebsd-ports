@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ScientificPython-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Collection of Python modules for scientific computing
 
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf

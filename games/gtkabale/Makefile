@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A lazy version of solitaire game
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

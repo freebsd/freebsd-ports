@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xhippo
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	A Generic music player for UNIX systems
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 

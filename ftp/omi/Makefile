@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 DISTNAME=	omi-alpha-9
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	"mirror" subtrees of FTP servers
 
 ALL_TARGET=	freebsd
 

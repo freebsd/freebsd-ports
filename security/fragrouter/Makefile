@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.anzen.com/research/nidsbench/ \
 MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.ORG
+COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	linux-igd
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Linux UPnP Internet Gateway Device
 
 LIB_DEPENDS=	upnp.1:${PORTSDIR}/devel/upnp
 

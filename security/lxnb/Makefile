@@ -12,6 +12,7 @@ MASTER_SITES=	http://ns2.crw.se/~tm/projects/lxnb/
 DISTFILES=	linux-netbus-client-v${PORTVERSION}.tgz
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	NetBus client
 
 pre-build:
 	rm -f ${WRKSRC}/lxnetbus

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A paint tool for Shodo, the Japanese traditional writing character
 
 USE_IMAKE=	yes
 MAN1=		xshodo.1

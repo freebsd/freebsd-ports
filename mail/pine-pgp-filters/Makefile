@@ -13,6 +13,7 @@ MASTER_SITES=	http://dougbarton.net/FreeBSD/Downloads/ \
 MASTER_SITE_SUBDIR=	dougb
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6
 
 do-build:
 	cd ${WRKSRC} && ./configure --prefix=${PREFIX}

@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-ttf
 DISTNAME=	baekmuk${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	cjh@kr.freebsd.org
+COMMENT=	Baekmuk family Korean TrueType Fonts
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes

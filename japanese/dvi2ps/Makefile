@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	${PORTNAME}-${PORTVERSION}j
 
 MAINTAINER=	mita@FreeBSD.org
+COMMENT=	DVI to PostScript converter Japanese version
 
 BUILD_DEPENDS=	${PREFIX}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib

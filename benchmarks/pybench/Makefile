@@ -11,6 +11,7 @@ CATEGORIES=	benchmarks python
 MASTER_SITES=	http://www.lemburg.com/files/python/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An extensible benchmark suite for Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

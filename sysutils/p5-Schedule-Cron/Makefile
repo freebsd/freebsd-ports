@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Schedule
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Schedule::Cron - cron-like scheduler for Perl subroutines
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time
 RUN_DEPENDS=	${BUILD_DEPENDS}

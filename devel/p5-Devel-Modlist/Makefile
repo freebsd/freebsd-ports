@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension to collect module use information
 
 PERL_CONFIGURE=	yes
 

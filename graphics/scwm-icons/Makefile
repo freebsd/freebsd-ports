@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	An icon collection for the scwm window manager
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 DISTNAME=	openam_${PORTVERSION}
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	H323 Answer Machine
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

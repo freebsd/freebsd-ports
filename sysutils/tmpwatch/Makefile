@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	updates/7.2/en/os/SRPMS
 EXTRACT_SUFX=	-1.src.rpm
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A utility for removing files based on when they were last accessed
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

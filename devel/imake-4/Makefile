@@ -18,6 +18,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	Imake and other utilities from XFree86
 
 PREFIX?=	${X11BASE}
 USE_PERL5=	YES

@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://odin.mda.uth.tmc.edu/pub/source/
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Library of C Routines for Cumulative Distribution Functions
 
 WRKSRC=		${WRKDIR}/dcdflib.c/src
 

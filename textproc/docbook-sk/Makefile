@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/ \
 DISTNAME=	docbkx${PORTVERSION:S/.//g}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	XML version of the DocBook DTD version controlled for ScrollKeeper
 
 USE_ZIP=	yes
 NO_BUILD=	yes

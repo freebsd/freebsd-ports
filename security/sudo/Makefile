@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 DISTNAME=	${PORTNAME}-1.6.6
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Allow others to run commands as root
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

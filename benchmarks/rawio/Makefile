@@ -12,6 +12,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
 MAINTAINER=	grog@FreeBSD.org
+COMMENT=	Test performance of low-level storage devices
 
 NO_WRKSUBDIR=	yes
 MAN1=		rawio.1

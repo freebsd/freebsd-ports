@@ -16,6 +16,7 @@ PATCHFILES=	${DISTNAME}-ja.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	A color vt102 terminal emulator with transparency support
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

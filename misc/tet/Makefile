@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	jkoshy
 DISTFILES=		${PORTNAME}${PORTVERSION}-unsup.src.tgz
 
 MAINTAINER=		jkoshy@freebsd.org
+COMMENT=	An test execution framework from the Open Group
 
 NO_WRKSUBDIR=		yes
 NO_PACKAGE=		TET_ROOT needs to be set at compile time

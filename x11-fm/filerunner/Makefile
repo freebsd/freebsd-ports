@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	X11/desktop
 DISTNAME=	FileRunner-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	Filemanager with FTP capabilities. Uses Tcl/Tk
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

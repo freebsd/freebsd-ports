@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	A Tcl/Tk based manual browser
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \

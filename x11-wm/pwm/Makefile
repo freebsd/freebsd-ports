@@ -12,6 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://modeemi.fi/~tuomov/dl/
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A lightweight window manager with emphasis on usability
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=   ftp://src.doc.ic.ac.uk/Mirrors/sunsite.doc.ic.ac.uk/hpack/
 DISTNAME=	hpack79src
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Multi-System Archiver with open keys PGP-based security
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

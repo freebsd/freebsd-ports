@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/fvwm/version-1/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/sources/1.x/
 
 MAINTAINER=	me@FreeBSD.org
+COMMENT=	The fvwm window manager
 
 NO_LATEST_LINK=	yes
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/JavaNNS/
 DISTNAME=	JavaNNS-LinuxIntel
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	Fully featured neural network simulator
 
 RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper
 

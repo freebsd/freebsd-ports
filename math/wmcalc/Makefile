@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR= jedgar
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Simple dockable calculator
 
 ALL_TARGET=	clean wmcalc
 USE_X_PREFIX=   yes

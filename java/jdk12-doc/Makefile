@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java Development Kit 1.2 Documentation
 
 NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This software is under license and export control."

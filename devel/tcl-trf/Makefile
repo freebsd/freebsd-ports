@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	tcl-
 DISTNAME=	trf${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Data conversion, digests, compression, error-correction for Tcl
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//} \
 		${LOCALBASE}/lib/tcl${TCL_VER}/Memchan/pkgIndex.tcl:${PORTSDIR}/devel/tcl-memchan

@@ -14,6 +14,7 @@ DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
+COMMENT=	Powerful IDE for developing KDE/Qt-based apps
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 .if defined(WITH_OPTIONAL_DEPENDS)

@@ -14,6 +14,7 @@ DISTNAME=	flash_linux
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes

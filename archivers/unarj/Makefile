@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Allows files to be extracted from ARJ archives
 
 do-install:
 	${INSTALL} -d -m 755 -o $(SHAREOWN) -g ${SHAREGRP} \

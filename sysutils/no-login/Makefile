@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR= wes
 
 
 MAINTAINER=	wes@FreeBSD.org
+COMMENT=	Refuse a login to a user, and make a note of it in syslog
 
 .include <bsd.port.mk>

@@ -12,6 +12,7 @@ MASTER_SITES=	http://sunsite.dk/vpnd/archive/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	VPN daemon offering transparent blowfish encryption between networks
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes

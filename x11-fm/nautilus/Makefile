@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME file manager and graphical shell developed by Eazel
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \

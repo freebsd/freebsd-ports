@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Proc-PID_File-${PORTVERSION}
 
 MAINTAINER=	kbyanc@FreeBSD.org
+COMMENT=	Perl5 module to prevent multiple instances of a process from running
 
 PERL_CONFIGURE=	YES
 

@@ -11,6 +11,7 @@ CATEGORIES=	korean
 MASTER_SITES=	http://kldp.org/~bangjy/hangul/
 
 MAINTAINER=	cjh@FreeBSD.ORG
+COMMENT=	Collection of various Hangul-related sources
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

@@ -14,6 +14,7 @@ DISTNAME=	arc521e.pl8
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Create & extract files from DOS .ARC files
 
 NO_WRKSUBDIR=	yes
 MAN1=		arc.1

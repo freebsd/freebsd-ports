@@ -13,6 +13,7 @@ DISTNAME=	Seyon-${PORTVERSION}
 EXTRACT_SUFX=	-tar.Z
 
 MAINTAINER=	me@FreeBSD.org
+COMMENT=	A communications package for the X Window system
 
 WRKSRC=		${WRKDIR}/seyon
 USE_IMAKE=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
 MAINTAINER=	gerald@FreeBSD.org
+COMMENT=	Microsoft Windows 3.1/95/98/NT/2000 emulator for Unix
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes

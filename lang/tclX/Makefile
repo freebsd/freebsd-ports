@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://tcl.activestate.com/pub/tcl/tclx/
 DISTNAME=	tclx${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Extended TCL
 
 .ifdef WITHOUT_X11
 LIB_DEPENDS=	tcl${TCL_DVER}.1:${PORTSDIR}/lang/tcl${TCL_DVER}

@@ -11,6 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	SEGA Genesis emulator
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82

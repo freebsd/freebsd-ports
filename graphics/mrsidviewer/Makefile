@@ -13,6 +13,7 @@ DISTNAME=	MrSID_linux${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	MrSID Viewer displays images compressed into the MrSID format
 
 DOWNLOAD_URL=	http://www.lizardtech.com/includes/down.php?p=16&o=4
 NO_BUILD=	yes

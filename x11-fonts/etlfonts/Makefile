@@ -13,6 +13,7 @@ DISTNAME=	non-cjk
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	X11 supplemental fonts
 
 EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

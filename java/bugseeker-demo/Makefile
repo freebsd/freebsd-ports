@@ -15,6 +15,7 @@ PATCH_SITES=	http://www.metaverse.nl/~ernst/
 PATCHFILES=	bugseeker2demo.sh.diff
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	A debugger for Java software
 
 RUN_DEPENDS=	${LOCALBASE}/linux-sun-jdk1.3.1/bin/java:${PORTSDIR}/java/linux-sun-jdk13
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://evolution.genetics.washington.edu/pub/lamarc/migrate/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A program to estimate population sizes and migration rates
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/src

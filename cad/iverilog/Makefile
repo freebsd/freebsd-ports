@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION}/
 DISTNAME=	verilog-${PORTVERSION}
 
 MAINTAINER=	keichii@FreeBSD.org
+COMMENT=	Icarus Verilog is a Verilog simulation and synthesis tool
 
 GNU_CONFIGURE=	yes
 

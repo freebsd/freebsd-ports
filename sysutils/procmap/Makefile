@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 DISTFILES=	#empty
 
 MAINTAINER=	jasone@freebsd.org
+COMMENT=	Print the contents of a procfs map file
 
 WRKSRC=		${WRKDIR}
 MAKE_ENV=	MAKEOBJDIRPREFIX=${WRKSRC} MAKEOBJDIR=${WRKSRC}

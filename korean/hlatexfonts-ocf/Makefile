@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 DISTFILES=	HLaTeX-Myoungjo-OCF-PS.tar.gz HLaTeX-Gothic-OCF-PS.tar.gz
 
 MAINTAINER=	cjh@kr.freebsd.org
+COMMENT=	HLaTeX(OCF format) fonts collection
 
 BUILD_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.bofh.it/~md/cleanfeed/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Spam filter for Usenet news servers
 
 RUN_DEPENDS=	${LOCALBASE}/news/bin/innd:${PORTSDIR}/news/inn \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5

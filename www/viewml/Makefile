@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.viewml.com/pub/viewml/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An open source web browser targeted at the embedded platforms
 
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \

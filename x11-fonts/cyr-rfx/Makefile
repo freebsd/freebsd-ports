@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	ftp.inp.nsk.su/pub/BINP/X11/fonts/cyr-rfx/srctgz
 EXTRACT_SUFX=	.bdfs.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Cyrillic X11 bitmap fonts from CYR-RFX project
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients \
 		mkfontdir:${PORTSDIR}/x11/XFree86-4-clients

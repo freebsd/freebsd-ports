@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	dviware
 DISTNAME=	dvi2xx
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Convert dvi files to HP LaserJet or IBM 3812 format
 
 MAN1=		dvi2xx.1
 IGNOREFILES=	${DISTFILES}

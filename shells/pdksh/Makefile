@@ -20,6 +20,7 @@ PATCHFILES=	${DISTNAME}-patches.1 ${DISTNAME}-patches.2
 PATCH_DIST_STRIP= -p2
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	The Public Domain Korn Shell
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDSTATIC=-static

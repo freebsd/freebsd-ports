@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	A circuit-level firewall/proxy
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \

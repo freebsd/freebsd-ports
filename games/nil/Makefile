@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME} sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A multiplayer game that can be described as Quake in 2D or Worms done right
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 

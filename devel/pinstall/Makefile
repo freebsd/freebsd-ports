@@ -14,6 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	A tool for installing files according to a packing list
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

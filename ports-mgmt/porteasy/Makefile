@@ -14,6 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	A tool for fetching and building ports
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

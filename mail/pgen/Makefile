@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Tool to generate a procmailrc file with m4 macros
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

@@ -20,6 +20,7 @@ DISTNAME=	gtk+-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gimp Toolkit for X11 GUI (current stable version)
 
 LIB_DEPENDS=	atk-1.0.200:${PORTSDIR}/devel/atk \
 		pango-1.0.200:${PORTSDIR}/x11-toolkits/pango \

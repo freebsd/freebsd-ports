@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	archie
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		archie@FreeBSD.org
+COMMENT=	Apple II 6502 assembler, linker, loader, and object file viewer
 
 USE_GMAKE=		defined
 PATCH_STRIP=		-p1

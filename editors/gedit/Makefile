@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gedit/0.9
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A small but powerful text editor for Gnome Desktop Environment
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java library for accessing and manipulating XML documents
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

@@ -12,6 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${NADFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Cartographic Projections library
 
 NADFILES=	proj-nad27-1.1.tar.gz
 

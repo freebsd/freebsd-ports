@@ -18,6 +18,7 @@ MASTER_SITES=	\
 		ftp://ftp.nsysu.edu.tw/Unix/Security/ssh/old/
 
 MAINTAINER=	luigi@FreeBSD.org
+COMMENT=	Secure shell client, server and remote copy (for picobsd)
 
 NO_CDROM=	"Picobsd only"
 NO_PACKAGE=	"This is only useful to build picobsd images"

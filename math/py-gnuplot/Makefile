@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gnuplot-py
 DISTNAME=	Gnuplot-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Python interface to gnuplot plotting program
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \

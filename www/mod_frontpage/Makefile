@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/mirfak/g}
 DISTFILES=	${PORTNAME}_mirfak-${PORTVERSION}.tar.gz
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Improved mod_frontpage for Apache, as APXS installation
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_mirfak-${PORTVERSION}
 AP_PORT?=	apache13

@@ -12,6 +12,7 @@ DISTNAME=       mod_auth_mysql
 EXTRACT_SUFX=	.c.gz
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Allows users to use MySQL databases for user authentication
 
 BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

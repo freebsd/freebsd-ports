@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/panelmm/0.3
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A powerful C++ binding for the GNOME panel libraries
 
 LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 

@@ -17,6 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		README.wallpaper.ja
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	An xterm that speaks Japanese
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

@@ -13,6 +13,7 @@ DISTNAME=	BRMH-2.2p2.freebsd.bin
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	A 16-player network space battle/conquest game with a Star Trek theme
 
 USE_X_PREFIX=		YES
 NO_BUILD=		YES

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Convert any X server font to .bdf format
 
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes

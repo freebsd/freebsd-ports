@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Front-end to mpg123 audio player for Emacsen
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 

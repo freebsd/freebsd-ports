@@ -11,6 +11,7 @@ CATEGORIES=     	net
 MASTER_SITES=   	http://members.home.com/garsh/dnrd/archive/
 
 MAINTAINER=		greid@FreeBSD.org
+COMMENT=	A proxy DNS daemon
 
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 

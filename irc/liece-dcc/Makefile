@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 DISTNAME=	liece-${PORTVERSION}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	DCC support program for Liece
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

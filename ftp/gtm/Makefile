@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	gtm \
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The GNOME Transfer Manager, a front-end to wget
 
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget

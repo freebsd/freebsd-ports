@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://pmade.org/~pjones/software/clo++/download/
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	Command line parser generator
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

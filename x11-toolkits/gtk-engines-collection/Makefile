@@ -13,6 +13,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	The "meta-port" for the collection of several GTK+ theme engines
 
 RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${THEMESPORTDIR}/buffy \
 		${THEMESBASE}/libclean.so:${THEMESPORTDIR}/clean-theme-gtk \

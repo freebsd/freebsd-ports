@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tqpsworld${EXTRACT_SUFX}
 DISTNAME=	uox3v6902-linux
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	A GPL'd server for Origin Systems' Ultima Online multiplayer game
 
 DIST_SUBDIR=	uox3
 USE_ZIP=	YES

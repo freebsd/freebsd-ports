@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${ANT_VERSION}-bin
 DIST_SUBDIR=	jakarta
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java-based build tool, conceptually similar to make
 
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
 

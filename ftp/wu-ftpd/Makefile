@@ -14,6 +14,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	A replacement ftp server for Un*x systems
 
 USE_AUTOCONF=   yes
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \

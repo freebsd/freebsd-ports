@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	devel/lang/c++
 
 MAINTAINER=	libh@FreeBSD.org
+COMMENT=	The Turbo Vision C++ CUI library for UNIX
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

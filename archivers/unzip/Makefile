@@ -13,6 +13,7 @@ MASTER_SITES=   ftp://ftp.info-zip.org/pub/infozip/src/ \
 DISTFILES=      ${PORTNAME}550.tar.gz
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	List, test and extract compressed files in a ZIP archive
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile

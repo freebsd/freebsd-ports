@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	An SDL game engine library
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 

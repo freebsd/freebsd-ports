@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DBI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	The perl5 Database Interface.  Required for DBD::* modules
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/RPC/PlServer.pm:${PORTSDIR}/net/p5-PlRPC
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 DISTNAME=	${PORTNAME}-1.2.6
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	Highly configurable ftp daemon
 
 MAN1=	ftpcount.1 ftpwho.1
 MAN5=	xferlog.5

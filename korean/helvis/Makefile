@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
 DISTNAME=	helvis-1.8h2-
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	A clone of vi/ex, the standard UNIX editor, supporting Hangul
 
 MAN1=		ctags.1 elvis.1 elvprsv.1 elvrec.1 fmt.1 ref.1
 

@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.gnome
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A library for manipulating Unicode characters and strings
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

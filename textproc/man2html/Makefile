@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Convert nroff(1) man pages to HTML
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	blackend@FreeBSD.org
+COMMENT=	A drawing program for X11
 
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	Proxy for H323 Videoconferencing app (OhPhone,GnomeMeeting,NetMeeting)
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

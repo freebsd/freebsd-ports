@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geocities.com/jl1n/wmtz/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	Dockapp that displays the time in different time zones
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmtz

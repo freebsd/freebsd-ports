@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	DSA signature and key generation
 
 PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 

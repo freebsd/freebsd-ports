@@ -12,6 +12,7 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alfred
 
 MAINTAINER=	alfred@FreeBSD.org
+COMMENT=	Helper for multiple CVS repositories.
 
 GNU_CONFIGURE=	yes
 

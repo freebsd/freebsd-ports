@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://devtodo.sourceforge.net/?${PORTVERSION}/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Tool to effectively maintain todo lists aimed at developers
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

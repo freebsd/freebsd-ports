@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl interface to running background processes
 
 PERL_CONFIGURE=	yes
 

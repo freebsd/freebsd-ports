@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Ruby libraries for Aspect programming
 
 USE_RUBY=	yes
 

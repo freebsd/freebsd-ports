@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.ezmlm.org/pub/qmail/ \
 		ftp://ftp.mira.net.au/unix/mail/qmail/
 
 MAINTAINER=	tom@FreeBSD.org
+COMMENT=	An easy-to-use, high-speed mailing list manager for qmail
 
 # QMAIL_DIR is the directory where qmail is installed
 .if !defined(QMAIL_DIR)

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.mu.org/~mux/wtf/ \
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	mux@FreeBSD.org
+COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
 

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Various subroutines to format text
 
 PERL_CONFIGURE=	yes
 

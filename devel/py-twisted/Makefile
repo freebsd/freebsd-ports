@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Twisted-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	An event-based Python framework for internet applications
 
 # - Note that Twisted ships with some graphical examples and clients that
 #   require PyGNOME to run.  These are not central to the funcitoning of

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	max
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	B Plus file transfer protocol
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bpl ${PREFIX}/bin

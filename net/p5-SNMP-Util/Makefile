@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SNMP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	Perl modules to perform SNMP set,get,walk,next,walk_hash etc
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/SNMP.pm:${PORTSDIR}/net/p5-SNMP
 

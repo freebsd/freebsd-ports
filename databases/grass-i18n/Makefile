@@ -14,6 +14,7 @@ MASTER_SITES=	http://grass.itc.it/grass5/source/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 
 MAINTAINER=	reg@FreeBSD.org
+COMMENT=	An open source Geographical Information System (GIS)
 
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \

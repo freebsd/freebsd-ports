@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.drbl.ofisp.org/drbl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Distributed Realtime Black List
 
 NO_BUILD=	yes
 

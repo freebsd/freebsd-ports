@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	star
 
 MAINTAINER=		greid@ukug.uk.freebsd.org
+COMMENT=	A program to create encrypted tar archives
 
 LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

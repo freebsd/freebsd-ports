@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	GLASS (openGL Articulated Structure System) is a 3D library
 
 USE_MESA=	yes
 USE_X_PREFIX=	yes

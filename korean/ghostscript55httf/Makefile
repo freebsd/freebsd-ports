@@ -22,6 +22,7 @@ PATCHFILES=	gs5.50-httf-19990114_1.diff.gz
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Aladdin Postscript interpreter with Korean truetype support
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
 		${NONEXISTENT}:${PORTSDIR}/graphics/png:extract \

@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=modauthkerb
 
 MAINTAINER=	wollman@FreeBSD.org
+COMMENT=	An Apache module for authenticating users with Kerberos v5
 
 #
 # This module allows users to send their Kerberos password in

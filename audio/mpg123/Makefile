@@ -22,6 +22,7 @@ PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:ipv6 \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
 
 USE_GNOMENG=	yes
 WANT_GNOME=	yes

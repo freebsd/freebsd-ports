@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=nws
 DISTNAME=	neowebscript-3.3
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	The NeoTCL part of NeoWebScript -- an Apache TCL mod
 
 LIB_DEPENDS=	tclx83:${PORTSDIR}/lang/tclX82 \
 		db2:${PORTSDIR}/databases/db2

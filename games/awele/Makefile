@@ -12,6 +12,7 @@ MASTER_SITES=	http://www-air.inria.fr/ftp/Jean-Paul/
 DISTFILES=	${PORTNAME}1.0.tgz
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	An african board game
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 

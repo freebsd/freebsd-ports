@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	vera
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Virtual Entity of Relevant Acronyms
 
 do-build:
 		@ cd ${WRKSRC} && makeinfo --no-split vera.texi

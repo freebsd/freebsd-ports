@@ -13,6 +13,7 @@ MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	A webmail system designed to manage very big mail folder files in a memory efficient way
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \

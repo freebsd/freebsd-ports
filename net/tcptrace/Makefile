@@ -11,6 +11,7 @@ CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcptrace.org/download/
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	A TCP dump file analysis tool
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	tcptrace

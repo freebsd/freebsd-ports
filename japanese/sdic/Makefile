@@ -11,6 +11,7 @@ CATEGORIES=	japanese elisp
 MASTER_SITES=	http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/sdic/
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	A look up mode on Emacsen for a English - Japanese Dictionary
 
 RUN_DEPENDS=	${LOCALBASE}/share/dict/jedict.sdic:${PORTSDIR}/japanese/edict-sdic
 

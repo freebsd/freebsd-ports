@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	A documentation system for C and C++
 
 ALL_TARGET=	all
 

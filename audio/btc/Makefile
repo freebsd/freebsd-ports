@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.harmony-central.com/Bass/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	A tool for creating bass tablature
 
 WRKSRC=		${WRKDIR}
 

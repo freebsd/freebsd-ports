@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nate/JDK1.1
 
 MAINTAINER=	java-port@@FreeBSD.org
+COMMENT=	Java Development Kit 1.1
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 

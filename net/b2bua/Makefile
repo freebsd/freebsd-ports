@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.vovida.org/downloads/b2bua/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A back-to-back (B2B) SIP user agent
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

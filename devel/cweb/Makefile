@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	web/c_cpp/cweb
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Literate programming tools for the C language
 
 NO_WRKSUBDIR=	yes
 MAN1=		cweb.1

@@ -14,6 +14,7 @@ DISTNAME=	vsound-${PORTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Utility for capturing audio streams from Linux binaries
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox/
 

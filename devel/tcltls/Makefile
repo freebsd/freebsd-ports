@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=tls
 DISTNAME=	tls${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	SSL extensions for TCL; dynamicly loadable
 
 LIB_DEPENDS+=	tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND}
 

@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.plig.org/pub/figlet/program/unix/ \
 DISTNAME=	figlet221
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	SysV banner-like program prints strings in large fancy ASCII art
 
 MAN6=		figlet.6
 

@@ -12,6 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.cis.upenn.edu/~angelos/Code/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	A Trust-Management System
 
 USE_OPENSSL=	YES
 GNU_CONFIGURE=	yes

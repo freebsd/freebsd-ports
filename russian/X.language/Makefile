@@ -19,6 +19,7 @@ DISTFILES+=     Type1.koi8-r.free.tgz:kiae
 .endif
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Setup X locale/nls/keyboard/fonts for russian language (koi8-r)
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

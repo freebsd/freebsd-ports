@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	A Type 1 Rasterizer Library for UNIX/X11
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

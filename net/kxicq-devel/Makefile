@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-cvs-kde3-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Development snapshot of an ICQ client for KDE3
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf

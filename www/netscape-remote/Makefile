@@ -13,6 +13,7 @@ MASTER_SITES=	http://home.netscape.com/newsref/std/
 DISTFILES=	remote.c vroot.h
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	Utility to pass commands to running netscape process
 
 USE_XLIB=	yes
 DIST_SUBDIR=	netscape-remote

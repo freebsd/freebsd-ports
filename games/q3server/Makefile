@@ -14,6 +14,7 @@ DISTNAME=	linuxq3apoint-${PORTVERSION}.x86
 EXTRACT_SUFX=	.run
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Quake III Arena Dedicated Server for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes

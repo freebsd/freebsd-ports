@@ -11,6 +11,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmsolar/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A dockapp that displays the solar system viewed from top
 
 WRKSRC=		${WRKDIR}/wmSolar
 USE_X_PREFIX=	yes

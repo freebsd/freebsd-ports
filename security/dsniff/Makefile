@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://naughty.monkey.org/~dugsong/dsniff/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Various sniffing utilities for penetration testing
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids

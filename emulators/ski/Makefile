@@ -14,6 +14,7 @@ DISTNAME=	ski-0.943l-2.i386
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	freebsd-ia64@FreeBSD.org
+COMMENT=	HP's Ski IA-64 simulator
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 

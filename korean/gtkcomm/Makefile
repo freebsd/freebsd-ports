@@ -11,6 +11,7 @@ CATEGORIES=	korean comms
 MASTER_SITES=	http://download.kldp.net/gtkcomm/
 
 MAINTAINER=	cjh@kr.freebsd.org
+COMMENT=	Serial controlling software, with gtk+ widget
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 

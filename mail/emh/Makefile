@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/semi/emh/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	MIME extension of mh-e.el
 
 BUILD_DEPENDS+=	${LOCALBASE}/share/semi/${SEMI_COOKIE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
 RUN_DEPENDS+=	${LOCALBASE}/share/semi/${SEMI_COOKIE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}

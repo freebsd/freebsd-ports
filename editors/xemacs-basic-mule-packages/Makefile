@@ -20,6 +20,7 @@ DISTFILES=	\
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Basic XEmacs elisp packages with Mule(basic-mule)
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}

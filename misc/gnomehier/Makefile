@@ -13,6 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An utility port, installing hierarchy of common GNOME directories
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=${PORTNAME}
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 MAINTAINER=	mdodd@freebsd.org
+COMMENT=	Spam detector using Bayesian analysis of word counts
 
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ENV+=	FILESDIR="${FILESDIR}"

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Email
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Find RFC 822 email addresses in plain text
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
 RUN_DEPENDS=	${BUILD_DEPENDS}

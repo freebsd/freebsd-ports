@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=jedgar
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Correct moronic and gratuitously incompatible HTML from MS applications
 
 USE_ZIP=	yes
 NO_BUILD=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	japanese sysutils
 MASTER_SITES=	http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/paledit/
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	NTT DoCoMo PHS Paldio telephone data transfer tool
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

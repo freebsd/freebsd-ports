@@ -14,6 +14,7 @@ DISTNAME=	Pound-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Reverse proxy, load balancer and HTTP(S) frontend for web servers
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes

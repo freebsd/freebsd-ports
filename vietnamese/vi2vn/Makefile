@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.src
 EXTRACT_SUFX=	.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Perl script to convert VIQR encoding to other Vietnamese encodings.
 
 PORTCOMMENT=	Converts Vietnamese VIQR text into troff format
 

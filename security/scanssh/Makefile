@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.monkey.org/~provos/
 DISTNAME=	${PORTNAME}-1.6b
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Scanssh scans a subnet and reports the version of SSH installed
 
 GNU_CONFIGURE=	YES
 

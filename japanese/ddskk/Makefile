@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/emu/emu.el:${PORTSDIR}/editors/apel${DEPPORT_SUFFIX}
 

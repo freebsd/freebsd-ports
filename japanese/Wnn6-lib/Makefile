@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn6/sdk_source/
 DISTNAME=	Wnn6-SDK
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Include files and a library of Wnn6
 
 .include <bsd.port.pre.mk>
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nfb.org/braille/nfbtrans/
 DISTNAME=	nfbtr${PORTVERSION:S/.//}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	ASCII text to Grade Two braille translator
 
 RESTRICTED=	"Unclear copyright status"
 

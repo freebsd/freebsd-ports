@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	SpaceChart is a star chart viewer for GNOME
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

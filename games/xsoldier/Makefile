@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Shooting game for x11
 
 USE_IMAKE=	yes
 USE_XPM=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Xbiff-like program for X Window System with nice 3D output
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes

@@ -10,6 +10,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://dnstop.measurement-factory.com/src/
 
 MAINTAINER=	fenner@FreeBSD.Org
+COMMENT=	Captures and analyzes DNS traffic (or analyzes libpcap dump)
 
 NO_WRKSUBDIR=	true
 

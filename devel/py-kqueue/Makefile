@@ -15,6 +15,7 @@ PKGNAMEPREFIX=		py-
 DISTNAME=		PyKQueue-${PORTVERSION}
 
 MAINTAINER=		dwhite@FreeBSD.org
+COMMENT=	Python interface to kqueue(2) and kevent(2) system calls
 
 USE_PYTHON=		yes
 PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}

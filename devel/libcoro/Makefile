@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	kbyanc
 DISTNAME=		coro-${PORTVERSION}
 
 MAINTAINER=		kbyanc@posi.net
+COMMENT=	C library that implements coroutines
 
 ONLY_FOR_ARCHS=		i386
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= jedgar
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Utility to convert Windows icon files to xpm format
 
 WRKSRC=		${WRKDIR}/icod
 ALL_TARGET=	icod

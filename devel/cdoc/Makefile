@@ -15,6 +15,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	Extracts documentation from C source code comments
 
 BUILD_DEPENDS+=	make+:${.CURDIR}/../makeplus
 

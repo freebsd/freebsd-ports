@@ -18,6 +18,7 @@ MASTER_SITE_SUBDIR=	binutils autoconf
 DISTNAME=	autoconf-000227
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13 version)
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4

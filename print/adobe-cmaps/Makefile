@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.gyve.org/pub/gs-cjk/ \
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	Adobe CMap collection
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

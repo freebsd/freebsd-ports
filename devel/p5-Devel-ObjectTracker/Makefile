@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Devel
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Track object life to detect memory leaks
 
 PERL_CONFIGURE=	yes
 

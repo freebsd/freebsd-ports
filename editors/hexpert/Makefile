@@ -12,5 +12,6 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	peter
 
 MAINTAINER=	peter@FreeBSD.org
+COMMENT=	Hexpert - a simple but flexible binary file editor
 
 .include <bsd.port.mk>

@@ -11,6 +11,7 @@ CATEGORIES=	net windowmaker games
 MASTER_SITES=	http://www.soberart.de/down/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Dockapp that query and display information on Quake 3 servers
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 

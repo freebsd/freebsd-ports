@@ -12,6 +12,7 @@ CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nh2ps/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Formats an Korean text file for printing on a postscript printer
 
 USE_PERL5_BUILD=yes
 

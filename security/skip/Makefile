@@ -18,6 +18,7 @@ DISTNAME=		skipsrc-1.0
 EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		archie@freebsd.org
+COMMENT=	Stateless IP layer security and encryption from Sun Microsystems
 
 BUILD_DEPENDS=	${X11BASE}/lib/libxview.a:${PORTSDIR}/x11-toolkits/xview \
 		${X11BASE}/lib/X11/config/XView.cf:${PORTSDIR}/x11-toolkits/xview

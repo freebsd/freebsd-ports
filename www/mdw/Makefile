@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://redbrick.dcu.ie/~colmmacc/mdw/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A utility to check the MD5 sum of a webpage
 
 USE_AUTOCONF=	yes
 USE_REINPLACE=	yes

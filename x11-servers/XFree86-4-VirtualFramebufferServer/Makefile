@@ -23,6 +23,7 @@ PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
 PATCHFILES=		4.2.0-4.2.1-1-freebsd.patch.gz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 Virtual Framebuffer Server
 
 RUN_DEPENDS=	${FONT}:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 

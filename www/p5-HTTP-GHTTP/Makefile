@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTTP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl interface to the gnome ghttp library
 
 LIB_DEPENDS=	ghttp.1:${PORTSDIR}/www/libghttp
 

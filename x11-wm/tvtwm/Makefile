@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	window_managers
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	gpalmer@FreeBSD.org
+COMMENT=	Twm with a virtual desktop
 
 WRKSRC=		${WRKDIR}/tvtwm
 USE_IMAKE=	yes

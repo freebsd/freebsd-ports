@@ -17,6 +17,7 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
 MAINTAINER=	mikeh@FreeBSD.ORG
+COMMENT=	A graphical user interface toolkit for X Window System
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.quickhack.net/mhc/arc/
 DISTNAME=	mhc-current-snap${PORTVERSION}
 
 MAINTAINER?=	yoichi@FreeBSD.org
+COMMENT=	Calendar program for MHC
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 

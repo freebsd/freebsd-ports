@@ -14,6 +14,7 @@ DISTNAME=	memchan${PORTVERSION}
 MASTER_SITE_SUBDIR=${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Two new channel types for in-memory channels in TCL8
 
 BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 

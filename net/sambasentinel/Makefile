@@ -12,6 +12,7 @@ MASTER_SITES=	http://kling.mine.nu/kling/files/
 DISTNAME=	SambaSentinel-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	SambaSentinel is a gtk-frontend to smbstatus with additional features
 
 RUN_DEPENDS=	jags:${PORTSDIR}/net/jags
 

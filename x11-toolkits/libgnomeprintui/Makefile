@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gnome print support library
 
 LIB_DEPENDS=	gnomeprint-2-2.0:${PORTSDIR}/print/libgnomeprint \
 		gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas

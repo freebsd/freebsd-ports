@@ -14,6 +14,7 @@ DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mjacob@freebsd.org
+COMMENT=	Network backup client to NetWorker servers
 
 .include <bsd.port.pre.mk>
 

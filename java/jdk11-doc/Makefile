@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jdk-${JDK_VERSION:S/./_/g}-doc
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java Development Kit 1.1 Documentation
 
 TARGET_DIR?=	${PREFIX}/share/doc/jdk${JDK_MAJOR_VER}
 

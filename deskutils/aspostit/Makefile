@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/aspostit
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	An AfterStep dockable version of XPostIt
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg/
 

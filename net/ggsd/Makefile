@@ -15,6 +15,7 @@ DISTNAME=	ggsd
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Start a network server to execute scripts
 
 EXTRACT_CMD=	${TAR}
 EXTRACT_BEFORE_ARGS=	-xf

@@ -13,6 +13,7 @@ DISTNAME=	xeyes+${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Horrible eyes looking at your mouse cursor
 
 USE_IMAKE=	yes
 USE_XPM=	yes

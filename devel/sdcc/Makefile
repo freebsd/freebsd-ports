@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.geocities.com/ResearchTriangle/Forum/1353/
 DISTNAME=	${PORTNAME}-${PORTVERSION}Ea
 
 MAINTAINER=	ambrisko@freebsd.org
+COMMENT=	Cross compile 8051 code
 
 WRKSRC=		${WRKDIR}/sdcc219Ea
 GNU_CONFIGURE=	yes

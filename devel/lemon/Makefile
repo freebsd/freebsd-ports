@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.hwaci.com/sw/lemon/
 DISTFILES=	lemon.c lempar.c
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	An LALR(1) parser generator. Similar in function to yacc and bison
 
 NO_WRKSUBDIR=	YES
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/suguru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Simple battery meter
 
 USE_IMAKE=	yes
 USE_X_PREFIX=	yes

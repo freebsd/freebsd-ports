@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A version of the Mr Do video arcade game for X11
 
 USE_IMAKE=	yes
 MAKE_FLAGS=	XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults -f

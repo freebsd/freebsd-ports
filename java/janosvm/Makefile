@@ -13,6 +13,7 @@ CATEGORIES=	java
 MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	A virtual machine for executing Java bytecodes
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes

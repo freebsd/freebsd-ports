@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	gdb/releases
 
 MAINTAINER=	mp@FreeBSD.org
+COMMENT=	GNU GDB 5.3 developmental snapshot
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

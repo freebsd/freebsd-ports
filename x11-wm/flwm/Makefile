@@ -14,6 +14,7 @@ MASTER_SITES=	http://flwm.sourceforge.net/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	The Fast Light Window Manager
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 

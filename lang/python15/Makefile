@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
 WRKSRC=		${WRKDIR}/Python-1.5.2

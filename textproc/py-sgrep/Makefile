@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysgrep-${PORTVERSION}
 
 MAINTAINER=	ijliao@freebsd.org
+COMMENT=	Python wrappers for Sgrep
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

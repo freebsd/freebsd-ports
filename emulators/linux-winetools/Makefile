@@ -15,6 +15,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	blackend@FreeBSD.org
+COMMENT=	A setup and configuration tool for WINE
 
 RUN_DEPENDS=	wine:${PORTSDIR}/emulators/wine
 

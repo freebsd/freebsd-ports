@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	jump-math
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java library for arbitrary precision computations
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 

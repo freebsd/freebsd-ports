@@ -14,6 +14,7 @@ DISTNAME=	pymol-${PORTVERSION:S/./_/}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	maho@FreeBSD.org
+COMMENT=	Free and Open-Source molecular modeling system
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \

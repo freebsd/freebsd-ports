@@ -14,6 +14,7 @@ DISTNAME=	gk-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	GnuGK is GPL Gate Keeper for OhPhone, GnomeMeeting, NetMeeting and H323
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

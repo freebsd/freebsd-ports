@@ -20,6 +20,7 @@ MASTER_SITES=	http://www.analog.cx/ \
 		http://analog.tzone.it/
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	An extremely fast program for analysing WWW logfiles
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

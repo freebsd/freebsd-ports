@@ -12,6 +12,7 @@ MASTER_SITES=	http://nwalsh.com/perl/delimmatch/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension to find regexp delimited strings with proper nesting
 
 PERL_CONFIGURE=	yes
 

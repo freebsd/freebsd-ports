@@ -14,6 +14,7 @@ DISTNAME=	pvm${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Parallel Virtual Machine libraries and environment
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11

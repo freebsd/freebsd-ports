@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.geocities.com/~starkville/mozilla/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	VISCII->Unicode conversion
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.unixpapa.com/software/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Enables the use of external mechanisms for user authentication
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

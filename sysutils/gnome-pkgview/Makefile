@@ -11,6 +11,7 @@ CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.gtnorthern.demon.co.uk/packages/gnome-pkgview/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Displays the version of GNOME 2 components installed
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mharo@FreeBSD.org
+COMMENT=	PARI - numerical/scientific/number-theoretic calculations
 
 BUILD_DEPENDS=	pari:${PORTSDIR}/math/pari:configure
 

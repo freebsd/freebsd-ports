@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Sourcecode to HTML converter
 
 .if !exists(/usr/bin/bzip2)
 RUN_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2

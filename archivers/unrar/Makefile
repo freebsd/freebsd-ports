@@ -13,6 +13,7 @@ MASTER_SITES=	http://files2.rarlab.com/rar/
 DISTNAME=       unrarsrc-3.1.4
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Extract, view & test RAR archives
 
 WRKSRC=         ${WRKDIR}/unrar
 

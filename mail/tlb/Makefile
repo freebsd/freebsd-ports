@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.hpc.uh.edu/pub/tlb/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	The List Batcher, a general purpose mail list delivery engine
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Address.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.mosfet.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}-pre4
 
 MAINTAINER=	kde@freebsd.org
+COMMENT=	A High Performance Liquid KDE style engine
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf

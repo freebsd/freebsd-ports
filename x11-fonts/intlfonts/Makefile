@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	intlfonts
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Free X11 fonts for all characters that Emacs can handle
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86 \

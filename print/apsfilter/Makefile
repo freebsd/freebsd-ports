@@ -12,6 +12,7 @@ CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
 MAINTAINER=	andreas@FreeBSD.org
+COMMENT=	Magic print filter with file type recognition, print preview, duplex printing
 
 DIST_SUBDIR=	apsfilter
 

@@ -11,6 +11,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/lukemftp/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Enhanced ftp client from NetBSD
 
 GNU_CONFIGURE=	yes
 

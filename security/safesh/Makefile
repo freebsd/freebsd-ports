@@ -14,6 +14,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	eivind@FreeBSD.org
+COMMENT=	Authentication manager for OpenSSH (making secure auth easier)
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

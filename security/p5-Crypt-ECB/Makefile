@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-/}
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module implementing the ECB encryption algorithm
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
 

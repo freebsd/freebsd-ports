@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.hry.info.gifu-u.ac.jp/~hideki/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Clock for mlvwm window manager
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/mlclock

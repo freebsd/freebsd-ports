@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	bsd
 
 MAINTAINER=	bsd@FreeBSD.org
+COMMENT=	Program to drive a simple parallel port programmer for Atmel AVR CPUs
 
 MAN1=		avrprog.1
 MANCOMPRESSED=	no

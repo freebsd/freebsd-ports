@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Visual binary file editor
 
 # restrictive Copyright; the author is no longer reachable, however :-(
 RESTRICTED=	"Restrictive copyright"

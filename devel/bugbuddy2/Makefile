@@ -15,6 +15,7 @@ DISTNAME=	bug-buddy-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A bug reporting tool for GNOME 2.0
 
 LIB_DEPENDS=	gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop
 

@@ -13,6 +13,7 @@ DISTNAME=	rox-base-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Resources needed by several ROX desktop applications
 
 NO_BUILD= 	yes
 

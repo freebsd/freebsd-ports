@@ -13,6 +13,7 @@ DISTNAME=	Linux_ArcExplorer${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Lightweight java-based GIS data viewer
 
 USE_JAVA=	1.2+
 

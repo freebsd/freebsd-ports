@@ -11,6 +11,7 @@ CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	KAME racoon IKE daemon
 
 .if !exists(/usr/lib/libipsec.so.1)
 BROKEN=		"You must upgrade the OS"

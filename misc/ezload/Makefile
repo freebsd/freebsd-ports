@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.etla.net/~n_hibma/usb/
 
 MAINTAINER=	n_hibma@FreeBSD.ORG
+COMMENT=	Down-/uploader for AnchorChip's EZ-USB chip
 
 MAN1=		ezupload.1 ezdownload.1 aw.1
 MANCOMPRESSED=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Lightweight network intrusion detection system
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mysql=no --with-odbc=no --with-postgresql=no

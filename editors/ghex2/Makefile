@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME 2 hex editor
 
 LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail \
 		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \

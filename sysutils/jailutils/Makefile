@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://memberwebs.com/nielsen/freebsd/jails/jailutils/
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Several utilies for managing jails
 
 GNU_CONFIGURE=	YES
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.maxmind.com/download/geoip/api/mod_geoip/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	An Apache module that provides the country code of the client's IP
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

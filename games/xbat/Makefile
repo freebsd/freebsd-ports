@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.nemoto.ecei.tohoku.ac.jp/~wai/Xbat/
 DISTNAME=	xev111
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	XEVIOUS like shooting game
 
 NO_CDROM=	Possible copyright infringement
 

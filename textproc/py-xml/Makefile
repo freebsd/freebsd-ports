@@ -14,6 +14,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 DISTNAME=		PyXML-${PORTVERSION}
 
 MAINTAINER=		wjv@FreeBSD.org
+COMMENT=	The Python XML package, including parser, SAX, DOM, and Expat
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

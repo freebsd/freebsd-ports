@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.sbs.de/pub/www/tools/giftool/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A tool for GIF89a transparent option and interlace mode
 
 NO_CDROM=	"Shareware"
 

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://mlug.missouri.edu/~tymm/
 
 MAINTAINER=	msmith@freebsd.org
+COMMENT=	Home Automation Software for the X10 FireCracker kit
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

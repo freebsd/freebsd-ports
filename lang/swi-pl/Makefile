@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.swi.psy.uva.nl/pub/SWI-Prolog/
 DISTNAME=	pl-${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Edinburgh-style Prolog compiler
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

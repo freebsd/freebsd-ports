@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://download.sourceforge.net/sonicmail/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A POP3 email notifier GNOME applet
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

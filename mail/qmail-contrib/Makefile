@@ -14,6 +14,7 @@ DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 		fastforward-${FF_VER}.tar.gz
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Contributed programs for qmail
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 

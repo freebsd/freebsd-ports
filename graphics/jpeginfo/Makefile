@@ -11,6 +11,7 @@ CATEGORIES=     graphics
 MASTER_SITES=   http://www.cc.jyu.fi/~tjko/src/
 
 MAINTAINER=     ache@freebsd.org
+COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
 
 LIB_DEPENDS=    jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -11,6 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
 MAINTAINER=	phk@FreeBSD.org
+COMMENT=	The Hercules System/370, ESA/390, and z/Architecture Emulator
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jadetex
 
 MAINTAINER=		nik@FreeBSD.org
+COMMENT=	A TeX backend for Jade, for typesetting SGML documents
 
 BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png

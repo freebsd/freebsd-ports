@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/proxyper-rc5des/ \
 DISTNAME=	proxyper${PORTVERSION}-freebsd-x86
 
 MAINTAINER=	dbaker@FreeBSD.org
+COMMENT=	The official distributed.net v2 personal proxy
 
 .include <bsd.port.pre.mk>
 

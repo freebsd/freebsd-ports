@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.kostis.net/freeware/
 DISTNAME=	trans120
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	Character Encoding Converter Generator Package
 
 LIBDIR=		${PREFIX}/lib/trans
 ALL=		transhtm transiso transce8 transtab checkiso checkuni

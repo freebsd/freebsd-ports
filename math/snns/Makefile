@@ -14,6 +14,7 @@ DISTNAME=	SNNSv${PORTVERSION}
 DISTNAME=	SNNSv${PORTVERSION}
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	Fully featured neural network simulator
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes

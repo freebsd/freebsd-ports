@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tiny-cobol
 
 MAINTAINER=	patrick@freebsd.org
+COMMENT=	A tiny COBOL compiler for IA32 platforms
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

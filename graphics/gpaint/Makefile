@@ -11,6 +11,7 @@ CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/gpaint/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A small-scale painting program for GNOME
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

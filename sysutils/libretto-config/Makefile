@@ -12,6 +12,7 @@ MASTER_SITES=	http://club.pep.ne.jp/~ishioka/Software/Linux/libapm/
 DISTNAME=	libapm-linux-1.0beta5
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	Libretto BIOS Setting Program
 
 ONLY_FOR_ARCHS=	i386
 

@@ -31,6 +31,7 @@ DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES} ${PCL3_DRV}
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Aladdin Postscript interpreter with Korean Truetype fonts support
 
 RUN_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts:${PORTSDIR}/print/gsfonts \
 		$(LOCALBASE)/share/ghostscript/fonts/CMap:${PORTSDIR}/korean/munhwafonts-cid \

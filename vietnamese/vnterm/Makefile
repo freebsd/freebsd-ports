@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.x.org/pub/R6.5.1/tars/
 DISTNAME=	xorg-1
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	An xterm that speaks Vietnamese
 
 USE_IMAKE=	yes
 

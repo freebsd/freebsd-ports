@@ -12,6 +12,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/bible_names/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	A dictionary for HITCHCOCK'S BIBLE NAMES (EPWING V1 format)
 
 USE_ZIP=	yes
 NO_BUILD=	yes

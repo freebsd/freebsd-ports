@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-20
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	A DVI Previewer for the X Window System
 
 DIST_SUBDIR=	xdvi	# to share distfiles with japanese/xdvi
 USE_IMAKE=	yes

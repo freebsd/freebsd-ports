@@ -14,6 +14,7 @@ DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME Virtual File System
 
 LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2 \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo

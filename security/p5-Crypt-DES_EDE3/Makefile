@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesper@FreeBSD.org
+COMMENT=	Perl5 interface to a implementing 3-DES EDE encryption and decryption
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	File::NFSLock - perl module to do NFS (or not) locking
 
 PERL_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://people.FreeBSD.org/~brian/vlc/
 
 MAINTAINER=	brian@FreeBSD.org
+COMMENT=	An X11 MPEG2 client/server solution
 
 LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	gdb/releases
 DISTNAME=	gdb-${PORTVERSION}
 
 MAINTAINER=	mp@FreeBSD.org
+COMMENT=	PowerPC simulator (PSIM) running in the GNU GDB 5
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

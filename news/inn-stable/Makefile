@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	inn/snapshots
 DISTNAME=	inn-STABLE-${SNAPSHOT}
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	InterNetNews Version 2 -- the Internet meets Netnews
 
 USE_GMAKE=YES
 USE_PERL5=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	phpPgAdmin_${PORTVERSION:S/./-/g}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Web Based Postgres Administration
 
 .if !defined(WITH_PHP3)
 .if defined(WITH_APACHE2)

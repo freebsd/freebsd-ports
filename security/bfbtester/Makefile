@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bfbtester
 
 MAINTAINER=	mikeh@FreeBSD.org
+COMMENT=	A security tool for testing binaries for overflows
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SOAP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kappa@freebsd.org.ua
+COMMENT=	SOAP::Lite - Client and server side SOAP implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \

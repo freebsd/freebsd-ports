@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.netcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
 		ftp://ftp.falsehope.com/pub/xmms-crossfade/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	XMMS Output plugin for crossfading between songs
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 

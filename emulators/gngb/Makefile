@@ -12,6 +12,7 @@ MASTER_SITES=	http://membres.lycos.fr/frogus/gngb/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	GameBoy(tm) emulator
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	An advanced tool for adjusting soundcard mixers, designed as a replacement for aumix
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

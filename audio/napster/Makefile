@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nap
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	An MP3 sharing, search, and chat client for the OpenNAP network
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

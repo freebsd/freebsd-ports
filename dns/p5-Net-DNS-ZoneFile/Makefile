@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension to convert a zone file to a collection of RRs
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/DNS/RR.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \

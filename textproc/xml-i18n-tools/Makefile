@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Xml internationalization support for GNOME, and others
 
 USE_GMAKE=	yes
 USE_PERL5=	yes

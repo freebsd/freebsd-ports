@@ -11,6 +11,7 @@ CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	Yet Another HFS Utility
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

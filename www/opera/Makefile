@@ -13,6 +13,7 @@ MASTER_SITES=	http://opera.online.no/unix/freebsd/611/final/en/static/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/11./11-/}.1-static-qt.i386.freebsd
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=     webmagick
 DISTNAME=       ${PORTNAME}-2.03pre3
 
 MAINTAINER=	ache@freebsd.org
+COMMENT=	Image Web Generator - recursively build HTMLs, imagemaps, thumbnails
 
 LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick
 

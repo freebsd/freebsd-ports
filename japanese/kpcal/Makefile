@@ -18,6 +18,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}-HappyMonday2003.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Make Calendar in Postscript format
 
 USE_REINPLACE=	yes
 ALL_TARGET=	kpcal

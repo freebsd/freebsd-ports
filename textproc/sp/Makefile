@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
 MAINTAINER=	chuckr@FreeBSD.org
+COMMENT=	An object-oriented toolkit for SGML parsing and entity management
 
 USE_SUBMAKE=	yes
 INSTALLS_SHLIB=	yes

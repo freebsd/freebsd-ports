@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/4.1.2.5/
 DISTNAME=	simple${PORTVERSION:S/.//g}
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	"Simplified" DocBook XML DTD
 
 RUN_DEPENDS=    ${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 

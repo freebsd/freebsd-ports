@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	patch
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	GNU patch utility
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g

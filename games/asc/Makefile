@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \

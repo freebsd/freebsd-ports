@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz:hjdic ami.dic:amidic
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Well-known Korean X11 Input Method
 
 LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 

@@ -16,6 +16,7 @@ DISTNAME=	pytrex-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Python implementation of Tree Regular Expressions for XML (TREX)
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 

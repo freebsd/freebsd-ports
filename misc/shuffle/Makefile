@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Produce random permutations
 
 MANSECTS=	1
 MAN1=		shuffle.1

@@ -15,6 +15,7 @@ DISTNAME=	docbk41
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	murray@freebsd.org
+COMMENT=	V4.1 of the DocBook DTD, designed for technical documentation
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879 \
 		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog

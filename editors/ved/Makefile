@@ -11,6 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/ved/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A small and fast screen-oriented editor.
 
 USE_GMAKE=	yes
 

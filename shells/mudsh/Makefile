@@ -14,6 +14,7 @@ EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	An "intelligent" game-like shell
 
 NO_WRKSUBDIR=	yes
 

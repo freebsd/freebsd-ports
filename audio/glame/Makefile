@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 

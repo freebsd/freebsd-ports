@@ -11,6 +11,7 @@ CATEGORIES=     security www
 MASTER_SITES=   http://kapheine.hypa.net/authforce/
 
 MAINTAINER=     ache@FreeBSD.org
+COMMENT=	HTTP authentication brute forcer
 
 LIB_DEPENDS=    gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		curl.2:${PORTSDIR}/ftp/curl \

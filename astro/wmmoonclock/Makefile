@@ -11,6 +11,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Displays the phase of the moon, plus orbital data
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 

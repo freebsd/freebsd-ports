@@ -15,6 +15,7 @@ DISTNAME=	gnome-system-monitor-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME 2.0 system monitor program
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \

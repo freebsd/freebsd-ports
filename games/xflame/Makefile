@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.owlnet.rice.edu/~rahul/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	A cool animated flame
 
 USE_IMAKE=	yes
 

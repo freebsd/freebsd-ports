@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cogsci.princeton.edu/pub/wordnet/${PORTVERSION}/ \
 		ftp://ftp.ims.uni-stuttgart.de/pub/WordNet/${PORTVERSION}/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Dictionaries and thesauri with devel. libraries (C, TCL) and browsers
 
 LIB_DEPENDS=	tk${TCL_VER}.1:${PORTSDIR}/x11-toolkits/tk${TCL_VER}
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	mysql-python
 DISTNAME=	MySQL-python-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Access a MySQL database through Python
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/shinonome/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Japanese 12,14,16 dot fonts
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Analyze diagnostic error output from compilers and other processors
 
 MANSECTS=	1
 MAN1=		error.1

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/oaf/0.6
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Object Activation Framework for GNOME
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://artho.com/jlint/ \
 		http://www.metaverse.nl/~ernst/
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Java program analyzer and checker
 
 USE_REINPLACE=	YES
 

@@ -13,6 +13,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	The "meta-port" for XEmacs with SUMO packages
 
 RUN_DEPENDS=	${RUN_DEP_LIST}
 # below line would be remove comment and add RUN_DEPNDS after any xemacs-*-packages added

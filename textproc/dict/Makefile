@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.dict.org/pub/dict/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Dictionary Server Protocol (RFC2229) client
 
 USE_BISON=	yes
 USE_REINPLACE=	yes

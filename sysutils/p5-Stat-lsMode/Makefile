@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Stat
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Stat::lsMode - format file modes like the ls -l command does
 
 PERL_CONFIGURE=	yes
 

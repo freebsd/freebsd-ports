@@ -14,6 +14,7 @@ DISTFILES=	m3gdb-4.17.tar.gz \
 		m3gdb-fbsd-4.17.tar.gz
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT=	The GNU debugger with support for Modula-3
 
 MAN1=		m3gdb.1
 MANCOMPRESSED=	yes

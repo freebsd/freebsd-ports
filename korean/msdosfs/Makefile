@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mount_msdos-20000701.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Mount a Microsoft FAT Korean file system
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ko
 

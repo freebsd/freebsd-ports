@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.monkey.org/~provos/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A small, efficient web crawler with advanced features
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 LIB_DEPENDS=	md5.1:${PORTSDIR}/www/libwww \

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=   http://www.frenchfries.net/paul/tcpstat/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A program to report various network statistics
 
 GNU_CONFIGURE=	yes
 

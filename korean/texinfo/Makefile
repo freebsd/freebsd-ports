@@ -13,6 +13,7 @@ MASTER_SITES=	http://master.debian.or.kr/~cwryu/archive/texinfo-ko/
 DISTNAME=	${PORTNAME}-ko-${PORTVERSION}
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Korean enabled Texinfo formatter
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex

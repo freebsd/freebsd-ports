@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.enst.fr/~beyssac/pipsec/ \
 DISTNAME=	pipsec-19991014
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	Simple IPSEC tunnel tool from Pierre Beyssac
 
 USE_OPENSSL=	YES
 

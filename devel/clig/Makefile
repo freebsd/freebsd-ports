@@ -11,6 +11,7 @@ CATEGORIES=	devel tcl82
 MASTER_SITES=	http://wsd.iitb.fhg.de/~kir/clighome/
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	Auto-generate an (argc, argv) processor, usage message, and manpage
 
 # This should work with any version of tcl.  See also ${MAKE_ENV}.
 BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82

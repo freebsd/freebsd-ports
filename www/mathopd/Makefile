@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.mathopd.org/dist/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pl/}
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	A very small, yet very fast HTTP server
 
 post-install:
 	@${INSTALL_DATA} ${FILESDIR}/mathopd.conf.sample ${PREFIX}/etc

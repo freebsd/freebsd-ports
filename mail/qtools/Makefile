@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.superscript.com/qtools/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Several utilities for use with qmail
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 

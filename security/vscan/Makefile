@@ -14,6 +14,7 @@ DISTNAME=	vbsd416e
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jeh@FreeBSD.org
+COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
 RUN_DEPENDS+=	${LOCALBASE}/sbin/update_dat:${PORTSDIR}/security/uvscan-dat
 LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x

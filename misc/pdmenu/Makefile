@@ -13,6 +13,7 @@ MASTER_SITES=	http://kitenet.net/programs/code/pdmenu/
 DISTNAME=	pdmenu_${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A simple console menu program
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 

@@ -17,6 +17,7 @@ EXTRACT_SUFX=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	Decode MIME messages inside Emacs (works with RMAIL, VM, and mh-e)
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	metamail:${PORTSDIR}/mail/metamail

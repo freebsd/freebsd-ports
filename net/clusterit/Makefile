@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.garbled.net/download/ \
 		ftp://ftp.chg.ru/pub/prog/parallel/tools/clusterit/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A collection of clustering tools
 
 MAN1=		barrier.1 barrierd.1 dsh.1 jsh.1 jsd.1 \
 		clustersed.1 run.1 seq.1 dshbak.1 pcp.1 pdf.1 prm.1

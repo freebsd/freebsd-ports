@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.uu.net/pub/calc/ \
 DISTNAME=	calc-2.11.5t4.5
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Arbitrary precision calculator
 
 MAN1=		calc.1
 

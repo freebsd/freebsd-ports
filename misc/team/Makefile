@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Portable multi-buffered tape streaming utility
 
 MAN1=		team.1
 MANCOMPRESSED=	maybe

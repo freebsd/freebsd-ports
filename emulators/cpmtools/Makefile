@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	cpm-${PORTVERSION}
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	Utility to transfer files from/to CP/M (R) diskettes
 
 WRKSRC=		${WRKDIR}/cpm
 MAN1=		cpm.1

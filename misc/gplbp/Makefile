@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	GNOME Pilot Logbook application
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

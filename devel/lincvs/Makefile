@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Graphical CVS front-end using QT2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/masafu-o/xwipower/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Wave power level meter for wi(4)
 
 WRKSRC=		${WRKDIR}/xwipower
 USE_IMAKE=	yes

@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tar.bz2
 #The distfile is CVS Glide3-FreeBSD branch with */glide3/tests/* removed
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	Library to support 3dfx Voodoo3/4/5/Banshee with the DRI
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/Glide3

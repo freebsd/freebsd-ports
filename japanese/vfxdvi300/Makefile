@@ -25,6 +25,7 @@ DIST_SUBDIR=	xdvi
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mita@FreeBSD.org
+COMMENT=	DVI Previewer for X. + Japanese patch + vector font support
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${RESOLUTION}

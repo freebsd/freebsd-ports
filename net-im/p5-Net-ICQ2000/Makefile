@@ -12,6 +12,7 @@ MASTER_SITES=	http://gonzo.kiev.ua/projects/vicq/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	A perl5 module for ICQv7 protocol realisation
 
 PERL_CONFIGURE=	yes
 

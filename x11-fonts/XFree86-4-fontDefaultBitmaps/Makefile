@@ -15,6 +15,7 @@ DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz X${PORTVERSION:S/.//g}src-2.tgz
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-2.tgz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	XFree86-4 default bitmap fonts
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/encodings/encodings.dir:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings

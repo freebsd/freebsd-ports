@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ee.lbl.gov/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perform consistency checks on DNS zone files
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	nslint

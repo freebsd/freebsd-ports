@@ -14,6 +14,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.iway.fr/pub/unix/mail/qmail/
 
 MAINTAINER=	tom@FreeBSD.org
+COMMENT=	Tools for passing mail across serial links
 
 MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 serialsmtp.1 setlock.1
 

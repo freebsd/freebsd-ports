@@ -13,6 +13,7 @@ CATEGORIES=	converters
 MASTER_SITES=	http://www.technocage.com/~caskey/siconv/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	Convert data from one character set to another
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

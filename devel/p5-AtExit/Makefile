@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADAPP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	AtExit - Perform exit processing for a program or object
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLDIRS=site

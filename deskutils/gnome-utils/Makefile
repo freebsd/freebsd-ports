@@ -15,6 +15,7 @@ DISTNAME=	gnome-utils-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME 2.0 support utilities
 
 LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
 

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	-15.src.rpm
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	A backgammon program for X11
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 

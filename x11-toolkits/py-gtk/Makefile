@@ -14,6 +14,7 @@ DISTNAME=	gnome-python-1.4.4
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A set of Python bindings for GTK
 
 BUILD_DEPENDS=	${PYNUMERIC}
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea

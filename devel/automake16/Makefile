@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	automake
 DISTNAME=	automake-${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	GNU automake generates input files for GNU autoconf
 
 .undef		NO_IGNORE
 BORKED=		"DON'T EVEN THINK ABOUT IT."

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=inn
 DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	Create lock files for use in shell scripts
 
 HAS_CONFIGURE=	yes
 

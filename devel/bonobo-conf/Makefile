@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bonobo-conf/0.16
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Bonobo configuration moniker
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes

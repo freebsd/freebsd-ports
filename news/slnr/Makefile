@@ -11,6 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/slnr/
 
 MAINTAINER=	hoek@FreeBSD.org
+COMMENT=	A simplistic reader for SOUP (HDPF) mail and news packets
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 

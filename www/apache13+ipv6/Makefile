@@ -30,6 +30,7 @@ PATCH_SITES=	http://motoyuki.bsdclub.org/data/IPv6/
 PATCHFILES=	apache-1.3.27-v6-20021004.diff.gz
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
 USE_PERL5=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	ftp www
 MASTER_SITES=	http://pop-club.hp.infoseek.co.jp/emacs/emacs-wget/
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Simple front-end to wget on Emacsen
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

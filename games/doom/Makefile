@@ -14,6 +14,7 @@ MASTER_SITES?=	ftp://ftp.idsoftware.com/idstuff/source/ \
 DISTNAME=	doomsrc
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	DOOM: the game and the sound server
 
 NO_CDROM=	requested by IDsoftware
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/rep-gtk/0.15
 #DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GTK+ binding for rep Lisp interpreter
 
 LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 

@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://djvu.research.att.com/open/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	AT&T's DjVu: The Technology for Scanned Documents on the Web
 
 INSTALLS_SHLIB=	yes
 IS_INTERACTIVE=	some think, the AT&T license needs to be acked by the user

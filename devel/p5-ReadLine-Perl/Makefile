@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	Term-ReadLine-Perl-${PORTVERSION}
 
 MAINTAINER=	mph@FreeBSD.org
+COMMENT=	Perl 5 module for Term::ReadLine editing without GNU readline
 
 PERL_CONFIGURE=	YES
 

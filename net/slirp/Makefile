@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-1.0.14pre1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A (C)SLIP/PPP emulator for users with shell accounts
 
 # serious LP64 issues
 ONLY_FOR_ARCHS=	i386

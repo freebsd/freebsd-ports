@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.nerimadors.or.jp/pub/src/cdrom2/
 DISTNAME=	euc
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	A tool to lookup CD-ROM dictionaries
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}

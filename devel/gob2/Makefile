@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A preprocessor for making GObjects with inline C
 
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 

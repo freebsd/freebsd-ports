@@ -12,6 +12,7 @@ MASTER_SITES=	http://lisas.de/erwin/legacy/
 DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	Simple (at the moment) html editor based on GTK+
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

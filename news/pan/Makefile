@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	sources/pan/0.11
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Threaded GNOME newsreader based on Agent for Windows
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

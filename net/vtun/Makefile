@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://vtun.sourceforge.net/
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	Virtual Tunnels over TCP/IP networks with traffic shaping
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 

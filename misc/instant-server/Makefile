@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MASTER_SITE_SUBDIR=	pub/instant-server
 
 MAINTAINER=	grog@lemis.com
+COMMENT=	Instant server installs a typical set of ports for a server
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup \

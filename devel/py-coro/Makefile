@@ -13,6 +13,7 @@ PKGNAMEPREFIX=		py-
 DISTNAME=		${PORTNAME}_2001_02_02
 
 MAINTAINER=		kbyanc@posi.net
+COMMENT=	Python coroutine implementation
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libcoro.a:${PORTSDIR}/devel/libcoro
 

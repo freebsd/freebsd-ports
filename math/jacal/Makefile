@@ -12,6 +12,7 @@ MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	jacal1b2
 
 MAINTAINER=	markm@FreeBSD.org
+COMMENT=	Symbolic mathematics program written in Scheme
 
 RUN_DEPENDS=	scm:${PORTSDIR}/lang/scm
 

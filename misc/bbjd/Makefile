@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Beat the blackjack dealer
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/bbjd

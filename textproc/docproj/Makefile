@@ -12,6 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	nik@freebsd.org
+COMMENT=	The "meta-port" for the FreeBSD Documentation Project
 
 # This dependency list should be kept in sync with the list of
 # required ports in src/release/Makefile.inc.docports.

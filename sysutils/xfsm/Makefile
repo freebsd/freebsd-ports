@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	system/status/xstatus
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vanilla@FreeBSD.org
+COMMENT=	X File System Monitor
 
 USE_IMAKE=	yes
 MAN1=		xfsm.1

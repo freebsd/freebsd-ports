@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Another gtk-based graphic file viewer
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

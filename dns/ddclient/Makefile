@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://burry.ca:4141/ddclient/
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	Update dynamic DNS entries
 
 USE_PERL5=	yes
 NO_BUILD=	yes

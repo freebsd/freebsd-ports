@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTFILES=	ratfor.shar.2 local.ratfor77.shar
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Ratfor -- the Rational FORTRAN compiler
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CAT}

@@ -13,6 +13,7 @@ MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTNAME=	slib2d1
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A portable scheme library for all standard scheme implementation
 
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	BSD Wireless Scanning Tools
 
 CONF_AIRTOOLS=	dstumbler
 MAKE_AIRTOOLS=	dweputils/dwepcrack dweputils/dwepdump \

@@ -12,6 +12,7 @@ MASTER_SITES=	http://shika.aist-nara.ac.jp/products/DEST/Wcol/
 DISTNAME=	wcolEpre.990110_150126
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	A prefetching proxy server for WWW
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

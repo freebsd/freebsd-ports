@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.fxp.org/~jedgar/lmmon/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Display information gathered from MB power management controller
 
 GNU_CONFIGURE=	yes
 MAN8=		lmmon.8

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/art/graphics/loader/mag/
 DISTFILES=	xmagv111.tgz
 
 MAINTAINER=	flathill@FreeBSD.org
+COMMENT=	Viewer for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	Popular virtual window manager for X
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4

@@ -17,6 +17,7 @@ PKGNAMEPREFIX=	jakarta-
 DISTNAME=	ApacheJMeter_${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Functional behaviour load and performance test application
 
 USE_JAVA=	1.2+
 NO_BUILD=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Border Gateway Protocol version 4 speaker/listener library
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
 MAINTAINER=	gerald@FreeBSD.org
+COMMENT=	A collection of tools for searching BibTeX and translating from BibTeX to HTML
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 

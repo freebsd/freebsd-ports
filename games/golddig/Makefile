@@ -13,6 +13,7 @@ DISTNAME=	golddig2
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Getting the Gold and Avoiding Death
 
 USE_XLIB=	yes
 MAN6=		golddig.6

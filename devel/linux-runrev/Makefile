@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	blackend@FreeBSD.org
+COMMENT=	Revolution is a rapid application development environment
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Additional themes, sounds, wallpapers and window styles for KDE
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Automatic and manual text wrapping and reformating formatting
 
 PERL_CONFIGURE=	yes
 

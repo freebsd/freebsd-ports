@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.river-bank.demon.co.uk/software/
 DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A user orientated scripting environment for embedding in applications
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 

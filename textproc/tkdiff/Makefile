@@ -11,6 +11,7 @@ CATEGORIES=	textproc tk83
 MASTER_SITES=	http://people.freebsd.org/~kevlo/
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	A Tk frontend for diff(1)
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

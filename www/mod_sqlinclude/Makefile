@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	An Apache module implementing config inclusion from MySQL databases
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

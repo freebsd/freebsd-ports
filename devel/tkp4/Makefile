@@ -11,6 +11,7 @@ CATEGORIES=	devel tk83
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkp4/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Tcl/Tk frontends to Perforce's p4
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
 		p4:${PORTSDIR}/devel/perforce

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Resources
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module handling application defaults in Perl
 
 PERL_CONFIGURE=	YES
 

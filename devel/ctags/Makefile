@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	ctags jkoshy
 
 MAINTAINER=	jkoshy@FreeBSD.org
+COMMENT=	A feature-filled tagfile generator for vi and emacs clones
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-macro-patterns --disable-etags

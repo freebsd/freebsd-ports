@@ -14,6 +14,7 @@ DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=	HLaTeX-0.991.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	LaTeX package to use Hangul(UHC/KSX1001)
 
 # it depends on teTeX(lambda)
 BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX

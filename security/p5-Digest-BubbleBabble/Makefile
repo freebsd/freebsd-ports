@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesper@FreeBSD.org
+COMMENT=	Perl5 interface to a fingerprint in "bubble babble" format
 
 PERL_CONFIGURE=	yes
 

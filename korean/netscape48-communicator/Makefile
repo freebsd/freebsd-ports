@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/netscape-ko/ \
 DISTNAME=	${KOREAN_KIT}
 
 MAINTAINER?=	cjh@FreeBSD.org
+COMMENT=	Netscape web-surfboard with Korean resources
 
 # ?= for ports that include this Makefile
 RUN_DEPENDS?=	${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER_NAME}

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@freebsd.org
+COMMENT=	Berkeley POP 3 server (now maintained by Qualcomm)
 
 # Set WITH_POPPER_YOUBIN_SUPPORT variable in the environment to enable
 # youbin support.

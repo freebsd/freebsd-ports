@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A BurgerTime clone
 
 LIB_DEPENDS=	gengameng.4:${PORTSDIR}/devel/gengameng \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

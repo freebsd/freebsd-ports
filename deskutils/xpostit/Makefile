@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	PostIt (R) messages onto your X11 screen
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xpostit

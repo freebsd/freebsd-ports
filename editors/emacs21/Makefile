@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT=	GNU editing macros
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \

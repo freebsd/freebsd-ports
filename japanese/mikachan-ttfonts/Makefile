@@ -16,6 +16,7 @@ DISTNAME=	ver${PORTVERSION}
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	OpenBSD's netcat: cleaner code, familiar interface, IPv6 support
 
 MANSECTS=	1
 MAN1=		nc.1

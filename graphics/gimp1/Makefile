@@ -21,6 +21,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		mpeg_lib-1.3.1.tar.gz:mpeg
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	the GNU Image Manipulation Program
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

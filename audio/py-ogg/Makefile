@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyogg-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	Object-oriented Python bindings for the ogg library
 
 LIB_DEPENDS=	ogg.4:${PORTSDIR}/audio/libogg
 

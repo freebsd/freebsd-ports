@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Python bindings to the GNU Multiple Precision library
 
 LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
 

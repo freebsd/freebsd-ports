@@ -11,6 +11,7 @@ CATEGORIES=	net gnome
 MASTER_SITES=	http://mfcn.ilo.de/netspeed_applet/
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Applet that shows how much network traffic occurs on an interface
 
 LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		gtop-2.0:${PORTSDIR}/devel/libgtop2

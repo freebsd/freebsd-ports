@@ -16,6 +16,7 @@ DIST_SUBDIR=	htex
 EXTRACT_ONLY=	unpacked.tar.gz
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	An implementation of TeX for Hangul
 
 # it depends teTeX.
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX

@@ -11,6 +11,7 @@ CATEGORIES=	palm graphics
 MASTER_SITES=	http://www.trends.net/~mu/
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Palm Pilot Image Viewer to PGM Converter
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/ \
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	truckman@FreeBSD.org
+COMMENT=	A simple wrapper that combines chroot(8) and su(1) into  one  program
 
 MAN8=		chrootuid.8
 

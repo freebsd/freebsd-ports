@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/rfcascade/}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	blackend@FreeBSD.org
+COMMENT=	A simple tool to analyze noise and distortion of a RF system
 
 GNU_CONFIGURE=	YES
 

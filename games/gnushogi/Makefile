@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	gnushogi
 DISTNAME=	gnushogi-1.2p03
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	GNU version of Shogi
 
 DOCFILES=	BOOKFILES CHANGES CONTRIB COPYING GENERAL INSTALL PORTING \
 	README-FIRST listserv.ref shogi.rules tutorial1.gam tutorial2.gam

@@ -19,6 +19,7 @@ PATCHFILES=	wu-ftpd-262-v6-20020830.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	A replacement ftp server for Un*x systems
 
 USE_AUTOCONF=   yes
 CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \

@@ -14,6 +14,7 @@ DISTNAME=	libgda-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Provides uniform access to different kinds of data sources
 
 BUILD_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \

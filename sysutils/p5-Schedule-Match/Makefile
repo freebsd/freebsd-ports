@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Schedule
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Handles and detects clash between pattern-based schedules
 
 PERL_CONFIGURE=	yes
 

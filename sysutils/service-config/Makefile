@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.superscript.com/service-config/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Utility to create and configure svscan service directories
 
 RUN_DEPENDS=	supervise:${PORTSDIR}/sysutils/daemontools
 

@@ -13,6 +13,7 @@ DISTNAME=	KnowledgeKit-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A mechanism for the automatic creation and maintenance of Knowledge Bases
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 

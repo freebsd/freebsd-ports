@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	roger
 DISTNAME=		bttv-0.6.4
 
 MAINTAINER=		roger@freebsd.org
+COMMENT=	Get Videotext/Teletext (.vtx) and other VBI data from TV channels
 
 WRKSRC=			${WRKDIR}/bttv/apps/vbidecode
 

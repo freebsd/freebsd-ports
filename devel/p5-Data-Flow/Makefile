@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/T/TB/TBONE/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension for simple-minded recipe-controlled build of data
 
 PERL_CONFIGURE=	YES
 

@@ -15,6 +15,7 @@ PATCH_DIST_STRIP=	-p1
 PATCHFILES=		freebsd-mntent.patch # freebsd-build.patch
 
 MAINTAINER=		alane@FreeBSD.org
+COMMENT=	A file alteration monitor
 
 CFLAGS+=		-Wno-deprecated
 

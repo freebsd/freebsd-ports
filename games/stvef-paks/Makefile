@@ -14,6 +14,7 @@ DIST_SUBDIR=	stvef
 IGNOREFILES=	${ALLFILES}
 
 MAINTAINER=	nik@FreeBSD.org
+COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux .pk3 files
 
 # Make this a BUILD_ rather than a RUN_DEPEND so that it can create the
 # directory hierarchy for us.

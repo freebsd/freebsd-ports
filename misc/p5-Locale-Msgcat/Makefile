@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gioria@FreeBSD.org
+COMMENT=	Msgcat, a small Perl module for systems to support the XPG4 message catalog functions
 
 PERL_CONFIGURE=	YES
 

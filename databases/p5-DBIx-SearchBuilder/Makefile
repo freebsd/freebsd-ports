@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	DBIx
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension for easy SQL SELECT Statement generation
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Class/ReturnValue.pm:${PORTSDIR}/devel/p5-Class-ReturnValue

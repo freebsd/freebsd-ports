@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.goof.com/pcg/marc/data/ \
 DISTNAME=	root-tail-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Simple utility to tail files/logs to a root X window
 
 MAN1=		root-tail.1
 USE_IMAKE=	yes

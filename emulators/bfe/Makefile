@@ -11,6 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.qzx.com/bfe/_download/
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	X11 GUI for the bochs debugger
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs

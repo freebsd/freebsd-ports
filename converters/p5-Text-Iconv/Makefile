@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl interface to iconv() codeset conversion function
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

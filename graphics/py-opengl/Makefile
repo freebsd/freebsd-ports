@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	py-
 DISTNAME=	PyOpenGL-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	An OpenGL (and related library) interface for Python
 
 BUILD_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \

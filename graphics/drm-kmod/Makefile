@@ -11,6 +11,7 @@ CATEGORIES=	graphics x11
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	anholt
 MAINTAINER=	anholt@FreeBSD.org
+COMMENT=	A FreeBSD kernel modules for 3d acceleration with the DRI
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

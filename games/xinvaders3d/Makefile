@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	3D Vector-graphics Space Invaders clone for X
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

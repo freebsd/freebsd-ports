@@ -23,6 +23,7 @@ MASTER_SITE_SUBDIR=	sourcenav/releases/
 DISTNAME=	SN452
 
 MAINTAINER=	dburr@FreeBSD.ORG
+COMMENT=	Cygnus/GNU/Red Hat's IDE and source code analysis tool
 
 BROKEN=		"Does not build"
 

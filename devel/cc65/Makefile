@@ -19,6 +19,7 @@ WRKSRC=		${WRKDIR}/cc65-2.8.0
 DISTNAME=	cc65-sources-2.8.0
 
 MAINTAINER=	hoek@FreeBSD.org
+COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

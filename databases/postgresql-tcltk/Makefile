@@ -9,6 +9,7 @@ PORTNAME=	postgresql-tcltk
 CATEGORIES=	databases tcl83 tk83
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	An TCL interface to the database PostgreSQL, including a tk GUI
 
 POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES

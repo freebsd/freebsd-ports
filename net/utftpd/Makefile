@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.ohse.de/uwe/releases/
 
 MAINTAINER=	andreas@FreeBSD.org
+COMMENT=	secure tftpd server with fine grained access and revision control
 
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES

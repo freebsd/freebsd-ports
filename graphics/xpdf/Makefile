@@ -19,6 +19,7 @@ PATCH_SITE_SUBDIR=	support/xpdf
 PATCHFILES=	xpdf-2.01-patch1
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	Display PDF files, and convert them to other formats
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \

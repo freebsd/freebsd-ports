@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jadfb158
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	Jad, a Java decompiler
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

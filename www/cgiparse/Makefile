@@ -12,6 +12,7 @@ MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/	\
 		http://www.funkthat.com/~jmg/
 
 MAINTAINER=	jmg@FreeBSD.org
+COMMENT=	C library to parse CGI Forms
 
 LIB_DEPENDS=	mime.1:${PORTSDIR}/devel/mime:install
 

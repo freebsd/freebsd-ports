@@ -14,6 +14,7 @@ DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Extra Korean PostScript font collection for HLaTeX(UHC encoding)
 
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/uhc.ks:${PORTSDIR}/korean/hlatex
 

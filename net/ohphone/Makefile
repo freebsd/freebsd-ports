@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 DISTNAME=	ohphone_${PORTVERSION}
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	H323 Video Conferencing Program, compatible with NetMeeting
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

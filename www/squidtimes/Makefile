@@ -15,6 +15,7 @@ DISTNAME=	squidtimes-1.12-freebsd.bin
 EXTRACT_SUFX=
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Generates a report of average transfer times of Squid cache
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

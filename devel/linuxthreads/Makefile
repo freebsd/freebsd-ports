@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	glibc
 DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
 MAINTAINER=	tegge@freebsd.org
+COMMENT=	POSIX pthreads implementation using rfork to generate kernel threads
 
 .include <bsd.port.pre.mk>
 

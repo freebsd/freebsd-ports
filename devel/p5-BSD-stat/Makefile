@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	BSD
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A stat() with BSD 4.4 extentions
 
 PERL_CONFIGURE=	yes
 

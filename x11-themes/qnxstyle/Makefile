@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	$(KDELOOKITEM)-${PORTNAME}-$(PORTVERSION)
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	A QNX style/theme for KDE3
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14

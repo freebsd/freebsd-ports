@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/
 
 MAINTAINER=	des@FreeBSD.org
+COMMENT=	A toolkit for 3D games and simulations
 
 # These should be LIB_DEPENDS, but it seems bsd.port.mk can't handle
 # versionless or static libraries.

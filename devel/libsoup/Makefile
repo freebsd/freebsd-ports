@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 

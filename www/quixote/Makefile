@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A framework for developing web applications in Python
 
 BUILD_DEPENDS=	${PYDISTUTILS}
 

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.hacom.nl/~richard/software/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A proxy authentication module against an SMB server
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24 \
 		${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba

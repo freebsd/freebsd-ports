@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.gnetlibrary.org/src/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A simple network library built upon Glib
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

@@ -15,6 +15,7 @@ PATCHFILES=	bbapm-0.0.1-freebsd-patch-2.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	APM monitor for the Blackbox slit
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

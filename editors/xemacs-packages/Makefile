@@ -119,6 +119,7 @@ DISTFILES=	\
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	Basic XEmacs elisp packages(xemacs-packages)
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}

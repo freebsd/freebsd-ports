@@ -14,6 +14,7 @@ DISTFILES=	${BOOTSTRAP} \
 		pm3-${PORTVERSION}-src.tar.bz2
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT=	Compiler and base libraries of the Polytechnique Montreal Modula-3 distribution
 
 DIST_SUBDIR=	pm3
 WRKSRC=		${WRKDIR}/pm3-base-${PORTVERSION}

@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Database Independent Abstraction Layer for C
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

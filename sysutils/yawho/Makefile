@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
 MAINTAINER=	dannyboy@FreeBSD.org
+COMMENT=	Simple 'w'-like program; displays connection type and login shell PID
 
 USE_REINPLACE=	yes
 

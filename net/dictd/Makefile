@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.dict.org/pub/dict/ \
 MASTER_SITE_SUBDIR=		dict
 
 MAINTAINER?=	dd@FreeBSD.org
+COMMENT=	Dict protocol (RFC 2229) server
 
 MAN1=		dictzip.1
 MAN8=		dictd.8

@@ -15,6 +15,7 @@ DISTFILES=	gap4r3.tar.gz \
 DIST_SUBDIR=	gap
 
 MAINTAINER=	keith@FreeBSD.org
+COMMENT=	GAP is a system for computational discrete algebra
 
 NO_CDROM=	"Don't sell for profit."
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A converter between context diff and unidiff formats
 
 PROGRAMS=	cd2ud cdiffreverse ud2cd udiffreverse
 

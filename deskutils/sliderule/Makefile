@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	The part of X11R3's xcalc featuring a slide rule
 
 USE_IMAKE=	yes
 MAN1=		sliderule.1

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ggv/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME ghostscript viewer
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 

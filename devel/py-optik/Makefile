@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Optik-${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	A command-line parsing library for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

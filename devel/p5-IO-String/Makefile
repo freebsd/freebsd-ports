@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	Simplified Perl5 module to handle I/O on in-core strings
 
 PERL_CONFIGURE=	yes
 

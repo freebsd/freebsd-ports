@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.securityfoo.net/ray/projs/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Tool for CVS pserver user administration
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

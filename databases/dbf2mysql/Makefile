@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mysql.nixc.net/pub/mysql/Downloads/Contrib/ \
 		ftp://ftp.plig.org/pub/mysql/Downloads/Contrib/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Programs to convert .dbf files to MySQL tables and vice versa
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 

@@ -11,6 +11,7 @@ CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://www.inxsoft.net/wmjupiter/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	Dockapp that displays information on jupiter
 
 WRKSRC=		${WRKDIR}/wmJupiter
 USE_X_PREFIX=	yes

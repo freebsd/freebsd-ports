@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Whois Client Interface for Perl5
 
 PERL_CONFIGURE=	YES
 

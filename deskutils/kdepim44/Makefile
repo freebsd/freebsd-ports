@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Personal Information Management tools for KDE
 
 LIB_DEPENDS=	pisock:${PORTSDIR}/palm/pilot-link
 

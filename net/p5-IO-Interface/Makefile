@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	IO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl extension for access to network card configuration information
 
 PERL_CONFIGURE=	yes
 

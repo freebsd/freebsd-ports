@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 
 MAINTAINER=	assar@freebsd.org
+COMMENT=	A free AFS client implementation
 
 BROKEN=		"Does not build"
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	will@FreeBSD.org
+COMMENT=	Multi-way scrolling shoot 'em up game for X.  Strangely addictive
 
 USE_IMAKE=	yes
 ALL_TARGET=	xkobo

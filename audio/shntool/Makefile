@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.Org
+COMMENT=	Multi-purpose .wav/.shn processing utility
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

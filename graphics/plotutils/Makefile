@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	chuckr@FreeBSD.org
+COMMENT=	A plotting library and toolkit
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

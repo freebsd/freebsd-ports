@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/benchmark
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Unix Benchmark Utility for CPU(s) and memory
 
 HAS_CONFIGURE=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	A console graphics viewer using the svga console graphics library
 
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \

@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/textproc/ \
 		ftp://ftp.sunet.se/pub3/vendor/sco/skunkware/src/textproc/
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	An easy to use but powerful document formatting/preparation language
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/latex \
 		dvips:${PORTSDIR}/print/dvips

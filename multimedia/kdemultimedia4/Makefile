@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Multimedia utilities for the KDE integrated X11 desktop
 
 RUN_DEPENDS+=	xanim:${PORTSDIR}/graphics/xanim
 LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg \

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	state-threads
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	State Threads Library for Internet Applications
 
 INSTALLS_SHLIB=	yes
 ONLY_FOR_ARCHS=	i386 alpha

@@ -20,6 +20,7 @@ DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 DIST_SUBDIR=	bind-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	The Berkeley Internet Name Daemon, an implementation of DNS
 
 .if defined(PORT_REPLACES_BASE_BIND8)
 PKGNAMESUFFIX=	-base

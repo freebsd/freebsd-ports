@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A library for creating trees of CORBA Interface Definition Language files
 
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	An addressbook program with mutt mail client support
 
 .include <bsd.port.pre.mk>
 

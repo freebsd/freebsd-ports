@@ -14,6 +14,7 @@ DISTNAME=	eog-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The Eye Of Gnome image viewer
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gnomeprint-2-2.0:${PORTSDIR}/print/libgnomeprint \

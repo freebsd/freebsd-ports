@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An implementation of the ATK interfaces for GTK+ widgets
 
 LIB_DEPENDS=	gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas
 

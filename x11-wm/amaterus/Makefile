@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.taiyaki.org/amaterus/src/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A GTK+ window manager
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 

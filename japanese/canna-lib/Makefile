@@ -13,6 +13,7 @@ MASTER_SITES=	http://downloads.sourceforge.jp/canna/2181/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Kana-Kanji conversion system
 
 USE_IMAKE=	yes
 USE_X_PREFIX=	no

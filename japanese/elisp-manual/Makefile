@@ -17,6 +17,7 @@ PATCHFILES=	elisp-manual-20-2.5-jp.ERRATA.000422.jis \
 		elisp-manual-20-2.5-jp.ERRATA.000508.jis
 
 MAINTAINER=	okazaki@FreeBSD.org
+COMMENT=	Japanese translation of the GNU Emacs Lisp Reference Manual
 
 EMACS_PORT_NAME=	emacs20
 EMACS_NO_RUN_DEPENDS=	YES

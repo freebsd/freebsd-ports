@@ -13,6 +13,7 @@ DISTNAME=	netshow_linux
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	dburr@FreeBSD.org
+COMMENT=	Microsoft NetShow video stream player
 
 RESTRICTED=	"Commercial software"
 NO_CDROM=	${RESTRICTED}

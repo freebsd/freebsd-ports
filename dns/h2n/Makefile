@@ -14,6 +14,7 @@ DISTNAME=	dns
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Translate host table to name server file format
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

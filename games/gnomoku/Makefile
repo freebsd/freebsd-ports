@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A Gomoku game for GNOME Desktop
 
 LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 

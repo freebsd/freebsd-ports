@@ -12,6 +12,7 @@ MASTER_SITES=	http://devel.pluto.linux.it/projects/libGringotts/current/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Library for encapsulating/safekeeping data in encrypted/compressed form
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash

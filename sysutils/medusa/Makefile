@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/medusa/0.5
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME filesystem indexer
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

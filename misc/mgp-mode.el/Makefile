@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://TypeHack.aial.hiroshima-u.ac.jp/pub/Emacs/MagicPoint/
 DISTFILES=	${PORTNAME}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	A mode of Emacs for editing MagicPoint files
 
 RUN_DEPENDS=	mgp:${PORTSDIR}/misc/magicpoint
 

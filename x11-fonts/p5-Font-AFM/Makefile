@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Font
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	An interface to Adobe font metrics files
 
 PERL_CONFIGURE=	yes
 

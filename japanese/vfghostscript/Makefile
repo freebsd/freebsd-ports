@@ -26,6 +26,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	GNU Postscript interpreter + Japanese VFontlib patch
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 

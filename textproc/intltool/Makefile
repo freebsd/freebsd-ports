@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.25
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Xml internationalization support for GNOME, and others
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

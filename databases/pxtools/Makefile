@@ -11,6 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://jan.kneschke.de/projects/pxtools/download/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	Collection of tools to work with Paradox databases
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		intl.4:${PORTSDIR}/devel/gettext

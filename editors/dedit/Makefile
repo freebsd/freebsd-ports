@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	pool/main/d/dedit
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A simple GNOME i18n editor
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

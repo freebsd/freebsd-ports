@@ -15,6 +15,7 @@ DISTFILES=	siphon-v.666.tar.gz siphon-report.pl
 EXTRACT_ONLY=	siphon-v.666.tar.gz
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Passive host OS identifier using characteristics of sniffed traffic
 
 WRKSRC=		${WRKDIR}/siphon-v.666
 

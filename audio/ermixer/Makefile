@@ -15,6 +15,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	http://erevan.cuore.org/files/ermixer/
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	A command-line, ncurses, and Qt-GUI OSS audio mixer
 
 USE_QT_VER=	3
 USE_GMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Data
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Data::JavaScript - Dump perl structures to JavaScript code
 
 PERL_CONFIGURE=	yes
 

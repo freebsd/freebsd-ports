@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kappa@freebsd.org.ua
+COMMENT=	Very simple Perl interface to query raw whois data
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install

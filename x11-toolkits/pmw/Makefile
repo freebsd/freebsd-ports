@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pmw.${PORTVERSION}
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	High-level compound graphics widgets for Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 LIB_DEPENDS=	BLT24.2:${PORTSDIR}/x11-toolkits/blt

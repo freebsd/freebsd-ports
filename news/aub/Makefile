@@ -12,6 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://yukidoke.org/~mako/projects/aub/download/
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Assemble usenet binaries
 
 NO_BUILD=	yes
 MAN1=		aub.1 aubconf.1

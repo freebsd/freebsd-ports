@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	. old
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A perl5 module providing rudimentary access to SNMPv1 and v2 agents
 
 PERL_CONFIGURE=	yes
 

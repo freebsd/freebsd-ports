@@ -11,6 +11,7 @@ CATEGORIES=	www tcl83
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83

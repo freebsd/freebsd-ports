@@ -15,6 +15,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-${PORTVERSION}.tar.gz
 
 MAINTAINER=	anholt@freebsd.org
+COMMENT=	A 3d penguin racing game using OpenGL
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		tcl83.1:${PORTSDIR}/lang/tcl83

@@ -13,6 +13,7 @@ DISTNAME=	Fudgit_${PORTVERSION}
 DISTFILES=	fudgit_${PORTVERSION}.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Multi-purpose data-processing and fitting program
 
 USE_GMAKE=	yes
 MAN1=		fudgit.1

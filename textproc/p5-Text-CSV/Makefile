@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markm@FreeBSD.org
+COMMENT=	Composition and decomposition of comma-separated values
 
 PERL_CONFIGURE=	yes
 

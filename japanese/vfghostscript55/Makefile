@@ -29,6 +29,7 @@ DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	GNU Postscript and PDF interpreter with Japanese vector font library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \

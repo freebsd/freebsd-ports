@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Dialog
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	Perl interface to dialog(3)
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 500007

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.anti-particle.com/downloads/
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A file-find utility for Gnome loosely modeled after the Windoze utility
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome

@@ -12,6 +12,7 @@ CATEGORIES=	print
 DISTFILES=
 
 MAINTAINER=	jdp@FreeBSD.org
+COMMENT=	Virtual Paper document storage and viewing software
 
 BUILD_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-forms
 RUN_DEPENDS=	${L1}libm3vbtkit${L2}:${PORTSDIR}/lang/pm3-forms

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	File manager for X Window
 
 # xnc will use the following programs if you have them installed.
 #RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip		\

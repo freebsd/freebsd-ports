@@ -14,5 +14,6 @@ MASTER_SITE_SUBDIR= wes
 
 
 MAINTAINER=	wes@freebsd.org
+COMMENT=	An ident server which refuses to divulge security information
 
 .include <bsd.port.mk>

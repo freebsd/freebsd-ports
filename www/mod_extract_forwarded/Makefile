@@ -12,6 +12,7 @@ MASTER_SITES=	http://web.systhug.com/mod_extract_forwarded/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	An Apache module that can make proxied requests appear with client IP
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

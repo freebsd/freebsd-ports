@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	leeym@FreeBSD.org
+COMMENT=	A tool for easily running the same commands on multiple hosts
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 

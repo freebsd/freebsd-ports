@@ -14,6 +14,7 @@ DIST_SUBDIR=	gnome2
 DISTNAME=	eel-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Generally useful classes and extensions to GNOME
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \

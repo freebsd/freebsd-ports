@@ -18,6 +18,7 @@ PATCHFILES=	ncftp-314-v6-20020709.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	ftp replacement with advanced user interface
 
 .if defined(INSTALL_AS_NCFTP)
 LATEST_LINK=	ncftp

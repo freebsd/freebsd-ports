@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	psi
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	QSSL is a Qt plugin that helps applications use OpenSSL
 
 SHLIB_MAJOR=	0
 

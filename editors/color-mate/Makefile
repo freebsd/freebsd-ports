@@ -11,6 +11,7 @@ CATEGORIES=	editors elisp
 MASTER_SITES=	http://www.netlab.is.tsukuba.ac.jp/~yokota/archive/
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Color customizing module for Emacsen
 
 BUILD_DEPENDS=	lndir:${PORTSDIR}/x11/XFree86 \
 		showrgb:${PORTSDIR}/x11/XFree86

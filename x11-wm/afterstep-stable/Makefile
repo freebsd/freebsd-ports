@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	stable
 DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A stable version of the AfterStep window manager
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

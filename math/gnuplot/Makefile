@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	chuckr@FreeBSD.org
+COMMENT=	A command-driven interactive function plotting program
 
 LIB_DPEENDS=
 .if !defined(WITHOUT_PNG)

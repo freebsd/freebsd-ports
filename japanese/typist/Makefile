@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.src.tar.gz
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Typing lessons (Japanese version)
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		typist.1

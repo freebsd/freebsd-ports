@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ameth.org/~veilleux/PortScan/
 DISTNAME=	PortScanner-${PORTVERSION}
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	A simple and easy to use TCP port scanner
 
 do-build:
 	@ ${CC} -o ${WRKSRC}/portscanner ${CFLAGS} ${WRKSRC}/portscanner.c

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=jedgar
 DISTNAME=	${PORTNAME}hv210-1
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	PDP-8, PDP-11, PDP-1, other 18b PDP, Nova, and IBM 1401 simulators
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

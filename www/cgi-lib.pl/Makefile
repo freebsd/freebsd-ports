@@ -14,6 +14,7 @@ DISTNAME=	cgi-lib.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	De facto standard library for creating CGI in perl
 
 USE_PERL5=	YES
 NO_BUILD=	YES

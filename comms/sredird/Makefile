@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/serial
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	RFC 2217 compliant serial port redirector
 
 do-build:
 	${CC} ${CFLAGS} -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		crypto${PORTVERSION:S/.//g}
 
 MAINTAINER=		greid@ukug.uk.freebsd.org
+COMMENT=	A free C++ class library of cryptographic schemes
 
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes

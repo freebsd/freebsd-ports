@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	A clock with eyes following the mouse pointer
 
 #ALL_TARGET=	all
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Online presence and instant messaging server
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

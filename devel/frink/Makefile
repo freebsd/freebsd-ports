@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	A tcl formatter and static tester
 
 #MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	maybe

@@ -12,6 +12,7 @@ MASTER_SITES=	http://support.bungie.com/ftp/pub/win/misc/
 DISTNAME=	metaserver2open
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	Bungie.net MythII Metaserver Open Source
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

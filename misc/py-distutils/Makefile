@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Distutils-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	Python Module Distribution Utilities
 
 USE_PYTHON=	yes
 

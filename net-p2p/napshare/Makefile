@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	napshare
 
 MAINTAINER=	mikeh@FreeBSD.org
+COMMENT=	A GTK based Gnutella client
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

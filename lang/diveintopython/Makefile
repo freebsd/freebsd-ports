@@ -23,6 +23,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}-html-${VERSIONSTR}${EXTRACT_SUFX}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A free Python tutorial book that is "not For Dummies(tm)"
 
 NO_BUILD=	YES
 USE_REINPLACE=	YES

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://regexps.com/pub/src/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A distributed source code management / revision control system
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes

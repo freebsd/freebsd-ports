@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.fi.muni.cz/~thanh/download/
 DISTNAME=	vntex
 
 MAINTAINER=     obrien@FreeBSD.org
+COMMENT=	teTeX Vietnamese language + font support
 
 #	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
 RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A module to format HTML to text or PS
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Font/AFM.pm:${PORTSDIR}/x11-fonts/p5-Font-AFM

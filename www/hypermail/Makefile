@@ -11,6 +11,7 @@ CATEGORIES=	www mail
 MASTER_SITES=	http://isc.hypermail.org/dist/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A program to generate a cross-referenced HTML mail archive
 
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		pcre.0:${PORTSDIR}/devel/pcre

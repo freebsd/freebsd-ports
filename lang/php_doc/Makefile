@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	php_manual_${PHP_LANG}
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	PHP documentation in HTML
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 DISTNAME=	cl74unix
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A strongly typed functional language belonging to the ML family
 
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/cl74

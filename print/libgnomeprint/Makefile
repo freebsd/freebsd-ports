@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gnome print support library
 
 LIB_DEPENDS=	bonobo-2.0:${PORTSDIR}/devel/libbonobo \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \

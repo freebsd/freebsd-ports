@@ -14,6 +14,7 @@ PKGNAMESUFFIX=	-x11
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	A collection of 5 "fixed" fonts for X11 from www.brama.com
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
 

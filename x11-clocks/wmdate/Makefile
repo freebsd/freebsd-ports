@@ -12,6 +12,7 @@ MASTER_SITES=	http://solfertje.student.utwente.nl/~dalroi/apps/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
+COMMENT=	Date app for the WindowMaker dock
 
 BUILD_DEPENDS=	${X11BASE}/include/dockapp.h:${PORTSDIR}/x11-wm/libdockapp
 

@@ -11,6 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 
 MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	A Run box for Blackbox
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

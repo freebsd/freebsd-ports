@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/old/ \
 		http://www.komquats.com/distfiles/
 
 MAINTAINER=	cy@FreeBSD.org
+COMMENT=	An ftp replacement that runs over an ssh tunnel
 
 .include <bsd.port.pre.mk>
 

@@ -11,6 +11,7 @@ CATEGORIES=	devel lang
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	C-like compiler that translates input code to the HP48 RPN language
 
 USE_BISON=	yes
 GNU_CONFIGURE=	yes

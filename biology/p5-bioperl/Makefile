@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A collection of Perl modules for bioinformatics
 
 # These are all run-time dependencies, but listing them in ${BUILD_DEPENDS}
 # prevents a flood of build-time warnings.

@@ -14,6 +14,7 @@ MASTER_SITES=	http://web.wt.net/~dblhack/ \
 		http://bonn.linux.tucows.com/files/x11/office/
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	X11 front end to the MySQL database engine
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.10:${PORTSDIR}/databases/mysql323-client

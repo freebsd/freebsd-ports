@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	office
 DISTFILES=	${DISTNAME}.tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Personal and group calendar utility
 
 NO_CDROM=	"Don't sell for profit"
 EXTRACT_ONLY=	${DISTNAME}.tar.gz

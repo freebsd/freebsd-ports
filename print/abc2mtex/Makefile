@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	support/abc2mtex
 DISTNAME=		${PORTNAME}${PORTVERSION}
 
 MAINTAINER=		joerg@freebsd.org
+COMMENT=	Music TeX converter from "abc" to MusiXTeX format
 
 RUN_DEPENDS=		musixtex:${PORTSDIR}/print/musixtex
 

@@ -13,6 +13,7 @@ DISTNAME= 	SPIP-v1-5
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gioria@FreeBSD.org
+COMMENT=	A web publication system
 
 BUILD_DEPENDS= 	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/lang/php3

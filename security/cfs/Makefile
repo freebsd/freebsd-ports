@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.crypto.com/software/
 
 MAINTAINER=	green@FreeBSD.org
+COMMENT=	A cryptographic file system implemented as a user-space NFS server
 
 ALL_TARGET=	cfs
 MAN1=		cattach.1 cdetach.1 cmkdir.1 cpasswd.1 cfssh.1

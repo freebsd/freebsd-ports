@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Extract pages from DVI files
 
 SCRIPTS_ENV=	CFLAGS="${CFLAGS}"
 

@@ -20,6 +20,7 @@ EXTRACT_SUFX=   .tgz
 DIST_SUBDIR=	povray35
 
 MAINTAINER=	maho@FreeBSD.org
+COMMENT=	Persistence of Vision Ray Tracer
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff:${PORTSDIR}/graphics/tiff \

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-guile/0.20
 DISTNAME=	gnome-guile-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Guile binding library for GTK+
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.ross.net/funnelweb/funnelweb_v320/
 DISTNAME=	funnelweb_v320_source
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A powerful literate-programming macro pre-processor
 
 WRKSRC=		fw_src/source
 

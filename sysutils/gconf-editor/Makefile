@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	A gconf database editor for the GNOME 2.0 environment
 
 LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2
 

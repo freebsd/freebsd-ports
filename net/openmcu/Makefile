@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.openh323.org/bin/ \
 DISTNAME=	openmcu_${PORTVERSION}
 
 MAINTAINER=	roger@FreeBSD.org
+COMMENT=	OpenMCU hosts a conference call for H323 Video Conferencing users
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

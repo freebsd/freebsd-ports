@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${APP_TITLE}-${PORTVERSION}
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	JBoss 2, an open-source J2EE application server
 
 USE_JAVA=	1.2+
 

@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/sa/
 PKGNAMEPREFIX=	ossp-
 
 MAINTAINER=	alane@FreeBSD.org
+COMMENT=	An abstraction library for the Unix socket API
 
 USE_GNAKE=	yes
 GNU_CONFIGURE=	yes

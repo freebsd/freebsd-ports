@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	telnetx+transit.src.940401
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Telnet client with binary transfer protocols support
 
 RUN_DEPENDS+=	bp:${PORTSDIR}/comms/bpl+
 RUN_DEPENDS+=	kermit:${PORTSDIR}/comms/kermit

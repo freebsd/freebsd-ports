@@ -14,6 +14,7 @@ DISTNAME=	perl-xml-dbms-1.03
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Perl port of Java package XML-DBMS v1.0
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \

@@ -14,6 +14,7 @@ DISTNAME=	VFlib2-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mita@FreeBSD.org
+COMMENT=	Japanese Vector font library
 
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext

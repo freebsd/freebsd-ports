@@ -11,6 +11,7 @@ CATEGORIES=	astro
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	3-dimensional viewer for star charts
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

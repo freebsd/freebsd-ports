@@ -13,6 +13,7 @@ EXTRACT_SUFX=	# none
 DISTNAME=	${PORTNAME}.pl-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Create resources for tgif, vfontcap, .., for Japanese TrueType fonts
 
 RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
 

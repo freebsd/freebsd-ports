@@ -21,6 +21,7 @@ PATCHFILES=	nc-v6-20000918.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Simple utility which reads and writes data across network connections
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd

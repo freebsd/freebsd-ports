@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	File
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Perl convenience wrapper for the rsync(1) program
 
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 

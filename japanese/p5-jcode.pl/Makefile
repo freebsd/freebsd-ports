@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Perl5 library for Japanese character code conversion
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

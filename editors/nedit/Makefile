@@ -16,6 +16,7 @@ DISTFILES=	nedit-5.3-source.tar.bz2 nedit.app-defaults
 EXTRACT_ONLY=	nedit-5.3-source.tar.bz2
 
 MAINTAINER=	deischen@freebsd.org
+COMMENT=	An X11/Motif GUI text editor for programs and plain text files
 
 USE_BZIP2=	yes
 USE_MOTIF=	yes

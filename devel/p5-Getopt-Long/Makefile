@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Getopt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl module for extended processing of command line options
 
 PERL_CONFIGURE=	yes
 

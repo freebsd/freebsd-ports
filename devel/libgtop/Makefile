@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME top library
 
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 

@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	pat@FreeBSD.org
+COMMENT=	A simple Lisp interpreter
 
 GNU_CONFIGURE=	yes
 

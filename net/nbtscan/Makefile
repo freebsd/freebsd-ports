@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	NetBIOS name network scanner
 
 GNU_CONFIGURE=	yes
 

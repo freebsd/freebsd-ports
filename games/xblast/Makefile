@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 DISTNAME=	${PORTNAME}-${PORTVERSION}.sound
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	Multi-player real-time strategy game for X11
 
 WRKSRC=		${WRKDIR}/XBlast-2.6-sound
 USE_IMAKE=	yes

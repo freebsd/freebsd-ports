@@ -15,6 +15,7 @@ DISTNAME=	pgp50i
 EXTRACT_SUFX=	-unix-src.tar.gz
 
 MAINTAINER=	markm@FreeBSD.org
+COMMENT=	Public-Key encryption for the masses
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes

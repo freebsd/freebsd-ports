@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/richard/
 
 MAINTAINER=	jkoshy@freebsd.org
+COMMENT=	A validating XML parser written in C
 
 MAN1=	rxp.1
 

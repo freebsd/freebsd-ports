@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jesper@FreeBSD.org
+COMMENT=	Perl5 interface to a Diffie-Hellman key exchange system
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random

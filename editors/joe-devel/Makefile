@@ -14,6 +14,7 @@ DISTNAME=	joe-${PORTVERSION:S/p/-pre/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Development version of Joe's own editor
 
 MAN1=		joe.1
 

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.gnu.org/software/grub/
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	GRand Unified Bootloader
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

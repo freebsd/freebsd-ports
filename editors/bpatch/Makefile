@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	joerg@FreeBSD.org
+COMMENT=	A hex editor that doesn't load the whole file at once
 
 MAN1=		bpatch.1
 NO_WRKSUBDIR=   yes

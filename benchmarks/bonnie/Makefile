@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.acnc.com/benchmarks/ \
 DISTNAME=	bonnie
 
 MAINTAINER=	se@FreeBSD.org
+COMMENT=	Performance Test of Filesystem I/O
 
 NO_WRKSUBDIR=	yes
 #CFLAGS+=	-static

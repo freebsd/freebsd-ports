@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2 \
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Callback Framework for C++
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		pkg-config:${PORTSDIR}/devel/pkgconfig

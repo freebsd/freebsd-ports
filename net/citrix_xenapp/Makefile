@@ -12,6 +12,7 @@ MASTER_SITES=
 DISTNAME=	${PORTNAME}-linuxx86
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Citrix(R) client for the Microsoft Windows Terminal Server
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 

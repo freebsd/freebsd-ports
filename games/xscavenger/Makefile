@@ -13,6 +13,7 @@ DISTNAME=	xscavenger-142
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	eivind@FreeBSD.org
+COMMENT=	A Lode Runner clone for X11
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_IMAKE=	yes

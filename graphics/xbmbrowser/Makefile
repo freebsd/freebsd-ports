@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	utilities
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	View complete directories of X bitmaps and X pixmaps
 
 USE_IMAKE=	yes
 USE_XPM=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gide/0.3
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GTK-based IDE for the C programming Language
 
 BUILD_DEPENDS=	xml-i18n-update:${PORTSDIR}/textproc/xml-i18n-tools
 LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl \

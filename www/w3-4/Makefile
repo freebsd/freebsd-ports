@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	emacs-w3
 DISTNAME=	w3-4.0pre.46
 
 MAINTAINER=	kiri@FreeBSD.org
+COMMENT=	WWW browser based on emacs/mule
 
 BUILD_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS?=	emacs-20.7:${PORTSDIR}/editors/emacs20

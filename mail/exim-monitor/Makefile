@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 DISTNAME=	exim-${PORTVERSION}
 
 MAINTAINER=	sheldonh@FreeBSD.org
+COMMENT=	The Exim monitor for the Exim MTA
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

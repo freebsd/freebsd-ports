@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.htdig.org/files/ \
 		ftp://ftp.ntua.gr/pub/www/htdig/
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	A www indexing and searching system
 
 RUN_DEPENDS=	${LOCALBASE}/share/doc/apache:${PORTSDIR}/www/apache13
 

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Ruby interface to Interbase library
 
 LIB_DEPENDS=	gds:${PORTSDIR}/databases/firebird
 

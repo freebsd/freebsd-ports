@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-utils/1.4
 DISTNAME=	gnome-utils-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME support utilities
 
 LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
 

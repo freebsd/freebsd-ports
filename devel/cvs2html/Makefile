@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	sada
 EXTRACT_SUFX=	.gz
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	Perl script to turn ``cvs log'' output into HTML
 
 USE_PERL5=	yes
 NO_BUILD=	yes

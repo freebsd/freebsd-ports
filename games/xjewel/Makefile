@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/ \
 EXTRACT_SUFX=	.tar.z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	X11 dropping jewels game
 
 USE_IMAKE=	yes
 

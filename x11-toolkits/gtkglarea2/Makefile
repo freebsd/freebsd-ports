@@ -14,6 +14,7 @@ DISTNAME=	gtkglarea-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An OpenGL widget for the GTK+2 GUI toolkit
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 

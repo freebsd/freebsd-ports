@@ -12,6 +12,7 @@ MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Automatically create a Japanese font environment by TrueType fonts
 
 RUN_DEPENDS=	mkres.pl:${PORTSDIR}/japanese/p5-mkres \
 		${X11BASE}/lib/X11/ja_JP.eucJP/app-defaults/Tgif:${PORTSDIR}/japanese/tgif \

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Spreadsheet
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Get information from Excel file
 
 BUILD_DEPENDS=	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite
 RUN_DEPENDS=	${BUILD_DEPENDS}

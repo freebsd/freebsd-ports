@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-media/1.2
 DISTNAME=	gnome-media-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Multimedia applications for the GNOME desktop
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 

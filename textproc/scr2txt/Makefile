@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR= nik
 NO_WRKSUBDIR=	yes
 
 MAINTAINER=	nik@freebsd.org
+COMMENT=	Converts the output of "vidcontrol -p" to text
 
 MAN1=		scr2txt.1
 MANCOMPRESSED=	yes

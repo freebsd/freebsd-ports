@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jmz
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	The classic arcade game
 
 .if defined(WITHOUT_X11)
 MAKE_ARGS=	NO_X11=yes

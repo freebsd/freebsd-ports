@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.gtranslator.org/download/releases/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A GNOME application for developing ".pot" files used with GNU Gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	A hangul console
 
 ONLY_FOR_ARCHS=	i386
 

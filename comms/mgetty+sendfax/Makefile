@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	mgetty1.1.30-Dec16
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Handle external logins, send and receive faxes
 
 USE_PERL5=	yes
 

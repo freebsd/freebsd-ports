@@ -24,6 +24,7 @@ DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
 EXTRACT_ONLY=	112887-03.tar
 
 MAINTAINER=	mbr@FreeBSD.org
+COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be bought and downloaded direct from Sun via www interface'

@@ -15,6 +15,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
 MASTER_SITE_SUBDIR=	alane
 
 MAINTAINER=		phoenix@freebsd.org # alane@fbsd and trevor@fbsd
+COMMENT=	Phoenix is a fast, low-overhead browser from the Mozilla project
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

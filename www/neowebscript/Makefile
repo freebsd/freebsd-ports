@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nws
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Embeds a TCL8 interpreter in the Apache server
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	neo82:${PORTSDIR}/devel/tcl-neo

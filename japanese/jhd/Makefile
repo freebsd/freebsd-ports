@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iamas.ac.jp/UNIX/File/
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	Japanese Hexdecimal Dump
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

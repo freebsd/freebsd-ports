@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.etse.urv.es/~dmanye/quelcom/src/
 
 MAINTAINER=	greid@FreeBSD.org
+COMMENT=	A set of command-line utilities for MP3 and wave files
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

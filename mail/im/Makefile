@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.mew.org/pub/Mew/ \
 		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes
 USE_AUTOCONF=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
 DISTNAME=	netperf-2.2pl3
 
 MAINTAINER=	sumikawa@FreeBSD.org
+COMMENT=	Rick Jones' <raj@cup.hp.com> network performance benchmarking package
 
 MAKEFILE=	makefile
 MAN1=		netperf.1 netserver.1

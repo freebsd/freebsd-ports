@@ -13,6 +13,7 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A Zope product to simplify the construction of navigation bars
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 

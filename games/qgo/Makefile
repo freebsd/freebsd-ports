@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A Go board and SGF editor written with the Qt library
 
 USE_REINPLACE=	yes
 USE_QT_VER=	3

@@ -11,6 +11,7 @@ CATEGORIES=	net security
 MASTER_SITES=	http://www.rtfm.com/ssldump/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	SSLv3/TLS network protocol analyzer
 
 USE_OPENSSL=	YES
 

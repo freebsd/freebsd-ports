@@ -13,6 +13,7 @@ DISTNAME=	tome-212-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Roguelike dungeon exploration game based on JRR Tolkien's works
 
 ALL_TARGET=	# empty
 MAKEFILE=	makefile.std

@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.pratyeka.org/ctrace/download/
 
 MAINTAINER=	kris@FreeBSD.org
+COMMENT=	Multiprotocol traceroute tool
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/RawIP.pm:${PORTSDIR}/net/p5-Net-RawIP

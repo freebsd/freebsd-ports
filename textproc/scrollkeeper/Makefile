@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An Open Document Cataloging Project
 
 LIB_DEPENDS=	xslt.1:${PORTSDIR}/textproc/libxslt \
 		intl.4:${PORTSDIR}/devel/gettext

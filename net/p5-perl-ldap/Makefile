@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	scrappy@FreeBSD.org
+COMMENT=	A Client interface to LDAP servers
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \

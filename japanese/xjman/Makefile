@@ -14,6 +14,7 @@ MASTER_SITES?=	${MASTER_SITE_PORTS_JP} \
 		http://xjman.dsl.gr.jp/dist/
 
 MAINTAINER?=	sada@FreeBSD.org
+COMMENT=	Japanized X manual from "The X Japanese Documentation Project"
 
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 

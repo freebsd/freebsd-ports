@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	A tool to merge and sort by date http log files
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

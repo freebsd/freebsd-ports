@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.student.lu.se/~nbi98oli/src/obsolete/
 
 MAINTAINER=	mph@freebsd.org
+COMMENT=	A Gtk-based program for watching files (e.g. logs) in a window
 
 USE_XLIB=	yes
 USE_GNOMENG=	yes

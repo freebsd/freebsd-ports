@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.class
 EXTRACT_ONLY=
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A Sun's powerful and extensible IDE for Java
 
 USE_JAVA=	1.3+
 JAVAVM=		${JAVA_HOME}/bin/java

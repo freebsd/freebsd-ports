@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.gwdg.de/pub/misc/mysql/Downloads/Contrib/ \
 		ftp://mysql.secsup.org/pub/software/mysql/Downloads/Contrib/
 
 MAINTAINER=	dirk@FreeBSD.org
+COMMENT=	X11 front end to the mysqladmin command of the MySQL database engine
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.10:${PORTSDIR}/databases/mysql323-client

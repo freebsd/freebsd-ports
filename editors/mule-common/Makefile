@@ -16,6 +16,7 @@ DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	For a multilingual emacs, emacs lisp files, info pages, etc (except executables)
 
 MULE_VERSION=	2.3
 EMACS_VERSION=	19.34

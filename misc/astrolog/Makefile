@@ -20,6 +20,7 @@ EPHEM=		LRZ5_24 CHI_24 CPJV_24
 DISTFILES=	${EXTRACT_ONLY} ${EPHEM}
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
 USE_XLIB=	yes
 EXTRACT_CMD=	${SH}

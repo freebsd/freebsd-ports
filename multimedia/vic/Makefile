@@ -13,6 +13,7 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/vic/2.8ucl-1.1.3/
 DISTNAME=	${PORTNAME}-2.8ucl-1.1.3
 
 MAINTAINER=	fenner@FreeBSD.org
+COMMENT=	MBONE video tool
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=  ${LOCALBASE}/lib/libuclmmbase.a:${PORTSDIR}/devel/uclmmbase

@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	dd
 DISTFILES=	sol.pl sol-test.txt
 
 MAINTAINER=	dd@FreeBSD.org
+COMMENT=	The reference implementation of the Solitaire encryption algorithm
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

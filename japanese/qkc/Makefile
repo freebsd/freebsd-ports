@@ -12,6 +12,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA000501/
 DISTNAME=	${PORTNAME}c100
 
 MAINTAINER=	max@FreeBSD.org
+COMMENT=	Quick Kanji Code Converter (C version)
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

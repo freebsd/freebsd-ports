@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A module that makes Apache CVS aware
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SAMV
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Include constants from POD
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 RUN_DEPENDS=	${BUILD_DEPENDS}

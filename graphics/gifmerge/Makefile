@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTFILES=	gifmerge.tar
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	A tool for making a GIF Animation
 
 ALL_TARGET=	gifmerge
 NO_WRKSUBDIR=	yes

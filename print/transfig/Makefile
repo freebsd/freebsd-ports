@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	. previous_versions
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	chuckr@FreeBSD.org
+COMMENT=	Tools to convert Xfig's .fig files
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ppmtogif:${PORTSDIR}/graphics/netpbm

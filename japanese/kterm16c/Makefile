@@ -18,6 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+COMMENT=	An xterm that speaks Japanese with 16 colors like on a VGA
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

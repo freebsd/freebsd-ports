@@ -12,6 +12,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/tramp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
+COMMENT=	Transparent remote file access tool for emacsen
 
 EMACS_PORT_NAME?=	emacs21
 

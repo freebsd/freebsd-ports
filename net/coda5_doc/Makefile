@@ -13,6 +13,7 @@ DISTNAME=	coda-doc-5.2.0-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	An experimental, replicated, high-performance network file system
 
 WRKSRC=		${WRKDIR}/usr
 

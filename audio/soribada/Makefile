@@ -12,6 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://soribada.kldp.org/depot/
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT=	Soribada client
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.washington.edu/homes/savage/sting/
 DISTNAME=	sting
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	A tool that measures end-to-end TCP connection characteristics
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

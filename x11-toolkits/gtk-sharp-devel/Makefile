@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-sharp
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Gtk+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 LIB_DEPENDS=	gnomedb-2:${PORTSDIR}/databases/libgnomedb \

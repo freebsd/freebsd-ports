@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Convert
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Front end to the GNU recode program
 
 RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 

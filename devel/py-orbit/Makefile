@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	orbit-python-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	Python bindings for ORBit, a CORBA 2.2-compliant ORB
 
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 

@@ -23,6 +23,7 @@ PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.4/bugs/
 PATCHFILES=	
 
 MAINTAINER=	adrian@freebsd.org
+COMMENT=	The successful WWW proxy cache and accelerator
 
 DIST_SUBDIR=	squid2.4
 PATCH_DIST_STRIP= -p0

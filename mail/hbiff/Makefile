@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/misc/  \
 MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	A replacement for xbiff that handles popup window with mail headers
 
 USE_XLIB=	yes
 MAN1=		hbiff.1

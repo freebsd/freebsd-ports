@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gtk-engines/0.12
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Theme engine for gtk+ toolkits
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

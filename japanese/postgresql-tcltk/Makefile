@@ -9,6 +9,7 @@ PORTNAME=	postgresql-tcltk
 CATEGORIES=	japanese databases
 
 MAINTAINER=	saito@a2z.co.jp
+COMMENT=	An TCL interface to the database PostgreSQL, including a tk GUI
 
 POSTGRESQL_SUBPORT=YES
 .include <${.CURDIR}/../../databases/postgresql7/Makefile>

@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.iu.hio.no/pub/cfengine/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gordon@FreeBSD.org
+COMMENT=	GNU cfengine - a systems administration tool for networks
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX

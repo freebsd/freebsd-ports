@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	The Palm ROM Discombobulator
 
 USE_GMAKE=	yes
 

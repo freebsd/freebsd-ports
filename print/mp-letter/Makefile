@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://relay.NUXI.org/pub/misc/ \
 DISTNAME=	mp-3.0.1
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	A PostScript printing util for ASCII files, email, USENET news articles, etc
 
 WRKSRC=		${WRKDIR}/mp
 MAN1=		mp.1

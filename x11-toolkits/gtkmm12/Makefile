@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gtkmm/1.2
 #DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	C++ wrapper for gtk, a x11 graphics library
 
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

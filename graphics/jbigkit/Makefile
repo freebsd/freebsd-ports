@@ -11,6 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Lossless compression for bi-level images such as scanned pages, faxes
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 

@@ -20,6 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jiskan16.bdf 8x16rk.bdf
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
 ONLY_FOR_ARCHS=	i386
 

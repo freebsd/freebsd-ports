@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cis.rit.edu/~jerry/Software/perl/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	Jerry's command-line LiveJournal.com entry system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

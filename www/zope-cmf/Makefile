@@ -12,6 +12,7 @@ MASTER_SITES=	http://cmf.zope.org/download/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	The Zope Content Management Framework (CMF)
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module to launch and control background processes
 
 PERL_CONFIGURE=	YES
 

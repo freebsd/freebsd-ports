@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.meme.hokudai.ac.jp/pub/games/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Puyo-puyo, tetris like puzzle game for X11
 
 WRKSRC=		${WRKDIR}/xpuyo
 USE_IMAKE=	yes

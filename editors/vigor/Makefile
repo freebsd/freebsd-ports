@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
 
 MAINTAINER=	billf@FreeBSD.org
+COMMENT=	A vi clone inspired by the userfriendly comic strip
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 		tcl82.1:${PORTSDIR}/lang/tcl82

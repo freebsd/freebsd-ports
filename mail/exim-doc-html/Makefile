@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 DISTNAME=	exim-${DOCFORMAT}-${PORTVERSION}
 
 MAINTAINER=	sheldonh@FreeBSD.org
+COMMENT=	Documentation for the Exim MTA in multiple formats
 
 USE_BZIP2=	yes
 NO_BUILD=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Embeds a Perl interpreter in the Apache server
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT} \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww

@@ -13,6 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://people.freebsd.org/~joerg/
 
 MAINTAINER=	joerg@freebsd.org
+COMMENT=	A C and math library for the Atmel AVR controller family
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \

@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		knm_new_linux.tar.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
+COMMENT=	X11 12-dot kanji font
 
 USE_X_PREFIX=	yes
 

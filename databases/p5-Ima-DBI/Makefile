@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Class/TMTM
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Database connection caching and organization
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/Class/WhiteHole.pm:${PORTSDIR}/devel/p5-Class-WhiteHole \

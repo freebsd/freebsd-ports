@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pycrypto-1.9a4
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	The Python Cryptography Toolkit
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

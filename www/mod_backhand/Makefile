@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cnds.jhu.edu/pub/backhand/
 
 MAINTAINER=	seanc@FreeBSD.org
+COMMENT=	Apache module that allows seamless redirection and load balancing of HTTP requests
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13

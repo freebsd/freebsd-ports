@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR= bvi
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	jedgar@FreeBSD.org
+COMMENT=	A vi-like binary file (hex)editor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/bvi

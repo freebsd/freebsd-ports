@@ -14,6 +14,7 @@ DISTNAME=	gnome-games-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	The game applications package for the Gnome 2.0 Desktop Environment
 
 LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		guile.10:${PORTSDIR}/lang/guile

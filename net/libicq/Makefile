@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	flathill
 
 MAINTAINER=	flathill@FreeBSD.org
+COMMENT=	Library to add ICQ communication support to your software
 
 USE_GNOMENG=	yes
 USE_GNOME=	glib12

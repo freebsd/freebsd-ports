@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=dacode
 
 MAINTAINER=	gioria@FreeBSD.org
+COMMENT=	A web publication system used by http://www.linuxfr.org
 
 RUN_DEPENDS+= 	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3

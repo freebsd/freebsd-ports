@@ -12,6 +12,7 @@ MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/Flower/
 DISTNAME=	Flower-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
+COMMENT=	A dictionary for flowers (EPWING V1 format)
 
 USE_ZIP=	yes
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.usf.uni-kassel.de/pub/unix/modem/ \
 		ftp://ftp.be.uu.net/pub/staff/carl/
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Network modem sharing server
 
 MAKE_ARGS=	CC="${CC}" CCOPTS="${CFLAGS}"
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.rc/-rc/}
 DISTFILES=	${DISTNAME}-${PHP_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nbm@FreeBSD.org
+COMMENT=	A set of PHP-scripts to adminstrate MySQL over the web
 
 RUN_DEPENDS=	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
 .if !defined(WITH_PHP3)

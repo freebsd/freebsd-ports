@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Imaging-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
+COMMENT=	The Python Imaging Library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg

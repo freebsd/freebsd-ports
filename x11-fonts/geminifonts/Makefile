@@ -15,6 +15,7 @@ DISTNAME=	x-koi8u
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
+COMMENT=	Ukrainian KOI8 fonts for X11R6 (koi8-u)
 
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 

@@ -10,6 +10,7 @@ CATEGORIES=	databases perl5
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	girgen@pingpong.net
+COMMENT=	A module for using Perl5 to write SQL functions
 
 POSTGRESQL_PORT?=	databases/postgresql7
 POSTGRESQL_SUBPORT=YES

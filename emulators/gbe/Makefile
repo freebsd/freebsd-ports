@@ -11,6 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.zophar.net/unix/Files/
 
 MAINTAINER=	nakai@FreeBSD.org
+COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

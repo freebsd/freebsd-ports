@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 DISTNAME=	libnet-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 modules to access and use network protocols
 
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64

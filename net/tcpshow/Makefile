@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTFILES=	tcpshow.c tcpshow.1
 
 MAINTAINER=	obrien@FreeBSD.org
+COMMENT=	Decode tcpdump(1) output
 
 NO_WRKSUBDIR=	yes
 MAN1=		tcpshow.1

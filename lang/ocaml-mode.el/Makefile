@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	ocaml-mode-3.01
 
 MAINTAINER=	jkoshy@FreeBSD.org
+COMMENT=	An EMACS mode for editing OCaml programs
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21

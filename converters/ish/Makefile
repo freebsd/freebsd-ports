@@ -10,6 +10,7 @@ CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	hosokawa@jp.FreeBSD.org
+COMMENT=	Binary-to-text file-encoder
 
 MAKEFILE=	makefile
 ALL_TARGET=	ish

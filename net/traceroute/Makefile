@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Version of 'traceroute' that shows the AS network number of each hop
 
 RELEASEDATE=	991603
 NO_WRKSUBDIR=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ZThread-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
+COMMENT=	A platform-independent object-oriented C++ threading library
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

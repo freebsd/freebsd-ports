@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	ExtUtils
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	Helps link C programs with Fortran subroutines
 
 PERL_CONFIGURE=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/
 
 MAINTAINER=	greid@ukug.uk.freebsd.org
+COMMENT=	An implementation of System V's pg pager
 
 MAKEFILE=	makefile
 

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://lug.umbc.edu/~mabzug1/
 
 MAINTAINER=	petef@FreeBSD.org
+COMMENT=	A utility that extracts a summary of useful data from logs
 
 USE_PERL5=	yes
 

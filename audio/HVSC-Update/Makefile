@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-Tool-${PORTVERSION}-Source
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 

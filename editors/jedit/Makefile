@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	Powerful programmer's text editor written in Java
 
 BUILD_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13

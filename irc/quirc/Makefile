@@ -11,6 +11,7 @@ CATEGORIES=	irc tk83
 MASTER_SITES=	http://quirc.org/
 
 MAINTAINER=	kevlo@FreeBSD.org
+COMMENT=	An irc client for the X Window System that uses TCL/TK
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

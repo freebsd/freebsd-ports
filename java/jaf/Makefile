@@ -13,6 +13,7 @@ MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-1_0_2
 
 MAINTAINER=	java@freebsd.org
+COMMENT=	JavaBeansTM Activation Framework
 
 USE_ZIP=	YES
 USE_JAVA=	1.1+

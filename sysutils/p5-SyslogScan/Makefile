@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SyslogScan
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 routines to parse system logs
 
 PERL_CONFIGURE=	YES
 

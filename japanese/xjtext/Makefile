@@ -13,6 +13,7 @@ MASTER_SITES=	http://plaza.harmonix.ne.jp/~onizuka/
 DISTNAME=	XJTEXT-${PORTVERSION}
 
 MAINTAINER=	sada@FreeBSD.org
+COMMENT=	A text viewer for Japanese virtical writings
 
 USE_BISON=	yes
 USE_GNOMENG=	yes

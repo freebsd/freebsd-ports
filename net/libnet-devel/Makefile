@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
 DISTNAME=	${PORTNAME:S/-devel$//}-${PORTVERSION}
 
 MAINTAINER=	smace@freebsd.org
+COMMENT=	A C library for creating IP packets (development version)
 
 WRKSRC=		${WRKDIR}/Libnet-latest
 

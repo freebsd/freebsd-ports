@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Text::Diff - Perform diffs on files and record sets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ne.jp/asahi/linux/timecop/software/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	A time/date applet for WindowMaker with fishes swimming around
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

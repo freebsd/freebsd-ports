@@ -12,6 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://people.freenet.de/for_Ki/
 
 MAINTAINER=	ijliao@FreeBSD.org
+COMMENT=	An MPEG-1 video player
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		smpeg:${PORTSDIR}/graphics/smpeg

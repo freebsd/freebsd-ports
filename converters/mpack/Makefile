@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@FreeBSD.org
+COMMENT=	External MIME packer/unpacker
 
 WRKSRC=		${WRKDIR}/mpack
 MAKEFLAGS=	-f

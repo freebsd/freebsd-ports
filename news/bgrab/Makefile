@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.student.dtu.dk/~c960941/bgrab/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kbyanc@posi.net
+COMMENT=	Binary Grabber - downloads binaries from newsgroups
 
 RUN_DEPENDS=	mmencode:${PORTSDIR}/converters/mmencode
 

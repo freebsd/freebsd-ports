@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Filesys
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	Perl equivalent of statfs(2)
 
 PERL_CONFIGURE=	yes
 

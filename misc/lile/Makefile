@@ -14,6 +14,7 @@ DISTNAME=	lile-2.0
 EXTRACT_SUFX=	.tar.z
 
 MAINTAINER=	jmz@FreeBSD.org
+COMMENT=	An Input Line Editor that wraps itself around programs
 
 MAN1=		ile.1
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.place.org/pub/moo/
 DISTNAME=	LambdaMOO-${PORTVERSION}
 
 MAINTAINER=	flathill@FreeBSD.ORG
+COMMENT=	The most commonly used program to run MOOs
 
 WRKSRC=		${WRKDIR}/MOO-${PORTVERSION}
 GNU_CONFIGURE=	yes

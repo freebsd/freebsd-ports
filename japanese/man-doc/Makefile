@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 DISTFILES=	# none
 
 MAINTAINER=	horikawa@FreeBSD.org
+COMMENT=	Japanese online manual pages corresponding to /usr/share/man/man*
 
 PREFIX?=	/usr
 NO_CHECKSUM=	yes

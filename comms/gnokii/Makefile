@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 #		ftp://ftp.gnokii.org/pub/gnokii/
 
 MAINTAINER=	anders@FreeBSD.org
+COMMENT=	Tools to talk to Nokia cellular phones
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

@@ -14,6 +14,7 @@ DISTNAME=	latest_xftp
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dima@FreeBSD.org
+COMMENT=	Motif FTP client
 
 WRKSRC=		${WRKDIR}/llnlxftp2.1/sources
 USE_MOTIF=	yes

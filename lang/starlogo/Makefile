@@ -12,6 +12,7 @@ MASTER_SITES=	http://education.mit.edu/starlogo/download/
 DISTNAME=	${PORTNAME}-2.0
 
 MAINTAINER=	java@freebsd.org
+COMMENT=	StarLogo is a specialized version of the Logo programming language written in Java
 
 USE_JAVA=       1.2+
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.rus.uni-stuttgart.de/pub/systems/sgi/OpenGL/contrib/
 DISTFILES=	libaux${EXTRACT_SUFX} libtk${EXTRACT_SUFX}
 
 MAINTAINER=	sobomax@FreeBSD.org
+COMMENT=	A Nano Window Toolkit and Auxiliary Library for OpenGL
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
