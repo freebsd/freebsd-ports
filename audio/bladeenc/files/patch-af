@@ -1,0 +1,18 @@
+--- system.h.orig	Thu Jul 22 23:08:10 1999
++++ system.h	Sat Jul 24 00:16:20 1999
+@@ -181,14 +181,5 @@
+ #define         FALSE           0
+ #define         TRUE            1
+ 
+-typedef		unsigned	char 	uchar;
+-
+-#ifndef				_SYS_TYPES_H
+-typedef         unsigned        short   ushort;
++typedef         unsigned        char    uchar;
+ typedef         unsigned        long    ulong;
+-typedef         unsigned        int     uint;
+-#endif
+-
+-
+-
+-
