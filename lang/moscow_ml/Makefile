@@ -20,6 +20,7 @@ MOSMLHOME=	$(PREFIX)/moscow_ml
 ALL_TARGET=	world MOSMLHOME=$(MOSMLHOME)
 INSTALL_TARGET=	install MOSMLHOME=$(MOSMLHOME)
 WRKSRC=		${WRKDIR}/mosml/src
+USE_PERL5=	yes
 
 post-install:
 	${SED} -e 's|^MOSMLHOME=.*|MOSMLHOME=${MOSMLHOME}|' \
