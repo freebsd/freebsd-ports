@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.64 1998/02/13 10:04:58 tg Exp $
+# $Id: Makefile,v 1.65 1998/02/18 04:23:37 steve Exp $
 #
 
     SUBDIR += ImageMagick
@@ -20,6 +20,7 @@
     SUBDIR += giftool
     SUBDIR += giftrans
     SUBDIR += gimp-devel
+    SUBDIR += gplot
     SUBDIR += graphviz
     SUBDIR += hdf
     SUBDIR += hobbes-icons-xpm
