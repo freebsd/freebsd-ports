@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sodipodi
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
+		gal.4:${PORTSDIR}/x11-toolkits/gal \
 		unicode.0:${PORTSDIR}/devel/libunicode
 
 USE_GMAKE=	yes
