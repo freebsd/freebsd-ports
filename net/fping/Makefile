@@ -7,25 +7,19 @@
 #
 
 PORTNAME=	fping
-PORTVERSION=	1.20
+PORTVERSION=	2.2b1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.unix/volume26/fping/ \
-		ftp://ftp.digital.com/pub/usenet/comp.sources.unix/volume26/fping/ \
-		ftp://ftp.wustl.edu/usenet/comp.sources.unix/volume26/fping/ \
-		ftp://ftp.isnet.is/pub/Usenet/Usenet.src/comp.sources.unix/v26/fping/
-DISTNAME=	part01
-EXTRACT_SUFX=	.Z
+MASTER_SITES=	ftp://ftp.stanford.edu/dept/networking/pub/fping/  \
+		ftp://sntop.sourceforge.net/pub/sntop/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-DIST_SUBDIR=	fping
-EXTRACT_CMD=	zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| ${SED} -e '1,/Archive-Name/d' | ${SH}
-NO_WRKSUBDIR=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --bindir="${PREFIX}/sbin"
 MAN8=		fping.8
 
 post-install:
 	@strip ${PREFIX}/sbin/fping
+	@${CHMOD} 4555 ${PREFIX}/sbin/fping
 
 .include <bsd.port.mk>
