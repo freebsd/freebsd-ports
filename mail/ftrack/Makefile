@@ -16,17 +16,18 @@ MAINTAINER=	gonza@techline.ru
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsmapi.a:${PORTSDIR}/mail/smapi
 
 USE_ZIP=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	ftrack
 MAKEFILE=	${WRKSRC}/MakeFiles/FreeBSD/Makefile
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
 pre-patch:
-	${PERL} -pi -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
+	${REINPLACE_CMD} -e "s@-I../../hpp -I../../.. -O3@-Ihpp -I${LOCALBASE}/include ${CFLAGS}@g; \
 			s@../../src/@src/@g; s@g\+\+@${CC}@g; \
 			s@-L../smapi -lsmapibsd@-L${LOCALBASE}/lib -lsmapi@g" ${WRKSRC}/MakeFiles/FreeBSD/Makefile
 .for DIR in MakeFiles/FreeBSD src hpp doc/eng samples/tpl
-	${PERL} -pi -e 's!\r!!' ${WRKSRC}/${DIR}/*
+	${REINPLACE_CMD} -e 's!\r!!' ${WRKSRC}/${DIR}/*
 .endfor
 
 pre-configure:

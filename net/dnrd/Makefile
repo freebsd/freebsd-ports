@@ -15,6 +15,7 @@ MAINTAINER=		greid@FreeBSD.org
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 
 USE_GMAKE=		yes
+USE_REINPLACE=	yes
 
 MAN8=			dnrd.8
 
@@ -23,6 +24,6 @@ post-patch:
 	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' $F > foo && \
 		${MV} foo $F)
 .endfor
-	${PERL} -pi -e "s@cc@${CC}@g; s@-lc_r@${PTHREAD_LIBS}@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@cc@${CC}@g; s@-lc_r@${PTHREAD_LIBS}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

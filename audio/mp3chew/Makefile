@@ -15,11 +15,12 @@ MAINTAINER=	greid@ukug.uk.freebsd.org
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ALL_TARGET=	${PORTNAME}
+USE_REINPLACE=	yes
 
 DOCFILES=	CHANGELOG INSTALL README TODO
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's, _to, to,g' ${WRKSRC}/CMp3Filter.cc
+	@${REINPLACE_CMD} -e 's, _to, to,g' ${WRKSRC}/CMp3Filter.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mp3chew ${PREFIX}/bin

@@ -13,9 +13,10 @@ MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 MAINTAINER=	hollywar@mail.holywar.net
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	(find ${WRKSRC} -name Makefile | xargs ${PERL} -pi -e \
+	(find ${WRKSRC} -name Makefile | xargs ${REINPLACE_CMD} -e \
 		"s@-O20@${CFLAGS}@g ; s@-O2@${CFLAGS}@g")
 
 .include <bsd.port.mk>

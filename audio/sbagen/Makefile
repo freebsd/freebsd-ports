@@ -24,13 +24,15 @@ SHAREFILES=	t-alpha t-beta t-calm t-calm2 t-delta t-focus t-focus-1 \
 
 DOCFILES=	sbagen.txt theory.txt theory2.txt
 
+USE_REINPLACE=	yes
+
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/sbagen.c
 
 post-patch:
 .for F in ${SHAREFILES}
-	@${PERL} -pi -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/$F
+	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,g' ${WRKSRC}/$F
 .endfor
 
 do-build:

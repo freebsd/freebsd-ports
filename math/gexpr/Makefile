@@ -16,9 +16,11 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
+
 MAN1=	gexpr.1
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

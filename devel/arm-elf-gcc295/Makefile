@@ -26,6 +26,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 GCC_REV=	${DISTNAME:S/gcc-//g}
 PLIST_SUB+=	GCC_REV=${GCC_REV}
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 CFLAGS:=	${CFLAGS:C/-m(arch|cpu)=[a-zA-Z0-9]+//}
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} --enable-languages="c,c++,objc"
 .if defined(DEFAULT_CPU)
@@ -47,8 +48,8 @@ pre-extract:
 .endif
 
 post-configure:
-	${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=),\1#,' ${WRKSRC}/Makefile
-	${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,; \
+	${REINPLACE_CMD} -e 's,^(TARGET_CONFIGDIRS\s*=),\1#,' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,^(install-info:),\1\ndonot-\1,; \
 	    s,\$$\(bindir\)/(\$$\(DEMANGLER_CROSS_NAME\)),./\1,' \
 	    ${WRKSRC}/gcc/Makefile
 

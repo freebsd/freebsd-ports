@@ -13,12 +13,13 @@ MASTER_SITES=	http://www.gpl.no/liboe/download/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	clean oe2mbx liboe
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^PREFIX,#PREFIX,g ; \
+	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g ; \
 		s,gcc,${CC} ${CFLAGS},g" ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
