@@ -20,10 +20,16 @@ USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 MAN1=		oo2c.1 oob.1 ooef.1 oocn.1 oowhereis.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 	@${MV} ${WRKDIR}/gc    ${WRKSRC}/gc
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/oo2 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

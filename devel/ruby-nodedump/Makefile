@@ -22,10 +22,16 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
