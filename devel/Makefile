@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.171 1999/04/11 02:52:36 jseger Exp $
+# $Id: Makefile,v 1.172 1999/04/12 00:04:02 jseger Exp $
 #
 
     SUBDIR += ElectricFence
@@ -24,6 +24,7 @@
     SUBDIR += crossm68k
     SUBDIR += crosssco
     SUBDIR += cs
+    SUBDIR += cscope
     SUBDIR += cssc
     SUBDIR += cutils
     SUBDIR += cvslines
