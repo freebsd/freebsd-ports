@@ -30,7 +30,7 @@ pre-install:
 do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
 	@${CHMOD} ${SHAREMODE} `find ${INSTDIR} -type f`
-	@${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${INSTDIR}
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:
 	@${MKCATALOG} -q install ${PORTNAME}
