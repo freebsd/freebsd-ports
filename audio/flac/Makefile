@@ -39,7 +39,8 @@ CONFIGURE_TARGET= --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-sse --enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
-CONFIGURE_ENV=	CONFIG_SHELL=${SH}
+CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
+		CPPFLAGS="-I${WRKSRC}/include"
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
