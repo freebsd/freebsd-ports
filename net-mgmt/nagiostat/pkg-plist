@@ -1,0 +1,15 @@
+@exec mkdir -p /var/spool/nagios/nagiostatrrd
+@exec chmod 775 /var/spool/nagios/nagiostatrrd
+@exec chown nagios:nagios /var/spool/nagios/nagiostatrrd
+@unexec rmdir /var/spool/nagios/nagiostatrrd 2>/dev/null || true
+etc/nagiostat.conf-sample
+share/nagios/cgi-bin/nagiostat.cgi
+libexec/nagiostat/nagiostat
+libexec/nagiostat/html-templates/default.html
+libexec/nagiostat/html-templates/graphindex.html
+share/nagios/images/logos/graph.gif
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/GPL.txt
+@dirrm libexec/nagiostat/html-templates
+@dirrm libexec/nagiostat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

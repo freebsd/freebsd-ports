@@ -71,6 +71,7 @@
     SUBDIR += nagios
     SUBDIR += nagios-plugins
     SUBDIR += nagios-snmp-plugins
+    SUBDIR += nagiostat
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += nefu
