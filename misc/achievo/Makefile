@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	achievo
-PORTVERSION=	0.6.5
+PORTVERSION=	0.8.1
 CATEGORIES=	misc www
-MASTER_SITES=	ftp://ftp.achievo.com/pub/achievo/
+MASTER_SITES=	http://ftp.achievo.org/pub/achievo/
 DISTNAME=	${PORTNAME}-stable-${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3 \
-	${LOCALBASE}/lib/mysql/libmysqlclient.so:${PORTSDIR}/databases/mysql323-client
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	YES
