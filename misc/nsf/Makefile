@@ -19,7 +19,7 @@ MANCOMPRESSED=	yes
 ALL_TARGET=
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/${MAN1} ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKDIR}/${MAN1} ${PREFIX}/man/man1/
 	${GZIP_CMD} ${PREFIX}/man/man1/${MAN1}
 
 .include <bsd.port.mk>
