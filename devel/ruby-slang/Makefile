@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	slang
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.52
 CATEGORIES+=	devel ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.kondara.org/~g/
-MASTER_SITE_SUBDIR=	knu
-DISTNAME=	${PORTNAME}lib
+MASTER_SITES=	${MASTER_SITE_RUBY}
+MASTER_SITE_SUBDIR=	contrib
+DISTNAME=	${PORTNAME}lib-${PORTVERSION:}-1m
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -26,6 +24,7 @@ LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}lib
 CONFIGURE_ARGS=	--with-slang-include="${LOCALBASE}/include/slang" \
 		--with-slang-lib="${LOCALBASE}/lib"
 INSTALL_TARGET=	site-install
