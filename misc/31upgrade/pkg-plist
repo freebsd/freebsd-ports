@@ -17,3 +17,5 @@ usr/lib/libperl.so
 usr/lib/libperl.so.3
 usr/libdata/perl/5.00503
 usr/libexec/ld-elf.so.1
+usr/share/misc/termcap
+usr/share/misc/termcap.db
