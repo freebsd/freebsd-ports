@@ -1,26 +1,22 @@
---- ltconfig.orig	Fri Mar 20 16:00:29 1998
-+++ ltconfig	Tue Feb  2 05:31:37 1999
-@@ -777,7 +777,7 @@
-     ;;
- 
-   # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
--  freebsd3*)
-+  freebsd*)
-     archive_cmds='$CC -shared -o $lib$libobjs'
-     hardcode_libdir_flag_spec='-R$libdir'
-     hardcode_direct=yes
-@@ -1123,10 +1123,11 @@
-   finish_eval='for lib in `ls $libdir/*.ixlibrary 2>/dev/null`; do libname=`$echo "X$lib" | $Xsed -e '\''s%^.*/\([^/]*\)\.ixlibrary$%\1%'\''`; test $rm /sys/libs/${libname}_ixlibrary.a; $show "(cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a)"; (cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a) || exit 1; done'
-   ;;
- 
--freebsd2* | freebsd3*)
--  version_type=sunos
-+freebsd*)
-+  objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
-+  version_type=freebsd-$objformat
-   library_names_spec='${libname}${release}.so.$versuffix $libname.so'
--  finish_cmds='PATH="$PATH:/sbin" ldconfig -m $libdir'
-+  finish_cmds="PATH=\"\$PATH:/sbin\" OBJFORMAT=$objformat ldconfig -m \$libdir"
-   shlibpath_var=LD_LIBRARY_PATH
-   ;;
- 
+--- ltconfig.orig	Mon Mar 15 19:38:58 1999
++++ ltconfig	Mon Apr  5 01:40:53 1999
+@@ -1672,14 +1672,16 @@
+     freebsd-elf*)
+       deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
+       file_magic_cmd=/usr/bin/file
+-      file_magic_test_file=`echo /usr/lib/libc.so*`
++      file_magic_test_file=`echo /usr/lib/libc.so.*`
+       library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so $libname.so'
+       need_version=no
+       need_lib_prefix=no
+       ;;
+     freebsd-*)
+-      deplibs_check_method=unknown
+-      library_names_spec='${libname}${release}.so$versuffix $libname.so$versuffix'
++      deplibs_check_method='file_magic FreeBSD.* shared library'
++      file_magic_cmd=/usr/bin/file
++      file_magic_test_file=`echo /usr/lib/libc.so.*`
++      library_names_spec='${libname}${release}.so$versuffix $libname.so$versuffix $libname.so'
+       need_version=yes
+       ;;
+   esac
