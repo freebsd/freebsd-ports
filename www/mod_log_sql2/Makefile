@@ -32,4 +32,5 @@ BROKEN=		"Please recompile apache2 with SSL support"
 CONFIGURE_ARGS+=	--enable-ssl
 SSL_PLIST=	""
 .endif
+
 .include <bsd.port.post.mk>
