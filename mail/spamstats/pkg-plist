@@ -1,5 +1,5 @@
 bin/spamstats.pl
-%%PORTDOCS%%share/doc/spamstats/QUICK
-%%PORTDOCS%%share/doc/spamstats/README
-%%PORTDOCS%%share/doc/spamstats/copyright
-%%PORTDOCS%%@dirrm share/doc/spamstats
+%%PORTDOCS%%%%DOCSDIR%%/QUICK
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/copyright
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

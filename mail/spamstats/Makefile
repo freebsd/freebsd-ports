@@ -25,8 +25,8 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}${PORTVERSION}.pl ${PREFIX}/bin/${PORTNAME}.pl
 .ifndef	(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in QUICK README copyright
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for f in QUICK README copyright
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 
