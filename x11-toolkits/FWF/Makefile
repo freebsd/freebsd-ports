@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1998/09/15 11:13:33 asami Exp $
+# $Id: Makefile,v 1.14 1998/09/17 00:32:55 asami Exp $
 #
 
 DISTNAME=	fwf-4.0
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
 MASTER_SITE_SUBDIR=libs/X/fwf
 
 MAINTAINER=	jseger@FreeBSD.org
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
