@@ -1,5 +1,0 @@
-bin/pflogsumm
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ToDo
-%%PORTDOCS%%%%DOCSDIR%%/pflogsumm-faq.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
