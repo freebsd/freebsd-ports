@@ -8,7 +8,7 @@
 
 DISTNAME=	sudo-1.6
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
+MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/OLD/
 
 MAINTAINER=	mharo@FreeBSD.org
 
