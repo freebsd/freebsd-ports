@@ -1,24 +1,22 @@
---- Makefile.orig	Tue Feb  1 06:56:46 2000
-+++ Makefile	Sat Mar  4 18:34:28 2000
-@@ -1,9 +1,8 @@
+--- Makefile.orig	Sun Oct 28 02:10:49 2001
++++ Makefile	Sat Dec 22 11:59:22 2001
+@@ -1,15 +1,15 @@
 -CC = gcc
 -LD = gcc
-+CC?= gcc
++CC? = gcc
++LD = ${CC}
  RM = rm -f
- CFLAGS = -c -Wall -O2 -fomit-frame-pointer
--LDFLAGS = -s
--#LDFLAGS = -s -lcrypt
-+#LDFLAGS = -s
-+LDFLAGS = -s -lcrypt
- 
- PROJ = popa3d
- OBJS = md5/md5.o \
-@@ -13,7 +12,7 @@
- 	misc.o
- 
- popa3d: $(OBJS)
--	$(LD) $(LDFLAGS) $(OBJS) -o popa3d
-+	$(CC) $(LDFLAGS) $(OBJS) -o popa3d
- 
- md5/md5.o: md5/md5.c md5/md5.h
- 	$(CC) $(CFLAGS) -D_LIBC md5/md5.c -o md5/md5.o
+ MKDIR = mkdir -p
+ INSTALL = install
+-CFLAGS = -c -Wall -O2 -fomit-frame-pointer
++CFLAGS += -c -Wall -O2 -fomit-frame-pointer
+ # You may use OpenSSL's MD5 routines instead of the ones supplied here
+ #CFLAGS += -DHAVE_OPENSSL
+ LDFLAGS = -s
+ LIBS =
+ # Linux with glibc, FreeBSD, NetBSD
+-#LIBS += -lcrypt
++LIBS += -lcrypt
+ # HP-UX trusted system
+ #LIBS += -lsec
+ # Solaris (POP_STANDALONE, POP_VIRTUAL)
