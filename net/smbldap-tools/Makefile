@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	smbldap-tools
-PORTVERSION=	0.8.5.3
+PORTVERSION=	0.8.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.idealx.org/prj/samba/dist/
-DISTFILES=	${PORTNAME}-0.8.5-3.tgz
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	Useful package for managing users and groups in a LDAP directory
@@ -18,18 +18,17 @@ BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
 		${SITE_PERL}/Crypt/SmbHash.pm:${PORTSDIR}/security/p5-Crypt-SmbHash
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.5
 USE_PERL5=	yes
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's#/etc/samba#${PREFIX}/etc/samba#' ${WRKSRC}/configure.pl \
+	@${PERL} -pi -e 's#/etc/samba#${PREFIX}/etc/samba#' ${WRKSRC}/configure.pl \
 								${WRKSRC}/smb.conf
-	${REINPLACE_CMD} -e 's#/etc/smb#${PREFIX}/etc/smb#' ${WRKSRC}/configure.pl \
+	@${PERL} -pi -e 's#/etc/opt/IDEALX#${PREFIX}/etc#' ${WRKSRC}/smbldap_tools.pm
+	@${PERL} -pi -e 's#/etc/smb#${PREFIX}/etc/smb#' ${WRKSRC}/configure.pl \
 							${WRKSRC}/smbldap.conf \
 							${WRKSRC}/smbldap_tools.pm
-	${REINPLACE_CMD} -e 's#/usr/sbin#${LOCALBASE}/sbin#' ${WRKSRC}/smbldap-passwd
+	@${PERL} -pi -e 's#/usr/sbin#${LOCALBASE}/sbin#' ${WRKSRC}/smbldap-passwd
 
 do-install:
 	${MKDIR} ${EXAMPLESDIR}
