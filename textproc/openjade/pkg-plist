@@ -6,8 +6,6 @@ bin/ospent
 bin/osx
 lib/libogrove.so
 lib/libogrove.so.0
-lib/libosp.so
-lib/libosp.so.0
 lib/libospgrove.so
 lib/libospgrove.so.0
 lib/libostyle.so
@@ -22,5 +20,4 @@ share/sgml/openjade/dsssl.dtd
 share/sgml/openjade/extensions.dsl
 share/sgml/openjade/fot.dtd
 share/sgml/openjade/style-sheet.dtd
-@dirrm share/sgml/openjade
 @exec %%MKCATALOG%% -q install openjade
