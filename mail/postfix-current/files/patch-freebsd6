@@ -1,0 +1,34 @@
+--- makedefs_orig	Tue Jun 15 16:41:45 2004
++++ makedefs	Fri Aug 20 15:06:41 2004
+@@ -93,6 +93,8 @@
+ 		;;
+   FreeBSD.5*)	SYSTYPE=FREEBSD5
+ 		;;
++  FreeBSD.6*)	SYSTYPE=FREEBSD5
++		;;
+   OpenBSD.2*)	SYSTYPE=OPENBSD2
+ 		;;
+   OpenBSD.3*)	SYSTYPE=OPENBSD3
+--- makedefs.snapshot_orig	Wed Apr 14 14:18:06 2004
++++ makedefs.snapshot	Fri Aug 20 15:08:54 2004
+@@ -93,6 +93,8 @@
+ 		;;
+   FreeBSD.5*)	SYSTYPE=FREEBSD5
+ 		;;
++  FreeBSD.6*)	SYSTYPE=FREEBSD5
++		;;
+   OpenBSD.2*)	SYSTYPE=OPENBSD2
+ 		;;
+   OpenBSD.3*)	SYSTYPE=OPENBSD3
+===cut-here===
+--- makedefs.stable_orig	Wed Apr 14 13:59:43 2004
++++ makedefs.stable	Fri Aug 20 15:10:13 2004
+@@ -93,6 +93,8 @@
+ 		;;
+   FreeBSD.5*)	SYSTYPE=FREEBSD5
+ 		;;
++  FreeBSD.6*)	SYSTYPE=FREEBSD5
++		;;
+   OpenBSD.2*)	SYSTYPE=OPENBSD2
+ 		;;
+   OpenBSD.3*)	SYSTYPE=OPENBSD3
