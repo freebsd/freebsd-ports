@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/15 15:22:45 kuriyama Exp $
 #
 
 DISTNAME=	skk9.6
@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://skk.kuis.kyoto-u.ac.jp/skk/9.6/
 
 MAINTAINER=	matusita@jp.freebsd.org
 
-BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule
+BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule \
+		/nonexistent:${SKK_MASTERDIR}:configure
 RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 
 SKKJISYO_SIZE?=	L
@@ -27,16 +28,6 @@ ELISPSUBDIR=	share/${EMACS}/site-lisp/skk
 
 MAKE_ARGS=	SUBDIRS='lisp' EMACS=${EMACS} ELISPDIR=${PREFIX}/${ELISPSUBDIR}
 PLIST_SUB=	EMACS=${EMACS} ELISPSUBDIR=${ELISPSUBDIR}
-
-do-extract:
-	@echo "===>  Extracting depends on ${SKK_MASTERDIR}"
-	@[ -d ${WRKDIR} ] || ${MKDIR} ${WRKDIR}
-	@if [ ! -f ${SKK_MASTERDIR}/work/.extract_done ]; then \
-		(cd ${SKK_MASTERDIR}; make extract) ;\
-	fi
-	@if [ ! -f ${SKK_MASTERDIR}/work/.configure_done ]; then \
-		(cd ${SKK_MASTERDIR}; PREFIX=${PREFIX} make configure) ;\
-	fi
 
 # Our makeinfo can't handle files with Japanese characters. :<
 #pre-build:
