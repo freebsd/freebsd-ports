@@ -10888,6 +10888,7 @@ tr2latex	ports/print/tr2latex
 trac		ports/www/trac
 trackballs	ports/games/trackballs
 tracker		ports/audio/tracker
+trackerbt	ports/net/trackerbt
 tractorgen	ports/games/tractorgen
 trafd		ports/net-mgmt/trafd
 trafshow	ports/net/trafshow
