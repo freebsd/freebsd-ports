@@ -8,7 +8,9 @@
 PORTNAME=	fragrouter
 PORTVERSION=	1.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.anzen.com/research/nidsbench/
+MASTER_SITES=	http://www.anzen.com/research/nidsbench/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=kris
 
 MAINTAINER=	kris@FreeBSD.ORG
 
