@@ -1,15 +1,18 @@
---- src/main/Makefile.in.orig	Sun Apr 23 22:37:43 2000
-+++ src/main/Makefile.in	Sun Apr 23 22:45:12 2000
-@@ -109,7 +109,7 @@
- ARCH_SUBDIRS = beos linux macos win32
+
+$FreeBSD$
+
+--- src/main/Makefile.in.orig	Thu Nov  8 09:28:02 2001
++++ src/main/Makefile.in	Tue Nov 13 15:48:40 2001
+@@ -117,7 +117,7 @@
+ 
  
  # Build a separate library containing the main() entry point.
 -lib_LIBRARIES = libSDLmain.a
 +lib_LIBRARIES = libSDLmain-1.1.a
+ @TARGET_MACOSX_TRUE@MAINLIB_ARCH_SRCS = SDLMain.m SDLMain.h
+ @TARGET_MACOSX_FALSE@MAINLIB_ARCH_SRCS = SDL_main.c
  
- MAINLIB_ARCH_SRCS = SDL_main.c
- 
-@@ -257,10 +257,10 @@
+@@ -264,10 +264,10 @@
  
  maintainer-clean-libtool:
  
