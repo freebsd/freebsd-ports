@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	minimalist
-PORTVERSION= 	2.0.2
+PORTVERSION= 	2.1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mml.org.ua/pub/minimalist/ \
 		http://www.giovannelli.it/~gmarco/files/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gmarco@giovannelli.it
 
