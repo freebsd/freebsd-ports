@@ -1,6 +1,7 @@
 bin/xpilot-ng
 bin/xpilots-ng
 bin/xp-replay-ng
+share/xpilot/mapconvert.py
 share/xpilot-ng/maps/teamcup.xp
 share/xpilot-ng/maps/polybloods.xp2
 share/xpilot-ng/textures/allitems.ppm
@@ -62,6 +63,7 @@ share/xpilot-ng/defaults
 share/xpilot-ng/password
 share/xpilot-ng/robots
 share/xpilot-ng/sounds
+@dirrm share/xpilot
 @dirrm share/xpilot-ng/maps
 @dirrm share/xpilot-ng/textures
 @dirrm share/xpilot-ng
