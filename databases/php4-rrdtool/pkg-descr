@@ -1,0 +1,5 @@
+Contained herein are bindings to allow you to interface php scripts with RRD
+tool directly via RRD tool's 'librrd' library, thus avoiding the need to use
+system() calls to the rrdtool binary.
+
+WWW: http://www.joeym.net/
