@@ -9,6 +9,7 @@ PORTNAME=	popenhs
 PORTVERSION=	1.00.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.01.246.ne.jp/~juhp/haskell/popenhs/
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 

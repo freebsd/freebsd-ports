@@ -223,7 +223,8 @@
     SUBDIR += hat
     SUBDIR += hmake
     SUBDIR += hp48cc
-    SUBDIR += hpl
+    SUBDIR += hs-hpl
+    SUBDIR += hs-popenhs
     SUBDIR += hypersrc
     SUBDIR += i386-rtems-binutils
     SUBDIR += i386-rtems-chill
@@ -599,7 +600,6 @@
     SUBDIR += pkgconfig
     SUBDIR += ply
     SUBDIR += pmake
-    SUBDIR += popenhs
     SUBDIR += popt
     SUBDIR += portcheckout
     SUBDIR += portlint

@@ -22,7 +22,6 @@
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-xunicode
-    SUBDIR += frantk
     SUBDIR += gail
     SUBDIR += gal
     SUBDIR += gdl
@@ -32,7 +31,6 @@
     SUBDIR += gnustep-gui
     SUBDIR += gnustep-xgps
     SUBDIR += gob
-    SUBDIR += gtk+hs
     SUBDIR += gtk--
     SUBDIR += gtk-Mac2-theme
     SUBDIR += gtk-engines
@@ -57,6 +55,8 @@
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
     SUBDIR += guile-gtk
+    SUBDIR += hs-frantk
+    SUBDIR += hs-gtk+hs
     SUBDIR += icegradient
     SUBDIR += itk
     SUBDIR += iv
