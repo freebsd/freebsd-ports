@@ -30,7 +30,7 @@ PLIST_SUB=	HINT="@comment "
 BROKEN=	does not compile
 .endif
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc-5.04.3:${PORTSDIR}/lang/ghc5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
