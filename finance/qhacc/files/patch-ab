@@ -1,32 +1,29 @@
---- configure.orig	Sat Sep 30 10:54:43 2000
-+++ configure	Wed Nov 15 04:56:52 2000
-@@ -1215,7 +1215,7 @@
+--- configure.orig	Tue Aug 14 01:21:28 2001
++++ configure	Sat Aug 18 23:45:43 2001
+@@ -2197,7 +2197,7 @@
  
  	for dir in $with_qt_moc
  	do
--		if test -f $dir/bin/moc
-+		if test -f $dir/bin/moc2
+-		if test -f $dir/moc
++		if test -f $dir/moc2
  		then
- 			qtmoc=$dir/bin
+ 			qtmoc=$dir
  			echo "found in $qtmoc"
-@@ -1252,7 +1252,7 @@
+@@ -2231,7 +2231,7 @@
  
  	for dir in $with_qt_libs
  	do
--		if test -f $dir/lib/libqt.so.2 -o "$dir/lib/libqt.so.2.*" != "$dir/lib/libqt.so.2.\*"
-+		if test -f $dir/lib/libqt2.so
+-		if test -f $dir/libqt.so.2 -o "$dir/libqt.so.2.*" != "$dir/libqt.so.2.\*"
++		if test -f $dir/libqt.so
  		then
- 			qtlibs=$dir/lib
+ 			qtlibs=$dir
  			echo "found in $qtlibs"
-@@ -1289,9 +1289,9 @@
+@@ -2265,7 +2265,7 @@
  
  	for dir in $with_qt_incs
  	do
--		if test -f $dir/include/qnamespace.h
-+		if test -f $dir/include/qt2/qnamespace.h
+-		if test -f $dir/qnamespace.h
++		if test -f $dir/qt2/qnamespace.h
  		then
--			qtincs=$dir/include
-+			qtincs=$dir/include/qt2
+ 			qtincs=$dir
  			echo "found in $qtincs"
- 			break
- 		fi
