@@ -1,5 +1,5 @@
 # New ports collection makefile for:	ghostscript
-# Version required:	5.0
+# Version required:	5.50
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
@@ -42,9 +42,6 @@ GS_FONTS_OTHER=	ghostscript-fonts-other-5.50.tar.gz
 # Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
 HP850_DRV=	hp8xxs13.zip
 
-# replacement for pdf_sec.ps, that allows you to read encrypted PDF files
-DECRYPT_PDF=	pdf_sec.ps
-
 .if defined(A4)
 CFLAGS+=	-DA4
 .endif
@@ -76,20 +73,28 @@ pre-build:
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/bin ${PREFIX}/man/man1
 	(cd ${PREFIX}/share/ghostscript ; \
-			tar -xzf ${DISTDIR}/${GS_FONTS_STD})
+			${TAR} -xzf ${DISTDIR}/${GS_FONTS_STD})
 	(cd ${PREFIX}/share/ghostscript/fonts ; \
-			tar -xzf ${DISTDIR}/${GS_FONTS_OTHER})
+			${TAR} -xzf ${DISTDIR}/${GS_FONTS_OTHER})
 
 # install the readme and license file of the hp8xxx driver as well
 post-install:
 	strip ${PREFIX}/bin/gs
 	${INSTALL_SCRIPT} ${WRKSRC}/unix-lpr.sh ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/lprsetup.sh ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
-		${PREFIX}/share/ghostscript/5.50
 	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
 		${PREFIX}/share/ghostscript/5.50/doc
 	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
 		${PREFIX}/share/ghostscript/5.50/doc
+.if defined(PDFENCRYPT)
+        ${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps ${PREFIX}/share/ghostscript/5.50
+.endif
+
+# encrypted PDF support.  can't be packaged due to export control issues.
+.if defined(PDFENCRYPT)
+MASTER_SITES+=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
+DISTFILES+=	pdf_sec.ps
+RESTRICTED=	"Crypto; export controlled, RC4 in PostScript code included"
+.endif
 
 .include <bsd.port.mk>
