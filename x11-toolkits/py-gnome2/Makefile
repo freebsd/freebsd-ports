@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-gnome
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-python
