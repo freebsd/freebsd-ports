@@ -7,16 +7,17 @@
 
 PORTNAME=	${MECAB_PORTNAME}
 PORTVERSION=	${MECAB_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/src/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/src/ \
+		http://chasen.aist-nara.ac.jp/stable/ipadic/:ipadic
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${IPADIC_DISTNAME}${EXTRACT_SUFX}:ipadic
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Yet Another Part-of-Speech and Morphological Analyzer
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${IPADIC_PORTDIR}:patch
-
-IPADIC_PORTDIR=	${PORTSDIR}/japanese/ipadic
+IPADIC_DISTNAME=	ipadic-2.5.1
 
 USE_PERL5_BUILD=	yes
 
@@ -37,7 +38,7 @@ BROKEN=		"Does not compile on !i386"
 .endif
 
 post-extract:
-	${LN} -s `cd ${IPADIC_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/dic/
+	${LN} -s ${WRKDIR}/${IPADIC_DISTNAME} ${WRKSRC}/dic/
 
 post-install:
 	${RM} -f ${PREFIX}/lib/libmecab.la
