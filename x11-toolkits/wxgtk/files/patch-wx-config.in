@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- wx-config.in	2001/05/28 16:47:21	1.1
-+++ wx-config.in	2001/05/28 16:50:00
-@@ -31,7 +31,7 @@
-             includes=-I@includedir@
-         fi
+--- wx-config.in.orig	Fri Jan  4 17:47:57 2002
++++ wx-config.in	Mon Sep  9 14:22:16 2002
+@@ -35,7 +35,7 @@
+     then
+         includes=-I@includedir@
      fi
--    includes="$includes -I@libdir@/wx/include -D__USE_WXCONFIG__"
-+    includes="$includes -I@prefix@/include -D__USE_WXCONFIG__"
-     echo $includes @WXDEBUG_DEFINE@ @TOOLKIT_DEF@ @WXCONFIG_INCLUDE@
+-    includes="-I@libdir@/wx/include/@TOOLCHAIN_NAME@ $includes"
++    includes="-I@prefix@/include/@TOOLCHAIN_NAME@ $includes"
+     echo $includes @WXDEBUG_DEFINE@ @TOOLCHAIN_DEFS@ @WXCONFIG_INCLUDE@
  }
  
