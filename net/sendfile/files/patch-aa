@@ -1,5 +1,5 @@
---- makeconfig.orig	Sat Feb 28 13:21:59 1998
-+++ makeconfig	Sun Mar  1 19:45:58 1998
+--- makeconfig.orig	Mon Mar  5 23:06:22 2001
++++ makeconfig	Mon Mar  5 23:07:26 2001
 @@ -11,15 +11,14 @@
  
  # default compiling settings
@@ -20,10 +20,11 @@
  INETDCONF=/etc/inetd.conf
  SERVICES=/etc/services
  
-@@ -35,6 +34,7 @@
+@@ -34,7 +33,7 @@
+ #PGP=/usr/local/bin/pgp
  #RECODE=/usr/local/bin/recode
  #METAMAIL=/usr/local/bin/metamail
- #SENDMAIL=/usr/lib/sendmail
+-#SENDMAIL=/usr/lib/sendmail
 +SENDMAIL=/usr/sbin/sendmail
             
  ######################### END OF USER CONFIGURATION ##########################
