@@ -1,0 +1,44 @@
+--- doc/Makefile.in.orig	Sun Oct  5 12:34:38 2003
++++ doc/Makefile.in	Sun Oct  5 12:35:38 2003
+@@ -205,6 +205,7 @@
+ 	done
+ docDATA_INSTALL = $(INSTALL_DATA)
+ install-docDATA: $(doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -213,6 +214,7 @@
+ 	  echo " $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
+ 	  $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+ 	done
++endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -362,7 +364,9 @@
+ all-am: Makefile $(MANS) $(DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
++ifndef NOPORTDOCS
+ 	$(mkinstalldirs) $(DESTDIR)$(man1dir) $(DESTDIR)$(docdir)
++endif
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
+@@ -449,6 +453,7 @@
+ 
+ 
+ install-data-local:
++ifndef NOPORTDOCS
+ 	@if test "x$(SLRNPULL)" = "xslrnpull"; then \
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)/slrnpull; \
+ 	list='$(PULLDOCS)'; for p in $$list; do \
+@@ -458,6 +463,7 @@
+ 	  fi; \
+ 	done; \
+ 	fi;
++endif
+ 
+ uninstall-local:
+ 	list='$(PULLDOCS)'; for p in $$list; do \

@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Mon Aug 25 09:39:58 2003
++++ Makefile.in	Sat Oct 11 12:31:29 2003
+@@ -176,6 +176,7 @@
+ uninstall-info-am:
+ docDATA_INSTALL = $(INSTALL_DATA)
+ install-docDATA: $(doc_DATA)
++ifndef NOPORTDOCS
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	@list='$(doc_DATA)'; for p in $$list; do \
+@@ -184,6 +185,7 @@
+ 	  echo " $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
+ 	  $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+ 	done
++endif
+ 
+ uninstall-docDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -399,7 +401,9 @@
+ all-am: Makefile $(DATA) all-local
+ installdirs: installdirs-recursive
+ installdirs-am:
++ifndef NOPORTDOCS
+ 	$(mkinstalldirs) $(DESTDIR)$(docdir)
++endif
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
