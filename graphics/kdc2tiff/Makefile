@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdc2tiff
-PORTVERSION=	0.34
-PORTREVISION=	1
+PORTVERSION=	0.35
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +19,10 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+PLIST_FILES=	bin/kdc2jpeg bin/kdc2tiff
 
 .include <bsd.port.mk>
