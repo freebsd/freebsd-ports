@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	spim
-PORTVERSION=	6.4
+PORTVERSION=	6.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 DISTNAME=	${PORTNAME}
