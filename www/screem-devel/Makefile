@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	Nice GNOME/GTK-based HTML editor
 
-# www/neon needs to be updated to 0.24.3
-#LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon
+LIB_DEPENDS+=	neon.24:${PORTSDIR}/www/neon
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -35,12 +34,16 @@ CONFIGURE_ARGS+=	--with-ssl
 USE_PERL5=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-#CONFIGURE_ARGS+=	--with-neon="${LOCALBASE}/bin"
+CONFIGURE_ARGS+=	--without-included-neon
+#			--with-neon="${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\@GNOME_DATA_PREFIX\@|\$$\(datadir\)|g'
+
+post-configure:
+	@${REINPLACE_CMD} -e 's|\/\* #undef HAVE_LIMITS_H \*\/|#define HAVE_LIMITS_H 1|g' ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
