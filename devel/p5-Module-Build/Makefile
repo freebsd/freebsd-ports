@@ -18,7 +18,6 @@ COMMENT=	Build and install Perl modules
 
 BUILD_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML \
-		${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators \
 		${SITE_PERL}/ExtUtils/CBuilder.pm:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -51,6 +50,9 @@ BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/ParseXS.pm:${PORTSDIR}/devel/p5-ExtUtils-P
 .endif
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+.if ${PERL_LEVEL} < 500805
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Man.pm:${PORTSDIR}/textproc/p5-podlators
 .endif
 
 .include <bsd.port.post.mk>
