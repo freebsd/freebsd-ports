@@ -1,4 +1,6 @@
 lib/libvc.a
+lib/libvc.so
+lib/libvc.so.0
 include/vc.h
 %%PORTDOCS%%share/doc/libvc/AUTHORS
 %%PORTDOCS%%share/doc/libvc/ChangeLog
