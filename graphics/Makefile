@@ -106,6 +106,7 @@
     SUBDIR += mtv
     SUBDIR += netpbm
     SUBDIR += netshow
+    SUBDIR += nurbs++
     SUBDIR += opendx
     SUBDIR += opendx-samples
     SUBDIR += opengl-man
