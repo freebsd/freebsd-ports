@@ -1,38 +1,12 @@
-This a re-port of a perl interface to Tk4.0p3 (John Ousterhout's production
-release).  This version (Tk400.200) requires perl5.002 or later.
+This a re-port of a perl interface to Tk8.0p2 (John Ousterhout's production
+release).            
 
-This version is the first 'production' release. There is little change from
-beta release Tk-b11.02 and even less from Tk-b12.  See Changes for what is
-different.
+It also includes all the C code parts of Ioi Kim Lam's Tix4.1.0.006 release.
+The perl code corresponding to Tix's Tcl code is not fully implemented.
 
-Although this is a production release it should be noted that some
-sub-modules are not as "finished" as others. The interfaces to Tcl/Tk's
-"core" widgets Text, Entry, Canvas, Button, RadioButton, Checkbutton, Scale,
-Scrollbar, Listbox, Menu, Menubutton are stable
-.
-As are core Bitmap, Photo and Pixmap image types. The "Composite" or "Mega
-Widget" interface is also stable but lacking in some features.
+This version also contains re-worked Image code based on tcl/tk Img extension 
+by Jan Nijtmans <nijtmans@worldaccess.nl>
 
-The less finished parts include:
-   - Tk::HTML needs libwww package from CPAN which in turn requires the 
-     libnet package. It will eventually be improved as libwww improves.
-   - Tk::IO requires the 'IO::' package which was first introduced into
-     perl distribution in 5.003_01. It is available in CPAN archive for 
-     earlier releases. Tk::IO is likely to change as perl's IO evolves, and
-     with tk4.1  changes.
-   - Tk::Ghostview postscript previewer is still experimental, I use a
-     "Display Postscript" extension which I may release at some point.
-   - Tk::Pod should be changed to use new Pod:: module(s) from CPAN.
-   - Tk::DragDrop works on Solaris (and SunOS to some extent)
-     it should really be based on a standard.
-   - Tk::Xlib will evolve further if tk4.1's Win32/Mac ports permit.
-   - Most of the Tix stuff only has C code ported, the many of the tcl parts
-     still needing converting to perl.
-       - HList works reasonably well
-       - There is a port of NoteBook in Contrib - I want to clean up
-       - InputO has not been tested. 
-   - There is an intent to add an object oriented interface to Canvas items,
-     (existing interface will still work).
-   - There are partially completed things like NNTP News reader which 
-     may be finished one day.
-   - There are point-demo and test scripts in distribution 
+This version (Tk800.008) requires perl5.004_02 or later.
+Some of Tk::IO and 'fileevent' do not work without 
+Graham Barr's TIEHANDLE patches e.g. perl5.004_62
