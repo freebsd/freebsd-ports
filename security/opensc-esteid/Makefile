@@ -18,7 +18,7 @@ COMMENT=	ISO 7816 Smartcard API Library (OpenSSH Compatible)
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
-USE_OPENLDAP_VER=	22
+USE_OPENLDAP=	yes
 INSTALLS_SHLIB=	yes
 USE_OPENSSL=	yes
 USE_LIBTOOL_VER=13
