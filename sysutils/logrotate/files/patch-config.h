@@ -1,24 +1,17 @@
-diff -ruN config.h config.h
---- logrotate-3.6.5/config.h	Sat Aug  3 11:47:41 2002
-+++ logrotate-3.6.5/config.h	Wed Mar 17 12:50:04 2004
-@@ -18,7 +18,7 @@
+diff -ruN logrotate-3.7-orig/config.h logrotate-3.7/config.h
+--- logrotate-3.7-orig/config.h	Mon Sep 22 21:11:12 2003
++++ logrotate-3.7/config.h	Mon May 24 08:05:29 2004
+@@ -16,6 +16,13 @@
+     #define STATEFILE "/var/log/logrotate.status"
  #endif
  
- #ifndef COMPRESS_COMMAND
--    #define COMPRESS_COMMAND "/bin/gzip"
++#ifdef __FreeBSD__
++    #define DEFAULT_MAIL_COMMAND "/usr/bin/mailx -s"
 +    #define COMPRESS_COMMAND "/usr/bin/gzip"
- #endif
- 
- #ifndef COMPRESS_OPTIONS
-@@ -30,10 +30,10 @@
- #endif
- 
- #ifndef UNCOMPRESS_COMMAND
--    #define UNCOMPRESS_COMMAND "/bin/gunzip"
 +    #define UNCOMPRESS_COMMAND "/usr/bin/gunzip"
- #endif
- 
- #ifndef STATEFILE
--    #define STATEFILE "/var/lib/logrotate/status"
 +    #define STATEFILE "/var/lib/logrotate.status"
- #endif
++#endif
++
+ /*
+  * Default settings for Linux - leave these last.
+  */
