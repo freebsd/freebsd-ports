@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PREFIX=$1
+AAFID_DIR=${PREFIX}/lib/aafid2
+
+set -e
+
+cat >> ${AAFID_DIR}/config/AAFID <<*__END__*
+
+## ------------------------------
+## FreeBSD Port specific defaults
+BaseDir=${AAFID_DIR}
+*__END__*
