@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	postgresql_autodoc
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	databases
-MASTER_SITES=	http://www.rbt.ca/autodoc/
-DISTFILES=	${PORTNAME}-1.10.tar.gz
+MASTER_SITES=	http://www.rbt.ca/autodoc/binaries/
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	olgeni@FreeBSD.org
