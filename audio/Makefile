@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.73 1999/03/24 19:39:26 jseger Exp $
+# $Id: Makefile,v 1.74 1999/04/02 00:15:42 taoka Exp $
 #
 
     SUBDIR += 8hz-mp3
@@ -15,6 +15,7 @@
     SUBDIR += gnomemedia
     SUBDIR += gqmpeg
     SUBDIR += gsm
+    SUBDIR += icecast
     SUBDIR += kdemultimedia
     SUBDIR += kdemultimedia11
     SUBDIR += kmpg
