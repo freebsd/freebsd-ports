@@ -1,18 +1,38 @@
---- configure.orig	Mon Mar 20 20:20:42 2000
-+++ configure	Mon Sep 18 21:04:27 2000
-@@ -1150,8 +1150,10 @@
+--- configure.orig	Fri Nov 16 02:21:05 2001
++++ configure	Sat Dec 15 00:00:00 2001
+@@ -170,10 +170,10 @@
+     esac
+ done
+ 
+-DIR_BIN=${EPREFIX}/bin		# destination for applications
+-DIR_LIB=${EPREFIX}/lib		# destination for library
+-DIR_INC=${PREFIX}/include		# destination for include files
+-DIR_HTML=${PREFIX}/doc/libtiff		# destination for HTML files
++#DIR_BIN=${EPREFIX}/bin		# destination for applications
++#DIR_LIB=${EPREFIX}/lib		# destination for library
++#DIR_INC=${PREFIX}/include		# destination for include files
++#DIR_HTML=${PREFIX}/doc/libtiff		# destination for HTML files
+ 
+ if [ -n "$ac_prev" ]; then
+     bitch "configure: missing argument to --`echo $ac_prev | sed 's/_/-/g'`"
+@@ -1172,11 +1172,12 @@
  	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
      *-freebsd*)
--	DSOSUF=so.${DIST_MAJOR}.0
+-	DSOSUF=so.${DIST_MAJOR}
+-	DSOSUF_VERSION=${DSOSUF}.${DIST_MINOR}.${DIST_POINT}
+-	LIBCOPTS='-fPIC'
 +	DSOSUF=so
- 	LIBCOPTS='-fpic -fPIC'
 +	DSOSUF_VERSION=${DSOSUF}.4
-+	DSOOPTS='-shared'
- 	DSO=FREEBSD
- 	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
++	LIBCOPTS='-fPIC -DPIC'
+ 	DSOOPTS='-shared'
+-	DSO=GNULD
++	DSO=FREEBSD
++	TIFFLIBREF='-L${DEPTH}/libtiff -ltiff'
  	;;
-@@ -1256,7 +1258,7 @@
+     *-openbsd*)
+ 	DSOSUF=so.${DIST_MAJOR}.${DIST_MINOR}
+@@ -1300,7 +1301,7 @@
  # Check if ln -s creates a symbolic link.
  #
  if [ -z "${LN_S-}" ]; then
