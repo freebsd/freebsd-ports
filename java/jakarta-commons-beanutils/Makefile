@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.0
+PORTVERSION=	1.6
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-commons/release/${PORTNAME}/v${PORTVERSION}/
+MASTER_SITES=	http://apache.cs.uu.nl/dist/jakarta/commons/beanutils/source/
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
@@ -16,11 +16,12 @@ MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	JavaBeans utility library
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
+		${LOCALBASE}/share/java/classes/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${LOCALBASE}/share/java/classes/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
 USE_JAVA=	1.2+
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/beanutils
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
