@@ -6,6 +6,7 @@ share/galculator/glade/basic_buttons.glade
 share/galculator/glade/color.glade
 share/galculator/glade/dispctrl_bottom.glade
 share/galculator/glade/dispctrl_right.glade
+share/galculator/glade/dispctrl_right_vertical.glade
 share/galculator/glade/font.glade
 share/galculator/glade/main_frame.glade
 share/galculator/glade/prefs.glade
