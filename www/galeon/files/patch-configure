@@ -1,19 +1,19 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Nov 13 14:04:39 2001
-+++ configure	Tue Nov 13 14:13:44 2001
-@@ -12031,7 +12031,7 @@
- echo "${ECHO_T}no" >&6
+--- configure.orig	Mon Nov 19 14:20:52 2001
++++ configure	Mon Nov 19 14:21:50 2001
+@@ -6182,7 +6182,7 @@
  fi
+ 
  
 -	     CATOBJEXT=.gmo
 +	     CATOBJEXT=.mo
  	   fi
- 
- fi
-@@ -12155,7 +12155,7 @@
- 
+ 	
+ else
+@@ -6304,7 +6304,7 @@
+         
  	BUILD_INCLUDED_LIBINTL=yes
  	USE_INCLUDED_LIBINTL=yes
 -        CATOBJEXT=.gmo
@@ -21,7 +21,7 @@ $FreeBSD$
  	INTLLIBS="\$(top_builddir)/intl/libintl.a $LIBICONV"
  	LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
        fi
-@@ -12245,7 +12245,7 @@
+@@ -6389,7 +6389,7 @@
      fi
  
                  for lang in $ALL_LINGUAS; do
@@ -30,18 +30,18 @@ $FreeBSD$
        POFILES="$POFILES $lang.po"
      done
  
-@@ -12862,10 +12862,10 @@
- s,@INSTALL_DATA@,$INSTALL_DATA,;t t
- s,@PACKAGE@,$PACKAGE,;t t
- s,@VERSION@,$VERSION,;t t
--s,@ACLOCAL@,$ACLOCAL,;t t
--s,@AUTOCONF@,$AUTOCONF,;t t
--s,@AUTOMAKE@,$AUTOMAKE,;t t
--s,@AUTOHEADER@,$AUTOHEADER,;t t
-+s,@ACLOCAL@,/usr/bin/true,;t t
-+s,@AUTOCONF@,/usr/bin/true,;t t
-+s,@AUTOMAKE@,/usr/bin/true,;t t
-+s,@AUTOHEADER@,/usr/bin/true,;t t
- s,@MAKEINFO@,$MAKEINFO,;t t
- s,@SET_MAKE@,$SET_MAKE,;t t
- s,@build@,$build,;t t
+@@ -6755,10 +6755,10 @@
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
+ s%@PACKAGE@%$PACKAGE%g
+ s%@VERSION@%$VERSION%g
+-s%@ACLOCAL@%$ACLOCAL%g
+-s%@AUTOCONF@%$AUTOCONF%g
+-s%@AUTOMAKE@%$AUTOMAKE%g
+-s%@AUTOHEADER@%$AUTOHEADER%g
++s%@ACLOCAL@%/usr/bin/true%g
++s%@AUTOCONF@%/usr/bin/true%g
++s%@AUTOMAKE@%/usr/bin/true%g
++s%@AUTOHEADER@%/usr/bin/true%g
+ s%@MAKEINFO@%$MAKEINFO%g
+ s%@SET_MAKE@%$SET_MAKE%g
+ s%@host@%$host%g
