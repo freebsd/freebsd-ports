@@ -45,6 +45,7 @@
 .Op Fl aCdF
 .Op Fl X Ar days
 .Op Fl f Ar file
+.Op Fl r Ar eregex
 .Op Ar pkg-name ...
 .
 .
@@ -91,6 +92,12 @@ old.
 Check the packages listed in
 .Ar file
 for known vulnerabilities.
+.It Fl r Ar eregex
+Restrict listed vulnerabilities to those where a reference matches
+.Xr egrep 1
+pattern
+.Ar eregex .
+Useful to test new entries.
 .It Ar pkg-name ...
 Test whether
 .Ar pkg-name
