@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
@@ -19,8 +19,8 @@ LIB_DEPENDS=	tcl${TCL_VER:S/.//}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
-USE_REINPLACE=  YES
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-hints=freebsd.hints
+USE_REINPLACE=	YES
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-hints=freebsd.hints
 ALL_TARGET=	all libtclsqlite.la
 INSTALLS_SHLIB=	YES
 
