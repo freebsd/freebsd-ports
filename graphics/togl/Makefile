@@ -27,6 +27,8 @@ TOGL_INSTDIR=	${PREFIX}/lib/tk8.2/${DISTNAME}
 do-install:
 	${MKDIR} ${TOGL_INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/libtogl.so.1.3 ${TOGL_INSTDIR}/Togl.so
+	${INSTALL_DATA} ${WRKSRC}/togl.h ${TOGL_INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/togl.o ${TOGL_INSTDIR}
 	${ECHO} 'package ifneeded Togl 1.5 [list load [file join $$dir Togl.so]]'\
 	  > ${PREFIX}/lib/tk8.2/${DISTNAME}/pkgIndex.tcl
 
