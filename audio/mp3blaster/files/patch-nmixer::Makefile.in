@@ -1,0 +1,45 @@
+
+$FreeBSD$
+
+--- nmixer/Makefile.in.orig	Sat Nov 29 05:07:25 2003
++++ nmixer/Makefile.in	Sat Dec  6 00:13:22 2003
+@@ -87,9 +87,8 @@
+ LDADD = @LIBNMIXER@ @NCURSES_LIBS@
+ INCLUDES = -I/usr/include/ncurses -I$(srcdir) -I$(includedir)
+ noinst_LIBRARIES = libnmixer.a
+-libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc nmixer.h                       getopt.c getopt1.c getopt.h
+-
+-CXXFLAGS = @NAS_CFLAGS@
++libnmixer_a_SOURCES = nmixer.cc mixers.cc ossmixer.cc nasmixer.cc nmixer.h
++CXXFLAGS = @CXXFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -105,8 +104,7 @@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+ libnmixer_a_LIBADD = 
+-libnmixer_a_OBJECTS =  nmixer.o mixers.o ossmixer.o nasmixer.o getopt.o \
+-getopt1.o
++libnmixer_a_OBJECTS =  nmixer.o mixers.o ossmixer.o nasmixer.o
+ AR = ar
+ PROGRAMS =  $(bin_PROGRAMS)
+ 
+@@ -250,13 +248,11 @@
+ 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+ 	  fi; \
+ 	done
+-getopt.o: getopt.c ../config.h
+-getopt1.o: getopt1.c ../config.h getopt.h
+-main.o: main.cc nmixer.h ../config.h getopt.h
+-mixers.o: mixers.cc nmixer.h ../config.h getopt.h
++main.o: main.cc nmixer.h ../config.h
++mixers.o: mixers.cc nmixer.h ../config.h
+ nasmixer.o: nasmixer.cc
+-nmixer.o: nmixer.cc nmixer.h ../config.h getopt.h
+-ossmixer.o: ossmixer.cc nmixer.h ../config.h getopt.h
++nmixer.o: nmixer.cc nmixer.h ../config.h
++ossmixer.o: ossmixer.cc nmixer.h ../config.h
+ 
+ info-am:
+ info: info-am
