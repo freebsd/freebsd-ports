@@ -1,0 +1,79 @@
+*** Makefile.orig	Sat May  3 13:37:04 1997
+--- Makefile	Thu Jun 19 10:09:09 1997
+***************
+*** 6,14 ****
+  
+  CHMOD=/bin/chmod
+  CHOWN=/usr/sbin/chown
+! GCC=gcc -O
+! CFLAGS=-funsigned-char -Wall
+! CC=${GCC} ${CFLAGS}
+  # Some systems contains resolver routines in libresolv
+  # EXTRALIBS=lresolv
+  EXTRALIBS=
+--- 6,14 ----
+  
+  CHMOD=/bin/chmod
+  CHOWN=/usr/sbin/chown
+! #GCC=gcc -O
+! CFLAGS+=-funsigned-char -Wall
+! #CC=${GCC} ${CFLAGS}
+  # Some systems contains resolver routines in libresolv
+  # EXTRALIBS=lresolv
+  EXTRALIBS=
+***************
+*** 23,40 ****
+  TABLEOWN=root.wheel
+  
+  #directory to place  binary
+! BINDIR=/usr/local/libexec
+! UTILDIR=/usr/local/bin
+! CGIPATH=/usr/local/www/cgi-bin
+  # name of binaries
+  CYRPROXY=cyrproxy
+  SPY=tcpspy
+  
+  # directory ty place recoding tables
+! TBLDIR=/usr/local/share/proxy
+  
+  # config file location
+! CONF_FILE=/etc/cyrproxy.conf
+  
+  # Subdirs for make
+  # cyrcoder - filter-like cyrillic recoder
+--- 23,40 ----
+  TABLEOWN=root.wheel
+  
+  #directory to place  binary
+! BINDIR=${PREFIX}/libexec
+! UTILDIR=${PREFIX}/bin
+! CGIPATH=${PREFIX}/www/cgi-bin
+  # name of binaries
+  CYRPROXY=cyrproxy
+  SPY=tcpspy
+  
+  # directory ty place recoding tables
+! TBLDIR=${PREFIX}/share/cyrproxy
+  
+  # config file location
+! CONF_FILE=${PREFIX}/etc/cyrproxy/cyrproxy.conf
+  
+  # Subdirs for make
+  # cyrcoder - filter-like cyrillic recoder
+***************
+*** 58,64 ****
+  ALLSRCS=${SRCS} spy.c
+  OBJS=com_gw.o readconf.o connect.o gopher_gw.o main.o telnet_gw.o http_gw.o log.o bufio.o
+  
+! CFLAGS+= -Wall -O ${DEFINES}
+  
+  
+  all: ${CYRPROXY} ${SPY} subdirmake config.gen
+--- 58,64 ----
+  ALLSRCS=${SRCS} spy.c
+  OBJS=com_gw.o readconf.o connect.o gopher_gw.o main.o telnet_gw.o http_gw.o log.o bufio.o
+  
+! CFLAGS+= ${DEFINES}
+  
+  
+  all: ${CYRPROXY} ${SPY} subdirmake config.gen

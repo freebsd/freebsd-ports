@@ -1,0 +1,19 @@
+*** discover/Makefile	Mon Mar 25 20:24:35 1996
+--- /home/andy/tmp/wrk/discover/Makefile	Mon May 26 19:06:53 1997
+***************
+*** 3,9 ****
+  CC=gcc
+  CFLAGS=
+  BINARY=encdiscover
+! UTILDIR?=/usr/local/bin
+  BINOWN?=root.wheel
+  BINMODE?=755
+  CHOWN?=/usr/sbin/chown
+--- 3,9 ----
+  CC=gcc
+  CFLAGS=
+  BINARY=encdiscover
+! UTILDIR?=${PREFIX}/bin
+  BINOWN?=root.wheel
+  BINMODE?=755
+  CHOWN?=/usr/sbin/chown
