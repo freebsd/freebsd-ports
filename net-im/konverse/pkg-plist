@@ -26,7 +26,6 @@ share/apps/konverse/icons/hicolor/22x22/actions/vcard.png
 share/apps/konverse/icons/hicolor/22x22/apps/konverse.png
 share/apps/konverse/pics/konverse-large.png
 @dirrm share/apps/konverse/pics
-@dirrm share/apps/konverse/icons
 @dirrm share/apps/konverse/icons/hicolor/16x16/actions
 @dirrm share/apps/konverse/icons/hicolor/16x16/apps
 @dirrm share/apps/konverse/icons/hicolor/16x16
@@ -34,4 +33,5 @@ share/apps/konverse/pics/konverse-large.png
 @dirrm share/apps/konverse/icons/hicolor/22x22/apps
 @dirrm share/apps/konverse/icons/hicolor/22x22
 @dirrm share/apps/konverse/icons/hicolor
+@dirrm share/apps/konverse/icons
 @dirrm share/apps/konverse
