@@ -6,25 +6,27 @@
 #
 
 PORTNAME=	flac
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+PATCH_SITES=	${MASTER_SITE_DEBIAN}
+PATCH_SITE_SUBDIR=	pool/main/f/${PORTNAME}
+PATCHFILES=	${PORTNAME}_${PORTVERSION}-3.diff.gz
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Free lossless audio codec
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/converters/libiconv:extract
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		ogg.4:${PORTSDIR}/audio/libogg
 
 .if defined(WITH_XMMS)
-# id3lib is only used by the XMMS plugin
+# We don't build with id3lib support, because of C++ related build
+# problems.  Detection is disabled by patch-configure.
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
-		xmms.3:${PORTSDIR}/multimedia/xmms
-CONFIGURE_ARGS+=--with-id3lib="${LOCALBASE}"
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
 PLIST_SUB=	XMMS=""
 .else
 CONFIGURE_ENV+=	XMMS_CONFIG=/usr/bin/false	# must be absolute path
@@ -40,8 +42,6 @@ CONFIGURE_TARGET= --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-sse --enable-3dnow \
 		--with-libiconv-prefix="${LOCALBASE}" \
 		--with-ogg="${LOCALBASE}"
-CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
-		CPPFLAGS="-I${WRKSRC}/include"
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	DOC=""
@@ -50,14 +50,13 @@ MAKE_ENV=	DOC=doc
 .endif
 
 INSTALLS_SHLIB=	yes
-MAN1=		flac.1
-
-# missing auxiliary script
-post-extract:
-	@${CP} `cd ${PORTSDIR}/converters/libiconv && make -V WRKSRC`/autoconf/config.rpath ${WRKSRC}
+MAN1=		flac.1 metaflac.1
 
 # "obj" is magic to our make(1)
 post-configure:
 	@${RM} -rf ${WRKSRC}/obj
+
+test: build
+	@cd ${WRKSRC}; make check
 
 .include <bsd.port.mk>
