@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.29 1999/02/28 21:48:09 asami Exp $
+# $Id: Makefile,v 1.30 1999/05/03 22:29:31 se Exp $
 #
 
 DISTNAME=	kdelibs-1.1.1
@@ -25,9 +25,9 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--with-extra-includes=${PREFIX}/include" \
 		"--x-inc=$(X11BASE)/include" \
 		"--x-lib=$(X11BASE)/lib"
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
-CFLAGS+=	"-I$(PREFIX)/include"
 
 .include <bsd.port.pre.mk>
 
