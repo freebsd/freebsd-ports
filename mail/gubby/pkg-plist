@@ -1,0 +1,3 @@
+bin/gubby
+%%PORTDOCS%%share/doc/gubby/README
+%%PORTDOCS%%@dirrm share/doc/gubby

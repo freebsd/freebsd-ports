@@ -1,0 +1,11 @@
+Gubby is a small program that continually shows where Procmail has placed 
+new email. It runs both in commandline and in an ncurses environment with 
+colors, and will update the overview in real time, while using very low  
+resources. Users can launch a specified mailreader by selecting a folder 
+and pressing enter.
+
+AUTHOR:	C.S. Larsen <csl@sublevel3.org>
+WWW:	http://sublevel3.org/~csl/gubby/
+
+	- Michael L. Hostbaek
+	mich@freebsdcluster.org
