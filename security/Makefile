@@ -32,6 +32,7 @@
     SUBDIR += find_ddos
     SUBDIR += firewalk
     SUBDIR += fragrouter
+    SUBDIR += fressh
     SUBDIR += fuzz
     SUBDIR += fwbuilder
     SUBDIR += fwtk

@@ -1,0 +1,71 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Sun Feb 11 06:01:50 2001
++++ Makefile	Wed Apr 18 19:11:30 2001
+@@ -1,11 +1,11 @@
+ # $Id: Makefile,v 1.80.2.1 2001/02/11 04:01:50 tls Exp $
+ 
+-DEBUG = -g
+-OPTIMIZE = -O2
++#DEBUG = -g
++#OPTIMIZE = -O2
+ #PROF = -pg
+-WARNINGS = -Wall -Wstrict-prototypes -Wmissing-prototypes \
+-           -Wpointer-arithmetic -Wreturn-type -Wwrite-strings \
+-	   -Wcast-qual -Wswitch -Werror # -Wshadow
++#WARNINGS = -Wall -Wstrict-prototypes -Wmissing-prototypes \
++#           -Wpointer-arithmetic -Wreturn-type -Wwrite-strings \
++#	   -Wcast-qual -Wswitch -Werror # -Wshadow
+ # DEFINES += -DUNSAFE_DEBUG
+ # DEFINES += -DFORCE_VALID_LOOPBACK_HOST_KEYS
+ # DEFINES += -DNO_CRC_AT_ALL
+@@ -20,15 +20,15 @@
+ #MEMDEBUG_INCLUDE= -I /usr/pkg/include
+ #MEMDEBUG_LINK= -L /usr/pkg/lib -R /usr/pkg/lib -lleak
+ 
+-CPPFLAGS = ${WARNINGS} -I. -Itransport -Icrypto ${MEMDEBUG_INCLUDE}
+-CFLAGS = ${DEBUG} ${OPTIMIZE} ${PROF} ${CPPFLAGS}
++CPPFLAGS += ${WARNINGS} -I. -Itransport -Icrypto ${MEMDEBUG_INCLUDE}
++CFLAGS += ${DEBUG} ${OPTIMIZE} ${PROF} ${CPPFLAGS}
+ 
+ OS_HDR = ssh_sys_bsd44+.h
+ OS_SRC = ssh_sys_bsd44+.c ssh_sys_posix.c
+ OS_OBJ = ssh_sys_bsd44+.o ssh_sys_posix.o
+ 
+ # Use *one* of the two below:
+-LIBS=	-Llib -lssh	# If you have BSD pmake and BSD-style shared libs.
++LIBS+=	${LDFLAGS} -Llib -lssh	# If you have BSD pmake and BSD-style shared libs.
+ SSHLIB= libssh
+ LIBCLEAN= libclean
+ LIBDEP= libdep
+@@ -40,11 +40,10 @@
+ 
+ #IDEA_LIB = -lcrypto_idea
+ 
+-LIBS+= -lutil -lcrypt -lz ${IDEA_LIB} -lcrypto ${MEMDEBUG_LINK}
++LIBS+= -lutil -lcrypt -lz ${IDEA_LIB} -lcrypto ${MEMDEBUG_LINK} ${RSAGLUE}
+ 
+ INSTALL=install
+ INSTALL_FLAGS=-c -r -m 755 -o bin -g bin
+-PREFIX=/usr/local
+ FRE=fre
+ 
+ HDRS = options.h ssh_buffer.h ssh_channel.h ssh_client.h ssh_defines.h	\
+@@ -154,11 +153,11 @@
+ 	(cd lib ; make depend)
+ 
+ install: sshd
+-	${INSTALL} ${INSTALL_FLAGS} sshd ${PREFIX}/sbin/${FRE}sshd
+-	${INSTALL} ${INSTALL_FLAGS} ssh-keygen ${PREFIX}/bin/${FRE}ssh-keygen
+-	${INSTALL} ${INSTALL_FLAGS} ssh ${PREFIX}/bin/${FRE}ssh
+-	${INSTALL} ${INSTALL_FLAGS} ssh-agent ${PREFIX}/bin/${FRE}ssh-agent
+-	${INSTALL} ${INSTALL_FLAGS} ssh-add ${PREFIX}/bin/${FRE}ssh-add
++	${BSD_INSTALL_PROGRAM} sshd ${PREFIX}/sbin/${FRE}sshd
++	${BSD_INSTALL_PROGRAM} ssh-keygen ${PREFIX}/bin/${FRE}ssh-keygen
++	${BSD_INSTALL_PROGRAM} ssh ${PREFIX}/bin/${FRE}ssh
++	${BSD_INSTALL_PROGRAM} ssh-agent ${PREFIX}/bin/${FRE}ssh-agent
++	${BSD_INSTALL_PROGRAM} ssh-add ${PREFIX}/bin/${FRE}ssh-add
+ 
+ clean: ${LIBCLEAN}
+ 	rm -f *.o crypto/*.o transport/*.o a.out sshd ssh-keygen ssh \
