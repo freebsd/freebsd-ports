@@ -1,0 +1,8 @@
+MagicTemplate is a "magic" interface between programming and design. It makes
+"magically" available all the runtime values - stored in your variables or
+returned by your subroutines - inside a static template file. Usually no 
+need to assign values to the object.
+
+WWW: http://search.cpan.org/~domizio/Text-MagicTemplate-3.03/
+
+Author: Domizio Demichelis <dd@4pro.net>
