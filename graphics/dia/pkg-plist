@@ -1152,27 +1152,16 @@ share/gnome/dia/xslt/dia-uml2java.xsl
 share/gnome/dia/xslt/dia-uml2owl.xsl
 share/gnome/dia/xslt/dia-uml2python.xsl
 share/gnome/dia/xslt/stylesheets.xml
-%%GNOME:%%share/gnome/help/dia/C
-%%GNOME:%%share/gnome/help/dia/en/dia.xml
-%%GNOME:%%share/gnome/help/dia/en/graphics/greendots.png
-%%GNOME:%%share/gnome/help/dia/en/graphics/home_network.png
-%%GNOME:%%share/gnome/help/dia/en/graphics/line_icon.png
-%%GNOME:%%share/gnome/help/dia/en/graphics/line_props.png
-%%GNOME:%%share/gnome/help/dia/pl/dia.xml
-%%GNOME:%%share/gnome/help/dia/pl/graphics/greendots.png
-%%GNOME:%%share/gnome/help/dia/pl/graphics/home_network.png
-%%GNOME:%%share/gnome/help/dia/pl/graphics/line_props.png
-%%NOGNOME:%%share/gnome/dia/help/C
-%%NOGNOME:%%share/gnome/dia/help/en/dia.xml
-%%NOGNOME:%%share/gnome/dia/help/en/graphics/greendots.png
-%%NOGNOME:%%share/gnome/dia/help/en/graphics/home_network.png
-%%NOGNOME:%%share/gnome/dia/help/en/graphics/line_icon.png
-%%NOGNOME:%%share/gnome/dia/help/en/graphics/line_props.png
-%%NOGNOME:%%share/gnome/dia/help/pl/dia.xml
-%%NOGNOME:%%share/gnome/dia/help/pl/graphics/greendots.png
-%%NOGNOME:%%share/gnome/dia/help/pl/graphics/home_network.png
-%%NOGNOME:%%share/gnome/dia/help/pl/graphics/line_icon.png
-%%NOGNOME:%%share/gnome/dia/help/pl/graphics/line_props.png
+share/gnome/help/dia/C
+share/gnome/help/dia/en/dia.xml
+share/gnome/help/dia/en/graphics/greendots.png
+share/gnome/help/dia/en/graphics/home_network.png
+share/gnome/help/dia/en/graphics/line_icon.png
+share/gnome/help/dia/en/graphics/line_props.png
+share/gnome/help/dia/pl/dia.xml
+share/gnome/help/dia/pl/graphics/greendots.png
+share/gnome/help/dia/pl/graphics/home_network.png
+share/gnome/help/dia/pl/graphics/line_props.png
 share/gnome/mime-info/dia.keys
 share/gnome/mime-info/dia.mime
 share/gnome/pixmaps/dia-diagram.png
@@ -1220,16 +1209,11 @@ share/locale/uk/LC_MESSAGES/dia.mo
 share/locale/vi/LC_MESSAGES/dia.mo
 share/locale/zh_CN/LC_MESSAGES/dia.mo
 share/locale/zh_TW/LC_MESSAGES/dia.mo
-%%GNOME:%%@dirrm share/gnome/help/dia/pl/graphics
-%%GNOME:%%@dirrm share/gnome/help/dia/pl
-%%GNOME:%%@dirrm share/gnome/help/dia/en/graphics
-%%GNOME:%%@dirrm share/gnome/help/dia/en
-%%GNOME:%%@dirrm share/gnome/help/dia
-%%NOGNOME:%%@dirrm share/gnome/dia/help/pl/graphics
-%%NOGNOME:%%@dirrm share/gnome/dia/help/pl
-%%NOGNOME:%%@dirrm share/gnome/dia/help/en/graphics
-%%NOGNOME:%%@dirrm share/gnome/dia/help/en
-%%NOGNOME:%%@dirrm share/gnome/dia/help
+@dirrm share/gnome/help/dia/pl/graphics
+@dirrm share/gnome/help/dia/pl
+@dirrm share/gnome/help/dia/en/graphics
+@dirrm share/gnome/help/dia/en
+@dirrm share/gnome/help/dia
 @dirrm share/gnome/dia/xslt
 @dirrm share/gnome/dia/sheets/UML
 @dirrm share/gnome/dia/sheets/GRAFCET
