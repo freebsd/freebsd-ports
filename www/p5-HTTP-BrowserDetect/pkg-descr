@@ -2,7 +2,4 @@ The HTTP::BrowserDetect object does a number of tests on an HTTP user
 agent string.  The results of these tests are available via methods of
 the object.
 
-WWW: http://search.cpan.org/search?dist=HTTP-BrowserDetect
-
--- Sergey Skvortsov
-skv@FreeBSD.org
+WWW: http://search.cpan.org/dist/HTTP-BrowserDetect/
