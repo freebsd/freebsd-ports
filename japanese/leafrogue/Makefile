@@ -7,6 +7,7 @@
 
 PORTNAME=	leafrogue
 PORTVERSION=	0.72
+PORTREVISION=	1
 CATEGORIES=	japanese games
 MASTER_SITES=	http://www.lab3.kuis.kyoto-u.ac.jp/~roguelike/leaf/dl/
 DISTNAME=	lfrog${PORTVERSION:S/.//}
