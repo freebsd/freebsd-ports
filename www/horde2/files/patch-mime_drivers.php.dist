@@ -1,10 +1,10 @@
---- config/mime_drivers.php.dist.orig	Sat Mar  9 19:43:39 2002
-+++ config/mime_drivers.php.dist	Tue Mar 12 22:51:51 2002
-@@ -20,8 +20,12 @@
+--- config/mime_drivers.php.dist.orig	Tue May  7 13:38:08 2002
++++ config/mime_drivers.php.dist	Sat May 18 22:45:30 2002
+@@ -21,8 +21,12 @@
  
  $mime_drivers_map['horde']['registered'] = array(
-     'php', 'tgz', 'vcard'
--    // ,'msword', 'msexcel', 'mspowerpoint',
+     'php', 'tgz', 'vcard', 'enriched'
+-    // ,'msword', 'msexcel', 'mspowerpoint'
 -    // ,'enscript', 'rar', 'zip', 'rpm', 'deb'
 +    //UNCOMMENTIFWV ,'msword'
 +    //UNCOMMENTIFXL , 'msexcel', 'mspowerpoint'
@@ -15,7 +15,7 @@
      );
  
  
-@@ -101,22 +105,22 @@
+@@ -113,22 +117,22 @@
   */
  
  /* Location of the enscript binary. */
@@ -54,7 +54,7 @@
  
  
  /**
-@@ -124,7 +128,7 @@
+@@ -136,7 +140,7 @@
   */
  
  /* Location of the tar binary. */
@@ -63,7 +63,7 @@
  $mime_drivers['horde']['tgz']['inline'] = true;
  $mime_drivers['horde']['tgz']['handles'] = array(
      'x-extension/tgz',
-@@ -142,14 +146,14 @@
+@@ -154,14 +158,14 @@
   */
  
  /* Location of the zipinfo binary. */
@@ -86,7 +86,7 @@
  
  
  /**
-@@ -158,13 +162,13 @@
+@@ -170,13 +174,13 @@
   */
  
  /* Location of the rar binary. */
@@ -107,7 +107,7 @@
  
  
  /**
-@@ -174,15 +178,15 @@
+@@ -186,15 +190,15 @@
   */
  
  /* Location of the wvHtml binary. */
@@ -132,7 +132,7 @@
  
  
  /**
-@@ -192,14 +196,14 @@
+@@ -204,14 +208,14 @@
   */
  
  /* Location of the xlhtml binary. */
@@ -155,7 +155,7 @@
  
  
  /**
-@@ -210,14 +214,14 @@
+@@ -222,14 +226,14 @@
   */
  
  /* Location of the ppthtml binary. */
