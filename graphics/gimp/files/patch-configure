@@ -1,6 +1,14 @@
---- configure.orig	Sun Nov 21 08:44:04 2004
-+++ configure	Sun Nov 21 08:46:24 2004
-@@ -33676,9 +33676,9 @@
+--- configure.orig	Sun Mar  6 15:30:12 2005
++++ configure	Sun Mar  6 15:33:57 2005
+@@ -25925,6 +25925,7 @@
+     if test "x$enable_gtktest" = "xyes" ; then
+       ac_save_CFLAGS="$CFLAGS"
+       ac_save_LIBS="$LIBS"
++      GTK_LIBS="$GIMP_THREAD_LIBS $GTK_LIBS"
+       CFLAGS="$CFLAGS $GTK_CFLAGS"
+       LIBS="$GTK_LIBS $LIBS"
+       rm -f conf.gtktest
+@@ -33865,9 +33866,9 @@
  fi
  fi;
  
