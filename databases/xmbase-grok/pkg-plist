@@ -1,0 +1,28 @@
+bin/grok
+include/X11/pixmaps/grok.xpm
+lib/X11/xmbase-grok/grok.hlp
+lib/X11/xmbase-grok/Manual.ps
+lib/X11/xmbase-grok/grokdir/countries.db
+lib/X11/xmbase-grok/grokdir/countries.gf
+lib/X11/xmbase-grok/grokdir/phone.db
+lib/X11/xmbase-grok/grokdir/phone.gf
+lib/X11/xmbase-grok/grokdir/phonelog.db
+lib/X11/xmbase-grok/grokdir/phonelog.gf
+lib/X11/xmbase-grok/grokdir/todo.db
+lib/X11/xmbase-grok/grokdir/todo.gf
+lib/X11/xmbase-grok/grokdir/diary.db
+lib/X11/xmbase-grok/grokdir/diary.gf
+lib/X11/xmbase-grok/grokdir/passwd.gf
+lib/X11/xmbase-grok/grokdir/procdemo
+lib/X11/xmbase-grok/grokdir/procdemo.gf
+lib/X11/xmbase-grok/grokdir/weather.db
+lib/X11/xmbase-grok/grokdir/weather.gf
+lib/X11/xmbase-grok/grokdir/checkbook.db
+lib/X11/xmbase-grok/grokdir/checkbook.gf
+lib/X11/xmbase-grok/grokdir/www_pages.db
+lib/X11/xmbase-grok/grokdir/www_pages.gf
+lib/X11/xmbase-grok/grokdir/biblio.db
+lib/X11/xmbase-grok/grokdir/biblio.gf
+lib/X11/xmbase-grok/grokdir/biblio.mktex.pl
+@dirrm lib/X11/xmbase-grok/grokdir
+@dirrm lib/X11/xmbase-grok

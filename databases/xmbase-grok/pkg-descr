@@ -1,0 +1,8 @@
+xmbase-grok, formerly just called "grok", is a simple database manager
+and UI builder that can -
+
+  *  keep phone and address lists (like a rolodex)
+  *  store phone call logs
+  *  keep todo lists
+  *  manage any other database after simple GUI-driven customization
+  *  customized data export, HTML export built in
