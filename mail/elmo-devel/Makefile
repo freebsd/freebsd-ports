@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	elmo
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
@@ -20,8 +21,11 @@ USE_ICONV=	yes
 USE_OPENSSL=	yes
 USE_PERL5_RUN=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 MAN1=		elmo.1 elmoconf.pl.1
 
