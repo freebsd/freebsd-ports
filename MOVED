@@ -1303,3 +1303,10 @@ japanese/lookup-mule||2004-11-05|no longer supported
 emulators/linux-mupen64|emulators/mupen64|2004-11-08|replaced with native port
 math/fftpack|math/bihar|2004-11-08|more suitable name
 security/md5crk||2004-11-08|project shut down
+devel/p5-Filter-CBC|security/p5-Filter-CBC|2004-11-09|moved to security category
+devel/p5-POE-Component-Pcap|net/p5-POE-Component-Pcap|2004-11-09|moved to net category
+devel/p5-POE-Component-Client-Ping|net/p5-POE-Component-Client-Ping|2004-11-09|moved to net category
+devel/p5-POE-Component-DBIAgent|databases/p5-POE-Component-DBIAgent|2004-11-09|moved to databases category
+devel/p5-POE-Component-Client-POP3|mail/p5-POE-Component-Client-POP3|2004-11-09|moved to mail category
+devel/p5-POE-Component-Client-HTTP|www/p5-POE-Component-Client-HTTP|2004-11-09|moved to www category
+devel/p5-POE-Component-Client-UserAgent|www/p5-POE-Component-Client-UserAgent|2004-11-09|moved to www category

@@ -821,7 +821,6 @@
     SUBDIR += p5-Filesys-Statvfs_Df
     SUBDIR += p5-Filesys-Virtual
     SUBDIR += p5-Filter
-    SUBDIR += p5-Filter-CBC
     SUBDIR += p5-FreezeThaw
     SUBDIR += p5-Getargs-Long
     SUBDIR += p5-Getopt-ArgvFile
@@ -906,18 +905,12 @@
     SUBDIR += p5-POE-API-Hooks
     SUBDIR += p5-POE-API-Peek
     SUBDIR += p5-POE-Component-Child
-    SUBDIR += p5-POE-Component-Client-HTTP
-    SUBDIR += p5-POE-Component-Client-POP3
-    SUBDIR += p5-POE-Component-Client-Ping
-    SUBDIR += p5-POE-Component-Client-UserAgent
-    SUBDIR += p5-POE-Component-DBIAgent
     SUBDIR += p5-POE-Component-DebugShell
     SUBDIR += p5-POE-Component-DirWatch
     SUBDIR += p5-POE-Component-EasyDBI
     SUBDIR += p5-POE-Component-IKC
     SUBDIR += p5-POE-Component-JobQueue
     SUBDIR += p5-POE-Component-Logger
-    SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
     SUBDIR += p5-POE-Component-Server-XMLRPC
     SUBDIR += p5-POE-Component-TSTP

@@ -512,6 +512,8 @@
     SUBDIR += p5-Maypole-Authentication-UserSessionCookie
     SUBDIR += p5-Maypole-Component
     SUBDIR += p5-PHP-Session
+    SUBDIR += p5-POE-Component-Client-HTTP
+    SUBDIR += p5-POE-Component-Client-UserAgent
     SUBDIR += p5-POE-Component-Server-HTTP
     SUBDIR += p5-ParallelUA
     SUBDIR += p5-PodToHTML
