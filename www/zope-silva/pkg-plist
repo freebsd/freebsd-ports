@@ -103,6 +103,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/adapter.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/adapter.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/cleanup.py
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/cleanup.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/interfaces.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters/security.py
@@ -113,7 +115,11 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/batch.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/convert.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/convert.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/default/content.html.pt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/default/frontend.css.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/default/layout_macro.html.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/API.txt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/AccessKeys.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/AccessTab.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/ApacheNotes.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/AuthorEditorChief.stx
@@ -122,14 +128,14 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/ContentObject.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/ContentsTab.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/DataSource.stx
-%%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/EditTab.stx
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/EditorTab.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/FeatureList.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/FileObject.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/FileSystem.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/GlobalOverview.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/InAnOrganization.stx
-%%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/MetadataTab.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/PreviewTab.stx
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/PropertiesTab.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/PublishTab.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/README.stx
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/SilvaDeveloper.stx
@@ -149,6 +155,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/silva-extra.xml
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/silva-publication.xml
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/silva.xsd
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/silva_layout.rst
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc/title_and_index_analysis.txt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/fssite.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/fssite.pyc
@@ -177,7 +184,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/overview.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/pixel.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/plone.css.dtml
-%%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/ploneCustom.css.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/plone_javascripts.js.dtml
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/powered_by.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals/reference.pt
@@ -217,6 +223,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/layout/content.html
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/layout/frontend.css
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/layout/get_layout_macro.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/layout/get_metadata_element.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/layout/index_html.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/layout/layout_macro.html
@@ -379,6 +386,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/GhostFolder/submit.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/GhostFolder/sync.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/GhostFolder/tab_edit.pt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/GhostFolder/tab_metadata.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/Publication/copy_layout_submit.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/Publication/get_acquire_addables_checked.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/Container/Publication/get_addables_allowed.py
@@ -508,7 +516,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_ghost_link_status_text.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_groups.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_members.py
-%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_metadata_binding.py
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_metadata.py
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_metadata_element.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_nearest_chiefeditors.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_nearest_managers.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/get_time_punctuation.py
@@ -527,6 +536,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/lookup_use_selection.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/macro_groups_listing.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/macro_metadata.pt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/macro_role_options.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/macro_user_lookup_clipboard.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/macro_vein_navigation.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/promptWindow.pt
@@ -552,8 +562,6 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/edit/tab_preview_needs_feedback.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/focus_editor.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/getBatch.py
-%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/get_metadata.py
-%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/get_metadata_element.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/get_silva_permissions.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/get_tab_info.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/get_user_role.py
@@ -589,6 +597,8 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/SimpleContent/render_preview.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/SimpleContent/render_view.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/SimpleContent/visible.py
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/get_metadata.py
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/get_metadata_element.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/perform_search.py
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/request_roles.pt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/views/public/request_roles_submit.py
@@ -605,6 +615,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/autotoc.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/contactInfoAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/containerPolicyEdit.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/www/containerpolicy_service.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/docma.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/emailMessageServiceEdit.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/extensionServiceEdit.zpt
@@ -640,6 +651,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/indexerAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/ip_group.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/layoutServiceEdit.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/www/layout_service.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/link.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/linkversionAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/member.png
@@ -656,6 +668,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/service_sidebar.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/sidebarServiceAdd.zpt
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/sidebarServiceEditTab.zpt
+%%ZOPEBASEDIR%%/lib/python/Products/Silva/www/sidebar_service.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/silva.png
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/silva_document.gif
 %%ZOPEBASEDIR%%/lib/python/Products/Silva/www/silva_folder.gif
@@ -692,14 +705,19 @@
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/homepage.stx
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/install.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/install.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/interfaces.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/interfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/search.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/search.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/silvaparser.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/silvaparser.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/.cvsignore
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/framework.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/framework.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/print_profilestats.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/print_profilestats.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/test_BasicTransformations.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/test_BasicTransformations.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/tests/test_EoproTransformations.py
@@ -736,6 +754,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/upgrade.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/version.txt
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/views/add/Document/add_submit_helper.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/views/add/Document/form.form
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/views/edit/VersionedContent/Document/edit.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/views/edit/VersionedContent/Document/get_tabs.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/views/public/Document/render_preview.py
@@ -751,10 +770,9 @@
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/edit_mode_helper.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/edit_mode_helper.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/cached.py
-%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/author.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/content.pt
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_done/exists.txt
-%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_edit/editable_content.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_edit/editable.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_edit/get_lines.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_edit/render.pt
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_edit/save_helper.py
@@ -762,9 +780,10 @@
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_insert/exists.txt
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_normal/exists.txt
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_view/render.pt
-%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/paragraphs.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/mode_view/show_index.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/render.pt
-%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/source.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/show_index.py
+%%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/cite/viewable.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/code/cached.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/code/get_code_data.py
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaDocument/widgets/element/doc_elements/code/get_code_object.py
@@ -1152,6 +1171,7 @@
 %%ZOPEBASEDIR%%/lib/python/Products/SilvaMetadata/www/up.gif
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Silva/Extensions
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Silva/adapters
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/Silva/default
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Silva/doc
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Silva/globals
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/Silva/layout

@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	silva
-PORTVERSION=	0.9.3b1
+PORTVERSION=	0.9.3
+PORTEPOCH=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/%SUBDIR%/:silva,document,metadata
 MASTER_SITE_SUBDIR=	Silva/Silva-${PORTVERSION}/:silva \
-			SilvaDocument/SilvaDocument-0.9.3b1/:document \
-			SilvaMetadata/SilvaMetadata-0.7.4/:metadata
+			SilvaDocument/SilvaDocument-0.9.3/:document \
+			SilvaMetadata/SilvaMetadata-0.7.5/:metadata
 PKGNAMEPREFIX=	zope-
 DISTFILES=	Silva-${PORTVERSION}.tgz:silva \
-		SilvaDocument-0.9.3b1.tgz:document \
-		SilvaMetadata-0.7.4.tgz:metadata
+		SilvaDocument-0.9.3.tgz:document \
+		SilvaMetadata-0.7.5.tgz:metadata
 
 MAINTAINER=	x@Vex.Net
 COMMENT=	Web application to manage/edit structured documents
