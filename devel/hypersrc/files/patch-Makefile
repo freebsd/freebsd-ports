@@ -1,5 +1,5 @@
---- GNUmakefile.orig	Tue Jul  8 09:09:30 2003
-+++ GNUmakefile	Wed Jul  9 02:04:50 2003
+--- GNUmakefile.orig	Wed Aug  6 10:54:35 2003
++++ GNUmakefile	Sat Oct  4 22:20:22 2003
 @@ -8,11 +8,7 @@
  
  # Where to install.
@@ -28,10 +28,11 @@
  
 -CC			= gcc -c
 -CC_FLAGS	= -I$(INC_DIR) $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) -pipe `$(GTK_CONFIG) --cflags` `gnome-config --cflags gnomeui`
+-LD			= gcc
+-LD_FLAGS	+= $(PROF_OPTS) -pipe `$(GTK_CONFIG) --libs` `gnome-config --libs gnomeui`
 +#CC			= gcc -c
 +CC_FLAGS	= -I$(INC_DIR) $(PROF_OPTS) $(C_DEBUG) $(C_OPTIMIZE) $(C_OPTS) $(C_WARNINGS) `gnome-config --cflags gnomeui`
- LD			= gcc
--LD_FLAGS	+= $(PROF_OPTS) -pipe `$(GTK_CONFIG) --libs` `gnome-config --libs gnomeui`
++LD			= $(CC)
 +LD_FLAGS	+= $(PROF_OPTS) `gnome-config --libs gnomeui`
  C_SRCS		= $(addprefix $(SRC)/,$(C_SRCS_))
  C_OBJS_		= $(C_SRCS_:.c=.o)
