@@ -7,7 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -45,7 +45,8 @@ OPTIONS=	LDAP	"Support for users in LDAP directories" off \
 		PGSQL	"Support for users in PostgreSQL database" off \
 		PRIVSEP	"Enable privilege separation" off \
 		PERUSERLIMITS	"Per-user concurrency limits" off \
-		THROTTLING	"Bandwidth throttling" off
+		THROTTLING	"Bandwidth throttling" off \
+		BANNER	"Show ${PORTNAME} welcome upon session start" on
 
 .include <bsd.port.pre.mk>
 
@@ -95,6 +96,11 @@ CONFIGURE_ARGS+=	--with-certfile=${WITH_CERTFILE}
 # if mysql or ldap are disabled, enable pam
 .if !defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=	--with-pam
+.endif
+
+# for paranoia
+.if defined(WITHOUT_BANNER)
+CONFIGURE_ARGS+=	--without-banner
 .endif
 
 .if ${OSVERSION} > 500000
