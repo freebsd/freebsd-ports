@@ -1,0 +1,11 @@
+--- constant.h.orig	Thu Aug 24 22:13:54 2000
++++ constant.h	Thu Aug 24 22:12:11 2000
+@@ -35,7 +35,7 @@
+ }
+ #endif
+ 
+-#include <ldap.h>
++#include <mozldap.h>
+ 
+ static int
+ not_here(s)

@@ -1,0 +1,13 @@
+--- API.xs.orig	Thu Aug 24 22:13:31 2000
++++ API.xs	Thu Aug 24 22:11:55 2000
+@@ -37,8 +37,8 @@
+ #endif
+ 
+ /* LDAP C SDK Include Files */
+-#include <lber.h>
+-#include <ldap.h>
++#include <mozlber.h>
++#include <mozldap.h>
+ 
+ /* SSL is only available in Binary */
+ #ifdef USE_SSL
