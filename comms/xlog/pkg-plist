@@ -1,0 +1,38 @@
+bin/xlog
+share/locale/da/LC_MESSAGES/xlog.mo
+share/locale/nl/LC_MESSAGES/xlog.mo
+share/locale/fr/LC_MESSAGES/xlog.mo
+share/locale/es/LC_MESSAGES/xlog.mo
+share/xlog/pixmaps/add.xpm
+share/xlog/pixmaps/cancel.xpm
+share/xlog/pixmaps/del.xpm
+share/xlog/pixmaps/mini-clock.xpm
+share/xlog/pixmaps/mini-trx.xpm
+share/xlog/pixmaps/mini-xlog.xpm
+share/xlog/pixmaps/ok.xpm
+share/xlog/pixmaps/s.xpm
+share/xlog/pixmaps/s0.xpm
+share/xlog/pixmaps/s1.xpm
+share/xlog/pixmaps/s2.xpm
+share/xlog/pixmaps/s3.xpm
+share/xlog/pixmaps/s4.xpm
+share/xlog/pixmaps/s5.xpm
+share/xlog/pixmaps/s6.xpm
+share/xlog/pixmaps/s7.xpm
+share/xlog/pixmaps/s8.xpm
+share/xlog/pixmaps/s9.xpm
+share/xlog/pixmaps/update.xpm
+share/xlog/pixmaps/xlog.png
+share/xlog/pixmaps/xlog.xpm
+share/xlog/dxcc/dxcck2di.changes
+share/xlog/dxcc/dxcck2di.txt
+share/xlog/remote/Makefile
+share/xlog/remote/README
+share/xlog/remote/fromxlog.c
+share/xlog/remote/sendtoxlog.c
+share/xlog/themes/xlogrc
+@dirrm share/xlog/pixmaps
+@dirrm share/xlog/dxcc
+@dirrm share/xlog/remote
+@dirrm share/xlog/themes
+@dirrm share/xlog
