@@ -1,0 +1,11 @@
+--- ../SrcShared/EmScreen.h.orig	Fri Mar 30 07:51:38 2001
++++ ../SrcShared/EmScreen.h	Fri Mar 30 07:54:33 2001
+@@ -50,6 +50,8 @@
+ 		static void 			Dispose 			(void);
+ 
+ 		static void 			MarkDirty			(emuptr address, uint32 size);
++		static Bool 			IsDirty			();
++
+ 		static void 			InvalidateAll		(void);
+ 
+ 		static Bool 			GetBits 			(EmScreenUpdateInfo&);

@@ -1,0 +1,11 @@
+--- ../SrcShared/Logging.h.orig	Fri Mar 30 07:21:43 2001
++++ ../SrcShared/Logging.h	Fri Mar 30 07:22:40 2001
+@@ -18,7 +18,7 @@
+ #include "Miscellaneous.h"		// StMemory
+ #include "PreferenceMgr.h"		// FOR_EACH_PREF
+ #include "omnithread.h"			// omni_mutex
+-
++#include "stdarg.h"             // FreeBSD
+ class EmStreamFile;
+ 
+ 

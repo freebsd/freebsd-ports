@@ -1,0 +1,17 @@
+--- ../SrcShared/EmScreen.cpp.orig	Fri Mar 30 07:45:11 2001
++++ ../SrcShared/EmScreen.cpp	Fri Mar 30 07:50:48 2001
+@@ -181,6 +181,14 @@
+ 	}
+ }
+ 
++Bool EmScreen::IsDirty ()
++{
++    if ( gScreenDirtyLow >= gScreenDirtyHigh )
++    {
++        return false;
++    }
++    return true;
++}
+ 
+ /***********************************************************************
+  *

@@ -1,0 +1,13 @@
+--- ../SrcUnix/fltk_LcdWindow.cpp.orig	Fri Mar 30 08:41:10 2001
++++ ../SrcUnix/fltk_LcdWindow.cpp	Fri Mar 30 08:44:49 2001
+@@ -222,7 +222,9 @@
+ 
+ 		if (gSession)
+ 		{
+-			lcd->damageLcdArea ();
++		    if ( EmScreen::IsDirty() ) {
++			  lcd->damageLcdArea ();
++			}
+ 		}
+ 
+ 		if (gSession)
