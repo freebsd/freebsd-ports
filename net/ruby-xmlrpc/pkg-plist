@@ -1,6 +1,7 @@
 %%RUBY_SITELIBDIR%%/xmlrpc/GServer.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/base64.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/client.rb
+%%RUBY_SITELIBDIR%%/xmlrpc/config.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/create.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/datetime.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/httpserver.rb
