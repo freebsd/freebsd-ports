@@ -17,8 +17,10 @@ include/qextscintillalexerpython.h
 include/qextscintillalexersql.h
 include/qextscintillamacro.h
 include/qextscintillaprinter.h
-lib/libqscintilla.so.4
+lib/libqscintilla.so.5
 lib/libqscintilla.so
 share/qscintilla/translations/qscintilla_de.qm
+share/qscintilla/translations/qscintilla_fr.qm
+share/qscintilla/translations/qscintilla_ru.qm
 @dirrm share/qscintilla/translations
 @dirrm share/qscintilla
