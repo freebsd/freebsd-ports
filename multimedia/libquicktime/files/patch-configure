@@ -1,6 +1,6 @@
---- configure.orig	Sat Jun 22 08:57:50 2002
-+++ configure	Sat Aug 10 00:55:47 2002
-@@ -6591,6 +6591,7 @@
+--- configure.orig	Sun Sep  7 02:15:25 2003
++++ configure	Thu Nov 13 00:07:40 2003
+@@ -7674,6 +7674,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8985,7 +8986,7 @@
+ fi
+ 
+ case $compile_mode in
+-"optimize") CFLAGS="$OPTIMIZE_CFLAGS $COMMON_CFLAGS"; cat >>confdefs.h <<\_ACEOF
++"optimize") CFLAGS="$CFLAGS"; cat >>confdefs.h <<\_ACEOF
+ #define NDEBUG 1
+ _ACEOF
+ ;;

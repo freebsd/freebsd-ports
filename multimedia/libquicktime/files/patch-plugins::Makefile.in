@@ -1,0 +1,11 @@
+--- plugins/Makefile.in.orig	Sun Sep  7 02:15:35 2003
++++ plugins/Makefile.in	Thu Nov 13 00:37:05 2003
+@@ -152,7 +152,7 @@
+ @HAVE_VORBIS_TRUE@vorbis_subdirs = vorbis
+ @HAVE_VORBIS_FALSE@vorbis_subdirs = 
+ 
+-@HAVE_LIBAVCODEC_TRUE@libavcodec_subdirs = ffmpeg
++@HAVE_LIBAVCODEC_TRUE@libavcodec_subdirs =
+ @HAVE_LIBAVCODEC_FALSE@libavcodec = 
+ 
+ SUBDIRS = $(base_subdirs) $(jpeg_subdirs) $(dv_subdirs) \
