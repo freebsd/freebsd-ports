@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-CATEGORIES=	german
+CATEGORIES=	german editors
 
 LANG_PKGNAME=	de
 LANG_EXT=	49
@@ -16,4 +16,4 @@ EXTRACT_LANGDIST+=	de_DE.zip de_CH.zip
 #
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
-.include "${.CURDIR}/../../editors/openoffice/Makefile"
+.include "${MASTERDIR}/Makefile"
