@@ -1,0 +1,23 @@
+bin/xsok
+lib/X11/app-defaults/XSok
+lib/X11/xsok/Cyberbo.def.gz
+lib/X11/xsok/Cyberbox.help
+lib/X11/xsok/Cyberbox.score
+lib/X11/xsok/Sokoban.def.gz
+lib/X11/xsok/Sokoban.help
+lib/X11/xsok/Sokoban.score
+lib/X11/xsok/Xsok.def.gz
+lib/X11/xsok/Xsok.help
+lib/X11/xsok/Xsok.score
+lib/X11/xsok/floor.xpm
+lib/X11/xsok/keys
+lib/X11/xsok/keys.help
+lib/X11/xsok/objects.xpm
+man/man6/xsok.6x.gz
+share/doc/xsok/COPYRIGHT.GNU
+share/doc/xsok/COPYRIGHT.xpm
+share/doc/xsok/COPYRIGHT.xsok
+share/doc/xsok/cyberbox.doc
+share/doc/xsok/xsok.tex
+@dirrm lib/X11/xsok
+@dirrm share/doc/xsok
