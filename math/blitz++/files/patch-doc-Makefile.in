@@ -1,13 +1,11 @@
---- doc/Makefile.in.orig	Wed Sep 17 20:00:32 2003
-+++ doc/Makefile.in	Mon May 31 01:33:13 2004
-@@ -154,8 +154,8 @@
- SUBDIRS = examples stencils
+--- ./doc/Makefile.in.orig	Tue Feb 22 18:26:53 2005
++++ doc/Makefile.in	Tue Feb 22 18:27:14 2005
+@@ -275,7 +275,7 @@ target_vendor = @target_vendor@
+ SUBDIRS = examples stencils doxygen
  
  # install these files
--docdir = $(prefix)/doc
--doc_DATA = blitz.ps 
-+docdir = $(prefix)/share/doc/blitz
-+doc_DATA = 
- 
- AM_MAKEINFOFLAGS = --no-split
- TEXI2HTML = texi2html
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
+ doc_DATA = blitz.ps blitz.pdf blitz.html \
+ 	blitz_abt.html blitz_fot.html blitz_ovr.html blitz_toc.html \
+ 	blitz_1.html blitz_2.html blitz_3.html blitz_4.html blitz_5.html \
