@@ -52,6 +52,9 @@ post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
+.if defined(NOPORTDOCS)
+	@cd ${WRKSRC}/vje30 && ${RM} -rf doc README FAQ
+.endif
 
 do-install:
 	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}

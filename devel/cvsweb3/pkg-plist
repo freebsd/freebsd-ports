@@ -4,13 +4,13 @@ etc/cvsweb/cvsweb.conf-openbsd.dist
 etc/cvsweb/cvsweb.conf-netbsd.dist
 etc/cvsweb/cvsweb.conf-ruby.dist
 @dirrm etc/cvsweb
-share/doc/cvsweb/ChangeLog
-share/doc/cvsweb/INSTALL
-share/doc/cvsweb/README
-share/doc/cvsweb/README.knu
-share/doc/cvsweb/TODO
-share/doc/cvsweb/TODO.knu
-@dirrm share/doc/cvsweb
+%%PORTDOCS%%share/doc/cvsweb/ChangeLog
+%%PORTDOCS%%share/doc/cvsweb/INSTALL
+%%PORTDOCS%%share/doc/cvsweb/README
+%%PORTDOCS%%share/doc/cvsweb/README.knu
+%%PORTDOCS%%share/doc/cvsweb/TODO
+%%PORTDOCS%%share/doc/cvsweb/TODO.knu
+%%PORTDOCS%%@dirrm share/doc/cvsweb
 %%CGIDIR%%/cvsweb.cgi
 %%ICONSDIR%%/cvsweb/back.gif
 %%ICONSDIR%%/cvsweb/dir.gif

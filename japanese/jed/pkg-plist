@@ -1,41 +1,41 @@
 bin/jed
 bin/rgrep
 %%XJED_ENTRY%%
-@unexec install-info --delete %D/info/jed.info %D/info/dir
-info/jed.info
-info/jed.1in
-info/jed.2in
-info/jed.3in
-@exec install-info %D/info/jed.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete %D/info/jed.info %D/info/dir
+%%PORTDOCS%%info/jed.info
+%%PORTDOCS%%info/jed.1in
+%%PORTDOCS%%info/jed.2in
+%%PORTDOCS%%info/jed.3in
+%%PORTDOCS%%@exec install-info %D/info/jed.info %D/info/dir
 lib/jed/bin/getmail
-lib/jed/doc/abbrev.txt
-lib/jed/doc/color.txt
-lib/jed/doc/dfa.txt
-lib/jed/doc/edt.txt
-lib/jed/doc/emacs.txt
-lib/jed/doc/fold.txt
-lib/jed/doc/hooks.txt
-lib/jed/doc/ide-mode.txt
-lib/jed/doc/jed_faq.txt
-lib/jed/doc/jedfuns.txt
-lib/jed/doc/libfuns.txt
-lib/jed/doc/menus.txt
-lib/jed/doc/mouse.txt
-lib/jed/doc/pc-keys.txt
-lib/jed/doc/program.txt
-lib/jed/doc/rgrep.txt
-lib/jed/doc/rmail.txt
-lib/jed/doc/script.txt
-lib/jed/doc/slangfun.txt
-lib/jed/doc/syntax.txt
-lib/jed/doc/undo.txt
-lib/jed/doc/wjed.txt
-lib/jed/doc/wordstar.txt
-lib/jed/doc/xjed.txt
-lib/jed/doc/yankpop.txt
-lib/jed/doc/README
-lib/jed/doc/jed.tex
-lib/jed/doc/jed-j.doc
+%%PORTDOCS%%lib/jed/doc/abbrev.txt
+%%PORTDOCS%%lib/jed/doc/color.txt
+%%PORTDOCS%%lib/jed/doc/dfa.txt
+%%PORTDOCS%%lib/jed/doc/edt.txt
+%%PORTDOCS%%lib/jed/doc/emacs.txt
+%%PORTDOCS%%lib/jed/doc/fold.txt
+%%PORTDOCS%%lib/jed/doc/hooks.txt
+%%PORTDOCS%%lib/jed/doc/ide-mode.txt
+%%PORTDOCS%%lib/jed/doc/jed_faq.txt
+%%PORTDOCS%%lib/jed/doc/jedfuns.txt
+%%PORTDOCS%%lib/jed/doc/libfuns.txt
+%%PORTDOCS%%lib/jed/doc/menus.txt
+%%PORTDOCS%%lib/jed/doc/mouse.txt
+%%PORTDOCS%%lib/jed/doc/pc-keys.txt
+%%PORTDOCS%%lib/jed/doc/program.txt
+%%PORTDOCS%%lib/jed/doc/rgrep.txt
+%%PORTDOCS%%lib/jed/doc/rmail.txt
+%%PORTDOCS%%lib/jed/doc/script.txt
+%%PORTDOCS%%lib/jed/doc/slangfun.txt
+%%PORTDOCS%%lib/jed/doc/syntax.txt
+%%PORTDOCS%%lib/jed/doc/undo.txt
+%%PORTDOCS%%lib/jed/doc/wjed.txt
+%%PORTDOCS%%lib/jed/doc/wordstar.txt
+%%PORTDOCS%%lib/jed/doc/xjed.txt
+%%PORTDOCS%%lib/jed/doc/yankpop.txt
+%%PORTDOCS%%lib/jed/doc/README
+%%PORTDOCS%%lib/jed/doc/jed.tex
+%%PORTDOCS%%lib/jed/doc/jed-j.doc
 lib/jed/lib/colors/README
 lib/jed/lib/colors/black1.sl
 lib/jed/lib/colors/black2.sl
@@ -187,5 +187,5 @@ lib/jed/lib/jed.rc
 @dirrm lib/jed/lib/tm
 @dirrm lib/jed/lib/colors
 @dirrm lib/jed/lib
-@dirrm lib/jed/doc
+%%PORTDOCS%%@dirrm lib/jed/doc
 @dirrm lib/jed

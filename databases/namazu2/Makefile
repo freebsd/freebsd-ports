@@ -43,5 +43,8 @@ DEPEND_MSOFFICE=	xlHtml:${PORTSDIR}/textproc/xlhtml \
 
 post-install:
 	${LN} -sf ${PREFIX}/lib/libnmz.so.4 ${PREFIX}/lib/libnmz.so
+.if defined(NOPORTDOCS)
+	${RM} -rf ${PREFIX}/share/namazu/doc
+.endif
 
 .include <bsd.port.mk>

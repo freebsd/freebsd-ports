@@ -86,6 +86,9 @@ post-patch:
 	@find ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
 	@${PERL} -i -pe 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
+.if defined(NOPORTDOCS)
+	@cd ${WRKSRC}/vje30 && ${RM} -rf doc README FAQ REQUEST
+.endif
 
 post-build:
 	@${CP} ${BUILD_WRKSRC}/vje ${WRKSRC}/vje30/bin/

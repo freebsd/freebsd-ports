@@ -27,6 +27,6 @@ include/xunicode/xustring.h
 include/xunicode/xuwindow.h
 @dirrm include/xunicode
 lib/libxunicode.a
-share/doc/xunicode/ja/README.utf8
-@dirrm share/doc/xunicode/ja
-@dirrm share/doc/xunicode
+%%PORTDOCS%%share/doc/xunicode/ja/README.utf8
+%%PORTDOCS%%@dirrm share/doc/xunicode/ja
+%%PORTDOCS%%@dirrm share/doc/xunicode
