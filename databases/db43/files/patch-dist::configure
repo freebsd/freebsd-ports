@@ -1,0 +1,24 @@
+--- ../dist/configure.orig	Wed Dec  5 13:14:02 2001
++++ ../dist/configure	Wed Dec  5 13:24:01 2001
+@@ -8794,10 +8794,10 @@
+ INSTALLER="\$(LIBTOOL) --mode=install cp"
+ 
+ MAKEFILE_CC="\$(LIBTOOL) --mode=compile ${MAKEFILE_CC}"
+-MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -avoid-version"
++MAKEFILE_SOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK} -version-info ${DB_VERSION_MINOR}"
+ MAKEFILE_CCLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CCLINK}"
+ MAKEFILE_CXX="\$(LIBTOOL) --mode=compile ${MAKEFILE_CXX}"
+-MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -avoid-version"
++MAKEFILE_XSOLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK} -version-info ${DB_VERSION_MINOR}"
+ MAKEFILE_CXXLINK="\$(LIBTOOL) --mode=link ${MAKEFILE_CXXLINK}"
+ 
+ # Configure for shared libraries, static libraries, or both.  If both are
+@@ -9511,7 +9511,7 @@
+ 
+ # Optional utilities.
+ if test "$db_cv_dump185" = "yes"; then
+-	ADDITIONAL_PROGS="db_dump185 $ADDITIONAL_PROGS"
++	ADDITIONAL_PROGS="db4_dump185 $ADDITIONAL_PROGS"
+ fi
+ 
+ # Checks for system/compiler characteristics.
