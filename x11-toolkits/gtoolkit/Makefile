@@ -17,7 +17,8 @@ RUN_DEPENDS=    ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 
 PREFIX=		${LOCALBASE}/GNUstep
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 

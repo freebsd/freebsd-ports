@@ -17,13 +17,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sam@inf.enst.fr
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 SHLIB_VERSION=	${PORTVERSION:S/1.2.//}
 
 USE_MESA=	yes
 USE_X_PREFIX=	yes
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	libcapplet libglade
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

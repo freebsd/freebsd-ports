@@ -17,7 +17,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 WRKSRC=		${WRKDIR}/Xenophilia-0.7
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 ALL_TARGET=	# empty
 MAKE_ENV=	GTK-CONFIG="${GTK_CONFIG}"
 

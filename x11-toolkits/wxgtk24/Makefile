@@ -21,7 +21,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-libpng=sys \

@@ -19,7 +19,8 @@ RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk+/eazel-engine
 
-USE_GNOMECTRL=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	libcapplet
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -28,8 +29,8 @@ CONFIGURE_ARGS=	--localstatedir=${X11BASE}/share \
 		--datadir=${X11BASE}/share
 
 post-extract:
-	@find ${WRKSRC}/../.. -type f | grep -v eazel-engine | xargs ${CHMOD} 644
-	@find ${WRKSRC}/../.. -type d | xargs ${CHMOD} 755
+	@${FIND} ${WRKSRC}/../.. -type f | ${GREP} -v eazel-engine | ${XARGS} ${CHMOD} 644
+	@${FIND} ${WRKSRC}/../.. -type d | ${XARGS} ${CHMOD} 755
 
 post-install:
 	${MKDIR} ${PREFIX}/share/themes/Eazel

@@ -14,7 +14,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>

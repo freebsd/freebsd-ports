@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	evas.6:${PORTSDIR}/graphics/evas
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
