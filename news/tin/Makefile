@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.55 1998/02/03 10:27:52 obrien Exp $
+# $Id: Makefile,v 1.56 1998/02/27 10:46:57 obrien Exp $
 #
 
 DISTNAME=       tinpre-1.4-980226
@@ -18,13 +18,16 @@ MAINTAINER=     ache@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
+
+# Curses support too buggy to activate
+#                 --enable-curses \
+#                 --with-ncurses \
+#
 CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
 		 --with-libdir=${PREFIX}/news/lib \
 		 --with-mime-default-charset=US-ASCII \
 		 --enable-forgery \
-		 --enable-curses \
-		 --with-ncurses \
 		 --enable-break-long-lines \
 		 --with-pgp=${PREFIX}/bin/pgp \
 		 --with-ispell=${PREFIX}/bin/ispell \
