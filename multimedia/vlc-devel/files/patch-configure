@@ -1,6 +1,6 @@
---- configure.orig	Mon Jun 23 04:24:14 2003
-+++ configure	Fri Sep 12 14:30:22 2003
-@@ -4501,7 +4501,6 @@
+--- configure.orig	Fri May 21 14:09:58 2004
++++ configure	Mon Sep 27 06:22:50 2004
+@@ -5050,7 +5050,6 @@
      ;;
    *bsd*)
      SYS="${target_os}"
@@ -8,3 +8,12 @@
      ;;
    darwin*)
      SYS=darwin
+@@ -35442,7 +35441,7 @@
+ 
+ VLC_CONFIG="top_builddir=\"\$(top_builddir)\" \$(top_builddir)/vlc-config"
+ 
+-CPPFLAGS_save="${CPPFLAGS_save} -I\$(top_srcdir)/include"
++CPPFLAGS_save="-I\$(top_srcdir)/include ${CPPFLAGS_save}"
+ 
+ 
+   CPPFLAGS="${CPPFLAGS_save}"
