@@ -1,0 +1,14 @@
+PFinger consists of server and client for the standard finger service.
+
+The PFinger server is a replacement for the standard Unix finger server. It
+also implements the pip-protocol which could become the finger v2 protocol.
+Its advantage over existing finger servers like GNU Finger or similar
+enhanced Finger servers are its configurability, compatibility and security
+(e.g. the server does not run as root).
+
+The Pfinger client can be used for several tasks: First it provides an easy
+way to edit the information the PFinger Server gives out about you. Then it
+can be used as graphical version of the standard finger client to monitor
+who is online.
+
+WWW: http://www.xelia.ch/unix/pfinger/
