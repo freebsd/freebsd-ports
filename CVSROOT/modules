@@ -862,6 +862,7 @@ corkscrew	ports/net/corkscrew
 cos		ports/java/cos
 cosmo		ports/games/cosmo
 cost		ports/textproc/cost
+courier		ports/mail/courier
 courier-imap	ports/mail/courier-imap
 cowsay		ports/games/cowsay
 cp		src/bin/cp
