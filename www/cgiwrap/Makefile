@@ -11,13 +11,15 @@ CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	petef@FreeBSD.org
+MAINTAINER=	jre@vineyard.net
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httpd-user=${HTTPDUSER} \
 		--with-install-dir=${MAINCGIDIR} \
 		--with-install-group=${BINGRP} \
 		--with-cgi-dir=${CGIDIR} \
+		--with-allow-file=${ALLOWFILE} \
+		--with-deny-file=${DENYFILE} \
 		${WITHOUTCHECK}
 
 ###
@@ -39,6 +41,11 @@ CGIDIR?=		public_html/cgi-bin
 ###
 MAINCGIDIR?=	${PREFIX}/www/cgi-bin
 HTTPDUSER?=	www
+###
+# The allow and deny files control access to cgiwrap.
+###
+ALLOWFILE?=	${PREFIX}/etc/${PORTNAME}.allow
+DENYFILE?=	${PREFIX}/etc/${PORTNAME}.deny
 
 pre-install:
 	@${MKDIR} ${MAINCGIDIR}
