@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gperiodic
-PORTVERSION=	2.0.6
+PORTVERSION=	2.0.7
 CATEGORIES=	biology
 MASTER_SITES=	http://www.acclab.helsinki.fi/~frantz/software/
 
@@ -18,14 +18,16 @@ USE_GNOME=	gtk20
 MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
+LANGS=	da fr pl sv tr
+
 post-build:
-.for lang in da fr pl sv
+.for lang in ${LANGS}
 	cd ${WRKSRC}/po && msgfmt -f -v -o ${lang}.mo ${lang}.po
 .endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gperiodic ${PREFIX}/bin
-.for lang in da fr pl sv
+.for lang in ${LANGS}
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
