@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20010820
+PORTVERSION=	20010821
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -43,6 +43,10 @@ MAN1=		pkg_deinstall.1 \
 MLINKS=		portupgrade.1 portinstall.1
 MANCOMPRESSED=	yes
 
+DOCS=		ChangeLog README
+
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
+
 post-patch:
 	${RUBY} -i -pe 'sub %r:/usr/local:, "${LOCALBASE}"' ${WRKSRC}/pkgdb.rb
 
@@ -51,8 +55,12 @@ do-install:
 	${MKDIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/misc/zsh/* ${PREFIX}/share/zsh/site-functions/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}/
+	${MKDIR} ${EXAMPLESDIR}/tcsh
+	${INSTALL_DATA} ${WRKSRC}/misc/tcsh/* ${EXAMPLESDIR}/tcsh/
+	${MKDIR} ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
