@@ -1,0 +1,1463 @@
+--- %%PREFIX%%/staroffice6.0/program/instdb.ins	Tue Oct  9 11:35:01 2001
++++ instdb.ins	Tue Oct  9 14:02:04 2001
+@@ -2,14 +2,15 @@
+ 	ProductName	 = "StarOffice";
+ 	ProductVersion = "6.0";
+ 	DefaultDestPath = "staroffice6.0";
+-	DestPath	 = "%%PREFIX%%/staroffice6.0";
+-	SourcePath	 = "/usr/ports/editors/staroffice60/work/staroffice6.0";
+-	Mode		 = NETWORK;
+-	InstallFromNet = NO;
++	DestPath	 = "%%HOME%%/staroffice6.0";
++	SourcePath	 = "%%PREFIX%%/staroffice6.0";
++	Mode		 = WORKSTATION;
++	InstallFromNet = YES;
+ 	ScriptVersion = 100;
+ 	Bitmap		 = "so60.bmp";
+ 	DefaultLanguage = "01";
+ 	Languages	 = "01";
++	InstLanguages = "01:1:1";
+ End
+ 
+ HelpText gid_Help_Address
+@@ -6676,6 +6677,7 @@
+ 
+ 
+ 
++
+ };
+ End
+ 
+@@ -6724,6 +6726,7 @@
+ 
+ 
+ 
++
+ };
+ End
+ 
+@@ -6786,6 +6789,7 @@
+ 
+ 
+ 
++
+ };
+ End
+ 
+@@ -6888,6 +6892,7 @@
+ 
+ 
+ 
++
+ };
+ End
+ 
+@@ -7093,7 +7098,31 @@
+ 					gid_Dir_Psprint_Driver, gid_Dir_Httphome, gid_Dir_Share_Dtd_Math_1_01, gid_Dir_Share_Dtd_Ooo, gid_Dir_Mimelnk_Text, gid_Dir_Share_Config_Registry_Cache, gid_Dir_Icons_Mini, gid_Dir_Bookmark_Tourismus, gid_Dir_Cde_Language_Netdir, gid_Dir_Share_Pqa, 
+ 					gid_Dir_Mimelnk_Text_Netdir, gid_Dir_Resource, gid_Dir_Help_03, gid_Dir_Program_Local, gid_Dir_Database_Biblio, gid_Dir_Home_Gnome, gid_Dir_Share, gid_Dir_Help_Isolanguage, gid_Dir_Share_Config, gid_Dir_Gallery_Surface, 
+ 					gid_Dir_Samples_Drawings, gid_Dir_Share_Config_Registry_Instance, gid_Dir_Kde, gid_Dir_Bookmark_Freizeit, gid_Dir_Gallery_Htmlexpo, gid_Dir_Cde_Icons, gid_Dir_User_Psprint, gid_Dir_Template_Wizard_Web, gid_Dir_Icons_Netdir, gid_Dir_Samples_Texts_Homepage, 
+-					gid_Dir_Share_Dict, gid_Dir_Share_Config_Registry, gid_Dir_Template_Finance, gid_Dir_Home_Gnome_Apps, gid_Dir_Basic_WebWiz, gid_Dir_Gallery_Computer, gid_Dir_Template_Officorr, gid_Dir_Bookmark_Language, gid_Dir_Samples);
++					gid_Dir_Share_Dict, gid_Dir_Share_Config_Registry, gid_Dir_Template_Finance, gid_Dir_Home_Gnome_Apps, gid_Dir_Basic_WebWiz, gid_Dir_Gallery_Computer, gid_Dir_Template_Officorr, gid_Dir_Bookmark_Language, gid_Dir_Samples, gid_Dir_Cde, 
++					gid_Dir_Gallery_Balloons, gid_Dir_Icons_Mini_Netdir, gid_Dir_Samples_Texts, gid_Dir_Gallery_Officeart, gid_Dir_Program, gid_Dir_Autotext_Language, gid_Dir_Gallery_Clipart, gid_Dir_Basic_Formwizard, gid_Dir_Gallery_Rulers, gid_Dir_Config_Symbol, 
++					gid_Dir_Psprint, gid_Dir_Mimelnk, gid_Dir_Work, gid_Dir_User_Config_Registry_Instance_Org_OpenOffice_Office, gid_Dir_Kde_Netdir, gid_Dir_Wordbook, gid_Dir_Samples_Menu, gid_Dir_Template_Wizard_Bitmap, gid_Dir_Share_Config_Registry_Template_Org_Ucb, gid_Dir_Samples_Databases_Dateien, 
++					gid_Dir_Fonts_Truetypeserver, gid_Dir_Cde_Information, gid_Dir_Mimelnk_Application, gid_Dir_Gallery_Bullets, gid_Dir_Share_Config_Registry_Cache_Instance_Org, gid_Dir_User_Basic, gid_Dir_Share_Config_Registry_Template_Org_OpenOffice, gid_Dir_User_Config_Registry, gid_Dir_Config_Language, gid_Dir_Share_Gnome, 
++					gid_Dir_Mimelnk_Application_Netdir, gid_Dir_Share_Plugin, gid_Dir_Config_Ssync52, gid_Dir_User_Template, gid_Dir_PalmPilot, gid_Dir_Basic_Tools, gid_Dir_Config, gid_Dir_User_Autocorr, gid_Dir_Share_Migration, gid_Dir_Samples_Language, 
++					gid_Dir_Config_Settings, gid_Dir_Basic, gid_Dir_Applnk, gid_Dir_Share_Kde_Net_Mimelnk, gid_Dir_Gallery_Flags, gid_Dir_Basic_Schedule, gid_Dir_Samples_Presentations, gid_Dir_Share_Dtd_Ooo_1_0, gid_Dir_Share_Gnome_Net, gid_Dir_Kde2, 
++					gid_Dir_Filter, gid_Dir_Gallery_Wwwgraf, gid_Dir_Bookmark_Internet, gid_Dir_Share_Config_Registry_Template_Org, gid_Dir_User_Config_Registry_Instance_Org_OpenOffice_Ucb, gid_Dir_Share_Kde_Net_Applnk, gid_Dir_Help_90, gid_Dir_Gallery_Photo, gid_Dir_Addin_Source, gid_Dir_Help_99, 
++					gid_Dir_User_Autotext, gid_Dir_Gallery_Wwwanim, gid_Dir_Share_Config_Help, gid_Dir_Template_Language, gid_Dir_Template_Presnt, gid_Dir_Share_Config_Registry_Cache_Instance_Org_Openoffice_Office, gid_Dir_Help_55, gid_Dir_Basic_ImportWiz, gid_Dir_Cde_Autopilots, gid_Dir_Template_Forms, 
++					gid_Dir_Wordbook_Language, gid_Dir_Share_Database_Language, gid_Dir_Help_81, gid_Dir_Help_82, gid_Dir_Help_86, gid_Dir_Help_88, gid_Dir_Home_Gnome_Apps_Star_Info, gid_Dir_Help_30, gid_Dir_Help_31, gid_Dir_Help_33, 
++					gid_Dir_Help_34, gid_Dir_Help_35, gid_Dir_User_Psprint_Driver, gid_Dir_Help_37, gid_Dir_Help_39, gid_Dir_Bookmark, gid_Dir_Help_45, gid_Dir_Help_46, gid_Dir_Help_48, gid_Dir_Help_49, 
++					gid_Dir_Plugin, gid_Dir_Kde2_Share, gid_Dir_User_Config_Registry_Instance_Org_OpenOffice, gid_Dir_Share_Config_Registry_Cache_Instance_Org_Openoffice_Ucb, gid_Dir_Help_01, gid_Dir_Gallery_Arrows, gid_Dir_Kde2_Share_Applnk_Star, gid_Dir_Samples_Databases, gid_Dir_Help_07, gid_Dir_Share_Kde_Net_Applnk_Star, 
++					gid_Dir_Kde2_Share_Applnk, gid_Dir_Gallery_Clima, gid_Dir_Basic_Gimmicks, gid_Dir_Store, gid_Dir_Bookmark_Java, gid_Dir_Cde_Types, gid_Dir_Gallery_Emoicons, gid_Dir_Config_Webcast, gid_Dir_Gallery_Sounds, gid_Dir_Share_Config_Registry_Template_Org_OpenOffice_Office, 
++					gid_Dir_Config_Start, gid_Dir_Template, gid_Dir_Fonts_Truetype, gid_Dir_Cde_Root_Netdir, gid_Dir_Gallery_Wwwback, gid_Dir_Share_Readme, gid_Dir_Fonts_Type1, gid_Dir_User_Config_Registry_Instance, gid_Dir_Gallery_Trouble, gid_Dir_User_Autotext_Language, 
++					gid_Dir_Share_Config_Registry_Template, gid_Dir_Template_Layout, gid_Dir_Config_Tasks, gid_Dir_Template_Wizard_Styles, gid_Dir_Gallery_Navi_2d, gid_Dir_Download, gid_Dir_Samples_Formulas, gid_Dir_Gallery_Calendar, gid_Dir_Cde_Other, gid_Dir_Gallery_People, 
++					gid_Dir_Psprint_Fontmetric, gid_Dir_Template_Educate, gid_Dir_Gallery_Time, gid_Dir_Help_96, gid_Dir_Share_Config_Registry_Cache_Instance, gid_Dir_Applnk_Netdir, gid_Dir_Template_Offimisc, gid_Dir_Share_Config_Registry_Instance_Org_Ucb, gid_Dir_Share_Config_Registry_Instance_Org_OpenOffice, gid_Dir_Cde_Netdir, 
++					gid_Dir_Share_Autocorr, gid_Dir_Fonts_75Dpi, gid_Dir_Database, gid_Dir_Basic_Euro, gid_Dir_Bookmark_Starone, gid_Dir_User_Explorer, gid_Dir_User_Gallery, gid_Dir_Autotext, gid_Dir_Samples_Texts_Kapitel, gid_Dir_Share_Kde_Net, 
++					gid_Dir_Icons, gid_Dir_Desktop, gid_Dir_Gallery_Symbols, gid_Dir_Template_Misc, gid_Dir_Template_Personal, gid_Dir_User_Psprint_Fontmetric, gid_Dir_Classes, gid_Dir_Program_Remote, gid_Dir_Share_Config_Registry_Cache_Instance_Org_Openoffice, gid_Dir_User_Temp, 
++					gid_Dir_Template_Internal, gid_Dir_User_Config, gid_Dir_User_Wordbook, gid_Dir_Gallery_Communic, gid_Dir_Kde_Share, gid_Dir_User_Bookmark, gid_Dir_Samples_Spreadsheets, gid_Dir_Bookmark_Info, gid_Dir_Share_Config_Registry_Instance_Org, gid_Dir_Template_Wizard, 
++					gid_Dir_Gallery_Keyboard, gid_Dir_Gallery_Education, gid_Dir_Gallery, gid_Dir_Fonts_75Dpi_Bdf, gid_Dir_Config_More, gid_Dir_Store_Trash, gid_Dir_Gallery_Finances, gid_Dir_Fonts, gid_Dir_Backup, gid_Dir_Home_Gnome_Apps_Star, 
++					gid_Dir_Share_Database, gid_Dir_Share_Dtd_Math, gid_Dir_Share_Dtd, gid_Dir_Applnk_Staroffice52, gid_Dir_Kde2_Share_Mimelnk, gid_Dir_Share_Config_Registry_Instance_Org_OpenOffice_Office, gid_Dir_Help, gid_Dir_Addin, gid_Dir_Mimelnk_Netdir, gid_Dir_Basic_Template, 
++					gid_Dir_User, gid_Dir_User_Config_Registry_Instance_Org, gid_Dir_Explorer, gid_Dir_Psprint_Driver, gid_Dir_Httphome, gid_Dir_Share_Dtd_Math_1_01, gid_Dir_Share_Dtd_Ooo, gid_Dir_Mimelnk_Text, gid_Dir_Share_Config_Registry_Cache, gid_Dir_Icons_Mini, 
++					gid_Dir_Bookmark_Tourismus, gid_Dir_Cde_Language_Netdir, gid_Dir_Share_Pqa, gid_Dir_Mimelnk_Text_Netdir, gid_Dir_Resource, gid_Dir_Help_03, gid_Dir_Program_Local, gid_Dir_Database_Biblio, gid_Dir_Home_Gnome, gid_Dir_Share, 
++					gid_Dir_Help_Isolanguage, gid_Dir_Share_Config, gid_Dir_Gallery_Surface, gid_Dir_Samples_Drawings, gid_Dir_Share_Config_Registry_Instance, gid_Dir_Kde, gid_Dir_Bookmark_Freizeit, gid_Dir_Gallery_Htmlexpo, gid_Dir_Cde_Icons, gid_Dir_User_Psprint, 
++					gid_Dir_Template_Wizard_Web, gid_Dir_Icons_Netdir, gid_Dir_Samples_Texts_Homepage, gid_Dir_Share_Dict, gid_Dir_Share_Config_Registry, gid_Dir_Template_Finance, gid_Dir_Home_Gnome_Apps, gid_Dir_Basic_WebWiz, gid_Dir_Gallery_Computer, gid_Dir_Template_Officorr, 
++					gid_Dir_Bookmark_Language, gid_Dir_Samples);
+ 	Procedures	 = (gid_Procedure_Kill_Plugin_Wrkstn, gid_Procedure_Kill_Dirs, gid_Procedure_Languageselect, gid_Procedure_Patch_Font_Dir);
+ 	Customs		 = (gid_Custom_Del, gid_Cust_Mig);
+ End
+@@ -7102,12 +7131,14 @@
+ 	ParentID	 = gid_Module_Root;
+ 	Name		 = "StarOffice Program Modules";
+ 	Description	 = "This is where you decide which StarOffice modules are to be installed.";
++	Installed	 = YES;
+ End
+ 
+ Module gid_Module_Prg_Wrt
+ 	ParentID	 = gid_Module_Prg;
+ 	Name		 = "StarOffice Writer";
+ 	Description	 = "The word processing functions of StarOffice provide you with powerful tools for creating your own documents. This program cannot be deselected when installing";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Lib_Wps2star
+@@ -7893,6 +7924,7 @@
+ 	ParentID	 = gid_Module_Prg;
+ 	Name		 = "StarOffice Calc";
+ 	Description	 = "The StarOffice spreadsheet program.";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Lib_Calc
+@@ -8390,6 +8422,7 @@
+ 	ParentID	 = gid_Module_Prg;
+ 	Name		 = "StarOffice Impress";
+ 	Description	 = "The presentation module helps you create impressive presentations.";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Exe_Simpress
+@@ -8730,6 +8763,7 @@
+ 	ParentID	 = gid_Module_Prg;
+ 	Name		 = "StarOffice Draw";
+ 	Description	 = "Use the vector-oriented StarOffice Draw to create illustrations, logos and posters.";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Exe_Sdraw
+@@ -9182,6 +9216,7 @@
+ 	ParentID	 = gid_Module_Prg;
+ 	Name		 = "StarOffice Math";
+ 	Description	 = "The formula editor enables you to include mathematical formula in your documents.";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Html_W3c_Ipr
+@@ -9420,12 +9455,14 @@
+ 	ParentID	 = gid_Module_Root;
+ 	Name		 = "Optional Components";
+ 	Description	 = "Common components and additional programs shared by all StarOffice programs.";
++	Installed	 = YES;
+ End
+ 
+ Module gid_Module_Optional_Help
+ 	ParentID	 = gid_Module_Optional;
+ 	Name		 = "General Help Modules";
+ 	Description	 = "The StarOffice Basic Help module and StarOffice User's Guide";
++	Installed	 = YES;
+ 	Styles		 = (HIDDEN_ROOT);
+ End
+ 
+@@ -10050,6 +10087,7 @@
+ 
+ 
+ 
++
+ };
+ End
+ 
+@@ -10066,6 +10104,7 @@
+ 	ParentID	 = gid_Module_Optional;
+ 	Name		 = "Graphics Filters";
+ 	Description	 = "Several optional graphics filters required to embed external graphics in your documents.";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Filter_Ipd
+@@ -10733,6 +10772,7 @@
+ 	ParentID	 = gid_Module_Optional;
+ 	Name		 = "Language Modules";
+ 	Description	 = "The language modules can be used for finding synonyms (Thesaurus) when creating texts and help you to check your spelling.";
++	Installed	 = YES;
+ End
+ 
+ File gid_File_Extra_Inso1_Lang
+@@ -11378,197 +11418,165 @@
+ 	Files		 = (gid_File_Font_Ans, gid_File_Font_Ansb, gid_File_Font_Ansbi, gid_File_Font_Ansi);
+ End
+ 
+-File gid_File_Jar_Jaxp
+-	Name		 = "jaxp.jar";
+-	PackedName	 = "f_0431";
+-	Size		 = 5618;
+-	Dir			 = gid_Dir_Classes;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (PACKED, DONT_OVERWRITE);
+-End
+-
+-File gid_File_Jar_Parser
+-	Name		 = "parser.jar";
+-	PackedName	 = "f_0432";
+-	Size		 = 136133;
+-	Dir			 = gid_Dir_Classes;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (PACKED, DONT_OVERWRITE);
+-End
+-
+-File gid_File_S1w_Syncclient_Activation_Jar
+-	Name		 = "activation.jar";
+-	PackedName	 = "f_0433";
+-	Size		 = 45386;
+-	Dir			 = gid_Dir_Classes;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (PACKED);
+-End
+-
+-File gid_File_S1w_Syncclient_Commonshttpclient_Jar
+-	Name		 = "commons-httpclient.jar";
+-	PackedName	 = "f_0434";
+-	Size		 = 49492;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomegroup
++	Name		 = "cdegroup.zip";
++	PackedName	 = "f_0464";
++	Size		 = 9303;
++	ArchiveFiles = 16;
++	ArchiveSize	 = 24796;
++	Dir			 = gid_Dir_Share_Gnome;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE);
++	Contains	 = ("icons/001_star_butterfly.l.xpm:2890", "icons/001_star_butterfly.m.xpm:1546", "icons/001_star_butterfly.s.xpm:1066", "icons/001_star_butterfly.t.xpm:714", "icons/016_template.l.xpm:2884", "icons/016_template.m.xpm:1540", "icons/016_template.s.xpm:1060", "icons/016_template.t.xpm:708", "icons/017_macrolibrary.l.xpm:2888", "icons/017_macrolibrary.m.xpm:1544", 
++					"icons/017_macrolibrary.s.xpm:1064", "icons/017_macrolibrary.t.xpm:712", "icons/500_setup.l.xpm:2881", "icons/500_setup.m.xpm:1537", "icons/500_setup.s.xpm:1057", "icons/500_setup.t.xpm:705");
+ End
+ 
+-File gid_File_S1w_Syncclient_Httpclient_Jar
+-	Name		 = "HTTPClient.jar";
+-	PackedName	 = "f_0435";
+-	Size		 = 191424;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomewriter
++	Name		 = "cdewriter.zip";
++	PackedName	 = "f_0465";
++	Size		 = 13360;
++	ArchiveFiles = 24;
++	ArchiveSize	 = 37296;
++	Dir			 = gid_Dir_Share_Gnome;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
+-End
+-
+-File gid_File_S1w_Syncclient_Lib_Syncacc
+-	Name		 = "libsyncacc1.so";
+-	PackedName	 = "f_0436";
+-	Size		 = 142368;
+-	Dir			 = gid_Dir_Program;
+-	RegistryID	 = gid_Starregistry_Applicat_rdb;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 755;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (PACKED, UNO_COMPONENT);
+-End
+-
+-File gid_File_S1w_Syncclient_Lib_Syncaccui
+-	Name		 = "libsyncaccui638li.so";
+-	PackedName	 = "f_0437";
+-	Size		 = 177556;
+-	Dir			 = gid_Dir_Program;
+-	RegistryID	 = gid_Starregistry_Applicat_rdb;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 755;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (PACKED, UNO_COMPONENT);
++	Styles		 = (ARCHIVE);
++	Contains	 = ("icons/002_text_document.l.xpm:2889", "icons/002_text_document.m.xpm:1545", "icons/002_text_document.s.xpm:1065", "icons/002_text_document.t.xpm:713", "icons/003_text_template.l.xpm:2889", "icons/003_text_template.m.xpm:1545", "icons/003_text_template.s.xpm:1065", "icons/003_text_template.t.xpm:713", "icons/011_global_document.l.xpm:2891", "icons/011_global_document.m.xpm:1547", 
++					"icons/011_global_document.s.xpm:1067", "icons/011_global_document.t.xpm:715", "icons/012_html_document.l.xpm:2889", "icons/012_html_document.m.xpm:1545", "icons/012_html_document.s.xpm:1065", "icons/012_html_document.t.xpm:713", "icons/014_database_document.l.xpm:2893", "icons/014_database_document.m.xpm:1549", "icons/014_database_document.s.xpm:1069", "icons/014_database_document.t.xpm:717", 
++					"icons/015_math_document.l.xpm:2889", "icons/015_math_document.m.xpm:1545", "icons/015_math_document.s.xpm:1065", "icons/015_math_document.t.xpm:713");
+ End
+ 
+-File gid_File_S1w_Syncclient_Res_Syncaccui
+-	Name		 = "syncaccui63801.res";
+-	PackedName	 = "f_0438";
+-	Size		 = 7592;
+-	Dir			 = gid_Dir_Resource;
++File gid_File_Extra_Gnomecalc
++	Name		 = "cdecalc.zip";
++	PackedName	 = "f_0466";
++	Size		 = 6847;
++	ArchiveFiles = 12;
++	ArchiveSize	 = 18696;
++	Dir			 = gid_Dir_Share_Gnome;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE);
++	Contains	 = ("icons/004_spreadsheet_document.l.xpm:2896", "icons/004_spreadsheet_document.m.xpm:1552", "icons/004_spreadsheet_document.s.xpm:1072", "icons/004_spreadsheet_document.t.xpm:720", "icons/005_spreadsheet_template.l.xpm:2896", "icons/005_spreadsheet_template.m.xpm:1552", "icons/005_spreadsheet_template.s.xpm:1072", "icons/005_spreadsheet_template.t.xpm:720", "icons/013_chart_document.l.xpm:2890", "icons/013_chart_document.m.xpm:1546", 
++					"icons/013_chart_document.s.xpm:1066", "icons/013_chart_document.t.xpm:714");
+ End
+ 
+-File gid_File_S1w_Syncclient_Mail_Jar
+-	Name		 = "mail.jar";
+-	PackedName	 = "f_0439";
+-	Size		 = 280984;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomedraw
++	Name		 = "cdedraw.zip";
++	PackedName	 = "f_0467";
++	Size		 = 4521;
++	ArchiveFiles = 8;
++	ArchiveSize	 = 12448;
++	Dir			 = gid_Dir_Share_Gnome;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE);
++	Contains	 = ("icons/006_drawing_document.l.xpm:2892", "icons/006_drawing_document.m.xpm:1548", "icons/006_drawing_document.s.xpm:1068", "icons/006_drawing_document.t.xpm:716", "icons/007_drawing_template.l.xpm:2892", "icons/007_drawing_template.m.xpm:1548", "icons/007_drawing_template.s.xpm:1068", "icons/007_drawing_template.t.xpm:716");
+ End
+ 
+-File gid_File_S1w_Syncclient_Portalsyncmlclient_Properties
+-	Name		 = "PortalSyncMLClient.properties";
+-	PackedName	 = "f_0440";
+-	Size		 = 107;
+-	Dir			 = gid_Dir_Program;
++File gid_File_Extra_Gnomeimpress
++	Name		 = "cdeimpress.zip";
++	PackedName	 = "f_0468";
++	Size		 = 7056;
++	ArchiveFiles = 12;
++	ArchiveSize	 = 18740;
++	Dir			 = gid_Dir_Share_Gnome;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE);
++	Contains	 = ("icons/008_presentation_document.l.xpm:2897", "icons/008_presentation_document.m.xpm:1553", "icons/008_presentation_document.s.xpm:1073", "icons/008_presentation_document.t.xpm:721", "icons/009_presentation_template.l.xpm:2897", "icons/009_presentation_template.m.xpm:1553", "icons/009_presentation_template.s.xpm:1073", "icons/009_presentation_template.t.xpm:721", "icons/010_presentation_compressed.l.xpm:2899", "icons/010_presentation_compressed.m.xpm:1555", 
++					"icons/010_presentation_compressed.s.xpm:1075", "icons/010_presentation_compressed.t.xpm:723");
+ End
+ 
+-File gid_File_S1w_Syncclient_Portalsyncserver_Jar
+-	Name		 = "PortalSyncServer.jar";
+-	PackedName	 = "f_0441";
+-	Size		 = 294777;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomeappgroup
++	Name		 = "gnomeappgroup.zip";
++	PackedName	 = "f_0469";
++	Size		 = 2621;
++	ArchiveFiles = 6;
++	ArchiveSize	 = 4586;
++	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
++	NetDir		 = gid_Dir_Share_Gnome_Net;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE, SUBSTITUTE);
++	Contains	 = ("information and setup/:0", "information and setup/.directory:996", "information and setup/setup.desktop:1057", ".order:145", ".directory:1464", "template.desktop:924");
+ End
+ 
+-File gid_File_S1w_Syncclient_Soap_Jar
+-	Name		 = "soap.jar";
+-	PackedName	 = "f_0442";
+-	Size		 = 220703;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomeappwriter
++	Name		 = "gnomeappwriter.zip";
++	PackedName	 = "f_0470";
++	Size		 = 6559;
++	ArchiveFiles = 14;
++	ArchiveSize	 = 9218;
++	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
++	NetDir		 = gid_Dir_Share_Gnome_Net;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE, SUBSTITUTE);
++	Contains	 = ("other/:0", "other/.directory:607", "other/masterdoc.desktop:970", "other/mathdoc.desktop:674", "other/labels.desktop:746", "other/vcards.desktop:815", "auto pilots/:0", "auto pilots/.directory:787", "auto pilots/letter.desktop:668", "auto pilots/fax.desktop:603", 
++					"auto pilots/agenda.desktop:709", "auto pilots/memo.desktop:665", "textdoc.desktop:1007", "webdoc.desktop:967");
+ End
+ 
+-File gid_File_S1w_Syncclient_Webdav_Jar
+-	Name		 = "webdav.jar";
+-	PackedName	 = "f_0443";
+-	Size		 = 118083;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomeappcalc
++	Name		 = "gnomeappcalc.zip";
++	PackedName	 = "f_0471";
++	Size		 = 618;
++	ArchiveFiles = 1;
++	ArchiveSize	 = 844;
++	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
++	NetDir		 = gid_Dir_Share_Gnome_Net;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE, SUBSTITUTE);
++	Contains	 = ("spreadsheet.desktop:844");
+ End
+ 
+-File gid_File_S1w_Syncclient_Webdavlib_Jar
+-	Name		 = "webdavlib.jar";
+-	PackedName	 = "f_0444";
+-	Size		 = 88439;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomeappdraw
++	Name		 = "gnomeappdraw.zip";
++	PackedName	 = "f_0472";
++	Size		 = 571;
++	ArchiveFiles = 1;
++	ArchiveSize	 = 788;
++	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
++	NetDir		 = gid_Dir_Share_Gnome_Net;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
++	Styles		 = (ARCHIVE, SUBSTITUTE);
++	Contains	 = ("drawing.desktop:788");
+ End
+ 
+-File gid_File_S1w_Syncclient_Zensync_Jar
+-	Name		 = "zensync.jar";
+-	PackedName	 = "f_0445";
+-	Size		 = 83167;
+-	Dir			 = gid_Dir_Classes;
++File gid_File_Extra_Gnomeappimpress
++	Name		 = "gnomeappimpress.zip";
++	PackedName	 = "f_0473";
++	Size		 = 626;
++	ArchiveFiles = 1;
++	ArchiveSize	 = 1010;
++	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
++	NetDir		 = gid_Dir_Share_Gnome_Net;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+-	Styles		 = (PACKED);
+-End
+-
+-Module gid_Module_S1w_Syncclient
+-	ParentID	 = gid_Module_Optional;
+-	Name		 = "Sync Client";
+-	Description	 = "Sync Client";
+-	Default		 = NO;
+-	Files		 = (gid_File_Jar_Jaxp, gid_File_Jar_Parser, gid_File_S1w_Syncclient_Activation_Jar, gid_File_S1w_Syncclient_Commonshttpclient_Jar, gid_File_S1w_Syncclient_Httpclient_Jar, gid_File_S1w_Syncclient_Lib_Syncacc, gid_File_S1w_Syncclient_Lib_Syncaccui, gid_File_S1w_Syncclient_Res_Syncaccui, gid_File_S1w_Syncclient_Mail_Jar, gid_File_S1w_Syncclient_Portalsyncmlclient_Properties, 
+-					gid_File_S1w_Syncclient_Portalsyncserver_Jar, gid_File_S1w_Syncclient_Soap_Jar, gid_File_S1w_Syncclient_Webdav_Jar, gid_File_S1w_Syncclient_Webdavlib_Jar, gid_File_S1w_Syncclient_Zensync_Jar, gid_File_Jar_Jaxp, gid_File_Jar_Parser, gid_File_S1w_Syncclient_Activation_Jar, gid_File_S1w_Syncclient_Commonshttpclient_Jar, gid_File_S1w_Syncclient_Httpclient_Jar, 
+-					gid_File_S1w_Syncclient_Lib_Syncacc, gid_File_S1w_Syncclient_Lib_Syncaccui, gid_File_S1w_Syncclient_Res_Syncaccui, gid_File_S1w_Syncclient_Mail_Jar, gid_File_S1w_Syncclient_Portalsyncmlclient_Properties, gid_File_S1w_Syncclient_Portalsyncserver_Jar, gid_File_S1w_Syncclient_Soap_Jar, gid_File_S1w_Syncclient_Webdav_Jar, gid_File_S1w_Syncclient_Webdavlib_Jar, gid_File_S1w_Syncclient_Zensync_Jar);
+-	Dirs		 = (gid_Dir_Classes, gid_Dir_Program, gid_Dir_Classes, gid_Dir_Program);
++	Styles		 = (ARCHIVE, SUBSTITUTE);
++	Contains	 = ("presentation.desktop:1010");
+ End
+ 
+ File gid_File_Bin_Cde_Sagenda
+@@ -11655,719 +11663,93 @@
+ 	Styles		 = (PACKED);
+ End
+ 
+-File gid_File_Extra_Cdegroup
++Procedure gid_Procedure_Gnome_Install
++	ProcName	 = "GnomeInstall";
++	Styles		 = (STANDALONE, WORKSTATION, INSTALL, AFTER_INST);
++	Code		 = {Sub GnomeInstall
++
++                rem Anlegen der Datei
++
++                dim FileNrWrite as Integer
++                dim strFileName as String
++                dim strInputString as String
++
++                strFileName = DirEntry( Environ("HOME"), ".gnome", "apps", "StarOffice 6.0","information and setup", "StarOffice on the Web")
++
++                strInputString = "http://www.sun.com/staroffice"
++
++                FileNrWrite = 1
++
++                REM MsgBox("Anlegen der Datei: " & strFileName)
++
++                Open strFileName For Output As FileNrWrite
++
++                print #FileNrWrite strInputString
++
++                Close #FileNrWrite
++
++                rem Kopieren der Readme
++
++                dim strSourceFile as String
++                dim strDestFile as String
++
++                strSourceFile = DirEntry(GetSetupEnv.DestPath, "README")
++                strDestFile = DirEntry( Environ("HOME"), ".gnome", "apps", "StarOffice 6.0", "information and setup", "README")
++
++                FileCopy(strSourceFile, strDestFile)
++
++End Sub
++
++
++
++
++
++};
++End
++
++Module gid_Module_Optional_Gnome
++	ParentID	 = gid_Module_Optional;
++	Name		 = "GNOME Integration";
++	Description	 = "This module allows for the integration of StarOffice 6.0 in the GNOME desktop environment.";
++	Default		 = YES;
++	Installed	 = YES;
++	Files		 = (gid_File_Extra_Gnomegroup, gid_File_Extra_Gnomewriter, gid_File_Extra_Gnomecalc, gid_File_Extra_Gnomedraw, gid_File_Extra_Gnomeimpress, gid_File_Extra_Gnomeappgroup, gid_File_Extra_Gnomeappwriter, gid_File_Extra_Gnomeappcalc, gid_File_Extra_Gnomeappdraw, gid_File_Extra_Gnomeappimpress, 
++					gid_File_Bin_Cde_Sagenda, gid_File_Bin_Cde_Sfax, gid_File_Bin_Cde_Slabel, gid_File_Bin_Cde_Sletter, gid_File_Bin_Cde_Smemo, gid_File_Bin_Cde_Svcard, gid_File_Bin_Cde_Fromtemplate);
++	Dirs		 = (gid_Dir_Share, gid_Dir_Share_Gnome, gid_Dir_Home_Gnome, gid_Dir_Home_Gnome_Apps, gid_Dir_Home_Gnome_Apps_Star, gid_Dir_Home_Gnome_Apps_Star_Info, gid_Dir_Share, gid_Dir_Share_Gnome, gid_Dir_Home_Gnome, gid_Dir_Home_Gnome_Apps, 
++					gid_Dir_Home_Gnome_Apps_Star, gid_Dir_Home_Gnome_Apps_Star_Info);
++	Procedures	 = (gid_Procedure_Gnome_Install);
++End
++
++File gid_File_Extra_Kde_Cdegroup
+ 	Name		 = "cdegroup.zip";
+-	PackedName	 = "f_0453";
++	PackedName	 = "f_0474";
+ 	Size		 = 9303;
+ 	ArchiveFiles = 16;
+ 	ArchiveSize	 = 24796;
+-	Dir			 = gid_Dir_Cde_Netdir;
++	Dir			 = gid_Dir_Kde_Netdir;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+ 	Styles		 = (ARCHIVE);
++	Contains	 = ("icons/001_star_butterfly.l.xpm:2890", "icons/001_star_butterfly.m.xpm:1546", "icons/001_star_butterfly.s.xpm:1066", "icons/001_star_butterfly.t.xpm:714", "icons/016_template.l.xpm:2884", "icons/016_template.m.xpm:1540", "icons/016_template.s.xpm:1060", "icons/016_template.t.xpm:708", "icons/017_macrolibrary.l.xpm:2888", "icons/017_macrolibrary.m.xpm:1544", 
++					"icons/017_macrolibrary.s.xpm:1064", "icons/017_macrolibrary.t.xpm:712", "icons/500_setup.l.xpm:2881", "icons/500_setup.m.xpm:1537", "icons/500_setup.s.xpm:1057", "icons/500_setup.t.xpm:705");
+ End
+ 
+-File gid_File_Extra_Cdegroup_Lang
+-	Name		 = "cdegroup01.zip";
+-	PackedName	 = "f_0454";
+-	Size		 = 6212;
+-	ArchiveFiles = 17;
+-	ArchiveSize	 = 9404;
+-	Dir			 = gid_Dir_Cde_Netdir;
++File gid_File_Extra_Kdemimeimpress
++	Name		 = "kdemimeimpress.zip";
++	PackedName	 = "f_0475";
++	Size		 = 865;
++	ArchiveFiles = 3;
++	ArchiveSize	 = 393;
++	Dir			 = gid_Dir_Kde2_Share_Mimelnk;
++	NetDir		 = gid_Dir_Share_Kde_Net_Mimelnk;
+ 	Carrier		 = gid_DataCarrier;
+ 	UnixRights	 = 644;
+ 	Date		 = "30082001";
+ 	Time		 = "0600";
+ 	Styles		 = (ARCHIVE, SUBSTITUTE);
+-End
+-
+-File gid_File_Extra_Cdewriter
+-	Name		 = "cdewriter.zip";
+-	PackedName	 = "f_0455";
+-	Size		 = 13360;
+-	ArchiveFiles = 24;
+-	ArchiveSize	 = 37296;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-End
+-
+-File gid_File_Extra_Cdewriter_Lang
+-	Name		 = "cdewriter01.zip";
+-	PackedName	 = "f_0456";
+-	Size		 = 20264;
+-	ArchiveFiles = 49;
+-	ArchiveSize	 = 28778;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-End
+-
+-File gid_File_Extra_Cdecalc_Lang
+-	Name		 = "cdecalc01.zip";
+-	PackedName	 = "f_0457";
+-	Size		 = 6104;
+-	ArchiveFiles = 15;
+-	ArchiveSize	 = 9114;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-End
+-
+-File gid_File_Extra_Cdecalc
+-	Name		 = "cdecalc.zip";
+-	PackedName	 = "f_0458";
+-	Size		 = 6847;
+-	ArchiveFiles = 12;
+-	ArchiveSize	 = 18696;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-End
+-
+-File gid_File_Extra_Cdedraw_Lang
+-	Name		 = "cdedraw01.zip";
+-	PackedName	 = "f_0459";
+-	Size		 = 4040;
+-	ArchiveFiles = 11;
+-	ArchiveSize	 = 5978;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-End
+-
+-File gid_File_Extra_Cdedraw
+-	Name		 = "cdedraw.zip";
+-	PackedName	 = "f_0460";
+-	Size		 = 4521;
+-	ArchiveFiles = 8;
+-	ArchiveSize	 = 12448;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-End
+-
+-File gid_File_Extra_Cdeimpress_Lang
+-	Name		 = "cdeimpress01.zip";
+-	PackedName	 = "f_0461";
+-	Size		 = 5198;
+-	ArchiveFiles = 13;
+-	ArchiveSize	 = 7796;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-End
+-
+-File gid_File_Extra_Cdeimpress
+-	Name		 = "cdeimpress.zip";
+-	PackedName	 = "f_0462";
+-	Size		 = 7056;
+-	ArchiveFiles = 12;
+-	ArchiveSize	 = 18740;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-End
+-
+-File gid_File_Bin_Dtint
+-	Name		 = "dtint";
+-	PackedName	 = "f_0463";
+-	Size		 = 2826;
+-	Dir			 = gid_Dir_Cde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 755;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (PACKED);
+-End
+-
+-Procedure gid_Procedure_Cde_Inst
+-	ProcName	 = "CDEInst";
+-	Styles		 = (STANDALONE, WORKSTATION, INSTALL, AFTER_INST);
+-	Code		 = {Sub CDEInst
+-     On Error goto SCRIPT_OBJECT_NOT_FOUND
+-     dim UILanguage As Integer
+-     dim message1 As String
+-     dim message2 As String
+-     UILanguage = GetUILanguage
+-	 if ( Not IsResponsefileMode() ) then
+-     Select Case UILanguage
+-		Case 01
+-            SiMsgBox ("StarOffice was added to the CDE Frontpanel during the installation. Please restart the workspace manager for this change to take effect.")
+-		Case 03
+-            SiMsgBox ("O StarOffice foi adicionado ‡ interface gr·fica CDE durante a instalaÁ„o. Reinicie o Workspace Manager para garantir a respectiva actualizaÁ„o.")
+-        Case 07
+-            message1 = cvtuilang( "¬Ó ‚ÂÏˇ ËÌÒÚ‡ÎÎˇˆËË ‚ ÔÂÂ‰Ì˛˛ Ô‡ÌÂÎ¸ CDE ‰Ó·‡‚ÎÂÌ StarOffice. œÂÂÁ‡ÔÛÒÚËÚÂ ‰ËÒÔÂÚ˜Â‡ Workspace ‰Îˇ ÚÓ„Ó, ˜ÚÓ·˚ ˝ÚË ËÁÏÂÌÂÌËˇ ‚ÒÚÛÔËÎË ‚ ÒËÎÛ." )
+-            SiMsgBox (message1)
+-        Case 30
+-            SiMsgBox (" ·Ù‹ ÙÁÌ Â„Í·Ù‹ÛÙ·ÛÁ ÒÔÛÙ›ËÁÍÂ ÙÔ StarOffice ÛÙÔ CDE-Frontpanel. –·Ò·Í·Î˛ Â·ÌÂÍÍÈÌﬁÛÙÂ ÙÔ Workspace-Manager „È· Ì· ÈÛ˜˝ÛÔıÌ ÔÈ ·ÎÎ·„›Ú.")
+-		Case 31
+-            SiMsgBox ("Gedurende de installatie werd StarOffice toegevoegd aan het CDE-fontpanel. Start de Workspace-manager opnieuw om te garanderen dat deze verandering effectief is.")
+-		Case 33
+-            SiMsgBox ("Au cours de l'installation, StarOffice a ÈtÈ ajoutÈ ‡ l'interface graphique CDE. Afin de pouvoir en profiter, vous devez redÈmarrer le Workspace manager.")
+-   		Case 34
+-            SiMsgBox ("StarOffice se aÒadiÛ a la interfaz gr·fica (CDE) durante la instalaciÛn. Inicie por favor nuevamente el Workspace-Manager para la actualizaciÛn.")
+-        Case 35
+-            SiMsgBox ("StarOffice was added to the CDE Frontpanel during the installation. Please restart the workspace manager for this change to take effect.")
+-        Case 37
+-            SiMsgBox ("StarOffice se aÒadiÛ a la interfaz gr·fica (CDE) durante la instalaciÛn. Inicie por favor nuevamente el Workspace-Manager para la actualizaciÛn.")
+-		Case 39
+-            SiMsgBox ("Nel corso dell'installazione StarOffice Ë stato inserito nel frontpanel CDE. Riavviate il workspace manager affinchÈ la modifica abbia effetto.")
+-        Case 45
+-            SiMsgBox ("Under installationen er StarOffice blevet tilf¯jet til CDE-frontpanelet. Genstart venligst workspace-manager for at Êndringerne kan trÊde i kraft.")
+-        Case 46
+-            SiMsgBox ("Under installationen adderades StarOffice till CDE-frontpanelen. Starta om workspace-managern fˆr att s‰kerst‰lla att ‰ndringen tr‰der i kraft")
+-        Case 48
+-            message1 = cvtuilang( "Podczas instalacji do interfejsu graficznego CDE do≥πczono program StarOffice. Korzystanie z niego moøliwe bÍdzie po ponownym uruchomieniu menedøera Workspace." )
+-            SiMsgBox (message1)
+-        Case 49
+-            SiMsgBox ("W‰hrend der Installation wurde das StarOffice dem CDE-Frontpanel hinzugef¸gt. Bitte starten Sie den Workspace-Manager neu, um sicherzustellen, dass Sie hiervon profitieren.")
+-        Case 81
+-            SiMsgBox ("ÔΩ≤ÔæùÔΩΩÔæÑÔΩ∞Ôæô‰∏≠„Å´ StarOffice „ÅØ CDE ÔæåÔæõÔæùÔæÑÔæäÔæüÔæàÔæô„Å´ËøΩÂä†„Åï„Çå„Åæ„Åó„Åü„ÄÇÔæúÔΩ∞ÔΩ∏ÔΩΩÔæçÔæüÔΩ∞ÔΩΩÔæèÔæàÔΩ∞ÔΩºÔæûÔΩ¨ÔΩ∞„ÇíÂÜçËµ∑Âãï„Åó„Å¶„ÄÅ„Åì„ÅÆÂ§âÊõ¥„ÇíÁ¢∫Ë™ç„Åó„Å¶„Åè„Å†„Åï„ÅÑ„ÄÇ")
+-        Case 82
+-            SiMsgBox ("ÏÑ§ÏπòÌïòÎäî ÎèôÏïà StarOfficeÏù¥(Í∞Ä) CDE-FrontpanelÏóê Ï∂îÍ∞ÄÎêòÏóàÏäµÎãàÎã§. Î≥ÄÍ≤Ω ÏÇ¨Ìï≠ÏùÑ Ï†ÄÏû•ÌïòÍ∏∞ ÏúÑÌï¥ ÏûëÏóÖÍ≥µÍ∞Ñ Í¥ÄÎ¶¨ÏûêÎ•º Îã§Ïãú ÏãúÏûëÌïòÏã≠ÏãúÏò§.")
+-        Case 86
+-            SiMsgBox ("Âú®ÂÆâË£ÖÁ®ãÂ∫èÊó∂ÔºåStarOffice Â∑≤ÁªèÊï¥ÂêàÂà∞ CDE ÁïåÈù¢ÂÜÖ„ÄÇËØ∑ÊÇ®ÈáçÊñ∞ÂêØÂä®Â∑•‰ΩúÁïåÈù¢ÁÆ°ÁêÜÁ®ãÂ∫è‰ª•‰æøÂêØÂä®Ëøô‰∏™ÊïàÊûú„ÄÇ")
+-        Case 88
+-            SiMsgBox ("ÂÆâË£ùÁ®ãÂºèÂ∑≤Á∂ìÂ∞á StarOffice Êï¥ÂêàÂà∞ CDE ÁïåÈù¢„ÄÇÂú®ÈáçÊñ∞ÁôªÂÖ•Á≥ªÁµ±ÊôÇÂ∞±ËÉΩÂ§†‰ΩøÁî®Á®ãÂºèÂïüÂãïÊåâÈàï„ÄÇ")
+-        Case 90
+-            SiMsgBox ("Kurulum s˝ras˝nda StarOffice, CDE-Frontpanel'e eklendi. Bunun kullan˝ld˝˝ndan emin olabilmek iÁin Workspace Manager'i yeniden ba˛lat˝n.")
+-        Case 96
+-            SiMsgBox (" „ ≈÷«›… StarOffice ≈·Ï CDE-Frontpanel √À‰«¡ ⁄„·Ì… «· À»Ì . «·—Ã«¡ ≈⁄«œ… »œ¡ Workspace  Manager  Õ Ï  ’»Õ Â–Â «· €ÌÌ—«  ”«—Ì… «·„›⁄Ê·.")
+-        Case 99
+-            SiMsgBox ("STR_BASIC_CDEINT#99")
+-        Case Else
+-            SiMsgBox ("StarOffice was added to the CDE Frontpanel during the installation. Please restart the workspace manager for this change to take effect.")
+-	 End Select
+-	 endif
+-
+-	Exit Sub
+-
+-	SCRIPT_OBJECT_NOT_FOUND:
+-End Sub
+-
+-
+-
+-
+-};
+-End
+-
+-Procedure gid_Procedure_Cde_Helper
+-	ProcName	 = "CDEHelper";
+-	Styles		 = (STANDALONE, NETWORK, INSTALL, AFTER_INST);
+-	Code		 = {Sub CDEHelper
+-
+-                rem Anlegen von Dateien
+-
+-                dim FileNrWrite as Integer
+-                dim strFileName as String
+-                dim strInputString as String
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "information and setup", "StarOffice on the Web")
+-                strInputString = "http://www.sun.com/staroffice"
+-
+-                FileNrWrite = 1
+-
+-                REM MsgBox("Anlegen der Datei: " & strFileName)
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                print #FileNrWrite strInputString
+-
+-                Close #FileNrWrite
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "information and setup", "StarOffice_6.0_setup")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "other", "StarOffice_6.0_masterdoc")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "other", "StarOffice_6.0_mathdoc")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "other", "StarOffice_6.0_labels")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "other", "StarOffice_6.0_vcards")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "auto pilots", "StarOffice_6.0_letter")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "auto pilots", "StarOffice_6.0_fax")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "auto pilots", "StarOffice_6.0_agenda")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                strFileName = DirEntry(GetSetupEnv.DestPath, "share", "cde", "auto pilots", "StarOffice_6.0_memo")
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                Close #FileNrWrite
+-
+-                shell("chmod 755 " & "'" & strFileName & "'")
+-
+-                rem Kopieren der Readme
+-
+-                dim strSourceFile as String
+-                dim strDestFile as String
+-
+-                strSourceFile = DirEntry(GetSetupEnv.DestPath, "README")
+-                strDestFile = DirEntry(GetSetupEnv.DestPath, "share", "cde", "information and setup", "README")
+-
+-                FileCopy(strSourceFile, strDestFile)
+-
+-End Sub
+-
+-
+-
+-
+-};
+-End
+-
+-Procedure gid_Procedure_Cde_Helper_Dtint
+-	ProcName	 = "CDEHelperDtint";
+-	Styles		 = (STANDALONE, WORKSTATION, INSTALL, AFTER_INST);
+-	Code		 = {Sub CDEHelperDtint
+-
+-                rem Ausf¸hren von dtint mit den notwendigen Parameter
+-
+-                dim userlanguage As Integer
+-                dim dtint_file As String
+-                dim instpath As String
+-                dim dtint_call As String
+-                dim language_paramter As String
+-                dim array_languages()
+-
+-      if ( Not IsResponsefileMode() ) then
+-
+-                array_languages = GetSelectedLanguages
+-                userlanguage = array_languages(0)
+-                Select Case userlanguage
+-                Case 01
+-                     language_parameter = "en"
+-                Case 03
+-                     language_parameter = "pt"
+-                Case 07
+-                     language_parameter = "ru"
+-                Case 30
+-                     language_parameter = "el"
+-                Case 31
+-                     language_parameter = "nl"
+-                Case 33
+-                     language_parameter = "fr"
+-                Case 34
+-                     language_parameter = "es"
+-                Case 39
+-                     language_parameter = "it"
+-                Case 45
+-                     language_parameter = "da"
+-                Case 46
+-                     language_parameter = "sv"
+-                Case 48
+-                     language_parameter = "pl"
+-                Case 49
+-                     language_parameter = "de"
+-                Case 81
+-                     language_parameter = "ja"
+-                Case 82
+-                     language_parameter = "ko"
+-                Case 86
+-                     language_parameter = "zh_CN"
+-                Case 88
+-                     language_parameter = "zh_TW"
+-                Case 90
+-                     language_parameter = "tr"
+-                Case 96
+-                     language_parameter = "ar"
+-                Case 99
+-                     language_parameter = "ISO_CODE"  
+-                Case Else
+-                     language_parameter = "en"
+-                End Select
+-
+-                If GetsetupEnv.Installtype = "IT_WORKSTATION" Then
+-                    dtint_file = DirEntry(GetSetupEnv.SourcePath, "share", "cde", "dtint")
+-                    instpath = DirEntry(GetSetupEnv.SourcePath)
+-                Else
+-                    dtint_file = DirEntry(GetSetupEnv.DestPath, "share", "cde", "dtint")
+-                    instpath = DirEntry(GetSetupEnv.DestPath)
+-                EndIf
+-
+-                dtint_call = "'" & dtint_file & "'" & " " & "'" & instpath & "'" & " " & "StarOffice" & " " & "6.0" & " " & language_parameter
+-
+-             rem    msgbox("Aufruf: " & dtint_call)
+-
+-                shell(dtint_call)
+-         EndIf
+-
+-End Sub
+-
+-
+-
+-
+-};
+-End
+-
+-Procedure gid_Procedure_Cde_Deinstall
+-	ProcName	 = "CDEDeinstall";
+-	Styles		 = (STANDALONE, WORKSTATION, UNINSTALL, BEFORE_INST);
+-	Code		 = {Sub CDEDeinstall
+-
+-                rem Ausf¸hren von dtint mit den notwendigen Parameter
+-
+-                dim dtint_file As String
+-                dim instpath As String
+-                dim dtint_call As String
+-
+-   REM          If GetsetupEnv.Installtype = "IT_WORKSTATION" Then
+-
+-                If  GetSetupEnv.IsInstallFromNet Then
+-                    dtint_file = DirEntry(GetSetupEnv.SourcePath, "share", "cde", "dtint")
+-                    instpath = DirEntry(GetSetupEnv.SourcePath)
+-                Else
+-                    dtint_file = DirEntry(GetSetupEnv.DestPath, "share", "cde", "dtint")
+-                    instpath = DirEntry(GetSetupEnv.DestPath)
+-                EndIf
+-
+-                dtint_call = "'" & dtint_file & "'" & " " & "-remove" & " " & "StarOffice" & " " & "6.0"
+-
+-             rem    msgbox("Aufruf: " & dtint_call)
+-
+-                shell(dtint_call)
+-
+-End Sub
+-
+-
+-
+-
+-};
+-End
+-
+-Module gid_Module_Optional_Cde
+-	ParentID	 = gid_Module_Optional;
+-	Name		 = "CDE integration";
+-	Description	 = "This module allows StarOffice 6.0 to be integrated into the SOLARIS CommonDesktopEnvironment.";
+-	Files		 = (gid_File_Bin_Cde_Sagenda, gid_File_Bin_Cde_Sfax, gid_File_Bin_Cde_Slabel, gid_File_Bin_Cde_Sletter, gid_File_Bin_Cde_Smemo, gid_File_Bin_Cde_Svcard, gid_File_Bin_Cde_Fromtemplate, gid_File_Extra_Cdegroup, gid_File_Extra_Cdegroup_Lang, gid_File_Extra_Cdewriter, 
+-					gid_File_Extra_Cdewriter_Lang, gid_File_Extra_Cdecalc_Lang, gid_File_Extra_Cdecalc, gid_File_Extra_Cdedraw_Lang, gid_File_Extra_Cdedraw, gid_File_Extra_Cdeimpress_Lang, gid_File_Extra_Cdeimpress, gid_File_Bin_Dtint);
+-	Dirs		 = (gid_Dir_Cde_Information, gid_Dir_Cde_Autopilots, gid_Dir_Cde_Information, gid_Dir_Cde_Autopilots);
+-	Procedures	 = (gid_Procedure_Cde_Inst, gid_Procedure_Cde_Helper, gid_Procedure_Cde_Helper_Dtint, gid_Procedure_Cde_Deinstall);
+-End
+-
+-File gid_File_Extra_Gnomegroup
+-	Name		 = "cdegroup.zip";
+-	PackedName	 = "f_0464";
+-	Size		 = 9303;
+-	ArchiveFiles = 16;
+-	ArchiveSize	 = 24796;
+-	Dir			 = gid_Dir_Share_Gnome;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-	Contains	 = ("icons/001_star_butterfly.l.xpm:2890", "icons/001_star_butterfly.m.xpm:1546", "icons/001_star_butterfly.s.xpm:1066", "icons/001_star_butterfly.t.xpm:714", "icons/016_template.l.xpm:2884", "icons/016_template.m.xpm:1540", "icons/016_template.s.xpm:1060", "icons/016_template.t.xpm:708", "icons/017_macrolibrary.l.xpm:2888", "icons/017_macrolibrary.m.xpm:1544", 
+-					"icons/017_macrolibrary.s.xpm:1064", "icons/017_macrolibrary.t.xpm:712", "icons/500_setup.l.xpm:2881", "icons/500_setup.m.xpm:1537", "icons/500_setup.s.xpm:1057", "icons/500_setup.t.xpm:705");
+-End
+-
+-File gid_File_Extra_Gnomewriter
+-	Name		 = "cdewriter.zip";
+-	PackedName	 = "f_0465";
+-	Size		 = 13360;
+-	ArchiveFiles = 24;
+-	ArchiveSize	 = 37296;
+-	Dir			 = gid_Dir_Share_Gnome;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-	Contains	 = ("icons/002_text_document.l.xpm:2889", "icons/002_text_document.m.xpm:1545", "icons/002_text_document.s.xpm:1065", "icons/002_text_document.t.xpm:713", "icons/003_text_template.l.xpm:2889", "icons/003_text_template.m.xpm:1545", "icons/003_text_template.s.xpm:1065", "icons/003_text_template.t.xpm:713", "icons/011_global_document.l.xpm:2891", "icons/011_global_document.m.xpm:1547", 
+-					"icons/011_global_document.s.xpm:1067", "icons/011_global_document.t.xpm:715", "icons/012_html_document.l.xpm:2889", "icons/012_html_document.m.xpm:1545", "icons/012_html_document.s.xpm:1065", "icons/012_html_document.t.xpm:713", "icons/014_database_document.l.xpm:2893", "icons/014_database_document.m.xpm:1549", "icons/014_database_document.s.xpm:1069", "icons/014_database_document.t.xpm:717", 
+-					"icons/015_math_document.l.xpm:2889", "icons/015_math_document.m.xpm:1545", "icons/015_math_document.s.xpm:1065", "icons/015_math_document.t.xpm:713");
+-End
+-
+-File gid_File_Extra_Gnomecalc
+-	Name		 = "cdecalc.zip";
+-	PackedName	 = "f_0466";
+-	Size		 = 6847;
+-	ArchiveFiles = 12;
+-	ArchiveSize	 = 18696;
+-	Dir			 = gid_Dir_Share_Gnome;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-	Contains	 = ("icons/004_spreadsheet_document.l.xpm:2896", "icons/004_spreadsheet_document.m.xpm:1552", "icons/004_spreadsheet_document.s.xpm:1072", "icons/004_spreadsheet_document.t.xpm:720", "icons/005_spreadsheet_template.l.xpm:2896", "icons/005_spreadsheet_template.m.xpm:1552", "icons/005_spreadsheet_template.s.xpm:1072", "icons/005_spreadsheet_template.t.xpm:720", "icons/013_chart_document.l.xpm:2890", "icons/013_chart_document.m.xpm:1546", 
+-					"icons/013_chart_document.s.xpm:1066", "icons/013_chart_document.t.xpm:714");
+-End
+-
+-File gid_File_Extra_Gnomedraw
+-	Name		 = "cdedraw.zip";
+-	PackedName	 = "f_0467";
+-	Size		 = 4521;
+-	ArchiveFiles = 8;
+-	ArchiveSize	 = 12448;
+-	Dir			 = gid_Dir_Share_Gnome;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-	Contains	 = ("icons/006_drawing_document.l.xpm:2892", "icons/006_drawing_document.m.xpm:1548", "icons/006_drawing_document.s.xpm:1068", "icons/006_drawing_document.t.xpm:716", "icons/007_drawing_template.l.xpm:2892", "icons/007_drawing_template.m.xpm:1548", "icons/007_drawing_template.s.xpm:1068", "icons/007_drawing_template.t.xpm:716");
+-End
+-
+-File gid_File_Extra_Gnomeimpress
+-	Name		 = "cdeimpress.zip";
+-	PackedName	 = "f_0468";
+-	Size		 = 7056;
+-	ArchiveFiles = 12;
+-	ArchiveSize	 = 18740;
+-	Dir			 = gid_Dir_Share_Gnome;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-	Contains	 = ("icons/008_presentation_document.l.xpm:2897", "icons/008_presentation_document.m.xpm:1553", "icons/008_presentation_document.s.xpm:1073", "icons/008_presentation_document.t.xpm:721", "icons/009_presentation_template.l.xpm:2897", "icons/009_presentation_template.m.xpm:1553", "icons/009_presentation_template.s.xpm:1073", "icons/009_presentation_template.t.xpm:721", "icons/010_presentation_compressed.l.xpm:2899", "icons/010_presentation_compressed.m.xpm:1555", 
+-					"icons/010_presentation_compressed.s.xpm:1075", "icons/010_presentation_compressed.t.xpm:723");
+-End
+-
+-File gid_File_Extra_Gnomeappgroup
+-	Name		 = "gnomeappgroup.zip";
+-	PackedName	 = "f_0469";
+-	Size		 = 2621;
+-	ArchiveFiles = 6;
+-	ArchiveSize	 = 4586;
+-	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
+-	NetDir		 = gid_Dir_Share_Gnome_Net;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-	Contains	 = ("information and setup/:0", "information and setup/.directory:996", "information and setup/setup.desktop:1057", ".order:145", ".directory:1464", "template.desktop:924");
+-End
+-
+-File gid_File_Extra_Gnomeappwriter
+-	Name		 = "gnomeappwriter.zip";
+-	PackedName	 = "f_0470";
+-	Size		 = 6559;
+-	ArchiveFiles = 14;
+-	ArchiveSize	 = 9218;
+-	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
+-	NetDir		 = gid_Dir_Share_Gnome_Net;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-	Contains	 = ("other/:0", "other/.directory:607", "other/masterdoc.desktop:970", "other/mathdoc.desktop:674", "other/labels.desktop:746", "other/vcards.desktop:815", "auto pilots/:0", "auto pilots/.directory:787", "auto pilots/letter.desktop:668", "auto pilots/fax.desktop:603", 
+-					"auto pilots/agenda.desktop:709", "auto pilots/memo.desktop:665", "textdoc.desktop:1007", "webdoc.desktop:967");
+-End
+-
+-File gid_File_Extra_Gnomeappcalc
+-	Name		 = "gnomeappcalc.zip";
+-	PackedName	 = "f_0471";
+-	Size		 = 618;
+-	ArchiveFiles = 1;
+-	ArchiveSize	 = 844;
+-	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
+-	NetDir		 = gid_Dir_Share_Gnome_Net;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-	Contains	 = ("spreadsheet.desktop:844");
+-End
+-
+-File gid_File_Extra_Gnomeappdraw
+-	Name		 = "gnomeappdraw.zip";
+-	PackedName	 = "f_0472";
+-	Size		 = 571;
+-	ArchiveFiles = 1;
+-	ArchiveSize	 = 788;
+-	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
+-	NetDir		 = gid_Dir_Share_Gnome_Net;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-	Contains	 = ("drawing.desktop:788");
+-End
+-
+-File gid_File_Extra_Gnomeappimpress
+-	Name		 = "gnomeappimpress.zip";
+-	PackedName	 = "f_0473";
+-	Size		 = 626;
+-	ArchiveFiles = 1;
+-	ArchiveSize	 = 1010;
+-	Dir			 = gid_Dir_Home_Gnome_Apps_Star;
+-	NetDir		 = gid_Dir_Share_Gnome_Net;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-	Contains	 = ("presentation.desktop:1010");
+-End
+-
+-Procedure gid_Procedure_Gnome_Install
+-	ProcName	 = "GnomeInstall";
+-	Styles		 = (STANDALONE, WORKSTATION, INSTALL, AFTER_INST);
+-	Code		 = {Sub GnomeInstall
+-
+-                rem Anlegen der Datei
+-
+-                dim FileNrWrite as Integer
+-                dim strFileName as String
+-                dim strInputString as String
+-
+-                strFileName = DirEntry( Environ("HOME"), ".gnome", "apps", "StarOffice 6.0","information and setup", "StarOffice on the Web")
+-
+-                strInputString = "http://www.sun.com/staroffice"
+-
+-                FileNrWrite = 1
+-
+-                REM MsgBox("Anlegen der Datei: " & strFileName)
+-
+-                Open strFileName For Output As FileNrWrite
+-
+-                print #FileNrWrite strInputString
+-
+-                Close #FileNrWrite
+-
+-                rem Kopieren der Readme
+-
+-                dim strSourceFile as String
+-                dim strDestFile as String
+-
+-                strSourceFile = DirEntry(GetSetupEnv.DestPath, "README")
+-                strDestFile = DirEntry( Environ("HOME"), ".gnome", "apps", "StarOffice 6.0", "information and setup", "README")
+-
+-                FileCopy(strSourceFile, strDestFile)
+-
+-End Sub
+-
+-
+-
+-
+-};
+-End
+-
+-Module gid_Module_Optional_Gnome
+-	ParentID	 = gid_Module_Optional;
+-	Name		 = "GNOME Integration";
+-	Description	 = "This module allows for the integration of StarOffice 6.0 in the GNOME desktop environment.";
+-	Default		 = YES;
+-	Installed	 = YES;
+-	Files		 = (gid_File_Extra_Gnomegroup, gid_File_Extra_Gnomewriter, gid_File_Extra_Gnomecalc, gid_File_Extra_Gnomedraw, gid_File_Extra_Gnomeimpress, gid_File_Extra_Gnomeappgroup, gid_File_Extra_Gnomeappwriter, gid_File_Extra_Gnomeappcalc, gid_File_Extra_Gnomeappdraw, gid_File_Extra_Gnomeappimpress, 
+-					gid_File_Bin_Cde_Sagenda, gid_File_Bin_Cde_Sfax, gid_File_Bin_Cde_Slabel, gid_File_Bin_Cde_Sletter, gid_File_Bin_Cde_Smemo, gid_File_Bin_Cde_Svcard, gid_File_Bin_Cde_Fromtemplate);
+-	Dirs		 = (gid_Dir_Share, gid_Dir_Share_Gnome, gid_Dir_Home_Gnome, gid_Dir_Home_Gnome_Apps, gid_Dir_Home_Gnome_Apps_Star, gid_Dir_Home_Gnome_Apps_Star_Info, gid_Dir_Share, gid_Dir_Share_Gnome, gid_Dir_Home_Gnome, gid_Dir_Home_Gnome_Apps, 
+-					gid_Dir_Home_Gnome_Apps_Star, gid_Dir_Home_Gnome_Apps_Star_Info);
+-	Procedures	 = (gid_Procedure_Gnome_Install);
+-End
+-
+-File gid_File_Extra_Kde_Cdegroup
+-	Name		 = "cdegroup.zip";
+-	PackedName	 = "f_0474";
+-	Size		 = 9303;
+-	ArchiveFiles = 16;
+-	ArchiveSize	 = 24796;
+-	Dir			 = gid_Dir_Kde_Netdir;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE);
+-	Contains	 = ("icons/001_star_butterfly.l.xpm:2890", "icons/001_star_butterfly.m.xpm:1546", "icons/001_star_butterfly.s.xpm:1066", "icons/001_star_butterfly.t.xpm:714", "icons/016_template.l.xpm:2884", "icons/016_template.m.xpm:1540", "icons/016_template.s.xpm:1060", "icons/016_template.t.xpm:708", "icons/017_macrolibrary.l.xpm:2888", "icons/017_macrolibrary.m.xpm:1544", 
+-					"icons/017_macrolibrary.s.xpm:1064", "icons/017_macrolibrary.t.xpm:712", "icons/500_setup.l.xpm:2881", "icons/500_setup.m.xpm:1537", "icons/500_setup.s.xpm:1057", "icons/500_setup.t.xpm:705");
+-End
+-
+-File gid_File_Extra_Kdemimeimpress
+-	Name		 = "kdemimeimpress.zip";
+-	PackedName	 = "f_0475";
+-	Size		 = 865;
+-	ArchiveFiles = 3;
+-	ArchiveSize	 = 393;
+-	Dir			 = gid_Dir_Kde2_Share_Mimelnk;
+-	NetDir		 = gid_Dir_Share_Kde_Net_Mimelnk;
+-	Carrier		 = gid_DataCarrier;
+-	UnixRights	 = 644;
+-	Date		 = "30082001";
+-	Time		 = "0600";
+-	Styles		 = (ARCHIVE, SUBSTITUTE);
+-	Contains	 = ("application/:0", "application/vnd.sun.xml.impress.desktop:197", "application/vnd.stardivision.impress.desktop:196");
++	Contains	 = ("application/:0", "application/vnd.sun.xml.impress.desktop:197", "application/vnd.stardivision.impress.desktop:196");
+ End
+ 
+ File gid_File_Extra_Kdemimedraw
+@@ -12630,6 +12012,7 @@
+ End Sub	
+ 
+ 
++
+ };
+ End
+ 
+@@ -12754,6 +12137,7 @@
+ 
+ 
+ 
++
+ };
+ End
+ 
+@@ -12769,13 +12153,6 @@
+ 	Procedures	 = (gid_Procedure_Kde_Inst, gid_Procedure_Kde_Inst_For_Redhat);
+ End
+ 
+-Profile gid_Profile_Install_Ini
+-	ModuleID	 = gid_Module_Root;
+-	Name		 = "install.ini";
+-	Dir			 = gid_Dir_Program;
+-	Styles		 = (NETWORK);
+-End
+-
+ Profile gid_Profile_Sversion_Ini
+ 	ModuleID	 = gid_Module_Root;
+ 	Name		 = ".sversionrc";
+@@ -12788,80 +12165,16 @@
+ 	Dir			 = gid_Dir_User;
+ End
+ 
+-Profile gid_Profile_Bootstrap_Ini
+-	ModuleID	 = gid_Module_Root;
+-	Name		 = "bootstraprc";
+-	Dir			 = gid_Dir_Program;
+-	Styles		 = (NETWORK);
+-End
+-
+-Profile gid_Profile_Jvmsetup_Ini
+-	ModuleID	 = gid_Module_Root;
+-	Name		 = "jvmsetuprc";
+-	Dir			 = gid_Dir_Program;
+-	Styles		 = (NETWORK);
+-End
+-
+-Profile gid_Profile_Setup_Ini
+-	ModuleID	 = gid_Module_Root;
+-	Name		 = "setuprc";
+-	Dir			 = gid_Dir_Program;
+-	Styles		 = (NETWORK);
+-End
+-
+-Profile gid_Profile_Soffice_Ini
+-	ModuleID	 = gid_Module_Root;
+-	Name		 = "sofficerc";
+-	Dir			 = gid_Dir_Program;
+-	Styles		 = (NETWORK);
+-End
+-
+ ProfileItem gid_Profileitem_Versions_Staroffice5_2
+ 	ModuleID	 = gid_Module_Root;
+ 	ProfileID	 = gid_Profile_Sversion_Ini;
+ 	Section		 = "Versions";
+ 	Key			 = "StarOffice 6.0";
+-	Value		 = "<workpath>";
++	Value		 = "%%PREFIX%%/staroffice6.0";
+ 	Order		 = 1;
+ 	Styles		 = (INSTALL_INFO);
+ End
+ 
+-ProfileItem gid_Profileitem_Bootstrap_Productkey
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Bootstrap_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "ProductKey";
+-	Value		 = "StarOffice 6.0";
+-	Order		 = 1;
+-End
+-
+-ProfileItem gid_Profileitem_Bootstrap_Location
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Bootstrap_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "Location";
+-	Value		 = "$(SYSUSERCONFIG)/.sversionrc";
+-	Order		 = 2;
+-End
+-
+-ProfileItem gid_Profileitem_Bootstrap_Section
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Bootstrap_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "Section";
+-	Value		 = "Versions";
+-	Order		 = 3;
+-End
+-
+-ProfileItem gid_Profileitem_Bootstrap_Logo
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Bootstrap_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "Logo";
+-	Value		 = "1";
+-	Order		 = 4;
+-End
+-
+ ProfileItem gid_Profileitem_Sregistry_Configuration_Servertype
+ 	ModuleID	 = gid_Module_Root;
+ 	ProfileID	 = gid_Profile_Sregistry_Ini;
+@@ -12869,87 +12182,6 @@
+ 	Key			 = "servertype";
+ 	Value		 = "local";
+ 	Order		 = 1;
+-End
+-
+-ProfileItem gid_Profileitem_Jvmsetup_UNO_TYPES
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Jvmsetup_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_TYPES";
+-	Value		 = "applicat.rdb";
+-	Order		 = 1;
+-End
+-
+-ProfileItem gid_Profileitem_Jvmsetup_UNO_SERVICES
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Jvmsetup_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_SERVICES";
+-	Value		 = "applicat.rdb";
+-	Order		 = 2;
+-End
+-
+-ProfileItem gid_Profileitem_Setup_UNO_TYPES
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Setup_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_TYPES";
+-	Value		 = "applicat.rdb";
+-	Order		 = 1;
+-End
+-
+-ProfileItem gid_Profileitem_Setup_UNO_SERVICES
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Setup_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_SERVICES";
+-	Value		 = "applicat.rdb";
+-	Order		 = 2;
+-End
+-
+-ProfileItem gid_Profileitem_SOffice_Productkey
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Soffice_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "ProductKey";
+-	Value		 = "StarOffice 6.0";
+-	Order		 = 1;
+-End
+-
+-ProfileItem GID_PROFILEITEM_SOFFICE_SVERSION
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Soffice_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "SVersion";
+-	Value		 = "$SYSUSERCONFIG/.sversionrc";
+-	Order		 = 2;
+-End
+-
+-ProfileItem gid_Profileitem_SOffice_UNO_TYPES
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Soffice_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_TYPES";
+-	Value		 = "applicat.rdb";
+-	Order		 = 3;
+-End
+-
+-ProfileItem gid_Profileitem_SOffice_UNO_SERVICES
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Soffice_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_SERVICES";
+-	Value		 = "applicat.rdb";
+-	Order		 = 4;
+-End
+-
+-ProfileItem gid_Profileitem_SOffice_UNO_WRITERDB
+-	ModuleID	 = gid_Module_Root;
+-	ProfileID	 = gid_Profile_Soffice_Ini;
+-	Section		 = "Bootstrap";
+-	Key			 = "UNO_WRITERDB";
+-	Value		 = "$SYSUSERCONFIG/.user60.rdb";
+-	Order		 = 5;
+ End
+ 
+ StarRegistryItem gid_Starregistryitem_Services_Xmlhelp
