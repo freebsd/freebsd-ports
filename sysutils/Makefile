@@ -202,6 +202,7 @@
     SUBDIR += hammerhead
     SUBDIR += hdup
     SUBDIR += healthd
+    SUBDIR += heartbeat
     SUBDIR += heirloom
     SUBDIR += hourglass
     SUBDIR += httplog

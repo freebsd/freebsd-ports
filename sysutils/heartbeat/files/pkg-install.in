@@ -1,0 +1,174 @@
+#! /bin/sh
+
+base=%%PREFIX%%
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+make_account() {
+    local u g gcos homeopt home
+
+    u=$1
+    g=$2
+    gcos=$3
+    homeopt=${4:+"-d $4"}
+
+    if pw group show "${g}" >/dev/null 2>&1; then
+	echo "You already have a group \"${g}\", so I will use it."
+    else
+	echo "You need a group \"${g}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw groupadd ${g} || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    if ! grep -q "^${u}:" /etc/passwd; then
+		echo "While you're at it, please create a user \"${u}\" too,"
+		echo "with a default group of \"${g}\"."
+	    fi
+	    exit 1
+	fi
+    fi
+    
+    if pw user show "${u}" >/dev/null 2>&1; then
+	echo "You already have a user \"${u}\", so I will use it."
+    else
+	echo "You need a user \"${u}\"."
+	if which -s pw && yesno "Would you like me to create it" y; then
+	    pw useradd ${u} -g ${g} -h - ${homeopt} \
+		-s /nonexistent -c "${gcos}" || exit
+	    echo "Done."
+	else
+	    echo "Please create it, and try again."
+	    exit 1
+	fi
+    fi
+
+    if [ x"$homeopt" = x ]; then
+	eval home=~${u}
+	if [ ! -d "${home}" ]; then
+	    if yesno \
+		"Would you like me to create ${u}'s home directory (${home})" y
+	    then
+		mkdir -p ${home} || exit
+		chown -R ${u}:${g} ${home} || exit
+		chmod -R go= ${home} || exit
+	    else
+		echo "Please create it, and try again."
+		exit 1
+	    fi
+	fi
+    fi
+}
+
+delete_account() {
+    local u g home
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+        pw groupdel -n ${g}
+        echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+        eval home=~${u}
+        pw userdel -n ${u}
+        echo "Done."
+        if [ -d "${home}" ]; then
+            echo "Please remember to remove the home directory \"${home}\" as"
+            echo "well as the mirrored files."
+        fi
+    fi
+}
+
+case $2 in
+
+POST-INSTALL)
+    if which -s pw && which -s lockf; then
+	:
+    else
+	cat <<EOF
+
+This system looks like a pre-2.2 version of FreeBSD.  I see that it
+is missing the "lockf" and/or "pw" utilities.  I need these utilities.
+Please get them and install them, and try again.  You can get the
+sources from:
+
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.bin/lockf.tar.gz
+  ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/usr.sbin/pw.tar.gz
+
+EOF
+	exit 1
+    fi
+
+    echo ""
+    user=hacluster
+    group=haclient
+    make_account ${user} ${group} "${user} ${group}" "/nonexistent"
+
+    echo "Adding empty dirs and pid file."
+    test -d /var/lib/heartbeat/ckpt || \
+            install -d -m 755 /var/lib/heartbeat/ckpt
+    test -d /var/lib/heartbeat/ccm || \
+            install -d -m 755 /var/lib/heartbeat/ccm
+    test -d /var/lock/subsys || \
+            install -d -m 755 /var/lock/subsys
+    test -d ${base}/etc/ha.d/conf || \
+            install -d -m 755 ${base}/etc/ha.d/conf
+    test -f /var/run/heartbeat.pid || \
+            install -m 644 -o ${user} -g ${group} /dev/null \
+                /var/run/heartbeat.pid
+    ;;
+
+DEINSTALL)
+    if ps -axc | grep -q heartbeat; then
+        if yesno "There are some heartbeat processes running.  Shall I kill them" y
+        then
+            killall heartbeat
+            sleep 2
+        else
+            echo "OK ... I hope you know what you are doing."
+        fi
+    fi
+
+    delete_account hacluster haclient
+
+    echo "Removing runtime files"
+    if [ -d /var/lib/heartbeat ]; then
+        rm -r /var/lib/heartbeat
+    fi
+    if [ -f /var/lock/subsys/heartbeat ]; then
+        rm /var/lock/subsys/heartbeat
+    fi
+    if [ -f /var/run/heartbeat.pid ]; then
+        rm /var/run/heartbeat.pid
+    fi
+    ;;
+
+esac
