@@ -348,6 +348,7 @@
     SUBDIR += p5-Sledge-Plugin-SaveUpload
     SUBDIR += p5-Sledge-Plugin-ScratchPad
     SUBDIR += p5-Sledge-Plugin-SessionAutoCleanup
+    SUBDIR += p5-Sledge-Plugin-XSLT
     SUBDIR += p5-Sledge-SessionManager-CookieStore
     SUBDIR += p5-Sledge-Template-Expr
     SUBDIR += p5-Template-Toolkit
