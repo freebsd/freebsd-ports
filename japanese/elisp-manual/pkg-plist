@@ -1,0 +1,3 @@
+@unexec install-info --delete %D/info/elisp-ja %D/info/dir
+info/elisp-ja
+@exec install-info %D/info/elisp-ja %D/info/dir

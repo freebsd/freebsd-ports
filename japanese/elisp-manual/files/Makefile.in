@@ -1,0 +1,19 @@
+TEXIFILE= elisp.texi
+INFOFILE= ../info/elisp-ja
+
+EMACS?=	emacs
+
+EMACS_ARGS= -batch -nw --multibyte -no-init-file -no-site-file
+EMACS_LOADLIBS= --load=texinfmt.el --load=PORT_TEXIFMT.MK
+EMACS_FUNCALLS= --eval "(port-texinfo-format \"${TEXIFILE}\" 'junet)" 
+
+all: ${INFOFILE}
+
+${INFOFILE}: ${TEXIFILE}
+	${EMACS} ${EMACS_ARGS} ${EMACS_LOADLIBS} ${EMACS_FUNCALLS}
+
+install: all
+	${BSD_INSTALL_DATA} ${INFOFILE} ${PREFIX}/info
+
+clean:
+	rm -f ${INFOFILE}
