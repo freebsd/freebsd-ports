@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mail-notification
-PORTVERSION=		1.0
+PORTVERSION=		1.1
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -22,6 +22,8 @@ CPPFLAGS=		-I${LOCALBASE}/include
 LDFLAGS=		-L${LOCALBASE}/lib
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_GCC=		3.4
+GCONF_SCHEMAS=		mail-notification.schemas
+INSTALLS_OMF=		yes
 
 OPTIONS=		MBOX "mbox support" on \
 			MH "MH support" on \
@@ -32,7 +34,7 @@ OPTIONS=		MBOX "mbox support" on \
 			SASL "SASL authentication support" on \
 			SYLPHEED "Sylpheed support" on \
 			GMAIL "Gmail support" on \
-			MIME "MIME support" on
+			GMAIL_TIMESTAMPS "Gmail timestamps support" on
 
 .include <bsd.port.pre.mk>
 
@@ -56,29 +58,28 @@ CONFIGURE_ARGS+=	--disable-imap
 WITHOUT_SSL=		yes
 WITHOUT_SASL=		yes
 .endif
-.if defined(WITHOUT_MBOX) \
-	&& defined(WITHOUT_MH) \
-	&& defined(WITHOUT_MAILDIR) \
-	&& defined(WITHOUT_POP3) \
-	&& defined(WITHOUT_IMAP) \
-	&& defined(WITHOUT_SYLPHEED)
-# MIME support not needed
-WITHOUT_MIME=		yes
-.endif
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=	--disable-sylpheed
 .endif
 .if defined(WITHOUT_GMAIL)
 CONFIGURE_ARGS+=	--disable-gmail
+WITHOUT_GMAIL_TIMESTAMPS=	yes
 .else
 LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup
 .endif
-.if defined(WITHOUT_MIME)
-CONFIGURE_ARGS+=	--disable-mime
+.if defined(WITHOUT_GMAIL_TIMESTAMPS)
+CONFIGURE_ARGS+=	--disable-gmail-timestamps
 .else
+LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
+.endif
+.if defined(WITH_MBOX) \
+	|| defined(WITH_MH) \
+	|| defined(WITH_MAILDIR) \
+	|| defined(WITH_POP3) \
+	|| defined(WITH_IMAP) \
+	|| defined(WITH_SYLPHEED)
 LIB_DEPENDS+=		gmime-2.0:${PORTSDIR}/mail/gmime2
 .endif
-
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-ssl
 .else
@@ -89,6 +90,11 @@ CONFIGURE_ARGS+=	--disable-ssl
 CONFIGURE_ARGS+=	--disable-sasl
 .else
 LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+.endif
+.if defined(WITH_POP3) || defined(WITH_IMAP) || defined(WITH_GMAIL)
+PLIST_SUB+=		AUTHENTICATION=""
+.else
+PLIST_SUB+=		AUTHENTICATION="@comment "
 .endif
 
 .include <bsd.port.post.mk>
