@@ -7,13 +7,13 @@
 
 PORTNAME=	domtools
 PORTVERSION=	1.4.0
-CATEGORIES=     net
-MASTER_SITES=   http://www.domtools.com/pub/
+CATEGORIES=	net
+MASTER_SITES=	http://www.domtools.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=     veers@disturbed.net
+MAINTAINER=	veers@disturbed.net
 
-USE_PERL5= 	YES
+USE_PERL5=	YES
 
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/domtools${PORTVERSION}/
