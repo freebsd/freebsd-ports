@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Tue Jun 25 14:21:59 2002
++++ man/Makefile.in	Tue Jun 25 14:25:40 2002
+@@ -378,7 +378,7 @@
+ 
+ 
+ @PACKAGE@.1: @PACKAGE@.1.in ../doc/@PACKAGE@.texinfo texinfo2man  Makefile
+-	texinfo2man @PACKAGE@.1.in ../doc/@PACKAGE@.texinfo > $@
++	./texinfo2man @PACKAGE@.1.in ../doc/@PACKAGE@.texinfo > $@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

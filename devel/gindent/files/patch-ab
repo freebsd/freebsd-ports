@@ -1,5 +1,5 @@
---- indent.texinfo.orig	Thu Nov 16 10:46:14 2000
-+++ indent.texinfo	Sat Nov 18 05:16:14 2000
+--- doc/indent.texinfo.orig	Thu Nov 16 10:46:14 2000
++++ doc/indent.texinfo	Sat Nov 18 05:16:14 2000
 @@ -17,7 +17,7 @@
  @ifinfo
  @dircategory Indent Code Formatter

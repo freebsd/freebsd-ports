@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Tue Jun 25 14:31:43 2002
++++ doc/Makefile.in	Tue Jun 25 14:32:50 2002
+@@ -103,7 +103,7 @@
+ 
+ info_TEXINFOS = indent.texinfo
+ 
+-docdir = $(prefix)/doc/@PACKAGE@
++docdir = $(prefix)/share/doc/@PACKAGE@
+ dvidir = $(docdir)
+ psdir = $(docdir)
+ pdfdir = $(docdir)
