@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pflogstats
-PORTVERSION=	20030404
+PORTVERSION=	20030721
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.aerasec.de/pub/linux/postfix/pflogsumm/pflogstats/
 
@@ -24,13 +24,7 @@ USE_REINPLACE=	yes
 
 post-patch:
 # fix location of PERL
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl \-W|${PERL}|' ${WRKSRC}/*.pl ${WRKSRC}/*.pm
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/pflogstats|${SITE_PERL}/Pflogstats|' ${WRKSRC}/*.pl
-# patch for perl < 5.6.0
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
-		-e '$$_="" if /require 5/;' \
-		-e '$$_="" if /use warnings/;' \
-		${WRKSRC}/*.pm
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl  ${PREFIX}/bin/${PORTNAME}
