@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
 PATCHFILES=	${DISTNAME}-${PORTVERSION}jb2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=    sanpei@FreeBSD.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 # xmkmf is for configure script, not for USE_IMAKE.
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
