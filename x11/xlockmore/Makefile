@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.12
+PORTVERSION=	5.13
 CATEGORIES?=	x11
 MASTER_SITES=	ftp://ftp.tux.org/pub/tux/bagleyd/xlockmore/
 
