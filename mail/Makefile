@@ -401,6 +401,7 @@
     SUBDIR += solidpop3d
     SUBDIR += sortmail
     SUBDIR += spamass-milter
+    SUBDIR += spamass-rules
     SUBDIR += spambnc
     SUBDIR += spamd
     SUBDIR += spamguard
