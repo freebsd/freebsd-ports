@@ -1,0 +1,809 @@
+*** sshd.c.orig	Tue Jan 11 20:40:10 2000
+--- sshd.c	Tue Jan 11 20:40:07 2000
+***************
+*** 553,558 ****
+--- 553,571 ----
+  /* Name of the server configuration file. */
+  char *config_file_name = SERVER_CONFIG_FILE;
+  
++ /* Flag indicating whether IPv4 or IPv6.  This can be set on the command line.
++    Default value is AF_UNSPEC means both IPv4 and IPv6. */
++ #ifdef ENABLE_IPV6
++ int IPv4or6 = AF_UNSPEC;
++ #else
++ int IPv4or6 = AF_INET;
++ #endif
++ 
++ #ifdef ENABLE_LOG_AUTH
++ char *unauthenticated_user = NULL;
++ int log_auth_flag = 0;
++ #endif /* ENABLE_LOG_AUTH */
++ 
+  /* Debug mode flag.  This can be set on the command line.  If debug
+     mode is enabled, extra debugging output will be sent to the system
+     log, the daemon will not go to background, and will exit after processing
+***************
+*** 576,582 ****
+  
+  /* This is set to the socket that the server is listening; this is used in
+     the SIGHUP signal handler. */
+! int listen_sock;
+  
+  /* This is not really needed, and could be eliminated if server-specific
+     and client-specific code were removed from newchannels.c */
+--- 589,605 ----
+  
+  /* This is set to the socket that the server is listening; this is used in
+     the SIGHUP signal handler. */
+! #define	MAX_LISTEN_SOCKS	16
+! int listen_socks[MAX_LISTEN_SOCKS];
+! int num_listen_socks = 0;
+! void close_listen_socks()
+! {
+!   int i;
+! 
+!   for (i = 0; i < num_listen_socks; i++)
+!     close(listen_socks[i]);
+!   num_listen_socks = -1;
+! }
+  
+  /* This is not really needed, and could be eliminated if server-specific
+     and client-specific code were removed from newchannels.c */
+***************
+*** 666,672 ****
+  void sighup_restart(void)
+  {
+    log_msg("Received SIGHUP; restarting.");
+!   close(listen_sock);
+    execvp(saved_argv[0], saved_argv);
+    log_msg("RESTART FAILED: av[0]='%.100s', error: %.100s.", 
+        saved_argv[0], strerror(errno));
+--- 689,695 ----
+  void sighup_restart(void)
+  {
+    log_msg("Received SIGHUP; restarting.");
+!   close_listen_socks();
+    execvp(saved_argv[0], saved_argv);
+    log_msg("RESTART FAILED: av[0]='%.100s', error: %.100s.", 
+        saved_argv[0], strerror(errno));
+***************
+*** 680,686 ****
+  RETSIGTYPE sigterm_handler(int sig)
+  {
+    log_msg("Received signal %d; terminating.", sig);
+!   close(listen_sock);
+    exit(255);
+  }
+  
+--- 703,709 ----
+  RETSIGTYPE sigterm_handler(int sig)
+  {
+    log_msg("Received signal %d; terminating.", sig);
+!   close_listen_socks();
+    exit(255);
+  }
+  
+***************
+*** 759,765 ****
+    int perm_denied = 0;
+    int ret;
+    fd_set fdset;
+!   struct sockaddr_in sin;
+    char buf[100]; /* Must not be larger than remote_version. */
+    char remote_version[100]; /* Must be at least as big as buf. */
+    char *comment;
+--- 782,788 ----
+    int perm_denied = 0;
+    int ret;
+    fd_set fdset;
+!   struct sockaddr_storage from;
+    char buf[100]; /* Must not be larger than remote_version. */
+    char remote_version[100]; /* Must be at least as big as buf. */
+    char *comment;
+***************
+*** 769,774 ****
+--- 792,800 ----
+    struct linger linger;
+  #endif /* SO_LINGER */
+    int done;
++   struct addrinfo *ai;
++   char ntop[ADDRSTRLEN], strport[PORTSTRLEN];
++   int listen_sock, maxfd;
+    
+    /* Save argv[0]. */
+    saved_argv = av;
+***************
+*** 787,796 ****
+    initialize_server_options(&options);
+  
+    /* Parse command-line arguments. */
+!   while ((opt = getopt(ac, av, "f:p:b:k:h:g:diqV:")) != EOF)
+      {
+        switch (opt)
+          {
+          case 'f':
+            config_file_name = optarg;
+            break;
+--- 813,838 ----
+    initialize_server_options(&options);
+  
+    /* Parse command-line arguments. */
+!   while ((opt = getopt(ac, av, "f:p:b:k:h:g:diqV:4"
+! #ifdef ENABLE_IPV6
+! 	"6"
+! #endif
+! 	)) != EOF)
+      {
+        switch (opt)
+          {
++ 	case '4':
++ #ifdef ENABLE_IPV6
++ 	  IPv4or6 = (IPv4or6 == AF_INET6) ? AF_UNSPEC : AF_INET;
++ #else
++ 	  IPv4or6 = AF_INET;
++ #endif
++ 	  break;
++ #ifdef ENABLE_IPV6
++ 	case '6':
++ 	  IPv4or6 = (IPv4or6 == AF_INET) ? AF_UNSPEC : AF_INET6;
++ 	  break;
++ #endif
+          case 'f':
+            config_file_name = optarg;
+            break;
+***************
+*** 807,813 ****
+            options.server_key_bits = atoi(optarg);
+            break;
+          case 'p':
+!           options.port = atoi(optarg);
+            break;
+          case 'g':
+            options.login_grace_time = atoi(optarg);
+--- 849,855 ----
+            options.server_key_bits = atoi(optarg);
+            break;
+          case 'p':
+! 	  options.ports[options.num_ports++] = atoi(optarg);
+            break;
+          case 'g':
+            options.login_grace_time = atoi(optarg);
+***************
+*** 829,834 ****
+--- 871,880 ----
+            fprintf(stderr, "sshd version %s [%s]\n", SSH_VERSION, HOSTTYPE);
+            fprintf(stderr, "Usage: %s [options]\n", av0);
+            fprintf(stderr, "Options:\n");
++ 	  fprintf(stderr, "  -4         Use IPv4 only\n");
++ #ifdef ENABLE_IPV6
++ 	  fprintf(stderr, "  -6         Use IPv6 only\n");
++ #endif
+            fprintf(stderr, "  -f file    Configuration file (default %s/sshd_config)\n", ETCDIR);
+            fprintf(stderr, "  -d         Debugging mode\n");
+            fprintf(stderr, "  -i         Started from inetd\n");
+***************
+*** 857,872 ****
+        fprintf(stderr, "fatal: Bad server key size.\n");
+        exit(1);
+      }
+-   if (options.port < 1 || options.port > 65535)
+-     {
+-       fprintf(stderr, "fatal: Bad port number.\n");
+-       exit(1);
+-     }
+    if (options.umask != -1)
+      {
+        umask(options.umask);
+      }
+  
+    /* Check that there are no remaining arguments. */
+    if (optind < ac)
+      {
+--- 903,917 ----
+        fprintf(stderr, "fatal: Bad server key size.\n");
+        exit(1);
+      }
+    if (options.umask != -1)
+      {
+        umask(options.umask);
+      }
+  
++ #ifdef ENABLE_LOG_AUTH
++   log_auth_flag = options.log_auth;
++ #endif /* ENABLE_LOG_AUTH */
++ 
+    /* Check that there are no remaining arguments. */
+    if (optind < ac)
+      {
+***************
+*** 1034,1043 ****
+      }
+    else
+      {
+        /* Create socket for listening. */
+!       listen_sock = socket(AF_INET, SOCK_STREAM, 0);
+        if (listen_sock < 0)
+          fatal("socket: %.100s", strerror(errno));
+  
+        /* Set socket options.  We try to make the port reusable and have it
+           close as fast as possible without waiting in unnecessary wait states
+--- 1079,1091 ----
+      }
+    else
+      {
++   for (ai = options.listen_addrs; ai; ai = ai->ai_next)
++     {
+        /* Create socket for listening. */
+!       listen_sock = socket(ai->ai_family, SOCK_STREAM, 0);
+        if (listen_sock < 0)
+          fatal("socket: %.100s", strerror(errno));
++       listen_socks[num_listen_socks] = listen_sock;
+  
+        /* Set socket options.  We try to make the port reusable and have it
+           close as fast as possible without waiting in unnecessary wait states
+***************
+*** 1051,1071 ****
+                   sizeof(linger));
+  #endif /* SO_LINGER */
+  
+!       /* Initialize the socket address. */
+!       memset(&sin, 0, sizeof(sin));
+!       sin.sin_family = AF_INET;
+!       sin.sin_addr = options.listen_addr;
+!       sin.sin_port = htons(options.port);
+  
+        /* Bind the socket to the desired port. */
+!       if (bind(listen_sock, (struct sockaddr *)&sin, sizeof(sin)) < 0)
+          {
+!           error("bind: %.100s", strerror(errno));
+!           shutdown(listen_sock, 2);
+            close(listen_sock);
+!           fatal("Bind to port %d failed: %.200s.", options.port,
+!                 strerror(errno));
+          }
+  
+        if (!debug_flag)
+          {
+--- 1099,1128 ----
+                   sizeof(linger));
+  #endif /* SO_LINGER */
+  
+!       getnameinfo(ai->ai_addr, ai->ai_addrlen,
+! 		  ntop, sizeof(ntop), strport, sizeof(strport),
+! 		  NI_NUMERICHOST|NI_NUMERICSERV);
+  
+        /* Bind the socket to the desired port. */
+!       if (bind(listen_sock, ai->ai_addr, ai->ai_addrlen) < 0)
+          {
+! 	  error("Bind to port %s on %s failed: %.200s.",
+! 		strport, ntop, strerror(errno));
+            close(listen_sock);
+! 	  continue;
+          }
++       num_listen_socks++;
++ 
++       /* Start listening on the port. */
++       log_msg("Server listening on %s port %s.", ntop, strport);
++       if (listen(listen_sock, 5) < 0)
++ 	fatal("listen: %.100s", strerror(errno));
++ 
++       } /* for (ai = options.listen_addrs; ai; ai = ai->ai_next) */
++       freeaddrinfo(options.listen_addrs);
++ 
++       if (!num_listen_socks)
++ 	fatal("Cannot bind all addresses.");
+  
+        if (!debug_flag)
+          {
+***************
+*** 1081,1091 ****
+              }
+          }
+  
+-       /* Start listening on the port. */
+-       log_msg("Server listening on port %d.", options.port);
+-       if (listen(listen_sock, 5) < 0)
+-         fatal("listen: %.100s", strerror(errno));
+- 
+        /* Generate an rsa key. */
+        log_msg("Generating %d bit RSA key.", options.server_key_bits);
+        rsa_generate_key(&sensitive_data.private_key, &public_key,
+--- 1138,1143 ----
+***************
+*** 1139,1156 ****
+            
+            /* Wait in select until there is a connection. */
+            FD_ZERO(&fdset);
+!           FD_SET(listen_sock, &fdset);
+!           ret = select(listen_sock + 1, &fdset, NULL, NULL, NULL);
+!           if (ret < 0 || !FD_ISSET(listen_sock, &fdset))
+              {
+                if (errno == EINTR)
+                  continue;
+                error("select: %.100s", strerror(errno));
+                continue;
+              }
+!           
+!           aux = sizeof(sin);
+!           newsock = accept(listen_sock, (struct sockaddr *)&sin, &aux);
+            if (newsock < 0)
+              {
+                if (errno == EINTR)
+--- 1191,1218 ----
+            
+            /* Wait in select until there is a connection. */
+            FD_ZERO(&fdset);
+! 	  maxfd = 0;
+! 	  for (i = 0; i < num_listen_socks; i++)
+! 	    {
+! 	      FD_SET(listen_socks[i], &fdset);
+! 	      if (listen_socks[i] > maxfd)
+! 		maxfd = listen_socks[i];
+! 	    }
+! 	  ret = select(maxfd + 1, &fdset, NULL, NULL, NULL);
+! 	  if (ret < 0)
+              {
+                if (errno == EINTR)
+                  continue;
+                error("select: %.100s", strerror(errno));
+                continue;
+              }
+! 
+!       for (i = 0; i < num_listen_socks; i++)
+! 	{
+! 	  if (!FD_ISSET(listen_socks[i], &fdset))
+! 	    continue;
+! 	  aux = sizeof(from);
+! 	  newsock = accept(listen_socks[i], (struct sockaddr *)&from, &aux);
+            if (newsock < 0)
+              {
+                if (errno == EINTR)
+***************
+*** 1166,1172 ****
+                /* In debugging mode.  Close the listening socket, and start
+                   processing the connection without forking. */
+                debug("Server will not fork when running in debugging mode.");
+!               close(listen_sock);
+                sock_in = newsock;
+                sock_out = newsock;
+                pid = getpid();
+--- 1228,1234 ----
+                /* In debugging mode.  Close the listening socket, and start
+                   processing the connection without forking. */
+                debug("Server will not fork when running in debugging mode.");
+! 	      close_listen_socks();
+                sock_in = newsock;
+                sock_out = newsock;
+                pid = getpid();
+***************
+*** 1195,1201 ****
+                       the accepted socket.  Reinitialize logging (since our
+                       pid has changed).  We break out of the loop to handle
+                       the connection. */
+!                   close(listen_sock);
+                    sock_in = newsock;
+                    sock_out = newsock;
+  #ifdef LIBWRAP
+--- 1257,1263 ----
+                       the accepted socket.  Reinitialize logging (since our
+                       pid has changed).  We break out of the loop to handle
+                       the connection. */
+! 		  close_listen_socks();
+                    sock_in = newsock;
+                    sock_out = newsock;
+  #ifdef LIBWRAP
+***************
+*** 1233,1238 ****
+--- 1295,1304 ----
+            
+            /* Close the new socket (the child is now taking care of it). */
+            close(newsock);
++         } /* for (i = 0; i < num_host_socks; i++) */
++ 	  /* child process check (or debug mode) */
++ 	  if (num_listen_socks < 0)
++ 	    break;
+          }
+      }
+    
+***************
+*** 2205,2210 ****
+--- 2271,2279 ----
+      krb5_parse_name(ssh_context, user, &client);
+  #endif /* defined(KERBEROS) && defined(KRB5) */
+                           
++ #ifdef ENABLE_LOG_AUTH
++   unauthenticated_user = user;
++ #endif /* ENABLE_LOG_AUTH */
+    /* Verify that the user is a valid user.  We disallow usernames starting
+       with any characters that are commonly used to start NIS entries. */
+    pw = getpwnam(user);
+***************
+*** 2222,2228 ****
+    pwcopy.pw_class = xstrdup(pw->pw_class);
+    pwcopy.pw_change = pw->pw_change;
+    pwcopy.pw_expire = pw->pw_expire;
+! #endif /*  __bsdi__  && _BSDI_VERSION >= 199510 */
+    pwcopy.pw_dir = xstrdup(pw->pw_dir);
+    pwcopy.pw_shell = xstrdup(pw->pw_shell);
+    pw = &pwcopy;
+--- 2291,2297 ----
+    pwcopy.pw_class = xstrdup(pw->pw_class);
+    pwcopy.pw_change = pw->pw_change;
+    pwcopy.pw_expire = pw->pw_expire;
+! #endif /*  (__bsdi__  && _BSDI_VERSION >= 199510) || (__FreeBSD__ && HAVE_LOGIN_CAP_H) */
+    pwcopy.pw_dir = xstrdup(pw->pw_dir);
+    pwcopy.pw_shell = xstrdup(pw->pw_shell);
+    pw = &pwcopy;
+***************
+*** 2260,2265 ****
+--- 2329,2339 ----
+      {
+        /* Authentication with empty password succeeded. */
+        debug("Login for user %.100s accepted without authentication.", user);
++ #ifdef ENABLE_LOG_AUTH
++       log_auth("%.100s from %.700s (%s)",
++ 	       user, get_canonical_hostname(),
++ 	       "empty password accepted");
++ #endif /* ENABLE_LOG_AUTH */
+        authentication_type = SSH_AUTH_PASSWORD;
+        authenticated = 1;
+        /* Success packet will be sent after loop below. */
+***************
+*** 2334,2339 ****
+--- 2408,2418 ----
+                    /* Client has successfully authenticated to us. */
+                    log_msg("Kerberos authentication accepted %.100s for login to account %.100s from %.200s",
+                            tkt_user, user, get_canonical_hostname());
++ #ifdef ENABLE_LOG_AUTH
++ 		  log_auth("%.100s from %.700s (%s)",
++ 			   user, get_canonical_hostname(),
++ 			   "kerberos authentication accepted");
++ #endif /* ENABLE_LOG_AUTH */
+                    authentication_type = SSH_AUTH_KERBEROS;
+                    authenticated = 1;
+                    break;
+***************
+*** 2382,2387 ****
+--- 2461,2471 ----
+                /* Authentication accepted. */
+                log_msg("Rhosts authentication accepted for %.100s, remote %.100s on %.700s.",
+                    user, client_user, get_canonical_hostname());
++ #ifdef ENABLE_LOG_AUTH
++ 	      log_auth("%.100s from %.100s@%.700s (%s)",
++ 		       user, client_user, get_canonical_hostname(),
++ 		       "rhosts authentication accepted");
++ #endif /* ENABLE_LOG_AUTH */
+                authentication_type = SSH_AUTH_RHOSTS;
+                authenticated = 1;
+                remote_user_name = client_user;
+***************
+*** 2441,2446 ****
+--- 2525,2535 ----
+                                options.strict_modes))
+              {
+                /* Authentication accepted. */
++ #ifdef ENABLE_LOG_AUTH
++ 	      log_auth("%.100s from %.100s@%.700s (%s)",
++ 		       user, client_user, get_canonical_hostname(),
++                        "rhosts with RSA host authentication accepted");
++ #endif /* ENABLE_LOG_AUTH */
+                authentication_type = SSH_AUTH_RHOSTS_RSA;
+                authenticated = 1;
+                remote_user_name = client_user;
+***************
+*** 2474,2479 ****
+--- 2563,2573 ----
+                  /* Successful authentication. */
+                  mpz_clear(&n);
+                  log_msg("RSA authentication for %.100s accepted.", user);
++ #ifdef ENABLE_LOG_AUTH
++ 		log_auth("%.100s from %.700s (%s)",
++ 			 user, get_canonical_hostname(),
++ 			 "RSA user authentication accepted");
++ #endif /* ENABLE_LOG_AUTH */
+                  authentication_type = SSH_AUTH_RSA;
+                  authenticated = 1;
+                  break;
+***************
+*** 2608,2613 ****
+--- 2702,2712 ----
+                auth_close();
+                memset(password, 0, strlen(password));
+                xfree(password);
++ #ifdef ENABLE_LOG_AUTH
++ 	      log_auth("%.100s from @%.700s (%s)",
++ 		       user, get_canonical_hostname(),
++                        "TIS authentication accepted");
++ #endif /* ENABLE_LOG_AUTH */
+                authentication_type = SSH_AUTH_TIS;
+                authenticated = 1;
+                break;
+***************
+*** 2668,2673 ****
+--- 2767,2777 ----
+                memset(password, 0, strlen(password));
+                xfree(password);
+                log_msg("Password authentication for %.100s accepted.", user);
++ #ifdef ENABLE_LOG_AUTH
++ 	      log_auth("%.100s from %.700s (%s)",
++ 		       user, get_canonical_hostname(),
++ 		       "password authentication accepted");
++ #endif /* ENABLE_LOG_AUTH */
+                authentication_type = SSH_AUTH_PASSWORD;
+                authenticated = 1;
+                break;
+***************
+*** 2708,2713 ****
+--- 2812,2822 ----
+      }
+  
+    /* Check if the user is logging in as root and root logins are disallowed. */
++ #ifdef ENABLE_LOG_AUTH
++   if ((pw->pw_uid == UID_ROOT && options.permit_root_login == 1) ||
++       (pw->pw_uid == UID_ROOT && options.permit_root_login == 0 && !forced_command))
++     log_auth("ROOT LOGIN REFUSED FROM %.200s", get_canonical_hostname());
++ #endif /* ENABLE_LOG_AUTH */
+    if (pw->pw_uid == UID_ROOT && options.permit_root_login == 1)
+      {
+        if (authentication_type == SSH_AUTH_PASSWORD)
+***************
+*** 2775,2780 ****
+--- 2884,2892 ----
+    packet_start(SSH_SMSG_SUCCESS);
+    packet_send();
+    packet_write_wait();
++ #ifdef ENABLE_LOG_AUTH
++   unauthenticated_user = NULL;
++ #endif /* ENABLE_LOG_AUTH */
+  
+    /* Perform session preparation. */
+    do_authenticated(pw);
+***************
+*** 3280,3294 ****
+    char line[256];
+    struct stat st;
+    int quiet_login;
+!   struct sockaddr_in from;
+    int fromlen;
+    struct pty_cleanup_context cleanup_context;
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+    login_cap_t *lc;
+  #endif
+! #if defined (__bsdi__) && _BSDI_VERSION >= 199510 
+    struct timeval tp;
+! #endif /*  __bsdi__ && _BSDI_VERSION >= 199510 */
+  
+    /* We no longer need the child running on user's privileges. */
+    userfile_uninit();
+--- 3392,3407 ----
+    char line[256];
+    struct stat st;
+    int quiet_login;
+!   struct sockaddr_storage from;
+    int fromlen;
+    struct pty_cleanup_context cleanup_context;
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+    login_cap_t *lc;
++   time_t warnpassword, warnexpire;
+  #endif
+! #if defined(__FreeBSD__) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
+    struct timeval tp;
+! #endif /*  __FreeBSD__ || (__bsdi__ && _BSDI_VERSION >= 199510) */
+  
+    /* We no longer need the child running on user's privileges. */
+    userfile_uninit();
+***************
+*** 3387,3393 ****
+  
+        /* Record that there was a login on that terminal. */
+        record_login(pid, ttyname, pw->pw_name, pw->pw_uid, hostname, 
+!                    &from);
+  
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+        lc = login_getclass(pw->pw_class);
+--- 3500,3506 ----
+  
+        /* Record that there was a login on that terminal. */
+        record_login(pid, ttyname, pw->pw_name, pw->pw_uid, hostname, 
+! 		   (struct sockaddr *)&from);
+  
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+        lc = login_getclass(pw->pw_class);
+***************
+*** 3446,3451 ****
+--- 3559,3572 ----
+                     "The Regents of the University of California. ",
+                     "All rights reserved.");
+          }
++ #ifdef HAVE_LOGIN_CAP_H
++ #define DEFAULT_WARN	(2L * 7L * 86400L)	/* Two weeks */
++ 
++ 	warnpassword = login_getcaptime(lc, "warnpassword",
++ 	    DEFAULT_WARN, DEFAULT_WARN);
++ 	warnexpire = login_getcaptime(lc, "warnexpire",
++ 	    DEFAULT_WARN, DEFAULT_WARN);
++ #endif
+  #endif
+  
+        /* Print /etc/motd unless a command was specified or printing it was
+***************
+*** 3469,3475 ****
+                  fputs(line, stdout);
+                fclose(f);
+              }
+! #if defined (__bsdi__) && _BSDI_VERSION >= 199510
+            if (pw->pw_change || pw->pw_expire)
+              (void)gettimeofday(&tp, (struct timezone *)NULL);
+            if (pw->pw_change)
+--- 3590,3596 ----
+                  fputs(line, stdout);
+                fclose(f);
+              }
+! #if defined(__FreeBSD__) || (defined(__bsdi__) && _BSDI_VERSION >= 199510)
+            if (pw->pw_change || pw->pw_expire)
+              (void)gettimeofday(&tp, (struct timezone *)NULL);
+            if (pw->pw_change)
+***************
+*** 3876,3881 ****
+--- 3997,4003 ----
+    char *user_shell;
+    char *remote_ip;
+    int remote_port;
++   int local_port;
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+    login_cap_t *lc;
+    char *real_shell;
+***************
+*** 3922,3928 ****
+            while (fgets(buf, sizeof(buf), f))
+              fputs(buf, stderr);
+            fclose(f);
+! #if defined (__bsdi__) && _BSDI_VERSION >= 199510
+            if (pw->pw_uid != UID_ROOT &&
+                !login_getcapbool(lc, "ignorenologin", 0))
+              exit(254);
+--- 4044,4050 ----
+            while (fgets(buf, sizeof(buf), f))
+              fputs(buf, stderr);
+            fclose(f);
+! #if (defined(__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
+            if (pw->pw_uid != UID_ROOT &&
+                !login_getcapbool(lc, "ignorenologin", 0))
+              exit(254);
+***************
+*** 3981,3986 ****
+--- 4103,4109 ----
+    user_shell = xstrdup(pw->pw_shell);
+    remote_ip = xstrdup(get_remote_ipaddr());
+    remote_port = get_remote_port();
++   local_port = get_local_port();
+  
+    /* Close the connection descriptors; note that this is the child, and the 
+       server will still have the socket open, and it is important that we
+***************
+*** 4000,4006 ****
+    /* Close any extra file descriptors.  Note that there may still be
+       descriptors left by system functions.  They will be closed later. */
+    endpwent();
+-   endhostent();
+  
+    /* Set dummy encryption key to clear information about the key from
+       memory.  This key will never be used. */
+--- 4123,4128 ----
+***************
+*** 4257,4263 ****
+  
+    /* Set SSH_CLIENT. */
+    snprintf(buf, sizeof(buf),
+!            "%.50s %d %d", remote_ip, remote_port, options.port);
+    child_set_env(&env, &envsize, "SSH_CLIENT", buf);
+  
+    /* Set SSH_TTY if we have a pty. */
+--- 4379,4385 ----
+  
+    /* Set SSH_CLIENT. */
+    snprintf(buf, sizeof(buf),
+!            "%.50s %d %d", remote_ip, remote_port, local_port);
+    child_set_env(&env, &envsize, "SSH_CLIENT", buf);
+  
+    /* Set SSH_TTY if we have a pty. */
+***************
+*** 4426,4432 ****
+                  int i;
+                  char name[255], *p;
+                  char line[256];
+!                 struct hostent *hp;
+                  
+                  strncpy(name, display, sizeof(name));
+                  name[sizeof(name) - 1] = '\0';
+--- 4548,4555 ----
+                  int i;
+                  char name[255], *p;
+                  char line[256];
+! 		struct addrinfo hints, *ai, *aitop;
+! 		char ntop[ADDRSTRLEN];
+                  
+                  strncpy(name, display, sizeof(name));
+                  name[sizeof(name) - 1] = '\0';
+***************
+*** 4443,4449 ****
+                  /* Moved this call here to avoid a nasty buf in SunOS
+                     4.1.4 libc where gethostbyname closes an unrelated
+                     file descriptor. */
+!                 hp = gethostbyname(name);
+  
+                  snprintf(line, sizeof(line),
+                           "%.200s -q -", options.xauth_path);
+--- 4566,4575 ----
+                  /* Moved this call here to avoid a nasty buf in SunOS
+                     4.1.4 libc where gethostbyname closes an unrelated
+                     file descriptor. */
+! 		memset(&hints, 0, sizeof(hints));
+! 		hints.ai_family = IPv4or6;
+! 		if (getaddrinfo(name, NULL, &hints, &aitop) != 0)
+! 		  aitop = 0;
+  
+                  snprintf(line, sizeof(line),
+                           "%.200s -q -", options.xauth_path);
+***************
+*** 4461,4481 ****
+                                  cp - display, display, cp, auth_proto,
+                                  auth_data);
+  #endif
+!                         if (hp)
+                            {
+!                             for(i = 0; hp->h_addr_list[i]; i++)
+                                {
+                                  if (debug_flag)
+                                    {
+                                      fprintf(stderr, "Running %s add %s%s %s %s\n",
+                                              options.xauth_path,
+!                                             inet_ntoa(*((struct in_addr *)
+!                                                         hp->h_addr_list[i])),
+                                              cp, auth_proto, auth_data);
+                                    }
+                                  fprintf(f, "add %s%s %s %s\n",
+!                                         inet_ntoa(*((struct in_addr *)
+!                                                     hp->h_addr_list[i])),
+                                          cp, auth_proto, auth_data);
+                                }
+                            }
+--- 4587,4610 ----
+                                  cp - display, display, cp, auth_proto,
+                                  auth_data);
+  #endif
+!                         if (aitop)
+                            {
+! 			    for (ai = aitop; ai; ai = ai->ai_next)
+                                {
++ 				getnameinfo(ai->ai_addr, ai->ai_addrlen,
++ 					    ntop, sizeof(ntop), NULL, 0,
++ 					    NI_NUMERICHOST);
++ 				if (strchr(ntop, ':'))
++ 				  continue; /* XXX - xauth doesn't accept it */
+                                  if (debug_flag)
+                                    {
+                                      fprintf(stderr, "Running %s add %s%s %s %s\n",
+                                              options.xauth_path,
+! 					    ntop,
+                                              cp, auth_proto, auth_data);
+                                    }
+                                  fprintf(f, "add %s%s %s %s\n",
+! 					ntop,
+                                          cp, auth_proto, auth_data);
+                                }
+                            }
+***************
+*** 4525,4531 ****
+--- 4654,4664 ----
+                    struct stat mailbuf;
+                    
+                    if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
++ #ifdef __FreeBSD__
++                     ;
++ #else
+                      printf("No mail.\n");
++ #endif
+                    else if (mailbuf.st_atime > mailbuf.st_mtime)
+                      printf("You have mail.\n");
+                    else

@@ -1,0 +1,260 @@
+diff -ubwr work/ssh-1.2.27/log-client.c work.luigi/ssh-1.2.27/log-client.c
+--- log-client.c	Wed May 12 04:19:26 1999
++++ log-client.c	Wed Dec  6 18:27:30 2000
+@@ -50,6 +50,7 @@
+  * $Endlog$
+  */
+ 
++#if 0 /* XXX luigi */
+ #include "includes.h"
+ #include "xmalloc.h"
+ #include "ssh.h"
+@@ -216,3 +217,4 @@
+   va_end(args);
+   exit(255);
+ }
++#endif /* XXX luigi */
+diff -ubwr work/ssh-1.2.27/log-server.c work.luigi/ssh-1.2.27/log-server.c
+--- log-server.c	Wed Dec  6 18:47:50 2000
++++ log-server.c	Wed Dec  6 19:02:53 2000
+@@ -69,6 +69,36 @@
+ static int log_debug = 0;
+ static int log_quiet = 0;
+ static int log_on_stderr = 0;
++/*
++ * lr 001206
++ *
++ * try to put here all logging and error handling functions
++ *
++
++fatal:
++	scp.c
++	ssh-askpass.c
++	log-server.c
++	log-client.c
++ *
++ */
++
++enum { SCP, ASKPASS, SERVER, CLIENT } fatal_mode ;
++char *unauthenticated_user = NULL; /* from sshd.c */
++int log_auth_flag = 0;	/* from sshd.c */
++int allow_severity = LOG_INFO;
++int deny_severity = LOG_WARNING;
++int debug_flag = 0;
++
++uid_t original_real_uid = 0;
++
++/* from ssh.c */
++#ifdef ENABLE_IPV6
++int IPv4or6 = AF_UNSPEC;
++#else
++int IPv4or6 = AF_INET;
++#endif
++
+ 
+ /* Initialize the log.
+      av0        program name (should be argv[0])
+@@ -325,6 +355,10 @@
+ 
+   if (log_quiet)
+     exit(1);
++
++  if (fatal_mode == CLIENT)
++	  do_fatal_cleanups();
++
+   va_start(args, fmt);
+   vsnprintf(buf, sizeof(buf), fmt, args);
+   va_end(args);
+@@ -332,6 +366,7 @@
+     fprintf(stderr, "fatal: %s\n", buf);
+   syslog(LOG_ERR, "fatal: %.500s", buf);
+ 
++  if (fatal_mode == SERVER)
+   do_fatal_cleanups();
+ 
+   exit(1);
+diff -ubwr work/ssh-1.2.27/newchannels.c work.luigi/ssh-1.2.27/newchannels.c
+--- newchannels.c	Wed Dec  6 18:47:49 2000
++++ newchannels.c	Wed Dec  6 18:44:06 2000
+@@ -274,6 +274,7 @@
+ #include "authfd.h"
+ #include "emulate.h"
+ #include "servconf.h"
++ServerOptions options; /* from sshd */
+ #ifdef LIBWRAP
+ #include <tcpd.h>
+ #include <syslog.h>
+diff -ubwr work/ssh-1.2.27/scp.c work.luigi/ssh-1.2.27/scp.c
+--- scp.c	Wed Dec  6 18:47:51 2000
++++ scp.c	Wed Dec  6 19:09:39 2000
+@@ -363,6 +363,7 @@
+   return 0;
+ }
+ 
++#if 0 /* XXX luigi */
+ void fatal(const char *fmt, ...)
+ {
+   va_list ap;
+@@ -374,7 +375,7 @@
+   fprintf(stderr, "%s\n", buf);
+   exit(255);
+ }
+-
++#endif
+ /* This stuff used to be in BSD rcp extern.h. */
+ 
+ typedef struct {
+@@ -408,10 +409,10 @@
+ void     source(int, char *[]);
+ void     tolocal(int, char *[]);
+ void     toremote(char *, int, char *[]);
+-void     usage(void);
++void     scp_usage(void);
+ 
+ int
+-main(argc, argv)
++scp_main(argc, argv)
+         int argc;
+         char *argv[];
+ {
+@@ -555,7 +556,7 @@
+                         break;
+                 case '?':
+                 default:
+-                        usage();
++                        scp_usage();
+                 }
+         argc -= optind;
+         argv += optind;
+@@ -578,7 +579,7 @@
+         }
+ 
+         if (argc < 2)
+-                usage();
++                scp_usage();
+         if (argc > 2)
+                 targetshouldbedirectory = 1;
+ 
+@@ -1336,7 +1337,7 @@
+ }
+ 
+ void
+-usage(void)
++scp_usage(void)
+ {
+         (void)fprintf(stderr,
+             "usage: scp [-qQaAprvBCL] [-S path-to-ssh] [-o ssh-options] [-P port] [-c cipher] [-i identity] f1 f2; or: scp [options] f1 ... fn directory\n");
+diff -ubwr work/ssh-1.2.27/ssh.c work.luigi/ssh-1.2.27/ssh.c
+--- ssh.c	Wed Dec  6 18:47:51 2000
++++ ssh.c	Wed Dec  6 19:03:25 2000
+@@ -209,8 +209,8 @@
+ #ifdef NEED_SYS_SYSLOG_H
+ #include <sys/syslog.h>
+ #endif /* NEED_SYS_SYSLOG_H */
+-int allow_severity = LOG_INFO;
+-int deny_severity = LOG_WARNING;
++extern int allow_severity ;
++extern int deny_severity;
+ #endif /* LIBWRAP */
+ 
+ /* Random number generator state.  This is initialized in ssh_login, and
+@@ -220,15 +220,11 @@
+ 
+ /* Flag indicating whether IPv4 or IPv6.  This can be set on the command line.
+    Default value is AF_UNSPEC means both IPv4 and IPv6. */
+-#ifdef ENABLE_IPV6
+-int IPv4or6 = AF_UNSPEC;
+-#else
+-int IPv4or6 = AF_INET;
+-#endif
++extern int IPv4or6 ;
+ 
+ /* Flag indicating whether debug mode is on.  This can be set on the
+    command line. */
+-int debug_flag = 0;
++extern int debug_flag;
+ 
+ /* Flag indicating whether quiet mode is on. */
+ int quiet_flag = 0;
+@@ -414,7 +410,7 @@
+ 
+ /* Main program for the ssh client. */
+ 
+-int main(int ac, char **av)
++int ssh_main(int ac, char **av)
+ {
+   int i, opt, optind, type, exit_status, ok, fwd_port, fwd_host_port;
+   int authfd;
+diff -ubwr work/ssh-1.2.27/sshd.c work.luigi/ssh-1.2.27/sshd.c
+--- sshd.c	Wed Dec  6 18:47:52 2000
++++ sshd.c	Wed Dec  6 19:08:18 2000
+@@ -488,8 +488,8 @@
+ #ifdef NEED_SYS_SYSLOG_H
+ #include <sys/syslog.h>
+ #endif /* NEED_SYS_SYSLOG_H */
+-int allow_severity = LOG_INFO;
+-int deny_severity = LOG_WARNING;
++extern int allow_severity ;
++extern int deny_severity ;
+ #endif /* LIBWRAP */
+ 
+ #ifdef CRAY
+@@ -548,29 +548,23 @@
+ #endif /* KERBEROS */
+ 
+ /* Server configuration options. */
+-ServerOptions options;
++extern ServerOptions options;
+ 
+ /* Name of the server configuration file. */
+ char *config_file_name = SERVER_CONFIG_FILE;
+ 
+-/* Flag indicating whether IPv4 or IPv6.  This can be set on the command line.
+-   Default value is AF_UNSPEC means both IPv4 and IPv6. */
+-#ifdef ENABLE_IPV6
+-int IPv4or6 = AF_UNSPEC;
+-#else
+-int IPv4or6 = AF_INET;
+-#endif
++extern int IPv4or6;
+ 
+ #ifdef ENABLE_LOG_AUTH
+-char *unauthenticated_user = NULL;
+-int log_auth_flag = 0;
++extern char *unauthenticated_user ;
++extern int log_auth_flag ;
+ #endif /* ENABLE_LOG_AUTH */
+ 
+ /* Debug mode flag.  This can be set on the command line.  If debug
+    mode is enabled, extra debugging output will be sent to the system
+    log, the daemon will not go to background, and will exit after processing
+    the first connection. */
+-int debug_flag = 0;
++extern int debug_flag ;
+ 
+ /* Flag indicating that the daemon is being started from inetd. */
+ int inetd_flag = 0;
+@@ -603,7 +597,7 @@
+ 
+ /* This is not really needed, and could be eliminated if server-specific
+    and client-specific code were removed from newchannels.c */
+-uid_t original_real_uid = 0;
++extern uid_t original_real_uid ;
+ 
+ /* Flags set in auth-rsa from authorized_keys flags.  These are set in
+   auth-rsa.c. */
+@@ -796,6 +790,14 @@
+   char ntop[ADDRSTRLEN], strport[PORTSTRLEN];
+   int listen_sock, maxfd;
+   
++  { int l = strlen(av[0]); /* do ssh if necessary */
++    if (l < 3) /* assume ssh */
++	return ssh_main(ac, av);
++    if (!strcmp( av[0] + l - 3, "ssh"))
++	return ssh_main(ac, av);
++    if (!strcmp( av[0] + l - 3, "scp"))
++	return scp_main(ac, av);
++  }
+   /* Save argv[0]. */
+   saved_argv = av;
+   if (strchr(av[0], '/'))

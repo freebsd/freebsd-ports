@@ -1,0 +1,66 @@
+*** readconf.c.orig	Wed May 12 13:19:27 1999
+--- readconf.c	Mon Jan 10 22:56:13 2000
+***************
+*** 171,176 ****
+--- 171,179 ----
+    oBatchMode, oStrictHostKeyChecking, oCompression, oCompressionLevel,
+    oKeepAlives, oUsePrivilegedPort, oKerberosAuthentication,
+    oKerberosTgtPassing, oClearAllForwardings, oNumberOfPasswordPrompts,
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   oAnotherPort,
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    oXauthPath, oGatewayPorts, oPasswordPromptLogin, oPasswordPromptHost
+  } OpCodes;
+  
+***************
+*** 194,199 ****
+--- 197,205 ----
+    { "hostname", oHostName },
+    { "proxycommand", oProxyCommand },
+    { "port", oPort },
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   { "anotherport", oAnotherPort },
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    { "cipher", oCipher },
+    { "remoteforward", oRemoteForward },
+    { "localforward", oLocalForward },
+***************
+*** 497,502 ****
+--- 503,514 ----
+  	*intptr = value;
+        break;
+        
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++     case oAnotherPort:
++       intptr = &options->another_port;
++       goto parse_int;
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
++ 
+      case oConnectionAttempts:
+        intptr = &options->connection_attempts;
+        goto parse_int;
+***************
+*** 689,694 ****
+--- 701,709 ----
+    options->keepalives = -1;
+    options->compression_level = -1;
+    options->port = -1;
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   options->another_port = -1;
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    options->connection_attempts = -1;
+    options->number_of_password_prompts = -1;
+    options->password_prompt_login = -1;
+***************
+*** 759,764 ****
+--- 774,783 ----
+      options->compression_level = 6;
+    if (options->port == -1)
+      options->port = 0; /* Filled in ssh_connect. */
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   if (options->another_port == -1)
++     options->another_port = 0;
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    if (options->connection_attempts == -1)
+      options->connection_attempts = 4;
+    if (options->number_of_password_prompts == -1)

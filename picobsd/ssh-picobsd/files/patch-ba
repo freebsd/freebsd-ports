@@ -1,0 +1,176 @@
+*** README-IPv6.orig	Mon Jan 10 22:56:13 2000
+--- README-IPv6	Mon Jan 10 22:56:13 2000
+***************
+*** 0 ****
+--- 1,171 ----
++ ssh-1.2.27-IPv6  version 1.5         KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++  * ssh-1.2.27-IPv6 can handle both IPv4 and IPv6.
++ 
++       To enable sshd/ssh to handle both IPv4 and IPv6,
++ 
++           ./configure --enable-ipv6
++ 
++       Otherwise sshd/ssh handle IPv4 only as same as original ssh.
++ 
++  * You can have multiple ListenAddress lines in /etc/sshd_config.
++    It means that sshd can listen multiple addresses.
++ 
++       Example1: sshd will bind on these four adresses.
++ 
++            ListenAddress 202.249.17.50
++            ListenAddress 202.249.17.137
++            ListenAddress 3ffe:501:c0b::1
++            ListenAddress 3ffe:501:c0b:20:2a0:c9ff:fe3e:f5fc
++ 
++       Example2: as same as example1.
++                 (Because bertemu.rcac.tdi.co.jp has these four addresses.)
++ 
++            ListenAddress bertemu.rcac.tdi.co.jp
++ 
++       Example3: sshd will bind on any address both IPv4 and IPv6.
++ 
++            ListenAddress ::
++            ListenAddress 0.0.0.0
++ 
++       Example4: as same as example3.
++ 
++            No ListenAddress line in /etc/sshd_config.
++ 
++  * You don't mind whether the host has IPv4 or IPv6 address.
++    You can also specify using only IPv4 (or only IPv6).
++ 
++       Example1: ssh will try all IPv4 and IPv6 addresses that the host has.
++ 
++            ssh host
++ 
++       Example2: ssh will try all IPv4 addresses that the host has.
++ 
++            ssh -4 host
++ 
++       Example3: ssh will try all IPv6 addresses that the host has.
++ 
++            ssh -6 host
++ 
++  * You can have multiple Port lines in /etc/sshd_config and -p options.
++    It means that sshd can listen multiple ports, not only port 22.
++ 
++       For example, you run sshd that listens port 22 and port 722,
++       and you can use port 22 for slogin and port 722 for scp.
++       It's useful if you have preference for interactive traffic in the router.
++ 
++       You can have "AnotherPort 722" line in /etc/ssh_config or your
++       config file (maybe ~/.ssh/config).  In this case, ssh with -A option
++       try to connect to port 722 at first, and try to connect to original
++       port (maybe port 22) if port 722 fails. scp executes ssh with -A option.
++ 
++  * IPv6 supported platform
++ 
++       IPv6 feature is available on follwing platforms now.
++ 
++         kame -- http://www.kame.net/   (used to be called Hydrangea)
++         v6d  -- http://onoe2.sm.sony.co.jp/ipv6/ (IPv6 daemon)
++ 
++       On the other environments you can compile and run ssh-1.2.27-IPv6 if
++       you have a good getaddrinfo() in your library.
++ 
++  * How to get ssh-1.2.27-IPv6
++ 
++      You can get tar.gz or patch to ssh-1.2.27.tar.gz:
++ 
++         ftp://ftp.kyoto.wide.ad.jp/IPv6/ssh/ssh-1.2.27-IPv6-1.5.tar.gz
++         ftp://ftp.kyoto.wide.ad.jp/IPv6/ssh/ssh-1.2.27-IPv6-1.5-patch.gz
++ 
++  * How to install ssh-1.2.27-IPv6
++ 
++      Apply ssh-1.2.27-IPv6-1.5-patch to ssh-1.2.27.tar.gz (or use 
++      ssh-1.2.27-IPv6-1.5.tar.gz) and then see INSTALL file of ssh-1.2.27.
++ 
++      If you want to enable ssh to handle IPv6, for example,
++ 
++          % ./configure --enable-ipv6
++          % make
++          % make install
++ 
++      and you will be able to enjoy ssh handling both IPv6 and IPv4.
++ 
++  * Change Log
++ 
++      v1.5   1999-05-15 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * for ssh-1.2.27
++        * supported scp with bracketed ipv6 ip address 
++        * used struct sockaddr_storage instead of union sockunion
++ 
++      v1.4   1998-08-21 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * fixed ipv6 address checking bug at match_host() in match.c
++        * cleanup comparing ip address at get_remote_hostname() in canohost.c
++ 
++      v1.3   1998-08-14 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * fixed ipv6 address checking bug at match_host() in match.c
++          pointed out by Kenji Rikitake <kenji@k2r.org>
++ 
++      v1.2.2 1998-08-07 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * fixed IPv6 enable checking bug in configure.in
++ 
++      v1.2.1 1998-08-05 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * fixed AuthLog enable handling bug
++ 
++      v1.2   1998-08-01 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * for ssh-1.2.26
++ 
++      v1.1.5 1998-06-13 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * supported AuthLog (logging authenticated info) in /etc/sshd_config
++ 
++      v1.1.4 1998-06-11 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * supported multiple Port lines in /etc/sshd_config
++        * supported AnotherPort line in /etc/ssh_config
++        * supported -A option of ssh for another port try
++ 
++      v1.1.3 1998-06-01 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * X11 connection forwarding IPv6 support
++        * removeed all hostent and sockaddr_in from *.c
++ 
++      v1.1.2 1998-05-31 Jun-ichiro itojun Itoh <itojun@itojun.org>
++ 
++        * configuration support for v6d.
++ 
++      v1.1.1 1998-05-31 Jun-ichiro itojun Itoh <itojun@itojun.org>
++ 
++        * add getaddinfo.c, getnameinfo.c and gai.h (delete fakelibinet6.c)
++        * configure checks whether getaddrinfo exists or not.
++ 
++      v1.1   1998-05-31 KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * add fakelibinet6.c (including getaddrinfo and getnameinfo)
++        * compilation support on non-IPv6 environment.
++        * fixed port forwarding bug
++ 
++      v1.0.1 1998-05-30 Jun-ichiro itojun Itoh <itojun@itojun.org>
++ 
++        * add ENABLE_IPV6 flag.
++        * configuration support --enable-ipv6 for IPv6 platforms.
++ 
++      v1.0   1998-05-30 created by KIKUCHI Takahiro <kick@kyoto.wide.ad.jp>
++ 
++        * first release
++        * IPv6 support except X11 connection forwarding
++ 
++  * Guideline for making this patch
++ 
++      * protocol family independent (using AF_UNSPEC)
++      * use getaddrinfo and getnameinfo (see RFC2133)
++      * don't use sockaddr_in and AF_INET (but option -4 uses AF_INET)
++      * don't use sockaddr_in6 and AF_INET6 (but option -6 uses AF_INET6)
++      * don't use gethostbyname, gethostbyaddr and hostent
++      * listen to all addresses for all available protocol family
++      * try to connect to all addresses for all available protocol family
++ 

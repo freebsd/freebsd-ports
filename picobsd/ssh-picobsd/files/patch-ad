@@ -1,0 +1,13 @@
+*** auth-passwd.c.orig	Wed May 12 20:19:23 1999
+--- auth-passwd.c	Sun Jun  6 02:36:00 1999
+***************
+*** 911,916 ****
+--- 911,918 ----
+    encrypted_password = crypt(password, 
+                               (correct_passwd[0] && correct_passwd[1]) ?
+                               correct_passwd : "xx");
++   if (!password[0] && correct_passwd[0])
++     encrypted_password = ":";
+  #endif /* HAVE_SCO_ETC_SHADOW */
+  
+    /* Authentication is accepted if the encrypted passwords are identical. */

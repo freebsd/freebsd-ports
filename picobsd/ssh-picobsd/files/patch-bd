@@ -1,0 +1,60 @@
+*** config.h.in.orig	Wed May 12 13:20:04 1999
+--- config.h.in	Thu Feb 24 17:12:10 2000
+***************
+*** 285,290 ****
+--- 285,292 ----
+  #undef Rdup2
+  #undef Rfclose
+  #undef Rgethostbyname
++ #undef Rgetaddrinfo
++ 
+  
+  /* Set this to allow group writeability of $HOME, .ssh and authorized_keys */
+  #undef ALLOW_GROUP_WRITEABILITY
+***************
+*** 323,328 ****
+--- 325,348 ----
+     /etc/nologin.allow. */
+  #undef NOLOGIN_ALLOW
+  
++ /* Define this if you have struct sockaddr_storage. */
++ #undef HAVE_SOCKADDR_STORAGE
++ 
++ /* Define this if you have __sa_family in struct sockaddr_storage. */
++ #undef HAVE_NEW_SS_FAMILY
++ 
++ /* Define this if you have ss_len in struct sockaddr. */
++ #undef HAVE_SOCKADDR_LEN
++ 
++ /* Define this if you want to enable IPv6 support. */
++ #undef ENABLE_IPV6
++  
++ /* Define this if you want to enable another port try support. */
++ #undef ENABLE_ANOTHER_PORT_TRY
++ 
++ /* Define this if you want to enable logging auth info support. */
++ #undef ENABLE_LOG_AUTH
++ 
+  /* Where to find the X11 socket */
+  #undef X11_DIR
+  
+***************
+*** 375,385 ****
+--- 395,411 ----
+  /* Define if you have the ftruncate function.  */
+  #undef HAVE_FTRUNCATE
+  
++ /* Define if you have the getaddrinfo function.  */
++ #undef HAVE_GETADDRINFO
++ 
+  /* Define if you have the getdtablesize function.  */
+  #undef HAVE_GETDTABLESIZE
+  
+  /* Define if you have the gethostname function.  */
+  #undef HAVE_GETHOSTNAME
++ 
++ /* Define if you have the getnameinfo function.  */
++ #undef HAVE_GETNAMEINFO
+  
+  /* Define if you have the getpseudotty function.  */
+  #undef HAVE_GETPSEUDOTTY

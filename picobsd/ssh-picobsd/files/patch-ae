@@ -1,0 +1,58 @@
+*** server_config.sample.old	Thu Apr 20 23:24:57 2000
+--- server_config.sample	Thu Apr 20 23:26:24 2000
+***************
+*** 1,13 ****
+  # This is ssh server systemwide configuration file.
+  
+  Port 22
+! ListenAddress 0.0.0.0
+  HostKey _ETCDIR_/ssh_host_key
+  RandomSeed _ETCDIR_/ssh_random_seed
+  ServerKeyBits 768
+  LoginGraceTime 600
+  KeyRegenerationInterval 3600
+! PermitRootLogin yes
+  IgnoreRhosts no
+  StrictModes yes
+  QuietMode no
+--- 1,13 ----
+  # This is ssh server systemwide configuration file.
+  
+  Port 22
+! #Port 722	# Secondary port to listen on
+  HostKey _ETCDIR_/ssh_host_key
+  RandomSeed _ETCDIR_/ssh_random_seed
+  ServerKeyBits 768
+  LoginGraceTime 600
+  KeyRegenerationInterval 3600
+! PermitRootLogin no
+  IgnoreRhosts no
+  StrictModes yes
+  QuietMode no
+***************
+*** 16,27 ****
+  FascistLogging no
+  PrintMotd yes
+  KeepAlive yes
+! SyslogFacility DAEMON
+  RhostsAuthentication no
+  RhostsRSAAuthentication yes
+  RSAAuthentication yes
+  PasswordAuthentication yes
+! PermitEmptyPasswords yes
+  UseLogin no
+  # CheckMail no
+  # PidFile /u/zappa/.ssh/pid
+--- 16,27 ----
+  FascistLogging no
+  PrintMotd yes
+  KeepAlive yes
+! SyslogFacility AUTH
+  RhostsAuthentication no
+  RhostsRSAAuthentication yes
+  RSAAuthentication yes
+  PasswordAuthentication yes
+! PermitEmptyPasswords no
+  UseLogin no
+  # CheckMail no
+  # PidFile /u/zappa/.ssh/pid

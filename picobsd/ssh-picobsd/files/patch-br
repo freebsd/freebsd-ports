@@ -1,0 +1,97 @@
+*** ssh.c.orig	Wed May 12 13:19:28 1999
+--- ssh.c	Mon Jan 10 22:56:13 2000
+***************
+*** 218,223 ****
+--- 218,231 ----
+     other functions. */
+  RandomState random_state;
+  
++ /* Flag indicating whether IPv4 or IPv6.  This can be set on the command line.
++    Default value is AF_UNSPEC means both IPv4 and IPv6. */
++ #ifdef ENABLE_IPV6
++ int IPv4or6 = AF_UNSPEC;
++ #else
++ int IPv4or6 = AF_INET;
++ #endif
++ 
+  /* Flag indicating whether debug mode is on.  This can be set on the
+     command line. */
+  int debug_flag = 0;
+***************
+*** 277,282 ****
+--- 285,297 ----
+  {
+    fprintf(stderr, "Usage: %s [options] host [command]\n", av0);
+    fprintf(stderr, "Options:\n");
++   fprintf(stderr, "  -4          Use IPv4 only.\n");
++ #ifdef ENABLE_IPV6
++   fprintf(stderr, "  -6          Use IPv6 only.\n");
++ #endif
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   fprintf(stderr, "  -A          Try to connect to another port before original port.\n");
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    fprintf(stderr, "  -l user     Log in using this user name.\n");
+    fprintf(stderr, "  -n          Redirect input from /dev/null.\n");
+    fprintf(stderr, "  -a          Disable authentication agent forwarding.\n");
+***************
+*** 413,418 ****
+--- 428,436 ----
+  #ifdef SIGWINCH
+    struct winsize ws;
+  #endif /* SIGWINCH */
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   int another_port_flag = 0;
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+  
+    /* Save the original real uid.  It will be needed later (uid-swapping may
+       clobber the real uid).  */
+***************
+*** 522,527 ****
+--- 540,565 ----
+          }
+        switch (opt)
+          {
++ 	case '4':
++ #ifdef ENABLE_IPV6
++ 	  IPv4or6 = (IPv4or6 == AF_INET6) ? AF_UNSPEC : AF_INET;
++ #else
++ 	  IPv4or6 = AF_INET;
++ #endif
++ 	  break;
++ 
++ #ifdef ENABLE_IPV6
++ 	case '6':
++ 	  IPv4or6 = (IPv4or6 == AF_INET) ? AF_UNSPEC : AF_INET6;
++ 	  break;
++ #endif
++ 
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++ 	case 'A':
++ 	  another_port_flag = 1;
++ 	  break;
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
++ 
+          case 'n':
+            stdin_null_flag = 1;
+            break;
+***************
+*** 789,799 ****
+--- 827,844 ----
+      {
+        use_privileged_port = 0;
+      }
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++   if (!another_port_flag)
++     options.another_port = 0;
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+    /* Open a connection to the remote host.  This needs root privileges if
+       rhosts_authentication is true.  Note that the random_state is not
+       yet used by this call, although a pointer to it is stored, and thus it
+       need not be initialized. */
+    ok = ssh_connect(host, options.port, options.connection_attempts,
++ #ifdef ENABLE_ANOTHER_PORT_TRY
++ 		   options.another_port,
++ #endif /* ENABLE_ANOTHER_PORT_TRY */
+                     !use_privileged_port,
+                     original_real_uid, options.proxy_command, &random_state);
+  

@@ -1,0 +1,401 @@
+*** canohost.c.orig	Wed May 12 13:19:24 1999
+--- canohost.c	Mon Jan 10 22:56:13 2000
+***************
+*** 59,68 ****
+  
+  char *get_remote_hostname(int socket)
+  {
+!   struct sockaddr_in from;
+    int fromlen, i;
+!   struct hostent *hp;
+    char name[255];
+  
+    /* Get IP address of client. */
+    fromlen = sizeof(from);
+--- 59,69 ----
+  
+  char *get_remote_hostname(int socket)
+  {
+!   struct sockaddr_storage from;
+    int fromlen, i;
+!   struct addrinfo hints, *ai, *aitop;
+    char name[255];
++   char ntop[ADDRSTRLEN], ntop2[ADDRSTRLEN];
+  
+    /* Get IP address of client. */
+    fromlen = sizeof(from);
+***************
+*** 73,86 ****
+        strcpy(name, "UNKNOWN");
+        goto check_ip_options;
+      }
+    
+    /* Map the IP address to a host name. */
+!   hp = gethostbyaddr((char *)&from.sin_addr, sizeof(struct in_addr),
+!                      from.sin_family);
+!   if (hp)
+      {
+        /* Got host name. */
+-       strncpy(name, hp->h_name, sizeof(name));
+        name[sizeof(name) - 1] = '\0';
+        
+        /* Convert it to all lowercase (which is expected by the rest of this
+--- 74,89 ----
+        strcpy(name, "UNKNOWN");
+        goto check_ip_options;
+      }
++ 
++   getnameinfo((struct sockaddr *)&from, fromlen,
++ 	      ntop, sizeof(ntop), NULL, 0, NI_NUMERICHOST);
+    
+    /* Map the IP address to a host name. */
+!   if (getnameinfo((struct sockaddr *)&from, fromlen,
+! 		  name, sizeof(name),
+! 		  NULL, 0, NI_NAMEREQD) == 0)
+      {
+        /* Got host name. */
+        name[sizeof(name) - 1] = '\0';
+        
+        /* Convert it to all lowercase (which is expected by the rest of this
+***************
+*** 95,119 ****
+           Mapping from name to IP address can be trusted better (but can still
+           be fooled if the intruder has access to the name server of the
+           domain). */
+!       hp = gethostbyname(name);
+!       if (!hp)
+          {
+            log_msg("reverse mapping checking gethostbyname for %.700s failed - POSSIBLE BREAKIN ATTEMPT!", name);
+!           strcpy(name, inet_ntoa(from.sin_addr));
+            goto check_ip_options;
+          }
+        /* Look for the address from the list of addresses. */
+!       for (i = 0; hp->h_addr_list[i]; i++)
+!         if (memcmp(hp->h_addr_list[i], &from.sin_addr, sizeof(from.sin_addr))
+!             == 0)
+!           break;
+        /* If we reached the end of the list, the address was not there. */
+!       if (!hp->h_addr_list[i])
+          {
+            /* Address not found for the host name. */
+            log_msg("Address %.100s maps to %.600s, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!",
+!               inet_ntoa(from.sin_addr), name);
+!           strcpy(name, inet_ntoa(from.sin_addr));
+            goto check_ip_options;
+          }
+        /* Address was found for the host name.  We accept the host name. */
+--- 98,127 ----
+           Mapping from name to IP address can be trusted better (but can still
+           be fooled if the intruder has access to the name server of the
+           domain). */
+!       memset(&hints, 0, sizeof(hints));
+!       hints.ai_family = from.__ss_family;
+!       if (getaddrinfo(name, NULL, &hints, &aitop) != 0)
+          {
+            log_msg("reverse mapping checking gethostbyname for %.700s failed - POSSIBLE BREAKIN ATTEMPT!", name);
+! 	  strcpy(name, ntop);
+            goto check_ip_options;
+          }
+        /* Look for the address from the list of addresses. */
+!       for (ai = aitop; ai; ai = ai->ai_next)
+! 	{
+! 	  getnameinfo(ai->ai_addr, ai->ai_addrlen,
+! 		      ntop2, sizeof(ntop2), NULL, 0, NI_NUMERICHOST);
+! 	  if (strcmp(ntop, ntop2) == 0)
+! 	    break;
+! 	}
+!       freeaddrinfo(aitop);
+        /* If we reached the end of the list, the address was not there. */
+!       if (!ai)
+          {
+            /* Address not found for the host name. */
+            log_msg("Address %.100s maps to %.600s, but this does not map back to the address - POSSIBLE BREAKIN ATTEMPT!",
+! 		  ntop, name);
+! 	  strcpy(name, ntop);
+            goto check_ip_options;
+          }
+        /* Address was found for the host name.  We accept the host name. */
+***************
+*** 121,127 ****
+    else
+      {
+        /* Host name not found.  Use ascii representation of the address. */
+!       strcpy(name, inet_ntoa(from.sin_addr));
+        log_msg("Could not reverse map address %.100s.", name);
+      }
+  
+--- 129,135 ----
+    else
+      {
+        /* Host name not found.  Use ascii representation of the address. */
+!       strcpy(name, ntop);
+        log_msg("Could not reverse map address %.100s.", name);
+      }
+  
+***************
+*** 136,141 ****
+--- 144,150 ----
+       Notice also that if we just dropped source routing here, the other
+       side could use IP spoofing to do rest of the interaction and could still
+       bypass security.  So we exit here if we detect any IP options. */
++   if (from.__ss_family == AF_INET)	/* IP options -- IPv4 only */
+    {
+      unsigned char options[200], *ucp;
+      char text[1024], *cp;
+***************
+*** 157,165 ****
+          for (ucp = options; option_size > 0; ucp++, option_size--, cp += 3)
+            sprintf(cp, " %2.2x", *ucp);
+          log_msg("Connection from %.100s with IP options:%.800s",
+!             inet_ntoa(from.sin_addr), text);
+          packet_disconnect("Connection from %.100s with IP options:%.800s", 
+!                           inet_ntoa(from.sin_addr), text);
+        }
+    }
+  #endif
+--- 166,174 ----
+          for (ucp = options; option_size > 0; ucp++, option_size--, cp += 3)
+            sprintf(cp, " %2.2x", *ucp);
+          log_msg("Connection from %.100s with IP options:%.800s",
+! 		ntop, text);
+          packet_disconnect("Connection from %.100s with IP options:%.800s", 
+! 			  ntop, text);
+        }
+    }
+  #endif
+***************
+*** 177,183 ****
+  const char *get_canonical_hostname(void)
+  {
+    int fromlen, tolen;
+!   struct sockaddr_in from, to;
+  
+    /* Check if we have previously retrieved this same name. */
+    if (canonical_host_name != NULL)
+--- 186,192 ----
+  const char *get_canonical_hostname(void)
+  {
+    int fromlen, tolen;
+!   struct sockaddr_storage from, to;
+  
+    /* Check if we have previously retrieved this same name. */
+    if (canonical_host_name != NULL)
+***************
+*** 200,207 ****
+                        &tolen) < 0)
+          goto no_ip_addr;
+        
+!       if (from.sin_family == AF_INET && to.sin_family == AF_INET &&
+!           memcmp(&from, &to, sizeof(from)) == 0)
+          goto return_ip_addr;
+  
+      no_ip_addr:
+--- 209,215 ----
+                        &tolen) < 0)
+          goto no_ip_addr;
+        
+!       if (fromlen == tolen && memcmp(&from, &to, fromlen) == 0)
+          goto return_ip_addr;
+  
+      no_ip_addr:
+***************
+*** 221,228 ****
+  
+  const char *get_remote_ipaddr(void)
+  {
+!   struct sockaddr_in from, to;
+    int fromlen, tolen, socket;
+  
+    /* Check if we have previously retrieved this same name. */
+    if (canonical_host_ip != NULL)
+--- 229,237 ----
+  
+  const char *get_remote_ipaddr(void)
+  {
+!   struct sockaddr_storage from, to;
+    int fromlen, tolen, socket;
++   char ntop[ADDRSTRLEN];
+  
+    /* Check if we have previously retrieved this same name. */
+    if (canonical_host_ip != NULL)
+***************
+*** 245,252 ****
+                        &tolen) < 0)
+          goto no_ip_addr;
+        
+!       if (from.sin_family == AF_INET && to.sin_family == AF_INET &&
+!           memcmp(&from, &to, sizeof(from)) == 0)
+          goto return_ip_addr;
+  
+      no_ip_addr:
+--- 254,260 ----
+                        &tolen) < 0)
+          goto no_ip_addr;
+        
+!       if (fromlen == tolen && memcmp(&from, &to, fromlen) == 0)
+          goto return_ip_addr;
+  
+      no_ip_addr:
+***************
+*** 269,275 ****
+      }
+  
+    /* Get the IP address in ascii. */
+!   canonical_host_ip = xstrdup(inet_ntoa(from.sin_addr));
+  
+    /* Return ip address string. */
+    return canonical_host_ip;
+--- 277,285 ----
+      }
+  
+    /* Get the IP address in ascii. */
+!   getnameinfo((struct sockaddr *)&from, fromlen,
+! 	      ntop, sizeof(ntop), NULL, 0, NI_NUMERICHOST);
+!   canonical_host_ip = xstrdup(ntop);
+  
+    /* Return ip address string. */
+    return canonical_host_ip;
+***************
+*** 279,286 ****
+  
+  int get_peer_port(int sock)
+  {
+!   struct sockaddr_in from;
+    int fromlen;
+  
+    /* Get IP address of client. */
+    fromlen = sizeof(from);
+--- 289,297 ----
+  
+  int get_peer_port(int sock)
+  {
+!   struct sockaddr_storage from;
+    int fromlen;
++   char strport[PORTSTRLEN];
+  
+    /* Get IP address of client. */
+    fromlen = sizeof(from);
+***************
+*** 292,298 ****
+      }
+  
+    /* Return port number. */
+!   return ntohs(from.sin_port);
+  }
+  
+  /* Returns the port number of the remote host.  */
+--- 303,311 ----
+      }
+  
+    /* Return port number. */
+!   getnameinfo((struct sockaddr *)&from, fromlen,
+! 	      NULL, 0, strport, sizeof(strport), NI_NUMERICSERV);
+!   return atoi(strport);
+  }
+  
+  /* Returns the port number of the remote host.  */
+***************
+*** 301,307 ****
+  {
+    int socket;
+    int fromlen, tolen;
+!   struct sockaddr_in from, to;
+  
+    /* If two different descriptors, check if they are internet-domain, and
+       have the same address. */
+--- 314,320 ----
+  {
+    int socket;
+    int fromlen, tolen;
+!   struct sockaddr_storage from, to;
+  
+    /* If two different descriptors, check if they are internet-domain, and
+       have the same address. */
+***************
+*** 319,326 ****
+                        &tolen) < 0)
+          goto no_ip_addr;
+        
+!       if (from.sin_family == AF_INET && to.sin_family == AF_INET &&
+!           memcmp(&from, &to, sizeof(from)) == 0)
+          goto return_port;
+  
+      no_ip_addr:
+--- 332,338 ----
+                        &tolen) < 0)
+          goto no_ip_addr;
+        
+!       if (fromlen == tolen && memcmp(&from, &to, fromlen) == 0)
+          goto return_port;
+  
+      no_ip_addr:
+***************
+*** 335,337 ****
+--- 347,413 ----
+    /* Get and return the peer port number. */
+    return get_peer_port(socket);
+  }
++ 
++ /* Returns the port of the local of the socket. */
++ 
++ int get_sock_port(int sock)
++ {
++   struct sockaddr_storage from;
++   int fromlen;
++   char strport[PORTSTRLEN];
++ 
++   /* Get IP address of client. */
++   fromlen = sizeof(from);
++   memset(&from, 0, sizeof(from));
++   if (getsockname(sock, (struct sockaddr *)&from, &fromlen) < 0)
++     {
++       error("getsockname failed: %.100s", strerror(errno));
++       return 0;
++     }
++ 
++   /* Return port number. */
++   getnameinfo((struct sockaddr *)&from, fromlen,
++ 	      NULL, 0, strport, sizeof(strport), NI_NUMERICSERV);
++   return atoi(strport);
++ }
++ 
++ /* Returns the port number of the local host.  */
++ 
++ int get_local_port()
++ {
++   int socket;
++   int fromlen, tolen;
++   struct sockaddr_storage from, to;
++ 
++   /* If two different descriptors, check if they are internet-domain, and
++      have the same address. */
++   if (packet_get_connection_in() != packet_get_connection_out())
++     {
++       fromlen = sizeof(from);
++       memset(&from, 0, sizeof(from));
++       if (getsockname(packet_get_connection_in(), (struct sockaddr *)&from, 
++ 		      &fromlen) < 0)
++ 	goto no_ip_addr;
++ 
++       tolen = sizeof(to);
++       memset(&to, 0, sizeof(to));
++       if (getsockname(packet_get_connection_out(), (struct sockaddr *)&to, 
++ 		      &tolen) < 0)
++ 	goto no_ip_addr;
++       
++       if (fromlen == tolen && memcmp(&from, &to, fromlen) == 0)
++ 	goto return_port;
++ 
++     no_ip_addr:
++       return 65535;
++     }
++ 
++  return_port:
++ 
++   /* Get client socket. */
++   socket = packet_get_connection_in();
++ 
++   /* Get and return the local port number. */
++   return get_sock_port(socket);
++ }
++ 
