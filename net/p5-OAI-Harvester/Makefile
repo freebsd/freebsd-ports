@@ -39,4 +39,10 @@ MAN3=		Net::OAI::Base.3 \
 
 MAN1=		oai-listsets.1 oai-listrecords.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8then try again
+.endif
+
+.include <bsd.port.post.mk>
