@@ -40,6 +40,7 @@
     SUBDIR += eterm
     SUBDIR += fcitx
     SUBDIR += firebird
+    SUBDIR += fireflyttf
     SUBDIR += fortunetw
     SUBDIR += gb2jis
     SUBDIR += gb2ps
