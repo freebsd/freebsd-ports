@@ -1,0 +1,7 @@
+STklos is a free Scheme System (nearly) conform to R5RS.  The aim of
+this implementation is to be fast as well as light.  The
+implementation is based on an ad-hoc Virtual Machine.  STklos can also
+be compiled as a library, so that one can easily embed it in an
+application.
+
+WWW: http://stklos.sourceforge.net/
