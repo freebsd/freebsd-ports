@@ -8,7 +8,7 @@ X11BASE=/usr/X11R6
 FONTDIR=$X11BASE/lib/X11/fonts/local
 
 mkdir -p $X11BASE/share/qix
-chown bin.games $X11BASE/share/qix
+chown bin:games $X11BASE/share/qix
 chmod g+w $X11BASE/share/qix
 
 cat >> $FONTDIR/fonts.alias <<EOF
