@@ -1,0 +1,22 @@
+--- Makefile.orig	Fri Sep  7 22:10:42 2001
++++ Makefile	Fri Sep  7 22:20:26 2001
+@@ -1,6 +1,7 @@
+-CC = gcc
+-CCFLAGS = `gtk-config --cflags`
+-LDFLAGS = `gtk-config --libs`
++CFLAGS += `${GTK_CONFIG} --cflags`
++LDFLAGS = `${GTK_CONFIG} --libs`
++
++all: gbase
+ 
+ gbase:	gbase.o
+ 	$(CC) gbase.o $(LDFLAGS) -o gbase
+@@ -10,6 +11,6 @@
+ 
+ # Make object files:
+ %.o:
+-	$(CC) $(CCFLAGS) -c $*.c
++	$(CC) $(CFLAGS) -c $*.c
+ 
+-gbase.o: gbase.c
++gbase.o: gbase.c
