@@ -9,6 +9,7 @@ PORTNAME=	logjam2
 PORTVERSION=	4.0.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
+DISTNAME=	logjam-${PORTVERSION}
 
 MAINTAINER=	ahze@rgv.net
 
