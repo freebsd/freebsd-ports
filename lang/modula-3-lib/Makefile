@@ -3,7 +3,7 @@
 # Date created:		28 Oct 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.11 1998/09/18 01:02:02 jdp Exp $
+# $Id: Makefile,v 1.12 1998/10/12 16:38:04 jseger Exp $
 #
 
 DISTNAME=	modula-3-lib-3.6
@@ -16,8 +16,6 @@ DISTFILES=	m3-fbsd-src-3.6.tar.gz \
 # below may add some more DISTFILES.
 
 MAINTAINER=	jdp@polstra.com
-
-BROKEN_ELF=	lots of errors
 
 NO_WRKSUBDIR=	yes
 SCRIPTS_ENV+=	MAJOR=${major} PKGDIR=${PKGDIR} PLIST=${PLIST}
