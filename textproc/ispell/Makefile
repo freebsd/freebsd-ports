@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
