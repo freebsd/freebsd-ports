@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBI
-PORTVERSION=	1.32
+PORTVERSION=	1.34
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBI
@@ -19,8 +19,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		dbiproxy.1 \
-		dbish.1
+MAN1=		dbiprof.1 \
+		dbiproxy.1
 MAN3=		Bundle::DBI.3 \
 		DBD::Proxy.3 \
 		DBI.3 \
@@ -29,6 +29,7 @@ MAN3=		Bundle::DBI.3 \
 		DBI::Const::GetInfoReturn.3 \
 		DBI::Const::GetInfoType.3 \
 		DBI::DBD.3 \
+		DBI::DBD::Metadata.3 \
 		DBI::FAQ.3 \
 		DBI::Format.3 \
 		DBI::Profile.3 \
@@ -37,7 +38,6 @@ MAN3=		Bundle::DBI.3 \
 		DBI::ProfileDumper::Apache.3 \
 		DBI::ProxyServer.3 \
 		DBI::PurePerl.3 \
-		DBI::Shell.3 \
 		DBI::W32ODBC.3 \
 		Win32::DBIODBC.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
