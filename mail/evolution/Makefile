@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.sleepycat.com/update/3.1.17/ \
 		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	unstable/sources/evolution
+MASTER_SITE_SUBDIR=	stable/sources/evolution
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		db-3.1.17.tar.gz
 
