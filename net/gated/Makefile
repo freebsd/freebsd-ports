@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	gated
-PORTVERSION=	3.5.11
+PORTVERSION=	3.6.0
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.gated.merit.edu/net-research/gated/
-DISTNAME=	gated-3-5-11
+MASTER_SITES=   http://www.gated.org/gated-web/code/source/gated/
+DISTNAME=	gated-pub
+WRKSRC=		${WRKDIR}/gated-public-3_6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dec@FreeBSD.org
 
-FORBIDDEN=	"Security hole (buffer overflow possibly yielding root)"
+GNU_CONFIGURE= 	yes
 
-ALL_TARGET=	gated
-MAN8=		gated.8 ripquery.8 ospf_monitor.8 gdc.8
+post-configure:
+	cd ${WRKSRC} && make depend
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gdc/gdc ${WRKSRC}/src/ospf_monitor/ospf_monitor ${WRKSRC}/src/ripquery/ripquery ${PREFIX}/sbin
 
 .include <bsd.port.mk>

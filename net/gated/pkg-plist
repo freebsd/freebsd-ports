@@ -1,4 +1,4 @@
 sbin/gated
-bin/ripquery
-bin/ospf_monitor
-bin/gdc
+sbin/gdc
+sbin/ospf_monitor
+sbin/ripquery
