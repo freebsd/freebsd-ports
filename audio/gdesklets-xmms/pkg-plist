@@ -1,0 +1,22 @@
+share/gnome/gdesklets/Displays/XMMS/readme.txt
+share/gnome/gdesklets/Displays/XMMS/gfx/gauge_h.png
+share/gnome/gdesklets/Displays/XMMS/gfx/left.png
+share/gnome/gdesklets/Displays/XMMS/gfx/next.png
+share/gnome/gdesklets/Displays/XMMS/gfx/pause.png
+share/gnome/gdesklets/Displays/XMMS/gfx/play.png
+share/gnome/gdesklets/Displays/XMMS/gfx/prev.png
+share/gnome/gdesklets/Displays/XMMS/gfx/right.png
+share/gnome/gdesklets/Displays/XMMS/gfx/stop.png
+share/gnome/gdesklets/Displays/XMMS/xmms.display
+share/gnome/gdesklets/Sensors/XMMS/readme.txt
+share/gnome/gdesklets/Sensors/XMMS/__init__.py
+share/gnome/gdesklets/Sensors/XMMS/__init__.pyc
+share/gnome/gdesklets/Sensors/XMMS/xmmscmds.py
+share/gnome/gdesklets/Sensors/XMMS/xmmscmds.pyc
+share/gnome/gdesklets/Sensors/XMMS/xmmsint.py
+share/gnome/gdesklets/Sensors/XMMS/xmmsint.pyc
+share/gnome/gdesklets/Sensors/XMMS/xmms.py
+share/gnome/gdesklets/Sensors/XMMS/xmms.pyc
+@dirrm share/gnome/gdesklets/Sensors/XMMS
+@dirrm share/gnome/gdesklets/Displays/XMMS/gfx
+@dirrm share/gnome/gdesklets/Displays/XMMS
