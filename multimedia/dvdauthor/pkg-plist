@@ -6,4 +6,7 @@ bin/mpeg2desc
 bin/submux
 bin/vob_dump
 %%PORTDOCS%%share/doc/dvdauthor/README
+%%PORTDOCS%%share/doc/dvdauthor/README.FreeBSD
+%%PORTDOCS%%share/doc/dvdauthor/iso639.txt
+%%PORTDOCS%%share/doc/dvdauthor/menu.txt
 %%PORTDOCS%%@dirrm share/doc/dvdauthor
