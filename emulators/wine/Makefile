@@ -49,9 +49,9 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/unicode/Makefile.in
-.for F in advapi32/Makefile.in avifil32/Makefile.in comctl32/Makefile.in commdlg/Makefile.in crtdll/Makefile.in dciman32/Makefile.in ddraw/Makefile.in dinput/Makefile.in dplay/Makefile.in dplayx/Makefile.in dsound/Makefile.in gdi/Makefile.in icmp/Makefile.in imagehlp/Makefile.in imm32/Makefile.in kernel/Makefile.in lzexpand/Makefile.in mpr/Makefile.in msacm/Makefile.in msacm32/Makefile.in msnet32/Makefile.in msvideo/Makefile.in odbc32/Makefile.in ole32/Makefile.in oleaut32/Makefile.in olecli/Makefile.in oledlg/Makefile.in olepro32/Makefile.in olesvr/Makefile.in opengl32/Makefile.in psapi/Makefile.in rasapi32/Makefile.in richedit/Makefile.in rpcrt4/Makefile.in serialui/Makefile.in setupapi/Makefile.in setupx/Makefile.in shell32/Makefile.in shfolder/Makefile.in shlwapi/Makefile.in sound/Makefile.in stress/Makefile.in tapi32/Makefile.in ttydrv/Makefile.in urlmon/Makefile.in user/Makefile.in version/Makefile.in win32s/Makefile.in win87em/Makefile.in winaspi/Makefile.in windebug/Makefile.in wineps/Makefile.in wing/Makefile.in wininet/Makefile.in winmm/Makefile.in winmm/joystick/Makefile.in winmm/mcianim/Makefile.in winmm/mciavi/Makefile.in winmm/mcicda/Makefile.in winmm/mciseq/Makefile.in winmm/mciwave/Makefile.in winmm/midimap/Makefile.in winmm/wavemap/Makefile.in winmm/wineoss/Makefile.in winsock/Makefile.in winspool/Makefile.in wow32/Makefile.in wsock32/Makefile.in x11drv/Makefile.in
+.for D in advapi32 avifil32 comctl32 commdlg crtdll dciman32 ddraw dinput dplay dplayx dsound gdi icmp imagehlp imm32 kernel lzexpand mpr msacm msnet32 msvideo odbc32 ole32 oleaut32 olecli oledlg olepro32 olesvr opengl32 psapi rasapi32 richedit rpcrt4 serialui setupapi shell32 shfolder shlwapi tapi32 ttydrv urlmon user version win32s winaspi wineps wininet winmm winmm/joystick winmm/mcianim winmm/mciavi winmm/mcicda winmm/mciseq winmm/mciwave winmm/midimap winmm/wavemap winmm/wineoss winsock winspool wow32 wsock32 x11drv
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
-		${WRKSRC}/dlls/${F}
+		${WRKSRC}/dlls/${D}/Makefile.in
 .endfor
 
 post-configure:
@@ -100,7 +100,6 @@ do-install:
 		${WRKSRC}/programs/regapi/regRestorer.pl \
 		${PREFIX}/lib/wine/reg
 	${INSTALL_DATA} ${FILESDIR}/README.patch \
-		${FILESDIR}/patch-3.3-sys-ldtshare \
 		${FILESDIR}/patch-3.3-sys-sigtrap \
 		${FILESDIR}/patch-3.3-sys-fsgs \
 		${PREFIX}/lib/wine
