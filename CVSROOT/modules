@@ -9008,6 +9008,7 @@ pv		ports/sysutils/pv
 pvm		ports/net/pvm
 pvm++		ports/net/pvm++
 pvmpov		ports/graphics/pvmpov
+pvpgn		ports/games/pvpgn
 pvr250		ports/multimedia/pvr250
 pwauth		ports/security/pwauth
 pwd_unmkdb	ports/sysutils/pwd_unmkdb
