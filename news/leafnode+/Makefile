@@ -8,7 +8,7 @@
 PORTNAME=	leafnode+
 PORTVERSION=	2.10
 CATEGORIES=	news
-MASTER_SITES=	ftp://hiroshima.isdn.uiuc.edu/leafnode+/
+MASTER_SITES=	http://www.io.com/~kazushi/leafnode+/
 
 MAINTAINER=	tom@FreeBSD.org
 
