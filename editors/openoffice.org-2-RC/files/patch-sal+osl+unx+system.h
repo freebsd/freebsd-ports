@@ -1,7 +1,10 @@
---- ../sal/osl/unx/system.h.orig	Wed Jun  5 16:24:19 2002
-+++ ../sal/osl/unx/system.h	Sun Jan 12 15:48:03 2003
-@@ -205,6 +205,13 @@
+--- ../sal/osl/unx/system.h.orig	Tue Aug 20 08:54:55 2002
++++ ../sal/osl/unx/system.h	Sat Apr 19 22:09:15 2003
+@@ -203,8 +203,16 @@
+ #   include <dlfcn.h>
+ #   include <sys/filio.h>
  #   include <sys/ioctl.h>
++#   include <sys/param.h>
  #   include <sys/time.h>
  #   include <sys/uio.h>
 +#   include <sys/exec.h>
@@ -14,7 +17,7 @@
  #	include <sys/un.h>
  #   include <netinet/tcp.h>
  #	define 	IORESOURCE_TRANSFER_BSD 
-@@ -216,12 +223,13 @@
+@@ -216,12 +224,13 @@
  #   elif BYTE_ORDER == PDP_ENDIAN
  #   	define _PDP_ENDIAN
  #   endif
@@ -33,3 +36,18 @@
  #endif
  
  #ifdef SCO
+@@ -569,12 +578,14 @@
+ #endif
+ 
+ #ifdef NO_PTHREAD_RTL
++#if !defined FREEBSD || (__FreeBSD_version < 500112)
+ struct passwd *getpwent_r(struct passwd *pwd, char *buffer,  int buflen);
+ extern struct spwd *getspnam_r(const char *name, struct spwd *result,
+ 							   char *buffer, int buflen);
+ 
+ struct tm *localtime_r(const time_t *timep, struct tm *buffer);
+ struct tm *gmtime_r(const time_t *timep, struct tm *buffer);
++#endif /* !defined FREEBSD || (__FreeBSD_version < 500112) */
+ struct hostent *gethostbyname_r(const char *name, struct hostent *result,
+ 								char *buffer, int buflen, int *h_errnop);
+ #endif
