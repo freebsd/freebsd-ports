@@ -1,0 +1,11 @@
+--- makefiles/Makerules.allobj.orig	Tue Aug 15 03:17:24 2000
++++ makefiles/Makerules.allobj	Tue Aug 15 03:17:39 2000
+@@ -44,7 +44,7 @@
+ 	echo -rm -f *.c
+ 
+ installbin:	${TARGETS}
+-	${INSTALL} -m 775 -O -v -F ${BINDIR} ${TARGETS}
++	${INSTALL} -m 755 -O -v -F ${BINDIR} ${TARGETS}
+ 
+ include ${MKFILEDIR}/Makedefs.SUBDIRS
+ include ${MKFILEDIR}/Makerules.clean

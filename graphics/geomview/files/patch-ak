@@ -1,0 +1,11 @@
+--- src/bin/geomview/x11/Makefile.obj.orig	Tue Aug 15 03:42:07 2000
++++ src/bin/geomview/x11/Makefile.obj	Tue Aug 15 03:42:14 2000
+@@ -23,7 +23,7 @@
+ # "geomview" script expects it in the former location.
+ install_bin:	gvx
+ 	${INSTALL} -O -v -F ${GEOM}/bin/${MACHTYPE} gvx
+-	( cd ${GEOM}/bin/${MACHTYPE} ; chmod 775 gvx )
++	( cd ${GEOM}/bin/${MACHTYPE} ; chmod 755 gvx )
+ 
+ ${COMMON_OBJS} :
+ 	rm -f $@ ${@:o=c}
