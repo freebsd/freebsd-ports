@@ -39,11 +39,11 @@ RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .endif
 # depends on semi
 .if defined(EMACS_PACKAGESDIR)
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}-current
-RUN_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}-current
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}
+RUN_DEPENDS+=	${PREFIX}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}
 .else
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}-current
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}-current
+BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}
+RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el:${PORTSDIR}/editors/semi-${EMACS_PORT}
 .endif
 
 .if (${EMACS_PORT} == "xemacs-mule")
