@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jul  6 10:32:42 1997
-+++ Makefile	Fri Nov 14 14:07:40 1997
+--- Makefile.orig	Wed Sep 10 23:04:51 1997
++++ Makefile	Sun Dec 28 02:03:35 1997
 @@ -1,11 +1,11 @@
  
 -PREFIX      = /usr/local
@@ -16,3 +16,12 @@
  INSTALLBIN  = $(INSTALL) -m 555
  INSTALLLIB  = $(INSTALL) -m 444
  #INSTALLETC  = $(INSTALL) -m 644
+@@ -17,7 +17,7 @@
+ 
+ all:
+ 	(cd doc ; make)
+-	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR))
++	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX) )
+ 
+ clean:
+ 	(cd doc ; make clean)

@@ -15,8 +15,12 @@ lib/X11/icewm/icons/netscape_16x16.xpm
 lib/X11/icewm/icons/netscape_32x32.xpm
 lib/X11/icewm/icons/pdf_16x16.xpm
 lib/X11/icewm/icons/pdf_32x32.xpm
+lib/X11/icewm/icons/xload_16x16.xpm
+lib/X11/icewm/icons/xload_32x32.xpm
 lib/X11/icewm/icons/xterm_16x16.xpm
 lib/X11/icewm/icons/xterm_32x32.xpm
+lib/X11/icewm/icons/xv_16x16.xpm
+lib/X11/icewm/icons/xv_32x32.xpm
 lib/X11/icewm/ledclock/cl.xpm
 lib/X11/icewm/ledclock/n0.xpm
 lib/X11/icewm/ledclock/n1.xpm
@@ -30,39 +34,50 @@ lib/X11/icewm/ledclock/n8.xpm
 lib/X11/icewm/ledclock/n9.xpm
 lib/X11/icewm/ledclock/nc.xpm
 lib/X11/icewm/menu
-lib/X11/icewm/motif/close.xpm
-lib/X11/icewm/motif/maximize.xpm
-lib/X11/icewm/motif/menu.xpm
-lib/X11/icewm/motif/minimize.xpm
-lib/X11/icewm/motif/restore.xpm
-lib/X11/icewm/nice/close.xpm
-lib/X11/icewm/nice/maximize.xpm
-lib/X11/icewm/nice/minimize.xpm
-lib/X11/icewm/nice/restore.xpm
 lib/X11/icewm/preferences
 lib/X11/icewm/taskbar/linux.xpm
+lib/X11/icewm/taskbar/mail.xpm
+lib/X11/icewm/taskbar/newmail.xpm
 lib/X11/icewm/taskbar/start.xpm
+lib/X11/icewm/taskbar/unreadmail.xpm
 lib/X11/icewm/taskbar/windows.xpm
-lib/X11/icewm/warp3/close.xpm
-lib/X11/icewm/warp3/maximize.xpm
-lib/X11/icewm/warp3/minimize.xpm
-lib/X11/icewm/warp3/restore.xpm
-lib/X11/icewm/warp4/close.xpm
-lib/X11/icewm/warp4/hide.xpm
-lib/X11/icewm/warp4/maximize.xpm
-lib/X11/icewm/warp4/minimize.xpm
-lib/X11/icewm/warp4/restore.xpm
-lib/X11/icewm/win95/close.xpm
-lib/X11/icewm/win95/maximize.xpm
-lib/X11/icewm/win95/minimize.xpm
-lib/X11/icewm/win95/restore.xpm
+lib/X11/icewm/taskbar/xfreeos2.xpm
+lib/X11/icewm/themes/motif/close.xpm
+lib/X11/icewm/themes/motif/default.theme
+lib/X11/icewm/themes/motif/maximize.xpm
+lib/X11/icewm/themes/motif/menu.xpm
+lib/X11/icewm/themes/motif/minimize.xpm
+lib/X11/icewm/themes/motif/restore.xpm
+lib/X11/icewm/themes/nice/blue.theme
+lib/X11/icewm/themes/nice/close.xpm
+lib/X11/icewm/themes/nice/default.theme
+lib/X11/icewm/themes/nice/maximize.xpm
+lib/X11/icewm/themes/nice/minimize.xpm
+lib/X11/icewm/themes/nice/restore.xpm
+lib/X11/icewm/themes/warp3/close.xpm
+lib/X11/icewm/themes/warp3/default.theme
+lib/X11/icewm/themes/warp3/maximize.xpm
+lib/X11/icewm/themes/warp3/minimize.xpm
+lib/X11/icewm/themes/warp3/restore.xpm
+lib/X11/icewm/themes/warp4/close.xpm
+lib/X11/icewm/themes/warp4/default.theme
+lib/X11/icewm/themes/warp4/hide.xpm
+lib/X11/icewm/themes/warp4/maximize.xpm
+lib/X11/icewm/themes/warp4/minimize.xpm
+lib/X11/icewm/themes/warp4/restore.xpm
+lib/X11/icewm/themes/win95/close.xpm
+lib/X11/icewm/themes/win95/default.theme
+lib/X11/icewm/themes/win95/maximize.xpm
+lib/X11/icewm/themes/win95/minimize.xpm
+lib/X11/icewm/themes/win95/restore.xpm
 lib/X11/icewm/winoptions
-@dirrm lib/X11/icewm/win95
-@dirrm lib/X11/icewm/warp4
-@dirrm lib/X11/icewm/warp3
-@dirrm lib/X11/icewm/taskbar
-@dirrm lib/X11/icewm/nice
-@dirrm lib/X11/icewm/motif
-@dirrm lib/X11/icewm/ledclock
 @dirrm lib/X11/icewm/icons
+@dirrm lib/X11/icewm/ledclock
+@dirrm lib/X11/icewm/taskbar
+@dirrm lib/X11/icewm/themes/motif
+@dirrm lib/X11/icewm/themes/nice
+@dirrm lib/X11/icewm/themes/warp3
+@dirrm lib/X11/icewm/themes/warp4
+@dirrm lib/X11/icewm/themes/win95
+@dirrm lib/X11/icewm/themes
 @dirrm lib/X11/icewm
