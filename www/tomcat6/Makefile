@@ -48,7 +48,8 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${WRKSRC}/conf/server.xml
 JAR_FILE=	bin/bootstrap.jar
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
-PLIST_SUB+=     T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
+PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} WWWOWN=${USER} WWWGRP=${GROUP}
+LATEST_LINK=	${APP_SHORTNAME}
 .include <bsd.port.pre.mk>
 
 pre-patch:
