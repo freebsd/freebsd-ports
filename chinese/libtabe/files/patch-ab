@@ -1,15 +1,17 @@
---- src/supports/bims/Makefile.in.orig	Wed Jun 28 22:06:28 2000
-+++ src/supports/bims/Makefile.in	Sun Jul 16 15:11:37 2000
-@@ -30,7 +30,7 @@
+--- src/supports/bims/Makefile.in.orig	Mon Jul 24 08:10:05 2000
++++ src/supports/bims/Makefile.in	Sat Aug 12 15:07:30 2000
+@@ -30,8 +30,8 @@
  ld_sharelib = @ld_sharelib@
  slib_ext    = @slib_ext@
  
--version     = 0.1-5
+-version     = 0.1-6
+-major_ver   = 0.1
 +version     = 0.1
- major_ver   = 0
++major_ver   = 0
  
  AR          = ar cr
-@@ -77,7 +77,7 @@
+ RM          = rm -rf
+@@ -78,7 +78,7 @@
  	if [ -d obj-s ]; then rmdir obj-s; fi
  	$(RM) Makefile 
  
