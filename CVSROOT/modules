@@ -8309,6 +8309,7 @@ pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
 pl-openoffice-1.0	ports/polish/openoffice-1.0
 pl-openoffice-1.1	ports/polish/openoffice-1.1
+pl-sap		ports/polish/sap
 pl-sms		ports/polish/sms
 pl-sms2		ports/polish/sms2
 pl-tleenx2	ports/polish/tleenx2
