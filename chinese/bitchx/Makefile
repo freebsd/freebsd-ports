@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BitchX
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese irc
 
 MAINTAINER=	clive@FreeBSD.org
