@@ -71,7 +71,6 @@
     SUBDIR += drweb-postfix
     SUBDIR += drweb-qmail
     SUBDIR += drweb-sendmail
-    SUBDIR += drwebd
     SUBDIR += dsniff
     SUBDIR += f-prot
     SUBDIR += f-prot-sig
