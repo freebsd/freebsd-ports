@@ -6,28 +6,33 @@
 #
 
 PORTNAME=	moneydance
-PORTVERSION=	2.0.4
+PORTVERSION=	3.2
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://ftp.moneydance.net/pub/packages/
+MASTER_SITES=	http://moneydance.com/download/3/Unix/
+DISTNAME=	${PORTNAME}_other
+EXTRACT_ONLY=
 
 MAINTAINER=	sreilly@seanreilly.com
 
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk11
+USE_JAVA=	1.3+
+NO_CDROM=	Strict license
+NO_PACKAGE=	${NO_CDROM}
 
-WRKSRC=		${WRKDIR}/moneydance
+# Since the vendor's file has not version information in its name:
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+
 NO_BUILD=	YES
-MDSUBDIR=	moneydance
+MDSUBDIR=	share/java/moneydance
 PLIST_SUB=	MDSUBDIR=${MDSUBDIR}
 
-JDIR=		${PREFIX}/jdk1.1.8
 MDDIR=		${PREFIX}/${MDSUBDIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/${MDSUBDIR}
-	(cd ${WRKSRC} && tar -c -f - .) \
-		| (cd ${PREFIX}/${MDSUBDIR} && tar fx -)
-	${ECHO} "#!/bin/sh" > ${PREFIX}/bin/moneydance
-	${ECHO} "exec ${JDIR}/bin/java -classpath ${JDIR}/lib/classes.zip:${MDDIR}/moneydance.jar:${MDDIR}/license.jar:${MDDIR}/swingall.jar Moneydance" >> ${PREFIX}/bin/moneydance
+	${TAR} -C ${PREFIX}/${MDSUBDIR:H} -xvzpf ${_DISTDIR}/${DISTFILES} \
+		--exclude moneydance/swingall.jar \
+		--exclude moneydance/moneydance
+	${SED} -e 's,%%MDDIR%%,${MDDIR},g' -e 's,%%PREFIX%%,${PREFIX},g' \
+		< ${FILESDIR}/moneydance.sh > ${PREFIX}/bin/moneydance
 	${CHMOD} 755 ${PREFIX}/bin/moneydance
 
 .include <bsd.port.mk>
