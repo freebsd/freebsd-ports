@@ -100,6 +100,7 @@
     SUBDIR += p5-Mysql
     SUBDIR += p5-Pg
     SUBDIR += p5-SQL-Statement
+    SUBDIR += p5-Search-Namazu
     SUBDIR += p5-Tangram
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Tie-DBI

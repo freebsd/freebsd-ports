@@ -1,0 +1,17 @@
+--- Namazu.pod.ja.orig	Mon Feb 18 14:04:54 2002
++++ Namazu.pod.ja	Tue Jun 18 16:24:02 2002
+@@ -119,6 +119,14 @@
+ 
+ ランクを返します。
+ 
++=head3 summary
++
++サマリを返します。
++
++=head3 title
++
++タイトルを返します。
++
+ =head1 著作権 (COPYRIGHT)
+ 
+ Copyright 1999,2000,2001,2002 NOKUBI Takatsugu All rights reserved.
