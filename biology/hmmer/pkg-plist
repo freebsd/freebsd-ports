@@ -11,5 +11,5 @@ bin/hmmpfam
 bin/hmmsearch
 bin/seqstat
 bin/sreformat
-share/doc/hmmer/Userguide.ps
-@dirrm share/doc/hmmer
+%%PORTDOCS%%share/doc/hmmer/Userguide.ps
+%%PORTDOCS%%@dirrm share/doc/hmmer

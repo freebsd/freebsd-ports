@@ -30,7 +30,7 @@ test:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/hmmer
-	${INSTALL_MAN} ${WRKSRC}/Userguide/Userguide.ps ${PREFIX}/share/doc/hmmer
+	${INSTALL_DATA} ${WRKSRC}/Userguide/Userguide.ps ${PREFIX}/share/doc/hmmer
 .endif
 	@ ${CAT} ${PKGMESSAGE}
 
