@@ -3,7 +3,7 @@
  *  System      : Mini News Reader
  *  Sub system  : Site depend define
  *  File        : site_dep.h
- *  Version     : 1.21
+ *  Version     : 1.22
  *
  *  NOTE:
  *   This file made by config.sh program.
@@ -19,12 +19,12 @@
 /*
 #define	DOMAIN_NAME	"your-domain-name"
 */
-#define	DEFAULT_INIT_FILE	"@PREFIX@/lib/mnews/mnews_setup"
-#define	DOMAIN_FILE		"@PREFIX@/lib/mnews/default-domain"
-#define	NNTP_SERVER_FILE	"@PREFIX@/lib/mnews/default-server"
-#define	SMTP_SERVER_FILE	"@PREFIX@/lib/mnews/default-smtpsv"
-#define	POP3_SERVER_FILE	"@PREFIX@/lib/mnews/default-pop3sv"
-#define	YOUBIN_SERVER_FILE	"@PREFIX@/lib/mnews/default-mailsv"
+#define	DEFAULT_INIT_FILE	"@PREFIX@/etc/mnews/mnews_setup"
+#define	DOMAIN_FILE		"@PREFIX@/etc/mnews/default-domain"
+#define	NNTP_SERVER_FILE	"@PREFIX@/etc/mnews/default-server"
+#define	SMTP_SERVER_FILE	"@PREFIX@/etc/mnews/default-smtpsv"
+#define	POP3_SERVER_FILE	"@PREFIX@/etc/mnews/default-pop3sv"
+#define	YOUBIN_SERVER_FILE	"@PREFIX@/etc/mnews/default-mailsv"
 #define	ORGAN_FILE		"@PREFIX@/news/lib/organization"
 
 #define	EXT_PAGER	"@PREFIX@/bin/jless"
@@ -39,14 +39,19 @@
 #define EDITOR_COMMAND	"@PREFIX@/bin/mule -nw"
 #define	LPR_COMMAND	"lpr"
 #define	MH_COMMAND_PATH	"@PREFIX@/bin"
-#define	JNAMES_DB	"@PREFIX@/lib/jnames"
+#define	JNAMES_DB	"@PREFIX@/etc/mnews/jnames"
 #if @GNSPOOL@
 #define	SEND_COMMAND	"@PREFIX@/bin/gnmail"
 #define	POST_COMMAND	"@PREFIX@/bin/gninews"
 #define	NEWS_SPOOL	"/var/spool/gnspool"
 #else /*GNSPOOL*/
+#if @IMPUT@
+#define	SEND_COMMAND	"@PREFIX@/bin/imput"
+#define	POST_COMMAND	"@PREFIX@/bin/imput"
+#else /*IMPUT*/
 #define	SEND_COMMAND	"/usr/sbin/sendmail -t -om -oi"
 #define	POST_COMMAND	"@PREFIX@/bin/inews -h"
+#endif /*IMPUT*/
 #define	NEWS_SPOOL	"/var/spool/news"
 #endif /*GNSPOOL*/
 #define	NEWS_LIB	"@PREFIX@/news/lib"

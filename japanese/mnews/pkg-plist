@@ -1,7 +1,11 @@
 bin/mnews
-lib/mnews/jnames
-lib/mnews/default-domain
+etc/mnews/jnames.default
+@exec test -f %B/jnames || cp %B/%f %B/jnames
+etc/mnews/default-domain.default
+@exec test -f %B/default-domain || cp %B/%f %B/default-domain
 share/doc/mnews/FAQ.doc
+share/doc/mnews/IPv6.doc
+share/doc/mnews/IPv6_en.doc
 share/doc/mnews/board.doc
 share/doc/mnews/gnspool.doc
 share/doc/mnews/mnews.doc
@@ -10,12 +14,13 @@ share/doc/mnews/present.doc
 share/doc/mnews/read1ST.doc
 share/doc/mnews/readme.doc
 share/doc/mnews/update.doc
+share/doc/mnews/year2000.doc
 share/doc/mnews/youbin.doc
 share/examples/mnews/_mnews.smp
 share/examples/mnews/jnames.fj
 share/examples/mnews/jnames.jp
 share/examples/mnews/jnames.smp
 share/examples/mnews/jnames.tnn
-@dirrm lib/mnews
-@dirrm share/doc/mnews
 @dirrm share/examples/mnews
+@dirrm share/doc/mnews
+@unexec rmdir %D/etc/mnews 2>/dev/null || true
