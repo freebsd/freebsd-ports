@@ -22,14 +22,17 @@ LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 USE_GNOME=	gtk20 libxml2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_REINPLACE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
 
-CONFIGURE_ARGS=		--disable-cvs
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#include <libintl.h>||' \
+		${WRKSRC}/menueditor/menueditor.h
 
 .include <bsd.port.mk>
