@@ -1927,6 +1927,7 @@ genassym	src/usr.bin/genassym
 gencat		src/usr.bin/gencat
 genclass	src/gnu/usr.bin/genclass
 generator	ports/emulators/generator
+generic-haskell	ports/lang/generic-haskell
 generic-nqs	ports/net/generic-nqs
 gengameng	ports/devel/gengameng
 gengetopt	ports/devel/gengetopt
