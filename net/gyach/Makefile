@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gyach
-PORTVERSION=	0.9.7
-PORTREVISION=	2
+PORTVERSION=	0.9.8
 CATEGORIES=	net
 MASTER_SITES=	http://www4.infi.net/~cpinkham/gyach/code/
 
@@ -15,13 +14,9 @@ MAINTAINER?=	aaron@snaphat.com
 COMMENT=	Gyach is a GTK+ based Yahoo! Chat client
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_FLAGS}" \
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Links against conflicting thread libraries"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
