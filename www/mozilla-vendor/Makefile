@@ -7,6 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~marcus/:local
@@ -125,11 +126,13 @@ post-build:
 
 pre-install:
 	${TOUCH} -f ${PLIST}
-	${TEST} ! -x ${PREFIX}/bin/mozilla && ${TEST} ! -L ${PREFIX}/bin/mozilla && \
-	${ECHO_CMD} bin/mozilla >> ${PLIST}
+	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then
+	    ${ECHO_CMD} bin/mozilla >> ${PLIST}
+	fi
 	${ECHO_CMD} bin/mozilla-vendor >> ${PLIST}
-	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
-	${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST}
+	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/mozilla-vendor/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
@@ -142,13 +145,16 @@ do-install:
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-vendor
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin/mozilla-vendor
-	${TEST} ! -x ${PREFIX}/bin/mozilla && ${TEST} ! -L ${PREFIX}/bin/mozilla &&
-	${LN} -sf ${PREFIX}/bin/mozilla-vendor ${PREFIX}/bin/mozilla
-	${TEST} ! -d ${PREFIX}/lib/browser_plugins && \
-	${MKDIR} ${PREFIX}/lib/browser_plugins
-	${TEST} ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so && \
-	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
-		${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so
+	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozill ]; then
+	    ${LN} -sf ${PREFIX}/bin/mozilla-vendor ${PREFIX}/bin/mozilla
+	fi
+	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then
+	    ${MKDIR} ${PREFIX}/lib/browser_plugins
+	fi
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then
+	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
+	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so
+	fi
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
