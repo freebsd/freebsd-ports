@@ -151,6 +151,8 @@ ftree			ports/misc/ftree	Can't distribute commercially.
 fwtk-*			ports/security/fwtk	No redistribution allowed
 Frisk-*			ports/games/xfrisk	Copyright/trademark violation?
 gap/*			ports/math/gap		Don't sell for profit
+gentium			ports/x11-fonts/gentium	License forbids commercial distribution
+						without permission.
 gibi			ports/french/gibi	Only free for use in conjunction with
 						french/aster. For any other purpose,
 						you have to acquire a license
