@@ -225,6 +225,7 @@
     SUBDIR += lodju
     SUBDIR += maverik
     SUBDIR += megapov
+    SUBDIR += mesa-demos
     SUBDIR += mesagl
     SUBDIR += meshviewer
     SUBDIR += metapixel
