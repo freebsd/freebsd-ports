@@ -99,6 +99,7 @@
     SUBDIR += libogg
     SUBDIR += libshout
     SUBDIR += libsidplay
+    SUBDIR += libsndfile
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-realplayer
