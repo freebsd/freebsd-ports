@@ -8,10 +8,14 @@
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES=	lang ruby ipv6
-MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	stable
-DISTNAME=	${RUBY_DISTNAME}
+MASTER_SITES=		${MASTER_SITE_RUBY} \
+			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
+MASTER_SITE_SUBDIR=	stable \
+			${ONIGURUMA_MASTER_SITE_SUBDIR:S,$,/:oniguruma,}
+DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX} \
+			${ONIGURUMA_DISTFILE:S,$,:oniguruma,}
 DIST_SUBDIR=	ruby
+EXTRACT_ONLY=	${RUBY_DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITE_RUBY}
 PATCH_SITE_SUBDIR=	snapshots
@@ -19,6 +23,12 @@ PATCHFILES=	${RUBY_PATCHFILES}
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
+
+.if defined(WITH_ONIGURUMA)
+ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
+ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
+ONIGURUMA_DISTFILE=		onigd20020313.tar.gz
+.endif
 
 #USE_BZIP2=	yes
 
@@ -62,8 +72,17 @@ IRB_WITH_SUFFIX=	${IRB_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
 
 OBSOLETED_MODULES=	sha1 shell syslog timex urb uri
 
+post-extract:
+.if defined(WITH_ONIGURUMA)
+	cd ${WRKDIR}; ${TAR} zxvf ${_DISTDIR}/${ONIGURUMA_DISTFILE}
+.endif
+
 post-patch:
-	find ${WRKSRC} -name '*.orig' -delete
+.if defined(WITH_ONIGURUMA)
+	${CP} -f ${WRKDIR}/oniguruma/regex.[ch] ${WRKSRC}/
+	cd ${WRKSRC}; ${PATCH} < ${WRKDIR}/oniguruma/re.c.166.patch
+.endif
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 .for d in Win32API
 	${RM} -rf ${WRKSRC}/ext/${d}
 .endfor
