@@ -1,5 +1,5 @@
 OBJ	  =	main.o server.o screen.o tree.o multipart.o grouplist.o \
-		findfile.o parsecfgfile.o
+		findfile.o parsecfgfile.o MessageIdStore.o
 CXX	 ?=	g++
 CXXFLAGS ?=	-O6
 CXXFLAGS +=	-DFREEBSD
