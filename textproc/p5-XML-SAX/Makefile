@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-SAX
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -22,13 +22,11 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS= </dev/null
 
 MAN3=		XML::SAX.3 XML::SAX::Base.3 XML::SAX::DocumentLocator.3 \
-		XML::SAX::Exception.3 XML::SAX::ParserFactory.3 \
-		XML::SAX::PurePerl.3 XML::SAX::PurePerl::Reader.3
+		XML::SAX::Exception.3 XML::SAX::Intro.3 \
+		XML::SAX::ParserFactory.3 XML::SAX::PurePerl.3 \
+		XML::SAX::PurePerl::Reader.3
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-
-post-patch:
-		@${PERL} -pi -e 's/\x0d(?=\x0a)//;' ${WRKSRC}/SAX/Intro.pod
 
 post-configure:
 # dirty hack to deceive irritable pod2man
