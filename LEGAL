@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.104 1998/04/24 02:09:31 mph Exp $
+# $Id: LEGAL,v 1.105 1998/04/24 10:04:26 markm Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -88,6 +88,9 @@ rsaref*			ports/security/{rsaref,ssh} Crypto; export-controlled
 rzsz3_36.zip		ports/comms/rzsz	Restrictive copyright
 Scilab-*		ports/math/Scilab	Don't sell for profit.
 sdr-2.3*		ports/mbone/sdr		Crypto; export-controlled
+sharefonts-*		ports/x11/sharefonts	Shareware.  Cannot be
+						distributed w/o prior
+						authorization.
 sim-2.3.tar.gz		ports/emulators/sim	No commercial use
 socks5-*		ports/net/socks5	No commercial use
 ssh-*			ports/security/ssh	Crypto; export-controlled
