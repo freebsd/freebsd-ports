@@ -1,3 +1,5 @@
+bin/javaswarm
+bin/javacswarm
 bin/libtool-swarm
 bin/m2h
 bin/make-h2x
@@ -239,6 +241,12 @@ lib/swarm/libdefobj.a
 lib/swarm/libdefobj.so
 lib/swarm/libdefobj.so.4
 lib/swarm/libmisc.a
+lib/swarm/libjavaswarm.a
+lib/swarm/libjavaswarm.so
+lib/swarm/libjavaswarm.so.1
+lib/swarm/libjavaswarmstubs.a
+lib/swarm/libjavaswarmstubs.so
+lib/swarm/libjavaswarmstubs.so.0
 lib/swarm/libmisc.so
 lib/swarm/libmisc.so.2
 lib/swarm/libobjc.a
@@ -269,6 +277,7 @@ lib/swarm/libtclobjc.so.1
 lib/swarm/libtkobjc.a
 lib/swarm/libtkobjc.so
 lib/swarm/libtkobjc.so.5
+share/swarm/swarm.jar
 @dirrm etc/swarm
 @dirrm include/swarm/activity
 @dirrm include/swarm/analysis
@@ -285,3 +294,4 @@ lib/swarm/libtkobjc.so.5
 @dirrm include/swarm/tkobjc
 @dirrm include/swarm
 @dirrm lib/swarm
+@dirrm share/swarm
