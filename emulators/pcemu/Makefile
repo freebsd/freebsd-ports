@@ -3,10 +3,12 @@
 # Date created:		7 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:50:21 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/01 13:48:38 joerg Exp $
 #
 
 DISTNAME=	pcemu1.01alpha
+PKGNAME=	pcemu-1.01a
+CATEGORIES+=	utilities emulation
 
 # Warning notice:  by now, you'll have to live with those warnings:
 #
@@ -26,7 +28,7 @@ MASTER_SITES+=	ftp://ftp.iij.ad.jp/pub/linux/tsx-11/ALPHA/dosemu/Misc/
 #
 # This is the original master site, but better use a well-connected server
 MASTER_SITES+=	ftp://ftp.cs.bris.ac.uk/users/hedley/
+
 MAINTAINER=	joerg@FreeBSD.org
-CATEGORIES+=	utilities emulation
 
 .include <bsd.port.mk>

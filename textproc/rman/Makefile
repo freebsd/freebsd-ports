@@ -3,10 +3,12 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
+# $Id$
+#
 
 DISTNAME=       rman-2.0
-EXTRACT_SUFX=	.tar.Z
-MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
 CATEGORIES+=	utilities
+MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
+EXTRACT_SUFX=	.tar.Z
 
 .include <bsd.port.mk>
