@@ -1,7 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
+if [ -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
@@ -39,7 +39,7 @@ OpenLDAP	"OpenLDAP support" OFF \
 	esac
 fi
 
-exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+exec > ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 SUB_QSTAT="@comment "
 SUB_FPING="@comment "
@@ -91,7 +91,7 @@ while [ "$1" ]; do
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
-			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			rm -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 			exit 1
 			;;
 	esac
