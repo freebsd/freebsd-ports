@@ -4,6 +4,9 @@
 # Date created:         12 Jan 1997
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
+#
+# $Id$
+#
 
 DISTNAME=	crack5.0
 PKGNAME=	crack-5.0
