@@ -1,5 +1,5 @@
 sbin/tac_plus
-etc/rc.d/tac_plus.sh
+etc/rc.d/tac_plus.sh.sample
 etc/tac_plus/radius.example
 etc/tac_plus/tac_plus.cfg
 @dirrm etc/tac_plus
