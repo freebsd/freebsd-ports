@@ -13,10 +13,9 @@ MASTER_SITE_SUBDIR=	hk-classes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"C++ Library for rapid development of database applications"
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_MYSQL=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		-with-mysql-dir=${LOCALBASE} \
@@ -26,5 +25,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+LDCONFIG_DIRS+=	%%PREFIX%%/lib/hk_classes/
 
 .include <bsd.port.mk>
