@@ -69,7 +69,6 @@
     SUBDIR += nvi-iso-2022-kr
     SUBDIR += openoffice
     SUBDIR += pgp.language
-    SUBDIR += pine
     SUBDIR += pinetreefonts
     SUBDIR += pycodec
     SUBDIR += texinfo

@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-rm -f ${WRKSRC}/makefile
-cp ${FILESDIR}/Makefile ${WRKSRC}/Makefile
