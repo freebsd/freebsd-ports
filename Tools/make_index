@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id: make_index,v 1.4 1999/03/13 04:25:21 scrappy Exp $
+# $Id: make_index,v 1.5 1999/04/28 06:20:23 asami Exp $
 #
 # Written to speed-up INDEX file generation.  The new scheme
 # basically visits each port once and writes out each port's
@@ -83,8 +83,8 @@ while (<>) {
     my $pkg = {
 	'bdep'		=> [split(/ /, $f[7])],
 	'rdep'		=> [split(/ /, $f[8])],
-	'text'		=> join('|', splice(@f, 0, 7)),
-	'rest'		=> join('|', splice(@f, 9))
+	'rest'		=> join('|', splice(@f, 9)),
+	'text'		=> join('|', splice(@f, 0, 7))
     };
     $index{$name} = $pkg;
 
