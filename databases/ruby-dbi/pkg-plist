@@ -6,6 +6,7 @@
 %%RUBY_SITELIBDIR%%/dbi/utils.rb
 @dirrm %%RUBY_SITELIBDIR%%/dbi
 @dirrm %%RUBY_SITELIBDIR%%/DBD
+@dirrm %%RUBY_SITEARCHLIBDIR%%/dbi
 @dirrm %%RUBY_SITEARCHLIBDIR%%/DBD
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/proxyserver.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/sqlsh.rb
