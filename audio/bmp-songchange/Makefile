@@ -7,6 +7,7 @@
 
 PORTNAME=	bmp-songchange
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 
@@ -14,8 +15,6 @@ MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	Beep Media Player do-this-on-song-change plugin
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
-
-BROKEN=		Incomplete pkg-plist
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
