@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xwpe-1.5.18a
+DISTNAME=	xwpe-1.5.19a
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.rpi.edu/~payned/xwpe/ \
