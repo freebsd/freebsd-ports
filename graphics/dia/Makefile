@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	dia
-PORTVERSION=	0.92p7
+PORTVERSION=	0.92
+PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.92
 DIST_SUBDIR=	gnome2
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
 
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
