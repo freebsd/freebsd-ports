@@ -74,6 +74,8 @@ smokeping/htdocs/smokeping.cgi
 smokeping/lib/ISG/ParseConfig.pm
 smokeping/lib/Smokeping.pm
 smokeping/lib/ciscoRttMonMIB.pm
+smokeping/lib/probes/AnotherDNS.pm
+smokeping/lib/probes/AnotherSSH.pm
 smokeping/lib/probes/CiscoRTTMonDNS.pm
 smokeping/lib/probes/CiscoRTTMonEchoICMP.pm
 smokeping/lib/probes/CiscoRTTMonTcpConnect.pm
@@ -92,6 +94,7 @@ smokeping/lib/probes/IOSPing.pm
 smokeping/lib/probes/LDAP.pm
 smokeping/lib/probes/Radius.pm
 smokeping/lib/probes/RemoteFPing.pm
+smokeping/lib/probes/SSH.pm
 smokeping/lib/probes/base.pm
 smokeping/lib/probes/basefork.pm
 smokeping/lib/probes/basevars.pm
