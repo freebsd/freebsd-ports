@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	paragui
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.bms-austria.com/pub/paragui/release/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf
