@@ -1,0 +1,20 @@
+--- driver/xscreensaver-getimage-file.orig	Sun Jan 19 21:27:38 2003
++++ driver/xscreensaver-getimage-file	Fri Apr 18 23:02:37 2003
+@@ -42,7 +42,7 @@
+ # So we do it like this instead:
+ #
+ BEGIN {
+-  if (! defined(&S_ISLNK)) {  # perhaps defined by "POSIX"?
++  if ((! defined(&S_ISLNK)) and ($] > 5.6)) {  # perhaps defined by "POSIX"?
+     require Fcntl;
+     import  Fcntl ':mode';    # if not, look for it in "Fcntl".
+   }
+@@ -139,7 +139,7 @@
+     if (S_ISDIR($mode)) {
+       push @dirs, $file;
+       print STDERR "$progname:   found dir  $file\n" if ($verbose > 2);
+-    } elsif (S_ISREG($mode) || S_ISLNK($mode)) {
++    } elsif (S_ISREG($mode) || (-l "$file")) {
+       push @all_files, $file;
+       print STDERR "$progname:   found file $file\n" if ($verbose > 2);
+     } elsif ($verbose > 2) {
