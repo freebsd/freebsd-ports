@@ -69,6 +69,7 @@
     SUBDIR += jgnat
     SUBDIR += jgnat-doc-html
     SUBDIR += jgnat-doc-info
+    SUBDIR += jgnat-doc-ps
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += klone
