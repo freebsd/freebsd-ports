@@ -6679,6 +6679,7 @@ pngcrush	ports/graphics/pngcrush
 pngquant	ports/graphics/pngquant
 pngwriter	ports/graphics/pngwriter
 pnm2ppa		ports/print/pnm2ppa
+ppower4		ports/textproc/ppower4
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 poedit		ports/editors/poedit
