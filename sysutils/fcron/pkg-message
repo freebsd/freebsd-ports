@@ -1,0 +1,5 @@
+
+This new version of fcron uses PAM support for authentication.
+Please refer to the fcron.pam and fcrontab.pam files in the
+documentation directory for configuring PAM.
+

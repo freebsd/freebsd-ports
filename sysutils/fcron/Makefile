@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	fcron
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://fcron.free.fr/
@@ -34,10 +34,17 @@ MAN5=	fcrontab.5 fcron.conf.5
 MAN8=	fcron.8
 
 post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/files/fcron.pam ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/files/fcrontab.pam ${DOCSDIR}
+.endif
 .for i in allow deny conf
 .if !exists(${PREFIX}/etc/fcron.$i)
 	@${CP} -p ${PREFIX}/etc/fcron.$i.dist ${PREFIX}/etc/fcron.$i
 .endif
 .endfor
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

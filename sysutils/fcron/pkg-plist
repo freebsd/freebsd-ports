@@ -11,12 +11,7 @@ etc/fcron.deny.dist
 etc/fcron.conf.dist
 @exec [ -f %B/fcron.conf ] || cp %B/%f %B/fcron.conf
 etc/rc.d/fcron.sh
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/CHANGES
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/LICENSE
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/README
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcron.8.html
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcrontab.1.html
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcrontab.5.html
-%%PORTDOCS%%share/doc/fcron/fcron-%%PORTVERSION%%/fcron.conf.5.html
-%%PORTDOCS%%@dirrm share/doc/fcron/fcron-%%PORTVERSION%%
-%%PORTDOCS%%@dirrm share/doc/fcron
+%%PORTDOCS%%share/doc/fcron/FAQ
+%%PORTDOCS%%share/doc/fcron/fcron.pam
+%%PORTDOCS%%share/doc/fcron/fcrontab.pam
+%%PORTDOCS%%@unexec rmdir %D/share/doc/fcron 2>/dev/null || true

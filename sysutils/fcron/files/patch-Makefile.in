@@ -1,14 +1,29 @@
---- Makefile.in.orig	Tue Jul 10 23:59:49 2001
-+++ Makefile.in	Sat Sep 22 00:35:39 2001
-@@ -108,8 +108,9 @@
+--- Makefile.in.org	Wed Jan 23 21:49:55 2002
++++ Makefile.in	Wed Jan 23 21:50:52 2002
+@@ -102,23 +102,20 @@
+ 	if test ! -d $(DESTMAN)/man3; then $(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 755 -d $(DESTMAN)/man3 ; fi
+ 	if test ! -d $(DESTMAN)/man5; then $(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 755 -d $(DESTMAN)/man5 ; fi
+ 	if test ! -d $(DESTMAN)/man8; then $(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 755 -d $(DESTMAN)/man8 ; fi
+-	if test ! -d $(DESTDOC)/fcron-$(VERSION); then $(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 755 -d $(DESTDOC)/fcron-$(VERSION) ; fi
+ # create the spool dir (and change its mode if it already exists)
+ 	$(INSTALL) -g $(GROUPNAME) -o $(USERNAME) -m 770 -d $(FCRONTABS)
+ 
  	$(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 110 -s fcron $(DESTSBIN)
  	$(INSTALL) -g $(GROUPNAME) -o $(USERNAME) -m 6111 -s fcrontab $(DESTBIN)
  	$(INSTALL) -g $(ROOTGROUP) -o $(ROOTNAME) -m 6111 -s fcronsighup $(DESTBIN)
 -	test -f $(ETC)/fcron.allow || test -f $(ETC)/fcron.deny || $(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.allow $(SRCDIR)/files/fcron.deny $(ETC)
 -	test -f $(ETC)/fcron.conf || $(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.conf $(ETC)
+-	test "${USEPAM}" = "0" || $(SRCDIR)/script/install-pam-conf $(SRCDIR) $(ETC) $(ROOTNAME) $(ROOTGROUP) "$(INSTALL)"
 +	$(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.allow $(ETC)/fcron.allow.dist
 +	$(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.deny $(ETC)/fcron.deny.dist
 +	$(INSTALL) -m 640 -o $(ROOTNAME) -g $(GROUPNAME) $(SRCDIR)/files/fcron.conf $(ETC)/fcron.conf.dist
  	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcron.8 $(DESTMAN)/man8
  	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcrontab.1 $(DESTMAN)/man1
  	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcrontab.5 $(DESTMAN)/man5
+ 	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/fcron.conf.5 $(DESTMAN)/man5
+ 	$(INSTALL) -m 644 -o $(ROOTNAME) $(SRCDIR)/doc/bitstring.3 $(DESTMAN)/man3
+-	$(INSTALL) -m 644 -o $(ROOTNAME) doc/README doc/LICENSE doc/CHANGES doc/*.html \
+-		 $(DESTDOC)/fcron-$(VERSION)/
+ 
+ # in order to get correct rights when upgrading :
+ 	find $(FCRONTABS) -type f \( -name "*.orig" -a ! -name "root.orig" \) -exec chown $(USERNAME):$(GROUPNAME) {} \; -exec chmod 640 {} \;
