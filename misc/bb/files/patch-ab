@@ -1,0 +1,30 @@
+--- mikunix/makefile.orig	Mon Mar  2 07:12:26 1998
++++ mikunix/makefile	Mon Apr 12 20:49:06 1999
+@@ -26,7 +26,7 @@
+ ############################################################################
+ 
+ OSDEF=-DOSS
+-CC = gcc
++CC ?= gcc
+ 
+ # if you want to use the Ultra driver uncomment the 3 lines below. 
+ # You need a Gravis Ultrasound and the library from the Linux Ultrasound 
+@@ -41,7 +41,8 @@
+ #ULTRADRV=drv_old.o
+ 
+ #OSFLAGS = -O3 $(OSDEF) $(ULTRA)
+-OSFLAGS = -O3 $(OSDEF) 
++CFLAGS ?= -O3
++OSFLAGS = $(OSDEF)
+ #debug options
+ #OSFLAGS = -g $(OSDEF) $(ULTRA)
+ 
+@@ -174,7 +175,7 @@
+ # Does your system have usleep()? If not, you'll need to uncomment this...
+ #USLEEP=-DNEEDS_USLEEP
+ 
+-CFLAGS = $(OSFLAGS) $(SNAG) $(USLEEP) 
++CFLAGS += $(OSFLAGS) $(SNAG) $(USLEEP) 
+ 
+ ############################################################################
+ ############################################################################
