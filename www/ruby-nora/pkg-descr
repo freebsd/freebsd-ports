@@ -1,0 +1,10 @@
+Nora is a rich set of Ruby libraries for Web applications, which
+includes:
+
+* CGI/mod_ruby/FastCGI/Rinda/Mail interface
+* Persistent Framework
+* multipart/form-data support
+* Cookie support
+
+Author:	MoonWolf <moonwolf@moonwolf.com>
+WWW:	http://rwiki.moonwolf.com/rw-cgi.cgi?cmd=view;name=Nora
