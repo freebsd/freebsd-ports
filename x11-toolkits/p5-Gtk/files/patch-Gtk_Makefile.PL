@@ -1,5 +1,5 @@
---- Gtk/Makefile.PL.orig	Sat Mar 24 18:35:10 2001
-+++ Gtk/Makefile.PL	Sun May 27 22:41:52 2001
+--- Gtk/Makefile.PL.orig	Sun May 27 00:08:38 2001
++++ Gtk/Makefile.PL	Tue Jan 21 11:07:55 2003
 @@ -40,8 +40,8 @@
  	$threadl = "";
  }
@@ -11,11 +11,43 @@
  $libs =~ s/\s+/ /g;
  $inc =~ s/\s+/ /g;
  
-@@ -160,3 +160,3 @@
+@@ -59,7 +59,7 @@
+ 
+ $gtk_hverstr = sprintf("0x%02x%02x%02x", $gtk_major, $gtk_minor, $gtk_micro);
+ 
+-push @defines, "-DGTK_HVER=$gtk_hverstr";
++push @defines, "-DGTK_HVER=$gtk_hverstr -o \$*.o";
+ 
+ if (not defined $gtk_version) {
+ 	die "Unable to find  Gtk version...\n";
+@@ -158,7 +158,7 @@
+ 	'XSPROTOARG' => '-noprototypes',
+ 	'depend' => $depend,
  	'dist' => { COMPRESS=>"gzip", SUFFIX=>"gz" },
 -	'OPTIMIZE' => '-O2 -g',
 +	'CCFLAGS' => '${CFLAGS}',
  	'MAN3PODS' => {
+ 		'cookbook.pod' => '$(INST_MAN3DIR)/Gtk::cookbook.3pm',
+ 		'Gtk.pm' => '$(INST_MAN3DIR)/Gtk.3pm',
+@@ -187,12 +187,12 @@
+ 
+ }
+ 
+-sub MY::c_o {
+-	package MY; # so that "SUPER" works right
+-	my $inherited = shift->SUPER::c_o(@_);
+-	$inherited =~ s/CCCMD.*$/$&\n\t\@if test -f `basename \$*.o` -a "`basename \$*.o`" != "\$*.o"; then mv `basename \$*.o` \$*.o; fi/m;
+-    $inherited;
+-}
++#sub MY::c_o {
++#	package MY; # so that "SUPER" works right
++#	my $inherited = shift->SUPER::c_o(@_);
++#	$inherited =~ s/CCCMD.*$/$& -o \$*\n\t\@if test -f `basename \$*.o` -a "`basename \$*.o`" != "\$*.o"; then mv `basename \$*.o` \$*.o; fi/m;
++#    $inherited;
++#}
+ 
+ sub MY::const_config
+ {
 @@ -207,14 +207,14 @@
  sub gtk_version {
  	my($result);
