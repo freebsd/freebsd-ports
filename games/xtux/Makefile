@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtux
-PORTVERSION=	2001.06.01
+PORTVERSION=	2003.03.06
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tux_serv ${PREFIX}/bin
 	@strip ${PREFIX}/bin/xtux ${PREFIX}/bin/tux_serv
 
+	@${MKDIR} ${PREFIX}/share/xtux/demos
 	@${MKDIR} ${PREFIX}/share/xtux/images/entities
 	@${MKDIR} ${PREFIX}/share/xtux/images/events
 	@${MKDIR} ${PREFIX}/share/xtux/images/items
@@ -39,10 +40,12 @@ do-install:
 .endfor
 .for dir in entities events items weapons tiles .
 	${INSTALL_DATA} ${WRKSRC}/data/images/${dir}/*.xpm \
-	${PREFIX}/share/xtux/images/${dir}
+		${PREFIX}/share/xtux/images/${dir}
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/data/demos/*.xtdem \
+		${PREFIX}/share/xtux/demos
 	${INSTALL_DATA} ${WRKSRC}/data/maps/*.map \
-	${PREFIX}/share/xtux/maps
+		${PREFIX}/share/xtux/maps
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xtux
