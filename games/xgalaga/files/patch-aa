@@ -11,7 +11,7 @@
 -	$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV)
 -	mkinstalldirs $(prefix)/sounds
 -	mkinstalldirs $(prefix)/levels
-+	if [ "X$(SOUNDSRV)" != "X"]; then \
++	if [ "X$(SOUNDSRV)" != "X" ]; then \
 +		$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV); \
 +	fi
 +	./mkinstalldirs $(prefix)/sounds
