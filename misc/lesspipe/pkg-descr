@@ -1,0 +1,10 @@
+lesspipe is a powerful preprocessor for less(1). The features include
+
+* Reading of various file formats like tar files, word, pdf and
+  postscript documents
+
+* Transparent handling of compressed files (gzip, bzip2, zip)
+
+* Optional syntax highlightning of source files
+
+WWW: http://sourceforge.net/projects/lesspipe
