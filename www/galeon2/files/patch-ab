@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- src/galeon.in.orig	Thu Dec 27 23:49:08 2001
-+++ src/galeon.in	Fri Dec 28 10:58:16 2001
+--- src/galeon.in.orig	Thu Dec 27 19:13:42 2001
++++ src/galeon.in	Mon Oct 21 23:28:37 2002
 @@ -4,18 +4,14 @@
  
  if test -n "$MOZILLA_FIVE_HOME"; then
@@ -29,7 +26,7 @@ $FreeBSD$
  else
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit
-@@ -27,16 +23,9 @@
+@@ -27,16 +23,12 @@
  MOZILLA_FIVE_HOME=$MOZILLA_HOME
  export MOZILLA_FIVE_HOME
  
@@ -39,7 +36,9 @@ $FreeBSD$
 -   	 export LD_ASSUME_KERNEL=2.2.5
 -	fi
 -fi
--
++MOZ_PLUGIN_PATH=%%PREFIX%%/lib/browser_plugins
++export MOZ_PLUGIN_PATH
+ 
  if [ -f ./galeon-bin ]; then
  exec ./galeon-bin "$@"
  else
