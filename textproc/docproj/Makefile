@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.10 1999/04/14 22:42:08 nik Exp $
+# $Id: Makefile,v 1.11 1999/04/29 20:13:33 nik Exp $
 #
 
 DISTNAME=	docproj
@@ -22,7 +22,7 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook/3.0 \
+		${PREFIX}/share/sgml/docbook:${PORTSDIR}/textproc/docbook-300 \
 		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879
 
 IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
