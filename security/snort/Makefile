@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -20,8 +20,8 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 #		ODBC "Enable ODBC support" off \
 #		POSTGRES "Enable PostgreSQL support" off
 
-#USE_GPG=	yes
-#SIG_SUFFIX=	.asc
+USE_GPG=	yes
+SIG_SUFFIX=	.asc
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
