@@ -1,18 +1,13 @@
 bin/klyx
-share/apps/klyx/CREDITS
 share/apps/klyx/bind/cua.bind
 share/apps/klyx/bind/emacs.bind
 share/apps/klyx/bind/math.bind
 share/apps/klyx/bind/menus.bind
-share/apps/klyx/chkconfig.ltx
-share/apps/klyx/clipart/platypus.eps
-share/apps/klyx/configure
 share/apps/klyx/doc/BUGS.lyx
 share/apps/klyx/doc/Customization.lyx
 share/apps/klyx/doc/HowDoI-.lyx
 share/apps/klyx/doc/Intro.lyx
 share/apps/klyx/doc/LaTeXConfig.lyx
-share/apps/klyx/doc/LaTeXConfig.lyx.in
 share/apps/klyx/doc/Reference.lyx
 share/apps/klyx/doc/SpecialTools.lyx
 share/apps/klyx/doc/Tutorial.lyx
@@ -20,6 +15,8 @@ share/apps/klyx/doc/UserGuide.lyx
 share/apps/klyx/doc/escher-lsd.eps
 share/apps/klyx/doc/mobius.eps
 share/apps/klyx/doc/platypus.eps
+share/apps/klyx/doc/LaTeXConfig.lyx.in
+share/apps/klyx/clipart/platypus.eps
 share/apps/klyx/examples/Bibliography.lyx
 share/apps/klyx/examples/Delimiters.lyx
 share/apps/klyx/examples/Foils.lyx
@@ -32,18 +29,6 @@ share/apps/klyx/examples/ams-test.lyx
 share/apps/klyx/examples/amsbook-test.lyx
 share/apps/klyx/examples/example_lyxified.lyx
 share/apps/klyx/examples/example_raw.lyx
-share/apps/klyx/images/amssymb.xbm
-share/apps/klyx/images/amssymb.xpm
-share/apps/klyx/images/psnfss1.xbm
-share/apps/klyx/images/psnfss1.xpm
-share/apps/klyx/images/psnfss2.xbm
-share/apps/klyx/images/psnfss2.xpm
-share/apps/klyx/images/psnfss3.xbm
-share/apps/klyx/images/psnfss3.xpm
-share/apps/klyx/images/psnfss4.xbm
-share/apps/klyx/images/psnfss4.xpm
-share/apps/klyx/images/standard.xbm
-share/apps/klyx/images/standard.xpm
 share/apps/klyx/kbd/american-2.kmap
 share/apps/klyx/kbd/american.kmap
 share/apps/klyx/kbd/czech.kmap
@@ -65,6 +50,7 @@ share/apps/klyx/kbd/slovene.kmap
 share/apps/klyx/kbd/transilvanian.kmap
 share/apps/klyx/kbd/turkish-f.kmap
 share/apps/klyx/kbd/turkish.kmap
+share/apps/klyx/kbd/default.kmap
 share/apps/klyx/layouts/amsart-plain.layout
 share/apps/klyx/layouts/amsart-seq.layout
 share/apps/klyx/layouts/amsart.layout
@@ -93,8 +79,20 @@ share/apps/klyx/layouts/stdlists.inc
 share/apps/klyx/layouts/stdsections.inc
 share/apps/klyx/layouts/stdstarsections.inc
 share/apps/klyx/layouts/stdstruct.inc
+share/apps/klyx/templates/dinbrief.lyx
+share/apps/klyx/templates/iletter.lyx
+share/apps/klyx/templates/latex_letter.lyx
+share/apps/klyx/templates/linuxdoctemplate.lyx
+share/apps/klyx/templates/revtex.lyx
+share/apps/klyx/templates/slides.lyx
+share/apps/klyx/tex/iletter.cls
+share/apps/klyx/tex/revtex.cls
+share/apps/klyx/configure
 share/apps/klyx/lyxrc
+share/apps/klyx/CREDITS
+share/apps/klyx/chkconfig.ltx
 share/apps/klyx/lyxrc.defaults
+share/apps/klyx/textclass.lst
 share/apps/klyx/packages.lst
 share/apps/klyx/pics/Downarrow.xbm
 share/apps/klyx/pics/Uparrow.xbm
@@ -155,6 +153,7 @@ share/apps/klyx/pics/arrowshookrightarrow.xbm
 share/apps/klyx/pics/arrowsleftarrow.xbm
 share/apps/klyx/pics/arrowsleftharpoondown.xbm
 share/apps/klyx/pics/arrowsleftharpoonup.xbm
+share/apps/klyx/pics/banner.xpm
 share/apps/klyx/pics/arrowsleftrightarrow.xbm
 share/apps/klyx/pics/arrowsmapsto.xbm
 share/apps/klyx/pics/arrowsrightarrow.xbm
@@ -163,7 +162,6 @@ share/apps/klyx/pics/arrowsrightharpoonup.xbm
 share/apps/klyx/pics/arrowsrightleftharpoons.xbm
 share/apps/klyx/pics/arrowsuparrow.xbm
 share/apps/klyx/pics/arrowsupdownarrow.xbm
-share/apps/klyx/pics/banner.xpm
 share/apps/klyx/pics/banner_bw.xbm
 share/apps/klyx/pics/blank.xbm
 share/apps/klyx/pics/bold_bw.xpm
@@ -218,6 +216,7 @@ share/apps/klyx/pics/brelleq.xbm
 share/apps/klyx/pics/brelll.xbm
 share/apps/klyx/pics/brelmid.xbm
 share/apps/klyx/pics/brelmodels.xbm
+share/apps/klyx/pics/cut.xpm
 share/apps/klyx/pics/brelneq.xbm
 share/apps/klyx/pics/brelni.xbm
 share/apps/klyx/pics/brelnotin.xbm
@@ -242,7 +241,6 @@ share/apps/klyx/pics/brelvdash.xbm
 share/apps/klyx/pics/bsol.xbm
 share/apps/klyx/pics/close.xpm
 share/apps/klyx/pics/copy.xpm
-share/apps/klyx/pics/cut.xpm
 share/apps/klyx/pics/deco.xbm
 share/apps/klyx/pics/deco.xpm
 share/apps/klyx/pics/decohat.xbm
@@ -306,6 +304,7 @@ share/apps/klyx/pics/greekrho.xbm
 share/apps/klyx/pics/greeksigma.xbm
 share/apps/klyx/pics/greektau.xbm
 share/apps/klyx/pics/greektheta.xbm
+share/apps/klyx/pics/lyx.xpm
 share/apps/klyx/pics/greekupsilon.xbm
 share/apps/klyx/pics/greekvarepsilon.xbm
 share/apps/klyx/pics/greekvarphi.xbm
@@ -323,7 +322,6 @@ share/apps/klyx/pics/left.xpm
 share/apps/klyx/pics/lfloor.xbm
 share/apps/klyx/pics/lparen.xbm
 share/apps/klyx/pics/lsqb.xbm
-share/apps/klyx/pics/lyx.xpm
 share/apps/klyx/pics/make_ascii_bw.xpm
 share/apps/klyx/pics/make_latex_bw.xpm
 share/apps/klyx/pics/margin.xpm
@@ -350,6 +348,7 @@ share/apps/klyx/pics/miscinfty.xbm
 share/apps/klyx/pics/miscjmath.xbm
 share/apps/klyx/pics/miscnabla.xbm
 share/apps/klyx/pics/miscnatural.xbm
+share/apps/klyx/pics/sol.xbm
 share/apps/klyx/pics/miscneg.xbm
 share/apps/klyx/pics/miscpartial.xbm
 share/apps/klyx/pics/miscprime.xbm
@@ -414,6 +413,7 @@ share/apps/klyx/pics/psnfss2-15.xpm
 share/apps/klyx/pics/psnfss2-16.xpm
 share/apps/klyx/pics/psnfss2-17.xpm
 share/apps/klyx/pics/psnfss2-18.xpm
+share/apps/klyx/pics/sum.xpm
 share/apps/klyx/pics/psnfss2-19.xpm
 share/apps/klyx/pics/psnfss2-2.xpm
 share/apps/klyx/pics/psnfss2-20.xpm
@@ -456,6 +456,7 @@ share/apps/klyx/pics/psnfss3-19.xpm
 share/apps/klyx/pics/psnfss3-2.xpm
 share/apps/klyx/pics/psnfss3-20.xpm
 share/apps/klyx/pics/psnfss3-21.xpm
+share/apps/klyx/pics/tab.xpm
 share/apps/klyx/pics/psnfss3-22.xpm
 share/apps/klyx/pics/psnfss3-23.xpm
 share/apps/klyx/pics/psnfss3-24.xpm
@@ -498,6 +499,7 @@ share/apps/klyx/pics/psnfss4-22.xpm
 share/apps/klyx/pics/psnfss4-23.xpm
 share/apps/klyx/pics/psnfss4-24.xpm
 share/apps/klyx/pics/psnfss4-25.xpm
+share/apps/klyx/pics/tex.xpm
 share/apps/klyx/pics/psnfss4-26.xpm
 share/apps/klyx/pics/psnfss4-27.xpm
 share/apps/klyx/pics/psnfss4-28.xpm
@@ -530,7 +532,6 @@ share/apps/klyx/pics/run_latex_bw.xpm
 share/apps/klyx/pics/sans_bw.xpm
 share/apps/klyx/pics/save.xpm
 share/apps/klyx/pics/smallcaps.xpm
-share/apps/klyx/pics/sol.xbm
 share/apps/klyx/pics/space.xpm
 share/apps/klyx/pics/sqrt.xpm
 share/apps/klyx/pics/standard.xbm
@@ -543,6 +544,7 @@ share/apps/klyx/pics/standard12.xpm
 share/apps/klyx/pics/standard13.xpm
 share/apps/klyx/pics/standard14.xpm
 share/apps/klyx/pics/standard15.xpm
+share/apps/klyx/pics/up.xpm
 share/apps/klyx/pics/standard16.xpm
 share/apps/klyx/pics/standard17.xpm
 share/apps/klyx/pics/standard18.xpm
@@ -571,9 +573,6 @@ share/apps/klyx/pics/standard6.xpm
 share/apps/klyx/pics/standard7.xpm
 share/apps/klyx/pics/standard8.xpm
 share/apps/klyx/pics/standard9.xpm
-share/apps/klyx/pics/sum.xpm
-share/apps/klyx/pics/tab.xpm
-share/apps/klyx/pics/tex.xpm
 share/apps/klyx/pics/toolbar_arrows.xpm
 share/apps/klyx/pics/toolbar_boperators.xpm
 share/apps/klyx/pics/toolbar_brelations.xpm
@@ -582,7 +581,6 @@ share/apps/klyx/pics/toolbar_greek.xpm
 share/apps/klyx/pics/toolbar_misc.xpm
 share/apps/klyx/pics/toolbar_varsize.xpm
 share/apps/klyx/pics/unknown.xpm
-share/apps/klyx/pics/up.xpm
 share/apps/klyx/pics/uparrow.xbm
 share/apps/klyx/pics/updownarrow.xbm
 share/apps/klyx/pics/varsz.xbm
@@ -604,33 +602,26 @@ share/apps/klyx/pics/verbar.xbm
 share/apps/klyx/pics/view_dvi_bw.xpm
 share/apps/klyx/pics/view_ps_bw.xpm
 share/apps/klyx/pics/widthofcolumn.xpm
-share/apps/klyx/templates/dinbrief.lyx
-share/apps/klyx/templates/iletter.lyx
-share/apps/klyx/templates/latex_letter.lyx
-share/apps/klyx/templates/linuxdoctemplate.lyx
-share/apps/klyx/templates/revtex.lyx
-share/apps/klyx/templates/slides.lyx
-share/apps/klyx/tex/iletter.cls
-share/apps/klyx/tex/revtex.cls
-share/apps/klyx/textclass.lst
-share/icons/koffice-intro.gif
-share/locale/da/LC_MESSAGES/klyx.mo
 share/locale/de/LC_MESSAGES/klyx.mo
-share/locale/es/LC_MESSAGES/klyx.mo
-share/locale/fi/LC_MESSAGES/klyx.mo
 share/locale/fr/LC_MESSAGES/klyx.mo
-share/locale/nl/LC_MESSAGES/klyx.mo
-share/locale/no/LC_MESSAGES/klyx.mo
 share/locale/sv/LC_MESSAGES/klyx.mo
+share/locale/es/LC_MESSAGES/klyx.mo
+share/locale/da/LC_MESSAGES/klyx.mo
+share/locale/nl/LC_MESSAGES/klyx.mo
+share/locale/pt/LC_MESSAGES/klyx.mo
+share/locale/no/LC_MESSAGES/klyx.mo
+share/locale/fi/LC_MESSAGES/klyx.mo
+share/locale/hr/LC_MESSAGES/klyx.mo
+share/locale/sk/LC_MESSAGES/klyx.mo
 share/locale/tr/LC_MESSAGES/klyx.mo
-@dirrm share/apps/klyx/tex
-@dirrm share/apps/klyx/templates
-@dirrm share/apps/klyx/pics
-@dirrm share/apps/klyx/layouts
-@dirrm share/apps/klyx/kbd
-@dirrm share/apps/klyx/images
-@dirrm share/apps/klyx/examples
+share/icons/koffice-intro.gif
+@dirrm share/apps/klyx/bind
 @dirrm share/apps/klyx/doc
 @dirrm share/apps/klyx/clipart
-@dirrm share/apps/klyx/bind
+@dirrm share/apps/klyx/examples
+@dirrm share/apps/klyx/kbd
+@dirrm share/apps/klyx/layouts
+@dirrm share/apps/klyx/templates
+@dirrm share/apps/klyx/tex
+@dirrm share/apps/klyx/pics
 @dirrm share/apps/klyx

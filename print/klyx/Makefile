@@ -1,17 +1,17 @@
 # New ports collection makefile for:   klyx
-# Version required:    Beta4
+# Version required:    0.9.8a
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.7 1998/10/02 18:21:23 brian Exp $
+# $Id: Makefile,v 1.8 1998/11/07 18:27:57 fenner Exp $
 #
 
-DISTNAME=	klyx-0.9.3
+DISTNAME=	klyx-0.9.8a
 CATEGORIES=	print kde
-MASTER_SITES=	$(MASTER_SITE_KDE)
+MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR= unstable/apps/office
 
-MAINTAINER=	hanspb@persbraten.vgs.no
+MAINTAINER=	tom@eborcom.com
 
 LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
 		kdeui.1:${PORTSDIR}/x11/kdelibs \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
 USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	CXXFLAGS="$(CXXFLAGS)" \
-		INSTALL_SCRIPT="$(INSTALL_SCRIPT)"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}" \
+		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 .include <bsd.port.mk>
