@@ -8,10 +8,12 @@
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
 CATEGORIES=	math
-MASTER_SITES=	http://ftp.debian.org/debian/dists/potato/main/source/math/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	dists/potato/main/source/math
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A spreadsheet program for X and terminals
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 

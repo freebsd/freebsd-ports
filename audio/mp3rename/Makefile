@@ -8,10 +8,12 @@
 PORTNAME=	mp3rename
 PORTVERSION=	0.6
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/m/mp3rename/
+MASTER_SITES=	${MASTER_SITES_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/m/mp3rename
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A renaming program for mp3 files based on their id3tag
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 

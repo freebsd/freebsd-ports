@@ -9,7 +9,8 @@ PORTNAME=	panorama
 PORTVERSION=	0.13.2
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/p/panorama/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/p/panorama
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig                        
 
 PATCH_SITES=	${MASTER_SITES}
@@ -17,6 +18,7 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION}-2.1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU framework for 3D graphics production
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png:${PORTSDIR}/graphics/png \

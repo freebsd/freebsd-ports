@@ -9,10 +9,12 @@ PORTNAME=	ecgi
 PORTVERSION=	0.6.2
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/libe/libecgi/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/libe/libecgi
 DISTNAME=	lib${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library for the creation of CGI-based Web applications
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

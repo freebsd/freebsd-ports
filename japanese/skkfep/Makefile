@@ -8,10 +8,12 @@
 PORTNAME=	skkfep
 PORTVERSION=	0.86c
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/s/skkfep/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/s/skkfep
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	SKK-like Kana-to-Kanji FrontEnd Processor
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 
