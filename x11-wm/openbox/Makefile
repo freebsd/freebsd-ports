@@ -50,7 +50,6 @@ pre-install:
 	${ECHO_CMD} @dirrm share/openbox${ii} >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
 .for ii in ${DOCS}
 	${ECHO_CMD} share/doc/openbox/${ii} >> ${PLIST}
 .endfor
