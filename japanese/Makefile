@@ -19,6 +19,7 @@
     SUBDIR += chasen
     SUBDIR += chimera
     SUBDIR += csrd
+    SUBDIR += dbskkd-cdb
     SUBDIR += deepforest
     SUBDIR += diclookup-mule
     SUBDIR += dserver
