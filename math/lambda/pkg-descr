@@ -1,0 +1,16 @@
+Lambda is a lambda calculus interpreter. It also will convert lambda expression
+into the combinators S, K, and I.
+
+Current features:
+    * Load predefined lambda expression
+    * Many definitions provided: numbers Y fact map iszero list 1st 2nd 3rd
+      ADD MUL EXP list suc pred . . .
+    * Automatic number definitions.
+    * Interpret lambda expressions.
+    * Single step interpretation.
+    * Normal or application order reductions.
+    * Variable extraction (Conversion to S K I)
+    * List definitions.
+    * Some lambda calculus theory.
+
+WWW: http://66.47.116.75/~demo/lambda/

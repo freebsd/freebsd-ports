@@ -77,6 +77,7 @@
     SUBDIR += kaskade
     SUBDIR += koctave
     SUBDIR += kseg
+    SUBDIR += lambda
     SUBDIR += lapack
     SUBDIR += lapack++
     SUBDIR += libgmp-freebsd
