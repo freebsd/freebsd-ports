@@ -28,17 +28,18 @@ ALL_TARGET=	superlulib
 
 BLAS_LIBS=	${LOCALBASE}/lib/libblas.a
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken by changes to make(1) on FreeBSD >= 5.x"
-.endif
+ARCH2FIX=	CBLAS/Makefile make.alpha make.exemplar TESTING/MATGEN/Makefile	\
+		make.origin make.inc make.pthreads SRC/Makefile
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
 	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
 		${WRKSRC}/make.inc
+.for fmk in ${ARCH2FIX}
+	@${REINPLACE_CMD} -e 's|^ARCH *.= ar|ARCMD = ar| ; \
+		s|\$$(ARCH)|$$(ARCMD)|' ${WRKSRC}/${fmk}
+.endfor
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libsuperlu_mt.* ${PREFIX}/lib
@@ -51,4 +52,4 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/simax97.ps.gz ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

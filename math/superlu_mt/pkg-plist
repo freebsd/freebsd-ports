@@ -7,6 +7,6 @@ include/superlu_mt/supermatrix.h
 include/superlu_mt/util.h
 lib/libsuperlu_mt.a
 @dirrm include/superlu_mt
-%%PORTDOCS%%share/doc/superlu_mt/simax97.ps.gz
-%%PORTDOCS%%share/doc/superlu_mt/ug.ps.gz
-%%PORTDOCS%%@dirrm share/doc/superlu_mt
+%%PORTDOCS%%%%DOCSDIR%%/simax97.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/ug.ps.gz
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
