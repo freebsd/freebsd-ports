@@ -1,0 +1,6 @@
+PL/Python allows one to write PostgeSQL stored functions and
+procedures in Python (http://www.python.org/).
+
+This software is part of the standard PostgreSQL distribution.
+
+WWW: http://www.postgresql.org/

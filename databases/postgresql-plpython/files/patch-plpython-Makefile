@@ -1,0 +1,11 @@
+--- src/pl/plpython/Makefile~	Thu Mar  4 08:06:19 2004
++++ src/pl/plpython/Makefile	Thu Mar  4 08:06:44 2004
+@@ -8,7 +8,7 @@
+ # On some platforms we can only build PL/Python if libpython is a
+ # shared library.  Since there is no official way to determine this,
+ # we see if there is a file that is named like a shared library.
+-ifneq (,$(wildcard $(python_configdir)/libpython*$(DLSUFFIX)*))
++ifneq (,$(wildcard $(python_configdir)/../../libpython*$(DLSUFFIX)*))
+ shared_libpython = yes
+ endif
+ 
