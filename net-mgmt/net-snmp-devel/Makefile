@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.25 1999/04/07 16:07:40 kuriyama Exp $
+# $Id: Makefile,v 1.26 1999/04/12 08:22:43 asami Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.1
@@ -41,12 +41,10 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "aout"
-SHLIB_VERSION=3.5
-PATCHDIR=patches.aout
-.else
-SHLIB_VERSION=3
+BROKEN=		"aout build breaks: ld: internal error: RRS relocs exceed allocation 343"
 .endif
-MAKE_ENV+= SHLIB_VERSION=${SHLIB_VERSION}
+
+MAKE_ENV+= SHLIB_VERSION=3
 
 post-patch:
 	${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
@@ -67,5 +65,3 @@ post-install:
 	${SETENV} OBJFORMAT="${PORTOBJFORMAT}" ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>
-
-CFLAGS=		-g
