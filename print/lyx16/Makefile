@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.1.6.3
+PORTVERSION=	1.1.6.4
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 DISTNAME=	lyx-1.1.6
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.1.6fix1.gz patch-1.1.6fix2.gz patch-1.1.6fix3.gz
+PATCHFILES=	patch-1.1.6fix1.gz patch-1.1.6fix2.gz patch-1.1.6fix3.gz \
+		patch-1.1.6fix4.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dirk@FreeBSD.org
