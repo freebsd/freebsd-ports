@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psycopg
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.11.1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/pub/software/psycopg/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,6 @@ ALL_TARGET=	sharedmods
 
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--with-postgres-libraries=${LOCALBASE}/lib \
-		--with-postgres-includes=${LOCALBASE}/include/pgsql \
 		--with-postgres-includes=${LOCALBASE}/include \
 		--with-mxdatetime-includes=${DATETIME_INC}
 
