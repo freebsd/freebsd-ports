@@ -1,0 +1,8 @@
+Archivemail searches through mailbox files (in any of a number of
+formats) and selects messages older than N days to be moved to a new,
+optionally-compressed, mbox-format file. Selected messages can also be
+appended to an existing archive file, or simply deleted.
+
+WWW: http://archivemail.sourceforge.net/
+
+--AlanE
