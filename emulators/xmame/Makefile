@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.90
+PORTVERSION?=	0.92
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -20,9 +20,12 @@ DIST_SUBDIR=	xmame
 MAINTAINER?=	flynn@energyhq.es.eu.org
 COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
+MAKE_ARGS+=	ARCH=freebsd
 USE_REINPLACE=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
