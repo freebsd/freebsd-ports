@@ -8,7 +8,7 @@
 PORTNAME=	ssync
 PORTVERSION=	2.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://equusasinus.com/ssync/
+MASTER_SITES=	http://alcatraz.labs.agilent.com/shaffer/ssync/
 
 MAINTAINER=	nyxo@dnuc.polyn.kiae.su
 
