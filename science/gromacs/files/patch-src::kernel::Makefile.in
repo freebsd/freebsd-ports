@@ -1,0 +1,15 @@
+--- src/kernel/Makefile.in.orig	Mon Mar  1 20:49:03 2004
++++ src/kernel/Makefile.in	Thu Dec  9 00:33:06 2004
+@@ -367,10 +367,10 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/xutils.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
++LTCOMPILE = $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++LINK = $(LIBTOOL) --mode=link --tag=CC $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ DIST_SOURCES = $(ffscan_SOURCES) $(gmxcheck_SOURCES) gmxdump.c \
+ 	$(grompp_SOURCES) luck.c $(mdrun_SOURCES) $(pdb2gmx_SOURCES) \

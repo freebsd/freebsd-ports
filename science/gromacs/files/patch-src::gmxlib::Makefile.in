@@ -1,0 +1,22 @@
+--- src/gmxlib/Makefile.in.orig	Mon Mar  1 20:49:02 2004
++++ src/gmxlib/Makefile.in	Thu Dec  9 00:11:00 2004
+@@ -292,16 +292,16 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/xtcio.Plo ./$(DEPDIR)/xvgr.Plo
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+-LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
++LTCOMPILE = $(LIBTOOL) --mode=compile --tag=CC $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++LINK = $(LIBTOOL) --mode=link  --tag=CC $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
+ LTF77COMPILE = $(LIBTOOL) --mode=compile $(F77) $(AM_FFLAGS) $(FFLAGS)
+ F77LD = $(F77)
+ CCASCOMPILE = $(CCAS) $(AM_CCASFLAGS) $(CCASFLAGS)
+-LTCCASCOMPILE = $(LIBTOOL) --mode=compile $(CCAS) $(AM_CCASFLAGS) \
++LTCCASCOMPILE = $(LIBTOOL) --mode=compile  --tag=CC $(CCAS) $(AM_CCASFLAGS) \
+ 	$(CCASFLAGS)
+ DIST_SOURCES = $(libgmx@LIBSUFFIX@_la_SOURCES) \
+ 	$(EXTRA_libgmx@LIBSUFFIX@_la_SOURCES)
