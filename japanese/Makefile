@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.160 1998/11/19 07:41:39 flathill Exp $
+# $Id: Makefile,v 1.161 1998/11/19 08:03:18 flathill Exp $
 #
 
     SUBDIR += Canna
@@ -174,6 +174,7 @@
     SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += today
+    SUBDIR += truetypefonts
     SUBDIR += typist
     SUBDIR += vfghostscript
     SUBDIR += vfghostscript5
