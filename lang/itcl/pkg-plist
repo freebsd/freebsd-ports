@@ -356,7 +356,9 @@ share/itcl/tk4.1/man/mann/tkwait.n.gz
 share/itcl/tk4.1/man/mann/toplevel.n.gz
 share/itcl/tk4.1/man/mann/winfo.n.gz
 share/itcl/tk4.1/man/mann/wm.n.gz
+lib/libitcl.a
 lib/libitcl21.a
+lib/libitcl.so
 lib/libitcl21.so.1.0
 lib/pkgIndex.tcl
 bin/itclsh2.1
@@ -376,7 +378,9 @@ share/itcl/itcl/man/mann/itcl_class.n.gz
 share/itcl/itcl/man/mann/itcl_info.n.gz
 share/itcl/itcl/man/mann/itclvars.n.gz
 share/itcl/itcl/man/mann/local.n.gz
+lib/libitk.a
 lib/libitk21.a
+lib/libitk.so
 lib/libitk21.so.1.0
 lib/pkgIndex.tcl
 bin/itkwish2.1
