@@ -44,6 +44,7 @@ RPM_MIRRORS=		\
 	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/__DIR__/ \
 	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
 	ftp://mirror.nucba.ac.jp/mirror/redhat/__DIR__/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.redhat.com/pub/redhat/__DIR__/ \
 	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
 	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
 
