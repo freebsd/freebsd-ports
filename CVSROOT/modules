@@ -10521,6 +10521,7 @@ truevision	ports/graphics/truevision
 trustedqsl	ports/comms/trustedqsl
 tsclient	ports/net/tsclient
 tse3		ports/audio/tse3
+tsito		ports/games/tsito
 tsocks		ports/net/tsocks
 tt		ports/games/tt
 ttcp		ports/benchmarks/ttcp
