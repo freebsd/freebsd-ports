@@ -1,0 +1,69 @@
+# New ports collection makefile for:	log4cxx
+# Date created:		2005-01-12
+# Whom:			Thaddeus Covert <tcovert@grimmy.sahuagin.net>
+#
+# $FreeBSD$
+
+PORTNAME=	log4cxx
+PORTVERSION=	0.9.7
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	logging/${PORTNAME}
+
+MAINTAINER=	tcovert@sahuagin.net
+COMMENT=	Log4cxx is a port to C++ of the Log4j project
+
+.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+.else
+CONFIGURE_ARGS+=	--disable-doxygen
+.endif
+
+.if exists(${LOCALBASE}/lib/libboost_regex.so)
+WITH_BOOST=	yes
+.endif
+
+.if defined(WITH_BOOST)
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/regex.hpp:${PORTSDIR}/devel/boost
+CXXFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+.endif
+
+USE_AUTOMAKE_VER=	15
+USE_AUTOCONF_VER=	253
+AUTOMAKE_ARGS=	--add-missing
+USE_LIBTOOL_VER=13
+LIBTOOL_VARS=	--force --automake
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-I${LOCALBASE}/lib
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" CXXFLAGS="${CXXFLAGS}"
+INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
+
+.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+PORTDOCS=	*
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=	does not compile on FreeBSD 4.x (missing swprintf in libc)
+.endif
+
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL})
+
+post-patch:
+	@${REINPLACE_CMD} "s#\$$(DESTDIR)\$$(htmldir)#${DOCSDIR}/html#" ${WRKSRC}/docs/Makefile.am
+
+post-install:
+.if !defined(NOPORTDOCS) && defined(WITH_DOXYGEN)
+	${MKDIR} ${DOCSDIR}
+	for f in ${PORTDOCS}; do \
+	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	done
+.endif
+
+.include <bsd.port.post.mk>

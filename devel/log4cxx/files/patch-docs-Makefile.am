@@ -1,0 +1,11 @@
+--- docs/Makefile.am.orig	Thu Jan 13 22:28:59 2005
++++ docs/Makefile.am	Thu Jan 13 22:29:35 2005
+@@ -10,7 +10,7 @@
+ 
+ install-data-hook:
+ 	$(mkinstalldirs) $(DESTDIR)$(htmldir)
+-	cp -dpR html/* $(DESTDIR)$(htmldir)
++	cp -PpR html/* $(DESTDIR)$(htmldir)
+ 
+ # Automake's "distcheck" is sensitive to having files left over
+ # after "make uninstall", so we have to clean up the install hook.
