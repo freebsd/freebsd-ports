@@ -18,7 +18,7 @@
  #if defined(FreeBSDArchitecture)
  SYSDEFS = 
 -#if !defined(NAS_SOUND)&&!defined(RSOUND)
-+#if !defined(NAS_SOUND)&&!defined(RSOUND)&&defined(i386Architecture)
++#if !defined(NAS_SOUND)&&!defined(RSOUND)
  #define SOUND
  SOUNDSERVER = koules.sndsrv.freebsd
  SOUNDOBJS = sound.o
