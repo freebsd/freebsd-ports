@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomespell
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-spell/1.0
@@ -27,7 +26,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 post-patch:
