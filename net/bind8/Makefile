@@ -1,0 +1,37 @@
+# New ports collection makefile for:	bind
+# Version required:	8.2
+# Date created:		18 July 1997
+# Whom:			jseger@scds.com
+#
+# $Id: Makefile,v 1.10 1999/05/31 17:36:25 jseger Exp $
+#
+
+DISTNAME=	bind-8.2
+CATEGORIES=	net
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2/
+PATCH_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2/
+DISTFILES=	${DISTNAME}-src.tar.gz ${DISTNAME}-doc.tar.gz
+PATCHFILES=	patch1
+
+MAINTAINER=	jseger@FreeBSD.org
+
+Y2K=		http://www.isc.org/y2k.html
+
+WRKSRC=		${WRKDIR}/src
+
+MAN1=		dig.1 dnsquery.1 host.1
+MAN3=		gethostbyname.3 getnetent.3 resolver.3
+MAN5=		irs.conf.5 named.conf.5 resolver.5
+MAN7=		hostname.7 mailaddr.7
+MAN8=		named-bootconf.8 named-xfer.8 named.8 ndc.8 nslookup.8 \
+		nsupdate.8
+
+PATCH_ARGS=	-d ${WRKDIR}
+PATCH_DIST_ARGS=	-d ${WRKDIR}
+
+post-install:
+	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} clean all ${INSTALL_TARGET})
+	${MKDIR} ${PREFIX}/share/doc/bind8
+	${INSTALL_DATA} ${WRKDIR}/doc/html/* ${PREFIX}/share/doc/bind8
+
+.include <bsd.port.mk>
