@@ -6,79 +6,50 @@
 #
 
 PORTNAME=	omniORB
-PORTVERSION=	3.0.5
+PORTVERSION=	4.0.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	omniorb
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//g}
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
-MAINTAINER=	ejc@bazzle.com
+MAINTAINER=	ejc@FreeBSD.org
+
+CONFIGURE_WRKSRC=	${WRKSRC}/build
+BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
+USE_PYTHON=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+NO_FILTER_SHLIBS=	yes
+MAKEFILE=	GNUmakefile
+CONFIGURE_SCRIPT=	../configure
+CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
+		CPP=${CPP} PYTHON=${PYTHON_CMD}
+CONFIGURE_ARGS=	--datadir=${DATADIR} --with-openssl=/usr \
+		--with-omniORB-config=${PREFIX}/etc/omniORB.cfg \
+		--with-omniNames-logdir=/var/log
+.if defined(WITHOUT_STATIC)
+CONFIGURE_ARGS+=	--disable-static
+PLIST_SUB+=	STATIC="@comment "
+.else
+PLIST_SUB+=	STATIC=""
+.endif
 
 MAN1=		catior.1 genior.1 nameclt.1 obuildtree.1 ols.1 omake.1 \
 		omniNames.1 opriv.1 oshadow.1
 
-WRKSRC=		${WRKDIR}/omni
-BUILD_WRKSRC=	${WRKSRC}/src
+pre-configure:
+	@ ${MKDIR} ${CONFIGURE_WRKSRC}
 
-USE_PYTHON=	yes
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-NO_FILTER_SHLIBS=	yes
-MAKEFILE=	GNUmakefile
-ALL_TARGET=	export
-MAKE_ENV+=	CDEBUGFLAGS="${CFLAGS}" CXXDEBUGFLAGS="${CXXFLAGS}" \
-		BSD_INSTALL="${INSTALL}" PYTHON_CMD="${PYTHON_CMD}" \
-		MKDIR="${MKDIR}"
-ONLY_FOR_ARCHS=	i386
-
-# Setting ${CONFIG_TARGET} to this value  and patching it into
-# ${WRKSRC}/config/config.mk via the post-patch target ensures that the
-# internal make variable __OSVERSION__ is set to 4.  This activates gcc
-# 2.9.5-specific code, and obviates the need for most of the patches
-# previously required since there are now version checks in the source.
-CONFIG_TARGET=	x86_freebsd_4.0
-
-CPIO=		cpio --quiet -pdum -R
-
-post-patch:
-	@${SETENV} LANG=C ${PERL} -pi -e 's/__PLATFORM__/${CONFIG_TARGET}/;' \
-		${WRKSRC}/config/config.mk
-
-binfiles=	catior convertior genior nameclt omkdepend omniMapper \
-		omniNames
-scriptfiles=	omniidl omniidlrun.py
-
-do-install:
-.for binfile in ${binfiles}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${CONFIG_TARGET}/${binfile} \
-		${PREFIX}/bin
+post-install:
+.for manpage in ${MAN1}
+	@ ${INSTALL_MAN} ${WRKSRC}/man/man1/${manpage} ${MANPREFIX}/man/man1
 .endfor
-.for scriptfile in ${scriptfiles}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${CONFIG_TARGET}/${scriptfile} \
-		${PREFIX}/bin
-.endfor
-	cd ${WRKSRC}/lib/${CONFIG_TARGET} && \
-		find . | ${CPIO} ${BINOWN}:${BINGRP} ${PREFIX}/lib
-.for m in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${m} ${PREFIX}/man/man1
-.endfor
-	${MKDIR} ${PREFIX}/include/omniORB3
-	${MKDIR} ${PREFIX}/include/omnithread
-	${INSTALL_DATA} ${WRKSRC}/include/omnithread.h ${PREFIX}/include
-	cd ${WRKSRC}/include && ( \
-		${INSTALL_DATA} omnithread/* ${PREFIX}/include/omnithread; \
-		${INSTALL_DATA} omniORB3/* ${PREFIX}/include/omniORB3 )
-	cd ${WRKSRC}/lib/python && \
-		find . | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${PYTHON_SITELIBDIR}
-	@ cd ${.CURDIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.unix ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.FreeBSD ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReleaseNote_omniORB_${PORTVERSION:S/.//g} \
-		${DOCSDIR}
-	cd ${WRKSRC}/doc && \
-		find . | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@ ${MKDIR} ${DOCSDIR}
+	@ cd ${WRKSRC} && ${INSTALL_DATA} COPYING README.FIRST README.unix \
+	  ReleaseNotes_${PORTVERSION}.txt ${DOCSDIR}
+	@ ${TAR} cCf ${WRKSRC}/doc - . | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
 .include <bsd.port.mk>

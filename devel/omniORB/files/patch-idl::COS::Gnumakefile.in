@@ -1,0 +1,11 @@
+--- idl/COS/GNUmakefile.in.orig	Sun Aug 18 17:38:33 2002
++++ idl/COS/GNUmakefile.in	Fri Oct 18 20:27:23 2002
+@@ -4,7 +4,7 @@
+ VPATH=@srcdir@
+ INSTALL=@INSTALL@
+ 
+-INSTALLDIR = $(INSTALLIDLDIR)/omniORB/COS
++INSTALLDIR = $(INSTALLIDLDIR)/COS
+ 
+ FILES = AttNotifyChannelAdmin.idl CosCollection.idl			\
+         CosCompoundLifeCycle.idl CosConcurrencyControl.idl		\

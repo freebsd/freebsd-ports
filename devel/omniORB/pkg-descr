@@ -1,24 +1,24 @@
-omniORB3 is a GPL'd Object Request Broker (ORB) which implements
-specification 2.3 of the Common Object Request Broker Architecture (CORBA).
-Further information on CORBA can be found at http://www.omg.org/
+omniORB is a GPL'd Object Request Broker (ORB) which implements
+specification 2.6 of the Common Object Request Broker Architecture (CORBA).
 
-> TECHNICAL FEATURES:
+* Technical Highlights
 - C++ language bindings are supported. The mapping conforms to the latest
-  revision of the CORBA specification. 
+  revision of the CORBA specification.
 - Support for the Portable Object Adapter (POA)
 - Support for the Interoperable Naming Service (INS)
-- The Internet Inter-ORB Protocol (IIOP 1.0) is used as the native protocol. 
-- The omniORB3 runtime is fully multithreaded. It uses native platform thread
-  support encapsulated with a small class library, omnithread, to abstract
-  away from differences in native thread APIs. 
-- TypeCode and type Any are supported. 
-- DynAny is supported (CORBA 2.2) 
-- The Dynamic Invocation and Dynamic Skeleton interfaces are supported 
+- The Internet Inter-ORB Protocol (IIOP 1.2) is used as the native protocol.
+- The omniORB runtime is fully multithreaded.
+- TypeCode and type Any are supported.
+- DynAny is supported.
+- The Dynamic Invocation and Dynamic Skeleton interfaces are supported.
 - A COS Naming Service, omniNames, is provided. 
-> FEATURES STILL TO BE IMPLEMENTED:
-- Support for IDL type longdouble, wchar, wstring, fixed, valuetype.
-> MISSING FEATURES:
-- omniORB3 does not has its own Interface Repository. However any CORBA
-  compliant Interface Repository can be used with omniORB3. 
 
-WWW: http://www.uk.research.att.com/omniORB/
+* Work in progress
+- Objects by value.
+- Portable Interceptors.
+
+* Missing features
+- omniORB does not has its own Interface Repository. However, the omniifr
+  project aims to create one.
+
+WWW: http://omniorb.sourceforge.net/
