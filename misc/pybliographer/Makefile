@@ -11,7 +11,7 @@ CATEGORIES=	misc python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/pyblio/
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		recode:${PORTSDIR}/converters/recode
