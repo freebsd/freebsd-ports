@@ -1,6 +1,7 @@
 bin/mlvwm
 lib/X11/mlvwm/Mlvwmrc
 lib/X11/mlvwm/Mlvwmrc-Kterm
+lib/X11/mlvwm/Mlvwmrc-Kterm-j
 lib/X11/mlvwm/Mlvwmrc-Netscape
 lib/X11/mlvwm/Mlvwmrc-j
 lib/X11/mlvwm/pixmap/MailEmpty.xpm
@@ -111,3 +112,6 @@ lib/X11/mlvwm/pixmap/mini.xpaint.xpm
 lib/X11/mlvwm/pixmap/mini.xpm
 lib/X11/mlvwm/pixmap/mini.xterm.xpm
 lib/X11/mlvwm/pixmap/mini.zircon.xpm
+man/man1/mlvwm.1.gz
+@dirrm lib/X11/mlvwm/pixmap
+@dirrm lib/X11/mlvwm

@@ -1,38 +1,19 @@
-*** sample_rc/Mlvwmrc.orig	Thu Apr 10 23:17:40 1997
---- sample_rc/Mlvwmrc	Sun May 25 19:11:32 1997
+*** sample_rc/Mlvwmrc-j.orig	Fri Dec  5 23:34:21 1997
+--- sample_rc/Mlvwmrc-j	Fri Dec  5 23:34:54 1997
 ***************
-*** 20,26 ****
-  DoubleClickTime 300
+*** 39,45 ****
+  Compatible
   
-  # Set icon search path. It needs before "Style".
+  # IconPath の指定。Style の指定の前に必要
 ! IconPath /usr/local/include/X11/pixmaps:/home2/tak/bin/pixmap
   IconMenuIcon label2.xpm
   
-  # Font Settings(without LOCALE)
---- 20,26 ----
-  DoubleClickTime 300
+  # Balloon help Settings
+--- 39,45 ----
+  Compatible
   
-  # Set icon search path. It needs before "Style".
-! IconPath /usr/X11R6/lib/X11/mlvwm/pixmap:/home2/tak/bin/pixmap
+  # IconPath の指定。Style の指定の前に必要
+! IconPath /usr/X11R6/lib/X11/mlvwm/pixmaps:/home2/tak/bin/pixmap
   IconMenuIcon label2.xpm
   
-  # Font Settings(without LOCALE)
-***************
-*** 44,51 ****
-  Menu Apple, Icon label1.xpm, Stick
-  "About this Workstation..." NonSelect, Gray, Action About
-  "" NonSelect
-! "Terminal"	Icon mini-display.xpm, Action Exec "kterm" exec kterm -ls
-! "Editor"  Action Exec "mule" exec mule, Icon mini-edit.xpm
-  "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
-  END
-  
---- 44,51 ----
-  Menu Apple, Icon label1.xpm, Stick
-  "About this Workstation..." NonSelect, Gray, Action About
-  "" NonSelect
-! "Terminal"	Icon mini-display.xpm, Action Exec "xterm" exec xterm -ls
-! "Editor"  Action Exec "emacs" exec emacs, Icon mini-edit.xpm
-  "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
-  END
-  
+  # Balloon help Settings
