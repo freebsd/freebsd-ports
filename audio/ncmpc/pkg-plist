@@ -2,4 +2,6 @@ bin/ncmpc
 %%EXAMPLESDIR%%/config
 %%EXAMPLESDIR%%/keys
 %%EXAMPLESDIR%%/ncmpc.lirc
+%%NLS%%share/locale/de/LC_MESSAGES/ncmpc.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/ncmpc.mo
 @dirrm %%EXAMPLESDIR%%

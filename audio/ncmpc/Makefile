@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	audio
 MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
 		http://mercury.chem.pitt.edu/~shank/
@@ -14,23 +14,46 @@ MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Ncurses client for the musicpd
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		glib-2.0.400:${PORTSDIR}/devel/glib20
+LIB_DEPENDS=	glib-2.0.400:${PORTSDIR}/devel/glib20
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+OPTIONS=	NLS "Native language support" on \
+		CLOCK_SCREEN "Enable clock screen" on
+
+.include <bsd.port.pre.mk>
+
 USE_ICONV=	yes
+
+.ifdef(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if !defined(WITHOUT_CLOCK_SCREEN)
+CONFIGURE_ARGS+=--enable-clock-screen
+.endif
 
 MAN1=		ncmpc.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ncmpc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpc ${PREFIX}/bin/
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/config.sample ${EXAMPLESDIR}/config
 	${INSTALL_DATA} ${WRKSRC}/doc/keys.sample ${EXAMPLESDIR}/keys
 	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${EXAMPLESDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${MAN1PREFIX}/man/man1/
+.if !defined(WITHOUT_NLS)
+.for language in de sv
+	${MKDIR} ${LOCALBASE}/share/locale/${language}/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/${language}.gmo ${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
+.endfor
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
