@@ -26,7 +26,9 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/security/openssh/files/Attic/name6.c,v 1.1 2000-01-13 23:22:13 green Exp $
+ * ported from:
+ * FreeBSD: src/lib/libc/net/name6.c,v 1.4 2000/01/27 23:06:30 jasone Exp
+ * $FreeBSD: /tmp/pcvs/ports/security/openssh/files/Attic/name6.c,v 1.2 2000-04-17 22:20:24 sumikawa Exp $
  */
 /* $Id: name6.c,v 1.9 1999/10/29 03:04:26 itojun Exp $ */
 /*
@@ -1184,21 +1186,21 @@ _icmp_fqdn_query(const struct in6_addr *addr, int ifindex)
 			 (char *)&filter, sizeof(filter));
 	cc = sendmsg(s, &msg, 0);
 	if (cc < 0) {
-		_libc_close(s);
+		close(s);
 		return NULL;
 	}
 	FD_SET(s, &s_fds);
 	for (;;) {
 		fds = s_fds;
 		if (select(s + 1, &fds, NULL, NULL, &tout) <= 0) {
-			_libc_close(s);
+			close(s);
 			return NULL;
 		}
 		len = sizeof(sin6);
 		cc = recvfrom(s, buf, sizeof(buf), 0,
 			      (struct sockaddr *)&sin6, &len);
 		if (cc <= 0) {
-			_libc_close(s);
+			close(s);
 			return NULL;
 		}
 		if (cc < sizeof(struct ip6_hdr) + sizeof(struct icmp6_hdr))
@@ -1209,7 +1211,7 @@ _icmp_fqdn_query(const struct in6_addr *addr, int ifindex)
 		if (fr->icmp6_fqdn_type == ICMP6_FQDN_REPLY)
 			break;
 	}
-	_libc_close(s);
+	close(s);
 	if (fr->icmp6_fqdn_cookie[1] != 0) {
 		/* rfc1788 type */
 		name = buf + sizeof(struct ip6_hdr) + sizeof(struct icmp6_hdr) + 4;
