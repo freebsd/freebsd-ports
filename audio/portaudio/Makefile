@@ -21,6 +21,8 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=yes
 
+SHLIB_VERSION=	0
+
 pre-everything::
 .if !defined(WITH_PATESTS)
 	@${ECHO_MSG}
@@ -50,9 +52,11 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|tests$$||' ${WRKSRC}/Makefile
 .endif
 
-.if defined(WITH_PATESTS)
 post-install:
+.if defined(WITH_PATESTS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
 .endif
+	@${LN} -sf libportaudio.so \
+		${PREFIX}/lib/libportaudio.so.${SHLIB_VERSION}
 
 .include <bsd.port.mk>
