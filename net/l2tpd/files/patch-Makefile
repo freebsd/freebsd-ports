@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- Makefile.orig	Sat Aug 10 03:42:22 2002
-+++ Makefile	Wed Oct 23 16:32:38 2002
++++ Makefile	Fri Apr 11 19:12:26 2003
 @@ -27,11 +27,11 @@
  # become runtime options) debugging flags
  #
@@ -26,9 +26,12 @@ $FreeBSD$
  #
  # Uncomment the next line for Solaris. For solaris, at least,
  # we don't want to specify -I/usr/include because it is in
-@@ -56,7 +56,7 @@
+@@ -54,9 +54,9 @@
+ # Comment the following line to disable l2tpd maintaining IP address
+ # pools to pass to pppd to control IP address allocation
  
- FFLAGS= -DIP_ALLOCATION 
+-FFLAGS= -DIP_ALLOCATION 
++#FFLAGS= -DIP_ALLOCATION 
  
 -CFLAGS= $(DFLAGS) -Wall -DSANITY $(OSFLAGS) $(FFLAGS)
 +CFLAGS+= $(DFLAGS) -Wall -DSANITY $(OSFLAGS) $(FFLAGS)
