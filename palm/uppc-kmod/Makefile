@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uppc
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	palm
 MASTER_SITES=	http://sam.stral.net/freebsd/
 PKGNAMESUFFIX=	-kmod
@@ -37,7 +37,8 @@ do-install:
 
 post-install:
 	@${ECHO_CMD} "       ****************************************************************"
-	@${ECHO_CMD} "       * You can run 'uppcsetup' to help configure the device driver. *"
+	@${ECHO_CMD} "       * You can run 'uppcsetup' to help configure the device driver  *"
+	@${ECHO_CMD} "       * and set up a connection.                                     *"
 	@${ECHO_CMD} "       ****************************************************************"
 
 .include <bsd.port.mk>
