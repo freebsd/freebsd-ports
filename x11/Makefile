@@ -36,7 +36,6 @@
     SUBDIR += eterm
     SUBDIR += eweather
     SUBDIR += fbsd-icons
-    SUBDIR += finder
     SUBDIR += fspanel
     SUBDIR += gdkxft
     SUBDIR += gdm2
@@ -100,7 +99,6 @@
     SUBDIR += rxvt-devel
     SUBDIR += settitle
     SUBDIR += startup-notification
-    SUBDIR += stockticker_applet
     SUBDIR += sxpc
     SUBDIR += temperature.app
     SUBDIR += tkgoodstuff
