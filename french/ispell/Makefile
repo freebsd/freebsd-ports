@@ -8,8 +8,7 @@
 MAINTAINER=     alex@FreeBSD.org
 
 ISPELL_FR=	yes
-PORTNAME=	fr-ispell
 PORTVERSION= 	1.4
-MASTERDIR=      ${.CURDIR}/../ispell
+MASTERDIR=      ${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"
