@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.45 1998/07/17 18:52:17 obrien Exp $
+# $Id: Makefile,v 1.46 1998/07/18 19:09:24 obrien Exp $
 
 DISTNAME=	mutt-0.93.1i
 PKGNAME=	mutt-0.93.1
@@ -27,7 +27,8 @@ MAINTAINER=     obrien@FreeBSD.org
 
 .if defined(BATCH)
 LIB_DEPENDS=	slang\\.1\\.:${PORTSDIR}/devel/libslang
-BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
+		sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .elif defined(USE_NCURSES_PORT)
 LIB_DEPENDS=	ncurses\\.4\\.:${PORTSDIR}/devel/ncurses
@@ -55,13 +56,23 @@ post-patch:
 pre-configure:
 	@${MKDIR} ${PREFIX}/share/misc
 
+.if defined(BATCH) && !defined(NOPORTDOCS)
+PLIST:=		${WRKDIR}/PLIST
+post-build:
+	cd ${WRKSRC}/doc; ${MAKE} fbsd
+	@${CAT} ${PKGDIR}/PLIST.htmlfiles >> ${PLIST}
+	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+.endif
+
 post-install:
 	@strip ${PREFIX}/bin/mutt
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && chmod a+rx ${PREFIX}/share/doc/mutt
-	@${INSTALL_MAN} ${WRKSRC}/doc/*.txt  \
-		${PREFIX}/share/doc/mutt
+	@${INSTALL_MAN} ${WRKSRC}/doc/*.txt ${PREFIX}/share/doc/mutt
+.if defined(BATCH)
+	@${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt
+.endif
 	@(cd ${WRKSRC} ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc  \
 		${PREFIX}/share/doc/mutt)
 .endif
