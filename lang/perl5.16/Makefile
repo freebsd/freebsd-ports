@@ -51,6 +51,13 @@ CONFIGURE_ARGS+=	-Dusemymalloc=y
 CONFIGURE_ARGS+=	-Dusemymalloc=n
 .endif
 
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	-Dusethreads=y
+PKGNAMESUFFIX=		-threaded
+.else
+CONFIGURE_ARGS+=	-Dusethreads=n
+.endif
+
 INCLUDEDIR=	/usr/include
 
 .include <bsd.port.pre.mk>
