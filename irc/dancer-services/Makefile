@@ -30,6 +30,12 @@ MAKE_ARGS=	BINDIR=${PREFIX}/sbin \
 IS_INTERACTIVE=	yes
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Configure fails"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' \
 		${WRKSRC}/bin/services.conf \
@@ -78,4 +84,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
