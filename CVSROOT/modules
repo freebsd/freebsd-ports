@@ -4468,6 +4468,7 @@ nmapfe		ports/security/nmapfe
 nmh		ports/mail/nmh
 nml		ports/lang/nml
 nn		ports/news/nn
+nnap		ports/news/nnap
 nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
