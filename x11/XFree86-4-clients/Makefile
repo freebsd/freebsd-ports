@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.11 1995/06/17 01:29:06 jmz Exp $
+# $Id: Makefile,v 1.12 1995/06/24 11:42:06 asami Exp $
 #
 
 #######################################################################
@@ -30,6 +30,7 @@ NO_PACKAGE	=	yes
 #######################################################################
 DISTNAME	=	xc
 PKGNAME		= 	XFree86-3.1.1
+CATEGORIES	=	x11
 IS_INTERACTIVE=		yes
 
 MAINTAINER=		jmz@FreeBSD.ORG
