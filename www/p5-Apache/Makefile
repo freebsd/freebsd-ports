@@ -3,7 +3,7 @@
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.12 1999/02/20 06:26:04 asami Exp $
+# $Id: Makefile,v 1.13 1999/05/10 12:20:09 kuriyama Exp $
 #
 
 DISTNAME=	mod_perl-1.19
@@ -14,10 +14,10 @@ MASTER_SITE_SUBDIR=	Apache
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/apache12:patch
+BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/apache13:patch
 
 USE_PERL5=	YES
-CONFIGURE_ENV=	APACHEDIR=${WRKDIRPREFIX}${.CURDIR}/../apache12/work/ INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+CONFIGURE_ENV=	APACHEDIR=${WRKDIRPREFIX}${.CURDIR}/../apache13/work/ INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::FakeRequest.3 Apache::Leak.3 \
 		Apache::Log.3 Apache::Options.3 \
