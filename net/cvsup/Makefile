@@ -1,15 +1,15 @@
 # New ports collection makefile for:	cvsup
-# Version required:	16.0
+# Version required:	16.1
 # Date created:		7 August 1996
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cvsup-16.0
+DISTNAME=	cvsup-16.1
 CATEGORIES=	devel net
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/ \
-		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
+		ftp://ftp.cs.tu-berlin.de/pub/FreeBSD/development/CVSup/sources/
 
 MAINTAINER=	jdp@FreeBSD.org
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	m3.6:${PORTSDIR}/lang/modula-3-lib
 
 MAN1=		cvpasswd.1 cvsup.1
 MAN8=		cvsupd.8
+NOT_FOR_ARCHS=	alpha
 
 # Support building on systems with or without X11 installed.
 .ifdef NO_X11
