@@ -48,7 +48,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/examples/cider
 	@${TAR} -cf - -C ${WRKSRC}/cider/common/examples . | ${TAR} -xf - -C ${PREFIX}/share/examples/cider
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/cider
-	@${LN} -fs ${PREFIX}/share/spice3/scripts/spinit ${PREFIX}/share/cider/scripts
 .endif
+	@${LN} -fs ${PREFIX}/share/spice3/scripts/spinit ${PREFIX}/share/cider/scripts
 
 .include <bsd.port.mk>
