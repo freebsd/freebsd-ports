@@ -21,17 +21,20 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
-CONFIGURE_ARGS+= \
-		--enable-transparency --enable-background-image \
-		--disable-delete-key --disable-backspace-key \
-		--enable-fading --enable-utmp --enable-wtmp
+CONFIGURE_ARGS+=	\
+			--enable-transparency --enable-background-image \
+			--enable-fading --enable-utmp --enable-wtmp
+
+.if !defined(WITH_BSDEL)
+CONFIGURE_ARGS+=	--disable-backspace-key --disable-delete-key
+.endif
 
 .if defined(WITH_MENUBAR)
-CONFIGURE_ARGS+= --enable-menubar
+CONFIGURE_ARGS+=	--enable-menubar
 .endif
 
 .if defined(WITH_NEXTSCROLL)
-CONFIGURE_ARGS+= --enable-next-scroll
+CONFIGURE_ARGS+=	--enable-next-scroll
 .endif
 
 MAN1=		aterm.1
