@@ -5,23 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xdvik-vflib
-PORTVERSION=	22.40w.1.17
-PORTREVISION=	1
+PORTNAME=	xdvik
+PORTVERSION=	22.40y1.1.21
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xdvi
-DISTNAME=	xdvik-22.40w
+DISTNAME=	xdvik-22.40y1
 
 PATCH_SITES=	http://www.nn.iij4u.or.jp/~tutimura/tex/
-PATCHFILES=	xdvik-22.40w-j1.17.patch.gz
+PATCHFILES=	xdvik-22.40y1-j1.21.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
 COMMENT=	DVI Previewer(kpathsearch) for X. + jp-patch
 
-LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib \
-		wwwcore.1:${PORTSDIR}/www/libwww \
+.if defined(WITH_VF2FT)
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+PKGNAMESUFFIX=	-ft
+.else
+LIB_DEPENDS=	VFlib2:${PORTSDIR}/japanese/vflib
+PKGNAMESUFFIX=	-vflib
+.endif
+LIB_DEPENDS+=	wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 DIST_SUBDIR=	xdvik
@@ -38,6 +43,9 @@ CONFIGURE_ARGS=	--enable-a4 --enable-shrink=${SHRINK} \
 		--with-system-t1lib --with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 		--with-t1lib-include=${LIBT1_PREFIX}/include \
 		--enable-vikey --disable-multiplatform
+.if defined(WITH_VF2FT)
+CONFIGURE_ARGS+=	--with-vflib=vf2ft
+.endif
 CONFIGURE_ENV=	INSTALL="${INSTALL}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
@@ -54,6 +62,7 @@ TEXMF=		${PREFIX}/share/texmf
 #VARTEXFONTS=	/var/tmp/texfonts
 XDVIDIR=	${TEXMF}/xdvi
 APPDEFAULTSDIR?=	lib/X11/app-defaults
+CIDFONTDIR?=	${TEXMF}/dvipdfm/CIDFont
 
 PLIST_SUB+=	APPDEFAULTSDIR=${APPDEFAULTSDIR}
 
@@ -64,7 +73,7 @@ PLIST_SUB+=	APPDEFAULTSDIR=${APPDEFAULTSDIR}
 #PKFONTS=	.:${PREFIX}/lib/fonts/pk{118:240:300:360:400:600}//
 #XDEFS+=		-DDEFAULT_PKFONTS=\"\\\"${PKFONTS}\\\"\"
 
-DOCS=		FAQ xdvi.icon CHANGES.xdvik-jp \
+DOCS=		FAQ xdvi.icon CHANGES.xdvik-jp.html \
 		README.xdvik-jp \
 		README.src-specials \
 		README.t1fonts \
@@ -156,13 +165,15 @@ pre-fetch:
 
 pre-build:
 	@(cd ${WRKSRC} ; ${FIND} . -name '*.orig' -exec ${RM} -f {} \;)
+	${SED} -e 's,%%CIDFONTDIR%%,${CIDFONTDIR},'\
+		< ${FILESDIR}/vfontmap > ${WRKSRC}/vfontmap
 
 do-install:
 	@(cd ${WRKSRC}/texk/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/vfontmap ${XDVIDIR}
+	@${INSTALL_DATA} ${WRKSRC}/vfontmap ${XDVIDIR}
 	@${INSTALL_DATA} ${WRKSRC}/texk/xdvik/texmf/XDvi ${X11BASE}/${APPDEFAULTSDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
