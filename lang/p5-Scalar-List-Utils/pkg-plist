@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/Util.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Scalar/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/List/Util.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/List/Util
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/List 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Scalar 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/List 2>/dev/null || true
