@@ -1,0 +1,473 @@
+Index: xc/lib/Attrib.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/Attrib.c,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 Attrib.c
+--- lib/Attrib.c	15 Feb 2001 07:59:10 -0000	1.1.1.1
++++ lib/Attrib.c	31 Aug 2004 23:28:59 -0000
+@@ -35,7 +35,7 @@
+ #include "XpmI.h"
+ 
+ /* 3.2 backward compatibility code */
+-LFUNC(CreateOldColorTable, int, (XpmColor *ct, int ncolors,
++LFUNC(CreateOldColorTable, int, (XpmColor *ct, unsigned int ncolors,
+ 				 XpmColor ***oldct));
+ 
+ LFUNC(FreeOldColorTable, void, (XpmColor **colorTable, int ncolors));
+@@ -46,11 +46,14 @@
+ static int
+ CreateOldColorTable(ct, ncolors, oldct)
+     XpmColor *ct;
+-    int ncolors;
++    unsigned int ncolors;
+     XpmColor ***oldct;
+ {
+     XpmColor **colorTable, **color;
+     int a;
++
++    if (ncolors >= SIZE_MAX / sizeof(XpmColor *)) 
++	return XpmNoMemory;
+ 
+     colorTable = (XpmColor **) XpmMalloc(ncolors * sizeof(XpmColor *));
+     if (!colorTable) {
+Index: xc/lib/CrDatFrI.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/CrDatFrI.c,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 CrDatFrI.c
+--- lib/CrDatFrI.c	19 Jan 2002 11:08:43 -0000	1.1.1.2
++++ lib/CrDatFrI.c	31 Aug 2004 23:28:59 -0000
+@@ -124,6 +124,8 @@
+      */
+     header_nlines = 1 + image->ncolors;
+     header_size = sizeof(char *) * header_nlines;
++    if (header_size >= SIZE_MAX / sizeof(char *))
++	return (XpmNoMemory);
+     header = (char **) XpmCalloc(header_size, sizeof(char *));
+     if (!header)
+ 	return (XpmNoMemory);
+Index: xc/lib/WrFFrI.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/WrFFrI.c,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 WrFFrI.c
+--- lib/WrFFrI.c	19 Jan 2002 11:08:43 -0000	1.1.1.2
++++ lib/WrFFrI.c	31 Aug 2004 23:28:59 -0000
+@@ -248,6 +248,8 @@
+     unsigned int x, y, h;
+ 
+     h = height - 1;
++    if (cpp != 0 && width >= (SIZE_MAX - 3)/cpp) 
++	return XpmNoMemory;    
+     p = buf = (char *) XpmMalloc(width * cpp + 3);
+     if (!buf)
+ 	return (XpmNoMemory);
+Index: xc/lib/XpmI.h
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/XpmI.h,v
+retrieving revision 1.6
+diff -u -r1.6 XpmI.h
+--- lib/XpmI.h	13 Feb 2004 22:40:56 -0000	1.6
++++ lib/XpmI.h	31 Aug 2004 23:28:59 -0000
+@@ -86,6 +86,18 @@
+ 		boundCheckingCalloc((long)(nelem),(long) (elsize))
+ #endif
+ 
++#if defined(SCO) || defined(__USLC__)
++#include <stdint.h>	/* For SIZE_MAX */
++#endif
++#include <limits.h>
++#ifndef SIZE_MAX
++# ifdef ULONG_MAX
++#  define SIZE_MAX ULONG_MAX
++# else 
++#  define SIZE_MAX UINT_MAX
++# endif
++#endif
++
+ #define XPMMAXCMTLEN BUFSIZ
+ typedef struct {
+     unsigned int type;
+@@ -187,9 +199,9 @@
+ }      *xpmHashAtom;
+ 
+ typedef struct {
+-    int size;
+-    int limit;
+-    int used;
++    unsigned int size;
++    unsigned int limit;
++    unsigned int used;
+     xpmHashAtom *atomTable;
+ }      xpmHashTable;
+ 
+Index: xc/lib/create.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/create.c,v
+retrieving revision 1.3
+diff -u -r1.3 create.c
+--- lib/create.c	13 Feb 2004 22:40:56 -0000	1.3
++++ lib/create.c	31 Aug 2004 23:28:59 -0000
+@@ -1,3 +1,4 @@
++/* $XdotOrg: pre-CVS proposed fix for CESA-2004-003 alanc 7/25/2004 $ */
+ /*
+  * Copyright (C) 1989-95 GROUPE BULL
+  *
+@@ -816,6 +817,9 @@
+ 
+     ErrorStatus = XpmSuccess;
+ 
++    if (image->ncolors >= SIZE_MAX / sizeof(Pixel)) 
++	return (XpmNoMemory);
++
+     /* malloc pixels index tables */
+     image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * image->ncolors);
+     if (!image_pixels)
+@@ -988,6 +992,8 @@
+ 	return (XpmNoMemory);
+ 
+ #if !defined(FOR_MSW) && !defined(AMIGA)
++    if (height != 0 && (*image_return)->bytes_per_line >= SIZE_MAX / height)
++	return XpmNoMemory;
+     /* now that bytes_per_line must have been set properly alloc data */
+     (*image_return)->data =
+ 	(char *) XpmMalloc((*image_return)->bytes_per_line * height);
+@@ -2055,6 +2061,9 @@
+ 	xpmGetCmt(data, &colors_cmt);
+ 
+     /* malloc pixels index tables */
++    if (ncolors >= SIZE_MAX / sizeof(Pixel)) 
++	return XpmNoMemory;
++
+     image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * ncolors);
+     if (!image_pixels)
+ 	RETURN(XpmNoMemory);
+@@ -2309,7 +2318,8 @@
+ 	    }
+ 	    obm = SelectObject(*dc, image->bitmap);
+ #endif
+-
++	    if (ncolors > 256)
++		return (XpmFileInvalid);
+ 
+ 	    bzero((char *)colidx, 256 * sizeof(short));
+ 	    for (a = 0; a < ncolors; a++)
+@@ -2414,6 +2424,9 @@
+ 	{
+ 	    char *s;
+ 	    char buf[BUFSIZ];
++
++	    if (cpp >= sizeof(buf))
++		return (XpmFileInvalid);
+ 
+ 	    buf[cpp] = '\0';
+ 	    if (USE_HASHTABLE) {
+Index: xc/lib/data.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/data.c,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 data.c
+--- lib/data.c	19 Jan 2002 11:08:44 -0000	1.1.1.2
++++ lib/data.c	31 Aug 2004 23:28:59 -0000
+@@ -375,7 +375,7 @@
+ {
+     if (!data->type)
+ 	*cmt = NULL;
+-    else if (data->CommentLength) {
++    else if (data->CommentLength != 0 && data->CommentLength < SIZE_MAX - 1) {
+ 	*cmt = (char *) XpmMalloc(data->CommentLength + 1);
+ 	strncpy(*cmt, data->Comment, data->CommentLength);
+ 	(*cmt)[data->CommentLength] = '\0';
+Index: xc/lib/hashtab.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/hashtab.c,v
+retrieving revision 1.1.1.1
+diff -u -r1.1.1.1 hashtab.c
+--- lib/hashtab.c	15 Feb 2001 07:59:10 -0000	1.1.1.1
++++ lib/hashtab.c	31 Aug 2004 23:28:59 -0000
+@@ -135,7 +135,7 @@
+     xpmHashTable *table;
+ {
+     xpmHashAtom *atomTable = table->atomTable;
+-    int size = table->size;
++    unsigned int size = table->size;
+     xpmHashAtom *t, *p;
+     int i;
+     int oldSize = size;
+@@ -144,6 +144,8 @@
+     HASH_TABLE_GROWS
+ 	table->size = size;
+     table->limit = size / 3;
++    if (size >= SIZE_MAX / sizeof(*atomTable)) 
++	return (XpmNoMemory);
+     atomTable = (xpmHashAtom *) XpmMalloc(size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (XpmNoMemory);
+@@ -204,6 +206,8 @@
+     table->size = INITIAL_HASH_SIZE;
+     table->limit = table->size / 3;
+     table->used = 0;
++    if (table->size >= SIZE_MAX / sizeof(*atomTable))
++	return (XpmNoMemory);
+     atomTable = (xpmHashAtom *) XpmMalloc(table->size * sizeof(*atomTable));
+     if (!atomTable)
+ 	return (XpmNoMemory);
+Index: xc/lib/parse.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/parse.c,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 parse.c
+--- lib/parse.c	19 Jan 2002 11:08:44 -0000	1.1.1.2
++++ lib/parse.c	31 Aug 2004 23:28:59 -0000
+@@ -1,3 +1,4 @@
++/* $XdotOrg: pre-CVS proposed fix for CESA-2004-003 alanc 7/25/2004 $ */
+ /*
+  * Copyright (C) 1989-95 GROUPE BULL
+  *
+@@ -44,6 +45,24 @@
+ #include <ctype.h>
+ #include <string.h>
+ 
++#ifdef HAS_STRLCAT
++# define STRLCAT(dst, src, dstsize) { \
++  	if (strlcat(dst, src, dstsize) >= (dstsize)) \
++	    return (XpmFileInvalid); }
++# define STRLCPY(dst, src, dstsize) { \
++  	if (strlcpy(dst, src, dstsize) >= (dstsize)) \
++	    return (XpmFileInvalid); }
++#else
++# define STRLCAT(dst, src, dstsize) { \
++	if ((strlen(dst) + strlen(src)) < (dstsize)) \
++ 	    strcat(dst, src); \
++	else return (XpmFileInvalid); }
++# define STRLCPY(dst, src, dstsize) { \
++	if (strlen(src) < (dstsize)) \
++ 	    strcpy(dst, src); \
++	else return (XpmFileInvalid); }
++#endif
++
+ LFUNC(ParsePixels, int, (xpmData *data, unsigned int width,
+ 			 unsigned int height, unsigned int ncolors,
+ 			 unsigned int cpp, XpmColor *colorTable,
+@@ -66,7 +85,7 @@
+     unsigned int *extensions;
+ {
+     unsigned int l;
+-    char buf[BUFSIZ];
++    char buf[BUFSIZ + 1];
+ 
+     if (!data->format) {		/* XPM 2 or 3 */
+ 
+@@ -175,10 +194,10 @@
+     XpmColor **colorTablePtr;
+     xpmHashTable *hashtable;
+ {
+-    unsigned int key = 0, l, a, b;
++    unsigned int key = 0, l, a, b, len;
+     unsigned int curkey;		/* current color key */
+     unsigned int lastwaskey;		/* key read */
+-    char buf[BUFSIZ];
++    char buf[BUFSIZ+1];
+     char curbuf[BUFSIZ];		/* current buffer */
+     char **sptr, *s;
+     XpmColor *color;
+@@ -186,6 +205,8 @@
+     char **defaults;
+     int ErrorStatus;
+ 
++    if (ncolors >= SIZE_MAX / sizeof(XpmColor))
++	return (XpmNoMemory);
+     colorTable = (XpmColor *) XpmCalloc(ncolors, sizeof(XpmColor));
+     if (!colorTable)
+ 	return (XpmNoMemory);
+@@ -197,6 +218,10 @@
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp >= SIZE_MAX - 1) {
++		xpmFreeColorTable(colorTable, ncolors);
++		return (XpmNoMemory);
++	    }
+ 	    color->string = (char *) XpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+@@ -234,13 +259,14 @@
+ 		}
+ 		if (!lastwaskey && key < NKEYS) {	/* open new key */
+ 		    if (curkey) {	/* flush string */
+-			s = (char *) XpmMalloc(strlen(curbuf) + 1);
++			len = strlen(curbuf) + 1;
++			s = (char *) XpmMalloc(len);
+ 			if (!s) {
+ 			    xpmFreeColorTable(colorTable, ncolors);
+ 			    return (XpmNoMemory);
+ 			}
+ 			defaults[curkey] = s;
+-			strcpy(s, curbuf);
++			memcpy(s, curbuf, len);
+ 		    }
+ 		    curkey = key + 1;	/* set new key  */
+ 		    *curbuf = '\0';	/* reset curbuf */
+@@ -251,9 +277,9 @@
+ 			return (XpmFileInvalid);
+ 		    }
+ 		    if (!lastwaskey)
+-			strcat(curbuf, " ");	/* append space */
++			STRLCAT(curbuf, " ", sizeof(curbuf)); /* append space */
+ 		    buf[l] = '\0';
+-		    strcat(curbuf, buf);/* append buf */
++		    STRLCAT(curbuf, buf, sizeof(curbuf));/* append buf */
+ 		    lastwaskey = 0;
+ 		}
+ 	    }
+@@ -261,12 +287,13 @@
+ 		xpmFreeColorTable(colorTable, ncolors);
+ 		return (XpmFileInvalid);
+ 	    }
+-	    s = defaults[curkey] = (char *) XpmMalloc(strlen(curbuf) + 1);
++	    len = strlen(curbuf) + 1;
++	    s = defaults[curkey] = (char *) XpmMalloc(len);
+ 	    if (!s) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+ 		return (XpmNoMemory);
+ 	    }
+-	    strcpy(s, curbuf);
++	    memcpy(s, curbuf, len);
+ 	}
+     } else {				/* XPM 1 */
+ 	/* get to the beginning of the first string */
+@@ -279,6 +306,10 @@
+ 	    /*
+ 	     * read pixel value
+ 	     */
++	    if (cpp >= SIZE_MAX - 1) {
++		xpmFreeColorTable(colorTable, ncolors);
++		return (XpmNoMemory);
++	    }
+ 	    color->string = (char *) XpmMalloc(cpp + 1);
+ 	    if (!color->string) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+@@ -307,16 +338,17 @@
+ 	    *curbuf = '\0';		/* init curbuf */
+ 	    while ((l = xpmNextWord(data, buf, BUFSIZ))) {
+ 		if (*curbuf != '\0')
+-		    strcat(curbuf, " ");/* append space */
++		    STRLCAT(curbuf, " ", sizeof(curbuf));/* append space */
+ 		buf[l] = '\0';
+-		strcat(curbuf, buf);	/* append buf */
++		STRLCAT(curbuf, buf, sizeof(curbuf));	/* append buf */
+ 	    }
+-	    s = (char *) XpmMalloc(strlen(curbuf) + 1);
++	    len = strlen(curbuf) + 1;
++	    s = (char *) XpmMalloc(len);
+ 	    if (!s) {
+ 		xpmFreeColorTable(colorTable, ncolors);
+ 		return (XpmNoMemory);
+ 	    }
+-	    strcpy(s, curbuf);
++	    memcpy(s, curbuf, len);
+ 	    color->c_color = s;
+ 	    *curbuf = '\0';		/* reset curbuf */
+ 	    if (a < ncolors - 1)
+@@ -341,6 +373,9 @@
+     unsigned int *iptr, *iptr2;
+     unsigned int a, x, y;
+ 
++    if ((height > 0 && width >= SIZE_MAX / height) ||
++	width * height >= SIZE_MAX / sizeof(unsigned int)) 
++	return XpmNoMemory;
+ #ifndef FOR_MSW
+     iptr2 = (unsigned int *) XpmMalloc(sizeof(unsigned int) * width * height);
+ #else
+@@ -364,6 +399,9 @@
+ 	{
+ 	    unsigned short colidx[256];
+ 
++	    if (ncolors > 256)
++		return (XpmFileInvalid);
++
+ 	    bzero((char *)colidx, 256 * sizeof(short));
+ 	    for (a = 0; a < ncolors; a++)
+ 		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
+@@ -441,6 +479,9 @@
+ 	{
+ 	    char *s;
+ 	    char buf[BUFSIZ];
++
++	    if (cpp >= sizeof(buf))
++		return (XpmFileInvalid);
+ 
+ 	    buf[cpp] = '\0';
+ 	    if (USE_HASHTABLE) {
+Index: xc/lib/scan.c
+===================================================================
+RCS file: /cvs/OpenBSD/XF4/xc/lib/scan.c,v
+retrieving revision 1.1.1.2
+diff -u -r1.1.1.2 scan.c
+--- lib/scan.c	19 Jan 2002 11:08:44 -0000	1.1.1.2
++++ lib/scan.c	31 Aug 2004 23:28:59 -0000
+@@ -107,7 +107,8 @@
+ LFUNC(ScanTransparentColor, int, (XpmColor *color, unsigned int cpp,
+ 				  XpmAttributes *attributes));
+ 
+-LFUNC(ScanOtherColors, int, (Display *display, XpmColor *colors, int ncolors,
++LFUNC(ScanOtherColors, int, (Display *display, XpmColor *colors, 
++			     unsigned int ncolors, 
+ 			     Pixel *pixels, unsigned int mask,
+ 			     unsigned int cpp, XpmAttributes *attributes));
+ 
+@@ -232,11 +233,17 @@
+     else
+ 	cpp = 0;
+ 
++    if ((height > 0 && width >= SIZE_MAX / height) ||
++	width * height >= SIZE_MAX / sizeof(unsigned int))
++	RETURN(XpmNoMemory);
+     pmap.pixelindex =
+ 	(unsigned int *) XpmCalloc(width * height, sizeof(unsigned int));
+     if (!pmap.pixelindex)
+ 	RETURN(XpmNoMemory);
+ 
++    if (pmap.size >= SIZE_MAX / sizeof(Pixel)) 
++	RETURN(XpmNoMemory);
++
+     pmap.pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * pmap.size);
+     if (!pmap.pixels)
+ 	RETURN(XpmNoMemory);
+@@ -301,7 +308,8 @@
+      * get rgb values and a string of char, and possibly a name for each
+      * color
+      */
+-
++    if (pmap.ncolors >= SIZE_MAX / sizeof(XpmColor))
++	RETURN(XpmNoMemory);
+     colorTable = (XpmColor *) XpmCalloc(pmap.ncolors, sizeof(XpmColor));
+     if (!colorTable)
+ 	RETURN(XpmNoMemory);
+@@ -360,6 +368,8 @@
+ 
+     /* first get a character string */
+     a = 0;
++    if (cpp >= SIZE_MAX - 1)
++	return (XpmNoMemory);
+     if (!(s = color->string = (char *) XpmMalloc(cpp + 1)))
+ 	return (XpmNoMemory);
+     *s++ = printable[c = a % MAXPRINTABLE];
+@@ -407,7 +417,7 @@
+ ScanOtherColors(display, colors, ncolors, pixels, mask, cpp, attributes)
+     Display *display;
+     XpmColor *colors;
+-    int ncolors;
++    unsigned int ncolors;
+     Pixel *pixels;
+     unsigned int mask;
+     unsigned int cpp;
+@@ -451,6 +461,8 @@
+     }
+ 
+     /* first get character strings and rgb values */
++    if (ncolors >= SIZE_MAX / sizeof(XColor) || cpp >= SIZE_MAX - 1)
++	return (XpmNoMemory);
+     xcolors = (XColor *) XpmMalloc(sizeof(XColor) * ncolors);
+     if (!xcolors)
+ 	return (XpmNoMemory);
