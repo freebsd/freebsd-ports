@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://clay.ll.pl/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	psh@iki.fi
 COMMENT=	Programmer's calculator
 
 BROKEN=		"Broken dependency after python 2.4 update"
