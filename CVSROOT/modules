@@ -8284,6 +8284,7 @@ sitescooper	ports/palm/sitescooper
 sjog		ports/sysutils/sjog
 sk-aspell	ports/textproc/sk-aspell
 sk-ooodict-SK	ports/editors/ooodict-sk_SK
+skadns		ports/dns/skadns
 skalibs		ports/devel/skalibs
 sketch		ports/graphics/sketch
 ski		ports/emulators/ski
