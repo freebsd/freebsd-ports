@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES+=	audio
 MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
@@ -65,6 +66,10 @@ OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN:=""
 .else
 PLIST_SUB+=	ESDPLUGIN:="@comment "
+.endif
+
+.if ${MACHINE_ARCH} != "i386"
+WITHOUT_3DNOW=	yes
 .endif
 
 .if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
