@@ -27,12 +27,13 @@
  						cp++;
  					while (cp < reqend && *cp != ',') {
  						*tp++ = *cp++;
-@@ -1870,7 +1870,7 @@
+@@ -1904,8 +1904,8 @@
  						cp++;
- 					while (tp > buf) {
- 						*tp-- = '\0';
+ 					*tp-- = '\0';
+ 					while (tp >= buf) {
 -						if (!isspace((int)(*tp)))
 +						if (!isspace((unsigned char)(*tp)))
  							break;
+ 						*tp-- = '\0';
  					}
  					reqpt = cp;
