@@ -370,6 +370,7 @@
     SUBDIR += p5-Class-Date
     SUBDIR += p5-Class-Delegation
     SUBDIR += p5-Class-Factory
+    SUBDIR += p5-Class-Factory-Util
     SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-ISA
     SUBDIR += p5-Class-Loader
