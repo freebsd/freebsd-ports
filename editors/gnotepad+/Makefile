@@ -31,6 +31,9 @@ MAN1=	gnp.1
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${PERL} -pi.fbsd -e 's|use_gtkhtml=yes|use_gtkhtml=no|g' ${WRKSRC}/configure.in
+
 .if !defined(NOPORTDOCS)
 post-extract:
 	@${MV} ${WRKSRC}/docs ${WRKSRC}/docs.old
