@@ -1,0 +1,11 @@
+--- ./Makefile.org	Sat Mar 29 16:36:44 1997
++++ ./Makefile	Tue Jun 10 02:44:54 1997
+@@ -3,7 +3,7 @@
+ #
+ 
+ CC=gcc
+-CCOPTS=-Wall
++CCOPTS=-Wall ${CFLAGS}
+ CURSESLIB=ncurses
+ INSTALLDIR=/usr/local
+ 
