@@ -1,12 +1,12 @@
 --- PATCHES Dec 2002 17:44:54 -0000	3.6
-+++ PATCHES Jan 2004 08:46:05 -0000
++++ PATCHES Feb 2004 06:07:13 -0000
 @@ -0,0 +1,4 @@
-+patch-1.5.5.dw.multiple-crypt-hook.2
-+patch-1.5.5.dw.confirm-crypt-hook.1
-+patch-1.5.5.dw.crypt-autoselectkey.1
-+patch-1.5.5.dw.pgp-menu-traditional.2
++patch-1.5.6.dw.multiple-crypt-hook.2
++patch-1.5.6.dw.confirm-crypt-hook.1
++patch-1.5.6.dw.crypt-autoselectkey.1
++patch-1.5.6.dw.pgp-menu-traditional.2
 --- compose.c Oct 2003 20:34:59 -0000	3.14
-+++ compose.c Jan 2004 08:46:05 -0000
++++ compose.c Feb 2004 06:07:13 -0000
 @@ -133,2 +133,9 @@ static void redraw_crypt_lines (HEADER *
      addstr (_("Clear"));
 +
@@ -80,8 +80,8 @@
 +    }
 +  }
  
---- crypt.c Sep 2003 13:03:25 -0000	3.19
-+++ crypt.c Jan 2004 08:46:06 -0000
+--- crypt.c Jan 2004 19:59:38 -0000	3.22
++++ crypt.c Feb 2004 06:07:13 -0000
 @@ -161,3 +161,3 @@ int crypt_valid_passphrase(int flags)
  
 -int mutt_protect (HEADER *msg, HEADER *cur, char *keylist)
@@ -135,14 +135,14 @@
 +
 +    /* go ahead with PGP/MIME */
    }
-@@ -391,2 +376,5 @@ int mutt_is_application_pgp (BODY *m)
+@@ -393,2 +378,5 @@ int mutt_is_application_pgp (BODY *m)
    }
 +  if (t)
 +    t |= PGPINLINE;
 +
    return t;
---- hook.c Jan 2003 12:33:41 -0000	3.7
-+++ hook.c Jan 2004 08:46:07 -0000
+--- hook.c Jan 2004 09:52:55 -0000	3.8
++++ hook.c Feb 2004 06:07:13 -0000
 @@ -119,3 +119,7 @@ int mutt_parse_hook (BUFFER *buf, BUFFER
      {
 +#ifdef M_CRYPTHOOK
@@ -175,9 +175,9 @@
 +  }
 +  return (key_list);
  }
---- init.h Sep 2003 15:10:09 -0000	3.40
-+++ init.h Jan 2004 08:46:07 -0000
-@@ -1211,2 +1211,12 @@ struct option_t MuttVars[] = {
+--- init.h Feb 2004 17:10:43 -0000	3.43
++++ init.h Feb 2004 06:07:14 -0000
+@@ -1205,2 +1205,12 @@ struct option_t MuttVars[] = {
    */
 +  
 +
@@ -190,7 +190,7 @@
 +  ** the \fIcrypt-hook\fP command.
 +  */
    { "pgp_autosign", 	DT_SYN,  R_NONE, UL "crypt_autosign", 0 },
-@@ -1236,2 +1246,11 @@ struct option_t MuttVars[] = {
+@@ -1230,2 +1240,11 @@ struct option_t MuttVars[] = {
    */
 +  { "pgp_confirmhook",		DT_SYN, R_NONE, UL "crypt_confirmhook", 1 },
 +  { "crypt_confirmhook",	DT_BOOL, R_NONE, OPTCRYPTCONFIRMHOOK, 1 },
@@ -202,7 +202,7 @@
 +  ** typos are concerned.
 +  */
    { "pgp_ignore_subkeys", DT_BOOL, R_NONE, OPTPGPIGNORESUB, 1},
-@@ -1380,2 +1399,44 @@ struct option_t MuttVars[] = {
+@@ -1374,2 +1393,44 @@ struct option_t MuttVars[] = {
    */
 +  { "pgp_create_traditional",	DT_SYN, R_NONE, UL "pgp_autoinline", 0 },
 +  { "pgp_autoinline",		DT_BOOL, R_NONE, OPTPGPAUTOINLINE, 0 },
@@ -247,7 +247,7 @@
 +  ** 
 +  */
    { "pgp_show_unusable", DT_BOOL, R_NONE, OPTPGPSHOWUNUSABLE, 1 },
-@@ -1429,11 +1490,8 @@ struct option_t MuttVars[] = {
+@@ -1423,11 +1484,8 @@ struct option_t MuttVars[] = {
    */
 -  { "pgp_create_traditional", DT_QUAD, R_NONE, OPT_PGPTRADITIONAL, M_NO },
 +  { "pgp_mime_ask", DT_QUAD, R_NONE, OPT_PGPMIMEASK, M_NO },
@@ -263,7 +263,7 @@
 +  ** automatically sending a (signed/encrypted) message using
 +  ** PGP/MIME when inline (traditional) fails (for any reason).
    ** .pp
-@@ -1441,19 +1499,2 @@ struct option_t MuttVars[] = {
+@@ -1435,19 +1493,2 @@ struct option_t MuttVars[] = {
    ** \fBdeprecated\fP.
 -  ** (PGP only)
 -  */
@@ -283,68 +283,66 @@
 -  ** .pp
 -  ** This option overrides ``$$pgp_create_traditional''
    ** (PGP only)
---- mutt.h Oct 2003 20:34:59 -0000	3.21
-+++ mutt.h Jan 2004 08:46:08 -0000
-@@ -276,3 +276,2 @@ enum
+--- mutt.h Feb 2004 17:10:43 -0000	3.23
++++ mutt.h Feb 2004 06:07:14 -0000
+@@ -278,3 +278,2 @@ enum
    OPT_MOVE,
 -  OPT_PGPTRADITIONAL, /* create old-style PGP messages */
  #ifdef USE_POP
-@@ -282,2 +281,3 @@ enum
+@@ -284,2 +283,3 @@ enum
    OPT_POSTPONE,
 +  OPT_PGPMIMEASK,     /* ask to revert to PGP/MIME when inline fails */
    OPT_PRINT,
-@@ -429,2 +429,3 @@ enum
+@@ -431,2 +431,3 @@ enum
    
 +  OPTCRYPTAUTOSELECT,
    OPTCRYPTAUTOSIGN,
-@@ -440,2 +441,3 @@ enum
+@@ -442,2 +443,3 @@ enum
    OPTSDEFAULTDECRYPTKEY,
 +  OPTCRYPTCONFIRMHOOK,
    OPTPGPIGNORESUB,
-@@ -443,3 +445,2 @@ enum
+@@ -445,3 +447,2 @@ enum
    OPTPGPLONGIDS,
 -  OPTPGPAUTOTRAD,
  #if 0
-@@ -451,2 +452,4 @@ enum
+@@ -453,2 +454,4 @@ enum
    OPTPGPSHOWUNUSABLE,
 +  OPTPGPAUTOINLINE,
 +  OPTPGPREPLYINLINE,
  
-@@ -632,4 +635,4 @@ typedef struct header
+@@ -642,4 +645,4 @@ typedef struct header
  {
--  unsigned int security : 7;  /* bit 0-4: flags, bit 5,6: application.
+-  unsigned int security : 9;  /* bit 0-6: flags, bit 7,8: application.
 -				 see: crypt.h pgplib.h, smime.h */
-+  unsigned int security : 9;  /* bit 0-6: flags, bit 7,8: application.
++  unsigned int security : 10;  /* bit 0-7: flags, bit 8,9: application.
 +				 see: mutt_crypt.h */
  
---- mutt_crypt.h Jan 2003 23:54:30 -0000	3.4
-+++ mutt_crypt.h Jan 2004 08:46:08 -0000
-@@ -35,7 +35,9 @@
- #define GOODSIGN   (1 << 2)
--#define BADSIGN    (1 << 3) /* FIXME: value also used below for PGPKEY */
-+#define BADSIGN    (1 << 3)
- #define SIGNOPAQUE (1 << 4)
-+#define KEYBLOCK   (1 << 5) /* KEY too generic? */
-+#define INLINE     (1 << 6)
+--- mutt_crypt.h Dec 2003 13:04:20 -0000	3.5
++++ mutt_crypt.h Feb 2004 06:07:14 -0000
+@@ -38,6 +38,7 @@
+ #define SIGNOPAQUE (1 << 5)
+-/* (1 << 6) is used by PGPKEY below. */
++#define KEYBLOCK   (1 << 6) /* KEY too generic? */
++#define INLINE     (1 << 7)
  
--#define APPLICATION_PGP    (1 << 5) 
--#define APPLICATION_SMIME  (1 << 6)
-+#define APPLICATION_PGP    (1 << 7) 
-+#define APPLICATION_SMIME  (1 << 8)
+-#define APPLICATION_PGP    (1 << 7) 
+-#define APPLICATION_SMIME  (1 << 8)
++#define APPLICATION_PGP    (1 << 8) 
++#define APPLICATION_SMIME  (1 << 9)
  
-@@ -44,3 +46,4 @@
+@@ -46,3 +47,4 @@
  #define PGPGOODSIGN (APPLICATION_PGP | GOODSIGN)
--#define PGPKEY      (APPLICATION_PGP | (1 << 3)) 
+-#define PGPKEY      (APPLICATION_PGP | (1 << 6)) 
 +#define PGPKEY      (APPLICATION_PGP | KEYBLOCK) 
 +#define PGPINLINE   (APPLICATION_PGP | INLINE)
  
-@@ -103,3 +106,3 @@ typedef struct pgp_keyinfo *pgp_key_t;
+@@ -105,3 +107,3 @@ typedef struct pgp_keyinfo *pgp_key_t;
  
 -int mutt_protect (HEADER *, HEADER *, char *);
 +int mutt_protect (HEADER *, char *);
  
 --- pgp.c Sep 2003 13:03:26 -0000	3.26
-+++ pgp.c Jan 2004 08:46:09 -0000
++++ pgp.c Feb 2004 06:07:14 -0000
 @@ -1018,2 +1018,4 @@ char *pgp_findKeys (ADDRESS *to, ADDRESS
    size_t keylist_used = 0;
 +  LIST *hook_list = NULL;
@@ -492,7 +490,7 @@
 +    mutt_free_list (&hook_list);
  
 --- pgpkey.c Oct 2003 19:55:39 -0000	3.8
-+++ pgpkey.c Jan 2004 08:46:09 -0000
++++ pgpkey.c Feb 2004 06:07:14 -0000
 @@ -437,4 +437,9 @@ static int pgp_id_matches_addr (ADDRESS 
  
 +
@@ -538,7 +536,7 @@
 +      if (!pgp_trusted_id(KeyTable[menu->current]))
        {
 --- postpone.c Sep 2003 17:22:09 -0000	3.9
-+++ postpone.c Jan 2004 08:46:09 -0000
++++ postpone.c Feb 2004 06:07:14 -0000
 @@ -486,2 +486,7 @@ int mutt_parse_crypt_hdr (char *p, int s
  
 +      case 'i':
@@ -547,16 +545,16 @@
 +	break;
 +
        default:
---- protos.h Oct 2003 20:34:59 -0000	3.18
-+++ protos.h Jan 2004 08:46:09 -0000
+--- protos.h Feb 2004 17:10:43 -0000	3.19
++++ protos.h Feb 2004 06:07:14 -0000
 @@ -131,3 +131,3 @@ const char *mutt_get_name (ADDRESS *);
  char *mutt_get_parameter (const char *, PARAMETER *);
 -char *mutt_crypt_hook (ADDRESS *);
 +LIST *mutt_crypt_hook (ADDRESS *);
  char *mutt_make_date (char *, size_t);
---- send.c Sep 2003 12:56:49 -0000	3.26
-+++ send.c Jan 2004 08:46:10 -0000
-@@ -1256,2 +1256,9 @@ ci_send_message (int flags,		/* send mod
+--- send.c Jan 2004 10:03:46 -0000	3.29
++++ send.c Feb 2004 06:07:14 -0000
+@@ -1258,2 +1258,9 @@ ci_send_message (int flags,		/* send mod
  	msg->security |= SIGN;
 +      if ((WithCrypto & APPLICATION_PGP) && (msg->security & (ENCRYPT | SIGN)))
 +      {
@@ -566,35 +564,35 @@
 +	  msg->security |= INLINE;
 +      }
      }      
-@@ -1494,3 +1501,3 @@ main_loop:
+@@ -1496,3 +1503,3 @@ main_loop:
        if ((crypt_get_keys (msg, &pgpkeylist) == -1) ||
 -          mutt_protect (msg, cur, pgpkeylist) == -1)
 +          mutt_protect (msg, pgpkeylist) == -1)
        {
-@@ -1574,3 +1581,3 @@ main_loop:
+@@ -1576,3 +1583,3 @@ main_loop:
  
 -	  if (mutt_protect (msg, cur, pgpkeylist) == -1)
 +	  if (mutt_protect (msg, pgpkeylist) == -1)
  	  {
 --- sendlib.c Sep 2003 13:03:26 -0000	3.24
-+++ sendlib.c Jan 2004 08:46:11 -0000
++++ sendlib.c Feb 2004 06:07:14 -0000
 @@ -2407,2 +2407,4 @@ int mutt_write_fcc (const char *path, HE
      }
 +    if (hdr->security & INLINE)
 +      fputc ('I', msg->fp);
      fputc ('\n', msg->fp);
---- doc/manual.sgml.head Oct 2003 20:54:37 -0000	3.22
-+++ doc/manual.sgml.head Jan 2004 08:46:13 -0000
-@@ -1423,3 +1423,5 @@ normally use.  The crypt-hook command pr
+--- doc/manual.sgml.head Feb 2004 17:45:33 -0000	3.26
++++ doc/manual.sgml.head Feb 2004 06:07:15 -0000
+@@ -1450,3 +1450,5 @@ normally use.  The crypt-hook command pr
  specify the ID of the public key to be used when encrypting messages to
 -a certain recipient.
 +a certain recipient.  You may use multiple pgp-hook's with the same
 +pattern; multiple matching pgp-hook's result in the use of multiple
 +keyids for recipient.
  
---- doc/muttrc.man.head Sep 2003 16:34:32 -0000	3.9
-+++ doc/muttrc.man.head Jan 2004 08:46:14 -0000
-@@ -289,3 +289,6 @@ to a certain recipient.  The meaning of 
+--- doc/muttrc.man.head Feb 2004 17:10:43 -0000	3.10
++++ doc/muttrc.man.head Feb 2004 06:07:15 -0000
+@@ -297,3 +297,6 @@ to a certain recipient.  The meaning of 
  broadly: This can be a different e-mail address, a numerical key ID,
 -or even just an arbitrary search string.
 +or even just an arbitrary search string.  You may use multiple
@@ -602,9 +600,9 @@
 +\fBpgp-hook\fPs result in the use of multiple \fIkey-id\fPs for
 +recipient.
  .TP
---- po/ca.po Nov 2003 09:51:09 -0000	3.11
-+++ po/ca.po Jan 2004 08:46:16 -0000
-@@ -599,10 +599,10 @@ msgstr "Xifra amb: "
+--- po/ca.po Feb 2004 18:26:11 -0000	3.13
++++ po/ca.po Feb 2004 06:07:15 -0000
+@@ -603,10 +603,10 @@ msgstr "Xifra amb: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP: (x)ifra, (s)igna, si(g)na com a, (a)mbdÛs, o en (c)lar? "
@@ -620,25 +618,25 @@
 +msgid "esabif"
 +msgstr "xsialc"
  
---- po/cs.po Nov 2003 09:51:09 -0000	3.9
-+++ po/cs.po Jan 2004 08:46:16 -0000
-@@ -683,4 +683,4 @@ msgstr "Zaπifrovat"
- #, fuzzy
+--- po/cs.po Feb 2004 18:26:11 -0000	3.12
++++ po/cs.po Feb 2004 06:07:16 -0000
+@@ -683,4 +683,4 @@ msgstr "Zaπifrovat pomocÌ:"
+ #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
--msgstr "(π)ifrovat, (p)odepsat, podepsat (j)ako, (o)bojÌ, Ëi (n)ic?"
+-msgstr "PGP - (π)ifrovat, (p)odepsat, podepsat (j)ako, (o)bojÌ, Ëi (n)ic?"
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
-+msgstr "(π)ifrovat, (p)odepsat, podepsat (j)ako, (o)bojÌ, p¯Ì(m)˝, Ëi (n)ic?"
++msgstr "PGP - (π)ifrovat, (p)odepsat, podepsat (j)ako, (o)bojÌ, p¯Ì(m)˝, Ëi (n)ic?"
  
-@@ -688,4 +688,4 @@ msgstr "(π)ifrovat, (p)odepsat, podepsat
+@@ -688,4 +688,4 @@ msgstr "PGP - (π)ifrovat, (p)odepsat, po
  #: compose.c:166
 -msgid "esabf"
 -msgstr "πpjon"
 +msgid "esabif"
 +msgstr "πpjomn"
  
---- po/da.po Nov 2003 09:51:09 -0000	3.9
-+++ po/da.po Jan 2004 08:46:16 -0000
-@@ -574,8 +574,8 @@ msgstr "KryptÈr"
+--- po/da.po Feb 2004 18:26:11 -0000	3.11
++++ po/da.po Feb 2004 06:07:16 -0000
+@@ -578,8 +578,8 @@ msgstr "KryptÈr"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "(k)ryptÈr, (u)nderskriv, underskriv (s)om, (b)egge, (i)ngen PGP"
@@ -651,9 +649,9 @@
 +msgid "esabif"
 +msgstr "kusbni"
  
---- po/de.po Nov 2003 09:51:09 -0000	3.12
-+++ po/de.po Jan 2004 08:46:16 -0000
-@@ -565,8 +565,8 @@ msgstr "Verschl¸sseln mit: "
+--- po/de.po Feb 2004 18:26:11 -0000	3.15
++++ po/de.po Feb 2004 06:07:16 -0000
+@@ -569,8 +569,8 @@ msgstr "Verschl¸sseln mit: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (v)erschl., (s)ign., sign. (a)ls, (b)eides, (k)ein PGP? "
@@ -666,25 +664,25 @@
 +msgid "esabif"
 +msgstr "vsabik"
  
---- po/el.po Nov 2003 09:51:09 -0000	3.10
-+++ po/el.po Jan 2004 08:46:17 -0000
-@@ -696,4 +696,4 @@ msgstr " ÒıÙÔ„Ò‹ˆÁÛÁ ÏÂ: "
+--- po/el.po Feb 2004 18:26:11 -0000	3.12
++++ po/el.po Feb 2004 06:07:17 -0000
+@@ -700,4 +700,4 @@ msgstr " ÒıÙÔ„Ò‹ˆÁÛÁ ÏÂ: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, ﬁ (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
 +msgstr "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)ÍÂﬂÏÂÌÔ, ﬁ (f)orget it? "
  
-@@ -702,4 +702,4 @@ msgstr "PGP (e)ncrypt, (s)ign, sign (a)s
+@@ -706,4 +706,4 @@ msgstr "PGP (e)ncrypt, (s)ign, sign (a)s
  #: compose.c:166
 -msgid "esabf"
 -msgstr "esabf"
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/eo.po Nov 2003 09:51:09 -0000	3.10
-+++ po/eo.po Jan 2004 08:46:17 -0000
-@@ -567,8 +567,8 @@ msgstr "∆ifri per: "
+--- po/eo.po Feb 2004 18:26:11 -0000	3.13
++++ po/eo.po Feb 2004 06:07:17 -0000
+@@ -571,8 +571,8 @@ msgstr "∆ifri per: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP Ê(i)fri, (s)ubskribi, subskribi (k)iel, (a)mba˝, a˝ (f)orgesi? "
@@ -697,25 +695,25 @@
 +msgid "esabif"
 +msgstr "iskanf"
  
---- po/es.po Nov 2003 09:51:09 -0000	3.12
-+++ po/es.po Jan 2004 08:46:17 -0000
-@@ -572,4 +572,4 @@ msgstr "Cifrar"
+--- po/es.po Feb 2004 18:26:11 -0000	3.14
++++ po/es.po Feb 2004 06:07:17 -0000
+@@ -576,4 +576,4 @@ msgstr "Cifrar"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "øco(d)ificar, f(i)rmar (c)omo, amb(o)s o ca(n)celar? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
 +msgstr "øco(d)ificar, f(i)rmar (c)omo, amb(o)s, inc(l)uido, o ca(n)celar? "
  
-@@ -577,4 +577,4 @@ msgstr "øco(d)ificar, f(i)rmar (c)omo, a
+@@ -581,4 +581,4 @@ msgstr "øco(d)ificar, f(i)rmar (c)omo, a
  #, fuzzy
 -msgid "esabf"
 -msgstr "dicon"
 +msgid "esabif"
 +msgstr "dicoln"
  
---- po/et.po Nov 2003 09:51:09 -0000	3.11
-+++ po/et.po Jan 2004 08:46:18 -0000
-@@ -567,8 +567,8 @@ msgstr "Kr¸pti kasutades: "
+--- po/et.po Feb 2004 18:26:11 -0000	3.13
++++ po/et.po Feb 2004 06:07:18 -0000
+@@ -571,8 +571,8 @@ msgstr "Kr¸pti kasutades: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (k)r¸pti, (a)llkiri, allk. ku(i), (m)ılemad vıi (u)nusta? "
@@ -728,9 +726,9 @@
 +msgid "esabif"
 +msgstr "kaimeu"
  
---- po/fr.po Nov 2003 09:51:09 -0000	3.20
-+++ po/fr.po Jan 2004 08:46:18 -0000
-@@ -591,8 +591,8 @@ msgstr "Chiffrer avec : "
+--- po/fr.po Feb 2004 18:26:11 -0000	3.23
++++ po/fr.po Feb 2004 06:07:18 -0000
+@@ -596,8 +596,8 @@ msgstr "Chiffrer avec : "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "(c)hiffrer PGP, (s)igner, (e)n tant que, les (d)eux, ou (o)ublier ? "
@@ -743,9 +741,9 @@
 +msgid "esabif"
 +msgstr "csedlo"
  
---- po/gl.po Nov 2003 09:51:09 -0000	3.9
-+++ po/gl.po Jan 2004 08:46:18 -0000
-@@ -576,8 +576,8 @@ msgstr "Encriptar"
+--- po/gl.po Feb 2004 18:26:11 -0000	3.11
++++ po/gl.po Feb 2004 06:07:18 -0000
+@@ -580,8 +580,8 @@ msgstr "Encriptar"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "ø(e)ncriptar, (f)irmar, firmar (c)omo, (a)mbas ou (o)lvidar? "
@@ -758,9 +756,9 @@
 +msgid "esabif"
 +msgstr "efcaio"
  
---- po/hu.po Nov 2003 09:51:09 -0000	3.10
-+++ po/hu.po Jan 2004 08:46:19 -0000
-@@ -567,8 +567,8 @@ msgstr "TitkosÌt·s: "
+--- po/hu.po Feb 2004 18:26:11 -0000	3.12
++++ po/hu.po Feb 2004 06:07:19 -0000
+@@ -571,8 +571,8 @@ msgstr "TitkosÌt·s: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (t)itkosÌt, (a)l·Ìr, al·Ìr (m)int, titkosÌt È(s) al·Ìr, mÈ(g)se? "
@@ -773,9 +771,9 @@
 +msgid "esabif"
 +msgstr "tamsbg"
  
---- po/id.po Nov 2003 09:51:09 -0000	3.11
-+++ po/id.po Jan 2004 08:46:19 -0000
-@@ -568,8 +568,8 @@ msgstr "Enkrip dengan: "
+--- po/id.po Feb 2004 18:26:12 -0000	3.14
++++ po/id.po Feb 2004 06:07:19 -0000
+@@ -572,8 +572,8 @@ msgstr "Enkrip dengan: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (e)nkrip, (t)andatangan, tandatangan (s)bg, ke(d)uanya, (b)atal? "
@@ -788,9 +786,9 @@
 +msgid "esabif"
 +msgstr "etsdib"
  
---- po/it.po Nov 2003 09:51:09 -0000	3.9
-+++ po/it.po Jan 2004 08:46:19 -0000
-@@ -578,8 +578,8 @@ msgstr "Crittografa"
+--- po/it.po Feb 2004 18:26:12 -0000	3.11
++++ po/it.po Feb 2004 06:07:19 -0000
+@@ -582,8 +582,8 @@ msgstr "Crittografa"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "cifra(e), firma(s), firma come(a), entrambi(b), annulla(f) "
@@ -803,9 +801,9 @@
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/ja.po Nov 2003 09:51:09 -0000	3.18
-+++ po/ja.po Jan 2004 08:46:20 -0000
-@@ -565,8 +565,8 @@ msgstr "  ∞≈πÊ≤Ω ˝º∞: "
+--- po/ja.po Feb 2004 18:26:12 -0000	3.21
++++ po/ja.po Feb 2004 06:07:20 -0000
+@@ -569,8 +569,8 @@ msgstr "  ∞≈πÊ≤Ω ˝º∞: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (e)∞≈πÊ≤Ω,(s)ΩÃæ,(a)..§»§∑§∆ΩÃæ,(b)Œæº‘,(f)≤ÚΩ¸?"
@@ -818,9 +816,9 @@
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/ko.po Nov 2003 09:51:09 -0000	3.13
-+++ po/ko.po Jan 2004 08:46:20 -0000
-@@ -566,8 +566,8 @@ msgstr "æœ»£»≠ πÊΩƒ: "
+--- po/ko.po Feb 2004 18:26:12 -0000	3.15
++++ po/ko.po Feb 2004 06:07:20 -0000
+@@ -570,8 +570,8 @@ msgstr "æœ»£»≠ πÊΩƒ: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP æœ»£»≠(e), º≠∏Ì(s), ªÁøÎ º≠∏Ì(a), µ— ¥Ÿ(b), √Îº“(f)? "
@@ -833,9 +831,9 @@
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/lt.po Nov 2003 09:51:09 -0000	3.9
-+++ po/lt.po Jan 2004 08:46:20 -0000
-@@ -574,5 +574,5 @@ msgstr "U˛ifruoti"
+--- po/lt.po Feb 2004 18:26:12 -0000	3.11
++++ po/lt.po Feb 2004 06:07:20 -0000
+@@ -578,5 +578,5 @@ msgstr "U˛ifruoti"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
@@ -843,32 +841,32 @@
 -"(u)˛ifruot, pa(s)irayt, pasirayt k(a)ip, a(b)u, rinktis (m)ic algoritm‡, "
 +"(u)˛ifruot, pa(s)irayt, pasirayt k(a)ip, a(b)u, (l)aike, "
  "ar (p)amirti?"
-@@ -581,4 +581,4 @@ msgstr ""
+@@ -585,4 +585,4 @@ msgstr ""
  #, fuzzy
 -msgid "esabf"
 -msgstr "usabmp"
 +msgid "esabif"
 +msgstr "usablp"
  
-@@ -594,4 +594,3 @@ msgid ""
+@@ -598,4 +598,3 @@ msgid ""
  msgstr ""
 -"(u)˛ifruot, pa(s)irayt, pasirayt k(a)ip, a(b)u, rinktis (m)ic algoritm‡, "
 -"ar (p)amirti?"
 +"(u)˛ifruot, pa(s)irayt, u˛ifruo(t) su, pasirayt k(a)ip, a(b)u, ar (p)amirti?"
  
-@@ -600,3 +599,3 @@ msgstr ""
+@@ -604,3 +603,3 @@ msgstr ""
  msgid "eswabf"
 -msgstr "usabmp"
 +msgstr "ustabp"
  
---- po/nl.po Nov 2003 09:51:09 -0000	3.13
-+++ po/nl.po Jan 2004 08:46:21 -0000
-@@ -564,8 +564,8 @@ msgstr "Versleutelen met: "
+--- po/nl.po Feb 2004 18:26:12 -0000	3.16
++++ po/nl.po Feb 2004 06:07:21 -0000
+@@ -568,8 +568,8 @@ msgstr "Versleutelen met: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
--msgstr "PGP (v)ersleutel, (o)ndertekenen, ondert. (a)ls, (b)eide, (g)een? "
+-msgstr "PGP (v)ersleutel, (o)ndertekenen, ondert. (a)ls, (b)eiden, (g)een? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
-+msgstr "PGP (v)ersleutel, (o)ndertekenen, ondert. (a)ls, (b)eide, ber(i)cht, (g)een? "
++msgstr "PGP (v)ersleutel, (o)ndertekenen, ondert. (a)ls, (b)eiden, ber(i)cht, (g)een? "
  
  #: compose.c:166
 -msgid "esabf"
@@ -876,9 +874,9 @@
 +msgid "esabif"
 +msgstr "voabig"
  
---- po/pl.po Nov 2003 09:51:10 -0000	3.14
-+++ po/pl.po Jan 2004 08:46:21 -0000
-@@ -567,8 +567,8 @@ msgstr "Zaszyfruj uøywaj±c: "
+--- po/pl.po Feb 2004 18:26:12 -0000	3.17
++++ po/pl.po Feb 2004 06:07:21 -0000
+@@ -571,8 +571,8 @@ msgstr "Zaszyfruj uøywaj±c: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP: (z)aszyfruj, podpi(s)z, podpisz j(a)ko, o(b)a, b(e)z PGP? "
@@ -891,9 +889,9 @@
 +msgid "esabif"
 +msgstr "zsabie"
  
---- po/pt_BR.po Nov 2003 09:51:10 -0000	3.10
-+++ po/pt_BR.po Jan 2004 08:46:21 -0000
-@@ -577,5 +577,5 @@ msgstr "Encriptar"
+--- po/pt_BR.po Feb 2004 18:26:13 -0000	3.12
++++ po/pt_BR.po Feb 2004 06:07:21 -0000
+@@ -581,5 +581,5 @@ msgstr "Encriptar"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
@@ -901,26 +899,26 @@
 -"(e)ncripa, a(s)sina, assina (c)omo, (a)mbos, escolhe (m)ic, ou es(q)uece? "
 +"(e)ncripa, a(s)sina, assina (c)omo, (a)mbos, em l(i)nha, ou es(q)uece? "
  
-@@ -583,4 +583,4 @@ msgstr ""
+@@ -587,4 +587,4 @@ msgstr ""
  #, fuzzy
 -msgid "esabf"
 -msgstr "escamq"
 +msgid "esabif"
 +msgstr "escaiq"
  
-@@ -596,3 +596,3 @@ msgid ""
+@@ -600,3 +600,3 @@ msgid ""
  msgstr ""
 -"(e)ncripa, a(s)sina, assina (c)omo, (a)mbos, escolhe (m)ic, ou es(q)uece? "
 +"(e)ncripa, a(s)sina, e(n)cripa com, assina (c)omo, (a)mbos, ou es(q)uece? "
  
-@@ -601,3 +601,3 @@ msgstr ""
+@@ -605,3 +605,3 @@ msgstr ""
  msgid "eswabf"
 -msgstr "escamq"
 +msgstr "esncaq"
  
---- po/ru.po Nov 2003 09:51:10 -0000	3.15
-+++ po/ru.po Jan 2004 08:46:22 -0000
-@@ -573,8 +573,8 @@ msgstr "˙¡€…∆“œ◊¡‘ÿ: "
+--- po/ru.po Feb 2004 18:26:13 -0000	3.19
++++ po/ru.po Feb 2004 06:07:22 -0000
+@@ -577,8 +577,8 @@ msgstr "˙¡€…∆“œ◊¡‘ÿ: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP (e)€…∆“, (s)–œƒ–…”ÿ, (a)–œƒ–…”ÿ À¡À, (b)œ¬¡, (f)œ‘À¡⁄¡‘ÿ”—? "
@@ -933,9 +931,9 @@
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/sk.po Nov 2003 09:51:10 -0000	3.9
-+++ po/sk.po Jan 2004 08:46:22 -0000
-@@ -582,5 +582,5 @@ msgstr "Zaπifruj"
+--- po/sk.po Feb 2004 18:26:13 -0000	3.11
++++ po/sk.po Feb 2004 06:07:22 -0000
+@@ -586,5 +586,5 @@ msgstr "Zaπifruj"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
@@ -943,27 +941,27 @@
 -"(e)-πifr, (s)-podp, podp (a)ko, o(b)e, oznaË alg. mi(c), alebo (f)-zabudn˙ª "
 +"(e)-πifr, (s)-podp, podp (a)ko, o(b)e, (i)nline, alebo (f)-zabudn˙ª "
  "na to? "
-@@ -589,4 +589,4 @@ msgstr ""
+@@ -593,4 +593,4 @@ msgstr ""
  #, fuzzy
 -msgid "esabf"
 -msgstr "esabmf"
 +msgid "esabif"
 +msgstr "esabif"
  
-@@ -602,4 +602,3 @@ msgid ""
+@@ -606,4 +606,3 @@ msgid ""
  msgstr ""
 -"(e)-πifr, (s)-podp, podp (a)ko, o(b)e, oznaË alg. mi(c), alebo (f)-zabudn˙ª "
 -"na to? "
 +"(e)-πifr, (s)-podp, (w)-πifr s, podp (a)ko, o(b)e, alebo (f)-zabudn˙ª na to? "
  
-@@ -608,3 +607,3 @@ msgstr ""
+@@ -612,3 +611,3 @@ msgstr ""
  msgid "eswabf"
 -msgstr "esabmf"
 +msgstr "eswabf"
  
---- po/sv.po Nov 2003 09:51:10 -0000	3.10
-+++ po/sv.po Jan 2004 08:46:22 -0000
-@@ -564,8 +564,8 @@ msgstr "Kryptera med: "
+--- po/sv.po Feb 2004 18:26:13 -0000	3.12
++++ po/sv.po Feb 2004 06:07:22 -0000
+@@ -568,8 +568,8 @@ msgstr "Kryptera med: "
  #: compose.c:165
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "PGP: (k)ryptera, (s)ignera, signera s(o)m, (b)Âda, eller sk(i)ppa det?"
@@ -976,9 +974,9 @@
 +msgid "esabif"
 +msgstr "ksobni"
  
---- po/tr.po Nov 2003 09:51:10 -0000	3.9
-+++ po/tr.po Jan 2004 08:46:23 -0000
-@@ -573,5 +573,5 @@ msgstr "ﬁifrele"
+--- po/tr.po Feb 2004 18:26:13 -0000	3.11
++++ po/tr.po Feb 2004 06:07:22 -0000
+@@ -577,5 +577,5 @@ msgstr "ﬁifrele"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
@@ -986,16 +984,16 @@
 -"˛(i)frele, i(m)zala, (f)arkl˝ imzala, i(k)isi de, mi(c) algoritmini seÁ "
 +"˛(i)frele, i(m)zala, (f)arkl˝ imzala, i(k)isi de, (i)nline, "
  "yoksa i(p)talm˝? "
-@@ -579,4 +579,4 @@ msgstr ""
+@@ -583,4 +583,4 @@ msgstr ""
  #: compose.c:166
 -msgid "esabf"
 -msgstr "imfkcp"
 +msgid "esabif"
 +msgstr "imfkip"
  
---- po/uk.po Nov 2003 09:51:10 -0000	3.10
-+++ po/uk.po Jan 2004 08:46:23 -0000
-@@ -568,8 +568,8 @@ msgstr "˚…∆“’◊¡ŒŒ—"
+--- po/uk.po Feb 2004 18:26:13 -0000	3.12
++++ po/uk.po Feb 2004 06:07:23 -0000
+@@ -572,8 +572,8 @@ msgstr "˚…∆“’◊¡ŒŒ—"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 -msgstr "€…∆“.(e), –¶ƒ–.(s), –¶ƒ–. —À(a), ’”≈(b) ﬁ… ◊¶ƒÕ¶Œ¡(f)? "
@@ -1008,9 +1006,9 @@
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/zh_CN.po Nov 2003 09:51:10 -0000	3.9
-+++ po/zh_CN.po Jan 2004 08:46:23 -0000
-@@ -581,5 +581,5 @@ msgstr "º”√‹"
+--- po/zh_CN.po Feb 2004 18:26:13 -0000	3.11
++++ po/zh_CN.po Feb 2004 06:07:23 -0000
+@@ -585,5 +585,5 @@ msgstr "º”√‹"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
@@ -1018,21 +1016,21 @@
 -"(e)º”√‹, (s)«©√˚, (a)”√±µƒ…Ì∑›«©, (b)¡Ω’ﬂΩ‘“™, —°‘Ò (m)ic —›À„∑® ªÚ (f)∑≈"
 +"(e)º”√‹, (s)«©√˚, (a)”√±µƒ…Ì∑›«©, (b)¡Ω’ﬂΩ‘“™, (i)nline, ªÚ (f)∑≈"
  "∆˙£ø"
-@@ -587,4 +587,4 @@ msgstr ""
+@@ -591,4 +591,4 @@ msgstr ""
  #: compose.c:166
 -msgid "esabf"
 -msgstr ""
 +msgid "esabif"
 +msgstr "esabif"
  
---- po/zh_TW.po Nov 2003 09:51:10 -0000	3.9
-+++ po/zh_TW.po Jan 2004 08:46:24 -0000
-@@ -573,3 +573,3 @@ msgstr "Âä†ÂØÜ"
+--- po/zh_TW.po Feb 2004 18:26:13 -0000	3.11
++++ po/zh_TW.po Feb 2004 06:07:24 -0000
+@@ -577,3 +577,3 @@ msgstr "Âä†ÂØÜ"
  #, fuzzy
 -msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, or (f)orget it? "
 +msgid "PGP (e)ncrypt, (s)ign, sign (a)s, (b)oth, (i)nline, or (f)orget it? "
  msgstr "(1)Âä†ÂØÜ, (2)Á∞ΩÂêç, (3)Áî®Âà•ÁöÑË∫´‰ªΩÁ∞Ω, (4)ÂÖ©ËÄÖÁöÜË¶Å, Êàñ (5)ÊîæÊ£ÑÔºü"
-@@ -577,4 +577,4 @@ msgstr "(1)Âä†ÂØÜ, (2)Á∞ΩÂêç, (3)Áî®Âà•Á
+@@ -581,4 +581,4 @@ msgstr "(1)Âä†ÂØÜ, (2)Á∞ΩÂêç, (3)Áî®Âà•Á
  #: compose.c:166
 -msgid "esabf"
 -msgstr "12345"
