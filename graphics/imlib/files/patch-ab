@@ -1,5 +1,5 @@
---- Imlib/Imlib_private.h.orig	Sun Jul 19 01:40:27 1998
-+++ Imlib/Imlib_private.h	Sun Jul 19 01:40:48 1998
+--- Imlib/Imlib_private.h.orig	Sat Sep 26 20:58:58 1998
++++ Imlib/Imlib_private.h	Sat Sep 26 20:59:15 1998
 @@ -47,10 +47,10 @@
  #include <png.h>
  #endif
@@ -13,8 +13,8 @@
  #endif
  
  #define BYTE_ORD_24_RGB 0
---- gdk_imlib//gdk_imlib_private.h.orig	Sun Jul 19 01:40:54 1998
-+++ gdk_imlib//gdk_imlib_private.h	Sun Jul 19 01:41:10 1998
+--- gdk_imlib/gdk_imlib_private.h.orig	Sat Sep 26 20:59:32 1998
++++ gdk_imlib/gdk_imlib_private.h	Sat Sep 26 20:59:47 1998
 @@ -48,10 +48,10 @@
  #include <png.h>
  #endif
