@@ -1,0 +1,11 @@
+--- diacanvas/Makefile.in.orig	Fri Feb  4 21:20:29 2000
++++ diacanvas/Makefile.in	Fri Feb  4 21:20:53 2000
+@@ -415,7 +415,7 @@
+ 
+ 
+ diacanvas.h: $(headers)
+-	make-header.sh
++	/bin/sh make-header.sh
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
