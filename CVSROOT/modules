@@ -4048,6 +4048,7 @@ offix-files	ports/x11-fm/offix-files
 offix-printer	ports/print/offix-printer
 offix-trash	ports/deskutils/offix-trash
 oftpd		ports/ftp/oftpd
+ogle		ports/graphics/ogle
 ohphone		ports/net/ohphone
 oidentd		ports/security/oidentd
 oleo		ports/math/oleo
