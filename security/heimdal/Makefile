@@ -61,6 +61,9 @@ post-build:
 
 pre-install:
 	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
+.if exists(${WRKSRC}/lib/com_err/.libs/compile_et)
+	@${CAT} ${PKGDIR}/pkg-plist.com_err >> ${PLIST}
+.endif
 .if defined(WITH_X11)
 	@${CAT} ${PKGDIR}/pkg-plist.x11 >> ${PLIST}
 .endif
