@@ -15,6 +15,7 @@ MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
 		ftp://ftp.fu-berlin.de/unix/network/www/links/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Lynx-like text WWW browser
 
 GNU_CONFIGURE=	yes
 

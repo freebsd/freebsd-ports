@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Z39.50/SR client and API library
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared

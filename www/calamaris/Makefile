@@ -11,6 +11,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	http://cord.de/tools/squid/calamaris/
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	A perl script to produce statistics out of Squid log files
 
 USE_PERL5=	yes
 NO_BUILD=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://ftp.indexdata.dk/pub/zap/
 DISTNAME=	zap-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	An Apache module that provides Z39.50 access through WWW
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83

@@ -12,6 +12,7 @@ MASTER_SITES=	http://ftp.indexdata.dk/pub/zebra/
 DISTNAME=	idzebra-${PORTVERSION}
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Z39.50/SR server software
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
 LIB_DEPENDS=	yaz.1:${PORTSDIR}/net/yaz
