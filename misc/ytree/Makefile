@@ -1,14 +1,15 @@
 # New ports collection makefile for:	ytree
-# Version required:	1.63
-# Date created:		5 Jan 1998
-# Whom:			Andrey Zakhvatov
+# Version required:			1.64
+# Date created:				5 Jan 1998
+# Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/02 01:00:54 jseger Exp $
+# $Id: Makefile,v 1.2 1998/05/13 17:13:20 vanilla Exp $
 #
 
-DISTNAME=		ytree-1.63
+DISTNAME=		ytree-1.64
 CATEGORIES=		misc
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
+MASTER_SITES=		http://www.han.de/~werner/ \
+			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers
 
 MAINTAINER=		andy@icc.surw.chel.su
@@ -20,5 +21,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ytree ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/ytree.conf ${PREFIX}/etc/ytree.conf.sample
 	@${INSTALL_MAN} ${WRKSRC}/ytree.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/ytree
+.for file in CHANGES COPYING README THANKS
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ytree
+.endfor
+.endif
 
 .include <bsd.port.mk>
