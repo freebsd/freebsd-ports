@@ -53,6 +53,14 @@ upgrades.
 
   The 4.x branch of getmail also requires Python 2.3.3 or newer.
 
+  Some mail delivery agents require that the unixform parameter to be set to
+  either "true" or "false" in the configuration file.
+
+  A "quick and dirty" guide on setting up, configuring and using getmail is
+  available at:
+
+    (http://qnd-guides.net/qnd-getmail.html)
+
 20041012:
   AFFECTS: users of devel/perforce
   AUTHOR: marshall@chezmarshall.com
