@@ -1,0 +1,19 @@
+--- pcal.man.orig	Thu Dec 21 10:10:45 2000
++++ pcal.man	Thu Dec 21 10:11:15 2000
+@@ -443,14 +443,14 @@
+ `&#NNN;' (NNN = any three decimal digits) are also supported.  These will
+ be propagated intact (be sure to escape the `#' in `&#NNN;') if the output
+ is specified as HTML (see the
+-.B -\H
++.B \-H
+ flag); otherwise they will be converted to their ASCII equivalents.  This
+ allows a common date file to be used regardless of whether the desired
+ output format is HTML, PostScript, or
+ Un*x
+ .I "calendar(1)"
+ (see the
+-.B -\c
++.B \-c
+ flag) input.
+ .PP
+ Lines in the

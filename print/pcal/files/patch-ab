@@ -1,0 +1,13 @@
+--- pcal.cgi.orig	Wed Dec 20 15:43:36 2000
++++ pcal.cgi	Wed Dec 20 15:45:35 2000
+@@ -27,8 +27,8 @@
+ # common calendar file on your system (note that the user can't use his/her
+ # own calendar file since most servers will execute pcal.cgi as 'nobody')
+ 
+-pcal=/yourpath/pcal
+-file=/yourpath/calendar
++pcal=@@PREFIX@@/bin/pcal
++file=@@PREFIX@@/share/misc/calendar
+ 
+ # set DEBUG=1 to echo debugging output as HTML text
+ DEBUG=0
