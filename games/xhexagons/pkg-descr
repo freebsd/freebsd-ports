@@ -1,0 +1,7 @@
+Hexagons is a puzzle similar in nature to the Fifteen Puzzle.
+
+By building from the source and editing its Imakefile before the
+``build'' phase, you may be able to use Motif or LessTif with this port.
+
+- Andrey Zakhvatov
+andy@icc.surw.chel.su
