@@ -3,7 +3,7 @@
 # Date created:		4 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/12/12 08:35:36 asami Exp $
+# $Id: Makefile,v 1.4 1997/02/12 10:59:14 asami Exp $
 #
 
 DISTNAME=	jp-man-1.1
@@ -36,6 +36,7 @@ XPG4PATCHFILE=		patch-xpg4
 XPG4PATCHSUFX=		xpg4
 
 pre-patch:
+	@${MKDIR} ${PATCHDIR}
 	@rm -f ${PATCHDIR}/patch-${XPG4PATCHSUFX}
 .if !defined(NOUSE_XPG4LIB)
 	@${SED} -e "s,%xpg4_lib_path%,${XPG4LIBPATH},g" < ${FILESDIR}/${XPG4PATCHFILEORG} > ${FILESDIR}/${XPG4PATCHFILE}

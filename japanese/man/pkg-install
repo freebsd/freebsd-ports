@@ -1,0 +1,11 @@
+#!/bin/sh
+
+CP=${CP:-/bin/cp}
+
+usr_tmac=/usr/share/tmac
+local_tmac=${PKG_PREFIX}/share/groff/tmac
+
+if [ "X$2" = X"POST-INSTALL" ]; then
+	${CP} -p ${usr_tmac}/tmac.an ${local_tmac}
+	${CP} -p ${usr_tmac}/tmac.groff_an ${local_tmac}
+fi
