@@ -15,8 +15,6 @@ DISTNAME=	btoa-5.2
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	btoa-5.2-patch1.gz
 
-MAINTAINER=	bjn@visi.com
-
 MAKE_FLAGS=	DESTDIR=${PREFIX} -f
 MAKEFILE=	Makefile.sun
 MAN1=		btoa.1
