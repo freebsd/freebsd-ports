@@ -121,6 +121,7 @@
     SUBDIR += p5-MARC
     SUBDIR += p5-Number-Format
     SUBDIR += p5-Orchard-Perl
+    SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
     SUBDIR += p5-RADIUS-UserFile
