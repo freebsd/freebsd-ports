@@ -1,0 +1,6 @@
+Use GnuPG::Interface to process and/or create PGP signed or encrypted
+email.
+
+Please send all bugs/issues/patches to bug-Mail-GnuPG@rt.cpan.org
+
+Author: Robert Spier <rspier@cpan.org>

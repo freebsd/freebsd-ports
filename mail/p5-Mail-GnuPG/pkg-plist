@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Mail/GnuPG.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/GnuPG/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/GnuPG
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/GnuPG 2>/dev/null || true
