@@ -1,6 +1,0 @@
-bin/cymbaline
-lib/%%PYTHON_VERSION%%/site-packages/ID3.py
-lib/%%PYTHON_VERSION%%/site-packages/cycolors.py
-lib/%%PYTHON_VERSION%%/site-packages/mp3.py
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
