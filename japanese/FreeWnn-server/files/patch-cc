@@ -1,0 +1,13 @@
+--- Xwnmo/xjutil/jutil.c.orig	Thu Jan 21 17:05:44 1993
++++ Xwnmo/xjutil/jutil.c	Sun Apr 11 19:32:58 1999
+@@ -664,10 +664,8 @@
+     extern int srand();
+     extern long rand();
+ #else
+-    extern int srandom();
+     extern long random();
+ #endif
+-    extern long time();
+ 
+     if(pwd_file == NULL || *pwd_file == 0) return(0);
+     if(access(pwd_file, F_OK) != -1) return(0);
