@@ -1,10 +1,10 @@
---- console/forms/fexts.c.orig	Mon Jul 24 08:11:19 2000
-+++ console/forms/fexts.c	Mon Jul 24 08:11:37 2000
-@@ -2,6 +2,7 @@
- #include <stdarg.h>
+--- console/forms/fexts.c.orig	Mon Nov  4 20:35:40 2002
++++ console/forms/fexts.c	Mon Nov  4 20:35:29 2002
+@@ -3,6 +3,7 @@
  #include <math.h>
  
-+#include "support.h"
  #include "fppxp.h"
++#include "support.h"
  
  /*
+  * Note tag object
