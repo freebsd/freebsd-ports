@@ -53,11 +53,6 @@ lib/nhc98/ix86-FreeBSD/Older
 %%TRACER%%lib/nhc98/ix86-FreeBSD/FFI.z.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/GreenCard.z.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Haskell.z.a
-%%TRACER%%lib/nhc98/ix86-FreeBSD/HatExpressionTree.o
-%%TRACER%%lib/nhc98/ix86-FreeBSD/HatTrace.o
-%%TRACER%%lib/nhc98/ix86-FreeBSD/HatTrie.o
-%%TRACER%%lib/nhc98/ix86-FreeBSD/Hatdetect.o
-%%TRACER%%lib/nhc98/ix86-FreeBSD/Hatobserve.o
 %%TRACER%%lib/nhc98/ix86-FreeBSD/IO.z.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/IOExtras.z.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Ix.z.a
@@ -76,8 +71,6 @@ lib/nhc98/ix86-FreeBSD/Older
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Prelude.T.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Prelude.p.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/PreludeAll.z.a
-%%TRACER%%lib/nhc98/ix86-FreeBSD/PrettyExp.o
-%%TRACER%%lib/nhc98/ix86-FreeBSD/PrettyLib.o
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Random.z.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Ratio.z.a
 %%TRACER%%lib/nhc98/ix86-FreeBSD/Runtime.T.a
@@ -128,6 +121,7 @@ include/nhc98/GreenCard.T.hi
 include/nhc98/GreenCard.gc
 include/nhc98/GreenCard.hi
 include/nhc98/Haskell.hi
+include/nhc98/Hat.hi
 include/nhc98/HatBuiltin.hi
 include/nhc98/HsFFI.h
 include/nhc98/IO.T.hi
@@ -166,7 +160,9 @@ include/nhc98/Ratio.hi
 include/nhc98/System.T.hi
 include/nhc98/System.hi
 include/nhc98/Time.hi
+include/nhc98/TPrelude.hi
 include/nhc98/Warning.hi
+include/nhc98/art.h
 include/nhc98/bytecode.h
 include/nhc98/bytecode_o.h
 include/nhc98/cinterface.h
@@ -174,7 +170,6 @@ include/nhc98/codemacros.h
 include/nhc98/flt.h
 include/nhc98/greencard.h
 include/nhc98/haskell2c.h
-include/nhc98/hat.h
 include/nhc98/localmalloc.h
 include/nhc98/macros_o.h
 include/nhc98/mk.h
@@ -209,7 +204,6 @@ include/nhc98/twopass.h
 %%PORTDOCS%%share/doc/nhc98/heapprof.html
 %%PORTDOCS%%share/doc/nhc98/history.html
 %%PORTDOCS%%share/doc/nhc98/history98.html
-%%PORTDOCS%%share/doc/nhc98/hmake.html
 %%PORTDOCS%%share/doc/nhc98/index.html
 %%PORTDOCS%%share/doc/nhc98/install.html
 %%PORTDOCS%%share/doc/nhc98/libraries.html

@@ -1,0 +1,12 @@
+diff -ruN include.bak/Array.hi include/Array.hi
+--- include.bak/Array.hi	Tue Sep 18 12:50:40 2001
++++ include/Array.hi	Fri Dec 21 23:25:13 2001
+@@ -113,7 +113,7 @@
+ {-# NEED _tupleRange #-}
+ _tupleRange{-# 3 #-}::(Ix a) => (a -> (a -> ([(a -> b)] -> [b])));
+ 
+-{-# NEED {Ix range index inRange} #-}
++{-# NEED {Ix range index inRange rangeSize} #-}
+ class (Prelude.Ord a) => Ix a where {
+   range{-# 1 #-}::((a,a) -> [a]);
+   index{-# 2 #-}::((a,a) -> (a -> Prelude.Int));
