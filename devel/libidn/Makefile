@@ -9,9 +9,9 @@ PORTNAME=	libidn
 PORTVERSION=	0.3.3
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/${PORTNAME}/ \
-		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/${PORTNAME}/ \
+MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 		http://josefsson.org/libidn/releases/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internationalized Domain Names command line tool
