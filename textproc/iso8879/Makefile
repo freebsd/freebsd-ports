@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/22 21:01:27 jfieber Exp $
+# $Id: Makefile,v 1.2 1997/06/29 09:49:48 obrien Exp $
 #
 
 DISTNAME=	isoENTS
@@ -17,13 +17,13 @@ MAINTAINER=	jfieber@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 NO_MTREE=       yes
-NO_EXTRACT=     yes
+EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
-NO_WRKDIR=      yes
+NO_WRKSUBDIR=	yes
 
-INSTDIR=	${PREFIX}/share/sgml/iso8879/
+INSTDIR=	${PREFIX}/share/sgml/iso8879
 
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
