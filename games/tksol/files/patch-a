@@ -51,7 +51,7 @@ diff -cr tksol-0.9.orig/Makefile tksol-0.9/Makefile
   ############################################
   # Absolute pathname of the wish executable #
   ############################################
-! WISH = ${PREFIX}/bin/wish
+! WISH = ${PREFIX}/bin/wish4.0
   
   ####################################################
   # Directory where the script tksol will be located #
@@ -66,12 +66,12 @@ diff -cr tksol-0.9.orig/Makefile tksol-0.9/Makefile
   ####################################################################
   # Directory where the bitmaps for the faceup cards will be located #
   ####################################################################
-! CARDBITMAPS = ${PREFIX}/lib/tk/tksol/cardbitmaps
+! CARDBITMAPS = ${PREFIX}/lib/tk4.0/tksol/cardbitmaps
   
   ######################################################################
   # Directory where the bitmaps for the facedown cards will be located #
   ######################################################################
-! DOWNBITMAPS = ${PREFIX}/lib/tk/tksol/downbitmaps
+! DOWNBITMAPS = ${PREFIX}/lib/tk4.0/tksol/downbitmaps
   
   
   all: tksol tksol.1
