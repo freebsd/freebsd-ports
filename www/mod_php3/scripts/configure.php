@@ -1,17 +1,15 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ "${BATCH}" ]; then
-	${MKDIR} ${WRKDIRPREFIX}${CURDIR}
-	${TOUCH} ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-	exit
-fi
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
-/usr/bin/dialog --title "configuration options" --clear \
-	--checklist "\n\
+if [ "${BATCH}" ]; then
+	set \"zlib\" \"MySQL\"
+else
+	/usr/bin/dialog --title "configuration options" --clear \
+		--checklist "\n\
 Please select desired options:" -1 -1 14 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
@@ -33,22 +31,23 @@ SNMP		"PHP:    SNMP support" OFF \
 XML		"PHP:    XML support" OFF \
 2> /tmp/checklist.tmp.$$
 
-retval=$?
+	retval=$?
 
-if [ -s /tmp/checklist.tmp.$$ ]; then
-	set `cat /tmp/checklist.tmp.$$`
+	if [ -s /tmp/checklist.tmp.$$ ]; then
+		set `cat /tmp/checklist.tmp.$$`
+	fi
+	rm -f /tmp/checklist.tmp.$$
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
 fi
-rm -f /tmp/checklist.tmp.$$
-
-case $retval in
-	0)	if [ -z "$*" ]; then
-			echo "Nothing selected"
-		fi
-		;;
-	1)	echo "Cancel pressed."
-		exit 1
-		;;
-esac
 
 ${MKDIR} ${WRKDIRPREFIX}${CURDIR}
 exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
@@ -202,6 +201,11 @@ certificate:
 	&& \${MAKE} certificate TYPE=\$(TYPE) CRT=\$(CRT) KEY=\$(KEY)
 
 EOF
+			;;
+	*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
 			;;
 	esac
 	shift
