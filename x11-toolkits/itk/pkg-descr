@@ -5,3 +5,5 @@ Tk. The [incr Tk] extension is also known as ``itk''.
 A companion to [incr Tk] called [incr Widgets] provides a widget set,
 with many improved widgets. The [incr Widgets] collection is also known
 as ``iwidgets'' and is available in x11-toolkits.
+
+WWW: http://sourceforge.net/projects/incrtcl/

@@ -1,0 +1,27 @@
+--- generic/itk_cmds.c	Mon Aug 28 23:58:00 2000
++++ generic/itk_cmds.c	Sat Jul 28 08:04:49 2001
+@@ -82,3 +82,5 @@
+ 
++#ifdef USE_ITK_STUBS
+ extern ItkStubs itkStubs;
++#endif
+ 
+@@ -105,6 +107,6 @@
+ 
+-    if (Tcl_InitStubs(interp, "8.1", 0) == NULL) {
++    if (Tcl_InitStubs(interp, TCL_VERSION, 0) == NULL) {
+ 	return TCL_ERROR;
+     };
+-    if (Tk_InitStubs(interp, "8.1", 0) == NULL) {
++    if (Tk_InitStubs(interp, TK_VERSION, 0) == NULL) {
+ 	return TCL_ERROR;
+@@ -198,3 +200,8 @@
+     if (Tcl_PkgProvideEx(interp, "Itk", ITCL_VERSION,
+-            (ClientData) &itkStubs) != TCL_OK) {
++#ifdef USE_ITK_STUBS
++            (ClientData) &itkStubs
++#else
++	    (ClientData) NULL
++#endif
++		) != TCL_OK) {
+ 	return TCL_ERROR;

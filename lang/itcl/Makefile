@@ -6,51 +6,60 @@
 #
 
 PORTNAME=	itcl
-PORTVERSION=	3.0.1
+PORTVERSION=	${MAJOR}.${MINOR}
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
-DISTNAME=	itcl3.0.1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=incrtcl
+DISTNAME=	itcl${PORTVERSION}
 
-MAINTAINER=	dmlb@ragnet.demon.co.uk
+MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
+LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
-WRKSRC=		${WRKDIR}/itcl3.0.1/itcl/unix
+WRKSRC=		${WRKDIR}/${DISTNAME}/itcl
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2
-CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} ITCL_LIB_FILE=${ITCL_LIB_FILE}
-PKGINSTALL=	${PORTSDIR}/lang/tcl82/pkg-install.tclsh
-PKGDEINSTALL=	${PORTSDIR}/lang/tcl82/pkg-deinstall.tclsh
+PKGINSTALL=	${PORTSDIR}/lang/tcl83/pkg-install.tclsh
+PKGDEINSTALL=	${PORTSDIR}/lang/tcl83/pkg-deinstall.tclsh
+MAKE_ENV+=	${PLIST_SUB} \
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
+
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - ./itcl${MAJOR}.${MINOR}/itcl
+
+.if defined(MAKE_JOBS)
+MAKE_ARGS+=	-j$(MAKE_JOBS)
+.endif
 
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	1
-MAKEFILE=	makefile
-ITCL_LIB=	libitcl30.so
+MAJOR=	3
+MINOR=	2
+PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
+ITCL_LIB=	libitcl${MAJOR}${MINOR}.so
+MAKEFILE=	${FILESDIR}/Makefile.lib
 
-MANCOMPRESSED=	yes
-MAN1=		itclsh.1
+MANCOMPRESSED=	no
 MANN=		body.n class.n code.n configbody.n delete.n ensemble.n find.n
 MANN+=		itcl.n itcl_class.n itcl_info.n itclvars.n local.n scope.n
 
-.include <bsd.port.pre.mk>
-
 ITCL_LIB_FILE=	${ITCL_LIB}.${SHLIB_MAJOR}
 
-post-configure:
-	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
-	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
+post-extract:
+	${RM} ${WRKSRC}/pkgIndex.tcl
 
-pre-build:
-	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
-	   SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-	   TCL_PREFIX=${PREFIX}
+post-patch:
+	${PERL} -pi \
+		-e 's,package require Itcl,load [glob \
+			${WRKSRC}/${ITCL_LIB}.${SHLIB_MAJOR}*],;' \
+		${WRKSRC}/tests/*.test
+
+post-build test:
+	cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
+		${PREFIX}/bin/tclsh8.3 tests/all.tcl
 
 post-install:
-	${LN} -sf ${PREFIX}/bin/itclsh3.0 ${PREFIX}/bin/itclsh
-	${LN} -sf ${ITCL_LIB_FILE} ${PREFIX}/lib/${ITCL_LIB}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.n ${PREFIX}/man/mann/
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

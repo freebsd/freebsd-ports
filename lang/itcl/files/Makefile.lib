@@ -1,8 +1,8 @@
 NOPROFILE=	yes
-LIB=		itcl30
-ITCL_LIBRARY=	${PREFIX}/lib/itcl3.0
+LIB=		itcl${MAJOR}${MINOR}
+ITCL_LIBRARY=	${PREFIX}/lib/itcl${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
-		-I${TCL_PREFIX}/include/tcl8.2/generic \
+		-I${PREFIX}/include/tcl8.3/generic \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
 		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
 		-DHAVE_TM_GMTOFF=1 -DHAVE_ST_BLKSIZE=1 -DSTDC_HEADERS=1\
@@ -10,23 +10,32 @@ CFLAGS+=	-I. -I./../generic \
 		-DTCL_SHLIB_EXT=\".so\" \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
-		-DITCL_LIBRARY=\"${ITCL_LIBRARY}\" \
+		-DITCL_LIBRARY=\"${ITCL_LIBRARY}\"
+LDADD+=		-L${PREFIX}/lib -ltcl83
 
+.PATH:	${.CURDIR}/unix ${.CURDIR}/generic ${.CURDIR}/man
 
-GENERIC_DIR=	../generic
-UNIX_DIR=	.
+SRCS=	itcl_bicmds.c itcl_class.c itcl_cmds.c itcl_ensemble.c \
+	itcl_linkage.c itcl_methods.c itcl_migrate.c itcl_objects.c \
+	itcl_obsolete.c itcl_parse.c itcl_util.c \
+	itclStubInit.c itclStubLib.c
 
-SRCS=	\
-		$(GENERIC_DIR)/itcl_bicmds.c \
-		$(GENERIC_DIR)/itcl_class.c \
-		$(GENERIC_DIR)/itcl_cmds.c \
-		$(GENERIC_DIR)/itcl_ensemble.c \
-		$(GENERIC_DIR)/itcl_linkage.c \
-		$(GENERIC_DIR)/itcl_methods.c \
-		$(GENERIC_DIR)/itcl_migrate.c \
-		$(GENERIC_DIR)/itcl_objects.c \
-		$(GENERIC_DIR)/itcl_obsolete.c \
-		$(GENERIC_DIR)/itcl_parse.c \
-		$(GENERIC_DIR)/itcl_util.c
+pkgIndex.tcl: ${.CURDIR}/pkgIndex.tcl.in
+	sed -e "s#@RELPATH@#..#" -e "s#@VERSION@#${MAJOR}.${MINOR}#" \
+		-e "s#@itcl_LIB_FILE@#${SHLIB_NAME}#" \
+		< ${.CURDIR}/pkgIndex.tcl.in > pkgIndex.tcl
+
+SCRIPTDIR=	lib/itcl${MAJOR}.${MINOR}
+SCRIPTPATH=	${PREFIX}/${SCRIPTDIR}
+LIBDIR=		${PREFIX}/lib
+INCDIR=		${PREFIX}/include/itcl${MAJOR}.${MINOR}
+
+${SCRIPTPATH} ${INCDIR}:
+	mkdir -p ${.TARGET}
+
+beforeinstall: pkgIndex.tcl ${SCRIPTPATH} ${INCDIR}
+	${BSD_INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/library/itcl.tcl \
+		${SCRIPTPATH}
+	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
 
 .include <bsd.lib.mk>

@@ -1,19 +1,13 @@
-bin/itkwish3.0
-@exec /bin/ln -s %D/%F %B/itkwish
-@unexec rm %B/itkwish
-include/itk3.0/generic/itk.h
-include/itk3.0/itk.h
-lib/libitk30.so.1
-lib/libitk30.so
-lib/libitk30.a
-lib/itk3.0/itkConfig.sh
-lib/itk3.0/Archetype.itk
-lib/itk3.0/Toplevel.itk
-lib/itk3.0/Widget.itk
-lib/itk3.0/itk.tcl
-lib/itk3.0/tclIndex
-lib/itk3.0/tkAppInit.c
-lib/itk3.0/pkgIndex.tcl
-@dirrm include/itk3.0/generic
-@dirrm include/itk3.0
-@dirrm lib/itk3.0
+include/itk%%MAJOR%%.%%MINOR%%/itk.h
+include/itk%%MAJOR%%.%%MINOR%%/itkDecls.h
+lib/libitk%%MAJOR%%%%MINOR%%.so.1
+lib/libitk%%MAJOR%%%%MINOR%%.so
+lib/libitk%%MAJOR%%%%MINOR%%.a
+lib/itk%%MAJOR%%.%%MINOR%%/Archetype.itk
+lib/itk%%MAJOR%%.%%MINOR%%/Toplevel.itk
+lib/itk%%MAJOR%%.%%MINOR%%/Widget.itk
+lib/itk%%MAJOR%%.%%MINOR%%/itk.tcl
+lib/itk%%MAJOR%%.%%MINOR%%/tclIndex
+lib/itk%%MAJOR%%.%%MINOR%%/pkgIndex.tcl
+@dirrm include/itk%%MAJOR%%.%%MINOR%%
+@dirrm lib/itk%%MAJOR%%.%%MINOR%%

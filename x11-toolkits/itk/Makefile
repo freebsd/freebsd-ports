@@ -6,46 +6,52 @@
 #
 
 PORTNAME=	itk
-PORTVERSION=	3.0.1
-CATEGORIES=	x11-toolkits tk82
-MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
+PORTVERSION=	${MAJOR}.${MINOR}
+CATEGORIES=	x11-toolkits tk83
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=incrtcl
 DISTNAME=	itcl${PORTVERSION}
 
-MAINTAINER=	dmlb@ragnet.demon.co.uk
+MAINTAINER=	ports@freebsd.org
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		itcl30.1:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
+		itcl${MAJOR}${MINOR}.1:${PORTSDIR}/lang/itcl
 
-WRKSRC=		${WRKDIR}/itcl3.0.1/itk/unix
+WRKSRC=		${WRKDIR}/itcl${MAJOR}.${MINOR}/itk
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.2 --with-itcl=${PREFIX}/lib/itcl3.0 --with-tk=${PREFIX}/lib/tk8.2
-CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} ITK_LIB_FILE=${ITK_LIB_FILE}
+MAKE_ENV+=	${PLIST_SUB} \
+		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - ./itcl${MAJOR}.${MINOR}/itk
+MAKEFILE=	${FILESDIR}/Makefile.lib
 SHLIB_MAJOR=	1
 SHLIB_MINOR=	1
-MAKEFILE=	makefile
-ITK_LIB=	libitk30.so
+MAJOR=		3
+MINOR=		2
+PLIST_SUB+=     MAJOR=${MAJOR} MINOR=${MINOR}
+ITK_LIB=	libitk${MAJOR}${MINOR}.so
+.if defined(MAKE_JOBS)
+MAKE_ARGS+=     -j$(MAKE_JOBS)
+.endif
 
-MANCOMPRESSED=	yes
-MAN1=		itkwish.1
+MANCOMPRESSED=	no
 MANN=		Archetype.n Toplevel.n Widget.n itk.n itkvars.n usual.n
-
-.include <bsd.port.pre.mk>
 
 ITK_LIB_FILE=	${ITK_LIB}.${SHLIB_MAJOR}
 
-post-configure:
-	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
-	@${CP} ${FILESDIR}/makefile     ${WRKSRC}
+post-extract:
+	${RM} ${WRKSRC}/pkgIndex.tcl
 
-pre-build:
-	@cd ${WRKSRC} && ${MAKE} -f Makefile.lib PREFIX=${PREFIX} \
-	   SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-	   TCL_PREFIX=${PREFIX} ITCL_PREFIX=${PREFIX} TK_PREFIX=${PREFIX}
+post-patch:
+	${PERL} -pi \
+		-e 's,package require Itk,load \
+			[glob ${WRKSRC}/${ITK_LIB_FILE}*],;' \
+		-e 's,return$$,exit,' ${WRKSRC}/tests/*
 
-post-install:
-	${LN} -sf itkwish3.0 ${PREFIX}/bin/itkwish
-	${LN} -sf ${ITK_LIB_FILE} ${PREFIX}/lib/${ITK_LIB}
+.if defined(DISPLAY)
+post-build test:
+	cd ${WRKSRC} && ${SETENV} ITK_LIBRARY=${WRKSRC}/library \
+		${PREFIX}/bin/wish8.3 tests/all.tcl
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
