@@ -34,10 +34,11 @@ share/sqwebmail/html/en-us/preferences.html
 share/sqwebmail/html/en-us/print.html
 share/sqwebmail/html/en-us/printnocookie.html
 share/sqwebmail/html/en-us/printredirect.html
+share/sqwebmail/html/en-us/quickadd.html
 share/sqwebmail/html/en-us/readmsg.html
 share/sqwebmail/html/en-us/redirect.html
 share/sqwebmail/html/en-us/spellchk.html
-share/sqwebmail/ldapaddressbook
+share/sqwebmail/ldapaddressbook.dist
 share/sqwebmail/ldapsearch
 share/sqwebmail/sbin/makeuserdb
 share/sqwebmail/sbin/pw2userdb
@@ -57,6 +58,7 @@ www/data.default/sqwebmail/left2.gif
 www/data.default/sqwebmail/print.gif
 www/data.default/sqwebmail/reply.gif
 www/data.default/sqwebmail/replyall.gif
+www/data.default/sqwebmail/replylist.gif
 www/data.default/sqwebmail/right.gif
 www/data.default/sqwebmail/right2.gif
 www/data.default/sqwebmail/trash2.gif
