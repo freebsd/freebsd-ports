@@ -188,6 +188,7 @@
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += smartdoc
+    SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += tclExpat
     SUBDIR += tdtd.el

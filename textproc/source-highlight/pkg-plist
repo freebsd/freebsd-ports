@@ -1,0 +1,31 @@
+bin/cpp2html
+bin/java2html
+%%PORTDOCS%%share/doc/source-highlight/COPYING
+%%PORTDOCS%%share/doc/source-highlight/ChangeLog
+%%PORTDOCS%%share/doc/source-highlight/Hello.css
+%%PORTDOCS%%share/doc/source-highlight/Hello.java
+%%PORTDOCS%%share/doc/source-highlight/Hello.java.html
+%%PORTDOCS%%share/doc/source-highlight/Hello1.html
+%%PORTDOCS%%share/doc/source-highlight/Hello2.css
+%%PORTDOCS%%share/doc/source-highlight/Hello2.html
+%%PORTDOCS%%share/doc/source-highlight/Hello3.html
+%%PORTDOCS%%share/doc/source-highlight/Hello4.html
+%%PORTDOCS%%share/doc/source-highlight/Hello5.html
+%%PORTDOCS%%share/doc/source-highlight/Hello_h_f.html
+%%PORTDOCS%%share/doc/source-highlight/INSTALL
+%%PORTDOCS%%share/doc/source-highlight/NEWS
+%%PORTDOCS%%share/doc/source-highlight/README
+%%PORTDOCS%%share/doc/source-highlight/README.compile_VC6
+%%PORTDOCS%%share/doc/source-highlight/THANKS
+%%PORTDOCS%%share/doc/source-highlight/TODO.txt
+%%PORTDOCS%%share/doc/source-highlight/cmdline.c.html
+%%PORTDOCS%%share/doc/source-highlight/cmdline.h.html
+%%PORTDOCS%%share/doc/source-highlight/colors.html
+%%PORTDOCS%%share/doc/source-highlight/cpp2html.css
+%%PORTDOCS%%share/doc/source-highlight/mono-alt.css
+%%PORTDOCS%%share/doc/source-highlight/mono.css
+%%PORTDOCS%%share/doc/source-highlight/source-highlight.html
+%%PORTDOCS%%share/doc/source-highlight/startapp.cc.html
+share/source-highlight/tags.j2h 
+@dirrm share/source-highlight
+%%PORTDOCS%%@dirrm share/doc/source-highlight
