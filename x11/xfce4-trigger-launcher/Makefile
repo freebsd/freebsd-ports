@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/${PORTVERSION}/ \
 DISTNAME=	xfce4-trigger-launcher-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A command trigger plugin for xfce4-panel
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
