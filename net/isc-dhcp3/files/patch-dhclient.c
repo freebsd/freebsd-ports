@@ -1,5 +1,5 @@
 --- client/dhclient.c.orig	Fri Mar 16 00:12:03 2001
-+++ client/dhclient.c	Thu Mar 22 02:49:59 2001
++++ client/dhclient.c	Thu Mar 22 14:57:19 2001
 @@ -78,6 +78,7 @@
  u_int16_t remote_port;
  int no_daemon;
@@ -56,13 +56,16 @@
  }
  
  isc_result_t find_class (struct class **c,
-@@ -1453,6 +1467,10 @@
+@@ -1453,6 +1467,13 @@
  	/* No leases were available, or what was available didn't work, so
  	   tell the shell script that we failed to allocate an address,
  	   and try again later. */
 +	if (onetry) {
++		if (!quiet)
++			log_info ("Unable to obtain a lease on first try - %s.",
++				  
++				  "exiting");
 +		exit(2);
-+		log_info ("Unable to obtain a lease on first try - exiting.\n");
 +	}
  	log_info ("No working leases in persistent database - sleeping.");
  	script_init (client, "FAIL", (struct string_list *)0);
