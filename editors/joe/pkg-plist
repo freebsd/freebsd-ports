@@ -1,0 +1,11 @@
+bin/joe
+bin/jmacs
+bin/jstar
+bin/rjoe
+bin/jpico
+lib/joerc
+lib/jmacsrc
+lib/jstarrc
+lib/rjoerc
+lib/jpicorc
+man/man1/joe.1.gz
