@@ -7,6 +7,7 @@
 
 PORTNAME=	socks5
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 CATEGORIES=	net security
 DISTNAME=	socks5-v1.0r11
 
