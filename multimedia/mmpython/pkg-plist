@@ -66,6 +66,7 @@ bin/mminfo
 %%PYTHON_SITELIBDIR%%/mmpython/disc/dvdinfo.py
 %%PYTHON_SITELIBDIR%%/mmpython/disc/dvdinfo.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/disc/dvdinfo.pyo
+%%PYTHON_SITELIBDIR%%/mmpython/disc/ifoparser.so
 %%PYTHON_SITELIBDIR%%/mmpython/disc/lsdvd.py
 %%PYTHON_SITELIBDIR%%/mmpython/disc/lsdvd.pyc
 %%PYTHON_SITELIBDIR%%/mmpython/disc/lsdvd.pyo
