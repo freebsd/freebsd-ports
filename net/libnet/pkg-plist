@@ -1,7 +1,20 @@
+bin/libnet-config
 include/libnet.h
-include/libnet-headers.h 
+include/libnet/libnet-headers.h 
+include/libnet/libnet-functions.h
+include/libnet/libnet-ospf.h
+include/libnet/libnet-structures.h
+include/libnet/libnet-macros.h
+include/libnet/libnet-asn1.h 
+lib/libpwrite
 lib/libnet.a
 share/doc/libnet/PORTS
 share/doc/libnet/README
+share/doc/libnet/README.asn.1
 share/doc/libnet/README.bpf
+share/doc/libnet/README.examples
+share/doc/libnet/README.linux
+share/doc/libnet/README.rawsockets
+share/doc/libnet/README.stubs
 @dirrm share/doc/libnet
+@dirrm include/libnet
