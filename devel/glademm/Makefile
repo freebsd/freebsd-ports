@@ -27,10 +27,10 @@ USE_GETOPT_LONG=	yes
 post-patch:
 	${RM} -f ${WRKSRC}/src/getopt.*
 	@${REINPLACE_CMD} \
-		-e 's|automake-1.7|automake17|g' \
+		-e 's|automake-1.7|automake18|g' \
 		-e 's|automake-1.5|automake15|g' \
 		-e 's|automake-1.4|automake14|g' \
-		-e 's|autoconf2.50|autoconf257|g' \
+		-e 's|autoconf2.50|autoconf259|g' \
 		-e 's|autoconf2.13|autoconf213|g' \
 		${WRKSRC}/src/glade--.cc
 

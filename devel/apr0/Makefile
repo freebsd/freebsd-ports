@@ -29,8 +29,8 @@ COMMENT=	The Apache Group's Portability Library
 LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 USE_ICONV=		yes
-USE_AUTOMAKE_VER=	17
-USE_AUTOCONF_VER=	257
+USE_AUTOMAKE_VER=	18
+USE_AUTOCONF_VER=	259
 WANT_LIBTOOL_VER=	15
 USE_PERL5=		yes
 USE_GMAKE=		yes
@@ -76,8 +76,6 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-db4
 PKGNAMESUFFIX=	-db4
 .endif
 .endif
-
-LIBTOOL_M4=${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4
 
 pre-extract:
 	@${ECHO_MSG} ""
@@ -128,11 +126,11 @@ pre-configure:
 .endfor
 
 run-autotools:
-	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} LIBTOOL_M4=${LIBTOOL_M4} ${SH} ./buildconf
+	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
 	${RM} -fr xml/expat
 	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
-		${SETENV} ${SCRIPTS_ENV} LIBTOOL_M4=${LIBTOOL_M4} ${SH} ./buildconf \
+		${SETENV} ${SCRIPTS_ENV} ${SH} ./buildconf \
 		--with-apr=../apr-${PORTVERSION}
 	cd ${WRKDIR}/apr-${PORTVERSION}; \
 		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure ${CONFIGURE_ARGS}

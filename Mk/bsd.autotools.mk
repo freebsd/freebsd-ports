@@ -109,7 +109,7 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 #
 # - Only set GNU_CONFIGURE automatically if USE_<x>_VER is specified,
 #	since WANT_<x>_VER implies that we want the environment, but not
-#	the configuration steps.  XXX: this may break some ports
+#	the configuration steps.
 #
 # Things to do:
 # - Move both autoconf and automake to true versioned ports
@@ -133,6 +133,9 @@ Autotools_Include_MAINTAINER=	ade@FreeBSD.org
 .for i in AUTOMAKE AUTOCONF AUTOHEADER LIBTOOL
 . if defined(USE_${i})
 . error USE_${i} deprecated: replace with USE_${i}_VER=...
+. endif
+. if defined(WANT_${i})
+. error WANT_${i} deprecated: replace with WANT_${i}_VER=...
 . endif
 .endfor
 
@@ -285,9 +288,16 @@ LIBTOOL=			${LOCALBASE}/bin/libtool${LIBTOOL_SUFFIX}
 LIBTOOLIZE=			${LOCALBASE}/bin/libtoolize${LIBTOOL_SUFFIX}
 LIBTOOL_LIBEXECDIR=	${LOCALBASE}/libexec/libtool${LIBTOOL_SUFFIX}
 LIBTOOL_SHAREDIR=	${LOCALBASE}/share/libtool${LIBTOOL_SUFFIX}
-LIBTOOL_PATH=		${LIBTOOL_LIBEXECDIR}:
-LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
 LIBTOOL_VERSION=	${WANT_LIBTOOL_VER}
+LIBTOOL_M4=			${LOCALBASE}/share/aclocal/libtool${LIBTOOL_VERSION}.m4
+LTMAIN=				${LIBTOOL_SHAREDIR}/ltmain.sh
+. if ${LIBTOOL_VERSION} == 13
+LTCONFIG=			${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}
+. else
+LTCONFIG=			${TRUE}
+. endif
+LIBTOOL_PATH=		${LIBTOOL_LIBEXECDIR}:
+LIBTOOL_VARS=		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} LIBTOOL_M4=${LIBTOOL_M4} LTCONFIG=${LTCONFIG}
 
 LIBTOOL_DEPENDS=	${LIBTOOL}:${PORTSDIR}/devel/libtool${LIBTOOL_SUFFIX}
 BUILD_DEPENDS+=		${LIBTOOL_DEPENDS}
@@ -355,18 +365,18 @@ AUTOHEADER_ENV+=${AUTOTOOLS_VARS}
 #
 .if !target(run-autotools)
 run-autotools:
-.if defined(USE_AUTOMAKE_VER)
+. if defined(USE_AUTOMAKE_VER)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
 		${AUTOMAKE_ARGS})
-.endif
-.if defined(USE_AUTOCONF_VER)
+. endif
+. if defined(USE_AUTOCONF_VER)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
 		${AUTOCONF_ARGS})
-.endif
-.if defined(USE_AUTOHEADER_VER)
+. endif
+. if defined(USE_AUTOHEADER_VER)
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
 		${AUTOHEADER_ARGS})
-.endif
+. endif
 .endif
 
 # patch-autotools
@@ -376,15 +386,16 @@ run-autotools:
 #
 .if !target(patch-autotools)
 patch-autotools:
-.if defined(USE_LIBTOOL_VER)
-	 @(cd ${PATCH_WRKSRC}; \
-	 for file in ${LIBTOOLFILES}; do \
+. if defined(USE_LIBTOOL_VER)
+	@(cd ${PATCH_WRKSRC}; \
+	for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
-		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}^g" \
-			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LIBTOOL_SHAREDIR}/ltmain.sh^g" \
+		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+			   -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
 			$$file.tmp > $$file; \
-	 done);
-.else
+		${RM} $$file.tmp; \
+	done);
+. else
 	@${DO_NADA}
-.endif
+. endif
 .endif

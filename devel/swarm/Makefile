@@ -40,15 +40,15 @@ CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
+		-e 's|%%LTCONFIG%%|${LTCONFIG}|g' \
 		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} \
-		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
+		-e 's|%%LTCONFIG%%|${LTCONFIG}|g' \
 		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/libobjc/configure
 	@${REINPLACE_CMD} \
-		-e 's|%%LTCONFIG%%|${LIBTOOL_SHAREDIR}/ltconfig${LIBTOOL_VERSION}|g' \
+		-e 's|%%LTCONFIG%%|${LTCONFIG}|g' \
 		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/avcall/configure
 
