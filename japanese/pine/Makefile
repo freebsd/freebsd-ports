@@ -3,22 +3,22 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.14 1998/10/16 04:55:14 jseger Exp $
+# $Id: Makefile,v 1.15 1999/06/05 19:55:23 mharo Exp $
 #
 
 DISTNAME=	pine3.95
 PKGNAME=	ja-pine-3.95
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
-		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/pine/pine3.95/
+		${MASTER_SITE_PORTS_JP}
 DISTFILES=	pine3.95.tar.gz pine3.95lj1.1b2.tar.gz
 
 PATCHFILES=	pine3.95lj1.1b2-b3.diff.gz
-PATCH_SITES=	ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/pine/pine3.95/
+PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	max@FreeBSD.ORG
 
-BROKEN_ELF=	yes
+#BROKEN_ELF=	yes
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	${PREFIX}/lib/libcanna.a:${PORTSDIR}/japanese/Canna
