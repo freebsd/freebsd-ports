@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vomit
-PORTVERSION=	0.2
+PORTVERSION=	0.2c
 CATEGORIES=	net security
 MASTER_SITES=	http://vomit.xtdnet.nl/
 
@@ -14,12 +14,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice over misconfigured internet telephones
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent \
-		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+		${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-WRKSRC=		${WRKDIR}/vomit-lite
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		vomit.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2 -Wall -g|@CFLAGS@|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
