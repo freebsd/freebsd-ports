@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-Currency
-PORTVERSION=	0.11
+PORTVERSION=	0.39
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Math
@@ -20,11 +20,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500007
+.if ${PERL_LEVEL} < 500600
 IGNORE=		"Needs Perl 5.6.0 for Math::BigFloat"
 .endif
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
