@@ -9609,6 +9609,7 @@ zh-xemacs21	ports/chinese/xemacs21
 zh-xmms		ports/chinese/xmms
 zh-xpdf		ports/chinese/xpdf
 zh-xsim		ports/chinese/xsim
+zh-xttmgr	ports/chinese/xttmgr
 zh-zhcon	ports/chinese/zhcon
 ziarc		ports/cad/ziarc
 zile		ports/editors/zile
