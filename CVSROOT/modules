@@ -1330,6 +1330,7 @@ eel2		ports/x11-toolkits/eel2
 efancylauncher	ports/x11/efancylauncher
 efax		ports/comms/efax
 egcs		ports/lang/egcs
+egoboo		ports/games/egoboo
 ehnt		ports/net/ehnt
 eieio		ports/devel/eieio
 eieio-emacs20	ports/devel/eieio-emacs20
