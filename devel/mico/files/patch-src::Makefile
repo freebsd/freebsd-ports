@@ -1,0 +1,28 @@
+--- Makefile.orig	Fri Feb 14 13:55:53 2003
++++ Makefile	Sun Jun 29 13:49:37 2003
+@@ -27,7 +27,7 @@
+ PRGDIRS = orb ir cpp idl daemon auxdir coss ccm tools
+ EXTRADIRS = test demo
+ ALLDIRS = admin orb ir daemon idl cpp auxdir coss ccm test tools demo
+-INSTALLDIRS = admin orb ir daemon idl cpp auxdir coss ccm tools include man demo
++INSTALLDIRS = admin orb ir daemon idl cpp auxdir coss ccm tools include man
+ # Bootstrap minimal build configuration
+ MINLIBDIRS = orb ir idl
+ MINPRGDIRS = cpp idl
+@@ -68,11 +68,13 @@
+ 
+ install:
+ 	for i in $(INSTALLDIRS); do $(MAKE) -C $$i install || exit 1; done
++
++install-doc:
++	$(MAKE) -C demo install || exit 1;
+ 	if test -f doc/doc.ps; then \
+-		$(IDIRCMD) $(SHARED_INSTDIR)/doc/mico; \
+-		$(IMANCMD) doc/doc.ps $(SHARED_INSTDIR)/doc/mico/manual.ps; \
++		$(IDIRCMD) $(SHARED_INSTDIR)/share/doc/mico; \
++		$(IMANCMD) doc/doc.ps $(SHARED_INSTDIR)/share/doc/mico/manual.ps; \
+ 	fi
+-	-ldconfig
+ 
+ install-cd:
+ 	for i in $(INSTALLDIRS); do $(MAKE) -C $$i install-cd || exit 1; done

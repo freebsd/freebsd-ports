@@ -1,16 +1,13 @@
 The acronym MICO expands to MICO Is CORBA. The intention of this project
 is to provide a freely available and fully compliant implementation of
-the latest CORBA standard. 
+the latest CORBA standard for C++ developers.
 
 Here is some of MICO features:
-    * IDL to C++ mapping
     * Multi-threaded
-    * Dynamic Invocation Interface (DII)
-    * Dynamic Skeleton Interface (DSI)
-    * graphical Interface Repository browser
-    * Interface Repository (IR)
+    * Dynamic Invocation Interface (DII) and Dynamic Skeleton Interface (DSI)
+    * Interface Repository (IR) with graphical Interface Repository browser
     * IIOP as native protocol (ORB prepared for multiprotocol support)
-    * Portable Object Adapter (POA)
+    * Portable Object Adapter (POA) and Basic Object Adapter (BOA) support
     * Objects by Value (OBV)
     * CORBA Components (CCM)
     * Dynamic Any
@@ -19,8 +16,9 @@ Here is some of MICO features:
     * Support for nested method invocations
     * Any offers an interface for inserting and extracting constructed
        types that were not known at compile time
-    * CORBA Services: o Interoperable Naming service, o Trading service,
-        o Event service, o Relationship service, o Property service,
-	o Time service, o Security service 
+    * CORBA Services: 
+       o Interoperable Naming service, o Trading service, o Event service, 
+       o Relationship service, o Property service, o Time service, 
+       o Security service 
 
 WWW: http://www.mico.org

@@ -1,0 +1,43 @@
+--- configure.orig	Mon May 26 14:55:21 2003
++++ configure	Sun Jun 29 05:48:32 2003
+@@ -3130,7 +3130,7 @@
+ # System dependencies.
+ #
+ 
+-CONF_OPT_FLAGS=-O2
++CONF_OPT_FLAGS="-O2"
+ CONF_DEBUG_FLAGS=-g
+ CONF_LIBNSL=yes
+ CONF_EXCEPT_FLAGS=
+@@ -3155,7 +3155,7 @@
+   CFLAGS="-Wall $CFLAGS"
+ 
+   if test X"$use_speed_tune" = Xyes; then
+-    CONF_OPT_FLAGS=-O2
++    CONF_OPT_FLAGS="-O2"
+   fi
+ 
+   CONF_SHARED_CC="$CXX -shared"
+@@ -3233,6 +3233,12 @@
+       CXXFLAGS="$CXXFLAGS -D_THREAD_SAFE"
+     fi
+     ;;
++  *freebsd5*)
++    # must not use .so.1.0 here
++    if test X"$use_threads" = Xyes; then
++      CXXFLAGS="$CXXFLAGS -D_THREAD_SAFE"
++    fi
++    ;;
+   *netbsd*)
+     # must not use .so.1.0 here
+     if test X"$use_threads" = Xyes; then
+@@ -4274,7 +4280,8 @@
+ rm -rf conftest*
+   if test X"$TCL_VERSION" != X; then
+         TCL_VERSION=`echo $TCL_VERSION | tr -d \"`
+-    TCL_LIBS=-ltcl$TCL_VERSION
++    TCL_LIBS="-ltcl$TCL_VERSION -L/usr/local/lib"
++    TCL_LIBS=`echo $TCL_LIBS | tr -d .`
+     HAVE_TCL=yes
+     echo "$ac_t""$TCL_VERSION" 1>&6
+   else
