@@ -8,8 +8,8 @@
 PORTNAME=	gicq
 PORTVERSION=	0.33
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.korsoft.com/pub/gicq/
+MASTER_SITES=	http://download.sourceforge.net/gicq/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	flathill
 
 MAINTAINER=	flathill@FreeBSD.org
