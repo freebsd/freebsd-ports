@@ -77,7 +77,6 @@ man/man8/zshutdown_notify.8
 man/man8/zstat.8
 man/man8/zephyrd.8
 man/man8/zhm.8
-include/zephyr
 include/zephyr/mit-copyright.h
 include/zephyr/zephyr.h
 include/zephyr/zephyr_err.h
