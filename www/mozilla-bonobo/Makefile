@@ -44,7 +44,7 @@ CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default epiphany uses www/mozilla-gtk2 for html rendering, but you can"
+	@${ECHO_MSG} " By default mozilla-bonobo uses www/mozilla-gtk2 for html rendering, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  mozilla-devel-gtk2 "
