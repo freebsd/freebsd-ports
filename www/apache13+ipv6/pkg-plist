@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.22 2004-11-08 08:52:43 sumikawa Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/www/apache13+ipv6/Attic/pkg-plist,v 1.23 2005-02-11 20:43:04 clement Exp $
 bin/checkgid
 bin/dbmmanage
 bin/htdigest
@@ -661,6 +661,7 @@ www/icons/world2.png
 @exec mkdir -p %D/www/proxy
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 @unexec if [ -L %D/www/data ]; then rm -f %D/www/data; fi
+@unexec rm -f %D/etc/apache/httpd.conf.bak 2> /dev/null || true
 @dirrm etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache

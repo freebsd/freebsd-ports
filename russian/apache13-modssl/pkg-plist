@@ -902,6 +902,7 @@ www/icons/world2.png
 @dirrm etc/apache/tables/ukrainian
 @dirrm etc/apache/tables/ukrainian2
 @dirrm etc/apache/tables
+@unexec rm -f %D/etc/apache/httpd.conf.bak 2> /dev/null || true
 @dirrm etc/apache
 @dirrm include/apache/xml
 @dirrm include/apache
