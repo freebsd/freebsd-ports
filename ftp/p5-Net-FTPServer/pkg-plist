@@ -12,6 +12,9 @@
 %%SITE_PERL%%/Net/FTPServer/InMem/DirHandle.pm
 %%SITE_PERL%%/Net/FTPServer/InMem/FileHandle.pm
 %%SITE_PERL%%/Net/FTPServer/InMem/Server.pm
+%%SITE_PERL%%/Net/FTPServer/Proxy/DirHandle.pm
+%%SITE_PERL%%/Net/FTPServer/Proxy/FileHandle.pm   
+%%SITE_PERL%%/Net/FTPServer/Proxy/Server.pm
 %%SITE_PERL%%/Net/FTPServer/RO/DirHandle.pm
 %%SITE_PERL%%/Net/FTPServer/RO/FileHandle.pm
 %%SITE_PERL%%/Net/FTPServer/RO/Server.pm
@@ -19,6 +22,7 @@
 sbin/dbeg1-ftpd.pl
 sbin/ftpd.pl
 sbin/inmem-ftpd.pl
+sbin/proxy-ftpd.pl
 sbin/ro-ftpd.pl
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -38,6 +42,7 @@ sbin/ro-ftpd.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Net/FTPServer/RO
+@dirrm %%SITE_PERL%%/Net/FTPServer/Proxy
 @dirrm %%SITE_PERL%%/Net/FTPServer/InMem
 @dirrm %%SITE_PERL%%/Net/FTPServer/Full
 @dirrm %%SITE_PERL%%/Net/FTPServer/DBeg1
