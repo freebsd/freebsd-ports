@@ -1,10 +1,9 @@
-id3 Renamer is used to rename batches of mpeg3 files by reading the
+The id3 Renamer is used to rename batches of mpeg3 files by reading the
 ID3 tag at the end of the file which contains the song name, artist,
 album, year, and a comment.  The secondary function of id3 Renamer is
 a tagger, which can create, modify, or remove ID3 tags.
 
-If you have questions, comments, or bugs mail me at badcrc@tscnet.com.
-To get the latest version go to http://tscnet.com/pages/badcrc/apps/id3ren/
+WWW: http://tscnet.com/pages/badcrc/apps/id3ren/
 
 --
 Ported by: Joao Carlos Mendes Luis <jonny@jonny.eng.br>
