@@ -1,0 +1,9 @@
+nget is a command line NNTP file grabber.
+It automatically pieces together multipart postings for easy retrieval,
+even substituting parts from multiple servers. It handles disconnects
+gracefully, resuming after the last part successfully downloaded,
+and caching of header data for quick access.
+
+WWW: http://nget.sourceforge.net/
+
+- George Sorsby <george@crackpipe.net>

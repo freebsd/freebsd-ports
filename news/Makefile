@@ -29,6 +29,7 @@
     SUBDIR += newsfish
     SUBDIR += newsgrab
     SUBDIR += newsx
+    SUBDIR += nget
     SUBDIR += nn
     SUBDIR += nnap
     SUBDIR += nntp
