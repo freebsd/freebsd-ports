@@ -22,3 +22,4 @@ ircd-hybrid<=7.0_1|http://lists.netsys.com/pipermail/full-disclosure/2004-June/0
 ircd-hybrid-ru<=7.1_2|http://lists.netsys.com/pipermail/full-disclosure/2004-June/022820.html http://www.securityfocus.com/archive/1/366486|ircd-hybrid-7 low-bandwidth DoS|23aafa20-c28a-11d8-864c-02e0185c0b53
 {,??-}aspell<=0.50.5_2|http://nettwerked.mg2.org/advisories/wlc http://marc.theaimsgroup.com/?l=bugtraq&m=108761564006503&w=2|Buffer overflow in word-list-compress|b7b03bab-c296-11d8-bfb2-000bdb1444a4
 linux-aspell<=0.50.4.1|http://nettwerked.mg2.org/advisories/wlc http://marc.theaimsgroup.com/?l=bugtraq&m=108761564006503&w=2|Buffer overflow in word-list-compress|b7b03bab-c296-11d8-bfb2-000bdb1444a4
+bnbt<7.5b3|http://www.osvdb.org/6336|BNBT Authorization Header DoS|0f9b3542-c35f-11d8-8898-000d6111a684
