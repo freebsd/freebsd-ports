@@ -130,6 +130,7 @@
     SUBDIR += mxico
     SUBDIR += numlockx
     SUBDIR += nvidia-driver
+    SUBDIR += nvidia-settings
     SUBDIR += offix-clipboard
     SUBDIR += offix-execute
     SUBDIR += oooqs
