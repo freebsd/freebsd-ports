@@ -1,26 +1,28 @@
 # New ports collection makefile for:	binkd
-# Version required:			0.9.2
-# Date created:				19 August 1998
-# Whom:					Andrey Zakhvatov
+# Version required:	0.9.2
+# Date created:		19 August 1998
+# Whom:			Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		binkd092
-PKGNAME=		binkd-0.9.2
-CATEGORIES=		net
-MASTER_SITES=		ftp://ftp.sut.ru/pub/FidoNet/BinkD/092/ \
-			ftp://ftp.aanet.ru/pub/Linux/system/Fido/ \
-			http://www.corbina.net/~maloff/binkd/
+DISTNAME=	binkd-0.9.2
+CATEGORIES=	net
+MASTER_SITES=	http://www.corbina.net/~maloff/binkd/
 
-MAINTAINER=		dsh@vlink.ru
+MAINTAINER=	dsh@vlink.ru
 
-WRKSRC=			${WRKDIR}/${PKGNAME}
-USE_ZIP=		yes
-GNU_CONFIGURE=		yes
-MAN8=			binkd.8
+USE_ZIP=	yes
+GNU_CONFIGURE=	yes
+MAN8=		binkd.8
 
-post-extract:
+.if defined(WITH_AMIGA4D)
+EXTRA_PATCHES+=	${FILESDIR}/patch-amiga4d
+DEFINES+=	-DAMIGADOS_4D_OUTBOUND
+MAKE_ENV+=	DEFINES="${DEFINES}"
+.endif
+
+pre-configure:
 	@ ${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}
 	@ ${CHMOD} a+x ${WRKSRC}/configure
 
