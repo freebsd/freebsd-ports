@@ -27,6 +27,7 @@
     SUBDIR += gb2ps
     SUBDIR += gbscript
     SUBDIR += ghostscript6
+    SUBDIR += gnumeric
     SUBDIR += hc
     SUBDIR += hztty
     SUBDIR += joe
