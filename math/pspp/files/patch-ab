@@ -1,0 +1,20 @@
+--- config/Makefile.in.orig	Sun Jan 16 19:06:43 2000
++++ config/Makefile.in	Sat Apr 22 13:04:25 2000
+@@ -125,12 +125,15 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgsysconfdir)
+ 	@list='$(pkgsysconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgsysconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgsysconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgsysconfdir)/$$p.default"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgsysconfdir)/$$p.default; \
+ 	  else if test -f $$p; then \
+ 	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(pkgsysconfdir)/$$p"; \
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(pkgsysconfdir)/$$p; \
+ 	  fi; fi; \
++          if test ! -f $(DESTDIR)$(pkgsysconfdir)/$$p; then \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pkgsysconfdir)/$$p; \
++	  fi; \
+ 	done
+ 
+ uninstall-pkgsysconfDATA:
