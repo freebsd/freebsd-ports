@@ -1,0 +1,11 @@
+--- cl-except.h.orig	Fri Aug 25 07:05:25 1995
++++ cl-except.h	Mon Oct 28 23:34:02 1996
+@@ -25,7 +25,7 @@
+ #define _BSD_SIGNALS
+ #endif
+ 
+-#include <syscall.h>
++#include <sys/syscall.h>
+ #include <signal.h>
+ 
+ /* gdb-style for tracking each signal */
