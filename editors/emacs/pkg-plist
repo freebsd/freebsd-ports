@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/ctags
 bin/b2m
 bin/rcs-checkin
