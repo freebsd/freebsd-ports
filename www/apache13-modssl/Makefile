@@ -132,6 +132,8 @@ pre-patch:
 post-patch:
 	@${PERL} -pi -e 's|-print|-print0|;s|xargs|xargs -0|' \
 		${WRKSRC}/Makefile.tmpl
+	@${PERL} -pi -e "s|SSL_LDFLAGS=''|SSL_LDFLAGS='${OPENSSL_LDFLAGS}'|" \
+		${WRKSRC}/src/modules/ssl/libssl.module
 	@cd ${WRKSRC} \
 	&& ${FIND} . -type f -name "*.orig" -print | ${XARGS} ${RM} -f
 
