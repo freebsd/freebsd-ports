@@ -1,12 +1,13 @@
 #!/bin/sh
 
-kmod=@@PREFIX@@/modules/rtc.ko
+kmoddir=@@PREFIX@@/modules
+kmod=rtc.ko
 
 case "$1" in
 start)
-	if [ -x $kmod ]; then
+	if [ -x $kmoddir/$kmod ]; then
 	    echo -n ' rtc'
-	    kldload $kmod
+	    kldload $kmoddir/$kmod
 	fi
 	;;
 stop)

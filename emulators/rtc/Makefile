@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rtc
-PORTVERSION=	2000.09.11
+PORTVERSION=	2000.09.22
 CATEGORIES=	emulators linux
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -25,13 +25,15 @@ STARTUP=	rtc.sh
 MAKE_ARGS=	KMODDIR="${KMODDIR}" CDEV_MAJOR="${CDEV_MAJOR}"
 PLIST_SUB=	DEVDIR="${DEVDIR}" CDEV_MAJOR="${CDEV_MAJOR}" RTC_H_DIR="${RTC_H_DIR}"
 
+SRC_BASE?=	/usr/src
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
 BROKEN=         "Systems prior to 400013 is out of support"
 .endif
 
-.if !exists(/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 BROKEN=         "Kernel source files required"
 .endif
 
@@ -45,10 +47,15 @@ do-extract:
 	@cd ${FILESDIR} && ${CP} Makefile *.[ch] ${WRKSRC}/
 
 post-patch:
-.if !exists(/sys/compat/linux/linux_ioctl.h)
+.if !exists(${SRC_BASE}/sys/compat/linux/linux_ioctl.h)
 	${PERL} -i -pe 's,compat(/linux/linux_ioctl\.h),i386$$1,' \
 		${WRKSRC}/rtc_linux.c
 .endif
+	@if ! grep -w dev2unit ${SRC_BASE}/sys/kern/kern_conf.c >/dev/null; \
+	then \
+		${ECHO} "dev2unit() not found in sys/kern/kern_conf.c.  Using lminor() instead."; \
+		${PERL} -i -pe 's,dev2unit,lminor,' ${WRKSRC}/rtc.c; \
+	fi
 
 pre-install:
 	${MKDIR} ${KMODDIR}
