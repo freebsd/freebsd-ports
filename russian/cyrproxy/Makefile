@@ -15,6 +15,16 @@ DISTNAME=	cyrproxy-1.4.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cyrillic proxy for network protocols
 
+.include <bsd.port.pre.mk>
+
+.if ${MACHINE_ARCH} == alpha
+BROKEN=		"Does not compile on ${MACHINE_ARCH}"
+.endif
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/cyrproxy
 	@ ${MKDIR} ${PREFIX}/www/cgi-bin
@@ -37,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
