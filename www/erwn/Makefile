@@ -8,7 +8,7 @@
 PORTNAME=	erwn
 PORTVERSION=	0.3.1
 CATEGORIES=	www editors
-MASTER_SITES=	http://www-stud.fht-esslingen.de/erwin/
+MASTER_SITES=	http://lisas.de/erwin/legacy/
 DISTNAME=	erwin-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
