@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz & David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.11 1997/11/25 23:50:33 chuckr Exp $
+# $Id: Makefile,v 1.12 1997/11/27 02:12:33 obrien Exp $
 #
 
 DISTNAME=	a2ps
@@ -14,6 +14,7 @@ DISTFILES=	a2ps.V4.3.tar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 NO_WRKSUBDIR=	yes
 MAN1=		a2ps.1
