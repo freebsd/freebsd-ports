@@ -1,0 +1,11 @@
+--- support/Makefile.in.orig	Mon Apr 29 13:02:18 2002
++++ support/Makefile.in	Mon Apr 29 13:03:33 2002
+@@ -146,7 +146,7 @@
+ sysdeps_dir = @sysdeps_dir@
+ sysdeps_suid_lib = @sysdeps_suid_lib@
+ 
+-supportexecincludedir = $(pkglibdir)/include
++supportexecincludedir = $(includedir)/libgtop-2.0
+ 
+ INCLUDES = -D_GNU_SOURCE
+ 

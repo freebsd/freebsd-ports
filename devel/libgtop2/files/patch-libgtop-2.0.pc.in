@@ -1,0 +1,11 @@
+--- libgtop-2.0.pc.in.orig	Mon Apr 29 22:35:22 2002
++++ libgtop-2.0.pc.in	Mon Apr 29 22:35:35 2002
+@@ -7,7 +7,7 @@
+ Description: Portable System Access Library
+ Requires: glib-2.0
+ Version: @VERSION@
+-Libs: -L${libdir} @LIBGTOP_LIBS@
++Libs: -L${libdir} @LIBGTOP_LIBS@ @LIBGTOP_EXTRA_LIBS@
+ Cflags: -I${includedir}/libgtop-2.0
+ 
+ 

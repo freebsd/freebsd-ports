@@ -24,11 +24,35 @@
 -		pids [j++] = (unsigned) pinfo[i].kp_proc.p_pid;
 +		pids [j++] = (unsigned) pinfo[i].XXX_P_PID;
  	} /* end for */
---- sysdeps/freebsd/procstate.c.orig	Sat Oct 16 13:01:39 1999
-+++ sysdeps/freebsd/procstate.c	Fri Dec 22 18:00:55 2000
-@@ -78,11 +78,29 @@
+--- sysdeps/freebsd/procstate.c.orig	Sun Feb 10 09:30:11 2002
++++ sysdeps/freebsd/procstate.c	Mon Apr 29 11:42:22 2002
+@@ -28,7 +28,7 @@
+ #include <glibtop_suid.h>
+ 
+ #if !defined(__OpenBSD__) 
+-//&& (!defined __bsdi__)
++/*&& (!defined __bsdi__)*/
+ #include <sys/user.h>
+ #endif
+ 
+@@ -37,11 +37,7 @@
+ (1L << GLIBTOP_PROC_STATE_GID);
+ 
+ static const unsigned long _glibtop_sysdeps_proc_state_new =
+-#if LIBGTOP_VERSION_CODE >= 1001000
+-(1L << GLIBTOP_PROC_STATE_RUID) + (1L << GLIBTOP_PROC_STATE_RGID);
+-#else
+ 0;
+-#endif
+ 
+ /* Init function. */
+ 
+@@ -76,43 +72,35 @@
+ 		return;
+ 	}
  
 -	strncpy (buf->cmd, pinfo [0].kp_proc.p_comm, sizeof (buf->cmd)-1);
+-	buf->cmd [sizeof (buf->cmd)-1] = 0;
 +#if __FreeBSD_version >= 500013
 +#define	XXX_P_COMM	ki_comm
 +#define	XXX_P_SVUID	ki_svuid
@@ -36,7 +60,9 @@
 +#define	XXX_P_RUID	ki_ruid
 +#define	XXX_P_RGID	ki_rgid
 +#define XXX_P_STAT	ki_stat
-+
+ 
+-	buf->uid = pinfo [0].kp_eproc.e_pcred.p_svuid;
+-	buf->gid = pinfo [0].kp_eproc.e_pcred.p_svgid;
 +#else
 +#define	XXX_P_COMM	kp_proc.p_comm
 +#define	XXX_P_SVUID	kp_eproc.e_pcred.p_svuid
@@ -44,33 +70,56 @@
 +#define	XXX_P_RUID	kp_eproc.e_pcred.p_ruid
 +#define	XXX_P_RGID	kp_eproc.e_pcred.p_rgid
 +#define	XXX_P_STAT	kp_proc.p_stat
-+
-+#endif
-+
-+	strncpy (buf->cmd, pinfo [0].XXX_P_COMM, sizeof (buf->cmd)-1);
- 	buf->cmd [sizeof (buf->cmd)-1] = 0;
  
--	buf->uid = pinfo [0].kp_eproc.e_pcred.p_svuid;
--	buf->gid = pinfo [0].kp_eproc.e_pcred.p_svgid;
-+	buf->uid = pinfo [0].XXX_P_SVUID;
-+	buf->gid = pinfo [0].XXX_P_SVGID;
- 
- #if LIBGTOP_VERSION_CODE >= 1001000
+-#if LIBGTOP_VERSION_CODE >= 1001000
 -	buf->ruid = pinfo [0].kp_eproc.e_pcred.p_ruid;
 -	buf->rgid = pinfo [0].kp_eproc.e_pcred.p_rgid;
-+	buf->ruid = pinfo [0].XXX_P_RUID;
-+	buf->rgid = pinfo [0].XXX_P_RGID;
  #endif
-@@ -94,3 +112,3 @@
- #if LIBGTOP_VERSION_CODE >= 1001000
+ 
++	strncpy (buf->cmd, pinfo [0].XXX_P_COMM, sizeof (buf->cmd)-1);
++	buf->cmd [sizeof (buf->cmd)-1] = 0;
++
++	buf->uid = pinfo [0].XXX_P_SVUID;
++	buf->gid = pinfo [0].XXX_P_SVGID;
++
+ 	/* Set the flags for the data we're about to return*/
+ 	buf->flags = _glibtop_sysdeps_proc_state |
+ 		_glibtop_sysdeps_proc_state_new;
+ 
+-#if LIBGTOP_VERSION_CODE >= 1001000
+-	switch (pinfo [0].kp_proc.p_stat) {
+-	case SIDL:
+-		buf->state = 0;
+-		break;
+-	case SRUN:
+-		buf->state = GLIBTOP_PROCESS_RUNNING;
+-		break;
+-	case SSLEEP:
+-		buf->state = GLIBTOP_PROCESS_INTERRUPTIBLE;
+-		break;
+-	case SSTOP:
+-		buf->state = GLIBTOP_PROCESS_STOPPED;
+-		break;
+-	case SZOMB:
+-		buf->state = GLIBTOP_PROCESS_ZOMBIE;
+-		break;
+-	default:
+-		return;
+-	}
+-#else
 -	switch (pinfo [0].kp_proc.p_stat) {
 +	switch (pinfo [0].XXX_P_STAT) {
  	case SIDL:
-@@ -114,3 +132,3 @@
- #else
--	switch (pinfo [0].kp_proc.p_stat) {
-+	switch (pinfo [0].XXX_P_STAT) {
- 	case SIDL:
+ 		buf->state = 'S';
+ 		break;
+@@ -131,7 +119,6 @@
+ 	default:
+ 		return;
+ 	}
+-#endif
+ 
+ 	buf->flags |= (1L << GLIBTOP_PROC_STATE_STATE);
+ }
 --- sysdeps/freebsd/procuid.c.orig	Fri Sep 17 06:08:07 1999
 +++ sysdeps/freebsd/procuid.c	Thu Feb 15 01:16:50 2001
 @@ -86,13 +86,42 @@

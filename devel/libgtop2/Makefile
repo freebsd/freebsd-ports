@@ -1,38 +1,40 @@
-# New ports collection makefile for:	libgtop
-# Date Created:			26 Sep 1998
-# Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
+# New ports collection makefile for:	libgtop2
+# Date Created:			29 April 2002
+# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libgtop
-PORTVERSION=	1.0.13
+PORTNAME=	libgtop2
+PORTVERSION=	1.90.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/libgtop
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
+DISTNAME=	libgtop-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMELIBS=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 post-install:
 	install-info --section="Programming \& development tools" \
-	--entry="* libgtop: (libgtop).	libgtop programming manual" \
-	${PREFIX}/info/libgtop.info ${PREFIX}/info/dir
+	--entry="* libgtop2: (libgtop2).	libgtop2 programming manual" \
+	${PREFIX}/info/libgtop2.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
