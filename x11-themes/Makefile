@@ -71,6 +71,7 @@
     SUBDIR += kde-icons-wasp
     SUBDIR += kdeartwork3
     SUBDIR += kwin_flatcurve
+    SUBDIR += lila-xfwm4
     SUBDIR += metacity-theme-6nome
     SUBDIR += metacity-theme-aero
     SUBDIR += metacity-theme-alloy-c
