@@ -8,7 +8,9 @@
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
 CATEGORIES=	databases
-MASTER_SITES=	http://www.firstworks.com/downloads/sqlrelay/
+MASTER_SITES=	http://www.firstworks.com/downloads/sqlrelay/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
 
