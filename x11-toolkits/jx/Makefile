@@ -19,6 +19,8 @@ COMMENT=	A C++ application framework and widget library for X11
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+BROKEN=		Incorrect pkg-plist
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_AUTOCONF_VER=	213
