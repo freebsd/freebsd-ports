@@ -1,22 +1,61 @@
 #!/bin/sh
-smbspool=/var/spool/samba
-pidfiledir=/var/run
-smbd=/usr/local/sbin/smbd
-nmbd=/usr/local/sbin/nmbd
+#
 
-# start
-if [ "x$1" = "x" -o "x$1" = "xstart" ]; then
-	if [ -f $smbd ]; then
-		if [ -d $smbspool ]; then
-			rm -f $smbspool/*
-		fi
-		echo -n ' Samba'
-		$smbd -D
-		$nmbd -D
-	fi
+# PROVIDE: samba
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-# stop
-elif [ "x$1" = "xstop" ]; then
-	kill `cat $pidfiledir/smbd.pid`
-	kill `cat $pidfiledir/nmbd.pid`
-fi
+#
+# Add the following lines to /etc/rc.conf to enable samba:
+#
+#smbd_enable="YES"
+#smbd_flags="-D"	- optional because "-D" is the default flag
+#
+#nmbd_enable="YES"
+#nmbd_flags="-D"	- optional because "-D" is the default flag
+#
+#winbindd_enable="YES"
+#winbindd_flags=""	- optional
+#
+
+. %%RC_SUBR%%
+
+name=smbd
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/smbd
+required_files=%%SAMBA_CONFDIR%%/smb.conf
+pidfile=/var/run/smbd.pid
+
+# set defaults
+
+smbd_enable=${smbd_enable:-"NO"}
+smbd_flags=${smbd_flags:-"-D"}
+load_rc_config $name
+run_rc_command "$1"
+
+name=nmbd
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/nmbd
+required_files=%%SAMBA_CONFDIR%%/smb.conf
+pidfile=/var/run/nmbd.pid
+
+# set defaults
+
+nmbd_enable=${nmbd_enable:-"NO"}
+nmbd_flags=${nmbd_flags:-"-D"}
+load_rc_config $name
+run_rc_command "$1"
+
+name=winbindd
+rcvar=`set_rcvar`
+command=%%PREFIX%%/sbin/winbindd
+required_files=%%SAMBA_CONFDIR%%/smb.conf
+pidfile=/var/run/winbindd.pid
+
+# set defaults
+
+winbindd_enable=${winbindd_enable:-"NO"}
+winbindd_flags=${winbindd_flags:-""}
+load_rc_config $name
+run_rc_command "$1"

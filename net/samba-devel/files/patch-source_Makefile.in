@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Jan  3 14:45:46 2004
-+++ Makefile.in	Sat Jan  3 14:50:05 2004
-@@ -1192,7 +1192,7 @@
+--- Makefile.in.orig	Tue Feb 24 10:13:47 2004
++++ Makefile.in	Tue Feb 24 10:14:00 2004
+@@ -1204,7 +1204,7 @@
  
  bin/t_snprintf@EXEEXT@: lib/snprintf.c
  	$(CC) $(FLAGS) -o $@ -DTEST_SNPRINTF lib/snprintf.c -lm

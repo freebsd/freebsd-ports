@@ -19,44 +19,37 @@ bin/tdbbackup
 bin/tdbdump
 bin/testparm
 bin/testprns
-bin/wbinfo
-etc/charset/CP437.so
-etc/charset/CP850.so
-etc/de.msg
-etc/en.msg
-etc/fr.msg
-etc/it.msg
-etc/ja.msg
-etc/lowcase.dat
-etc/nl.msg
-etc/pl.msg
-etc/rc.d/samba.sh.sample
-etc/smb.conf.default
-etc/tr.msg
-etc/upcase.dat
-etc/valid.dat
-etc/vfs/audit.so
-etc/vfs/cap.so
-etc/vfs/default_quota.so
-etc/vfs/extd_audit.so
-etc/vfs/fake_perms.so
-etc/vfs/netatalk.so
-etc/vfs/readonly.so
-etc/vfs/recycle.so
+%%WINBINDD%%bin/wbinfo
 sbin/nmbd
 sbin/smbd
 sbin/swat
-sbin/winbindd
+%%WINBINDD%%sbin/winbindd
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/__init__.py
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/lsa.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/printerdata.py
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/samr.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/smb.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/spoolss.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/srvsvc.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/tdb.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/tdbpack.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/winbind.so
+%%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/winreg.so
+%%PORTDOCS%%share/doc/samba/README.FreeBSD
+%%PORTDOCS%%share/doc/samba/README
 %%PORTDOCS%%share/doc/samba/COPYING
 %%PORTDOCS%%share/doc/samba/Manifest
-%%PORTDOCS%%share/doc/samba/README
-%%PORTDOCS%%share/doc/samba/README.FreeBSD
 %%PORTDOCS%%share/doc/samba/Read-Manifest-Now
+%%PORTDOCS%%share/doc/samba/Roadmap
+%%PORTDOCS%%share/doc/samba/WHATSNEW.txt
+%%PORTDOCS%%share/doc/samba/THANKS
+%%PORTDOCS%%share/doc/samba/history
 %%PORTDOCS%%share/doc/samba/Registry/FolderRedir.adm
-%%PORTDOCS%%share/doc/samba/Registry/FolderRedir.reg
 %%PORTDOCS%%share/doc/samba/Registry/NT4-Locking.reg
 %%PORTDOCS%%share/doc/samba/Registry/NT4_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Registry/Win-NT-2K-XP-DeleteRoamingProfile.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win-2Kx-XPP-DeleteCachedProfiles.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win-2Kx-XPP-ForceLocalProfile.reg
+%%PORTDOCS%%share/doc/samba/Registry/Win-NT-DeleteRoamingProfile.reg
 %%PORTDOCS%%share/doc/samba/Registry/Win2000_PlainPassword.reg
 %%PORTDOCS%%share/doc/samba/Registry/Win95_PlainPassword.reg
 %%PORTDOCS%%share/doc/samba/Registry/Win98_PlainPassword.reg
@@ -65,16 +58,12 @@ sbin/winbindd
 %%PORTDOCS%%share/doc/samba/Registry/WinXP_PlainPassword.reg
 %%PORTDOCS%%share/doc/samba/Registry/WinXP_SignOrSeal.reg
 %%PORTDOCS%%share/doc/samba/Registry/WindowsTerminalServer.reg
-%%PORTDOCS%%share/doc/samba/Roadmap
-%%PORTDOCS%%share/doc/samba/THANKS
-%%PORTDOCS%%share/doc/samba/WHATSNEW.txt
 %%PORTDOCS%%share/doc/samba/faq/FAQ-ClientApp.html
 %%PORTDOCS%%share/doc/samba/faq/FAQ-Install.html
 %%PORTDOCS%%share/doc/samba/faq/FAQ-errors.html
 %%PORTDOCS%%share/doc/samba/faq/FAQ-features.html
 %%PORTDOCS%%share/doc/samba/faq/FAQ-general.html
 %%PORTDOCS%%share/doc/samba/faq/samba-faq.html
-%%PORTDOCS%%share/doc/samba/history
 %%PORTDOCS%%share/doc/samba/htmldocs/AccessControls.html
 %%PORTDOCS%%share/doc/samba/htmldocs/AdvancedNetworkManagement.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Appendixes.html
@@ -132,9 +121,9 @@ sbin/winbindd
 %%PORTDOCS%%share/doc/samba/htmldocs/profiles.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/rpcclient.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/samba-bdc.html
+%%PORTDOCS%%share/doc/samba/htmldocs/samba.css
 %%PORTDOCS%%share/doc/samba/htmldocs/samba-pdc.html
 %%PORTDOCS%%share/doc/samba/htmldocs/samba.7.html
-%%PORTDOCS%%share/doc/samba/htmldocs/samba.css
 %%PORTDOCS%%share/doc/samba/htmldocs/securing-samba.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smb.conf.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbcacls.1.html
@@ -142,6 +131,7 @@ sbin/winbindd
 %%PORTDOCS%%share/doc/samba/htmldocs/smbcontrol.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbcquotas.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbd.8.html
+%%PORTDOCS%%share/doc/samba/htmldocs/smbget.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbmnt.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbmount.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.5.html
@@ -155,6 +145,7 @@ sbin/winbindd
 %%PORTDOCS%%share/doc/samba/htmldocs/speed.html
 %%PORTDOCS%%share/doc/samba/htmldocs/swat.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/tdbbackup.8.html
+%%PORTDOCS%%share/doc/samba/htmldocs/tdbdump.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/testparm.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/testprns.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/troubleshooting.html
@@ -165,34 +156,42 @@ sbin/winbindd
 %%PORTDOCS%%share/doc/samba/htmldocs/wbinfo.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/winbind.html
 %%PORTDOCS%%share/doc/samba/htmldocs/winbindd.8.html
-share/examples/samba/LDAP/README
-share/examples/samba/LDAP/convertSambaAccount
-share/examples/samba/LDAP/ldapsync.pl
-share/examples/samba/LDAP/samba-nds.schema
-share/examples/samba/LDAP/samba-schema-netscapeds4.x
-share/examples/samba/LDAP/samba-schema-netscapeds5.x
-share/examples/samba/LDAP/samba-schema.IBMSecureWay
-share/examples/samba/LDAP/samba.schema
-share/examples/samba/LDAP/samba.schema.at.IBM-DS
-share/examples/samba/LDAP/samba.schema.oc.IBM-DS
-share/examples/samba/LDAP/smbldap-tools/CONTRIBUTORS
-share/examples/samba/LDAP/smbldap-tools/COPYING
-share/examples/samba/LDAP/smbldap-tools/ChangeLog
-share/examples/samba/LDAP/smbldap-tools/FILES
-share/examples/samba/LDAP/smbldap-tools/INFRASTRUCTURE
-share/examples/samba/LDAP/smbldap-tools/INSTALL
-share/examples/samba/LDAP/smbldap-tools/Makefile
-share/examples/samba/LDAP/smbldap-tools/README
-share/examples/samba/LDAP/smbldap-tools/TODO
-share/examples/samba/LDAP/smbldap-tools/cgi/README
-share/examples/samba/LDAP/smbldap-tools/cgi/ldappass.cgi
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/Makefile
+share/examples/samba/pdb/mysql/mysql.dump
+share/examples/samba/pdb/mysql/smb.conf
+share/examples/samba/pdb/pdb_test.c
+share/examples/samba/pdb/Makefile
+share/examples/samba/pdb/README
+share/examples/samba/pdb/sambapdb.dtd
+share/examples/samba/validchars/msdos70.out
+share/examples/samba/validchars/nwdos70.out
+share/examples/samba/validchars/readme
+share/examples/samba/validchars/validchr.c
+share/examples/samba/validchars/validchr.com
+share/examples/samba/tridge/smb.conf.WinNT
+share/examples/samba/tridge/README
+share/examples/samba/tridge/smb.conf
+share/examples/samba/tridge/smb.conf.vittjokk
+share/examples/samba/tridge/smb.conf.fjall
+share/examples/samba/tridge/smb.conf.lapland
+share/examples/samba/thoralf/smb.conf
+share/examples/samba/svr4-startup/samba.server
+share/examples/samba/svr4-startup/README
+share/examples/samba/LDAP/smbldap-tools/mkntpwd/md4.c
 share/examples/samba/LDAP/smbldap-tools/mkntpwd/getopt.c
 share/examples/samba/LDAP/smbldap-tools/mkntpwd/getopt.h
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/md4.c
+share/examples/samba/LDAP/smbldap-tools/mkntpwd/Makefile
 share/examples/samba/LDAP/smbldap-tools/mkntpwd/mkntpwd.c
 share/examples/samba/LDAP/smbldap-tools/mkntpwd/mkntpwd.h
 share/examples/samba/LDAP/smbldap-tools/mkntpwd/smbdes.c
+share/examples/samba/LDAP/smbldap-tools/cgi/ldappass.cgi
+share/examples/samba/LDAP/smbldap-tools/cgi/README
+share/examples/samba/LDAP/smbldap-tools/COPYING
+share/examples/samba/LDAP/smbldap-tools/Makefile
+share/examples/samba/LDAP/smbldap-tools/FILES
+share/examples/samba/LDAP/smbldap-tools/INSTALL
+share/examples/samba/LDAP/smbldap-tools/INFRASTRUCTURE
+share/examples/samba/LDAP/smbldap-tools/README
+share/examples/samba/LDAP/smbldap-tools/TODO
 share/examples/samba/LDAP/smbldap-tools/smbldap-groupadd.pl
 share/examples/samba/LDAP/smbldap-tools/smbldap-groupdel.pl
 share/examples/samba/LDAP/smbldap-tools/smbldap-groupmod.pl
@@ -207,77 +206,72 @@ share/examples/samba/LDAP/smbldap-tools/smbldap-userdel.pl
 share/examples/samba/LDAP/smbldap-tools/smbldap-usermod.pl
 share/examples/samba/LDAP/smbldap-tools/smbldap-usershow.pl
 share/examples/samba/LDAP/smbldap-tools/smbldap_conf.pm
+share/examples/samba/LDAP/smbldap-tools/CONTRIBUTORS
 share/examples/samba/LDAP/smbldap-tools/smbldap_tools.pm
-share/examples/samba/README
-share/examples/samba/VFS/.cvsignore
-share/examples/samba/VFS/Makefile.in
-share/examples/samba/VFS/README
-share/examples/samba/VFS/autogen.sh
-share/examples/samba/VFS/configure.in
-share/examples/samba/VFS/install-sh
-share/examples/samba/VFS/shadow_copy_test.c
-share/examples/samba/VFS/skel_opaque.c
-share/examples/samba/VFS/skel_transparent.c
-share/examples/samba/appliance/Makefile
-share/examples/samba/appliance/README
-share/examples/samba/appliance/appliance.spec
-share/examples/samba/appliance/build.sh
-share/examples/samba/appliance/smb.conf-appliance
-share/examples/samba/auth/Makefile
-share/examples/samba/auth/auth_skel.c
-share/examples/samba/autofs/auto.a
-share/examples/samba/dce-dfs/README
-share/examples/samba/dce-dfs/smb.conf
-share/examples/samba/genlogon/genlogon.pl
-share/examples/samba/libsmbclient/Makefile
-share/examples/samba/libsmbclient/README
-share/examples/samba/libsmbclient/testacl.c
-share/examples/samba/libsmbclient/testsmbc.c
-share/examples/samba/libsmbclient/tree.c
-share/examples/samba/misc/extra_smbstatus
-share/examples/samba/misc/modify_samba_config.pl
-share/examples/samba/misc/swat.pl
-share/examples/samba/misc/wall.perl
-share/examples/samba/nss/wbtest.c
-share/examples/samba/ntlogon/README
-share/examples/samba/ntlogon/ntlogon.conf
-share/examples/samba/ntlogon/ntlogon.py
-share/examples/samba/pdb/Makefile
-share/examples/samba/pdb/README
-share/examples/samba/pdb/mysql/mysql.dump
-share/examples/samba/pdb/mysql/smb.conf
-share/examples/samba/pdb/pdb_test.c
-share/examples/samba/pdb/sambapdb.dtd
+share/examples/samba/LDAP/smbldap-tools/ChangeLog
+share/examples/samba/LDAP/README
+share/examples/samba/LDAP/samba-schema-netscapeds4.x
+share/examples/samba/LDAP/convertSambaAccount
+share/examples/samba/LDAP/samba-nds.schema
+share/examples/samba/LDAP/ldapsync.pl
+share/examples/samba/LDAP/samba.schema.at.IBM-DS
+share/examples/samba/LDAP/samba-schema-netscapeds5.x
+share/examples/samba/LDAP/samba-schema.IBMSecureWay
+share/examples/samba/LDAP/samba.schema
+share/examples/samba/LDAP/samba.schema.oc.IBM-DS
+share/examples/samba/simple/README
+share/examples/samba/simple/smb.conf
+share/examples/samba/printing/readme.prtpub
+share/examples/samba/printing/prtpub.c
+share/examples/samba/printing/smbprint-new.sh
+share/examples/samba/printing/smbprint
+share/examples/samba/printing/smbprint.sysv
+share/examples/samba/printer-accounting/hp5-redir
 share/examples/samba/printer-accounting/README
 share/examples/samba/printer-accounting/acct-all
 share/examples/samba/printer-accounting/acct-sum
-share/examples/samba/printer-accounting/hp5-redir
 share/examples/samba/printer-accounting/lp-acct
 share/examples/samba/printer-accounting/printcap
-share/examples/samba/printing/prtpub.c
-share/examples/samba/printing/readme.prtpub
-share/examples/samba/printing/smbprint
-share/examples/samba/printing/smbprint-new.sh
-share/examples/samba/printing/smbprint.sysv
-share/examples/samba/simple/README
-share/examples/samba/simple/smb.conf
-share/examples/samba/smb.conf.default
-share/examples/samba/svr4-startup/README
-share/examples/samba/svr4-startup/samba.server
-share/examples/samba/thoralf/smb.conf
-share/examples/samba/tridge/README
-share/examples/samba/tridge/smb.conf
-share/examples/samba/tridge/smb.conf.WinNT
-share/examples/samba/tridge/smb.conf.fjall
-share/examples/samba/tridge/smb.conf.lapland
-share/examples/samba/tridge/smb.conf.vittjokk
-share/examples/samba/validchars/msdos70.out
-share/examples/samba/validchars/nwdos70.out
-share/examples/samba/validchars/readme
-share/examples/samba/validchars/validchr.c
-share/examples/samba/validchars/validchr.com
-share/examples/samba/wins_hook/README
+share/examples/samba/VFS/skel_transparent.c
+share/examples/samba/VFS/.cvsignore
+share/examples/samba/VFS/README
+share/examples/samba/VFS/Makefile.in
+share/examples/samba/VFS/autogen.sh
+share/examples/samba/VFS/configure.in
+share/examples/samba/VFS/install-sh
+share/examples/samba/VFS/skel_opaque.c
+share/examples/samba/VFS/shadow_copy_test.c
+share/examples/samba/ntlogon/ntlogon.conf
+share/examples/samba/ntlogon/README
+share/examples/samba/ntlogon/ntlogon.py
 share/examples/samba/wins_hook/dns_update
+share/examples/samba/wins_hook/README
+share/examples/samba/misc/modify_samba_config.pl
+share/examples/samba/misc/extra_smbstatus
+share/examples/samba/misc/wall.perl
+share/examples/samba/misc/swat.pl
+share/examples/samba/libsmbclient/testsmbc.c
+share/examples/samba/libsmbclient/Makefile
+share/examples/samba/libsmbclient/README
+share/examples/samba/libsmbclient/tree.c
+share/examples/samba/libsmbclient/testacl.c
+share/examples/samba/genlogon/genlogon.pl
+share/examples/samba/dce-dfs/README
+share/examples/samba/dce-dfs/smb.conf
+share/examples/samba/autofs/auto.a
+share/examples/samba/auth/auth_skel.c
+share/examples/samba/auth/Makefile
+share/examples/samba/appliance/appliance.spec
+share/examples/samba/appliance/Makefile
+share/examples/samba/appliance/README
+share/examples/samba/appliance/build.sh
+share/examples/samba/appliance/smb.conf-appliance
+share/examples/samba/nss/wbtest.c
+share/examples/samba/nss/nss_winbind.c
+share/examples/samba/nss/nss_winbind.h
+share/examples/samba/README
+share/examples/samba/smb.conf.default
+share/swat/help/welcome.html
 share/swat/help/AccessControls.html
 share/swat/help/AdvancedNetworkManagement.html
 share/swat/help/Appendixes.html
@@ -294,8 +288,8 @@ share/swat/help/NetworkBrowsing.html
 share/swat/help/Other-Clients.html
 share/swat/help/PolicyMgmt.html
 share/swat/help/Portability.html
-share/swat/help/ProfileMgmt.html
 share/swat/help/SWAT.html
+share/swat/help/ProfileMgmt.html
 share/swat/help/Samba-Developers-Guide.html
 share/swat/help/Samba-HOWTO-Collection.html
 share/swat/help/SambaHA.html
@@ -335,6 +329,7 @@ share/swat/help/problems.html
 share/swat/help/profiles.1.html
 share/swat/help/rpcclient.1.html
 share/swat/help/samba-bdc.html
+share/swat/help/smbd.8.html
 share/swat/help/samba-pdc.html
 share/swat/help/samba.7.html
 share/swat/help/securing-samba.html
@@ -343,7 +338,7 @@ share/swat/help/smbcacls.1.html
 share/swat/help/smbclient.1.html
 share/swat/help/smbcontrol.1.html
 share/swat/help/smbcquotas.1.html
-share/swat/help/smbd.8.html
+share/swat/help/smbget.1.html
 share/swat/help/smbmnt.8.html
 share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
@@ -357,6 +352,7 @@ share/swat/help/smbumount.8.html
 share/swat/help/speed.html
 share/swat/help/swat.8.html
 share/swat/help/tdbbackup.8.html
+share/swat/help/tdbdump.8.html
 share/swat/help/testparm.1.html
 share/swat/help/testprns.1.html
 share/swat/help/troubleshooting.html
@@ -365,7 +361,6 @@ share/swat/help/unicode.html
 share/swat/help/upgrading-to-3.0.html
 share/swat/help/vfstest.1.html
 share/swat/help/wbinfo.1.html
-share/swat/help/welcome.html
 share/swat/help/winbind.html
 share/swat/help/winbindd.8.html
 share/swat/images/globals.gif
@@ -394,26 +389,6 @@ share/swat/lang/tr/images/shares.gif
 share/swat/lang/tr/images/status.gif
 share/swat/lang/tr/images/viewconfig.gif
 share/swat/lang/tr/include/header.html
-share/swat/using_samba/appa.html
-share/swat/using_samba/appb.html
-share/swat/using_samba/appc.html
-share/swat/using_samba/appd.html
-share/swat/using_samba/appe.html
-share/swat/using_samba/appf.html
-share/swat/using_samba/appg.html
-share/swat/using_samba/ch00.html
-share/swat/using_samba/ch01.html
-share/swat/using_samba/ch02.html
-share/swat/using_samba/ch03.html
-share/swat/using_samba/ch04.html
-share/swat/using_samba/ch05.html
-share/swat/using_samba/ch06.html
-share/swat/using_samba/ch07.html
-share/swat/using_samba/ch08.html
-share/swat/using_samba/ch09.html
-share/swat/using_samba/ch10.html
-share/swat/using_samba/ch11.html
-share/swat/using_samba/ch12.html
 share/swat/using_samba/figs/sam2_0101.gif
 share/swat/using_samba/figs/sam2_0102.gif
 share/swat/using_samba/figs/sam2_0103.gif
@@ -553,16 +528,63 @@ share/swat/using_samba/figs/sam2_af04.gif
 share/swat/using_samba/figs/sam2_af05.gif
 share/swat/using_samba/figs/sam2_af06.gif
 share/swat/using_samba/figs/sam2_af07.gif
+share/swat/using_samba/appa.html
+share/swat/using_samba/appb.html
+share/swat/using_samba/appc.html
+share/swat/using_samba/appd.html
+share/swat/using_samba/appe.html
+share/swat/using_samba/appf.html
+share/swat/using_samba/appg.html
+share/swat/using_samba/ch00.html
+share/swat/using_samba/ch01.html
+share/swat/using_samba/ch02.html
+share/swat/using_samba/ch03.html
+share/swat/using_samba/ch04.html
+share/swat/using_samba/ch05.html
+share/swat/using_samba/ch06.html
+share/swat/using_samba/ch07.html
+share/swat/using_samba/ch08.html
+share/swat/using_samba/ch09.html
+share/swat/using_samba/ch10.html
+share/swat/using_samba/ch11.html
+share/swat/using_samba/ch12.html
 share/swat/using_samba/inx.html
+share/swat/using_samba/toc.html
 share/swat/using_samba/samba2_s.gif
 share/swat/using_samba/samba2_xs.gif
-share/swat/using_samba/toc.html
-@dirrm etc/auth
-@dirrm etc/charset
-@dirrm etc/idmap
-@dirrm etc/pdb
-@dirrm etc/rpc
-@dirrm etc/vfs
+@unexec rm %%SAMBA_CONFDIR%%/charset/CP437.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/charset/CP850.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/de.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/en.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/fr.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/it.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/ja.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/nl.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/lowcase.dat 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/pl.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/smb.conf.default 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/tr.msg 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/upcase.dat 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/valid.dat 2>&1 >/dev/null || true
+%%MYSQLSAM%%@unexec rm %%SAMBA_CONFDIR%%/pdb/mysql.so 2>&1 >/dev/null || true
+%%POSTGRESQLSAM%%@unexec rm %%SAMBA_CONFDIR%%/pdb/pgsql.so 2>&1 >/dev/null || true
+%%XMLSAM%%@unexec rm %%SAMBA_CONFDIR%%/pdb/xml.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/audit.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/cap.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/default_quota.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/extd_audit.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/fake_perms.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/netatalk.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/readonly.so 2>&1 >/dev/null || true
+@unexec rm %%SAMBA_CONFDIR%%/vfs/recycle.so 2>&1 >/dev/null || true
+@unexec rmdir %%SAMBA_CONFDIR%%/auth 2>&1 >/dev/null || true
+@unexec rmdir %%SAMBA_CONFDIR%%/charset 2>&1 >/dev/null || true
+@unexec rmdir %%SAMBA_CONFDIR%%/idmap 2>&1 >/dev/null || true
+@unexec rmdir %%SAMBA_CONFDIR%%/pdb 2>&1 >/dev/null || true
+@unexec rmdir %%SAMBA_CONFDIR%%/rpc 2>&1 >/dev/null || true
+@unexec rmdir %%SAMBA_CONFDIR%%/vfs 2>&1 >/dev/null || true
+@unexec rm %%LOCALBASE%%/etc/rc.d/samba.sh.sample
+%%PYTHON%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/samba
 @dirrm share/swat/using_samba/figs
 @dirrm share/swat/using_samba
 @dirrm share/swat/include
@@ -607,3 +629,5 @@ share/swat/using_samba/toc.html
 %%PORTDOCS%%@dirrm share/doc/samba/htmldocs
 %%PORTDOCS%%@dirrm share/doc/samba/faq
 %%PORTDOCS%%@dirrm share/doc/samba
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%SAMBA_SPOOL%% manually."
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove %%SAMBA_LOCKDIR%%/*.tdb manually."
