@@ -127,6 +127,7 @@
     SUBDIR += tank
     SUBDIR += tetrinet-x
     SUBDIR += tinymux
+    SUBDIR += tkmoo
     SUBDIR += tksol
     SUBDIR += tvp
     SUBDIR += omega

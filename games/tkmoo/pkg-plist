@@ -1,0 +1,9 @@
+bin/tkmoo
+share/tkmoo/plugins/ansi.tcl
+share/tkmoo/plugins/simpleedit.tcl
+share/tkmoo/plugins/mcp21.tcl
+share/tkmoo/plugins/message.tcl
+share/tkmoo/plugins/status.tcl
+share/tkmoo/plugins/webbrowser.tcl
+@dirrm share/tkmoo/plugins
+@dirrm share/tkmoo
