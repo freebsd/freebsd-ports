@@ -12,6 +12,8 @@ bin/asc.plx
 %%SITE_PERL%%/SWF/Builder/Character/Font.pm
 %%SITE_PERL%%/SWF/Builder/Character/MovieClip.pm
 %%SITE_PERL%%/SWF/Builder/Character/Shape.pm
+%%SITE_PERL%%/SWF/Builder/Character/Sound.pm
+%%SITE_PERL%%/SWF/Builder/Character/Sound/MP3.pm
 %%SITE_PERL%%/SWF/Builder/Character/Text.pm
 %%SITE_PERL%%/SWF/Builder/ExElement.pm
 %%SITE_PERL%%/SWF/Builder/Gradient.pm
@@ -19,6 +21,7 @@ bin/asc.plx
 @dirrm %%SITE_PERL%%/SWF/Builder/ActionScript
 @dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap/Lossless
 @dirrm %%SITE_PERL%%/SWF/Builder/Character/Bitmap
+@dirrm %%SITE_PERL%%/SWF/Builder/Character/Sound
 @dirrm %%SITE_PERL%%/SWF/Builder/Character
 @dirrm %%SITE_PERL%%/SWF/Builder
 @unexec rmdir %D/%%SITE_PERL%%/SWF 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SWF-Builder
-PORTVERSION=	0.07
+PORTVERSION=	0.08
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/Y/YS/YSAS
@@ -16,6 +16,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Create SWF movie
 
 BUILD_DEPENDS=	${SITE_PERL}/SWF/Element.pm:${PORTSDIR}/graphics/p5-SWF-File \
+		${SITE_PERL}/Math/Bezier/Convert.pm:${PORTSDIR}/math/p5-Math-Bzier-Convert \
 		${SITE_PERL}/Font/TTF/Font.pm:${PORTSDIR}/x11-fonts/p5-Font-TTF
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -27,6 +28,7 @@ MAN3=		SWF::Builder.3 SWF::Builder::ActionScript.3 \
 		SWF::Builder::Character::Font.3 \
 		SWF::Builder::Character::MovieClip.3 \
 		SWF::Builder::Character::Shape.3 \
+		SWF::Builder::Character::Sound.3 \
 		SWF::Builder::Character::Text.3 SWF::Builder::Gradient.3
 MAN1=		asc.plx.1
 
