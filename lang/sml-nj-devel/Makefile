@@ -3,7 +3,7 @@
 # Date created:        7 July 1998
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.4 1998/11/22 04:46:10 jkoshy Exp $
+# $Id: Makefile,v 1.5 1999/02/02 03:52:32 jkoshy Exp $
 #
 
 DISTNAME=     110.9.1-bin.x86-unix
