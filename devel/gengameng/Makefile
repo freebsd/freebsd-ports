@@ -24,4 +24,9 @@ pre-patch:
 	${PERL} -pi -e "s|sdl-config|${SDL_CONFIG}|g; \
 		s|include/SDL/|include/SDL11/|g" ${WRKSRC}/configure
 
+post-configure:
+	${PERL} -pi -e \
+		"s/^deplibs_check_method=.*/deplibs_check_method=pass_all/" \
+		${WRKSRC}/libtool
+
 .include <bsd.port.mk>
