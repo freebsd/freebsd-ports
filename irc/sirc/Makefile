@@ -3,7 +3,7 @@
 # Date created:                      4 May 1998
 # Whom:                              Studded <Studded@dal.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/07 05:20:19 mph Exp $
+# $Id: Makefile,v 1.2 1998/05/07 21:58:53 mph Exp $
 #
 # If you need SOCKS support, define SOCKS_SERVER with
 # the name of your SOCKS proxy and remove the '#'.
@@ -22,6 +22,12 @@ MAINTAINER=	Studded@dal.net
 
 USE_PERL5=	yes
 
+.if exists(/usr/bin/perl5)
+SHORT_PERL5=/usr/bin/perl5
+.else
+SHORT_PERL5=${PREFIX}/bin/perl5
+.endif
+
 post-extract:
 .if !defined(SOCKS_SERVER)
 	@${ECHO_MSG} ''
@@ -39,12 +45,16 @@ pre-patch:
 do-patch:
 .if defined(SOCKS_SERVER)
 	@${PATCH} ${PATCH_DIST_ARGS} < ${PATCHDIR}/patch-aa
-	@${SED} 's%SOCKS_SERVER\=%SOCKS_SERVER\=${SOCKS_SERVER}%' \
-		${WRKSRC}/sirc-proto > ${WRKSRC}/sirc-socks
-	@${SED} 's%PREFIX\=%PREFIX\=${PREFIX}%' ${WRKSRC}/sirc-socks \
+	@${SED} 's:SOCKS_SERVER\=:SOCKS_SERVER\=${SOCKS_SERVER}:' \
+		${WRKSRC}/sirc-proto > ${WRKSRC}/sirc-proto.1
+	@${SED} 's:PREFIX.SED:${PREFIX}:' ${WRKSRC}/sirc-proto.1 \
+		> ${WRKSRC}/sirc-proto.2
+	@${SED} 's:PERL5.SED:${SHORT_PERL5}:' ${WRKSRC}/sirc-proto.2 \
 		> ${WRKSRC}/sirc
 .else
-	@${SED} 's%PREFIX\=%PREFIX\=${PREFIX}%' ${WRKSRC}/sirc-proto \
+	@${SED} 's:PREFIX.SED:${PREFIX}:' ${WRKSRC}/sirc-proto \
+		> ${WRKSRC}/sirc-proto.1
+	@${SED} 's:PERL5.SED:${SHORT_PERL5}:' ${WRKSRC}/sirc-proto.1 \
 		> ${WRKSRC}/sirc
 .endif
 
