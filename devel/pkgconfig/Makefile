@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	pkgconfig
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.marcuscom.com/downloads/ \
-		http://www.freedesktop.org/software/pkgconfig/releases/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta2
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	glib-1.2.8/configure
