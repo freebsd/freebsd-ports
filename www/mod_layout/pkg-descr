@@ -1,0 +1,15 @@
+From the software's FAQ list:
+	So what is Mod Layout?
+
+	Mod layout wraps a page, by saying this I mean that it can place
+	information at both the beginning and the end of a document. This
+	allows you do create a single look and feel throughout a website
+	without using server side includes to "automagically" add content
+	in either of these two locations. You can use it to add standard
+	disclaimers to all of the pages on a server or to place banner
+	adds on the top of all pages (I know, banner adds, ick...). I've
+	even seen people use the header and footer to place the entire
+	contents of a given server inside of tables. There are many
+	possibilities.
+
+WWW: http://www.tangent.org/mod_layout/
