@@ -1,0 +1,12 @@
+--- xgfeMainData.cpp.orig		Sun Jun  7 14:39:29 1998
++++ xgfeMainData.cpp			Sat Feb 12 05:00:10 2000
+@@ -34,6 +34,9 @@
+ #include <qpushbt.h>
+ #include <qlayout.h>
+ 
++#define QColor(i)	(QColor)(i)
++#define QRgb(i)		(QRgb)(i)
++
+ xgfeMainData::xgfeMainData
+ (
+  	QWidget* parent = 0,
