@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Sep 19 11:11:49 1999
++++ Makefile	Sun Sep 19 11:11:58 1999
+@@ -1,7 +1,7 @@
+ all: vbidecode
+ 
+ vbidecode: vbidecode.cc
+-	g++ -g -O6 -fomit-frame-pointer -m486 -funroll-loops -o vbidecode vbidecode.cc 
++	g++ -g -O6 -fomit-frame-pointer -funroll-loops -o vbidecode vbidecode.cc 
+ 
+ clean:
+ 	rm -f vbidecode
