@@ -1,12 +1,33 @@
---- libmedusa-internal/medusa-io-handler.c.orig	Sun Aug  6 04:10:06 2000
-+++ libmedusa-internal/medusa-io-handler.c	Thu Aug 17 10:27:10 2000
-@@ -208,6 +208,9 @@
- 
-   /* We open the file synchronously here to make sure the header gets
-      written before returning the FILE * */
-+#ifdef __FreeBSD__
-+#define O_SYNC 0
+--- libmedusa-internal/medusa-io-handler.c.orig	Fri Oct  6 18:20:52 2000
++++ libmedusa-internal/medusa-io-handler.c	Fri Nov  3 11:37:17 2000
+@@ -254,2 +254,5 @@
+            written before returning the FILE * */
++#ifdef	__FreeBSD__
++#define	O_SYNC 0
 +#endif
-   file_descriptor = open (file_name, O_RDWR | O_CREAT | O_SYNC, S_IRUSR | S_IWUSR);
-   write_header_to_file_descriptor (file_descriptor, magic_number, version_number, 0);
-   close (file_descriptor);				  
+         file_descriptor = open (file_name, O_RDWR | O_CREAT | O_SYNC, S_IRUSR | S_IWUSR);
+--- libmedusa/medusa-index-progress.c.orig	Mon Oct 16 16:46:51 2000
++++ libmedusa/medusa-index-progress.c	Fri Nov  3 11:38:01 2000
+@@ -90,2 +90,5 @@
+         g_return_val_if_fail (disk_information_was_found, NULL);
++#ifdef	__FreeBSD__
++#define	O_SYNC 0
++#endif
+         output_fd = open (INDEX_PROGRESS_FILE_NAME, O_RDWR | O_CREAT | O_EXCL | O_SYNC);
+--- libmedusa/medusa-unindexed-search.c.orig	Wed Sep 20 14:03:58 2000
++++ libmedusa/medusa-unindexed-search.c	Fri Nov  3 11:38:30 2000
+@@ -1068,2 +1068,5 @@
+ {
++#ifdef	__FreeBSD__
++#define	O_SYNC 0
++#endif
+         return open (file_name, O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR | O_SYNC);
+--- libmedusa/medusa-service-private.c.orig	Thu Sep 14 23:59:29 2000
++++ libmedusa/medusa-service-private.c	Fri Nov  3 11:41:51 2000
+@@ -32,5 +32,5 @@
+ #include <strings.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/stat.h>
+-#include <sys/types.h>
+ #include <sys/un.h>
