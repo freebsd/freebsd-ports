@@ -3,7 +3,7 @@
 # Date created:         15 Mar 1998
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.6 1998/06/14 16:00:03 steve Exp $
+# $Id: Makefile,v 1.7 1999/06/18 17:31:21 mharo Exp $
 #
 # In this ports..
 #   - new compilation diff for FreeBSD(now we can upload!)
@@ -30,7 +30,7 @@ post-patch:
 	# we can ignore warnings
 	@( cd ${WRKSRC}/ztelnet && \
 	${PATCH} -s -p1 < ${WRKSRC}/ztelnet.patch || \
-	true ) > /dev/null 2>&1
+	${TRUE} ) > /dev/null 2>&1
 	# but it is not
 	@cd ${WRKSRC}/ztelnet && \
 	${PATCH} -s -p1 < ${WRKSRC}/rz.patch && \

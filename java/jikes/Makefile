@@ -3,7 +3,7 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# $Id: Makefile,v 1.10 1999/03/22 06:40:16 archie Exp $
+# $Id: Makefile,v 1.11 1999/06/28 02:22:18 billf Exp $
 #
 
 DISTNAME=	jikes-0.47
@@ -28,7 +28,7 @@ PATCH_STRIP=	-p2
 #	@echo "then set READ_IBM_LICENSE=YES in /etc/make.conf.local"
 #	@echo ""
 #	@echo "The license is available at http://www.ibm.com/research/jikes"
-#	@false
+#	@${FALSE}
 #.endif
 
 .include <bsd.port.mk>

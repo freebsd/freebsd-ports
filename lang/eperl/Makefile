@@ -3,7 +3,7 @@
 # Date created:		03-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.28 1998/08/02 14:53:32 rse Exp $
+# $Id: Makefile,v 1.29 1998/09/15 21:31:46 asami Exp $
 #
 
 DISTNAME=	eperl-2.2.14
@@ -49,7 +49,7 @@ do-install:
 		${MKDIR} ${PREFIX}/www/cgi-bin; \
 	fi
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/www/cgi-bin/nph-eperl
-	@if [ ".`grep x-httpd-eperl ${PREFIX}/etc/apache/srm.conf`" = . ]; then \
+	@if [ ".`${GREP} x-httpd-eperl ${PREFIX}/etc/apache/srm.conf`" = . ]; then \
 		${ECHO} "AddType  application/x-httpd-eperl  .phtml .eperl .epl" \
 			>>${PREFIX}/etc/apache/srm.conf; \
 		${ECHO} "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" \

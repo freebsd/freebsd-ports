@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.44 1999/07/31 17:22:26 obrien Exp $
+# $Id: Makefile,v 1.45 1999/08/22 19:00:04 mharo Exp $
 #
 
 DISTNAME=	lsof_4.45_W
@@ -36,7 +36,7 @@ SRCBALL_NAME=	${DISTNAME:S/_W$//}
 
 post-extract:
 	@( cd ${WRKDIR} ; \
-	EXPMD5=`/usr/bin/grep MD5 README.${SRCBALL_NAME} | sed 's/^[ ]*//'` ; \
+	EXPMD5=`${GREP} MD5 README.${SRCBALL_NAME} | sed 's/^[ ]*//'` ; \
 	CALCMD5=`${MD5} ${SRCBALL_NAME}.tar` ; \
 	if [ "$${EXPMD5}"X != "$${CALCMD5}"X ]; then \
 		echo "Expected and calculated MD5 signatures don't agree." ; \

@@ -3,7 +3,7 @@
 # Date created:     24 May 1999
 # Whom:             Maxim Sobolev <sobomax@altavista.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 01:39:19 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/30 19:27:17 steve Exp $
 #
 
 DISTNAME=	squirm-1.0betaB
@@ -36,7 +36,7 @@ pre-install:
 	@echo 	'You should set SQUID_UID and SQUID_GID variables to your squid effective'
 	@echo	'user/group. For example: SQUID_UID=squid SQUID_GID=squid.'
 	@echo
-	@false
+	@${FALSE}
 .endif
 
 post-install:

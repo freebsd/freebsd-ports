@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.56 1999/07/20 23:42:28 asami Exp $
+# $Id: Makefile,v 1.57 1999/07/27 14:27:28 steve Exp $
 #
 
 DISTNAME=	xc
@@ -42,7 +42,7 @@ PLIST=		${PKGDIR}/PLIST.alpha
 pre-fetch:
 	@${ECHO}
 	@${ECHO} You must set variable USA_RESIDENT to YES or NO.
-	@false
+	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == NO
 pre-fetch:

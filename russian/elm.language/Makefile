@@ -2,7 +2,7 @@
 # Date created:         2 Dec 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1998/06/27 05:19:28 asami Exp $
+# $Id: Makefile,v 1.12 1998/12/01 09:35:42 asami Exp $
 #
 
 PKGNAME=        ru-elm-2.4ME
@@ -19,7 +19,7 @@ NO_BUILD=       YES
 do-fetch:
 
 do-install:
-	grep -q -i koi8 ${PREFIX}/lib/elm.rc || \
+	${GREP} -q -i koi8 ${PREFIX}/lib/elm.rc || \
 		( \
 		echo "charset=KOI8-R"; \
 		echo "displaycharset=KOI8-R"; \

@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.32 1997/12/15 02:19:01 jmz Exp $
+# $Id: Makefile,v 1.33 1999/01/29 03:09:05 jmz Exp $
 #
 
 DISTNAME=	web2c-7.1
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 MAKE_FLAGS=	fmts= all_mems=
 
 do-build:
-	 @(cd ${WRKSRC}; unset `env|grep ^TEX|sed -e s/=.*//`; \
+	 @(cd ${WRKSRC}; unset `env|${GREP} ^TEX|sed -e s/=.*//`; \
 	    ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${ALL_TARGET})
 
 post-install:

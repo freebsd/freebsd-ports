@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.23 1999/05/01 04:00:20 taoka Exp $
+# $Id: Makefile,v 1.24 1999/08/09 06:22:14 taoka Exp $
 #
 
 DISTNAME=	OMRONWnn6
@@ -49,7 +49,7 @@ pre-extract::
 		${ECHO} "For example:"; \
 		${ECHO} "	make MOUNT_PT=/mnt MOUNT_DEV=/dev/cd0c"; \
 		${ECHO} "###########################################################"; \
-		/usr/bin/false; \
+		${FALSE}; \
 		;; \
 	  *) \
 		${ECHO} "Now mounting the CD-ROM ..."; \
@@ -61,7 +61,7 @@ pre-extract::
 	    ${ECHO} "${MOUNT_PT} is busy"; \
 	    ${ECHO} "Please 'umount ${MOUNT_PT}'"; \
 	    ${ECHO} "##################################################"; \
-	    /usr/bin/false; \
+	    ${FALSE}; \
 	  fi; \
 	done
 	@/sbin/mount_cd9660 ${MOUNT_DEV} ${MOUNT_PT}
@@ -75,7 +75,7 @@ pre-extract::
 		${ECHO} "!! Note that 'Wnn6 for Linux/FreeBSD' is an old version !!"; \
 		/sbin/umount ${MOUNT_PT}; \
 		${ECHO} "Umounting is done ..."; \
-		/usr/bin/false; \
+		${FALSE}; \
 	fi
 
 post-extract:

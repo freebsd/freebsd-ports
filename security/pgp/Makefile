@@ -5,7 +5,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.25 1999/08/22 18:59:54 mharo Exp $
+# $Id: Makefile,v 1.26 1999/08/22 23:33:24 mharo Exp $
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
@@ -42,7 +42,7 @@ pre-fetch:
 	@echo
 	@echo You must set variable USA_RESIDENT to YES, if you are USA resident
 	@echo or to NO, if you aren\'t USA resident to build this package
-	@false
+	@${FALSE}
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
 DISTNAME=       pgp262s

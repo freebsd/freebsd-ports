@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.10 1999/07/21 14:55:43 marcel Exp $
+# $Id: Makefile,v 1.11 1999/08/22 19:00:45 mharo Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -37,7 +37,7 @@ pre-fetch:
 	@${ECHO} Canadian resident, in order to build this package.
 	@${ECHO} There is no version of this port for NON-USA and NON-Canadian users.
 	@${ECHO}
-	@false
+	@${FALSE}
 #
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES || ${USA_RESIDENT} == yes
@@ -51,7 +51,7 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} There is no version of this port for NON-USA and NON-Canadian users.
 	@${ECHO}
-	@false
+	@${FALSE}
 .endif
 .endif
 

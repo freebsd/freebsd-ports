@@ -3,7 +3,7 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.30 1998/07/20 16:30:13 adam Exp $
+# $Id: Makefile,v 1.31 1999/08/22 18:59:21 mharo Exp $
 #
 
 DISTNAME=	dgd-net-1.1p6
@@ -53,7 +53,7 @@ post-build:
 
 do-install:
 	@-mv ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old
-	@tar -C ${WRKDIR} -cf - `grep '^dgd/' ${PKGDIR}/PLIST` \
+	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PKGDIR}/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 
 .include <bsd.port.mk>

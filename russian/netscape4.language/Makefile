@@ -3,7 +3,7 @@
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.14 1998/08/05 09:31:38 asami Exp $
+# $Id: Makefile,v 1.15 1998/12/02 05:11:02 asami Exp $
 #
 
 PKGNAME=        ru-netscape-3.01
@@ -27,13 +27,13 @@ do-fetch:
 
 do-install:
 	if [ -f ${APPDEF}/Netscape ] ; then \
-		grep -q '\.version:.*3\.01$$' ${APPDEF}/Netscape || \
+		${GREP} -q '\.version:.*3\.01$$' ${APPDEF}/Netscape || \
 			${RM} ${APPDEF}/Netscape; \
 	fi
 	if [ ! -f ${APPDEF}/Netscape ] ; then \
 		${CP} /usr/local/lib/netscape/Netscape.ad ${APPDEF}/Netscape; \
 	fi
-	cd ${APPDEF}; grep -q koi8-r=BOLD Netscape || \
+	cd ${APPDEF}; ${GREP} -q koi8-r=BOLD Netscape || \
 		patch < ${FILESDIR}/koi8-r_patch;
 
 .include <bsd.port.mk>

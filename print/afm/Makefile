@@ -3,7 +3,7 @@
 # Date created:         23 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.6 1995/11/22 13:17:53 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/17 08:44:24 obrien Exp $
 #
 
 DISTNAME=	afm
@@ -16,6 +16,6 @@ pre-patch:
 	@rm -rf ${WRKSRC}/RCS
 
 do-build:
-	@true
+	@${TRUE}
 
 .include <bsd.port.mk>
