@@ -6,7 +6,7 @@
 
 PORTNAME=	swhplugins
 PORTVERSION=	0.4.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -15,7 +15,8 @@ DISTNAME=	swh-plugins-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
+		${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	fftw3f.3:${PORTSDIR}/math/fftw3-float
 
 # includes assembler code
@@ -35,6 +36,10 @@ CFLAGS+=	-fPIC -DPIC
 CONFIGURE_ARGS+=	--enable-3dnow
 .endif
 
+.if defined(WITH_SSE)
+CONFIGURE_ARGS+=	--enable-sse
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -44,6 +49,10 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
+.if !defined(WITH_OPTIMIZED_CFLAGS)
+	@${REINPLACE_CMD} -e 's|$$CFLAGS.*$${MACHINE}|$$CFLAGS|g' \
+		 ${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|gcc |$$(CC) |g ; \
 		 s| -lc| $$(LDFLAGS)|g ; \
 		 s|-lrt||g' ${WRKSRC}/Makefile.in
