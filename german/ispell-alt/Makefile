@@ -8,8 +8,9 @@
 MAINTAINER=     alex@big.endian.de
 
 ISPELL_DEALT=	yes
-PORTNAME=	dealt-ispell
+PORTNAME=	ispell
 PORTVERSION= 	19991219
+PKGNAMEPREFIX=	dealt-
 MASTERDIR=      ${.CURDIR}/../ispell
 
 .include        "${MASTERDIR}/Makefile"

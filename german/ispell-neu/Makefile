@@ -8,8 +8,9 @@
 MAINTAINER=     alex@big.endian.de
 
 ISPELL_DENEU=	yes
-PORTNAME=	deneu-ispell
+PORTNAME=	ispell
 PORTVERSION= 	19991219
 MASTERDIR=      ${.CURDIR}/../ispell
+PKGNAMEPREFIX=	deneu-
 
 .include        "${MASTERDIR}/Makefile"
