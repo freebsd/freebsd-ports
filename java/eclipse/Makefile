@@ -51,11 +51,9 @@ PLIST_SUB+=	MOTIF:="@comment "
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA} == "firefox"
 BUILD_DEPENDS+=	firefox:${PORTSDIR}/www/firefox
 BROWSER=	firefox
-BROWSER_VER=	`ls /usr/X11R6/lib/firefox/include | sed -e "s/firefox-//"`
 .else
 BUILD_DEPENDS+=	mozilla:${PORTSDIR}/www/mozilla
 BROWSER=	mozilla
-BROWSER_VER=
 .endif
 .endif
 
@@ -70,7 +68,6 @@ PLIST_SUB+=	GNOME:=""
 .endif
 
 MAKE_ARGS=	BROWSER=${BROWSER} \
-		BROWSER_VER=${BROWSER_VER} \
 		ECLIPSE_BUILD=${ECLIPSE_BUILD} \
 		ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		ECLIPSE_OS=${ECLIPSE_OS} \
