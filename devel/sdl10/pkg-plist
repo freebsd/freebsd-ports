@@ -32,9 +32,6 @@ lib/libSDLmain.a
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 share/aclocal/sdl.m4
-share/doc/SDL/.codeblock
-share/doc/SDL/.header
-share/doc/SDL/.macros
 share/doc/SDL/BUGS
 share/doc/SDL/COPYING
 share/doc/SDL/CREDITS
@@ -64,9 +61,47 @@ share/doc/SDL/video/examples.html
 share/doc/SDL/video/funclist.html
 share/doc/SDL/video/functions.html
 share/doc/SDL/video/index.html
+share/examples/SDL/COPYING
+share/examples/SDL/Makefile.am
+share/examples/SDL/Makefile.in
+share/examples/SDL/README
+share/examples/SDL/acinclude.m4
+share/examples/SDL/aclocal.m4
+share/examples/SDL/autogen.sh
+share/examples/SDL/checkkeys.c
+share/examples/SDL/config.guess
+share/examples/SDL/config.sub
+share/examples/SDL/configure
+share/examples/SDL/configure.in
+share/examples/SDL/graywin.c
+share/examples/SDL/icon.bmp
+share/examples/SDL/install-sh
+share/examples/SDL/loopwave.c
+share/examples/SDL/missing
+share/examples/SDL/mkinstalldirs
+share/examples/SDL/picture.xbm
+share/examples/SDL/sample.bmp
+share/examples/SDL/sample.wav
+share/examples/SDL/testalpha.c
+share/examples/SDL/testbitmap.c
+share/examples/SDL/testcdrom.c
+share/examples/SDL/testerror.c
+share/examples/SDL/testhread.c
+share/examples/SDL/testkeys.c
+share/examples/SDL/testlock.c
+share/examples/SDL/testsprite.c
+share/examples/SDL/testtimer.c
+share/examples/SDL/testtypes.c
+share/examples/SDL/testver.c
+share/examples/SDL/testvidinfo.c
+share/examples/SDL/testwin.c
+share/examples/SDL/testwm.c
+share/examples/SDL/threadwin.c
+@dirrm share/examples/SDL
 @dirrm share/doc/SDL/video
 @dirrm share/doc/SDL/time
 @dirrm share/doc/SDL/threads
+@dirrm share/doc/SDL/opengl
 @dirrm share/doc/SDL/images
 @dirrm share/doc/SDL/events
 @dirrm share/doc/SDL/cdrom
