@@ -12,8 +12,12 @@ case "`hostname | tr A-Z a-z`" in
 freefall.freebsd.org)
 	:
 	;;
+internat.freebsd.org)
+	:
+	;;
 *)
-	echo "Please commit on freefall...."
+	echo "Please commit on Freefall\!"
+	echo "(and Internat for crypto.)"
 	exit 1
 esac
 
