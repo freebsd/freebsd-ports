@@ -8,7 +8,6 @@
 PORTNAME=	ace
 PORTVERSION=	${ACE_VERSION}
 PKGNAMESUFFIX=
-DISTNAME=	ACE+TAO
 
 COMMENT=	The Adaptive Communication Environment for C++
 
