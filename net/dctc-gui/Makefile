@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.51
-PORTREVISION=	1
+PORTVERSION=	0.53
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -27,22 +26,21 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--with-gtk-prefix=${LOCALBASE} \
+		--enable-manual-db-detect \
 		--with-libiconv-prefix=${LOCALBASE}
 
-DOC_FILES= COPYING ChangeLog README
+DOC_FILES= COPYING ChangeLog README TODO
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi -e \
 		's|(\$$\(datadir\))/gnome|\1|; \
 		s|ldb-4.0|ldb4|; \
+		s|<(db.h>)|<db4/\1|; \
 		s|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
 	@${PERL} -pi -e 's|(hublist)|dc_\1|m' ${WRKSRC}/configure
 	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|; \
 		s|(cmdline.+)(hublist)|\1dc_\2|' \
 		${WRKSRC}/src/init_fnc.c
-.for file in bdb.c callbacks.c main.c
-	@${PERL} -pi -e 's|<(db.h>)|<db4/\1|' ${WRKSRC}/src/${file}
-.endfor
 
 post-configure:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
