@@ -1,24 +1,45 @@
---- ../pwlib/make/unix.mak.orig	Mon Jun 26 04:17:20 2000
-+++ ../pwlib/make/unix.mak	Sun Apr 29 23:25:49 2001
-@@ -443,9 +443,9 @@
- 
- P_PTHREADS	:= 1
- 
--ifeq ($(MACHTYPE),x86)
--STDCCFLAGS	+= -m486
--endif
-+#ifeq ($(MACHTYPE),x86)
-+#STDCCFLAGS	+= -m486
-+#endif
- 
- ifndef OSRELEASE
- OSRELEASE	:= $(shell sysctl -n kern.osreldate)
-@@ -812,7 +812,7 @@
- 
- else
- 
--OPTCCFLAGS	+= -O2 -DNDEBUG
-+OPTCCFLAGS	+= -DNDEBUG
- #OPTCCFLAGS	+= -DP_USE_INLINES=1
- #OPTCCFLAGS	+= -fconserve-space
- ifneq ($(OSTYPE),macos)
+*** ../pwlib/make/unix.mak.orig	Fri Aug 10 07:35:55 2001
+--- ../pwlib/make/unix.mak	Fri Aug 10 07:45:03 2001
+*************** ifeq ($(OSTYPE),FreeBSD)
+*** 535,545 ****
+  
+  P_PTHREADS	:= 1
+  
+! ifeq ($(MACHTYPE),x86)
+! ifdef CPUTYPE
+! STDCCFLAGS	+= -mcpu=$(CPUTYPE)
+! endif
+! endif
+  
+  ifndef OSRELEASE
+  OSRELEASE	:= $(shell sysctl -n kern.osreldate)
+--- 535,545 ----
+  
+  P_PTHREADS	:= 1
+  
+! #ifeq ($(MACHTYPE),x86)
+! #ifdef CPUTYPE
+! #STDCCFLAGS	+= -mcpu=$(CPUTYPE)
+! #endif
+! #endif
+  
+  ifndef OSRELEASE
+  OSRELEASE	:= $(shell sysctl -n kern.osreldate)
+*************** LDFLAGS		+= $(DEBLDFLAGS)
+*** 962,968 ****
+  
+  else
+  
+! OPTCCFLAGS	+= -O3 -DNDEBUG
+  #OPTCCFLAGS	+= -DP_USE_INLINES=1
+  #OPTCCFLAGS	+= -fconserve-space
+  ifneq ($(OSTYPE),Darwin)
+--- 962,969 ----
+  
+  else
+  
+! #OPTCCFLAGS	+= -O3 -DNDEBUG
+! OPTCCFLAGS	+= -DNDEBUG
+  #OPTCCFLAGS	+= -DP_USE_INLINES=1
+  #OPTCCFLAGS	+= -fconserve-space
+  ifneq ($(OSTYPE),Darwin)
