@@ -9,8 +9,6 @@
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
 KDE_MAINTAINER=		will@FreeBSD.org
 
-.if defined(_POSTMKINCLUDED)
-
 # This section contains the USE_ definitions.
 # XXX: Write HAVE_ definitions sometime.
 
@@ -105,5 +103,4 @@ USE_KDELIBS_VER=2
 .endif
 # End of USE_KDEBASE_VER
 
-.endif
 # End of use part.
