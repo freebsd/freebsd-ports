@@ -208,7 +208,6 @@ sbin/apxs
 sbin/checkgid
 sbin/dbmmanage
 sbin/envvars
-sbin/envvars-std
 sbin/htcacheclean
 sbin/htdbm
 sbin/htdigest
@@ -505,6 +504,8 @@ share/apache21/build/special.mk
 @unexec rmdir %D/libexec/apache21 2> /dev/null || true
 @dirrm include/apache21
 @exec mkdir -p %D/etc/apache21/Includes 2> /dev/null || true
+@exec mkdir -p %D/etc/apache2/envvars.d 2> /dev/null || true
 @unexec rmdir %D/etc/apache21/Includes 2> /dev/null || true
+@unexec rmdir %D/etc/apache2/envvars.d 2> /dev/null || true
 @unexec rm -f %D/etc/apache21/httpd.conf.bak 2> /dev/null || true
 @unexec rmdir %D/etc/apache21 2> /dev/null || echo "===> If you plan to do not reinstall apache21, you can safely remove %D/etc/apache21."
