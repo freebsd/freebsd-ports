@@ -1,40 +1,31 @@
---- Makefile.orig	Mon Jan 29 17:16:27 2001
-+++ Makefile	Wed Jan 31 05:53:24 2001
+--- Makefile.orig	Sat Feb 17 00:44:26 2001
++++ Makefile	Sat Feb 17 00:46:24 2001
 @@ -32,7 +32,7 @@
  # (Don't bother with this on Windows; I don't have an install target
  # for Windows.)
  # The binaries go into  $(DESTDIR)$(BINDIR)
 -DESTDIR = /usr/local/
-+DESTDIR = ${PREFIX}/
++DESTDIR = %%PREFIX%%/
  BINDIR = bin
  # The man pages go into $(DESTDIR)$(MANDIR)
  MANDIR = man/man1
-@@ -52,7 +52,7 @@
- # C debugging and optimization flags. 
- # This code is supposed to be reasonably safe, so we turn on all
- # reasonable warnings: you shouldn't see any warnings with these.
--CDEBUGFLAGS = -g -O2 -Wall -W -Wstrict-prototypes -Wmissing-prototypes
-+#CDEBUGFLAGS = -g -O2 -Wall -W -Wstrict-prototypes -Wmissing-prototypes
+@@ -56,7 +56,7 @@
+ # code (e.g. glib) may provoke warnings.
+ # Also, we do NOT enable optimization by default, because RedHat 6
+ # Linux distributions have a seriously buggy C compiler.
+-CDEBUGFLAGS = -g
++#CDEBUGFLAGS = -g
  # The -Wconversion flag is also useful to detect (more than usual)
  # abuse of enums, but it generates many superfluous warnings, so
  # is not on by default.
-@@ -92,8 +92,8 @@
+@@ -96,8 +96,8 @@
  GUILIBS=-LC:/gtk -lgtk-1.3 -lgdk-1.3 -lglib-1.3 -lgmodule-1.3 -Wl,-subsystem,windows
  else
  # Not Windows. If gtk+ is properly installed, this is all that's needed.
 -EXTRA_INCLUDES=`gtk-config --cflags`
 -GUILIBS=`gtk-config --libs`
-+EXTRA_INCLUDES=`${GTK_CONFIG} --cflags`
-+GUILIBS=`${GTK_CONFIG} --libs`
++EXTRA_INCLUDES=`%%GTK_CONFIG%% --cflags`
++GUILIBS=`%%GTK_CONFIG%% --libs`
  endif
  
  # We use gcc to link as well
-@@ -102,7 +102,7 @@
- # don't mess with these
- ALLINCLUDES = $(INCLUDES) $(EXTRA_INCLUDES)
- ALLDEFINES = $(ALLINCLUDES) $(EXTRA_DEFINES) $(DEFINES)
--CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(ALLDEFINES)
-+CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(ALLDEFINES)
- LDOPTIONS = $(CDEBUGFLAGS) $(CCOPTIONS)  $(EXTRA_LDOPTIONS)
- 
- # various auxiliary program and settings.
