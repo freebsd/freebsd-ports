@@ -10,11 +10,13 @@ else
   queue=0
 fi
 
-infoseek_host=$m
 infoseek_port=infoseek
 . ${buildroot}/${i}/portbuild.conf
 if [ -f ${buildroot}/${i}/portbuild.${m} ]; then
   . ${buildroot}/${i}/portbuild.${m}
+fi
+if [ -z "${infoseek_host}" ]; then
+  infoseek_host=$m
 fi
 if (/usr/local/bin/nc -w 5 ${infoseek_host} ${infoseek_port} > ${buildroot}/${i}/loads/$m < /dev/null); then
   if [ "${queue}" = 1 ]; then
