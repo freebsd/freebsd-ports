@@ -11,7 +11,7 @@ SED=${SED:-%%SED%%}
 infodir=${INFODIR:-%%INFODIR%%}
 infofiles=${INFOFILES:-%%INFOFILES%%}
 
-if [ "X$2" = X"DEINSTALL" ]; then
+if [ "X$2" = X"DEINSTALL" -a %%EMACS%% != xemacs ]; then
 	${ECHO} "Deleting entry for \"${pkgname}\" from ${infodir}/dir"
 	for file in `echo  ${infofiles} | ${SED} "s,:, ,g"`; do
 		install-info --delete ${infodir}/${file} ${infodir}/dir

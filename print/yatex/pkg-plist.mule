@@ -1,0 +1,34 @@
+share/mule/site-lisp/yatex/comment.el
+share/mule/site-lisp/yatex/yahtml.el
+share/mule/site-lisp/yatex/yatex.el
+share/mule/site-lisp/yatex/yatex19.el
+share/mule/site-lisp/yatex/yatexadd.el
+share/mule/site-lisp/yatex/yatexenv.el
+share/mule/site-lisp/yatex/yatexgen.el
+share/mule/site-lisp/yatex/yatexhie.el
+share/mule/site-lisp/yatex/yatexhks.el
+share/mule/site-lisp/yatex/yatexhlp.el
+share/mule/site-lisp/yatex/yatexlib.el
+share/mule/site-lisp/yatex/yatexm-o.el
+share/mule/site-lisp/yatex/yatexmth.el
+share/mule/site-lisp/yatex/yatexprc.el
+share/mule/site-lisp/yatex/yatexsec.el
+share/mule/site-lisp/yatex-startup.el
+share/mule/site-lisp/YATEXHLP.jp
+share/mule/site-lisp/YATEXHLP.eng
+info/yahtmlj
+info/yatexj
+info/yatexe
+share/doc/yatex/htmlqa
+share/doc/yatex/qanda
+share/doc/yatex/qanda.eng
+share/doc/yatex/yahtmlj.tex
+share/doc/yatex/yatex.new
+share/doc/yatex/yatex.ref
+share/doc/yatex/yatexadd.doc
+share/doc/yatex/yatexe.tex
+share/doc/yatex/yatexgen.doc
+share/doc/yatex/yatexj.tex
+share/doc/yatex/yatexref.eng
+@dirrm share/mule/site-lisp/yatex
+@dirrm share/doc/yatex
