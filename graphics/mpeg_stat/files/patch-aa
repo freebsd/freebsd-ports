@@ -1,0 +1,15 @@
+--- Makefile~	Fri Aug  2 11:59:50 1996
++++ Makefile	Fri Aug  2 12:02:45 1996
+@@ -40,6 +40,12 @@
+ all:		$(PROGRAM)
+ 		strip $(PROGRAM)
+ 
++install:
++	install -cs ${PROGRAM} ${PREFIX}/bin
++	install -c block2spec ${PREFIX}/bin
++	install -c -m 644 mpeg_stat.1 ${PREFIX}/man/man1
++	gzip -9nf ${PREFIX}/man/man1/mpeg_stat.1
++
+ $(PROGRAM):	$(OBJS)
+ 		$(LD) -g $(OBJS) $(LIBS) -lm -o $(PROGRAM)
+ 
