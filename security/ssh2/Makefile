@@ -7,6 +7,7 @@
 
 PORTNAME=	ssh2
 PORTVERSION=	3.2.9.1
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 # The list of official mirror sites is at:
 # http://www.ssh.com/support/downloads/secureshellserver/non-commercial.html
@@ -77,9 +78,12 @@ CONFIGURE_ARGS+=	--enable-group-writeability
 # Kerberos5 support in ssh2 is EXPERIMENTAL and requires MIT Kerberos,
 # Heimdal is unsupported.
 #
-.if defined(WITH_KERBEROS) && defined(KRB5_HOME) && \
-	exists(${KRB5_HOME}/lib/libkrb5.a)
+.if !defined(WITHOUT_KERBEROS) && defined(KRB5_HOME) && \
+	exists(${KRB5_HOME}/lib/libk5crypto.a)
+LIB_DEPENDS+=		krb5.3:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME} --disable-suid-ssh-signer
+EXTRA_PATCHES+=		${FILESDIR}/kerberos-patch-apps::ssh::ssh2_config \
+			${FILESDIR}/kerberos-patch-apps::ssh::sshd2_config
 .endif
 
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
