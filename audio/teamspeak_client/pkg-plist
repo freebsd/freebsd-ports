@@ -1,14 +1,17 @@
 bin/TeamSpeak
+lib/teamspeak_client/Readme.txt
+lib/teamspeak_client/TeamSpeak
 lib/teamspeak_client/TeamSpeak.bin
+lib/teamspeak_client/clicense.txt
 lib/teamspeak_client/client_sdk/SDK_readme.txt
 lib/teamspeak_client/client_sdk/TsRemoteImport.pas
+lib/teamspeak_client/client_sdk/tsControl
 lib/teamspeak_client/client_sdk/tsControl.dpr
-lib/teamspeak_client/client_sdk/tsControl.exe
 lib/teamspeak_client/client_sdk/libTSRemote.so.0.2
 lib/teamspeak_client/icon.xpm
 lib/teamspeak_client/libHVDI.so.0.8.0
 lib/teamspeak_client/libborqt-6.9-qt2.3.so
-lib/teamspeak_client/libborqt-6.9.0-qt2.3.so
+lib/teamspeak_client/libspeex.so.1.0.0
 lib/teamspeak_client/manual/registerwithserver.gif
 lib/teamspeak_client/manual/registerwithserver.htm
 lib/teamspeak_client/manual/soundinputoutputsettings.gif
@@ -157,9 +160,6 @@ lib/teamspeak_client/sounds/46.incorrectpassword.wav
 lib/teamspeak_client/sounds/11.memberjoined.wav
 lib/teamspeak_client/sounds/35.v_stat_granted.wav
 lib/teamspeak_client/setduplexfake.so
-share/doc/teamspeak_client/README
-share/doc/teamspeak_client/clicense.txt
-@dirrm share/doc/teamspeak_client
 @dirrm lib/teamspeak_client/client_sdk
 @dirrm lib/teamspeak_client/manual
 @dirrm lib/teamspeak_client/sounds
