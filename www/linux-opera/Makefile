@@ -7,6 +7,7 @@
 
 PORTNAME=	opera
 PORTVERSION=	7.51.20040602
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/751/final/en/i386/static/ \
 		ftp://ftp.sunet.se/pub/www/clients/Opera/linux/751/final/en/i386/static/ \

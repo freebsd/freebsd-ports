@@ -1,6 +1,6 @@
---- install.sh.orig	Thu May 13 12:53:51 2004
-+++ install.sh	Thu May 13 13:43:32 2004
-@@ -758,25 +758,20 @@
+--- install.sh.orig	Wed Jun  2 05:13:50 2004
++++ install.sh	Sun Jun  6 01:48:11 2004
+@@ -758,25 +758,21 @@
  
      debug_msg 0 "in generate_wrapper()"
  
@@ -21,6 +21,7 @@
 -    /opt/Acrobat[45]/Browsers/intellinux \\
 -    /usr/Acrobat[45]/Browsers/intellinux \\"
 +    %%LOCALBASE%%/lib/linux-flashplugin6 \\
++    %%LOCALBASE%%/lib/linux-flashplugin7 \\
 +    %%LOCALBASE%%/Acrobat4/Browsers/intellinux \\
 +    %%LOCALBASE%%/Acrobat5/Browsers/intellinux \\"
  
@@ -34,7 +35,7 @@
  	    wrapper_sunjava_machine="i386"
  	;;
  
-@@ -817,17 +812,11 @@
+@@ -817,17 +813,11 @@
  	;;
      esac
      wrapper_netscape_plugin_paths="
@@ -55,7 +56,7 @@
      
      wrapper_contain="#!/bin/sh
  
-@@ -871,9 +860,13 @@
+@@ -871,9 +861,13 @@
  OPERA_LD_PRELOAD=\"\${LD_PRELOAD}\"
  export OPERA_LD_PRELOAD
  
@@ -71,7 +72,7 @@
      if test -f \"\${INIJAVA}/libjava.so\"; then OPERA_JAVA_DIR=\"\${INIJAVA}\"; fi
  fi
  
-@@ -887,39 +880,16 @@
+@@ -887,39 +881,16 @@
  
  if test ! \"\${OPERA_JAVA_DIR}\"; then
  
@@ -119,7 +120,7 @@
  	; do
  	for PREFIX in \${PREFIXES}; do
  	    if test -f \"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}/libjava.so\"; then OPERA_JAVA_DIR=\"\${PREFIX}/\${SUNJAVA}/lib/${wrapper_sunjava_machine}\" && break; fi
-@@ -983,11 +953,8 @@
+@@ -983,11 +954,8 @@
  
  # Acrobat Reader
  for BINDIR in \\
@@ -133,7 +134,7 @@
      ; do
      if test -d \${BINDIR} ; then PATH=\${PATH}:\${BINDIR}; fi
  done
-@@ -1086,7 +1053,7 @@
+@@ -1086,7 +1054,7 @@
      chop "${OPERADESTDIR}" "str_localdirshare"
      chop "${OPERADESTDIR}" "str_localdirplugin"
  
@@ -142,7 +143,7 @@
  
      # Executable
  	debug_msg 1 "Executable"
-@@ -1121,7 +1088,7 @@
+@@ -1121,7 +1089,7 @@
  
  	#cp $cpv $cpf wrapper.sh $wrapper_dir/opera
  	generate_wrapper
@@ -151,7 +152,7 @@
  
      # Documentation
  	debug_msg 1 "Documentation"
-@@ -1155,7 +1122,7 @@
+@@ -1155,7 +1123,7 @@
  	if test -d ini; then
  	    mkdir $mkdirv $mkdirp $share_dir/ini/
  	    chmod $chmodv 755 $share_dir/ini
@@ -160,7 +161,7 @@
  	    if test -f $share_dir/ini/pluginpath.ini; then
  		echo ${str_localdirplugin} >> $share_dir/ini/pluginpath.ini
  	    fi
-@@ -1255,8 +1222,9 @@
+@@ -1255,8 +1223,9 @@
  	if test -z "${OPERADESTDIR}"; then
  
  	# System wide configuration files
@@ -171,7 +172,7 @@
  	    echo
  	    echo "System wide configuration files:"
  	    echo "  $config_dir/opera6rc"
-@@ -1268,6 +1236,7 @@
+@@ -1268,6 +1237,7 @@
  		cp $cpv $cpf config/opera6rc $config_dir
  		cp $cpv $cpf config/opera6rc.fixed $config_dir
  	    fi
@@ -179,7 +180,7 @@
  	else
  	    echo
  	    echo "User \"${USERNAME}\" does not have write access to $config_dir"
-@@ -1281,9 +1250,9 @@
+@@ -1281,9 +1251,9 @@
  	icons
  	gnome
  	kde 3
@@ -192,7 +193,7 @@
  
  	fi # OPERADESTDIR
  
-@@ -1328,13 +1297,13 @@
+@@ -1328,13 +1298,13 @@
  {
      # arg1 = location
  
@@ -210,7 +211,7 @@
  Terminal=0
  Type=Application'
  
-@@ -1367,42 +1336,13 @@
+@@ -1367,42 +1337,13 @@
  
      debug_msg 0 "in icons()"
  
@@ -259,7 +260,7 @@
      fi
  }
  
-@@ -1412,72 +1352,36 @@
+@@ -1412,72 +1353,36 @@
  
      debug_msg 1 "in gnome()"
  
@@ -354,7 +355,7 @@
     fi
     # Add ximian here
  }
-@@ -1488,39 +1392,31 @@
+@@ -1488,39 +1393,31 @@
  
      debug_msg 1 "in kde()"
  
