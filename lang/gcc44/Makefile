@@ -57,7 +57,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
+		--with-gxx-include-dir=${TARGLIB}/include/c++/${GCC_REV}
 #CONFIGURE_ARGS+=	--program-suffix=33
 #	Java
 CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
