@@ -1,0 +1,197 @@
+bin/defendguin
+doc/defendguin/COPYING.txt
+doc/defendguin/README.txt
+share/defendguin/images/baiter/baiter0.bmp
+share/defendguin/images/baiter/baiter1.bmp
+share/defendguin/images/baiter/baiter2.bmp
+share/defendguin/images/baiter/baiter3.bmp
+share/defendguin/images/baiter/baiter4.bmp
+share/defendguin/images/bomber/bomber-bulge0.bmp
+share/defendguin/images/bomber/bomber-bulge1.bmp
+share/defendguin/images/bomber/bomber.bmp
+share/defendguin/images/bomber/mine-flash.bmp
+share/defendguin/images/bomber/mine-pop.bmp
+share/defendguin/images/bomber/mine.bmp
+share/defendguin/images/bullet/bullet0.bmp
+share/defendguin/images/bullet/bullet1.bmp
+share/defendguin/images/bullet/bullet2.bmp
+share/defendguin/images/bullet/bullet3.bmp
+share/defendguin/images/bullet/bullet4.bmp
+share/defendguin/images/evilbill/evilbill-hurt1.bmp
+share/defendguin/images/evilbill/evilbill-hurt2.bmp
+share/defendguin/images/evilbill/evilbill-shoot.bmp
+share/defendguin/images/evilbill/evilbill1.bmp
+share/defendguin/images/evilbill/evilbill2.bmp
+share/defendguin/images/evilbill/flame1.bmp
+share/defendguin/images/evilbill/flame2.bmp
+share/defendguin/images/evilbill/flame3.bmp
+share/defendguin/images/l2r.sh
+share/defendguin/images/land/center.bmp
+share/defendguin/images/land/left.bmp
+share/defendguin/images/land/right.bmp
+share/defendguin/images/loader/loading-text.bmp
+share/defendguin/images/loader/loading.bmp
+share/defendguin/images/loader/press-a-key.bmp
+share/defendguin/images/mutant/mutant0.bmp
+share/defendguin/images/mutant/mutant1.bmp
+share/defendguin/images/pod/pod.bmp
+share/defendguin/images/pod/pod0.bmp
+share/defendguin/images/pod/pod1.bmp
+share/defendguin/images/pod/pod2.bmp
+share/defendguin/images/points/100.bmp
+share/defendguin/images/points/1000.bmp
+share/defendguin/images/points/150.bmp
+share/defendguin/images/points/200.bmp
+share/defendguin/images/points/250.bmp
+share/defendguin/images/ship/disco-1.bmp
+share/defendguin/images/ship/disco-2.bmp
+share/defendguin/images/ship/flame-left-0.bmp
+share/defendguin/images/ship/flame-left-1.bmp
+share/defendguin/images/ship/flame-right-0.bmp
+share/defendguin/images/ship/flame-right-1.bmp
+share/defendguin/images/ship/lasers.bmp
+share/defendguin/images/ship/ship-left-dying.bmp
+share/defendguin/images/ship/ship-left.bmp
+share/defendguin/images/ship/ship-left2.bmp
+share/defendguin/images/ship/ship-right-dying.bmp
+share/defendguin/images/ship/ship-right.bmp
+share/defendguin/images/ship/ship-right2.bmp
+share/defendguin/images/ship/ship-win-0.bmp
+share/defendguin/images/ship/ship-win-1.bmp
+share/defendguin/images/ship/ship-win-2.bmp
+share/defendguin/images/status/catch-the-penguinoid.bmp
+share/defendguin/images/status/circle.bmp
+share/defendguin/images/status/game-over.bmp
+share/defendguin/images/status/get-ready.bmp
+share/defendguin/images/status/level-bonus.bmp
+share/defendguin/images/status/map-alert.bmp
+share/defendguin/images/status/map-baiter.bmp
+share/defendguin/images/status/map-bomber.bmp
+share/defendguin/images/status/map-evilbill.bmp
+share/defendguin/images/status/map-land.bmp
+share/defendguin/images/status/map-mine.bmp
+share/defendguin/images/status/map-mutant.bmp
+share/defendguin/images/status/map-peng.bmp
+share/defendguin/images/status/map-pod.bmp
+share/defendguin/images/status/map-ship.bmp
+share/defendguin/images/status/map-swarmer.bmp
+share/defendguin/images/status/map-ufo.bmp
+share/defendguin/images/status/no-bonus.bmp
+share/defendguin/images/status/numbers.bmp
+share/defendguin/images/status/option-text.bmp
+share/defendguin/images/status/penguinoid-dropped.bmp
+share/defendguin/images/status/penguinoid-in-trouble.bmp
+share/defendguin/images/status/penguinoid-mutated.bmp
+share/defendguin/images/status/penguinoid-saved.bmp
+share/defendguin/images/status/penguinoid-shot.bmp
+share/defendguin/images/status/planet-destroyed.bmp
+share/defendguin/images/status/ships.bmp
+share/defendguin/images/status/smart-bomb.bmp
+share/defendguin/images/status/status-area.bmp
+share/defendguin/images/swarmer/swarmer.bmp
+share/defendguin/images/title/arrow0.bmp
+share/defendguin/images/title/arrow1.bmp
+share/defendguin/images/title/arrow2.bmp
+share/defendguin/images/title/nutecase.bmp
+share/defendguin/images/title/one-player.bmp
+share/defendguin/images/title/options.bmp
+share/defendguin/images/title/quit.bmp
+share/defendguin/images/title/starfield.bmp
+share/defendguin/images/title/title.bmp
+share/defendguin/images/title/two-players.bmp
+share/defendguin/images/tux/fall0.bmp
+share/defendguin/images/tux/fall1.bmp
+share/defendguin/images/tux/l0.bmp
+share/defendguin/images/tux/l1.bmp
+share/defendguin/images/tux/l2.bmp
+share/defendguin/images/tux/l3.bmp
+share/defendguin/images/tux/l4.bmp
+share/defendguin/images/tux/l5.bmp
+share/defendguin/images/tux/l6.bmp
+share/defendguin/images/tux/l7.bmp
+share/defendguin/images/tux/lflag.bmp
+share/defendguin/images/tux/r0.bmp
+share/defendguin/images/tux/r1.bmp
+share/defendguin/images/tux/r2.bmp
+share/defendguin/images/tux/r3.bmp
+share/defendguin/images/tux/r4.bmp
+share/defendguin/images/tux/r5.bmp
+share/defendguin/images/tux/r6.bmp
+share/defendguin/images/tux/r7.bmp
+share/defendguin/images/tux/rflag.bmp
+share/defendguin/images/ufo/beam0.bmp
+share/defendguin/images/ufo/beam1.bmp
+share/defendguin/images/ufo/beam2.bmp
+share/defendguin/images/ufo/beam3.bmp
+share/defendguin/images/ufo/ufo0.bmp
+share/defendguin/images/ufo/ufo1.bmp
+share/defendguin/music/ants.mod
+share/defendguin/music/blowmind.mod
+share/defendguin/music/child.mod
+share/defendguin/music/confusio.mod
+share/defendguin/music/easytrip.mod
+share/defendguin/music/no!inhi1.mod
+share/defendguin/music/summerpa.mod
+share/defendguin/music/tetris.mid
+share/defendguin/music/wormhole.mod
+share/defendguin/sounds/baiter.wav
+share/defendguin/sounds/bullet.wav
+share/defendguin/sounds/evilbill/die.wav
+share/defendguin/sounds/evilbill/hurt.wav
+share/defendguin/sounds/evilbill/intro.wav
+share/defendguin/sounds/evilbill/low.wav
+share/defendguin/sounds/evilbill/mine.wav
+share/defendguin/sounds/evilbill/shoot.wav
+share/defendguin/sounds/evilbill/success1.wav
+share/defendguin/sounds/evilbill/success2.wav
+share/defendguin/sounds/evilbill/success3.wav
+share/defendguin/sounds/explode.wav
+share/defendguin/sounds/gameover/darn.wav
+share/defendguin/sounds/gameover/finish.wav
+share/defendguin/sounds/gameover/lose.wav
+share/defendguin/sounds/materialize.wav
+share/defendguin/sounds/pause.wav
+share/defendguin/sounds/peng/capture.wav
+share/defendguin/sounds/peng/drop0.wav
+share/defendguin/sounds/peng/drop1.wav
+share/defendguin/sounds/peng/drop2.wav
+share/defendguin/sounds/peng/kill.wav
+share/defendguin/sounds/peng/mutate.wav
+share/defendguin/sounds/peng/save.wav
+share/defendguin/sounds/peng/splat.wav
+share/defendguin/sounds/planet_death.wav
+share/defendguin/sounds/ship/die1.wav
+share/defendguin/sounds/ship/die2.wav
+share/defendguin/sounds/ship/laser.wav
+share/defendguin/sounds/ship/oneup.wav
+share/defendguin/sounds/ship/smartbomb.wav
+share/defendguin/sounds/ship/thrust.wav
+share/defendguin/sounds/swarmers.wav
+share/defendguin/sounds/title/confirm.wav
+share/defendguin/sounds/title/impatience.wav
+share/defendguin/sounds/title/select.wav
+@dirrm share/defendguin/sounds/title
+@dirrm share/defendguin/sounds/ship
+@dirrm share/defendguin/sounds/peng
+@dirrm share/defendguin/sounds/gameover
+@dirrm share/defendguin/sounds/evilbill
+@dirrm share/defendguin/sounds
+@dirrm share/defendguin/music
+@dirrm share/defendguin/images/ufo
+@dirrm share/defendguin/images/tux
+@dirrm share/defendguin/images/title
+@dirrm share/defendguin/images/swarmer
+@dirrm share/defendguin/images/status
+@dirrm share/defendguin/images/ship
+@dirrm share/defendguin/images/points
+@dirrm share/defendguin/images/pod
+@dirrm share/defendguin/images/mutant
+@dirrm share/defendguin/images/loader
+@dirrm share/defendguin/images/land
+@dirrm share/defendguin/images/evilbill
+@dirrm share/defendguin/images/bullet
+@dirrm share/defendguin/images/bomber
+@dirrm share/defendguin/images/baiter
+@dirrm share/defendguin/images
+@dirrm share/defendguin
+@dirrm doc/defendguin
