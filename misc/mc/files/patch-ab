@@ -1,51 +1,37 @@
-*** vfs/Makefile.in.orig	Tue Jun 17 09:51:24 1997
---- vfs/Makefile.in	Fri Jun 20 00:17:24 1997
-*************** distclean:
-*** 91,113 ****
-  
-  install: mcserv install.extfs
-  	if test x@mcserv@ != x; then \
-! 	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv; \
-  	fi
-  
-  install.extfs:
-  	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
-  	$(INSTALL_DATA) $(srcdir)/extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
-  
-! 	$(INSTALL_PROGRAM) extfs/a $(DESTDIR)$(libdir)/extfs/a
-! 	$(INSTALL_PROGRAM) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
-! 	$(INSTALL_PROGRAM) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
-! 	$(INSTALL_PROGRAM) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
-! 	$(INSTALL_PROGRAM) extfs/lslR $(DESTDIR)$(libdir)/extfs/lslR
-! 	$(INSTALL_PROGRAM) extfs/lha $(DESTDIR)$(libdir)/extfs/lha
-! 	$(INSTALL_PROGRAM) extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
-! 	$(INSTALL_PROGRAM) extfs/rar $(DESTDIR)$(libdir)/extfs/rar
-! 	$(INSTALL_PROGRAM) extfs/zip $(DESTDIR)$(libdir)/extfs/zip
-! 	$(INSTALL_PROGRAM) extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
-  
-  uninstall:
-  	-$(RMF) $(DESTDIR)$(libdir)/extfs/rpm
---- 91,113 ----
-  
-  install: mcserv install.extfs
-  	if test x@mcserv@ != x; then \
-! 	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv; \
-  	fi
-  
-  install.extfs:
-  	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
-  	$(INSTALL_DATA) $(srcdir)/extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
-  
-! 	$(INSTALL_DATA) extfs/a $(DESTDIR)$(libdir)/extfs/a
-! 	$(INSTALL_DATA) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
-! 	$(INSTALL_DATA) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
-! 	$(INSTALL_DATA) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
-! 	$(INSTALL_DATA) extfs/lslR $(DESTDIR)$(libdir)/extfs/lslR
-! 	$(INSTALL_DATA) extfs/lha $(DESTDIR)$(libdir)/extfs/lha
-! 	$(INSTALL_DATA) extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
-! 	$(INSTALL_DATA) extfs/rar $(DESTDIR)$(libdir)/extfs/rar
-! 	$(INSTALL_DATA) extfs/zip $(DESTDIR)$(libdir)/extfs/zip
-! 	$(INSTALL_DATA) extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
-  
-  uninstall:
-  	-$(RMF) $(DESTDIR)$(libdir)/extfs/rpm
+--- vfs/Makefile.in.orig	Sun Sep 21 23:28:07 1997
++++ vfs/Makefile.in	Sun Sep 21 23:29:15 1997
+@@ -91,23 +91,23 @@
+ 
+ install: mcserv install.extfs
+ 	if test x@mcserv@ != x; then \
+-	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv; \
++	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv; \
+ 	fi
+ 
+ install.extfs:
+ 	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
+ 	$(INSTALL_DATA) $(srcdir)/extfs/extfs.ini $(DESTDIR)$(libdir)/extfs/extfs.ini
+-	$(INSTALL_PROGRAM) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
+-	$(INSTALL_PROGRAM) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
++	$(INSTALL_DATA) $(srcdir)/extfs/a $(DESTDIR)$(libdir)/extfs/a
++	$(INSTALL_DATA) $(srcdir)/extfs/rpm  $(DESTDIR)$(libdir)/extfs/rpm
+ 
+-	$(INSTALL_PROGRAM) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
+-	$(INSTALL_PROGRAM) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
+-	$(INSTALL_PROGRAM) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
+-	$(INSTALL_PROGRAM) extfs/lslR $(DESTDIR)$(libdir)/extfs/lslR
+-	$(INSTALL_PROGRAM) extfs/lha $(DESTDIR)$(libdir)/extfs/lha
+-	$(INSTALL_PROGRAM) extfs/rar $(DESTDIR)$(libdir)/extfs/rar
+-	$(INSTALL_PROGRAM) extfs/zip $(DESTDIR)$(libdir)/extfs/zip
+-	$(INSTALL_PROGRAM) extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
++	$(INSTALL_DATA) extfs/cpio $(DESTDIR)$(libdir)/extfs/cpio
++	$(INSTALL_DATA) extfs/deb  $(DESTDIR)$(libdir)/extfs/deb
++	$(INSTALL_DATA) extfs/ftplist $(DESTDIR)$(libdir)/extfs/ftplist
++	$(INSTALL_DATA) extfs/lslR $(DESTDIR)$(libdir)/extfs/lslR
++	$(INSTALL_DATA) extfs/lha $(DESTDIR)$(libdir)/extfs/lha
++	$(INSTALL_DATA) extfs/rar $(DESTDIR)$(libdir)/extfs/rar
++	$(INSTALL_DATA) extfs/zip $(DESTDIR)$(libdir)/extfs/zip
++	$(INSTALL_DATA) extfs/zoo $(DESTDIR)$(libdir)/extfs/zoo
+ 
+ uninstall:
+ 	-$(RMF) $(DESTDIR)$(libdir)/extfs/rpm
