@@ -202,8 +202,12 @@ WITH_DOMXML=	yes
 WITH_ICONV_DEP=	yes
 .endif
 
-.if defined(WITH_SNMP) || defined(WITH_POSTGRESQL)
+.if defined(WITH_POSTGRESQL)
 WITH_OPENSSL_DEP=	yes
+.endif
+
+.if defined(WITH_SNMP)
+WITH_OPENSSL=	yes
 .endif
 
 .if defined(WITH_WDDX) || defined(WITH_XMLRPC) || defined(WITH_XSLT)
@@ -484,7 +488,11 @@ CONFIGURE_ARGS+=--enable-shmop
 .endif
 
 .if defined(WITH_SNMP)
+.if exists(${LOCALBASE}/lib/libsnmp.so.4)
 LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
+.else
+LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
+.endif
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
 
