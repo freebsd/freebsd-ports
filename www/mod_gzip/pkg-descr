@@ -1,0 +1,9 @@
+This apache's module detects the browsers capable of decompressing
+the objects on the fly and applies compression to pages, etc. sent
+to those browsers. This includes dynamicly generated content too.
+
+Due to browsers' bugs or for other reasons (gzip-ing a typical JPEG
+file is silly, for example) you may wish to disable compression of
+some MIME-types and mod_gzip allows you to do that.
+
+WWW: http://www.remotecommunications.com/apache/mod_gzip/
