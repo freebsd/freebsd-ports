@@ -442,6 +442,7 @@
     SUBDIR += word2x
     SUBDIR += wordnet
     SUBDIR += wv
+    SUBDIR += wv2
     SUBDIR += xalan-c
     SUBDIR += xerces-c
     SUBDIR += xerces-c2
