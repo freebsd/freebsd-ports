@@ -13,6 +13,7 @@ MASTER_SITES=	http://homex.coolconnect.com/user/xkwang/gman/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	ghostview:${PORTSDIR}/print/ghostview
 
 USE_GTK=	yes
