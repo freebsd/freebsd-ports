@@ -1,0 +1,22 @@
+--- configure.in.orig	Tue Jan  1 20:43:00 2002
++++ configure.in	Thu Jun 26 08:04:43 2003
+@@ -18,7 +18,7 @@
+ AC_HEADER_STDC
+ GNOME_COMPILE_WARNINGS
+ GNOME_X_CHECKS
+-GNOME_PTHREAD_CHECK
++AM_PATH_GTK(1.2.0,,AC_MSG_ERROR(GTK not installed, or gtk-config not in path),gthread)
+ 
+ 
+ dnl***********************************************
+@@ -124,8 +124,8 @@
+ dnl*************************************************
+ dnl Libraries
+ dnl*************************************************
+-CXXFLAGS="$CXXFLAGS $GTK_CFLAGS $GL_CFLAGS $Z_CFLAGS $GTKGL_CFLAGS -I/usr/local/include"
+-LIBS="$LIBS $GL_LIBS $Z_LIBS $GTKGL_LDOPTS -L/usr/local/lib"
++CXXFLAGS="$CXXFLAGS $GTK_CFLAGS $GL_CFLAGS $Z_CFLAGS $GTKGL_CFLAGS"
++LIBS="$LIBS $GL_LIBS $Z_LIBS $GTKGL_LDOPTS"
+ AC_SUBST(CFLAGS)
+ AC_SUBST(LIBS)
+ 
