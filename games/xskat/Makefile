@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xskat
-# Version required:	xskat-2.2
+# Version required:	xskat-2.3.1
 # Date created:		27 Apr 1996
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/01/21 08:48:24 tg Exp $
+# $Id: Makefile,v 1.6 1998/08/04 08:23:42 tg Exp $
 #
 
-DISTNAME=	xskat-2.2
+DISTNAME=	xskat-2.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.draeger.com/~gerhardt/
 
