@@ -9279,6 +9279,7 @@ w3c-httpd	ports/www/w3c-httpd
 w3m		ports/www/w3m
 w3m-img		ports/www/w3m-img
 w3m-m17n	ports/www/w3m-m17n
+w3m-m17n-img	ports/www/w3m-m17n-img
 w3mir		ports/www/w3mir
 w9wm		ports/x11-wm/w9wm
 waccess	ports/www/waccess
