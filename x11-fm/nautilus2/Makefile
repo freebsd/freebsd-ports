@@ -17,12 +17,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME file manager and graphical shell developed by Eazel
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop eel2 librsvg2
+USE_GNOME=	gnomeprefix gnomehack gnomehier gnomedesktop eel2 librsvg2 \
+	   	gnomecontrolcenter2
 GNOME_DESKTOP_VERSION=2
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
