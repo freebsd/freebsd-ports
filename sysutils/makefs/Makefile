@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	makefs
-PORTVERSION=	20031215
+PORTVERSION=	20040704
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/makefs/
 
