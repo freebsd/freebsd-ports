@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
@@ -14,11 +14,15 @@ DISTNAME=	Quixote-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
 
 USE_PYTHON=	yes
 PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 220
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
+.endif
 
 do-build:
 	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
@@ -43,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

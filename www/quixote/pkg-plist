@@ -8,6 +8,7 @@
 %%PORTDOCS%%share/doc/quixote/demo.txt
 %%PORTDOCS%%share/doc/quixote/programming.txt
 %%PORTDOCS%%share/doc/quixote/web-server.txt
+%%PORTDOCS%%share/doc/quixote/widgets.txt
 lib/%%PYTHON_VERSION%%/site-packages/quixote/TemplateIO.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/TemplateIO.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/TemplateIO.pyo
@@ -25,6 +26,7 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/integer_ui.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/pages.ptl
 lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/pages.ptlc
+lib/%%PYTHON_VERSION%%/site-packages/quixote/demo/widgets.ptl
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/errors.pyo
