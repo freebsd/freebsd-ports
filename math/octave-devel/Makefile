@@ -24,10 +24,6 @@ USE_PERL5_BUILD=yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not build on amd64 (Shared libraries must be compiled with -fPIC)"
-.endif
-
 .if ${PORTOBJFORMAT} == "elf"
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 .else
@@ -40,9 +36,14 @@ BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -lcblas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--host=${GNU_HOST} \
-		--with-fftw --with-blas=${BLAS_LIBS} --with-lapack=-lalapack \
-		--enable-shared
+CONIGURE_ARGS=	--host=${GNU_HOST} \
+		--with-fftw --with-blas=${BLAS_LIBS} --with-lapack=-lalapack
+.if ${ARCH} == "amd64"
+CONFIGURE_ARGS+= --disable-shared
+.else
+CONFIGURE_ARGS+= --enable-shared
+.endif
+
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
