@@ -5271,6 +5271,7 @@ p5-Storable	ports/devel/p5-Storable
 p5-String-Approx	ports/devel/p5-String-Approx
 p5-String-CRC32	ports/devel/p5-String-CRC32
 p5-String-Checker	ports/devel/p5-String-Checker
+p5-String-Multibyte	ports/converters/p5-String-Multibyte
 p5-String-Random	ports/devel/p5-String-Random
 p5-String-RexxParse	ports/devel/p5-String-RexxParse
 p5-String-Scanf	ports/textproc/p5-String-Scanf
