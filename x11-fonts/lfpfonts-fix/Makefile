@@ -8,7 +8,7 @@
 PORTNAME=	lfpfonts-fix
 PORTVERSION=	0.82
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://dreamer.nitro.dk/linux/lfp/
+MASTER_SITES=	${MASTER_SITES_SOURCEFORGE}
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Fixed width fonts from the Linux Font Project
