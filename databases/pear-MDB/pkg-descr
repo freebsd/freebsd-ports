@@ -1,0 +1,9 @@
+PEAR MDB is a merge of the PEAR DB and Metabase php database abstraction layers.
+It provides a common API for all support RDBMS. The main difference to most
+other DB abstraction packages is that MDB goes much further to ensure
+portability.
+
+Currently supported RDBMS are MySQL, PostGreSQL, Oracle, Frontbase, Querysim,
+Interbase/Firebird, and MSSQL
+
+WWW: http://pear.php.net/package/MDB
