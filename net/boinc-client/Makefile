@@ -32,6 +32,12 @@ BOINC_GROUP=	nobody
 BOINC_HOME=	/var/db/boinc
 BOINC_DATADIR=	${PREFIX}/boinc
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		Does not compile on 64-bit architectures
+.endif
+
 post-patch:
 	${CHMOD} +x ${WRKDIR}/boinc_public/configure
 
@@ -94,4 +100,4 @@ post-install:
 	    ${TMPPLIST}
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
