@@ -18,7 +18,7 @@ USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-PLIST_BIN=	bin/pyobfuscate
+PLIST_FILES=	bin/pyobfuscate
 
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr,${PREFIX}," ${WRKSRC}/setup.py
