@@ -2,7 +2,6 @@ squirrelmail/AUTHORS
 squirrelmail/COPYING
 squirrelmail/ChangeLog
 squirrelmail/INSTALL
-squirrelmail/MIRRORS
 squirrelmail/README
 squirrelmail/ReleaseNotes
 squirrelmail/UPGRADE
@@ -12,8 +11,9 @@ squirrelmail/config/index.php
 squirrelmail/config/ri_once.pl
 squirrelmail/configure
 squirrelmail/contrib/RPM/RPM.readme
-squirrelmail/contrib/RPM/cleanup.cron
 squirrelmail/contrib/RPM/config.php.rh7
+squirrelmail/contrib/RPM/squirrelmail.conf
+squirrelmail/contrib/RPM/squirrelmail.cron
 squirrelmail/contrib/RPM/squirrelmail.spec
 squirrelmail/data/.htaccess
 squirrelmail/data/default_pref
@@ -90,6 +90,15 @@ squirrelmail/help/cs_CZ/main_folder.hlp
 squirrelmail/help/cs_CZ/options.hlp
 squirrelmail/help/cs_CZ/read_mail.hlp
 squirrelmail/help/cs_CZ/search.hlp
+squirrelmail/help/da_DK/search.hlp
+squirrelmail/help/da_DK/FAQ.hlp
+squirrelmail/help/da_DK/addresses.hlp
+squirrelmail/help/da_DK/compose.hlp
+squirrelmail/help/da_DK/folders.hlp
+squirrelmail/help/da_DK/main_folder.hlp
+squirrelmail/help/da_DK/options.hlp
+squirrelmail/help/da_DK/read_mail.hlp
+squirrelmail/help/da_DK/basic.hlp
 squirrelmail/help/en_US/FAQ.hlp
 squirrelmail/help/en_US/addresses.hlp
 squirrelmail/help/en_US/basic.hlp
@@ -239,6 +248,7 @@ squirrelmail/images/down_pointer.png
 squirrelmail/images/index.php
 squirrelmail/images/minus.gif
 squirrelmail/images/plus.gif
+squirrelmail/images/sec_remove_da_DK.png
 squirrelmail/images/sec_remove_eng.png
 squirrelmail/images/sec_remove_es_ES.png
 squirrelmail/images/sec_remove_id_ID.png
@@ -246,7 +256,6 @@ squirrelmail/images/sec_remove_ko_KR.png
 squirrelmail/images/sec_remove_lt_LT.png
 squirrelmail/images/sec_remove_ru.png
 squirrelmail/images/sec_remove_sl_SI.png
-squirrelmail/images/sm_logo.jpg
 squirrelmail/images/sm_logo.png
 squirrelmail/images/sort_none.png
 squirrelmail/images/up_pointer.png
@@ -450,6 +459,7 @@ squirrelmail/src/folders_delete.php
 squirrelmail/src/folders_rename_do.php
 squirrelmail/src/folders_rename_getname.php
 squirrelmail/src/folders_subscribe.php
+squirrelmail/src/global.php
 squirrelmail/src/help.php
 squirrelmail/src/image.php
 squirrelmail/src/index.php
@@ -506,9 +516,11 @@ squirrelmail/themes/maize_theme.php
 squirrelmail/themes/methodical_theme.php
 squirrelmail/themes/midnight.php
 squirrelmail/themes/monostochastic.php
+squirrelmail/themes/penguin.php
 squirrelmail/themes/plain_blue_theme.php
 squirrelmail/themes/purple_theme.php
 squirrelmail/themes/random.php
+squirrelmail/themes/saloon.php
 squirrelmail/themes/sandstorm_theme.php
 squirrelmail/themes/seaspray_theme.php
 squirrelmail/themes/servery_theme.php
@@ -610,6 +622,7 @@ squirrelmail/themes/spice_of_life_lite.php
 @dirrm squirrelmail/help/it_IT
 @dirrm squirrelmail/help/th_TH
 @dirrm squirrelmail/help/cs_CZ
+@dirrm squirrelmail/help/da_DK
 @dirrm squirrelmail/help/en_US
 @dirrm squirrelmail/help/es_ES
 @dirrm squirrelmail/help/fi_FI
