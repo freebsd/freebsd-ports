@@ -1,0 +1,8 @@
+bin/litestream
+bin/literestream
+bin/source
+share/doc/litestream/README
+share/doc/litestream/ABOUT
+share/doc/litestream/LICENSE
+share/doc/litestream/MAKEITGO
+@dirrm share/doc/litestream

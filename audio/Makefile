@@ -85,6 +85,7 @@
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-realplayer
+    SUBDIR += litestream
     SUBDIR += lopster
     SUBDIR += maplay
     SUBDIR += mikmod

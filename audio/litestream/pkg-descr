@@ -1,0 +1,16 @@
+Litestream is an Open Source, infinitely scalable high-capacity MP3
+streaming system for Unix. Tests on Pentium II 400 single processor
+demonstrated the system is capable of at at least 4000 simultaneous 56 Kbit
+streams. That's 244 Mbit per node!
+
+The Litestream system is a series of components which are compatible with
+today's industry standards (Winamp, XMMS, Live365). Included in the
+distribution is Streaming Server, Streaming Source, and Restreaming
+Server. Each component is replaceable with the third-party component of
+your choice. Streaming Source be replaced with Winamp DSP. Streaming Server
+can be replaced with Shoutcast or Live365. Restreaming Server restreams
+Shoutcast and Live365 streams. It's all plug-and-play.
+
+WWW:	http://www.litestream.net
+
+-- aaron@mutex.org
