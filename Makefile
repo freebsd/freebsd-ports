@@ -70,6 +70,9 @@ index:
 	@rm -f ${.CURDIR}/${INDEXFILE}
 	@cd ${.CURDIR} && make ${.CURDIR}/${INDEXFILE}
 
+fetchindex:
+	@cd ${.CURDIR} && fetch -am http://www.FreeBSD.org/ports/${INDEXFILE} && chmod a+r ${INDEXFILE}
+
 INDEX_JOBS?=	2
 
 ${.CURDIR}/${INDEXFILE}:
