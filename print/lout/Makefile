@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	lout
-PORTVERSION=	3.24
+PORTVERSION=	3.25
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.cs.usyd.edu.au/jeff/lout/
+		ftp://ftp.it.usyd.edu.au/jeff/lout/
 MASTER_SITE_SUBDIR=	support/lout
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lout prg2lout
-INSTALL_TARGET=	install installman installdoc
+INSTALL_TARGET=	install installman
+
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET+=installdoc
+.endif
 
 MAN1=		prg2lout.1 lout.1
 
