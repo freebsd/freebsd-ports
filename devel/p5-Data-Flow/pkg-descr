@@ -1,0 +1,23 @@
+       The module Data::Flow provides its services via objects.
+       The objects may be obtained by the usual
+
+         $request = new Data::Flow $recipes;
+
+       paradigm. The argument $recipes is a hash reference, which
+       provides the rules for request processing. The objects
+       support two methods, set() and get(). The first one is
+       used to provide input data for processing, the second one
+       to obtain the output.
+
+       The unit of requested information is a field. The method
+       set() takes a pair field => value, the method get() takes
+       one argument: the field.
+
+       Every object is created without any fields filled, but it
+       knows how to construct fields basing on other fields or
+       some global into. This knowledge is provided in the
+       argument $recipe of the new() function. This is a
+       reference to a hash, keyed by fields. The values of this
+       hash are hash references themselves, which describe how to
+       acquire the field which is the corresponding key of the
+       initial hash.
