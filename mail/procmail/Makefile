@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.7 1994/11/09 03:36:12 jkh Exp $
+# $Id: Makefile,v 1.8 1994/11/19 12:29:15 ats Exp $
 #
 
 DISTNAME=       procmail-3.10
@@ -12,6 +12,6 @@ IS_INTERACTIVE=	yes
 
 install:
 	@echo "===>  Installing for ${DISTNAME}"
-	@cd ${WRKSRC}; ${MAKE} MANCOMPRESS=gzip MAN1SUFFIX=1.gz MAN5SUFFIX=5.gz install-suid install.man
+	@cd ${WRKSRC}; ${MAKE} install-suid install.man
 
 .include <bsd.port.mk>
