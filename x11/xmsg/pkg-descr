@@ -1,0 +1,8 @@
+The old X11R4 version of xmessage updated for X11R5 and renamed
+to xmsg.  This is convenient to use with biffer(8).
+
+Modified at the University of Waterloo circa 1995, and in use since
+then with some modifications.
+
+John Sellens
+jsellens@generalconcepts.com
