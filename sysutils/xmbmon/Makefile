@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmbmon
-PORTVERSION=	204
+PORTVERSION=	205
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/
 .if defined(WITHOUT_X11)
