@@ -19,14 +19,22 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500000
-DISTFILES+=	oo_moz1.0RC3_i386_FreeBSD-5.tar.gz
+.if defined(USE_GCC) && ${USE_GCC} == 2.95
+DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
 .else
-DISTFILES+=	oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
+DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.gz
+.endif
+.else
+.if defined(USE_GCC) && ${USE_GCC} == 3.1
+DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
+.else
+DISTFILES+=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
+.endif
 .endif
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
-.if ${OSVERSION} < 500000 && !defined(USEPORTGCC295) && !defined(USEPORTGCC31) && !defined(USEPORTGCC32)
+.if ${OSVERSION} < 500000 && !defined(USE_GCC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 .endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
@@ -43,12 +51,19 @@ EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 .if ${OSVERSION} > 500000
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_i386_FreeBSD-5.tar.gz
+.if defined(USE_GCC) && ${USE_GCC} == 2.95
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
 .else
-EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.gz
+.endif
+.else
+.if defined(USE_GCC) && ${USE_GCC} == 3.1
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
+.else
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
+.endif
 .endif
 
-GCC_VERSION!=	${CC} --version
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 JAVAVM=         ${JDK13DIR}/bin/java
 
@@ -64,41 +79,22 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 CONFIGURE_ARGS+=	--with-jdk-home=${JDK13DIR} \
 			--with-os-version=${OSVERSION}
 
-.if ${OSVERSION} < 500000
-.if !defined(USEPORTGCC295) && !defined(USEPORTGCC31) && !defined(USEPORTGCC32)
+.if !defined(USE_GCC)
 CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
 .endif
-.else
-CONFIGURE_ARGS+=	--enable-gcc3
-MAKE_ENV=		CC=${CC} CXX=${CXX} CFLAGS=${CFLAGS}
-CONFIGURE_ENV+=		CC=${CC} CXX=${CXX}
-.endif
 
-.if defined(USEPORTGCC295)
-MAKE_ENV=		CC=${PREFIX}/bin/gcc295 CXX=${PREFIX}/bin/g++295 CFLAGS=${CFLAGS}
-CONFIGURE_ENV+=		CC=${PREFIX}/bin/gcc295 CXX=${PREFIX}/bin/g++295
-.endif
-
-.if defined(USEPORTGCC31)
-MAKE_ENV=		CC=${PREFIX}/bin/gcc31 CXX=${PREFIX}/bin/g++31 CFLAGS=${CFLAGS}
+.if defined(USE_GCC) && (${USE_GCC} == 3.1 || ${USE_GCC} == 3.2)
 CONFIGURE_ARGS+=	--enable-gcc3
-CONFIGURE_ENV+=		CC=${PREFIX}/bin/gcc31 CXX=${PREFIX}/bin/g++31
-.endif
-
-.if defined(USEPORTGCC32)
-MAKE_ENV=		CC=${PREFIX}/bin/gcc32 CXX=${PREFIX}/bin/g++32 CFLAGS=${CFLAGS}
-CONFIGURE_ARGS+=	--enable-gcc3
-CONFIGURE_ENV+=		CC=${PREFIX}/bin/gcc32 CXX=${PREFIX}/bin/g++32
 .endif
 
 pre-fetch:
-.if !defined(USEPORTGCC295) && !defined(USEPORTGCC31) && !defined(USEPORTGCC32)
+.if !defined(USE_GCC)
 	@${ECHO}
 	@${ECHO} You can compile openoffice with different
 	@${ECHO} gcc compiler versions:
 	@${ECHO}
-	@${ECHO} Use: USEPORTGCC295=YES, USEPORTGCC31=YES and
-	@${ECHO} USEPORTGCC32=YES to compile openoffice with your
+	@${ECHO} Use: USE_GCC=2.95 or USE_GCC=3.1
+	@${ECHO} to compile openoffice with your
 	@${ECHO} prefered compiler.
 	@${ECHO}
 .endif
