@@ -3720,6 +3720,7 @@ libformat	ports/devel/libformat
 libforms	src/lib/libforms
 libfpx		ports/graphics/libfpx
 libfreenet	ports/net/libfreenet
+libfs++		ports/devel/libfs++
 libftpio	src/lib/libftpio
 libfwbuilder	ports/security/libfwbuilder
 libfxp		ports/ftp/libfxp
