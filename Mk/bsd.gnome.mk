@@ -369,7 +369,7 @@ gtksourceview_USE_GNOME_IMPL=libgnome
 
 pkgconfig_BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 pkgconfig_DETECT=			${LOCALBASE}/bin/pkg-config
-pkgconfig_RUN_DEPENDS=		pkg_config:${PORTSDIR}/devel/pkgconfig
+pkgconfig_RUN_DEPENDS=		pkg-config:${PORTSDIR}/devel/pkgconfig
 
 libgsf_LIB_DEPENDS=			gsf-1.9:${PORTSDIR}/devel/libgsf
 libgsf_DETECT=				${LOCALBASE}/libdata/pkgconfig/libgsf-gnome-1.pc
