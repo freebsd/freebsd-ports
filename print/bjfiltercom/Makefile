@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	bjfiltercom
-PORTVERSION?=	1.1
-PORTREVISION=	1
+PORTVERSION?=	1.3
+#PORTREVISION=	1
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://www.canon-sales.co.jp/pub/driver/printer/BJ/linux/
 DISTFILES=	${RPMFILE}
@@ -46,45 +46,69 @@ MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	i386
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=	yes
-.if defined(SLAVE_PORT)
-BIN_FILES=	bjf${PRTYPE}ps
-FILTER=		${FILESDIR}/filter
-PAPERSIZE?=	a4
 RPMREVISION=	0
+.if defined(SLAVE_PORT)
+PAPERSIZE?=	a4
 .else
 NO_BUILD=	yes
-RPMREVISION=	1
 .endif
 RPMFILE=	${PORTNAME}-${PORTVERSION}-${RPMREVISION}.i386.rpm
 DOC_DIR=	${PREFIX}/share/doc/${PKGNAME}
 HTML_DIR=	${DOC_DIR}/html
-DOC_DISTFILES=	readme.tar.gz instruction.tar.gz faq.tar.gz
+DOC_DISTFILES=	readme-${PORTVERSION}-${RPMREVISION}.tar.gz \
+		instruction-${PORTVERSION}-${RPMREVISION}.tar.gz \
+		faq-${PORTVERSION}-${RPMREVISION}.tar.gz
+FILTER_NAME=	filter${PREFIX_PRTYPE}${PRTYPE}${SUFFIX_PRTYPE}
+.if ! defined(PREFIX_PRTYPE)
+PRMODEL=	F${PRTYPE}
+.else
+PRMODEL=	${PREFIX_PRTYPE:U}${PRTYPE}
+.endif
+
+t:
+	echo ${PRMODEL} ${RPMFILE}
 
 do-build:
-	${SED}	-e 's,%%PRTYPE%%,${PRTYPE}${SUFIX_PRTYPE},' \
-		${FILTER} > ${WRKDIR}/filter${PRTYPE}${SUFIX_PRTYPE}
-	${SED}	-e 's,%%PRTYPE%%,${PRTYPE}${SUFIX_PRTYPE},' \
-		${FILTER}_gui > ${WRKDIR}/filter${PRTYPE}${SUFIX_PRTYPE}_gui
+	${SED}	-e 's,%%PRMODEL%%,${PRMODEL},' \
+		${FILESDIR}/filter > ${WRKDIR}/${FILTER_NAME}
+	${SED}	-e 's,%%PRMODEL%%,${PRMODEL},' \
+		-e 's,%%LINUXBASE%%,${LINUXBASE},g' \
+		${FILESDIR}/filter_gui > ${WRKDIR}/${FILTER_NAME}_gui
+	${SED}	-e 's,%%PORTNAME%%,${PORTNAME},g' \
+		-e 's,%%FILTER_NAME%%,${FILTER_NAME},g' \
+		-e 's,%%PRMODEL%%,${PRMODEL},g' \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+			${FILESDIR}/setup > ${WRKDIR}/setup.freebsd
 
 do-install:
-	${MKDIR} -p ${LINUXBASE}/usr/lib/bjlib
+	${MKDIR} ${LINUXBASE}/usr/lib/bjlib
 	${INSTALL_DATA} ${WRKDIR}/usr/lib/bjlib/* ${LINUXBASE}/usr/lib/bjlib
 	${INSTALL_DATA} ${WRKDIR}/usr/lib/lib* ${LINUXBASE}/usr/lib
+	-${LINUXBASE}/sbin/ldconfig
 	${INSTALL_SCRIPT} ${WRKDIR}/usr/local/bin/* ${PREFIX}/bin
 .if defined(SLAVE_PORT)
 	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/filter${PRTYPE}${SUFIX_PRTYPE} \
+	${INSTALL_SCRIPT} ${WRKDIR}/${FILTER_NAME} \
 		${PREFIX}/libexec/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKDIR}/filter${PRTYPE}${SUFIX_PRTYPE}_gui \
+	${INSTALL_SCRIPT} ${WRKDIR}/${FILTER_NAME}_gui \
 		${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/setup.freebsd ${PREFIX}/libexec/${PORTNAME}/setup
+	${MKDIR} ${PREFIX}/libexec/${PORTNAME}/scripts
+	${INSTALL_DATA} ${FILESDIR}/en.lc ${PREFIX}/libexec/${PORTNAME}/scripts
+	${INSTALL_DATA} ${FILESDIR}/ja.lc ${PREFIX}/libexec/${PORTNAME}/scripts
 .else
-	${MKDIR} -p ${LINUXBASE}/usr/local/share/printui
-	${MKDIR} -p ${LINUXBASE}/usr/local/share/locale/ja/LC_MESSAGES
+	${MKDIR} ${LINUXBASE}/usr/local/share/printui
+	${MKDIR} ${LINUXBASE}/usr/local/share/locale/ja/LC_MESSAGES
 	${INSTALL_DATA} ${WRKDIR}/usr/local/share/printui/* ${LINUXBASE}/usr/local/share/printui
+#  The next file "i18n" is installed by ja-bjfilter*
+	${RM} ${LINUXBASE}/usr/local/share/printui/i18n
 	${INSTALL_DATA} ${WRKDIR}/usr/local/share/locale/ja/LC_MESSAGES/* \
 		${LINUXBASE}/usr/local/share/locale/ja/LC_MESSAGES
-	${MKDIR} ${HTML_DIR}
+	${MKDIR} ${LINUXBASE}/usr/local/share/stsmon/pixmaps
+	${INSTALL_DATA} ${WRKDIR}/usr/local/share/stsmon/pixmaps/* \
+		${LINUXBASE}/usr/local/share/stsmon/pixmaps
 .for i in ${DOC_DISTFILES}
+	${MKDIR} ${HTML_DIR}
 	${TAR} -C ${HTML_DIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${i}
 	${INSTALL_DATA} ${FILESDIR}/license.txt.jp ${DOC_DIR}
 .endfor
@@ -94,10 +118,11 @@ do-install:
 _MAKE_COMMENT_DESCR:
 .if defined(SLAVE_PORT) && ${PORTNAME} != "bjfilter850"
 .for file in pkg-comment pkg-descr
-	${SED}	-e 's/850/${PRTYPE}${SUFIX_PRTYPE}/g' ../bjfilter850/${file} \
-		> ${.CURDIR}/${file}
+	${SED}	-e 's/F850/${PRMODEL}/g' \
+		-e 's/850/${PREFIX_PRTYPE}${PRTYPE}${SUFFIX_PRTYPE}/g' \
+		../bjfilter850/${file} > ${.CURDIR}/${file}
 .endfor
-.if defined(SUFIX_PRTYPE) && ${SUFIX_PRTYPE} == "ug"
+.if defined(SUFFIX_PRTYPE) && ${SUFFIX_PRTYPE} == "ug"
 	i=`cat ../bjfilter850/pkg-comment`; \
 	echo $$i "(supported BCI-6 inks)" > ${.CURDIR}/pkg-comment
 	echo "" >> ${.CURDIR}/pkg-descr

@@ -1,8 +1,16 @@
 bin/bjf850ps
+bin/bjf850raw
 libexec/bjfilter850ug/filter850ug
 libexec/bjfilter850ug/filter850ug_gui
+libexec/bjfilter850ug/setup
+libexec/bjfilter850ug/scripts/en.lc
+libexec/bjfilter850ug/scripts/ja.lc
+@dirrm libexec/bjfilter850ug/scripts
 @dirrm libexec/bjfilter850ug
 @cwd /compat/linux
 usr/lib/bjlib/cnb_0740.tbl
+usr/lib/libcnbpo074.so
 usr/lib/libcnbpo074.so.1.0.0
 @dirrm usr/lib/bjlib
+@exec /compat/linux/sbin/ldconfig ; true
+@unexec /compat/linux/sbin/ldconfig ; true

@@ -11,9 +11,16 @@ if [ "$2" != "" ]; then
   hostname=$2
 fi
 
+LANG_FILE=%%LINUXBASE%%/usr/local/share/printui/i18n
+
+export LANG=C
+if [ -f ${LANG_FILE} ]; then
+    export `grep LANG ${LANG_FILE}`
+fi
+
 resolution=600
 papersize=a4
-printer=BJF%%PRTYPE%%
+printer=BJ%%PRMODEL%%
 
 GS="gs -q -r$resolution -dNOPROMPT -dSAFER \
       -sPAPERSIZE=$papersize -sDEVICE=bmp16m -sOutputFile=- -"
