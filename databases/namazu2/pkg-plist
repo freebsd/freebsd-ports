@@ -29,6 +29,7 @@ include/namazu/wakati.h
 @dirrm include/namazu
 lib/libnmz.a
 lib/libnmz.la
+lib/libnmz.so
 lib/libnmz.so.3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
@@ -97,3 +98,6 @@ share/namazu/template/NMZ.tips
 share/namazu/template/NMZ.tips.ja
 @dirrm share/namazu/template
 @dirrm share/namazu
+@unexec rmdir %D/var/namazu/index 2>/dev/null || true
+@unexec rmdir %D/var/namazu 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
