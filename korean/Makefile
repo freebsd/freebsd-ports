@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.5 1997/03/30 00:06:29 max Exp $
+# $Id: Makefile,v 1.6 1997/04/18 08:50:50 asami Exp $
 #
 
     SUBDIR += Wnn
+    SUBDIR += afterstep
     SUBDIR += h2ps
     SUBDIR += hanterm
     SUBDIR += hanterm-autofont
