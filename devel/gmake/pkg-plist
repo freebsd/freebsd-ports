@@ -1,10 +1,6 @@
 @cwd /usr/local
-bin/make
-@exec ln %D/%F %D/gmake
-@unexec rm -f %D/gmake
-man/man1/make.1
-@exec ln %D/%F %D/gmake.1
-@unexec rm -f %D/gmake.1
+bin/gmake
+man/man1/gmake.1
 info/make.info
 info/make.info-1
 info/make.info-2
