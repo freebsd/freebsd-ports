@@ -62,7 +62,7 @@ MAKE_FLAGS=	LANGUAGES="c c++"
 MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 \
 		cpp.1 gcov.1 
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-
+INFO=		cpp cppinternals gcc gccinfo
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
