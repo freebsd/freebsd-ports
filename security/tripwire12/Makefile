@@ -3,12 +3,12 @@
 # Date created:		31 Mar 1997
 # Whom:			Joe Greco <jgreco@ns.sol.net>
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/01 04:44:00 jdp Exp $
+# $Id: Makefile,v 1.2 1997/04/03 23:09:49 jgreco Exp $
 #
 
 DISTNAME=       tripwire-1.2
 CATEGORIES=	security net
-MASTER_SITES=   ftp://info.cert.org/pub/tools/tripwire/
+MASTER_SITES=   ftp://coast.cs.purdue.edu/pub/COAST/Tripwire/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jgreco@ns.sol.net
