@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  nmap
-# Version required:     	  1.51
+# Version required:     	  2.07
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.10 1999/02/08 11:58:17 obrien Exp $
+# $Id: Makefile,v 1.11 1999/02/08 18:56:36 obrien Exp $
 #
 
-DISTNAME=	nmap-2.06
+DISTNAME=	nmap-2.07
 CATEGORIES=	security net
 MASTER_SITES=	http://www.insecure.org/nmap/dist/  \
 		ftp://relay.nuxi.com/pub/misc/
