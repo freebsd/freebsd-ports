@@ -1,0 +1,14 @@
+It's a library for doing evolutionary computation in Perl.
+
+Algorithm::Evolutionary was formerly called OPEAL, which is an acronym for
+Obvious Pearl Evolutionary Algorithm Library.
+
+The desing principles of Algorithm::Evolutionary are:
+    * It should be easy to program any kind of evolutionary algorithm; all
+      chromosome representations and operators are possible.
+    * An XML dialect called EvoSpec is used as a language for description of
+      algorithms and for representation of the state of an algorithm. This
+      could make Algorithm::Evolutionary interoperable with other EA libraries,
+      such as EO or JEO.
+
+WWW: http://opeal.sourceforge.net/
