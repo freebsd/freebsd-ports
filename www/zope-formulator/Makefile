@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	formulator
-PORTVERSION=	1.4.2
+PORTVERSION=	1.6.0
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/faassen/Formulator/${PORTVERSION}/
+MASTER_SITES=	http://zope.org/Members/infrae/Formulator/Formulator-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	Formulator-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
