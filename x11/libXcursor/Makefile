@@ -30,4 +30,6 @@ MAN3=		Xcursor.3
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack pkgconfig
 
+BROKEN=		Does not compile
+
 .include <bsd.port.mk>
