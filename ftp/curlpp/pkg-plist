@@ -63,13 +63,13 @@ lib/libutilspp.so
 lib/libutilspp.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/example01.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/example02.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example03.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/example04.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/example10.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example05.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example06.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example07.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example08.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example09.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example11.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/example12.cpp
 %%PORTDOCS%%%%EXAMPLESDIR%%/example13.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/example14.cpp
-%%PORTDOCS%%%%EXAMPLESDIR%%/example15.cpp
+%%PORTDOCS%%%%EXAMPLESDIR%%/example16.cpp
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
