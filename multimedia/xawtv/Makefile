@@ -32,7 +32,7 @@ MAN1=		alevtd.1 fbtv.1 propwatch.1 rootv.1 showriff.1 v4l-conf.1 \
 post-configure:
 .for M in ${SEDFILES}
 	@(${SED} -e 's,^CFLAGS=,CFLAGS+=,g' ${WRKSRC}/$M/Makefile | \
-		${SED} -e 's,-O2,,g' > foo && ${MV} foo ${WRKSRC}/$M/Makefile)
+		${SED} -e 's,-O2,,g' > ${WRKSRC}/foo && ${MV} ${WRKSRC}/foo ${WRKSRC}/$M/Makefile)
 .endfor
 
 post-install:
