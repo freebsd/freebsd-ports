@@ -1,0 +1,21 @@
+--- Glasteroids.cxx	Thu Aug 12 04:48:58 1999
++++ /home/andy/tmp/wrk/Glasteroids.cxx	Tue Aug 17 15:11:12 1999
+@@ -1,5 +1,8 @@
+ #include <stdlib.h>
+ #include <time.h>
++#ifdef __FreeBSD__
++#include <floatingpoint.h>
++#endif
+ #include "Bobcat.h"
+ 
+ /*
+@@ -75,6 +78,9 @@
+ {
+     BCworld *world;
+     
++#ifdef __FreeBSD__
++    fpsetmask(0);
++#endif
+     world = BCgetWorld ( );
+ 
+     world->InitWorld ( argc, argv,"Glasteroids", 640, 480, 100 );

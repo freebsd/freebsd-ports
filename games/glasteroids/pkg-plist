@@ -1,0 +1,12 @@
+bin/glasteroids
+share/doc/glasteroids/COPYING
+share/doc/glasteroids/README
+share/glasteroids/gameText.txf
+@mode 666
+share/glasteroids/scores.txt
+@mode
+share/glasteroids/textures/splash.raw
+share/glasteroids/textures/splash_non.raw
+@dirrm share/doc/glasteroids
+@dirrm share/glasteroids/textures
+@dirrm share/glasteroids

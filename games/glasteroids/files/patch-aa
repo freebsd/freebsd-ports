@@ -1,0 +1,11 @@
+--- BCmenu.h	Thu Aug 12 04:48:58 1999
++++ /home/andy/tmp/wrk/BCmenu.h	Tue Aug 17 15:28:12 1999
+@@ -23,7 +23,7 @@
+ #include "BCincludes.h"
+ #include "TexFont.h"
+ 
+-#define HIGH_SCORE_FILE "scores.txt"
++#define HIGH_SCORE_FILE PREFIX "/share/glasteroids/scores.txt"
+ #define MAX_HIGH_SCORES 10
+ #define MAX_NAME_LENGTH 10
+ 
