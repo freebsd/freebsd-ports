@@ -24,7 +24,13 @@ THE_MACHTYPE=	${ARCH:S/i386/x86/}
 
 PLIST_FILES=	bin/callgen323
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_d/callgen323 ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
