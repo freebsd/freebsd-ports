@@ -9284,6 +9284,7 @@ usermin		ports/sysutils/usermin
 userneu		ports/sysutils/userneu
 userneu-devel	ports/sysutils/userneu-devel
 usogres		ports/databases/usogres
+usrinfo		ports/sysutils/usrinfo
 ustl		ports/devel/ustl
 utah-glx	ports/graphics/utah-glx
 utcount		ports/sysutils/utcount
