@@ -1,12 +1,15 @@
 %%X11%%bin/fuhquake-x11
 %%GLX%%bin/fuhquake-glx
 %%SVGA%%bin/fuhquake-svga
+%%PORTDOCS%%%%DOCSDIR%%/FAQ-v0.30-b585.txt
+%%PORTDOCS%%%%DOCSDIR%%/FuhQuake-v0.31-FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/benchmark.txt
 %%PORTDOCS%%%%DOCSDIR%%/config_manager.txt
 %%PORTDOCS%%%%DOCSDIR%%/crosshairs.txt
 %%PORTDOCS%%%%DOCSDIR%%/fuhquake.txt
 %%PORTDOCS%%%%DOCSDIR%%/linux.txt
 %%PORTDOCS%%%%DOCSDIR%%/logitech.txt
+%%PORTDOCS%%%%DOCSDIR%%/match_tools.txt
 %%PORTDOCS%%%%DOCSDIR%%/mp3.txt
 %%PORTDOCS%%%%DOCSDIR%%/particles.txt
 %%PORTDOCS%%%%DOCSDIR%%/pointing.txt
@@ -15,6 +18,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/fuhquake/fuhquake/pak0.pak
 %%SHAREWARE%%share/fuhquake/id1/pak0.pak
+share/fuhquake/qw/fragfile.dat
 share/fuhquake/qw/qwprogs.dat
 share/fuhquake/qw/spprogs.dat
 @dirrm share/fuhquake/qw

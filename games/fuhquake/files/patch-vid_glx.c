@@ -10,25 +10,3 @@
  #include <stdarg.h>
  #include <stdio.h>
  #include <signal.h>
-@@ -284,8 +286,8 @@
- 	case MotionNotify:
- #ifdef WITH_DGA
- 		if (dgamouse && _windowed_mouse.value) {
--			mouse_x = event.xmotion.x_root;
--			mouse_y = event.xmotion.y_root;
-+			mouse_x += event.xmotion.x_root;
-+			mouse_y += event.xmotion.y_root;
- 		} else
- #endif
- 		{
-@@ -601,8 +603,9 @@
- #ifdef WITH_VMODE
- 	// fullscreen
- 	if (vidmode_active) {
--		mask = CWBackPixel | CWColormap | CWSaveUnder | CWBackingStore | CWEventMask;
-+		mask = CWBackPixel | CWColormap | CWSaveUnder | CWBackingStore | CWEventMask | CWOverrideRedirect;
- 		attr.backing_store = NotUseful;
-+		attr.override_redirect = True;
- 		attr.save_under = False;
- 	}
- #endif
