@@ -1,0 +1,10 @@
+This package contains the files to run a FreeBSD Half-Life
+Sven Co-Op server under Linux emulation.
+
+Sven Co-op is a modification that allows co-operative multiplayer
+(where players fight together against monsters/etc.) in Half-Life.
+It also adds some features to make co-op play more interesting.
+
+Visit these following web pages for more information:
+
+WWW: http://www.svencoop.com/
