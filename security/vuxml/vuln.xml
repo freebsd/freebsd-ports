@@ -30,6 +30,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f93be979-a992-11d8-aecc-000d610a3b12">
+    <topic>cvs pserver remote heap buffer overflow</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.2</ge><lt>5.2_7</lt></range>
+	<range><ge>5.1</ge><lt>5.1_17</lt></range>
+	<range><ge>5.0</ge><lt>5.0_21</lt></range>
+	<range><ge>4.9</ge><lt>4.9_8</lt></range>
+	<range><ge>4.8</ge><lt>4.8_21</lt></range>
+	<range><ge>4.0</ge><lt>4.7_27</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Due to a programming error in code used to parse data
+          received from the client, malformed data can cause a heap
+          buffer to overflow, allowing the client to overwrite
+          arbitrary portions of the server's memory.</p>
+	<p>A malicious CVS client can exploit this to run arbitrary
+	  code on the server at the privilege level of the CVS server
+	  software.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0396</cvename>
+      <freebsdsa>SA-04:10.cvs</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-05-02</discovery>
+      <entry>2004-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df333ede-a8ce-11d8-9c6d-0020ed76ef5a">
     <topic>URI handler vulnerabilities in several browsers</topic>
     <affects>
