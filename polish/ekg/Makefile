@@ -23,8 +23,7 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
 			--enable-dynamic \
 			--enable-aspell \
-			--mandir=${PREFIX}/man \
-			--with-pthread
+			--mandir=${PREFIX}/man
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAKE_ENV=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
