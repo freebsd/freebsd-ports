@@ -26,7 +26,6 @@ ANT_TARGET=	jar apidocs
 .endif
 JAVASHAREDIR=	${PREFIX}/share/java
 JARDIR=		${JAVASHAREDIR}/classes
-DOCSDIR=	${PREFIX}/doc/${PORTNAME}
 
 do-build:
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
