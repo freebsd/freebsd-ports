@@ -1,0 +1,30 @@
+--- dynamic/Makefile.in.orig	Fri Oct 15 21:57:50 1999
++++ dynamic/Makefile.in	Mon Mar 20 18:41:21 2000
+@@ -24,7 +24,7 @@
+ srcdir=		@srcdir@
+ VPATH=		@srcdir@
+ 
+-TARGETS=	$(SHLIBFILE) $(SHLIBSONAME) $(SHLIBFORLINK)
++TARGETS=	$(SHLIBFILE) $(SHLIBFORLINK)
+ include		$(srcdir)/../settings.make
+ include		$(srcdir)/../src/adns.make
+ 
+@@ -32,16 +32,12 @@
+ 
+ install:
+ 		$(INSTALL_PROGRAM) $(SHLIBFILE) $(lib_dir)/$(SHLIBFILE)
+-		ln -sf $(SHLIBFILE) $(lib_dir)/$(SHLIBSONAME)
+ 
+ uninstall:
+-		rm -f $(lib_dir)/$(SHLIBFILE) $(lib_dir)/$(SHLIBSONAME)
++		rm -f $(lib_dir)/$(SHLIBFILE)
+ 
+ $(SHLIBFORLINK):
+-		ln -s $(SHLIBSONAME) $(SHLIBFORLINK)
+-
+-$(SHLIBSONAME):
+-		ln -s $(SHLIBFILE) $(SHLIBSONAME)
++		ln -s $(SHLIBFILE) $(SHLIBFORLINK)
+ 
+ $(SHLIBFILE):	$(ALLOBJS)
+ 		rm -f $@

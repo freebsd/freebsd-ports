@@ -1,0 +1,11 @@
+--- configure.orig	Wed Nov 24 19:57:32 1999
++++ configure	Mon Mar 20 18:35:47 2000
+@@ -1457,7 +1457,7 @@
+ 
+ SHLIBFORLINK='libadns.so'
+ SHLIBSONAME='$(SHLIBFORLINK).$(MAJOR)'
+-SHLIBFILE='$(SHLIBSONAME).$(MINOR)'
++SHLIBFILE='$(SHLIBSONAME)'
+ 
+ SHLIBCC='$(CC) $(CFLAGS) -fpic'
+ MKSHLIB_1='$(CC) $(LDFLAGS) -shared -Wl,-soname=$(SHLIBSONAME) -o'

@@ -1,0 +1,8 @@
+bin/adnstest
+bin/adnslogres
+bin/adnshost
+include/adns.h
+lib/libadns.a
+lib/libadns.so.0
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
