@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jjinux@yahoo.com
 COMMENT=	A simple encryption tool
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/uimodule.so:${PORTSDIR}/x11-toolkits/py-gnome2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
