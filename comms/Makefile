@@ -19,6 +19,7 @@
     SUBDIR += gkermit
     SUBDIR += gmfsk
     SUBDIR += gnokii
+    SUBDIR += gpredict
     SUBDIR += gscmxx
     SUBDIR += gsmlib
     SUBDIR += hamfax

@@ -1,0 +1,12 @@
+Gpredict is a satellite tracking and prediction application
+written using Gtk+ and Gnome widgets by Alexandru Csete.
+
+Part of the grounstation suite, its purpose is to track
+the various amateur, weather and military satellites that
+are of interest to radio amateurs.
+
+The groundstation suite comprises Gnome-rig and Gnome-predict
+and is intended to provide a low-cost amateur radio station
+with the facilities of a high-end satellite station.
+
+WWW: http://groundstation.sourceforge.net/
