@@ -1,0 +1,13 @@
+--- configure.orig	Wed Mar  3 10:56:35 2004
++++ configure	Wed Mar  3 10:56:54 2004
+@@ -2307,10 +2307,6 @@
+     preload=`LD_PRELOAD="preloadable_libintl.so" sh -c 'echo yes' 2>/dev/null`
+     echo "$as_me:$LINENO: result: ${preload:=no}" >&5
+ echo "${ECHO_T}${preload:=no}" >&6
+-    test "$preload" = no && \
+-	{ { echo "$as_me:$LINENO: error: libpreloadable_libintl.so required (gettext 0.12+)" >&5
+-echo "$as_me: error: libpreloadable_libintl.so required (gettext 0.12+)" >&2;}
+-   { (exit 1); exit 1; }; }
+ 
+     extra_make_all='preload man_l10n'
+     extra_make_install='install_preload install_l10n'
