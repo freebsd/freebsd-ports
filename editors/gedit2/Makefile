@@ -14,7 +14,8 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
 WRKSRC=	${WRKDIR}/gedit-${PORTVERSION}
 
