@@ -1,0 +1,12 @@
+This is the VMware module for XFree86 4.x. It should only be used inside of a
+VMWare guest as it refers only to the virtualized "hardware" available to
+an operating system running under VMware. Use the following in your XF86Config
+file:
+
+Section "Device"
+	Identifier "VMware SVGA"
+	Driver "vmware"
+	BusID	"PCI:0:15:0"
+EndSection
+
+WWW: http://www.vmware.com/support/reference/common/guest_linux_xf864.html

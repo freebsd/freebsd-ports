@@ -51,6 +51,7 @@
     SUBDIR += vmware
     SUBDIR += vmware-tools
     SUBDIR += vmware2
+    SUBDIR += vmware_xf4mod
     SUBDIR += vpce
     SUBDIR += vxtools
     SUBDIR += wine
