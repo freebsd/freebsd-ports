@@ -14,6 +14,8 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple audio file player
 
+CONFLICTS=	sox-*
+
 MANLANG=	ja
 MAN1=		play.1
 MANCOMPRESSED=	yes
