@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xmedcon
-PORTVERSION=		0.8.9
+PORTVERSION=		0.8.10
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,13 +34,13 @@ pre-fetch:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.if defined(WITH_X11)
+.if !defined(WITH_X11)
+CONFIGURE_ARGS=	--disable-gui
+PLIST_SUB=	X11="@comment "
+.else
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 PLIST_SUB=	X11=""
-.else
-CONFIGURE_ARGS=	--disable-gui
-PLIST_SUB=	X11="@comment "
 .endif
 
 .if !defined(WITH_GLIB)
