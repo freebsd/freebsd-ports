@@ -7,6 +7,7 @@
 
 PORTNAME=	ident2
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://michael.bacarella.com/projects/ident2/
 DISTNAME=	ident2-v${PORTVERSION}_FINAL
