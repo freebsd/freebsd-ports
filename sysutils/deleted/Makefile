@@ -17,4 +17,7 @@ MAN1=		deleted.1
 MANCOMPRESSED=	yes
 BINMODE=	4555
 
+post-install:
+	@${CHMOD} 4555 ${PREFIX}/bin/deleted
+
 .include <bsd.port.mk>
