@@ -240,7 +240,7 @@ post-build:
 		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
 		${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
 		${TOUCH} ./chrome/user-skins.rdf ./chrome/user-locales.rdf)
-	${FIND} ${WRKSRC}/dist/bin -type d | /usr/bin/sort -r | \
+	${FIND} ${WRKSRC}/dist/bin -type d | ${SORT} -r | \
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 pre-install:
