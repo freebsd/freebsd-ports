@@ -71,7 +71,6 @@ lib/libguide.a
 lib/libguide.so
 lib/libguide_stats.a
 lib/libguide_stats.so
-lib/libimf.so
 lib/libompstub.a
 lib/libsvml.so
 lib/libunwind.so

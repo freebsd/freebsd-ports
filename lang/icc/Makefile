@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.1.022
+PORTVERSION=	8.1.024
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_pc_${PORTVERSION:C/p.+$//}
+DISTNAME=	l_cc_pu_${PORTVERSION:C/p.+$//}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
@@ -18,11 +18,11 @@ PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if ${PORTVERSION} != ${PATCHLEVEL}
 DISTFILES+=	${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
+#PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
+PATCH_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 .endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-#PATCH_DEPENDS=		${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
-PATCH_DEPENDS=		${LINUXBASE}/lib/libc-2.3.2.so:${PORTSDIR}/emulators/linux_base-8
 
 RESTRICTED=	Intel forbids any redistribution
 NO_PACKAGE=	${RESTRICTED}
@@ -61,9 +61,17 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
 .if ( ${OSVERSION} < 502108 )
-PLIST_SUB+=	STDARG_H="" SYS_CDEFS_H=""
+PLIST_SUB+=	MACHINE__TYPES_H="@comment " STDARG_H="" SYS_CDEFS_H=""
 .else
 PLIST_SUB+=	STDARG_H="@comment " SYS_CDEFS_H="@comment "
+.if ${OSVERSION} < 502126
+GCCCOMPATVER=	330
+.endif
+.if ${OSVERSION} >= 502126
+GCCCOMPATVER=	340
+.endif
+GXXINCLUDE=	/usr/include/c++/${GCCCOMPATVER:C/([0-9])([0-9]).+/\1.\2/}
+PLIST_SUB+=	MACHINE__TYPES_H=""
 .endif
 
 .for file in ${DISTFILES}
@@ -113,6 +121,7 @@ post-patch:
 .for i in icc iccvars.csh iccvars.sh icpc
 	@${REINPLACE_CMD} -i "" -e 's:%%ICC_LOCALBASE%%:${LOCALBASE}:g; \
 		s:\<INSTALLDIR\>:${PREFIX}/${COMPILERDIR}:g; \
+		s:%%GXX_INCLUDE%%:${GXXINCLUDE}:g; \
 		s:man -w:manpath -q:g' ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
@@ -131,25 +140,36 @@ post-patch:
 .endfor
 # Provide a more FreeBSD'ish compile environment
 .for i in icc.cfg icpc.cfg
-	@${ECHO_CMD} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${ECHO_CMD} -e "-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .if ( ${OSVERSION} >= 500039 )
 	@${ECHO_CMD} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endif
 .if ( ${OSVERSION} >= 502108 )
 	@${ECHO_CMD} -e "-restrict\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+.else
+	@${ECHO_CMD} -e "-no-gcc\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endif
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # C++ hack for icpc
+.if ( ${OSVERSION} >= 502108 )
+	@${ECHO_CMD} -e "-gcc-version=${GCCCOMPATVER}\n-cxxlib-gcc\n" \
+		>>${WRKSRC}/opt/${COMPILERDIR}/bin/icpc.cfg
+.else
 	@${ECHO_CMD} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" \
 		>>${WRKSRC}/opt/${COMPILERDIR}/bin/icpc.cfg
+.endif
 	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s icc.cfg iccbin.cfg \
 		&& ${LN} -s icpc.cfg icpcbin.cfg
-# Hack while there's no support for icc in the stdarg.h and sys/cdefs.h.
 .if ( ${OSVERSION} < 502108 )
+# Hack while there's no support for ICC in the stdarg.h and sys/cdefs.h.
 	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/${COMPILERDIR}/include
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/sys
 	@${CP} ${FILESDIR}/cdefs.h ${WRKSRC}/opt/${COMPILERDIR}/include/sys
+.else
+# Work around bug for ICC support in src/sys/i386/include/_types.h.
+	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/machine
+	@${CP} ${FILESDIR}/_types.h ${WRKSRC}/opt/${COMPILERDIR}/include/machine
 .endif
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
@@ -183,8 +203,7 @@ do-build:
 		${OBJCOPY_OPS} \
 		${WRKSRC}/opt/${COMPILERDIR}/lib/${i}
 .endfor
-	@${AR} q ${WRKSRC}/opt/${COMPILERDIR}/lib/libcxa.a ${WRKSRC}/*.o
-	@${AR} q ${WRKSRC}/opt/${COMPILERDIR}/lib/libcxaguard.a ${WRKSRC}/*.o
+	@${AR} cr ${WRKSRC}/opt/${COMPILERDIR}/lib/libiccfbsd.a ${WRKSRC}/*.o
 # Some magic to be able to link
 	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper
 	@${CC} ${CFLAGS} -o \
@@ -203,46 +222,21 @@ do-install:
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
 
 post-install:
-	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to"
-	@${ECHO} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
-	@${ECHO} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
-	@${ECHO} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
+	@${ECHO} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to put your license into your \$${INTEL_FLEXLM_LICENSE} (default: ${PREFIX}/${COMPILERDIR}/licenses) directory and add ${PREFIX}/${COMPILERDIR}/bin to your PATH." | fmt
 	@${ECHO}
-	@${ECHO} "In order to be able to compile C++ source with icpc you have to install"
-	@${ECHO} "devel/stlport-icc."
+	@${ECHO} "On FreeBSD 5 with __FreeBSD_version >= 502108 icpc is set up to use the GNU libstdc++ from the base as STL by default. Alternatively you can use the \"-cxxlib-icc\" option with icpc to use devel/stlport-icc as STL instead. In order to be able to compile C++ source with icpc on FreeBSD 4 or FreeBSD 5 with __FreeBSD_version < 502108 you have to install devel/stlport-icc. No further options to icpc to use devel/stlport-icc are required there." | fmt
 	@${ECHO}
-	@${ECHO} "If you use icc on a Pentium 4 make sure you have 'options CPU_ENABLE_SSE'"
-	@${ECHO} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
-	@${ECHO} "if you do not know how to do this), else icc will hang forever."
+	@${ECHO} "If you use icc on a Pentium 4 you may have to use 'options CPU_ENABLE_SSE' (depending on the OS version, if in doubt try if it works) in your kernel config (have a look at http://www.FreeBSD.org/handbook/ if you do not know how to do this), else icc will hang forever." | fmt
 	@${ECHO}
-	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use"
-	@${ECHO} "the wrong includes and therefore will generate bogus (not working) binaries!"
+	@${ECHO} "WARNING: If you use icc while having linux_devtools installed, icc will use the wrong includes and therefore will generate bogus (not working) binaries!" | fmt
 	@${ECHO}
-	@${ECHO} "If you encounter further problems with icc please consult the errata at"
-	@${ECHO} "http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm"
-	@${ECHO} "first."
+	@${ECHO} "If you encounter further problems with icc please consult the errata at http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm first." | fmt
 	@${ECHO}
 	@${ECHO} "Call for benchmarks:"
-	@${ECHO} "Intel is interested to see some benchmark numbers which compare gcc with icc."
-	@${ECHO} "If you have a CPU produced by Intel and are able to do benchmarks with"
-	@${ECHO} "either your own source or with one of our major ports (e.g. with"
-	@${ECHO} "a webserver, a mailserver, a database system, an important graphics"
-	@${ECHO} "suite/program or some important math tool, ...) please try to spend some time"
-	@${ECHO} "to do a benchmark and send me (${MAINTAINER}) the result. You should"
-	@${ECHO} "include your system specs (CPU: speed/model, RAM: amount/speed, used disks"
-	@${ECHO} "(if necessary), chipset/mainboard type, ...), the version of the used"
-	@${ECHO} "software (OS, gcc, icc, ...), non default tuning options (kernel, sysctl) and"
-	@${ECHO} "the used compiler switches. If you don't use some 'standard' benchmark"
-	@${ECHO} "(e.g. the official MySQL benchmark, or the performance test suite of your"
-	@${ECHO} "prefered scripting language), please include a description about the"
-	@${ECHO} "benchmark too."
+	@${ECHO} "Intel is interested to see some benchmark numbers which compare gcc with icc. If you have a CPU produced by Intel and are able to do benchmarks with either your own source or with one of our major ports (e.g. with a webserver, a mailserver, a database system, an important graphics suite/program or some important math tool, ...) please try to spend some time to do a benchmark and send me (${MAINTAINER}) the result. You should include your system specs (CPU: speed/model, RAM: amount/speed, used disks (if necessary), chipset/mainboard type, ...), the version of the used software (OS, gcc, icc, ...), non default tuning options (kernel, sysctl) and the used compiler switches. If you don't use some 'standard' benchmark (e.g. the official MySQL benchmark, or the performance test suite of your prefered scripting language), please include a description about the benchmark too." | fmt
 	@${ECHO}
-	@${ECHO} "Please use FreeBSD as the name of your OS in communications with the support,"
-	@${ECHO} "the larger the FreeBSD userbase is, the more work gets done on FreeBSD"
-	@${ECHO} "specific issues by Intel. And please thank them for the FreeBSD support,"
-	@${ECHO} "they are already spending some time to improve icc on FreeBSD."
+	@${ECHO} "Please use FreeBSD as the name of your OS in communications with the support, the larger the FreeBSD userbase is, the more work gets done on FreeBSD specific issues by Intel. And please thank them for the FreeBSD support, they are already spending some time to improve icc on FreeBSD." | fmt
 	@${ECHO}
-	@${ECHO} "To read the entire post install message again, just run"
-	@${ECHO} "'make post-install | less'."
+	@${ECHO} "To read the entire post install message again, just run 'make post-install | less'." | fmt
 
 .include <bsd.port.post.mk>
