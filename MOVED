@@ -24,7 +24,6 @@ chinese/linux-netscape47-navigator||2002-11-17|security vulnerability
 chinese/netscape47-communicator||2002-11-17|security vulnerability
 chinese/netscape47-navigator||2002-11-17|security vulnerability
 japanese/eb2||2003-03-28|obsoleted by japanese/eb
-japanese/gp||2003-05-07|development discontinued and distfile unavailable
 japanese/linux-netscape47-communicator|japanese/netscape48-communicator|2002-11-17|security vulnerability
 japanese/linux-netscape47-navigator|japanese/netscape48-navigator|2002-11-17|security vulnerability
 japanese/netscape-fonts|japanese/alias-fonts|2002-11-17|obsoleted by alias-fonts
@@ -312,6 +311,7 @@ x11-fm/jafm||2003-05-05|port was broken with no sign of a fix
 x11-servers/Xatm||2003-05-05|port was broken with no sign of a fix
 audio/gdcd||2003-05-05|port was broken with no sign of a fix
 devel/SN|devel/sourcenav|2003-05-07|renamed by upstream
+japanese/gp||2003-05-07|development discontinued and distfile unavailable
 www/orion-devel|www/orion|2003-05-08|stable version caught up with development version
 editors/xemacs21-mule-common||2003-05-09|needless since new xemacs21-mule is 21.4.12
 x11-toolkits/fltk-xunicode|x11-toolkits/fltk|2003-05-011|maintenance discontinued
