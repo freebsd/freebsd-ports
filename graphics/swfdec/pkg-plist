@@ -31,3 +31,8 @@ lib/libswfdec-%%VERSION%%.a
 lib/libswfdec-%%VERSION%%.so
 lib/libswfdec-%%VERSION%%.so.0
 libdata/pkgconfig/swfdec-%%VERSION%%.pc
+@dirrm lib/mozilla/plugins 2>/dev/null || true
+@dirrm lib/mozilla 2>/dev/null || true
+@dirrm lib/gimp/1.3/plug-ins 2>/dev/null || true
+@dirrm lib/gimp/1.3 2>/dev/null || true
+@dirrm lib/gimp 2>/dev/null || true
