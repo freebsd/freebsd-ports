@@ -9241,6 +9241,7 @@ zh-kcfonts	ports/chinese/kcfonts
 zh-kde3-i18n-CN	ports/chinese/kde3-i18n-zh_CN
 zh-kde3-i18n-TW	ports/chinese/kde3-i18n-zh_TW
 zh-libtabe	ports/chinese/libtabe
+zh-links	ports/chinese/links
 zh-linux-gtk	ports/chinese/linux-gtk
 zh-lunar	ports/chinese/lunar
 zh-metalist	ports/chinese/metalist
