@@ -1,0 +1,36 @@
+--- email/sendmail.conduit.in.orig	Sun Dec  2 03:17:09 2001
++++ email/sendmail.conduit.in	Sun Dec  2 03:19:29 2001
+@@ -4,5 +4,5 @@
+ <conduit-attribute name="description" value="Mails your Palm emails via sendmail"/>
+ <conduit-attribute name="default-synctype" value="custom"/>
+ <conduit-attribute name="settings" value="TRUE"/>
+-<conduit-attribute name="icon" value="@prefix@/share/pixmaps/gnome-mailcheck.png"/>
++<conduit-attribute name="icon" value="@prefix@/share/gnome/pixmaps/gnome-mailcheck.png"/>
+ </gnome-pilot-conduit>
+--- expense/expense.conduit.in.orig	Sun Dec  2 03:17:13 2001
++++ expense/expense.conduit.in	Sun Dec  2 03:19:29 2001
+@@ -5,5 +5,5 @@
+ 	<conduit-attribute name="default-synctype" value="synchronize"/>
+      	<conduit-attribute name="valid-synctypes" value="synchronize copy_from_pilot"/>
+      	<conduit-attribute name="settings" value="TRUE"/>
+-     	<conduit-attribute name="icon" value="@prefix@/share/pixmaps/gnome-money.png"/>
++     	<conduit-attribute name="icon" value="@prefix@/share/gnome/pixmaps/gnome-money.png"/>
+ </gnome-pilot-conduit>
+--- memo_file/memofile.conduit.in.orig	Sun Dec  2 03:17:09 2001
++++ memo_file/memofile.conduit.in	Sun Dec  2 03:19:29 2001
+@@ -5,5 +5,5 @@
+      <conduit-attribute name="default-synctype" value="synchronize"/>
+      <conduit-attribute name="valid-synctypes" value="synchronize copy_from_pilot copy_to_pilot merge_from_pilot merge_to_pilot"/>
+      <conduit-attribute name="settings" value="TRUE"/>
+-     <conduit-attribute name="icon" value="@prefix@/share/pixmaps/gnome-note.png"/>
++     <conduit-attribute name="icon" value="@prefix@/share/gnome/pixmaps/gnome-note.png"/>
+ </gnome-pilot-conduit>
+--- time/time.conduit.in.orig	Sun Dec  2 03:17:09 2001
++++ time/time.conduit.in	Sun Dec  2 03:19:29 2001
+@@ -5,5 +5,5 @@
+      <conduit-attribute name="default-synctype" value="synchronize"/>
+      <conduit-attribute name="valid-synctypes" value="synchronize"/>
+      <conduit-attribute name="settings" value="TRUE"/>
+-     <conduit-attribute name="icon" value="@prefix@/share/pixmaps/gnome-clock.png"/>
++     <conduit-attribute name="icon" value="@prefix@/share/gnome/pixmaps/gnome-clock.png"/>
+ </gnome-pilot-conduit>

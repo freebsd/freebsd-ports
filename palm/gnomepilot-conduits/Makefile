@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	gnomepilot-conduits
-PORTVERSION=	0.4
+PORTVERSION=	0.7
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITES=	http://www.eskil.org/gnome-pilot/download/tarballs/ \
+		${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-pilot-conduits
 DISTNAME=	gnome-pilot-conduits-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link \
-		gpilotd.0:${PORTSDIR}/palm/gnomepilot
+		gpilotd.1:${PORTSDIR}/palm/gnomepilot
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOMECTRL=	yes
 USE_LIBTOOL=	yes
-LIBTOOLFILES=	configure mal-conduit/configure
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/pilot/include" \
 		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/pilot/lib"
 
