@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frontpage
-CATEGORIES=	chinese www
+CATEGORIES=	www chinese
 PKGNAMEPREFIX=	zh-
 
 MAINTAINER=	hetzels@westbend.net
