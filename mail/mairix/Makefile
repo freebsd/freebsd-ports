@@ -15,10 +15,12 @@ COMMENT=	Indexing and searching in Maildir or MH folders
 
 USE_SIZE=	yes
 HAS_CONFIGURE=	yes
-USE_BISON=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
+
+post-patch:
+	@${REINPLACE_CMD} '/dfasyn/d' ${WRKSRC}/Makefile.in
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mairix ${PREFIX}/bin
