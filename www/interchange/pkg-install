@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# $1 = package name
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+USER=interch
+GROUP=${USER}
+UID=94
+GID=${UID}
+
+pw groupshow ${GROUP} >/dev/null 2>&1 \
+	|| (pw groupadd ${GROUP} -g ${GID} \
+		|| (echo "Adding group '${GROUP}' failed!"; exit 1) \
+		&& echo "Added group '${GROUP}'.")
+
+pw usershow ${USER} >/dev/null 2>&1 \
+	|| (pw useradd ${USER} -h - -u ${UID} -g ${GROUP} \
+		-c "Interchange user" -d "${PKG_PREFIX}/interchange" \
+		-s "/sbin/nologin" \
+		|| (echo "Adding user '${USER}' failed!"; exit 1) \
+		&& echo "Added user '${USER}'.")
+
+exit 0
