@@ -1,0 +1,3 @@
+@cwd /usr/local
+libexec/tftpd
+man/man8/tftpd.8
