@@ -7,7 +7,7 @@
 
 MASTERDIR=      ${.CURDIR}/../ruby_static
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 RUBY_VER=	1.7
 

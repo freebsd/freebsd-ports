@@ -7,6 +7,8 @@ set RUBY_DEFAULT_VER=1.7.
 Note that some stuff that comes with the standard Ruby distribution is
 provided as separate ports:
 
+	converters/ruby-iconv	iconv module
+
 	databases/ruby-gdbm:	GDBM module
 
 	lang/ruby-tcltklib:	Tcl/Tk libraries

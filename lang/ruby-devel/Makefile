@@ -24,8 +24,6 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-
 .if defined(WITH_ONIGURUMA)
 ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
 ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
@@ -45,12 +43,12 @@ RUBY_NO_RUN_DEPENDS=	yes
 
 #USE_AUTOCONF=	yes	# does not work with 2.13; requires 2.53 or later
 GNU_CONFIGURE=	yes
-INSTALLS_SHLIB=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
 MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
 MAKE_ARGS=	-j3
+INSTALLS_SHLIB=	yes
 MAN1=		ruby${_RUBY_SUFFIX}.1
 
 LATEST_LINK=	ruby-devel
@@ -109,9 +107,6 @@ post-patch:
 .for d in gdbm iconv tcltklib tk
 	${MV} ${WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
-
-pre-configure:
-	cd ${WRKSRC}; autoconf
 
 pre-install:
 	${RM} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} \
