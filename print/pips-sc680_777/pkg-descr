@@ -1,0 +1,32 @@
+Photo Image Print System for Linux is the Printer filter for EPSON
+Stylus Color777/EPSON Stylus Color680 which are international
+products. By using this driver you can print out as high quality as
+you use Windows driver. It supporse English, French, Germany, Spanish,
+Italian and Portugue. See the below URL:
+
+WWW: http://www.epkowa.co.jp/
+
+And this port has a modified filter "filter-sc680_777.rev" when you print out
+more than one page useful.  For example, if you use it, you add the
+next entry into /etc/printcap.
+
+sc680_777|EPSON Stylus Color777/EPSON Stylus Color680:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/sc680_777/filter-sc680_777.rev:\
+        :sd=/var/spool/lpd/sc680_777:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+*************************************************************
+To run with Japanese/French/Germany/Spanish
+/Italian/Dutch/Portugue/Korean messages, you should execute as follows:
+  env LANG=ja_JP pips-sc680_777
+  env LANG=fr pips-sc680_777
+  env LANG=de pips-sc680_777
+  env LANG=es pips-sc680_777
+  env LANG=it pips-sc680_777
+  env LANG=nl pips-sc680_777
+  env LANG=pt pips-sc680_777
+  env LANG=ko pips-sc680_777
+*************************************************************
