@@ -7,18 +7,47 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
-		http://www.exim.org/ftp/exim4/ \
-		ftp://ftp.is.co.za/networking/mail/transport/exim/exim4/
-.if !defined(WITHOUT_EXISCAN)
-MASTER_SITES+=	http://duncanthrax.net/exiscan/
+MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
+		ftp://gd.tuwien.ac.at/infosys/mail/exim/%SUBDIR%/ \
+		ftp://ftp.easynet.be/exim/%SUBDIR%/ \
+		ftp://mirror.direct.ca/pub/exim/%SUBDIR%/ \
+		ftp://mirror.kn.vutbr.cz/pub/ftp.exim.org/%SUBDIR%/ \
+		ftp://sunsite.auc.dk/pub/mail/exim/%SUBDIR%/ \
+		ftp://ftp.doc.cs.univ-paris8.fr/mirrors/ftp.exim.org/%SUBDIR%/ \
+		ftp://ftp.fu-berlin.de/unix/mail/exim/%SUBDIR%/ \
+		ftp://ftp.tin.org/pub/mail/exim/%SUBDIR%/ \
+		ftp://ftp.freenet.de/pub/ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
+		ftp://ftp.esat.net/pub/networking/mail/mta/exim/%SUBDIR%/ \
+		ftp://nagoya.linux.or.jp/mirror/exim/%SUBDIR%/ \
+		http://exim.psshee.com/ftp/%SUBDIR%/ \
+		ftp://ftp.nl.uu.net/pub/unix/mail/exim/%SUBDIR%/ \
+		ftp://ftp.demon.nl/pub/mirrors/exim/%SUBDIR%/ \
+		ftp://ftp.easynet.nl/mirror/exim/%SUBDIR%/ \
+		ftp://sunsite.uio.no/pub/mail/exim/%SUBDIR%/ \
+		http://sunsite.icm.edu.pl/pub/unix/mail/exim/%SUBDIR%/ \
+		ftp://ftp.smux.net/pub/exim/%SUBDIR%/ \
+		ftp://ftp.is.co.za/networking/mail/mta/exim/%SUBDIR%/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/exim/%SUBDIR%/ \
+		ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
+		http://www.us.exim.org/ftp/%SUBDIR%/ \
+		http://exim.stanford.edu/ftp/pub/exim/%SUBDIR%/ \
+		ftp://ftp.fsckit.net/pub/exim/%SUBDIR%/ \
+		http://duncanthrax.net/%SUBDIR%/:exiscan,exiscan_acl
+MASTER_SITE_SUBDIR=	exim4 exiscan/:exiscan exiscan-acl/:exiscan_acl
+DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
+		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
+.if defined(WITH_EXISCAN_ACL)
+DISTFILES+=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch:exiscan_acl
+.elif !defined(WITHOUT_EXISCAN)
+DISTFILES+=	exiscan-${EXISCAN_VERSION}${EXTRACT_SUFX}:exiscan
 .endif
-DISTFILES=	exim-${EXIM_VERSION}.tar.bz2 \
-		exim-texinfo-${EXIM_DOCVERSION}.tar.bz2
-.if !defined(WITHOUT_EXISCAN)
-DISTFILES+=	exiscan-${EXISCAN_VERSION}.tar.bz2
+DIST_SUBDIR=	exim
+
+EXTRACT_ONLY=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
+		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
+.if !defined(WITH_EXISCAN_ACL) && !defined(WITHOUT_EXISCAN)
+EXTRACT_ONLY+=	exiscan-${EXISCAN_VERSION}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
@@ -28,8 +57,9 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN8=		exim.8
 
-EXIM_VERSION=	4.14
-EXIM_DOCVERSION=	4.10
+EXIM_VERSION=		4.20
+EXIM_DOCVERSION=	4.20
+EXISCAN_ACL_VERSION=	${EXIM_VERSION}-02
 EXISCAN_VERSION=	${EXIM_VERSION}-26
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
@@ -47,8 +77,10 @@ POSTGRESQL_PORT?=	databases/postgresql7
 # XFree86 to be installed if it is not present.
 #WITH_EXIMON=	yes
 
-# If WITHOUT_EXISCAN is defined, exim will be built without exiscan
-# email content scanner support.
+# If WITH_EXISCAN_ACL is defined, exim will be build with the newer
+# exiscan acl support. Otherwise if WITHOUT_EXISCAN is defined,
+# exim will be built without exiscan email content scanner support.
+#WITH_EXISCAN_ACL=	yes
 #WITHOUT_EXISCAN=	yes
 
 # Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
@@ -121,10 +153,16 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
 		dbm.discuss.txt filter.txt pcrepattern.txt pcretest.txt \
 		spec.txt
-.if !defined(WITHOUT_EXISCAN)
+.if defined(WITH_EXISCAN_ACL)
+PORTDOC_FILES+=	exiscan-acl-spec.txt
+PLIST_SUB+=             EXISCAN_ACL=""
+PLIST_SUB+=             EXISCAN="@comment "
+.elif !defined(WITHOUT_EXISCAN)
 PORTDOC_FILES+=	exiscan-readme.txt
+PLIST_SUB+=             EXISCAN_ACL="@comment "
 PLIST_SUB+=             EXISCAN=""
 .else
+PLIST_SUB+=             EXISCAN_ACL="@comment "
 PLIST_SUB+=             EXISCAN="@comment "
 .endif
 
@@ -288,7 +326,13 @@ SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 .endif
 
 post-patch:
-.if !defined(WITHOUT_EXISCAN)
+.if defined(WITH_EXISCAN_ACL)
+	cd ${WRKSRC} && ${PATCH} -p1 \
+	    < ${DISTDIR}/${DIST_SUBDIR}/exiscan-acl-${EXISCAN_ACL_VERSION}.patch \
+	    > ${WRKDIR}/patch-exiscan-acl.log 2>&1
+	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
+	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
+.elif !defined(WITHOUT_EXISCAN)
 	cd ${WRKSRC} && ${PATCH} -p1 \
 	    < ../exiscan-${EXISCAN_VERSION}/exiscan-${EXISCAN_VERSION}.patch \
 	    > ${WRKDIR}/patch-exiscan.log 2>&1

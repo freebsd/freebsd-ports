@@ -15,7 +15,7 @@
 @@ -343,7 +342,7 @@
  
    echo sed -e '\\'
-   echo "  \"/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${SYSTEM_ALIASES_FILE}'\"" '\\'
+   echo "  \"/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${ACTUAL_SYSTEM_ALIASES_FILE}'\"" '\\'
 -  echo "  ../src/configure.default > \${CONFIGURE_FILE}"
 +  echo "  ../src/configure.default > \${CONFIGURE_FILE}.default"
  
@@ -24,7 +24,7 @@
 @@ -352,7 +351,7 @@
    if [ "$real" = "" ] ; then
      sed -e \
-       "/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${SYSTEM_ALIASES_FILE}'" \
+       "/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${ACTUAL_SYSTEM_ALIASES_FILE}'" \
 -      ../src/configure.default > ${CONFIGURE_FILE}
 +      ../src/configure.default > ${CONFIGURE_FILE}.default
    else

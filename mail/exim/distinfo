@@ -1,3 +1,4 @@
-MD5 (exim-4.14.tar.bz2) = 81d0e304289f84a57144b66030ab9329
-MD5 (exim-texinfo-4.10.tar.bz2) = 2a2a34a2457d249d568a58e985f263c0
-MD5 (exiscan-4.14-26.tar.bz2) = edaabf47ad42dc7b26949fe1390abfff
+MD5 (exim/exim-4.20.tar.bz2) = 90f9e876b60d00c0a5dd53ece7c85338
+MD5 (exim/exim-texinfo-4.20.tar.bz2) = debc6d3fdd88fd6d9c646ca0495fa92d
+MD5 (exim/exiscan-acl-4.20-02.patch) = 4d656b5e681a565f7dc42ff6f37c9e7f
+MD5 (exim/exiscan-4.20-26.tar.bz2) = a3ad2a486b52cc32990888a00f8fabca
