@@ -3336,6 +3336,7 @@ jzip		ports/games/jzip
 kaffe		ports/java/kaffe
 kaffeine	ports/multimedia/kaffeine
 kalbum		ports/graphics/kalbum
+kallers		ports/comms/kallers
 kallery		ports/graphics/kallery
 kannel		ports/www/kannel
 kappdock	ports/x11-wm/kappdock
