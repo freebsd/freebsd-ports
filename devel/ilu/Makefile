@@ -56,6 +56,16 @@ CONFIGURE_ARGS+=	--disable-java-support
 startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/stubbers/parser/ilu.bison \
+		${WRKSRC}/stubbers/parser/genregs.c \
+		${WRKSRC}/stubbers/parser/iluparse.c.dist \
+		${WRKSRC}/stubbers/c/cstubber.h \
+		${WRKSRC}/stubbers/idl/idlparser.y \
+		${WRKSRC}/stubbers/idl/bison.skel \
+		${WRKSRC}/stubbers/idl/idlparser.c.dist
+
 post-extract:
 	${CHMOD} -R u+w ${WRKDIR}
 
