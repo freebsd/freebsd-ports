@@ -25,4 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype \
 		          -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}"/lib
 
+pre-configure:
+	(cd ${WRKSRC}; ln -s xgd-1.7.3 xgd)
+
 .include <bsd.port.mk>
