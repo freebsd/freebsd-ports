@@ -121,6 +121,7 @@
     SUBDIR += e2fsprogs
     SUBDIR += eject
     SUBDIR += enteruser
+    SUBDIR += env4801
     SUBDIR += eroaster
     SUBDIR += est
     SUBDIR += estctrl
