@@ -1,0 +1,13 @@
+--- ls.c.orig	Wed Oct 20 13:40:30 1999
++++ ls.c	Mon Oct 25 11:13:51 1999
+@@ -15,6 +15,10 @@
+ 
+ #include "httpd.h"
+ 
++#ifdef __FreeBSD__
++#define NAME_MAX FILENAME_MAX
++#endif
++
+ #define LS_ALLOC_SIZE 8192
+ #define HOMEPAGE "http://www.in-berlin.de/User/kraxel/webfs.html"
+ 
