@@ -222,37 +222,32 @@ include/newmat/newmatrm.h
 include/newmat/precisio.h
 include/newmat/solution.h
 lib/libGnuPlotInterface.a
-lib/libGnuPlotInterface.la
 lib/libGnuPlotInterface.so
 lib/libGnuPlotInterface.so.0
 lib/libImLib3D-0.8.so
 lib/libImLib3D-0.8.so.1
 lib/libImLib3D.a
-lib/libImLib3D.la
 lib/libImLib3D.so
 lib/libImLib3DCalls.a
-lib/libImLib3DCalls.la
 lib/libImLib3DCalls.so
 lib/libImLib3DCalls.so.0
 lib/libavwio.a
-lib/libavwio.la
 lib/libavwio.so
 lib/libavwio.so.0
 lib/libnewmat.a
-lib/libnewmat.la
 lib/libnewmat.so
 lib/libnewmat.so.0
-@dirrm include/GnuPlotInterface
-@dirrm include/ImLib3D
-@dirrm include/boost/config/compiler
-@dirrm include/boost/config/platform
-@dirrm include/boost/config/stdlib
-@dirrm include/boost/config
-@dirrm include/boost/preprocessor/arithmetic
-@dirrm include/boost/preprocessor/comparison
-@dirrm include/boost/preprocessor/list
-@dirrm include/boost/preprocessor/logical
-@dirrm include/boost/preprocessor/tuple
-@dirrm include/boost/preprocessor
 @dirrm include/boost/type_traits
+@dirrm include/boost/preprocessor/tuple
+@dirrm include/boost/preprocessor/logical
+@dirrm include/boost/preprocessor/list
+@dirrm include/boost/preprocessor/comparison
+@dirrm include/boost/preprocessor/arithmetic
+@dirrm include/boost/preprocessor
+@dirrm include/boost/config/stdlib
+@dirrm include/boost/config/platform
+@dirrm include/boost/config/compiler
+@dirrm include/boost/config
 @dirrm include/boost
+@dirrm include/ImLib3D
+@dirrm include/GnuPlotInterface
