@@ -1,6 +1,8 @@
 bin/abcm2ps
-share/abcm2ps/fbook.fmt
-share/abcm2ps/fonts.fmt
-share/abcm2ps/landscape.fmt
-share/abcm2ps/tight.fmt
-@dirrm share/abcm2ps
+%%DATADIR%%/fbook.fmt
+%%DATADIR%%/fonts.fmt
+%%DATADIR%%/landscape.fmt
+%%DATADIR%%/tight.fmt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
