@@ -1265,6 +1265,7 @@
     SUBDIR += py-pqueue
     SUBDIR += py-psyco
     SUBDIR += py-px
+    SUBDIR += py-pyro
     SUBDIR += py-repl
     SUBDIR += py-resourcepackage
     SUBDIR += py-reverse
