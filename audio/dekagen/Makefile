@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	dekagen
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	audio
-MASTER_SITES=	http://userpage.fu-berlin.de/~mbayer/tools/
+MASTER_SITES=	ftp://ftp.ibiblio.org/pub/linux/apps/sound/convert/
 
 MAINTAINER=	martin.kraft@fal.de
 COMMENT=	A frontend to rip, convert and name MP3/Ogg
@@ -17,7 +17,7 @@ COMMENT=	A frontend to rip, convert and name MP3/Ogg
 # for CDDB inquiries. You can safely 'make -DWITHOUT_XMCD', if you
 # can do without inquiring the CDDB database. Dependencies of
 # the xmcd package will install the encoders lame and oggenc (vorbis-tools),
-# both of them are supported bye dekagen.
+# both of them are supported by dekagen.
 
 .if !defined(WITHOUT_XMCD)
 RUN_DEPENDS+=	cda:${PORTSDIR}/audio/xmcd
