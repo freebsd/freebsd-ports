@@ -32,7 +32,7 @@ SORT?=		/usr/bin/sort
 
 myDATADIR=	share/${PORTNAME}/Skin/
 # Used by other ports to detect if this is installed
-SKIN_DETECTION_FILE=	${LOCALBASE}/${myDATADIR}/${PORTNAME}
+SKIN_DETECTION_FILE=	${LOCALBASE}/${myDATADIR}/${PKGNAME}
 
 # port style based on apsfilter by Andreas Klemm <andreas@FreeBSD.org>
 #
