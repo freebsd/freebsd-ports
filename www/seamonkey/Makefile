@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mozilla
+PORTNAME?=	mozilla
 PORTVERSION=	1.2b
-PORTREVISION=	1
-PORTEPOCH=	1
-CATEGORIES=	www
+PORTREVISION?=	1
+PORTEPOCH?=	1
+CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~marcus/:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
@@ -28,7 +28,15 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+MOZILLA?=	mozilla-devel
+
 WITHOUT_CHATZILLA=	"Contains a buffer overflow reported at http://online.securityfocus.com/archive/1/270249"
+
+.if defined(WITH_GTK2)
+LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+.else
+USE_GNOME=	gtk12
+.endif
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft2.2:${PORTSDIR}/x11-fonts/Xft
@@ -38,18 +46,12 @@ BROKEN=		Mozilla-devel and Xft2 render the mozilla-fonts \
 .endif
 .endif
 
-.if defined(WITH_GTK2)
-LIB_DEPENDS+=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
-.else
-USE_GNOME=	gtk12
-.endif
-
 .if defined(WITH_CALENDAR)
 DISTFILES+=	${PORTNAME}-calendar-${PORTVERSION}${EXTRACT_SUFX}:local
 LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
 .endif
 
-LATEST_LINK=	mozilla-devel
+LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
 			--exclude */package/* \
@@ -120,6 +122,8 @@ CONFIGURE_ARGS+=	--disable-composer
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 EXTRA_PATCHES=		${FILESDIR}/mozilla_12b_patch
+PKGCONFIG_FILES=	mozilla-gtkmozembed.pc mozilla-js.pc mozilla-xpcom.pc \
+			mozilla-nspr.pc mozilla-nss.pc
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 .endif
@@ -156,13 +160,18 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
+.if !defined(WITHOUT_XFT)
 	@${REINPLACE_CMD} -e 's|X11/Xft/Xft\.h|X11/Xft/Xft2.h|g' \
 		${WRKSRC}/gfx/src/gtk/nsDrawingSurfaceGTK.cpp \
 		${WRKSRC}/gfx/src/gtk/nsFontMetricsXft.h
+.endif
+	@${REINPLACE_CMD} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
+		-e 's|%%HEADERS_SUFX%%|-devel|g' \
+			${WRKSRC}/config/autoconf.mk.in
 
 post-build:
-	${SED} -e "s;@PREFIX@;${PREFIX};g" \
-		${FILESDIR}/mozilla.sh >${WRKSRC}/mozilla-devel
+	${SED} -e "s;@PREFIX@;${PREFIX};g" -e "s;%%MOZILLA%%;${MOZILLA};g" \
+		${FILESDIR}/mozilla.sh >${WRKSRC}/${MOZILLA}
 	(cd ${WRKSRC}/dist/bin; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
 	  ${SETENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome; \
@@ -171,28 +180,34 @@ post-build:
 		${XARGS} ${RMDIR} 2> /dev/null || ${TRUE}
 
 pre-install:
+	${RM} -f ${PLIST}
 	${TOUCH} -f ${PLIST}
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
 	    ${ECHO_CMD} bin/mozilla >> ${PLIST} ; \
 	fi
-	${ECHO_CMD} bin/mozilla-devel >> ${PLIST}
+	${ECHO_CMD} bin/${MOZILLA} >> ${PLIST}
 	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
 	    ${ECHO_CMD} lib/browser_plugins/libjavaplugin_oji.so >> ${PLIST} ; \
 	fi
 	cd ${WRKSRC}/dist/bin && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's:^:lib/mozilla-devel/:' >> ${PLIST} \
+		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm lib/mozilla-devel/:' >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/mozilla-devel >> ${PLIST}
+		${SED} -e 's:^:@dirrm lib/${MOZILLA}/:' >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
+.if defined(WITH_GTK2)
+	for pcfile in ${PKGCONFIG_FILES}; do \
+	    	${ECHO_CMD} libdata/pkgconfig/$$pcfile >> ${PLIST} ; \
+	done
+.endif
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/mozilla-devel
-	${CHMOD} 755 ${PREFIX}/lib/mozilla-devel
+	${MKDIR} ${PREFIX}/lib/${MOZILLA}
+	${CHMOD} 755 ${PREFIX}/lib/${MOZILLA}
 	cd ${WRKSRC}/dist/bin && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-devel
-	${INSTALL_SCRIPT} ${WRKSRC}/mozilla-devel ${PREFIX}/bin
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/${MOZILLA}
+	${INSTALL_SCRIPT} ${WRKSRC}/${MOZILLA} ${PREFIX}/bin
 	if [ ! -x ${PREFIX}/bin/mozilla -a ! -L ${PREFIX}/bin/mozilla ]; then \
-	    ${LN} -sf ${PREFIX}/bin/mozilla-devel ${PREFIX}/bin/mozilla ; \
+	    ${LN} -sf ${PREFIX}/bin/${MOZILLA} ${PREFIX}/bin/mozilla ; \
 	fi
 	if [ ! -d ${PREFIX}/lib/browser_plugins ]; then \
 	    ${MKDIR} ${PREFIX}/lib/browser_plugins ; \
@@ -201,6 +216,12 @@ do-install:
 	    ${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
 	    	${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
 	fi
+.if defined(WITH_GTK2)
+	for pcfile in ${PKGCONFIG_FILES}; do \
+	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$$pcfile \
+			${PREFIX}/libdata/pkgconfig ; \
+	done
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
