@@ -6,60 +6,56 @@
 #
 
 PORTNAME=	atari800
-PORTVERSION=	1.0.7
+PORTVERSION=	1.2.2
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.sophics.cz/pub/Atari800/src/ \
-		http://joy.sophics.cz/www/
-DISTFILES=	a800s${PORTVERSION:S/.//g}.zip xf25.zip
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} xf25.zip
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	a800s${PORTVERSION:S/.//g}.zip
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 RESTRICTED=	"xf25 contains copyright ROMs and cannot be distributed."
 NO_PACKAGE=	${RESTRICTED}
 
-WRKSRC=		${WRKDIR}/Atari800-${PORTVERSION}/src
-USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
 USE_XLIB=	yes
 USE_GMAKE=	yes
-
-.if defined(WITH_SHM)
-ALL_TARGET=	x11-shm
-.else
-ALL_TARGET=	x11
-.endif
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--target=x11
 
 MAN1=		atari800.1
 
-ATARI_LIB=	${PREFIX}/share/${PKGBASE}
 ATARI_XF=	ataribas.rom atariosb.rom atarixl.rom demos1.xfd \
 		demos2.xfd dos25.xfd mydos45d.atr
-ATARI_DOC=	${PREFIX}/share/doc/${PKGBASE}
-DOC_FILES=	BUGS CHANGES CREDITS FAQ INSTALL README TODO USAGE
 
 post-extract:
-	@unzip -q -L -o ${_DISTDIR}/xf25.zip ${ATARI_XF} -d ${WRKSRC}
+	@unzip -q -L -o ${DISTDIR}/${DIST_SUBDIR}/xf25.zip ${ATARI_XF} -d ${WRKSRC}
 
 post-patch:
-	@${LN} -sf Makefile.unix ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/config.h ${WRKSRC}
-	@${TOUCH} ${WRKSRC}/.atari800
-	@${SED} -e 's:GUMBY:${ATARI_LIB}:g' \
-		${FILESDIR}/atari800.cfg > ${WRKSRC}/atari800.cfg
+	@${CP} ${FILESDIR}/atari800.cfg ${WRKSRC}
+	@${PERL} -pi -e 's|GUMBY|${DATADIR}|g' ${WRKSRC}/atari800.cfg
+	@${PERL} -pi -e 's|/etc|${DATADIR}|g' ${WRKSRC}/rt-config.c
+	@${PERL} -pi -e 's|tmpnam|mkstemp|g' ${WRKSRC}/devices.c \
+		${WRKSRC}/compfile.c
 
-post-install:
-	@${MKDIR} ${ATARI_LIB}
-	${INSTALL_DATA} -m 664 ${WRKSRC}/atari800.cfg ${ATARI_LIB}
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/atari800 ${PREFIX}/bin/atari800
+	@${INSTALL_MAN} ${WRKSRC}/atari800.man ${MANPREFIX}/man/man1/atari800.1
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} -m 644 ${WRKSRC}/atari800.cfg ${DATADIR}
 .for file in ${ATARI_XF}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${ATARI_LIB}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${ATARI_DOC}
-.for file in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/../DOC/${file} ${ATARI_DOC}
+	@${MKDIR} ${DOCSDIR}
+.for file in BUGS CHANGES CREDITS FAQ INSTALL README TODO USAGE
+	@${INSTALL_DATA} ${WRKSRC}/../DOC/${file} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${DESCR} ${ATARI_DOC}/README.FreeBSD
 .endif
 
 .include <bsd.port.mk>

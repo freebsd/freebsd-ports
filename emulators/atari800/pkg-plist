@@ -13,7 +13,6 @@ share/atari800/mydos45d.atr
 %%PORTDOCS%%share/doc/atari800/FAQ
 %%PORTDOCS%%share/doc/atari800/INSTALL
 %%PORTDOCS%%share/doc/atari800/README
-%%PORTDOCS%%share/doc/atari800/README.FreeBSD
 %%PORTDOCS%%share/doc/atari800/TODO
 %%PORTDOCS%%share/doc/atari800/USAGE
 %%PORTDOCS%%@dirrm share/doc/atari800
