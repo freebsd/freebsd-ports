@@ -9,10 +9,11 @@ PORTNAME=	orion
 PORTVERSION=	1.4.5
 PORTREVISION=	7
 CATEGORIES=	www java
-MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
+MASTER_SITES=	http://www.orionserver.com/mirrordownload.jsp?file= \
+		ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
+		http://metaverse.euronet.nl/~ernst/ \
 		${MASTER_SITE_LOCAL} \
-		http://www.jollem.com/ \
-		http://www.sebster.com/~elvis/
+		http://www.jollem.com/
 MASTER_SITE_SUBDIR=	sobomax
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
