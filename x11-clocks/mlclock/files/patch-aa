@@ -1,0 +1,8 @@
+--- Imakefile.orig	Mon Oct 18 14:21:12 1999
++++ Imakefile	Mon Oct 18 14:21:21 1999
+@@ -18,4 +18,4 @@
+ 
+ DEFINES = $(OPTION) -DRCFILE=\"${RCFILE}\"
+ 
+-ComplexProgramTarget( mlclock )
++ComplexProgramTarget(mlclock)
