@@ -141,8 +141,8 @@ pre-everything::
 	@${ECHO_MSG} "By default, the X Server installs as a set-user-id root binary. When run by"
 	@${ECHO_MSG} "a normal user, it checks arguments and environment as done in the x11/wrapper"
 	@${ECHO_MSG} "port before handling them normally.  If you are concerned about the security"
-	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm, which"
-	@${ECHO_MSG} "will still run the server as root), you can cancel the build and set"
+	@${ECHO_MSG} "of this, but still want to run an X Server (for example using xdm/kdm/gdm,"
+	@${ECHO_MSG} "which will still run the server as root), you can cancel the build and set"
 	@${ECHO_MSG} "NO_SUID_XSERVER=YES in /etc/make.conf."
 
 SCRIPTS_ENV+=	SUID_XSERVER=YES
