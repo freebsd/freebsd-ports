@@ -4349,6 +4349,7 @@ midimountain	ports/audio/midimountain
 mifluz		ports/textproc/mifluz
 migrate		ports/biology/migrate
 mikmod		ports/audio/mikmod
+milter-regex	ports/mail
 milter-sender	ports/mail/milter-sender
 mime		ports/devel/mime
 mime-support	ports/misc/mime-support
