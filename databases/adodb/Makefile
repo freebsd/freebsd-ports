@@ -21,6 +21,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
 do-install:
+	${RM} -f ${WRKSRC}/*.orig
 	${MKDIR} ${PREFIX}/share/doc/apache/php/adodb
 	${INSTALL_DATA} ${WRKSRC}/* ${PREFIX}/share/doc/apache/php/adodb
 
