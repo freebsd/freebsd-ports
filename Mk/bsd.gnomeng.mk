@@ -1,3 +1,7 @@
+.if defined(USE_GNOMENG)
+USE_REINPLACE=	yes
+.endif
+
 .if !defined(_POSTMKINCLUDED)
 
 # Please make sure all changes to this file are past through the maintainer.
