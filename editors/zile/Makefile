@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,6 +25,7 @@ MAN1=		zile.1
 INFO=		zile
 PLIST_FILES=	bin/zile %%DATADIR%%/AUTODOC %%DATADIR%%/FAQ %%DATADIR%%/HELP \
 		%%DATADIR%%/TUTORIAL %%DATADIR%%/zilerc.sample
+PLIST_DIRS=	%%DATADIR%%
 
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/zile.info
@@ -35,6 +36,6 @@ post-patch:
 		's|_FOR_BUILD||g'
 
 pre-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${ACLOCAL} 
+	@cd ${CONFIGURE_WRKSRC} && ${ACLOCAL}
 
 .include <bsd.port.mk>
