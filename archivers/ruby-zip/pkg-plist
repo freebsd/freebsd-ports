@@ -1,4 +1,6 @@
+%%RUBY_SITELIBDIR%%/zip/ioextras.rb
 %%RUBY_SITELIBDIR%%/zip/stdrubyext.rb
+%%RUBY_SITELIBDIR%%/zip/tempfile_bugfixed.rb
 %%RUBY_SITELIBDIR%%/zip/zip.rb
 %%RUBY_SITELIBDIR%%/zip/zipfilesystem.rb
 %%RUBY_SITELIBDIR%%/zip/ziprequire.rb
