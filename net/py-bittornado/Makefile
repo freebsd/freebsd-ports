@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	BitTornado
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 PORTEPOCH=	1
 CATEGORIES?=	net python ipv6
 MASTER_SITES=	http://e.scarywater.net/bt/download/ \
 		http://mediahost.inetsalestech.com/shadow/ \
-		http://www.hypermax.net.au/~gamr/
+		http://www.hypermax.net.au/~gamr/ \
+		http://ftp.acc.umu.se/mirror/bittornado/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
