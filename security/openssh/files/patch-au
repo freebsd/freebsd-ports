@@ -1,12 +1,11 @@
---- session.c.orig	Sun Aug 27 23:50:54 2000
-+++ session.c	Sat Nov  4 17:39:43 2000
-@@ -28,6 +28,13 @@
+--- /home/bright/ssh/ssh/session.c	Sun Aug 27 20:50:54 2000
++++ session.c	Fri Feb  9 11:19:14 2001
+@@ -28,6 +28,12 @@
  #include "auth.h"
  #include "auth-options.h"
  
 +#ifdef __FreeBSD__
 +#include <libutil.h>
-+#include <poll.h>
 +#include <syslog.h>
 +#include <time.h>
 +#endif /* __FreeBSD__ */
@@ -14,7 +13,7 @@
  #ifdef HAVE_LOGIN_CAP
  #include <login_cap.h>
  #endif
-@@ -413,6 +420,13 @@
+@@ -413,6 +419,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -28,7 +27,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -516,6 +530,13 @@
+@@ -516,6 +529,13 @@
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
@@ -42,7 +41,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -602,6 +623,7 @@
+@@ -602,6 +622,7 @@
  	time_t last_login_time;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -50,7 +49,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -644,6 +666,20 @@
+@@ -644,6 +665,20 @@
  		else
  			printf("Last login: %s from %s\r\n", time_string, buf);
  	}
@@ -71,7 +70,7 @@
  	if (options.print_motd) {
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
-@@ -949,7 +985,7 @@
+@@ -949,7 +984,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -80,7 +79,7 @@
  		close(i);
  
  	/* Change current directory to the user\'s home directory. */
-@@ -973,7 +1009,27 @@
+@@ -973,7 +1008,27 @@
  	 * in this order).
  	 */
  	if (!options.use_login) {
