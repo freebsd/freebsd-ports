@@ -1,0 +1,6 @@
+Dmidecode is a tool or dumping a computer's DMI (some say SMBIOS) table
+contents in a human-readable format. The output contains a description of the
+system's hardware components, as well as other useful pieces of information
+such as serial numbers and BIOS revision.
+
+WWW: http://www.nongnu.org/dmidecode/
