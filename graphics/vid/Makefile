@@ -19,8 +19,7 @@ MAINTAINER=	roger@freebsd.org
 BROKEN=		requires FreeBSD 4.0 or later
 .endif
 
-
-LIB_DEPENDS=	pbm:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	netpbm:${PORTSDIR}/graphics/netpbm
 
 # The port does not understand 'make all' or 'make install'
 # so change the 'all_target' to be empty and use our own do-install handler.
