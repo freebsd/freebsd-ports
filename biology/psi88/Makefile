@@ -3,13 +3,13 @@
 # Date created:		1998-11-11
 # Whom:			Ryo MIYAMOTO
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/06 08:22:11 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/06 08:27:29 taoka Exp $
 #
 
 DISTNAME=	psi88
 PKGNAME=	psi88-1.0
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ccl.osc.edu/pub/chemistry/software/SOURCES/FORTRAN/psi88/
+MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/psi88/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
