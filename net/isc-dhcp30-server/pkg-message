@@ -9,7 +9,16 @@
 	    dhcpd_conf="%%PREFIX%%/etc/dhcpd.conf"	# configuration file
 	    dhcpd_ifaces=""				# ethernet interface(s)
 
-****  For instance, rc.conf like variables are still read from
-      %%PREFIX%%/etc/rc.isc-dhcpd.conf. They should be move into
-      /etc/rc.conf.  Also, the dhcpd_options variable must be
-      renamed dhcpd_flags.
+****  For instance, rc.conf like variables are still read from %%PREFIX%%\
+      /etc/rc.isc-dhcpd.conf. They should be move into /etc/rc.conf.  Also,
+      the dhcpd_options variable must be renamed dhcpd_flags.
+
+****  If compiled with paranoia support (the default), the following options
+      are also supported:
+
+            [-user user] [-group group] [-chroot dir] [-early_chroot]
+
+****  If compiled with jail support (the default), the following options are
+      also supported:
+
+            [-chroot dir] [-jail hostname ip_address]	# implies -early_chroot
