@@ -1212,7 +1212,7 @@ x11-toolkits/qt2-static||2004-07-23|QT2 is obsolete
 x11-toolkits/qt23||2004-07-23|QT2 is obsolete
 java/eclipse-xsd|java/eclipse-emf|2004-07-25|merged
 emulators/freesci|games/freesci|2004-07-26|Moved to better category games
-net/zebra-devel||2004-07-27|The same as net/zebra for some time
+net/zebra-devel|net-zebra|2004-07-27|The same as net/zebra for some time
 mail/pear-mailparse|mail/pecl-mailparse|2004-07-30|Renamed
 security/lcrzo|net/netwib|2004-08-01|The project has been renamed and port moved to better category
 security/lcrzoex|net-mgmt/netwox|2004-08-01|The project has been renamed and port moved to better category
