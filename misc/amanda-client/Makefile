@@ -5,39 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	amanda
-PORTVERSION=	2.4.2
-CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.amanda.org/pub/amanda/
+PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
 
-MAINTAINER=	jeh@FreeBSD.org
+MASTERDIR=	${.CURDIR}/../amanda24-server
+COMMENT=	${PKGDIR}/pkg-comment.client
+PKGINSTALL=	mustnotexist
+PLIST=		${PKGDIR}/pkg-plist.client
 
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+CLIENT_ONLY=	yes
 
-WRKSRC=		${WRKDIR}/amanda-2.4.2
-NO_LATEST_LINK=	yes
-USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
-		--with-amandahosts --with-fqdn \
-		--with-dump-honor-nodump \
-		--with-user=operator --with-group=operator
-
-PATCH_STRIP=
-MAN8=		amadmin.8 amanda.8 amcheck.8 amcheckdb.8 amcleanup.8 \
-		amdump.8 amflush.8 amgetconf.8 amlabel.8 amoverview.8 \
-		amplot.8 amrecover.8 amreport.8 amrestore.8 amrmtape.8 \
-		amstatus.8 amtape.8 amtoc.8 amverify.8
-
-post-install:
-	${MKDIR} ${PREFIX}/share/examples/amanda
-	${CP} -R ${WRKSRC}/example/amanda.conf \
-		${WRKSRC}/example/chg-multi.conf \
-		${WRKSRC}/example/chg-scsi.conf \
-		${WRKSRC}/example/disklist \
-		${PREFIX}/share/examples/amanda
-
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"
