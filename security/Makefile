@@ -29,6 +29,9 @@
     SUBDIR += mhash
     SUBDIR += nbaudit
     SUBDIR += nessus
+    SUBDIR += nessus-libraries
+    SUBDIR += nessus-libnasl
+    SUBDIR += nessus-plugins
     SUBDIR += nmap
     SUBDIR += nmapfe
     SUBDIR += openssh
