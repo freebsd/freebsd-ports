@@ -1,122 +1,62 @@
---- configure.orig	Tue Jul 13 09:35:02 1999
-+++ configure	Thu Feb  3 15:38:42 2000
-@@ -932,14 +932,14 @@
-   echo "$ac_t""no" 1>&6
- fi
- 
--echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
--echo "configure:937: checking for pthread_create in -lpthread" >&5
--ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
-+echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
-+echo "configure:937: checking for pthread_create in -lc_r" >&5
-+ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lpthread  $LIBS"
-+LIBS="-lc_r  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 945 "configure"
- #include "confdefs.h"
-@@ -967,13 +967,13 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--    ac_tr_lib=HAVE_LIB`echo pthread | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-+    ac_tr_lib=HAVE_LIB`echo c_r | sed -e 's/[^a-zA-Z0-9_]/_/g' \
-     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
-   cat >> confdefs.h <<EOF
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-lc_r $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
-@@ -1053,53 +1053,6 @@
- fi
- rm -f conftest*
- 
--echo $ac_n "checking for SSL directory""... $ac_c" 1>&6
--echo "configure:1058: checking for SSL directory" >&5
--for dir in /usr/local/ssl /usr/lib/ssl /usr/pkg /usr/local /usr; do
--    ssldir="$dir"
--    if test -f "$dir/include/openssl/ssl.h"; then
--        cat >> confdefs.h <<\EOF
--#define HAVE_OPENSSL 1
--EOF
--
--        break
--    fi
--    if test -f "$dir/include/ssl.h"; then
--        break
--    fi
--done
--echo "$ac_t""$ssldir" 1>&6
--
--cat >> confdefs.h <<EOF
--#define ssldir "$ssldir"
--EOF
--
--CFLAGS="$CFLAGS -I$ssldir/include"
--LIBS="$LIBS -L$ssldir/lib -lssl -lcrypto"
--
--echo $ac_n "checking for RSAref library""... $ac_c" 1>&6
--echo "configure:1082: checking for RSAref library" >&5
--saved_LIBS="$LIBS"
--LIBS="$saved_LIBS -lRSAglue -lrsaref"
--cat > conftest.$ac_ext <<EOF
--#line 1086 "configure"
--#include "confdefs.h"
--
--int main() {
--
--; return 0; }
--EOF
--if { (eval echo configure:1093: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
--  rm -rf conftest*
--  echo "$ac_t""yes" 1>&6; 
--else
--  echo "configure: failed program was:" >&5
--  cat conftest.$ac_ext >&5
--  rm -rf conftest*
--  echo "$ac_t""no" 1>&6; LIBS="$saved_LIBS"
--fi
--rm -f conftest*
--
- # AC_HEADER_DIRENT
- # AC_HEADER_STDC
- # AC_HEADER_SYS_WAIT
-@@ -1266,6 +1219,30 @@
-   echo "$ac_t""no" 1>&6
- fi
- done
-+
-+echo $ac_n "checking for SSL directory""... $ac_c" 1>&6
-+echo "configure:1058: checking for SSL directory" >&5
-+for dir in /usr %%LOCALBASE%% /usr/local/ssl /usr/lib/ssl /usr/pkg; do
-+    ssldir="$dir"
-+    if test -f "$dir/include/openssl/ssl.h"; then
-+        cat >> confdefs.h <<\EOF
-+#define HAVE_OPENSSL 1
-+EOF
-+
-+        break
-+    fi
-+    if test -f "$dir/include/ssl.h"; then
-+        break
-+    fi
-+done
-+echo "$ac_t""$ssldir" 1>&6
-+
-+cat >> confdefs.h <<EOF
-+#define ssldir "$ssldir"
-+EOF
-+
-+CFLAGS="$CFLAGS -I$ssldir/include"
-+LIBS="$LIBS -L$ssldir/lib -lssl -lcrypto \${EXTRA_SSL_LIBS}"
- 
- 
- trap '' 1 2 15
+*** configure.orig	Mon Feb 14 12:32:38 2000
+--- configure	Mon Feb 14 12:33:56 2000
+***************
+*** 1051,1064 ****
+    echo "$ac_t""no" 1>&6
+  fi
+  
+! echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+! echo "configure:1056: checking for pthread_create in -lpthread" >&5
+! ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lpthread  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 1064 "configure"
+  #include "confdefs.h"
+--- 1051,1064 ----
+    echo "$ac_t""no" 1>&6
+  fi
+  
+! echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
+! echo "configure:1056: checking for pthread_create in -lc_r" >&5
+! ac_lib_var=`echo c_r'_'pthread_create | sed 'y%./+-%__p_%'`
+  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+    echo $ac_n "(cached) $ac_c" 1>&6
+  else
+    ac_save_LIBS="$LIBS"
+! LIBS="-lc_r  $LIBS"
+  cat > conftest.$ac_ext <<EOF
+  #line 1064 "configure"
+  #include "confdefs.h"
+***************
+*** 1086,1098 ****
+  fi
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!     ac_tr_lib=HAVE_LIB`echo pthread | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+      -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+    cat >> confdefs.h <<EOF
+  #define $ac_tr_lib 1
+  EOF
+  
+!   LIBS="-lpthread $LIBS"
+  
+  else
+    echo "$ac_t""no" 1>&6
+--- 1086,1098 ----
+  fi
+  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+    echo "$ac_t""yes" 1>&6
+!     ac_tr_lib=HAVE_LIB`echo c_r | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+      -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+    cat >> confdefs.h <<EOF
+  #define $ac_tr_lib 1
+  EOF
+  
+!   LIBS="-lc_r $LIBS"
+  
+  else
+    echo "$ac_t""no" 1>&6
