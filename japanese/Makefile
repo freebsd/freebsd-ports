@@ -137,6 +137,7 @@
     SUBDIR += mule-sj3+wnn6
     SUBDIR += mule-wnn4
     SUBDIR += mule-wnn6
+    SUBDIR += mutt
     SUBDIR += namazu
     SUBDIR += ndtpd
     SUBDIR += nethack
