@@ -15,8 +15,8 @@ FILESDIR?=	${.CURDIR}/files
 
 
 BROWSER_CMD=	ko-${BROWSER}-47
-BROWSER_VERSION=	4.72
+BROWSER_VERSION=	4.73
 NETHELP=        nethelp-v451
-KOREAN_KIT=	netscape-korean-kit-v472.20000302
+KOREAN_KIT=	netscape-korean-kit-v473.20000514
 
 .include "${MASTERDIR}/Makefile"
