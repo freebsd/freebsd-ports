@@ -36,4 +36,5 @@ share/doc/tinymux/README.TOOLS
 @dirrm games/tinymux/data
 @dirrm games/tinymux/text
 @dirrm games/tinymux
+@dirrm games
 @dirrm share/doc/tinymux
