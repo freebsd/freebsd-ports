@@ -22,7 +22,7 @@ PATCH_DIST_STRIP= -p1
 MAINTAINER=	chuckr@freebsd.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		t1.9:${PORTSDIR}/devel/t1lib
+		t1x.1:${PORTSDIR}/devel/t1lib
 
 .if !defined(PACKAGE_BUILDING)
 RESTRICTED=     "Contains cryptography"
