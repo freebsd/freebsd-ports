@@ -20,6 +20,8 @@ PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		HTML::Parse.3 HTML::TreeBuilder.3 HTML::AsSubs.3 \
-		HTML::Element.3 HTML::Element::traverse.3
+		HTML::Element.3 HTML::Element::traverse.3 HTML::Tree.3 \
+		HTML::Tree::Scanning.3 HTML::Tree::AboutObjects.3 \
+		HTML::Tree::AboutTrees.3
 
 .include <bsd.port.mk>
