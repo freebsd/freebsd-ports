@@ -1,0 +1,11 @@
+--- copy.cc.orig	Sun Nov 28 19:29:05 1999
++++ copy.cc	Sun Nov 28 19:29:25 1999
+@@ -397,7 +397,7 @@
+     hlist.subwidget ("hlist", "delete all");
+     for (i = 0; t[i].track != 0xaa; i++) {
+ 	state = (t[i].type & T_AUDIO && !ops->read_audio_blocks) ? 
+-	    "disabled" : "normal";
++	    (char *)"disabled" : (char *)"normal";
+ 	sprintf (s, "add %d -itemtype imagetext -image %s -state %s", i, 
+ 		 t[i].type & T_AUDIO ? (t[i].type & T_PREEMP ? "note_p" : "note") : "data",
+ 		 state);

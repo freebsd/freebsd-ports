@@ -1,0 +1,12 @@
+--- c++tk/Makefile.orig	Sun Nov 28 19:31:26 1999
++++ c++tk/Makefile	Sun Nov 28 19:42:34 1999
+@@ -1,7 +1,7 @@
+-CFLAGS=-g -O -I/usr/local/include/tcl8.0
++CFLAGS=-g -O -I${PREFIX}/include/tcl8.2 -I${PREFIX}/include -I${PREFIX}/include/tk8.2 -I${X11BASE}/include
+ OBJS = c++tk.o
+ 
+-TK_LIB=	/usr/local/lib/tk8.0
++TK_LIB=	${PREFIX}/lib/tk8.2
+ TCL_SCRIPTS= bgerror button dialog entry focus listbox menu obsolete \
+ 	 	optMenu palette text scale scrlbar tearoff 
+ 

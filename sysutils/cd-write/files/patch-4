@@ -1,0 +1,40 @@
+--- c++tk/c++tk.cc.orig	Sun Nov 28 19:32:37 1999
++++ c++tk/c++tk.cc	Sun Nov 28 19:42:32 1999
+@@ -28,6 +28,9 @@
+ //  $Id: c++tk.cc,v 1.22 1997/05/19 04:06:12 jmz Exp $
+ //
+ #include <tcl.h>
++#ifdef TIX
++#include <tix.h>
++#endif
+ #include <string.h>
+ #include <stdlib.h>
+ #include <limits.h>
+@@ -38,7 +41,9 @@
+ 
+ extern "C" {
+     int Tk_Init (Tcl_Interp *);
++#if 0
+     ClientData Tk_MainWindow (Tcl_Interp *);
++#endif
+ }
+ 
+ #include "c++tk.h"
+@@ -80,7 +85,7 @@
+     add_tvar (v)
+ #define VARIABLE \
+     sprintf (xstr, "%s%x", VARNAME, v);\
+-    Tcl_SetVar (interp, xstr, *v? "1":"0", TCL_GLOBAL_ONLY);\
++    Tcl_SetVar (interp, xstr, *v? (char *)"1":(char*)"0", TCL_GLOBAL_ONLY);\
+     sprintf (xstr, "%s configure -variable %s%x", pname, VARNAME, v);\
+     TkError = Tcl_GlobalEval (interp, xstr);\
+     sprintf (xstr, "%s%x", VARNAME, v);\
+@@ -289,7 +294,7 @@
+     Tk_Init (interp);
+     Tcl_StaticPackage (interp, "Tk", Tk_Init, 0);
+ #ifdef TIX
+-    if (Tixsam_Init (interp) != TCL_OK ) {
++    if (Tix_Init (interp) != TCL_OK ) {
+         fprintf(stderr,"Can't initialize the Tix extension.\n");
+         exit(1);
+     }
