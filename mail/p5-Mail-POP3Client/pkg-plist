@@ -1,8 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Mail/POP3Client.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/POP3Client/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/POP3Client/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/POP3Client
+@unexec rmdir -f %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/POP3Client
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
