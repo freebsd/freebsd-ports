@@ -22,6 +22,16 @@ INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+PLIST_SUB+=	X11_ONLY=""
+.else
+PLIST_SUB+=	X11_ONLY="@comment "
+
+pre-configure:
+	${ECHO} "HAVE_X11 => no" > ${WRKSRC}/configure.cache
+.endif
+
 post-patch:
 .for f in config.pl confignt.pl conflib.pl linux/compress \
 	linuxso/makemak.in linuxso/makemak.pl
