@@ -32,6 +32,8 @@ UNZIP?=	${PREFIX}/bin/unzip
 ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 
+IGNORE=	"Work In Progress"
+
 USE_GNOME=	orbit gtk12
 
 .include <bsd.port.pre.mk>
@@ -94,7 +96,7 @@ CC=  gcc33
 CXX= g++33
 .endif
 
-EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
+EXTRACT_ONLY=	OOo_${PORTVERSION}rc_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 .if !defined(COMMENT)
