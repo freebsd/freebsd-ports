@@ -1,0 +1,15 @@
+etc/privman/check_user
+etc/privman/microb
+etc/privman/mycat
+etc/privman/myecho
+etc/privman/myexec
+etc/privman/mypopen
+etc/privman/myrerun
+etc/privman/privman.conf
+include/msghdr.h
+include/privman.h
+lib/libprivman.a
+lib/libprivman.la
+lib/libprivman.so
+lib/libprivman.so.2
+@dirrm etc/privman
