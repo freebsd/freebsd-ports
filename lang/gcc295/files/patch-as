@@ -1,0 +1,10 @@
+--- libio/gen-params.orig     Sun Dec 22 20:02:50 2002
++++ libio/gen-params  Sun Dec 22 20:04:15 2002
+@@ -411,7 +411,6 @@
+ #define __PTRDIFF_TYPE__ ${ptrdiff_t-long int /* default */}
+ #endif
+ typedef __PTRDIFF_TYPE__ ${macro_prefix}ptrdiff_t;
+-typedef ${sigset_t-int /* default */} ${macro_prefix}sigset_t;
+ #ifndef __SIZE_TYPE__
+ #define __SIZE_TYPE__ ${size_t-unsigned long /* default */}
+ #endif

@@ -18,7 +18,6 @@ info/gcc.info
 @exec install-info %D/info/gcc.info %D/info/dir
 @dirrm %%GNU_HOST%%/include
 @dirrm %%GNU_HOST%%
-@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include

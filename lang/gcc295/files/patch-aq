@@ -1,5 +1,5 @@
---- gcc/ginclude/stdarg.h.orig	Fri May  7 18:52:35 1999
-+++ gcc/ginclude/stdarg.h	Wed Jun 23 16:38:00 1999
+--- gcc/ginclude/stdarg.h.orig	Sat May  8 03:52:35 1999
++++ gcc/ginclude/stdarg.h	Sun Dec 22 16:21:14 2002
 @@ -67,7 +67,7 @@
  
  #ifndef __GNUC_VA_LIST
@@ -9,3 +9,30 @@
  typedef char *__gnuc_va_list;
  #else
  typedef void *__gnuc_va_list;
+@@ -181,6 +181,8 @@
+ #if !defined (_VA_LIST_) || defined (__BSD_NET2__) || defined (____386BSD____) || defined (__bsdi__) || defined (__sequent__) || defined (__FreeBSD__) || defined(WINNT)
+ /* The macro _VA_LIST_DEFINED is used in Windows NT 3.5  */
+ #ifndef _VA_LIST_DEFINED
++/* The macro _VA_LIST_DECLARED is used in FreeBSD 5.x */
++#ifndef _VA_LIST_DECLARED
+ /* The macro _VA_LIST is used in SCO Unix 3.2.  */
+ #ifndef _VA_LIST
+ /* The macro _VA_LIST_T_H is used in the Bull dpx2  */
+@@ -188,6 +190,7 @@
+ typedef __gnuc_va_list va_list;
+ #endif /* not _VA_LIST_T_H */
+ #endif /* not _VA_LIST */
++#endif /* not _VA_LIST_DECLARED */
+ #endif /* not _VA_LIST_DEFINED */
+ #if !(defined (__BSD_NET2__) || defined (____386BSD____) || defined (__bsdi__) || defined (__sequent__) || defined (__FreeBSD__))
+ #define _VA_LIST_
+@@ -197,6 +200,9 @@
+ #endif
+ #ifndef _VA_LIST_DEFINED
+ #define _VA_LIST_DEFINED
++#endif
++#ifndef _VA_LIST_DECLARED
++#define _VA_LIST_DECLARED
+ #endif
+ #ifndef _VA_LIST_T_H
+ #define _VA_LIST_T_H

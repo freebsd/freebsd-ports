@@ -1,5 +1,5 @@
---- gcc/config/i386/freebsd.h.orig	Mon Dec 18 06:05:58 2000
-+++ gcc/config/i386/freebsd.h	Tue Apr 17 02:24:05 2001
+--- gcc/config/i386/freebsd.h.orig	Mon Dec 18 15:05:58 2000
++++ gcc/config/i386/freebsd.h	Sun Dec 22 23:08:15 2002
 @@ -35,9 +35,9 @@
     libraries compiled with the native cc, so undef it. */
  #undef NO_DOLLAR_IN_LABEL
@@ -93,3 +93,32 @@
  
  /* Provide a LIB_SPEC appropriate for FreeBSD.  Just select the appropriate
     libc, depending on whether we're doing profiling or need threads support.
+@@ -230,6 +242,20 @@
+    done.  */
+ 
+ #undef	LINK_SPEC
++#include <osreldate.h>
++#if __FreeBSD_version >= 500042
++#define LINK_SPEC "-m elf_i386_fbsd \
++  %{Wl,*:%*} \
++  %{v:-V} \
++  %{assert*} %{R*} %{rpath*} %{defsym*} \
++  %{shared:-Bshareable %{h*} %{soname*}} \
++    %{!shared: \
++      %{!static: \
++        %{rdynamic:-export-dynamic} \
++	%{!dynamic-linker:-dynamic-linker /usr/libexec/ld-elf.so.1}} \
++    %{static:-Bstatic}} \
++  %{symbolic:-Bsymbolic}"
++#else
+ #define LINK_SPEC "-m elf_i386 \
+   %{Wl,*:%*} \
+   %{v:-V} \
+@@ -241,6 +267,7 @@
+ 	%{!dynamic-linker:-dynamic-linker /usr/libexec/ld-elf.so.1}} \
+     %{static:-Bstatic}} \
+   %{symbolic:-Bsymbolic}"
++#endif
+ 
+ /* A C statement to output to the stdio stream FILE an assembler
+    command to advance the location counter to a multiple of 1<<LOG
