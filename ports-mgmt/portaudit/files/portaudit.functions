@@ -49,7 +49,6 @@ portaudit_confs()
 		ftp://ftp.cz.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp1.ro.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-		ftp://ftp.at.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
 		http://public.planetmirror.com/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
