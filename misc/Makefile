@@ -360,7 +360,6 @@
     SUBDIR += wmScoreBoard
     SUBDIR += wmcalendar
     SUBDIR += wmcp
-    SUBDIR += wmessage
     SUBDIR += wmfirew
     SUBDIR += wmjulia
     SUBDIR += wmmand
