@@ -44,7 +44,6 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%SUB_DOCS%%share/doc/mutt/TODO
 %%SUB_DOCS%%share/doc/mutt/README.SECURITY
 %%SUB_DOCS%%share/doc/mutt/README.SSL
-%%SUB_DOCS%%share/doc/mutt/README.UPGRADE
 %%SUB_DOCS%%share/doc/mutt/manual.txt
 %%SUB_DOCS%%share/doc/mutt/samples/iconv/iconv.aix-3.2.5.rc
 %%SUB_DOCS%%share/doc/mutt/samples/iconv/iconv.aix-4.1.5.rc
