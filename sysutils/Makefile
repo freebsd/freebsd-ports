@@ -47,6 +47,7 @@
     SUBDIR += mkisofs
     SUBDIR += no-login
     SUBDIR += npadmin
+    SUBDIR += obliterate
     SUBDIR += pib
     SUBDIR += pkg_version
     SUBDIR += prips
