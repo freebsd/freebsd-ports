@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scmail
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.namazu.org/~satoru/scmail/
 
@@ -45,5 +45,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
 .endfor
 .endif
+
+# Maintainer only; it actually forwards mails to @examples.com!
+test:
+	cd ${WRKSRC}; ${MAKE} check
 
 .include <bsd.port.post.mk>
