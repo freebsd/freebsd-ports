@@ -6819,6 +6819,7 @@ p5-XML-XSH	ports/textproc/p5-XML-XSH
 p5-XML-XSLT	ports/textproc/p5-XML-XSLT
 p5-XML-XUpdate-LibXML	ports/textproc/p5-XML-XUpdate-LibXML
 p5-XML-Xerces	ports/textproc/p5-XML-Xerces
+p5-XML-Xerces-BagOfTricks	ports/textproc/p5-XML-Xerces-BagOfTricks
 p5-XPC		ports/net/p5-XPC
 p5-Xmms		ports/audio/p5-Xmms
 p5-YAML		ports/textproc/p5-YAML
