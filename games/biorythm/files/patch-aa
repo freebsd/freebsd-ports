@@ -1,28 +1,40 @@
---- Makefile	Sun Jul  5 19:55:11 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue May  4 10:55:11 1999
-@@ -11,10 +11,10 @@
+--- Makefile.orig	Mon Jul  6 00:55:11 1998
++++ Makefile	Tue Jul  4 21:47:21 2000
+@@ -11,15 +11,15 @@
  ###########################################################################
  
  # where are shhmsg and shhopt?
 -INCDIR		= -I/usr/local/include
 -LIBDIR		= -L/usr/local/lib
-+INCDIR		= -I$(LOCALBASE)/include
-+LIBDIR		= -L$(LOCALBASE)/lib
++INCDIR		= -I${LOCALBASE}/include
++LIBDIR		= -L${LOCALBASE}/lib
  
 -INSTBASEDIR	= /usr/local
-+INSTBASEDIR	= $(PREFIX)
- INSTBINDIR	= $(INSTBASEDIR)/games
+-INSTBINDIR	= $(INSTBASEDIR)/games
++INSTBASEDIR	= ${PREFIX}
++INSTBINDIR	= $(INSTBASEDIR)/bin
  INSTMANDIR	= $(INSTBASEDIR)/man/man6
- INSTALL		= install -m 644
-@@ -27,9 +27,9 @@
+-INSTALL		= install -m 644
+-INSTALLPROG	= install -s -m 755
+-MKDIRP		= install -d -m 755
++INSTALL		= ${BSD_INSTALL_DATA}
++INSTALLPROG	= ${BSD_INSTALL_PROGRAM}
++MKDIRP		= mkdir -p
+ 
+ DEFINES		= -DVERSION=\"$(VERSION)\" \
+ 		  "-DCOMPILED_DATE=\"$(COMPILED_DATE)\"" \
+@@ -27,11 +27,11 @@
  
  ###########################################################################
  
 -CC		= gcc
 +#CC		= gcc
  
--OPTIM		= -O2
-+OPTIM		= $(CFLAGS)
- CCOPT		= -Wall $(OPTIM) $(INCDIR) $(DEFINES) $(CFLAGS)
- LDOPT		= -s $(LIBDIR) $(LDFLAGS)
+ OPTIM		= -O2
+-CCOPT		= -Wall $(OPTIM) $(INCDIR) $(DEFINES) $(CFLAGS)
+-LDOPT		= -s $(LIBDIR) $(LDFLAGS)
++CCOPT		= $(INCDIR) $(DEFINES) $(CFLAGS)
++LDOPT		= $(LIBDIR) $(LDFLAGS)
  
+ LIBS		= -lshhmsg -lshhopt -lm
+ OBJS		= $(PROG).o date.o
