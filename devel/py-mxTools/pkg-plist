@@ -4,8 +4,12 @@ lib/python1.5/site-packages/NewBuiltins/NewBuiltins.pyo
 lib/python1.5/site-packages/NewBuiltins/__init__.py
 lib/python1.5/site-packages/NewBuiltins/__init__.pyc
 lib/python1.5/site-packages/NewBuiltins/__init__.pyo
-lib/python1.5/site-packages/mxTools.so
-lib/python1.5/site-packages/xmap.so
+lib/python1.5/site-packages/NewBuiltins/mxTools/__init__.py
+lib/python1.5/site-packages/NewBuiltins/mxTools/__init__.pyc
+lib/python1.5/site-packages/NewBuiltins/mxTools/__init__.pyo
+lib/python1.5/site-packages/NewBuiltins/mxTools/mxTools.so
+lib/python1.5/site-packages/NewBuiltins/mxTools/xmap.so
+@dirrm lib/python1.5/site-packages/NewBuiltins/mxTools
 @dirrm lib/python1.5/site-packages/NewBuiltins
 share/doc/py-mxTools/mxTools.html
 @dirrm share/doc/py-mxTools

@@ -32,9 +32,13 @@ post-extract:
 do-configure:
 	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
-post-install:
+do-install:
 	@${MKDIR} ${TOOLSDIR}
 	${INSTALL_DATA} ${WRKDIR}/NewBuiltins/*.py ${TOOLSDIR}
+	@${MKDIR} ${TOOLSDIR}/mxTools
+.for file in __init__.py mxTools.so xmap.so
+	${INSTALL_DATA} ${WRKDIR}/NewBuiltins/mxTools/${file} ${TOOLSDIR}/mxTools
+.endfor
 	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${TOOLSDIR}
 	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${TOOLSDIR}
 	@${MKDIR} ${EXAMPLEDIR}
