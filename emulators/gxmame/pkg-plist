@@ -1,0 +1,33 @@
+bin/gxmame
+share/locale/fr/LC_MESSAGES/gxmame.mo
+share/locale/es/LC_MESSAGES/gxmame.mo
+share/locale/it/LC_MESSAGES/gxmame.mo
+share/locale/nl/LC_MESSAGES/gxmame.mo
+share/locale/de/LC_MESSAGES/gxmame.mo
+share/locale/pl/LC_MESSAGES/gxmame.mo
+share/locale/zh_TW/LC_MESSAGES/gxmame.mo
+share/applnk/Games/Arcade/gxmame.desktop
+share/gnome/apps/Games/Arcade/gxmame.desktop
+share/icons/gxmame.png
+share/icons/mini/gxmame.xpm
+%%PORTDOCS%%share/doc/gxmame-0.33/AUTHORS
+%%PORTDOCS%%share/doc/gxmame-0.33/BUGS
+%%PORTDOCS%%share/doc/gxmame-0.33/COPYING
+%%PORTDOCS%%share/doc/gxmame-0.33/ChangeLog
+%%PORTDOCS%%share/doc/gxmame-0.33/NEWS
+%%PORTDOCS%%share/doc/gxmame-0.33/README
+%%PORTDOCS%%share/doc/gxmame-0.33/TODO
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc-1.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc-2.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc.2.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc-3.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc-4.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc-5.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gxmame-doc-6.html
+%%PORTDOCS%%share/doc/gxmame-0.33/html/gui/metal2.jpg
+%%PORTDOCS%%share/doc/gxmame-0.33/html/includes/gxmame.css
+%%PORTDOCS%%@dirrm share/doc/gxmame-0.33/html/includes
+%%PORTDOCS%%@dirrm share/doc/gxmame-0.33/html/gui
+%%PORTDOCS%%@dirrm share/doc/gxmame-0.33/html
+%%PORTDOCS%%@dirrm share/doc/gxmame-0.33

@@ -27,6 +27,7 @@
     SUBDIR += gnuboy
     SUBDIR += grustibus
     SUBDIR += gsnes9x
+    SUBDIR += gxmame
     SUBDIR += hercules
     SUBDIR += hfs
     SUBDIR += hfsutils
