@@ -5,6 +5,7 @@ etc/sane.d/abaton.conf
 etc/sane.d/agfafocus.conf
 etc/sane.d/apple.conf
 etc/sane.d/artec.conf
+etc/sane.d/avision.conf
 etc/sane.d/coolscan.conf
 etc/sane.d/dc210.conf
 etc/sane.d/dc25.conf
@@ -12,6 +13,7 @@ etc/sane.d/dll.conf
 etc/sane.d/dmc.conf
 etc/sane.d/epson.conf
 etc/sane.d/hp.conf
+etc/sane.d/m3096g.conf
 etc/sane.d/microtek.conf
 etc/sane.d/microtek2.conf
 etc/sane.d/mustek.conf
@@ -21,6 +23,7 @@ etc/sane.d/s9036.conf
 etc/sane.d/saned.conf
 etc/sane.d/sharp.conf
 etc/sane.d/snapscan.conf
+etc/sane.d/sp15c.conf
 etc/sane.d/tamarack.conf
 etc/sane.d/umax.conf
 include/sane/config.h
@@ -49,6 +52,9 @@ lib/sane/libsane-apple.so.1
 lib/sane/libsane-artec.a
 lib/sane/libsane-artec.so
 lib/sane/libsane-artec.so.1
+lib/sane/libsane-avision.a
+lib/sane/libsane-avision.so
+lib/sane/libsane-avision.so.1
 lib/sane/libsane-canon.a
 lib/sane/libsane-canon.so
 lib/sane/libsane-canon.so.1
@@ -73,6 +79,9 @@ lib/sane/libsane-epson.so.1
 lib/sane/libsane-hp.a
 lib/sane/libsane-hp.so
 lib/sane/libsane-hp.so.1
+lib/sane/libsane-m3096g.a
+lib/sane/libsane-m3096g.so
+lib/sane/libsane-m3096g.so.1
 lib/sane/libsane-microtek.a
 lib/sane/libsane-microtek.so
 lib/sane/libsane-microtek.so.1
@@ -100,14 +109,17 @@ lib/sane/libsane-sharp.so.1
 lib/sane/libsane-snapscan.a
 lib/sane/libsane-snapscan.so
 lib/sane/libsane-snapscan.so.1
+lib/sane/libsane-sp15c.a
+lib/sane/libsane-sp15c.so
+lib/sane/libsane-sp15c.so.1
 lib/sane/libsane-tamarack.a
 lib/sane/libsane-tamarack.so
 lib/sane/libsane-tamarack.so.1
 lib/sane/libsane-umax.a
 lib/sane/libsane-umax.so
 lib/sane/libsane-umax.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
 sbin/saned
 share/sane-style.rc
 @dirrm lib/sane

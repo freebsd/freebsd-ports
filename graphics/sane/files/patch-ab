@@ -1,0 +1,14 @@
+--- backend/artec.c.orig	Sun Mar  5 22:40:43 2000
++++ backend/artec.c	Wed Apr 19 06:00:00 2000
+@@ -3238,7 +3238,11 @@
+   if (DBG_LEVEL == 101)
+     {
+       debug_fd = open ("artec.data.raw",
++#ifdef __FreeBSD__
++		       O_WRONLY | O_CREAT | O_TRUNC, 0666);
++#else
+ 		       O_WRONLY | O_CREAT | O_TRUNC | O_SYNC, 0666);
++#endif
+       if (debug_fd > -1)
+ 	DBG (101, "opened artec.data.raw output file\n");
+     }
