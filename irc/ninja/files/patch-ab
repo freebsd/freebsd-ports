@@ -1,0 +1,11 @@
+--- configure.orig	Tue Apr 13 23:49:03 1999
++++ configure	Tue Apr 13 23:49:19 1999
+@@ -3741,7 +3741,7 @@
+ 
+ if test ! -n "$IRCLIB";
+ then
+-	IRCLIB=\${prefix}/lib/ninja
++	IRCLIB=\${prefix}/share/ninja
+ fi
+ 
+ if test -n "$nextstep"; then
