@@ -1,0 +1,11 @@
+--- installp.py	Sat Mar 20 02:34:29 1999
++++ installp.py.orig	Sat Mar 20 02:33:44 1999
+@@ -14,7 +14,7 @@
+         print "Usage: %s [-f] pymodule [npymodule...]" % sys.argv[0]
+         sys.exit(1)
+     for opt in opts:
+-        if opt == '-f': FORCE = 1
++        if opt[0] == '-f': FORCE = 1
+ 
+     v = sys.version[:3]
+ 

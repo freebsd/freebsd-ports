@@ -1,0 +1,15 @@
+From the README:
+
+ HTMLgen is a class library for the generation of HTML documents with
+ Python scripts. It's used when you want to create HTML pages
+ containing information which changes from time to time. For example
+ you might want to have a page which provides an overall system summary
+ of data collected nightly. Or maybe you have a catalog of data and
+ images that you would like formed into a spiffy set of web pages for
+ the world to browse. Python is a great scripting language for these
+ tasks and with HTMLgen it's very straightforward to construct objects
+ which are rendered into consistently structured web pages. Of course,
+ CGI scripts written in Python can take advantage of these classes as
+ well.
+
+Jacques Vidrine <nectar@FreeBSD.ORG>
