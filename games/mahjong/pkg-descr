@@ -1,0 +1,17 @@
+This is a set of three programs which provide a networked Mah Jong
+program, together with a computer player. Thus the game can be played
+by four humans, by a human and three computer players, or any other
+combination. There is a server program, which handles the game - only
+one game, since I'm not trying to compete with Yahoo! and friends -,
+an X client to allow humans to play naturally, and a computer player.
+The version of Mah Jong is that generally called Chinese Classical.
+Of course, there are many variants within this; I intend to
+accommodate most of the more interesting variants via options, but
+this is future work. In the longer term, I might also be interested
+in adding Hong Kong and Japanese versions. I'm not interested in
+adding American versions, though somebody else might be. 
+
+WWW: http://www.stevens-bradfield.com/MahJong/
+
+-- Ying-Chieh Liao
+   ijliao@FreeBSD.org

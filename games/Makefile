@@ -119,6 +119,7 @@
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
+    SUBDIR += mahjong
     SUBDIR += mangband
     SUBDIR += merlin
     SUBDIR += mindfocus
