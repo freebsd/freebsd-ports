@@ -13,7 +13,7 @@ CATEGORIES=	science
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vis5d
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stephen@math.missouri.edu
 COMMENT=	An OpenGL-based volumetric visualization program for scientific datasets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
