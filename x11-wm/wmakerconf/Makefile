@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 
-MAINTAINER=	nc-rotherdo@netcologne.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A configuration tool for Window Maker
 
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm

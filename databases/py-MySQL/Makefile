@@ -13,7 +13,7 @@ MASTER_SITES=	http://web.tryc.on.ca/mysql/Downloads/Contrib/ \
 		http://mysql.netvisao.pt/Downloads/Contrib/
 DISTNAME=	MySQLmodule-${PORTVERSION}
 
-MAINTAINER=	nc-rotherdo@netcologne.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
