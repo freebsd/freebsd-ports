@@ -1,6 +1,6 @@
---- vdkbuilder/vdkb_acsupport.cc.orig	Mon Feb  7 16:42:58 2000
-+++ vdkbuilder/vdkb_acsupport.cc	Mon Feb  7 16:56:02 2000
-@@ -93,7 +93,7 @@
+--- vdkbuilder/vdkb_acsupport.cc.orig	Thu Feb 28 01:43:38 2002
++++ vdkbuilder/vdkb_acsupport.cc	Mon Nov 17 18:46:00 2003
+@@ -106,7 +106,7 @@
  	;
        else
  	{

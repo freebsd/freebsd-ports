@@ -1,0 +1,11 @@
+--- data/res/Makefile.in.bak	Mon May 19 18:01:38 2003
++++ data/res/Makefile.in	Mon Nov 17 18:24:27 2003
+@@ -231,7 +231,7 @@
+ install-exec-am:
+ install-exec: install-exec-am
+ 
+-install-data-am: install-IconsDATA install-vdkbdataDATA
++install-data-am: install-vdkbdataDATA
+ install-data: install-data-am
+ 
+ install-am: all-am
