@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
@@ -21,6 +21,10 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+
+CONFIGURE_ENV=	CFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 #
 # options available:
