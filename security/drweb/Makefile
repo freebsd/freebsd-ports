@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=	4.25
+PORTVERSION=    4.26
 CATEGORIES=	security
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	${PORTNAME}d-${PORTVERSION}-freebsd4
@@ -23,6 +23,7 @@ DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
 do-install:
 	-@${MKDIR} -v ${DRWEB_PREFIX}
+	@cd ${DRWEB_PREFIX}; ${RM} -f drw*.txt drw*.vdb drweb drwebd
 	${TAR} -xzf ${WRKSRC}/${DISTNAME}.tar.gz -C ${DRWEB_PREFIX} --exclude *.ini
 	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb32.ini | \
 		${SED} 's#__INSTALL_DIR__#${DRWEB_PREFIX}#' \

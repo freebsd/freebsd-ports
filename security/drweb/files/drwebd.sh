@@ -9,7 +9,6 @@ start)
 	if [ -x $drwebd ]; then
 	    echo -n ' drwebd'
 	    $drwebd
-	    /bin/chmod 660 /var/run/drwebd
 	fi
 	;;
 stop)

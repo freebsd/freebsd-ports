@@ -1,6 +1,9 @@
 drweb/CHANGES
 drweb/README
 drweb/README.RUS
+drweb/clients/cgp/README
+drweb/clients/cgp/readme.cgp
+drweb/clients/cgp/readme.cgp.rus
 drweb/clients/demo/drwebdc-demo.c
 drweb/clients/demo/drwebdc-demo.h
 drweb/clients/demo/drwebdc-demo.pl
@@ -11,25 +14,24 @@ drweb/clients/demo/drwebdc-lib.pl
 drweb/clients/demo/drwebdc-tools.c
 drweb/clients/demo/eicar.txt
 drweb/clients/demo/make-all.sh
-drweb/clients/drwebdc/ChangeLog
 drweb/clients/drwebdc/Makefile.unix.tmpl
-drweb/clients/drwebdc/Makefile.unix.tmpl2
 drweb/clients/drwebdc/Makefile.win
 drweb/clients/drwebdc/README
 drweb/clients/drwebdc/clean.bat
 drweb/clients/drwebdc/configure
+drweb/clients/drwebdc/drweb_cgp.c
 drweb/clients/drwebdc/drwebdc.c
 drweb/clients/drwebdc/dw_filter.c
 drweb/clients/drwebdc/dw_filter.h
 drweb/clients/drwebdc/dwf_main.c
-drweb/clients/drwebdc/eicar.com
 drweb/clients/drwebdc/make.bat
 drweb/clients/drwebdc/src/Makefile.unix.tmpl
-drweb/clients/drwebdc/src/Makefile.unix.tmpl2
 drweb/clients/drwebdc/src/Makefile.win
 drweb/clients/drwebdc/src/bsd_queue.h
-drweb/clients/drwebdc/src/clean.bat
+drweb/clients/drwebdc/src/dwc_err.c
 drweb/clients/drwebdc/src/dwc_err.h
+drweb/clients/drwebdc/src/dwc_event.c
+drweb/clients/drwebdc/src/dwc_event.h
 drweb/clients/drwebdc/src/dwc_ipc.c
 drweb/clients/drwebdc/src/dwc_ipc.h
 drweb/clients/drwebdc/src/dwc_lib.c
@@ -37,15 +39,19 @@ drweb/clients/drwebdc/src/dwc_lib.h
 drweb/clients/drwebdc/src/dwc_log.c
 drweb/clients/drwebdc/src/dwc_log.h
 drweb/clients/drwebdc/src/dwc_macro.h
+drweb/clients/drwebdc/src/dwc_mutex.c
+drweb/clients/drwebdc/src/dwc_mutex.h
 drweb/clients/drwebdc/src/dwc_scan.h
 drweb/clients/drwebdc/src/dwc_tcp.c
 drweb/clients/drwebdc/src/dwc_tcp.h
+drweb/clients/drwebdc/src/dwc_thread.c
+drweb/clients/drwebdc/src/dwc_thread.h
 drweb/clients/drwebdc/src/dwc_timo.c
 drweb/clients/drwebdc/src/dwc_timo.h
 drweb/clients/drwebdc/src/dwc_type.h
 drweb/clients/drwebdc/src/dwc_unix.c
 drweb/clients/drwebdc/src/dwc_unix.h
-drweb/clients/drwebdc/src/make.bat
+drweb/clients/exim/drweb_exim.sh
 drweb/clients/exim/readme.exim
 drweb/clients/exim/readme.exim.rus
 drweb/clients/postfix/drweb_postfix.pl
@@ -54,13 +60,22 @@ drweb/clients/postfix/readme.postfix
 drweb/clients/postfix/readme.postfix.rus
 drweb/clients/qmail/drweb_qmail.pl
 drweb/clients/qmail/qmail-scanner-0.96.patch
+drweb/clients/qmail/qmail-scanner-1.00.patch
 drweb/clients/qmail/readme.qmail
 drweb/clients/qmail/readme.qmail.rus
+drweb/clients/qmail/sub-drweb.0.9x.pl
+drweb/clients/qmail/sub-drweb.1.00.pl
 drweb/clients/sendmail/README
+drweb/clients/sendmail/configure
+drweb/clients/sendmail/example-rus.sh
 drweb/clients/sendmail/example.sh
-drweb/clients/sendmail/listener.patch
+drweb/clients/sendmail/listener-8.11.1.patch
+drweb/clients/sendmail/listener-8.12.0.patch
 drweb/clients/sendmail/readme.sendmail
 drweb/clients/sendmail/readme.sendmail.rus
+drweb/clients/sendmail/template.cf.addon
+drweb/clients/sendmail/template.initscript
+drweb/clients/sendmail/template.mc.addon
 drweb/doc/drweb-ini
 drweb/doc/drweb-ini.rus
 drweb/doc/drwebd-api
@@ -79,9 +94,8 @@ drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
 etc/rc.d/drwebd.sh-dist
+@dirrm drweb/clients/cgp
 @dirrm drweb/clients/demo
-@dirrm drweb/clients/drwebdc/include
-@dirrm drweb/clients/drwebdc/lib
 @dirrm drweb/clients/drwebdc/src
 @dirrm drweb/clients/drwebdc
 @dirrm drweb/clients/exim
