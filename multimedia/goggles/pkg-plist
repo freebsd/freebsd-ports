@@ -1,2 +1,4 @@
 bin/goggles
-bin/goggles_gui
+bin/ogle_gui_goggles
+%%DOCSDIR%%/goggles_manual.pdf
+@dirrm %%DOCSDIR%%
