@@ -14,12 +14,12 @@
 
 prefix=%%PREFIX%%
 
-# Define these imapd_* variables in one of these files:
+# Define these cyrus_imapd_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/cyrus_imapd
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE 
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 cyrus_imapd_enable="NO"				# Enable imapd
 #cyrus_imapd_program="${prefix}/cyrus/bin/master"	# Location of imapd
