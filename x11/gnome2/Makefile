@@ -3,7 +3,7 @@
 # Date created:		17 Aug 1998
 # Whom:			Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/10/30 06:32:40 asami Exp $
+# $Id: Makefile,v 1.3 1999/01/20 22:11:43 vanilla Exp $
 #
 
 DISTNAME=	gnome-0.99.3
@@ -20,7 +20,6 @@ LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs \
 #		gxsnmp.1:${PORTSDIR}/sysutils/gnomeadmin
 RUN_DEPENDS=	gcalc:${PORTSDIR}/misc/gnomeutils \
 		ElectricEyes:${PORTSDIR}/graphics/electriceyes \
-#		ggv:${PORTSDIR}/print/ggv \
 		gtop:${PORTSDIR}/sysutils/gtop \
 		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gnomecard:${PORTSDIR}/deskutils/gnomepim \
