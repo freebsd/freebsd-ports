@@ -1,0 +1,11 @@
+--- modules/Makefile.in.orig	Wed Mar 28 01:37:00 2001
++++ modules/Makefile.in	Wed Mar 28 01:37:11 2001
+@@ -118,7 +118,7 @@
+ # Chat_la_LDFLAGS = -dynamic -export-dynamic -module -version-info 0:1:0
+ 
+ App_la_SOURCES = app.h app.cc
+-App_la_LDFLAGS = -dynamic -export-dynamic -module -version-info 0:1:0 -lSDL
++App_la_LDFLAGS = -dynamic -export-dynamic -module -version-info 0:1:0 -lSDL-1.1 -L/usr/local/lib
+ 
+ Gui_la_SOURCES = gui.h gui.cc  
+ Gui_la_LDFLAGS = -dynamic -export-dynamic -module -version-info 0:1:0

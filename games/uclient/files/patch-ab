@@ -1,0 +1,11 @@
+--- modules/app.cc.orig	Wed Mar 28 01:31:18 2001
++++ modules/app.cc	Wed Mar 28 01:31:29 2001
+@@ -32,7 +32,7 @@
+  * ... probably fixed in SDL > 1.1.6
+  */
+ extern "C" {
+-#include <SDL_version.h>
++#include <SDL/SDL_version.h>
+ }
+ 
+ #include <varconf/Config.h>
