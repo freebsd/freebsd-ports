@@ -88,11 +88,11 @@ PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
-PYTHON_DISTFILE=	Python-2.1.tgz
+PYTHON_DISTFILE=	Python-2.1.1.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
-PYTHON_REL=			210
+PYTHON_REL=			211
 PYTHON_SUFFIX=		# empty, default version
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.1
+PYTHON_WRKSRC=		${WRKDIR}/Python-2.1.1
 
 # Python-2.0
 .elif ${PYTHON_VERSION} == "python2.0"

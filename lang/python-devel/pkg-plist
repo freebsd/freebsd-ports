@@ -1336,6 +1336,7 @@ lib/%%PYTHON_VERSION%%/test/output/test_md5
 lib/%%PYTHON_VERSION%%/test/output/test_mimetools
 lib/%%PYTHON_VERSION%%/test/output/test_minidom
 lib/%%PYTHON_VERSION%%/test/output/test_mmap
+lib/%%PYTHON_VERSION%%/test/output/test_mutants
 lib/%%PYTHON_VERSION%%/test/output/test_new
 lib/%%PYTHON_VERSION%%/test/output/test_nis
 lib/%%PYTHON_VERSION%%/test/output/test_ntpath
@@ -1365,6 +1366,7 @@ lib/%%PYTHON_VERSION%%/test/output/test_select
 lib/%%PYTHON_VERSION%%/test/output/test_sha
 lib/%%PYTHON_VERSION%%/test/output/test_signal
 lib/%%PYTHON_VERSION%%/test/output/test_socket
+lib/%%PYTHON_VERSION%%/test/output/test_socketserver
 lib/%%PYTHON_VERSION%%/test/output/test_sre
 lib/%%PYTHON_VERSION%%/test/output/test_strftime
 lib/%%PYTHON_VERSION%%/test/output/test_string
@@ -1668,6 +1670,9 @@ lib/%%PYTHON_VERSION%%/test/test_minidom.pyo
 lib/%%PYTHON_VERSION%%/test/test_mmap.py
 lib/%%PYTHON_VERSION%%/test/test_mmap.pyc
 lib/%%PYTHON_VERSION%%/test/test_mmap.pyo
+lib/%%PYTHON_VERSION%%/test/test_mutants.py
+lib/%%PYTHON_VERSION%%/test/test_mutants.pyc
+lib/%%PYTHON_VERSION%%/test/test_mutants.pyo
 lib/%%PYTHON_VERSION%%/test/test_new.py
 lib/%%PYTHON_VERSION%%/test/test_new.pyc
 lib/%%PYTHON_VERSION%%/test/test_new.pyo
@@ -1755,6 +1760,9 @@ lib/%%PYTHON_VERSION%%/test/test_signal.pyo
 lib/%%PYTHON_VERSION%%/test/test_socket.py
 lib/%%PYTHON_VERSION%%/test/test_socket.pyc
 lib/%%PYTHON_VERSION%%/test/test_socket.pyo
+lib/%%PYTHON_VERSION%%/test/test_socketserver.py
+lib/%%PYTHON_VERSION%%/test/test_socketserver.pyc
+lib/%%PYTHON_VERSION%%/test/test_socketserver.pyo
 lib/%%PYTHON_VERSION%%/test/test_sre.py
 lib/%%PYTHON_VERSION%%/test/test_sre.pyc
 lib/%%PYTHON_VERSION%%/test/test_sre.pyo
