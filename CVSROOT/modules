@@ -5711,6 +5711,7 @@ py-reportlab	ports/print/py-reportlab
 py-reverse	ports/devel/py-reverse
 py-rijndael	ports/security/py-rijndael
 py-ro		ports/devel/py-ro
+py-rxp		ports/textproc/py-rxp
 py-scientific	ports/math/py-scientific
 py-serial	ports/comms/py-serial
 py-sgrep	ports/textproc/py-sgrep
