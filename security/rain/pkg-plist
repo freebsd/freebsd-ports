@@ -2,7 +2,6 @@ bin/rain
 %%PORTDOCS%%share/doc/rain/BUGS
 %%PORTDOCS%%share/doc/rain/CHANGES
 %%PORTDOCS%%share/doc/rain/DISCLAIMER
-%%PORTDOCS%%share/doc/rain/EXAMPLES
 %%PORTDOCS%%share/doc/rain/README
 %%PORTDOCS%%share/doc/rain/TODO
 %%PORTDOCS%%@dirrm share/doc/rain
