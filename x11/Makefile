@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zclock
 
     SUBDIR += 9term
     SUBDIR += XFree86
