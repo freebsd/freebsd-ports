@@ -9,6 +9,7 @@ PORTNAME=	phpeclipse_phphelp
 PORTVERSION=	1.0.4
 CATEGORIES=	java editors devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	phpeclipse
 DISTNAME=	net.sourceforge.phpeclipse.phphelp_${PORTVERSION}
 
 MAINTAINER=	rtdean@cytherianage.net
