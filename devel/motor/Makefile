@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	motor
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	devel
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -18,6 +18,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+USE_REINPLACE=	yes
 
 MAN1=		motor.1
 
@@ -26,6 +27,12 @@ MAN1=		motor.1
 .if ${OSVERSION} < 400010
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/_G_config.h/d' 		\
+		${WRKSRC}/kkstrtext/conf.h		\
+		${WRKSRC}/kksystr/include/conf.h	\
+		${WRKSRC}/kkconsui/include/conf.h
 
 .if !defined(NOPORTDOCS)
 post-install:
