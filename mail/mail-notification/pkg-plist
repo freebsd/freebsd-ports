@@ -18,7 +18,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/mail-notification/remote/delay/%gconf.
 etc/gconf/schemas/mail-notification.schemas
 share/gnome/applications/mail-notification.desktop
 share/gnome/mail-notification/ui/about-icon.png
-share/gnome/mail-notification/ui/add-icon.png
 share/gnome/mail-notification/ui/add-pop3.glade
 share/gnome/mail-notification/ui/dialog.glade
 share/gnome/mail-notification/ui/logo.png
