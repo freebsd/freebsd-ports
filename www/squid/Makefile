@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.2-beta11
+# Version required:	1.2-beta14
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.37 1998/01/10 14:38:23 peter Exp $
+# $Id: Makefile,v 1.38 1998/01/21 03:06:06 peter Exp $
 #
 
-DISTNAME=	squid-1.2.beta11
-PKGNAME=	squid-1.2b11
+DISTNAME=	squid-1.2.beta14
+PKGNAME=	squid-1.2b14
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.2.beta/ \
@@ -16,15 +16,12 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.2.beta/
 EXTRACT_SUFX=	-src.tar.gz
 
-# Note, these are generated with CVS and the new patch does not correctly
-# apply them, so we have to force the new patch into better POSIX compliant
-# mode. See end of Makefile.  See also post-extract.
-PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
-PATCHFILES+=    1.2.beta11.patches
+#PATCH_SITES+=   http://squid.nlanr.net/Squid/1.2.beta/
+#PATCHFILES+=    1.2.beta14.patches
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.2b11
+DIST_SUBDIR=	squid1.2b14
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
@@ -33,9 +30,6 @@ STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
 
 # Some other configure options..
-# - Use hash function as store index, instead of URL (trades CPU for memory)
-#CONFIGURE_ARGS+= --enable-new-storekey=sha
-#CONFIGURE_ARGS+= --enable-new-storekey=md5
 #  - Use ASYNC disk I/O (Requires real pthreads, libc_r probably doesn't work)
 #CONFIGURE_ARGS+= --enable-async-io
 #  - Compile and use the malloc package from Doug Lea
@@ -67,10 +61,6 @@ MAKEFILE=	makefile
 #  - Show malloc statistics in cachemgr status pages
 #CONFIGURE_ARGS+= --enable-xmalloc-statistics
 
-# For the benefit of the new broken patch.
-post-extract:
-	touch ${WRKSRC}/lib/malloc-2.6.4.c
-
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
 .for file in cachemgr.cgi client dnsserver pinger squid
@@ -91,5 +81,5 @@ post-install:
 
 .include <bsd.port.mk>
 
-# Stupid GNU Make 2.5!!!
+# Put on peril sensitive sunglasses in case of stupid GNU make v2.5!
 PATCH:=         env POSIXLY_CORRECT=yes ${PATCH}
