@@ -28,7 +28,6 @@ BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

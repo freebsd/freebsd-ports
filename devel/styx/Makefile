@@ -17,7 +17,6 @@ MAINTAINER=	ijliao@FreeBSD.org
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
 		LIBS="-L${PREFIX}/lib -lgiconv"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/styx \

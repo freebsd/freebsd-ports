@@ -16,7 +16,6 @@ LIB_DEPENDS=	xmps.0:${PORTSDIR}/graphics/xmps \
 		intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GTK=	yes

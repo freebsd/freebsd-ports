@@ -16,7 +16,6 @@ MAINTAINER=	lev@serebryakov.spb.ru
 
 PATCH_STRIP=	-p1
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//}
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \

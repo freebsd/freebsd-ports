@@ -15,7 +15,6 @@ MAINTAINER=		greid@ukug.uk.freebsd.org
 
 LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 USE_LIBTOOL=		yes

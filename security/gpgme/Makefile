@@ -14,7 +14,6 @@ MAINTAINER=	teramoto@comm.eng.osaka-u.ac.jp
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

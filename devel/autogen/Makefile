@@ -18,7 +18,6 @@ BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 
 USE_GMAKE=	yes
 

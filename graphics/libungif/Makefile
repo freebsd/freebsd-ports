@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://prtr-13.ucsc.edu/pub/libungif/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 USE_LIBTOOL=	yes

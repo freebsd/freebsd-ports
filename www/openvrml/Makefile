@@ -16,7 +16,6 @@ MAINTAINER=	3d@freebsd.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg-prefix=${LOCALBASE} \
 		--with-png-prefix=${LOCALBASE} \
 		--with-MesaGL

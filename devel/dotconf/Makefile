@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.azzit.de/dotconf/download/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

@@ -18,7 +18,6 @@ LIB_DEPENDS=	wwwcore.1:${PORTSDIR}/www/libwww
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Frontier/Client.pm:${PORTSDIR}/net/p5-Frontier-RPC
 
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
 
 USE_GMAKE=	yes
 

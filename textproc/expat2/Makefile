@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	expat
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
