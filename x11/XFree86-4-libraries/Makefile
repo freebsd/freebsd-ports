@@ -21,7 +21,8 @@ IGNOREFILES=	Wraphelp.c
 
 PATCH_SITES=		${MASTER_SITE_XFREE:S/source//g}
 PATCH_SITE_SUBDIR=	${PORTVERSION}/fixes
-PATCHFILES=		4.2.0-xlib-i18n-module.patch
+PATCHFILES=		4.2.0-xlib-i18n-module.patch \
+			4.2.0-libGLU-bad-extern.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
