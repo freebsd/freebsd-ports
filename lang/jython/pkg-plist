@@ -1,5 +1,5 @@
-bin/jython
-etc/jython.reg
+@unexec rm -f %%LOCALBASE%%/bin/jython
+@unexec rm -f %%LOCALBASE%%/etc/jython.reg
 %%JYTHON_DIR%%/ACKNOWLEDGMENTS
 %%JYTHON_DIR%%/Demo/applet/ButtonDemo.py
 %%JYTHON_DIR%%/Demo/applet/ButtonFontDemo.py
@@ -44,10 +44,12 @@ etc/jython.reg
 %%JYTHON_DIR%%/Doc/jarray.html
 %%JYTHON_DIR%%/Doc/javadoc/allclasses-frame.html
 %%JYTHON_DIR%%/Doc/javadoc/allclasses-noframe.html
+%%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/DBApiType.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/DataHandler.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/Fetch.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/FilterDataHandler.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/JDBC20DataHandler.html
+%%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/Procedure.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/PyConnection.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/PyCursor.html
 %%JYTHON_DIR%%/Doc/javadoc/com/ziclix/python/sql/PyExtendedCursor.html
@@ -110,6 +112,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyMethod.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyModule.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyNone.html
+%%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyNotImplemented.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyObject.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyProxy.html
 %%JYTHON_DIR%%/Doc/javadoc/org/python/core/PyReflectedConstructor.html
@@ -411,6 +414,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/Lib/jreload.py
 %%JYTHON_DIR%%/Lib/jxxload_help/DiscardHelp.java
 %%JYTHON_DIR%%/Lib/jxxload_help/JavaLoaderFactory.java
+%%JYTHON_DIR%%/Lib/jxxload_help/Makefile
 %%JYTHON_DIR%%/Lib/jxxload_help/PackageManager.java
 %%JYTHON_DIR%%/Lib/jxxload_help/PathVFS.java
 %%JYTHON_DIR%%/Lib/jxxload_help/PathVFSJavaLoader.java
@@ -865,6 +869,7 @@ etc/jython.reg
 %%JYTHON_DIR%%/com/ziclix/python/sql/handler/MySQLDataHandler.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/handler/OracleDataHandler.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/handler/PostgresqlDataHandler.java
+%%JYTHON_DIR%%/com/ziclix/python/sql/handler/SQLServerDataHandler.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/handler/UpdateCountDataHandler.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/pipe/Pipe.java
 %%JYTHON_DIR%%/com/ziclix/python/sql/pipe/Sink.java
