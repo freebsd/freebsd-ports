@@ -7,27 +7,25 @@
 
 PORTNAME=	mdh
 PORTVERSION=	1.9.54
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gozer.org/my_stuff/gtk/gtk/mdh/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
-USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
+USE_GNOME=	gnometarget gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-BROKEN=		"fails checksum test"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

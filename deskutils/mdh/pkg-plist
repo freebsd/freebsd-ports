@@ -1,3 +1,3 @@
 bin/mdh
-%%PORTDOCS%%%%DATADIR%%/README
-%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
