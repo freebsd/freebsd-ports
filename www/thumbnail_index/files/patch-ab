@@ -1,5 +1,14 @@
 --- thumbnail_index.orig	Tue Aug 11 03:51:55 1998
-+++ thumbnail_index	Sat Jun 16 17:56:31 2001
++++ thumbnail_index	Tue Jun 10 13:04:55 2003
+@@ -99,7 +99,7 @@
+ subdir=.thumbnails
+ nindexname=/tmp/tinind.$$
+ stamp='This file produced by thumbnail_index - do not edit.'
+-cwd=`pwd`
++cwd=`/bin/pwd -L`
+ makefile=/tmp/timake.$$
+ infoscript=/tmp/tiinsc.$$
+ rm -f $nindexname $makefile $infoscript
 @@ -248,7 +248,7 @@
  EOF
  			)
