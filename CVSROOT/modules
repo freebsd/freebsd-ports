@@ -4072,6 +4072,7 @@ libudbc		ports/databases/libudbc
 libukcprog	ports/devel/libukcprog
 libungif	ports/graphics/libungif
 libunicode	ports/devel/libunicode
+libuninameslist	ports/textproc/libuninameslist
 libunp		ports/net/libunp
 libunpipc	ports/net/libunpipc
 libuta		ports/devel/libuta
