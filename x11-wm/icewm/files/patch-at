@@ -1,6 +1,6 @@
---- src/acpustatus.cc.orig	Sun Mar  9 04:37:52 2003
-+++ src/acpustatus.cc	Thu Apr 24 05:09:50 2003
-@@ -26,7 +26,16 @@
+--- src/acpustatus.cc.orig	Tue Aug 19 15:16:17 2003
++++ src/acpustatus.cc	Tue Aug 26 00:30:57 2003
+@@ -27,7 +27,16 @@
  
  #include "intl.h"
  
@@ -18,7 +18,7 @@
  
  #define UPDATE_INTERVAL 500
  
-@@ -49,13 +58,42 @@
+@@ -50,13 +59,42 @@
      color[IWM_SYS]  = new YColor(clrCpuSys);
      color[IWM_IDLE] = *clrCpuIdle
      		    ? new YColor(clrCpuIdle) : NULL;
@@ -62,7 +62,7 @@
      getStatus();
      updateStatus();
      updateToolTip();
-@@ -70,6 +108,13 @@
+@@ -71,6 +109,13 @@
      delete color[IWM_NICE]; color[IWM_NICE] = 0;
      delete color[IWM_SYS];  color[IWM_SYS]  = 0;
      delete color[IWM_IDLE]; color[IWM_IDLE] = 0;
@@ -76,7 +76,7 @@
  }
  
  void CPUStatus::paint(Graphics &g, const YRect &/*r*/) {
-@@ -80,13 +125,34 @@
+@@ -81,13 +126,34 @@
          int nice = cpu[i][IWM_NICE];
          int sys = cpu[i][IWM_SYS];
          int idle = cpu[i][IWM_IDLE];
@@ -103,7 +103,7 @@
 +#endif
              if (sys) {
 +#ifdef __FreeBSD__
-+                totald -= nice;
++                totald -= sys;
 +                n = (h * totald)/ total;
 +#else
                  n = (h * (total - sys)) / total; // check rounding
@@ -111,7 +111,20 @@
                  if (n >= y) n = y;
                  g.setColor(color[IWM_SYS]);
                  g.drawLine(i, y, i, n);
-@@ -102,7 +168,12 @@
+@@ -95,7 +161,12 @@
+             }
+ 
+             if (nice) {
++#ifdef __FreeBSD__
++                totald -= nice;
++                n = (h * totald)/ total;
++#else
+                 n = (h * (total - sys - nice))/ total;
++#endif
+                 if (n >= y) n = y;
+                 g.setColor(color[IWM_NICE]);
+                 g.drawLine(i, y, i, n);
+@@ -103,7 +174,12 @@
              }
  
              if (user) {
@@ -124,7 +137,7 @@
                  if (n >= y) n = y;
                  g.setColor(color[IWM_USER]);
                  g.drawLine(i, y, i, n);
-@@ -152,6 +223,14 @@
+@@ -153,6 +229,14 @@
      sprintf(load, _("CPU Load: %3.2f %3.2f %3.2f, %d processes."),
              l1, l5, l15, sys.procs);
      setToolTip(load);
@@ -139,7 +152,7 @@
  #endif
  }
  
-@@ -169,13 +248,43 @@
+@@ -170,13 +254,43 @@
          cpu[i - 1][IWM_NICE] = cpu[i][IWM_NICE];
          cpu[i - 1][IWM_SYS]  = cpu[i][IWM_SYS];
          cpu[i - 1][IWM_IDLE] = cpu[i][IWM_IDLE];
@@ -184,7 +197,7 @@
      char *p, buf[128];
      long cur[IWM_STATES];
      int len, fd = open("/proc/stat", O_RDONLY);
-@@ -209,8 +318,8 @@
+@@ -210,8 +324,8 @@
              cpu[taskBarCPUSamples-1][IWM_USER], cpu[taskBarCPUSamples-1][IWM_NICE],
              cpu[taskBarCPUSamples-1][IWM_SYS],  cpu[taskBarCPUSamples-1][IDLE]);
  #endif
