@@ -672,6 +672,7 @@
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Info
+    SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-OLE-Storage_Lite
     SUBDIR += p5-ORBit

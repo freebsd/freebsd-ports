@@ -1,0 +1,12 @@
+p5-Module-Reload
+================
+
+Similar to Apache::Reload, this module allows a running perl program to reload
+all its libraries.  Very useful for developing perl servers.
+
+When Perl pulls a file via require, it stores the filename in the global hash
+%INC.  The next time Perl tries to 'require' the same file, it sees the file in
+%INC and does not reload from disk.  This module's handler iterates over %INC
+and reloads the file if it has changed on disk.
+
+WWW: http://search.cpan.org/dist/Module-Reload/
