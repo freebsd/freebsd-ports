@@ -325,6 +325,7 @@
     SUBDIR += tund
     SUBDIR += unison
     SUBDIR += vnc
+    SUBDIR += vrrp
     SUBDIR += vtun
     SUBDIR += wais
     SUBDIR += wide-dhcp
