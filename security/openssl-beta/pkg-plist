@@ -165,6 +165,7 @@ include/stack.h
 include/txt_db.h
 include/x509.h
 include/x509_vfy.h
+lib/libRSAglue.a
 lib/libcrypto.a
 @exec ranlib %D/%F
 lib/libssl.a

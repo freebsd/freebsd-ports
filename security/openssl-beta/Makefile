@@ -3,7 +3,7 @@
 # Date created:		15 Aug 1997
 # Whom:			markm@freebsd.org
 #
-# $Id: Makefile,v 1.12 1997/08/16 10:24:56 andreas Exp $
+# $Id: Makefile,v 1.13 1997/08/16 10:51:04 andreas Exp $
 
 DISTNAME=		SSLeay-0.8.1
 CATEGORIES=		devel security
@@ -33,6 +33,8 @@ post-configure:
 .endif
 
 post-install:
+	# needed to build apache-ssl port
+	${CP} ${WRKSRC}/libRSAglue.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/SSLeay
 	@${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/SSLeay
