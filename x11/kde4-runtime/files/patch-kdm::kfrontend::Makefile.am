@@ -1,0 +1,15 @@
+--- kdm/kfrontend/Makefile.am.~1.21.~	Sun Jul 29 00:56:28 2001
++++ kdm/kfrontend/Makefile.am	Mon Dec 10 01:08:15 2001
+@@ -25,10 +25,8 @@
+ genkdmconf_LDADD = $(LIB_X11)
+ 
+ install-data-local:
+-	@if test ! -d $(DESTDIR)$(kde_confdir)/kdm; then \
+-	    $(mkinstalldirs) $(DESTDIR)$(kde_confdir)/kdm; \
+-	    ./genkdmconf --in $(DESTDIR)$(kde_confdir)/kdm; \
+-	fi
++	-$(mkinstalldirs) $(DESTDIR)$(kde_confdir)/kdm
++	./genkdmconf --no-old --in $(DESTDIR)$(kde_confdir)/kdm
+ 
+ messages:
+ 	$(XGETTEXT) $(kdm_greet_SOURCES) -o $(podir)/kdmgreet.pot

@@ -1,5 +1,5 @@
---- kdm/kfrontend/genkdmconf.c.orig	Wed Sep  5 08:15:47 2001
-+++ kdm/kfrontend/genkdmconf.c	Tue Oct 23 04:04:22 2001
+--- kdm/kfrontend/genkdmconf.c.orig	Mon Nov  5 21:40:03 2001
++++ kdm/kfrontend/genkdmconf.c	Sun Dec  9 22:42:26 2001
 @@ -212,7 +212,7 @@
   */
  
@@ -27,3 +27,12 @@
  "-x " KDMCONF "/Xservers "
  #endif
  "$USER\n"
+@@ -1781,7 +1781,7 @@
+     }
+     addKdePath ("UserPath", DEF_USER_PATH);
+     addKdePath ("SystemPath", DEF_SYSTEM_PATH);
+-    ASPrintf (&newkdmrc, "%s/kdmrc", newdir);
++    ASPrintf (&newkdmrc, "%s/kdmrc.dist", newdir);
+     f = Create (newkdmrc, kdmrcmode);
+     wrconf (f);
+     fclose (f);

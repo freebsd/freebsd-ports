@@ -1,15 +1,11 @@
---- ksysguard/ksysguardd/FreeBSD/ksysguardd.c	2001/11/17 02:01:46	1.5
-+++ ksysguard/ksysguardd/FreeBSD/ksysguardd.c	2001/11/17 06:16:15	1.6
-@@ -17,9 +17,11 @@
-     along with this program; if not, write to the Free Software
-     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+--- ksysguard/ksysguardd/FreeBSD/ksysguardd.c.orig	Sat Nov 10 00:17:04 2001
++++ ksysguard/ksysguardd/FreeBSD/ksysguardd.c	Sun Dec  9 22:26:48 2001
+@@ -37,6 +37,8 @@
+ #include <sys/wait.h>
+ #include <unistd.h>
  
--	$Id: ksysguardd.c,v 1.2.6.1 2001/11/08 10:48:51 tokoe Exp $
-+	$Id: ksysguardd.c,v 1.6 2001/11/17 06:16:15 waba Exp $
- */
- 
-+#include <config.h>
++#include "config.h"
 +
- #include <ctype.h>
- #include <fcntl.h>
- #include <netdb.h>
+ #include "CPU.h"
+ #include "Command.h"
+ #include "Memory.h"
