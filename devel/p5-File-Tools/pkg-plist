@@ -1,0 +1,6 @@
+lib/perl5/man/man3/File::Copy.3.gz
+lib/perl5/man/man3/File::Recurse.3.gz
+lib/perl5/man/man3/File::Tools.3.gz
+lib/perl5/site_perl/File/Copy.pm
+lib/perl5/site_perl/File/Recurse.pm
+lib/perl5/site_perl/File/Tools.pm
