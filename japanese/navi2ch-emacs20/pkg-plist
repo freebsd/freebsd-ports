@@ -56,6 +56,8 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-multibbs.elc
 %%LISPDIR%%/navi2ch/navi2ch-net.el
 %%LISPDIR%%/navi2ch/navi2ch-net.elc
+%%LISPDIR%%/navi2ch/navi2ch-oyster.el
+%%LISPDIR%%/navi2ch/navi2ch-oyster.elc
 %%LISPDIR%%/navi2ch/navi2ch-popup-article.el
 %%LISPDIR%%/navi2ch/navi2ch-popup-article.elc
 %%LISPDIR%%/navi2ch/navi2ch-search.el
