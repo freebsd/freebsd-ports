@@ -24,15 +24,9 @@ RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net-mgmt/p5-SNMP_Session \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser \
 		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-INET6
 
-.if defined(WITH_GD1)
-LIB_DEPENDS=	gd1.2:${PORTSDIR}/graphics/gd1
-CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
-		--with-gd-inc=${LOCALBASE}/include/gd
-.else
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
-.endif
 
 USE_PERL5=	YES
 MAKE_ENV+=	PERL=${PERL}
@@ -48,11 +42,7 @@ MAN1=		cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 
 post-patch:
 	${RM} ${WRKSRC}/lib/mrtg2/BER.pm ${WRKSRC}/lib/mrtg2/SNMP_*.pm
-.if defined(WITH_GD1)
-	${PERL} -pi -e 's:%%GD%%:-lgd1:g' ${WRKSRC}/configure
-.else
 	${PERL} -pi -e 's:%%GD%%:-lgd:g' ${WRKSRC}/configure
-.endif
 
 do-install:
 		${MKDIR} -m 755 ${PREFIX}/etc/mrtg
