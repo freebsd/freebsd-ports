@@ -1,6 +1,6 @@
 --- configure.in.orig	Fri Oct 19 23:09:18 2001
 +++ configure.in	Mon Oct 22 21:19:32 2001
-@@ -179,6 +179,15 @@
+@@ -179,6 +179,16 @@
  machine='' opsys='' unported=no
  case "${canonical}" in
  
@@ -10,6 +10,7 @@
 +    case "${canonical}" in
 +      alpha*-*-freebsd*)       machine=alpha ;;
 +      i[3456]86-*-freebsd*)    machine=intel386 ;;
++      sparc64-*-freebsd*)      machine=sparc ;;
 +    esac
 +  ;;
 +
