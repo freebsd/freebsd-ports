@@ -6,6 +6,13 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041027:
+  AFFECTS: users of games/pcgen
+  AUTHOR: hq@FreeBSD.org
+
+  The launcher script for PCGen has been renamed to 'pcgen' (formerly
+  'pcgen.sh').
+
 20041024:
   AFFECTS: users of databases/mysql50-server
   AUTHOR: ale@FreeBSD.org
