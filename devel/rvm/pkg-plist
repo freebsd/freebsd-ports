@@ -3,20 +3,25 @@ include/rvm/rvm.h
 include/rvm/rvm_segment.h
 include/rvm/rvm_statistics.h
 lib/librds.a
+lib/librds.la
 lib/librds.so
 lib/librds.so.1
 lib/librdslwp.a
+lib/librdslwp.la
 lib/librdslwp.so
 lib/librdslwp.so.1
 lib/librvm.a
+lib/librvm.la 
 lib/librvm.so
 lib/librvm.so.1
 lib/librvmlwp.a
+lib/librvmlwp.la
 lib/librvmlwp.so
 lib/librvmlwp.so.1
-lib/libseg.a
+lib/libseg.a 
+lib/libseg.la
 lib/libseg.so
-lib/libseg.so.1
+lib/libseg.so.2
 sbin/rdsinit
 sbin/rvmutl
 @dirrm include/rvm

@@ -3,6 +3,7 @@ include/lwp/lwp.h
 include/lwp/preempt.h
 include/lwp/timer.h
 lib/liblwp.a
+lib/liblwp.la
 lib/liblwp.so
-lib/liblwp.so.1
+lib/liblwp.so.2
 @dirrm include/lwp
