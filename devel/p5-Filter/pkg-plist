@@ -1,9 +1,12 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Call.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/Util/Exec.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/cpp.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/cpp.pm.bak
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/decrypt.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/exec.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/exec.pm.bak
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/sh.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/sh.pm.bak
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Filter/tee.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Filter/Util/Call/Call.so
