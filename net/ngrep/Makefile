@@ -1,0 +1,27 @@
+# ex:ts=8
+# Ports collection makefile for:  ngrep
+# Version required:     	  1.35
+# Date created:			  Sat Jan 01, 2000
+# Whom:				  David O'Brien (obrien@NUXI.com)
+#
+# $FreeBSD$
+#
+
+DISTNAME=	ngrep-1.35
+CATEGORIES=	net security
+MASTER_SITES=	http://www.packetfactory.net/ngrep/
+
+MAINTAINER=     obrien@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/ngrep
+GNU_CONFIGURE=	yes
+ALL_TARGET=	ngrep
+MAN8=		ngrep.8
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/ngrep
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ngrep
+.endif
+
+.include <bsd.port.mk>
