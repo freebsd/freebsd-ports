@@ -1,0 +1,13 @@
+--- makefile.orig	Wed Jan 27 12:28:31 1999
++++ makefile	Wed Jan 27 12:29:14 1999
+@@ -9,8 +9,8 @@
+ # 1991, Prentice Hall, Englewood Cliffs, NJ, 07632
+ # Send bug-reports and/or questions to: gerard@research.bell-labs.com
+ 
+-CC=gcc -g			# or any other ansi compatible c compiler
+-CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
++# CC=gcc -g			# or any other ansi compatible c compiler
++# CFLAGS=-ansi -D_POSIX_SOURCE	# on some systems add: -I/usr/include
+ 
+ #	on Solaris:	add -DSOLARIS
+ #	on PCs:		add -DPC
