@@ -1,0 +1,11 @@
+--- Muttrc.in.original	Wed Jul 22 10:47:49 1998
++++ Muttrc.in	Wed Jul 22 10:48:02 1998
+@@ -60,7 +60,7 @@
+ # unset fcc_attach
+ # set folder="~/Mail"
+ # set folder_format="%N %F %2l %-8.8u %-8.8g %8s %d %f"
+-# set followup_to
++unset followup_to
+ # unset force_name
+ # set forward_decode
+ # set forward_format="[%a: %s]"
