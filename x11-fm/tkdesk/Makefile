@@ -3,7 +3,7 @@
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/02 19:57:31 chuckr Exp $
 #
 
 DISTNAME=	tkdesk-1.0b2
@@ -16,8 +16,7 @@ MAINTAINER=	shanee@rabbit.augusta.de
 
 EXTRACT_ONLY=	tkdesk-1.0b2.tar.gz
 
-LIB_DEPENDS=	tcl75\\.1\\.:${PORTSDIR}/lang/tcl75 \
-		tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 post-extract:
 	cd ${WRKDIR}/tkdesk-1.0b2/tcldesk/;tar -xzf $(DISTDIR)/sounds.tar.gz
