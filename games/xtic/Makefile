@@ -18,4 +18,7 @@ USE_IMAKE=      yes
 USE_XPM=	yes
 MAN1=		xtic.1
 
+post-patch:
+	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/configure.h
+
 .include <bsd.port.mk>
