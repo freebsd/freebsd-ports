@@ -1,5 +1,5 @@
-*** env/command.scm.original    Tue Nov 26 15:59:38 1996
---- env/command.scm     Tue Nov 26 15:59:46 1996
+*** scheme/env/command.scm.original    Tue Nov 26 15:59:38 1996
+--- scheme/env/command.scm     Tue Nov 26 15:59:46 1996
 ***************
 *** 546,552 ****
                 ((char=? (string-ref line 0) #\n) #f)
