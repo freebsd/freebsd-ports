@@ -1,0 +1,50 @@
+--- bt_ex.c.orig	Thu May 14 09:10:37 1992
++++ bt_ex.c	Tue Apr  8 15:26:22 1997
+@@ -212,7 +212,8 @@
+ 
+ 
+ #define TOLOWER(c) (isupper(c)?tolower(c):(c))
+- 
++
++#ifndef HAVE_STRCASECMP
+ int
+ strcasecmp(s1,s2)
+      char *s1, *s2;
+@@ -252,6 +253,8 @@
+     return(0);
+ }
+ 
++#endif
++
+ /* strstr - find first occurrence of wanted in s
+    Copyright (C) 1989, Free Software Foundation.
+    
+@@ -261,6 +264,7 @@
+ #define CONST
+ #define SIZET int
+ 
++#ifndef HAVE_STRSTR
+ #define	NULL	0
+ 
+ char *				/* found string, or NULL if none */
+@@ -286,7 +290,7 @@
+ 	return(NULL);
+     return(scan);
+ }
+-
++#endif
+ 
+ char *				/*A case insensitive version */
+   strcasestr(s, wanted)
+@@ -640,9 +644,11 @@
+ /* limit for ATTR_LIST including a pad */
+ #define MAX_XVIEW_ATTRIBUTES    (255 - 20)
+ 
++#if !(defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__) || defined(__bsdi__))
+ extern char *malloc();
+ extern int free();
+ extern int strcmp();
++#endif
+ 
+ void
+ ReassignListEntries(list, entries)
