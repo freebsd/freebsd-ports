@@ -3,15 +3,14 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1998/02/07 20:50:19 se Exp $
+# $Id: Makefile,v 1.6 1998/02/15 22:23:46 se Exp $
 #
 
 DISTNAME=	kdeutils-Beta3-1
 PKGNAME=	kdeutils-3.1b
 CATEGORIES=	misc kde
-MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/stable/Beta3/distribution/tgz/source/ \
-		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta3/distribution/tgz/source/ \
-		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta3/distribution/tgz/source/
+MASTER_SITES=	$(MASTER_SITE_KDE)
+MASTER_SITE_SUBDIR= stable/Beta3/distribution/tgz/source 
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	se@freebsd.org

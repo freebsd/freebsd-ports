@@ -3,14 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id:$
+# $Id: Makefile,v 1.3 1998/03/04 23:22:01 se Exp $
 #
 
 DISTNAME=	kdemultimedia-Beta3-1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.net.lut.ac.uk/kde/stable/Beta3/distribution/tgz/source/ \
- 		ftp://ftp.uni-erlangen.de/pub/Linux/MIRROR.KDE/stable/Beta3/distribution/tgz/source/ \
- 		ftp://ftp.caldera.com/pub/mirrors/kde/stable/Beta3/distribution/tgz/source/
+MASTER_SITES=	$(MASTER_SITE_KDE)
+MASTER_SITE_SUBDIR= stable/Beta3/distribution/tgz/source
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	se@freebsd.org
