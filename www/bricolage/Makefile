@@ -46,8 +46,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${BUILD_DEPENDS}
 
-BROKEN=		Incorrect pkg-plist
-
 APXS?=		${LOCALBASE}/sbin/apxs
 
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
@@ -230,6 +228,10 @@ post-patch:
 		-e "s,%%SITE_PERL_REL%%,${SITE_PERL_REL},g" \
 		-e "s,%%MAN3PREFIX%%,${MAN3PREFIX},g" \
 		-e "s,%%MAN1PREFIX%%,${MAN1PREFIX},g" ${WRKSRC}/inst/config.pl
+
+post-configure:
+	@cd ${WRKSRC}/ && \
+		${PERL5} -pi -e 's/ install$$/ all pure_install/' Makefile
 
 # Install SQL file, upgrade files, and display pkg-message
 post-install:
