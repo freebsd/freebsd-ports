@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/xbuffy/
 DISTNAME=	${PORTNAME}-3.3.bl.3
 
-MAINTAINER=	ginga@athena.club.ne.jp
+MAINTAINER=	ginga-freebsd@ginganet.org
 COMMENT=	A replacement for xbiff that handles multiple mail files
 
 USE_X_PREFIX=	yes
