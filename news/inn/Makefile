@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	inn-2.2.1
+DISTNAME=	inn-2.2.2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
