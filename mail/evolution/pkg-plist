@@ -1,5 +1,6 @@
 bin/evolution
 bin/evolution-%%VERSION%%
+etc/rc.d/000.evolibs.sh
 include/evolution-%%VERSION%%/calendar/gui/e-cal-config.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-map.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-util.h
