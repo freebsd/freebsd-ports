@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Sun Jun  6 01:25:02 2004
++++ src/Makefile.in	Sun Jun  6 01:25:09 2004
+@@ -97,8 +97,8 @@
+ 
+ MDNSD_FILES = 1035.h mdnsd.h 1035.c mdnsd.c
+ 
+-CFLAGS = $(GOBJECT_CFLAGS) -Wall -Werror -g
+-LDFLAGS = $(GOBJECT_LIBS)
++CFLAGS += $(GOBJECT_CFLAGS) -Wall -Werror -g
++LDFLAGS += $(GOBJECT_LIBS)
+ 
+ lib_LTLIBRARIES = libgmdns.la
+ 

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jun  6 01:17:16 2004
++++ Makefile.in	Sun Jun  6 01:17:21 2004
+@@ -93,7 +93,7 @@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = src test
++SUBDIRS = src
+ 
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gmdns.pc
