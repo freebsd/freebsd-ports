@@ -8,8 +8,7 @@
 PORTNAME=	opengl
 PORTVERSION=	0.32
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://www.ruby-lang.org/~knu/
-#MASTER_SITES=	http://www2.giganet.net/~yoshi/
+MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	rbogl-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
