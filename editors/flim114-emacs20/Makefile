@@ -46,6 +46,10 @@ PLIST_SUB+=	FLIMDOCDIR=${FLIMDOCDIR} FLIM_SETUPEL=${FLIM_SETUPEL} \
 .if defined(EMACS_PACKAGESDIR)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/apel/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+.elif (${EMACS_PORT_NAME} == "xemacs") || (${EMACS_PORT_NAME} == "xemacs20")
+# depends on apel (case of xemacs-20.x or former)
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
 .else
 # depends on apel (case of other emacsen etc...)
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT_NAME}
