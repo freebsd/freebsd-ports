@@ -1,5 +1,5 @@
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/canna.so.%%DLCANNA_VER%%
-libexec/emacs/%%EMACS_VER%%/i386--freebsd/canna.so
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/canna.so.%%DLCANNA_VER%%
+libexec/emacs/%%EMACS_VER%%/%%EMACS_ARCH%%/canna.so
 %%LISPDIR%%/canna.el
 %%LISPDIR%%/canna.elc
 %%LISPDIR%%/canna-leim.el

@@ -3,7 +3,7 @@
 # Date created:		10 October 1998
 # Whom:			shige
 #
-# $Id: Makefile,v 1.3 1999/03/01 09:37:59 shige Exp $
+# $Id: Makefile,v 1.4 1999/03/17 21:47:10 shige Exp $
 #
 
 DISTNAME=	emacs-canna-${DLCANNA_VER}
@@ -26,8 +26,8 @@ CONFIGURE_ARGS=	--with-canna-includes=${PREFIX}/include \
 		--with-canna-libraries=${PREFIX}/lib \
 		--with-emacs-srcdir=${EMACSDL_SRCDIR}
 CONFIGURE_ENV=	EMACS="emacs-dl-${EMACS_VER}"
-PLIST_SUB=	EMACS_VER=${EMACS_VER} DLCANNA_VER=${DLCANNA_VER} \
-		LISPDIR=${LISPDIR} DOCDIR=${DOCDIR}
+PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${MACHINE_ARCH}--freebsd \
+		DLCANNA_VER=${DLCANNA_VER} LISPDIR=${LISPDIR} DOCDIR=${DOCDIR}
 
 # ports variables
 EMACS_VER=	20.3
