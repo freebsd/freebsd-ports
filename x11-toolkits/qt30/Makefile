@@ -1,12 +1,12 @@
 # New ports collection makefile for:   qt
-# Version required:	1.31
+# Version required:	1.42
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.28 1998/11/22 10:05:13 asami Exp $
+# $Id: Makefile,v 1.29 1998/11/23 17:41:10 andreas Exp $
 #
 
-DISTNAME=	qt-${MAJ}.${MIN}
+DISTNAME=	qt-1.42
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
@@ -14,11 +14,17 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
-MAJ=		1
-MIN=		41
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 MAKE_ENV=	QTDIR=${WRKSRC}
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	2
+.else
+VERSION=	2.0
+.endif
 
 MAN1=	moc.1
 MAN3=   QAccel.3qt QApplication.3qt QArray.3qt QAsyncIO.3qt \
@@ -117,26 +123,16 @@ post-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-shared
 
 do-install:
-	${INSTALL_PROGRAM} $(WRKDIR)/qt-${MAJ}.${MIN}/bin/moc $(PREFIX)/bin
-	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${VERSION} \
-		$(PREFIX)/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/moc $(PREFIX)/bin
+	${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.${VERSION} $(PREFIX)/lib
 	${LN} -sf $(PREFIX)/lib/libqt.so.$(VERSION) $(PREFIX)/lib/libqt.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
 	${MKDIR} $(PREFIX)/include/X11/qt
-	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/include/* \
-		$(PREFIX)/include/X11/qt
-	${INSTALL_MAN} $(WRKDIR)/qt-${MAJ}.${MIN}/man/man1/* $(PREFIX)/man/man1
-	${INSTALL_MAN} $(WRKDIR)/qt-${MAJ}.${MIN}/man/man3/* $(PREFIX)/man/man3
+	${INSTALL_DATA} ${WRKSRC}/include/* $(PREFIX)/include/X11/qt
+	${INSTALL_MAN} ${WRKSRC}/man/man1/* $(PREFIX)/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man3/* $(PREFIX)/man/man3
 	${MKDIR} ${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKDIR}/qt-${MAJ}.${MIN}/README \
-		${PREFIX}/share/doc/qt
-	${INSTALL_DATA} ${WRKDIR}/qt-${MAJ}.${MIN}/README.QT \
-		${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKSRC}/README.QT ${PREFIX}/share/doc/qt
 
-.include <bsd.port.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-VERSION=	${MAJ}
-.else
-VERSION=	${MAJ}.${MIN}
-.endif
+.include <bsd.port.post.mk>
