@@ -1,0 +1,36 @@
+*** include/ptlib/unix/ptlib/videoio.h.orig	Mon Jan  6 18:41:08 2003
+--- include/ptlib/unix/ptlib/videoio.h	Tue Dec  2 09:42:10 2003
+***************
+*** 106,112 ****
+  #include <linux/videodev.h>     /* change this to "videodev2.h" for v4l2 */
+  #endif
+  
+! #if defined(P_FREEBSD)
+  #include <machine/ioctl_meteor.h>
+  #endif
+  
+--- 106,112 ----
+  #include <linux/videodev.h>     /* change this to "videodev2.h" for v4l2 */
+  #endif
+  
+! #if defined(P_FREEBSD) && !defined(NO_VIDEO_CAPTURE)
+  #include <machine/ioctl_meteor.h>
+  #endif
+  
+***************
+*** 186,192 ****
+      struct video_mmap frameBuffer[2];
+  #endif
+  
+! #if defined(P_FREEBSD) || defined(P_OPENBSD) || defined(P_NETBSD)
+      struct video_capability
+      {
+          int channels;   /* Num channels */
+--- 186,192 ----
+      struct video_mmap frameBuffer[2];
+  #endif
+  
+! #if (defined(P_FREEBSD) || defined(P_OPENBSD) || defined(P_NETBSD)) && !defined(NO_VIDEO_CAPTURE)
+      struct video_capability
+      {
+          int channels;   /* Num channels */
