@@ -1,22 +1,10 @@
-
-$FreeBSD$
-
---- include/libxml/Makefile.in.orig	Wed Jul 11 10:26:41 2001
-+++ include/libxml/Makefile.in	Wed Jul 11 10:34:18 2001
-@@ -116,7 +116,7 @@
- Z_CFLAGS = @Z_CFLAGS@
- Z_LIBS = @Z_LIBS@
- 
--xmlincdir = $(includedir)/libxml
-+xmlincdir = $(includedir)/libxml2/libxml
- 
- xmlinc_HEADERS =  		SAX.h 		entities.h 		encoding.h 		parser.h 		parserInternals.h 		xmlerror.h 		HTMLparser.h 		HTMLtree.h 		debugXML.h 		tree.h 		list.h 		hash.h 		xpath.h 		xpathInternals.h 		xpointer.h 		xinclude.h 		xmlIO.h 		xmlmemory.h 		nanohttp.h 		nanoftp.h 		uri.h 		valid.h 		xlink.h 		xmlversion.h 		xmlwin32version.h 		DOCBparser.h 		catalog.h
- 
-@@ -275,7 +275,7 @@
+--- work/libxml2-2.4.5/include/libxml/Makefile.in.orig	Tue Sep 18 19:43:09 2001
++++ include/libxml/Makefile.in				Tue Sep 18 19:43:18 2001
+@@ -279,7 +279,7 @@
  
  
  install-exec-hook:
--	$(mkinstalldirs) $(DESTDIR)$(xmlincdir) $(DESTDIR)$(xmlincdir)/libxml
+-	$(mkinstalldirs) $(DESTDIR)$(xmlincdir)/libxml2 $(DESTDIR)$(xmlincdir)/libxml2/libxml
 +	$(mkinstalldirs) $(DESTDIR)$(xmlincdir)
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
