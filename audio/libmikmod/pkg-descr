@@ -1,6 +1,8 @@
-This is libmikmod, version 3.1.6, a portable sound library for Unix
-which is used by the mikmod port.
+libmikmod is a portable sound library for Unix.
 
-WWW: http://www.multimania.com/miodrag/mikmod/
+It is able to play the IT, XM, S3M, MTM, 669, STM, ULT, FAR, MED, AMF, DSM,
+IMF, GDM, STX, OKT and of course MOD module formats.
+
+WWW: http://www.mikmod.darkorb.net/
 
 - Michael <mharo@area51.fremont.ca.us>
