@@ -1,15 +1,17 @@
---- Makefile.orig	Mon Nov  6 17:30:23 2000
-+++ Makefile	Sat Dec 16 20:53:51 2000
-@@ -2,10 +2,9 @@
- # Copyright (c) 1998-2000 Decklin Foster <decklin@red-bean.com>
- # Free software! Please see README for details and license. --
+--- Makefile.orig	Mon Jan  1 21:43:57 2001
++++ Makefile	Sun Jan  7 13:40:03 2001
+@@ -25,12 +25,11 @@
+ 
+ # This should be set to the location of the X installation you want to
+ # compile against.
+-XROOT = /usr/X11R6
++XROOT = $(X11BASE)
+ 
+ # --------------------------------------------------------------------
  
 -CC       = gcc
 -CFLAGS   = -g -O2 -Wall
 +CC       ?= gcc
  
--XROOT    = $(DESTDIR)/usr/X11R6
-+XROOT    = $(X11BASE)
- INCLUDES = -I$(XROOT)/include
- LDPATH   = -L$(XROOT)/lib
- LIBS     = -lXext -lX11
+ BINDIR   = $(DESTDIR)$(XROOT)/bin
+ MANDIR   = $(DESTDIR)$(XROOT)/man/man1
