@@ -29,6 +29,12 @@ CONFIGURE_ENV=	FLTK_CONFIG="${FLTK_CONFIG}" \
 CFLAGS+=	-O3 -ffast-math
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
@@ -55,4 +61,4 @@ post-patch:
 		s,@FLTK_(C|CXX)FLAGS@,-I${X11BASE}/include,; \
 		s|-lpthread|${PTHREAD_LIBS}|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
