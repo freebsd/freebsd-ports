@@ -3,7 +3,7 @@
 # Date created:		2 June 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id: Makefile,v 1.5 1997/09/14 17:17:04 max Exp $
+# $Id: Makefile,v 1.6 1997/09/14 17:32:19 max Exp $
 #
 
 DISTNAME=	uudx_299
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	xqw=${WRKDIR}
 NO_WRKSUBDIR=	yes
-MANLANG=	ja_JP.EUC
+MANLANG=	ja
 MAN1=		uudx.1
 
 pre-patch:
