@@ -20,7 +20,8 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPARA paralell version of SDPA (math/sdpa)
 
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
-BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack
+BUILD_DEPENDS=	${LOCALBASE}/lib/libscalapack.a:${PORTSDIR}/math/scalapack \
+		${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
 RESTRICTED=	"unsure distribution condition"
 
