@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Jan 16 01:33:44 2005
++++ Makefile	Sun Jan 16 01:34:27 2005
+@@ -1,14 +1,11 @@
+ VERSION =	0.1
+ 
+-INCLUDE =	-I/usr/local/include/Sockets \
+-		-I/usr/local/include/libxml2 \
+-		-I/usr/local/ssl/include
++INCLUDE =
+ CFLAGS =	-Wall -g $(INCLUDE) -MD -D_VERSION='"$(VERSION)"'
+ CPPFLAGS =	$(CFLAGS)
+ 
+-LIBS =		-L/usr/local/lib -lSocketsEx -lSockets \
+-		-L/usr/local/ssl/lib \
+-		-lssl -lcrypto -luuid -lxml2
++LIBS =		-L/usr/local/lib \
++		-lSocketsEx -lSockets -lssl -lcrypto -lxml2
+ 
+ PROGS =		trackerbt
+ 
