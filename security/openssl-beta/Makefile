@@ -3,12 +3,16 @@
 # Date created:		15 Aug 1997
 # Whom:			markm@freebsd.org
 #
-# $Id: Makefile,v 1.20 1998/08/27 16:38:02 markm Exp $
+# $Id: Makefile,v 1.21 1998/09/25 10:20:20 asami Exp $
 #
 
 DISTNAME=		SSLeay-0.9.0b
 CATEGORIES=		devel security
-MASTER_SITES=		ftp://psych.psy.uq.oz.au/pub/Crypto/SSL/
+MASTER_SITES=		ftp://psych.psy.uq.oz.au/pub/Crypto/SSL/  \
+			ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/SSL/  \
+			ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.psy.uq.oz.au/pub/Crypto/SSL/  \
+ 			ftp://ftp.internat.freebsd.org/pub/Crypto/SSL/
+
 
 MAINTAINER=		markm@FreeBSD.ORG
 
