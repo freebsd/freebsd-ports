@@ -1,6 +1,6 @@
---- perl.h.ORIG	Mon Apr 28 17:36:10 1997
-+++ perl.h	Fri May 23 11:56:49 1997
-@@ -223,6 +223,15 @@
+--- perl.h.ORIG	Thu Jul 30 17:04:42 1998
++++ perl.h	Thu Jul 30 17:06:34 1998
+@@ -361,6 +361,15 @@
  #   include <sys/param.h>
  #endif
  

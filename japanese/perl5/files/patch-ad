@@ -1,6 +1,6 @@
---- hints/freebsd.sh.orig	Thu Apr 24 08:01:37 1997
-+++ hints/freebsd.sh	Tue May  5 00:06:09 1998
-@@ -63,6 +63,7 @@
+--- hints/freebsd.sh.ORIG	Fri Jul 24 06:00:19 1998
++++ hints/freebsd.sh	Thu Jul 30 16:04:24 1998
+@@ -68,6 +68,7 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
@@ -8,12 +8,11 @@
  	test -r ./broken-db.msg && . ./broken-db.msg
  	;;
  #
-@@ -76,12 +77,19 @@
+@@ -81,12 +82,18 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
 +	d_dosuid='define'
-+	d_bincompat3='undef'
  	;;
  #
  # Guesses at what will be needed after 2.2

@@ -1,29 +1,11 @@
---- installperl.ORIG	Mon May 12 05:22:27 1997
-+++ installperl	Fri May 23 11:40:27 1997
-@@ -93,7 +93,7 @@
- safe_unlink("$installbin/sperl$ver$exe_ext");
- if ($d_dosuid) {
-     copy("suidperl$exe_ext", "$installbin/sperl$ver$exe_ext");
--    chmod(04711, "$installbin/sperl$ver$exe_ext");
-+    chmod(04111, "$installbin/sperl$ver$exe_ext");
- }
- 
- # Install library files.
-@@ -156,11 +156,12 @@
+--- installperl.ORIG	Thu Jul 30 15:58:50 1998
++++ installperl	Thu Jul 30 16:02:16 1998
+@@ -269,7 +269,7 @@
  	      (-l $usrbinperl) &&
  	      ((readlink $usrbinperl) eq $expinstperl));
      }
 -    if ((! $mainperl_is_instperl) &&
--	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
--	     "Do you wish to have $usrbinperl be the same as\n" .
--	     "$expinstperl? [y] ")))
--    {	
-+#    if ((! $mainperl_is_instperl) &&
-+#	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
-+#	     "Do you wish to have $usrbinperl be the same as\n" .
-+#	     "$expinstperl? [y] ")))
-+#    {	
-+    if ('') {  # MarkM - May 1997. Take the NO route always.
- 	unlink($usrbinperl);
- 	eval { CORE::link $instperl, $usrbinperl } ||
- 	    eval { symlink $expinstperl, $usrbinperl } ||
++    if ('' && (! $mainperl_is_instperl) &&
+ 	(yn("Many scripts expect perl to be installed as $usrbinperl.\n" . 
+ 	     "Do you wish to have $usrbinperl be the same as\n" .
+ 	     "$expinstperl? [y] ")))
