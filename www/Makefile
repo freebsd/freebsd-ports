@@ -448,6 +448,7 @@
     SUBDIR += ruby-webrick
     SUBDIR += ruby-webunit
     SUBDIR += sarg
+    SUBDIR += scoop
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += sidplug
