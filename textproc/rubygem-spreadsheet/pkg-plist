@@ -1,0 +1,14 @@
+%%RUBY_SITELIBDIR%%/spreadsheet/format.rb
+%%RUBY_SITELIBDIR%%/spreadsheet/olewriter.rb
+%%RUBY_SITELIBDIR%%/spreadsheet/biffwriter.rb
+%%RUBY_SITELIBDIR%%/spreadsheet/workbook.rb
+%%RUBY_SITELIBDIR%%/spreadsheet/worksheet.rb
+%%RUBY_SITELIBDIR%%/spreadsheet/excel.rb
+@dirrm %%RUBY_SITELIBDIR%%/spreadsheet
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGES
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/format.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/spreadsheet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/spreadsheet.txt
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
