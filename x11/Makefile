@@ -229,6 +229,7 @@
     SUBDIR += xproto
     SUBDIR += xrestop
     SUBDIR += xrootconsole
+    SUBDIR += xrsh
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome
     SUBDIR += xsel

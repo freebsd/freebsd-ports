@@ -1,0 +1,12 @@
+This distribution contains two programs, xrsh and xrlogin. 
+
+Xrsh is designed to allow you to start an X client on a remote machine
+with the window displayed on the current server's $DISPLAY.  It has
+many options that give you the ability to propagate environment
+variables (including DISPLAY) to the remote system and works with
+various types of X server access control including xauth and xhost.
+
+Xrlogin opens a local xterm window and runs rlogin or telnet to
+connect to a remote machine.
+
+WWW: http://jjd.com/
