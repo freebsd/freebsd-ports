@@ -7,8 +7,8 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.0.rc2
-PORTEPOCH=	1
 PORTREVISION=	1
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		http://people.FreeBSD.org/~marcus/:local
@@ -49,8 +49,6 @@ CONFIGURE_ARGS=					\
 		--enable-double-buffer		\
 		--enable-dtd-debug		\
 		--enable-jsd			\
-		--enable-ldap			\
-		--enable-mailnews		\
 		--enable-mathml			\
 		--disable-md			\
 		--disable-optimize		\
@@ -66,6 +64,25 @@ CONFIGURE_ARGS=					\
 		--with-system-mng=${LOCALBASE}	\
 		--with-system-png=${LOCALBASE}	\
 		--with-pthreads
+
+# LDAP is only used by mail and news so disable both together
+.if defined(WITHOUT_MAILNEWS)
+CONFIGURE_ARGS+=	--disable-ldap --disable-mailnews
+PLIST_SUB+=	MOZILLAMAILNEWS="@comment "
+PLIST_SUB+=	MOZILLALDAP="@comment "
+.else
+# mail and news desired, but not LDAP
+.if defined(WITHOUT_LDAP)
+CONFIGURE_ARGS+=	--disable-ldap --enable-mailnews
+PLIST_SUB+=	MOZILLAMAILNEWS=""
+PLIST_SUB+=	MOZILLALDAP="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-ldap --enable-mailnews
+PLIST_SUB+=	MOZILLAMAILNEWS=""
+PLIST_SUB+=	MOZILLALDAP=""
+.endif 
+.endif
+
 .if !defined(WITHOUT_CHATZILLA)
 CONFIGURE_ARGS+=	--enable-extensions=default,irc,xmlterm
 PLIST_SUB+=	CHATZILLA=""

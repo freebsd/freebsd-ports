@@ -23,11 +23,11 @@ lib/mozilla/chrome/forms.jar
 lib/mozilla/chrome/help.jar
 lib/mozilla/chrome/inspector.jar
 lib/mozilla/chrome/installed-chrome.txt
-lib/mozilla/chrome/messenger.jar
+%%MOZILLAMAILNEWS%%lib/mozilla/chrome/messenger.jar
 lib/mozilla/chrome/modern.jar
 lib/mozilla/chrome/overlayinfo/communicator/content/overlays.rdf
-lib/mozilla/chrome/overlayinfo/cookie/content/overlays.rdf
-lib/mozilla/chrome/overlayinfo/editor/content/overlays.rdf
+%%MOZILLAMAILNEWS%%lib/mozilla/chrome/overlayinfo/cookie/content/overlays.rdf
+%%MOZILLAMAILNEWS%%lib/mozilla/chrome/overlayinfo/editor/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/inspector/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/messenger/content/overlays.rdf
 lib/mozilla/chrome/overlayinfo/navigator/content/overlays.rdf
@@ -37,9 +37,9 @@ lib/mozilla/chrome/toolkit.jar
 lib/mozilla/chrome/venkman.jar
 lib/mozilla/chrome/xmlterm.jar
 lib/mozilla/component.reg
-lib/mozilla/components/absync.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/absync.xpt
 lib/mozilla/components/accessibility.xpt
-lib/mozilla/components/addrbook.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/addrbook.xpt
 lib/mozilla/components/appshell.xpt
 lib/mozilla/components/autocomplete.xpt
 lib/mozilla/components/autoconfig.xpt
@@ -83,8 +83,8 @@ lib/mozilla/components/helperAppDlg.xpt
 lib/mozilla/components/history.xpt
 lib/mozilla/components/htmlparser.xpt
 lib/mozilla/components/imglib2.xpt
-lib/mozilla/components/impComm4xMail.xpt
-lib/mozilla/components/import.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/impComm4xMail.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/import.xpt
 lib/mozilla/components/inspector.xpt
 lib/mozilla/components/intl.xpt
 lib/mozilla/components/jar.xpt
@@ -95,9 +95,9 @@ lib/mozilla/components/jsurl.xpt
 lib/mozilla/components/layout_base.xpt
 lib/mozilla/components/layout_xul.xpt
 lib/mozilla/components/layout_xul_tree.xpt
-lib/mozilla/components/libabsyncsvc.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libabsyncsvc.so
 lib/mozilla/components/libaccessibility.so
-lib/mozilla/components/libaddrbook.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libaddrbook.so
 lib/mozilla/components/libappcomps.so
 lib/mozilla/components/libautoconfig.so
 lib/mozilla/components/libcaps.so
@@ -125,31 +125,31 @@ lib/mozilla/components/libimglib2.so
 lib/mozilla/components/libimgmng.so
 lib/mozilla/components/libimgpng.so
 lib/mozilla/components/libimgppm.so
-lib/mozilla/components/libimpComm4xMail.so
-lib/mozilla/components/libimpText.so
-lib/mozilla/components/libimport.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libimpComm4xMail.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libimpText.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libimport.so
 lib/mozilla/components/libinspector.so
 lib/mozilla/components/libjar50.so
 lib/mozilla/components/libjsd.so
 lib/mozilla/components/libjsdom.so
 lib/mozilla/components/libjsloader.so
 lib/mozilla/components/libjsurl.so
-lib/mozilla/components/liblocalmail.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/liblocalmail.so
 lib/mozilla/components/liblwbrk.so
-lib/mozilla/components/libmailnews.so
-lib/mozilla/components/libmime.so
-lib/mozilla/components/libmimeemitter.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmailnews.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmime.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmimeemitter.so
 lib/mozilla/components/libmork.so
 lib/mozilla/components/libmozbrwsr.so
 lib/mozilla/components/libmozfind.so
-lib/mozilla/components/libmozldap.so
+%%MOZILLALDAP%%lib/mozilla/components/libmozldap.so
 lib/mozilla/components/libmozxfer.so
-lib/mozilla/components/libmsgcompose.so
-lib/mozilla/components/libmsgdb.so
-lib/mozilla/components/libmsgimap.so
-lib/mozilla/components/libmsgmdn.so
-lib/mozilla/components/libmsgnews.so
-lib/mozilla/components/libmsgsmime.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgcompose.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgdb.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgimap.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgmdn.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgnews.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgsmime.so
 lib/mozilla/components/libnecko.so
 lib/mozilla/components/libnecko2.so
 lib/mozilla/components/libnkcache.so
@@ -181,7 +181,7 @@ lib/mozilla/components/libucvtw2.so
 lib/mozilla/components/libunicharutil.so
 lib/mozilla/components/libuniversalchardet.so
 lib/mozilla/components/liburiloader.so
-lib/mozilla/components/libvcard.so
+%%MOZILLAMAILNEWS%%lib/mozilla/components/libvcard.so
 lib/mozilla/components/libwallet.so
 lib/mozilla/components/libwalletviewers.so
 lib/mozilla/components/libwebbrwsr.so
@@ -193,22 +193,22 @@ lib/mozilla/components/libxpinstall.so
 lib/mozilla/components/libxremote_client.so
 lib/mozilla/components/libxremoteservice.so
 lib/mozilla/components/locale.xpt
-lib/mozilla/components/mailnews.xpt
-lib/mozilla/components/mdn-service.js
-lib/mozilla/components/mime.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/mailnews.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/mdn-service.js
+%%MOZILLAMAILNEWS%%lib/mozilla/components/mime.xpt
 lib/mozilla/components/mimetype.xpt
 lib/mozilla/components/mozbrwsr.xpt
 lib/mozilla/components/mozfind.xpt
-lib/mozilla/components/mozldap.xpt
+%%MOZILLALDAP%%lib/mozilla/components/mozldap.xpt
 lib/mozilla/components/mozxfer.xpt
-lib/mozilla/components/msgbase.xpt
-lib/mozilla/components/msgcompose.xpt
-lib/mozilla/components/msgdb.xpt
-lib/mozilla/components/msgimap.xpt
-lib/mozilla/components/msglocal.xpt
-lib/mozilla/components/msgnews.xpt
-lib/mozilla/components/msgsearch.xpt
-lib/mozilla/components/msgsmime.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgbase.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgcompose.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgdb.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgimap.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msglocal.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgnews.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgsearch.xpt
+%%MOZILLAMAILNEWS%%lib/mozilla/components/msgsmime.xpt
 lib/mozilla/components/necko.xpt
 lib/mozilla/components/necko_about.xpt
 lib/mozilla/components/necko_cache.xpt
@@ -228,7 +228,7 @@ lib/mozilla/components/nsDownloadProgressListener.js
 lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
 lib/mozilla/components/nsKillAll.js
-lib/mozilla/components/nsLDAPPrefsService.js
+%%MOZILLALDAP%%lib/mozilla/components/nsLDAPPrefsService.js
 lib/mozilla/components/nsProgressDialog.js
 lib/mozilla/components/nsProxyAutoConfig.js
 lib/mozilla/components/nsResetPref.js
@@ -252,7 +252,7 @@ lib/mozilla/components/search.xpt
 lib/mozilla/components/shistory.xpt
 lib/mozilla/components/sidebar.xpt
 lib/mozilla/components/signonviewer.xpt
-lib/mozilla/components/smime-service.js
+%%MOZILLAMAILNEWS%%lib/mozilla/components/smime-service.js
 lib/mozilla/components/timebomb.xpt
 lib/mozilla/components/transformiix.xpt
 lib/mozilla/components/txmgr.xpt
@@ -296,9 +296,9 @@ lib/mozilla/defaults/pref/editor.js
 lib/mozilla/defaults/pref/initpref.js
 lib/mozilla/defaults/pref/inspector.js
 lib/mozilla/defaults/pref/mailnews.js
-lib/mozilla/defaults/pref/mdn.js
+%%MOZILLAMAILNEWS%%lib/mozilla/defaults/pref/mdn.js
 lib/mozilla/defaults/pref/security-prefs.js
-lib/mozilla/defaults/pref/smime.js
+%%MOZILLAMAILNEWS%%lib/mozilla/defaults/pref/smime.js
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/pref/xpinstall.js
 lib/mozilla/defaults/profile/US/bookmarks.html
@@ -322,7 +322,7 @@ lib/mozilla/defaults/wallet/SchemaConcat.tbl
 lib/mozilla/defaults/wallet/SchemaStrings.tbl
 lib/mozilla/defaults/wallet/StateSchema.tbl
 lib/mozilla/defaults/wallet/VcardSchema.tbl
-lib/mozilla/dirver
+%%MOZILLALDAP%%lib/mozilla/dirver
 lib/mozilla/escape
 lib/mozilla/icons/mozicon16.xpm
 lib/mozilla/icons/mozicon50.xpm
@@ -331,18 +331,18 @@ lib/mozilla/libgtkembedmoz.so
 lib/mozilla/libgtksuperwin.so
 lib/mozilla/libgtkxtbin.so
 lib/mozilla/libjsj.so
-lib/mozilla/libldap50.so
+%%MOZILLALDAP%%lib/mozilla/libldap50.so
 lib/mozilla/libmoz_art_lgpl.so
 lib/mozilla/libmozjs.so
 lib/mozilla/libmozz.so
-lib/mozilla/libmsgbaseutil.so
+%%MOZILLAMAILNEWS%%lib/mozilla/libmsgbaseutil.so
 lib/mozilla/libnspr4.so
 lib/mozilla/libnss3.so
 lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
-lib/mozilla/libprldap50.so
+%%MOZILLALDAP%%lib/mozilla/libprldap50.so
 lib/mozilla/libsmime3.so
 lib/mozilla/libsoftokn3.so
 lib/mozilla/libssl3.so
@@ -583,10 +583,10 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/overlayinfo/messenger
 @dirrm lib/mozilla/chrome/overlayinfo/inspector/content
 @dirrm lib/mozilla/chrome/overlayinfo/inspector
-@dirrm lib/mozilla/chrome/overlayinfo/editor/content
-@dirrm lib/mozilla/chrome/overlayinfo/editor
-@dirrm lib/mozilla/chrome/overlayinfo/cookie/content
-@dirrm lib/mozilla/chrome/overlayinfo/cookie
+%%MOZILLAMAILNEWS%%@dirrm lib/mozilla/chrome/overlayinfo/editor/content
+%%MOZILLAMAILNEWS%%@dirrm lib/mozilla/chrome/overlayinfo/editor
+%%MOZILLAMAILNEWS%%@dirrm lib/mozilla/chrome/overlayinfo/cookie/content
+%%MOZILLAMAILNEWS%%@dirrm lib/mozilla/chrome/overlayinfo/cookie
 @dirrm lib/mozilla/chrome/overlayinfo/communicator/content
 @dirrm lib/mozilla/chrome/overlayinfo/communicator
 @dirrm lib/mozilla/chrome/overlayinfo
