@@ -1,5 +1,10 @@
-This is Wnn6, a Japanese input method. This software 'Wnn6' is not
-free, and you can buy it from Omron Software Co., Ltd.
+This is a port of 'Wnn6 for Linux/FreeBSD', a Japanese input
+method. 'Wnn6' is not free.
+
+Note that 'Wnn6 for Linux/FreeBSD' is is an old version, and you can
+buy a newer version from Omron Software Co., Ltd. The newer Wnn6 is a
+package-style for FreeBSD, so you can pkg_add it directly. That is, it
+is not necessary to use this port if yours is the newer version.
 
 +------------------------------------------+
 | URL:	   http://www.omronsoft.co.jp      |
@@ -8,13 +13,11 @@ free, and you can buy it from Omron Software Co., Ltd.
 | FAX:     +81-44-246-6011                 |
 +------------------------------------------+
 
-Remark 1. If a value of ${PKG_PREFIX} is not '/usr/local', the
-following symbolic links are made:
+Remark: If a value of ${PKG_PREFIX} is not '/usr/local', the following
+symbolic links are made:
 
 "/usr/local/bin/Wnn6" to "${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd" and,
 "/usr/local/lib/wnn6" to "${PKG_PREFIX}/OMRONWnn6/wnn6fbsd".
-
-Remark 2. We do not fetch by FTP but get from CD-ROM.
 
 - S. Taoka
 taoka@infonets.hiroshima-u.ac.jp
