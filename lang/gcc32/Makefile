@@ -45,6 +45,9 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 # libgcj is built on all platforms except sparc64 and ia64 and amd64
 WITHOUT_LIBJAVA=yes
 .endif
+.if ${ARCH} == "ia64"
+BROKEN=	gcj does not build.
+.endif
 
 .if ${PORTOBJFORMAT} == "aout"
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
