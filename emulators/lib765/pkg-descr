@@ -1,0 +1,14 @@
+lib765 is an emulation of the uPD765a (AKA Intel 8272) Floppy Disc Controller
+[FDC] as used in Amstrad computers such as the PCW, CPC and Spectrum +3. At
+present it is not a "full" 765; features not used in the PCW BIOS (such as:
+DMA; multisector reads/writes; multitrack mode) are either left unimplemented
+or incomplete.
+
+lib765 is released under the GNU Library GPL.
+
+Author:	John Elliott <jce@seasip.demon.co.uk>
+WWW:	http://www.seasip.demon.co.uk/Unix/LibDsk/
+
+-- 
+Alexey V. Antipovsky
+kemm@in-line.ru
