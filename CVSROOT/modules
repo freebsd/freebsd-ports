@@ -6778,6 +6778,7 @@ pl-aspell	ports/polish/aspell
 pl-openoffice-1.0	ports/polish/openoffice-1.0
 pl-openoffice-1.1	ports/polish/openoffice-1.1
 pl-sms		ports/polish/sms
+pl_ispell	ports/polish/ispell
 plan		ports/deskutils/plan
 planets		ports/astro/planets
 plasma-kmod	ports/graphics/plasma-kmod
