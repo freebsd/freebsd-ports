@@ -1,4 +1,9 @@
-A GaduGadu client for X11/GTK.  GaduGadu is an ICQ-like messenger for the
-Polish language.
+Development GTK2 based version of GaduGadu client for X11/GTK.  
+GaduGadu is an ICQ-like messenger network for the Polish language.
 
-WWW: http://ggadu.sourceforge.net/
+GnuGadu2 is a complete rewrite featuring a plugin extensible 
+architecture, that opens it to the multiprotocol world. Transport
+plugins exist for Jabber, Tlen.pl, there are sound servers and 
+others.
+
+WWW: http://gadu.gnu.pl
