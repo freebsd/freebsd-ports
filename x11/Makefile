@@ -10,6 +10,7 @@
     SUBDIR += XFree86-4-manuals
     SUBDIR += XFree86-aoutlibs
     SUBDIR += XFree86-contrib
+    SUBDIR += accessx
     SUBDIR += aterm
     SUBDIR += bgrot
     SUBDIR += blast

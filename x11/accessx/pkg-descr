@@ -1,0 +1,12 @@
+A GUI program to manage various of the accessibility features of X window
+to help people with physical disabilities.  The features include:
+
+MouseKeys - move the mouse pointer using the keypad.
+StickyKeys - key modifiers such as SHIFT and CTRL latch.
+SlowKeys - keys only work if pressed for a certain period of time.
+BounceKeys - key pressed several times will only register once.
+
+WWW: http://www.rehab.uiuc.edu/accessx/
+
+Stephen Montgomery-Smith
+stephen@math.missouri.edu
