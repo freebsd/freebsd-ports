@@ -7,6 +7,7 @@
 
 PORTNAME=	e2fsprogs
 PORTVERSION=	1.35.w20040131
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -29,13 +30,16 @@ INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-elf-shlibs --disable-fsck "--with-ldopts=-L${LOCALBASE}/lib"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CPPFLAGS='-I${WRKSRC}/lib -I${LOCALBASE}/include'
 .if defined(DISABLE_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
 MAKE_ARGS+=	STATIC_LIBS="../lib/libext2fs.a ../lib/libcom_err.a ../lib/libblkid.a  ../lib/libuuid.a ${LOCALBASE}/lib/libintl.a ${LOCALBASE}/lib/libiconv.a"
 PLIST_SUB=	NLS=""
+.endif
+.if ${MACHINE_ARCH} == "alpha"
+CFLAGS+=	-mieee
 .endif
 
 CONFLICTS=	ossp-uuid-*
@@ -68,13 +72,17 @@ post-patch:
 	-e 's|group root|group wheel|' \
 	-e '/Exit status is 0/ N;s/Exit status is 0\n/Exit status is 0/' \
 	${WRKSRC}/tests/m_*/expect.1
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
+	${RM} -r ${WRKSRC}/tests/m_large_file
+.endif
 
-post-configure:
-	@${CAT} ${FILESDIR}/pkg-message.in | ${SED} -e "s:%%PREFIX%%:${PREFIX}:" > ${PKGMESSAGE}
+pre-install:
+	${RM} -f ${PKGMESSAGE}
+	${SED} -e "s:%%PREFIX%%:${PREFIX}:" ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 post-build:
-	cd ${WRKSRC}/tests && ${GMAKE} check
 	${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${LIBS} -o ${WRKSRC}/fsck_ext2fs ${FILESDIR}/fsck_ext2fs.c
+	cd ${WRKSRC}/tests && ${GMAKE} check
 
 post-install:
 	${RM} ${PREFIX}/sbin/filefrag
