@@ -1,1 +1,9 @@
-A completely free clone of mpg123
+mpg321 is a completely free clone of mpg123.
+
+mpg321 has been tested to work with gqmpeg.  It should work with
+other frontends, but isn't guaranteed.  mpg321 is built on top of
+libmad, which was written by Robert Leslie, and is a fully ISO-compliant
+MPEG decoder, meaning it's very accurate.  It also operates entirely
+within fixed-point arithmetic.
+
+ID3 tags are not supported at all, yet.

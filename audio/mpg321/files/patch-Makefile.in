@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Wed Jul 25 22:48:58 2001
++++ Makefile.in	Wed Jul 25 22:49:18 2001
+@@ -339,7 +339,7 @@
+ 
+ install-exec-am: install-binPROGRAMS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++
+ install-exec: install-exec-am
+ 
+ install-data-am: install-man
