@@ -8,12 +8,15 @@
 PORTNAME=	chef
 PORTVERSION=	19930426
 CATEGORIES=	misc
-MASTER_SITES=	ftp://tbrowne.best.vwh.net/swedish_chef/
+MASTER_SITES=	http://mysite.verizon.net/ebrowne72/chef/
 DISTNAME=	bork
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Feelter thet cunferts Ingleesh text tu Muck Cheenese-a
+
+CONFLICTS=	talkfilters-*
+PLIST_FILES=	bin/chef
 
 WRKSRC=		${WRKDIR}/bork
 
