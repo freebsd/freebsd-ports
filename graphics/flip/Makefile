@@ -32,7 +32,7 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ FLIP.pro
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ FLIP.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flip ${PREFIX}/bin
