@@ -1,0 +1,9 @@
+The stools package (pronounced "s-tools") was written to address the
+need for small and efficient command line utilities to monitor and
+configure network devices and host systems. The stools package is
+based on the SNMP management protocol.
+
+WWW: http://www.ibr.cs.tu-bs.de/projects/stools/
+
+- Michael Lyngbol
+lyngbol@wheel.dk
