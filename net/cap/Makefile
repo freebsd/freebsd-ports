@@ -7,7 +7,7 @@
 
 PORTNAME=	cap
 PORTVERSION=	6.0.198
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://munnari.OZ.AU/mac/:source \
 		ftp://munnari.OZ.AU/mac/cap.patches/:patches \
@@ -31,7 +31,7 @@ DIST_SUBDIR=	cap60
 ALL_TARGET=	libsmade dummy-libinstall programs
 INSTALL_TARGET=	include libinstall install
 
-CFLAGS+=	-traditional-cpp -DUSESTRINGDOTH
+CFLAGS+=	-DUSESTRINGDOTH -DUSEDIRENT
 
 USE_REINPLACE=	YES
 
@@ -60,15 +60,25 @@ READMES=	applications/papif applications/lwsrv applications/aufs \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile: needs stdarg.h instead of varargs.h"
-.endif
-
 pre-patch:
 	@(cd ${WRKSRC}; \
 	  for f in ../cap60.patch* ; do ${PATCH} -s -p < $$f ; done)
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile.m4 -exec ${REINPLACE_CMD} -e 's/CFLAGS=/CFLAGS+=/' \{\} \;
+	${FIND} ${WRKSRC} -name "*.[chl]" -exec ${REINPLACE_CMD} -e 's/^#\([ ]*\)endif.*/#\1endif/g' -e 's/^#\([ ]*\)else.*/#\1else/g' \{\} \;
+	${GREP} -rl varargs\.h ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's/varargs\.h/stdarg\.h/g'
+	${REINPLACE_CMD} -e 's/S_ISREG(&stb) == 0/access(fn, R_OK) < 0/g' ${WRKSRC}/applications/lwsrv/procset.c
+	${REINPLACE_CMD} -E 's/long[ 	](clock|idletime|l|lasttime|t|timeval|tloc)([ =0]*);/time_t \1\2;/g' \
+		${WRKSRC}/contrib/printqueue.c \
+		${WRKSRC}/etc/nisaux.c \
+		${WRKSRC}/samples/ash.c \
+		${WRKSRC}/support/uab/log.c \
+		${WRKSRC}/support/uab/uab.c \
+		${WRKSRC}/lib/cap/ablog.c \
+		${WRKSRC}/lib/cap/abpapc.c \
+		${WRKSRC}/applications/lwsrv/lwsrv.c \
+		${WRKSRC}/applications/aufs/aufs.c \
+		${WRKSRC}/applications/papif/papif.c
 
 pre-install:
 	@${RM} -f ${WRKSRC}/libinstall
