@@ -1,34 +1,46 @@
-# New ports collection makefile for:   Scilab
-# Date created:        13 June 1997
-# Whom:                paulo@isr.uc.pt
+# New ports collection makefile for:   scilab
+# Date created:        30 April 2001
+# Whom:                js@jeannot.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	Scilab
-PORTVERSION=	2.4.1
+PORTNAME=	scilab
+PORTVERSION=	2.6
 CATEGORIES=	math cad
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Meta2/Scilab/distributions/
-DISTNAME=	scilab-${PORTVERSION}
-EXTRACT_SUFX=	-src.tar.gz
+EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	paulo@isr.uc.pt
+MAINTAINER=	js@jeannot.org
 
-RUN_DEPENDS=	pvm:${PORTSDIR}/net/pvm	\
-		xless:${PORTSDIR}/misc/xless
+LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+BUILD_DEPENDS=	pvm:${PORTSDIR}/net/pvm \
+		wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	xless:${PORTSDIR}/misc/xless \
+		wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
+		pvm:${PORTSDIR}/net/pvm
 
-PLIST_SUB=	SCILAB_VER=${PORTVERSION}
+PVM_ROOT=	${PREFIX}/lib/pvm
 
 NO_CDROM=	"Don't sell for profit."
-GNU_CONFIGURE=	yes
-USE_X_PREFIX=	yes
 
-MAKE_ENV=	SCIDIR=${PREFIX}/lib/X11/$(DISTNAME)
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS=	--without-xless --with-tk \
+		--with-tk-library=${PREFIX}/lib --with-tk-include=${PREFIX}/include/tk8.3 \
+		--with-tcl-library=${PREFIX}/lib --with-tcl-include=${PREFIX}/include/tcl8.3 \
+		--with-xaw3d
+
+CONFIGURE_ENV=	PVM_ROOT=${PVM_ROOT} PVM_LIB=${PREFIX}/lib
+MAKE_ENV=	PVM_INCLUDE=${PREFIX}/include
+
+post-extract:
+	${RM} ${WRKSRC}/examples/callsci/callsciJava/config/config
+	${RM} ${WRKSRC}/examples/callsci/callsciFortran/config/config
+	${RM} ${WRKSRC}/examples/callsci/callsciC/config/config
+	${RM} ${WRKSRC}/examples/callsci/callsciC++/config/config
 
 pre-install:
-	@(cd $(WRKSRC); ${RM} -rf Win95-util *.orig)
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	find ${WRKSRC} -name \*.orig -delete
 
 .include <bsd.port.mk>

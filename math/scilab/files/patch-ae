@@ -1,21 +1,11 @@
---- /dev/null	Fri Dec 18 02:05:39 1998
-+++ config/Makefile.freebsd	Sat Dec 19 00:06:25 1998
-@@ -0,0 +1,18 @@
-+# Copyright INRIA
-+
-+
-+FFLAGS = $(FC_OPTIONS)
-+
-+bin/scilex: scilex-lib 
-+	@x=1;if test -f $@; then  \
-+		x=`find $(DEFAULTS) $(LIBR)  \( -name '*.a' -o -name '*.o' \) \
-+		-newer $@ -print | wc -l `; \
-+	fi;\
-+	if test $$x -ne 0; then \
-+		$(RM) $@; \
-+		echo "linking"; \
-+		$(FC) $(FFLAGS) -o $@ $(DEFAULTS) $(FC_LDFLAGS) $(LIBR)  \
-+			$(TCLTK_LIBS) $(XLIBS) $(TERMCAPLIB); \
-+	else \
-+		echo bin/scilex is up to date ; \
-+	fi
+--- examples/callsci/callsciC/myprog.sh	Fri Jul  6 10:53:00 2001
++++ examples/callsci/callsciC/myprog.sh	Fri Jul  6 11:01:47 2001
+@@ -36,8 +36,6 @@
+     export PATH
+     XAPPLRESDIR=$SCI/X11_defaults
+     export XAPPLRESDIR
+-    XLESSHELPFILE=$SCI/X11_defaults/xless.help
+-    export XLESSHELPFILE
+     NETHELPDIR=$SCI/X11_defaults
+     export NETHELPDIR
+     tty -s && stty kill '^U' intr '^C' erase '^H' quit '^\' eof '^D' susp '^Z'

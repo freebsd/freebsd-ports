@@ -1,29 +1,11 @@
---- ./routines/default/scimem.c.orig	Mon Jul 20 07:50:29 1998
-+++ ./routines/default/scimem.c	Sat Aug  8 13:13:30 1998
-@@ -8,6 +8,25 @@
- #endif
- 
--
- #include "../machine.h"
-+
-+#if defined(netbsd)
-+#include <ieeefp.h>
-+#endif
-+
-+#if defined(freebsd)
-+#include <floatingpoint.h>
-+#endif
-+
-+#if (defined(netbsd) || defined(freebsd))&& !defined(__alpha__)
-+void C2F(nofpex)()
-+{
-+  fpsetmask(0);   /* Don't dump core on FPE return Inf or NaN */
-+}
-+#else
-+void C2F(nofpex)()
-+{
-+  return;
-+}
-+#endif
- 
- char *the_p=NULL;
+--- routines/sun/h_help_data.c	Fri Jul  6 10:52:43 2001
++++ routines/sun/h_help_data.c	Fri Jul  6 11:11:08 2001
+@@ -163,7 +163,7 @@
+     }
+ #else
+   int i;
+-  static char format1[]= "$SCI/bin/xless %s/%s.cat 2> /dev/null &";
++  static char format1[]= "xless %s/%s.cat 2> /dev/null &";
+   static char format2[]= "cat %s/%s.cat | more ";
+   C2xscion&i);
+   if i != 0 )

@@ -1,14 +1,39 @@
---- routines/graphics/periFig.c.orig	Sun Dec 13 21:20:36 1998
-+++ routines/graphics/periFig.c	Sun Dec 13 21:21:44 1998
-@@ -47,5 +47,11 @@
- #define M_PI	3.14159265358979323846
- #else
-+#if defined(HAVE_VALUES_H)
- #include <values.h>
-+#else
-+#ifndef M_PI
-+#define M_PI    3.14159265358979323846 
-+#endif
-+#endif
- #endif
+--- Makefile.in	Mon Apr 30 21:12:52 2001
++++ Makefile.in	Mon Apr 30 22:19:49 2001
+@@ -115,8 +115,6 @@
+ 	$(SCIBASE)/pvm3/lib/pvmd \
+ 	$(SCIBASE)/pvm3/lib/pvmtmparch \
+ 	$(SCIBASE)/pvm3/lib/pvmgetarch \
+-	$(SCIBASE)/pvm3/lib/@PVMARCH@/pvmd3 \
+-	$(SCIBASE)/pvm3/lib/@PVMARCH@/pvmgs \
+ 	$(SCIBASE)/routines/*.h \
+ 	$(SCIBASE)/routines/Make.lib \
+ 	$(SCIBASE)/routines/default/FCreate \
+@@ -147,7 +145,7 @@
+ 	cd .. ; tar cvf $(SCIDIR)/$(SCIBASE)-bin.tar $(BINDISTFILES)
+ 	$(RM) .binary
  
+-LIBPREFIX = @prefix@/lib
++LIBPREFIX = @prefix@
+ 
+ install:
+ 	@if test `pwd` != ${LIBPREFIX}/$(SCIBASE); then \
+@@ -159,12 +157,12 @@
+ 		(cd ${LIBPREFIX}/$(SCIBASE); make); \
+ 		$(RM) .binary; \
+ 	fi
+-	$(RM) /usr/bin/scilab
+-	ln -fs ${LIBPREFIX}/$(SCIBASE)/bin/scilab /usr/bin/scilab
+-	$(RM) /usr/bin/intersci
+-	ln -fs ${LIBPREFIX}/$(SCIBASE)/bin/intersci /usr/bin/intersci
+-	$(RM) /usr/bin/intersci-n
+-	ln -fs ${LIBPREFIX}/$(SCIBASE)/bin/intersci-n /usr/bin/intersci-n
++	$(RM) @prefix@/bin/scilab
++	ln -fs ${LIBPREFIX}/$(SCIBASE)/bin/scilab @prefix@/bin/scilab
++	$(RM) @prefix@/bin/intersci
++	ln -fs ${LIBPREFIX}/$(SCIBASE)/bin/intersci @prefix@/bin/intersci
++	$(RM) @prefix@/bin/intersci-n
++	ln -fs ${LIBPREFIX}/$(SCIBASE)/bin/intersci-n @prefix@/bin/intersci-n
+ 
+ uninstall:
+ 	$(RM) -r ${LIBPREFIX}/$(SCIBASE)
