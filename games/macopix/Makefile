@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	macopix
-PORTVERSION=	0.8.6
-PORTREVISION=	3
+PORTVERSION=	0.9.0
+PORTREVISION=	0
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/macopix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
@@ -34,9 +34,12 @@ RESTRICTED_FILES= \
 USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gdkpixbuf
+USE_GMAKE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--program-transform-name=""
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		macopix.1
 
@@ -87,5 +90,11 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/marimite.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/README.jp ${PREFIX}/share/macopix/README.marimite.jp
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/macopix
+	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/macopix
+	${INSTALL_MAN} ${WRKSRC}/README.jp ${PREFIX}/share/doc/macopix
+	${INSTALL_MAN} ${WRKSRC}/NKR.README.jp ${PREFIX}/share/doc/macopix
+.endif
 
 .include <bsd.port.mk>
