@@ -10,7 +10,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	dns
 MASTER_SITES=	http://www.domtools.com/pub/ \
 		http://www.ussrback.com/UNIX/utilities/ \
-		http://packetstormsecurity.org/UNIX/utilities/
+		http://packetstormsecurity.nl/UNIX/utilities/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	veers@disturbed.net
