@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.3
-PORTREVISION=	1
+PORTVERSION=	0.11.4p1
 CATEGORIES=	net
-MASTER_SITES=	http://rpi-acm.org/~n/dev.n.ml.org/ \
-		http://www.acm.rpi.edu/~n/dev.n.ml.org/
+MASTER_SITES=	http://www.acm.rpi.edu/~n/
 
 MAINTAINER=	rtdean@cytherianage.net
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/p1//}
 GNU_CONFIGURE=	yes
 
 MAN1=		naim.1
