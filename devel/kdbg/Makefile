@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kdbg
-# Version required:			1.0.0
+# Version required:			1.0.1
 # Date created:				02 November 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kdbg-1.0.0
+DISTNAME=	kdbg-1.0.1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://members.telecom.at/~johsixt/ \
 		ftp://eudaptics.co.at/pub/people/jsixt/
