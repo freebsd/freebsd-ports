@@ -20,6 +20,7 @@ share/gnome/anjuta/autogen.sh.gtk
 share/gnome/anjuta/autogen.sh.gtkmm
 share/gnome/anjuta/autogen.sh.wxwin
 share/gnome/anjuta/gdb.init
+share/gnome/anjuta/gdl/glade/layout.glade
 share/gnome/anjuta/glade/anjuta.glade
 share/gnome/anjuta/glade/applogo.png
 share/gnome/anjuta/glade/start-with-import.png
@@ -119,9 +120,163 @@ share/gnome/anjuta/welcome.txt
 %%PORTDOCS%%share/doc/anjuta/README
 %%PORTDOCS%%share/doc/anjuta/ScintillaDoc.html
 %%PORTDOCS%%share/doc/anjuta/TODO
-share/gnome/anjuta/gdl/glade/layout.glade
 share/gnome/applications/anjuta.desktop
+share/gnome/help/anjuta/C/anjuta-faqs.xml
+share/gnome/help/anjuta/C/anjuta-manual.xml
+share/gnome/help/anjuta/C/anjuta-tutorial.xml
+share/gnome/help/anjuta/C/authors.xml
+share/gnome/help/anjuta/C/build.xml
+share/gnome/help/anjuta/C/compileopts.xml
+share/gnome/help/anjuta/C/debugger.xml
+share/gnome/help/anjuta/C/execute.xml
+share/gnome/help/anjuta/C/figures/a2ps.png
+share/gnome/help/anjuta/C/figures/arguments.png
+share/gnome/help/anjuta/C/figures/attach.png
+share/gnome/help/anjuta/C/figures/brk_add.png
+share/gnome/help/anjuta/C/figures/brk_dlg.png
+share/gnome/help/anjuta/C/figures/brk_edit.png
+share/gnome/help/anjuta/C/figures/ccview.png
+share/gnome/help/anjuta/C/figures/ccview_class.png
+share/gnome/help/anjuta/C/figures/ccview_struct.png
+share/gnome/help/anjuta/C/figures/configure_dlg.png
+share/gnome/help/anjuta/C/figures/defines.png
+share/gnome/help/anjuta/C/figures/devt_menu.png
+share/gnome/help/anjuta/C/figures/divided.png
+share/gnome/help/anjuta/C/figures/doxygen.png
+share/gnome/help/anjuta/C/figures/editor_guides.png
+share/gnome/help/anjuta/C/figures/editor_margins.png
+share/gnome/help/anjuta/C/figures/editor_markers.png
+share/gnome/help/anjuta/C/figures/evaluate.png
+share/gnome/help/anjuta/C/figures/fileview.png
+share/gnome/help/anjuta/C/figures/find_files.png
+share/gnome/help/anjuta/C/figures/find_replace.png
+share/gnome/help/anjuta/C/figures/find_text.png
+share/gnome/help/anjuta/C/figures/frame.png
+share/gnome/help/anjuta/C/figures/glade-l.png
+share/gnome/help/anjuta/C/figures/icons.png
+share/gnome/help/anjuta/C/figures/includes.png
+share/gnome/help/anjuta/C/figures/inspect.png
+share/gnome/help/anjuta/C/figures/interface.png
+share/gnome/help/anjuta/C/figures/lib_paths.png
+share/gnome/help/anjuta/C/figures/libraries.png
+share/gnome/help/anjuta/C/figures/local_variables.png
+share/gnome/help/anjuta/C/figures/mainwin.png
+share/gnome/help/anjuta/C/figures/menu_detached.png
+share/gnome/help/anjuta/C/figures/menu_main.png
+share/gnome/help/anjuta/C/figures/message_win.png
+share/gnome/help/anjuta/C/figures/open_file.png
+share/gnome/help/anjuta/C/figures/open_file_multiple.png
+share/gnome/help/anjuta/C/figures/optimizations.png
+share/gnome/help/anjuta/C/figures/other_opts.png
+share/gnome/help/anjuta/C/figures/prefs_print.png
+share/gnome/help/anjuta/C/figures/print_dlg.png
+share/gnome/help/anjuta/C/figures/print_preview.png
+share/gnome/help/anjuta/C/figures/project_info.png
+share/gnome/help/anjuta/C/figures/project_win.png
+share/gnome/help/anjuta/C/figures/registers.png
+share/gnome/help/anjuta/C/figures/scrshot.png
+share/gnome/help/anjuta/C/figures/sharedlibs.png
+share/gnome/help/anjuta/C/figures/signal_mod.png
+share/gnome/help/anjuta/C/figures/signals.png
+share/gnome/help/anjuta/C/figures/stack.png
+share/gnome/help/anjuta/C/figures/supports.png
+share/gnome/help/anjuta/C/figures/symbol_browser.png
+share/gnome/help/anjuta/C/figures/tool-editor.png
+share/gnome/help/anjuta/C/figures/toolbar_browser.png
+share/gnome/help/anjuta/C/figures/toolbar_debug.png
+share/gnome/help/anjuta/C/figures/toolbar_ext.png
+share/gnome/help/anjuta/C/figures/toolbar_format.png
+share/gnome/help/anjuta/C/figures/toolbar_main.png
+share/gnome/help/anjuta/C/figures/toolbar_tags.png
+share/gnome/help/anjuta/C/figures/variable_tip.png
+share/gnome/help/anjuta/C/figures/warnings.png
+share/gnome/help/anjuta/C/figures/watch.png
+share/gnome/help/anjuta/C/figures/watch_add.png
+share/gnome/help/anjuta/C/fileoperations.xml
+share/gnome/help/anjuta/C/interface.xml
+share/gnome/help/anjuta/C/introduction.xml
+share/gnome/help/anjuta/C/legal.xml
+share/gnome/help/anjuta/C/license.xml
+share/gnome/help/anjuta/C/preferences.xml
+share/gnome/help/anjuta/C/projects.xml
+share/gnome/help/anjuta/C/template.xml
+share/gnome/help/anjuta/C/tools.xml
+share/gnome/help/anjuta/ja/anjuta-faqs.xml
+share/gnome/help/anjuta/ja/anjuta-manual.xml
+share/gnome/help/anjuta/ja/authors.xml
+share/gnome/help/anjuta/ja/build.xml
+share/gnome/help/anjuta/ja/compileopts.xml
+share/gnome/help/anjuta/ja/debugger.xml
+share/gnome/help/anjuta/ja/execute.xml
+share/gnome/help/anjuta/ja/figures/appwiz1.png
+share/gnome/help/anjuta/ja/figures/appwiz2.png
+share/gnome/help/anjuta/ja/figures/appwiz3.png
+share/gnome/help/anjuta/ja/figures/appwiz4.png
+share/gnome/help/anjuta/ja/figures/arguments.png
+share/gnome/help/anjuta/ja/figures/attach.png
+share/gnome/help/anjuta/ja/figures/brk_add.png
+share/gnome/help/anjuta/ja/figures/brk_dlg.png
+share/gnome/help/anjuta/ja/figures/brk_edit.png
+share/gnome/help/anjuta/ja/figures/ccview.png
+share/gnome/help/anjuta/ja/figures/ccview_class.png
+share/gnome/help/anjuta/ja/figures/ccview_struct.png
+share/gnome/help/anjuta/ja/figures/configure_dlg.png
+share/gnome/help/anjuta/ja/figures/defines.png
+share/gnome/help/anjuta/ja/figures/devt_menu.png
+share/gnome/help/anjuta/ja/figures/evaluate.png
+share/gnome/help/anjuta/ja/figures/fileview.png
+share/gnome/help/anjuta/ja/figures/find_files.png
+share/gnome/help/anjuta/ja/figures/find_replace.png
+share/gnome/help/anjuta/ja/figures/find_text.png
+share/gnome/help/anjuta/ja/figures/frame.png
+share/gnome/help/anjuta/ja/figures/impwiz.png
+share/gnome/help/anjuta/ja/figures/includes.png
+share/gnome/help/anjuta/ja/figures/inspect.png
+share/gnome/help/anjuta/ja/figures/lib_paths.png
+share/gnome/help/anjuta/ja/figures/libraries.png
+share/gnome/help/anjuta/ja/figures/mainwin.png
+share/gnome/help/anjuta/ja/figures/menu_detached.png
+share/gnome/help/anjuta/ja/figures/menu_main.png
+share/gnome/help/anjuta/ja/figures/message_win.png
+share/gnome/help/anjuta/ja/figures/open_file.png
+share/gnome/help/anjuta/ja/figures/optimizations.png
+share/gnome/help/anjuta/ja/figures/other_opts.png
+share/gnome/help/anjuta/ja/figures/project_info.png
+share/gnome/help/anjuta/ja/figures/project_win.png
+share/gnome/help/anjuta/ja/figures/registers.png
+share/gnome/help/anjuta/ja/figures/scrshot.png
+share/gnome/help/anjuta/ja/figures/sharedlibs.png
+share/gnome/help/anjuta/ja/figures/signal_mod.png
+share/gnome/help/anjuta/ja/figures/signals.png
+share/gnome/help/anjuta/ja/figures/stack.png
+share/gnome/help/anjuta/ja/figures/supports.png
+share/gnome/help/anjuta/ja/figures/toolbar_browser.png
+share/gnome/help/anjuta/ja/figures/toolbar_debug.png
+share/gnome/help/anjuta/ja/figures/toolbar_ext.png
+share/gnome/help/anjuta/ja/figures/toolbar_format.png
+share/gnome/help/anjuta/ja/figures/toolbar_main.png
+share/gnome/help/anjuta/ja/figures/toolbar_tags.png
+share/gnome/help/anjuta/ja/figures/warnings.png
+share/gnome/help/anjuta/ja/figures/watch.png
+share/gnome/help/anjuta/ja/figures/watch_add.png
+share/gnome/help/anjuta/ja/fileoperations.xml
+share/gnome/help/anjuta/ja/interface.xml
+share/gnome/help/anjuta/ja/introduction.xml
+share/gnome/help/anjuta/ja/legal.xml
+share/gnome/help/anjuta/ja/license.xml
+share/gnome/help/anjuta/ja/preferences.xml
+share/gnome/help/anjuta/ja/projects.xml
 share/gnome/mime-info/anjuta.mime
+share/gnome/omf/anjuta/anjuta-faqs-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/anjuta/anjuta-manual-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/anjuta/anjuta-manual-ja_JP.UTF-8.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-manual-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/anjuta/anjuta-tutorial-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/anjuta/anjuta-tutorial-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/anjuta/anjuta_icon.png
 share/gnome/pixmaps/anjuta/anjuta_logo.png
 share/gnome/pixmaps/anjuta/anjuta_logo1.png
@@ -255,6 +410,7 @@ share/locale/hi/LC_MESSAGES/anjuta.mo
 share/locale/it/LC_MESSAGES/anjuta.mo
 share/locale/ja/LC_MESSAGES/anjuta.mo
 share/locale/ml/LC_MESSAGES/anjuta.mo
+share/locale/ms/LC_MESSAGES/anjuta.mo
 share/locale/nl/LC_MESSAGES/anjuta.mo
 share/locale/no/LC_MESSAGES/anjuta.mo
 share/locale/pl/LC_MESSAGES/anjuta.mo
@@ -270,6 +426,12 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/mimelnk/application
 @dirrm share/mimelnk
 @dirrm share/gnome/pixmaps/anjuta
+@dirrm share/gnome/omf/anjuta
+@dirrm share/gnome/help/anjuta/ja/figures
+@dirrm share/gnome/help/anjuta/ja
+@dirrm share/gnome/help/anjuta/C/figures
+@dirrm share/gnome/help/anjuta/C
+@dirrm share/gnome/help/anjuta
 @dirrm share/gnome/anjuta/gdl/glade
 @dirrm share/gnome/anjuta/gdl
 %%PORTDOCS%%@dirrm share/doc/anjuta
@@ -279,3 +441,8 @@ share/locale/zh_TW/LC_MESSAGES/anjuta.mo
 @dirrm share/gnome/anjuta/glade
 @dirrm share/gnome/anjuta
 @dirrm lib/anjuta
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-faqs-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-manual-ja_JP.UTF-8.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/anjuta/anjuta-tutorial-C.omf 2>/dev/null || /usr/bin/true
