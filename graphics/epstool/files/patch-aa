@@ -1,13 +1,13 @@
---- makefile.unx.orig	Sat Dec  5 04:05:34 1998
-+++ makefile.unx	Fri Feb 25 04:42:20 2000
+--- makefile.unx.orig	Mon Nov  6 09:58:48 2000
++++ makefile.unx	Thu Jan 11 22:48:17 2001
 @@ -20,13 +20,13 @@
  RM=/bin/rm -f
  SHELL=/bin/sh
  
 -BINDIR=/usr/local/bin
--INCLUDES=-I/usr/openwin/include
+-INCLUDES=-I/usr/openwin/include -I../src -I.
 +BINDIR=${PREFIX}/bin
-+INCLUDES=
++INCLUDES=-I../src -I.
  LIBS=
  # if you have a strict ANSI compiler, add -D__STDC__
  DEFINES=-DUNIX -DEPSTOOL -DHAVE_UNISTD_H
@@ -15,9 +15,9 @@
 -CC=gcc
 +#CC=gcc
  
- OBJS=epstool.$(OBJ) gvceps.$(OBJ) ps.$(OBJ)
+ OBJS=epstool.$(OBJ) gvceps.$(OBJ) dscparse.$(OBJ) dscutil.$(OBJ)
  
-@@ -54,5 +54,5 @@
+@@ -61,5 +61,5 @@
  	-$(RM) epstool
  
  install: epstool
