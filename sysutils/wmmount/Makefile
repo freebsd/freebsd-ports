@@ -14,11 +14,16 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-
 USE_IMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
+.endif
 
 post-patch:
 .for file in system.wmmount.eg system.wmmount.sh
