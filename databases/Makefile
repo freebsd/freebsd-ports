@@ -26,8 +26,6 @@
     SUBDIR += mysql-editor
     SUBDIR += mysql-jdbc-mm
     SUBDIR += mysql-navigator
-    SUBDIR += mysql322-client
-    SUBDIR += mysql322-server
     SUBDIR += mysql323-client
     SUBDIR += mysql323-server
     SUBDIR += mysqltcl
