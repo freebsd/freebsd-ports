@@ -1,1 +1,1 @@
-Tool to list and extract files from a "*.tgz" or "*.gz" archive
+A small (60 Kb when strippped) and unemcumbered implementation of untar.
