@@ -34,9 +34,16 @@ CONFIGURE_ENV=	ARCH="" \
 		CFLAGS="${CFLAGS} -I${PREFIX}/include" \
 		CPPFLAGS="-I${PREFIX}/include" \
 		CXXFLAGS="${CFLAGS} -I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib"
+		LDFLAGS="-L${PREFIX}/lib ${LDFLAGS}"
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} >= 4
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS}
+.endif
 
 post-patch:
 	@find ${WRKSRC} -name Makefile.am | \
@@ -53,4 +60,4 @@ post-install:
 	  xargs ${PERL} -pi -e "s;/usr/lpp;${PREFIX};g"
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
