@@ -1,16 +1,22 @@
---- configure.orig	Thu Feb 14 22:11:21 2002
-+++ configure	Tue Feb 19 13:26:23 2002
-@@ -3502,43 +3502,6 @@
+--- configure.orig	Mon Aug 12 07:34:23 2002
++++ configure	Mon Sep  2 07:03:25 2002
+@@ -4358,49 +4358,6 @@
    echo "$as_me: failed program was:" >&5
  cat conftest.$ac_ext >&5
  olibs="$LIBS"
 -LIBS="-lcurses $olibs"
--{ echo "$as_me:3506: checking libcurses..." >&5
+-{ echo "$as_me:$LINENO: checking libcurses..." >&5
 -echo "$as_me: checking libcurses..." >&6;}
 -cat >conftest.$ac_ext <<_ACEOF
--#line 3509 "configure"
+-#line $LINENO "configure"
 -#include "confdefs.h"
 -
+-#ifdef F77_DUMMY_MAIN
+-#  ifdef __cplusplus
+-     extern "C"
+-#  endif
+-   int F77_DUMMY_MAIN() { return 1; }
+-#endif
 -int
 -main ()
 -{
@@ -26,25 +32,25 @@
 -}
 -_ACEOF
 -rm -f conftest.$ac_objext conftest$ac_exeext
--if { (eval echo "$as_me:3527: \"$ac_link\"") >&5
+-if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
 -  (eval $ac_link) 2>&5
 -  ac_status=$?
--  echo "$as_me:3530: \$? = $ac_status" >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); } &&
 -         { ac_try='test -s conftest$ac_exeext'
--  { (eval echo "$as_me:3533: \"$ac_try\"") >&5
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
 -  (eval $ac_try) 2>&5
 -  ac_status=$?
--  echo "$as_me:3536: \$? = $ac_status" >&5
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
 -  (exit $ac_status); }; }; then
 -  :
 -else
 -  echo "$as_me: failed program was:" >&5
 -cat conftest.$ac_ext >&5
  LIBS="-ltermcap $olibs"
- { echo "$as_me:3543: checking libtermcap..." >&5
+ { echo "$as_me:$LINENO: checking libtermcap..." >&5
  echo "$as_me: checking libtermcap..." >&6;}
-@@ -3643,8 +3606,6 @@
+@@ -4523,8 +4480,6 @@
  rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  fi
  rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
@@ -52,8 +58,8 @@
 -rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
  
  if test "$cross_compiling" = yes; then
-   { { echo "$as_me:3650: error: cannot run test program while cross compiling" >&5
-@@ -3657,7 +3618,7 @@
+   { { echo "$as_me:$LINENO: error: cannot run test program while cross compiling" >&5
+@@ -4537,7 +4492,7 @@
  
  main()
  {
@@ -62,7 +68,7 @@
  }
  _ACEOF
  rm -f conftest$ac_exeext
-@@ -3861,18 +3822,15 @@
+@@ -4762,18 +4717,15 @@
  fi
  rm -f conftest*
  
@@ -71,17 +77,17 @@
 -p1=`echo $ptys | tr ' ' '\012' | sed -e 's/^.*\(.\)$/\1/g'  | sort -u | tr -d '\012'`
 +# XXX: hardcoded, since port must be devfs and various setups independent
 +
- cat >>confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
 -#define PTYRANGE0 "$p0"
 +#define PTYRANGE0 "pqrsPQRS"
- EOF
+ _ACEOF
  
- cat >>confdefs.h <<EOF
+ cat >>confdefs.h <<_ACEOF
 -#define PTYRANGE1 "$p1"
 +#define PTYRANGE1 "0123456789abcdefghijklmnopqrstuv"
- EOF
+ _ACEOF
 -
 -fi
  
- { echo "$as_me:3877: checking default tty permissions/group..." >&5
+ { echo "$as_me:$LINENO: checking default tty permissions/group..." >&5
  echo "$as_me: checking default tty permissions/group..." >&6;}
