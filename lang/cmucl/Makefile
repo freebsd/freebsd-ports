@@ -17,6 +17,7 @@ DISTNAME=	cmucl-18d-x86-FreeBSD
 MAINTAINER=	cracauer@cons.org
 COMMENT=	The CMU implementation of Common Lisp
 
+ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	YES
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
