@@ -1,4 +1,5 @@
-DOC++ is a source documentation system for C++.
-It is jenerated javadoc-like documentatio in HTML and LaTeX.
-for more info, please, refer to 
-     http://www.zib.de/Visual/software/doc++/index.html
+DOC++ is a source documentation system for C++.  It is jenerated
+javadoc-like documentatio in HTML and LaTeX.  The homepage contains
+more information to supplement this short description.
+
+WWW: http://www.zib.de/Visual/software/doc++/index.html

@@ -9,8 +9,8 @@ explored incrementally and interactively, using automatic layout if
 preferred.  Each time the program stops, the data display reflects the
 current variable values.
 
-See the DDD homepage at
-	http://www.cs.tu-bs.de/softech/ddd/
+WWW: http://www.cs.tu-bs.de/softech/ddd/
+
 Also daily CVS snapshots are at
 	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/current/
 Binaries for other systems are at:

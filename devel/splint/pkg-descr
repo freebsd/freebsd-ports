@@ -3,6 +3,4 @@ effort, LCLint can be used as a better lint.  If additional effort is
 invested adding annotations to programs, LCLint can perform stronger
 checks than can be done by any standard lint.
 
-Check the LCLint home page at 
-	http://www.sds.lcs.mit.edu/lclint/
-for more information and complete documentation.
+WWW: http://www.sds.lcs.mit.edu/lclint/

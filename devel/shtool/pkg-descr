@@ -8,5 +8,4 @@ intended to be used inside the source tree of Open Source packages.  There it
 can overtake various (usually non-portable) tasks related to the building and
 installation of an Open Source package.
 
-The homepage with the latest release can be found on
-http://www.engelschall.com/sw/shtool/
+WWW: http://www.engelschall.com/sw/shtool/

@@ -38,11 +38,7 @@ site. The DOS files mentioned above should be in
 the DJGPP FAQ for more information on this topic.
 
 
-More Information
-================
-
-DJGPP web site - including DPMI server, source code and FAQ's etc...
-	http://www.delorie.com/djgpp/
+WWW: http://www.delorie.com/djgpp/ (DPMI server, source, FAQs, etc)
 
 
 Related ports 
@@ -61,5 +57,5 @@ selection of ports.
 
 Share and enjoy,
 
-Joel...
+- Joel
 sutton@aardvark.apana.org.au
