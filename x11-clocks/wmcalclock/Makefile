@@ -3,13 +3,12 @@
 # Date created:        16 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/16 10:47:12 kris Exp $
+# $Id: Makefile,v 1.2 1999/03/22 12:59:45 kris Exp $
 #
 
 DISTNAME=	wmCalClock-1.22
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	ftp://leadbelly.lanl.gov/pub/mgh/ \
-		ftp://ftp.ukrnet.net/pub/Unix/WindowMaker/src/
+MASTER_SITES=	ftp://ftp.ukrnet.net/pub/Unix/WindowMaker/src/
 
 MAINTAINER=	kris@FreeBSD.ORG
 
