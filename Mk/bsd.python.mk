@@ -77,22 +77,33 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 # version number is substituted and the corresponding Python distribution
 # will be built through the dependency processing.
 _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
-					|| echo 2.1
+					|| echo 2.2
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-_PYTHON_PORTVERSION=	2.1.1
+_PYTHON_PORTVERSION=	2.2
 PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
 					|| echo ${_PYTHON_PORTVERSION}
 
+# Python-2.2
+.if ${PYTHON_VERSION} == "python2.2"
+PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
+PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
+
+PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
+PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
+PYTHON_REL=			220
+PYTHON_SUFFIX=		22
+PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
+
 # Python-2.1
-.if ${PYTHON_VERSION} == "python2.1"
+.elif ${PYTHON_VERSION} == "python2.1"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
 PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
 PYTHON_REL=			211
-PYTHON_SUFFIX=		# empty, default version
+PYTHON_SUFFIX=		21
 PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 
 # Python-2.0

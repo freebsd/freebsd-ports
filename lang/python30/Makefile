@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
@@ -23,7 +23,7 @@ INSTALL_TARGET=	install
 MAN1=		python.1
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
+PYTHON_VERSION=	python2.2
 PYTHON_NO_DEPENDS=	yes
 
 #
@@ -69,7 +69,7 @@ PLATFORMS=plat-freebsd3 plat-freebsd4 plat-freebsd5
 pre-install:
 .for platform in ${PLATFORMS}
 	${MKDIR} ${PYTHON_LIBDIR}/${platform}
-.for file in FCNTL.py IN.py regen
+.for file in IN.py regen
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
 		${PYTHON_LIBDIR}/${platform}/
 .endfor
