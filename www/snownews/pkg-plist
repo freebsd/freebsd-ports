@@ -1,5 +1,6 @@
 bin/opml2snow
 bin/snownews
+bin/snowsync
 share/locale/de/LC_MESSAGES/snownews.mo
 share/locale/fr/LC_MESSAGES/snownews.mo
 share/locale/nl/LC_MESSAGES/snownews.mo
