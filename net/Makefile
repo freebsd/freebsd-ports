@@ -353,6 +353,7 @@
     SUBDIR += mldonkey-gui
     SUBDIR += mldonkey-gui-devel
     SUBDIR += mldonkey-perlreactor
+    SUBDIR += mldonkey-sancho
     SUBDIR += mldonkey-serverspy
     SUBDIR += mldonkey-urlslave
     SUBDIR += mmucl

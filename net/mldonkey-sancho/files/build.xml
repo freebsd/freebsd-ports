@@ -1,0 +1,44 @@
+<!-- Under a BSDL license. Copyright by Mario S F Ferreira <lioux@FreeBSD.org>  -->
+<!-- $FreeBSD$ -->
+<project basedir="." default="dist" name="sancho">
+     <description>
+	Builds Sancho
+     </description>
+   <!-- set global properties for this build -->
+   <property name="src" location="src"/>
+   <property name="build" location="build"/>
+   <property name="dist" location="dist"/>
+
+   <target name="init">
+     <!-- Create the time stamp -->
+     <tstamp/>
+     <!-- Create the build directory structure used by compile -->
+     <mkdir dir="${build}"/>
+   </target>
+
+   <target name="compile" depends="init" description="compile the source">
+     <!-- Compile the java code from ${src} into ${build} -->
+     <javac srcdir="${src}" destdir="${build}">
+       <include name="**/*.java"/>
+       <classpath path="%%CLASSPATH%%"/>
+     </javac>
+   </target>
+
+   <target name="dist" depends="compile" description="generate the distribution">
+     <!-- Create the distribution directory -->
+     <mkdir dir="${dist}"/>
+
+     <copy todir="${build}">
+       <fileset dir="${src}" includes="**/*.gif **/*.png **/*.properties"/>
+     </copy>
+
+     <!-- Put everything in ${build} into the azureus.jar file -->
+     <jar jarfile="${dist}/sancho.jar" basedir="${build}"/>
+   </target>
+
+   <target name="clean" description="clean up" >
+     <!-- Delete the ${build} and ${dist} directory trees -->
+     <delete dir="${build}"/>
+     <delete dir="${dist}"/>
+   </target>
+</project>
