@@ -10,7 +10,7 @@ PORTNAME=	postmark
 PORTVERSION=	1.5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netapp.com/ftp/  \
-		http://www.taronga.com/~nick/files/
+		http://dl.droso.net/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.c
 
