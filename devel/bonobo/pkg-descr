@@ -1,0 +1,9 @@
+Bonobo is a set of language and system independant CORBA
+interfaces for creating reusable components and creating compound
+documents.
+
+The Bonobo distribution includes a Gtk+ based implementation of the
+Bonobo interfaces, enabling developers to create reusable components
+and applications that can be used to form more complex documents.
+
+WWW: http://www.gnome.org/

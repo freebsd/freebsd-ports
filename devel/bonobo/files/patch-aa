@@ -1,0 +1,19 @@
+--- configure.orig	Fri Oct  8 12:58:58 1999
++++ configure	Fri Oct  8 13:06:30 1999
+@@ -4454,6 +4454,8 @@
+ if eval "test \"`echo '$''{'ac_cv_func_$ac_func'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
++  ac_save_LIBS="$LIBS"
++LIBS="-lintl  $LIBS"
+   cat > conftest.$ac_ext <<EOF
+ #line 4459 "configure"
+ #include "confdefs.h"
+@@ -4488,6 +4490,7 @@
+   eval "ac_cv_func_$ac_func=no"
+ fi
+ rm -f conftest*
++LIBS="$ac_save_LIBS"
+ fi
+ 
+ if eval "test \"`echo '$ac_cv_func_'$ac_func`\" = yes"; then
