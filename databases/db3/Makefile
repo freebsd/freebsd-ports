@@ -23,6 +23,10 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dump185 --enable-cxx
 
 post-install:
+	$(MKDIR) ${PREFIX}/share/examples/db2
+	cd ${WRKSRC}/..; \
+	    tar -cf - --exclude tags examples/ examples_cxx/ examples_java/ | \
+	    ( cd ${PREFIX}/share/examples/db2; tar xf - )
 	@echo ""
 	@echo "Java support for ${PKGNAME} is *not* built by default, and requires that you"
 	@echo "have a working copy of the JDK (v1.1) installed."
