@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	3.55
+PORTVERSION=	3.56
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tamacom.com/unix/
+MASTER_SITES=	http://www.tamacom.com/global/
 
 MAINTAINER=	chuckr@freebsd.org
 
