@@ -1,6 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/HTTP.pm
+lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/HTTP/SSL.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/POE/Component/Client/HTTP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client/HTTP
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component/Client 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE/Component 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/POE 2>/dev/null || true
