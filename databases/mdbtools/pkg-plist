@@ -1,3 +1,4 @@
+%%GNOME:%%bin/gmdb2
 bin/mdb-array
 bin/mdb-dump
 bin/mdb-export
@@ -15,21 +16,53 @@ bin/prkkd
 bin/prole
 bin/prtable
 bin/updrow
+include/gmdb.h
 include/mdbodbc.h
 include/mdbsql.h
 include/mdbtools.h
-lib/libmdbsql.a
-lib/libmdbsql.la
-lib/libmdbsql.so
-lib/libmdbsql.so.0
 lib/libmdb.a
-lib/libmdb.la
 lib/libmdb.so
 lib/libmdb.so.0
+lib/libmdbsql.a
+lib/libmdbsql.so
+lib/libmdbsql.so.0
 %%PORTDOCS%%share/doc/mdbtools/AUTHORS
 %%PORTDOCS%%share/doc/mdbtools/ChangeLog
 %%PORTDOCS%%share/doc/mdbtools/HACKING
 %%PORTDOCS%%share/doc/mdbtools/NEWS
 %%PORTDOCS%%share/doc/mdbtools/README
 %%PORTDOCS%%share/doc/mdbtools/TODO
+%%GNOME:%%share/gnome/gmdb/glade/code.xpm
+%%GNOME:%%share/gnome/gmdb/glade/debug.xpm
+%%GNOME:%%share/gnome/gmdb/glade/form_big.xpm
+%%GNOME:%%share/gnome/gmdb/glade/forms.xpm
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-debug.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-export.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-prefs.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-props.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-schema.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-sql-file.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb-sql.glade
+%%GNOME:%%share/gnome/gmdb/glade/gmdb.glade
+%%GNOME:%%share/gnome/gmdb/glade/logo.xpm
+%%GNOME:%%share/gnome/gmdb/glade/macro_big.xpm
+%%GNOME:%%share/gnome/gmdb/glade/macros.xpm
+%%GNOME:%%share/gnome/gmdb/glade/module_big.xpm
+%%GNOME:%%share/gnome/gmdb/glade/pk.xpm
+%%GNOME:%%share/gnome/gmdb/glade/query.xpm
+%%GNOME:%%share/gnome/gmdb/glade/query_big.xpm
+%%GNOME:%%share/gnome/gmdb/glade/report_big.xpm
+%%GNOME:%%share/gnome/gmdb/glade/reports.xpm
+%%GNOME:%%share/gnome/gmdb/glade/stock_export-16.png
+%%GNOME:%%share/gnome/gmdb/glade/stock_export.png
+%%GNOME:%%share/gnome/gmdb/glade/table.xpm
+%%GNOME:%%share/gnome/gmdb/glade/table_big.xpm
+%%GNOME:%%share/gnome/help/gmdb/C/figures/gmdb2_window.png
+%%GNOME:%%share/gnome/help/gmdb/C/gmdb.xml
+%%GNOME:%%share/gnome/help/gmdb/C/legal.xml
+%%GNOME:%%@dirrm share/gnome/help/gmdb/C/figures
+%%GNOME:%%@dirrm share/gnome/help/gmdb/C
+%%GNOME:%%@dirrm share/gnome/help/gmdb
+%%GNOME:%%@dirrm share/gnome/gmdb/glade
+%%GNOME:%%@dirrm share/gnome/gmdb
 %%PORTDOCS%%@dirrm share/doc/mdbtools

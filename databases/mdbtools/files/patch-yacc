@@ -1,7 +1,0 @@
---- src/sql/Makefile.in	Sat Jan 18 20:55:42 2003
-+++ src/sql/Makefile.in	Tue Apr 15 12:13:04 2003
-@@ -99,3 +99,3 @@
- VERSION = @VERSION@
--YACC = bison -y -d
-+YACC = yacc -d
- am__include = @am__include@
