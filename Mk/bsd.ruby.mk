@@ -72,6 +72,7 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_RD2		- Full path of rd2 executable.
 # RUBY_RDOC		- Full path of rdoc executable.
 #
+# RUBY_BASE_PORT	- Port path of base ruby without PORTSDIR, without suffix except version.
 # RUBY_PORT		- Port path of ruby without PORTSDIR.
 # RUBY_SHIM18_PORT	- Port path of ruby16-shim-ruby18 without PORTSDIR.
 # RUBY_AMSTD_PORT	- Port path of ruby-amstd without PORTSDIR.
@@ -129,7 +130,6 @@ RUBY?=			${LOCALBASE}/bin/${RUBY_NAME}
 
 .if defined(RUBY_VER) && ${RUBY_VER} == 1.8
 RUBY_VERSION?=		1.8.0
-RUBY_PORT?=		lang/ruby${RUBY_R}-devel
 #RUBY_DISTVERSION?=	${RUBY_VERSION}
 #RUBY_PATCHFILES?=	ruby-${RUBY_DISTVERSION}-yyyy.mm.dd.diff.bz2
 #RUBY_PORTVERSION?=	${RUBY_VERSION}
@@ -203,7 +203,8 @@ RUBY_RD2?=		${LOCALBASE}/bin/rd2
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
 
 # Ports
-RUBY_PORT?=		lang/ruby${RUBY_R}
+RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
+RUBY_PORT?=		${RUBY_BASE_PORT}${RUBY_R}
 RUBY_SHIM18_PORT?=	lang/ruby16-shim-ruby18
 RUBY_AMSTD_PORT?=	devel/ruby-amstd
 RUBY_RDTOOL_PORT?=	textproc/ruby-rdtool
