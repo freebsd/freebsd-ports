@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkextra
-PORTVERSION=	0.99.13
+PORTVERSION=	0.99.14
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://gtkextra.sourceforge.net/src/ \

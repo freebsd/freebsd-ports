@@ -1,14 +1,8 @@
---- Makefile.in	2000/10/18 11:24:38	1.1
-+++ Makefile.in	2000/10/18 11:24:40
-@@ -117,7 +117,7 @@
- 
- 
- m4datadir = $(datadir)/aclocal
--m4data_DATA = gtk.m4
-+m4data_DATA = gtk+extra.m4
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = config.h
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Mar  9 17:19:15 2001
++++ Makefile.in	Sun Mar 11 12:36:59 2001
 @@ -448,6 +448,8 @@
  installdirs mostlyclean-generic distclean-generic clean-generic \
  maintainer-clean-generic clean mostlyclean distclean maintainer-clean
