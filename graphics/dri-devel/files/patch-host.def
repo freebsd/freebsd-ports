@@ -1,9 +1,10 @@
---- config/cf/host.def.orig	Fri Aug 30 15:05:13 2002
-+++ config/cf/host.def	Fri Aug 30 15:12:10 2002
-@@ -4,16 +4,10 @@
+--- config/cf/host.def.orig	Wed Oct 22 16:15:12 2003
++++ config/cf/host.def	Tue Nov 11 17:48:48 2003
+@@ -8,18 +8,10 @@
+ /* Don't use any special flags by default, but leave this here commented out
+  * so people see how to if they want
   */
- #define XFree86CustomVersion "DRI trunk"
- 
+-/*
 -#define DefaultGcc2AxpOpt -O2 -mcpu=ev6
 -#define DefaultGcc2PpcOpt -O2 -mcpu=750
 -#define DefaultGcc2i386Opt -O2
@@ -14,19 +15,30 @@
 -#else
 -#  define LibraryCDebugFlags -O2
 -#endif
+-*/
 +#define DefaultGcc2AxpOpt ${FBSDCFLAGS}
 +#define DefaultGcc2PpcOpt ${FBSDCFLAGS}
 +#define DefaultGcc2i386Opt ${FBSDCFLAGS}
 +#define LibraryCDebugFlags ${FBSDCFLAGS}
  
- #define BuildXFree86ConfigTools YES
  
-@@ -32,7 +26,7 @@
+ #define BuildXFree86ConfigTools YES
+@@ -43,15 +35,17 @@
+ 
+ #if defined(FreeBSDArchitecture) && defined(HasGcc3) && HasGcc3
+ #define NoSystemWarn		-Wno-system-headers
++#define AliasingArg		-fno-strict-aliasing
+ #else
+ #define NoSystemWarn
++#define AliasingArg
+ #endif
+ 
  #define GccWarningOptions -Wall -Wpointer-arith -Wstrict-prototypes \
                            -Wmissing-prototypes -Wmissing-declarations \
-                           -Wnested-externs
--#define DefaultCCOptions -ansi GccWarningOptions -pipe -g
-+#define DefaultCCOptions -g
+                           -Wredundant-decls -Wnested-externs -Wundef \
+ 			  NoSystemWarn
+-#define DefaultCCOptions -ansi -pedantic GccWarningOptions -pipe -g
++#define DefaultCCOptions AliasingArg GccWarningOptions
  
  #define NormalLibGlx NO
  
