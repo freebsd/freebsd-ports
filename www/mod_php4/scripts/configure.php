@@ -14,7 +14,7 @@ FreeType	"PHP3:   TrueType font rendering (implies GD)" OFF \
 zlib		"PHP3:   zlib library support" ON \
 mcrypt		"PHP3:   Encryption support" OFF \
 mhash		"PHP3:   Crypto-hashing support" OFF \
-pdflib		"PHP3:   pdflib support" OFF \
+pdflib		"PHP3:   pdflib support (implies zlib)" OFF \
 IMAP		"PHP3:   IMAP support" OFF \
 MySQL		"PHP3:   MySQL database support" ON \
 PostgreSQL	"PHP3:   PostgreSQL database support" OFF \
@@ -62,6 +62,7 @@ while [ "$1" ]; do
 			;;
 		\"zlib\")
 			echo "PHP3_CONF_ARGS+=	--with-zlib"
+			ZLIB=1
 			;;
 		\"mcrypt\")
 			echo "LIB_DEPENDS+=		mcrypt.2:\${PORTSDIR}/security/libmcrypt"
@@ -72,8 +73,13 @@ while [ "$1" ]; do
 			echo "PHP3_CONF_ARGS+=	--with-mhash=\${PREFIX}"
 			;;
 		\"pdflib\")
-			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libpdf.a:\${PORTSDIR}/print/pdflib"
-			echo "PHP3_CONF_ARGS+=	--with-pdflib=\${PREFIX}"
+			echo "LIB_DEPENDS+=		pdf.2:\${PORTSDIR}/print/pdflib"
+			echo "PHP3_CONF_ARGS+=	--with-pdflib=\${PREFIX} \\"
+			echo "			--with-jpeg-dir=\${PREFIX} \\"
+			echo "			--with-tiff-dir=\${PREFIX}"
+			if [ -z "$ZLIB" ]; then
+				set $* \"zlib\"
+			fi
 			;;
 		\"IMAP\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libc-client4.a:\${PORTSDIR}/mail/imap-uw"
