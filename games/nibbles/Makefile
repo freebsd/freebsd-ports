@@ -16,7 +16,7 @@ COMMENT=	Nibbles is a simple ncurses-based console game
 
 LDFLAGS+=	-L${LOCALBASE}/lib -lncurses
 CFLAGS+=	-Wall
-USE_GCC=	yes
+USE_GCC=	2.7+
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
