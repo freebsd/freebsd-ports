@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- oRTP/src/Makefile.in	2002/12/30 08:17:27	1.1
-+++ oRTP/src/Makefile.in	2002/12/30 08:24:15
-@@ -93,7 +93,7 @@
+--- oRTP/src/Makefile.in.orig	Fri Feb 28 01:21:43 2003
++++ oRTP/src/Makefile.in	Fri Feb 28 01:22:12 2003
+@@ -97,7 +97,7 @@
  
- EXTRA_DIST = master system LOAD
+ EXTRA_DIST = master system LOAD export.c export.h
  
 -DEFS = @DEFS@ $(PTHREAD_CFLAGS) -DG_LOG_DOMAIN=\"oRTP\"
 +DEFS = @DEFS@ $(PTHREAD_CFLAGS) -DG_LOG_DOMAIN=\"oRTP\" -DBUILD_SCHEDULER
+ CFLAGS = -I$(top_srcdir) $(GLIB_CFLAGS)
+ LDFLAGS = $(PTHREAD_LDFLAGS)
  
- @HPUXKERNEL_TRUE@KERNEL_BITS = $$(getconf KERNEL_BITS)
- @HPUXKERNEL_TRUE@SYSTEM = $$(/usr/bin/uname -s)

@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- mediastreamer/Makefile.in	2002/12/30 08:36:10	1.1
-+++ mediastreamer/Makefile.in	2002/12/30 08:43:27
+--- mediastreamer/Makefile.in.orig	Fri Feb 28 01:20:45 2003
++++ mediastreamer/Makefile.in	Fri Feb 28 01:20:45 2003
 @@ -163,7 +163,7 @@
  @BUILD_V4L_TRUE@V4L_PLUGIN_TEST = test_v4l
  
@@ -12,16 +12,7 @@ $FreeBSD$
  
  
  libmediastreamer_la_SOURCES = msfilter.c msfilter.h msutils.h\
-@@ -239,7 +239,7 @@
- 
- 
- mstest_SOURCES = test.c
--mstest_LDADD = libmediastreamer.la -lglib -lpthread -lgthread
-+mstest_LDADD = libmediastreamer.la @GLIB_LIBS@
- 
- #test program to test MSRingPlayer object
- ring_test_SOURCES = ring_test.c
-@@ -291,7 +291,7 @@
+@@ -296,7 +296,7 @@
  
  #the mediastream program that runs a processing that will be used in linphone
  mediastream_SOURCES = mediastream.c audiostream.c mediastream.h
