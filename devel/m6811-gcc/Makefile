@@ -16,7 +16,7 @@ PATCH_SITES=	http://stephane.carrez.free.fr/snapshots/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-m68hc1x-20010922.diffs.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gcc-2.95.2 cross-compiler for the 6811
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/m6811-elf-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
