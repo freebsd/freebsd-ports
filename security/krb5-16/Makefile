@@ -9,16 +9,16 @@ PORTNAME=		krb5
 PORTVERSION=		1.3.1
 PORTREVISION=		1
 CATEGORIES=		security
-# USE_MIT_TARBALL tells the port that the user has fetched the source
-# directly from MIT rather than the default crypto-publish.org.
-USE_MIT_TARBALL?=	NO
+# USE_TARBALL tells the port that the user has fetched the source
+# directly from MIT or crypto-publish.org (CRYTPO-PUBLISH).
+USE_KRB5_TARBALL?=		MIT
 
-.if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
-MASTER_SITES=		# manual download
-EXTRACT_SUFX=		.tar
-.else
+.if defined(USE_KRB5_TARBALL) && ${USE_KRB5_TARBALL} == "CRYPTO-PUBLISH"
 MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
 EXTRACT_SUFX=		.tar.gz
+.else
+MASTER_SITES=		http://web.mit.edu/kerberos/www/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}
+EXTRACT_SUFX=		.tar
 .endif
 
 MAINTAINER=		cy@FreeBSD.org
