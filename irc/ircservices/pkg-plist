@@ -13,6 +13,7 @@ lib/services/languages/ja_euc
 lib/services/languages/ja_sjis
 lib/services/languages/nl
 lib/services/languages/pt
+lib/services/languages/ru
 lib/services/languages/tr
 lib/services/modules/chanserv/access-levels.so
 lib/services/modules/chanserv/access-xop.so
