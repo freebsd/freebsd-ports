@@ -1,19 +1,10 @@
-*** make-ssh-known-hosts.pl.in.orig	Wed Apr 23 08:40:05 1997
---- make-ssh-known-hosts.pl.in	Fri Apr 25 12:38:21 1997
-***************
-*** 87,93 ****
-  $debug = 5;
-  $defserver = '';
-  $bell='\a';
-! $public_key = '/etc/ssh_host_key.pub';
-  $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
-  $timeout = 60;
-  $ping_timeout = 3;
---- 87,93 ----
-  $debug = 5;
-  $defserver = '';
-  $bell='\a';
-! $public_key = '@ETCDIR@/ssh_host_key.pub';
-  $private_ssh_known_hosts = "/tmp/ssh_known_hosts$$";
-  $timeout = 60;
-  $ping_timeout = 3;
+--- apps/ssh/Makefile.in.old	Mon Oct  5 22:18:17 1998
++++ apps/ssh/Makefile.in	Mon Oct  5 22:25:16 1998
+@@ -167,6 +167,7 @@
+ # defines
+ 
+ SSH_DEFS = -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\"
++SSH_DEFS+= -DSSH_SERVER_DIR=\"$(SSH_SERVER_DIR)\" -DSSH_CLIENT_GLOBAL_CONFIG_FILE=\"$(SSH_CLIENT_GLOBAL_CONFIG_FILE)\"
+ 
+ COMPILE = $(CC) $(KERBEROS_INCS) $(INCLUDES) $(SSH_DEFS) $(DEFS) $(CPPFLAGS) $(CFLAGS) $(X_CFLAGS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

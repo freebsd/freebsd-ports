@@ -1,62 +1,15 @@
-*** configure.orig	Wed Apr 23 08:40:06 1997
---- configure	Fri Apr 25 12:38:54 1997
-***************
-*** 1757,1768 ****
-  
-  export CFLAGS CC
-  
-- # Socket pairs appear to be broken on several systems.  I don't know exactly
-- # where, so I'll use pipes everywhere for now.
-- cat >> confdefs.h <<\EOF
-- #define USE_PIPES 1
-- EOF
-- 
-  
-  echo $ac_n "checking that the compiler works""... $ac_c" 1>&6
-  echo "configure:1769: checking that the compiler works" >&5
---- 1757,1762 ----
-***************
-*** 2759,2765 ****
-  
-  fi
-  
-! for ac_hdr in unistd.h rusage.h sys/time.h lastlog.h utmp.h shadow.h
-  do
-  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
-  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
---- 2753,2759 ----
-  
-  fi
-  
-! for ac_hdr in unistd.h rusage.h sys/time.h lastlog.h login_cap.h utmp.h shadow.h
-  do
-  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
-  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-***************
-*** 7031,7037 ****
-  
-  cat >> $CONFIG_STATUS <<EOF
-  
-! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.4/Makefile"}
-  EOF
-  cat >> $CONFIG_STATUS <<\EOF
-  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
---- 7025,7031 ----
-  
-  cat >> $CONFIG_STATUS <<EOF
-  
-! CONFIG_FILES=\${CONFIG_FILES-"Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 make-ssh-known-hosts.pl"}
-  EOF
-  cat >> $CONFIG_STATUS <<\EOF
-  for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
-***************
-*** 7235,7240 ****
---- 7229,7236 ----
-    done
-  
-    for ac_config_dir in gmp-2.0.2-ssh-2; do
-+   
-+ continue # XXX don't configure gmp
-  
-      # Do not complain, so a configure script can configure whichever
-      # parts of a large source tree are present.
+When you compile *.s with 'cc -pipe' on ELFed FreeBSD, it never ends.
+This patch is ugly hack to avoid the problem.
+
+--- lib/sshmath/Makefile.in.old	Thu Oct  8 03:48:38 1998
++++ lib/sshmath/Makefile.in	Thu Oct  8 03:49:32 1998
+@@ -383,8 +383,7 @@
+ 
+ .S.o:
+ 	$(CPP) $(CPPFLAGS) $(INCLUDES) $(DEFS) $< | grep -v '^#' >tmp-$*.s
+-	$(CC) $(CFLAGS) $(SFLAGS) -c tmp-$*.s
+-	mv tmp-$*.o $@
++	$(AS) $(SFLAGS) -o $@ tmp-$*.s
+ 	rm -f tmp-$*.s
+ 
+ includes:
