@@ -1,6 +1,6 @@
---- src/platform/LinuxMedia.cxx.orig	Sat Aug 12 00:50:20 2000
-+++ src/platform/LinuxMedia.cxx	Sat Aug 12 00:53:05 2000
-@@ -13,9 +13,13 @@
+--- src/platform/LinuxMedia.cxx.orig	Sat Jan 15 04:09:48 2000
++++ src/platform/LinuxMedia.cxx	Fri Aug 18 16:44:02 2000
+@@ -13,16 +13,27 @@
  #include "LinuxMedia.h"
  #include <math.h>
  #include <fcntl.h>
@@ -15,7 +15,11 @@
  #include <unistd.h>
  #include <sys/wait.h>
  #include <signal.h>
-@@ -23,6 +27,9 @@
++#if !defined(BSD)
+ #include <sys/soundcard.h>
++#else
++#include <machine/soundcard.h>
++#endif
  #include <sys/ioctl.h>
  #include <TimeKeeper.h>
  #include <errno.h>
