@@ -3,7 +3,7 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/11/26 08:00:21 tg Exp $
+# $Id: Makefile,v 1.3 1997/11/27 08:07:25 tg Exp $
 #
 
 DISTNAME=	tk8.0
@@ -21,13 +21,12 @@ LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80 \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 
-BROKEN=		"Needs my private tiff34 patches currently"
 FETCH_BEFORE_ARGS=	-b
 PATCH_DIST_ARGS=	-p -d ${WRKDIR} -E --quiet
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --enable-shared --enable-xpm --enable-step --enable-dnd \
-		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include"
+		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include -I${PREFIX}/include/tiff34"
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
 post-install:
