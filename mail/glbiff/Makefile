@@ -1,35 +1,34 @@
 # New ports collection makefile for:	glbiff
-# Version required:			0.2
+# Version required:			0.2.11
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.7 1998/10/01 02:17:48 jseger Exp $
+# $Id: Makefile,v 1.8 1998/10/09 03:31:53 asami Exp $
 #
 
-DISTNAME=	glbiff-0.2
+DISTNAME=	glbiff-0.2.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.eecg.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
-		MesaGLU.14:${PORTSDIR}/graphics/Mesa3 \
-		Mesatk.14:${PORTSDIR}/graphics/Mesa3 \
-		glut.3:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	MesaGL:${PORTSDIR}/graphics/Mesa3 \
+		MesaGLU:${PORTSDIR}/graphics/Mesa3 \
+		glut:${PORTSDIR}/graphics/Mesa3
 
-BROKEN=		can\'t find mesatk
-
-USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/glbiff
+GNU_CONFIGURE=	yes
+USE_X_PREFIX=	yes
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/glbiff ${PREFIX}/bin
 	@ ${MKDIR} ${PREFIX}/share/examples/glbiff
-	@ ${INSTALL_DATA} ${FILESDIR}/dot.glbiffrc.sample ${PREFIX}/share/examples/glbiff
+	@ ${INSTALL_DATA} ${WRKSRC}/glbiffrc.sample ${PREFIX}/share/examples/glbiff/dot.glbiffrc.sample
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/glbiff
-.for file in ChangeLog README TODO
+.for file in ChangeLog README README.last-minute TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/glbiff
 .endfor
 .endif
