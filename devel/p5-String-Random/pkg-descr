@@ -1,0 +1,7 @@
+String::Random is used to generate random strings.  It was written to
+make generating random passwords and such a little easier.  See the
+documentation in pod format in the module for more information.
+
+Author: Steven Pritchard <steve@silug.org>
+
+--will
