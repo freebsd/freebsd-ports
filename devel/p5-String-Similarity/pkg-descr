@@ -1,0 +1,5 @@
+The "String::Similarity" calculates the similarity index of its two
+arguments. A value of '0' means that the strings are entirely
+different. A value of '1' means that the strings are identical.
+Everything else lies between 0 and 1 and describes the amount of
+similarity between the strings.
