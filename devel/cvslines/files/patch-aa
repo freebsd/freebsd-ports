@@ -1,0 +1,32 @@
+--- CONFIG.old	Wed May 21 11:39:38 1997
++++ CONFIG	Fri Feb  1 04:43:42 2002
+@@ -14,17 +14,17 @@
+ #  The absolute path to the perl interpreter to use.
+ #  INSTALL will substitute this into the #!... line.
+ # 
+-if (! defined($PERL5)) { $PERL5 = "/usr/local/bin/perl5"; }   # cfg
++if (! defined($PERL5)) { $PERL5 = "$ENV{'PERL5'}"; }   # cfg
+ 
+ #  Where to install the cvslines scripts...
+ #  (Absolute path)
+ #
+-if (! defined($BINDIR)) { $BINDIR = "/usr/local/bin"; }       # cfg
++if (! defined($BINDIR)) { $BINDIR = "$ENV{'PREFIX'}/bin"; }       # cfg
+ 
+ #  Where to install the cvslines man page...
+ #  (Absolute path)
+ #
+-if (! defined($MANDIR)) { $MAN1DIR = "/usr/local/man/man1"; } # cfg
++if (! defined($MANDIR)) { $MAN1DIR = "$ENV{'PREFIX'}/man/man1"; } # cfg
+ 
+ ######################################################################
+ #
+@@ -52,7 +52,7 @@
+ 
+ #  Where the RCS to use with cvslines is kept.
+ #
+-\$RCSBIN = "$BINDIR";                # cfg
++\$RCSBIN = "/usr/bin/";                # cfg
+ 
+ 1;
+ 
