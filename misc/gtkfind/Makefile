@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.oz.net/~mattg/
 
 MAINTAINER=	billf@FreeBSD.org
 
+BROKEN=		"Missing dependency on xterm"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
