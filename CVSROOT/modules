@@ -5876,7 +5876,6 @@ pear-Net_SMTP	ports/net/pear-Net_SMTP
 pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_Socket	ports/net/pear-Net_Socket
 pear-PEAR	ports/devel/pear-PEAR
-pear-install	ports/devel/pear-install
 pear-mailparse	ports/mail/pear-mailparse
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper

@@ -720,7 +720,6 @@
     SUBDIR += pear-HTML_Select_Common
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
-    SUBDIR += pear-install
     SUBDIR += pedisassem
     SUBDIR += perforce
     SUBDIR += perltidy
