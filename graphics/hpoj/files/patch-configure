@@ -1,0 +1,19 @@
+--- configure.orig	Thu Aug  8 00:26:38 2002
++++ configure	Thu Jan 30 17:03:45 2003
+@@ -561,7 +561,7 @@
+ # Set up default make subdirectory and install file lists.
+ SUBDIRS="lib/hpojip lib/ptal lib/sane mlcd apps/cmdline"
+ bindir_program="apps/cmdline/ptal-connect apps/cmdline/ptal-device apps/cmdline/ptal-devid apps/cmdline/ptal-pml apps/cmdline/ptal-hp apps/cmdline/hpojip-test"
+-sbindir_program="mlcd/ptal-mlcd apps/cmdline/ptal-printd apps/cmdline/ptal-photod scripts/ptal-init scripts/ptal-cups"
++sbindir_program="mlcd/ptal-mlcd apps/cmdline/ptal-printd apps/cmdline/ptal-photod"
+ includedir_data="include/hpojip.h include/ptal.h"
+ 
+ # Select compilers and utilities.
+@@ -1597,7 +1597,6 @@
+ 	if test -n "$QT_MOC" -a -n "$QT_INCLUDE_PATH" -a -n "$LIBQT_CMDLINE" ; then
+ 		QT_PATH=$dir
+ 		SUBDIRS="$SUBDIRS apps/xojpanel"
+-		bindir_program="$bindir_program apps/xojpanel/xojpanel"
+ 		INCLUDE_PATH=$INCLUDE_PATH:$QT_INCLUDE_PATH
+ 		LIBRARY_PATH=$LIBRARY_PATH:$QT_PATH/lib
+ 		break

@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Fri Jul 26 14:05:04 2002
++++ Makefile.in	Mon May 19 12:12:29 2003
+@@ -5,6 +5,9 @@
+ SUBDIRS=@SUBDIRS@
+ DISTCLEANS=Makefile config.cache config.log config.status scripts/ptal-init
+ 
++CFLAGS+= @CFLAGS@
++LDFLAGS+= @LDFLAGS@
++
+ all:	check_generated just_compile
+ 
+ check_generated:
+@@ -71,7 +74,7 @@
+ sbindir_program=@sbindir_program@
+ 
+ libdir=@libdir@
+-libdir_program=lib/hpojip/libhpojip.so.*.* lib/ptal/libptal.so.*.* lib/sane/libsane-hpoj.so.*.*
++libdir_program=lib/hpojip/libhpojip.so.[0-9] lib/ptal/libptal.so.[0-9] lib/sane/libsane-hpoj.so.[0-9]
+ 
+ includedir=@includedir@
+ includedir_data=@includedir_data@
+@@ -101,9 +104,9 @@
+ 	@ cd lib ; \
+ 	  for comp in hpojip ptal sane ; do \
+ 	  	cd $$comp ; \
+-			for file in lib$$comp* ; do \
++			for file in lib$$comp*.so ; do \
+ 				if test -L $$file ; then \
+-					$(LN_S) -f lib$$comp*.so.*.* $(libdir)/$$file ; \
++					$(LN_S) -f lib$$comp*.so.[0-9] $(libdir)/$$file ; \
+ 				fi ; \
+ 			done ; \
+ 		cd .. ; \
