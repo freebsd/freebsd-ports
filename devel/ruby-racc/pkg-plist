@@ -29,6 +29,7 @@ bin/y2racc
 %%RUBY_DOCDIR%%/racc/debug.html
 %%RUBY_DOCDIR%%/racc/grammer.html
 %%RUBY_DOCDIR%%/racc/index.html
+%%RUBY_DOCDIR%%/racc/parser.html
 %%RUBY_DOCDIR%%/racc/usage.html
 @dirrm %%RUBY_EXAMPLESDIR%%/racc
 @dirrm %%RUBY_DOCDIR%%/racc/ja
