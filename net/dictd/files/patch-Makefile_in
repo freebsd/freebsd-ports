@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jan 12 17:24:29 2001
-+++ Makefile.in	Thu Jan 25 23:41:14 2001
+--- Makefile.in.orig	Mon Jun 10 02:33:02 2002
++++ Makefile.in	Mon Jun 10 02:37:31 2002
 @@ -33,7 +33,7 @@
  srcdir=		@srcdir@
  VPATH=		@srcdir@
@@ -17,7 +17,7 @@
 +XTRACFLAGS=     @WCFLAGS@ @XTRACFLAGS@ @DEFS@ @CPPFLAGS@ -I. # -Iregex
  XTRALDFLAGS=    @WLDFLAGS@ @XTRALDFLAGS@
 -LDLIBS=		@LIBS@ -Lregex -lregex
-+LDLIBS=		@LIBS@ -lgnuregex # -Lregex -lregex
++LDLIBS=		@LIBS@ # -Lregex -lregex
  
  EXES=	 	dict dictd dictzip
  
@@ -59,20 +59,3 @@
  
  servparse.o: servparse.c $(HEADERS)
  	$(CC) -c $(XTRACFLAGS) $(CFLAGS) $(SCFLAGS) $<
-@@ -145,13 +137,13 @@
- 	install -m 644 dict.1 $(man1_prefix)/dict.1
- 
- install.dictzip: dictzip
--	install dictzip $(bindir)
--	install -m 644 dictzip.1 $(man1_prefix)/dictzip.1
-+	${INSTALL_PROGRAM} dictzip $(bindir)
-+	${INSTALL_DATA} dictzip.1 $(man1_prefix)/dictzip.1
- 
- install.dictd: dictd
--	install dictd $(sbindir)
-+	${INSTALL_PROGRAM} dictd $(sbindir)
- 	if test ! -d $(man8_prefix); then install -d 755 $(man8_prefix); fi
--	install -m 644 dictd.8 $(man8_prefix)/dictd.8
-+	${INSTALL_DATA} dictd.8 $(man8_prefix)/dictd.8
- 
- install: $(EXES) install.dict install.dictzip install.dictd
