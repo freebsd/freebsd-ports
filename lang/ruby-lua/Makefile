@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Ruby/Lua
+# New ports collection makefile for:	Ruby/Lua5
 # Date created:		30 August 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
@@ -17,7 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/liblua.a:${PORTSDIR}/lang/lua
+LIB_DEPENDS=	lua.5:${PORTSDIR}/lang/lua
+
+CONFLICTS=	${RUBY_PKGNAMEPREFIX}lua4-[0-9]*
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
