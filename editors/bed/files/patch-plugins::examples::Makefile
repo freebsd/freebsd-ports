@@ -1,5 +1,24 @@
---- plugins/examples/Makefile.orig	Tue Dec 16 11:00:59 2003
-+++ plugins/examples/Makefile	Tue Dec 16 11:01:51 2003
+$FreeBSD$
+
+--- plugins/examples/Makefile.orig	Thu Apr 17 07:52:05 2003
++++ plugins/examples/Makefile	Fri Jan 30 12:38:20 2004
+@@ -30,12 +30,12 @@
+ BIN2BYTE= ../../utils/bin2byte
+ PLUGINCFLAGSALL=-DPLUGINSRC=1
+ ifeq ($(CONFIG_DEBUG),n)
+-PLUGINLDFLAGS= -O3 -s
+-PLUGINCFLAGS= $(CFLAGS) $(OPTS) -O3 $(PLUGINCFLAGSALL)
++PLUGINLDFLAGS= -s
++PLUGINCFLAGS= $(CFLAGS) $(OPTS) $(PLUGINCFLAGSALL)
+ else
+ ifeq ($(CONFIG_DEBUG),o)
+-PLUGINLDFLAGS= -O2 -g
+-PLUGINCFLAGS= $(CFLAGS) $(OPTS) -g -O2 $(PLUGINCFLAGSALL)
++PLUGINLDFLAGS= -g
++PLUGINCFLAGS= $(CFLAGS) $(OPTS) -g $(PLUGINCFLAGSALL)
+ 
+ else
+ PLUGINCFLAGS= $(CFLAGS) $(OPTS) -g $(PLUGINCFLAGSALL)
 @@ -150,41 +150,41 @@
  ##define callname(name,proc)  int (Editor::*for_procedures_h_##proc##_prodefname)(void)=&Editor::proc;char name_part_##proc##_end[]=name;
  #../../src/inlink.h: $(INLINKIN)  $(CONFIGFILE) 
