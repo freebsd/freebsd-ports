@@ -7,6 +7,7 @@
 
 PORTNAME=	CommonC++
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cplusplus
@@ -14,21 +15,21 @@ MASTER_SITE_SUBDIR=	cplusplus
 MAINTAINER=	dyfet@gnu.org
 
 USE_GMAKE=	yes
-USE_CONFIGURE=	yes
 USE_LIBTOOL=	yes
-#USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
-#AUTOCONF=	autoconf && ${PERL} -pi -e 's|-lpthread|-pthread|g ; \
-#		s|l\$$ost_cv_thread_library|\$$ost_cv_thread_library|g' \
-#			${WRKSRC}/configure
-#
-# I had immense problems with autoconf generated on xBSD 4.0 where the
-# generated configure would mangle library names.
 
-post-extract:
-	cd ${WRKSRC} ; ./configure
-#	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-#		's|-release \$$\(LT_RELEASE\)||g'
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 411000
+CFLAGS+=	-DUSE_FPATHCONF_HACK
+.endif
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|-release \$$\(LT_RELEASE\)||g'
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|l\$$ost_cv_thread_library|\$$ost_cv_thread_library|g ; \
+		 s|=c_r|=pthread|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -36,4 +37,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/commoncpp
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
