@@ -3,7 +3,7 @@
 # Date created:         19 Feb 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/16 04:57:24 fenner Exp $
+# $Id: Makefile,v 1.2 1997/12/06 15:18:27 jseger Exp $
 #
 
 DISTNAME=       ifmail-2.12
@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	fido/mail/
 
 MAINTAINER=     dirk.meyer@dinoex.sub.org
 
+BROKEN=		package
 MAN3=		parsedate.3
 MAN8=		ifmail.8 iftoss.8
 
