@@ -110,7 +110,6 @@ lib/asis/a4g-tree_rec.ali
 lib/asis/a4g-u_conv.adb
 lib/asis/a4g-u_conv.ads
 lib/asis/a4g-u_conv.ali
-lib/asis/a4g-ulists.ads
 lib/asis/a4g-unit_rec.ads
 lib/asis/a4g-unit_rec.ali
 lib/asis/a4g-vcheck.adb
@@ -295,6 +294,7 @@ lib/asis/widechar.ali
 lib/libasis-3.15p.so
 lib/libasis-3.15p.so.1
 lib/libasis.a
+%%PORTDOCS%%share/doc/asis/Makefile
 %%PORTDOCS%%share/doc/asis/README.asistant
 %%PORTDOCS%%share/doc/asis/README.ds
 %%PORTDOCS%%share/doc/asis/README.gnatelim
@@ -312,6 +312,7 @@ lib/libasis.a
 %%PORTDOCS%%share/doc/asis/asis_ug.texi
 %%PORTDOCS%%share/doc/asis/asis_ug.txt
 %%PORTDOCS%%share/doc/asis/asisinfo.txt
+%%PORTDOCS%%share/doc/asis/non_implemented.txt
 %%PORTDOCS%%@dirrm share/doc/asis
 @dirrm lib/asis
 @exec /sbin/ldconfig -m %D/lib
