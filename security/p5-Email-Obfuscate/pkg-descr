@@ -1,0 +1,13 @@
+This package provides for the obfuscation of email address in
+an ostensibly superficial, attempt to thwart email address harvesters.
+
+Currently, there are eight different "types" of email address obfuscation 
+transformations that this module employs. One of these transformations is 
+randomly selected and used as a basis for obfuscation when 
+obfuscate_email_address() is called.
+
+WWW: http://search.cpan.org/dist/Email-Obfuscate
+Author: Adam J. Foxson <afoxson@pobox.com>
+
+- Aaron Dalton
+aaron@daltons.ca
