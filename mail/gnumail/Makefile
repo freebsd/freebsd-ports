@@ -14,21 +14,31 @@ DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps \
-		${LOCALLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libPantomime.so:${PORTSDIR}/mail/pantomime
-RUN_DEPENDS=	${XGPSBUNDLEDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps \
-		${LOCALLIBDIR}/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/libPantomime.so:${PORTSDIR}/mail/pantomime
+.if defined(GNUSTEP_GUI_DEVEL)
+BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+.else
+BUILD_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+.endif
+BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/mail/pantomime
+RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/mail/pantomime
 
 PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/GNUMail
 USE_GMAKE=	yes
 MAKEFILE=
+.if defined(GNUSTEP_GUI_DEVEL)
+MAKE_FLAGS=	GUI_BACKEND_LIB=back
+.else
 MAKE_FLAGS=	GUI_BACKEND_LIB=xgps
+.endif
 ALL_TARGET=
 NO_MTREE=	yes
 
-XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle
-LOCALLIBDIR=	${PREFIX}/Local/Libraries
+BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
+XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
+LOCALLIBDIR=	${PREFIX}/Local/Libraries/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
