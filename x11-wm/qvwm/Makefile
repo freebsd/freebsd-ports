@@ -3,27 +3,24 @@
 # Date created:        2 Januruary 1997
 # Whom:                Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1997/01/19 18:48:17 jfitz Exp $
 #
 
 DISTNAME=       qvwm-1.0b6
 CATEGORIES=     x11
 MASTER_SITES=   http://www-masuda.is.s.u-tokyo.ac.jp/~kourai/qvwm/program/
+
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	qvwm-1.0b6a.diff.gz
 PATCH_DIST_STRIP=       -p1
 
-DIST_SUBDIR=	qvwm
-
 MAINTAINER=     Nakai@Mlab.t.u-tokyo.ac.jp
-
-CONFIGURE_ENV=  X11BASE=${X11BASE}
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
+DIST_SUBDIR=	qvwm
+CONFIGURE_ENV=  X11BASE=${X11BASE}
 USE_IMAKE=      yes
-
 NO_INSTALL_MANPAGES=	yes
 
 post-install:
@@ -31,6 +28,5 @@ post-install:
 	@ ${MKDIR} -p ${PREFIX}/share/doc/qvwm
 	@ ${INSTALL_DATA} ${FILESDIR}/*.en ${PREFIX}/share/doc/qvwm
 .endif
-
 
 .include <bsd.port.mk>
