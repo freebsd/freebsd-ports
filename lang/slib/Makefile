@@ -8,8 +8,6 @@
 PORTNAME=	slib
 PORTVERSION=	2c9
 CATEGORIES=	lang
-#MASTER_SITES=	${MASTER_SITE_GNU}
-#MASTER_SITE_SUBDIR=	scm
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 
 MAINTAINER=	nakai@FreeBSD.org
