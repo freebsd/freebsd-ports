@@ -44,7 +44,7 @@
 #
 # WITH_FAAC=yes
 # Faac audio encoder (mp4/aac) Support
-#  
+#
 # WITHOUT_FAAD=yes
 #  Faad audio decoder (mp4/aac) Support
 #
@@ -105,9 +105,6 @@
 #
 # WITH_LIBTHEORA=yes
 #
-# WITHOUT_XVID=yes
-#  Mpeg-4(divx) Support
-#
 # Other Knobs:
 #
 # DEBUG=yes
@@ -145,7 +142,7 @@
 #  * recommended if you want to stream media
 #
 # WITH_OPTIMIZED_CFLAGS=yes
-#  Compile with -O3 -ffast-math -fomit-frame-pointer
+#  Compile with -O2 -ffast-math -fomit-frame-pointer
 #
 # WITH_DVD_DEVICE=/dev/somedevice
 #  default 5.x and above: /dev/acd0
@@ -160,13 +157,17 @@
 # WITHOUT_NLS=yes
 #  Disable Languarge Support
 #
+# WITH_VLC_DEFAULT_FONT=/path/to/font
+#  default: ${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
+#  This option lets you change the default font for subtitles  
+#
 # NOPORTDOCS=yes
 #  Do not install Vlc's Documents
 #
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/contrib/:ffmpeg \
@@ -180,9 +181,13 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia streaming server and player for various audio/video formats
 
+RUN_DEPEDNS=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera
+
 ### BROKEN -- Needs newer verision of toolame ###
 WITHOUT_TOOLAME=	yes
 ### BROKEN ###
+
+WITH_VLC_DEFAULT_FONT?=	${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -204,7 +209,7 @@ PLIST=		${WRKDIR}/plist
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	PATH_GTKCONFIG="${GTK_CONFIG}" CFLAGS="${CFLAGS}" \
-		CPPFLAGS="-I${FFMPEG_SRC_DIR}/libavcodec ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="-I${WRKSRC}/include/vlc/ -I${FFMPEG_SRC_DIR}/libavcodec ${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 
 FFMPEG_CONFIGURE_ARGS+=	--enable-gpl --disable-ffserver \
@@ -214,8 +219,9 @@ FFMPEG_CONFIGURE_ARGS+=	--enable-gpl --disable-ffserver \
 			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			--extra-cflags="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			--extra-libs"-lm" \
-			--disable-debug \
-			--enable-pp
+			--enable-pp \
+			--enable-pthreads \
+			--disable-opts
 
 CONFIGURE_ARGS+=	--enable-ffmpeg \
 			--with-ffmpeg-tree=${FFMPEG_SRC_DIR} \
@@ -415,7 +421,7 @@ LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 .if !defined(WITHOUT_FAAD)
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
 CONFIGURE_ARGS+=--enable-faad
-FFMPEG_CONFIGURE_ARGS+=--enable-faadbin
+FFMPEG_CONFIGURE_ARGS+=--enable-faad
 .else
 CONFIGURE_ARGS+=--disable-faad
 .endif
@@ -472,6 +478,7 @@ CONFIGURE_ARGS+=--disable-ggi
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=--enable-mp3lame \
 		--with-ffmpeg-mp3lame
+FFMPEG_CONFIGURE_ARGS+=--enable-mp3lame
 .endif
 
 .if !defined(WITHOUT_LIBMATROSKA)
@@ -482,8 +489,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatrosk
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 CONFIGURE_ARGS+=--enable-a52 \
 		--with-a52-tree=${LOCALBASE}
+FFMPEG_CONFIGURE_ARGS+=--enable-a52
 .else
-CONFIGURE_ARGS+=--diable-a52
+CONFIGURE_ARGS+=--disable-a52
 .endif
 
 .if !defined(WITHOUT_LIBMPEG2)
@@ -545,7 +553,7 @@ CONFIGURE_ARGS+=--disable-gnutls
 .if !defined(WITHOUT_SLP)
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp
 .else
-CONFIGURE_ARGS+=--diable-slp
+CONFIGURE_ARGS+=--disable-slp
 .endif
 
 .if defined(WITH_SPEEX) && !defined(WITHOUT_SPEEX)
@@ -587,6 +595,7 @@ CONFIGURE_ARGS+=	--disable-toolame
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
+FFMPEG_CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
@@ -598,21 +607,15 @@ CONFIGURE_ARGS+=--enable-xosd
 CONFIGURE_ARGS+=--disable-xosd
 .endif
 
-.if !defined(WITHOUT_XVID)
-LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
-FFMPEG_CONFIGURE_ARGS+=--enable-xvid
-.else
-FFMPEG_CONFIGURE_ARGS+=--disable-xvid
-.endif
-
 .if defined(DEBUG)
 CONFIGURE_AGRS+=--enable-debug
 .else
 CONFIGURE_ARGS+=--enable-release
+FFMPEG_CONFIGURE_ARGS+=--disable-debug
 .endif
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
+CFLAGS+=	-O2 -ffast-math -fomit-frame-pointer
 CONFIGURE_ARGS+=--enable-release
 .else
 CONFIGURE_ARGS+=--disable-optimizations
@@ -636,6 +639,10 @@ pre-everything::
 .endif
 
 post-patch:
+# Subtitle default font
+	@${REINPLACE_CMD} -e \
+	's|/usr/share/fonts/truetype/freefont/FreeSerifBold.ttf|${WITH_VLC_DEFAULT_FONT}|' \
+		${WRKSRC}/modules/misc/freetype.c
 # mozilla plugin
 .if defined(WITH_MOZILLA_PLUGIN)
 	@${CP} -f ${WRKDIR}/vlc-intf-mozilla-plugin/vlcintf.h ${WRKSRC}/mozilla
@@ -665,6 +672,9 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|cflags_tuning=|# cflags_tuning=|' \
 		${WRKSRC}/vlc-config.in
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${FFMPEG_SRC_DIR}/configure
+
 # cdrom/dvd support
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|; \
 		s|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
@@ -680,7 +690,7 @@ post-patch:
 pre-configure:
 	cd ${FFMPEG_SRC_DIR} \
 	&& ${SETENV} ${SCRIPTS_ENV} ${CONFIGURE_ENV} \
-		${SH} ./configure ${CONFIGURE_ARGS} ${FFMPEG_CONFIGURE_ARGS}
+		${SH} ./configure ${FFMPEG_CONFIGURE_ARGS}
 .for dir in libavcodec libavformat
 	cd ${FFMPEG_SRC_DIR}/${dir} \
 	&& ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile ${MAKE_ARGS} all
