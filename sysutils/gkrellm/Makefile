@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -34,8 +34,10 @@ DOCS=		COPYRIGHT README Themes.html
 
 .if ${OSVERSION} < 300000
 ALL_TARGET=	freebsd2
-.else
+.elif ${OSVERSION} < 400000
 ALL_TARGET=	freebsd3
+.else
+ALL_TARGET=	freebsd
 .endif
 
 BINGRP=		kmem
