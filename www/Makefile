@@ -114,6 +114,7 @@
     SUBDIR += mapedit
     SUBDIR += marc-search
     SUBDIR += mathopd
+    SUBDIR += mdw
     SUBDIR += mgstat
     SUBDIR += mhonarc
     SUBDIR += mmosaic

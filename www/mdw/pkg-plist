@@ -1,0 +1,3 @@
+bin/mdw
+share/examples/mdw/example.sh
+@dirrm share/examples/mdw

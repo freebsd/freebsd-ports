@@ -1,0 +1,9 @@
+mdw is a neat little utility for md5summing web resources. It will
+take a list of URLs, md5 each of them, and optionally compare this
+to a previous checksum.  There is a also a quiet mode which is
+useful for inclusion in scripts.
+
+WWW: http://redbrick.dcu.ie/~colmmacc/mdw/
+
+- Pete
+petef@databits.net
