@@ -1,6 +1,6 @@
---- ltmain.sh.orig	Fri Sep 12 14:51:51 2003
-+++ ltmain.sh	Sun Sep 21 17:49:07 2003
-@@ -1280,7 +1280,7 @@
+--- ltmain.sh.orig	Tue Mar 30 22:36:08 2004
++++ ltmain.sh	Tue Mar 30 22:39:04 2004
+@@ -1360,7 +1360,7 @@
  	  esac
  	elif test "X$arg" = "X-lc_r"; then
  	 case $host in
@@ -9,7 +9,7 @@
  	   # Do not include libc_r directly, use -pthread flag.
  	   continue
  	   ;;
-@@ -1290,8 +1290,16 @@
+@@ -1370,8 +1370,16 @@
  	continue
  	;;
  
@@ -26,7 +26,7 @@
  	continue
  	;;
  
-@@ -3000,6 +3008,9 @@
+@@ -3110,6 +3118,9 @@
  	    # problems, so we reset it completely
  	    verstring=
  	    ;;
@@ -36,7 +36,7 @@
  	  *)
  	    verstring="0.0"
  	    ;;
-@@ -5428,10 +5439,12 @@
+@@ -5712,10 +5723,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
