@@ -1,11 +1,14 @@
 bin/hanterm
 bin/resize
+bin/uxterm
 lib/X11/app-defaults/Hanterm
 lib/X11/app-defaults/Hanterm-color
-share/hangul_keyboard/두벌식.kbd
-share/hangul_keyboard/드보락_두벌식.kbd
-share/hangul_keyboard/드보락_세벌식_390.kbd
-share/hangul_keyboard/드보락_세벌식_최종.kbd
-share/hangul_keyboard/세벌식_390.kbd
-share/hangul_keyboard/세벌식_최종.kbd
+lib/X11/app-defaults/UXTerm
+share/hangul_keyboard/2bul.kbd
+share/hangul_keyboard/3bul_390.kbd
+share/hangul_keyboard/3bul_final.kbd
+share/hangul_keyboard/dvorak_2bul.kbd
+share/hangul_keyboard/dvorak_3bul_390.kbd
+share/hangul_keyboard/dvorak_3bul_final.kbd
+share/hangul_keyboard/dvorak.map
 @dirrm share/hangul_keyboard
