@@ -79,6 +79,7 @@
     SUBDIR += ktexshell
     SUBDIR += latex
     SUBDIR += latex2rtf
+    SUBDIR += latex2slides
     SUBDIR += lgrind
     SUBDIR += libgnomeprint
     SUBDIR += libijs

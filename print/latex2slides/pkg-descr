@@ -1,0 +1,11 @@
+latex2slides is a simple graphical program that produces a set of HTML/JPEG
+slides from a LaTeX (or TeX) source FILE. The program first produces a
+multipage postscript, using latex (or tex ) and dvips. Each postscript page
+is converted to a JPEG image using ImageMagick's convert. The program then
+makes one HTML page for each JPEG (or slide), and an index.html page. As a
+result, each slide in your slide presentation corresponds to one of the
+postscript pages you would obtain running latex on the LaTeX source.
+Alternatively, the source can be a multipage postscript, DVI or PDF FILE,and
+the image format for the slides can be set to PNG.
+
+WWW: http://udel.edu/~lmilano/latex2slides/
