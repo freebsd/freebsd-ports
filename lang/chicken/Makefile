@@ -7,7 +7,7 @@
 
 PORTNAME=	chicken
 PORTVERSION=	1.14
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://www.call-with-current-continuation.org/
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,6 +22,7 @@ MAN1=		chicken-config.1 chicken.1 csc.1 csi.1
 post-patch:
 	${REINPLACE_CMD} -e 's/\(install-data-am: \)install-data-local/\1/' \
 		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|"/usr/local/include" ||' ${WRKSRC}/csc.in
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -7,7 +7,7 @@
 
 PORTNAME=	guile-www
 PORTVERSION=	1.1.1
-CATEGORIES=	www devel
+CATEGORIES=	www devel scheme
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 

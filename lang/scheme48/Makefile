@@ -7,15 +7,15 @@
 
 PORTNAME=	scheme48
 PORTVERSION=	0.57
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	http://s48.org/0.57/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Scheme Underground's implementation of R4RS
 
-GNU_CONFIGURE=  yes
-ALL_TARGET = 	enough
+GNU_CONFIGURE=	yes
+ALL_TARGET=	enough
 STRIP=
 MAN1=		scheme48.1
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	STk
 PORTVERSION=	4.0.1
-CATEGORIES=	lang
+CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://kaolin.unice.fr/pub/STk/
 MASTER_SITE_SUBDIR=	devel/lang/lisp
