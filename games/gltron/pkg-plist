@@ -1,133 +1,61 @@
 bin/gltron
-%%PORTDOCS%%share/doc/gltron/ChangeLog
-%%PORTDOCS%%share/doc/gltron/CREDITS
-%%PORTDOCS%%share/doc/gltron/README
-share/gltron/art/arcade_spots/artpack.lua
-share/gltron/art/arcade_spots/gltron_floor.png
-share/gltron/art/arcade_spots/gltron_traildecal.png
-share/gltron/art/arcade_spots/gltron_wall_1.png
-share/gltron/art/arcade_spots/gltron_wall_2.png
-share/gltron/art/arcade_spots/gltron_wall_3.png
-share/gltron/art/arcade_spots/gltron_wall_4.png
-share/gltron/art/arcade_spots/skybox0.png
-share/gltron/art/arcade_spots/skybox1.png
-share/gltron/art/arcade_spots/skybox2.png
-share/gltron/art/arcade_spots/skybox3.png
-share/gltron/art/arcade_spots/skybox4.png
-share/gltron/art/arcade_spots/skybox5.png
-share/gltron/art/biohazard/artpack.lua
-share/gltron/art/biohazard/babbage.0.png
-share/gltron/art/biohazard/babbage.1.png
-share/gltron/art/biohazard/gltron.png
-share/gltron/art/biohazard/gltron_floor.png
-share/gltron/art/biohazard/gltron_logo.png
-share/gltron/art/biohazard/gltron_trail.png
-share/gltron/art/biohazard/gltron_traildecal.png
-share/gltron/art/biohazard/gltron_wall_1.png
-share/gltron/art/biohazard/gltron_wall_2.png
-share/gltron/art/biohazard/gltron_wall_3.png
-share/gltron/art/biohazard/gltron_wall_4.png
-share/gltron/art/biohazard/skybox0.png
-share/gltron/art/biohazard/skybox1.png
-share/gltron/art/biohazard/skybox2.png
-share/gltron/art/biohazard/skybox3.png
-share/gltron/art/biohazard/skybox4.png
-share/gltron/art/biohazard/skybox5.png
-share/gltron/art/classic/artpack.lua
-share/gltron/art/classic/babbage.0.png
-share/gltron/art/classic/babbage.1.png
-share/gltron/art/classic/gltron_floor.png
-share/gltron/art/classic/gltron_trail.png
-share/gltron/art/classic/gltron_traildecal.png
-share/gltron/art/classic/gltron_wall_1.png
-share/gltron/art/classic/gltron_wall_2.png
-share/gltron/art/classic/gltron_wall_3.png
-share/gltron/art/classic/gltron_wall_4.png
-share/gltron/art/classic/skybox0.png
-share/gltron/art/classic/skybox1.png
-share/gltron/art/classic/skybox2.png
-share/gltron/art/classic/skybox3.png
-share/gltron/art/classic/skybox4.png
-share/gltron/art/classic/skybox5.png
-share/gltron/art/classic/xenotron.0.png
-share/gltron/art/classic/xenotron.1.png
-share/gltron/art/default/artpack.lua
-share/gltron/art/default/babbage.0.png
-share/gltron/art/default/babbage.1.png
-share/gltron/art/default/gltron.png
-share/gltron/art/default/gltron_bitmap.png
-share/gltron/art/default/gltron_floor.png
-share/gltron/art/default/gltron_impact.png
-share/gltron/art/default/gltron_logo.png
-share/gltron/art/default/gltron_trail.png
-share/gltron/art/default/gltron_traildecal.png
-share/gltron/art/default/gltron_wall_1.png
-share/gltron/art/default/gltron_wall_2.png
-share/gltron/art/default/gltron_wall_3.png
-share/gltron/art/default/gltron_wall_4.png
-share/gltron/art/default/skybox0.png
-share/gltron/art/default/skybox1.png
-share/gltron/art/default/skybox2.png
-share/gltron/art/default/skybox3.png
-share/gltron/art/default/skybox4.png
-share/gltron/art/default/skybox5.png
-share/gltron/art/default/test.bitmap.png
-share/gltron/art/default/xenotron.0.png
-share/gltron/art/default/xenotron.1.png
-share/gltron/art/metalTron/artpack.lua
-share/gltron/art/metalTron/gltron_floor.png
-share/gltron/art/metalTron/gltron_wall_1.png
-share/gltron/art/metalTron/gltron_wall_2.png
-share/gltron/art/metalTron/gltron_wall_3.png
-share/gltron/art/metalTron/gltron_wall_4.png
-share/gltron/art/metalTron/skybox0.png
-share/gltron/art/metalTron/skybox1.png
-share/gltron/art/metalTron/skybox2.png
-share/gltron/art/metalTron/skybox3.png
-share/gltron/art/metalTron/skybox4.png
-share/gltron/art/metalTron/skybox5.png
-share/gltron/data/babbage.ftx
-share/gltron/data/fonts.txt
-share/gltron/data/game_crash.ogg
-share/gltron/data/game_crash.wav
-share/gltron/data/game_engine.ogg
-share/gltron/data/game_engine.wav
-share/gltron/data/game_recognizer.ogg
-share/gltron/data/game_recognizer.wav
-share/gltron/data/lightcycle-high.obj
-share/gltron/data/lightcycle-low.obj
-share/gltron/data/lightcycle-med.obj
-share/gltron/data/lightcycle.mtl
-share/gltron/data/recognizer.mtl
-share/gltron/data/recognizer.obj
-share/gltron/data/recognizer_quad.obj
-share/gltron/data/settings.txt
-share/gltron/data/test.fbmp
-share/gltron/data/xenotron.ftx
-share/gltron/music/song_revenge_of_cats.it
-share/gltron/scripts/audio.lua
-share/gltron/scripts/basics.lua
-share/gltron/scripts/config.lua
-share/gltron/scripts/menu.lua
-share/gltron/scripts/menu_functions.lua
-share/gltron/scripts/save.lua
-share/gltron/scripts/video.lua
-share/gltron/sounds/game_crash.wav
-share/gltron/sounds/game_engine.wav
-share/gltron/sounds/game_lose.wav
-share/gltron/sounds/game_start.wav
-share/gltron/sounds/game_win.wav
-share/gltron/sounds/menu_action.wav
-share/gltron/sounds/menu_highlight.wav
-@dirrm share/gltron/sounds
-@dirrm share/gltron/scripts
-@dirrm share/gltron/music
-@dirrm share/gltron/data
-@dirrm share/gltron/art/metalTron
-@dirrm share/gltron/art/default
-@dirrm share/gltron/art/classic
-@dirrm share/gltron/art/biohazard
-@dirrm share/gltron/art/arcade_spots
-@dirrm share/gltron/art
-@dirrm share/gltron
-%%PORTDOCS%%@dirrm share/doc/gltron
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/art/default/artpack.lua
+%%DATADIR%%/art/default/babbage.0.png
+%%DATADIR%%/art/default/babbage.1.png
+%%DATADIR%%/art/default/gltron.png
+%%DATADIR%%/art/default/gltron_bitmap.png
+%%DATADIR%%/art/default/gltron_floor.png
+%%DATADIR%%/art/default/gltron_impact.png
+%%DATADIR%%/art/default/gltron_logo.png
+%%DATADIR%%/art/default/gltron_trail.png
+%%DATADIR%%/art/default/gltron_traildecal.png
+%%DATADIR%%/art/default/gltron_wall_1.png
+%%DATADIR%%/art/default/gltron_wall_2.png
+%%DATADIR%%/art/default/gltron_wall_3.png
+%%DATADIR%%/art/default/gltron_wall_4.png
+%%DATADIR%%/art/default/skybox0.png
+%%DATADIR%%/art/default/skybox1.png
+%%DATADIR%%/art/default/skybox2.png
+%%DATADIR%%/art/default/skybox3.png
+%%DATADIR%%/art/default/skybox4.png
+%%DATADIR%%/art/default/skybox5.png
+%%DATADIR%%/art/default/test.bitmap.png
+%%DATADIR%%/art/default/xenotron.0.png
+%%DATADIR%%/art/default/xenotron.1.png
+%%DATADIR%%/data/babbage.ftx
+%%DATADIR%%/data/fonts.txt
+%%DATADIR%%/data/game_crash.ogg
+%%DATADIR%%/data/game_crash.wav
+%%DATADIR%%/data/game_engine.ogg
+%%DATADIR%%/data/game_engine.wav
+%%DATADIR%%/data/game_recognizer.ogg
+%%DATADIR%%/data/game_recognizer.wav
+%%DATADIR%%/data/lightcycle-high.obj
+%%DATADIR%%/data/lightcycle-low.obj
+%%DATADIR%%/data/lightcycle-med.obj
+%%DATADIR%%/data/lightcycle.mtl
+%%DATADIR%%/data/recognizer.mtl
+%%DATADIR%%/data/recognizer.obj
+%%DATADIR%%/data/recognizer_quad.obj
+%%DATADIR%%/data/test.fbmp
+%%DATADIR%%/data/xenotron.ftx
+%%DATADIR%%/music/song_revenge_of_cats.it
+%%DATADIR%%/scripts/artpack.lua
+%%DATADIR%%/scripts/audio.lua
+%%DATADIR%%/scripts/basics.lua
+%%DATADIR%%/scripts/config.lua
+%%DATADIR%%/scripts/joystick.lua
+%%DATADIR%%/scripts/main.lua
+%%DATADIR%%/scripts/menu.lua
+%%DATADIR%%/scripts/menu_functions.lua
+%%DATADIR%%/scripts/save.lua
+%%DATADIR%%/scripts/video.lua
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/art/default
+@dirrm %%DATADIR%%/art
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
