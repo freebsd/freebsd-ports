@@ -11,10 +11,15 @@
 # mv dics.dir dics.dir.orig
 # cat dics.dir.orig dics.dir.gpl_canna > dics.dir
 
-2) cannaserver を再起動します。
+2) cannaserver を停止，起動します。
 
-(かんなサーバ再起動)
+(かんなサーバ停止)
 # /usr/local/etc/rc.d/canna.sh stop
+
+(cannaserverが停止していることを確認してください。停止していなければ
+ killコマンドでプロセスを停止させてください)
+
+(かんなサーバ起動)
 # /usr/local/etc/rc.d/canna.sh start
 
 3) ユーザ権限に戻って、ホームディレクトリに存在する各ユーザの .canna の
@@ -33,8 +38,7 @@
  )
 
 4) 最後に頻度辞書を作成します。既に同名のユーザ辞書がインストールされている
-   場合、辞書を上書きするかどうか質問されます。上書きしてもかまわなければ
-   yes を選択してください。
+   場合、辞書を上書きするかどうか質問されます。必ず yes を選択してください。
 
 $ mkdic -fq gcanna
 Personal learning file of dictionary "gcanna" exists. Do you overwrite it ? (y/n)
