@@ -1,7 +1,0 @@
---- compiler_defines.h.orig	Thu Mar 18 15:39:49 1999
-+++ compiler_defines.h	Sun Apr 11 10:04:35 1999
-@@ -29,3 +29,3 @@
-  * comment out the line below if your compiler does NOT understand NAMESPACES
-- */
- #define USES_NAMESPACE
-+ */
