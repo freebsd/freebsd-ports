@@ -5,37 +5,10 @@ bin/wgoto
 bin/wily
 bin/win
 bin/wreplace
-share/doc/wily/index.html
-share/doc/wily/intro.html
-share/doc/wily/download.html
-share/doc/wily/credits.html
-share/doc/wily/FAQ.html
-share/doc/wily/onepage.html
-share/doc/wily/user.html
-share/doc/wily/idioms.html
-share/doc/wily/C.html
-share/doc/wily/python.html
-share/doc/wily/hack.html
-share/doc/wily/AcmeVsWily.html
-share/doc/wily/Tcl.html
-share/doc/wily/pythonpaper.html
-share/doc/wily/winmanager.html
-share/doc/wily/auug.html
-share/doc/wily/one.html
-share/doc/wily/example.gif
-share/doc/wily/thumb.gif
-share/doc/wily/cartoon.gif
-share/doc/wily/FAQ.txt
-share/doc/wily/Tcl.txt
-share/doc/wily/changes.txt
-share/doc/wily/perl.txt
-share/doc/wily/Credits
-share/doc/wily/fonts
-share/doc/wily/mouse
-share/doc/wily/tute/findword
-share/doc/wily/tute/script
-share/doc/wily/tute/start
-share/doc/wily/tute/hello.c
-share/doc/wily/tute/send_to_gary
-@dirrm share/doc/wily/tute
-@dirrm share/doc/wily
+%%PORTDOCS%%%%DOCSDIR%%/tute/findword
+%%PORTDOCS%%%%DOCSDIR%%/tute/hello.c
+%%PORTDOCS%%%%DOCSDIR%%/tute/script
+%%PORTDOCS%%%%DOCSDIR%%/tute/send_to_gary
+%%PORTDOCS%%%%DOCSDIR%%/tute/start
+%%PORTDOCS%%%%DOCSDIR%%/tute/typescript
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tute

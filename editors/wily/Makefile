@@ -23,31 +23,35 @@ GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 MAN1=		wgoto.1 win.1 wreplace.1 Tag.1 mktags.1 Man.1
 
-# Run the configure script in the tools directory.
-post-configure:
-	${RM} ${WRKSRC}/tools/win/config.cache
-	cd ${WRKSRC}/tools/win; ./configure
-
-WILYDOCDIR=	${PREFIX}/share/doc/wily
-WILYTUTEDIR=	${WILYDOCDIR}/tute
-WILYDOCFILES=	index.html intro.html download.html credits.html FAQ.html \
+PORTDOCS=	index.html intro.html download.html credits.html FAQ.html \
 		onepage.html user.html idioms.html C.html python.html \
 		hack.html AcmeVsWily.html Tcl.html \
 		pythonpaper.html winmanager.html auug.html one.html \
 		example.gif thumb.gif cartoon.gif \
 		FAQ.txt Tcl.txt changes.txt perl.txt \
-		Credits fonts mouse\
-		tute/findword tute/script tute/start tute/hello.c \
-		tute/send_to_gary
+		Credits fonts mouse
+TUTEDOCS=	hello.c start typescript
+TUTESHS=	findword script send_to_gary
+
+# Run the configure script in the tools directory.
+post-configure:
+	@${RM} ${WRKSRC}/tools/win/config.cache
+	cd ${WRKSRC}/tools/win; ./configure
 
 # The default Wily makefile does not install any documentation.  Rectify.
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/wily
+	@${STRIP_CMD} ${PREFIX}/bin/wily
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${WILYDOCDIR} ${WILYTUTEDIR}
-	set -e; for f in ${WILYDOCFILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/Doc/$${f} ${WILYDOCDIR}/$${f}; \
-	done
+	@${MKDIR} ${DOCSDIR}/tute
+. for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/Doc/${doc} ${DOCSDIR}
+. endfor
+. for doc in ${TUTEDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/Doc/tute/${doc} ${DOCSDIR}/tute
+. endfor
+. for doc in ${TUTESHS}
+	@${INSTALL_SCRIPT} ${WRKSRC}/Doc/tute/${doc} ${DOCSDIR}/tute
+. endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
