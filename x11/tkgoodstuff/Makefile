@@ -3,7 +3,7 @@
 # Date created:		7 Oct 1996
 # Whom:			pst
 #
-# $Id: Makefile,v 1.5 1997/04/20 13:20:00 wosch Exp $
+# $Id: Makefile,v 1.7 1997/07/07 06:30:30 pst Exp $
 #
 
 DISTNAME=	tkgoodstuff4.2
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-personal.umich.edu/~markcrim/tkgoodstuff/dists/
 
 MAINTAINER=	pst@FreeBSD.org
 
-RUN_DEPENDS=	fvwm:${PORTSDIR}/x11/fvwm2
+RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11/fvwm2
 LIB_DEPENDS=	tk42\\.1:${PORTSDIR}/x11/tk42
 
 WRKSRC=		${WRKDIR}/tkgoodstuff4.2b1-8
