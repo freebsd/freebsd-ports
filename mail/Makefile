@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.74 1998/11/05 22:14:12 kuriyama Exp $
+# $Id: Makefile,v 1.75 1998/12/01 22:26:35 billf Exp $
 #
 
     SUBDIR += adcomplain
     SUBDIR += asmail
+    SUBDIR += balsa
     SUBDIR += bulk_mailer
     SUBDIR += coolmail
     SUBDIR += cucipop
