@@ -2,8 +2,8 @@
 
 SUBDIR	 = hdf mfhdf man
 #PREFIX	?= /usr/local
-LIBDIR	?= ${PREFIX}/lib
-BINDIR	?= ${PREFIX}/bin
+LIBDIR	 = ${PREFIX}/lib
+BINDIR	 = ${PREFIX}/bin
 
 .MAKEFLAGS: PREFIX=${PREFIX} LIBDIR=${LIBDIR} BINDIR=${BINDIR}
 
