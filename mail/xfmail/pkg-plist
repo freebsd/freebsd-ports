@@ -1,10 +1,8 @@
 bin/xfmail
 lib/libeditor.a
-lib/libeditor.la
 lib/libeditor.so
 lib/libeditor.so.0
 lib/libmail.a
-lib/libmail.la
 lib/libmail.so
 lib/libmail.so.0
 share/xfmail/abook.xpm
