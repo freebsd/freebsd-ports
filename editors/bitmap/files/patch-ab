@@ -1,14 +1,14 @@
---- BITMAP-CFG.orig	Wed Nov 10 10:58:34 1999
-+++ BITMAP-CFG	Tue Jan 18 21:34:01 2000
-@@ -16,6 +16,11 @@
-       (add-to-list 'load-path (expand-file-name "apel" LISPDIR))
-       ))
+--- BITMAP-CFG.orig	Tue Apr 18 18:11:56 2000
++++ BITMAP-CFG	Sat May 13 04:23:13 2000
+@@ -6,6 +6,11 @@
+ 
+ (defvar default-load-path load-path)
  
 +(if (not (fboundp 'normal-top-level-add-subdirs-to-load-path))
 +    (progn 
 +      (require 'apel-setupel)
 +      ))
 +
- (if (boundp 'VERSION_SPECIFIC_LISPDIR)
-     (add-to-list 'load-path VERSION_SPECIFIC_LISPDIR))
+ (require 'poe);; Pickup `add-to-list' for old mule.
  
+ (add-to-list 'load-path
