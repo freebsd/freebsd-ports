@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTVERSION=	1.0.13
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
@@ -26,7 +25,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
@@ -35,7 +33,6 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-evolution --without-guile
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lintl -liconv ${PTHREAD_LIBS}"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
 
