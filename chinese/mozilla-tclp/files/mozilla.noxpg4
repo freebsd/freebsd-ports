@@ -1,0 +1,6 @@
+#!/bin/sh
+
+LANG=zh_TW.Big5; export LANG
+
+cd @PREFIX@/lib/mozilla
+exec ./mozilla "$@"
