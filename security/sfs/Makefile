@@ -20,6 +20,7 @@ PLIST_SUB=	SFS_VERSION=${PORTVERSION}
 INFO=		sfs
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
@@ -32,10 +33,6 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
-.endif
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
 .endif
 
 .if ${OSVERSION} > 500000
@@ -76,6 +73,8 @@ MAN8=	\
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/sfscd.sh > ${WRKSRC}/sfscd.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/sfssd.sh > ${WRKSRC}/sfssd.sh
+	@${FIND} -E ${WRKDIR} -type f -iregex ".*\.(C|h)" -print0 | \
+		${XARGS} -0 ${REINPLACE_CMD} -e 's/template get/get/'
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
