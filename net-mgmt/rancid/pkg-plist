@@ -1,6 +1,6 @@
 rancid/util/lg/lg.cgi
 rancid/util/lg/lgform.cgi
-rancid/util/lg/lg.conf.new
+rancid/util/lg/lg.conf
 rancid/util/lg/README
 rancid/util/lg/index.html
 rancid/util/lg/lgnotes.html
@@ -37,7 +37,7 @@ rancid/bin/rancid
 rancid/bin/rename
 rancid/bin/rrancid
 rancid/bin/xrancid
-rancid/bin/env.new
+rancid/bin/env
 rancid/CHANGES
 rancid/README
 rancid/FAQ
