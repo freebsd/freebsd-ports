@@ -1,3 +1,2 @@
-Try J by running "jconsole" then typing: jhelp 'netscape'
-(if netscape is your browser)
+Try J by running "jw"
 For more information see "man jconsole".
