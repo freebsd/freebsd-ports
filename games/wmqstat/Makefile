@@ -8,8 +8,8 @@
 PORTNAME=	wmqstat
 PORTVERSION=	0.0.2
 CATEGORIES=	games windowmaker
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	A dockapp for monitoring of various Internet game servers
@@ -20,11 +20,11 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
