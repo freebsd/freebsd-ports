@@ -56,10 +56,10 @@ launcher:
 libupdate:
 	@$(ECHO) "===> Building libupdate."
 	cd plugins/org.eclipse.update.core.freebsd/src && \
-		$(ANT) -Djava.home=$(JAVA_HOME)
+		$(ANT) -Djava.home=$(JAVA_HOME) -DCC=$(CC)
 	@$(ECHO) "===> Building libcore."
 	cd plugins/org.eclipse.core.resources.freebsd/src && \
-		env JDK_INCLUDE="/usr/local/jdk1.4.2/include -I/usr/local/jdk1.4.2/include/freebsd" $(GMAKE) && \
+		env JDK_INCLUDE="$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd" $(GMAKE) && \
 		$(CP) *.so ../../org.eclipse.core.resources.freebsd/os/freebsd/x86
 
 java:		build-install
@@ -74,8 +74,8 @@ install:
 	$(UNZIP_CMD) result/$(ECLIPSE_OS)-$(ECLIPSE_WS)-$(ECLIPSE_ARCH)-sdk.zip -d $(PREFIX)
 	@$(ECHO) "===> Installing a shell script..."
 	@$(SED) \
-	-e "/%%ECLIPSE_HOME%%/s//$(PORTDESTDIR:S/\//\\\//g)/g" \
-	-e "/%%JAVA_HOME%%/s//$(JAVA_HOME:S/\//\\\//g)/g" \
+	-e "s+%%ECLIPSE_HOME%%+$(PORTDESTDIR)+g" \
+	-e "s+%%JAVA_HOME%%+$(JAVA_HOME)+g" \
 	eclipse.in > eclipse.tmp
 	$(BSD_INSTALL_SCRIPT) eclipse.tmp $(PREFIX)/bin/eclipse
 

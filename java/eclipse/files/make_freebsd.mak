@@ -84,16 +84,16 @@ os_stats.o: os_stats.c os_structs.h os.h os_stats.h swt.h
 make_gnome: $(GNOME_LIB)
 
 $(GNOME_LIB): $(GNOME_OBJECTS)
-	gcc -o $@ $(GNOME_OBJECTS) $(GNOME_LIBS)
+	$(CC) -o $@ $(GNOME_OBJECTS) $(GNOME_LIBS)
 
 gnome.o: gnome.c
-	gcc -O -Wall -DSWT_VERSION=$(SWT_VERSION) -DFREEBSD -DGTK -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/bsd -I$(JAVA_HOME)/include/freebsd $(GNOME_CFLAGS) -c -o gnome.o gnome.c
+	$(CC) -O -Wall -DSWT_VERSION=$(SWT_VERSION) -DFREEBSD -DGTK -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/bsd -I$(JAVA_HOME)/include/freebsd $(GNOME_CFLAGS) -c -o gnome.o gnome.c
 
 gnome_structs.o: gnome_structs.c
-	gcc -O -Wall -DSWT_VERSION=$(SWT_VERSION) -DFREEBSD -DGTK -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/bsd -I$(JAVA_HOME)/include/freebsd $(GNOME_CFLAGS) -c -o gnome_structs.o gnome_structs.c
+	$(CC) -O -Wall -DSWT_VERSION=$(SWT_VERSION) -DFREEBSD -DGTK -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/bsd -I$(JAVA_HOME)/include/freebsd $(GNOME_CFLAGS) -c -o gnome_structs.o gnome_structs.c
 
 gnome_stats.o: gnome_stats.c
-	gcc -O -Wall -DSWT_VERSION=$(SWT_VERSION) -DFREEBSD -DGTK -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/bsd -I$(JAVA_HOME)/include/freebsd $(GNOME_CFLAGS) -c -o gnome_stats.o gnome_stats.c
+	$(CC) -O -Wall -DSWT_VERSION=$(SWT_VERSION) -DFREEBSD -DGTK -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/bsd -I$(JAVA_HOME)/include/freebsd $(GNOME_CFLAGS) -c -o gnome_stats.o gnome_stats.c
 
 make_kde: $(KDE_LIB)
 
@@ -101,7 +101,7 @@ $(KDE_LIB): $(KDE_OBJS)
 	ld -o $@ $(KDE_OBJS) $(KDE_LIBS)
 
 $(KDE_OBJS): kde.cc
-	g++ $(KDE_CFLAGS) -o kde.o kde.cc
+	$(CXX) $(KDE_CFLAGS) -o kde.o kde.cc
 
 make_awt: $(AWT_LIB)
 

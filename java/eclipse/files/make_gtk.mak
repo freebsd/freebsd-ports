@@ -13,8 +13,7 @@
 
 include make_common.mak
 
-CC=gcc
-LD=gcc
+LD=$(CC)
 
 SWT_VERSION=$(maj_ver)$(min_ver)
 
