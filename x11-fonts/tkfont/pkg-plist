@@ -1,0 +1,12 @@
+bin/tkfont
+lib/tkfont/COPYING
+lib/tkfont/README
+lib/tkfont/HelpText.txt
+lib/tkfont/FontTypes.txt
+lib/tkfont/FontDirs.txt
+lib/tkfont/FileMenu.txt
+lib/tkfont/Bugs.txt
+lib/tkfont/GetFontDirs
+lib/tkfont/FindFont
+lib/tkfont/WhatsNew.txt
+@dirrm lib/tkfont
