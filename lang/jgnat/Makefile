@@ -7,6 +7,7 @@
 
 PORTNAME=	jgnat
 PORTVERSION=	1.1.p
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/jgnat/jgnat-1.1p/split-1.1p/ \
 		ftp://ftp.cdrom.com/pub/languages/ada/compiler/gnat/jgnat/jgnat-1.1p/split-1.1p/ \
@@ -34,13 +35,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C@-([^\-]+)$@/\1@}
 LIBDIR=		${PREFIX}/lib/jgnat
 ADAINCDIR=	${LIBDIR}/adainclude
 ADALIBDIR=	${LIBDIR}/adalib
+JARDIR=		${PREFIX}/share/java/classes
 
 do-install:
-.for dir in ${LIBDIR} ${ADAINCDIR} ${ADALIBDIR}
+.for dir in ${LIBDIR} ${ADAINCDIR} ${ADALIBDIR} ${JARDIR}
 	@${MKDIR} ${dir}
 .endfor
 	@${INSTALL_PROGRAM} ${WRKSRC}/../bin/* ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/../lib/jgnat.jar ${LIBDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../lib/jgnat.jar ${JARDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../lib/jgnat/adainclude/* ${ADAINCDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../lib/jgnat/adalib/* ${ADALIBDIR}
 	@${CHMOD} a-r ${ADALIBDIR}/*.ali

@@ -11,7 +11,7 @@ using /bin/sh, you should:
 
 --Set your CLASSPATH as follows:
 
-	$CLASSPATH=.:/usr/local/lib/gnat/jgnat.jar:$CLASSPATH
+	$CLASSPATH=.:/usr/local/share/java/classes/jgnat.jar:$CLASSPATH
 	$export CLASSPATH
 
 -----------------------------------------------------------------------
