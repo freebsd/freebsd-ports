@@ -23,11 +23,8 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		ghttp.1:${PORTSDIR}/www/libghttp \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
-# Disable - I don't have a time to compile it now. Will be enabled back later.
-WITHOUT_MOZILLA=	yes
-
 .if !defined(WITHOUT_MOZILLA)
-MOZILLA=	mozilla
+MOZILLA=	mozilla-embedded
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
