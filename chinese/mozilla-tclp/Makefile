@@ -4,19 +4,18 @@
 #
 # $FreeBSD$
 #
-BROKEN=	"out of sync with mozilla."
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.6
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~b7506051/mt4/langpack/
 PKGNAMESUFFIX=	-tclp
-# Same as ftp://ftp.mozilla.org/pub/mozilla/l10n/lang/moz0.81/langzhtw.xpi.
+# Same as ftp://ftp.mozilla.org/pub/mozilla/l10n/lang/moz0.96/langzhtw.xpi.
 # Use this to avoid checksum problems.
-DISTNAME=		0.9.1-0615-RELEASE-langzhtw
+DISTNAME=	langzhtw-0.9.6-1122
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	piaip@csie.ntu.edu.tw
 
 RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
 
@@ -34,24 +33,21 @@ do-build:
 
 do-install:
 	(cd ${PREFIX}/lib/mozilla/chrome; \
-	${MV} all-locales.rdf all-locales.rdf.orig; \
-	${MV} user-locales.rdf user-locales.rdf.orig; \
+	${MV} -f all-locales.rdf all-locales.rdf.orig; \
+	${MV} -f user-locales.rdf user-locales.rdf.orig; \
 	${MV} installed-chrome.txt installed-chrome.txt.orig)
-	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
-	${MV} unix.js unix.js.orig)
 	${MV} ${PREFIX}/bin/mozilla ${PREFIX}/bin/mozilla.orig
 	${INSTALL_SCRIPT} ${WRKDIR}/mozilla ${PREFIX}/bin
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
 	${CAT} ${FILESDIR}/installed-chrome.txt >> installed-chrome.txt)
-	${INSTALL_DATA} ${FILESDIR}/all-locales.rdf \
-		${PREFIX}/lib/mozilla/chrome;
-	${INSTALL_DATA} ${FILESDIR}/user-locales.rdf \
-		${PREFIX}/lib/mozilla/chrome;
 	${INSTALL_DATA} ${WRKSRC}/chrome/zh-TW.jar \
 		${PREFIX}/lib/mozilla/chrome;
 	${INSTALL_DATA} ${WRKSRC}/chrome/zh-unix.jar \
 		${PREFIX}/lib/mozilla/chrome;
-	${INSTALL_DATA} ${FILESDIR}/unix.js ${PREFIX}/lib/mozilla/defaults/pref
+	${INSTALL_DATA} ${WRKSRC}/chrome/TW.jar \
+		${PREFIX}/lib/mozilla/chrome;
+	# "===> Registering Language Pack for Mozilla...";
+	${PREFIX}/bin/mozilla -v;
 
 .include <bsd.port.post.mk>

@@ -2,16 +2,14 @@
 @exec mv %D/lib/mozilla/chrome/all-locales.rdf %D/lib/mozilla/chrome/all-locales.rdf.orig
 @exec mv %D/lib/mozilla/chrome/user-locales.rdf %D/lib/mozilla/chrome/user-locales.rdf.orig
 @exec mv %D/lib/mozilla/chrome/installed-chrome.txt %D/lib/mozilla/chrome/installed-chrome.txt.orig
-@exec mv %D/lib/mozilla/defaults/pref/unix.js %D/lib/mozilla/defaults/pref/unix.js.orig
 bin/mozilla
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/zh-TW.jar
 lib/mozilla/chrome/zh-unix.jar
+lib/mozilla/chrome/TW.jar
 lib/mozilla/chrome/all-locales.rdf
 lib/mozilla/chrome/user-locales.rdf
-lib/mozilla/defaults/pref/unix.js
 @unexec mv %D/bin/mozilla.orig %D/bin/mozilla
 @unexec mv %D/lib/mozilla/chrome/all-locales.rdf.orig %D/lib/mozilla/chrome/all-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/user-locales.rdf.orig %D/lib/mozilla/chrome/user-locales.rdf
 @unexec mv %D/lib/mozilla/chrome/installed-chrome.txt.orig %D/lib/mozilla/chrome/installed-chrome.txt
-@unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
