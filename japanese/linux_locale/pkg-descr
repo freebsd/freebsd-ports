@@ -1,6 +1,0 @@
-Linux glibc 2.0/2.1 Locale definition files for Japanese.
-This is an experimental and incorrect locale definition for Japanese
-(ja_JP).  Since the GNU libc does not support the EUC encoding yet,
-we cannot make a correct locale definition for it.
-
-WWW: http://www.debian.org/Packages/unstable/admin/locale-ja.html
