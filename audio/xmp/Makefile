@@ -7,6 +7,7 @@
 
 PORTNAME=	xmp
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,6 +35,12 @@ PKGNAMESUFFIX=	-esound
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-esd
 PKGNAMESUFFIX=	-esound
+.endif
+
+.if !defined(WITHOUT_XMMS)
+  LIB_DEPENDS+=   xmms.4:${PORTSDIR}/multimedia/xmms
+.else
+  CONFIGURE_ARGS+= --disable-xmms
 .endif
 
 MAN1=		xmp.1

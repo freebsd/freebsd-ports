@@ -1,0 +1,19 @@
+*** src/xmms/plugin.c.orig	Sun Jan  7 01:53:15 2001
+--- src/xmms/plugin.c	Wed Sep 10 12:17:16 2003
+***************
+*** 228,234 ****
+  	xmp_cfg.filter = TRUE;
+  	xmp_cfg.pan_amplitude = 80;
+  
+! #define CFGREADINT(x) xmms_cfg_read_int (cfg, "XMP", #x, &xmp_cfg.##x)
+  
+  	filename = g_strconcat(g_get_home_dir(), "/.xmms/config", NULL);
+  	if ((cfg = xmms_cfg_open_file(filename))) {
+--- 228,234 ----
+  	xmp_cfg.filter = TRUE;
+  	xmp_cfg.pan_amplitude = 80;
+  
+! #define CFGREADINT(x) xmms_cfg_read_int (cfg, "XMP", #x, &xmp_cfg.x)
+  
+  	filename = g_strconcat(g_get_home_dir(), "/.xmms/config", NULL);
+  	if ((cfg = xmms_cfg_open_file(filename))) {
