@@ -684,6 +684,7 @@ catdvi		ports/print/catdvi
 catman		src/gnu/usr.bin/man/catman
 cave		ports/misc/cave
 cbb		ports/deskutils/cbb
+cbedic		ports/textproc/cbedic
 cbrowser	ports/devel/cbrowser
 cc		src/gnu/usr.bin/cc
 cc65		ports/devel/cc65
