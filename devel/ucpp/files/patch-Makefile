@@ -1,11 +1,22 @@
---- Makefile.orig	Mon Aug 19 19:40:18 2002
-+++ Makefile	Mon Aug 19 19:41:25 2002
-@@ -57,7 +57,7 @@
+--- Makefile.orig	Wed Feb 20 18:49:16 2002
++++ Makefile	Sun Dec  1 09:01:06 2002
+@@ -56,8 +56,8 @@
+ #FLAGS = -O -m -DMEM_CHECK
  
  # for gcc
- CC = gcc
+-CC = gcc
 -FLAGS = -g -Wall -ansi -pedantic -DAUDIT -DMEM_DEBUG
-+FLAGS += -DAUDIT -DMEM_DEBUG
++CC ?= gcc
++FLAGS = -ansi -pedantic -DAUDIT -DMEM_DEBUG
  #FLAGS = -O3 -Wall -ansi -pedantic -DMEM_CHECK
  
  # for the Compaq C compiler on Alpha/Linux
+@@ -78,7 +78,7 @@
+ # ----- nothing should be changed below this line -----
+ 
+ COBJ = mem.o hash.o cpp.o lexer.o assert.o macro.o eval.o
+-CFLAGS = $(FLAGS) -DSTAND_ALONE
++CFLAGS += $(FLAGS) -DSTAND_ALONE
+ 
+ all: ucpp
+ 

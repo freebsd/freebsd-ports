@@ -8,17 +8,16 @@
 
 PORTNAME=	ucpp
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pornin.nerim.net/ucpp/
 
 MAINTAINER=	ports@FreeBSD.org
 
-MAKE_ENV=	FLAGS="${CFLAGS}"
-
 MAN1=	ucpp.1
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
