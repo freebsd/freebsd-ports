@@ -181,6 +181,7 @@
     SUBDIR += p5-Email-Folder
     SUBDIR += p5-Email-FolderType
     SUBDIR += p5-Email-LocalDelivery
+    SUBDIR += p5-Email-LocalDelivery-Ezmlm
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Valid
     SUBDIR += p5-Email-Valid-Loose
