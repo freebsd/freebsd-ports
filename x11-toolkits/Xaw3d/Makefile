@@ -36,5 +36,6 @@ post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/doc/Xaw3d
 	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
