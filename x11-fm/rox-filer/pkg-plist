@@ -1,13 +1,17 @@
+apps/ROX-Filer/.DirIcon
+apps/ROX-Filer/Action.png
+apps/ROX-Filer/AppInfo.xml
+apps/ROX-Filer/AppRun
 apps/ROX-Filer/FreeBSD-ix86/ROX-Filer
-apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/COPYING
 apps/ROX-Filer/Help/Changes
+apps/ROX-Filer/Help/Manual-fr.html
 apps/ROX-Filer/Help/Manual.html
+apps/ROX-Filer/Help/README
 apps/ROX-Filer/Help/README-es
 apps/ROX-Filer/Help/TODO
-apps/ROX-Filer/Help/Manual-fr.html
-apps/ROX-Filer/Messages/sp.gmo
 apps/ROX-Filer/Messages/README
+apps/ROX-Filer/Messages/da.gmo
 apps/ROX-Filer/Messages/de.gmo
 apps/ROX-Filer/Messages/fr.gmo
 apps/ROX-Filer/Messages/hu.gmo
@@ -15,10 +19,11 @@ apps/ROX-Filer/Messages/it.gmo
 apps/ROX-Filer/Messages/nl.gmo
 apps/ROX-Filer/Messages/pl.gmo
 apps/ROX-Filer/Messages/ru.gmo
-apps/ROX-Filer/Messages/da.gmo
+apps/ROX-Filer/Messages/sp.gmo
+apps/ROX-Filer/Messages/zh_CN.gmo
+apps/ROX-Filer/Messages/zh_TW.gmo
 apps/ROX-Filer/Options.xml
-apps/ROX-Filer/AppRun
-apps/ROX-Filer/images/zoom.png
+apps/ROX-Filer/images/application.png
 apps/ROX-Filer/images/close.png
 apps/ROX-Filer/images/details.png
 apps/ROX-Filer/images/dirs.png
@@ -26,6 +31,7 @@ apps/ROX-Filer/images/error.png
 apps/ROX-Filer/images/help.png
 apps/ROX-Filer/images/hidden.png
 apps/ROX-Filer/images/home.png
+apps/ROX-Filer/images/iconified.png
 apps/ROX-Filer/images/mount.png
 apps/ROX-Filer/images/mounted.png
 apps/ROX-Filer/images/multiple.png
@@ -33,14 +39,61 @@ apps/ROX-Filer/images/refresh.png
 apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/images/unknown.png
 apps/ROX-Filer/images/up.png
-apps/ROX-Filer/images/application.png
+apps/ROX-Filer/images/zoom.png
 apps/ROX-Filer/style.css
-apps/ROX-Filer/Action.png
-apps/ROX-Filer/AppInfo.xml
 bin/rox
+share/Choices/MIME-icons/application.png
+share/Choices/MIME-icons/application_pdf.png
+share/Choices/MIME-icons/application_postscript.png
+share/Choices/MIME-icons/application_x-bzip-compressed-tar.png
+share/Choices/MIME-icons/application_x-bzip.png
+share/Choices/MIME-icons/application_x-compressed-tar.png
+share/Choices/MIME-icons/application_x-deb.png
+share/Choices/MIME-icons/application_x-executable.png
+share/Choices/MIME-icons/application_x-font.png
+share/Choices/MIME-icons/application_x-glade.png
+share/Choices/MIME-icons/application_x-gzip.png
+share/Choices/MIME-icons/application_x-gzpostscript.png
+share/Choices/MIME-icons/application_x-jar.png
+share/Choices/MIME-icons/application_x-java.png
+share/Choices/MIME-icons/application_x-lyx.png
+share/Choices/MIME-icons/application_x-python.png
+share/Choices/MIME-icons/application_x-rpm.png
+share/Choices/MIME-icons/application_x-tar.png
+share/Choices/MIME-icons/application_zip.png
+share/Choices/MIME-icons/audio.png
+share/Choices/MIME-icons/audio_x-mod.png
+share/Choices/MIME-icons/image.png
+share/Choices/MIME-icons/image_gif.png
+share/Choices/MIME-icons/image_jpeg.png
+share/Choices/MIME-icons/image_x-xpixmap.png
+share/Choices/MIME-icons/inode_blockdevice.png
+share/Choices/MIME-icons/inode_chardevice.png
+share/Choices/MIME-icons/inode_directory.png
+share/Choices/MIME-icons/inode_fifo.png
+share/Choices/MIME-icons/inode_socket.png
+share/Choices/MIME-icons/text.png
+share/Choices/MIME-icons/text_html.png
+share/Choices/MIME-icons/text_plain.png
+share/Choices/MIME-icons/text_x-c++src.png
+share/Choices/MIME-icons/text_x-csrc.png
+share/Choices/MIME-icons/text_x-java.png
+share/Choices/MIME-icons/text_x-makefile.png
+share/Choices/MIME-icons/text_x-tcl.png
+share/Choices/MIME-icons/text_x-tex.png
+share/Choices/MIME-icons/video.png
+share/Choices/MIME-icons/video_mpeg.png
+share/Choices/MIME-types/application_postscript
+share/Choices/MIME-types/text
+share/mime/mime-info/rox.mimeinfo
+@dirrm share/Choices/MIME-types
+@dirrm share/Choices/MIME-icons
+@dirrm share/Choices
 @dirrm apps/ROX-Filer/images
 @dirrm apps/ROX-Filer/Messages
 @dirrm apps/ROX-Filer/Help
 @dirrm apps/ROX-Filer/FreeBSD-ix86
 @dirrm apps/ROX-Filer
+@unexec rmdir %D/share/mime/mime-info 2>/dev/null || true
+@unexec rmdir %D/share/mime 2>/dev/null || true
 @unexec rmdir %D/apps 2>/dev/null || true
