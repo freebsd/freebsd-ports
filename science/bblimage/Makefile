@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of software tools for medical image processing
 
+LIB_DEPENDS=	Xm.2:${PORTSDIR}/x11-toolkits/lesstif
+
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -27,6 +29,6 @@ MAN1=	anonbblanz.1 bblimage.1 binnseg.1 conseg.1 decomment.1 dumpbblanz.1 \
 MAN5=	cdata.5 mri_data.5 param.5
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|1\.5|2.2|g" ${WRKSRC}/configure ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|python1\.5|${PYTHON_VERSION}|g" ${WRKSRC}/configure ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
