@@ -1,4 +1,5 @@
 bin/pstoedit
+lib/latex2e.fmp
 lib/mpost.fmp
 share/doc/pstoedit/changelog.htm
 share/doc/pstoedit/index.htm
