@@ -63,6 +63,7 @@ share/silc/help/load
 share/silc/help/log
 share/silc/help/me
 share/silc/help/motd
+share/silc/help/mmsg
 share/silc/help/msg
 share/silc/help/names
 share/silc/help/nick
