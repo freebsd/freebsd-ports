@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	cdrtools
-PORTVERSION?=	2.0.3
-PORTREVISION?=	4
+PORTVERSION?=	2.01
+PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
-DISTNAME=	cdrtools-2.00.3
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/
+DISTNAME=	cdrtools-2.01
 
 MAINTAINER=	marius@FreeBSD.org
 COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
@@ -25,14 +24,15 @@ MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
 		mkisofs.8 mkhybrid.8
 DOCS=		README README.ATAPI README.DiskT@2 README.FreeBSD README.WORM \
 		README.audio README.cdplus README.cdrw README.cdtext \
-		README.copy README.mkisofs README.multi README.raw \
-		README.rscsi README.sony README.verify
+		README.clone README.copy README.mkisofs README.multi \
+		README.raw README.rscsi README.sony README.verify
 CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
 MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
 		README.hfs_boot README.hfs_magic README.hide README.joliet \
 		README.macosx README.mkhybrid README.prep_boot README.rootinfo \
-		README.session README.sort README.sparcboot
+		README.session README.sort README.sparcboot README.sunx86boot
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	CCOM=${CC} LANG=C
@@ -49,6 +49,10 @@ PLIST_SUB=	RSCSI="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501104 && ${OSVERSION} < 502113
+IGNORE=		The mlockall(2) of your FreeBSD 5.x version causes problems when used by cdrecord. Please update FreeBSD to >= 5.3 in order to use this port
+.endif
 
 pre-everything::
 .if !defined(WITH_RSCSI)
@@ -74,6 +78,7 @@ post-extract:
 .endif
 
 post-patch:
+	@${RM} ${WRKSRC}/TARGETS/55scgskeleton ${WRKSRC}/TARGETS/85man
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif

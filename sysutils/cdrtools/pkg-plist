@@ -29,6 +29,7 @@ etc/cdrecord.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.cdplus
 %%PORTDOCS%%%%DOCSDIR%%/README.cdrw
 %%PORTDOCS%%%%DOCSDIR%%/README.cdtext
+%%PORTDOCS%%%%DOCSDIR%%/README.clone
 %%PORTDOCS%%%%DOCSDIR%%/README.copy
 %%PORTDOCS%%%%DOCSDIR%%/README.mkisofs
 %%PORTDOCS%%%%DOCSDIR%%/README.multi
@@ -59,5 +60,6 @@ etc/cdrecord.sample
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.session
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sort
 %%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sparcboot
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sunx86boot
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/mkisofs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
