@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mutella
-PORTVERSION=	0.4.3rc1
+PORTVERSION=	0.4.3rc2
 CATEGORIES=	net
 MASTER_SITES=	http://mutella.sourceforge.net/
 
