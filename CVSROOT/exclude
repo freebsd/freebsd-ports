@@ -37,3 +37,10 @@
 ^src/usr.bin/more/more.help
 ^src/usr.sbin/sysinstall/help/.*\.hlp
 ^src/.*\.ps
+
+# src/share/zoneinfo is an externally-maintained database
+# (would have been in src/contrib had the latter existed sooner).
+# We don't normally keep local modifications to it, but it's no
+# longer on the vendor branch for historical reasons.
+# Exclude it so that we can use the vendor files verbatim.
+^src/share/zoneinfo/[Ta-z]
