@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.14 1996/11/17 23:42:40 torstenb Exp $
+# $Id: Makefile,v 1.15 1996/11/18 09:02:59 torstenb Exp $
 #
 
 DISTNAME=	smail-3.2
@@ -12,9 +12,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-.if defined(USE_IDENT)
-DEPENDS=	${PORTSDIR}/security/libident
-.endif
+BUILD_DEPENDS=	${PREFIX}/lib/libident.a:${PORTSDIR}/security/libident
 
 INSTALL_TARGET=	install installman
 
