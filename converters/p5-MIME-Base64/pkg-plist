@@ -1,10 +1,8 @@
-lib/perl5/man/man3/MIME::Base64.3.gz
-lib/perl5/man/man3/MIME::QuotedPrint.3.gz
-lib/perl5/site_perl/i386-freebsd/auto/MIME/Base64/Base64.so
-lib/perl5/site_perl/i386-freebsd/auto/MIME/Base64/Base64.bs
-lib/perl5/site_perl/i386-freebsd/auto/MIME/Base64/.packlist
-lib/perl5/site_perl/MIME/Base64.pm
-lib/perl5/site_perl/MIME/QuotedPrint.pm
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/MIME/Base64
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/MIME
-@dirrm lib/perl5/site_perl/MIME
+lib/perl5/5.00501/man/man3/MIME::Base64.3.gz
+lib/perl5/5.00501/man/man3/MIME::QuotedPrint.3.gz
+lib/perl5/site_perl/5.005/i386-freebsd/auto/MIME/Base64/.packlist
+lib/perl5/site_perl/5.005/i386-freebsd/auto/MIME/Base64/Base64.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/MIME/Base64/Base64.so
+lib/perl5/site_perl/5.005/i386-freebsd/MIME/Base64.pm
+lib/perl5/site_perl/5.005/i386-freebsd/MIME/QuotedPrint.pm
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/MIME/Base64
