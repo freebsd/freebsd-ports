@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	kdirstat
-PORTVERSION=	2.3.7
-PORTREVISION=	1
+PORTVERSION=	2.4.0
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://kdirstat.sourceforge.net/download/
 
-MAINTAINER=	stefan.jahn@nemesis-sektor.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	A small KDE utility that sums up disk usage for direcory trees
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
