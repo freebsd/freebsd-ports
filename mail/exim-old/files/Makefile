@@ -91,7 +91,7 @@
 # installed in this directory. There is no default for this variable built into
 # the source files; it must be set in one of the local configuration files.
 
-BIN_DIRECTORY=XX_PREFIX_XX/bin
+BIN_DIRECTORY=XX_PREFIX_XX/sbin
 
 
 # The default distribution of Exim contains only the plain text form of the
