@@ -30,6 +30,7 @@
     SUBDIR += mplayer-fonts
     SUBDIR += mplayer-skins
     SUBDIR += mplayerxp
+    SUBDIR += nautilus-media
     SUBDIR += ogle
     SUBDIR += ogle-gui
     SUBDIR += ogmtools
