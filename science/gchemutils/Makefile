@@ -6,7 +6,7 @@
 
 PORTNAME=	gchemutils
 PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	http://savannah.nongnu.org/download/gchemutils/unstable.pkg/${PORTVERSION}/
 DISTNAME=	gnome-chemistry-utils-${PORTVERSION}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix libglade2 libgnomeprint libbonoboui
+USE_GNOME=	gnomehack gnomeprefix libglade2 libgnomeprint libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
