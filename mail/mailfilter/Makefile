@@ -8,7 +8,8 @@
 PORTNAME=	mailfilter
 PORTVERSION=	1.0b
 CATEGORIES=	mail
-MASTER_SITES=	ftp://samurai.ruin.org/pub/All/
+MASTER_SITES=	http://galileo.spaceports.com/~jharris/distfiles/ \
+		ftp://samurai.ruin.org/pub/All/
 
 MAINTAINER=	jmrobins@samurai.ruin.org
 
