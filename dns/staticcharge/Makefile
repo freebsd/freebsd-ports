@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	staticcharge
-PORTVERSION=	0.7
+PORTVERSION=	0.7.3
 CATEGORIES=	net misc
 MASTER_SITES=	http://www.staticcling.org/clients/
 DISTNAME=	ChargeGTK-${PORTVERSION}
@@ -14,12 +14,17 @@ DISTNAME=	ChargeGTK-${PORTVERSION}
 MAINTAINER=	mahlon@martini.nu
 COMMENT=	A GTK client for the StaticCling dynamic DNS service
 
-BUILD_DEPENDS=	lynx:${PORTSDIR}/www/lynx
+BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 WRKSRC=		${WRKDIR}/staticcharge
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+.ifdef DEBUG
+CONFIGURE_ARGS+=  --enable-debug
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
