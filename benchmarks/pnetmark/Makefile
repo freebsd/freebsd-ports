@@ -27,7 +27,7 @@ PNET_STRAP_BIN=	pnetmark \
 		linpack \
 		scimark2
 
-.include "${PORTSDIR}/lang/pnet/Makefile.pnet"
+.include "${.CURDIR}/../../lang/pnet/Makefile.pnet"
 .include <bsd.port.pre.mk>
 
 do-install:
