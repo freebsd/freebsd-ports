@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	reverse
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.logilab.org/pub/pyreverse/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
