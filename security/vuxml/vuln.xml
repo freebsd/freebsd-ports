@@ -32,6 +32,40 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9be819c6-4633-11d9-a9e7-0001020eed82">
+    <topic>bnc -- remote code execution</topic>
+    <affects>
+      <package>
+	<name>bnc</name>
+	<range><lt>2.9.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A LSS Security Advisory reports:</p>
+	<blockquote cite="http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2004-11-03">
+	  <p>There is a buffer overflow vulnerability in
+	    getnickuserhost() function that is called when BNC is
+	    processing response from IRC server.</p>
+	  <p>Vulnerability can be exploited if attacker tricks user to
+	    connect to his fake IRC server that will exploit this
+	    vulnerability. If the attacker has access to BNC proxy
+	    server, this vulnerability can be used to gain shell
+	    access on machine where BNC proxy server is set.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="20041110131046.GA21604@cecilija.zesoi.fer.hr">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110011817627839</mlist>
+      <url>http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2004-11-03</url>
+      <url>http://www.gotbnc.com/changes.html</url>
+    </references>
+    <dates>
+      <discovery>2004-11-10</discovery>
+      <entry>2004-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f11b219a-44b6-11d9-ae2f-021106004fd6">
     <topic>rssh &amp; scponly -- arbitrary command execution</topic>
     <affects>
