@@ -7,6 +7,7 @@
 
 PORTNAME=	gnupg
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -46,11 +47,12 @@ INSTALL_TARGET=	install mkinstalldirs=`pwd`/scripts/mkinstalldirs
 .if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
-.if defined(WITH_LDAP) || exists(${PREFIX}/lib/libldap.so)
+.if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 PLIST_SUB+=	WITH_LDAP=""
 .else
 PLIST_SUB+=	WITH_LDAP="@comment "
+CONFIGURE_ARGS+=	--disable-ldap
 .endif
 
 post-install:
