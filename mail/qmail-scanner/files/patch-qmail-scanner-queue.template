@@ -1,6 +1,6 @@
---- qmail-scanner-queue.template.orig	Thu Oct 16 02:05:10 2003
-+++ qmail-scanner-queue.template	Thu Dec 11 14:28:48 2003
-@@ -85,11 +85,17 @@ $qsmsgid=tolower("$V_HEADER-message-id")
+--- qmail-scanner-queue.template.orig	Wed Nov  5 01:26:47 2003
++++ qmail-scanner-queue.template	Sun Jan  4 16:17:55 2004
+@@ -85,11 +85,17 @@
  
  
  #From: line  information used when making reports
@@ -23,13 +23,13 @@
  #deciding whether or not to send recipient alerts to
 @@ -294,6 +300,7 @@
  }
-
+ 
  my $quarantine_event=0;
 +my $spam_event=0;
-
+ 
  my $file_id = &uniq_id();
  
-@@ -415,7 +422,18 @@ eval {
+@@ -415,7 +422,18 @@
      &email_quarantine_report;
    } else {
      &qmail_parent_check;
