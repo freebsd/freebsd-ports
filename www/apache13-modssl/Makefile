@@ -3,11 +3,11 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.34 1999/06/09 13:45:01 rse Exp $
+# $Id: Makefile,v 1.35 1999/06/23 16:01:53 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
-PKGNAME=	apache-${VERSION_APACHE}+mod_ssl-${VERSION_MODSSL}
+PKGNAME=	apache+mod_ssl-${VERSION_APACHE}+${VERSION_MODSSL}
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.modssl.org/source/ \
