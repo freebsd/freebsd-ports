@@ -22,7 +22,7 @@ USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
-		--sbindir=${PREFIX}/bin	
+		--sbindir=${PREFIX}/bin
 
 MAN1=		ssldump.1
 PLIST_FILES=	bin/ssldump

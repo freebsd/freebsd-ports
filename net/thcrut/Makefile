@@ -15,7 +15,7 @@ COMMENT=	Local network discovery tool
 
 GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS+= --with-libnet=${LOCALBASE} \
-		 --sysconfdir=${PREFIX}/share/thcrut
+CONFIGURE_ARGS+=	--with-libnet=${LOCALBASE} \
+		 	--sysconfdir=${PREFIX}/share/thcrut
 
 .include <bsd.port.mk>

@@ -37,7 +37,7 @@ BROKEN=		"Does not compile"
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/lib/abyss/src/data.c \
-		${WRKSRC}/tools/turbocharger/mod_gzip.c 
+		${WRKSRC}/tools/turbocharger/mod_gzip.c
 
 post-install:
 	@${RM} -f ${PREFIX}/lib/*.la

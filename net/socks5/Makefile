@@ -39,10 +39,10 @@ CONFIGURE_ENV=	LIBS=-lcrypt
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/socks5
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/socks5
-	@${MKDIR} ${PREFIX}/share/doc/socks5
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/socks5
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.pre.mk>
