@@ -16,6 +16,7 @@ MAINTAINER=	mark@kyne.com.au
 
 WRKSRC=		${WRKDIR}/xrot
 USE_IMAKE=	yes
+USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-configure:
