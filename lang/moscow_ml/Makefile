@@ -3,7 +3,7 @@
 # Date created:         26 July 1996
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.6 1996/11/12 02:18:45 obrien Exp $
+# $Id: Makefile,v 1.7 1996/11/21 09:32:45 asami Exp $
 #
 
 DISTNAME=       mos14src
@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/mosml/ \
 
 MAINTAINER=	chuckr@freefall.FreeBSD.org
 
+BROKEN=		install
 ALL_TARGET=	world
 WRKSRC=		${WRKDIR}/mosml/src
 
