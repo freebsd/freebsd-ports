@@ -3,7 +3,7 @@
 # Date created:         24 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1996/11/11 05:49:51 obrien Exp $
+# $Id: Makefile,v 1.9 1996/11/18 14:07:01 asami Exp $
 #
 
 DISTNAME=	mshell
@@ -21,6 +21,6 @@ do-extract:
 	@rm -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
-	awk '{if (/^#!/) x++} {if(x) print $$0'}| /bin/sh)
+	${AWK} '{if (/^#!/) x++} {if(x) print $$0'}| ${SH})
 
 .include <bsd.port.mk>

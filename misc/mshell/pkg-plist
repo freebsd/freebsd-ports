@@ -1,3 +1,4 @@
-lib/menus/sample.men
-lib/menus/menulogin
 bin/mshell
+lib/menus/menulogin
+lib/menus/sample.men
+@dirrm lib/menus
