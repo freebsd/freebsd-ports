@@ -6874,6 +6874,7 @@ rfc		ports/misc/rfc
 rfksay		ports/games/rfksay
 rftp		ports/mail/rftp
 rhtvision	ports/devel/rhtvision
+rhythmbox	ports/audio/rhythmbox
 ricochet	ports/mail/ricochet
 rid		ports/security/rid
 rinetd		ports/net/rinetd
