@@ -19,7 +19,7 @@ DISTFILES=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
-COMMENT=	FSF gcc-2.95.2 for Atmel AVR 8-bit RISC cross-development
+COMMENT=	FSF GCC 3.3 for Atmel AVR 8-bit RISC cross-development
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
