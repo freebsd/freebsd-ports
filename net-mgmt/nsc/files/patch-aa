@@ -1,0 +1,21 @@
+--- nsc.pl.orig	Mon Mar  6 19:07:46 2000
++++ nsc.pl	Tue Apr  3 14:41:23 2001
+@@ -1,4 +1,4 @@
+-#!/bin/perl -w
++#!%%PERL%% -w
+ # vim:aw:
+ 
+ # nsc.pl - curses-based console monitor for Netsaint
+@@ -41,9 +41,9 @@
+ my $fnConfig = "$ENV{'HOME'}/.nsc.conf";
+ 
+ my %NSC_KEYWORDS = (
+-   'nslog',    '/usr/local/netsaint/var/status.log',
+-   'hostcfg',  '/usr/local/netsaint/etc/hosts.cfg',
+-   'reloadcmd','/etc/rc.d/init.d/netsaint reload',
++   'nslog',    '%%PREFIX%%/var/netsaint/status.log',
++   'hostcfg',  '%%PREFIX%%/etc/netsaint/hosts.cfg',
++   'reloadcmd','%%PREFIX%%/etc/rc.d/netsaint.sh reload',
+    'showall',  '1',
+    'details',  '1',
+    'reverse',  '0',
