@@ -1,5 +1,5 @@
 # New ports collection makefile for:	semi for xemacs-mule
-# Version required:	1.8.6
+# Version required:	1.13.4
 # Date created:		25 July 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
