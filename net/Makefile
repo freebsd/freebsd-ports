@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.148 1998/03/16 22:46:35 jseger Exp $
+# $Id: Makefile,v 1.149 1998/03/19 06:06:28 obrien Exp $
 #
 
     SUBDIR += archie
@@ -83,6 +83,7 @@
     SUBDIR += scotty
     SUBDIR += sendfile
     SUBDIR += slirp
+    SUBDIR += sniffit
     SUBDIR += socks5
     SUBDIR += strobe
     SUBDIR += sup
