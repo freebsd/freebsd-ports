@@ -321,6 +321,7 @@
     SUBDIR += pear-Services_Weather
     SUBDIR += peq
     SUBDIR += pg
+    SUBDIR += php4-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pointless
