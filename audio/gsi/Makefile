@@ -26,6 +26,17 @@ MAN5=		gsi.conf.5
 MAN7=		gsi_overview.7
 MAN8=		gsi_server.8
 
+post-patch:
+.for file in lib/gsimixer/api/mixer_oss.c lib/gsimixer/api/mixer_fbsd.c \
+	lib/gsipcm/api/pcm_oss.c lib/gsipcm/gsipcm.c \
+	lib/gsipcm/api/pcm_fbsd.c lib/gsisynth/api/synth_oss_gus.c \
+	lib/gsisynth/api/synth_oss_opl.c lib/gsisynth/api/synth_oss.c \
+	lib/gsisynth/api/midi_control_oss.c
+	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
+		${WRKSRC}/${file} > ${WRKSRC}/${file}.new
+	@${MV} ${WRKSRC}/${file}.new ${WRKSRC}/${file}
+.endfor
+
 pre-configure:
 	@${SH} ${FILESDIR}/configure.sh ${PREFIX} ${WRKSRC}
 
