@@ -16,6 +16,7 @@
     SUBDIR += bison
     SUBDIR += boehm-gc
     SUBDIR += cccc
+    SUBDIR += cdecl
     SUBDIR += cdk
     SUBDIR += cflow
     SUBDIR += clig
