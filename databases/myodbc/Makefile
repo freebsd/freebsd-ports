@@ -1,15 +1,14 @@
 # New ports collection makefile for:	MyODBC
-# Date created:				24 Oct 2000
-# Whom:					ebakke@trolltech.com
+# Date created:				22 Mar 2004
+# Whom:					sergey@migsoft.com.ua
 #
 # $FreeBSD$
 #
 
 PORTNAME=	myodbc
-PORTVERSION=	2.50.39
-PORTREVISION=	1
+PORTVERSION=	3.51.06
 CATEGORIES=	databases
-MASTER_SITES=	http://www.mysql.com/Downloads/MyODBC/ \
+MASTER_SITES=	http://mysql.paco.net/Downloads/MyODBC3/ \
 		ftp://sunsite.dk/mirrors/mysql/Downloads/MyODBC/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MyODBC/
 DISTNAME=	MyODBC-${PORTVERSION}
@@ -17,12 +16,15 @@ DISTNAME=	MyODBC-${PORTVERSION}
 MAINTAINER=	ebakke@trolltech.com
 COMMENT=	ODBC driver for MySQL
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-mysql-libs=${LOCALBASE}/lib/mysql \
 		--with-mysql-includes=${LOCALBASE}/include/mysql
+
+PORTDOCS=	INSTALL README
 
 # MyODBC needs an ODBC driver manager to be installed, and it supports both
 # iODBC and unixODBC.  The following variable may be set at built-time to
@@ -37,6 +39,12 @@ LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-odbc-ini=${LOCALBASE}/etc/libiodbc/odbc.ini
 .endif
+
+pre-fetch:
+	@${ECHO}
+	@${ECHO} "This software works with MySQL 3.x and 4.0."
+	@${ECHO} "Building against MySQL version 4.1 or 5.0 is not yet supported."
+	@${ECHO}
 
 # Allow a new value of ODBCVER to be set at build-time
 .if defined(ODBCVER)
