@@ -3,7 +3,7 @@
 # Date created:		19 October 1996
 # Whom:			pgs
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/16 01:55:07 obrien Exp $
+# $Id: Makefile,v 1.2 1997/02/16 10:57:01 asami Exp $
 #
 
 DISTNAME=	hobbes-icons-xpm3
@@ -11,7 +11,6 @@ PKGNAME=	hobbes-icons-xpm3-1.0
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.x.org/R5contrib/  \
 		ftp://ftp.duke.edu/pub/X11/R5contrib/  \
-		ftp://ftp.informatik.uni-bonn.de/pub/X11/contrib/  \
 		ftp://ftp.sunet.se/pub/X11/R5contrib/  \
 		ftp://ftp.pacbell.com/X11/R5contrib/
 
