@@ -1,0 +1,8 @@
+The approach taken by xml-parse.el is to read XML data into Lisp
+structures, and allow those same Lisp structures to be written out as
+XML.  It should facilitate the manipulation and use of XML by Elisp
+programs.
+
+
+Author: John Wiegley
+WWW: http://www.newartisans.com/johnw/emacs.html
