@@ -2684,6 +2684,7 @@ grdb		ports/misc/grdb
 grdesktop	ports/net/grdesktop
 greed		ports/ftp/greed
 greed_game	ports/games/greed
+gregexp		ports/misc/gregexp
 grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
 gretools	ports/games/gretools
