@@ -1,4 +1,4 @@
-bin/x11vnc
+%%X11%%bin/x11vnc
 include/rfb/rfb.h
 include/rfb/rfbconfig.h
 include/rfb/rfbint.h
