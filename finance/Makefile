@@ -16,7 +16,6 @@
     SUBDIR += ktoblzcheck
     SUBDIR += libofx
     SUBDIR += libstocks
-    SUBDIR += moneydance
     SUBDIR += myphpmoney
     SUBDIR += opale
     SUBDIR += openhbci

@@ -382,7 +382,6 @@
     SUBDIR += sha
     SUBDIR += shishi
     SUBDIR += sig2dot
-    SUBDIR += siphon
     SUBDIR += skip
     SUBDIR += slurpie
     SUBDIR += slush
