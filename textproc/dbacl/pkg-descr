@@ -1,0 +1,11 @@
+dbacl is a digramic Bayesian text classifier. Given some text, 
+it calculates the posterior probabilities that the input resembles 
+one of any number of previously learned document collections. 
+It can be used to sort incoming email into arbitrary categories 
+such as spam, work, and play, or simply to distinguish an English text 
+from a French text. It fully supports international character sets, 
+and uses sophisticated statistical models based on the 
+Maximum Entropy Principle. 
+
+Author:	Laird A. Breyer <laird@lbreyer.com>
+WWW:	http://dbacl.sourceforge.net/

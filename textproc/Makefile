@@ -43,6 +43,7 @@
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
     SUBDIR += dadadodo
+    SUBDIR += dbacl
     SUBDIR += dico
     SUBDIR += dict
     SUBDIR += dictfmt
