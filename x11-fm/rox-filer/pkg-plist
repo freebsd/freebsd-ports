@@ -135,5 +135,3 @@ share/Choices/MIME-types/text_html
 @unexec rmdir %D/share/mime/mime-info 2>/dev/null || true
 @unexec rmdir %D/share/mime 2>/dev/null || true
 @unexec rmdir %D/apps 2>/dev/null || true
-
-
