@@ -182,6 +182,7 @@ include/pbmplus.h
 include/pgm.h
 include/pnm.h
 include/ppm.h
+include/ppmcmap.h
 lib/libpbm.a
 lib/libpgm.a
 lib/libpnm.a
