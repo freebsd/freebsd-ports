@@ -28,9 +28,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/IconTextItem.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/IconTheme.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/doctypes
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/gnome.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/gnome2perl-autogen.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/gnome2perl-version.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/gnome2perl-versions.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/gnome2perl.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/Install/gnome2perl.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/ModuleInfo.pod
