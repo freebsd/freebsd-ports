@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-smooth-engine
-PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTVERSION=	0.5.8
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smooth-engine
@@ -16,12 +15,12 @@ MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Flexible GTK Theme Engine
 
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 CONFIGURE_ENV=	X11BASE="${X11BASE}"
 
-CONFLICTS=	gnome-themes-extras-*
+CONFLICTS=	gnome-themes-extras-[0-9]*
 
 .include <bsd.port.pre.mk>
 
