@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1998/05/16 01:39:33 dburr Exp $
+# $Id: Makefile,v 1.31 1998/06/11 12:18:01 dburr Exp $
 #
 
     SUBDIR += bpl+
@@ -16,6 +16,7 @@
     SUBDIR += seyon
     SUBDIR += snooper
     SUBDIR += tkhylafax
+    SUBDIR += viewfax
     SUBDIR += xcept
     SUBDIR += zmtx-zmrx
 
