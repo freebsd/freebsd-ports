@@ -1,11 +1,11 @@
---- config/Makefile.config.in.orig	Tue Jan  5 19:27:25 1999
-+++ config/Makefile.config.in	Tue Jan  5 19:29:08 1999
-@@ -19,7 +19,7 @@
+--- config/Makefile.config.in.orig	Thu Feb 25 12:12:41 1999
++++ config/Makefile.config.in	Sun Mar 14 13:05:07 1999
+@@ -22,7 +22,7 @@
  #-----------------------------------------------------------------
  
  # Optimized CXXFLAGS
 -CXXFLAGS      += $(CFLAGS) -Wall -O4 -pipe -I@x_includes@ \
 +CXXFLAGS      += $(CFLAGS) -Wall -I@x_includes@ \
-                 -I$(TOP) -I$(TOP)/@host_dir@ @DEFS@
+                 -DXOSVIEW_VERSION=\"$(VERS)\" -I$(TOP) -I$(TOP)/@host_dir@ @DEFS@
  # DEBUG CXXFLAGS
  #CXXFLAGS      += $(CFLAGS) -Wall -ggdb -pipe -I@x_includes@ \
