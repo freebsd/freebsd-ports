@@ -5,8 +5,7 @@ also used in the X11 window system to describe character bitmaps. It contains
 the bitmap data as well as some metric information. But t1lib is in itself
 entirely independent of the X11-system or any other graphical user interface. 
 
-WWW :
-http://www.neuroinformatik.ruhr-uni-bochum.de/ini/PEOPLE/rmz/t1lib/t1lib.html
+WWW: http://www.neuroinformatik.ruhr-uni-bochum.de/ini/PEOPLE/rmz/t1lib/t1lib.html
 
 - Ying-Chieh Liao
 ijliao@csie.nctu.edu.tw
