@@ -1,25 +1,26 @@
---- Makefile.orig	Sat Aug 12 14:37:22 1995
-+++ Makefile	Sun Oct  4 18:05:52 1998
-@@ -1,8 +1,8 @@
- LIBS = -lm -lX11 #-lefence
--LIBFLAGS = -L/usr/X11/lib
-+LIBFLAGS = -L@@X11BASE@@/lib
- CC = gcc
--CFLAGS = -O2 #-g
--MANDIR = /usr/local/man/
-+CFLAGS = -O2 -I@@X11BASE@@/include #-g
-+MANDIR = @@X11BASE@@/man/
- OBJ = trippy.o frame.o kaleid.o color.o plasma.o gravity.o life.o fields.o starback.o bezier.o swarm.o rotate.o
+--- Imakefile.orig	Fri Dec 18 23:35:27 1998
++++ Imakefile	Fri Dec 18 23:39:50 1998
+@@ -1,20 +1,16 @@
+ # Imakefile
  
- xtacy: $(OBJ) vroot.h trippy.h
-@@ -41,6 +41,7 @@
+-# For RedHat Linux , uncomment -lcrypt 
+-LOCAL_LIBRARIES = $(XLIB) -lm # -lcrypt
++LOCAL_LIBRARIES = $(XLIB) -lm -lcrypt
  
- install: xtacy
- 	strip xtacy
--	cp xtacy /usr/local/bin/xtacy
--	chmod a+x /usr/local/bin/xtacy
--	cp Xtacy.1 $(MANDIR)/man1/
-+	install -c -o bin -g bin -m 555 xtacy @@X11BASE@@/bin
-+	cp Xtacy.1 xtacy.1
-+	gzip -9nf xtacy.1
-+	install -c -o bin -g bin -m 444 xtacy.1.gz $(MANDIR)/man1/
+-SRCS = bezier.c blob.c color.c cursor.c fields.c frame.c gravity.c\
++SRCS=	bezier.c blob.c color.c cursor.c fields.c frame.c gravity.c\
+ 	kaleid.c life.c lightning.c lunch.c math.c password.c plasma.c\
+ 	rose.c rotate.c starback.c swarm.c tag.c trippy.c waves.c xguts.c\
+ 	mirrors.c fractals.c modes.c
+ 
+-OBJS=bezier.o blob.o color.o cursor.o fields.o frame.o gravity.o kaleid.o \
++OBJS=	bezier.o blob.o color.o cursor.o fields.o frame.o gravity.o kaleid.o \
+ 	life.o lightning.o lunch.o math.o password.o plasma.o rose.o rotate.o \
+ 	starback.o swarm.o tag.o trippy.o waves.o xguts.o mirrors.o \
+ 	fractals.o modes.o
+-
+-CDEBUGFLAGS = -O3 -Wall -g
+-CFLAGS = -O3 
+ 
+ ComplexProgramTarget(xtacy)
+ 

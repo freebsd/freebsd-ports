@@ -3,7 +3,7 @@ Xtacy, a Graphics Hack for X11 windows
 
 "Wow! This is better than snorting caffeine!"  --Neil Braun
 
-http://sidehack.gweep.net/~jer/xtacy.html
+http://www.gweep.net/~jer/xtacy.html
 
 Xtacy is a graphics hack which I've been, well, hacking on, for 2 or 3
 years now. It's been compiled on DECstations 3100, SGI running IRIX 5.3, 
@@ -13,11 +13,3 @@ looked quite odd. Not that odd is bad. Just odd.
 
 So what does it do? Xtacy displays bouncing shapes, rotating palettes, 
 a couple fractals, a kaleidascope, and lots of more stuff.
-
-Xtacy is distributed under the GNU License.
-
-Xtacy 1.13 New Features
-
--	New Modes! Bezier curves, Spinning Cube, Dog Plasma, Swarm, and More ! 
--	New Color Palettes! ummm... well, try 'em ,they're NEW 
--	Bug fixes Xtacy 1.12 had a memory leak or two.. I plugged 'em 
