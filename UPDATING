@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040709:
+  AFFECTS: users of mail/sender-milter
+  AUTHOR: vs@FreeBSD.org
+
+  Milter-sender version 0.58 released.
+  When updating to version 0.58, beware if you have a personalised
+  configuration file (milter-sender.cf).  The meaning of the
+  MxAcceptsAllAction variable has changed and its default has changed
+  from 4 to 6.  If this variable is not updated, greylisting might be
+  more aggressive than expected.
+
 20040708:
   AFFECTS: users of www/opera
   AUTHOR: osa@FreeBSD.org
