@@ -1,0 +1,17 @@
+
+-----------------------------------------------------------------------
+
+In any session you wish to use jgnat, you MUST set the PATH and
+CLASSPATH environment variables correctly.
+
+For example, if your PREFIX is /usr/local (the default) and you are
+using /bin/sh, you should:
+
+--Do nothing to the PATH as /usr/local/bin is already in the path;
+
+--Set your CLASSPATH as follows:
+
+	$CLASSPATH=.:/usr/local/lib/gnat/jgnat.jar:$CLASSPATH
+	$export CLASSPATH
+
+-----------------------------------------------------------------------
