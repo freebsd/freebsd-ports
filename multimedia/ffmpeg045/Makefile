@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--enable-mp3lame
 ## optimization
 .ifdef(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include \
-				-O3 -ffast-math -fomit-frame-pointer" 
+				-O3 -ffast-math -fomit-frame-pointer"
 .else
 CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include"
 .endif
@@ -176,6 +176,5 @@ post-install:
 		${PREFIX}/lib/libavcodec.so.${SHLIB_VERSION}
 # show PKGMESSAGE
 	@${CAT} ${PKGMESSAGE}
-
 
 .include <bsd.port.post.mk>
