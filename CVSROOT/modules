@@ -5241,6 +5241,7 @@ p5-DBD-Sybase	ports/databases/p5-DBD-Sybase
 p5-DBD-XBase	ports/databases/p5-DBD-XBase
 p5-DBD-mysql	ports/databases/p5-DBD-mysql
 p5-DBI		ports/databases/p5-DBI
+p5-DBI-137	ports/databases/p5-DBI-137
 p5-DBIWrapper	ports/databases/p5-DBIWrapper
 p5-DBIx-AnyDBD	ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse	ports/databases/p5-DBIx-Browse
