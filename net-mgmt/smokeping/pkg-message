@@ -9,7 +9,7 @@ NOTE: A set of sample configuration files have been installed:
   %%PREFIX%%/etc/smokeping/basepage.html
   %%PREFIX%%/etc/smokeping/config-echoping
 
-You need edit these to suit your requirements. Please refer to
+You *MUST* edit these to suit your requirements. Please refer to
 %%PREFIX%%/share/doc/smokeping/smokeping_install.txt and 
 %%PREFIX%%/share/doc/smokeping/smokeping_config.txt for further
 details on installation and configuration.

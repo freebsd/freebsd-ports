@@ -72,7 +72,6 @@ etc/smokeping/config-echoping.dist
 %%PORTDOCS%%%%DOCSDIR%%/telnetIOSPing.pm.txt
 smokeping/htdocs/smokeping.cgi
 smokeping/lib/ISG/ParseConfig.pm
-smokeping/lib/ISG/VppGateway.pm
 smokeping/lib/Smokeping.pm
 smokeping/lib/ciscoRttMonMIB.pm
 smokeping/lib/probes/CiscoRTTMonDNS.pm
@@ -90,14 +89,17 @@ smokeping/lib/probes/EchoPingSmtp.pm
 smokeping/lib/probes/FPing.pm
 smokeping/lib/probes/FPing6.pm
 smokeping/lib/probes/IOSPing.pm
+smokeping/lib/probes/LDAP.pm
+smokeping/lib/probes/Radius.pm
 smokeping/lib/probes/RemoteFPing.pm
 smokeping/lib/probes/base.pm
 smokeping/lib/probes/basefork.pm
 smokeping/lib/probes/basevars.pm
+smokeping/lib/probes/passwordchecker.pm
 smokeping/lib/probes/telnetIOSPing.pm
-@unexec rmdir %D/etc/smokeping || true
+@unexec rmdir %D/etc/smokeping 2>/dev/null || true
 @exec mkdir -p %D/smokeping/htdocs/img; chown www:www %D/smokeping/htdocs/img
-@unexec rm -rf %D/smokeping/htdocs/img
+@unexec rm -rf %D/smokeping/htdocs/img 2>/dev/null || true
 @exec mkdir -p %D/var/smokeping
 @exec chown smokeping:smokeping %D/var/smokeping
 @unexec rmdir %D/var/smokeping 2>/dev/null || true
