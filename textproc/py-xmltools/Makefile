@@ -14,11 +14,19 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_PYTHON=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VERSION} == "python1.5" || ${PYTHON_VERSION} == "python1.6"
+XMLDIR=		xml
+.else
+XMLDIR=		_xmlplus
+.endif
+
 RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk \
-		${PYTHON_SITELIBDIR}/xml/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite
-
-USE_PYTHON=	yes
+		${PYTHON_SITELIBDIR}/${XMLDIR}/xpath/__init__.py:${PORTSDIR}/textproc/py-4suite
 
 SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 
@@ -28,4 +36,4 @@ do-build:
 do-install:
 	@${SETUP_CMD} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
