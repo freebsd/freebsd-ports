@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 INSTALL_TARGET=	install INST=${PREFIX}/${PORTNAME}
 
 post-extract:
-	find ${WRKSRC} -name CVS | xargs ${RM} -rf
+	${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 post-install:
 # Headers

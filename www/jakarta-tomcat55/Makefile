@@ -154,7 +154,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Fixing permissions..."
-	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${CHMOD} 755 `${FIND} ${APP_HOME} -type d`
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Creating PID file..."

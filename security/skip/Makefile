@@ -49,15 +49,15 @@ MAN4=			skipd.conf.4 raw_keys.4
 # Also, we remove all the "#pragma ident" lines that generate
 # a bazillion warnings from the compiler.
 post-patch:
-	@find ${WRKSRC} -name '*.orig' -print | xargs ${RM}
+	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM}
 	@cd ${WRKSRC}; \
-	FILES=`find . -type f -print | xargs ${GREP} -l @@PREFIX@@`; \
+	FILES=`${FIND} . -type f -print | ${XARGS} ${GREP} -l @@PREFIX@@`; \
 	for FILE in $$FILES; do \
 	  ${SED} 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
 	  ${MV} $$FILE.new $$FILE; \
 	done; \
-	FILES=`find . -type f -name '*.[cCh]' -print \
-	  | xargs ${GREP} -l '^#pragma ident'`; \
+	FILES=`${FIND} . -type f -name '*.[cCh]' -print \
+	  | ${XARGS} ${GREP} -l '^#pragma ident'`; \
 	for FILE in $$FILES; do \
 	  ${SED} '/^#pragma ident/d' < $$FILE > $$FILE.new ; \
 	  ${MV} $$FILE.new $$FILE; \

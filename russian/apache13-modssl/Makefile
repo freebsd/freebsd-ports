@@ -217,7 +217,7 @@ pre-patch:
 
 post-patch:
 	@cd ${WRKSRC} \
-	&& find . -type f -name "*.orig" -print | xargs ${RM} -f
+	&& ${FIND} . -type f -name "*.orig" -print | ${XARGS} ${RM} -f
 
 post-build:
 	@cd ${WRKSRC} \

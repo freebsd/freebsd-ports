@@ -49,7 +49,7 @@ post-configure:
 
 do-install:
 	@ ${MKDIR} -m 0755 ${PREFIX}/${GALLERYDIR}
-	@ cd ${WRKSRC} && find * -name \*.bat ${EXCEPTFILES:S/^/-o -name /} \
+	@ cd ${WRKSRC} && ${FIND} * -name \*.bat ${EXCEPTFILES:S/^/-o -name /} \
 	  -o -print | ${CPIO} ${WWWOWN}:${WWWGRP} ${PREFIX}/${GALLERYDIR}
 
 post-install:

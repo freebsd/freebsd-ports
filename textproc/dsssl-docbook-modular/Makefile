@@ -35,8 +35,8 @@ do-build:
 
 pre-install:
 	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
-	@find ${WRKDIR} -name '*~' -exec ${RM} {} \;
-	@find ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
+	@${FIND} ${WRKDIR} -name '*~' -exec ${RM} {} \;
+	@${FIND} ${WRKDIR} -name '*.orig' -exec ${RM} {} \;
 
 do-install:
 	@${CP} -Rp ${WRKSRC}/* ${INSTDIR}

@@ -62,7 +62,7 @@ MTREE_FILE=     /etc/mtree/BSD.x11-4.dist
 .endif
 
 post-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e   \
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e   \
 		's|[(]LN_S[)] -f -n|(LN_S) -f|g'
 	@${REINPLACE_CMD} -e 's|/usr/share/locale|${PREFIX}/share/locale|g' \
 		${WRKSRC}/libs/scrollkeeper.h.in

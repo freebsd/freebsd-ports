@@ -36,7 +36,7 @@ post-patch:
 
 pre-install:
 	${ECHO_CMD} bin/mmosaic > ${PLIST}
-	cd ${WRKSRC}/Copyrights; for i in `find * -type f`; do \
+	cd ${WRKSRC}/Copyrights; for i in `${FIND} * -type f`; do \
 		${ECHO_CMD} share/doc/mmosaic/$${i} >> ${PLIST}; \
 	done
 

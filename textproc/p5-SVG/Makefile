@@ -21,7 +21,7 @@ MAN3=		SVG.3 SVG::DOM.3 SVG::Element.3 SVG::Manual.3 SVG::XML.3
 
 post-patch:
 	@${FIND} ${WRKSRC} \( -name "*.p[lm]" -or -name "*.cgi" \
-		-or -name "*.pod" \)|xargs ${PERL} -pi -e 's/\x0d//g;'
+		-or -name "*.pod" \)|${XARGS} ${PERL} -pi -e 's/\x0d//g;'
 
 post-install:
 .ifndef(NOPORTDOCS)

@@ -34,7 +34,7 @@ pre-install:
 
 do-install:
 	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; pax -r)
-	@${CHMOD} ${SHAREMODE} `find ${INSTDIR} -type f`
+	@${CHMOD} ${SHAREMODE} `${FIND} ${INSTDIR} -type f`
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 post-install:

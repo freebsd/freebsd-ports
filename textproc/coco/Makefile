@@ -40,7 +40,7 @@ pre-patch:
 
 # delete dust files before build
 pre-build:
-	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VERSION}.*
 
 .include <bsd.port.mk>

@@ -37,10 +37,10 @@ post-install:
 .for docfile in ANNOUNCE CREDITS LICENCE README* TODO
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
-	@ cd ${WRKSRC}/doc && find * \
+	@ cd ${WRKSRC}/doc && ${FIND} * \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@ ${MKDIR} ${EXAMPLESDIR}
-	@ cd ${WRKSRC} && find demo test \
+	@ cd ${WRKSRC} && ${FIND} demo test \
 	  | ${CPIO} ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 

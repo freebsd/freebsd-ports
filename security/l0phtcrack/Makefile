@@ -32,7 +32,7 @@ do-build:
 pre-install:
 	${ECHO_CMD} bin/lc_CLI > ${PLIST}
 .if !defined(NOPORTDOCS)
-	for i in `find ${WRKDIR} -name '*txt'`; \
+	for i in `${FIND} ${WRKDIR} -name '*txt'`; \
 		do ${ECHO_CMD} ${DOCDIR}/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
 	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}

@@ -92,14 +92,14 @@ do-configure:
 
 pre-install:
 	${ECHO_CMD} bin/${MAJ}${NETSCAPE_LANG} > ${PLIST}
-	cd ${WRKSRC}/bin; for ii in `find * \! -type d | sort`; do \
+	cd ${WRKSRC}/bin; for ii in `${FIND} * \! -type d | sort`; do \
 		${ECHO_CMD} ${INSTALL_DIR}/$${ii} >> ${PLIST}; \
 	done
-	cd ${WRKSRC}/plugins; for ii in `find * \! -type d | sort`; do \
+	cd ${WRKSRC}/plugins; for ii in `${FIND} * \! -type d | sort`; do \
 		${ECHO_CMD} ${INSTALL_DIR}/plugins/$${ii} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \
-	for ii in `find -d * -type d`; do \
+	for ii in `${FIND} -d * -type d`; do \
 		${ECHO_CMD} @dirrm ${INSTALL_DIR}/$${ii} >> ${PLIST}; \
 	done
 	${ECHO_CMD} @dirrm ${INSTALL_DIR} >> ${PLIST}

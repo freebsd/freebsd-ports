@@ -40,7 +40,7 @@ do-build:
 do-install:
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && find * \! -name \*.zexp \
+	@ cd ${WRKSRC} && ${FIND} * \! -name \*.zexp \
 	  | ${CPIO} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 

@@ -120,7 +120,7 @@ PLIST_SUB+=	SUEXEC="@comment "
 post-patch:
 .if !defined(PATCH_DEBUG)
 	@ cd ${WRKSRC} \
-		&& find . -type f -name "*.orig" -print | xargs ${RM} -f
+		&& ${FIND} . -type f -name "*.orig" -print | ${XARGS} ${RM} -f
 .endif
 
 # Create apache user and group

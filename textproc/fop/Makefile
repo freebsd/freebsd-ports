@@ -26,7 +26,8 @@ JAVA_LIBDIR=	${PREFIX}/share/java/classes
 
 pre-install:
 	${MKDIR} ${JAVA_LIBDIR} ${DATADIR} ${DOCSDIR}
-	find ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) -exec ${RM} -rf \{} \;
+	${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) \
+		-exec ${RM} -rf \{} \;
 
 do-install:
 	cd ${WRKSRC}; \

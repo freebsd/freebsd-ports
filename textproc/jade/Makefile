@@ -34,7 +34,8 @@ post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure
 
 pre-install:
-	@find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*~ \) \
+		-exec ${RM} -f \{} \;
 
 post-install:
 .for i in jade nsgmls sgmlnorm spam spent sx

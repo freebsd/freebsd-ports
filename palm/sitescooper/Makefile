@@ -46,9 +46,9 @@ do-install:
 	${MKDIR} ${SITE_PERL}/${D}
 	${INSTALL_DATA} ${WRKSRC}/lib/${D}/* ${SITE_PERL}/${D}
 .endfor
-	(cd ${WRKSRC}; /usr/bin/find profile_samples site_samples -type d \
+	(cd ${WRKSRC}; ${FIND} profile_samples site_samples -type d \
 		-exec ${MKDIR} "${PREFIX}/share/sitescooper/{}" \;)
-	(cd ${WRKSRC}; /usr/bin/find profile_samples site_samples -type f \
+	(cd ${WRKSRC}; ${FIND} profile_samples site_samples -type f \
 		-exec ${INSTALL_DATA} "{}" "${PREFIX}/share/sitescooper/{}" \;)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
