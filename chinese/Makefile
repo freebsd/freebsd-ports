@@ -20,6 +20,7 @@
     SUBDIR += celvis
     SUBDIR += chinput
     SUBDIR += chinput2
+    SUBDIR += chitex
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cmexfonts
