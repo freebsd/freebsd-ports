@@ -1,16 +1,20 @@
-*** adcomplain.pl.orig	Sat Sep 13 17:48:01 1997
---- adcomplain.pl	Sat Sep 13 17:59:23 1997
+*** adcomplain.pl.orig	Wed Oct  8 01:12:36 1997
+--- adcomplain.pl	Wed Oct  8 01:21:22 1997
 ***************
-*** 1,4 ****
+*** 1,6 ****
 ! #! /bin/sh -- # -*- perl -*-
 ! eval 'exec perl $0 ${1+"$@"}'
 ! if 0;
   
---- 1,2 ----
+  # $Id: adcomplain.pl,v 2.56 1997/10/03 23:09:02 jason Exp $
+  
+--- 1,4 ----
 ! #!/usr/bin/perl
   
+  # $Id: adcomplain.pl,v 2.56 1997/10/03 23:09:02 jason Exp $
+  
 ***************
-*** 230,236 ****
+*** 172,178 ****
   $noinclude = 1;
   
   # comment this if your mailer automatically adds your .signature
@@ -18,7 +22,7 @@
   
   # this is the default name of the file to use for the complaint text
   # if the file name is empty, the default text will be used
---- 228,234 ----
+--- 170,176 ----
   $noinclude = 1;
   
   # comment this if your mailer automatically adds your .signature
@@ -27,24 +31,47 @@
   # this is the default name of the file to use for the complaint text
   # if the file name is empty, the default text will be used
 ***************
-*** 238,244 ****
+*** 180,186 ****
   
   # this is the name of the mail utility (see sendmail(8) man page)
   # type "which sendmail" to find out where sendmail is on your system
 ! $mailcmd = "/usr/lib/sendmail -t";
   
-  #-----------------------------------------------
-  
---- 236,242 ----
+  # this is a list of domain names for your system (e.g., "compuserve.com")
+  # Names in this list are considered "friendly".  Including your own system
+--- 178,184 ----
   
   # this is the name of the mail utility (see sendmail(8) man page)
   # type "which sendmail" to find out where sendmail is on your system
 ! $mailcmd = "/usr/sbin/sendmail -t";
   
-  #-----------------------------------------------
-  
+  # this is a list of domain names for your system (e.g., "compuserve.com")
+  # Names in this list are considered "friendly".  Including your own system
 ***************
-*** 294,300 ****
+*** 198,207 ****
+  # If you have external executables that allow you to confirm host
+  # addresses and names (i.e., gethostbyaddr and gethostbyname don't do it),
+  # put them here, otherwise leave them empty.
+! #$GETHOSTBYNAME = "";
+! #$GETHOSTBYADDR = "";
+! $GETHOSTBYNAME = "gethostbyname";
+! $GETHOSTBYADDR = "gethostbyaddr";
+  
+  # Well, it works at GemStone.  Your mileage may vary :-(.
+  #if (-x "/bin/remsh") { # HP-UX
+--- 196,205 ----
+  # If you have external executables that allow you to confirm host
+  # addresses and names (i.e., gethostbyaddr and gethostbyname don't do it),
+  # put them here, otherwise leave them empty.
+! $GETHOSTBYNAME = "";
+! $GETHOSTBYADDR = "";
+! #$GETHOSTBYNAME = "gethostbyname";
+! #$GETHOSTBYADDR = "gethostbyaddr";
+  
+  # Well, it works at GemStone.  Your mileage may vary :-(.
+  #if (-x "/bin/remsh") { # HP-UX
+***************
+*** 315,321 ****
     }
   
   # Make sure critical messages are seen
@@ -52,7 +79,7 @@
     print "Press enter to continue.... ";
     $ans = <STDIN>;
     }
---- 292,298 ----
+--- 313,319 ----
     }
   
   # Make sure critical messages are seen
@@ -61,20 +88,20 @@
     $ans = <STDIN>;
     }
 ***************
-*** 358,363 ****
---- 356,364 ----
+*** 381,386 ****
+--- 379,387 ----
     $cc = "$complain_to$cc";
     }
   $header .= "Cc: $cc\n" if $cc ne "";
 + if ($quiet) {
 +   print "$header";
 + }
+  $subject = "no subject" if $subject eq "";
+  $header .= "Subject: ";
   if ($recipient == $complain_to_only) {
-    $header .= "Subject: Abuse report ($subject)\n";
-    }
 ***************
-*** 374,379 ****
---- 375,381 ----
+*** 406,411 ****
+--- 407,413 ----
   close TEXTFILE;
   $response = ""; # garbage collection
   
@@ -83,8 +110,8 @@
   print "\n";
   $pager = $ENV{"PAGER"};
 ***************
-*** 405,410 ****
---- 407,416 ----
+*** 440,445 ****
+--- 442,451 ----
     } # for
   
   print "\n";
