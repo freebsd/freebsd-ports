@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	cli
-PORTVERSION=	20020619
+PORTVERSION=	20021101
 CATEGORIES=	lang
-MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta2/WXP/EN-US/ \
-		http://download.microsoft.com/download/.netframesdk/Beta2/WXP/EN-US/ \
-		http://www.corel.com/6763/downloads/mirror/microsoft/rotor/ \
-		ftp://ftp.corel.com/pub/mirror/Microsoft/rotor/
+MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/cli3/1.0/wxp/en-us/
 DISTNAME=	sscli_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
@@ -24,6 +21,7 @@ RESTRICTED=	"license terms need to be reviewed"
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${BUILD_TYPE}
 CONFIGURE_SCRIPT=	portconfigure
@@ -36,11 +34,18 @@ PLIST_SUB=	CLI_VERSION="${PORTVERSION}"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-EXTRA_PATCHES!=	${ECHO_CMD} ${PKGDIR}/files.5/patch-*
+GCC_LIB=	-lstdc++ -lgcc -lc_r -lc
+.else
+GCC_LIB=	-lstdc++ -lgcc -lc_r
 .endif
 
 post-extract:
 	@${CP} ${SCRIPTDIR}/portconfigure ${WRKSRC}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%GCC_LIB%%|${GCC_LIB}|g' \
+		${WRKSRC}/makefile.common.in \
+		${WRKSRC}/rotorenv/bin/rotor_x86mk.inc
 
 do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./buildall ${BUILD_TYPE})

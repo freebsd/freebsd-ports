@@ -1,29 +1,29 @@
 
 $FreeBSD$
 
---- env.sh.orig	Fri Mar 22 03:47:54 2002
-+++ env.sh	Tue Apr 16 18:38:49 2002
-@@ -69,7 +69,15 @@
- export DEBUGGING_SUPPORTED_BUILD=1
- export SVR_WKS_DIRS=wks
+--- env.sh.orig	Sat Nov  2 04:21:57 2002
++++ env.sh	Fri Apr 25 10:16:50 2003
+@@ -188,7 +188,15 @@
+     CSC_COMPILE_FLAGS="${CSC_COMPILE_FLAGS} /d:FEATURE_CASE_SENSITIVE_FILESYSTEM"
+ fi
  
 -if test X"$1" = "Xfree"
 +if test X"$1" = "Xretail"
 +then
 +echo "Retail Environment"
-+export DDKBUILDENV=free
-+export C_DEFINES="${C_DEFINES} -DNTMAKEENV -DNDEBUG -DPERF_TRACKING"
-+export BUILD_ALT_DIR=r
-+export TARGETCOMPLUS="${ROTOR_DIR}/build/v1.x86fre.rotor"
-+export NTDEBUG=retail
++    DDKBUILDENV=free
++    C_DEFINES="${C_DEFINES} -DNTMAKEENV -DNDEBUG -DPERF_TRACKING"
++    BUILD_ALT_DIR=r
++    TARGETCOMPLUS="${ROTOR_DIR}/build/v1.x86fre.rotor"
++    NTDEBUG=retail
 +else if test X"$1" = "Xfree"
  then
- echo "Free Environment"
- export DDKBUILDENV=free
-@@ -93,6 +101,7 @@
- export BUILD_ALT_DIR=df
- export TARGETCOMPLUS="${ROTOR_DIR}/build/v1.x86fstchk.rotor"
- export NTDEBUG=ntsd
+     echo "Free Environment"
+     DDKBUILDENV=free
+@@ -213,6 +221,7 @@
+     BUILD_ALT_DIR=df
+     TARGETCOMPLUS="${ROTOR_DIR}/build/v1.${PROCESSOR_ARCHITECTURE}fstchk.rotor"
+     NTDEBUG=ntsd
 +fi
  fi
  fi

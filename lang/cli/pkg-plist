@@ -15,6 +15,8 @@ cli-%%CLI_VERSION%%/System.dll
 cli-%%CLI_VERSION%%/System.ildb
 cli-%%CLI_VERSION%%/al
 cli-%%CLI_VERSION%%/alink.satellite
+cli-%%CLI_VERSION%%/assembly/GAC/ISymWrapper/1.0.3300.0__b03f5f7f11d50a3a/ISymWrapper.dll
+cli-%%CLI_VERSION%%/assembly/GAC/ISymWrapper/1.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
 cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.JScript.dll
 cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a/__AssemblyInfo__.ini
 cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.Vsa/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.Vsa.dll
@@ -27,6 +29,8 @@ cli-%%CLI_VERSION%%/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/System.
 cli-%%CLI_VERSION%%/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
 cli-%%CLI_VERSION%%/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/System.dll
 cli-%%CLI_VERSION%%/assembly/GAC/System/1.0.3300.0__b77a5c561934e089/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/myperm/1.0.1.0__0e8dcc8628396732/__AssemblyInfo__.ini
+cli-%%CLI_VERSION%%/assembly/GAC/myperm/1.0.1.0__0e8dcc8628396732/myperm.dll
 cli-%%CLI_VERSION%%/big5.nlp
 cli-%%CLI_VERSION%%/binplace
 cli-%%CLI_VERSION%%/bopomofo.nlp
@@ -89,7 +93,6 @@ cli-%%CLI_VERSION%%/dump/dump-types.h
 cli-%%CLI_VERSION%%/dump/eetwain.h
 cli-%%CLI_VERSION%%/dump/ehencoder.h
 cli-%%CLI_VERSION%%/dump/enc.h
-cli-%%CLI_VERSION%%/dump/endian.h
 cli-%%CLI_VERSION%%/dump/frame-types.h
 cli-%%CLI_VERSION%%/dump/fusion.h
 cli-%%CLI_VERSION%%/dump/fusionbind.h
@@ -97,13 +100,7 @@ cli-%%CLI_VERSION%%/dump/fusionpriv.h
 cli-%%CLI_VERSION%%/dump/fusionsetup.h
 cli-%%CLI_VERSION%%/dump/fusionsink.h
 cli-%%CLI_VERSION%%/dump/fuspriv.h
-cli-%%CLI_VERSION%%/dump/gcdump.h
-cli-%%CLI_VERSION%%/dump/gcinfo.h
 cli-%%CLI_VERSION%%/dump/guidfromname.h
-cli-%%CLI_VERSION%%/dump/hello.exe
-cli-%%CLI_VERSION%%/dump/hello.ildb
-cli-%%CLI_VERSION%%/dump/helloxml.exe
-cli-%%CLI_VERSION%%/dump/helloxml.ildb
 cli-%%CLI_VERSION%%/dump/holder.h
 cli-%%CLI_VERSION%%/dump/hrex.h
 cli-%%CLI_VERSION%%/dump/iceefilegen.h
@@ -130,6 +127,8 @@ cli-%%CLI_VERSION%%/dump/openum.h
 cli-%%CLI_VERSION%%/dump/opinfo.h
 cli-%%CLI_VERSION%%/dump/outstring.h
 cli-%%CLI_VERSION%%/dump/palclr.h
+cli-%%CLI_VERSION%%/dump/palstartup.h
+cli-%%CLI_VERSION%%/dump/palstartupw.h
 cli-%%CLI_VERSION%%/dump/perfcounterdefs.h
 cli-%%CLI_VERSION%%/dump/perfcounters.h
 cli-%%CLI_VERSION%%/dump/perflog.h
@@ -175,7 +174,6 @@ cli-%%CLI_VERSION%%/l_except.nlp
 cli-%%CLI_VERSION%%/l_intl.nlp
 cli-%%CLI_VERSION%%/libalink.so
 cli-%%CLI_VERSION%%/libcscomp.so
-cli-%%CLI_VERSION%%/libdnprofiler.so
 cli-%%CLI_VERSION%%/libfusion.so
 cli-%%CLI_VERSION%%/libildbsymbols.so
 cli-%%CLI_VERSION%%/libmscordbc.so
@@ -192,12 +190,6 @@ cli-%%CLI_VERSION%%/license.txt
 cli-%%CLI_VERSION%%/mscorlib.dll
 cli-%%CLI_VERSION%%/mscorrc.satellite
 cli-%%CLI_VERSION%%/nmake
-cli-%%CLI_VERSION%%/pigui/SharedSourceCLI.TK.dll
-cli-%%CLI_VERSION%%/pigui/SharedSourceCLI.TK.ildb
-cli-%%CLI_VERSION%%/pigui/pighello.exe
-cli-%%CLI_VERSION%%/pigui/pighello.ildb
-cli-%%CLI_VERSION%%/pigui/pigpad.exe
-cli-%%CLI_VERSION%%/pigui/pigpad.ildb
 cli-%%CLI_VERSION%%/prc.nlp
 cli-%%CLI_VERSION%%/prcp.nlp
 cli-%%CLI_VERSION%%/private/lib/System.dll
@@ -206,16 +198,135 @@ cli-%%CLI_VERSION%%/resourcecompiler
 cli-%%CLI_VERSION%%/rotor/rotor.ini
 cli-%%CLI_VERSION%%/rotor/strongname.ini
 cli-%%CLI_VERSION%%/rotor_pal.satellite
-cli-%%CLI_VERSION%%/sdk/bin/corcls.exe
-cli-%%CLI_VERSION%%/sdk/bin/corcls.ildb
+cli-%%CLI_VERSION%%/samples/compilers/clisp/clisp.exe
+cli-%%CLI_VERSION%%/samples/compilers/clisp/clisp.ildb
+cli-%%CLI_VERSION%%/samples/compilers/clisp/fibo.lisp
+cli-%%CLI_VERSION%%/samples/compilers/clisp/sort.lisp
+cli-%%CLI_VERSION%%/samples/compilers/myc/myc.exe
+cli-%%CLI_VERSION%%/samples/compilers/myc/myc.ildb
+cli-%%CLI_VERSION%%/samples/compilers/myc/t01.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t02.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t03.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t04.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t05.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t06.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t07.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/t08.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/tdll.myc
+cli-%%CLI_VERSION%%/samples/compilers/myc/tflow.myc
+cli-%%CLI_VERSION%%/samples/hello/hello.exe
+cli-%%CLI_VERSION%%/samples/hello/hello.ildb
+cli-%%CLI_VERSION%%/samples/hello/helloxml.exe
+cli-%%CLI_VERSION%%/samples/hello/helloxml.ildb
+cli-%%CLI_VERSION%%/samples/howto/basedatatypes/stringformat/stringformat.exe
+cli-%%CLI_VERSION%%/samples/howto/basedatatypes/stringformat/stringformat.ildb
+cli-%%CLI_VERSION%%/samples/howto/codedom/listbuilder.exe
+cli-%%CLI_VERSION%%/samples/howto/codedom/listbuilder.ildb
+cli-%%CLI_VERSION%%/samples/howto/net/getresponse/getresponse.exe
+cli-%%CLI_VERSION%%/samples/howto/net/getresponse/getresponse.ildb
+cli-%%CLI_VERSION%%/samples/howto/net/udpchat/udpchat.exe
+cli-%%CLI_VERSION%%/samples/howto/net/udpchat/udpchat.ildb
+cli-%%CLI_VERSION%%/samples/howto/reflection/emit/reflectionemit.exe
+cli-%%CLI_VERSION%%/samples/howto/reflection/emit/reflectionemit.ildb
+cli-%%CLI_VERSION%%/samples/howto/reflection/invoke/reflectioninvoke.exe
+cli-%%CLI_VERSION%%/samples/howto/reflection/invoke/reflectioninvoke.ildb
+cli-%%CLI_VERSION%%/samples/howto/regularexpressions/regularexpressions.exe
+cli-%%CLI_VERSION%%/samples/howto/regularexpressions/regularexpressions.ildb
+cli-%%CLI_VERSION%%/samples/howto/remoting/remotingclient.exe
+cli-%%CLI_VERSION%%/samples/howto/remoting/remotingclient.ildb
+cli-%%CLI_VERSION%%/samples/howto/remoting/remotingserver.exe
+cli-%%CLI_VERSION%%/samples/howto/remoting/remotingserver.ildb
+cli-%%CLI_VERSION%%/samples/howto/remoting/remotingshared.dll
+cli-%%CLI_VERSION%%/samples/howto/remoting/remotingshared.ildb
+cli-%%CLI_VERSION%%/samples/howto/resources/managedresources.exe
+cli-%%CLI_VERSION%%/samples/howto/resources/managedresources.ildb
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/authorized.exe
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/authorized.ildb
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/exclusive.bat
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/exclusive.sh
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/myperm.dll
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/myperm.ildb
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/myperm.xml
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/names.txt
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/namestore.dll
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/namestore.ildb
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/setpolicy.bat
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/setpolicy.sh
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/unauthorized.exe
+cli-%%CLI_VERSION%%/samples/howto/security/permissions/unauthorized.ildb
+cli-%%CLI_VERSION%%/samples/howto/serialization/iserializable.exe
+cli-%%CLI_VERSION%%/samples/howto/serialization/iserializable.ildb
+cli-%%CLI_VERSION%%/samples/howto/serialization/simpleserialize.exe
+cli-%%CLI_VERSION%%/samples/howto/serialization/simpleserialize.ildb
+cli-%%CLI_VERSION%%/samples/howto/xml/xmlschema/books.xsd
+cli-%%CLI_VERSION%%/samples/howto/xml/xmlschema/poschema.xsd
+cli-%%CLI_VERSION%%/samples/howto/xml/xmlschema/xmlschema.exe
+cli-%%CLI_VERSION%%/samples/howto/xml/xmlschema/xmlschema.ildb
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/books.xml
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/books.xsl
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/processparameters1.xml
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/processparameters2.xml
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/stylesheetgenerator.xsl
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/xmltransform.exe
+cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform/xmltransform.ildb
+cli-%%CLI_VERSION%%/samples/howto/xmlserialization/inputdata.xml
+cli-%%CLI_VERSION%%/samples/howto/xmlserialization/purchaseorder.dll
+cli-%%CLI_VERSION%%/samples/howto/xmlserialization/purchaseorder.ildb
+cli-%%CLI_VERSION%%/samples/howto/xmlserialization/xmlserialize.exe
+cli-%%CLI_VERSION%%/samples/howto/xmlserialization/xmlserialize.ildb
+cli-%%CLI_VERSION%%/samples/pigui/pighello.exe
+cli-%%CLI_VERSION%%/samples/pigui/pighello.ildb
+cli-%%CLI_VERSION%%/samples/pigui/pigpad.exe
+cli-%%CLI_VERSION%%/samples/pigui/pigpad.ildb
+cli-%%CLI_VERSION%%/samples/pigui/sharedsourcecli.tk.dll
+cli-%%CLI_VERSION%%/samples/pigui/sharedsourcecli.tk.ildb
+cli-%%CLI_VERSION%%/samples/utilities/cleanbuild/cleanbuild.exe
+cli-%%CLI_VERSION%%/samples/utilities/cleanbuild/cleanbuild.ildb
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/codeblue.css
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/codetohtml.exe
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/codetohtml.ildb
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/codewhite.css
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/cs_codetohtml.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/cs_futurereserved.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/cs_keywords.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/cs_replace.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/cs_userdefined.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/footer.txt
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/header.txt
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/js_codetohtml.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/js_futurereserved.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/js_keywords.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/js_replace.ini
+cli-%%CLI_VERSION%%/samples/utilities/codetohtml/js_userdefined.ini
+cli-%%CLI_VERSION%%/samples/utilities/corclass/corcls.exe
+cli-%%CLI_VERSION%%/samples/utilities/corclass/corcls.ildb
+cli-%%CLI_VERSION%%/samples/utilities/crlf/crlf.exe
+cli-%%CLI_VERSION%%/samples/utilities/crlf/crlf.ildb
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/libdnprofiler.so
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/profiling_off.bat
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/profiling_off.csh
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/profiling_off.sh
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/profiling_on.bat
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/profiling_on.csh
+cli-%%CLI_VERSION%%/samples/utilities/dnprofiler/profiling_on.sh
+cli-%%CLI_VERSION%%/samples/utilities/getcliversion/getcliversion.exe
+cli-%%CLI_VERSION%%/samples/utilities/getcliversion/getcliversion.ildb
+cli-%%CLI_VERSION%%/samples/utilities/grep/ngrep.exe
+cli-%%CLI_VERSION%%/samples/utilities/grep/ngrep.ildb
+cli-%%CLI_VERSION%%/samples/utilities/keyconfig/keyconfig.exe
+cli-%%CLI_VERSION%%/samples/utilities/keyconfig/keyconfig.ildb
+cli-%%CLI_VERSION%%/samples/utilities/typefinder/typefinder.exe
+cli-%%CLI_VERSION%%/samples/utilities/typefinder/typefinder.ildb
+cli-%%CLI_VERSION%%/samples/utilities/wordcount/wordcount.exe
+cli-%%CLI_VERSION%%/samples/utilities/wordcount/wordcount.ildb
+cli-%%CLI_VERSION%%/samples/utilities/xsd/xsd.exe
+cli-%%CLI_VERSION%%/samples/utilities/xsd/xsd.ildb
 cli-%%CLI_VERSION%%/sdk/bin/cordbg
 cli-%%CLI_VERSION%%/sdk/bin/ilasm
 cli-%%CLI_VERSION%%/sdk/bin/ildasm
 cli-%%CLI_VERSION%%/sdk/bin/ildasm.satellite
 cli-%%CLI_VERSION%%/sdk/bin/ildbdump
 cli-%%CLI_VERSION%%/sdk/bin/metainfo
-cli-%%CLI_VERSION%%/sdk/bin/ngrep.exe
-cli-%%CLI_VERSION%%/sdk/bin/ngrep.ildb
 cli-%%CLI_VERSION%%/sdk/bin/permview
 cli-%%CLI_VERSION%%/sdk/bin/permview.satellite
 cli-%%CLI_VERSION%%/sdk/bin/peverify
@@ -225,8 +336,6 @@ cli-%%CLI_VERSION%%/sdk/bin/sn
 cli-%%CLI_VERSION%%/sdk/bin/sn.satellite
 cli-%%CLI_VERSION%%/sdk/bin/storeadm.exe
 cli-%%CLI_VERSION%%/sdk/bin/storeadm.ildb
-cli-%%CLI_VERSION%%/sdk/bin/xsd.exe
-cli-%%CLI_VERSION%%/sdk/bin/xsd.ildb
 cli-%%CLI_VERSION%%/sdk/include/cor.h
 cli-%%CLI_VERSION%%/sdk/include/cordebug.h
 cli-%%CLI_VERSION%%/sdk/include/corerror.h
@@ -240,7 +349,6 @@ cli-%%CLI_VERSION%%/sdk/include/ivehandler.h
 cli-%%CLI_VERSION%%/sdk/include/mscoree.h
 cli-%%CLI_VERSION%%/sdk/include/opcode.def
 cli-%%CLI_VERSION%%/sdk/include/strongname.h
-cli-%%CLI_VERSION%%/sdk/lib/mscorsn.lib
 cli-%%CLI_VERSION%%/sdk/pal/inc/assert.h
 cli-%%CLI_VERSION%%/sdk/pal/inc/atl.h
 cli-%%CLI_VERSION%%/sdk/pal/inc/ccombstr.h
@@ -294,19 +402,57 @@ cli-%%CLI_VERSION%%/sorttbls.nlp
 cli-%%CLI_VERSION%%/xjis.nlp
 @dirrm cli-%%CLI_VERSION%%/sdk/pal/inc
 @dirrm cli-%%CLI_VERSION%%/sdk/pal
-@dirrm cli-%%CLI_VERSION%%/sdk/lib
 @dirrm cli-%%CLI_VERSION%%/sdk/include
 @dirrm cli-%%CLI_VERSION%%/sdk/bin
 @dirrm cli-%%CLI_VERSION%%/sdk
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/xsd
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/wordcount
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/typefinder
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/keyconfig
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/grep
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/getcliversion
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/dnprofiler
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/crlf
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/corclass
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/codetohtml
+@dirrm cli-%%CLI_VERSION%%/samples/utilities/cleanbuild
+@dirrm cli-%%CLI_VERSION%%/samples/utilities
+@dirrm cli-%%CLI_VERSION%%/samples/pigui
+@dirrm cli-%%CLI_VERSION%%/samples/howto/xmlserialization
+@dirrm cli-%%CLI_VERSION%%/samples/howto/xml/xmltransform
+@dirrm cli-%%CLI_VERSION%%/samples/howto/xml/xmlschema
+@dirrm cli-%%CLI_VERSION%%/samples/howto/xml
+@dirrm cli-%%CLI_VERSION%%/samples/howto/serialization
+@dirrm cli-%%CLI_VERSION%%/samples/howto/security/permissions
+@dirrm cli-%%CLI_VERSION%%/samples/howto/security
+@dirrm cli-%%CLI_VERSION%%/samples/howto/resources
+@dirrm cli-%%CLI_VERSION%%/samples/howto/remoting
+@dirrm cli-%%CLI_VERSION%%/samples/howto/regularexpressions
+@dirrm cli-%%CLI_VERSION%%/samples/howto/reflection/invoke
+@dirrm cli-%%CLI_VERSION%%/samples/howto/reflection/emit
+@dirrm cli-%%CLI_VERSION%%/samples/howto/reflection
+@dirrm cli-%%CLI_VERSION%%/samples/howto/net/udpchat
+@dirrm cli-%%CLI_VERSION%%/samples/howto/net/getresponse
+@dirrm cli-%%CLI_VERSION%%/samples/howto/net
+@dirrm cli-%%CLI_VERSION%%/samples/howto/codedom
+@dirrm cli-%%CLI_VERSION%%/samples/howto/basedatatypes/stringformat
+@dirrm cli-%%CLI_VERSION%%/samples/howto/basedatatypes
+@dirrm cli-%%CLI_VERSION%%/samples/howto
+@dirrm cli-%%CLI_VERSION%%/samples/hello
+@dirrm cli-%%CLI_VERSION%%/samples/compilers/myc
+@dirrm cli-%%CLI_VERSION%%/samples/compilers/clisp
+@dirrm cli-%%CLI_VERSION%%/samples/compilers
+@dirrm cli-%%CLI_VERSION%%/samples
 @dirrm cli-%%CLI_VERSION%%/rotor
 @dirrm cli-%%CLI_VERSION%%/private/lib/rotor_x86
 @dirrm cli-%%CLI_VERSION%%/private/lib
 @dirrm cli-%%CLI_VERSION%%/private
-@dirrm cli-%%CLI_VERSION%%/pigui
 @dirrm cli-%%CLI_VERSION%%/int_tools
 @dirrm cli-%%CLI_VERSION%%/dump
 @dirrm cli-%%CLI_VERSION%%/config
 @dirrm cli-%%CLI_VERSION%%/assembly/tmp
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/myperm/1.0.1.0__0e8dcc8628396732
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/myperm
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC/System/1.0.3300.0__b77a5c561934e089
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Xml/1.0.3300.0__b77a5c561934e089
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC/System.Xml
@@ -319,6 +465,8 @@ cli-%%CLI_VERSION%%/xjis.nlp
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.Vsa
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript/7.0.3300.0__b03f5f7f11d50a3a
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC/Microsoft.JScript
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/ISymWrapper/1.0.3300.0__b03f5f7f11d50a3a
+@dirrm cli-%%CLI_VERSION%%/assembly/GAC/ISymWrapper
 @dirrm cli-%%CLI_VERSION%%/assembly/GAC
 @dirrm cli-%%CLI_VERSION%%/assembly
 @dirrm cli-%%CLI_VERSION%%/Symbols.pri/dll
