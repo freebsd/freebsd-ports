@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.2
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/${PORTVERSION}/
-DISTNAME=	Zope-${PORTVERSION}
+MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+DISTNAME=	Zope-${PORTVERSION}-0
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	estartu@augusta.de
@@ -21,7 +21,6 @@ USE_PYTHON=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 DIST_SUBDIR=	zope
-WRKSRC=		${WRKDIR}/${DISTNAME}-0
 
 # Note: the notes that follow reflect the decisions of prior maintainers
 # of this port. IOW, don't blame me if you don't like the way it's done.
@@ -75,6 +74,7 @@ post-install:
 		${FILESDIR}/zope.sh > ${PREFIX}/etc/rc.d/zope.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/zope.sh
 	@${MKDIR} ${ZOPEBASEDIR}/Products
+	@${CP} ${FILESDIR}/Products_00readme-freebsd.txt ${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
@@ -86,5 +86,10 @@ instance:
 	@${CHOWN} ${ZOPE_USER} ${ZOPEINSTANCEDIR}/var
 	@${CHOWN} ${ZOPE_USER} ${ZOPEINSTANCEDIR}/log
 	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/instance_message
+	@${RM} -f ${ZOPEBASEDIR}/bin/copyzopeskel.pyc
+
+pre-package:
+	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${FILESDIR}/pkg-message.package.in \
+		> ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -15,6 +15,9 @@ ZOPEINSTANCENAME	Default name for a new Zope instance
 If you want have multiple Zope you should run 
 make instance INSTANCENAME=<somename>
 
+The Instancefiles created by make instance will not be remove when the
+port is deinstalled. You'll have to delete them yourself.
+
 **********************************************************************
 ****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
 
