@@ -1,0 +1,20 @@
+--- GetKp.orig	Fri Apr 16 15:08:21 1999
++++ GetKp	Fri Apr 16 15:09:24 1999
+@@ -19,7 +19,7 @@
+     }
+ 
+ 
+-    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
++    $grabcmd = "cd /tmp; fetch -q ftp://www.sec.noaa.gov/pub/indices/DGD.txt";
+     system "$grabcmd";
+ 
+ 
+@@ -68,7 +68,7 @@
+     #
+     # Add in very latest stuff
+     #
+-    $grabcmd = "cd /tmp; wget --passive-ftp --tries 2 -q ftp://www.sec.noaa.gov/pub/latest/curind.txt";
++    $grabcmd = "cd /tmp; fetch -q ftp://www.sec.noaa.gov/pub/latest/curind.txt";
+     system "$grabcmd";
+     %lmonstr = ( "Jan", 1, "Feb", 2, "Mar", 3, "Apr", 4, "May", 5, "Jun", 6, "Jul", 7, "Aug", 8, "Sep", 9, "Oct", 10, "Nov", 11, "Dec", 12);
+ 
