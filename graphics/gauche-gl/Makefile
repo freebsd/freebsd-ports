@@ -20,7 +20,7 @@ COMMENT=	OpenGL binding for Gauche
 BUILD_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_MESA=	yes
+USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
