@@ -26,6 +26,7 @@
     SUBDIR += cclient
     SUBDIR += chk4mail
     SUBDIR += cmail
+    SUBDIR += cone
     SUBDIR += coolmail
     SUBDIR += courier
     SUBDIR += courier-imap
