@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	xemacs-${XEMACS_VER}
-PKGNAME=	${LANGPREFIX}xemacs${PKGNAMEEXT}-21.1
+PKGNAME=	${LANGPREFIX}xemacs${PKGNAMEEXT}-21.1.9
 CATEGORIES?=	editors
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/xemacs-${XEMACS_REL}/ \
@@ -25,7 +25,7 @@ LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 XEMACS_REL=	21.1
-XEMACS_VER=	21.1.8
+XEMACS_VER=	21.1.9
 DIST_SUBDIR=	xemacs
 
 USE_XLIB=	yes
@@ -37,8 +37,8 @@ CONFIGURE_ARGS?=${XEMACS_ARCH} --prefix=${PREFIX} \
 		--with-clash-detection \
 		--lockdir=/var/run/emacs/lock \
 		--with-sound=native \
-		--site-includes=${PREFIX}/include \
-		--site-libraries=${PREFIX}/lib \
+		--site-includes=${SITE_INCLUDES} \
+		--site-libraries=${SITE_LIBRARIES} \
 		--with-session=yes \
 		--with-png=yes \
 		--with-tiff=yes \
@@ -98,3 +98,17 @@ post-install::
 .endif
 
 .include <bsd.port.mk>
+
+# this makes it easier to test using PREFIX != LOCALBASE. Do not do
+# this on bento. This has to go here because PREFIX and LOCALBASE are
+# normally defined in bsd.port.mk.
+
+.if !defined(PACKAGE_BUILDING)
+.if ${PREFIX} == ${LOCALBASE}
+SITE_INCLUDES=	${PREFIX}/include
+SITE_LIBRARIES=	${PREFIX}/lib
+.else
+SITE_INCLUDES=	"${PREFIX}/include ${LOCALBASE}/include"
+SITE_LIBRARIES=	"${PREFIX}/lib ${LOCALBASE}/lib"
+.endif
+.endif
