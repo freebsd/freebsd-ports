@@ -1,0 +1,10 @@
+--- kits/DateTime.c.orig	Tue Feb 27 03:03:28 2001
++++ kits/DateTime.c	Tue Feb 27 03:03:38 2001
+@@ -35,7 +35,6 @@
+ 
+ 
+ extern char *tzname[2];
+-long int timezone;
+ extern int daylight;
+ 
+ // This takes the _dateTime blob and resets all of the fields
