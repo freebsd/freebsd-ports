@@ -3,7 +3,7 @@
 # Date created:				March 4, 1999
 # Whom:					Jacques Vidrine <nectar@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/12/01 09:36:33 obrien Exp $
+# $Id: Makefile,v 1.5 1999/03/04 23:24:27 nectar Exp $
 #
 
 DISTNAME=	stella-1.1-src
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/stella/1.1/ \
 		http://www.nectar.com/distfiles/
 
 MAINTAINER=	nectar@FreeBSD.ORG
+
+USE_XLIB=	yes
 
 PORTTOP=	${WRKDIR}/${PKGNAME}
 WRKSRC=		${PORTTOP}/src/build
