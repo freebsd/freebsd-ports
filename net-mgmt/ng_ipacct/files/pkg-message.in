@@ -1,0 +1,13 @@
+
+*******************************************************************************
+* This port contains a prebuilt kernel module. Due to the ever changing       *
+* nature of FreeBSD it may be necessary to rebuild the module after a kernel  *
+* source update.  To do this rebuild and reinstall the port.                  *
+*******************************************************************************
+
+===>  CONFIGURATION NOTE:
+
+      To setup ng_ipacct, you may have to edit %%PREFIX%%/etc/ng_ipacct.conf.
+
+      To run ng_ipacct from startup, add ng_ipacct_enable="YES"
+      in your /etc/rc.conf or activate it in %%PREFIX%%/etc/ng_ipacct.conf.
