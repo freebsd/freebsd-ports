@@ -230,11 +230,7 @@ yesno YES "Do you want to compile with PAM support?"
 echo "#define	HasPam			$answ"	>> $F
 
 echo "#define InstallXserverSetUID NO "	>> $F
-# DRI is broken in 4.1
-#if [ $OSVERSION -lt 500013 -a X${MACHINE} != X"alpha" ]; then
-#  echo "#define BuildXF86DRI YES" 	>> $F
-#  echo "#define BuildXF86DRM YES" 	>> $F
-#fi
+echo "#define BuildXF86DRI YES" 	>> $F
 }
 
 configure
