@@ -52,6 +52,8 @@ INSTALL_TARGET+=tki-install
 PLIST_SUB+=	X11='@comment '
 .endif
 
+LATEST_LINK=	scotty3
+
 post-patch:
 	${MV} ${WRKSRC}/scotty.c ${WRKSRC}/scotty.c.orig
 	${CP} -p ${FILESDIR}/scotty.c ${WRKSRC}/scotty.c
