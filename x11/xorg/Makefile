@@ -29,8 +29,13 @@ RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/xorg-clients \
 		${X11BASE}/bin/xfs:${PORTSDIR}/x11-servers/xorg-fontserver \
 		${X11BASE}/bin/Xnest:${PORTSDIR}/x11-servers/xorg-nestserver \
 		${X11BASE}/bin/Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
-		${X11BASE}/bin/Xprt:${PORTSDIR}/x11-servers/xorg-printserver \
-		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
+		${X11BASE}/bin/Xprt:${PORTSDIR}/x11-servers/xorg-printserver
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == alpha || ${ARCH} == amd64
+RUN_DEPENDS+=	${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
+.endif
 
 FONT100DPI=	${X11BASE}/lib/X11/fonts/100dpi/UTBI__10-ISO8859-1.pcf.gz
 FONT75DPI=	${X11BASE}/lib/X11/fonts/75dpi/UTBI__10-ISO8859-1.pcf.gz
@@ -54,7 +59,6 @@ DEPENDS_TARGET="package"
 
 do-install:	# empty
 
-.include <bsd.port.pre.mk>
 .if ${X_WINDOW_SYSTEM:L} != xorg
 IGNORE= is part of X.Org. For switching to X.Org, read UPDATING entry 20040723
 .endif
