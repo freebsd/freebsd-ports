@@ -19,7 +19,7 @@ DISTNAME=	dcgui-0.1beta9
 
 MAINTAINER=	e96sv@yahoo.se
 
-LIB_DEPENDS=	dc.0:${PORTSDIR}/devel/dclib \
+LIB_DEPENDS=	dc.0:${PORTSDIR}/net/dclib \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_X_PREFIX=	yes
