@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/security/clamav-devel/Attic/pkg-install,v 1.18 2004-12-22 02:10:12 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/clamav-devel/Attic/pkg-install,v 1.19 2005-01-12 18:22:56 yar Exp $
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 DESTDIR=${PKG_DESTDIR:-}
@@ -9,9 +9,9 @@ CLAMAVGROUP=%%CLAMAVGROUP%%
 UID=106
 GID=$UID
 
-CLAMRUN=$DESTDIR/var/run/clamav
 CLAMLOG=$DESTDIR/var/log/clamav
 DBDIR=$DESTDIR%%DBDIR%%
+RUNDIR=$DESTDIR%%RUNDIR%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
 
@@ -39,11 +39,6 @@ if [ "$2" = "PRE-INSTALL" ]; then
 
 elif [ "$2" = "POST-INSTALL" ]; then
 
-	if [ ! -d "$CLAMRUN" ]; then
-		mkdir -p "$CLAMRUN" || exit 1
-		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMRUN" || exit 1
-	fi
-
 	if [ ! -d "$CLAMLOG" ]; then
 		mkdir -p "$CLAMLOG" || exit 1
 		chown "$CLAMAVUSER:$CLAMAVGROUP" "$CLAMLOG" || exit 1
@@ -52,6 +47,11 @@ elif [ "$2" = "POST-INSTALL" ]; then
 	if [ ! -d "$DBDIR" ]; then
 		mkdir -p "$DBDIR" || exit 1
 		chown "$CLAMAVUSER:$CLAMAVGROUP" "$DBDIR" || exit 1
+	fi
+
+	if [ ! -d "$RUNDIR" ]; then
+		mkdir -p "$RUNDIR" || exit 1
+		chown "$CLAMAVUSER:$CLAMAVGROUP" "$RUNDIR" || exit 1
 	fi
 
 	if [ -f "$DESTDIR$PREFIX/etc/clamav.conf" ]; then
