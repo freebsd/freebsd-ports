@@ -27,12 +27,14 @@
    
    for(i = 0; i < 128; i++)
      {
-@@ -90,7 +90,7 @@
+@@ -90,8 +90,8 @@
  
  void display()
  {
 -	FILE	*fp, *popen();
+-	char	ch;
 +	FILE	*fp;
- 	char	ch;
++	int	ch;
  	char    *dt;
  	time_t  tnow;
+ 	int nlines;
