@@ -65,7 +65,7 @@ do-install:
 	# Empty dir, but we really need it
 	${ECHO} @exec ${MKDIR} %D/ilu/lib/binding > ${PLIST}
 	${ECHO} @unexec ${RM} -r %D/ilu/lib/binding >> ${PLIST}
-	${ECHO} @exec ${CHMOD} 777 %D/ilu/lib/binding >> ${PLIST}
+	${ECHO} @exec ${CHMOD} 1777 %D/ilu/lib/binding >> ${PLIST}
 	${ECHO} @exec ${LDCONFIG} -m %D/ilu/lib >> ${PLIST}
 	# Empty dirs we don't need
 	${RMDIR} ${PREFIX}/ilu/man/man[358]
