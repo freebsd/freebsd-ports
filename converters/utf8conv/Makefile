@@ -7,20 +7,20 @@
 #
 
 PORTNAME=	utf8conv
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fibrespeed.net/~mbabcock/code/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.0
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
-post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; \
-		s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/utf8conv ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/utf8conv ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

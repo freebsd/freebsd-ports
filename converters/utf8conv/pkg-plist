@@ -1,1 +1,3 @@
 bin/utf8conv
+%%PORTDOCS%%share/doc/utf8conv/README
+%%PORTDOCS%%@dirrm share/doc/utf8conv
