@@ -3,7 +3,5 @@ showing fortunes. It was designed to be as small and simple as possible
 and therefore does not support PAM, NIS, shadow passwords or even regular
 passwords: the user must enter a lock password to lock the terminal.
 
-WWW: http://cx.capsi.com/code-fortunelock.html
-
 - Daniel Harris
 dannyboy@subdimension.com
