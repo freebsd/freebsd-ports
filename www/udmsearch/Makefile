@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--enable-charset-guesser \
 		--sysconfdir=${PREFIX}/etc/udmsearch \
 		--localstatedir=/var/udmsearch
 
-.if defined(WITH_POSTGRESQL)
+.if defined(WITH_PGSQL)
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-pgsql
 
