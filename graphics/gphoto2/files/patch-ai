@@ -1,0 +1,61 @@
+--- src/callbacks.c.orig	Wed May 26 08:12:05 1999
++++ src/callbacks.c	Wed May 26 08:15:40 1999
+@@ -331,7 +331,9 @@
+ 
+ #ifdef linux
+ 	if (strncmp("/dev/ttyS", serial_port, 9) == 0) {
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__)
++	if (strncmp("/dev/ttyd0", serial_port, 9) == 0) {
++#elif defined(__NetBSD__)
+ 	if (strncmp("/dev/tty0", serial_port, 9) == 0) {
+ #else
+ 	if (strncmp("/dev/tty0", serial_port, 9) == 0) {
+@@ -418,7 +420,10 @@
+ #ifdef linux
+ 		fprintf(conf, "/dev/ttyS0\n");
+ 		sprintf(serial_port, "/dev/ttyS0");
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__)
++		fprintf(conf, "/dev/ttyd0\n");
++		sprintf(serial_port, "/dev/ttyd0");
++#elif defined(__NetBSD__)
+ 		fprintf(conf, "/dev/tty00\n");
+ 		sprintf(serial_port, "/dev/tty00");
+ #endif
+@@ -428,7 +433,10 @@
+ #ifdef linux
+ 		fprintf(conf, "/dev/ttyS1\n");
+ 		sprintf(serial_port, "/dev/ttyS1");
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__)
++		fprintf(conf, "/dev/ttyd1\n");
++		sprintf(serial_port, "/dev/ttyd1");
++#elif defined(__NetBSD__)
+ 		fprintf(conf, "/dev/tty01\n");
+ 		sprintf(serial_port, "/dev/tty01");
+ #endif
+@@ -437,7 +445,10 @@
+ #ifdef linux
+ 		fprintf(conf, "/dev/ttyS2\n");
+ 		sprintf(serial_port, "/dev/ttyS2");
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__)
++		fprintf(conf, "/dev/ttyd2\n");
++		sprintf(serial_port, "/dev/ttyd2");
++#elif defined(__NetBSD__)
+ 		fprintf(conf, "/dev/tty02\n");
+ 		sprintf(serial_port, "/dev/tty02");
+ #endif
+@@ -446,7 +457,10 @@
+ #ifdef linux
+ 		fprintf(conf, "/dev/ttyS3\n");
+ 		sprintf(serial_port, "/dev/ttyS3");
+-#elif defined(__FreeBSD__) || defined(__NetBSD__)
++#elif defined(__FreeBSD__)
++		fprintf(conf, "/dev/ttyd3\n");
++		sprintf(serial_port, "/dev/ttyd3");
++#elif defined(__NetBSD__)
+ 		fprintf(conf, "/dev/tty03\n");
+ 		sprintf(serial_port, "/dev/tty03");
+ #endif

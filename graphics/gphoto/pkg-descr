@@ -1,0 +1,14 @@
+gPhoto is an universal, free GTK+ application that will allow
+downloading, saving, and manipulation of images from several 
+different digital camera models, or from the local harddrive.
+
+gPhoto has a basic command line interface, which is handy, 
+if you want to set up a web camera, and use gphoto in a 
+script, e.g. with Perl/PHP.  
+
+gPhoto sports a new HTML engine, that let's you create your
+gallery "themes" (HTML with special tags), and publish images 
+to the web.  A directory browse mode has also been implemented.
+
+gPhoto supports a wide array of digital camera models.  Visit
+http://www.gphoto.org/cameras.php3 for an updated list.

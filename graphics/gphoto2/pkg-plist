@@ -1,0 +1,59 @@
+bin/gphoto
+doc/gphoto-0.3/AUTHORS
+doc/gphoto-0.3/CREDITS
+doc/gphoto-0.3/FAQ
+doc/gphoto-0.3/MANUAL
+doc/gphoto-0.3/NEWS
+doc/gphoto-0.3/README
+share/gphoto/drivers/libgphoto_casio_qv.so
+share/gphoto/drivers/libgphoto_dir.so
+share/gphoto/drivers/libgphoto_fuji.so
+share/gphoto/drivers/libgphoto_kodak_dc2x.so
+share/gphoto/drivers/libgphoto_konica_qm100.so
+share/gphoto/drivers/libgphoto_philips.so
+share/gphoto/drivers/libgphoto_photopc.so
+share/gphoto/drivers/libgphoto_ricoh300z.so
+share/gphoto/drivers/libgphoto_sony_dscf1.so
+share/gphoto/gphoto/CSStheme/CVS/Entries
+share/gphoto/gphoto/CSStheme/CVS/Repository
+share/gphoto/gphoto/CSStheme/CVS/Root
+share/gphoto/gphoto/CSStheme/index_bottom.html
+share/gphoto/gphoto/CSStheme/index_top.html
+share/gphoto/gphoto/CSStheme/mwcos
+share/gphoto/gphoto/CSStheme/picture.html
+share/gphoto/gphoto/CSStheme/styles.css
+share/gphoto/gphoto/CSStheme/thumbnail.html
+share/gphoto/gphoto/CSStheme/vh40.gif
+share/gphoto/gphoto/Default/CVS/Entries
+share/gphoto/gphoto/Default/CVS/Repository
+share/gphoto/gphoto/Default/CVS/Root
+share/gphoto/gphoto/Default/banner.gif
+share/gphoto/gphoto/Default/index.gif
+share/gphoto/gphoto/Default/index_bottom.html
+share/gphoto/gphoto/Default/index_top.html
+share/gphoto/gphoto/Default/next.gif
+share/gphoto/gphoto/Default/picture.html
+share/gphoto/gphoto/Default/previous.gif
+share/gphoto/gphoto/Default/thumbnail.html
+share/gphoto/gphoto/RedNGray/CVS/Entries
+share/gphoto/gphoto/RedNGray/CVS/Repository
+share/gphoto/gphoto/RedNGray/CVS/Root
+share/gphoto/gphoto/RedNGray/backgrnd.gif
+share/gphoto/gphoto/RedNGray/banner.gif
+share/gphoto/gphoto/RedNGray/index.gif
+share/gphoto/gphoto/RedNGray/index_bottom.html
+share/gphoto/gphoto/RedNGray/index_top.html
+share/gphoto/gphoto/RedNGray/next.gif
+share/gphoto/gphoto/RedNGray/picture.html
+share/gphoto/gphoto/RedNGray/previous.gif
+share/gphoto/gphoto/RedNGray/thumbnail.html
+@dirrm doc/gphoto-0.3
+@dirrm share/gphoto/drivers
+@dirrm share/gphoto/gphoto/CSStheme/CVS
+@dirrm share/gphoto/gphoto/CSStheme
+@dirrm share/gphoto/gphoto/Default/CVS
+@dirrm share/gphoto/gphoto/Default
+@dirrm share/gphoto/gphoto/RedNGray/CVS
+@dirrm share/gphoto/gphoto/RedNGray
+@dirrm share/gphoto/gphoto
+@dirrm share/gphoto
