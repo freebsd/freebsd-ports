@@ -1,0 +1,10 @@
+--- fbsd_kbd.c	2000/11/28 13:07:51	1.1
++++ fbsd_kbd.c	2000/11/28 13:08:03
+@@ -1,4 +1,6 @@
+-#include <machine/console.h>
++#include <sys/fbio.h>
++#include <sys/consio.h>
++#include <sys/kbio.h>
+ #include <vgl.h>
+ 
+ #include "def.h"

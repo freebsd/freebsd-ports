@@ -1,0 +1,13 @@
+--- fbsd_timer.c	2000/11/28 13:09:59	1.1
++++ fbsd_timer.c	2000/11/28 13:10:48
+@@ -2,7 +2,9 @@
+ #include <stdlib.h>
+ #include <time.h>
+ #include <sys/time.h>
+-#include <machine/console.h>
++#include <sys/fbio.h>
++#include <sys/consio.h>
++#include <sys/kbio.h>
+ #include <vgl.h>
+ 
+ #include "def.h"
