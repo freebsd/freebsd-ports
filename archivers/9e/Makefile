@@ -13,8 +13,6 @@ DISTNAME=	9e
 
 MAINTAINER=	gehicks@cisco.com
 
-WWW=		http://www.eecs.harvard.edu/~wkj/Software/9e/
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/9e ${PREFIX}/bin
 
