@@ -1,0 +1,12 @@
+--- configure.orig	Fri Jul  2 03:46:35 2004
++++ configure	Tue Nov  2 21:31:50 2004
+@@ -3229,9 +3229,6 @@
+ 	VIDEO_LIBS="$VIDEO_LIBS -lwsock32 -lws2_32 -lmingwex -lgmon"
+     fi
+ fi
+-if test "$ARCH" = "bsd"; then
+-    VIDEO_LIBS="$VIDEO_LIBS -lc"
+-fi
+ 
+ 
+ 
