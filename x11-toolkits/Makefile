@@ -54,6 +54,7 @@
     SUBDIR += vdkbuilder
     SUBDIR += wxgtk
     SUBDIR += xbae
+    SUBDIR += xenophilia
     SUBDIR += xforms
     SUBDIR += xg
     SUBDIR += xmhtml
