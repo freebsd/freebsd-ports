@@ -1,0 +1,32 @@
+--- Makefile.in.orig	Fri Feb 20 06:24:05 1998
++++ Makefile.in	Wed Mar 11 23:20:22 1998
+@@ -42,7 +42,7 @@
+ HARDLINK =	ln -f
+ 
+ CC =		@CC@
+-INCLUDES =	@CPPFLAGS@ -Ilibhfs @TCL_INCLUDES@ @TK_INCLUDES@
++INCLUDES =	@CPPFLAGS@ -Ilibhfs -I/usr/X11R6/include @TCL_INCLUDES@ @TK_INCLUDES@
+ DEFINES =	@DEFS@
+ LIBOBJS =	@LIBOBJS@
+ LIBS =		@LIBS@
+@@ -125,13 +125,16 @@
+ 	done
+ 
+ install_tcl :: all_tcl
+-	for file in $(TCLTARGETS); do  \
+-		$(BININSTALL) $$file "$(BINDEST)/.";  \
+-	done
++#	for file in $(TCLTARGETS); do  \
++#		$(BININSTALL) $$file "$(BINDEST)/.";  \
++#	done
++
++	$(BININSTALL) hfssh "$(BINDEST)/.";
++	$(LIBINSTALL) hfs "$(BINDEST)/.";
+ 
+ 	if [ -f "$(BINDEST)/hfs" ]; then  \
+ 		sed -e '1d' "$(BINDEST)/hfs" > "$(BINDEST)/hfs.new";  \
+-		$(BININSTALL) "$(BINDEST)/hfs.new" "$(BINDEST)/hfs";  \
++		$(LIBINSTALL) "$(BINDEST)/hfs.new" "$(BINDEST)/hfs";  \
+ 		rm -f "$(BINDEST)/hfs.new";  \
+ 	fi
+ 
