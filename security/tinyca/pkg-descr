@@ -4,8 +4,11 @@ Features:
 
 Currently TinyCA supports the following features:
 
+    * unlimited number of CAs
+    * support for creating and managing SubCAs
     * Creation and Revocation of x509 - S/MIME certificates
     * PKCS#10 Requests can be imported and signed
+    * RSA and DSA keys can be generated and used 
     * Servercertificates
           o Certificates can be exported as: PEM, DER, TXT and PKCS#12
           o Certificates may be used with e.g. Apache, Postfix, OpenLDAP, 
