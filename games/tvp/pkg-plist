@@ -104,5 +104,5 @@ libdata/xprez/spades-6.gif
 libdata/xprez/spades-7.gif
 libdata/xprez/spades-8.gif
 libdata/xprez/spades-9.gif
-@unexec rmdir %D/share/doc/tvp
-@unexec rmdir %D/libdata/xprez
+@dirrm share/doc/tvp
+@dirrm libdata/xprez
