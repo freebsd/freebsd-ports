@@ -3,7 +3,7 @@
 # Date created:         28 Dec 1994
 # Whom:                 jmacd@uclink.berkeley.edu
 #
-# $Id: Makefile,v 1.9 1996/11/12 02:19:06 obrien Exp $
+# $Id: Makefile,v 1.10 1997/07/17 15:12:49 max Exp $
 #
 
 DISTNAME= 	schemetoc-93.3.15
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://gatekeeper.dec.com/pub/DEC/Scheme-to-C/
 DISTFILES=      15mar93.tar.Z
 
 MAINTAINER=	jmacd@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 NO_WRKSUBDIR=	yes
 
