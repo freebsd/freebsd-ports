@@ -7,6 +7,7 @@
 
 PORTNAME=	viewcvs
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,17 +20,12 @@ NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INSTDIR?=	${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	INSTDIR=${INSTDIR}
-FORBIDDEN=	"due to cross-site scripting vulnerabilities"
 
 do-install:
 	@ cd ${WRKSRC} && INSTDIR=${PREFIX}/${INSTDIR} ${PYTHON_CMD} viewcvs-install
 
 post-install:
 	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/${INSTDIR}:g" pkg-message >${PKGMESSAGE}
-.if !defined(BATCH)
-	@ ${ECHO}
 	@ ${CAT} ${PKGMESSAGE}
-	@ ${ECHO}
-.endif
 
 .include <bsd.port.mk>

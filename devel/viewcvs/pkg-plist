@@ -1,7 +1,7 @@
 %%INSTDIR%%/cgi/query.cgi
 %%INSTDIR%%/cgi/viewcvs.cgi
 %%INSTDIR%%/cvsdbadmin
-%%INSTDIR%%/cvsgraph.conf
+%%INSTDIR%%/cvsgraph.conf.dist
 %%INSTDIR%%/doc/help_dirview.html
 %%INSTDIR%%/doc/help_log.html
 %%INSTDIR%%/doc/help_logtable.html
@@ -57,7 +57,7 @@
 %%INSTDIR%%/templates/log_table.ezt
 %%INSTDIR%%/templates/markup.ezt
 %%INSTDIR%%/templates/query.ezt
-%%INSTDIR%%/viewcvs.conf
+%%INSTDIR%%/viewcvs.conf.dist
 @dirrm %%INSTDIR%%/templates
 @dirrm %%INSTDIR%%/lib
 @dirrm %%INSTDIR%%/doc/images
