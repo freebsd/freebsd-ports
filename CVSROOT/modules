@@ -3046,6 +3046,7 @@ leafpak		ports/graphics/leafpak
 leave		src/usr.bin/leave
 led		ports/editors/led
 leim20		ports/editors/leim20
+leim21		ports/editors/leim21
 lemon		ports/devel/lemon
 leoarg		ports/devel/leoarg
 less		src/usr.bin/less
