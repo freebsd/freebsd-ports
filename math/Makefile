@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1997/01/24 12:32:35 max Exp $
+# $Id: Makefile,v 1.23 1997/02/14 08:54:02 tg Exp $
 #
 
     SUBDIR += blas
@@ -19,6 +19,7 @@
     SUBDIR += wingz
     SUBDIR += xgraph
     SUBDIR += xlispstat
+    SUBDIR += xplot
     SUBDIR += xspread
     SUBDIR += xvgr
 
