@@ -186,6 +186,7 @@
     SUBDIR += py-scientific
     SUBDIR += qhull
     SUBDIR += qscanplot
+    SUBDIR += qalculate
     SUBDIR += rascal
     SUBDIR += rpc
     SUBDIR += rpy
