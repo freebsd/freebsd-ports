@@ -457,9 +457,9 @@ $FreeBSD$
 +
 +	for(i = 0; i < ncolors; i++) {
 +	        VGLSetPaletteIndex(firstcolor + i,
-+			       colors[i].r,
-+			       colors[i].g,
-+			       colors[i].b);
++			       colors[i].r>>2,
++			       colors[i].g>>2,
++			       colors[i].b>>2);
 +	}
 +	return 1;
 +}
