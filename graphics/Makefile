@@ -162,6 +162,7 @@
     SUBDIR += gridpix
     SUBDIR += gsculpt
     SUBDIR += gstreamer-plugins-aalib
+    SUBDIR += gstreamer-plugins-cairo
     SUBDIR += gstreamer-plugins-gdkpixbuf
     SUBDIR += gstreamer-plugins-hermes
     SUBDIR += gstreamer-plugins-jpeg
