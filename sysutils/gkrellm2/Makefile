@@ -9,7 +9,8 @@ PORTNAME=	gkrellm
 PORTVERSION=	0.9.10
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
-		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/ume/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
 
