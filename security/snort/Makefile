@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/Files/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RELEASE
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -53,9 +54,12 @@ pre-configure:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/snort
-.for i in CREDITS RULES.SAMPLE USAGE backdoor-lib ddos-lib finger-lib ftp-lib \
-	  misc-lib netbios-lib overflow-lib ping-lib rpc-lib scan-lib smtp-lib \
-	  telnet-lib web-lib webcf-lib webcgi-lib webfp-lib webiis-lib webmisc-lib
+.for i in CREDITS RULES.SAMPLE USAGE backdoor.rules ddos.rules dns.rules dos.rules \
+	  exploit.rules finger.rules ftp.rules icmp.rules info.rules local.rules \
+	  misc.rules netbios.rules policy.rules rpc.rules rservices.rules scan.rules \
+	  shellcode.rules smtp.rules sql.rules telnet.rules web-cgi.rules \
+	  web-coldfusion.rules web-frontpage.rules web-iis.rules web-misc.rules \
+	  x11.rules
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/snort
 .endfor
 
