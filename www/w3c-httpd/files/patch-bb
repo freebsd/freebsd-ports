@@ -1,5 +1,5 @@
 *** All/freebsd/Makefile.include.orig	Wed Jan 10 20:07:31 1996
---- All/freebsd/Makefile.include	Sat May  8 12:30:11 1999
+--- All/freebsd/Makefile.include	Sun May  9 20:12:35 1999
 ***************
 *** 4,14 ****
   # For W3 distribution, machine type for subdirectories
@@ -18,7 +18,7 @@
   WWW_MACH = freebsd
   
 ! CFLAGS += -D__BSD__
-! LFLAGS += -lcrypt
+! LFLAGS = -lcrypt
   
   # Directory for installed binary:
 ! BINDIR = $(PREFIX)/bin
@@ -26,19 +26,23 @@
   # Where is the W3 object library to be installed (not normally done)?
   LIBDIR = $(WWW)/Library/Implementation/$(WWW_MACH)
 ***************
-*** 25,31 ****
+*** 25,33 ****
   #
   #	Uncomment these six lines (and edit them, if necessary).
   #
 ! # WAIS = ../../../freeWAIS
-  # WAISLIB =  $(WAIS)/bin/client.a $(WAIS)/bin/wais.a
-  # MATHLIB = -lm
-  # WAISINC = -I$(WAIS)/include
---- 25,31 ----
+! # WAISLIB =  $(WAIS)/bin/client.a $(WAIS)/bin/wais.a
+! # MATHLIB = -lm
+! # WAISINC = -I$(WAIS)/include
+! # WAISCFLAGS = -DHT_DIRECT_WAIS
+! # HTWAIS = $(WTMP)/Library/$(WWW_MACH)/HTWAIS.o
+--- 25,33 ----
   #
   #	Uncomment these six lines (and edit them, if necessary).
   #
-! # WAIS = ${PORTSDIR}/net/wais/work/freeWAIS-0.5/src
-  # WAISLIB =  $(WAIS)/bin/client.a $(WAIS)/bin/wais.a
-  # MATHLIB = -lm
-  # WAISINC = -I$(WAIS)/include
+! WAIS = ${PORTSDIR}/net/wais/work/freeWAIS-0.5
+! WAISLIB =  $(WAIS)/bin/client.a $(WAIS)/bin/wais.a
+! MATHLIB = -lm
+! WAISINC = -I$(WAIS)/include
+! WAISCFLAGS = -DHT_DIRECT_WAIS
+! HTWAIS = $(WTMP)/Library/$(WWW_MACH)/HTWAIS.o
