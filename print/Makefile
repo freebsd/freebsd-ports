@@ -75,6 +75,7 @@
     SUBDIR += pdq
     SUBDIR += perlftlib
     SUBDIR += pips2200
+    SUBDIR += pips3000
     SUBDIR += pips760
     SUBDIR += pips770
     SUBDIR += pips800
