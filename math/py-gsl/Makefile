@@ -17,7 +17,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python interface to GNU Scientific Library
 
-LIB_DEPENDS=	gsl.4:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.5:${PORTSDIR}/math/gsl
 
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g}
 USE_PYTHON=	yes
