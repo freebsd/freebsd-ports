@@ -1,10 +1,17 @@
 #!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
 USER=pop
 UID=68
 GID=6
 GROUP=mail
 
-if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
 		echo "Added group \"${GROUP}\"."
 	else
@@ -13,7 +20,7 @@ if ! pw group show "${GROUP}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-if ! pw user show "${USER}" 2>/dev/null 1>&2; then
+if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
 		-s "/sbin/nologin" -d "/nonexistent" -c "Post Office Owner"
 	then
@@ -24,9 +31,9 @@ if ! pw user show "${USER}" 2>/dev/null 1>&2; then
 	fi
 fi
 
-usrdir=${PREFIX}/etc/popper
+usrdir=${PKG_PREFIX}/etc/popper
 if [ ! -d $usrdir ]; then
   mkdir -p $usrdir
 fi
-chown pop:daemon $usrdir
+chown ${USER}:daemon $usrdir
 chmod 700 $usrdir
