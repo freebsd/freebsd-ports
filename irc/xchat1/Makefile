@@ -1,17 +1,17 @@
 # New ports collection makefile for:	xchat
-# Version required:		1.1.3
+# Version required:		1.1.6
 # Date created:			17 Nov 1998
-# Whom:				Jim Mock <jim@phrantic.phear.net>
+# Whom:				Jim Mock <jim@blues.ghis.net>
 #
-# $Id: Makefile,v 1.18 1999/07/19 03:59:57 cpiazza Exp $
+# $Id: Makefile,v 1.19 1999/07/21 05:24:44 cpiazza Exp $
 #
 
-DISTNAME=	xchat-1.1.3
+DISTNAME=	xchat-1.1.6
 CATEGORIES=	irc
 MASTER_SITES=	http://xchat.org/files/beta/ \
 		http://xchat.linuxpower.org/files/beta/
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@blues.ghis.net
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
