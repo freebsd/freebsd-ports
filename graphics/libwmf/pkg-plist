@@ -34,6 +34,9 @@ include/libwmf/x.h
 lib/libwmf.a
 lib/libwmf.so
 lib/libwmf.so.2
+lib/libwmflite.a
+lib/libwmflite.so
+lib/libwmflite.so.2
 %%PORTDOCS%%share/doc/libwmf/caolan/2.html
 %%PORTDOCS%%share/doc/libwmf/caolan/Arc.html
 %%PORTDOCS%%share/doc/libwmf/caolan/BitBlt.html
