@@ -1,3 +1,4 @@
+share/gnome/gdesklets/Displays/SysInfo/gfx/SysInfo.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/bg.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/border-left.png
 share/gnome/gdesklets/Displays/SysInfo/gfx/border-right.png
@@ -16,7 +17,32 @@ share/gnome/gdesklets/Sensors/SysInfo/gfx/cpu.png
 share/gnome/gdesklets/Sensors/SysInfo/gfx/hdd.png
 share/gnome/gdesklets/Sensors/SysInfo/gfx/memory.png
 share/gnome/gdesklets/Sensors/SysInfo/gfx/network.png
+share/gnome/gdesklets/Sensors/SysInfo/locale/de/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/es/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/fr/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/pt/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sq/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sr/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/Sensors/SysInfo/locale/sv/LC_MESSAGES/gdesklets.mo
 @dirrm share/gnome/gdesklets/Sensors/SysInfo/gfx
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/de/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/de
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/es/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/es
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/fr/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/fr
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/pt/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/pt
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sq/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sq
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sr/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sr
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sr@Latn/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sr@Latn
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sv/LC_MESSAGES
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale/sv
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/locale
 @dirrm share/gnome/gdesklets/Sensors/SysInfo
 @dirrm share/gnome/gdesklets/Displays/SysInfo/gfx
 @dirrm share/gnome/gdesklets/Displays/SysInfo

@@ -6,41 +6,44 @@
 #
 
 PORTNAME=	sysinfo
-PORTVERSION=	0.21.2
+PORTVERSION=	0.23
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
 DISTNAME=	SysInfo-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Desklet shows various information about your system
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
-# XXX Note, this file is a gzip file with a .bz2 extension.
-#USE_BZIP2=	yes
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NAME=		SysInfo
-WRKSRC=		${WRKDIR}/${NAME}
-
-post-extract:
-	@${MV} ${WRKDIR}/Install_${NAME}_Sensor.bin ${WRKSRC}/
+DATADIR=	${PREFIX}/share/gnome
+LANG=		de es fr pt sq sr sr@Latn sv
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
 	@${PATCH} -d ${WRKDIR} -sp0 < ${PATCHDIR}/postbuild-patch-__init__.py
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
+	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/gfx
-	@${MKDIR} ${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}/gfx
-	@${INSTALL_DATA} ${WRKSRC}/*.display ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${PREFIX}/share/gnome/gdesklets/Displays/${NAME}/gfx/
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/gfx/*.png ${PREFIX}/share/gnome/gdesklets/Sensors/${NAME}/gfx/
+	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
+	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}/gfx
+	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DATADIR}/gdesklets/Displays/${NAME}/
+	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/__init__.py ${DATADIR}/gdesklets/Sensors/${NAME}
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/gfx/*.png ${DATADIR}/gdesklets/Sensors/${NAME}/gfx/
+.for ii in ${LANG}
+	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
+		${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES/
+.endfor
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
