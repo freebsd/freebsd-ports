@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libSM
-PORTVERSION=	6.0.2
-PORTREVISION=	1
+PORTVERSION=	6.0.3
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
