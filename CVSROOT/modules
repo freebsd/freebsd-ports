@@ -1780,6 +1780,7 @@ freecell-solver	ports/games/freecell-solver
 freeciv		ports/games/freeciv
 freeciv-gtk	ports/games/freeciv-gtk
 freedialog	ports/misc/freedialog
+freedroid	ports/games/freedroid
 freedt		ports/sysutils/freedt
 freefem		ports/math/freefem
 freefonts	ports/x11-fonts/freefonts
