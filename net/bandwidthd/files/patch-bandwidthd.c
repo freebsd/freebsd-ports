@@ -1,6 +1,6 @@
---- bandwidthd.c.orig	Fri Oct 10 20:22:39 2003
-+++ bandwidthd.c	Sun Nov  2 12:21:17 2003
-@@ -114,7 +114,11 @@
+--- bandwidthd.c.orig	Mon Nov 10 17:16:04 2003
++++ bandwidthd.c	Tue Nov 11 13:52:27 2003
+@@ -129,7 +129,11 @@
  			}
  		else
  			{
@@ -12,12 +12,12 @@
  			exit(1);
  			}
  		}
-@@ -244,7 +248,7 @@
+@@ -264,7 +268,7 @@
              tcp = (struct tcphdr *)(ip+1);
  			tcp = (struct tcphdr *) ( ((char *)tcp) + ((ip->ip_hl-5)*4) ); // Compensate for IP Options
              Stats->tcp += size;
--#ifdef SOLARIS
-+#if defined(SOLARIS) || defined(FREEBSD)
+-#if defined(SOLARIS)
++#if defined(SOLARIS) || defined (FREEBSD)
              sport = ntohs(tcp->th_sport);
              dport = ntohs(tcp->th_dport);			
  #else
