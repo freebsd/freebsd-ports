@@ -13,6 +13,7 @@ share/icons/hicolor/32x32/apps/kasablanca.png
 share/icons/hicolor/48x48/apps/kasablanca.png
 share/icons/hicolor/64x64/apps/kasablanca.png
 share/locale/de/LC_MESSAGES/kasablanca.mo
+share/locale/pl/LC_MESSAGES/kasablanca.mo
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
