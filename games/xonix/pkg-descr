@@ -1,0 +1,39 @@
+The  xonix  application  consists  of a playing area and a
+status display below.
+
+The status display shows the  current  values  for  level,
+filled  area  (in percent), number of players (lifes), and
+elapsed time.
+
+The playing area has several regions.   The  brown  region
+(initially  only  the  border) is ``filled region'', where
+the player can move, starting from the  top  left  corner.
+Beware  of  the bouncing yellow eater(s) that do also move
+across filled regions however, if they hit the  player,  a
+life  will go away.  The flyers can only bounce across the
+green (so-called empty) area in the middle.
+
+The purpose of the game is to move the player  across  the
+empty  region  (whereby it leaves his way in a brown color
+to show where it came along), and finally cut off a  piece
+of  unfilled  region  by  moving  him  back to some filled
+region.  If the player itself or the  (unfilled  yet)  way
+will  be  hit by a flyer, a life will be lost again.  Once
+the player's way reached another part  of  filled  region,
+the  way  and all adjacent unfilled regions where there is
+no flyer in will be filled in turn.  One  level  has  com-
+pleted  as  soon  as  75 % of the originally unfilled area
+have been filled this way.
+
+Every level, there will be one flyer more.   Every  second
+level,  an additional player will be granted.  Every fifth
+level, an additional eater will be fired off.
+
+
+
+The  original xonix game has been seen somewhere on an old
+PC/XT clone.  This is  a  reimplementation  from  scratch,
+done by Torsten Schönitz  starting the project on a Macin-
+tosh.  The X11 support has been written  by   Jörg  Wunsch
+with the pleasant help by Alfredo Herrera Hernández.
+
