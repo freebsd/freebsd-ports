@@ -1,0 +1,25 @@
+bin/%%MULE%%-%%EMACS_VER%%
+share/emacs/%%EMACS_VER%%/etc/%%DOC_FILE%%
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/loaddefs.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/loadup.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/ccl.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/ccl.elc
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/mule-cmds.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/mule-cmds.elc
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/mule-conf.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/mule-conf.elc
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/mule.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/mule.elc
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/titdic-cnv.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international/titdic-cnv.elc
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/subdirs.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/site-lisp/subdirs.el
+share/%%MULE%%%%MULE_MAJOR_VER%%/site-lisp/subdirs.el
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/leim
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp/international
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/lisp
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/site-lisp
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%/site-lisp
+@dirrm share/%%MULE%%%%MULE_MAJOR_VER%%
+@exec /bin/mkdir -p %D/share/%%MULE%%%%MULE_MAJOR_VER%%/%%EMACS_VER%%/leim || true

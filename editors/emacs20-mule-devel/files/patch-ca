@@ -1,0 +1,14 @@
+--- src/Makefile.in.orig	Sun Jul  2 12:44:43 2000
++++ src/Makefile.in	Sun Jul  2 12:44:44 2000
+@@ -418,7 +418,11 @@
+ libexecdir=${exec_prefix}/libexec
+ archlibdir=${libexecdir}/emacs/${version}/${configuration}
+ #ifdef __FreeBSD__
++#ifdef __ELF__
++#define LINKER $(CC) -nostdlib -Wl,-export-dynamic -Wl,-R${archlibdir}
++#else  /* not __ELF__ */
+ #define LINKER $(CC) -nostdlib -Wl,-R${archlibdir}
++#endif /* __ELF__ */
+ #else
+ #define LINKER $(CC) -nostdlib -rdynamic -Wl,-rpath,${archlibdir}
+ #endif

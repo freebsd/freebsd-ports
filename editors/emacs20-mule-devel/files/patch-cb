@@ -1,0 +1,40 @@
+--- src/s/freebsd.h.orig	Tue May  2 21:29:10 2000
++++ src/s/freebsd.h	Sat Jul  1 20:17:45 2000
+@@ -41,8 +41,18 @@
+ 
+ #define PENDING_OUTPUT_COUNT(FILE) ((FILE)->_p - (FILE)->_bf._base)
+ 
++/* Use XPG4 Library for FreeBSD */
++#define LIBS_XPG
++#if (__FreeBSD_version >= 220000 && __FreeBSD_version < 400020) \
++    || (__FreeBSD_version >= 500000 && __FreeBSD_version < 500005)
++#ifdef USE_XPG
++#undef LIBS_XPG
++#define LIBS_XPG -lxpg4
++#endif
++#endif
++
+ #define LIBS_DEBUG
+-#define LIBS_SYSTEM -lutil
++#define LIBS_SYSTEM -lutil LIBS_XPG
+ #if __FreeBSD_version < 400000
+ #define LIBS_TERMCAP -ltermcap
+ #endif
+@@ -56,9 +66,16 @@
+ #ifdef __ELF__
+ 
+ #define LD_SWITCH_SYSTEM
++
++#ifdef __alpha__
++#define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crtbegin.o
++#define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o
++#else
+ #define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o
+-#define UNEXEC unexelf.o
+ #define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o /usr/lib/crtn.o
++#endif
++
++#define UNEXEC unexelf.o
+ #undef LIB_GCC
+ #define LIB_GCC
+

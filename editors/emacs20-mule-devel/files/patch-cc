@@ -1,0 +1,66 @@
+--- configure.in.orig	Tue Jun  6 00:42:49 2000
++++ configure.in	Thu May 10 02:00:34 2001
+@@ -26,10 +26,16 @@
+ AC_INIT(src/lisp.h)
+ AC_CONFIG_HEADER(src/config.h:src/config.in)
+ 
+-lispdir='${datadir}/emacs/${version}/lisp'
+-locallisppath='${datadir}/emacs/${version}/site-lisp:'\
+-'${datadir}/emacs/site-lisp:${datadir}/emacs/${version}/leim'
+-lisppath='${locallisppath}:${lispdir}'
++lispdir='${datadir}/mule4/${version}/lisp'
++locallisppath='${datadir}/mule4/${version}/site-lisp:'\
++'${datadir}/mule4/site-lisp:'\
++'${datadir}/emacs/${version}/site-lisp:'\
++'${datadir}/emacs/site-lisp:'\
++'${datadir}/mule4/${version}/leim:'\
++'${datadir}/mule4/${version}/lisp:'\
++'${datadir}/emacs/${version}/leim:'\
++'${datadir}/emacs/${version}/lisp'
++lisppath='${locallisppath}'
+ etcdir='${datadir}/emacs/${version}/etc'
+ archlibdir='${libexecdir}/emacs/${version}/${configuration}'
+ docdir='${datadir}/emacs/${version}/etc'
+@@ -42,6 +48,9 @@
+ AC_ARG_WITH(hesiod,
+ [  --with-hesiod           support Hesiod to get the POP server host],
+ [AC_DEFINE(HESIOD)])
++AC_ARG_WITH(xpg4,
++[  --with-xpg4             support XPG4 library on FreeBSD system],
++[AC_DEFINE(USE_XPG)])
+ dnl This should be the last --with option, because --with-x is
+ dnl added later on when we find the path of X, and it's best to
+ dnl keep them together visually.
+@@ -147,6 +156,15 @@
+ machine='' opsys='' unported=no
+ case "${canonical}" in
+ 
++  ## FreeBSD ports
++  *-*-freebsd* )
++    opsys=freebsd
++    case "${canonical}" in
++      alpha*-*-freebsd*)	machine=alpha ;;
++      i[3456]86-*-freebsd*)	machine=intel386 ;;
++    esac
++  ;;
++
+   ## NetBSD ports
+   *-*-netbsd* )
+     opsys=netbsd
+@@ -958,7 +976,6 @@
+ 				;;
+       *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
+       *-386bsd* )	        opsys=386bsd ;;
+-      *-freebsd* )	        opsys=freebsd ;;
+       *-nextstep* )             opsys=nextstep ;;
+       ## Otherwise, we'll fall through to the generic opsys code at the bottom.
+     esac
+@@ -1639,7 +1656,7 @@
+ rename closedir mkdir rmdir sysinfo \
+ random lrand48 bcopy bcmp logb frexp fmod rint cbrt ftime res_init setsid \
+ strerror fpathconf select mktime euidaccess getpagesize tzset setlocale \
+-utimes setrlimit setpgid getcwd shutdown strftime)
++utimes setrlimit setpgid getcwd shutdown strftime getaddrinfo)
+ 
+ # UNIX98 PTYs.
+ AC_CHECK_FUNCS(grantpt)
