@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/07/08 14:03:18 scrappy Exp $
+# $Id: Makefile,v 1.10 1998/07/09 02:38:00 scrappy Exp $
 #
 
 DISTNAME=	kdemultimedia-1.0pre2-1
@@ -31,8 +31,7 @@ EXTRACT_CMD=    bzip2
 EXTRACT_BEFORE_ARGS= -cd
 EXTRACT_AFTER_ARGS= | tar -xf -
 
-BROKEN=		upgrade
-
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--with-extra-includes=$(PREFIX)/include/giflib"
