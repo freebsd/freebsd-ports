@@ -107,6 +107,7 @@
     SUBDIR += opengl-man
     SUBDIR += p5-Chart-PNGgraph
     SUBDIR += p5-GD
+    SUBDIR += p5-GD-Graph
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-Image-Size
     SUBDIR += p5-chart
