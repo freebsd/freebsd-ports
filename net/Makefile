@@ -180,6 +180,7 @@
     SUBDIR += gnet
     SUBDIR += gnet-glib2
     SUBDIR += gnet2
+    SUBDIR += gnetcat
     SUBDIR += gnewtellium
     SUBDIR += gnomba
     SUBDIR += gnome-btdownload
