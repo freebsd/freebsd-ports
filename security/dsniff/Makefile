@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet \
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 
-MAN8=	arpredirect.8 dsniff.8 findgw.8 macof.8 mailsnarf.8 tcpkill.8 \
+MAN8=	arpredirect.8 dsniff.8 macof.8 mailsnarf.8 tcpkill.8 \
 	tcpnice.8 urlsnarf.8 webspy.8 filesnarf.8
 
 .include <bsd.port.mk>
