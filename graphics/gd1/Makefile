@@ -15,10 +15,11 @@ MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+USE_FREETYPE=	yes
 .if defined(WITH_X11)
 USE_XLIB=	yes
 USE_XPM=	yes
-USE_FREETYPE=	yes
 .endif
 
 INSTALLS_SHLIB=	yes
