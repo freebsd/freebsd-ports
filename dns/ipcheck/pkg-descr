@@ -1,7 +1,9 @@
 [from web site]
 This is a simple Python script to register your dynamic IP address
 using the NIC V2.0 protocol. We aim to be fully compliant with the
-dyndns client specification.
+dyndns client specification. Starting with version 0.141, we use
+https by default and will fall back to plain http if a timeout
+occurs.
 
 We currently support all options and latest recommendations by
 Dyndns. Ipcheck is easy to install and very easy to use.
