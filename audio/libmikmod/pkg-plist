@@ -7,5 +7,5 @@ lib/libmikmod.so.2
 info/mikmod.info
 @exec install-info %D/info/mikmod.info %D/info/dir
 share/aclocal/libmikmod.m4
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
