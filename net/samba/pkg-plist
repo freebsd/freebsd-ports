@@ -1,3 +1,4 @@
+bin/findsmb
 bin/make_printerdef
 bin/make_smbcodepage
 bin/make_smbpasswd
