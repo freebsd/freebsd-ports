@@ -1,0 +1,46 @@
+*** Makefile.orig	Tue Jun  8 16:17:05 1999
+--- Makefile	Tue Jun  8 17:05:25 1999
+*************** LIBDIR = /usr/local/lib/vtx
+*** 26,33 ****
+  SPOOLDIR = /var/spool/vtx
+  
+  BINDIR = /usr/local/bin
+! XBINDIR = /usr/local/bin/X11
+! FONTDIR = /usr/lib/X11/fonts/local
+  MANDIR = /usr/local/man
+  XMANDIR = /usr/local/man
+  
+--- 26,35 ----
+  SPOOLDIR = /var/spool/vtx
+  
+  BINDIR = /usr/local/bin
+! #XBINDIR = /usr/local/bin/X11
+! XBINDIR = /usr/local/bin
+! #FONTDIR = /usr/lib/X11/fonts/local
+! FONTDIR = /usr/X11R6/lib/X11/fonts/misc
+  MANDIR = /usr/local/man
+  XMANDIR = /usr/local/man
+  
+*************** GIF_SUPPORT = -DGIF_SUPPORT
+*** 79,88 ****
+  # Uncomment the next lines if you want PNG support and have libpng and libz
+  # installed.
+  
+! #PNG_SUPPORT = -DPNG_SUPPORT
+! #PNG_LIBS = -lpng -lz -lm
+! #PNG_INCLUDEDIRS = -I/usr/local/include
+! #PNG_LIBDIRS = -L/usr/local/lib
+  
+  
+  # Uncomment the following line if you want to get coredumps when an
+--- 81,90 ----
+  # Uncomment the next lines if you want PNG support and have libpng and libz
+  # installed.
+  
+! PNG_SUPPORT = -DPNG_SUPPORT
+! PNG_LIBS = -lpng -lz -lm
+! PNG_INCLUDEDIRS = -I/usr/local/include
+! PNG_LIBDIRS = -L/usr/local/lib
+  
+  
+  # Uncomment the following line if you want to get coredumps when an

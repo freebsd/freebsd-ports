@@ -1,0 +1,12 @@
+bin/vtxget
+bin/tunerctl
+bin/videotext
+
+lib/vtx/tv-channels
+lib/vtx/videotext.info
+lib/vtx/vtx-hotlist
+lib/vtx/vtx10x12.vtxfont
+lib/vtx/vtx15x18.vtxfont
+lib/vtx/vtx20x24.vtxfont
+lib/vtx/vtxrc
+@dirrm lib/vtx

@@ -1,0 +1,19 @@
+*** scripts/check-help.orig	Tue Jun  8 16:10:07 1999
+--- scripts/check-help	Tue Jun  8 16:10:07 1999
+*************** INFOFILE="$1"
+*** 24,30 ****
+  shift
+  
+  egrep -h 'XV_HELP_DATA.*"videotext:[a-zA-Z0-9_]+"' "$@" |
+!   gawk '
+      BEGIN {
+        RS = "[ \t,]"
+      }
+--- 24,30 ----
+  shift
+  
+  egrep -h 'XV_HELP_DATA.*"videotext:[a-zA-Z0-9_]+"' "$@" |
+!   awk '
+      BEGIN {
+        RS = "[ \t,]"
+      }

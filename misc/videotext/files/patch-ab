@@ -1,0 +1,19 @@
+*** scripts/install-magic.orig	Tue Jun  8 16:10:07 1999
+--- scripts/install-magic	Tue Jun  8 16:10:07 1999
+*************** fi
+*** 21,27 ****
+  trap 'rm -f "$1.vtxnew"' 0
+  
+  cp -p "$1" "$1.vtxnew"
+! gawk '
+    /^#.*Id: Localstuff/ {
+      localfound++
+    }
+--- 21,27 ----
+  trap 'rm -f "$1.vtxnew"' 0
+  
+  cp -p "$1" "$1.vtxnew"
+! awk '
+    /^#.*Id: Localstuff/ {
+      localfound++
+    }
