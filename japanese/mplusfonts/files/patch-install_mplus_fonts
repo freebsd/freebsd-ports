@@ -16,15 +16,15 @@
 -echo "create: new '$PREFIX' directory"
 -mkdir -p $PREFIX
 -
- # Install M+ bitmap fonts E
- echo -e "\nInstall M+ bitmap fonts E (iso8859-1)..."
+ # Install M+ BITMAP FONTS E
+ echo -e "\nInstall M+ BITMAP FONTS E (iso8859-1)..."
  cd fonts_e
 @@ -55,7 +43,7 @@
  	bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
  done
- echo "create: fonts.alias for M+ bitmap fonts E"
+ echo "create: fonts.alias for M+ BITMAP FONTS E"
 -cat fonts.alias > $PREFIX/fonts.alias
 +cat fonts.alias >> $PREFIX/fonts.alias
  cd -
  
- # Install M+ bitmap fonts EURO
+ # Install M+ BITMAP FONTS EURO

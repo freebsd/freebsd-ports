@@ -36,14 +36,6 @@
 %%FONTSDIR%%/mplus_s10b.pcf.gz
 %%FONTSDIR%%/mplus_s10r-euro.pcf.gz
 %%FONTSDIR%%/mplus_s10r.pcf.gz
-%%FONTSDIR%%/mplus_t10b-euro.pcf.gz
-%%FONTSDIR%%/mplus_t10b.pcf.gz
-%%FONTSDIR%%/mplus_t10r-euro.pcf.gz
-%%FONTSDIR%%/mplus_t10r.pcf.gz
-%%FONTSDIR%%/mplus_t12b-euro.pcf.gz
-%%FONTSDIR%%/mplus_t12b.pcf.gz
-%%FONTSDIR%%/mplus_t12r-euro.pcf.gz
-%%FONTSDIR%%/mplus_t12r.pcf.gz
 %%DOCSDIR%%/fonts.alias
 %%DOCSDIR%%/fonts.alias.e
 %%DOCSDIR%%/fonts.alias.j
