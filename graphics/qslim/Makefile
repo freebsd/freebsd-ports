@@ -13,25 +13,32 @@ MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt \
-		tiff:${PORTSDIR}/graphics/tiff \
-		png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		forms.1:${PORTSDIR}/x11-toolkits/xforms
 
-USE_REINPLACE=	yes
-USE_MESA=	yes
-USE_XLIB=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	\
-	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include -I${X11BASE}/include/X11 ${PTHREAD_CFLAGS}" \
-	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib ${PTHREAD_LIBS}"
 BUILD_WRKSRC=	${WRKSRC}/mixkit/src
+
+USE_MESA=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-ALL_TARGET=	# empty
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+ALL_TARGET=	# none
+
+CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include \
+		-I${X11BASE}/include/X11 ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt -L${X11BASE}/lib \
+		${PTHREAD_LIBS}
+
+post-extact:
+	@${RM} -f ${WRKSRC}/mixkit/src/getopt.h
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,\@XFORMS_LIBS\@,-lforms -lformsGL -lXpm,g" ${CONFIGURE_WRKSRC}/mix-config.in
+	@${REINPLACE_CMD} -e 's|\@XFORMS_LIBS\@|-lforms -lformsGL -lXpm|g' \
+		${CONFIGURE_WRKSRC}/mix-config.in
 
 post-build:
 	@(cd ${BUILD_WRKSRC}/../../tools/qslim ; ${GMAKE} all)
@@ -43,6 +50,5 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/qslim/qvis ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/include/mixkit
 	${INSTALL_DATA} ${WRKSRC}/mixkit/src/*.h ${PREFIX}/include/mixkit
-	@${RM} -f ${PREFIX}/include/mixkit/getopt.h
 
 .include <bsd.port.mk>
