@@ -1,0 +1,15 @@
+MIME::Lite is intended as a simple, standalone module for generating
+(not parsing!) MIME messages... specifically, it allows you to output a
+simple, decent single- or multi-part message with text or binary
+attachments. It does not require that you have the Mail:: or MIME::
+modules installed.
+
+To use the built-in SMTP interface (and thereby avoid calling sendmail) please
+install the Net module through ports/net/p5-Net, or stand alone. This package 
+will contain the Net::SMTP code required.
+
+If you need more sophisticated behaviour from MIME, please install the 
+MIME::tools package instead.
+
+-- Alex Perel
+   <veers@disturbed.net>
