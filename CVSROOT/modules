@@ -672,7 +672,6 @@ byaccj		ports/devel/byaccj
 bytebench	ports/benchmarks/bytebench
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
-bzip2		ports/archivers/bzip2
 c-hey		ports/misc/c-hey
 c-nocem		ports/news/c-nocem
 c2html		ports/textproc/c2html
@@ -6140,6 +6139,7 @@ ports_benchmarks	ports/benchmarks
 ports_biology	ports/biology
 ports_bison	ports/devel/bison
 ports_bs		ports/games/bs
+ports_bzip2	ports/archivers/bzip2
 ports_cad	ports/cad
 ports_cal	ports/deskutils/cal
 ports_cdplay	ports/audio/cdplay
@@ -6206,6 +6206,7 @@ ports_security	ports/security
 ports_sendmail	ports/mail/sendmail
 ports_shells	ports/shells
 ports_smbfs	ports/net/smbfs
+ports_stat	ports/sysutils/stat
 ports_sysutils	ports/sysutils
 ports_textproc	ports/textproc
 ports_tn3270	ports/net/tn3270
@@ -7514,7 +7515,6 @@ staroffice60	ports/editors/staroffice60
 starplot	ports/astro/starplot
 stars		ports/astro/stars
 startup-notification	ports/x11/startup-notification
-stat		ports/sysutils/stat
 staticcharge	ports/net/staticcharge
 sted		ports/editors/sted
 stegdetect	ports/security/stegdetect
