@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.36
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -39,14 +40,22 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/apache2
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
-SHARED_MODULES= all cgid charset_lite ext_filter case_filter case_filter_in \
-		deflate bucketeer
+SHARED_MODULES= all cgid ext_filter bucketeer
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX},g' -e 's,@@DESTDIR@@,${DESTDIR},g'
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
 PLIST_SUB+=	DESTDIR=${DESTDIR}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=YES
+.endif
+
+.if defined(WITH_BUNDLED_EXPAT)
+EXPAT_PATHS=	xml/expat-cvs xml/expat $$srcdir/xml/expat
+PLIST_SUB+=	EXPAT=""
+.else
+LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
+EXPAT_PATHS=	${LOCALBASE} ${PREFIX} ${EXPATLIBPATH}
+PLIST_SUB+=	EXPAT="@comment "
 .endif
 
 .if defined(WITH_THREADS)
@@ -63,14 +72,16 @@ RC_SUB+=	-e 's,@@SSL@@,,g'
 .endif
 
 .if defined(WITH_SUEXEC)
+SUEXEC_DOCROOT?= ${PREFIX}/www/data
 SUEXEC_USERDIR?= public_html
 CONFIGURE_ARGS+= --enable-suexec \
 		--with-suexec-caller=www \
-		--with-suexec-userdir="${SUEXEC_USERDIR}" \
 		--with-suexec-uidmin=1000 --with-suexec-gidmin=1000 \
-		--with-suexec-docroot="${PREFIX}/www/data" \
+		--with-suexec-userdir="${SUEXEC_USERDIR}" \
+		--with-suexec-docroot="${SUEXEC_DOCROOT}" \
 		--with-suexec-safepath="${PREFIX}/bin:${LOCALBASE}/bin:/usr/bin:/bin" \
-		--with-suexec-logfile="${DESTDIR}/var/log/httpd-suexec.log"
+		--with-suexec-logfile="${DESTDIR}/var/log/httpd-suexec.log" \
+		--with-suexec-bin="${PREFIX}/sbin/suexec"
 PLIST_SUB+=	SUEXEC=""
 .else
 PLIST_SUB+=	SUEXEC="@comment "
@@ -88,6 +99,13 @@ SHARED_MODULES+= proxy proxy-connect proxy-ftp proxy-http
 PLIST_SUB+=	MODPROXY=""
 .else
 PLIST_SUB+=	MODPROXY="@comment "
+.endif
+
+.if defined(WITH_EXPERIMENTAL)
+SHARED_MODULES+= case_filter case_filter_in deflate ext_filter charset_lite
+PLIST_SUB+=	EXPERIMENTAL=""
+.else
+PLIST_SUB+=	EXPERIMENTAL="@comment "
 .endif
 
 .if ${WITH_MPM} != "prefork"
@@ -113,6 +131,8 @@ post-patch:
 	  ${PERL} -pi -e 's,apache_pb,icons/freebsd.gif" ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
 	@${FIND} ${WRKSRC} -name "*.orig" -exec ${RM} -f {} \;
+	@${PERL} -pi -e 's,/usr .*/xml/expat,${EXPAT_PATHS},g' \
+		${WRKSRC}/srclib/apr-util/configure
 	@${SED} ${RC_SUB} ${FILESDIR}/apache.sh >${WRKDIR}/apache2.sh
 	@${SED} ${RC_SUB} ${FILESDIR}/config.layout >>${WRKSRC}/config.layout
 

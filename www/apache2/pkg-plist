@@ -77,7 +77,7 @@ include/apache2/apr_xlate.h
 include/apache2/apr_xml.h
 include/apache2/apu.h
 include/apache2/apu_compat.h
-include/apache2/expat.h
+%%EXPAT%%include/apache2/expat.h
 include/apache2/http_config.h
 include/apache2/http_connection.h
 include/apache2/http_core.h
@@ -130,11 +130,11 @@ lib/apache2/libaprutil.la
 lib/apache2/libaprutil.so.0
 @unexec rm -f %D/lib/apache2/libaprutil.so
 @exec ln -fs libaprutil.so.0 %D/lib/apache2/libaprutil.so
-lib/apache2/libexpat.a
-lib/apache2/libexpat.la
-lib/apache2/libexpat.so.1
-@unexec rm -f %D/lib/apache2/libexpat.so
-@exec ln -fs libexpat.so.1 %D/lib/apache2/libexpat.so
+%%EXPAT%%lib/apache2/libexpat.a
+%%EXPAT%%lib/apache2/libexpat.la
+%%EXPAT%%lib/apache2/libexpat.so.1
+%%EXPAT%%@unexec rm -f %D/lib/apache2/libexpat.so
+%%EXPAT%%@exec ln -fs libexpat.so.1 %D/lib/apache2/libexpat.so
 libexec/apache2/httpd.exp
 libexec/apache2/mod_access.so
 libexec/apache2/mod_actions.so
@@ -147,15 +147,15 @@ libexec/apache2/mod_auth_digest.so
 libexec/apache2/mod_autoindex.so
 libexec/apache2/mod_bucketeer.so
 %%MODCACHE%%libexec/apache2/mod_cache.so
-libexec/apache2/mod_case_filter.so
-libexec/apache2/mod_case_filter_in.so
+%%EXPERIMENTAL%%libexec/apache2/mod_case_filter.so
+%%EXPERIMENTAL%%libexec/apache2/mod_case_filter_in.so
 libexec/apache2/mod_cern_meta.so
 libexec/apache2/mod_cgi.so
 libexec/apache2/mod_cgid.so
-libexec/apache2/mod_charset_lite.so
+%%EXPERIMENTAL%%libexec/apache2/mod_charset_lite.so
 libexec/apache2/mod_dav.so
 libexec/apache2/mod_dav_fs.so
-libexec/apache2/mod_deflate.so
+%%EXPERIMENTAL%%libexec/apache2/mod_deflate.so
 libexec/apache2/mod_dir.so
 %%MODCACHE%%libexec/apache2/mod_disk_cache.so
 libexec/apache2/mod_env.so
