@@ -3,7 +3,7 @@
 # Date created:         29 September 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.2 1997/09/29 18:04:04 wosch Exp $
+# $Id: Makefile,v 1.3 1997/09/30 06:51:09 asami Exp $
 #
 
 DISTNAME=       de-manpages-1.0
@@ -15,7 +15,7 @@ MAINTAINER=     wosch@FreeBSD.org
 
 LANG=		de_DE.ISO_8859-1
 NO_WRKSUBDIR=	YES
-NO_PACKAGE=	YES
+NO_CHECKSUM=	YES
 
 mandir=		${PREFIX}/man/${LANG}
 manpages=	manpages-de
@@ -31,5 +31,10 @@ do-install:
 	cd ${WRKSRC}/${manpages}; \
 	${EXTRACT_CMD} cf - . | \
 		(cd ${mandir}; ${EXTRACT_CMD} xf - )
+
+post-install:
+	find ${WRKSRC}/${manpages} -type f -print | \
+		sed "s%${WRKSRC}/${manpages}%man/${LANG}%" > \
+	   ${WRKSRC}/PLIST && cp -f ${WRKSRC}/PLIST ${.CURDIR}/pkg/PLIST
 
 .include <bsd.port.mk>
