@@ -1,0 +1,8 @@
+	ATTENTIONATTENTION:
+
+Please make sure that you read /var/qmail/doc/PORT_NOTES.
+It contains important information about testing and configuring
+qmail, and finally replacing sendmail with qmail.
+
+You should also add /var/qmail/man to your MANPATH (see manpath(1)
+or login.conf(5)).
