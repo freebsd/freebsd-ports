@@ -29,9 +29,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/psi88
 	${MKDIR} ${PREFIX}/share/doc/psi88/examples
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/psi88
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/psi88.doc ${PREFIX}/share/doc/psi88
-	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/doc/psi88/examples
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README ${PREFIX}/share/doc/psi88
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/psi88.doc ${PREFIX}/share/doc/psi88
+	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/doc/psi88/examples
 .endif
 
 .include <bsd.port.mk>

@@ -41,7 +41,7 @@ do-install:
 		${CP} -R ${WRKSRC}/demos ${PREFIX}/share/java/${PKGNAME}/;)
 
 .if !defined(NOPORTDOCS)
-	@(${CP} -R ${WRKSRC}/docs ${PREFIX}/share/java/${PKGNAME})
+	@(${CP} -R ${WRKSRC}/docs ${PREFIX}/share/doc/${PKGNAME})
 .endif)
 
 post-install:

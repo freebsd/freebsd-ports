@@ -1,19 +1,19 @@
 bin/MOPAC7
 bin/rmopac
-share/doc/mopac/mopac.tex
-share/doc/mopac/mopac.dvi
-share/examples/mopac/h2o.dat
-share/mopac/test/test_cos.dat
-share/mopac/test/test_cos.out
-share/mopac/test/test_ef_.dat
-share/mopac/test/test_ef_.out
-share/mopac/test/test_gre.dat
-share/mopac/test/test_gre.end
-share/mopac/test/test_gre.out
-share/mopac/test/test_pol.dat
-share/mopac/test/test_pol.out
-share/mopac/test/test.csh
-@dirrm share/examples/mopac
-@dirrm share/doc/mopac
-@dirrm share/mopac/test
-@dirrm share/mopac
+%%PORTDOCS%%share/doc/mopac/mopac.tex
+%%PORTDOCS%%share/doc/mopac/mopac.dvi
+%%PORTDOCS%%share/examples/mopac/h2o.dat
+%%PORTDOCS%%share/mopac/test/test_cos.dat
+%%PORTDOCS%%share/mopac/test/test_cos.out
+%%PORTDOCS%%share/mopac/test/test_ef_.dat
+%%PORTDOCS%%share/mopac/test/test_ef_.out
+%%PORTDOCS%%share/mopac/test/test_gre.dat
+%%PORTDOCS%%share/mopac/test/test_gre.end
+%%PORTDOCS%%share/mopac/test/test_gre.out
+%%PORTDOCS%%share/mopac/test/test_pol.dat
+%%PORTDOCS%%share/mopac/test/test_pol.out
+%%PORTDOCS%%share/mopac/test/test.csh
+%%PORTDOCS%%@dirrm share/examples/mopac
+%%PORTDOCS%%@dirrm share/doc/mopac
+%%PORTDOCS%%@dirrm share/mopac/test
+%%PORTDOCS%%@dirrm share/mopac
