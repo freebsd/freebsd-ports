@@ -19,14 +19,18 @@ share/gnome/grhino-%%VERSION%%/theme/small/left.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/right.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/top.xpm
 share/gnome/grhino-%%VERSION%%/theme/small/white.xpm
-share/gnome/help/grhino/C/topic.dat
-share/gnome/help/grhino/C/preferences-0.html
-share/gnome/help/grhino/C/preferences-1.html
-share/gnome/help/grhino/C/preferences-2.html
 share/gnome/help/grhino/C/grhino-C.omf
+share/gnome/help/grhino/C/legal.xml
+share/gnome/help/grhino/C/figures/history.png
+share/gnome/help/grhino/C/figures/mainwindow.png
+share/gnome/help/grhino/C/figures/pattern.png
+share/gnome/help/grhino/C/figures/prefs-ai.png
+share/gnome/help/grhino/C/figures/prefs-board.png
+share/gnome/help/grhino/C/figures/prefs-theme.png
 @exec scrollkeeper-install -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/help/grhino/C/grhino-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/help/grhino/C/grhino.xml
+@dirrm share/gnome/help/grhino/C/figures
 @dirrm share/gnome/help/grhino/C
 @dirrm share/gnome/help/grhino
 @dirrm share/gnome/grhino-%%VERSION%%/theme/small
