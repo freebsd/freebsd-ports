@@ -5,6 +5,7 @@
     SUBDIR += bash2
     SUBDIR += es
     SUBDIR += esh
+    SUBDIR += flash
     SUBDIR += ksh93
     SUBDIR += pdksh
     SUBDIR += perlsh
