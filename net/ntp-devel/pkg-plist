@@ -1,3 +1,4 @@
+bin/genkeys
 bin/ntpd
 bin/ntpdate
 bin/ntpdc
@@ -5,7 +6,6 @@ bin/ntpq
 bin/ntptime
 bin/ntptimeset
 bin/ntptrace
-bin/ntp-genkeys
 bin/ntp-wait
 bin/tickadj
 %%PORTDOCS%%share/doc/ntp/Oncore-SHMEM.htm
@@ -155,6 +155,7 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/pic/radio2.jpg
 %%PORTDOCS%%share/doc/ntp/pic/sheepb.jpg
 %%PORTDOCS%%share/doc/ntp/pic/stack1a.jpg
+%%PORTDOCS%%share/doc/ntp/pic/thumbs.db
 %%PORTDOCS%%share/doc/ntp/pic/tonea.gif
 %%PORTDOCS%%share/doc/ntp/pic/wingdorothy.gif
 %%PORTDOCS%%share/doc/ntp/porting.htm
@@ -165,6 +166,7 @@ bin/tickadj
 %%PORTDOCS%%share/doc/ntp/rdebug.htm
 %%PORTDOCS%%share/doc/ntp/refclock.htm
 %%PORTDOCS%%share/doc/ntp/release.htm
+%%PORTDOCS%%share/doc/ntp/thumbs.db
 %%PORTDOCS%%share/doc/ntp/tickadj.htm
 %%PORTDOCS%%@dirrm share/doc/ntp/pic
 %%PORTDOCS%%@dirrm share/doc/ntp/hints
