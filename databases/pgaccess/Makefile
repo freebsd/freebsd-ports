@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pgaccess
-# Version required:	0.51
+# Version required:	0.96
 # Date created:		Sat Oct  4 20:03:46 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.15 1999/03/15 01:48:26 steve Exp $
+# $Id: Makefile,v 1.16 1999/04/08 19:05:45 billf Exp $
 #
 
-DISTNAME=	pgaccess-0.91
+DISTNAME=	pgaccess-0.96
 CATEGORIES=	databases
 MASTER_SITES=	http://www.flex.ro/pgaccess/
 
