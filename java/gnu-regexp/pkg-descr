@@ -1,0 +1,6 @@
+The gnu.regexp package is a pure-Java implementation of a traditional
+(non-POSIX) NFA regular expression engine.  Its syntax can emulate
+many popular development tools, including awk, sed, emacs, perl and
+grep.
+
+WWW: http://www.cacas.org/java/gnu/regexp/

@@ -1,0 +1,41 @@
+share/doc/gnu-regexp/api/allclasses-frame.html
+share/doc/gnu-regexp/api/deprecated-list.html
+share/doc/gnu-regexp/api/gnu/regexp/RE.html
+share/doc/gnu-regexp/api/gnu/regexp/REException.html
+share/doc/gnu-regexp/api/gnu/regexp/REFilterInputStream.html
+share/doc/gnu-regexp/api/gnu/regexp/REMatch.html
+share/doc/gnu-regexp/api/gnu/regexp/REMatchEnumeration.html
+share/doc/gnu-regexp/api/gnu/regexp/RESyntax.html
+share/doc/gnu-regexp/api/gnu/regexp/package-frame.html
+share/doc/gnu-regexp/api/gnu/regexp/package-summary.html
+share/doc/gnu-regexp/api/gnu/regexp/package-tree.html
+share/doc/gnu-regexp/api/gnu/regexp/util/Egrep.html
+share/doc/gnu-regexp/api/gnu/regexp/util/Grep.html
+share/doc/gnu-regexp/api/gnu/regexp/util/REApplet.html
+share/doc/gnu-regexp/api/gnu/regexp/util/RETest.html
+share/doc/gnu-regexp/api/gnu/regexp/util/Tests.html
+share/doc/gnu-regexp/api/gnu/regexp/util/package-frame.html
+share/doc/gnu-regexp/api/gnu/regexp/util/package-summary.html
+share/doc/gnu-regexp/api/gnu/regexp/util/package-tree.html
+share/doc/gnu-regexp/api/help-doc.html
+share/doc/gnu-regexp/api/index-all.html
+share/doc/gnu-regexp/api/index.html
+share/doc/gnu-regexp/api/overview-frame.html
+share/doc/gnu-regexp/api/overview-summary.html
+share/doc/gnu-regexp/api/overview-tree.html
+share/doc/gnu-regexp/api/package-list
+share/doc/gnu-regexp/api/packages.html
+share/doc/gnu-regexp/api/serialized-form.html
+share/doc/gnu-regexp/api/stylesheet.css
+share/doc/gnu-regexp/changes.html
+share/doc/gnu-regexp/credits.html
+share/doc/gnu-regexp/gnu-regexp-applet.jar
+share/doc/gnu-regexp/index.html
+share/doc/gnu-regexp/reapplet.html
+share/doc/gnu-regexp/syntax.html
+share/java/classes/gnu-regexp.jar
+@dirrm share/doc/gnu-regexp/api/gnu/regexp/util
+@dirrm share/doc/gnu-regexp/api/gnu/regexp
+@dirrm share/doc/gnu-regexp/api/gnu
+@dirrm share/doc/gnu-regexp/api
+@dirrm share/doc/gnu-regexp
