@@ -1,7 +1,7 @@
 MD5 (c-news/c-news.tar.Z) = c2a144d1dabd2af1b3f6816de5e38b3c
 MD5 (c-news/pgpverify-1.12) = 733f702d987fad87b1b64f93aea2dbe7
 MD5 (c-news/c-news-patch-fileart.c) = cf003ba4cd88641b620b2b19c3d7c715
-MD5 (c-news/c-news-patch-namecheck.awk) = 4d93aa88bac7459065cad3e4dd86e7cb
+MD5 (c-news/c-news-patch-namelen) = 79efe291fa28339f4cc44646e4d14761
 MD5 (c-news/c-news-patch-newsrun) = 6d71577c687f092277d3d3d747477f38
 MD5 (c-news/c-news-patch-sendbatches) = 978b2e56f5b9ddd113ff784ad709b8d7
 MD5 (c-news/c-news-patch-ctl-pgp3) = 3648dd74974928b317f0169f254b19bd
@@ -12,5 +12,6 @@ MD5 (c-news/c-news-patch-queuelen.tay) = 58d3e06a518fbf6bfee10081041fb85c
 MD5 (c-news/c-news-patch-bunzip2) = c4893fcaec140b29f1bea42b81e1bdf5
 MD5 (c-news/c-news-patch-ctl-underscore) = 65ddefc8be3793cfc9d1e6d5b8302fd4
 MD5 (c-news/c-news-patch-y2k-2) = 4eda6a5ca89c9c0e48bc5658195e2f4c
+MD5 (c-news/c-news-patch-inews-path) = 20e7f0de2532168faa618e670a92fe11
 MD5 (c-news/c-news-patch-pgpverify-1.12-perl4) = 191de45608e48ed2f1f2b4d620af27a8
 MD5 (c-news/c-news-patch-gawk3) = 029502040db18868fe10e4c991af22ef

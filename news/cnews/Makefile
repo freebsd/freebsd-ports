@@ -7,7 +7,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -21,7 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
-PATCHFILES=	c-news-patch-fileart.c c-news-patch-namecheck.awk \
+PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-newsrun c-news-patch-sendbatches \
 		c-news-patch-ctl-pgp3 c-news-patch-ctl-more \
 		c-news-patch-ctl-regexp \
@@ -29,6 +29,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namecheck.awk \
 		c-news-patch-bunzip2 \
 		c-news-patch-ctl-underscore \
 		c-news-patch-y2k-2 \
+		c-news-patch-inews-path \
 		c-news-patch-pgpverify-1.12-perl4
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -122,5 +123,9 @@ do-install:
 	@${ECHO} "	so any problem can be reported."
 	@${ECHO} "!!!!!!!!"
 	@${ECHO} ""
+
+test: 
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} r)
 
 .include <bsd.port.post.mk>
