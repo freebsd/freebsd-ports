@@ -172,6 +172,7 @@
     SUBDIR += gtktetcolor
     SUBDIR += gturing
     SUBDIR += gtypist
+    SUBDIR += gweled
     SUBDIR += halflifeserver
     SUBDIR += heretic
     SUBDIR += heroes
