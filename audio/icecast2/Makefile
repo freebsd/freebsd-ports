@@ -7,14 +7,19 @@
 
 PORTNAME=	icecast
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
-FORBIDDEN=	"Remotely exploitable buffer overflow"
 
 MAINTAINER=	chip@eboai.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-libwrap
+
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	${SH} pkg-install
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/icecast ${PREFIX}/sbin
