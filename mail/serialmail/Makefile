@@ -17,14 +17,8 @@ MAINTAINER=	tom@FreeBSD.org
 
 MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 serialsmtp.1 setlock.1
 
-.if defined(NOPORTDOCS)
-PLIST=		${PKGDIR}/pkg-plist.nodocs
-.endif
-
 # QMAIL_DIR is the directory where qmail is installed
-.if !defined(QMAIL_DIR)
-QMAIL_DIR=	/var/qmail
-.endif
+QMAIL_DIR?=	/var/qmail
 
 RUN_DEPENDS=	${PREFIX}/bin/tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \
 		${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
