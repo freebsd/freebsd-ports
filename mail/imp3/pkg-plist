@@ -1,8 +1,9 @@
-%%PORTDOCS%%share/doc/imp/CHANGES
-%%PORTDOCS%%share/doc/imp/COPYING
-%%PORTDOCS%%share/doc/imp/CREDITS
-%%PORTDOCS%%share/doc/imp/INSTALL
-%%PORTDOCS%%share/doc/imp/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
 %%IMPDIR%%/compose.php
 %%IMPDIR%%/config/.htaccess
 %%IMPDIR%%/config/conf.php
@@ -129,8 +130,10 @@
 %%IMPDIR%%/locale/fi_FI/help.xml
 %%IMPDIR%%/locale/fr_FR/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/fr_FR/help.xml
+%%IMPDIR%%/locale/gl_ES/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/hu_HU/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/hu_HU/help.xml
+%%IMPDIR%%/locale/id_ID/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/is_IS/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/it_IT/LC_MESSAGES/imp.mo
 %%IMPDIR%%/locale/it_IT/help.xml
@@ -189,7 +192,9 @@
 %%IMPDIR%%/po/extract.pl
 %%IMPDIR%%/po/fi_FI.po
 %%IMPDIR%%/po/fr_FR.po
+%%IMPDIR%%/po/gl_ES.po
 %%IMPDIR%%/po/hu_HU.po
+%%IMPDIR%%/po/id_ID.po
 %%IMPDIR%%/po/is_IS.po
 %%IMPDIR%%/po/imp.pot
 %%IMPDIR%%/po/it_IT.po
@@ -284,7 +289,7 @@
 %%IMPDIR%%/templates/search/main.inc
 %%IMPDIR%%/test.php
 %%IMPDIR%%/view.php
-%%PORTDOCS%%@dirrm share/doc/imp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/download
 @dirrm %%IMPDIR%%/graphics/folders
@@ -322,8 +327,12 @@ etc/horde/httpd.conf.imp
 @dirrm %%IMPDIR%%/locale/fi_FI
 @dirrm %%IMPDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/fr_FR
+@dirrm %%IMPDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/gl_ES
 @dirrm %%IMPDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/hu_HU
+@dirrm %%IMPDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%IMPDIR%%/locale/id_ID
 @dirrm %%IMPDIR%%/locale/is_IS/LC_MESSAGES
 @dirrm %%IMPDIR%%/locale/is_IS
 @dirrm %%IMPDIR%%/locale/it_IT/LC_MESSAGES

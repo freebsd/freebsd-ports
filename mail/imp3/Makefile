@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTVERSION=	3.2.3
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
+		ftp://ftp.planetmirror.com/pub/horde/imp/		\
 		ftp://ftp.au.horde.org/pub/horde/imp/			\
+		ftp://ftp.be.horde.org/imp/				\
 		ftp://ftp.es.horde.org/pub/imp/				\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/imp/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/imp/	\
-		ftp://ftp.pt.horde.org/pub/horde-ftp/imp/
+		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/imp/	\
+		http://ftp.horde.org/pub/imp/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A webmail system which accesses mail over IMAP
@@ -122,9 +124,10 @@ USE_REINPLACE=	yes
 LDD=		/usr/bin/ldd
 
 REINPLACE_ARGS=	-i.beforeIMP
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
-CONFFILE=	conf.php filter.txt header.txt html.php menu.php \
-		mime_drivers.php motd.php prefs.php servers.php \
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
+		docs/RELEASE_NOTES
+CONFFILE=	conf.php filter.txt header.txt html.php menu.php	\
+		mime_drivers.php motd.php prefs.php servers.php		\
 		trailer.txt
 SUB_DIRS=	config download graphics lib locale po scripts templates
 
