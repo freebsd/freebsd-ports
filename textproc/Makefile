@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += zu-aspell
 
     SUBDIR += 2bsd-diff
     SUBDIR += Ebnf2ps
@@ -586,5 +585,6 @@
     SUBDIR += xxdiff
     SUBDIR += y2l
     SUBDIR += yodl
+    SUBDIR += zu-aspell
 
 .include <bsd.port.subdir.mk>
