@@ -9,7 +9,7 @@
 # directory to the pine4-ssl port.
 
 PORTNAME?=	pine
-PORTVERSION?= 	4.31
+PORTVERSION?= 	4.32
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME?=	${PORTNAME}${PORTVERSION}
