@@ -1,5 +1,5 @@
---- ../unix/configure.orig	Fri Mar 17 17:57:30 2000
-+++ ../unix/configure	Sat Jul 29 16:00:40 2000
+--- ../unix/configure.orig	Fri Mar 17 09:57:30 2000
++++ ../unix/configure	Sun Aug 13 19:45:58 2000
 @@ -652,7 +652,6 @@
  if test x"${ac_cv_c_tclconfig}" = x ; then
  	TCL_BIN_DIR="# no Tcl configs found"
@@ -8,7 +8,16 @@
  else
  	TCL_BIN_DIR=${ac_cv_c_tclconfig}
  	echo "$ac_t""found $TCL_BIN_DIR/tclConfig.sh" 1>&6
-@@ -2308,7 +2308,7 @@
+@@ -1594,7 +1593,7 @@
+   if { (eval echo configure:1595: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; }; then
+     for file in conftest.*; do
+       case $file in
+-      *.c | *.o | *.obj) ;;
++      *.[Cc] | *.o | *.obj) ;;
+       *) ac_cv_exeext=`echo $file | sed -e s/conftest//` ;;
+       esac
+     done
+@@ -2308,7 +2307,7 @@
  LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
  DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
  ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
