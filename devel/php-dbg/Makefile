@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbg
-PORTVERSION=	2.11.5
-PORTREVISION=	1
+PORTVERSION=	2.11.22
 CATEGORIES=	devel
 MASTER_SITES=	http://dd.cron.ru/dbg/dnld/
 PKGNAMEPREFIX=	php-
@@ -16,7 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	rehsack@liwing.de
 COMMENT=	Debugger for PHP4
 
-WRKSRC=		${WRKDIR}/dbg
 USE_PHPIZE=	yes
 CONFIGURE_ARGS=	--enable-dbg=shared --with-dbg-profiler
 PKGMESSAGE=	${WRKDIR}/pkg-message
