@@ -1,27 +1,26 @@
-diff -u -N ./main.cc ../bgrab/main.cc
---- ./main.cc	Mon Feb  1 03:04:23 1999
-+++ ../bgrab/main.cc	Tue Jul 27 10:38:26 1999
-@@ -9,7 +9,6 @@
+--- main.cc.orig	Thu Sep 30 09:20:30 1999
++++ main.cc	Thu Sep 30 09:22:51 1999
+@@ -7,7 +7,6 @@
  #include <sys/types.h>
  #include <sys/wait.h>
  #include <stdlib.h>
 -#include <curses.h>
- }
- 
- extern "C++" {
-@@ -19,7 +18,7 @@
- #include "multipart.h"
- }
+ #include "server.h"
+ #include "screen.h"
+ #include "tree.h"
+@@ -15,7 +14,7 @@
+ #include "grouplist.h"
+ #include "findfile.h"
  
 -#define		NNTP_PORT		119
 +unsigned NNTP_PORT = 119;
  
  char *NNTP_SERVER = NULL;
- char *NNTP_GROUP = NULL;
-@@ -194,6 +193,10 @@
- 	fprintf(stderr, "groupname	newsgroup to read\n");
- 	fprintf(stderr," -n		don't output to stdout\n");
- 	fprintf(stderr," -f             fork to background.  use only with -n\n");
+ groupListPointer NNTP_GROUP = new groupList();
+@@ -249,6 +248,10 @@
+ 	fprintf(stderr," -a user pass	Authenticate the login to the server with\n");
+ 	fprintf(stderr,"		'user' as username and 'pass' as password.\n");
+ 	fprintf(stderr,"		Both username and password must be present.\n");
 +	fprintf(stderr,"\nThe hostname or IP address of the news server can be\n");
 +	fprintf(stderr,"specified by the NNTPSERVER environment variable, or defaults\n");
 +	fprintf(stderr,"to \"news\". The port to connect to can be specified by the\n");
@@ -29,8 +28,8 @@ diff -u -N ./main.cc ../bgrab/main.cc
  	exit(-1);
  }
  
-@@ -225,6 +228,8 @@
- void main(int argc, char **argv) {
+@@ -301,6 +304,8 @@
+ 
  	if (getenv("NNTPSERVER")) NNTP_SERVER = strdup(getenv("NNTPSERVER"));
  	else NNTP_SERVER = strdup("news");
 +
