@@ -9856,6 +9856,7 @@ syncmal		ports/palm/syncmal
 syndigator	ports/www/syndigator
 synergy 	ports/sysutils/synergy
 syntax_tools	ports/devel/syntax_tools
+syntax_tools-devel	ports/devel/syntax_tools-devel
 sysconftool	ports/devel/sysconftool
 syslog-ng	ports/sysutils/syslog-ng
 sysmon		ports/net-mgmt/sysmon
