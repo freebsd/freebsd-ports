@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bluej
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	java editors
 MASTER_SITES=	ftp://mars.pscit.monash.edu.au/pub/mik/bluej/ \
 		ftp://ftp.monash.edu.au/pub/bluej/
-DISTNAME=	bluej-114
+DISTNAME=	bluej-115
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	karlj000@unbc.ca
