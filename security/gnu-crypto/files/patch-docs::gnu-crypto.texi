@@ -1,0 +1,14 @@
+--- docs/gnu-crypto.texi.orig	Sat Nov  8 19:45:45 2003
++++ docs/gnu-crypto.texi	Fri Dec 31 11:35:47 2004
+@@ -6,6 +6,11 @@
+ 
+ @include version.texi
+ 
++@dircategory GNU Libraries
++@direntry
++* gnu-crypto: (gnu-crypto). GNU java cryptographic primitives and tools
++@end direntry
++
+ @iftex
+ @raggedbottom
+ @end iftex
