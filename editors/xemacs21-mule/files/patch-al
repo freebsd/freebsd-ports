@@ -1,0 +1,11 @@
+--- src/EmacsFrame.c~	Wed Mar  5 12:28:39 2003
++++ src/EmacsFrame.c	Thu Jun  5 16:23:56 2003
+@@ -235,7 +235,7 @@
+     /* resource_count		*/	XtNumber (resources),
+     /* xrm_class		*/	NULLQUARK,
+     /* compress_motion		*/	TRUE,
+-    /* compress_exposure	*/	XtExposeCompressMaximal | XtExposeNoRegion,
++    /* compress_exposure	*/	TRUE,
+     /* compress_enterleave	*/	TRUE,
+     /* visible_interest		*/	FALSE,
+     /* destroy			*/	NULL,
