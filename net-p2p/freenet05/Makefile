@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	freenet
-PORTVERSION=	0.5.2.1.5077
+PORTVERSION=	0.5.2.1.5084
 CATEGORIES=	net java security
 MASTER_SITES=	http://freenetproject.org/snapshots/
-DISTNAME=	${PORTNAME}-20040428
+DISTNAME=	${PORTNAME}-20040702
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
-
-BROKEN=		Unfetchable
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
 
 USE_JAVA=	1.4+
 USE_SIZE=	yes
