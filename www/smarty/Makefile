@@ -17,7 +17,7 @@ DISTFILES+=	Smarty-${PORTVERSION}-docs${EXTRACT_SUFX}:manual
 
 MAINTAINER=	corecode@corecode.ath.cx
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4
 
 WRKSRC=	${WRKDIR}/Smarty-${PORTVERSION}
 
