@@ -99,4 +99,12 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+# XXX:
+# Has to be kept in sync with the defaults in configure.php
+.ifndef(WITHOUT_MYSQL)
+.ifmake describe
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.endif
+.endif
+
 .include <bsd.port.mk>
