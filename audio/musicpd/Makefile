@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.10.2
+PORTVERSION=	0.10.3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,10 +32,8 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 
 .if ${OSVERSION} >= 500038
 RC_SUBR?=	${DESTDIR}/etc/rc.subr
-RC_SUFX=
 .else
 USE_RC_SUBR=	yes
-RC_SUFX=	.sh
 .endif
 
 #.if ${OSVERSION} < 500000
@@ -89,9 +87,7 @@ DOCS=		README \
 
 SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
-		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-PLIST_SUB+=	RC_SUFX=${RC_SUFX}
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/musicpd.sh >${WRKDIR}/musicpd.sh
@@ -101,7 +97,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd ${PREFIX}/bin/
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/mpd.conf.sample ${EXAMPLESDIR}/mpd.conf
-	${INSTALL_SCRIPT} ${WRKDIR}/musicpd.sh ${PREFIX}/etc/rc.d/musicpd${RC_SUFX}
+	${INSTALL_SCRIPT} ${WRKDIR}/musicpd.sh ${PREFIX}/etc/rc.d/
 	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -114,9 +110,9 @@ post-install:
 	@${ECHO_CMD} -- IMPORTANT NOTICE ----------------------------------
 	@${ECHO_CMD} If you upgraded from a pre-0.10.0 release, you have to
 	@${ECHO_CMD} rebuild your index now by running
-	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd${RC_SUFX} stop
+	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd.sh stop
 	@${ECHO_CMD} ${PREFIX}/bin/mpd --create-db ${PREFIX}/etc/mpd.conf
-	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd${RC_SUFX} start
+	@${ECHO_CMD} ${PREFIX}/etc/rc.d/musicpd.sh start
 	@${ECHO_CMD} ------------------------------------------------------
 	@${ECHO_CMD}
 
