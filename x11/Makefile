@@ -144,6 +144,7 @@
     SUBDIR += xmove
     SUBDIR += xmsg
     SUBDIR += xmx
+    SUBDIR += xnee
     SUBDIR += xprompt
     SUBDIR += xscreensaver
     SUBDIR += xscreensaver-gnome

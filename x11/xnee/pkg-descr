@@ -1,0 +1,9 @@
+Xnee receives X11 protocol data (e.g. XEvents) from an X server and
+prints them to a file (or stdout).  By recording events such as
+MapNotify, the replaying of events can be synchronized.  This is not only
+useful but essential.  We can not replay or regenerate keyboard-events to
+a window before it's ready to "receive" events.  By recording events and
+requests synchronization can be implemented.  Xnee can also distribute
+events (both when recording and replaying) to other displays.
+
+WWW: http://xnee.sourceforge.net/
