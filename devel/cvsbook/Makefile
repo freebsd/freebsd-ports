@@ -27,6 +27,3 @@ do-install:
 	@install-info ${PREFIX}/info/cvsbook.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
-
-#
-#EOF
