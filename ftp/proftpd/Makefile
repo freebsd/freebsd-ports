@@ -3,7 +3,7 @@
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/13 17:39:02 vanilla Exp $
 #
 
 DISTNAME=	proftpd-1.0.0
@@ -26,23 +26,41 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS}"
 # Ugly again, do a "sed" to set the config dir to ${PREFIX}/etc
 #
 
-pre-build:
-	${SED} -e "s:^prefix=\/usr:prefix=${PREFIX}:" < ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.tmp
-	${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
+post-configure:
+	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.pre_sed
+	${SED}	-e "s:^prefix=\/usr:prefix=${PREFIX}:" \
+		-e "s:^etcdir=\/etc:etcdir=${PREFIX}\/etc:" \
+		-e "s:^libexecdir=\/libexec:libexecdir=${PREFIX}\/libexec:" \
+		< ${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
 
-	${SED} -e "s:^etcdir=\/etc:etcdir=${PREFIX}\/etc:" < ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.tmp
-	${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
+	${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.pre_sed
+	${SED}	-e 's:\/etc\/proftpd\.conf:${PREFIX}\/etc\/proftpd.conf:' \
+		< ${WRKSRC}/config.h.pre_sed > ${WRKSRC}/config.h
 
-	${SED} -e "s:^libexecdir=\/libexec:libexecdir=${PREFIX}\/libexec:" < ${WRKSRC}/Makefile > ${WRKSRC}/Makefile.tmp
-	${MV} ${WRKSRC}/Makefile.tmp ${WRKSRC}/Makefile
+	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
+	@${SED}	-e 's:/etc:${PREFIX}/etc:' \
+		-e 's:/usr/sbin/proftpd:${PREFIX}/libexec/proftpd:' \
+		-e 's:/usr/sbin:${PREFIX}/sbin:' \
+		-e 's:/usr/bin:${PREFIX}/bin:' \
+		< ${WRKSRC}/src/proftpd.8.pre_sed > ${WRKSRC}/src/proftpd.8
 
-	${SED} -e 's:\/etc\/proftpd\.conf:${PREFIX}\/etc\/proftpd.conf:' < ${WRKSRC}/config.h > ${WRKSRC}/config.h.tmp
-	${MV} ${WRKSRC}/config.h.tmp ${WRKSRC}/config.h
+	@${MV} ${WRKSRC}/src/ftpshut.8 ${WRKSRC}/src/ftpshut.8.pre_sed
+	@${SED}	-e 's:/usr/sbin:${PREFIX}/sbin:' \
+		-e 's:/etc:/var/run:' \
+		< ${WRKSRC}/src/ftpshut.8.pre_sed > ${WRKSRC}/src/ftpshut.8
+
+	@${MV} ${WRKSRC}/src/ftpwho.1 ${WRKSRC}/src/ftpwho.1.pre_sed
+	@${SED}	-e 's:/usr/bin:${PREFIX}/bin:' \
+		< ${WRKSRC}/src/ftpwho.1.pre_sed > ${WRKSRC}/src/ftpwho.1
+
+	@${MV} ${WRKSRC}/src/ftpcount.1 ${WRKSRC}/src/ftpcount.1.pre_sed
+	@${SED}	-e 's:/usr/bin:${PREFIX}/bin:' \
+		< ${WRKSRC}/src/ftpcount.1.pre_sed > ${WRKSRC}/src/ftpcount.1
 
 post-install:
-	strip ${PREFIX}/bin/ftpcount
-	strip ${PREFIX}/bin/ftpwho
-	strip ${PREFIX}/libexec/proftpd
-	strip ${PREFIX}/sbin/ftpshut
+	strip ${PREFIX}/bin/ftpcount \
+		${PREFIX}/bin/ftpwho \
+		${PREFIX}/libexec/proftpd \
+		${PREFIX}/sbin/ftpshut
 
 .include <bsd.port.mk>
