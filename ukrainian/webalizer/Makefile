@@ -10,7 +10,7 @@ CATEGORIES=	ukrainian
 
 MAINTAINER=	mike@LITech.lviv.ua
 
-LIB_DEPENDS=	gd.3:${PORTSDIR}/ukrainian/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/ukrainian/gd
 
 WEBALIZER_LANG=	ukrainian
 EXTRA_PATCHES+=	${.CURDIR}/files/patch-ba ${.CURDIR}/files/patch-bb
