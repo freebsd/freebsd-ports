@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geekcode
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${PREFIX}/bin

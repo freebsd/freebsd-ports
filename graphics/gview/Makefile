@@ -12,7 +12,7 @@ MASTER_SITES=	http://netpedia.net/hosting/gview/ \
 		http://homepages.petech.ac.za/~bruces/ \
 		ftp://ftp.petech.ac.za/pub/viewers/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

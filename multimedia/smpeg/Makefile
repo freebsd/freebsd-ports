@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.lokigames.com/pub/open-source/smpeg/ \
 		ftp://snuffleupagus.animearchive.org/loki/open-source/smpeg/ \
 		http://ftp.gameaholic.com/mirrors/ftp.lokigames.com/open-source/smpeg/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
