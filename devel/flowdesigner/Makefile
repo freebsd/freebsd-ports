@@ -30,6 +30,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 post-install:
 .for dir in ${PREFIX}/include/${PORTNAME} ${PREFIX}/share/${PORTNAME}
 	@${FIND} ${dir} ! -type d | \
