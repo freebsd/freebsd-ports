@@ -2,5 +2,6 @@ bin/cfdump
 bin/jc
 bin/jcgen
 bin/jcjavah
+lib/libjc.a
 lib/libjc.so
 lib/libjc.so.1
