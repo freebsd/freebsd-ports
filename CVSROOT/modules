@@ -8720,6 +8720,7 @@ zh-mplayer-fonts	ports/chinese/mplayer-fonts
 zh-mule-freewnn	ports/chinese/mule-freewnn
 zh-muni		ports/chinese/muni
 zh-mutt		ports/chinese/mutt
+zh-ntuttf	ports/chinese/ntuttf
 zh-nvi-big5	ports/chinese/nvi-big5
 zh-nvi-euc-cn	ports/chinese/nvi-euc-cn
 zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
