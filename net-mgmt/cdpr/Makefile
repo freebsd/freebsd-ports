@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.monkeymental.com/mmfiles/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,9 +25,13 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/cdprs/* ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/cdpr.conf ${DATADIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/README.cdprs ${DOCSDIR}/README.cdprs
 .endif
 
 .include <bsd.port.mk>
