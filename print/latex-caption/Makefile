@@ -22,8 +22,6 @@ BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		${TEXMF_LSR}:${PORTSDIR}/print/tex-texmflocal
 
-BROKEN=		Checksum mismatch
-
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
 		CLASSDIR=${CLASSDIR}
 USE_GMAKE=	YES
