@@ -62,7 +62,7 @@ pre-extract:
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
 	@${ECHO_MSG} "You can enable the mod_dav_svn module for Apache 2.X"
-	@${ECHO_MSG} "by defining WITH_MOD_DAV_SVN.  This option implies
+	@${ECHO_MSG} "by defining WITH_MOD_DAV_SVN.  This option implies"
 	@${ECHO_MSG} "the WITH_APACHE2_APR option."
 .endif
 	@${ECHO_MSG}
