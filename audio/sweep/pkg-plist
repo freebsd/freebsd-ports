@@ -1,6 +1,37 @@
 bin/sweep
+include/sweep/config.h
+include/sweep/sweep.h
+include/sweep/sweep_filter.h
+include/sweep/sweep_i18n.h
+include/sweep/sweep_sample.h
+include/sweep/sweep_selection.h
+include/sweep/sweep_sounddata.h
+include/sweep/sweep_typeconvert.h
+include/sweep/sweep_types.h
+include/sweep/sweep_undo.h
+include/sweep/sweep_version.h
+lib/sweep/libbyenergy.a
+lib/sweep/libbyenergy.so
+lib/sweep/libbyenergy.so.1
+lib/sweep/libecho.a
+lib/sweep/libecho.so
+lib/sweep/libecho.so.1
+lib/sweep/libladspameta.a
+lib/sweep/libladspameta.so
+lib/sweep/libladspameta.so.1
+lib/sweep/libnormalise.a
+lib/sweep/libnormalise.so
+lib/sweep/libnormalise.so.1
+lib/sweep/libreverse.a
+lib/sweep/libreverse.so
+lib/sweep/libreverse.so.1
 share/gnome/apps/Multimedia/sweep.desktop
 share/gnome/pixmaps/sweep.png
 share/gnome/sweep/sweep_logo.ppm
+share/locale/de/LC_MESSAGES/sweep.mo
 share/locale/fr/LC_MESSAGES/sweep.mo
+share/locale/hu/LC_MESSAGES/sweep.mo
+share/locale/it/LC_MESSAGES/sweep.mo
 @dirrm share/gnome/sweep
+@dirrm lib/sweep
+@dirrm include/sweep
