@@ -9,8 +9,8 @@ System/Headers/ScriptKit/GuileScript.h
 System/Headers/ScriptKit/SKInterpreter.h
 System/Headers/ScriptKit/SKScript.h
 System/Headers/ScriptKit/ScriptKit.h
-System/Headers/gg_Object.h
-System/Headers/gstep_guile.h
+System/Headers/libgstep_guile/gstep_guile.h
+System/Headers/libgstep_guile/gg_Object.h
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libScriptKit.so.1.0.0
