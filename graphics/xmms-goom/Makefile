@@ -16,7 +16,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dyeske@yahoo.com
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
+BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms \
+		nasm:${PORTSDIR}/devel/nasm
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 USE_X_PREFIX=	yes
