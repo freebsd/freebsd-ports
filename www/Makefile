@@ -753,6 +753,7 @@
     SUBDIR += wnews
     SUBDIR += wordpress
     SUBDIR += wordpress-mu
+    SUBDIR += wsdlpull
     SUBDIR += wsmake
     SUBDIR += www6to4
     SUBDIR += wwwcount
