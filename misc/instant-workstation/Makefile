@@ -29,7 +29,7 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		mount_smbfs:${PORTSDIR}/net/smbfs \
 		mutt:${PORTSDIR}/mail/mutt \
-		netscape:${PORTSDIR}/www/linux-netscape47-communicator \
+		mozilla:${PORTSDIR}/www/mozilla \
 		${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		xtset:${PORTSDIR}/x11/xtset \
 		xmms:${PORTSDIR}/audio/xmms \
