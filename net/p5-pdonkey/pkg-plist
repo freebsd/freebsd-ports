@@ -1,5 +1,7 @@
 %%SITE_PERL%%/P2P/pDonkey/Met.pm
+%%SITE_PERL%%/P2P/pDonkey/Met_v04.pm
 %%SITE_PERL%%/P2P/pDonkey/Meta.pm
+%%SITE_PERL%%/P2P/pDonkey/Meta_v04.pm
 %%SITE_PERL%%/P2P/pDonkey/Packet.pm
 %%SITE_PERL%%/P2P/pDonkey/Util.pm
 @dirrm %%SITE_PERL%%/P2P/pDonkey
