@@ -1183,6 +1183,7 @@ de-ispell	ports/german/ispell
 de-ispell-alt	ports/german/ispell-alt
 de-ispell-neu	ports/german/ispell-neu
 de-kde3-i18n	ports/german/kde3-i18n
+de-kheisereg	ports/german/kheisereg
 de-koffice-i18n	ports/german/koffice-i18n
 de-ksteak	ports/german/ksteak
 de-linux-eagle	ports/german/linux-eagle
