@@ -1,0 +1,23 @@
+lib/xchat/plugins/systray.so
+lib/xchat/plugins/Menu/help.png
+lib/xchat/plugins/Menu/browser.png
+lib/xchat/plugins/Menu/email.png
+lib/xchat/plugins/Menu/backaway.png
+lib/xchat/plugins/Menu/player.png
+lib/xchat/plugins/Menu/quit.png
+lib/xchat/plugins/Menu/goaway.png
+lib/xchat/plugins/Menu/stop.png
+lib/xchat/plugins/Menu/settings.png
+lib/xchat/plugins/Menu/max.png
+lib/xchat/plugins/Menu/min.png
+lib/xchat/plugins/GTKTray/xchatblue.png
+lib/xchat/plugins/GTKTray/xchat.png
+lib/xchat/plugins/GTKTray/goaway.png
+lib/xchat/plugins/GTKTray/xchatred.png
+lib/xchat/plugins/GTKTray/dccalert.png
+lib/xchat/plugins/GTKTray/disconnected.png
+lib/xchat/plugins/GTKTray/invited.png
+lib/xchat/plugins/GTKTray/notifyin.png
+lib/xchat/plugins/GTKTray/notifyout.png
+@dirrm lib/xchat/plugins/Menu
+@dirrm lib/xchat/plugins/GTKTray
