@@ -7,7 +7,7 @@
 
 PORTNAME=		mail-notification
 PORTVERSION=		0.8.1
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -69,12 +69,11 @@ WITHOUT_MIME=		yes
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=	--disable-sylpheed
 .endif
-# .if defined(WITHOUT_GMAIL)
-WITHOUT_GMAIL=		yes	# depends on libsoup-2.2, which is in Marcus's CVS
+.if defined(WITHOUT_GMAIL)
 CONFIGURE_ARGS+=	--disable-gmail
-# .else
-# LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup
-# .endif
+.else
+LIB_DEPENDS+=		soup-2.2:${PORTSDIR}/devel/libsoup
+.endif
 .if defined(WITHOUT_MIME)
 CONFIGURE_ARGS+=	--disable-mime
 .else
