@@ -1,9 +1,9 @@
-# New ports collection makefile for:    mswordview
-# Version required:     0.4.9
+# New ports collection makefile for:    lv
+# Version required:     4.40
 # Date created:         Fri Nov  6 09:06:33 PST 1998
 # Whom:                 sumikawa
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/24 04:45:00 itojun Exp $
 #
 
 DISTNAME=	lv440
