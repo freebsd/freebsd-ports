@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.3/binaries/FreeBSD-2.2.x/
 DISTNAME=	Xbin
 EXTRACT_SUFX=	.tgz
 
+FORBIDDEN=	"Remote denial of service and buffer overflow vulnerabilities"
+
 MAINTAINER=	reg@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
