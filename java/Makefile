@@ -57,7 +57,6 @@
     SUBDIR += mmake
     SUBDIR += netrexx
     SUBDIR += openjit
-    SUBDIR += sablepath
     SUBDIR += sablevm
     SUBDIR += shujit
     SUBDIR += tya
