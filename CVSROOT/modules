@@ -3110,6 +3110,7 @@ infobot		ports/irc/infobot
 infobus		ports/java/infobus
 inform		ports/games/inform
 inilib		ports/devel/inilib
+initutil	ports/devel/initutil
 inkscape	ports/graphics/inkscape
 inn		ports/news/inn
 inn-current	ports/news/inn-current
