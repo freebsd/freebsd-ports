@@ -1,5 +1,5 @@
 --- hints/freebsd.sh.orig	Fri Feb 12 09:05:48 1999
-+++ hints/freebsd.sh	Fri May  7 22:50:53 1999
++++ hints/freebsd.sh	Mon Dec  2 14:43:50 2002
 @@ -72,6 +72,7 @@
  	d_setreuid='define'
  	d_setegid='undef'
@@ -8,7 +8,7 @@
  	test -r ./broken-db.msg && . ./broken-db.msg
  	;;
  #
-@@ -85,12 +86,18 @@
+@@ -85,12 +86,29 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
@@ -24,10 +24,21 @@
 +	d_setegid='undef'
 +	d_seteuid='undef'
 +	d_dosuid='define'
++	;;
++esac
++
++#
++# /usr/include/malloc.h is deprecated after 3.0.
++case "$osvers" in
++0.*|1.*|2.*)
++	i_malloc=''
++	;;
++*)
++	i_malloc='undef'
  	;;
  esac
  
-@@ -99,7 +106,11 @@
+@@ -99,7 +117,11 @@
  case "$osvers" in
  0.*|1.0*) ;;
  
@@ -40,7 +51,7 @@
          objformat=`/usr/bin/objformat`
          if [ x$objformat = xelf ]; then
              libpth="/usr/lib /usr/local/lib"
-@@ -115,10 +126,6 @@
+@@ -115,10 +137,6 @@
          fi
          cccdlflags='-DPIC -fpic'
          ;;
@@ -51,7 +62,7 @@
  esac
  
  cat <<'EOM' >&4
-@@ -166,7 +173,7 @@
+@@ -166,7 +184,7 @@
  $define|true|[yY]*)
          lc_r=`/sbin/ldconfig -r|grep ':-lc_r'|awk '{print $NF}'`
          case "$osvers" in  
@@ -60,7 +71,7 @@
  	      if [ ! -r "$lc_r" ]; then
  	      cat <<EOM >&4
  POSIX threads should be supported by FreeBSD $osvers --
-@@ -179,7 +186,7 @@
+@@ -179,7 +197,7 @@
  	      fi
  	      ldflags="-pthread $ldflags"
  	      ;;
@@ -69,7 +80,7 @@
                cat <<EOM >&4
  POSIX threads are not supported well by FreeBSD $osvers.
  
-@@ -192,12 +199,17 @@
+@@ -192,12 +210,17 @@
  EOM
  	      exit 1
  	      ;;

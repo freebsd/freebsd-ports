@@ -1,5 +1,5 @@
---- makedepend.SH.orig	Fri Jan 22 10:10:23 1999
-+++ makedepend.SH	Fri May  7 22:20:42 1999
+--- makedepend.SH.orig	Fri Jan 22 01:10:23 1999
++++ makedepend.SH	Tue Dec  3 01:11:02 2002
 @@ -68,6 +68,7 @@
      case "$osname" in
      os2) ;;
@@ -8,3 +8,12 @@
      *) $touch $firstmakefile ;;
      esac
  fi
+@@ -129,6 +130,8 @@
+     $cppstdin $finc -I. $cppflags $cppminus <UU/$file.c |
+     $sed \
+ 	-e '/^#.*<stdin>/d' \
++	-e '/^#.*<built-in>/d' \
++	-e '/^#.*<command line>/d' \
+ 	-e '/^#.*"-"/d' \
+ 	-e 's#\.[0-9][0-9]*\.c#'"$file.c#" \
+ 	-e 's/^[	 ]*#[	 ]*line/#/' \
