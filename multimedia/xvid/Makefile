@@ -7,7 +7,7 @@
 
 PORTNAME=	xvid
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.xvid.org/downloads/
@@ -25,6 +25,6 @@ USE_GCC=	3.3
 WRKSRC=			${WRKDIR}/${DISTNAME}/build/generic
 
 post-install:
-	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.2 ${PREFIX}/lib/libxvidcore.so
+	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.4 ${PREFIX}/lib/libxvidcore.so
 
 .include <bsd.port.mk>
