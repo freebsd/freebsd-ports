@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liece
-PORTVERSION=	1.4.7
-PORTREVISION=	2
+PORTVERSION=	1.4.8
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

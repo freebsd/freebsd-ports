@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liece-dcc
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	irc
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 DISTNAME=	liece-${PORTVERSION}
