@@ -22,6 +22,11 @@ NO_CDROM=	Possible copyright infringement
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	253
+ACLOCAL=	aclocal
+
+pre-configure:
+	cd ${WRKDIR}/${DISTNAME} && ${ACLOCAL}
+	cd ${WRKDIR}/${DISTNAME} && touch depcomp
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/${PORTNAME}/score
