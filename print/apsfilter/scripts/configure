@@ -64,7 +64,7 @@ while [ "$1" ]; do
 		echo "PAPERSIZE=a4"
 		;;
 	\"PS\")
-		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript55
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
 		;;
 	\"SAMBA\")
 		echo RUN_DEPENDS+=smbclient:${PORTSDIR}/net/samba
