@@ -1,0 +1,4 @@
+bin/makepasswd
+share/doc/makepasswd/CHANGES
+share/doc/makepasswd/README
+@dirrm share/doc/makepasswd

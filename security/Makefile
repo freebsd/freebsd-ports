@@ -127,6 +127,7 @@
     SUBDIR += lsh
     SUBDIR += lxnb
     SUBDIR += mac-robber
+    SUBDIR += makepasswd
     SUBDIR += mcrypt
     SUBDIR += mdcrack
     SUBDIR += mhash
