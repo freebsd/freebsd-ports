@@ -1,0 +1,22 @@
+share/gnome/gdesklets/Displays/SysInfo/gfx/bg.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/border-left.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/border-right.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/border-top.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/border-topleft.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/gauge-bg.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/gauge.png
+share/gnome/gdesklets/Displays/SysInfo/gfx/gauge_h.png
+share/gnome/gdesklets/Displays/SysInfo/sysinfo.display
+share/gnome/gdesklets/Displays/SysInfo/AUTHORS
+share/gnome/gdesklets/Displays/SysInfo/ChangeLog
+share/gnome/gdesklets/Sensors/SysInfo/__init__.py
+share/gnome/gdesklets/Sensors/SysInfo/gfx/SysInfo.png
+share/gnome/gdesklets/Sensors/SysInfo/gfx/boot.png
+share/gnome/gdesklets/Sensors/SysInfo/gfx/cpu.png
+share/gnome/gdesklets/Sensors/SysInfo/gfx/hdd.png
+share/gnome/gdesklets/Sensors/SysInfo/gfx/memory.png
+share/gnome/gdesklets/Sensors/SysInfo/gfx/network.png
+@dirrm share/gnome/gdesklets/Sensors/SysInfo/gfx
+@dirrm share/gnome/gdesklets/Sensors/SysInfo
+@dirrm share/gnome/gdesklets/Displays/SysInfo/gfx
+@dirrm share/gnome/gdesklets/Displays/SysInfo
