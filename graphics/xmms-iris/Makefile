@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iris
-PORTVERSION=	0.9
+PORTVERSION=	0.10
 CATEGORIES=	graphics
 MASTER_SITES=	http://cdelfosse.free.fr/xmms-iris/
 PKGNAMEPREFIX=	xmms-
@@ -22,5 +22,10 @@ USE_GTK=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
