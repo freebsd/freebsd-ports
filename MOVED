@@ -1218,3 +1218,4 @@ security/lcrzo|net/netwib|2004-08-01|The project has been renamed and port moved
 security/lcrzoex|net/netwox|2004-08-01|The project has been renamed and port moved to better category
 devel/autoconf|devel/autoconf253|2004-08-03|autotools cleanup
 devel/automake|devel/automake15|2004-08-03|autotools cleanup
+mail/balsa2|mail/balsa|2004-08-06|Balsa 2.x has been moved to the balsa port
