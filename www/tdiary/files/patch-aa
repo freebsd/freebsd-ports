@@ -1,0 +1,47 @@
+--- tdiary.rb	Thu Nov 13 15:34:22 2003
++++ tdiary.rb.new	Fri Nov 21 16:11:26 2003
+@@ -1,13 +1,13 @@
+ =begin
+ == NAME
+ tDiary: the "tsukkomi-able" web diary system.
+-tdiary.rb $Revision: 1.156 $
++tdiary.rb $Revision: 1.159 $
+ 
+ Copyright (C) 2001-2003, TADA Tadashi <sho@spc.gr.jp>
+ You can redistribute it and/or modify it under GPL2.
+ =end
+ 
+-TDIARY_VERSION = '1.5.6'
++TDIARY_VERSION = '1.5.6.20031118'
+ 
+ require 'cgi'
+ begin
+@@ -62,10 +62,14 @@
+ module Safe
+ 	def safe( level = 4 )
+ 		result = nil
+-		Thread.start {
+-			$SAFE = level
++		if $SAFE < level then
++			Thread.start {
++				$SAFE = level
++				result = yield
++			}.join
++		else
+ 			result = yield
+-		}.join
++		end
+ 		result
+   end
+   module_function :safe
+@@ -740,7 +744,9 @@
+ 			r = str.dup
+ 			if @options['apply_plugin'] and str.index( '<%' ) then
+ 				r = str.untaint if $SAFE < 3
+-				r = ERbLight.new( r ).result( binding )
++				Safe::safe( @conf.secure ? 4 : 1 ) do
++					r = ERbLight.new( r ).result( binding )
++				end
+ 			end
+ 			r.gsub!( /<.*?>/, '' ) if remove_tag
+ 			r

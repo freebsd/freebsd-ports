@@ -9,6 +9,9 @@ This script should be run manually.
    or
   % ruby %%EXAMPLESDIR%%/tdiaryinst.rb
 
+ * Option: --suexec Use suExec for CGI execution
+	   --help   Display Help information
+
 [Ruby 1.8.x]
 
   # %%EXAMPLESDIR%%/tdiary-FreeBSD.sh User
