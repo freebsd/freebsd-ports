@@ -404,8 +404,8 @@ if [ "$skipstart" = 0 ]; then
     cd ${PORTSDIR}
 
     # Identify the ports that have changed and need to be removed before rebuilding
-    cut -f 1,2,3,8,9 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
-    cut -f 1,2,3,8,9 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
+    cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE}.old | sort > ${INDEXFILE}.old1
+    cut -f 1,2,3,8,9,11,12,13 -d \| ${INDEXFILE} | sort > ${INDEXFILE}.1
     comm -2 -3 ${INDEXFILE}.old1 ${INDEXFILE}.1 | cut -f 1 -d \| > ${pb}/${arch}/${branch}/.oldports
 
     echo "Removing $(wc -l ${pb}/${arch}/${branch}/.oldports) packages in preparation for incremental build"
@@ -417,11 +417,13 @@ if [ "$skipstart" = 0 ]; then
 
     cd ${pb}/${arch}/${branch}/errors/
     sed "s,\$,.log," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
-    find . -name \*.log.bz2 -delete
+    sed "s,\$,.log.bz2," ${pb}/${arch}/${branch}/.oldports | xargs rm -f
+    find . -name \*.log.bz2 | xargs bunzip2 -f
 
     cd ${pb}/${arch}/${branch}/logs/
     sed 's,$,.log,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
     sed 's,$,.log.bz2,' ${pb}/${arch}/${branch}/.oldports | xargs rm -f
+    find . -name \*.log.bz2 | xargs bunzip2 -f
   else
     # need to preserve symlinks for packages
     mv -f packages bak
