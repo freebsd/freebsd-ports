@@ -1,5 +1,5 @@
 *** makefile.orig	Fri May 16 10:53:30 1997
---- makefile	Tue Jun 24 16:53:47 1997
+--- makefile	Tue Dec 16 11:54:05 1997
 ***************
 *** 5,33 ****
   # Where the zlib library and include files are located
@@ -65,7 +65,7 @@
   	$(RANLIB) $@
   
 + libpng.so.${VER}: $(OBJS:S/o$/so/g)
-+ 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz
++ 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
 + 
   pngtest: pngtest.o libpng.a
   	$(CC) -o pngtest $(CCFLAGS) pngtest.o $(LDFLAGS)
