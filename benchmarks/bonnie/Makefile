@@ -17,5 +17,10 @@ MAINTAINER=	se@FreeBSD.org
 MAN1=		bonnie.1
 
 CFLAGS+=	-static
+MAKE_ARGS+=	CFLAGS="${CFLAGS}"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie
+	${INSTALL_DATA} ${WRKSRC}/bonnie.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
