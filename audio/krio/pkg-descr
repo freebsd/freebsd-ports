@@ -1,0 +1,24 @@
+KRio is a KDE graphical interface to the Rio utility developed by The
+Snowblind Alliance, which can be used for uploading and downloading files
+to/from the Diamond Rio, a popular portable MP3 player.
+
+KRio can do the following:
+
+* Upload/download files to/from Diamond Rio
+* List Rio contents
+* Delete files from Rio
+* Initialise Rio
+
+Note that while the Rio Manager software that comes with the player does not
+allow you to upload non-MP3 files or download files from the device, it is
+possible with this utility.   For non-MP3 files, Diamond Rio can be used as
+a portable and robust file storage system.
+
+KRio accesses the hardware directly, therefore it needs to be run as root.
+You also need to know your parallel port's address - standard port addresses
+on PCs are 0x378, 0x3BC and 0x278. 
+
+WWW: http://kyle.13th-floor.org/2.0/krio/index.html
+
+- Alex
+ak@freenet.co.uk
