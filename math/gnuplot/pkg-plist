@@ -19,7 +19,6 @@ share/doc/gnuplot/density.fnc
 share/doc/gnuplot/discrete.dem
 share/doc/gnuplot/electron.dem
 share/doc/gnuplot/fit.dem
-share/doc/gnuplot/fit.log
 share/doc/gnuplot/glass.dat
 share/doc/gnuplot/gnuplot.rot
 share/doc/gnuplot/hemisphr.dat
@@ -47,7 +46,6 @@ share/doc/gnuplot/simple.dem
 share/doc/gnuplot/singulr.dem
 share/doc/gnuplot/sound.par
 share/doc/gnuplot/sound2.par
-share/doc/gnuplot/soundfit.par
 share/doc/gnuplot/soundvel.dat
 share/doc/gnuplot/spline.dem
 share/doc/gnuplot/start.par
