@@ -5,12 +5,14 @@ Currently it supports the following storage containers to read/write
 the login data:
 
 * All databases supported by the PEAR database layer
+* All databases supported by the MDB database layer
 * Plaintext files
 * LDAP servers
 * POP3 servers
 * IMAP servers
 * vpopmail accounts
 * RADIUS
+* SAMBA password files
 * SOAP.
 
-WWW: http://pear.php.net/manual/en/packages.auth.auth.php
+WWW: http://pear.php.net/package-info.php?package=Auth
