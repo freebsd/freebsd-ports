@@ -106,6 +106,7 @@ smokeping/lib/probes/telnetIOSPing.pm
 @exec mkdir -p %D/var/smokeping
 @exec chown smokeping:smokeping %D/var/smokeping
 @unexec rmdir %D/var/smokeping 2>/dev/null || true
+@unexec rmdir %D/var 2>/dev/null || true
 @dirrm smokeping/htdocs
 @dirrm smokeping/lib/probes
 @dirrm smokeping/lib/ISG
