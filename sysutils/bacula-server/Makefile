@@ -7,7 +7,7 @@
 
 PORTNAME=	bacula
 PORTVERSION=	1.36.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL
+ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL MTX
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -151,9 +151,21 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
+.if defined(WITH_CLIENT_ONLY)
+	# In client port only install startup script out of script dir (see below post-install)
+	# Dont mkdir ${PREFIX}/share/bacule cause it's empty
+	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|\(.*$$(MKDIR) $$(DESTDIR)$$(scriptdir)\)|#\1|g' ${WRKSRC}/Makefile.in
+.else
+	# In server port don't install documentation and filed
+	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)doc\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
+.endif
 
 post-install:
 .if defined(WITH_CLIENT_ONLY)
+	# Install start script
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/bacula.sh.sample
 	# Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
@@ -179,6 +191,14 @@ post-install:
 		${MV} ${PREFIX}/etc/gnome-console.conf ${PREFIX}/etc/gnome-console.conf.sample; \
 		${ECHO_CMD} "etc/gnome-console.conf.sample" >> ${TMPPLIST}; \
 	fi
+.endif
+# Documentaion is only installed in -client port
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/html-manual
+	cd ${WRKSRC}/doc && ${FIND} html-manual | \
+		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
 .endif
 .else
 	# Extend /etc/services and install UID/GID
@@ -207,13 +227,6 @@ post-install:
 		fi; \
 	done
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/html-manual
-	cd ${WRKSRC}/doc && ${FIND} html-manual | \
-		${CPIO} -pdm -L -R root:wheel ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/bacula.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
-.endif
 
 # Inform user after install about important things ....
 	@${ECHO_MSG} "*********************************************************************"
