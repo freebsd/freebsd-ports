@@ -7,6 +7,7 @@
 
 PORTNAME=	tomatoes
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +17,8 @@ DISTFILES=	${PORTNAME}-linux-src-${PORTVERSION}5${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tomato-smashing, Q-Bert style
 
+LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
+
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/tomatoes-${PORTVERSION}5
 TDATA=		${WRKDIR}/tomatoes-${PORTVERSION}
@@ -23,12 +26,13 @@ TDATA=		${WRKDIR}/tomatoes-${PORTVERSION}
 USE_X_PREFIX=	yes
 MAKEFILE=	makefile
 USE_GMAKE=	yes
-USE_SDL=	mixer image
+USE_SDL=	mixer image sound
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}/music
 	${INSTALL_DATA} ${TDATA}/config.cfg ${DATADIR}
 	${INSTALL_DATA} ${TDATA}/tomatoes.mpk ${DATADIR}
+	${INSTALL_DATA} ${TDATA}/music/IHaveNoTomatoes.it ${DATADIR}/music
 
 .include <bsd.port.mk>

@@ -56,7 +56,7 @@
 -CFLAGS = -MMD -O3 -march=$(MARCH) -Wall $(SDL_FLAGS)
 -LDFLAGS = `sdl-config --libs` -lSDL_image -lSDL_mixer -lGL -lGLU -s
 +CFLAGS += -MMD -march=$(MARCH) -Wall $(SDL_FLAGS) -I${X11BASE}/include
-+LDFLAGS += `sdl11-config --libs` -L${X11BASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU -s
++LDFLAGS += `sdl11-config --libs` -L${X11BASE}/lib -lSDL_image -lSDL_mixer -lGL -lGLU -s -lSDL_sound
  endif
  endif
  
