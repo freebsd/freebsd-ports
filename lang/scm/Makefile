@@ -7,13 +7,14 @@
 
 PORTNAME=	scm
 PORTVERSION=	5d3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scm/
-DISTFILES=	scm5d3.zip slib2c8.zip slib-psd1-3.tar.gz
+DISTFILES=	scm5d3.zip slib2c9.zip slib-psd1-3.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
-EXTRACT_ONLY=	scm5d3.zip slib2c8.zip
+EXTRACT_ONLY=	scm5d3.zip slib2c9.zip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -43,7 +44,7 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/scm.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/scm.1 ${MANPREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/share/scm
 	${INSTALL_DATA} ${WRKDIR}/require.scm ${PREFIX}/share/scm
 .for file in ${SCM_DATA}
