@@ -161,11 +161,17 @@
 
 # Client codepage settings
 
+# for Greek users
+; client code page=737
+
 # for European users (Latin 1)
 ; client code page=850
 
 # for European users (Latin 2)
 ; client code page=852
+
+# for Icelandic users
+; client code page=861
 
 # for Cyrillic users
 ; client code page=866

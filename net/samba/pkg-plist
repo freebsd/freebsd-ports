@@ -125,8 +125,10 @@ share/examples/samba/README
 etc/rc.d/samba.sh.sample
 etc/smb.conf.default
 etc/codepages/codepage.437
+etc/codepages/codepage.737
 etc/codepages/codepage.850
 etc/codepages/codepage.852
+etc/codepages/codepage.861
 etc/codepages/codepage.866
 etc/codepages/codepage.932
 etc/codepages/codepage.936
