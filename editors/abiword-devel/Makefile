@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -40,8 +39,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv"
 CONFIGURE_ARGS=	--enable-xft
 MAKEFILE=	GNUmakefile
-
-ONLY_FOR_ARCHS=	i386
 
 .include <bsd.port.pre.mk>
 

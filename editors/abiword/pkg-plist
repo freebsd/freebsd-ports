@@ -188,6 +188,9 @@ share/AbiSuite-2.0/templates/A4.awt
 share/AbiSuite-2.0/templates/Business-Report.awt
 share/AbiSuite-2.0/templates/Employee-Directory.awt
 share/AbiSuite-2.0/templates/Fax-Coversheet.awt
+share/AbiSuite-2.0/templates/Memo.awt
+share/AbiSuite-2.0/templates/Press-Release.awt
+share/AbiSuite-2.0/templates/Resume.awt
 share/AbiSuite-2.0/templates/Two-Columns.awt
 share/AbiSuite-2.0/templates/US-Letter.awt
 share/AbiSuite-2.0/templates/normal.awt
