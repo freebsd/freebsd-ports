@@ -4,7 +4,7 @@ PATCH_STRIP=	-p0 -b
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.24 1998/01/26 15:38:22 jseger Exp $
+# $Id: Makefile,v 1.25 1998/01/29 16:04:19 jseger Exp $
 #
 
 DISTNAME=	ImageMagick-4.0
@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
 		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/ \
-		http://hpux.csc.liv.ac.uk/hppd/hpux/X11/Viewers/ImageMagick-3.9.2/
+		http://hpux.csc.liv.ac.uk/hppd/hpux/X11/Viewers/ImageMagick-4.0/
 
 MAINTAINER=	jseger@FreeBSD.org
 
