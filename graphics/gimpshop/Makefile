@@ -7,6 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -84,6 +85,7 @@ CONFIGURE_ARGS+=	--enable-mp
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
+CONFIGURE_ENV+=		GIMP_THREAD_LIBS=${PTHREAD_LIBS}
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
 GNOME_ENABLED=		yes

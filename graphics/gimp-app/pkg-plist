@@ -1175,7 +1175,6 @@ share/gimp/misc/gimp.keys
 %%GNOMEPANEL:%%share/gnome/applications/gimp-2.2.desktop
 %%GNOMEPANEL:%%@exec update-desktop-database > /dev/null || /usr/bin/true
 %%GNOMEPANEL:%%share/gnome/mime-info/gimp-2.2.keys
-%%GNOMEPANEL:%%share/gnome/pixmaps/gnome-gimp.png
 share/gimp/palettes/Bears.gpl
 share/gimp/palettes/Bgold.gpl
 share/gimp/palettes/Blues.gpl
