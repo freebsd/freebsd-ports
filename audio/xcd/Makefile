@@ -3,16 +3,16 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1997/04/20 13:18:45 wosch Exp $
+# $Id: Makefile,v 1.17 1997/06/01 22:54:12 jmz Exp $
 #
 
 DISTNAME=	xcd-1.6
-CATEGORIES=	audio tk41
+CATEGORIES=	audio tk80
 MASTER_SITES=	ftp://ftp.obs-besancon.fr/pub/outgoing/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-RUN_DEPENDS=    wish4.1:${PORTSDIR}/x11/tk41
+RUN_DEPENDS=    wish8.0:${PORTSDIR}/x11/tk80
 
 WRKSRC=		${WRKDIR}/xcd
 MAN1=		cdplayer.1 xcd.1
