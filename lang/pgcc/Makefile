@@ -3,7 +3,7 @@
 # Date created:		Mi 18 Dez 1996 00:26:20 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1997/10/04 14:53:09 andreas Exp $
+# $Id: Makefile,v 1.8 1997/10/17 05:30:26 andreas Exp $
 #
 
 DISTNAME=	gcc-2.7.2
@@ -27,6 +27,7 @@ PATCHFILES=	egcs-970924-pgcc-970924.diff.gz \
 
 FETCH_DEPENDS=	${PREFIX}/bin/autoconf:${PORTSDIR}/devel/autoconf
 
+BROKEN=		"problems during patch, PLIST needs closer look"
 WRKSRC=		${WRKDIR}/egcs-970924
 PATCH=		patch -p1
 HAS_CONFIGURE=	yes
