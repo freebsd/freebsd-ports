@@ -36,8 +36,9 @@ CRYPTOLIBS+=	-lRSAglue -lrsaref
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 .if ${OSVERSION} < 400014
-MAKE_ENV+=	USE_INET6=yes
 MAKE_ENV+=	COMPAT_GETADDRINFO=yes
+.else
+MAKE_ENV+=	USE_INET6=yes
 .endif
 .if !exists(/usr/include/tcpd.h)
 MAKE_ENV+=	TCP_WRAPPERS=no
