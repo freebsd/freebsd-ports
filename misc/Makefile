@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.182 1998/12/30 05:00:20 obrien Exp $
+# $Id: Makefile,v 1.183 1999/01/07 12:05:27 asami Exp $
 #
 
     SUBDIR += 221upgrade
@@ -55,6 +55,7 @@
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Search
+    SUBDIR += pdmenu
     SUBDIR += qclock
     SUBDIR += rc5des
     SUBDIR += rpm
