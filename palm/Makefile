@@ -10,7 +10,6 @@
     SUBDIR += isilo
     SUBDIR += jfconv
     SUBDIR += jpilot
-    SUBDIR += kpilot
     SUBDIR += malsync
     SUBDIR += mdbconv
     SUBDIR += p5-Palm
