@@ -24,9 +24,11 @@ LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
+USE_BZIP2=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
-USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
 
@@ -35,17 +37,29 @@ CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
 			--with-stroke-includes=${LOCALBASE}/include
 .endif
 
+.if defined(WITHOUT_SESSION_MGMT)
+CONFIGURE_ARGS+=	--disable-sm
+.endif
+
+.if defined(WITHOUT_SHAPE)
+CONFIGURE_ARGS+=	--disable-shape
+.endif
+
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.include <bsd.port.pre.mk>
-
 .if ${HAVE_GNOME:Mimlib}!=""
-USE_GNOME+=	imlib
+USE_GNOME=	imlib
 PKGNAMESUFFIX=	-imlib
-PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
-.else
-CONFIGURE_ARGS+=	--without-gnome
+CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints \
+			--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
+PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
+PLIST_SUB+=	GTK=""
+.else
+CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints \
+			--disable-gtktest --disable-imlibtest
+PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
+PLIST_SUB+=	GTK="@comment not installed: "
 .endif
 
 MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
@@ -55,8 +69,8 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmSave.1 FvwmSaveDesk.1 FvwmScript.1 FvwmScroll.1 FvwmTaskBar.1 \
 	FvwmTheme.1 FvwmWharf.1 FvwmWinList.1 fvwm-menu-desktop.1 \
 	fvwm-menu-directory.1 fvwm-menu-headlines.1 fvwm-menu-xlock.1 \
-	fvwm2.1 xpmroot.1 fvwm-config.1 fvwm-root.1 fvwm-bug.1 \
-	fvwm.1 fvwm-convert-2.2.1 fvwm-convert-2.4.1 fvwm-convert-2.6.1 \
+	fvwm.1 fvwm-root.1 fvwm-config.1 fvwm-bug.1 \
+	fvwm-convert-2.2.1 fvwm-convert-2.4.1 fvwm-convert-2.6.1 \
 	FvwmPerl.1 fvwm-perllib.1
 
 post-extract:
