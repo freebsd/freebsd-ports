@@ -1,0 +1,11 @@
+--- configurer.c.orig	Wed Dec 27 11:52:15 2000
++++ configurer.c	Sun Jan  7 19:34:59 2001
+@@ -130,7 +130,7 @@
+ #else
+   char *s;
+ #define SCRIBACONF "SCRIBACONF"
+-#define DEFAULTCONF "/etc/scriba/basic.conf"
++#define DEFAULTCONF "%%PREFIX%%/etc/scriba/basic.conf"
+ 
+   s = getenv(SCRIBACONF);
+ 

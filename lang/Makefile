@@ -114,6 +114,7 @@
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
+    SUBDIR += scriba
     SUBDIR += siod
     SUBDIR += slib
     SUBDIR += smalleiffel

@@ -1,0 +1,23 @@
+bin/scriba
+etc/scriba/basic.conf
+include/scriba/bdb.bas
+include/scriba/cgi.bas
+include/scriba/error.bas
+include/scriba/gd.bas
+include/scriba/hash.bas
+include/scriba/heb.bas
+include/scriba/heber.bas
+include/scriba/md5.bas
+include/scriba/mysql.bas
+include/scriba/re.bas
+include/scriba/test.bas
+include/scriba/time.bas
+include/scriba/trial.bas
+include/scriba/zlib.bas
+lib/scriba/basicc.a
+lib/scriba/cgi.so
+lib/scriba/hash.so
+lib/scriba/re.so
+@dirrm etc/scriba
+@dirrm include/scriba
+@dirrm lib/scriba

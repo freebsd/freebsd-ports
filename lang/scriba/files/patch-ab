@@ -1,0 +1,11 @@
+--- variations/standard/basiccmd.c.orig	Sun Jan  7 19:39:44 2001
++++ variations/standard/basiccmd.c	Sun Jan  7 19:35:07 2001
+@@ -186,7 +186,7 @@
+             "WINNT\\SCRIBA.INI",
+ #else
+             "SCRIBACONF",
+-            "/etc/scriba/basic.conf",
++            "%%PREFIX%%/etc/scriba/basic.conf",
+ #endif
+             pszForcedConfigurationFileName);
+ 
