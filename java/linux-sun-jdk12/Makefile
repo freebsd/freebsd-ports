@@ -27,7 +27,7 @@ LATEST_LINK=	linux-sun-jdk12
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.2.2.017
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
