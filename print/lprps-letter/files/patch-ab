@@ -1,5 +1,5 @@
---- lprps.c.orig	Mon Feb 22 04:46:10 1993
-+++ lprps.c	Wed Jan 29 05:02:14 1997
+--- lprps.c.orig	Mon Feb 22 06:46:10 1993
++++ lprps.c	Sat Jun 19 17:55:56 1999
 @@ -17,6 +17,10 @@
  #include <syslog.h>
  #include <errno.h>
@@ -26,21 +26,8 @@
  
  #define EXIT_SUCCESS 0
  #define EXIT_REPRINT 1
-@@ -136,7 +146,7 @@
- void restore_status_file();
- void handle_printer_error();
- char *xmalloc();
--char *strsignal();
-+const char *strsignal();
- 
- 
- void handle_timeout()
-@@ -343,10 +353,12 @@
-   exit(exit_code);
- }
- 
--char *strsignal(n)
-+const char *strsignal(n)
+@@ -346,7 +356,9 @@
+ char *strsignal(n)
  int n;
  {
 +# if !(defined(BSD) && (BSD >= 199103))
