@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	dancer-services
-PORTVERSION=	1.8.0.6.8
-PORTREVISION=	2
+PORTVERSION=	1.8.0.6.9
 CATEGORIES=	irc
-MASTER_SITES=	http://www.doc.ic.ac.uk/~aps100/dancer/%SUBDIR%/
+MASTER_SITES=	http://source.freenode.net/~asuffield/dancer/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/m/+maint/}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
+
+BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -33,6 +33,12 @@ post-patch:
 	${REINPLACE_CMD} 's:@@prefix@@:${PREFIX}:g' \
 		${WRKSRC}/bin/services.conf \
 		${WRKSRC}/bin/settings.conf.in
+
+pre-configure:
+	cd ${WRKSRC}; ./autogen.sh
+
+pre-build:
+	cd ${WRKSRC}; ${MAKE} depend
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/dancer-services
@@ -66,8 +72,8 @@ post-install:
 	${SED} -e "s,/usr/local/,${PREFIX}/,g" ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for f in README* TODO doc/*
-	${CP} -R ${WRKSRC}/${f} ${DOCSDIR}/
+.for f in ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
