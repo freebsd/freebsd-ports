@@ -8,15 +8,3 @@
  
  extern char *ssl_log_file; 
  extern char *ssl_cert_file; 
---- lib/libtelnet/Makefile.orig	Sat Aug  2 13:31:37 1997
-+++ lib/libtelnet/Makefile	Wed Sep  2 13:16:15 1998
-@@ -12,8 +12,7 @@
- #CFLAGS= -DENCRYPT -DAUTHENTICATE -DSRA -DUSE_SSL -DDES_ENCRYPTION \
- #-I../libbsd/include -I../libpk
- 
--CFLAGS= -DAUTHENTICATE -DUSE_SSL \
---I../libbsd/include -I$(SSLTOP)/include -I../libpk -g
-+CFLAGS+= -DAUTHENTICATE -DUSE_SSL -I$(SSLTOP)/include -I../libbsd/include
- 
- lib${LIB}.a: ${OBJS}
- 	echo building standard ${LIB} library 

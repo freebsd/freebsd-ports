@@ -1,0 +1,13 @@
+--- lib/libtelnet/Makefile.orig	Sat Aug  2 14:31:37 1997
++++ lib/libtelnet/Makefile	Thu Aug  5 03:52:45 1999
+@@ -12,8 +12,8 @@
+ #CFLAGS= -DENCRYPT -DAUTHENTICATE -DSRA -DUSE_SSL -DDES_ENCRYPTION \
+ #-I../libbsd/include -I../libpk
+ 
+-CFLAGS= -DAUTHENTICATE -DUSE_SSL \
+--I../libbsd/include -I$(SSLTOP)/include -I../libpk -g
++CFLAGS+= -DAUTHENTICATE -DUSE_SSL -I$(SSLTOP)/include \
++	 -I$(SSLTOP)/include/openssl -I../libbsd/include
+ 
+ lib${LIB}.a: ${OBJS}
+ 	echo building standard ${LIB} library 
