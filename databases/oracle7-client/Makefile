@@ -17,6 +17,8 @@ DISTNAME=	oracle7.client.OCI
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Oracle 7 client
 
+IGNORE=         "Uses unregistered uid that conflicts with rdfdb"
+
 ORACLE_PREFIX=	oracle7
 DIST_SUBDIR=	${ORACLE_PREFIX}
 WRKSRC=		${WRKDIR}/${ORACLE_PREFIX}

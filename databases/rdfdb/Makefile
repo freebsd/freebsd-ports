@@ -15,6 +15,8 @@ DISTNAME=	rdfdb_src
 MAINTAINER=	pjenvey@turntables.org
 COMMENT=	A lightweight RDF database
 
+IGNORE=		"Uses unregistered uid that conflicts with oracle7-client"
+
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 WRKSRC=	${WRKDIR}/rdfdb
