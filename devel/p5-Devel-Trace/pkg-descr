@@ -1,0 +1,5 @@
+If you run your program with perl -d:Trace program, this module will print a
+message to standard error just before each line is executed. For example, if
+your program looks like this:
+
+WWW: http://search.cpan.org/dist/Devel-Trace/
