@@ -4,7 +4,7 @@ GKrellM - GNU (or Gtk) Krell Monitors (or Meters)
 
 Author:	Bill Wilson
 Email:  bill@gkrellm.net
-WWW:    http://gkrellm.net/
+WWW:    http://gkrellm.net
 
 Copyright (c) 1999-2000 by Bill Wilson.  This program is free software
 which I release under the GNU General Public License.
@@ -24,10 +24,12 @@ GKrellM Features
 	* Internet monitor that displays current and charts historical port hits.
 	* Memory and swap space usage meters and a system uptime monitor.
 	* File system meters show capacity/free space and can mount/umount.
-	* A mailbox monitor which can launch mail reader, remote mail fetch.
+	* A mbox/maildir/MH/POP3/IMAP mail monitor which can launch a mail reader
+	  or remote mail fetch program.
 	* Clock/calendar and hostname display.
 	* APM laptop battery monitor.
-	* CPU/motherboard temperature display if lm_sensors modules installed.
+	* CPU/motherboard temperature/fan/voltages display if lm_sensors modules
+	  installed.
 
 	* Multiple monitors managed by a single process to reduce system load.
 	* A timer button that can execute PPP or ISDN logon/logoff scripts.
@@ -38,7 +40,7 @@ GKrellM Features
 	  is used for CPU sys time, disk write, load, and net transmit data.
 	* Commands can be configured to run when monitor labels are clicked.
 	* GKrellM is plugin capable so special interest monitors can be created.
-	* A different theme can be created with the GIMP.
+	* Many themes are available.
 
 
 - Hajimu UMEMOTO <ume@FreeBSD.org>
