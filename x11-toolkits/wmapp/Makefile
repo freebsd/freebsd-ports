@@ -34,5 +34,14 @@ do-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm include/wmapp" >> ${TMPPLIST}
 	${INSTALL_DATA} ${WRKSRC}/libwmapp.a ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in FAQ.txt README Widgets.txt
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	@${FIND} ${DOCSDIR} -type f | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
