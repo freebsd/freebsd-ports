@@ -20,6 +20,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
+USE_AUTOCONF=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -61,6 +62,5 @@ do-fetch:
 
 pre-configure:
 	@cd ${WRKSRC} && ./make_configure
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/preconfigure-patch
 
 .include <bsd.port.post.mk>
