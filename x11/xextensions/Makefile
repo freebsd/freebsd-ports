@@ -7,12 +7,14 @@
 
 PORTNAME=	xextensions
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11 extension headers
+
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
 
 CONFLICTS=	XFree86-libraries-*
 
