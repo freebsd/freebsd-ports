@@ -8,7 +8,7 @@
 PORTNAME=	jit
 PORTVERSION=	1.1.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.jabber.ru/files/jit/
+MASTER_SITES=	http://www.penza-gsm.ru/snake/xmpp/
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	alexander.timoshenko@gmail.com
