@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.r4
+PORTVERSION=	3.0.r7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 		${US_MASTER_SITES} ${JAPAN_MASTER_SITES} \
@@ -32,7 +32,11 @@ MAINTAINER=	clefevre@poboxes.com
 
 HAS_CONFIGURE=	yes
 
-PLIST_SUB=	PKGBASE="${PKGBASE}"
+PLIST_SUB=	DATA_DIR="${DATA_DIR}" RCD_SUBDIR="${RCD_SUBDIR}" \
+		CONF_SUBDIR="${CONF_SUBDIR}" SAMP_SUBDIR="${SAMP_SUBDIR}" \
+		BIN_SUBDIR="${BIN_SUBDIR}" INC_SUBDIR="${INC_SUBDIR}" \
+		LIB_SUBDIR="${LIB_SUBDIR}" DOC_SUBDIR="${DOC_SUBDIR}" \
+		SAMP_SUFFIX="${SAMP_SUFFIX}"
 
 MAN3=		dhcpctl.3 omapi.3
 MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \
@@ -96,27 +100,32 @@ RELEASE=	${PORTVERSION}
 
 PATCH_SUBDIRS=	common minires dst omapip server client relay dhcpctl
 
+SAMP_SUFFIX=	.sample
+
 BIN_FILES=	dhclient dhcpd dhcrelay
+CONF_FILES=	dhclient.conf
 SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
-RCD_FILES=	isc-dhcpd.sh.sample
+RCD_FILES=	isc-dhcpd.sh${SAMP_SUFFIX}
 DOC_FILES=	CHANGES COPYRIGHT README RELNOTES
 DATA_FILES=	dhclient.leases dhcpd.leases
-CONF_FILES=	dhclient.conf
 
-BIN_DIR=	${PREFIX}/sbin
-ETC_DIR=	${PREFIX}/etc
-RCD_DIR=	${PREFIX}/etc/rc.d
-DOC_DIR=	${PREFIX}/share/doc/${PKGBASE}
-VARDB_DIR=	/var/db
-VARRUN_DIR=	/var/run
+BIN_SUBDIR=	sbin
+CONF_SUBDIR=	etc
+SAMP_SUBDIR=	${CONF_SUBDIR}
+RCD_SUBDIR=	etc/rc.d
+INC_SUBDIR=	include
+LIB_SUBDIR=	lib
+DOC_SUBDIR=	share/doc/${PKGBASE}
+DATA_DIR=	/var/db
 
-STRIP?=		strip
+STRIP_CMD?=	strip
 
 #
 # Post-patch
 #
 
-post-patch: patch-scripts patch-makefile-conf patch-makefiles-dist
+post-patch: patch-scripts patch-makefile-conf patch-makefiles-dist \
+	    patch-man-pages
 
 patch-scripts:
 	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' \
@@ -132,6 +141,11 @@ patch-makefiles-dist:
 		${WRKSRC}/${subdir}/Makefile.dist
 .endfor
 
+# temporary hack - no patch file needed for this typo.
+# grrr! don't know how to delete lines in perl :(
+patch-man-pages:
+	@${PERL} -pi.fbsd -e 's/^\.Fd$$//' ${WRKSRC}/dhcpctl/dhcpctl.3
+
 #
 # Post-install
 #
@@ -142,40 +156,41 @@ post-install: strip-binary-files install-startup-files \
 
 strip-binary-files:
 .for file in ${BIN_FILES}
-.if exists({BIN_DIR}/${file})
-	@${STRIP} ${BIN_DIR}/${file}
+.if exists(${PREFIX}/${BIN_SUBDIR}/${file})
+	@${STRIP_CMD} ${PREFIX}/${BIN_SUBDIR}/${file}
 .endif
 .endfor
 
 install-startup-files:
 .for file in ${RCD_FILES}
-	@${INSTALL_SCRIPT} ${FILESDIR}/${file} ${RCD_DIR}/${file}
+	@${INSTALL_SCRIPT} ${FILESDIR}/${file} ${PREFIX}/${RCD_SUBDIR}
 .endfor
 
 install-doc-files:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOC_DIR}
+	@${MKDIR} ${PREFIX}/${DOC_SUBDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOC_DIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${DOC_SUBDIR}
 .endfor
 .endif
 
 install-sample-files:
 .for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${ETC_DIR}/${file:T}.sample
+	@${INSTALL_DATA} ${WRKSRC}/${file} \
+		${PREFIX}/${SAMP_SUBDIR}/${file:T}${SAMP_SUFFIX}
 .endfor
 
 create-data-files:
 .for file in ${DATA_FILES}
-.if !exists(${VARDB_DIR}/${file})
-	@${TOUCH} ${VARDB_DIR}/${file}
+.if !exists(${DATA_DIR}/${file})
+	@${TOUCH} ${DATA_DIR}/${file}
 .endif
 .endfor
 
 create-conf-files:
 .for file in ${CONF_FILES}
-.if !exists(${ETC_DIR}/${file})
-	@${TOUCH} ${ETC_DIR}/${file}
+.if !exists(${PREFIX}/${CONF_SUBDIR}/${file})
+	@${TOUCH} ${PREFIX}/${CONF_SUBDIR}/${file}
 .endif
 .endfor
 
