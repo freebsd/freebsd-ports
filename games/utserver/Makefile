@@ -7,17 +7,10 @@
 
 PORTNAME=	utserver
 PORTVERSION=	436
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games linux
-MASTER_SITES=	ftp://utservers:idspispopd@ftp.lokigames.com/ \
-		http://arcadia.inf.udec.cl/ftp/pub/linux/ut-server/ \
-		http://ucc.sobservers.com/ \
-		http://game.dkm.cz/downloads/files/Unreal%20Tournament/ucc/
-DISTFILES=	ut-server-${PORTVERSION}${EXTRACT_SUFX} \
-		DM-Curse%5D%5B.unr.uz \
-		DM-Deck16%5D%5B.unr.uz \
-		DM-Morbias%5D%5B.unr.uz
-EXTRACT_ONLY=	ut-server-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=	http://files.sobservers.com/UnrealTournament/UTServerOnly/
+DISTNAME=	ut-server-${PORTVERSION}
 
 MAINTAINER=	matuska@wu-wien.ac.at
 
@@ -40,16 +33,6 @@ SORT?=		/usr/bin/sort
 # files which should be installed with executable perms
 EXECUTABLES=	ucc ucc-bin ngStatsUT ngStatsUT.exe ngWorldStats \
 		bgWorldStats ngWorldStats.exe
-
-post-extract:
-.for file in ${DISTFILES:S/${EXTRACT_ONLY}//}
-	@${SETENV} HOME=${WRKDIR} ${WRKSRC}/ucc decompress \
-		${DISTDIR}/${file} >/dev/null
-.endfor
-.for file in ${DISTFILES:S/${EXTRACT_ONLY}//}
-	@${CP} -f "${WRKDIR}/.loki/ut/System/${file:R:S/%5D/]/:S/%5B/[/}" \
-		${WRKSRC}/Maps
-.endfor
 
 pre-patch:
 # remove trailing ^M
