@@ -1,0 +1,11 @@
+--- configure.orig	Thu Feb 10 01:53:13 2000
++++ configure	Thu Feb 10 01:54:54 2000
+@@ -3440,7 +3440,7 @@
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+   
+ 
+-localedir=${datadir}/locale
++localedir=${prefix}/${DATADIRNAME}/locale
+ 
+ 
+ trap '' 1 2 15

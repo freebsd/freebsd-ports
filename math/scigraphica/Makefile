@@ -15,23 +15,16 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python15 \
 		${LOCALBASE}/include/python1.5/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		gtkextra.10:${PORTSDIR}/x11-toolkits/gtkextra \
+LIB_DEPENDS=	gtkextra.10:${PORTSDIR}/x11-toolkits/gtkextra \
 		xml.5:${PORTSDIR}/textproc/libxml
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		python:${PORTSDIR}/lang/python15 \
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python15 \
 		${LOCALBASE}/include/python1.5/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:

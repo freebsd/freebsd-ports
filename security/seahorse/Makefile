@@ -13,17 +13,22 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dave@mu.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
+USE_X_PREFIX=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
 MAN1=		seahorse.1
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/seahorse ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/doc/seahorse.1 ${PREFIX}/man/man1
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|datadir\`/gnome/|datadir\`/|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

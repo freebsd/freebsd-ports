@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		xml.5:${PORTSDIR}/textproc/libxml \
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		glade.4:${PORTSDIR}/devel/libglade \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		gnomeprint.12:${PORTSDIR}/print/gnomeprint \
@@ -25,22 +24,15 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		unicode.0:${PORTSDIR}/devel/libunicode \
 		gtkhtml.4:${PORTSDIR}/www/gtkhtml \
 		ldap.1:${PORTSDIR}/net/openldap \
-		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gpilotd.0:${PORTSDIR}/palm/gnomepilot
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure libical/configure
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-pisock=${LOCALBASE}/pilot
+CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}/pilot
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	VERSION=${PORTVERSION}

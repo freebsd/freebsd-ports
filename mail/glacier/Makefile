@@ -12,13 +12,13 @@ MASTER_SITES=	http://glacier.linuxave.net/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${GTK_CONFIG}
-CONFIGURE_ARGS+=--datadir=${PREFIX}/share
 USE_GMAKE=	yes
+USE_GNOME=	yes
+GNU_CONFIGURE=	yes
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
 
 .include <bsd.port.mk>

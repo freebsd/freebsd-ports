@@ -1,5 +1,6 @@
 lib/%%PYTHON_VERSION%%/site-packages/_appletmodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_cappletmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/_gladegnomemodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gnomemodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gnomeuimodule.so
 lib/%%PYTHON_VERSION%%/site-packages/_gtkxmhtmlmodule.so

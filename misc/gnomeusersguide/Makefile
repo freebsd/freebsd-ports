@@ -14,14 +14,10 @@ DISTNAME=	users-guide-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \

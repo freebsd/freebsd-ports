@@ -2,7 +2,7 @@
 +++ AboutDialog/Makefile	2000/09/04 13:19:53
 @@ -1,8 +1,8 @@
 -INCLUDEFLAGS=`gnome-config --cflags gnome` `gtk-config --cflags` -I.
-+INCLUDEFLAGS=`$(X11BASE)/bin/gnome-config --cflags gnome` `$(X11BASE)/bin/gtk12-config --cflags` -I.
++INCLUDEFLAGS=`$(X11BASE)/bin/gnome-config --cflags gnome` `$(GTK_CONFIG) --cflags` -I.
  
  OBJS=about-dialog.o
  

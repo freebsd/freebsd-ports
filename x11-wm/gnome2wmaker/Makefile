@@ -12,19 +12,11 @@ MASTER_SITES=	http://ulli.linuxbox.com/gnome2wmaker/
 
 MAINTAINER=     reg@FreeBSD.org
 
-BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		wmaker:${PORTSDIR}/x11-wm/windowmaker
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		wmaker:${PORTSDIR}/x11-wm/windowmaker
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--with-gnome=${PREFIX}
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 .include <bsd.port.mk>

@@ -12,8 +12,14 @@ MASTER_SITES=	http://download.sourceforge.net/sonicmail/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
-
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

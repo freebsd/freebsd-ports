@@ -112,8 +112,8 @@ include/gnome--/procbar.h
 include/gnome--/propertybox.h
 include/gnome--/stock.h
 include/gnome--/types.h
-lib/libgnomemm-1.1.so.3
 lib/libgnomemm.a
 lib/libgnomemm.so
+lib/libgnomemm.so.3
 @dirrm include/gnome--/private
 @dirrm include/gnome--

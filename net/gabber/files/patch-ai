@@ -1,3 +1,9 @@
+--- jabberoo/Makefile.am.orig	Wed Sep 13 12:18:07 2000
++++ jabberoo/Makefile.am	Wed Sep 13 12:18:11 2000
+@@ -1,2 +1,2 @@
+ EXTRA_DIST = include
+-SUBDIRS = expat src test 
++SUBDIRS = expat src
 --- jabberoo/Makefile.in.orig	Mon Jul 31 23:38:31 2000
 +++ jabberoo/Makefile.in	Tue Sep 12 15:00:38 2000
 @@ -69,7 +69,7 @@

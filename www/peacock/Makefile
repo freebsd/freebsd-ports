@@ -13,18 +13,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${GTK_CONFIG}"
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \

@@ -1,0 +1,22 @@
+--- docs/C/Makefile.in.orig	Mon Oct  2 00:34:46 2000
++++ docs/C/Makefile.in	Mon Oct  2 00:37:29 2000
+@@ -310,7 +310,6 @@
+ 		$(distdir)/$(applet)-applet/stylesheet-images
+ 
+ install-data-am: index.html
+-	-$(mkinstalldirs) $(DESTDIR)$(docdir)/stylesheet-images
+ 	-cp $(srcdir)/topic.dat $(DESTDIR)$(helpdir)
+ 	-for file in \
+ 		$(applet)-applet/*.html	\
+@@ -318,11 +317,6 @@
+ 		$(srcdir)/*.png; do\
+ 	  basefile=`echo $$file | sed -e 's,^.*/,,'`; \
+ 	  $(INSTALL_DATA) $$file $(DESTDIR)$(docdir)/$$basefile; \
+-	done
+-	-for file in \
+-		$(applet)-applet/stylesheet-images/*.png; do \
+-	  basefile=`echo $$file | sed -e 's,^.*/,,'`; \
+-	  $(INSTALL_DATA) $$file $(DESTDIR)$(docdir)/stylesheet-images/$$basefile; \
+ 	done
+ 
+ $(applet)-applet.ps: $(srcdir)/$(applet)-applet.sgml $(srcdir)/$(applet).sgml

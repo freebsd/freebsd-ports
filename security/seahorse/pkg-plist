@@ -1,1 +1,18 @@
 bin/seahorse
+share/gnome/gnome/apps/Applications/seahorse.desktop
+share/gnome/gnome/help/seahorse/C/seahorse.html
+share/gnome/gnome/help/seahorse/C/topic.dat
+share/gnome/gnome/help/seahorse/ja/seahorse.html
+share/gnome/gnome/help/seahorse/ja/topic.dat
+share/gnome/pixmaps/seahorse/seahorse.png
+share/locale/cs/LC_MESSAGES/seahorse.mo
+share/locale/da/LC_MESSAGES/seahorse.mo
+share/locale/de/LC_MESSAGES/seahorse.mo
+share/locale/fi/LC_MESSAGES/seahorse.mo
+share/locale/fr/LC_MESSAGES/seahorse.mo
+share/locale/ja/LC_MESSAGES/seahorse.mo
+share/locale/sv/LC_MESSAGES/seahorse.mo
+@dirrm share/gnome/pixmaps/seahorse
+@dirrm share/gnome/gnome/help/seahorse/ja
+@dirrm share/gnome/gnome/help/seahorse/C
+@dirrm share/gnome/gnome/help/seahorse

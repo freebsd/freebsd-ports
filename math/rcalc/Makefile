@@ -14,16 +14,15 @@ DISTNAME=	rCalc-${PORTVERSION}
 
 MAINTAINER=	jedgar@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x
-CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
 
 .include <bsd.port.mk>

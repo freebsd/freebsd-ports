@@ -1,0 +1,11 @@
+--- configure.orig	Sun Feb 27 16:05:09 2000
++++ configure	Sun Feb 27 16:05:59 2000
+@@ -1333,7 +1333,7 @@
+ echo "configure:1334: checking for Gnome compile flags" >&5
+   GNOME_CFLAGS=`$gnomepath gnomeui --cflags 2>/dev/null`
+   GNOME_VER=`$gnomepath --version |$sedpath 's/gnome-libs //'`
+-  GNOME_MINOR=`echo $GNOME_VER |$sedpath 's/\([0-9]**\).\([0-9]**\).\([0-9]**\)/\2/'`
++  GNOME_MINOR=`echo $GNOME_VER |$sedpath 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\2/'`
+ 
+   if test "_$GNOME_MINOR" = "_20"; then
+     gnome=no
