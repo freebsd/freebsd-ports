@@ -6,6 +6,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.99.13
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pygtk/1.99
@@ -28,6 +29,19 @@ USE_LIBTOOL=	yes
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
+
+#
+# Use the same way as the Python port to determine if we want
+# threading support.
+#
+LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
+.if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--enable-thread
+CFLAGS+=		${PTHREAD_CFLAGS}
+CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
+.else
+CONFIGURE_ARGS+=	--disable-thread
+.endif
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-build:
