@@ -3,7 +3,7 @@
 # Date created:         Apr 20 1999
 # Whom:                 cjh@kr.freebsd.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/25 22:14:20 kuriyama Exp $
 #
 
 DISTNAME=	linux_locale-ko-1.0
@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
 MAINTAINER=	cjh@kr.freebsd.org
 
-BUILD_DEPENDS=  ${PREFIX}/usr/share/locale/ko:${PORTSDIR}/emulators/linux_lib
-RUN_DEPENDS=	${PREFIX}/usr/share/locale/ko:${PORTSDIR}/emulators/linux_lib
+BUILD_DEPENDS=  ${PREFIX}/usr/share/locale/ko:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	${PREFIX}/usr/share/locale/ko:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 

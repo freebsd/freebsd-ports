@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1998
 # Whom:                 msmith
 #
-# $Id: Makefile,v 1.9 1999/02/11 19:32:19 msmith Exp $
+# $Id: Makefile,v 1.10 1999/07/09 23:01:42 billf Exp $
 #
 
 DISTNAME=       linux
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=     msmith@FreeBSD.ORG
 
-RUN_DEPENDS=    /compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=    /compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"License prohibits redistribution"

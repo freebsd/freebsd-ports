@@ -3,7 +3,7 @@
 # Date created:         Mon Dec  9 09:42:37 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.8 1999/01/15 03:01:36 jmz Exp $
+# $Id: Makefile,v 1.9 1999/01/18 08:44:45 asami Exp $
 #
 
 DISTNAME=	doom-1.8
@@ -15,8 +15,8 @@ DISTFILES=	linux-doom-1.8.tar.gz musserver.tgz smooth-joystick4doom.tgz
 
 MAINTAINER=	erich@FreeBSD.org
 
-BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
-RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes

@@ -3,7 +3,7 @@
 # Date created:		12 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 03:51:44 steve Exp $
+# $Id: Makefile,v 1.2 1999/01/07 02:31:44 simokawa Exp $
 #
 
 DISTNAME=	ETHLinuxOberon
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jhicks@glenatl.glenayre.com
 
 # XXX - how to fix the following?
-RUN_DEPENDS=	/compat/linux/lib/libc.so.5.4.23:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	licensing

@@ -5,7 +5,7 @@
 #					msmith@freebsd.org
 # Relevant URLs:			http://www.corel.com/
 #
-# $Id: Makefile,v 1.3 1999/01/07 02:31:39 simokawa Exp $
+# $Id: Makefile,v 1.4 1999/02/03 11:11:42 asami Exp $
 
 DISTNAME=	GUILG00
 PKGNAME=	wordperfect-8.0
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.GZ
 
 MAINTAINER=	msmith@freebsd.org
 
-RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"LIC: redistribution not allowed"

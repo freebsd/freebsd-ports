@@ -3,7 +3,7 @@
 # Date created:         Thu Jun 11 22:38:52 PDT 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1998/11/21 07:27:35 steve Exp $
+# $Id: Makefile,v 1.4 1999/01/07 02:31:42 simokawa Exp $
 #
 
 DISTNAME=	netshow_linux
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.gz
 
 MAINTAINER=	dburr@FreeBSD.ORG
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"Commercial software"

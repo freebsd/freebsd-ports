@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 27 09:15:10 CST 1996
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.5 1998/08/05 09:31:29 asami Exp $
+# $Id: Makefile,v 1.6 1999/01/07 02:31:45 simokawa Exp $
 #
 
 DISTNAME=	Wingz-142
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MANINAINER=	erich@FreeBSD.org
 
-RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 

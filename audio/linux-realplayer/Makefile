@@ -3,7 +3,7 @@
 # Date created:        31 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.2 1999/03/11 11:52:41 kris Exp $
+# $Id: Makefile,v 1.3 1999/06/07 12:03:37 kris Exp $
 #
 
 DISTNAME=	rv50_linux20
@@ -13,7 +13,7 @@ MASTER_SITES=	"Fetch must be performed manually"
 
 MAINTAINER=	kris@FreeBSD.ORG
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS= i386
 NO_CDROM=       "Redistribution not allowed"

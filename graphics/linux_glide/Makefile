@@ -3,7 +3,7 @@
 # Date created:         Oct, 8, 1998
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.3 1999/01/06 04:27:52 simokawa Exp $
+# $Id: Makefile,v 1.4 1999/05/02 20:33:07 mharo Exp $
 #
 #
 
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.3dfx.com/pub/glide/
 
 MAINTAINER= 	cracauer@cons.org
 
-RUN_DEPENDS=    /compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386
 
