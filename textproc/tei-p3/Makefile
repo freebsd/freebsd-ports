@@ -12,7 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Vault/GL/
 DISTNAME=	teip3dtd
 
-MAINTAINER=	henrik.motakef@web.de
+MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	DTD of the Text Encoding Initiative
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
