@@ -1751,6 +1751,7 @@ exmh2		ports/mail/exmh2
 expat2		ports/textproc/expat2
 expect		ports/lang/expect
 explosions	ports/misc/explosions
+expocity	ports/x11-wm/expocity
 extace		ports/audio/extace
 extipl		ports/sysutils/extipl
 extract-xiso	ports/emulators/extract-xiso
