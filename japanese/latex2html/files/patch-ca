@@ -1,0 +1,11 @@
+--- prefs.pm.orig	Mon Feb  3 01:44:43 2003
++++ prefs.pm	Mon Feb  3 01:45:37 2003
+@@ -220,7 +220,7 @@
+ # $prefs{'DVIPSOPT'} = ' -E';  # create encapsulated (EPS) images
+ # $prefs{'DVIPSOPT'} = ' -Ppdf'; # use Type 1 fonts, as for PDF
+ # $prefs{'DVIPSOPT'} = ' -Pcmz -Pamz'; # use CM and AMS Type 1 fonts
+-$prefs{'DVIPSOPT'} = ' -Ppdf';
++# $prefs{'DVIPSOPT'} = ' -Ppdf';
+ 
+ # set this to 1 if you want dvips to create special fonts for better
+ # image generation. You need to set the following two items to correct
