@@ -1,36 +1,26 @@
-*** Local.config.orig	Tue Dec 17 04:30:18 1996
---- Local.config	Wed Feb 12 08:32:57 1997
-***************
-*** 25,31 ****
-  #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
-  #endif /* LocalGuru */
-  
-! PREFIX = /usr/local/games
-  
-  /* Manual pages for games usually go to section 6. */
-  MANSUFFIX = 6
---- 25,31 ----
-  #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
-  #endif /* LocalGuru */
-  
-! PREFIX = /usr/X11R6
-  
-  /* Manual pages for games usually go to section 6. */
-  MANSUFFIX = 6
-***************
-*** 91,97 ****
-   * CDEBUGFLAGS should specify optimalization or debug information (or both).
-   * Try not defining anything first.
-   */
-! CDEBUGFLAGS = -g				/* General debug flag */
-  /* CDEBUGFLAGS = -O				/* General optimize flag */
-  /* CDEBUGFLAGS = -Ae +O3 +FPD			/* HP cc optimize flags (no +ESlit) */
-  /* CDEBUGFLAGS = -Ae -g -z +w1			/* HP cc debug flags */
---- 91,97 ----
-   * CDEBUGFLAGS should specify optimalization or debug information (or both).
-   * Try not defining anything first.
-   */
-! /* CDEBUGFLAGS = -g				/* General debug flag */
-  /* CDEBUGFLAGS = -O				/* General optimize flag */
-  /* CDEBUGFLAGS = -Ae +O3 +FPD			/* HP cc optimize flags (no +ESlit) */
-  /* CDEBUGFLAGS = -Ae -g -z +w1			/* HP cc debug flags */
+--- Local.config.orig	Sun Apr  1 14:57:24 2001
++++ Local.config	Sun Apr  8 17:44:02 2001
+@@ -36,12 +36,12 @@
+ #define	LocalGuru xpilot@xpilot.org	/* The one to contact for problems */
+ #endif /* LocalGuru */
+ 
+-PREFIX = /usr/local/games
++PREFIX = /usr/X11R6
+ 
+ /* Manual pages for games usually go to section 6. */
+ MANSUFFIX = 6
+ INSTMANDIR = $(PREFIX)/man/man$(MANSUFFIX)
+-INSTLIBDIR = $(PREFIX)/lib/xpilot
++INSTLIBDIR = $(PREFIX)/share/xpilot
+ INSTBINDIR = $(PREFIX)/bin
+ 
+ /* #define Log		/* Try to log every server start to log file */
+@@ -107,7 +107,7 @@
+  * Try not defining anything first.  You probably want -O for speed.
+  */
+ /* CDEBUGFLAGS = -g				/* General debug flag */
+-CDEBUGFLAGS = -O				/* General optimize flag */
++/* CDEBUGFLAGS = -O				/* General optimize flag */
+ /* CDEBUGFLAGS = -Ae +O3 +FPD			/* HP cc optimize flags (no +ESlit) */
+ /* CDEBUGFLAGS = -Ae -g -z +w1			/* HP cc debug flags */
+ /* CDEBUGFLAGS = -g2 -O2			/* SGI debug */
