@@ -407,11 +407,7 @@ build-mozilla:
 		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
 .endif
 .if defined(USE_GCC)
-.if ${USE_GCC} == 3.1
 	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
-.else
-	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
-.endif
 .else
 	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
 .endif
