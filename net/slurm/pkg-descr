@@ -1,0 +1,8 @@
+slurm started as a port of pppstatus to FreeBSD and now is a generic 
+network load monitor. It shows ASCII graphs for all kinds of 
+network interfaces.
+
+WWW: http://www.raisdorf.net/slurm/
+
+	Michael L. Hostbaek
+	mich@freebsdcluster.org

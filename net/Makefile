@@ -528,6 +528,7 @@
     SUBDIR += sipcalc
     SUBDIR += sleuth
     SUBDIR += slirp
+    SUBDIR += slurm
     SUBDIR += smbfs
     SUBDIR += smm++
     SUBDIR += smokeping

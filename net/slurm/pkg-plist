@@ -1,0 +1,3 @@
+bin/slurm
+%%PORTDOCS%%share/doc/slurm/README
+%%PORTDOCS%%@dirrm share/doc/slurm
