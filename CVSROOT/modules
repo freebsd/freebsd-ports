@@ -3146,6 +3146,7 @@ gtk-industrial-theme	ports/x11-themes/gtk-industrial-theme
 gtk-knocker	ports/security/gtk-knocker
 gtk-lila-theme	ports/x11-themes/gtk-lila-theme
 gtk-lila-theme-extras	ports/x11-themes/gtk-lila-theme-extras
+gtk-longhorninspirat-theme	ports/x11-themes/gtk-longhorninspirat-theme
 gtk-milk-theme	ports/x11-themes/gtk-milk-theme
 gtk-qn-x11-theme	ports/x11-themes/gtk-qn-x11-theme
 gtk-qnxtheme	ports/x11-themes/gtk-qnxtheme
@@ -5598,6 +5599,7 @@ metacity-aluminumalloy-toxic-theme	ports/x11-themes/metacity-aluminumalloy-toxic
 metacity-aluminumalloy-volcanic-theme	ports/x11-themes/metacity-aluminumalloy-volcanic-theme
 metacity-ana-theme	ports/x11-themes/metacity-ana-theme
 metacity-aquaextremesunken-theme	ports/x11-themes/metacity-aquaextremesunken-theme
+metacity-longhorninspirat-theme	ports/x11-themes/metacity-longhorninspirat-theme
 metacity-milk-theme	ports/x11-themes/metacity-milk-theme
 metacity-theme-6nome	ports/x11-themes/metacity-theme-6nome
 metacity-theme-aero	ports/x11-themes/metacity-theme-aero
