@@ -7,7 +7,7 @@
 
 PORTNAME=	xorg-clients
 PORTVERSION=	6.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
 DISTFILES=	X11R6.7.0-src1.tar.gz \
@@ -17,7 +17,7 @@ DISTFILES=	X11R6.7.0-src1.tar.gz \
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client programs and related files from X.Org
 
-BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
+BUILD_DEPENDS=	xterm-static:${PORTSDIR}/x11/xterm
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
@@ -40,6 +40,13 @@ pre-everything::
 .endif
 
 post-install:
+	@${LN} -s ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize
+	@${LN} -s ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm
+	@${LN} -s ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm
+	@${LN} -s ${X11BASE}/lib/X11/app-defaults/UXTerm-static ${X11BASE}/lib/X11/app-defaults/UXTerm
+	@${LN} -s ${X11BASE}/lib/X11/app-defaults/XTerm-static ${X11BASE}/lib/X11/app-defaults/XTerm
+	@${LN} -s ${X11BASE}/lib/X11/app-defaults/XTerm-color-static ${X11BASE}/lib/X11/app-defaults/XTerm-color
+
 .if defined(WITH_SETUID_LUIT)
 	${CHOWN} root:wheel ${PREFIX}/bin/luit
 	${CHMOD} 04711 ${PREFIX}/bin/luit
