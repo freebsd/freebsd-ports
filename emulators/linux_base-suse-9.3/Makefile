@@ -77,7 +77,8 @@ RPM_SET3=		setserial-2.14-4.${ARCH}.rpm \
 			slang-0.99.38-8.${ARCH}.rpm \
 			stat-1.5-8.${ARCH}.rpm \
 			tcsh-6.07.09-1.${ARCH}.rpm \
-			XFree86-libs-3.3.2.3-25.${ARCH}.rpm
+			XFree86-libs-3.3.2.3-25.${ARCH}.rpm \
+			xpm-3.4j-3.${ARCH}.rpm
 
 DBPATH=			/var/lib/rpm
 RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
