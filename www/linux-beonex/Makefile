@@ -50,7 +50,7 @@ do-patch:
 	${ECHO_CMD} "cd ${PREFIX}/lib/linux-beonex/plugins" \
 		>>${WRKDIR}/linkfarm
 .for ii in netscape-linux/plugins flash linux-mozilla/plugins \
-	linux-netscape*/plugins
+	linux-netscape*/plugins linux-flashplugin6
 		${ECHO_CMD} -n "${FIND} ${LOCALBASE}/lib/${ii}/*" \
 			>>${WRKDIR}/linkfarm
 		${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null" \
