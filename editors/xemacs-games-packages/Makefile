@@ -30,7 +30,7 @@ DISTFILES=	\
 		ispell-1.18-pkg.tar.gz      pcl-cvs-1.41-pkg.tar.gz \
 		w3-1.15-pkg.tar.gz          texinfo-1.18-pkg.tar.gz
 
-MAINTAINER=	me@FreeBSD.org
+MAINTAINER=	gj@FreeBSD.org
 
 DIST_SUBDIR=	xemacs
 
