@@ -14,7 +14,7 @@
 +PERL?= perl5
 +RM?= rm -rf
 +INSTALL?= /usr/bin/install
- VERSION = 202
+ VERSION = 203
  
  nkf : nkf.c config.h utf8tbl.o
  	$(CC) $(CFLAGS) -o nkf nkf.c utf8tbl.o
@@ -31,11 +31,3 @@
  clean:
  	-$(RM) nkf.o nkf nkf.in nkf.out nkf$(VERSION) *~ *.bad utf8tbl.o
  	cd NKF.mod; make clean
-@@ -30,6 +38,7 @@
- 	-mkdir nkf$(VERSION)/NKF.mod
- 	for file in  `cat MANIFEST`;  \
- 	do  \
-+
- 	    nkf -j -m0 $$file > nkf$(VERSION)/$$file ; \
- 	done 
- 	echo "#!/bin/sh" >nkf$(VERSION).shar
