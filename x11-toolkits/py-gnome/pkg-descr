@@ -1,0 +1,16 @@
+Gtkmodule and Gtkinter
+======================
+Author: James Henstridge <james@daa.com.au>
+
+This archive contains modules that allow you to use gtk in Python
+programs.  At this point, it is still very much a work in progress.
+Despite the low version number, this peice of software is quite useful,
+and is usable to write moderately complex programs.  (see the examples
+directory for some examples of the simpler programs you could write).
+
+If you have any enhancements or bug reports, please send them to me at
+james@daa.com.au.  If you are going to send me diffs, my prefered
+format is unified diff (ie. diff -u), although context diffs are OK as
+well.  Please don't send me diffs which don't have any context, as these
+are almost useless if I try to apply them manually, or have a different
+version of the source tree.
