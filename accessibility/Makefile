@@ -8,6 +8,7 @@
      SUBDIR += gnomespeech
      SUBDIR += gnopernicus
      SUBDIR += gok
+     SUBDIR += kdeaccessibility
      SUBDIR += linux-atk
 
 .include <bsd.port.subdir.mk>
