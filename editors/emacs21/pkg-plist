@@ -138,6 +138,8 @@ share/emacs/%%EMACS_VER%%/etc/TUTORIAL
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.cs
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.de
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.es
+share/emacs/%%EMACS_VER%%/etc/TUTORIAL.fr
+share/emacs/%%EMACS_VER%%/etc/TUTORIAL.it
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.ja
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.ko
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.nl
@@ -145,7 +147,9 @@ share/emacs/%%EMACS_VER%%/etc/TUTORIAL.pl
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.ro
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.sk
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.sl
+share/emacs/%%EMACS_VER%%/etc/TUTORIAL.sv
 share/emacs/%%EMACS_VER%%/etc/TUTORIAL.th
+share/emacs/%%EMACS_VER%%/etc/TUTORIAL.translators
 share/emacs/%%EMACS_VER%%/etc/WHY-FREE
 share/emacs/%%EMACS_VER%%/etc/Xkeymap.txt
 share/emacs/%%EMACS_VER%%/etc/celibacy.1
@@ -996,8 +1000,12 @@ share/emacs/%%EMACS_VER%%/lisp/international/swedish.el
 share/emacs/%%EMACS_VER%%/lisp/international/swedish.elc
 share/emacs/%%EMACS_VER%%/lisp/international/titdic-cnv.el
 share/emacs/%%EMACS_VER%%/lisp/international/titdic-cnv.elc
+share/emacs/%%EMACS_VER%%/lisp/international/ucs-tables.el
+share/emacs/%%EMACS_VER%%/lisp/international/ucs-tables.elc
 share/emacs/%%EMACS_VER%%/lisp/international/utf-8.el
 share/emacs/%%EMACS_VER%%/lisp/international/utf-8.elc
+share/emacs/%%EMACS_VER%%/lisp/international/utf-16.el
+share/emacs/%%EMACS_VER%%/lisp/international/utf-16.elc
 share/emacs/%%EMACS_VER%%/lisp/isearch.el
 share/emacs/%%EMACS_VER%%/lisp/isearch.elc
 share/emacs/%%EMACS_VER%%/lisp/iswitchb.el
@@ -1231,8 +1239,6 @@ share/emacs/%%EMACS_VER%%/lisp/novice.el
 share/emacs/%%EMACS_VER%%/lisp/novice.elc
 share/emacs/%%EMACS_VER%%/lisp/obsolete/auto-show.el
 share/emacs/%%EMACS_VER%%/lisp/obsolete/auto-show.elc
-share/emacs/%%EMACS_VER%%/lisp/obsolete/c-mode.el
-share/emacs/%%EMACS_VER%%/lisp/obsolete/c-mode.elc
 share/emacs/%%EMACS_VER%%/lisp/obsolete/cplus-md.el
 share/emacs/%%EMACS_VER%%/lisp/obsolete/cplus-md.elc
 share/emacs/%%EMACS_VER%%/lisp/obsolete/hilit19.el
