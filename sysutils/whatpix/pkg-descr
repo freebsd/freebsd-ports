@@ -1,0 +1,11 @@
+whatpix is a GPL Perl console application which finds and optionally moves or
+deletes duplicate files.
+
+whatpix was originally written by codex@bogus.net. The original web site for
+whatpix is http://www.bogus.net/~codex/ You can find versions prior to 1.0
+there.
+
+whatpix is currently being developed and maintained by 3Jane Tessier-Ashpool
+and Gerard Lanois.
+
+WWW: http://whatpix.sourceforge.net/

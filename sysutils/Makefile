@@ -250,6 +250,7 @@
     SUBDIR += vobcopy
     SUBDIR += wait_on
     SUBDIR += webmin
+    SUBDIR += whatpix
     SUBDIR += whowatch
     SUBDIR += wmapm
     SUBDIR += wmapmload
