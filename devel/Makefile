@@ -330,6 +330,7 @@
     SUBDIR += p5-Class-Fields
     SUBDIR += p5-Class-Loader
     SUBDIR += p5-Class-MethodMaker
+    SUBDIR += p5-Class-ObjectTemplate
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tom
     SUBDIR += p5-Config-Ini
