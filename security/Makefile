@@ -87,6 +87,7 @@
     SUBDIR += ruby-acl
     SUBDIR += ruby-tcpwrap
     SUBDIR += saint
+    SUBDIR += scanssh
     SUBDIR += seahorse
     SUBDIR += siphon
     SUBDIR += skip
