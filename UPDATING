@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040615:
+  AFFECTS: users of www/firefox
+
+  The firefox-0.9 update has a special requirement before you can run it.
+  You must first run firefox as root before running it as another user.
+  The best way to do this is to su - to root or log
+  in as root (i.e. do not su -m to root).  After becoming root, simply run
+  ``firefox''.  You can then quit the browser, then run it as any other
+  user.  If you do not run firefox as root first, the browser window will
+  not appear.
+
 20040608:
   AFFECTS: users of net/haproxy
 
