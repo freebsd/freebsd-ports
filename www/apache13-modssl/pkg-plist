@@ -165,10 +165,6 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/bind.html.fr
 %%DOCSDIR%%/bind.html.html
 %%DOCSDIR%%/bind.html.ja.jis
-%%DOCSDIR%%/cgi_path.html.en
-%%DOCSDIR%%/cgi_path.html.fr
-%%DOCSDIR%%/cgi_path.html.html
-%%DOCSDIR%%/cgi_path.html.ja.jis
 %%DOCSDIR%%/configuring.html.fr
 %%DOCSDIR%%/configuring.html.en
 %%DOCSDIR%%/configuring.html.ja.jis
@@ -181,6 +177,7 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/dns-caveats.html.en
 %%DOCSDIR%%/dns-caveats.html.fr
 %%DOCSDIR%%/dns-caveats.html.html
+%%DOCSDIR%%/dns-caveats.html.ja.jis
 %%DOCSDIR%%/dso.html
 %%DOCSDIR%%/ebcdic.html
 %%DOCSDIR%%/env.html.en
@@ -218,6 +215,7 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/install.html.ja.jis
 %%DOCSDIR%%/invoking.html.en
 %%DOCSDIR%%/invoking.html.html
+%%DOCSDIR%%/invoking.html.ja.jis
 %%DOCSDIR%%/keepalive.html.en
 %%DOCSDIR%%/keepalive.html.html
 %%DOCSDIR%%/keepalive.html.ja.jis
@@ -419,7 +417,6 @@ www/data-dist/index.html.zh-tw.big5
 %%DOCSDIR%%/new_features_1_2.html
 %%DOCSDIR%%/new_features_1_3.html.en
 %%DOCSDIR%%/new_features_1_3.html.ja.jis
-%%DOCSDIR%%/new_features_2_0.html
 %%DOCSDIR%%/process-model.html.en
 %%DOCSDIR%%/process-model.html.html
 %%DOCSDIR%%/process-model.html.ja.jis
