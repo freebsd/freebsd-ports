@@ -8,8 +8,7 @@
 PORTNAME=	evolution
 PORTVERSION=	1.0.5
 CATEGORIES=	mail gnome
-MASTER_SITES=	http://people.FreeBSD.org/~marcus/ \
-		${MASTER_SITE_GNOME} \
+MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
 #		${MASTER_SITE_LOCAL:S,$,:local,}
 MASTER_SITE_SUBDIR=	stable/sources/evolution \
