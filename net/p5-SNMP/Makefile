@@ -14,9 +14,7 @@ MASTER_SITE_SUBDIR=	SNMP
 
 MAINTAINER=	jfitz@FreeBSD.org
 
-LIB_DEPENDS= 	snmp.3:${PORTSDIR}/net/ucd-snmp
-
-BROKEN=		'incompatible with the latest version of ucd-snmp'
+LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/ucd-snmp
 
 USE_PERL5=	YES
 
