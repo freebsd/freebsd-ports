@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	listener
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	audio security
 MASTER_SITES=	http://www.vanheusden.com/listener/
 EXTRACT_SUFX=	.tgz
