@@ -184,6 +184,7 @@
     SUBDIR += kdeedu3
     SUBDIR += kdeutils3
     SUBDIR += kenny
+    SUBDIR += koffice-i18n-af
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += lc
