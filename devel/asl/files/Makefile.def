@@ -10,6 +10,8 @@ LDFLAGS = -s
 
 BINDIR = ${PREFIX}/bin
 INCDIR = ${PREFIX}/share/asl
+LIBDIR = ${PREFIX}/share/asl
+DOCDIR =
 
 # -------------------------------------------------------------------------
 # language AS will speak to you
