@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.3 1994/11/26 23:07:02 ats Exp $
+# $Id: Makefile,v 1.4 1994/11/27 03:40:09 asami Exp $
 #
 
 DISTNAME=	mule-2.1
@@ -27,13 +27,13 @@ PREBUILD_COOKIE=	${.CURDIR}/work/.prebuild_done
 
 pre-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
-	@for file in ${PATCHFILES}; do \
-		if [ ! -f ${DISTDIR}/$$file ]; then \
+	@(cd ${DISTDIR}; \
+	 for file in ${PATCHFILES}; do \
+		if [ ! -f $$file ]; then \
 			echo ">> Fetching patch $$file from remote site...";  \
-			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}$$file \
-				&& mv $$file ${DISTDIR}; \
+			${NCFTP} ${NCFTPFLAGS} ${PATCHSITE}$$file; \
 	    	fi \
-	 done
+	 done)
 
 pre-patch:	${PREPATCH_COOKIE}
 
