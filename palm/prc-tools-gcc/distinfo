@@ -1,3 +1,4 @@
 MD5 (prc-tools-2.0.tar.gz) = cd22ec500ebb3ec90fd8a8da53c6e39a
 MD5 (gdb-4.18.tar.bz2) = 081afafc881bad579885011636f53f5d
-MD5 (gcc-2.95.2.tar.bz2) = 7caa851b4a360b6ff027897f455348d5
+MD5 (gcc-core-2.95.2.tar.bz2) = ec486554bc3491f1ebbb3b850c12650a
+MD5 (gcc-g++-2.95.2.tar.bz2) = eaabfb6b09d5f0ada4d7ce45db8b7e52
