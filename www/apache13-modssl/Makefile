@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.4 + 2.2.5
+# Version required:	1.3.6 + 2.2.6
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.24 1999/03/13 17:57:44 billf Exp $
+# $Id: Makefile,v 1.25 1999/03/18 14:19:51 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -46,46 +46,52 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/openssl \
 		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/openssl
 
-VERSION_APACHE=	1.3.4
-VERSION_MODSSL=	2.2.5
+VERSION_APACHE=	1.3.6
+VERSION_MODSSL=	2.2.6
 
 Y2K=		http://www.engelschall.com/sw/mod_ssl/docs/2.2/ssl_faq.html#y2k
 RESTRICTED=	"Contains cryptography"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--target=apache \
 		--with-layout=GNU \
 		--with-perl=${PERL5} \
-		--sysconfdir=${PREFIX}/etc/apache \
-		--includedir=${PREFIX}/include/apache \
-		--logfiledir=/var/log \
-		--runtimedir=/var/run \
-		--datadir=${PREFIX}/www \
-		--proxycachedir=${PREFIX}/www/proxy \
+		--bindir=${PREFIX}/bin \
+		--sbindir=${PREFIX}/sbin \
 		--libexecdir=${PREFIX}/libexec/apache \
+		--mandir=${PREFIX}/man \
+		--sysconfdir=${PREFIX}/etc/apache \
+		--datadir=${PREFIX}/share/apache \
+		--includedir=${PREFIX}/include/apache \
+		--localstatedir=/var \
+		--runtimedir=/var/run \
+		--logfiledir=/var/log \
+		--proxycachedir=/var/spool/apache \
 		--without-confadjust \
 		--enable-module=most \
 		--enable-module=auth_db \
 		--disable-module=auth_dbm \
 		--enable-module=ssl \
+		--enable-module=define \
 		--enable-shared=max
 
-OPTIM=\
--DHARD_SERVER_LIMIT=512 \
--DDOCUMENT_LOCATION=\\"${PREFIX}/www/data/\\" \
--DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
-
+OPTIM=		-DHARD_SERVER_LIMIT=512 \
+		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\"
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-OPTIM+= -DBUFFERED_LOGS -DFD_SETSIZE=1024
-CFLAGS+= -O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer -fexpensive-optimizations -ffast-math
+OPTIM+=		-DBUFFERED_LOGS -DFD_SETSIZE=1024
+CFLAGS+=	-O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 .endif
 
-CONFIGURE_ENV=	OPTIM='${OPTIM}' SSL_BASE='SYSTEM' PATH="${PREFIX}/bin:${PATH}"
+CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
+		OPTIM='${OPTIM}' \
+		SSL_BASE='SYSTEM' \
+		PATH="${PREFIX}/bin:${PATH}"
 
 INSTALL_TARGET=	install-quiet
 
-MAN1=	ab.1 apachectl.1 dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=	apxs.8 httpd.8 logresolve.8 rotatelogs.8
+MAN1=	dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=	ab.8 apachectl.8 apxs.8 apache.8 logresolve.8 rotatelogs.8
 
 TYPE=	test
 CRT=
@@ -109,9 +115,11 @@ post-build:
 certificate:
 	@cd ${WRKSRC} \
 	&& ${ECHO_MSG} "===>  Creating Test Certificate for Server" \
-	&& ${MAKE} certificate TYPE=$(TYPE) CRT=$(CRT) KEY=$(KEY)
+	&& ${MAKE} certificate TYPE=${TYPE} CRT=${CRT} KEY=${KEY}
 
 post-install:
+	@${RM} -f ${PREFIX}/etc/apache/access.conf*
+	@${RM} -f ${PREFIX}/etc/apache/srm.conf*
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/apache.sh; \
