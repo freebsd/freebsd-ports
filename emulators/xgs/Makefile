@@ -11,37 +11,42 @@ PORTNAME=	xgs
 PORTVERSION=	0.50
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.inwards.com/xgs/ \
-		ftp://ftp.apple.asimov.net/pub/apple_II/emulators/rom_images/
-DISTFILES=	xgs050.tgz xgs.rom
+		http://www.inwards.com/xgs/2mg/
+DISTFILES=	xgs050.tgz ROM01.ZIP
+EXTRACT_ONLY=	xgs050.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+
 DIST_SUBDIR=	xgs
-EXTRACT_ONLY=	xgs050.tgz
 RESTRICTED=	"xgs.rom copyright is owned by Apple and cannot be distributed"
 NO_PACKAGE=	${RESTRICTED}
 
 # Source building
 #
-WRKSRC=		${WRKDIR}/xgs
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_XLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-x --datadir='${PREFIX}/libdata'
+CONFIGURE_ARGS=	--with-x
 
 # Directories etc...
 #
+XGS_DIR=	${PREFIX}/share/xgs
 XGS_DOC=	${PREFIX}/share/doc/xgs
-XGS_LIB=	${PREFIX}/libdata/xgs
-DOC_FILES= 	CHANGES.TXT COMPAT.TXT INSTALL.TXT TODO.TXT \
-		IWM-DOC.TXT XGS-FAQ.TXT
+PORTDOCS= 	CHANGES.TXT COMPAT.TXT INSTALL.TXT IWM-DOC.TXT TODO.TXT \
+		XGS-FAQ.TXT
+
+post-extract:
+	unzip -L -qq ${_DISTDIR}/ROM01.ZIP -d ${WRKSRC}
 
 post-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/xgs.rom ${XGS_LIB}
-	${INSTALL_DATA} -m 666 /dev/null ${XGS_LIB}/xgs.ram
+	${INSTALL_DATA} ${WRKSRC}/xgs.rom ${XGS_DIR}
+	${INSTALL_DATA} -m 666 /dev/null ${XGS_DIR}/xgs.ram
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${XGS_DOC}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${XGS_DOC}
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${XGS_DOC}
