@@ -1,0 +1,24 @@
+--- configure.in.orig	Wed Feb  7 09:25:06 2001
++++ configure.in	Tue Oct 16 02:23:14 2001
+@@ -56,7 +56,7 @@
+     JPEGDIR="$DEFAULT_JPEGDIR")
+ 
+ OLDLIBS="$LIBS"
+-LIBS="-L $JPEGDIR $LIBS"
++LIBS="-L $JPEGDIR $LIBS -L$LOCALBASE/lib"
+ AC_SUBST(JPEG_INCLUDE)
+ 
+ AC_CHECK_LIB( jpeg-mmx, jpeg_start_compress,
+@@ -75,10 +75,11 @@
+ dnl If that can't be found fall back to the system jpeg lib...
+ if test ${have_jpeg} = "no"
+ then
++LIBS="$LIBS -L$LOCALBASE/lib"
+ AC_CHECK_LIB( jpeg, jpeg_start_compress,
+              	[	 
+   			   		have_jpeg="yes"
+-					LIBS="$LIBS -ljpeg"
++					LIBS="$LIBS -L$LOCALBASE/lib -ljpeg"
+  		     	],
+              	[
+              		have_jpeg="no"
