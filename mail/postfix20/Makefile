@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -31,7 +31,7 @@ DIST_SUBDIR=	${PORTNAME}
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	postfix-2.0-ns-mx-acl-patch.gz
 
-MAINTAINER=	khera@kciLink.com
+MAINTAINER=	vivek@khera.org
 COMMENT=	A secure alternative to widely-used Sendmail
 
 CONFLICTS=	courier-0.* postfix-1.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
