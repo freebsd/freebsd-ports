@@ -1,0 +1,88 @@
+--- runme-dbcs.orig	Fri Dec  6 03:42:53 2002
++++ runme-dbcs	Fri Dec  6 03:47:10 2002
+@@ -0,0 +1,85 @@
++#!/bin/sh
++
++# Font Generator script by statue@freebsd.sinica.edu.tw
++
++if [ -z $1 ]; then
++  echo "$0: too few parameters"
++  echo "$0: Usage: $0 <BASENAME> <fontsize> <encode>"
++  exit
++fi
++
++if [ ! -r $1.ttf ]; then
++  echo "runme-dbcs: input font file $1.ttf not readable"
++  exit
++fi
++
++subfont_exec=subfont
++#unicode="--unicode"
++#BASENAME="bsmi00lp"
++BASENAME=$1
++SBFONT="arial.ttf"
++#DBFONT="bsmi00lp.ttf"
++DBFONT="$1.ttf"
++SBENC="iso-8859-1"
++DBENC="encodings/$3"
++if [ ! -r $DBENC ]; then
++  echo "runme-dbcs: encodings file $DBENC not readable"
++  exit
++fi
++
++#fontsize=16
++fontsize=$2
++if [ $fontsize = 16 ]; then
++  symbolssize=24
++  blur=0.1
++  outline=1
++elif [ $fontsize = 24 ]; then
++  symbolssize=35
++  blur=2
++  outline=1.5
++else
++  echo "runme-dbcs: input fontsize $fontsize not avaiable"
++  exit
++fi
++
++outdir="--outdir ${BASENAME}${fontsize}"
++if [ ! -e "${BASENAME}${fontsize}" ]; then
++  mkdir -p ${BASENAME}${fontsize}
++fi
++
++if [ ! -x $subfont_exec ]; then
++    echo "runme-dbcs: '$subfont_exec' not found or not executable!"
++    echo "runme-dbcs: trying to compile"
++    make || exit
++    if [ ! -x $subfont_exec ]; then
++        echo "failed"
++        exit
++    fi
++fi
++
++## add single-byte characters (eg, english) first
++echo "runme-dbcs: creating single-byte characters font..."
++./$subfont_exec $outdir $unicode --blur $blur --outline $outline "$SBENC" $fontsize "$SBFONT" || exit
++
++#=======================================================================
++# directory for storing temporary splitted encoding files
++ENCDIR="$BASENAME"
++if [ ! -e "$ENCDIR" ]; then
++  echo "runme-dbcs: split encoding files into smaller parts."
++  mkdir "$ENCDIR"
++  split -l 1024 "$DBENC" "$ENCDIR/$BASENAME"
++fi
++
++## add double-byte characters (eg, chinese)
++# having all characters in one big .raw file does not work.
++# so have to split encoding files into smaller parts.
++echo "runme-dbcs: creating double-byte characters font..."
++for encoding in "$ENCDIR/$BASENAME"*; do
++  ./$subfont_exec $outdir --append $unicode --blur $blur --outline $outline "$encoding" $fontsize "$DBFONT" || exit
++done
++
++## finally add OSD font
++echo "runme-dbcs: creating osd symbols..."
++./$subfont_exec $outdir --append --blur $blur --outline $outline encodings/osd-mplayer $symbolssize osd/osd.pfb || exit
++
++exit
