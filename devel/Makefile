@@ -588,7 +588,6 @@
     SUBDIR += ruby-gettext
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-intl
-    SUBDIR += ruby-lapidary
     SUBDIR += ruby-libglade
     SUBDIR += ruby-libgtop
     SUBDIR += ruby-locale
@@ -609,6 +608,7 @@
     SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
     SUBDIR += ruby-sysvipc
+    SUBDIR += ruby-testunit
     SUBDIR += ruby-textbuf
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-unit
