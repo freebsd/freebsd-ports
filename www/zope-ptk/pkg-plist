@@ -1,6 +1,4 @@
-%%ZOPEBASEDIR%%/lib/python/Products/DemoPortal/__init__.py
-%%ZOPEBASEDIR%%/lib/python/Products/DemoPortal/product.dat
-%%ZOPEBASEDIR%%/lib/python/Products/DemoPortal/version.txt
+%%ZOPEBASEDIR%%/import/DemoPortal.zexp
 %%ZOPEBASEDIR%%/lib/python/Products/PTKBase/DublinCore.py
 %%ZOPEBASEDIR%%/lib/python/Products/PTKBase/MemberFolder.py
 %%ZOPEBASEDIR%%/lib/python/Products/PTKBase/PTKBase.odm
@@ -169,3 +167,7 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PTKBase/UML-HTML
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/PTKBase
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/DemoPortal
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products
+@dirrm %%ZOPEBASEDIR%%/lib/python
+@dirrm %%ZOPEBASEDIR%%/lib
+@dirrm %%ZOPEBASEDIR%%/import
