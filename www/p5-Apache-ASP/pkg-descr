@@ -1,5 +1,3 @@
-From the README file:
-
     This perl module provides an Active Server Pages port to the Apache HTTP
     Server with perl as the host scripting language. Active Server Pages is
     a web application platform that originated with the Microsoft IIS
