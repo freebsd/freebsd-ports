@@ -24,7 +24,7 @@ USE_GLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		X_CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
