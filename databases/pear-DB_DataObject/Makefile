@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	DB_DataObject
-PORTVERSION=	1.7.7
-CATEGORIES=	databases www pear
+PORTVERSION=	1.7.9
+CATEGORIES=	databases pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	An SQL Builder, Object Interface to Database Tables
@@ -29,10 +29,11 @@ OPTIONS=	PEAR_VALIDATE "PEAR::Validate support" off
 post-patch:
 	@${REINPLACE_CMD} -e "s|@version@|${PORTVERSION}|" ${WRKSRC}/DataObject.php
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_PEAR_VALIDATE)
 RUN_DEPENDS+=	${PEARDIR}/Validate.php:${PORTSDIR}/devel/pear-Validate
 .endif
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 .include <bsd.port.post.mk>
