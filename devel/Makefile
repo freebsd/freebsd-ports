@@ -102,6 +102,7 @@
     SUBDIR += doc++
     SUBDIR += dotconf
     SUBDIR += doxygen
+    SUBDIR += ebnf2yacc
     SUBDIR += ecgi
     SUBDIR += elftoaout
     SUBDIR += elib-emacs
