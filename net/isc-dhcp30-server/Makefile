@@ -21,7 +21,8 @@ Y2K=		http://www.isc.org/y2k.html
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-nsupdate
 
-MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-options.5 dhcpd.conf.5 \
+MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \
+		dhcp-eval.5 dhcp-options.5 dhcpd.conf.5 \
 		dhcpd.leases.5
 MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 
