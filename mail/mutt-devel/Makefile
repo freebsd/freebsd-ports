@@ -21,6 +21,15 @@ MAINTAINER=	ust@cert.siemens.de
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 
+.if defined(WITH_COMPRESSED_FOLDERS)
+PATCH_SITES+=	http://www.spinnaker.de/mutt/compressed/
+.endif
+
+.if defined(WITH_VVV_PATCHES)
+PATCH_SITES+=	http://mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
+		ftp://mutt.org.ua/mutt/mutt-${PATCH_VERSION}/
+.endif
+
 .if !defined(PATCH_VERSION)
 PATCH_VERSION=	${PORTVERSION}
 .endif
@@ -75,21 +84,18 @@ CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_COMPRESSED_FOLDERS)
-PATCHFILES=	patch-${PATCH_VERSION}.rr.compressed.1.gz
+PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.1.gz
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES=	http://www.spinnaker.de/mutt/compressed/
 CONFIGURE_ARGS+=	--enable-compressed
 .endif
 
 .if defined(WITH_VVV_PATCHES)
-PATCHFILES=	patch-${PATCH_VERSION}.rr.compressed.gz \
+PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz \
 		patch-${PATCH_VERSION}.vvv.nntp.gz \
 		patch-${PATCH_VERSION}.vvv.initials.gz \
 		patch-${PATCH_VERSION}.vvv.quote.gz \
 		patch-${PATCH_VERSION}.vvv.ru.gz
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES=	http://mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
-		ftp://mutt.org.ua/mutt/mutt-${PATCH_VERSION}/
 CONFIGURE_ARGS+=	--enable-nntp --with-regex --enable-compressed
 .endif
 
