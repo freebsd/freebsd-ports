@@ -228,6 +228,6 @@ lib/libgslblascblas.a
 lib/libgslblascblas.so
 lib/libgslblascblas.so.0
 share/aclocal/gsl.m4
-share/doc/gsl/gsl-ref.ps
+%%PORTDOCS%%share/doc/gsl/gsl-ref.ps
+%%PORTDOCS%%@dirrm share/doc/gsl
 @dirrm include/gsl
-@dirrm share/doc/gsl
