@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -40,7 +40,7 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 # Need INSTALL_TARGET to install /usr/local/etc/portmanager/pm-020.conf.SAMPLE
-INSTALL_TARGET=         install info
+INSTALL_TARGET=		install info
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ;	\
