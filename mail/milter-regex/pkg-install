@@ -1,0 +1,50 @@
+#! /bin/sh
+# $OpenBSD$
+#
+# Pre/post-installation setup of milter-regex
+
+set -e
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+PREFIX=${PKG_PREFIX:-/usr/local}
+
+do_notice()
+{
+  echo
+  echo "+---------------"
+  echo "| milter-regex has been installed as $PREFIX/libexec/milter-regex."
+  echo "| See milter-regex(8) for instructions on how to register the plugin."
+  echo "|"
+  echo "| To start the plugin automatically on startup, one can use:"
+  echo "|"
+  echo "| /etc/rc.conf.local"
+  echo "| milter_regex=YES"
+  echo "|"
+  echo "| /etc/rc.local"
+  echo "| if [ X\"\${milter_regex}\" == X\"YES\" -a \\"
+  echo "|      -x $PREFIX/libexec/milter-regex ]; then"
+  echo "|         echo -n ' milter-regex'"
+  echo "|         $PREFIX/libexec/milter-regex"
+  echo "| fi"
+  echo "|"
+  echo "+---------------"
+  echo
+}
+
+if [ $# -ne 2 ]; then
+    echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+    exit 1
+fi
+
+case $2 in
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	do_notice
+	;;
+    *)
+	echo "usage: $0 distname { PRE-INSTALL | POST-INSTALL }" >&2
+	exit 1
+	;;
+esac
+
+exit 0
