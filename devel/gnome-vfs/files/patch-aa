@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Apr 26 12:27:40 2002
-+++ configure	Fri Apr 26 12:30:02 2002
-@@ -5586,6 +5586,7 @@
+--- configure.orig	Wed May  1 15:08:02 2002
++++ configure	Wed May  1 15:10:42 2002
+@@ -7206,6 +7206,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,40 +8,41 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9131,8 +9132,8 @@
+@@ -11986,8 +11987,8 @@
    done
  fi
  
--echo $ac_n "checking for bzCompressInit in -lbz2""... $ac_c" 1>&6
--echo "configure:9136: checking for bzCompressInit in -lbz2" >&5
-+echo $ac_n "checking for BZ2_bzCompressInit in -lbz2""... $ac_c" 1>&6
-+echo "configure:9136: checking for BZ2_bzCompressInit in -lbz2" >&5
- ac_lib_var=`echo bz2'_'bzCompressInit | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
-@@ -9145,10 +9146,10 @@
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
-     builtin and then its argument prototype would still apply.  */
--char bzCompressInit();
-+char BZ2_bzCompressInit();
- 
- int main() {
--bzCompressInit()
-+BZ2_bzCompressInit()
- ; return 0; }
- EOF
- if { (eval echo configure:9155: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -9421,7 +9422,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+-echo "$as_me:11989: checking for bzCompressInit in -lbz2" >&5
+-echo $ECHO_N "checking for bzCompressInit in -lbz2... $ECHO_C" >&6
++echo "$as_me:11989: checking for BZ2_bzCompressInit in -lbz2" >&5
++echo $ECHO_N "checking for BZ2_bzCompressInit in -lbz2... $ECHO_C" >&6
+ if test "${ac_cv_lib_bz2_bzCompressInit+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   
+@@ -12003,11 +12004,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char bzCompressInit ();
++char BZ2_bzCompressInit ();
+ int
+ main ()
+ {
+-bzCompressInit ();
++BZ2_bzCompressInit ();
+   ;
+   return 0;
+ }
+@@ -12319,7 +12320,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+ 
 -		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcrypto -ldl"
 +		LDFLAGS="$LDFLAGS -L$with_openssl_libs -lssl -lcryptofoo -ldl"
- 		cat > conftest.$ac_ext <<EOF
- #line 9427 "configure"
+ 		cat >conftest.$ac_ext <<_ACEOF
+ #line 12324 "configure"
  #include "confdefs.h"
-@@ -9456,9 +9457,9 @@
+@@ -12370,9 +12371,9 @@
  
  		msg_openssl="yes"
                  if test x$with_openssl_libs != x/usr/lib; then
@@ -54,14 +52,14 @@ $FreeBSD$
 -                	OPENSSL_LIBS="-lssl -lcrypto"
 +                	OPENSSL_LIBS="-lssl -lcryptofoo"
                  fi
- 		
  
-@@ -10059,7 +10060,7 @@
- s%@ORBIT_IDL@%$ORBIT_IDL%g
- s%@BONOBO_IDLDIR@%$BONOBO_IDLDIR%g
- s%@WARN_CFLAGS@%$WARN_CFLAGS%g
--s%@PTHREAD_LIB@%$PTHREAD_LIB%g
-+s%@PTHREAD_LIB@%$BSD_PTHREAD_LIB%g
- s%@GETTEXT_PACKAGE@%$GETTEXT_PACKAGE%g
- s%@ALLOCA@%$ALLOCA%g
- s%@USE_NLS@%$USE_NLS%g
+ if true; then
+@@ -13251,7 +13252,7 @@
+ s,@ORBIT_IDL@,$ORBIT_IDL,;t t
+ s,@BONOBO_IDLDIR@,$BONOBO_IDLDIR,;t t
+ s,@WARN_CFLAGS@,$WARN_CFLAGS,;t t
+-s,@PTHREAD_LIB@,$PTHREAD_LIB,;t t
++s,@PTHREAD_LIB@,$BSD_PTHREAD_LIB,;t t
+ s,@GETTEXT_PACKAGE@,$GETTEXT_PACKAGE,;t t
+ s,@ALLOCA@,$ALLOCA,;t t
+ s,@USE_NLS@,$USE_NLS,;t t

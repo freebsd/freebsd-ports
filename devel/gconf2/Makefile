@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gconf2
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020501
 DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2 \
-		db3.2:${PORTSDIR}/databases/db3 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 
@@ -26,8 +25,8 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-db3-includes=${LOCALBASE}/include \
-		--with-html-dir=${PREFIX}/share/doc \
-		--enable-bdbbackend
+		--with-html-dir=${PREFIX}/share/doc
+#		--enable-bdbbackend
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
