@@ -18,7 +18,7 @@ COMMENT=	A video encoding library
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-.if !defined(WITH_SSE)
+.if defined(WITH_SSE)
 CONFIGURE_ARGS+=	--enable-sse
 .endif
 
@@ -33,7 +33,7 @@ MAN3=	fame_close.3 fame_encode_frame.3 fame_get_object.3 fame_init.3 \
 	fame_start_frame.3 fame_end_frame.3
 
 pre-everything::
-.if !defined(WITHOUT_SSE)
+.if !defined(WITH_SSE)
 	@${ECHO_MSG} " You can enable SSE optimized routines by defining WITH_SSE."
 	@${ECHO_MSG} ""
 .endif
