@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 1997/02/11 04:46:54 obrien Exp $
+# $Id: Makefile,v 1.8 1997/02/16 01:15:53 obrien Exp $
 #
 
     SUBDIR += Wnn
@@ -11,5 +11,7 @@
     SUBDIR += gbscript
     SUBDIR += hc
     SUBDIR += lunar
+    SUBDIR += nvi-big5
+    SUBDIR += nvi-euc-cn
 
 .include <bsd.port.subdir.mk>
