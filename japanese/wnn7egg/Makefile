@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	wnn7egg
-PORTVERSION=	1.00
-PORTREVISION=	1
+PORTVERSION=	1.01
+#PORTREVISION=	1
 CATEGORIES=	japanese elisp
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	taoka
-DISTNAME=	ja-wnn7-elisp-1.00_1
+MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/client/lisp/
+DISTNAME=	wnn7-elisp-1.01-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	taoka@FreeBSD.org
@@ -22,7 +21,7 @@ SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
 XELISPDIR=	${SITEPKGDIR}/lisp/wnn7egg
 DOCDIR=		${PREFIX}/share/doc/wnn7egg
 MANIFEST=	MANIFEST.wnn7egg
-WRKSRC=		${WRKDIR}/usr/share/wnn7/elisp
+WRKSRC=		${WRKDIR}/wnn7/elisp
 
 NO_BUILD=	yes
 
