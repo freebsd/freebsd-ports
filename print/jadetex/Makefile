@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		jadetex
-PORTVERSION=		3.11
+PORTVERSION=		3.12
 CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jadetex
@@ -18,8 +18,6 @@ LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
-
-WRKSRC=			${WRKDIR}/${PORTNAME}
 
 MESSAGE=		${PKGDIR}/pkg-message
 PKGMESSAGE=		${WRKDIR}/pkg-message
