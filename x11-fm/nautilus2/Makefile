@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	unstable/sources/nautilus
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
+		freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		gtkhtml.8:${PORTSDIR}/www/gtkhtml \
 		ghttp.1:${PORTSDIR}/www/libghttp \
