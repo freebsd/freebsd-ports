@@ -2,4 +2,8 @@ libdata/bonobo/servers/timer-applet.server
 libexec/timer-applet
 share/gnome/gnome-2.0/ui/timer-applet.xml
 share/gnome/pixmaps/timer-applet/timer-applet-icon.png
+share/locale/de/LC_MESSAGES/timer-applet.mo
+share/locale/eu/LC_MESSAGES/timer-applet.mo
+share/locale/fr/LC_MESSAGES/timer-applet.mo
+share/locale/sv/LC_MESSAGES/timer-applet.mo
 @dirrm share/gnome/pixmaps/timer-applet
