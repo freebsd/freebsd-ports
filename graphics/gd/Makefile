@@ -7,7 +7,7 @@
 
 PORTNAME=	gd
 PORTVERSION=	1.8.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
@@ -19,37 +19,42 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		freetype.7:${PORTSDIR}/print/freetype2
 .if !exists(/usr/bin/bzip2)
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		freetype:${PORTSDIR}/print/freetype2
 
-USE_FREETYPE2=	yes
+FREETYPE_CONFIG?=       ${LOCALBASE}/bin/freetype-config
+
+MAKE_ENV=	FREETYPE_CONFIG="${FREETYPE_CONFIG}"
+INSTALLS_SHLIB=	yes
 
 .if defined(WITH_X11)
-USE_XLIB=	yes
 USE_XPM=	yes
 .endif
 
-INSTALLS_SHLIB=	yes
-
-DOCS=		index.html
+pre-everything::
+.if !defined(WITH_X11)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Xpm support,"
+	@${ECHO_MSG} "hst Ctrl-C right now and use \"make WITH_X11=yes\""
+	@${ECHO_MSG}
+.endif
 
 post-extract:
-	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
+	@bzip2 -dc ${DISTDIR}/${DIST_SUBDIR}/gd_gif_in.c.bz2 \
+		> ${WRKSRC}/gd_gif_in.c
 
-pre-everything:
-.if !defined(WITH_X11)
-	@${ECHO_MSG} "If you want to compile in X support use "
-	@${ECHO_MSG} "'make -DWITH_X11' instead"
-.endif
+post-patch:
+	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/gdcache.h
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
