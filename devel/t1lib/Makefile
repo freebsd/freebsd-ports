@@ -3,13 +3,13 @@
 # Date created:			13, May, 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/06 17:33:48 steve Exp $
 #
 
 DISTNAME=	t1lib-0.9
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	lib/graphics
+MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
