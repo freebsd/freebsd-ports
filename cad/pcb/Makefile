@@ -12,7 +12,7 @@ MASTER_SITES=	http://bach.ece.jhu.edu/~haceaton/pcb/
 DISTNAME=	${PORTNAME}-wip
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	gagnon__s@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 interactive printed circuit board layout system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \

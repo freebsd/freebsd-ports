@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}	\
 MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS libraries
 DISTNAME=	xview3.2p1-X11R6
 
-MAINTAINER=	gagnon__s@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
 USE_IMAKE=	yes

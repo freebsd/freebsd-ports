@@ -12,7 +12,7 @@ MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/di
 		ftp://quenix.dyndns.org/freebsd/
 DISTNAME=	disktool-2.0c
 
-MAINTAINER=	gagnon__s@videotron.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XView sysadmin tool for monitoring diskfull situations
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
