@@ -8,7 +8,8 @@
 PORTNAME=		glob2
 PORTVERSION=		0.8.6
 CATEGORIES=		games
-MASTER_SITES=		http://www.ysagoon.com/glob2/data/
+MASTER_SITES=		${MASTER_SITE_GENTOO}
+MASTER_SITE_SUBDIR=	distfiles
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Globulation 2 - a free and innovative strategy game
