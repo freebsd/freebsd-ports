@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time-modules/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Time/CTime.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/DaysInMonth.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/JulianDay.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/ParseDate.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/Timezone.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time-modules
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Time 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time 2>/dev/null || true

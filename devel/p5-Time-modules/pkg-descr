@@ -1,0 +1,16 @@
+This package contains the following perl5 modules:
+
+* Time::CTime - ctime, strftime, and asctime
+
+* Time::JulianDay - Julian calendar manipulations
+
+* Time::ParseDate - reverses strftime and also understands relative times
+
+* Time::Timezone - miscellaneous timezone manipulations routines
+
+* Time::DaysInMonth - simply report the number of days in a month
+
+WWW: http://search.cpan.org/search?dist=Time-modules
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
