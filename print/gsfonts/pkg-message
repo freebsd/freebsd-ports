@@ -1,0 +1,12 @@
+IMPORTANT - READ CAREFULLY: Please read the COPYRIGHT included with these fonts
+before using.  The copyright can be found at %%FONTSDIR%%/COPYING.  To 
+use these fonts, follow the instructions below.
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of XF86Config:
+
+	Load "freetype"
+
+Add the following line to the "Files" section of XF86Config:
+
+	FontPath "%%FONTSDIR%%/"
