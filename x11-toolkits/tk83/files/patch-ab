@@ -25,7 +25,7 @@
  # configure script.
  LIBS = @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
 -WISH_LIBS = $(TCL_LIB_SPEC) @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
-+WISH_LIBS = -L${PREFIX}/lib -ltcl82 @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
++WISH_LIBS = -L${PREFIX}/lib -ltcl${SHORT_TK_VER} @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
  # The symbol below provides support for dynamic loading and shared
  # libraries.  See configure.in for a description of what it means.
@@ -33,13 +33,13 @@
  ${TK_LIB_FILE}: ${OBJS}
  	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
-+	ln -sf @TK_LIB_FILE@ libtk82.so
++	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
  	$(RANLIB) ${TK_LIB_FILE}
  
-+libtk82.a: ${OBJS}
-+	rm -f libtk82.a
-+	ar cr libtk82.a ${OBJS}
-+	$(RANLIB) libtk82.a
++libtk${SHORT_TK_VER}.a: ${OBJS}
++	rm -f libtk${SHORT_TK_VER}.a
++	ar cr libtk${SHORT_TK_VER}.a ${OBJS}
++	$(RANLIB) libtk${SHORT_TK_VER}.a
 +
  ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f ${STUB_LIB_FILE}
@@ -49,7 +49,7 @@
  # possible (e.g. if installing as root).
  
 -install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) wish
-+install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) libtk82.a wish
++install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $(TK_BUILD_EXP_FILE) libtk${SHORT_TK_VER}.a wish
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
@@ -57,13 +57,13 @@
  	chmod +x $(UNIX_DIR)/install-sh
  	chmod +x $(UNIX_DIR)/mkLinks
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
-+	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk82.so
++	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
-+	@echo "Installing libtk82.a"
-+	@$(INSTALL_DATA) libtk82.a $(LIB_INSTALL_DIR)/libtk82.a
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk82.a)
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtk82.a
++	@echo "Installing libtk${SHORT_TK_VER}.a"
++	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
++	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk${SHORT_TK_VER}.a)
++	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
  	@echo "Installing wish"
  	@$(INSTALL_PROGRAM) wish $(BIN_INSTALL_DIR)/wish$(VERSION)
  	@echo "Installing tkConfig.sh"

@@ -38,6 +38,7 @@
     SUBDIR += tk42
     SUBDIR += tk80
     SUBDIR += tk82
+    SUBDIR += tk83
     SUBDIR += tkstep80
     SUBDIR += v
     SUBDIR += wxgtk
