@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.135 1997/05/21 04:21:26 asami Exp $
+# $Id: Makefile,v 1.136 1997/06/03 19:16:19 max Exp $
 #
 
     SUBDIR += FWF
@@ -39,6 +39,7 @@
     SUBDIR += qvwm
     SUBDIR += rclock
     SUBDIR += rxvt
+    SUBDIR += slingshot
     SUBDIR += swisswatch
     SUBDIR += sxpc
     SUBDIR += tix
