@@ -1,0 +1,6 @@
+bin/pod2docbook
+%%SITE_PERL%%/Pod/DocBook.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/DocBook/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/DocBook
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true

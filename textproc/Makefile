@@ -277,6 +277,7 @@
     SUBDIR += p5-PerlPoint-Package
     SUBDIR += p5-Plucene
     SUBDIR += p5-Pod-Constants
+    SUBDIR += p5-Pod-DocBook
     SUBDIR += p5-Pod-Escapes
     SUBDIR += p5-Pod-POM
     SUBDIR += p5-Pod-Simple
