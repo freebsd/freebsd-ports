@@ -1,0 +1,13 @@
+#!/bin/sh
+
+PATH=${PATH}:/usr/bin:/usr/local/bin
+
+GSCONF=/usr/local/EPKowa/PM800C/gsconfig800
+PIPS=/usr/local/bin/pips800
+
+TMP=/tmp/pips.$$
+
+trap "rm -rf $TMP; exit" 0 2 3 4 6 7 8 10 11 12 13 15
+psselect -r > $TMP
+${GSCONF} < $TMP | ${PIPS} -ui C
+rm -rf $TMP
