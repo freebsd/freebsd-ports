@@ -1,5 +1,5 @@
 --- src/osdep/unix/Makefile.orig	Tue Oct 15 00:45:24 2002
-+++ src/osdep/unix/Makefile	Wed Nov 27 01:58:27 2002
++++ src/osdep/unix/Makefile	Sun Dec  1 15:40:42 2002
 @@ -22,18 +22,18 @@
  
  EXTRAAUTHENTICATORS=
@@ -106,7 +106,7 @@
 +	ln -s $(SHLIBNAME) lib$(SHLIBBASE).so
 +
 +.c.so: osdep.h
-+	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
++	$(CC) -fPIC -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 +
  .c.o:
 -	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
@@ -147,7 +147,7 @@
 +	@echo ========================================================================
 +
 +osdep.so: $(OSDEPS)
-+	$(CC) -fpic -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
++	$(CC) -fPIC -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
  
  osdep.c: osdepbas.c osdepckp.c osdeplog.c osdepssl.c
  	$(CAT) osdepbas.c osdepckp.c osdeplog.c osdepssl.c > osdep.c
