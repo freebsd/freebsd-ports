@@ -1,15 +1,15 @@
---- Makefile.orig	Fri Nov 12 01:28:34 1999
-+++ Makefile	Fri Nov 12 01:39:22 1999
+--- Makefile.orig	Thu Apr 20 01:50:18 2000
++++ Makefile	Thu Apr 20 01:50:39 2000
 @@ -12,7 +12,7 @@
  # defaults:
  PGM = lame
  CC = gcc
--CC_OPTS = -O   	
+-CC_OPTS =  -O
 +CC_OPTS = ${CFLAGS}
  GTK = 
  GTKLIBS = 
- SNDLIB = 
-@@ -106,8 +106,10 @@
+ SNDLIB = -DLAMESNDFILE
+@@ -136,8 +136,10 @@
  ##########################################################################
  ifeq ($(UNAME),FreeBSD)
  #  remove if you do not have GTK or do not want the GTK frame analyzer
