@@ -5,7 +5,7 @@
  {
    check_connection_is_open();
 -  
-+#if  ( MYSQL_VERSION_ID == 40103 ) || ( MYSQL_VERSION_ID == 50001 )
++#if  ( MYSQL_VERSION_ID >= 50001 ) || (( MYSQL_VERSION_ID < 50000 ) && ( MYSQL_VERSION_ID >= 40103 ))
 +  bool suc = !(mysql_shutdown(m_sharedptr_connection.obj(),SHUTDOWN_DEFAULT));
 +#else
    bool suc = !(mysql_shutdown(m_sharedptr_connection.obj()));
