@@ -1,7 +1,0 @@
---- interface_gtk/Makefile.in.orig	Wed Mar  6 15:08:40 2002
-+++ interface_gtk/Makefile.in	Wed Mar  6 15:08:51 2002
-@@ -75,3 +75,3 @@
- noinst_LIBRARIES = libinterface_gtk.a
--CXXFLAGS = @CXXFLAGS@ -I../trackercore -I../editor -I../freeverb
-+CXXFLAGS = @CXXFLAGS@ -I../trackercore -I../editor -I../freeverb -fhuge-objects
- 

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cheesetracker
-PORTVERSION=	0.5.5
+PORTVERSION=	0.8.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cheesetronic
@@ -15,24 +15,24 @@ MASTER_SITE_SUBDIR=	cheesetronic
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Impulse Tracker clone
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_REINPLACE=	yes
-USE_GNOME=	gtk12
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+USE_QT_VER=	3
+MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[$$]CXXFLAGS_OPT |\$$CXXFLAGS |g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|AFMT_S16_NE|AFMT_S16_LE|g' ${WRKSRC}/waveout/sound_driver_oss.cpp
+	@${CP} ${FILESDIR}/cheesetracker.pro ${WRKSRC}
 
-pre-configure:
-.for file in install-sh missing mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake14/${file} ${WRKSRC}
-.endfor
-	@${RM} -f ${WRKSRC}/config.cache
+do-configure:
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
+		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ cheesetracker.pro
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cheesetracker ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.it ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.xm ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
