@@ -19,7 +19,8 @@ LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_XLIB=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \

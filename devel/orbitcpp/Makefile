@@ -17,7 +17,8 @@ BROKEN=		"Does not build"
 
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

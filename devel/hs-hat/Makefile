@@ -27,7 +27,8 @@ RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 .if !defined(WITH_GHC) || defined(WITHOUT_NHC98)
 ALL_TARGET=	hat
 .endif

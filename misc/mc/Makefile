@@ -24,7 +24,8 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 USE_GMAKE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 .if defined(WITH_SLANG)
 CONFIGURE_ARGS=	--with-slang --without-gnome --with-edit

@@ -17,7 +17,8 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \

@@ -12,7 +12,8 @@ MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

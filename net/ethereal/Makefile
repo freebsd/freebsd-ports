@@ -28,7 +28,8 @@ MAN1+=		ethereal.1
 PLIST_SUB+=	ETHEREAL=bin/ethereal
 .else
 PLIST_SUB+=	ETHEREAL="@comment ethereal not built"
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 CONFIGURE_ARGS+=	--enable-ethereal=no \
 			--disable-gtktest
 .endif

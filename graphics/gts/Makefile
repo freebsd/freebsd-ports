@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_LIBTOOL=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"

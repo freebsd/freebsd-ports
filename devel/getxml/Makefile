@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_REINPLACE=	yes
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 
 post-patch:

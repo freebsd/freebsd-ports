@@ -34,7 +34,8 @@ CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 .endif
 
 .if defined(WITH_IODBC) || defined(WITH_UNIXODBC)
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 PLIST_SUB+=	ODBC=""
 .else
 PLIST_SUB+=	ODBC="@comment "

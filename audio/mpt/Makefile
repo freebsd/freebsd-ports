@@ -16,7 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		songprint.1:${PORTSDIR}/audio/songprint
 
-USE_GLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
