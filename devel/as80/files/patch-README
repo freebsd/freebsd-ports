@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- README.orig	Sat Dec  1 14:17:47 2001
++++ README	Sat Dec  1 14:18:09 2001
+@@ -18,7 +18,7 @@
+ This is version 0.8
+ 
+ 
+-usage: asm80 infile [outfile] [-l listfile] [-s symfile]
++usage: as80 infile [outfile] [-l listfile] [-s symfile]
+ 
+ infile is the assembler's input
+ outfile is the binary output file
