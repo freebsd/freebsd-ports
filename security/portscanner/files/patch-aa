@@ -1,5 +1,17 @@
---- portscanner.c.old	Tue Aug 11 17:11:20 1998
-+++ portscanner.c	Tue Aug 11 17:11:27 1998
+--- portscanner.c.old	Wed Nov 18 16:25:41 1998
++++ portscanner.c	Wed Nov 18 16:25:53 1998
+@@ -24,10 +24,10 @@
+ /***********************************************************/
+ 
+ #include <stdio.h>
++#include <unistd.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ #include <netinet/in.h>
+-#include <unistd.h>
+ #include <netdb.h>
+ #include <sys/time.h>
+ #include <fcntl.h>
 @@ -35,7 +35,7 @@
  int sock = -1;
  struct sockaddr_in address;

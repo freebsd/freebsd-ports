@@ -3,7 +3,7 @@
 # Date created:        11 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1998/11/17 20:46:44 billf Exp $
 #
 
 DISTNAME=	PortScanner-1.0
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}
 
 do-build:
 
-	${CC} -o ${WRKSRC}/portscanner ${CFLAGS} ${WRKSRC}/portscanner.c
+	@${CC} -o ${WRKSRC}/portscanner ${CFLAGS} ${WRKSRC}/portscanner.c
 
 do-install:
 
