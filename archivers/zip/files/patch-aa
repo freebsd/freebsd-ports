@@ -1,31 +1,11 @@
---- unix/Makefile.orig		Fri Oct 24 13:38:04 1997
-+++ unix/Makefile	Thu Sep 17 22:25:33 1998
-@@ -44,6 +44,12 @@
- LFLAGS1 =
- LFLAGS2 = -s
- 
-+.if ${PORTOBJFORMAT} == elf
-+ELFDEF = -D__ELF__
-+.else
-+ELFDEF =
-+.endif
-+
- # object file lists
- OBJZ = zip.o zipfile.o zipup.o fileio.o util.o globals.o crypt.o ttyio.o \
-        unix.o crc32.o crctab.o
-@@ -81,13 +87,13 @@
- zipup.o: unix/zipup.h
- 
- match.o: match.S
--	$(CPP) match.S > _match.s
-+	$(CPP) $(ELFDEF) match.S > _match.s
- 	$(AS) _match.s
- 	mv _match.o match.o
- 	rm -f _match.s
- 
- crc_i386.o: crc_i386.S
--	$(CPP) crc_i386.S > crc_i386.s
-+	$(CPP) $(ELFDEF) crc_i386.S > crc_i386.s
- 	$(AS) crc_i386.s
- 	rm -f crc_i386.s
- 
+--- unix/configure.orig	Tue Sep 22 14:33:00 1998
++++ unix/configure	Tue Sep 22 14:33:18 1998
+@@ -49,7 +49,7 @@
+     echo "int foo() { return 0;}" > conftest.c
+     $CC -c conftest.c >/dev/null 2>/dev/null
+     echo Check if compiler generates underlines
+-    nm conftest.o | grep "(^|[^_])foo" >/dev/null 2>/dev/null
++    nm conftest.o | egrep "(^|[^_])foo" >/dev/null 2>/dev/null
+     [ $? -eq 0 ] && CPP="${CPP} -DNO_UNDERLINE"
+     if eval "$CPP crc_i386.S > _crc_i386.s 2>/dev/null"; then
+       if eval "$CC -c _crc_i386.s >/dev/null 2>/dev/null" && [ -f _crc_i386.o ]
