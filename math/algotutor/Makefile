@@ -17,6 +17,7 @@ COMMENT=	An interactive tutorial for algorithms and data structures
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_PERL5_BUILD=yes
 NO_BUILD=	yes
 
 MAN1=		algotutor.1 gen_at_graph.1
@@ -27,7 +28,7 @@ LIBFILES=	.algotutor BST.pm DCEdge.pm Edge.pm Graph.pm Heap.pm \
 
 post-patch:
 	${PERL} -pi -e "s'!!PREFIX!!'${PREFIX}'g" ${WRKSRC}/algotutor
-	
+
 do-install:
 	${MKDIR} ${PREFIX}/share/algotutor
 	${CP} -R ${WRKSRC}/data ${PREFIX}/share/algotutor
