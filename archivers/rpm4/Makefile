@@ -9,7 +9,7 @@ PORTVERSION=	4.0.4
 PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
+		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.0.x/
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	The RPM Package Manager
