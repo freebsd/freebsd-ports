@@ -152,6 +152,7 @@
     SUBDIR += instant-server
     SUBDIR += instant-workstation
     SUBDIR += iselect
+    SUBDIR += iso-codes
     SUBDIR += jargon
     SUBDIR += jbidwatcher
     SUBDIR += jive
