@@ -39,11 +39,15 @@ etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
 etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
 etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.mo
 etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.po
+etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.mo
+etc/sarg/sarg-php/locale/ru/LC_MESSAGES/messages.po
 etc/sarg/sarg-php/sarg-block-it.php
 etc/sarg/sarg-php/sarg-squidguard-block.php
 etc/sarg/sarg-php/sarg-squidguard-block2.php
 etc/sarg/sarg-php/style.php
 etc/sarg/sarg-php/translate.this
+@dirrm etc/sarg/sarg-php/locale/ru/LC_MESSAGES
+@dirrm etc/sarg/sarg-php/locale/ru
 @dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES
 @dirrm etc/sarg/sarg-php/locale/pt_BR
 @dirrm etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES
