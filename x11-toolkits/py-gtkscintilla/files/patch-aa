@@ -1,8 +1,11 @@
---- Makefile	2000/12/14 10:44:19	1.1
-+++ Makefile	2000/12/14 10:50:08
-@@ -1,13 +1,14 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Jan  2 02:03:18 2001
++++ Makefile	Tue Jan 16 14:34:12 2001
+@@ -1,13 +1,16 @@
  NAME = PyGtkScintilla
- VERSION = 0.1
+ VERSION = 0.1.1
  
 -CC = gcc
 +CC ?= gcc
@@ -15,8 +18,10 @@
  
 -LDFLAGS = -shared `gtk-config --libs` -lgtkscintilla
 -CFLAGS = `gtk-config --cflags` -I$(PYTHON_PREFIX)/include/python1.5
-+LDFLAGS = -pthread -shared `$(GTK_CONFIG) --libs` -lgtkscintilla -lgcc_r
-+CFLAGS = -D_THREAD_SAFE `$(GTK_CONFIG) --cflags` -I$(PYTHON_INCLUDEDIR) -I${X11BASE}/include/scintilla
++GTK_LDFLAGS != $(GTK_CONFIG) --libs
++GTK_CFLAGS != $(GTK_CONFIG) --cflags
++LDFLAGS = -pthread -shared $(GTK_LDFLAGS) -lgtkscintilla -lgcc_r
++CFLAGS = -D_THREAD_SAFE $(GTK_CFLAGS) -I$(PYTHON_INCLUDEDIR) -I${X11BASE}/include/scintilla
  
  all: _gtkscintillamodule.so
  
