@@ -3,7 +3,7 @@
 # Date created:		01 May 1996
 # Whom:			masafumi
 #
-# $Id: Makefile,v 1.15 1999/06/05 19:55:23 mharo Exp $
+# $Id: Makefile,v 1.16 1999/06/08 05:37:44 sada Exp $
 #
 
 DISTNAME=	pine3.95
@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	max@FreeBSD.ORG
 
-#BROKEN_ELF=	yes
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	${PREFIX}/lib/libcanna.a:${PORTSDIR}/japanese/Canna
