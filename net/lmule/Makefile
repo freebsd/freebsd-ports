@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmule
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lmule
@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
 		gnomeprefix
-USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
