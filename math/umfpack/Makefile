@@ -7,6 +7,7 @@
 
 PORTNAME=	umfpack
 PORTVERSION=	4.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/umfpack/v${PORTVERSION}/
 DISTNAME=	UMFPACKv${PORTVERSION}
@@ -25,7 +26,12 @@ post-extract:
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Lib/libamd.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/Lib/libumfpack.a ${PREFIX}/lib
-
+.for mod in AMD UMFPACK
+	@${MKDIR} ${PREFIX}/include/${mod}
+	@for inc in `ls ${WRKSRC}/../${mod}/Include` ; do \
+		${INSTALL_DATA} ${WRKSRC}/../${mod}/Include/$$inc ${PREFIX}/include/${mod}; \
+	done
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/AMD/Doc/*.pdf ${DOCSDIR}
