@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache-Cache
-PORTVERSION=	0.99
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Cache
@@ -22,8 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Cache::Backend.3 \
-	Cache::BaseCache.3 \
+MAN3=	Cache::BaseCache.3 \
 	Cache::BaseCacheTester.3 \
 	Cache::Cache.3 \
 	Cache::CacheMetaData.3 \
