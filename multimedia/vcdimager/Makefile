@@ -8,8 +8,8 @@ PORTNAME=	vcdimager
 PORTVERSION=	0.7.20
 PORTREVISION=	3
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/ \
-		${MASTER_SITE_GNU_ALPHA}
+MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/0.8.1/contrib/ \
+		http://www.vcdimager.org/pub/vcdimager/vcdimager-0.7_UNSTABLE/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
