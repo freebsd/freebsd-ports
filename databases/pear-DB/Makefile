@@ -6,8 +6,9 @@
 #
 
 PORTNAME=	DB
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0.rc1
 CATEGORIES=	databases www
+DISTNAME=	${PORTNAME}-${PORTVERSION}RC1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Database Abstraction Layer
