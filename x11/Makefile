@@ -53,6 +53,7 @@
     SUBDIR += gnomeres_applet
     SUBDIR += gnomesession
     SUBDIR += gnometerminal
+    SUBDIR += gromit
     SUBDIR += gswitchit_applet
     SUBDIR += gtk-theme-switch
     SUBDIR += gvid

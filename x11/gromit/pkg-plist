@@ -1,0 +1,8 @@
+bin/gromit
+%%EXAMPLESDIR%%/gromitrc
+%%EXAMPLESDIR%%/sawfish-config
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,8 @@
+--- Makefile.orig	Mon Mar  3 18:45:09 2003
++++ Makefile	Mon Mar  3 18:45:27 2003
+@@ -1,4 +1,4 @@
+ all: gromit
+ 
+ gromit: gromit.c Makefile
+-	gcc -o gromit gromit.c -Wall `gtk-config --libs --cflags`
++	${CC} -o gromit gromit.c ${CFLAGS} `${GTK_CONFIG} --libs --cflags`
