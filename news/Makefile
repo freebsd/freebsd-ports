@@ -8,6 +8,7 @@
     SUBDIR += bgrab
     SUBDIR += c-nocem
     SUBDIR += cleanfeed
+    SUBDIR += cleanscore
     SUBDIR += cnews
     SUBDIR += dejasearch
     SUBDIR += diablo

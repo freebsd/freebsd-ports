@@ -1,0 +1,3 @@
+bin/cleanscore
+%%PORTDOCS%%share/doc/cleanscore/README
+%%PORTDOCS%%@dirrm share/doc/cleanscore
