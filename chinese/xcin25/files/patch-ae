@@ -1,6 +1,6 @@
---- src/xcinrc.in.orig	Mon Jul 24 09:44:21 2000
-+++ src/xcinrc.in	Sat Aug 12 15:15:12 2000
-@@ -86,8 +86,8 @@
+--- etc/xcinrc.FREEBSD.orig	Mon Oct  9 01:25:34 2000
++++ etc/xcinrc.FREEBSD	Mon Oct  9 01:25:47 2000
+@@ -87,8 +87,8 @@
            (PINPHO_MAP           "bims_pinyin")
          ;
          ; The following has effect only when AUTO_SELECTION is YES
