@@ -1,3 +1,4 @@
+etc/rc.d/vm-pop3d.sh.sample
 sbin/vm-pop3d
 %%PORTDOCS%%share/doc/vm-pop3d/AUTHORS
 %%PORTDOCS%%share/doc/vm-pop3d/CHANGES

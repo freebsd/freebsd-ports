@@ -7,9 +7,10 @@
 
 PORTNAME=	vm-pop3d
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SUNSITE}	\
-		http://www.ibiblio.org/
+		http://www.ibiblio.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	system/mail/pop
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
@@ -37,9 +38,11 @@ pre-patch:
 post-patch:
 	@${PERL} -pi -e "s@LIBS -ldl@LIBS@" ${WRKSRC}/configure
 	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/vm-pop3d.h
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/vm-pop3d.sh > ${WRKSRC}/vm-pop3d.sh.sample
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/vm-pop3d.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_SCRIPT} ${WRKSRC}/vm-pop3d.sh.sample ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
