@@ -1,25 +1,29 @@
 # New ports collection makefile for:	chimera + kanji patch
-# Version required:	1.65
+# Version required:	1.70p1
 # Date created:		26 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.9 1998/10/16 01:11:39 jseger Exp $
+# $Id: Makefile,v 1.10 1998/10/30 10:33:43 asami Exp $
 #
 
-DISTNAME=	chimera-1.65
-PKGNAME=	ja-chimera-1.65
+DISTNAME=	chimera-1.70p0
+PKGNAME=	ja-chimera-1.70p1
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera/
 
-PATCH_SITES=	ftp://ftp.tohoku.ac.jp/pub/net/www/chimera/old/
-PATCHFILES=	chimera-1.65-kanji.patch
+PATCH_SITES=	http://hasse.mathematik.tu-muenchen.de/%7Enikl/chimera-1.65p/ \
+		ftp://netbsd.tohoku.ac.jp/network/www/chimera/
+PATCHFILES=	chimera-1.70p0-1.70p1.gz diff-1.70p1-jp-01
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BROKEN=		build
+FETCH_BEFORE_ARGS=	-b
+USE_IMAKE=	yes
+MAN1=		chimera.1
 
-USE_IMAKE=		yes
-PATCH_DIST_STRIP=	-p1
-MAN1=			chimera.1
+pre-configure:
+	${CP} ${WRKSRC}/Common.tmpl.dist ${WRKSRC}/Common.tmpl
+	${CP} ${WRKSRC}/options.h.dist ${WRKSRC}/options.h
 
 .include <bsd.port.mk>

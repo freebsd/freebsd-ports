@@ -1,9 +1,36 @@
---- ./Imakefile.org	Sat Apr  1 19:38:56 1995
-+++ ./Imakefile	Tue Apr  4 07:52:03 1995
-@@ -1,5 +1,5 @@
- #define IHaveSubDirs
--#define PassCDebugFlags 'CDEBUGFLAGS='
-+#define PassCDebugFlags 'CDEBUGFLAGS=-O2 -m486'
+--- libhtmlw/HTMLformat.c.orig	Wed May 28 04:42:34 1997
++++ libhtmlw/HTMLformat.c	Sun Feb 21 11:42:52 1999
+@@ -6150,6 +6150,7 @@
+   char *col_spec, *t;
+   XColor xcolor;
+   Colormap cmap;
++  Visual *v;
  
- SUBDIRS = compat libhtmlw mxw xloadimage common src lib util
+   if (!(hw->html.use_body_colors))
+     return (False);
+@@ -6179,7 +6180,11 @@
+       XtFree(t);
+       return(False);
+     }
+-    FindColor (XtDisplay(hw), cmap, &xcolor);
++    v = DefaultVisual(XtDisplay(hw), DefaultScreen(XtDisplay(hw)));
++    if ((v->class == TrueColor) || (v->class == DirectColor))
++      XAllocColor (XtDisplay(hw), cmap, &xcolor);
++    else
++      FindColor (XtDisplay(hw), cmap, &xcolor);
+     *value = xcolor.pixel;
  
+     XtFree (t);
+--- src/main.c.orig	Wed May 28 02:44:35 1997
++++ src/main.c	Sun Feb 21 11:42:53 1999
+@@ -1134,7 +1134,9 @@
+       CreateStrReq("filename", filename, False, SaveOCallback,
+ 		   SaveDCallback, (XtPointer)d);
+   }
+-  else if ((d->content != NULL && strcasecmp(d->content, "text/html") == 0) ||
++  else if ((d->content != NULL && strncasecmp(d->content, "text/html", 9) == 0
++	   && (!d->content[9] || d->content[9] == ' ' || d->content[9] == ';'))
++	   ||
+ 	   (d->pcontent != NULL && strcasecmp(d->pcontent, "text/html") == 0))
+   {
+     dn = (DocNode *)alloc_mem(sizeof(DocNode));

@@ -1,13 +1,15 @@
 bin/chimera
-lib/cacheinfo
-lib/convert
-lib/help.html
-lib/home.html
-lib/mailcap
-lib/mime.types
-lib/protocol
-lib/chimera/Chimera
-lib/chimera/do3270
-lib/chimera/dotelnet
-lib/chimera/playaudio
-lib/chimera/pstopxm
+lib/X11/app-defaults/Chimera
+lib/X11/chimera/cacheinfo
+lib/X11/chimera/convert
+lib/X11/chimera/do3270
+lib/X11/chimera/dotelnet
+lib/X11/chimera/help.html
+lib/X11/chimera/home.html
+lib/X11/chimera/mailcap
+lib/X11/chimera/mailto.pl
+lib/X11/chimera/mime.types
+lib/X11/chimera/playaudio
+lib/X11/chimera/protocol
+lib/X11/chimera/pstopxm
+@dirrm lib/X11/chimera
