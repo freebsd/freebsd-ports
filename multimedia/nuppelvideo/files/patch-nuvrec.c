@@ -1,12 +1,17 @@
-diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
---- ../NuppelVideo-0.52a/nuvrec.c	Wed Jul  4 23:59:58 2001
-+++ ./nuvrec.c	Mon Feb 10 21:43:02 2003
-@@ -27,14 +27,22 @@
+--- nuvrec.c.orig	Wed Jul  4 23:59:58 2001
++++ nuvrec.c	Sun Feb  1 17:31:10 2004
+@@ -27,14 +27,28 @@
  #include <sys/stat.h>
  #include <sys/time.h>
  #include <sys/resource.h>
++#include <sys/param.h>
++#if __FreeBSD_version >= 502100
++#include <dev/bktr/ioctl_meteor.h>
++#include <dev/bktr/ioctl_bt848.h>
++#else
 +#include <machine/ioctl_meteor.h>
 +#include <machine/ioctl_bt848.h>
++#endif
  #include <sys/soundcard.h>
 -#include <linux/videodev.h>
 -#include <linux/wait.h>
@@ -26,7 +31,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
  // #define TESTINPUT 1
  // #define TESTSPLIT 1
  #define KEYFRAMEDIST 30
-@@ -47,11 +55,28 @@
+@@ -47,11 +61,28 @@
    #define MAXBYTESFORCE  2100000000
  #endif
  
@@ -57,7 +62,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
  int fd;     // output file haendle
  int ostr=0;
  __s8 *strm;
-@@ -71,10 +96,10 @@
+@@ -71,10 +102,10 @@
  unsigned long long audiobytes;
  int effectivedsp;
  int ntsc=0; // default to PAL, this info is only for the video header
@@ -70,7 +75,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
  
  //#define DP(DSTRING) fprintf(stderr, "%s\n", DSTRING);
  #define DP(DSTRING)
-@@ -173,9 +198,6 @@
+@@ -173,9 +204,6 @@
    kill(pid,  9);
    if (recordaudio) kill(pid2, 9);
  
@@ -80,7 +85,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
    if (!quiet) fprintf(stderr, "\n"); // preserve status line
    exit(i);
  }
-@@ -201,24 +223,25 @@
+@@ -201,24 +229,25 @@
      unsigned char *startaudio;
  
      if (init_shm) {
@@ -111,7 +116,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
  
      videobuffer    = (struct vidbuffertype *)sharedbuffer;
      startaudiodesc = (char *)(sharedbuffer + video_buffer_count*sizeof(vidbuffertyp));
-@@ -899,24 +922,6 @@
+@@ -899,24 +928,6 @@
  #ifdef TESTINPUT
    tf+=2; // when reading from files we won't lose frames ;)
  #else
@@ -136,7 +141,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
   // here is the non preferable timecode - drop algorithm - fallback
   if (!usebttv) {
  
-@@ -1073,21 +1078,125 @@
+@@ -1073,21 +1084,125 @@
     exit(-1);
  }
  
@@ -270,7 +275,7 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
    double  frequency=0.0;
    long v4lfrequency=0;
    int volume = -1;
-@@ -1277,109 +1386,28 @@
+@@ -1277,109 +1392,28 @@
    testinput();
  #else
  
@@ -285,15 +290,15 @@ diff -ur ../NuppelVideo-0.52a/nuvrec.c ./nuvrec.c
 -  {
 -  	perror("VIDIOCMCAPTUREi0");
 -  	fatherhandler(-1);
-+  tuner_fd = open ("/dev/tuner0", O_RDWR);
-+  if (tuner_fd < 0) {
-+  	 perror("Warning: Tuner not opened continuing");
-   }
+-  }
 -  if(vm.frames<2)
 -  {
 -  	fprintf(stderr, "stoopid prog want min 2 cap buffs!\n");
 -  	fatherhandler(-1);
--  }
++  tuner_fd = open ("/dev/tuner0", O_RDWR);
++  if (tuner_fd < 0) {
++  	 perror("Warning: Tuner not opened continuing");
+   }
 -
 -  // fprintf(stderr, "We have vm.frames=%d\n", vm.frames);
 -    
