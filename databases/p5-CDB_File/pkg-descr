@@ -1,0 +1,8 @@
+This is the perl5 interface to CDB.
+Very useful for people who would like to export information from an SQL type
+database directly into a CDB file via $cdb->insert in a perl script.
+
+enjoy,
+
+Jon Nistor
+nistor@snickers.org
