@@ -1270,7 +1270,6 @@
     SUBDIR += tvision
     SUBDIR += uclmmbase
     SUBDIR += ucpp
-    SUBDIR += umbrello
     SUBDIR += upnp
     SUBDIR += ups-debug
     SUBDIR += ustl
