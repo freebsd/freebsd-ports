@@ -127,31 +127,18 @@ share/gnome/help/gedit/zh_TW/legal.xml
 share/gnome/idl/GNOME_Gedit.idl
 share/gnome/mime-info/gedit.keys
 share/gnome/omf/gedit/gedit-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-de.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-de.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-es.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-es.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-eu.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-eu.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-fr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-it.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-it.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-ja.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-ko.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-ro.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-ro.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-sv.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-sv.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-zh_CN.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-zh_HK.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-zh_HK.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gedit/gedit-zh_TW.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/gedit/gedit-zh_TW.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gedit-icon.png
 share/gnome/pixmaps/gedit-logo.png
 share/gnome/pixmaps/gedit-plugin-manager.png
@@ -262,17 +249,4 @@ share/locale/zh_TW/LC_MESSAGES/gedit-%%POVERSION%%.mo
 @dirrm include/gedit-%%VERSION%%/gedit/recent-files
 @dirrm include/gedit-%%VERSION%%/gedit
 @dirrm include/gedit-%%VERSION%%
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-de.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-es.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-eu.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-fr.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-it.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-ja.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-ko.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-ro.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-sv.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-zh_CN.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-zh_HK.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gedit/gedit-zh_TW.omf 2>/dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true
