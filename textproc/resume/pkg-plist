@@ -1,0 +1,70 @@
+@unexec %%MKCATALOG%% -c %D/share/xml/catalog -q deinstall resume/dtd
+share/xml/resume/dtd/catalog
+@exec %%MKCATALOG%% -c %D/share/xml/catalog -q install resume/dtd
+share/xml/resume/dtd/iso-lat1.ent
+share/xml/resume/dtd/resume.dcl
+share/xml/resume/dtd/resume.dtd
+share/xml/resume/xsl/124-130.xsl
+share/xml/resume/xsl/common/a4.xsl
+share/xml/resume/xsl/common/address.xsl
+share/xml/resume/xsl/common/fo.xsl
+share/xml/resume/xsl/common/html.xsl
+share/xml/resume/xsl/common/params.xsl
+share/xml/resume/xsl/common/pubs.xsl
+share/xml/resume/xsl/common/text.xsl
+share/xml/resume/xsl/default.xsl
+share/xml/resume/xsl/fr-a4.xsl
+share/xml/resume/xsl/fr-html.xsl
+share/xml/resume/xsl/fr-params.xsl
+share/xml/resume/xsl/fr-text.xsl
+share/xml/resume/xsl/it-a4.xsl
+share/xml/resume/xsl/it-html.xsl
+share/xml/resume/xsl/it-params.xsl
+share/xml/resume/xsl/it-text.xsl
+share/xml/resume/xsl/uk-a4.xsl
+share/xml/resume/xsl/uk-html.xsl
+share/xml/resume/xsl/uk-params.xsl
+share/xml/resume/xsl/uk-text.xsl
+share/xml/resume/xsl/us-html.xsl
+share/xml/resume/xsl/us-letter.xsl
+share/xml/resume/xsl/us-text.xsl
+@dirrm share/xml/resume/dtd
+@dirrm share/xml/resume/xsl/common
+@dirrm share/xml/resume/xsl
+@dirrm share/xml/resume
+@unexec rmdir %D/share/xml 2>/dev/null || true
+share/examples/resume/Makefile
+share/examples/resume/addressing/Makefile
+share/examples/resume/addressing/README
+share/examples/resume/addressing/brazil.xml
+share/examples/resume/addressing/canada.xml
+share/examples/resume/addressing/ireland.xml
+share/examples/resume/addressing/italy.xml
+share/examples/resume/addressing/norway.xml
+share/examples/resume/addressing/nz.xml
+share/examples/resume/addressing/uk.xml
+share/examples/resume/addressing/untagged.xml
+share/examples/resume/addressing/usa.xml
+share/examples/resume/css/resume1.css
+share/examples/resume/css/resume2.css
+share/examples/resume/example1.xml
+share/examples/resume/example2.xml
+@dirrm share/examples/resume/addressing
+@dirrm share/examples/resume/css
+%%PORTDOCS%%share/doc/resume/address.html
+%%PORTDOCS%%share/doc/resume/authors/index.html
+%%PORTDOCS%%share/doc/resume/changelog/index.html
+%%PORTDOCS%%share/doc/resume/copying/index.html
+%%PORTDOCS%%share/doc/resume/header.html
+%%PORTDOCS%%share/doc/resume/index.html
+%%PORTDOCS%%share/doc/resume/install/index.html
+%%PORTDOCS%%share/doc/resume/news/index.html
+%%PORTDOCS%%share/doc/resume/skills.html
+%%PORTDOCS%%share/doc/resume/todo/index.html
+%%PORTDOCS%%@dirrm share/doc/resume/authors
+%%PORTDOCS%%@dirrm share/doc/resume/changelog
+%%PORTDOCS%%@dirrm share/doc/resume/copying
+%%PORTDOCS%%@dirrm share/doc/resume/install
+%%PORTDOCS%%@dirrm share/doc/resume/news
+%%PORTDOCS%%@dirrm share/doc/resume/todo
+%%PORTDOCS%%@dirrm share/doc/resume
