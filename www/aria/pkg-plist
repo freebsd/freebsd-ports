@@ -13,8 +13,10 @@ share/locale/de/LC_MESSAGES/aria.mo
 share/locale/es/LC_MESSAGES/aria.mo
 share/locale/fr/LC_MESSAGES/aria.mo
 share/locale/hu/LC_MESSAGES/aria.mo
+share/locale/it/LC_MESSAGES/aria.mo
 share/locale/ja/LC_MESSAGES/aria.mo
 share/locale/pl/LC_MESSAGES/aria.mo
 share/locale/ru/LC_MESSAGES/aria.mo
-@dirrm share/aria
+share/locale/zh_TW/LC_MESSAGES/aria.mo
 %%PORTDOCS%%@dirrm share/doc/aria
+@dirrm share/aria
