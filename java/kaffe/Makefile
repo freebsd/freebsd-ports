@@ -14,7 +14,7 @@ MAINTAINER=	xaa+ports@madison-gurkha.com
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
-		png.4:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png
 
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=
