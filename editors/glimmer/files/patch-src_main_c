@@ -1,6 +1,14 @@
---- src/main.c.orig	Tue Jun 17 01:53:17 2003
-+++ src/main.c	Tue Jun 17 01:54:18 2003
-@@ -342,7 +342,7 @@ main_finish (void *closure, int argc, ch
+--- src/main.c.orig	Thu Jan 10 12:37:37 2002
++++ src/main.c	Sat Jun 28 12:38:50 2003
+@@ -15,6 +15,7 @@
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ 
++#include <sys/param.h>
+ #include <sys/wait.h>
+ 
+ #include "declarations.h"
+@@ -342,7 +343,7 @@
      gchar *path;
      gchar *file;
      gchar *full;
@@ -9,7 +17,7 @@
  
      args = (gchar **) poptGetArgs (pctx);
  
-@@ -381,7 +381,7 @@ main_finish (void *closure, int argc, ch
+@@ -381,7 +382,7 @@
          }
      }
      if (input_file) {

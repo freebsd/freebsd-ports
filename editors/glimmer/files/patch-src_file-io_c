@@ -1,6 +1,14 @@
---- src/file-io.c.orig	Tue Jun 17 01:52:36 2003
-+++ src/file-io.c	Tue Jun 17 01:53:49 2003
-@@ -102,10 +102,10 @@ void
+--- src/file-io.c.orig	Thu Jan 10 12:51:15 2002
++++ src/file-io.c	Sat Jun 28 12:38:16 2003
+@@ -24,6 +24,7 @@
+ 
+ #include <unistd.h>
+ #include <sys/types.h>
++#include <sys/param.h>
+ 
+ #include "declarations.h"
+ #include "file-io.h"
+@@ -102,10 +103,10 @@
  new_file_real (char *filename)
  {
      GnomeVFSURI *uri;
