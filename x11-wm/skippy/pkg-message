@@ -1,0 +1,5 @@
+*******************************************************************************
+A sample configuration file, skippyrc-default, has been installed in 
+%%DATADIR%%. To edit the default confiuration of skippy please 
+'cp %%DATADIR%%/skippyrc-default ~/.skippyrc'
+*******************************************************************************
