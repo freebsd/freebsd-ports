@@ -4,11 +4,6 @@ players, each with a slightly different playing style (although
 none of these styles are particularly advanced, yet).  Instructions on
 how to play the cardgame are included for the unfamiliar.
 
-As a package, this requires Tk80.  However, if you edit the port
-Makefile and build it yourself it will automatically detect and
-configure for any of Tk41, Tk42, Tk80, or the absence of all three
-(in which case no GUI will be available).
-
 WWW: http://www3.sympatico.ca/john.vanderhoek/tim/src/president/president.html
 
 - Tim Vanderhoek
