@@ -5704,6 +5704,7 @@ ruby-racc-runtime	ports/devel/ruby-racc-runtime
 ruby-rbison	ports/devel/ruby-rbison
 ruby-rd-mode.el	ports/textproc/ruby-rd-mode.el
 ruby-rdbc1	ports/databases/ruby-rdbc1
+ruby-rdoc	ports/textproc/ruby-rdoc
 ruby-rdtool	ports/textproc/ruby-rdtool
 ruby-reference	ports/lang/ruby-reference
 ruby-rexml	ports/textproc/ruby-rexml
