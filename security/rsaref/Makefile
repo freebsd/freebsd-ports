@@ -4,7 +4,7 @@
 # Date created:         2 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1997/02/02 21:25:02 ache Exp $
+# $Id: Makefile,v 1.3 1997/07/17 15:12:58 max Exp $
 #
 
 PKGNAME=        rsaref-2.0
@@ -30,12 +30,15 @@ do-install:
 		${INSTALL_DATA} rsa.h _des.h _md2.h _md5.h rsaref.h global.h \
 			${PREFIX}/include
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} librsaref.a librsaref.so.2.0 \
+		${INSTALL_DATA} librsaref.a librsaref.so.2 \
 			${PREFIX}/lib
-	${LDCONFIG} -m ${PREFIX}/lib
+	(cd ${PREFIX}/lib; ln -sf librsaref.so.2 librsaref.so)
 	install -d -m 555 ${PREFIX}/share/doc/rsaref
 	cd ${WRKDIR}/doc && \
 		${INSTALL_DATA} info.txt rsaref.txt \
 			${PREFIX}/share/doc/rsaref
+
+post-install:
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

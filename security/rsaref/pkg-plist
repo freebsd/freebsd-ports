@@ -1,5 +1,6 @@
 lib/librsaref.a
-lib/librsaref.so.2.0
+lib/librsaref.so.2
+lib/librsaref.so
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 include/rsa.h
