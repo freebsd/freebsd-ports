@@ -2,7 +2,6 @@ bin/opencdk-config
 include/opencdk.h
 lib/libopencdk.so.5
 lib/libopencdk.so
-lib/libopencdk.la
 lib/libopencdk.a
 %%PORTDOCS%%share/doc/opencdk/AUTHORS
 %%PORTDOCS%%share/doc/opencdk/NEWS
