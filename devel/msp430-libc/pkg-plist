@@ -1,0 +1,116 @@
+%%LIBC_TARG%%/include/ctype.h
+%%LIBC_TARG%%/include/debug.h
+%%LIBC_TARG%%/include/errno.h
+%%LIBC_TARG%%/include/io.h
+%%LIBC_TARG%%/include/iomacros.h
+%%LIBC_TARG%%/include/limits.h
+%%LIBC_TARG%%/include/math.h
+%%LIBC_TARG%%/include/msp430/adc10.h
+%%LIBC_TARG%%/include/msp430/adc12.h
+%%LIBC_TARG%%/include/msp430/basic_clock.h
+%%LIBC_TARG%%/include/msp430/basic_timer.h
+%%LIBC_TARG%%/include/msp430/common.h
+%%LIBC_TARG%%/include/msp430/compa.h
+%%LIBC_TARG%%/include/msp430/eprom.h
+%%LIBC_TARG%%/include/msp430/flash.h
+%%LIBC_TARG%%/include/msp430/gpio.h
+%%LIBC_TARG%%/include/msp430/lcd.h
+%%LIBC_TARG%%/include/msp430/mpy.h
+%%LIBC_TARG%%/include/msp430/slopeadc.h
+%%LIBC_TARG%%/include/msp430/svs.h
+%%LIBC_TARG%%/include/msp430/system_clock.h
+%%LIBC_TARG%%/include/msp430/timer8.h
+%%LIBC_TARG%%/include/msp430/timera.h
+%%LIBC_TARG%%/include/msp430/timerb.h
+%%LIBC_TARG%%/include/msp430/timerport.h
+%%LIBC_TARG%%/include/msp430/usart.h
+%%LIBC_TARG%%/include/msp430x11x.h
+%%LIBC_TARG%%/include/msp430x11x1.h
+%%LIBC_TARG%%/include/msp430x12x.h
+%%LIBC_TARG%%/include/msp430x12x2.h
+%%LIBC_TARG%%/include/msp430x13x.h
+%%LIBC_TARG%%/include/msp430x14x.h
+%%LIBC_TARG%%/include/msp430x31x.h
+%%LIBC_TARG%%/include/msp430x32x.h
+%%LIBC_TARG%%/include/msp430x33x.h
+%%LIBC_TARG%%/include/msp430x41x.h
+%%LIBC_TARG%%/include/msp430x43x.h
+%%LIBC_TARG%%/include/msp430x44x.h
+%%LIBC_TARG%%/include/setjmp.h
+%%LIBC_TARG%%/include/signal.h
+%%LIBC_TARG%%/include/stdio.h
+%%LIBC_TARG%%/include/stdlib.h
+%%LIBC_TARG%%/include/string.h
+%%LIBC_TARG%%/include/sys/cdefs.h
+%%LIBC_TARG%%/include/sys/inttypes.h
+%%LIBC_TARG%%/include/sys/types.h
+%%LIBC_TARG%%/lib/crt430x110.o
+%%LIBC_TARG%%/lib/crt430x1101.o
+%%LIBC_TARG%%/lib/crt430x1111.o
+%%LIBC_TARG%%/lib/crt430x112.o
+%%LIBC_TARG%%/lib/crt430x1121.o
+%%LIBC_TARG%%/lib/crt430x122.o
+%%LIBC_TARG%%/lib/crt430x1222.o
+%%LIBC_TARG%%/lib/crt430x123.o
+%%LIBC_TARG%%/lib/crt430x1232.o
+%%LIBC_TARG%%/lib/crt430x133.o
+%%LIBC_TARG%%/lib/crt430x1331.o
+%%LIBC_TARG%%/lib/crt430x135.o
+%%LIBC_TARG%%/lib/crt430x1351.o
+%%LIBC_TARG%%/lib/crt430x147.o
+%%LIBC_TARG%%/lib/crt430x148.o
+%%LIBC_TARG%%/lib/crt430x149.o
+%%LIBC_TARG%%/lib/crt430x311.o
+%%LIBC_TARG%%/lib/crt430x312.o
+%%LIBC_TARG%%/lib/crt430x313.o
+%%LIBC_TARG%%/lib/crt430x314.o
+%%LIBC_TARG%%/lib/crt430x315.o
+%%LIBC_TARG%%/lib/crt430x323.o
+%%LIBC_TARG%%/lib/crt430x325.o
+%%LIBC_TARG%%/lib/crt430x336.o
+%%LIBC_TARG%%/lib/crt430x337.o
+%%LIBC_TARG%%/lib/crt430x412.o
+%%LIBC_TARG%%/lib/crt430x413.o
+%%LIBC_TARG%%/lib/crt430x435.o
+%%LIBC_TARG%%/lib/crt430x436.o
+%%LIBC_TARG%%/lib/crt430x437.o
+%%LIBC_TARG%%/lib/crt430x447.o
+%%LIBC_TARG%%/lib/crt430x448.o
+%%LIBC_TARG%%/lib/crt430x449.o
+%%LIBC_TARG%%/lib/libc.a
+%%LIBC_TARG%%/lib/libm.a
+%%LIBC_TARG%%/lib/msp1/libc.a
+%%LIBC_TARG%%/lib/msp1/libm.a
+%%LIBC_TARG%%/lib/msp2/libc.a
+%%LIBC_TARG%%/lib/msp2/libm.a
+%%LIBC_TARG%%/share/mspgcc/doc/FAQ
+%%LIBC_TARG%%/share/mspgcc/doc/devheaders.txt
+%%LIBC_TARG%%/share/mspgcc/doc/doc.txt
+%%LIBC_TARG%%/share/mspgcc/doc/volatil
+%%LIBC_TARG%%/share/mspgcc/examples/rawsources/README
+%%LIBC_TARG%%/share/mspgcc/examples/rawsources/flash.c
+%%LIBC_TARG%%/share/mspgcc/examples/rawsources/rand.c
+%%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/README
+%%LIBC_TARG%%/share/mspgcc/examples/reed-solomon/nn4.c
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/README
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/cs8900.c
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/cs8900.h
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/easyweb.c
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/easyweb.h
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.c
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/tcpip.h
+%%LIBC_TARG%%/share/mspgcc/examples/tcpip/webside.c
+@exec mkdir -p %D/%%LIBC_TARG%%/share/mspgcc/examples/adc
+@dirrm %%LIBC_TARG%%/include/msp430
+@dirrm %%LIBC_TARG%%/include/sys
+@dirrm %%LIBC_TARG%%/include
+@dirrm %%LIBC_TARG%%/lib/msp1
+@dirrm %%LIBC_TARG%%/lib/msp2
+@dirrm %%LIBC_TARG%%/share/mspgcc/doc
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/adc
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/rawsources
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/reed-solomon
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/tcpip
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples
+@dirrm %%LIBC_TARG%%/share/mspgcc
+@unexec rmdir %D/%%LIBC_TARG%%/share 2>/dev/null || true
