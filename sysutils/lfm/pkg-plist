@@ -1,0 +1,10 @@
+bin/lfm
+lib/%%PYTHON_VERSION%%/site-packages/lfm/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/lfm/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/files.py
+lib/%%PYTHON_VERSION%%/site-packages/lfm/files.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/lfm.py
+lib/%%PYTHON_VERSION%%/site-packages/lfm/lfm.pyc
+lib/%%PYTHON_VERSION%%/site-packages/lfm/messages.py
+lib/%%PYTHON_VERSION%%/site-packages/lfm/messages.pyc
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/lfm
