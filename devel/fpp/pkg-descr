@@ -1,0 +1,8 @@
+fpp is a Fortran preprocessor for FORTRAN 77 and Fortran 90 programs.
+
+Historically, the source code preprocessor found in standard C compilers,
+cpp, has been used to provide Fortran programmers with preprocessing
+capabilities.  However, cpp is too closely tied into the C language syntax
+and source line format to be used without careful scrutiny.  The proposed
+Fortran PreProcessor, fpp, would provide Fortran-specific source code
+capabilities that C programmers have come to expect in UNIX environments.
