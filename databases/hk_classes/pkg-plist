@@ -1,3 +1,9 @@
+bin/hk_actionquery
+bin/hk_exportcsv
+bin/hk_exporthtml
+bin/hk_exportxml
+bin/hk_importcsv
+bin/hk_report
 include/hk_classes/hk_string.h
 include/hk_classes/hk_database.h
 include/hk_classes/hk_connection.h
