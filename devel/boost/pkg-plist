@@ -598,8 +598,8 @@ include/boost/utility/base_from_member.hpp
 include/boost/utility_fwd.hpp
 include/boost/version.hpp
 include/boost/weak_ptr.hpp
-lib/libboost_python.so
-lib/libboost_python_debug.so
+%%BOOST_PYTHON%%lib/libboost_python.so
+%%BOOST_PYTHON%%lib/libboost_python_debug.so
 lib/libboost_regex.a
 lib/libboost_regex.so
 lib/libboost_regex_debug.a
