@@ -1,13 +1,17 @@
-*** /dev/null	Sat Jul  6 10:38:40 1996
---- Makefile	Sat Jul  6 12:25:35 1996
+*** /dev/null	Wed Oct 13 00:00:00 1999
+--- Makefile	Wed Oct 13 00:00:00 1999
 ***************
 *** 0 ****
---- 1,8 ----
+--- 1,12 ----
 + all:
 + 	bdftopcf knmhn12x.bdf > knmhn12x.pcf
-+ 	bdftopcf knmzn12x.bdf > knmzn12x.pcf
-+ 	gzip *.pcf
++ 	gzip -9 -nf knmhn12x.pcf
 + install:
 + 	if [ ! -d ${PREFIX}/${FONTSDIR} ] ; then \
-+ 	mkdir -p ${PREFIX}/X11R6/${FONTSDIR} ; fi
-+ 	cp knmhn12x.pcf.gz knmzn12x.pcf.gz ${PREFIX}/${FONTSDIR}
++ 	${MKDIR} ${PREFIX}/${FONTSDIR} ; fi
++ 	${BSD_INSTALL_DATA} kaname-latin1.pcf.gz ${PREFIX}/${FONTSDIR}
++ 	${BSD_INSTALL_DATA} knm12p.pcf.gz ${PREFIX}/${FONTSDIR}
++ 	${BSD_INSTALL_DATA} knm12pb.pcf.gz ${PREFIX}/${FONTSDIR}
++ 	${BSD_INSTALL_DATA} knmhn12x.pcf.gz ${PREFIX}/${FONTSDIR}
++ 	${BSD_INSTALL_DATA} knmzn12x.pcf.gz ${PREFIX}/${FONTSDIR}
++ 	${BSD_INSTALL_DATA} knmzn12xb.pcf.gz ${PREFIX}/${FONTSDIR}
