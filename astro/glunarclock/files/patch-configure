@@ -1,5 +1,5 @@
---- configure.bak	Tue Dec  9 23:31:40 2003
-+++ configure	Tue Dec  9 23:31:58 2003
+--- configure.orig	Tue Dec  2 15:31:05 2003
++++ configure	Mon Dec 22 01:56:33 2003
 @@ -18919,6 +18919,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,3 +8,20 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -22257,14 +22258,14 @@
+ ACLOCAL="$ACLOCAL $ACLOCAL_FLAGS"
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define GNOME_ICONDIR "${prefix}/share/pixmaps"
++#define GNOME_ICONDIR "${datadir}/pixmaps"
+ _ACEOF
+ 
+ 
+ #defined the below to enable help to work for applets
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define DATADIR "${prefix}/share"
++#define DATADIR "${datadir}"
+ _ACEOF
+ 
+ cat >>confdefs.h <<_ACEOF
