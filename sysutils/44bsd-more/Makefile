@@ -22,6 +22,12 @@ MAN1=		44bsd-more.1
 
 RELDATE=	20000521
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	-cd ${WRKSRC} && co RCS/*,v
 
@@ -44,4 +50,4 @@ tarup:
 	cd ${WRKSRC} && tar cyf /tmp/${DISTFILES} RCS
 	scp /tmp/${DISTFILES} freefall:public_html/dists
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
