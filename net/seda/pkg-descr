@@ -1,0 +1,24 @@
+[ excerpt from developer's web site with modifications ]
+
+The goal is to build a system capable of supporting massive concurrency
+(on the order of tens of thousands of simultaneous client connections)
+and avoid the pitfalls which arise with traditional thread and
+event-based approaches.
+
+SEDA is an acronym for staged event-driven architecture, and
+decomposes a complex, event-driven application into a set of stages
+connected by queues. This design avoids the high overhead associated
+with thread-based concurrency models, and decouples event and thread
+scheduling from application logic. By performing admission control
+on each event queue, the service can be well-conditioned to load,
+preventing resources from being overcommitted when demand exceeds
+service capacity. SEDA employs dynamic control to automatically
+tune runtime parameters (such as the scheduling parameters of each
+stage), as well as to manage load, for example, by performing
+adaptive load shedding. Decomposing services into a set of stages
+also enables modularity and code reuse, as well as the development
+of debugging tools for complex event-driven applications.
+
+WWW: http://www.eecs.harvard.edu/~mdw/proj/seda/
+
+-- lioux@FreeBSD.org

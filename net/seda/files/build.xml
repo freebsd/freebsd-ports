@@ -1,0 +1,55 @@
+<!-- Obtained from http://www.haxwell.org/SEDA_Sandstorm_Ant_Build_Script.html -->
+<!-- Written by Johnathan James (jjames at haxwell dot org) -2005 -->
+<!-- Copyright by Mario S F Ferreira <lioux@FreeBSD.org> 2005- -->
+<!-- Copyright by jrandom 2005- -->
+<!-- $FreeBSD$ -->
+<project name="Build SEDA" default="dist" basedir=".">
+     <description>
+	Builds the SEDA 20020712 JAR file
+     </description>
+   <!-- set global properties for this build -->
+   <property name="src" location="src"/>
+   <property name="build" location="build"/>
+   <property name="dist" location="dist"/>
+
+   <target name="init">
+     <!-- Create the time stamp -->
+     <tstamp/>
+     <!-- Create the build directory structure used by compile -->
+     <mkdir dir="${build}"/>
+   </target>
+
+   <target name="compile" depends="init" description="compile the source " >
+     <!-- Compile the java code from ${src} into ${build} -->
+     <javac srcdir="${src}" destdir="${build}" excludes="**/test/**"/>
+   </target>
+
+   <target name="dist" depends="compile" description="generate the distribution" >
+     <!-- Create the distribution directory -->
+     <mkdir dir="${dist}/lib"/>
+
+     <!-- Put everything in ${build} into the SEDA.jar file -->
+     <jar jarfile="${dist}/lib/seda.jar" basedir="${build}"/>
+   </target>
+
+   <target name="javadoc">
+     <mkdir dir="${build}" />
+     <mkdir dir="${build}/javadoc" />
+     <javadoc access="package" 
+       destdir="${build}/javadoc" 
+       use="true" 
+       splitindex="true" 
+       sourcepath="src" 
+       windowtitle="SEDA">
+       <fileset dir="." defaultexcludes="yes">
+         <include name="**/*.java" />
+       </fileset>
+     </javadoc>
+   </target>
+
+   <target name="clean" description="clean up" >
+     <!-- Delete the ${build} and ${dist} directory trees -->
+     <delete dir="${build}"/>
+     <delete dir="${dist}"/>
+   </target>
+</project>
