@@ -1,15 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.orig	Fri Apr 20 12:59:26 2001
-+++ Makefile	Fri Apr 20 14:38:21 2001
-@@ -1,11 +1,11 @@
- # $Id: Makefile,v 1.14 2001/04/15 18:42:31 kjetilja Exp $
+--- Makefile.orig	Fri May 11 16:44:12 2001
++++ Makefile	Fri May 11 20:04:55 2001
+@@ -1,10 +1,10 @@
+ # $Id: Makefile,v 1.18 2001/05/07 10:06:00 kjetilja Exp $
  
  # Installation prefix -- modify to your preferences
 -PREFIX=/usr/local
 +PREFIX?=/usr/local
- 
  
  # NOTE: Normally nothing below this point need to be changed
 -PYTHON=/usr/bin/env python
@@ -17,3 +16,11 @@ $FreeBSD$
  PYTHONLIBPATH=`$(PYTHON) -c "import sys; print sys.modules['site'].__file__[:-8]"`
  COMPILEPROG=compileall.py
  COMPILEPROGOPT=-l .
+@@ -31,6 +31,7 @@
+ 
+ mkprefix:
+ 	@$(ECHO) "PYGMY_PREFIX='$(PREFIX)'" > prefix.py
++	@$(ECHO) "PYGMY_ICONDIR='$(PREFIX)/share/pixmaps/pygmy'" >> prefix.py
+ 	@$(ECHO) "** Code files are installed in '$(PREFIX)/share/pygmy'"
+ 	@$(ECHO) "** Pixmaps are installed in '$(PREFIX)/share/pixmaps/pygmy'"
+ 	@$(ECHO) "** The 'pygmy' executable is '$(PREFIX)/bin/pygmy'"

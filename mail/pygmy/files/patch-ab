@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- msg.py.orig	Mon Apr  2 13:51:06 2001
-+++ msg.py	Tue Apr  3 14:13:46 2001
-@@ -13,7 +13,7 @@
+--- msg.py.orig	Fri May 11 16:44:12 2001
++++ msg.py	Fri May 11 19:33:17 2001
+@@ -20,7 +20,7 @@
  
  ## Fonts
  BOLD_FONT = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
@@ -12,3 +12,36 @@ $FreeBSD$
  
  ## Error messages from the GUI
  err1 = """Error opening destination file"""
+@@ -107,6 +107,8 @@
+     ##
+     ##
+     def create_menu(self):
++        from prefix import PYGMY_ICONDIR
++
+         file_menu = [
+             UIINFO_ITEM_STOCK('Save As...', None, self.saveas, STOCK_MENU_SAVE_AS),
+             UIINFO_SEPARATOR,
+@@ -123,7 +125,7 @@
+             UIINFO_ITEM_STOCK('Reply', None, self.reply_callback,
+                               STOCK_MENU_MAIL_RPL),
+             UIINFO_ITEM_STOCK('Reply All', None, self.replyall_callback,
+-                              STOCK_MENU_MAIL_RPL),
++                              PYGMY_ICONDIR+"/reply_to_all_menu.xpm"),
+             UIINFO_ITEM_STOCK('Forward', None, self.fwd_callback,
+                               STOCK_MENU_MAIL_FWD),
+             UIINFO_ITEM_STOCK('View All Headers', None, self.all_headers,
+@@ -149,11 +151,13 @@
+     ##
+     ##
+     def create_toolbar(self):
++        from prefix import PYGMY_ICONDIR
++
+         toolbar_info = [
+             UIINFO_ITEM_STOCK('Reply', None, self.reply_callback,
+                               STOCK_PIXMAP_MAIL_RPL),
+             UIINFO_ITEM_STOCK('Reply All', None, self.replyall_callback,
+-                              STOCK_PIXMAP_MAIL_RPL),
++                              PYGMY_ICONDIR+"/reply_to_all.xpm"),
+             UIINFO_ITEM_STOCK('Forward', None, self.fwd_callback,
+                               STOCK_PIXMAP_MAIL_FWD),
+             UIINFO_SEPARATOR,

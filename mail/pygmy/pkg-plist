@@ -29,6 +29,9 @@ share/pygmy/folderops.pyo
 share/pygmy/headers.py
 share/pygmy/headers.pyc
 share/pygmy/headers.pyo
+share/pygmy/html.py
+share/pygmy/html.pyc
+share/pygmy/html.pyo
 share/pygmy/icons/configure_mail.xpm
 share/pygmy/icons/dir-close.xpm
 share/pygmy/icons/dir-open.xpm
@@ -40,6 +43,8 @@ share/pygmy/icons/inbox.xpm
 share/pygmy/icons/mark.xpm
 share/pygmy/icons/move_message.xpm
 share/pygmy/icons/outbox.xpm
+share/pygmy/icons/reply_to_all.xpm
+share/pygmy/icons/reply_to_all_menu.xpm
 share/pygmy/icons/trash.xpm
 share/pygmy/icons/tray_empty.xpm
 share/pygmy/icons/tray_full.xpm

@@ -1,17 +1,24 @@
---- prefs.py.orig	Thu Sep 28 20:44:36 2000
-+++ prefs.py	Mon Oct  2 09:28:45 2000
-@@ -93,10 +93,10 @@
-         self.citechar = ">"    # Cite character
-         self.prefix = "Re:"    # Subject reply prefix
+
+$FreeBSD$
+
+--- prefs.py	2001/05/11 08:50:17	1.1
++++ prefs.py	2001/05/11 08:50:39
+@@ -80,13 +80,13 @@
+         self.forward = get_string('pygmy/prefs/forward') or "Fw:"
  
--	self.fld_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
--        self.sub_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
--	self.msg_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
--	self.compose_font = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
-+	self.fld_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
-+        self.sub_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
-+	self.msg_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
-+	self.compose_font = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
-        
-         # Size of application (win, foldertree, msg, listing)
-         self.size = ((560,560),(170,280),(520,280),(10, 100, 290, 10))
+ 	self.fld_font = get_string('pygmy/prefs/fld_font') or \
+-                        '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
++                        '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+         self.sub_font = get_string('pygmy/prefs/sub_font') or \
+-                        '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
++                        '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+ 	self.msg_font = get_string('pygmy/prefs/msg_font') or \
+-                        '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
++                        '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+ 	self.compose_font = get_string('pygmy/prefs/compose_font') or \
+-                            '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
++                            '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+ 
+         default_sizes = [[560, 560], [170, 280], [520, 280], [10, 100, 290, 10]]
+         self.size = range(len(default_sizes)) 
+ 
