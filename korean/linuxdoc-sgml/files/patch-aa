@@ -1,0 +1,25 @@
+*** ../linuxdoc-sgml-1.6bh2/install.quick	Fri Jan 17 19:28:00 1997
+--- install.quick	Wed Apr  2 22:20:41 1997
+***************
+*** 10,19 ****
+   
+  trap "CleanUp" 0 1 2 3 9 15
+  
+! prefix=/usr/local
+  LINUXDOCBIN=$prefix/bin
+! LINUXDOCLIB=$prefix/share/linuxdoc-sgml-h
+! LINUXDOCDOC=$prefix/doc/linuxdoc-sgml-1.6bh1
+  LINUXDOCMAN=$prefix/man/man1
+  PERL=$prefix/bin/perl
+  OPTIMIZE=-O
+--- 10,19 ----
+   
+  trap "CleanUp" 0 1 2 3 9 15
+  
+! prefix=$PREFIX
+  LINUXDOCBIN=$prefix/bin
+! LINUXDOCLIB=$prefix/share/linuxdoc-sgml-1.6bh2
+! LINUXDOCDOC=$prefix/share/linuxdoc-sgml-1.6bh2/doc
+  LINUXDOCMAN=$prefix/man/man1
+  PERL=$prefix/bin/perl
+  OPTIMIZE=-O
