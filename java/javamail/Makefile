@@ -23,7 +23,7 @@ USE_JAVA=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 NO_CDROM=	"See the license"
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22\&PartDetailId=7515-java_mail-1.3.1-oth-JPR\&SiteId=JSC\&TransactionId=noreg
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7515-java_mail-1.3.1-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .if !defined(NOPORTDOCS)
 DOCFILES1=	JavaMail-1.1-changes.txt JavaMail-1.2-changes.txt \
@@ -38,7 +38,7 @@ PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		"You must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again"
+IGNORE=		You must manually fetch the distribution from ${DOWNLOAD_URL} and place it in ${DISTDIR} then run make again
 .endif
 
 do-install:
