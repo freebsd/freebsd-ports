@@ -32,6 +32,8 @@ pre-everything:
 	@${ECHO_MSG} "This port is just for making symlink from /bin/tcsh"
 	@${ECHO_MSG} "to ${PREFIX}/bin/tcsh and updating /etc/shells."
 
+do-patch:
+
 do-install:
 	${LN} -sf /bin/tcsh ${PREFIX}/bin/tcsh
 .else
