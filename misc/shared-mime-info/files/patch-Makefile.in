@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Jul 28 17:48:22 2002
++++ Makefile.in	Sun Jul 28 17:47:36 2002
+@@ -104,7 +104,7 @@
+ update_mime_database_LDFLAGS =
+ 
+ DEFS = @DEFS@
+-DEFAULT_INCLUDES =  -I. -I$(srcdir) -I.
++DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(LOCALBASE)/include
+ CPPFLAGS = @CPPFLAGS@
+ LIBS = @LIBS@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
