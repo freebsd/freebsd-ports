@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="da9e6438-bfc0-11d8-b00e-000347a4fa7d">
+    <topic>MoinMoin administrative group name privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+        <name>moinmoin</name>
+        <range><lt>1.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A serious flaw exists in the MoinMoin software
+	  which may allow a malicious user to gain access to
+	  unauthorized privileges.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.osvdb.org/6704</url>
+    </references>
+    <dates>
+      <discovery>2004-05-04</discovery>
+      <entry>2004-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a9d5dfe-c507-11d8-8898-000d6111a684">
     <topic>isc-dhcp3-server buffer overflow in logging mechanism</topic>
     <affects>
