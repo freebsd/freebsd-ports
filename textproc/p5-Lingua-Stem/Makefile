@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		Lingua-Stem
-PORTVERSION=		0.61
-PORTREVISION=		1
+PORTVERSION=		0.70
 CATEGORIES=		textproc perl5
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
@@ -17,6 +16,7 @@ MAINTAINER=		thorsten.greiner@web.de
 COMMENT=		Provides word stemming algorithms localized by language
 
 BUILD_DEPENDS=		${SITE_PERL}/Lingua/PT/Stemmer.pm:${PORTSDIR}/textproc/p5-Lingua-PT-Stemmer \
+			${SITE_PERL}/Lingua/Stem/Fr.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Fr \
 			${SITE_PERL}/Lingua/Stem/It.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-It \
 			${SITE_PERL}/Lingua/Stem/Snowball/Da.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball-Da \
 			${SITE_PERL}/Lingua/Stem/Snowball/No.pm:${PORTSDIR}/textproc/p5-Lingua-Stem-Snowball-No \
