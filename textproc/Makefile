@@ -48,6 +48,7 @@
     SUBDIR += expat2
     SUBDIR += fdp-tools
     SUBDIR += filepp
+    SUBDIR += fist
     SUBDIR += fop
     SUBDIR += freegrep
     SUBDIR += fribidi
