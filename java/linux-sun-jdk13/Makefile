@@ -49,6 +49,18 @@ IGNORE=	You must manually fetch the Java 2 Development Kit ${PORTVERSION} \
 	then run make again
 .endif
 
+pre-extract:
+	@if [ -z "`kldstat -v | ${GREP} -E 'linux(aout|elf)'`" ]; then \
+		${ECHO} 'Linux mode is not enabled.\
+			Loading Linux kernel module...' | fmt; \
+		linux || { \
+		${ECHO} 'The Linux kernel module could not be loaded.\
+			Please manually load the module and retry.\
+			See "man linux" for details.' | fmt; \
+		${FALSE}; \
+		};\
+	fi
+
 post-fetch:
 	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
 
