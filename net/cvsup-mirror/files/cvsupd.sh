@@ -19,7 +19,7 @@ cd ${rundir} || exit
 arg=${1:-start}
 case $arg in
 start)
-    su -m ${user} -c \
+    su -f -m ${user} -c \
 	"cvsupd -e -C 100 -l @${facility} -b ${base} -s sup.client" \
 	>>${out} 2>&1;;
 

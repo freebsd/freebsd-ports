@@ -48,17 +48,17 @@ umask 2
 ok=yes
 if [ ${host_crypto} = ${host} ]; then
     echo "Updating from ${host}"
-    su -m ${cuser} -c \
+    su -f -m ${cuser} -c \
 	"${cmd} ${options} -h ${host} ${base}/supfile" || ok=no
 else
     if [ -d ${base}/prefixes/FreeBSD-crypto.cvs ]; then
 	echo "Updating from ${host_crypto}"
-	su -m ${cuser} -c \
+	su -f -m ${cuser} -c \
 	    "${cmd} ${options} -h ${host_crypto} ${base}/supfile.crypto" ||\
 		ok=no
     fi
     echo "Updating from ${host}"
-    su -m ${cuser} -c \
+    su -f -m ${cuser} -c \
 	"${cmd} ${options} -h ${host} ${base}/supfile.non-crypto" || ok=no
 fi
 
