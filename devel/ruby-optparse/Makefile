@@ -21,7 +21,8 @@ NO_BUILD=	yes
 DOCS_EN=	ChangeLog \
 		ChangeLog.html \
 		README.en \
-		optparse.html \
+		optparse.en.html \
+		optparse.en.rd \
 		optparse.rlog \
 		rmi.html
 DOCS_JA=	FIRSTSTEP.ja.html \
@@ -29,6 +30,9 @@ DOCS_JA=	FIRSTSTEP.ja.html \
 		README.ja \
 		optparse.ja.html \
 		optparse.ja.rd
+
+post-extract:
+	${MV} ${WRKSRC}/optparse.html ${WRKSRC}/optparse.en.html 
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/${PORTNAME}
