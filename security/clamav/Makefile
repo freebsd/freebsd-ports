@@ -7,7 +7,6 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:C/([a-z])[a-z]*/.\1/g:S/-/./g}
-PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -24,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.81
+DISTVERSION=	0.82
 
 OPTIONS=	MILTER "Compile the milter interface" Off \
 		CURL "Support URL downloading" Off
@@ -37,7 +36,7 @@ USE_RC_SUBR=	yes
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
-PORTDOCS=	NEWS ChangeLog
+PORTDOCS=	NEWS ChangeLog html
 
 DBDIR=		/var/db/clamav
 LOGDIR=		/var/log/clamav
@@ -171,6 +170,10 @@ post-install:
 	@${MKDIR} ${DESTDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
 		${DESTDIR}${DOCSDIR}
+	@${MKDIR} ${DESTDIR}${DOCSDIR}/html
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/docs/html/*.* \
+		${DESTDIR}${DOCSDIR}/html
+
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} PKG_DESTDIR=${DESTDIR} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
