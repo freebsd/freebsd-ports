@@ -32,6 +32,7 @@ HAS_CONFIGURE=	yes
 CFLAGS:=	${CFLAGS:S/${_CPUCFLAGS}//g}
 .endif
 PLIST_SUB=	GCC_VER=${PORTVERSION}
+BREAKS_IF_PEDANTIC=	yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} --target=m6811-elf   \
 			--program-prefix=m6811-elf-
 

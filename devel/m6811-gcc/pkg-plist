@@ -1,4 +1,5 @@
 bin/m6811-elf-c++
+bin/m6811-elf-c++filt
 bin/m6811-elf-chill
 bin/m6811-elf-g++
 bin/m6811-elf-g77
@@ -138,6 +139,7 @@ lib/gcc-lib/m6811-elf/%%GCC_VER%%/mshort/libgcc.a
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/mshort/crt1.o
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/fshort-double/libgcc.a
 lib/gcc-lib/m6811-elf/%%GCC_VER%%/fshort-double/crt1.o
+lib/libiberty.a
 m6811-elf/bin/gcc
 m6811-elf/include/assert.h
 @dirrm lib/gcc-lib/m6811-elf/%%GCC_VER%%/m68hc12/mshort/fshort-double
