@@ -1,9 +1,15 @@
 #! /bin/sh
 #
-# $Id: commitcheck,v 1.4 1996/02/07 14:35:35 peter Exp $
+# $Id: commitcheck,v 1.5 1996/12/23 05:42:37 peter Exp $
 
-case "`hostname`" in
-freefall*)
+#
+# BEWARE:  If you are "borrowing" this code for use on another cvs
+# repository, please make sure you change all references to '@FreeBSD.org'
+# in the log_accum script.  Otherwise your commit messages will be sent
+# to 'cvs-committers@freebsd.org' etc.  This could be highly embarresing. :-)
+#
+case "`hostname | tr A-Z a-z`" in
+freefall.freebsd.org)
 	:
 	;;
 *)
@@ -11,17 +17,38 @@ freefall*)
 	exit 1
 esac
 
+#
+# Ensure the minimum version of cvs is installed.
+#
 VERS=`/usr/bin/cvs -v | awk '$1 == "Concurrent" { print $5 }' | tr -d .`
 if [ "x${VERS}" = "x" -o ${VERS} -lt 180 ]; then
-	echo "The wrong version of CVS is installed!"
+	echo "The wrong version of CVS is installed!" 1>&2
 	exit 1
 fi
 
 
-if $CVSROOT/CVSROOT/cvs_acls.pl ${1+"$@"}; then
-   if $CVSROOT/CVSROOT/commit_prep.pl ${1+"$@"}; then
-      exit 0
-   fi
+#
+# Does the access control list allow them commit access?
+#
+if $CVSROOT/CVSROOT/cvs_acls.pl ${1+"$@"}
+then
+	:	# OK
+else
+	echo "Access control checks failed! (cvs_acls.pl)" 1>&2
+	exit 1
 fi
 
-exit 1
+#
+# Last minute checks and preperations for log_accum.pl later.  This
+# records the last directory in this commit so that log_accum knows when
+# to finish coalescing commit messages and mail it.
+#
+if $CVSROOT/CVSROOT/commit_prep.pl ${1+"$@"}
+then
+	:	# OK
+else
+	echo "commit_prep.pl failed!" 1>&2
+	exit 1
+fi
+
+exit 0		# Lets do it!
