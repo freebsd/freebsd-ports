@@ -2,6 +2,8 @@ include/db2/db.h
 include/db2/db_cxx.h
 include/db2/db_185.h
 lib/libdb2.a
+lib/libdb2.so
+lib/libdb2.so.0
 bin/db_archive
 bin/db_checkpoint
 bin/db_deadlock
@@ -560,3 +562,5 @@ share/examples/db2/examples_java/TpcbExample.java
 @dirrm share/doc/db2/api_java
 @dirrm share/doc/db2/images
 @dirrm share/doc/db2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

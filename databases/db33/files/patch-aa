@@ -1,15 +1,162 @@
---- ../dist/Makefile.in.orig	Mon Dec  7 22:05:59 1998
-+++ ../dist/Makefile.in	Mon Mar 29 00:59:52 1999
-@@ -43,7 +43,7 @@
+--- ../dist/Makefile.in.orig	Mon Dec  7 21:05:59 1998
++++ ../dist/Makefile.in	Tue Jun  6 17:44:50 2000
+@@ -1,13 +1,16 @@
+ # @(#)Makefile.in	10.62 (Sleepycat) 12/7/98
+ 
++SOVER?=	0
++
+ srcdir=	@srcdir@/..
+ CPPFLAGS=-I. -I$(srcdir)/include @CPPFLAGS@
++SHAREDFLAGS= -fpic -DPIC
+ CFLAGS=	-c @CFLAGS@ $(CPPFLAGS)
+ CC=	@CC@
+ CXXFLAGS=-c @CXXFLAGS@ $(CPPFLAGS)
+ CXX=	@CXX@
+-LDFLAGS=@LDFLAGS@
+-LIBS=	@LIBS@
++LDFLAGS=@LDFLAGS@ -L.
++LIBS=	@LIBS@ -ldb2
+ 
+ SHELL=	@db_cv_path_sh@
+ ar=	@db_cv_path_ar@ cr
+@@ -43,85 +46,91 @@
  LOBJS=	@LIBOBJS@
  POBJS=	err.o getlong.o
  
 -libdb=	libdb.a
+-all: $(libdb) $(PROGS)
 +libdb=  libdb2.a
- all: $(libdb) $(PROGS)
++libdbso=  libdb2.so.$(SOVER)
++all: $(libdb) $(libdbso) $(PROGS)
  
  $(libdb): db.h $(OBJS) $(LOBJS)
-@@ -141,11 +141,11 @@
+ 	$(rm) -f $@
+ 	$(ar) $@ $(OBJS) $(LOBJS)
+ 	test ! -f $(ranlib) || $(ranlib) $@
+ 
++$(libdbso): db.h $(OBJS:S/.o$/.so/g) $(LOBJS:S/.o$/.so/g)
++	$(rm) -f $@
++	$(CXX) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(OBJS:S/.o$/.so/g) $(LOBJS:S/.o$/.so/g)
++	ln -sf $@ libdb2.so
++
+ DBA=	db_archive.o $(POBJS)
+-db_archive: $(DBA) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBA) $(libdb) $(LIBS)
++db_archive: $(DBA) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBA) $(LIBS)
+ 
+ DBB=	db_checkpoint.o $(POBJS)
+-db_checkpoint: $(DBB) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBB) $(libdb) $(LIBS)
++db_checkpoint: $(DBB) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBB) $(LIBS)
+ 
+ DBC=	db_deadlock.o $(POBJS)
+-db_deadlock: $(DBC) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBC) $(libdb) $(LIBS)
++db_deadlock: $(DBC) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBC) $(LIBS)
+ 
+ DBD=	db_dump.o $(POBJS)
+-db_dump: $(DBD) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBD) $(libdb) $(LIBS)
++db_dump: $(DBD) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBD) $(LIBS)
+ 
+ DBE=	db_dump185.o $(POBJS)
+ db_dump185: $(DBE)
+ 	$(CC) -o $@ $(LDFLAGS) $(DBE) $(LIBS)
+ 
+ DBF=	db_load.o $(POBJS)
+-db_load: $(DBF) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBF) $(libdb) $(LIBS)
++db_load: $(DBF) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBF) $(LIBS)
+ 
+ DBG=	db_printlog.o $(POBJS)
+-db_printlog: $(DBG) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBG) $(libdb) $(LIBS)
++db_printlog: $(DBG) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBG) $(LIBS)
+ 
+ DBH=	db_recover.o $(POBJS)
+-db_recover: $(DBH) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBH) $(libdb) $(LIBS)
++db_recover: $(DBH) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBH) $(LIBS)
+ 
+ DBI=	db_stat.o $(POBJS)
+-db_stat: $(DBI) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBI) $(libdb) $(LIBS)
++db_stat: $(DBI) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBI) $(LIBS)
+ 
+ EPROGS=	ex_access ex_appinit ex_btrec ex_lock ex_mpool ex_thread ex_tpcb
+ DBJ=	ex_access.o
+-ex_access: $(DBJ) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBJ) $(libdb) $(LIBS)
++ex_access: $(DBJ) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBJ) $(LIBS)
+ 
+ DBK=	ex_appinit.o
+-ex_appinit: $(DBK) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBK) $(libdb) $(LIBS)
++ex_appinit: $(DBK) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBK) $(LIBS)
+ 
+ DBL=	ex_btrec.o
+-ex_btrec: $(DBL) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBL) $(libdb) $(LIBS)
++ex_btrec: $(DBL) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBL) $(LIBS)
+ 
+ DBM=	ex_lock.o $(POBJS)
+-ex_lock: $(DBM) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBM) $(libdb) $(LIBS)
++ex_lock: $(DBM) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBM) $(LIBS)
+ 
+ DBN=	ex_mpool.o
+-ex_mpool: $(DBN) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBN) $(libdb) $(LIBS)
++ex_mpool: $(DBN) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBN) $(LIBS)
+ 
+ DBO=	ex_thread.o
+-ex_thread: $(DBO) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBO) $(libdb) $(LIBS)
++ex_thread: $(DBO) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBO) $(LIBS)
+ 
+ DBP=	ex_tpcb.o $(POBJS)
+-ex_tpcb: $(DBP) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBP) $(libdb) $(LIBS)
++ex_tpcb: $(DBP) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBP) $(LIBS)
+ 
+ DBT=	tclAppInit.o tcl_dbm.o tcl_hsearch.o tcl_lock.o tcl_log.o tcl_mpool.o \
+ 	tcl_mutex.o tcl_ndbm.o tcl_txn.o utils.o $(POBJS)
+ 
+ dbtest: .dbtestrc
+-dbtest: $(DBT) $(libdb)
+-	$(CC) -o $@ $(LDFLAGS) $(DBT) $(libdb) $(LIBS)
++dbtest: $(DBT) $(libdbso)
++	$(CC) -o $@ $(LDFLAGS) $(DBT) $(LIBS)
+ 
+ AOBJS=	err.o getcwd.o getlong.o getopt.o memcmp.o memcpy.o memmove.o \
+ 	raise.o snprintf.o strerror.o strsep.o vsnprintf.o
+@@ -131,8 +140,8 @@
+ 	$(rm) -f $(DBA) $(DBB) $(DBC) $(DBD) $(DBE) $(DBF) $(DBG) $(DBH)
+ 	$(rm) -f $(DBI) $(DBJ) $(DBK) $(DBL) $(DBM) $(DBN) $(DBO) $(DBP)
+ 	$(rm) -f $(DBT)
+-	$(rm) -f $(PROGS) $(EPROGS) $(POBJS) $(LOBJS) @build_test@
+-	$(rm) -f core *.core .dbtestrc $(libdb)
++	$(rm) -f $(PROGS) $(EPROGS) $(POBJS) $(LOBJS) *.so @build_test@
++	$(rm) -f core *.core .dbtestrc $(libdb) $(libdbso)
+ 
+ depend obj:
+ 
+@@ -141,11 +150,11 @@
  	$(rm) -f confdefs.h db.h db_int.h db_185.h include.tcl
  
  prefix=	@prefix@
@@ -26,3 +173,334 @@
  
  dmode=	755
  emode=	555
+@@ -170,6 +179,9 @@
+ 	@cd $(libdir) && $(rm) -f $(libdb)
+ 	@$(cp) -p $(libdb) $(libdir)
+ 	@cd $(libdir) && $(chmod) $(fmode) $(libdb)
++	@$(cp) -p $(libdbso) $(libdir)
++	@cd $(libdir) && $(chmod) $(fmode) $(libdbso)
++	ln -sf $(libdbso) $(libdir)/libdb2.so
+ 	@echo "Installing DB utilities: $(bindir) ..."
+ 	@test -d $(bindir) || \
+ 	    ($(mkdir) -p $(bindir) && $(chmod) $(dmode) $(bindir))
+@@ -506,3 +518,320 @@
+ 	$(CC) $(CFLAGS) $?
+ vsnprintf.o: $(srcdir)/clib/vsnprintf.c
+ 	$(CC) $(CFLAGS) $?
++
++# Shared build
++# Programs.
++db_archive.so: $(srcdir)/db_archive/db_archive.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_checkpoint.so: $(srcdir)/db_checkpoint/db_checkpoint.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_deadlock.so: $(srcdir)/db_deadlock/db_deadlock.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_dump.so: $(srcdir)/db_dump/db_dump.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_dump185.so: $(srcdir)/db_dump185/db_dump185.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_load.so: $(srcdir)/db_load/db_load.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_printlog.so: $(srcdir)/db_printlog/db_printlog.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_recover.so: $(srcdir)/db_recover/db_recover.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_stat.so: $(srcdir)/db_stat/db_stat.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Examples.
++ex_access.so: $(srcdir)/examples/ex_access.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++ex_appinit.so: $(srcdir)/examples/ex_appinit.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++ex_btrec.so: $(srcdir)/examples/ex_btrec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++ex_lock.so: $(srcdir)/examples/ex_lock.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++ex_mpool.so: $(srcdir)/examples/ex_mpool.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++ex_thread.so: $(srcdir)/examples/ex_thread.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++ex_tpcb.so: $(srcdir)/examples/ex_tpcb.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# DB files.
++db.so: $(srcdir)/db/db.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_am.so: $(srcdir)/db/db_am.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_auto.so: $(srcdir)/db/db_auto.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_conv.so: $(srcdir)/db/db_conv.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_dispatch.so: $(srcdir)/db/db_dispatch.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_dup.so: $(srcdir)/db/db_dup.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_iface.so: $(srcdir)/db/db_iface.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_join.so: $(srcdir)/db/db_join.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_overflow.so: $(srcdir)/db/db_overflow.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_pr.so: $(srcdir)/db/db_pr.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_rec.so: $(srcdir)/db/db_rec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_ret.so: $(srcdir)/db/db_ret.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Btree source files.
++bt_compare.so: $(srcdir)/btree/bt_compare.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_conv.so: $(srcdir)/btree/bt_conv.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_curadj.so: $(srcdir)/btree/bt_curadj.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_cursor.so: $(srcdir)/btree/bt_cursor.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_delete.so: $(srcdir)/btree/bt_delete.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_open.so: $(srcdir)/btree/bt_open.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_page.so: $(srcdir)/btree/bt_page.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_put.so: $(srcdir)/btree/bt_put.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_rec.so: $(srcdir)/btree/bt_rec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_recno.so: $(srcdir)/btree/bt_recno.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_rsearch.so: $(srcdir)/btree/bt_rsearch.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_search.so: $(srcdir)/btree/bt_search.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_split.so: $(srcdir)/btree/bt_split.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_stack.so: $(srcdir)/btree/bt_stack.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++bt_stat.so: $(srcdir)/btree/bt_stat.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++btree_auto.so: $(srcdir)/btree/btree_auto.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# C++ interface files.
++cxx_app.so: $(srcdir)/cxx/cxx_app.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++cxx_except.so: $(srcdir)/cxx/cxx_except.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++cxx_lock.so: $(srcdir)/cxx/cxx_lock.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++cxx_log.so: $(srcdir)/cxx/cxx_log.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++cxx_mpool.so: $(srcdir)/cxx/cxx_mpool.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++cxx_table.so: $(srcdir)/cxx/cxx_table.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++cxx_txn.so: $(srcdir)/cxx/cxx_txn.cpp
++	$(CXX) $(CXXFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Hash source files.
++hash_auto.so: $(srcdir)/hash/hash_auto.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash.so: $(srcdir)/hash/hash.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash_conv.so: $(srcdir)/hash/hash_conv.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash_dup.so: $(srcdir)/hash/hash_dup.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash_func.so: $(srcdir)/hash/hash_func.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash_page.so: $(srcdir)/hash/hash_page.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash_rec.so: $(srcdir)/hash/hash_rec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++hash_stat.so: $(srcdir)/hash/hash_stat.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Lock source files.
++lock.so: $(srcdir)/lock/lock.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++lock_conflict.so:$(srcdir)/lock/lock_conflict.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++lock_deadlock.so:$(srcdir)/lock/lock_deadlock.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++lock_region.so:$(srcdir)/lock/lock_region.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++lock_util.so:$(srcdir)/lock/lock_util.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Log source files.
++log.so: $(srcdir)/log/log.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_archive.so: $(srcdir)/log/log_archive.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_auto.so: $(srcdir)/log/log_auto.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_compare.so: $(srcdir)/log/log_compare.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_findckp.so: $(srcdir)/log/log_findckp.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_get.so: $(srcdir)/log/log_get.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_put.so: $(srcdir)/log/log_put.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_rec.so: $(srcdir)/log/log_rec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++log_register.so: $(srcdir)/log/log_register.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Mpool source files.
++mp_bh.so: $(srcdir)/mp/mp_bh.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_fget.so: $(srcdir)/mp/mp_fget.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_fopen.so: $(srcdir)/mp/mp_fopen.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_fput.so: $(srcdir)/mp/mp_fput.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_fset.so: $(srcdir)/mp/mp_fset.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_open.so: $(srcdir)/mp/mp_open.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_pr.so: $(srcdir)/mp/mp_pr.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_region.so: $(srcdir)/mp/mp_region.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++mp_sync.so: $(srcdir)/mp/mp_sync.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Mutex source files.
++mutex.so: $(srcdir)/mutex/mutex.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++# XXX
++# UTS4 spinlocks
++uts4_cc.so: $(srcdir)/mutex/uts4_cc.s
++	$(AS) $(ASFLAGS) $(SHAREDFLAGS) -o $@ $? -o $@
++
++# Transaction source files.
++txn.so: $(srcdir)/txn/txn.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++txn_auto.so: $(srcdir)/txn/txn_auto.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++txn_rec.so: $(srcdir)/txn/txn_rec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# XA source files.
++xa.so: $(srcdir)/xa/xa.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++xa_db.so: $(srcdir)/xa/xa_db.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++xa_map.so: $(srcdir)/xa/xa_map.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Historic interfaces.
++hsearch.so: $(srcdir)/hsearch/hsearch.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++dbm.so: $(srcdir)/dbm/dbm.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db185.so: $(srcdir)/db185/db185.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Common source files.
++db_appinit.so: $(srcdir)/common/db_appinit.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_apprec.so: $(srcdir)/common/db_apprec.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_byteorder.so: $(srcdir)/common/db_byteorder.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_err.so: $(srcdir)/common/db_err.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_log2.so: $(srcdir)/common/db_log2.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_region.so: $(srcdir)/common/db_region.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_salloc.so: $(srcdir)/common/db_salloc.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++db_shash.so: $(srcdir)/common/db_shash.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# OS specific source files.
++os_abs.so: $(srcdir)/os/os_abs.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_alloc.so: $(srcdir)/os/os_alloc.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_config.so: $(srcdir)/os/os_config.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_dir.so: $(srcdir)/os/os_dir.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_fid.so: $(srcdir)/os/os_fid.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_fsync.so: $(srcdir)/os/os_fsync.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_map.so: $(srcdir)/os/os_map.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_oflags.so: $(srcdir)/os/os_oflags.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_open.so: $(srcdir)/os/os_open.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_rpath.so: $(srcdir)/os/os_rpath.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_rw.so: $(srcdir)/os/os_rw.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_seek.so: $(srcdir)/os/os_seek.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_sleep.so: $(srcdir)/os/os_sleep.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_spin.so: $(srcdir)/os/os_spin.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_stat.so: $(srcdir)/os/os_stat.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_tmpdir.so: $(srcdir)/os/os_tmpdir.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++os_unlink.so: $(srcdir)/os/os_unlink.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Test programs.
++tclAppInit.so: $(srcdir)/test/tclAppInit.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_dbm.so: $(srcdir)/test/tcl_dbm.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_hsearch.so: $(srcdir)/test/tcl_hsearch.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_lock.so: $(srcdir)/test/tcl_lock.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_log.so: $(srcdir)/test/tcl_log.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_mpool.so: $(srcdir)/test/tcl_mpool.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_mutex.so: $(srcdir)/test/tcl_mutex.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_ndbm.so: $(srcdir)/test/tcl_ndbm.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++tcl_txn.so: $(srcdir)/test/tcl_txn.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++utils.so: $(srcdir)/test/utils.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++
++# Replacement source files.
++err.so: $(srcdir)/clib/err.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++getcwd.so: $(srcdir)/clib/getcwd.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++getlong.so: $(srcdir)/clib/getlong.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++getopt.so: $(srcdir)/clib/getopt.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++memcmp.so: $(srcdir)/clib/memcmp.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++memcpy.so: $(srcdir)/clib/memmove.c
++	$(CC) -DMEMCOPY $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++memmove.so: $(srcdir)/clib/memmove.c
++	$(CC) -DMEMMOVE $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++raise.so: $(srcdir)/clib/raise.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++snprintf.so: $(srcdir)/clib/snprintf.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++strerror.so: $(srcdir)/clib/strerror.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++strsep.so: $(srcdir)/clib/strsep.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
++vsnprintf.so: $(srcdir)/clib/vsnprintf.c
++	$(CC) $(CFLAGS) $(SHAREDFLAGS) $? -o $@
