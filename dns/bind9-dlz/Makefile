@@ -65,9 +65,12 @@ CONFIGURE_ARGS+=	--with-dlz-mysql
 
 .if defined(WITH_LDAP)
 LDAP_SUFFIX=	+ldap
-LDAP_PORT?=	net/openldap21-client
+.if defined(LDAP_PORT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
 RUN_DEPENDS+=	${LOCALBASE}/lib/${OPENLDAP_LIB}:${PORTSDIR}/${LDAP_PORT}
+.else
+USE_OPENLDAP_VER?=	21
+.endif
 CONFIGURE_ARGS+=	--with-dlz-ldap
 .endif
 
