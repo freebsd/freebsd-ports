@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Set/Infinite.pm
+%%SITE_PERL%%/Set/Infinite/Arithmetic.pm
+%%SITE_PERL%%/Set/Infinite/Basic.pm
+%%SITE_PERL%%/Set/Infinite/Date.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Infinite/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Infinite
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Set 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Set/Infinite
+@unexec rmdir %D/%%SITE_PERL%%/Set 2>/dev/null || true

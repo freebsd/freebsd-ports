@@ -1,0 +1,8 @@
+Set::Infinite is a Set Theory module for infinite sets.
+
+It works with reals, integers, and objects.
+
+When it is used dates, this module provides schedule checks (intersections),
+unions, and infinite recurrences.
+
+WWW: http://search.cpan.org/dist/Set-Infinite/
