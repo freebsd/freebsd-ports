@@ -1474,7 +1474,12 @@ do-fetch:
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
+				case $${file} in \
+				*/*)	${MKDIR} $${file%/*}; \
+						args="-o $${file} $${site}$${file}";; \
+				*)		args=$${site}$${file};; \
+				esac; \
+				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
 				fi \
 			done; \
@@ -1498,7 +1503,12 @@ do-fetch:
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
+				case $${file} in \
+				*/*)	${MKDIR} $${file%/*}; \
+						args="-o $${file} $${site}$${file}";; \
+				*)		args=$${site}$${file};; \
+				esac; \
+				if ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} ${FETCH_AFTER_ARGS}; then \
 					continue 2; \
 				fi \
 			done; \
@@ -2033,7 +2043,11 @@ fetch-list:
 			for site in ${MASTER_SITES}; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '||' ; \
+				case $${file} in \
+				*/*)	args="-o $${file} $${site}$${file}";; \
+				*)		args=$${site}$${file};; \
+				esac; \
+				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '||' ; \
 					break; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
@@ -2046,7 +2060,11 @@ fetch-list:
 			for site in ${PATCH_SITES}; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
-				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} "${FETCH_AFTER_ARGS}" '||' ; \
+				case $${file} in \
+				*/*)	args="-o $${file} $${site}$${file}";; \
+				*)		args=$${site}$${file};; \
+				esac; \
+				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '||' ; \
 					break; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
