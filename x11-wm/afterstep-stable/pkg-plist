@@ -21,9 +21,9 @@ lib/X11/afterstep/backgrounds/tile.check.jpg
 lib/X11/afterstep/backgrounds/volcanic.jpg
 lib/X11/afterstep/backgrounds/wood.jpg
 lib/X11/afterstep/doc/CHANGES
+lib/X11/afterstep/doc/NEW
 lib/X11/afterstep/doc/README
 lib/X11/afterstep/doc/README.8bit
-lib/X11/afterstep/doc/README.gradient
 lib/X11/afterstep/doc/afterstep.faq
 lib/X11/afterstep/sounds/beaming.au
 lib/X11/afterstep/sounds/bong.au
@@ -48,8 +48,14 @@ include/X11/pixmaps/netscape3.xpm
 include/X11/pixmaps/shutdown.xpm
 include/X11/pixmaps/text.xpm
 include/X11/pixmaps/writeletter.xpm
+man/man1/afterstep.1.gz
+man/man1/asclock.1.gz
+man/man1/Audio.1.gz
+man/man1/Auto.1.gz
+man/man1/Banner.1.gz
+man/man1/Pager.1.gz
+man/man1/Wharf.1.gz
 @dirrm lib/X11/afterstep/doc
 @dirrm lib/X11/afterstep/backgrounds
 @dirrm lib/X11/afterstep/sounds
 @dirrm lib/X11/afterstep
-@dirrm include/X11/pixmaps
