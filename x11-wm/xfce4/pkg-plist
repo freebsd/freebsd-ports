@@ -4,6 +4,7 @@ bin/xfbd
 bin/xfce
 bin/xfce_remove
 bin/xfce_setup
+bin/xfce_upgrade
 bin/xfclock
 bin/xfgnome
 bin/xfhelp
@@ -18,7 +19,6 @@ bin/xfterm
 bin/xftrash
 bin/xftree
 bin/xfwm
-etc/xfce/README.xfdefs.py
 etc/xfce/Xclients
 etc/xfce/fvwm2rc
 etc/xfce/fvwmrc
@@ -30,7 +30,6 @@ etc/xfce/xfce3rc.ko
 etc/xfce/xfce3rc.zh_CN.GB2312
 etc/xfce/xfce3rc.zh_TW.Big5
 etc/xfce/xfclockrc
-etc/xfce/xfdefs.py
 etc/xfce/xfmouserc
 etc/xfce/xfsoundrc
 etc/xfce/xfwmrc
@@ -38,6 +37,7 @@ etc/xfce/xinitrc
 etc/xfce/xinitrc.mwm
 etc/xfce/xsession
 etc/xfce/xtree.reg
+lib/gtk/themes/engines/libxfce.so
 share/xfce/COPYING
 share/xfce/XFce3.logo
 share/xfce/backdrops/A-Little-Exercise-3.jpg
@@ -163,84 +163,49 @@ share/xfce/icons/3dpaint.xpm
 share/xfce/icons/ABC.xpm
 share/xfce/icons/AZ.xpm
 share/xfce/icons/AceKingCards.xpm
-share/xfce/icons/Animator.xpm
 share/xfce/icons/AntiVirus.xpm
 share/xfce/icons/ArtFolderEmpty.xpm
 share/xfce/icons/ArtFolderFull.xpm
 share/xfce/icons/BWDialogEdit.xpm
 share/xfce/icons/BWwidgets.xpm
-share/xfce/icons/BackUp.xpm
-share/xfce/icons/Ballon.xpm
 share/xfce/icons/BallotBox.xpm
-share/xfce/icons/Binoculars.xpm
-share/xfce/icons/Bomb.xpm
-share/xfce/icons/Bomb2.xpm
 share/xfce/icons/Book.xpm
-share/xfce/icons/Box_empty.xpm
-share/xfce/icons/Box_full.xpm
 share/xfce/icons/BulletHole.xpm
-share/xfce/icons/C++.xpm
-share/xfce/icons/C.xpm
-share/xfce/icons/CAD.xpm
-share/xfce/icons/CAD2.xpm
 share/xfce/icons/CDPlayer.xpm
 share/xfce/icons/CPUChip.xpm
 share/xfce/icons/Calculator.xpm
-share/xfce/icons/Camera.xpm
-share/xfce/icons/Cards.xpm
-share/xfce/icons/Chart.xpm
 share/xfce/icons/CheckMarkMonitor.xpm
 share/xfce/icons/ChiselChartSlide.xpm
 share/xfce/icons/Clock.xpm
 share/xfce/icons/ClosedPackageBox.xpm
 share/xfce/icons/ColoredCompactDisc.xpm
-share/xfce/icons/Colormap.xpm
-share/xfce/icons/CompactDisc.xpm
 share/xfce/icons/Connect.xpm
-share/xfce/icons/Copy.xpm
 share/xfce/icons/CrashCartoon.xpm
 share/xfce/icons/CylinderWrenchSpreadsheet.xpm
-share/xfce/icons/Database.xpm
 share/xfce/icons/DeskGlobe.xpm
 share/xfce/icons/Director.xpm
-share/xfce/icons/DiskCopy.xpm
+share/xfce/icons/Disk-Blue.xpm
 share/xfce/icons/DiskFloppy.xpm
 share/xfce/icons/DiskHammer.xpm
 share/xfce/icons/DiskHardDrive.xpm
 share/xfce/icons/DiskOptical.xpm
-share/xfce/icons/Disk_blue.xpm
 share/xfce/icons/DisketteBoxEmpty.xpm
 share/xfce/icons/DisketteBoxFull.xpm
-share/xfce/icons/Disks.xpm
 share/xfce/icons/Document.xpm
-share/xfce/icons/Drawing.xpm
-share/xfce/icons/Drawing2.xpm
-share/xfce/icons/Drawing3.xpm
-share/xfce/icons/Dynamite.xpm
-share/xfce/icons/Earth.xpm
 share/xfce/icons/Edit.xpm
-share/xfce/icons/Editres.xpm
 share/xfce/icons/Equation.xpm
 share/xfce/icons/EscherCube.xpm
 share/xfce/icons/EscherTriangle.xpm
-share/xfce/icons/Exit.xpm
-share/xfce/icons/FAX.xpm
 share/xfce/icons/FaxRecieved.xpm
 share/xfce/icons/FileAPP.xpm
 share/xfce/icons/FileManager.xpm
-share/xfce/icons/Film.xpm
-share/xfce/icons/Film2.xpm
 share/xfce/icons/FilmNegative.xpm
 share/xfce/icons/Folder.xpm
 share/xfce/icons/FolderDeposit.xpm
 share/xfce/icons/FolderOpen.xpm
 share/xfce/icons/Folders.xpm
-share/xfce/icons/FontDesigner.xpm
-share/xfce/icons/Fonts.xpm
-share/xfce/icons/Format.xpm
 share/xfce/icons/ForwardBackwardPagesBook.xpm
 share/xfce/icons/FreeBSD.xpm
-share/xfce/icons/Ftp.xpm
 share/xfce/icons/GIMP.xpm
 share/xfce/icons/Game.xpm
 share/xfce/icons/Gimp2.xpm
@@ -248,9 +213,6 @@ share/xfce/icons/Gnome-apps.xpm
 share/xfce/icons/Gnome-logo.xpm
 share/xfce/icons/Gnome-panel.xpm
 share/xfce/icons/GoldenSatelliteDish.xpm
-share/xfce/icons/Graph_bar.xpm
-share/xfce/icons/Graph_pie.xpm
-share/xfce/icons/Hammer.xpm
 share/xfce/icons/HandOpen.xpm
 share/xfce/icons/HandPointing.xpm
 share/xfce/icons/HandPointingLeft.xpm
@@ -259,72 +221,41 @@ share/xfce/icons/HandPunch.xpm
 share/xfce/icons/HandReach.xpm
 share/xfce/icons/Info.xpm
 share/xfce/icons/Interface.xpm
-share/xfce/icons/Key.xpm
 share/xfce/icons/Keys.xpm
 share/xfce/icons/KeysOnChain.xpm
 share/xfce/icons/LeatherEmptyBag.xpm
 share/xfce/icons/LeatherFullBag.xpm
 share/xfce/icons/Lightbulb.xpm
-share/xfce/icons/Lightning.xpm
-share/xfce/icons/Lock.xpm
 share/xfce/icons/MaelstromInFrame.xpm
-share/xfce/icons/Magnify.xpm
 share/xfce/icons/MagnifyGlas.xpm
 share/xfce/icons/Mail.xpm
 share/xfce/icons/MailboxGoldGradientBackground.xpm
-share/xfce/icons/Math4.xpm
-share/xfce/icons/Meter.xpm
 share/xfce/icons/MicroPhonePro.xpm
 share/xfce/icons/Monalisa.xpm
 share/xfce/icons/Mosaic.xpm
 share/xfce/icons/Mouse.xpm
-share/xfce/icons/Moviemaker2.xpm
-share/xfce/icons/Music.xpm
-share/xfce/icons/Music2.xpm
-share/xfce/icons/Netscape.xpm
 share/xfce/icons/Netscape3.xpm
 share/xfce/icons/NetscapeLogo.xpm
 share/xfce/icons/News.xpm
-share/xfce/icons/No_drag.xpm
 share/xfce/icons/OldBlueAddingMachine.xpm
-share/xfce/icons/Packer.xpm
-share/xfce/icons/Palette.xpm
 share/xfce/icons/Pen.xpm
-share/xfce/icons/Pencil.xpm
 share/xfce/icons/Pencils.xpm
 share/xfce/icons/Penguin.xpm
 share/xfce/icons/PhonePortable.xpm
 share/xfce/icons/PhoneTTOffhook.xpm
-share/xfce/icons/Plug.xpm
 share/xfce/icons/Postit.xpm
 share/xfce/icons/PrefsDock.xpm
 share/xfce/icons/Printer.xpm
-share/xfce/icons/Radar.xpm
 share/xfce/icons/RayTracedGear.xpm
-share/xfce/icons/Raytracer.xpm
-share/xfce/icons/Reader.xpm
 share/xfce/icons/RecycleLogo.xpm
-share/xfce/icons/Sound.xpm
-share/xfce/icons/SoundEditor.xpm
 share/xfce/icons/Stoplight.xpm
-share/xfce/icons/TEX.xpm
 share/xfce/icons/Tablet.xpm
-share/xfce/icons/Tapes.xpm
-share/xfce/icons/Telescope.xpm
-share/xfce/icons/Temperature.xpm
 share/xfce/icons/Terminal.xpm
 share/xfce/icons/TextEditor.xpm
-share/xfce/icons/Tic_tac_toe.xpm
-share/xfce/icons/Tick.xpm
-share/xfce/icons/Timer.xpm
-share/xfce/icons/Torus.xpm
 share/xfce/icons/TrueDie.xpm
 share/xfce/icons/View.xpm
 share/xfce/icons/Viewer.xpm
-share/xfce/icons/Warning.xpm
 share/xfce/icons/WordProcessing.xpm
-share/xfce/icons/WordProcessing2.xpm
-share/xfce/icons/WordProcessing3.xpm
 share/xfce/icons/XV.xpm
 share/xfce/icons/X_server.xpm
 share/xfce/icons/Xmix.xpm
@@ -389,6 +320,7 @@ share/xfce/palettes/Sunny
 share/xfce/palettes/Symbiose
 share/xfce/palettes/TBlue
 share/xfce/palettes/Teal
+share/xfce/palettes/Tiny
 share/xfce/palettes/Tommy
 share/xfce/palettes/Troica
 share/xfce/palettes/Typhoon
@@ -457,48 +389,48 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@dirrm share/xfce/backdrops
-@dirrm share/xfce/help
-@dirrm share/xfce/icons
-@dirrm share/xfce/locale/ca/LC_MESSAGES
-@dirrm share/xfce/locale/ca
-@dirrm share/xfce/locale/da/LC_MESSAGES
-@dirrm share/xfce/locale/da
-@dirrm share/xfce/locale/de/LC_MESSAGES
-@dirrm share/xfce/locale/de
-@dirrm share/xfce/locale/es/LC_MESSAGES
-@dirrm share/xfce/locale/es
-@dirrm share/xfce/locale/et/LC_MESSAGES
-@dirrm share/xfce/locale/et
-@dirrm share/xfce/locale/fi/LC_MESSAGES
-@dirrm share/xfce/locale/fi
-@dirrm share/xfce/locale/fr/LC_MESSAGES
-@dirrm share/xfce/locale/fr
-@dirrm share/xfce/locale/gl/LC_MESSAGES
-@dirrm share/xfce/locale/gl
-@dirrm share/xfce/locale/hu/LC_MESSAGES
-@dirrm share/xfce/locale/hu
-@dirrm share/xfce/locale/it/LC_MESSAGES
-@dirrm share/xfce/locale/it
-@dirrm share/xfce/locale/ja/LC_MESSAGES
-@dirrm share/xfce/locale/ja
-@dirrm share/xfce/locale/nl/LC_MESSAGES
-@dirrm share/xfce/locale/nl
-@dirrm share/xfce/locale/pl/LC_MESSAGES
-@dirrm share/xfce/locale/pl
-@dirrm share/xfce/locale/ro/LC_MESSAGES
-@dirrm share/xfce/locale/ro
-@dirrm share/xfce/locale/ru/LC_MESSAGES
-@dirrm share/xfce/locale/ru
-@dirrm share/xfce/locale/sk/LC_MESSAGES
-@dirrm share/xfce/locale/sk
-@dirrm share/xfce/locale/sv/LC_MESSAGES
-@dirrm share/xfce/locale/sv
+@dirrm share/xfce/textures
+@dirrm share/xfce/sounds
+@dirrm share/xfce/palettes
 @dirrm share/xfce/locale/zh/LC_MESSAGES
 @dirrm share/xfce/locale/zh
+@dirrm share/xfce/locale/sv/LC_MESSAGES
+@dirrm share/xfce/locale/sv
+@dirrm share/xfce/locale/sk/LC_MESSAGES
+@dirrm share/xfce/locale/sk
+@dirrm share/xfce/locale/ru/LC_MESSAGES
+@dirrm share/xfce/locale/ru
+@dirrm share/xfce/locale/ro/LC_MESSAGES
+@dirrm share/xfce/locale/ro
+@dirrm share/xfce/locale/pl/LC_MESSAGES
+@dirrm share/xfce/locale/pl
+@dirrm share/xfce/locale/nl/LC_MESSAGES
+@dirrm share/xfce/locale/nl
+@dirrm share/xfce/locale/ja/LC_MESSAGES
+@dirrm share/xfce/locale/ja
+@dirrm share/xfce/locale/it/LC_MESSAGES
+@dirrm share/xfce/locale/it
+@dirrm share/xfce/locale/hu/LC_MESSAGES
+@dirrm share/xfce/locale/hu
+@dirrm share/xfce/locale/gl/LC_MESSAGES
+@dirrm share/xfce/locale/gl
+@dirrm share/xfce/locale/fr/LC_MESSAGES
+@dirrm share/xfce/locale/fr
+@dirrm share/xfce/locale/fi/LC_MESSAGES
+@dirrm share/xfce/locale/fi
+@dirrm share/xfce/locale/et/LC_MESSAGES
+@dirrm share/xfce/locale/et
+@dirrm share/xfce/locale/es/LC_MESSAGES
+@dirrm share/xfce/locale/es
+@dirrm share/xfce/locale/de/LC_MESSAGES
+@dirrm share/xfce/locale/de
+@dirrm share/xfce/locale/da/LC_MESSAGES
+@dirrm share/xfce/locale/da
+@dirrm share/xfce/locale/ca/LC_MESSAGES
+@dirrm share/xfce/locale/ca
 @dirrm share/xfce/locale
-@dirrm share/xfce/palettes
-@dirrm share/xfce/sounds
-@dirrm share/xfce/textures
+@dirrm share/xfce/icons
+@dirrm share/xfce/help
+@dirrm share/xfce/backdrops
 @dirrm share/xfce
 @dirrm etc/xfce
