@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Tk/FireButton.pm:${PORTSDIR}/x11-toolkits/p5-Tk-GBARR
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tk/FireButton.pm:${PORTSDIR}/x11-toolkits/p5-Tk-GBARR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
