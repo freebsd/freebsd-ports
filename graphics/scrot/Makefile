@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	scrot
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.linuxbrit.co.uk/downloads/
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2-tmp
+LIB_DEPENDS=	giblib.1:${PORTSDIR}/graphics/giblib
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
