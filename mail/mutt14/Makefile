@@ -4,10 +4,10 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1996/11/25 00:55:17 obrien Exp $
+# $Id: Makefile,v 1.6 1996/11/26 06:54:15 asami Exp $
 
 DISTNAME=	${PKGNAME}-export
-PKGNAME=	mutt-0.52
+PKGNAME=	mutt-0.53
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
