@@ -3,6 +3,8 @@
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
+# $Id$
+#
 
 DISTNAME=       elk-2.2
 CATEGORIES+=	languages
@@ -21,21 +23,15 @@ ALL_TARGET=	default
 #
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/include
-	@mkdir -p ${PREFIX}/man/man1
 	@mkdir -p ${PREFIX}/lib/elk
 
-install: build
-	@echo "===>  Installing for ${DISTNAME}"
-	@${MAKE} ${MAKEFLAGS} pre-install
-	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	@(cd /usr/local/lib/elk; \
+post-install:
+	@(cd ${PREFIX}/lib/elk; \
 	  mv bin/scheme ${PREFIX}/bin/elk; \
 	  mkdir -p ${PREFIX}/include/elk; \
 	  mv include/*.h ${PREFIX}/include/elk; \
 	  rmdir bin include)
 	@install -c -o bin -g bin -m 444 ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
-	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
+	@gzip -9nf ${PREFIX}/man/man1/elk.1
 
 .include <bsd.port.mk>
