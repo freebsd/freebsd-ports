@@ -368,6 +368,7 @@
     SUBDIR += py-ncurses
     SUBDIR += qtarch
     SUBDIR += py-omniorb
+    SUBDIR += py-orbit
     SUBDIR += qt-designer
     SUBDIR += qtez
     SUBDIR += qtk

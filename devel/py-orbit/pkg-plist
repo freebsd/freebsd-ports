@@ -1,0 +1,4 @@
+lib/%%PYTHON_VERSION%%/site-packages/CORBAmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/PortableServermodule.so
+include/orbit-python/orbit-python.h
+@dirrm include/orbit-python
