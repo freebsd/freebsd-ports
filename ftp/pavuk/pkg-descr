@@ -1,18 +1,5 @@
-   Pavuk is a HTTP, FTP and Gopher mirroring tool.
+Pavuk is UNIX program used to mirror contents of WWW documents or files. It
+transfers documents from HTTP, FTP, Gopher and optionaly from HTTPS (HTTP
+over SSL) servers. Pavuk has an optional GUI based on GTK2 widget set.
 
-   What this program does :
-
-   - recursive HTTP , HTTP over SSL , FTP and Gopher document retrieving
-   - synchronizing retrieved local copies of document with remote
-   - partial content retrieving on servers which supports it (FTP and HTTP/1.1)
-   - follows moved documents
-   - supports "robots.txt" standard
-   - supports HTTP and FTP proxy server
-   - supports HTTP authentication
-   - shows document tree
-   - have interface to "at" command for scheduling
-   - have X-windows user interface (built with own widgets based on plain Xt)
-   - may be built with or without X-windows user interface
-   - can handle setup files
-
-WWW: http://www.idata.sk/~ondrej/pavuk/
+WWW: http://pavuk.sourceforge.net/
