@@ -1,19 +1,11 @@
 bin/epiphany
 bin/epiphany-bin
-etc/gconf/gconf.xml.defaults/apps/epiphany/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/dialogs/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/directories/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/lockdown/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/epiphany/web/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/dialogs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/directories/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/general/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/lockdown/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/web/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/epiphany-lockdown.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/epiphany-lockdown.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/epiphany-lockdown.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/epiphany.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/epiphany.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/epiphany.schemas > /dev/null || /usr/bin/true
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-bookmarks.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-command-manager.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-cookie-manager.h
@@ -176,18 +168,6 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm %%DOCSDIR%%
 @dirrm include/epiphany-%%EPHY_VERSION%%/epiphany
 @dirrm include/epiphany-%%EPHY_VERSION%%
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/web
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/lockdown
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/general
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/directories
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany/dialogs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/epiphany
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/web
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/lockdown
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/general
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/directories
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany/dialogs
-@dirrm etc/gconf/gconf.xml.defaults/apps/epiphany
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-eu.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-es.omf 2>/dev/null || /usr/bin/true
