@@ -233,6 +233,8 @@ share/WindowMaker/Styles/GreyBlue.style
 share/WindowMaker/Styles/Gtk.style
 share/WindowMaker/Styles/LightBlue.style
 share/WindowMaker/Styles/Pastel.style
+share/WindowMaker/Styles/Pink.style
+share/WindowMaker/Styles/Pumpkin.style
 share/WindowMaker/Styles/Purple.style
 share/WindowMaker/Styles/Red.style
 share/WindowMaker/Styles/RednBlue.style
@@ -248,8 +250,8 @@ share/WindowMaker/exitscript.sh
 share/WindowMaker/menu
 share/WindowMaker/menu.ca
 share/WindowMaker/menu.cz
+share/WindowMaker/menu.da
 share/WindowMaker/menu.de
-share/WindowMaker/menu.dk
 share/WindowMaker/menu.el
 share/WindowMaker/menu.es
 share/WindowMaker/menu.fi
@@ -268,11 +270,13 @@ share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
 share/WindowMaker/menu.sl
 share/WindowMaker/menu.tr
+share/WindowMaker/menu.zh_CN
 share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
 share/WindowMaker/plmenu.dk
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
+share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
 @exec mkdir -p %B/Sounds
