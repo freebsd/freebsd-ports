@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xunicode
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	converters x11
 MASTER_SITES=	http://www.ab.wakwak.com/~tino/jatk/
 
