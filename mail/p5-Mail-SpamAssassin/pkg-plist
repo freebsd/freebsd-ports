@@ -14,13 +14,11 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EncappedMessage.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/ExposedMessage.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Locales.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Message.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/MyMailAudit.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PhraseFreqs.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PerMsgStatus.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Replier.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Reporter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PersistentAddrList.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/DirBasedAddrList.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/AutoWhitelist.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/NoMailAudit.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
@@ -28,9 +26,9 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 %%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-nonspam.txt
 %%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-spam.txt
 %%PORTDOCS%%share/doc/Mail-SpamAssassin/spamassassin.sql
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/spamd.README
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/spamproxy.README
-%%PORTDOCS%%share/doc/Mail-SpamAssassin/sql.README
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.spamd
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.spamproxy
+%%PORTDOCS%%share/doc/Mail-SpamAssassin/README.sql
 %%PORTDOCS%%share/spamassassin/10_misc.cf
 %%PORTDOCS%%share/spamassassin/20_body_tests.cf
 %%PORTDOCS%%share/spamassassin/20_head_tests.cf

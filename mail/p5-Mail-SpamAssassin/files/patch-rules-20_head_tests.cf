@@ -1,11 +1,11 @@
---- rules/20_head_tests.cf.bak	Fri Jan 25 07:36:02 2002
-+++ rules/20_head_tests.cf	Tue Feb 26 13:01:16 2002
-@@ -44,7 +44,7 @@
+--- rules/20_head_tests.cf.orig	Fri Mar  1 22:23:04 2002
++++ rules/20_head_tests.cf	Mon Mar  4 12:29:57 2002
+@@ -47,7 +47,7 @@
  header TO_INVESTORS		To =~ /\bInvestors\@/
  describe TO_INVESTORS		To: non-existent 'Investors' address
  
--header SUBJ_ALL_CAPS		Subject =~ /^[A-Z0-9\W]{6,}[^a-z]+$/
-+header SUBJ_ALL_CAPS		Subject =~ /^[^[:lower:]]*([[:upper:]][^[:lower:]]*){6,}[^[:lower:]]*$/
+-header SUBJ_ALL_CAPS		Subject =~ /^[^a-z]*$/
++header SUBJ_ALL_CAPS		Subject =~ /^[^a-z]*([A-Z][^a-z]*){3,}[^a-z]*$/
  describe SUBJ_ALL_CAPS		Subject is all capitals
  
  # (allow this test to pass if there's no Message-Id header)
