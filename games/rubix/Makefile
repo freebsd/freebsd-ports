@@ -6,24 +6,28 @@
 #
 
 PORTNAME=	rubix
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another Rubik's cube game with a rather interesting interface
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+ALL_TARGET=	${PORTNAME}
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" XINC="-I${X11BASE}/include" \
+		XLIB="-L${X11BASE}/lib -lX11"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rubix ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/rubix
-	${INSTALL_DATA} ${WRKSRC}/module.xm ${PREFIX}/share/rubix
 .if !defined(NOPORTDOCS)
-.for file in AUTHORS BUGS INSTALL NOISE README TODO
-	@${MKDIR} ${PREFIX}/share/doc/rubix
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/rubix
+.for file in AUTHORS BUGS INSTALL README TODO
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
