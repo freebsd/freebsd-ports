@@ -14,10 +14,9 @@ DIST_SUBDIR=	prep
 MAINTAINER=	shadow@psoft.net
 COMMENT=	Problem reporting system
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
-
 CONFLICTS=	libpreps-devel-1.9.*
 
+USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12
@@ -29,6 +28,8 @@ CONFIGURE_ARGS+=--with-pgsqldir=${LOCALBASE} --with-plpgsqldir=${LOCALBASE}
 
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITHOUT_SERVER)
 CONFIGURE_ARGS+=--disable-server
 PKGNAMESUFFIX=	-client
@@ -36,6 +37,16 @@ PLIST_SUB+=	SERVER="@comment "
 .else
 MAN1=		create_prepsdb.1 update_prepsdb.1
 PLIST_SUB+=	SERVER=""
+# Setting/finding PostgreSQL version we want.
+.  if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
+		${SED} -n 's/postmaster.*PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.  else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.  endif
+PGSQL_PORT=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
+BUILD_DEPENDS+=	postgres:${PGSQL_PORT}
+RUN_DEPENDS+=	postgres:${PGSQL_PORT}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

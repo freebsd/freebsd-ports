@@ -21,8 +21,7 @@ COMMENT=	Flexible and easy to integrate syslog daemon
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
 .if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 .endif
 
 GNU_CONFIGURE=	yes

@@ -420,14 +420,8 @@ IGNORE=		WITH_RADIUS_TYPE must be either RADLIB or RADIUSCLIENT
 SEDLIST+=	-e 's,XX_RADIUS_LIBS_XX,,'
 .endif
 
-.if defined(WITH_POSTGRESQL_PORT) && ${WITH_POSTGRESQL_PORT:L} != "auto"
-POSTGRESQL_PORT=	${WITH_POSTGRESQL_PORT}
-.else
-POSTGRESQL_PORT?=	databases/postgresql7
-.endif
-
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${LOCALBASE}/lib -lpq,' \
 		-e 's,XX_PGSQL_INCLUDE_XX,-I${LOCALBASE}/include/pgsql,' \
 		-e 's,^\# (LOOKUP_PGSQL=),\1,'

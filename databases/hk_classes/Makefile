@@ -53,8 +53,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgres-incdir=${LOCALBASE}/include/ \
 			--with-postgres-libdir=${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"

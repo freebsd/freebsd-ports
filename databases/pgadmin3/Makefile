@@ -7,6 +7,7 @@
 
 PORTNAME=	pgadmin3
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR= pgadmin3/release/v${PORTVERSION}/src
@@ -14,15 +15,12 @@ MASTER_SITE_SUBDIR= pgadmin3/release/v${PORTVERSION}/src
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
+USE_PGSQL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx=${X11BASE}
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LIBS="${PTHREAD_LIBS}"
-
-POSTGRESQL_PORT?=	databases/postgresql7
 
 post-patch:
 	@${FIND} ${WRKSRC}/src \( -name '*.cpp' -or -name '*.h' \) -print0 | \

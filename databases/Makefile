@@ -263,9 +263,12 @@
     SUBDIR += postgresql-pltcl
     SUBDIR += postgresql-relay
     SUBDIR += postgresql-tcltk
-    SUBDIR += postgresql7
-    SUBDIR += postgresql72
-    SUBDIR += postgresql73
+    SUBDIR += postgresql73-client
+    SUBDIR += postgresql73-server
+    SUBDIR += postgresql74-client
+    SUBDIR += postgresql74-server
+    SUBDIR += postgresql80-client
+    SUBDIR += postgresql80-server
     SUBDIR += postgresql_autodoc
     SUBDIR += puredb
     SUBDIR += pxtools

@@ -56,8 +56,7 @@ OPTIONS+=	MYSQL40 "Use MySQL 4.0.x as back-end" off
 OPTIONS+=	MYSQL41 "Use MySQL 4.1.x as back-end" off
 OPTIONS+=	MYSQL50 "Use MySQL 5.0.x as back-end" off
 OPTIONS+=	MYSQL_COMPRESS "Compress dspam <--> MySQL" off
-OPTIONS+=	POSTGRESQL73 "Use PostgreSQL v.7.3 as back-end" off
-OPTIONS+=	POSTGRESQL74 "Use PostgreSQL v.7.4 as back-end" off
+OPTIONS+=	POSTGRESQL "Use PostgreSQL as back-end" off
 OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
 OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" on
@@ -221,9 +220,8 @@ CONFIGURE_ARGS+=	--enable-client-compression
 .endif
 .endif
 
-.if defined(WITH_POSTGRESQL73)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql73
-#BUILD_DEPENDS= ${LIB_DEPENDS}
+.if defined(WITH_POSTGRESQL)
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
 		--with-pgsql-includes=${LOCALBASE}/include \
 		--with-pgsql-libraries=${LOCALBASE}/lib
@@ -234,24 +232,7 @@ PLIST_SUB+=	SQLITE="@comment "
 SED_SCRIPT+=	-e '/%%MYSQL%%/D'
 SED_SCRIPT+=	-e 's,%%PGSQL%%,,g'
 SED_SCRIPT+=	-e '/%%SQLITE%%/D'
-#PKGNAMESUFFIX=	-pgsql73
-DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
-.endif
-
-.if defined(WITH_POSTGRESQL74)
-LIB_DEPENDS+=	ecpg.4:${PORTSDIR}/databases/postgresql7
-#BUILD_DEPENDS=	${LIB_DEPENDS}
-CONFIGURE_ARGS+=	--with-storage-driver=pgsql_drv \
-		--with-pgsql-includes=${LOCALBASE}/include \
-		--with-pgsql-libraries=${LOCALBASE}/lib
-PLIST_SUB+=	DB4="@comment "
-PLIST_SUB+=	MYSQL="@comment "
-PLIST_SUB+=	PGSQL=""
-PLIST_SUB+=	SQLITE="@comment "
-SED_SCRIPT+=	-e '/%%MYSQL%%/D'
-SED_SCRIPT+=	-e 's,%%PGSQL%%,,g'
-SED_SCRIPT+=	-e '/%%SQLITE%%/D'
-#PKGNAMESUFFIX=	-pgsql74
+#PKGNAMESUFFIX=	-pgsql
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
@@ -329,10 +310,7 @@ LDA_COUNT:=	${LDA_COUNT:S/o//}
 .if defined(WITH_EXIM_LDA)
 .	if defined(WITH_MYSQL40) || (WITH_MYSQL41)
 _EXIM_EXT=	-mysql
-.	elseif defined(WITH_POSTGRESQL74) || defined(WITH_POSTGRESQL73)
-####
-### fix me for pg 7.3: how to pass the db option to exim port ?
-###
+.	elseif defined(WITH_POSTGRESQL)
 _EXIM_EXT=	-postgresql
 .	endif
 RUN_DEPENDS+=	exim:${PORTSDIR}/mail/exim${_EXIM_EXT}
@@ -433,17 +411,6 @@ post-fetch:
 .endif
 
 pre-extract:
-.if defined(WITH_EXIM_LDA) && defined(WITH_POSTGRESQL73)
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} "You have both EXIM_LDA and POSTGRESQL73 defined. To have exim"
-	@${ECHO_CMD} "built with the right pgsql please hit Ctrl-C now and do:"
-	@${ECHO_CMD} "cd ${PORTSDIR}/mail/exim-postgresql && make POSTGRESQL_PORT=postgresql73 install"
-	@${ECHO_CMD} "then return here and do:"
-	@${ECHO_CMD} "make clean && make install"
-	@${ECHO_CMD} "******************************************************************"
-	@${ECHO_CMD} ""
-.endif
-
 	@${ECHO_CMD} "Define vars below before make-ing if you need:"
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "SIGNATURE_LIFE=${SIGNATURE_LIFE} (default 15)"
@@ -512,17 +479,17 @@ pre-configure:
 	@${ECHO_CMD} "You can use one and only one database back-end at once."
 	@${FALSE}
 .endif
-.if defined(WITH_NEURAL_NET) && !(defined(HAVE_MYSQL) || defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74))
+.if defined(WITH_NEURAL_NET) && !(defined(HAVE_MYSQL) || defined(WITH_POSTGRESQL))
 	@${ECHO_CMD} "You need MySQL or POSTGRESQL to use neural networking."
 	@${FALSE}
 .endif
 .if defined(WITH_VIRT_USERS) && !(defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) || defined(WITH_ORACLE))
+	defined(WITH_POSTGRESQL) || defined(WITH_ORACLE))
 	@${ECHO_CMD} "You need MySQL, POSTGRESQL or ORACLE for virtual users."
 	@${FALSE}
 .endif
 .if defined(WITH_PREF_EXT) && !( defined(USE_MYSQL) || \
-	defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74) )
+	defined(WITH_POSTGRESQL) )
 	@${ECHO_CMD} "You need MySQL or Postgres for preferences extension"
 	@${FALSE}
 .endif
@@ -549,7 +516,7 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/2x_to_3x_db.sql ${EXAMPLESDIR}/mysql
 	@${INSTALL_DATA} ${FILESDIR}/310_to_320.my.sql ${EXAMPLESDIR}/mysql
 .endif
-.if defined(WITH_POSTGRESQL73) || defined(WITH_POSTGRESQL74)
+.if defined(WITH_POSTGRESQL)
 	@${MKDIR} ${EXAMPLESDIR}/pgsql
 	@cd ${WRKSRC}/tools.pgsql_drv && \
 		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/pgsql

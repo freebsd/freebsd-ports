@@ -27,8 +27,9 @@ PGSQL_SRC=	${WRKDIR}/pgsql/postgresql
 INSTALL_TARGET=	install
 INSTALLS_SHLIB=	no
 
-OPTIONS=	PGSQL8 "Use PostgreSQL 8 instead of PostgreSQL 7.4" off \
-		GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off \
+OPTIONS=	GEOS "Include GEOS - the OpenGIS 'Simple Features for SQL'" off \
+
+USE_PGSQL=	YES
 
 .include <bsd.port.pre.mk>
 
@@ -37,13 +38,7 @@ MAKE_ARGS=	PGSQL_SRC="${PGSQL_SRC}" \
 		BINDIR="${PREFIX}/bin" \
 		LIBDIR="${PREFIX}/lib"
 
-.if defined(WITH_PGSQL8)
-PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql-devel
-.else
-PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql7
-.endif
-
-LIB_DEPENDS+=	pq.3:${PGSQL_PORTDIR}
+PGSQL_PORTDIR=	${PORTSDIR}/databases/postgresql${PGSQL_VER}-client
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \

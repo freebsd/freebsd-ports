@@ -111,7 +111,7 @@ PLIST_SUB+=		MYSQL="@comment "
 
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--enable-pg
-LIB_DEPENDS+=		pq:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=		yes
 PLIST_SUB+=		PGSQL=""
 MAN8+=			perditiondb_postgresql_makedb.8
 .else

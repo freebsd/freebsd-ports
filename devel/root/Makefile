@@ -114,7 +114,7 @@ PLIST_SUB+=		AFTERIMAGE="@comment "
 
 .if !defined(WITHOUT_POSTGRESQL) && defined(WITH_POSTGRESQL)
 CONFIGURE_ARGS+=	--enable-pgsql
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=		yes
 PLIST_SUB+=		POSTGRESQL=""
 .else
 CONFIGURE_ARGS+=	--disable-pgsql

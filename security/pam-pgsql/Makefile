@@ -7,7 +7,7 @@
 
 PORTNAME=	pam-pgsql
 PORTVERSION=	0.5.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -21,9 +21,7 @@ PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR} mat/:local
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pam module for authenticating with PostgreSQL
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
-POSTGRESQL_PORT?=	databases/postgresql7
+USE_PGSQL=	yes
 
 PATCH_DIST_STRIP=	-p1
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	plruby
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	postgresql-
@@ -16,19 +17,18 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	PL/Ruby procedural language for the PostgreSQL database system
 
 BUILD_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
-LIB_DEPENDS=	pq.3:${PGSQL_PORTDIR}
 RUN_DEPENDS=	postgres:${PORTSDIR}/${POSTGRESQL_PORT}
 
+USE_PGSQL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
-POSTGRESQL_PORT?=	databases/postgresql7
-PGSQL_VERSION?=		74
+POSTGRESQL_PORT?=	databases/postgresql${PGSQL_VER}-server
 PGSQL_PORTDIR?=		${PORTSDIR}/${POSTGRESQL_PORT}
 PGSQL_WRKSRC_CMD=	cd ${PGSQL_PORTDIR} && ${MAKE} -V WRKSRC
 
-CONFIGURE_ARGS=		--with-pgsql-version="${PGSQL_VERSION}" \
+CONFIGURE_ARGS=		--with-pgsql-version="${PGSQL_VER}" \
 			--with-pgsql-srcinc="`${PGSQL_WRKSRC_CMD}`/src/include" \
 			--with-pgsql-include="${LOCALBASE}/include" \
 			--with-pgsql-lib="${LOCALBASE}/lib"
@@ -58,6 +58,17 @@ post-build:
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
 .endif
 
+.include <bsd.port.pre.mk>
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/postmaster)
+PGSQL_VER!=	${LOCALBASE}/bin/postmaster -V | \
+		${SED} -n 's/postmaster.*PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.elif exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
@@ -70,4 +81,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

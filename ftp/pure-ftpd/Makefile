@@ -68,8 +68,7 @@ CONFIGURE_ARGS+=	--with-mysql
 
 # postgresql support requested?
 .if defined(WITH_PGSQL)
-POSTGRESQL_PORT?=	databases/postgresql7
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-pgsql
 .endif
 

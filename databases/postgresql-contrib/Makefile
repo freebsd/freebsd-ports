@@ -5,40 +5,44 @@
 # $FreeBSD$
 #
 
+PORTNAME=	postgresql
+PKGNAMESUFFIX=	-contrib
 PORTREVISION=	0
 CATEGORIES=	databases
-PKGNAMESUFFIX=	-contrib
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution
 
-LIB_DEPENDS=	pq:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
+MASTERDIR=	${.CURDIR}/../postgresql${PGSQL_VER}-server
 
-POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-.include <${.CURDIR}/../../${POSTGRESQL_PORT}/Makefile>
+DEFAULT_PGSQL_VER?=74
 
-INSTALLS_SHLIB=	yes
+# can't include <bsd.port.pre.mk> in a slave port
+# so set these instead:
+LOCALBASE?=	${DESTDIR}/usr/local
+SED?=		/usr/bin/sed
+
+# Setting/finding PostgreSQL version we want.
+.if exists(${LOCALBASE}/bin/pg_config)
+PGSQL_VER!=	${LOCALBASE}/bin/pg_config --version | ${SED} -n 's/PostgreSQL[^0-9]*\([0-9][0-9]*\)\.\([0-9][0-9]*\)\..*/\1\2/p'
+.else
+PGSQL_VER=	${DEFAULT_PGSQL_VER}
+.endif
+
 USE_BISON=	yes
 
-CONFIGURE_ARGS=	--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include \
-		--docdir=${DOCSDIR}
-MAKE_ARGS=	-C contrib
+BUILD_DIRS=	src/port contrib
+INSTALL_DIRS=	contrib
 
-pre-build:
-	cd ${WRKSRC}/src/backend ;\
-	${GMAKE} ../../src/include/parser/parse.h ../../src/include/utils/fmgroids.h
-	cd ${WRKSRC}/src/port; ${GMAKE}
+SLAVE_ONLY=	yes
+PKGMESSAGE=	${.CURDIR}/pkg-message
 
 post-install:
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/contrib/ipc_check/ipc_check.pl ${PREFIX}/bin/ipc_check ;\
+	@- ${INSTALL_SCRIPT} ${WRKSRC}/contrib/ipc_check/ipc_check.pl ${PREFIX}/bin/ipc_check ;\
 	  ${INSTALL_DATA} ${WRKSRC}/contrib/ipc_check/README ${DOCSDIR}/contrib/README.ipc_check ;\
 	  ${INSTALL_SCRIPT} ${WRKSRC}/contrib/reindexdb/reindexdb ${PREFIX}/bin/reindexdb ;\
 	  ${INSTALL_DATA} ${WRKSRC}/contrib/reindexdb/README ${DOCSDIR}/contrib/README.reindexdb
-	@ ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README
-	@ ${ECHO} ==================================== ;\
-	  ${SED} -e "s,/usr/local,${PREFIX},g"  ${PKGDIR}/pkg-message ;\
-	  ${ECHO} ====================================
+	@- ${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/README
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

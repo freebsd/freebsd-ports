@@ -79,7 +79,7 @@ CONFIGURE_ARGS=	--disable-root-check --with-db=db \
 		--with-mailgroup=${MAILGRP} \
 		--with-mailuid=${MAILUID} \
 		--with-mailgid=${MAILGID} \
- 		--with-etcdir=${ETCDIR} \
+		--with-etcdir=${ETCDIR} \
 		--sysconfdir=${SYSCONFDIR} \
 		--with-userdb=${USERDB} \
 		--datadir=${DATADIR} \
@@ -146,7 +146,7 @@ OPTIONS+=off
 .endif
 
 OPTIONS+=PGSQL "PostgreSQL authentication support"
-.if exists(${PGSQLBASE}/lib/libpq.so.3) || defined(WITH_PGSQL)
+.if exists(${LOCALBASE}/lib/libpq.so) || defined(WITH_PGSQL)
 OPTIONS+=on
 .else
 OPTIONS+=off
@@ -250,10 +250,10 @@ PLIST_SUB+=	SUB_MYSQL="@comment "
 
 .if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
 PKGNAMESUFFIX!=	${ECHO} ${PKGNAMESUFFIX}-pgsql
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-authpgsql \
-		--with-pgsql-libs=${PGSQLBASE}/lib \
-		--with-pgsql-includes=${PGSQLINCLUDES}
+		--with-pgsql-libs=${LOCALBASE}/lib \
+		--with-pgsql-includes=${LOCALBASE}/include
 PLIST_SUB+=	SUB_PGSQL=""
 .else
 CONFIGURE_ARGS+=--without-authpgsql

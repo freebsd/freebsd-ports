@@ -45,8 +45,8 @@ IGNORE=		You should configure to use either a MySQL or PostgreSQL backend
 .endif
 
 .ifdef(WITH_PGSQL)
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=--with-pgsql
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 .endif
 .ifndef(WITHOUT_MYSQL)
 USE_MYSQL=	yes

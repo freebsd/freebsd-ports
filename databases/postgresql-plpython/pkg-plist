@@ -1,2 +1,0 @@
-lib/postgresql/plpython.so
-@unexec rmdir %D/lib/postgresql 2>/dev/null || true

@@ -7,7 +7,7 @@
 
 PORTNAME=	pgbash
 PORTVERSION=	7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.psn.co.jp/PostgreSQL/pgbash/:pgsource \
 		${MASTER_SITE_GNU:S/$/:bashsrc/}
@@ -19,7 +19,7 @@ EXTRACT_ONLY=	pgbash-7.3.tar.gz
 MAINTAINER=	sascha@root-login.org
 COMMENT=	SQL Bash Shell for PostgreSQL
 
-LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	yes
 
 WRKSRC=		${WRKDIR}/pgbash-7.3/src/bash-2.05a
 

@@ -34,8 +34,6 @@ CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
-POSTGRESQL_PORT?=	databases/postgresql7
-
 .include "${.CURDIR}/Makefile.common"
 
 OPTIONS=	MSQL "Build MSQL connection" off \
@@ -89,7 +87,7 @@ IF_MSQL=	"@comment "
 .endif
 
 .if defined(WITH_POSTGRESQL) && ${WITH_POSTGRESQL:L} != no
-LIB_DEPENDS+=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=	--with-postgresql-prefix="${LOCALBASE}"
 IF_POSTGRESQL=	""
 .else

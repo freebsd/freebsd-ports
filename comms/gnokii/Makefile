@@ -69,8 +69,8 @@ WITH_MYSQL=	yes
 .else
 PLIST_SUB+=	MSM='@comment '
 .endif
-.if exists(${LOCALBASE}/lib/libpq.so)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+.if exists(${LOCALBASE}/bin/psql)
+USE_PGSQL=	yes
 PLIST_SUB+=	PGM=''
 WITH_PGSQL=	yes
 .else

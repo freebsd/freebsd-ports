@@ -7,6 +7,7 @@
 
 PORTNAME=		kaspaliste
 PORTVERSION=		0.96
+PORTREVISION=		1
 CATEGORIES=		print kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kaspaliste
@@ -14,8 +15,7 @@ MASTER_SITE_SUBDIR=	kaspaliste
 MAINTAINER=		jaapb@kerguelen.org
 COMMENT=		Bibliography tool for KDE/Postgres/BibTeX
 
-LIB_DEPENDS=		pq.3:${PORTSDIR}/databases/postgresql7
-
+USE_PGSQL=		yes
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes

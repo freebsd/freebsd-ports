@@ -17,13 +17,11 @@ COMMENT=	The high performance Python adapter for PostgreSQL
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
+USE_PGSQL=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-
-POSTGRESQL_PORT?=	databases/postgresql7
 
 ALL_TARGET=	sharedmods
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	pyPgSQL
 PORTVERSION=	2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pypgsql
@@ -18,11 +18,10 @@ MAINTAINER=	gerhard.haering@gmx.de
 COMMENT=	A Python DB-API 2 compliant library for using PostgreSQL databases
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-
-POSTGRESQL_PORT?=	databases/postgresql7
 
 WRKSRC=		${WRKDIR}/pypgsql
+
+USE_PGSQL=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 

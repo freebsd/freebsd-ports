@@ -60,7 +60,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_PGSQL) || exists(${LOCALBASE}/include/libpq-fe.h)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/${PGSQL_PORT}
+USE_PGSQL=	yes
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
@@ -89,7 +89,6 @@ MAKE_ENV=		HOME=${WRKDIR} LANG=C
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-PGSQL_PORT?=	databases/postgresql7
 FIREBIRD_PORT?=	databases/firebird
 
 BIN2STRIP=	bdbf clip clip_bl clip_blank clip_cld clip_conv clip_dbf2txt	\

@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--enable-debug
 .endif
 
 .if defined(WITH_POSTGRESQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
+USE_PGSQL=	yes
 CONFIGURE_ARGS+=--enable-pgsql
 .else
 CONFIGURE_ARGS+=--disable-pgsql
