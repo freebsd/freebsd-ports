@@ -1,20 +1,17 @@
---- Makefile.PL.orig	Wed Oct 25 15:27:13 2000
-+++ Makefile.PL	Tue Oct 15 20:38:18 2002
-@@ -14,9 +14,9 @@
+--- Makefile.PL.orig	Sun Jul  7 14:24:33 2002
++++ Makefile.PL	Tue May 13 14:40:46 2003
+@@ -14,7 +14,7 @@
                server.o
  	      types.o);
  
--$orbit_cflags = `orbit-config --cflags client server`;
-+chomp($orbit_cflags = `orbit-config --cflags client server`);
- undef $orbit_cflags if $?;
--$orbit_libs = `orbit-config --libs client server`;
-+chomp($orbit_libs = `orbit-config --libs client server`);
- undef $orbit_libs if $?;
+-$orbit_version = `orbit-config --version`;
++chomp($orbit_version = `orbit-config --version`);
+ undef $orbit_version if $?;
  
- if (!defined $orbit_libs) {
-@@ -24,6 +24,16 @@
-     exit 1;
- }
+ if (!defined $orbit_version) {
+@@ -41,6 +41,16 @@
+ chomp($orbit_libs = `orbit-config --libs client server`);
+ #$orbit_libs .= ' -R/opt/ORBit/lib ';
  
 +chomp($idl_cflags = `libIDL-config --cflags`);
 +undef $idl_cflags if $?;
@@ -29,20 +26,15 @@
  if ($] < 5.0045) {
      print STDERR "Using compatibility macros/routines for Perl 5.004\n";
      push @OBJECTS,'constsub.o';
-@@ -32,13 +42,13 @@
- WriteMakefile(
+@@ -50,9 +60,9 @@
      'NAME'	=> 'CORBA::ORBit',
      'VERSION_FROM' => 'ORBit.pm',
+     'PREREQ_PM' => { 'Error' => 0.12 },
 -    'LIBS'	=> [$orbit_libs." -lIDL"],
 +    'LIBS'	=> ["$orbit_libs $idl_libs"],
-     'DEFINE'	=> 
-         ($] < 5.0045         ? '-DPERL5004_COMPAT ' : ''),
+     'DEFINE'	=> ($] < 5.0045         ? '-DPERL5004_COMPAT ' : ''),
 -    'INC'	=> $orbit_cflags,
 +    'INC'	=> "$orbit_cflags $idl_cflags",
-     'OBJECT'    => join(" ", @OBJECTS),
+     'OBJECT'    => join(' ', @OBJECTS),
+     'XSOPT'     => '-prototypes',
  #    'XSOPT'     => '-nolinenumbers',
--    'OPTIMIZE'  => '-g -Wall',
-+    'OPTIMIZE'  => '-Wall',
- #    'OPTIMIZE'  => '-O2 -Wall',
-     'MAP_TARGET' => 'orbitperl',
- #    'MAKEAPERL' => 1,
