@@ -7,7 +7,6 @@ share/cows/baa.cow
 share/cows/bendover.cow
 share/cows/bigcow.cow
 share/cows/blam.cow
-share/cows/box.cow
 share/cows/cack.cow
 share/cows/canada.cow
 share/cows/chick1.cow
@@ -20,16 +19,17 @@ share/cows/duck.cow
 share/cows/ferret.cow
 share/cows/fish.cow
 share/cows/flag.cow
+share/cows/flagasaur.cow
 share/cows/goatse.cow
 share/cows/gobble.cow
 share/cows/heart.cow
 share/cows/invdragon.cow
 share/cows/jesus.cow
-share/cows/jkh.cow
 share/cows/limp.cow
 share/cows/nascar.cow
 share/cows/peek.cow
 share/cows/peepees.cow
+share/cows/penii.cow
 share/cows/penis.cow
 share/cows/penisbird.cow
 share/cows/pman.cow
@@ -42,9 +42,9 @@ share/cows/saq.cow
 share/cows/satan.cow
 share/cows/shark.cow
 share/cows/spam.cow
+share/cows/standtall.cow
 share/cows/stud1.cow
 share/cows/stud2.cow
-share/cows/tux-stab.cow
 share/cows/urinal.cow
 share/cows/usa.cow
 share/cows/wang.cow
@@ -53,4 +53,5 @@ share/cows/wtf-pony.cow
 share/cows/wtf.cow
 share/cows/wtf2.cow
 share/cows/zig.cow
+@dirrm share/cows
 share/irssi/scripts/insub.pl
