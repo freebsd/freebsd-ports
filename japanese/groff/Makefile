@@ -7,15 +7,16 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.18.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU:S,$,:gnu,}
 MASTER_SITE_SUBDIR=	groff/:DEFAULT,gnu
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:gnu ${TMAC_DISTNAME}.tar.gz
 
-PATCH_SITES=	http://people.debian.org/~ukai/groff/
-PATCHFILES=	${DISTNAME:S,-,_,}-7.diff.gz
+PATCH_SITES=	${MASTER_SITE_DEBIAN}
+PATCH_SITE_SUBDIR=	pool/main/g/groff
+PATCHFILES=	${DISTNAME:S,-,_,}-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
@@ -26,7 +27,7 @@ BUILD_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
 
 TMAC_DATE=	20030521
-TMAC_DISTNAME=	tmac-${TMAC_DATE}
+TMAC_DISTNAME=	tmac-${TMAC_DATE}_1
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
