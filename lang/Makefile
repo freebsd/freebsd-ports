@@ -169,6 +169,7 @@
     SUBDIR += php3
     SUBDIR += php4
     SUBDIR += php4-cli
+    SUBDIR += php4-dtc
     SUBDIR += php4-horde
     SUBDIR += php4-nms
     SUBDIR += php5
