@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wdiff
 
-MAINTAINER=	sanpei@yy.cs.keio.ac.jp
+MAINTAINER=	sanpei@sanpei.org
 
 GNU_CONFIGURE=	yes
 

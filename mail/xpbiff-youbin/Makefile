@@ -10,7 +10,7 @@
 PORTNAME=	xpbiff-youbin
 PORTVERSION= 	1.27	
 
-MAINTAINER=	sanpei@jp.FreeBSD.org
+MAINTAINER=	sanpei@sanpei.org
 
 YOUBIN=		yes
 MASTERDIR=	${.CURDIR}/../xpbiff
