@@ -25,17 +25,17 @@
  echo "configure:572: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
  if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
---- ./configure~	Mon Apr  7 17:42:41 1997
-+++ ./configure	Tue Apr  8 08:07:58 1997
+--- configure.orig	Fri Apr 18 03:57:14 1997
++++ configure	Fri Apr 18 08:44:36 1997
 @@ -567,6 +567,7 @@
- # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
  # ./install, which can be erroneously created by make from ./install.sh.
  echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+ echo "configure:570: checking for a BSD compatible install" >&5
 +INSTALL="/usr/bin/install -c"
- echo "configure:571: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
  if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
-@@ -617,7 +618,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+@@ -616,7 +617,7 @@
  test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
  
@@ -44,7 +44,7 @@
  
  
  PACKAGE=gimp
-@@ -2173,7 +2174,7 @@
+@@ -2172,7 +2173,7 @@
  
  
  gimpdatadir=$datadir/$PACKAGE/$VERSION
