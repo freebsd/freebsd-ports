@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Apr  2 13:21:58 1999
++++ Makefile.in	Fri Apr  2 13:22:07 1999
+@@ -8,7 +8,7 @@
+ MACHINE=`uname -m`-`uname -p`-`uname -s`
+ # Add -DDEBUG to the CFLAGS line below if you want gFTP to print some extra
+ # information to stdout
+-CFLAGS=@CFLAGS@ -D_POSIX_SOURCE -D_REENTRANT -Wall -ansi -DSHARE_DIR=\"$(SHARE_DIR)\"
++CFLAGS=@CFLAGS@ -pthread -Wall -ansi -DSHARE_DIR=\"$(SHARE_DIR)\"
+ LIBS=@LIBS@
+ EXE=gftp
+ OBJS=cache.o chmod_dialog.o config_file.o connect_dialog.o delete_dialog.o \
