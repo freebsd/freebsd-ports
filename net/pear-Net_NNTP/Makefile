@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_NNTP
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net news www
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
@@ -27,5 +27,9 @@ do-install:
 	@${CP} -p ${WRKSRC}/${FILE} ${PEARDIR}/Net/NNTP
 .endfor
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Net
+.if !(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/examples/news.php.net/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.post.mk>
