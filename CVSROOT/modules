@@ -1832,6 +1832,7 @@ fortune-mod-futurama	ports/misc/fortune-mod-futurama
 fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
 fox		ports/x11-toolkits/fox
+fox-devel		ports/x11-toolkits/fox-devel
 fox-xunicode	ports/x11-toolkits/fox-xunicode
 fpc		ports/lang/fpc
 fping		ports/net/fping
