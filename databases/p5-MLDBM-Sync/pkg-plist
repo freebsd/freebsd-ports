@@ -2,3 +2,6 @@ lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Sync.pm
 lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Sync/SDBM_File.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MLDBM/Sync/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MLDBM/Sync
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MLDBM 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/MLDBM/Sync
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/MLDBM 2>/dev/null || true
