@@ -8,8 +8,8 @@
 PORTNAME=	nqxml
 PORTVERSION=	1.1.3p1
 CATEGORIES=	textproc ruby
-#MASTER_SITES=	http://www.io.com/~jimm/downloads/nqxml/
-MASTER_SITES=	http://rrr.jin.gr.jp/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 

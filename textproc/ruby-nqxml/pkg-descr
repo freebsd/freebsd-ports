@@ -1,6 +1,8 @@
-NQXML is a pure Ruby implementation of an XML tokenizer, a SAX-style
-streaming XML parser, a DOM-style tree parser, and an XML writer.
-``NQ'' for ``Not Quite''.
+NQXML is a pure Ruby implementation of a non-validating XML processor.
+It includes an XML tokenizer, a SAX-style streaming XML parser, a
+DOM-style tree XML Parser, and an XML writer.
+
+``NQ'' stands for ``Not Quite''.
 
 Author:	Jim Menard <jimm@io.com>
-WWW:	http://www.io.com/~jimm/downloads/nqxml/index.html
+WWW:	http://nqxml.sourceforge.net/
