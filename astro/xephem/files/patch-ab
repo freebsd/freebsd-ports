@@ -1,87 +1,11 @@
---- XEphem.ad~	Mon Jul 14 12:22:05 1997
-+++ XEphem.ad	Mon Jul 14 12:29:54 1997
-@@ -147,17 +147,17 @@
- ! N.B. in most cases a leading ~/ refers to $HOME
+--- XEphem.ad.orig	Sat Mar 14 01:45:06 1998
++++ XEphem.ad	Wed Apr 22 13:19:37 1998
+@@ -166,7 +166,7 @@
+ ! system-wide directory for xephem support files
+ ! N.B. under this are auxil/, fifos/, and catalogs/
+ ! N.B. if present, ppm.xe and the gsc base directory must be under catalogs/
+-XEphem.BaseDir: .
++XEphem.BaseDir: @PREFIX@/lib/X11/xephem
  
- ! default plot and listing filenames
--XEphem*Plot*Filename.value: work/ephem.plt
--XEphem*List*Filename.value: work/ephem.lst
-+XEphem*Plot*Filename.value: @PREFIX@/lib/X11/xephem/work/ephem.plt
-+XEphem*List*Filename.value: @PREFIX@/lib/X11/xephem/work/ephem.lst
- 
- ! default sky list filename
--XEphem*SkyList*textString: work/skylist.txt
-+XEphem*SkyList*textString: @PREFIX@/lib/X11/xephem/work/skylist.txt
- 
- ! default extern driver file
--XEphem*ExtFile*textString: work/external.txt
-+XEphem*ExtFile*textString: @PREFIX@/lib/X11/xephem/work/external.txt
- 
- ! default name of postscript file, whether to save (or print) and Color or Gray
--XEphem*Print*Filename.value: work/xephem.ps
-+XEphem*Print*Filename.value: @PREFIX@/lib/X11/xephem/work/xephem.ps
- XEphem*Print*Save.set: True
- XEphem*Print*Grayscale.set: True
- 
-@@ -165,28 +165,28 @@
- XEphem*Print*PrintCmd.value: lpr
- 
- ! default close list filename
--XEphem*CloseList*textString: work/closelist.txt
-+XEphem*CloseList*textString: @PREFIX@/lib/X11/xephem/work/closelist.txt
- 
- ! default data table filename
--XEphem*DataTbl*textString: work/datatbl.txt
-+XEphem*DataTbl*textString: @PREFIX@/lib/X11/xephem/work/datatbl.txt
- 
- ! default help file name
--XEphem.HELPFILE: auxil/xephem.hlp
-+XEphem.HELPFILE: @PREFIX@/lib/X11/xephem/auxil/xephem.hlp
- 
- ! default Earth menu sites file name
--XEphem.SITESFILE: auxil/xephem_sites
-+XEphem.SITESFILE: @PREFIX@/lib/X11/xephem/auxil/xephem_sites
- 
- ! default Moon image file name
--XEphem.MoonFile: auxil/moon.fts
-+XEphem.MoonFile: @PREFIX@/lib/X11/xephem/auxil/moon.fts
- 
- ! default Moon database file name
--XEphem.MoonDB: auxil/moon_db
-+XEphem.MoonDB: @PREFIX@/lib/X11/xephem/auxil/moon_db
- 
- ! default Mars image file name
--XEphem.MarsFile: auxil/marsmap.fts
-+XEphem.MarsFile: @PREFIX@/lib/X11/xephem/auxil/marsmap.fts
- 
- ! default Mars database file name
--XEphem.MarsDB: auxil/mars_db
-+XEphem.MarsDB: @PREFIX@/lib/X11/xephem/auxil/mars_db
- 
- ! default database fifo name
- XEphem.DBFIFO: fifos/xephem_db_fifo
-@@ -201,7 +201,7 @@
- XEphem.SKYLOCFIFO: fifos/xephem_loc_fifo
- 
- ! default initial database directory and file name pattern.
--XEphem.DBdirectory: edb
-+XEphem.DBdirectory: @PREFIX@/lib/X11/xephem/edb
- XEphem.DBpattern:  *.edb
- 
- ! *************************************************************************
-@@ -223,13 +223,13 @@
- XEphem*FieldStars*GSCCD.set: False
- XEphem*FieldStars*GSCCDDirectory.value: /cdrom
- XEphem*FieldStars*GSCCache.set: False
--XEphem*FieldStars*GSCCacheDirectory.value: auxil/gsccache
-+XEphem*FieldStars*GSCCacheDirectory.value: @PREFIX@/lib/X11/xephem/auxil/gsccache
- XEphem*FieldStars*GSCNet.set: False
- XEphem*FieldStars*GSCNetHost.value: gastro23.physics.uiowa.edu
- XEphem*FieldStars*ESONet.set: False
- XEphem*FieldStars*ESONetHost.value: archive.eso.org
- XEphem*FieldStars*PPM.set: False
--XEphem*FieldStars*PPMFilename.value: auxil/ppm.xe
-+XEphem*FieldStars*PPMFilename.value: @PREFIX@/lib/X11/xephem/auxil/ppm.xe
- XEphem*FieldStars*NoDups.set: True
- XEphem*FieldStars*SAOHD.set: True
- 
+ ! mount point for CDROM device
+ ! only used if have access to ASP GSC CDROM
