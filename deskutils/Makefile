@@ -62,6 +62,7 @@
     SUBDIR += mrproject
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
+    SUBDIR += multisync-backup
     SUBDIR += nag
     SUBDIR += narval
     SUBDIR += notebook
