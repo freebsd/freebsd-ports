@@ -1,8 +1,30 @@
---- index.c.orig	Mon Apr 29 22:43:42 2002
-+++ index.c	Fri Jul 19 05:23:01 2002
-@@ -120,6 +120,15 @@
-    
- 				/* FIXME.  Optimize this inner loop. */
+--- index.c.orig	Sun Nov 24 01:24:10 2002
++++ index.c	Sun Nov 24 01:24:21 2002
+@@ -91,6 +91,12 @@
+ 
+    for (; *src; ++src) {
+       c = * (const unsigned char *) src;
++      if((c & 0x80) && *(src+1)) {
++	 *dest++ = c;
++	 *dest++ = *(src+1);
++	 src++;
++	 continue;
++      }
+ 
+       if (isspace( c )) {
+          *dest++ = ' ';
+@@ -150,7 +156,7 @@
+     isspacealnumtab_allchars['\t'] = isspacealnumtab_allchars['\n'] = 0; /* special */
+ 
+     for (i = 0; i <= UCHAR_MAX; i++){
+-	if (islower (i) || (utf8_mode && i >= 0xC0))
++	if (islower (i) || (utf8_mode && i >= 0xC0) || (i>=0x80))
+ 	    chartab[charcount++] = i;
+     }
+ 
+@@ -317,6 +326,15 @@
+ 
+    /* FIXME.  Optimize this inner loop. */
     while (*word && start < end && *start != '\t') {
 +      if ((*start & 0x80) && start+1<end && start[1]!='\t') {
 +        if(start[0]!=word[0]) 
@@ -13,59 +35,15 @@
 +        start+=2;
 +        continue;
 +      }
-       if (!isspacealnum(*start)) {
+       if (!dbindex -> isspacealnum[* (const unsigned char *) start]) {
  	 ++start;
  	 continue;
-@@ -139,7 +148,11 @@
+@@ -359,6 +377,8 @@
+        *start != '\t' &&
+        !dbindex -> isspacealnum[* (const unsigned char *) start])
+    {
++      if((*start & 0x80) && start[1]!='\t')
++        break;
        ++start;
     }
-    
--   while (*start != '\t' && !isspacealnum(*start)) ++start;
-+   while (*start != '\t' && !isspacealnum(*start))
-+     if((*start & 0x80) && start[1]!='\t')
-+       break;
-+     else
-+       ++start;
  
-    PRINTF(DBG_SEARCH,("   result = %d\n",
- 		      *word ? 1 : ((*start != '\t') ? -1 : 0)));
-@@ -315,7 +328,6 @@
-    int        count = 0;
-    dictWord   *datum;
-    const char *previous = NULL;
--   
-    while (pt && pt < database->index->end) {
-       if (!compare( word, pt, database->index->end )) {
- 	 if (!previous || altcompare(previous, pt, database->index->end)) {
-@@ -643,6 +655,7 @@
-    char       tmp;
-    dictWord   *datum;
- 
-+   if(*word & 0x80) return count;
- #define CHECK                                         \
-    if ((pt = dict_index_search(buf, database->index)) \
-        && !compare(buf, pt, database->index->end)) {  \
-@@ -724,6 +737,11 @@
-       if (isspace( *(const unsigned char *)w )) {
-          *pt++ = ' ';
-       } else {
-+         if((*w & 0x80) && *(w+1)) {
-+            *pt++=*w++;
-+            *pt++=*w;
-+            continue;
-+         }
-          if (!isalnum( *(const unsigned char *)w )) continue;
-          *pt++ = tolower(*w);
-       }
-@@ -790,6 +808,11 @@
- 	 = binary_search( buf, i->start, i->end );
-    }
-    for (j = '0'; j <= '9'; j++) {
-+      buf[0] = j;
-+      buf[1] = '\0';
-+      i->optStart[j] = binary_search( buf, i->start, i->end );
-+   }
-+   for (j = 0x80; j <= 255; j++) {
-       buf[0] = j;
-       buf[1] = '\0';
-       i->optStart[j] = binary_search( buf, i->start, i->end );
