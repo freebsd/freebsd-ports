@@ -1,6 +1,6 @@
 # New ports collection makefile for:	irrd
 # Date created:				Fri Apr  9 14:12:06 JST 2004
-# Whom:					TAKANO Yuji <takano@usen.ad.jp>
+# Whom:					TAKANO Yuji <takano@net-chef.net>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.irrd.net/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	takano@usen.ad.jp
+MAINTAINER=	takano@net-chef.net
 COMMENT=	Internet Routing Registry database server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
