@@ -18,7 +18,8 @@ NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-system-zlib -system-libpng
+CONFIGURE_ARGS=	-system-zlib -system-libpng \
+		-I${LOCALBASE}/include -L${LOCALBASE}/lib -lxpg4
 CONFIGURE_ENV=	QTDIR=${WRKSRC}
 MAKE_ENV+=	QTDIR=${WRKSRC} SYS_CXX=${CXX} SYS_CC=${CC} SYS_CXXFLAGS="${CXXFLAGS}"
 
