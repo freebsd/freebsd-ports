@@ -13,15 +13,20 @@ MASTER_SITES=	http://artho.com/jlint/ \
 
 MAINTAINER=	znerd@FreeBSD.org
 
-PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-TARGET_DIR?=	${PREFIX}/bin
+USE_REINPLACE=	YES
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/jlint.sh
+
 do-install:
-	${MKDIR} ${TARGET_DIR}
-	${CP} ${WRKSRC}/jlint ${TARGET_DIR}
-	${CP} ${WRKSRC}/antic ${TARGET_DIR}
-	${CHMOD} 755 ${TARGET_DIR}/jlint ${TARGET_DIR}/antic
+	${INSTALL_PROGRAM} ${WRKSRC}/jlint ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/antic ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/jlint.sh ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/manual.pdf ${WRKSRC}/manual.html ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

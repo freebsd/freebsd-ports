@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Feb 19 17:20:06 2003
++++ Makefile	Wed Feb 19 17:21:13 2003
+@@ -3,8 +3,8 @@
+ # Makefile for Unix and GNU/Linux with gcc/g++ compiler
+ # Edit here:
+ 
+-CC=gcc
+-CPP=g++
++CC?=gcc
++CPP=$(CXX)
+ 
+ # Hints:
+ # if you use egcs-2.90.* version of GCC please add option -fno-exceptions 
+@@ -18,7 +18,7 @@
+ 
+ # Optimized version
+ 
+-CFLAGS = -c -Wall -O2 -g -DSLIST
++CFLAGS += -c
+ # add -DHASH_TABLE for extra speed (may sometimes produce inconsistent results)
+ 
+ # Optimized version with switched off asserts
