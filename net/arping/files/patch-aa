@@ -1,15 +1,15 @@
---- Makefile.orig	Fri Jun  7 00:37:19 2002
-+++ Makefile	Fri Jun  7 00:37:41 2002
-@@ -8,7 +8,7 @@
- FREEBSD=0
+--- Makefile.orig	Sun Nov 18 19:25:43 2001
++++ Makefile	Sun Sep 29 22:46:11 2002
+@@ -9,7 +9,7 @@
+ MACOSX=0
  
  # explicit pcap include dir is for redhat which is fux0red
--CFLAGS=-g -I/usr/local/include -L/usr/local/lib -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -I/usr/include/pcap
-+CFLAGS+=-g -I/usr/local/include -L/usr/local/lib -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -I/usr/include/pcap
+-CFLAGS=-g -I/usr/local/include -L/usr/local/lib -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -DMACOSX=$(MACOSX) -I/usr/include/pcap
++CFLAGS+=-g -I/usr/local/include -L/usr/local/lib -DUSE_NETIF=$(USE_NETIF) -DOPENBSD=$(OPENBSD) -DLINUX=$(LINUX) -DSOLARIS=$(SOLARIS) -DFREEBSD=$(FREEBSD) -DMACOSX=$(MACOSX) -I/usr/include/pcap
  
  usage:
  	@echo
-@@ -41,11 +41,11 @@
+@@ -45,11 +45,11 @@
  all: $(TARGETS)
  
  arping.o: arping.c
