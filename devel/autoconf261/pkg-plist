@@ -56,3 +56,7 @@ share/autoconf/mkinstalldirs
 @dirrm share/autoconf
 @unexec install-info --delete %D/info/autoconf.info %D/info/dir
 @unexec install-info --delete %D/info/standards.info %D/info/dir
+info/autoconf.info
+info/standards.info
+@exec install-info %D/info/autoconf.info %D/info/dir
+@exec install-info %D/info/standards.info %D/info/dir
