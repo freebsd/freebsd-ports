@@ -1,10 +1,8 @@
 bin/jnethack
-man/man6/dgn_comp.6.gz
-man/man6/lev_comp.6.gz
-man/man6/nethack.6.gz
-man/man6/recover.6.gz
-lib/jnethackdir/save
-lib/jnethackdir/jnethack
+@exec mkdir %D/lib/jnethackdir/save
+@exec chmod 775 %D/lib/jnethackdir/save
+@exec chown games.games %D/lib/jnethackdir/save
+@unexec rmdir %D/lib/jnethackdir/save
 lib/jnethackdir/A-filla.lev
 lib/jnethackdir/A-fillb.lev
 lib/jnethackdir/A-goal.lev
@@ -25,6 +23,11 @@ lib/jnethackdir/E-fillb.lev
 lib/jnethackdir/E-goal.lev
 lib/jnethackdir/E-locate.lev
 lib/jnethackdir/E-start.lev
+lib/jnethackdir/F-filla.lev
+lib/jnethackdir/F-fillb.lev
+lib/jnethackdir/F-goal.lev
+lib/jnethackdir/F-locate.lev
+lib/jnethackdir/F-start.lev
 lib/jnethackdir/H-filla.lev
 lib/jnethackdir/H-fillb.lev
 lib/jnethackdir/H-goal.lev
@@ -69,7 +72,11 @@ lib/jnethackdir/air.lev
 lib/jnethackdir/asmodeus.lev
 lib/jnethackdir/astral.lev
 lib/jnethackdir/baalz.lev
-lib/jnethackdir/bigroom.lev
+lib/jnethackdir/bigrm-1.lev
+lib/jnethackdir/bigrm-2.lev
+lib/jnethackdir/bigrm-3.lev
+lib/jnethackdir/bigrm-4.lev
+lib/jnethackdir/bigrm-5.lev
 lib/jnethackdir/castle.lev
 lib/jnethackdir/data
 lib/jnethackdir/dungeon
@@ -77,11 +84,12 @@ lib/jnethackdir/earth.lev
 lib/jnethackdir/fakewiz1.lev
 lib/jnethackdir/fakewiz2.lev
 lib/jnethackdir/fire.lev
+lib/jnethackdir/history
 lib/jnethackdir/jcmdhelp
 lib/jnethackdir/jhelp
 lib/jnethackdir/jhh
-lib/jnethackdir/jhistory
 lib/jnethackdir/jjj
+lib/jnethackdir/jnethack
 lib/jnethackdir/jopthelp
 lib/jnethackdir/joracles
 lib/jnethackdir/jrumors
@@ -92,9 +100,11 @@ lib/jnethackdir/license
 lib/jnethackdir/logfile
 lib/jnethackdir/medusa-1.lev
 lib/jnethackdir/medusa-2.lev
-lib/jnethackdir/mine_end.lev
 lib/jnethackdir/minefill.lev
-lib/jnethackdir/minetown.lev
+lib/jnethackdir/minend-1.lev
+lib/jnethackdir/minend-2.lev
+lib/jnethackdir/minetn-1.lev
+lib/jnethackdir/minetn-2.lev
 lib/jnethackdir/options
 lib/jnethackdir/oracle.lev
 lib/jnethackdir/orcus.lev
@@ -110,5 +120,8 @@ lib/jnethackdir/water.lev
 lib/jnethackdir/wizard1.lev
 lib/jnethackdir/wizard2.lev
 lib/jnethackdir/wizard3.lev
-@exec chmod 755 %D/lib/jnethackdir
-@unexec rmdir %D/lib/jnethackdir
+man/man6/nethack.6.gz
+man/man6/lev_comp.6.gz
+man/man6/dgn_comp.6.gz
+man/man6/recover.6.gz
+man/man6/dlb.6.gz

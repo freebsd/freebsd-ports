@@ -1,11 +1,69 @@
---- ./sys/unix/Makefile.utl.org	Wed Dec 21 05:25:10 1994
-+++ ./sys/unix/Makefile.utl	Wed Dec 21 05:46:22 1994
-@@ -72,7 +72,7 @@
- #
- # by issei 1994/1/10
- # lex is required 8bit through for japanese. 
--LEX	= flex -8
-+LEX	= lex -8
+*** sys/unix/Makefile.src.orig	Thu Aug 29 23:52:47 1996
+--- sys/unix/Makefile.src	Fri Aug 30 00:36:19 1996
+***************
+*** 126,133 ****
+  # flags for debugging:
+  # CFLAGS = -g -I../include
   
- # these are the names of the output files from YACC/LEX. Under MS-DOS
- # and similar systems, they may differ
+! CFLAGS = -g -I../include
+! LFLAGS = -g
+  
+  
+  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
+--- 126,133 ----
+  # flags for debugging:
+  # CFLAGS = -g -I../include
+  
+! CFLAGS += -O -I../include -I${X11BASE}/include
+! LFLAGS = -L${X11BASE}/lib
+  
+  
+  # Set the WINSRC, WINOBJ, and WINLIB lines to correspond to your desired
+***************
+*** 148,155 ****
+  	winmisc.o winstat.o wintext.o winval.o tile.o
+  #
+  # 
+! WINSRC = $(WINTTYSRC)
+! WINOBJ = $(WINTTYOBJ)
+  
+  # on some systems the termcap library is in -ltermcap or -lcurses
+  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+--- 148,155 ----
+  	winmisc.o winstat.o wintext.o winval.o tile.o
+  #
+  # 
+! WINSRC = $(WINTTYSRC) $(WINX11SRC)
+! WINOBJ = $(WINTTYOBJ) $(WINX11OBJ)
+  
+  # on some systems the termcap library is in -ltermcap or -lcurses
+  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
+***************
+*** 167,179 ****
+  #
+  # libraries for X11
+  # If USE_XPM is defined in config.h, you will also need -lXpm here.
+! WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11
+  # WINX11LIB = -lXaw -lXmu -lXt -lX11
+  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+  #
+  #
+! WINLIB = $(WINTTYLIB)
+  
+  # any other strange libraries your system needs (for Sysunix only -- the more
+  # specialized targets should already be right)
+--- 167,179 ----
+  #
+  # libraries for X11
+  # If USE_XPM is defined in config.h, you will also need -lXpm here.
+! WINX11LIB = -lXaw -lXmu -lXext -lXt -lX11 -lXpm
+  # WINX11LIB = -lXaw -lXmu -lXt -lX11
+  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
+  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
+  #
+  #
+! WINLIB = $(WINTTYLIB) $(WINX11LIB)
+  
+  # any other strange libraries your system needs (for Sysunix only -- the more
+  # specialized targets should already be right)

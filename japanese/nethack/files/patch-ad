@@ -1,19 +1,52 @@
---- ./sys/unix/Makefile.doc.org	Mon Jan 11 13:02:31 1993
-+++ ./sys/unix/Makefile.doc	Sat Dec 10 00:14:52 1994
-@@ -21,7 +21,7 @@
- 
- 
- GAME	= nethack
--MANDIR	= /usr/man/man6
-+MANDIR	= /usr/local/man/man6
- MANEXT	= 6
- 
- # manual installation for most BSD-style systems
-@@ -36,6 +36,7 @@
- # RCVRMANCREATE = nroff -man recover.6 >
- 
- manpages:
-+	-mkdir $(MANDIR)
- 	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
- 	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
- 	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)
+*** sys/unix/Makefile.top.orig	Thu Aug 29 23:52:47 1996
+--- sys/unix/Makefile.top	Fri Aug 30 00:27:52 1996
+***************
+*** 18,31 ****
+  #GAME     = nethack
+  GAME     = jnethack
+  GAMEUID  = games
+! GAMEGRP  = bin
+  
+  # Permissions - some places use setgid instead of setuid, for instance
+  # See also the option "SECURE" in include/config.h
+! GAMEPERM = 04755
+! FILEPERM = 0644
+  EXEPERM  = 0755
+! DIRPERM  = 0755
+  
+  # GAMEDIR also appears in config.h as "HACKDIR".
+  #
+--- 18,31 ----
+  #GAME     = nethack
+  GAME     = jnethack
+  GAMEUID  = games
+! GAMEGRP  = games
+  
+  # Permissions - some places use setgid instead of setuid, for instance
+  # See also the option "SECURE" in include/config.h
+! GAMEPERM = 02755
+! FILEPERM = 0664
+  EXEPERM  = 0755
+! DIRPERM  = 0775
+  
+  # GAMEDIR also appears in config.h as "HACKDIR".
+  #
+***************
+*** 34,41 ****
+  # therefore there should not be anything in GAMEDIR that you want to keep
+  # (if there is, you'll have to do the installation by hand or modify the
+  # instructions)
+! GAMEDIR  = /usr/games/lib/$(GAME)dir
+! SHELLDIR = /usr/games
+  
+  # per discussion in Install.X11
+  VARDATND = 
+--- 34,41 ----
+  # therefore there should not be anything in GAMEDIR that you want to keep
+  # (if there is, you'll have to do the installation by hand or modify the
+  # instructions)
+! GAMEDIR  = ${PREFIX}/lib/$(GAME)dir
+! SHELLDIR = ${PREFIX}/bin
+  
+  # per discussion in Install.X11
+  VARDATND = 

@@ -1,11 +1,19 @@
---- ./sys/unix/Makefile.src.org	Wed Dec 21 04:43:32 1994
-+++ ./sys/unix/Makefile.src	Wed Dec 21 04:50:14 1994
-@@ -97,7 +97,7 @@
- 
- # by issei(94/6/12)
- #
--CFLAGS = -g -I../include -I/usr/local/X11R6/include
-+CFLAGS = -O2 -I../include -I/usr/X11R6/include
- LFLAGS =
- 
- 
+*** sys/unix/Makefile.doc.orig	Thu Apr  4 14:17:35 1996
+--- sys/unix/Makefile.doc	Fri Aug 30 00:16:46 1996
+***************
+*** 31,37 ****
+  
+  
+  GAME	= nethack
+! MANDIR	= /usr/man/man6
+  MANEXT	= 6
+  
+  # manual installation for most BSD-style systems
+--- 31,37 ----
+  
+  
+  GAME	= nethack
+! MANDIR	= ${PREFIX}/man/man6
+  MANEXT	= 6
+  
+  # manual installation for most BSD-style systems
