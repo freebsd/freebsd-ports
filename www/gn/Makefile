@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gopher and http server
 
+BROKEN=		"Does not compile"
+
 BUILD_DEPENDS=	${WAISDIR}/bin/waisindex:${PORTSDIR}/net/wais
 
 IS_INTERACTIVE=	yes
