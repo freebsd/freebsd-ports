@@ -60,26 +60,9 @@ share/locale/sv/LC_MESSAGES/kbiff.mo
 share/locale/tr/LC_MESSAGES/kbiff.mo
 share/locale/uk/LC_MESSAGES/kbiff.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kbiff.mo
+@dirrm share/doc/HTML/fr/kbiff
+@dirrm share/doc/HTML/es/kbiff
+@dirrm share/doc/HTML/en/kbiff
+@dirrm share/doc/HTML/de/kbiff
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
-@dirrm share/doc/HTML/de/kbiff
-@dirrm share/doc/HTML/en/kbiff
-@dirrm share/doc/HTML/es/kbiff
-@dirrm share/doc/HTML/fr/kbiff
-@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/he/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/zh_TW.Big5 2>/dev/null || true
-@unexec rmdir %D/share/locale/ro 2>/dev/null || true
-@unexec rmdir %D/share/locale/no_NY 2>/dev/null || true
-@unexec rmdir %D/share/locale/is 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu 2>/dev/null || true
-@unexec rmdir %D/share/locale/hr 2>/dev/null || true
-@unexec rmdir %D/share/locale/br 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
-@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
-@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
