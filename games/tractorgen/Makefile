@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.vergenet.net/~conrad/software/tractorgen/dl/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	elfrink@introcom.nl
+MAINTAINER=	elfrink@introweb.nl
 COMMENT=	Generates ASCII tractors
 
 USE_LIBTOOL_VER=13
