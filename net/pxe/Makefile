@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pxe
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.kano.org.uk/projects/pxe/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -21,11 +21,6 @@ CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 			--with-setuid=nobody
 
 DOCS=	Changes INSTALL LICENCE README
-
-post-patch:
-	${REINPLACE_CMD} -e "s,^CFLAGS.*,CFLAGS=\t\@CFLAGS\@,; \
-		s,^CC.*,CC=\t${CXX}," \
-	${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pxe ${PREFIX}/sbin/
