@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	g95
+PORTNAME=	gfortran
 PORTVERSION=	3.5.${SNAPDATE}
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
@@ -89,7 +89,6 @@ check: build
 
 post-install:
 	${LN} ${PREFIX}/bin/gfortrantree-ssa ${PREFIX}/bin/gfortran
-	${LN} ${PREFIX}/bin/gfortrantree-ssa ${PREFIX}/bin/g95
 
 .for f in gcc cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	if [ -e ${PREFIX}/bin/${f}tree-ssa ]; then \
@@ -100,7 +99,7 @@ post-install:
 	fi
 .endfor
 
-.for f in libgfortran libgfortranbegin libmudflap libmudflapth libiberty ${EXTRA_SHLIB}
+.for f in libgfortran libgfortranbegin libiberty ${EXTRA_SHLIB}
 	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
 	${RM} -f ${PREFIX}/lib/libiberty.a
@@ -128,7 +127,5 @@ post-install:
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
 	cd ${WRKDIR} ; ex < ex.script
-
-cklatest:
 
 .include <bsd.port.post.mk>
