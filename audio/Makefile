@@ -231,6 +231,7 @@
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
     SUBDIR += xmms-tfmx
+    SUBDIR += xmms-volnorm
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
