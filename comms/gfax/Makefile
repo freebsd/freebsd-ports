@@ -7,14 +7,14 @@
 
 PORTNAME=	gfax
 PORTVERSION=	0.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms print gnome
 MASTER_SITES=	http://gfax.cowlug.org/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	A GNOME-2.x C# pop-up fax manager
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp \
+BUILD_DEPENDS=	${X11BASE}/lib/mono/gtk-sharp/gtk-sharp.dll:${PORTSDIR}/x11-toolkits/gtk-sharp \
 		bash:${PORTSDIR}/shells/bash2
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/sendfax:${PORTSDIR}/comms/hylafax
