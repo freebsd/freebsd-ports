@@ -1,4 +1,4 @@
-Ghostscript is the name of a set of software that provides:
+GNU Ghostscript is the name of a set of software that provides:
 
 	- An interpreter for the PostScript (TM) language, and
 
@@ -6,8 +6,7 @@ Ghostscript is the name of a set of software that provides:
 the graphics capabilities that appear as primitive operations in the
 PostScript language.
 
-Aladdin Ghostscript and GNU Ghostscript come with NO WARRANTY and NO
-SUPPORT.  
+GNU Ghostscript comes with NO WARRANTY and NO SUPPORT.  
 
 Also included with this package is the hpdj driver written by Martin
 Lottermoser with defaults for a Deskjet 560C. See the man page for
