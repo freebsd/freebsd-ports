@@ -18,6 +18,7 @@ COMMENT=	X11 12,14,16-dot kanji fonts
 
 BUILD_DEPENDS=	bdftopcf:${X_CLIENTS_PORT}
 RUN_DEPENDS=	mkfontdir:${X_CLIENTS_PORT}
+USE_PERL5_BUILD=yes
 
 FONTSDIR=	lib/X11/fonts/local
 USE_BZIP2=	yes
