@@ -16,6 +16,8 @@ COMMENT=	XML output extension to GCC
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
+NOT_FOR_ARCHS=	amd64 sparc64 ia64 # cf. lang/gcc30
+
 # This one's neat: We have to build things in two subdirectories,
 #   but only need to invoke configure in one of them. This means we
 #   only have to override the build-stage entirely but can keep the
