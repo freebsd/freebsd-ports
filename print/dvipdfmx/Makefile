@@ -7,12 +7,9 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20030313
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/ \
-		ftp://freebsd.sinica.edu.tw/pub/statue/dvipdfmx/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		${PORTNAME}-base-0.1.tar.gz
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
@@ -25,15 +22,15 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTS
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 
+post-patch:
+	@${RM} ${WRKSRC}/data/config/dvipdfmx.cfg.orig
+
 pre-install:
 	${CP} ${LOCALBASE}/bin/dvipdfm ${LOCALBASE}/bin/dvipdfm-orig > /dev/null 2>&1 || ${TRUE}
 	${MV} ${LOCALBASE}/share/texmf/dvipdfm ${LOCALBASE}/share/texmf/dvipdfm-orig > /dev/null 2>&1 || ${TRUE}
 
 post-install:
 	@${LN} -fs ${LOCALBASE}/share/ghostscript/Resource ${PREFIX}/share/texmf/dvipdfm/
-	${MKDIR} ${LOCALBASE}/share/texmf/dvipdfm/base
-	${CP} ${WRKDIR}/base/* ${LOCALBASE}/share/texmf/dvipdfm/base
-	${RM} ${LOCALBASE}/share/texmf/dvipdfm/config/dvipdfmx.cfg.orig
 	${LOCALBASE}/bin/mktexlsr
 
 .include <bsd.port.mk>
