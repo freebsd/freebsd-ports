@@ -41,7 +41,6 @@ include/verlihub/cmessagedc.h
 include/verlihub/cmutex.h
 include/verlihub/cmysql.h
 include/verlihub/cobj.h
-include/verlihub/config.h
 include/verlihub/coperator.h
 include/verlihub/cparser.h
 include/verlihub/cpcre.h
