@@ -8,6 +8,7 @@
     SUBDIR += 30upgrade
     SUBDIR += 31upgrade
     SUBDIR += 32upgrade
+    SUBDIR += 34upgrade
     SUBDIR += Howto
     SUBDIR += aclgen
     SUBDIR += acron

@@ -1,12 +1,12 @@
-# New ports collection makefile for:	3.1R to 3-stable upgrade kit
+# New ports collection makefile for:	3.3/3.4R to 3-stable upgrade kit
 # Version required:	n/a
-# Date created:		8 Mar 1999
+# Date created:		5 Jan 2000
 # Whom:			asami
 #
 # $FreeBSD$
 #
 
-DISTNAME=	31upgrade-1999.01.05
+DISTNAME=	34upgrade-2000.01.05
 CATEGORIES=	misc
 DISTFILES=	# empty
 

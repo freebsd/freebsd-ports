@@ -9,6 +9,7 @@ usr/bin/perlcc
 usr/bin/perldoc
 usr/bin/sperl5.00503
 usr/bin/suidperl
+usr/lib/libc_r.so.4
 usr/lib/libperl.a
 usr/lib/libperl.so
 usr/lib/libperl.so.3
