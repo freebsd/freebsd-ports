@@ -18,6 +18,7 @@
     SUBDIR += gtimer
     SUBDIR += ical
     SUBDIR += ithought
+    SUBDIR += jlj
     SUBDIR += kdepim
     SUBDIR += korganizer
     SUBDIR += kproject
