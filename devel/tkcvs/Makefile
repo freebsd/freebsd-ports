@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	7.0.3
-CATEGORIES=	devel tk83
+PORTVERSION=	7.1.2
+CATEGORIES=	devel
 MASTER_SITES=	http://www.twobarleycorns.net/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/:S/.//g}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	shanee@augusta.de
 COMMENT=	Tcl/Tk frontends to CVS and diff
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 NO_BUILD=	yes
 MAN1=		tkcvs.1
+USE_REINPLACE=	yes
 
-WISH=		wish8\.3
-TCLSH=		tclsh8\.3
+WISH=		wish8\.4
+TCLSH=		tclsh8\.4
 
 post-patch:
-	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.blank
-	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkdiff/tkdiff
-	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/doinstall.tcl
+	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.blank
+	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/tkdiff/tkdiffb
+	@${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/doinstall.tcl
 
 do-install:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl -nox ${PREFIX}
