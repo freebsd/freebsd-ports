@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -54,9 +55,9 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ispell-ru:${PORTSDIR}/russian/rus-ispell
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's#DATADIRNAME=lib#DATADIRNAME=share#g' \
+	@${REINPLACE_CMD} -e 's#DATADIRNAME=lib#DATADIRNAME=share#g' \
 		${WRKSRC}/configure
-	@${PERL} -pi -e 's#/usr/bin/gnome-config#$(PREFIX)/bin/gnome-config#g' \
+	@${REINPLACE_CMD} -e 's#/usr/bin/gnome-config#$(PREFIX)/bin/gnome-config#g' \
 		${WRKSRC}/configure
 
 do-install:

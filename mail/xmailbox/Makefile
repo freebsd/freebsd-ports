@@ -13,12 +13,13 @@ MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		ports@FreeBSD.org
 
+USE_REINPLACE=		yes
 USE_IMAKE=		yes
 USE_XPM=		yes
 MAN1=			xmailbox.1
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/XMailbox.ad
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/XMailbox.ad
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/xmailbox

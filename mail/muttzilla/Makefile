@@ -13,8 +13,10 @@ MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+
 pre-configure:
-	@${PERL} -pi.orig \
+	@${REINPLACE_CMD} \
 		-e "s:/etc/muttzilla.conf:${PREFIX}/etc/muttzilla.conf:g"  \
 		${WRKSRC}/muttzilla.h ${WRKSRC}/mzmail.sh ${WRKSRC}/mzmail.py \
 		${WRKSRC}/mznews.sh ${WRKSRC}/mznews.py
