@@ -1,36 +1,29 @@
-*** configure.orig	Tue Sep 14 00:22:05 1999
---- configure	Sat Sep 18 16:02:24 1999
-***************
-*** 4970,4976 ****
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-lopie  $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 4976 "configure"
-  #include "confdefs.h"
---- 4970,4976 ----
-    echo $ac_n "(cached) $ac_c" 1>&6
-  else
-    ac_save_LIBS="$LIBS"
-! LIBS="-lopie -lmd $LIBS"
-  cat > conftest.$ac_ext <<EOF
-  #line 4976 "configure"
-  #include "confdefs.h"
-***************
-*** 5004,5010 ****
-  #define $ac_tr_lib 1
-  EOF
-  
-!   LIBS="-lopie $LIBS"
-  
-  else
-    echo "$ac_t""no" 1>&6
---- 5004,5010 ----
-  #define $ac_tr_lib 1
-  EOF
-  
-!   LIBS="-lopie -lmd $LIBS"
-  
-  else
-    echo "$ac_t""no" 1>&6
+--- configure.orig	Thu Sep 16 00:21:02 1999
++++ configure	Wed Sep 22 15:11:56 1999
+@@ -4970,7 +4970,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lopie  $LIBS"
++LIBS="-lopie -lmd $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 4976 "configure"
+ #include "confdefs.h"
+@@ -5004,7 +5004,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lopie $LIBS"
++  LIBS="-lopie -lmd $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -5409,7 +5409,7 @@
+       then
+         CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
+         LDEFLAGS="$LDEFLAGS -L$dir/lib"
+-        LIBS="$LIBS -lkrb -ldes"
++        LIBS="$LIBS -lkrb -ldes -lecomm_err"
+         break
+       fi
+     done
