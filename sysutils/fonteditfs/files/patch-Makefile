@@ -1,0 +1,27 @@
+--- Makefile.orig	Sun Sep 29 18:01:01 2002
++++ Makefile	Sat Oct 12 21:05:22 2002
+@@ -1,20 +1,14 @@
+ # This makefile should work under most POSIX OSes (at least FreeBSD)
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man
+-
+-
+-CFLAGS = -O2 -pipe -Wall
++all: fnteditfs
+ 
+ fnteditfs: fnteditfs.o
+-	gcc -o fnteditfs fnteditfs.c -lcurses
++	gcc -o fnteditfs fnteditfs.o -lcurses
+ 	strip fnteditfs
+ 
+-fnteditfs.o: fnteditfs.c
+-
+ install: fnteditfs fnteditfs.1
+-	cp fnteditfs $(BINDIR)
+-	gzip < fnteditfs.1 > $(MANDIR)/man1/fnteditfs.1.gz
++	__INSTALL_SCRIPT__ fnteditfs __PREFIX__/bin
++	__INSTALL_MAN__ fnteditfs.1 __PREFIX__/man/man1
+ 
+ clean:
+ 	rm -f *.o fnteditfs

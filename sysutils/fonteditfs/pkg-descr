@@ -1,0 +1,3 @@
+fnteditfs is a small, simple font editor, designed for editing FreeBSD's
+syscons and linux fonts (but may also work for other OSes). It's written
+in C, using the ncurses library for its display library.

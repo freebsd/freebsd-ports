@@ -1,0 +1,19 @@
+--- version.orig	Wed Oct  2 16:30:17 2002
++++ version	Tue Dec  3 14:46:52 2002
+@@ -2,4 +2,4 @@
+ Version: 1.0
+ Date: Wed Oct  2 13:27:20 GMT 2002
+ Authors: Uri Shaked <uri@keves.org>, Amir Shalem <amir@boom.org.il>
+-Homepage: http://www.a-i-systems.net/~uri/projects/fonteditfs/
++Homepage: http://fonteditfs.sourceforge.net/
+--- fnteditfs.1.orig	Tue Oct  1 22:10:07 2002
++++ fnteditfs.1	Tue Dec  3 14:46:40 2002
+@@ -43,7 +43,7 @@
+ .Sh AVAILABILITY
+ The latest release and some online documentation are available on the
+ .Nm fnteditfs
+-Page, URL http://www.a-i-systems.net/~uri/projects/fonteditfs/
++Page, URL http://fonteditfs.sourceforge.net/
+ .Sh BUGS
+ Sure to be some. Please report the author if you find any.
+ .Sh AUTHORS
