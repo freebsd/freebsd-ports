@@ -7,25 +7,25 @@
 ****
 --- ./gtk+/glib/configure~	Fri Mar 28 12:03:26 1997
 +++ ./gtk+/glib/configure	Tue Apr  8 08:06:14 1997
-@@ -560,6 +560,7 @@
+@@ -556,6 +556,7 @@
+ # AFS /usr/afsws/bin/install, which mishandles nonexistent args
  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
  # ./install, which can be erroneously created by make from ./install.sh.
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
 +INSTALL="/usr/bin/install -c"
- echo "configure:564: checking for a BSD compatible install" >&5
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+ echo "configure:561: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
- if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
 
 --- ./gtk+/configure~	Fri Mar 28 10:58:42 1997
 +++ ./gtk+/configure	Tue Apr  8 08:05:57 1997
-@@ -568,6 +568,7 @@
+@@ -564,6 +564,7 @@
+ # AFS /usr/afsws/bin/install, which mishandles nonexistent args
  # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
  # ./install, which can be erroneously created by make from ./install.sh.
- echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
 +INSTALL="/usr/bin/install -c"
- echo "configure:572: checking for a BSD compatible install" >&5
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
+ echo "configure:569: checking for a BSD compatible install" >&5
  if test -z "$INSTALL"; then
- if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
 
 --- configure.orig	Sun Apr 27 00:27:09 1997
 +++ configure	Mon Apr 28 21:23:51 1997
