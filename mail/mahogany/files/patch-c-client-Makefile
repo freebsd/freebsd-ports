@@ -1,0 +1,11 @@
+--- extra/src/c-client/Makefile.old	Tue Jun  1 19:59:40 2004
++++ extra/src/c-client/Makefile	Tue Jun  1 20:00:37 2004
+@@ -866,7 +866,7 @@
+ 	echo $(CC) > CCTYPE
+ 	echo $(CFLAGS) > CFLAGS
+ 	echo -DCREATEPROTO=$(CREATEPROTO) -DEMPTYPROTO=$(EMPTYPROTO) \
+-	 -DMAILSPOOL=\"$(MAILSPOOL)\" \
++	 -DMD5ENABLE=\"/etc/cram-md5.pwd\" -DMAILSPOOL=\"$(MAILSPOOL)\" \
+ 	 -DANONYMOUSHOME=\"$(MAILSPOOL)/anonymous\" \
+ 	 -DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
+ 	 -DRSHPATH=\"$(RSHPATH)\" -DLOCKPGM=\"$(LOCKPGM)\" > OSCFLAGS
