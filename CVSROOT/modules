@@ -802,6 +802,7 @@ cidr		ports/net/cidr
 cim		ports/lang/cim
 cinc		ports/emulators/cinc
 cingb		ports/emulators/cingb
+circuslinux	ports/games/circuslinux
 cisco_conf	ports/net/cisco_conf
 ciscoconf	ports/net/ciscoconf
 citadel		ports/net/citadel
