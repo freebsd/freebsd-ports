@@ -1,13 +1,13 @@
---- Makefile.orig	Tue Jun  3 14:56:23 2003
-+++ Makefile	Tue Jun  3 14:58:39 2003
-@@ -1,19 +1,19 @@
- TARGET=wmDeskGuide
- SRC= gstc.c gwmh.c gwmthumbnail.c gwmdesktop.c gwmtaskview.c deskguide_applet.c
- OBJ= gstc.o gwmh.o gwmthumbnail.o gwmdesktop.o gwmtaskview.o deskguide_applet.o
+--- Makefile.orig	Wed Jul  2 04:20:18 2003
++++ Makefile	Sun May 23 02:38:59 2004
+@@ -13,19 +13,19 @@
+ 	gwmdesktop.o\
+ 	gwmtaskview.o\
+ 	deskguide_applet.o
 -INCLUDES= -I. `gnome-config gnomeui gnome --cflags` `gdk-pixbuf-config --cflags` -I/usr/X11/include
--CFLAGS=-Wall -O2 -c
+-CFLAGS=-Wall -c -g
 +INCLUDES= -I. `${GNOME_CONFIG} gnomeui gnome --cflags` `${GDK_PIXBUF_CONFIG} --cflags` -I${X11BASE}/include
-+#CFLAGS=-Wall -O2 -c
++#CFLAGS=-Wall -c -g
  HDR= pixmaps.h gstc.h gwmh.h gwmdesktop.h gwmtaskview.h gwmthumbnail.h deskguide_applet.h config.h
 -CPFLAGS=-Wall -O2 
 -LIBS=`gnome-config gnomeui gnome --libs` `gdk-pixbuf-config --libs`
