@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ 
 DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jburkhol@home.com
 
 NO_WRKSUBDIR=	yes
 
