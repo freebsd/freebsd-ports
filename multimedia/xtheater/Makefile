@@ -24,7 +24,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
-USE_MESA=	yes
+USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

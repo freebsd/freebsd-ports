@@ -40,8 +40,8 @@ PLIST_SUB+=	GMP="@comment " NOGMP=""
 .endif
 
 .if defined(WITH_X11)
-USE_MESA=	yes
-CONFIGURE_ARGS+=	--with-x
+USE_GL=		yes
+CONFIGURE_ARGS+=--with-x
 PLIST_SUB+=	X11=""
 CPPFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib

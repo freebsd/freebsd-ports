@@ -22,7 +22,7 @@ COMMENT=	A free CAD system and applications development tool
 EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 
-USE_MESA=	yes
+USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 VARKON_ROOT=	${WRKDIR}/${PORTNAME}_${PORTVERSION}
