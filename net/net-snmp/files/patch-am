@@ -1,0 +1,12 @@
+--- agent/mibgroup/ucd-snmp/vmstat_freebsd2.c~	Sat Dec 18 08:41:14 1999
++++ agent/mibgroup/ucd-snmp/vmstat_freebsd2.c	Wed May 17 11:18:59 2000
+@@ -9,6 +9,9 @@
+ #include <sys/time.h>
+ #include <sys/proc.h>
+ #include <sys/dkstat.h>
++#ifdef freebsd5
++#include <sys/bio.h>
++#endif
+ #include <sys/buf.h>
+ #include <sys/uio.h>
+ #include <sys/namei.h>

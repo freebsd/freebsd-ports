@@ -1,0 +1,29 @@
+--- configure.in~	Sat May  6 01:46:26 2000
++++ configure.in	Wed May 17 11:09:08 2000
+@@ -1286,6 +1286,26 @@
+ AC_CACHE_CHECK(type of rtentry structure,ac_cv_RTENTRY_TYPE,
+ [
+ 
++dnl 4.4 compatible but renamed on FreeBSD
++AC_TRY_COMPILE([
++#include <sys/types.h>
++#define KERNEL
++#define _KERNEL
++#include <sys/socket.h>
++#undef KERNEL
++#undef _KERNEL
++#include <net/route.h>
++],[
++
++#ifndef STRUCT_RTENTRY_HAS_RT_DST
++#define rt_dst rt_nodes->rn_key
++#endif
++
++  struct rtentry rt; 
++  rt.rt_nodes[0].rn_bit = 1;
++  rt.rt_dst;
++  ], ac_cv_RTENTRY_TYPE="BSD-4.4")
++
+ dnl 4.4 compat
+ AC_TRY_COMPILE([
+ #include <sys/types.h>
