@@ -6,6 +6,7 @@
 
 PORTNAME=	vice
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 .if defined(VICE_WITH_GNOME)
@@ -24,6 +25,7 @@ RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
+USE_GCC=	3.2
 
 .if defined(VICE_WITH_GNOME)
 USE_GNOME=	gnomelibs
@@ -32,6 +34,7 @@ CONFIGURE_ARGS=	--enable-gnomeui
 CONFIGURE_ARGS=	--with-xaw3d
 .endif
 
+INFO=		vice
 MAN1=		vice.1 c1541.1 petcat.1
 MLINKS=		vice.1 x64.1 \
 		vice.1 x128.1 \
