@@ -9,7 +9,9 @@ PORTNAME=	clockspeed
 PORTVERSION=	0.62
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://cr.yp.to/clockspeed/
+MASTER_SITES=	http://cr.yp.to/clockspeed/ \
+		ftp://mirror.pipex.net/pub/qmail/ \
+		ftp://ftp.rifkin.technion.ac.il/pub/qmail/
 
 MAINTAINER=	lioux@FreeBSD.org
 
