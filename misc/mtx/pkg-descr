@@ -1,0 +1,12 @@
+Mtx(1) is a set of low level driver programs to control features of SCSI
+backup related devices such as autoloaders, tape changers, mediajukeboxes,
+and tape drives. It can also report much data, including serial numbers,
+maximum block sizes, and TapeAlert(tm) messages that most modern tape
+drives implement, as well as do raw SCSI READ and WRITE commands to
+tape drives.
+
+It works like chio(1) but supports more features and drives and runs in
+users land. There are some amanda (misc/amanda24-server) scripts, which
+depend on mtx.
+
+WWW: http://mtx.sourceforge.net/
