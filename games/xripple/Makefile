@@ -3,7 +3,7 @@
 # Date created:				6 Oct 1996
 # Whom:					oly
 #
-# $Id: Makefile,v 1.5 1998/10/03 13:39:48 jseger Exp $
+# $Id: Makefile,v 1.6 1999/03/08 21:14:53 steve Exp $
 #
 
 DISTNAME=	xripple
@@ -11,7 +11,6 @@ PKGNAME=	xripple-1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.cin.nihon-u.ac.jp/pub/X11/enlightenment/misc/ \
-		ftp://ftp.compnet.ru/pub/incoming/Faiy/Linux/ \
 		ftp://ftp.dataplus.se/pub/linux/enlightenment/misc/ \
 		ftp://ftp.devolution.com/pub/enlightenment/ \
 		ftp://ftp.dti.ad.jp/.1/X/e/ \
