@@ -15,7 +15,7 @@ MAINTAINER=	dima@Chg.RU
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS=	--with-tcl-config=${LOCALBASE}/tcl8.2 \
+CONFIGURE_ARGS=	--with-tcl-config=${LOCALBASE}/lib/tcl8.2 \
 		--with-tk-config=${LOCALBASE}/lib/tk8.2
 
 WRKSRC=${WRKDIR}/${DISTNAME}/unix
