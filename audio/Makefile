@@ -70,6 +70,7 @@
     SUBDIR += fcplay
     SUBDIR += festdoc
     SUBDIR += festival
+    SUBDIR += festival+OGI
     SUBDIR += festlex-cmu
     SUBDIR += festlex-oald
     SUBDIR += festlex-ogi
