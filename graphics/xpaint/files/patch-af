@@ -1,0 +1,27 @@
+--- rw/libpnmrw.c.orig	Wed Jun 10 06:08:57 1998
++++ rw/libpnmrw.c	Fri Mar 17 01:40:21 2000
+@@ -46,7 +46,7 @@
+ 
+ void *malloc(int);
+ void free(void *);
+-#if defined(__EMX__) || defined(__CYGWIN32__)
++#if defined(__EMX__) || defined(__CYGWIN32__) || defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
+ #include <errno.h>
+ #endif
+ 
+@@ -131,6 +131,7 @@
+ static void
+ pm_perror(char *reason)
+ {
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
+ #if defined(BSD4_4)
+     __const extern char *__const sys_errlist[];
+ #else
+@@ -140,6 +141,7 @@
+ #endif
+ #if !defined(__EMX__) || defined(__CYGWIN32__)
+     extern int errno;
++#endif
+ #endif
+     char *e;
+ 

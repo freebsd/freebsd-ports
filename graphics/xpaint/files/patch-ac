@@ -1,0 +1,11 @@
+--- main.c.orig	Wed Jun 10 06:14:27 1998
++++ main.c	Fri Mar 17 01:18:33 2000
+@@ -275,7 +275,7 @@
+ }
+ 
+ 
+-void 
++int
+ main(int argc, char *argv[])
+ {
+     Display *dpy;
