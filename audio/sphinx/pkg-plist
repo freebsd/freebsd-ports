@@ -19,6 +19,7 @@ bin/sphinx2-simple
 bin/sphinx2-test
 bin/stress2sphinx
 lib/libsphinx2.a
+lib/libsphinx2.so
 lib/libsphinx2.so.1
 share/sphinx2/doc/README.bin
 share/sphinx2/doc/README.lib
@@ -101,6 +102,8 @@ share/sphinx2/model/lm/turtle/demo.token
 share/sphinx2/model/lm/turtle/demo.vocab
 share/sphinx2/model/lm/turtle/goforward.16k
 share/sphinx2/model/lm/turtle/test.ctl
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm share/sphinx2/model/lm/turtle
 @dirrm share/sphinx2/model/lm
 @dirrm share/sphinx2/model/hmm/6k
