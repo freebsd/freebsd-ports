@@ -1,5 +1,5 @@
 *** webmagick.in.orig	Tue Mar 24 07:45:45 1998
---- webmagick.in	Thu May 21 19:58:44 1998
+--- webmagick.in	Fri May 22 04:13:22 1998
 ***************
 *** 130,135 ****
 --- 130,136 ----
@@ -11,8 +11,20 @@
       $opt_forcemontage,
       $opt_frame_name_dirview,
 ***************
+*** 144,150 ****
+--- 145,153 ----
+      $opt_framemarginheight,
+      $opt_framemarginwidth,
+      $opt_framestyle,
++     $opt_htmlext,
+      $opt_header,
++     $opt_footer,
+      $opt_help,
+      $opt_htimage,
+      $opt_iconpath,
+***************
 *** 196,201 ****
---- 197,207 ----
+--- 199,209 ----
       $opt_verbose,
       $opt_webmagickrc,	# Per-directory WebMagick rc file name
       $opt_zoomfilter,
@@ -33,7 +45,7 @@
   
   
   # File naming
---- 255,261 ----
+--- 257,263 ----
   # Name of per-directory rc file
   $opt_webmagickrc	= '.webmagickrc';
   # global rc files
@@ -42,18 +54,18 @@
   
   # File naming
 ***************
-*** 299,304 ****
---- 305,311 ----
+*** 299,311 ****
+--- 307,327 ----
   $opt_forcehtml		= 0;	# Force HTML files to be generated (default off)
   $opt_forcemontage	= 0;	# Force montage (default off)
   $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
 + $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
   $opt_help		= 0;	# Display usage message
++ $opt_htmlext            = '.html'; # Use .shtml for SSI
   $opt_header		= '';	# Imagemap extra page header (HTML)
++ $opt_footer             = '';   # Imagemap extra page footer (HTML)
   $opt_javascript		= 1;	# Enable JavaScript output
-***************
-*** 306,311 ****
---- 313,323 ----
+  $opt_readmevisible	= 0;	# Make README.html be first page.
   $opt_title		= '';	# Page title (blank provides default title)
   $opt_address		= '';	# Additonal address info for bottom of
                                   #    imagemap page
@@ -66,8 +78,12 @@
   #				
   # ImageMagick Montage settings
 ***************
-*** 645,650 ****
---- 657,663 ----
+*** 642,650 ****
+--- 658,668 ----
+  		'dircolorlink=s'	=> \$opt_dircolorlink,
+  		'dircolorvlink=s'	=> \$opt_dircolorvlink,
+  		'dirindexname=s'	=> \$opt_dirindexname,
++ 		'footer=s'              => \$opt_footer,
   		'forcecache!'		=> \$opt_forcecache,
   		'forcegif!'		=> \$opt_forcegif,
   		'forcehtml!'		=> \$opt_forcehtml,
@@ -76,8 +92,18 @@
   		'framemarginwidth=i'	=> \$opt_framemarginwidth,
   		'framemarginheight=i'	=> \$opt_framemarginheight,
 ***************
+*** 654,659 ****
+--- 672,678 ----
+  		'header=s'		=> \$opt_header,
+  		'help!'			=> \$opt_help,
+  		'htimage=s'		=> \$opt_htimage,
++ 		'htmlext=s'             => \$opt_htmlext,
+  		'iconpath=s'		=> \$opt_iconpath,
+  		'imgindexname=s'	=> \$opt_imgindexname,
+  		'indexname=s'		=> \$opt_indexname,
+***************
 *** 662,667 ****
---- 675,685 ----
+--- 681,691 ----
   		'maptype=s'		=> \$opt_maptype,
   		'maxgif=i'		=> \$opt_maxgif,
   		'pageindexname=s'	=> \$opt_pageindexname,
@@ -90,8 +116,25 @@
   		'readme=s'		=> \$opt_readme,
   		'readmevisible!'	=> \$opt_readmevisible,
 ***************
+*** 1386,1397 ****
+--- 1410,1423 ----
+  	 'dircolorlink'		=> $opt_dircolorlink,
+  	 'dircolorvlink'	=> $opt_dircolorvlink,
+  	 'dirindexname'		=> $opt_dirindexname,
++ 	 'footer'               => $opt_footer,
+  	 'framemarginwidth'	=> $opt_framemarginwidth,
+  	 'framemarginheight'	=> $opt_framemarginheight,
+  	 'framebordersize'	=> $opt_framebordersize,
+  	 'frameborder'		=> $opt_frameborder,
+  	 'framestyle'		=> $opt_framestyle,
+  	 'header'		=> $opt_header,
++ 	 'htmlext'              => $opt_htmlext,
+  	 'imgindexname'		=> $opt_imgindexname,
+  	 'indexname'		=> $opt_indexname,
+  	 'jsdirindex'		=> $fileNames{'jsDirIndex'},
+***************
 *** 1584,1590 ****
---- 1602,1610 ----
+--- 1610,1618 ----
   		# Save run status (source files and montage options)
   		#
   		writePerlIndexFiles();
@@ -102,8 +145,81 @@
   
   	    # Clear error flag
 ***************
+*** 1682,1690 ****
+      #
+      my $nexthtml = '';
+      if( $haveReadme && $haveImages && $opt_framefmt_frames{$opt_framestyle}<=2 ) {
+!        $nexthtml .= "<A HREF=\"${opt_pageindexname}1.html\" TARGET=\"$frameTargets{'thumbview'}\">
+      <IMG SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} ALT=\"\" BORDER=0></A>
+!     <A HREF=\"${opt_pageindexname}1.html\" TARGET=\"$frameTargets{'thumbview'}\">Images</A><BR>";
+      }
+  
+      #
+--- 1710,1718 ----
+      #
+      my $nexthtml = '';
+      if( $haveReadme && $haveImages && $opt_framefmt_frames{$opt_framestyle}<=2 ) {
+!        $nexthtml .= "<A HREF=\"${opt_pageindexname}1$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\">
+      <IMG SRC=\"$iconImageUrls{'next'}\" $iconImageSizes{'next'} ALT=\"\" BORDER=0></A>
+!     <A HREF=\"${opt_pageindexname}1$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\">Images</A><BR>";
+      }
+  
+      #
+***************
+*** 1729,1735 ****
+  	my $i;
+          for( $i=1; $i <= $numPages; ++$i ) {
+              $pageindexhtml .= 
+!                 "  <A HREF=\"${opt_pageindexname}${i}.html\">${i}</A><BR>\n";
+          }
+      }
+  
+--- 1757,1763 ----
+  	my $i;
+          for( $i=1; $i <= $numPages; ++$i ) {
+              $pageindexhtml .= 
+! 		"  <A HREF=\"${opt_pageindexname}${i}$opt_htmlext\">${i}</A><BR>\n";
+          }
+      }
+  
+***************
+*** 1769,1784 ****
+  	    $pageframelink = $opt_readme;
+  	} else {
+  	    # Point to first image page
+! 	    $pageframelink = "${opt_pageindexname}1.html";
+  	}
+      } else {
+  	if( $haveReadme && $opt_readmevisible ) {
+  	    # Point to README.html
+! 	    $pageframelink = "${opt_pageindexname}1.html";
+  	    $imageFrameLink = $opt_readme;
+  	} else {
+  	    # Point to first image page
+! 	    $pageframelink = "${opt_pageindexname}1.html";
+  	    $imageFrameLink = $fileNames{'htmlBlankPage'};
+  	}
+      }
+--- 1797,1812 ----
+  	    $pageframelink = $opt_readme;
+  	} else {
+  	    # Point to first image page
+! 	    $pageframelink = "${opt_pageindexname}1$opt_htmlext";
+  	}
+      } else {
+  	if( $haveReadme && $opt_readmevisible ) {
+  	    # Point to README.html
+! 	    $pageframelink = "${opt_pageindexname}1$opt_htmlext";
+  	    $imageFrameLink = $opt_readme;
+  	} else {
+  	    # Point to first image page
+! 	    $pageframelink = "${opt_pageindexname}1$opt_htmlext";
+  	    $imageFrameLink = $fileNames{'htmlBlankPage'};
+  	}
+      }
+***************
 *** 1860,1865 ****
---- 1880,1886 ----
+--- 1888,1894 ----
   
       # ----- Output Top JavaScript Index File (usually "indexjs.html") -------
       #
@@ -113,7 +229,7 @@
       print( INDEX "<HTML>\n" );
 ***************
 *** 1873,1878 ****
---- 1894,1900 ----
+--- 1902,1908 ----
       print( INDEX "</SCRIPT>\n" );
       print( INDEX "</HTML>\n" );
       close( INDEX );
@@ -121,6 +237,23 @@
   
   
       # ----- Output Frame Directory File (usally ".indexdir.html") ------
+***************
+*** 1965,1971 ****
+  	my $page;
+  	for ( $page = 1; $page <= $numPages; ++$page) {
+  	    if ( $page != $pageNumber ) {
+!                 $indexbar .= "<A HREF=\"${opt_pageindexname}${page}.html\" TARGET=\"$frameTargets{'thumbview'}\">${page}</A>\n";
+  	    } else {
+          	$indexbar .= " ${page}\n";
+  	    }
+--- 1995,2001 ----
+  	my $page;
+  	for ( $page = 1; $page <= $numPages; ++$page) {
+  	    if ( $page != $pageNumber ) {
+! 		$indexbar .= "<A HREF=\"${opt_pageindexname}${page}$opt_htmlext\" TARGET=\"$frameTargets{'thumbview'}\">${page}</A>\n";
+  	    } else {
+          	$indexbar .= " ${page}\n";
+  	    }
 ***************
 *** 2034,2041 ****
   	print( INDEX "<MAP NAME=\"${mapname}\">\n" );
@@ -131,7 +264,7 @@
   	}
   	print( INDEX "</MAP>\n" );
       }
---- 2056,2107 ----
+--- 2064,2115 ----
   	print( INDEX "<MAP NAME=\"${mapname}\">\n" );
   	my $imageNum;
   	for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
@@ -140,7 +273,7 @@
 ! 		my $pichtml;
 ! 		my $target = '';
 ! 
-! 		if( !defined $opt_pichtmlext || $opt_pichtmlext eq '' ) {
+! 		if( !$opt_pichtmlext ) {
 ! 			$pichtml = $pic . ".html";
 ! 		} else {
 ! 			$pichtml = $pic . $opt_pichtmlext;
@@ -160,19 +293,19 @@
 ! 		print( PICHTML "  ALINK=\"${opt_coloralink}\">\n\n" );
 ! 		print( PICHTML "<CENTER>\n" );
 ! 		print( PICHTML "$opt_pichtmltop\n")
-! 		    if defined $opt_pichtmltop && $opt_pichtmltop ne '';
+! 		    if $opt_pichtmltop;
 ! 		if ( $pic =~ /\.(jpg|jpeg?|gif|xbm)$/i ) {
 ! 		    print( PICHTML "<IMG SRC=\"$pic\">\n" );
 ! 		} else {
 ! 		    print( PICHTML "<A HREF=\"$pic\"><BIG><B>$pic</B></A> ", fsize($pic), "</BIG>\n" );
 ! 		}
 ! 		print( PICHTML "$opt_pichtmlbottom\n")
-! 		    if defined $opt_pichtmlbottom && $opt_pichtmlbottom ne '';
+! 		    if $opt_pichtmlbottom;
 ! 		print( PICHTML "</CENTER>\n" );
 ! 		print( PICHTML "</BODY>\n" );
 ! 		print( PICHTML "</HTML>\n" );
 ! 		close ( PICHTML );
-! 		if (defined $opt_pichtmltarget && $opt_pichtmltarget ne '') {
+! 		if ($opt_pichtmltarget) {
 ! 		    $target = " TARGET=\"$opt_pichtmltarget\"";
 ! 		}
 ! 		print( INDEX "  <AREA$target HREF=\"", $pichtml,
@@ -185,8 +318,18 @@
   	print( INDEX "</MAP>\n" );
       }
 ***************
+*** 2056,2061 ****
+--- 2130,2136 ----
+  	   print( INDEX " $webmagickInfo{revision}</NOBR>, <NOBR>Copyright &copy;</NOBR> <NOBR>Bob Friesenhahn</NOBR>\n" );
+         }
+         print( INDEX "</ADDRESS>\n" );
++        print( INDEX "${opt_footer}\n" ) if $opt_footer;
+      }
+  
+      print( INDEX "</BODY>\n" );
+***************
 *** 2648,2653 ****
---- 2714,2720 ----
+--- 2723,2729 ----
   	    handleMagickError( __FILE__, __LINE__, "", $status) if "$status";
   	}
   
@@ -214,7 +357,7 @@
   					  quality=>70
   					  );
   		handleMagickError( __FILE__, __LINE__, $fileNames{'montageJPEG'}, $status) if "$status";
---- 2726,2744 ----
+--- 2735,2753 ----
   	handleMagickError( __FILE__, __LINE__, $fileNames{'montageGIF'}, $status) if "$status";
   	last MONTAGE if "$status";
   	undef @$image;
@@ -234,3 +377,88 @@
   					  quality=>70
   					  );
   		handleMagickError( __FILE__, __LINE__, $fileNames{'montageJPEG'}, $status) if "$status";
+***************
+*** 2747,2762 ****
+      # default URL
+      if ( "${opt_htimage}" ne '' ) {
+  	print( IMAGEMAP "default "
+! 	      . abs_path_to_url("${sourceDirectory}/${opt_pageindexname}${pageNumber}.html")
+  	      . "\n" );
+      } else {
+! 	print( IMAGEMAP "default ${opt_pageindexname}${pageNumber}.html\n" );
+      }
+      my $imageNum;
+      for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
+  	my $url = $imageNames[$pageNumber - 1][$imageNum];
+  	my($x1,$y1,$x2,$y2);
+  	($x1,$y1,$x2,$y2) = split(',', $imageThumbCoords[$pageNumber - 1][$imageNum]);
+  	if( $opt_maptype eq 'ncsa' ) {
+  	    if ( "${opt_htimage}" ne '' ) {
+  		print( IMAGEMAP "rect "
+--- 2824,2846 ----
+      # default URL
+      if ( "${opt_htimage}" ne '' ) {
+  	print( IMAGEMAP "default "
+! 	      . abs_path_to_url("${sourceDirectory}/${opt_pageindexname}${pageNumber}$opt_htmlext")
+  	      . "\n" );
+      } else {
+! 	print( IMAGEMAP "default ${opt_pageindexname}${pageNumber}$opt_htmlext\n" );
+      }
+      my $imageNum;
+      for( $imageNum = 0; $imageNum <= $#{$imageNames[$pageNumber - 1]}; ++$imageNum ) {
+  	my $url = $imageNames[$pageNumber - 1][$imageNum];
+  	my($x1,$y1,$x2,$y2);
+  	($x1,$y1,$x2,$y2) = split(',', $imageThumbCoords[$pageNumber - 1][$imageNum]);
++ 	if( $opt_pichtml ) {
++ 		if( !$opt_pichtmlext ) {
++ 			$url .= ".html";
++ 		} else {
++ 			$url .= $opt_pichtmlext;
++ 		}
++ 	}
+  	if( $opt_maptype eq 'ncsa' ) {
+  	    if ( "${opt_htimage}" ne '' ) {
+  		print( IMAGEMAP "rect "
+***************
+*** 3345,3364 ****
+      $fileNames{'montageServerMap'} = "${sourceDirectory}/${opt_pageindexname}${pageNumber}.map";
+  
+      # Name for current HTML index page
+!     $fileNames{'htmlCurrentIndex'} = "${opt_pageindexname}${pageNumber}.html";
+      
+      # Name for next HTML index page
+      if($pageNumber == $numPages) {
+  	$fileNames{'htmlNextIndex'} = '';
+      } else {
+! 	$fileNames{'htmlNextIndex'} = "${opt_pageindexname}${nextPageNumber}.html";
+      }
+      
+      # Name for previous HTML index page
+      if($pageNumber == 1) {
+  	$fileNames{'htmlPrevIndex'} = '';
+      } else {
+! 	$fileNames{'htmlPrevIndex'} = "${opt_pageindexname}${previousPageNumber}.html";
+      }
+  
+  
+--- 3429,3448 ----
+      $fileNames{'montageServerMap'} = "${sourceDirectory}/${opt_pageindexname}${pageNumber}.map";
+  
+      # Name for current HTML index page
+!     $fileNames{'htmlCurrentIndex'} = "${opt_pageindexname}${pageNumber}$opt_htmlext";
+      
+      # Name for next HTML index page
+      if($pageNumber == $numPages) {
+  	$fileNames{'htmlNextIndex'} = '';
+      } else {
+! 	$fileNames{'htmlNextIndex'} = "${opt_pageindexname}${nextPageNumber}$opt_htmlext";
+      }
+      
+      # Name for previous HTML index page
+      if($pageNumber == 1) {
+  	$fileNames{'htmlPrevIndex'} = '';
+      } else {
+! 	$fileNames{'htmlPrevIndex'} = "${opt_pageindexname}${previousPageNumber}$opt_htmlext";
+      }
+  
+  

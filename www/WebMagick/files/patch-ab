@@ -1,5 +1,5 @@
 *** webmagickrc.in.orig	Tue Mar 24 07:45:52 1998
---- webmagickrc.in	Thu May 21 19:58:45 1998
+--- webmagickrc.in	Fri May 22 02:51:00 1998
 ***************
 *** 32,38 ****
   # Name of per-directory rc file
@@ -18,18 +18,18 @@
   
   # File naming
 ***************
-*** 82,87 ****
---- 82,88 ----
+*** 82,94 ****
+--- 82,102 ----
   # $opt_forcehtml		= 0;	# Force HTML files to be generated (default off)
   # $opt_forcemontage	= 0;	# Force montage (default off)
   # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
 + # $opt_forcejpeg        = 0;    # Force JPEG imagemaps (default off)
   # $opt_help		= 0;	# Display usage message
++ # $opt_htmlext          = '.html'; # Use .shtml for SSI
   # $opt_header		= '';	# Imagemap extra page header (HTML)
++ # $opt_footer           = '';   # Imagemap extra page footer (HTML)
   # $opt_javascript		= 1;	# Enable JavaScript output
-***************
-*** 89,94 ****
---- 90,100 ----
+  # $opt_readmevisible	= 0;	# Make README.html be first page.
   # $opt_title		= '';	# Page title (blank provides default title)
   # $opt_address		= '';	# Additonal address info for bottom of
                                   #    imagemap page
