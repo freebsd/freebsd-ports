@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sccmilter
-PORTVERSION=	0.94.2c
+PORTVERSION=	0.94.7
 PORTREVISION?=	0
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://granch.ru/pub/kavmilter/
@@ -17,8 +17,6 @@ COMMENT=	Sendmail spam control and canceling filter, based on Milter API
 .if !exists(/usr/lib/libmilter.a)
 IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
-
-BROKEN=		Does not compile
 
 USE_BZIP2=		yes
 USE_GETOPT_LONG=	yes
