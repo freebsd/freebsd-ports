@@ -3,7 +3,7 @@
 # Date created: 	Tue Nov 14 18:29:48 MET 1995
 # Whom: 		Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1996/09/19 03:00:51 andreas Exp $
+# $Id: Makefile,v 1.5 1996/09/21 17:02:40 andreas Exp $
 #
 
 DISTNAME=	apsfilter-4.9.3
@@ -21,5 +21,11 @@ NO_CONFIGURE=	yes
 NO_PACKAGE=	yes	# too many questions
 IS_INTERACTIVE=	yes
 WRKSRC=		${WRKDIR}/apsfilter
+
+pre-clean:
+	@(cd ${PORTSDIR}/print/ghostscript4	; ${MAKE} clean)
+	@(cd ${PORTSDIR}/print/transfig		; ${MAKE} clean)
+	@(cd ${PORTSDIR}/graphics/jpeg		; ${MAKE} clean)
+	@(cd ${PORTSDIR}/graphics/netpbm	; ${MAKE} clean)
 
 .include <bsd.port.mk>
