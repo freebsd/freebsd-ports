@@ -29,6 +29,7 @@
     SUBDIR += electriceyes
     SUBDIR += enfle
     SUBDIR += eog
+    SUBDIR += eps2png
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evas
