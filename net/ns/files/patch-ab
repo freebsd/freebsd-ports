@@ -1,0 +1,32 @@
+--- indep-utils/webtrace-conv/ucb/utils.cc.orig	Tue May 28 17:14:30 2002
++++ indep-utils/webtrace-conv/ucb/utils.cc	Tue May 28 17:14:39 2002
+@@ -56,29 +56,6 @@
+ #include "utils.h"
+ 
+ /*
+- *  Case-insensitive version of strstr()
+- */
+-
+-
+-const char *
+-strcasestr(const char *string, const char *substr)
+-{
+-  int str_len, substr_len, cmplen, i;
+-  const char *ptr;
+-
+-  str_len = strlen(string);
+-  substr_len = strlen(substr);
+-  cmplen = str_len - substr_len + 1;
+-
+-  for (ptr = string, i=0; i<cmplen; i++, ptr++) {
+-    if (strncasecmp(ptr, substr, substr_len) == 0)
+-      return ptr;
+-  }
+-  return NULL;
+-}
+-
+-
+-/*
+  ************* Dump out the hexification of the buffer ***********
+  */
+ void dump_buf(FILE *std, char *buf, int retlen)

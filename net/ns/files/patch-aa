@@ -1,0 +1,10 @@
+--- indep-utils/webtrace-conv/ucb/utils.h.orig	Tue May 28 17:13:35 2002
++++ indep-utils/webtrace-conv/ucb/utils.h	Tue May 28 17:13:44 2002
+@@ -107,7 +107,6 @@
+ 
+ /************* A really dumb implementation of strnstr and strcasestr ***********/
+ char *dumb_strnstr(char *str, char *substr, int n);
+-const char *strcasestr(const char *string, const char *substr);
+ 
+ /*
+  ***************** Socket convenience utilities ****************
