@@ -1,0 +1,14 @@
+biffer replaces and enhances the normal result of "biff(1)".  It
+can forward notifications between machines and userids (even if
+the mail recipient is not currently signed on), ignore messages
+that match user-specified patterns in mail headers, do text or X
+notifications, and also run an arbitrary program.
+
+Needs a slight modification to the stock comsat, included here
+as biffer_comsat.
+
+Written at the University of Waterloo circa 1988, and in use since
+then with some modifications.
+
+John Sellens
+jsellens@generalconcepts.com

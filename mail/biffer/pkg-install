@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ x$2 != xPOST-INSTALL ]; then
+  exit
+fi
+
+needHUP="no"
+
+echo -n "/etc/services needs to mention biffer, checking... "
+egrep '^biffer[[:space:]]+1243/tcp' /etc/services > /dev/null
+if [ $? -eq 0 ]; then
+  echo "already there"
+else
+  echo "adding entry"
+  echo 'biffer		1243/tcp	# biffer(8) under inetd' >> \
+    /etc/services
+fi
+
+echo -n "/etc/inetd.conf needs to mention biffer, checking... "
+egrep '^biffer[[:space:]]+stream' /etc/inetd.conf > /dev/null
+if [ $? -eq 0 ]; then
+  echo "already there"
+else
+  echo "adding entry"
+  echo "biffer	stream	tcp	nowait	root	${PKG_PREFIX}/libexec/biffer	biffer" >> /etc/inetd.conf
+  needHUP="yes"
+fi
+
+echo -n "/etc/inetd.conf needs to mentionn biffer_comsat, checking... "
+egrep '^comsat[[:space:]]+.*[[:space:]]+biffer_comsat' /etc/inetd.conf > /dev/null
+if [ $? -eq 0 ]; then
+  echo "already there"
+else
+  echo "adding entry"
+  echo "comsat	stream	tcp	nowait	root	${PKG_PREFIX}/libexec/biffer_comsat	biffer_comsat" >> /etc/inetd.conf
+  needHUP="yes"
+fi
+
+if [ "$needHUP" = "yes" ]; then
+  echo
+  echo "------------------------------------------------------------------"
+  echo "inetd(8) needs to re-read /etc/inetd.conf. Please either kill -HUP"
+  echo "the inetd process, or reboot to allow biffer(8) to work."
+  echo "------------------------------------------------------------------"
+  echo
+fi
