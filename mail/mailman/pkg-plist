@@ -355,6 +355,7 @@
 %%MMDIR%%/cron/paths.pyc
 %%MMDIR%%/cron/senddigests
 %%MMDIR%%/data/last_mailman_version
+%%MMDIR%%/data/sitelist.cfg
 %%MMDIR%%/icons/PythonPowered.png
 %%MMDIR%%/icons/gnu-head-tiny.jpg
 %%MMDIR%%/icons/mailman-large.jpg
@@ -441,6 +442,8 @@
 %%MMDIR%%/pythonlib/email/_compat21.pyc
 %%MMDIR%%/pythonlib/email/_compat22.py
 %%MMDIR%%/pythonlib/email/_compat22.pyc
+%%MMDIR%%/pythonlib/email/_parseaddr.py
+%%MMDIR%%/pythonlib/email/_parseaddr.pyc
 %%MMDIR%%/pythonlib/email/base64MIME.py
 %%MMDIR%%/pythonlib/email/base64MIME.pyc
 %%MMDIR%%/pythonlib/email/quopriMIME.py

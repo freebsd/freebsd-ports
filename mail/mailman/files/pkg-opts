@@ -32,9 +32,13 @@
     MTA     | MAIL_GID       | Submitted by
     Exim3   | nobody (65534) | <wjv@FreeBSD.org>
     Exim4   | mail   (6)     | <wjv@FreeBSD.org>
-    Postfix | nobody (65534) | <shamrock@cypherpunks.to>
+    Postfix | mailman        | <vivek@khera.org>
     Qmail   | ???            |
     ----------------------------------------------------
+
+    NOTE: for Postfix, the group may need to be 'nobody' if you are not
+    using the Mailman integration for generating the postfix virtual and
+    aliases files.
 
 * CGI_GID [www]
   The group name or id under which your web server executes CGI scripts

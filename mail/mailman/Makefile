@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.list.org/ \
 MASTER_SITE_SUBDIR=	mailman
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	khera@kcilink.com
+MAINTAINER=	vivek@khera.org
 COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
