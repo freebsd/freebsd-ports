@@ -33,12 +33,6 @@ CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}"
 PLIST_SUB+=	X11=""
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} 's/$$(JPEGLIB)/$$(JPEGLIB) -lcrypto/' \
 		${WRKSRC}/Makefile.in
@@ -46,4 +40,4 @@ post-patch:
 	${REINPLACE_CMD} 's/gtk-config//g' ${WRKSRC}/configure
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
