@@ -1,4 +1,5 @@
 include/vanessa_adt.h
 lib/libvanessa_adt.so.0
 lib/libvanessa_adt.so
+lib/libvanessa_adt.la
 lib/libvanessa_adt.a
