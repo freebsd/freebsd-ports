@@ -435,6 +435,7 @@ lib/wine/progman.exe.so
 lib/wine/psapi.dll.so
 lib/wine/qcap.dll.so
 lib/wine/quartz.dll.so
+lib/wine/regapi.exe.so
 lib/wine/rasapi16.dll.so
 lib/wine/rasapi32.dll.so
 lib/wine/regedit.exe.so
