@@ -1,0 +1,8 @@
+--- mytop.orig	Wed Oct  4 19:27:59 2000
++++ mytop	Wed Oct  4 19:28:18 2000
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ #
+ # $Id: mytop,v 1.21 2000/08/10 18:04:32 jzawodn Exp jzawodn $
+ 
