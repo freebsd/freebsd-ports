@@ -3,7 +3,7 @@
 # Date created:		26 August 1997
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.20 1998/09/17 00:32:31 asami Exp $
+# $Id: Makefile,v 1.21 1998/09/17 00:50:47 asami Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} \
 		--site-includes=${PREFIX}/include \
 		--site-libraries=${PREFIX}/lib \
 		--sitelispdir="${PREFIX}/lib/xemacs/site-lisp ${PREFIX}/share/emacs/site-lisp" \
-		${WITH_XFACE} ${WITH_MULE} ${WITH_DIALOGS}
+		${WITH_XFACE} ${WITH_MULE} ${WITH_DIALOGS} ${WITH_OFFIX}
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
 ALL_TARGET=	all dist
@@ -58,9 +58,11 @@ PLIST=		${PKGDIR}/PLIST.mule
 WITH_DIALOGS=	--with-dialogs=athena
 .endif
 
-# Drop faces if building package, autodetect otherwise
+# Drop faces (libcompface) and offix (libDnd) if building package,
+# autodetect otherwise
 .if defined(PACKAGE_BUILDING)
 WITH_XFACE?=	--with-xface=no
+WITH_OFFIX?=	--with-offix=no
 .endif
 
 post-install:
