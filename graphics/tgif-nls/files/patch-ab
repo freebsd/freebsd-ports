@@ -1,5 +1,5 @@
---- Tgif.tmpl.orig	Sun May  2 18:21:54 1999
-+++ Tgif.tmpl	Sun May  2 18:24:06 1999
+--- Tgif.tmpl.orig	Wed May 26 01:34:43 1999
++++ Tgif.tmpl	Wed May 26 01:39:52 1999
 @@ -41,6 +41,15 @@
  XIMPDEFINES      =
  #endif
