@@ -16,7 +16,7 @@ COMMENT=	Tcl/Tk port of Windows' Network Neighborhood
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/net/samba \
 		${LOCALBASE}/bin/expectk:${PORTSDIR}/lang/expect
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 do-build:
 	${PERL} -pi -e s!%%PREFIX%%!${PREFIX}!g ${WRKSRC}/xsmbrowser

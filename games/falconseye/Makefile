@@ -21,7 +21,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 NHDIR=		"${PREFIX}/share/falconseyedir"
 MAKE_ENV=	NHDIR="${NHDIR}" NETHACKCONFIG="${NETHACKCONFIG}"
 NETHACKCONFIG=	${FILESDIR}/x-config
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	Yes
 USE_ZIP=	yes
 USE_XPM=	yes

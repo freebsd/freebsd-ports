@@ -23,7 +23,7 @@ LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker \
 
 WRKSRC=		${WRKDIR}/Login.app-${PORTVERSION:S/.a/-Alpha-/}
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"

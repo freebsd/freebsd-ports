@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/Martel/__init__.py:${PORTSDIR}/textproc/py-martel \
 		${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_PYTHON=	yes
 PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
 PLIST_SUB+=	PLIST_CORBA=${PLIST_CORBA} PLIST_OMNIORB=${PLIST_OMNIORB} \

@@ -20,7 +20,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

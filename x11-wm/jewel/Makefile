@@ -20,7 +20,7 @@ DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 MAN1=		jewel.1x
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
 post-patch:

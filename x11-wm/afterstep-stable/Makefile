@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		rplay.1:${PORTSDIR}/audio/rplay
 
 USE_BZIP2=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes

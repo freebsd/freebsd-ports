@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A SECURE, reliable, and FAST MTA for UNIX systems WITH TLS support
 
 USE_OPENSSL=	YES
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 # Patches from the main qmail port are not wanted
 MAIN_QMAIL_PORT_WITH_OUTGOINGIP_PATCH_BARRIER=	yes

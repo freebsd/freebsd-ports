@@ -50,7 +50,7 @@ WRKFF=		${WRKDIR}/fastforward-${FF_VER}
 WRKDF=		${WRKDIR}/dot-forward-${DF_VER}
 
 NO_MTREE=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 
 pre-patch:
 	@cd ${WRKFF} \

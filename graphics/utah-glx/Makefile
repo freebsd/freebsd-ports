@@ -22,7 +22,7 @@ BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83 \
 		autoconf:${PORTSDIR}/devel/autoconf
 
 USE_X_PREFIX=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

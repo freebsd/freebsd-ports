@@ -16,7 +16,7 @@ MAINTAINER=	shanee@augusta.de
 COMMENT=	Quick start up utility for applications on an X display
 
 USE_IMAKE=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_XPM=	yes
 MAN1=		bricons.1
 

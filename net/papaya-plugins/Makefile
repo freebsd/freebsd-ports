@@ -18,7 +18,7 @@ COMMENT=	Plugins for papaya, a graphical GTK mud client
 BUILD_DEPENDS=	${PORTSDIR}/net/papaya/work/papaya-src-${PORTVERSION}/src/h:${PORTSDIR}/net/papaya
 RUN_DEPENDS=	papaya:${PORTSDIR}/net/papaya
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_SUBMAKE=	yes
 IS_INTERACTIVE=	yes
 USE_GMAKE=	yes

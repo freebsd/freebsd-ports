@@ -18,7 +18,7 @@ COMMENT=	Java-based Scheme implementation
 BUILD_DEPENDS= 	gsed:${PORTSDIR}/textproc/gsed
 
 USE_JAVA=	1.2+
-USE_PERL=	YES
+USE_PERL5_BUILD=YES
 NEED_JAVAC=	YES
 
 MAN1: kawa

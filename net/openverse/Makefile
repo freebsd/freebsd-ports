@@ -16,7 +16,7 @@ RUN_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82 \
 		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/OpenVerse
 
 pre-build:

@@ -19,7 +19,7 @@ RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \
 		xloadimage:${PORTSDIR}/x11/xloadimage \
 		sapphire:${PORTSDIR}/x11-wm/sapphire
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 
 NO_BUILD=	yes

@@ -18,7 +18,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	martin@tradex.sk
 COMMENT=	Popular player statistics generator for Half-Life (cs/dod)
 
-USE_PERL=	yes
+USE_PERL5_BUILD=yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 # files which should be installed with executable perms
