@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	postal
-PORTVERSION=	0.59
+PORTVERSION=	0.60
 CATEGORIES=	benchmarks mail
 MASTER_SITES=	http://www.coker.com.au/postal/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
