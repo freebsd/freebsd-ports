@@ -3,12 +3,14 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.27 1997/04/18 10:48:33 asami Exp $
+# $Id: Makefile,v 1.28 1997/05/20 10:25:09 asami Exp $
 #
 
 DISTNAME=	emacs-19.34b
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
+
+MAINTAINER=	ports@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
@@ -22,7 +24,7 @@ post-install:
 	strip ${PREFIX}/bin/${file}
 .endfor
 	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
 .for info in emacs vip viper forms gnus mh-e cl sc dired-x ediff ccmode
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
