@@ -4,13 +4,13 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.18 1996/02/09 19:09:35 ache Exp $
+# $Id: Makefile,v 1.19 1996/02/29 10:29:37 asami Exp $
 #
 
 DISTNAME=       lynx2-4-fm
 PKGNAME=        lynx-2.4fm
 CATEGORIES+=	www
-MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/nidr/www/
+MASTER_SITES=   ftp://ftp.kiae.su/unix/tcpip/internet/www/
 EXTRACT_SUFX=   .zip
 
 # Original location, lynx changes too often there
