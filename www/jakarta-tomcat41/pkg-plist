@@ -21,43 +21,6 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/common/lib/tools.jar
 %%T%%/common/endorsed/xercesImpl.jar
 %%T%%/common/endorsed/xmlParserAPIs.jar
-%%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF/web.xml
-%%T%%/webapps/tomcat-docs/appdev/sample/web/images/tomcat.gif
-%%T%%/webapps/tomcat-docs/appdev/sample/web/hello.jsp
-%%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
-%%T%%/webapps/tomcat-docs/appdev/sample/docs/README.txt
-%%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage/Hello.java
-%%T%%/webapps/tomcat-docs/appdev/sample/build.xml
-%%T%%/webapps/tomcat-docs/appdev/introduction.html
-%%T%%/webapps/tomcat-docs/appdev/index.html
-%%T%%/webapps/tomcat-docs/appdev/source.html
-%%T%%/webapps/tomcat-docs/appdev/web.xml.txt
-%%T%%/webapps/tomcat-docs/appdev/processes.html
-%%T%%/webapps/tomcat-docs/appdev/build.xml.txt
-%%T%%/webapps/tomcat-docs/appdev/installation.html
-%%T%%/webapps/tomcat-docs/appdev/deployment.html
-%%T%%/webapps/tomcat-docs/config/jk2.html
-%%T%%/webapps/tomcat-docs/config/manager.html
-%%T%%/webapps/tomcat-docs/config/engine.html
-%%T%%/webapps/tomcat-docs/config/host.html
-%%T%%/webapps/tomcat-docs/config/loader.html
-%%T%%/webapps/tomcat-docs/config/logger.html
-%%T%%/webapps/tomcat-docs/config/server.html
-%%T%%/webapps/tomcat-docs/config/index.html
-%%T%%/webapps/tomcat-docs/config/coyote.html
-%%T%%/webapps/tomcat-docs/config/resources.html
-%%T%%/webapps/tomcat-docs/config/service.html
-%%T%%/webapps/tomcat-docs/config/webapp.html
-%%T%%/webapps/tomcat-docs/config/valve.html
-%%T%%/webapps/tomcat-docs/config/connectors.html
-%%T%%/webapps/tomcat-docs/config/globalresources.html
-%%T%%/webapps/tomcat-docs/config/http11.html
-%%T%%/webapps/tomcat-docs/config/defaultcontext.html
-%%T%%/webapps/tomcat-docs/config/context.html
-%%T%%/webapps/tomcat-docs/config/realm.html
-%%T%%/webapps/tomcat-docs/config/jk.html
-%%T%%/webapps/tomcat-docs/jk2/common/AJPv13.html
-%%T%%/webapps/tomcat-docs/jk2/common/AJPv13-extensions-proposal.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configtc.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/configwebcom.html
 %%T%%/webapps/tomcat-docs/jk2/jk2/installhowto.html
@@ -71,6 +34,8 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jk2/jk/neshowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk/quickhowto.html
 %%T%%/webapps/tomcat-docs/jk2/jk/aphowto.html
+%%T%%/webapps/tomcat-docs/jk2/common/AJPv13.html
+%%T%%/webapps/tomcat-docs/jk2/common/AJPv13-extensions-proposal.html
 %%T%%/webapps/tomcat-docs/jk2/images/jakarta.gif
 %%T%%/webapps/tomcat-docs/jk2/images/pixel.gif
 %%T%%/webapps/tomcat-docs/jk2/images/tomcat.ico
@@ -81,8 +46,24 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jk2/index.html
 %%T%%/webapps/tomcat-docs/jk2/style.css
 %%T%%/webapps/tomcat-docs/jk2/faq.html
-%%T%%/webapps/tomcat-docs/images/tomcat.gif
-%%T%%/webapps/tomcat-docs/images/jakarta-logo.gif
+%%T%%/webapps/tomcat-docs/printer/class-loader-howto.html
+%%T%%/webapps/tomcat-docs/printer/index.html
+%%T%%/webapps/tomcat-docs/printer/introduction.html
+%%T%%/webapps/tomcat-docs/printer/RUNNING.txt
+%%T%%/webapps/tomcat-docs/printer/jasper-howto.html
+%%T%%/webapps/tomcat-docs/printer/cgi-howto.html
+%%T%%/webapps/tomcat-docs/printer/ssl-howto.html
+%%T%%/webapps/tomcat-docs/printer/manager-howto.html
+%%T%%/webapps/tomcat-docs/printer/proxy-howto.html
+%%T%%/webapps/tomcat-docs/printer/realm-howto.html
+%%T%%/webapps/tomcat-docs/printer/README.txt
+%%T%%/webapps/tomcat-docs/printer/mbeans-descriptor-howto.html
+%%T%%/webapps/tomcat-docs/printer/jndi-resources-howto.html
+%%T%%/webapps/tomcat-docs/printer/BUILDING.txt
+%%T%%/webapps/tomcat-docs/printer/jndi-datasource-examples-howto.html
+%%T%%/webapps/tomcat-docs/printer/html-manager-howto.html
+%%T%%/webapps/tomcat-docs/printer/ssi-howto.html
+%%T%%/webapps/tomcat-docs/printer/security-manager-howto.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/package-tree.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/ParserUtils.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser/package-summary.html
@@ -204,7 +185,29 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/jasper/docs/api/overview-tree.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/index-all.html
 %%T%%/webapps/tomcat-docs/jasper/docs/api/overview-frame.html
-%%T%%/webapps/tomcat-docs/WEB-INF/web.xml
+%%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF/web.xml
+%%T%%/webapps/tomcat-docs/appdev/sample/web/images/tomcat.gif
+%%T%%/webapps/tomcat-docs/appdev/sample/web/hello.jsp
+%%T%%/webapps/tomcat-docs/appdev/sample/web/index.html
+%%T%%/webapps/tomcat-docs/appdev/sample/docs/README.txt
+%%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage/Hello.java
+%%T%%/webapps/tomcat-docs/appdev/sample/build.xml
+%%T%%/webapps/tomcat-docs/appdev/printer/build.xml.txt
+%%T%%/webapps/tomcat-docs/appdev/printer/introduction.html
+%%T%%/webapps/tomcat-docs/appdev/printer/source.html
+%%T%%/webapps/tomcat-docs/appdev/printer/index.html
+%%T%%/webapps/tomcat-docs/appdev/printer/web.xml.txt
+%%T%%/webapps/tomcat-docs/appdev/printer/installation.html
+%%T%%/webapps/tomcat-docs/appdev/printer/deployment.html
+%%T%%/webapps/tomcat-docs/appdev/printer/processes.html
+%%T%%/webapps/tomcat-docs/appdev/index.html
+%%T%%/webapps/tomcat-docs/appdev/source.html
+%%T%%/webapps/tomcat-docs/appdev/web.xml.txt
+%%T%%/webapps/tomcat-docs/appdev/processes.html
+%%T%%/webapps/tomcat-docs/appdev/build.xml.txt
+%%T%%/webapps/tomcat-docs/appdev/installation.html
+%%T%%/webapps/tomcat-docs/appdev/deployment.html
+%%T%%/webapps/tomcat-docs/appdev/introduction.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpServletRequest.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/Cookie.html
 %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use/HttpServletResponse.html
@@ -361,6 +364,50 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/servletapi/deprecated-list.html
 %%T%%/webapps/tomcat-docs/servletapi/package-list
 %%T%%/webapps/tomcat-docs/servletapi/allclasses-noframe.html
+%%T%%/webapps/tomcat-docs/images/tomcat.gif
+%%T%%/webapps/tomcat-docs/images/printer.gif
+%%T%%/webapps/tomcat-docs/images/jakarta-logo.gif
+%%T%%/webapps/tomcat-docs/WEB-INF/web.xml
+%%T%%/webapps/tomcat-docs/config/printer/loader.html
+%%T%%/webapps/tomcat-docs/config/printer/server.html
+%%T%%/webapps/tomcat-docs/config/printer/connectors.html
+%%T%%/webapps/tomcat-docs/config/printer/valve.html
+%%T%%/webapps/tomcat-docs/config/printer/jk2.html
+%%T%%/webapps/tomcat-docs/config/printer/http11.html
+%%T%%/webapps/tomcat-docs/config/printer/resources.html
+%%T%%/webapps/tomcat-docs/config/printer/webapp.html
+%%T%%/webapps/tomcat-docs/config/printer/realm.html
+%%T%%/webapps/tomcat-docs/config/printer/host.html
+%%T%%/webapps/tomcat-docs/config/printer/globalresources.html
+%%T%%/webapps/tomcat-docs/config/printer/service.html
+%%T%%/webapps/tomcat-docs/config/printer/context.html
+%%T%%/webapps/tomcat-docs/config/printer/index.html
+%%T%%/webapps/tomcat-docs/config/printer/jk.html
+%%T%%/webapps/tomcat-docs/config/printer/manager.html
+%%T%%/webapps/tomcat-docs/config/printer/coyote.html
+%%T%%/webapps/tomcat-docs/config/printer/defaultcontext.html
+%%T%%/webapps/tomcat-docs/config/printer/engine.html
+%%T%%/webapps/tomcat-docs/config/printer/logger.html
+%%T%%/webapps/tomcat-docs/config/jk.html
+%%T%%/webapps/tomcat-docs/config/manager.html
+%%T%%/webapps/tomcat-docs/config/engine.html
+%%T%%/webapps/tomcat-docs/config/host.html
+%%T%%/webapps/tomcat-docs/config/loader.html
+%%T%%/webapps/tomcat-docs/config/logger.html
+%%T%%/webapps/tomcat-docs/config/server.html
+%%T%%/webapps/tomcat-docs/config/index.html
+%%T%%/webapps/tomcat-docs/config/coyote.html
+%%T%%/webapps/tomcat-docs/config/resources.html
+%%T%%/webapps/tomcat-docs/config/service.html
+%%T%%/webapps/tomcat-docs/config/webapp.html
+%%T%%/webapps/tomcat-docs/config/valve.html
+%%T%%/webapps/tomcat-docs/config/connectors.html
+%%T%%/webapps/tomcat-docs/config/globalresources.html
+%%T%%/webapps/tomcat-docs/config/http11.html
+%%T%%/webapps/tomcat-docs/config/defaultcontext.html
+%%T%%/webapps/tomcat-docs/config/context.html
+%%T%%/webapps/tomcat-docs/config/realm.html
+%%T%%/webapps/tomcat-docs/config/jk2.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm/GenericPrincipal.html
@@ -504,6 +551,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/WebRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/EngineRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/package-summary.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ExpandWar.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/HostRuleSet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/Catalina.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup/ContextRuleSet.html
@@ -549,6 +597,11 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/SystemOutLogger.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger/FileLogger.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/HttpConnector.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-frame.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-tree.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-tree.html
@@ -557,11 +610,6 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/HttpResponseStream.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/SocketInputStream.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http/package-frame.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/HttpConnector.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/Constants.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-frame.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-tree.html
-%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.Stream.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpRequestHandler.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp/WarpResponse.html
@@ -592,6 +640,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseWriter.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ResponseBase.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/RequestFacade.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/ClientAbortException.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/package-tree.html
@@ -832,7 +881,17 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/serialized-form.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/help-doc.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/packages.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/index.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-default.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-admin-apps.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/index.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-invoker.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-memory-realm.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-jdbc-realm.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/mbean-names.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-admin-opers.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-admin-objects.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/printer/fs-jndi-realm.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-objects.html
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-jdbc-realm.html
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-memory-realm.html
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-default.html
@@ -841,16 +900,18 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-jndi-realm.html
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/mbean-names.html
 %%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-apps.html
-%%T%%/webapps/tomcat-docs/catalina/funcspecs/fs-admin-objects.html
+%%T%%/webapps/tomcat-docs/catalina/funcspecs/index.html
 %%T%%/webapps/tomcat-docs/manager-howto.html
 %%T%%/webapps/tomcat-docs/cgi-howto.html
 %%T%%/webapps/tomcat-docs/README.txt
 %%T%%/webapps/tomcat-docs/realm-howto.html
 %%T%%/webapps/tomcat-docs/ssl-howto.html
+%%T%%/webapps/tomcat-docs/html-manager-howto.html
 %%T%%/webapps/tomcat-docs/class-loader-howto.html
 %%T%%/webapps/tomcat-docs/RUNNING.txt
 %%T%%/webapps/tomcat-docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/tomcat-docs/ssi-howto.html
+%%T%%/webapps/tomcat-docs/mbeans-descriptor-howto.html
 %%T%%/webapps/tomcat-docs/index.html
 %%T%%/webapps/tomcat-docs/jndi-resources-howto.html
 %%T%%/webapps/tomcat-docs/jasper-howto.html
@@ -1323,7 +1384,11 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/webapps/admin/banner.jsp
 %%T%%/server/webapps/admin/buttons.jsp
 %%T%%/server/webapps/admin/header.jsp
+%%T%%/server/webapps/manager/images/tomcat.gif
+%%T%%/server/webapps/manager/images/jakarta-logo.gif
 %%T%%/server/webapps/manager/WEB-INF/web.xml
+%%T%%/server/webapps/manager/manager-howto.html
+%%T%%/server/webapps/manager/html-manager-howto.html
 %%T%%/server/lib/tomcat-jk.jar
 %%T%%/server/lib/commons-logging.jar
 %%T%%/server/lib/commons-digester.jar
@@ -1334,6 +1399,7 @@ etc/rc.d/020.jakarta-tomcat41.sh
 %%T%%/server/lib/servlets-default.jar
 %%T%%/server/lib/tomcat-http11.jar
 %%T%%/server/lib/servlets-cgi.renametojar
+%%T%%/server/lib/commons-fileupload-1.0-beta-1.jar
 %%T%%/server/lib/tomcat-util.jar
 %%T%%/server/lib/catalina.jar
 %%T%%/server/lib/commons-beanutils.jar
@@ -1375,21 +1441,13 @@ man/man1/tomcat41ctl.1
 @dirrm %%T%%/common/endorsed
 @dirrm %%T%%/common/classes
 @dirrm %%T%%/common
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/images
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/docs
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src
-@dirrm %%T%%/webapps/tomcat-docs/appdev/sample
-@dirrm %%T%%/webapps/tomcat-docs/appdev
-@dirrm %%T%%/webapps/tomcat-docs/config
-@dirrm %%T%%/webapps/tomcat-docs/jk2/common
+@dirrm %%T%%/webapps/tomcat-docs/jk2/printer
 @dirrm %%T%%/webapps/tomcat-docs/jk2/jk2
 @dirrm %%T%%/webapps/tomcat-docs/jk2/jk
+@dirrm %%T%%/webapps/tomcat-docs/jk2/common
 @dirrm %%T%%/webapps/tomcat-docs/jk2/images
 @dirrm %%T%%/webapps/tomcat-docs/jk2
-@dirrm %%T%%/webapps/tomcat-docs/images
+@dirrm %%T%%/webapps/tomcat-docs/printer
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/xmlparser
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/runtime
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api/org/apache/jasper/logging
@@ -1402,7 +1460,15 @@ man/man1/tomcat41ctl.1
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs/api
 @dirrm %%T%%/webapps/tomcat-docs/jasper/docs
 @dirrm %%T%%/webapps/tomcat-docs/jasper
-@dirrm %%T%%/webapps/tomcat-docs/WEB-INF
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/WEB-INF
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web/images
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/web
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/docs
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src/mypackage
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample/src
+@dirrm %%T%%/webapps/tomcat-docs/appdev/sample
+@dirrm %%T%%/webapps/tomcat-docs/appdev/printer
+@dirrm %%T%%/webapps/tomcat-docs/appdev
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/class-use
@@ -1414,6 +1480,10 @@ man/man1/tomcat41ctl.1
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax
 @dirrm %%T%%/webapps/tomcat-docs/servletapi
+@dirrm %%T%%/webapps/tomcat-docs/images
+@dirrm %%T%%/webapps/tomcat-docs/WEB-INF
+@dirrm %%T%%/webapps/tomcat-docs/config/printer
+@dirrm %%T%%/webapps/tomcat-docs/config
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/realm
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ssi
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/net
@@ -1425,8 +1495,8 @@ man/man1/tomcat41ctl.1
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/startup
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/logger
-@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http10
+@dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/http
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector/warp
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/connector
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/util
@@ -1445,6 +1515,7 @@ man/man1/tomcat41ctl.1
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api/org
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs/api
 @dirrm %%T%%/webapps/tomcat-docs/catalina/docs
+@dirrm %%T%%/webapps/tomcat-docs/catalina/funcspecs/printer
 @dirrm %%T%%/webapps/tomcat-docs/catalina/funcspecs
 @dirrm %%T%%/webapps/tomcat-docs/catalina
 @dirrm %%T%%/webapps/tomcat-docs
@@ -1529,6 +1600,7 @@ man/man1/tomcat41ctl.1
 @dirrm %%T%%/server/webapps/admin/WEB-INF/classes
 @dirrm %%T%%/server/webapps/admin/WEB-INF
 @dirrm %%T%%/server/webapps/admin
+@dirrm %%T%%/server/webapps/manager/images
 @dirrm %%T%%/server/webapps/manager/WEB-INF
 @dirrm %%T%%/server/webapps/manager
 @dirrm %%T%%/server/webapps
