@@ -4,11 +4,7 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gcalctool/%gconf.xml
 etc/gconf/schemas/gcalctool.schemas
 share/gnome/applications/gcalctool.desktop
 share/gnome/help/gcalctool/C/figures/gcalctool_basic_window.png
-share/gnome/help/gcalctool/C/figures/gcalctool_edit_const_window.png
-share/gnome/help/gcalctool/C/figures/gcalctool_edit_func_window.png
 share/gnome/help/gcalctool/C/figures/gcalctool_financial_window.png
-share/gnome/help/gcalctool/C/figures/gcalctool_ins_ascii_window.png
-share/gnome/help/gcalctool/C/figures/gcalctool_mem_reg_window.png
 share/gnome/help/gcalctool/C/figures/gcalctool_menu_symbol.png
 share/gnome/help/gcalctool/C/figures/gcalctool_scientific_window.png
 share/gnome/help/gcalctool/C/gcalctool.xml
@@ -19,6 +15,7 @@ share/gnome/pixmaps/gcalctool.png
 share/locale/am/LC_MESSAGES/gcalctool.mo
 share/locale/ca/LC_MESSAGES/gcalctool.mo
 share/locale/cs/LC_MESSAGES/gcalctool.mo
+share/locale/de/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
 share/locale/fr/LC_MESSAGES/gcalctool.mo
 share/locale/ja/LC_MESSAGES/gcalctool.mo
