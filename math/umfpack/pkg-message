@@ -1,0 +1,29 @@
+**********************************************************************
+* NOTICE:  "The UMFPACK Package may be used SOLELY for educational,   *
+* research, and benchmarking purposes by non-profit organizations and *
+* the U.S. government.  Commercial and other organizations may make   *
+* use of UMFPACK SOLELY for benchmarking purposes only.  UMFPACK may  *
+* be modified by or on behalf of the User for such use but at no time *
+* shall UMFPACK or any such modified version of UMFPACK become the    *
+* property of the User.  UMFPACK is provided without warranty of any  *
+* kind, either expressed or implied.  Neither the Authors nor their   *
+* employers shall be liable for any direct or consequential loss or   *
+* damage whatsoever arising out of the use or misuse of UMFPACK by    *
+* the User.  UMFPACK must not be sold.  You may make copies of        *
+* UMFPACK, but this NOTICE and the Copyright notice must appear in    *
+* all copies.  Any other use of UMFPACK requires written permission.  *
+* Your use of UMFPACK is an implicit agreement to these conditions."  *
+*                                                                     *
+* The MA38 Package in Release 12 of the Harwell Subroutine Library    *
+* (HSL) has equivalent functionality (and identical calling interface)*
+* as UMFPACK (the HSL has single and double precision versions only,  *
+* however).  It is available for commercial use.   Technical reports, *
+* information on HSL, and matrices are available via the World Wide   *
+* Web at http://www.cis.rl.ac.uk/struct/ARCD/NUM.html, or by          *
+* anonymous ftp at seamus.cc.rl.ac.uk/pub.  Also contact Dr. Scott    *
+* Roberts, Harwell Subroutine Library, B 552, AEA Technology,         *
+* Harwell, Didcot, Oxon OX11 0RA, England.                            *
+* telephone (44) 1235 434988, fax (44) 1235 434136                    *
+* email Scott.Roberts@aeat.co.uk, who will provide details of price   *
+* and conditions of use.                                              *
+***********************************************************************
