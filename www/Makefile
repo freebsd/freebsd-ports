@@ -50,6 +50,7 @@
     SUBDIR += gnuinfo
     SUBDIR += gnujsp
     SUBDIR += grail
+    SUBDIR += gtkhtml
     SUBDIR += harvest
     SUBDIR += hotjava
     SUBDIR += htmlpp
