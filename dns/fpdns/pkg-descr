@@ -21,3 +21,4 @@ protocol set, and there are implementations that do not conform to
 standards.
 
 WWW: http://www.rfc.se/fpdns/
+Author: Roy Arends & Jakob Schlyter
