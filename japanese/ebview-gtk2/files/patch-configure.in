@@ -1,0 +1,13 @@
+--- configure.in.orig	Tue Nov 19 15:04:30 2002
++++ configure.in	Sat Nov 30 09:27:26 2002
+@@ -14,8 +14,8 @@
+ AM_GNU_GETTEXT
+ 
+ dnl Checks for libraries.
+-AM_PATH_GTK(1.2.8)
+-AM_PATH_IMLIB()
++AM_PATH_GTK(1.2.8,, AC_MSG_ERROR(Cannot find GTK+ 1.2.8), gmodule gthread)
++AM_PATH_GDK_IMLIB()
+ eb_LIB_EB3
+ 
+ dnl Checks for header files.

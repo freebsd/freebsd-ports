@@ -1,5 +1,19 @@
+bin/ebdump
 bin/ebview
-share/locale/ja/LC_MESSAGES/ebview.mo
+bin/ebview-client
 %%PORTDOCS%%share/doc/ebview/ChangeLog
 %%PORTDOCS%%share/doc/ebview/README
+share/ebview/about.en
+share/ebview/about.jp
+share/ebview/endinglist-ja.xml
+share/ebview/endinglist.xml
+share/ebview/help/en/index.html
+share/ebview/help/ja/index.html
+share/ebview/searchengines.xml
+share/ebview/shortcut.xml
+share/locale/ja/LC_MESSAGES/ebview.mo
+@dirrm share/ebview/help/ja
+@dirrm share/ebview/help/en
+@dirrm share/ebview/help
+@dirrm share/ebview
 %%PORTDOCS%%@dirrm share/doc/ebview
