@@ -8,7 +8,7 @@
 
 PORTNAME=		linux_base-8
 PORTVERSION=		8.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		emulators linux
 MASTER_SITES=		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR=	${PORTVERSION}/${LANG}/os/${MACHINE_ARCH}/RedHat/RPMS
@@ -69,8 +69,7 @@ LANG=			en
 
 UPD_SET1=		glibc-common-2.3.2-4.80.6.${MACHINE_ARCH}.rpm \
 			glibc-2.3.2-4.80.6.${MACHINE_ARCH}.rpm
-UPD_SET2=		zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm \
-			XFree86-libs-4.2.1-21.i386.rpm
+UPD_SET2=		zlib-1.1.4-8.8x.${MACHINE_ARCH}.rpm
 UPDATES=		${UPD_SET1} ${UPD_SET2}
 
 .ifdef USE_LINUX
