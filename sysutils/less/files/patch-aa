@@ -1,54 +1,19 @@
-*** Makefile.in.orig	Mon Nov  7 03:04:04 1994
---- Makefile.in	Tue Nov 22 02:26:12 1994
+*** Makefile.in.bak	Wed Feb  1 02:55:17 1995
+--- Makefile.in	Wed Feb 22 07:08:35 1995
 ***************
-*** 5,21 ****
-  srcdir = @srcdir@
-  VPATH = @srcdir@
-  
-! CC = @CC@
-! INSTALL = @INSTALL@
-! INSTALL_PROGRAM = @INSTALL_PROGRAM@
-  INSTALL_DATA = @INSTALL_DATA@
-  
-- CFLAGS = -O
-  CFLAGS_COMPILE_ONLY = -c
-  LDFLAGS = 
+*** 15,21 ****
+  LDFLAGS = @LDFLAGS@
   O=o
   
 ! LIBS = @LIBS@
   
   prefix = @prefix@
   exec_prefix = @exec_prefix@
---- 5,19 ----
-  srcdir = @srcdir@
-  VPATH = @srcdir@
-  
-! INSTALL = @INSTALL@ -o bin -g bin
-! INSTALL_PROGRAM = @INSTALL_PROGRAM@ -s
-  INSTALL_DATA = @INSTALL_DATA@
-  
-  CFLAGS_COMPILE_ONLY = -c
-  LDFLAGS = 
+--- 15,21 ----
+  LDFLAGS = @LDFLAGS@
   O=o
   
 ! LIBS = -ltermcap
   
   prefix = @prefix@
   exec_prefix = @exec_prefix@
-***************
-*** 25,31 ****
-  binprefix = 
-  
-  # Where the help file goes.
-! datadir = $(prefix)/share
-  
-  mandir = $(prefix)/man/man$(manext)
-  manext = 1
---- 23,29 ----
-  binprefix = 
-  
-  # Where the help file goes.
-! datadir = $(prefix)/lib
-  
-  mandir = $(prefix)/man/man$(manext)
-  manext = 1
