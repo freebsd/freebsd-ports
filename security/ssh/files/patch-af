@@ -1,394 +1,108 @@
---- sshd.c.orig	Tue Jan 20 15:24:10 1998
-+++ sshd.c	Thu Jan 22 16:29:19 1998
-@@ -428,6 +428,10 @@
- #include "firewall.h"	/* TIS authsrv authentication */
- #endif
- 
-+#ifdef HAVE_LOGIN_CAP_H
-+#include <login_cap.h>
-+#endif
-+
- #ifdef _PATH_BSHELL
- #define DEFAULT_SHELL		_PATH_BSHELL
- #else
-@@ -1594,6 +1598,38 @@
-     endspent();
-   }
- #endif /* HAVE_ETC_SHADOW */
-+#ifdef __FreeBSD__
-+  {
-+    time_t currtime;
-+
-+    if (pwd->pw_change || pwd->pw_expire)
-+ 	currtime = time(NULL);
-+
-+    /*
-+     * Check for an expired password
-+     */
-+    if (pwd->pw_change && pwd->pw_change <= currtime)
-+      {
-+	debug("Account %.100s's password is too old - forced to change.",
-+	      user);
-+	if (options.forced_passwd_change)
-+	  forced_command = "/usr/bin/passwd";
-+	else
-+	  {
-+	    return 0;
-+	  }
-+      }
-+    
-+    /*
-+     * Check for expired account
-+     */
-+    if (pwd->pw_expire && pwd->pw_expire <= currtime)
-+      {
-+	debug("Account %.100s has expired - access denied.", user);
-+	return 0;
-+      }
-+  }
-+#else   /* !FreeBSD */
-   /*
-    * Check if account is locked. Check if encrypted password starts
-    * with "*LK*".
-@@ -1605,6 +1641,7 @@
- 	return 0;
-       }
-   }
-+#endif /* !FreeBSD */
- #ifdef CHECK_ETC_SHELLS
-   {
-     int  invalid = 1;
-@@ -1819,8 +1856,10 @@
-   pwcopy.pw_passwd = xstrdup(pw->pw_passwd);
-   pwcopy.pw_uid = pw->pw_uid;
-   pwcopy.pw_gid = pw->pw_gid;
--#if defined (__bsdi__) && _BSDI_VERSION >= 199510
-+#if defined (HAVE_LOGIN_CAP_H) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
-   pwcopy.pw_class = xstrdup(pw->pw_class);
-+#endif /*  __bsdi__  && _BSDI_VERSION >= 199510 */
-+#if defined (__FreeBSD__) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
-   pwcopy.pw_change = pw->pw_change;
-   pwcopy.pw_expire = pw->pw_expire;
- #endif /*  __bsdi__  && _BSDI_VERSION >= 199510 */
-@@ -2793,9 +2832,13 @@
-   struct sockaddr_in from;
-   int fromlen;
-   struct pty_cleanup_context cleanup_context;
--#if defined (__bsdi__) && _BSDI_VERSION >= 199510 
-+#if defined(__FreeBSD__) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
-   struct timeval tp;
- #endif /*  __bsdi__ && _BSDI_VERSION >= 199510 */
-+#ifdef HAVE_LOGIN_CAP_H
-+  login_cap_t *lc;
-+  time_t warnpassword, warnexpire;
-+#endif
- 
-   /* We no longer need the child running on user's privileges. */
-   userfile_uninit();
-@@ -2867,10 +2910,18 @@
-       record_login(pid, ttyname, pw->pw_name, pw->pw_uid, hostname, 
- 		   &from);
- 
-+#ifdef HAVE_LOGIN_CAP_H
-+      lc = login_getclass(pw->pw_class);
-+      quiet_login = login_getcapbool(lc, "hushlogin", quiet_login);
-+      if (!quiet_login) {
-+#endif
-       /* Check if .hushlogin exists.  Note that we cannot use userfile
-          here because we are in the child. */
-       sprintf(line, "%.200s/.hushlogin", pw->pw_dir);
-       quiet_login = stat(line, &st) >= 0;
-+#ifdef HAVE_LOGIN_CAP_H
-+      }
-+#endif
-       
-       /* If the user has logged in before, display the time of last login. 
-          However, don't display anything extra if a command has been 
-@@ -2890,6 +2941,38 @@
- 	  else
- 	    printf("Last login: %s from %s\r\n", time_string, buf);
- 	}
-+#ifdef __FreeBSD__
-+      if (command == NULL && !quiet_login)
-+	{
-+#ifdef HAVE_LOGIN_CAP_H
-+	  char *cw;
-+	  FILE *f;
-+
-+	  cw = login_getcapstr(lc, "copyright", NULL, NULL);
-+	  if (cw != NULL && (f = fopen(cw, "r")) != NULL)
-+	    {
-+	      while (fgets(line, sizeof(line), f))
-+		fputs(line, stdout);
-+	      fclose(f);
-+	    }
-+	  else
-+#endif
-+	    printf("%s\n\t%s  %s\n\n",
-+	    "Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994",
-+	    "The Regents of the University of California. ",
-+	    "All rights reserved.");
-+	}
-+#endif
-+
-+#ifdef HAVE_LOGIN_CAP_H
-+#define DEFAULT_WARN  (2L * 7L * 86400L)  /* Two weeks */
-+
-+      warnpassword = login_getcaptime(lc, "warnpassword",
-+				   DEFAULT_WARN, DEFAULT_WARN);
-+      warnexpire = login_getcaptime(lc, "warnexpire",
-+				     DEFAULT_WARN, DEFAULT_WARN);
-+      login_close(lc);
-+#endif
- 
-       /* Print /etc/motd unless a command was specified or printing it was
- 	 disabled in server options.  Note that some machines appear to
-@@ -2900,14 +2983,18 @@
- 	  FILE *f;
- 
- 	  /* Print /etc/motd if it exists. */
--	  f = fopen("/etc/motd", "r");
-+#ifdef HAVE_LOGIN_CAP_H
-+	  f = fopen(login_getcapstr(lc, "welcome", "/etc/motd", "/etc/motd"), "r");
-+#else
-+  	  f = fopen("/etc/motd", "r");
-+#endif
- 	  if (f)
- 	    {
- 	      while (fgets(line, sizeof(line), f))
- 		fputs(line, stdout);
- 	      fclose(f);
- 	    }
--#if defined (__bsdi__) && _BSDI_VERSION >= 199510
-+#if defined(__FreeBSD__) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
- 	  if (pw->pw_change || pw->pw_expire)
- 	    (void)gettimeofday(&tp, (struct timezone *)NULL);
- 	  if (pw->pw_change)
-@@ -2915,7 +3002,11 @@
- 	      fprintf(stderr,"Sorry -- your password has expired.\n");
- 	      exit(254);
- 	    } else if (pw->pw_change - tp.tv_sec <
-+#ifdef HAVE_LOGIN_CAP_H
-+		       warnpassword)
-+#else
- 		       2 * DAYSPERWEEK * SECSPERDAY)
-+#endif
- 	      fprintf(stderr,"Warning: your password expires on %s",
- 		      ctime(&pw->pw_change));
- 	  if (pw->pw_expire)
-@@ -2923,7 +3014,11 @@
- 	      fprintf(stderr,"Sorry -- your account has expired.\n");
- 	      exit(254);
- 	    } else if (pw->pw_expire - tp.tv_sec <
-+#ifdef HAVE_LOGIN_CAP_H
-+		       warnexpire)
-+#else
- 		       2 * DAYSPERWEEK * SECSPERDAY)
-+#endif
- 	      fprintf(stderr,"Warning: your account expires on %s",
- 		      ctime(&pw->pw_expire));
- #endif /* __bsdi__ & _BSDI_VERSION >= 199510   */
-@@ -3182,6 +3277,13 @@
- #if defined (__bsdi__) && _BSDI_VERSION >= 199510
-   login_cap_t *lc = 0;
- #endif /* __bsdi__  && _BSDI_VERSION >= 199510  */
-+#ifdef HAVE_LOGIN_CAP_H
-+  login_cap_t *lc;
-+  char *real_shell;
-+  
-+  lc = login_getclass(pw->pw_class);
-+  auth_checknologin(lc);
-+#else /* !HAVE_LOGIN_CAP_H */
- 
-   /* Check /etc/nologin. */
-   f = fopen("/etc/nologin", "r");
-@@ -3199,10 +3301,16 @@
-       if (pw->pw_uid != UID_ROOT && !login_getcapbool(lc, "ignorenologin", 0))
- 	exit(254);
- #else 
-+#ifdef HAVE_LOGIN_CAP_H
-+      if (pw->pw_uid != UID_ROOT && !login_getcapbool(lc, "ignorenologin", 0))
-+	exit(254);
-+#else
-       if (pw->pw_uid != UID_ROOT)
- 	exit(254);
-+#endif
- #endif /* __bsdi__  && _BSDI_VERSION >= 199510 */ 
-     }
-+#endif /* HAVE_LOGIN_CAP_H */
- 
-   if (command != NULL)
-     {
-@@ -3216,6 +3324,7 @@
- 	log_msg("executing remote command as user %.200s", pw->pw_name);
-     }
-   
-+#ifndef HAVE_LOGIN_CAP_H
- #ifdef HAVE_SETLOGIN
-   /* Set login name in the kernel.  Warning: setsid() must be called before
-      this. */
-@@ -3236,6 +3345,7 @@
-   if (setpcred((char *)pw->pw_name, NULL))
-     log_msg("setpcred %.100s: %.100s", strerror(errno));
- #endif /* HAVE_USERSEC_H */
-+#endif /* !HAVE_LOGIN_CAP_H */
- 
-   /* Save some data that will be needed so that we can do certain cleanups
-      before we switch to user's uid.  (We must clear all sensitive data 
-@@ -3306,6 +3416,66 @@
-   if (command != NULL || !options.use_login)
- #endif /* USELOGIN */
-     {
-+#ifdef HAVE_LOGIN_CAP_H
-+      char *p, *s, **tmpenv;
-+
-+      /* Initialize the new environment.
-+       */
-+      envsize = 64;
-+      env = xmalloc(envsize * sizeof(char *));
-+      env[0] = NULL;
-+
-+      child_set_env(&env, &envsize, "PATH", DEFAULT_PATH);
-+
-+#ifdef MAIL_SPOOL_DIRECTORY
-+      sprintf(buf, "%.200s/%.50s", MAIL_SPOOL_DIRECTORY, user_name);
-+      child_set_env(&env, &envsize, "MAIL", buf);
-+#else /* MAIL_SPOOL_DIRECTORY */
-+#ifdef MAIL_SPOOL_FILE
-+      sprintf(buf, "%.200s/%.50s", user_dir, MAIL_SPOOL_FILE);
-+      child_set_env(&env, &envsize, "MAIL", buf);
-+#endif /* MAIL_SPOOL_FILE */
-+#endif /* MAIL_SPOOL_DIRECTORY */
-+
-+      /* Let it inherit timezone if we have one. */
-+      if (getenv("TZ"))
-+	child_set_env(&env, &envsize, "TZ", getenv("TZ"));
-+
-+      /* Save previous environment array
-+       */
-+      tmpenv = environ;
-+      environ = env;
-+
-+      /* Set the user's login environment
-+       */
-+      if (setusercontext(lc, pw, user_uid, LOGIN_SETALL) < 0)
-+	{
-+	  perror("setusercontext");
-+	  exit(1);
-+	}
-+
-+      p = getenv("PATH");
-+      s = xmalloc((p != NULL ? strlen(p) + 1 : 0) + sizeof(SSH_BINDIR));
-+      *s = '\0';
-+      if (p != NULL)
-+	{
-+	  strcat(s, p);
-+	  strcat(s, ":");
-+	}
-+      strcat(s, SSH_BINDIR);
-+
-+      env = environ;
-+      environ = tmpenv; /* Restore parent environment */
-+      for (envsize = 0; env[envsize] != NULL; ++envsize)
-+	;
-+      /* Reallocate this to what is expected */
-+      envsize = (envsize < 100) ? 100 : envsize + 16;
-+      env = xrealloc(env, envsize * sizeof(char *));
-+
-+      child_set_env(&env, &envsize, "PATH", s);
-+      xfree(s);
-+
-+#else /* !HAVE_LOGIN_CAP_H */
-       /* Set uid, gid, and groups. */
-       if (getuid() == UID_ROOT || geteuid() == UID_ROOT)
- 	{ 
-@@ -3337,6 +3507,7 @@
-       
-       if (getuid() != user_uid || geteuid() != user_uid)
- 	fatal("Failed to set uids to %d.", (int)user_uid);
-+#endif /* HAVE_LOGIN_CAP_H */
-     }
-   
-   /* Reset signals to their default settings before starting the user
-@@ -3364,11 +3535,16 @@
-      and means /bin/sh. */
-   shell = (user_shell[0] == '\0') ? DEFAULT_SHELL : user_shell;
- 
-+#ifdef HAVE_LOGIN_CAP_H
-+  real_shell = login_getcapstr(lc, "shell", (char*)shell, (char*)shell);
-+  login_close(lc);
-+#else /* !HAVE_LOGIN_CAP_H */
-   /* Initialize the environment.  In the first part we allocate space for
-      all environment variables. */
-   envsize = 100;
-   env = xmalloc(envsize * sizeof(char *));
-   env[0] = NULL;
-+#endif /* HAVE_LOGIN_CAP_H */
- 
- #ifdef USELOGIN
-   if (command != NULL || !options.use_login)
-@@ -3378,6 +3554,8 @@
-       child_set_env(&env, &envsize, "HOME", user_dir);
-       child_set_env(&env, &envsize, "USER", user_name);
-       child_set_env(&env, &envsize, "LOGNAME", user_name);
-+
-+#ifndef HAVE_LOGIN_CAP_H
-       child_set_env(&env, &envsize, "PATH", DEFAULT_PATH ":" SSH_BINDIR);
-       
- #ifdef MAIL_SPOOL_DIRECTORY
-@@ -3389,6 +3567,7 @@
-       child_set_env(&env, &envsize, "MAIL", buf);
- #endif /* MAIL_SPOOL_FILE */
- #endif /* MAIL_SPOOL_DIRECTORY */
-+#endif  /* !HAVE_LOGIN_CAP_H */
-       
- #ifdef HAVE_ETC_DEFAULT_LOGIN
-       /* Read /etc/default/login; this exists at least on Solaris 2.x.  Note
-@@ -3404,9 +3583,11 @@
-     child_set_env(&env, &envsize, "SSH_ORIGINAL_COMMAND",
- 		  original_command);
-   
-+#ifndef HAVE_LOGIN_CAP_H
-   /* Let it inherit timezone if we have one. */
-   if (getenv("TZ"))
-     child_set_env(&env, &envsize, "TZ", getenv("TZ"));
-+#endif /* !HAVE_LOGIN_CAP_H */
-   
-   /* Set custom environment options from RSA authentication. */
-   while (custom_environment) 
-@@ -3632,7 +3813,11 @@
- 		  struct stat mailbuf;
- 		  
- 		  if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
-+#ifdef __FreeBSD__
-+		    ;
-+#else
- 		    printf("No mail.\n");
-+#endif
- 		  else if (mailbuf.st_atime > mailbuf.st_mtime)
- 		    printf("You have mail.\n");
- 		  else
-@@ -3647,7 +3832,11 @@
- 	  /* Execute the shell. */
- 	  argv[0] = buf;
- 	  argv[1] = NULL;
-+#ifdef HAVE_LOGIN_CAP_H
-+	  execve(real_shell, argv, env);
-+#else
- 	  execve(shell, argv, env);
-+#endif /* HAVE_LOGIN_CAP_H */
- 	  /* Executing the shell failed. */
- 	  perror(shell);
- 	  exit(1);
-@@ -3668,7 +3857,11 @@
-   argv[1] = "-c";
-   argv[2] = (char *)command;
-   argv[3] = NULL;
-+#ifdef HAVE_LOGIN_CAP_H
-+  execve(real_shell, argv, env);
-+#else
-   execve(shell, argv, env);
-+#endif /* HAVE_LOGIN_CAP_H */
-   perror(shell);
-   exit(1);
- }
+*** sshd.c.WAS	Thu Jun 11 23:11:47 1998
+--- sshd.c	Thu Jun 11 23:30:30 1998
+***************
+*** 2014,2020 ****
+    pwcopy.pw_class = xstrdup(pw->pw_class);
+    pwcopy.pw_change = pw->pw_change;
+    pwcopy.pw_expire = pw->pw_expire;
+! #endif /*  __bsdi__  && _BSDI_VERSION >= 199510 */
+    pwcopy.pw_dir = xstrdup(pw->pw_dir);
+    pwcopy.pw_shell = xstrdup(pw->pw_shell);
+    pw = &pwcopy;
+--- 2014,2020 ----
+    pwcopy.pw_class = xstrdup(pw->pw_class);
+    pwcopy.pw_change = pw->pw_change;
+    pwcopy.pw_expire = pw->pw_expire;
+! #endif /*  (__bsdi__  && _BSDI_VERSION >= 199510) || (__FreeBSD__ && HAVE_LOGIN_CAP_H) */
+    pwcopy.pw_dir = xstrdup(pw->pw_dir);
+    pwcopy.pw_shell = xstrdup(pw->pw_shell);
+    pw = &pwcopy;
+***************
+*** 3045,3054 ****
+    struct pty_cleanup_context cleanup_context;
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+    login_cap_t *lc;
+  #endif
+! #if defined (__bsdi__) && _BSDI_VERSION >= 199510 
+    struct timeval tp;
+! #endif /*  __bsdi__ && _BSDI_VERSION >= 199510 */
+  
+  #ifdef HAVE_OSF1_C2_SECURITY
+    {
+--- 3045,3055 ----
+    struct pty_cleanup_context cleanup_context;
+  #if defined (__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)
+    login_cap_t *lc;
++   time_t warnpassword, warnexpire;
+  #endif
+! #if defined(__FreeBSD__) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
+    struct timeval tp;
+! #endif /*  __FreeBSD__ || (__bsdi__ && _BSDI_VERSION >= 199510) */
+  
+  #ifdef HAVE_OSF1_C2_SECURITY
+    {
+***************
+*** 3183,3188 ****
+--- 3184,3197 ----
+  		   "The Regents of the University of California. ",
+  		   "All rights reserved.");
+  	}
++ #ifdef HAVE_LOGIN_CAP_H
++ #define DEFAULT_WARN	(2L * 7L * 86400L)	/* Two weeks */
++ 
++ 	warnpassword = login_getcaptime(lc, "warnpassword",
++ 	    DEFAULT_WARN, DEFAULT_WARN);
++ 	warnexpire = login_getcaptime(lc, "warnexpire",
++ 	    DEFAULT_WARN, DEFAULT_WARN);
++ #endif
+  #endif
+  
+        /* Print /etc/motd unless a command was specified or printing it was
+***************
+*** 3206,3212 ****
+  		fputs(line, stdout);
+  	      fclose(f);
+  	    }
+! #if defined (__bsdi__) && _BSDI_VERSION >= 199510
+  	  if (pw->pw_change || pw->pw_expire)
+  	    (void)gettimeofday(&tp, (struct timezone *)NULL);
+  	  if (pw->pw_change)
+--- 3215,3221 ----
+  		fputs(line, stdout);
+  	      fclose(f);
+  	    }
+! #if defined(__FreeBSD__) || (defined(__bsdi__) && _BSDI_VERSION >= 199510)
+  	  if (pw->pw_change || pw->pw_expire)
+  	    (void)gettimeofday(&tp, (struct timezone *)NULL);
+  	  if (pw->pw_change)
+***************
+*** 3575,3581 ****
+  	  while (fgets(buf, sizeof(buf), f))
+  	    fputs(buf, stderr);
+  	  fclose(f);
+! #if defined (__bsdi__) && _BSDI_VERSION >= 199510
+  	  if (pw->pw_uid != UID_ROOT &&
+  	      !login_getcapbool(lc, "ignorenologin", 0))
+  	    exit(254);
+--- 3584,3590 ----
+  	  while (fgets(buf, sizeof(buf), f))
+  	    fputs(buf, stderr);
+  	  fclose(f);
+! #if (defined(__FreeBSD__) && defined(HAVE_LOGIN_CAP_H)) || (defined (__bsdi__) && _BSDI_VERSION >= 199510)
+  	  if (pw->pw_uid != UID_ROOT &&
+  	      !login_getcapbool(lc, "ignorenologin", 0))
+  	    exit(254);
+***************
+*** 4121,4127 ****
+--- 4130,4140 ----
+  		  struct stat mailbuf;
+  		  
+  		  if (stat(mailbox, &mailbuf) == -1 || mailbuf.st_size == 0)
++ #ifdef __FreeBSD__
++ 		    ;
++ #else
+  		    printf("No mail.\n");
++ #endif
+  		  else if (mailbuf.st_atime > mailbuf.st_mtime)
+  		    printf("You have mail.\n");
+  		  else
