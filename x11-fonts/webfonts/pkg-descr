@@ -1,8 +1,18 @@
 This is a collection of high quality and free to use TrueType fonts created by
-Monotype and Microsoft Typography. It consists of the following families:
+Monotype and Microsoft Typography.  It consists of the following families:
 
-Times New Roman, Courier New, Arial, Arial Black, Impact, Trebuchet MS, Andale
-Mono, Verdana, Georgia and Comic Sans.
+      Times New Roman, Courier New, Georgia, Trebuchet MS, Comic Sans MS
+      Arial, Arial Black, Arial Unicode MS, Verdana, Andale Mono, Impact
+
+They contain all 652 glyphs defined in WGL4 and are available in the following  
+encodings:
+
+      ISO 8859-1, 2, 3, 4, 5, 6, 7, 8, 9, 10 and 15
+      JIS X 0201-1976 (Arial Unicode MS only)
+      KOI8-R and -RU
+
+The Arial Unicode MS family contains all the glyphs defined in the Unicode 2.1
+standard and is optional because of its considerable size - 13.7MB compressed!
 
 WWW: http://www.microsoft.com/typography/fontpack/
 
