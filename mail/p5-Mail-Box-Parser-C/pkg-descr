@@ -7,6 +7,3 @@ the message is supplied as file-handle.  In all other cases, MailBox
 will use Mail::Box::Parser::Perl.
 
 WWW: http://search.cpan.org/dist/Mail-Box-Parser-C/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
