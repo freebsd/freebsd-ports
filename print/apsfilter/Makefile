@@ -87,6 +87,9 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
 .endif
 
+# needed for aps2file :-/
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash2
+
 MAN1=		apsfilter.1
 MAN5=		apsfilterrc.5
 
