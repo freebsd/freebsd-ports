@@ -1,13 +1,10 @@
---- server.h.orig	Fri May 21 18:34:59 1999
-+++ server.h	Sat Jun  5 14:55:46 1999
-@@ -19,12 +19,11 @@
- #ifndef SERVER_H
- #define SERVER_H
+--- server.h.orig	Mon Jun 21 14:50:08 1999
++++ server.h	Tue Jun 29 14:22:57 1999
+@@ -21,10 +21,9 @@
  
--#include <sys/socket.h>
  #include <sys/types.h>
+ #include <sys/socket.h>
 -#include <sys/param.h>
-+#include <sys/socket.h>
 +#include <netinet/in.h>
  #include <arpa/inet.h>
  #include <netdb.h>
