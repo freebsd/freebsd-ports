@@ -6,7 +6,7 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.49 1998/12/11 22:46:14 billf Exp $
+# $Id: Makefile,v 1.50 1998/12/11 22:58:37 billf Exp $
 
 APACHE= 	1.3.3
 APACHE-SSL=	1.28
@@ -33,7 +33,7 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/ \
 DISTFILES=      ${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE}+ssl_${APACHE-SSL}${EXTRACT_SUFX}
 
-MAINTAINER=     Adam Laurie \<adam@algroup.co.uk\>
+MAINTAINER=     adam@algroup.co.uk
 
 
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
