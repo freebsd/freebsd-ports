@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	macopix
-PORTVERSION=	0.8.5
-PORTREVISION=	3
+PORTVERSION=	0.8.6
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/macopix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}
@@ -37,6 +36,8 @@ USE_GNOME=	gtk12 gdkpixbuf
 
 GNU_CONFIGURE=	yes
 
+MAN1=		macopix.1
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/macopix
 # install mascot file
@@ -47,39 +48,40 @@ post-install:
 #	fi \
 #	done
 	${MKDIR} ${PREFIX}/share/macopix/
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-comic_party-ja/*.png ${PREFIX}/share/macopix/
+	${MKDIR} ${PREFIX}/share/macopix/pixmap/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-comic_party-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-comic_party-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-comic_party-ja/comipa.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-comic_party-ja/README.jp ${PREFIX}/share/macopix/README.comipa.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-cosmos-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-cosmos-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-cosmos-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-cosmos-ja/cosmos.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-cosmos-ja/README.jp ${PREFIX}/share/macopix/README.cosmos.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-kanon-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-kanon-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-kanon-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-kanon-ja/kanon.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-kanon-ja/README.jp ${PREFIX}/share/macopix/README.kanon.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-mizuiro-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-mizuiro-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-mizuiro-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-mizuiro-ja/mizuiro.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-mizuiro-ja/README.jp ${PREFIX}/share/macopix/README.mizuiro.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-one-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-one-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-one-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-one-ja/one.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-one-ja/README.jp ${PREFIX}/share/macopix/README.one.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-pia2-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-pia2-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-pia2-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-pia2-ja/pia2.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-pia2-ja/README.jp ${PREFIX}/share/macopix/README.pia2.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-triangle_heart-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-triangle_heart-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-triangle_heart-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-triangle_heart-ja/trh.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-triangle_heart-ja/README.jp ${PREFIX}/share/macopix/README.trh.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/tsuki.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-tsukihime-ja/README.jp ${PREFIX}/share/macopix/README.tsuki.jp
-	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/*.png ${PREFIX}/share/macopix/
+	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/*.png ${PREFIX}/share/macopix/pixmap/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/*.mcpx ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/marimite.menu ${PREFIX}/share/macopix/
 	${INSTALL_DATA} ${WRKDIR}/macopix-mascot-marimite-ja/README.jp ${PREFIX}/share/macopix/README.marimite.jp
