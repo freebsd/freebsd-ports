@@ -18,4 +18,7 @@ PATCH_SITES=	http://www.kde.gr.jp/patch/
 PATCHFILES=	kdeaddons-2.2-babelfish-ja-20010816.diff
 PATCH_DIST_STRIP=	-p1
 
+BUILD_DEPENDS=	${LOCALBASE}/include/kate/plugin.h:${PORTSDIR}/japanese/kdebase2
+RUN_DEPENDS=	kate:${PORTSDIR}/japanese/kdebase2
+
 .include "${MASTERDIR}/Makefile"
