@@ -7339,6 +7339,7 @@ wdm		ports/x11/wdm
 web2ldap	ports/www/web2ldap
 web500gw	ports/www/web500gw
 webalizer	ports/www/webalizer
+webcheck	ports/www/webcheck
 webcopy		ports/www/webcopy
 webcrawl	ports/www/webcrawl
 webfonts	ports/x11-fonts/webfonts
