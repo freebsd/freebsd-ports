@@ -3,7 +3,7 @@
 # Date Created:				7 nov 98
 # Whom:				 	Gilad Rom
 #
-# $Id: Makefile,v 1.5 1999/04/22 06:49:17 nectar Exp $
+# $Id: Makefile,v 1.6 1999/05/29 04:25:56 steve Exp $
 #
 
 DISTNAME=	gtkstep-1.5
@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www-info2.informatik.uni-wuerzburg.de/mitarbeiter/ulli/gtkstep/ \
 		ftp://sunshine.informatik.uni-wuerzburg.de/pub/wmaker/gtkstep/
 
-MAINTAINER=     rom_glsa@ein-hashofet.co.il
+MAINTAINER=     ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
