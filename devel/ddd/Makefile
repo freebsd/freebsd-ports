@@ -2,9 +2,9 @@
 # Ports collection makefile for:  ddd
 # Version required:     	  2.0
 # Date created:			  Tue Jan 28, 1997
-# Whom:				  David O'Brien (obrien@FreeBSD.org)
+# Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.7 1998/11/14 22:37:37 obrien Exp $
+# $Id: Makefile,v 1.8 1998/12/01 09:39:47 obrien Exp $
 #
 
 DISTNAME=	ddd-3.0.92
@@ -15,7 +15,9 @@ MASTER_SITES=	ftp://Xftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
 		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
 
-MAINTAINER=     obrien@NUXI.com
+MAINTAINER=     obrien@FreeBSD.org
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
