@@ -1,36 +1,44 @@
-# New ports collection makefile for:    eel
+# New ports collection makefile for:    eel2
 # Date created:         		8th May 2001
 # Whom:                 		Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	eel
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTNAME=	eel2
+PORTVERSION=	1.1.14
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/eel
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
+DIST_SUBDIR=	gnome2
+DISTNAME=	eel-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	rsvg.1:${PORTSDIR}/graphics/librsvg
+LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2 \
+		gailutil.13:${PORTSDIR}/x11-toolkits/gail \
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-static
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome \
+		--with-html-dir=${PREFIX}/share/doc \
+		--disable-gtk-doc --enable-shared --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
+		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
