@@ -1,0 +1,10 @@
+--- common.h.orig	Mon Jul 16 12:36:12 2001
++++ common.h	Mon Jul 16 12:36:45 2001
+@@ -118,6 +118,7 @@
+ #define writesocket(s,b,n)      write((s),(b),(n))
+ #define closesocket(s)          close(s)
+ #define ioctlsocket(a,b,c)      ioctl((a),(b),(c))
++#define sock_ioctlsocket(a,b,c) ioctl((a),(b),(c))
+ 
+ /* POSIX threads */
+ #if HAVE_PTHREAD_H && HAVE_LIBPTHREAD
