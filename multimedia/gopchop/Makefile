@@ -8,6 +8,7 @@
 
 PORTNAME=	gopchop
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://outflux.net/unix/software/GOPchop/download/
@@ -17,16 +18,14 @@ DISTNAME=	GOPchop-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG2 GOP-accurate editor
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
-USE_SDL=	sdl
+USE_GNOME=	gnometarget gtk12 intlhack
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnometarget gtk12
-USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-sdl
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
