@@ -89,7 +89,7 @@ sub check_version {
     local($filename, $directory, $hastag, $cvsversion) = @_;
 
     open(FILE, $filename) || die("Cannot open $filename, stopped");
-    for ($i = 1; $i < 50; $i++) {
+    for ($i = 1; $i < 70; $i++) {
 	$pos = -1;
 	last if eof(FILE);
 	$line = <FILE>;
