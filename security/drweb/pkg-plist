@@ -14,18 +14,23 @@ drweb/clients/demo/drwebdc-lib.pl
 drweb/clients/demo/drwebdc-tools.c
 drweb/clients/demo/eicar.txt
 drweb/clients/demo/make-all.sh
-drweb/clients/drwebdc/Makefile.unix.tmpl
+drweb/clients/drwebdc/ChangeLog
+drweb/clients/drwebdc/Makefile.aix
+drweb/clients/drwebdc/Makefile.bsd
+drweb/clients/drwebdc/Makefile.gnu
+drweb/clients/drwebdc/Makefile.os2
 drweb/clients/drwebdc/Makefile.win
 drweb/clients/drwebdc/README
-drweb/clients/drwebdc/clean.bat
 drweb/clients/drwebdc/configure
 drweb/clients/drwebdc/drweb_cgp.c
 drweb/clients/drwebdc/drwebdc.c
 drweb/clients/drwebdc/dw_filter.c
 drweb/clients/drwebdc/dw_filter.h
 drweb/clients/drwebdc/dwf_main.c
-drweb/clients/drwebdc/make.bat
-drweb/clients/drwebdc/src/Makefile.unix.tmpl
+drweb/clients/drwebdc/src/Makefile.aix
+drweb/clients/drwebdc/src/Makefile.bsd
+drweb/clients/drwebdc/src/Makefile.gnu
+drweb/clients/drwebdc/src/Makefile.os2
 drweb/clients/drwebdc/src/Makefile.win
 drweb/clients/drwebdc/src/bsd_queue.h
 drweb/clients/drwebdc/src/dwc_err.c
@@ -51,6 +56,12 @@ drweb/clients/drwebdc/src/dwc_timo.h
 drweb/clients/drwebdc/src/dwc_type.h
 drweb/clients/drwebdc/src/dwc_unix.c
 drweb/clients/drwebdc/src/dwc_unix.h
+drweb/clients/drwebdc/syslog/include/sys/syslog.h
+drweb/clients/drwebdc/syslog/include/syslog.h
+drweb/clients/drwebdc/syslog/lib/syslog.a
+drweb/clients/drwebdc/win_build.bat
+drweb/clients/drwebdc/win_clean.bat
+drweb/clients/exim/drweb_exim.pl
 drweb/clients/exim/drweb_exim.sh
 drweb/clients/exim/readme.exim
 drweb/clients/exim/readme.exim.rus
@@ -59,12 +70,12 @@ drweb/clients/postfix/drweb_postfix.sh
 drweb/clients/postfix/readme.postfix
 drweb/clients/postfix/readme.postfix.rus
 drweb/clients/qmail/drweb_qmail.pl
-drweb/clients/qmail/qmail-scanner-0.96.patch
-drweb/clients/qmail/qmail-scanner-1.00.patch
+drweb/clients/qmail/qmail-scanner-0.9x.patch
+drweb/clients/qmail/qmail-scanner-1.0x.patch
 drweb/clients/qmail/readme.qmail
 drweb/clients/qmail/readme.qmail.rus
 drweb/clients/qmail/sub-drweb.0.9x.pl
-drweb/clients/qmail/sub-drweb.1.00.pl
+drweb/clients/qmail/sub-drweb.1.0x.pl
 drweb/clients/sendmail/README
 drweb/clients/sendmail/configure
 drweb/clients/sendmail/example-rus.sh
@@ -102,6 +113,10 @@ drweb/update/update.pl
 @dirrm drweb/clients/drwebdc/include
 @dirrm drweb/clients/drwebdc/lib
 @dirrm drweb/clients/drwebdc/src
+@dirrm drweb/clients/drwebdc/syslog/include/sys
+@dirrm drweb/clients/drwebdc/syslog/include
+@dirrm drweb/clients/drwebdc/syslog/lib
+@dirrm drweb/clients/drwebdc/syslog
 @dirrm drweb/clients/drwebdc
 @dirrm drweb/clients/exim
 @dirrm drweb/clients/postfix
