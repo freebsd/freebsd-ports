@@ -11,6 +11,8 @@ COMMENT=	Message interface to Emacs Window (version 3) for emacs20
 # Mew major version
 MEW_MAJOR_VER?=	3
 
+LATEST_LINK=	mew3-emacs20
+
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}
 

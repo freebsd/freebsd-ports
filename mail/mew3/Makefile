@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Message interface to Emacs Window (version 3) for emacs21
 
+LATEST_LINK=	mew3
+
 # Mew major version
 MEW_MAJOR_VER=	3
 

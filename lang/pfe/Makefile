@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of ANSI Forth
 
+LATEST_LINK=	pfe-devel
+
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
@@ -22,6 +24,6 @@ LIBTOOLFILES=	pfe/configure
 LIBTOOLFLAGS=	# none
 CONFIGURE_ARGS=	--mandir=${PREFIX}/man
 
-MAN1=        pfe.1 pfe-config.1
+MAN1=		pfe.1 pfe-config.1
 
 .include <bsd.port.mk>
