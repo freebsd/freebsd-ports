@@ -12,7 +12,7 @@ CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	IMAP (and POP3) server that provides access to Maildir mailboxes
 
 USE_BZIP2=	yes
