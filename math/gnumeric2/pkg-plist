@@ -763,6 +763,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm lib/gnumeric/%%VERSION%%/plugins/lotus
 @dirrm lib/gnumeric/%%VERSION%%/plugins/html
 @dirrm lib/gnumeric/%%VERSION%%/plugins/gnome-glossary
+@dirrm lib/gnumeric/%%VERSION%%/plugins/gdaif
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-string
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-stat
 @dirrm lib/gnumeric/%%VERSION%%/plugins/fn-random
