@@ -16,9 +16,10 @@ WRKSRC=		${WRKDIR}/wmSolar
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 pre-patch:
-	@${PERL} -pi.orig -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \
+	@${REINPLACE_CMD} -e 's|values.h|float.h|; s|MAXDOUBLE|DBL_MAX|g' \
 		${WRKSRC}/wmSolar.c
 
 do-install:
