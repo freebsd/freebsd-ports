@@ -1,0 +1,44 @@
+*** ../doc/hp2xx.1.orig	Tue Oct 24 15:54:03 1995
+--- ../doc/hp2xx.1	Sun Jan 17 15:32:10 1999
+***************
+*** 17,23 ****
+    -f   char *  ""        Name of output file. "" = autom., "-" = stdout
+    -l   char *  ""        Name of optional log file
+    -m   char *  pre       Mode. Valid:
+!                          mf,cad,em,epic,eps,hpgl,rgip, pcl,pcx,pic,img,pbm, pre
+    -p   char *  11111111  Pensize(s) [dots] (default), [1/10 mm] (mf, ps).
+                           Valid: 1 to 8 digits of 0-9 each.
+    -P   int     0:0       Selected page range (m:n) (0 = 0:0 = all pages)
+--- 17,23 ----
+    -f   char *  ""        Name of output file. "" = autom., "-" = stdout
+    -l   char *  ""        Name of optional log file
+    -m   char *  pre       Mode. Valid:
+!                          cad,em,epic,eps,hpgl,img,mf,pbm,pcl,pcx,png,rgip,pre
+    -p   char *  11111111  Pensize(s) [dots] (default), [1/10 mm] (mf, ps).
+                           Valid: 1 to 8 digits of 0-9 each.
+    -P   int     0:0       Selected page range (m:n) (0 = 0:0 = all pages)
+***************
+*** 150,156 ****
+  "pcl" (HP-PCL Level 3 format (suitable for printing on a HP Laserjet II,
+  DeskJet, or compatible printer), "img" (GEMs IMG format), "pbm" (Portable
+  Bit Map), "pcx" (PC-Paintbrush format, also accepted by MS-Paintbrush /
+! Windows 3.0 and many other PC based pixel renderers), or "rgip" (Uniplex RGIP).
+  There is also a preview option "pre" which supports VGA cards (DOS),
+  ATARI, AMIGA, X11 servers, and Sunview. Default mode is "pre".
+  
+--- 150,157 ----
+  "pcl" (HP-PCL Level 3 format (suitable for printing on a HP Laserjet II,
+  DeskJet, or compatible printer), "img" (GEMs IMG format), "pbm" (Portable
+  Bit Map), "pcx" (PC-Paintbrush format, also accepted by MS-Paintbrush /
+! Windows 3.0 and many other PC based pixel renderers), "rgip" (Uniplex RGIP),
+! or "png" (Portable Network Graphics).
+  There is also a preview option "pre" which supports VGA cards (DOS),
+  ATARI, AMIGA, X11 servers, and Sunview. Default mode is "pre".
+  
+***************
+*** 380,383 ****
+  .SH SEE ALSO
+  .BR bm2font (1),
+  F. Sowa's raster-to-TeXfont converter.
+- 
+--- 381,383 ----

@@ -1,0 +1,5 @@
+bin/hp2xx
+@unexec install-info --delete %D/info/hp2xx.info %D/info/dir
+info/hp2xx.info
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/hp2xx.info %D/info/dir
