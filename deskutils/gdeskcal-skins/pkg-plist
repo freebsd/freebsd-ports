@@ -1,8 +1,12 @@
-share/gnome/gdeskcal/skins/GNOME/.xvpics/today.png
 share/gnome/gdeskcal/skins/GNOME/bg.png
 share/gnome/gdeskcal/skins/GNOME/skin.xml
-share/gnome/gdeskcal/skins/GNOME/skin.xml~
 share/gnome/gdeskcal/skins/GNOME/today.png
+share/gnome/gdeskcal/skins/Grey_skin/bg.png
+share/gnome/gdeskcal/skins/Grey_skin/home.png
+share/gnome/gdeskcal/skins/Grey_skin/next.png
+share/gnome/gdeskcal/skins/Grey_skin/prev.png
+share/gnome/gdeskcal/skins/Grey_skin/skin.xml
+share/gnome/gdeskcal/skins/Grey_skin/today.png
 share/gnome/gdeskcal/skins/LCD/bg.png
 share/gnome/gdeskcal/skins/LCD/bg.xcf
 share/gnome/gdeskcal/skins/LCD/home.png
@@ -18,9 +22,32 @@ share/gnome/gdeskcal/skins/Red_skin/skin.xml
 share/gnome/gdeskcal/skins/Red_skin/today.png
 share/gnome/gdeskcal/skins/SimpleForDark/skin.xml
 share/gnome/gdeskcal/skins/SimpleForDark/today.png
+share/gnome/gdeskcal/skins/XFCE/bg.png
+share/gnome/gdeskcal/skins/XFCE/skin.xml
+share/gnome/gdeskcal/skins/XFCE/today.png
+share/gnome/gdeskcal/skins/august/bg.png
+share/gnome/gdeskcal/skins/august/bg.xcf
+share/gnome/gdeskcal/skins/august/home.png
+share/gnome/gdeskcal/skins/august/next.png
+share/gnome/gdeskcal/skins/august/prev.png
+share/gnome/gdeskcal/skins/august/skin.xml
+share/gnome/gdeskcal/skins/august/today.png
+share/gnome/gdeskcal/skins/august_big_no_backgr/bg.xcf
+share/gnome/gdeskcal/skins/august_big_no_backgr/home.png
+share/gnome/gdeskcal/skins/august_big_no_backgr/next.png
+share/gnome/gdeskcal/skins/august_big_no_backgr/prev.png
+share/gnome/gdeskcal/skins/august_big_no_backgr/skin.xml
+share/gnome/gdeskcal/skins/august_big_no_backgr/today.png
 share/gnome/gdeskcal/skins/e/bg.png
 share/gnome/gdeskcal/skins/e/skin.xml
 share/gnome/gdeskcal/skins/e/today.png
+share/gnome/gdeskcal/skins/gorillerat/.xvpics/bg.png
+share/gnome/gdeskcal/skins/gorillerat/bg.png
+share/gnome/gdeskcal/skins/gorillerat/home.png
+share/gnome/gdeskcal/skins/gorillerat/next.png
+share/gnome/gdeskcal/skins/gorillerat/prev.png
+share/gnome/gdeskcal/skins/gorillerat/skin.xml
+share/gnome/gdeskcal/skins/gorillerat/today.png
 share/gnome/gdeskcal/skins/light_01/bg.png
 share/gnome/gdeskcal/skins/light_01/home.png
 share/gnome/gdeskcal/skins/light_01/next.png
@@ -33,6 +60,13 @@ share/gnome/gdeskcal/skins/light_02/next.png
 share/gnome/gdeskcal/skins/light_02/prev.png
 share/gnome/gdeskcal/skins/light_02/skin.xml
 share/gnome/gdeskcal/skins/light_02/skin.xml~
+share/gnome/gdeskcal/skins/miderat_RTL/bg.png
+share/gnome/gdeskcal/skins/miderat_RTL/bg.xcf
+share/gnome/gdeskcal/skins/miderat_RTL/home.png
+share/gnome/gdeskcal/skins/miderat_RTL/next.png
+share/gnome/gdeskcal/skins/miderat_RTL/prev.png
+share/gnome/gdeskcal/skins/miderat_RTL/skin.xml
+share/gnome/gdeskcal/skins/miderat_RTL/today.png
 share/gnome/gdeskcal/skins/tiny_and_simple/skin.xml
 share/gnome/gdeskcal/skins/tnf/bg.png
 share/gnome/gdeskcal/skins/tnf/bg.xcf
@@ -43,11 +77,18 @@ share/gnome/gdeskcal/skins/tnf/skin.xml
 share/gnome/gdeskcal/skins/tnf/today.png
 @dirrm share/gnome/gdeskcal/skins/tnf
 @dirrm share/gnome/gdeskcal/skins/tiny_and_simple
+@dirrm share/gnome/gdeskcal/skins/miderat_RTL
 @dirrm share/gnome/gdeskcal/skins/light_02
 @dirrm share/gnome/gdeskcal/skins/light_01
+@dirrm share/gnome/gdeskcal/skins/gorillerat/.xvpics
+@dirrm share/gnome/gdeskcal/skins/gorillerat
 @dirrm share/gnome/gdeskcal/skins/e
+@dirrm share/gnome/gdeskcal/skins/august_big_no_backgr
+@dirrm share/gnome/gdeskcal/skins/august
+@dirrm share/gnome/gdeskcal/skins/XFCE
 @dirrm share/gnome/gdeskcal/skins/SimpleForDark
 @dirrm share/gnome/gdeskcal/skins/Red_skin
 @dirrm share/gnome/gdeskcal/skins/LCD
+@dirrm share/gnome/gdeskcal/skins/Grey_skin
 @dirrm share/gnome/gdeskcal/skins/GNOME/.xvpics
 @dirrm share/gnome/gdeskcal/skins/GNOME
