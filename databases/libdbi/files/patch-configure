@@ -1,6 +1,6 @@
---- configure.orig	Sat Jun 15 09:45:18 2002
-+++ configure	Sat Oct  5 21:05:30 2002
-@@ -5551,6 +5551,7 @@
+--- configure.orig	Mon Oct 28 02:01:23 2002
++++ configure	Sun Nov  3 09:35:03 2002
+@@ -5412,6 +5412,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,14 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5452,8 +5453,8 @@
+                 PROFILE="-pg -g -O20 -D__NO_MATH_INLINES -fsigned-char -mv8" ;;
+         *)
+                 DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O20 -D__NO_MATH_INLINES -fsigned-char"
+-                PROFILE="-O20 -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
++                CFLAGS="$CFLAGS -D__NO_MATH_INLINES -fsigned-char"
++                PROFILE="$CFLAGS -g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
+         esac
+ fi
+ 
