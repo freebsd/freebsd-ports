@@ -16,12 +16,14 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT?=	Generic shared library support script
 
-LATEST_LINK?=	libtool14
+BUILD_VERSION=	14
+LATEST_LINK?=	libtool${BUILD_VERSION}
+PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 GNU_CONFIGURE=	 yes
 CONFIGURE_ARGS?= --disable-ltdl-install
-CONFIGURE_ARGS+= --program-suffix=14
+CONFIGURE_ARGS+= --program-suffix=${BUILD_VERSION}
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool14
+CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
 USE_REINPLACE=	yes
 
 .if defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
@@ -35,22 +37,22 @@ pre-everything:
 .endif # defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
 
 post-extract:
-	@${MV} -f ${WRKSRC}/libtool.m4 ${WRKSRC}/libtool14.m4
-	@${MV} -f ${WRKSRC}/ltdl.m4 ${WRKSRC}/ltdl14.m4
-	@${REINPLACE_CMD} -e 's|libtool.m4|libtool14.m4|g' \
-			  -e 's|ltdl.m4|ltdl14.m4|g' ${WRKSRC}/Makefile.in
-	@${MV} -f ${WRKSRC}/doc/libtool.info ${WRKSRC}/doc/libtool14.info
-	@${MV} -f ${WRKSRC}/doc/libtool.texi ${WRKSRC}/doc/libtool14.texi
+	@${MV} -f ${WRKSRC}/libtool.m4 ${WRKSRC}/libtool${BUILD_VERSION}.m4
+	@${MV} -f ${WRKSRC}/ltdl.m4 ${WRKSRC}/ltdl${BUILD_VERSION}.m4
+	@${REINPLACE_CMD} -e 's|libtool.m4|libtool${BUILD_VERSION}.m4|g' \
+			  -e 's|ltdl.m4|ltdl${BUILD_VERSION}.m4|g' ${WRKSRC}/Makefile.in
+	@${MV} -f ${WRKSRC}/doc/libtool.info ${WRKSRC}/doc/libtool${BUILD_VERSION}.info
+	@${MV} -f ${WRKSRC}/doc/libtool.texi ${WRKSRC}/doc/libtool${BUILD_VERSION}.texi
 
 .if ${PORTNAME} == "libtool"
 post-install:
-	@-${RM} -fr ${PREFIX}/libexec/libtool14
-	${MKDIR} ${PREFIX}/libexec/libtool14
+	@-${RM} -fr ${PREFIX}/libexec/libtool${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
 .for i in libtool libtoolize
-	${LN} -sf ${PREFIX}/bin/${i}14 ${PREFIX}/libexec/libtool14/${i}
+	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
 .endfor
 .for i in config.guess config.sub
-	${MV} ${PREFIX}/share/libtool14/${i}14 ${PREFIX}/share/libtool14/${i}
+	${MV} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}${BUILD_VERSION} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}
 .endfor
 .endif
 

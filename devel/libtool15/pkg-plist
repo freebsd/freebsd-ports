@@ -1,28 +1,28 @@
 @comment $FreeBSD$
-bin/libtool14
-bin/libtoolize14
-libexec/libtool14/libtool
-libexec/libtool14/libtoolize
-@unexec install-info --delete %D/info/libtool14.info %D/info/dir
-info/libtool14.info
-@exec install-info %D/info/libtool14.info %D/info/dir
-share/aclocal/libtool14.m4
-share/aclocal/ltdl14.m4
-share/libtool14/config.guess
-share/libtool14/config.sub
-share/libtool14/libltdl/COPYING.LIB
-share/libtool14/libltdl/Makefile.am
-share/libtool14/libltdl/Makefile.in
-share/libtool14/libltdl/README
-share/libtool14/libltdl/acinclude.m4
-share/libtool14/libltdl/aclocal.m4
-share/libtool14/libltdl/config-h.in
-share/libtool14/libltdl/configure
-share/libtool14/libltdl/configure.in
-share/libtool14/libltdl/ltdl.c
-share/libtool14/libltdl/ltdl.h
-share/libtool14/libltdl/stamp-h.in
-share/libtool14/ltmain.sh
-@dirrm share/libtool14/libltdl
-@dirrm share/libtool14
-@dirrm libexec/libtool14
+bin/libtool${BUILD_VERSION}
+bin/libtoolize${BUILD_VERSION}
+libexec/libtool${BUILD_VERSION}/libtool
+libexec/libtool${BUILD_VERSION}/libtoolize
+@unexec install-info --delete %D/info/libtool${BUILD_VERSION}.info %D/info/dir
+info/libtool${BUILD_VERSION}.info
+@exec install-info %D/info/libtool${BUILD_VERSION}.info %D/info/dir
+share/aclocal/libtool${BUILD_VERSION}.m4
+share/aclocal/ltdl${BUILD_VERSION}.m4
+share/libtool${BUILD_VERSION}/config.guess
+share/libtool${BUILD_VERSION}/config.sub
+share/libtool${BUILD_VERSION}/libltdl/COPYING.LIB
+share/libtool${BUILD_VERSION}/libltdl/Makefile.am
+share/libtool${BUILD_VERSION}/libltdl/Makefile.in
+share/libtool${BUILD_VERSION}/libltdl/README
+share/libtool${BUILD_VERSION}/libltdl/acinclude.m4
+share/libtool${BUILD_VERSION}/libltdl/aclocal.m4
+share/libtool${BUILD_VERSION}/libltdl/config-h.in
+share/libtool${BUILD_VERSION}/libltdl/configure
+share/libtool${BUILD_VERSION}/libltdl/configure.in
+share/libtool${BUILD_VERSION}/libltdl/ltdl.c
+share/libtool${BUILD_VERSION}/libltdl/ltdl.h
+share/libtool${BUILD_VERSION}/libltdl/stamp-h.in
+share/libtool${BUILD_VERSION}/ltmain.sh
+@dirrm share/libtool${BUILD_VERSION}/libltdl
+@dirrm share/libtool${BUILD_VERSION}
+@dirrm libexec/libtool${BUILD_VERSION}

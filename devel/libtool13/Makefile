@@ -15,11 +15,13 @@ DISTNAME=	libtool-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Generic shared library support script
 
-LATEST_LINK=	libtool13
+BUILD_VERSION=	13
+PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
+LATEST_LINK=	libtool${BUILD_VERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-ltdl-install \
-		--program-suffix=13
-CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool13
+		--program-suffix=${BUILD_VERSION}
+CONFIGURE_ENV=	PREFIX=${PREFIX} PACKAGE=libtool${BUILD_VERSION}
 USE_REINPLACE=	yes
 
 .if defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
@@ -33,22 +35,22 @@ pre-everything:
 .endif # defined(USE_LIBTOOL) || defined(USE_LIBTOOL_VER)
 
 post-extract:
-	@${MV} -f ${WRKSRC}/libtool.m4 ${WRKSRC}/libtool13.m4
-	@${REINPLACE_CMD} -e 's|libtool.m4|libtool13.m4|g' \
+	@${MV} -f ${WRKSRC}/libtool.m4 ${WRKSRC}/libtool${BUILD_VERSION}.m4
+	@${REINPLACE_CMD} -e 's|libtool.m4|libtool${BUILD_VERSION}.m4|g' \
 			  ${WRKSRC}/Makefile.in
-	@${MV} -f ${WRKSRC}/doc/libtool.info ${WRKSRC}/doc/libtool13.info
-	@${MV} -f ${WRKSRC}/doc/libtool.texi ${WRKSRC}/doc/libtool13.texi
+	@${MV} -f ${WRKSRC}/doc/libtool.info ${WRKSRC}/doc/libtool${BUILD_VERSION}.info
+	@${MV} -f ${WRKSRC}/doc/libtool.texi ${WRKSRC}/doc/libtool${BUILD_VERSION}.texi
 
 post-install:
-	@-${RM} -fr ${PREFIX}/libexec/libtool13
-	${MKDIR} ${PREFIX}/libexec/libtool13
+	@-${RM} -fr ${PREFIX}/libexec/libtool${BUILD_VERSION}
+	${MKDIR} ${PREFIX}/libexec/libtool${BUILD_VERSION}
 .for i in libtool libtoolize
-	${LN} -sf ${PREFIX}/bin/${i}13 ${PREFIX}/libexec/libtool13/${i}
+	${LN} -sf ${PREFIX}/bin/${i}${BUILD_VERSION} ${PREFIX}/libexec/libtool${BUILD_VERSION}/${i}
 .endfor
 .for i in config.guess config.sub
-	${MV} ${PREFIX}/share/libtool13/${i}13 ${PREFIX}/share/libtool13/${i}
+	${MV} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}${BUILD_VERSION} ${PREFIX}/share/libtool${BUILD_VERSION}/${i}
 .endfor
-	${LN} -sf ${PREFIX}/share/libtool13/ltconfig13 \
-		${PREFIX}/share/libtool13/ltconfig
+	${LN} -sf ${PREFIX}/share/libtool${BUILD_VERSION}/ltconfig${BUILD_VERSION} \
+		${PREFIX}/share/libtool${BUILD_VERSION}/ltconfig
 
 .include <bsd.port.mk>
