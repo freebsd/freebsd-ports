@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jul 12 23:55:43 1999
-+++ Makefile.in	Mon Aug  2 04:57:54 1999
+--- Makefile.in.orig	Tue Jul 13 08:55:43 1999
++++ Makefile.in	Thu Feb  3 14:57:36 2000
 @@ -73,7 +73,7 @@
  SUBDIRS = data
  
@@ -18,3 +18,12 @@
  doc_DATA = doc/rfc1459.txt doc/color.txt FAQ AUTHORS COPYING ChangeLog INSTALL NEWS README
  
  # RPM and spec file generation
+@@ -151,7 +151,7 @@
+ generate_tags_LDADD = $(LDADD)
+ generate_tags_DEPENDENCIES = 
+ generate_tags_LDFLAGS = 
+-CXXFLAGS = @CXXFLAGS@
++CXXFLAGS = @CXXFLAGS@ -pedantic
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+ CXXLD = $(CXX)
+ CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
