@@ -57,7 +57,6 @@
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += windowmaker
-    SUBDIR += windowmaker-i18n
     SUBDIR += wm2
     SUBDIR += wmakerconf
     SUBDIR += wmanager
