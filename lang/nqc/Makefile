@@ -8,7 +8,7 @@
 PORTNAME=	nqc
 PORTVERSION=	2.4.r3
 CATEGORIES=	lang
-MASTER_SITES=	http://www.enteract.com/~dbaum/nqc/release/
+MASTER_SITES=	http://www.baumfamily.org/nqc/release/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kbyanc@FreeBSD.org
