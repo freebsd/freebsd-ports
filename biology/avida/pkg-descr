@@ -1,0 +1,16 @@
+The computer program avida is an auto-adaptive genetic system designed
+primarily for use as a platform in Digital or Artificial Life research. The
+avida system is based on concepts similar to those employed by the tierra
+program developed by Tom Ray. It is a population of self-reproducing strings
+with a Turing-complete genetic basis subjected to Poisson-random mutations.
+The population adapts to the combination of an intrinsic fitness landscape
+(self-reproduction) and an externally imposed (extrinsic) fitness function
+provided by the researcher. By studying this system, one can examine
+evolutionary adaptation, general traits of living systems (such as
+self-organization), and other issues pertaining to theoretical or
+evolutionary biology and dynamic systems.
+
+WWW: http://dllab.caltech.edu/avida/
+
+Jeremy
+karlj000@unbc.ca

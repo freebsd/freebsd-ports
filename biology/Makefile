@@ -2,6 +2,7 @@
 #
 
     SUBDIR += artemis
+    SUBDIR += avida
     SUBDIR += babel
     SUBDIR += biojava
     SUBDIR += chemeq
