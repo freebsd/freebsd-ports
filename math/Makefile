@@ -104,6 +104,7 @@
     SUBDIR += mbasecalc
     SUBDIR += metis
     SUBDIR += metis-edf
+    SUBDIR += miracl
     SUBDIR += mpexpr
     SUBDIR += mprime
     SUBDIR += mtl
