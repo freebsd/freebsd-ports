@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.22
-PORTREVISION=   1
+PORTREVISION=   2
 CATEGORIES=	www
 MASTER_SITES=   http://httpd.apache.org/dist/httpd/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
@@ -31,14 +31,11 @@ DISTNAME=	apache_${PORTVERSION}
 
 MAINTAINER=	ache@freebsd.org
 
-#
-# Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
-#
-
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
-		--server-gid=nogroup \
+		--server-uid=www \
+		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=${FILESDIR}/FreeBSD.layout:FreeBSD \
 		--suexec-docroot=${PREFIX}/www/data \
@@ -54,7 +51,10 @@ OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\" \
 		-DACCEPT_FILTER_NAME=\\"httpready\\"
 
-.if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
+#
+# Set WITH_APACHE_PERF_TUNING env. variable to YES to get maximum performance
+#
+.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
 OPTIM+=		-DBUFFERED_LOGS
 CFLAGS+=	-O6 -fomit-frame-pointer
 .endif
@@ -63,6 +63,9 @@ CONFIGURE_ENV=	OPTIM='${OPTIM}'
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
