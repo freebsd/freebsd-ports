@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhc
-PORTVERSION=	20030224
+PORTVERSION=	20041220
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://www.quickhack.net/mhc/arc/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
