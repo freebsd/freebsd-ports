@@ -25,12 +25,13 @@ LICQ_PORT?=	${.CURDIR}
 
 # workaround for installed autoconf/automake
 CONFIGURE_ARGS+=--program-transform-name=s,y,y,
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	${PTHREAD_LIBS}
 
 .if defined(WITH_SOCKS)
 CONFIGURE_ARGS+=--enable-socks5
 CONFIGURE_ARGS+=--with-socks5-inc=${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if !defined(WITHOUT_OPENSSL)
@@ -46,7 +47,6 @@ pre-configure:
 	${REINPLACE_CMD} -e 's=getopt.h==' \
 		-e 's=FLAGS -pthread=FLAGS ${PTHREAD_CFLAGS}=' \
 		${WRKSRC}/configure
-	${CHMOD} +x ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
