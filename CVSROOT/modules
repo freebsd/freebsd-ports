@@ -7443,6 +7443,7 @@ wmlpq		ports/print/wmlpq
 wmmail		ports/mail/wmmail
 wmmand		ports/misc/wmmand
 wmmatrix	ports/x11/wmmatrix
+wmmemload	ports/sysutils/wmmemload
 wmmemmon	ports/sysutils/wmmemmon
 wmmenu		ports/x11/wmmenu
 wmminichess	ports/games/wmminichess
