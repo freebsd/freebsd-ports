@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tmpwatch
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_REDHAT_LINUX}
-MASTER_SITE_SUBDIR=	updates/7.2/en/os/SRPMS
-EXTRACT_SUFX=	-1.src.rpm
+MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
+MASTER_SITE_SUBDIR=	fedora/fedora/1/i386/SRPMS.os
+EXTRACT_SUFX=	-2.src.rpm
 
 MAINTAINER=	markp@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
@@ -19,6 +18,7 @@ COMMENT=	A utility for removing files based on when they were last accessed
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 USE_GETOPT_LONG=yes
+USE_REINPLACE=	yes
 
 CPIO?=		/usr/bin/cpio
 CFLAGS+=	${CPPFLAGS} -DVERSION=\"${PORTVERSION}\"
@@ -31,6 +31,9 @@ do-extract:
 		${CPIO} -iud
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${WRKDIR}/${DISTNAME}.tar.gz ${EXTRACT_AFTER_ARGS}
+
+post-patch:
+	${REINPLACE_CMD} -E "s/^#include.+mntent.h.+//g" ${WRKSRC}/tmpwatch.c
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${LDFLAGS} -o tmpwatch tmpwatch.c
