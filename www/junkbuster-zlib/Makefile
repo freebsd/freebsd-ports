@@ -26,7 +26,7 @@ post-patch:
 	@${PERL} -pi -e 's:\r::' ${WRKSRC}/*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/bin/junkbuster
+	${INSTALL_PROGRAM} ${WRKSRC}/junkbuster ${PREFIX}/sbin/junkbuster
 	${MKDIR} -m 755 ${PREFIX}/etc/junkbuster
 	${INSTALL_DATA} ${WRKSRC}/junkbstr.ini ${PREFIX}/etc/junkbuster/configfile.sample
 	${INSTALL_DATA} ${WRKSRC}/sblock.ini ${PREFIX}/etc/junkbuster/blockfile.sample
