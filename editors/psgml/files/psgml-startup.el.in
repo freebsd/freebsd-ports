@@ -13,8 +13,10 @@
 (autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
 
 (setq auto-mode-alist
-      (append (list '("\\.s?html?\\'" . sgml-mode))
-	auto-mode-alist))
+      (append '(
+                ("\\.s?html?\\'" . sgml-mode)
+                ("\\.xml\\'"     . xml-mode)
+                ) auto-mode-alist))
 
 (setq sgml-custom-dtd
   '(("HTML" "<!DOCTYPE HTML PUBLIC \"-//IETF//DTD HTML//EN\">")
