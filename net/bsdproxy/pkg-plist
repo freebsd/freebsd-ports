@@ -1,0 +1,3 @@
+bin/bsdproxy
+%%PORTDOCS%%share/doc/bsdproxy/README
+%%PORTDOCS%%@dirrm share/doc/bsdproxy
