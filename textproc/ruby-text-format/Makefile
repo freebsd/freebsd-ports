@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	text-format
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 do-install:
-	cd ${WRKSRC}; ${RUBY} install.rb
+	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${CP} -R ${WRKSRC}/Changelog ${WRKSRC}/doc/* ${RUBY_MODDOCDIR}/
