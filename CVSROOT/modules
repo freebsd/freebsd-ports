@@ -2734,6 +2734,7 @@ ja-onew-canna+wnn7	ports/japanese/onew-canna+wnn7
 ja-onew-freewnn	ports/japanese/onew-freewnn
 ja-onew-wnn6	ports/japanese/onew-wnn6
 ja-onew-wnn7	ports/japanese/onew-wnn7
+ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
 ja-p5-Jcode	ports/japanese/p5-Jcode
 ja-p5-Text-ChaSen	ports/japanese/p5-Text-ChaSen
 ja-p5-Text-Kakasi	ports/japanese/p5-Text-Kakasi
@@ -4683,7 +4684,6 @@ p5-Data-TemporaryBag	ports/devel/p5-Data-TemporaryBag
 p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
 p5-Date-Handler	ports/math/p5-Date-Handler
-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
 p5-Date-Leapyear	ports/devel/p5-Date-Leapyear
 p5-Date-Manip	ports/devel/p5-Date-Manip
 p5-Date-Pcalc	ports/devel/p5-Date-Pcalc
