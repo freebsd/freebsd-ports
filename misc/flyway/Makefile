@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.bellz.org/flyway/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VFR/IFR Route Planner for Pilots
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.py:${PORTSDIR}/x11-toolkits/py-qt
+RUN_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
