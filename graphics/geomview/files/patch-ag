@@ -1,6 +1,15 @@
---- makefiles/Makerules.allsrc.orig	Tue Jan 18 16:04:06 2000
-+++ makefiles/Makerules.allsrc	Tue Jan 18 16:04:30 2000
-@@ -65,18 +65,18 @@
+--- makefiles/Makerules.allsrc.orig	Fri Nov  1 11:44:17 1996
++++ makefiles/Makerules.allsrc	Tue Aug 15 03:20:24 2000
+@@ -10,7 +10,7 @@
+           for h in $$incs ; do \
+ 	    cmp -s $$h ${GEOM}/include/$$h || i="$$i $$h" ; \
+ 	  done; \
+-	  test -n "$$i" && ${INSTALL} -O -v -m 664 -F ${GEOM}/include $$i || :)
++	  test -n "$$i" && ${INSTALL} -O -v -m 644 -F ${GEOM}/include $$i || :)
+ 	@for d in ${DIRS_THIS_MACH_NO_OBJ}; do (${CDd}; ${MAKE} SITE=${SITE} $@); done
+ 
+ 
+@@ -65,34 +65,34 @@
  # Copy ${MANDIR} to a shell variable in case it includes trailing blanks.
  	
  formatman:
@@ -31,3 +40,22 @@
  
  installman:
  	@mans="${MANS}"; mandir=${MANDIR}; \
+ 	for f in $$mans ; do \
+   	  mdir=$$mandir/man`expr "$$f" : ".*\(.\)"` ; \
+-	  ${INSTALL} -O -v -m 664 -F $$mdir $$f || : ; \
++	  ${INSTALL} -O -v -m 644 -F $$mdir $$f || : ; \
+ 	done;
+ 
+ installmma:	${MMAPKGS}
+ 	@if [ "${MMAPKGS}" ] ; then \
+-	  ${INSTALL} -m 664 -O -v -F ${MMAPACKAGEDIR} ${MMAPKGS} \
++	  ${INSTALL} -m 644 -O -v -F ${MMAPACKAGEDIR} ${MMAPKGS} \
+ 	; fi	
+ 
+ installdoc:	${DOCS}
+ 	@if [ "${DOCS}" ] ; then \
+-	  ${INSTALL} -m 664 -O -v -F ${GEOM}/doc ${DOCS} \
++	  ${INSTALL} -m 644 -O -v -F ${GEOM}/doc ${DOCS} \
+ 	; fi
+ 
+ include ${MKFILEDIR}/Makerules.clean

@@ -79,6 +79,7 @@ post-install:
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/share/geomview
 	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/geomview/${i}
 .endfor
+	${CHMOD} -R g-w ${WRKSRC}/modules
 .for i in ${SHARE_MODS}
 	${RM} -rf ${PREFIX}/share/geomview/modules/${i}
 	${MKDIR} ${PREFIX}/share/geomview/modules/${i}
