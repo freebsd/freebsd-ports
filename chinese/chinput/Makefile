@@ -6,7 +6,6 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX=	zh-
 PORTNAME=	chinput
 PORTVERSION=	2.1
 CATEGORIES=	chinese x11
