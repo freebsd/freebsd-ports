@@ -19,19 +19,13 @@ LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_REINPLACE=	yes
 PLIST_FILES=	bin/lsdvd
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_DVD_DEVICE)
-DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
-.else
 .if ${OSVERSION} < 500000
-DEFAULT_DVD_DEVICE=/dev/acd0c
+WITH_DVD_DEVICE?=/dev/acd0c
 .else
-DEFAULT_DVD_DEVICE=/dev/acd0
-.endif
+WITH_DVD_DEVICE?=/dev/acd0
 .endif
 
 pre-everything::
@@ -42,7 +36,7 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
+	@${REINPLACE_CMD} -e 's|/dev/dvd|${WITH_DVD_DEVICE}|' \
 		${WRKSRC}/lsdvd.c
 
 do-build:
