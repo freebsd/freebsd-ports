@@ -1,0 +1,11 @@
+--- xinetd/Makefile.in.orig	Sun Jun  8 00:47:24 2003
++++ xinetd/Makefile.in	Sat Sep 27 21:24:00 2003
+@@ -40,7 +40,7 @@
+ 
+ INSTALL_CMD = @INSTALL@
+ 
+-LIBS        = -lsio -lmisc -lxlog -lstr -lpset -lportable @LIBS@
++LIBS        = -lsio -lmisc -lxlog -lpset -lportable -lstr @LIBS@
+ 
+ INCLUDEDIR  = -I../libs/include
+ LIBDIR      = -L../libs/lib
