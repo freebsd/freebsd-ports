@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.05
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
@@ -481,6 +481,7 @@ pre-install:
 	${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
