@@ -2555,6 +2555,7 @@ gts		ports/graphics/gts
 gturing		ports/games/gturing
 gtypist		ports/games/gtypist
 guavac		ports/java/guavac
+gubby		ports/mail/gubby
 guile		ports/lang/guile
 guile-gnome	ports/x11-toolkits/guile-gnome
 guile-gtk	ports/x11-toolkits/guile-gtk
