@@ -1,6 +1,6 @@
---- scripts/Makefile.frag.orig	Tue Nov 23 14:06:16 2004
-+++ scripts/Makefile.frag	Tue Jan 25 08:19:07 2005
-@@ -26,18 +26,12 @@
+--- scripts/Makefile.frag.orig	Mon Feb 28 06:28:25 2005
++++ scripts/Makefile.frag	Fri Apr  1 15:42:21 2005
+@@ -34,21 +34,12 @@
  	/ \
  	Zend/ \
  	TSRM/ \
@@ -12,9 +12,12 @@
  	ext/libxml/ \
  	ext/standard/ \
 -	ext/session/ \
+-	ext/dom/xml_common.h \
 -	ext/xml/ \
 -	ext/xml/expat/ \
 -	ext/mbstring/ \
+-	ext/mbstring/libmbfl/ \
+-    ext/mbstring/libmbfl/mbfl/ \
 -	ext/sqlite/libsqlite/src/sqlite.h
 +	ext/spl/
  

@@ -1,21 +1,15 @@
---- scripts/phpize.in.orig	Mon Aug 23 14:25:48 2004
-+++ scripts/phpize.in	Mon Aug 23 14:26:41 2004
-@@ -101,14 +101,14 @@
+--- scripts/phpize.in.orig	Fri Apr  1 15:42:47 2005
++++ scripts/phpize.in	Fri Apr  1 15:43:04 2005
+@@ -102,9 +102,9 @@
  
  phpize_autotools()
  {
 -  aclocal    || exit 1
 -  autoconf   || exit 1
 -  autoheader || exit 1
-+  aclocal15     || exit 1
++  aclocal15    || exit 1
 +  autoconf253   || exit 1
 +  autoheader253 || exit 1
  }
  
- phpize_libtoolize()
- {
--  libtoolize=`$builddir/build/shtool path glibtoolize libtoolize`
-+  libtoolize=`$builddir/build/shtool path libtoolize13`
-   $libtoolize -f -c || exit 1
- }
- 
+ # Main script

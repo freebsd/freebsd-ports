@@ -4,7 +4,7 @@
  # -*- makefile -*-
  
  peardir=$(PEAR_INSTALLDIR)
-+XML_RPC_ver=1.1.0
++XML_RPC_ver=1.2.2
  
  # Skip all php.ini files altogether
  PEAR_INSTALL_FLAGS = -n -dshort_open_tag=0 -dsafe_mode=0

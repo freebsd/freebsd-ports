@@ -12,8 +12,6 @@ CATEGORIES=	devel www pear
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR command-line option parser
 
-BROKEN=		Incomplete pkg-plist
-
 WANT_PHP_PEAR=	yes
 USE_PHP=	yes
 
