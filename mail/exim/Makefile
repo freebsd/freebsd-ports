@@ -7,20 +7,18 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	2
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_EXIM} \
-		http://duncanthrax.net/%SUBDIR%/:exiscan_acl
-MASTER_SITE_SUBDIR=	exim4 exiscan-acl/:exiscan_acl
+MASTER_SITES=	${MASTER_SITE_EXIM}
+MASTER_SITE_SUBDIR=	exim4
 DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
 		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
-.if !defined(WITHOUT_EXISCAN)
-DISTFILES+=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2:exiscan_acl
-.endif
 DIST_SUBDIR=	exim
 
-EXTRACT_ONLY=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
-		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
+.if !defined(WITHOUT_EXISCAN)
+PATCH_SITES=	http://duncanthrax.net/%SUBDIR%/
+PATCH_SITE_SUBDIR=	exiscan-acl
+PATCHFILES=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2
+.endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
@@ -30,16 +28,19 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN8=		exim.8
+INFO=		exim exim_filter
 
-EXIM_VERSION=		4.21
+EXIM_VERSION=		4.22
 EXIM_DOCVERSION=	4.20
 EXISCAN_ACL_VERSION=	${EXIM_VERSION}-10
 
-PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
+PLIST_SUB+=	EXIM_VERSION="${EXIM_VERSION}"
 
 .if defined(NOPORTDOCS)
 PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 .endif
+
+PATCH_DIST_STRIP=	-p1
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
 
@@ -137,9 +138,9 @@ PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
 		spec.txt
 .if !defined(WITHOUT_EXISCAN)
 PORTDOC_FILES+=	exiscan-acl-examples.txt exiscan-acl-spec.txt
-PLIST_SUB+=             EXISCAN_ACL=""
+PLIST_SUB+=	EXISCAN_ACL=""
 .else
-PLIST_SUB+=             EXISCAN_ACL="@comment "
+PLIST_SUB+=	EXISCAN_ACL="@comment "
 .endif
 
 .if ${OSVERSION} < 400014
@@ -320,8 +321,6 @@ pre-everything::
 
 post-patch:
 .if !defined(WITHOUT_EXISCAN)
-	${BZCAT} ${DISTDIR}/${DIST_SUBDIR}/exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2 \
-	    | ${PATCH} -d ${WRKSRC} -p1 > ${WRKDIR}/patch-exiscan-acl.log 2>&1
 	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
 	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
 .else
@@ -342,13 +341,13 @@ pre-install:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/exim
-	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
 .for file in ${PORTDOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .for file in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MAN8PREFIX}/man/man8
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
