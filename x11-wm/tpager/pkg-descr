@@ -1,0 +1,16 @@
+tpager or Tiny Pager is a very lightweight aplication designed to be fast
+and small. It shows your workspaces and allows you to change between them.
+
+There are numerous arguments that you can use to change the pager's layout.
+
+The program is developed using C and Xlib so there is no big dependencies
+needed.
+
+This pager is in compliance with EWMH, so it is supported on Gnome, Kde,
+Xfce4, Rox, Openbox and every other window manager or desktop system that
+support these standarts.
+
+WWW: http://s1x.homelinux.net/tpager.php
+
+- Florent Thoumie
+flz@xbsd.org

@@ -1,0 +1,13 @@
+--- tpager.c.orig	Thu May  8 13:08:39 2003
++++ tpager.c	Sat Feb 14 15:06:31 2004
+@@ -206,9 +206,9 @@
+ 
+ int main (int argc, char *argv[]) {
+ 	int i, x, y, w, h, horz, b, n, s, set;
+-	x = y = w = h = horz = b = n = s = set = -1;
+ 	char *temp;
+ 	XEvent event;
++	x = y = w = h = horz = b = n = s = set = -1;
+ 	for (i = 1; i < argc; i++) {
+ 		if (strcmp(argv[i],"-x") == 0) {
+ 			if ( i + 1 >= argc ) {
