@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Net-DNS
-# Version required:			0.11
+# Version required:			0.12
 # Date created:				April 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.7 1997/06/24 18:43:27 jfitz Exp $
+#   $Id: Makefile,v 1.8 1997/07/07 13:04:38 jfitz Exp $
 #
 
-DISTNAME=	Net-DNS-0.11
-PKGNAME=	p5-Net-DNS-0.11
+DISTNAME=	Net-DNS-0.12
+PKGNAME=	p5-Net-DNS-0.12
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
