@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical toolkit for TCL
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TCL84_PORT}:build
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TCL84_PORT}:extract
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/${TCL84_PORT}
 
 LATEST_LINK=	tk84
@@ -37,6 +37,11 @@ NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 TCL84_PORT?=	lang/tcl84
 USE_REINPLACE=	YES
 MANCOMPRESSED=	no
+
+.ifdef (WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+PKGNAMESUFFIX?=         -threads
+.endif
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
@@ -340,6 +345,13 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	text.n tk_textPaste.n
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_THREADS)
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/configure
+
+.endif
 
 pre-extract:
 	@if test -e "${NONEXISTENT}"; then echo "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
