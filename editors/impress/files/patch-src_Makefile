@@ -1,0 +1,98 @@
+--- src/Makefile.orig	Fri Jun 29 10:26:19 2001
++++ src/Makefile	Fri Jun 29 10:27:01 2001
+@@ -1,94 +1,8 @@
+-cmp=/usr/bin/cmp
+-cp=/bin/cp
+-mv=/bin/mv
+-ln=/bin/ln
+-
+-all: impress transeps
++all: impress
+ 
+ impress:	impress.tcl
+ 	cat impress.tcl >impress
+ 	chmod a+x impress
+-
+-../pstoedit/src/drvbase.h.orig:
+-	@-${mv} ../pstoedit/src/drvbase.h ../pstoedit/src/drvbase.h.orig
+-
+-../pstoedit/src/drvtk.cpp.orig:
+-	@-${mv} ../pstoedit/src/drvtk.cpp ../pstoedit/src/drvtk.cpp.orig
+-
+-../pstoedit/src/drvtk.h.orig:
+-	@-${mv} ../pstoedit/src/drvtk.h ../pstoedit/src/drvtk.h.orig
+-
+-installdrvtk:	../pstoedit/src/drvtk.cpp.orig ../pstoedit/src/drvtk.h.orig
+-	@-${cmp} drvtk.cpp ../pstoedit/src/drvtk.cpp 2>/dev/null || \
+-		echo "Updating drvtk.cpp" >&2 && ${cp} drvtk.cpp ../pstoedit/src
+-	@-${cmp} drvtk.h ../pstoedit/src/drvtk.h 2>/dev/null || \
+-		echo "Updating drvtk.h" >&2 && ${cp} drvtk.h ../pstoedit/src
+-	@-${cmp} drvbase.h ../pstoedit/src/drvbase.h 2>/dev/null || \
+-		echo "Updating drvbase.h" >&2 && ${cp} drvbase.h ../pstoedit/src
+-
+-install: impress impress.tcl transeps COPYING CHANGES OPTIONS README tkFont-patch.diff tkUnixWm-patch.diff installdrvtk
+-	@-mkdir ../bin
+-	@-${cmp} impress ../bin/impress 2>/dev/null || \
+-		echo "Updating impress" >&2 && ${cp} impress ../bin
+-	@-${cmp} transeps ../bin/transeps 2>/dev/null || \
+-		echo "Updating transeps" >&2 && ${cp} transeps ../bin
+-	@-${cmp} COPYING ../COPYING 2>/dev/null || \
+-		echo "Updating COPYING" >&2 && ${cp} COPYING ..
+-	@-${cmp} README ../README 2>/dev/null || \
+-		echo "Updating README" >&2 && ${cp} README ..
+-	@-${cmp} CHANGES ../CHANGES 2>/dev/null || \
+-		echo "Updating CHANGES" >&2 && ${cp} CHANGES ..
+-	@-${cmp} OPTIONS ../OPTIONS 2>/dev/null || \
+-		echo "Updating OPTIONS" >&2 && ${cp} OPTIONS ..
+-	@-${cmp} tkFont-patch.diff ../tkFont-patch.diff 2>/dev/null || \
+-		echo "Updating tkFont-patch.diff" >&2 && ${cp} tkFont-patch.diff ..
+-	@-${cmp} tkUnixWm-patch.diff ../tkUnixWm-patch.diff 2>/dev/null || \
+-		echo "Updating tkUnixWm-patch.diff" >&2 && ${cp} tkUnixWm-patch.diff ..
+-	@-mkdir ../doc
+-	@-${cmp} doc/arrows.jpg ../doc/arrows.jpg 2>/dev/null || \
+-		echo "Updating arrows.jpg" >&2 && ${cp} doc/arrows.jpg ../doc
+-	@-${cmp} doc/custcolor.jpg ../doc/custcolor.jpg 2>/dev/null || \
+-		echo "Updating custcolor.jpg" >&2 && ${cp} doc/custcolor.jpg ../doc
+-	@-${cmp} doc/file.jpg ../doc/file.jpg 2>/dev/null || \
+-		echo "Updating file.jpg" >&2 && ${cp} doc/file.jpg ../doc
+-	@-${cmp} doc/fonts.jpg ../doc/fonts.jpg 2>/dev/null || \
+-		echo "Updating fonts.jpg" >&2 && ${cp} doc/fonts.jpg ../doc
+-	@-${cmp} doc/grid.jpg ../doc/grid.jpg 2>/dev/null || \
+-		echo "Updating grid.jpg" >&2 && ${cp} doc/grid.jpg ../doc
+-	@-${cmp} doc/impdoc.html ../doc/impdoc.html 2>/dev/null || \
+-		echo "Updating impdoc.html" >&2 && ${cp} doc/impdoc.html ../doc
+-	@-${cmp} doc/implogo.gif ../doc/implogo.gif 2>/dev/null || \
+-		echo "Updating implogo.gif" >&2 && ${cp} doc/implogo.gif ../doc
+-	@-${cmp} doc/impressbuttons.jpg ../doc/impressbuttons.jpg 2>/dev/null || \
+-		echo "Updating impressbuttons.jpg" >&2 && ${cp} doc/impressbuttons.jpg ../doc
+-	@-${cmp} doc/impressmain2.jpg ../doc/impressmain2.jpg 2>/dev/null || \
+-		echo "Updating impressmain2.jpg" >&2 && ${cp} doc/impressmain2.jpg ../doc
+-	@-${cmp} doc/lgtoolbar.jpg ../doc/lgtoolbar.jpg 2>/dev/null || \
+-		echo "Updating lgtoolbar.jpg" >&2 && ${cp} doc/lgtoolbar.jpg ../doc
+-	@-${cmp} doc/openurldialog.jpg ../doc/openurldialog.jpg 2>/dev/null || \
+-		echo "Updating openurldialog.jpg" >&2 && ${cp} doc/openurldialog.jpg ../doc
+-	@-${cmp} doc/page.jpg ../doc/page.jpg 2>/dev/null || \
+-		echo "Updating page.jpg" >&2 && ${cp} doc/page.jpg ../doc
+-	@-${cmp} doc/palette.jpg ../doc/palette.jpg 2>/dev/null || \
+-		echo "Updating palette.jpg" >&2 && ${cp} doc/palette.jpg ../doc
+-	@-${cmp} doc/print.jpg ../doc/print.jpg 2>/dev/null || \
+-		echo "Updating print.jpg" >&2 && ${cp} doc/print.jpg ../doc
+-	@-${cmp} doc/props.jpg ../doc/props.jpg 2>/dev/null || \
+-		echo "Updating props.jpg" >&2 && ${cp} doc/props.jpg ../doc
+-	@-${cmp} doc/pstoedit.jpg ../doc/pstoedit.jpg 2>/dev/null || \
+-		echo "Updating pstoedit.jpg" >&2 && ${cp} doc/pstoedit.jpg ../doc
+-	@-${cmp} doc/selection.jpg ../doc/selection.jpg 2>/dev/null || \
+-		echo "Updating selection.jpg" >&2 && ${cp} doc/selection.jpg ../doc
+-	@-${cmp} doc/slide.jpg ../doc/slide.jpg 2>/dev/null || \
+-		echo "Updating slide.jpg" >&2 && ${cp} doc/slide.jpg ../doc
+-	@-${cmp} doc/tclet.jpg ../doc/tclet.jpg 2>/dev/null || \
+-		echo "Updating tclet.jpg" >&2 && ${cp} doc/tclet.jpg ../doc
+-	@-${cmp} doc/toolbarpref.jpg ../doc/toolbarpref.jpg 2>/dev/null || \
+-		echo "Updating toolbarpref.jpg" >&2 && ${cp} doc/toolbarpref.jpg ../doc
+-	@-${cmp} doc/urldialog.jpg ../doc/urldialog.jpg 2>/dev/null || \
+-		echo "Updating urldialog.jpg" >&2 && ${cp} doc/urldialog.jpg ../doc
+-	@-${cmp} doc/miniview.jpg ../doc/miniview.jpg 2>/dev/null || \
+-		echo "Updating miniview.jpg" >&2 && ${cp} doc/miniview.jpg ../doc
+ 
+ clean:
+ 	rm -f impress transeps

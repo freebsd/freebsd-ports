@@ -1,0 +1,43 @@
+--- Makefile.orig	Fri Jun 29 10:22:48 2001
++++ Makefile	Fri Jun 29 10:25:52 2001
+@@ -1,33 +1,11 @@
+-cmp=/usr/bin/cmp
+-cp=/bin/cp
+-mv=/bin/mv
+-strip=/usr/bin/strip
+-ln=/bin/ln
+-PREFIX=/usr
++PREFIX?=/usr/local
+ 
+-all:	make_impress make_font3d make_pstoedit
++all:	make_impress
+ 
+-make_font3d:
+-	(cd font3d;make LDFLAGS=-static)
+-	@-${strip} font3d/font3d 
+-	@-${cmp} font3d/font3d bin/font3d 2>/dev/null || \
+-		${cp} font3d/font3d bin/font3d
+-
+-make_pstoedit:
+-	(cd pstoedit/config;./configure)
+-	(cd pstoedit/src;make LINK="c++ -static")
+-	@-${strip} pstoedit/src/pstoedit
+-	@-${cmp} pstoedit/src/pstoedit bin/pstoedit 2>/dev/null || \
+-		${cp} pstoedit/src/pstoedit bin/pstoedit
+-	
+ make_impress:
+-	(cd src;make all install)
+-
+-$(PREFIX)/bin/pstoedit.orig:
+-	@-mv $(PREFIX)/bin/pstoedit $(PREFIX)/bin/pstoedit.orig
++	(cd src;make all)
+ 
+-install: $(PREFIX)/bin/pstoedit.orig
+-	install -c bin/impress $(PREFIX)/bin && rm -f $(PREFIX)/bin/impress.tcl && ${ln} -s $(PREFIX)/bin/impress $(PREFIX)/bin/impress.tcl
+-	install -c bin/transeps $(PREFIX)/bin
+-	install -c bin/font3d $(PREFIX)/bin
+-	install -c bin/pstoedit $(PREFIX)/bin
++install: 
++	install -c -m 755 src/impress $(PREFIX)/bin
++	@mkdir $(PREFIX)/share/doc/impress
++	@cp src/doc/*  $(PREFIX)/share/doc/impress

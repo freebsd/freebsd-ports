@@ -1,0 +1,26 @@
+bin/impress
+share/doc/impress/add.txt
+share/doc/impress/arrows.jpg
+share/doc/impress/custcolor.jpg
+share/doc/impress/file.jpg
+share/doc/impress/fonts.jpg
+share/doc/impress/grid.jpg
+share/doc/impress/impdoc.html
+share/doc/impress/implogo.gif
+share/doc/impress/impressbuttons.jpg
+share/doc/impress/impressmain2.jpg
+share/doc/impress/keys.jpg
+share/doc/impress/lgtoolbar.jpg
+share/doc/impress/miniview.jpg
+share/doc/impress/openurldialog.jpg
+share/doc/impress/page.jpg
+share/doc/impress/palette.jpg
+share/doc/impress/print.jpg
+share/doc/impress/props.jpg
+share/doc/impress/pstoedit.jpg
+share/doc/impress/selection.jpg
+share/doc/impress/slide.jpg
+share/doc/impress/tclet.jpg
+share/doc/impress/toolbarpref.jpg
+share/doc/impress/urldialog.jpg
+@dirrm share/doc/impress
