@@ -3,13 +3,14 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.38 1999/04/10 19:57:58 andreas Exp $
+# $Id: Makefile,v 1.39 1999/07/25 10:20:18 andreas Exp $
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-07-24_03-02
 PKGNAME=	inn-stable-v22
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
+MASTER_SITES=	http://www.FreeBSD.org/~andreas/download/ \
+		ftp://ftp.isc.org/isc/inn/snapshots/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
