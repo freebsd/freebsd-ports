@@ -7,7 +7,7 @@
 
 PORTNAME=	py-gnome
 PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python/1.4
@@ -23,8 +23,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygtk.pth:${PORTSDIR}/x11-toolkits/py-gtk
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
-GNOME_DESKTOP_VERSION=1
-USE_GNOME=	gtkhtml libpanel
+USE_GNOME=	gtkhtml gnometarget
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure pygtk/configure
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD}				\
