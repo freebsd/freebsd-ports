@@ -1,13 +1,14 @@
 # ex:ts=8
 # Ports collection makefile for:  mutt development
-# Date created:			  Fri June 8, 2001
-# Whom:				  David W. Chapman Jr. (dwcjr@inethouston.net)
+# Date created:			  
+# Whom:				  
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.19
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel \
 		ftp://ftp.parodius.com/pub/mutt/devel/
