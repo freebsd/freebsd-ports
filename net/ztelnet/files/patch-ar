@@ -1,0 +1,61 @@
+diff -uNr ../ztelnet/zmodem/rbsb.c ./zmodem/rbsb.c
+--- ../ztelnet/zmodem/rbsb.c	Mon Apr 24 14:09:14 1995
++++ ./zmodem/rbsb.c	Wed Dec  3 04:44:14 1997
+@@ -6,7 +6,7 @@
+  */
+ 
+ STATIC char *Copyr = "Copyright 1993 Omen Technology Inc All Rights Reserved";
+-
++#define V7
+ #ifdef V7
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -28,8 +28,6 @@
+ #define OS "SYS III/V"
+ #define MODE2OK
+ #include <string.h>
+-#include <stdlib.h>
+-#include <unistd.h>
+ #endif
+ 
+ #ifdef POSIX
+@@ -41,8 +39,6 @@
+ #include <termios.h>
+ #define OS "POSIX"
+ #include <string.h>
+-#include <stdlib.h>
+-#include <unistd.h>
+ #ifndef READCHECK
+ #ifndef FIONREAD
+ #define SV
+@@ -70,6 +66,10 @@
+ #define sendline(c) net_putchar(c & 0377)
+ #define xsendline(c) net_putchar(c)
+ 
++/*----Appended by yongari to shut up compiler---*/
++STATIC zmputs();
++/*----------------------------------------------*/
++
+ STATIC char linbuf[HOWMANY];
+ STATIC int Lleft=0;		/* number of characters in linbuf */
+ STATIC jmp_buf tohere;		/* For the interrupt on RX timeout */
+@@ -84,8 +84,6 @@
+ 
+ STATIC int Twostop;		/* Use two stop bits */
+ 
+-/*PMS*/
+-STATIC zmputs(char *s);
+ 
+ /*
+  *  The following uses an external rdchk() routine if available,
+@@ -292,10 +290,8 @@
+ STATIC init_rbsb()
+ {
+    int i;
+-#ifdef LLITOUT
+    Locmode = 0;
+    Locbit = LLITOUT;
+-#endif
+    Lleft = 0;
+ #ifdef ONEREAD
+    Readnum = 1;	

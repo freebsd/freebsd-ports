@@ -1,0 +1,64 @@
+diff -uNr ../ztelnet/zmodem/rz.c ./zmodem/rz.c
+--- ../ztelnet/zmodem/rz.c	Mon Apr 24 14:28:22 1995
++++ ./zmodem/rz.c	Wed Dec  3 04:07:46 1997
+@@ -1,5 +1,8 @@
+-#define STATIC  static 
+-
++/*------Appended by yongari------*/
++#define V7
++#define NFGVMIN
++/*-------------------------------*/
++#define STATIC  static
+ #define VERSION "3.25 2-11-95"
+ #define PUBDIR "/usr/spool/uucppublic"
+ 
+@@ -82,6 +85,27 @@
+ #include <errno.h>
+ extern int errno;
+ 
++/*-----Appended by yongari to shut up compiler------*/
++STATIC usage();
++STATIC wcreceive();
++STATIC wcrxpn();
++STATIC wcrx();
++STATIC wcgetsec();
++STATIC procheader();
++STATIC openit();
++STATIC make_dirs();
++STATIC putsec();
++STATIC chkinvok();
++STATIC checkpath();
++STATIC tryz();
++STATIC rzfiles();
++STATIC rzfile();
++STATIC closeit();
++STATIC sys2();
++STATIC exec2();
++STATIC init_rz();
++/*--------------------------------------------------*/
++
+ #define OK 0
+ #define FALSE 0
+ #define TRUE 1
+@@ -195,10 +219,8 @@
+ 
+ #include "zm.c"
+ #include "zmr.c"
+-STATIC int tryzhdrtype=ZRINIT;	/* Header type to send corresponding to Last rx close */
+ 
+-/* PMS */
+-#include "rz.h"
++STATIC int tryzhdrtype=ZRINIT;	/* Header type to send corresponding to Last rx close */
+ 
+ /* called by signal interrupt or terminate to clean things up */
+ STATIC void
+@@ -339,8 +361,7 @@
+ 	fprintf(stderr,"Copyright 1993 Omen Technology INC All Rights Reserved\n");
+ 	fprintf(stderr,
+ 	"See rz.doc for option descriptions and licensing information.\n\n");
+-	fprintf(stderr,"Ported into telnet by Heo, Junhyeok, 1994.3.28\n");
+-	fprintf(stderr,"Linux porting by Park Myeong Seok,   1995.4.23\n");
++	fprintf(stderr,"Ported into telnet by Heo, Junhyeok 1994.3.28\n");
+ 	Exit(2);
+ }
+ 

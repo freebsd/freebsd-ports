@@ -1,0 +1,19 @@
+diff -uNr ../ztelnet/telnet/main.c ./telnet/main.c
+--- ../ztelnet/telnet/main.c	Tue Sep 19 20:54:56 1995
++++ ./telnet/main.c	Mon Mar 25 22:14:24 1991
+@@ -132,7 +132,6 @@
+ 		case 'S':
+ 		    {
+ #ifdef	HAS_GETTOS
+-#ifndef BYPMS
+ 			extern int tos;
+ 
+ 			if ((tos = parsetos(optarg, "tcp")) < 0)
+@@ -140,7 +139,6 @@
+ 					prompt, ": Bad TOS argument '",
+ 					optarg,
+ 					"; will try to use default TOS");
+-#endif /* PMS */
+ #else
+ 			fprintf(stderr,
+ 			   "%s: Warning: -S ignored, no parsetos() support.\n",
