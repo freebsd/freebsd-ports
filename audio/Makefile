@@ -109,6 +109,7 @@
     SUBDIR += mp3chew
     SUBDIR += mp3encode
     SUBDIR += mp3info
+    SUBDIR += mp3mover
     SUBDIR += mp3rename
     SUBDIR += mpegaudio
     SUBDIR += mpg123

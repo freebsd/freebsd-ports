@@ -1,0 +1,3 @@
+bin/mp3mover
+share/mp3mover/sample-.mp3moverrc
+@dirrm share/mp3mover
