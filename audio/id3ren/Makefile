@@ -6,21 +6,31 @@
 #
 
 PORTNAME=	id3ren
-PORTVERSION=	0.97a
+PORTVERSION=	1.1b0
 CATEGORIES=	audio
 MASTER_SITES=	http://cbothamy.free.fr/projects/id3ren/
-DISTNAME=	id3ren97a
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jonny@jonny.eng.br
+MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Mpeg Audio Layer 3 util: rename files, edit tags, search, etc
 
 PLIST_FILES=	bin/id3ren
-USE_ZIP=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/id3ren/src
+MAN1=		id3ren.1
+MANCOMPRESSED=	yes
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/id3ren.c ${WRKSRC}/misc.c
+		${WRKSRC}/src/id3ren.c ${WRKSRC}/src/id3misc.c
+	${RM} ${WRKSRC}/src/id3ren
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	AUTHORS ChangeLog FEATURES FEEDBACK INSTALL PORTS \
+		README THANKS TODO USAGE
+
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
