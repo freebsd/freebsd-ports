@@ -734,6 +734,7 @@
     SUBDIR += perltidy
     SUBDIR += pharmacy
     SUBDIR += php-dbg
+    SUBDIR += php-xdebug
     SUBDIR += picasm
     SUBDIR += picp
     SUBDIR += picprog

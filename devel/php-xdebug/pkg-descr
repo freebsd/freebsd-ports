@@ -1,0 +1,5 @@
+The Xdebug extension helps you debugging your script by providing a lot of
+valuable debug information. Xdebug can be used from inside a script or by
+a remote debugger.
+
+WWW: http://xdebug.derickrethans.nl/

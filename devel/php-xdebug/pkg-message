@@ -1,0 +1,22 @@
+*****************************************************************************
+The php debugger 'xdebug' has been installed successful.
+Add a line containing
+
+	extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/xdebug.so
+
+or
+
+	zend_extension=%%PREFIX%%/lib/php/%%PHP_EXT_DIR%%/xdebug.so
+
+to your php.ini to load it. xdebug is not compatible with the extension
+'Zend Optimizer' - you're only able to use one of them. So take care having
+at least the lesser required extension disabled by commenting out it's
+loader line in your php.ini.
+
+Add following section to enable/disable whatever you need from xdebug:
+
+	xdebug.auto_profile [1|On | 0|Off]
+	xdebug.auto_profile_mode [profile mode, integer]
+	xdebug.output_dir [string]
+
+*****************************************************************************
