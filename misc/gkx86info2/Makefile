@@ -1,46 +1,42 @@
-# New ports collection makefile for:	gkx86info
-# Date created:		Thu Aug  8 01:49:15 UTC 2002
-# Whom:			Mario Sergio Fujikawa Ferreira <lioux@FreeBSD.org>
+# New ports collection makefile for:	gkx86info2
+# Date created:		Tue Apr 27 14:15:53 CEST 2004
+# Whom:			Tobias Roth <ports@fsck.ch>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gkx86info
+PORTNAME=	gkx86info2
 PORTVERSION=	0.0.2
-PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://asdfnews.org/yargon/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	http://anchois.free.fr/ \
+		http://depot.fsck.ch/mirror/distfiles/
 
-MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	GKrellM plugin that simply prints the current clock speed
+MAINTAINER=	ports@fsck.ch
+COMMENT=	GKrellM2 plugin that simply prints the current clock speed
 
-BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
-RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
+BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
+RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12 imlib
-USE_SIZE=	yes
+USE_GNOME=	gtk20
 
-DOC_FILES=	COPYING README
+WRKSRC=		${WRKDIR}/gkx86info${PORTVERSION}
 
 do-build:
 	@cd ${WRKSRC} && eval ${CC} ${CFLAGS} -o MHz.o -c MHz.c
-	@cd ${WRKSRC} && eval ${CC} -fPIC ${CFLAGS} \
-		`${GTK_CONFIG} --cflags` \
-		`${IMLIB_CONFIG} --cflags-gdk` -c gkx86info.c
-	@cd ${WRKSRC} && eval ${CC} -shared ${CFLAGS} ${LDFLAGS} \
-		-o ${PORTNAME}.so MHz.o gkx86info.o
+	@cd ${WRKSRC} && eval ${CC} ${CFLAGS} -fPIC \
+		`pkg-config gtk+-2.0 --cflags` -c gkx86info.c
+	@cd ${WRKSRC} && eval ${CC} ${CFLAGS} -shared \
+		 -o ${PORTNAME}.so MHz.o gkx86info.o
 
 do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.so \
+		${PREFIX}/libexec/gkrellm2/plugins/
+
+post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif #NOPORTDOCS
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.so \
-		${PREFIX}/libexec/gkrellm/plugins/
+	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
