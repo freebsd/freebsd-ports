@@ -69,7 +69,7 @@
 # normal user. This isn't usually a problem, as most sites have an alias for
 # root that redirects such mail to a human administrator.
 
-exim_user = bin
+exim_user = XX_BINOWN_XX
 exim_group = mail
 never_users = root
 
@@ -235,7 +235,7 @@ system_aliases:
   driver = aliasfile
   file = /etc/aliases
   search_type = lsearch
-# user = bin
+# user = XX_BINOWN_XX
 
 
 # This director handles forwarding using traditional .forward files.
@@ -250,6 +250,7 @@ userforward:
   driver = forwardfile
   file = .forward
   no_verify
+  no_expn
   check_ancestor
 # filter
 
@@ -306,14 +307,14 @@ end
 
 # This single retry rule applies to all domains and all errors. It specifies
 # retries every 15 minutes for 2 hours, then increasing retry intervals,
-# starting at 2 hours and increasing each time by a factor of 1.5, up to 16
+# starting at 1 hour and increasing each time by a factor of 1.5, up to 16
 # hours, then retries every 8 hours until 4 days have passed since the first
 # failed delivery.
 
 # Domain               Error       Retries
 # ------               -----       -------
 
-*                      *           F,2h,15m; G,16h,2h,1.5; F,4d,8h
+*                      *           F,2h,15m; G,16h,1h,1.5; F,4d,8h
 
 end
 
