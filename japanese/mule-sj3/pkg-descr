@@ -21,5 +21,13 @@ that file!
 
 - Satoshi
 asami@cs.berkeley.edu
-(Ported for SJ3  - Hidekazu Kuroki
-                   hidekazu@ccs.titech.ac.jp)
+
+-------------------------------------------------------------------
+
+I ported mule-2.3 for SJ3.
+And this also include some patches for FreeBSD or bugfix.
+(some emacs-lisp files and src/mcpath.c)
+If there are any problem in this patches, please know me via E-mail.
+
+Hidekazu Kuroki
+(hidekazu@cs.titech.ac.jp)
