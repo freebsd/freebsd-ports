@@ -62,10 +62,16 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/painless-guide-to-crc.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
+.endif
 
 SHLIB_NAME=	libTrf2.so.1
 SHLIB_LINK=	${SHLIB_NAME:C/\.so\..*/.so/}
 
 PLIST_SUB+=	SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK} \
 		TCL_DVER=${TCL_VER:C/\.//}
+
+.include <bsd.port.post.mk>
