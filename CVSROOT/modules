@@ -8383,6 +8383,7 @@ pdbc		ports/palm/pdbc
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
 pdfmap		ports/misc/pdfmap
+pdfmerge	ports/print/pdfmerge
 pdftk		ports/print/pdftk
 pdftohtml	ports/textproc/pdftohtml
 pdksh		ports/shells/pdksh
