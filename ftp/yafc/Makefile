@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	yafc
-PORTVERSION=	0.5.6
+PORTVERSION=	0.6.4
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://mayer.physto.se/pub/yafc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -18,5 +19,10 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
+MAN1=		yafc.1
+
+post-install:
+	@install-info ${PREFIX}/info/yafc.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
