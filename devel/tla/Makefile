@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	tla
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	devel
-MASTER_SITES=	http://regexps.srparish.net/src/${PORTNAME}/ \
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		http://regexps.srparish.net/src/${PORTNAME}/ \
 		http://arch.quackerhead.com/~lord/releases/${PORTNAME}/
+MASTER_SITE_SUBDIR=	gnu-arch
 
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
@@ -43,7 +44,7 @@ post-install:
 	for f in `${FIND} ${ORIGWRKSRC}/docs-tla/html -type f -name '*.html' \
 		-exec ${BASENAME} {} \;`; do \
 		${INSTALL_DATA} ${ORIGWRKSRC}/docs-tla/html/$$f ${DOCSDIR}/; \
-		printf "share/doc/${PORTNAME}/%s\n" $$f >> ${TMPPLIST}; \
+		${PRINTF} "share/doc/${PORTNAME}/%s\n" $$f >> ${TMPPLIST}; \
 	done; \
 	${ECHO} @dirrm share/doc/${PORTNAME} >> ${TMPPLIST}
 .endif
