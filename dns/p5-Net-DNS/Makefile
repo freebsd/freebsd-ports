@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.34
+PORTVERSION=	0.38
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -19,6 +19,7 @@ COMMENT=	Perl5 interface to the DNS resolver, and dymanic updates
 RUN_DEPENDS=	${SITE_PERL}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=--pm
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
