@@ -28,7 +28,7 @@ MAN8=	badblocks.8 debugfs.8 dumpe2fs.8 e2fsck.8 e2image.8 e2label.8 fsck.8 \
 post-patch:
 	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
 		's|LIST_HEAD|LIN_LST_HEAD|g ; \
-		 s|et/com_err.h|com_err.h|g'
+		 s|et/com_err.h|com_err.h|g ; s|<malloc.h>|<stdlib.h>|'
 
 post-install:
 	${MKDIR} ${PREFIX}/include/ext2fs
