@@ -1,0 +1,5 @@
+Py-logging is fairly close implementation in intent and design to the
+description in the PEP 282, borrowing as it did heavily from JSR-47
+(now JDK 1.4's java.util.logging package) and log4j.
+
+WWW: http://www.red-dove.com/python_logging.html
