@@ -1,0 +1,11 @@
+--- include/Makefile.global	Fri Feb 15 11:39:00 2002
++++ include/Makefile.global.new	Fri Feb 15 11:39:00 2002
+@@ -259,7 +259,7 @@
+ TCL76_DIR=tcl7.6
+ ifeq (bsd, $(findstring bsd, $(PLATFORM)))
+   TCL76_LIB=libtcl76.a
+-  TCL8X_LIB=libtcl83g.a
++  TCL8X_LIB=libtcl8.3g.a
+ else
+   TCL76_LIB=libtcl7.6.a
+   TCL8X_LIB=libtcl8.3g.a

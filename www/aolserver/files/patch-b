@@ -1,0 +1,40 @@
+--- nsd/nsmain.c	Tue Apr  3 18:13:15 2001
++++ nsd/nsmain.c.new	Fri Feb 15 12:22:04 2002
+@@ -311,16 +311,10 @@
+     /*
+      * Verify the uid/gid args.
+      */
+-
+-    if (garg != NULL) {
+-	gid = Ns_GetGid(garg);
+-	if (gid < 0) {
+-	    gid = atoi(garg);
+-	    if (gid == 0) {
+-		Ns_Fatal("nsmain: invalid group '%s'", garg);
+-	    }
+-	}
+-    }
++    /* Reversed the order so this will actually work
++     * Jon Griffin <jon@jongriffin.com> 01/27/2001
++     *
++    */
+     if (uarg != NULL) {
+ 	uid = Ns_GetUid(uarg);
+ 	gid = Ns_GetUserGid(uarg);
+@@ -329,6 +323,16 @@
+ 	}
+ 	if (uid == 0) {
+ 	    Ns_Fatal("nsmain: invalid user '%s'", uarg);
++	}
++    }
++
++    if (garg != NULL) {
++	gid = Ns_GetGid(garg);
++	if (gid < 0) {
++	    gid = atoi(garg);
++	    if (gid == 0) {
++		Ns_Fatal("nsmain: invalid group '%s'", garg);
++	    }
+ 	}
+     }
+ 
