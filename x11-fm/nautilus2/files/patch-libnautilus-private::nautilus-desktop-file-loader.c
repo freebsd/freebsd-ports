@@ -1,15 +1,13 @@
 
 $FreeBSD$
 
---- libnautilus-private/nautilus-desktop-file-loader.c.orig	Wed Sep 26 16:37:15 2001
-+++ libnautilus-private/nautilus-desktop-file-loader.c	Tue Oct 30 09:33:26 2001
-@@ -38,8 +38,10 @@
- #include <errno.h>
+--- libnautilus-private/nautilus-desktop-file-loader.c.orig	Wed Sep 26 19:37:15 2001
++++ libnautilus-private/nautilus-desktop-file-loader.c	Fri Mar 29 14:58:54 2002
+@@ -39,7 +39,9 @@
  #include <ctype.h>
  #include <locale.h>
--#include <iconv.h>
-+#include <giconv.h>
-+#if (defined __FreeBSD__) && (__FreeBSD_version > 500000)
+ #include <iconv.h>
++#if (defined __FreeBSD__) && (__FreeBSD_version > 450001)
  #include <langinfo.h>
 +#endif
  
@@ -19,7 +17,7 @@ $FreeBSD$
  									   const char                      *value);
  static void                         addition_free                         (NautilusDesktopFileAddition     *addition);
  
-+#if (defined __FreeBSD__) && (__FreeBSD_version < 500000)
++#if (defined __FreeBSD__) && (__FreeBSD_version < 450001)
 +/* Quick and dirty implementation of nl_langinfo(CODESET) */
 +static char *
 +nl_langinfo(void) {
