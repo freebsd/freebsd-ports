@@ -132,8 +132,7 @@ CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 USE_XLIB=	yes
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
-	@${CAT} ${PKGDIR}/PLIST.X11 > ${PLIST}
-	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.x11 ${PKGDIR}/pkg-plist > ${PLIST}
 .else
 CONFIGURE_ARGS+= --without-x
 .endif
