@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	3.952
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/Testing/ \
 		http://www.exim.org/ftp/Testing/ \
@@ -75,6 +76,10 @@ LDAP_LIB_TYPE?=OPENLDAP1
 #
 # Disable support for CDB-style lookups.
 #WITHOUT_CDB=		yes
+#
+# Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
+# transport.
+#WITHOUT_LMTP
 
 # You should not need to fiddle with anything below this point.
 
@@ -184,6 +189,10 @@ SEDLIST+=	-e 's,^\# SUPPORT_MBX=,SUPPORT_MBX=,'
 
 .if !defined(WITHOUT_CDB)
 SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
+.endif
+
+.if !defined(WITHOUT_LMTP)
+SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 .endif
 
 do-configure:
