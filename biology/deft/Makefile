@@ -1,20 +1,20 @@
 # New ports collection makefile for:  DeFT
-# Version required:  2.2
 # Date created:  1999-01-11
 # Whom:	 Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	DeFT_2.2
-PKGNAME=	deft-2.2
+PORTNAME=	deft
+PORTVERSION=	2.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://theory.chem.uottawa.ca/pub/
+DISTNAME=	DeFT_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
-WRKSRC=		${WRKDIR}/DeFT_2.2/source
+WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 post-configure:
 	${CP} ${FILESDIR}/Makefile.deft ${WRKSRC}/Makefile

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cal
-# Version required:			3.5
 # Date created:				2 April 1997
 # Whom:	Andrey Zakhvatov <andy@icc.surw.chel.su>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		cal-3.5
+PORTNAME=		cal
+PROTVERSION=		3.5
 CATEGORIES=		deskutils
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/shell

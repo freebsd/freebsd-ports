@@ -1,15 +1,15 @@
 # New ports collection makefile for:	ephem
-# Version required:	4.28
 # Date created:		3 April 1997
 # Whom:			eserte
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ephem_4.28_unix
-PKGNAME=	ephem-4.28
+PORTNAME=	ephem
+PORTVERSION=	4.28
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_LOCAL}
+DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 
 MAINTAINER=	eserte@cs.tu-berlin.de
 

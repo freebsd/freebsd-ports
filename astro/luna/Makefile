@@ -1,15 +1,15 @@
 # New ports collection makefile for:	luna
-# Version required:	1.9
 # Date created:		03 July 1996
 # Whom:			ABURAYER Rewsirow <rewsirow@ff.iij4u.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	luna19s
-PKGNAME=	luna-1.9
+PORTNAME=	luna
+PORTVERSION=	1.9
 CATEGORIES=	astro games
 MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
+DISTNAME=	luna19s
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	tcpblast
-# Version required:	<self contained>
 # Date created:		22 August 1994
 # Whom:			mr
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcpblast
-PKGNAME=	tcpblast-1.0
+PORTNAME=	tcpblast
+PORTVERSION=	1.0
 CATEGORIES=	benchmarks net
 DISTFILES=	# empty
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xinvest
-# Version required:	2.5.1
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xinvest-2.5.1
+PORTNAME=	xinvest
+PORTVERSION=	2.5.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://sunsite.auc.dk/xinvest/	\
 		${MASTER_SITE_XCONTRIB}

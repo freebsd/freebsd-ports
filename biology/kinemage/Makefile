@@ -1,17 +1,17 @@
 # New ports collection Makefile for: kinemage
-# Version required:     4.2
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MAGE_4_2.LINUX
-PKGNAME=	kinemage-4.2
+PORTNAME=	kinemage
+PORTVERSION=	4.2
 CATEGORIES=     biology linux
 MASTER_SITES=	ftp://kinemage.biochem.duke.edu/LINUXprograms/ \
 		ftp://ftp.ebi.ac.uk/pub/databases/pdb/pub/xternal_software/kinemage/LINUX/ \
 		ftp://ftp.pdb.bnl.gov/pub/xternal_software/kinemage/LINUX/
+DISTNAME=	MAGE_4_2.LINUX
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw

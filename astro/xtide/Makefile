@@ -1,12 +1,12 @@
 # New ports collection makefile for:   xtide
-# Version required:    1.6.2
 # Date created:        30 August 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xtide-1.6.2
+PORTNAME=	xtide
+PORTVERSION=	1.6.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.universe.digex.net/~dave/files/
 DISTFILES=	xtide-1.6.2.tar.gz harmonics.gz

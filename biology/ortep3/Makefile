@@ -1,20 +1,20 @@
 # New ports collection makefile for:	ORTEP-III
-# Version required:	1.0
 # Date created:		1999-05-08
 # Whom:			Ryo MIYAMOTO
 #
 # $FreeBSD$
 #
 
-DISTNAME= ortep
-PKGNAME= ortep3-1.0
-CATEGORIES= biology
-MASTER_SITES= ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/
-EXTRACT_SUFX= .tar.Z
+PORTNAME=	ortep3
+PORTVERSION=	1.0
+CATEGORIES=	biology
+MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/
+DISTNAME=	ortep
+EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER= rmiya@cc.hirosaki-u.ac.jp
+MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
-LIB_DEPENDS= pgplot.5:${PORTSDIR}/graphics/pgplot
+LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400002

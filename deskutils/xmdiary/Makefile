@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xmdiary
-# Version required:	3.0.1
 # Date created:		29 Sep 1997
 # Whom:			mi@aldan.ziplink.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xmdiary-3.0.1
+PORTNAME=	xmdiary
+PORTVERSION=	3.0.1
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	office

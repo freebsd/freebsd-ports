@@ -1,12 +1,12 @@
 # New ports collection Makefile for: povchem
-# Version required:     1.0
 # Date created:         Mar 14 1998
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
 # $FreeBSD$
 #
 
-DISTNAME=	povchem-1.0
+PORTNAME=	povchem
+PORTVERSION=	1.0
 CATEGORIES=     biology graphics
 MASTER_SITES=   http://cherubino.med.jhmi.edu/~paul/PC_Dist/v1.00/
 DISTFILES=	povchem.c \

@@ -1,11 +1,11 @@
 # New ports collection makefile for: netpipe
-# Version required: 	2.3
 # Date created:		20 Feb 1998
 # Whom:			jkoshy
 #
 # $FreeBSD$
 
-DISTNAME=	netpipe-2.3
+PORTNAME=	netpipe
+PORTVERSION=	2.3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/ \
 		http://people.FreeBSD.org/~jkoshy/PORTS/

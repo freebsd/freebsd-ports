@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmglobe
-# Version required:	1.0
 # Date created:		23 Jun 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmglobe-1.0
+PORTNAME=	wmglobe
+PORTVERSION=	1.0
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    iozone
-# Version required:     3.9
 # Date created:         26 September 1994
 # Whom:                 jmz
 #
 # $FreeBSD$
 #
 
-DISTNAME=	iozone3_9
-PKGNAME=	iozone-3.9
+PORTNAME=	iozone
+PORTVERSION=	3.9
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/stable/
+DISTNAME=	iozone3_9
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	jmz@FreeBSD.org

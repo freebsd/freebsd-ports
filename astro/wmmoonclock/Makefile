@@ -1,12 +1,12 @@
 # New ports collection makefile for:   wmMoonClock
-# Version required:    1.27
 # Date created:        14 March 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmMoonClock-1.27
+PORTNAME=	wmMoonClock
+PORTVERSION=	1.27
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	saoimage
-# Version required:	1.26.10
 # Date created:		21 Feb 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       saoimage-1.26.10
+PORTNAME=	saoimage
+PORTVERSION=	1.26.10
 CATEGORIES=	astro
 MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/
 

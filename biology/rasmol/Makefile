@@ -1,17 +1,17 @@
 # New ports collection Makefile for: rasmol
-# Version required:     2.7.1
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
 # $FreeBSD$
 #
 
-DISTNAME=       RasMol_2.7.1
-PKGNAME=        rasmol-2.7.1
-CATEGORIES=     biology
-MASTER_SITES=   ftp://ftp.bernstein-plus-sons.com/software/
+PORTNAME=	rasmol
+PORTVERSION=	2.7.1
+CATEGORIES=	biology
+MASTER_SITES=	ftp://ftp.bernstein-plus-sons.com/software/
+DISTNAME=	RasMol_2.7.1
 
-MAINTAINER=     frankch@waru.life.nthu.edu.tw
+MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
 WRKSRC=		$(WRKDIR)/RasMol_2.7.1/src/
 USE_IMAKE=	yes
