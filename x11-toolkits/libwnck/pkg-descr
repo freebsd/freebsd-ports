@@ -1,0 +1,5 @@
+libwnck is aWindow Navigator Construction Kit, i.e. a library to use
+for writing pagers and taskslists and stuff.  It is needed for the 
+GNOME 2.0 desktop.
+
+WWW: http://www.gnome.org/
