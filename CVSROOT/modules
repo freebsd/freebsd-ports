@@ -4083,7 +4083,6 @@ libpanelappletmm	ports/x11-toolkits/libpanelappletmm
 libpaper	ports/print/libpaper
 libparanoia	ports/security/libparanoia
 libpathan	ports/textproc/libpathan
-libpcap		ports/net/libpcap
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdf++	ports/print/libpdf++
@@ -6906,6 +6905,7 @@ ports_lam	ports/net/lam
 ports_lang	ports/lang
 ports_less	ports/misc/less
 ports_libedit	ports/devel/libedit
+ports_libpcap	ports/net/libpcap
 ports_libusb	ports/devel/libusb
 ports_lukemftp	ports/ftp/lukemftp
 ports_lukemftpd	ports/ftp/lukemftpd
@@ -6939,6 +6939,7 @@ ports_shells	ports/shells
 ports_smbfs	ports/net/smbfs
 ports_stat	ports/sysutils/stat
 ports_sysutils	ports/sysutils
+ports_tcpdump	ports/net/tcpdump
 ports_textproc	ports/textproc
 ports_tn3270	ports/net/tn3270
 ports_traceroute	ports/net/traceroute
@@ -8492,7 +8493,6 @@ tcm		ports/graphics/tcm
 tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
 tcpdstat	ports/net/tcpdstat
-tcpdump		ports/net/tcpdump
 tcpflow		ports/net/tcpflow
 tcpillust	ports/net/tcpillust
 tcplist		ports/sysutils/tcplist
