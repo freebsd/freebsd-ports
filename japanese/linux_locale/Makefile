@@ -58,7 +58,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/debian/* ${DOCDIR}
 	if [ ! -f ${LINUXBASE}/usr/share/locale/locale.alias.orig ]; then \
 		${CP} -p ${LINUXBASE}/usr/share/locale/locale.alias \
-			 ${LINUXBASE}/usr/share/locale/locale.alias.orig \
+			 ${LINUXBASE}/usr/share/locale/locale.alias.orig; \
 	fi
 .for locale in ${LOCALE_ADD}
 	${GREP} -q -e ^${locale} ${LINUXBASE}/usr/share/locale/locale.alias \
