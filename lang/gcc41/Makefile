@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-07-17
+SNAPDATE=	2000-08-28
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -29,7 +29,7 @@ MAINTAINER=	obrien@FreeBSD.org
 NO_CDROM=	'dated material'
 
 EGCS_REV=	2.96
-LIBSTDCPP_REV=	4
+LIBSTDCPP_REV=	2.10.0
 WRKSRC=		${WRKDIR}/egcs-${SNAPVER}
 
 .include <bsd.port.pre.mk>
@@ -87,7 +87,7 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1obj \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp0 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/collect2 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
 	do \
