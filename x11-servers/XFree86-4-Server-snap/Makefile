@@ -98,6 +98,10 @@ NOT_FOR_ARCHS=		ia64
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == amd64
+BROKEN=			"Does not build on amd64"
+.endif
+
 .if ${ARCH} == i386 || ${ARCH} == alpha
 RUN_DEPENDS+=		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
 BuildXF86DRI=		YES
