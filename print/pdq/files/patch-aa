@@ -1,0 +1,62 @@
+--- src/job.c.orig	Sat May 15 01:03:09 1999
++++ src/job.c	Sat May 15 01:08:30 1999
+@@ -248,12 +248,9 @@
+    }
+    sprintf(pat, "%s/[0-9][0-9][0-9].status", sd);
+    i = glob (pat, 0, NULL, &globbuf); 
+-   if (i != 0) {
+-      if (i != GLOB_NOMATCH) {
++   if (i != 0) return (NULL);
+          /* Unknown error (or on some systems, no match) */
+-	 return (NULL);
+-      }
+-   } else {
++   else {
+       if (globbuf.gl_pathc == 0) {
+          /* No match */
+ 	 return (NULL);
+@@ -385,14 +382,10 @@
+    i = glob (pat, 0, NULL, &globbuf); 
+    free (pat);
+    if (i != 0) {
+-      if (i != GLOB_NOMATCH) {
+          fprintf (stderr, "Unknown error globbing for job id.\n");
+ 	 perror (NULL);
+          fprintf (stderr, "Failed to purge old jobs.\n");
+ 	 my_exit (1);  
+-      } else {
+-         /* No match */
+-      }
+    } else {
+       if (globbuf.gl_pathc == 0) {
+          return;
+@@ -432,14 +425,10 @@
+    i = glob (pat, 0, NULL, &globbuf); 
+    free (pat);
+    if (i != 0) {
+-      if (i != GLOB_NOMATCH) {
+          fprintf (stderr, "Unknown error globbing for job id.\n");
+ 	 perror (NULL);
+          fprintf (stderr, "Failed to purge old jobs.\n");
+ 	 my_exit (1); 
+-      } else {
+-         /* No match */
+-      }
+    } else {
+       if (globbuf.gl_pathc == 0) {
+          return;
+@@ -495,11 +484,9 @@
+    i = glob (pat, 0, NULL, &globbuf); 
+    free (pat);
+    if (i != 0) {
+-      if (i != GLOB_NOMATCH) {
+-         fprintf (stderr, "Unknown error globbing for job id.\n");
+-	 perror (NULL);
+-	 my_exit (1);
+-      }
++      fprintf (stderr, "Unknown error globbing for job id.\n");
++      perror (NULL);
++      my_exit (1);
+       claim_try = 1;
+    } else {
+       if (globbuf.gl_pathc == 0) {

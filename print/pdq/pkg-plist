@@ -1,0 +1,6 @@
+bin/pdq
+bin/xpdq
+bin/lpd_cancel
+bin/lpd_print
+bin/lpd_status
+etc/printrc.sample

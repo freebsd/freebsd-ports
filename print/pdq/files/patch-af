@@ -1,0 +1,39 @@
+--- src/xpdq_printer.c.orig	Sat May 15 07:19:13 1999
++++ src/xpdq_printer.c	Sat May 15 11:43:47 1999
+@@ -29,23 +29,30 @@
+ #include "printer.h"
+ #include "argument.h"
+ 
++#define PRINTRC "/usr/local/etc/printrc"
++
+ void xpdq_add_printer (void) {
+ 
+    pwizard_state *wizard;
+    dl_list *list;
++   char *error;
+ 
+    list = first_list_element (rc->driver_list);
+    if (list == NULL) {
+-      xpdq_error ("There are no printer drivers defined in\n"
+-         "/etc/printrc or ~/.printrc.  Without printer drivers,\n"
+-	 "the wizard cannot add printers.");
++      error = malloc(256);
++      sprintf (error, "There are no printer drivers defined in\n"
++         "%s or ~/.printrc.  Without printer drivers,\n"
++	 "the wizard cannot add printers.", PRINTRC);
++      xpdq_error(error);
+       return;
+    }
+    list = first_list_element (rc->interface_list);
+    if (list == NULL) {
+-      xpdq_error ("There are no printer interfaces defined in\n"
+-         "/etc/printrc or ~/.printrc.  Without printer interfaces,\n"
+-	 "the wizard cannot add printers.");
++      error = malloc(256);
++      sprintf (error, "There are no printer drivers defined in\n"
++         "%s or ~/.printrc.  Without printer drivers,\n"
++	 "the wizard cannot add printers.", PRINTRC);
++      xpdq_error(error);
+       return;
+    }
+    wizard = new_pwizard ();

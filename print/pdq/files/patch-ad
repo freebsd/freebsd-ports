@@ -1,0 +1,10 @@
+--- src/util.c.orig	Sat May 15 01:34:56 1999
++++ src/util.c	Sat May 15 02:07:16 1999
+@@ -16,6 +16,7 @@
+  *
+  */
+ 
++#include <stdio.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <pwd.h>
