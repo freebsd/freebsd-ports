@@ -392,6 +392,7 @@ atp		ports/news/atp
 atrun		src/libexec/atrun
 aub		ports/news/aub
 auctex		ports/print/auctex
+audit		ports/security/audit
 august		ports/www/august
 aumix		ports/audio/aumix
 aureal-kmod	ports/audio/aureal-kmod
