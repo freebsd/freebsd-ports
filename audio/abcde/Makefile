@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.hispalinux.es/~data/files/
 DISTNAME= 	abcde_${PORTVERSION}.orig
 
 MAINTAINER=	mchopra@engmail.uwaterloo.ca
-COMMENT=	Front-end sh script to encode CDs in ogg or mp3 format
+COMMENT=	Front-end shell script to encode CDs in ogg, mp3 or flac format
 
 RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
@@ -73,7 +73,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/abcde.conf ${PREFIX}/etc
 	${INSTALL_MAN} ${WRKSRC}/abcde.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/cddb-tool.1 ${PREFIX}/man/man1
-
 
 post-install:
 	@${ECHO_MSG} ""
