@@ -9106,6 +9106,7 @@ py-jabber	ports/net/py-jabber
 py-jaxml	ports/textproc/py-jaxml
 py-kde		ports/x11-toolkits/py-kde
 py-kenosis	ports/net/py-kenosis
+py-kenosis-bittorrent	ports/net/py-kenosis-bittorrent
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
 py-ldap2	ports/net/py-ldap2
