@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -45,7 +45,7 @@ USE_IMLIB=		yes
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
-LIB_DEPENDS+=		gpgme.8:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
