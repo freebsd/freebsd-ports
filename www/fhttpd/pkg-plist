@@ -1,0 +1,46 @@
+etc/fhttpd.conf
+%%LOGFILE%%
+sbin/fhttpd
+sbin/fhttpd-file
+sbin/fhttpd-log
+share/fhttpd/bin/finger-nohtml
+share/fhttpd/cgi-bin/.index.html
+share/fhttpd/cgi-bin/finger
+share/fhttpd/cgi-bin/fortune
+share/fhttpd/icons/at_work.gif
+share/fhttpd/icons/audio.gif
+share/fhttpd/icons/audio.xbm
+share/fhttpd/icons/binary.gif
+share/fhttpd/icons/binary.xbm
+share/fhttpd/icons/c_text.gif
+share/fhttpd/icons/c_text.xbm
+share/fhttpd/icons/cdromicon.gif
+share/fhttpd/icons/exec.gif
+share/fhttpd/icons/folder.gif
+share/fhttpd/icons/folder.xbm
+share/fhttpd/icons/ftp.gif
+share/fhttpd/icons/html.gif
+share/fhttpd/icons/html.xbm
+share/fhttpd/icons/image.gif
+share/fhttpd/icons/image.xbm
+share/fhttpd/icons/movie.gif
+share/fhttpd/icons/text.gif
+share/fhttpd/icons/text.xbm
+share/fhttpd/index.html
+share/fhttpd/noaccess.html
+share/fhttpd/private/.footer.html
+share/fhttpd/private/.header.html
+share/fhttpd/private/.index.html
+share/fhttpd/private/dummy_file
+share/fhttpd/private/dummy_file.html
+share/fhttpd/pub/.footer.html
+share/fhttpd/pub/.header.html
+share/fhttpd/pub/.index.html
+share/fhttpd/pub/dummy_file.html
+@dirrm share/fhttpd/bin
+@dirrm share/fhttpd/cgi-bin
+@dirrm share/fhttpd/icons
+@dirrm share/fhttpd/incoming
+@dirrm share/fhttpd/private
+@dirrm share/fhttpd/pub
+@dirrm share/fhttpd

@@ -1,0 +1,15 @@
+FHTTPD is a relatively new HTTP/FTP daemon that supports modules, 
+in particular, for PHP3. It's a feasible alternative to Apache, 
+but only for certain situations (for reasons given below). For
+example, if one wishes only to run one daemon for both the FTP
+and HTTP services, they can do that with FHTTPD.
+
+Unfortunately, at this time, FHTTPD does not seem to offer the 
+capability of running as non-root after binding to privileged 
+ports. Not to mention that the code itself is not very 
+self-documenting... it is of a poor programming style.
+
+WWW: http://www.illtel.com/pub/fhttpd/
+Author: Alex Belits <abelits@phobos.illtel.denver.co.us>
+
+--Will <andrews@technologist.com>

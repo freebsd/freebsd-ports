@@ -1,0 +1,11 @@
+--- log.cc.orig	Sat Jan 29 00:53:07 2000
++++ log.cc	Sat Jan 29 00:54:02 2000
+@@ -688,7 +688,7 @@
+ 	  if(client){
+ 	    sprintf(tmpstr,"%d",currentconnection->socket->port);
+ 	    SendLogMessage(client,NULL,NULL,NULL,0,"CLIENT_EXISTS_LOCAL_PORT",tmpstr);
+-	    if(!getsockname(currentconnection->gethandle(),(sockaddr*)&currsock,&currsockaddrlen)){
++	    if(!getsockname(currentconnection->gethandle(),(sockaddr*)&currsock,(socklen_t*)&currsockaddrlen)){
+ 	      SendLogMessage(client,NULL,NULL,NULL,0,"CLIENT_EXISTS_LOCAL_IP",inet_ntoa(currsock.sin_addr));
+ 	    }
+ 	    SendLogMessage(client,NULL,NULL,NULL,0,"CLIENT_EXISTS_IP",inet_ntoa(((sockaddr_in*)currentconnection->getaddress())->sin_addr));

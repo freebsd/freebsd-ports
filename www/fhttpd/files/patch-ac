@@ -1,0 +1,36 @@
+--- Makefile	Mon Apr 19 13:38:56 1999
++++ Makefile.new	Fri Dec 24 00:14:18 1999
+@@ -99,21 +99,21 @@
+ 
+ ## for Linux (glibc2/libc 6):
+ #
+-COPTS   = -Wall -O3 -felide-constructors -DLS_OPTIONS_IGNORE\
+-	 -DNEED_CRYPT_H -DCMSG_DATA_IS_A_MACRO \
+-	 -DMMAPPAGESIZE=65536 -DSIGARGS="int sig" -DSIGACTARGS="int sig"\
+-	 -D__s32=int\
+-	 -DGLOBAL_TIMEZONE -DGLIBC -DERRNO_DEFINED # -DFLOCK
+-LFLAGS= -lcrypt
++#COPTS   = -Wall -O3 -felide-constructors -DLS_OPTIONS_IGNORE\
++#	 -DNEED_CRYPT_H -DCMSG_DATA_IS_A_MACRO \
++#	 -DMMAPPAGESIZE=65536 -DSIGARGS="int sig" -DSIGACTARGS="int sig"\
++#	 -D__s32=int\
++#	 -DGLOBAL_TIMEZONE -DGLIBC -DERRNO_DEFINED # -DFLOCK
++#LFLAGS= -lcrypt
+ 
+ ## for FreeBSD 2.2:
+ #
+-#COPTS   = -O2 -fno-strength-reduce -DLS_OPTIONS_IGNORE\
+-#	 -D__s32=int -DMMAPPAGESIZE=65536\
+-#	 -DPSEUDOPOLL -DCMSG_DATA_IS_A_MACRO\
+-#	 -DSIGARGS="int sig" -DSIGACTARGS="int sig"\
+-#	 -DTM_GMTOFF_PRESENT -DERRNO_DEFINED # -DFLOCK
+-#LFLAGS = -lcrypt
++COPTS   = -O2 -fno-strength-reduce -DLS_OPTIONS_IGNORE\
++	 -D__s32=int -DMMAPPAGESIZE=65536\
++	 -DPSEUDOPOLL -DCMSG_DATA_IS_A_MACRO\
++	 -DSIGARGS="int sig" -DSIGACTARGS="int sig"\
++	 -DTM_GMTOFF_PRESENT -DERRNO_DEFINED # -DFLOCK
++LFLAGS = -lcrypt
+ 
+ # End of OS-dependent definitions
+ 

@@ -36,6 +36,7 @@
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
+    SUBDIR += fhttpd
     SUBDIR += flashplugin
     SUBDIR += fxhtml
     SUBDIR += g-gcl

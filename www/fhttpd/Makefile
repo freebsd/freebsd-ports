@@ -1,0 +1,58 @@
+# New ports collection makefile for:	fhttpd
+# Version required:	0.4.2
+# Date created:		21 Dec 1999
+# Whom:			Will Andrews <andrews@technologist.com>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	fhttpd-0.4.2
+CATEGORIES=	www
+MASTER_SITES=	ftp://ftp.fhttpd.org/
+
+MAINTAINER=	andrews@technologist.com
+
+LOGFILE=	share/fhttpd/fhttpd.log
+PLIST_SUB+=	LOGFILE=${LOGFILE}
+
+post-extract:
+	@${CP} ${FILESDIR}/fhttpd.sh ${WRKSRC}
+
+pre-patch:
+	(cd ${WRKSRC} && ${TAR} xf http-root.tar)
+
+pre-install:
+	${RM} -rf ${WRKSRC}/http-root/pub/dummy_directory
+	${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/fhttpd.sh
+	${PERL} -pi -e "s:%%LOGFILE%%:${PREFIX}/${LOGFILE}:g" ${WRKSRC}/fhttpd.sh
+	${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/http-root/root-fhttpd.conf
+	${PERL} -pi -e "s:%%LOGFILE%%:${PREFIX}/${LOGFILE}:g" ${WRKSRC}/http-root/root-fhttpd.conf
+
+do-install:
+	${MKDIR} ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/fhttpd.sh ${PREFIX}/etc/rc.d
+.for PROG in fhttpd fhttpd-file fhttpd-log
+	${INSTALL_PROGRAM} ${WRKSRC}/${PROG} ${PREFIX}/sbin
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/http-root/root-fhttpd.conf ${PREFIX}/etc/fhttpd.conf
+	${MKDIR} ${PREFIX}/share/fhttpd/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/http-root/bin/* ${PREFIX}/share/fhttpd/bin
+	${MKDIR} ${PREFIX}/share/fhttpd/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/http-root/cgi-bin/f* ${PREFIX}/share/fhttpd/cgi-bin
+	${INSTALL_DATA} ${WRKSRC}/http-root/cgi-bin/.index.html ${PREFIX}/share/fhttpd/cgi-bin
+	${MKDIR} ${PREFIX}/share/fhttpd/incoming
+.for DIR in icons private pub
+	${MKDIR} ${PREFIX}/share/fhttpd/${DIR}
+	${INSTALL_DATA} ${WRKSRC}/http-root/${DIR}/* ${PREFIX}/share/fhttpd/${DIR}/
+.endfor
+.for DIR in private pub
+	${INSTALL_DATA} ${WRKSRC}/http-root/${DIR}/.[fhi]* ${PREFIX}/share/fhttpd/${DIR}/
+.endfor
+.for FILE in index.html noaccess.html
+	${INSTALL_DATA} ${WRKSRC}/http-root/${FILE} ${PREFIX}/share/fhttpd/
+.endfor
+
+post-install:
+	${TOUCH} ${PREFIX}/${LOGFILE}
+
+.include <bsd.port.mk>
