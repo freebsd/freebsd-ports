@@ -32,6 +32,116 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b2e6d1d6-1339-11d9-bc4a-000c41e2cdad">
+    <topic>mozilla -- scripting vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>thunderbird</name>
+	<range><lt>0.8</lt></range>
+      </package>
+      <package>
+        <name>de-linux-mozillafirebird</name>
+	<name>el-linux-mozillafirebird</name>
+        <name>firefox</name>
+        <name>ja-linux-mozillafirebird-gtk1</name>
+        <name>ja-mozillafirebird-gtk2</name>
+        <name>linux-mozillafirebird</name>
+        <name>ru-linux-mozillafirebird</name>
+        <name>zhCN-linux-mozillafirebird</name>
+        <name>zhTW-linux-mozillafirebird</name>
+	<range><lt>0.9.2</lt></range>
+      </package>
+      <package>
+        <name>de-netscape7</name>
+        <name>fr-netscape7</name>
+        <name>ja-netscape7</name>
+        <name>netscape7</name>
+        <name>pt_BR-netscape7</name>
+	<range><lt>7.2</lt></range>
+      </package>
+      <package>
+        <name>mozilla-gtk1</name>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7,2</lt></range>
+      </package>
+      <package>
+	<!-- These package names are obsolete. -->
+        <name>de-linux-netscape</name>
+        <name>fr-linux-netscape</name>
+        <name>ja-linux-netscape</name>
+        <name>linux-netscape</name>
+        <name>linux-phoenix</name>
+        <name>mozilla+ipv6</name>
+        <name>mozilla-embedded</name>
+        <name>mozilla-firebird</name>
+        <name>mozilla-gtk2</name>
+        <name>mozilla-gtk</name>
+        <name>mozilla-thunderbird</name>
+        <name>phoenix</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Several scripting vulnerabilities were discovered and
+	  corrected in Mozilla:</p>
+	<dl>
+	  <dt>CAN-2004-0905</dt>
+	  <dd>
+	    <blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+	      <p>javascript; links dragged onto another frame or
+		page allows an attacker to steal or modify sensitive
+		information from other sites. The user could be convinced
+		to drag obscurred links in the context of a game or even a
+		fake scrollbar. If the user could be convinced to drag two
+		links in sequence into a separate window (not frame) the
+		attacker would be able to run arbitrary programs.</p>
+	    </blockquote>
+	  </dd>
+	  <dt>CAN-2004-0908</dt>
+	  <dd>
+	    <blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+              <p>Untrusted javascript code can read and write to the
+                clipboard, stealing any sensitive data the user might
+                have copied. <strong>Workaround:</strong> disable
+                javascript</p>
+	    </blockquote>
+	  </dd>
+	  <dt>CAN-2004-0909</dt>
+	  <dd>
+	    <blockquote cite="http://www.mozilla.org/projects/security/known-vulnerabilities.html">
+              <p>Signed scripts requesting enhanced abilities could
+                construct the request in a way that led to a confusing
+                grant dialog, possibly fooling the user into thinking
+                the privilege requested was inconsequential while
+                actually obtaining explicit permission to run and
+                install software. <strong>Workaround:</strong> Never
+                grant enhanced abilities of any kind to untrusted web
+                pages.</p>
+	    </blockquote>
+	  </dd>
+	</dl>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0905</cvename>
+      <cvename>CAN-2004-0908</cvename>
+      <cvename>CAN-2004-0909</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=250862</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=257523</url>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=253942</url>
+    </references>
+    <dates>
+      <discovery>2004-09-13</discovery>
+      <entry>2004-09-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a7e0d783-131b-11d9-bc4a-000c41e2cdad">
     <topic>mozilla -- users may be lured into bypassing security dialogs</topic>
     <affects>
