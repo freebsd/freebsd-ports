@@ -1,15 +1,12 @@
-lib/kde2/libkwinliquid.la
 lib/kde2/libkwinliquid.so
-lib/libkcm_transmenu.la
 lib/libkcm_transmenu.so
-lib/liquid.la
 lib/liquid.so
 share/applnk/Settings/LookNFeel/transmenu.desktop
 share/apps/kdisplay/color-schemes/Liquid.kcsrc
 share/apps/kstyle/themes/liquid.themerc
 share/apps/kwin/liquid.desktop
-@dirrm share/apps/kwin
-@dirrm share/apps/kstyle/themes
-@dirrm share/apps/kdisplay/color-schemes
-@dirrm share/applnk/Settings/LookNFeel
-@dirrm lib/kde2
+@unexec rmdir %D/share/apps/kwin 2>/dev/null || true
+@unexec rmdir %D/share/apps/kstyle/themes 2>/dev/null || true
+@unexec rmdir %D/share/apps/kdisplay/color-schemes 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Settings/LookNFeel 2>/dev/null || true
+@unexec rmdir %D/lib/kde2  2>/dev/null || true

@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mosfet-liquid
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.mosfet.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	Michiel De Wilde <michiel.dewilde@rug.ac.be>
+MAINTAINER=	michiel.dewilde@rug.ac.be
 
 BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
 		autoconf:${PORTSDIR}/devel/autoconf
