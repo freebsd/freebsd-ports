@@ -7,7 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	2.0.25
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/ \
 		ftp://ftp.net.lut.ac.uk/openldap/%SUBDIR%/ \
@@ -55,7 +55,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include/sasl1
 .endif
 
 .if defined(WITH_ODBC)
-LIB_DEPENDS+=	iodbc.2:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=--enable-sql
 .endif
 
