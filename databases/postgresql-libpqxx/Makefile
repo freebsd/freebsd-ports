@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libpqxx
-PORTVERSION=	2.2.7
+PORTVERSION=	2.4.1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqxx/stable/
 PKGNAMEPREFIX=	postgresql-
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
-COMMENT=	A new C++ interface for  PostgreSQL
+COMMENT=	A new C++ interface for PostgreSQL
 
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
