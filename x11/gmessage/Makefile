@@ -8,7 +8,7 @@
 PORTNAME=	gmessage
 PORTVERSION=	0.2
 CATEGORIES=	x11
-MASTER_SITES=	http://www.math.uni-goettingen.de/dadler/gmessage/
+MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 
 MAINTAINER=	domi@saargate.de
 
