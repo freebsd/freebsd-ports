@@ -1,10 +1,12 @@
 --- install.sh.orig	Sun Mar 10 07:32:20 1996
-+++ install.sh	Tue Jul  9 00:31:57 1996
-@@ -48,7 +48,7 @@
++++ install.sh	Mon Dec  9 16:59:43 1996
+@@ -47,8 +47,8 @@
+ 	echo "Installing minicom in $2"
  	cp minicom $2/minicom
  	chmod 755 $2/minicom
- 	chown root $2/minicom
+-	chown root $2/minicom
 -	chgrp root $2/minicom
++	chown uucp $2/minicom
 +	chgrp dialer $2/minicom
  fi
  
