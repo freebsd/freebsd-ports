@@ -1,0 +1,21 @@
+--- Makefile.in~	Wed Mar 10 22:14:48 1999
++++ Makefile.in	Sun Mar 21 18:19:16 1999
+@@ -12,7 +12,7 @@
+ # for gzip because otherwise the load on the web server
+ # grows without having big benefits.
+ # COMPRESSION = -DCOMPRESSION=4
+-COMPRESSION = -DCOMPRESSION=1
++COMPRESSION ?= -DCOMPRESSION=1
+ 
+ # Dont change things beyond this line.
+ TARGET          = c2html
+@@ -40,7 +40,7 @@
+ srcdir          = @srcdir@
+ CPPFLAGS        = @CPPFLAGS@
+ 
+-CFLAGS  = -O2 -Wall -pedantic $(COMPRESSION) 
++CFLAGS  ?= -O2 -Wall -pedantic
+-ALL_CFLAGS = $(CFLAGS) -I$(srcdir)
++ALL_CFLAGS = $(CFLAGS) -I$(srcdir) $(COMPRESSION) 
+ 
+ all: $(TARGET)

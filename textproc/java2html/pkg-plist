@@ -1,0 +1,5 @@
+bin/java2html
+share/doc/java2html/AUTHORS
+share/doc/java2html/NEWS
+share/doc/java2html/README
+@dirrm share/doc/java2html
