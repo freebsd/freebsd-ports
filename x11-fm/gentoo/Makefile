@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.45
-PORTREVISION=	1
+PORTVERSION=	0.11.46
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	obraun@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
 USE_SIZE=	yes
@@ -40,6 +39,7 @@ post-install:
 	@${FIND} ${DOCSDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	@${FIND} ${DOCSDIR} | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+x
+	@${FIND} ${DOCSDIR} -name *.bak -delete
 .endif
 
 .include <bsd.port.mk>
