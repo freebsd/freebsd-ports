@@ -1,0 +1,8 @@
+pp2html creates a set of HTML files for a foilset based on a simple textfile
+slide_text. Due to its formatting features and the capability of creating
+navigation, table of contents and index pages, pp2html is also a suitable tool
+for writing online documentation.
+
+pp2latex creates a LaTeX file from a PerlPoint input file.
+
+WWW: http://search.cpan.org/dist/PerlPoint-Converters/

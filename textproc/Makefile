@@ -262,6 +262,7 @@
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
+    SUBDIR += p5-PerlPoint-Converters
     SUBDIR += p5-PerlPoint-Package
     SUBDIR += p5-Pod-Constants
     SUBDIR += p5-Pod-Escapes
