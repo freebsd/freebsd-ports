@@ -482,6 +482,7 @@ birthday	ports/misc/birthday
 bison		ports/devel/bison
 bitbox		ports/archivers/bitbox
 bitchx		ports/irc/bitchx
+bitmap		ports/editors/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
 bitmap-mule	ports/editors/bitmap-mule
@@ -1226,6 +1227,7 @@ elvis		ports/editors/elvis
 em		ports/editors/em
 emacs		ports/editors/emacs
 emacs-lisp-intro	ports/lang/emacs-lisp-intro
+emacs-w3m		ports/www/emacs-w3m
 emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs20		ports/editors/emacs20
