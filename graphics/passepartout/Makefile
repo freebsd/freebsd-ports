@@ -7,6 +7,7 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
@@ -23,6 +24,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnometarget
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CFALGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 MAN=	xml2ps.1 passepartout.1x
 
