@@ -1,0 +1,17 @@
+share/gnome/themes/6nome/LICENSE
+share/gnome/themes/6nome/NEWS
+share/gnome/themes/6nome/README
+share/gnome/themes/6nome/metacity-1/close.png
+share/gnome/themes/6nome/metacity-1/icon.png
+share/gnome/themes/6nome/metacity-1/max.png
+share/gnome/themes/6nome/metacity-1/menu-h.png
+share/gnome/themes/6nome/metacity-1/menu-hi.png
+share/gnome/themes/6nome/metacity-1/menu.png
+share/gnome/themes/6nome/metacity-1/metacity-theme-1.xml
+share/gnome/themes/6nome/metacity-1/min.png
+share/gnome/themes/6nome/metacity-1/restore.png
+share/gnome/themes/6nome/metacity-1/title-le.png
+share/gnome/themes/6nome/metacity-1/title-mi.png
+share/gnome/themes/6nome/metacity-1/title-ri.png
+@dirrm share/gnome/themes/6nome/metacity-1
+@unexec /bin/rmdir %D/share/gnome/themes/6nome 2>/dev/null || /usr/bin/true
