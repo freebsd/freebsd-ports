@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libtecla
-PORTVERSION=	1.2
+PORTVERSION=	1.2b
 CATEGORIES=	devel
 MASTER_SITES=	http://www.astro.caltech.edu/~mcs/tecla/
 DISTNAME=	${PORTNAME}${PORTVERSION}
