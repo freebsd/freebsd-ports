@@ -75,22 +75,3 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
-*** Unix/ui.c.old	Wed Feb  1 23:33:08 1995
---- Unix/ui.c	Thu Feb  2 12:36:44 1995
-***************
-*** 259,265 ****
-        ioctl(fileno(stdin), TIOCSETP, psanity);
-  #else /* __NeXT__ */
-  #ifdef __FreeBSD__
-!       tcsetattr(fileno(stdin), psanity);
-  #else
-        ioctl(fileno(stdin), TCSETA, psanity);
-  #endif
---- 259,265 ----
-        ioctl(fileno(stdin), TIOCSETP, psanity);
-  #else /* __NeXT__ */
-  #ifdef __FreeBSD__
-!       tcsetattr(fileno(stdin), TCSADRAIN, psanity);
-  #else
-        ioctl(fileno(stdin), TCSETA, psanity);
-  #endif
