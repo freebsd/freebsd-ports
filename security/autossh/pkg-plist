@@ -1,0 +1,5 @@
+bin/autossh
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/README
+%%EXAMPLESDIR%%/autossh.host
+%%EXAMPLESDIR%%/rscreen

@@ -1,0 +1,10 @@
+autossh is a program to start a copy of ssh and monitor it, restarting
+it as necessary should it die or stop passing traffic.
+
+The original idea and the mechanism were from rstunnel (Reliable SSH
+Tunnel). With this version the method changes: autossh uses ssh to
+construct a loop of ssh forwardings (one from local to remote, one
+from remote to local), and then sends test data that it expects to
+get back. (The idea is thanks to Terrence Martin.)
+
+WWW: http://www.harding.motd.ca/autossh/
