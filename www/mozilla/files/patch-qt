@@ -1,11 +1,11 @@
---- configure.orig	Mon Jun 16 15:15:10 2003
-+++ configure	Mon Jun 30 23:21:49 2003
-@@ -11992,9 +11992,9 @@
+--- configure.orig	Wed Aug 27 11:00:21 2003
++++ configure	Sat Oct 11 12:22:54 2003
+@@ -11896,9 +11896,9 @@
  
  
  
--MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices"
-+MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices"
+-MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices spellcheck"
++MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices spellcheck"
  
 -MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm access-builtin datetime finger cview" 
 +MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm access-builtin datetime finger cview" 
