@@ -1349,6 +1349,7 @@ dotfile		ports/misc/dotfile
 dovecot		ports/mail/dovecot
 downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
+dparser		ports/devel/dparser
 dpkg		ports/archivers/dpkg
 drac		ports/mail/drac
 dragstack	ports/deskutils/dragstack
