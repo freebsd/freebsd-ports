@@ -1,0 +1,29 @@
+--- wipe.c.orig	Thu Jun  6 17:25:28 2002
++++ wipe.c	Thu Jun  6 17:26:36 2002
+@@ -66,7 +66,7 @@
+ int ask_y_n(char *string)
+ {
+     char c;
+-    fprintf(stderr,string);
++    fprintf(stderr,"%s",string);
+     c = tolower(fgetc(stdin));
+     if ( '\n' == c ) return FALSE;
+     while ( '\n' != fgetc(stdin) );
+@@ -675,7 +675,7 @@
+             case '?':
+             case 'h':
+             default:
+-                fprintf(stdout,usage_string);
++                fprintf(stdout,"%s",usage_string);
+                 exit(0);
+         } /* end of switch */
+     } /* end of while */
+@@ -685,7 +685,7 @@
+ 
+     if ( 0 == argc )
+     {
+-        fprintf(stdout,usage_string);
++        fprintf(stdout,"%s",usage_string);
+         exit(0);
+     }
+     if ( o_force ) o_interactive=FALSE;
