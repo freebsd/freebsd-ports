@@ -345,6 +345,7 @@
     SUBDIR += mudix
     SUBDIR += mute-net
     SUBDIR += mute-net-gui
+    SUBDIR += mute-net-text
     SUBDIR += mutella
     SUBDIR += nagios
     SUBDIR += nagios-plugins
