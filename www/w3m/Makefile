@@ -8,7 +8,7 @@
 PORTNAME=	w3m
 PORTVERSION=	${W3M_VERSION}
 CATEGORIES+=	www ipv6
-MASTER_SITES=	http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/200109/
+MASTER_SITES=	http://mi.med.tohoku.ac.jp/~satodai/w3m/inusrc/200110/
 DISTNAME=	${PORTNAME}-${W3M_VERSION}-inu-${INU_VERSION}
 
 MAINTAINER?=	nobutaka@FreeBSD.org
