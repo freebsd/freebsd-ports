@@ -1,0 +1,51 @@
+diff -rc xlockmore.orig/XLock.ad xlockmore/XLock.ad
+*** xlockmore.orig/XLock.ad	Sun Oct 23 22:23:15 1994
+--- xlockmore/XLock.ad	Wed Nov  9 15:08:35 1994
+***************
+*** 1,4 ****
+! XLock.mode: blank
+  XLock.font: -b&h-lucida-medium-r-normal-sans-24-*-*-*-*-*-iso8859-1
+  XLock.background: White
+  XLock.foreground: Black
+--- 1,4 ----
+! XLock.mode: random
+  XLock.font: -b&h-lucida-medium-r-normal-sans-24-*-*-*-*-*-iso8859-1
+  XLock.background: White
+  XLock.foreground: Black
+diff -rc xlockmore.orig/xlock.c xlockmore/xlock.c
+*** xlockmore.orig/xlock.c	Mon Oct 17 07:41:41 1994
+--- xlockmore/xlock.c	Wed Nov  9 14:52:07 1994
+***************
+*** 530,536 ****
+  #else
+      struct passwd *pw;
+  
+! #ifdef __NetBSD__
+      seteuid(0);                       /* Need to be root now on NetBSD */
+  #endif
+      pw = (struct passwd *)getpwnam("root");
+--- 530,536 ----
+  #else
+      struct passwd *pw;
+  
+! #if defined(__FreeBSD__) || defined(__NetBSD__)
+      seteuid(0);                       /* Need to be root now on NetBSD */
+  #endif
+      pw = (struct passwd *)getpwnam("root");
+***************
+*** 555,561 ****
+  
+      user = pw->pw_name;
+  #endif
+! #ifdef __NetBSD__
+      seteuid(getuid());                /* Don't need to be root anymore */
+  #endif
+  #endif
+--- 555,561 ----
+  
+      user = pw->pw_name;
+  #endif
+! #if defined(__FreeBSD__) || defined(__NetBSD__)
+      seteuid(getuid());                /* Don't need to be root anymore */
+  #endif
+  #endif
