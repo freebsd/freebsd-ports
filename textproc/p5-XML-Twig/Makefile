@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Twig
-PORTVERSION=	2.02
+PORTVERSION=	3.02
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -14,7 +14,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wjv@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
+# XML::Twig has a further optional dependency on WeakRef.  However, WeakRef
+# needs Perl 5.005_55.
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
 PERL_CONFIGURE=	YES
 
