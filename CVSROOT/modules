@@ -3063,6 +3063,7 @@ jpeg		ports/graphics/jpeg
 jpeg2ps-a4	ports/graphics/jpeg2ps-a4
 jpeg2ps-letter	ports/graphics/jpeg2ps-letter
 jpeginfo	ports/graphics/jpeginfo
+jpegpixi	ports/graphics/jpegpixi
 jpgtn		ports/graphics/jpgtn
 jpilot		ports/palm/jpilot
 jre		ports/java/jre
