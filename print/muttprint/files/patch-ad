@@ -1,14 +1,15 @@
---- doc/manpages/Makefile.orig	Sat Apr 26 19:17:56 2003
-+++ doc/manpages/Makefile	Sat Apr 26 23:40:24 2003
-@@ -4,15 +4,6 @@
+--- doc/manpages/Makefile.orig	Tue May 27 21:07:05 2003
++++ doc/manpages/Makefile	Tue May 27 21:58:04 2003
+@@ -4,16 +4,6 @@
  
- VERSION = 0.70
+ VERSION = 0.71
  POD2MAN = pod2man --section=1 --release=$(VERSION)
 -prefix = /usr
 -bindir = $(prefix)/bin
 -tempdir = /tmp
 -sysconfdir = /etc
 -docdir = /usr/share/doc/packages
+-docdirname = muttprint
 -sharedir = $(prefix)/share
 -libdir = $(prefix)/lib
 -mandir = $(prefix)/share/man
@@ -16,7 +17,7 @@
  gzip = gzip -f
  rm = rm
  
-@@ -22,7 +13,7 @@
+@@ -23,7 +13,7 @@
  TITLE_IT = "Breve manuale di Muttprint"
  
  
@@ -25,7 +26,7 @@
  german: de/muttprint.1.gz
  english: en/muttprint.1.gz
  italian: it/muttprint.1.gz
-@@ -103,10 +94,7 @@
+@@ -104,10 +94,7 @@
  ##install: de/muttprint.1.gz en/muttprint.1.gz es/muttprint.1.gz \
  ## 			it/muttprint.1.gz 
  install:

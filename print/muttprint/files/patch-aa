@@ -1,6 +1,6 @@
---- Makefile.orig	Mon Apr 14 17:51:47 2003
-+++ Makefile	Sat Apr 26 23:58:41 2003
-@@ -7,34 +7,34 @@
+--- Makefile.orig	Tue May 27 19:37:30 2003
++++ Makefile	Tue May 27 22:40:28 2003
+@@ -7,35 +7,35 @@
  
  # Change this for local installation, 
  # e. g. /home/user or /usr/local
@@ -33,6 +33,7 @@
 +libdir = ${PREFIX}/lib
 +bindir = ${PREFIX}/bin
 +sysconfdir = ${PREFIX}/etc
+ docdirname = muttprint
  
  #####################################################
  #####################################################
@@ -46,28 +47,27 @@
  
  
  nothing:
-@@ -42,16 +42,17 @@
- 
+@@ -44,15 +44,17 @@
  
  install: 
--	mkdir -p $(docdir)/muttprint $(bindir) $(sharedir)/muttprint/translations \
+ 	mkdir -p $(docdir)/$(docdirname) $(bindir) $(sharedir)/muttprint/translations \
 -		$(mandir)/man1 $(mandir)/de/man1 $(mandir)/es/man1 \
 -		$(mandir)/cs/man1 $(mandir)/it/man1 
 -	$(INSTALLBIN) muttprint $(bindir)/
 -	$(INSTALL) CHANGES COPYING INSTALL README* sample-muttprintrc-* \
-+	mkdir -p $(bindir) $(sharedir)/muttprint/translations
++		$(mandir)/man1
 +	${BSD_INSTALL_SCRIPT} muttprint $(bindir)/
 +	${BSD_INSTALL_DATA} `find pics -type f -print` $(sharedir)/muttprint/
 +	${BSD_INSTALL_DATA} `find translations -type f -print` $(sharedir)/muttprint/translations
 +	$(MAKE) -C doc/manpages mandir=$(mandir) install
 +
 +install-with-doc: install
-+	mkdir -p $(docdir)/muttprint
++	mkdir -p $(docdir)/$(docdirname)
 +	${BSD_INSTALL_DATA} CHANGES COPYING INSTALL README* sample-muttprintrc-* \
- 		$(docdir)/muttprint/
+ 		$(docdir)/$(docdirname)
 -	$(INSTALL) `find pics -type f -print` $(sharedir)/muttprint/
 -	$(INSTALL) `find translations -type f -print` $(sharedir)/muttprint/translations
- 	$(MAKE) -C doc/manual docdir=$(docdir) install
+ 	$(MAKE) -C doc/manual docdir=$(docdir) docdirname=$(docdirname) install
 -	$(MAKE) -C doc/manpages mandir=$(mandir) install
  
  uninstall:
