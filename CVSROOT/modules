@@ -2900,6 +2900,10 @@ gtimer		ports/deskutils/gtimer
 gtk--		ports/x11-toolkits/gtk--
 gtk--2		ports/x11-toolkits/gtk--2
 gtk-Mac2-theme	ports/x11-themes/gtk-Mac2-theme
+gtk-aluminumalloy-cryogenic-theme	ports/x11-themes/gtk-aluminumalloy-cryogenic-theme
+gtk-aluminumalloy-smog-theme	ports/x11-themes/gtk-aluminumalloy-smog-theme
+gtk-aluminumalloy-toxic-theme	ports/x11-themes/gtk-aluminumalloy-toxic-theme
+gtk-aluminumalloy-volcanic-theme	ports/x11-themes/gtk-aluminumalloy-volcanic-theme
 gtk-aqualightblue-theme	ports/x11-themes/gtk-aqualightblue-theme
 gtk-bluecurve-theme	ports/x11-themes/gtk-bluecurve-theme
 gtk-cleanice-engine	ports/x11-themes/gtk-cleanice-engine
@@ -5255,6 +5259,10 @@ mess822		ports/mail/mess822
 messagewall	ports/mail/messagewall
 meta-cvs	ports/devel/meta-cvs
 metacity	ports/x11-wm/metacity
+metacity-aluminumalloy-cryogenic-theme	ports/x11-themes/metacity-aluminumalloy-cryogenic-theme
+metacity-aluminumalloy-smog-theme	ports/x11-themes/metacity-aluminumalloy-smog-theme
+metacity-aluminumalloy-toxic-theme	ports/x11-themes/metacity-aluminumalloy-toxic-theme
+metacity-aluminumalloy-volcanic-theme	ports/x11-themes/metacity-aluminumalloy-volcanic-theme
 metacity-theme-6nome	ports/x11-themes/metacity-theme-6nome
 metacity-theme-aero	ports/x11-themes/metacity-theme-aero
 metacity-theme-alloy-c	ports/x11-themes/metacity-theme-alloy-c
