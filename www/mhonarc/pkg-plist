@@ -8,6 +8,8 @@ share/MHonArc/MHonArc/CharEnt/CP1252.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_1.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_10.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_10R.pm
+share/MHonArc/MHonArc/CharEnt/ISO8859_15.pm
+share/MHonArc/MHonArc/CharEnt/ISO8859_15R.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_1R.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_2.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_3.pm
@@ -21,6 +23,8 @@ share/MHonArc/MHonArc/CharEnt/ISO8859_8.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_8R.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_9.pm
 share/MHonArc/MHonArc/CharEnt/ISO8859_9R.pm
+share/MHonArc/MHonArc/CharEnt/Makefile
+share/MHonArc/MHonArc/Makefile
 share/MHonArc/base64.pl
 share/MHonArc/ewhutil.pl
 share/MHonArc/iso2022jp.pl
@@ -65,16 +69,16 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/app-rcfileexs.html
 %%PORTDOCS%%share/doc/MHonArc/app-rcidx.html
 %%PORTDOCS%%share/doc/MHonArc/app-utilsprg.html
-%%PORTDOCS%%share/doc/MHonArc/blank.gif
-%%PORTDOCS%%share/doc/MHonArc/bug.gif
+%%PORTDOCS%%share/doc/MHonArc/blank.png
+%%PORTDOCS%%share/doc/MHonArc/bug.png
 %%PORTDOCS%%share/doc/MHonArc/commontasks.html
 %%PORTDOCS%%share/doc/MHonArc/contacts.html
-%%PORTDOCS%%share/doc/MHonArc/faq.gif
-%%PORTDOCS%%share/doc/MHonArc/faq/.src/Makefile
-%%PORTDOCS%%share/doc/MHonArc/faq/.src/addbuttons.pl
-%%PORTDOCS%%share/doc/MHonArc/faq/.src/addtoc-i.pl
-%%PORTDOCS%%share/doc/MHonArc/faq/.src/addtoc.pl
+%%PORTDOCS%%share/doc/MHonArc/faq.png
 %%PORTDOCS%%share/doc/MHonArc/faq/Makefile
+%%PORTDOCS%%share/doc/MHonArc/faq/_helper/Makefile
+%%PORTDOCS%%share/doc/MHonArc/faq/_helper/addbuttons.pl
+%%PORTDOCS%%share/doc/MHonArc/faq/_helper/addtoc-i.pl
+%%PORTDOCS%%share/doc/MHonArc/faq/_helper/addtoc.pl
 %%PORTDOCS%%share/doc/MHonArc/faq/about.html
 %%PORTDOCS%%share/doc/MHonArc/faq/archives.html
 %%PORTDOCS%%share/doc/MHonArc/faq/envs.html
@@ -82,20 +86,21 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/faq/general.html
 %%PORTDOCS%%share/doc/MHonArc/faq/indexpgs.html
 %%PORTDOCS%%share/doc/MHonArc/faq/mime.html
-%%PORTDOCS%%share/doc/MHonArc/faq/monicon.gif
-%%PORTDOCS%%share/doc/MHonArc/faq/monsmall_t.gif
+%%PORTDOCS%%share/doc/MHonArc/faq/monicon.png
+%%PORTDOCS%%share/doc/MHonArc/faq/monsmall_t.png
 %%PORTDOCS%%share/doc/MHonArc/faq/msgpgs.html
+%%PORTDOCS%%share/doc/MHonArc/faq/security.html
 %%PORTDOCS%%share/doc/MHonArc/faq/threads.html
 %%PORTDOCS%%share/doc/MHonArc/faq/usage.html
-%%PORTDOCS%%share/doc/MHonArc/home.gif
+%%PORTDOCS%%share/doc/MHonArc/home.png
 %%PORTDOCS%%share/doc/MHonArc/index.html
 %%PORTDOCS%%share/doc/MHonArc/install.html
 %%PORTDOCS%%share/doc/MHonArc/intro.html
 %%PORTDOCS%%share/doc/MHonArc/layout.html
 %%PORTDOCS%%share/doc/MHonArc/mhonarc.html
-%%PORTDOCS%%share/doc/MHonArc/monicon.gif
-%%PORTDOCS%%share/doc/MHonArc/next.gif
-%%PORTDOCS%%share/doc/MHonArc/prev.gif
+%%PORTDOCS%%share/doc/MHonArc/monicon.png
+%%PORTDOCS%%share/doc/MHonArc/next.png
+%%PORTDOCS%%share/doc/MHonArc/prev.png
 %%PORTDOCS%%share/doc/MHonArc/quickstart.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/date.mrc.html
 %%PORTDOCS%%share/doc/MHonArc/rcfileexs/def-mime.mrc.html
@@ -339,11 +344,11 @@ share/MHonArc/rfc822.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/weekdays.html
 %%PORTDOCS%%share/doc/MHonArc/resources/weekdaysabr.html
 %%PORTDOCS%%share/doc/MHonArc/ssbg75.jpg
-%%PORTDOCS%%share/doc/MHonArc/stampwb2.gif
-%%PORTDOCS%%share/doc/MHonArc/up.gif
+%%PORTDOCS%%share/doc/MHonArc/stampwb2.png
+%%PORTDOCS%%share/doc/MHonArc/up.png
 %%PORTDOCS%%@dirrm share/doc/MHonArc/resources
 %%PORTDOCS%%@dirrm share/doc/MHonArc/rcfileexs
-%%PORTDOCS%%@dirrm share/doc/MHonArc/faq/.src
+%%PORTDOCS%%@dirrm share/doc/MHonArc/faq/_helper
 %%PORTDOCS%%@dirrm share/doc/MHonArc/faq
 %%PORTDOCS%%@dirrm share/doc/MHonArc
 @dirrm share/MHonArc/MHonArc/CharEnt
