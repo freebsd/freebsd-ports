@@ -1,0 +1,14 @@
+*** pdftops/XRef.cxx.orig	Wed Jan 12 17:10:53 2005
+--- pdftops/XRef.cxx	Wed Jan 12 17:11:22 2005
+***************
+*** 793,798 ****
+--- 793,801 ----
+  	} else {
+  	  keyLength = 5;
+  	}
++ 	if (keyLength > 16) {
++ 	  keyLength = 16;
++ 	}
+  	permFlags = permissions.getInt();
+  	if (encVersion >= 1 && encVersion <= 2 &&
+  	    encRevision >= 2 && encRevision <= 3) {
