@@ -1,0 +1,53 @@
+bin/muttprint
+%%PORTDOCS%%share/doc/muttprint/CHANGES
+%%PORTDOCS%%share/doc/muttprint/COPYING
+%%PORTDOCS%%share/doc/muttprint/INSTALL
+%%PORTDOCS%%share/doc/muttprint/README
+%%PORTDOCS%%share/doc/muttprint/README.Gnus
+%%PORTDOCS%%share/doc/muttprint/README.translations
+%%PORTDOCS%%share/doc/muttprint/manual-de/muttprint.html
+%%PORTDOCS%%share/doc/muttprint/manual-de/x15.html
+%%PORTDOCS%%share/doc/muttprint/manual-de/x23.html
+%%PORTDOCS%%share/doc/muttprint/manual-de/x167.html
+%%PORTDOCS%%share/doc/muttprint/manual-de/x475.html
+%%PORTDOCS%%share/doc/muttprint/manual-de.pdf
+%%PORTDOCS%%share/doc/muttprint/manual-en/muttprint.html
+%%PORTDOCS%%share/doc/muttprint/manual-en/x15.html
+%%PORTDOCS%%share/doc/muttprint/manual-en/x23.html
+%%PORTDOCS%%share/doc/muttprint/manual-en/x166.html
+%%PORTDOCS%%share/doc/muttprint/manual-en/x472.html
+%%PORTDOCS%%share/doc/muttprint/manual-en.pdf
+%%PORTDOCS%%share/doc/muttprint/manual-es/muttprint.html
+%%PORTDOCS%%share/doc/muttprint/manual-es/x15.html
+%%PORTDOCS%%share/doc/muttprint/manual-es/x23.html
+%%PORTDOCS%%share/doc/muttprint/manual-es/x157.html
+%%PORTDOCS%%share/doc/muttprint/manual-es/x404.html
+%%PORTDOCS%%share/doc/muttprint/manual-es.pdf
+%%PORTDOCS%%share/doc/muttprint/manual-it/muttprint.html
+%%PORTDOCS%%share/doc/muttprint/manual-it/x15.html
+%%PORTDOCS%%share/doc/muttprint/manual-it/x23.html
+%%PORTDOCS%%share/doc/muttprint/manual-it/x166.html
+%%PORTDOCS%%share/doc/muttprint/manual-it/x466.html
+%%PORTDOCS%%share/doc/muttprint/manual-it.pdf
+%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-de
+%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-en
+%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-es
+%%PORTDOCS%%share/doc/muttprint/sample-muttprintrc-it
+share/muttprint/BabyTuX.eps
+share/muttprint/BabyTuX.png
+share/muttprint/BabyTuX_color.eps
+share/muttprint/BabyTuX_color.png
+share/muttprint/Beastie.eps
+share/muttprint/Debian.eps
+share/muttprint/Debian.png
+share/muttprint/Debian_color.eps
+share/muttprint/Debian_color.png
+share/muttprint/README.pics
+share/muttprint/penguin.eps
+share/muttprint/penguin.jpg
+@dirrm share/muttprint
+%%PORTDOCS%%@dirrm share/doc/muttprint/manual-de
+%%PORTDOCS%%@dirrm share/doc/muttprint/manual-en
+%%PORTDOCS%%@dirrm share/doc/muttprint/manual-es
+%%PORTDOCS%%@dirrm share/doc/muttprint/manual-it
+%%PORTDOCS%%@dirrm share/doc/muttprint

@@ -1,0 +1,8 @@
+Muttprint formats the printing of mail clients to a good-looking printing.
+It uses the typesetting system LaTeX, which is normally installed on a
+Unix/Linux system.
+
+WWW: http://muttprint.sourceforge.net/
+
+- Oliver Braun
+obraun@informatik.unibw-muenchen.de

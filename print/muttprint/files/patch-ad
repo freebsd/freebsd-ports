@@ -1,0 +1,28 @@
+--- doc/manpages/Makefile.orig	Mon Oct 22 17:39:34 2001
++++ doc/manpages/Makefile	Fri Jan  4 19:29:01 2002
+@@ -16,7 +16,7 @@
+ TITLE_CS = "Krátký manuál Muttprintu"
+ 
+ 
+-all: german english spanish italian czech
++all: english
+ german: de/muttprint.1.gz
+ english: en/muttprint.1.gz
+ italian: it/muttprint.1.gz
+@@ -51,11 +51,11 @@
+ 
+ install: de/muttprint.1.gz en/muttprint.1.gz es/muttprint.1.gz \
+  			it/muttprint.1.gz cs/muttprint.1.gz
+-	$(INSTALL) en/muttprint.1.gz $(mandir)/man1/
+-	$(INSTALL) de/muttprint.1.gz $(mandir)/de/man1/
+-	$(INSTALL) es/muttprint.1.gz $(mandir)/es/man1/
+-	$(INSTALL) it/muttprint.1.gz $(mandir)/it/man1/
+-	$(INSTALL) cs/muttprint.1.gz $(mandir)/cs/man1/
++	${BSD_INSTALL_MAN} en/muttprint.1.gz $(mandir)/man1/
++#	$(INSTALL) de/muttprint.1.gz $(mandir)/de/man1/
++#	$(INSTALL) es/muttprint.1.gz $(mandir)/es/man1/
++#	$(INSTALL) it/muttprint.1.gz $(mandir)/it/man1/
++#	$(INSTALL) cs/muttprint.1.gz $(mandir)/cs/man1/
+ 
+ uninstall:
+ 	rm -f $(mandir)/man1/muttprint.1.gz

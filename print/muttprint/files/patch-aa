@@ -1,0 +1,66 @@
+--- Makefile.orig	Sat Nov 24 15:12:48 2001
++++ Makefile	Fri Jan  4 19:36:34 2002
+@@ -7,21 +7,21 @@
+ 
+ # Change this for local installation, 
+ # e. g. /home/user or /usr/local
+-prefix = /usr
++# prefix = /usr
+ 
+ # Change this for some distributions (current setting
+ # is OK for SuSE)
+-docdir = $(prefix)/share/doc/packages
++docdir = ${PREFIX}/share/doc
+ 
+ # Change this to $(prefix)/man for older distributions
+ # (current setting is correct according to LSB)
+-mandir = $(prefix)/share/man
++mandir = ${PREFIX}/man
+ 
+ # Change this three directories only if you're know
+ # what you do
+-sharedir = $(prefix)/share
+-libdir = $(prefix)/lib
+-bindir = $(prefix)/bin
++sharedir = ${PREFIX}/share
++libdir = ${PREFIX}/lib
++bindir = ${PREFIX}/bin
+ 
+ #####################################################
+ #####################################################
+@@ -30,23 +30,25 @@
+ INSTALLBIN = $(install) -m 0755 
+ INSTALL = $(install) -m 0644 
+ 
++all:
+ 
+ nothing:
+ 	@echo "Nothing to do. Run \"make install\" to install Muttprint."
+ 
+ 
+ install: 
+-	mkdir -p $(docdir)/muttprint $(bindir) $(sharedir)/muttprint $(mandir)/man1 \
+-		$(mandir)/de/man1 $(mandir)/es/man1 \
+-		$(mandir)/cs/man1 $(mandir)/it/man1 \
++	mkdir -p $(bindir) $(sharedir)/muttprint \
+ 		$(libdir)/muttprint
+-	$(INSTALLBIN) muttprint $(bindir)/
+-	$(INSTALL) CHANGES COPYING INSTALL README* sample-muttprintrc-* \
+-		$(docdir)/muttprint/
+-	$(INSTALL) pics/* $(sharedir)/muttprint/
+-	$(INSTALL) translations/* $(libdir)/muttprint/
+-	make -C doc/manual docdir=$(docdir) install
+-	make -C doc/manpages mandir=$(mandir) install
++	${BSD_INSTALL_SCRIPT} muttprint $(bindir)/
++	${BSD_INSTALL_DATA} pics/* $(sharedir)/muttprint/
++	${BSD_INSTALL_DATA} translations/* $(libdir)/muttprint/
++
++install-with-doc: install
++	mkdir -p $(docdir)/muttprint
++	${BSD_INSTALL_DATA} CHANGES COPYING INSTALL README* \
++	        sample-muttprintrc-* $(docdir)/muttprint/
++	${MAKE} -C doc/manual docdir=$(docdir) install
++	${MAKE} -C doc/manpages mandir=$(mandir) install
+ 
+ uninstall:
+ 	rm $(bindir)/muttprint
