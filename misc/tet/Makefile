@@ -10,7 +10,7 @@ DISTNAME=		tet3.2e-unsup
 PKGNAME=		tet-3.2e
 CATEGORIES=		misc
 MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3/ \
-			http://freefall.freebsd.org/~jkoshy/PORTS/
+			http://www.FreeBSD.org/~jkoshy/PORTS/
 EXTRACT_SUFX=		.src.tgz
 
 MAINTAINER=		jkoshy@freebsd.org
