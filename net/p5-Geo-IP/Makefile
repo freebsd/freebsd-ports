@@ -9,7 +9,9 @@ PORTNAME=	Geo-IP
 PORTVERSION=	0.26
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://maxmind.com/download/geoip/api/perl/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		http://maxmind.com/download/geoip/api/perl/
+MASTER_SITE_SUBDIR=	Geo
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
