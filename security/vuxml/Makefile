@@ -1,0 +1,98 @@
+# New ports collection makefile for:	vuxml
+# Date created:		2004/02/12
+# Whom:			nectar@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	vuxml
+PORTVERSION=	1.0
+PORTREVISION=	0
+CATEGORIES=	security textproc
+MASTER_SITES=	http://www.vuxml.org/dtd/vuxml-1/
+DISTFILES=	vuxml-10.dtd vuxml-model-10.mod
+
+MAINTAINER=	nectar@FreeBSD.org
+COMMENT=	Vulnerability and eXposure Markup Language DTD
+
+RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr \
+		${LOCALBASE}/share/xml/dtd/xhtml-modularization/VERSION:${PORTSDIR}/textproc/xhtml-modularization \
+		${LOCALBASE}/share/xml/dtd/xhtml-basic/xhtml-basic10.dtd:${PORTSDIR}/textproc/xhtml-basic
+
+NO_MTREE=	YES
+NO_BUILD=	YES
+WRKSRC=		${WRKDIR}
+
+dir_DTD=	share/xml/dtd/vuxml
+
+XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
+SGMLCAT=	${PREFIX}/share/sgml/catalog.ports
+XMLCAT=		${PREFIX}/share/xml/catalog.ports
+
+XMLCAT_ADD=	${XMLCATMGR} -c ${XMLCAT} add nextCatalog \
+		    ${PREFIX}/${dir_DTD}/catalog.xml
+XMLCAT_RM=	${XMLCATMGR} -c ${XMLCAT} remove nextCatalog \
+		    ${PREFIX}/${dir_DTD}/catalog.xml
+SGMLCAT_ADD=	${XMLCATMGR} -sc ${SGMLCAT} add CATALOG \
+		    ${PREFIX}/${dir_DTD}/vuxml.cat
+SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove CATALOG \
+		    ${PREFIX}/${dir_DTD}/vuxml.cat
+
+CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
+CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
+
+PLIST=		${WRKDIR}/PLIST
+
+VUXML_FILE?=	${PKGDIR}/vuln.xml
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+.for f in ${DISTFILES}
+	${CP} ${_DISTDIR}/${f} ${WRKDIR}/${f}
+.endfor
+
+pre-install:
+	${CP} ${PKGDIR}/pkg-plist ${PLIST}
+	${ECHO} "@unexec ${XMLCAT_RM}" >> ${PLIST}
+	${ECHO} "@exec ${XMLCAT_ADD}" >> ${PLIST}
+	${ECHO} "@unexec ${SGMLCAT_RM}" >> ${PLIST}
+	${ECHO} "@exec ${SGMLCAT_ADD}" >> ${PLIST}
+	${ECHO} "@dirrm ${dir_DTD}" >> ${PLIST}
+	${ECHO} '@unexec rmdir %D share/xml/dtd 2>/dev/null || true' >> \
+	    ${PLIST}
+
+do-install:
+	@[ -d ${PREFIX}/${dir_DTD} ] || \
+	    ${MKDIR} ${PREFIX}/${dir_DTD}
+.for f in ${DISTFILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${dir_DTD}/${f}
+.endfor
+	${SED} -e "s;@@PREFIX@@;${PREFIX};g" ${FILESDIR}/catalog.xml > \
+	    ${WRKDIR}/catalog.xml
+	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${PREFIX}/${dir_DTD}/catalog.xml
+	${INSTALL_DATA} ${FILESDIR}/vuxml.cat ${PREFIX}/${dir_DTD}/vuxml.cat
+	${XMLCAT_ADD}
+	${SGMLCAT_ADD}
+
+validate:
+.if defined(WITH_XMLLINT)
+	${SETENV} SGML_CATALOG_FILES="${CATALOG_PORTS_XML}" \
+	xmllint --catalogs --valid --noout "${VUXML_FILE}"
+.elif defined(WITH_NSGMLS)
+	${SETENV} SP_CHARSET_FIXED=YES SP_ENCODING=XML \
+	nsgmls -wxml -s "${VUXML_FILE}"
+.elif defined(WITH_RXP)
+	${SETENV} XML_CATALOG_FILES="${CATALOG_PORTS_XML}" \
+	rxp -EVNxs "${VUXML_FILE}"
+.else
+	@${ECHO} "Define one of the following to validate:"
+	@${ECHO} "  WITH_XMLLINT          Use xmllint from libxml2"
+	@${ECHO} "  WITH_NSGMLS           Use nsgmls from jade"
+# RXP 1.4 works great, but the ports system is stuck at 1.2.5
+#	@${ECHO} "  WITH_RXP              Use rxp"
+	@${ECHO}
+	@${FALSE}
+.endif
+
+.include <bsd.port.mk>
