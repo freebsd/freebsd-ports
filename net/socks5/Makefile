@@ -3,14 +3,14 @@
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.14 1997/08/28 06:49:06 obrien Exp $
+# $Id: Makefile,v 1.15 1997/12/24 18:42:15 imp Exp $
 #
 
 DISTNAME=	socks5-v1.0r3
 PKGNAME=	socks5-1.0.3
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.astec.co.jp/pub/security/socks/  \
-		ftp://ftp.ualg.pt/Linux/net/proxies/
+		ftp://ftp.ualg.pt/Linux/net/proxies/socks5/
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	imp@freebsd.org
