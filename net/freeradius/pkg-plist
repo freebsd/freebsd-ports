@@ -433,4 +433,4 @@ sbin/rc.radiusd
 @unexec rm -fr /var/log/raddb
 @exec mkdir -p /var/run/radiusd
 @unexec rm -fr /var/run/radiusd
-@unexec echo "You should remove %D/etc/raddb if you don't need it anymore."
+@unexec rmdir %D/etc/raddb 2> /dev/null || echo "You should remove %D/etc/raddb if you don't need it anymore."
