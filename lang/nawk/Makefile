@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
 DISTNAME=	awk
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

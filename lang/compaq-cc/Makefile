@@ -18,7 +18,7 @@ DISTFILES+=	cpml_ev6-5.1.0-4.alpha.rpm
 DISTFILES+=	cpml_ev5-5.1.0-4.alpha.rpm
 .endif
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"Distribution not allowed"
 
