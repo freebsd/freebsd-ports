@@ -11,15 +11,17 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
-		${PORTNAME}-data-0.6.tgz
+		${PORTNAME}-data-0.6.tar.bz2
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
 
-BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12
+BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12 \
+		${BZIP2_CMD}:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tgz
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
@@ -32,6 +34,7 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CXXFLAGS="${PTHREAD_CFLAGS} -I${X11BASE}/include"
 
 post-extract:
+	${TAR} --directory ${WRKDIR} --bunzip2 --extract --file ${DISTDIR}/${PORTNAME}-data-0.6.tar.bz2
 	${RM} -rf ${WRKDIR}/data/tileset/default/.thumbnails
 
 post-patch:
