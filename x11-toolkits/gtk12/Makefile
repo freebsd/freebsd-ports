@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
