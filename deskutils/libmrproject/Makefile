@@ -18,7 +18,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnometarget libgsf
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_LIBTOOL_VER=	14
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
