@@ -4,7 +4,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1995/09/23 17:26:19 ache Exp $
+# $Id: Makefile,v 1.8 1995/09/25 19:21:31 ache Exp $
 #
 
 CATEGORIES+=	security
@@ -36,7 +36,7 @@ do-install:
 	-${PREFIX}/bin/pgp > /dev/null  2>&1  # update .idx file
 
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
-fetch-depends:
+pre-fetch:
 	@echo
 	@echo You must set variable USA_RESIDENT to YES, if you are USA resident
 	@echo or to NO, if you aren\'t USA resident to build this package
@@ -69,6 +69,7 @@ EXTRACT_SUFX=   .zip
 EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -qa
 FILESDIR=       ${.CURDIR}/files.non_usa
+PATCHDIR=       ${.CURDIR}/patches.non_usa
 
 .endif
 .endif
