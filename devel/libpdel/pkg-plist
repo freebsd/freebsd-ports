@@ -504,3 +504,4 @@ man/man3/valog.3.gz
 @dirrm include/pdel/http/servlet
 @dirrm include/pdel/http
 @dirrm include/pdel/config
+@dirrm include/pdel
