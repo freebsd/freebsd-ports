@@ -1,0 +1,20 @@
+--- doc/Makefile.in.orig	Wed Nov 19 09:55:09 2003
++++ doc/Makefile.in	Mon Dec 20 12:32:30 2004
+@@ -398,7 +398,7 @@
+ 	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
+                        $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+ 	    if test -f $$ifile; then \
+-	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
++	      relfile=`echo "$$ifile" | sed 's|^.*/||;s|gpgme|gpgme03|'`; \
+ 	      echo " $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile"; \
+ 	      $(INSTALL_DATA) $$ifile $(DESTDIR)$(infodir)/$$relfile; \
+ 	    else : ; fi; \
+@@ -409,7 +409,7 @@
+ 	     install-info --version | grep -i -v debian) >/dev/null 2>&1; then \
+ 	  list='$(INFO_DEPS)'; \
+ 	  for file in $$list; do \
+-	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
++	    relfile=`echo "$$file" | sed 's|^.*/||;s|gpgme|gpgme03|'`; \
+ 	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile";\
+ 	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$relfile || :;\
+ 	  done; \

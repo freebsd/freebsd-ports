@@ -1,0 +1,47 @@
+--- gpgme/Makefile.in.orig	Wed Nov 19 09:55:10 2003
++++ gpgme/Makefile.in	Mon Dec 20 14:34:26 2004
+@@ -175,7 +175,7 @@
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = gpgme.m4
+ include_HEADERS = gpgme.h
+-lib_LTLIBRARIES = libgpgme.la
++lib_LTLIBRARIES = libgpgme03.la
+ 
+ libgpgme_la_LDFLAGS = -version-info \
+       @LIBGPGME_LT_CURRENT@:@LIBGPGME_LT_REVISION@:@LIBGPGME_LT_AGE@
+@@ -277,7 +277,7 @@
+ 	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) -o libgpgme03.la
+ DIST_SOURCES = $(am__libgpgme_la_SOURCES_DIST)
+ DATA = $(m4data_DATA)
+ 
+@@ -327,7 +327,7 @@
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libgpgme.la: $(libgpgme_la_OBJECTS) $(libgpgme_la_DEPENDENCIES) 
++libgpgme03.la: $(libgpgme_la_OBJECTS) $(libgpgme_la_DEPENDENCIES) 
+ 	$(LINK) -rpath $(libdir) $(libgpgme_la_LDFLAGS) $(libgpgme_la_OBJECTS) $(libgpgme_la_LIBADD) $(LIBS)
+ binSCRIPT_INSTALL = $(INSTALL_SCRIPT)
+ install-binSCRIPTS: $(bin_SCRIPTS)
+@@ -336,7 +336,7 @@
+ 	@list='$(bin_SCRIPTS)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  if test -f $$d$$p; then \
+-	    f=`echo "$$p" | sed 's|^.*/||;$(transform)'`; \
++	    f=`echo "$$p" | sed 's|^.*/||;s|gpgme|gpgme03|'`; \
+ 	    echo " $(binSCRIPT_INSTALL) $$d$$p $(DESTDIR)$(bindir)/$$f"; \
+ 	    $(binSCRIPT_INSTALL) $$d$$p $(DESTDIR)$(bindir)/$$f; \
+ 	  else :; fi; \
+@@ -450,7 +450,7 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
+ 	@list='$(m4data_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f="`echo $$p | sed -e 's|^.*/||'`"; \
++	  f="`echo $$p | sed -e 's|^.*/||;s/gpgme/gpgme03/'`"; \
+ 	  echo " $(m4dataDATA_INSTALL) $$d$$p $(DESTDIR)$(m4datadir)/$$f"; \
+ 	  $(m4dataDATA_INSTALL) $$d$$p $(DESTDIR)$(m4datadir)/$$f; \
+ 	done

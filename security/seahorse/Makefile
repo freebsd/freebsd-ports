@@ -7,7 +7,7 @@
 
 PORTNAME=	seahorse
 PORTVERSION=	0.7.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
@@ -18,7 +18,7 @@ COMMENT=	A front end for GnuPG
 
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	${BUILD_DEPENDS}
-LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS=	gpgme03.9:${PORTSDIR}/security/gpgme03
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -31,7 +31,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		s|DATADIRNAME=lib|DATADIRNAME=share|g; \
+		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
 	@${CP} ${WRKSRC}/data/seahorse.schemas.in ${WRKSRC}/data/seahorse.schemas
 
 .include <bsd.port.mk>

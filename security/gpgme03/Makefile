@@ -7,7 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	0.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -24,9 +24,13 @@ LATEST_LINK=	gpgme03
 
 USE_INC_LIBTOOL_VER=13
 USE_GMAKE=	yes
+USE_AUTOCONF_VER=	259
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	YES
 
-INFO=	gpgme
+INFO=	gpgme03
+
+CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/gpgme03
 
 .include <bsd.port.pre.mk>
 
@@ -39,5 +43,11 @@ BUILD_DEPENDS+=	gpgsm:${PORTSDIR}/security/gnupg-devel
 .else
 CONFIGURE_ARGS+=	--without-gpgsm
 .endif
+
+post-patch:
+.for i in tests tests/gpg tests/gpgsm
+	@${REINPLACE_CMD} -e 's/libgpgme.la/libgpgme03.la/' \
+		${WRKSRC}/${i}/Makefile.in
+.endfor
 
 .include <bsd.port.post.mk>

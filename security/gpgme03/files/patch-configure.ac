@@ -1,0 +1,11 @@
+--- configure.ac.orig	Mon Dec 20 10:46:39 2004
++++ configure.ac	Mon Dec 20 10:47:30 2004
+@@ -246,7 +246,7 @@
+ GNUPG_FIX_HDR_VERSION(gpgme/gpgme.h, GPGME_VERSION)
+ 
+ dnl Substitution used for gpgme-config 
+-GPGME_CONFIG_LIBS="-lgpgme"
++GPGME_CONFIG_LIBS="-lgpgme03"
+ GPGME_CONFIG_CFLAGS=""
+ AC_SUBST(GPGME_CONFIG_LIBS)
+ AC_SUBST(GPGME_CONFIG_CFLAGS)

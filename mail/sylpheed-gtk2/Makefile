@@ -7,7 +7,7 @@
 
 PORTNAME=		sylpheed-gtk2
 PORTVERSION=		0.9.99.20041024
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--enable-ssl
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS+=		gpgme03.9:${PORTSDIR}/security/gpgme03
 RUN_DEPENDS+=		gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=	--enable-gpgme
 .endif
@@ -71,7 +71,8 @@ post-patch:
 		's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
 		 s|-lresolv||g; s|-lpisock\"|-liconv &|g; \
 		 s|^manualdir=.*|manualdir="${DOCSDIR}/manual"|g; \
-		 s|^faqdir=.*|faqdir="${DOCSDIR}/faq"|g' \
+		 s|^faqdir=.*|faqdir="${DOCSDIR}/faq"|g ;\
+		 s|gpgme-config|gpgme03-config|g' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po src manual faq$$|SUBDIRS = ac po src|g' \

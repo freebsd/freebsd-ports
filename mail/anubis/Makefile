@@ -31,7 +31,8 @@ USE_REINPLACE=		yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=		MAKEINFO="makeinfo --no-split" LDFLAGS="${LDFLAGS}" \
+			CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}"
 LDFLAGS+=		-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_NLS)
@@ -57,7 +58,8 @@ CONFIGURE_ARGS+=	--without-gnutls
 .if defined(WITHOUT_GPGME)
 CONFIGURE_ARGS+=	--without-gpgme
 .else
-LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS+=		gpgme03.9:${PORTSDIR}/security/gpgme03
+CFLAGS+=		-I${LOCALBASE}/include/gpgme03
 .endif
 
 # PCRE

@@ -1,0 +1,11 @@
+--- doc/gpgme.info.orig	Mon Dec 20 12:37:07 2004
++++ doc/gpgme.info	Mon Dec 20 12:37:25 2004
+@@ -2,7 +2,7 @@
+ 
+ INFO-DIR-SECTION GNU Libraries
+ START-INFO-DIR-ENTRY
+-* GPGME: (gpgme).          Adding support for cryptography to your program.
++* GPGME: (gpgme03).          Adding support for cryptography to your program.
+ END-INFO-DIR-ENTRY
+ 
+    This file documents the GPGME library.

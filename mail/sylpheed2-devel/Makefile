@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	1.0.0.r.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
 		http://sylpheed.good-day.net/sylpheed/:source \
@@ -55,7 +55,7 @@ CONFIGURE_ARGS+=--disable-imlib
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS+=	gpgme03.9:${PORTSDIR}/security/gpgme03
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
 .else
@@ -106,7 +106,8 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
+		s|-lresolv||g; s|-lpisock\"|-liconv &|g; \
+		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|mime\.types|sylpheed-mime\.types|g' \
 		${WRKSRC}/src/procmime.c
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	gpgme
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	security ruby
 MASTER_SITES=	http://deisui.org/~ueno/ruby/ruby-gpgme/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to GnuPG Made Easy (GPGME)
 
-LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS=	gpgme03.9:${PORTSDIR}/security/gpgme03
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

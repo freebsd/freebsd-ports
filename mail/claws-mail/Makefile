@@ -7,7 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -123,7 +123,7 @@ PLIST_SUB+=		SA_PLUG="@comment "
 .endif
 .if defined(WITH_GPGME) || defined(WITH_ALL)
 PLIST_SUB+=            GPGME=""
-LIB_DEPENDS+=          gpgme.9:${PORTSDIR}/security/gpgme03
+LIB_DEPENDS+=          gpgme03.9:${PORTSDIR}/security/gpgme03
 RUN_DEPENDS+=          gpg:${PORTSDIR}/security/gnupg
 .else
 PLIST_SUB+=           GPGME="@comment "
@@ -170,7 +170,8 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
+		's|-lresolv||g; s|-lpisock\"|-liconv &|g ;\
+		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
