@@ -5,12 +5,14 @@ share/zphoto/templates/default/en/noflash.html
 share/zphoto/templates/default/en/zphoto.css
 share/zphoto/templates/default/en/flash-colors.txt
 share/zphoto/templates/default/en/css-colors.txt
+share/zphoto/templates/default/en/zoom.js
 share/zphoto/templates/default/ja/.photo.html
 share/zphoto/templates/default/ja/index.html
 share/zphoto/templates/default/ja/noflash.html
 share/zphoto/templates/default/ja/zphoto.css
 share/zphoto/templates/default/ja/flash-colors.txt
 share/zphoto/templates/default/ja/css-colors.txt
+share/zphoto/templates/default/ja/zoom.js
 share/zphoto/templates/default/all/.photo.html
 share/zphoto/templates/default/all/zphoto.css
 share/zphoto/templates/default/all/index.html.en
@@ -19,8 +21,14 @@ share/zphoto/templates/default/all/noflash.html.en
 share/zphoto/templates/default/all/noflash.html.ja
 share/zphoto/templates/default/all/flash-colors.txt
 share/zphoto/templates/default/all/css-colors.txt
+share/zphoto/templates/default/all/zoom.js.en
+share/zphoto/templates/default/all/zoom.js.ja
 share/zphoto/doc/zphoto-ja.html
 share/zphoto/doc/zphoto.html
+share/zphoto/doc/images/wxzphoto-linux-mini.png
+share/zphoto/doc/images/wxzphoto-linux.png
+share/zphoto/doc/images/wxzphoto-mini.png
+share/zphoto/doc/images/wxzphoto.png
 share/zphoto/fonts/EfontSerifB.fdb
 share/locale/ja/LC_MESSAGES/zphoto.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/zphoto.mo
@@ -30,5 +38,6 @@ share/locale/ja_JP.SJIS/LC_MESSAGES/zphoto.mo
 @dirrm share/zphoto/templates/default
 @dirrm share/zphoto/templates
 @dirrm share/zphoto/fonts
+@dirrm share/zphoto/doc/images
 @dirrm share/zphoto/doc
 @dirrm share/zphoto
