@@ -33,6 +33,7 @@
     SUBDIR += gtop
     SUBDIR += guitar
     SUBDIR += idled
+    SUBDIR += ipsc
     SUBDIR += lavaps
     SUBDIR += libretto-config
     SUBDIR += lmmon
