@@ -18,6 +18,8 @@ BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	kde-qt-addon.4:${PORTSDIR}/x11-toolkits/kde-qt-addon \
 		kdecore.3:${PORTSDIR}/x11/kdelibs11
 
+BROKEN=		"kde-qt-addon was removed"
+
 GNU_AUTOCONF=	yes
 USE_AUTOMAKE=	yes
 USE_BZIP2=	yes
