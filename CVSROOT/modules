@@ -373,6 +373,7 @@ asir2000	ports/math/asir2000
 asis		ports/devel/asis
 asl		ports/devel/asl
 aslookup	ports/net/aslookup
+asm2html	ports/textproc/asm2html
 asmail		ports/mail/asmail
 asmem		ports/sysutils/asmem
 asmodem		ports/comms/asmodem
