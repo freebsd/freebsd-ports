@@ -8,7 +8,7 @@
 PORTNAME=	saxon
 PORTVERSION=	8.1.1
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	saxon
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}
@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 
-RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
@@ -33,12 +33,12 @@ PORTDOCS=	background documentation img javadoc
 .endif
 
 do-configure:
-	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; s|%%JAVAVM%%|${JAVA}|g ; \
+	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g ; \
 		s|%%SAXON_JARS%%|${JARFILES:S,^,${JAVAJARDIR}/,}|' \
 		${FILESDIR}/saxon.sh >${WRKSRC}/saxon
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}..."
+	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}/..."
 	@${MKDIR} ${JAVAJARDIR}
 .for file in ${JARFILES}
 	@${ECHO_MSG} -n " ${file}"
@@ -46,15 +46,15 @@ do-install:
 .endfor
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/samples/ && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
+	@${ECHO_MSG} -n ">> Installing samples in ${EXAMPLESDIR}/..."
+	@cd ${WRKSRC}/samples/ \
+	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
-	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc/ && ${FIND} ${PORTDOCS} \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+	@cd ${WRKSRC}/doc/ \
+	  && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 	@${ECHO_MSG} -n ">> Installing scripts in ${PREFIX}/bin..."
