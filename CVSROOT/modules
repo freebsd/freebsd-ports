@@ -11090,6 +11090,7 @@ vi-vnroff	ports/vietnamese/vnroff
 vi-vnterm	ports/vietnamese/vnterm
 vi-vntex	ports/vietnamese/vntex
 vi-vnxfonts	ports/vietnamese/vnxfonts
+vi-xvnkb	ports/vietnamese/xvnkb
 vic		ports/mbone/vic
 vice		ports/emulators/vice
 vicq		ports/net/vicq
