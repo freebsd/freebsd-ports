@@ -1,0 +1,8 @@
+bin/snowlog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALLATION
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/filters.example
+%%PORTDOCS%%%%DATADIR%%/referers.regexp
+%%PORTDOCS%%%%DATADIR%%/useragents.regexp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DATADIR%%

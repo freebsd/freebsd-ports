@@ -373,6 +373,7 @@
     SUBDIR += slmon
     SUBDIR += sloth
     SUBDIR += smartmontools
+    SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
     SUBDIR += spinner

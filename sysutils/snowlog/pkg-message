@@ -1,0 +1,11 @@
+#########################################################
+
+To use snowlog, adding this to httpd.conf
+
+LogFormat "%a\t%l\t%u\t%{%s}t\t%r\t%>s\t%X\t%{Content-Type}o\t%b\t%{Referer}i\t%{User-Agent}i\t%V\t%{LogHint}e" parsable
+
+Next, tell apache to make parsable logs:
+
+CustomLog /path/to/httpd_access_parsable.log  parsable
+
+#########################################################
