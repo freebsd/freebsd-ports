@@ -1,6 +1,6 @@
---- include/sybdb.h.orig	Mon Nov  8 06:10:27 1999
-+++ include/sybdb.h	Wed Mar  1 20:45:55 2000
-@@ -286,6 +286,11 @@
+--- include/sybdb.h	Wed Oct 18 19:35:34 2000
++++ include/sybdb.h.new	Fri Feb  2 09:42:36 2001
+@@ -298,6 +298,11 @@
  extern	RETCODE    DBSETLUSER(LOGINREC *login, char *username);
  extern	RETCODE    DBSETLHOST(LOGINREC *login, char *hostname);
  extern	RETCODE    DBSETLAPP(LOGINREC *login, char *application);
