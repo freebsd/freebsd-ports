@@ -25,6 +25,12 @@ NO_INSTALL_MANPAGES=yes
 
 HB_DIR=		${WRKDIR}/${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken by make(1) changes on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/harbour ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${HB_DIR}/bin/hbdoc ${PREFIX}/bin
@@ -62,4 +68,4 @@ post-install:
 	-@${ECHO} @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	-@${ECHO}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
