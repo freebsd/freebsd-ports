@@ -170,6 +170,7 @@
     SUBDIR += opengatekeeper
     SUBDIR += openh323
     SUBDIR += openldap
+    SUBDIR += openldap2
     SUBDIR += p0f
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
