@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.11 1996/11/26 08:59:28 asami Exp $
+# $Id: Makefile,v 1.12 1996/11/27 19:21:03 markm Exp $
 #
 
     SUBDIR += SSLeay
     SUBDIR += cops
+    SUBDIR += crack
     SUBDIR += donkey
     SUBDIR += fwtk
     SUBDIR += libident
