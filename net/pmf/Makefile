@@ -3,12 +3,12 @@
 # Date created:         24 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:35:44 asami Exp $
+# $Id: Makefile,v 1.8 1996/12/01 01:23:05 obrien Exp $
 #
 
 DISTNAME=       pmf-1.13.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/
+MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/pmf/
 
 WRKSRC=		${WRKDIR}/pmfdir/src
 
