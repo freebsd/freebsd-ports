@@ -1,6 +1,5 @@
-diff -ubwr old/audio-voxware.cc audio-voxware.cc
---- old/audio-voxware.cc	Fri Apr 26 12:22:37 1996
-+++ audio-voxware.cc	Mon Apr 13 15:45:39 1998
+--- audio-voxware.cc.dist	Fri Apr 26 05:22:37 1996
++++ audio-voxware.cc	Fri Jun 26 11:44:52 1998
 @@ -1,4 +1,6 @@
  /*
 + * Modifications (C) 1997-1998 by Luigi Rizzo and others.
@@ -8,12 +7,7 @@ diff -ubwr old/audio-voxware.cc audio-voxware.cc
   * Copyright (c) 1991-1993 Regents of the University of California.
   * All rights reserved.
   *
-@@ -30,34 +32,40 @@
-  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-  * SUCH DAMAGE.
-  */
--static const char rcsid[] =
--    "@(#) $Header: audio-voxware.cc,v 1.10 96/04/26 05:22:05 van Exp $ (LBL)";
+@@ -35,29 +37,37 @@
  
 -#include <string.h>
 -#include <sys/fcntl.h>
@@ -67,7 +61,7 @@ diff -ubwr old/audio-voxware.cc audio-voxware.cc
  	virtual int FrameReady();
  	virtual u_char* Read();
  	virtual	void Write(u_char *);
-@@ -66,163 +74,400 @@
+@@ -66,163 +76,400 @@
  	virtual void OutputPort(int);
  	virtual void InputPort(int);
  	virtual void Obtain();
@@ -168,10 +162,6 @@ diff -ubwr old/audio-voxware.cc audio-voxware.cc
  	if (fd >= 0) {
 -		int on = 1;
 -		ioctl(fd, FIONBIO, &on);
--
--		int frag = (NFRAG << 16) | ABUFLOG2;
--		ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &frag);
--#ifdef fullduplex
 +	int i = -1 ;
 +	u_long fmt = 0 ;
 +	int rate = 8000 ;
@@ -229,7 +219,10 @@ diff -ubwr old/audio-voxware.cc audio-voxware.cc
 +	    fd = -1;
 +	    return;
 +	}
-+
+ 
+-		int frag = (NFRAG << 16) | ABUFLOG2;
+-		ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &frag);
+-#ifdef fullduplex
 +        pa.play_format = play_fmt ;
 +        pa.rec_format = rec_fmt ;
 +        pa.play_rate = pa.rec_rate = rate ;
@@ -309,7 +302,8 @@ diff -ubwr old/audio-voxware.cc audio-voxware.cc
  }
  
 -int VoxWareAudio::FrameReady()
--{
++void VoxWare::Release()
+ {
 -	if ((rmute & 1) == 0) {
 -		register u_char* cp = ubufptr;
 -		register u_char* cpend = ubufend;
@@ -328,8 +322,6 @@ diff -ubwr old/audio-voxware.cc audio-voxware.cc
 -						Obtain();
 -					}
 -					return (0);
-+void VoxWare::Release()
-+{
 +    if (HaveAudio()) {
 +	Audio::Release();
  				}
