@@ -142,6 +142,7 @@ share/locale/zh_TW/LC_MESSAGES/gdm-2.4.mo
 @dirrm share/gnome/gdm/themes
 @dirrm etc/pam.d
 @dirrm etc/gdm/modules
+@dirrm etc/gdm/PostLogin
 @unexec /bin/rmdir %D/etc/dm/Sessions 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/etc/dm 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gdm/gdm-C.omf 2>/dev/null || /usr/bin/true
