@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.apex.net/~jeff/agenda-utils/vrflash-unix/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 DOCS=		agenda-flashing-overview.txt troubleshooting.txt \
 		pmon-protect-unprotect.txt usage.txt
 

@@ -16,7 +16,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
-USE_X_PREFIX=	YES
+USE_X_PREFIX=	yes
 ALL_TARGET=	Frodo
 WRKSRC=		${WRKDIR}/Frodo/Src
 

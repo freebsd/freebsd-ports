@@ -19,7 +19,7 @@ PATCHFILES=	openbsd28_3.0.2.patch
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 
 MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
