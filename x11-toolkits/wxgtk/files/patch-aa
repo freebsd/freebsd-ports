@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Apr 23 07:59:54 2000
-+++ configure.in	Sun Apr 23 08:04:06 2000
-@@ -1974,16 +1974,12 @@
+--- configure.in.orig	Sun Aug 20 17:52:52 2000
++++ configure.in	Sat Aug 26 02:03:38 2000
+@@ -1999,16 +1999,12 @@
  WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
  
  dnl the name of the shared library
@@ -21,7 +21,32 @@
  
  dnl shared library settings
  SHARED_LD=
-@@ -3645,8 +3641,6 @@
+@@ -2742,24 +2738,6 @@
+     fi
+ fi
+ 
+-
+-CXXFLAGS=`echo "${CXXFLAGS}" | sed "s/\-O.//g" `
+-CFLAGS=`echo "${CFLAGS}" | sed "s/\-O.//g" `
+-if test "$wxUSE_OPTIMISE" = "no" ; then
+-    OPTIMISE=
+-else
+-    if test "$GCC" = yes ; then
+-        OPTIMISE="-O2"
+-        case "${host}" in
+-            i586-*-*|i686-*-* )
+-            OPTIMISE="${OPTIMISE} "
+-        ;;
+-        esac
+-    else
+-        OPTIMISE="-O"
+-    fi
+-fi
+-
+ dnl ---------------------------------------------------------------------------
+ dnl Optional libraries
+ dnl ---------------------------------------------------------------------------
+@@ -3784,8 +3762,6 @@
  AC_SUBST(WX_LIBRARY)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -30,7 +55,7 @@
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -3656,8 +3650,6 @@
+@@ -3795,8 +3771,6 @@
  AC_SUBST(WX_LIBRARY_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)
