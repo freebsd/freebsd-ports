@@ -8817,6 +8817,7 @@ xwhois		ports/net/xwhois
 xwipower	ports/sysutils/xwipower
 xwit		ports/x11/xwit
 xwmm		ports/x11-wm/xwmm
+xword		ports/games/xword
 xworld		ports/astro/xworld
 xworm		ports/games/xworm
 xwpe		ports/devel/xwpe
