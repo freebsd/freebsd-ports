@@ -1,6 +1,11 @@
 --- README.rscsi.orig	Sun Aug 17 11:31:39 2003
 +++ README.rscsi	Sun Aug 17 14:38:57 2003
-@@ -18,24 +18,21 @@
+@@ -14,28 +14,25 @@
+ 
+ 	-	Create one or more special user(s) that have /opt/schily/sbin/rscsi
+ 		as login shell with their own home directory.
+-		You then may create special .rhost files for each user.
++		You then may create special .rhosts files for each user.
  		NOTE: In this case, rscsi must be installed suid root. 
  		**** This is the preferred method ****
  

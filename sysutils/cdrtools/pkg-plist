@@ -1,6 +1,13 @@
 bin/cdda2wav
 bin/cdrecord
+bin/devdump
+bin/isodebug
+bin/isodump
+bin/isoinfo
+bin/isovfy
 bin/list_audio_tracks
+bin/mkhybrid
+bin/mkisofs
 bin/readcd
 bin/scgcheck
 %%RSCSI%%sbin/rscsi
@@ -37,4 +44,20 @@ etc/cdrecord.sample
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/THANKS
 %%PORTDOCS%%%%DOCSDIR%%/cdda2wav/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/cdda2wav
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.compression
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.eltorito
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.graft_dirs
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.hfs_boot
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.hfs_magic
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.hide
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.joliet
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.macosx
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.mkhybrid
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.prep_boot
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.rootinfo
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.session
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sort
+%%PORTDOCS%%%%DOCSDIR%%/mkisofs/README.sparcboot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/mkisofs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
