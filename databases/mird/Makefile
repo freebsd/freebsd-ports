@@ -20,14 +20,15 @@ BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-debug
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,CFLAGS=,CFLAGS+=,' ${WRKSRC}/src/Makefile.in
-	@${PERL} -pi -e 's,-O,,g' ${WRKSRC}/src/configure
+	@${REINPLACE_CMD} -e 's,CFLAGS=,CFLAGS+=,' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's,-O,,g' ${WRKSRC}/src/configure
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/libmird.so.1

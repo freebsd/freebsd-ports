@@ -21,6 +21,7 @@ LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
 
 GNU_CONFIGURE=	yes
 
+USE_PERL5=	yes
 WRKSRC=	${WRKDIR}
 
 pre-fetch:

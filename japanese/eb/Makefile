@@ -55,6 +55,7 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 
 DIST_SUBDIR=	eb
 
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nls \
 		--with-gettext-includes=${PREFIX}/include \
