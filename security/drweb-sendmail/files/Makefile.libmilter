@@ -5,6 +5,7 @@ SENDMAIL_DIR=/usr/src/contrib/sendmail
 
 CFLAGS+=-I${SENDMAIL_DIR}/src -I${SENDMAIL_DIR}/include
 CFLAGS+=-DNEWDB -DNIS -DMAP_REGEX -DNOT_SENDMAIL -D_FFR_MILTER=1
+CFLAGS+=-D_THREAD_SAFE
 
 # User customizations to the sendmail build environment
 CFLAGS+=${SENDMAIL_CFLAGS}

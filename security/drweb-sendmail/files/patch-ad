@@ -1,0 +1,15 @@
+--- Makefile.bsd.orig	Mon Oct 15 15:04:09 2001
++++ Makefile.bsd	Tue Feb 12 01:30:40 2002
+@@ -45,8 +45,11 @@
+ drweb_cgp.o: drweb_cgp.c $(LIBINCLUDES)
+ 	$(CC) -c $(ADD_CFLAGS) $< -I./src -D__THREAD_BASED_DW
+ 
++drwebdc.o: drwebdc.c $(LIBINCLUDES)
++	$(CC) -c $(ADD_CFLAGS) $< -I./src
++
+ .c.o: $(LIBINCLUDES)
+-	$(CC) -c $(ADD_CFLAGS) $<
++	$(CC) -c $(ADD_CFLAGS) -D_THREAD_SAFE $<
+ 
+ $(LIBINCLUDES):
+ 	@( cd src; make headers )
