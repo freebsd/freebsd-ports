@@ -1,10 +1,11 @@
 bin/xplanet
-%%DATADIR%%/arcs/README
+%%DATADIR%%/arcs/constellations
 %%DATADIR%%/config/default
 %%DATADIR%%/config/earth_markers
 %%DATADIR%%/config/moon_orbit
 %%DATADIR%%/config/overlay_clouds
-%%DATADIR%%/fonts/FreeSans.ttf
+%%DATADIR%%/ephemeris/README
+%%DATADIR%%/fonts/FreeMonoBold.ttf
 %%DATADIR%%/fonts/README
 %%DATADIR%%/images/README
 %%DATADIR%%/images/earth.jpg
@@ -15,22 +16,29 @@ bin/xplanet
 %%DATADIR%%/images/smile.png
 %%DATADIR%%/images/sublunar.png
 %%DATADIR%%/images/subsolar.png
+%%DATADIR%%/markers/brightStars
 %%DATADIR%%/markers/earth
 %%DATADIR%%/markers/freebsd.committers.markers
 %%DATADIR%%/markers/freebsd.ftp.markers
+%%DATADIR%%/markers/mars
+%%DATADIR%%/markers/moon
 %%DATADIR%%/origin/README
 %%DATADIR%%/origin/cassini
 %%DATADIR%%/origin/galileo
 %%DATADIR%%/rgb.txt
 %%DATADIR%%/satellites/iss
 %%DATADIR%%/satellites/iss.tle
+%%DATADIR%%/scripts/convertCassini.perl
+%%DATADIR%%/scripts/convertCassini2.perl
 %%DATADIR%%/stars/BSC
 @dirrm %%DATADIR%%/arcs
 @dirrm %%DATADIR%%/config
+@dirrm %%DATADIR%%/ephemeris
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/markers
 @dirrm %%DATADIR%%/origin
 @dirrm %%DATADIR%%/satellites
+@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/stars
 @dirrm %%DATADIR%%
