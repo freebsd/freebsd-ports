@@ -24,6 +24,7 @@
     SUBDIR += diehard
     SUBDIR += djbfft
     SUBDIR += eispack
+    SUBDIR += entropy
     SUBDIR += eukleides
     SUBDIR += eval
     SUBDIR += femlab
