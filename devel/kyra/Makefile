@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	kyra
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kyra
-DISTNAME=	${PORTNAME}_src_2_0_4
+DISTNAME=	${PORTNAME}_src_2_0_5
 
 MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Kyra is a simple Sprite engine written in C++
