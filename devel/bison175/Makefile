@@ -17,28 +17,26 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
 CONFLICTS=	bison-[0-9]+
 
-.if !defined(WITHOUT_NLS)
-PLIST_SUB=	NLS=""
-.else
-PLIST_SUB=	NLS="@comment "
-.endif
-
 USE_BZIP2=	yes
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-.if defined(WITHOUT_NLS)
-CONFIGURE_ARGS=	--disable-nls
-.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
 
 MAN1=		bison.1
+INFO=		bison
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .ifdef USE_BISON
 .error You have `USE_BISON' variable defined either in environment or in make(1) arguments. Please undefine and try again.
