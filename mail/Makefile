@@ -116,6 +116,7 @@
     SUBDIR += librfc822
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
+    SUBDIR += lmtpd
     SUBDIR += lookout
     SUBDIR += mahogany
     SUBDIR += mail2procmailrc

@@ -1,0 +1,14 @@
+LMTPD is a RFC2033 compliant LMTPD server.
+Supported features :
+ o Maildir++ folder and soft quotas
+ o User defined filters
+ o Automatic Maildir creation
+ o Courier Shared folder
+ o User extensions
+ o Virtual domains via libhome
+ o MySQL and syslog logging
+ o Fully configurable
+ o Antivirus checks using external ClamAV, Sophie or Dr Web server
+ o Interface with SpamAssasin
+
+WWW: http://pll.sourceforge.net/
