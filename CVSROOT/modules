@@ -4218,7 +4218,6 @@ mldonkey	ports/net/mldonkey
 mldonkey-gui	ports/net/mldonkey-gui
 mldonkey-perlreactor	ports/net/mldonkey-perlreactor
 mldonkey-serverspy	ports/net/mldonkey-serverspy
-mldonkey-src	ports/net/mldonkey-src
 mldonkey-urlslave	ports/net/mldonkey-urlslave
 mlterm		ports/x11/mlterm
 mlvwm		ports/x11-wm/mlvwm
