@@ -10,6 +10,7 @@
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
     SUBDIR += adns
+    SUBDIR += aget
     SUBDIR += aggregate
     SUBDIR += aguri
     SUBDIR += aim
