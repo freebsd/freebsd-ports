@@ -1,58 +1,14 @@
---- configure.orig      Sun Nov 14 16:07:45 1999
-+++ configure   Sun Sep  2 22:02:05 2001
-@@ -653,7 +653,7 @@
- echo $ac_n "checking version of Tcl/Tk""... $ac_c" 1>&6
- echo "configure:655: checking version of Tcl/Tk" >&5
- echo "$ac_t""$TCL_VERSION/$TK_VERSION" 1>&6
--TCL_VERSIONS_ALLOWED="7.5 7.6 8.0 8.1 8.2"
-+TCL_VERSIONS_ALLOWED="7.5 7.6 8.0 8.1 8.2 8.3"
- if test -z "`echo $TCL_VERSIONS_ALLOWED | grep $TCL_VERSION`"; then
-   echo
-   echo TkDesk requires Tcl/Tk versions 7.5/4.1, 7.6/4.2., or 8.0.
-@@ -661,7 +661,7 @@
-   echo yet supported \(but hopefully will be soon\).
-   exit 1
- fi
--TK_VERSIONS_ALLOWED="4.1 4.2 8.0 8.1 8.2"
-+TK_VERSIONS_ALLOWED="4.1 4.2 8.0 8.1 8.2 8.3"
- if test -z "`echo $TK_VERSIONS_ALLOWED | grep $TK_VERSION`"; then
-   echo
-   echo TkDesk requires Tcl/Tk versions 7.5/4.1, 7.6/4.2, or 8.0.
-@@ -678,11 +678,9 @@
- if test "$TCL_MAJOR_VERSION" -ge 8; then
-   echo $ac_n "checking for itcl 3.x""... $ac_c" 1>&6
- echo "configure:681: checking for itcl 3.x" >&5
--  if test -z "$ITCLCONF_PATH" ; then
--    ITCLCONF_PATH=$TCLCONF_PATH
--  fi
--  if test -r $ITCLCONF_PATH/itclConfig.sh ; then
--    . $ITCLCONF_PATH/itclConfig.sh
-+  if test -r $ITCLCONF_PATH/itcl.tcl ; then
-+    ITCL_VERSION="32"
-+    ITCL_MAJOR_VERSION=3
-   else
-     ITCL_VERSION="no"
-     ITCL_MAJOR_VERSION=0
-@@ -739,14 +737,15 @@
+--- configure.orig	Wed Apr 14 12:39:47 2004
++++ configure	Sat Apr 17 21:05:56 2004
+@@ -1592,8 +1592,9 @@
+ # Determine include directories
  #
- # -----------------------------------------------------------------------
- if test "$ITCL_VERSION" != "no" ; then
--  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
--  TK_INCLUDE_PATH=$TCL_INCLUDE_PATH
--  NEED_ITCL_LIB=
-+  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include/tcl${TCL_VERSION}
-+  TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include/tk${TK_VERSION}
-+  NEED_ITCL_LIB=lib_itcl
-   # ITCL_LIB_SPEC already set in itclConfig.sh
--  ITCL_LIB_STATIC=${TCLCONF_PATH}/libitcl${ITCL_VERSION}.a
-+  ITCL_LIB_SPEC="-L${PREFIX}/lib -litcl${ITCL_VERSION}"
-+  ITCL_LIB_STATIC=${PREFIX}/libitcl${ITCL_VERSION}.a
- else
--  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
--  TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include
-+  TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include/tcl${TCL_VERSION}
-+  TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include/tk${TK_VERSION}
-   NEED_ITCL_LIB=lib_itcl
-   ITCL_LIB_SPEC=itcl/libitcl.a
-   ITCL_LIB_STATIC=itcl/libitcl.a
-
+ 
+-TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include
+-TK_INCLUDE_PATH=$TCL_INCLUDE_PATH
++TCL_INCLUDE_PATH=$TCL_EXEC_PREFIX/include/tcl${TCL_VERSION}
++TK_INCLUDE_PATH=$TK_EXEC_PREFIX/include/tk${TK_VERSION}
++
+ 
+ #
+ # Perform substitutions

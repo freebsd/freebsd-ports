@@ -1,6 +1,15 @@
---- Makefile.in~	Sun Sep 20 20:41:40 1998
-+++ Makefile.in	Sun Sep  2 23:03:53 2001
-@@ -194,7 +194,7 @@
+--- Makefile.in.orig	Thu Apr 15 07:31:17 2004
++++ Makefile.in	Sat Apr 17 21:52:56 2004
+@@ -50,7 +50,7 @@
+ 
+ # To change the compiler switches, for example to change from -O
+ # to -g, change the following line:
+-CC_OPTS = -O -DUSE_OLD_IMAGE -DUSE_NON_CONST
++CC_OPTS = @CFLAGS@ -DUSE_OLD_IMAGE -DUSE_NON_CONST
+ 
+ # To change the linker switches, for example to add -s,
+ # change the following line:
+@@ -189,7 +189,7 @@
  	find $(SCRIPT_INSTALL_DIR) -type f -exec chmod a+r {} \;
  	find $(SCRIPT_INSTALL_DIR) -type d -exec chmod a+rx {} \;
  	@echo "=== Creating index..."

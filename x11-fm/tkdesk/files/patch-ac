@@ -1,15 +1,6 @@
---- tcldesk/configs/AppBar.orig	Sun Nov 14 14:07:53 1999
-+++ tcldesk/configs/AppBar	Sun Sep  2 23:09:23 2001
-@@ -282,7 +282,7 @@
-     	{{TkDesk User's Guide } {dsk_help guide}}
-     	{{FAQ } {dsk_help faq}}
-     	{{Changes} {dsk_help changes}}
--	{{TkDesk Homepage } {dsk_netscape url http://people.mainz.netsurf.de/~bolik/tkdesk/ window}}
-+	{{TkDesk Homepage } {dsk_netscape url http://tkdesk.sourceforge.net/ window}}
-     	-
-     	{{Manual Page ...} {
-     		dsk_read_string {Show manual page for: (e.g. col(1))} {
-@@ -392,7 +392,7 @@
+--- tcldesk/configs/AppBar.orig	Tue Apr 13 15:41:00 2004
++++ tcldesk/configs/AppBar	Sat Apr 17 21:54:11 2004
+@@ -405,7 +405,7 @@
      	    }
  	}
  	{{Superuser}
@@ -18,12 +9,3 @@
  	    {{Edit /etc/hosts} {dsk_exec_as_root vi /etc/hosts}}
  	}
  	-
-@@ -476,7 +476,7 @@
- 	    }}
- 	}
- 	{{Locations}
--	    {{TkDesk Homepage } {dsk_netscape url http://people.mainz.netsurf.de/~bolik/tkdesk/ window}}
-+	    {{TkDesk Homepage } {dsk_netscape url http://tkdesk.sourceforge.net/ window}}
- 	    {{AltaVista } {dsk_netscape url http://www.altavista.digital.com window}}
- 	    {{Tcl/Tk at Sun } {dsk_netscape url http://www.sunlabs.com/research/tcl window}}
- 	}
