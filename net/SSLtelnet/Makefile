@@ -11,6 +11,8 @@ MASTER_SITES=		${MASTER_SITE_LOCAL} \
 			ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
 MASTER_SITE_SUBDIR=	kris
 
+FORBIDDEN=		"Remotely exploitable buffer overflow"
+
 MAINTAINER=		issei@jp.FreeBSD.org
 
 USE_OPENSSL=		YES
