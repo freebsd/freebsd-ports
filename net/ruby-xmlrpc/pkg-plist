@@ -1,4 +1,3 @@
-%%RUBY_SITELIBDIR%%/GServer.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/base64.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/client.rb
 %%RUBY_SITELIBDIR%%/xmlrpc/config.rb
