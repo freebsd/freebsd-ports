@@ -6,16 +6,19 @@
 #
 
 PORTNAME=       tempest_for_eliza
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.5
 CATEGORIES=     audio
 MASTER_SITES=   http://www.erikyyy.de/tempest/
 
 MAINTAINER=	greid@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
-GNU_CONFIGURE=	yes
+SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 post-install:
 	${MKDIR} ${PREFIX}/share/tempest

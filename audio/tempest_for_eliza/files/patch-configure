@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Dec  1 19:50:18 2001
++++ configure	Wed Apr 17 16:00:28 2002
+@@ -1055,7 +1055,7 @@
+ if test "$yyynooptimizing" = "yes"; then
+   YYY_CXXFLAGS="$YYY_CXXFLAGS -O0"
+ else
+-  YYY_CXXFLAGS="$YYY_CXXFLAGS -O2"
++#  YYY_CXXFLAGS="$YYY_CXXFLAGS -O2"
+ fi
+ 
+ if test "$yyyprofiling" = "yes"; then

@@ -1,4 +1,5 @@
 bin/tempest_for_eliza
+bin/tempest_for_mp3
 %%PORTDOCS%%share/doc/tempest/README
 share/tempest/forelise
 share/tempest/fruehling
