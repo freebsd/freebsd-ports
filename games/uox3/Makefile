@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1999
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/25 06:55:49 dburr Exp $
 #
 
 DISTNAME=	uox3v6902-linux
@@ -19,10 +19,9 @@ MAINTAINER=	dburr@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 DIST_SUBDIR=		uox3
-#EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=	-qa
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_AFTER_ARGS=	# This space left intentionally blank.
 
 NO_WRKSUBDIR=	YES
 
