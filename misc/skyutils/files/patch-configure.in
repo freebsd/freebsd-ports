@@ -5,7 +5,7 @@
  SU_SSL_CFLAGS=""
  if test "$ssl" = "true"; then
 -  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl")
-+  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl", ,"-lcrypto")
++  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl -lcrypto", ,-lcrypto)
    if test ! "$SU_SSL_LIB"; then
      AC_MSG_WARN("Cannot find libssl... ssl code in skyweb will be disabled")
    else
