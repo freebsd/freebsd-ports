@@ -1,6 +1,7 @@
 @comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/README.pict2e
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/pict2e.pdf
+%%PORTDOCS%%%%DOCSDIR%%/p2e-drivers.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/p2e-drivers.dtx
 %%CLASSDIR%%/p2e-dvipdfm.def
