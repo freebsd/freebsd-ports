@@ -1,13 +1,5 @@
-@(#) $Header: README,v 1.8 97/07/23 00:56:06 leres Exp $ (LBL)
-
-NSLINT 2.0
-Lawrence Berkeley National Laboratory
-Network Research Group
-nslint@ee.lbl.gov
-ftp://ftp.ee.lbl.gov/nslint.tar.Z
-
-This directory contains source code for nslint, a lint program for dns
-files.
+This is nslint 2.0, a lint program for dns files.  It is produced by the
+Lawrence Berkeley National Laboratory, Network Research Group.
 
 Please send bugs and comments to nslint@ee.lbl.gov.
 
