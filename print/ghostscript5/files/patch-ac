@@ -1,21 +1,19 @@
---- contrib.mak.orig	Tue Sep 15 04:03:52 1998
-+++ contrib.mak	Tue Dec  1 15:37:58 1998
-@@ -435,6 +435,18 @@
- cdj850.dev: $(cdeskjet8_) page.dev
- 	$(SETPDEV) cdj850 $(cdeskjet8_)
- 
-+cdj670.dev: $(cdeskjet8_) page.dev
-+	$(SETPDEV) cdj670 $(cdeskjet8_)
-+
-+cdj890.dev: $(cdeskjet8_) page.dev
-+	$(SETPDEV) cdj890 $(cdeskjet8_)
-+
-+cdj1600.dev: $(cdeskjet8_) page.dev
-+	$(SETPDEV) cdj1600 $(cdeskjet8_)
-+
-+$(GLOBJ)gdevcd8.$(OBJ): $(GLSRC)gdevcd8.c $(GLSRC)gdevcd8.h $(PDEVH)
-+	$(GLCC) $(GLO_)gdevcd8.$(OBJ) $(C_) $(GLSRC)gdevcd8.c
-+
- ### ------------ The H-P PaintJet color printer device ----------------- ###
- ### Note: this driver also supports the DEC LJ250 color printer, which   ###
- ###       has a PaintJet-compatible mode, and the PaintJet XL.           ###
+*** unix-end.mak.orig	Fri Dec 25 10:45:04 1998
+--- unix-end.mak	Fri Dec 25 10:47:40 1998
+***************
+*** 91,97 ****
+  	do if ( test -f $$f ); then $(INSTALL_PROGRAM) $$f $(scriptdir)/$$f; fi;\
+  	done'
+  
+! MAN1_PAGES=gs pdf2dsc pdf2ps ps2ascii ps2epsi ps2pdf
+  install-data: gs.1
+  	-mkdir $(mandir)
+  	-mkdir $(man1dir)
+--- 91,97 ----
+  	do if ( test -f $$f ); then $(INSTALL_PROGRAM) $$f $(scriptdir)/$$f; fi;\
+  	done'
+  
+! MAN1_PAGES=gs pdf2dsc pdf2ps ps2ascii ps2epsi ps2pdf gs-hpdj
+  install-data: gs.1
+  	-mkdir $(mandir)
+  	-mkdir $(man1dir)

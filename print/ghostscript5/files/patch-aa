@@ -1,142 +1,172 @@
---- unix-gcc.mak.orig	Thu Sep 17 08:06:06 1998
-+++ unix-gcc.mak	Mon Nov 30 13:11:05 1998
-@@ -48,12 +48,10 @@
- # the directories also define the default search path for the
- # initialization files (gs_*.ps) and the fonts.
- 
--# If your system has installbsd, change install to installbsd in the next line.
--INSTALL = install -c
--INSTALL_PROGRAM = $(INSTALL) -m 755
--INSTALL_DATA = $(INSTALL) -m 644
-+INSTALL_PROGRAM = $(BSD_INSTALL_SCRIPT)
-+INSTALL_DATA = $(BSD_INSTALL_DATA)
- 
--prefix = /usr/local
-+prefix = $(PREFIX)
- exec_prefix = $(prefix)
- bindir = $(exec_prefix)/bin
- scriptdir = $(bindir)
-@@ -141,7 +139,7 @@
- # what its name is.
- # See gs.mak and Make.htm for more information.
- 
--SHARE_LIBPNG=0
-+SHARE_LIBPNG=1
- LIBPNG_NAME=png
- 
- # Define the directory where the zlib sources are stored.
-@@ -153,7 +151,7 @@
- # what its name is (usually libz, but sometimes libgz).
- # See gs.mak and Make.htm for more information.
- 
--SHARE_ZLIB=0
-+SHARE_ZLIB=1
- #ZLIB_NAME=gz
- ZLIB_NAME=z
- 
-@@ -172,7 +170,7 @@
- 
- # Define the name of the C compiler.
- 
--CC=gcc
-+CC=cc
- 
- # Define the name of the linker for the final link step.
- # Normally this is the same as the C compiler.
-@@ -205,7 +203,7 @@
- #   gcc to accept ANSI-style function prototypes and function definitions.
- XCFLAGS=
- 
--CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
-+#CFLAGS=$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)
- 
- # Define platform flags for ld.
- # SunOS 4.n may need -Bstatic.
-@@ -214,7 +212,7 @@
- #	-R /usr/local/xxx/lib:/usr/local/lib
- # giving the full path names of the shared library directories.
- # XLDFLAGS can be set from the command line.
--XLDFLAGS=
-+XLDFLAGS=-L$(prefix)/lib
- 
- LDFLAGS=$(XLDFLAGS) -fno-common
- 
-@@ -234,7 +232,7 @@
- # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
- # not in $(XINCLUDE).
- 
--XINCLUDE=-I/usr/local/X/include
-+XINCLUDE=-I$(X11BASE)/include
- 
- # Define the directory/ies and library names for the X11 library files.
- # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
-@@ -246,12 +244,12 @@
- # Solaris and other SVR4 systems with dynamic linking probably want
- #XLIBDIRS=-L/usr/openwin/lib -R/usr/openwin/lib
- # X11R6 (on any platform) may need
--#XLIBS=Xt SM ICE Xext X11
-+XLIBS=Xt SM ICE Xext X11
- 
- #XLIBDIRS=-L/usr/local/X/lib
--XLIBDIRS=-L/usr/X11/lib
-+XLIBDIRS=-L$(X11BASE)/lib
- XLIBDIR=
--XLIBS=Xt Xext X11
-+#XLIBS=Xt X11
- 
- # Define whether this platform has floating point hardware:
- #	FPU_TYPE=2 means floating point is faster than fixed point.
-@@ -292,27 +290,6 @@
- 
- FILE_IMPLEMENTATION=stdio
- 
--# Choose the device(s) to include.  See devs.mak for details,
--# devs.mak and contrib.mak for the list of available devices.
--
--DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11gray4.dev x11mono.dev
--#DEVICE_DEVS1=bmpmono.dev bmpamono.dev posync.dev
--DEVICE_DEVS1=
--DEVICE_DEVS2=
--DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
--DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev pjxl300.dev
--DEVICE_DEVS5=uniprint.dev
--DEVICE_DEVS6=bj10e.dev bj200.dev bjc600.dev bjc800.dev
--DEVICE_DEVS7=faxg3.dev faxg32d.dev faxg4.dev
--DEVICE_DEVS8=pcxmono.dev pcxgray.dev pcx16.dev pcx256.dev pcx24b.dev pcxcmyk.dev
--DEVICE_DEVS9=pbm.dev pbmraw.dev pgm.dev pgmraw.dev pgnm.dev pgnmraw.dev pnm.dev pnmraw.dev ppm.dev ppmraw.dev pkm.dev pkmraw.dev
--DEVICE_DEVS10=tiffcrle.dev tiffg3.dev tiffg32d.dev tiffg4.dev tifflzw.dev tiffpack.dev
--DEVICE_DEVS11=tiff12nc.dev tiff24nc.dev
--DEVICE_DEVS12=psmono.dev psgray.dev psrgb.dev bit.dev bitrgb.dev bitcmyk.dev
--DEVICE_DEVS13=pngmono.dev pnggray.dev png16.dev png256.dev png16m.dev
--DEVICE_DEVS14=jpeg.dev jpeggray.dev
--DEVICE_DEVS15=pdfwrite.dev pswrite.dev epswrite.dev pxlmono.dev pxlcolor.dev
--
- # ---------------------------- End of options --------------------------- #
- 
- # Define the name of the partial makefile that specifies options --
-@@ -320,16 +297,10 @@
- 
- MAKEFILE=$(GLSRC)unix-gcc.mak
- 
--# Define the ANSI-to-K&R dependency.  There isn't one, but we do have to
--# detect whether we're running a version of gcc with the const optimization
--# bug.
--
--AK=$(GLGENDIR)/cc.tr
--
- # Define the compilation rules and flags.
- 
- CCFLAGS=$(GENOPT) $(CFLAGS)
--CC_=$(CC) `cat $(AK)` $(CCFLAGS)
-+CC_=$(CC) $(CCFLAGS)
- CCAUX=$(CC)
- #We can't use -fomit-frame-pointer with -pg....
- #CC_LEAF=$(CC_)
-@@ -350,7 +321,3 @@
- include $(GLSRC)unixtail.mak
- include $(GLSRC)unix-end.mak
- include $(GLSRC)unixinst.mak
--
--# This has to come last so it won't be taken as the default target.
--$(AK):
--	if ( gcc --version | grep "2.7.[01]" >/dev/null || test `gcc --version` = 2.7.2 ); then echo -Dconst= >$(AK); else echo -Wcast-qual -Wwrite-strings >$(AK); fi
+*** gcc-head.mak.orig	Thu Dec 17 19:56:19 1998
+--- gcc-head.mak	Fri Dec 25 19:23:30 1998
+***************
+*** 41,50 ****
+  
+  # If your system has installbsd, change install to installbsd in the next line.
+  INSTALL = install -c
+! INSTALL_PROGRAM = $(INSTALL) -m 755
+! INSTALL_DATA = $(INSTALL) -m 644
+  
+! prefix = /usr/local
+  exec_prefix = $(prefix)
+  bindir = $(exec_prefix)/bin
+  scriptdir = $(bindir)
+--- 41,50 ----
+  
+  # If your system has installbsd, change install to installbsd in the next line.
+  INSTALL = install -c
+! INSTALL_PROGRAM = $(BSD_INSTALL_SCRIPT)
+! INSTALL_DATA = $(BSD_INSTALL_DATA)
+  
+! prefix ?= /usr/local
+  exec_prefix = $(prefix)
+  bindir = $(exec_prefix)/bin
+  scriptdir = $(bindir)
+***************
+*** 101,107 ****
+  # You may need to change this if the IJG library version changes.
+  # See jpeg.mak for more information.
+  
+! JSRCDIR=jpeg-6a
+  JVERSION=6
+  
+  # Define the directory where the PNG library sources are stored,
+--- 101,107 ----
+  # You may need to change this if the IJG library version changes.
+  # See jpeg.mak for more information.
+  
+! JSRCDIR=jpeg
+  JVERSION=6
+  
+  # Define the directory where the PNG library sources are stored,
+***************
+*** 116,122 ****
+  # what its name is.
+  # See gs.mak and make.txt for more information.
+  
+! SHARE_LIBPNG=0
+  LIBPNG_NAME=png
+  
+  # Define the directory where the zlib sources are stored.
+--- 116,122 ----
+  # what its name is.
+  # See gs.mak and make.txt for more information.
+  
+! SHARE_LIBPNG=1
+  LIBPNG_NAME=png
+  
+  # Define the directory where the zlib sources are stored.
+***************
+*** 128,134 ****
+  # what its name is (usually libz, but sometimes libgz).
+  # See gs.mak and make.txt for more information.
+  
+! SHARE_ZLIB=0
+  #ZLIB_NAME=gz
+  ZLIB_NAME=z
+  
+--- 128,134 ----
+  # what its name is (usually libz, but sometimes libgz).
+  # See gs.mak and make.txt for more information.
+  
+! SHARE_ZLIB=1
+  #ZLIB_NAME=gz
+  ZLIB_NAME=z
+  
+***************
+*** 172,185 ****
+  # We don't include -ansi, because this gets in the way of the platform-
+  #   specific stuff that <math.h> typically needs; nevertheless, we expect
+  #   gcc to accept ANSI-style function prototypes and function definitions.
+! XCFLAGS=
+  
+! CFLAGS=-O $(GCFLAGS) $(XCFLAGS)
+  
+  # Define platform flags for ld.
+  # SunOS 4.n may need -Bstatic.
+  # XLDFLAGS can be set from the command line.
+! XLDFLAGS=
+  
+  LDFLAGS=$(XLDFLAGS)
+  
+--- 172,185 ----
+  # We don't include -ansi, because this gets in the way of the platform-
+  #   specific stuff that <math.h> typically needs; nevertheless, we expect
+  #   gcc to accept ANSI-style function prototypes and function definitions.
+! XCFLAGS=-I$(PREFIX)/include
+  
+! CFLAGS+=-O $(GCFLAGS) $(XCFLAGS)
+  
+  # Define platform flags for ld.
+  # SunOS 4.n may need -Bstatic.
+  # XLDFLAGS can be set from the command line.
+! XLDFLAGS=-L$(prefix)/lib
+  
+  LDFLAGS=$(XLDFLAGS)
+  
+***************
+*** 199,205 ****
+  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
+  # not in $(XINCLUDE).
+  
+! XINCLUDE=-I/usr/local/X/include
+  
+  # Define the directory/ies and library names for the X11 library files.
+  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
+--- 199,205 ----
+  # Note that x_.h expects to find the header files in $(XINCLUDE)/X11,
+  # not in $(XINCLUDE).
+  
+! XINCLUDE=-I$(X11BASE)/include
+  
+  # Define the directory/ies and library names for the X11 library files.
+  # XLIBDIRS is for ld and should include -L; XLIBDIR is for LD_RUN_PATH
+***************
+*** 211,222 ****
+  #XLIBDIRS=-L/usr/openwin/lib
+  #XLIBDIR=/usr/openwin/lib
+  # X11R6 (on any platform) may need
+! #XLIBS=Xt SM ICE Xext X11
+  
+  #XLIBDIRS=-L/usr/local/X/lib
+! XLIBDIRS=-L/usr/X11/lib
+  XLIBDIR=
+! XLIBS=Xt Xext X11
+  
+  # Define whether this platform has floating point hardware:
+  #	FPU_TYPE=2 means floating point is faster than fixed point.
+--- 211,222 ----
+  #XLIBDIRS=-L/usr/openwin/lib
+  #XLIBDIR=/usr/openwin/lib
+  # X11R6 (on any platform) may need
+! XLIBS=Xt SM ICE Xext X11
+  
+  #XLIBDIRS=-L/usr/local/X/lib
+! XLIBDIRS=-L$(X11BASE)/lib
+  XLIBDIR=
+! #XLIBS=Xt Xext X11
+  
+  # Define whether this platform has floating point hardware:
+  #	FPU_TYPE=2 means floating point is faster than fixed point.
+***************
+*** 260,268 ****
+  
+  DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11mono.dev
+  DEVICE_DEVS1=
+! DEVICE_DEVS2=
+  DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
+! DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev pjxl300.dev
+  DEVICE_DEVS5=uniprint.dev
+  DEVICE_DEVS6=bj10e.dev bj200.dev bjc600.dev bjc800.dev
+  DEVICE_DEVS7=faxg3.dev faxg32d.dev faxg4.dev
+--- 260,268 ----
+  
+  DEVICE_DEVS=x11.dev x11alpha.dev x11cmyk.dev x11gray2.dev x11mono.dev
+  DEVICE_DEVS1=
+! DEVICE_DEVS2=epson.dev eps9high.dev epsonc.dev ibmpro.dev
+  DEVICE_DEVS3=deskjet.dev djet500.dev laserjet.dev ljetplus.dev ljet2p.dev ljet3.dev ljet4.dev
+! DEVICE_DEVS4=cdeskjet.dev cdjcolor.dev cdjmono.dev cdj550.dev pj.dev pjxl.dev hpdj.dev
+  DEVICE_DEVS5=uniprint.dev
+  DEVICE_DEVS6=bj10e.dev bj200.dev bjc600.dev bjc800.dev
+  DEVICE_DEVS7=faxg3.dev faxg32d.dev faxg4.dev
