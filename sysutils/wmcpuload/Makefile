@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	wmcpuload
-PORTVERSION=	0.1.1
+PORTVERSION=	0.6.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/ \
 		http://ports.tolkien.dk/
 DISTNAME=	WMCPULoad-${PORTVERSION}
 
-MAINTAINER=	boll@tolkien.dk
-
-LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
+MAINTAINER=	pat@databits.net
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
