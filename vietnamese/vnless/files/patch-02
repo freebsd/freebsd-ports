@@ -1,0 +1,27 @@
+--- less.h.orig	Mon Feb 24 12:45:38 1992
++++ less.h	Wed Dec  4 02:35:12 1996
+@@ -31,7 +31,11 @@
+  * The type of signal handler functions.
+  * Usually int, although it should be void.
+  */
++#if VOID
++typedef	void		HANDLER;
++#else
+ typedef	int		HANDLER;
++#endif
+ 
+ 
+ #define	FILENAME	128	/* Max size of a filename */
+@@ -74,7 +78,12 @@
+ #define	SIGNAL(sig,func)	signal(sig,func)
+ 
+ /* Library function declarations */
++#ifdef USE_FBSD_STD_HDRS
+ offset_t lseek();
+ char *calloc();
++#else
++#include <stdlib.h>
++#include <unistd.h>
++#endif
+ 
+ #include "funcs.h"

@@ -1,0 +1,20 @@
+--- defines.h.orig	Mon Feb 24 12:45:37 1992
++++ defines.h	Wed Dec  4 02:33:51 1996
+@@ -47,7 +47,7 @@
+  * This is normally the case only for BSD 4.2,
+  * not for BSD 4.1 or System 5.
+  */
+-#define	SIGSETMASK	0
++#define	SIGSETMASK	1
+ 
+ /*
+  * REGCMP is 1 if your system has the regcmp() function.
+@@ -73,7 +73,7 @@
+  * EDIT_PGM is the name of the (default) editor to be invoked.
+  */
+ #define	EDITOR		1
+-#define	EDIT_PGM	"/usr/local/bin/vi"
++#define	EDIT_PGM	"/usr/bin/vi"
+ 
+ /*
+  * TAGS is 1 if you wish to support tag files.
