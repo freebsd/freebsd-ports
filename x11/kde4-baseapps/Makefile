@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1998/09/15 11:46:14 asami Exp $
+# $Id: Makefile,v 1.19 1998/09/19 01:33:47 steve Exp $
 #
 
 DISTNAME=	kdebase-1.0
@@ -21,6 +21,8 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		khtmlw\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
 		kfm\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.17 1998/09/15 11:45:50 asami Exp $
+# $Id: Makefile,v 1.18 1998/09/19 01:33:45 steve Exp $
 #
 
 DISTNAME=	kdegames-1.0
@@ -22,6 +22,8 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		kfm\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.1\\.[0-9]:${PORTSDIR}/x11/kdelibs \
 		QwSpriteField\\.5\\.[2-9]:${PORTSDIR}/converters/kdesupport
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

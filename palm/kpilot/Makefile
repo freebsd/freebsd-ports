@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/09/15 11:45:48 asami Exp $
+# $Id: Makefile,v 1.13 1998/09/19 01:33:45 steve Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -20,6 +20,8 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		khtmlw\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kfm\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		mediatool\\.1\\.:${PORTSDIR}/x11/kdelibs
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 KDEDIR?=	$(PREFIX)

@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.4 1998/08/12 06:29:33 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/25 10:04:58 asami Exp $
 #
 
 DISTNAME=	klyx-0.9.3
@@ -17,6 +17,8 @@ LIB_DEPENDS=	kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kfm\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kfile\\.1\\.:${PORTSDIR}/x11/kdelibs
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <zerium@webindex.no>
 #
-# $Id: Makefile,v 1.5 1998/08/30 18:12:41 steve Exp $
+# $Id: Makefile,v 1.6 1998/09/15 11:46:01 asami Exp $
 #
 
 DISTNAME=	kwatch-0.3
@@ -16,6 +16,8 @@ MAINTAINER=	zerium@webindex.no
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:        12 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1998/08/12 06:29:36 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/25 10:04:59 asami Exp $
 #
 
 DISTNAME=	kworldwatch-0.6
@@ -19,6 +19,8 @@ LIB_DEPENDS=	kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kfm\\.1\\.:${PORTSDIR}/x11/kdelibs
 
 BROKEN=		upgrade
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

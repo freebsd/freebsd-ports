@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.8 1998/09/15 11:45:49 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/19 01:33:45 steve Exp $
 #
 
 DISTNAME=	korganizer-0.9
@@ -19,6 +19,8 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs
 
 BROKEN=		build
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1998/06/27 05:20:00 asami Exp $
+# $Id: Makefile,v 1.13 1998/07/13 23:35:36 se Exp $
 #
 
 DISTNAME=	kde-1.0
@@ -20,6 +20,8 @@ RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase \
 		kghostview:${PORTSDIR}/graphics/kdegraphics \
 		kmail:${PORTSDIR}/net/kdenetwork \
 		kmedia:${PORTSDIR}/audio/kdemultimedia
+
+BROKEN_ELF=	depends on kdelibs
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
