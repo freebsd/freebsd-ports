@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vte
-PORTVERSION=	0.10.28
+PORTVERSION=	0.10.29
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
@@ -24,12 +24,10 @@ INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-python
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' \
 		${WRKSRC}/gnome-pty-helper/gnome-pty-helper.c
 
