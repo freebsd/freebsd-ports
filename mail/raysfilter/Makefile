@@ -13,12 +13,17 @@ DISTNAME=	rays-filter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
+.if !defined(SENDMAIL_MILTER_IN_BASE)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+.endif
 
 CTARGETS+=	rays-filter
-CFLAGS+=	-Wall -I$(LOCALBASE)/include ${PTHREAD_CFLAGS:S=""==}
-FLAGS+=		${PTHREAD_LIBS}
+CFLAGS+=	-Wall ${PTHREAD_CFLAGS:S=""==}
+LIBS+=		${PTHREAD_LIBS}
+.if !defined(SENDMAIL_MILTER_IN_BASE)
+CFLAGS+=	-I$(LOCALBASE)/include
 LDFLAGS+=	-L$(LOCALBASE)/lib
+.endif
 ETCFILES=	header-list.conf mail-filter.conf string-list.conf
 BINFILES=	mf-reset mf-start mf-stop mf-archive mf-analyze mf-memory
 DOCSFILES=	rays-filter.html install.html configure.html operate.html \
@@ -26,7 +31,8 @@ DOCSFILES=	rays-filter.html install.html configure.html operate.html \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/include/libmilter/mfdef.h)
+.if exists(${LOCALBASE}/include/libmilter/mfdef.h) \
+|| defined(SENDMAIL_MILTER_IN_BASE)
 LIBS+=		-lmilter -lsm -lsmutil
 .else
 LIBS+=		-lmilter -lsmutil
