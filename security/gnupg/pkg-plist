@@ -22,3 +22,19 @@ share/locale/pt_BR/LC_MESSAGES/gnupg.mo
 share/locale/ru/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ru
+share/doc/gnupg/README
+share/doc/gnupg/DETAILS
+share/doc/gnupg/FAQ
+share/doc/gnupg/HACKING
+share/doc/gnupg/OpenPGP
+share/doc/gnupg/ABOUT-NLS
+share/doc/gnupg/AUTHORS
+share/doc/gnupg/BUGS
+share/doc/gnupg/COPYING
+share/doc/gnupg/INSTALL
+share/doc/gnupg/NEWS
+share/doc/gnupg/PROJECTS
+share/doc/gnupg/THANKS
+share/doc/gnupg/TODO
+share/doc/gnupg/VERSION
+@dirrm share/doc/gnupg
