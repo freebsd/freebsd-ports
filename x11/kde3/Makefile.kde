@@ -17,6 +17,14 @@ _NO_KDE_FINAL=	yes
 _NO_KDE_NDEBUG=	yes
 DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-$//}
+
+# nasty hack to force newer timestamps on cache
+# required to enable correct building
+.if !target(post-extract)
+post-extract:
+	@${FIND} ${WRKDIR} -type f -name index.cache.bz2 \
+		| ${XARGS} -n 10 -x ${TOUCH}
+.endif
 .endif
 
 # KDE_DIST_VERSION (PORTVERSION)
