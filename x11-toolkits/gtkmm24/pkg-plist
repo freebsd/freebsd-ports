@@ -208,4 +208,3 @@ share/aclocal/gtk--.m4
 @dirrm include/gtk--
 @dirrm include/gdk--/extra
 @dirrm include/gdk--
-@unexec rmdir %D/share/aclocal 2>/dev/null || true

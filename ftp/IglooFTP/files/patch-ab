@@ -1,5 +1,5 @@
---- src/Makefile	Thu Apr 15 20:05:15 1999
-+++ /home/andy/tmp/wrk/src/Makefile	Mon May  3 12:59:28 1999
+--- src/Makefile.orig	Thu Apr 15 11:05:15 1999
++++ src/Makefile	Fri May 28 18:43:37 1999
 @@ -1,14 +1,15 @@
  SHELL=/bin/sh
 -CC = gcc
@@ -22,6 +22,29 @@
  BIN_PATH = $(DESTDIR)/bin
  MAN_PATH = $(DESTDIR)/man
  SHARE_PATH = $(DESTDIR)/share/$(PROGNAME)
+@@ -50,14 +51,14 @@
+ 	@if ! test -e $(SHARE_PATH)/app_ass; then \
+ 	echo "Making $(SHARE_PATH)/app_ass directory ..."; mkdir -m 0755 $(SHARE_PATH)/app_ass; \
+ 	else :; fi;
+-	/usr/bin/install -s -m 755 $(PROGNAME) $(BIN_PATH)
+-	/usr/bin/install -m 644 ../share/docs/* $(SHARE_PATH)/docs/
+-	/usr/bin/install -m 644 ../share/html/*.* $(SHARE_PATH)/html/
+-	/usr/bin/install -m 644 ../share/html/images/*.* $(SHARE_PATH)/html/images/
+-	/usr/bin/install -m 644 ../share/xpm/* $(SHARE_PATH)/xpm/
+-	/usr/bin/install -m 644 ../share/bookmarks/* $(SHARE_PATH)/bookmarks/
+-	/usr/bin/install -m 644 ../share/app_ass/* $(SHARE_PATH)/app_ass/
+-	/usr/bin/install -m 644 ../share/gtkrc $(SHARE_PATH)/gtkrc	
++	/usr/bin/install -c -s -m 755 $(PROGNAME) $(BIN_PATH)
++	/usr/bin/install -c -m 644 ../share/docs/* $(SHARE_PATH)/docs/
++	/usr/bin/install -c -m 644 ../share/html/*.* $(SHARE_PATH)/html/
++	/usr/bin/install -c -m 644 ../share/html/images/*.* $(SHARE_PATH)/html/images/
++	/usr/bin/install -c -m 644 ../share/xpm/* $(SHARE_PATH)/xpm/
++	/usr/bin/install -c -m 644 ../share/bookmarks/* $(SHARE_PATH)/bookmarks/
++	/usr/bin/install -c -m 644 ../share/app_ass/* $(SHARE_PATH)/app_ass/
++	/usr/bin/install -c -m 644 ../share/gtkrc $(SHARE_PATH)/gtkrc	
+ 
+ 
+ 
 @@ -111,7 +112,7 @@
  	@echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
  	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h

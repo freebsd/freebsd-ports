@@ -3,7 +3,7 @@
 # Date created:		24 Oct 1998
 # Whom:			Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.15 1999/04/26 02:33:57 mharo Exp $
+# $Id: Makefile,v 1.16 1999/05/01 02:21:08 steve Exp $
 #
 
 DISTNAME=	xsystem35-1.0.7
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
 MAINTAINER=	k5@respo.or.jp
 
-LIB_DEPENDS+=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS+=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_IMAKE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

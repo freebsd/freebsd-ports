@@ -3,7 +3,7 @@
 # Date created:				28 Sept 1998
 # Whom:					Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1999/01/24 09:12:58 vanilla Exp $
+# $Id: Makefile,v 1.5 1999/04/22 08:04:20 mharo Exp $
 #
 
 DISTNAME=	gtkfind-0.10
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.oz.net/~mattg/
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 MAN1=		gtkfind.1 mktmp.1
 

@@ -1,9 +1,9 @@
 # New ports collection makefile for:	sane
-# Version required:		1.00
+# Version required:		1.0.1
 # Date created:			Sat Jul 19 16:23:10 MET DST 1997
 # Whom:				gary@hotlava.com
 #
-# $Id: Makefile,v 1.15 1999/04/07 19:10:45 fenner Exp $
+# $Id: Makefile,v 1.16 1999/05/22 04:36:03 obrien Exp $
 #
 
 DISTNAME=	sane-1.0.1
@@ -13,8 +13,10 @@ MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/  \
 
 MAINTAINER=	gary@hotlava.com
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 .include <bsd.port.pre.mk>
 
@@ -23,11 +25,11 @@ GNU_CONFIGURE=	yes
 .if ${OSVERSION} < 300000
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+		GTK_CONFIG="${GTK_CONFIG}"
 .else
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lcam" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+		GTK_CONFIG="${GTK_CONFIG}"
 .endif
 
 MAN1=		scanimage.1 \
@@ -58,7 +60,6 @@ pre-configure:
 	@${ECHO} "*** the GIMP and GTK packages/ports."
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.post.mk>

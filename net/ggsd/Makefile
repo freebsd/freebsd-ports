@@ -3,7 +3,7 @@
 # Date created:				14 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
-# $Id: Makefile,v 1.2 1999/02/27 19:32:09 billf Exp $
+# $Id: Makefile,v 1.3 1999/04/22 07:50:40 mharo Exp $
 #
 
 DISTNAME=	ggsd
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tar
 
 MAINTAINER=	dima@chg.ru
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 WRKSRC=		${WRKDIR}/GGSD
 EXTRACT_CMD=	${TAR}

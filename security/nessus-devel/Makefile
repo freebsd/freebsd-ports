@@ -3,7 +3,7 @@
 # Date created:		1 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/17 10:26:38 foxfair Exp $
 #
 
 DISTNAME=	nessus-alpha2-fix4
@@ -22,10 +22,12 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTKCONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=	GTKCONFIG="${GTK_CONFIG}"
 MAN1=		nessus.1
 
 post-install:

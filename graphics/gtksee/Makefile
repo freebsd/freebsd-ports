@@ -3,7 +3,7 @@
 # Date created:		Sun Nov 22 12:08:18 CET 1998
 # Whom:			Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 #
-# $Id: Makefile,v 1.11 1999/04/22 07:39:06 mharo Exp $
+# $Id: Makefile,v 1.12 1999/05/04 12:17:48 dirk Exp $
 #
 
 DISTNAME=	gtksee-0.3.0
@@ -13,16 +13,18 @@ MASTER_SITES=	http://www.zg169.net/~hotaru/gtksee/ \
 
 MAINTAINER=	dirk@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff34
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip \
 		bzip2:${PORTSDIR}/archivers/bzip2
 
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${PREFIX}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
+		GTK_CONFIG="${GTK_CONFIG}" \
 		LDFLAGS=-L${PREFIX}/lib
 
 .include <bsd.port.mk>

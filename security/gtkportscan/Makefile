@@ -3,7 +3,7 @@
 # Date created:		11 March 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/18 08:53:23 taoka Exp $
 #
 
 DISTNAME=	gtkportscan-1.1
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.calpoly.edu/~rbarrero/
 
 MAINTAINER=	cpiazza@home.net
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 WRKSRC=		${WRKDIR}/gtkscan
 

@@ -3,7 +3,7 @@
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.10 1999/01/07 08:19:53 simokawa Exp $
+# $Id: Makefile,v 1.11 1999/05/01 03:00:49 steve Exp $
 #
 
 DISTNAME=	dfm-0.99.1
@@ -13,17 +13,14 @@ MASTER_SITES=	http://www-c.informatik.uni-hannover.de/~kaiser/dfm/
 MAINTAINER=	andy@icc.surw.chel.su
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		intl.1:${PORTSDIR}/devel/gettext \
-		gmodule12.1:${PORTSDIR}/devel/glib12 \
-		glib12.1:${PORTSDIR}/devel/glib12 \
-		gdk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
-		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${X11BASE}/include" GTK_CONFIG="${X11BASE}/bin/gtk12-config"
-
-# depends on xforms
-ONLY_FOR_ARCHS=	i386
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"		
 
 USE_X_PREFIX=	yes
 

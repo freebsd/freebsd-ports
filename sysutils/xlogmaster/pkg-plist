@@ -30,7 +30,6 @@ etc/xlogmaster/xlogmaster.gtkrc
 etc/xlogmaster/xlogmasterrc
 @unexec install-info --delete %D/info/xlogmaster.info %D/info/dir
 info/xlogmaster.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/xlogmaster.info %D/info/dir
 @dirrm etc/xlogmaster/database
 @dirrm etc/xlogmaster/output-plugins

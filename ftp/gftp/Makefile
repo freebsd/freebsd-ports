@@ -3,7 +3,7 @@
 # Date Created:		21 Feb 1999
 # Whom:			Damjan Marion <dmarion@open.hr>
 #
-# $Id: Makefile,v 1.2 1999/04/27 00:37:35 taoka Exp $
+# $Id: Makefile,v 1.3 1999/05/17 19:52:00 mharo Exp $
 #
 
 DISTNAME=	gftp-2.0.1
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.newwave.net/~masneyb/
 
 MAINTAINER=	dmarion@open.hr
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:			24 Nov 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1999/02/19 04:28:52 vanilla Exp $
+# $Id: Makefile,v 1.9 1999/04/22 20:06:32 mharo Exp $
 #
 
 DISTNAME=	gEDA-19990327
@@ -15,15 +15,13 @@ MASTER_SITES=	http://www.geda.seul.org/dist/  \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		guile.4:${PORTSDIR}/lang/guile
 
-USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS}" 
-CONFIGURE_ARGS=	--with-gtk-config=${X11BASE}/bin/gtk12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}
 
 .include <bsd.port.mk>

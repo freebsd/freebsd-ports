@@ -18,13 +18,14 @@
  install:
 -	cp portscan /usr/local/bin
 -	cp gtkportscan /usr/X11/bin
-+	${BSD_INSTALL_PROGRAM} portscan /usr/local/bin
-+	${BSD_INSTALL_PROGRAM} gtkportscan /usr/local/bin
++	${BSD_INSTALL_PROGRAM} portscan ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} gtkportscan ${PREFIX}/bin
  
  clean:
  	rm -f portscan gtkportscan
  
  uninstall:
- 	rm -f /usr/local/bin/portscan
+-	rm -f /usr/local/bin/portscan
++	rm -f ${PREFIX}/bin/portscan
 -	rm -f /usr/X11/bin/gtkportscan
-+	rm -f /usr/local/bin/gtkportscan
++	rm -f ${PREFIX}/bin/gtkportscan

@@ -3,7 +3,7 @@
 # Date created:				11 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1999/01/22 21:34:35 nectar Exp $
+# $Id: Makefile,v 1.3 1999/05/01 02:19:07 steve Exp $
 #
 
 DISTNAME=		gtkballs-1.04
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 MAN6=			gtkballs.6
 

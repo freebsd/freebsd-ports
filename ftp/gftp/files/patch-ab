@@ -5,7 +5,7 @@
  INSTALL=@INSTALL@
  MACHINE=`uname -m`-`uname -p`-`uname -s`
 -CFLAGS=@CFLAGS@ -Wall -D_REENTRANT -DSHARE_DIR=\"$(SHARE_DIR)\"
-+CFLAGS=@CFLAGS@ -pthread -DSHARE_DIR=\"$(SHARE_DIR)\"
++CFLAGS=@CFLAGS@ -DSHARE_DIR=\"$(SHARE_DIR)\"
  LIBS=@LIBS@
  EXE=gftp
  OBJS=bookmarks.o cache.o chmod_dialog.o config_file.o \

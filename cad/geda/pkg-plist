@@ -8,7 +8,6 @@ bin/gsymcheck
 bin/mk_sym
 bin/smash_megafile
 lib/libgeda.a
-lib/libgeda.la
 lib/libgeda.so
 lib/libgeda.so.2.2
 share/gEDA/scheme/gnetlist.scm

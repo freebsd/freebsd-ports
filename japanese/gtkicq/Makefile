@@ -3,7 +3,7 @@
 # Date created: 8 MAY 1999
 # Whom: Shuichi Tanaka
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/11 01:46:30 taoka Exp $
 #
 
 DISTNAME=	gtkicq-0.60
@@ -17,17 +17,18 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	stanaka@bb.mbn.or.jp
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 BUILD_DEPENDS=	${LOCALBASE}/lib/libjcode.a:${PORTSDIR}/japanese/libjcode \
 		${LOCALBASE}/include/jlib.h:${PORTSDIR}/japanese/libjcode
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=       yes
 USE_GMAKE=      yes
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--without-gnome
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4" \
-		INSTALL_SCRIPT='$${INSTALL} -m 755'
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

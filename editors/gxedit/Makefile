@@ -3,7 +3,7 @@
 # Date created:				01 Jul 1998
 # Whom:					Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.19 1999/03/24 17:41:04 steve Exp $
+# $Id: Makefile,v 1.20 1999/04/16 10:38:30 kris Exp $
 #
 
 DISTNAME=	GXedit1.23
@@ -13,7 +13,7 @@ MASTER_SITES=	http://devplanet.fastethernet.net/
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_X_PREFIX=	yes
 ALL_TARGET=	gxedit
