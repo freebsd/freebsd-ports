@@ -8,7 +8,8 @@
 PORTNAME=	mod_ticket
 PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://germ.semiotek.com/ticket/
+# mastersite disappeared in March 2003, no replacement found
+MASTER_SITES=	# http://germ.semiotek.com/ticket/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
