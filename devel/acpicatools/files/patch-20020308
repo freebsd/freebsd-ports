@@ -9,15 +9,6 @@
      return;
  }
  
-@@ -919,7 +919,7 @@
- UINT32
- AcpiOsGetThreadId(void)
- {
--	return 0;
-+	return 1;
- }
- 
- 
 @@ -965,4 +965,11 @@
      return (AE_OK);
  }
