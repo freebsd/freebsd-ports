@@ -24,6 +24,10 @@ RUN_DEPENDS=	kjumpingcube:${PORTSDIR}/games/kdegames3 \
 USE_KDEBASE_VER=3
 NO_BUILD=	yes
 
+.if make(package)
+DEPENDS_TARGET="package"
+.endif
+
 do-install:	# empty
 
 .include <bsd.port.mk>
