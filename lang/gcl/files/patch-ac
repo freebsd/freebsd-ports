@@ -1,89 +1,41 @@
---- info/makefile.orig	Mon Dec  9 01:30:25 1996
-+++ info/makefile	Mon Oct 13 10:56:17 1997
-@@ -3,53 +3,46 @@
+--- info/makefile.orig	Wed Nov 10 18:47:19 1999
++++ info/makefile	Tue Nov 16 11:16:48 1999
+@@ -16,10 +16,11 @@
+ # root for the installation, eg /usr/local
+ # This would cause make install to create /usr/local/bin/gcl and
+ # /usr/local/lib/gcl-2-??/* with some basic files.
+-prefix=/usr/local
++prefix=${PREFIX}
++prefix?=/usr/local
  
- INFO_DIR=/usr/local/lib/info
- # begin makedefs
--GCLDIR=/home/wfs/gcl-2.2
-+GCLDIR=/tmp/FreeBSD/gcl/work/gcl-2.2.2
+ # where to place the info files
+-INFO_DIR=/usr/local/info/
++INFO_DIR=${prefix}/info/
+ 
+ # where to put emacs lisp files.
+ EMACS_SITE_LISP=/usr/share/emacs/20.3/site-lisp
+@@ -49,9 +50,9 @@
+ 
+ 
+ 
+-GCLDIR=/home/wfs/gcl-2.3
++GCLDIR=/tmp/FreeBSD/gcl-2.3
  SHELL=/bin/sh
 -MACHINE=386-linux
--TK_CONFIG_PREFIX="/usr/local/lib"
--TCL_CONFIG_PREFIX="/usr/local/lib"
--TK_INCLUDE="-I/usr/local/include"
--TK_VERSION=4.2
--TCL_VERSION=7.6
--TK_LIB_SPEC=-L/usr/local/lib -ltk4.2
--TK_LIBRARY=/usr/local/lib/tk4.2
--TCL_LIBRARY=/usr/local/lib/tcl7.6
--TK_BUILD_LIB_SPEC=-L/usr/local.linux14/src/tk4.2/unix -ltk4.2
--TK_XLIBSW=-L/usr/X11R6/lib -lX11
--TK_XINCLUDES=-I/usr/X11R6/include
--TCL_LIB_SPEC=-L/usr/local/lib -ltcl7.6
--TCL_DL_LIBS=-ldl
--TCL_LIBS=-ldl  -lieee -lm
--HAVE_X11=-DHAVE_X11
--
--# Machine dependent makefile definitions for intel 386,486 running linux
--
--LBINDIR=/usr/local/bin
--
--OFLAG	=  -O 
--LIBS	= -lm 
--
--ODIR_DEBUG= -O4 
 +MACHINE=FreeBSD
-+#could not find tkConfig.sh so using:
-+TK_CONFIG_PREFIX="unknown"
-+#could not find tclConfig.sh so using:
-+TCL_CONFIG_PREFIX="unknown"
-+#could not find dir so using:
-+INFO_DIR="unknown"
-+TK_CONFIG_PREFIX=unknown
-+#could not find X11/Xos.h so using:
-+TK_XINCLUDES="-Iunknown"
-+# Machine dependent makefile definitions for intel 386,486 running 386bsd
-+# Ported to FreeBSD 2.0 by Jeffrey Hsu (hsu@freebsd.org).
-+# Hacked September-93 by Paul F. Werkowski for 386BSD 0.1 + Patchkit 0.2.4
-+
-+LBINDIR=${PREFIX}/bin
-+
-+OFLAG	= -O2 -pipe
-+LIBS    = -lm
-+ODIR_DEBUG=
-+NULLFILE=../h/twelve_null
  
- # This CC string will be used for compilation of the system,
- # and also in the compiler::*cc* variable for later compilation of
- # lisp files.
--# (the -pipe is just since our file system is slow..)
--CC = gcc -pipe -fwritable-strings  -DVOL=volatile -I$(GCLDIR)/o -fsigned-char
--LDCC=${CC} -static
--# note for linuxaout on an elf machine add -b i486-linuxaout 
--# CC = gcc -pipe -fwritable-strings  -DVOL=volatile -I$(GCLDIR)/o -fsigned-char -b i486-linuxaout 
-+
-+CC = gcc -pipe -O -fwritable-strings -fomit-frame-pointer -DVOL=volatile -I$(GCLDIR)/o -I${PREFIX}/lib/gcl-2.2.2/h -fsigned-char
-+
-+LDCC = $(CC) -static
-+
-+#  Use the mp.s file on 68k machine 
-+MPFILES= $(MPDIR)/mpi-386.o $(MPDIR)/libmport.a
-+GNULIB1=/usr/lib/libgcc.a
+ # notes for redhat 6.0
+ #  the configure should select the compiler GCC=/usr/bin/i386-glibc20-linux-gcc
+@@ -62,7 +63,7 @@
  
- # Enable the fastloading mechanism which does not use ld -A
- # requires c/rel_.. machine dependent code.
--
- RSYM	= rsym
- SFASL	= $(ODIR)/sfasl.o
+ # Machine dependent makefile definitions for intel 386,486 running linux
  
--
--MPFILES= $(MPDIR)/mpi-386d.o   $(MPDIR)/libmport.a
--
--
- # When using SFASL it is good to have (si::build-symbol-table)
- INITFORM=(si::build-symbol-table)
+-LBINDIR=/usr/local/bin
++LBINDIR=${prefix}/bin
  
-@@ -67,8 +60,8 @@
+ OFLAG	=  -O 
+ LIBS	= -lm 
+@@ -109,8 +110,8 @@
  
  .texi.info:
  	rm -f $*.*gz
@@ -94,7 +46,7 @@
  
  GCL_SI= number.texi sequence.texi character.texi list.texi io.texi \
  	form.texi compile.texi symbol.texi system.texi structure.texi \
-@@ -82,14 +75,14 @@
+@@ -124,14 +125,6 @@
  
  
  install:
@@ -106,14 +58,6 @@
 -	-if fgrep gcl.info ${INFO_DIR}/dir > /dev/null ; then true ; else \
 -	echo "* GCL Ansi Doc: (gcl.info).  Ansi Common Lisp Specification." >> ${INFO_DIR}/dir ; fi
 -	-if [  -d "${INFO_DIR}" ] ; then 	cp *.info* ${INFO_DIR} ; fi
-+#	if [  -d "${INFO_DIR}" ] ; then true ; else exit 0; fi
-+#	-if fgrep gcl-si ${INFO_DIR}/dir > /dev/null ; then true ; else \
-+#	echo "* GCL Doc: (gcl-si.info).	GNU Common Lisp specific Documentation." >> ${INFO_DIR}/dir ; fi
-+#	-if fgrep gcl-tk ${INFO_DIR}/dir > /dev/null ; then true ; else \
-+#	echo "* GCL TK Doc: (gcl-tk.info).	TK window GCL interface." >> ${INFO_DIR}/dir ; fi
-+#	-if fgrep gcl.info ${INFO_DIR}/dir > /dev/null ; then true ; else \
-+#	echo "* GCL Ansi Doc: (gcl.info).  Ansi Common Lisp Specification." >> ${INFO_DIR}/dir ; fi
-+#	-if [  -d "${INFO_DIR}" ] ; then 	cp *.info* ${INFO_DIR} ; fi
  
  
  

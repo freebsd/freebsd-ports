@@ -3,12 +3,39 @@ bin/gcl.exe
 @unexec install-info --delete %D/info/gcl-si.info %D/info/dir
 info/gcl-si.info
 @exec install-info %D/info/gcl-si.info %D/info/dir
-lib/gcl-2.2.2/cmpnew/collectfn.o
-lib/gcl-2.2.2/lsp/gprof.lsp
-lib/gcl-2.2.2/lsp/info.o
-lib/gcl-2.2.2/lsp/profile.lsp
-lib/gcl-2.2.2/unixport/saved_gcl
-@dirrm lib/gcl-2.2.2/unixport
-@dirrm lib/gcl-2.2.2/lsp
-@dirrm lib/gcl-2.2.2/cmpnew
-@dirrm lib/gcl-2.2.2
+lib/gcl-%%GCL_VER%%/unixport/saved_gcl
+lib/gcl-%%GCL_VER%%/cmpnew/collectfn.o
+lib/gcl-%%GCL_VER%%/lsp/gprof.lsp
+lib/gcl-%%GCL_VER%%/lsp/info.o
+lib/gcl-%%GCL_VER%%/lsp/profile.lsp
+lib/gcl-%%GCL_VER%%/gcl-tk/decode.tcl
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/index.lsp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/gc-monitor.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkBasic.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkCanvText.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkEntry.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkEntry2.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkForm.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkHScale.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkItems.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkLabel.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkListbox.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkPlot.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkRadio.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkRuler.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkSearch.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkStyles.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkTextBind.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkVScale.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/mkdialog.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/nqthm-stack.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/showVars.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/demos/widget.lisp
+lib/gcl-%%GCL_VER%%/gcl-tk/gcl.tcl
+lib/gcl-%%GCL_VER%%/gcl-tk/gcltksrv
+@dirrm lib/gcl-%%GCL_VER%%/unixport
+@dirrm lib/gcl-%%GCL_VER%%/lsp
+@dirrm lib/gcl-%%GCL_VER%%/gcl-tk/demos
+@dirrm lib/gcl-%%GCL_VER%%/gcl-tk
+@dirrm lib/gcl-%%GCL_VER%%/cmpnew
+@dirrm lib/gcl-%%GCL_VER%%

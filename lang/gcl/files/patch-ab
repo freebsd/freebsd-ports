@@ -1,36 +1,26 @@
---- makefile.orig	Sat Mar 22 16:47:17 1997
-+++ makefile	Sun Oct  5 14:17:32 1997
-@@ -120,7 +120,7 @@
- merge:
- 	${CC} -o merge merge.c
- 
--LISP_LIB=cmpnew/collectfn.o lsp/gprof.lsp lsp/info.o lsp/profile.lsp gcl-tk/tkl.o  gcl-tk/tinfo.o gcl-tk/demos/*.lsp gcl-tk/demos/*.lisp gcl-tk/demos/*.o
-+LISP_LIB=cmpnew/collectfn.o lsp/gprof.lsp lsp/info.o lsp/profile.lsp
- 
- install-command:
- 	rm -f ${PREFIX_DIR}/bin/gcl
-@@ -141,21 +141,13 @@
- 	-if [ -d "${PREFIX_DIR}/lib" ] ;then true; else mkdir ${PREFIX_DIR}/lib ; fi
- 	-if [ -d "${PREFIX_DIR}/bin" ] ;then true; else mkdir ${PREFIX_DIR}/bin ; fi
+--- makefile.orig	Tue Nov  9 17:03:29 1999
++++ makefile	Mon Nov 15 17:14:36 1999
+@@ -175,21 +175,22 @@
+ 	-if [ -d "${prefix}/lib" ] ;then true; else mkdir ${prefix}/lib ; fi
+ 	-if [ -d "${prefix}/bin" ] ;then true; else mkdir ${prefix}/bin ; fi
  	-if [ -d "${INSTALL_LIB_DIR}" ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi
-+	-if [ -d "${PREFIX_DIR}/info" ] ; then true; else mkdir ${PREFIX_DIR}/info; fi
- 	make install-command "INSTALL_LIB_DIR=${INSTALL_LIB_DIR}" "PREFIX_DIR=${PREFIX_DIR}"
- 	rm -f ${PREFIX_DIR}/bin/gcl.exe
++	-if [ -d "${prefix}/info" ];then true; else mkdir ${prefix}/info ; fi
+ 	make install-command "INSTALL_LIB_DIR=${INSTALL_LIB_DIR}" "prefix=${prefix}"
+ 	rm -f ${prefix}/bin/gcl.exe
 -	tar cvf - unixport/saved_gcl info/*info* doc/*.el ${LISP_LIB} \
--	gcl-tk/gcl.tcl gcl-tk/gcltkaux  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
-+	tar cvf - unixport/saved_gcl ${LISP_LIB} \
-+	  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
++	tar cvf - unixport/saved_gcl doc/*.el ${LISP_LIB} \
+ 	gcl-tk/gcl.tcl gcl-tk/gcltkaux  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
  	ln ${SYMB} ${INSTALL_LIB_DIR}/unixport/saved_gcl \
- 	 ${PREFIX_DIR}/bin/gcl.exe
--	-cat gcl-tk/gcltksrv | \
--	sed -e "s:GCL_TK_DIR=.*:GCL_TK_DIR=${INSTALL_LIB_DIR}/gcl-tk:g"  \
--	-e "s:TK_LIBRARY=.*:TK_LIBRARY=${TK_LIBRARY}:g" > \
--	${INSTALL_LIB_DIR}/gcl-tk/gcltksrv
--	-if [ "${TK_CONFIG_PREFIX}" != "unknown" ] ; then  \
--	chmod a+x ${INSTALL_LIB_DIR}/gcl-tk/gcltksrv ; fi
--	-if [ "${TK_CONFIG_PREFIX}" != "unknown" ] ; then  \
--	(cd ${INSTALL_LIB_DIR}/gcl-tk/demos ; \
--	echo '(load "../tkl.o")(TK::GET-AUTOLOADS (directory "*.lisp"))' | ${PREFIX_DIR}/bin/gcl) ; fi
+ 	 ${prefix}/bin/gcl.exe
+ 	-cat gcl-tk/gcltksrv | \
+ 	sed -e "s:GCL_TK_DIR=.*:GCL_TK_DIR=${INSTALL_LIB_DIR}/gcl-tk:g"  \
+ 	-e "s:TK_LIBRARY=.*:TK_LIBRARY=${TK_LIBRARY}:g" > \
+ 	${INSTALL_LIB_DIR}/gcl-tk/gcltksrv
+ 	-if [ "${TK_CONFIG_PREFIX}" != "unknown" ] ; then  \
+ 	chmod a+x ${INSTALL_LIB_DIR}/gcl-tk/gcltksrv ; fi
+ 	-if [ "${TK_CONFIG_PREFIX}" != "unknown" ] ; then  \
+ 	(cd ${INSTALL_LIB_DIR}/gcl-tk/demos ; \
+ 	echo '(load "../tkl.o")(TK::GET-AUTOLOADS (directory "*.lisp"))' | ${prefix}/bin/gcl) ; fi
  	(cd info ; make ; make install)
  
  clean:

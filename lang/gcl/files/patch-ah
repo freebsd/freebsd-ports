@@ -1,0 +1,22 @@
+--- configure.orig	Thu Nov 11 11:19:54 1999
++++ configure	Thu Nov 25 13:04:20 1999
+@@ -1956,7 +1956,8 @@
+      old)
+      use=dos-go32;;
+ 
+-     *86*-freebsd)
++     *86*-freebsd*)
++     MPI_FILE=mpi-386_no_under.o
+      use=FreeBSD;;
+ 
+      hp3*-*hpux*)
+@@ -2340,6 +2341,9 @@
+ TK_CONFIG_PREFIX=`tclsh8.0 conftest.tcl`
+ if test -d "${TK_CONFIG_PREFIX}"  ; then true; else
+ TK_CONFIG_PREFIX=`tclsh conftest.tcl`
++if test -d "${TK_CONFIG_PREFIX}"  ; then true; else
++TK_CONFIG_PREFIX="unknown"
++fi
+ fi
+ fi
+ #AC_MSG_CHECKING(TK_CONFIG_PREFIX=${TK_CONFIG_PREFIX})
