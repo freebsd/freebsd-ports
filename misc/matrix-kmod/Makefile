@@ -16,6 +16,11 @@ MAINTAINER=	strijar@urai.ru
 COMMENT=	Screensaver for console (matrix_saver.ko) "Matrix" like
 
 KMODDIR=	${PREFIX}/modules
+SYSDIR?=	${SRC_BASE}/sys
+.if !exists(${SYSDIR}/dev/syscons/syscons.h)
+IGNORE=		Requires kernel source (/usr/src/sys) to build
+.endif
+MAKE_ENV+=	WERROR=
 
 .include <bsd.port.pre.mk>
 
