@@ -3,12 +3,12 @@
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.6 1998/08/07 23:56:34 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/12 06:29:30 asami Exp $
 #
 
 DISTNAME=	xgfe-2.0
 CATEGORIES=	math
-MASTER_SITES=	http://www2.msstate.edu/~dmi1/xgfe/download/
+MASTER_SITES=	http://jasper.he.net/~dmishee/xgfe/download/
 
 MAINTAINER=	mph@freebsd.org
 
