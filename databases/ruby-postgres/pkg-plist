@@ -1,10 +1,15 @@
 lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/postgres.so
+share/examples/ruby/postgres/losample.rb
 share/examples/ruby/postgres/psql.rb
 share/examples/ruby/postgres/psqlHelp.rb
+share/examples/ruby/postgres/test1.rb
+share/examples/ruby/postgres/test2.rb
+share/examples/ruby/postgres/test4.rb
 @dirrm share/examples/ruby/postgres
+share/doc/ruby/postgres/ChangeLog
 share/doc/ruby/postgres/README
-share/doc/ruby/postgres/README.jp
 share/doc/ruby/postgres/postgres.html
-share/doc/ruby/postgres/postgres.jp.html
+share/doc/ruby/postgres/ja/README.jp
+share/doc/ruby/postgres/ja/postgres.jp.html
+@dirrm share/doc/ruby/postgres/ja
 @dirrm share/doc/ruby/postgres
-@unexec /bin/rmdir %D/share/doc/ruby >/dev/null 2>&1 || true

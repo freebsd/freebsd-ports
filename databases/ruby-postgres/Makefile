@@ -5,25 +5,20 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ruby-postgres
-PORTVERSION=	0.5.3
+PORTNAME=	postgres
+PORTVERSION=	0.6.1
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
-		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/contrib/ \
-		ftp://ftp.iij.ad.jp/pub/lang/ruby/contrib/ \
-		ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/contrib/ \
-		ftp://ftp.krnet.ne.jp/pub/ruby/contrib/ \
-		ftp://mirror.nucba.ac.jp/mirror/ruby/contrib/
-DISTNAME=	postgres-${PORTVERSION}
+MASTER_SITES=	http://webclub.kcom.ne.jp/mb/noborus/archive/
+PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	yasuf@big.or.jp
+MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
-WRKSRC=		${WRKDIR}/postgres
+WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS+= --with-pgsql-include-dir="${PGDIR}/include" \
 		--with-pgsql-lib-dir="${PGDIR}/lib"
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
@@ -34,15 +29,23 @@ RUBY_ARCH=	${ARCH}-freebsd${OSREL}
 
 PGDIR?=		${PREFIX}/pgsql
 
+DOCS_EN=	ChangeLog README doc/postgres.html
+DOCS_JA=	README.jp doc/postgres.jp.html
+
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 post-install:
 	${MKDIR} ${PREFIX}/share/examples/ruby/postgres
-	${INSTALL_DATA} ${WRKSRC}/psql*.rb ${PREFIX}/share/examples/ruby/postgres
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${PREFIX}/share/examples/ruby/postgres/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/postgres
-	${INSTALL_DATA} ${WRKSRC}/README* ${WRKSRC}/*.html ${PREFIX}/share/doc/ruby/postgres
+	${MKDIR} ${PREFIX}/share/doc/ruby/postgres/ja
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/postgres/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/postgres/ja/
+.endfor
 .endif
 
 .include <bsd.port.mk>
