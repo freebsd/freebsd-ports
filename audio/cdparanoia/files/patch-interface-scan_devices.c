@@ -1,11 +1,5 @@
-Index: interface/scan_devices.c
-===================================================================
-RCS file: /home/cvs/cdparanoia/interface/scan_devices.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.10
-diff -u -r1.1.1.1 -r1.10
---- interface/scan_devices.c	2003/01/05 09:46:26	1.1.1.1
-+++ interface/scan_devices.c	2003/01/07 00:49:01	1.10
+--- interface/scan_devices.c.orig	Sun Mar 25 21:44:01 2001
++++ interface/scan_devices.c	Fri Nov  7 17:47:38 2003
 @@ -1,6 +1,8 @@
  /******************************************************************
   * CopyPolicy: GNU Public License 2 applies
@@ -24,12 +18,16 @@ diff -u -r1.1.1.1 -r1.10
  static char *scsi_cdrom_prefixes[]={
    "/dev/scd",
    "/dev/sr",
-@@ -49,6 +53,13 @@
+@@ -49,6 +53,17 @@
    "/dev/cm206cd",
    "/dev/gscd",
    "/dev/optcd",NULL};
 +#elif defined(__FreeBSD__)
 +static char *cdrom_devices[] = {
++	"/dev/cd?",
++	"/dev/acd?",
++	"/dev/wcd?",
++	"/dev/mcd?",
 +	"/dev/cd?c",
 +	"/dev/acd?c",
 +	"/dev/wcd?c",
@@ -38,7 +36,7 @@ diff -u -r1.1.1.1 -r1.10
  
  /* Functions here look for a cdrom drive; full init of a drive type
     happens in interface.c */
-@@ -75,10 +86,12 @@
+@@ -75,10 +90,12 @@
  	if((d=cdda_identify(buffer,messagedest,messages)))
  	  return(d);
  	idmessage(messagedest,messages,"",NULL);
@@ -51,7 +49,7 @@ diff -u -r1.1.1.1 -r1.10
        }
      }else{
        /* Name.  Go for it. */
-@@ -117,8 +130,14 @@
+@@ -117,8 +134,14 @@
    }
  #endif
  
@@ -66,7 +64,7 @@ diff -u -r1.1.1.1 -r1.10
  
  #ifdef CDDA_TEST
    if(!d)d=cdda_identify_test(device,messagedest,messages);
-@@ -143,6 +162,7 @@
+@@ -143,6 +166,7 @@
  
  }
  
@@ -74,7 +72,7 @@ diff -u -r1.1.1.1 -r1.10
  cdrom_drive *cdda_identify_cooked(const char *dev, int messagedest,
  				  char **messages){
  
-@@ -275,6 +295,60 @@
+@@ -275,6 +299,60 @@
    return(d);
  }
  
@@ -135,7 +133,7 @@ diff -u -r1.1.1.1 -r1.10
  struct  sg_id {
    long    l1; /* target | lun << 8 | channel << 16 | low_ino << 24 */
    long    l2; /* Unique id */
-@@ -390,6 +464,7 @@
+@@ -390,6 +468,7 @@
    if(dev!=-1)close(dev);
    return(NULL);
  }
@@ -143,7 +141,7 @@ diff -u -r1.1.1.1 -r1.10
  
  void strscat(char *a,char *b,int n){
    int i;
-@@ -401,6 +476,7 @@
+@@ -401,6 +480,7 @@
    strcat(a," ");
  }
  
@@ -151,7 +149,7 @@ diff -u -r1.1.1.1 -r1.10
  /* At this point, we're going to punt compatability before SG2, and
     allow only SG2 and SG3 */
  static int verify_SG_version(cdrom_drive *d,int messagedest,
-@@ -653,6 +729,88 @@
+@@ -653,6 +733,88 @@
    if(g_fd!=-1)close(g_fd);
    return(NULL);
  }
