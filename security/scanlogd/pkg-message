@@ -1,0 +1,9 @@
+----------------------------------------------------------------------------
+
+scanlogd requires a separate user and group named 'scanlogd' to run.
+You will need to create these manually. For example:
+
+pw groupadd scanlogd
+pw useradd scanlogd -d /nonexistent -g scanlogd -s /sbin/nologin -c SCANLOGD
+
+----------------------------------------------------------------------------

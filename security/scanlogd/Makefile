@@ -1,0 +1,38 @@
+# New ports collection makefile for:	scanlogd
+# Date created:				10 May 2004
+# Whom:					Roman Bogorodskiy
+#
+# $FreeBSD$
+#
+
+PORTNAME=	scanlogd
+PORTVERSION=	2.2.1
+CATEGORIES=	security
+MASTER_SITES=	http://openwall.com/scanlogd/ \
+		ftp://ftp.openwall.com/pub/projects/scanlogd/ \
+		ftp://rt.fm/pub/scanlogd/
+
+MAINTAINER=	bogorodskiy@inbox.ru
+COMMENT=	TCP port scan detection tool
+
+.if defined(WITH_LIBNIDS)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
+.endif
+
+.if defined(WITH_LIBNIDS)
+ALL_TARGET=	libnids
+.else
+ALL_TARGET=	libpcap
+.endif
+
+MAN8=		scanlogd.8
+PLIST_FILES=	bin/scanlogd
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/scanlogd ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/scanlogd.8 ${MANPREFIX}/man/man8
+
+post-install:
+	 @${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

@@ -369,6 +369,7 @@
     SUBDIR += saint
     SUBDIR += samba-vscan
     SUBDIR += samhain
+    SUBDIR += scanlogd
     SUBDIR += scanssh
     SUBDIR += seahorse
     SUBDIR += secpanel
