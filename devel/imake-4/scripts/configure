@@ -58,4 +58,4 @@ cd ${WRKDIR}/xc
 touch config/cf/version.def
 touch config/cf/date.def
 make Makefile.boot
-make -f xmakefile SUBDIRS="include config" VerifyOS version.def Makefiles includes
+make -f xmakefile VerifyOS version.def Makefiles includes
