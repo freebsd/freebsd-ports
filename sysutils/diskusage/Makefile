@@ -8,9 +8,9 @@
 PORTNAME=	diskusage
 PORTVERSION=	1.01
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.thinblue.net/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://freebsd.radioslot.com/pub/FreeBSD/distfiles/
 
-MAINTAINER=	maske@thinblue.net
+MAINTAINER=	maske@freebsd.radioslost.com
 
 MAN1=		diskusage.1
 MANCOMPRESSED=	yes
