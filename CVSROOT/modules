@@ -1942,6 +1942,7 @@ fpc-docs	ports/lang/fpc-docs
 fpc-fvision	ports/devel/fpc-fvision
 fpc-gdb		ports/devel/fpc-gdb
 fpc-gdbint	ports/devel/fpc-gdbint
+fpc-ibase	ports/databases/fpc-ibase
 fpc-ide		ports/editors/fpc-ide
 fpc-inet	ports/net/fpc-inet
 fpc-md5		ports/security/fpc-md5
