@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dsssl-docbook-modular
-PORTVERSION=	1.73
-PORTREVISION=	1
+PORTVERSION=	1.78
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,9 +17,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} docbook-dsssl-doc-${PORTVERSION}${EXTRACT_
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	DSSSL stylesheets for the DocBook DTD by Norman Walsh
-
-BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook-300
-RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook-300
 
 NO_MTREE=	yes
 
