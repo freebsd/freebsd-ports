@@ -9,7 +9,8 @@ PORTNAME=	firebird
 PORTVERSION=	0.9
 PORTREVISION=	4
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://firebird.sourceforge.net/download/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=firebird
 DISTFILES=	firebird-boot-kit.tar.gz \
 		interbase0.9-4-v5examples.tar.gz \
