@@ -17,6 +17,10 @@ MAINTAINER=	mi@aldan.algebra.com
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
+.if !defined(NOPORTDOCS)
+DISTFILES+=	readme.txt
+.endif
+
 NO_WRKSUBDIR=	YES
 
 DIST_SUBDIR=	${PORTNAME}
