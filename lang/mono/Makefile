@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
@@ -28,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		mcs.1 mint.1 mono.1 monoburg.1 monodis.1 monostyle.1 \
-       		sqlsharpcli.1
+       		sqlsharp.1
 MAN5=		mono-config.5
 
 post-patch:

@@ -6,6 +6,8 @@ bin/monodis
 bin/monograph
 bin/monoresgen.exe
 bin/monosn
+bin/secutil.exe
+bin/sqlsharp.exe
 etc/mono/config
 etc/mono/machine.config
 include/mono/cil/opcode.def
