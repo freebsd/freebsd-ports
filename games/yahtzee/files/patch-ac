@@ -1,0 +1,48 @@
+--- main.c.orig	Sat Jan 25 19:41:13 1992
++++ main.c	Fri Jul  4 13:39:01 1997
+@@ -12,7 +12,7 @@
+  * (c)1992 by orest zborowski
+  */
+ 
+-static char *header = "Yahtzee  Version 1.00  (c)1992 by zorst";
++static char *header = "Yahtzee Version 1.00p1   (c)1992 by zorst, FreeBSD port by Joel Sutton";
+ 
+ extern errno;
+ 
+@@ -820,6 +820,7 @@
+ 	int i;
+ 	int topscore;
+ 	int winner;
++	char dummy[5];
+ 
+ 	for (;;)
+ 	{
+@@ -844,7 +845,9 @@
+ 			winner = i;
+ 		}
+ 
+-	say("The winner is %s", players[winner].name);
++	say("The winner is %s. Press <enter> to continue...", players[winner].name);
++	fgets(dummy,5,stdin);
++	fflush(stdin);
+ }
+ 
+ #define L_LOCK 0
+@@ -1117,7 +1120,8 @@
+ 
+ 	printf ("How many times to you wish to roll? ");
+ 
+-	gets(nrollstr);
++	fflush(stdin);
++	fgets(nrollstr, 10, stdin);
+ 	nroll = atoi(nrollstr);
+ 
+ 	printf("Generating...\n");
+@@ -1270,6 +1274,7 @@
+ 				printf("How many computers to play (max of %d) ? ",
+ 				  MAX_NUMBER_OF_PLAYERS - num_players);
+ 				fflush(stdout);
++				fpurge(stdin);
+ 
+ 				fgets(num, sizeof(num), stdin);
+ 

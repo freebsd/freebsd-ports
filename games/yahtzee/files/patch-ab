@@ -1,0 +1,19 @@
+*** config.h.orig	Sun Apr 13 13:48:41 1997
+--- config.h	Sun Apr 13 13:48:54 1997
+***************
+*** 1,7 ****
+  #ifndef _config_H_
+  #define _config_H_
+  
+! #define SCOREDIR "/usr/local/lib"
+  #define SCOREFNAME "yahtzee.sco"	/* must allow .L extension */
+  
+  #define NUM_TOP_PLAYERS 10
+--- 1,7 ----
+  #ifndef _config_H_
+  #define _config_H_
+  
+! #define SCOREDIR "/usr/local/lib/yahtzee"
+  #define SCOREFNAME "yahtzee.sco"	/* must allow .L extension */
+  
+  #define NUM_TOP_PLAYERS 10
