@@ -31,18 +31,9 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.pre.mk>
-
-# calltree is a plugin for valgrind, which is i386-only
-# kcachegrind however likes to use them both, so we depend
-# on them in the i386-case
-.if ${ARCH} == "i386"
-RUN_DEPENDS+=	calltree:${PORTSDIR}/devel/calltree
-.endif
-
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-I$$ac_db_includes|-I${LOCALBASE}/include/db4|g' \
 			-e 's|ac_db_name="db"|ac_db_name="db4"|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.mk>
