@@ -3520,6 +3520,7 @@ ja-gxditview	ports/japanese/gxditview
 ja-hex		ports/japanese/hex
 ja-hns		ports/japanese/hns
 ja-ical		ports/japanese/ical
+ja-ipa-ttfonts	ports/japanese/ipa-ttfonts
 ja-ipadic	ports/japanese/ipadic
 ja-ircII	ports/japanese/ircII
 ja-iv		ports/japanese/iv
