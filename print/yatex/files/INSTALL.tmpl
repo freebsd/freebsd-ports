@@ -22,7 +22,8 @@ OptionStart=";;; configuration options for ${pkgname}"
 OptionEnd=";;; End of configuration options for ${pkgname}"
 
 if [ "X$2" = X"POST-INSTALL" ]; then
-	if [ ! -f ${sitestartdir}/site-start.el ]; then 
+	if [ X"${sitestartdir}" != X ] && \
+	    [ ! -f ${sitestartdir}/site-start.el ]; then 
 		 ${TOUCH} ${sitestartdir}/site-start.el
 	fi
 	count=1
@@ -50,7 +51,7 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 		install-info ${infodir}/${file} ${infodir}/dir
 	done
 	if [ X"${sitestartdir}" != X ] && \
-	    [ "`${GREP} \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" ]; then 
+	    [ X"`${GREP} \"^${OptionStart}\"  ${sitestartdir}/site-start.el`" = X ]; then 
 	    ${SED} -e "/^${OptionStart}/,/^${OptionEnd}/d" \
 	    ${sitestartdir}/site-start.el > ${sitestartdir}/site-start.el.bak
 	    ${CP} ${sitestartdir}/site-start.el.bak ${sitestartdir}/site-start.el
