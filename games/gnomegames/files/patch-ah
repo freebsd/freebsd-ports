@@ -1,0 +1,20 @@
+--- xbill/MCursor.cc.orig	Thu Dec  2 13:15:03 1999
++++ xbill/MCursor.cc	Thu Dec  2 13:15:49 1999
+@@ -9,7 +9,7 @@
+ 
+ 	sprintf (file, "%s/%s.xpm", dir, name);
+ 	pixmap = gdk_pixmap_colormap_create_from_xpm(ui.display, ui.colormap,
+-						     &bitmap, NULL, file);
++						     &bitmap, (GdkColor *)NULL, file);
+ 	if (pixmap == NULL) {
+ 		printf ("cannot open %s\n", file);
+ 		exit(1);
+@@ -18,7 +18,7 @@
+ 	if (masked == SEP_MASK) {
+ 	  sprintf(file, "%s/%s_mask.xpm", dir, name);
+ 	  pixmap = gdk_pixmap_colormap_create_from_xpm(ui.display, ui.colormap,
+-						       &mask, NULL, file);
++						       &mask, (GdkColor *)NULL, file);
+ 	  if (pixmap == NULL) {
+ 	    printf("cannot open %s\n", file);
+ 	    exit(1);
