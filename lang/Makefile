@@ -113,6 +113,7 @@
     SUBDIR += ruby14
     SUBDIR += ruby14-irb
     SUBDIR += ruby14-tcltklib
+    SUBDIR += ruby_static
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm
