@@ -1,0 +1,63 @@
+--- vmmon-only/freebsd/hostif.c.orig	Wed Jun  6 22:49:52 2001
++++ vmmon-only/freebsd/hostif.c	Thu Jun  7 13:13:02 2001
+@@ -107,7 +107,13 @@
+ 
+ 	paddr = (vm_offset_t)addr;
+         m = PHYS_TO_VM_PAGE(paddr);
++#if __FreeBSD_version >= 500013
++	mtx_lock(&vm_mtx);
++#endif
+         vm_page_wire(m);
++#if __FreeBSD_version >= 500013
++	mtx_unlock(&vm_mtx);
++#endif
+ 	return 0;
+ }     
+ 
+@@ -120,7 +126,13 @@
+ 
+ 	paddr = (vm_offset_t)addr;
+ 	m = PHYS_TO_VM_PAGE(paddr);
++#if __FreeBSD_version >= 500013
++	mtx_lock(&vm_mtx);
++#endif
+ 	vm_page_unwire(m, 1);
++#if __FreeBSD_version >= 500013
++	mtx_unlock(&vm_mtx);
++#endif
+   	return 0;
+ }
+  
+@@ -1066,10 +1078,16 @@
+         return NULL;
+   }
+   paddr = vtophys(addr);
++#if __FreeBSD_version >= 500013
++  mtx_lock(&vm_mtx);
++#endif
+   ka->kaddr = kmem_alloc_pageable(kernel_map, PAGE_SIZE);
+   ka->map = PHYS_TO_VM_PAGE(paddr);
+   vm_page_wire(ka->map); 
+   pmap_kenter(ka->kaddr, paddr);	
++#if __FreeBSD_version >= 500013
++  mtx_unlock(&vm_mtx);
++#endif
+   return ka->kaddr;
+ }
+ 
+@@ -1079,9 +1097,15 @@
+   if (ka->map==NULL)
+ 	  return 0;
+ 
++#if __FreeBSD_version >= 500013
++  mtx_lock(&vm_mtx);
++#endif
+   vm_page_unwire(ka->map, 1); 
+   pmap_kremove(ka->kaddr);	
+   kmem_free(kernel_map, ka->kaddr, PAGE_SIZE);
++#if __FreeBSD_version >= 500013
++  mtx_unlock(&vm_mtx);
++#endif
+   ka->kaddr = 0;
+   ka->map = NULL;
+   return 0;
