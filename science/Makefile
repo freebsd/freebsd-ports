@@ -4,6 +4,7 @@
     COMMENT = Scientific ports
 
     SUBDIR += 2dhf
+    SUBDIR += abinit
     SUBDIR += at
     SUBDIR += bblimage
     SUBDIR += cdcl

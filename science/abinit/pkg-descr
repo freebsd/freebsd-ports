@@ -1,0 +1,7 @@
+ABINIT is a package whose main program allows one to find
+the total energy, charge density and electronic structure of
+systems made of electrons and nulcei (molecules and periodic
+solids) within Density Functional Theory (DFT), using pseudo-
+potentials and a planewave basis.
+
+WWW: http://www.abinit.org/
