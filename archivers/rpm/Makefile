@@ -3,7 +3,7 @@
 # Date created:		23 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1998/01/30 08:11:27 tg Exp $
+# $Id: Makefile,v 1.14 1998/06/02 10:52:54 tg Exp $
 #
 
 DISTNAME=	rpm-2.5.1
@@ -12,6 +12,9 @@ MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/code/rpm/ \
 		ftp://ftp.gwdg.de/pub/linux/redhat/code/rpm/
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+
+BROKEN_ELF=	yes
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
