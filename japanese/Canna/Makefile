@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.17 1997/09/14 21:34:28 max Exp $
+# $Id: Makefile,v 1.18 1997/10/17 15:59:04 itojun Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -46,6 +46,8 @@ post-install:
 		  >> ${STARTUP_SCRIPT} ;				\
 		echo 'if [ -f $$canna ]; then' >> ${STARTUP_SCRIPT} ;	\
 		echo '    rm -f /var/run/canna/Canna.pid' >> ${STARTUP_SCRIPT};\
+		echo '    mkdir -p /var/run/canna' >> ${STARTUP_SCRIPT};\
+		echo '    chown bin:bin /var/run/canna' >> ${STARTUP_SCRIPT};\
 		echo "    echo -n ' Canna'" >> ${STARTUP_SCRIPT};	\
 		echo '     $$canna' >> ${STARTUP_SCRIPT} ;		\
 		echo "fi" >> ${STARTUP_SCRIPT} ;			\
