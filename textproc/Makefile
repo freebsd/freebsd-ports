@@ -436,6 +436,7 @@
     SUBDIR += pdftohtml
     SUBDIR += pear-Spreadsheet_Excel_Writer
     SUBDIR += perl2html
+    SUBDIR += php4-xml
     SUBDIR += pocketreader
     SUBDIR += ppower4
     SUBDIR += prosper
