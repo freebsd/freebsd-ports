@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eterm
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES+=	x11
 MASTER_SITES=	http://www.eterm.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -38,15 +37,17 @@ MAN1=		Eterm.1
 CONFIGURE_ARGS+=--enable-mmx
 .endif
 
+post-patch:
+	@${RM} ${WRKSRC}/themes/Eterm/*.orig
+	@${RM} ${WRKSRC}/themes/auto/*.orig
+	@${RM} ${WRKSRC}/themes/trans/*.orig
+
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.1.html ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
 .endif
 
 .include <bsd.port.post.mk>
