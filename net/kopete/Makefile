@@ -23,8 +23,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	LDFLAGS="-lcrypto"
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's|xx||g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
