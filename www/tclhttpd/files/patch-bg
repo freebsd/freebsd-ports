@@ -1,9 +1,0 @@
---- lib/httpd.tcl	Sat Jun 10 05:59:52 2000
-+++ lib/httpd.tcl	Wed Aug  2 18:18:18 2000
-@@ -1305,5 +1305,5 @@
- 		[list HttpdCloseFinal $sock]]
- 
--	    Httpd_GetPostDataAsync $sock "" HttpdCloseFinal
-+	    Httpd_GetPostDataAsync $sock "" $data(count) HttpdCloseFinal
- 	} else {
- 	    HttpdCloseFinal $sock

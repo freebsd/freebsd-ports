@@ -2,12 +2,7 @@ bin/httpd.tcl
 bin/httpdthread.tcl
 etc/tclhttpd.rc
 etc/rc.d/tclhttpd.sh
-lib/tclhttpd%%PORTVERSION%%/libsetuid.so.%%LIBSUF%%
-lib/tclhttpd%%PORTVERSION%%/libsetuid.so
-lib/tclhttpd%%PORTVERSION%%/liblimit.so.%%LIBSUF%%
-lib/tclhttpd%%PORTVERSION%%/liblimit.so
-lib/tclhttpd%%PORTVERSION%%/libcrypt.so.%%LIBSUF%%
-lib/tclhttpd%%PORTVERSION%%/libcrypt.so
+lib/tclhttpd%%PORTVERSION%%/%%SHLIB_NAME%%
 lib/tclhttpd%%PORTVERSION%%/admin.tcl
 lib/tclhttpd%%PORTVERSION%%/auth.tcl
 lib/tclhttpd%%PORTVERSION%%/cgi.tcl
@@ -17,18 +12,20 @@ lib/tclhttpd%%PORTVERSION%%/debug.tcl
 lib/tclhttpd%%PORTVERSION%%/demo.tcl
 lib/tclhttpd%%PORTVERSION%%/direct.tcl
 lib/tclhttpd%%PORTVERSION%%/dirlist.tcl
-lib/tclhttpd%%PORTVERSION%%/discover.tcl
 lib/tclhttpd%%PORTVERSION%%/doc.tcl
 lib/tclhttpd%%PORTVERSION%%/httpd.tcl
 lib/tclhttpd%%PORTVERSION%%/imagemap.tcl
 lib/tclhttpd%%PORTVERSION%%/include.tcl
 lib/tclhttpd%%PORTVERSION%%/log.tcl
+lib/tclhttpd%%PORTVERSION%%/logstd.tcl
 lib/tclhttpd%%PORTVERSION%%/mail.tcl
 lib/tclhttpd%%PORTVERSION%%/maptcl.tcl
 lib/tclhttpd%%PORTVERSION%%/maptk.tcl
 lib/tclhttpd%%PORTVERSION%%/mtype.tcl
 lib/tclhttpd%%PORTVERSION%%/open.tcl
+lib/tclhttpd%%PORTVERSION%%/passcheck.tcl
 lib/tclhttpd%%PORTVERSION%%/pkgIndex.tcl
+lib/tclhttpd%%PORTVERSION%%/prodebug.tcl
 lib/tclhttpd%%PORTVERSION%%/redirect.tcl
 lib/tclhttpd%%PORTVERSION%%/safecgio.tcl
 lib/tclhttpd%%PORTVERSION%%/session.tcl
@@ -55,6 +52,7 @@ share/tclhttpd%%PORTVERSION%%/redirect
 share/tclhttpd%%PORTVERSION%%/register.tml
 share/tclhttpd%%PORTVERSION%%/test.tml
 share/tclhttpd%%PORTVERSION%%/access/README.txt
+share/tclhttpd%%PORTVERSION%%/access/index.tml
 share/tclhttpd%%PORTVERSION%%/access/auth/hello.txt
 share/tclhttpd%%PORTVERSION%%/access/auth/test.cgi
 share/tclhttpd%%PORTVERSION%%/access/auth/.htaccess
@@ -95,6 +93,7 @@ share/tclhttpd%%PORTVERSION%%/cgi-bin/testupload.cgi
 share/tclhttpd%%PORTVERSION%%/cgi-bin/user.cgi
 share/tclhttpd%%PORTVERSION%%/forms/file.tml
 share/tclhttpd%%PORTVERSION%%/forms/form1.tml
+share/tclhttpd%%PORTVERSION%%/forms/formget.tml
 share/tclhttpd%%PORTVERSION%%/forms/headers.tml
 share/tclhttpd%%PORTVERSION%%/forms/headerspost.tml
 share/tclhttpd%%PORTVERSION%%/forms/index.tml
@@ -108,6 +107,7 @@ share/tclhttpd%%PORTVERSION%%/forms/.tml
 share/tclhttpd%%PORTVERSION%%/guestbook/guestbook.cgi
 share/tclhttpd%%PORTVERSION%%/guestbook/newguest.cgi
 share/tclhttpd%%PORTVERSION%%/guestbook/newguest.html
+share/tclhttpd%%PORTVERSION%%/images/AjubaLogo.gif
 share/tclhttpd%%PORTVERSION%%/images/Blue.gif
 share/tclhttpd%%PORTVERSION%%/images/Red.gif
 share/tclhttpd%%PORTVERSION%%/images/ScripticsLogo1.gif
@@ -139,6 +139,10 @@ share/tclhttpd%%PORTVERSION%%/java/ServerDemo.class
 share/tclhttpd%%PORTVERSION%%/java/ServerDemo.html
 share/tclhttpd%%PORTVERSION%%/java/auth.js
 share/tclhttpd%%PORTVERSION%%/java/test.html
+share/tclhttpd%%PORTVERSION%%/links/INSTALL.txt
+share/tclhttpd%%PORTVERSION%%/links/README.txt
+share/tclhttpd%%PORTVERSION%%/links/README.ssl.txt
+share/tclhttpd%%PORTVERSION%%/links/WHATSNEW.txt
 share/tclhttpd%%PORTVERSION%%/libtml/Index
 share/tclhttpd%%PORTVERSION%%/libtml/faq.tcl
 share/tclhttpd%%PORTVERSION%%/libtml/htmlutils.tcl
@@ -186,6 +190,7 @@ share/tclhttpd%%PORTVERSION%%/stats/doc.tml
 share/tclhttpd%%PORTVERSION%%/stats/index.tml
 share/tclhttpd%%PORTVERSION%%/stats/notfound.tml
 share/tclhttpd%%PORTVERSION%%/stats/.tml
+share/tclhttpd%%PORTVERSION%%/templates/faqfaq.tml
 share/tclhttpd%%PORTVERSION%%/templates/form.tml
 share/tclhttpd%%PORTVERSION%%/templates/index.tml
 share/tclhttpd%%PORTVERSION%%/templates/simple.subst
@@ -206,6 +211,7 @@ share/tclhttpd%%PORTVERSION%%/.tml
 @dirrm share/tclhttpd%%PORTVERSION%%/include
 @dirrm share/tclhttpd%%PORTVERSION%%/java
 @dirrm share/tclhttpd%%PORTVERSION%%/libtml
+@dirrm share/tclhttpd%%PORTVERSION%%/links
 @dirrm share/tclhttpd%%PORTVERSION%%/manual
 @dirrm share/tclhttpd%%PORTVERSION%%/map
 @dirrm share/tclhttpd%%PORTVERSION%%/snmp/browser
@@ -214,4 +220,11 @@ share/tclhttpd%%PORTVERSION%%/.tml
 @dirrm share/tclhttpd%%PORTVERSION%%/stats
 @dirrm share/tclhttpd%%PORTVERSION%%/templates
 @dirrm share/tclhttpd%%PORTVERSION%%
-@dirrm tclhttpd%%PORTVERSION%%
+tclhttpd/custom/README
+tclhttpd/custom/hello.tcl
+tclhttpd/custom/snmpinit.tcl
+tclhttpd/custom/tclpro.tcl
+@dirrm tclhttpd/custom
+tclhttpd/README
+tclhttpd/README_custom
+@dirrm tclhttpd

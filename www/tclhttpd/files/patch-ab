@@ -15,8 +15,3 @@
 -install: all install-binaries install-libraries install-doc
 +install: all install-libraries install-doc
  
-@@ -315,3 +315,3 @@
- installdirs:
--	$(mkinstalldirs) $(pkglibdir) $(cryptlibdir) $(prefix)/bin $(htdocsdir)
-+	$(mkinstalldirs) $(pkglibdir) $(prefix)/bin $(htdocsdir)
- 

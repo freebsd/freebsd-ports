@@ -1,0 +1,75 @@
+--- src/limit.c	Thu May 11 02:00:43 2000
++++ src/limit.c	Fri Dec  1 20:04:58 2000
+@@ -20,7 +20,6 @@
+ int
+-LimitCmd(ClientData data, Tcl_Interp *interp, int argc, char *argv[])
++LimitCmd(ClientData data, Tcl_Interp *interp, int argc, Tcl_Obj *CONST objv[])
+ {
+-    int max;
+-    char buf[32];
+     struct rlimit limit;
++    Tcl_Obj *limObj[2];
+     Tcl_ResetResult(interp);
+@@ -31,3 +30,4 @@
+     if (argc > 1) {
+-	Tcl_GetInt(interp, argv[1], (int *)&limit.rlim_cur);
++	if (Tcl_GetLongFromObj(interp, objv[1], (long *)&limit.rlim_cur)
++		!= TCL_OK) return TCL_ERROR;
+         if (setrlimit(RLIMIT_NOFILE, &limit) < 0) {
+@@ -37,3 +37,5 @@
+     }
+-    sprintf(interp->result, "%d %d", limit.rlim_cur, limit.rlim_max);
++    limObj[0] = Tcl_NewLongObj((long)limit.rlim_cur);
++    limObj[1] = Tcl_NewLongObj((long)limit.rlim_max);
++    Tcl_SetObjResult(interp, Tcl_NewListObj(2, limObj));
+     return TCL_OK;
+@@ -54,3 +56,3 @@
+ {
+-    Tcl_CreateCommand(interp, "limit", LimitCmd, NULL, NULL);
++    Tcl_CreateObjCommand(interp, "limit", LimitCmd, NULL, NULL);
+     Tcl_PkgProvide(interp, "limit", "1.0");
+--- src/setuid.c	Tue Oct  6 20:12:11 1998
++++ src/setuid.c	Fri Dec  1 20:05:52 2000
+@@ -7,2 +7,3 @@
+ #include <sys/types.h>
++#include <unistd.h>
+ 
+--- src/utime.c	Tue Oct  6 20:12:11 1998
++++ src/utime.c	Fri Dec  1 20:14:21 2000
+@@ -20,13 +20,8 @@
+ int
+-UtimeCmd(ClientData data, Tcl_Interp *interp, int argc, char *argv[])
++UtimeCmd(ClientData data, Tcl_Interp *interp, int argc, Tcl_Obj *CONST objv[])
+ {
+     struct utimbuf u = {0, 0};
++    char *file;
+ 
+     Tcl_ResetResult(interp);
+-    if (argc > 3) {
+-	Tcl_GetInt(interp, argv[3], &u.actime);	/* new access time */
+-    }
+-    if (argc > 2) {
+-	Tcl_GetInt(interp, argv[2], &u.modtime);	/* new modify time */
+-    }
+     if (argc > 4 || argc <= 1) {
+@@ -35,4 +30,13 @@
+     }
+-    if (utime(argv[1], &u) < 0) {
+-	Tcl_AppendResult(interp, "utime: ", argv[1], Tcl_PosixError(interp), NULL);
++    if (argc > 3) {
++	if (Tcl_GetLongFromObj(interp, objv[3], (long *)&u.actime)
++		!= TCL_OK) return TCL_ERROR;	/* new access time */
++    }
++    if (argc > 2) {
++	if (Tcl_GetLongFromObj(interp, objv[2], (long *)&u.modtime)
++		!= TCL_OK) return TCL_ERROR;	/* new modify time */
++    }
++    file = Tcl_GetString(objv[1]);
++    if (utime(file, &u) < 0) {
++	Tcl_AppendResult(interp, "utime: ", file, Tcl_PosixError(interp), NULL);
+ 	return TCL_ERROR;
+@@ -55,3 +59,3 @@
+ {
+-    Tcl_CreateCommand(interp, "utime", UtimeCmd, NULL, NULL);
++    Tcl_CreateObjCommand(interp, "utime", UtimeCmd, NULL, NULL);
+     Tcl_PkgProvide(interp, "utime", "1.0");
