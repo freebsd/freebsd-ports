@@ -6635,7 +6635,6 @@ ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
 ruby-bdb	ports/databases/ruby-bdb
 ruby-bdb1	ports/databases/ruby-bdb1
-ruby-bigfloat	ports/math/ruby-bigfloat
 ruby-bio	ports/biology/ruby-bio
 ruby-bitvector	ports/math/ruby-bitvector
 ruby-blowfish	ports/security/ruby-blowfish
@@ -6855,7 +6854,6 @@ ruby-xslt	ports/textproc/ruby-xslt
 ruby-xtemplate	ports/textproc/ruby-xtemplate
 ruby-yaml	ports/devel/ruby-yaml
 ruby-zip	ports/archivers/ruby-zip
-ruby-zlib	ports/archivers/ruby-zlib
 ruby16-shim-ruby18	ports/lang/ruby16-shim-ruby18
 ruby_r		ports/lang/ruby_r
 ruby_r-devel	ports/lang/ruby_r-devel
