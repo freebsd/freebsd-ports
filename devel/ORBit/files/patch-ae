@@ -1,5 +1,17 @@
 --- configure.orig	Fri Feb 19 00:50:06 1999
 +++ configure	Fri Feb 19 00:50:21 1999
+@@ -2499,9 +2499,9 @@
+   
+   rm -f conf.glibtest
+ 
+-GMODULE_CFLAGS=`glib-config --cflags gmodule`
++GMODULE_CFLAGS=`$GLIB_CONFIG --cflags gmodule`
+ 
+-GMODULE_LIBS=`glib-config --libs gmodule`
++GMODULE_LIBS=`$GLIB_CONFIG --libs gmodule`
+ 
+ 
+ for ac_prog in 'bison -y' byacc
 @@ -5288,10 +5288,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
