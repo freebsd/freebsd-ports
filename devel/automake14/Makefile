@@ -16,11 +16,10 @@ DISTNAME=	automake-1.4-p5
 MAINTAINER=	ports@geeksrus.net
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL=${PERL5} # :C/[0-9.]//g}
+CONFIGURE_ENV=	PERL=${PERL5}
 CONFIGURE_ARGS=	--program-suffix=14
 USE_PERL5=	yes
 USE_REINPLACE=	yes
-# WRKSRC=		${WRKDIR}/${DISTNAME}
 
 STRIP=		# none
 
