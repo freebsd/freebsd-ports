@@ -10,7 +10,7 @@
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.02
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.rarsoft.com/pub/rar/ \
+MASTER_SITES=   ftp://rarsoft.ti.sk/pub/rar/ \
 		ftp://ftp.cdrom.com/pub/sac/pack/
 EXTRACT_SUFX=   .sfx
 
