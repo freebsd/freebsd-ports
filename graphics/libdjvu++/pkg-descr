@@ -1,0 +1,14 @@
+The DjVu Reference Library does not contain the entire implementation of
+the  DjVu system.  While  it  contains the  entire  decoder,  and a  big
+piece of  the encoder,  it does not  contain the  sophisticated encoding
+strategies necessary for reaching  the highest compression ratios.
+
+Among other  things, The DjVu  Reference Library contains the  full DjVu
+decoder,  the  full IW44  wavelet  encoder/decoder  for continuous  tone
+images, and  the back-end  of JB2  bilevel image  compression technique.
+However, it  does not  contain the code  for separating  document images
+into foreground and  background layers, nor does it contain  the code of
+the lossy  JB2 scheme  that achieves the  highest compression  ratios on
+bitonal images.
+
+WWW: http://www.djvu.com/

@@ -1,0 +1,18 @@
+--- Makefile.in.orig   Wed Mar 17 14:24:59 1999
++++ Makefile.in        Tue Jul 20 18:08:59 1999
+@@ -36 +36 @@
+-LIB= libdjvu++.a
++LIB= libdjvu++.so
+@@ -53,4 +53,3 @@
+-$(LIB): $(LIBOBJS) 
+-      if [ -r $(LIB) ] ; then rm $(LIB) ; fi
+-      $(AR) cq $(LIB) $(LIBOBJS)
+-      $(RANLIB) $(LIB)
++$(LIB): ${LIBOBJS:.o=.cpp}
++	${MAKE} -f bsd.lib.mk CXX="${CXX}" OBJS="${LIBOBJS}" LIB=djvu++ \
++		SHLIB_MAJOR=${VER:R} SHLIB_MINOR=${VER:E}
+--- @Test/Makefile.in.orig     Fri Mar  5 19:42:53 1999
++++ @Test/Makefile.in  Tue Jul 20 18:00:24 1999
+@@ -17 +17 @@
+-LIB= ../libdjvu++.a
++LIB= ../libdjvu++.so
