@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neXtaw
-PORTVERSION= 	0.8
+PORTVERSION= 	0.9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.inf.ufrgs.br/~casantos/neXtaw/
 
@@ -14,7 +14,7 @@ MAINTAINER=	tg@FreeBSD.org
 
 USE_IMAKE=	yes
 
-.include <bsd.port.pre.mk>
+MAN1=		neXtclock.1
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -23,9 +23,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${PREFIX}/share/doc/neXtaw
 	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/neXtaw
 .endif
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libneXtaw.so.6.1 ${PREFIX}/lib/libneXtaw.so
-.endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
