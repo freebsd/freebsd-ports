@@ -1,16 +1,38 @@
---- ./routines/metanet/loadg.c.orig	Sat Aug  8 13:53:32 1998
-+++ ./routines/metanet/loadg.c	Sat Aug  8 13:58:47 1998
-@@ -1,4 +1,7 @@
- #include <stdio.h>
- #ifndef __MSC__
-+#ifdef __FreeBSD__
-+#include <sys/types.h>
-+#endif
- #include <dirent.h>
- #endif
-@@ -14,5 +17,4 @@
- #define  getwd(x) _getcwd(x,1024)
- #endif
--
+--- scripts/scilab.g	Fri Jul  6 10:52:53 2001
++++ scripts/scilab.g	Fri Jul  6 11:12:00 2001
+@@ -46,8 +46,6 @@
+     export PATH
+     XAPPLRESDIR=$SCI/X11_defaults
+     export XAPPLRESDIR
+-    XLESSHELPFILE=$SCI/X11_defaults/xless.help
+-    export XLESSHELPFILE
+     NETHELPDIR=$SCI/X11_defaults
+     export NETHELPDIR
+     tty -s && stty kill '^U' intr '^C' erase '^H' quit '^\' eof '^D' susp '^Z'
+@@ -60,8 +58,6 @@
+     export PATH
+     XAPPLRESDIR=$SCI/X11_defaults
+     export XAPPLRESDIR
+-    XLESSHELPFILE=$SCI/X11_defaults/xless.help
+-    export XLESSHELPFILE
+     NETHELPDIR=$SCI/X11_defaults
+     export NETHELPDIR
+     tty -s && stty kill '^U' intr '^C' erase '^H' quit '^\' eof '^D' susp '^Z'
+@@ -122,7 +118,7 @@
+     then 
+ 	exit 19
+     else
+-	( $SCI/bin/xless /tmp/Sci_mankx ;rm -f  /tmp/Sci_mankx  ) &
++	( xless /tmp/Sci_mankx ;rm -f  /tmp/Sci_mankx  ) &
+     fi 
+ }
  
- #include "mysearch.h"
+@@ -162,7 +158,7 @@
+ 		f=`ls  $mpath/$1.cat 2> /dev/null`
+ 		if  test -n "$f"
+ 		then 
+-			$SCI/bin/xless $mpath/$1.cat &
++			xless $mpath/$1.cat &
+ 			tst="found"
+ 			break
+ 		fi 

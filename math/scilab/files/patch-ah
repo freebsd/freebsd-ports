@@ -1,8 +1,11 @@
---- ./routines/default/mainsci.f.orig	Mon Jul 20 07:37:23 1998
-+++ ./routines/default/mainsci.f	Mon Jul 20 07:37:23 1998
-@@ -15,4 +15,5 @@
-       nargs = iargc()
-       call fgetarg(0,pname)
-+      call nofpex()
-       i = 0
-  10   continue
+--- macros/util/unix_x.sci	Fri Jul  6 10:51:58 2001
++++ macros/util/unix_x.sci	Fri Jul  6 11:07:57 2001
+@@ -28,7 +28,7 @@
+   if MSDOS then 
+   	hos""""+strsubsSCI,'/','\')+'\bin\xless.exe"" '+ tmp);
+   else 
+-  	host('$SCI/bin/xless '+tmp+' & 2>/dev/null;')
++  	host('xless '+tmp+' & 2>/dev/null;')
+   end
+ case -1 then // host failed
+   erro85)

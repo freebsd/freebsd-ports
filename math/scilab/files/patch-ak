@@ -1,19 +1,11 @@
---- ./routines/metanet/saveg.c.orig	Sat Aug  8 14:01:11 1998
-+++ ./routines/metanet/saveg.c	Sat Aug  8 14:06:07 1998
-@@ -1,4 +1,7 @@
- #include <stdio.h>
- #ifndef __MSC__
-+#if defined(netbsd) || defined(freebsd) 
-+#include <sys/types.h>
-+#endif
- #include <dirent.h>
- #endif
-@@ -13,4 +16,8 @@
- /** only used for x=dir[1024] **/
- #define  getwd(x) _getcwd(x,1024) 
-+#endif
-+
-+#if defined(netbsd) || defined(freebsd)
-+#include <unistd.h>
- #endif
- 
+--- intersci/intersci.c.orig	Wed Aug 15 16:21:17 2001
++++ intersci/intersci.c	Wed Aug 15 16:21:58 2001
+@@ -3326,7 +3326,7 @@
+ 	  white(f,7+indent);
+ 	  count = 7+indent;
+ 	}
+-      if ( count == 72 && sbuf[i] != '\n' ) { fprintf(f,"\n     $ ");count=7;}
++      if ( count == 72 && sbuf[i] != '\n' ) { fprintf(f,"\n     /");count=6;}
+       if ( sbuf[i] == '\n') count = -1 ;
+       fprintf(f,"%c",sbuf[i]);
+       count++;

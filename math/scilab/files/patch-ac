@@ -1,14 +1,33 @@
---- ./routines/graphics/Plo3d.c.orig	Sun Dec 13 21:22:37 1998
-+++ ./routines/graphics/Plo3d.c	Sun Dec 13 21:24:01 1998
-@@ -16,5 +16,11 @@
- #define M_PI	3.14159265358979323846
- #else
-+#if defined(HAVE_VALUES_H)
- #include <values.h>
-+#else
-+#ifndef M_PI
-+#define M_PI    3.14159265358979323846 
-+#endif
-+#endif
- #endif
+--- configure	Mon Apr 30 22:08:50 2001
++++ configure	Mon Apr 30 22:10:33 2001
+@@ -2528,15 +2528,15 @@
+ # FreeBSD  systems (not supported by INRIA)
+   *-*-freebsd*)
+      GCC=yes
+-     CC=gcc
+-     CC_OPTIONS='-O2 -Dfreebsd'
++     CC=cc
++     CC_OPTIONS="${CFLAGS} -Dfreebsd"
+      CC_LDFLAGS=-lm
+      CC_PICFLAGS='-fPIC'
+      # script shell f77 have bugs, get ours
+      FC=f77
+-     FC_OPTIONS='-O2 -Dfreebsd'
++     FC_OPTIONS="${CFLAGS} -Dfreebsd"
+      FC_OPTIONS_O0='-Dfreebsd'
+-     FC_LDFLAGS=-lm
++     FC_LDFLAGS='-lm -Wl,--export-dynamic'
+      FC_PICFLAGS='-fPIC'
+      LD=ld
+      LD_LDFLAGS=-lm
+@@ -4635,8 +4635,8 @@
+ EOF
  
+   PVMARCH="$ac_cv_PVM_arch"
+-  PVMGLIB="$PVMROOT/lib/$ac_cv_PVM_arch/libgpvm3.a"
+-  PVMLIB="$PVMROOT/lib/$ac_cv_PVM_arch/libpvm3.a"
++  PVMGLIB="${PVM_LIB}/libgpvm3.a"
++  PVMLIB="${PVM_LIB}/libpvm3.a"
+   PVMSCIDIR=pvm
+   PVMSCILIB="\$(SCIDIR)/libs/pvm.a"
+ fi
