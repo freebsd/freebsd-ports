@@ -13,22 +13,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nectar@FreeBSD.org
 
-LIB_DEPENDS=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
-		panel_applet.4:${PORTSDIR}/x11/gnomecore
 BUILD_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
-		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/gnome
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \

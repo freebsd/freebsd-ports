@@ -91,18 +91,18 @@
 -@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
 -@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule
 -@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
-+@INSIDE_GNOME_LIBS_TRUE@test_gdk_pixbuf_LDADD = $(LDADDS) -lgmodule12
-+@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
-+@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) -lgmodule12
-+@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
++@INSIDE_GNOME_LIBS_TRUE@test_gdk_pixbuf_LDADD = $(LDADDS) `$(GLIB_CONFIG) --libs gmodule`
++@INSIDE_GNOME_LIBS_FALSE@test_gdk_pixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
++@INSIDE_GNOME_LIBS_TRUE@testpixbuf_LDADD = $(LDADDS) `$(GLIB_CONFIG) --libs gmodule`
++@INSIDE_GNOME_LIBS_FALSE@testpixbuf_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
  @INSIDE_GNOME_LIBS_TRUE@testpixbuf_drawable_LDADD = $(LDADDS)
  @INSIDE_GNOME_LIBS_FALSE@testpixbuf_drawable_LDADD = $(LDADDS) $(GNOME_LIBS)
  @INSIDE_GNOME_LIBS_TRUE@testpixbuf_scale_LDADD = $(LDADDS)
  @INSIDE_GNOME_LIBS_FALSE@testpixbuf_scale_LDADD = $(LDADDS) $(GNOME_LIBS)
 -@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) -lgmodule
 -@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule
-+@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) -lgmodule12
-+@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) -lgmodule12
++@INSIDE_GNOME_LIBS_TRUE@testanimation_LDADD = $(LDADDS) `$(GLIB_CONFIG) --libs gmodule`
++@INSIDE_GNOME_LIBS_FALSE@testanimation_LDADD = $(LDADDS) $(GNOME_LIBS) `$(GLIB_CONFIG) --libs gmodule`
  
  GDK_PIXBUF_LIBS = $(GLIB_LIBS) $(GTK_LIBS)
  

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Feb 27 15:26:48 2000
++++ Makefile.in	Sun Feb 27 15:27:02 2000
+@@ -101,7 +101,7 @@
+ EXTRA_DIST =  	diacanvas.m4		TODO 	BUGS
+ 
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = diacanvas.m4
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

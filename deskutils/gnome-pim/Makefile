@@ -14,28 +14,22 @@ DISTNAME=	gnome-pim-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	panel_applet.4:${PORTSDIR}/x11/gnomecore
-
 .if defined(WITH_GNOMEPILOT)
 LIB_DEPENDS+=	gpilotd.0:${PORTSDIR}/palm/gnomepilot
 PILOTINC=	"-I${LOCALBASE}/pilot/include"
 PILOTLIB=	"-L${LOCALBASE}/pilot/lib"
 PLIST_SUB+=	GNOMEPILOT:=""
 .else
-PILOTARGS=	--without-pisock --disable-pilotlinktest
+CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
 EXTRA_PATCHES=	${FILESDIR}/patch.nopilot
 PLIST_SUB+=	GNOMEPILOT:="@comment "
 .endif
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome ${PILOTARGS}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PILOTINC}" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib ${PILOTLIB}"
 
 .if !defined(WITH_GNOMEPILOT)

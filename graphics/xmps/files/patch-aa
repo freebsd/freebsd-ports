@@ -16,33 +16,6 @@
   cat >> confdefs.h <<\EOF
  #define AS_STRETCHER 1
  EOF
-@@ -2979,14 +2981,14 @@
- { echo "configure: error: *** POSIX thread support not installed ***" 1>&2; exit 1; }
- fi
- 
--echo $ac_n "checking for pthread_attr_init in -lpthread""... $ac_c" 1>&6
--echo "configure:2984: checking for pthread_attr_init in -lpthread" >&5
-+echo $ac_n "checking for pthread_attr_init in -pthread""... $ac_c" 1>&6
-+echo "configure:2984: checking for pthread_attr_init in -pthread" >&5
- ac_lib_var=`echo pthread'_'pthread_attr_init | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 2992 "configure"
- #include "confdefs.h"
-@@ -3020,7 +3022,7 @@
- #define $ac_tr_lib 1
- EOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- else
-   echo "$ac_t""no" 1>&6
 @@ -4060,16 +4062,16 @@
  { echo "configure: error: **** Cannot find stat.h ****" 1>&2; exit 1; }
  fi

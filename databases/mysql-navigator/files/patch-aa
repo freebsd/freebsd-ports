@@ -4,9 +4,9 @@
 -CFLAGS = -I/usr/local/mysql/include/mysql/ `gtk-config --cflags` `gnome-config --cflags gnome gnomeui` 
 -LIBS = -L/usr/local/mysql/lib/mysql/ -lmysqlclient `gtk-config --libs` `gnome-config --libs gnome gnomeui` 
 -CC = gcc 
-+CFLAGS = -I$(LOCALBASE)/include/mysql `$(X11BASE)/bin/gtk12-config --cflags` \
++CFLAGS = -I$(LOCALBASE)/include/mysql `$(GTK_CONFIG) --cflags` \
 +	`$(X11BASE)/bin/gnome-config --cflags gnome gnomeui` 
-+LIBS = -L$(LOCALBASE)/lib/mysql -lmysqlclient `$(X11BASE)/bin/gtk12-config --libs` \
++LIBS = -L$(LOCALBASE)/lib/mysql -lmysqlclient `$(GTK_CONFIG) --libs` \
 +	`$(X11BASE)/bin/gnome-config --libs gnome gnomeui` 
 +#CC = gcc 
  OUTFILE = mn 

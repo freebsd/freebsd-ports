@@ -13,17 +13,14 @@ MASTER_SITE_SUBDIR=	stable/sources/libglade
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		xml.5:${PORTSDIR}/textproc/libxml
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_GNOMELIBS=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

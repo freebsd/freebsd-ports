@@ -139,7 +139,6 @@ share/locale/uk/LC_MESSAGES/glade.mo
 @dirrm share/gnome/help/glade/C/faq
 @dirrm share/gnome/help/glade/C
 @dirrm share/gnome/help/glade
-@unexec rmdir %D/share/gnome/apps/Development 2>/dev/null || true
 @dirrm share/glade/gtk
 @dirrm share/glade/gnome
 @dirrm share/glade

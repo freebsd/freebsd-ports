@@ -12,11 +12,13 @@ MASTER_SITE_SUBDIR=	gtetrinet
 
 MAINTAINER=	bugg@bugg.strangled.net
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-
-GTK_CONFIG=	"${X11BASE}/bin/gtk12-config"
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+USE_GNOME=	yes
 GNU_CONFIGURE=	yes
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
 
 .include <bsd.port.mk>

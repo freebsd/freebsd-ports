@@ -13,18 +13,15 @@ MASTER_SITE_SUBDIR=	stable/sources/libgtop
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
-		guile.9:${PORTSDIR}/lang/guile
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_GNOMELIBS=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:

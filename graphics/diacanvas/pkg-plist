@@ -31,8 +31,7 @@ include/diacanvas/diarenderergdk.h
 include/diacanvas/diatool.h
 include/diacanvas/geometry.h
 lib/libdiacanvas.a
-lib/libdiacanvas.la
 lib/libdiacanvas.so
 lib/libdiacanvas.so.1
-share/gnome/aclocal/diacanvas.m4
+share/aclocal/diacanvas.m4
 @dirrm include/diacanvas
