@@ -1,6 +1,7 @@
 %%HLDSDIR%%cstrike/ajawad.wad
 %%HLDSDIR%%cstrike/as_tundra.wad
 %%HLDSDIR%%cstrike/cached.wad
+%%HLDSDIR%%cstrike/chateau.wad
 %%HLDSDIR%%cstrike/cl_dlls/client.dll
 %%HLDSDIR%%cstrike/classes/ak47.txt
 %%HLDSDIR%%cstrike/classes/arctic.txt
@@ -48,6 +49,7 @@
 %%HLDSDIR%%cstrike/cs_cbble.rad
 %%HLDSDIR%%cstrike/cs_cbble.wad
 %%HLDSDIR%%cstrike/cs_dust.wad
+%%HLDSDIR%%cstrike/cs_havana.wad
 %%HLDSDIR%%cstrike/cs_office.wad
 %%HLDSDIR%%cstrike/cstrike.ico
 %%HLDSDIR%%cstrike/cstrike.wad
@@ -101,6 +103,8 @@
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_backalley.txt
 %%HLDSDIR%%cstrike/maps/cs_estate.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_estate.txt
+%%HLDSDIR%%cstrike/maps/cs_havana.bsp
+%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_havana.txt
 %%HLDSDIR%%cstrike/maps/cs_italy.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/cs_italy.txt
 %%HLDSDIR%%cstrike/maps/cs_militia.bsp
@@ -113,6 +117,8 @@
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_aztec.txt
 %%HLDSDIR%%cstrike/maps/de_cbble.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_cbble.txt
+%%HLDSDIR%%cstrike/maps/de_chateau.bsp
+%%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_chateau.txt
 %%HLDSDIR%%cstrike/maps/de_dust.bsp
 %%PORTDOCS%%%%HLDSDIR%%cstrike/maps/de_dust.txt
 %%HLDSDIR%%cstrike/maps/de_dust2.bsp
@@ -326,6 +332,7 @@
 %%HLDSDIR%%cstrike/sound/ambience/dog7.wav
 %%HLDSDIR%%cstrike/sound/ambience/doorbell.wav
 %%HLDSDIR%%cstrike/sound/ambience/fallscream.wav
+%%HLDSDIR%%cstrike/sound/ambience/goal_1.wav
 %%HLDSDIR%%cstrike/sound/ambience/guit1.wav
 %%HLDSDIR%%cstrike/sound/ambience/kajika.wav
 %%HLDSDIR%%cstrike/sound/ambience/lv1.wav
@@ -698,9 +705,11 @@
 %%HLDSDIR%%cstrike/sprites/bottom_left.spr
 %%HLDSDIR%%cstrike/sprites/bottom_left2.spr
 %%HLDSDIR%%cstrike/sprites/bottom_left3.spr
+%%HLDSDIR%%cstrike/sprites/bottom_left_small.spr
 %%HLDSDIR%%cstrike/sprites/bottom_right.spr
 %%HLDSDIR%%cstrike/sprites/bottom_right2.spr
 %%HLDSDIR%%cstrike/sprites/bottom_right3.spr
+%%HLDSDIR%%cstrike/sprites/bottom_right_small.spr
 %%HLDSDIR%%cstrike/sprites/c4.spr
 %%HLDSDIR%%cstrike/sprites/ch_sniper.spr
 %%HLDSDIR%%cstrike/sprites/ch_sniper2.spr
@@ -745,9 +754,11 @@
 %%HLDSDIR%%cstrike/sprites/top_left.spr
 %%HLDSDIR%%cstrike/sprites/top_left2.spr
 %%HLDSDIR%%cstrike/sprites/top_left3.spr
+%%HLDSDIR%%cstrike/sprites/top_left_small.spr
 %%HLDSDIR%%cstrike/sprites/top_right.spr
 %%HLDSDIR%%cstrike/sprites/top_right2.spr
 %%HLDSDIR%%cstrike/sprites/top_right3.spr
+%%HLDSDIR%%cstrike/sprites/top_right_small.spr
 %%HLDSDIR%%cstrike/sprites/vertical.spr
 %%HLDSDIR%%cstrike/sprites/wall_puff1.spr
 %%HLDSDIR%%cstrike/sprites/wall_puff2.spr
