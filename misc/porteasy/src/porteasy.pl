@@ -554,6 +554,7 @@ sub add_dependencies($$@) {
 
     foreach $item (@dependlist) {
 	$item =~ s|\`([^\`]+)\`|capture(\&cmd, "sh", "-c", $1)|eg;
+	1 while ($item =~ s|/[^\./]*/\.\./|/|);
 	if ($item !~ m|^(?:([^:]+):)?$portsdir/([^/:]+/[^/:]+)/?(:[^:]+)?$|) {
 	    bsd::warnx("invalid dependency: %s", $item);
 	    next;
