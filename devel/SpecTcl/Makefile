@@ -7,6 +7,7 @@
 
 PORTNAME=	SpecTcl
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/guitools/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -16,6 +17,10 @@ MAINTAINER=	andreas@FreeBSD.org
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=	yes
+
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specJava
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/bin/specTcl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/specJava ${PREFIX}/bin

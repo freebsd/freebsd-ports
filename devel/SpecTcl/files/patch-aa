@@ -5,7 +5,7 @@
  
  # Change DIR to the directory that contains the SpecTcl source files
 -DIR=../SpecTcl
-+DIR=/usr/local/SpecTcl/lib
++DIR=%%PREFIX%%/SpecTcl/lib
  
  # Change WISH to the pathname of your tk4.1a2 (or >) wish binary
 -WISH=`which wish`
