@@ -37,12 +37,8 @@ MAN8=		grub.8 grub-install.8 grub-md5-crypt.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 pre-build:
-	@${RM} ${WRKSRC}/docs/grub.info*
+	@${RM} -f ${WRKSRC}/docs/grub.info
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
