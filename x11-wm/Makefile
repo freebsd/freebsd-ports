@@ -45,6 +45,7 @@
     SUBDIR += ion
     SUBDIR += jewel
     SUBDIR += kappdock
+    SUBDIR += kde-icontheme-crystal
     SUBDIR += kdeartwork
     SUBDIR += kdeartwork3
     SUBDIR += keramik
