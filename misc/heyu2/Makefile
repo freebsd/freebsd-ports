@@ -1,0 +1,35 @@
+# New ports collection makefile for:	heyu
+# Version required:	1.28f
+# Date created:		27 December 1999
+# Whom:			plambert@plambert.net
+#
+# $FreeBSD$
+#
+
+DISTNAME=	x10_heyu
+PKGNAME=	heyu-1.28f
+CATEGORIES=	misc
+MASTER_SITES=	http://www.prado.com/~dbs/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	plambert@plambert.net
+
+ALL_TARGET=	heyu
+WRKSRC=		${WRKDIR}/heyu.dir
+
+MAN1=		heyu.1
+MAN5=		x10config.5 \
+		x10sched.5
+
+do-configure:
+	${PERL} -pi.orig -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/Makefile
+
+post-install:
+	strip ${PREFIX}/bin/heyu
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/examples/heyu
+	${INSTALL_DATA} ${WRKSRC}/x10config ${PREFIX}/share/examples/heyu
+	${INSTALL_DATA} ${WRKSRC}/x10sched.conf.sample ${PREFIX}/share/examples/heyu
+.endif
+
+.include <bsd.port.mk>

@@ -1,0 +1,34 @@
+--- Makefile.orig	Tue Jan  4 23:10:44 2000
++++ Makefile	Tue Jan  4 23:12:54 2000
+@@ -3,7 +3,7 @@
+ BIN = /usr/local/bin
+ MAN = /usr/local/man/man1
+ MAN5 = /usr/local/man/man5
+-GROUP = sys
++GROUP = wheel
+ OWNER = bin
+ 
+ 
+@@ -13,19 +13,19 @@
+ #	   -DVOID	if compiler doesn't understand 'void'
+ #	   -DMINIEXCH	if using the DEC mini-exchange
+ 
+-CFLAGS = -O $(DFLAGS) -Wall
++#CFLAGS = -O $(DFLAGS) -Wall
+ #LDFLAGS = -z -i
+ #LIBS = -lm -lc_s		# uncomment if using shared libraries
+ LIBS = -lm -lc
+ 
+ ##  For LINUX, use the following defines in addition to what's above
+-DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX -DHASSELECT
++#DFLAGS = -DSYSV -DPOSIX -DHAS_ITIMER -DLINUX -DHASSELECT
+ 
+ ##  For solaris, use the following defines in addition to what's above
+ # DFLAGS = -DSYSV -DPOSIX -DSOLARIS -DLOCKDIR=\"/var/spool/locks\" -DHASSELECT
+ 
+ ## if you're using freebsd, just set the flag for select.
+-# DFLAGS= -DHASSELECT
++DFLAGS= -DHASSELECT -DLOCKDIR=\"/var/tmp\"
+ 
+ ## If you aren't sure, try this
+ #DFLAGS = -DSYSV -DPOSIX 
