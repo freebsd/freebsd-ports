@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-LocalDelivery
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -16,14 +16,30 @@ MAINTAINER=	lars@thegler.dk
 COMMENT=	Deliver a piece of email - simply
 
 BUILD_DEPENDS=	${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
-		${SITE_PERL}/Email/FolderType.pm:${PORTSDIR}/mail/p5-Email-FolderType
+		${SITE_PERL}/Email/FolderType.pm:${PORTSDIR}/mail/p5-Email-FolderType \
+		${SITE_PERL}/File/Path/Expand.pm:${PORTSDIR}/devel/p5-File-Path-Expand
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Email::LocalDelivery.3
 
-test:
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+post-patch:
+	${PERL} -pi -e '$$_="" if /require 5/;' \
+		    -e '$$_="" if /use warnings/;' \
+		    -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
+	${WRKSRC}/LocalDelivery.pm \
+	${WRKSRC}/LocalDelivery/Maildir.pm \
+	${WRKSRC}/LocalDelivery/Mbox.pm
+
+post-configure:
+	${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/Makefile
+.endif
+
+test:	build
 	cd ${WRKSRC} ; make test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
