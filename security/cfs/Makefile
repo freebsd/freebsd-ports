@@ -3,14 +3,14 @@
 # Date created:		30 Jul 1997
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/30 22:10:19 jdp Exp $
+# $Id: Makefile,v 1.2 1998/09/21 01:03:10 obrien Exp $
 #
 
 DISTNAME=	cfs-1.3.3bf
 PKGNAME=	cfs-1.3.3.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://utopia.hacktic.nl/pub/crypto/disk/ \
-		ftp://ftp.informatik.uni-hamburg.de/pub/virus/crypt/disk/
+MASTER_SITES=	ftp://unix.hensa.ac.uk/mirrors/ftp.replay.com/pub/crypto/disk/ \
+		ftp://ftp.tu-chemnitz.de/pub/linux/suse/4.4.1/unsorted/Crypto-Filesystem/
 
 MAINTAINER=	jdp@polstra.com
 
