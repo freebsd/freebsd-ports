@@ -11,7 +11,7 @@
 # Created on Wednesday, May 21 2003 by Alexey Dokuchaev <danfe@regency.nsu.ru>
 #
 
-DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -DSERVERONLY
+DO_CFLAGS =	${CFLAGS} -funsigned-char -I${LOCALBASE}/include -DSERVERONLY -Dstricmp=strcasecmp
 
 .if ${MACHINE_ARCH} == "i386" && !defined(WITHOUT_X86_ASM)
 DO_CFLAGS +=	-Did386
