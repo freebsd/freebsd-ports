@@ -496,3 +496,4 @@ share/qcad/xpm/zoomwindow.xpm
 @dirrm share/examples/qcad
 @dirrm share/doc/qcad/en/img
 @dirrm share/doc/qcad/en
+@dirrm share/doc/qcad
