@@ -103,7 +103,7 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.3
+lib/libwraster.so.4
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -275,6 +275,7 @@ share/locale/de/LC_MESSAGES/WindowMaker.mo
 share/locale/el/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
+share/locale/et/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
@@ -286,8 +287,8 @@ share/locale/hu/LC_MESSAGES/WPrefs.mo
 share/locale/hu/LC_MESSAGES/WindowMaker.mo
 share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
-share/locale/ja_JP.EUC/LC_MESSAGES/WPrefs.mo
-share/locale/ja_JP.EUC/LC_MESSAGES/WindowMaker.mo
+share/locale/ja/LC_MESSAGES/WPrefs.mo
+share/locale/ja/LC_MESSAGES/WindowMaker.mo
 share/locale/ko/LC_MESSAGES/WPrefs.mo
 share/locale/ko/LC_MESSAGES/WindowMaker.mo
 share/locale/nl/LC_MESSAGES/WindowMaker.mo

@@ -1,11 +1,7 @@
---- WPrefs.app/po/Makefile.in.orig	Fri Jan 29 01:38:16 1999
-+++ WPrefs.app/po/Makefile.in	Fri Jan 29 10:23:34 1999
-@@ -205,12 +205,14 @@
- mostlyclean-generic distclean-generic clean-generic \
- maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+--- WPrefs.app/po/Makefile.in.orig	Mon Apr 30 07:17:57 2001
++++ WPrefs.app/po/Makefile.in	Fri May 11 10:23:45 2001
+@@ -212,10 +212,10 @@
  
-+ja_JP.EUC.po:	ja.po
-+	nkf -e ja.po > ja_JP.EUC.po
  
  .po.mo: 
 -	msgfmt -o $@ $<
