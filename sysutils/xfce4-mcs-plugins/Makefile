@@ -11,6 +11,7 @@ CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
 DISTNAME=	xfce-mcs-plugins-${PORTVERSION}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings manager plugins

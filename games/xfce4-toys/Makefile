@@ -10,6 +10,7 @@ PORTVERSION=	4.0.0
 CATEGORIES=	games xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Toys for the XFce 4 panel

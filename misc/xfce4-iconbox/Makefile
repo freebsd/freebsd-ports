@@ -10,6 +10,7 @@ PORTVERSION=	4.0.0
 CATEGORIES=	misc xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 icon box, an alternative taskbar

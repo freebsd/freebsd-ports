@@ -11,6 +11,7 @@ CATEGORIES=	misc xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://linux.imp.mx/xfce4/xfce_${PORTVERSION}/src/
 DISTNAME=	xfwm4-themes-${PORTVERSION}
+DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 window decoration themes for xfwm4
