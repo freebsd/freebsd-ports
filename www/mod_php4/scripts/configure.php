@@ -56,11 +56,17 @@ while [ "$1" ]; do
 			echo "APACHE_PERF_TUNING=	YES"
 			;;
 		\"GD\")
+			echo "GD is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
 			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
 			GD=1
 			;;
 		\"FreeType\")
+			echo "FreeType is DISABLED for now. Ignoring." > /dev/stderr
+			;;
+		\"nothing\")
 			echo "LIB_DEPENDS+=	ttf.3:\${PORTSDIR}/print/freetype"
 			echo "PHP_CONF_ARGS+=	--with-ttf=\${PREFIX}"
 			if [ -z "$GD" ]; then
