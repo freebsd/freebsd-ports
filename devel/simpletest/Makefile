@@ -17,6 +17,7 @@ COMMENT=	Unit testing, mock objects and web testing framework for PHP
 
 USE_PHP=	pcre
 USE_PHP_BUILD=	yes
+NO_BUILD=	yes
 
 SIMPLETESTS?=	unit
 
