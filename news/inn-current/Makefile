@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.3 1995/04/11 23:29:42 asami Exp $
+# $Id: Makefile,v 1.4 1995/05/04 22:39:46 torstenb Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -21,7 +21,7 @@ pre-install:
 
 post-install:
 	gzip -9nf ${PREFIX}/man/man1/convdate.1 ${PREFIX}/man/man1/getlist.1 \
-	${PREFIX}/man/man1/grephistory.1 ${PREFIX}/man/man1/inews \
+	${PREFIX}/man/man1/grephistory.1 ${PREFIX}/man/man1/inews.1 \
 	${PREFIX}/man/man1/innconfval.1 ${PREFIX}/man/man1/installit.1 \
 	${PREFIX}/man/man1/nntpget.1 ${PREFIX}/man/man1/rnews.1 \
 	${PREFIX}/man/man1/shlock.1 ${PREFIX}/man/man1/shrinkfile.1 \
@@ -35,7 +35,7 @@ post-install:
 	${PREFIX}/man/man5/innwatch.ctl.5 ${PREFIX}/man/man5/moderators.5 \
 	${PREFIX}/man/man5/newsfeeds.5 ${PREFIX}/man/man5/newslog.5 \
 	${PREFIX}/man/man5/nnrp.access.5 ${PREFIX}/man/man5/nntpsend.ctl.5 \
-	${PREFIX}/man/man5/overview.fmt.5 ${PREFIX}/man/man5/overview.fmt.5 \
+	${PREFIX}/man/man5/overview.fmt.5 \
 	${PREFIX}/man/man8/archive.8 ${PREFIX}/man/man8/batcher.8 \
 	${PREFIX}/man/man8/buffchan.8 ${PREFIX}/man/man8/ctlinnd.8 \
 	${PREFIX}/man/man8/cvtbatch.8 ${PREFIX}/man/man8/expire.8 \
