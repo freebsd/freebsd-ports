@@ -104,30 +104,29 @@ sub check_version {
 	my $lastversion = shift;
 
 	my $bareid;
-	my $exclude;
 	my $id;
-	my $path;
 	my $rname;
 	my $version;
 
 	# not present - either removed or let cvs deal with it.
 	return 0 unless -f $filename;
 
-	open FILE, $filename or die "Cannot open $filename, stopped\n";
-	# requiring the header within the first 'n' lines isn't useful.
+	# Search the file for a $$HEADER$.
 	my $pos;
 	my $line;
-	while (1) {
+	open FILE, $filename or die "Cannot open $filename, stopped\n";
+	while ($line = <FILE>) {
 		$pos = -1;
-		last if eof(FILE);
-		$line = <FILE>;
-		$pos = index($line, "\$$HEADER");
+		$pos = index($line, "\$$HEADER");  # XXX \$$HEADER(:[^\$]*)?\$ ?
 		last if ($pos >= 0);
 	}
+	close FILE;
 
+	# A $HEADER wasn't found.  Look in the exclude
+	# file to see whether this is ok.
 	if ($pos == -1) {
-		$exclude = $cvsroot . "/CVSROOT/exclude";
-		$path = $directory . "/" . $filename;
+		my $exclude = $cvsroot . "/CVSROOT/exclude";
+		my $path = $directory . "/" . $filename;
 		open(EX, "<$exclude") || die("cannot open $exclude: $!");
 		while (<EX>) {
 			chomp;
