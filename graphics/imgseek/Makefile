@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	imgSeek
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://easynews.dl.sourceforge.net/sourceforge/imgseek/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	imgseek
 EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	tuximus@tuximus.mine.nu
