@@ -1,0 +1,6 @@
+bin/file_menu_applet
+etc/CORBA/servers/file_menu_applet.gnorba
+share/gnome/applets/Utility/file_menu_applet.desktop
+share/gnome/file_menu_applet/fma_prefs.glade
+share/gnome/pixmaps/file_menu_applet.png
+@dirrm share/gnome/file_menu_applet
