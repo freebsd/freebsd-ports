@@ -1,0 +1,31 @@
+    ECU	(Extended Call Utility)	is a personal and research communications
+    program originally written for users of SCO	UNIX V.3.2/386 and XENIX V
+    on 80286 and 80386 systems.	 Support for other systems has been added
+    and	further	porting	is possible with "minor" effort	to other systems
+    based on or similar to UNIX System V.
+
+    ECU	provides the classic terminal communications facility of passing
+    keyboard data to a serial line and incoming	data to	the computer video
+    display.  In addition, a dialing directory,	a function key mapping
+    feature, and session logging are available.
+
+    A very flexible procedure (script) language	is also	incorporated to
+    automate many communications tasks.	 In addition to	augmenting
+    interactive	tasks, by using	shell scripts and ECU procedures, ECU can
+    perform batch-style	communications sessions	in an entirely "unattended"
+    fashion.
+
+    ECU	presents to the	host a flexible	"ANSI" terminal	type, accepting	any
+    valid video	control	sequences from MS-DOS or SCO documentation as of
+    late 1990.	It also	fares well, though imperfectly,	with Sun and VT-100
+    in-band video control sequences.  Standards	are great: everybody should
+    have one, especially if they call it "ANSI."
+
+    The	program	supports almost	any local terminal (console) which can be
+    described in a termcap database entry.  For	more information, refer	to
+    "Supported Terminals."
+
+    ECU	supports numerous file transfer	protocols: as of this writing,
+    XMODEM, XMODEM/CRC,	XMODEM-1K, YMODEM/CRC Batch, ZMODEM/CRC-16,
+    ZMODEM/CRC-32, Kermit and SEAlink are supported.
+
