@@ -7,7 +7,7 @@
 
 PORTNAME=	ez-ipupdate
 PORTVERSION=	3.0.11b8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.gusnet.cx:8080/proj/ez-ipupdate/dist/
 
