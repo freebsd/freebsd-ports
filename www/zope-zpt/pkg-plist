@@ -255,16 +255,16 @@
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testBatch.pyc
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testIterator.py
 %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests/testIterator.pyc
-@dirrm %%ZOPEBASEDIR%%/lib/python/ZTUtils/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/ZTUtils
-@dirrm %%ZOPEBASEDIR%%/lib/python/TAL/tests/output
-@dirrm %%ZOPEBASEDIR%%/lib/python/TAL/tests/input
-@dirrm %%ZOPEBASEDIR%%/lib/python/TAL/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/TAL/benchmark
-@dirrm %%ZOPEBASEDIR%%/lib/python/TAL
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help
-@dirrm %%ZOPEBASEDIR%%/lib/python/Products/PageTemplates
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/ZTUtils/tests 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/ZTUtils 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/TAL/tests/output 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/TAL/tests/input 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/TAL/tests 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/TAL/benchmark 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/TAL 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/www 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/output 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests/input 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/tests 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates/help 2> /dev/null || /usr/bin/true
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/PageTemplates 2> /dev/null || /usr/bin/true
