@@ -15,13 +15,14 @@ bin/fceu
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/nsfspec.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/4017.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/6502_cpu.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/NESSOUND-4th.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/NESSOUND.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/cpu/dmc.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/exp/mmc5-e.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/exp/mmc5_bank_switch.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/loopy1.txt
 %%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/loopy2.txt
-%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/timing.txt
+%%PORTDOCS%%%%TECHDOCS%%share/doc/fceu/tech/ppu/2C02 technical operation.TXT
 %%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech/ppu
 %%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech/exp
 %%PORTDOCS%%%%TECHDOCS%%@dirrm share/doc/fceu/tech/cpu

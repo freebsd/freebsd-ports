@@ -10,7 +10,6 @@ PORTVERSION=	0.96
 CATEGORIES=	emulators
 MASTER_SITES=	http://fceultra.sourceforge.net/files/
 DISTNAME=	fceu${PORTVERSION:S/.//}src
-#DISTFILES=	${DISTNAME}${PORTVERSION:S/.//}src${EXTRACT_SUFX}
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
@@ -23,17 +22,17 @@ USE_GMAKE=	yes
 MAKEFILE=	Makefile.unixsdl
 USE_REINPLACE=	yes
 
-DOCS=		AUTHORS COPYING ChangeLog FAQ README \
-		TODO cheat.txt fcs.txt porting.txt rel/readme-linux.txt
+DOCS=		AUTHORS COPYING ChangeLog FAQ README TODO \
+		cheat.txt fcs.txt porting.txt rel/readme-linux.txt
 TECHDOCS=	README.now README.sound UNIF_current.txt nsfspec.txt
-TECHCPUDOC=	4017.txt 6502_cpu.txt NESSOUND.txt dmc.txt
+TECHCPUDOC=	4017.txt 6502_cpu.txt NESSOUND-4th.txt NESSOUND.txt dmc.txt
 TECHEXPDOCS=	mmc5-e.txt mmc5_bank_switch.txt
-TECHPPUDOCS=	loopy1.txt loopy2.txt timing.txt
+TECHPPUDOCS=	"2C02\technical\operation.TXT" loopy1.txt loopy2.txt
 
 .if defined(WITH_OPTIMIZED_FLAGS)
-CFLAGS+=        -O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
 .if (${MACHINE_ARCH} == "i386")
-CFLAGS+=        -mcpu=i686 -march=i686 -mfancy-math-387
+CFLAGS+=        -mfancy-math-387
 .endif # i386
 .endif
 
@@ -46,7 +45,7 @@ pre-everything::
 	@${ECHO_MSG} "by defining TECH_DOC_INSTALL"
 .endif
 
-.if defined(TECH_DOC_INSTALL)
+.if !defined(NOPORTDOCS) && defined(TECH_DOC_INSTALL)
 PLIST_SUB=	TECHDOCS=""
 .else
 PLIST_SUB=	TECHDOCS="@comment "
@@ -56,18 +55,23 @@ PLIST_SUB=	TECHDOCS="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%LOCALBASE%%+${LOCALBASE}+g;' ${WRKSRC}/Makefile.unixsdl
-	@${REINPLACE_CMD} -e 's+%%CFLAGS%%+${CFLAGS}+g;' ${WRKSRC}/Makefile.unixsdl
-.if (${ARCH} == "alpha")
-	@${REINPLACE_CMD} -e 's|-DC80x86||g' ${WRKSRC}/Makefile.unixsdl
+.if (${MACHINE_ARCH} != "i386")
+# do I have to do this for ia64 and amd64 too?
+	@${REINPLACE_CMD} -e 's|-DC80x86||g;' ${WRKSRC}/Makefile.unixsdl
+.if (${MACHINE_ARCH} == "sparc64")
+	@${REINPLACE_CMD} -e 's|-DLSB_FIRST||g;' ${WRKSRC}/Makefile.unixsdl
+.endif
 .endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fceu ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
 .for docs in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/Documentation/${docs} ${DOCSDIR}
 .endfor
+.endif
 .if defined(TECH_DOC_INSTALL)
 	@${MKDIR} ${DOCSDIR}/tech
 .for docs in ${TECHDOCS}
@@ -85,7 +89,7 @@ do-install:
 .endfor
 	@${MKDIR} ${DOCSDIR}/tech/ppu
 .for docs in ${TECHPPUDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/ppu/${docs} \
+	${INSTALL_DATA} ${WRKSRC}/Documentation/tech/ppu/${docs:S/\\/ /g} \
 			${DOCSDIR}/tech/ppu
 .endfor
 .endif
