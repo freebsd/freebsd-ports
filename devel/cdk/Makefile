@@ -6,14 +6,14 @@
 # $FreeBSD$
 #
 
-PORTNAME=		cdk
-PORTVERSION=		4.9.10
-PORTREVISION=		1
-CATEGORIES=		devel
-MASTER_SITES=		http://www.vexus.ca/release/
-DISTFILES=		cdk.tar.gz
+PORTNAME=	cdk
+PORTVERSION=	4.9.10
+PORTREVISION=	1
+CATEGORIES=	devel
+MASTER_SITES=	http://www.vexus.ca/release/CDK/
+DISTFILES=	cdk.tar.gz
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
