@@ -9,11 +9,11 @@ PORTNAME=	epic4
 PORTVERSION=	1.0.1
 # Make CATEGORIES overridable for slave ports
 CATEGORIES?=	irc
-MASTER_SITES=	ftp://ftp.magenet.com/pub/epic/%SUBDIR%/ \
+MASTER_SITES=	ftp://ftp.epicsol.org/pub/epic/%SUBDIR%/ \
+		ftp://ftp.magenet.com/pub/epic/%SUBDIR%/ \
 		ftp://ftp.icm.edu.pl/vol/rzm0/irc/EPIC/%SUBDIR%/ \
 		ftp://ftp.archive.de.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
 		ftp://ftp.nl.uu.net/pub/unix/irc/epic/%SUBDIR%/ \
-#		ftp://ftp.epicsol.org/pub/epic/%SUBDIR%/ \
 #		ftp://ftp.neato.org/pub/epic/%SUBDIR%/ \
 #		ftp://totem.fix.no/pub/mirrors/epic/%SUBDIR%/ \
 #		ftp://broken.com/pub/ircii/%SUBDIR%/
