@@ -16,8 +16,8 @@
 -CFLAGS=-Wall -pedantic -O2  
 -LDFLAGS=-lm
 +CC?=gcc
-+CFLAGS+=-DCONFDIR=\"$(CONFDIR)\" -I${LOCALBASE}/include
-+LDFLAGS=-lm -L${LOCALBASE}/lib -lgnugetopt
++CFLAGS+=-DCONFDIR=\"$(CONFDIR)\"
++LDFLAGS+=-lm
  
  INSTALL=install
  # Install under Linux and other versions with the -b (backup) option
