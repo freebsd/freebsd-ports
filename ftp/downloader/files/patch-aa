@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jun 18 18:41:54 1999
-+++ Makefile	Tue Jun 22 17:32:18 1999
+--- Makefile.orig	Fri Aug 20 22:50:56 1999
++++ Makefile	Thu Aug 26 14:46:36 1999
 @@ -1,10 +1,10 @@
 -CC = gcc
 -CCPLUS = c++
@@ -11,9 +11,9 @@
 -GTKLIBS=`gtk-config --libs`
 -GTKFLAGS=`gtk-config --cflags`
 +LIBS=-pthread
-+CFLAGS?=-Wall -O2
++CFLAGS+=-Wall
 +GTKLIBS=`gtk12-config --libs`
 +GTKFLAGS=`gtk12-config --cflags`
  
- EXECC=$(CCPLUS) $(CFLAGS)
+ EXECC=$(CCPLUS) $(CFLAGS) $(GTKFLAGS)
  
