@@ -17,8 +17,6 @@ DISTNAME=	${PORTNAME}-${BRANCH:U}-${SNAPSHOT}
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	InterNetNews -- the Internet meets Netnews
 
-FORBIDDEN=	"Changes ownership of system directories"
-
 BRANCH=		stable
 SNAPSHOT=	20040118
 
@@ -135,6 +133,8 @@ post-patch:
 .endif
 
 post-install:
+	${CHOWN} root:wheel ${PREFIX}/man ${PREFIX}/man/man1 ${PREFIX}/man/man3 \
+		${PREFIX}/man/man5 ${PREFIX}/man/man8
 	${MKDIR} ${INN_NEWSSPOOL}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
