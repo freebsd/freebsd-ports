@@ -31,6 +31,7 @@ RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnu
 USE_RUBY=	yes
 RUBY_WITH_PTHREAD=	yes
 USE_GMAKE=	yes
+USE_GCC=	3.2
 
 GNUSTEP_PREFIX=		${LOCALBASE}/GNUstep
 GNUSTEP_LOCAL_ROOT=	${GNUSTEP_PREFIX}/Local
@@ -49,11 +50,6 @@ BACKBUNDLEDIR=	${GNUSTEP_PREFIX}/System/Library/Bundles/libgnustep-back.bundle/$
 GNU_ARCH=	ix86
 .else
 GNU_ARCH=	${MACHINE_ARCH}
-.endif
-
-.if ${OSVERSION} < 500000
-BUILD_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
-RUN_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 .endif
 
 MAKEFILE=	GNUmakefile
