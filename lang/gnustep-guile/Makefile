@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-guile
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/

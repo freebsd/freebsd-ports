@@ -8,6 +8,8 @@
 %%USEX11%%System/Applications/gui.app/Resources/gui.desktop
 %%USEX11%%System/Applications/gui.app/gui
 %%USEX11%%System/Applications/gui.app/stamp.make
+System/Library/Headers/GNUstepGuile/gstep_guile.h
+System/Library/Headers/GNUstepGuile/gg_Object.h
 System/Library/Headers/ScriptKit/Guile.h
 System/Library/Headers/ScriptKit/GuileInterpreter.h
 System/Library/Headers/ScriptKit/GuileInvocation.h
@@ -53,6 +55,7 @@ lib/libgreg.so.1
 @dirrm System/Library/Libraries/Guile
 @dirrm System/Library/Headers/gnustep/guile
 @dirrm System/Library/Headers/ScriptKit
+@dirrm System/Library/Headers/GNUstepGuile
 @dirrm man/man1
 @dirrm man
 @dirrm lib
