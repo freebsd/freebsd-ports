@@ -1,0 +1,7 @@
+--- Makefile.orig	Mon Jul 13 02:13:34 1998
++++ Makefile	Mon Jul 13 02:14:24 1998
+@@ -3 +3 @@
+-CFLAGS = `gtk-config --cflags` -O
++CFLAGS += `gtk-config --cflags`
+@@ -7 +6,0 @@
+-CC = gcc

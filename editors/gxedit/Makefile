@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gxedit
-# Version required:     1.06
+# Version required:     1.07
 # Date created:		01 Jul 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.3 1998/07/04 20:27:06 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/11 00:29:07 steve Exp $
 #
 
-DISTNAME=	GXedit1.06
-PKGNAME=	gxedit-1.06
+DISTNAME=	GXedit1.07
+PKGNAME=	gxedit-1.07
 CATEGORIES=	editors
 MASTER_SITES=   http://devplanet.fastethernet.net/
 EXTRACT_SUFX=	.tar

@@ -1,0 +1,22 @@
+--- gxedit.c.orig	Mon Jul 13 02:01:18 1998
++++ gxedit.c	Mon Jul 13 02:03:55 1998
+@@ -2097,2 +2097,9 @@
+ 
++static const char * mail_spool_fmt = 
++#ifdef __FreeBSD__
++	"/var/mail/%s";
++#else
++	"/var/spool/mail/%s";
++#endif
++
+ int CB_open_mail_ok(GtkWidget *gtklist, gpointer func_data)
+@@ -2103,3 +2110,3 @@
+  modified = 0;
+- sprintf(line, "/var/spool/mail/%s", login);
++ sprintf(line, mail_spool_fmt, login);
+  fd = fopen(line, "r");
+@@ -2162,3 +2169,3 @@
+  }
+- sprintf(line, "/var/spool/mail/%s", login);
++ sprintf(line, mail_spool_fmt, login);
+  fd = fopen(line, "r");
