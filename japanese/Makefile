@@ -100,6 +100,7 @@
     SUBDIR += hex
     SUBDIR += hns
     SUBDIR += ical
+    SUBDIR += im-ja
     SUBDIR += ipadic
     SUBDIR += ircII
     SUBDIR += iv

@@ -1,0 +1,11 @@
+im-ja is a Japanese input module for GTK2.
+
+Currently supported input modes are: hiragana, katakana, half-width
+katakana, zenkaku, Canna, FreeWnn, and Kanji character recognition
+(based on Kanjipad).
+
+Conversion hotkeys, status window, preedit text colors, etc. can be
+customized through a GUI. An optional applet is also included for the
+gnome-panel which can be used to display and change the input method.
+
+WWW: http://im-ja.sourceforge.net/

@@ -1,0 +1,19 @@
+*** src/Makefile.in.orig	Tue Sep  2 15:57:53 2003
+--- src/Makefile.in	Tue Sep  2 15:58:09 2003
+***************
+*** 547,553 ****
+  
+  
+  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
+! 	/usr/bin/gtk-query-immodules-2.0 im-ja.la > gtk.immodules
+  
+  all-local: gtk.immodules
+  
+--- 547,553 ----
+  
+  
+  gtk.immodules: Makefile.am $(module_LTLIBRARIES)
+! 	gtk-query-immodules-2.0 im-ja.la > gtk.immodules
+  
+  all-local: gtk.immodules
+  

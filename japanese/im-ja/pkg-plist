@@ -1,0 +1,39 @@
+bin/im-ja-conf
+lib/gnome-panel/im-ja-applet
+lib/gtk-2.0/2.2.0/immodules/im-ja.so
+lib/im-ja/kpengine
+@dirrm lib/im-ja
+libdata/bonobo/servers/GNOME_ImJaApplet.server
+etc/gconf/schemas/im-ja.schemas
+share/gnome/control-center-2.0/capplets/im-ja.desktop
+share/gnome/gnome-2.0/ui/GNOME_ImJaApplet.xml
+share/gnome/im-ja/01.unistrok
+share/gnome/im-ja/02.unistrok
+share/gnome/im-ja/03.unistrok
+share/gnome/im-ja/04.unistrok
+share/gnome/im-ja/05.unistrok
+share/gnome/im-ja/06.unistrok
+share/gnome/im-ja/07.unistrok
+share/gnome/im-ja/08.unistrok
+share/gnome/im-ja/09.unistrok
+share/gnome/im-ja/10.unistrok
+share/gnome/im-ja/11.unistrok
+share/gnome/im-ja/12.unistrok
+share/gnome/im-ja/13.unistrok
+share/gnome/im-ja/14.unistrok
+share/gnome/im-ja/15.unistrok
+share/gnome/im-ja/16.unistrok
+share/gnome/im-ja/17.unistrok
+share/gnome/im-ja/18.unistrok
+share/gnome/im-ja/19.unistrok
+share/gnome/im-ja/20.unistrok
+share/gnome/im-ja/21.unistrok
+share/gnome/im-ja/22.unistrok
+share/gnome/im-ja/23.unistrok
+share/gnome/im-ja/im-ja-conf.glade
+@dirrm share/gnome/im-ja
+share/gnome/pixmaps/im-ja-about.jpg
+share/gnome/pixmaps/im-ja-capplet.png
+share/locale/ja/LC_MESSAGES/im-ja.mo
+@exec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
