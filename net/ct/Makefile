@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ct
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.1.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tahi.org/release/ct/
 
 MAINTAINER=	Yukiyo.Akisada@jp.yokogawa.com
 COMMENT=		IPv6 Conformance Test Kit
 
-BUILD_DEPENDS=	${LOCALBASE}/v6eval/bin/pktbuf:${PORTSDIR}/net/v6eval
+RUN_DEPENDS=	${LOCALBASE}/v6eval/bin/pktbuf:${PORTSDIR}/net/v6eval
 
 USE_PERL5=      yes
 NO_BUILD=	yes
