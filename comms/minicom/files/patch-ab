@@ -1,20 +1,20 @@
---- install.sh.orig	Thu Jan 18 20:45:40 1996
-+++ install.sh	Sat Jan 27 02:07:26 1996
+--- install.sh.orig	Sun Mar 10 07:32:20 1996
++++ install.sh	Tue Jul  9 00:31:57 1996
 @@ -48,7 +48,7 @@
  	cp minicom $2/minicom
  	chmod 755 $2/minicom
  	chown root $2/minicom
 -	chgrp root $2/minicom
-+	chgrp bin $2/minicom
++	chgrp dialer $2/minicom
  fi
  
- for i in runscript xminicom
+ for i in runscript xminicom ascii-xfr
 @@ -59,7 +59,7 @@
  	cp $i $2/$i
  	chmod 755 $2/$i
  	chown root $2/$i
 -	chgrp root $2/$i
-+	chgrp bin $2/$i
++	chgrp dialer $2/$i
    fi
  done
  
@@ -45,7 +45,7 @@
  	chmod 644 $1/minicom.users
  fi
  
-@@ -98,15 +98,18 @@
+@@ -98,15 +98,16 @@
  		cp ../demos/$i $4/$i
  		chmod 644 $4/$i
  		chown root $4/$i
@@ -57,13 +57,13 @@
  fi
  	
 -echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
-+#echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
- echo
+-echo
 -echo "chmod +s $2/minicom"
-+#echo "chmod +s $2/minicom"
-+echo "chmod 4511 $2/minicom"
- echo
-+
-+	chmod 4511 $2/minicom
+-echo
++###echo "Minicom is NOT setuid yet - you must do this yourself by entering:"
++###echo
++###echo "chmod +s $2/minicom"
++###echo
++chmod u+s $2/minicom
  
  exit 0
