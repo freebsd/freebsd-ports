@@ -3,7 +3,7 @@
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.16 1998/12/05 22:28:43 sada Exp $
+# $Id: Makefile,v 1.17 1999/01/08 22:53:25 mph Exp $
 #
 
 DISTNAME=	xmcd-2.4
@@ -16,6 +16,7 @@ REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
 
 MAN1=		cddbcmd.1 wm2xmcd.1 xmcd.1 cda.1
+MANCOMPRESSED=	no
 
 post-extract:
 	@chmod -R u+w ${WRKSRC}
@@ -28,9 +29,6 @@ post-patch:
 		> ${WRKSRC}/xmcd_d/XMcd.ad
 
 post-install:
-.for man in cddbcmd.1 wm2xmcd.1 xmcd.1 cda.1
-	${GZIP_CMD} ${PREFIX}/man/man1/${man}
-.endfor
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
