@@ -282,7 +282,7 @@ post-patch:
 .endif
 .if ${PORTVERSION} == 2.6.2 || ${DIST_TYPE} == lpr
 	${REINPLACE_CMD} -e 's,@CUPS_LIBS@,@CUPS_LIBS@ -lintl,' \
-		-e 's,^INCLUDES =  @GTK_CFLAGS@ $$,INCLUDES =  @GTK_CFLAGS@ $(INCLTDL),' \
+		-e 's,^INCLUDES =  @GTK_CFLAGS@ $$,INCLUDES =  @GTK_CFLAGS@ $$(INCLTDL),' \
 		${WRKSRC}/src/Makefile.in
 .endif
 .endif
