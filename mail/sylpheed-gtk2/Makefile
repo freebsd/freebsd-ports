@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		sylpheed-gtk2
-PORTVERSION=		0.9.11.20040613
-PORTREVISION=		1
+PORTVERSION=		0.9.12.20040622
 CATEGORIES=		mail ipv6
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,15 +20,14 @@ USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20
-USE_OPENSSL=		yes
 USE_LIBTOOL_VER=	15
 USE_REINPLACE=		yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--enable-ssl
 
-OPTIONS=		GPGME "GnuPG support (using GPGME)" off \
+OPTIONS=		SSL "SSL support" off \
+			GPGME "GnuPG support (using GPGME)" off \
 			COMPFACE "X-Face support (using compface)" off \
 			JPILOT "JPilot support" off \
 			LDAP "LDAP support" off
@@ -37,6 +35,12 @@ OPTIONS=		GPGME "GnuPG support (using GPGME)" off \
 CONFLICTS=		sylpheed-0.*
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_SSL)
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=	--enable-ssl
+.endif
 
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=		gpgme.9:${PORTSDIR}/security/gpgme
@@ -61,41 +65,16 @@ USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap
 .endif
 
-MAKEFILES=		Makefile.in		\
-			ac/Makefile.in		\
-			faq/Makefile.in		\
-			faq/de/Makefile.in 	\
-			faq/en/Makefile.in	\
-			faq/es/Makefile.in	\
-			faq/fr/Makefile.in	\
-			faq/it/Makefile.in	\
-			manual/Makefile.in	\
-			manual/en/Makefile.in	\
-			manual/ja/Makefile.in	\
-			src/Makefile.in
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g; s|-lpisock\"|-liconv &|g' ${WRKSRC}/configure
-
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
+		 s|-lresolv||g; s|-lpisock\"|-liconv &|g; \
+		 s|^manualdir=.*|manualdir="${DOCSDIR}/manual"|g; \
+		 s|^faqdir=.*|faqdir="${DOCSDIR}/faq"|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac po src manual faq$$|SUBDIRS = ac po src|g' \
 		${WRKSRC}/Makefile.in
-.else
-.for i in ${MAKEFILES}
-	@${REINPLACE_CMD} -e 's|^faqdir = @faqdir@$$|faqdir = ${DOCSDIR}/faq|g; \
-		s|^manualdir = @manualdir@$$|manualdir = ${DOCSDIR}/manual|g' \
-		${WRKSRC}/${i}
-.endfor
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ChangeLog INSTALL README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${i}.jp ${DOCSDIR}
-.endfor
 .endif
 
 .include <bsd.port.post.mk>
