@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	1.99r10
-PORTREVISION=	1
+PORTVERSION=	1.99r12
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
@@ -27,7 +26,8 @@ CONFIGURE_ARGS=	MP_APXS=${LOCALBASE}/sbin/apxs \
 MAN3=		Apache::TestRequest.3 Apache::TestSmoke.3 Apache::TestRun.3 \
 		Apache::TestTrace.3 Apache::TestMM.3 Bundle::ApacheTest.3 \
 		Apache::Test.3 Apache::TestUtil.3 Apache::Build.3 \
-		Bundle::Apache2.3 ModPerl::Code.3
+		Apache::TestReport.3 \
+		Bundle::Apache2.3 ModPerl::Code.3 mod_perl.3
 
 .include <bsd.port.pre.mk>
 
