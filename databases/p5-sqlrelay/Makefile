@@ -26,6 +26,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
+		--with-pod2man=`which pod2man` \
 		--with-perl-prefix="/usr"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		${SQLRELAY_CONFIGURE_ENV}
@@ -34,6 +35,7 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		DBD::SQLRelay.3 SQLRelay::Connection.3 SQLRelay::Cursor.3
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
+.include <bsd.port.pre.mk>
 
 do-extract:
 	${MKDIR} ${WRKDIR}
@@ -41,8 +43,10 @@ do-extract:
 	${RM} -rf ${WRKSRC}/src/api/perl/CVS
 
 post-patch:
+.if ${PERL_LEVEL} >= 500600
 	${REINPLACE_CMD} -e 's/installman3dir/siteman3dir/g' \
 		${WRKSRC}/src/api/perl/*/Makefile
+.endif
 
 do-build:
 	for dir in ${WRKSRC}/src/api/perl/*; do \
@@ -57,8 +61,6 @@ do-install:
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} ${INSTALL_TARGET}; \
 	done
-
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Does not build"
