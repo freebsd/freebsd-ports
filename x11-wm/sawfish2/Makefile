@@ -6,32 +6,32 @@
 #
 
 PORTNAME=	sawfish2
-PORTVERSION=	1.2
-PORTREVISION=	4
+PORTVERSION=	1.3
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
-DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}-gtk2
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sawmill \
+			sources/${PORTNAME:S/2$//}/1.3
+DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Lisp configurable window manager
 
-LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep \
-		Xft.2:${PORTSDIR}/x11-fonts/Xft
+LIB_DEPENDS=	rep.12:${PORTSDIR}/lang/librep
 BUILD_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 RUN_DEPENDS=	${X11BASE}/libexec/rep/${GNUHOST}/gui/gtk-2/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
-PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=1.2
+PLIST_SUB=	GNUHOST=${GNUHOST} VERSION=${PORTVERSION}
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehier gnomehack
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-readline \
 		--localstatedir=${PREFIX}/share \
@@ -41,6 +41,16 @@ CONFIGURE_ARGS=	--with-readline \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=		esound
+PKGNAMESUFFIX=		-esound
+CONFIGURE_ARGS+=	--with-esd
+.else
+CONFIGURE_ARGS+=	--without-esd
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
@@ -53,4 +63,4 @@ post-install:
 	--entry="* sawfish: (sawfish).           sawfish programming manual" \
 	${PREFIX}/info/sawfish.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
