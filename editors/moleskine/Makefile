@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moleskine
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	editors python gnome
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
