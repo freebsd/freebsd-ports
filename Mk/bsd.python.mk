@@ -19,15 +19,19 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #
 # PYTHON_CMD:	Python's command line file name, including the version
 #				number (used for dependencies).
-#				default: depends on the version of your python binary
+#				default: ${LOCALBASE}/bin/${PYTHON_VERSION}
 #
 # PYTHON_DISTFILE:	The ${DISTFILE} for your python version. Needed for
 #					extensions like Tkinter, py-gdbm and py-expat, which
 #					are built from sources contained in the Python
 #					distribution.
 #
+#
+# PYTHON_INCLUDEDIR:	Location of the Python include files.
+#						default: ${LOCALBASE}/include/${PYTHON_VERSION}
+#
 # PYTHON_LIBDIR:	Base of the python library tree
-#					default: ${LOCALBASE}/lib/python${PYTHON_VERSION}
+#					default: ${LOCALBASE}/lib/${PYTHON_VERSION}
 #
 # PYTHON_PKGNAMEPREFIX:	Use this as a ${PKGNAMEPREFIX} to distinguish
 #						packages for different Python versions.
@@ -69,34 +73,22 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 # version number is substituted and the corresponding Python distribution
 # will be built through the dependency processing.
 _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
-					|| echo 1.6
+					|| echo 2.0
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
-_PYTHON_SUFFIX=		${_PYTHON_VERSION:S/.//g}
 PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
-					|| echo 1.6
+					|| echo 2.0
 
 # Python-2.0
 .if ${PYTHON_VERSION} == "python2.0"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYXML=			${PYTHON_LIBDIR}/xml/__init__.py:${PYTHON_PORTSDIR}
 
-PYTHON_DISTFILE=	BeOpen-Python-2.0c1.tar.gz
-PYTHON_PORTSDIR=	${PORTSDIR}/lang/python-beta
-PYTHON_REL=			192
-PYTHON_SUFFIX=		${_PYTHON_SUFFIX}
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.0c1
-
-# Python-1.6
-.elif ${PYTHON_VERSION} == "python1.6"
-PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
-PYXML=			${PYTHON_LIBDIR}/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-xml
-
-PYTHON_DISTFILE=	Python-1.6.tar.gz
+PYTHON_DISTFILE=	BeOpen-Python-2.0.tar.gz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
-PYTHON_REL=			160
+PYTHON_REL=			200
 PYTHON_SUFFIX=		# empty, default version
-PYTHON_WRKSRC=		${WRKDIR}/Python-1.6
+PYTHON_WRKSRC=		${WRKDIR}/Python-2.0
 
 # Python-1.5
 .elif ${PYTHON_VERSION} == "python1.5"
@@ -106,17 +98,18 @@ PYXML=			${PYTHON_LIBDIR}/site-packages/xml/__init__.py:${PORTSDIR}/textproc/py-
 PYTHON_DISTFILE=	py152.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python15
 PYTHON_REL=			152
-PYTHON_SUFFIX=		${_PYTHON_SUFFIX}
+PYTHON_SUFFIX=		15
 PYTHON_WRKSRC=		${WRKDIR}/Python-1.5.2
 
 .else
 .BEGIN:
 	@${ECHO} "Error: bad value for PYTHON_VERSION: ${PYTHON_VERSION}."
-	@${ECHO} "Use one of python1.5, python1.6 (default) or python2.0." 
+	@${ECHO} "Use one of python1.5 or python2.0 (default)." 
 	@${FALSE}
 .endif
 
 PYTHON_CMD=				${LOCALBASE}/bin/${PYTHON_VERSION}
+PYTHON_INCLUDEDIR=		${LOCALBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${LOCALBASE}/lib/${PYTHON_VERSION}
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
 PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
