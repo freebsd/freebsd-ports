@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		archie@whistle.com
+MAINTAINER=		archie@FreeBSD.org
 
 USE_GMAKE=		defined
 PATCH_STRIP=		-p1
