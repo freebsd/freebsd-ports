@@ -10,7 +10,6 @@
     SUBDIR += apel-xemacs-mule
     SUBDIR += apel-xemacs20
     SUBDIR += asedit
-    SUBDIR += auctex
     SUBDIR += axe
     SUBDIR += beav
     SUBDIR += bitmap-emacs20

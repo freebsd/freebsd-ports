@@ -13,6 +13,7 @@
     SUBDIR += amspsfnt
     SUBDIR += apsfilter
     SUBDIR += asprint
+    SUBDIR += auctex
     SUBDIR += bibcard
     SUBDIR += bibview
     SUBDIR += c2ps-a4
