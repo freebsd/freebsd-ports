@@ -81,6 +81,7 @@ PLIST_SUB+=	OSMESA:=""
 .endif
 
 .if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
+.if defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES
 pre-fetch:
 	@${ECHO}
@@ -92,6 +93,7 @@ MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 EXTRACT_ONLY=	X402src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
+.endif
 .endif
 .endif
 
