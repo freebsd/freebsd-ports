@@ -69,6 +69,7 @@
     SUBDIR += libdnd
     SUBDIR += libgnome
     SUBDIR += libhelp
+    SUBDIR += libpanel
     SUBDIR += libsx
     SUBDIR += libxklavier
     SUBDIR += linux-gnomelibs

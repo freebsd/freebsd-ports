@@ -1,0 +1,7 @@
+etc/appletsConf.sh
+include/applet-widget.h
+include/gnome-panel.h
+lib/libpanel_applet.a
+lib/libpanel_applet.so
+lib/libpanel_applet.so.5
+share/gnome/idl/gnome-panel.idl
