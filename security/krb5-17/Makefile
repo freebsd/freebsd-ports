@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.5 1998/09/14 19:23:42 markm Exp $
+# $Id: Makefile,v 1.6 1998/09/27 11:34:28 markm Exp $
 #
 
 DISTNAME=		krb5-1.0.5
@@ -154,8 +154,8 @@ do-fetch:
 pre-configure: ${RECONF_COOKIE}
 
 ${RECONF_COOKIE}:
-	@(cd ${WRKSRC}/util/autoconf && ./configure && gmake)
-	@(cd ${WRKSRC} && ./util/reconf --force)
+	${SETENV} PORTOBJFORMAT="${PORTOBJFORMAT}" \
+	${SH} -c 'cd ${WRKSRC}/util/autoconf && ./configure && ${GMAKE} && cd ${WRKSRC} && ./util/reconf --force'
 	${TOUCH} ${RECONF_COOKIE}
 
 post-build:
@@ -168,7 +168,7 @@ post-install:
 #     it, I think.
 	@rm -f ${PREFIX}/man/man1/tmac.doc
 # shared libs
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 # html documentation
 .if defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	@${MKDIR} ${PREFIX}/share/doc/krb5
@@ -191,5 +191,12 @@ post-install:
 .for info in ${INFO_FILES:M*.info}
 	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
 .endfor
+# fixup packing list (no libs without version numbers in aout case)
+	@if test "${PORTOBJFORMAT}" = "aout"; then                   \
+		${ECHO_MSG} "Fixing packing list for a.out";         \
+		${MV} ${TMPPLIST} ${TMPPLIST}.new;                   \
+		${GREP} -v '\.so$$' ${TMPPLIST}.new > ${TMPPLIST};   \
+		${RM} ${TMPPLIST}.new;                               \
+	fi
 
 .include <bsd.port.mk>
