@@ -10,7 +10,7 @@ PORTVERSION=	2.11
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.nodetree.net/distfiles/
 
-MAINTAINER=	brett@nodetree.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates bar codes in a variety of formats
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
