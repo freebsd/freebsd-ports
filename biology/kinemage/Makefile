@@ -20,8 +20,6 @@ DISTNAME=	mage-001120
 MAINTAINER=	jeremy@external.org
 COMMENT=	A molecular visualization program with special functions
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USE_MOTIF=	YES
 
 ALL_TARGET=	mage
