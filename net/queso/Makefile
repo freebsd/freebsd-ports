@@ -13,7 +13,6 @@ CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/  \
 		${MASTER_SITE_SUNSITE} \
 		ftp://freebsd.ntu.edu.tw/freebsd/_distfiles/
-DISTFILES=	queso-980922.tar.gz
 MASTER_SITE_SUBDIR=	distributions/trinux/src/netmap
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -23,7 +22,7 @@ GNU_CONFIGURE=  yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 300004
-DISTFILES+=	libpcap-0.4.tar.Z
+DISTFILES=	queso-980922.tar.gz libpcap-0.4.tar.Z
 post-patch:
 	@cd ${WRKSRC}/../libpcap-0.4/; ./configure; make
 .endif

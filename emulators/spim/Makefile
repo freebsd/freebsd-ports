@@ -22,10 +22,9 @@ USE_IMAKE=	yes
 XMKMF=		xmkmf
 ALL_TARGET=	y.tab.c depend cl-spim cl-xspim
 
-
 pre-configure:
 	@${RM} -f ${WRKSRC}/y.tab.*
-	
+
 pre-install:
 	@${MKDIR} ${PREFIX}/share/spim && ${CHMOD} a+rx ${PREFIX}/share/spim
 

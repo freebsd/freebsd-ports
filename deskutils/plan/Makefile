@@ -5,8 +5,7 @@
 #
 # $FreeBSD$
 #
-
-#Also update	ports/japanese/plan/ (ja-plan) when this port is updated
+# Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 
 DISTNAME=	plan-1.8.2
 CATEGORIES=	deskutils

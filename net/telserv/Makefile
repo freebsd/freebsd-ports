@@ -12,7 +12,7 @@ PKGNAME=	telserv-1.0
 CATEGORIES=	net security
 MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/  \
 		http://www.freebsd.org/~obrien/Distfiles/
-DISTFILES=	${DISTNAME}.c
+EXTRACT_SUFX=	.c
 
 MAINTAINER=     obrien@FreeBSD.org
 
