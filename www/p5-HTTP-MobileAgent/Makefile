@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-MobileAgent
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTTP
@@ -15,12 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An HTTP mobile user agent string parser for Perl
 
-BUILD_DEPENDS=	${PM_DEPENDS}
-RUN_DEPENDS=	${PM_DEPENDS}
-
-PM_DEPENDS=	${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
-
-BROKEN=		Incomplete pkg-plist
+BUILD_DEPENDS=	${SITE_PERL}/HTTP/Headers.pm:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -32,6 +28,5 @@ MAN3=		HTTP::MobileAgent.3 \
 		HTTP::MobileAgent::JPhone.3 \
 		HTTP::MobileAgent::NonMobile.3 \
 		HTTP::MobileAgent::Vodafone.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

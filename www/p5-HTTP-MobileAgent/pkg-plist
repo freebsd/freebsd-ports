@@ -11,3 +11,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent
 @dirrm %%SITE_PERL%%/HTTP/MobileAgent
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true
