@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	smtpmail
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2
 CATEGORIES=	mail
-MASTER_SITES=	http://195.135.166.74/smtpmail/ \
+MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/smtpmail.pkg/0.4.2/ \
 		http://voodoo.oberon.net/
 
 MAINTAINER=	ponomarew@oberon.net
