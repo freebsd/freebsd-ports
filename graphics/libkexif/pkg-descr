@@ -1,0 +1,10 @@
+Libkexif is a library for manipulating EXIF information embedded in images.
+It currently supports viewing of all EXIF information via libexif. It also
+supports the modification of a few attributes in a safe way that preserves
+all other EXIF information in the file. It can currently modify the following
+tags:
+
+IFD0/Orientation
+EXIF/UserCommend
+
+WWW: http://digikam.sourceforge.net/
