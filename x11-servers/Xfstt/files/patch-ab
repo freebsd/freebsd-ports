@@ -1,19 +1,13 @@
---- xfstt.cpp.orig	Sun Oct 25 11:21:12 1998
-+++ xfstt.cpp	Wed Dec 23 19:29:11 1998
-@@ -8,7 +8,7 @@
- // if you are sure your X11 server doesn't request more
- // than it can handle, increase the limit up to 65535
+--- xfstt.cpp.orig	Fri Nov  5 00:49:57 1999
++++ xfstt.cpp	Mon Dec  6 17:01:54 1999
+@@ -11,8 +11,8 @@
  #define UNSTRAPLIMIT	10500U
--#define TTFONTDIR	"/usr/ttfonts"
+ 
+ // Change these if you don't lie being FHS complient
+-#define TTFONTDIR	"/usr/share/fonts/truetype"
+-#define TTCACHEDIR      "/var/cache/xfstt"
 +#define TTFONTDIR	"/usr/X11R6/lib/X11/fonts/TrueType"
++#define TTCACHEDIR      "/usr/X11R6/lib/X11/fonts/TrueType"
  
- #define MAXOPENFONTS 256
- #define MAXREPLYSIZE (1<<22)
-@@ -22,6 +22,7 @@
- #include "ttfn.h"
- #include "encoding.h"
- 
-+#include <sys/types.h>
- #include <dirent.h>
- #include <string.h>
- #include <ctype.h>
+ #define TTINFO_LEAF     "ttinfo.dir"
+ #define TTNAME_LEAF     "ttname.dir"
