@@ -62,7 +62,7 @@ SITE+=	${FILESDIR}/site.config.m4.ipv6
 .endif
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
-.if ! defined(USE_OPENSSL_BASE)
+.if ! defined(WITH_OPENSSL_BASE)
 SITE+=	${FILESDIR}/site.config.m4.ssl
 .else
 .if ! exists(${DESTDIR}/etc/mail/mailer.conf)
