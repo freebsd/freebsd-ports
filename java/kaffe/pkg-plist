@@ -10,40 +10,45 @@ bin/javakey
 bin/javap
 bin/jdb
 bin/native2ascii
-bin/report-kaffe-bug
 bin/rmic
 bin/rmiregistry
 bin/serialver
+bin/report-kaffe-bug
 bin/install-jar
 bin/kaffe
-include/kaffe/jmalloc.h
-include/kaffe/jsyscall.h
+bin/java
 include/kaffe/jtypes.h
 include/kaffe/native.h
+include/kaffe/jmalloc.h
+include/kaffe/jsyscall.h
+include/kaffe/jni.h
 include/kaffe/Arrays.h
 include/kaffe/java_lang_Object.h
 include/kaffe/java_lang_String.h
 include/kaffe/java_lang_Throwable.h
 include/kaffe/java_lang_Thread.h
 include/kaffe/java_lang_ThreadGroup.h
-lib/libnative.so.1.00
-lib/libnative.so
-lib/libnet.so.1.00
-lib/libnet.so
-lib/libmath.so.1.00
-lib/libmath.so
-lib/libmanagement.so.1.00
-lib/libmanagement.so
-lib/libzip.so.1.00
-lib/libzip.so
-lib/libawt.so.1.00
-lib/libawt.so
-lib/libkaffevm.so.1.00
+lib/libkaffevm.so.1
 lib/libkaffevm.so
-share/kaffe/ENVIRONMENT
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+share/kaffe/lib/i386-freebsd2/libnative.so.1
+share/kaffe/lib/i386-freebsd2/libnative.so
+share/kaffe/lib/i386-freebsd2/libnet.so.1
+share/kaffe/lib/i386-freebsd2/libnet.so
+share/kaffe/lib/i386-freebsd2/libzip.so.1
+share/kaffe/lib/i386-freebsd2/libzip.so
+share/kaffe/lib/i386-freebsd2/libmath.so.1
+share/kaffe/lib/i386-freebsd2/libmath.so
+share/kaffe/lib/i386-freebsd2/libmanagement.so.1
+share/kaffe/lib/i386-freebsd2/libmanagement.so
+share/kaffe/lib/i386-freebsd2/libawt.so.1
+share/kaffe/lib/i386-freebsd2/libawt.so
 share/kaffe/Klasses.jar
-share/kaffe/license.terms
 share/kaffe/pizza.jar
-@exec /sbin/ldconfig -m %B
+share/kaffe/ENVIRONMENT
+share/kaffe/license.terms
 @dirrm include/kaffe
+@dirrm share/kaffe/lib/i386-freebsd2
+@dirrm share/kaffe/lib
 @dirrm share/kaffe

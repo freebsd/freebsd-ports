@@ -3,10 +3,10 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.33 1998/08/04 21:39:58 asami Exp $
+# $Id: Makefile,v 1.34 1998/09/15 11:46:00 asami Exp $
 #
 
-DISTNAME=	kaffe-1.0.b1
+DISTNAME=	kaffe-1.0.b2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
 DISTFILES=	${DISTNAME}.tar.gz
