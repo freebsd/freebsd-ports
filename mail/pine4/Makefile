@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.61
+PORTVERSION=	4.62
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
