@@ -44,6 +44,10 @@ MAN1=		filmgimp.1 filmgimptool.1
 BROKEN=		"Does not compile"
 .endif
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 post-configure:
 # this must be done to avoid conflicts with ${X11BASE}/include/libgimp/
 	@${FIND} ${WRKSRC} -name "Makefile" | \
