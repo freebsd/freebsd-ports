@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gforth
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
@@ -18,24 +18,20 @@ COMMENT=	Fast and portable Forth system
 #
 
 STRIP=		#none
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	all info
-
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix=${PREFIX}
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAN1=		gforth.1
 
 # Local variables
 #
 
-INSTALL_INFO?=	install-info
-
-INFO_FILES=	${PORTNAME}.info
-INFO_DIR=	${PREFIX}/info
+DOC_FILES=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
+		INSTALL INSTALL.BINDIST NEWS README \
+		NEWS.vmgen README.vmgen ToDo
 
 EMACS_FILES=	gforth.el
 EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
@@ -43,8 +39,8 @@ EMACS_DIR=	${PREFIX}/share/emacs/site-lisp
 EMPTY_FILES=	siteinit.fs
 FORTH_DIR=	${DATADIR}/site-forth
 
-EMPTY_DIRS=	4stack 6502 8086 avr c165 generic h8 \
-		hppa ia64 m68k misc power shboom sparc
+EMPTY_DIRS=	4stack 6502 8086 avr c165 generic h8 hppa \
+		ia64 m68k misc power sharc shboom sparc
 ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
 
 # Post-extract
@@ -53,9 +49,7 @@ ARCH_DIR=	${DATADIR}/${PORTVERSION}/arch
 post-extract: remove-info-files
 
 remove-info-files:
-.for file in ${INFO_FILES}
-	@${RM} -f ${WRKSRC}/doc/${file}*
-.endfor
+	@${RM} -f ${WRKSRC}/doc/*.info*
 
 # Post-patch
 #
@@ -70,17 +64,19 @@ patch-makefiles:
 # Post-install
 #
 
-post-install: install-info install-el \
-	      remove-empty-files remove-empty-dirs
+post-install: install-doc install-el remove-empty-files remove-empty-dirs
 
-install-info:
-.for file in ${INFO_FILES}
-	@${INSTALL_INFO} ${INFO_DIR}/${file} ${INFO_DIR}/dir
+install-doc:
+.if !defined(NOPORTSDOC)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+.endif
 
 install-el:
 .for file in ${EMACS_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${EMACS_DIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${EMACS_DIR}
 .endfor
 
 remove-empty-files:
@@ -94,3 +90,5 @@ remove-empty-dirs:
 .endfor
 
 .include <bsd.port.mk>
+
+CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
