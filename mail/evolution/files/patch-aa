@@ -1,6 +1,17 @@
---- configure.orig	Fri Jul 28 11:18:54 2000
-+++ configure	Wed Aug 16 17:16:40 2000
-@@ -5799,8 +5799,8 @@
+--- configure.orig	Wed Sep 13 09:43:40 2000
++++ configure	Wed Sep 13 13:19:42 2000
+@@ -5709,8 +5709,8 @@
+ fi
+ 
+ 
+-THREADS_LIBS="$PTHREAD_LIB `glib-config --libs gthread`"
+-THREADS_CFLAGS="`glib-config --cflags gthread`"
++THREADS_LIBS="$PTHREAD_LIB `$GLIB_CONFIG --libs gthread`"
++THREADS_CFLAGS="`$GLIB_CONFIG --cflags gthread`"
+ 
+ 
+ 
+@@ -5837,8 +5837,8 @@
      { echo "configure: error: Did not find gdkpixbuf installed" 1>&2; exit 1; }
  fi
  
@@ -11,7 +22,7 @@
  
  
  
-@@ -7837,10 +7837,10 @@
+@@ -7915,10 +7915,10 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
