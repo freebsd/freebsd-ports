@@ -140,3 +140,4 @@ graphics/vcdimager|multimedia/vcdimager|2003-01-06|new category
 graphics/vcdpad|multimedia/vcdpad|2003-01-06|new category
 graphics/vcdtools|multimedia/vcdtools|2003-01-06|new category
 devel/autoconf254|devel/autoconf257|2003-01-06|new version from FSF
+devel/ncurses-dialog|devel/cdialog|2003-01-11|renamed by delete+add
