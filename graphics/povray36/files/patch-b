@@ -18,7 +18,7 @@
   # don't you?
 ! X11 = ${X11BASE}
   CFLAGS=		-c -O 
-! LFLAGS =	-O  -L{X11}/lib -lXt -lXext -lX11 -o povray
+! LFLAGS =	-O  -L${X11}/lib -lXt -lXext -lX11 -o povray
   CC =		cc
   
   OBJ	= o
