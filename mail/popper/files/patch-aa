@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Fri Jul 25 21:42:06 1997
---- Makefile.in	Tue Oct  7 19:43:23 1997
+*** Makefile.in.orig	Thu Nov 20 00:20:38 1997
+--- Makefile.in	Thu Nov 20 17:23:56 1997
 ***************
 *** 1,20 ****
 ! CSRCS		=	flock.c pop_dele.c pop_dropcopy.c \
@@ -44,43 +44,26 @@
   DOCS		=	README pop3.rfc1081 pop3e.rfc1082 popper.8
   
 ***************
-*** 32,38 ****
-  DEFS		=	@DEFS@
-  O_DEFS		= 	@O_DEFS@
-  
-! TARGET		=	@TARGET@
-  
-  INSTALLDIR	=	/usr/local/lib
-  
---- 32,38 ----
-  DEFS		=	@DEFS@
-  O_DEFS		= 	@O_DEFS@
-  
-! TARGET          =       popper
-  
-  INSTALLDIR	=	/usr/local/lib
-  
-***************
-*** 54,61 ****
-  ${TARGET}: ${OBJS}
-  	${CC}  ${OBJS} -o ${TARGET} ${LIBS}
+*** 52,59 ****
+  popper: ${OBJS}
+  	${CC}  ${OBJS} -o popper ${LIBS}
   
 ! popauth: popauth.o flock.o
-! 	${CC}  -o popauth popauth.o  flock.o 
+! 	${CC}  -o popauth popauth.o  flock.o ${DBM_LIBS}
   
   .c.o: 
-  	${CC} -c -I. ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
---- 54,61 ----
-  ${TARGET}: ${OBJS}
-  	${CC}  ${OBJS} -o ${TARGET} ${LIBS}
+  	${CC} -c -I. -I${srcdir} ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
+--- 52,59 ----
+  popper: ${OBJS}
+  	${CC}  ${OBJS} -o popper ${LIBS}
   
 ! popauth: popauth.o
-! 	${CC}  -o popauth popauth.o
+! 	${CC}  -o popauth popauth.o ${DBM_LIBS}
   
   .c.o: 
-  	${CC} -c -I. ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
+  	${CC} -c -I. -I${srcdir} ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
 ***************
-*** 76,84 ****
+*** 74,82 ****
   	rm -f core *.o *.Z* config.h config.status config.cache config.log
   
   ${OBJS}:    ${INCLUDES}
@@ -90,4 +73,4 @@
   
   
   
---- 76,81 ----
+--- 74,79 ----

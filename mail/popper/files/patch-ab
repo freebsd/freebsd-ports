@@ -93,14 +93,12 @@ SKEY + pw_expire patches
       /*  Tell the user that the password is required */
       return (pop_msg(p,POP_SUCCESS,"Password required for %s.",p->user));
   }
-*** popper.h.orig	Fri Jul 25 21:42:08 1997
---- popper.h	Tue Oct  7 20:26:58 1997
+*** popper.h.orig	Thu Nov 20 00:20:39 1997
+--- popper.h	Thu Nov 20 16:27:10 1997
 ***************
-*** 25,37 ****
-  # include <net/errno.h>
-  #endif
+*** 31,41 ****
   
-! #ifdef		HAVE_PARAM_H
+  #ifdef		HAVE_SYS_PARAM_H
   #include <sys/param.h>
 - # if (defined(BSD) && (BSD >= 199103))
 - #  define	HAVE_UNISTD_H
@@ -110,18 +108,10 @@ SKEY + pw_expire patches
   #endif
   
   #ifdef BSDI
---- 25,32 ----
-  # include <net/errno.h>
-  #endif
-  
-! #ifdef          HAVE_SYS_PARAM_H
-  #include <sys/param.h>
-  #endif
-  
-  #ifdef BSDI
+--- 31,36 ----
 ***************
-*** 304,309 ****
---- 299,307 ----
+*** 308,313 ****
+--- 303,311 ----
   extern AUTH_DAT kdata;
   #endif /* KERBEROS */
   
