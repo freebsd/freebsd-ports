@@ -450,6 +450,7 @@ aunit		ports/devel/aunit
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
 authforce	ports/security/authforce
+autobench	ports/benchmarks/autobench
 autobook	ports/devel/autobook
 autocd		ports/audio/autocd
 autoconf	ports/devel/autoconf
