@@ -34,8 +34,10 @@ PLIST_SUB=	VERSION="1.0" EVO_VERSION="1.0"
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-openldap=yes
+PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--with-openldap=no
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
 pre-everything::
