@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION= 	M17
+PORTVERSION= 	M18
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTVERSION:S/M/m/}/src
@@ -14,24 +14,17 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
-# This port has not been update to M18, because of the requirement of moving
-# to world riteable directories.  Until you can fix that, please don't send
-# me patches.
-
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		IDL.2:${PORTSDIR}/devel/ORBit
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+LIB_DEPENDS=	IDL.2:${PORTSDIR}/devel/ORBit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_NEWGCC=	yes
+USE_GTK=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--disable-debug			\
@@ -52,8 +45,6 @@ CONFIGURE_ARGS=					\
 		--with-pthreads			\
 		--with-jpeg=${LOCALBASE}	\
 		--with-png=${LOCALBASE}
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"	\
-		GTK_CONFIG="${GTK_CONFIG}"
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		CC_ONLY_FLAGS="${FLAGS}" CCC_ONLY_FLAGS="${CXXFLAGS}"
 
@@ -63,6 +54,8 @@ post-build:
 	@${CHMOD} 555 ${WRKSRC}/mozilla
 	@(cd ${WRKSRC}/dist/bin; \
 	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regxpcom; \
+	  ${ECHO} skin,install,select,classic/1.0 >> chrome/installed-chrome.txt; \
+	  ${ECHO} locale,install,select,en-US >> chrome/installed-chrome.txt; \
 	  ${ENV} LD_LIBRARY_PATH=. MOZILLA_FIVE_HOME=. ./regchrome)
 
 do-install:
