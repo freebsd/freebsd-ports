@@ -2,7 +2,7 @@
 %%GCC_TARG%%/bin/gcc
 bin/%%GCC_TARG%%-cpp
 bin/%%GCC_TARG%%-gcc
-bin/%%GCC_TARG%%-gcc-3.3
+bin/%%GCC_TARG%%-gcc-3.3.1
 bin/%%GCC_TARG%%-gccbug
 bin/%%GCC_TARG%%-gcov
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/cc1
