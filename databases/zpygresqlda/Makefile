@@ -9,11 +9,14 @@ PORTNAME=	zpygresqlda
 PORTVERSION=	0.3.2
 PORTREVISION=	2
 CATEGORIES=	databases www zope
-MASTER_SITES=	http://www.zope.org/Members/reedstrm/ZPyGreSQLDA-rjr/
+MASTER_SITES=	http://www.zope.org/Members/reedstrm/ZPyGreSQLDA-rjr/0.3-rjr2/
 DISTNAME=	ZPyGreSQLDA-0.3-rjr2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL database adapter for Zope
+
+DEPRECATED=	"depends on obsolete versions of Zope and Python"
+EXPIRATION_DATE=	"May 13 2004"
 
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
