@@ -8,11 +8,11 @@
 PORTNAME=	rt3
 PORTVERSION=    3.0.1
 CATEGORIES=     www
-MASTER_SITES=   http://www.fsck.com/pub/rt/release/
-DISTFILES=      rt-3-0-1.tar.gz
+MASTER_SITES?=   http://www.fsck.com/pub/rt/release/
+DISTFILES?=      rt-3-0-1.tar.gz
 
 MAINTAINER=     autrijus@autrijus.org
-COMMENT=	RT is an industrial-grade ticketing system written in Perl
+COMMENT?=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
@@ -46,7 +46,6 @@ BUILD_DEPENDS=  ${APXS}:${APACHE_PORT} \
 		${ARCH_PERL}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${ARCH_PERL}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat \
-		${ARCH_PERL}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/Text/Quoted.pm:${PORTSDIR}/textproc/p5-Text-Quoted \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
@@ -107,6 +106,7 @@ DB_DBA_PASSWORD?=
 WEB_USER?=	nobody
 WEB_GROUP?=	nogroup
 LIBS_GROUP?=	wheel
+RT_GROUP?=	rt
 
 pre-fetch:
 	@${ECHO} ""
@@ -122,6 +122,7 @@ pre-fetch:
 	@${ECHO} ""
 
 post-extract:
+	-@pw groupadd ${RTGROUP}
 	-@cd ${WRKSRC} && chmod a+x configure
 
 do-build:
@@ -147,7 +148,8 @@ IGNORE=		This program only support perl 5.6.1 or above
 .endif
 
 .if ${PERL_LEVEL} == 500601
-BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat
+BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat \
+		${ARCH_PERL}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv
 .endif
 
 .include <bsd.port.post.mk>
