@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
+PORTNAME=	mysql-client
 PORTREVISION=	0
 
 MASTERDIR=	${.CURDIR}/../mysql323-server
