@@ -39,17 +39,8 @@ MANCOMPRESSED=	no
 NO_CDROM=	"Commercial download is restricted.  Check ${DG_URL} for more info"
 NO_PACKAGE=	"Redistribution is restricted.  Check ${DG_URL} for more info"
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then         \
-	${ECHO} "";							 \
-	${ECHO} "   Commercial downloading is restricted.  Please read"; \
-	${ECHO} "   the licensing info at ${DG_URL}"; \
-	${ECHO} "";							 \
-	${ECHO} "   The DansGuardian sources must be fetched manually."; \
-	${ECHO} "   Download ${DISTNAME}${EXTRACT_SUFX} and place it in";\
-	${ECHO} "   ${DISTDIR} then run make install.";\
-	${ECHO} "";\
-	${FALSE};\
-	fi
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+FORBIDDEN="Commercial source download is restricted.  Please visit and read ${DG_URL} and download ${DISTNAME}${EXTRACT_SUFX} into ${DISTDIR} before running make"
+.endif
 
 .include <bsd.port.mk>
