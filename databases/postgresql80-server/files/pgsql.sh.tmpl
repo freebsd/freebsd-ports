@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# $Id$
+
+# pgsql.sh - postgresql startup file for FreeBSD and possibly *BSD (untested)
+
+# Changes:
+# - renamed startup script to be in sync with INSTALL file
+# - merged ldconfig start sequence from former postgrsql.sh script (andreas)
+# - modified the postmaster startup sequence as suggested in the 
+#   INSTALL file which was given as example for FreeBSD 2.2 (andreas)
+
+
+[ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
+
+[ -x !!PREFIX!!/pgsql/bin/postmaster ] && {
+	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/postmaster
+		-D!!PREFIX!!/pgsql/data
+		-S -o -F > !!PREFIX!!/pgsql/errlog' &
+	echo -n ' pgsql' 
+}
