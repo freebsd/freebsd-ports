@@ -177,6 +177,7 @@
     SUBDIR += mindguard
     SUBDIR += mirrormagic
     SUBDIR += miscom
+    SUBDIR += myth2_demo
     SUBDIR += mythserver
     SUBDIR += nadar
     SUBDIR += nethack
