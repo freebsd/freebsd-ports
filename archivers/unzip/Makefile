@@ -1,4 +1,5 @@
 # New ports collection makefile for:    unzip
+# ftp://ftp.info-zip.org/pub/infozip/Info-ZIP.html
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
@@ -6,18 +7,18 @@
 #
 
 PORTNAME=	unzip
-PORTVERSION=	5.40
+PORTVERSION=    5.41
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/infozip/src/
-DISTNAME=	unzip540
+MASTER_SITES=   ftp://ftp.freesoftware.com/pub/infozip/src/
+DISTNAME=       unzip541
 
 MAINTAINER=	ache@FreeBSD.org
 
-Y2K=		http://www.cdrom.com/pub/infozip/FAQ.html#Y2K
+Y2K=            ftp://ftp.info-zip.org/pub/infozip/FAQ.html#Y2K
 
-WRKSRC=         ${WRKDIR}/unzip-5.40
+WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=       unix/Makefile
-MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
+MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_SMITH_CODE -DUSE_UNSHRINK" -f
 MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 do-install:
@@ -26,7 +27,7 @@ do-install:
 	${LN} -sf unzip ${PREFIX}/bin/zipinfo
 	cd ${WRKSRC}/unix && \
 		${INSTALL_SCRIPT} zipgrep ${PREFIX}/bin
-	cd ${WRKSRC}/unix && \
+	cd ${WRKSRC}/man && \
 		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 	${INSTALL} -d -m 555 -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/unzip
 	cd ${WRKSRC} && \
