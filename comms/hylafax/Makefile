@@ -25,7 +25,8 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-ZLIB=no --with-LIBZ=-lz --with-ZLIBINC=none \
 		--with-TIFFINC="${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
-		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none
+		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none \
+		--with-DIR_HTML="${LOCALBASE}/share/doc/hylafax"
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
 .ifdef PAGESIZE
 CONFIGURE_ARGS+=--with-PAGESIZE="${PAGESIZE}"
