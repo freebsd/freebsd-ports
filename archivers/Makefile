@@ -43,6 +43,7 @@
     SUBDIR += nomarch
     SUBDIR += nulib
     SUBDIR += nwreckdum
+    SUBDIR += orange
     SUBDIR += p5-Archive-Tar
     SUBDIR += p5-Archive-Zip
     SUBDIR += p5-Compress-Bzip2
