@@ -10,6 +10,8 @@ DISTNAME=	tkcon-1.6
 CATEGORIES=	devel tk82
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/sorted/packages-8.0/devel/
 
+MAINTAINER=	jhix@mindspring.com
+
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes

@@ -11,6 +11,8 @@ PKGNAME=	getline-3.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/lib/
 
+MAINTAINER=	jhix@mindspring.com
+
 MAN3=		getline.3
 
 WRKSRC=		${WRKDIR}/getline-39
