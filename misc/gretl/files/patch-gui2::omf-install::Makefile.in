@@ -26,4 +26,4 @@
 -	$(INSTALL) -m 644 $< $(omfdir)
 -	scrollkeeper-update -p $(gnome_prefix)/var/scrollkeeper
 +	$(INSTALL_DATA) $< $(omfdir)
-+	scrollkeeper-update -p /var/log/scrollkeeper
++	scrollkeeper-update -p /var/db/scrollkeeper
