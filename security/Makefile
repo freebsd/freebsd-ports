@@ -362,6 +362,7 @@
     SUBDIR += portaudit-db
     SUBDIR += portscanner
     SUBDIR += portsentry
+    SUBDIR += ppars
     SUBDIR += ppgen
     SUBDIR += prelude-lml
     SUBDIR += prelude-manager

@@ -1,0 +1,27 @@
+***************************************************************************
+
+Installer instructions.  This port has installed the following six
+scripts into %%PREFIX%%/sbin directory.
+                                 abuse.dshield.pl
+                                 abuse.ipflog.rotate.pl
+                                 abuse.myisp.pl
+                                 abuse.public.ISP0.pl
+                                 abuse.public.ISP1.pl
+                                 abuse.Reporting.system.pl
+
+You have to edit the scripts and change the default email address in
+the script source. Script contains comments explaining what needs to
+be changed. In some cases you also have to create an exclude file,
+follow instructions in the individual scripts about the syntax of
+the exclude file contents.
+
+To receive feedback reports and see your abuse.dshield.pl submitted
+log data online at dshield.org you have to sign up for free
+membership. See www.dshield.org for details.
+
+First issue rehash command and then run  abuse.Reporting.system.pl
+it contains an overview of how the system works and how to setup the
+ipfilter log so when it's rotated all the scripts will be auto
+launched.
+
+***************************************************************************
