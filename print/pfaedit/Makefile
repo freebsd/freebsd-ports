@@ -9,9 +9,9 @@ PORTNAME=	pfaedit
 PORTVERSION=	20${DIST_VER}
 CATEGORIES=	print
 MASTER_SITES=	http://pfaedit.sourceforge.net/
-DISTFILES=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
+DISTFILES=	${EXTRACT_ONLY}
 .if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}_htdocs-${DOC_VER}.tgz
+DISTFILES+=	${DOCFILE}
 .endif
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
@@ -30,12 +30,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	pfaedit
 
-MAN1=		pfaedit.1
+MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	020306
+DIST_VER=	020310
+EXTRACT_ONLY=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 .if !defined(NOPORTDOCS)
 DOC_VER=	020214
+DOCFILE=	${PORTNAME}_htdocs-${DOC_VER}.tgz
 DOCFILES=	AA-Comparison.html HotKeys.html MetaFont.html \
 		Problems-MacOSX.html accented.html bezier.html bitmapview.html \
 		charview.html cidmenu.html cliargs.html corpchar.html \
@@ -77,27 +79,30 @@ DOCFILES=	AA-Comparison.html HotKeys.html MetaFont.html \
 		document.nvd
 .endif
 
+.if !defined(NOPORTDOCS)
+post-extract:
+	${MKDIR} ${WRKDIR}/html
+	${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/${DOCFILE}
+.endif
+
 post-patch:
 	${PERL} -pi.orig -e \
 		's,/usr/include/freetype2,${PREFIX}/include/freetype2 -I${PREFIX}/include,g' \
 		${WRKSRC}/configure ${WRKSRC}/configure.in \
 		${WRKSRC}/configure.pfaedit ${WRKSRC}/configure.pfaedit.in \
-		${WRKSRC}/configure.static ${WRKSRC}/configure.static.in \
+		${WRKSRC}/configure.static.in \
 		${WRKSRC}/configure.ttfmod ${WRKSRC}/configure.ttfmod.in
 	${PERL} -pi.orig -e 's,/usr/share/,${PREFIX}/share/,g' \
 		${WRKSRC}/pfaedit/pfaedit.1
 	${PERL} -pi.orig -e 's,/usr/pkg/,${PREFIX}/,g' \
 		${WRKSRC}/*/[mM]akefile.*
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pfaedit/pfaedit ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/pfaedit
-	${INSTALL_DATA} ${WRKDIR}/*.cidmap ${PREFIX}/share/pfaedit
-	${MKDIR} ${PREFIX}/share/doc/pfaedit
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/pfaedit
-	${INSTALL_MAN} ${WRKSRC}/pfaedit/pfaedit.1 ${PREFIX}/man/man1
+post-install:
+	${INSTALL_DATA} ${WRKDIR}/*.cidmap ${DATADIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
 .if !defined(NOPORTDOCS)
-	(cd ${WRKDIR}; ${INSTALL_DATA} ${DOCFILES} ${PREFIX}/share/doc/pfaedit)
+	(cd ${WRKDIR}/html; ${INSTALL_DATA} ${DOCFILES} ${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 bin/pfaedit
+bin/sfddiff
 %%PORTDOCS%%share/doc/pfaedit/AA-Comparison.html
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV-bm.png
 %%PORTDOCS%%share/doc/pfaedit/AmbrosiaFV.png
@@ -158,5 +159,9 @@ share/pfaedit/Adobe-Identity-0.cidmap
 share/pfaedit/Adobe-Japan1-4.cidmap
 share/pfaedit/Adobe-Japan2-0.cidmap
 share/pfaedit/Adobe-Korea1-2.cidmap
+share/pfaedit/pfaedit.de.ui
+share/pfaedit/pfaedit.en.ui
+share/pfaedit/pfaedit.fr.ui
+share/pfaedit/pfaedit.ru.ui
 @dirrm share/pfaedit
 %%PORTDOCS%%@dirrm share/doc/pfaedit
