@@ -17,6 +17,6 @@
 -	chmod g+s /usr/local/bin/wmcube
 -	chown root.kmem /usr/local/bin/wmcube
 +	$(BSD_INSTALL_PROGRAM) wmcube $(PREFIX)/bin/
-+	chown root.kmem $(PREFIX)/bin/wmcube
++	chown root:kmem $(PREFIX)/bin/wmcube
 +	chmod g+s $(PREFIX)/bin/wmcube
  	@echo "wmCube installation finished..."
