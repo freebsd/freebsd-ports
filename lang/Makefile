@@ -140,7 +140,8 @@
     SUBDIR += php3
     SUBDIR += php4
     SUBDIR += php_doc
-    SUBDIR += pike
+    SUBDIR += pike70
+    SUBDIR += pike72
     SUBDIR += pm3-base
     SUBDIR += pm3-forms
     SUBDIR += pm3-gui
