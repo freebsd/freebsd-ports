@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rskkserv
-PORTVERSION=	2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	http://www.ruby-lang.org/~shugo/rskkserv/
 DIST_SUBDIR=	ruby
