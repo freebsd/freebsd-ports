@@ -156,7 +156,6 @@
     SUBDIR += ssh
     SUBDIR += ssh-multiadd
     SUBDIR += ssh2
-    SUBDIR += ssldump
     SUBDIR += sslproxy
     SUBDIR += sslwrap
     SUBDIR += sst
