@@ -1,0 +1,8 @@
+bin/exclude_robots
+lib/perl5/site_perl/%%PERL_VER%%/HTTPD/Log/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Log/Filter/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Log/Filter
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTTPD/Log 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTTPD 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Log 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD 2>/dev/null || true
