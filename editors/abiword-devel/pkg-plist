@@ -253,11 +253,9 @@ share/AbiSuite-2.0/templates/normal.awt-ur_PK
 share/AbiSuite-2.0/templates/normal.awt-yi
 share/AbiSuite-2.0/templates/normal.awt-zh_CN
 share/AbiSuite-2.0/templates/normal.awt-zh_TW
-share/applications/abiword.desktop
-share/icons/abiword_48.png
-share/gnome/apps/Applications/abiword.desktop
+%%GNOME:%%share/gnome/apps/Applications/abiword.desktop
 %%GNOME:%%share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
-share/gnome/pixmaps/abiword_48.png
+%%GNOME:%%share/gnome/pixmaps/abiword_48.png
 @dirrm share/AbiSuite-2.0/templates
 @dirrm share/AbiSuite-2.0/icons
 @dirrm share/AbiSuite-2.0/dictionary
