@@ -17,6 +17,8 @@ COMMENT=	Russian language module for PGP
 
 RUN_DEPENDS=	${LOCALBASE}/share/pgp/config.txt:${PORTSDIR}/security/pgp
 
+BROKEN=		Incorrect pkg-plist
+
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
