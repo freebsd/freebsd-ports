@@ -1,26 +1,26 @@
 bin/grap
-share/grap/README
-share/grap/CHANGES
-share/grap/COPYRIGHT
-share/grap/grap.defines
-share/grap/grap.tex.defines
-share/grap/grap.man
-share/grap/examples/400mpairs.d
-share/grap/examples/400mtimes.d
-share/grap/examples/400wpairs.d
-share/grap/examples/Makefile
-share/grap/examples/army.d
-share/grap/examples/boyhts.d
-share/grap/examples/example.ms
-share/grap/examples/internet.d
-share/grap/examples/prof2.d
-share/grap/examples/states.d
-share/grap/examples/states2.d
-share/grap/examples/states3.d
-share/grap/examples/usapop.d
-share/grap/examples/cy_fatal.d
-share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
-share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
-share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
-@dirrm share/grap/examples
-@dirrm share/grap
+%%PORTDOCS%%share/doc/grap/README
+%%PORTDOCS%%share/doc/grap/CHANGES
+%%PORTDOCS%%share/doc/grap/COPYRIGHT
+%%PORTDOCS%%share/doc/grap/grap.defines
+%%PORTDOCS%%share/doc/grap/grap.tex.defines
+%%PORTDOCS%%share/doc/grap/grap.man
+share/examples/grap/400mpairs.d
+share/examples/grap/400mtimes.d
+share/examples/grap/400wpairs.d
+share/examples/grap/Makefile
+share/examples/grap/army.d
+share/examples/grap/boyhts.d
+share/examples/grap/example.ms
+share/examples/grap/internet.d
+share/examples/grap/prof2.d
+share/examples/grap/states.d
+share/examples/grap/states2.d
+share/examples/grap/states3.d
+share/examples/grap/usapop.d
+share/examples/grap/cy_fatal.d
+share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
+share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
+share/examples/grap/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
+@dirrm share/examples/grap
+%%PORTDOCS%%@dirrm share/doc/grap
