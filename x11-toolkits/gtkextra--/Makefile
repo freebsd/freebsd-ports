@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtkextra.10:${PORTSDIR}/x11-toolkits/gtkextra \
+LIB_DEPENDS=	gtkextra.12:${PORTSDIR}/x11-toolkits/gtkextra \
 		gtkmm.1:${PORTSDIR}/x11-toolkits/gtk--
 
 USE_X_PREFIX=	yes
