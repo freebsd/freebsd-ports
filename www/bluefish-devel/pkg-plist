@@ -1,7 +1,10 @@
 bin/bluefish
 share/bluefish/bluefish_splash.png
+share/bluefish/custom_menu.default
 share/bluefish/encodings.default
 share/bluefish/filetypes.default
+share/bluefish/funcref_html.xml
+share/bluefish/funcref_php.xml
 share/bluefish/highlighting.default
 share/bluefish/icon_c.png
 share/bluefish/icon_cfml.png
@@ -9,11 +12,15 @@ share/bluefish/icon_dir.png
 share/bluefish/icon_html.png
 share/bluefish/icon_image.png
 share/bluefish/icon_java.png
+share/bluefish/icon_pascal.png
 share/bluefish/icon_php.png
+share/bluefish/icon_python.png
+share/bluefish/icon_r.png
 share/bluefish/icon_unknown.png
 share/bluefish/icon_xml.png
 share/gnome/apps/Applications/bluefish.desktop
 share/locale/da/LC_MESSAGES/bluefish.mo
+share/locale/de/LC_MESSAGES/bluefish.mo
 share/locale/es/LC_MESSAGES/bluefish.mo
 share/locale/fr/LC_MESSAGES/bluefish.mo
 share/locale/hu/LC_MESSAGES/bluefish.mo
