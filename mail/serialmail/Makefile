@@ -3,14 +3,16 @@
 # Date created:		2 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/02 19:55:05 steve Exp $
 #
 
 DISTNAME=	serialmail-0.75
 CATEGORIES=	mail
-MASTER_SITES=	ftp://koobera.math.uic.edu/pub/software/
+MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/ \
+		ftp://ftp.qmail.org/pub/koobera.math.uic.edu/pub/software/ \
+		http://www.freebsd.org/~tom/distfiles/
 
-MAINTAINER=	tom@eborcom.com
+MAINTAINER=	tom@FreeBSD.org
 
 MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 serialsmtp.1 setlock.1
 
