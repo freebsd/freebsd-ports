@@ -1,0 +1,63 @@
+--- default.c	Tue Mar  5 11:31:44 2002
++++ default.c	Tue Mar  5 11:26:50 2002
+@@ -773,6 +773,9 @@
+   Write a plain-text version of the given HTML document to\n\
+   stdout.\n\
+ \n\
++ -width <size>\n\
++  Size of screen in characters, used in combination with -dump\n\
++\n\
+  -no-connect\n\
+   Runs links as a separate instance - instead of connecting to\n\
+   existing instance.\n\
+@@ -831,6 +834,7 @@
+ int download_utime = 0;
+ int max_connections = 10;
+ int max_connections_to_host = 2;
++int screen_width = 80;
+ int max_tries = 3;
+ int receive_timeout = 120;
+ int unrestartable_receive_timeout = 600;
+@@ -884,6 +888,7 @@
+ 	1, gen_cmd, num_rd, num_wr, 1, 16, &max_connections, "max_connections", "max-connections",
+ 	1, gen_cmd, num_rd, num_wr, 1, 8, &max_connections_to_host, "max_connections_to_host", "max-connections-to-host",
+ 	1, gen_cmd, num_rd, num_wr, 1, 16, &max_tries, "retries", "retries",
++	1, gen_cmd, num_rd, num_wr, 40, 512, &screen_width, "screen_width", "width",
+ 	1, gen_cmd, num_rd, num_wr, 1, 1800, &receive_timeout, "receive_timeout", "receive-timeout",
+ 	1, gen_cmd, num_rd, num_wr, 1, 1800, &unrestartable_receive_timeout, "unrestartable_receive_timeout", "unrestartable-receive-timeout",
+ 	1, gen_cmd, num_rd, num_wr, 0, 256, &max_format_cache_entries, "format_cache_size", "format-cache-size",
+--- links.1	Mon Jan  1 09:26:52 2001
++++ links.1	Tue Mar  5 11:34:37 2002
+@@ -94,6 +94,11 @@
+ Write a plain-text version of the given HTML document to stdout.
+ 
+ .TP
++\f3-width \f2<size>\f1
++Size of screen in characters, used in combination with -dump.
++(default: 80)
++
++.TP
+ \f3-no-connect\f1
+ Runs links as a separate instance - instead of connecting to
+ existing instance.
+--- links.h	Mon Jun 11 20:14:25 2001
++++ links.h	Tue Mar  5 11:25:24 2002
+@@ -1975,6 +1975,7 @@
+ extern int max_connections;
+ extern int max_connections_to_host;
+ extern int max_tries;
++extern int screen_width;
+ extern int receive_timeout;
+ extern int unrestartable_receive_timeout;
+ 
+--- main.c	Mon Apr  9 06:46:06 2001
++++ main.c	Tue Mar  5 11:24:41 2002
+@@ -198,7 +198,7 @@
+ 		memset(&fd, 0, sizeof(struct f_data_c));
+ 		o.xp = 0;
+ 		o.yp = 1;
+-		o.xw = 80;
++		o.xw = screen_width;
+ 		o.yw = 25;
+ 		o.col = 0;
+ 		o.cp = 0;

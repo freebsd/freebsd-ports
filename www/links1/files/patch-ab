@@ -1,0 +1,14 @@
+--- kbd.c.orig	Thu Jan 11 13:26:36 2001
++++ kbd.c	Thu Jan 11 13:28:37 2001
+@@ -479,9 +479,9 @@
+ 				case 'B': ev.x = KBD_DOWN; break;
+ 				case 'C': ev.x = KBD_RIGHT; break;
+ 				case 'D': ev.x = KBD_LEFT; break;
+-				case 'F':
++				case 'F': ev.x = KBD_END; break;
+ 				case 'e': ev.x = KBD_END; break;
+-				case 'H':
++				case 'H': ev.x = KBD_HOME; break;
+ 				case 0: ev.x = KBD_HOME; break;
+ 				case 'I': ev.x = KBD_PAGE_UP; break;
+ 				case 'G': ev.x = KBD_PAGE_DOWN; break;
