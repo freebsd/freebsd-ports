@@ -1,21 +1,38 @@
-*** configure.h.orig	Sun May 25 18:23:55 1997
---- configure.h	Sun May 25 18:25:07 1997
+*** sample_rc/Mlvwmrc.orig	Fri Dec  5 23:31:56 1997
+--- sample_rc/Mlvwmrc	Fri Dec  5 23:33:38 1997
 ***************
-*** 17,24 ****
+*** 40,46 ****
+  Compatible
   
-  XCOMM The directory name of bindir and libdir.
+  # Set icon search path. It needs before "Style".
+! IconPath /usr/local/include/X11/pixmaps:/home2/tak/bin/pixmap
+  IconMenuIcon label2.xpm
   
-! #define MlvwmBinDir /home/tak/bin
-! XCOMM #define MlvwmLibDir /home2/tak/bin/mlvwm-lib
+  # Balloon help Settings
+--- 40,46 ----
+  Compatible
   
-  XCOMM
-  XCOMM Cannot modify as follows:
---- 17,24 ----
+  # Set icon search path. It needs before "Style".
+! IconPath /usr/X11R6/lib/X11/mlvwm/pixmap:/home2/tak/bin/pixmap
+  IconMenuIcon label2.xpm
   
-  XCOMM The directory name of bindir and libdir.
+  # Balloon help Settings
+***************
+*** 68,75 ****
+  Menu Apple, Icon label1.xpm, Stick
+  "About this Workstation..." NonSelect, Gray, Action About
+  "" NonSelect
+! "Terminal"	Icon mini-display.xpm, Action Exec "kterm" exec kterm -ls
+! "Editor"  Action Exec "mule" exec mule, Icon mini-edit.xpm
+  "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
+  END
   
-! #define MlvwmBinDir /usr/X11R6/bin
-! #define MlvwmLibDir /usr/X11R6/lib/X11/mlvwm
+--- 68,75 ----
+  Menu Apple, Icon label1.xpm, Stick
+  "About this Workstation..." NonSelect, Gray, Action About
+  "" NonSelect
+! "Terminal"	Icon mini-display.xpm, Action Exec "xterm" exec xterm -ls
+! "Editor"  Action Exec "emacs" exec emacs, Icon mini-edit.xpm
+  "calculator" Action Exec "xcal" exec xcalc, Icon mini-calc.xpm
+  END
   
-  XCOMM
-  XCOMM Cannot modify as follows:

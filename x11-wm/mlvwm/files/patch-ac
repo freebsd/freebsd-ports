@@ -1,19 +1,11 @@
-*** sample_rc/Mlvwmrc-j.orig	Sun May 25 18:48:05 1997
---- sample_rc/Mlvwmrc-j	Sun May 25 18:48:32 1997
-***************
-*** 13,19 ****
-  DoubleClickTime 300
-  
-  # IconPath の指定。Style の指定の前に必要
-! IconPath /usr/local/include/X11/pixmaps:/home2/tak/bin/pixmap
-  IconMenuIcon label2.xpm
-  
-  # Font 設定(LOCALE設定ありのサンプル)
---- 13,19 ----
-  DoubleClickTime 300
-  
-  # IconPath の指定。Style の指定の前に必要
-! IconPath /usr/X11R6/lib/X11/mlvwm/pixmaps:/home2/tak/bin/pixmap
-  IconMenuIcon label2.xpm
-  
-  # Font 設定(LOCALE設定ありのサンプル)
+--- configure.h.orig	Fri Dec  5 20:31:15 1997
++++ configure.h	Fri Dec  5 20:31:26 1997
+@@ -69,7 +69,7 @@
+ XCOMM #endif
+ 
+ XCOMM 
+-      CDEBUGFLAGS = -g -Wall -Wshadow
++      CDEBUGFLAGS += -Wall -Wshadow
+ XCOMM            CDEBUGFLAGS = -O2 -Wall
+ XCOMM            CDEBUGFLAGS = -g -Wall
+ XCOMM            CDEBUGFLAGS = -g
