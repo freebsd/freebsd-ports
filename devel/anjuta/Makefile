@@ -7,6 +7,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	anjuta
@@ -19,7 +20,7 @@ LIB_DEPENDS=	scintilla.1:${PORTSDIR}/x11-toolkits/scintilla
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomeprint gdkpixbuf
+USE_GNOME=	gnomeprefix gnomehack gnomevfs gnomeprint gdkpixbuf libglade
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
