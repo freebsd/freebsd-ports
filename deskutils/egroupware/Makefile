@@ -13,6 +13,8 @@ DISTNAME=	phpGroupWare-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phpgroupware
 
