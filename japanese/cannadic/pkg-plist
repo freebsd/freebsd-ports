@@ -1,9 +1,8 @@
 lib/canna/dic/canna/dics.dir.gpl_canna
-@exec (echo "Updating %D/lib/canna/dic/canna/dics.dir" ; mv %D/lib/canna/dic/canna/dics.dir %D/lib/canna/dic/canna/dics.dir.orig ; cat %D/lib/canna/dic/canna/dics.dir.orig %D/lib/canna/dic/canna/dics.dir.gpl_canna > %D/lib/canna/dic/canna/dics.dir ; chown bin:bin %D/lib/canna/dic/canna/dics.dir ; chmod 464 %D/lib/canna/dic/canna/dics.dir ; if [ -e /tmp/.iroha_unix/IROHA ] ; then echo "Restarting Canna server..." ; %D/etc/rc.d/canna.sh stop > /dev/null 2>&1; %D/etc/rc.d/canna.sh start > /dev/null 2>&1 ; fi)
-@unexec (echo "Restoring old %D/lib/canna/dic/canna/dics.dir..." ; mv %D/lib/canna/dic/canna/dics.dir.orig %D/lib/canna/dic/canna/dics.dir ; if [ -e /tmp/.iroha_unix/IROHA ]; then echo "Restarting Canna server..." ; %D/etc/rc.d/canna.sh stop > /dev/null 2>&1 ; %D/etc/rc.d/canna.sh start > /dev/null 2>&1 ; fi)
 lib/canna/dic/canna/gcanna.cld
 lib/canna/dic/canna/gcanna.cbd
 lib/canna/dic/canna/gcannaf.cld
 lib/canna/dic/canna/gcannaf.cbd
 %%PORTDOCS%%share/doc/cannadic/README
+%%PORTDOCS%%share/doc/cannadic/README.FreeBSD
 %%PORTDOCS%%@dirrm share/doc/cannadic
