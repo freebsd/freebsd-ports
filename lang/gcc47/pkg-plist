@@ -242,7 +242,6 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/float.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g2c.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/iso646.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/limits.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/math.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/new
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/new.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/proto.h

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-04-10
+SNAPDATE=	2000-05-01
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -30,7 +30,7 @@ NO_CDROM=	'dated material'
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	${DISTNAME:S/gcc-//g}
+EGCS_REV=	2.96
 LIBSTDCPP_REV=	4
 WRKSRC=		${WRKDIR}/egcs-${SNAPVER}
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+= --enable-shared
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
+MAN1=		eg++.1 eg77.1 egcc.1
 
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
