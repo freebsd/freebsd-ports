@@ -1,0 +1,7 @@
+%%RUBY_SITEARCHLIBDIR%%/numru/fftw3.so
+@unexec rmdir %B 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ruby-fftw3.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ruby-fftw3.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
