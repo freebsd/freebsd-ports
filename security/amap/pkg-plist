@@ -1,0 +1,5 @@
+@comment $FreeBSD$
+bin/amap
+share/amap/appdefs.resp
+share/amap/appdefs.trig
+@dirrm share/amap
