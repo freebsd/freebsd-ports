@@ -3,7 +3,7 @@
 # Date created:         Sat Apr 10 22:30:36 EEST 1999
 # Whom:                 vns@delta.odessa.ua
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 03:57:52 steve Exp $
 #
 
 DISTNAME=	apache_1.3.6
@@ -31,7 +31,7 @@ PATCHFILES=	patches_1.3.6rusPL${RA_VERSION}.tar.gz
 MAINTAINER=	vns@delta.odessa.ua
 
 Y2K=		http://www.apache.org/docs/misc/FAQ.html#year2000
-RA_VERSION=	28.14
+RA_VERSION=	28.16
 
 #
 # Small hack for alternate processing patchfiles
