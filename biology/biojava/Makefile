@@ -8,14 +8,14 @@
 PORTNAME=	biojava
 PORTVERSION=	1.01
 CATEGORIES=	biology java
-MASTER_SITES=	ftp://ftp.biojava.org/pub/biojava/source/
+MASTER_SITES=	http://www.biojava.org/download/source/
 
 MAINTAINER=	bio@freebsd.net
 
-BUILD_DEPENDS=	${JAVA_COMMAND}:${PORTSDIR}/java/linux-jdk
+BUILD_DEPENDS=	${JAVA_COMMAND}:${PORTSDIR}/java/linux-sun-jdk12
 
 JDK_VERSION=	1.2.2
-JAVAVERSION=	linux-jdk${JDK_VERSION}
+JAVAVERSION=	linux-sun-jdk${JDK_VERSION}
 JAVADIR=	${PREFIX}/${JAVAVERSION}
 JAVA_COMPILE=	${JAVADIR}/bin/javac
 JAVA_COMMAND=	${JAVADIR}/bin/java
