@@ -3,16 +3,16 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.14 1997/10/13 11:22:43 asami Exp $
+# $Id: Makefile,v 1.15 1998/01/03 08:34:31 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs510/ \
-		ftp://bonk.ethz.ch/gs-driver-distrib/
+		ftp://bonk.ethz.ch/gs-driver-distrib/ \
+		http://www.ozemail.com.au/~geoffk/pdfencrypt/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${HP850_DRV}
-
+		${HP850_DRV} ${DECRYPT_PDF}
 MAINTAINER=	andreas@FreeBSD.ORG
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
@@ -32,11 +32,14 @@ GS_SOURCES+=	ghostscript-5.10gnu.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-5.03.tar.gz
+GS_FONTS_STD=	ghostscript-fonts-std-5.10.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
 HP850_DRV=	hp850.zip
+
+# replacement for pdf_sec.ps, that allows you to read encrypted PDF files
+DECRYPT_PDF=	pdf_sec.ps
 
 .if defined(A4)
 CFLAGS+=	-DA4
@@ -78,5 +81,7 @@ pre-install:
 
 post-install:
 	strip ${PREFIX}/bin/gs
+	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
+		${PREFIX}/share/ghostscript/5.10
 
 .include <bsd.port.mk>
