@@ -7,7 +7,7 @@
 
 PORTNAME=	le-canna
 PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -38,6 +38,7 @@ PATCH_WRKSRC=   ${WRKDIR}/${DISTNAME:S/src-//}
 
 .if !defined(WITHOUT_XAUX)
 USE_XLIB=	yes
+USE_GNOME=	gtk20
 CFLAGS+=	-I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib
 PLIST_SUB+=	WANT_XAUX=""
@@ -72,6 +73,9 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC}/../ && ${GMAKE} ${UPDATE_ARGS} update-acfiles
+.if defined(WITHOUT_XAUX)
+	@cd ${WRKSRC} && ${REINPLACE_CMD} -e "/GTK/s,^.*$$,,g" configure.ac
+.endif
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --force --copy
 	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
 	 -I ../acfiles -I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}

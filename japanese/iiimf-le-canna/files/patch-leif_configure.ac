@@ -1,8 +1,20 @@
---- leif/configure.ac	Wed Oct  6 23:00:36 2004
-+++ leif/configure.ac	Fri Feb 18 01:19:12 2005
-@@ -61,25 +61,19 @@
- IM_CONSTRUCT_FLAGS
- IM_CONSTRUCT_THREAD_FLAGS
+--- leif/configure.ac.orig	Wed Oct  6 23:00:36 2004
++++ leif/configure.ac	Thu Mar 24 18:29:16 2005
+@@ -45,11 +45,11 @@
+ IM_CHECK_SYSTEM
+ IM_CHECK_DLOPEN
+ IM_CHECK_CANNA
+-IM_CHECK_FREEWNN
++dnl IM_CHECK_FREEWNN
+ 
+ IM_CHECK_X
+ IM_CHECK_GTK
+-IM_CHECK_MOTIF
++dnl IM_CHECK_MOTIF
+ PKG_CHECK_MODULES(GTK2, gtk+-2.0 gtk+-x11-2.0)
+ AC_SUBST(GTK2_CFLAGS)
+ AC_SUBST(GTK2_LIBS)
+@@ -63,23 +63,17 @@
  
  CFLAGS="${COMMON_CXX_CFLAGS} ${COMMON_CFLAGS} \
          ${DEBUG_CXX_CFLAGS} ${DEBUG_CFLAGS} \
@@ -21,13 +33,13 @@
 +LE_TARGETS="canna"
  
 -IM_ADD_TARGET(LE_TARGETS, HAVE_CANNA, canna)
-+IM_ADD_TARGET(LE_TARGETS, HAVE_X, canna/xaux)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_FREEWNN, freewnn)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_X, sampleja3/xaux_common)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_GTK, sampleja3/xaux_gtk)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, newpy/xaux)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, sampleja/xaux)
 -IM_ADD_TARGET(LE_TARGETS, HAVE_MOTIF, sampleja3/xaux_motif)
++IM_ADD_TARGET(LE_TARGETS, HAVE_X, canna/xaux)
  
  dnl --------------------------------------------------------------------------------
  dnl                       Section 6: compilation test
