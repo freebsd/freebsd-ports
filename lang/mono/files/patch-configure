@@ -1,19 +1,20 @@
---- configure.orig	Wed Oct  1 12:59:06 2003
-+++ configure	Mon Oct  6 23:25:13 2003
-@@ -2005,7 +2005,7 @@
- _ACEOF
+--- configure.orig	Mon May 31 15:12:04 2004
++++ configure	Sat Jun 12 17:59:33 2004
+@@ -1995,7 +1995,7 @@
+ 		with_sigaltstack=no
  
- 		libdl=
--		libgc_threads=pthreads
-+		libgc_threads=no
  		;;
- 	*-*-linux*)
+-	*-*-*netbsd*)
++	*-*-*netbsd*|*-*-*freebsd4*)
  		platform_win32=no
-@@ -8257,6 +8257,7 @@
+ 		CPPFLAGS="$CPPFLAGS -D_REENTRANT"
+ 		libmono_cflags="-D_REENTRANT"
+@@ -13893,7 +13893,7 @@
+ ACCESS_UNALIGNED="yes"
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ JIT_SUPPORTED=no
+-LIBC="libc.so.6"
++LIBC="libc.so"
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+ jit_wanted=false
+ case "$host" in

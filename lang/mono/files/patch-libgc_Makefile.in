@@ -1,0 +1,11 @@
+--- libgc/Makefile.in.orig	Sat Jun 12 15:40:48 2004
++++ libgc/Makefile.in	Sat Jun 12 15:41:15 2004
+@@ -120,7 +120,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS = include doc
++SUBDIRS = include
+ 
+ noinst_LTLIBRARIES = libmonogc.la
+ 
