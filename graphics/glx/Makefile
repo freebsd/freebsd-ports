@@ -3,7 +3,7 @@
 # Date created:         13 September 1999
 # Whom:                 Marc E E van Woerkom  <van.woerkom@netcologne.de>
 #
-# $Id:$
+# $FreeBSD$
 #
 #
 # Notes:
