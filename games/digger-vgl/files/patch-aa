@@ -1,0 +1,11 @@
+--- Makefile.fbsd.orig	Fri Apr 14 10:29:24 2000
++++ Makefile.fbsd	Fri Apr 14 10:29:57 2000
+@@ -4,7 +4,7 @@
+ 		newsnd.c ini.c input.c monster.c bags.c alpha.c vgagrafx.c \
+ 		title_gz.c
+ 
+-CFLAGS=		-g -O -Wall -pedantic -DFREEBSD
++CFLAGS+=	-DFREEBSD
+ 
+ LDADD+=		-lz
+ 
