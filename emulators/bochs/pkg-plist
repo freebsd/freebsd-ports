@@ -2,7 +2,6 @@
 bin/bochs
 bin/bximage
 libexec/bochs.bin
-share/bochs/bios/BIOS-bochs-1.4.1
 share/bochs/bios/BIOS-bochs-2-processors
 share/bochs/bios/BIOS-bochs-4-processors
 share/bochs/bios/BIOS-bochs-8-processors
