@@ -18,7 +18,7 @@ DISTNAME=	sg-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	gtkextra.14:${PORTSDIR}/x11-toolkits/gtkextra
+LIB_DEPENDS=	gtkextra.15:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_X_PREFIX=	yes
