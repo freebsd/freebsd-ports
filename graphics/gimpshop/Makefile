@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.18
-PORTREVISION=	1
+PORTVERSION=	1.3.19
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -70,10 +69,6 @@ LIB_DEPENDS+=		gimpprint.2:${PORTSDIR}/print/gimp-print
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES=	${PATCHDIR}/asm_old_gcc.patch
-.endif
 
 .if exists(${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc)
 WITH_HTML_HELP_BROWSER=	yes

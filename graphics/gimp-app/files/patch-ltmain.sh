@@ -1,15 +1,15 @@
---- ltmain.sh.orig	Mon Aug 11 04:01:36 2003
-+++ ltmain.sh	Mon Aug 11 04:08:51 2003
-@@ -1278,7 +1278,7 @@
+--- ltmain.sh.orig	Tue Aug 26 17:35:19 2003
++++ ltmain.sh	Fri Aug 29 09:09:07 2003
+@@ -1072,7 +1072,7 @@
  	  esac
- 	elif test "X$arg" = "X-lc_r"; then
- 	 case $host in
+ 	 elif test "X$arg" = "X-lc_r"; then
+ 	  case $host in
 -	 *-*-openbsd* | *-*-freebsd*)
 +	 *-*-openbsd* | *-*-freebsd4*)
- 	   # Do not include libc_r directly, use -pthread flag.
- 	   continue
- 	   ;;
-@@ -1288,8 +1288,16 @@
+ 	    # Do not include libc_r directly, use -pthread flag.
+ 	    continue
+ 	    ;;
+@@ -1082,8 +1082,16 @@
  	continue
  	;;
  
@@ -26,17 +26,7 @@
  	continue
  	;;
  
-@@ -3127,6 +3135,9 @@
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
-+	  *-*-freebsd*)
-+	    # FreeBSD doesn't need this...
-+	    ;;
-  	  *)
- 	    # Add libc to deplibs on all other systems if necessary.
- 	    if test "$build_libtool_need_lc" = "yes"; then
-@@ -5457,10 +5468,12 @@
+@@ -4330,10 +4338,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
