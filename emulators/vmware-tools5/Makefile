@@ -12,10 +12,10 @@ MASTER_SITES=	# none
 DISTNAME=	vmware-freebsd-tools
 
 MAINTAINER=	matusita@FreeBSD.org
-COMMENT=VMware tools for FreeBSD guest OS (for VMware 3.x)
+COMMENT=VMware tools for guest OS (for VMware 4.x, FreeBSD version)
 
 LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
-RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd
+RUN_DEPENDS=	${LOCALBASE}/sbin/vmware-guestd:${PORTSDIR}/emulators/vmware-guestd4
 
 DISTDIR=	${MOUNT_PT}
 IGNOREFILES=	${DISTFILES}
@@ -30,8 +30,8 @@ RESTRICTED=	"Not sure if we can redistribute this."
 IGNORE=	"Can't build this port since it requires VMware."
 .endif
 
-VMWARE_VER=	3.1.1
-BUILD_VER=	1790
+VMWARE_VER=	4.0.0
+BUILD_VER=	4460
 
 MOUNT_DEV?=	/dev/acd0c
 MOUNT_PT?=	/mnt
