@@ -7,6 +7,7 @@
 
 PORTNAME=	munger
 PORTVERSION=	4.38
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://jamesbailie.com/
 
@@ -16,7 +17,7 @@ COMMENT=	Static LISP interpreter with text processing abilities
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 .if defined(WITH_SQL)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 .endif
 
 .if defined(WITH_FCGI)
