@@ -1,0 +1,55 @@
+--- ezmlm-web.cgi.orig	Thu Mar 15 11:48:46 2001
++++ ezmlm-web.cgi	Thu Mar 15 11:50:47 2001
+@@ -281,13 +281,13 @@
+    print $q->startform;
+    print $q->hidden(-name=>'state', -default=>'select');
+    print '<CENTER><TABLE BORDER="0" CELLPADDING="10"><TR><TD ALIGN="center" VALIGN="top" ROWSPAN="2">';
+-   print $q->scrolling_list(-name=>'list', -size=>$scrollsize, -values=>\@lists) if defined(@lists);
++   print $q->scrolling_list(-name=>'list', -size=>$scrollsize, -values=>\@lists) if (@lists);
+  
+    print '</TD><TD ALIGN="left" VALIGN="top">', $LANGUAGE{'chooselistinfo'};
+ 
+-   print $q->submit(-name=>'action', -value=>"[$BUTTON{'create'}]"), ' ' if (!defined($opt_c));
+-   print $q->submit(-name=>'action', -value=>"[$BUTTON{'edit'}]"), ' ' if(defined(@lists));
+-   print $q->submit(-name=>'action', -value=>"[$BUTTON{'delete'}]") if(defined(@lists));
++   print $q->submit(-name=>'action', -value=>"[$BUTTON{'create'}]"), ' ' if ($opt_c);
++   print $q->submit(-name=>'action', -value=>"[$BUTTON{'edit'}]"), ' ' if(@lists);
++   print $q->submit(-name=>'action', -value=>"[$BUTTON{'delete'}]") if(@lists);
+    print '</TD></TR><TR><TD> </TD></TR></TABLE></CENTER>';
+    print $q->endform;
+ }
+@@ -332,10 +332,10 @@
+    print '<CENTER><TABLE ALIGN="center" CELLPADDING="10"><TR><TD ROWSPAN="2" VALIGN="top" ALIGN="center">';
+    print $q->hidden(-name=>'state', -default=>'edit');
+    print $q->hidden(-name=>'list', -default=>$Q::list);
+-   print $q->scrolling_list(-name=>'delsubscriber', -size=>$scrollsize, -values=>\@subscribers, -labels=>&pretty_names, -multiple=>'true') if defined(@subscribers);
++   print $q->scrolling_list(-name=>'delsubscriber', -size=>$scrollsize, -values=>\@subscribers, -labels=>&pretty_names, -multiple=>'true') if (@subscribers);
+    print '</TD><TD VALIGN="top" ALIGN="left">';
+-   print ' ', ($#subscribers + 1), ' ', $LANGUAGE{'subscribers'}, '<BR>' if defined(@subscribers);
+-   print $q->submit(-name=>'action', -value=>"[$BUTTON{'deleteaddress'}]"), '<P>' if defined(@subscribers);
++   print ' ', ($#subscribers + 1), ' ', $LANGUAGE{'subscribers'}, '<BR>' if (@subscribers);
++   print $q->submit(-name=>'action', -value=>"[$BUTTON{'deleteaddress'}]"), '<P>' if (@subscribers);
+    print $q->textfield(-name=>'addsubscriber', -size=>'40'), ' <IMG SRC="', $HELP_ICON_URL, '" ALT="', $HELPER{'addaddress'}, '"><BR>';
+    print $q->filefield(-name=>'addfile', -size=>20, -maxlength=>100), ' <IMG SRC="', $HELP_ICON_URL, '" ALT="', $HELPER{'addaddressfile'}, '"><br>' if ($FILE_UPLOAD);
+    print $q->submit(-name=>'action', -value=>"[$BUTTON{'addaddress'}]"), '<P>';
+@@ -447,7 +447,7 @@
+       die "File upload must be of type text/*" unless($q->uploadInfo($q->param('addfile'))->{'Content-Type'} =~ m{^text/});
+ 
+       # Handle file uploads of addresses
+-      my($fh) = $q->upload('addfile');
++      my($fh) = $q->param('addfile');
+       return unless (defined($fh));
+       while (<$fh>) {
+          next if (/^\s*$/ or /^#/); # blank, comments
+@@ -563,9 +563,9 @@
+    print '<CENTER><TABLE ALIGN="center" CELLPADDING="10"><TR><TD ROWSPAN="2" VALIGN="top" ALIGN="center">';
+    print $q->hidden(-name=>'state', -default=>$part);
+    print $q->hidden(-name=>'list', -default=>$Q::list), "\n";
+-   print $q->scrolling_list(-name=>'delsubscriber', -size=>$scrollsize, -values=>\@subscribers, -multiple=>'true', -labels=>&pretty_names) if defined(@subscribers);
++   print $q->scrolling_list(-name=>'delsubscriber', -size=>$scrollsize, -values=>\@subscribers, -multiple=>'true', -labels=>&pretty_names) if (@subscribers);
+    print '</TD></TR><TR><TD VALIGN="top" ALIGN="left">';
+-   print $q->submit(-name=>'action', -value=>"[$BUTTON{'deleteaddress'}]"), '<P>' if defined(@subscribers);
++   print $q->submit(-name=>'action', -value=>"[$BUTTON{'deleteaddress'}]"), '<P>' if (@subscribers);
+    print $q->textfield(-name=>'addsubscriber', -size=>'40'), ' <IMG SRC="', $HELP_ICON_URL, '" ALT="', $HELPER{'addaddress'}, '"><BR>';
+    print $q->filefield(-name=>'addfile', -size=>20, -maxlength=>100), ' <IMG SRC="', $HELP_ICON_URL, '" ALT="', $HELPER{'addaddressfile'}, '"><br>' if ($FILE_UPLOAD);
+    print $q->submit(-name=>'action', -value=>"[$BUTTON{'addaddress'}]"), '<P>';
