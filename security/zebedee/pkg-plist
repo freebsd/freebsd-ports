@@ -1,4 +1,5 @@
 bin/zebedee
+bin/ftpgw.tcl
 etc/server.zbd.sample
 share/examples/zebedee/vncviewer.zbd
 share/examples/zebedee/vncserver.zbd
@@ -8,5 +9,6 @@ share/doc/zebedee/README.txt
 share/doc/zebedee/LICENCE.txt
 share/doc/zebedee/CHANGES.txt
 share/doc/zebedee/zebedee.html
+share/doc/zebedee/ftpgw.tcl.html
 @dirrm share/examples/zebedee
 @dirrm share/doc/zebedee
