@@ -3218,7 +3218,6 @@ lc		ports/misc/lc
 lcc		ports/lang/lcc
 lcms		ports/graphics/lcms
 ld		src/gnu/usr.bin/ld
-ldapmodule	ports/net/ldapmodule
 ldapsdk		ports/net/ldapsdk
 ldconfig	src/sbin/ldconfig
 ldd		src/usr.bin/ldd
@@ -5512,6 +5511,8 @@ py-jabber	ports/net/py-jabber
 py-kde		ports/x11-toolkits/py-kde
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
+py-ldap1	ports/net/py-ldap1
+py-ldap2	ports/net/py-ldap2
 py-libnet	ports/net/py-libnet
 py-m2crypto	ports/security/py-m2crypto
 py-martel	ports/textproc/py-martel
