@@ -1,8 +1,57 @@
 bin/vls
 bin/vlsd
-etc/videolan/vls/vls.cfg
-lib/videolan/vls/dvdreader.so
+etc/videolan/vls/vls.cfg-dist
+%%WITHDVD%%lib/videolan/vls/dvdreader.so
 @dirrm lib/videolan/vls
 @dirrm lib/videolan
 @dirrm etc/videolan/vls
 @dirrm etc/videolan
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/vls-guide.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/3parts.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/architecture.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/architecture.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/architecture.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/converter-reader.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/convfifo.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/convfifo.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/convfifo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/extrapolation.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/extrapolation.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/extrapolation.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/framework.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/output.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/outputfifo.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/outputfifo.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/outputfifo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/overview.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/overview.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/overview.sda
+%%PORTDOCS%%%%DOCSDIR%%/developer/overview.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/pcr.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/pcr.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/pcr.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/provider.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/provider.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/provider.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/readerconv.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/readerconv.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/readerconv.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/stream_send.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/stream_send.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/stream_send.sda
+%%PORTDOCS%%%%DOCSDIR%%/developer/stream_start.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/stream_start.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/stream_start.sda
+%%PORTDOCS%%%%DOCSDIR%%/developer/streamer.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/streaming.sgml
+%%PORTDOCS%%%%DOCSDIR%%/developer/structure.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/structure.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/structure.sda
+%%PORTDOCS%%%%DOCSDIR%%/developer/stylesheet.dsl
+%%PORTDOCS%%%%DOCSDIR%%/developer/tsstreamer.dia
+%%PORTDOCS%%%%DOCSDIR%%/developer/tsstreamer.eps
+%%PORTDOCS%%%%DOCSDIR%%/developer/tsstreamer.jpg
+%%PORTDOCS%%%%DOCSDIR%%/developer/vls-devel.sgml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/developer
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -6,23 +6,46 @@
 #
 
 PORTNAME=	vls
-PORTVERSION=	0.5.0
-CATEGORIES=	net
+PORTVERSION=	0.5.4
+CATEGORIES=	net multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vls/${PORTVERSION}/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
 
-LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
-		dvbpsi.1:${PORTSDIR}/multimedia/libdvbpsi \
+LIB_DEPENDS=	dvbpsi.1:${PORTSDIR}/multimedia/libdvbpsi
+.if !defined(WITHOUT_DVD)
+LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread
+.endif
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE} \
-		--with-dvbpsi=${LOCALBASE} \
-		--with-dvdread=${LOCALBASE}
-
-INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+CFLAGS+=	-I${LOCALBASE}/inlcude
 
-.include <bsd.port.mk>
+CONFIGURE_ARGS+=	--with-dvbpsi=${LOCALBASE}
+.if !defined(WITHOUT_DVD)
+CONFIGURE_ARGS+=	--with-dvdcss=${LOCALBASE} \
+			--with-dvdread=${LOCALBASE}
+PLIST_SUB+=		WITHDVD=""
+.else
+CONFIGURE_ARGS+=	--disable-dvd
+PLIST_SUB+=		WITHDVD="@comment "
+.endif
+
+pre-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/vls-guide.sgml ${DOCSDIR}/
+	${CP} -pR ${WRKSRC}/doc/developer ${DOCSDIR}/
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+CONFIGURE_ENV+=		VLS_LIB="-L/usr/lib -lcipher"
+.endif
+
+.include <bsd.port.post.mk>
