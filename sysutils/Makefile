@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.68 1999/06/11 00:06:20 steve Exp $
+# $Id: Makefile,v 1.69 1999/06/14 19:31:22 taoka Exp $
 #
 
     SUBDIR += LPRng
@@ -20,6 +20,7 @@
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += ffsrecov
+    SUBDIR += gcombust
     SUBDIR += gnomeadmin
     SUBDIR += gnomecontrolcenter
     SUBDIR += glload
