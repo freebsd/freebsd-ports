@@ -100,6 +100,7 @@ lib/gstreamer-%%VERSION%%/libgstvbidec.so
 lib/gstreamer-%%VERSION%%/libgstvideo.so
 lib/gstreamer-%%VERSION%%/libgstvideocrop.so
 lib/gstreamer-%%VERSION%%/libgstvideoscale.so
+lib/gstreamer-%%VERSION%%/libgstvideosink.so
 lib/gstreamer-%%VERSION%%/libgstvideotestsrc.so
 lib/gstreamer-%%VERSION%%/libgstvolenv.so
 lib/gstreamer-%%VERSION%%/libgstvolume.so
@@ -107,6 +108,7 @@ lib/gstreamer-%%VERSION%%/libgstvolume.so
 lib/gstreamer-%%VERSION%%/libgstvumeter.so
 lib/gstreamer-%%VERSION%%/libgstwavenc.so
 lib/gstreamer-%%VERSION%%/libgstwavparse.so
+lib/gstreamer-%%VERSION%%/libgstxvideosink.so
 lib/gstreamer-%%VERSION%%/libgsty4menc.so
 lib/gstreamer-%%VERSION%%/libmixmatrix.so
 lib/libgstgconf-%%VERSION%%.a

@@ -7,6 +7,7 @@
 
 PORTNAME=	gstreamer
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -94,6 +95,16 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's|^.*afOpenVirtualFile[[:space:]]*\(\);|;|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+# XXX - fix {x,}videosink build
+	@${REINPLACE_CMD} -E -e \
+		's|^(DEFAULT_INCLUDES.*)$$|\1 \$$\(X_CFLAGS\)|; \
+		s|^(XVIDEO_LIBS.*)$$|\1 -lX11 -lXext -lXv -lXxf86vm|' \
+		${WRKSRC}/sys/xvideo/Makefile.in \
+		${WRKSRC}/sys/videosink/Makefile.in
+	@${REINPLACE_CMD} -E -e \
+		's|@USE_XVIDEO_TRUE@||; \
+		s|@USE_XVIDEO_FALSE@|#|' \
+		${WRKSRC}/sys/Makefile.in
 
 post-configure:
 # CC safeness
@@ -105,6 +116,10 @@ post-install:
 	@${X11BASE}/bin/gst-register 2>/dev/null
 
 .include <bsd.port.pre.mk>
+
+# hermes is required for gstreamer-player to work
+# since it is currently the only colorspace plugin available
+WITH_HERMES=	yes
 
 ##
 ## auto detect possible plugins
