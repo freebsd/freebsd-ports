@@ -3,7 +3,7 @@
 # Date created:        22 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 02:19:24 steve Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:41 asami Exp $
 #
 
 DISTNAME=	dgs-0.5.0
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	Nakai@technologist.com
 
-LIB_DEPENDS= 	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS= 	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 

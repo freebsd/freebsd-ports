@@ -3,7 +3,7 @@
 # Date created:	11 August 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/24 01:59:56 steve Exp $
 #
 
 DISTNAME=	stamp
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.telepath.com/booger/
 
 MAINTAINER=	billf@chc-chimes.com
 
-LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 ALL_TARGET=
 

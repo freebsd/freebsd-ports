@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.26 1998/08/07 23:56:26 asami Exp $
+# $Id: Makefile,v 1.27 1998/08/25 01:38:22 vanilla Exp $
 #
 
 DISTNAME=	imlib-1.7
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
 MAINTAINER=	vanilla@FreeBSD.ORG
 
 LIB_DEPENDS=    png\\.2\\.:${PORTSDIR}/graphics/png \
-		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib \
 		gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11

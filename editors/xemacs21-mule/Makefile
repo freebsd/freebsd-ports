@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.2 1998/08/17 09:35:02 hoek Exp $
+# $Id: Makefile,v 1.3 1998/09/15 11:13:04 asami Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -20,7 +20,7 @@ MAINTAINER?=	kiri@kiri.toba-cmt.ac.jp
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 LIB_DEPENDS=	Xpm.5:${PORTSDIR}/graphics/xpm \
-		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \
 		compface\\.1\\.:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}

@@ -3,7 +3,7 @@
 # Date created:				27 July 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/10 00:28:06 steve Exp $
 #
 
 DISTNAME=	EZFM-0.1-src
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		EZ\\.1\\.:${PORTSDIR}/graphics/EZWGL
 
 WRKSRC=		${WRKDIR}/EZFM-0.1

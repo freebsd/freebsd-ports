@@ -3,7 +3,7 @@
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id: Makefile,v 1.6 1998/08/21 23:11:03 hoek Exp $
+# $Id: Makefile,v 1.7 1998/08/22 16:20:24 hoek Exp $
 #
 
 DISTNAME=	HDF4.1r2
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF4.1r2/tar/
 
 MAINTAINER=	mi@aldan.ziplink.net
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 MAN1=		hdf.1 hdfunpac.1 ncdump.1 ncgen.1
 
