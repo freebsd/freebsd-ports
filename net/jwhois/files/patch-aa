@@ -1,11 +1,11 @@
---- po/Makefile.in.in.dist	Sat Nov 27 06:10:41 1999
-+++ po/Makefile.in.in	Sat Jul 15 22:27:05 2000
-@@ -19,7 +19,7 @@
+--- po/Makefile.in.in.dist	Wed Sep 26 05:41:17 2001
++++ po/Makefile.in.in	Mon Nov 12 11:29:29 2001
+@@ -23,7 +23,7 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
- datadir = $(prefix)/@DATADIRNAME@
+ datadir = @datadir@
 -localedir = $(datadir)/locale
 +localedir = @localedir@
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po
- subdir = po
+ gettextsrcdir = $(datadir)/gettext/po
+ 
+ INSTALL = @INSTALL@
