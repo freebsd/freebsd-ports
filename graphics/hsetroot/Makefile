@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://thegraveyard.org/files/
 
-MAINTAINER=	vinc@freebsd-fr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Root window parameter setting background for X
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	vinc@FreeBSD-fr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server-side rss aggregator written in php with mysql
 
 .if defined(WITH_PHP3)

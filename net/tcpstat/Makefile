@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 
-MAINTAINER=	vinc@freebsd-fr.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to report various network statistics
 
 GNU_CONFIGURE=	yes
