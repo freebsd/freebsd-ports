@@ -57,6 +57,7 @@
     SUBDIR += metacity-setup
     SUBDIR += mlvwm
     SUBDIR += mosfet-liquid
+    SUBDIR += novawm
     SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += oroborus
