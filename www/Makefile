@@ -538,6 +538,7 @@
     SUBDIR += py-albatross
     SUBDIR += py-clientform
     SUBDIR += py-fcgi
+    SUBDIR += py-htmltestcase
     SUBDIR += py-mt
     SUBDIR += py-scgi
     SUBDIR += py-websvcs
