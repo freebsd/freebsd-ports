@@ -19,7 +19,7 @@ bin/gengetopt
 %%PORTDOCS%%share/doc/gengetopt/gengetopt.html
 %%PORTDOCS%%share/doc/gengetopt/man_getopt.html
 %%PORTDOCS%%share/doc/gengetopt/no_getopt_long.txt
-share/gengetopt/alloca.c
+%%PORTDOCS%%share/doc/gengetopt/old_changes.html
 share/gengetopt/getopt.c
 share/gengetopt/getopt.h
 share/gengetopt/getopt1.c
