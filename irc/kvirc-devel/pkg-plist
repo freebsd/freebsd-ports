@@ -3,7 +3,9 @@ bin/kvi_run_netscape.sh
 bin/kvi_search_help.sh
 bin/kvirc
 bin/kvirc-config
+lib/libkvicore.so
 lib/libkvicore.so.2
+lib/libkvilib.so
 lib/libkvilib.so.2
 share/applnk/Internet/kvirc.desktop
 share/icons/hicolor/48x48/kvirc.png
