@@ -1,0 +1,15 @@
+#!/bin/sh
+
+SCOREDIR="/var/games"
+SCOREBASE="/var/games/powermanga.hi"
+
+[ "$2" != "POST-INSTALL" ] && exit 0
+
+mkdir -p $SCOREDIR
+
+for suffix in "-easy" "" "-hard"; do
+    file="$SCOREBASE$suffix"
+    [ ! -f $file ] && touch $file
+    chown root:games $file
+    chmod 664 $file
+done
