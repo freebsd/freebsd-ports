@@ -5,5 +5,3 @@ some degree object-oriented.
 This package contains the full optimizing T3X compiler
 with native 386, C, and bytecode back ends, complete
 documentation, and lots of tools.
-
-WWW: http://www.t3x.org/T3X/
