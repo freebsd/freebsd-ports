@@ -1,0 +1,10 @@
+BBDB is a rolodex-like database program for GNU Emacs.  BBDB stands
+for Insidious Big Brother Database, and is not, repeat, _not_ an
+obscure reference to the Buck Rogers TV series.
+
+Put the expression below into your ~/.emacs
+
+(require 'bbdb)
+(bbdb-initialize)
+
+WWW: http://bbdb.sourceforge.net/ 

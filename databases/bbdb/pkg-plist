@@ -1,0 +1,41 @@
+%%BBDB_LISPDIR%%/bbdb.el
+%%BBDB_LISPDIR%%/bbdb.elc
+%%BBDB_LISPDIR%%/bbdb-autoloads.el
+%%BBDB_LISPDIR%%/bbdb-com.el
+%%BBDB_LISPDIR%%/bbdb-com.elc
+%%BBDB_LISPDIR%%/bbdb-ftp.el
+%%BBDB_LISPDIR%%/bbdb-ftp.elc
+%%BBDB_LISPDIR%%/bbdb-gnus.el
+%%BBDB_LISPDIR%%/bbdb-gui.el
+%%BBDB_LISPDIR%%/bbdb-gui.elc
+%%BBDB_LISPDIR%%/bbdb-hooks.el
+%%BBDB_LISPDIR%%/bbdb-hooks.elc
+%%BBDB_LISPDIR%%/bbdb-merge.el
+%%BBDB_LISPDIR%%/bbdb-merge.elc
+%%BBDB_LISPDIR%%/bbdb-mhe.el
+%%BBDB_LISPDIR%%/bbdb-migrate.el
+%%BBDB_LISPDIR%%/bbdb-migrate.elc
+%%BBDB_LISPDIR%%/bbdb-print.el
+%%BBDB_LISPDIR%%/bbdb-print.elc
+%%BBDB_LISPDIR%%/bbdb-reportmail.el
+%%BBDB_LISPDIR%%/bbdb-rmail.el
+%%BBDB_LISPDIR%%/bbdb-sc.el
+%%BBDB_LISPDIR%%/bbdb-sc.elc
+%%BBDB_LISPDIR%%/bbdb-snarf.el
+%%BBDB_LISPDIR%%/bbdb-snarf.elc
+%%BBDB_LISPDIR%%/bbdb-srv.el
+%%BBDB_LISPDIR%%/bbdb-vm.el
+%%BBDB_LISPDIR%%/bbdb-w3.el
+%%BBDB_LISPDIR%%/bbdb-w3.elc
+%%BBDB_LISPDIR%%/bbdb-whois.el
+%%BBDB_LISPDIR%%/bbdb-whois.elc
+%%BBDB_LISPDIR%%/bbdb-xemacs.el
+%%BBDB_LISPDIR%%/bbdb-xemacs.elc
+@dirrm %%BBDB_LISPDIR%%
+%%PORTDOCS%%@unexec install-info --delete --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/bbdb.info %D/info/dir
+%%PORTDOCS%%info/bbdb.info
+%%PORTDOCS%%info/bbdb.info-1
+%%PORTDOCS%%info/bbdb.info-2
+%%PORTDOCS%%info/bbdb.info-3
+%%PORTDOCS%%info/bbdb.info-4
+%%PORTDOCS%%@exec install-info --section="%%DIRSECTION%%" --entry="%%INFOENTRY%%" %D/info/bbdb.info %D/info/dir
