@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pircbot
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	irc java
 MASTER_SITES=	http://www.jibble.org/files/ \
 		http://www.i-scream.org.uk/downloads/other/
@@ -16,7 +16,7 @@ MAINTAINER=	tim@bishnet.net
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-USE_JAVA=	1.1+
+USE_JAVA=	1.3+
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/pircbot.jar ${PREFIX}/share/java/classes
