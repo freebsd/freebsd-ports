@@ -1,16 +1,16 @@
---- dumpasn1.c	Fri Oct 26 06:34:34 2001
-+++ /tmp/dumpasn1.c	Thu Nov 29 20:39:43 2001
-@@ -243,11 +243,13 @@
+--- dumpasn1.c.orig	Sat Dec 14 15:13:32 2002
++++ dumpasn1.c	Sat Dec 14 15:15:24 2002
+@@ -292,11 +292,13 @@
     beginning with a '$' uses the appropriate environment variable.  In
     addition under Unix we also walk down $PATH looking for it */
  
 +#ifndef CONFIG_NAME
- #ifdef TANDEM_NSK
+ #ifdef __TANDEM_NSK__
    #define CONFIG_NAME		"asn1cfg"
  #else
    #define CONFIG_NAME		"dumpasn1.cfg"
- #endif /* TANDEM_NSK */
-+#endif /* CONFIG_NAME */
+ #endif /* __TANDEM_NSK__ */
++#endif
  
- #if defined( TANDEM_NSK )
+ #if defined( __TANDEM_NSK__ )
  
