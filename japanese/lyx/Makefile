@@ -1,27 +1,26 @@
 # New ports collection makefile for:	lyx
-# Version required:	1.0.0
+# Version required:	1.0.3
 # Date created:		27 April 1999
 # Whom:			Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	lyx-1.0.0
-PKGNAME=	ja-lyx-1.0.0
+DISTNAME=	lyx-1.0.3
+PKGNAME=	ja-lyx-1.0.3
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://la1ad.uio.no/pub/lyx/ \
 		ftp://alpha.tat.physik.uni-tuebingen.de/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
 		http://cgi.din.or.jp/~kawakami/product/LyX/
-DISTFILES=	lyx-1.0.0.tar.gz lyx-jp-kit0.04for1.0.0.tar.gz
+DISTFILES=	lyx-1.0.3.tar.gz lyx-jp-kit0.10b4for1.0.3.tar.gz
 
-MAINTAINER=	flathill@FreeBSD.org
+MAINTAINER=	flathill@FreeBSD.ORG
 
-BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	platex:${PORTSDIR}/japanese/platex-euc
 .if defined(WITH_ISPELL)
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
