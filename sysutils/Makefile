@@ -53,6 +53,7 @@
     SUBDIR += daemontools53
     SUBDIR += deleted
     SUBDIR += detach
+    SUBDIR += di
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += diskcheckd

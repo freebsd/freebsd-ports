@@ -1,0 +1,11 @@
+'di' is a disk information utility, displaying everything
+(and more) that your 'df' command does. It features the
+ability to display your disk usage in whatever format you
+desire/prefer/are used to. It is designed to be portable
+across many platforms.
+
+WWW: http://www.gentoo.com/di/
+di-bugs@gentoo.com
+
+-- Brad
+bll@gentoo.com
