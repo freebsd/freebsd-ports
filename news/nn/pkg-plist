@@ -11,8 +11,12 @@ bin/nntidy
 bin/nnusage
 bin/nnview
 bin/nn-inews
-etc/nntp_domain
-etc/nntp_server
+@unexec if cmp -s %D/etc/nntp_domain %D/etc/nntp_domain.dist; then rm -f %D/etc/nntp_domain; fi
+etc/nntp_domain.dist
+@exec [ -f %B/nntp_domain ] || cp %B/%f %B/nntp_domain
+@unexec if cmp -s %D/etc/nntp_server %D/etc/nntp_server.dist; then rm -f %D/etc/nntp_server; fi
+etc/nntp_server.dist
+@exec [ -f %B/nntp_server ] || cp %B/%f %B/nntp_server
 lib/nn/aux
 lib/nn/conf
 lib/nn/help/Manual

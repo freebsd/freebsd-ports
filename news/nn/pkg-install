@@ -28,8 +28,7 @@ cat << xxENDxx
 *******************************************************************
 xxENDxx
 
-if [ ! -f ${PKG_PREFIX}/etc/nntp_server ]; then
-	cat << xxENDxx > ${PKG_PREFIX}/etc/nntp_server
+cat << xxENDxx > ${PKG_PREFIX}/etc/nntp_server.dist
 # nntp_server: Configuration file for NN newsreader
 # 
 # Set your NNTP server address or hostname in this file.
@@ -39,10 +38,12 @@ if [ ! -f ${PKG_PREFIX}/etc/nntp_server ]; then
 #
 # news.myisp.com
 xxENDxx
+
+if [ ! -e ${PKG_PREFIX}/etc/nntp_server ]; then
+	cp ${PKG_PREFIX}/etc/nntp_server.dist ${PKG_PREFIX}/etc/nntp_server
 fi
 
-if [ ! -f ${PKG_PREFIX}/etc/nntp_domain ]; then
-	cat << xxENDxx > ${PKG_PREFIX}/etc/nntp_domain
+cat << xxENDxx > ${PKG_PREFIX}/etc/nntp_domain.dist
 # nntp_domain: Configuration file for NN newsreader
 # 
 # Set the default domain name portion of user e-mail addresses as you
@@ -57,4 +58,7 @@ if [ ! -f ${PKG_PREFIX}/etc/nntp_domain ]; then
 # If this file is left blank, NN will use the hostname of this
 # computer as the From: domain name.
 xxENDxx
+
+if [ ! -e ${PKG_PREFIX}/etc/nntp_domain ]; then
+	cp ${PKG_PREFIX}/etc/nntp_domain.dist ${PKG_PREFIX}/etc/nntp_domain
 fi
