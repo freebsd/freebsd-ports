@@ -1,6 +1,6 @@
---- configure.orig	Fri Jun  6 14:15:07 2003
-+++ configure	Thu Jun 12 14:59:44 2003
-@@ -18202,6 +18202,7 @@
+--- configure.orig	Tue Jul 15 14:31:11 2003
++++ configure	Tue Jul 15 14:31:11 2003
+@@ -18205,6 +18205,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,12 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -20127,7 +20128,7 @@
- 
-       if test "x${nautilus_prefix}" != "x${epiphany_prefix}"; then
-     cat >>confdefs.h <<_ACEOF
--#define NAUTILUS_PREFIX "${nautilus_prefix}"
-+#define NAUTILUS_PREFIX "${epiphany_prefix}"
- _ACEOF
- 
-   fi
