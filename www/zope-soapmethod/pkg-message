@@ -1,0 +1,6 @@
+To complete the installation of SOAPMethod:
+
+    - Restart Zope.  This may be done from the Zope Control Panel.
+
+    - Verify that the SOAPMethod product is loaded properly by 
+      examining them in Control_Panel/Products.
