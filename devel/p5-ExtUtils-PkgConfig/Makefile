@@ -21,4 +21,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::PkgConfig.3
 
+post-patch:
+	@${PERL} -pi -e '$$_="" if $$.==1' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
