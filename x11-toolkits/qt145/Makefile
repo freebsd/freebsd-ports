@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.29 1998/11/23 17:41:10 andreas Exp $
+# $Id: Makefile,v 1.30 1999/01/07 10:58:31 asami Exp $
 #
 
 DISTNAME=	qt-1.42
@@ -16,7 +16,7 @@ LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-MAKE_ENV=	QTDIR=${WRKSRC}
+MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
 .include <bsd.port.pre.mk>
 
