@@ -3,10 +3,10 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.7 1995/02/13 18:08:49 ats Exp $
+# $Id: Makefile,v 1.6 1995/01/03 14:16:51 asami Exp $
 #
 
-DISTNAME=	mule-2.2
+DISTNAME=	mule-2.2.2
 DISTFILES=	emacs-19.28.tar.gz
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 USE_GMAKE=	yes
@@ -16,9 +16,11 @@ CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		  --wnn --wnn-libraries=/usr/X11R6/lib \
 		  --wnn-includes=/usr/X11R6/include/wnn --terminal-face
 WRKSRC=		${WRKDIR}/emacs-19.28
-PATCHFILES=	diff-19.28-2.2.gz
+PATCHFILES=	diff-19.28-2.2.gz patch-2.2.1.gz patch-2.2.2.gz
 .if !defined(MASTER_SITE_OVERRIDE)
+# Use one of these if you are in Japan
 # PATCHSITE=	sh.wide.ad.jp:/JAPAN/mule/
+# PATCHSITE=	etlport.etl.go.jp:/pub/mule/
 PATCHSITE=	ftp.cs.buffalo.edu:/pub/mule/
 .else
 PATCHSITE=	${MASTER_SITE_OVERRIDE}
