@@ -34,4 +34,10 @@ post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>
