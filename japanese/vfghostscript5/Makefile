@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1997/01/03 01:38:33 max Exp $
+# $Id: Makefile,v 1.5 1997/03/03 06:37:52 asami Exp $
 #
 
 DISTNAME=	ghostscript-4.03
@@ -84,6 +84,7 @@ do-configure:
 .endif
 
 pre-install:
+	@mkdir -p ${PREFIX}/share/ghostscript
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
