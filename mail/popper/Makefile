@@ -15,26 +15,26 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@freebsd.org
 
-# Set POPD_YOUBIN_SUPPORT variable in the environment to enable
+# Set WITH_POPPER_YOUBIN_SUPPORT variable in the environment to enable
 # youbin support.
 #
-# If APOP_ONLY variable present in the environment, popper builds
+# If WITH_POPPER_APOP_ONLY variable present in the environment, popper builds
 # with APOP authentification only.
 #
-# If FULL_POPD_DEBUG variable present in the environment, popper builds
+# If WITH_POPPER_DEBUG variable present in the environment, popper builds
 # with more verbose debugging.
 
 O_DEFS=		-DSETPROCTITLE -DKEEP_TEMP_DROP -DBSD44_DBM -DBIND43 \
 		-DBULLDB -DNONAUTHFILE='\"/etc/ftpusers\"'
 
-.if !defined(APOP_ONLY)
+.if !defined(WITH_POPPER_APOP_ONLY)
 P_LIBS=         -lopie
 O_DEFS+=        -DOPIE
 .else
 O_DEFS+=	-DAPOP_ONLY
 .endif
 
-.if defined(POPD_YOUBIN_SUPPORT)
+.if defined(WITH_POPPER_YOUBIN_SUPPORT)
 O_DEFS+=	-DYOUBIN -DCALLED_FROM_POPD
 .endif
 
@@ -43,7 +43,7 @@ P_LIBS+=	-lmd -lutil
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-apop=${PREFIX}/etc/popper/pop.auth \
 		--with-apopuid=pop
-.if defined(FULL_POPD_DEBUG)
+.if defined(WITH_POPPER_DEBUG)
 CONFIGURE_ARGS+=	--enable-debugging
 .endif
 CONFIGURE_ENV=	LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
