@@ -15,6 +15,8 @@ DISTFILES=	# none
 
 MAINTAINER=	eivind@FreeBSD.org
 
+BROKEN="Incompatible upgrade coming shortly"
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
