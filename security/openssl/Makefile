@@ -7,6 +7,7 @@
 
 PORTNAME=	openssl
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
@@ -33,7 +34,11 @@ PLIST_SUB+=	SHARED="@comment "
 .else
 PLIST_SUB+=	SHARED=""
 ALL_TARGET=	freebsd-shared all
+.if exists(/usr/lib/libcrypto.so.3)
+SHLIBVER=	4
+.else
 SHLIBVER=	3
+.endif
 MAKE_ENV+=	SHLIBVER=${SHLIBVER}
 PLIST_SUB+=	SHLIBVER=${SHLIBVER}
 INSTALLS_SHLIB=	yes
