@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Thu Jan 31 13:27:40 2002
++++ src/Makefile.in	Thu Jan 31 13:27:57 2002
+@@ -90,7 +90,7 @@
+ bin_PROGRAMS = soribada
+ soribada_SOURCES = conf.c mp3list.c misc.c 		mp3.c		mp3.h 		core.c		core.h 		protocol.c	protocol.h 		interface.c	interface.h 		callbacks.c	callbacks.h 		soribada.c	soribada.h
+ 
+-soribada_LDADD = @GTK_LIBS@ @INTLLIBS@
++soribada_LDADD = @GTK_LIBS@
+ INCLUDES = @GTK_CFLAGS@
+ CFLAGS = @CFLAGS@ -Wall -DLOCALE=\"$(datadir)/locale\"
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
