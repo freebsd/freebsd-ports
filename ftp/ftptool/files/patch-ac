@@ -1,0 +1,11 @@
+--- create_other.c.orig	Mon Aug 29 05:05:43 1994
++++ create_other.c	Wed Jul 23 19:19:05 2003
+@@ -1517,7 +1517,7 @@
+ 		PANEL_VALUE_DISPLAY_LENGTH, 4,
+ 		PANEL_VALUE_STORED_LENGTH, 40,
+ 		PANEL_MIN_VALUE, 1992,
+-		PANEL_MAX_VALUE, 2000,
++		PANEL_MAX_VALUE, 2999,
+ 		PANEL_ITEM_X, xv_get(schedule_window.day, XV_X)
+ 		    + xv_get(schedule_window.day, XV_WIDTH)
+ 		    + xv_col(schedule_window.panel, 1),
