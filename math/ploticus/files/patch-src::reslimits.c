@@ -1,5 +1,5 @@
---- reslimits.c.orig	Thu Mar  7 16:11:25 2002
-+++ reslimits.c	Thu Mar  7 16:11:48 2002
+--- reslimits.c.orig	Sat May 24 15:07:41 2003
++++ reslimits.c		Sat May 24 15:08:01 2003
 @@ -9,6 +9,7 @@
  #ifndef NORLIMIT
  
