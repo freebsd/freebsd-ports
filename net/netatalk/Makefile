@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5p8
-PORTREVISION=	2
+PORTVERSION=	1.5r1
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
-DISTNAME=	netatalk-1.5pre8
+DISTNAME=	netatalk-1.5rc1
 
 MAINTAINER=	marcus@marcuscom.com
 
@@ -48,18 +47,15 @@ CONFIGURE_ARGS+=		--with-flock-locks
 # Configure EXPERIMENTAL CNID DID support.  This is an attmept to make
 # DIDs more persistent by using a Berkeley database to store the DID values.
 # This should hopefully allow aliases to work between restarts of afpd.
-# This has been tested on MacOS 9.2.1.  I have not gotten working on OS X.
-CONFIGURE_ARGS+=		--enable-cnid-db \
+# This has been tested on MacOS 9.2.x and OS X.
+CONFIGURE_ARGS+=		--with-did=cnid \
 						--with-db3=/usr/local
 .else
 # This method of DID calculation is not persistent, but has been tested to
-# work with MacOS X (10.0.4 and 10.1) as well as MacOS 7-9.2.1.
+# work with MacOS X (10.0.3-10.1.1) as well as MacOS 7-9.2.2.
 CONFIGURE_ARGS+=		--with-did=last
 .endif
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	--add-missing --no-force
-USE_LIBTOOL=	yes
-LIBTOOLFILES=   configure
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
 		atalkd.conf papd.conf
@@ -79,10 +75,6 @@ MAN8=		afpd.8 atalkd.8 pap.8 papd.8 papstatus.8 psf.8 timelord.8
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/netatalk.sh \
 		> ${WRKSRC}/netatalk.sh
-	@${RM} -f ${WRKSRC}/missing ${WRKSRC}/mkinstalldirs
-
-post-configure:
-	@find ${WRKSRC} -type f | xargs ${TOUCH} -f
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
