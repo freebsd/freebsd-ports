@@ -26,6 +26,11 @@ CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 INFO=		oleo
 PORTDOCS=	AUTHORS FAQ
 
+OPTIONS=	MOTIF "Motif support" off \
+		NLS "NLS support" on
+
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_MOTIF)
 LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
 		Xbae:${PORTSDIR}/x11-toolkits/xbae \
@@ -43,16 +48,6 @@ PLIST_SUB=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
-.endif
-
-.include <bsd.port.pre.mk>
-
-pre-everything::
-.if !defined(WITH_MOTIF)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Motif support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_MOTIF=yes\""
-	@${ECHO_MSG}
 .endif
 
 post-patch:
