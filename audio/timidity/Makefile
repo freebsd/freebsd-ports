@@ -8,9 +8,9 @@
 PORTNAME=	timidity
 PORTVERSION=	0.2i
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/ \
-		http://www.goice.co.jp/member/mo/timidity/dist/
-DISTFILES=	${TIINS} ${DISTNAME}.tar.gz
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/misc/hardware/soundcard/gus/:tiins \
+		http://www.onicos.com/staff/iz/timidity/dist/:timidity
+DISTFILES=	${TIINS}:tiins ${DISTNAME}.tar.gz:timidity
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
