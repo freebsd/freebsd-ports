@@ -1,0 +1,11 @@
+--- configure.orig	Mon Feb 12 00:10:54 2001
++++ configure	Mon Feb 12 00:11:16 2001
+@@ -745,7 +745,7 @@
+ fi
+ 
+ if test -n "$GCC"; then
+-	CFLAGS="-O3 -Wall -Werror -ansi -pedantic"
++	CFLAGS="-ansi -pedantic"
+ fi
+ 
+ 

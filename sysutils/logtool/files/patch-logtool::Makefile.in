@@ -1,0 +1,19 @@
+--- logtool/Makefile.in.orig	Sun Feb 11 23:50:38 2001
++++ logtool/Makefile.in	Sun Feb 11 23:54:02 2001
+@@ -16,6 +16,7 @@
+ CC = @CC@
+ INSTALL = @installprog@
+ CFLAGS= @CFLAGS@ @DEFS@ @LIBS@
++LIBS=	-L/usr/local/lib -lgnugetopt
+ 
+ ### The stuff below is (I hope) no longer needed now that we us autoconf/configure and friends
+ # Solaris users should probably use the following instead (thanks Christoph Krempe <ck@ub.fu-berlin.de>)
+@@ -30,7 +31,7 @@
+ 
+ ### The main build stuff
+ logtool: logtool.o $(OBJS)
+-	$(CC) $(ADDCFLAGS) -o $(PROG) $(OBJS) 
++	$(CC) $(ADDCFLAGS) -o $(PROG) $(OBJS) ${LIBS}
+ 	@echo "strip $(PROG)"	
+ 	@strip $(PROG)
+ 
