@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TARGETS='semi-setup.el'
+TARGETS='semi-setupel.el'
 
 for i in ${TARGETS}
 do

@@ -27,6 +27,6 @@ To use flim, put the following setup into your ~/.emacs:
 
 	(require 'apel-setup)
 	(require 'flim-setup)
-	(require 'semi-setup)
+	(require 'semi-setupel)
 
 --- Porting by shige <shige@FreeBSD.ORG>
