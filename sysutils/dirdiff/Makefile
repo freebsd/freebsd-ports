@@ -7,13 +7,14 @@
 
 PORTNAME=	dirdiff
 PORTVERSION=	1.2
-CATEGORIES=	sysutils
+PORTREVISION=	1
+CATEGORIES=	sysutils tcl84 tk84
 MASTER_SITES=	ftp://samba.org/pub/paulus/
 
 MAINTAINER=	grog@FreeBSD.Org
 COMMENT=	A graphical diff tool
 
-BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 .include <bsd.port.mk>
