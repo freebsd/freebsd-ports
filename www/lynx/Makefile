@@ -35,7 +35,7 @@ L_DOC=		${PREFIX}/share/doc/lynx
 L_HELP=		${PREFIX}/share/lynx_help
 
 post-patch:
-	${RM} -f ${WRKSRC}/CHANGES.bak.orig
+	@${RM} -f ${WRKSRC}/CHANGES.orig
 
 post-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_DOC}
