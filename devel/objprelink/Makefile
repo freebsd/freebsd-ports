@@ -24,26 +24,29 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/objprelink
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${TAR} xfy ${DISTDIR}/binutils-${BINUTILS_VER}.tar.bz2
-	${MV} ${WRKSRC}/binutils-${BINUTILS_VER} ${WRKSRC}/binutils
-	cd ${WRKSRC} && ${GZIP_CMD} -dc ${DISTDIR}/objprelink.c.gz \
+	@${MKDIR} ${WRKSRC}
+	@cd ${WRKSRC} && ${TAR} xfy ${DISTDIR}/binutils-${BINUTILS_VER}.tar.bz2
+	@${MV} ${WRKSRC}/binutils-${BINUTILS_VER} ${WRKSRC}/binutils
+	@cd ${WRKSRC} && ${GZIP_CMD} -dc ${DISTDIR}/objprelink.c.gz \
 		> ${WRKSRC}/objprelink.c
 
 do-configure:
-.for DIR in bfd libiberty
-	cd ${WRKSRC}/binutils/${DIR}/ && \
+	@cd ${WRKSRC}/binutils/bfd/ && \
 		${SETENV} LDFLAGS="$$LDFLAGS -L${LOCALBASE}/lib" \
 		CFLAGS="$$CFLAGS -I${LOCALBASE}/include" \
 		CPPFLAGS="$$CPPFLAGS -I${LOCALBASE}/include" ./configure \
 		--disable-shared --enable-static
-.endfor
+	@cd ${WRKSRC}/binutils/libiberty/ && \
+                ${SETENV} LDFLAGS="$$LDFLAGS -L${LOCALBASE}/lib" \
+                CFLAGS="$$CFLAGS -I./../include" \
+                CPPFLAGS="$$CPPFLAGS -I./../include" ./configure \
+                --disable-shared --enable-static
 
 do-build:
 .for DIR in bfd libiberty
-	cd ${WRKSRC}/binutils/${DIR}/ && ${GMAKE}
+	@cd ${WRKSRC}/binutils/${DIR}/ && ${GMAKE}
 .endfor
-	${CC} ${CFLAGS} -static -o ${WRKSRC}/objprelink ${WRKSRC}/objprelink.c \
+	@${CC} ${CFLAGS} -static -o ${WRKSRC}/objprelink ${WRKSRC}/objprelink.c \
 		${WRKSRC}/binutils/bfd/libbfd.a \
 		${WRKSRC}/binutils/libiberty/libiberty.a \
 		-I${WRKSRC}/binutils/include -I${WRKSRC}/binutils/bfd \
@@ -51,6 +54,6 @@ do-build:
 		-L${LOCALBASE}/lib -lintl
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/objprelink ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/objprelink ${PREFIX}/bin
 
 .include <bsd.port.mk>
