@@ -7,6 +7,7 @@
 
 PORTNAME=	daapd
 PORTVERSION=	0.2.2c
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 EXTRACT_SUFX=	.tgz
