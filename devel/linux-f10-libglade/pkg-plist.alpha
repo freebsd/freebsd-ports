@@ -1,0 +1,10 @@
+usr/doc/libglade-0.7/AUTHORS
+usr/doc/libglade-0.7/COPYING
+usr/doc/libglade-0.7/ChangeLog
+usr/doc/libglade-0.7/NEWS
+usr/doc/libglade-0.7/README
+usr/lib/libglade-gnome.so.0
+usr/lib/libglade-gnome.so.0.2.2
+usr/lib/libglade.so.0
+usr/lib/libglade.so.0.2.2
+@dirrm usr/doc/libglade-0.7

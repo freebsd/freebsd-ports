@@ -172,6 +172,7 @@
     SUBDIR += libxalloc
     SUBDIR += lincvs
     SUBDIR += linguist
+    SUBDIR += linux-libglade
     SUBDIR += linux_devtools
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
