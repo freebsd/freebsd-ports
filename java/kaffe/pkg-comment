@@ -1,1 +1,1 @@
-Virtual machine to run Java(tm) bytecode (includes an Awt package)
+Java virtual machine including JIT compiler and AWT package
