@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-unix
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Mail arrival notification service package
 
+FORBIDDEN=	Locally exploitable buffer overflow in set-user-ID executable
+
 USE_IMAKE=		yes
 USE_X_PREFIX=		no
 USE_XPM=		yes
