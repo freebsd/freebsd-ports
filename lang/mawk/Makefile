@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An implementation of new/posix awk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 
