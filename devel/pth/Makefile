@@ -1,12 +1,12 @@
 # New ports collection makefile for:   pth
-# Version required:		1.0.5
+# Version required:		1.0.6
 # Date Created:			23 May 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.27 1999/08/03 10:58:11 rse Exp $
+# $Id: Makefile,v 1.28 1999/08/10 08:12:00 rse Exp $
 #
 
-DISTNAME=	pth-1.0.5
+DISTNAME=	pth-1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.engelschall.com/sw/pth/
