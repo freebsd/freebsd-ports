@@ -7,28 +7,25 @@
 
 PORTNAME=	amphetamine
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.dataway.ch/~lukasl/amph/files/
+MASTER_SITES=	http://n.ethz.ch/student/loehrerl/amph/files/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-data-${DATAVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D - Jump'n'run shooter
 
-LIB_DEPENDS=  	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_SDL=	yes
+USE_GMAKE=	yes
 
 DATAVERSION=	0.8.6
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-USE_X_PREFIX=	yes
-USE_XPM=	yes
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-
 post-install:
-	@(cd ${WRKDIR}/amph && ${TAR} -c -f - * ) \
-		| (cd ${PREFIX}/share/amph && ${TAR} --unlink -x -f -)
+	@cd ${WRKDIR}/amph && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/amph
 
 .include <bsd.port.mk>

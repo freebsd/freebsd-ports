@@ -1,8 +1,8 @@
 
 $FreeBSD$
-
---- Makefile.orig	Mon Mar 25 21:11:27 2002
-+++ Makefile	Tue Jul  2 14:46:57 2002
+ 
+--- Makefile.orig	Tue Mar 26 04:11:27 2002
++++ Makefile	Sun Aug  3 22:14:39 2003
 @@ -3,13 +3,13 @@
  #===============
  
@@ -20,7 +20,7 @@ $FreeBSD$
  SDL_HEADERS := $(shell $(SDL_CONFIG) --cflags)
  SDL_LIBS := $(shell $(SDL_CONFIG) --libs)
  
-@@ -22,7 +22,7 @@
+@@ -22,23 +22,23 @@
  
  # Directories to search for header files
  
@@ -29,7 +29,11 @@ $FreeBSD$
  
  # makemake variables
  
-@@ -32,13 +32,13 @@
+-LINKER       := g++
+-DEPENDFLAGS  := -g  ${SEARCHDIRS}
++LINKER       := ${CXX}
++DEPENDFLAGS  := ${SEARCHDIRS}
+ TOUCHHEADERS := ${MYCODEDIR}/*.h
  
  # C
  
