@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	imlib2
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	http://www.ny.us.rasterman.com/files/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ishmael27@home.com
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		ltdl.1:${PORTSDIR}/devel/libtool \
+		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		ungif.5:${PORTSDIR}/graphics/libungif \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		edb.1:${PORTSDIR}/databases/edb
+		ungif.5:${PORTSDIR}/graphics/libungif
 
 USE_X_PREFIX=	yes
 USE_FREETYPE=	yes
@@ -34,14 +35,5 @@ CONFIGURE_ARGS=	--enable-mmx
 
 post-configure:
 	@${PERL} -pi -e 's|\@localbase\@|${LOCALBASE}|g' ${WRKSRC}/imlib2-config
-
-post-install:
-	@strip ${PREFIX}/lib/libImlib2.so.1
-.for i in bump_map colormod testfilter
-	@strip ${PREFIX}/lib/loaders/filter/${i}.so
-.endfor
-.for i in argb bmp db gif jpeg png pnm tga tiff xpm
-	@strip ${PREFIX}/lib/loaders/image/${i}.so
-.endfor
 
 .include <bsd.port.post.mk>
