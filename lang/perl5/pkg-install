@@ -15,7 +15,7 @@ else
 	osreldate=`/usr/sbin/sysctl -n kern.osreldate`
 fi
 
-if [ $osreldate -ge 500043 ] ; then
+if [ $osreldate -ge 500043 -a $osreldate -lt 502100 ] ; then
 	${PKG_PREFIX}/bin/use.perl port
 fi
 
