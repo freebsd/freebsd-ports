@@ -4042,6 +4042,7 @@ linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-tiff	ports/graphics/linux-tiff
+linux-ungif	ports/graphics/linux-ungif
 linux-vmware-toolbox ports/emulators/linux-vmware-toolbox
 linux-winetools	ports/emulators/linux-winetools
 linux-xalf	ports/x11/linux-xalf
