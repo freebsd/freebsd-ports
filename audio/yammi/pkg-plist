@@ -23,9 +23,9 @@ share/icons/crystalsvg/32x32/apps/yammi.png
 share/icons/crystalsvg/48x48/apps/yammi.png
 share/icons/crystalsvg/64x64/apps/yammi.png
 share/applnk/Multimedia/yammi.desktop
+@dirrm share/doc/HTML/en/yammi
 @dirrm share/apps/yammi/icons/crystalsvg/22x22/actions
 @dirrm share/apps/yammi/icons/crystalsvg/22x22
 @dirrm share/apps/yammi/icons/crystalsvg
 @dirrm share/apps/yammi/icons
 @dirrm share/apps/yammi
-
