@@ -5,13 +5,14 @@
 #
 # $NetBSD: Makefile,v 1.1.1.1 2000/10/15 17:32:11 rh Exp $
 # $FreeBSD$
-# $Id: Makefile,v 1.11 2003/11/20 08:32:27 patrick Exp $
+# $Id: Makefile,v 1.13 2003/12/31 00:24:30 patrick Exp $
 #
 
 PORTNAME=	lilypond
 PORTVERSION=	2.0.1
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.lilypond.org//pub/LilyPond/v2.0/
+MASTER_SITES=	http://lilypond.org/download/v2.0/ \
+		http://www.atabersk.de/lilypond/
 
 MAINTAINER=	atamaniuk-ports@frobs.net
 COMMENT=	The GNU music typesetter
@@ -61,6 +62,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch:GNUmakefile.in
 .else
 PLIST_SUB+=	CONDITIONAL=""
 .endif
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 #IGNORING portlint 2.5.0 WARN: possible direct use of command "install" found at line 64. use ${INSTALL_foobaa} instead.
 INSTALL_INFO?=	install-info
