@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gbuffy
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	mail
-MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/
+MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/gbuffy-${PORTVERSION}/
 
 MAINTAINER=	olive@oban.frmug.org
 COMMENT=	A GTK+ multiple mailbox "biff" program
