@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	xemacs-comm-packages
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		bbdb-1.13-pkg.tar.gz \
+		bbdb-1.16-pkg.tar.gz \
 		eicq-1.05-pkg.tar.gz \
-		eudc-1.33-pkg.tar.gz \
+		eudc-1.34-pkg.tar.gz \
 		footnote-1.13-pkg.tar.gz \
 		gnats-1.12-pkg.tar.gz \
-		gnus-1.56-pkg.tar.gz \
+		gnus-1.57-pkg.tar.gz \
 		mew-1.14-pkg.tar.gz \
 		mh-e-1.13-pkg.tar.gz \
 		rmail-1.12-pkg.tar.gz \
-		supercite-1.17-pkg.tar.gz \
+		supercite-1.18-pkg.tar.gz \
 		tm-1.29-pkg.tar.gz \
-		vm-6.95-pkg.tar.gz \
+		vm-7.00-pkg.tar.gz \
 		zenirc-1.11-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
