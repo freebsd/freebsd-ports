@@ -1,8 +1,8 @@
-bin/cs
+bin/sacomp
 share/doc/sather/Bugs
 share/doc/sather/Changes
 share/doc/sather/Contributing
 share/doc/sather/FAQ
 share/doc/sather/License
 share/doc/sather/README
-share/doc/sather/manual.ps
+share/doc/sather/programmer-manual.ps
