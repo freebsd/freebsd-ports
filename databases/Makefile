@@ -165,6 +165,7 @@
     SUBDIR += sybase-ocsd
     SUBDIR += tcl-Mysql
     SUBDIR += tdb
+    SUBDIR += tinycdb
     SUBDIR += tkgnats
     SUBDIR += tora
     SUBDIR += typhoon
