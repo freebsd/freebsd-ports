@@ -6,51 +6,52 @@
 #
 
 PORTNAME=	gnugadu
-PORTVERSION=	0.2.2
+PORTVERSION=	1.0.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.slackware.pl/gg/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ggadu
 DISTNAME=	gg-${PORTVERSION}
 
-MAINTAINER=	doc@lublin.t1.pl
+MAINTAINER=	dotz@irc.pl
 COMMENT=	A GaduGadu client for X11/GTK
-
-WRKSRC=	${WRKDIR}/gg-${PORTVERSION}
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-WANT_GNOME=	yes
+USE_REINPLACE=	yes
+USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-.if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=	esound
-PKGNAMESUFFIX=	-esound
-.else
-CONFIGURE_ARGS+=	--disable-esd
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
 .endif
 
-.if defined(WITH_GNOME)
-CONFIGURE_ARGS+=	--enable-gnome
-USE_GNOME=	yes
-.else
-pre-everything::
-	@${ECHO_MSG}	"Define WITH_GNOME to include GNOME support"
-.endif
-.if defined(WITH_DOCKAPP)
-CONFIGURE_ARGS+=	--enable-dockapp
-.else
-pre-everything::
-	@${ECHO_MSG}	"Define WITH_DOCKAPP to include WindowMaker support"
-.endif
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}" \
+		CAT="${CAT}" \
+		GNUGADU_OPTIONS="${GNUGADU_OPTIONS}" \
+		REALCURDIR="${.CURDIR}"
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.gg
 
 post-patch:
-	@${PERL} -pi -e 's,CFLAGS =, CFLAGS += \@GTK_CFLAGS\@,; \
-		s,GTK_ CFLAGS,GTK_CFLAGS,' ${WRKSRC}/Makefile.in \
+	@${REINPLACE_CMD} -e 's,GTK_ CFLAGS,GTK_CFLAGS,' \
+		-e 's,CFLAGS =, CFLAGS += @GTK_CFLAGS@ ${PTHREAD_CFLAGS},' \
+		-e 's,@GTK_LIBS@,@GTK_LIBS@ ${PTHREAD_LIBS},'\
+		${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/Makefile.in
-	@${PERL} -pi -e 's,-O2,,; s,gtk-config,${GTK_CONFIG},' \
+	@${REINPLACE_CMD} -e 's,-O2,,' -e 's,gtk-config,${GTK_CONFIG},' \
 		${WRKSRC}/configure
 
 post-install:
-	     strip ${PREFIX}/bin/gg
+	${STRIP_CMD} ${PREFIX}/bin/gg
 
-.include <bsd.port.post.mk>
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+.include <bsd.port.mk>
