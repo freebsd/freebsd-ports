@@ -4,6 +4,7 @@
     SUBDIR += ElectricFence
     SUBDIR += ORBacus
     SUBDIR += ORBit
+    SUBDIR += ORBit2
     SUBDIR += SN
     SUBDIR += SWIG
     SUBDIR += SWIG-devel
