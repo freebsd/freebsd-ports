@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gpa
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/devel/
+MASTER_SITES=	ftp://ftp.guug.de/pub/fruis/gpa/
 
 MAINTAINER=	clive@FreeBSD.org
 
@@ -20,5 +20,6 @@ USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
 .include <bsd.port.mk>

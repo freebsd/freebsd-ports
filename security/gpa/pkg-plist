@@ -1,2 +1,8 @@
 bin/gpa
+share/gpa/gpa_tips.en
+share/gpa/gpa_tips.de
+share/gpa/gtkrc
+share/gpa/gpa_logo.ppm
 share/locale/de/LC_MESSAGES/gpa.mo
+share/locale/fr/LC_MESSAGES/gpa.mo
+@dirrm share/gpa
