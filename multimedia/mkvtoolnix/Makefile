@@ -37,6 +37,10 @@ post-patch:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 # gcc 3.2 was available on 5.x before this OSVERSION
 # do not build gcc 3.3 unless necessary
 .if ${OSVERSION} < 501103
