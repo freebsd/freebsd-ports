@@ -1459,6 +1459,7 @@ distribute	ports/mail/distribute
 diveintopython	ports/lang/diveintopython
 divxcalc	ports/graphics/divxcalc
 djbdns		ports/dns/djbdns
+djbdns-tools	ports/dns/djbdns-tools
 djbfft		ports/math/djbfft
 djvulibre	ports/graphics/djvulibre
 dk-openoffice-1.0	ports/editors/openoffice-1.0-dk
