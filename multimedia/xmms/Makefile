@@ -69,19 +69,6 @@ CONFIGURE_ARGS+=	--disable-esd
 PLIST_SUB+=	ESDPLUGIN:="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mlibpanel}!=""
-USE_GNOME+=	libpanel gnomeprefix
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gnome
-.else
-PKGNAMESUFFIX=	-gnome
-.endif
-PLIST_SUB+=	DATADIR="share/gnome" PANEL:=""
-.else
-CONFIGURE_ARGS+=	--without-gnome
-PLIST_SUB+=	DATADIR="share" PANEL:="@comment "
-.endif
-
 .if ${MACHINE_ARCH} != "i386"
 WITHOUT_3DNOW=	yes
 .endif
