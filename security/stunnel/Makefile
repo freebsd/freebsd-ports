@@ -1,12 +1,12 @@
 # New ports collection makefile for:	stunnel
-# Version required:	3.2
+# Version required:	3.3
 # Date created:		Mon Jan 11 11:53:54 EET 1999
 # Whom:			Martti Kuparinen <martti.kuparinen@ericsson.com>
 #
-# $Id: Makefile,v 1.4 1999/05/03 02:10:08 steve Exp $
+# $Id: Makefile,v 1.5 1999/06/06 16:54:51 steve Exp $
 #
 
-DISTNAME=	stunnel-3.2
+DISTNAME=	stunnel-3.3
 CATEGORIES=	security
 MASTER_SITES=	http://mike.daewoo.com.pl/computer/stunnel/ \
 		http://opensores.thebunker.net/pub/mirrors/stunnel/ \
@@ -27,7 +27,6 @@ MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
 .endif
 
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/stunnel
 MAN8=		stunnel.8
 
 cert:
