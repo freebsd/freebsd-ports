@@ -15,6 +15,7 @@
     SUBDIR += gnucash
     SUBDIR += gtimer
     SUBDIR += ical
+    SUBDIR += ithought
     SUBDIR += korganizer
     SUBDIR += kproject
     SUBDIR += loserjabber
