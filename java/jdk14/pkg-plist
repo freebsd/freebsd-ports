@@ -583,23 +583,23 @@ jdk%%JDK_VERSION%%/include-old/alloc_cache.h
 jdk%%JDK_VERSION%%/include-old/bag.h
 jdk%%JDK_VERSION%%/include-old/bool.h
 jdk%%JDK_VERSION%%/include-old/breakpoints.h
-jdk%%JDK_VERSION%%/include-old/bsd/byteorder_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/gc_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/hpi_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/io_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/jawt_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/jmath_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/jvm_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/miscdefs_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/path_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/sysmacros_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/timeval_md.h
-jdk%%JDK_VERSION%%/include-old/bsd/typedefs_md.h
 jdk%%JDK_VERSION%%/include-old/byteorder.h
 jdk%%JDK_VERSION%%/include-old/common_exceptions.h
 jdk%%JDK_VERSION%%/include-old/debug.h
 jdk%%JDK_VERSION%%/include-old/dll.h
 jdk%%JDK_VERSION%%/include-old/exceptions.h
+jdk%%JDK_VERSION%%/include-old/freebsd/byteorder_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/gc_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/hpi_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/io_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/jawt_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/jmath_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/jvm_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/miscdefs_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/path_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/sysmacros_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/timeval_md.h
+jdk%%JDK_VERSION%%/include-old/freebsd/typedefs_md.h
 jdk%%JDK_VERSION%%/include-old/gc.h
 jdk%%JDK_VERSION%%/include-old/hpi.h
 jdk%%JDK_VERSION%%/include-old/interpreter.h
@@ -633,8 +633,8 @@ jdk%%JDK_VERSION%%/include-old/utf.h
 jdk%%JDK_VERSION%%/include-old/util.h
 jdk%%JDK_VERSION%%/include-old/vmprofiler.h
 jdk%%JDK_VERSION%%/include-old/wrap.h
-jdk%%JDK_VERSION%%/include/bsd/jawt_md.h
-jdk%%JDK_VERSION%%/include/bsd/jni_md.h
+jdk%%JDK_VERSION%%/include/freebsd/jawt_md.h
+jdk%%JDK_VERSION%%/include/freebsd/jni_md.h
 jdk%%JDK_VERSION%%/include/jawt.h
 jdk%%JDK_VERSION%%/include/jni.h
 jdk%%JDK_VERSION%%/include/jvmdi.h
@@ -789,8 +789,8 @@ jdk%%JDK_VERSION%%/src.jar
 @unexec rmdir %D/share/java/classes 2>/dev/null || true
 @unexec rmdir %D/share/java 2>/dev/null || true
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
-@exec   %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # JDK%%JDK_VERSION%%"
-@unexec %D/bin/unregistervm JDK%%JDK_VERSION%%
+@exec   %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
+@unexec %D/bin/unregistervm FREEBSD-JDK%%JDK_VERSION%%
 @dirrm jdk%%JDK_VERSION%%/man/man1
 @dirrm jdk%%JDK_VERSION%%/man
 @dirrm jdk%%JDK_VERSION%%/lib/i386
@@ -812,8 +812,8 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386
 @dirrm jdk%%JDK_VERSION%%/jre/bin
 @dirrm jdk%%JDK_VERSION%%/jre
-@dirrm jdk%%JDK_VERSION%%/include/bsd
-@dirrm jdk%%JDK_VERSION%%/include-old/bsd
+@dirrm jdk%%JDK_VERSION%%/include/freebsd
+@dirrm jdk%%JDK_VERSION%%/include-old/freebsd
 @dirrm jdk%%JDK_VERSION%%/include-old
 @dirrm jdk%%JDK_VERSION%%/include
 @dirrm jdk%%JDK_VERSION%%/demo/sound/src

@@ -25,7 +25,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
-JDK_PATCHSET_VERSION=	3
+JDK_PATCHSET_VERSION=	4
 
 JDK13DIR?=	${LOCALBASE}/linux-jdk${JDK_VERSION}
 
@@ -40,7 +40,7 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 		LD_LIBRARY_PATH="" \
 		JAVA_COMPILER=""
 ALL_TARGET=	all images
-TAR=		gtar
+TAR=		gtar	# Necessary for proper extraction of sources
 BSD_TAR=	/usr/bin/tar
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
@@ -87,6 +87,6 @@ do-install:
 .endif
 
 post-install:
-	${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # JDK${JDK_VERSION}"
+	${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
 
 .include <bsd.port.post.mk>
