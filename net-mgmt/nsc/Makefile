@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	dirk
 
 MAINTAINER=	dirk@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Curses.pm:${PORTSDIR}/devel/p5-Curses
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
