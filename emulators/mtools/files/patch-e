@@ -1,6 +1,6 @@
---- floppyd.c.orig	Sat Jun  5 15:54:11 1999
-+++ floppyd.c	Sat Jun  5 15:55:41 1999
-@@ -668,7 +668,7 @@
+--- floppyd.c~	Thu Jul 22 00:41:08 1999
++++ floppyd.c	Thu Jul 22 00:42:36 1999
+@@ -675,7 +675,7 @@
  	/*
  	 * Ignore dead servers so no zombies should be left hanging.
  	 */
@@ -9,12 +9,3 @@
  
  	for (;;) {
  		int					new_sock;
-@@ -972,7 +972,7 @@
- 							 * Start a new session and group.
- 							 */
- 							setsid();
--							setpgrp();
-+							setpgrp(0, 0);
- #ifndef DEBUG
- 							close(2);
- 							open("/dev/null", O_WRONLY);
