@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f0db930b-496b-11d9-bf86-0050569f0001">
+    <topic>squid -- possible information disclosure</topic>
+      <affects>
+	<package>
+	  <name>squid</name>
+	  <range><lt>2.5.7_4</lt></range>
+	</package>
+      </affects>
+      <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>The squid-2.5 patches pages notes:</p>
+	  <blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-dothost">
+	    <p>In certain conditions Squid returns random data as error messages
+	       in response to malformed host name, possibly leaking random
+	       internal information which may come from other requests.</p>
+	  </blockquote>
+	</body>
+      </description>
+      <references>
+	<url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-dothost</url>
+      </references>
+      <dates>
+	<discovery>2004-11-23</discovery>
+        <entry>2004-12-09</entry>
+      </dates>
+  </vuln>
+
   <vuln vid="323784cf-48a6-11d9-a9e7-0001020eed82">
     <topic>viewcvs -- information leakage</topic>
     <affects>
