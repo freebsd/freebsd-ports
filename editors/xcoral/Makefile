@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcoral
-PORTVERSION=	3.40
+PORTVERSION=	3.42
 CATEGORIES=	editors
 MASTER_SITES=	http://xcoral.free.fr/
 
@@ -17,6 +17,7 @@ USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xcoral ${PREFIX}/bin
