@@ -1,0 +1,45 @@
+--- src/protocols/msn/slp.c.orig	2004-08-09 11:21:34.000000000 +0200
++++ src/protocols/msn/slp.c	2004-08-09 11:21:42.000000000 +0200
+@@ -640,13 +640,17 @@
+ 			/* It's not valid. Kill this off. */
+ 			char temp[32];
+ 			const char *c;
++			size_t offset;
+ 
++			memset(temp, 0, sizeof(temp));
+ 			/* Eww */
+ 			if ((c = strchr(status, '\r')) || (c = strchr(status, '\n')) ||
+ 				(c = strchr(status, '\0')))
+ 			{
+-				strncpy(temp, status, c - status);
+-				temp[c - status] = '\0';
++				offset = c - status;
++				if (offset >= sizeof(temp))
++					offset = sizeof(temp) - 1;
++				strncpy(temp, status, offset);
+ 			}
+ 
+ 			gaim_debug_error("msn", "Received non-OK result: %s\n", temp);
+--- src/protocols/msn/object.c.orig	2004-06-06 05:42:54.000000000 +0200
++++ src/protocols/msn/object.c	2004-08-09 11:30:43.000000000 +0200
+@@ -35,11 +35,17 @@
+ 	if ((tag = strstr(str, id "=\"")) != NULL) \
+ 	{ \
+ 		char buf[16]; \
++		size_t offset; \
+ 		tag += strlen(id "=\""); \
+ 		c = strchr(tag, '"'); \
+-		strncpy(buf, tag, c - tag); \
+-		buf[c - tag] = '\0'; \
+-		obj->field = atoi(buf); \
++		if (c != NULL) { \
++			memset(buf, 0, sizeof(buf)); \
++			offset = c - tag; \
++			if (offset >= sizeof(buf)) \
++				offset = sizeof(buf) - 1; \
++			strncpy(buf, tag, offset); \
++			obj->field = atoi(buf); \
++		} \
+ 	}
+ 
+ static GList *local_objs;
