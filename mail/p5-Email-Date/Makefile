@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Email-Date
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Email
@@ -16,7 +16,6 @@ MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Find and Format Date Headers
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${SITE_PERL}/Email/Abstract.pm:${PORTSDIR}/mail/p5-Email-Abstract \
 		${SITE_PERL}/Email/Simple.pm:${PORTSDIR}/mail/p5-Email-Simple \
 		${SITE_PERL}/${PERL_ARCH}/Time/Piece.pm:${PORTSDIR}/devel/p5-Time-Piece \
 		${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local \
