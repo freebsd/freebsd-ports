@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	5.02.2
+PORTVERSION=	5.04
 CATEGORIES=	lang
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
 
-SRC_DIST=	ghc-${PORTVERSION}-src-1${EXTRACT_SUFX} 
+SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX} 
 BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}
 BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}
 
