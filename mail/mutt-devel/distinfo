@@ -1,1 +1,6 @@
 MD5 (mutt/mutt-0.60e.tar.gz) = ca2707634bc00244650bf3cf08ee7c5e
+MD5 (mutt/02.redraw.PATCH) = 4edb0036b154edf73c37c58c324ba147
+MD5 (mutt/03.pager.PATCH) = 312686f11206c8d6d826fe30df3d39fd
+MD5 (mutt/05.pipemessage.PATCH) = 49cebfcbe7a1d48bd0677d6ec80869a7
+MD5 (mutt/08.deletethread.PATCH) = 9f7622763cac22cfd80648dbda725365
+MD5 (mutt/09.comments.PATCH) = 9186df5924d8c12373c34a29bc5473e2
