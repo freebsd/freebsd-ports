@@ -1,0 +1,25 @@
+************************************************************************
+IMP has been installed in %%IMPDIR%% with your blank
+configuration files.
+
+Horde must be configured and the tables created; if not, see
+`pkg_info -D -x horde'.
+
+Then, you might have to tune the configuration files located in
+%%CONFDIR%%/, specially the file servers.php.
+
+Then, you must login to Horde as a Horde Administrator to finish the
+configuration. Please read %%DOCSDIR%%/INSTALL.
+
+Warning: the filter system of IMP 3.x has been replaced by a separate
+******** application => check the port mail/ingo. Ingo provides a script
+         to migrate the existing filter rules from IMP 3.x, see Ingo's
+         documentation.
+
+To protect your configuration files, you have to restart Apache.
+
+To secure your installation, it is at least recommended that you change
+the default database password used by horde and imp.
+Then, you might change the 'session.save_path' setting in php.ini to a
+directory only readable and writeable by your webserver.
+************************************************************************
