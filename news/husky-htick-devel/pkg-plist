@@ -1,5 +1,2 @@
-@unexec install-info --delete %D/info/htick.info %D/info/dir
-info/htick.info
-@exec install-info %D/info/htick.info %D/info/dir
 share/doc/husky/htick.html
 bin/htick

@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_ARGS=	MSGEDCFG="\\\"~/.msged\\\""
 
+INFO=		msged
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/news/husky-base/Makefile.inc"
 .include <bsd.port.post.mk>

@@ -1,6 +1,3 @@
-@unexec install-info --delete %D/info/fidoconfig.info %D/info/dir
-info/fidoconfig.info
-@exec install-info %D/info/fidoconfig.info %D/info/dir
 share/doc/husky/fidoconfig.html
 lib/libfidoconfig.so.0.14
 lib/libfidoconfig.so.0

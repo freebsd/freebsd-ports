@@ -28,6 +28,7 @@ MLINKS=		fconf2.1 fconf2aquaed.1 \
 		fconf2.1 fconf2golded.1 \
 		fconf2.1 fconf2msged.1 \
 		fconf2.1 fconf2squish.1
+INFO=		fidoconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's^/fido/etc/config^${PREFIX}/etc/fido/config^' \
