@@ -360,7 +360,6 @@ lib/libitcl.a
 lib/libitcl21.a
 lib/libitcl.so
 lib/libitcl21.so.1.0
-lib/pkgIndex.tcl
 bin/itclsh2.1
 bin/itclsh
 include/itcl/itcl.h
@@ -382,7 +381,6 @@ lib/libitk.a
 lib/libitk21.a
 lib/libitk.so
 lib/libitk21.so.1.0
-lib/pkgIndex.tcl
 bin/itkwish2.1
 include/itcl/itk.h
 lib/itcl/itk2.1/Archetype.itk
