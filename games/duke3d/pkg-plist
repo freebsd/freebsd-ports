@@ -14,6 +14,6 @@ bin/duke3d
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/gnu.txt
-@dirrm share/doc/duke3d
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm duke3d/testdata
 @unexec rmdir duke3d 2> /dev/null || true
