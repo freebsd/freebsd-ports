@@ -1,5 +1,5 @@
-*** Makefile.orig	Mon Mar  6 09:00:20 1995
---- Makefile	Fri Sep 29 04:08:35 1995
+*** Makefile.orig	Mon Mar  6 15:00:20 1995
+--- Makefile	Tue Jan 25 23:25:46 2000
 ***************
 *** 5,23 ****
   endif
@@ -48,7 +48,7 @@
   endif
   
 ! DEBUG=-g
-  OPT=-O
+! OPT=-O
 ! CFLAGS=-Wall $(DEBUG) $(OPT) $(DEFS)
   
   # set this to where to install
@@ -61,8 +61,8 @@
   endif
   
 ! #DEBUG=-g
-  OPT=-O
-! CFLAGS=$(DEBUG) $(OPT) $(DEFS)
+! #OPT=-O
+! CFLAGS+=$(DEBUG) $(OPT) $(DEFS)
   
   # set this to where to install
   BINDIR=$(PREFIX)/bin
