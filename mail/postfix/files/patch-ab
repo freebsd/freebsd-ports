@@ -1,5 +1,5 @@
-*** conf/main.cf.orig	Mon Mar 29 22:10:14 1999
---- conf/main.cf	Mon Mar 29 22:13:09 1999
+*** conf/main.cf.orig	Mon Sep  6 22:20:55 1999
+--- conf/main.cf	Fri Sep 10 21:49:50 1999
 ***************
 *** 18,36 ****
   # Postfix support programs and daemons. This setting can be overruled
@@ -10,14 +10,14 @@
   # The command_directory parameter specifies the location of all
   # postXXX commands.  The default value is $program_directory.
   #
-! #command_directory = /usr/sbin
+! command_directory = /usr/sbin
   
   # The daemon_directory parameter specifies the location of all Postfix
   # daemon programs (i.e. programs listed in the master.cf file). The
   # default value is $program_directory. This directory must be owned
   # by root.
   #
-! #daemon_directory = /usr/libexec/postfix
+! daemon_directory = /usr/libexec/postfix
   
   # QUEUE AND PROCESS OWNERSHIP
   #
@@ -42,14 +42,7 @@
   # QUEUE AND PROCESS OWNERSHIP
   #
 ***************
-*** 40,53 ****
-  # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
-  # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
-  #
-! #mail_owner = postfix
-  
-  # The default_privs parameter specifies the default rights used by
-  # the local delivery agent for delivery to external file or command.
+*** 47,53 ****
   # These rights are used in the absence of a recipient user context.
   # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
   #
@@ -57,14 +50,7 @@
   
   # INTERNET HOST AND DOMAIN NAMES
   # 
---- 40,53 ----
-  # OWNS NO OTHER FILES OR PROCESSES ON THE SYSTEM.  In particular,
-  # don't specify nobody or daemon. PLEASE USE A DEDICATED USER.
-  #
-! mail_owner = postfix
-  
-  # The default_privs parameter specifies the default rights used by
-  # the local delivery agent for delivery to external file or command.
+--- 47,53 ----
   # These rights are used in the absence of a recipient user context.
   # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
   #
