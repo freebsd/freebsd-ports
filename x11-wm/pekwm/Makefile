@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pekwm
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://pekwm.babblica.net/files/source/
 
@@ -25,6 +25,17 @@ CONFIGURE_ARGS+=	--enable-xinerama
 pre-everything:
 	@${ECHO_CMD} "To enable xinerama support define WITH_XINERAMA"
 .endif
+
+.if defined(WITH_HARBOUR)
+CONFIGURE_ARGS+=	--enable-harbour
+.endif
+
+.if !defined(WITH_HARBOUR)
+pre-everything:
+	@${ECHO_CMD} "To enable basic DockApp support define WITH_HARBOUR"
+.endif
+
+MAN1=		pekwm.1
 
 post-install:
 	@strip ${PREFIX}/bin/pekwm

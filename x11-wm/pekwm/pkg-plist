@@ -3,8 +3,8 @@ share/pekwm/autoprops
 share/pekwm/config
 share/pekwm/keys
 share/pekwm/menu
+share/pekwm/mouse
 share/pekwm/start
-share/pekwm/themes/default/border.xpm
 share/pekwm/themes/default/bottom.xpm
 share/pekwm/themes/default/btn-close-fo.xpm
 share/pekwm/themes/default/btn-close-pr.xpm
@@ -15,6 +15,7 @@ share/pekwm/themes/default/btn-max-un.xpm
 share/pekwm/themes/default/btn-min-fo.xpm
 share/pekwm/themes/default/btn-min-pr.xpm
 share/pekwm/themes/default/btn-min-un.xpm
+share/pekwm/themes/default/harbour.xpm
 share/pekwm/themes/default/left.xpm
 share/pekwm/themes/default/right.xpm
 share/pekwm/themes/default/separator-fo.xpm
