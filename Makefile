@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.32 1997/04/26 20:38:05 asami Exp $
+# $Id: Makefile,v 1.33 1997/04/27 00:48:09 asami Exp $
 #
 
 SUBDIR += archivers
@@ -14,6 +14,7 @@ SUBDIR += devel
 SUBDIR += editors
 SUBDIR += emulators
 SUBDIR += games
+SUBDIR += german
 SUBDIR += graphics
 SUBDIR += japanese
 SUBDIR += korean
