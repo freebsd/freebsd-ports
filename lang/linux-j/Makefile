@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	linux-j
-PORTVERSION=	501a
+PORTVERSION=	501b
 CATEGORIES=	lang linux
 MASTER_SITES=	http://www.jsoftware.com/download/
-DISTNAME=	j501a_linux
+DISTNAME=	j${PORTVERSION}_linux
 DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	js@jeannot.org
 
 USE_LINUX=	yes
+USE_JAVA=	1.3+
 
 ONLY_FOR_ARCHS= i386
 
@@ -23,14 +24,18 @@ NO_WRKSUBDIR=	yes
 MAN1=           jconsole.1
 
 do-build:
-	@sed "s:PREFIX:$(PREFIX):" < ${FILESDIR}/jconsole > ${WRKSRC}/jconsole
+	@${SED} "s:PREFIX:$(PREFIX):g" < ${FILESDIR}/jconsole > ${WRKSRC}/jconsole
+	@${SED} "s:PREFIX:$(PREFIX):g" < ${FILESDIR}/jw > ${WRKSRC}/jw
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/jconsole ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/j501a/system/extras/help/man/${MAN1} ${PREFIX}/man/man1
+	@${INSTALL_SCRIPT} ${WRKSRC}/jw ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/j501b/system/extras/help/man/${MAN1} ${PREFIX}/man/man1
 	@${MKDIR} ${PREFIX}/lib/j
-	@cd ${WRKSRC}/j501a && tar -cf - system user profile.ijs readme.txt | tar -xf - -C ${PREFIX}/lib/j
-	@${INSTALL_PROGRAM} ${WRKSRC}/j501a/jconsole ${PREFIX}/lib/j/jconsole
+	@cd ${WRKSRC}/j501b && \
+		${TAR} -cf - system user profile.ijs readme.txt j.jar | \
+			${TAR} -xf - -C ${PREFIX}/lib/j
+	@${INSTALL_PROGRAM} ${WRKSRC}/j501b/jconsole ${PREFIX}/lib/j/jconsole
 	@brandelf -t Linux ${PREFIX}/lib/j/jconsole
 
 post-install:

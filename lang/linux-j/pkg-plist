@@ -1,7 +1,10 @@
 bin/jconsole
+bin/jw
+lib/j/j.jar
 lib/j/jconsole
 lib/j/profile.ijs
 lib/j/readme.txt
+lib/j/system/classes/classes.txt
 lib/j/system/classes/dict/dict.txt
 lib/j/system/classes/dict/dictdemo.ijs
 lib/j/system/classes/dict/jndict.ijs
@@ -142,7 +145,6 @@ lib/j/system/examples/graphics/isigraph/sines.ijs
 lib/j/system/examples/graphics/isigraph/smesser.ijs
 lib/j/system/examples/graphics/isigraph/spinner.ijs
 lib/j/system/examples/graphics/isigraph/spirals.ijs
-lib/j/system/examples/graphics/isigraph/star1.ijs
 lib/j/system/examples/graphics/isigraph/title.ijs
 lib/j/system/examples/graphics/misc/solid.ijs
 lib/j/system/examples/graphics/opengl/demo/basic1.ijs
@@ -281,7 +283,7 @@ lib/j/system/examples/ole/excel/excel.txt
 lib/j/system/examples/ole/excel/jdemo.xls
 lib/j/system/examples/ole/excel/jmacros.xls
 lib/j/system/examples/ole/excel/jsrvdemo.xls
-lib/j/system/examples/ole/excel/jsutil.xls
+lib/j/system/examples/ole/excel/jsutil.txt
 lib/j/system/examples/ole/excel/xldemo.ijs
 lib/j/system/examples/ole/excel/xlutil.ijs
 lib/j/system/examples/ole/ole.txt
@@ -369,6 +371,7 @@ lib/j/system/examples/socket/socklab.ijs
 lib/j/system/extras/config/colordef.ijs
 lib/j/system/extras/config/colorsmp.ijs
 lib/j/system/extras/config/config.txt
+lib/j/system/extras/config/pubschms.ijs
 lib/j/system/extras/config/scripts.ijs
 lib/j/system/extras/config/stdcfg.ijs
 lib/j/system/extras/help/box.jpg
@@ -669,6 +672,7 @@ lib/j/system/extras/help/jforc/_.htm
 lib/j/system/extras/help/jforc/a_first_look_at_j_programs.htm
 lib/j/system/extras/help/jforc/applied_mathematics_in_j.htm
 lib/j/system/extras/help/jforc/boxing_(structures).htm
+lib/j/system/extras/help/jforc/boxing_structures.htm
 lib/j/system/extras/help/jforc/calling_a_dll_under_windows.htm
 lib/j/system/extras/help/jforc/compound_verbs.htm
 lib/j/system/extras/help/jforc/contents.htm
@@ -677,6 +681,7 @@ lib/j/system/extras/help/jforc/control_structures.htm
 lib/j/system/extras/help/jforc/declarations.htm
 lib/j/system/extras/help/jforc/elementary_mathematics_in_j.htm
 lib/j/system/extras/help/jforc/empty_operands.htm
+lib/j/system/extras/help/jforc/error_messages.htm
 lib/j/system/extras/help/jforc/explicit-to-tacit_converter.htm
 lib/j/system/extras/help/jforc/first_look_at_forks.htm
 lib/j/system/extras/help/jforc/foreword.htm
@@ -700,6 +705,7 @@ lib/j/system/extras/help/jforc/loopless_code_iv.htm
 lib/j/system/extras/help/jforc/loopless_code_iverbs_have_ra.htm
 lib/j/system/extras/help/jforc/loopless_code_vi.htm
 lib/j/system/extras/help/jforc/loopless_code_vpartitions.htm
+lib/j/system/extras/help/jforc/modifying_an_array_m.htm
 lib/j/system/extras/help/jforc/modifying_an_array_m}.htm
 lib/j/system/extras/help/jforc/modular_code.htm
 lib/j/system/extras/help/jforc/more_verbs.htm
@@ -806,12 +812,13 @@ lib/j/system/extras/help/phrases/plotting.htm
 lib/j/system/extras/help/phrases/polynomials_rational.htm
 lib/j/system/extras/help/phrases/quadrature_simpson.htm
 lib/j/system/extras/help/phrases/random_numbers.htm
+lib/j/system/extras/help/phrases/rank.htm
 lib/j/system/extras/help/phrases/rank_class.htm
 lib/j/system/extras/help/phrases/references.htm
 lib/j/system/extras/help/phrases/representations.htm
 lib/j/system/extras/help/phrases/rotate_reflect.htm
 lib/j/system/extras/help/phrases/sorting.htm
-lib/j/system/extras/help/phrases/special_matrcies.htm
+lib/j/system/extras/help/phrases/special_matrices.htm
 lib/j/system/extras/help/phrases/specimens.htm
 lib/j/system/extras/help/phrases/structural.htm
 lib/j/system/extras/help/phrases/sums_means.htm
@@ -1056,6 +1063,7 @@ lib/j/system/extras/help/user/demo.htm
 lib/j/system/extras/help/user/design.htm
 lib/j/system/extras/help/user/devenv.htm
 lib/j/system/extras/help/user/dir_layout.htm
+lib/j/system/extras/help/user/dirpaths.htm
 lib/j/system/extras/help/user/dlls.htm
 lib/j/system/extras/help/user/enter_info.htm
 lib/j/system/extras/help/user/event_handlers.htm
@@ -1084,7 +1092,6 @@ lib/j/system/extras/help/user/grid_ctrl_prop.htm
 lib/j/system/extras/help/user/hints.htm
 lib/j/system/extras/help/user/input_log.htm
 lib/j/system/extras/help/user/installing_odbc.htm
-lib/j/system/extras/help/user/inti_scripts.htm
 lib/j/system/extras/help/user/isigraph_events.htm
 lib/j/system/extras/help/user/j_commands_events.htm
 lib/j/system/extras/help/user/j_java_applets.htm
@@ -1159,10 +1166,6 @@ lib/j/system/extras/help/user/relhigh.htm
 lib/j/system/extras/help/user/rich_text.htm
 lib/j/system/extras/help/user/richedit_control.htm
 lib/j/system/extras/help/user/running_labs.htm
-lib/j/system/extras/help/user/runtime.htm
-lib/j/system/extras/help/user/runtime_apps.htm
-lib/j/system/extras/help/user/runtime_overview.htm
-lib/j/system/extras/help/user/runtime_scripts.htm
 lib/j/system/extras/help/user/rxcopyright.htm
 lib/j/system/extras/help/user/script_bmp.htm
 lib/j/system/extras/help/user/script_colib.htm
@@ -1323,6 +1326,7 @@ lib/j/system/extras/labs/system/formedit.ijt
 lib/j/system/extras/labs/system/grid.ijt
 lib/j/system/extras/labs/system/gridexam.ijt
 lib/j/system/extras/labs/system/gridlow.ijt
+lib/j/system/extras/labs/system/lapack.ijt
 lib/j/system/extras/labs/system/mapfile.ijt
 lib/j/system/extras/labs/system/mappeddb.ijs
 lib/j/system/extras/labs/system/mappeddb.ijt
@@ -1357,10 +1361,12 @@ lib/j/system/extras/util/fiw.ijs
 lib/j/system/extras/util/formedit.ijs
 lib/j/system/extras/util/forms.ijs
 lib/j/system/extras/util/help.ijs
+lib/j/system/extras/util/helpndx.ijs
 lib/j/system/extras/util/jadecon.ijs
 lib/j/system/extras/util/jadefull.ijs
 lib/j/system/extras/util/jijs.ijs
 lib/j/system/extras/util/jpm.ijs
+lib/j/system/extras/util/jul.ijl
 lib/j/system/extras/util/lab.ijs
 lib/j/system/extras/util/lauthor.ijs
 lib/j/system/extras/util/newuser.ijs
@@ -1384,11 +1390,15 @@ lib/j/system/main/defs/build/hostdefs.sym
 lib/j/system/main/defs/build/netdefs.c
 lib/j/system/main/defs/build/netdefs.sym
 lib/j/system/main/defs/build/sym2ijs.ijs
+lib/j/system/main/defs/hostdefs_aix.ijs
 lib/j/system/main/defs/hostdefs_darwin.ijs
 lib/j/system/main/defs/hostdefs_linux.ijs
+lib/j/system/main/defs/hostdefs_sunos.ijs
 lib/j/system/main/defs/hostdefs_win32.ijs
+lib/j/system/main/defs/netdefs_aix.ijs
 lib/j/system/main/defs/netdefs_darwin.ijs
 lib/j/system/main/defs/netdefs_linux.ijs
+lib/j/system/main/defs/netdefs_sunos.ijs
 lib/j/system/main/defs/netdefs_win32.ijs
 lib/j/system/main/dir.ijs
 lib/j/system/main/dll.ijs
