@@ -1,0 +1,32 @@
+--- Makefile.orig	Sat Jan 24 02:38:09 2004
++++ Makefile	Sat Jan 24 23:52:55 2004
+@@ -1,22 +1,23 @@
+ .PHONY: all distdir dist clean
+ 
+-CC=gcc
+-CFLAGS=-Wall -O2
++#CC=gcc
++#CFLAGS=-Wall -O2
++PKGCONFIG=${LOCALBASE}/bin/pkg-config
+ VERSION=1.0
+ 
+ all: gnome-clipboard-daemon
+ 
+ gnome-clipboard-daemon: main.o gnome-clipboard-daemon.o selection-data-list.o
+-	$(CC) $(CFLAGS) main.o gnome-clipboard-daemon.o selection-data-list.o -o gnome-clipboard-daemon `pkg-config --libs gtk+-2.0`
++	$(CC) $(CFLAGS) main.o gnome-clipboard-daemon.o selection-data-list.o -o gnome-clipboard-daemon `$(PKGCONFIG) --libs gtk+-2.0`
+ 
+ main.o: main.c
+-	$(CC) $(CFLAGS) -c main.c -o main.o `pkg-config --cflags gtk+-2.0`
++	$(CC) $(CFLAGS) -c main.c -o main.o `$(PKGCONFIG) --cflags gtk+-2.0`
+ 
+ gnome-clipboard-daemon.o: gnome-clipboard-daemon.c gnome-clipboard-daemon.h
+-	$(CC) $(CFLAGS) -c gnome-clipboard-daemon.c -o gnome-clipboard-daemon.o `pkg-config --cflags gtk+-2.0`
++	$(CC) $(CFLAGS) -c gnome-clipboard-daemon.c -o gnome-clipboard-daemon.o `$(PKGCONFIG) --cflags gtk+-2.0`
+ 
+ selection-data-list.o: selection-data-list.c selection-data-list.h
+-	$(CC) $(CFLAGS) -c selection-data-list.c -o selection-data-list.o `pkg-config --cflags gtk+-2.0`
++	$(CC) $(CFLAGS) -c selection-data-list.c -o selection-data-list.o `$(PKGCONFIG) --cflags gtk+-2.0`
+ 
+ distdir:
+ 	rm -rf gnome-clipboard-daemon-$(VERSION)
