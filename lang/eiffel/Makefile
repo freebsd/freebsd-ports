@@ -8,7 +8,7 @@
 PORTNAME=	eiffel
 PORTVERSION=	13a
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cm.cf.ac.uk/pub/Eiffel/SIG/Eiffel-S-1.3/BSD/
+MASTER_SITES=	ftp://netsw.org/softeng/lang/eiffel/eiffels/
 DISTNAME=	${PORTNAME}s${PORTVERSION}
 EXTRACT_SUFX=	.freebsd.tar.gz
 
