@@ -3,17 +3,18 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/06/10 09:01:42 asami Exp $
+# $Id: Makefile,v 1.5 1997/09/14 21:36:25 max Exp $
 #
 
-DISTNAME=	xshodo
+DISTNAME=	xshodo2.0
 PKGNAME=        ja-xshodo-2.0
-CATEGORIES=	x11
+CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
-DISTFILES=	xshodo2.0.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
 USE_IMAKE=	yes
+MAN1=		xshodo.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
