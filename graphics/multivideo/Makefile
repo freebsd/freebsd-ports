@@ -10,7 +10,7 @@ PORTNAME=	multivideo
 PORTVERSION=	0.1.0
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.lis.inpg.fr/scientifique/bonnaud/multivideo/download/
+MASTER_SITES=	http://www.lis.inpg.fr/pages_perso/bonnaud/multivideo/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -18,7 +18,6 @@ COMMENT=	An image sequence viewer
 
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
-PLIST_FILES=	bin/multivideo
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
@@ -26,6 +25,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	default
+
+PLIST_FILES=	bin/multivideo
 
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 
