@@ -21,5 +21,6 @@ sbin/pmacctd
 %%EXAMPLESDIR%%/pmacctd-sql.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v1.conf.example
 %%EXAMPLESDIR%%/pmacctd-sql_v2.conf.example
+%%EXAMPLESDIR%%/ports.example
 @dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
