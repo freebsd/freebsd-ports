@@ -8,9 +8,8 @@
 PORTNAME=	xemacs-mule-packages
 PORTVERSION=	3.4
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS} \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	packages kiri/xemacs
+MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/xemacs|} \
+		${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
 DISTFILES=	\
 		edict-1.13-pkg.tar.gz \
 		egg-its-1.26-pkg.tar.gz \
@@ -51,12 +50,8 @@ post-install:
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_MSG} "    This is the set of the packages for xemacs with the mule-packages category."
-	@${ECHO_MSG} "You might be enough with this package installing xemacs-packages altogether for"
-	@${ECHO_MSG} "working at XEmacs but if you think it insufficient,you can install other"
-	@${ECHO_MSG} "packages of editors/xemacs-*-packages ports. These ports are prepared for the"
-	@${ECHO_MSG} "rack of corresponding XEmacs packages except for"
-	@${ECHO_MSG} "xemacs-packages,xemacs-mule-packages and xemacs-additional-packages by which all"
-	@${ECHO_MSG} "the additional packages those above will be installed at once."
+	@${ECHO_MSG} "You can get all packages altogether with installing xemacs-packages and work"
+	@${ECHO_MSG} "fine at XEmacs."
 	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
 	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
 	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
