@@ -29,9 +29,11 @@ CONFIGURE_ARGS+=	--enable-xinerama
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="-pipe -DNDEBUG -O2"
 
 MANCOMPRESSED=	yes
 MAN1=		golem.1
 
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=	-fPIC
+.endif
 .include <bsd.port.mk>
