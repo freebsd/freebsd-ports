@@ -793,6 +793,7 @@
     SUBDIR += pcre++
     SUBDIR += pcsc-lite
     SUBDIR += pear
+    SUBDIR += pear-Config
     SUBDIR += pear-Console_Getopt
     SUBDIR += pear-Console_Table
     SUBDIR += pear-Date
