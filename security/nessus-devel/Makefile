@@ -85,12 +85,20 @@ post-install:
 	fi
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
 .if ! exists(${PREFIX}/var/CA/serverkey.pem)
-.if ! defined(BATCH)
-	${PREFIX}/sbin/nessus-mkcert
-.else
-	${PREFIX}/sbin/nessus-mkcert -q
-.endif
+	@${ECHO} ""
+	@${ECHO} "**************************************************************************"   
+	@${ECHO} "To create and install a new certificate, type \"make cert\""
+	@${ECHO} "**************************************************************************"
+	@${ECHO} ""
 .endif
 	@${CAT} ${PKGMESSAGE}
+
+cert:
+	@${ECHO} ""
+	@${ECHO} "**************************************************************************"
+	@${ECHO} "The new certificate will be saved into ${PREFIX}/var/CA/serverkey.pem"
+	@${ECHO} "**************************************************************************"
+	@${ECHO} ""
+	${PREFIX}/sbin/nessus-mkcert
 
 .include <bsd.port.post.mk>

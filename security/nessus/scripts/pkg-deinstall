@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/nessus/scripts/Attic/pkg-deinstall,v 1.1 2004-11-09 18:29:03 sem Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/nessus/scripts/Attic/pkg-deinstall,v 1.2 2004-12-15 16:01:51 sem Exp $
 #
 
 ECHO_CMD=echo
@@ -18,9 +18,16 @@ POST-DEINSTALL)
     ${ECHO_CMD} "  rm -Rf %%PREFIX%%/var/nessus"
     ${ECHO_CMD}
   fi
+  rm_dir=""
   if [ -d %%PREFIX%%/com/CA ]; then
+    rm_dir=" %%PREFIX%%/com/CA"
+  fi
+  if [ -d %%PREFIX%%/var/CA ]; then
+    rm_dir="$rm_dir %%PREFIX%%/var/CA"
+  fi
+  if [ "x$rm_dir" != "x" ]; then
     ${ECHO_CMD} "- to remove the Certificate Authority associated with nessus:"
-    ${ECHO_CMD} "  rm -Rf %%PREFIX%%/com/CA"
+    ${ECHO_CMD} "  rm -Rf$rm_dir"
     ${ECHO_CMD}
   fi
   ${ECHO_CMD} "If you are upgrading, don't forget to restart"
