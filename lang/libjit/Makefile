@@ -24,6 +24,10 @@ MAN3=		libjit.3
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Segfault during build"
+.endif
+
 post-patch:
 .if ${OSVERSION} >=	502128
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
