@@ -19,12 +19,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src new_configure.tar.gz:patch
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Another X11 frontend to mkisofs/cdrecord
 
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext-old \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_X_PREFIX=	yes
+USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	253
 

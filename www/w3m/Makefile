@@ -53,7 +53,7 @@ PLIST_SUB+=	M17N="@comment "
 .endif
 
 .if defined(JAPANESE)
-LIB_DEPENDS+=		intl.5:${PORTSDIR}/devel/gettext-old
+USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	--enable-m17n --enable-japanese=E --with-migemo=yes
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo
