@@ -8,6 +8,7 @@ include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_exceptionlist.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_object.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_orb.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_poa.h
+include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_poaexceptionlist.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_sequence.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_simple_seq.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/orbitcpp_smartptr.h
@@ -33,7 +34,7 @@ include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/string_out.h
 include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers/string_var.h
 lib/libORBit-2-cpp.a
 lib/libORBit-2-cpp.so
-lib/libORBit-2-cpp.so.5
+lib/libORBit-2-cpp.so.6
 libdata/pkgconfig/ORBit-2.0-cpp.pc
 @dirrm include/orbitcpp-2.0/orbitcpp/orb-cpp/smartpointers
 @dirrm include/orbitcpp-2.0/orbitcpp/orb-cpp
