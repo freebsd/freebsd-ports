@@ -48,10 +48,10 @@ _DATADIR=	${DISTNAME:S/-//g:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
-MLINKS=		vim.1 rvim.1  vim.1 rview.1
+MLINKS=		vim.1 rvim.1	vim.1 rview.1
 .if !defined(LITE)
-MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  \
-		eview.1 gvimdiff.1
+MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
+		vim.1 rgvim.1	vim.1 rgview.1	evim.1 eview.1
 .endif
 
 WANT_GNOME=	yes
