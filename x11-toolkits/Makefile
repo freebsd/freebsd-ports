@@ -149,6 +149,7 @@
     SUBDIR += vdkbuilder
     SUBDIR += viewkit
     SUBDIR += viewklass
+    SUBDIR += vte
     SUBDIR += whistlerk
     SUBDIR += wxgtk
     SUBDIR += wxgtk-devel
