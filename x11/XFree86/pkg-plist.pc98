@@ -592,6 +592,7 @@ lib/X11/doc/Devices
 lib/X11/doc/Monitors
 lib/X11/doc/QuickStart.doc
 lib/X11/doc/README
+lib/X11/doc/README.3DLabs
 lib/X11/doc/README.Config
 lib/X11/doc/README.DECtga
 lib/X11/doc/README.DGA
@@ -600,7 +601,7 @@ lib/X11/doc/README.LinkKit
 lib/X11/doc/README.MGA
 lib/X11/doc/README.Mach32
 lib/X11/doc/README.Mach64
-lib/X11/doc/README.NV1
+lib/X11/doc/README.NVIDIA
 lib/X11/doc/README.Oak
 lib/X11/doc/README.P9000
 lib/X11/doc/README.S3
@@ -616,7 +617,11 @@ lib/X11/doc/README.ati
 lib/X11/doc/README.chips
 lib/X11/doc/README.cirrus
 lib/X11/doc/README.clkprog
+lib/X11/doc/README.cyrix
+lib/X11/doc/README.epson
 lib/X11/doc/README.mouse
+lib/X11/doc/README.neo
+lib/X11/doc/README.rendition
 lib/X11/doc/README.trident
 lib/X11/doc/README.tseng
 lib/X11/doc/RELNOTES
@@ -1132,6 +1137,7 @@ lib/X11/fonts/cyrillic/koi6x13.pcf.gz
 lib/X11/fonts/cyrillic/koi8x13.pcf.gz
 lib/X11/fonts/cyrillic/koi9x15.pcf.gz
 lib/X11/fonts/cyrillic/koinil2.pcf.gz
+lib/X11/fonts/local/fonts.dir
 lib/X11/fonts/misc/10x20.pcf.gz
 lib/X11/fonts/misc/12x24.pcf.gz
 lib/X11/fonts/misc/12x24rk.pcf.gz
@@ -1144,6 +1150,8 @@ lib/X11/fonts/misc/6x13B.pcf.gz
 lib/X11/fonts/misc/6x9.pcf.gz
 lib/X11/fonts/misc/7x13.pcf.gz
 lib/X11/fonts/misc/7x13B.pcf.gz
+lib/X11/fonts/misc/7x13euro.pcf.gz
+lib/X11/fonts/misc/7x13euroB.pcf.gz
 lib/X11/fonts/misc/7x14.pcf.gz
 lib/X11/fonts/misc/7x14B.pcf.gz
 lib/X11/fonts/misc/7x14rk.pcf.gz
@@ -1213,9 +1221,13 @@ lib/X11/locale/compose.dir
 lib/X11/locale/en_US.utf/XLC_LOCALE
 lib/X11/locale/iso8859-1/Compose
 lib/X11/locale/iso8859-1/XLC_LOCALE
+lib/X11/locale/iso8859-10/XLC_LOCALE
+lib/X11/locale/iso8859-15/Compose
+lib/X11/locale/iso8859-15/XLC_LOCALE
 lib/X11/locale/iso8859-2/Compose
 lib/X11/locale/iso8859-2/XLC_LOCALE
 lib/X11/locale/iso8859-3/XLC_LOCALE
+lib/X11/locale/iso8859-4/Compose
 lib/X11/locale/iso8859-4/XLC_LOCALE
 lib/X11/locale/iso8859-5/XLC_LOCALE
 lib/X11/locale/iso8859-6/XLC_LOCALE
@@ -1234,6 +1246,8 @@ lib/X11/locale/tbl_data/jis0201
 lib/X11/locale/tbl_data/jis0208
 lib/X11/locale/tbl_data/ksc5601
 lib/X11/locale/tbl_data/tab8859_1
+lib/X11/locale/tbl_data/tab8859_10
+lib/X11/locale/tbl_data/tab8859_15
 lib/X11/locale/tbl_data/tab8859_2
 lib/X11/locale/tbl_data/tab8859_3
 lib/X11/locale/tbl_data/tab8859_4
@@ -1242,7 +1256,7 @@ lib/X11/locale/tbl_data/tab8859_6
 lib/X11/locale/tbl_data/tab8859_7
 lib/X11/locale/tbl_data/tab8859_8
 lib/X11/locale/tbl_data/tab8859_9
-lib/X11/locale/tbl_data/tabkoi8-r
+lib/X11/locale/tbl_data/tabkoi8_r
 lib/X11/locale/th_TH.TACTIS/XLC_LOCALE
 lib/X11/locale/zh/XLC_LOCALE
 lib/X11/locale/zh_TW/XLC_LOCALE
@@ -1251,6 +1265,8 @@ lib/X11/rgb.txt
 lib/X11/rstart/commands/@List
 lib/X11/rstart/commands/ListContexts
 lib/X11/rstart/commands/ListGenericCommands
+lib/X11/rstart/commands/x
+lib/X11/rstart/commands/x11
 lib/X11/rstart/commands/x11r6/@List
 lib/X11/rstart/commands/x11r6/LoadMonitor
 lib/X11/rstart/commands/x11r6/Terminal
@@ -1343,8 +1359,8 @@ lib/X11/xkb/keymap/sgi/es
 lib/X11/xkb/keymap/sgi/fi
 lib/X11/xkb/keymap/sgi/fr
 lib/X11/xkb/keymap/sgi/fr_CH
-lib/X11/xkb/keymap/sgi/hu
 lib/X11/xkb/keymap/sgi/gb
+lib/X11/xkb/keymap/sgi/hu
 lib/X11/xkb/keymap/sgi/it
 lib/X11/xkb/keymap/sgi/jp
 lib/X11/xkb/keymap/sgi/no
@@ -1356,6 +1372,7 @@ lib/X11/xkb/keymap/sgi/th
 lib/X11/xkb/keymap/sgi/us
 lib/X11/xkb/keymap/sony
 lib/X11/xkb/keymap/sun/de
+lib/X11/xkb/keymap/sun/se
 lib/X11/xkb/keymap/sun/us
 lib/X11/xkb/keymap/xfree86
 lib/X11/xkb/keymap/xfree98
@@ -1408,6 +1425,7 @@ lib/X11/xkb/symbols/ru
 lib/X11/xkb/symbols/se
 lib/X11/xkb/symbols/sgi/jp
 lib/X11/xkb/symbols/sony/us
+lib/X11/xkb/symbols/sun/se
 lib/X11/xkb/symbols/sun/us
 lib/X11/xkb/symbols/th
 lib/X11/xkb/symbols/us
@@ -1426,57 +1444,60 @@ lib/X11/xsm/system.xsm
 lib/libFS.a
 lib/libICE.a
 lib/libICE.so
-lib/libICE.so.6.3
+lib/libICE.so.6
 lib/libPEX5.a
 lib/libPEX5.so
-lib/libPEX5.so.6.0
+lib/libPEX5.so.6
 lib/libSM.a
 lib/libSM.so
-lib/libSM.so.6.0
+lib/libSM.so.6
 lib/libX11.a
 lib/libX11.so
-lib/libX11.so.6.1
+lib/libX11.so.6
 lib/libXIE.a
 lib/libXIE.so
-lib/libXIE.so.6.0
+lib/libXIE.so.6
 lib/libXau.a
 lib/libXaw.a
 lib/libXaw.so
-lib/libXaw.so.6.1
+lib/libXaw.so.6
 lib/libXdmcp.a
 lib/libXdpms.a
 lib/libXext.a
 lib/libXext.so
-lib/libXext.so.6.3
+lib/libXext.so.6
 lib/libXi.a
 lib/libXi.so
-lib/libXi.so.6.0
+lib/libXi.so.6
 lib/libXmu.a
 lib/libXmu.so
-lib/libXmu.so.6.0
+lib/libXmu.so.6
 lib/libXp.a
 lib/libXp.so
-lib/libXp.so.6.2
+lib/libXp.so.6
 lib/libXss.a
 lib/libXt.a
 lib/libXt.so
-lib/libXt.so.6.0
+lib/libXt.so.6
 lib/libXtst.a
 lib/libXtst.so
-lib/libXtst.so.6.1
+lib/libXtst.so.6
 lib/libXxf86dga.a
 lib/libXxf86misc.a
 lib/libXxf86vm.a
 lib/liboldX.a
 lib/liboldX.so
-lib/liboldX.so.6.0
+lib/liboldX.so.6
 lib/libxkbfile.a
 lib/libxkbui.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/modules/pex5.so
+lib/modules/xf86AceCad.so
+lib/modules/xf86Dial.so
 lib/modules/xf86Elo.so
 lib/modules/xf86Jstk.so
+lib/modules/xf86MuTouch.so
 lib/modules/xf86Summa.so
 lib/modules/xf86Wacom.so
 lib/modules/xie.so
@@ -2606,6 +2627,8 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/locale/iso8859-3
 @dirrm lib/X11/locale/iso8859-2
 @dirrm lib/X11/locale/iso8859-1
+@dirrm lib/X11/locale/iso8859-10
+@dirrm lib/X11/locale/iso8859-15
 @dirrm lib/X11/locale/en_US.utf
 @dirrm lib/X11/locale/C
 @dirrm lib/X11/locale
@@ -2618,6 +2641,7 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/fonts/PEX
 @dirrm lib/X11/fonts/75dpi
 @dirrm lib/X11/fonts/100dpi
+@dirrm lib/X11/fonts/local
 @dirrm lib/X11/fonts
 @dirrm lib/X11/etc
 @dirrm lib/X11/doc
