@@ -10,7 +10,7 @@ PORTVERSION=	3.1.0
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-3.0/%SUBDIR%/
 
-MAINTAINER=	anders@andersa.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	POP3 mail retriever written in Python
 
 USE_PYTHON=	yes
