@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.208 1999/06/04 17:46:45 sada Exp $
+# $Id: Makefile,v 1.209 1999/06/06 17:08:54 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -35,6 +35,7 @@
     SUBDIR += crossfire
     SUBDIR += dontspace
     SUBDIR += doom
+    SUBDIR += dopewars
     SUBDIR += drm
     SUBDIR += empire
     SUBDIR += fkiss
@@ -79,6 +80,7 @@
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
+    SUBDIR += phalanx
     SUBDIR += pmars
     SUBDIR += pp
     SUBDIR += pysol
