@@ -3,7 +3,7 @@
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
-# $Id: Makefile,v 1.3 1999/07/09 06:17:21 cpiazza Exp $
+# $Id: Makefile,v 1.4 1999/08/17 19:36:54 cpiazza Exp $
 #
 
 DISTNAME=		FlightGear-${FLIGHTGEAR_VERSION}
@@ -21,14 +21,6 @@ RUN_DEPENDS=		mpg123:${PORTSDIR}/audio/mpg123
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
 
 FLIGHTGEAR_VERSION=	0.6.1
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400003
-BUILD_DEPENDS+=		g++295:${PORTSDIR}/lang/egcs
-CXX=			g++295
-.endif
-
 .if defined(BUILD_SCENERY_TOOLS)
 MASTER_SITES+=		ftp://ftp.cs.man.ac.uk/pub/amurta/
 DISTFILES+=		gfc-0.8.8.1b.tar.gz gpc231.tar.Z
@@ -51,6 +43,7 @@ ADDPATCHES=	${MASTERDIR}/patches.tools/disable-tools
 USE_AUTOCONF=	yes
 .endif
 
+USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/FlightGear/bin
 USE_GMAKE=	yes
@@ -73,4 +66,4 @@ pre-install:
 post-install:
 	${MV} ${PREFIX}/FlightGear/bin/runfgfs ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

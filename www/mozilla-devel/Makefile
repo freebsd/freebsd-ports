@@ -3,7 +3,7 @@
 # Date created:		31 Mar 1998
 # Whom:			eivind/dima/jseger
 #
-# $Id: Makefile,v 1.31 1999/08/17 19:37:10 cpiazza Exp $
+# $Id: Makefile,v 1.32 1999/08/22 19:00:43 mharo Exp $
 #
 
 DISTNAME=	mozilla-source-M8
@@ -17,14 +17,6 @@ LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
 		IDL.2:${PORTSDIR}/devel/ORBit \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400004
-BUILD_DEPENDS+=	g++295:${PORTSDIR}/lang/egcs
-CC=		gcc295
-CXX=		g++295
-.endif
-
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -33,6 +25,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NEWGCC=	yes
 CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--disable-md			\
@@ -63,4 +56,4 @@ do-install:
 	${TOUCH} ${PREFIX}/lib/mozilla/component.reg
 	${CHMOD} 666 ${PREFIX}/lib/mozilla/component.reg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
