@@ -13,7 +13,9 @@ DISTNAME=	${PORTNAME}-${HUGS_DATE}
 
 MAINTAINER=	obraun@FreeBSD.org
 
-ONLY_FOR_ARCHS=	i386
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
+BROKEN=	"Does not build on ${MACHINE_ARCH}"
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
