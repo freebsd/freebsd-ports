@@ -3,7 +3,7 @@
 # Date created:		1 Aug 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id:
+# $Id$
 #
 
 DISTNAME=	Thot
@@ -12,10 +12,10 @@ CATEGORIES=	editors www
 MASTER_SITES=	ftp://opera.inrialpes.fr/pub/sources/thot/
 DISTFILES=	thot-src-2.1b.tar.gz		\
 		thoteditor-src-2.1b.tar.gz
-EXTRACT_ONLY=	thot-src-2.1b.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 
+EXTRACT_ONLY=	thot-src-2.1b.tar.gz
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin
