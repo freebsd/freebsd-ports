@@ -1,0 +1,12 @@
+--- dstumbler/config.h.orig	Tue Feb 26 03:01:31 2002
++++ dstumbler/config.h	Mon Jul 21 13:58:00 2003
+@@ -134,7 +134,9 @@
+   { { 0x00, 0x04, 0x5a }, "Linksys" }, \
+   { { 0x00, 0x04, 0x76 }, "3Com" }, \
+   { { 0x00, 0x05, 0x5d }, "D-Link" }, \
++  { { 0x00, 0x07, 0x55 }, "Cisco Aironet" }, \
+   { { 0x00, 0x10, 0xe7 }, "BreezeNet" }, \
++  { { 0x00, 0x0b, 0x5f }, "Cisco Aironet" }, \
+   { { 0x00, 0x20, 0xd8 }, "NetWave-Bay" }, \
+   { { 0x00, 0x30, 0x65 }, "Apple" }, \
+   { { 0x00, 0x30, 0xab }, "Delta Networks" }, \
