@@ -1,0 +1,27 @@
+bin/geos-config
+include/geos/bigtest.h
+include/geos/geom.h
+include/geos/geosAlgorithm.h
+include/geos/graph.h
+include/geos/graphindex.h
+include/geos/indexBintree.h
+include/geos/indexChain.h
+include/geos/indexQuadtree.h
+include/geos/indexStrtree.h
+include/geos/indexSweepline.h
+include/geos/io.h
+include/geos/opBuffer.h
+include/geos/opDistance.h
+include/geos/opOverlay.h
+include/geos/opRelate.h
+include/geos/opValid.h
+include/geos/operation.h
+include/geos/platform.h
+include/geos/spatialIndex.h
+include/geos/unload.h
+include/geos/util.h
+lib/libgeos.a
+lib/libgeos.la
+lib/libgeos.so
+lib/libgeos.so.1
+@dirrm include/geos
