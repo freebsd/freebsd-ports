@@ -19,16 +19,14 @@ BUILD_DEPENDS=	${SITE_PERL}/Inline-API.pod:${PORTSDIR}/devel/p5-Inline
 LIB_DEPENDS=	openquicktime.0:${PORTSDIR}/multimedia/openquicktime
 RUN_DEPENDS=	${SITE_PERL}/Inline-API.pod:${PORTSDIR}/devel/p5-Inline
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=	Video::OpenQuicktime.3
 
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500600
-post-patch:
-	@${PERL} -pi -e "s/our $$VERSION/$$VERSION/g" \
-		${WRKSRC}/OpenQuicktime.pm
+IGNORE=		Perl 5.6 or higher is required for this port
 .endif
 
 .include <bsd.port.post.mk>
