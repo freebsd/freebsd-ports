@@ -113,6 +113,7 @@
     SUBDIR += globus2
     SUBDIR += gman
     SUBDIR += gnome-icon-theme
+    SUBDIR += gnome-osd
     SUBDIR += gnomehier
     SUBDIR += gnomemimedata
     SUBDIR += gnomesword

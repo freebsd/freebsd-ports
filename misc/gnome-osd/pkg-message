@@ -1,0 +1,6 @@
+-------------------------------------------------------------------------------
+IMPORTANT: the GConf daemon must be restarted after installing this
+port, by typing:
+
+	gconftool-2 --shutdown && gconftool-2 --spawn
+-------------------------------------------------------------------------------
