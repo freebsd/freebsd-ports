@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="282dfea0-3378-11d9-b404-000c6e8f12ef">
+    <topic>apache2 multiple space header denial-of-service vulnerability</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><le>2.0.52_2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>It is possible for remote attackers to cause a denial-of-service
+	  scenario on Apache 2.0.52 and earlier by sending an HTTP GET
+	  request with a MIME header containing multiple lines full of
+	  whitespaces.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0942</cvename>
+      <mlist msgid="a62f45480411010157571febcc.mail@gmail.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109930632317208</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-01</discovery>
+      <entry>2004-11-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3017ce1-32a4-11d9-a9e7-0001020eed82">
     <topic>socat -- format string vulnerability</topic>
     <affects>
