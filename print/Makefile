@@ -128,6 +128,7 @@
     SUBDIR += tr2latex
     SUBDIR += transfig
     SUBDIR += trueprint
+    SUBDIR += ttftot42
     SUBDIR += virtualpaper
     SUBDIR += xdvi
     SUBDIR += xdvik
