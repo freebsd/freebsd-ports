@@ -7,20 +7,24 @@
 #
 
 PORTNAME=	iverilog
-PORTVERSION=	0.7.20031009
+PORTVERSION=	0.7.20031202
 CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/snapshots/
-DISTNAME=	verilog-20031009
+DISTNAME=	verilog-20031202
 
 MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	A Verilog simulation and synthesis tool
-
-BROKEN=		"fails to compile - missing definition of TIME_FMT"
 
 USE_BISON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		iverilog-vpi.1 iverilog.1 vvp.1
+MAN1=		iverilog-vpi.1 iverilog.1 vvp.1 iverilog-fpga.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 500000
+BROKEN=		"Does not install on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
