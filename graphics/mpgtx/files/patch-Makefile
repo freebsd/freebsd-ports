@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Apr 24 21:02:33 2001
-+++ Makefile	Tue May 15 10:06:09 2001
+--- Makefile.orig	Thu Jul 12 20:03:42 2001
++++ Makefile	Thu Jul 12 20:13:26 2001
 @@ -1,5 +1,4 @@
  # installation dirs : Edit at your convenance
 -PREFIX=/usr
@@ -15,21 +15,18 @@
  SHARED_LFLAGS= -s
  STATIC_LFLAGS= -static -s
  DEVEL_LFLAGS= #-lefence
-@@ -48,14 +47,9 @@
- 	ln -sf mpgtx mpginfo  
- 	ln -sf mpgtx mpgdemux
- 	ln -sf mpgtx mp3tag
--	install -d -m 755  $(INSTALLDIR)
--	install -d -m 755  $(MANDIR)
+@@ -52,12 +51,10 @@
+ 	ln -sf mpgtx tagmp3
+ 	install -d -m 755  $(INSTALLDIR)
+ 	install -d -m 755  $(MANDIR)
 -	install -s -m 755 mpgtx $(INSTALLDIR)
--	cp  -df   mpgdemux mpgjoin mpgcat mpginfo mpgsplit mp3tag $(INSTALLDIR)
--	install -m 644 man/mpgtx.1 man/mp3tag.1 $(MANDIR) 
--	cd man ; make
--	cd ..
--	cp -df   ./man/mpgdemux.1 ./man/mpgjoin.1 man/mpgsplit.1 man/mpgcat.1 man/mpginfo.1 $(MANDIR)
+-	cp  -df   mpgdemux mpgjoin mpgcat mpginfo mpgsplit tagmp3 $(INSTALLDIR)
+-	install -m 644 man/mpgtx.1 man/tagmp3.1 $(MANDIR) 
 +	${INSTALL_PROGRAM} mpgtx $(INSTALLDIR)
-+	cp  -f   mpgdemux mpgjoin mpgcat mpginfo mpgsplit mp3tag $(INSTALLDIR)
-+	${INSTALL_MAN} man/mpgtx.1 man/mp3tag.1 $(MANDIR) 
++	${INSTALL_MAN} man/mpgtx.1 man/tagmp3.1 $(MANDIR) 
+ 	cd man ; make
+ 	cd ..
+-	cp -df   ./man/mpgdemux.1 ./man/mpgjoin.1 man/mpgsplit.1 man/mpgcat.1 man/mpginfo.1 $(MANDIR)
  
  uninstall:
  	rm -f 	$(INSTALLDIR)/mpgtx     
