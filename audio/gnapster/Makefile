@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gnapster
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	audio
-MASTER_SITES=	http://www.gotlinux.org/~jasta/files/
+MASTER_SITES=	http://www.faradic.net/~jasta/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
