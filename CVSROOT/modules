@@ -1800,6 +1800,7 @@ epiphany	ports/www/epiphany
 epiphany-extensions	ports/www/epiphany-extensions
 epiwm		ports/x11-wm/epiwm
 epix		ports/graphics/epix
+epm		ports/devel/epm
 epplets		ports/x11-wm/epplets
 eps2png		ports/graphics/eps2png
 epsmerge	ports/print/epsmerge
