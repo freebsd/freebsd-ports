@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarteiffel
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/SmartEiffel/Oldies/
 DISTNAME=	se-${PORTVERSION}
