@@ -1,0 +1,9 @@
+
+*****************************************************************************
+
+ Just run %%SMSH%% or %%SMSH%% -large
+ The first SciMark number reported is the composite score, followed by the an
+ approximate Mflop rate for each kernel.
+
+*****************************************************************************
+
