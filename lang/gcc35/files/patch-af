@@ -1,8 +1,8 @@
---- gcc/config/i386/freebsd.h.orig	Mon Nov 22 22:17:32 1999
-+++ gcc/config/i386/freebsd.h	Wed Dec 15 02:32:20 1999
-@@ -117,6 +117,10 @@
-  : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
-  : (-1))
+--- gcc/config/i386/freebsd.h.orig	Sun Jan 30 23:28:05 2000
++++ gcc/config/i386/freebsd.h	Fri Feb  4 05:22:36 2000
+@@ -52,6 +52,10 @@
+ #undef DBX_REGISTER_NUMBER
+ #define DBX_REGISTER_NUMBER(n)  svr4_dbx_register_map[n]
  
 +/* Don't use EGCS's normal profiling code -- we have our own fine-grained
 +   basic block profiling.  */
@@ -11,13 +11,15 @@
  /* Tell final.c that we don't need a label passed to mcount.  */
  
  #undef FUNCTION_PROFILER
-@@ -140,7 +144,15 @@
+@@ -73,11 +77,15 @@
+   
+ #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
-     
- #undef CPP_PREDEFINES
--#define CPP_PREDEFINES "-Di386 -Dunix -D__ELF__ -D__FreeBSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
-+#define CPP_PREDEFINES "-Di386 -Acpu(i386) -Amachine(i386)" CPP_FBSD_PREDEFINES
-+
+-    
+-#undef CPP_PREDEFINES
+-#define CPP_PREDEFINES "-Dunix -D__ELF__ -D__FreeBSD__\
+- -Asystem(unix) -Asystem(bsd) -Asystem(FreeBSD)"
+ 
 +#undef CC1_SPEC
 +#define CC1_SPEC "\
 +  %{gline:%{!g:%{!g0:%{!g1:%{!g2: -g1}}}}} \
@@ -25,10 +27,11 @@
 +
 +#undef  ASM_SPEC
 +#define ASM_SPEC	"%{v*: -v} %{maout: %{fpic:-k} %{fPIC:-k}}"
- 
++    
  /* Provide a STARTFILE_SPEC appropriate for FreeBSD.  Here we add
     the magical crtbegin.o file (see crtstuff.c) which provides part 
-@@ -149,11 +161,11 @@
+ 	of the support for getting C++ file-scope static object constructed 
+@@ -85,11 +93,11 @@
     
  #undef	STARTFILE_SPEC
  #define STARTFILE_SPEC \
@@ -45,7 +48,7 @@
  
  /* Provide a ENDFILE_SPEC appropriate for FreeBSD.  Here we tack on
     the magical crtend.o file (see crtstuff.c) which provides part of 
-@@ -163,7 +175,7 @@
+@@ -99,7 +107,7 @@
  
  #undef	ENDFILE_SPEC
  #define ENDFILE_SPEC \
