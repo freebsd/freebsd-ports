@@ -1,0 +1,19 @@
+*** ob/demo/chat/Receiver_impl.h.orig	Tue Jun 23 09:58:48 1998
+--- ob/demo/chat/Receiver_impl.h	Tue Jun 23 09:59:19 1998
+***************
+*** 14,20 ****
+  #include <Broadcaster.h>
+  #include <ReceiverBase_impl.h>
+  #include <OB/Reactor.h>
+! #include <termio.h>
+  
+  class Receiver_impl : public ReceiverBase_impl, public OBEventHandler
+  {
+--- 14,20 ----
+  #include <Broadcaster.h>
+  #include <ReceiverBase_impl.h>
+  #include <OB/Reactor.h>
+! #include <termios.h>
+  
+  class Receiver_impl : public ReceiverBase_impl, public OBEventHandler
+  {

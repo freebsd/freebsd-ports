@@ -1,47 +1,68 @@
-http://www.ooc.com/
-
-OmniBroker is an Object Request Broker (ORB) that is compliant to the
-Common Object Request Broker Architecture (CORBA) specification as
-defined in:
+ORBacus for C++ and Java is an Object Request Broker (ORB) that is
+compliant to the Common Object Request Broker Architecture (CORBA)
+specification as defined in:
 
   The Common Object Request Broker: Architecture and Specification
-  Revision 2.0, OMG Document 96-03-04
+  Revision 2.0, OMG document 97-02-25
 
-OmniBroker is free for non-commercial use. See the file LICENSE for
-details.
+and
 
-Some highlights of the OmniBroker Preview Release are:
+  IDL/Java Language Mapping, OMG document 97-03-01
+
+ORBacus for C++ and Java is free for non-commercial use and available
+with full source code. See the file LICENSE for details. For
+commercial licenses, please email OOC at support@ooc.com.
+
+Some highlights of ORBacus 3.0 Preview Release are:
 
 - Full CORBA IDL support
-
 - Complete CORBA IDL-to-C++ mapping
-
-- Uses IIOP as native protocol
-
-- Dynamic Invocation Interface
-
-- Dynamic Skeleton Interface
-
-- Interface Repository
-
-- Peer-to-Peer communication with nested method invocations
-
-- Support for non-blocking method invocations
-
+- Complete CORBA IDL-to-Java mapping
+- Includes the following Basic Services:
+  * Naming
+  * Event
+  * Property
+- Pluggable Protocols with IIOP as default plug-in
+- Single- and Multi-Threaded with many different concurrency models:
+  * Blocking
+  * Reactive
+  * Threaded
+  * Thread per Client
+  * Thread per Request
+  * Thread Pool
+- Nested method invocations even in the single-threaded version
 - Support for timeouts
+- Seamless event loop integration with X11 and Windows
+- Full support for dynamic programming:
+  * Dynamic Invocation Interface
+  * Dynamic Skeleton Interface
+  * Interface Repository
+  * DynAny for dynamic Any type handling
+- IDL-to-HTML and IDL-to-RTF translator for generating "javadoc"-like
+  documentation
 
-- Seamless integration with X11 and Windows
+The current Preview Release has the following limitations:
 
-- A COS compliant Naming Service
+- Only persistent (i.e. manually launched) servers are currently
+  supported
 
-The current beta version has the following limitations:
+ORBacus was tested to work on the following platforms:
 
-- Only persistent servers are currently supported
+- ORBacus for C++:
+  * SGI C++ 7.1 or 7.2            SGI Irix 6.2 or 6.3
+  * SUN C++ 4.1 or 4.2            SUN Solaris 2.5
+  * HP aC++ A.01.00 or A.01.03    HP-UX B.10.20
+  * AIX C Set ++ xlC 3.1.4.6      AIX Version 4.2.1
+  * GNU C++ 2.7.2                 Intel- or Sparc-based OS
+  * GNU C++ 2.8.1                 Any supported OS
+  * EGCS C++ 1.0.2                Any supported OS
+  * Visual C++ 4.2/5.0		  Windows NT 4.0
+  * Visual C++ 4.2/5.0		  Windows 95
 
-- No multi-threaded applications
+- ORBacus for Java:
+  * SUN's JDK 1.1.x or compatible
 
-Support for the GNU C++ compiler (version 2.7.2) is currently only
-experimental. The GNU C++ isn't fully supported yet due to the lack of
-a stable exception handling mechanism. On some platforms GNU C++
-doesn't support exception handling at all (e.g. MIPS), while on other
-platforms the exception handling is still very buggy (SPARC, Intel).
+For more information on ORBacus, please see the ORBacus manual or
+visit the ORBacus Home Page at http://www.ORBacus.com.
+
+For installation instructions, please see the file ../INSTALL.
