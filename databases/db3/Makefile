@@ -6,9 +6,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=       db-2.7.5
+DISTNAME=       db-2.7.7
 CATEGORIES=	databases
-MASTER_SITES=   ftp://ftp.sleepycat.com/pub/
+MASTER_SITES=	http://www.sleepycat.com/update/2.7.7/
 
 MAINTAINER=	josh@ican.net
 
