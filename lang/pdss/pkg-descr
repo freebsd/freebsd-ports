@@ -1,0 +1,14 @@
+PDSS-KL1 System
+
+Overview:
+    The KL1 programming environment on an ordinary UNIX system.
+
+Configuration:
+    * KL1-B (byte code) interpreter written in C.
+    * KL1 to KL1-B compilers written in KL1
+      (and SICStus Prolog. [MAINTAINER comment: What is this ?])
+    * Runtime support routines (command interpreter and I/O) written in KL1.
+    * GNU Emacs Libraries - KL1-mode to edit KL1 source programs and
+      PDSS-mode to run PDSS interactively through multiple emacs buffers.
+
+WWW: http://www.icot.or.jp/ARCHIVE/Museum/IFS/HomePage-E.html

@@ -133,6 +133,7 @@
     SUBDIR += p5-Tcl
     SUBDIR += p5-ePerl
     SUBDIR += pbasic
+    SUBDIR += pdss
     SUBDIR += perl5
     SUBDIR += perl5.8
     SUBDIR += pfe-devel

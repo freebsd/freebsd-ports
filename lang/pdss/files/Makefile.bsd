@@ -1,0 +1,75 @@
+#
+# ports/lang/pdss/Makefile
+#
+
+BINDIR?= ${PREFIX}/bin
+PDSSROOT?= ${PREFIX}/libexec/pdss
+PDSSSHARE?= ${PREFIX}/share/pdss
+
+MAKE_SUB=	${MAKE} PDSSROOT=${PDSSROOT} PDSSSHARE=${PDSSSHARE}
+
+SUBDIRS=	emulator	runtime		mpimos		compiler	\
+		debug_utl	pimos_utl
+
+SUBDIRS_SHARE=	macro		compiler_pl	doc.e		doc.j		\
+		sample		test
+
+FILES=		CONTENTS	COPYRIGHT	COPYRIGHT.J	INSTALL		\
+		INSTALL.J	README		README.J
+
+MACRO_FILES=	pdss		pimos
+
+COMPILER_PL_FILES= \
+		Makefile	aux2.pl		code_opt2.pl	comp2.pl	\
+		convert.pl	gen_kl1cmp.pl 	index2.pl	libdir.pl	\
+		macro2.pl	mrb4.pl		norm3.pl	pdss_blt.pl	\
+		pdss_sys.pl	pdsstrans.pl	read.pl		reg.pl		\
+		top2.pl		write2.pl
+
+DOC.E_FILES=	pdss.dvi	pdss.sty	pdss.tex
+
+DOC.J_FILES=	jmakeindex.c	pdss.dvi	pdss.sty	pdss.tex
+
+SAMPLE_FILES=	append.kl1	bestpath.kl1	bup.kl1		check.kl1	\
+		dead.kl1	espascal.kl1	etsmall.kl1	kl1cmp1.kl1	\
+		kl1cmp2.kl1	prime.kl1	prime_dd.kl1	qlay.kl1	\
+		queen.kl1	semi.kl1	tri.kl1
+
+TEST_FILES=	b_arith.kl1	b_arith_e.kl1	b_arith_s.kl1	b_atom.kl1	\
+		b_atom_e.kl1	b_atom_s.kl1	b_code.kl1	b_code_e.kl1	\
+		b_code_s.kl1	b_f_arith.kl1	b_f_arith_e.kl1	b_f_arith_s.kl1	\
+		b_f_func1.kl1	b_f_func1_e.kl1	b_f_func1_s.kl1	b_f_func2.kl1	\
+		b_f_func2_e.kl1	b_f_func2_s.kl1	b_f_tfunc.kl1	b_f_tfunc_e.kl1	\
+		b_f_tfunc_s.kl1	b_func.kl1	b_func_e.kl1	b_func_s.kl1	\
+		b_logic.kl1	b_logic_e.kl1	b_logic_s.kl1	b_merge.kl1	\
+		b_pri_e.kl1	b_pri_pro.kl1	b_pri_s.kl1	b_raise_e.kl1	\
+		b_raise_s.kl1	b_string.kl1	b_string_e.kl1	b_string_s.kl1	\
+		b_type.kl1	b_type_s.kl1	b_vector.kl1	b_vector_e.kl1	\
+		b_vector_s.kl1	br_cnst.kl1	check_cnst.kl1	g_arith.kl1	\
+		g_comp.kl1	g_diff.kl1	g_f_arith.kl1	g_f_comp.kl1	\
+		g_f_func1.kl1	g_f_func2.kl1	g_f_tfunc.kl1	g_func.kl1	\
+		g_logic.kl1	g_vec_str.kl1	get_cnst.kl1	get_cnst_e.kl1 	\
+		get_val.kl1	get_val_e.kl1	is_type.kl1	jnon_type.kl1	\
+		jnon_type_s.kl1	put_cnst.kl1	put_val.kl1	put_var.kl1	\
+		read_var.kl1	reuse.kl1	set_cnst.kl1	set_val.kl1	\
+		set_var.kl1	sw_type.kl1	test_cnst.kl1	type.kl1	\
+		type_s.kl1	wait_cnst.kl1	wait_cnst_s.kl1	wait_val.kl1	\
+		wait_val_s.kl1	write_cnst.kl1	write_val.kl1	write_var.kl1
+
+all:
+.for dir in ${SUBDIRS}
+	cd ${dir}; ${MAKE_SUB} all
+.endfor
+
+install:
+	${BSD_INSTALL_DIR} ${PDSSROOT}
+.for dir in ${SUBDIRS}
+	cd ${dir}; ${MAKE_SUB} install
+.endfor
+	${BSD_INSTALL_SCRIPT} pdsscmp ${BINDIR}
+	${BSD_INSTALL_DIR} ${PDSSSHARE}
+	${BSD_INSTALL_DATA} ${FILES} ${PDSSSHARE}
+.for dir in ${SUBDIRS_SHARE}
+	${BSD_INSTALL_DIR} ${PDSSSHARE}/${dir}
+	cd ${dir} ; ${BSD_INSTALL_DATA} ${${dir:U:C/(.*)/\1_FILES/}} ${PDSSSHARE}/${dir}/
+.endfor
