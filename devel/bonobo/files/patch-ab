@@ -1,20 +1,18 @@
---- Makefile.in.orig	Sat Aug 12 21:17:01 2000
-+++ Makefile.in	Mon Aug 14 10:44:14 2000
-@@ -149,3 +149,3 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Tue Jul  3 15:35:08 2001
++++ Makefile.in	Tue Jul  3 15:37:04 2001
+@@ -157,10 +157,10 @@
+ 
+ NULL = 
+ 
+-SUBDIRS =  	macros intl 				idl 					libefs 					bonobo storage-modules 			monikers				components samples	 		gshell					tests doc po
++SUBDIRS =  	macros intl 				idl 					libefs 					bonobo storage-modules 			monikers				components samples	 		gshell					doc po
+ 
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = bonoboConf.sh bonoboxConf.sh bonobox_printConf.sh
---- po/Makefile.in.in.orig	Mon Feb 21 23:37:16 2000
-+++ po/Makefile.in.in	Tue Feb 22 11:18:13 2000
-@@ -18,8 +18,8 @@
  
- prefix = @prefix@
- exec_prefix = @exec_prefix@
--datadir = $(prefix)/@DATADIRNAME@
--localedir = $(datadir)/locale
-+datadir = $(prefix)/share/locale
-+localedir = $(prefix)/share/locale
- gnulocaledir = $(prefix)/share/locale
- gettextsrcdir = $(prefix)/share/gettext/po
- subdir = po
+ include_HEADERS =  	bonobo.h
