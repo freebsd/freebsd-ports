@@ -5519,6 +5519,7 @@ phex		ports/net/phex
 phluid		ports/x11-wm/phluid
 photopc		ports/graphics/photopc
 php-dyn		ports/www/php-dyn
+php-mode.el	ports/lang/php-mode.el
 php-screw	ports/www/php-screw
 php-sqlrelay	ports/databases/php-sqlrelay
 php-templates	ports/www/php-templates
