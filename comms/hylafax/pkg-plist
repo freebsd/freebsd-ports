@@ -25,6 +25,7 @@ sbin/faxcron
 sbin/faxdeluser
 sbin/faxgetty
 sbin/faxinfo
+sbin/faxlock
 sbin/faxmodem
 sbin/faxmsg
 sbin/faxq
