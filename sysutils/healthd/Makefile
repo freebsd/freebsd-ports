@@ -23,13 +23,12 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 MAN8=		healthd.8 healthdc.8
 INSTALL_TARGET=	install-all
 
-PLIST=		${WRKDIR}/PLIST.BASE
 HDDOCDIR=	${PREFIX}/share/doc/healthd
 
-pre-install:
-	@cp ${.CURDIR}/pkg-plist ${WRKDIR}/PLIST.BASE
-.if !defined(NOPORSDOCS)
-	@cat ${.CURDIR}/pkg-plist.doc >> ${WRKDIR}/PLIST.BASE
+.if !defined(NOPORTDOCS)
+PLIST_SUB=	HDDOCS=''
+.else
+PLIST_SUB=	HDDOCS='@comment '
 .endif
 
 post-install:
