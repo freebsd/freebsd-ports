@@ -6,11 +6,11 @@
 #
 
 PORTNAME=		kgpg
-PORTVERSION=		0.9.4
+PORTVERSION=		0.9.5
 CATEGORIES=		security kde
 MASTER_SITES=		http://devel-home.kde.org/~kgpg/src/
 
-MAINTAINER=		rick@help-desk.ca
+MAINTAINER=		rick@rptn.net
 
 RUN_DEPENDS=		gpg:${PORTSDIR}/security/gnupg
 

@@ -1,4 +1,23 @@
 bin/kgpg
+share/doc/HTML/en/kgpg/editor.png
+share/doc/HTML/en/kgpg/editor_clear.png
+share/doc/HTML/en/kgpg/index.docbook
+share/doc/HTML/en/kgpg/keygen.png
+share/doc/HTML/en/kgpg/keymanage.png
+share/doc/HTML/en/kgpg/keys.png
+share/doc/HTML/en/kgpg/menu.png
+share/doc/HTML/en/kgpg/options.png
+share/doc/HTML/en/kgpg/index.cache.bz2
+share/doc/HTML/en/kgpg/kicker.png
+share/doc/HTML/en/kgpg/common
+share/doc/HTML/sv/sv/index.docbook
+share/doc/HTML/sv/sv/keygen.png
+share/doc/HTML/sv/sv/keymanage.png
+share/doc/HTML/sv/sv/keys.png
+share/doc/HTML/sv/sv/menu.png
+share/doc/HTML/sv/sv/options.png
+share/doc/HTML/sv/sv/index.cache.bz2
+share/doc/HTML/sv/sv/common
 share/icons/hicolor/16x16/actions/kgpg_key1.png
 share/icons/hicolor/16x16/actions/kgpg_key2.png
 share/icons/hicolor/16x16/apps/kgpg.png
@@ -15,9 +34,23 @@ share/icons/hicolor/22x22/actions/kgpg_identity.png
 share/icons/hicolor/32x32/apps/kgpg.png
 share/icons/hicolor/48x48/apps/kgpg.png
 share/applnk/Applications/kgpg.desktop
-share/applnk/Applications/keymanager.desktop
 share/apps/kgpg/kgpg.rc
 share/apps/kgpg/listkeys.rc
 share/apps/kgpg/tips
+share/apps/kgpg/pics/kgpg.png
 share/apps/konqueror/servicemenus/encryptfile.desktop
-@dirrm share/apps/kgpg
+share/autostart/kgpg.desktop
+share/locale/da/LC_MESSAGES/kgpg.mo
+share/locale/de/LC_MESSAGES/kgpg.mo
+share/locale/es/LC_MESSAGES/kgpg.mo
+share/locale/fr/LC_MESSAGES/kgpg.mo
+share/locale/it/LC_MESSAGES/kgpg.mo
+share/locale/pl/LC_MESSAGES/kgpg.mo
+share/locale/pt/LC_MESSAGES/kgpg.mo
+share/locale/pt_BR/LC_MESSAGES/kgpg.mo
+share/locale/sv/LC_MESSAGES/kgpg.mo
+share/locale/zh_CN/LC_MESSAGES/kgpg.mo
+share/locale/zh_TW/LC_MESSAGES/kgpg.mo
+@dirrm share/doc/HTML/en/kgpg
+@dirrm share/doc/HTML/sv/sv
+@dirrm share/doc/HTML/sv
