@@ -1,12 +1,12 @@
 # New ports collection makefile for:	autoconf
-# Version required:     2.5
+# Version required:     2.6
 # Date created:		7 October 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/12 07:11:56 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/19 17:49:00 ache Exp $
 #
 
-DISTNAME=       autoconf-2.5
+DISTNAME=       autoconf-2.6
 CATEGORIES=	development programming
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
