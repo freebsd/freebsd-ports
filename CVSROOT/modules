@@ -1317,7 +1317,6 @@ easygtk		ports/x11-toolkits/easygtk
 easysoap	ports/net/easysoap
 easysok		ports/games/easysok
 easytag		ports/audio/easytag
-eazel-themes	ports/x11-toolkits/eazel-themes
 ebnf2yacc	ports/devel/ebnf2yacc
 eboard		ports/games/eboard
 eboxy		ports/devel/eboxy
