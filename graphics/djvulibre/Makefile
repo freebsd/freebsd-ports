@@ -5,37 +5,63 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libdjvu++
-PORTVERSION=	2.1.1
+PORTNAME=	djvulibre
+PORTVERSION=	3.5.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://djvu.research.att.com/open/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	djvu
 
 MAINTAINER=	mi@aldan.algebra.com
 
-INSTALLS_SHLIB=	yes
-IS_INTERACTIVE=	some think, the AT&T license needs to be acked by the user
-USE_NEWGCC=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CXX=${CXX}
-CONFIGURE_ARGS=	--with-cxxflag="${CXXFLAGS}"
-MAKE_ARGS=	OPT="" -j 2
-
-pre-patch:
-	${SH} ${WRKSRC}/RunMe
-
-do-install:
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} c44 d44 djvutopnm djvumake \
-		djvuextract ppmcoco bzz djvuinfo ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libdjvu++.a ${WRKSRC}/libdjvu++.so.2* \
-		 ${PREFIX}/lib
-	${LN} -sf libdjvu++.so.2* ${PREFIX}/lib/libdjvu++.so
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/djvu
-	${INSTALL_DATA} ${WRKSRC}/@Doc/* ${PREFIX}/share/doc/djvu
-
-PLIST_SUB+=	DOC=''
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		giconv:${PORTSDIR}/converters/iconv
+.ifndef WITHOUT_X11
+USE_QT_VER=	2
+#LIB_DEPENDS+=	qt2:${PORTSDIR}/x11-toolkits/qt23
 .else
-PLIST_SUB+=	DOC='@comment '
+PKGNAMESUFFIX=	-nox11
+.endif
+
+HAS_CONFIGURE=	yes
+CONFIGURE_ENV=	JPEG_CFLAGS=-I"${LOCALBASE}/include" \
+		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg"
+CONFIGURE_ARGS=	--enable-threads=posix --enable-shared # --enable-rpo
+
+.ifndef WITHOUT_X11
+CONFIGURE_ENV+=	CXX=${CXX} PTHREAD_CFLAGS=-pthread PTHREAD_LIBS=-pthread \
+		MOC=${LOCALBASE}/bin/moc2 UIC=${LOCALBASE}/bin/uic \
+		QT_CFLAGS=-I"${LOCALBASE}/include/qt2" \
+		QT_LIBS="-L${LOCALBASE}/lib -lqt2"
+.else
+CONFIGURE_ARGS+=--disable-djview
+.endif
+
+MAKE_ARGS+=	-j2
+
+.if defined(LOCALBASE) && ${LOCALBASE} != "/usr/local"
+pre-configure:
+	${PERL} -pi -e 's,/usr/local,${LOCALBASE},g' `find ${WRKSRC} \
+		-type f -print0 | xargs -0 ${GREP} -Fl --mmap /usr/local`
+.endif
+
+post-configure:
+	${PERL} -pi -e 's,-O3,,;' -e 's,-mcpu=i386,,; ' \
+		-e 's,^(OPTS =.*),\1 ${CFLAGS},' \
+		${WRKSRC}/*/Makefile ${WRKSRC}/*/*/Makefile
+
+MAN1=	bzz.1 c44.1 cjb2.1 cpaldjvu.1 csepdjvu.1 ddjvu.1 djvm.1 djvmcvt.1 djvu.1 \
+	djvudump.1 djvuextract.1 djvumake.1 djvups.1 djvused.1 djvuserve.1 djvutxt.1
+.ifndef WITHOUT_X11
+MAN1+=	djview.1 nsdejavu.1
+PLIST_SUB+=	X11=''
+.else
+PLIST_SUB+=	X11='@comment '
+.endif
+
+.ifndef NOPORTDOCS
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
