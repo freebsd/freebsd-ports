@@ -18,6 +18,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
