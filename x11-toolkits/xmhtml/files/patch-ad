@@ -1,11 +1,24 @@
---- ./examples/Imakefile.org	Wed May 12 01:31:48 1999
-+++ ./examples/Imakefile	Wed May 12 02:04:00 1999
-@@ -36,7 +36,7 @@
-      DEPLIBS = $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+--- lib/Makefile.orig	Wed Feb  3 19:43:26 1999
++++ lib/Makefile	Tue Nov  2 01:28:54 1999
+@@ -25,7 +25,7 @@
+ # Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.         #
+ ##############################################################################
+ #
+-LIBRARY=libXmHTML.a
++LIBRARY=libXmHTML.la
  
- XCOMM required libraries
--LOCAL_LIBRARIES = $(XMHTMLLIB) $(XMLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB)
-+LOCAL_LIBRARIES = $(XMHTMLLIB) $(MOTIFLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB)
+ # Target to make
+ TARGET=$(LIBRARY)
+@@ -44,9 +44,9 @@
+ 	@(set -x; cd common; $(MAKE) all $(pass_flags) )
  
- XCOMM common routines for all examples
- XCOMM
+ $(TARGET):: common $(PLATFORM) 
+-	$(RM) $@ \ 
+-	$(AR) $@ common/*.o $(PLATFORM)/*.o
+-	$(RANLIB) $@
++	$(RM) $@
++	$(CC) -o $@ common/*.lo $(PLATFORM)/*.lo \
++		-rpath ${PREFIX}/lib -version-info 1:2
+ 	
+ depend:: 
+ 	@( for dir in $(SUBDIRS) ; do \

@@ -1,60 +1,155 @@
---- XmHTML.cf.orig	Sat Feb 20 13:38:17 1999
-+++ XmHTML.cf	Sat Feb 20 14:08:18 1999
-@@ -22,10 +22,10 @@
- XCOMM
- 
- XCOMM This specifies where the XmHTML library will be installed
--#define XmHTMLLibDir $(USRLIBDIR)
-+#define XmHTMLLibDir /usr/X11R6/lib
- 
- XCOMM This specifies where the XmHTML header files will be installed
--#define XmHTMLIncDir $(INCROOT)/XmHTML
-+#define XmHTMLIncDir /usr/X11R6/include/XmHTML
- 
- XCOMM You may need to modify the following DEFINES as follows:
- XCOMM if your system doesn't provide str[n]casecmp, add -DNEED_STRCASECMP
-@@ -51,6 +51,11 @@
- DEFINES = -DNEED_STRCASECMP
- #endif
- 
-+BUILDINCTOP= ..
-+BUILDBINTOP= ..
-+BUILDLIBTOP= ..
-+INSTINCFLAGS = -c -m 0444
-+
- XCOMM Image support configuration
- 
- XCOMM XPM support.
-@@ -59,8 +64,8 @@
- XCOMM Uncomment and fill in the proper paths to xpm.h and libXpm
- XCOMM The defaults are /usr/X11R6/include (or wherever your X includes live)
- XCOMM and /usr/X11R6/lib (or wherever your X libraries live)
--XCOMM XPMINCLUDES  = -I$(INCROOT)/X11
--XCOMM XPMLIBRARIES = -L$(LIBDIR) -lXpm
-+XPMINCLUDES  = -I$(INCROOT)/X11
-+XPMLIBRARIES = -L$(LIBDIR) -lXpm
- 
- XCOMM
- XCOMM JPEG Support. Enabled by default.
-@@ -74,8 +79,8 @@
- XCOMM Required include files: jpeglib.h, jconfig.h, jmorecfg.h
- XCOMM
- #if (IHaveJPEG)
--JPEGINC =
--JPEGLIB = -ljpeg
-+JPEGINC = -I/usr/local/include
-+JPEGLIB = -ljpeg -L/usr/local/lib
- #else
- XCOMM JPEG support not selected
- #endif
-@@ -93,8 +98,8 @@
- XCOMM Required include files: png.h, pngconf.h
- XCOMM
- #if (IHavePNG)
--PNGINC =
--PNGLIB = -lpng
-+PNGINC = -I/usr/local/include
-+PNGLIB = -lpng -L/usr/local/lib
- #else
- XCOMM PNG support not selected
- #endif
+*** Makefile.orig	Thu Feb  4 01:43:27 1999
+--- Makefile	Sat Aug  5 15:29:56 2000
+***************
+*** 40,46 ****
+  # remove the examples directory from this line.
+  # If you want to build the XmHTML tutorial examples, add the book directory.
+  
+! SUBDIRS= lib http examples tools
+  
+  # some common definitions
+  #
+--- 40,46 ----
+  # remove the examples directory from this line.
+  # If you want to build the XmHTML tutorial examples, add the book directory.
+  
+! SUBDIRS= lib http examples tools book contrib
+  
+  # some common definitions
+  #
+***************
+*** 64,72 ****
+  # Compiler Settings #
+  #                   #
+  #####################
+! CC       = gcc
+! CFLAGS   = -g -funroll-loops -Wall -pipe -ansi 
+! LDFLAGS  = 
+  
+  # The following flags are *very* usefull if you are getting unresolved
+  # references to functions in libraries that you *know* to exist.
+--- 64,72 ----
+  # Compiler Settings #
+  #                   #
+  #####################
+! CC       = libtool gcc
+! CFLAGS   = -O2 -funroll-loops -pipe -ansi
+! #LDFLAGS  =
+  
+  # The following flags are *very* usefull if you are getting unresolved
+  # references to functions in libraries that you *know* to exist.
+***************
+*** 115,121 ****
+  # HAVE_LIBZ => zlib.h
+  
+  ZLIBINC       =
+! IMAGEINCLUDES = $(ZLIBINC)
+  
+  # Image libraries
+  # No need to add -lXpm if you need to include it with LIBS below
+--- 115,121 ----
+  # HAVE_LIBZ => zlib.h
+  
+  ZLIBINC       =
+! IMAGEINCLUDES = -I${LOCALBASE}/include $(ZLIBINC)
+  
+  # Image libraries
+  # No need to add -lXpm if you need to include it with LIBS below
+***************
+*** 126,132 ****
+  # HAVE_LIBZ => libz (and possibly libm)
+  
+  ZLIBLIB   = -lz -lm
+! IMAGELIBS = -ljpeg -lpng $(ZLIBLIB)
+  
+  # It might be troublesome to know what the correct defines are for your
+  # system. A possible set of defines for some OS's is given below. Pick
+--- 126,132 ----
+  # HAVE_LIBZ => libz (and possibly libm)
+  
+  ZLIBLIB   = -lz -lm
+! IMAGELIBS = -L${LOCALBASE}/lib -ljpeg -lpng $(ZLIBLIB)
+  
+  # It might be troublesome to know what the correct defines are for your
+  # system. A possible set of defines for some OS's is given below. Pick
+***************
+*** 166,182 ****
+  # Add -DDEBUG to enable selective debug output (see the file DEBUGGING for more
+  # info).
+  #
+! CPPFLAGS = -DDEBUG -D_GNU_SOURCE -D_BSD_SOURCE -D_POSIX_SOURCE -DHAVE_REGEX_H $(IMAGEDEFINES) 
+  
+  # Various include directories
+  LIBINC=-I. -I../include -I../include/common -I../../include -I../../include/common
+  
+  # Platform specific includes
+  ifeq ($(PLATFORM),Motif)
+! PLATFORMINC=-I../../include/XmHTML -I/usr/X11R6/include
+  else
+  ifeq ($(PLATFORM),gtk)
+! PLATFORMINC=-I../../include/gtk-xmhtml -I/usr/local/include
+  endif
+  endif
+  
+--- 166,182 ----
+  # Add -DDEBUG to enable selective debug output (see the file DEBUGGING for more
+  # info).
+  #
+! CPPFLAGS = -DHAVE_REGEX_H $(IMAGEDEFINES)
+  
+  # Various include directories
+  LIBINC=-I. -I../include -I../include/common -I../../include -I../../include/common
+  
+  # Platform specific includes
+  ifeq ($(PLATFORM),Motif)
+! PLATFORMINC=-I../../include/XmHTML -I${X11BASE}/include
+  else
+  ifeq ($(PLATFORM),gtk)
+! PLATFORMINC=-I../../include/gtk-xmhtml -I${LOCALBASE}/include
+  endif
+  endif
+  
+***************
+*** 192,208 ****
+  # Motif version (default)
+  ifeq ($(PLATFORM),Motif)
+  
+! LIBDIR = -L/usr/X11R6/lib
+  # This is what is required under Linux (Motif 2.0.1).
+  # Your mileage may vary.
+! LIBS   = -lXm -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
+  
+  else
+  
+  # gtk version (only supported port for now)
+  ifeq($(PLATFORM),gtk)
+  
+! LIBDIR = -L/usr/local/lib
+  LIBS   = -lgdk -lgtk -lX11
+  
+  # endif gtk
+--- 192,208 ----
+  # Motif version (default)
+  ifeq ($(PLATFORM),Motif)
+  
+! LIBDIR = -L${X11BASE}/lib
+  # This is what is required under Linux (Motif 2.0.1).
+  # Your mileage may vary.
+! LIBS   = ${MOTIFLIB} -lXpm -lXmu -lXt -lXext -lX11 -lSM -lICE
+  
+  else
+  
+  # gtk version (only supported port for now)
+  ifeq($(PLATFORM),gtk)
+  
+! LIBDIR = -L${X11BASE}/lib
+  LIBS   = -lgdk -lgtk -lX11
+  
+  # endif gtk
+***************
+*** 308,311 ****
+  	tools/scansrc.sh ./lib/common > docs/sources.desc
+  	tools/scansrc.sh ./lib/Motif >> docs/sources.desc
+  	tools/scansrc.sh ./lib/gtk >> docs/sources.desc
+- 
+--- 308,310 ----

@@ -1,18 +1,15 @@
---- src/Imakefile.orig	Sat Feb 20 14:31:44 1999
-+++ src/Imakefile	Sun Feb 21 12:52:40 1999
-@@ -61,11 +61,15 @@
+--- examples/Makefile.orig	Wed Feb  3 19:43:27 1999
++++ examples/Makefile	Tue Nov  2 01:39:14 1999
+@@ -11,10 +11,10 @@
+ EXAMPLES=example_1 example_2 example_4
  
- XCOMM I don't know whether or not X11R5/R4 image has got a Concat3.
- XCOMM This works.
-+.if (${PORTOBJFORMAT} == "aout")
- #if (ProjectX < 6)
- SOXMHTMLLIBREV = $(XmHTMLVersionNum)./**/$(XmHTMLRevision)./**/$(XmHTMLUpdateLevel)
- #else
- SOXMHTMLLIBREV = Concat3($(XmHTMLVersionNum).,$(XmHTMLRevision).,$(XmHTMLUpdateLevel))
- #endif
-+.else
-+SOXMHTMLLIBREV = $(XmHTMLVersionNum)./**/$(XmHTMLUpdateLevel)
-+.endif
+ # The XmHTML library
+-XMHTMLLIB = -L../lib -lXmHTML
++XMHTMLLIB = ../lib/libXmHTML.la
  
- HEADERS = XmHTML.h XmHTMLP.h HTML.h Parser.h ParserP.h
+ # Richard Offer's http client-side library
+-HTTPLIB   = -L../http -lhttp
++HTTPLIB   = ../http/libhttp.la
  
+ # Libraries against which all examples are linked 
+ LINKLIBS = $(XMHTMLLIB) $(LOADLIBES) $(DMALLOCLIB)

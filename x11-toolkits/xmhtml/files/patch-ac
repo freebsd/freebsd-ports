@@ -1,11 +1,23 @@
---- ./book/Imakefile.org	Wed May 12 01:31:48 1999
-+++ ./book/Imakefile	Wed May 12 02:03:40 1999
-@@ -36,7 +36,7 @@
-      DEPLIBS = $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+--- http/Makefile.orig	Wed Feb  3 19:43:27 1999
++++ http/Makefile	Tue Nov  2 01:28:54 1999
+@@ -2,7 +2,7 @@
+ # lint configuration. I use lclint.
+ #
  
- XCOMM required libraries
--LOCAL_LIBRARIES = $(XMHTMLLIB) $(XMLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB)
-+LOCAL_LIBRARIES = $(XMHTMLLIB) $(MOTIFLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB)
+-LIBRARY=libhttp.a
++LIBRARY=libhttp.la
  
- SRCS = simple_html.c simple_html2.c autosize_html.c forced_html.c html.c
+ # List of source, object and header files 
+ SRCS=HTTP.c cookie.c
+@@ -27,9 +27,8 @@
+ # targets to build
  
+ $(TARGET):: $(OBJS)  
+-	$(RM) $@ \ 
+-	$(AR) $@ $(OBJS)  
+-	$(RANLIB) $@
++	$(RM) $@
++	$(CC) -o $@ $(OBJS:.o=.lo) -rpath ${PREFIX}/lib -version-info 0:2
+ 
+ stamp-includes:
+ 	@if [ -d ../include ]; then set +x; \
