@@ -14,6 +14,7 @@ include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
 include/apache/ap_mmn.h
+include/apache/ap_sha1.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -39,6 +40,18 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+include/apache/xml/asciitab.h
+include/apache/xml/hashtable.h
+include/apache/xml/iasciitab.h
+include/apache/xml/latin1tab.h
+include/apache/xml/nametab.h
+include/apache/xml/utf8tab.h
+include/apache/xml/xmldef.h
+include/apache/xml/xmlparse.h
+include/apache/xml/xmlrole.h
+include/apache/xml/xmltok.h
+include/apache/xml/xmltok_impl.h
+libexec/apache/httpd.exp
 libexec/apache/libproxy.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
@@ -52,6 +65,7 @@ libexec/apache/mod_rewrite.so
 libexec/apache/mod_speling.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_usertrack.so
+libexec/apache/mod_vhost_alias.so
 sbin/ab
 sbin/httpsdctl
 sbin/apxs
@@ -77,6 +91,7 @@ www/htdocs/manual/mod/mod_auth.html
 www/htdocs/manual/mod/mod_auth_anon.html
 www/htdocs/manual/mod/mod_auth_db.html
 www/htdocs/manual/mod/mod_auth_dbm.html
+www/htdocs/manual/mod/mod_auth_digest.html
 www/htdocs/manual/mod/mod_autoindex.html
 www/htdocs/manual/mod/mod_browser.html
 www/htdocs/manual/mod/mod_cern_meta.html
@@ -111,6 +126,7 @@ www/htdocs/manual/mod/mod_status.html
 www/htdocs/manual/mod/mod_unique_id.html
 www/htdocs/manual/mod/mod_userdir.html
 www/htdocs/manual/mod/mod_usertrack.html
+www/htdocs/manual/mod/mod_vhost_alias.html
 www/htdocs/manual/LICENSE
 www/htdocs/manual/bind.html
 www/htdocs/manual/cgi_path.html
@@ -302,6 +318,7 @@ www/cgi-bin/printenv
 www/cgi-bin/test-cgi
 @exec mkdir -p %D/www/proxy
 @dirrm etc/apache
+@dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
 @dirrm www/cgi-bin
