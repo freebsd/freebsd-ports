@@ -28,7 +28,7 @@ _USE_GNOME_ALL=	gnomehack gnomeprefix gnomehier gnomeaudio esound libghttp \
 		glib12 gtk12 libxml gdkpixbuf imlib orbit gnomelibs \
 		gnomecanvas oaf gnomemimedata gconf gnomevfs libcapplet \
 		gnomeprint bonobo libgda gnomedb libglade gal glibwww gtkhtml \
-		libpanel
+		libpanel gnometarget
 _USE_GNOME_ALL+=glib20 atk pango gtk20 linc libidl orbit2 libglade2 libxml2 \
 		libxslt bonoboactivation libbonobo gconf2 gnomevfs2 gail \
 		libgnomecanvas libartlgpl2 libgnomeprint libgnomeprintui \
@@ -61,6 +61,8 @@ gnomeprefix_CONFIGURE_ARGS=--localstatedir=${PREFIX}/share/gnome \
 			   --disable-gtk-doc \
 			   --with-gconf-source=xml::${PREFIX}/etc/gconf/gconf.xml.defaults
 gnomeprefix_USE_GNOME_IMPL=gnomehier
+
+gnometarget_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 gnomeaudio_RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 gnomeaudio_DETECT=	${X11BASE}/share/gnome/sounds/login.wav
@@ -204,7 +206,7 @@ libpanel_GNOME_DESKTOP_VERSION=1
 
 glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
-glib20_CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+glib20_USE_GNOME_IMPL=gnometarget
 
 atk_LIB_DEPENDS=	atk-1.0.200:${PORTSDIR}/devel/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
