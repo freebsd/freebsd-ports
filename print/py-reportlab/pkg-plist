@@ -22,6 +22,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/barcharts.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/barcharts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/barcharts.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/dotbox.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/dotbox.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/dotbox.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/legends.pyo
@@ -37,6 +40,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/piecharts.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/piecharts.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/piecharts.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/slidebox.py
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/slidebox.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/slidebox.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/textlabels.py
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/textlabels.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/graphics/charts/textlabels.pyo
@@ -129,6 +135,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/lib/randomtext.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/randomtext.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/randomtext.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/lib/rparsexml.py
+%%PYTHON_SITELIBDIR%%/reportlab/lib/rparsexml.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/lib/rparsexml.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/lib/sequencer.py
 %%PYTHON_SITELIBDIR%%/reportlab/lib/sequencer.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/lib/sequencer.pyo
@@ -199,6 +208,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/pdfgen/pdfimages.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfgen/pdfimages.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfgen/pdfimages.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/pdfgen/pycanvas.py
+%%PYTHON_SITELIBDIR%%/reportlab/pdfgen/pycanvas.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/pdfgen/pycanvas.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/pdfgen/textobject.py
 %%PYTHON_SITELIBDIR%%/reportlab/pdfgen/textobject.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/pdfgen/textobject.pyo
@@ -217,6 +229,9 @@
 %%PYTHON_SITELIBDIR%%/reportlab/platypus/frames.py
 %%PYTHON_SITELIBDIR%%/reportlab/platypus/frames.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/platypus/frames.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/platypus/para.py
+%%PYTHON_SITELIBDIR%%/reportlab/platypus/para.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/platypus/para.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/platypus/paragraph.py
 %%PYTHON_SITELIBDIR%%/reportlab/platypus/paragraph.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/platypus/paragraph.pyo
@@ -235,6 +250,12 @@
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.py
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/rl_config.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/setup.py
+%%PYTHON_SITELIBDIR%%/reportlab/setup.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/setup.pyo
+%%PYTHON_SITELIBDIR%%/reportlab/setup_reportlab.py
+%%PYTHON_SITELIBDIR%%/reportlab/setup_reportlab.pyc
+%%PYTHON_SITELIBDIR%%/reportlab/setup_reportlab.pyo
 %%PYTHON_SITELIBDIR%%/reportlab/tools/__init__.py
 %%PYTHON_SITELIBDIR%%/reportlab/tools/__init__.pyc
 %%PYTHON_SITELIBDIR%%/reportlab/tools/__init__.pyo
