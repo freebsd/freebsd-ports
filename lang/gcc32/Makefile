@@ -7,18 +7,18 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	1999-10-04
+SNAPDATE=	1999-10-25
 SNAPVER=	${SNAPDATE:S/-//g}
 
 DISTNAME=	gcc-2.96
 PKGNAME=	gcc-devel-${SNAPVER}
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/ \
-		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/ \
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
+		ftp://ftp.ninemoons.com/pub/mirrors/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.nluug.nl/pub/languages/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
- 		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
+		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
+ 		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
 DISTFILES=	egcs-core-${SNAPVER}${EXTRACT_SUFX} \
 		egcs-g++-${SNAPVER}${EXTRACT_SUFX} \
 		egcs-g77-${SNAPVER}${EXTRACT_SUFX} \
@@ -85,7 +85,6 @@ post-install:
 	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
-		${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1 \
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1obj \
