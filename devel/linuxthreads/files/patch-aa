@@ -23,8 +23,8 @@ diff -ur ./Makefile ../linuxthreads-0.71.new/Makefile
 +
 +.PATH:	${.CURDIR}/libc_r
 +
-+#CFLAGS+=-Wall -O
-+CFLAGS+=-g -O0 -Wall -DDEBUG 
++CFLAGS+=-Wall
++#CFLAGS+=-g -O0 -Wall -DDEBUG 
 +CFLAGS+=-DCOMPILING_LINUXTHREADS
 +
 +#This option should not be enabled unless libc has been patched

@@ -34,7 +34,16 @@ post-extract:
 		${CP} -p ${threads_files} ${WRKSRC}/.  ;  \
 		${CP} -p Examples/ex6.c ${WRKSRC}/Examples/.
 
+post-build:
+	@cd ${FILESDIR} ; \
+		${MKDIR} ${WRKSRC}/libgcc_r ; \
+		${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
+	@cd ${WRKSRC}/libgcc_r ; \
+		${MAKE}
+
 pre-install:
+	@cd ${WRKSRC}/libgcc_r ; \
+		${MAKE} install
 
 post-install:
 	@sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
