@@ -13,7 +13,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.vexus.ca/release/CDK/
 DISTFILES=	cdk.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
