@@ -5,5 +5,3 @@ modules the same power as they have in C, mod_snake also
 provides APIs similar to that of mod_python and mod_perl
 for simple module creation, accelerated Python CGIs, and
 embedded Python. 
-
-WWW: http://modsnake.sourceforge.net/
