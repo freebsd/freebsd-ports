@@ -38,9 +38,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${__f} ${WRKSRC}/${__f}c \
 		${PREFIX}/${ELISP_DIR}
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/tuareg-mode
+	${MKDIR} ${PREFIX}/${DOC_DIR}
 .for __f in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${__f} ${PREFIX}/share/doc/tuareg-mode
+	${INSTALL_DATA} ${WRKSRC}/${__f} ${PREFIX}/${DOC_DIR}
 .endfor
 
 .include <bsd.port.mk>
