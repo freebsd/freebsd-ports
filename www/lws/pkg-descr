@@ -1,0 +1,15 @@
+LWS is a lightweight web server which uses pthreads(3) for multi-tasking
+and libpdel(3) for HTTP, HTTPS, and configurable servlet support.  The
+server can be configured via a buit-in admin web interface, or by manu-
+ally editing the XML configuration file.
+
+LWS supports multiple HTTP and HTTPS servers, each containing multiple
+virtual hosts.  Each virtual host has a configurable list of servlets.
+The supported servlets types are file, redirect, and cookieauth.  The
+file servlet includes optional support for tmpl(3) HTML templates.
+
+LWS maintains a self-rotating logfile(3) error log, with optional support
+for logging via syslog as well.
+
+LWS is intended to demonstrate features of the libpdel(3) library, and to
+be a lightweight web server for simple applications.
