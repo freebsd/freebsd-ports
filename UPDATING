@@ -8,7 +8,7 @@ upgrades.
 
 20040813:
   AFFECTS: users of kdm (x11/kdebase3)
-  AUTHOR: lofi@freebsd.org
+  AUTHOR: kde@freebsd.org
 
   If you are unable to login to X via kdm after portupgrading to the latest 
   kdebase port and you're getting these or similar messages on the console
