@@ -2,6 +2,8 @@ bin/lpe
 lib/lpe/cmode.so
 lib/lpe/cppmode.so
 lib/lpe/htmlmode.so
+lib/lpe/javamode.so
+lib/lpe/mailmode.so
 lib/lpe/perlmode.so
 lib/lpe/sgmlmode.so
 @dirrm lib/lpe
