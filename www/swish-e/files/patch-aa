@@ -1,0 +1,38 @@
+--- fs.c.old	Fri Nov 27 13:30:13 1998
++++ fs.c	Fri Nov 27 13:32:19 1998
+@@ -539,23 +539,28 @@
+ int ishtml(filename)
+ char *filename;
+ {
+-	char *c, suffix[MAXSUFFIXLEN];
++	char *c, *d;
+ 	
++	d = (char *) strrchr(filename, '/');
+ 	c = (char *) strrchr(filename, '.');
+ 	
++	/* make sure the . is part of the filename */
++	if (d != NULL && c < d) {
++		return 0;
++	}
++	
+ 	if (c == NULL)
+ 		return 0;
+-	strcpy(suffix, c + 1);
+-	if (suffix[0] == '\0')
++	if (c++ == '\0')
+ 		return 0;
+ 	
+-	if (!strncmp(suffix, "htm", 3))
++	if (!strncmp(c, "htm", 3))
+ 		return 1;
+-	else if (!strncmp(suffix, "HTM", 3))
++	else if (!strncmp(c, "HTM", 3))
+ 		return 1;
+-	else if (!strncmp(suffix, "shtml", 5))
++	else if (!strncmp(c, "shtml", 5))
+ 		return 1;
+-	else if (!strncmp(suffix, "SHTML", 5))
++	else if (!strncmp(c, "SHTML", 5))
+ 		return 1;
+ 	return 0;
+ }
