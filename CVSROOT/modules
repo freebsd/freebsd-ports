@@ -2386,6 +2386,7 @@ gruftistats	ports/irc/gruftistats
 grun		ports/misc/grun
 grustibus	ports/emulators/grustibus
 gschem		ports/cad/gschem
+gscmxx		ports/comms/gscmxx
 gscommander	ports/shells/gscommander
 gsculpt		ports/graphics/gsculpt
 gsed		ports/textproc/gsed
