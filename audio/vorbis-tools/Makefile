@@ -7,6 +7,7 @@
 
 PORTNAME=	vorbis-tools
 PORTVERSION=	1.0.r3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.xiph.org/ogg/vorbis/download/ \
@@ -17,15 +18,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	naddy@FreeBSD.org
 
 LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao \
-		ogg.3:${PORTSDIR}/audio/libogg \
-		vorbis.1:${PORTSDIR}/audio/libvorbis \
-		curl.2:${PORTSDIR}/ftp/curl
+		curl.2:${PORTSDIR}/ftp/curl \
+		iconv.2:${PORTSDIR}/converters/iconv \
+		vorbis.1:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ao=${LOCALBASE} \
-		--with-ogg=${LOCALBASE} \
-		--with-vorbis=${LOCALBASE} \
-		--with-curl=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		ogg123.1 oggenc.1 ogginfo.1 vcut.1 vorbiscomment.1
 
