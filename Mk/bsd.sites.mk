@@ -270,6 +270,7 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.kr.FreeBSD.org/pub/ruby/%SUBDIR%/ \
+	http://mirrors.sunsite.dk/ruby/%SUBDIR%/ \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+= \
@@ -303,28 +304,22 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/%SUBDIR%/ \
-	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/%SUBDIR%/ \
 	ftp://ftp.uni-jena.de/pub/linux/MIRROR.sunsite/%SUBDIR%/ \
 	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.uni-tuebingen.de/pub/linux/mirrors/ftp.metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.uni-magdeburg.de/pub/mirror/linux/ftp.metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.uniovi.es/pub1/linux/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.medasys-digital-systems.fr/pub1/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub5/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/%SUBDIR%/ \
-	ftp://ftp.man.poznan.pl/vols/vol1/sunsite/%SUBDIR%/ \
 	ftp://ftp.pku.edu.cn/pub/linux/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
 	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/Linux/metalab.unc.edu/%SUBDIR%/ \
-	ftp://sunsite.tus.ac.jp/pub/archives/linux/sunsite-unc/%SUBDIR%/ \
 	ftp://ftp.dacom.co.kr/pub/mirrors/metalab.unc.edu/Linux/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/%SUBDIR%/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
-	ftp://ftp.nluug.nl/vol/3/metalab/%SUBDIR%/ \
 	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
 
