@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.32
-PORTREVISION=	2
+PORTVERSION=	1.34a
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
-DISTNAME=	s9xs132
+DISTNAME=	s9xs134a
 
 MAINTAINER=	nakai@FreeBSD.org
 
