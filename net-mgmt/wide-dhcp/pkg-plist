@@ -1,0 +1,21 @@
+sbin/dhcpc
+sbin/dhcpm
+sbin/relay
+sbin/dhcps
+man/man8/dhcpc.8.gz
+man/man8/relay.8.gz
+man/man8/dhcps.8.gz
+man/man8/dhcpm.8.gz
+man/man5/dhcpdb.server.5.gz
+man/man5/dhcpdb.pool.5.gz
+man/man5/dhcpdb.relay.5.gz
+share/dhcp/README
+share/dhcp/README.jis
+share/dhcp/intro.dhcp
+share/dhcp/dhcpdb.pool.sample
+share/dhcp/dhcpdb.relay.sample
+share/dhcp/dhcpdb.server.sample
+@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ; echo "dhcps		67/udp    # dhcp server") > /etc/services
+@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ) > /etc/services
+@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ; echo "dhcpc		68/udp    # dhcp client") > /etc/services
+@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ) > /etc/services

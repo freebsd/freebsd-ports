@@ -1,0 +1,22 @@
+--- client/dhcpc.c.orig	Fri Nov  3 01:40:40 1995
++++ client/dhcpc.c	Tue Mar 26 18:06:39 1996
+@@ -1760,6 +1760,7 @@
+ {
+   int debug = 0;
+   int n = 0;
++  FILE *pid_file;
+   struct if_info ifinfo;
+ 
+   bzero(&reqspec, sizeof(reqspec));
+@@ -1789,6 +1790,11 @@
+       ioctl(n, TIOCNOTTY, (char *) 0);
+       close(n);
+     }
++  }
++  /* initialization works well, so recored its own pid */
++  if ((pid_file = fopen(PATH_PID, "w")) != NULL) {
++    fprintf(pid_file, "%d\n", (int) getpid());
++    fclose(pid_file);
+   }
+ 
+   /*

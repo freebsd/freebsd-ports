@@ -1,0 +1,30 @@
+--- server/Makefile.FreeBSD.org	Sat Jan 20 20:53:25 1996
++++ server/Makefile.FreeBSD	Sat Jan 20 20:56:27 1996
+@@ -1,13 +1,25 @@
+ OBJ = dhcps.o database.o hash.o ctime.o getmac.o common_subr.o \
+       interface.o delarp.o
+-LDFLAGS =
++LDFLAGS = -lkvm
+ CC = gcc
+-CFLAGS = -g -Wall #-DCOMPAT_RFC1541 #-DNOICMPCHK
++CFLAGS += -Wall #-DCOMPAT_RFC1541 #-DNOICMPCHK
+ #CC = cc
+ #CFLAGS = -g #-DCOMPAT_RFC1541 #-DNOICMPCHK
++SBIN=		${PREFIX}/sbin
++LIBEXEC=	${PREFIX}/libexec
++MAN=		${PREFIX}/man
+ 
+ dhcps: ${OBJ}
+ 	${CC} ${CFLAGS} -o dhcps ${OBJ} ${LDFLAGS}
++
++install: dhcps
++	${INSTALL} -m 755 -s dhcps ${SBIN}/dhcps
++	cp dhcpdb.pool.5 ${MAN}/man5/dhcpdb.pool.5
++	gzip ${MAN}/man5/dhcpdb.pool.5
++	cp dhcpdb.relay.5 ${MAN}/man5/dhcpdb.relay.5
++	gzip ${MAN}/man5/dhcpdb.relay.5
++	cp dhcps.8 ${MAN}/man8/dhcps.8
++	gzip ${MAN}/man8/dhcps.8
+ 
+ clean:
+ 	rm -f *~ *.o *core* dhcps
