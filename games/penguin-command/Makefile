@@ -19,14 +19,15 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 MAN6=		penguin-command.6
 
 post-patch:
-	${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g' \
+	${REINPLACE_CMD} 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g' \
 		${WRKSRC}/configure ${WRKSRC}/src/*.[ch]
-	${PERL} -pi -e "s/ -lz -lSDL -lm/ -lz -lm/g" ${WRKSRC}/configure
+	${REINPLACE_CMD} 's/ -lz -lSDL -lm/ -lz -lm/g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

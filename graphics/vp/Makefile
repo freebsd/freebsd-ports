@@ -21,9 +21,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lgnugetopt" \
 		ac_cv_func_getopt_long=yes
+USE_REINPLACE=	yes
 MAN1=	vp.1
 
 post-patch:
-	@${PERL} -pi -e 's@ getopt_long/Makefile@@g' ${WRKSRC}/configure
+	${REINPLACE_CMD} 's@ getopt_long/Makefile@@g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
