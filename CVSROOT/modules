@@ -2882,6 +2882,7 @@ gpasman		ports/security/gpasman
 gpdf		ports/graphics/gpdf
 gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
+gpgme03		ports/security/gpgme03
 gphoto2		ports/graphics/gphoto2
 gpkgdep		ports/sysutils/gpkgdep
 gplbp		ports/misc/gplbp
