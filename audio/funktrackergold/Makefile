@@ -8,7 +8,7 @@
 PORTNAME=	funktrackergold
 PORTVERSION=	1.5.2
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE} http://jsno.downunder.net.au/rel/unix_projects/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} http://lothar.arafura.net.au/~jsno/rel/unix_projects/
 MASTER_SITE_SUBDIR=	apps/sound/players
 DISTNAME=	funktrackergold-1.5-2
 EXTRACT_SUFX=	.tgz
