@@ -146,6 +146,7 @@
     SUBDIR += freedroid
     SUBDIR += freesci
     SUBDIR += freesweep
+    SUBDIR += frikqcc
     SUBDIR += frotz
     SUBDIR += frozenbubble
     SUBDIR += fuhquake

@@ -1,0 +1,13 @@
+FrikQCC was started a few months before the Quake engine source was
+released.  Originally based off of FastQCC, it was widely (well among
+the people at MDQNet) enjoyed for a few months.  Then J. P. Grossman
+released QCCX, back in March 2000.  QCCX implemented a ton of neato-
+whizbang features that I just had to have.  I immediately set out to
+add some of the better stuff from FrikQCC 1.x, such as warnings and
+some of my own ideas of optimizations to his code.  The result was
+FrikQCC 2.0, which has been updated many times since then.  I've
+started moving away from some of the old QCCX features (for example my
+Arrays are different, as is the new int type) in an effort to make the
+code more user friendly.
+
+WWW: http://wiki.quakesrc.org/index.php?pagename=FrikQCC
