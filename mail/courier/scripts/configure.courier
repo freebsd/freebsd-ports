@@ -1,0 +1,270 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/mail/courier/scripts/Attic/configure.courier,v 1.1 2002-01-15 06:17:28 dwhite Exp $
+
+[ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ] && exit
+
+tempfile=`mktemp -t checklist`
+
+if [ -x ${PREFIX}/pgsql/bin/postgres -a ! -x ${PREFIX}/bin/postgres ]; then
+	PGSQLBASE=${PREFIX}/pgsql
+	PGSQLINCLUDES=${PGSQLBASE}/include
+else
+	PGSQLBASE=${PREFIX}
+	PGSQLINCLUDES=${PGSQLBASE}/include/pgsql
+fi
+
+if [ "${BATCH}" = "yes" ]; then
+	[ "x${ENABLE_ACCEPT8BIT}"	= "xYES" ] && OPTIONS="${OPTIONS} \"Accept8bit\""
+	[ "x${ENABLE_EXPECT}"		= "xYES" ] && OPTIONS="${OPTIONS} \"Expect\""
+	[ "x${ENABLE_GNUPG}"		= "xYES" ] && OPTIONS="${OPTIONS} \"GnuPG\""
+	[ "x${ENABLE_ASPELL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"ASpell\""
+	[ "x${ENABLE_ISPELL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"ISpell\""
+	[ "x${ENABLE_LDAP1}"		= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP1\""
+	[ "x${ENABLE_LDAP2}"		= "xYES" ] && OPTIONS="${OPTIONS} \"OpenLDAP2\""
+	[ "x${ENABLE_MYSQL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"MySQL\""
+	[ "x${ENABLE_PGSQL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"PostgreSQL\""
+	[ "x${ENABLE_VPOPMAIL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"VPopMail\""
+	[ "x${ENABLE_PROCMAIL}"		= "xYES" ] && OPTIONS="${OPTIONS} \"Procmail\""
+	[ "x${ENABLE_IPV6}"		= "xYES" ] && OPTIONS="${OPTIONS} \"IPv6\""
+	[ -n "${OPTIONS}" ] && set ${OPTIONS}
+else
+	if [ "x${ENABLE_ACCEPT8BIT}" = "xYES" ]; then
+		SET_ACCEPT8BIT="ON"
+	else
+		SET_ACCEPT8BIT="OFF"
+	fi
+	if [ "x${ENABLE_EXPECT}" = "xYES" \
+	  -o -x ${LOCALBASE}/bin/expect ]; then
+		SET_EXPECT="ON"
+	else
+		SET_EXPECT="OFF"
+	fi
+	if [ "x${ENABLE_GNUPG}" = "xYES" \
+	  -o -x ${LOCALBASE}/bin/gpg ]; then
+		SET_GNUPG="ON"
+	else
+		SET_GNUPG="OFF"
+	fi
+	if [ "x${ENABLE_ASPELL}" = "xYES" \
+	  -o -x ${LOCALBASE}/bin/aspell ]; then
+		SET_ASPELL="ON"
+	else
+		SET_ASPELL="OFF"
+	fi
+	if [ "x${ENABLE_ISPELL}" = "xYES" \
+	  -o -x ${LOCALBASE}/bin/ispell \
+	  -a "x${SET_ASPELL}" = "xOFF" ]; then
+		SET_ISPELL="ON"
+	else
+		SET_ISPELL="OFF"
+	fi
+	if [ "x${ENABLE_LDAP1}" = "xYES" \
+	  -o -f ${LOCALBASE}/lib/libldap.so.1 \
+	  -a -f ${LOCALBASE}/lib/liblber.so.1 ]; then
+		SET_LDAP1="ON"
+	else
+		SET_LDAP1="OFF"
+	fi
+	if [ "x${ENABLE_LDAP2}" = "xYES" \
+	  -o -f ${LOCALBASE}/lib/libldap.so.2 \
+	  -a -f ${LOCALBASE}/lib/liblber.so.2 \
+	  -a "x${SET_LDAP1}" = "xOFF" ]; then
+		SET_LDAP2="ON"
+	else
+		SET_LDAP2="OFF"
+	fi
+	if [ "x${ENABLE_MYSQL}" = "xYES" \
+	  -o -f ${LOCALBASE}/lib/mysql/libmysqlclient.so.10 ]; then
+		SET_MYSQL="ON"
+	else
+		SET_MYSQL="OFF"
+	fi
+	if [ "x${ENABLE_PGSQL}" = "xYES" \
+	  -o -f ${PGSQLBASE}/lib/libpq.so.2 ]; then
+		SET_PGSQL="ON"
+	else
+		SET_PGSQL="OFF"
+	fi
+	if [ "x${ENABLE_VPOPMAIL}" = "xYES" \
+	  -o -f ${LOCALBASE}/vpopmail/lib/libvpopmail.a ]; then
+		SET_VPOPMAIL="ON"	# authvchkpw and authmysql
+		SET_MYSQL="OFF"		# are mutually exclusive
+	else
+		SET_VPOPMAIL="OFF"
+	fi
+	if [ "x${ENABLE_PROCMAIL}" = "xYES" \
+	  -o -x ${LOCALBASE}/bin/procmail ]; then
+		SET_PROCMAIL="ON"
+	else
+		SET_PROCMAIL="OFF"
+	fi
+	if [ "x${ENABLE_IPV6}" = "xYES" ]; then
+		SET_IPV6="ON"
+	else
+		SET_IPV6="OFF"
+	fi
+
+	/usr/bin/dialog --title "Courier configuration options" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 16 \
+Accept8bit	"http://www.Courier-MTA.org/FAQ.html#esmtperr" ${SET_ACCEPT8BIT} \
+Expect		"Expect support for WebMail change passwd" ${SET_EXPECT} \
+GnuPG		"GNU Privacy Guard support for WebMail" ${SET_GNUPG} \
+ASpell		"ASpell support for WebMail" ${SET_ASPELL} \
+ISpell		"ISpell support for WebMail" ${SET_ISPELL} \
+OpenLDAP1	"OpenLDAP 1.x authentication support" ${SET_LDAP1} \
+OpenLDAP2	"OpenLDAP 2.x authentication support" ${SET_LDAP2} \
+MySQL		"MySQL authentication support" ${SET_MYSQL} \
+PostgreSQL	"PostgreSQL authentication support" ${SET_PGSQL} \
+VPopMail	"VPopMail authentication support" ${SET_VPOPMAIL} \
+Procmail	"Procmail local delivery support" ${SET_PROCMAIL} \
+IPv6		"IPv6 support (experimental)" ${SET_IPV6} \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	[ -z "$*" ] && echo "Nothing selected"
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${CURDIR}
+exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+
+echo "PREFIX=	${PREFIX}"
+
+WITH_ISPELL="--without-ispell"
+WITH_LDAP="--without-authldap"
+WITH_MYSQL="--without-authmysql"
+WITH_PGSQL="--without-authpgsql"
+WITH_VCHKPW="--without-authvchkpw"
+WITH_IPV6="--without-ipv6"
+
+SUB_LDAP="@comment "
+SUB_MYSQL="@comment "
+SUB_PGSQL="@comment "
+
+while [ "$1" ]; do
+	case $1 in
+		\"Accept8bit\")
+			echo "CXXFLAGS+=	-DRFC2045_ERR8BITACCEPT"
+			;;
+		\"Expect\")
+			echo "BUILD_DEPENDS+=	expect:${PORTSDIR}/lang/expect"
+			;;
+		\"GnuPG\")
+			echo "BUILD_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg"
+			;;
+		\"ASpell\")
+			if [ "$ISPELL" ]; then
+				echo "ASpell and ISpell are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell"
+			WITH_ISPELL="--with-ispell=${LOCALBASE}/bin/aspell"
+			ASPELL=1
+			;;
+		\"ISpell\")
+			if [ "$ASPELL" ]; then
+				echo "ASpell and ISpell are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell"
+			WITH_ISPELL="--with-ispell=${LOCALBASE}/bin/ispell"
+			ISPELL=1
+			;;
+		\"OpenLDAP1\")
+			if [ "$OPENLDAP2" ]; then
+				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	ldap.1:\${PORTSDIR}/net/openldap"
+			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+                        LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			WITH_LDAP="--with-authldap"
+			PKGNAMESUFFIX="${PKGNAMESUFFIX}-ldap"
+			SUB_LDAP=""
+			OPENLDAP1=1
+			;;
+		\"OpenLDAP2\")
+			if [ "$OPENLDAP1" ]; then
+				echo "OpenLDAP1 and OpenLDAP2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
+			CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
+                        LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			WITH_LDAP="--with-authldap"
+			PKGNAMESUFFIX="${PKGNAMESUFFIX}-ldap"
+			SUB_LDAP=""
+			OPENLDAP2=1
+			;;
+		\"MySQL\")
+			if [ -f ${LOCALBASE}/vpopmail/lib/libvpopmail.a ]; then
+				echo "VPopMAil and MySQL are mutually exclusive." > /dev/stderr
+				echo "Uninstall VPopMAil if you want MySQL authentication." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			else
+				echo "LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client"
+				WITH_MYSQL="--with-authmysql"
+				WITH_MYSQL="${WITH_MYSQL} --with-mysql-libs=${LOCALBASE}/lib/mysql"
+				WITH_MYSQL="${WITH_MYSQL} --with-mysql-includes=${LOCALBASE}/include/mysql"
+				PKGNAMESUFFIX="${PKGNAMESUFFIX}-mysql"
+				SUB_MYSQL=""
+			fi	
+			;;
+		\"PostgreSQL\")
+			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/databases/postgresql7"
+			WITH_PGSQL="--with-authpgsql"
+			WITH_PGSQL="${WITH_PGSQL} --with-pgsql-libs=${PGSQLBASE}/lib"
+			WITH_PGSQL="${WITH_PGSQL} --with-pgsql-includes=${PGSQLINCLUDES}"
+			PKGNAMESUFFIX="${PKGNAMESUFFIX}-pgsql"
+			SUB_PGSQL=""
+			;;
+		\"VPopMail\")
+			echo "BUILD_DEPENDS+=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail"
+			WITH_VCHKPW="--with-authvchkpw"
+			PKGNAMESUFFIX="${PKGNAMESUFFIX}-vpopmail"
+			;;
+		\"Procmail\")
+			echo "BUILD_DEPENDS+=	procmail:${PORTSDIR}/mail/procmail"
+			;;
+		\"IPv6\")
+			WITH_IPV6=""
+			;;
+		*)
+			echo "Invalid option(s): $*" > /dev/stderr
+			rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+	shift
+done
+
+[ -n "${CPPFLAGS}" ]	&& echo "CONFIGURE_ENV+=	CPPFLAGS='${CPPFLAGS}'"
+[ -n "${LDFLAGS}" ]	&& echo "CONFIGURE_ENV+=	LDFLAGS='${LDFLAGS}'"
+[ -n "${LIBS}" ]	&& echo "CONFIGURE_ENV+=	LIBS='${LIBS}'"
+echo "CONFIGURE_ARGS+= ${WITH_ISPELL}"
+echo "CONFIGURE_ARGS+= ${WITH_LDAP}"
+echo "CONFIGURE_ARGS+= ${WITH_MYSQL}"
+echo "CONFIGURE_ARGS+= ${WITH_PGSQL}"
+echo "CONFIGURE_ARGS+= ${WITH_VCHKPW}"
+echo "CONFIGURE_ARGS+= ${WITH_IPV6}"
+echo "PKGNAMESUFFIX=	${PKGNAMESUFFIX}"
+echo "PLIST_SUB+=	SUB_LDAP='${SUB_LDAP}'"
+echo "PLIST_SUB+=	SUB_MYSQL='${SUB_MYSQL}'"
+echo "PLIST_SUB+=	SUB_PGSQL='${SUB_PGSQL}'"

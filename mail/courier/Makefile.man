@@ -1,0 +1,72 @@
+MAN1=	\
+	cancelmsg.1 \
+	couriermlm.1 \
+	couriertcpd.1 \
+	couriertls.1 \
+	dot-forward.1 \
+	dotlock.1 \
+	mailbot.1 \
+	maildirmake.1 \
+	maildrop.1 \
+	mailq.1 \
+	makedat.1 \
+	makemime.1 \
+	mimegpg.1 \
+	preline.1 \
+	reformail.1 \
+	reformime.1 \
+	sendmail.1 \
+	testmxlookup.1
+MAN5=	\
+	dot-courier.5 \
+	maildropex.5 \
+	maildropfilter.5 \
+	maildropgdbm.5
+MAN7=	\
+	authlib.7 \
+	localmailfilter.7 \
+	maildirquota.7
+MAN8=	\
+	courier.8 \
+	courierfilter.8 \
+	courierldapaliasd.8 \
+	courierperlfilter.8 \
+	courierpop3d.8 \
+	courieruucp.8 \
+	deliverquota.8 \
+	dupfilter.8 \
+	esmtpd.8 \
+	imapd.8 \
+	makeacceptmailfor.8 \
+	makealiases.8 \
+	makehosteddomains.8 \
+	makepercentrelay.8 \
+	makesmtpaccess.8 \
+	makeuserdb.8 \
+	mkesmtpdcert.8 \
+	mkimapdcert.8 \
+	mkpop3dcert.8 \
+	pop3d.8 \
+	submit.8 \
+	userdb.8 \
+	userdbpw.8
+
+MLINKS=	dot-forward.1 dotforward.1 \
+	sendmail.1 rmail.1 \
+	authlib.7 authcram.7 \
+	authlib.7 authdaemon.7 \
+	authlib.7 authdaemond.7 \
+	authlib.7 authldap.7 \
+	authlib.7 authmysql.7 \
+	authlib.7 authpam.7 \
+	authlib.7 authpwd.7 \
+	authlib.7 authshadow.7 \
+	authlib.7 authuserdb.7 \
+	authlib.7 authvchkpw.7 \
+	courierfilter.8 filterctl.8 \
+	courierpop3d.8 courierpop3login.8 \
+	courieruucp.8 makeuucpneighbors.8 \
+	esmtpd.8 esmtpd-msa.8 \
+	makesmtpaccess.8 makesmtpaccess-msa.8 \
+	makeuserdb.8 pw2userdb.8 \
+	makeuserdb.8 vchkpw2userdb.8
