@@ -32,7 +32,7 @@ CFLAGS+=		-D_THREAD_SAFE
 GL_DEPENDS=
 CONFIGURE_ARGS+=	--disable-video-opengl
 .else
-GL_DEPENDS=		MesaGL.14:${PORTSDIR}/graphics/Mesa3
+GL_DEPENDS=		GL.14:${PORTSDIR}/graphics/Mesa3
 CONFIGURE_ARGS+=	--enable-video-opengl
 .endif
 
