@@ -19,10 +19,6 @@ EXTRACT_ONLY=	tools/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	user@unknown.nu
 COMMENT=	The Internet Movie Database package
 
-BROKEN=		Build fails
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
 IGNOREFILES=	actors.list.gz actresses.list.gz aka-names.list.gz \
 	aka-titles.list.gz alternate-versions.list.gz biographies.list.gz \
 	business.list.gz certificates.list.gz cinematographers.list.gz \
