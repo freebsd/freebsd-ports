@@ -7,6 +7,7 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.au.horde.org/pub/horde/			\
@@ -30,10 +31,10 @@ LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
 # Remark: pear-XML_sql2xml is included, but never used.
-RUN_DEPENDS=	${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date			\
-		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select_Common	\
-		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
-		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
+RUN_DEPENDS=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
+		${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
+		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
+		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
@@ -58,7 +59,7 @@ HORDESBIN=	${PREFIX}/${LHORDESBIN}
 CONFDIR=	${HORDEDIR}/config
 
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
-PHP_LIB?=	${LOCALBASE}/lib/php
+PEARDIR?=	${LOCALBASE}/share/pear
 .if defined(WITH_APACHE2)
 APACHE_CNFDIR=	${LOCALBASE}/etc/apache2
 MOD_DIR=	libexec/apache2
@@ -149,11 +150,11 @@ do-install:
 		${MKDIR} ${HORDE_INC} ; \
 		${CP} -p ${FILESDIR}/httpd.conf.horde ${HORDE_INC} ; \
 		${REINPLACE_CMD} -e "s:/home/httpd/html/horde:${HORDEDIR}:g ; \
-			s:/home/httpd/phplib:${PHP_LIB}:g" ${HORDE_INC}/httpd.conf.horde ; \
+			s:/home/httpd/phplib:${PEARDIR}:g" ${HORDE_INC}/httpd.conf.horde ; \
 		${RM} ${HORDE_INC}/httpd.conf.horde.beforeHorde ; \
 		${ECHO_MSG} "===> Updating ${APACHE_CONF}..." ; \
 		${REINPLACE_CMD} -e "s:php_value auto_prepend_file:# php_value auto_prepend_file:g ; \
-			s:${HORDEDIR}/phplib:${PHP_LIB}:g" ${APACHE_CONF} ; \
+			s:${HORDEDIR}/phplib:${PEARDIR}:g" ${APACHE_CONF} ; \
 		${ECHO_CMD} "# Horde's include directory" >> ${APACHE_CONF} ; \
 		${ECHO_CMD} "Include ${HORDE_INC}" >> ${APACHE_CONF} ; \
 	fi)
