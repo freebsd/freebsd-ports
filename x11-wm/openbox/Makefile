@@ -22,6 +22,7 @@ THEMES=		allegro artwiz blah41 om4ob thebear
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
+USE_GNOME=	glib20 libxml2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 #USE_AUTOMAKE=	yes
