@@ -1,11 +1,3 @@
 Dviselect selects pages from a DVI file produced by TeX, creating a
 new DVI file usable by any of TeX's conversion program, or even by
 dviselect itself.
-
-
-
-
-
-								2
-
-
