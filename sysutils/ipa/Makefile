@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.simon.org.ua/ipa/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
-		http://www.outloud.org/ipa/
+		ftp://ftp.mirrors.wiretapped.net/pub/security/network-monitoring/ipa/ \
+		http://www.outloud.org/ipa/ \
+		http://ipa.it-ss.be/
 
 MAINTAINER=	simon@simon.org.ua
 
