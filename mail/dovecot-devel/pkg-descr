@@ -1,7 +1,7 @@
 Dovecot is a secure and compact IMAP server which is in the early stages
 of developement. It supports Maildirs and mbox formats and much of the
 IMAP v4 protocol including SSL/TLS. IPv6 support is also included.
-Dovecot supports authentication with OpenLDAP, PostgreSQL, MySQL vpopmail
+Dovecot supports authentication with OpenLDAP, PostgreSQL, MySQL, vpopmail
 and PAM.
 
 WWW: http://www.dovecot.org/

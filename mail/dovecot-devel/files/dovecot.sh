@@ -12,7 +12,7 @@
 #
 #dovecot_enable="YES"
 #
-dovecot_enable="NO"
+dovecot_enable=${dovecot_enable-"NO"}
 
 . %%RC_SUBR%%
 

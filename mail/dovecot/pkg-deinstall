@@ -51,11 +51,9 @@ DEINSTALL)
 	fi
 
 	delete_account dovecot
-	delete_account dovecot-auth
 
-	base=/var/dovecot
-	DIRLIST="${base}/ssl/private ${base}/ssl/certs ${base}/ssl ${base}/private \
-		${base}/login ${base}/auth ${base} /var/run/dovecot"
+	base=/var/run/dovecot
+	DIRLIST="${base}/login ${base}"
 	echo "Cleaning up \"${base}\"."
 	for directory in ${DIRLIST}; do
 		rmdir ${directory} 2>/dev/null || :
