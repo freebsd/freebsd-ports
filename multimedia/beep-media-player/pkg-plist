@@ -71,6 +71,7 @@ share/locale/sk/LC_MESSAGES/bmp.mo
 share/locale/sv/LC_MESSAGES/bmp.mo
 share/locale/zh_CN/LC_MESSAGES/bmp.mo
 @unexec rmdir %D/share/applications 2>/dev/null || true
+@exec mkdir -p %D/share/beep/Skins
 @dirrm share/beep/Skins
 @dirrm share/beep
 @dirrm share/bmp/Skins/Default
@@ -81,5 +82,7 @@ share/locale/zh_CN/LC_MESSAGES/bmp.mo
 @dirrm lib/bmp/Visualization
 @dirrm lib/bmp/Output
 @dirrm lib/bmp/Input
+@exec mkdir -p %D/lib/bmp/General
+@dirrm lib/bmp/General
 @dirrm lib/bmp
 @dirrm include/bmp

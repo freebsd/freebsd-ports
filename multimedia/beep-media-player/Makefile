@@ -36,7 +36,9 @@ INPUT_PLUGINS=	cdaudio,mpg123
 OUTPUT_PLUGINS=	OSS
 VISUALIZATION_PLUGINS=	blur_scope
 
-PLIST_SUB=	DATADIR="share"
+OPTIONS=	VORBIS	"Enable Ogg Vorbis support" on \
+		ESOUND	"Enable Esound support"  off \
+		3DNOW	"Enable 3DNow! optimized decoding routines" on
 
 .include <bsd.port.pre.mk>
 
@@ -60,7 +62,7 @@ CONFIGURE_ARGS+=	--disable-vorbis
 PLIST_SUB+=	VORBISPLUGIN:="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mesound}!=""
+.if defined(WITH_ESOUND)
 USE_GNOME+=	esound
 OUTPUT_PLUGINS+=	esd
 PLIST_SUB+=	ESDPLUGIN:=""
@@ -91,24 +93,6 @@ post-extract:
 	  ${WRKSRC}/Visualization/blur_scope/Makefile.in
 .endif
 
-pre-extract:
-.if !defined(WITHOUT_MIKMOD) || !defined(WITHOUT_VORBIS) || ( !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021 ) || ${HAVE_GNOME:Mesound}!=""
-	@${ECHO_MSG}
-.if !defined(WITHOUT_MIKMOD)
-	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
-.endif
-.if !defined(WITHOUT_VORBIS)
-	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
-.endif
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable 3DNow! optimized decoding routines by defining WITHOUT_3DNOW."
-.endif
-.if ${HAVE_GNOME:Mesound}!=""
-	@${ECHO_MSG} "You can disable support for esound by defining WITHOUT_GNOME=esound."
-.endif
-	@${ECHO_MSG}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
@@ -119,6 +103,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${TOUCH} -f
 
 post-install:
+	@${MKDIR} ${PREFIX}/lib/bmp/General
 	@${MKDIR} ${PREFIX}/share/beep/Skins
 	@${CAT} ${PKGMESSAGE}
 

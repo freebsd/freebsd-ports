@@ -22,4 +22,3 @@ share/bmp/status_docklet/timetre-idle.xpm
 share/bmp/status_docklet/timetre-paused-anim.xpm
 share/bmp/status_docklet/timetre-playing-anim.xpm
 @dirrm share/bmp/status_docklet
-@dirrm lib/bmp/General

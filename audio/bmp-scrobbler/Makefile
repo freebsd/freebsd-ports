@@ -29,4 +29,6 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--enable-prefer-ape
 .endif
 
+PLIST_FILES=	lib/bmp/General/libbmp_scrobbler.so
+
 .include <bsd.port.mk>
