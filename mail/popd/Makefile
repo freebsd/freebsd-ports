@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	popd
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
 MAINTAINER=	ianf@za.uu.net
 
-BROKEN=		distfiles rerolled, discussing with author
-
-MAN8=   popd.8
+MAN5=	popd.conf.5
+MAN8=	popd.8
 
 INSTALLS_SHLIB=	yes
 MANCOMPRESSED=	maybe
@@ -23,5 +22,8 @@ PLIST_SUB=	NOPROFILE="@comment "
 .else
 PLIST_SUB=	NOPROFILE=""
 .endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/src/popd.conf.default ${PREFIX}/etc/.
 
 .include <bsd.port.mk>
