@@ -16,6 +16,8 @@ MAINTAINER=	amakawa@jp.FreeBSD.org
 
 USE_AUTOCONF_VER?=	213
 
+MAN1=		ngspice.1 ngnutmeg.1 ngsconvert.1
+
 pre-configure:
 		(cd ${WRKSRC} && ${AUTOHEADER})
 
