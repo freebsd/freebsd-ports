@@ -1,5 +1,5 @@
---- Iconfig.orig	Wed Mar  4 15:29:05 1998
-+++ Iconfig	Sun Apr 19 17:23:41 1998
+--- Iconfig.orig	Wed Mar  4 14:29:05 1998
++++ Iconfig	Sat Jun 19 16:50:40 1999
 @@ -34,9 +34,9 @@
    recomended for linux*/
  /*#define I386ASSEMBLY*/
@@ -13,3 +13,12 @@
  
  /*You need some extra libraryes for BSD sockets compatibility?*/
  /* TOP_INCLUDES =                       /* Sun users with GCC need this */
+@@ -94,7 +94,7 @@
+ 
+ #if defined(FreeBSDArchitecture)
+ SYSDEFS = 
+-#if !defined(NAS_SOUND)&&!defined(RSOUND)
++#if !defined(NAS_SOUND)&&!defined(RSOUND)&&defined(i386Architecture)
+ #define SOUND
+ SOUNDSERVER = koules.sndsrv.freebsd
+ SOUNDOBJS = sound.o
