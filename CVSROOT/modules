@@ -1287,6 +1287,7 @@ driftnet	ports/net/driftnet
 driglide	ports/x11-servers/driglide
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
+dropbear	ports/security/dropbear
 drscheme	ports/lang/drscheme
 drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
