@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	I18N-Charset
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	misc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	I18N
@@ -15,13 +15,17 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Module which maps CharSet names to the names registered with IANA
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which
+BUILD_DEPENDS=	${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String \
+		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${SITE_PERL}/Unicode/MapUTF8.pm:${PORTSDIR}/converters/p5-Unicode-MapUTF8 \
+		${SITE_PERL}/App/Info/Lib/Iconv.pm:${PORTSDIR}/devel/p5-App-Info
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		I18N::Charset.3
+
+post-patch:
+	@${PERL} -pi -e 's#.$$##g' ${WRKSRC}/lib/I18N/Charset.pm
 
 .include <bsd.port.mk>
