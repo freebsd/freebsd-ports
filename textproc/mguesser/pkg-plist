@@ -2,6 +2,8 @@ bin/mguesser
 share/mguesser/af.latin1.lm
 share/mguesser/ar.arabic.lm
 share/mguesser/ar.cp1256.lm
+share/mguesser/az1.utf8.lm
+share/mguesser/az2.utf8.lm
 share/mguesser/be.cp1251.lm
 share/mguesser/bg.cp1251.lm
 share/mguesser/bg.cyrillic.lm
