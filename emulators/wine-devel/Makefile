@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2000.10.26
+PORTVERSION=	2000.12.02
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
@@ -26,6 +26,7 @@ MAN5=		wine.conf.5
 ONLY_FOR_ARCHS=	i386
 USE_XPM=	yes
 USE_MESA=	yes
+USE_GMAKE=	yes
 
 .if !defined(NDEBUG)
 STRIP=
@@ -44,10 +45,10 @@ pre-extract:
 .endif
 
 post-patch:
+.for D in . library unicode
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
-		${WRKSRC}/Makefile.in
-	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
-		${WRKSRC}/unicode/Makefile.in
+		${WRKSRC}/${D}/Makefile.in
+.endfor
 .for D in advapi32 avifil32 comctl32 commdlg crtdll dciman32 ddraw dinput dplay dplayx dsound gdi icmp imagehlp imm32 kernel lzexpand mpr msacm msnet32 msvideo odbc32 ole32 oleaut32 olecli oledlg olepro32 olesvr opengl32 psapi rasapi32 richedit rpcrt4 serialui setupapi shell32 shfolder shlwapi tapi32 ttydrv urlmon user version win32s winaspi wineps wininet winmm winmm/joystick winmm/mcianim winmm/mciavi winmm/mcicda winmm/mciseq winmm/mciwave winmm/midimap winmm/wavemap winmm/wineoss winsock winspool wow32 wsock32 x11drv
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/dlls/${D}/Makefile.in
@@ -57,11 +58,11 @@ post-configure:
 	cd ${WRKSRC} && make depend
 
 post-build:
-	cd ${WRKSRC}/programs/regapi && ${MAKE}
+	cd ${WRKSRC}/programs/regapi && ${GMAKE}
 	${SED} '1s/bash/sh/;s-\./\(reg.*\.pl\)-'${PREFIX}/lib/wine/reg/'\1-' <${WRKSRC}/programs/regapi/regSet.sh >${WRKDIR}/regSet.sh
 
 do-install:
-	cd ${WRKSRC} && ${MAKE} install
+	cd ${WRKSRC} && ${GMAKE} install
 	${INSTALL_SCRIPT} ${WRKDIR}/regSet.sh ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf.sample
 	[ -f ${PREFIX}/etc/wine.conf ] \
