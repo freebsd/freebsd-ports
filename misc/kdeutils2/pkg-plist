@@ -116,6 +116,13 @@ share/doc/HTML/en/knotes/index-4.html
 share/doc/HTML/en/knotes/index-5.html
 share/doc/HTML/en/knotes/index.html
 share/doc/HTML/en/knotes/logotp3.gif
+share/doc/HTML/en/kwrite/index-1.html
+share/doc/HTML/en/kwrite/index-2.html
+share/doc/HTML/en/kwrite/index-3.html
+share/doc/HTML/en/kwrite/index-4.html
+share/doc/HTML/en/kwrite/index-5.html
+share/doc/HTML/en/kwrite/index.html
+share/doc/HTML/en/kwrite/logotp3.gif
 share/doc/HTML/it/khexdit/index.html
 share/icons/ark.xpm
 share/icons/kab.xpm
@@ -156,6 +163,7 @@ share/locale/ca/LC_MESSAGES/kljettool.mo
 share/locale/ca/LC_MESSAGES/klpq.mo
 share/locale/ca/LC_MESSAGES/knotes.mo
 share/locale/ca/LC_MESSAGES/kpm.mo
+share/locale/ca/LC_MESSAGES/kwrite.mo
 share/locale/cs/LC_MESSAGES/ark.mo
 share/locale/cs/LC_MESSAGES/kab.mo
 share/locale/cs/LC_MESSAGES/karm.mo
@@ -164,16 +172,26 @@ share/locale/cs/LC_MESSAGES/kedit.mo
 share/locale/cs/LC_MESSAGES/kfloppy.mo
 share/locale/cs/LC_MESSAGES/khexdit.mo
 share/locale/cs/LC_MESSAGES/kjots.mo
+share/locale/cs/LC_MESSAGES/klipper.mo
 share/locale/cs/LC_MESSAGES/kljettool.mo
 share/locale/cs/LC_MESSAGES/klpq.mo
 share/locale/cs/LC_MESSAGES/knotes.mo
 share/locale/cs/LC_MESSAGES/kpm.mo
 share/locale/cs/LC_MESSAGES/kwrite.mo
 share/locale/da/LC_MESSAGES/ark.mo
+share/locale/da/LC_MESSAGES/kab.mo
 share/locale/da/LC_MESSAGES/karm.mo
+share/locale/da/LC_MESSAGES/kcalc.mo
 share/locale/da/LC_MESSAGES/kedit.mo
+share/locale/da/LC_MESSAGES/kfloppy.mo
 share/locale/da/LC_MESSAGES/khexdit.mo
+share/locale/da/LC_MESSAGES/kjots.mo
+share/locale/da/LC_MESSAGES/klipper.mo
+share/locale/da/LC_MESSAGES/kljettool.mo
+share/locale/da/LC_MESSAGES/klpq.mo
 share/locale/da/LC_MESSAGES/knotes.mo
+share/locale/da/LC_MESSAGES/kpm.mo
+share/locale/da/LC_MESSAGES/kwrite.mo
 share/locale/de/LC_MESSAGES/ark.mo
 share/locale/de/LC_MESSAGES/kab.mo
 share/locale/de/LC_MESSAGES/karm.mo
@@ -250,6 +268,7 @@ share/locale/fr/LC_MESSAGES/knotes.mo
 share/locale/fr/LC_MESSAGES/kwrite.mo
 share/locale/he/LC_MESSAGES/kedit.mo
 share/locale/hr/LC_MESSAGES/ark.mo
+share/locale/hr/LC_MESSAGES/kab.mo
 share/locale/hr/LC_MESSAGES/karm.mo
 share/locale/hr/LC_MESSAGES/kcalc.mo
 share/locale/hr/LC_MESSAGES/kedit.mo
@@ -258,10 +277,24 @@ share/locale/hr/LC_MESSAGES/khexdit.mo
 share/locale/hr/LC_MESSAGES/kljettool.mo
 share/locale/hr/LC_MESSAGES/klpq.mo
 share/locale/hr/LC_MESSAGES/knotes.mo
+share/locale/hr/LC_MESSAGES/kpm.mo
 share/locale/hu/LC_MESSAGES/ark.mo
 share/locale/hu/LC_MESSAGES/kedit.mo
 share/locale/hu/LC_MESSAGES/khexdit.mo
 share/locale/hu/LC_MESSAGES/knotes.mo
+share/locale/is/LC_MESSAGES/ark.mo
+share/locale/is/LC_MESSAGES/kab.mo
+share/locale/is/LC_MESSAGES/karm.mo
+share/locale/is/LC_MESSAGES/kcalc.mo
+share/locale/is/LC_MESSAGES/kedit.mo
+share/locale/is/LC_MESSAGES/kfloppy.mo
+share/locale/is/LC_MESSAGES/kjots.mo
+share/locale/is/LC_MESSAGES/klipper.mo
+share/locale/is/LC_MESSAGES/kljettool.mo
+share/locale/is/LC_MESSAGES/klpq.mo
+share/locale/is/LC_MESSAGES/knotes.mo
+share/locale/is/LC_MESSAGES/kpm.mo
+share/locale/is/LC_MESSAGES/kwrite.mo
 share/locale/it/LC_MESSAGES/ark.mo
 share/locale/it/LC_MESSAGES/kab.mo
 share/locale/it/LC_MESSAGES/karm.mo
@@ -316,9 +349,12 @@ share/locale/pl/LC_MESSAGES/kcalc.mo
 share/locale/pl/LC_MESSAGES/kedit.mo
 share/locale/pl/LC_MESSAGES/kfloppy.mo
 share/locale/pl/LC_MESSAGES/khexdit.mo
+share/locale/pl/LC_MESSAGES/kjots.mo
 share/locale/pl/LC_MESSAGES/klipper.mo
 share/locale/pl/LC_MESSAGES/kljettool.mo
+share/locale/pl/LC_MESSAGES/klpq.mo
 share/locale/pl/LC_MESSAGES/knotes.mo
+share/locale/pl/LC_MESSAGES/kpm.mo
 share/locale/pl/LC_MESSAGES/kwrite.mo
 share/locale/pt/LC_MESSAGES/ark.mo
 share/locale/pt/LC_MESSAGES/kab.mo
@@ -421,6 +457,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/khexdit.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/knotes.mo
 share/toolbar/filedel.xpm
 @dirrm share/doc/HTML/it/khexdit
+@dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/knotes
 @dirrm share/doc/HTML/en/klpq
 @dirrm share/doc/HTML/en/kljettool
@@ -444,5 +481,3 @@ share/toolbar/filedel.xpm
 @dirrm share/apps/kcalc
 @dirrm share/apps/kab/pics
 @dirrm share/apps/kab
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/Applications

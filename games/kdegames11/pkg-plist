@@ -690,14 +690,31 @@ share/locale/cs/LC_MESSAGES/kasteroids.mo
 share/locale/cs/LC_MESSAGES/kblackbox.mo
 share/locale/cs/LC_MESSAGES/kmahjongg.mo
 share/locale/cs/LC_MESSAGES/kmines.mo
+share/locale/cs/LC_MESSAGES/konquest.mo
 share/locale/cs/LC_MESSAGES/kpat.mo
 share/locale/cs/LC_MESSAGES/kpoker.mo
 share/locale/cs/LC_MESSAGES/kreversi.mo
 share/locale/cs/LC_MESSAGES/ksame.mo
 share/locale/cs/LC_MESSAGES/kshisen.mo
+share/locale/cs/LC_MESSAGES/ksmiletris.mo
 share/locale/cs/LC_MESSAGES/ksnake.mo
 share/locale/cs/LC_MESSAGES/ksokoban.mo
 share/locale/cs/LC_MESSAGES/ktetris.mo
+share/locale/da/LC_MESSAGES/kabalone.mo
+share/locale/da/LC_MESSAGES/kasteroids.mo
+share/locale/da/LC_MESSAGES/kblackbox.mo
+share/locale/da/LC_MESSAGES/kmahjongg.mo
+share/locale/da/LC_MESSAGES/kmines.mo
+share/locale/da/LC_MESSAGES/konquest.mo
+share/locale/da/LC_MESSAGES/kpat.mo
+share/locale/da/LC_MESSAGES/kpoker.mo
+share/locale/da/LC_MESSAGES/kreversi.mo
+share/locale/da/LC_MESSAGES/ksame.mo
+share/locale/da/LC_MESSAGES/kshisen.mo
+share/locale/da/LC_MESSAGES/ksmiletris.mo
+share/locale/da/LC_MESSAGES/ksnake.mo
+share/locale/da/LC_MESSAGES/ksokoban.mo
+share/locale/da/LC_MESSAGES/ktetris.mo
 share/locale/de/LC_MESSAGES/kabalone.mo
 share/locale/de/LC_MESSAGES/kasteroids.mo
 share/locale/de/LC_MESSAGES/kblackbox.mo
@@ -778,12 +795,15 @@ share/locale/hr/LC_MESSAGES/kasteroids.mo
 share/locale/hr/LC_MESSAGES/kblackbox.mo
 share/locale/hr/LC_MESSAGES/kmahjongg.mo
 share/locale/hr/LC_MESSAGES/kmines.mo
+share/locale/hr/LC_MESSAGES/konquest.mo
 share/locale/hr/LC_MESSAGES/kpat.mo
 share/locale/hr/LC_MESSAGES/kpoker.mo
 share/locale/hr/LC_MESSAGES/kreversi.mo
 share/locale/hr/LC_MESSAGES/ksame.mo
 share/locale/hr/LC_MESSAGES/kshisen.mo
+share/locale/hr/LC_MESSAGES/ksmiletris.mo
 share/locale/hr/LC_MESSAGES/ksnake.mo
+share/locale/hr/LC_MESSAGES/ksokoban.mo
 share/locale/hr/LC_MESSAGES/ktetris.mo
 share/locale/hu/LC_MESSAGES/kabalone.mo
 share/locale/hu/LC_MESSAGES/kasteroids.mo
@@ -803,6 +823,7 @@ share/locale/is/LC_MESSAGES/kpoker.mo
 share/locale/is/LC_MESSAGES/kreversi.mo
 share/locale/is/LC_MESSAGES/ksame.mo
 share/locale/is/LC_MESSAGES/kshisen.mo
+share/locale/is/LC_MESSAGES/ksmiletris.mo
 share/locale/is/LC_MESSAGES/ksnake.mo
 share/locale/is/LC_MESSAGES/ksokoban.mo
 share/locale/is/LC_MESSAGES/ktetris.mo
@@ -828,9 +849,11 @@ share/locale/ko/LC_MESSAGES/ksnake.mo
 share/locale/ko/LC_MESSAGES/ktetris.mo
 share/locale/mk/LC_MESSAGES/kabalone.mo
 share/locale/mk/LC_MESSAGES/kasteroids.mo
+share/locale/mk/LC_MESSAGES/kmines.mo
 share/locale/mk/LC_MESSAGES/kpat.mo
 share/locale/mk/LC_MESSAGES/kpoker.mo
 share/locale/mk/LC_MESSAGES/kreversi.mo
+share/locale/mk/LC_MESSAGES/ksmiletris.mo
 share/locale/nl/LC_MESSAGES/kabalone.mo
 share/locale/nl/LC_MESSAGES/kasteroids.mo
 share/locale/nl/LC_MESSAGES/kblackbox.mo
@@ -860,14 +883,18 @@ share/locale/no/LC_MESSAGES/ksokoban.mo
 share/locale/no/LC_MESSAGES/ktetris.mo
 share/locale/pl/LC_MESSAGES/kabalone.mo
 share/locale/pl/LC_MESSAGES/kasteroids.mo
+share/locale/pl/LC_MESSAGES/kblackbox.mo
 share/locale/pl/LC_MESSAGES/kmahjongg.mo
 share/locale/pl/LC_MESSAGES/kmines.mo
+share/locale/pl/LC_MESSAGES/konquest.mo
 share/locale/pl/LC_MESSAGES/kpat.mo
 share/locale/pl/LC_MESSAGES/kpoker.mo
 share/locale/pl/LC_MESSAGES/kreversi.mo
 share/locale/pl/LC_MESSAGES/ksame.mo
 share/locale/pl/LC_MESSAGES/kshisen.mo
+share/locale/pl/LC_MESSAGES/ksmiletris.mo
 share/locale/pl/LC_MESSAGES/ksnake.mo
+share/locale/pl/LC_MESSAGES/ksokoban.mo
 share/locale/pl/LC_MESSAGES/ktetris.mo
 share/locale/pt/LC_MESSAGES/kabalone.mo
 share/locale/pt/LC_MESSAGES/kasteroids.mo
@@ -973,9 +1000,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/ktetris.mo
 @dirrm share/doc/HTML/en/kblackbox
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/kabalone
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/kabalone
-@dirrm share/doc/HTML/de
 @dirrm share/apps/ksnake/pics
 @dirrm share/apps/ksnake/levels
 @dirrm share/apps/ksnake/backgrounds

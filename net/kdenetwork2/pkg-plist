@@ -156,6 +156,7 @@ share/apps/kppp/Rules/Norway/Local_Area.rst
 share/apps/kppp/Rules/Norway/Long_Distance.rst
 share/apps/kppp/Rules/Poland/Poland.rst
 share/apps/kppp/Rules/Poland/Poland_Local.rst
+share/apps/kppp/Rules/Portugal/067.rst
 share/apps/kppp/Rules/Portugal/Local+Activation_rate.rst
 share/apps/kppp/Rules/Portugal/Local.rst
 share/apps/kppp/Rules/Romania/Telecom_Interurban.rst
@@ -294,6 +295,7 @@ share/doc/HTML/en/knu/knu-traceroute.gif
 share/doc/HTML/en/knu/logotp3.gif
 share/doc/HTML/en/korn/index.html
 share/doc/HTML/en/kppp/hayes.html
+share/doc/HTML/en/kppp/index.html
 share/doc/HTML/en/kppp/kppp-1.html
 share/doc/HTML/en/kppp/kppp-10.html
 share/doc/HTML/en/kppp/kppp-2.html
@@ -335,12 +337,14 @@ share/doc/HTML/it/ktalkd/ktalkd-5.html
 share/doc/HTML/it/ktalkd/ktalkd-6.html
 share/doc/HTML/it/ktalkd/ktalkd.html
 share/doc/HTML/it/ktalkd/logotp3.gif
+share/icons/karchie.xpm
 share/icons/kbiff.xpm
 share/icons/kmail.xpm
 share/icons/knu.xpm
 share/icons/korn.xpm
 share/icons/kppp.xpm
 share/icons/krn.xpm
+share/icons/mini/karchie.xpm
 share/icons/mini/kbiff.xpm
 share/icons/mini/kmail.xpm
 share/icons/mini/knu.xpm
@@ -419,6 +423,7 @@ share/locale/fi/LC_MESSAGES/krn.mo
 share/locale/fi/LC_MESSAGES/ksirc.mo
 share/locale/fi/LC_MESSAGES/ktalkd.mo
 share/locale/fr/LC_MESSAGES/kbiff.mo
+share/locale/fr/LC_MESSAGES/kfinger.mo
 share/locale/fr/LC_MESSAGES/kmail.mo
 share/locale/fr/LC_MESSAGES/knu.mo
 share/locale/fr/LC_MESSAGES/korn.mo
@@ -426,23 +431,35 @@ share/locale/fr/LC_MESSAGES/kppp.mo
 share/locale/fr/LC_MESSAGES/krn.mo
 share/locale/fr/LC_MESSAGES/ktalkd.mo
 share/locale/he/LC_MESSAGES/kppp.mo
+share/locale/hr/LC_MESSAGES/kbiff.mo
 share/locale/hr/LC_MESSAGES/kfinger.mo
 share/locale/hr/LC_MESSAGES/kmail.mo
 share/locale/hr/LC_MESSAGES/knu.mo
 share/locale/hr/LC_MESSAGES/kppp.mo
 share/locale/hr/LC_MESSAGES/krn.mo
+share/locale/hr/LC_MESSAGES/ksirc.mo
 share/locale/hr/LC_MESSAGES/ktalkd.mo
 share/locale/hu/LC_MESSAGES/kbiff.mo
 share/locale/hu/LC_MESSAGES/kfinger.mo
 share/locale/hu/LC_MESSAGES/kmail.mo
 share/locale/hu/LC_MESSAGES/knu.mo
 share/locale/hu/LC_MESSAGES/ktalkd.mo
+share/locale/is/LC_MESSAGES/karchie.mo
+share/locale/is/LC_MESSAGES/kbiff.mo
+share/locale/is/LC_MESSAGES/kcmktalkd.mo
+share/locale/is/LC_MESSAGES/kfinger.mo
 share/locale/is/LC_MESSAGES/kmail.mo
+share/locale/is/LC_MESSAGES/knu.mo
+share/locale/is/LC_MESSAGES/korn.mo
+share/locale/is/LC_MESSAGES/kppp.mo
+share/locale/is/LC_MESSAGES/krn.mo
 share/locale/is/LC_MESSAGES/ksirc.mo
 share/locale/is/LC_MESSAGES/ktalkd.mo
+share/locale/it/LC_MESSAGES/kbiff.mo
 share/locale/it/LC_MESSAGES/kfinger.mo
 share/locale/it/LC_MESSAGES/kmail.mo
 share/locale/it/LC_MESSAGES/knu.mo
+share/locale/it/LC_MESSAGES/korn.mo
 share/locale/it/LC_MESSAGES/kppp.mo
 share/locale/it/LC_MESSAGES/krn.mo
 share/locale/it/LC_MESSAGES/ktalkd.mo
@@ -469,6 +486,7 @@ share/locale/no/LC_MESSAGES/ksirc.mo
 share/locale/no/LC_MESSAGES/ktalkd.mo
 share/locale/pl/LC_MESSAGES/karchie.mo
 share/locale/pl/LC_MESSAGES/kbiff.mo
+share/locale/pl/LC_MESSAGES/kcmktalkd.mo
 share/locale/pl/LC_MESSAGES/kfinger.mo
 share/locale/pl/LC_MESSAGES/kmail.mo
 share/locale/pl/LC_MESSAGES/knu.mo
@@ -548,8 +566,7 @@ share/toolbar/kcontrol.xpm
 share/toolbar/mini-clock.xpm
 share/toolbar/mini-connect.xpm
 share/toolbar/mini-ktalk.xpm
-@exec ln -sf kppp.html %D/share/doc/HTML/en/kppp/index.html
-@unexec rm -f %D/share/doc/HTML/en/kppp/index.html
+@dirrm share/sounds
 @dirrm share/doc/HTML/it/ktalkd
 @dirrm share/doc/HTML/fr/ktalkd
 @dirrm share/doc/HTML/en/ktalkd
@@ -606,5 +623,3 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/apps/kmail
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
-@dirrm share/applnk/Settings/Network
-@dirrm share/applnk/Internet

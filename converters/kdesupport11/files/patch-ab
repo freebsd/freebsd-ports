@@ -1,0 +1,15 @@
+*** configure~	Sat Feb  6 18:56:20 1999
+--- configure	Mon Feb  8 19:51:44 1999
+***************
+*** 4809,4813 ****
+  fi
+  
+! 
+  
+  echo $ac_n "checking if the compiler supports function prototypes""... $ac_c" 1>&6
+--- 4809,4813 ----
+  fi
+  
+! TOPSUBDIRS="$TOPSUBDIRS rdb"
+  
+  echo $ac_n "checking if the compiler supports function prototypes""... $ac_c" 1>&6

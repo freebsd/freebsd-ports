@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.26 1999/02/03 11:11:55 asami Exp $
+# $Id: Makefile,v 1.27 1999/02/06 23:22:04 se Exp $
 #
 
-DISTNAME=	kdenetwork-1.1pre2
+DISTNAME=	kdenetwork-1.1
 CATEGORIES=	net news kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1pre2/distribution/tar/generic/source
+MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source
 
 MAINTAINER=	se@freebsd.org
 
@@ -29,12 +29,12 @@ CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--with-extra-includes=$(PREFIX)/include/giflib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
+USE_GMAKE=	yes
 CFLAGS+=	"-I${PREFIX}/include"
 
 pre-configure:
 		${LN} -sf $(PREFIX)/include/uu.h $(WRKSRC)/krn/uudeview.h
 
-post-install:
-		${LN} -sf kppp.html ${PREFIX}/share/doc/HTML/en/kppp/index.html
-
 .include <bsd.port.mk>
+
+#CONFIGURE_ARGS+="--with-install-root=/data/kde"
