@@ -1,14 +1,10 @@
---- Makefile.orig	Tue Jan 30 04:42:53 2001
-+++ Makefile	Thu Feb  1 02:21:22 2001
-@@ -6,7 +6,6 @@
- #DEFINES  = -DFAST
+--- Makefile.orig	Mon Mar 19 01:54:40 2001
++++ Makefile	Tue Mar 20 12:55:19 2001
+@@ -3,16 +3,15 @@
  
- # for modern system, but little amount of memory
--CFLAGS   = -O3 -march=pentium -Wall -shared
- DEFINES  = -DSHADE -DDRAWTITLE -DSTD_IO -DKEYS -DMAXIMIZE
- 
- # modern system, no keyboard support desired & faster drawing
-@@ -24,12 +23,12 @@
+ # Only for testing & devellopment
+ # CFLAGS   = -O0 -Wall -g3 -ggdb -p -H
+-CFLAGS = -O3 -s
  
  # There should be nothing to edit below this line
  # -----------------------------------------------------------------------------
