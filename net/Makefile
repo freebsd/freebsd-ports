@@ -359,6 +359,7 @@
     SUBDIR += ocaml-jabbr
     SUBDIR += odsclient
     SUBDIR += ohphone
+    SUBDIR += onenetd
     SUBDIR += openam
     SUBDIR += opendchub
     SUBDIR += opengatekeeper
