@@ -53,7 +53,7 @@
   
   #LDADD+= -lcrypt -lndbm
   
-! CFLAGS+=-DHAVE_PARAM_H -DSETPROCTITLE -DDEBUG
+! CFLAGS+=-DHAVE_PARAM_H -DSETPROCTITLE
 ! LDADD+=-lutil
 ! 
 ! .if exists(/usr/lib/libskey.a) && exists(/usr/lib/libmd.a)
