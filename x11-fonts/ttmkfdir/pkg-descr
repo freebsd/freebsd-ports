@@ -1,2 +1,4 @@
 This program reads TrueType fonts and creates a
 suitable fonts.scale file for use with an X font server.
+
+WWW: http://www.darmstadt.gmd.de/~pommnitz/TrueType/xfsft.html
