@@ -194,6 +194,7 @@
     SUBDIR += ngrep
     SUBDIR += nocol
     SUBDIR += ns
+    SUBDIR += nsc
     SUBDIR += nslint
     SUBDIR += nsping
     SUBDIR += nstreams
