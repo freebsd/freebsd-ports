@@ -52,7 +52,6 @@ netbeans/bin/ide.policy
 netbeans/bin/macosx_launcher.dmg
 netbeans/bin/runide.exe
 netbeans/bin/runide.sh
-netbeans/bin/runide.sh.orig
 netbeans/bin/runide_exe_defaults
 netbeans/bin/runideopenvms.com
 netbeans/bin/runideos2.cmd
