@@ -162,6 +162,7 @@
     SUBDIR += socks5
     SUBDIR += sup
     SUBDIR += tac_plus
+    SUBDIR += tac_plus4
     SUBDIR += tcpflow
     SUBDIR += tcpshow
     SUBDIR += tcptrace
