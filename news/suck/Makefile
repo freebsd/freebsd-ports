@@ -20,6 +20,7 @@ MAN1=		suck.1 rpost.1 testhost.1 lmove.1
 .if defined(NEWSBIN)
 PKGNAMESUFFIX=	-cnews
 EXTRA_PATCHES+=	${FILESDIR}/cnews.patch
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 .else
 EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
