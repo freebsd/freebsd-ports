@@ -34,7 +34,8 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --enable-xft
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+# configure ignores ${CXX} and keeps on linking C++ code with ${CC}
+CONFIGURE_ENV+=	CC="${CXX}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
 USE_X_PREFIX=	yes
