@@ -1,0 +1,19 @@
+*** library/sysf77lib/9009/xmktmp_bsd.c.orig	Fri Apr 21 13:55:24 2000
+--- library/sysf77lib/9009/xmktmp_bsd.c	Fri Apr 21 13:56:16 2000
+***************
+*** 56,62 ****
+  
+  	(void)sprintf(buf,TEMPLATE,lkey) ;
+  
+! 	(void)mktemp(buf) ;
+  
+  	for (p = &str[*len] ; p != str; ) *--p = ' ' ;	/* clear */
+  
+--- 56,62 ----
+  
+  	(void)sprintf(buf,TEMPLATE,lkey) ;
+  
+! 	(void)mkstemp(buf) ;
+  
+  	for (p = &str[*len] ; p != str; ) *--p = ' ' ;	/* clear */
+  

@@ -1,0 +1,30 @@
+*** utils/imakesrc/aelimake.orig	Fri Jan 15 18:49:29 1999
+--- utils/imakesrc/aelimake	Fri Jan 15 18:51:03 1999
+***************
+*** 7,14 ****
+  #	system is one of: $SYS_LIST
+  
+! SYS_LIST="SUN3 SUN4 ULTRIX CONVEX MIPS"
+  
+  # Templates directory:
+! imake="/tmp/release/utils/imakesrc"
+  
+  # local things are to be used...
+--- 7,14 ----
+  #	system is one of: $SYS_LIST
+  
+! SYS_LIST="SUN3 SUN4 ULTRIX CONVEX MIPS FBSD"
+  
+  # Templates directory:
+! imake=${WRKDIR}/utils/imakesrc
+  
+  # local things are to be used...
+***************
+*** 62,64 ****
+  fi
+  
+! /tmp/bin/imake $IVERBOSE -D$SYS $IFILE -T Imake.tmpl -I$imake/Defaults -I$imake $MFILE $DEFS "-DImakeDefines=$DEFS"
+--- 62,64 ----
+  fi
+  
+! ${X11BASE}/bin/imake  $IVERBOSE -D$SYS $IFILE -T Imake.tmpl -I$imake/Defaults -I$imake $MFILE $DEFS "-DImakeDefines=$DEFS"

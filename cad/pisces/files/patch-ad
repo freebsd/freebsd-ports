@@ -1,0 +1,22 @@
+*** library/plotcap/9016/gplot/Imakefile.orig	Wed Apr 26 12:50:39 2000
+--- library/plotcap/9016/gplot/Imakefile	Wed Apr 26 12:51:49 2000
+***************
+*** 108,114 ****
+  
+  DependNeeds(gp_vers.h gp_pclocs.h)
+  
+- #ifdef STANFORD
+  
+  ConditionalReplace(gp_vers.tmp,gp_vers.h)
+  ConditionalReplace(gp_pclocs.tmp,gp_pclocs.h)
+--- 108,113 ----
+***************
+*** 121,127 ****
+  	EchoInto('/* NOTE: this file created by the Makefile */',gp_pclocs.tmp)
+  	EchoAppend('#define PCAP_FILE	"$(PLOTCAP)"', gp_pclocs.tmp)
+  
+- #endif /*stanford*/
+  
+  
+  # INSTALL everything.
+--- 120,125 ----

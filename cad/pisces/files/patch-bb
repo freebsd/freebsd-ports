@@ -1,0 +1,12 @@
+*** library/plotcap/9016/gplot/pg_erset.c.orig	Mon Jan 18 16:27:21 1999
+--- library/plotcap/9016/gplot/pg_erset.c	Mon Jan 18 16:28:43 1999
+***************
+*** 149,153 ****
+--- 149,155 ----
+  		perror("\t") ;
+  #else
++ #ifndef __FreeBSD__
+  		extern	char *sys_errlist[] ;
++ #endif
+  		pr(stderr," [%s]", sys_errlist[syseno] ) ;
+  #endif

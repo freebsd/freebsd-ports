@@ -1,0 +1,42 @@
+*** library/plotcap/9016/tool/Imakefile.orig	Tue Dec 11 00:53:36 1990
+--- library/plotcap/9016/tool/Imakefile	Mon Jan 18 18:26:24 1999
+***************
+*** 47,56 ****
+  X11	= x11gplot
+  X11_O	= x11_lib.o
+! X11_L	= -lX11
+  X11_D	= ${LIBDIR}/${X11}
+  
+  # ====== The Targets that this system will support. ========
+  
+! AllTarget(tool.o did.cnf)
+  
+  #ifdef DO_SUNVIEW
+--- 47,56 ----
+  X11	= x11gplot
+  X11_O	= x11_lib.o
+! X11_L	= -L${X11BASE}/lib -lX11
+  X11_D	= ${LIBDIR}/${X11}
+  
+  # ====== The Targets that this system will support. ========
+  
+! AllTarget(tool.o)
+  
+  #ifdef DO_SUNVIEW
+***************
+*** 68,74 ****
+  did.cnf:
+  	$(RM) Makefile.cnf
+! 	check$(SHELL_EXT) X10 $(X) $(X_L)
+! 	check$(SHELL_EXT) X11 $(X11) $(X11_L)
+! 	check$(SHELL_EXT) SUNVIEW $(SUNVIEW) $(SUNVIEW_L)
+  	touch $@
+  	touch Imakefile
+--- 68,74 ----
+  did.cnf:
+  	$(RM) Makefile.cnf
+! 	sh check$(SHELL_EXT) X10 $(X) $(X_L)
+! 	sh check$(SHELL_EXT) X11 $(X11) $(X11_L)
+! 	sh check$(SHELL_EXT) SUNVIEW $(SUNVIEW) $(SUNVIEW_L)
+  	touch $@
+  	touch Imakefile

@@ -1,0 +1,181 @@
+bin/digit
+bin/dplot
+bin/genii3
+bin/hsl2rgb
+bin/pisc2
+bin/pisces2
+include/gplot.h
+include/gplot.inc
+include/gpmarks.h
+lib/libedline.a
+lib/libfplot1d.a
+lib/libgenii.a
+lib/libgplot.a
+lib/libgplotF77.a
+lib/libhigh2.a
+lib/libpisc2.a
+lib/libpisc2a.a
+lib/libspifi0.a
+lib/libsysf77.a
+lib/x11gplot
+share/doc/pisces/doc/README
+share/doc/pisces/doc/cards/Makefile
+share/doc/pisces/doc/cards/c_check.ms
+share/doc/pisces/doc/cards/c_comment.ms
+share/doc/pisces/doc/cards/c_contact.ms
+share/doc/pisces/doc/cards/c_contour.ms
+share/doc/pisces/doc/cards/c_doping.ms
+share/doc/pisces/doc/cards/c_elec.ms
+share/doc/pisces/doc/cards/c_elim.ms
+share/doc/pisces/doc/cards/c_end.ms
+share/doc/pisces/doc/cards/c_extract.ms
+share/doc/pisces/doc/cards/c_impact.ms
+share/doc/pisces/doc/cards/c_include.ms
+share/doc/pisces/doc/cards/c_interface.ms
+share/doc/pisces/doc/cards/c_load.ms
+share/doc/pisces/doc/cards/c_log.ms
+share/doc/pisces/doc/cards/c_mater.ms
+share/doc/pisces/doc/cards/c_mesh.ms
+share/doc/pisces/doc/cards/c_method.ms
+share/doc/pisces/doc/cards/c_models.ms
+share/doc/pisces/doc/cards/c_option.ms
+share/doc/pisces/doc/cards/c_plot1d.ms
+share/doc/pisces/doc/cards/c_plot2d.ms
+share/doc/pisces/doc/cards/c_print.ms
+share/doc/pisces/doc/cards/c_region.ms
+share/doc/pisces/doc/cards/c_regrid.ms
+share/doc/pisces/doc/cards/c_solve.ms
+share/doc/pisces/doc/cards/c_spread.ms
+share/doc/pisces/doc/cards/c_symb.ms
+share/doc/pisces/doc/cards/c_title.ms
+share/doc/pisces/doc/cards/c_vector.ms
+share/doc/pisces/doc/cards/c_xmesh.ms
+share/doc/pisces/doc/cards/end.ms
+share/doc/pisces/doc/cards/overview.ms
+share/doc/pisces/doc/cards/paper-nr.cat
+share/doc/pisces/doc/cards/paper-tr
+share/doc/pisces/doc/cards/toc-make
+share/doc/pisces/doc/cards/toc-page
+share/doc/pisces/doc/cards/toc.tr
+share/doc/pisces/doc/chap.tmac
+share/doc/pisces/doc/examples/Makefile.ex
+share/doc/pisces/doc/examples/pn1a.in
+share/doc/pisces/doc/examples/pn2a.in
+share/doc/pisces/doc/examples/pn2aa.in
+share/doc/pisces/doc/examples/pn3a.in
+share/doc/pisces/doc/examples/pn4.in
+share/doc/pisces/doc/examples/pn8.in
+share/doc/pisces/doc/examples/pn9a.in
+share/doc/pisces/doc/macros.tmac
+share/doc/pisces/doc/manual/chap1.ms
+share/doc/pisces/doc/manual/chap2.ms
+share/doc/pisces/doc/manual/chap3.ms
+share/doc/pisces/doc/manual/chap4.ms
+share/doc/pisces/doc/manual/cover.ms
+share/doc/pisces/doc/notes/impact.note
+share/doc/pisces/doc/notes/param.note
+share/doc/pisces/doc/notes/surfmob.note
+share/doc/pisces/doc/notes/tfldmob.ms
+share/doc/pisces/doc/notes/tfldmob.ps
+share/doc/pisces/doc/notes/usermob1.note
+share/doc/pisces/doc/release.notes
+share/doc/pisces/test_suite/Makefile
+share/doc/pisces/test_suite/test01/Makefile
+share/doc/pisces/test_suite/test01/README01
+share/doc/pisces/test_suite/test01/mosIV.p2
+share/doc/pisces/test_suite/test01/nmos.p2
+share/doc/pisces/test_suite/test02/Makefile
+share/doc/pisces/test_suite/test02/README02
+share/doc/pisces/test_suite/test02/npn.p2
+share/doc/pisces/test_suite/test02/npn1.p2
+share/doc/pisces/test_suite/test02/plot.iv
+share/doc/pisces/test_suite/test03/Makefile
+share/doc/pisces/test_suite/test03/README03
+share/doc/pisces/test_suite/test03/nbLdrain.p2
+share/doc/pisces/test_suite/test03/nbLgrid.p2
+share/doc/pisces/test_suite/test03/nbLsolve.p2
+share/doc/pisces/test_suite/test04/Makefile
+share/doc/pisces/test_suite/test04/README04
+share/doc/pisces/test_suite/test04/n3edrain.p2
+share/doc/pisces/test_suite/test04/n3egrid.p2
+share/doc/pisces/test_suite/test04/n3esolve.p2
+share/doc/pisces/test_suite/test05/Makefile
+share/doc/pisces/test_suite/test05/README05
+share/doc/pisces/test_suite/test05/soigrid.p2
+share/doc/pisces/test_suite/test05/soiplot.p2
+share/doc/pisces/test_suite/test05/soisolve.p2
+share/doc/pisces/test_suite/test06/Makefile
+share/doc/pisces/test_suite/test06/README06
+share/doc/pisces/test_suite/test06/depthcon
+share/doc/pisces/test_suite/test06/ex13ig.p2
+share/doc/pisces/test_suite/test06/exn13g37.p2
+share/doc/pisces/test_suite/test07/Makefile
+share/doc/pisces/test_suite/test07/README07
+share/doc/pisces/test_suite/test07/depthcon
+share/doc/pisces/test_suite/test07/idvg098.p2
+share/doc/pisces/test_suite/test07/mesh098.p2
+share/doc/pisces/test_suite/test08/Makefile
+share/doc/pisces/test_suite/test08/README08
+share/doc/pisces/test_suite/test08/schot.p2
+share/doc/pisces/test_suite/test08/shot.p2
+share/doc/pisces/test_suite/test09/Makefile
+share/doc/pisces/test_suite/test09/Makefile.bak
+share/doc/pisces/test_suite/test09/README09
+share/doc/pisces/test_suite/test09/pn1a.p2
+share/doc/pisces/test_suite/test09/pn1a.plot
+share/doc/pisces/test_suite/test09/pn2a.p2
+share/doc/pisces/test_suite/test09/pn2aa.p2
+share/doc/pisces/test_suite/test09/pn3a.p2
+share/doc/pisces/test_suite/test09/pn4.p2
+share/doc/pisces/test_suite/test09/pn8.p2
+share/doc/pisces/test_suite/test09/pn9a.p2
+share/doc/pisces/test_suite/test10/Makefile
+share/doc/pisces/test_suite/test10/README10
+share/doc/pisces/test_suite/test10/highbias.p2
+share/doc/pisces/test_suite/test10/lowbias.p2
+share/doc/pisces/test_suite/test10/mesh.p2
+share/doc/pisces/test_suite/test11/Makefile
+share/doc/pisces/test_suite/test11/README11
+share/doc/pisces/test_suite/test11/fig03.p2
+share/doc/pisces/test_suite/test11/fig04.p2
+share/doc/pisces/test_suite/test11/fig05.p2
+share/doc/pisces/test_suite/test11/fig08.p2
+share/doc/pisces/test_suite/test11/fig15.p2
+share/doc/pisces/test_suite/test11/fig19.p2
+share/doc/pisces/test_suite/test11/hmos.dop
+share/doc/pisces/test_suite/test12/Makefile
+share/doc/pisces/test_suite/test12/README12
+share/doc/pisces/test_suite/test12/pin.p2
+share/doc/pisces/test_suite/test12/pinmesh.p2
+share/doc/pisces/test_suite/test13/IV1.75ns.data
+share/doc/pisces/test_suite/test13/IV2ns.data
+share/doc/pisces/test_suite/test13/Makefile
+share/doc/pisces/test_suite/test13/README
+share/doc/pisces/test_suite/test13/latch.dplot
+share/doc/pisces/test_suite/test13/makegrid.p2
+share/doc/pisces/test_suite/test13/pulse1.75.p2
+share/doc/pisces/test_suite/test13/pulse2ns.p2
+share/doc/pisces/test_suite/test13/tri1
+share/misc/pisc.key
+share/misc/plotcap
+share/misc/plotcap.std
+@dirrm share/doc/pisces/test_suite/test13
+@dirrm share/doc/pisces/test_suite/test12
+@dirrm share/doc/pisces/test_suite/test11
+@dirrm share/doc/pisces/test_suite/test10
+@dirrm share/doc/pisces/test_suite/test09
+@dirrm share/doc/pisces/test_suite/test08
+@dirrm share/doc/pisces/test_suite/test07
+@dirrm share/doc/pisces/test_suite/test06
+@dirrm share/doc/pisces/test_suite/test05
+@dirrm share/doc/pisces/test_suite/test04
+@dirrm share/doc/pisces/test_suite/test03
+@dirrm share/doc/pisces/test_suite/test02
+@dirrm share/doc/pisces/test_suite/test01
+@dirrm share/doc/pisces/test_suite
+@dirrm share/doc/pisces/doc/notes
+@dirrm share/doc/pisces/doc/manual
+@dirrm share/doc/pisces/doc/examples
+@dirrm share/doc/pisces/doc/cards
+@dirrm share/doc/pisces/doc
+@dirrm share/doc/pisces

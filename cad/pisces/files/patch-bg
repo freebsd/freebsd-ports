@@ -1,0 +1,73 @@
+*** pisces/9009/src/Imakefile.orig	Tue May 28 20:21:12 1991
+--- pisces/9009/src/Imakefile	Thu Apr 27 11:56:15 2000
+***************
+*** 16,22 ****
+  INCLUDES= -I$(INCDIR)
+  # =============================================================================
+  
+! PISCES_DEST=$(PISCES_DIR)/$(PISCES_VERSION)
+  
+  MAIN_SRC=pisc2.F_EXT
+  MAIN_OBJ= pisc2.o
+--- 16,22 ----
+  INCLUDES= -I$(INCDIR)
+  # =============================================================================
+  
+! PISCES_DEST=$(PISCES_DIR)
+  
+  MAIN_SRC=pisc2.F_EXT
+  MAIN_OBJ= pisc2.o
+***************
+*** 190,198 ****
+  
+  # =============================================================================
+  
+! InstallProgram($(PISCES),$(PISCES_DEST)/$(PISCES))
+! InstallLibrary($(PISLIB),$(PISCES_DEST)/$(PISLIB))
+! InstallLibrary($(OPTLIB),$(PISCES_DEST)/$(OPTLIB))
+  InstallProgram(pisc2,$(BINDIR)/pisc2)
+  
+  #ifdef STANFORD
+--- 190,198 ----
+  
+  # =============================================================================
+  
+! InstallProgram($(PISCES),$(BINDIR)/$(PISCES))
+! InstallLibrary($(PISLIB),${PREFIX}/lib/$(PISLIB))
+! InstallLibrary($(OPTLIB),${PREFIX}/lib/$(OPTLIB))
+  InstallProgram(pisc2,$(BINDIR)/pisc2)
+  
+  #ifdef STANFORD
+***************
+*** 209,226 ****
+  
+  # and the shell to run the program.
+  ConditionalReplace(pisc2.tmp,pisc2)
+! pisc2.tmp: pisc2.sh Makefile
+  	sed -e 's;^[ 	]*PISC2DIR=.*;PISC2DIR=$(PISCES_DIR)/$(PISCES_VERSION);' \
+  	    -e 's;^[ 	]*VERS=.*;VERS=$(PISCES_VERSION);' pisc2.sh > pisc2.tmp
+  
+! InstallFile(pisc.key,$(PISCES_DEST)/pisc.key)
+! InstallFile(pisc.uky,$(PISCES_DEST)/pisc.uky)
+  
+- # make and install the binary keyfile.
+- pisc.uky:: pisc.key $(PISCES)
+- 	$(RM) $@
+- 	./$(PISCES) /dev/null
+- 	mv PISC2UKY  pisc.uky
+  clean::
+  	$(RM) pisc.uky
+  
+--- 209,220 ----
+  
+  # and the shell to run the program.
+  ConditionalReplace(pisc2.tmp,pisc2)
+! pisc2.tmp: pisc2.sh emptyrule
+  	sed -e 's;^[ 	]*PISC2DIR=.*;PISC2DIR=$(PISCES_DIR)/$(PISCES_VERSION);' \
+  	    -e 's;^[ 	]*VERS=.*;VERS=$(PISCES_VERSION);' pisc2.sh > pisc2.tmp
+  
+! InstallFile(pisc.key,${PREFIX}/share/misc/pisc.key)
+  
+  clean::
+  	$(RM) pisc.uky
+  

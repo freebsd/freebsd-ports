@@ -1,0 +1,19 @@
+*** library/plotcap/9016/plotcap/Imakefile.orig	Wed Nov  3 12:36:26 1999
+--- library/plotcap/9016/plotcap/Imakefile	Wed Nov  3 12:36:50 1999
+***************
+*** 22,28 ****
+  InstallFile(plotcap,$(PLOTCAP).std)
+  InstallNewFile(plotcap.def,$(PLOTCAP))
+  
+! DependsOn(plotcap.def,Makefile)
+  	EchoInto('# Date:',plotcap.def)
+  	EchoAppend('# LOCAL DEFINITIONS, edit this not $(PLOTCAPDIR)/plotcap.std',plotcap.def)
+  	EchoAppend(' ', plotcap.def)
+--- 22,28 ----
+  InstallFile(plotcap,$(PLOTCAP).std)
+  InstallNewFile(plotcap.def,$(PLOTCAP))
+  
+! DependsOn(plotcap.def,emptyrule)
+  	EchoInto('# Date:',plotcap.def)
+  	EchoAppend('# LOCAL DEFINITIONS, edit this not $(PLOTCAPDIR)/plotcap.std',plotcap.def)
+  	EchoAppend(' ', plotcap.def)

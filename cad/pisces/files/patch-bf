@@ -1,0 +1,26 @@
+*** library/sysf77lib/9009/Imakefile.orig	Wed May 29 00:50:20 1991
+--- library/sysf77lib/9009/Imakefile	Fri Apr 21 13:59:16 2000
+***************
+*** 9,14 ****
+--- 9,17 ----
+  OBJS_DEF=	xdate_def.o  xexit_def.o xgeten_def.o xgtarg_def.o \
+  		xmktmp_def.o xtimer_def.o
+  
++ OBJS_FBSD=      xdate_fbsd.o  xexit_def.o xgeten_def.o xgtarg_def.o \
++                 xmktmp_bsd.o xtimer_fbsd.o
++ 
+  OBJS_BSD=	xdate_bsd.o  xexit_bsd.o xgeten_bsd.o xgtarg_bsd.o \
+  		xmktmp_bsd.o xtimer_bsd.o
+  
+***************
+*** 27,32 ****
+--- 30,38 ----
+  # Default (hopefully will get overriddend below):
+  OBJS=	$(OBJS_DEF)
+  
++ #ifdef FBSD
++ OBJS=	$(OBJS_FBSD)
++ #endif
+  #if defined(SUN3) || defined(SUN4) || defined(CONVEX)
+  OBJS=	$(OBJS_BSD)
+  #endif

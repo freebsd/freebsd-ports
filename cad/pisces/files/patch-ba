@@ -1,0 +1,52 @@
+*** library/plotcap/9016/gplot/gp_clip.c.orig	Mon Jan 18 16:19:06 1999
+--- library/plotcap/9016/gplot/gp_clip.c	Mon Jan 18 16:20:04 1999
+***************
+*** 104,117 ****
+  
+  /* Psect(P1, SIDE1) --> P1\**\out&SIDE1 --> P1out & SIDE 1 */
+! #define Psect(PNT,SID, BS) \
+! 	((PNT/**/out & SID) && fnsect(PNT/**/new, P1old, P2old,  BS))
+  
+  	/* clip if Point1 is out of bounds */
+  	is = 0;
+  	if (P1out) {
+! 		if      (Psect(P1, SIDE1, BS1)) is = 1 ;
+! 		else if (Psect(P1, SIDE2, BS2)) is = 2 ;
+! 		else if (Psect(P1, SIDE3, BS3)) is = 3 ;
+! 		else if (Psect(P1, SIDE4, BS4)) is = 4 ;
+  #ifdef FOO
+  		else  /* both out and no intersection: a way out segment */
+--- 104,117 ----
+  
+  /* Psect(P1, SIDE1) --> P1\**\out&SIDE1 --> P1out & SIDE 1 */
+! #define Psect(PNout, PNnew, SID, BS) \
+! 	((PNout & SID) && fnsect(PNnew, P1old, P2old,  BS))
+  
+  	/* clip if Point1 is out of bounds */
+  	is = 0;
+  	if (P1out) {
+! 		if      (Psect(P1out, P1new, SIDE1, BS1)) is = 1 ;
+! 		else if (Psect(P1out, P1new, SIDE2, BS2)) is = 2 ;
+! 		else if (Psect(P1out, P1new, SIDE3, BS3)) is = 3 ;
+! 		else if (Psect(P1out, P1new, SIDE4, BS4)) is = 4 ;
+  #ifdef FOO
+  		else  /* both out and no intersection: a way out segment */
+***************
+*** 122,129 ****
+  	is2 = 0 ;
+  	if (P2out) {
+! 		if      (Psect(P2, SIDE1, BS1)) is2 = 1 ;
+! 		else if (Psect(P2, SIDE2, BS2)) is2 = 2 ;
+! 		else if (Psect(P2, SIDE3, BS3)) is2 = 3 ;
+! 		else if (Psect(P2, SIDE4, BS4)) is2 = 4 ;
+  		}
+  
+--- 122,129 ----
+  	is2 = 0 ;
+  	if (P2out) {
+! 		if      (Psect(P2out, P2new, SIDE1, BS1)) is2 = 1 ;
+! 		else if (Psect(P2out, P2new, SIDE2, BS2)) is2 = 2 ;
+! 		else if (Psect(P2out, P2new, SIDE3, BS3)) is2 = 3 ;
+! 		else if (Psect(P2out, P2new, SIDE4, BS4)) is2 = 4 ;
+  		}
+  
