@@ -1,5 +1,5 @@
---- src/makefile.linux.orig	Wed May 16 22:38:21 2001
-+++ src/makefile.linux	Mon May 21 17:02:43 2001
+--- src/makefile.linux.orig	Fri Jun 29 23:12:52 2001
++++ src/makefile.linux	Fri Jun 29 23:13:27 2001
 @@ -23,7 +23,7 @@
  WINDIR=linux
  OBJDIR=obj
@@ -9,7 +9,7 @@
  
  CHIPSOBJ=${CHIPDIR}/sfxproc.o ${CHIPDIR}/fxemu2.o ${CHIPDIR}/dsp1proc.o\
  	 ${CHIPDIR}/fxemu2b.o ${CHIPDIR}/fxemu2c.o ${CHIPDIR}/fxtable.o\
-@@ -58,12 +58,12 @@
+@@ -59,12 +59,12 @@
  MAINOBJ=cfgload.o endmem.o fixsin.o init.o ui.o vcache.o water.o
  
  OBJS=${CHIPSOBJ} ${CPUOBJ} ${WINOBJ} ${WINDOSOBJ} ${GUIOBJ} ${VIDEOBJ} ${ZIPOBJ} ${MAINOBJ}
