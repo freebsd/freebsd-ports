@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.59 1999/01/18 03:42:59 steve Exp $
+# $Id: Makefile,v 1.60 1999/02/04 05:12:53 gj Exp $
 #
 
     SUBDIR += LPRng
     SUBDIR += afio
     SUBDIR += asapm
+    SUBDIR += ascpu
     SUBDIR += asrpages
     SUBDIR += bchunk
     SUBDIR += bkpupsd
