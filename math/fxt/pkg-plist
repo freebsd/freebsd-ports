@@ -12,6 +12,7 @@ include/fxt/bit2pow.h
 include/fxt/bitarray.h
 include/fxt/bitasm.h
 include/fxt/bitcombination.h
+include/fxt/bitcombminchange.h
 include/fxt/bitcount.h
 include/fxt/bitcyclic.h
 include/fxt/bithigh.h
@@ -27,6 +28,7 @@ include/fxt/branchless.h
 include/fxt/bytescan.h
 include/fxt/cholesky.h
 include/fxt/cmult.h
+include/fxt/combaltminchange.h
 include/fxt/combcolex.h
 include/fxt/comblazy.h
 include/fxt/comblex.h
@@ -56,6 +58,8 @@ include/fxt/gcd.h
 include/fxt/graycode.h
 include/fxt/graypermute.h
 include/fxt/greencode.h
+include/fxt/haarnn.h
+include/fxt/haarnninplace.h
 include/fxt/haarpermute.h
 include/fxt/hilbert.h
 include/fxt/inline.h
@@ -98,6 +102,7 @@ include/fxt/printbin.h
 include/fxt/quantise.h
 include/fxt/radixpermute.h
 include/fxt/range.h
+include/fxt/reorth.h
 include/fxt/restrict.h
 include/fxt/revbin.h
 include/fxt/revbinpermute.h
@@ -135,7 +140,7 @@ include/fxt/sortptr.h
 include/fxt/subsetdebruijn.h
 include/fxt/subsetlex.h
 include/fxt/subsetminchange.h
-include/fxt/subsetordered.h
+include/fxt/subsetmonotone.h
 include/fxt/sumdiff.h
 include/fxt/symbolify.h
 include/fxt/symmetricpart.h
