@@ -1,5 +1,5 @@
---- Imakefile.orig	Tue Jan  6 05:19:46 1998
-+++ Imakefile	Thu Dec  9 23:29:58 1999
+--- Imakefile.orig	Mon Jan  5 21:19:46 1998
++++ Imakefile	Wed Oct 15 14:30:03 2003
 @@ -11,7 +11,7 @@
             TAGS = etags
  
@@ -19,7 +19,8 @@
 -  LOCAL_DEFINES = -DSHAPE 
 +  LOCAL_DEFINES = -DBITMAPDIR=\"$(INCROOT)/X11/bitmaps\" -DSHAPE 
  
- /**/#   Ultrix doesn't have a mkstemp in libc...
+-/**/#   Ultrix doesn't have a mkstemp in libc...
++#   Ultrix doesn't have a mkstemp in libc...
  #ifdef UltrixArchitecture
    ULTRIX_DEFINES = -DNOSTEMP
  #endif
