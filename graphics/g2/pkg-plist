@@ -1,0 +1,5 @@
+lib/libg2.a
+include/g2.h
+include/g2_PS.h
+include/g2_GIF.h
+include/g2_X11.h
