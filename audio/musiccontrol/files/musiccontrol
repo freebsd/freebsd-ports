@@ -1,3 +1,5 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
-%%PREFIX%%/bin/javavm -jar %%PREFIX%%/share/java/classes/MusicControl-0.2.jar $*
+"%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/MusicControl-0.2.jar" "$*"

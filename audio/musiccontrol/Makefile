@@ -18,15 +18,18 @@ COMMENT=	An advanced music player
 
 RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/ogg123:${PORTSDIR}/audio/vorbis-tools \
-		${LOCALBASE}/bin/simplemod:${PORTSDIR}/audio/simplemod
+		${LOCALBASE}/bin/simplemod:${PORTSDIR}/audio/simplemod \
+		java:${PORTSDIR}/java/javavmwrapper
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes
-	${INSTALL} -o 0 -g 0 -m 0644 ${DISTDIR}/MusicControl-${PORTVERSION}.jar ${PREFIX}/share/java/classes
-	${SED} 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/musiccontrol > ${WRKDIR}/musiccontrol
-	${INSTALL} -o 0 -g 0 ${WRKDIR}/musiccontrol ${PREFIX}/bin
+	@${MKDIR} ${JAVAJARDIR}
+	${INSTALL_DATA} ${DISTDIR}/MusicControl-${PORTVERSION}.jar ${JAVAJARDIR}/
+	${SED} 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%JAVAJARDIR%%,${JAVAJARDIR},g' \
+		${FILESDIR}/musiccontrol > ${WRKDIR}/musiccontrol
+	${INSTALL_SCRIPT} ${WRKDIR}/musiccontrol ${PREFIX}/bin
 
 .include <bsd.port.mk>
