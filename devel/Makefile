@@ -173,6 +173,7 @@
     SUBDIR += libtecla
     SUBDIR += libtool
     SUBDIR += libunicode
+    SUBDIR += libusb
     SUBDIR += libxalloc
     SUBDIR += lincvs
     SUBDIR += linguist
