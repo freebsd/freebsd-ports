@@ -7,6 +7,7 @@
 
 PORTNAME=	splint
 PORTVERSION=	3.0.1.6
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://www.splint.org/downloads/
 EXTRACT_SUFX=	.src.tgz
