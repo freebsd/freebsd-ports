@@ -33,7 +33,7 @@ post-build: create-libs create-scripts
 do-install: do-install-bin do-install-include do-install-lib do-install-doc
 
 post-install:
-	@${SH} ${PKGDIR}/REQ
+	@${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install-bin:
 	@for i in `${CAT} ${FILESDIR}/FILES-BIN` ; do \
