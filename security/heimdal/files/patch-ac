@@ -1,0 +1,22 @@
+Index: appl/ftp/ftpd/popen.c
+===================================================================
+RCS file: /afs/pdc.kth.se/src/packages/kth-krb/SourceRepository/appl/ftp/ftpd/popen.c,v
+retrieving revision 1.24
+diff -u -w -r1.24 popen.c
+--- appl/ftp/ftpd/popen.c	2001/03/26 11:41:02	1.24
++++ appl/ftp/ftpd/popen.c	2001/06/19 09:07:50
+@@ -139,7 +139,13 @@
+ 	for (gargc = argc = 1; argv[argc] && gargc < MAXGLOBS - 1; argc++) {
+ 		glob_t gl;
+ 		int flags = GLOB_BRACE|GLOB_NOCHECK|GLOB_QUOTE|GLOB_TILDE
+-		    | GLOB_LIMIT;
++		    |
++#ifdef GLOB_MAXPATH
++	GLOB_MAXPATH
++#else
++	GLOB_LIMIT
++#endif
++		    ;
+ 
+ 		memset(&gl, 0, sizeof(gl));
+ 		if (no_glob || glob(argv[argc], flags, NULL, &gl))
