@@ -1,0 +1,36 @@
+*** galaxis.c	Wed Sep 20 17:16:33 1995
+--- /home/andy/tmp/wrk/galaxis.c	Mon Jun 30 08:45:01 1997
+***************
+*** 8,14 ****
+  
+  #include <stdio.h>
+  #include <termios.h>
+! #include <curses.h>
+  #include <signal.h>
+  #include <ctype.h>
+  #include <assert.h>
+--- 8,14 ----
+  
+  #include <stdio.h>
+  #include <termios.h>
+! #include <ncurses.h>
+  #include <signal.h>
+  #include <ctype.h>
+  #include <assert.h>
+***************
+*** 131,137 ****
+  
+      (void) signal(SIGINT,outro);
+      (void) signal(SIGINT,outro);
+!     (void) signal(SIGIOT,outro);		/* for assert(3) */
+      if(signal(SIGQUIT,SIG_IGN) != SIG_IGN)
+  	(void)signal(SIGQUIT,outro);
+  
+--- 131,137 ----
+  
+      (void) signal(SIGINT,outro);
+      (void) signal(SIGINT,outro);
+!     (void) signal(SIGABRT,outro);		/* for assert(3) */
+      if(signal(SIGQUIT,SIG_IGN) != SIG_IGN)
+  	(void)signal(SIGQUIT,outro);
+  
