@@ -7,12 +7,12 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.nluug.nl/pub/os/Linux/java/jdk/${DOWNLOAD_DIR}/ \
-		ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
+MASTER_SITES=	ftp://metalab.unc.edu/pub/linux/devel/lang/java/blackdown.org/${DOWNLOAD_DIR}/ \
 		ftp://ftp.tux.org/pub/java/${DOWNLOAD_DIR}/
 PKGNAMEPREFIX=	linux-blackdown-
-DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-i586-gcc2.95
+DISTNAME=	j2sdk-${JDK_VERSION}${JDK_VER_SUFFIX}-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 
 EXTRACT_CMD=		${TAIL}
-EXTRACT_BEFORE_ARGS=	+482
+EXTRACT_BEFORE_ARGS=	+564
 EXTRACT_AFTER_ARGS=	| ${BZIP2_CMD} -dc | ${TAR} xf -
 USE_BZIP2=	yes
 LATEST_LINK=	linux-blackdown-jdk14
@@ -33,8 +33,8 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.4.2
-JDK_VER_SUFFIX=	-rc1
-DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/rc1
+JDK_VER_SUFFIX=	-01
+DOWNLOAD_DIR=	${PORTNAME:U}-${JDK_VERSION}/${ARCH}/01
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
@@ -50,6 +50,8 @@ post-fetch:
 post-patch:
 	@${ECHO} -n ">> Removing unneeded files..."
 	@${FIND} ${WRKSRC} -name '*.orig' -print | ${XARGS} ${RM} -f
+	@${RM} -rf ${WRKSRC}/demo/jfc/SwingSet2/resources
+	@${RM} -rf ${WRKSRC}/demo/plugin/jfc/SwingSet2/resources
 	@${ECHO} " [ DONE ]"
 
 do-install:
