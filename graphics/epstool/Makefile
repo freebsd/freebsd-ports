@@ -20,8 +20,7 @@ MAKEFILE=	makefile.unx
 WRKSRC=		${WRKDIR}/epstool
 
 post-install:
-	${MKDIR} ${PREFIX}/bin ${PREFIX}/share/doc/epstool
-	${INSTALL_DATA} ${WRKSRC}/epstool.txt \
-		${PREFIX}/share/doc/epstool/epstool.txt
+	@${MKDIR} ${PREFIX}/share/doc/epstool
+	${INSTALL_DATA} ${WRKSRC}/epstool.txt ${PREFIX}/share/doc/epstool
 
 .include <bsd.port.mk>
