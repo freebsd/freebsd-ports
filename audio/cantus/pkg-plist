@@ -1,0 +1,25 @@
+bin/cantus
+doc/Cantus/README
+doc/Cantus/COPYING
+doc/Cantus/AUTHORS
+doc/Cantus/ChangeLog
+doc/Cantus/INSTALL
+doc/Cantus/NEWS
+doc/Cantus/TODO
+share/pixmaps/cantus/cantus_icon.png
+share/pixmaps/cantus/done.xpm
+share/pixmaps/cantus/error.xpm
+share/pixmaps/cantus/folder_closed.xpm
+share/pixmaps/cantus/folder_locked.xpm
+share/pixmaps/cantus/cantus.xpm
+share/pixmaps/cantus/cantuslogo.xpm
+share/pixmaps/cantus/logo_about.xpm
+share/pixmaps/cantus/folder_opened.xpm
+share/pixmaps/cantus/locked.xpm
+share/pixmaps/cantus/mp3.xpm
+share/pixmaps/cantus/todo.xpm
+share/pixmaps/cantus/warning.xpm
+share/pixmaps/cantus/addrecursive.xpm
+share/gnome/apps/Applications/cantus.desktop
+@dirrm doc/Cantus
+@dirrm share/pixmaps/cantus
