@@ -14,6 +14,6 @@ LANGPREFIX=	sv
 LANGSUFFIX=	SE
 LANGDIST+=	sv_SE.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice-se
+RDEP=		${PORTSDIR}/editors/openoffice-1.0-se
 
 .include "${MASTERDIR}/Makefile"

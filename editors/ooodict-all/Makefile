@@ -45,8 +45,8 @@ INSTALLATION_BASEDIR=	OpenOffice.org1.0
 BUILD_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 RUN_DEPENDS=	${DICT_LIST_INST}:${RDEP}
 .else
-BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
-RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice
+BUILD_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.0
+RUN_DEPENDS=	${DICT_LIST_INST}:${PORTSDIR}/editors/openoffice-1.0
 .endif
 .endif
 
