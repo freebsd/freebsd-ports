@@ -9,7 +9,7 @@ PORTNAME=	waeijiro-fpw
 PORTVERSION=	1.0
 CATEGORIES=	japanese
 #MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/eijiro/
-MASTER_SITES=	http://www.dsl.gr.jp/~tf/
+MASTER_SITES=	http://www.dsl.gr.jp/~tf/pool/
 #DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	taoka@FreeBSD.org
