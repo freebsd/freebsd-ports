@@ -1,0 +1,16 @@
+bin/transcalc
+share/transcalc/examples/000.trc
+share/transcalc/examples/001.trc
+share/transcalc/examples/cstrip_kj_1.trc
+share/transcalc/examples/cstrip_kj_2.trc
+share/transcalc/examples/example1.trc
+share/transcalc/examples/hp.trc
+share/transcalc/examples/ustrip50fr4.trc
+share/transcalc/examples/ustrip_jansen.trc
+share/transcalc/images/c_microstrip.jpg
+share/transcalc/images/coax.jpg
+share/transcalc/images/microstrip.jpg
+share/transcalc/images/rectwaveguide.jpg
+@dirrm share/transcalc/examples
+@dirrm share/transcalc/images
+@dirrm share/transcalc
