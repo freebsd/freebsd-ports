@@ -3651,6 +3651,7 @@ libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
 libmpeg2	ports/multimedia/libmpeg2
 libmrproject	ports/deskutils/libmrproject
+libmtrie	ports/devel/libmtrie
 libmusicbrainz	ports/audio/libmusicbrainz
 libnet		ports/net/libnet
 libnet-devel	ports/net/libnet-devel
