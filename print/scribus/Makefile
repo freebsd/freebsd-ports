@@ -6,39 +6,44 @@
 # $FreeBSD$
 #
 
-PORTNAME=	scribus
-PORTVERSION=	0.8
-PORTREVISION=	0
-CATEGORIES=	print editors
-MASTER_SITES=	http://web2.altmuehlnet.de/fschmid/
-DIST_SUBDIR=	${PORTNAME}
+PORTNAME=		scribus
+PORTVERSION=		0.8
+PORTREVISION=		1
+CATEGORIES=		print editors
+MASTER_SITES=		http://web2.altmuehlnet.de/fschmid/
+DIST_SUBDIR=		${PORTNAME}
 PATCH_SITES=		${MASTER_SITES}
 PATCHFILES=		Fonts.diff Palette.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@geeksrus.net
+MAINTAINER=		alane@freebsd.org
 
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
-#LIB_DEPENDS+=	lcms.1:${PORTSDIR}/graphics/lcms # needs 1.0.9
+RUN_DEPENDS+=		gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_QT_VER=		3
 USE_REINPLACE=		yes
-REINPLACE_ARGS=		-i
-USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-#USE_AUTOMAKE_VER=	14
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/share/scribus/libs \
 		%%PREFIX%%/share/scribus/plugins
 
-post-patch:
+BROKEN=	"This program terminates with a SIGBUS or simply hangs"
+
+post-patch::
+	${FIND} ${WRKSRC} -type f			\
+		|${XARGS} ${GREP} -l 'share/scribus/doc'\
+		|${XARGS} -n 1 ${REINPLACE_CMD} \
+			-e 's|share/scribus/doc|share/doc/scribus|'
+
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e "s|docs icons|icons|" \
+post-patch::
+	${REINPLACE_CMD} -e "s|docs icons|icons|" \
 		${WRKSRC}/scribus/Makefile.in
-.endif
-	@${FIND} ${WRKSRC} -type f | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e 's|share/scribus/doc|share/doc/scribus|'
+.endif # defined(NOPORTDOCS)
+
+post-configure::
+	${FIND} ${WRKSRC} -name Makefile	\
+		|${XARGS} -n 1 ${REINPLACE_CMD} -e 's|-O2||g'
 
 .include <bsd.port.mk>
