@@ -20,6 +20,7 @@ RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
@@ -33,8 +34,9 @@ MAN1=		psf.1 tatd.1 tcbd.1 tcm.1 tcmd.1 tcmdv.1 tcmt.1 tcpd.1 tcrd.1 \
 post-patch:
 	@${RM} ${WRKSRC}/man/windex
 	@${CHMOD} 0644 ${WRKSRC}/lib/colorrgb.txt
+	@${REINPLACE_CMD} -e 's:gcc:g++:g' ${WRKSRC}/bin/makedepend.sh
 
 post-install:
-	@${SED} -e 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's:/usr/local:${PREFIX}:g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
