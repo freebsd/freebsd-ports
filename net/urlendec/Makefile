@@ -14,6 +14,10 @@ MAINTAINER=	adam@whizkidtech.net
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+.if ${MACHINE_ARCH} != "i386"
+FORBIDDEN=		'Uses nasm which only builds ia32 object files'
+.endif
+
 BINARIES=	urlencode urldecode
 DOCFILES=	index.html rfc1738.txt
 
