@@ -7,6 +7,7 @@
 
 PORTNAME=	gphoto2
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.gphoto.net/dist/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	nail
 PORTVERSION=	9.30
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/
 

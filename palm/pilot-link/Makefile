@@ -7,7 +7,7 @@
 
 PORTNAME=	pilot-link
 PORTVERSION=	0.9.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
 DISTNAME=	${PORTNAME}.${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	AxKit
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.axkit.org/download/
 PKGNAMEPREFIX=	p5-

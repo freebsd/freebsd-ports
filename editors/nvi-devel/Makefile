@@ -7,6 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 

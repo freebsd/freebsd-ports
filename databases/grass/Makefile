@@ -7,7 +7,7 @@
 
 PORTNAME=	grass
 PORTVERSION=	5.0.0.p3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://grass.itc.it/grass5/source/ \

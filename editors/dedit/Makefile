@@ -7,6 +7,7 @@
 
 PORTNAME=	dedit
 PORTVERSION=	0.6.2.3
+PORTREVISION=	1
 CATEGORIES=	editors gnome
 MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/d/dedit/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

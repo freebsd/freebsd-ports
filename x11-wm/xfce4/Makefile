@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	3.8.14c
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xfce.org/archive/

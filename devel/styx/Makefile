@@ -8,6 +8,7 @@
 
 PORTNAME=	styx
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 EXTRACT_SUFX=	.tgz

@@ -6,6 +6,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	converters python
 MASTER_SITES=	ftp://people.linuxkorea.co.kr/pub/Python/ \
 		http://cvsup3.kr.freebsd.org/~perky/distfiles/ \

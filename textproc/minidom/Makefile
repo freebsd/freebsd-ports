@@ -8,6 +8,7 @@
 
 PORTNAME=	minidom
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.unibo.it/helm/mml-widget/sources/
 

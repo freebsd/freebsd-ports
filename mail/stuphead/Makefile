@@ -7,6 +7,7 @@
 
 PORTNAME=	stuphead
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://stuphead.antex.ru/
 
