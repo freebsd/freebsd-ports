@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	elscreen
-PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -30,6 +29,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/elscreen.el ${PREFIX}/${EMACS_SITE_LISPDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for i in ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
 .endif
 .include <bsd.port.mk>
