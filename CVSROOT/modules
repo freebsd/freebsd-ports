@@ -238,6 +238,7 @@ adonthell	ports/games/adonthell
 adpcm		ports/audio/adpcm
 adtool		ports/sysutils/adtool
 adzap		ports/www/adzap
+adzap2squirm	ports/www/adzap2squirm
 aee		ports/editors/aee
 aescrypt	ports/security/aescrypt
 aewm		ports/x11-wm/aewm
