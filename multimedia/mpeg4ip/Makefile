@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 
-BROKEN=		"Does not compile"
-
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
@@ -132,6 +130,15 @@ post-configure:
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's! (autoconf|autoheader|automake|aclocal)$$! ${TRUE}!; \
 		s|-Werror||g'
+# configure is not propagating PTHREAD_LIBS to the makefiles
+# investigated by David Yeske <dyeske@yahoo.com>
+#.if ${OSVERSION} >= 500000
+	@${REINPLACE_CMD} -E \
+		-e 's|(-lSDL)|${PTHREAD_LIBS} \1|' \
+		${WRKSRC}/player/src/Makefile \
+		${WRKSRC}/util/yuv/Makefile \
+		${WRKSRC}/util/iptv/Makefile
+#.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
