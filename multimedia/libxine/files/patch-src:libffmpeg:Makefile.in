@@ -1,0 +1,32 @@
+--- src/libffmpeg/Makefile.in.orig	Thu Jan 16 23:08:15 2003
++++ src/libffmpeg/Makefile.in	Fri Jan 17 00:50:59 2003
+@@ -204,8 +204,6 @@
+ install_sh = @install_sh@
+ w32_path = @w32_path@
+ 
+-SUBDIRS = libavcodec 
+-
+ # I don't think this should include internal docs that are not interesting
+ # for end users at all... -siggi
+ EXTRA_DIST = 
+@@ -217,8 +215,7 @@
+ 
+ xineplug_decode_ff_la_SOURCES = xine_decoder.c
+ xineplug_decode_ff_la_LDFLAGS = -avoid-version -module @XINE_PLUGIN_MIN_SYMS@
+-xineplug_decode_ff_la_LIBADD = $(XINE_LIB) \
+-	$(top_builddir)/src/libffmpeg/libavcodec/libavcodec.la
++xineplug_decode_ff_la_LIBADD = $(XINE_LIB) -lavcodec
+ 
+ subdir = src/libffmpeg
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+@@ -226,9 +223,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-xineplug_decode_ff_la_DEPENDENCIES = \
+-	$(top_builddir)/src/xine-engine/libxine.la \
+-	$(top_builddir)/src/libffmpeg/libavcodec/libavcodec.la
++xineplug_decode_ff_la_DEPENDENCIES = $(top_builddir)/src/xine-engine/libxine.la
+ am_xineplug_decode_ff_la_OBJECTS = xine_decoder.lo
+ xineplug_decode_ff_la_OBJECTS = $(am_xineplug_decode_ff_la_OBJECTS)
+ 

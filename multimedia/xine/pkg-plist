@@ -1,4 +1,5 @@
 bin/aaxine
+bin/fbxine
 bin/xine
 bin/xine-bugreport
 bin/xine-check
@@ -11,7 +12,6 @@ share/doc/xine-ui/FAQ_it
 share/doc/xine-ui/FAQ_pl
 share/doc/xine-ui/FAQ_uk
 share/doc/xine-ui/README.config_en
-share/doc/xine-ui/README.corba
 share/doc/xine-ui/README.divx4
 share/doc/xine-ui/README.dxr3
 share/doc/xine-ui/README.dxr3_pl
@@ -22,6 +22,7 @@ share/doc/xine-ui/README.opengl
 share/doc/xine-ui/README.solaris
 share/doc/xine-ui/README.syncfb
 share/doc/xine-ui/README.tvmode
+share/doc/xine-ui/README_cs
 share/doc/xine-ui/README_de
 share/doc/xine-ui/README_en
 share/doc/xine-ui/README_es
@@ -32,7 +33,6 @@ share/doc/xine-ui/README_pl
 share/doc/xine-ui/README_uk
 share/doc/xine-ui/bug_report_form
 share/doc/xitk/README
-share/idl/xine.idl
 share/locale/cs/LC_MESSAGES/xine-ui.mo
 share/locale/cs/LC_MESSAGES/xitk.mo
 share/locale/de/LC_MESSAGES/xine-ui.mo
@@ -49,14 +49,17 @@ share/locale/sk/LC_MESSAGES/xine-ui.mo
 share/locale/sk/LC_MESSAGES/xitk.mo
 share/locale/uk/LC_MESSAGES/xine-ui.mo
 share/locale/uk/LC_MESSAGES/xitk.mo
+share/pixmaps/xine.xpm
+share/pixmaps/xine_16x16.png
+share/pixmaps/xine_22x22.png
+share/pixmaps/xine_32x32.png
+share/pixmaps/xine_48x48.png
 share/xine/desktop/xine.desktop
-share/xine/desktop/xine.wmconfig
-share/xine/desktop/xine.xpm
-share/xine/desktop/xine_16x16.png
-share/xine/desktop/xine_22x22.png
-share/xine/desktop/xine_32x32.png
-share/xine/desktop/xine_48x48.png
+share/xine/skins/CelomaChrome/ArrowLeft.png
+share/xine/skins/CelomaChrome/ArrowRight.png
 share/xine/skins/CelomaChrome/BigArrowDown.png
+share/xine/skins/CelomaChrome/BigArrowLeft.png
+share/xine/skins/CelomaChrome/BigArrowRight.png
 share/xine/skins/CelomaChrome/BigArrowUp.png
 share/xine/skins/CelomaChrome/CtlBg.png
 share/xine/skins/CelomaChrome/CtlBtn.png
@@ -77,6 +80,7 @@ share/xine/skins/CelomaChrome/MainEject.png
 share/xine/skins/CelomaChrome/MainFastB.png
 share/xine/skins/CelomaChrome/MainFastF.png
 share/xine/skins/CelomaChrome/MainMute.png
+share/xine/skins/CelomaChrome/MainNav.png
 share/xine/skins/CelomaChrome/MainNext.png
 share/xine/skins/CelomaChrome/MainPause.png
 share/xine/skins/CelomaChrome/MainPlay.png
@@ -101,12 +105,16 @@ share/xine/skins/CelomaChrome/PlItemBtn.png
 share/xine/skins/CelomaChrome/PlMoveDn.png
 share/xine/skins/CelomaChrome/PlMoveUp.png
 share/xine/skins/CelomaChrome/PlPlay.png
+share/xine/skins/CelomaChrome/PlSlidHBg.png
+share/xine/skins/CelomaChrome/PlSlidHPad.png
 share/xine/skins/CelomaChrome/SetupBtn.png
 share/xine/skins/CelomaChrome/SkArrowDown.png
 share/xine/skins/CelomaChrome/SkArrowUp.png
 share/xine/skins/CelomaChrome/SkItemBtn.png
 share/xine/skins/CelomaChrome/SkSlidBG.png
+share/xine/skins/CelomaChrome/SkSlidHBg.png
 share/xine/skins/CelomaChrome/SkSlidPad.png
+share/xine/skins/CelomaChrome/SlidHPad.png
 share/xine/skins/CelomaChrome/SliderHBg.png
 share/xine/skins/CelomaChrome/SliderHPad.png
 share/xine/skins/CelomaChrome/SliderVBg.png
@@ -117,12 +125,17 @@ share/xine/skins/cloudy/ComBox.png
 share/xine/skins/cloudy/ComDismiss.png
 share/xine/skins/cloudy/ComLetters.png
 share/xine/skins/cloudy/ComScrollArrowDown.png
+share/xine/skins/cloudy/ComScrollArrowLeft.png
+share/xine/skins/cloudy/ComScrollArrowRight.png
 share/xine/skins/cloudy/ComScrollArrowUp.png
 share/xine/skins/cloudy/ComScrollBg.png
+share/xine/skins/cloudy/ComScrollHBg.png
+share/xine/skins/cloudy/ComScrollHPad.png
 share/xine/skins/cloudy/ComScrollPad.png
 share/xine/skins/cloudy/CtlBg.png
 share/xine/skins/cloudy/CtlSkinItem.png
 share/xine/skins/cloudy/CtlSkinScrollBg.png
+share/xine/skins/cloudy/CtlSkinScrollHBg.png
 share/xine/skins/cloudy/CtlSliderBg.png
 share/xine/skins/cloudy/CtlSliderPad.png
 share/xine/skins/cloudy/MainAutoButton.png
@@ -133,6 +146,7 @@ share/xine/skins/cloudy/MainEject.png
 share/xine/skins/cloudy/MainFullScreen.png
 share/xine/skins/cloudy/MainMrlBtn.png
 share/xine/skins/cloudy/MainMute.png
+share/xine/skins/cloudy/MainNav.png
 share/xine/skins/cloudy/MainNext.png
 share/xine/skins/cloudy/MainPause.png
 share/xine/skins/cloudy/MainPlBtn.png
@@ -154,6 +168,7 @@ share/xine/skins/cloudy/MrlBg.png
 share/xine/skins/cloudy/MrlItem.png
 share/xine/skins/cloudy/MrlPlay.png
 share/xine/skins/cloudy/MrlSelect.png
+share/xine/skins/cloudy/MrlSlidHBg.png
 share/xine/skins/cloudy/PlAdd.png
 share/xine/skins/cloudy/PlBg.png
 share/xine/skins/cloudy/PlDelete.png
@@ -167,9 +182,12 @@ share/xine/skins/cloudy/fatsolid.pcf.gz
 share/xine/skins/cloudy/fonts.dir
 share/xine/skins/cloudy/skinconfig
 share/xine/skins/cloudy/smooth.pcf.gz
-share/xine/skins/xinetic/ArrowDown.png
-share/xine/skins/xinetic/ArrowUp.png
+share/xine/skins/xine-ui_logo.mpv
+share/xine/skins/xinetic/ArrowLeft.png
+share/xine/skins/xinetic/ArrowRight.png
 share/xine/skins/xinetic/BigArrowDown.png
+share/xine/skins/xinetic/BigArrowLeft.png
+share/xine/skins/xinetic/BigArrowRight.png
 share/xine/skins/xinetic/BigArrowUp.png
 share/xine/skins/xinetic/CtlBg.png
 share/xine/skins/xinetic/CtlBtn.png
@@ -188,6 +206,7 @@ share/xine/skins/xinetic/MainFastB.png
 share/xine/skins/xinetic/MainFastF.png
 share/xine/skins/xinetic/MainFullScreen.png
 share/xine/skins/xinetic/MainMute.png
+share/xine/skins/xinetic/MainNav.png
 share/xine/skins/xinetic/MainNext.png
 share/xine/skins/xinetic/MainPause.png
 share/xine/skins/xinetic/MainPlay.png
@@ -213,11 +232,17 @@ share/xine/skins/xinetic/PlItemBtn.png
 share/xine/skins/xinetic/PlMoveDn.png
 share/xine/skins/xinetic/PlMoveUp.png
 share/xine/skins/xinetic/PlPlay.png
+share/xine/skins/xinetic/PlSlidHBg.png
 share/xine/skins/xinetic/SkArrowDown.png
+share/xine/skins/xinetic/SkArrowLeft.png
+share/xine/skins/xinetic/SkArrowRight.png
 share/xine/skins/xinetic/SkArrowUp.png
 share/xine/skins/xinetic/SkItemBtn.png
 share/xine/skins/xinetic/SkSlidBG.png
+share/xine/skins/xinetic/SkSlidHBg.png
+share/xine/skins/xinetic/SkSlidHPad.png
 share/xine/skins/xinetic/SkSlidPad.png
+share/xine/skins/xinetic/SlidHPad.png
 share/xine/skins/xinetic/SliderHBg.png
 share/xine/skins/xinetic/SliderHPad.png
 share/xine/skins/xinetic/SliderVBg.png
@@ -225,18 +250,39 @@ share/xine/skins/xinetic/SliderVPad.png
 share/xine/skins/xinetic/SmallArrowDown.png
 share/xine/skins/xinetic/SmallArrowUp.png
 share/xine/skins/xinetic/skinconfig
-@dirrm man/es/man1
-@dirrm man/es
-@dirrm man/fr/man1
-@dirrm man/fr
-@dirrm man/pl/man1
-@dirrm man/pl
+share/xine/visuals/default.avi
+@unexec rmdir %D/man/de/man1 2>/dev/null || true
+@unexec rmdir %D/man/de 2>/dev/null || true
+@unexec rmdir %D/man/es/man1 2>/dev/null || true
+@unexec rmdir %D/man/es 2>/dev/null || true
+@unexec rmdir %D/man/fr/man1 2>/dev/null || true
+@unexec rmdir %D/man/fr 2>/dev/null || true
+@unexec rmdir %D/man/pl/man1 2>/dev/null || true
+@unexec rmdir %D/man/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl_PL/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl_PL 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/uk 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@dirrm share/xine/visuals
 @dirrm share/xine/skins/CelomaChrome
 @dirrm share/xine/skins/cloudy
 @dirrm share/xine/skins/xinetic
 @dirrm share/xine/desktop
-@unexec rmdir %D/share/idl 2>/dev/null || true
-@unexec rmdir %D/share/xine/skins 2>/dev/null || true
+@dirrm share/xine/skins
 @unexec rmdir %D/share/xine 2>/dev/null || true
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
 @dirrm share/doc/xine-ui
 @dirrm share/doc/xitk
