@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	skkinput
-PORTVERSION=	2.06.3
+PORTVERSION=	2.06.4
 CATEGORIES=	japanese x11
-MASTER_SITES=	http://downloads.sourceforge.jp/skkinput2/1815/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=	skkinput2/6273
 
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
 COMMENT=	An SKK-like Japanese input method for X11
 
 USE_IMAKE=	yes
+
+OPTIONS=	DBSKKD "Use ja-dbskkd-cdb as skkserver" off \
+		RSKKSERV "Use ja-rskkserv as skkserver" off
 
 .include <bsd.port.pre.mk>
 
