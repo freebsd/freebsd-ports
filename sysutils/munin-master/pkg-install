@@ -101,6 +101,13 @@ create_crontab_entries() {
 
 case $2 in
     PRE-INSTALL)
+	# Munin had a logo.gif up to 1.0.0pre3.
+	# Remove it, it's been replaced by logo.png
+	rm -f ${PKG_PREFIX}/www/data/munin/logo.gif
+	# The old stylesheet must go, too.
+	rm -f ${PKG_PREFIX}/www/data/munin/style.css
+	# Both new files will be put in place by munin-html
+
 	make_account munin munin "Munin owner"
 	make_directories
 	;;      
