@@ -3,7 +3,7 @@
 # Date created:         23 Jan 1998
 # Whom:                 housel@acm.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 21:58:07 hsu Exp $
 #
 
 DISTNAME=	gd20-source
@@ -15,6 +15,7 @@ MAINTAINER= 	housel@acm.org
 
 WRKSRC=		$(WRKDIR)/src
 
+BROKEN=		"Awaiting installation of local distfile"
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=$(PREFIX) --srcdir=$(WRKSRC)
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
