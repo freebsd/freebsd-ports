@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.139 1999/06/23 15:26:13 kuriyama Exp $
+# $Id: Makefile,v 1.140 1999/06/28 01:46:09 billf Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -42,6 +42,7 @@
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += logo
+    SUBDIR += lua
     SUBDIR += m3gdb
     SUBDIR += mawk
     SUBDIR += mit-scheme
