@@ -3,7 +3,7 @@
 # Date created:         2 July 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1998/08/19 17:01:37 hoek Exp $
+# $Id: Makefile,v 1.7 1998/08/24 19:48:10 jmz Exp $
 #
 
 DISTNAME=	LAPACK
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.netlib.org/lapack/
 DISTFILES=	lapack.tgz manpages.tgz
 
 MAINTAINER=	jmz@FreeBSD.org
+
+DIST_SUBDIR=	lapack
 
 MANL=	cgbmv.l cgemm.l cgemv.l cgerc.l cgeru.l chbmv.l chemm.l chemv.l \
 	cher.l cher2.l cher2k.l cherk.l chpmv.l chpr.l chpr2.l cscal.l \
