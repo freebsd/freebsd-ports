@@ -18,10 +18,15 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
-
 GNU_CONFIGURE=		yes
+
+.if defined(NO_X11)
+CONFIGURE_ARGS=		--disable-gtk
+.else
 CONFIGURE_ARGS=		--with-xpm-includes=${X11BASE}/include --disable-gtk
+LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
+.endif
+
 USE_GMAKE=		yes
 
 MAN1=			pavuk.1
