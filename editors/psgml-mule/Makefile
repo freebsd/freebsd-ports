@@ -13,13 +13,7 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../editors/psgml-emacs
 
 # emacs port setup
-EMACS_NAME=	mule
-EMACS_PORT=	mule
-EMACS_VER=	19.34
-EMACS_LIBDIR=	share/${EMACS_NAME}
-
-# whether emacs has a *-common port
-HAS_COMMON_PORT=	YES
+EMACS_PORT_NAME=	mule
 
 # pkg/* files are used in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg

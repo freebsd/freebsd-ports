@@ -13,16 +13,9 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../psgml-emacs
 
 # emacs port setup
-EMACS_NAME=	xemacs
-EMACS_PORT=	xemacs21-mule
-EMACS_CMD=	${PREFIX}/bin/${EMACS_PORT}
-EMACS_VER=	21.1.10
-EMACS_LIBDIR=	lib/xemacs
+EMACS_PORT_NAME=	xemacs21-mule
 
 # pkg/* files are used in ${.CURDIR}
 PKGDIR=		${.CURDIR}/pkg
-
-# whether emacs has a *-common port
-HAS_COMMON_PORT=	YES
 
 .include <${MASTERDIR}/Makefile>

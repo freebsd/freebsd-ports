@@ -11,7 +11,7 @@ editing of attribute values in a separate window with information about
 types and defaults, and structure based editing.
 
   PSGML is installed the following directory tree:
-	${PREFIX}/share/emacs/site-lisp/psgml/
+	${LOCALBASE}/share/emacs/site-lisp/psgml/
 
 To use psgml, put the following setup into your ~/.emacs:
 
