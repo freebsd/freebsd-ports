@@ -1,5 +1,5 @@
-*** src/ortep.f	Tue Apr  2 01:34:17 1996
---- src/ortep.f.pgplot	Sat May  8 20:35:22 1999
+*** ortep.f	Tue Apr  2 01:34:17 1996
+--- ortep.f.pgplot	Sat May  8 20:35:22 1999
 ***************
 *** 5342,5366 ****
   c *** DUMMY SCREEN OUTPUT (MAY BE REPLACED WITH SCREEN DRIVER CODE)

@@ -11,7 +11,7 @@ Structure Illustrations.
   run pgdisp server and setenv PGPLOT_DEV as
 
     % pgdisp &
-    % setenv PGPLOT_DEV /xdisp
+    % setenv PGPLOT_DEV /xwindow
 
   then you can see the ortep-drawing on a pgplot window.
 
@@ -19,5 +19,4 @@ Examples and documentation or on the web site.
 
 WWW: http://www.ornl.gov/ortep/ortep.html
 
---
-rmiya
+- Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
