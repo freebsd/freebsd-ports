@@ -1,0 +1,11 @@
+--- contrib/Makefile.in.orig	Wed Apr  2 10:57:06 2003
++++ contrib/Makefile.in	Mon Mar 21 08:22:47 2005
+@@ -20,7 +20,7 @@
+ 
+ subdir = contrib
+ 
+-SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp5.rc pgp6.rc Tin.rc \
++SAMPLES = Mush.rc Pine.rc gpg.rc pgp2.rc pgp6.rc Tin.rc \
+ 	sample.muttrc  sample.mailcap sample.muttrc-tlr \
+ 	colors.default colors.linux smime.rc \
+ 	ca-bundle.crt smime_keys_test.pl

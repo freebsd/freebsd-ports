@@ -374,6 +374,8 @@ MAN5=		muttrc.5 mbox.5 mmdf.5
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
+	@${REINPLACE_CMD} -e 's,pgp6,pgp,g' \
+		${WRKSRC}/contrib/pgp6.rc
 	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
 		${WRKSRC}/contrib/Makefile.in
 
