@@ -1,0 +1,11 @@
+--- java/javax/security/auth/callback/Makefile.am.orig	Sat Nov  4 16:55:44 2000
++++ java/javax/security/auth/callback/Makefile.am	Thu Jan 17 22:05:23 2002
+@@ -39,7 +39,7 @@
+ #
+ ################################################################
+ 
+-javasasldir = $(prefix)/lib/java/classes/sasl/javax/security/auth/callback
++javasasldir = $(prefix)/share/java/classes/sasl/javax/security/auth/callback
+ javahtmldir = $(prefix)/html/sasl
+ 
+ javasasl_JAVA = PasswordCallback.java \

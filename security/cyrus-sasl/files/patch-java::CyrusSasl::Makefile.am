@@ -1,0 +1,11 @@
+--- java/CyrusSasl/Makefile.am.orig	Tue Nov 21 23:55:17 2000
++++ java/CyrusSasl/Makefile.am	Thu Jan 17 21:58:10 2002
+@@ -25,7 +25,7 @@
+ 
+ javasasl_version = 1:0:0
+ 
+-javasasldir = $(prefix)/lib/java/classes/sasl/CyrusSasl
++javasasldir = $(prefix)/share/java/classes/sasl/CyrusSasl
+ javahtmldir = $(prefix)/html/sasl
+ 
+ INCLUDES=$(JAVA_INCLUDES) -I$(top_srcdir)/include
