@@ -9,18 +9,8 @@ PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 USER=mud
 GROUP=${USER}
-UID=91
+UID=97
 GID=${UID}
-
-if [ -z "${DATADIR}" ]; then
-	DATADIR=${PKG_PREFIX}/share/dgd-lpmud
-fi
-
-if [ ! -d "${DATADIR}" ]; then
-	echo -n "Attempting to create ${DATADIR} ..."
-	mkdir -p "${DATADIR}"
-	echo "done"
-fi
 
 if pw groupshow "${GROUP}" 2>/dev/null; then
 	echo "Using existing group \"${GROUP}\"."
@@ -37,7 +27,7 @@ if pw usershow "${USER}" 2>/dev/null; then
 	echo "Using existing user \"${USER}\"."
 else
 	if pw useradd "${USER}" -u ${UID} -g "${GROUP}" -h - \
-		-s "/bin/sh" -d "${DATADIR}" -c "MUD Owner"
+		-s "/bin/sh" -d "/nonexistent" -c "MUD Owner"
 	then
 		echo "Added user \"${USER}\"."
 	else
@@ -45,5 +35,3 @@ else
 		exit 1
 	fi
 fi
-
-chown -R "${USER}:${GROUP}" "${DATADIR}"
