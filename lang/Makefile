@@ -91,6 +91,7 @@
     SUBDIR += pgcc
     SUBDIR += php3
     SUBDIR += php4
+    SUBDIR += php_doc
     SUBDIR += pike
     SUBDIR += pm3-base
     SUBDIR += pm3-forms
