@@ -61,6 +61,10 @@ MAN7=		samba.7
 MAN8=		smbd.8 nmbd.8 smbpasswd.8 swat.8 smbspool.8
 MANLANG=	"" ja
 
+post-build:
+	${SED} 's:/usr/local:${PREFIX}:g' ${FILESDIR}/samba.sh.sample \
+		> ${WRKDIR}/samba.sh.sample
+
 pre-install:
 	${RM} -f ${WRKDIR}/${DISTNAME}/docs/manpages/smbmnt.8
 	${RM} -f ${WRKDIR}/${DISTNAME}/docs/manpages/smbmount.8
@@ -74,7 +78,7 @@ post-install:
 	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
-		${INSTALL_SCRIPT} ${FILESDIR}/samba.sh.sample 		\
+		${INSTALL_SCRIPT} ${WRKDIR}/samba.sh.sample 		\
 			${STARTUP_SCRIPT} ;				\
 	fi
 	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}

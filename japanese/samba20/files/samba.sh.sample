@@ -1,4 +1,7 @@
 #!/bin/sh
+#
+# $FreeBSD$
+
 smbspool=/var/spool/samba
 pidfiledir=/var/run
 smbd=/usr/local/sbin/smbd
