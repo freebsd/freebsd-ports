@@ -7,6 +7,7 @@
 
 PORTNAME=	libpqxx
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/libpqxx/stable/
 PKGNAMEPREFIX=	postgresql-
@@ -34,9 +35,9 @@ POSTGRESQL_PORT?=	databases/postgresql7
 .if ${OSVERSION} < 500035
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-CXXFLAGS+=	-I${LOCALBASE}/include/stlport
+CPPFLAGS+=	-I${LOCALBASE}/include/stlport
 LDFLAGS+=	-L${LOCALBASE}/lib -lstlport_gcc ${PTHREAD_LIBS}
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 .endif
 
 .include <bsd.port.post.mk>
