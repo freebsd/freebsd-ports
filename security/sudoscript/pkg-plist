@@ -3,32 +3,32 @@ bin/sudoshell
 etc/rc.d/sudoscriptd.sh
 lib/sudoscript/Sudoscript.pm
 sbin/sudoscriptd
-share/doc/sudoscript-2.1.1/2.0arch.gif
-share/doc/sudoscript-2.1.1/2.0arch.html
-share/doc/sudoscript-2.1.1/2.0arch.xml
-share/doc/sudoscript-2.1.1/CHANGELOG
-share/doc/sudoscript-2.1.1/INSTALL
-share/doc/sudoscript-2.1.1/PORCMOLSULB.html
-share/doc/sudoscript-2.1.1/PORCMOLSULB.pdf
-share/doc/sudoscript-2.1.1/PORCMOLSULB.xml
-share/doc/sudoscript-2.1.1/PORTING
-share/doc/sudoscript-2.1.1/PROBLEMS
-share/doc/sudoscript-2.1.1/README
-share/doc/sudoscript-2.1.1/RELEASENOTES
-share/doc/sudoscript-2.1.1/SECURITY
-share/doc/sudoscript-2.1.1/SUDOCONFIG
-share/doc/sudoscript-2.1.1/Sudoscript.3pm.html
-share/doc/sudoscript-2.1.1/Sudoscript.pm-src.html
-share/doc/sudoscript-2.1.1/dtd/egbokdoc.dtd
-share/doc/sudoscript-2.1.1/sudoscript.pod
-share/doc/sudoscript-2.1.1/sudoscript.8.html
-share/doc/sudoscript-2.1.1/sudoscriptd-src.html
-share/doc/sudoscript-2.1.1/sudoscriptd.8.html
-share/doc/sudoscript-2.1.1/sudoshell-src.html
-share/doc/sudoscript-2.1.1/sudoshell.1.html
-share/doc/sudoscript-2.1.1/xsl/egbokdoc.xsl
-share/doc/sudoscript-2.1.1/xsl/egbokdoc2fop.xsl
+share/doc/sudoscript-2.1.2/2.0arch.gif
+share/doc/sudoscript-2.1.2/2.0arch.html
+share/doc/sudoscript-2.1.2/2.0arch.xml
+share/doc/sudoscript-2.1.2/CHANGELOG
+share/doc/sudoscript-2.1.2/INSTALL
+share/doc/sudoscript-2.1.2/PORCMOLSULB.html
+share/doc/sudoscript-2.1.2/PORCMOLSULB.pdf
+share/doc/sudoscript-2.1.2/PORCMOLSULB.xml
+share/doc/sudoscript-2.1.2/PORTING
+share/doc/sudoscript-2.1.2/PROBLEMS
+share/doc/sudoscript-2.1.2/README
+share/doc/sudoscript-2.1.2/RELEASENOTES
+share/doc/sudoscript-2.1.2/SECURITY
+share/doc/sudoscript-2.1.2/SUDOCONFIG
+share/doc/sudoscript-2.1.2/Sudoscript.3pm.html
+share/doc/sudoscript-2.1.2/Sudoscript.pm-src.html
+share/doc/sudoscript-2.1.2/dtd/egbokdoc.dtd
+share/doc/sudoscript-2.1.2/sudoscript.pod
+share/doc/sudoscript-2.1.2/sudoscript.8.html
+share/doc/sudoscript-2.1.2/sudoscriptd-src.html
+share/doc/sudoscript-2.1.2/sudoscriptd.8.html
+share/doc/sudoscript-2.1.2/sudoshell-src.html
+share/doc/sudoscript-2.1.2/sudoshell.1.html
+share/doc/sudoscript-2.1.2/xsl/egbokdoc.xsl
+share/doc/sudoscript-2.1.2/xsl/egbokdoc2fop.xsl
 @dirrm lib/sudoscript
-@dirrm share/doc/sudoscript-2.1.1/xsl
-@dirrm share/doc/sudoscript-2.1.1/dtd
-@dirrm share/doc/sudoscript-2.1.1
+@dirrm share/doc/sudoscript-2.1.2/xsl
+@dirrm share/doc/sudoscript-2.1.2/dtd
+@dirrm share/doc/sudoscript-2.1.2
