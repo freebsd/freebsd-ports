@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	xclasses
-PORTVERSION=	1.1.0
+PORTVERSION=	1.3.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://fsai.fh-trier.de/~schmitzj/Xclasses/arc/
+MASTER_SITES=	ftp://trier.linux.de/pub/Xclasses/
 DISTNAME=	Xclasses-public-${PORTVERSION}.src
 
 MAINTAINER=	trevor@FreeBSD.org
