@@ -10802,6 +10802,7 @@ xtoolwait	ports/x11/xtoolwait
 xtraceroute	ports/net/xtraceroute
 xtriangles	ports/games/xtriangles
 xtris		ports/games/xtris
+xtrlock		ports/x11/xtrlock
 xtrojka		ports/games/xtrojka
 xtron		ports/games/xtron
 xtruco		ports/games/xtruco
