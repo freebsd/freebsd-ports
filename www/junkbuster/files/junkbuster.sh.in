@@ -1,11 +1,21 @@
 #!/bin/sh
+# $CVSHeader$
 
 case $1 in
 start)
-	test -d JDIR -a -x PREFIX/sbin/junkbuster -a -f JDIR/configfile || exit 1
-	cd JDIR
-	su -m nobody -c "PREFIX/sbin/junkbuster configfile &"
-	echo -n " junkbuster"
+	if [ -d %%JDIR%% \
+	     -a -x %%PREFIX%%/sbin/junkbuster \
+	     -a -f %%JDIR%%/configfile ]; then
+		: seems OK
+	else
+		echo >&2 "$0: missing files!"
+		exit 1
+	fi
+	cd %%JDIR%%
+	su -m nobody -c "%%PREFIX%%/sbin/junkbuster configfile &" \
+	    >/dev/null \
+	&& echo -n " junkbuster" \
+	|| echo " junkbuster FAILED TO START"
 	;;
 stop)
 	killall junkbuster && echo -n " junkbuster"
