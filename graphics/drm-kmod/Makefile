@@ -20,6 +20,7 @@ PKGMESSAGE=	${WRKSRC}/.MESSAGE
 
 .include <bsd.port.pre.mk>
 
+ONLY_FOR_ARCHS=	i386
 .if ${OSVERSION} < 400006
 BROKEN=		"FreeBSD before 4.1 is not supported"
 .elif ${OSVERSION} > 500000
