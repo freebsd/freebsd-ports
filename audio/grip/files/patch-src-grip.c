@@ -1,51 +1,43 @@
---- src/grip.c.orig	Sun Mar 10 21:59:44 2002
-+++ src/grip.c	Wed Jul 24 01:32:08 2002
-@@ -40,6 +40,12 @@
- #include "xpm.h"
- #include "parsecfg.h"
+--- src/grip.c.orig	Mon Jun 17 22:13:35 2002
++++ src/grip.c	Wed Jul 24 21:24:57 2002
+@@ -61,6 +61,7 @@
  
-+#ifdef __FreeBSD__
-+#define CD_POLL_SECS 15
-+#else
-+#define CD_POLL_SECS 1
+ #define BASE_CFG_ENTRIES \
+ {"cd_device",CFG_ENTRY_STRING,256,ginfo->cd_device},\
++{"force_scsi",CFG_ENTRY_STRING,256,ginfo->force_scsi},\
+ {"ripexename",CFG_ENTRY_STRING,256,ginfo->ripexename},\
+ {"ripcmdline",CFG_ENTRY_STRING,256,ginfo->ripcmdline},\
+ {"wav_filter_cmd",CFG_ENTRY_STRING,256,ginfo->wav_filter_cmd},\
+@@ -126,8 +127,7 @@
+ {"disable_extra_paranoia",CFG_ENTRY_BOOL,0,&ginfo->disable_extra_paranoia},\
+ {"disable_scratch_detect",CFG_ENTRY_BOOL,0,&ginfo->disable_scratch_detect},\
+ {"disable_scratch_repair",CFG_ENTRY_BOOL,0,&ginfo->disable_scratch_repair},\
+-{"calc_gain",CFG_ENTRY_BOOL,0,&ginfo->calc_gain},\
+-{"force_scsi",CFG_ENTRY_STRING,256,ginfo->force_scsi},
++{"calc_gain",CFG_ENTRY_BOOL,0,&ginfo->calc_gain},
+ 
+ #ifdef CDPAR
+ #define CFG_ENTRIES BASE_CFG_ENTRIES CDPAR_CFG_ENTRIES
+@@ -607,10 +607,11 @@
+   ginfo->volume=255;
+ #if defined(__FreeBSD__)
+   ginfo->poll_drive=FALSE;
++  ginfo->poll_interval=15;
+ #else
+   ginfo->poll_drive=TRUE;
+-#endif
+   ginfo->poll_interval=1;
 +#endif
-+
- static void ReallyDie(gint reply,gpointer data);
- static void DoHelp(GtkWidget *widget,gpointer data);
- static void MakeHelpPage(GripInfo *ginfo);
-@@ -144,7 +150,7 @@
  
-   app=gnome_app_new(PACKAGE,_("Grip"));
+   ginfo->changer_slots=0;
+   ginfo->current_disc=0;
+@@ -737,6 +738,9 @@
+       rename(filename,renamefile);
+     }
  
--  ginfo=g_new(GripInfo,1);
-+  ginfo=g_new0(GripInfo,1);
- 
-   gtk_object_set_user_data(GTK_OBJECT(app),(gpointer)ginfo);
- 
-@@ -511,8 +517,10 @@
-   if(ginfo->rewinding) Rewind(ginfo);
- 
- #ifdef GRIPCD
--  if(!ginfo->have_disc)
--    CheckNewDisc(ginfo);
-+  if (!(time(0) % CD_POLL_SECS)) {
-+    if(!ginfo->have_disc)
-+      CheckNewDisc(ginfo);
-+  }
- 
-   if(ginfo->auto_eject_countdown && !(--ginfo->auto_eject_countdown))
-     EjectDisc(&(ginfo->disc));
-@@ -522,9 +530,10 @@
-   if(ginfo->ripping|ginfo->encoding) UpdateRipProgress(ginfo);
- 
-   if(!ginfo->ripping) {
--    if(!ginfo->have_disc)
--      CheckNewDisc(ginfo);
--    
-+    if (!(time(0) % CD_POLL_SECS)) {
-+      if(!ginfo->have_disc)
-+	CheckNewDisc(ginfo);
-+    }
-     UpdateDisplay(ginfo);
++#if defined(__FreeBSD__)
++    ginfo->poll_drive=FALSE;
++#endif /* defined __FreeBSD__ */
+     DoSaveConfig(ginfo);
    }
- #endif
+ 

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
+# PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
@@ -17,6 +17,9 @@ MAINTAINER=	ports@geeksrus.net
 LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
+USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
+
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
@@ -25,25 +28,21 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib 
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ENV+=	CFLAGS="-g" \
-		LDFLAGS="-g -L${LOCALBASE}/lib"
-.else
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-g
+LDFLAGS+=	-g
 .endif
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" 
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+= LIBS=${PTHREAD_LIBS}
 
-INSTALL_SUBDIRS=	contrib intl pixmaps po src
-.if !defined(NOPORTDOCS)
-INSTALL_SUBDIRS+=	doc
-.endif
-
-do-install:
-	@cd ${WRKSRC}; ${MAKE} install-am
-.for dir in ${INSTALL_SUBDIRS}
-	@cd ${WRKSRC}/${dir}; ${MAKE} ${INSTALL_TARGET}
-.endfor
+pre-configure:
+	cd ${WRKSRC}; ${AUTOHEADER}; ${AUTOMAKE}; ${AUTOCONF}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
