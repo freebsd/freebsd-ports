@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tkhonyaku
 # Date created:		10 July 2000
-# Whom:			Daichi T.GOTO
+# Whom:			Daichi GOTO
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.yk.rim.or.jp/~kawagisi/
 
-MAINTAINER=	daichi@ongs.gr.jp
+MAINTAINER=	daichi@freebsd.org
 COMMENT=	Yet another Honyaku-Damashii client with rich functionality
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0jp:${PORTSDIR}/japanese/tk80
