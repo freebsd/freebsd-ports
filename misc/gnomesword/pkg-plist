@@ -1,0 +1,34 @@
+bin/gnomesword
+%%PORTDOCS%%share/doc/gnomesword/AUTHORS
+%%PORTDOCS%%share/doc/gnomesword/COPYING
+%%PORTDOCS%%share/doc/gnomesword/ChangeLog
+%%PORTDOCS%%share/doc/gnomesword/INSTALL
+%%PORTDOCS%%share/doc/gnomesword/NEWS
+%%PORTDOCS%%share/doc/gnomesword/README
+%%PORTDOCS%%share/doc/gnomesword/TODO
+share/gnome/apps/Applications/gnomesword.desktop
+share/gnome/help/gnomesword/C/index.html
+share/gnome/help/gnomesword/C/intro.html
+share/gnome/pixmaps/gnomesword/GnomeSword.png
+share/gnome/pixmaps/gnomesword/GnomeSword.xpm
+share/gnome/pixmaps/gnomesword/about.png
+share/gnome/pixmaps/gnomesword/book-bl.png
+share/gnome/pixmaps/gnomesword/book-gold.png
+share/gnome/pixmaps/gnomesword/book-green.png
+share/gnome/pixmaps/gnomesword/book-un.png
+share/gnome/pixmaps/gnomesword/dock.xpm
+share/gnome/pixmaps/gnomesword/exit2.xpm
+share/gnome/pixmaps/gnomesword/footnote3.xpm
+share/gnome/pixmaps/gnomesword/gnome-fontsel.xpm
+share/gnome/pixmaps/gnomesword/morphs.xpm
+share/gnome/pixmaps/gnomesword/search1.xpm
+share/gnome/pixmaps/gnomesword/splash.png
+share/gnome/pixmaps/gnomesword/strongs.xpm
+share/gnome/pixmaps/gnomesword/sword.xpm
+share/gnome/pixmaps/gnomesword/sword2.xpm
+share/gnome/pixmaps/gnomesword/sword3.xpm
+share/gnome/pixmaps/gnomesword/yes.xpm
+@dirrm share/gnome/pixmaps/gnomesword
+@dirrm share/gnome/help/gnomesword/C
+@dirrm share/gnome/help/gnomesword
+%%PORTDOCS%%@dirrm share/doc/gnomesword
