@@ -9,7 +9,7 @@ PORTNAME=	snort
 PORTVERSION=	1.8.1
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://snort.sourcefire.com/releases/ \
+MASTER_SITES=	http://snort.sourcefire.com/releases/
 DISTNAME=	${PORTNAME}-1.8.1-RELEASE
 
 MAINTAINER=	kris@FreeBSD.org
