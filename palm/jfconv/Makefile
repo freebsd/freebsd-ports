@@ -19,6 +19,12 @@ COMMENT=	Converts JFile database to CSV, and vice versa
 
 ALL_TARGET=	# none
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jconv ${PREFIX}/bin/jfconv
 .if !defined(NOPORTDOCS)
@@ -26,4 +32,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jfconv/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

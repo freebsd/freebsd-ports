@@ -16,6 +16,12 @@ COMMENT=	Prints IP subnet ranges by list or CIDR
 
 WRKSRC=		${WRKDIR}/prips
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/prips ${PREFIX}/bin
 
@@ -28,4 +34,4 @@ post-install:
 	@${SED} 's#@dirrm share/doc/prips##' ${WRKDIR}/PLIST.tmp > ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

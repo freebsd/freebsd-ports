@@ -24,6 +24,10 @@ USE_GCC=	3.2
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 501000
+BROKEN=         "Does not compile"
+.endif
+
 post-extract:
 	@${MV} ${WRKSRC}/myendian.h ${WRKSRC}/lib
 

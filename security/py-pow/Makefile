@@ -21,10 +21,16 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_OPENSSL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/POW.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -48,6 +48,12 @@ MAN1=	lpf.1 psbanner.1 lp.1 cancel.1 lprng_certs.1 lprng_index_certs.1 \
 MAN5=	printcap.5 lpd.conf.5 lpd.perms.5
 MAN8=	lpc.8 checkpc.8 lpd.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-everything::
 	@${ECHO_MSG} "If you want to replace the default printing system with LPRng, use:"
 	@${ECHO_MSG} "  make PREFIX=/usr SYSCONFDIR=/etc clean all install"
@@ -71,4 +77,4 @@ post-install:
 .endif
 	@${SED} -e "s!DOCSDIR!${DOCSDIR}/!" ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

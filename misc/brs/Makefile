@@ -20,6 +20,12 @@ NO_WRKSUBDIR=	yes
 ALL_TARGET=
 MAN1=		bible.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${MV} ${WRKSRC}/brl.c ${WRKSRC}/brl.c.sed
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
@@ -28,4 +34,4 @@ post-patch:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		${WRKSRC}/bible.1.sed > ${WRKSRC}/bible.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

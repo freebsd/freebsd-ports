@@ -21,6 +21,12 @@ MAN6=		omega.6
 PORTDOCS=	buglist.txt docs/compile.all docs/omega.txt docs/readme.1st \
 		docs/readme3 docs/readme4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/omega ${PREFIX}/bin/omega-game
 	@${CHOWN} root:games ${PREFIX}/bin/omega-game
@@ -41,4 +47,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

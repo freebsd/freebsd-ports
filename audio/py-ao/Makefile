@@ -20,7 +20,13 @@ LIB_DEPENDS=	ao.3:${PORTSDIR}/audio/libao
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix="${LOCALBASE}"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,10 +18,16 @@ COMMENT=	A Unix menuing shell
 NO_WRKSUBDIR=	yes
 MAN1=		mshell.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	zcat ${DISTDIR}/${DISTFILES} |(cd ${WRKDIR}; \
 	${AWK} '{if (/^#!/) x++} {if(x) print $$0'}| ${SH})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -26,6 +26,12 @@ USE_REINPLACE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DBSD -DKANJI -DPICTURE -DHTML -fwritable-strings"
 ALL_TARGET=	${PORTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/plain2|${DATADIR}|g' ${BUILD_WRKSRC}/plain2.h
@@ -35,4 +41,4 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/lib/*.p2 ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -14,4 +14,10 @@ COMMENT=	Rogue-like multiplayer game
 
 MAN6=	hunt.6 huntd.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

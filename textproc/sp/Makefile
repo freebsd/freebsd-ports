@@ -13,6 +13,12 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented toolkit for SGML parsing and entity management
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 .if ${MACHINE_ARCH} == sparc64
 BROKEN=		does not compile on ${MACHINE_ARCH}
 .endif
@@ -27,4 +33,4 @@ post-install:
 	for file in $(WRKSRC)/include/*;do $(INSTALL_DATA) $$file $(PREFIX)/include/sp;done
 	for file in $(WRKSRC)/doc/*;do $(INSTALL_DATA) $$file $(PREFIX)/share/doc/sp;done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
