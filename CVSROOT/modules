@@ -3365,6 +3365,7 @@ l0phtcrack	ports/security/l0phtcrack
 labrea		ports/security/labrea
 lacheck		ports/textproc/lacheck
 ladder		ports/games/ladder
+ladspa		ports/audio/ladspa
 lam		src/usr.bin/lam
 lamarc		ports/biology/lamarc
 lambdamoo	ports/net/lambdamoo
