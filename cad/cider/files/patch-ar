@@ -1,0 +1,39 @@
+--- spice/common/src/include/os_bsd.h.orig	Sat Jan 29 19:14:37 1994
++++ spice/common/src/include/os_bsd.h	Sun Dec 26 19:05:36 1999
+@@ -6,14 +6,22 @@
+  *	BSD and derivative systems
+  */
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ #include "os_unix.h"
+ 
++#if !(defined(BSD) && (BSD >= 199306))
+ #define HAS_NO_ATRIGH_DECL	/* if asinh( ) is not in math.h		*/
+-#define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+ #define HAS_FTIME		/* ftime( ), <times.h>			*/
++#define HAS_INDEX		/* index( ) instead of strchr( )	*/
++#define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
++#endif
++
++#define HAS_ATRIGH		/* acosh( ), asinh( ), atanh( )         */
+ #define HAS_TERMCAP		/* tgetxxx( )				*/
+ #define HAS_VFORK		/* BSD-ism, should not be necessary	*/
+-#define HAS_INDEX		/* index( ) instead of strchr( )	*/
+ #define HAS_BCOPY		/* bcopy( ), bzero( )			*/
+ #define HAS_BSDRANDOM		/* srandom( ) and random( )		*/
+ #define HAS_BSDTTY		/* <sgtty.h>				*/
+@@ -22,4 +30,10 @@
+ #define HAS_BSDRLIMIT		/* getrlimit( )				*/
+ #define HAS_DUP2
+ #define HAS_GETWD		/* getwd(buf)				*/
+-#define HAS_STRINGS		/* use <strings.h> instead of <string.h> */
++
++#if (defined(BSD) && (BSD >= 199306))
++#define HAS_BSDSOCKETS		/* <net/inet.h>, socket( ), etc.	*/
++#define HAS_BSDTIME		/* gettimeofday( ) return time		*/
++#define HAS_FLOAT_H		/* float.h				*/
++#define HAS_STRCHR		/* strchr( ) instead of index( )	*/
++#endif

@@ -1,5 +1,5 @@
-*** sim/spice/common/src/lib/fte/misccoms.c.orig	Wed Mar  9 04:15:44 1994
---- sim/spice/common/src/lib/fte/misccoms.c	Sun Dec 12 14:56:44 1999
+*** spice/common/src/lib/fte/misccoms.c.orig	Wed Mar  9 04:15:44 1994
+--- spice/common/src/lib/fte/misccoms.c	Sun Dec 12 14:56:44 1999
 ***************
 *** 11,16 ****
 --- 11,24 ----

@@ -1,5 +1,5 @@
-*** sim/cider/common/util/build.orig	Sat Jan 29 19:32:01 1994
---- sim/cider/common/util/build	Sun Dec 12 16:45:08 1999
+*** cider/common/util/build.orig	Sat Jan 29 19:32:01 1994
+--- cider/common/util/build	Sun Dec 12 16:45:08 1999
 ***************
 *** 89,95 ****
   

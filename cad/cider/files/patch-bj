@@ -1,0 +1,11 @@
+--- cider/common/util/skeleton/make_def.bd.orig	Sat Mar 12 13:05:44 1994
++++ cider/common/util/skeleton/make_def.bd	Sun Dec 26 17:17:16 1999
+@@ -76,7 +76,7 @@
+ 
+ LIBRARIES	= dev input oned twod spiceitf support
+ 
+-CFLAGS		= $(REAL_CC_OPT) $(SYS_CFLAGS)
++REAL_CFLAGS	= $(REAL_CC_OPT) $(SYS_CFLAGS)
+ 
+ LIBRARY_HACK	= $(OBJLIB_DIR)/$(LIBRARY).a
+ 

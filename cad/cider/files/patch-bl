@@ -1,0 +1,20 @@
+--- cider/common/src/bin/makeops.orig	Tue Mar  8 03:39:12 1994
++++ cider/common/src/bin/makeops	Sun Dec 26 18:04:08 1999
+@@ -19,14 +19,14 @@
+ 	mkdir $(CIDER_EXEC_DIR)
+ 
+ cider.o: main.c $(SYS_CONF)/$(OBJECTIVE)-cc
+-	$(CC) -c $(CFLAGS) $(INCLUDE) -DSIMULATOR $(SRC_DIR)/main.c $(ASM_HACK)
++	$(CC) -c $(REAL_CFLAGS) $(INCLUDE) -DSIMULATOR $(SRC_DIR)/main.c $(ASM_HACK)
+ 	mv -f main.o $@
+ 
+ conf.o: conf.c
+-	$(CC) $(CFLAGS) $(INCLUDE) -c conf.c $(ASM_HACK)
++	$(CC) $(REAL_CFLAGS) $(INCLUDE) -c conf.c $(ASM_HACK)
+ 
+ $(TUNEFILE).o: $(TUNEFILE).c
+-	$(CC) $(CFLAGS) $(INCLUDE) -c $(TUNEFILE).c $(ASM_HACK)
++	$(CC) $(REAL_CFLAGS) $(INCLUDE) -c $(TUNEFILE).c $(ASM_HACK)
+ 
+ conf.c: config.c $(SYS_CONF)/$(OBJECTIVE)
+ 	@echo Creating "$@":

@@ -1,0 +1,13 @@
+--- spice/common/src/lib/sparse/spdefs.h.orig	Sat Jan 29 19:08:43 1994
++++ spice/common/src/lib/sparse/spdefs.h	Mon Dec 27 14:41:07 1999
+@@ -132,8 +132,10 @@
+ 
+ /* Macro commands */
+ /* Macro functions that return the maximum or minimum independent of type. */
++#if !(defined(BSD) && (BSD >= 199306))
+ #define  MAX(a,b)           ((a) > (b) ? (a) : (b))
+ #define  MIN(a,b)           ((a) < (b) ? (a) : (b))
++#endif
+ 
+ /* Macro function that returns the absolute value of a floating point number. */
+ #define  ABS(a)             ((a) < 0 ? -(a) : (a))

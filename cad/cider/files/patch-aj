@@ -1,0 +1,11 @@
+--- spice/common/util/skeleton/make_def.bd.orig	Thu Feb 24 07:07:01 1994
++++ spice/common/util/skeleton/make_def.bd	Sun Dec 26 17:19:32 1999
+@@ -85,7 +85,7 @@
+ # LIBRARIES = ckt cp dev fte hlp inp mfb mfbpc misc ni smp sparse
+ LIBRARIES = dev ckt cp fte hlp inp $(MFBLIB) misc ni $(SPARSELIB)
+ 
+-CFLAGS		= $(REAL_CC_OPT) $(SYS_CFLAGS)
++REAL_CFLAGS		= $(REAL_CC_OPT) $(SYS_CFLAGS)
+ 
+ LIBRARY_HACK	= $(OBJLIB_DIR)/$(LIBRARY).a
+ 

@@ -1,0 +1,11 @@
+--- spice/common/src/lib/hlp/makedefs.orig	Mon Jan 31 00:52:51 1994
++++ spice/common/src/lib/hlp/makedefs	Sun Dec 26 18:08:08 1999
+@@ -10,7 +10,7 @@
+ LIB_TARGET	= $(OBJLIB_DIR)/$(LIBRARY).a
+ 
+ INCLUDE		= -I$(INCLUDE_DIR) -I$(TCGMSG_DIR)/include $(INCX)
+-CFLAGS		= $(CC_OPT) $(SYS_CFLAGS) $(INTERFACE_OPTS)
++REAL_CFLAGS		= $(CC_OPT) $(SYS_CFLAGS) $(INTERFACE_OPTS)
+ CONF_DEP_EXTRA	= $(CONF_XCC)
+ help.o: help.c
+ provide.o: provide.c

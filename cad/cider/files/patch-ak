@@ -1,0 +1,11 @@
+--- spice/common/util/skeleton/make_std.bd.orig	Sat Jan 29 19:16:16 1994
++++ spice/common/util/skeleton/make_std.bd	Sun Dec 26 17:19:39 1999
+@@ -23,7 +23,7 @@
+ 			DIR="$${DIR}"
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(INCLUDE) -c $(SRC_DIR)/$*.c $(OUTPUT) $(ASM_HACK)
++	$(CC) $(REAL_CFLAGS) $(INCLUDE) -c $(SRC_DIR)/$*.c $(OUTPUT) $(ASM_HACK)
+ 
+ bootstrap: always
+ 	-@if test "x$(DIR)" = "xsrc/"; then				      \
