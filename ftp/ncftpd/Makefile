@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
 LICENSE=	shareware
-xRESTRICTED=	"30 day evaluation license"
+RESTRICTED=	"30 day evaluation license"
 
 .include <bsd.port.pre.mk>
 
