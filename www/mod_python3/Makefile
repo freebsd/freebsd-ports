@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	3.0.3
+PORTVERSION=	3.1.3
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	modpython
@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Apache module that embeds the Python interpreter within the server
-
-FORBIDDEN=	denial of service vulnerability
 
 WITH_APACHE2=	yes
 USE_APACHE=	yes

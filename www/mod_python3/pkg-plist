@@ -1,15 +1,25 @@
 libexec/apache2/mod_python.so
 @exec %D/sbin/apxs -e -a -n python %f
 @unexec %D/sbin/apxs -e -A -n python %f
+%%PYTHON_SITELIBDIR%%/mod_python/Cookie.py
+%%PYTHON_SITELIBDIR%%/mod_python/Cookie.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/Cookie.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/Session.py
+%%PYTHON_SITELIBDIR%%/mod_python/Session.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/Session.pyo
 %%PYTHON_SITELIBDIR%%/mod_python/__init__.py
 %%PYTHON_SITELIBDIR%%/mod_python/__init__.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/__init__.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/_psp.so
 %%PYTHON_SITELIBDIR%%/mod_python/apache.py
 %%PYTHON_SITELIBDIR%%/mod_python/apache.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/apache.pyo
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.py
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/cgihandler.pyo
+%%PYTHON_SITELIBDIR%%/mod_python/psp.py
+%%PYTHON_SITELIBDIR%%/mod_python/psp.pyc
+%%PYTHON_SITELIBDIR%%/mod_python/psp.pyo
 %%PYTHON_SITELIBDIR%%/mod_python/publisher.py
 %%PYTHON_SITELIBDIR%%/mod_python/publisher.pyc
 %%PYTHON_SITELIBDIR%%/mod_python/publisher.pyo
