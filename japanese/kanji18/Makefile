@@ -16,8 +16,7 @@ DISTFILES?=	573.z 574.z 575.z 576.z 577.z 578.z 579.z 580.z 581.z
 
 MAINTAINER=     sanpei@FreeBSD.org
 
-BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar \
-		bdftopcf:${PORTSDIR}/x11/XFree86
+BUILD_DEPENDS=	gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
 DIST_SUBDIR=	${DISTNAME}
 FONTSDIR=	lib/X11/fonts/local
