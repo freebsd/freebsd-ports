@@ -3,12 +3,12 @@
 # Date created:		June 29 1998
 # Whom:			barnhart@genetics.wustl.edu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 23:30:02 steve Exp $
 #
 
 DISTNAME=	hmmer-2.0
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/
+MASTER_SITES=	ftp://ftp.genetics.wustl.edu/pub/eddy/hmmer/oldversions/2.0/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	barnhart@genetics.wustl.edu
