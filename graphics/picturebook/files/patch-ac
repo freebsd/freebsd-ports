@@ -1,6 +1,12 @@
---- ../picturebook.old/capture.h	Mon Dec 25 19:01:43 2000
-+++ capture.h	Mon Dec 25 19:03:17 2000
-@@ -21,15 +21,28 @@
+--- capture.h.orig	Thu Jul 27 02:15:05 2000
++++ capture.h	Sun Mar  9 18:18:21 2003
+@@ -16,20 +16,34 @@
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ */
+ #define _XOPEN_SOURCE 500
++#define __BSD_VISIBLE 1
+ #include <stdio.h>
+ #include <stdlib.h>
  #include <unistd.h>
  #include <fcntl.h>
  #include <errno.h>
@@ -20,7 +26,7 @@
 +#endif
 +#ifdef LINUX
  #include <linux/pci.h>
-+#else ifdef __FreeBSD__
++#else
 +#include <sys/pciio.h>
 +#include "pci.h" /*This is taken from Linux kernel*/
 +#define O_SYNC O_FSYNC
@@ -28,3 +34,4 @@
 +#endif
  #include <sys/time.h>
  #include "mchip.h"
+ 
