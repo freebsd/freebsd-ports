@@ -3,13 +3,12 @@
 # Date created:         8 Feb 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1998/08/07 22:56:47 asami Exp $
+# $Id: Makefile,v 1.8 1998/11/27 09:04:50 asami Exp $
 #
 
 DISTNAME=	v-1.19
 CATEGORIES=	x11-toolkits devel graphics
-MASTER_SITES=	ftp://objectcentral.com/old/ \
-		ftp://ftp.ntua.gr/pub/X11/v/old/ \
+MASTER_SITES=	ftp://ftp.ntua.gr/pub/X11/v/old/ \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/programming/objectcentral/old/
 
 MAINTAINER=	dburr@FreeBSD.ORG
