@@ -9,6 +9,7 @@ PORTNAME=	icecast
 PORTVERSION=	1.3.7
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
+FORBIDDEN=	"Remotely exploitable buffer overflow"
 
 MAINTAINER=	chip@eboai.org
 
