@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	mgstat
-PORTVERSION=	0.4.1
+PORTVERSION=	0.11
 CATEGORIES=	www
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
-MAINTAINER=	jeh@FreeBSD.org
+MAINTAINER=	ports
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MGDOCDIR=	${PREFIX}/share/doc/mgstat
 
