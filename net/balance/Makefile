@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	balance
-PORTVERSION=	3.6
+PORTVERSION=	3.11
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	balance
@@ -15,14 +15,16 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Simple but powerful generic tcp proxy with round robin features
 
 ALL_TARGET=	balance
+USE_REINPLACE=	yes
 
 MAN1=	balance.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS|g ; \
+		s|^CC|#CC|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/balance ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/balance.1 ${PREFIX}/man/man1
-
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/balance
 
 .include <bsd.port.mk>
