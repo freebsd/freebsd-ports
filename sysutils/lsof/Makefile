@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.53.3
+PORTVERSION=	4.53.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -20,6 +20,9 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/NEW/
 #DISTNAME=	${PORTNAME}_${PORTVERSION}_W
 DISTNAME=	${PORTNAME}_4.54C.freebsd
+
+PATCH_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/patches/4.53/
+PATCHFILES=	misc.c_patch
 
 MAINTAINER=	obrien@FreeBSD.org
 
