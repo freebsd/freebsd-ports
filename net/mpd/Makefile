@@ -7,6 +7,7 @@
 
 PORTNAME=	mpd
 PORTVERSION=	3.15
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	archie
@@ -20,5 +21,8 @@ MANCOMPRESSED=	maybe
 
 USE_OPENSSL=	yes
 MAKE_ENV=	COPTS=-I${OPENSSLINC} LDADD=-L${OPENSSLLIB}
+
+post-install:
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/mpd.sh ${PREFIX}/etc/rc.d/mpd.sh.sample
 
 .include <bsd.port.mk>

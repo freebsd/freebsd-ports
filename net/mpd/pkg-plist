@@ -2,6 +2,7 @@ etc/mpd/mpd.conf.sample
 etc/mpd/mpd.links.sample
 etc/mpd/mpd.secret.sample
 etc/mpd/mpd.script.sample
+etc/rc.d/mpd.sh.sample
 sbin/mpd
 share/doc/mpd/README
 share/doc/mpd/mpd.ps
