@@ -1,0 +1,13 @@
+This is the Beonex Communicator suite (Web browser, HTML editor, e-mail user
+agent, news reader, address book, and spell-checker) pre-compiled for
+Linux/i386.  It is based on Mozilla, but with extra emphasis on security and
+privacy.  The Linux version is necessary for running plugins which are only
+available as Linux binaries.
+
+Because of a security bug, the Chatzilla IRC client is not included in this
+port.
+
+The www/linuxflashplugin port and the Flash plugin from the www/linux-netscape6
+port are compatible with this.  Java does not work.  Your mileage may vary.
+
+WWW:  http://beonex.com/
