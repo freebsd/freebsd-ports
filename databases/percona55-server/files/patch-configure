@@ -1,7 +1,39 @@
---- configure.orig	Mon Aug 31 13:09:12 1998
-+++ configure	Wed Sep  9 16:33:22 1998
-@@ -3475,7 +3475,7 @@
- echo "configure:3476: checking "named thread libs:"" >&5
+--- configure.orig	Wed Nov  4 23:00:15 1998
++++ configure	Mon Nov 30 23:35:59 1998
+@@ -2197,30 +2197,7 @@
+ echo $ac_n "checking "how to check if pid exists"""... $ac_c" 1>&6
+ echo "configure:2199: checking "how to check if pid exists"" >&5
+ PS=$ac_cv_path_PS
+-# Linux style
+-if $PS p $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS p \$\$PID | grep mysqld > /dev/null"
+-# Solaris
+-elif $PS -p $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -p \$\$PID | grep mysqld > /dev/null"
+-# BSD style
+-elif $PS -uaxww 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-# SysV style
+-elif $PS -ef 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS -ef | grep mysqld | grep \" \$\$PID \" > /dev/null"
+-# Do anybody use this?
+-elif $PS $$ 2> /dev/null | grep $0 > /dev/null
+-then
+-  FIND_PROC="$PS \$\$PID | grep mysqld > /dev/null"
+-else
+-  { echo "configure: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." 1>&2; exit 1; }
+-fi
+-
++FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
+ echo "$ac_t"""$FIND_PROC"" 1>&6
+ 
+ # Check if a pid is valid
+@@ -3484,7 +3461,7 @@
+ echo "configure:3485: checking "named thread libs:"" >&5
  if test "$with_named_thread" != "no"
  then
 -  LIBS="$LIBS $with_named_thread"

@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.31 1998/11/11 05:37:08 asami Exp $
+# $Id: Makefile,v 1.32 1998/11/21 20:13:46 steve Exp $
 #
 
 DISTNAME=	mysql-3.22.10-beta
@@ -61,14 +61,15 @@ pre-fetch:
 .endif
 
 pre-install:
-.if defined(PACKAGE_BUILDING)
-	@ ${RM} -rf /var/db/mysql
-.endif
+.if !defined(PACKAGE_BUILDING)
 	@ ${SETENV} ${MAKE_ENV} ${PERL5} ${SCRIPTDIR}/check_old_version
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/mysql/mysql
+.if !defined(PACKAGE_BUILDING)
 	${PREFIX}/bin/mysql_install_db
+.endif
 	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
