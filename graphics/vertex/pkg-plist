@@ -1,4 +1,5 @@
 bin/vertex
+share/vertex/LICENSE
 share/vertex/help/application_map.png
 share/vertex/help/contacts.html
 share/vertex/help/create_model_dialog.png
