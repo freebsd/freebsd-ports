@@ -1,4 +1,5 @@
 bin/xgettext.pl
+%%SITE_PERL%%/Locale/Maketext/Extract.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Auto.pm
 %%SITE_PERL%%/Locale/Maketext/Lexicon/Gettext.pm

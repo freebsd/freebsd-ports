@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
@@ -23,7 +23,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Locale::Maketext::Lexicon::Auto.3 \
+MAN3=		Locale::Maketext::Extract.3 \
+		Locale::Maketext::Lexicon::Auto.3 \
 		Locale::Maketext::Lexicon::Gettext.3 \
 		Locale::Maketext::Lexicon::Msgcat.3 \
 		Locale::Maketext::Lexicon::Tie.3 \
@@ -36,7 +37,6 @@ MAN1=		xgettext.pl.1
 .if ${PERL_LEVEL} <= 500601
 .if ${PERL_LEVEL} == 500601
 BUILD_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat
-RUN_DEPENDS+=	${SITE_PERL}/Encode/compat.pm:${PORTSDIR}/devel/p5-Encode-compat
 .else
 IGNORE="Need at least perl 5.6.1 to build"
 .endif
