@@ -11,7 +11,7 @@ DISTNAME=	exmh-2.1.0
 CATEGORIES?=	mail tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 
-MAINTAINER?=	peter@FreeBSD.org
+MAINTAINER?=	markm@FreeBSD.org
 
 .if defined(JAPANESE_EXMH)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
