@@ -42,8 +42,9 @@ MAKE_ENV=	INCS_PRIVATE="${CPPFLAGS}" LIBS_PRIVATE="${LDFLAGS}"
 MAN1=		ASDatabase.1x ASDatabaseEntry.1x AfterStep.1x Align.1x \
 		Animate.1x AnimateTypes.1x Audio.1x AudioEvents.1x \
 		AutoExec.1x Base.1x Bevel.1x ColorScheme.1x Feel.1x \
-		Functions.1x Gravity.1x Look.1x MyBackground.1x MyFrame.1x \
-		MyStyle.1x Pager.1x PagerDecorations.1x SupportedHints.1x \
+		FeelWindowBox.1x Functions.1x Gravity.1x Look.1x \
+		MyBackground.1x MyFrame.1x MyStyle.1x Pager.1x \
+		PagerDecorations.1x Placement.1x SupportedHints.1x \
 		TbarLayout.1x Wharf.1x WharfSounds.1x WinList.1x WinTabs.1x \
 		asimagexml.1x
 
