@@ -7,7 +7,8 @@
 
 PORTNAME=	glbwar
 PORTVERSION=	1.0.0b.1.2
-MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/gw/
+MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/gw/ \
+                ftp://ftp.clanserver4u.de/exp/hl/mod/gw/
 DISTNAME=	globalwarfare_beta1.2.linux
 
 MAINTAINER=	lioux@FreeBSD.org
