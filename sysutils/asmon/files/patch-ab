@@ -1,5 +1,5 @@
 --- asmon/asmon.c.orig	Sun Jun 27 15:38:26 1999
-+++ asmon/asmon.c	Mon Sep 27 19:58:05 1999
++++ asmon/asmon.c	Wed Dec 29 21:08:33 1999
 @@ -21,6 +21,19 @@
  #include "asmon-master.xpm"
  #include "asmon-mask.xbm"
@@ -116,7 +116,18 @@
  #ifdef EXEC_ON_CLICK
      fprintf(stderr, "\t-e cmd\texecute 'cmd' on mouse click\n");
  #endif
-@@ -323,12 +393,13 @@
+@@ -229,6 +299,10 @@
+ #if 0
+ 				fprintf(stderr,"system(%s)\n",Command);
+ #endif
++				if (setgid(getgid()) != 0)
++					err(1, "Can't drop setgid privileges.");
++				if (setuid(getuid()) != 0)
++					err(1, "Can't drop setuid privileges.");
+ 				if (Command[ 0 ]) system(Command);
+ 				break;
+ #endif
+@@ -323,12 +397,13 @@
  /* CPU Usage Meter */
  void DrawCPU(void)
  {
@@ -132,7 +143,7 @@
  
  	if( (fp = fopen("/proc/stat", "r")) != NULL)
  	{
-@@ -345,7 +416,15 @@
+@@ -345,7 +420,15 @@
      		    sscanf(buf, "swap %ld %ld", &swapins, &swapouts);
  	    } 
  	    fclose(fp);
@@ -149,7 +160,7 @@
  	    // Calculate CPU stuff
  	    for(i = 0; i < 4; i++)
  	    { 
-@@ -365,6 +444,13 @@
+@@ -365,6 +448,13 @@
  	    }
  
  	    // Page In/Out
@@ -163,7 +174,7 @@
  	    if (pageins > last_pageins)
  	    {
      	        DrawLite(B_RED, 5, 48);
-@@ -414,12 +500,19 @@
+@@ -414,12 +504,19 @@
  #ifdef __solaris__
      if (getLoad(&ftmp) != -1)
      {
@@ -184,7 +195,7 @@
  #endif
  	if(oldv != ftmp)
  	{
-@@ -540,6 +633,7 @@
+@@ -540,6 +637,7 @@
  /* Mem/Swap Meter */
  float DrawMemSwap(float total, int allmem)
  {
@@ -192,7 +203,7 @@
      FILE *fp;
      if( (fp = fopen("/proc/meminfo", "r")) != NULL)
      {
-@@ -553,6 +647,112 @@
+@@ -553,6 +651,112 @@
  	fgets(junk, 80, fp);
  	fscanf(fp, "Mem: %f %f %f %f %f %f\nSwap: %f %f %f",  &total, &used, &freeM, &shared, &buffers, &cached, &swaptotal, &swapused, &swapfreeM);
  	fclose(fp);
@@ -305,7 +316,7 @@
  
  	if ( allmem == 1) {
  	/* All mem areas */
-@@ -561,11 +761,23 @@
+@@ -561,11 +765,23 @@
  			stotal = total; sshared = shared; sbuffers = buffers; scached = cached;
  			if ( (total/101048576) >= 1) 
  			{
@@ -329,7 +340,7 @@
  			    MEMbuff=(buffers/total)*33;
  			    MEMcach=(cached/total)*33;
  			}
-@@ -579,9 +791,15 @@
+@@ -579,9 +795,15 @@
  				copyXPMArea(3,75,((used/total)*34),9,5,19);
  			}
  			// Separators
@@ -345,7 +356,7 @@
  			// Numbers			
  			tempa=used/1048576;
  			tempy=tempa%10;
-@@ -601,6 +819,16 @@
+@@ -601,6 +823,16 @@
  		if(stotal != total || sshared != shared)
  		{
  			stotal = total; sshared = shared; sbuffers = buffers; scached = cached;
@@ -362,7 +373,7 @@
  			if ( (total/101048576) >= 1) {
  			    MEMshar=(shared/total)*27;
  			} else {
-@@ -609,8 +837,13 @@
+@@ -609,8 +841,13 @@
  			// Bar
  			copyXPMArea(3,75,MEMshar,9,5,19);
  			copyXPMArea(15,105,(36-(shared/total)*36),9,(5+(shared/total)*36),19);
@@ -376,7 +387,7 @@
  			tempy=tempa%10;
      			copyXPMArea(3+(tempy*6),66,6,9,50,19);
  			tempy=(tempa/10)%10;
-@@ -662,10 +895,11 @@
+@@ -662,10 +899,11 @@
  /* X Mem Usage */
  void DrawXmem(int Xpid, float total) 
  {
@@ -390,7 +401,7 @@
  
      sprintf(XFileName, "/proc/%d/status", Xpid);
  
-@@ -676,6 +910,15 @@
+@@ -676,6 +914,15 @@
      	    if (strstr(buf, "VmSize"))
          	sscanf(buf, "VmSize: %ld", &Xsize);
  	}
@@ -406,7 +417,7 @@
          if(old_Xsize!=Xsize)
  	{
      	    int tempy, tempa;
-@@ -692,7 +935,9 @@
+@@ -692,7 +939,9 @@
  	    copyXPMArea(3,84,((ratio)*22),11,18,47);
  	    copyXPMArea(15,105,(23-((ratio)*22)),11,(18+(ratio*22)),47);
  	}
@@ -416,7 +427,7 @@
      }
  }
  
-@@ -713,10 +958,28 @@
+@@ -713,10 +962,28 @@
          pUtmp = getutid(&idUtmp);
          upt = (time(0) - pUtmp->ut_time);
  #else
@@ -445,7 +456,7 @@
  #endif
  	mins=(upt/60)%60;
  	hours=(upt/3600)%24;
-@@ -777,6 +1040,31 @@
+@@ -777,6 +1044,31 @@
          break;
      }
  
