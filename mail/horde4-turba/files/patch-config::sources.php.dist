@@ -1,0 +1,137 @@
+--- config/sources.php.dist.orig	Tue Feb  8 21:43:47 2005
++++ config/sources.php.dist	Sun Feb 13 15:54:12 2005
+@@ -454,72 +454,72 @@
+  * automatically populated with the current username.
+  */
+ // First, get the user name
+-$uid = $GLOBALS['prefs']->getValue('imsp_auth_user');
+-$pass = $GLOBALS['prefs']->getValue('imsp_auth_pass');
+-if (!strlen($uid)) {
+-    $uid = Auth::getAuth();
+-    if (preg_match('/(^.*)@/', $uid, $matches)) {
+-        $uid = $matches[1];
+-    }
+-    $pass = Auth::getCredential('password');
+-}
+-
+-$cfgSources['imsp'] = array(
+-    'title' => _("IMSP"),
+-    'type' => 'imsp',
+-    'params' => array(
+-        'server'   => 'localhost',
+-        'port'     => '406',
+-        'username' => $uid,
+-        'password' => $pass,
+-        'name' => $uid,
+-        'auth_method' => 'cram_md5',
+-        'group_id_field' => 'group',
+-        'group_id_value' => 'group',
+-        'contact_ownership' => false
+-        ),
+-    'map' => array(
+-        '__key' => 'name',
+-        '__type' => '__type',
+-        '__members' => '__members',
+-        '__owner' => '__owner',
+-        '__uid' => '__uid',
+-        'name' => 'fullname',
+-        'email' => 'email',
+-        'alias' => 'alias',
+-        'company' => 'company',
+-        'notes' => 'notes',
+-        'workPhone' => 'phone-work',
+-        'fax' => 'fax',
+-        'homePhone' => 'phone-home',
+-        'cellPhone' => 'cellphone',
+-        'freebusyUrl' => 'freebusyUrl'
+-        ),
+-    'search' => array(
+-        'name',
+-        'email',
+-        'alias',
+-        'company',
+-        'homePhone'
+-        ),
+-    'strict' => array(),
+-    'public' => false,
+-    'readonly' => false,
+-    'export' => true
+-    );
++//UNCOMMENTIFIMSP $uid = $GLOBALS['prefs']->getValue('imsp_auth_user');
++//UNCOMMENTIFIMSP $pass = $GLOBALS['prefs']->getValue('imsp_auth_pass');
++//UNCOMMENTIFIMSP if (!strlen($uid)) {
++//UNCOMMENTIFIMSP     $uid = Auth::getAuth();
++//UNCOMMENTIFIMSP     if (preg_match('/(^.*)@/', $uid, $matches)) {
++//UNCOMMENTIFIMSP         $uid = $matches[1];
++//UNCOMMENTIFIMSP     }
++//UNCOMMENTIFIMSP     $pass = Auth::getCredential('password');
++//UNCOMMENTIFIMSP }
++//UNCOMMENTIFIMSP 
++//UNCOMMENTIFIMSP $cfgSources['imsp'] = array(
++//UNCOMMENTIFIMSP     'title' => _("IMSP"),
++//UNCOMMENTIFIMSP     'type' => 'imsp',
++//UNCOMMENTIFIMSP     'params' => array(
++//UNCOMMENTIFIMSP         'server'   => 'localhost',
++//UNCOMMENTIFIMSP         'port'     => '406',
++//UNCOMMENTIFIMSP         'username' => $uid,
++//UNCOMMENTIFIMSP         'password' => $pass,
++//UNCOMMENTIFIMSP         'name' => $uid,
++//UNCOMMENTIFIMSP         'auth_method' => 'cram_md5',
++//UNCOMMENTIFIMSP         'group_id_field' => 'group',
++//UNCOMMENTIFIMSP         'group_id_value' => 'group',
++//UNCOMMENTIFIMSP         'contact_ownership' => false
++//UNCOMMENTIFIMSP         ),
++//UNCOMMENTIFIMSP     'map' => array(
++//UNCOMMENTIFIMSP         '__key' => 'name',
++//UNCOMMENTIFIMSP         '__type' => '__type',
++//UNCOMMENTIFIMSP         '__members' => '__members',
++//UNCOMMENTIFIMSP         '__owner' => '__owner',
++//UNCOMMENTIFIMSP         '__uid' => '__uid',
++//UNCOMMENTIFIMSP         'name' => 'fullname',
++//UNCOMMENTIFIMSP         'email' => 'email',
++//UNCOMMENTIFIMSP         'alias' => 'alias',
++//UNCOMMENTIFIMSP         'company' => 'company',
++//UNCOMMENTIFIMSP         'notes' => 'notes',
++//UNCOMMENTIFIMSP         'workPhone' => 'phone-work',
++//UNCOMMENTIFIMSP         'fax' => 'fax',
++//UNCOMMENTIFIMSP         'homePhone' => 'phone-home',
++//UNCOMMENTIFIMSP         'cellPhone' => 'cellphone',
++//UNCOMMENTIFIMSP         'freebusyUrl' => 'freebusyUrl'
++//UNCOMMENTIFIMSP         ),
++//UNCOMMENTIFIMSP     'search' => array(
++//UNCOMMENTIFIMSP         'name',
++//UNCOMMENTIFIMSP         'email',
++//UNCOMMENTIFIMSP         'alias',
++//UNCOMMENTIFIMSP         'company',
++//UNCOMMENTIFIMSP         'homePhone'
++//UNCOMMENTIFIMSP         ),
++//UNCOMMENTIFIMSP     'strict' => array(),
++//UNCOMMENTIFIMSP     'public' => false,
++//UNCOMMENTIFIMSP     'readonly' => false,
++//UNCOMMENTIFIMSP     'export' => true
++//UNCOMMENTIFIMSP     );
+ 
+ /**
+  * Get any other addressbooks this user might be privy to.
+  */
+-require_once 'Net/IMSP/Utils.php';
+-$result = Net_IMSP_Utils::getAllBooks($cfgSources['imsp']);
+-if (!is_a($result, 'PEAR_Error')) {
+-    for ($i = 0; $i < count($result); $i++) {
+-        $cfgSources[sprintf('imsp%d', $i + 1)] = $result[$i];
+-    }
+-} else {
+-    $notification->push($result);
+-}
++//UNCOMMENTIFIMSP require_once 'Net/IMSP/Utils.php';
++//UNCOMMENTIFIMSP $result = Net_IMSP_Utils::getAllBooks($cfgSources['imsp']);
++//UNCOMMENTIFIMSP if (!is_a($result, 'PEAR_Error')) {
++//UNCOMMENTIFIMSP     for ($i = 0; $i < count($result); $i++) {
++//UNCOMMENTIFIMSP         $cfgSources[sprintf('imsp%d', $i + 1)] = $result[$i];
++//UNCOMMENTIFIMSP     }
++//UNCOMMENTIFIMSP } else {
++//UNCOMMENTIFIMSP     $notification->push($result);
++//UNCOMMENTIFIMSP }
+ 
+ /* Begin Kolab sources. */
+ if (!empty($GLOBALS['conf']['kolab']['enabled'])) {
