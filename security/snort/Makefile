@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	security
 MASTER_SITES=	http://snort.sourcefire.com/releases/
 
@@ -52,12 +52,13 @@ pre-configure:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/snort
-.for i in CREDITS RULES.SAMPLE USAGE backdoor.rules ddos.rules dns.rules dos.rules \
-	  exploit.rules finger.rules ftp.rules info.rules icmp.rules local.rules \
-	  misc.rules netbios.rules policy.rules rpc.rules rservices.rules scan.rules \
-	  shellcode.rules smtp.rules sql.rules telnet.rules web-cgi.rules \
-	  web-coldfusion.rules web-frontpage.rules web-iis.rules web-misc.rules \
-	  x11.rules
+.for i in CREDITS RULES.SAMPLE USAGE attack-responses.rules backdoor.rules \
+	bad-traffic.rules ddos.rules dns.rules dos.rules exploit.rules \
+	finger.rules ftp.rules icmp.rules icmp-info.rules info.rules local.rules \
+	misc.rules netbios.rules policy.rules porn.rules rpc.rules rservices.rules \
+	scan.rules shellcode.rules smtp.rules sql.rules telnet.rules tftp.rules \
+	virus.rules web-attacks.rules web-cgi.rules web-coldfusion.rules \
+	web-frontpage.rules web-iis.rules web-misc.rules x11.rules
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/snort
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/classification.config ${PREFIX}/etc/classification.config-sample
