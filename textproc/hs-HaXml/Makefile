@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	haxml
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	textproc haskell
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/ \
@@ -36,7 +35,6 @@ WITH_HUGS=	yes
 .endif
 
 .if defined(PACKAGE_BUILDING)
-WITH_NHC98=	yes
 WITH_GHC=	yes
 WITH_HUGS=	yes
 .endif
@@ -104,6 +102,7 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC} && ${RM} -rf docs/HaXml/CVS)
 	@(cd ${WRKSRC} && ${CP} -R docs/* ${DOCSDIR})
 .endif
 
