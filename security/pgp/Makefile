@@ -44,8 +44,7 @@ pre-fetch:
 .if ${USA_RESIDENT} == YES
 PORTNAME=	pgp
 PORTVERSION=	2.6.2
-MASTER_SITES=	ftp://utopia.hacktic.nl/pub/replay/pub/pgp/unix/ \
-		ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/
+MASTER_SITES=   ftp://utopia.hacktic.nl/pub/crypto/pgp/unix/
 DISTNAME=	pgp262s
 
 WRKSRC=		${WRKDIR}/src
