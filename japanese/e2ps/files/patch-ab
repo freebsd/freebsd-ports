@@ -1,0 +1,15 @@
+*** e2ps.h.orig	Wed Nov  4 22:44:09 1998
+--- e2ps.h	Wed Jan  5 11:32:16 2000
+***************
+*** 10,15 ****
+--- 10,19 ----
+  #include	<signal.h>
+  #include	<string.h>
+  #include	<math.h>
++ #include	<sys/types.h>
++ #include	<unistd.h>
++ #include	<stdlib.h>
++ 
+  
+  /* 定数類 */
+  #define	NAME			"e2ps"			/* 名前 */
