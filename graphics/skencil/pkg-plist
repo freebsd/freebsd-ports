@@ -1,6 +1,7 @@
 bin/sketch
 bin/sk2ps
 share/sketch/Filter/streamfilter.so
+share/sketch/Pax/COPYING.xext
 share/sketch/Pax/Generate/mkgc.py
 share/sketch/Pax/Generate/mkgc.pyc
 share/sketch/Pax/Generate/mktools.py
@@ -12,6 +13,8 @@ share/sketch/Pax/X.pyc
 share/sketch/Pax/paxmodule.so
 share/sketch/Plugins/Filters/ailoader.py
 share/sketch/Plugins/Filters/ailoader.pyc
+share/sketch/Plugins/Filters/aisaver.py
+share/sketch/Plugins/Filters/aisaver.pyc
 share/sketch/Plugins/Filters/gziploader.py
 share/sketch/Plugins/Filters/gziploader.pyc
 share/sketch/Plugins/Filters/skloader.py
@@ -107,6 +110,8 @@ share/sketch/Sketch/Graphics/arrow.py
 share/sketch/Sketch/Graphics/arrow.pyc
 share/sketch/Sketch/Graphics/base.py
 share/sketch/Sketch/Graphics/base.pyc
+share/sketch/Sketch/Graphics/bezier.py
+share/sketch/Sketch/Graphics/bezier.pyc
 share/sketch/Sketch/Graphics/blend.py
 share/sketch/Sketch/Graphics/blend.pyc
 share/sketch/Sketch/Graphics/blendgroup.py
@@ -121,6 +126,8 @@ share/sketch/Sketch/Graphics/dashes.py
 share/sketch/Sketch/Graphics/dashes.pyc
 share/sketch/Sketch/Graphics/document.py
 share/sketch/Sketch/Graphics/document.pyc
+share/sketch/Sketch/Graphics/ellipse.py
+share/sketch/Sketch/Graphics/ellipse.pyc
 share/sketch/Sketch/Graphics/eps.py
 share/sketch/Sketch/Graphics/eps.pyc
 share/sketch/Sketch/Graphics/external.py
@@ -151,12 +158,12 @@ share/sketch/Sketch/Graphics/pattern.py
 share/sketch/Sketch/Graphics/pattern.pyc
 share/sketch/Sketch/Graphics/plugobj.py
 share/sketch/Sketch/Graphics/plugobj.pyc
-share/sketch/Sketch/Graphics/primitives.py
-share/sketch/Sketch/Graphics/primitives.pyc
 share/sketch/Sketch/Graphics/properties.py
 share/sketch/Sketch/Graphics/properties.pyc
 share/sketch/Sketch/Graphics/psdevice.py
 share/sketch/Sketch/Graphics/psdevice.pyc
+share/sketch/Sketch/Graphics/rectangle.py
+share/sketch/Sketch/Graphics/rectangle.pyc
 share/sketch/Sketch/Graphics/selection.py
 share/sketch/Sketch/Graphics/selection.pyc
 share/sketch/Sketch/Graphics/selinfo.py
@@ -169,6 +176,8 @@ share/sketch/Sketch/Lib/dscparser.py
 share/sketch/Sketch/Lib/dscparser.pyc
 share/sketch/Sketch/Lib/encoding.py
 share/sketch/Sketch/Lib/encoding.pyc
+share/sketch/Sketch/Lib/psmisc.py
+share/sketch/Sketch/Lib/psmisc.pyc
 share/sketch/Sketch/Lib/skcompleter.py
 share/sketch/Sketch/Lib/skcompleter.pyc
 share/sketch/Sketch/Lib/type1.py
@@ -292,8 +301,6 @@ share/sketch/Sketch/UI/__init__.py
 share/sketch/Sketch/UI/__init__.pyc
 share/sketch/Sketch/UI/aligndlg.py
 share/sketch/Sketch/UI/aligndlg.pyc
-share/sketch/Sketch/UI/balloonhelp.py
-share/sketch/Sketch/UI/balloonhelp.pyc
 share/sketch/Sketch/UI/blenddlg.py
 share/sketch/Sketch/UI/blenddlg.pyc
 share/sketch/Sketch/UI/canvas.py
@@ -358,6 +365,8 @@ share/sketch/Sketch/UI/styledlg.py
 share/sketch/Sketch/UI/styledlg.pyc
 share/sketch/Sketch/UI/tkext.py
 share/sketch/Sketch/UI/tkext.pyc
+share/sketch/Sketch/UI/tooltips.py
+share/sketch/Sketch/UI/tooltips.pyc
 share/sketch/Sketch/UI/view.py
 share/sketch/Sketch/UI/view.pyc
 share/sketch/Sketch/UI/viewport.py
