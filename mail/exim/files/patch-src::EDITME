@@ -1,5 +1,5 @@
 --- src/EDITME.orig	Mon Jul 22 10:59:47 2002
-+++ src/EDITME		Tue Jul 30 16:06:43 2002
++++ src/EDITME	Fri Sep 13 13:00:02 2002
 @@ -98,7 +98,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
@@ -35,7 +35,15 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -269,8 +269,9 @@
+@@ -257,6 +257,7 @@
+ # LDAP_LIB_TYPE=OPENLDAP2
+ # LDAP_LIB_TYPE=NETSCAPE
+ # LDAP_LIB_TYPE=SOLARIS
++LDAP_LIB_TYPE=XX_LDAP_TYPE_XX
+ 
+ # If you don't set any of these, Exim assumes the original University of
+ # Michigan (OpenLDAP 1) library.
+@@ -269,8 +270,9 @@
  # don't need to set LOOKUP_INCLUDE if the relevant directories are already
  # specified in INCLUDE.
  
@@ -47,7 +55,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -281,7 +282,7 @@
+@@ -281,7 +283,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
@@ -56,7 +64,7 @@
  
  
  
-@@ -316,7 +317,7 @@
+@@ -316,7 +318,7 @@
  # settings commented out.
  
  # SUPPORT_TLS=yes
@@ -65,7 +73,7 @@
  
  # If you are running Exim as a server, note that just building it with TLS
  # support is not all you need to do. You also need to set up a suitable
-@@ -358,7 +359,7 @@
+@@ -358,7 +360,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -74,7 +82,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -371,7 +372,7 @@
+@@ -371,7 +373,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -83,7 +91,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -474,7 +475,7 @@
+@@ -474,7 +476,7 @@
  
  #  USE_TCP_WRAPPERS=yes
  #  CFLAGS=-O -I/usr/local/include
@@ -92,7 +100,7 @@
  
  # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
  # as well.
-@@ -695,7 +696,7 @@
+@@ -695,7 +697,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  
