@@ -1,0 +1,13 @@
+--- configure.orig	Sat Feb 12 12:26:08 2000
++++ configure	Sat Feb 12 12:26:38 2000
+@@ -2855,8 +2855,8 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   saved_libs=$LIBS
+-LIBS="conftest_asm.s $LIBS"
+-cat > conftest_asm.s <<EOF
++LIBS="conftest_asm.S $LIBS"
++cat > conftest_asm.S <<EOF
+ 	.globl _ac_test
+ _ac_test:
+ 	.long 0
