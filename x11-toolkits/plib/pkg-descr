@@ -1,0 +1,18 @@
+These are Steve Baker <sjbaker1@airmail.net>'s portability libraries. They
+are licensed under the LGPL.
+
+From the README:
+
+The following libraries are provided:
+
+JS  -- A Joystick interface.
+PUI -- A simple GUI built on top of OpenGL.
+SG  -- Some Standard Geometry functions (vector and
+       matrix math, spheres, boxes, frustra, etc)
+SL  -- A Games-oriented Sound Library.
+SSG -- A Simple Scene Graph API built on top of OpenGL.
+
+WWW: http://www.woodsoup.org/projs/plib
+
+- Brian Buchanan
+brian@CSUA.Berkeley.EDU
