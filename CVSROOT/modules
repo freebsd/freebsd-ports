@@ -1890,6 +1890,7 @@ gdal		ports/graphics/gdal
 gdb		src/gnu/usr.bin/gdb
 gdb52		ports/devel/gdb52
 gdbm		ports/databases/gdbm
+gdbmods		ports/devel/gdbmods
 gdcalc		ports/math/gdcalc
 gdcd		ports/audio/gdcd
 gdchart		ports/graphics/gdchart
