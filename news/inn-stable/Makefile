@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inn
-SNAPSHOT=	20010523
+SNAPSHOT=	20010604
 PORTVERSION=	2.3.${SNAPSHOT}
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/snapshots/
@@ -33,6 +33,7 @@ CONFIGURE_ARGS+=	--with-log-dir=${INN_NEWSLOG}
 CONFIGURE_ARGS+=	--with-perl
 CONFIGURE_ARGS+=	--with-tmp-path=${INN_NEWSSPOOL}/tmp
 CONFIGURE_ARGS+=	--with-largefiles
+CONFIGURE_ARGS+=	--with-openssl
 
 # Various Options. See ${WRKSRC}/INSTALL for details
 
