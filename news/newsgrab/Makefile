@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	newsgrab
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	newsgrab
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Download and uudecode binary files from USENET using regexps
