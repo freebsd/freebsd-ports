@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.mat.uni.torun.pl/~rafmet/ \
 		ftp://ftp.netspring.net/pub/people/rafal-metkowski/
 EXTRACT_SUFX=	.src.tgz
 
-MAINTAINER=	matt@LUCIDA.QC.CA
+MAINTAINER=	matt@LUCIDA.CA
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
