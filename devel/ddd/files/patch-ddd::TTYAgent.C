@@ -1,6 +1,6 @@
---- ddd/TTYAgent.C.orig	Thu Aug 19 04:27:58 1999
-+++ ddd/TTYAgent.C	Sun Aug 27 02:37:48 2000
-@@ -697,8 +697,19 @@
+--- ddd/TTYAgent.C.orig	Sat May 24 11:27:05 2003
++++ ddd/TTYAgent.C	Fri Feb 27 13:33:02 2004
+@@ -719,8 +719,19 @@
      }
      else
      {

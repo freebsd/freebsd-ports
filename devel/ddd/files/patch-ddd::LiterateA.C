@@ -1,5 +1,5 @@
---- ddd/LiterateA.C.orig	Thu Aug 19 04:27:40 1999
-+++ ddd/LiterateA.C	Sun Aug 27 02:37:48 2000
+--- ddd/LiterateA.C.orig	Sat May 24 11:27:03 2003
++++ ddd/LiterateA.C	Fri Feb 27 13:33:02 2004
 @@ -220,8 +220,12 @@
      int flags = fcntl(fileno(fp), F_GETFL, 0);
      if (flags == -1)

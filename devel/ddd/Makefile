@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	ddd
-PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTVERSION=	3.3.8
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= ddd
@@ -16,20 +16,31 @@ MASTER_SITE_SUBDIR= ddd
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Data Display Debugger -- a common graphical front-end for GDB/DBX/XDB
 
-GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
-		--with-readline-libraries=/usr/lib
+LIB_DEPENDS=	iberty.1:${PORTSDIR}/devel/freelibiberty
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
 USE_XPM=	yes
 USE_MOTIF=	yes
+USE_LIBTOOL=	yes
+
+CFLAGS+=	-Wno-deprecated
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS='${CPPFLAGS}' \
+		LDFLAGS='${LDFLAGS}'
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--with-motif-libraries="${LIBXMDIR}" \
+		--with-readline-libraries=/usr/lib
+
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 MAN1=		ddd.1
-
-CFLAGS+= -Wno-deprecated
+DOCS=		AUTHORS INSTALL PROBLEMS README TIPS TODO \
+		doc/html/ddd.html doc/ddd-paper.ps \
+		doc/ddd-themes.ps doc/ddd.ps \
+		doc/ddd-themes.pdf doc/ddd.pdf
 
 .if defined(MOTIFLIB)
 .if defined(MOTIF_STATIC)
@@ -43,38 +54,24 @@ LIBXMDIR=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
-.if ${OSVERSION} >= 500113
-# XXX - configure is not detecting our streampos
-# provide better solution later
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ddd::streampos.h
-.endif
-
 pre-patch:
-	${RM} -fv ${WRKSRC}/ddd/ddd.info*
-	${RM} -fv ${WRKSRC}/ddd/ddd-themes.info*
+	@${RM} -fv ${WRKSRC}/ddd/ddd.info*
+	@${RM} -fv ${WRKSRC}/ddd/ddd-themes.info*
 
 pre-configure:
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} \
-		${REINPLACE_CMD} -e "s|-O2|-g|"
+		${REINPLACE_CMD} -e "s|-O2||"
 
 post-configure:
-	${ECHO_CMD} "LIBXM = ${MOTIFLIB}" >> ${WRKSRC}/ddd/Makefile
+	@${ECHO_CMD} "LIBXM = ${MOTIFLIB}" >> ${WRKSRC}/ddd/Makefile
 
 post-install:
-	@${RM} ${PREFIX}/lib/libiberty.a
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/PROBLEMS ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/doc/ddd-paper.ps ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/doc/ddd.ps ${PREFIX}/share/doc/ddd
-	${INSTALL_DATA} ${WRKSRC}/doc/sample.dddinit ${PREFIX}/share/doc/ddd
-	${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-paper.ps
-	${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd.ps
+	@${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
+.for file in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	@${GZIP_CMD} ${DOCSDIR}/*.ps
 .endif
 
 check:
