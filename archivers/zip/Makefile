@@ -18,7 +18,7 @@ DISTFILES=	zip23${EXTRACT_SUFX} ${ZCRYPT_SRC}
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with pkzip
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	zip23${EXTRACT_SUFX}
