@@ -7,10 +7,11 @@
 
 PORTNAME=	jdk
 PORTVERSION=	1.5.0.b1
+PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
-DISTNAME=	j2sdk-1_5_0-beta-bin-b31-linux-i586-11_dec_2003
+DISTNAME=	j2sdk-1_5_0-beta-linux-i586
 EXTRACT_SUFX=	.bin
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -33,7 +34,7 @@ JDK_VERSION=	1.5.0
 JDK_BETA_LEVEL=	1
 DL_JDK_VERSION=	"${JDK_VERSION} beta ${JDK_BETA_LEVEL}"
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL?=	http://jsecom16.sun.com/ECom/EComActionServlet?StoreId=22&PartDetailId=j2sdk-1.5.0-beta-b31-oth-JPR
+DOWNLOAD_URL?=	http://jsecom16.sun.com/ECom/EComActionServlet?StoreId=22&PartDetailId=j2sdk-1.5.0-beta-oth-JPR&TransactionId=noreg
 PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${JDK_VERSION}
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
@@ -51,7 +52,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n 144439 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n +579 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 

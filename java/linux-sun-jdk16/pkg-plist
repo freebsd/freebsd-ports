@@ -11,7 +11,6 @@
 %%T%%/jre/bin/tnameserv
 %%T%%/jre/bin/ControlPanel
 %%T%%/jre/bin/java_vm
-%%T%%/jre/bin/javawsbin
 %%T%%/jre/bin/javaws
 %%T%%/jre/lib/i386/native_threads/libhpi.so
 %%T%%/jre/lib/i386/server/libjvm.so
@@ -20,6 +19,8 @@
 %%T%%/jre/lib/i386/client/libjvm.so
 %%T%%/jre/lib/i386/client/Xusage.txt
 %%T%%/jre/lib/i386/client/libjsig.so
+%%T%%/jre/lib/i386/liboldhprof.so
+%%T%%/jre/lib/i386/libsaproc.so
 %%T%%/jre/lib/i386/libnative_chmod.so
 %%T%%/jre/lib/i386/libjsig.so
 %%T%%/jre/lib/i386/libj2pkcs11.so
@@ -505,6 +506,7 @@
 %%T%%/jre/lib/fontconfig.properties
 %%T%%/jre/lib/fontconfig.RedHat.properties
 %%T%%/jre/lib/fontconfig.RedHat.8.0.properties
+%%T%%/jre/lib/fontconfig.RedHat.3.properties
 %%T%%/jre/lib/fontconfig.RedHat.2.1.properties
 %%T%%/jre/lib/fontconfig.Sun.properties
 %%T%%/jre/lib/fontconfig.Turbo.properties
@@ -534,6 +536,10 @@
 %%T%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES/sunw_java_plugin.mo
 %%T%%/jre/lib/locale/zh_HK.BIG5HK/LC_MESSAGES/sunw_java_plugin.mo
 %%T%%/jre/lib/javaws.pack
+%%T%%/jre/lib/javaws/sun-java.png
+%%T%%/jre/lib/javaws/sun-java_HighContrast.png
+%%T%%/jre/lib/javaws/sun-java_HighContrastInverse.png
+%%T%%/jre/lib/javaws/sun-java_LowContrast.png
 %%T%%/jre/lib/javaws/miniSplash.jpg
 %%T%%/jre/lib/javaws/messages.properties
 %%T%%/jre/lib/javaws/messages_zh_TW.properties
@@ -547,11 +553,11 @@
 %%T%%/jre/lib/javaws/messages_zh_CN.properties
 %%T%%/jre/lib/javaws/messages_zh_HK.properties
 %%T%%/jre/lib/javaws/Java1.5.ico
-%%T%%/jre/lib/deploy.jar
 %%T%%/jre/lib/plugin.jar
 %%T%%/jre/lib/rt.jar
 %%T%%/jre/lib/jsse.jar
 %%T%%/jre/lib/charsets.jar
+%%T%%/jre/lib/deploy.pack
 %%T%%/jre/CHANGES
 %%T%%/jre/COPYRIGHT
 %%T%%/jre/Welcome.html
@@ -562,6 +568,7 @@
 %%T%%/jre/plugin/i386/ns7-gcc29/libjavaplugin_oji.so
 %%T%%/jre/plugin/desktop/sun_java.png
 %%T%%/jre/plugin/desktop/sun_java.desktop
+%%T%%/jre/javaws/javaws
 %%T%%/jre/.systemPrefs/.system.lock
 %%T%%/jre/.systemPrefs/.systemRootModFile
 %%T%%/lib/orb.idl
@@ -570,6 +577,7 @@
 %%T%%/lib/htmlconverter.jar
 %%T%%/lib/unpack
 %%T%%/lib/tools.jar
+%%T%%/lib/sa-jdi.jar
 %%T%%/bin/java
 %%T%%/bin/javac
 %%T%%/bin/javadoc
@@ -596,6 +604,8 @@
 %%T%%/bin/extcheck
 %%T%%/bin/jdb
 %%T%%/bin/HtmlConverter
+%%T%%/bin/ControlPanel
+%%T%%/bin/javaws
 %%T%%/demo/applets/Animator/audio/0.au
 %%T%%/demo/applets/Animator/audio/1.au
 %%T%%/demo/applets/Animator/audio/2.au
@@ -1690,6 +1700,7 @@
 @dirrm %%T%%/jre/plugin/i386
 @dirrm %%T%%/jre/plugin/desktop
 @dirrm %%T%%/jre/plugin
+@dirrm %%T%%/jre/javaws
 @dirrm %%T%%/jre/.systemPrefs
 @dirrm %%T%%/jre
 @dirrm %%T%%/lib
