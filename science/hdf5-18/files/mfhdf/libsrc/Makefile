@@ -15,6 +15,8 @@ LIBDIR		= ${PREFIX}/lib
 
 # uncomment the line below to avoid building static libraries
 #INTERNALLIB	= Yes
+# comment out the line below to build the profile libs
+NOPROFILE=yes
 
 CFLAGS	+=	-DNDEBUG -DHDF -I${.CURDIR}/../../hdf/src -I${.CURDIR}
 .if ${MACHINE_ARCH} == "i386"
