@@ -1,0 +1,5 @@
+This port installs three kernel modules, cd9660.ko, msdos.ko and
+ntfs.ko, which will let users read GB2312 filenames on Joliet and VFAT
+filesystems, respectively.
+
+The Joliet, VFAT version is contributed by:  cjacker@263.net
