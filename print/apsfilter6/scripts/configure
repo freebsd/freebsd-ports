@@ -11,8 +11,8 @@ if [ "$BATCH" != "yes" ]; then
 /usr/bin/dialog --title "supported file types" --clear \
 	--checklist "\n\
 Select file types you want to print:" -1 -1 14	\
-LETTER		"LETTER printing"		ON	\
-LETTERDJ	"LETTERDJ printing"		OFF	\
+LETTER		"LETTER printing"		OFF	\
+LETTERDJ	"LETTERDJ printing"		ON	\
 A4		"A4 printing"			OFF	\
 PS		"Postscript and PDF files"	ON	\
 ASCII		"ASCII/English Text/Scripts"	ON	\
