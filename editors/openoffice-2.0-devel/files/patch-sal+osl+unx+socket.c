@@ -1,14 +1,20 @@
---- ../sal/osl/unx/socket.c.orig	Sun Mar 17 12:46:37 2002
-+++ ../sal/osl/unx/socket.c	Wed Apr  3 01:01:14 2002
-@@ -82,7 +82,7 @@
+--- ../sal/osl/unx/socket.c.orig	Tue Apr  9 20:09:53 2002
++++ ../sal/osl/unx/socket.c	Fri Oct 18 20:00:19 2002
+@@ -82,12 +82,12 @@
  #undef HAVE_POLL_H
  #endif
  
 -#if defined(LINUX) || defined (IRIX) || defined(NETBSD)
-+#if defined(LINUX) || defined (IRIX) || defined(NETBSD) || defined(FREEBSD)
++#if defined(LINUX) || defined (IRIX) || defined(NETBSD) || defined ( FREEBSD )
  #include <sys/poll.h>
  #define HAVE_POLL_H
  #endif /* HAVE_POLL_H */
+ 
+-#if defined(SOLARIS) || defined ( FREEBSD )
++#if defined(SOLARIS)
+ #include <poll.h>
+ #define HAVE_POLL_H
+ #endif /* SOLARIS */
 @@ -1965,7 +1965,7 @@
  /*****************************************************************************/
  oslSocketAddr SAL_CALL osl_getLocalAddrOfSocket(oslSocket pSocket)
