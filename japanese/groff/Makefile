@@ -58,7 +58,7 @@ TMACFILES=	tmac.an tmac.andoc tmac.orig_me tmac.vgrind \
 PLIST_SUB+=	TMAC_GROFF_AN:=""
 TMACFILES+=	tmac.groff_an
 .else
-PLIST_SUB+=	TMAC_GROFF_AN:="@comment"
+PLIST_SUB+=	TMAC_GROFF_AN:="@comment "
 .endif
 MDOCFILES=	doc-common doc-syms
 LOCALEFILES=	locale-list eucJP
@@ -80,6 +80,9 @@ PERL_ARGS+= -e 's,locale/(hyphen.us-ru)$$,$$1,;'
 PERL_ARGS+= -e 's,^.*hyphen.us-ru\n$$,,;'
 .endif
 .endif
+
+TROFFRC_FILTER=	-e 's,^(.do ds troffrc!koi8-r tmac.tty)$$,$$1\n.do ds troffrc!nippon tmac.tty,;'
+EQNRC_FILTER=	-e 's,^(ifdef koi8-r ! define n %1% !)$$,$$1\nifdef nippon ! define n %1% !,;'
 
 #for not writing "/usr/local" explicitly in the patch
 post-patch:
@@ -108,7 +111,12 @@ post-install:
 .if defined(PERL_ARGS) && !empty(PERL_ARGS)
 	${PERL} -pi ${PERL_ARGS} ${TMPPLIST}
 .endif
-	${PATCH} -d ${PREFIX}/${TMACDIR} < ${FILESDIR}/rc.diff
+.if defined(TROFFRC_FILTER) && !empty(TROFFRC_FILTER)
+	${PERL} -pi ${TROFFRC_FILTER} ${PREFIX}/${TMACDIR}/troffrc
+.endif
+.if defined(EQNRC_FILTER) && !empty(EQNRC_FILTER)
+	${PERL} -pi ${EQNRC_FILTER} ${PREFIX}/${TMACDIR}/eqnrc
+.endif
 
 install-documents:
 	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
