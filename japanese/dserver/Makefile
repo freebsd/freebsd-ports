@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/29 03:56:04 max Exp $
 #
 
 DISTNAME=	dserver2.2betapl2
@@ -42,7 +42,7 @@ post-install:
 	  > ${PREFIX}/lib/dserver/setup.sh
 	@${SED} s!PREFIX_DIR!${PREFIX}!g ${WRKSRC}/deinstall.sh.template \
 	  > ${PREFIX}/lib/dserver/deinstall.sh
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD-setup ${PREFIX}/lib/dserver/doc/
+	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD-setup.euc ${PREFIX}/lib/dserver/doc/
 	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/REQ ${PKGNAME} INSTALL
 
 .include <bsd.port.mk>
