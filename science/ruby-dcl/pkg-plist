@@ -1,5 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/numru/dcl_raw.so
+@unexec rmdir %B 2>/dev/null || true
 %%RUBY_SITELIBDIR%%/numru/dcl.rb
+@unexec rmdir %B 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gokuraku/hop/hop.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gokuraku/jump/jump1.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gokuraku/jump/jump2.rb
@@ -46,6 +48,8 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph1/slpack/slpk03.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph1/slpack/slpk04.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/grpack/grpk01.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/g2pack/g2pk01.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/g2pack/g2pk02.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ucpack/ucpk01.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ucpack/ucpk02.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/udegpk/u2df01.rb
@@ -57,7 +61,9 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/udegpk/u2df07.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/udegpk/u2df08.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ulpack/ulpk01.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ulpack/ulpk01n.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ulpack/ulpk02.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ulpack/ulpk02n.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/t811231.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/test01.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/test02.rb
@@ -67,6 +73,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/test06.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/test07.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/test08.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/test09.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/umpk01.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/umpk02.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/umpack/umpk03.rb
@@ -104,6 +111,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ximage/MEMO
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ximage/tomsclm.dat
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/grph2/ximage/ximg01.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math1/gt2dlib/gt2d01.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math2/fftlib/fftl01.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math2/fftlib/fftl02.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/math2/intrlib/intr01.rb
@@ -173,6 +181,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph1/slpack
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph1
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/grpack
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/g2pack
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/ucpack
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/udegpk
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/ulpack
@@ -182,6 +191,8 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/uxyzpk
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2/ximage
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/grph2
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/math1/gt2dlib
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/math1
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/math2/fftlib
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/math2/intrlib
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/math2/rnmlib
@@ -202,5 +213,3 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ToDo
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
-@dirrm %%RUBY_SITEARCHLIBDIR%%/numru
-@dirrm %%RUBY_SITELIBDIR%%/numru
