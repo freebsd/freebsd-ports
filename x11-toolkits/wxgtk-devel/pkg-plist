@@ -87,6 +87,7 @@ include/wx/generic/dragimgg.h
 include/wx/generic/filedlgg.h
 include/wx/generic/fontdlgg.h
 include/wx/generic/grid.h
+include/wx/generic/gridctrl.h
 include/wx/generic/gridg.h
 include/wx/generic/helpext.h
 include/wx/generic/helphtml.h
@@ -161,10 +162,10 @@ include/wx/gtk/region.h
 include/wx/gtk/scrolbar.h
 include/wx/gtk/scrolwin.h
 include/wx/gtk/settings.h
+include/wx/gtk/setup.h
 include/wx/gtk/slider.h
 include/wx/gtk/spinbutt.h
 include/wx/gtk/spinctrl.h
-include/wx/gtk/setup.h
 include/wx/gtk/statbmp.h
 include/wx/gtk/statbox.h
 include/wx/gtk/statline.h
@@ -270,6 +271,7 @@ include/wx/settings.h
 include/wx/setup.h
 include/wx/sizer.h
 include/wx/slider.h
+include/wx/snglinst.h
 include/wx/socket.h
 include/wx/spinbutt.h
 include/wx/spinctrl.h

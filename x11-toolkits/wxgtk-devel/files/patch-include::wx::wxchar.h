@@ -1,22 +1,22 @@
 
 $FreeBSD$
 
---- include/wx/wxchar.h.orig	Fri May 25 05:55:35 2001
-+++ include/wx/wxchar.h	Mon May 28 22:12:39 2001
-@@ -276,12 +276,7 @@
+--- include/wx/wxchar.h.orig	Thu Jul  5 06:24:14 2001
++++ include/wx/wxchar.h	Tue Nov 27 13:13:28 2001
+@@ -288,12 +288,7 @@
  #    ifdef HAVE_WCSTR_H
  #      include <wcstr.h>
  #    else
--#      ifndef __FreeBSD__
- #        include <wchar.h>
--#      else
+-#      if defined(__FreeBSD__) || (defined(__APPLE__) && defined(__UNIX__))
 -#        include <stdlib.h>
 -#        define wxNEED_WCSLEN
+-#      else
+ #        include <wchar.h>
 -#      endif
  #    endif
  #  endif
  
-@@ -511,11 +506,11 @@
+@@ -523,11 +518,11 @@
  #endif
  
  // checks whether the passed in pointer is NULL and if the string is empty
