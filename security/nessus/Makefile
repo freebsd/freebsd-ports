@@ -26,9 +26,14 @@ LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
 
-HAVE_GTK=	yes
 USE_LIBTOOL=	yes
-.if defined(WITHOUT_GTK)
+WANT_GTK=	yes
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
+USE_GTK=	yes
+.else
 CONFIGURE_ARGS+=	--disable-gtk
 .endif
 
@@ -41,4 +46,4 @@ post-install:
 	@${ECHO} "collection."
 	@${ECHO} "================================================================================"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
