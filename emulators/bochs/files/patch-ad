@@ -1,5 +1,5 @@
 --- iodev/cdrom.cc.orig	Thu Nov 11 21:44:52 1999
-+++ iodev/cdrom.cc	Fri Jan 14 00:59:58 2000
++++ iodev/cdrom.cc	Sun Jan 16 10:47:05 2000
 @@ -34,7 +34,7 @@
  }
  #endif
@@ -27,12 +27,57 @@
    {
    struct ioc_toc_header h;
    struct ioc_read_toc_entry t;
-@@ -353,7 +353,7 @@
-   fprintf(stderr, "#cdrom: capacity: %u\n", nr_sects);
-   return(nr_sects);
+@@ -366,6 +366,53 @@
+ 
+   fprintf(stderr, "#cdrom: capacity: %u\n", lp.d_secperunit);
+   return(lp.d_secperunit);
++  }
++#elif defined(__FreeBSD__)
++  {
++  // Read the TOC to get the data size, since disklabel doesn't appear
++  // to work, sadly.
++  // Keith Jones, 16 January 2000
++
++#define MAX_TRACKS 100
++
++  int i, num_tracks, num_sectors;
++  struct ioc_toc_header td;
++  struct ioc_read_toc_entry rte;
++  struct cd_toc_entry toc_buffer[MAX_TRACKS + 1];
++
++  if (fd < 0)
++    bx_panic("cdrom: capacity: file not open.\n");
++
++  if (ioctl(fd, CDIOREADTOCHEADER, &td) < 0)
++    bx_panic("cdrom: ioctl(CDIOREADTOCHEADER) failed\n");
++
++  num_tracks = (td.ending_track - td.starting_track) + 1;
++  if (num_tracks > MAX_TRACKS)
++    bx_panic("cdrom: TOC is too large\n");
++
++  rte.address_format = CD_LBA_FORMAT;
++  rte.starting_track = td.starting_track;
++  rte.data_len = (num_tracks + 1) * sizeof(struct cd_toc_entry);
++  rte.data = toc_buffer;
++  if (ioctl(fd, CDIOREADTOCENTRYS, &rte) < 0)
++    bx_panic("cdrom: ioctl(CDIOREADTOCENTRYS) failed\n");
++
++  num_sectors = -1;
++  for (i = 0; i < num_tracks; i++) {
++    if (rte.data[i].control & 4) {	/* data track */
++      num_sectors = ntohl(rte.data[i + 1].addr.lba)
++          - ntohl(rte.data[i].addr.lba);
++      fprintf(stderr, "cdrom: Data track %d, length %d\n",
++        rte.data[i].track, num_sectors);
++      break;
++      }
++    }
++
++  if (num_sectors < 0)
++    bx_panic("cdrom: no data track found\n");
++
++  return(num_sectors);
++
    }
--#elif defined(__OpenBSD__)
-+#elif (defined(__OpenBSD__) || defined(__FreeBSD__))
+ #elif defined WIN32
    {
-   // We just read the disklabel, imagine that...
-   struct disklabel lp;
