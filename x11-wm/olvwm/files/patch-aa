@@ -55,24 +55,21 @@
   		(void) strcat(filename, hostname);
   		fileDB = XrmGetFileDatabase(filename);
 *** error.c.orig	Thu Jan 13 14:36:04 1994
---- error.c	Sat Oct 22 00:59:24 1994
+--- error.c	Sat Oct 22 16:44:32 1994
 ***************
-*** 233,239 ****
-      FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
-  	err->serial);
-      FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
-! 	dpy->request);
-  }
+*** 13,19 ****
+--- 13,23 ----
   
+  #include <stdio.h>
+  #include <stdlib.h>
++ #ifdef __FreeBSD__
++ #include <X11/Xlibint.h>
++ #else
+  #include <X11/Xlib.h>
++ #endif
+  #include <X11/Xproto.h>
   
---- 234,240 ----
-      FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
-  	err->serial);
-      FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
-! 	((_XPrivDisplay)dpy)->request);
-  }
-  
-  
+  #include "i18n.h"
 *** gettext.h.orig	Thu Jan 13 14:40:00 1994
 --- gettext.h	Thu Oct 20 22:01:55 1994
 ***************
@@ -134,23 +131,20 @@
 + 
   #include <string.h>
   #include <ctype.h>
-  
+
 *** mem.c.orig	Thu Jan 13 14:36:08 1994
---- mem.c	Thu Oct 20 23:44:01 1994
+--- mem.c	Sat Oct 22 16:46:18 1994
 ***************
 *** 18,24 ****
+--- 18,28 ----
   
   
   #include <sys/types.h>
-! #include <malloc.h>
-  #include <memory.h>
-  #include <stdio.h>
-  
---- 18,24 ----
-  
-  
-  #include <sys/types.h>
-! /* #include <malloc.h> */
++ #ifndef __FreeBSD__
+  #include <malloc.h>
++ #else
++ #include <stdlib.h>
++ #endif
   #include <memory.h>
   #include <stdio.h>
   
@@ -163,7 +157,7 @@
         ErrorGeneral(gettext("Memory allocation failure."));
   
   #ifdef MEMDEBUG
---- 139,145 ----
+--- 143,149 ----
   {
       void       *p;
   
@@ -180,7 +174,7 @@
   	ErrorGeneral(GetString("Memory allocation failure."));
   
       memset((char *) p, 0, (int) sz);
---- 164,170 ----
+--- 168,174 ----
   {
       void       *p;
   
@@ -197,7 +191,7 @@
   	ErrorGeneral(GetString("Memory array allocation failure."));
   
       memset((char *) p, 0, (int) sz * (int) num);
---- 191,197 ----
+--- 195,201 ----
   {
       void       *p;
   
@@ -214,7 +208,7 @@
   	ErrorGeneral(GetString("Memory array allocation failure."));
   
   #ifdef MEMDEBUG
---- 210,216 ----
+--- 214,220 ----
   {
       void       *t;
   
