@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.6 1999/01/12 16:50:43 vanilla Exp $
+# $Id: Makefile,v 1.7 1999/05/07 02:20:32 mharo Exp $
 #
 
 DISTNAME=	Gtk---1.0.0
@@ -17,12 +17,11 @@ LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_X_PREFIX=	yes
-USE_AUTOCONF=	yes
-# for the future GNOME support
-CONFIGURE_ARGS=		--enable-static=yes # --with-gnome=${X11BASE}
-CONFIGURE_ENV+=		RANLIB=":" GNOMEMM_FALSE="true"\
-			GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-static=yes \
+		--without-gnome
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 
 MAN3=  G_IntList.3 G_IntList_Iterator.3 G_List.3 G_List_Cpp_Iterator.3 \
 	G_List_Iterator.3 G_SList_Iterator.3 GtkBase.3 GtkBaseClass.3 \
@@ -54,12 +53,9 @@ MAN3=  G_IntList.3 G_IntList_Iterator.3 G_List.3 G_List_Cpp_Iterator.3 \
 	Gtk_Trashcan_Helper.3 Gtk_Tree.3 Gtk_TreeItem.3 Gtk_VBox.3 \
 	Gtk_VButtonBox.3 Gtk_VPaned.3 Gtk_VRuler.3 Gtk_VScale.3 \
 	Gtk_VScrollbar.3 Gtk_VSeparator.3 Gtk_Viewport.3 Gtk_Widget.3 \
-	Gtk_Window.3 MenuFactoryConnector.3 MenuFactoryConnectorBase.3 \
+	Gtk_Window.3 ItemFactoryConnector.3 ItemFactoryConnectorBase.3 \
+	MenuFactoryConnector.3 MenuFactoryConnectorBase.3 \
 	ToolbarConnector.3 ToolbarConnectorBase.3 Toolbar_Child.3 \
 	_gtk_string.3 gtkmm_add_signal_class.3
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
