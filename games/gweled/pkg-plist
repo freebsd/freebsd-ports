@@ -1,6 +1,7 @@
 bin/gweled
 share/gnome/applications/gweled.desktop
 @unexec [ -s %D/share/gnome/games/gweled.easy.scores ] || rm -f %D/share/gnome/games/gweled.easy.scores
+@unexec [ -s %D/share/gnome/games/gweled.timed.scores ] || rm -f %D/share/gnome/games/gweled.timed.scores
 share/gnome/gweled/gweled.glade
 share/gnome/gweled/gweled_icon.png
 share/gnome/gweled/gweled_logo.png
