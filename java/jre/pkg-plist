@@ -1,0 +1,59 @@
+jre%%JRE_VERSION%%/CHANGES
+jre%%JRE_VERSION%%/COPYRIGHT
+jre%%JRE_VERSION%%/LICENSE
+jre%%JRE_VERSION%%/README
+jre%%JRE_VERSION%%/README.FreeBSD
+jre%%JRE_VERSION%%/bin/.java_wrapper
+jre%%JRE_VERSION%%/bin/i386/green_threads/.extract_args
+jre%%JRE_VERSION%%/bin/i386/green_threads/java
+jre%%JRE_VERSION%%/bin/i386/green_threads/java_X
+jre%%JRE_VERSION%%/bin/i386/green_threads/javakey
+jre%%JRE_VERSION%%/bin/i386/green_threads/jre
+jre%%JRE_VERSION%%/bin/i386/green_threads/jre_X
+jre%%JRE_VERSION%%/bin/i386/green_threads/rmiregistry
+jre%%JRE_VERSION%%/bin/java
+jre%%JRE_VERSION%%/bin/javakey
+jre%%JRE_VERSION%%/bin/jre
+jre%%JRE_VERSION%%/bin/rmiregistry
+jre%%JRE_VERSION%%/lib/awt.properties
+jre%%JRE_VERSION%%/lib/content-types.properties
+jre%%JRE_VERSION%%/lib/font.properties
+jre%%JRE_VERSION%%/lib/font.properties.ISO8859_15_FDIS
+jre%%JRE_VERSION%%/lib/font.properties.cs
+jre%%JRE_VERSION%%/lib/font.properties.el
+jre%%JRE_VERSION%%/lib/font.properties.hu
+jre%%JRE_VERSION%%/lib/font.properties.ja
+jre%%JRE_VERSION%%/lib/font.properties.ko
+jre%%JRE_VERSION%%/lib/font.properties.lt
+jre%%JRE_VERSION%%/lib/font.properties.lv
+jre%%JRE_VERSION%%/lib/font.properties.pl
+jre%%JRE_VERSION%%/lib/font.properties.ru
+jre%%JRE_VERSION%%/lib/font.properties.tr
+jre%%JRE_VERSION%%/lib/font.properties.zh_EUC_CN
+jre%%JRE_VERSION%%/lib/font.properties.zh_TW_Big5
+jre%%JRE_VERSION%%/lib/font.properties.zh_TW_EUC_TW
+jre%%JRE_VERSION%%/lib/i18n.jar
+jre%%JRE_VERSION%%/lib/i386/green_threads/libawt.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libawt.so.1.1.8
+jre%%JRE_VERSION%%/lib/i386/green_threads/libjava.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libjava.so.1.1.8
+jre%%JRE_VERSION%%/lib/i386/green_threads/libjpeg.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libmath.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libmmedia.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libnet.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libsysresource.so
+jre%%JRE_VERSION%%/lib/i386/green_threads/libzip.so
+jre%%JRE_VERSION%%/lib/psfont.properties.ja
+jre%%JRE_VERSION%%/lib/rt.jar
+jre%%JRE_VERSION%%/lib/security/java.security
+jre%%JRE_VERSION%%/lib/serialver.properties
+@exec %D/bin/registervm "%D/jre%%JRE_VERSION%%/bin/java # JRE%%JRE_VERSION%%"
+@unexec %D/bin/unregistervm JRE%%JRE_VERSION%%
+@dirrm jre%%JRE_VERSION%%/lib/security
+@dirrm jre%%JRE_VERSION%%/lib/i386/green_threads
+@dirrm jre%%JRE_VERSION%%/lib/i386
+@dirrm jre%%JRE_VERSION%%/lib
+@dirrm jre%%JRE_VERSION%%/bin/i386/green_threads
+@dirrm jre%%JRE_VERSION%%/bin/i386
+@dirrm jre%%JRE_VERSION%%/bin
+@dirrm jre%%JRE_VERSION%%
