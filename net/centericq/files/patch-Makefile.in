@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Sat Nov 24 20:59:38 2001
++++ Makefile.in	Sat Nov 24 21:00:11 2001
+@@ -89,7 +89,6 @@
+ # END OF MOTOR DIST TARGETS #
+ EXTRA_DIST = acconfig.h centericq.1 ABOUT-NLS AUTHORS ChangeLog COPYING FAQ INSTALL NEWS README TODO centericq.spec icqlib-1.2/* kkstrtext-0.1/* kksystr-0.1/* kkconsui-0.1/* libyahoo-0.1/*
+ AUTOMAKE_OPTIONS = foreign
+-pkgdata_DATA = centericq.1
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h

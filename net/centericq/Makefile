@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.0.0
+PORTVERSION=	4.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -32,7 +32,5 @@ CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/share ; ${INSTALL_DATA} *.wav ${DATADIR})
 
 .include <bsd.port.post.mk>
