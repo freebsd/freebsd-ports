@@ -20,11 +20,7 @@ LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		gmetadom_gdome_cpp_smart:${PORTSDIR}/textproc/gmetadom
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
 BROKEN=         "Configure fails"
-.endif
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
@@ -45,4 +41,4 @@ post-patch:
 post-install:
 	@install-info ${PREFIX}/info/gtkmathview.info ${PREFIX}/info/dir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
