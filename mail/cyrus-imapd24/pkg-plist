@@ -11,6 +11,7 @@ cyrus/bin/ipurge
 cyrus/bin/lmtpd
 cyrus/bin/master
 cyrus/bin/mbpath
+cyrus/bin/mkimap
 cyrus/bin/pop3d
 cyrus/bin/reconstruct
 cyrus/bin/timsieved
