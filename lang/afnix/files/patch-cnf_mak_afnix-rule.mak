@@ -1,5 +1,5 @@
---- cnf/mak/aleph-rule.mak.orig	Thu Mar  8 14:59:08 2001
-+++ cnf/mak/aleph-rule.mak	Sat Apr 14 05:43:10 2001
+--- cnf/mak/afnix-rule.mak.orig	Wed Jan 12 06:05:00 2005
++++ cnf/mak/afnix-rule.mak	Wed Feb 16 19:18:04 2005
 @@ -62,8 +62,8 @@
  endif
  

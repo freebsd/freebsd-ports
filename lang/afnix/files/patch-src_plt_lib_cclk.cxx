@@ -1,5 +1,5 @@
---- src/plt/lib/cclk.cxx.orig	Fri Nov 29 13:10:11 2002
-+++ src/plt/lib/cclk.cxx	Fri Nov 29 13:15:05 2002
+--- src/plt/lib/cclk.cxx.orig	Wed Jan 12 06:05:00 2005
++++ src/plt/lib/cclk.cxx	Wed Feb 16 19:18:04 2005
 @@ -53,7 +53,8 @@
    s_tinfo* c_getlocal (const long tclk) {
      // extract time info
