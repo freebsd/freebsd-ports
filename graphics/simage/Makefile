@@ -1,6 +1,6 @@
 # New ports collection makefile for:	simage
 # Date created:				10 May 2002
-# Whom:					jesse@cs.uni-magdeburg.de
+# Whom:					roland.jesse@gmx.net
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 
-MAINTAINER=	jesse@cs.uni-magdeburg.de
+MAINTAINER=	roland.jesse@gmx.net
 COMMENT=	Library with image format loaders and front-ends
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
@@ -23,7 +23,8 @@ USE_XLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--program-transform-name="s/x/x/"
+CONFIGURE_ARGS=	--program-transform-name="s/x/x/" --with-ungif=${LOCALBASE} \
+		--with-jpeg --with-png --with-tiff --with-mpeg2enc
 INSTALLS_SHLIB=	yes
 
 post-patch:
