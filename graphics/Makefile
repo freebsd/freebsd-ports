@@ -211,6 +211,7 @@
     SUBDIR += lodju
     SUBDIR += maverik
     SUBDIR += metapixel
+    SUBDIR += mgp-gallery
     SUBDIR += ming
     SUBDIR += mmsclient
     SUBDIR += morpheus
