@@ -1,55 +1,63 @@
 # New ports collection makefile for:	quakeserver
-# Version required:			1.01
+# Version required:			0.991
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1997/03/23 15:39:06 jfitz Exp $
+# $Id: Makefile,v 1.10 1997/04/20 13:19:03 wosch Exp $
 #
 
-PKGNAME=	quakeserver-1.01
+PKGNAME=	quakeserver-1.0
 CATEGORIES=	games tk41
-MASTER_SITES=	ftp://ftp.gamesdomain.com/pub/idsoftware/quake/ \
-		ftp://ftp.cssweb.com/pub/games/idstuff/quake/ \
-		ftp://ftp.feist.com/pub/pc/games/quake/
-DISTFILES=	quake101.zip \
-		quake-FreeBSD.tar.gz \
-		intel_linux_quake101.tgz
-
+MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/ \
+		ftp://ftp.idsoftware.com/idstuff/quake/
+DISTFILES=	unixded-1.0-i386-unknown-bsdi3.0.tar.gz \
+		quake106.zip
+ 
 MAINTAINER=	jfitz@freebsd.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
-
-RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
-		/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
-
-# Uncomment the next line to include the QuakeC compiler port as well
-#RUN_DEPENDS+=	qcc:${PORTSDIR}/games/qcc
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 NO_CDROM=	"This software is shareware"
 
 do-extract:
-		@ ${MKDIR} -p work/quake
-		@ ${MKDIR} -p work/server
-		unzip -o ${DISTDIR}/quake101.zip -d ${WRKDIR}/quake QSW101.?
-		@ cat ${WRKDIR}/quake/QSW101.[1-7] > ${WRKDIR}/quake/resource.exe
-		cd ${WRKDIR}/quake; lha xf resource.exe id1/pak0.pak
-		@ cd ${WRKDIR}/server; tar zxf ${DISTDIR}/quake-FreeBSD.tar.gz
-		@ cd ${WRKDIR}/server/quake; tar zxf ${DISTDIR}/intel_linux_quake101.tgz
+		@ unzip -q -o ${DISTDIR}/quake106.zip -d ${WRKDIR} resource.*
+		@ cat ${WRKDIR}/resource.dat ${WRKDIR}/resource.1 > ${WRKDIR}/resource.exe
+		@ cd ${WRKDIR}; lha xfq resource.exe id1/pak0.pak
+		@ cd ${WRKDIR}; tar zxf ${DISTDIR}/unixded-1.0-i386-unknown-bsdi3.0.tar.gz
+
+do-configure:
+		@ ${CP} ${FILESDIR}/readme.port ${WRKSRC}
+		@ ${CP} ${FILESDIR}/qserver.sh ${WRKSRC}
+		@ ${CP} ${FILESDIR}/stopserver.sh ${WRKSRC}
+		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/readme.port ${WRKSRC}/qserver.sh ${WRKSRC}/stopserver.sh
 
 do-install:
-		@ ${MKDIR} -p ${PREFIX}/quakeserver
-		@ ${MKDIR} -p ${PREFIX}/quakeserver/id1
-		for file in ${WRKDIR}/quake/id1/*; do \
-			${INSTALL_DATA} $$file ${PREFIX}/quakeserver/id1; \
-		done
-		${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} ${WRKDIR}/server/quake/xquake ${PREFIX}/quakeserver
-		${INSTALL_PROGRAM} ${WRKDIR}/server/quake/qstat ${PREFIX}/quakeserver; \
-		${INSTALL_DATA} ${WRKDIR}/server/quake/README.FreeBSD ${PREFIX}/quakeserver
-		for file in qsrv qsrv.expect qslog; do \
-			${INSTALL_SCRIPT} ${WRKDIR}/server/quake/$$file ${PREFIX}/quakeserver; \
-		done
+		@ ${MKDIR} ${PREFIX}/quakeserver
+		@ ${MKDIR} ${PREFIX}/quakeserver/id1
+		${INSTALL_DATA} ${WRKSRC}/id1/pak0.pak ${PREFIX}/quakeserver/id1
+		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/unixded ${PREFIX}/quakeserver
+		${INSTALL_DATA} ${WRKSRC}/readme.unixded ${PREFIX}/quakeserver
+		${INSTALL_DATA} ${WRKSRC}/readme.port ${PREFIX}/quakeserver
+		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/qserver.sh ${PREFIX}/quakeserver
+		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/stopserver.sh ${PREFIX}/quakeserver
+		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
+		/usr/bin/touch ${PREFIX}/quakeserver/quakeserver.log
+		@ /bin/chmod 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
+		@ /usr/sbin/chown -R nobody.nobody ${PREFIX}/quakeserver
+		@ echo "Installing ${PREFIX}/etc/rc.d/quakeserver.sh startup script"
+		@ echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "#" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "if [ -x ${PREFIX}/quakeserver/unixded ]" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "then" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "	su nobody -c ${PREFIX}/quakeserver/qserver.sh &" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ echo "fi" >> ${PREFIX}/etc/rc.d/quakeserver.sh
+		@ /bin/chmod 750 ${PREFIX}/etc/rc.d/quakeserver.sh
+.if !defined(BATCH)
+		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
+.endif
 		
 .include <bsd.port.mk>
