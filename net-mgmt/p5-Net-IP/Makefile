@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-IP
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	net-mgmt perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -19,4 +19,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Net::IP.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${PERL_LEVEL} <= 500800
+post-patch:
+	@${PERL} -pi -e '$$_ = "" if m|use 5.008|' ${WRKSRC}/Makefile.PL
+.endif
+.include <bsd.port.post.mk>
