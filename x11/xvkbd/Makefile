@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvkbd
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	x11
 MASTER_SITES=	http://member.nifty.ne.jp/tsato/xvkbd/
 
