@@ -1,19 +1,10 @@
---- configure.orig	Sat Jan  4 16:33:07 2003
-+++ configure	Sat Jan  4 16:33:58 2003
-@@ -705,7 +705,7 @@
- fi
- 
- 
--PACKAGE=idzebra
-+PACKAGE=zebra-server
- 
- VERSION=1.3.4
- 
-@@ -2329,6 +2329,7 @@
- s%@DEFS@%$DEFS%g
- s%@LDFLAGS@%$LDFLAGS%g
- s%@LIBS@%$LIBS%g
+--- configure.orig	Tue Aug 17 11:00:14 2004
++++ configure	Thu Aug 19 15:15:49 2004
+@@ -6262,6 +6262,7 @@
+ s,@ECHO_N@,$ECHO_N,;t t
+ s,@ECHO_T@,$ECHO_T,;t t
+ s,@LIBS@,$LIBS,;t t
 +s%@PTHREAD_LIBS@%$PTHREAD_LIBS%g
- s%@exec_prefix@%$exec_prefix%g
- s%@prefix@%$prefix%g
- s%@program_transform_name@%$program_transform_name%g
+ s,@INSTALL_PROGRAM@,$INSTALL_PROGRAM,;t t
+ s,@INSTALL_SCRIPT@,$INSTALL_SCRIPT,;t t
+ s,@INSTALL_DATA@,$INSTALL_DATA,;t t
