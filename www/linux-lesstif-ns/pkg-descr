@@ -1,0 +1,14 @@
+LessTif is a API compatible clone of the Motif.
+Currently Motif (statically linked by Netscape4) has a critical bug
+around multi-byte handling in TextWidget such as <input type=text>
+and <textarea> fields. This port will solve the above problem of
+linux-netscape (like www/libxpg4-ns for our native Netscape).
+Instead, it brings various problems (behaviour of scroll bar,
+a size of textarea, ..) because lesstif is still in progress and
+not a perfect clone of Motif.
+To activate this port, make sure that you use netscape-dynMotif instead
+of communicator(navigator)-linux-x.xx.bin in ${LOCALBASE}/lib/netscape-linux/.
+Patches are created by "fun" <fun@shikoku.ne.jp>
+
+- R. Imura
+imura@FreeBSD.org
