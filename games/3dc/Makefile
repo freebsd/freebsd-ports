@@ -12,13 +12,18 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 DISTNAME=		3Dc-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		adam-ports@blacktabby.org
 
 LIB_DEPENDS=		Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=		yes
 USE_XPM=		yes
 WRKSRC=			${WRKDIR}/3Dc/src
+
+post-patch:
+.for file in init.c main.c piece.c stack.c xif.c
+	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/3Dc ${PREFIX}/bin
