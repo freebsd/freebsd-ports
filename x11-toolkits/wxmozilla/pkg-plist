@@ -1,0 +1,16 @@
+lib/libwxmozilla_gtk2-2.4.a
+lib/libwxmozilla_gtk2-2.4.so
+lib/libwxmozilla_gtk2-2.4.so.0
+include/wxmozilla/wxMozilla.h
+include/wxmozilla/wxMozillaBrowser.h
+include/wxmozilla/wxMozillaBrowserChrome.h
+include/wxmozilla/wxMozillaEvents.h
+include/wxmozilla/wxMozillaSettings.h
+include/wxmozilla/wxMozillaWindow.h
+@dirrm include/wxmozilla
+libdata/pkgconfig/wxmozilla.pc
+%%PYTHON_SITELIBDIR%%/wxPython/mozilla.py
+%%PYTHON_SITELIBDIR%%/wxPython/mozilla.pyc
+%%PYTHON_SITELIBDIR%%/wxPython/mozilla.pyo
+%%PYTHON_SITELIBDIR%%/wxPython/mozillac.a
+%%PYTHON_SITELIBDIR%%/wxPython/mozillac.so

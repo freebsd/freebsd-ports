@@ -1,0 +1,7 @@
+wxMozilla is a project underway to develop a wxWindows component for embedding
+the Mozilla browser into any wxWindows application. The wxMozilla classes will
+utilize minimal, if any, platform dependant code and utilize directly the
+XPCOM (Cross Platrom COM) interface to instantate a html browser or editor
+within the application.
+
+WWW: http://wxmozilla.sourceforge.net/
