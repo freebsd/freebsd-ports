@@ -7,7 +7,7 @@
 
 PORTNAME=	kiltdown
 PORTVERSION=	0.8.045
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kiltdown
@@ -40,10 +40,4 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kiltdown/kiltdown ${PREFIX}/bin/
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 501101
-BROKEN=		incompatible with gcc33
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
