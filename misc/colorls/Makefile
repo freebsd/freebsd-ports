@@ -3,7 +3,7 @@
 # Date created:		8 March 1995
 # Whom:			Satoshi Asami
 #
-# $Id: Makefile,v 1.7 1995/10/04 09:41:18 asami Exp $
+# $Id: Makefile,v 1.8 1995/11/26 10:47:32 asami Exp $
 #
 
 DISTNAME=	colorls
@@ -14,10 +14,9 @@ DISTFILES=	ls.tar.gz
 
 MAINTAINER=	asami@FreeBSD.ORG
 
-FETCH_DEPENDS=	ncftp2:${PORTSDIR}/net/ncftp2
+WRKSRC=		${WRKDIR}/ls
 
-WRKSRC=		${WRKDIR}/pub/FreeBSD/FreeBSD-current/src/bin/ls
-NCFTP=		ncftp2
-NCFTPFLAGS=	
+pre-patch:
+	cp ${WRKSRC}/ls.1 ${WRKSRC}/colorls.1
 
 .include <bsd.port.mk>
