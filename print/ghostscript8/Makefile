@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	${GS_VERSION}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	\
@@ -19,7 +20,7 @@ MASTER_SITES=	\
 		ftp://download.canon-sales.co.jp/pub/driver/lasershot/linux/:cpca \
 		http://www.ucatv.ne.jp/~taeko/software/gs/:lips \
 		http://www.humblesoft.com/pub/:epag \
-		http://www.epkowa.on.arena.ne.jp/gslpd/data/V306/:eplaser \
+		http://www.epkowa2.on.arena.ne.jp/gslpd/data/V${EPLASER_VERS:S/.//g}/:eplaser \
 		http://www.linuxprinting.org/download/printing/samsung-gdi/:gdi \
 		http://www.linuxprinting.org/download/printing/:lxm3200 \
 		http://homepage.powerup.com.au/~pbwest/lexmark/:lx5000 \
@@ -178,9 +179,9 @@ EPAG_SRCS=	${EPAG_NAME}.tar.gz
 # EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
 # http://www.epkowa.co.jp/linux/lpd.html
 EPLASER=	eplaser
-EPLASER_VERS=	3.0.6
+EPLASER_VERS=	3.1.1
 EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
-EPLASER_SRCS=	${EPLASER_NAME}-652.tgz
+EPLASER_SRCS=	${EPLASER_NAME}-705.tgz
 
 # MJC - additional driver for Epson MachJet series
 MJC=		mjc
@@ -339,9 +340,9 @@ pre-configure:
 		>> ${WRKSRC}/src/contrib.mak
 # for EPLASER driver
 	${ECHO_MSG} ">>>   adding ${EPLASER} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevescv6.mak \
+	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevescv7.mak \
 		>> ${WRKSRC}/src/contrib.mak
-	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevesmv6.mak \
+	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevesmv7.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for MJC driver
 	${ECHO_MSG} ">>>   adding ${MJC} driver to contrib.mak ..."
@@ -505,7 +506,7 @@ post-install:
 # for EPLASER driver
 	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
 	${MKDIR} ${DOCSDIR}/${GS_VERSION}/${EPLASER}
-.for i in readme-eplaser-652.euc readme-eplaser-652-jp.euc
+.for i in readme-eplaser-705.euc readme-eplaser-705-jp.euc
 	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
 		${DOCSDIR}/${GS_VERSION}/${EPLASER}
 .endfor

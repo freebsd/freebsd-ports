@@ -37,9 +37,9 @@ else
 		alc8600 alc8500 alc2000 alc4000 alc1900 \
 		lp9500c lp8800c lp8300c lp8500c lp3000c lp8200c lp8000c \
 		epl6100 epl5900 epl5800 epl2050 epl2050p epl2120 epl2750 \
-		lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 lp8100 lp7700 \
-		lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 lp9600 lp8600 \
-		lp1800 \
+		lp9100 lp7900 lp7500 lp2400 lp2200 lp9400 lp8900 lp8700 \
+		lp8100 lp7700 lp8600f lp8400f lp8300f lp1900 lp9600s lp9300 \
+		lp9600 lp8600 lp1800 \
 		lq850 epsonc \
 		mjc180 mjc360 mjc720 mj500c \
 		st800 stcolor photoex lp2563 dnj650c deskjet djet500 cdeskjet \
@@ -70,7 +70,7 @@ else
 		bit bitrgb bitcmyk plan9bm pam pbm pbmraw \
 		pgm pgmraw pgnm pgnmraw pnm pnmraw ppm ppmraw \
 		pkm pkmraw pksm pksmraw \
-		pngmono pnggray png16 png256 png16m pnga \
+		pngmono pnggray png16 png256 png16m pngalpha \
 		psmono psgray psrgb \
 		pswrite epswrite sgirgb sunhmono \
 		tiffcrle tiffg3 tiffg32d tiffg4 \
@@ -171,6 +171,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "epl2050p" "Epson EPL-N2050+ laser printer [EPLASER]" "$status_epl2050p" \
   "epl2120"  "Epson EPL-N2120 laser printer [EPLASER]" "$status_epl2120" \
   "epl2750"  "Epson EPL-N2750 laser printer [EPLASER]" "$status_epl2750" \
+  "lp9100"   "Epson LP-9100(R) laser printer [EPLASER]" "$status_lp9100" \
+  "lp7900"   "Epson LP-7900(R) laser printer [EPLASER]" "$status_lp7900" \
   "lp7500"   "Epson LP-7500(R) laser printer [EPLASER]" "$status_lp7500" \
   "lp2400"   "Epson LP-2400 laser printer [EPLASER]" "$status_lp2400" \
   "lp2200"   "Epson LP-2200 laser printer [EPLASER]" "$status_lp2200" \
@@ -178,6 +180,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "lp8900"   "Epson LP-8900(R) laser printer [EPLASER]" "$status_lp8900" \
   "lp8700"   "Epson LP-8700(R) laser printer [EPLASER]" "$status_lp8700" \
   "lp8100"   "Epson LP-8100(R) laser printer [EPLASER]" "$status_lp8100" \
+  "lp7700"   "Epson LP-7700(R) laser printer [EPLASER]" "$status_lp7700" \
   "lp8600f"  "Epson LP-8600FX(N) laser printer [EPLASER]" "$status_lp8600f" \
   "lp8400f"  "Epson LP-8400FX(N) laser printer [EPLASER]" "$status_lp8400f" \
   "lp8300f"  "Epson LP-8300F laser printer [EPLASER]" "$status_lp8300f" \
@@ -327,7 +330,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "png16"    "PNG 4-bit color Portable Network Graphics" "$status_png16" \
   "png256"   "PNG 8-bit color Portable Network Graphics" "$status_png256" \
   "png16m"   "PNG 24-bit color Portable Network Graphics" "$status_png16m" \
-  "pngalpha" "PNG 32-bit RGBA Portable Network Graphics" "$status_pngalpha" \
+  "pngalpha" "PNG 32-bit RGBA color Portable Network Graphics" "$status_pngalpha" \
   "psmono"   "PostScript (Level 1) monochrome image" "$status_psmono" \
   "psgray"   "PostScript (Level 1) 8-bit gray image" "$status_psgray" \
   "psrgb"    "PostScript (Level 2) 24-bit color image" "$status_psrgb" \
