@@ -7,6 +7,7 @@
 
 PORTNAME=	net-rhythmbox
 PORTVERSION=	0.4.8
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://web.verbum.org/net-rhythmbox/
 
