@@ -1,7 +1,7 @@
 libexec/imapd
 libexec/ipop2d
 libexec/ipop3d
-bin/mtest
+bin/mboxtest
 bin/pico
 bin/pilot
 bin/pine
