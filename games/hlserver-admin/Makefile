@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	admin
-PORTVERSION=	2.50.26
-PORTREVISION=	2
+PORTVERSION=	2.50.50
 PORTEPOCH=	1
-MASTER_SITES=	http://www.adminmod.org/downloads/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	halflifeadmin
 DISTNAME=	halflife-admin-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-WRKSRC=		${WRKDIR}/Admin
+WRKSRC=		${WRKDIR}/Adminmod
 
 slaveport-post-extract:
 	@${PERL} -pi.orig -e \
-		's|/usr/local/games/hlds_l|${PREFIX}${HLDSDIR:S/\/$//}|' \
+		's|/usr/local/hlds_l|${PREFIX}${HLDSDIR:S/\/$//}|' \
 		${WRKSRC}/install_admin
 
 slaveport-post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/install_admin \
-		${PREFIX}${HLDSDIR}/Admin
+		${PREFIX}${HLDSDIR}/Adminmod
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
