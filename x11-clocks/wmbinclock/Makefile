@@ -16,7 +16,11 @@ COMMENT=	A binary clock in a windowmaker applet
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/wmBinClock
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#include <values.h>||' ${WRKSRC}/wmBinClock.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmBinClock ${PREFIX}/bin
