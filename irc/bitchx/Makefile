@@ -212,5 +212,11 @@ post-install:
 .else
 	${RMDIR} ${PREFIX}/share/bx/help
 .endif
+.if defined(WITH_GNOME)
+	${STRIP_CMD} ${PREFIX}/bin/gtkBitchX-${PORTVERSION}-final
+.else
+	${STRIP_CMD} ${PREFIX}/bin/BitchX-${PORTVERSION}-final
+	${STRIP_CMD} ${PREFIX}/bin/scr-bx
+.endif
 
 .include <bsd.port.post.mk>
