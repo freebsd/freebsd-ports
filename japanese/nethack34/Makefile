@@ -20,7 +20,8 @@ MD5_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-PATCH_SITES=	http://downloads.sourceforge.jp/jnethack/4546/
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
+PATCH_SITE_SUBDIR=	jnethack/4546
 PATCHFILES=	jnethack-${PORTVERSION}-0.2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
