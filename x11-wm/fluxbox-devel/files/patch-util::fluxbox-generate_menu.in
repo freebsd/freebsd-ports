@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in.orig	Thu Jan 22 00:45:46 2004
-+++ util/fluxbox-generate_menu.in	Thu Jan 22 00:51:27 2004
+--- util/fluxbox-generate_menu.in	Mon Jan 12 13:14:55 2004
++++ util/fluxbox-generate_menu.in	Sun Mar 14 12:02:01 2004
 @@ -45,7 +45,7 @@
  
  
@@ -20,6 +20,15 @@
      -q  KDE-prefix; idem dito
  
  
+@@ -109,7 +109,7 @@
+ case `uname` in
+     Linux|*BSD)
+         find_it() {
+-            which $1 > /dev/null 2>&1 && shift && $*
++            which $1 > /dev/null 2>&1 && shift && "$@"
+         }
+ 
+         find_it_options() {
 @@ -614,19 +614,19 @@
  # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
  

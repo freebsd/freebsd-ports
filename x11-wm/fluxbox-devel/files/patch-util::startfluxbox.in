@@ -1,5 +1,14 @@
---- util/startfluxbox.in.orig	Thu Jan 22 00:52:42 2004
-+++ util/startfluxbox.in	Thu Jan 22 00:56:37 2004
+--- util/startfluxbox.in	Sat Dec  6 18:29:21 2003
++++ util/startfluxbox.in	Sun Mar 14 11:52:50 2004
+@@ -6,7 +6,7 @@
+     exec sh ~/.fluxbox/startup
+ else
+     if [ ! -d ~/.fluxbox ]; then
+-	mkdir -p ~/.fluxbox/{backgrounds,styles,pixmaps}
++	mkdir -p ~/.fluxbox/backgrounds ~/.fluxbox/styles ~/.fluxbox/pixmaps
+     fi
+     if [ ! -r ~/.fluxbox/startup ]; then
+         cat << EOF > ~/.fluxbox/startup
 @@ -24,7 +24,7 @@
  @pkgbindir@/bsetroot -solid black
  
