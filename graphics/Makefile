@@ -81,6 +81,7 @@
     SUBDIR += killustrator
     SUBDIR += kplot3d
     SUBDIR += lfview
+    SUBDIR += libggi
     SUBDIR += libimg
     SUBDIR += libungif
     SUBDIR += libwmf

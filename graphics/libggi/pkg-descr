@@ -1,0 +1,17 @@
+LibGGI, the dynamic GGI (General Graphics Interface) library is a flexible
+drawing library.
+
+It provides an opaque interface to the display's acceleration functions.  It
+was originally intended to allow user programs to interface with KGI, the GGI
+Kernel Graphics Interface, but other display types can be easily used by
+loading the appropriate "display target" (e.g. X, memory).
+
+LibGGI consists of a main library (libggi.so) and a multitude of dynamic
+drivers.  The library then loads the necessary "drivers" for the requested
+mode, taking hints from the graphics device if necessary.  LibGGI can also
+load extension libraries, e.g. to provide enhanced 2D and 3D functions.
+
+WWW: http://www.ggi-project.org/
+
+--
+mwest@uct.ac.za
