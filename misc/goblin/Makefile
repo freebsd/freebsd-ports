@@ -37,6 +37,10 @@ WISH=		${LOCALBASE}/bin/wish8.3
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if ${OSVERSION} < 500035
 CXXFLAGS+=	-fhuge-objects
 .endif

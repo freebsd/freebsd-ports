@@ -19,6 +19,10 @@ BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 DISTFILES=	${SRC_DIST}
 
 .if ${OSVERSION} < 500000

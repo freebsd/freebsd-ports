@@ -23,4 +23,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 MAKE_ENV=	WX_CONFIG=${X11BASE}/bin/wxgtk2-2.4-config
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

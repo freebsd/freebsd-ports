@@ -32,4 +32,10 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 MAN1=		fwbuilder.1 fwblookup.1 fwbedit.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 fwb_pf.1 \
 		fwb_install.1 fwb_compile_all.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
+.include <bsd.port.post.mk>

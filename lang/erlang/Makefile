@@ -46,6 +46,10 @@ CONFIGURE_ARGS+=	--enable-threads --enable-hipe
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 .if !exists(${JAVABINDIR}/java)
 WITHOUT_JAVA=	yes
 .endif

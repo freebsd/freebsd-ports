@@ -28,6 +28,12 @@ USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
 		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
@@ -39,4 +45,4 @@ post-patch:
 		${WRKSRC}/src/IMSvrCfg.cpp \
 		${WRKSRC}/src/watchdog.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

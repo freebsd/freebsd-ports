@@ -27,8 +27,14 @@ CONFIGURE_ARGS=	--with-c-flags="${CFLAGS}"
 
 PLIST_SUB+=	GPROLOG_VER=${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/EnginePl/machine.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
