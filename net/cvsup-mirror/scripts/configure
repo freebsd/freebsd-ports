@@ -40,6 +40,12 @@ ask_distrib() {
     subdir=$3
     desc=$4
     if yesno "Do you wish to mirror the ${desc}" y; then
+	if [ "${subdir}" != "." ]; then
+	    cat <<EOF
+Note: the location for this must match "*/${subdir}", and
+"${subdir}" must be a true subdirectory, not a symbolic link.
+EOF
+	fi
 	while :; do
 	    dir=$(ask "Where would you like to put it" ${dflt})
 	    if [ "${subdir}" = "." ]; then
@@ -124,7 +130,7 @@ EOF
 
 distribs="distrib.self .. ."
 ask_distrib FreeBSD.cvs /home/ncvs . \
-    "main source tree, except crypto code (340 MB)"
+    "main source tree, except crypto code (350 MB)"
 ask_distrib FreeBSD-crypto.cvs /home/ncvs . \
     "crypto code (7 MB)"
 ask_distrib FreeBSD.lite2 /home/lite2 . \

@@ -50,11 +50,19 @@ install_links() {
 		path=${dir}/${subdir}
 	    fi
 	    ( cd ${prefixes} || exit
-	      test -d ${path} || mkdir -p ${path} || exit )
+	      if [ "x${subdir}" != "x." -a -h ${path} ]; then
+		cat <<EOF
+"${subdir}" must be a true subdirectory of "${dir}", not a symbolic link.
+Please remove the symbolic link and/or configure again using the true
+directory path to "${subdir}".
+EOF
+		exit 1
+	      fi
+	      test -d ${path} || mkdir -p ${path} || exit ) || exit
 	    if ! expr "${chmods_done}" : ".* ${path} " >/dev/null 2>&1; then
 		echo -n "  Making the ${path} tree world-readable ..."
 		( chdir ${prefixes} || exit
-		  chmod -R a+rX ${path} || exit )
+		  chmod -R a+rX ${path} || exit ) || exit
 		echo " done."
 		chmods_done="${chmods_done}${path} "
 	    fi
