@@ -1,0 +1,30 @@
+--- main.cxx.orig	Fri Sep 29 02:07:38 2000
++++ main.cxx	Sun Oct 22 19:13:43 2000
+@@ -1221,7 +1221,9 @@
+     if (callerIdCallWaitingEnable) {
+       PString callerId = ((MyH323Connection &)connection).GetCallerIdString();
+       cout << "Sending caller ID " << callerId << endl;
++#ifdef HAS_IXJ
+       xJack.SetCallerID(OpalIxJDevice::POTSLine, callerId);
++#endif
+     }
+     return FALSE;
+   }
+@@ -2042,8 +2044,6 @@
+   }
+ }
+ 
+-#endif
+-
+ unsigned MyH323EndPoint::VolumeToIXJ(int vol)
+ {
+   int hw;
+@@ -2084,6 +2084,8 @@
+ 
+   return vol;
+ }
++
++#endif
+ 
+ void MyH323EndPoint::HandleUserInterface()
+ {
