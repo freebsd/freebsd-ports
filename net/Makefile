@@ -135,6 +135,7 @@
     SUBDIR += hx
     SUBDIR += icb
     SUBDIR += icmpinfo
+    SUBDIR += icmpmonitor
     SUBDIR += icmpquery
     SUBDIR += icqlib
     SUBDIR += icqlib0
