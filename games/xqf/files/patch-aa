@@ -1,34 +1,30 @@
-*** Makefile.orig	Wed Apr 21 19:36:44 1999
---- Makefile	Thu Apr 22 10:26:50 1999
-***************
-*** 1,6 ****
-  CC	= gcc
-! CFLAGS	= -O2 -g -Wall `gtk-config --cflags` # -DDEBUG #-DDNS_STANDALONE
-! LDFLAGS	= `gtk-config --libs`
-  
-  INSTALL_ROOT = /usr/local
-  
---- 1,6 ----
-  CC	= gcc
-! CFLAGS	= -O2 -g -Wall `gtk12-config --cflags` # -DDEBUG #-DDNS_STANDALONE
-! LDFLAGS	= `gtk12-config --libs`
-  
-  INSTALL_ROOT = /usr/local
-  
-***************
-*** 22,28 ****
-  	    $(CC) $(CFLAGS) $(CPPFLAGS) -MM $$i; done) > Makefile
-  
-  install:
-! 	install -s -m 755 -g root -o root $(TARGET) $(INSTALL_ROOT)/bin
-  
-  clean:
-  	rm -f *.[oasi] *~ core $(TARGET) Makefile.old
---- 22,28 ----
-  	    $(CC) $(CFLAGS) $(CPPFLAGS) -MM $$i; done) > Makefile
-  
-  install:
-! 	install -c -s -m 755 -g wheel -o root $(TARGET) $(INSTALL_ROOT)/bin
-  
-  clean:
-  	rm -f *.[oasi] *~ core $(TARGET) Makefile.old
+--- Makefile.orig	Fri May  7 11:03:16 1999
++++ Makefile	Sat May  8 17:26:49 1999
+@@ -17,13 +17,13 @@
+ #     -DDEBUG
+ #
+ 
+-EXTRA_CFLAGS =  # -DQSTAT23 -DCOMPRESSOR_BZIP2  # -DDEBUG
++EXTRA_CFLAGS =  -DQSTAT23 #-DCOMPRESSOR_BZIP2  # -DDEBUG
+ 
+-CC	= gcc
+-CFLAGS	= -O2 -g -Wall `gtk-config --cflags` $(EXTRA_CFLAGS)
+-LDFLAGS	= `gtk-config --libs`
++CC	?= gcc
++CFLAGS	+= `gtk12-config --cflags` $(EXTRA_CFLAGS)
++LDFLAGS	= `gtk12-config --libs`
+ 
+-INSTALL_ROOT = /usr/local
++INSTALL_ROOT = ${PREFIX}
+ 
+ TARGET	= xqf
+ OBJS	= xqf.o xqf-ui.o game.o pref.o server.o stat.o rc.o dialogs.o \
+@@ -43,7 +43,7 @@
+ 	    $(CC) $(CFLAGS) $(CPPFLAGS) -MM $$i; done) > Makefile
+ 
+ install:
+-	install -s -m 755 -g root -o root $(TARGET) $(INSTALL_ROOT)/bin
++	install -c -s -m 755 -g wheel -o root $(TARGET) $(INSTALL_ROOT)/bin
+ 
+ clean:
+ 	rm -f *.[oasi] *~ core $(TARGET) Makefile.old
