@@ -16,7 +16,7 @@ COMMENT=	A Login Anomaly Detector
 RUN_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
 
 post-install:
-.if !defined(NOPORTSDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/hostsentry
 	${INSTALL_DATA} ${WRKSRC}/README.BUGS \
 	${WRKSRC}/README.credits \
