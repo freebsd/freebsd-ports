@@ -1,0 +1,38 @@
+--- language/modula3/m3compiler/m3ship/src/Main.m3.orig	Mon Jun  7 10:11:49 1999
++++ language/modula3/m3compiler/m3ship/src/Main.m3	Sat Sep  8 14:46:14 2001
+@@ -303,9 +303,10 @@
+     m3_template := Env.Get("M3_TEMPLATE_DIR");
+     path        : TEXT;
+     subpath     : TEXT;
+-    nextsep     : INTEGER := 0;
+-    prevsep     : INTEGER := 0;
++    nextsep     : INTEGER;
++    prevsep     : INTEGER := -1;
+     sep         : CHAR;
++    filename    : TEXT;
+   BEGIN
+     IF m3_template # NIL THEN
+       template_dir := m3_template;
+@@ -322,13 +323,17 @@
+       REPEAT
+         nextsep := Text.FindChar(path, sep, prevsep + 1);
+         IF nextsep # -1 THEN
+-          subpath := Text.Sub(path, prevsep, nextsep - prevsep - 1);
++          subpath := Text.Sub(path, prevsep + 1, nextsep - prevsep - 1);
+         ELSE
+-          subpath := Text.Sub(path, prevsep);
++          subpath := Text.Sub(path, prevsep + 1);
+         END;
+-        IF M3File.IsReadable(subpath & template) THEN
+-          template_dir := subpath;
+-          RETURN;
++        IF Text.Length(subpath) > 0 THEN
++          filename := subpath & SL & template;
++          IF M3File.IsReadable(filename) AND
++            NOT M3File.IsDirectory(filename) THEN
++            template_dir := subpath;
++            RETURN;
++          END;
+         END;
+         prevsep := nextsep;
+       UNTIL prevsep = -1;
