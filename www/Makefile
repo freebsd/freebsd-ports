@@ -418,6 +418,7 @@
     SUBDIR += thumbnail_index
     SUBDIR += tidy
     SUBDIR += tidy-devel
+    SUBDIR += tidy-lib
     SUBDIR += tinyproxy
     SUBDIR += transproxy
     SUBDIR += twhttpd
