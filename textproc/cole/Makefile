@@ -8,8 +8,9 @@
 PORTNAME=	cole
 PORTVERSION=	2.0.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://homepages.go.com/~sobomax/filtersweb/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://arturo.directmail.org/filters/archive/
+MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	sobomax@FreeBSD.org
 
