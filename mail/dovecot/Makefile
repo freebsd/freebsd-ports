@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dovecot
-PORTVERSION=	0.99.10.7
+PORTVERSION=	0.99.10.9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.dovecot.org/releases/
 
