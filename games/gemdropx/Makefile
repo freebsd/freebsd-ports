@@ -8,8 +8,7 @@
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
 CATEGORIES=	games
-MASTER_SITES=	http://www.nbswebfx.com/downloads/ \
-		ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx
+MASTER_SITES=	http://www.nbswebfx.com/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interesting one-player puzzle game for X
