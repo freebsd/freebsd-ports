@@ -1,0 +1,16 @@
+RoadMap is a program for Linux that displays street maps. The maps are
+provided by the US Census Bureau, and thus only cover the US. 
+
+RoadMap is at an early stage of development. At this time there are no
+routing features implemented yet. RoadMap can only display the map around
+a specified street address or follow a GPS device (using gpsd). The plan
+for the future is to implement some navigation features similar to those
+found in commercial street navigation systems. 
+
+RoadMap uses a binary file format for representing the maps that is compact
+enough to allow the storage of many maps on a Compact Flash or MultiMedia
+card. The map of Los Angeles county takes about 10 Mbytes of flash space.
+RoadMap comes with a set of tools to convert the US Census bureau data
+into its own map format. 
+
+WWW: http://www.geocities.com/pascal_f_martin/roadmap/

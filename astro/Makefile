@@ -37,6 +37,7 @@
     SUBDIR += py-metar
     SUBDIR += pyweather
     SUBDIR += rmap
+    SUBDIR += roadmap
     SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += seti_applet
