@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 
 MAINTAINER=	clive@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
