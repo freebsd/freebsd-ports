@@ -7,6 +7,7 @@
 
 PORTNAME=	pftop
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.eee.metu.edu.tr/~canacar/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -18,15 +19,20 @@ MAN8=		pftop.8
 
 MANCOMPRESSED=	no
 
-MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=34
-.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
-CFLAGS+=	-DHAVE_ALTQ=1
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Only for 5.0 and above"
+.endif
+
+.if ${OSVERSION} < 502116
+MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=34
+.if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
+CFLAGS+=	-DHAVE_ALTQ=1
+.endif
+.else
+MAKE_ARGS=	LOCALBASE="${PREFIX}" OSLEVEL=35
+CFLAGS+=	-DHAVE_ALTQ=1
 .endif
 
 .if ${OSVERSION} < 502106
