@@ -12,7 +12,6 @@ MASTER_SITES=	ftp://ftp.enst.fr/pub/mbone/mMosaic/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/mosaic/unix/ \
 		ftp://ftp.netsw.org/netsw/InfoSys/WWW/ClientSide/Browser/mosaic/ \
 		ftp://ftp.icm.edu.pl/vol/rzm0/mMosaic/
-
 DISTNAME=	mMosaic-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
@@ -20,7 +19,7 @@ COMMENT=	Web browser based on Mosaic, but with many modernizations
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-NO_CDROM=	"academic, research and internal business purposes only, without a fee"
+NO_CDROM="academic, research and internal business purposes only, without a fee"
 NO_PACKAGE=	"must cause any work...derived...to be licensed as a whole...under...this License"
 PLIST=		${WRKDIR}/pkg-plist
 USE_MOTIF=	yes
