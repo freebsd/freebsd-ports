@@ -8,12 +8,20 @@ if [ x$2 != xDEINSTALL ]; then
     exit
 fi
 
-if [ -f ${PKG_PREFIX}/etc/apache/httpd.conf.beforeFacturier ] ; then
+if [ -d ${PKG_PREFIX}/etc/apache2 ] ; then
+	AP_CNF=${PKG_PREFIX}/etc/apache2/httpd.conf
+else
+	AP_CNF=${PKG_PREFIX}/etc/apache/httpd.conf
+fi
+if [ -f ${AP_CNF}.beforeFacturier ] ; then
 	echo "Restoring httpd.conf..."
-	cp ${PKG_PREFIX}/etc/apache/httpd.conf ${PKG_PREFIX}/etc/apache/httpd.conf.deinstFacturier
+	cp ${AP_CNF} ${AP_CNF}.deinstFacturier
 	sed -i.tmp -e "s:Include ${PKG_PREFIX}/etc/facturier:# Include ${PKG_PREFIX}/etc/facturier:" \
-		${PKG_PREFIX}/etc/apache/httpd.conf
-	rm ${PKG_PREFIX}/etc/apache/httpd.conf.tmp
+		${AP_CNF}
+	rm ${AP_CNF}.tmp
+	if ! [ -z "${PACKAGE_BUILDING}" ]; then
+		rm ${AP_CNF}.deinstFacturier
+	fi
 fi
 
 # Backup Le Facturier's config files, if needed.
@@ -34,4 +42,8 @@ if [ -z "${PACKAGE_BUILDING}" ]; then
     *)  # not found?
         ;;
     esac
+else
+	if [ -f ${AP_CNF}.beforeFacturier ] ; then
+		rm ${AP_CNF}.beforeFacturier
+	fi
 fi
