@@ -1,0 +1,11 @@
+--- Makefile.in	Sat Oct 23 16:49:11 2004
++++ Makefile.in	Sat Oct 23 16:49:22 2004
+@@ -644,7 +644,7 @@
+ 	fi \
+ 	fi \
+ 	done; \
+-	if [ "$$INITCONF" ] ; then \
++	#if [ "$$INITCONF" ] ; then \
+ 	echo "###############################################"; \
+ 	echo "It seems to be your first installation of Sympa"; \
+ 	echo "The following wizard will help you create your $(CONFDIR)/sympa.conf and $(CONFDIR)/wwsympa.conf :"; \
