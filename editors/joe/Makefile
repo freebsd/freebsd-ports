@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.std.com/src/editors/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	toasty@dragondata.com
 
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe
