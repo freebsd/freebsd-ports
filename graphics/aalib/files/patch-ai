@@ -1,0 +1,11 @@
+--- aaprintf.c.orig	Fri Mar  2 16:34:22 2001
++++ aaprintf.c	Fri Mar  2 16:35:20 2001
+@@ -6,7 +6,7 @@
+   char buf[1025];
+   int i;
+   va_start(args,fmt);
+-  i=vsprintf(buf,fmt,args);
++  i=vsnprintf(buf,sizeof(buf),fmt,args);
+   va_end(args);
+   aa_puts(c,x,y,attr,buf);
+   return i;

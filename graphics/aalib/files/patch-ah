@@ -1,0 +1,28 @@
+--- aarender.c.orig	Mon Oct 13 10:21:01 1997
++++ aarender.c	Fri Mar  2 16:30:17 2001
+@@ -26,11 +26,11 @@
+     return (p);
+ }
+ #define MYLONG_MAX 0xffffffff     /*this is enought for me. */
+-#define myrand() (state = ((state * 1103515245) + 12345) & MYLONG_MAX)
++#define myrand() (random() & MYLONG_MAX)
+ 
+ void aa_renderpalette(aa_context * c, aa_palette palette, aa_renderparams * p, int x1, int y1, int x2, int y2)
+ {
+-    static int state;
++    static int rand_init = 0;
+     int x, y;
+     int val;
+     int wi = c->imgwidth;
+@@ -43,6 +43,11 @@
+     int mval;
+     int gamma = p->gamma != 1.0;
+     aa_palette table;
++
++    if (!rand_init) {
++	srandomdev();
++	rand_init = 1;
++    }
+     if (x2 < 0 || y2 < 0 || x1 > aa_scrwidth(c) || y1 > aa_scrheight(c))
+ 	return;
+     if (x2 >= aa_scrwidth(c))
