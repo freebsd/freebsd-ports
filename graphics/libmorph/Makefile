@@ -8,10 +8,10 @@
 PORTNAME=	libmorph
 PORTVERSION=	0.1.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://wine.sexcity.pl/morpheus/meat/
+MASTER_SITES=	http://www.winnicki.net/morpheus/meat/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for loading (and saving) 3d models (3d modeller object files)
+COMMENT=	A library for loading (and saving) 3d modeller object files
 
 CONFLICTS=	xmorph*
 
