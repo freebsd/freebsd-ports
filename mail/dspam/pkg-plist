@@ -1,0 +1,15 @@
+bin/dspam
+bin/dspam_dump
+bin/dspam_convert
+bin/dspam_clean
+bin/dspam_crc
+bin/dspam_purge
+bin/dspam_stats
+bin/dspam_corpus
+lib/libdspam.so.2
+lib/libdspam.so
+lib/libdspam.a
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/dspam

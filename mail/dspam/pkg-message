@@ -1,0 +1,7 @@
+--------------------------------------------------------------------
+
+ See the file %%PREFIX%%/share/doc/dspam/README for advice about
+ how to configure DSPAM with your MTA. Examples are provided for
+ sendmail, exim and other popular MTAs.
+
+--------------------------------------------------------------------

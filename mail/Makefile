@@ -44,6 +44,7 @@
     SUBDIR += drac
     SUBDIR += drbl
     SUBDIR += dsbl-testers
+    SUBDIR += dspam
     SUBDIR += ecartis
     SUBDIR += elm
     SUBDIR += elm+ME
