@@ -8,7 +8,7 @@
  
 -MOZILLA_INCLUDES = -I/usr/include/mozilla -I/usr/local/include/mozilla
 -MOZILLA_LIBS = -L/usr/lib/mozilla -L/usr/local/lib/mozilla -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
-+MOZILLA_INCLUDES = -I${X11BASE}/include/mozilla-embedded
++MOZILLA_INCLUDES = -I${X11BASE}/include/mozilla
 +MOZILLA_LIBS = -L${X11BASE}/lib/mozilla-embedded -lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
  
  #my stuff

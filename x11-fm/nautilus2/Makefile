@@ -22,7 +22,9 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 
 .if defined(WITH_MOZILLA)
 MOZILLA=	mozilla-embedded
-BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
+		${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 .endif
 
 USE_GMAKE=	yes
@@ -38,7 +40,7 @@ CONFIGURE_ARGS=	--with-freetype2-lib-place=${LOCALBASE}/lib \
 
 .if defined(WITH_MOZILLA)
 CONFIGURE_ARGS+= --with-mozilla-lib-place=${X11BASE}/lib/${MOZILLA} \
-		 --with-mozilla-include-place=${X11BASE}/include/${MOZILLA}
+		 --with-mozilla-include-place=${X11BASE}/include/mozilla
 MOZILLA_LIBS=	"-L${X11BASE}/lib/${MOZILLA}"
 PLIST_SUB+=	MOZILLA:=""
 .else
