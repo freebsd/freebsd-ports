@@ -18,21 +18,25 @@ BUILD_DEPENDS=	${X11BASE}/include/mozilla${HEADERS_SUFX}/gtkembedmoz/gtkmozembed
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZILLA}
 
-WITH_FULL_MOZILLA=	"Problems with SSL, general performance, and usability"
+MOZ_CONFIGURE_ARGS=
 
-.if defined(WITH_MOZILLA_DEVEL)
-HEADERS_SUFX=	-devel
-.if !defined(WITH_FULL_MOZILLA)
-MOZILLA=	mozilla-embedded-devel
-.else
-MOZILLA=	mozilla-devel
-.endif
-.else
+.if !defined(WITH_MOZILLA)
+MOZILLA=	mozilla
 HEADERS_SUFX=
-.if !defined(WITH_FULL_MOZILLA)
-MOZILLA=	mozilla-embedded
+.else
+.if ${WITH_MOZILLA}=="mozilla-vendor" || ${WITH_MOZILLA}=="mozilla-embedded-vendor"
+MOZILLA=	${WITH_MOZILLA}
+HEADERS_SUFX=	-vendor
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.0"
+.else
+.if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-embedded-devel"
+MOZILLA=	${WITH_MOZILLA}
+HEADERS_SUFX=	-devel
+MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="trunk"
 .else
 MOZILLA=	mozilla
+HEADERS_SUFX=
+.endif
 .endif
 .endif
 
@@ -43,14 +47,11 @@ USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
-		--enable-nautilus-view
+		--enable-nautilus-view \
+		${MOZ_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -D_REENTRANT ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
-.if !defined(WITH_MOZILLA_DEVEL)
-CONFIGURE_ARGS+=	--with-mozilla-snapshot="1.0"
-.endif
 
 MAN1=		galeon.1
 
@@ -63,13 +64,14 @@ CONFIGURE_ARGS+=	--disable-werror
 .endif
 
 post-extract:
-.if !defined(WITH_FULL_MOZILLA)
 	@${ECHO_MSG}
-	@${ECHO_MSG} " By default the port uses mozilla-embedded for html rendering, but if you are"
-	@${ECHO_MSG} " planning to use both Mozilla and Galeon you can instruct it to use mozilla by"
-	@${ECHO_MSG} " defining \"WITH_FULL_MOZILLA\"."
+	@${ECHO_MSG} " By default the port uses www/mozilla for html rendering, but you can change"
+	@${ECHO_MSG} " this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
-.endif
+	@${ECHO_MSG} "  mozilla-devel "
+	@${ECHO_MSG} "  mozilla-embedded[-devel|-vendor] "
+	@${ECHO_MSG} "  mozilla-vendor "
+	@${ECHO_MSG}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
