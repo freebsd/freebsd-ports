@@ -1,11 +1,15 @@
-This was originally one distribution for uudeview, but I broke it up
-to make it cleaner and more useful.  It is now uulib, uudeview.  Once
-I learn more about tcl (or someone else does it), I'll have to make
-the third part -- xdeview.
+This was originally one distribution for UUdeview, but I have broken
+it up into ``libuu', ``uudeview'', and ``xdeview'', hopefully making
+it cleaner and more useful.
 
-Because it is split up, it is possible for other (theoretical future)
-ports to use libuu.a.  I dare say it also makes the whole thing that
-much cleaner.
+The source itself is quite portable and required no patching, although
+I have added support for compilation as a shared library.
 
-The source itself is quite portable and required no patching.
+The package is covered under the GNU license.
 
+The author has also written patches to the popular newsreaders `nn'
+and `elm' to allow them to make use of this library.  They are
+available from the website mentioned in this library's 
+associated manpage.
+
+Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
