@@ -18,6 +18,8 @@ DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \
 
 MAINTAINER=	gnome@FreeBSD.org
 
+FORBIDDEN= 	"see http://bugzilla.mozilla.org/show_bug.cgi?id=150339 "
+
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
