@@ -9,12 +9,12 @@ PORTNAME=	fvwm95
 PORTVERSION=	2.0.43a
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=   http://ftp.yars.free.net/pub/software/unix/platforms/linux/x/fvwm95/ \
-		http://ftp.cc.ntut.edu.tw/ftp/Xwindow/xfree86/Linux/wm/fvwm-95/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-Autoconf
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Win95 lookalike version of the fvwm2 window manager
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/librplay.a:${PORTSDIR}/audio/rplay
