@@ -1,60 +1,82 @@
 # New ports collection makefile for:	teTeX
-# Version required:	0.4
+# Version required:	1.0.5
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
-# $Id: Makefile,v 1.27 1998/12/24 19:11:11 jseger Exp $
+# $Id: Makefile,v 1.28 1999/04/19 20:33:09 asami Exp $
 #
 
-DISTNAME=	teTeX-src-0.4
-PKGNAME=	teTeX-0.4
+DISTNAME=	teTeX-1.0.5
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	systems/unix/teTeX/distrib/sources
-DISTFILES=	${TETEX_SRC} ${TETEX_LIB}
+MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/1.0/distrib/sources/ \
+		${MASTER_SITE_CTAN}
+MASTER_SITE_SUBDIR=     systems/unix/teTeX/1.0/distrib/sources/
+DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF}
 
 MAINTAINER=	br@netland.inka.de
 
-USE_XLIB=	yes
-USE_GMAKE=	yes
-DIST_SUBDIR=	teTeX
-PATCH_DIST_STRIP=	-p1
-ALL_TARGET=	config clean texhash all
-INSTALL_TARGET=	install ini
-MAN1=		afm2tfm.1 allcm.1 alldc.1 allneeded.1 amslatex.1 \
-		amstex.1 append_db.1 bibtex.1 dvilj.1 dvips.1 \
-		dvired.1 dvitype.1 etex.1 fontexport.1 fontimport.1 \
-		gftodvi.1 gftopk.1 gftype.1 gsftopk.1 initex.1 \
-		lamstex.1 latex.1 mag.1 makeindex.1 mf.1 mft.1 \
-		mp.1 patgen.1 pfb2pfa.1 pk2bm.1 pktogf.1 pktype.1 \
-		pltotf.1 pooltype.1 ps2frag.1 ps2pk.1 slitex.1 \
-		tangle.1 tex.1 texconfig.1 texhash.1 tftopl.1 \
-		vftovp.1 virtex.1 vptovf.1 weave.1 xdvi.1
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+		www.6:${PORTSDIR}/www/libwww
 
-TETEX_SRC=	teTeX-src-0.4pl7.tar.gz
-TETEX_LIB=	teTeX-lib-0.4pl8.tar.gz
-WRKLIB=		${WRKDIR}/teTeX
-INSTALL_INFO=	/usr/bin/install-info
+USE_XLIB=	yes
+MANUAL_PACKAGE_BUILD=	can only build with empty /usr/local
+DIST_SUBDIR=	teTeX
+WRKSRC=		${WRKDIR}/teTeX-1.0
+EXTRACT_ONLY=	${TETEX_SRC}
+USE_GMAKE=	yes
+GNU_CONFIGURE=  yes
+CONFIGURE_ARGS= --prefix=${PREFIX} --disable-multiplatform \
+		--without-texinfo --without-dialog \
+		--with-system-ncurses --with-system-zlib \
+		--with-system-wwwlib --with-libwww-libdir=${LIBWWW_PREFIX}/lib \
+		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
+		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
+		--with-pnglib-include=${LIBPNG_PREFIX}/include
+CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}" \
+		INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
+INSTALL_TARGET=	install strip
+NOMANCOMPRESS=	yes
+NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
+		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
+		dvicopy.1 dvilj.1 dvips.1 dvired.1 dvitype.1 einitex.1 \
+		elatex.1 eplain.1 etex.1 evirtex.1 fontexport.1 fontimport.1 \
+		gftodvi.1 gftopk.1 gftype.1 gsftopk.1 inimf.1 inimpost.1 \
+		iniomega.1 initex.1 kpsestat.1 kpsewhich.1 lambda.1 latex.1 \
+		mag.1 makeindex.1 makempx.1 mf.1 mft.1 mktexlsr.1 mktexmf.1 \
+		mktexpk.1 mktextfm.1 mpost.1 mpto.1 newer.1 omega.1 patgen.1 \
+		pdfinitex.1 pdflatex.1 pdftex.1 pdfvirtex.1 pfb2pfa.1 pk2bm.1 \
+		pktogf.1 pktype.1 pltotf.1 pooltype.1 ps2frag.1 ps2pk.1 \
+		readlink.1 tangle.1 tex.1 texconfig.1 texhash.1 texi2html.1 \
+		tftopl.1 tie.1 vftovp.1 virmf.1 virmpost.1 viromega.1 \
+		virtex.1 vptovf.1 weave.1 xdvi.1
+
+TETEX_SRC=	teTeX-src-1.0.5.tar.gz
+TETEX_TEXMF=	teTeX-texmf-1.0.tar.gz
+LIBPNG_PREFIX?=	${LOCALBASE}
+LIBWWW_PREFIX?=	${LOCALBASE}
+TEXMF_TREE=	${PREFIX}/share/texmf
+
+pre-configure:
+	@echo
+	@echo "It will be ok if configure will complain about a missing texmf tree!"
+	@echo
 
 pre-install:
-	@if [ -x ${PREFIX}/bin/mp ]; then ${MV} ${PREFIX}/bin/mp ${PREFIX}/bin/mp.save; fi
-	@${RM} -f ${PREFIX}/share/texmf/ls-R
-	@chown -R bin:bin ${WRKLIB}/info ${WRKLIB}/man
-	@${RM} -f ${WRKLIB}/info/dir ${WRKLIB}/info/localdir ${WRKLIB}/info/*.orig
-	@chmod 444 ${WRKLIB}/info/* ${WRKLIB}/man/man1/* ${WRKLIB}/man/man5/*
-	@find ${WRKLIB}/texmf/fonts -type d -perm 1755 -exec chmod 755 {} \;
-	@ (cd ${WRKLIB}; tar cf - info man/man1 man/man5) | (cd ${PREFIX}; tar --unlink -xpf -)
-	@ (cd ${WRKLIB}; tar cf - texmf) | (cd ${PREFIX}/share; tar --unlink -xpf -)
-	@${INSTALL_DATA} ${WRKLIB}/texmf.cnf ${PREFIX}/share/texmf/web2c
+	@${MKDIR} ${TEXMF_TREE}
+	@cd ${TEXMF_TREE}; tar xfz ${_DISTDIR}/${TETEX_TEXMF}
 
 post-install:
-	${RM} ${PREFIX}/bin/install-info
-	${INSTALL_INFO} ${PREFIX}/info/latex ${PREFIX}/info/dir
-	${INSTALL_INFO} ${PREFIX}/info/kpathsea.info ${PREFIX}/info/dir
-	${INSTALL_INFO} ${PREFIX}/info/dvips.info ${PREFIX}/info/dir
-	${INSTALL_INFO} ${PREFIX}/info/fontname.info ${PREFIX}/info/dir
-	@${MV} ${PREFIX}/bin/mp ${PREFIX}/bin/mpost
-	@if [ -x ${PREFIX}/bin/mp.save ]; then ${MV} ${PREFIX}/bin/mp.save ${PREFIX}/bin/mp; fi
-	@${SETENV} PREFIX=${PREFIX} ${SH} files/install-note
+	@${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
+		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
+		> ${TEXMF_TREE}/web2c/texmf.cnf
+	@${SETENV} TEXMFMAIN=${TEXMF_TREE} \
+		${PREFIX}/bin/texconfig font ro > /dev/null 2>&1
+	@${SETENV} TEXMFMAIN=${TEXMF_TREE} \
+		${PREFIX}/bin/texconfig font options appendonlydir varfonts
+	@echo
+	@echo "You may want to run texconfig to configure teTeX for your"
+	@echo "local environment. You will find teTeX's local documentation"
+	@echo "in ${TEXMF_TREE}/doc/."
+	@echo
 
 .include <bsd.port.mk>
