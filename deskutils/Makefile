@@ -20,7 +20,6 @@
     SUBDIR += teapot
     SUBDIR += wmpinboard
     SUBDIR += wpeople
-    SUBDIR += xcalendar
     SUBDIR += xinvest
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
