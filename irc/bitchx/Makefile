@@ -8,8 +8,8 @@
 
 DISTNAME=	BitchX-1.0c15
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.bitchx.com/pub/ \
-		ftp://bitchx.dimension6.com/pub/
+MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
+		ftp://bitchx.dimension6.com/pub/BitchX/source/
 
 MAINTAINER=	calle.madestrand@norrgarden.se
 
