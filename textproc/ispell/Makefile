@@ -215,6 +215,13 @@ pre-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
 
 post-install:
+.if defined(ISPELL_BRITISH)
+	${INSTALL_DATA} ${WRKSRC}/languages/british/english.xlg \
+		${DATADIR}/english.dict
+.else
+	${INSTALL_DATA} ${WRKSRC}/languages/american/english.med+ \
+		${DATADIR}/english.dict
+.endif
 	@-${INSTALL_DATA} ${WRKDIR}/*/*.aff ${WRKDIR}/*/*.hash ${DATADIR}
 .if defined(ISPELL_FR)
 	@${CAT} ${MASTERDIR}/pkg-plist.fr >> ${TMPPLIST}
