@@ -8,7 +8,7 @@
 PORTNAME=	sap
 PORTVERSION=	0.2
 CATEGORIES=	polish
-MASTER_SITES=	http://www.terravista.pt/Mussulo/1345/sap/
+MASTER_SITES=	http://www.bsdguru.org/sap/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	alex@bsdguru.org
