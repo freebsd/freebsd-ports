@@ -70,11 +70,13 @@
 %%TURBADIR%%/locale/et_EE/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/hu_HU/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/it_IT/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ja_JP/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ko_KR/LC_MESSAGES/turba.mo
-%%TURBADIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/nb_NO/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/nn_NO/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pl_PL/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pt_BR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pt_PT/LC_MESSAGES/turba.mo
@@ -99,11 +101,13 @@
 %%TURBADIR%%/po/extract.pl
 %%TURBADIR%%/po/fi_FI.po
 %%TURBADIR%%/po/fr_FR.po
+%%TURBADIR%%/po/hu_HU.po
 %%TURBADIR%%/po/it_IT.po
 %%TURBADIR%%/po/ja_JP.po
 %%TURBADIR%%/po/ko_KR.po
-%%TURBADIR%%/po/nl_NL.po
 %%TURBADIR%%/po/nb_NO.po
+%%TURBADIR%%/po/nl_NL.po
+%%TURBADIR%%/po/nn_NO.po
 %%TURBADIR%%/po/pl_PL.po
 %%TURBADIR%%/po/pt_BR.po
 %%TURBADIR%%/po/pt_PT.po
@@ -176,16 +180,20 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/locale/fi_FI
 @dirrm %%TURBADIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/fr_FR
+@dirrm %%TURBADIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/hu_HU
 @dirrm %%TURBADIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/it_IT
 @dirrm %%TURBADIR%%/locale/ja_JP/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/ja_JP
 @dirrm %%TURBADIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/ko_KR
-@dirrm %%TURBADIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%TURBADIR%%/locale/nl_NL
 @dirrm %%TURBADIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/nb_NO
+@dirrm %%TURBADIR%%/locale/nl_NL/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/nl_NL
+@dirrm %%TURBADIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/nn_NO
 @dirrm %%TURBADIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/pl_PL
 @dirrm %%TURBADIR%%/locale/pt_BR/LC_MESSAGES
