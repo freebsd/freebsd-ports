@@ -1,0 +1,14 @@
+--- freebsd_tcpdump/print-tcp.c.orig	Thu Oct  9 19:55:02 2003
++++ freebsd_tcpdump/print-tcp.c	Thu Oct  9 19:56:28 2003
+@@ -406,7 +406,11 @@
+ 	}
+ 
+ 	/* OS Fingerprint */
++#ifdef INET6
+ 	if (oflag && ip6 == NULL && (flags & (TH_SYN|TH_ACK)) == TH_SYN) {
++#else
++	if (oflag && (flags & (TH_SYN|TH_ACK)) == TH_SYN) {
++#endif
+ 		struct pf_osfp_enlist *head = NULL;
+ 		struct pf_osfp_entry *fp;
+ 		unsigned long left;
