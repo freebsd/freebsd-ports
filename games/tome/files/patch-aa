@@ -1,18 +1,16 @@
---- makefile.org.orig	Sun May 12 05:40:28 2002
-+++ makefile.org	Mon Nov  4 02:27:48 2002
-@@ -78,7 +78,7 @@
- ##
- 
- # Where lib/ files goes
--LIBDIR = /usr/lib/games/tome/
-+LIBDIR = $(PREFIX)/share/tome/
+--- makefile.std.orig	Sun Nov 24 15:42:24 2002
++++ makefile.std	Thu Jan 16 18:04:47 2003
+@@ -81,18 +81,19 @@
  # Sysadmins of commercial Unix and/or BSD might prefer this
  #LIBDIR = /usr/local/lib/tome/
  # If you like the old default, use this one
-@@ -88,12 +88,13 @@
+-LIBDIR = ./lib/
++LIBDIR = $(PREFIX)/share/tome/
+ # Another example: single user installation using absolute path
+ #LIBDIR = /home/myloginname/lib/tome/
  
  
- # Where PernAngband binary goes
+ # Where ToME binary goes
 -BINDIR = /usr/local/games
 +BINDIR = $(PREFIX)/bin
  # Another common location
@@ -23,9 +21,9 @@
 +OWNER = root
 +GROUP = games
  
- ##
- ## 3. Some "system" definitions
-@@ -120,7 +121,7 @@
+ # Ignore this if you're not making a package
+ DESTDIR=
+@@ -122,7 +123,7 @@
  #
  # This is my compiler of choice, it seems to work most everywhere
  #
@@ -34,7 +32,7 @@
  
  #
  # Standard version (see main-x11.c and main-gcu.c)
-@@ -146,11 +147,11 @@
+@@ -148,12 +149,12 @@
  # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
  # attempt to "guess" at many of these flags based on your system.
  #
@@ -43,13 +41,14 @@
 +COPTS = -Wall -g
 +INCLUDES = -I$(X11BASE)/include
  DEFINES = -DUSE_X11 -DUSE_GCU \
- 	-DUSE_EGO_GRAPHICS -DUSE_TRANSPARENCY -DSUPPORT_GAMMA
+ 	-DUSE_EGO_GRAPHICS -DUSE_TRANSPARENCY -DSUPPORT_GAMMA \
+         -DUSE_PRECISE_CMOVIE -DUSE_UNIXSOCK
 -LIBS = -lX11 -lcurses -L/usr/X11R6/lib
 +LIBS = -lX11 -lcurses -L$(X11BASE)/lib
  
  
  ##
-@@ -366,7 +367,7 @@
+@@ -369,7 +370,7 @@
  # Compiler options
  #
  
@@ -58,16 +57,17 @@
  
  
  #
-@@ -441,10 +442,12 @@
- 	[ -d $(LIBDIR) ] || mkdir -p $(LIBDIR)
- 	[ -d $(BINDIR) ] || mkdir -p $(BINDIR)
- 	cp -r ../lib/* $(LIBDIR)
--	chown -R $(OWNER) $(LIBDIR)
+@@ -443,10 +444,12 @@
+ 	[ -d $(DESTDIR)$(LIBDIR) ] || mkdir -p $(DESTDIR)$(LIBDIR)
+ 	[ -d $(DESTDIR)$(BINDIR) ] || mkdir -p $(DESTDIR)$(BINDIR)
+ 	cp -r ../lib/* $(DESTDIR)$(LIBDIR)
+-	chown -R $(OWNER) $(DESTDIR)$(LIBDIR)
+-	cp -f $(TARGET) $(DESTDIR)$(BINDIR)/$(TARGET)
+-	chown $(OWNER) $(DESTDIR)$(BINDIR)/$(TARGET)
+-	chmod 4755 $(DESTDIR)$(BINDIR)/$(TARGET)
 +	chown -R $(OWNER):$(GROUP) $(LIBDIR)
 +	chmod -R g+w $(LIBDIR)
- 	cp -f $(TARGET) $(BINDIR)/$(TARGET)
--	chown $(OWNER) $(BINDIR)/$(TARGET)
--	chmod 4755 $(BINDIR)/$(TARGET)
++	cp -f $(TARGET) $(BINDIR)/$(TARGET)
 +	strip $(BINDIR)/$(TARGET)
 +	chown $(OWNER):$(GROUP) $(BINDIR)/$(TARGET)
 +	chmod 2755 $(BINDIR)/$(TARGET)

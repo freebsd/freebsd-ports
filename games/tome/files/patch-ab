@@ -1,0 +1,173 @@
+--- init2.c.orig	Sat Jan  4 19:57:53 2003
++++ init2.c	Sat Jan  4 20:00:35 2003
+@@ -410,7 +410,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -693,7 +693,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -1079,7 +1079,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -1303,7 +1303,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -1529,7 +1529,7 @@
+ 
+ 	/* int i; */
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -1809,7 +1809,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -2075,7 +2075,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -2780,7 +2780,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -3004,7 +3004,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -3221,7 +3221,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -3447,7 +3447,7 @@
+ 
+ 	int i;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -3801,7 +3801,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -4018,7 +4018,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -4235,7 +4235,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -4452,7 +4452,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -4734,7 +4734,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err = 0;
+ 
+@@ -4998,7 +4998,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err;
+ 
+@@ -5286,7 +5286,7 @@
+ {
+ 	int fd;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	errr err;
+ 
+@@ -6199,7 +6199,7 @@
+ {
+ 	int fd = -1;
+ 
+-	int mode = 0644;
++	int mode = 0664;
+ 
+ 	FILE *fp;
+ 
