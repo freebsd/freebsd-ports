@@ -39,6 +39,7 @@ share/AbiSuite-%%ABIVERSION%%/AbiWord/readme.txt
 share/AbiSuite-%%ABIVERSION%%/AbiWord/scripts/abw2html.pl
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/am-ET.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ar.strings
+share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ast-ES.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/be-BY.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/bg-BG.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/br-FR.strings
@@ -69,6 +70,7 @@ share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ja-JP.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/jbo.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/lt-LT.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/lv-LV.strings
+share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/mg-MG.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/mh-MH.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/mk-MK.strings
 share/AbiSuite-%%ABIVERSION%%/AbiWord/strings/ms-MY.strings
