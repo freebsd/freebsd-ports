@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	so51a_lnx_49
-PKGNAME=	staroffice-5.1a
+PKGNAME=	de-staroffice-5.1a
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.hagenhomes.com/pub/  \
 		ftp://ftp.stat.duke.edu/pub/Users/sto/StarOffice51a/  \
