@@ -1,11 +1,9 @@
 # New ports collection makefile for:    zip (without encryption)
-# http://infozip.cdrom.com/pub/infozip/
-#
 # Version required:     2.2
 # Date created:         22 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1997/04/27 16:06:15 ache Exp $
+# $Id: Makefile,v 1.11 1997/11/25 20:45:45 ache Exp $
 #
 
 DISTNAME=       zip22
