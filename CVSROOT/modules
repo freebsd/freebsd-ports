@@ -5584,6 +5584,7 @@ objc		ports/lang/objc
 obliterate	ports/sysutils/obliterate
 obnc		ports/net/obnc
 ocaml		ports/lang/ocaml
+ocaml-camomile	ports/devel/ocaml-camomile
 ocaml-classes	ports/devel/ocaml-classes
 ocaml-cryptokit	ports/security/ocaml-cryptokit
 ocaml-doc	ports/lang/ocaml-doc
