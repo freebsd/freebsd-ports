@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	gmetadom
-PORTVERSION=	0.1.7
-PORTREVISION=	1
+PORTVERSION=	0.1.8
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A Collection of DOM Implementations
 
 BUILD_DEPENDS=	ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
