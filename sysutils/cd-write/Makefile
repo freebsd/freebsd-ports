@@ -3,7 +3,7 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1998/08/07 23:56:47 asami Exp $
+# $Id: Makefile,v 1.10 1998/10/09 10:05:56 asami Exp $
 #
 
 DISTNAME=       cd-write-1.4
@@ -15,6 +15,11 @@ MAINTAINER=     jmz@FreeBSD.org
 LIB_DEPENDS=	tixsam4180.1:${PORTSDIR}/x11-toolkits/tix
 
 WRKSRC=		${WRKDIR}/cd-write
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=		scsi.h
+.endif
 
 pre-build:
 	@cd ${WRKSRC}; mv Makefile Makefile~; \
