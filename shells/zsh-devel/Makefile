@@ -76,6 +76,7 @@ CONFIGURE_ARGS+=	--enable-maildir-support
 .endif
 
 .if defined(NOSHARED)
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -static"
 CONFIGURE_ARGS+=	--disable-dynamic
 PLIST_SUB+=		NO_STATIC="@comment "
 .else
