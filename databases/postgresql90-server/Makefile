@@ -20,7 +20,7 @@ COMMENT?=	The most advanced open-source database available anywhere
 
 # XXX: this will eventually go away
 .if !defined(PGSQL_WORK_IN_PROGRESS)
-BROKEN=	Work in progress, please use databases/postgresql-devel until further notice
+BROKEN= pending ports/75344, the 8.0 release can be used via the postgresql-devel port
 .endif
 
 CONFLICTS?=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-35-9]* \
