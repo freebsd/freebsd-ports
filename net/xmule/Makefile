@@ -47,11 +47,19 @@ WX_CONFIG?=	${X11BASE}/bin/wxgtk2-2.4-config
 
 FILES_ATOLL_PATCH=	src/Preferences.cpp \
 			src/otherfunctions.cpp
+FILES_STDINT_PATCH=	\
+			intl/loadmsgcat.c \
+			src/ClientList.h \
+			src/sockets.h
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000 || ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on 4.x or on sparc64"
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
 .endif
 
 post-patch:
@@ -74,6 +82,12 @@ post-patch:
 .for file in ${FILES_ATOLL_PATCH}
 	@${REINPLACE_CMD} -E \
 		-e 's|atoll[[:space:]]*\([[:space:]]*char|atoll(const char|' \
+		${WRKSRC}/${file}
+.endfor
+# stdint.h -> inttypes.h
+.for file in ${FILES_STDINT_PATCH}
+	@${REINPLACE_CMD} -E \
+		-e 's|<stdint.h>|<inttypes.h>|' \
 		${WRKSRC}/${file}
 .endfor
 
