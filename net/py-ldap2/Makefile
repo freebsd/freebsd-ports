@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.0.0pre04
+PORTVERSION=	2.0.0pre18
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-ldap
@@ -15,22 +15,16 @@ DISTNAME=	python-ldap-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An LDAP module for python, for OpenLDAP2
 
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/${LDAP_PORT}
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
-LDAP_PORT?=	net/openldap20-client
+USE_OPENLDAP=	yes
+USE_REINPLACE=	yes
 
-#class = OpenLDAP2
-#library_dirs = /usr/local/openldap2/lib
-#include_dirs = /usr/local/openldap2/include
-#libs = lber ldap resolv
 do-configure:
-	@${MV} ${WRKSRC}/setup.cfg ${WRKSRC}/setup.cfg.sed
-	${SED} -e "s=/usr/local/openldap2/lib=${LOCALBASE}/lib=" \
-		-e "s=/usr/local/openldap2/include=${LOCALBASE}/include=" \
-		-e "s=lber ldap resolv=lber ldap=" \
-		${WRKSRC}/setup.cfg.sed > ${WRKSRC}/setup.cfg
+	@${REINPLACE_CMD} -e "s=/usr/local/openldap-REL_ENG_2_1/lib=${LOCALBASE}/lib=" \
+		-e "s=/usr/local/openldap-REL_ENG_2_1/include=${LOCALBASE}/include=" \
+		-e "s=ldap_r lber sasl2 ssl crypto=ldap_r lber ssl crypto=" \
+		${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>
