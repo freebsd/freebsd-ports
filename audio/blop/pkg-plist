@@ -30,3 +30,4 @@ lib/ladspa/triangle_1649.so
 %%NLS%%share/locale/de/LC_MESSAGES/blop.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/blop.mo
 @unexec rmdir %D/lib/ladspa 2>/dev/null || true
+@dirrm lib/ladspa/blop_files/
