@@ -9,9 +9,9 @@ PORTNAME=	rat
 PORTVERSION=	4.2.22
 PORTREVISION=	0
 CATEGORIES=	mbone audio ipv6
-MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/4.2.22/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	cpiazza
+MASTER_SITES=								      \
+	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/4.2.22/ \
+	http://www.icir.org/hodson/ucl-mirror/
 
 MAINTAINER=	orion@freebsd.org
 
