@@ -1,28 +1,6 @@
 *** compface/gen.c	Tue Jan 15 23:58:46 2002
 --- /home/lkoeller/tmp/ports/mail/faces/work/faces/compface/gen.c	Wed Jun 19 08:29:13 1991
 ***************
-*** 1,10 ****
-- 
-  /*
--  *  $Header: /cvs/faces/faces/compface/gen.c,v 1.2 2002/01/15 22:58:46 devface Exp $
--  *
-   *  Compface - 48x48x1 image compression and decompression
-   *
-!  *  Copyright (c) 1990-2002 James Ashton - Sydney University
-   *
-   *  Permission is given to distribute these sources, as long as the
-   *  copyright messages are not removed, and no monies are exchanged. 
---- 1,9 ----
-  /*
-   *  Compface - 48x48x1 image compression and decompression
-   *
-!  *  Copyright (c) James Ashton - Sydney University - June 1990.
-!  *
-!  *  Written 11th November 1989.
-   *
-   *  Permission is given to distribute these sources, as long as the
-   *  copyright messages are not removed, and no monies are exchanged. 
-***************
 *** 18,79 ****
   
   #define GEN(g) F[h] ^= G.g[k]; break

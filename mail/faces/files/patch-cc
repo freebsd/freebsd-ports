@@ -1,28 +1,6 @@
 *** compface/compface.1	Tue Jan 15 23:58:46 2002
 --- /home/lkoeller/tmp/ports/mail/faces/work/faces/compface/compface.1	Sun Jan 19 19:35:35 2003
 ***************
-*** 1,4 ****
-! .TH COMPFACE 1 "15 January 2002"
-  .SH NAME
-  compface, uncompface \- compress and expand 48x48x1 face image files
-  .SH SYNOPSIS
---- 1,4 ----
-! .TH COMPFACE 1 "25 January 1990"
-  .SH NAME
-  compface, uncompface \- compress and expand 48x48x1 face image files
-  .SH SYNOPSIS
-***************
-*** 12,17 ****
---- 12,19 ----
-  .LP
-  .B uncompface
-  [
-+ .B \-X
-+ ] [
-  .I infile
-  [
-  .I outfile
-***************
 *** 56,61 ****
 --- 58,69 ----
   .I compface

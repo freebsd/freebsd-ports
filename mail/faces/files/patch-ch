@@ -1,28 +1,6 @@
 *** compface/file.c	Tue Jan 15 23:58:46 2002
 --- /home/lkoeller/tmp/ports/mail/faces/work/faces/compface/file.c	Sun Jan 19 19:35:35 2003
 ***************
-*** 1,10 ****
-- 
-  /*
--  *  $Header: /cvs/faces/faces/compface/file.c,v 1.2 2002/01/15 22:58:46 devface Exp $
--  *
-   *  Compface - 48x48x1 image compression and decompression
-   *
-!  *  Copyright (c) 1990-2002 James Ashton - Sydney University
-   *
-   *  Permission is given to distribute these sources, as long as the
-   *  copyright messages are not removed, and no monies are exchanged. 
---- 1,9 ----
-  /*
-   *  Compface - 48x48x1 image compression and decompression
-   *
-!  *  Copyright (c) James Ashton - Sydney University - June 1990.
-!  *
-!  *  Written 11th November 1989.
-   *
-   *  Permission is given to distribute these sources, as long as the
-   *  copyright messages are not removed, and no monies are exchanged. 
-***************
 *** 16,147 ****
   
   #include "compface.h"
