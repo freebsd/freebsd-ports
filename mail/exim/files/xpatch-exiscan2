@@ -1,39 +1,3 @@
-diff -u doc/exiscan-acl-spec.txt doc/exiscan-acl-spec.txt
---- doc/exiscan-acl-spec.txt	Sat Jul 17 11:12:00 2004
-+++ doc/exiscan-acl-spec.txt	Sat Jul 17 12:15:36 2004
-@@ -12,7 +12,7 @@
-  - Antivirus using 3rd party scanners.
-  - Anti-spam using SpamAssassin.
-  - Anti-spam using Brightmail Antispam.
-- - SPF support via the libspf_alt library
-+ - SPF support via the libspf2 library
-  - Regular expression match against headers, bodies, raw
-    MIME parts and decoded MIME parts.
-  
-@@ -1087,9 +1087,9 @@
- need to  care. If  you don't  know what  that means, visit the
- above mentioned website.
- 
--SPF support is added via the libspf_alt library. Visit 
-+SPF support is added via the libspf2 library. Visit 
- 
--  http://www.midwestcs.com/spf/libspf-alt/
-+  http://libspf2.org/
-   
- to obtain  a copy,  then compile  and install  it. By default,
- this will  put headers  in /usr/local/include  and the  static
-@@ -1099,9 +1099,9 @@
- Local/Makefile:
- 
- CFLAGS=-DSPF -I/usr/local/include
--EXTRALIBS_EXIM=-L/usr/local/lib -lspf_alt
-+EXTRALIBS_EXIM=-L/usr/local/lib -lspf2
- 
--This assumes   that the   libspf_alt files   are installed  in
-+This assumes   that the   libspf2 files   are installed  in
- their default locations.
- 
- You can now run SPF checks in incoming SMTP by using the "spf"
 diff -u scripts/MakeLinks scripts/MakeLinks
 --- scripts/MakeLinks	Sat Jul 17 11:12:00 2004
 +++ scripts/MakeLinks	Sat Jul 17 11:34:48 2004
@@ -164,7 +128,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 -      usesrs = expand_check_condition(ob->srs_condition, "srs_condition expansion failed", NULL);
 -    
 -    if(usesrs)
--      if(Ustrcmp(ob->srs, "reverse") == 0)
+-      if(Ustrcmp(ob->srs, "reverse") == 0 || Ustrcmp(ob->srs, "reverseandforward") == 0)
 -      {
 -        uschar *res;
 -        int n_srs;
@@ -180,7 +144,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 -        DEBUG(D_any)
 -          debug_printf("SRS: Recipient '%s' rewriteen to '%s'\n", srs_orig_recipient, srs_recipient);
 -      }
-+  if (Ustrcmp(ob->srs, "reverse") == 0)
++  if (Ustrcmp(ob->srs, "reverse") == 0 || Ustrcmp(ob->srs, "reverseandforward") == 0)
 +    {
 +    uschar *res;
 +    int     ret;
@@ -218,7 +182,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 -      usesrs = expand_check_condition(ob->srs_condition, "srs_condition expansion failed", NULL);
 -    
 -    if(usesrs)
--      if(Ustrcmp(ob->srs, "forward") == 0 )// && !verify)
+-      if((Ustrcmp(ob->srs, "forward") == 0 || Ustrcmp(ob->srs, "reverseandforward") == 0) && !verify)
 -      {
 -        uschar *res;
 -        int n_srs;
@@ -232,7 +196,7 @@ diff -u src/routers/redirect.c src/routers/redirect.c
 -        sender_address = res;
 -        DEBUG(D_any)
 -          debug_printf("SRS: Sender '%s' rewritten to '%s'\n", srs_orig_sender, sender_address);
-+  if ((Ustrcmp(ob->srs, "forward") == 0) && !verify )
++  if ((Ustrcmp(ob->srs, "forward") == 0 || Ustrcmp(ob->srs, "reverseandforward") == 0) && !verify )
 +    {
 +    uschar *res;
 +    int     ret;
@@ -285,7 +249,7 @@ diff -u src/srs.c src/srs.c
  /* This file is an extension to Exim and is not part of the standard
     Exim distribution */
     
--/* ©2004 Miles Wilton <miles@mirtol.com> */
+-/* (C)2004 Miles Wilton <miles@mirtol.com> */
 +/* (c) 2004 Shevek
 + * Based on work by Miles Wilton <miles@mirtol.com>
 + * Updated by Shevek to use libsrs2
