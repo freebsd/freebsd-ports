@@ -28,6 +28,12 @@ MAN1=	meerkat-app-list.1 xml-rpc-api2cpp.1 xmlrpc-c-config.1 \
 	query-meerkat.1 xml-rpc-api2txt.1
 MAN7=	xmlrpc-c.7
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/lib/abyss/src/data.c \
@@ -36,4 +42,4 @@ pre-patch:
 post-install:
 	@${RM} -f ${PREFIX}/lib/*.la
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
