@@ -6,13 +6,12 @@
 
 PORTNAME=	chemeq
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	biology textproc
 MASTER_SITES=	ftp://boltz.univ-littoral.fr/pub/chemeq/
-DISTNAME=	chemeq-V110
+DISTNAME=	chemeq-V110-1
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
-
-BROKEN=		"Does not build"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
