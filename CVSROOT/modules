@@ -8967,7 +8967,6 @@ x11amp		ports/audio/x11amp
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
 x3270		ports/x11/x3270
-x3arth		ports/astro/x3arth
 x3eyes		ports/games/x3eyes
 x48		ports/emulators/x48
 x86info		ports/sysutils/x86info
