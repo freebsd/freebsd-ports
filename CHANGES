@@ -10,6 +10,158 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040204:
+	The bsd.php.mk file has been moved out of the lang/php4 port
+	into the Mk directory.  This will make it much easier to include
+	PHP support in PHP-dependent ports.  Instead of including
+	bsd.php.mk directly, a port can simply set USE_PHP=yes, and the
+	ports system with Do the Right Thing.
+
+	All trailing whitespace has been removed from bsd.port.mk.
+
+	Enhance the new OPTIONS code by only including saved options if
+	the port defines OPTIONS, attempt to use LATEST_LINK as the
+	unique name for a port (fall back to ${PKGNAMEPREFIX}${PORTNAME}
+	otherwise), bring the ===> messages in line with the existing
+	ones by using PKGNAME instead of PORTNAME, use PKGNAME in the
+	dialog, use ECHO_CMD instead of ECHO_MSG to write the
+	OPTIONSFILE, display a message during compilation indicating
+	that user-specified options have been found, and make the output
+	of the showconfig target a little more user-friendly.
+
+	A new USE_ICONV macro has been added that takes the place of an
+	explicit LIB_DEPENDS on converters/libiconv.  This will help
+	with future shared lib version bumps.
+
+	A new USE_GETTEXT macro has been added that takes the place of
+	an explicit LIB_DEPENDS on devel/gettext.  This will help with
+	future shared lib version bumps.
+
+	Module::Build is a system for building, testing, and installing
+	Perl modules.  It will eventually replace the obsoleted
+	ExtUtils::MakeMaker.  Many new Perl modules have already
+	switched to using Build.PL instead of Makefile.PL.  To
+	facilitate building those modules, a new PERL_MODBUILD macro has
+	been added.  Use that in place of PERL_CONFIGURE when porting
+	Perl modules that make use of the Module::Build framework.
+
+	Certain ports want to check for the availability of SDL
+	libraries before including them.  This change adds a new
+	WANT_SDL macro similar to WANT_GNOME.  By setting this, the
+	porter indicates that her port can optional use SDL if present
+	on the system.  WANT_SDL should be defined _before_
+	bsd.port.pre.mk is included.  After including bsd.port.pre.mk,
+	the list of available SDL components will be returned in the
+	HAVE_SDL macro.  For details on how to process this component
+	list, refer to bsd.sdl.mk.
+
+	The OpenBSD and NetBSD projects diverged from the FreeBSD ports
+	tree years ago, and it no longer make sense to include obsolete
+	references to incorrect paths in the FreeBSD ports system.  This
+	change removes the NetBSD and OpenBSD PORTSDIR compatibility
+	bits from bsd.port.mk.
+
+	The comment for PKGDIR read, ``A direction containing any
+	package creating file.''  The word ``direction'' should be
+	``directory.''  This has been fixed.
+
+	A new DIRNAME macro has been added that points to
+	/usr/bin/dirname.  All direct use of dirname in ports can be
+	switched to this macro.
+
+	Direct use of commands dirname, id, and rm have been corrected
+	to use their macro equivalents instead.  Some useless ${HEAD}
+	-n 1 statements have been removed.  A strange comment in the
+	do-install target and an out of place ``fi'' have been fixed as
+	well.
+
+	On 5-CURRENT after the 5.2-RELEASE split, the default Perl
+	version has been updated from 5.6.1 to 5.8.2.  As well, some
+	Perl definitions in bsd.port.mk have been moved to their correct
+	locations which corrects the PERL_LEVEL definition.
+
+	The following optimizations have been added to the ports system
+	to speed up recursive operations such as make describe, make
+	index, make ignorelist, etc.  bsd.gnome.mk is now only included
+	if a port defines USE_GNOME, WANT_GNOME, and/or USE_GTK.  More
+	variables are cached and passed down through bsd.port.subdir.mk.
+	Perl is no longer invoked when a simple ``echo'' will do.  More
+	subshell variable assignments have been hidden behind
+	conditionals so that the commands are not spawned everytime.
+	Finally, dependency lists are only constructed if ports actually
+	declare dependencies.  These optimizations give make index
+	approximately a 43% speedup.
+
+	If CPUFLAGS is not defined (this _CPUCFLAGS is empty), trying
+	to remove _CPUCFLAGS from CFLAGS will result in an error.  This
+	change fixes that.
+
+	On recent versions of 5.X, /etc/rc.subr exists, and there is no
+	reason to install another copy in ${LOCALBASE}/etc.  The reason
+	this was ever done was to workaround some build issues on bento.
+	However, testing OSVERSION seems to work in spite of those build
+	issues.
+
+	The ports system now supports MySQL 3.23, 4.0, 4.1, and 5.0.
+	Also, the ability to scale to newer versions was also but in
+	place.
+
+	An .endif comment indicated that the .if block checked
+	WANT_MYSQL when, in fact, it was checking WANT_MYSQL_VER.  This
+	has been corrected.
+
+	The PTHREAD{CFLAGS,LIBS} macros have been made overridable on
+	all versions of FreeBSD to allow for alternate threading
+	implementations (e.g. -lc_r, -lthr, -mt, etc.).  The default
+	threading library has been changed to -lpthread from -lc_r on
+	-CURRENT.
+
+	The new SIZE support broke distfiles fetching on FreeBSD < 4.8.
+	On those versions of FreeBSD, the SIZE distfile attribute is now
+	ignored.  Also, defining DISABLE_SIZE in, for example,
+	/etc/make.conf, will ignore the SIZE attribute on all versions
+	of FreeBSD.  This is useful with alternate values for FETCH_CMD.
+
+	A new vulnerabilities database has been added to the ports
+	system in order to keep more accurate, up-to-date, track of
+	security vulnerabilities.  The ports system now knows how to
+	query that database and dynamically prevents the installation
+	of vulnerable ports.
+
+	In order to allow for more rapid development of the package
+	tools, the ports system will prefer to use pkg_* tools found in
+	${LOCALBASE} over those in the base system.  However, all PKG_*
+	macros are still overridable.
+
+	A new physical category, net-mgmt, has been created to house
+	network management ports.
+
+	The /var/db/port.mkversion file never really took off, and is
+	now very obsolete.  Replace the code used to generate and check
+	this file with a simple OSVERSION check.  The ports system now
+	requires FreeBSD 4.3 or higher.
+
+	The last round of bsd.*.mk changes broke ports that had
+	duplicate distinfo entries (e.g. linux_base).  This is now
+	fixed.  Along with this fix, only distfiles with a bad checksum
+	will be refetched, where as distfiles missing from distinfo will
+	not be refetched.
+
+	The PLIST_{DIRS,FILES} macros were passed to the final package
+	list unchanged by PLIST_SUB.  This is not always desirable.
+	Now, those macros are passed through PLIST_SUB.
+
+	The previous OPTIONS code assumed users would be running port
+	build as root.  If this was not the case, OPTIONS configuration
+	would fail.  Now, the bits of the config and rmconfig targets
+	that require write access to system directories are run under
+	SU_CMD.
+
+	The makesum target will now add a SIZE attribute for each
+	distfile by default.  This can be overridden by defining NO_SIZE
+	in a port's Makefile.  Note: this could probably be expanded to
+	omit SIZE attributes for specific distfiles in the future.
+
 20040129:
 	SIZE lines in distinfo files:  if you set USE_SIZE when you do "make
 	makesum", the byte sizes of the distfiles will be listed in the
