@@ -2,6 +2,7 @@ bin/gcombust
 share/doc/gcombust/README
 share/doc/gcombust/NEWS
 share/locale/de/LC_MESSAGES/gcombust.mo
-share/locale/sv/LC_MESSAGES/gcombust.mo
 share/locale/es/LC_MESSAGES/gcombust.mo
+share/locale/ja/LC_MESSAGES/gcombust.mo
+share/locale/sv/LC_MESSAGES/gcombust.mo
 @dirrm share/doc/gcombust
