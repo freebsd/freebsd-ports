@@ -1,14 +1,5 @@
---- configure.in.orig	Tue Dec  7 23:46:18 2004
-+++ configure.in	Mon Dec 13 23:09:50 2004
-@@ -38,7 +38,7 @@
- AC_DEFINE(FILEBUFF, 8192,   [file i/o buffer size])
- 
- AC_HEADER_STDC
--AC_CHECK_HEADERS(stdint.h unistd.h sys/int_types.h dlfcn.h inttypes.h sys/inttypes.h memory.h ndir.h stdlib.h strings.h string.h sys/mman.h sys/param.h sys/stat.h sys/types.h malloc.h poll.h regex.h limits.h sys/filio.h uio.h)
-+AC_CHECK_HEADERS(stdint.h unistd.h sys/int_types.h dlfcn.h inttypes.h sys/inttypes.h memory.h ndir.h stdlib.h strings.h string.h sys/mman.h sys/param.h sys/stat.h sys/types.h malloc.h poll.h regex.h limits.h sys/filio.h sys/uio.h)
- AC_CHECK_HEADER(syslog.h,AC_DEFINE(USE_SYSLOG,1,[use syslog]),)
- 
- AC_TYPE_OFF_T
+--- configure.in.o	Mon Jan 10 20:13:18 2005
++++ configure.in	Mon Jan 10 20:13:42 2005
 @@ -360,9 +360,6 @@
      ;;
  freebsd*)
