@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.54 1999/05/09 17:51:20 steve Exp $
+# $Id: Makefile,v 1.55 1999/05/17 10:44:26 foxfair Exp $
 #
 
     SUBDIR += bjorb
@@ -33,6 +33,7 @@
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pidentd
+    SUBDIR += pktsuckers
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += raproxy
