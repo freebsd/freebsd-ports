@@ -3,7 +3,7 @@
 # Date created:		9 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id$
+# $Id: Makefile,v 1.9 1996/08/10 02:10:11 chuckr Exp $
 #
 
 DISTNAME=	transfig.3.1.2
@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://ftp.x.org/contrib/applications/drawing_tools/transfig/ \
 
 MAINTAINER=	chuckr@freebsd.org
 
-LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
+		jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg
 
 USE_IMAKE=	yes
 
