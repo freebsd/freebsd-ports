@@ -1,0 +1,23 @@
+Index: src/main.c
+diff -u src/main.c.orig src/main.c
+--- src/main.c.orig	Wed Jan  2 06:10:49 2002
++++ src/main.c	Tue Feb 12 10:06:21 2002
+@@ -37,7 +37,7 @@
+ kvm_t	*kvmd = NULL;
+ char	errbuf[_POSIX2_LINE_MAX];
+ #endif
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) && defined(__i386__)
+ extern void scan_for_sensors();
+ #endif
+ 
+@@ -1804,7 +1804,9 @@
+ 		}
+ #endif
+ #if defined(__FreeBSD__)
++#if defined(__i386__)
+ 	scan_for_sensors();
++#endif
+ 	if (setuid(getuid()) != 0)
+ 		{
+ 		fprintf(stderr, "Can't drop setuid privileges.");
