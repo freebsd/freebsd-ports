@@ -1,5 +1,5 @@
 --- lib/Net/XWhois.pm.orig	Sun Oct  6 05:37:55 2002
-+++ lib/Net/XWhois.pm	Tue Apr 29 09:54:06 2003
++++ lib/Net/XWhois.pm	Tue Apr 29 19:01:59 2003
 @@ -16,6 +16,7 @@
  # 
  # Changes:
@@ -93,3 +93,11 @@
      'tn'  => 'whois.ripe.net',      'tr'  => 'whois.ripe.net',
      'tw'  => 'whois.twnic.net',
      'ua'  => 'whois.ripe.net',      
+@@ -557,6 +596,7 @@
+     $self->{ Domain }=~s/^www\.//; #trim leading www. if present; internic doesn't like it
+     print "looking up ", $self->{ Domain }, " on ", $self->{ Server }, "\n" if ($self->{ Verbose });
+     
++    my $domain = $self->{ Domain };
+     #see if we already have a response in the cache, unless told not to
+     unless ( $self->{ Nocache } ) {
+       READCACHE: {
