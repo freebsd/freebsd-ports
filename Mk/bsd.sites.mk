@@ -109,7 +109,6 @@ MASTER_SITE_KDE+=	\
 
 MASTER_SITE_MOZILLA+= \
 	ftp://ftp.mozilla.org/pub/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/mozilla/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
@@ -117,8 +116,8 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
 	ftp://ftp.sunsite.kth.se/archive/www/ftp.mozilla.org/%SUBDIR%/ \
 	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/%SUBDIR%/ \
-	ftp://ftp.is.co.za/networking/info-service/www/clients/netscape/mozilla/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/ \
+	ftp://ftp.is.co.za/networking/info-service/www/clients/netscape/mozilla/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,}
 
 MASTER_SITE_NETBSD+=	\
@@ -126,7 +125,6 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.planix.com/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
 	ftp://netbsd.stevens-tech.edu/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://download.sourceforge.net/pub/mirrors/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://river.styx.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://mirror.inet.tele.dk/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
