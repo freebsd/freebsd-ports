@@ -21,7 +21,9 @@ MANCOMPRESSED=	yes
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${.CURDIR}/src/* ${WRKSRC}
+.for i in Makefile nologinmsg.c nologinmsg.8 pathnames.h
+	@${CP} ${FILESDIR}/${i} ${WRKSRC}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/nologinmsg.8 \
