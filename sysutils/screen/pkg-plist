@@ -1,7 +1,4 @@
 bin/screen
-@unexec install-info --delete %D/info/screen.info %D/info/dir
-info/screen.info
-@exec install-info %D/info/screen.info %D/info/dir
 share/screen/utf8encodings/01
 share/screen/utf8encodings/02
 share/screen/utf8encodings/03
