@@ -8,6 +8,9 @@ share/themes/Xfce-basic/gtk-2.0/gtkrc
 share/themes/Xfce-curve/ICON.png
 share/themes/Xfce-curve/README.html
 share/themes/Xfce-curve/gtk-2.0/gtkrc
+share/themes/Xfce-kde2/ICON.png
+share/themes/Xfce-kde2/README.html
+share/themes/Xfce-kde2/gtk-2.0/gtkrc
 share/themes/Xfce-kolors/ICON.png
 share/themes/Xfce-kolors/README.html
 share/themes/Xfce-kolors/gtk-2.0/gtkrc
@@ -42,6 +45,8 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-light
 @dirrm share/themes/Xfce-kolors/gtk-2.0
 @dirrm share/themes/Xfce-kolors
+@dirrm share/themes/Xfce-kde2/gtk-2.0
+@dirrm share/themes/Xfce-kde2
 @dirrm share/themes/Xfce-curve/gtk-2.0
 @dirrm share/themes/Xfce-curve
 @dirrm share/themes/Xfce-basic/gtk-2.0
