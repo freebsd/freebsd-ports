@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.6.4
+PORTVERSION=	1.6.5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -35,7 +35,7 @@ USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
