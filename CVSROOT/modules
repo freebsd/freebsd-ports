@@ -8672,7 +8672,6 @@ wol		ports/net/wol
 wolfpack	ports/games/wolfpack
 word2x		ports/textproc/word2x
 wordnet		ports/textproc/wordnet
-wordperfect	ports/editors/wordperfect
 wordplay	ports/games/wordplay
 worker		ports/x11-fm/worker
 workman		ports/audio/workman
