@@ -8,7 +8,8 @@
 PORTNAME=	netperf
 PORTVERSION=	2.1.3
 CATEGORIES=	benchmarks ipv6
-MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/
+MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/%SUBDIR%/
+MASTER_SITE_SUBDIR=. archive
 DISTNAME=	netperf-2.1pl3
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
