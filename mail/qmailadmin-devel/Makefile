@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.12
 CATEGORIES=	mail www
-MASTER_SITES=	http://www.inter7.com/qmailadmin/
+MASTER_SITES=	http://www.inter7.com/devel/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"CGI program for administering Qmail with vchkpw/vpopmail"
@@ -70,6 +70,7 @@ QMAIL_DIR?=	/var/qmail
 CONFIGURE_ARGS+=	\
 	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
+	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
 	--with-htmllibdir=${PREFIX}/share/qmailadmin \
 	--enable-cgipath=/${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
 	--enable-ezmlmidx=y

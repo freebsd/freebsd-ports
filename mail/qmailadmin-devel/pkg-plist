@@ -1,6 +1,4 @@
-share/qmailadmin/html/ChangeLog
 share/qmailadmin/html/add_alias.html
-share/qmailadmin/html/add_alias.html~
 share/qmailadmin/html/add_autorespond.html
 share/qmailadmin/html/add_forward.html
 share/qmailadmin/html/add_listmod.html
@@ -8,7 +6,8 @@ share/qmailadmin/html/add_listdig.html
 share/qmailadmin/html/add_listuser.html
 share/qmailadmin/html/add_mailinglist-idx.html
 share/qmailadmin/html/add_mailinglist-no-idx.html
-share/qmailadmin/html/add_user.html
+share/qmailadmin/html/add_user_noquota.html
+share/qmailadmin/html/add_user_quota.html
 share/qmailadmin/html/colortable
 share/qmailadmin/html/da
 share/qmailadmin/html/de
@@ -34,7 +33,8 @@ share/qmailadmin/html/main_menu.html
 share/qmailadmin/html/mod_autorespond.html
 share/qmailadmin/html/mod_dotqmail.html
 share/qmailadmin/html/mod_mailinglist-idx.html
-share/qmailadmin/html/mod_user.html
+share/qmailadmin/html/mod_user_quota.html
+share/qmailadmin/html/mod_user_noquota.html
 share/qmailadmin/html/no
 share/qmailadmin/html/pt-BR
 share/qmailadmin/html/pl
@@ -45,6 +45,7 @@ share/qmailadmin/html/show_autorespond.html
 share/qmailadmin/html/show_digest_subscribers.html
 share/qmailadmin/html/show_forwards.html
 share/qmailadmin/html/show_login.html
+share/qmailadmin/html/show_login_help.html
 share/qmailadmin/html/show_mailinglist.html
 share/qmailadmin/html/show_moderators.html
 share/qmailadmin/html/show_subscribers.html
@@ -63,7 +64,11 @@ share/qmailadmin/html/tr
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middleleft2.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middlelogin.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/middleright1.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/modify.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/pixel.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/radio-on.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/radio-off.png
+%%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/trash.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/upperleft.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/uppermiddle1.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/qmailadmin/uppermiddle2.png
