@@ -11,8 +11,8 @@
 -MANDIR=$(prefix)/man
 -AWK=/usr/bin/gawk
 +BINDIR=$(PREFIX)/bin
-+HASHDIR=$(PREFIX)/lib
-+VDIR=$(PREFIX)/lib
++HASHDIR=$(PREFIX)/share/ispell
++VDIR=$(PREFIX)/share/ispell
 +MANDIR=$(PREFIX)/man
 +AWK=/usr/bin/awk
  
