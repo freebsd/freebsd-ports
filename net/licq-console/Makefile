@@ -25,5 +25,9 @@ post-install:
 		${PREFIX}/etc/licq_console.conf.sample
 
 .include <bsd.port.pre.mk>
+.if defined(WITH_LICQ_DEVEL)
+.include "${PORTSDIR}/net/licq-devel/Makefile.inc"
+.else
 .include "${PORTSDIR}/net/licq/Makefile.inc"
+.endif
 .include <bsd.port.post.mk>

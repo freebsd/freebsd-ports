@@ -167,6 +167,7 @@ share/licq/qt-gui/skin.shale/status.png
 @dirrm share/licq/qt-gui/icons.mark
 @dirrm share/licq/qt-gui/icons.icq2
 @dirrm share/licq/qt-gui/icons.icq
+%%LICQ_DEVEL%%@dirrm share/licq/qt-gui/icons.dots
 @dirrm share/licq/qt-gui/icons.computer
 @dirrm share/licq/qt-gui/dock.pli
 @dirrm share/licq/qt-gui/dock.kde2

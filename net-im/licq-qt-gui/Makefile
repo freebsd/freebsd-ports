@@ -40,5 +40,9 @@ post-install:
 	${RM} -rf ${PREFIX}/share/licq/qt-gui/locale
 
 .include <bsd.port.pre.mk>
+.if defined(WITH_LICQ_DEVEL)
+.include "${PORTSDIR}/net/licq-devel/Makefile.inc"
+.else
 .include "${PORTSDIR}/net/licq/Makefile.inc"
+.endif
 .include <bsd.port.post.mk>
