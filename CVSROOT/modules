@@ -478,6 +478,7 @@ binutils	src/gnu/usr.bin/binutils
 biojava		ports/biology/biojava
 biorythm	ports/games/biorythm
 biosboot	src/sys/i386/boot/biosboot
+birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
 bitbox		ports/archivers/bitbox
