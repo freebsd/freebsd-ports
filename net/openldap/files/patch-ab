@@ -1,19 +1,11 @@
-*** build/platforms/freebsd2-gcc/Make-platform.orig	Mon Sep 21 14:44:56 1998
---- build/platforms/freebsd2-gcc/Make-platform	Mon Sep 21 14:53:32 1998
-***************
-*** 6,12 ****
-  #
-  # add any platform-specific overrides below here
-  #
-! EXTRACFLAGS=-O -g
-  LDBMBACKEND=-DLDBM_USE_DBBTREE
-  LDBMINCLUDE=-I/usr/include
-  
---- 6,12 ----
-  #
-  # add any platform-specific overrides below here
-  #
-! EXTRACFLAGS?=-O -g
-  LDBMBACKEND=-DLDBM_USE_DBBTREE
-  LDBMINCLUDE=-I/usr/include
-  
+--- build/platforms/freebsd2-gcc/Make-platform.orig	Wed Sep 16 11:55:05 1998
++++ build/platforms/freebsd2-gcc/Make-platform	Fri Oct 16 18:59:41 1998
+@@ -6,7 +6,7 @@
+ #
+ # add any platform-specific overrides below here
+ #
+-EXTRACFLAGS=-O -g
++EXTRACFLAGS?=-O -g
+ LDBMBACKEND=-DLDBM_USE_DBBTREE
+ LDBMINCLUDE=-I/usr/include
+ 
