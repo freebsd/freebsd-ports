@@ -9159,6 +9159,7 @@ userinfo	ports/sysutils/userinfo
 userlist	ports/sysutils/userlist
 usermin		ports/sysutils/usermin
 userneu		ports/sysutils/userneu
+userneu-devel	ports/sysutils/userneu-devel
 usogres		ports/databases/usogres
 ustl		ports/devel/ustl
 utah-glx	ports/graphics/utah-glx
