@@ -4,4 +4,4 @@ the real TTL of the packet and compare it to the TTL of the packet you
 received. This is intended to be used as a component of an IDS
 toolkit.
 
-WWW:	http://razor.bindview.com/tools/
+WWW:	http://razor.bindview.com/tools/desc/despoof_readme.html
