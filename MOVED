@@ -1448,3 +1448,4 @@ biology/act|biology/artemis|2005-03-12|act is redundant with new artemis
 multimedia/nautilus-media||2005-03-12|Deprecated, and no longer builds
 chinese/scim-chinese|chinese/scim-pinyin|2005-03-13|project renamed
 games/netpanzerdata|games/netpanzer-data|2005-03-13|port name changed
+databases/py-PySQLite|databases/py-PySQLite10|2005-03-14|renamed
