@@ -13,8 +13,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
-		nkf:${PORTSDIR}/japanese/nkf \
+BUILD_DEPENDS=	${LOCALBASE}/libexec/freepwing/catdump:${PORTSDIR}/japanese/freepwing \
+		${LOCALBASE}/share/doc/freepwing/fpwutils.mk:${PORTSDIR}/japanese/freepwing \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 RESTRICTED=	"The original dictionary is not free"
@@ -23,10 +23,24 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/eijiro-fpw${PORTVERSION}
 DICT_PATH?=	/cdrom
 SRCFILE?=	eijiro52.txt
-MAKE_ENV=	PORT_SRCFILE=${DICT_PATH}/${SRCFILE}
+
+# For eijiro included in a book sold by ALC Inc.
+# (http://www.alc.co.jp/alcshop/eng/eijiro/)
+.if exists(${DICT_PATH}/eijiro-original)
+BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+
+CDROM_PATH:=	${DICT_PATH}
+DICT_PATH:=	${WRKDIR}
+.else
+CDROM_PATH=	${NONEXISTENT}
+.endif
+
+MAKE_ARGS:=	PORT_SRCFILE=${DICT_PATH}/${SRCFILE}
 
 post-extract:
-	@if [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
+	@if [ -f ${CDROM_PATH}/eijiro-original/*.exe ]; then \
+	  lha xiw=${WRKDIR} ${CDROM_PATH}/eijiro-original/*.exe '*/${SRCFILE}'; \
+	elif [ ! -f ${DICT_PATH}/${SRCFILE} ]; then \
 	  ${ECHO} "###################################################"; \
 	  ${ECHO} "I cannot find a file ${DICT_PATH}/${SRCFILE}"; \
 	  ${ECHO} "Specify the Eijiro Dictionary file with the full path"; \
@@ -40,8 +54,8 @@ post-extract:
 	${CP} ${LOCALBASE}/share/doc/freepwing/fpwutils.mk ${WRKSRC}
 
 post-build:
-	cd ${WRKSRC}; nkf -eSd catalogs.sjis > catalogs.txt; \
-	fpwmake catalogs
+	cd ${WRKSRC}; ${CP} catalogs.sjis catalogs.txt; \
+	${SETENV} CATDUMPFLAGS="-e sjis" fpwmake catalogs
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/eijiro-fpw/eijiro/data
