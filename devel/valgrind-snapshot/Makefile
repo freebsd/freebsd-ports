@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-current-${PORTVERSION}
 MAINTAINER=	barner@gmx.de
 COMMENT=	A (memory) debugging and profiling tool
 
-CONFLICTS=	valgrind-352
+CONFLICTS=	valgrind-[0-9]*
 LATEST_LINK=	valgrind-snapshot
 
 ONLY_FOR_ARCHS=	i386

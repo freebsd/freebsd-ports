@@ -15,7 +15,7 @@ MAINTAINER=	barner@gmx.de
 COMMENT=	A (memory) debugging and profiling tool
 
 ONLY_FOR_ARCHS=	i386
-CONFLICTS=	valgrind-snapshot-*
+CONFLICTS=	valgrind-snapshot-[0-9]*
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
