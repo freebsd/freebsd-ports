@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.156 1998/07/12 23:58:18 steve Exp $
+# $Id: Makefile,v 1.157 1998/07/14 01:17:07 dburr Exp $
 #
 
     SUBDIR += 3dc
@@ -59,6 +59,7 @@
     SUBDIR += quakeserver
     SUBDIR += seabattle
     SUBDIR += sokoban
+    SUBDIR += spellcast
     SUBDIR += spider
     SUBDIR += starlanes
     SUBDIR += tank
