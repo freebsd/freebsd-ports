@@ -93,13 +93,31 @@ include/gtkhtml/htmlvspace.h
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.13
+lib/libgtkhtml.so.14
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/capplets/gtkhtml-properties.desktop
 share/gnome/gtkhtml/Editor.idl
 share/gnome/gtkhtml/gtkhtml-capplet.glade
 share/gnome/gtkhtml/gtkhtml-editor-properties.glade
+share/gnome/gtkhtml/icons/16_copy.png
+share/gnome/gtkhtml/icons/16_cut.png
+share/gnome/gtkhtml/icons/16_paste.png
+share/gnome/gtkhtml/icons/24_copy.png
+share/gnome/gtkhtml/icons/24_cut.png
+share/gnome/gtkhtml/icons/24_paste.png
+share/gnome/gtkhtml/icons/bulb.png
+share/gnome/gtkhtml/icons/html-viewer.png
+share/gnome/gtkhtml/icons/insert-image-16.png
+share/gnome/gtkhtml/icons/insert-image-24.png
+share/gnome/gtkhtml/icons/insert-link-16.png
+share/gnome/gtkhtml/icons/insert-link-24.png
+share/gnome/gtkhtml/icons/insert-rule-16.png
+share/gnome/gtkhtml/icons/insert-rule-24.png
+share/gnome/gtkhtml/icons/insert-table-16.png
+share/gnome/gtkhtml/icons/insert-table-24.png
+share/gnome/gtkhtml/icons/search-24.png
+share/gnome/gtkhtml/icons/search-and-replace-24.png
 share/gnome/gtkhtml/keybindingsrc.emacs
 share/gnome/gtkhtml/keybindingsrc.ms
 share/gnome/gtkhtml/keybindingsrc.xemacs
@@ -108,9 +126,16 @@ share/gnome/html/gtkhtml-sections.txt
 share/gnome/html/gtkhtml.hierarchy
 share/gnome/html/gtkhtml.sgml
 share/gnome/html/gtkhtml.types
+share/gnome/html/gtkhtml/gtkhtml-gtkhtml-enums.html
+share/gnome/html/gtkhtml/gtkhtml-gtkhtml-stream.html
+share/gnome/html/gtkhtml/gtkhtml-gtkhtml-types.html
+share/gnome/html/gtkhtml/gtkhtml-gtkhtmlembedded.html
+share/gnome/html/gtkhtml/gtkhtml.html
+share/gnome/html/gtkhtml/index.html
+share/gnome/html/gtkhtml/license.html
+share/gnome/html/gtkhtml/r27.html
 share/gnome/oaf/GNOME_GtkHTML_EBrowser.oaf
 share/gnome/oaf/GNOME_GtkHTML_Editor.oaf
-share/gnome/oaf/GNOME_GtkHTML_Editor.oaf.in.in
 share/gnome/ui/GNOME_GtkHTML_Editor.xml
 share/locale/az/LC_MESSAGES/gtkhtml.mo
 share/locale/cs/LC_MESSAGES/gtkhtml.mo
@@ -127,6 +152,7 @@ share/locale/ja/LC_MESSAGES/gtkhtml.mo
 share/locale/ko/LC_MESSAGES/gtkhtml.mo
 share/locale/lt/LC_MESSAGES/gtkhtml.mo
 share/locale/nl/LC_MESSAGES/gtkhtml.mo
+share/locale/nn/LC_MESSAGES/gtkhtml.mo
 share/locale/no/LC_MESSAGES/gtkhtml.mo
 share/locale/pl/LC_MESSAGES/gtkhtml.mo
 share/locale/pt_BR/LC_MESSAGES/gtkhtml.mo
@@ -136,7 +162,9 @@ share/locale/sl/LC_MESSAGES/gtkhtml.mo
 share/locale/sv/LC_MESSAGES/gtkhtml.mo
 share/locale/tr/LC_MESSAGES/gtkhtml.mo
 share/locale/uk/LC_MESSAGES/gtkhtml.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gtkhtml.mo
 @dirrm share/gnome/html/gtkhtml
+@dirrm share/gnome/gtkhtml/icons
 @dirrm share/gnome/gtkhtml
 @dirrm share/gnome/control-center/capplets
 @dirrm include/gtkhtml
