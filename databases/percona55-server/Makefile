@@ -7,15 +7,18 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.32
+PORTREVISION?=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
-		http://www.mysql.net/Downloads/MySQL-3.23/ \
-		http://mysql.he.net/Downloads/MySQL-3.23/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.23/
-DISTNAME=	mysql-${PORTVERSION}
+MASTER_SITES=	http://www.kernelnotes.de/MySQL/Downloads/%SUBDIR%/ \
+		http://www.mysql.net/Downloads/%SUBDIR%/ \
+		http://mysql.he.net/Downloads/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR=	MySQL-3.23
+DISTFILES=	mysql-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	dirk@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/mysql-${PORTVERSION}
 SLAVEDIRS=	databases/mysql323-client
 MASTERPORTNAME=	mysql-server
 DB_DIR?=	/var/db/mysql
@@ -47,9 +50,16 @@ CXXFLAGS+=	-fno-exceptions
 
 # MySQL-Server part
 .if !defined(CLIENT_ONLY)
+MASTER_SITE_SUBDIR+=	db
+DISTFILES+=	db-${BDBVERSION}${EXTRACT_SUFX}
+
 RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client
 
+BDBVERSION=	3.2.3h
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+
+pre-configure:
+	cd ${WRKSRC} && ${LN} -s ../db-${BDBVERSION}
 
 post-patch:
 	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
