@@ -2041,6 +2041,7 @@ gtk-qn-x11-theme	ports/x11-toolkits/gtk-qn-x11-theme
 gtk-theme-switch ports/x11/gtk-theme-switch
 gtk-zenith-theme	ports/x11-toolkits/gtk-zenith-theme
 gtk12		ports/x11-toolkits/gtk12
+gtk12-apireference	ports/x11-toolkits/gtk12-apireference
 gtk13		ports/x11-toolkits/gtk13
 gtkabale	ports/games/gtkabale
 gtkada		ports/x11-toolkits/gtkada
