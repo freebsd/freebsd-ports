@@ -5,7 +5,6 @@
 %%RUBY_SITELIBDIR%%/rexml/doctype.rb
 %%RUBY_SITELIBDIR%%/rexml/document.rb
 %%RUBY_SITELIBDIR%%/rexml/element.rb
-%%RUBY_SITELIBDIR%%/rexml/entity.rb
 %%RUBY_SITELIBDIR%%/rexml/functions.rb
 %%RUBY_SITELIBDIR%%/rexml/instruction.rb
 %%RUBY_SITELIBDIR%%/rexml/namespace.rb
@@ -29,9 +28,6 @@
 @dirrm %%RUBY_SITELIBDIR%%/rexml/dtd
 @dirrm %%RUBY_SITELIBDIR%%/rexml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/changelog.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/credits.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/faq.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/index.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/docs/tutorial.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rexml/docs
