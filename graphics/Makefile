@@ -183,6 +183,7 @@
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics3
     SUBDIR += kimagemapeditor
+    SUBDIR += kimdaba
     SUBDIR += kisomandel
     SUBDIR += kix-kmod
     SUBDIR += kludge3d

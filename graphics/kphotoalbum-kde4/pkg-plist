@@ -1,0 +1,192 @@
+bin/kimdaba
+share/applications/kde/kimdaba.desktop
+share/apps/kimdaba/default-setup
+share/apps/kimdaba/demo/img001.jpg
+share/apps/kimdaba/demo/img002.jpg
+share/apps/kimdaba/demo/img003.jpg
+share/apps/kimdaba/demo/img004.jpg
+share/apps/kimdaba/demo/img005.jpg
+share/apps/kimdaba/demo/img006.jpg
+share/apps/kimdaba/demo/img007.jpg
+share/apps/kimdaba/demo/img008.jpg
+share/apps/kimdaba/demo/img009.jpg
+share/apps/kimdaba/demo/img010.jpg
+share/apps/kimdaba/demo/img011.jpg
+share/apps/kimdaba/demo/img012.jpg
+share/apps/kimdaba/demo/img013.jpg
+share/apps/kimdaba/demo/img014.jpg
+share/apps/kimdaba/demo/img015.jpg
+share/apps/kimdaba/demo/img016.jpg
+share/apps/kimdaba/demo/img017.jpg
+share/apps/kimdaba/demo/img018.jpg
+share/apps/kimdaba/demo/img019.jpg
+share/apps/kimdaba/demo/img020.jpg
+share/apps/kimdaba/demo/img021.jpg
+share/apps/kimdaba/demo/img022.jpg
+share/apps/kimdaba/demo/img023.jpg
+share/apps/kimdaba/demo/img024.jpg
+share/apps/kimdaba/demo/index.xml
+share/apps/kimdaba/icons/hicolor/16x16/actions/ellipsetool.png
+share/apps/kimdaba/icons/hicolor/16x16/actions/linetool.png
+share/apps/kimdaba/icons/hicolor/16x16/actions/recttool.png
+share/apps/kimdaba/icons/hicolor/16x16/actions/selecttool.png
+share/apps/kimdaba/icons/hicolor/16x16/actions/texttool.png
+share/apps/kimdaba/infobox.js
+share/apps/kimdaba/kimdabaui.rc
+share/apps/kimdaba/pics/multiconfig.jpg
+share/apps/kimdaba/pics/search.jpg
+share/apps/kimdaba/pics/splash.png
+share/apps/kimdaba/tips
+share/doc/HTML/en/kimdaba/browser-for-jesper.png
+share/doc/HTML/en/kimdaba/browser-for-persons.png
+share/doc/HTML/en/kimdaba/browser-with-images.png
+share/doc/HTML/en/kimdaba/browsing.docbook
+share/doc/HTML/en/kimdaba/chp-browsing.html
+share/doc/HTML/en/kimdaba/chp-misc.html
+share/doc/HTML/en/kimdaba/chp-options.html
+share/doc/HTML/en/kimdaba/chp-thumbnail-view.html
+share/doc/HTML/en/kimdaba/chp-typingIn.html
+share/doc/HTML/en/kimdaba/chp-viewer.html
+share/doc/HTML/en/kimdaba/common
+share/doc/HTML/en/kimdaba/delete-images.png
+share/doc/HTML/en/kimdaba/draw-on-image.png
+share/doc/HTML/en/kimdaba/edit-properies-menu.png
+share/doc/HTML/en/kimdaba/empty-browser-window.png
+share/doc/HTML/en/kimdaba/faq.html
+share/doc/HTML/en/kimdaba/image-config-window.png
+share/doc/HTML/en/kimdaba/index.cache.bz2
+share/doc/HTML/en/kimdaba/index.docbook
+share/doc/HTML/en/kimdaba/index.html
+share/doc/HTML/en/kimdaba/introduction.docbook
+share/doc/HTML/en/kimdaba/introduction.html
+share/doc/HTML/en/kimdaba/marking-zoom-rectangle.png
+share/doc/HTML/en/kimdaba/offline-mode.png
+share/doc/HTML/en/kimdaba/options-general.png
+share/doc/HTML/en/kimdaba/options-groups.png
+share/doc/HTML/en/kimdaba/options-member.png
+share/doc/HTML/en/kimdaba/options.docbook
+share/doc/HTML/en/kimdaba/options.html
+share/doc/HTML/en/kimdaba/redisplay-frames.png
+share/doc/HTML/en/kimdaba/search.png
+share/doc/HTML/en/kimdaba/setting-properties.docbook
+share/doc/HTML/en/kimdaba/thumbnail-view.docbook
+share/doc/HTML/en/kimdaba/thumbnailview.png
+share/doc/HTML/en/kimdaba/usa-as-a-member.png
+share/doc/HTML/en/kimdaba/viewer-contextmenu.png
+share/doc/HTML/en/kimdaba/viewer.docbook
+share/doc/HTML/en/kimdaba/viewer.png
+share/doc/HTML/en/kimdaba/zoomed-view.png
+share/doc/HTML/et/kimdaba/browsing.docbook
+share/doc/HTML/et/kimdaba/common
+share/doc/HTML/et/kimdaba/index.cache.bz2
+share/doc/HTML/et/kimdaba/index.docbook
+share/doc/HTML/et/kimdaba/introduction.docbook
+share/doc/HTML/et/kimdaba/options.docbook
+share/doc/HTML/et/kimdaba/setting-properties.docbook
+share/doc/HTML/et/kimdaba/thumbnail-view.docbook
+share/doc/HTML/et/kimdaba/viewer.docbook
+share/doc/HTML/sv/kimdaba/browser-for-jesper.png
+share/doc/HTML/sv/kimdaba/browser-for-persons.png
+share/doc/HTML/sv/kimdaba/browser-with-images.png
+share/doc/HTML/sv/kimdaba/browsing.docbook
+share/doc/HTML/sv/kimdaba/common
+share/doc/HTML/sv/kimdaba/delete-images.png
+share/doc/HTML/sv/kimdaba/draw-on-image.png
+share/doc/HTML/sv/kimdaba/edit-properies-menu.png
+share/doc/HTML/sv/kimdaba/empty-browser-window.png
+share/doc/HTML/sv/kimdaba/image-config-window.png
+share/doc/HTML/sv/kimdaba/index.cache.bz2
+share/doc/HTML/sv/kimdaba/index.docbook
+share/doc/HTML/sv/kimdaba/introduction.docbook
+share/doc/HTML/sv/kimdaba/marking-zoom-rectangle.png
+share/doc/HTML/sv/kimdaba/offline-mode.png
+share/doc/HTML/sv/kimdaba/options-general.png
+share/doc/HTML/sv/kimdaba/options-groups.png
+share/doc/HTML/sv/kimdaba/options-member.png
+share/doc/HTML/sv/kimdaba/options.docbook
+share/doc/HTML/sv/kimdaba/search.png
+share/doc/HTML/sv/kimdaba/setting-properties.docbook
+share/doc/HTML/sv/kimdaba/thumbnail-view.docbook
+share/doc/HTML/sv/kimdaba/thumbnailview.png
+share/doc/HTML/sv/kimdaba/usa-as-a-member.png
+share/doc/HTML/sv/kimdaba/viewer-contextmenu.png
+share/doc/HTML/sv/kimdaba/viewer.docbook
+share/doc/HTML/sv/kimdaba/viewer.png
+share/doc/HTML/sv/kimdaba/zoomed-view.png
+share/icons/hicolor/128x128/apps/kimdaba.png
+share/icons/hicolor/16x16/apps/kimdaba.png
+share/icons/hicolor/22x22/apps/kimdaba.png
+share/icons/hicolor/32x32/apps/kimdaba.png
+share/icons/hicolor/48x48/apps/kimdaba.png
+share/icons/hicolor/64x64/apps/kimdaba.png
+share/locale/cs/LC_MESSAGES/kimdaba.mo
+share/locale/da/LC_MESSAGES/kimdaba.mo
+share/locale/de/LC_MESSAGES/kimdaba.mo
+share/locale/en_GB/LC_MESSAGES/kimdaba.mo
+share/locale/es/LC_MESSAGES/kimdaba.mo
+share/locale/et/LC_MESSAGES/kimdaba.mo
+share/locale/fi/LC_MESSAGES/kimdaba.mo
+share/locale/it/LC_MESSAGES/kimdaba.mo
+share/locale/pt/LC_MESSAGES/kimdaba.mo
+share/locale/pt_BR/LC_MESSAGES/kimdaba.mo
+share/locale/ro/LC_MESSAGES/kimdaba.mo
+share/locale/sv/LC_MESSAGES/kimdaba.mo
+share/locale/tr/LC_MESSAGES/kimdaba.mo
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/et 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_GB 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kimdaba
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/et/kimdaba
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
+@dirrm share/doc/HTML/en/kimdaba
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kimdaba/pics
+@dirrm share/apps/kimdaba/icons/hicolor/16x16/actions
+@dirrm share/apps/kimdaba/icons/hicolor/16x16
+@dirrm share/apps/kimdaba/icons/hicolor
+@dirrm share/apps/kimdaba/icons
+@dirrm share/apps/kimdaba/demo
+@dirrm share/apps/kimdaba
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
+@unexec rmdir %D/share/applications 2>/dev/null || true
