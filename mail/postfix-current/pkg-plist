@@ -32,6 +32,7 @@ etc/postfix/sample-lmtp.cf
 etc/postfix/sample-local.cf
 etc/postfix/sample-main.cf
 etc/postfix/sample-master.cf
+etc/postfix/sample-mime.cf
 etc/postfix/sample-misc.cf
 etc/postfix/sample-pcre-access.cf
 etc/postfix/sample-pcre-body.cf
