@@ -53,8 +53,13 @@ man/man7/groff_mm.7.gz
 man/man7/groff_mmse.7.gz
 share/groff/eign
 share/groff/tmac/hyphen.us
+share/groff/tmac/hyphen.us-ru
 share/groff/tmac/tmac.an
 share/groff/tmac/tmac.andoc
+share/groff/tmac/tmac.groff_an
+share/groff/tmac/tmac.orig_me
+share/groff/tmac/tmac.vgrind
+share/groff/tmac/tcl.macros
 share/groff/tmac/tmac.pic
 share/groff/tmac/tmac.ps
 share/groff/tmac/tmac.psnew

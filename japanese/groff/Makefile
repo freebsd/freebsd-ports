@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.9 1997/01/24 10:18:53 asami Exp $
+# $Id: Makefile,v 1.10 1997/04/04 14:59:43 max Exp $
 #
 
 DISTNAME=	groff-1.10
@@ -16,7 +16,7 @@ PATCH_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
 PATCHFILES=	jgroff-0.99.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	graphite@taurus.bekkoame.or.jp
+MAINTAINER=	graphite@jp.freebsd.org
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -37,5 +37,19 @@ post-patch:
 		;; \
 	  esac; \
 	done
+
+post-install:
+	@${CP} -p /usr/share/tmac/tmac.an ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/tmac.andoc ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/tmac.groff_an ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/tmac.orig_me ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/tmac.vgrind ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/eqnrc ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/hyphen.us-ru ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/tcl.macros ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/troffrc ${PREFIX}/share/groff/tmac
+	@${CP} -p /usr/share/tmac/mdoc/doc-common ${PREFIX}/share/groff/tmac/mdoc
+	@${CP} -p /usr/share/tmac/mdoc/doc-syms ${PREFIX}/share/groff/tmac/mdoc
+	@/usr/bin/patch -d ${PREFIX}/share/groff/tmac < ${FILESDIR}/rc.diff
 
 .include <bsd.port.mk>
