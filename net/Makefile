@@ -220,6 +220,7 @@
     SUBDIR += sup
     SUBDIR += tac_plus4
     SUBDIR += tcpflow
+    SUBDIR += tcpmssd
     SUBDIR += tcpshow
     SUBDIR += tcptrace
     SUBDIR += tcserver
