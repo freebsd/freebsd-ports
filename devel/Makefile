@@ -705,6 +705,7 @@
     SUBDIR += shmap
     SUBDIR += showgrammar
     SUBDIR += shtool
+    SUBDIR += sigslot
     SUBDIR += silc-toolkit
     SUBDIR += sip
     SUBDIR += soup
