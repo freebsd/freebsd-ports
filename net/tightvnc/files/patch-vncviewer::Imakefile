@@ -1,5 +1,5 @@
---- vncviewer/Imakefile.orig	Sat Nov 24 16:30:55 2001
-+++ vncviewer/Imakefile	Sat Nov 24 16:32:38 2001
+--- vncviewer/Imakefile.orig	Tue Nov 13 05:31:34 2001
++++ vncviewer/Imakefile	Sat Dec  8 18:25:22 2001
 @@ -13,10 +13,10 @@
  DEFINES = -DMITSHM
  #endif
@@ -13,3 +13,9 @@
  
  DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
  LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
+@@ -40,4 +40,4 @@
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-ComplexProgramTarget(vncviewer)
++ComplexProgramTargetNoMan(vncviewer)
