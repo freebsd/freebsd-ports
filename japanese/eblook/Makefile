@@ -24,7 +24,7 @@ PLIST_SUB=	DOCDIR=${DOCDIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@[ ! -d ${PREFIX}/${DOCDIR} ] && ${MKDIR} ${PREFIX}/${DOCDIR}
+	@${MKDIR} ${PREFIX}/${DOCDIR}
 	@for i in AUTHORS COPYING ChangeLog NEWS README ; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${DOCDIR} ;\
 	done
