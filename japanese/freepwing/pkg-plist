@@ -3,14 +3,17 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseText.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/CharConv.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/ColorGraphic.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Control.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/EndWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Copyright.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/ColorGraphic.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWUtils.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Heading.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/KeyWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Menu.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Sound.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Text.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Word2.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FullUserChar.pm
@@ -22,24 +25,30 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Link.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/RefUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Reference.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Sort.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Sound.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Tag.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Text.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Word.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Word2.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING
+libexec/freepwing/catdump
 libexec/freepwing/cphier
 libexec/freepwing/fpwcontrol
+libexec/freepwing/fpwcgraph
 libexec/freepwing/fpwfullchar
 libexec/freepwing/fpwhalfchar
 libexec/freepwing/fpwindex
 libexec/freepwing/fpwlink
 libexec/freepwing/fpwsort
+libexec/freepwing/fpwsound
 libexec/freepwing/mkdirhier
 libexec/freepwing/perl.sh
 @dirrm libexec/freepwing
 share/doc/freepwing/catalogs/catalogs
 share/doc/freepwing/catalogs/catalogs.txt
+share/doc/freepwing/doc/catdump.txt
+share/doc/freepwing/doc/freepwing.css
 share/doc/freepwing/doc/freepwing.html
 share/doc/freepwing/doc/index.html
 share/doc/freepwing/fpwutils.mk

@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	freepwing
-PORTVERSION=	${VERSION:S/beta/.b/}
+PORTVERSION=	1.4.2
 CATEGORIES=	japanese textproc
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/ \
 		ftp://ftp.sra.co.jp/pub/misc/freepwing/old/
-DISTNAME=	${PORTNAME}-${VERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	taoka@FreeBSD.org
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
-
-VERSION=	1.3.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/doc
