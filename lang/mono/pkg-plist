@@ -1,3 +1,5 @@
+bin/al
+bin/al.exe
 bin/chktrust
 bin/chktrust.exe
 bin/cilc
@@ -24,6 +26,9 @@ bin/secutil
 bin/secutil.exe
 bin/signcode
 bin/signcode.exe
+bin/sn
+bin/soapsuds
+bin/soapsuds.exe
 bin/sqlsharp
 bin/sqlsharp.exe
 bin/wsdl
@@ -31,9 +36,11 @@ bin/wsdl.exe
 bin/xsd
 bin/xsd.exe
 etc/mono/DefaultWsdlHelpGenerator.aspx
+etc/mono/browscap.ini
 etc/mono/config
 etc/mono/machine.config
 include/mono/cil/opcode.def
+include/mono/interpreter/embed.h
 include/mono/io-layer/access.h
 include/mono/io-layer/atomic.h
 include/mono/io-layer/context.h
@@ -95,6 +102,7 @@ include/mono/utils/mono-digest.h
 include/mono/utils/mono-hash.h
 include/mono/utils/mono-logger.h
 include/mono/utils/mono-math.h
+include/mono/utils/mono-uri.h
 include/mono/utils/monobitset.h
 lib/Accessibility.dll
 lib/ByteFX.Data.dll
@@ -149,7 +157,9 @@ lib/System.Web.dll
 lib/System.Windows.Forms.dll
 lib/System.Xml.dll
 lib/System.dll
-lib/libgdiplus.dll.so
+lib/libmint.a
+lib/libmint.so
+lib/libmint.so.0
 lib/libmono-profiler-cov.a
 lib/libmono-profiler-cov.so
 lib/libmono-profiler-cov.so.0
@@ -157,6 +167,7 @@ lib/libmono.a
 lib/libmono.so
 lib/libmono.so.0
 lib/mscorlib.dll
+libdata/pkgconfig/mint.pc
 libdata/pkgconfig/mono.pc
 share/mono/cil/cil-opcodes.xml
 @dirrm share/mono/cil
@@ -166,6 +177,7 @@ share/mono/cil/cil-opcodes.xml
 @dirrm include/mono/metadata
 @dirrm include/mono/jit
 @dirrm include/mono/io-layer
+@dirrm include/mono/interpreter
 @dirrm include/mono/cil
 @dirrm include/mono
 @dirrm etc/mono
