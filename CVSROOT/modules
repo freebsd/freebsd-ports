@@ -8476,6 +8476,7 @@ wordplay	ports/games/wordplay
 worker		ports/x11-fm/worker
 workman		ports/audio/workman
 workplace	ports/x11-fm/workplace
+worldtools	ports/sysutils/worldtools
 wots		ports/sysutils/wots
 wping		ports/net/wping
 wprint		ports/print/wprint
