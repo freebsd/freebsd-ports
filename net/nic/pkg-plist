@@ -71,3 +71,4 @@ etc/horde/httpd.conf.nic
 @dirrm %%NICDIR%%/templates
 @dirrm %%NICDIR%%
 %%PORTDOCS%%@dirrm share/doc/nic
+@unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterNic; then rm -f %D/www/horde/config/registry.php.afterNic; mv %D/www/horde/config/registry.php.beforeNic %D/www/horde/config/registry.php; fi
