@@ -14,22 +14,28 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER=	yoichi@FreeBSD.org
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_BRANCH:S/.//}-${EMACS_PORT_NAME} \
+BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX} \
 		${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_BRANCH:S/.//}-${EMACS_PORT_NAME} \
+RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX} \
 		${LOCALBASE}/bin/ldcc:${PORTSDIR}/irc/liece-dcc
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-FLIM_BRANCH=	1.13
-FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_BRANCH}.FreeBSD-packages
+FLIM_TRUNK=	1.14
+FLIM_COOKIE=	flim-${EMACS_PORT_NAME}-${FLIM_TRUNK}.FreeBSD-packages
 
 EMACS_PORT_NAME?=	emacs21
 CONFIGURE_ARGS+=	--with-emacs=${EMACS_CMD} --datadir=${PREFIX}/${EMACS_ETCDIR}
 
 DIRSECTION?=		"The Emacs editor and associated tools"
 INFOENTRY?=		"* Liece: (liece).		IRC client on Emacsen."
+
+.if ${EMACS_PORT_NAME} == "emacs21"
+DEPPORT_SUFFIX=		
+.else
+DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
+.endif
 
 .if ${EMACS_PORT_NAME} == xemacs21-mule
 EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
