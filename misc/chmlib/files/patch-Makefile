@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Apr  5 23:57:17 2003
-+++ Makefile	Sun Apr  6 02:30:25 2003
+--- Makefile.orig	Thu Oct 10 12:25:54 2002
++++ Makefile	Thu Jun 19 21:34:15 2003
 @@ -7,11 +7,11 @@
  # Note: LDFLAGS must contain -lpthread if you are using -DCHM_MT.
  #
@@ -9,7 +9,7 @@
 -INSTALLPREFIX=/usr/local/
 -CC=gcc-3.2
 -LD=gcc-3.2
-+CFLAGS+=-DCHM_MT -DCHM_USE_PREAD -DCHM_USE_IO64 -DDMALLOC_DISABLE
++CFLAGS+=-DCHM_MT -DDMALLOC_DISABLE
 +LDFLAGS=${PTHREAD_LIBS}
 +INSTALLPREFIX=${PREFIX}
 +#CC=gcc-3.2
