@@ -9,8 +9,16 @@ etc/oaf/oaf-config.xml.sample
 etc/oafConf.sh
 include/liboaf/liboaf-version.h
 include/liboaf/liboaf.h
+include/liboaf/oaf-actid.h
+include/liboaf/oaf-activate.h
+include/liboaf/oaf-async.h
 include/liboaf/oaf-factory-suppress.h
 include/liboaf/oaf-factory.h
+include/liboaf/oaf-mainloop.h
+include/liboaf/oaf-plugin.h
+include/liboaf/oaf-registration.h
+include/liboaf/oaf-servreg.h
+include/liboaf/oaf-util.h
 include/liboaf/oaf.h
 lib/liboaf.a
 lib/liboaf.so
@@ -22,10 +30,20 @@ share/gnome/oaf/empty.oafinfo
 share/gnome/oaf/oafd.oafinfo
 share/locale/da/LC_MESSAGES/oaf.mo
 share/locale/de/LC_MESSAGES/oaf.mo
+share/locale/es/LC_MESSAGES/oaf.mo
+share/locale/fi/LC_MESSAGES/oaf.mo
 share/locale/fr/LC_MESSAGES/oaf.mo
+share/locale/ga/LC_MESSAGES/oaf.mo
+share/locale/gl/LC_MESSAGES/oaf.mo
+share/locale/it/LC_MESSAGES/oaf.mo
+share/locale/ja/LC_MESSAGES/oaf.mo
+share/locale/ko/LC_MESSAGES/oaf.mo
 share/locale/no/LC_MESSAGES/oaf.mo
 share/locale/ru/LC_MESSAGES/oaf.mo
+share/locale/sl/LC_MESSAGES/oaf.mo
+share/locale/sv/LC_MESSAGES/oaf.mo
 share/locale/tr/LC_MESSAGES/oaf.mo
+share/locale/uk/LC_MESSAGES/oaf.mo
 @dirrm share/gnome/oaf/html/liboaf
 @dirrm share/gnome/oaf/html
 @unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
