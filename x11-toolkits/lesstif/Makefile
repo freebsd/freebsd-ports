@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.13 1997/09/08 08:34:13 tg Exp $
+# $Id: Makefile,v 1.14 1997/11/20 08:15:12 tg Exp $
 #
 
 DISTNAME=	lesstif-0.82
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 #	see below for shared lib version information
 
+MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
 GNU_CONFIGURE=  yes
 USE_X11=	yes
 # change this and remove the strip statement in post-install for debugging
