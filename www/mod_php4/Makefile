@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	mod_php4
+PORTNAME=	mod_php4
 PORTVERSION=	4.3.0
-PORTREVISION?=	0
-CATEGORIES?=	www
+PORTREVISION=	0
+CATEGORIES=	www
 MASTER_SITES=	http://us.php.net/${PHP_DISTDIR}/ \
 		http://php.he.net/${PHP_DISTDIR}/ \
 		http://www.php3.de/${PHP_DISTDIR}/ \
@@ -22,17 +22,13 @@ DISTNAME=	php-${PORTVERSION}
 
 MAINTAINER=	dirk@FreeBSD.org
 
-.if !defined(STANDALONE)
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 .if defined(WITH_APACHE2)
 LIB_DEPENDS=	pth.14:${PORTSDIR}/devel/pth
 .endif
-.endif
 
 PHP_DISTDIR=	distributions
-
-SLAVEDIRS=	lang/php4
 
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
@@ -48,14 +44,6 @@ APXS?=		${LOCALBASE}/sbin/apxs
 IS_INTERACTIVE=	yes
 .endif
 
-.if defined(STANDALONE)
-CONFIGURE_ARGS=	--with-config-file-path=${PREFIX}/etc/php.standalone \
-		--disable-pear \
-		--enable-discard-path \
-		--with-readline=/usr
-
-MAKE_ENV=	STANDALONE="${STANDALONE}"
-.else
 .if defined(WITH_APACHE2)
 CONFIGURE_ARGS=	--with-apxs2=${PREFIX}/sbin/apxs \
 		--with-tsrm-pth
@@ -66,10 +54,8 @@ CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs
 PLIST_SUB=	MOD_DIR=libexec/apache \
 		NON=non-
 .endif
-CONFIGURE_ARGS+=--with-config-file-path=${PREFIX}/etc
-.endif
-
-CONFIGURE_ARGS+=--enable-versioning \
+CONFIGURE_ARGS+=--with-config-file-path=${PREFIX}/etc \
+		--enable-versioning \
 		--with-regex=system \
 		--without-gd \
 		--without-mysql
@@ -85,20 +71,14 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.php
-.if !defined(STANDALONE) && !defined(WITH_APACHE2)
+.if !defined(WITH_APACHE2)
 	@${ECHO_CMD} "Define WITH_APACHE2 to build mod_php4 as an apache2 module."
 	@${ECHO_CMD} ""
 .endif
 
 post-install:
-.if !defined(STANDALONE)
 	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc
-.else
-	@${MKDIR} ${PREFIX}/etc/php.standalone
-	@${INSTALL_DATA} ${WRKSRC}/php.ini-dist ${PREFIX}/etc/php.standalone
-.endif
 
-.if !defined(STANDALONE)
 	@${ECHO_CMD} "*****************************************************************************"
 	@${ECHO_CMD} "Make sure the mime.types are connected to the php module properly and"
 	@${ECHO_CMD} "index.php is part of your DirectoryIndex."
@@ -111,7 +91,6 @@ post-install:
 	@${ECHO_CMD} "AddType application/x-httpd-php-source .phps"
 	@${ECHO_CMD} "[...]"
 	@${ECHO_CMD} "*****************************************************************************"
-.endif
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
