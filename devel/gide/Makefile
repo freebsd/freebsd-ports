@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	unstable/sources/gIDE
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	xml-i18n-update:${PORTSDIR}/textproc/xml-i18-tools
+BUILD_DEPENDS=	xml-i18n-update:${PORTSDIR}/textproc/xml-i18n-tools
 LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl \
 		gbf.0:${PORTSDIR}/devel/gnomebuild \
 		gdf.0:${PORTSDIR}/devel/gnomedebug
