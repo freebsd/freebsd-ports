@@ -7,11 +7,12 @@
 #
 
 PORTNAME=	dynamechs
-PORTVERSION=	4.0p1
+PORTVERSION=	4.0.p1
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/p/pre/}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -22,6 +23,9 @@ MAKE_ENV=	OPENGLINCDIR="${X11BASE}/include" \
 		CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${PTHREAD_LIBS}"
 ALL_TARGET=	freebsd
+
+do-configure:
+	@${CP} -f ${FILESDIR}/make.platform.freebsd ${WRKSRC}/make
 
 do-install:
 .for dir in dm dmu dmGL
