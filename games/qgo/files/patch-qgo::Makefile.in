@@ -1,5 +1,5 @@
---- qgo/Makefile.in.orig	Thu Dec 11 08:40:40 2003
-+++ qgo/Makefile.in	Tue Dec 16 02:00:51 2003
+--- qgo/Makefile.in.orig	Tue Feb 10 07:32:13 2004
++++ qgo/Makefile.in	Tue Feb 10 13:27:04 2004
 @@ -235,7 +235,7 @@
  KDE_OPTIONS = qtonly
  qgo_LDADD = ./src/libsrc.a $(LIB_QPE) $(LIB_QT) $(LIBSOCKET)
@@ -7,7 +7,7 @@
 -SUBDIRS = src templates 
 +SUBDIRS = src
  
- EXTRA_DIST = filenew.xpm filesave.xpm fileopen.xpm 
+ EXTRA_DIST = filenew.xpm filesave.xpm fileopen.xpm ChangeLog 
  
 @@ -266,6 +266,11 @@
  #>+ 1
@@ -18,6 +18,6 @@
 +LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
 +CCLD = $(CC)
 +LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@
- DIST_COMMON =  Makefile.am Makefile.in
+ DIST_COMMON =  ChangeLog Makefile.am Makefile.in
  
  

@@ -14,6 +14,7 @@ share/qGo/sounds/tictoc.wav
 share/qGo/translations/qgo_de.qm
 share/qGo/translations/qgo_fr.qm
 share/qGo/translations/qgo_it.qm
+share/qGo/translations/qgo_nl.qm
 @dirrm share/qGo/translations
 @dirrm share/qGo/sounds
 @dirrm share/qGo/pics
