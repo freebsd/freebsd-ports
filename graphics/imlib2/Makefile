@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_LIBLTDL=	yes
 USE_LIBTOOL_VER=	15
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack pkgconfig gnometartet
+USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
