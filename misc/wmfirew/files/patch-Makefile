@@ -1,0 +1,38 @@
+$FreeBSD$
+
+--- Makefile.orig	Thu May 16 12:16:40 2002
++++ Makefile	Thu May 16 12:17:17 2002
+@@ -1,21 +1,20 @@
+-INCDIR	=	-I/usr/X11R6/include
+-LIBDIR	=	-L/usr/X11R6/lib
+-LIBS	=	-lXpm -lXext -lX11
+-OBJS	=	wmfirew.o ../wmgeneral/wmgeneral.o 
++CC ?= gcc
++CFLAGS += -c -Wall
++INCDIR = -I${X11BASE}/include
++LIBDIR = -L${X11BASE}/lib
++LIBS   = -lXpm -lXext -lX11
++OBJS =  wmfirew.o ../wmgeneral/wmgeneral.o
+ 
+ .c.o:
+-	cc -c -g -O2 -Wall -D$(shell echo `uname -s`) $< -o $*.o $(INCDIR)
+-
+-all: wmfirew
++	${CC} ${CFLAGS} ${INCDIR} -D${shell echo `uname -s`} $< -o $*.o
+ 
+ wmfirew: $(OBJS)
+-	cc -o wmfirew $^ $(LIBDIR) $(LIBS)
++	${CC} -o wmfirew $^ ${LIBDIR} ${LIBS}
++
++all: wmfirew
+ 
+ clean:
+-	for i in $(OBJS) ; do \
++	for i in ${OBJS}; do \
+ 		rm -f $$i; \
+ 	done
+-	rm -f wmfirew
+-
+-install:
+-	mv wmfirew /usr/local/bin
++	rm -f wmfirew core

@@ -286,6 +286,7 @@
     SUBDIR += wmScoreBoard
     SUBDIR += wmcp
     SUBDIR += wmessage
+    SUBDIR += wmfirew
     SUBDIR += wmjulia
     SUBDIR += wmmand
     SUBDIR += wmpal
