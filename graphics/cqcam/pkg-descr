@@ -1,1 +1,18 @@
-Color QUICK CAM frame grabber
+cqcam - Color Quickcam (PC/Parallel) control program
+
+Features:
+  * Automatic brightness and color adjustments
+  * Batchable output for webcams
+  * Support for "millions" (24bpp) and "billions" (32bpp) modes
+  * Nearly lossless on-the-fly despeckling (removal of the "Christmas
+    lights" effect)  
+  * X11 front-end with optional GTK+, XView, or Tk support and Floyd
+    dithering for 8bpp displays
+  * Support for images up to 640x480
+  * 24-bit PPM or JPEG output
+  * Streaming output for use as a continuous-feed webcam
+
+cqcam supports the Color Quickcam and Color Quickcam 2. It does not support 
+B&W Quickcams, the Quickclip, the VC, or the new Quickcam Home.
+
+WWW: http://www.cs.duke.edu/~reynolds/cqcam/
