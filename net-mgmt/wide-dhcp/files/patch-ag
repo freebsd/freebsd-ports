@@ -15,11 +15,11 @@
  	${CC} ${CFLAGS} -o relay ${OBJ} ${LDFLAGS}
 +
 +install: relay
-+	${INSTALL} -m 755 -s relay ${SBIN}/relay
++	${INSTALL} -c -m 755 -s relay ${SBIN}/relay
 +	cp relay.8 ${MAN}/man8/relay.8
-+	gzip ${MAN}/man8/relay.8
++	gzip -9nf ${MAN}/man8/relay.8
 +	cp dhcpdb.server.5 ${MAN}/man5/dhcpdb.server.5
-+	gzip ${MAN}/man5/dhcpdb.server.5
++	gzip -9nf ${MAN}/man5/dhcpdb.server.5
  
  relay.o:	relay.c common.h ../server/dhcp.h ../server/common_subr.h
  common_subr.o:	../server/common_subr.c ../server/dhcp.h common.h ../server/common_subr.h

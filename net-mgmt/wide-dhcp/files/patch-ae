@@ -18,13 +18,13 @@
  	${CC} ${CFLAGS} -o dhcps ${OBJ} ${LDFLAGS}
 +
 +install: dhcps
-+	${INSTALL} -m 755 -s dhcps ${SBIN}/dhcps
++	${INSTALL} -c -m 755 -s dhcps ${SBIN}/dhcps
 +	cp dhcpdb.pool.5 ${MAN}/man5/dhcpdb.pool.5
-+	gzip ${MAN}/man5/dhcpdb.pool.5
++	gzip -9nf ${MAN}/man5/dhcpdb.pool.5
 +	cp dhcpdb.relay.5 ${MAN}/man5/dhcpdb.relay.5
-+	gzip ${MAN}/man5/dhcpdb.relay.5
++	gzip -9nf ${MAN}/man5/dhcpdb.relay.5
 +	cp dhcps.8 ${MAN}/man8/dhcps.8
-+	gzip ${MAN}/man8/dhcps.8
++	gzip -9nf ${MAN}/man8/dhcps.8
  
  clean:
  	rm -f *~ *.o *core* dhcps
