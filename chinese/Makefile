@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1998/07/21 14:54:53 asami Exp $
+# $Id: Makefile,v 1.28 1998/10/08 15:38:20 vanilla Exp $
 #
 
     SUBDIR += CJK
@@ -26,6 +26,7 @@
     SUBDIR += pine4
     SUBDIR += rxvt
     SUBDIR += ted
+    SUBDIR += telnet
     SUBDIR += tin
     SUBDIR += xcin
 
