@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1999/06/23 03:48:22 nsayer Exp $
+# $Id: Makefile,v 1.94 1999/06/23 20:11:59 sada Exp $
 #
 
     SUBDIR += adcomplain
@@ -77,6 +77,7 @@
     SUBDIR += tkrat
     SUBDIR += wanderlust-emacs
     SUBDIR += wanderlust-emacs20
+    SUBDIR += wanderlust-mule
     SUBDIR += wmmail
     SUBDIR += wmpop3
     SUBDIR += xbuffy
