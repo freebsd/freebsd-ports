@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xfce4-icon-theme
 
     COMMENT = X Windows System themes
 
