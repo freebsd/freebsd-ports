@@ -64,6 +64,7 @@
     SUBDIR += splaytk
     SUBDIR += tclmidi
     SUBDIR += timidity
+    SUBDIR += timidity++
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += waveplay
