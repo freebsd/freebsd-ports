@@ -1,11 +1,11 @@
---- cliplibs/clip-odbc/configure.orig	Mon May 27 12:25:29 2002
-+++ cliplibs/clip-odbc/configure	Sat Sep 20 23:46:44 2003
-@@ -21,11 +21,11 @@
+--- cliplibs/clip-odbc/configure.orig	Fri Dec 26 11:34:59 2003
++++ cliplibs/clip-odbc/configure	Sat Apr 24 15:52:06 2004
+@@ -22,11 +22,11 @@
  LIBODBC=''
  LIBOOB=''
  
 -gcc -o test_odbc test_odbc.c -liodbc >/dev/null 2>&1 && LIBODBC='-liodbc' && echo 'iODBC driver manager were found'
-+gcc -o test_odbc test_odbc.c  -I/usr/local/include -L/usr/local/lib -liodbc >/dev/null 2>&1 && LIBODBC='-liodbc' && echo 'iODBC driver manager were found'
++gcc -o test_odbc test_odbc.c %%PTHREAD_CFLAGS%% -I/usr/local/include -L/usr/local/lib %%PTHREAD_LIBS%% -liodbc >/dev/null 2>&1 && LIBODBC='-liodbc' && echo 'iODBC driver manager were found'
  
  if [ -z "$LIBODBC" ]
  then
@@ -14,7 +14,7 @@
  fi
  
  if [ -z "$LIBODBC" ]
-@@ -36,6 +36,6 @@
+@@ -37,6 +37,6 @@
  
  gcc -o test_odbc test_odbc.c -L/usr/local/easysoft/oob/client -lesoobclient >/dev/null 2>&1 && LIBOOB='-L\/usr\/local\/easysoft\/oob\/client -lesoobclient' && echo 'ODBC-ODBC bridge client were found'
  

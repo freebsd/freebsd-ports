@@ -7,6 +7,7 @@
 
 PORTNAME=	clip
 PORTVERSION=	1.1.9.1
+PORTREVISION=	1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://ftp.lastik.ru/clip/		\
@@ -104,6 +105,8 @@ pre-configure:
 	-e "s|#!/bin/sh|#!${LOCALBASE}/bin/bash|"				\
 	-e "s|/usr/local|${LOCALBASE}|g"					\
 	-e "s|/usr/X11R6|${X11BASE}|g"
+	@${REINPLACE_CMD} -e "s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|"		\
+	-e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" ${WRKSRC}/cliplibs/clip-odbc/configure
 
 do-install:
 	${CP} -R ${WRKDIR}/cliproot ${PREFIX}/clip
