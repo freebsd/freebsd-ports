@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnomeprint
 PORTVERSION=	2.2.1.3
+PORTREVISION=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
@@ -23,9 +24,24 @@ USE_GNOME=	gnomeprefix gnomehack gnomehier libbonobo libartlgpl2 gtk20
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libcups.so)
+WITH_CUPS=	yes
+.endif
+
+.if defined(WITH_CUPS) && !defined(WITHOUT_CUPS)
+CONFIGURE_ARGS+=	--with-cups
+LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
+PLIST_SUB+=		CUPS:=""
+.else
+CONFIGURE_ARGS+=	--without-cups
+PLIST_SUB+=		CUPS:="@comment "
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
@@ -36,4 +52,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts
 	@${TOUCH} ${PREFIX}/etc/gnome/libgnomeprint-2.0/fonts/gnome-print.fontmap
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

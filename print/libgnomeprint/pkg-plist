@@ -31,9 +31,9 @@ include/libgnomeprint-2.2/libgnomeprint/private/gpa-utils.h
 lib/libgnomeprint-2-2.a
 lib/libgnomeprint-2-2.so
 lib/libgnomeprint-2-2.so.0
-lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.a
-lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so
-lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so.0
+%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.a
+%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so
+%%CUPS:%%lib/libgnomeprint/%%VERSION%%/modules/libgnomeprintcups.so.0
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-custom.so
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-file.so
 lib/libgnomeprint/%%VERSION%%/modules/transports/libgnomeprint-lpr.so
