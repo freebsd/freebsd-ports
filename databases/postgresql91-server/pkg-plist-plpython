@@ -1,0 +1,4 @@
+%%DOCSDIR%%/README-plpython
+lib/postgresql/plpython.so
+@unexec rmdir %D/lib/postgresql 2>/dev/null || true
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
