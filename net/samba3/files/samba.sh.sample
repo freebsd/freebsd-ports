@@ -86,7 +86,7 @@ stop_cmd="samba_stop"
 # Defaults
 nmbd_enable=${nmbd_enable:-"NO"}
 nmbd_flags=${nmbd_flags:-"-D"}
-command_args="${nmbd_flags} -s ${samba_config}"
+command_args="-s ${samba_config}"
 
 load_rc_config $name
 run_rc_command "$1"
@@ -101,7 +101,7 @@ stop_cmd="samba_stop"
 # Defaults
 smbd_enable=${smbd_enable:-"NO"}
 smbd_flags=${smbd_flags:-"-D"}
-command_args="${smbd_flags} -s ${samba_config}"
+command_args="-s ${samba_config}"
 
 load_rc_config $name
 run_rc_command "$1"
@@ -117,7 +117,7 @@ run_rc_command "$1"
 %%WINBIND%%# Defaults
 %%WINBIND%%winbindd_enable=${winbindd_enable:-"NO"}
 %%WINBIND%%winbindd_flags=${winbindd_flags:-""}
-%%WINBIND%%command_args="${winbindd_flags} -s ${samba_config}"
+%%WINBIND%%command_args="-s ${samba_config}"
 %%WINBIND%%
 %%WINBIND%%load_rc_config $name
 %%WINBIND%%run_rc_command "$1"
