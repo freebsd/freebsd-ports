@@ -1,0 +1,11 @@
+--- src/libw32dll/wine/Makefile.am.orig	Tue Mar 26 08:07:17 2002
++++ src/libw32dll/wine/Makefile.am	Sat May 25 10:25:26 2002
+@@ -4,6 +4,8 @@
+ 
+ ##
+ ##
++INCLUDES = @INCLUDES@ -I$(srcdir)/..
++
+ CFLAGS = @CFLAGS@ $(X_CFLAGS) -fno-omit-frame-pointer \
+ 	-Wmissing-prototypes -Wimplicit-function-declaration \
+ 	-DWIN32_PATH=\"@w32_path@\" -I$(srcdir)/.. -D__WINE__ \
