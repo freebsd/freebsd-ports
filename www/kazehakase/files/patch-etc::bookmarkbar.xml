@@ -1,5 +1,5 @@
---- etc/bookmarkbar.xml.orig	Wed Sep 15 06:08:15 2004
-+++ etc/bookmarkbar.xml	Tue Sep 28 11:51:13 2004
+--- etc/bookmarkbar.xml.orig	Thu Oct 28 19:38:33 2004
++++ etc/bookmarkbar.xml	Thu Oct 28 19:39:48 2004
 @@ -10,6 +10,20 @@
    </bookmark>
    <separator/>
