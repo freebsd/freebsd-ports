@@ -71,6 +71,7 @@
     SUBDIR += mreport
     SUBDIR += mutt
     SUBDIR += muttzilla
+    SUBDIR += nail
     SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += p5-IMAP-Admin
