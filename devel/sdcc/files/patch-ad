@@ -1,0 +1,65 @@
+*** sdcc51lib/Makefile.in.orig	Thu Aug 26 18:55:13 1999
+--- sdcc51lib/Makefile.in	Thu Aug 26 18:57:01 1999
+***************
+*** 63,69 ****
+  
+  models:
+  	for model in $(MODELS); do \
+! 	  mkdir $$model; \
+  	  $(MAKE) CFLAGS="$(CFLAGS) --model-$$model" objects; \
+  	  mv *.rel $$model; \
+  	done
+--- 63,69 ----
+  
+  models:
+  	for model in $(MODELS); do \
+! 	  $(INSTALL) -d -m 755 $$model; \
+  	  $(MAKE) CFLAGS="$(CFLAGS) --model-$$model" objects; \
+  	  mv *.rel $$model; \
+  	done
+***************
+*** 71,80 ****
+  # Compiling and installing everything and runing test
+  # ---------------------------------------------------
+  install: installdirs
+! 	$(CP) *.c $(datadir)/sdcc51lib/
+  	for model in $(MODELS); do \
+  	 [ -d $$model ] || $(MAKE) all; \
+! 	 $(CP) $$model/*.rel *.lib $(datadir)/sdcc51lib/$$model/; \
+  	done
+  
+  
+--- 71,80 ----
+  # Compiling and installing everything and runing test
+  # ---------------------------------------------------
+  install: installdirs
+! 	$(INSTALL) -c -m 644 *.c $(datadir)/sdcc51lib/
+  	for model in $(MODELS); do \
+  	 [ -d $$model ] || $(MAKE) all; \
+! 	 $(INSTALL) -c -m 644 $$model/*.rel *.lib $(datadir)/sdcc51lib/$$model/; \
+  	done
+  
+  
+***************
+*** 100,109 ****
+  # Creating installation directories
+  # ---------------------------------
+  installdirs:
+! 	[ -d $(datadir)/sdcc51lib ] || mkdir -p $(datadir)/sdcc51lib
+  	for model in $(MODELS); do \
+  	 [ -d $(datadir)/sdcc51lib/$$model ] || \
+! 	 mkdir -p $(datadir)/sdcc51lib/$$model; \
+  	done
+  
+  
+--- 100,109 ----
+  # Creating installation directories
+  # ---------------------------------
+  installdirs:
+! 	[ -d $(datadir)/sdcc51lib ] || $(INSTALL) -d -m 755 $(datadir)/sdcc51lib
+  	for model in $(MODELS); do \
+  	 [ -d $(datadir)/sdcc51lib/$$model ] || \
+! 	 $(INSTALL) -d -m 755 $(datadir)/sdcc51lib/$$model; \
+  	done
+  
+  

@@ -1,0 +1,51 @@
+diff -c -r ../sdcc218Ma.orig/cpp/cpplib.c cpp/cpplib.c
+*** ../sdcc218Ma.orig/cpp/cpplib.c	Wed May 26 15:06:08 1999
+--- cpp/cpplib.c	Wed Aug 25 12:51:57 1999
+***************
+*** 7452,7458 ****
+  #if defined(bsd4_4)
+  extern const char *const sys_errlist[];
+  #else
+! #if !defined(linux)
+  extern char *sys_errlist[];
+  #endif
+  #endif
+--- 7452,7458 ----
+  #if defined(bsd4_4)
+  extern const char *const sys_errlist[];
+  #else
+! #if !defined(linux) && !defined(__FreeBSD__)
+  extern char *sys_errlist[];
+  #endif
+  #endif
+diff -c -r ../sdcc218Ma.orig/gc/mark.c gc/mark.c
+*** ../sdcc218Ma.orig/gc/mark.c	Mon Nov 16 04:59:54 1998
+--- gc/mark.c	Wed Aug 25 12:44:35 1999
+***************
+*** 653,659 ****
+--- 653,663 ----
+  # ifdef MSWIN32
+    void __cdecl GC_push_one(p)
+  # else
++ #   if __FreeBSD__
++   void _GC_push_one(p)
++ #   else
+    void GC_push_one(p)
++ #   endif
+  # endif
+  word p;
+  {
+diff -c -r ../sdcc218Ma.orig/sdcc.src/SDCCicode.c sdcc.src/SDCCicode.c
+diff -c -r ../sdcc218Ma.orig/sdcc.src/SDCCval.c sdcc.src/SDCCval.c
+*** ../sdcc218Ma.orig/sdcc.src/SDCCval.c	Thu Jul  1 13:07:16 1999
+--- sdcc.src/SDCCval.c	Wed Aug 25 18:08:18 1999
+***************
+*** 290,296 ****
+      
+      /* if hex or octal then set the unsigned flag   */
+      if ( hex || octal ) {
+- 	SPEC_USIGN(val->type) = 1 ;
+  	sscanf(s,scanFmt,&sval);
+      } else
+  	sval = atol(s);
+--- 290,295 ----
