@@ -1,21 +1,49 @@
 # New ports collection makefile for:	gtksql
-# Version required:			0.2
+# Version required:			0.3
 # Date created:				19 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/20 05:28:38 taoka Exp $
 #
 
-DISTNAME=	gtksql-0.2
+DISTNAME=	gtksql-0.3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.multimania.com/bbrox/GtkSQL/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	domi@saargate.de
 
-LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10 \
-		pq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+.if defined(PACKAGE_BUILDING) && !defined(USE_MYSQL) && !defined(USE_PGSQL)
+USE_MYSQL=	yes
+.endif
+
+.if defined(USE_MYSQL)
+LIB_DEPENDS +=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
+.endif
+.if defined(USE_PGSQL)
+LIB_DEPENDS +=	pq.2:${PORTSDIR}/databases/postgresql
+.endif
 
 USE_X_PREFIX=	yes
+
+fetch-depends:
+.if !defined(USE_MYSQL) && !defined(USE_PGSQL)
+	@ ${ECHO} "You must specify which database to use, possible are:"
+	@ ${ECHO}
+	@ ${ECHO} "make USE_MYSQL=yes (for MySQL support)"
+	@ ${ECHO} "make USE_PGSQL=yes (for PostgreSQL support)"
+	@ ${ECHO} "make USE_MYSQL=yes USE_PGSQL=yes (for both MySQL and PostgreSQL support)"
+	@ ${FALSE}
+.endif
+
+do-configure:
+.if defined(USE_MYSQL)
+	@ ${PERL} -i -pe "s/^#MYSQL/MYSQL/g" ${WRKDIR}/${DISTNAME}/Makefile
+.endif
+.if defined(USE_PGSQL)
+	@ ${PERL} -i -pe "s/^#PGSQL/PGSQL/g" ${WRKDIR}/${DISTNAME}/Makefile
+.endif
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/gtksql ${PREFIX}/bin
