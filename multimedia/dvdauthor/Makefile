@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dvdauthor
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,9 +30,9 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/dvdauthor
-	${INSTALL_DATA} ${WRKSRC}/iso639.txt ${PREFIX}/share/doc/dvdauthor
+	${INSTALL_DATA} ${WRKSRC}/lib.txt ${PREFIX}/share/doc/dvdauthor
 	${INSTALL_DATA} ${WRKSRC}/menu.txt ${PREFIX}/share/doc/dvdauthor
-	for i in dvdauthor ex-title examples index manpages spumux; do \
+	for i in dvdauthor ex-title examples index languages manpages spumux; do \
 		${INSTALL_DATA} ${WRKSRC}/doc/$$i.html ${PREFIX}/share/doc/dvdauthor; \
 	done
 .endif
