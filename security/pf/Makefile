@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pf_freebsd
-PORTVERSION=	2.00
-PORTREVISION=	1
+PORTVERSION=	2.02
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
@@ -60,8 +59,9 @@ IGNORE=		"Kernel source files required"
 pre-fetch:
 	@${ECHO_MSG} "======================================================="
 	@${ECHO_MSG} "* If you have ALTQ support from:                      *"
-	@${ECHO_MSG} "*   http://www.nipsi.de/altq/index.html               *"
-	@${ECHO_MSG} "* You can may define WITH_ALTQ=yes to make use of it  *"
+	@${ECHO_MSG} "*   http://www.nipsi.de/altq/index.html          or   *"
+	@${ECHO_MSG} "*   http://www.rofug.ro/projects/freebsd-altq/        *"
+	@${ECHO_MSG} "* You can define WITH_ALTQ=yes to make use of it      *"
 	@${ECHO_MSG} "* Please define SYS_ALTQ to point to the patched src  *"
 	@${ECHO_MSG} "*                                                     *"
 	@${ECHO_MSG} "* e.g.: make WITH_ALTQ=yes SYS_ALTQ=/usr/src/sys.altq *"
