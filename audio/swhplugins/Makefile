@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	swhplugins
-PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTVERSION=	0.4.3
 CATEGORIES=	audio
 MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 # includes assember code
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
@@ -27,8 +26,9 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-fPIC -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	 --with-libintl-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 post-patch:
@@ -38,5 +38,6 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include <bits/nan.h>||g' \
 		${WRKSRC}/gverb/gverb-test.c
+	@${REINPLACE_CMD} -e 's|-lrt||g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
