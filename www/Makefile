@@ -343,6 +343,7 @@
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-Kwiki
     SUBDIR += p5-CGI-Minimal
+    SUBDIR += p5-CGI-SSI
     SUBDIR += p5-CGI-Session
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-Untaint
