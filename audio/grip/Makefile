@@ -18,7 +18,7 @@ LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 vte
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2 vte libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
