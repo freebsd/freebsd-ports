@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	mahjong
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	games net
-MASTER_SITES=	http://www.dcs.ed.ac.uk/home/jcb/stevens-bradfield/MahJong/Downloads/
+MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/
 DISTNAME=	mj-${PORTVERSION}-src
 
 MAINTAINER=	ijliao@FreeBSD.org
