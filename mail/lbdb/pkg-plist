@@ -8,6 +8,7 @@ libexec/lbdb_bbdb_query.el
 libexec/lbdb_lib
 libexec/munge
 libexec/munge-keeporder
+libexec/m_abook
 libexec/m_bbdb
 libexec/m_fido
 libexec/m_finger
