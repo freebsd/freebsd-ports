@@ -7612,6 +7612,7 @@ pear-sqlite	ports/databases/pear-sqlite
 pearpc		ports/emulators/pearpc
 pebrot		ports/net/pebrot
 pecl-fribidi	ports/converters/pecl-fribidi
+pecl-imagick	ports/graphics/pecl-imagick
 pecl-panda	ports/print/pecl-panda
 pecl-pdflib	ports/print/pecl-pdflib
 pecl-yaz	ports/net/pecl-yaz
