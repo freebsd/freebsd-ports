@@ -1,27 +1,23 @@
-*** agent/filter/logfile.c.orig	Thu Jan 26 17:06:23 1995
---- agent/filter/logfile.c	Sat Mar 23 02:42:02 1996
-***************
-*** 47,52 ****
---- 47,55 ----
-  # undef KERNEL
-  #endif
-  #include "confmagic.h"
-+ #ifdef _HAVE_PARAM_H
-+ #include <sys/param.h>
-+ #endif
-  
-  #define MAX_STRING	1024			/* Maximum length for logging string */
-  
-***************
-*** 176,183 ****
---- 179,188 ----
-  	 */
-  
-  #ifdef HAS_SYS_ERRLIST
-+ #if !(defined(BSD) && (BSD >= 199306))
-  	extern int sys_nerr;					/* Size of sys_errlist[] */
-  	extern char *sys_errlist[];				/* Maps error code to string */
-+ #endif
-  #endif
-  
-  #ifdef HAS_STRERROR
+--- agent/filter/logfile.c.orig	Fri Dec 27 00:53:50 1996
++++ agent/filter/logfile.c	Thu Jan 16 13:57:14 1997
+@@ -49,6 +49,9 @@
+ # include <sys/time.h>
+ # undef KERNEL
+ #endif
++#ifdef I_SYS_PARAM
++# include <sys/param.h>
++#endif
+ #include "confmagic.h"
+ 
+ #define MAX_STRING	1024			/* Maximum length for logging string */
+@@ -180,8 +183,10 @@
+ 	 */
+ 
+ #ifdef HAS_SYS_ERRLIST
++#if !(defined(BSD) && (BSD >= 199306))
+ 	extern int sys_nerr;					/* Size of sys_errlist[] */
+ 	extern char *sys_errlist[];				/* Maps error code to string */
++#endif
+ #endif
+ 
+ #ifdef HAS_STRERROR
