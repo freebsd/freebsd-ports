@@ -19,6 +19,7 @@
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cxterm
+    SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += gb2ps
     SUBDIR += gbscript
