@@ -6323,7 +6323,6 @@ p5-Mail-SPF-Query	ports/mail/p5-Mail-SPF-Query
 p5-Mail-Sender	ports/mail/p5-Mail-Sender
 p5-Mail-Sendmail	ports/mail/p5-Mail-Sendmail
 p5-Mail-SpamAssassin	ports/mail/p5-Mail-SpamAssassin
-p5-Mail-SpamAssassin-snapshot	ports/mail/p5-Mail-SpamAssassin-snapshot
 p5-Mail-Spool	ports/mail/p5-Mail-Spool
 p5-Mail-Tools	ports/mail/p5-Mail-Tools
 p5-Mail-Verify	ports/mail/p5-Mail-Verify
@@ -9764,7 +9763,6 @@ xbl		ports/games/xbl
 xblackjack	ports/games/xblackjack
 xblast		ports/games/xblast
 xblast-beta	ports/games/xblast-beta
-xblockout	ports/games/xblockout
 xblood		ports/games/xblood
 xbloody		ports/games/xbloody
 xbmbrowser	ports/graphics/xbmbrowser
