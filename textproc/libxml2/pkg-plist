@@ -79,6 +79,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/reader5.py
 %%PYTHON:%%share/doc/libxml2-python/examples/reader6.py
 %%PYTHON:%%share/doc/libxml2-python/examples/reader7.py
+%%PYTHON:%%share/doc/libxml2-python/examples/reader8.py
 %%PYTHON:%%share/doc/libxml2-python/examples/readererr.py
 %%PYTHON:%%share/doc/libxml2-python/examples/regexp.py
 %%PYTHON:%%share/doc/libxml2-python/examples/relaxng.py
