@@ -112,7 +112,6 @@ Maaate		ports/audio/Maaate
 MathPlanner	ports/editors/MathPlanner
 MuSE		ports/audio/muse
 NeTraMet	ports/net-mgmt/NeTraMet
-ORBacus		ports/devel/ORBacus
 ORBit		ports/devel/ORBit
 ORBit2		ports/devel/ORBit2
 OpenEXR		ports/graphics/OpenEXR
@@ -2956,7 +2955,6 @@ heyu		ports/misc/heyu
 hf6to4		ports/net/hf6to4
 hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
-hfsplusutils	ports/emulators/hfsplusutils
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
 hicolor-icon-theme	ports/misc/hicolor-icon-theme
@@ -4431,7 +4429,6 @@ libbonobouimm	ports/x11-toolkits/libbonobouimm
 libbt		ports/net/libbt
 libcabinet	ports/archivers/libcabinet
 libcaca		ports/graphics/libcaca
-libcache	ports/devel/libcache
 libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
@@ -4611,7 +4608,6 @@ libpathan	ports/textproc/libpathan
 libpcapnav	ports/net/libpcapnav
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
-libpdf++	ports/print/libpdf++
 libpdtp		ports/net/libpdtp
 libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
@@ -4740,7 +4736,6 @@ lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
-linguist	ports/devel/linguist
 linkcheck	ports/www/linkcheck
 linkchecker	ports/www/linkchecker
 links		ports/www/links
@@ -5969,7 +5964,6 @@ orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
 oregano		ports/cad/oregano
-orion		ports/www/orion
 oroborus	ports/x11-wm/oroborus
 ortep3		ports/biology/ortep3
 ortp		ports/net/ortp
@@ -7322,8 +7316,6 @@ p5-XML-XQL	ports/textproc/p5-XML-XQL
 p5-XML-XSH	ports/textproc/p5-XML-XSH
 p5-XML-XSLT	ports/textproc/p5-XML-XSLT
 p5-XML-XUpdate-LibXML	ports/textproc/p5-XML-XUpdate-LibXML
-p5-XML-Xerces	ports/textproc/p5-XML-Xerces
-p5-XML-Xerces-BagOfTricks	ports/textproc/p5-XML-Xerces-BagOfTricks
 p5-XPC		ports/net/p5-XPC
 p5-Xmms		ports/audio/p5-Xmms
 p5-YAML		ports/textproc/p5-YAML
@@ -8336,7 +8328,6 @@ q3server-ut	ports/games/q3server-ut
 q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
 qbrew		ports/misc/qbrew
-qc--		ports/lang/qc--
 qca-tls		ports/security/qca-tls
 qcad		ports/cad/qcad
 qcad-partslib	ports/cad/qcad-partslib
@@ -9171,7 +9162,6 @@ since		ports/misc/since
 sing		ports/net-mgmt/sing
 siod		ports/lang/siod
 sipcalc		ports/net-mgmt/sipcalc
-siphon		ports/security/siphon
 sipp		ports/net/sipp
 sipsak		ports/net/sipsak
 sirc		ports/irc/sirc
@@ -9350,7 +9340,6 @@ spin		ports/devel/spin
 spinner		ports/sysutils/spinner
 spiralloops	ports/audio/spiralloops
 spiralsynth	ports/audio/spiralsynth
-spiralsynthbaby	ports/audio/spiralsynthbaby
 spiralsynthmodular	ports/audio/spiralsynthmodular
 spirit		ports/devel/spirit
 spl		ports/lang/spl
@@ -10500,7 +10489,6 @@ xcheckers	ports/games/xcheckers
 xchm		ports/deskutils/xchm
 xchomp		ports/games/xchomp
 xcircuit	ports/cad/xcircuit
-xclass		ports/x11-toolkits/xclass
 xclasses	ports/x11-toolkits/xclasses
 xclip		ports/x11/xclip
 xcmd		ports/x11/xcmd
@@ -10970,7 +10958,6 @@ xtrojka		ports/games/xtrojka
 xtron		ports/games/xtron
 xtruco		ports/games/xtruco
 xtset		ports/x11/xtset
-xtt516		ports/comms/xtt516
 xtu		ports/x11-clocks/xtu
 xtuner		ports/audio/xtuner
 xtux		ports/games/xtux
@@ -11103,8 +11090,6 @@ zh-cnprint	ports/chinese/cnprint
 zh-cwtex	ports/chinese/cwtex
 zh-cwtexttf	ports/chinese/cwtexttf
 zh-cxterm	ports/chinese/cxterm
-zh-dictd	ports/chinese/dictd
-zh-dictd-database	ports/chinese/dictd-database
 zh-emacs20	ports/chinese/emacs20
 zh-enscript	ports/chinese/enscript
 zh-eterm	ports/chinese/eterm
