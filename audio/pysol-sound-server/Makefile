@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pysol-sound-server
-PORTVERSION=	3.00
-PORTREVISION=	2
+PORTVERSION=	3.01
+#PORTREVISION=	2
 CATEGORIES=	audio games
-MASTER_SITES=	http://www.oberhumer.com/opensource/pysol/download/ \
+MASTER_SITES=	http://www.pysol.org/download/pysol/ \
 		ftp://ftp.is.co.za/linux/distributions/gentoo/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
