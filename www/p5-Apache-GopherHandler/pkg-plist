@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Apache/GopherHandler.pm
+%%SITE_PERL%%/Apache/GopherHandler/TiedSocket.pm
+@dirrm %%SITE_PERL%%/Apache/GopherHandler
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2> /dev/null || true
