@@ -1,0 +1,13 @@
+--- nessus-install-cert.in.orig	Fri Sep 14 13:09:12 2001
++++ nessus-install-cert.in	Mon Oct  8 13:25:25 2001
+@@ -18,8 +18,8 @@
+ localstatedir=@localstatedir@
+ sharedstatedir=@sharedstatedir@
+ 
+-NESSUSPRIV="$localstatedir/nessus/CA"
+-NESSUSPUB="$sharedstatedir/nessus/CA"
++NESSUSPRIV="$localstatedir/CA"
++NESSUSPUB="$sharedstatedir/CA"
+ if [ ! -d "$NESSUSPRIV" ]; then
+     mkdir -p "$NESSUSPRIV"
+     chmod 700 "$NESSUSPRIV"
