@@ -2,6 +2,7 @@ PROGS!=	make -V BIN_PROGRAMS -f ${WRKSRC}/Makefile
 TESTS!=	make -V TEST_PROGRAMS -f ${WRKSRC}/Makefile
 OBJS!=	make -V LIBOBJS -f ${WRKSRC}/Makefile
 OBJS+=	gd_gif_in.o
+SRCS=	${OBJS:.o=.c}
 LIB=gd
 SHLIB_MAJOR=3
 SHLIB_MINOR=0
@@ -29,8 +30,8 @@ LDADD+=	-lX11
 # to run them all automaticly. So building tests is disabled here.	-mi
 all: lib${LIB}.a ${SHLIB_NAME} ${PROGS} # ${TESTS}
 
-lib${LIB}.a ${SHLIB_NAME}:
-	make LIB=${LIB} SRCS="${OBJS:.o=.c}" \
+lib${LIB}.a ${SHLIB_NAME}: ${SRCS}
+	make LIB=${LIB} SRCS="${SRCS}" \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
 		CFLAGS="${CFLAGS}" -ECFLAGS LDADD="${LDADD}" \
 		-f bsd.lib.mk ${.TARGET}
@@ -47,3 +48,7 @@ install:
 	cd ${.CURDIR} && ${INSTALL_DATA} ${INCS} ${PREFIX}/include/gd
 	cd ${.CURDIR} && ${INSTALL_PROGRAM} ${PROGS} "${PREFIX}/bin/"
 	${INSTALL_SCRIPT} "${.CURDIR}/bdftogd" "${PREFIX}/bin/"
+
+.if exists(${.CURDIR}/Makefile.fonts)
+.include "Makefile.fonts"
+.endif
