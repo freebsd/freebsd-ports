@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cosmodog.com/pic/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bms@spc.org
+MAINTAINER=	bofh@stabilis.ru
 COMMENT=	Driver for the Microchip Picstart Plus development programmer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
