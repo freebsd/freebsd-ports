@@ -25,7 +25,8 @@ site_perl=	${SITE_PERL}
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Xmms::Remote.3 \
+MAN3=		Xmms::Config.3 \
+		Xmms::Remote.3 \
 		Xmms::SongChange.3 \
 		Xmms.3 \
 		Bundle::Xmms.3
