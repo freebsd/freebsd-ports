@@ -1,9 +1,0 @@
---- IMdkit/lib/Makefile.orig	Sun Aug  1 00:51:25 2004
-+++ IMdkit/lib/Makefile	Sun Aug  1 00:51:29 2004
-@@ -1,6 +1,5 @@
- include ../../config.mak
- 
--CC = gcc
- #CFLAGS =  -c -O2 -fno-strength-reduce -Dlinux -D__i386__ -D_POSIX_C_SOURCE=199309L -D_POSIX_SOURCE -D_XOPEN_SOURCE=500L -D_BSD_SOURCE -D_SVID_SOURCE   -DFUNCPROTO=15 -DNARROWPROTO   -DUNIXCONN -DTCPCONN -DXIM_t -DTRANS_SERVER
- CFLAGS =  -c $(OPTFLAGS) -fno-strength-reduce -DXIM_t -DTRANS_SERVER
- INC = -I../include -I/usr/X11R6/include

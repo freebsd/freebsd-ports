@@ -1,88 +1,42 @@
---- Makefile.orig	Tue Jul 20 13:01:30 2004
-+++ Makefile	Thu Jul 29 03:09:13 2004
-@@ -1,5 +1,3 @@
--OPTFLAGS=-g
--
- include config.mak
- 
- .SUFFIXES:	.c .o .E
-@@ -7,9 +5,9 @@
- OBJS=gcin.o IC.o eve.o win0.o pho.o tsin.o win1.o util.o pho-util.o gcin-conf.o tsin-util.o \
-      win-sym.o intcode.o pho-sym.o win-int.o win-pho.o gcin-settings.o
- OBJS_TSLEARN=tslearn.o util.o gcin-conf.o pho-util.o tsin-util.o gcin-send.o pho-sym.o
--OBJS_phod2a=phod2a.o pho-util.o gcin-conf.o pho-sym.o
--OBJS_tsa2d=tsa2d.o gcin-send.o util.o pho-sym.o gcin-conf.o
--OBJS_phoa2d=phoa2d.o pho-sym.o gcin-send.o gcin-conf.o
-+OBJS_phod2a=phod2a.o pho-util.o pho-sym.o
-+OBJS_tsa2d=tsa2d.o util.o pho-sym.o
-+OBJS_phoa2d=phoa2d.o pho-sym.o
- OBJS_kbmcv=kbmcv.o pho-sym.o
- OBJS_tsd2a=tsd2a.o pho-sym.o
- OBJS_gcin_steup=gcin-setup.o gcin-conf.o util.o gcin-send.o gcin-settings.o
-@@ -26,7 +24,7 @@
+--- Makefile.orig	Sun Aug  1 18:20:13 2004
++++ Makefile	Mon Aug  2 23:22:49 2004
+@@ -27,7 +27,7 @@
  PROGS_CV=kbmcv
  
  all:	$(PROGS) $(DATA) $(PROGS_CV) gcin.spec
 -	make -C data
-+	gmake -C data
++	${MAKE} -C data
  
  gcin:      $(OBJS) $(IMdkitLIB)
  	$(CC) -o $@ $(OBJS) $(IMdkitLIB) $(LDFLAGS)
-@@ -34,28 +32,28 @@
- 	ln -sf $@ $@.test
- 
- tslearn:        $(OBJS_TSLEARN)
--	cc -o $@ $(OBJS_TSLEARN) $(LDFLAGS)
-+	$(CC) -o $@ $(OBJS_TSLEARN) $(LDFLAGS)
- 
- gcin-setup:     $(OBJS_gcin_steup)
--	cc -o $@ $(OBJS_gcin_steup) $(LDFLAGS)
-+	$(CC) -o $@ $(OBJS_gcin_steup) $(LDFLAGS)
- 
- phoa2d: $(OBJS_phoa2d)
--	cc -o $@ $(OBJS_phoa2d) $(LDFLAGS)
-+	$(CC) -o $@ $(OBJS_phoa2d)
- 
- phod2a: $(OBJS_phod2a)
--	cc -o $@ $(OBJS_phod2a) $(LDFLAGS)
-+	$(CC) -o $@ $(OBJS_phod2a)
- 
- tsa2d:  $(OBJS_tsa2d)
--	cc -o $@ $(OBJS_tsa2d) $(LDFLAGS)
-+	$(CC) -o $@ $(OBJS_tsa2d)
- 
- tsd2a:  $(OBJS_tsd2a)
--	cc -o $@ $(OBJS_tsd2a) $(LDFLAGS)
-+	$(CC) -o $@ $(OBJS_tsd2a)
- 
- kbmcv:  $(OBJS_kbmcv)
+@@ -56,7 +56,7 @@
  	$(CC) -o $@ $(OBJS_kbmcv)
  
  $(IMdkitLIB):
 -	make -C IMdkit/lib
-+	gmake -C IMdkit/lib
++	${MAKE} -C IMdkit/lib
  
  install:
  	install -d $(GCIN_TABLE_DIR)
-@@ -67,8 +65,8 @@
- 	install -s $(PROGS) $(bindir)
+@@ -67,8 +67,8 @@
+ 	install -d $(bindir)
  	install -d $(libdir)/menu
  	install -m 644 menu/* $(libdir)/menu
 -	make -C data install
 -	if [ $(prefix) = /usr/local ]; then \
-+	gmake -C data install
++	${MAKE} -C data install
 +	if [ $(prefix) != /usr/local ]; then \
  	   install -m 644 menu/* /usr/lib/menu; \
  	   which update-menus >& /dev/null && update-menus; \
  	   sh modify-XIM; \
-@@ -78,8 +76,8 @@
- 	   install -m 644 menu/* $(libdir)/menu; \
+@@ -80,8 +80,8 @@
+ 	   install -s $(PROGS) $(bindir); \
  	fi
  clean:
 -	make -C IMdkit clean
 -	make -C data clean
-+	gmake -C IMdkit clean
-+	gmake -C data clean
++	${MAKE} -C IMdkit clean
++	${MAKE} -C data clean
  	rm -f *.o *~ *.E config.mak tags core.* $(PROGS) $(PROGS_CV) $(DATA) .depend gcin.spec menu/*~
  	cd ..; tar cvfj gcin.tbz gcin
  
