@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freebsd-games
-PORTVERSION=	5.0
-PORTREVISION=	1
+PORTVERSION=	5.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=markm
@@ -51,12 +50,10 @@ MANCOMPRESSED=	maybe
 IGNOREFILES=	freebsd-games-5.0.tar.bz2
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile ${BUILD_WRKSRC}
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
 
 post-patch:
-	@${CP} ${FILESDIR}/misc.h ${WRKSRC}/sail
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
 		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|share/games|local/share/games|g' \
