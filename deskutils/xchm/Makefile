@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	pav@oook.cz
 COMMENT=	Windows HTML Help (.chm) viewer for UNIX
 
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel \
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel \
 		chm.0:${PORTSDIR}/misc/chmlib
 
 GNU_CONFIGURE=	yes

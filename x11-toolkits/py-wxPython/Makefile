@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}Src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	Python bindings for the wxWindows/GTK GUI toolkit
 
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-opengl
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wxPython

@@ -14,7 +14,7 @@ DISTNAME=	tv-${PORTVERSION}
 MAINTAINER=	tonym@biolateral.com.au
 COMMENT=	A phylogenetic tree viewer
 
-LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
+LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
