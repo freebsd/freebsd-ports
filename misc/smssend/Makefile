@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smssend
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	misc
 MASTER_SITES=	http://zekiller.skytech.org/fichiers/smssend/
 
