@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
-		gmp.6:${PORTSDIR}/math/libgmp4
+		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -24,6 +23,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		MAKEINFO="makeinfo --no-split"
+CONFIGURE_ARGS=	--without-gmp
 
 MAN1=		gst.1
 
