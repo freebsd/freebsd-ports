@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	xlog
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	comms
-MASTER_SITES=	http://www.qsl.net/pg4i/download/
+MASTER_SITES=	http://pg4i.mattsnetwork.co.uk/download/
 
 MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio logging application
