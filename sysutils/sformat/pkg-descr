@@ -1,0 +1,27 @@
+The main advantages to the Sun format utility are:
+- Working surface analyze that will detect defective blocks that are going
+  to get bad.
+- Analyzing program that detects defective bearings in the disk (-randrw).
+- Will repair nearly any defective disk, that has no firmware bug or electric
+  defect.
+- Allows to clear the grown defect list if a disk.
+- Disk geometry and label geometry are separated.
+- Allows cheating in the label geometry to deal with the problems with the
+  limitation to 16 bit data types in the Sun disk label.
+- Large database of disks including firmware specials.
+- You need no desk calculator to generate a partition table.
+  Shorthands for:
+  - MBytes
+  - cylinders/head/sectors
+  - size partition to end on end of disk
+  - partition following another partition
+  - partition ending before another partition
+  - shifting partition on the disk (allows growing part 0 and shrinking part 1)
+- Partition consistency checker with (ascii) graphical display.
+- Mode page interpreter allows to set easily all mode pages you will ever find
+  in a manual, sformat needs not to know about them.
+
+NOTE:	Sformat has its full functionality on SunOS/Solaris on sparc
+	and Motorola systems, on all other systems sformat will create
+	Sun disk labels with wrong byte-order, but formatting/analysis/
+	repair will work.

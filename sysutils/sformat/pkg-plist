@@ -1,0 +1,3 @@
+bin/sformat
+share/sformat/sformat.dat
+@dirrm share/sformat
