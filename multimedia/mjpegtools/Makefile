@@ -60,6 +60,10 @@ post-install:
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (needs -fPIC)"
+.endif
+
 # pre-detection
 # JPEGMMX
 .if exists(${LOCALBASE}/lib/libjpeg-mmx.a)
