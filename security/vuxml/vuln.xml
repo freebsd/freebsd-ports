@@ -30,6 +30,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="6f955451-ba54-11d8-b88c-000d610a3b12">
+    <topic>Buffer overflow in Squid NTLM authentication helper</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.5_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Remote exploitation of a buffer overflow vulnerability in
+	  the NTLM authentication helper routine of the Squid Web
+	  Proxy Cache could allow a remote attacker to execute
+	  arbitrary code.  A remote attacker can compromise a target
+	  system if the Squid Proxy is configured to use the NTLM
+	  authentication helper.  The attacker can send an overly long
+	  password to overflow the buffer and execute arbitrary
+	  code.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.idefense.com/application/poi/display?id=107&amp;type=vulnerabilities&amp;flashstatus=false</url>
+      <cvename>CAN-2004-0541</cvename>
+    </references>
+    <dates>
+      <discovery>2004-05-20</discovery>
+      <entry>2004-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb5e227e-b8c6-11d8-b88c-000d610a3b12">
     <topic>jailed processes can manipulate host routing tables</topic>
     <affects>
