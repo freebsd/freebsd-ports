@@ -1,0 +1,6 @@
+Natural Docs is an extensible, multi-language source code documentation
+generator. The syntax is transparent so that the comments in the source
+code read just as easily as the generated documentation. Also focuses
+on automation and high-quality output.
+
+WWW: http://www.naturaldocs.org/

@@ -492,6 +492,7 @@
     SUBDIR += msrc0
     SUBDIR += nana
     SUBDIR += nasm
+    SUBDIR += naturaldocs
     SUBDIR += ncurses
     SUBDIR += newfile
     SUBDIR += newt
