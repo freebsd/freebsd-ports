@@ -1,0 +1,12 @@
+--- Makefile.orig	Thu Oct 31 22:18:56 2002
++++ Makefile	Thu Oct 31 22:19:26 2002
+@@ -1,6 +1,6 @@
+-CC=gcc
+-CFLAGS=-O2 -DPOSIX -D__unix__
+-LIBS=-lgdbm
++#CC=gcc
++CFLAGS+=-I${LOCALBASE}/include -DPOSIX -D__unix__
++LIBS=-L${LOCALBASE}/lib -lgdbm
+ 
+ cdict5: cdict5.o CE.o fnmatch.o getline.o
+ 	$(CC) cdict5.o CE.o fnmatch.o getline.o -o cdict5 $(LIBS)
