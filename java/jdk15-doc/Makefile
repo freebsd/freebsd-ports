@@ -9,7 +9,7 @@ PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION:S/_/./g}
 CATEGORIES=	java
 MASTER_SITES=	#
-DISTNAME=	j2sdk-1_5_0-beta-doc
+DISTNAME=	jdk-1_5_0-doc
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
@@ -20,10 +20,10 @@ NO_CDROM=	"License does not allow distribution with fee."
 RESTRICTED=	"This documentation is under license and export control."
 
 WRKSRC=		${WRKDIR}/docs
-JDK_VERSION=	1.5.0.b1
+JDK_VERSION=	1.5.0
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
-DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=j2sdk-1.5.0-beta-docs-oth-JPR&SiteId=JSC&TransactionId=noreg
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=jdk-1.5.0-doc-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 NO_BUILD=	yes
 USE_ZIP=	yes
