@@ -1,7 +1,0 @@
---- man/mans/Makefile.in	Mon Jan 27 17:03:38 2003
-+++ man/mans/Makefile.in	Wed Jun 18 12:18:05 2003
-@@ -193,3 +193,3 @@
- 
--mansdir = $(mandir)/mans
-+mansdir = $(datadir)/lam
- MANS = $(man_MANS)

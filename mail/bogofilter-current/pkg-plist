@@ -1,6 +1,0 @@
-bin/bogofilter
-bin/bogolexer
-bin/bogotune
-bin/bogoutil
-bin/bogoupgrade
-etc/bogofilter.cf.example

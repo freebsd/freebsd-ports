@@ -1,7 +1,0 @@
---- automake.in.orig	Sun Feb 29 09:27:07 2004
-+++ automake.in	Sun Mar 14 17:04:50 2004
-@@ -33,3 +33,3 @@
- {
--  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@-@APIVERSION@';
-+  my $perllibdir = $ENV{'perllibdir'} || '@datadir@/@PACKAGE@@APIPVERSION@';
-   unshift @INC, (split ':', $perllibdir);

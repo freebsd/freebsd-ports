@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-bin/icb
-share/icb/bartender
-share/icb/confuse
-share/icb/echofunctions
-share/icb/icbserverdb
-share/icb/sample.icbrc
-@dirrm share/icb

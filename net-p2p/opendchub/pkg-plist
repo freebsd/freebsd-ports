@@ -1,6 +1,0 @@
-bin/opendchub
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/configfiles
-%%PORTDOCS%%%%DOCSDIR%%/general
-%%PORTDOCS%%%%DOCSDIR%%/scriptdoc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

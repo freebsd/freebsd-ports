@@ -1,8 +1,0 @@
-bin/most
-%%PORTDOCS%%share/doc/most/README
-%%PORTDOCS%%share/doc/most/changes.txt
-%%PORTDOCS%%share/doc/most/lesskeys.rc
-%%PORTDOCS%%share/doc/most/most-fun.txt
-%%PORTDOCS%%share/doc/most/most.doc
-%%PORTDOCS%%share/doc/most/most.rc
-%%PORTDOCS%%@dirrm share/doc/most

@@ -1,3 +1,0 @@
-@unexec %D/bin/gst-register 2>/dev/null || true
-lib/gstreamer-%%VERSION%%/libgstffmpeg.so
-@exec %D/bin/gst-register 2>/dev/null || true

@@ -1,8 +1,0 @@
-bin/encoder
-lib/php/%%PHP_EXT_DIR%%/mmcache.so
-%%PORTDOCS%%%%DOCSDIR%%/README
-@unexec rmdir %D/lib/php/%%PHP_EXT_DIR%% 2> /dev/null || true
-%%EXAMPLESDIR%%/mmcache.php
-%%EXAMPLESDIR%%/mmcache_password.php
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%EXAMPLESDIR%%
