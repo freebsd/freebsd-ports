@@ -1,0 +1,28 @@
+# New ports collection makefile for:   kdelibdocs
+# Version required:    1.1Beta2
+# Date created:        8 Feb 2000
+# Whom:                imura@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+DISTNAME=	kdelibdocs-1.1beta2
+PKGNAME=	kdelibdocs${QTTYPE}-1.1b2
+CATEGORIES=	devel kde
+MASTER_SITES=	ftp://129.187.206.68/pub/unix/ide/KDevelop/documentation/ \
+		ftp://gd.tuwien.ac.at/hci/KDevelop/documentation/ \
+		ftp://fara.cs.uni-potsdam.de/pub/kdevelop/documentation/
+
+MAINTAINER=	imura@FreeBSD.org
+
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11${QTTYPE}
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	"--with-qtdoc-dir=${X11BASE}/share/doc/qt/html" \
+		"--with-qt-includes=${X11BASE}/include/X11/qt"
+
+PATCHDIR=	${.CURDIR}/patches
+QTTYPE?=	# Normal
+
+.include <bsd.port.mk>
