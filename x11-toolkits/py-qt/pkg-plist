@@ -196,7 +196,10 @@ share/sip/qtgl/qglcolormap.sip
 share/sip/qtgl/qtglmod.sip
 share/sip/qtnetwork/copying.sip
 share/sip/qtnetwork/qdns.sip
+share/sip/qtnetwork/qftp.sip
 share/sip/qtnetwork/qhostaddress.sip
+share/sip/qtnetwork/qhttp.sip
+share/sip/qtnetwork/qlocalfs.sip
 share/sip/qtnetwork/qnetwork.sip
 share/sip/qtnetwork/qserversocket.sip
 share/sip/qtnetwork/qsocket.sip
