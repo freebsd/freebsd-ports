@@ -3,7 +3,7 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.6 1996/11/11 05:49:36 obrien Exp $
+# $Id: Makefile,v 1.7 1996/11/17 09:05:49 obrien Exp $
 #
 
 DISTNAME=       glimpse-3.6.src
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	chuckr@freebsd.org
 
-NO_CDROM=	yes	# Restrictive copyright (don't sell for profit)
+NO_CDROM=	"Restrictive copyright (don't sell for profit)"
 GNU_CONFIGURE=	yes
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 

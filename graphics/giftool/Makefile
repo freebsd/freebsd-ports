@@ -3,7 +3,7 @@
 # Date created:        14 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/10/30 13:44:05 jfitz Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:27:51 asami Exp $
 #
 
 DISTNAME=	giftool
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.huie.hokudai.ac.jp/pub/tool/graphics/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-NO_CDROM=	yes	#shareware
+NO_CDROM=	"Shareware"
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	giftool

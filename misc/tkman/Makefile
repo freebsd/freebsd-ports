@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.19 1996/11/11 07:53:07 tg Exp $
+# $Id: Makefile,v 1.20 1996/11/17 09:06:37 obrien Exp $
 #
 
 DISTNAME=	tkman-1.8
@@ -17,7 +17,7 @@ LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman \
 		glimpse:${PORTSDIR}/misc/glimpse
 
-NO_CDROM=	yes	# Don't sell for profit
+NO_CDROM=	"Don't sell for profit"
 MAN1=		tkman.1
 
 .include <bsd.port.mk>

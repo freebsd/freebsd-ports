@@ -3,7 +3,7 @@
 # Date created:         Fr  27 Sep 1996 11:47:35 MET DST
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:15:27 asami Exp $
+# $Id: Makefile,v 1.8 1996/12/06 10:56:31 max Exp $
 #
 
 DISTNAME=       bzip-0.21
@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.cs.man.ac.uk/arch/people/j-seward/
 
 MAINTAINER=     andreas@klemm.gtn.com
 
-NO_CDROM=       yes     # Restrictive copyright (don't sell for profit)
+NO_CDROM=       "Restrictive copyright (don't sell for profit)"
 MAN1=		bzip.1 bunzip.1
 
 pre-install:
