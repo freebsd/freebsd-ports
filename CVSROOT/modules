@@ -501,6 +501,7 @@ autogen		ports/devel/autogen
 automake14	ports/devel/automake14
 automake15	ports/devel/automake15
 automake18	ports/devel/automake18
+automake19	ports/devel/automake19
 autools		ports/audio/autools
 autopsy		ports/sysutils/autopsy
 autorespond	ports/mail/autorespond
