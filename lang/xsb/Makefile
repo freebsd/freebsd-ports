@@ -26,6 +26,12 @@ MAN1=	xsb.1
 PLIST_SUB+=	MACHINE_ARCH=${MACHINE_ARCH} \
 		OPSYS=${OPSYS:S/BSD/bsd/g:S/F/f/g:S/O/o/g:S/N/n/g}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-build:
 	@ cd ${WRKSRC} ; \
 	./configure ; \
@@ -40,4 +46,4 @@ do-install:
 	${ECHO_CMD} To run it, execute ${PREFIX}/XSB/bin/xsb ; \
 	${ECHO_CMD} The user manual is in ${PREFIX}/share/xsb
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
