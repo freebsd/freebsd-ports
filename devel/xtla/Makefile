@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xtla
-PORTVERSION=	20040620
+PORTVERSION=	20040630
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://xsteve.nit.at/prg/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	An Emacs front-end to tla
 
-RUN_DEPENDS=	tla:${PORTSDIR}/devel/tla
+BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 EMACS_PORT_NAME?=	emacs21
 
