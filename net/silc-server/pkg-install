@@ -1,0 +1,96 @@
+#!/bin/sh
+# $FreeBSD$
+
+# based on original from op port, written by Cyrille Lefevre
+# <clefevre@citeweb.net>
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+
+CONF_DIR=${PKG_PREFIX}/etc/silc
+
+SILC_DAEMON=${PKG_PREFIX}/sbin/silcd
+KEY_FILES="silcd.prv silcd.pub"
+
+CONF_FILE=silcd.conf
+CONF_OWN=root
+CONF_GRP=wheel
+CONF_MODE=0600
+
+SAMP_SUFX=.sample
+
+INSTALL=install
+CMP=cmp
+FMT=fmt
+RM=rm
+RMDIR=rmdir
+
+INSTALL_DIR="${INSTALL} -d -o root -g wheel -m 755"
+
+case "$ACTION" in
+
+POST-INSTALL)
+	if [ -f "${CONF_DIR}/${CONF_FILE}" ]
+	then
+		echo "$PKGNAME: Will not overwrite existing ${CONF_DIR}/${CONF_FILE} configuration file."
+	else
+		${INSTALL} -c -o ${CONF_OWN} -g ${CONF_GRP} -m ${CONF_MODE} \
+			${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
+			${CONF_DIR}/${CONF_FILE}
+	fi
+	if [ -f ${CONF_DIR}/silcd.prv -o -f ${CONF_DIR}/silcd.pub ]
+	then
+		echo "$PKGNAME: Will not overwrite existing PUBLIC KEY PAIRS in ${CONF_DIR}."
+		echo "$PKGNAME: Remove them if you both want new keys and know what you are doing, deinstall this package and install again." | ${FMT}
+		echo "$PKGNAME: To remove the old keys:" 
+		for key_file in ${KEY_FILES}
+		do
+			[ -f ${CONF_DIR}/${key_file} ] && echo "$PKGNAME: rm -f ${CONF_DIR}/${key_file}"
+		done
+	else
+		${SILC_DAEMON} -C ${CONF_DIR}
+	fi
+	${INSTALL_DIR} ${PKG_PREFIX}/libexec/silc/modules ${PKG_PREFIX}/silc/logs
+	;;
+
+DEINSTALL)
+	if ${CMP} -s ${CONF_DIR}/${CONF_FILE}${SAMP_SUFX} \
+		  ${CONF_DIR}/${CONF_FILE}; then
+		${RM} -f ${CONF_DIR}/${CONF_FILE}
+	else
+		echo "$PKGNAME: Will not remove existing ${CONF_DIR}/${CONF_FILE} configuration file."
+		echo "$PKGNAME: Remove it manually if you know what you are doing:"
+		echo "$PKGNAME: rm -f ${CONF_DIR}/${CONF_FILE}"
+	fi
+	echo "$PKGNAME: Will not remove remaining PUBLIC KEY PAIRS."
+	echo "$PKGNAME: If you want to remove any remaining PUBLIC KEY PAIRS:"
+	for key_file in ${KEY_FILES}
+	do
+		[ -f ${CONF_DIR}/${key_file} ] && echo "$PKGNAME: rm -f ${CONF_DIR}/${key_file}"
+	done
+	echo "$PKGNAME: Also, do not forget to 'rmdir ${CONF_DIR} 2>/dev/null'"
+
+	${RMDIR} ${PKG_PREFIX}/libexec/silc/modules 2>/dev/null
+	if [ -d ${PKG_PREFIX}/libexec/silc ]
+	then
+		${RMDIR} ${PKG_PREFIX}/libexec/silc 2>/dev/null || echo "$PKGNAME: Will not remove silc modules. If permanently removing the port, 'rm -Rf ${PKG_PREFIX}/libexec/silc'"
+	fi
+
+	${RMDIR} ${PKG_PREFIX}/silc/logs 2>/dev/null
+	if [ -d ${PKG_PREFIX}/silc ]
+	then
+		${RMDIR} ${PKG_PREFIX}/silc 2>/dev/null || echo "$PKGNAME: Will not remove silc server logs. If permanently removing the port, 'rm -Rf ${PKG_PREFIX}/silc'"
+	fi
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit
