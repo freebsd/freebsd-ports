@@ -29,6 +29,10 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 .if ${OSVERSION} > 500000
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gmp=${PREFIX}
