@@ -1,1 +1,4 @@
 bin/wmusic
+%%PORTDOCS%%share/doc/wmusic/README
+%%PORTDOCS%%share/doc/wmusic/COPYING
+%%PORTDOCS%%@dirrm share/doc/wmusic
