@@ -23,7 +23,6 @@ RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 LIB_DEPENDS=	rsaref.2:${PORTSDIR}/security/rsaref
-MAKE_ENV+=	EXTRA_SSL_LIBS="-lRSAglue -lrsaref"
 .endif
 
 GNU_CONFIGURE=	yes
