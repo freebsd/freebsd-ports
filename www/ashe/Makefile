@@ -3,9 +3,7 @@
 # Date created:		16 October 1995
 # Whom:			pst
 #
-# WARNING WARNING: Requires Motif to compile & link
-#
-# $Id: Makefile,v 1.4 1996/11/18 11:40:39 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:31:39 asami Exp $
 #
 
 DISTNAME=	ashe-1.1.2
@@ -14,6 +12,8 @@ MASTER_SITES=	ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.1.2/src/ \
 		ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.1.2/libcci/ \
 		ftp://ftp.cs.rpi.edu/pub/puninj/ASHE/ASHE-1.1.2/libhtmlw/
 DISTFILES=	ashe_cci.tar.Z cci.tar.Z libhtmlw.tar.Z
+
+MAINTAINER=	ports@FreeBSD.ORG
 
 REQUIRES_MOTIF=	yes
 NO_WRKSUBDIR=	yes
