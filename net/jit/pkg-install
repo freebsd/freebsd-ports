@@ -9,6 +9,7 @@ GROUP=${USER}
 UID=93
 GID=${UID}
 SPOOLDIR="/var/spool/jit"
+LOGDIR="/var/log/jabber"
 
 if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
 	if pw groupadd ${GROUP} -g ${GID}; then
@@ -36,6 +37,17 @@ if [ ! -d ${SPOOLDIR} ]; then
 	mkdir -p ${SPOOLDIR}
 fi
 
+if [ ! -d ${LOGDIR} ]; then
+	echo "Creating \"${LOGDIR}\"."
+	mkdir -p ${LOGDIR}
+fi
+
+
+
 echo "Fixing ownerships and modes in \"${SPOOLDIR}\"."
 chown -R ${USER}:${GROUP} ${SPOOLDIR}
 chmod -R go= ${SPOOLDIR}
+
+echo "Fixing ownerships and modes in \"${LOGDIR}\"."
+chown -R ${USER}:${GROUP} ${LOGDIR}
+chmod -R go= ${LOGDIR}
