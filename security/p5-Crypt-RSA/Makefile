@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-RSA
-PORTVERSION=	1.47
+PORTVERSION=	1.48
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -27,7 +27,8 @@ BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-D
 		${PERLBASE}/Class/Loader.pm:${PORTSDIR}/devel/p5-Class-Loader \
 		${PERLBASE}/${PERL_ARCH}/Digest/MD2.pm:${PORTSDIR}/security/p5-Digest-MD2 \
 		${PERLBASE}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${PERLBASE}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash
+		${PERLBASE}/Tie/EncryptedHash.pm:${PORTSDIR}/security/p5-Tie-EncryptedHash \
+		${PERLBASE}/MD5.pm:${PORTSDIR}/security/p5-MD5
 
 RESTRICTED=	"Crypto; export-controlled"
 
