@@ -15,10 +15,6 @@ MASTER_SITE_SUBDIR=	bzip2/v102
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	A block-sorting file compressor
 
-.if exists(/usr/bin/bzip2)
-IGNORE=		bzip2 is in the base system
-.endif
-
 INSTALLS_SHLIB=	yes
 
 MAN1=		bzip2.1 bzgrep.1 bzmore.1
