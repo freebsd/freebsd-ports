@@ -1,5 +1,5 @@
 --- backend/usb.c.orig	Thu May 16 09:44:50 2002
-+++ backend/usb.c	Sat Aug 17 17:21:33 2002
++++ backend/usb.c	Sat Aug 17 17:48:21 2002
 @@ -1,5 +1,5 @@
  /*
 - * "$Id: usb.c,v 1.30 2002/05/16 13:44:50 mike Exp $"
@@ -43,7 +43,7 @@
 +
 +    sprintf(device, "/dev/unlpt%d", i);
 +    if (!access(device, 0))
-+      printf("direct usb:%s \"Unknown\" \"USB Printer #%d\" (no reset)\n", device, i + 1);
++      printf("direct usb:%s \"Unknown\" \"USB Printer #%d (no reset)\"\n", device, i + 1);
    }
  #endif
  }
