@@ -1,10 +1,10 @@
---- Makefile.PL	Mon Dec 27 06:11:05 1999
-+++ Makefile.PL.new	Sun Feb 27 22:34:55 2000
-@@ -17,6 +17,7 @@
+--- Makefile.PL	Tue Mar 14 05:29:39 2000
++++ Makefile.PL.new	Fri Jan  5 16:36:49 2001
+@@ -25,6 +25,7 @@
  
  WriteMakefile (
  	NAME         => 'psh',
-+	PREFIX	     => '${PPREFIX}',
++	PREFIX       => '${PREFIX}',
  	VERSION_FROM => 'psh',
  	AUTHOR       => 'Gregor N. Purdy (gregor@focusresearch.com)',
  	ABSTRACT     => 'Perl Shell',
