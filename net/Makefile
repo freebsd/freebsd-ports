@@ -300,6 +300,7 @@
     SUBDIR += radreport
     SUBDIR += ratoolset
     SUBDIR += rboot
+    SUBDIR += rdesktop
     SUBDIR += rdist6
     SUBDIR += redir
     SUBDIR += relay
