@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="027380b7-3404-11d9-ac1b-000d614f7fad">
+    <topic>hafiye -- lack of terminal escape sequence filtering</topic>
+    <affects>
+      <package>
+	<name>hafiye</name>
+	<range><lt>1.0_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A siyahsapka.org advisory reads:</p>
+	<blockquote cite="http://deicide.siyahsapka.org/hafiye_esc.txt">
+          <p>Hafiye-1.0 doesnt filter the payload when printing it to
+            the terminal.  A malicious attacker can send packets with
+	    escape sequence payloads to exploit this vulnerability.</p>
+          <p>If Hafiye has been started with -n packet count option ,
+            the vulnerability could allow remote code execution.  For
+            remote code execution the victim must press Enter after
+            program exit.</p>
+	</blockquote>
+	<p>Note that it appears that this bug can only be exploited in
+	  conjunction with a terminal emulator that honors the
+	  appropriate escape sequences.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/70978</freebsdpr>
+      <url>http://deicide.siyahsapka.org/hafiye_esc.txt</url>
+      <url>http://www.enderunix.org/hafiye/</url>
+    </references>
+    <dates>
+      <discovery>2004-08-23</discovery>
+      <entry>2004-11-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e69ba632-326f-11d9-b5b7-000854d03344">
     <topic>ez-ipupdate -- format string vulnerability</topic>
     <affects>
