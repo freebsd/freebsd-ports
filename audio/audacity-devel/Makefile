@@ -20,6 +20,7 @@ LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 CONFLICTS=	audacity-1.0*
 
+LATEST_LINK=	audacity-devel
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-1.2.0-pre3
 USE_BZIP2=	yes
 USE_GMAKE=	yes
