@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 		gdb-4.18.tar.bz2:gdb
 EXTRACT_ONLY=	gdb-4.18.tar.bz2 gcc-core-2.95.2.tar.bz2 gcc-g++-2.95.2.tar.bz2
 
-MAINTAINER=	kuriyama@FreeBSD.org
+MAINTAINER=	linimon@lonesome.com
 
 BUILD_DEPENDS=	${PREFIX}/bin/m68k-palmos-as:${PORTSDIR}/palm/prc-tools-binutils \
 		${LOCALBASE}/bin/autoheader:${PORTSDIR}/devel/autoconf
