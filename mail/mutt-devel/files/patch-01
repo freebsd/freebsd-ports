@@ -1,45 +1,17 @@
-*** Makefile.in.orig	Sat May 17 03:05:18 1997
---- Makefile.in	Mon May 19 15:41:18 1997
-***************
-*** 34,40 ****
-  XCPPFLAGS=-I. -I$(srcdir) @CPPFLAGS@
-  CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" $(XCPPFLAGS)
-  LDFLAGS=@LDFLAGS@
-! LIBS=@LIBS@
-  REGEX=@REGEX@
-  OBJS=	addrbook.o alias.o attach.o bind.o browser.o buffy.o color.o \
-          commands.o \
---- 34,40 ----
-  XCPPFLAGS=-I. -I$(srcdir) @CPPFLAGS@
-  CFLAGS=@CFLAGS@ -DSHAREDIR=\"$(sharedir)\" $(XCPPFLAGS)
-  LDFLAGS=@LDFLAGS@
-! LIBS=@LIBS@ -lmytinfo
-  REGEX=@REGEX@
-  OBJS=	addrbook.o alias.o attach.o bind.o browser.o buffy.o color.o \
-          commands.o \
-***************
-*** 52,61 ****
-  EXCLUDE=config.h config.cache config.log config.status tags Makefile \
-  	rx/Makefile
-  
-! all: mutt
-  
-  mutt: $(OBJS) $(REGEX)
-  	$(CC) -o mutt $(OBJS) $(REGEX) $(LDFLAGS) $(LIBS)
-  
-  install: mutt
-  	$(srcdir)/mkinstalldirs $(bindir)
---- 52,64 ----
-  EXCLUDE=config.h config.cache config.log config.status tags Makefile \
-  	rx/Makefile
-  
-! all: mutt docs
-  
-  mutt: $(OBJS) $(REGEX)
-  	$(CC) -o mutt $(OBJS) $(REGEX) $(LDFLAGS) $(LIBS)
-+ 
-+ docs:
-+ 	cd doc && make fbsd
-  
-  install: mutt
-  	$(srcdir)/mkinstalldirs $(bindir)
+--- Makefile.in.orig	Mon Jan 27 18:15:59 1997
++++ Makefile.in	Wed Jan 29 07:23:40 1997
+@@ -72,10 +72,13 @@
+ 	sendlib.c \
+ 	url.c
+ 
+-all: mutt
++all: mutt docs
+ 
+ mutt: $(OBJS) $(REGEX)
+ 	$(CC) -o mutt $(OBJS) $(REGEX) $(LDFLAGS) $(LIBS)
++
++docs:
++	cd doc && make fbsd
+ 
+ install: mutt
+ 	$(srcdir)/mkinstalldirs $(bindir)
