@@ -1,0 +1,14 @@
+===================================================================
+RCS file: pks_www.c,v
+retrieving revision 1.19
+diff -u -r1.19 pks_www.c
+--- pks_www.c	1999/06/02 06:06:01	1.19
++++ pks_www.c	2001/09/02 04:14:22
+@@ -529,5 +529,6 @@
+ void pks_www_init(pks_www_conf *conf)
+ {
+    www_init(conf->port, pks_www, conf);
+-   www_init(conf->db_dir, pks_www, conf);
++   //www_init(conf->db_dir, pks_www, conf); // wtf?  This snuck in via
++                                            // NetBSD's patch-ac...
+ }

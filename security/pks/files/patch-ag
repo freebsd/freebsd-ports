@@ -1,0 +1,15 @@
+===================================================================
+RCS file: pksd.8,v
+retrieving revision 1.3
+diff -u -r1.3 pksd.8
+--- pksd.8	1999/06/02 06:07:30	1.3
++++ pksd.8	2001/09/02 04:15:53
+@@ -17,7 +17,7 @@
+ 
+ The server takes a single argument, which is the name of the
+ configuration file.  The format of this file is documented in
+-\fBpksd.conf(8)\fR.
++\fBpksd.conf(5)\fR.
+ 
+ The server supports queries via the web and via an email interface.
+ The web interface implements a few form URI's which are described in

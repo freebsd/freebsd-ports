@@ -1,0 +1,14 @@
+===================================================================
+RCS file: pks_config.h,v
+retrieving revision 1.11
+diff -u -r1.11 pks_config.h
+--- pks_config.h	1999/05/20 03:39:52	1.11
++++ pks_config.h	2001/09/02 04:07:18
+@@ -16,6 +16,7 @@
+ 
+    /* web server stuff */
+    int www_port;
++  int www_readonly;
+ 
+    /* mail server stuff */
+    char socket_name[1024];

@@ -1,0 +1,53 @@
+===================================================================
+RCS file: www.c,v
+retrieving revision 1.25
+diff -u -r1.25 www.c
+--- www.c	1999/06/02 06:08:16	1.25
++++ www.c	2001/09/02 04:26:28
+@@ -21,6 +21,7 @@
+ #include "www.h"
+ #include "globals.h"
+ #include "parse.h"
++#include "pks_www.h"
+ 
+ static const long hexchar[] = {
+    256,256,256,256,256,256,256,256,256,256,256,256,256,256,256,256,
+@@ -140,6 +141,7 @@
+ typedef struct _hh_state {
+    httphandler h;
+    xbuffer xb;
++  unsigned int readonly;
+    void *c;
+    long ptr;
+    long method, uri, method_len, uri_len;
+@@ -148,10 +150,12 @@
+ 
+ static void reader(int fd, unsigned char *input, long len, int done, void *c)
+ {
+-   hh_state *s = (hh_state *) c;
+ 
++   hh_state *s = (hh_state *) c;
+    long ptr, cnt;
+    long dummy, dummy_len;
++   unsigned int readonly = s->readonly;
++
+ 
+    if (done < 0) {
+       xbuffer_free(&(s->xb));
+@@ -360,7 +364,7 @@
+ 	 }
+       }
+    } else if (is_token(input+s->method, s->method_len, post, post_len, 0)) {
+-      if (s->content_length == 0) {
++      if ((s->content_length == 0) || readonly) {
+ 	 www_reply(fd, 1000, 400, bad_request, NULL, 0);
+ 	 mp_delete_read(fd);
+ 	 xbuffer_free(&(s->xb));
+@@ -484,6 +488,7 @@
+ 
+    hhs->h = h;
+    hhs->c = c;
++   hhs->readonly = ((pks_www_conf *)c)->readonly;
+    xbuffer_alloc(&(hhs->xb));
+    hhs->ptr = 0;
+    hhs->uri = -1;

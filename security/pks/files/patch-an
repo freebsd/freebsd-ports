@@ -1,0 +1,32 @@
+===================================================================
+RCS file: pks_config.c,v
+retrieving revision 1.13
+diff -u -r1.13 pks_config.c
+--- pks_config.c	1999/05/20 03:39:51	1.13
++++ pks_config.c	2001/09/02 04:05:57
+@@ -20,6 +20,7 @@
+ const pks_config default_config = {
+    "/var/spool/pks/etc/db",
+    0,
++   1,
+    "/var/spool/pks/pksd_socket",
+    "",
+    "root",
+@@ -40,6 +41,9 @@
+ const char www_port_str[] = "www_port";
+ long www_port_len = sizeof(www_port_str)-1;
+ 
++const char www_readonly_str[] = "www_readonly";
++long www_readonly_len = sizeof(www_readonly_str)-1;
++
+ const char sockname_str[] = "socket_name";
+ long sockname_len = sizeof(sockname_str)-1;
+ 
+@@ -147,6 +151,7 @@
+ 
+       if (str_conf(db_dir_str, db_dir_len, pc->db_dir))
+       else if (num_conf(www_port_str, www_port_len, pc->www_port))
++     else if (num_conf(www_readonly_str, www_readonly_len, pc->www_readonly))
+       else if (str_conf(sockname_str, sockname_len, pc->socket_name))
+       else if (str_conf(mdc_str, mdc_len, pc->mail_delivery_client))
+       else if (str_conf(maint_str, maint_len, pc->maintainer_email))

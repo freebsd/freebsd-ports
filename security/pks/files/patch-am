@@ -1,0 +1,71 @@
+===================================================================
+RCS file: kd_index.c,v
+retrieving revision 1.16
+diff -u -r1.16 kd_index.c
+--- kd_index.c	1999/09/23 03:19:36	1.16
++++ kd_index.c	2001/09/02 04:00:23
+@@ -122,6 +122,7 @@
+ 
+ int keys_elem_genindex(void *e, void *c)
+ {
++
+    keys_elem *ke = (keys_elem *) e;
+    keg_state *s = (keg_state *) c;
+    gi_state gis;
+@@ -131,6 +132,8 @@
+    SHS_CTX sha;
+    unsigned char hash[20];
+    int i;
++   unsigned int pos = 0;
++
+ 
+    /* pgp does gmtime, so we do, too */
+    c_tm = gmtime(&(ke->create_time));
+@@ -163,24 +166,33 @@
+          MD5Final(hash, &md5ctx);
+       }
+ 
+-      for (i=0; i<8; i++)
+-         sprintf(buf+i*3, "%02X ", hash[i]);
+-      buf[24] = ' ';
+-      for (i=8; i<16; i++)
+-	 sprintf(buf+1+i*3, "%02X ", hash[i]);
++      pos = 0;
++      // print longer SHA-1 hashes differently
+       if (ke->keytype == 16 || ke->keytype == 17) {
+-         buf[49] = ' ';
+-         for (i=16; i<20; i++)
+-	    sprintf(buf+2+i*3, "%02X ", hash[i]);
+-         buf[62] = '\n';
+-      } else {
+-         buf[48] = '\n';
+-      }
++	for (i = 0; i < 20; i += 2) {
++	  sprintf (&buf[pos], "%02X%02X ", hash[i], hash[i+1]);
++	  pos += 5; // just added n chars...
++	  // add another space halfway through...
++	  if (i == 8) {
++	    buf[pos] = ' ';
++	    pos++;
++	  }
++	} // for i
++	pos--; // remove last space
++	buf[pos] = '\n';
++      } else { // if keytype != 16 or 17
++	for (i=0; i<8; i++)
++	  sprintf(buf+i*3, "%02X ", hash[i]);
++	buf[24] = ' ';
++	for (i=8; i<16; i++)
++	  sprintf(buf+1+i*3, "%02X ", hash[i]);
++	buf[48] = '\n';
++      } // if else on keytype
+ 
+-      if (!xbuffer_append_str(s->xb, "          Key fingerprint =  "))
++      if (!xbuffer_append_str(s->xb, "     Key fingerprint = "))
+ 	 return(0);
+       if (ke->keytype == 16 || ke->keytype == 17) {
+-         if (!xbuffer_append(s->xb, (unsigned char *) buf, 63))
++         if (!xbuffer_append(s->xb, (unsigned char *) buf, 51))
+ 	    return(0);
+       } else {
+          if (!xbuffer_append(s->xb, (unsigned char *) buf, 49))

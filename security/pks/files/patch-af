@@ -1,0 +1,14 @@
+===================================================================
+RCS file: pks_www.h,v
+retrieving revision 1.4
+diff -u -r1.4 pks_www.h
+--- pks_www.h	1999/05/20 03:39:52	1.4
++++ pks_www.h	2001/09/02 04:15:06
+@@ -12,6 +12,7 @@
+ 
+ typedef struct _pks_www_conf {
+    int port;
++  int readonly;
+    int max_reply_keys;
+    char *db_dir;
+    pks_incr_conf *pic;

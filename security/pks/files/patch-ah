@@ -1,0 +1,14 @@
+===================================================================
+RCS file: pksd.c,v
+retrieving revision 1.24
+diff -u -r1.24 pksd.c
+--- pksd.c	1999/05/31 20:21:20	1.24
++++ pksd.c	2001/09/02 04:17:59
+@@ -84,6 +84,7 @@
+    psc.mrc = &mrc;
+ 
+    pwc.port = pc.www_port;
++   pwc.readonly = pc.www_readonly;
+    pwc.db_dir = pc.db_dir;
+    pwc.max_reply_keys = pc.max_reply_keys;
+    pwc.pic = &pic;
