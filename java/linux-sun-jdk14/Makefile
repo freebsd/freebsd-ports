@@ -38,7 +38,7 @@ DL_JDK_VERSION=	1.4.0
 INSTALL_JDK_VERSION=	1.4.0
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${PORTVERSION}
-DOWNLOAD_URL?=	http://java.sun.com/j2se/1.4/
+DOWNLOAD_URL?=	http://java.sun.com/Download6?url=/Download6&config-file=j2sdk-1_4_0.config&platform=linux-i386
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 
 .include <bsd.port.pre.mk>

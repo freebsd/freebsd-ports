@@ -1,3 +1,4 @@
+@unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/jre/bin/java
 %%T%%/jre/bin/keytool
 %%T%%/jre/bin/policytool
