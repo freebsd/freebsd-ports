@@ -1,7 +1,6 @@
 #!/bin/sh
 case "$1" in
 start)
-	/usr/local/sbin/uptimed -b
 	echo -n ' uptimed'
 	/usr/local/sbin/uptimed
 	;;
