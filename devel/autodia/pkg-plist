@@ -1,20 +1,19 @@
 bin/autodia
-lib/perl5/site_perl/%%PERL_VER%%/autodia/Autodia.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/Diagram.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/DiagramClass.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/DiagramComponent.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/DiagramDependancy.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/DiagramInheritance.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/DiagramObject.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/DiagramSuperclass.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/Handler.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/HandlerCpp.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/HandlerJava.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/HandlerPerl.pm
-lib/perl5/site_perl/%%PERL_VER%%/autodia/simplespec.html
-lib/perl5/site_perl/%%PERL_VER%%/autodia/template.xml
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/autodia
-%%PORTDOCS%%share/doc/autodia/BUGS
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Class.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Component.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Dependancy.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Inheritance.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Superclass.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Cpp.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Java.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Perl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia
 %%PORTDOCS%%share/doc/autodia/CHANGES
 %%PORTDOCS%%share/doc/autodia/COPYING
 %%PORTDOCS%%share/doc/autodia/CREDITS
@@ -22,6 +21,4 @@ lib/perl5/site_perl/%%PERL_VER%%/autodia/template.xml
 %%PORTDOCS%%share/doc/autodia/FAQ
 %%PORTDOCS%%share/doc/autodia/INSTALL
 %%PORTDOCS%%share/doc/autodia/README
-%%PORTDOCS%%share/doc/autodia/TODO
-%%PORTDOCS%%share/doc/autodia/faq.txt
 %%PORTDOCS%%@dirrm share/doc/autodia
