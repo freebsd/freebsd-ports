@@ -3,13 +3,13 @@
 # Date created:		27 December 1998
 # Whom:			shige
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/30 03:01:43 shige Exp $
 #
 
 MAINTAINER=	shige@FreeBSD.ORG
 
 PATCHFILES=	custom-1.9962.patch
-PATCH_SITES=	http://www.jpl.org/elips/semi-gnus-mule23@1934/
+PATCH_SITES=	ftp://ftp.jpl.org/pub/elisp/semi-gnus-mule23@1934/
 PATCH_DIST_STRIP= -p1
 
 # This is a slave port.
