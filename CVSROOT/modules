@@ -5264,6 +5264,7 @@ p5-Unicode-String	ports/converters/p5-Unicode-String
 p5-Unix-ConfigFile	ports/sysutils/p5-Unix-ConfigFile
 p5-Unix-Syslog	ports/sysutils/p5-Unix-Syslog
 p5-User		ports/sysutils/p5-User
+p5-VCS		ports/devel/p5-VCS
 p5-VCS-CVS	ports/devel/p5-VCS-CVS
 p5-WDDX		ports/textproc/p5-WDDX
 p5-WWW-Automate	ports/www/p5-WWW-Automate
