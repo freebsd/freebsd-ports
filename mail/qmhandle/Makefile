@@ -9,7 +9,8 @@ PORTNAME=	qmHandle
 PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.italpro.net/mb/soft/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	qmhandle
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Tool to view and manage a qmail queue
@@ -18,7 +19,6 @@ RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-qstat:${PORTSDIR}/mail/qmail
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-USE_BZIP2=	yes
 USE_PERL5=	yes
 
 .if exists(${LOCALBASE}/qmail/bin/qmail-qstat)
