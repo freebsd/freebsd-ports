@@ -1,5 +1,5 @@
-*** Makefile.in.orig	Thu Nov 20 00:20:38 1997
---- Makefile.in	Thu Nov 20 17:23:56 1997
+*** Makefile.in.orig	Fri Jul 10 03:44:06 1998
+--- Makefile.in	Sat Jul 18 20:04:20 1998
 ***************
 *** 1,20 ****
 ! CSRCS		=	flock.c pop_dele.c pop_dropcopy.c \
@@ -44,7 +44,12 @@
   DOCS		=	README pop3.rfc1081 pop3e.rfc1082 popper.8
   
 ***************
-*** 52,59 ****
+*** 47,59 ****
+  
+  
+  
+! all: ${TARGET}
+  
   popper: ${OBJS}
   	${CC}  ${OBJS} -o popper ${LIBS}
   
@@ -53,7 +58,12 @@
   
   .c.o: 
   	${CC} -c -I. -I${srcdir} ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
---- 52,59 ----
+--- 47,59 ----
+  
+  
+  
+! all: ${TARGET} popauth
+  
   popper: ${OBJS}
   	${CC}  ${OBJS} -o popper ${LIBS}
   
@@ -63,8 +73,8 @@
   .c.o: 
   	${CC} -c -I. -I${srcdir} ${CFLAGS} ${DEFS} ${O_DEFS} $< -o $@
 ***************
-*** 74,82 ****
-  	rm -f core *.o *.Z* config.h config.status config.cache config.log
+*** 77,85 ****
+  	rm -f config.h config.status config.cache config.log ${TARGET} Makefile
   
   ${OBJS}:    ${INCLUDES}
 - pop_dropcopy.o: flock.h
@@ -73,4 +83,4 @@
   
   
   
---- 74,79 ----
+--- 77,82 ----

@@ -3,11 +3,11 @@
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.25 1998/07/01 02:13:58 ache Exp $
+# $Id: Makefile,v 1.26 1998/07/02 04:09:24 ache Exp $
 #
 
-DISTNAME=       qpopper2.52
-PKGNAME=        qpopper-2.52
+DISTNAME=       qpopper2.53
+PKGNAME=        qpopper-2.53
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
 EXTRACT_SUFX=	.tar.Z
@@ -34,7 +34,7 @@ O_DEFS+=        -DAPOP_ONLY
 P_LIBS+=        -lmd -lutil
 
 GNU_CONFIGURE=          yes
-CONFIGURE_ARGS=         --with-apop=${PREFIX}/etc/popper/pop.auth \
+CONFIGURE_ARGS=         --enable-apop=${PREFIX}/etc/popper/pop.auth \
 			--with-apopuid=pop --enable-debugging
 CONFIGURE_ENV=          LIBS="${P_LIBS}" O_DEFS="${O_DEFS}"
 
