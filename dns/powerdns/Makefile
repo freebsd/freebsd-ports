@@ -7,7 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	2.9.16
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -29,6 +29,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		POWERDNS_OPTIONS="${POWERDNS_OPTIONS}"
 MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/pdns.sh.sample
+LIBMAP_CONF=	/etc/libmap.conf
 
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -63,7 +64,6 @@ CONFIGURE_ARGS+=	--disable-mysql
 USE_OPENLDAP?=		YES
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=		YES
-USE_GCC=3.2
 CONFIGURE_MODULES+=	"ldap"
 PLIST_SUB+=		WITHLDAP=""
 .else
@@ -80,7 +80,6 @@ CONFIGURE_ARGS+=	--disable-sqlite
 .endif
 
 .if defined(POWERDNS_WITH_RECURSOR)
-USE_GCC=3.2
 CONFIGURE_ARGS+=	--enable-recursor
 PLIST_SUB+=		RECURSOR=""
 .else
@@ -90,12 +89,18 @@ PLIST_SUB+=		RECURSOR="@comment "
 .include <bsd.port.pre.mk>
 
 .if defined(POWERDNS_WITH_RECURSOR)
-.if exists(/usr/include/ucontext.h)
+.if exists(/usr/include/ucontext.h) && ${OSVERSION} >= 500000
 UCONTEXT!=	${AWK} '/setcontext/ { print "YES" }' \
 		/usr/include/ucontext.h
 .if ${UCONTEXT} == ""
-BROKEN=		setcontext for recursor not found
+BROKEN=		setcontext for recursor not found or FreeBSD version lower than 5.0
 .endif
+.endif
+.endif
+
+.if defined(POWERDNS_WITH_RECURSOR) || defined(WITH_LDAP)
+.if ${OSVERSION} < 500039
+USE_GCC=3.2
 .endif
 .endif
 
@@ -134,11 +139,23 @@ post-install:
 .endfor
 .endif
 .if !exists(${STARTUP_SCRIPT})
-	${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file."
+	@${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file."
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" \
 		${FILESDIR}/pdns.sh.sample  \
 		> ${WRKSRC}/pdns.sh.sample
 	${INSTALL_SCRIPT} ${WRKSRC}/pdns.sh.sample ${STARTUP_SCRIPT}
+.endif
+.if defined(POWERDNS_WITH_RECURSOR)
+.if !exists(${LIBMAP_CONF})
+	@${ECHO_MSG} "# Start of fix (pdns_recursor)" > ${LIBMAP_CONF}
+.else
+	@${ECHO_MSG} "# Start of fix (pdns_recursor)" >> ${LIBMAP_CONF}
+.endif
+	@${ECHO_MSG} "Installing fix in /etc/libmap.conf for pdns_recursor."
+	@${ECHO_MSG} "[pdns_recursor]" >> ${LIBMAP_CONF}
+	@${ECHO_MSG} "libpthread.so.1		libc_r.so.5" >> ${LIBMAP_CONF}
+	@${ECHO_MSG} "libpthread.so		libc_r.so" >> ${LIBMAP_CONF}
+	@${ECHO_MSG} "# End of fix (pdns_recursor)" >> ${LIBMAP_CONF}
 .endif
 
 .include <bsd.port.post.mk>
