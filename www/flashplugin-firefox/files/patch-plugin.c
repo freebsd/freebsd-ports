@@ -1,3 +1,6 @@
+
+$FreeBSD$
+
 *** plugin.c.old	Mon Jun 12 10:24:09 2000
 --- plugin.c	Mon Sep 30 00:48:40 2002
 ***************
