@@ -1,0 +1,20 @@
+--- nfsconf.h.orig	Wed May 19 22:42:39 2004
++++ nfsconf.h	Wed May 19 22:43:24 2004
+@@ -33,6 +33,7 @@
+ # include <nfs/nfs.h>
+ #endif /* NEED_NFS_NFS_H */
+ #if NEED_NFSCLIENT_NFS_H
++# include <nfs/nfsproto.h>
+ # include <nfsclient/nfs.h>
+ #endif /* NEED_NFSCLIENT_NFS_H */
+ #if NEED_NFS_MOUNT_H
+--- configure.orig	Wed May 19 22:43:05 2004
++++ configure	Wed May 19 22:41:46 2004
+@@ -9661,6 +9661,7 @@
+ 	cat >conftest.$ac_ext <<_ACEOF
+ #line 9662 "configure"
+ #include "confdefs.h"
++#include <nfs/nfsproto.h>
+ #include <nfsclient/nfs.h>
+ 
+ _ACEOF

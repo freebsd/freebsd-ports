@@ -20,7 +20,7 @@ PLIST_SUB=	SFS_VERSION=${PORTVERSION}
 INFO=		sfs
 
 USE_GMAKE=	yes
-
+USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--with-sfsgroup=sfs \
@@ -30,13 +30,9 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
-.endif
-
 .if ${OSVERSION} > 500000
 LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
-CONFIGURE_ARGS+=--with-gmp=${PREFIX}
+CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-gmp=/usr
 .endif
