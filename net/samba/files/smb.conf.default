@@ -166,6 +166,20 @@
 ; client code page=932
 ; coding system=cap
 
+# Samba performance workaround:
+#  If you have performance problem, please test these parameters.
+# Simon Lindgren <simon@lindgren.no> 's example:
+;   getwd cache = Yes
+;   max xmit = 8192
+;   read raw = yes
+;   read prediction = yes
+;   read size = 8192
+;   socket options = IPTOS_LOWDELAY TCP_NODELAY
+# Jerry Bell <bell@reillyplating.com> 's example:
+;   socket options = IPTOS_LOWDELAY TCP_NODELAY SO_SNDBUF=16384 SO_RCVBUF=16384
+;   readsize = 16384
+;   read prediction = true
+
 #============================ Share Definitions ==============================
 [homes]
    comment = Home Directories
