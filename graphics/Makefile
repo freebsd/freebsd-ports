@@ -194,6 +194,7 @@
     SUBDIR += libfpx
     SUBDIR += libgdgeda
     SUBDIR += libggi
+    SUBDIR += libglut
     SUBDIR += libgnomecanvas
     SUBDIR += libgnomecanvasmm
     SUBDIR += libgphoto2

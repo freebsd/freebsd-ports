@@ -1,0 +1,4 @@
+include/GL/glut.h
+lib/libglut.a
+lib/libglut.so
+lib/libglut.so.3

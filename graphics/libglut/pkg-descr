@@ -1,0 +1,5 @@
+libglut is a library provided with Mesa which provides an interface for creating
+windows containing OpenGL contexts on a wide variety of platforms and handling
+user interaction.
+
+WWW: http://www.mesa3d.org/
