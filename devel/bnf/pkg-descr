@@ -1,0 +1,9 @@
+The BNF parser generator takes a syntax not unlike BNF and generates
+a "C" parser for it, a parser that can parse either strings or files.
+
+This is a flexible tool, meant for smaller parsing tasks where
+bison+flex are just too big to use.
+
+WWW: http://www.nongnu.org/bnf/
+
+- Frerich Raabe frerich.raabe@gmx.de
