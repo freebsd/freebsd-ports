@@ -55,7 +55,7 @@ fetch-list:
 pre-extract:
 	@${ECHO} ""
 	@${ECHO} "========================================================================"
-	@${ECHO} "Choose \"Settings\" -> \"VMware Tools Install...\" from the Wrokstation menu"
+	@${ECHO} "Choose \"File\" -> \"Install VMware Tools...\" from the Workstation menu"
 	@${ECHO} "to connect the VM's CD-ROM drive temporarily to installation CD image."
 	@${ECHO} "========================================================================"
 	@${ECHO} ""
