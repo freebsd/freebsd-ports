@@ -1,0 +1,24 @@
+Fidelio is a GNOME client for Hotline, a proprietary protocol that combines
+ftp-like, irc-like and news-like functions in one package. 
+
+Fidelio is currently fully functional as a non-administative client, with the
+exception of banners and private chat. 
+
+Feature include: 
+ o Multiple concurrent connections;
+ o Single window per server connection;
+ o Tree-structured bookmarks;
+ o Trackers and searchable index of servers;
+ o Userlist and public chat in one pane;
+ o Private chat;
+ o Both flat (v. 1.2) and threaded news support, with posting of news;
+ o Ignore messages and chat of users;
+ o Private Messages;
+ o Sounds on events;
+ o Multiple icon set loading;
+ o Use of custom icon sets for buttons;
+ o Uploading, donwloading, resuming of file transfers;
+ o Per-donwload and per-upload bandwidth caps;
+ o Server-side and client-side file queues.
+
+WWW: http://fidelio.sourceforge.net/
