@@ -4,9 +4,11 @@ etc/lynx.cfg.default
 @exec mkdir -p %D/share/lynx_help
 share/doc/lynx/CHANGES
 share/doc/lynx/COPYHEADER
-@exec ln -sf %D/%F %D/share/lynx_help
+@exec ln -sf %D/%F %D/share/lynx_help/%f
+@unexec rm -f %D/share/lynx_help/%f
 share/doc/lynx/COPYING
-@exec ln -sf %D/%F %D/share/lynx_help
+@exec ln -sf %D/%F %D/share/lynx_help/%f
+@unexec rm -f %D/share/lynx_help/%f
 share/doc/lynx/PROBLEMS
 share/doc/lynx/README
 share/doc/lynx/samples/blue-background.lss
@@ -32,6 +34,20 @@ share/doc/lynx/test/sgml.html
 share/doc/lynx/test/spaces.html
 share/doc/lynx/test/tabtest.html
 share/doc/lynx/test/unicode.html
+share/locale/cs/LC_MESSAGES/lynx.mo
+share/locale/de/LC_MESSAGES/lynx.mo
+share/locale/es/LC_MESSAGES/lynx.mo
+share/locale/fr/LC_MESSAGES/lynx.mo
+share/locale/it/LC_MESSAGES/lynx.mo
+share/locale/ko/LC_MESSAGES/lynx.mo
+share/locale/nl/LC_MESSAGES/lynx.mo
+share/locale/no/LC_MESSAGES/lynx.mo
+share/locale/pl/LC_MESSAGES/lynx.mo
+share/locale/pt/LC_MESSAGES/lynx.mo
+share/locale/pt_BR/LC_MESSAGES/lynx.mo
+share/locale/ru/LC_MESSAGES/lynx.mo
+share/locale/sl/LC_MESSAGES/lynx.mo
+share/locale/sv/LC_MESSAGES/lynx.mo
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
 share/lynx_help/keystrokes/alt_edit_help.html

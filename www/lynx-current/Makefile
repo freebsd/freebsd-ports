@@ -7,19 +7,22 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.3pre.5
+PORTVERSION=    2.8.4dev.1
 CATEGORIES=	www
 MASTER_SITES=   http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ache@FreeBSD.org
 
+BUILD_DEPENDS=  xgettext:${PORTSDIR}/devel/gettext
+
 USE_BZIP2=      YES
 NO_LATEST_LINK=	YES
-WRKSRC=         ${WRKDIR}/lynx2-8-3
+WRKSRC=         ${WRKDIR}/lynx2-8-4
 GNU_CONFIGURE=  YES
 CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
-		--enable-nsl-fork --enable-persistent-cookies
+		--enable-nsl-fork --enable-persistent-cookies \
+		--enable-nls
 MAKE_FLAGS=     helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=       makefile
 INSTALL_TARGET= install-full
