@@ -8,7 +8,8 @@
 PORTNAME=		mail-notification
 PORTVERSION=		0.3.2
 CATEGORIES=		mail
-MASTER_SITES=		http://streamtuner.sourceforge.net/mail-notification/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	mailnotify
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A mail notification for the GNOME 2.0 system tray
@@ -18,6 +19,12 @@ USE_GNOME=		gnomeprefix gnomehack libgnomeui
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+OPTIONS=		MBOX "mbox support" on \
+			MH "MH support" on \
+			MAILDIR "Maildir support" on \
+			POP3 "POP3 support" on \
+			SYLPHEED "Sylpheed support" on
 
 .include <bsd.port.pre.mk>
 
@@ -38,16 +45,5 @@ LIB_DEPENDS+=		gnet-2.0:${PORTSDIR}/net/gnet2
 .if defined(WITHOUT_SYLPHEED)
 CONFIGURE_ARGS+=	--disable-sylpheed
 .endif
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "	WITHOUT_MBOX=yes	Disable mbox support"
-	@${ECHO} "	WITHOUT_MH=yes		Disable MH support"
-	@${ECHO} "	WITHOUT_MAILDIR=yes	Disable Maildir support"
-	@${ECHO} "	WITHOUT_POP3=yes	Disable POP3 support"
-	@${ECHO} "	WITHOUT_SYLPHEED=yes	Disable Sylpheed support"
-	@${ECHO} ""
 
 .include <bsd.port.post.mk>
