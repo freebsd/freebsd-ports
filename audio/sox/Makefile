@@ -18,4 +18,9 @@ MLINKS=		play.1 rec.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fast-ulaw --enable-fast-alaw --with-oss-dsp
 
+.if defined(USE_GSM)
+CONFIGURE_ARGS+= --with-gsmlib=${PREFIX}/lib --with-gsminc=${PREFIX}/include
+LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
+.endif
+
 .include <bsd.port.mk>
