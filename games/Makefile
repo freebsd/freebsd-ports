@@ -386,6 +386,7 @@
     SUBDIR += rtcw
     SUBDIR += rtcw-paks
     SUBDIR += rubix
+    SUBDIR += sarien
     SUBDIR += scid
     SUBDIR += scorched3d-devel
     SUBDIR += scummvm
