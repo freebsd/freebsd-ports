@@ -3,7 +3,7 @@
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.7 1998/12/24 13:15:23 dirk Exp $
+# $Id: Makefile,v 1.8 1999/05/31 05:08:06 steve Exp $
 #
 
 DISTNAME=		star-1.2
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	utils/compress
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
+NO_PACKAGE=	ignores cflags
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=gmake
 MAN1=		star.1
