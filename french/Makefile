@@ -2,6 +2,7 @@
 #
     SUBDIR += xtel
 
+    SUBDIR += aspell
     SUBDIR += cups
     SUBDIR += cups-base
     SUBDIR += cups-lpr
