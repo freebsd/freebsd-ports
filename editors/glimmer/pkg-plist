@@ -9,6 +9,7 @@ share/gnome/glimmer/docs/PROPS
 share/gnome/glimmer/docs/README
 share/gnome/glimmer/docs/TODO
 share/gnome/glimmer/languages/ada.lang
+share/gnome/glimmer/languages/asp.lang
 share/gnome/glimmer/languages/bash.lang
 share/gnome/glimmer/languages/c.lang
 share/gnome/glimmer/languages/cpp.lang
