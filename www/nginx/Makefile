@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.24
+PORTVERSION=	0.1.25
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/nginx \
 		--http-fastcgi-temp-path=${TMPDIR}/fastcgi_temp \
 		--http-log-path=${LOGDIR}/nginx-access.log \
 		--error-log-path=${LOGDIR}/nginx-error.log \
+		--with-http_stub_status_module \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
