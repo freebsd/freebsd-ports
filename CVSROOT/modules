@@ -2336,6 +2336,7 @@ fsmgenerator	ports/devel/fsmgenerator
 fspanel		ports/x11/fspanel
 fspclient	ports/net/fspclient
 fspd		ports/net/fspd
+fsplib		ports/net/fsplib
 fsv		ports/x11-fm/fsv
 fswiki		ports/www/fswiki
 ft2demos	ports/print/ft2demos
