@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	fvwm
-PORTVERSION=	2.3.19
+PORTVERSION=	2.3.20
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		fvwm_icons.tgz
+MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
+		http://www.fvwm.org/generated/icon_download/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
