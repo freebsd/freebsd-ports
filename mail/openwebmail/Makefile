@@ -115,7 +115,7 @@ pre-fetch:
 .endif
 
 pre-patch:
-	@${PERL} -pi.bak -e 's,${LOCALBASE}/bin/speedy_suid,${LOCALBASE}/bin/speedy_suidperl,g' ${PATCH_WRKSRC}/uty/*.diff
+	@${PERL} -pi.bak -e 's,${LOCALBASE}/bin/speedy_suid.*,${LOCALBASE}/bin/speedy_suidperl,g' ${PATCH_WRKSRC}/uty/*.diff
 
 post-patch:
 	@${MV} ${PATCH_WRKSRC}/etc/openwebmail.conf ${PATCH_WRKSRC}/etc/openwebmail.conf-dist
@@ -150,9 +150,9 @@ pre-install:
 do-install:
 	@${MKDIR} ${OWCGIDIR} ${OWDATADIR}
 	@cd ${WRKSRC}/cgi-bin/openwebmail && ${FIND} . \
-		| ${CPIO} -dpum -R ${BINOWN}:mail ${OWCGIDIR}
+		| ${CPIO} -dpum --quiet -R ${BINOWN}:mail ${OWCGIDIR}
 	@cd ${WRKSRC}/data/openwebmail && ${FIND} . \
-		| ${CPIO} -dpum -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
+		| ${CPIO} -dpum --quiet -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
 .if !exists(${OWCGIDIR}/etc/openwebmail.conf)
 	@${CP} ${OWCGIDIR}/etc/openwebmail.conf-dist ${OWCGIDIR}/etc/openwebmail.conf
 .endif
