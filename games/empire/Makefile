@@ -1,19 +1,19 @@
 # New ports collection makefile for:	empire
-# Version required:			1.1
 # Date created:				13 May 1997
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	empire
-PKGNAME=	empire-1.1
+PORTNAME=	empire
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://locke.ccil.org/pub/esr/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/empire-1.1
+WRKSRC=		${WRKDIR}/${PKGNAME}
 MAN6=		empire.6
 
 do-install:

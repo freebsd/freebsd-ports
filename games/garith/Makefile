@@ -1,12 +1,12 @@
 # New ports collection makefile for:	garith
-# Version required:			2.1
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	garith-2.1
+PORTNAME=	garith
+PORTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 

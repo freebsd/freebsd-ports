@@ -1,16 +1,16 @@
 # New ports collection makefile for:	drm
-# Version required:			1.0
 # Date created:				4 August 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=		dr_mario
-PKGNAME=		drm-1.0
+PORTNAME=		drm
+PORTVERSION=		1.0
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
+DISTNAME=		dr_mario
 EXTRACT_SUFX=		.tar.Z
 
 MAINTAINER=		ports@FreeBSD.org

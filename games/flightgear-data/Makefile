@@ -1,17 +1,17 @@
 # New ports collection makefile for:	flightgear
-# Version required:	0.6.1
 # Date created:		26 June 1999
 # Whom:			Brian Buchanan <brian@CSUA.Berkeley.EDU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		FlightGear-${FLIGHTGEAR_VERSION}
+PORTNAME=		FlightGear
+PORTVERSION=		0.6.1
 CATEGORIES=		games
 MASTER_SITES=		ftp://ftp.flightgear.org/pub/fgfs/Source/ \
 			ftp://ftp.flightgear.org/pub/fgfs/Shared/
 DISTFILES=		${DISTNAME}.tar.gz \
-			fgfs-base-${FLIGHTGEAR_VERSION}.tar.gz
+			fgfs-base-${PORTVERSION}.tar.gz
 
 MAINTAINER=		brian@CSUA.Berkeley.EDU
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=		mpg123:${PORTSDIR}/audio/mpg123
 
 EXTRACT_ONLY=		${DISTNAME}.tar.gz
 
-FLIGHTGEAR_VERSION=	0.6.1
 .if defined(BUILD_SCENERY_TOOLS)
 MASTER_SITES+=		ftp://ftp.cs.man.ac.uk/pub/amurta/
 DISTFILES+=		gfc-0.8.8.1b.tar.gz gpc231.tar.Z
@@ -61,7 +60,7 @@ post-configure:
 
 pre-install:
 	cd ${PREFIX}; \
-	${TAR} xzf ${DISTDIR}/fgfs-base-${FLIGHTGEAR_VERSION}.tar.gz
+	${TAR} xzf ${DISTDIR}/fgfs-base-${PORTVERSION}.tar.gz
 
 post-install:
 	${MV} ${PREFIX}/FlightGear/bin/runfgfs ${PREFIX}/bin

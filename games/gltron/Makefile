@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gltron
-# Version required:			0.53
 # Date created:				24 July 1999
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gltron-0.53
+PORTNAME=	gltron
+PORTVERSION=	0.53
 CATEGORIES=	games
 MASTER_SITES=	http://www.ards.net/Andreas/gltron/
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gleyes
-# Version required:	0.2
 # Date created:		2 December 1998
 # Whom:			Malte Lance <malte.lance@gmx.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gleyes-0.2
+PORTNAME=	gleyes
+PORTVERSION=	0.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.kddlabs.co.jp/.1/X11/acontrib/gleyes/ \
 		ftp://ftp.riken.go.jp/pub/X11/acontrib/gleyes/ \
