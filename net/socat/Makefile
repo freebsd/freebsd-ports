@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.3.1.0
+PORTVERSION=	1.3.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
@@ -23,7 +23,7 @@ MAKE_ARGS=	CCOPT="${CFLAGS}"
 
 MAN1=		socat.1
 
-DOCS=		EXAMPLES SECURITY
+DOCS=		EXAMPLES README SECURITY
 
 post-install:
 .if !defined(NOPORTDOCS)
