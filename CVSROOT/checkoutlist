@@ -15,6 +15,22 @@
 #
 # comment lines begin with '#'
 #
+# CVS automatically checks out the following (see src/mkmodules.c):
+#	checkoutlist
+#	commitinfo
+#	config
+#	cvsignore
+#	cvswrappers
+#	editinfo
+#	loginfo
+#	modules
+#	notify
+#	rcsinfo
+#	readers
+#	taginfo
+#	verifymsg
+#	writers
+#
 access
 avail
 cfg.pm
@@ -22,7 +38,6 @@ cfg_local.pm
 commit_prep.pl
 commitcheck
 cvs_acls.pl
-cvswrappers
 exclude
 log_accum.pl
 logcheck
