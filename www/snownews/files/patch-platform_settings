@@ -1,7 +1,0 @@
---- platform_settings.orig	Thu Dec  9 19:29:08 2004
-+++ platform_settings	Wed Jan 26 14:37:44 2005
-@@ -1,3 +1,3 @@
--PREFIX=  /usr/local
-+#PREFIX=  /usr/local
- CFLAGS=  -Wall -Wno-format-y2k -O2 -DLOCALEPATH="\"$(LOCALEPATH)\"" -DOS=\"$(shell uname)\" `xml2-config --cflags` $(EXTRA_CFLAGS)  -DSTATIC_CONST_ICONV -I/usr/local/include
- LDFLAGS= -lncurses `xml2-config --libs` $(EXTRA_LDFLAGS)  -lintl -liconv
