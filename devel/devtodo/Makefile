@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devtodo
-PORTVERSION=	0.1.11
+PORTVERSION=	0.1.12
 CATEGORIES=	devel
 MASTER_SITES=	http://activelysecure.net/~athomas/development/devtodo/download.php?filename=${PORTVERSION}/ \
 		${MASTER_SITE_LOCAL}
