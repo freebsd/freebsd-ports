@@ -21,7 +21,7 @@
   echo "----------------------------------------------------------------------"
   
   
-! AC_PATH_PROGS(TCLSH, tclsh8.0 tclsh7.6 tclsh7.5 tclsh7.4 tclsh, no)
+! AC_PATH_PROGS(TCLSH, tclsh8.2 tclsh7.6 tclsh7.5 tclsh7.4 tclsh, no)
   if test "$TCLSH" = no; then
           AC_MSG_ERROR(I couldn't find 'tclsh' please insert it into your pa
   th and try again)
