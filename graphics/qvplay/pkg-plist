@@ -1,0 +1,11 @@
+bin/qvalldel
+bin/qvplay
+bin/qvrec
+share/doc/qvplay/README
+share/doc/qvplay/README.eng
+share/doc/qvplay/README.FreeBSD
+share/doc/qvplay/FAQ.txt
+share/doc/qvplay/HISTORY
+share/doc/qvplay/PROTOCOL.txt
+share/doc/qvplay/PROTOCOL.eng
+@dirrm share/doc/qvplay
