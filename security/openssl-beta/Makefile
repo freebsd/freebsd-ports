@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.sunet.se/pub/security/tools/net/openssl/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400014
