@@ -1,0 +1,5 @@
+NOTE: To be able to receive messages with KPopup, you need to change your
+Samba configuration file (smb.conf): locate the [global] section in the
+configuration file, and add the following line:
+
+message command = sh -c 'export DISPLAY:0; %%PREFIX%%/bin/kpopup %s %f;' &
