@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 #DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Enhanced Integration of Emacs Interpreted Objects
 
 EMACS_PORT_NAME?=	emacs21
@@ -26,8 +26,16 @@ PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/speedbar/speedbar.el:${PORTSDIR}/editors/speedbar${PORTNAMESUFFIX}
 
 USE_GMAKE=	yes
+CONFLICTS=	cedet*
+INFO=		eieio
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/eieio
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "New version of eieio is now in devel/cedet."
+	@${ECHO_MSG} "Hit C-c now if you want the new version."
+	@${ECHO_MSG} ""
 
 do-install:
 	${MKDIR} ${LISPDIR}
