@@ -1,12 +1,15 @@
 bin/racc
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/libracc.rb
+bin/racc2y
+bin/y2racc
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/facade.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccs.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/register.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/racc/state.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/format.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/racc/grammer.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/info.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/racc/iset.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/racc/libracc.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccp.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccs.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/racc/state.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/parser.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc/cparse.so
 @dirrm lib/ruby/site_ruby/%%RUBY_VER%%/racc
