@@ -1,0 +1,10 @@
+--- configure.orig	Wed Nov  7 20:54:00 2001
++++ configure	Sun Sep 15 08:57:22 2002
+@@ -6903,6 +6903,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
