@@ -1,0 +1,13 @@
+--- ./src/artifact.c.orig	Tue Oct 28 22:30:56 1997
++++ ./src/artifact.c	Tue Oct 28 22:34:10 1997
+@@ -382,8 +382,8 @@
+ 	    else HTeleport_control &= ~wp_mask;
+ 	}
+ 	if (spfx & SPFX_WARN) {
+-	    if (on) Warning |= wp_mask;
+-	    else Warning &= ~wp_mask;
++	    if (on) HWarning |= wp_mask;
++	    else HWarning &= ~wp_mask;
+ 	}
+ 	if (spfx & SPFX_EREGEN) {
+ 	    if (on) Energy_regeneration |= wp_mask;

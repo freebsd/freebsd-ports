@@ -1,0 +1,36 @@
+--- ./src/attrib.c.orig	Tue Oct 28 22:31:02 1997
++++ ./src/attrib.c	Tue Oct 28 22:34:18 1997
+@@ -44,7 +44,7 @@
+ 		     {	 0, 0, 0, 0 } },
+ 
+ 	c_abil[] = { {	 7, &(Fast), "quick", "slow" },
+-		     {	15, &(Warning), "sensitive", "" },
++		     {	15, &(HWarning), "sensitive", "" },
+ 		     {	 0, 0, 0, 0 } },
+ 
+ 	e_abil[] = { {   1, &(Fast), "", "" },
+@@ -54,13 +54,13 @@
+ 		     {	 0, 0, 0, 0 } },
+ 
+ 	h_abil[] = { {	 1, &(HPoison_resistance), "", "" },
+-		     {	15, &(Warning), "sensitive", "" },
++		     {	15, &(HWarning), "sensitive", "" },
+ 		     {	 0, 0, 0, 0 } },
+ 
+ 	k_abil[] = { {	 7, &(Fast), "quick", "slow" },
+ 		     {	 0, 0, 0, 0 } },
+ 
+-	p_abil[] = { {	15, &(Warning), "sensitive", "" },
++	p_abil[] = { {	15, &(HWarning), "sensitive", "" },
+ 		     {  20, &(HFire_resistance), "cool", "warmer" },
+ 		     {	 0, 0, 0, 0 } },
+ 
+@@ -81,7 +81,7 @@
+ 		     {   7, &(Fast), "quick", "slow" },
+ 		     {	 0, 0, 0, 0 } },
+ 
+-	w_abil[] = { {	15, &(Warning), "sensitive", "" },
++	w_abil[] = { {	15, &(HWarning), "sensitive", "" },
+ 		     {  17, &(HTeleport_control), "controlled","uncontrolled" },
+ 		     {	 0, 0, 0, 0 } };
+ 

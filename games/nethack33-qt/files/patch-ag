@@ -1,0 +1,11 @@
+--- ./src/monmove.c.orig	Tue Oct 28 22:31:30 1997
++++ ./src/monmove.c	Tue Oct 28 22:34:36 1997
+@@ -83,7 +83,7 @@
+ 	int rd = dochug(mtmp);
+ 	int dd;
+ 
+-	if(Warning && !rd && !mtmp->mpeaceful &&
++	if(HWarning && !rd && !mtmp->mpeaceful &&
+ 			(dd = distu(mtmp->mx,mtmp->my)) < distu(x,y) &&
+ 			dd < 100 && !canseemon(mtmp)) {
+ 	    /* Note: this assumes we only want to warn against the monster to

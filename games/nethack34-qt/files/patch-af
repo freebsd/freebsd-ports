@@ -1,0 +1,11 @@
+--- ./src/mon.c.orig	Tue Oct 28 22:31:23 1997
++++ ./src/mon.c	Tue Oct 28 22:34:29 1997
+@@ -212,7 +212,7 @@
+ 
+ 	    lastwarntime = moves;
+ 	    lastwarnlev = warnlevel;
+-	    switch((int) (Warning & (LEFT_RING | RIGHT_RING))) {
++	    switch((int) (HWarning & (LEFT_RING | RIGHT_RING))) {
+ 	    case LEFT_RING:
+ 		rr = Hallucination ? "left mood ring glows" : "left ring glows";
+ 		break;

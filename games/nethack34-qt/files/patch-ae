@@ -1,0 +1,11 @@
+--- ./src/cmd.c.orig	Tue Oct 28 22:31:09 1997
++++ ./src/cmd.c	Tue Oct 28 22:34:21 1997
+@@ -643,7 +643,7 @@
+ 	if (Lifesaved)
+ 		enl_msg("Your life ", "will be", "would have been", " saved");
+ 	if (Adornment) you_are("adorned");
+-	if (Warning) you_are("warned");
++	if (HWarning) you_are("warned");
+ 	if (Protection) you_are("protected");
+ 	if (Reflecting) you_have("reflection");
+ 	if ((HLevitation & (I_SPECIAL|W_ARTI)) != 0L &&
