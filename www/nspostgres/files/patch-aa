@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Aug 20 21:42:48 2000
++++ Makefile	Tue Jan 30 16:14:26 2001
+@@ -7,7 +7,7 @@
+ #      Postgres internal database driver.
+ #
+ 
+-NSHOME    =  ../aolserver
++NSHOME    =  ${BUILDPREFIX}/aolserver
+ 
+ #
+ # Override default rules if library not available
