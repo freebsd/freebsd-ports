@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	afsp
-PORTVERSION=	4.3
+PORTVERSION=	5.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.tsp.ece.mcgill.ca/pub/AFsp/
-DISTNAME=	AFsp-v4r3
+DISTNAME=	AFsp-v5r0
 
 MAINTAINER=	ginga@athena.club.ne.jp
 

@@ -13,6 +13,7 @@ BINARIES =	bin/CompAudio \
 		bin/ResampAudio
 MAINHEADERS =	include/AD.h \
 		include/AO.h \
+		include/AObase.h \
 		include/libtsp.h
 SUBHEADERS =	include/libtsp/AFdataio.h \
 		include/libtsp/AFheader.h \
