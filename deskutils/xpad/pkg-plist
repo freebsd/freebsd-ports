@@ -1,7 +1,5 @@
 bin/xpad
-share/pixmaps/xpad.xpm
-@dirrm share/pixmaps
-%%PORTDOCS%%share/doc/xpad/README
-%%PORTDOCS%%share/examples/xpad/xpad.desktop
-%%PORTDOCS%%@dirrm share/doc/xpad
-%%PORTDOCS%%@dirrm share/examples/xpad
+share/xpad/xpad.xpm
+share/xpad/xpad2.xpm
+share/xpad/sticky.xpm
+@dirrm share/xpad
