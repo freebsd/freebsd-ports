@@ -20,6 +20,7 @@
     SUBDIR += eclipse-gef
     SUBDIR += eclipse-gef-examples
     SUBDIR += eclipse-langpack
+    SUBDIR += eclipse-lomboz
     SUBDIR += eclipse-pmd
     SUBDIR += eclipse-vep
     SUBDIR += eclipse-vep-examples
