@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.26 1998/04/15 07:35:47 tg Exp $
+# $Id: Makefile,v 1.27 1998/04/24 08:18:23 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -14,8 +14,10 @@ MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	http://www.python.org/1.5/patches-1.5.1/
-PATCHFILES=	_tkinter.1.txt bltinmodule.1.txt freeze.1.txt object.1.txt \
-		parsermodule.1.txt string.1.txt	zlibmodule.1.txt
+PATCHFILES=	_tkinter.1.txt bltinmodule.1.txt fileobject.1.txt \
+		freeze.1.txt object.1.txt \
+		parsermodule.1.txt string.1.txt	timemodule.1.txt urllib.1.txt \
+		zlibmodule.1.txt
 
 MAINTAINER=	tg@FreeBSD.org
 
