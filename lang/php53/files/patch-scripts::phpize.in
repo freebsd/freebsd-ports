@@ -1,0 +1,11 @@
+--- scripts/phpize.in.orig	Sat Jan  3 15:03:46 2004
++++ scripts/phpize.in	Fri Jun 25 12:58:49 2004
+@@ -108,7 +108,7 @@
+ 
+ phpize_libtoolize()
+ {
+-  libtoolize=`$builddir/build/shtool path glibtoolize libtoolize`
++  libtoolize=`$builddir/build/shtool path libtoolize13`
+   $libtoolize -f -c || exit 1
+ }
+ 
