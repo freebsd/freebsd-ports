@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040708:
+  AFFECTS: users of www/opera
+  AUTHOR: osa@FreeBSD.org
+
+  Opera 7.52 released.
+  The file search.ini has been changed to ensure correct default
+  addresses for dictionary and encyclopedia searches.  Existing
+  versions will be overwritten on upgrade.  Users who have a
+  customized search.ini file that they would like to keep, should
+  edit its version number to 4 before upgrading.  Note that you
+  have to edit the search.ini file located in the /.opera folder.
+
+  [Version]
+  File Version=4
+
+  Other changes you are may find in changelog, its
+  available at http://www.opera.com/linux/changelogs/752/
+
 20040706:
   AFFECTS: users of Python bindings for textproc/lib{xml2,xslt} libraries
   AUTHOR: gnome@FreeBSD.org
