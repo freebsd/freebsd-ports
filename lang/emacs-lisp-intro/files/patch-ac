@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Dec 17 19:24:43 2001
++++ Makefile.in	Sun Dec 23 05:29:31 2001
+@@ -57,7 +57,7 @@
+ NORMAL_UNINSTALL = :
+ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
+ 
