@@ -15,7 +15,7 @@ MASTER_SITES=	http://mysql.ftp.cvut.cz/Downloads/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	mysqlgui
 DISTNAME=	${PORTNAME:S/-//}-${PORTVERSION}
 
-MAINTAINER=	cyrille.lefevre@laposte.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical SQL client for MySQL
 
 LIB_DEPENDS=	sqlplus.1:${PORTSDIR}/databases/mysql++ \
@@ -44,7 +44,7 @@ NEW_FILES=	Fl_Editor.H editengine.h
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000 || ${ARCH} == "alpha"
-BROKEN=		Does not build except on i386 4.x
+BROKEN=		Does not build except on i386 4.x, use mysql-administrator \(GNOME\) or mysql-navigator \(KDE\) instead
 .endif
 
 # Post-extract
