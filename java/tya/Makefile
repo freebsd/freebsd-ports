@@ -14,28 +14,27 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
+BUILD_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/a1/a1./}
 
 ONLY_FOR_ARCHS=	i386
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-jdk=${LOCALBASE}/${JAVADIR}
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--with-jdk=${JAVADIR}
 
-JAVADIR=	jdk1.1.8
-JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
-
-PLIST_SUB=	JAVADIR=${JAVADIR}
+JAVADIR=	${LOCALBASE}/jdk1.1.8
+JAVALIBDIR=	${PREFIX}/lib/tya
 
 do-install:
+	@${MKDIR} ${JAVALIBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/libtya.so ${JAVALIBDIR}
 
 post-install:
-	@${MKDIR} ${PREFIX}/${JAVADIR}/tya
-	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/${JAVADIR}/tya
+	@${MKDIR} ${PREFIX}/share/tya
+	@${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/tya
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "See ${PREFIX}/${JAVADIR}/tya/README for usage instructions."
+	@${ECHO_MSG} "See ${PREFIX}/share/tya/README for usage instructions."
 	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>
