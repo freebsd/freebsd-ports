@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	Wed Jan 15 22:36:59 2003
-+++ man/Makefile.in	Fri Jan 17 22:01:00 2003
-@@ -188,18 +188,9 @@
+--- man/Makefile.in.orig	Sun Jun 15 01:14:43 2003
++++ man/Makefile.in	Tue Jun 17 01:14:37 2003
+@@ -216,18 +216,9 @@
  
  AUTOMAKE_OPTIONS = gnu
  
