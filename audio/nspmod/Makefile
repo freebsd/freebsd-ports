@@ -3,14 +3,14 @@
 # Date created:				1 Jun 1997
 # Whom:					jmg
 #
-#	$Id$
+#	$Id: Makefile,v 1.1.1.1 1997/06/03 08:33:06 jmg Exp $
 #
 
 DISTNAME=	nspmod-0.1
 CATEGORIES=	audio
-MASTER_SITE_SUBDIR=	apps/sound/players
 MASTER_SITES=	http://www.jeton.or.jp/users/toru/www/orgsoft/nspmod/	\
 		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=	jmg@FreeBSD.ORG
 
