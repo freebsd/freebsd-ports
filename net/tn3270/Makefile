@@ -20,9 +20,9 @@ MAN1=		tn3270.1 mset.1
 MAN5=		map3270.5
 MANCOMPRESSED=	maybe
 
-OLD_LIBTELNETDIR=	/usr/src/contrib/telnet
+NEW_TELNETDIR=	/usr/src/contrib/telnet
 
-.if exists(${OLD_LIBTELNETDIR})
+.if exists(${NEW_TELNETDIR})
 LIBTELNETDIR?=	/usr/src/contrib/telnet/libtelnet
 .else
 LIBTELNETDIR?=	/usr/src/lib/libtelnet
@@ -36,7 +36,7 @@ post-extract:
 	exit 1; \
 	fi
 	${CP} -rp ${LIBTELNETDIR} ${WRKSRC}
-.if exists(${OLD_LIBTELNETDIR})
+.if exists(${NEW_TELNETDIR})
 	${CP} ${LIBTELNETDIR}/../arpa/telnet.h ${WRKSRC}/libtelnet
 	${SED} -E '/^(TELNETDIR|\.PATH|CFLAGS|INCS)/d' \
 		${LIBTELNETDIR}/../../../lib/libtelnet/Makefile > \
