@@ -1,4 +1,4 @@
-a network analyzer that lets you capture and interactively browse the
+A network analyzer that lets you capture and interactively browse the
 contents of Ethernet frames. Packet data can be read from a file, or
 live from a local network interface. 
 
