@@ -1,25 +1,4 @@
 bin/racc
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/bench.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/bug.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/collfrom.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/dispatch.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/errutil.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/extmod.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/fileutils.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/futils.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/gconst.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/getdep.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/info.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/must.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/pipeline.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/rbparams.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/recycle.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/rubyemu.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/strquote.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/symbol.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/timer.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/to_s.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/amstd/version.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/libracc.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/facade.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccs.rb
@@ -30,7 +9,6 @@ lib/ruby/site_ruby/%%RUBY_VER%%/racc/info.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/raccp.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/racc/parser.rb
 lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc/cparse.so
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/amstd
 @dirrm lib/ruby/site_ruby/%%RUBY_VER%%/racc
 @dirrm lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/racc
 share/examples/ruby/racc/calc.y
