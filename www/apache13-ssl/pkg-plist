@@ -85,6 +85,7 @@ sbin/httpsd
 sbin/httpsdctl
 sbin/logresolve
 sbin/rotatelogs
+%%SUB_SUEXEC%%sbin/suexec
 @exec mkdir -p %D/www
 @exec ln -fs %B %D/www/data.default
 @unexec rm -f %D/www/data.default
@@ -119,7 +120,7 @@ www/htdocs/index.html.ru.ucs2
 www/htdocs/index.html.ru.ucs4
 www/htdocs/index.html.ru.utf8
 www/htdocs/index.html.se
-www/htdocs/index.html.zh
+www/htdocs/index.html.zh-tw.big5
 www/htdocs/manual/LICENSE
 www/htdocs/manual/bind.html.en
 www/htdocs/manual/bind.html.fr
@@ -133,7 +134,9 @@ www/htdocs/manual/configuring.html.en
 www/htdocs/manual/configuring.html.fr
 www/htdocs/manual/configuring.html.html
 www/htdocs/manual/configuring.html.ja.jis
-www/htdocs/manual/content-negotiation.html
+www/htdocs/manual/content-negotiation.html.en
+www/htdocs/manual/content-negotiation.html.html
+www/htdocs/manual/content-negotiation.html.ja.jis
 www/htdocs/manual/custom-error.html.en
 www/htdocs/manual/custom-error.html.fr
 www/htdocs/manual/custom-error.html.html
@@ -217,6 +220,7 @@ www/htdocs/manual/misc/vif-info.html
 www/htdocs/manual/misc/windoz_keepalive.html
 www/htdocs/manual/mod/core.html.en
 www/htdocs/manual/mod/core.html.fr
+www/htdocs/manual/mod/core.html.ja.jis
 www/htdocs/manual/mod/core.html.html
 www/htdocs/manual/mod/directive-dict.html.en
 www/htdocs/manual/mod/directive-dict.html.fr
@@ -244,11 +248,13 @@ www/htdocs/manual/mod/mod_actions.html.en
 www/htdocs/manual/mod/mod_actions.html.html
 www/htdocs/manual/mod/mod_actions.html.ja.jis
 www/htdocs/manual/mod/mod_alias.html.en
+www/htdocs/manual/mod/mod_alias.html.html
 www/htdocs/manual/mod/mod_alias.html.ja.jis
 www/htdocs/manual/mod/mod_asis.html.en
 www/htdocs/manual/mod/mod_asis.html.html
 www/htdocs/manual/mod/mod_asis.html.ja.jis
 www/htdocs/manual/mod/mod_auth.html.en
+www/htdocs/manual/mod/mod_auth.html.html
 www/htdocs/manual/mod/mod_auth.html.ja.jis
 www/htdocs/manual/mod/mod_auth_anon.html
 www/htdocs/manual/mod/mod_auth_db.html
@@ -280,7 +286,9 @@ www/htdocs/manual/mod/mod_info.html.ja.jis
 www/htdocs/manual/mod/mod_isapi.html
 www/htdocs/manual/mod/mod_log_agent.html
 www/htdocs/manual/mod/mod_log_common.html
-www/htdocs/manual/mod/mod_log_config.html
+www/htdocs/manual/mod/mod_log_config.html.en
+www/htdocs/manual/mod/mod_log_config.html.html
+www/htdocs/manual/mod/mod_log_config.html.ja.jis
 www/htdocs/manual/mod/mod_log_referer.html
 www/htdocs/manual/mod/mod_mime.html.en
 www/htdocs/manual/mod/mod_mime.html.html
