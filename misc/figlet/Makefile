@@ -12,8 +12,9 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://wuarchive.wustl.edu/graphics/graphics/misc/figlet/program/unix/ \
 		ftp://ftp.funet.fi/pub/unix/tools/figlet/program/unix/ \
 		ftp://ftp.internexus.net/pub/figlet/program/unix/ \
-		ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://nuxi.ucdavis.edu/pub/misc/
+MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	figlet22
 
 MAINTAINER=	obrien@FreeBSD.org

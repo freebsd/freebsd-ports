@@ -8,7 +8,8 @@
 PORTNAME=	tkhfs
 PORTVERSION=	1.27
 CATEGORIES=	emulators tk82
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jmz
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jmz@FreeBSD.org

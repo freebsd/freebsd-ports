@@ -8,7 +8,8 @@
 PORTNAME=	qix
 PORTVERSION=	1.1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jmz
 
 MAINTAINER=	jmz@FreeBSD.org
 

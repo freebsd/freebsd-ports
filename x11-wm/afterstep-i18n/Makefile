@@ -9,10 +9,11 @@ PORTNAME=	afterstep-i18n
 PORTVERSION= 	1.0
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/kuriyama/ \
+		${MASTER_SITE_LOCAL} \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/icons/
-MASTER_SITE_SUBDIR=	stable/archives
+# former for ${MASTER_SITE_AFTERSTEP}, latter for ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	stable/archives kuriyama
 DISTNAME=	AfterStep-1.0
 DISTFILES=      ${DISTNAME}.tar.gz \
 		unofficial-I18N.98Feb27.tar.gz \

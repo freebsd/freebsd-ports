@@ -9,7 +9,8 @@
 PORTNAME=	mshell
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jmz
 DISTFILES=	7432.Z
 
 MAINTAINER=	jmz@FreeBSD.org

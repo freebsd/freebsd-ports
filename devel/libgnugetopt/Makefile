@@ -8,7 +8,8 @@
 PORTNAME=	libgnugetopt
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES= 	ftp://ftp.freebsd.org/pub/FreeBSD/ports/local-distfiles/obrien/
+MASTER_SITES= 	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	linalg
 PORTVERSION=	4.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/will/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	oleg@pobox.com
 

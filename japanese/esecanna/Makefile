@@ -9,7 +9,8 @@ PORTNAME=	esecanna
 PORTVERSION=	0.99.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
-		ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
