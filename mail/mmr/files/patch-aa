@@ -1,5 +1,5 @@
---- Makefile	Thu Dec 24 23:32:56 1998
-+++ /home/andy/tmp/wrk/Makefile	Tue Apr 27 18:06:19 1999
+--- Makefile.orig	Fri Mar 31 03:26:17 2000
++++ Makefile	Fri Mar 31 03:27:50 2000
 @@ -7,15 +7,15 @@
  #		(Toggled at runtime with ^T)
  # -DMAILPATH=\"/some/path\"
@@ -13,11 +13,11 @@
 -LIBS = -lcurses -ltermcap -lnsl
 -CXX  = g++ -g
 -INCDIRS = -Imd5 -I/usr/include/ncurses
--CXXFLAGS = $(DEFS) $(INCDIRS) $(CFLAGS)
+-CXXFLAGS = $(DEFS) $(INCDIRS) -O2
 +LIBS = -lncurses
-+CXX?= g++ -g
++CXX  ?= g++ -g
 +INCDIRS = -Imd5
-+CXXFLAGS+= $(DEFS) $(INCDIRS)
++CXXFLAGS += $(DEFS) $(INCDIRS)
  
  # Remind 'make' how to make C++ files.. *sigh*
  include .c++howto

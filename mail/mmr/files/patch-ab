@@ -1,8 +1,8 @@
---- outgoing.cc	Fri Jul 17 04:10:02 1998
-+++ /home/andy/tmp/wrk/outgoing.cc	Tue Apr 27 18:06:33 1999
-@@ -13,7 +13,9 @@
- #include "terminal.h"
+--- outgoing.cpp.orig	Thu Apr 22 23:24:59 1999
++++ outgoing.cpp	Fri Mar 31 03:22:18 2000
+@@ -14,7 +14,9 @@
  #include "rcfile.h"
+ #include "outgoing.h"
  
 +#ifndef MAILER
  #define MAILER	"/usr/lib/sendmail -t"
