@@ -90,14 +90,22 @@ OPTIONS+=	SNMP_4		"Enable SNMP support using net-snmp v4"	off \
 		SNMP_5		"Enable SNMP support using net-snmp v5"	off
 OPTIONS+=	PASS8BITHACK	"Add pass8bit option (not recommended)"	off
 
+BDB_VERS=	3 4 41 42 43
+
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_BDB_3) && !defined(WITH_BDB_4) && \
-	!defined(WITH_BDB_41) && !defined(WITH_BDB_42) && \
-	!defined(WITH_BDB_43)
-.if defined(WITHOUT_BDB_3) && defined(WITHOUT_BDB_4) && \
-	defined(WITHOUT_BDB_41) && defined(WITHOUT_BDB_42) && \
-	defined(WITHOUT_BDB_43)
+BDB_W:=
+BDB_WO:=
+.for v in ${BDB_VERS}
+BDB_W:=		${BDB_W} ${WITH_BDB_${v}}
+BDB_WO:=	${BDB_WO} ${WITHOUT_BDB_${v}}
+.endfor
+BDB_NUM_W!=	echo ${BDB_W} | wc -w
+BDB_NUM_WO!=	echo ${BDB_WO} | wc -w
+BDB_NUM_VERS!=	echo ${BDB_VERS} | wc -w
+
+.if ${BDB_NUM_W} == 0
+.if ${BDB_NUM_WO} == ${BDB_NUM_VERS}
 BROKEN=		"You need to select one BDB version.  Run 'make config' again!"
 .endif
 .if ${USE_BDB_VER} == 3
@@ -111,17 +119,7 @@ WITH_BDB_42=	true
 .elif ${USE_BDB_VER} == 43
 WITH_BDB_43=	true
 .endif
-.endif
-.if (defined(WITH_BDB_3) && defined(WITH_BDB_4)) || \
-	(defined(WITH_BDB_3) && defined(WITH_BDB_41)) || \
-	(defined(WITH_BDB_3) && defined(WITH_BDB_42)) || \
-	(defined(WITH_BDB_3) && defined(WITH_BDB_43)) || \
-	(defined(WITH_BDB_4) && defined(WITH_BDB_41)) || \
-	(defined(WITH_BDB_4) && defined(WITH_BDB_42)) || \
-	(defined(WITH_BDB_4) && defined(WITH_BDB_43)) || \
-	(defined(WITH_BDB_41) && defined(WITH_BDB_42)) || \
-	(defined(WITH_BDB_41) && defined(WITH_BDB_43)) || \
-	(defined(WITH_BDB_42) && defined(WITH_BDB_43))
+.elif ${BDB_NUM_W} != 1
 BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
 .endif
 .if defined(WITH_BDB_3)
