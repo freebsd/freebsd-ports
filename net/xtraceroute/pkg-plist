@@ -3,7 +3,9 @@ share/locale/es/LC_MESSAGES/xtraceroute.mo
 share/locale/fr/LC_MESSAGES/xtraceroute.mo
 share/locale/ja/LC_MESSAGES/xtraceroute.mo
 share/locale/sv/LC_MESSAGES/xtraceroute.mo
-share/xtraceroute/earth.png
-share/xtraceroute/hosts.cache
-share/xtraceroute/networks.cache
-@dirrm share/xtraceroute
+%%DATADIR%%/earth.png
+%%DATADIR%%/hosts.cache
+%%DATADIR%%/networks.cache
+%%DATADIR%%/night.png
+%%DATADIR%%/xtraceroute-resolve-location.sh
+@dirrm %%DATADIR%%
