@@ -1,0 +1,24 @@
+Minimalist is a Minimalistic Mailing List manager. It is fast, extremely easy
+to setup and support. It is written in Perl and full tested on FreeBSD and
+Linux, where it works pretty well. However there aren't causes not to use
+Minimalist on any other Unix system, because it doesn't use any
+system-dependent features.
+
+Minimalist has these features:
+
+ . subscribing/unsubscribing users by request
+ . several levels of security
+ . additional services such as information about list, archiving lists,
+   information about users of list and so on.
+ . support for read-only/closed/mandatory lists
+ . support for Blacklist
+ . logging activity
+
+Minimalist has also a notion of 'trusted users'. They have full rights to
+subscribe/unsubscribe other users; get any information related to lists and
+users.
+
+author: Vladimir Litovka, doka@kiev.sovam.com
+WWW: http://www.webest.com/minimalist
+
+Ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)
