@@ -22,7 +22,7 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing tircproxy docs in ${DOCSDIR}"
+	@${ECHO_MSG} "===>   Installing tircproxy docs in ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

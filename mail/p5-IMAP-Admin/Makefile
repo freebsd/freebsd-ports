@@ -25,10 +25,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/examples/create.pl \
 		${WRKSRC}/examples/delete.pl \
 		${PREFIX}/share/examples/p5-IMAP-Admin
-	@${ECHO} ""
-	@${ECHO} "*******************************************************************************"
-	@${ECHO} "See ${PREFIX}/share/examples/p5-IMAP-Admin for some examples..."
-	@${ECHO} "*******************************************************************************"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "*******************************************************************************"
+	@${ECHO_MSG} "See ${PREFIX}/share/examples/p5-IMAP-Admin for some examples..."
+	@${ECHO_MSG} "*******************************************************************************"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

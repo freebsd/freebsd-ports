@@ -65,8 +65,8 @@ ALL_TARGET=	bootstrap
 MAN1=		cpp30.1 g++30.1 g77-30.1 gcc30.1 gcov30.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
-pre-fetch:
-	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
+pre-everything::
+	@${ECHO_MSG} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified

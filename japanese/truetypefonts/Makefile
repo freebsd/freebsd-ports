@@ -26,10 +26,10 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 do-install:
 .if !exists(${PREFIX}/${FONTSDIR})
-	@${ECHO} "*********************************************************"
-	@${ECHO} "Please add ${PREFIX}/${FONTSDIR} to your font path"
-	@${ECHO} "in /etc/XF86Config."
-	@${ECHO} "*********************************************************"
+	@${ECHO_MSG} "*********************************************************"
+	@${ECHO_MSG} "Please add ${PREFIX}/${FONTSDIR} to your font path"
+	@${ECHO_MSG} "in /etc/XF86Config."
+	@${ECHO_MSG} "*********************************************************"
 	${MKDIR} ${PREFIX}/${FONTSDIR}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/wadalab-gothic.ttf ${PREFIX}/${FONTSDIR}

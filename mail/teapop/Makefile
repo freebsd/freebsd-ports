@@ -79,11 +79,11 @@ show-options:
 	@${EGREP} '^##' ${.CURDIR}/Makefile | ${SED} 's/##//'
 
 post-install:
-	@${ECHO} ""
-	@${ECHO} "------------------------------------------------------------------------"
-	@${ECHO} "===> Be sure to copy ${LOCALBASE}/etc/teapop.passwd.sample to"
-	@${ECHO} "===> ${LOCALBASE}/etc/teapop.passwd before using teapop"
-	@${ECHO} "------------------------------------------------------------------------"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "------------------------------------------------------------------------"
+	@${ECHO_MSG} "===> Be sure to copy ${LOCALBASE}/etc/teapop.passwd.sample to"
+	@${ECHO_MSG} "===> ${LOCALBASE}/etc/teapop.passwd before using teapop"
+	@${ECHO_MSG} "------------------------------------------------------------------------"
+	@${ECHO_MSG} ""
 
 .include <bsd.port.mk>

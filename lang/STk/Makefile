@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 
 PLIST_SUB=	STK_VERSION=${PORTVERSION} STK_ARCH=${STK_ARCH}
 
-STK_ARCH!=	${ECHO} "$$(uname)-$$(uname -r)-$$(uname -m)"
+STK_ARCH!=	${ECHO_CMD} "$$(uname)-$$(uname -r)-$$(uname -m)"
 
 .include <bsd.port.mk>

@@ -35,7 +35,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.j18 ${PREFIX}/share/doc/ja-elvis
 	@${SH} ${PKGREQ} ${PKGNAME} INSTALL
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
-		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
+		${ECHO_MSG} "Installing ${STARTUP_SCRIPT} startup file.";	\
 		${INSTALL_SCRIPT} ${FILESDIR}/ja-elvis.sh ${STARTUP_SCRIPT};\
 	fi
 
