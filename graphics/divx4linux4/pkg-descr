@@ -1,0 +1,12 @@
+[excerpt from DivX (TM) site]
+
+The center of DivX MPEG-4 Codec is the DivX codec core. It is the
+engine of the codec. The codec core processes either the video
+image or MPEG-4 bitstream, and it uses the compression and
+decompression to convert information between the formats. The codec
+core includes two parts - an encoder (that compresses the video
+image into MPEG-4 bitstreams) and a decoder (that decompresses the
+MPEG-4 bitstream back into video images). The encoder core is named
+"encore", and the decoder core "decore".
+
+WWW: http://www.divx.com/

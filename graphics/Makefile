@@ -27,6 +27,7 @@
     SUBDIR += dc3play
     SUBDIR += dia
     SUBDIR += diacanvas
+    SUBDIR += divx4linux
     SUBDIR += dore
     SUBDIR += dumpmpeg
     SUBDIR += ecg2png
