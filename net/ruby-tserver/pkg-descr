@@ -1,0 +1,4 @@
+TServer is a Ruby library for writing a preforking server like Apache.
+
+Author:	TOMITA Masahiro <tommy@tmtm.org>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=TServer

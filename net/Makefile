@@ -509,6 +509,7 @@
     SUBDIR += ruby-snmp
     SUBDIR += ruby-soap
     SUBDIR += ruby-tcpsocketpipe
+    SUBDIR += ruby-tserver
     SUBDIR += ruby-xmlrpc
     SUBDIR += rwhois
     SUBDIR += samba
