@@ -18,13 +18,10 @@ DISTFILES?=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
-# XXX: this will eventually go away
-.if !defined(PGSQL_WORK_IN_PROGRESS)
-BROKEN=	Work in progress, please use databases/postgresql7 until further notice
-.endif
-
 CONFLICTS?=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-35-9]* \
-		${PORTNAME}${PKGNAMESUFFIX}-8.*
+		${PORTNAME}${PKGNAMESUFFIX}-8.* \
+		${PORTNAME}-client-7.[0-35-9]* \
+		${PORTNAME}-client-8.*
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
@@ -38,8 +35,8 @@ GNU_CONFIGURE=	YES
 .undef GNU_CONFIGURE
 .endif
 
-CONFIGURE_ARGS?=--with-libraries=${LOCALBASE}/lib \
-		--with-includes=${LOCALBASE}/include
+CONFIGURE_ARGS+=--with-libraries=${LOCALBASE}/lib \
+		--docdir=${DOCSDIR}
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST=		${PKGDIR}/pkg-plist${PKGNAMESUFFIX}
@@ -58,21 +55,30 @@ WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 
 .if !defined(SLAVE_ONLY)
 OPTIONS=	NLS "Use internationalized messages" on
-OPTIONS+=	SSL "Build with SSL" on
+.endif
+
+# Cannot check this with standard OPTION due to a catch-22.
+# USE_OPENSSL must precede bsd.port.pre.mk, but then we don't know
+# what OPTIONS are set.
+#
+# If you *don't* want SSL, set WITHOUT_SSL=YES when making
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if !defined(SLAVE_ONLY)
 # gnugetopt will always be used if already installed
-.  if ${OSVERSION} < 500041
-OPTIONS+=	GNUGETOPT "Depend on GNU getopt" on
+.  if (${OSVERSION} < 500041) && !exists(${LOCALBASE}/include/getopt.h)
+OPTIONS+=	GNUGETOPT "Use GNU getopt" on
 .  endif
 .  if defined(SERVER_ONLY)
 OPTIONS+=	PAM "Build with PAM support" off
 .  endif
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
-OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal's kerberos support" off
+OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
 .  if defined(SERVER_ONLY)
 OPTIONS+=	LIBC_R "Link with libc_r, needed by plpython" off
@@ -82,15 +88,15 @@ OPTIONS+=	TESTS "Allows the use of a \"check\" target" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)
-CONFIGURE_ARGS+=	--with-pam
+CONFIGURE_ARGS+=--with-pam
 .  endif
 
-. if !defined(WITHOUT_GNUGETOPT)
+. if !defined(WITHOUT_GNUGETOPT) || exists(${LOCALBASE}/include/getopt.h)
 USE_GETOPT_LONG=yes
 .  endif
 
 .  if !(defined(WITHOUT_GETTEXT) || defined(WITHOUT_NLS))
-CONFIGURE_ARGS+=--enable-nls
+CONFIGURE_ARGS+=--enable-nls --with-includes=${LOCALBASE}/include
 PLIST_SUB+=	GETTEXT=""
 USE_GETTEXT=	YES
 .  else
@@ -109,28 +115,21 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install-strip
 .  endif
 
-.  if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	"--with-openssl=${OPENSSLBASE}"
-.  endif
-
 .  if defined(WITH_MIT_KRB5)
+WITH_KRB5=	yes
+KRB5_HOME?=	${LOCALBASE}
 KRB5CONF=	${KRB5_HOME}/bin/krb5-config
 LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
-WITH_KRB5=	yes
 .  endif
 
 .  if defined(WITH_HEIMDAL_KRB5)
 WITH_KRB5=	yes
 .    if defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
 KRB5CONF=	${HEIMDAL_HOME}/bin/krb5-config
-.    elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
+.    elif ( ${OSVERSION} > 500105 ) && exists(${DESTDIR}/usr/lib/libkrb5.a)
 KRB5CONF=	${DESTDIR}/usr/bin/krb5-config
 .    else
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
-CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 KRB5CONF=	${LOCALBASE}/bin/krb5-config
 .    endif
 .  endif
@@ -143,30 +142,13 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .  if defined(SERVER_ONLY) && defined(WITH_TESTS)
 DISTFILES+=	postgresql-test-${PORTVERSION}${EXTRACT_SUFX}
+EXTRA_PATCHES=	${FILESDIR}/regresspatch-src-test-regress-pgregress-sh
 .  endif
 
 .  if defined(SERVER_ONLY) && defined(WITH_LIBC_R)
 CFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 .  endif
-
-.  if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
-	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
-	@${ECHO} "Please choose one or the other."
-	@exit 1
-.  endif
-.  if defined(WITH_MIT_KRB5) && !exists(${KRB5CONF})
-	@${ECHO} "Unable to find krb5-config in your local base, please verify that"
-	@${ECHO} "security/krb5 is installed or undefine the WITH_MIT_KRB5 tunable."
-	@exit 1
-.  endif
-.  if defined(WITH_HEIMDAL_KRB5) && !exists(${KRB5CONF})
-	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
-	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
-	@${ECHO} "and remake world."
-	@exit 1
-.  endif
-
 .endif # !SLAVE_ONLY
 
 .if defined(CLIENT_ONLY)
@@ -208,6 +190,14 @@ pre-everything::
 .endif
 
 .if !defined(NO_BUILD)
+
+pre-configure:
+.  if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
+	@${ECHO} "MIT's and Heimdal Kerberos are mutually exclusive."
+	@${ECHO} "Please choose one or the other."
+	@exit 1
+.  endif
+
 do-build:
 	@ cd ${WRKSRC}/src/backend ;\
 	${GMAKE} ../../src/include/parser/parse.h ../../src/include/utils/fmgroids.h
@@ -235,10 +225,11 @@ do-install:
 	    cd ${WRKSRC}/$${dir} && \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${INSTALL_TARGET}; \
 	done
-	${MKDIR} ${PREFIX}/share/postgresql
-.  if defined(SERVER_ONLY)
+.  if defined(CLIENT_ONLY)
 	@ cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} install-all-headers
-.  for i in profile cshrc
+.  elif defined(SERVER_ONLY)
+	@ ${MKDIR} ${PREFIX}/share/postgresql
+.    for i in profile cshrc
 	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/dot.$i.in \
 		> ${PREFIX}/share/postgresql/dot.$i.dist; \
@@ -246,7 +237,7 @@ do-install:
 	if [ ! -f ~pgsql/.$i ]; then \
 		${CP} ${PREFIX}/share/postgresql/dot.$i.dist ~pgsql/.$i; \
 	fi
-.  endfor
+.    endfor
 	@ ${SED} -e "s|%%PREFIX%%|${PREFIX}|g; s|%%RC_SUBR%%|${RC_SUBR}|g" \
 		< ${FILESDIR}/pgsql.sh.tmpl \
 		> ${RCSCRIPT} ;\
@@ -258,7 +249,8 @@ do-install:
 			${PREFIX}/etc/periodic/daily
 .  endif # SERVER_ONLY
 	@ if [ -r ${PKGMESSAGE} ]; then \
-		${INSTALL_DATA} ${PKGMESSAGE} ${PREFIX}/share/postgresql/README${PKGNAMESUFFIX} ;\
+		${MKDIR} ${DOCSDIR} ;\
+		${INSTALL_DATA} ${PKGMESSAGE} ${DOCSDIR}/README${PKGNAMESUFFIX} ;\
 		${ECHO} "======================================================================" ;\
 		${CAT} ${PKGMESSAGE} ;\
 		${ECHO} "======================================================================" ;\
