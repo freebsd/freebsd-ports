@@ -7,7 +7,6 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
 		http://www5.xdsl.ne.jp/~shuna/mutt/distfiles/ \
@@ -30,9 +29,9 @@ BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.28
+VERSION=	1.3.99
 JP_VERSION=	1
-MANUALVERSION=	1.3.23
+MANUALVERSION=	1.3.28
 
 DIST_SUBDIR=	mutt
 NO_LATEST_LINK=	yes
@@ -68,7 +67,6 @@ CONFIGURE_ARGS+=	--with-ssl
 
 DIFFDIR=	${WRKDIR}/${DISTNAME}-ja.${JP_VERSION}
 DIFFNAME=	patch-${VERSION}.tt.ja.${JP_VERSION}
-SRCDOCSDIR=	${WRKDIR}/manual_ja-${MANUALVERSION}
 
 pre-patch:
 	(cd ${DIFFDIR}; ${PATCH} < ${FILESDIR}/prepatch-aa)
@@ -97,9 +95,9 @@ post-install:
 	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-en.rc ${DOCSDIR}/samples
 	${INSTALL_DATA} ${DIFFDIR}/samples/mutt-ja.rc ${DOCSDIR}/samples
 	${INSTALL_DATA} ${DIFFDIR}/samples/sample.muttrc-tt ${DOCSDIR}/samples
-	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.txt ${DOCSDIR}
-	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.tex ${DOCSDIR}
-	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${SRCDOCSDIR}/manual_ja.sgml ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${DOCSDIR}
 
 .include <bsd.port.post.mk>
