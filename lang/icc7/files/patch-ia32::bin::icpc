@@ -4,7 +4,7 @@
  #!/bin/sh
  
 -if [ -z INTEL_LICENSE_FILE ]
-+ICC_LOCALBASE=/usr/local
++ICC_LOCALBASE=%%ICC_LOCALBASE%%
 +export ICC_LOCALBASE;
 +
 +if [ -z "$INTEL_LICENSE_FILE" ]
