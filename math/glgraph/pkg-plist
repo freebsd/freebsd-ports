@@ -1,0 +1,3 @@
+bin/glgraph
+%%PORTDOCS%%%%DOCSDIR%%/documentation.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,4 @@
+GLgraph visualize mathematical functions. It can handle 3 unknowns (x,z,t) and
+can produce a 4D function with 3 space and 1 time dimension.
+
+WWW: http://glgraph.kaosu.ch/

@@ -39,6 +39,7 @@
     SUBDIR += gdcalc
     SUBDIR += geg
     SUBDIR += gexpr
+    SUBDIR += glgraph
     SUBDIR += glove
     SUBDIR += glpk
     SUBDIR += gnumeric
