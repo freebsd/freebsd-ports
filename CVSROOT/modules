@@ -5437,6 +5437,7 @@ p5-Chemistry-Elements	ports/science/p5-Chemistry-Elements
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-ArrayObjects	ports/devel/p5-Class-ArrayObjects
 p5-Class-Autouse	ports/devel/p5-Class-Autouse
+p5-Class-Base	ports/devel/p5-Class-Base
 p5-Class-BlackHole	ports/devel/p5-Class-BlackHole
 p5-Class-Container	ports/devel/p5-Class-Container
 p5-Class-Contract	ports/devel/p5-Class-Contract
