@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
-COMMENT=	Ruby interface to the SQLite DB engine
+COMMENT=	Ruby interface to the SQLite DB engine version 2
 
 LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
