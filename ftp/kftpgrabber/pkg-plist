@@ -1,0 +1,25 @@
+bin/kftpgrabber
+share/applnk/Utilities/kftpgrabber.desktop
+share/apps/kftpgrabber/kftpgrabber-logo.png
+share/apps/kftpgrabber/kftpgrabberui.rc
+share/doc/HTML/en/kftpgrabber/common
+share/doc/HTML/en/kftpgrabber/index.cache.bz2
+share/doc/HTML/en/kftpgrabber/index.docbook
+share/icons/hicolor/16x16/apps/kftpgrabber.png
+share/icons/hicolor/32x32/apps/kftpgrabber.png
+share/icons/hicolor/48x48/apps/kftpgrabber.png
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/en/kftpgrabber
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kftpgrabber
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
