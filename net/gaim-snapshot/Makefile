@@ -1,25 +1,26 @@
-# New ports collection makefile for:	gaim
-# Date created:			26 Mar 1999
-# Whom:				Jim Mock <jim@FreeBSD.org>
+# New ports collection makefile for:	gaim-snapshot
+# Date created:			31 January 2003
+# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.59.8
-PORTREVISION=	1
-CATEGORIES?=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTVERSION=	20030130
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	marcus/
 
-MAINTAINER?=	marcus@FreeBSD.org
+MAINTAINER=	marcus@FreeBSD.org
 
-USE_BZIP2=	yes
+LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
+
+NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gtk12
+USE_GNOME=	gnomeprefix gnomehack
 WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
@@ -29,25 +30,11 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=		gaim.1
 
-GNOME_PANEL2=	${X11BASE}/libdata/pkgconfig/libpanelapplet-2.0.pc
-
-.if !defined(WITHOUT_GDK_PIXBUF)
-# Note, gdk-pixbuf is needed for buddy icon support.
-USE_GNOME+=	gdkpixbuf
+.ifndef(WITHOUT_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibpanel}!= "" && !exists(${GNOME_PANEL2})
-USE_GNOME+=	libpanel
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-CONFIGURE_ARGS+=	--enable-panel
-PKGNAMESUFFIX=	-gnome
-PLIST_SUB+=	PANEL:="" NOPANEL:="@comment "
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	PANEL:="@comment " NOPANEL:=""
-.endif
 
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
