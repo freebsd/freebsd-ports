@@ -1636,6 +1636,7 @@ ecl		ports/lang/ecl
 eclipse		ports/java/eclipse
 eclipse-cdt	ports/java/eclipse-cdt
 eclipse-checkstyle	ports/java/eclipse-checkstyle
+eclipse-clay-core	ports/java/eclipse-clay-core
 eclipse-emf	ports/java/eclipse-emf
 eclipse-examples	ports/java/eclipse-examples
 eclipse-gef	ports/java/eclipse-gef
