@@ -1,0 +1,23 @@
+--- Makefile.orig	Mon Mar 28 20:05:28 1994
++++ Makefile	Mon Jun 23 21:24:12 1997
+@@ -7,15 +7,16 @@
+ 
+ #	@(#)Makefile 2.3 (Y.Tonooka) 3/28/94
+ 
+-          BINPATH = /usr/local/bin
+-          MANPATH = /usr/local/man
+-          JMANDIR = japanese
++          PREFIX?= /usr/local
++          BINPATH = ${PREFIX}/bin
++          MANPATH = ${PREFIX}/man
++          JMANDIR = ja_JP.EUC
+            CFLAGS = -O
+ 
+             SHELL = /bin/sh
+                CP = cp
+              MAKE = make
+-          INSTALL = install
++          INSTALL = install -c
+ 
+              CMDS = kcc
+              SRCS = kcc.c
