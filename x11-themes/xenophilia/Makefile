@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xenophilia
-PORTVERSION=	200101251009
+PORTVERSION=	200105060708
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_THEMES}
 MASTER_SITE_SUBDIR=	gtk
@@ -14,10 +14,11 @@ DISTNAME=	Xenophilia-1.2.x-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/Xenophilia-0.6
+WRKSRC=		${WRKDIR}/Xenophilia-0.7
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 ALL_TARGET=	# empty
+MAKE_ENV=	GTK-CONFIG="${GTK_CONFIG}"
 
 .include <bsd.port.mk>
