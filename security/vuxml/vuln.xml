@@ -353,7 +353,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="fdad8a87-7f94-11d9-a9e7-0001020eed82">
-    <topic>awstats -- multiple vulnerabilities</topic>
+    <topic>awstats -- arbitrary command execution</topic>
     <affects>
       <package>
 	<name>awstats</name>
@@ -362,28 +362,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A GHC advisory reports:</p>
-	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110840530924124">
-	  <p>Successful exploitation of an input validation
-            vulnerability in AWStats scripts allows attackers to
-            execute limited perl directives under the privileges of
-            the web server, get sensetive information.  Some actions
-            of the attacker can lead to denial of service.</p>
-	</blockquote>
-	<p>Some reports indicate that these vulnerabilities can be
-	  used to execute arbitrary commands with the privileges of
-	  the web server awstats is running under.</p>
+	<p>Several input validation errors exist in AWStats that allow a
+	  remote unauthenticated attacker to execute arbitrary commands
+	  with the priviliges of the web server.  These programming
+	  errors involve CGI parameters including
+	  <code>loadplugin</code>, <code>logfile</code>,
+	  <code>pluginmode</code>, <code>update</code>, and possibly
+	  others.</p>
+	<p>Additionally, the <code>debug</code> and other CGI parameters
+	  may be used to cause AWStats to disclose AWStats and system
+	  configuration information.</p>
       </body>
     </description>
     <references>
+      <cvename>CAN-2005-0362</cvename>
+      <cvename>CAN-2005-0363</cvename>
+      <cvename>CAN-2005-0435</cvename>
+      <cvename>CAN-2005-0436</cvename>
+      <cvename>CAN-2005-0437</cvename>
+      <cvename>CAN-2005-0438</cvename>
       <bid>12543</bid>
       <bid>12545</bid>
       <mlist msgid="20050214081040.3370.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110840530924124</mlist>
       <url>http://awstats.sourceforge.net/docs/awstats_changelog.txt</url>
+      <url>http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=294488</url>
+      <url>http://packetstormsecurity.nl/0501-exploits/AWStatsVulnAnalysis.pdf</url>
     </references>
     <dates>
       <discovery>2005-02-10</discovery>
       <entry>2005-02-16</entry>
+      <modified>2005-02-23</modified>
     </dates>
   </vuln>
 
@@ -2023,11 +2031,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <certvu>272296</certvu>
       <mlist msgid="FB24803D1DF2A34FA59FC157B77C970503C8B20C@idserv04.idef.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=110600949323439</mlist>
       <url>http://awstats.sourceforge.net/docs/awstats_changelog.txt</url>
+      <url>http://www.idefense.com/application/poi/display?id=185&amp;type=vulnerabilities&amp;flashstatus=false</url>
     </references>
     <dates>
       <discovery>2004-10-21</discovery>
       <entry>2005-01-18</entry>
-      <modified>2005-02-15</modified>
+      <modified>2005-02-23</modified>
     </dates>
   </vuln>
 
