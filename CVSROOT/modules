@@ -5628,6 +5628,8 @@ nethack34-qt	ports/games/nethack34-qt
 nethirc		ports/irc/nethirc
 netmap		ports/net/netmap
 netmask		ports/net-mgmt/netmask
+netpanzer	ports/games/netpanzer
+netpanzerdata	ports/games/netpanzerdata
 netpbm		ports/graphics/netpbm
 netperf		ports/benchmarks/netperf
 netpipe		ports/benchmarks/netpipe
