@@ -1,5 +1,0 @@
-bin/dc3play
-%%PORTDOCS%%share/doc/dc3play/PROTOCOL
-%%PORTDOCS%%share/doc/dc3play/README.english
-%%PORTDOCS%%share/doc/dc3play/README.japanese
-%%PORTDOCS%%@dirrm share/doc/dc3play
