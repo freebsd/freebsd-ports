@@ -13,8 +13,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sysadmin@alexdupre.com
 
-BROKEN=		"Fails to package"
-
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \
 		phpize:${PORTSDIR}/www/mod_php4
