@@ -45,9 +45,9 @@ exec >/dev/null
 
 case $1 in
 start)
-    kldload ${vmware_libdir}/modules/vmmon_${suffix}.ko
+    kldstat -v | grep vmmon >/dev/null || kldload ${vmware_libdir}/modules/vmmon_${suffix}.ko
     if [ $networking -eq 1 ]; then
-	kldload if_tap.ko
+	kldstat -v | grep if_tap >/dev/null || kldload if_tap.ko
 	if [ ! -e $dev_vmnet1 ]; then
 		echo "$dev_vmnet1 does not exist!" >&2
 		echo "Your VMware installation seems broken.  Please reinstall VMware port." >&2
@@ -56,9 +56,9 @@ start)
 	echo -n > $dev_vmnet1
 	ifconfig vmnet1 $host_ip netmask $netmask
 	if [ X$bridged = XYES ]; then
-	    kldload netgraph.ko
-	    kldload ng_ether.ko
-	    kldload ng_bridge.ko
+	    kldstat -v | grep netgraph >/dev/null || kldload netgraph.ko
+	    kldstat -v | grep ng_ether >/dev/null || kldload ng_ether.ko
+	    kldstat -v | grep ng_bridge >/dev/null || kldload ng_bridge.ko
 	    ngctl mkpeer vmnet1: bridge lower link0
 	    ngctl name vmnet1:lower vmnet_bridge
 	    ngctl connect vmnet_bridge: ${bridge_interface}: link1 lower
