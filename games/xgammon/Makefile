@@ -8,9 +8,8 @@
 PORTNAME=	xgammon
 PORTVERSION=	0.98
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/linux/mirror/ftp.redhat.com/redhat/current/SRPMS/SRPMS/ \
-		ftp://sunsite.Informatik.RWTH-Aachen.DE/pub/comp/Linux/redhat/current/SRPMS/SRPMS/
+MASTER_SITES=	${MASTER_SITE_REDHAT}
+MASTER_SITE_SUBDIR=	linux/6.2/en/os/${MACHINE_ARCH}/SRPMS
 EXTRACT_SUFX=	-15.src.rpm
 
 PATCH_DIST_STRIP=	-p1
@@ -23,7 +22,7 @@ NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 MAN6=		xgammon.6
 
-PATCH_FILES=	${DISTNAME}-dirent.patch
+PATCH_FILES=	${PORTNAME}-${PORTVERSION}-dirent.patch
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -33,8 +32,8 @@ do-extract:
 
 pre-patch:
 	@${ECHO_MSG} "===>  Applying distribution patches for ${PKGNAME}"
-	@for file in ${PATCH_FILES}; do \
-		${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/$$file; \
-	done
+.for file in ${PATCH_FILES}
+	@${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${file}
+.endfor
 
 .include <bsd.port.mk>
