@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	helium
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.cs.uu.nl/~afie/helium/distr/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -16,15 +15,14 @@ MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Functional programming compiler for a subset of Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's/hi$$(EXE)/helium-i/g' \
-		${WRKSRC}/heliumNT/src/Makefile.in
+	@${REINPLACE_CMD} -e '/#include "math.h"/d' \
+		${WRKSRC}/lvm/src/runtime/core/primfloat.c
 
 do-configure:
 	@(cd ${WRKSRC}/lvm/src/  && ./configure)
