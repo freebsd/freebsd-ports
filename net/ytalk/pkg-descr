@@ -1,0 +1,8 @@
+This is ytalk-3.0 patchlevel 2.
+
+YTalk is in essence a multi-user chat program.  It works almost
+exactly like the UNIX talk program and even communicates with the same
+talk daemon(s), but YTalk allows for multiple connections.
+
+- Satoshi
+asami@cs.berkeley.edu
