@@ -3,12 +3,20 @@ share/applnk/Office/knoda.desktop
 share/apps/hk_kdeclasses/hk_kdedbdesigner.rc
 share/apps/hk_kdeclasses/hk_kdedbdesignerpart.rc
 share/apps/hk_kdeclasses/hk_kdeform.rc
+share/apps/hk_kdeclasses/hk_kdeformpartdesign.rc
+share/apps/hk_kdeclasses/hk_kdeformpartview.rc
 share/apps/hk_kdeclasses/hk_kdegridpart.rc
 share/apps/hk_kdeclasses/hk_kdeinterpreterdialog.rc
 share/apps/hk_kdeclasses/hk_kdeqbepart.rc
 share/apps/hk_kdeclasses/hk_kdequery.rc
+share/apps/hk_kdeclasses/hk_kdequerypart.rc
+share/apps/hk_kdeclasses/hk_kdequerypartqbe.rc
+share/apps/hk_kdeclasses/hk_kdequerypartsql.rc
 share/apps/hk_kdeclasses/hk_kdereport.rc
+share/apps/hk_kdeclasses/hk_kdereportpartdesign.rc
+share/apps/hk_kdeclasses/hk_kdereportpartview.rc
 share/apps/hk_kdeclasses/hk_kdetable.rc
+share/apps/hk_kdeclasses/hk_kdetablepart.rc
 share/apps/hk_kdeclasses/knodamaindockwindowbase.rc
 share/apps/hk_kdeclasses/pics/boolean22x22.png
 share/apps/hk_kdeclasses/pics/button.png
@@ -16,7 +24,6 @@ share/apps/hk_kdeclasses/pics/combobox22x22.png
 share/apps/hk_kdeclasses/pics/dbdesigner.png
 share/apps/hk_kdeclasses/pics/designmode.png
 share/apps/hk_kdeclasses/pics/edit.png
-share/apps/hk_kdeclasses/pics/exit.png
 share/apps/hk_kdeclasses/pics/filter.png
 share/apps/hk_kdeclasses/pics/filterexec.png
 share/apps/hk_kdeclasses/pics/find.png
@@ -45,10 +52,15 @@ share/icons/locolor/16x16/apps/knoda.png
 share/icons/locolor/32x32/apps/knoda.png
 share/locale/de/LC_MESSAGES/knoda.mo
 share/locale/es/LC_MESSAGES/knoda.mo
+share/locale/fr/LC_MESSAGES/knoda.mo
 share/locale/hu/LC_MESSAGES/knoda.mo
 share/services/hk_kdedbdesignerpart.desktop
+share/services/hk_kdeformpart.desktop
 share/services/hk_kdegridpart.desktop
 share/services/hk_kdeqbepart.desktop
+share/services/hk_kdequerypart.desktop
+share/services/hk_kdereportpart.desktop
+share/services/hk_kdetablepart.desktop
 @dirrm share/apps/hk_kdeclasses/pics/
 @dirrm share/apps/hk_kdeclasses
 @dirrm share/apps/knoda/pics

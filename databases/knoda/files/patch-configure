@@ -1,0 +1,11 @@
+--- configure.orig	Sat Nov  6 18:46:43 2004
++++ configure	Sat Nov  6 18:47:37 2004
+@@ -26622,7 +26622,7 @@
+ 
+ 
+ CXXLIBS=" -L${HK_CLASSESDIR} -lhk_classes"
+-LIBS="$ac_save_LIBS -L${HK_CLASSESDIR} -lhk_classes "
++LIBS="$ac_save_LIBS -L${HK_CLASSESDIR} -lhk_classes ${LIBPTHREAD}"
+ CPPFLAGS="-I$HK_CLASSESINCDIR $ac_save_CPPFLAGS "
+ 
+ cat >conftest.$ac_ext <<_ACEOF
