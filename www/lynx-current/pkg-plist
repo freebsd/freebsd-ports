@@ -6,6 +6,7 @@ lib/lynx_help/keystrokes/bookmark_help.html
 lib/lynx_help/keystrokes/cookie_help.html
 lib/lynx_help/keystrokes/dired_help.html
 lib/lynx_help/keystrokes/edit_help.html
+lib/lynx_help/keystrokes/environments.html
 lib/lynx_help/keystrokes/follow_help.html
 lib/lynx_help/keystrokes/gopher_types_help.html
 lib/lynx_help/keystrokes/history_help.html
@@ -15,6 +16,7 @@ lib/lynx_help/keystrokes/option_help.html
 lib/lynx_help/keystrokes/other_help.html
 lib/lynx_help/keystrokes/print_help.html
 lib/lynx_help/keystrokes/scrolling_help.html
+lib/lynx_help/keystrokes/test_display.html
 lib/lynx_help/keystrokes/visited_help.html
 lib/lynx_help/keystrokes/xterm_help.html
 lib/lynx_help/lynx-dev.html
