@@ -4651,6 +4651,7 @@ openssh-portable	ports/security/openssh-portable
 openssl		ports/security/openssl
 openuniverse	ports/astro/openuniverse
 openverse	ports/net/openverse
+openvpn		ports/security/openvpn
 openvrml	ports/www/openvrml
 openwebmail	ports/mail/openwebmail
 openzz		ports/devel/openzz
