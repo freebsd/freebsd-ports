@@ -1,6 +1,6 @@
 --- configure.orig	Sat Oct 20 02:24:15 2001
-+++ configure	Sat Oct 20 10:45:39 2001
-@@ -4648,7 +4648,7 @@
++++ configure	Sat Nov 10 20:17:05 2001
+@@ -4779,7 +4779,7 @@
      EXTRA_CFLAGS=""
      TCL_EXPORT_FILE_SUFFIX=""
      UNSHARED_LIB_SUFFIX=""
@@ -9,7 +9,13 @@
      ECHO_VERSION='`echo ${VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
      CFLAGS_DEBUG=-g
-@@ -5391,11 +5391,11 @@
+@@ -5386,16 +5386,16 @@
+ 	FreeBSD-*)
+ 	    # FreeBSD 3.* and greater have ELF.
+ 	    SHLIB_CFLAGS="-fPIC"
+-	    SHLIB_LD="ld -Bshareable -x"
++	    SHLIB_LD="ld -shared -x -soname \$@"
+ 	    SHLIB_LD_LIBS=""
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
