@@ -95,6 +95,7 @@ share/doc/diablo/README.READER
 share/doc/diablo/README.SERVER
 share/doc/diablo/RELEASE_NOTES
 @dirrm share/doc/diablo
+@dirrm news/spool/postq
 @dirrm news/spool/news
 @dirrm news/spool/group
 @dirrm news/spool/cache
