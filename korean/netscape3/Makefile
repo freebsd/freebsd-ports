@@ -22,16 +22,16 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 # This directory is hard-coded into the netscape binary
-LIBDIR=         ${PREFIX}/lib/netscape
-BINDIR=         ${PREFIX}/bin
-NLSDIR=         ${LIBDIR}/nls
-RESSUB=         ko_KR.EUC
-RESDIR=         ${LIBDIR}/${RESSUB}
+LIBDIR=	${PREFIX}/lib/netscape
+BINDIR=	${PREFIX}/bin
+NLSDIR=	${LIBDIR}/nls
+RESSUB=	ko_KR.EUC
+RESDIR=	${LIBDIR}/${RESSUB}
 
 NLSSRC=		${WRKDIR}/netscape-ko
 MISCFILES=	README about splash license mail.msg
 
-STARTFILE=      netscape.sh
+STARTFILE=	netscape.sh
 STARTFILE_SRC=  ${FILESDIR}/netscape.sh
 
 do-configure:

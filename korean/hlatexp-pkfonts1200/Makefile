@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-MASTERDIR=      ${.CURDIR}/../hlatexp-pkfonts300
+MASTERDIR=	${.CURDIR}/../hlatexp-pkfonts300
 FILESDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 MD5_FILE=	${.CURDIR}/distinfo

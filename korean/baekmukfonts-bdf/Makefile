@@ -12,7 +12,7 @@ CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/ \
 		http://zinc.skku.ac.kr/~wkpark/baekmuk/
 PKGNAMESUFFIX=	-bdf
-DISTNAME=       baekmuk-${PORTVERSION}
+DISTNAME=	baekmuk-${PORTVERSION}
 DISTFILES=	baekmuk-${PORTVERSION}${EXTRACT_SUFX} \
 		batang10.bdf.gz batang10b.bdf.gz \
 		gulim10.bdf.gz gulim10b.bdf.gz 

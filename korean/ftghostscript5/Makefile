@@ -58,11 +58,11 @@ DECRYPT_PDF=	pdf_sec.ps
 # vflib patch
 VFLIB_GS=       gs5.10-vflib-1.1.tar.gz
 # kfftype
-KFFTYPE=        gs5-kfftype.tar.gz
+KFFTYPE=	gs5-kfftype.tar.gz
 # kfftype patches
 KFFTYPE_PATCH=  gs5-kfftype-patch1.diff gs5-kfftype-patch2.diff
 # hfftype patch
-HFFTYPE=        gs5-hfftype-0.2.tar.gz
+HFFTYPE=	gs5-hfftype-0.2.tar.gz
 # cid-keyed font bug patch for 5.10
 GS_CID_PATCH=   gs5.10-cid-bugfix.diff
 

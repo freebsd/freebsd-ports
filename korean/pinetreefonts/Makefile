@@ -11,7 +11,7 @@ CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
-DISTNAME=       pinetree.precomposed-${PORTVERSION}-bdf
+DISTNAME=	pinetree.precomposed-${PORTVERSION}-bdf
 
 MAINTAINER=	cjh@FreeBSD.org
 

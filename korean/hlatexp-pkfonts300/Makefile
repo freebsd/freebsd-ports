@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://knot.kaist.ac.kr/pub/htex/htex-fonts/
 DISTFILES=	han.${RESOLUTION}pk.tar.gz hanja.${RESOLUTION}pk.tar.gz symb.${RESOLUTION}pk.tar.gz
 DIST_SUBDIR=	htex
 
-MAINTAINER=     cjh@FreeBSD.org
+MAINTAINER=	cjh@FreeBSD.org
 
 # it depends hLaTeXp
 RUN_DEPENDS=	hlatex:${PORTSDIR}/korean/hlatexp

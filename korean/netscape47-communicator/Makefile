@@ -14,7 +14,7 @@ MD5_FILE=	${SUBMASTERDIR}/distinfo
 
 BROWSER_VER=	47
 BROWSER_VERSION=	4.76
-NETHELP=        nethelp-v451
+NETHELP=	nethelp-v451
 KOREAN_KIT=	netscape-korean-kit-v476.20001031
 
 #PORTREVISION=	1

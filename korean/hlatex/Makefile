@@ -5,21 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=		HLaTeX
-PORTVERSION=		0.991
-CATEGORIES=             korean print
-MASTER_SITES=		ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/
-DISTFILES=              HLaTeX-0.991.tar.gz ${HLATEX_FONTS_BASE}
-DIST_SUBDIR=		hlatex
-EXTRACT_ONLY=		HLaTeX-0.991.tar.gz
+PORTNAME=	HLaTeX
+PORTVERSION=	0.991
+CATEGORIES=	korean print
+MASTER_SITES=	ftp://ftp.linguistik.uni-erlangen.de/pub/hangul/HLaTeX/packed/
+DISTFILES=	HLaTeX-0.991.tar.gz ${HLATEX_FONTS_BASE}
+DIST_SUBDIR=	hlatex
+EXTRACT_ONLY=	HLaTeX-0.991.tar.gz
 
-MAINTAINER=             cjh@FreeBSD.org
+MAINTAINER=	cjh@FreeBSD.org
 
 # it depends on teTeX(lambda)
-BUILD_DEPENDS=        	texhash:${PORTSDIR}/print/teTeX
-RUN_DEPENDS=		latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
-TEXMF=                  ${PREFIX}/share/texmf
+TEXMF=		${PREFIX}/share/texmf
 
 # default fonts.
 HLATEX_FONTS_BASE=	uhc-myoungjo.tar.gz \
@@ -53,7 +53,7 @@ do-install:
 	# Part 1: install psfonts
 	# psfonts.map
 	${MV} ${TEXMF}/dvips/config/psfonts.map \
-	      ${TEXMF}/dvips/config/psfonts.map.beforehlatex
+		${TEXMF}/dvips/config/psfonts.map.beforehlatex
 	${INSTALL_DATA} ${WRKDIR}/psfonts.map ${TEXMF}/dvips/config
 
 	# Part 2: macros, style, font descriptions
