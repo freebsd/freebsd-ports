@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Wed Dec 19 22:46:13 2001
++++ src/Makefile.in	Thu Dec 20 01:34:57 2001
+@@ -113,7 +113,7 @@
+ 
+ SUBDIRS = dialogs
+ 
+-INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR)
++INCLUDES =  	-I$(top_srcdir)/intl 	$(GTKHTML_CFLAGS)	$(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = peacock

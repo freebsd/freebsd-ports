@@ -7,6 +7,8 @@ share/gnome/help/peacock/C/features.html
 share/gnome/help/peacock/C/peacock.html
 share/gnome/help/peacock/C/topic.dat
 share/gnome/help/peacock/C/x34.html
+share/gnome/peacock/glade/dialogs-html.glade
+share/gnome/peacock/glade/dialogs-html.glade.h
 share/gnome/pixmaps/peacock/anchor.xpm
 share/gnome/pixmaps/peacock/br.xpm
 share/gnome/pixmaps/peacock/font_base.xpm
@@ -48,6 +50,7 @@ share/gnome/pixmaps/peacock/table_td.xpm
 share/gnome/pixmaps/peacock/table_th.xpm
 share/gnome/pixmaps/peacock/table_tr.xpm
 @dirrm share/gnome/pixmaps/peacock
+@dirrm share/gnome/peacock/glade
 @dirrm share/gnome/help/peacock/C/images
 @dirrm share/gnome/help/peacock/C
 @dirrm share/gnome/help/peacock
