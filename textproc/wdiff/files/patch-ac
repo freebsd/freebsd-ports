@@ -1,5 +1,5 @@
---- wdiff.c.orig	Sun Nov  6 16:57:23 1994
-+++ wdiff.c	Thu Apr 15 17:58:08 2004
+--- wdiff.c.org	Sun Nov  6 16:57:23 1994
++++ wdiff.c	Thu Apr 15 18:21:41 2004
 @@ -108,7 +108,7 @@
  struct option const longopts[] =
  {
@@ -9,7 +9,76 @@
    {"no-deleted"  , 0, NULL, '1'},
    {"no-inserted" , 0, NULL, '2'},
    {"no-common"   , 0, NULL, '3'},
-@@ -892,8 +892,9 @@
+@@ -168,6 +168,10 @@
+ # define L_tmpnam PATH_MAX
+ #endif
+ 
++#ifdef HAVE_MKSTEMP
++# define MKSTEMP_TEMPLATE	"/tmp/wdiffXXXXXXXX"
++#endif
++
+ typedef struct side SIDE;	/* all variables for one side */
+ struct side
+ {
+@@ -555,6 +559,9 @@
+ split_file_into_words (SIDE *side)
+ {
+   struct stat stat_buffer;	/* for checking if file is directory */
++#ifdef HAVE_MKSTEMP
++  int fd;
++#endif
+ 
+   /* Open files.  */
+ 
+@@ -566,10 +573,23 @@
+ 	 this temporary local file.  Once done, prepare it for reading.
+ 	 We do not need the file name itself anymore.  */
+ 
++#ifdef HAVE_MKSTEMP
++      strcpy (side->temp_name, MKSTEMP_TEMPLATE);
++      if ((fd = mkstemp(side->temp_name)) < 0)
++	error (EXIT_OTHER_REASON, 0, "mkstemp failed");
++      side->file = fdopen (fd, "w+");
++      if (side->file == NULL)
++	{
++	  int e = errno;
++	  (void) unlink (side->temp_name);
++	  error (EXIT_OTHER_REASON, e, side->temp_name);
++	}
++#else
+       tmpnam (side->temp_name);
+       side->file = fopen (side->temp_name, "w+");
+       if (side->file == NULL)
+ 	error (EXIT_OTHER_REASON, errno, side->temp_name);
++#endif
+       if (unlink (side->temp_name) != 0)
+ 	error (EXIT_OTHER_REASON, errno, side->temp_name);
+       while (side->character = getchar (), side->character != EOF)
+@@ -593,10 +613,23 @@
+   side->character = getc (side->file);
+   side->position = 0;
+ 
++#ifdef HAVE_MKSTEMP
++  strcpy (side->temp_name, MKSTEMP_TEMPLATE);
++  if ((fd = mkstemp(side->temp_name)) < 0)
++    error (EXIT_OTHER_REASON, 0, "mkstemp failed");
++  side->temp_file = fdopen (fd, "w");
++  if (side->temp_file == NULL)
++    {
++      int e = errno;
++      (void) unlink (side->temp_name);
++      error (EXIT_OTHER_REASON, e, side->temp_name);
++    }
++#else
+   tmpnam (side->temp_name);
+   side->temp_file = fopen (side->temp_name, "w");
+   if (side->temp_file == NULL)
+     error (EXIT_OTHER_REASON, errno, side->temp_name);
++#endif
+ 
+   /* Complete splitting input file into words on output.  */
+ 
+@@ -892,8 +925,9 @@
  {
    /* Launch the diff program.  */
  
@@ -20,7 +89,7 @@
  			   right_side->temp_name, NULL);
    else
      input_file = readpipe (DIFF_PROGRAM, left_side->temp_name,
-@@ -1111,7 +1112,7 @@
+@@ -1111,7 +1145,7 @@
  Mandatory arguments to long options are mandatory for short options too.\n\
  \n\
    -C, --copyright            print Copyright then exit\n\
@@ -29,7 +98,16 @@
    -1, --no-deleted           inhibit output of deleted words\n\
    -2, --no-inserted          inhibit output of inserted words\n\
    -3, --no-common            inhibit output of common words\n\
-@@ -1173,7 +1174,7 @@
+@@ -1135,7 +1169,7 @@
+ | Main program.	 |
+ `---------------*/
+ 
+-void
++int
+ main (int argc, char *const argv[])
+ {
+   int option_char;		/* option character */
+@@ -1173,7 +1207,7 @@
    count_changed_left = 0;
    count_changed_right = 0;
  
@@ -38,3 +116,10 @@
  				    longopts, NULL),
  	 option_char != EOF)
      switch (option_char)
+@@ -1329,5 +1363,5 @@
+       || count_changed_left || count_changed_right)
+     exit (EXIT_ANY_DIFFERENCE);
+ 
+-  exit (EXIT_NO_DIFFERENCES);
++  return EXIT_NO_DIFFERENCES;
+ }

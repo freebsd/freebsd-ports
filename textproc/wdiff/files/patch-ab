@@ -1,10 +1,114 @@
 --- configure.orig	Sun Nov  6 16:59:26 1994
-+++ configure	Thu Sep 18 02:08:30 1997
-@@ -1159,6 +1159,7 @@
++++ configure	Thu Apr 15 18:29:36 2004
+@@ -1159,55 +1159,6 @@
  
  
  
-+LIBS="$saved_LIBS -ltermcap"
- for ac_func in strerror tputs
- do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&4
+-for ac_func in strerror tputs
+-do
+-echo $ac_n "checking for $ac_func""... $ac_c" 1>&4
+-if eval "test \"`echo '${'ac_cv_func_$ac_func'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&4
+-else
+-  cat > conftest.$ac_ext <<EOF
+-#line 1170 "configure"
+-#include "confdefs.h"
+-#include <ctype.h> /* Arbitrary system header to define __stub macros. */
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-char $ac_func(); 
+-
+-int main() { return 0; }
+-int t() {
+-
+-/* The GNU C library defines this for functions which it implements
+-    to always fail with ENOSYS.  Some functions are actually named
+-    something starting with __ and the normal name is an alias.  */
+-#if defined (__stub_$ac_func) || defined (__stub___$ac_func)
+-choke me
+-#else
+-$ac_func();
+-#endif
+-
+-; return 0; }
+-EOF
+-if eval $ac_link; then
+-  rm -rf conftest*
+-  eval "ac_cv_func_$ac_func=yes"
+-else
+-  rm -rf conftest*
+-  eval "ac_cv_func_$ac_func=no"
+-fi
+-rm -f conftest*
+-
+-fi
+-if eval "test \"`echo '$ac_cv_func_'$ac_func`\" = yes"; then
+-  echo "$ac_t""yes" 1>&4
+-    ac_tr_func=HAVE_`echo $ac_func | tr '[a-z]' '[A-Z]'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_func 1
+-EOF
+- 
+-else
+-  echo "$ac_t""no" 1>&4
+-fi
+-done
+-
+ # The Ultrix 4.2 mips builtin alloca declared by alloca.h only works
+ # for constant arguments.  Useless!
+ echo $ac_n "checking for working alloca.h""... $ac_c" 1>&4
+@@ -1712,6 +1663,55 @@
+ 
+ fi
+ rm -f conftest*
++
++for ac_func in strerror tputs mkstemp
++do
++echo $ac_n "checking for $ac_func""... $ac_c" 1>&4
++if eval "test \"`echo '${'ac_cv_func_$ac_func'+set}'`\" = set"; then
++  echo $ac_n "(cached) $ac_c" 1>&4
++else
++  cat > conftest.$ac_ext <<EOF
++#line 1170 "configure"
++#include "confdefs.h"
++#include <ctype.h> /* Arbitrary system header to define __stub macros. */
++/* Override any gcc2 internal prototype to avoid an error.  */
++char $ac_func(); 
++
++int main() { return 0; }
++int t() {
++
++/* The GNU C library defines this for functions which it implements
++    to always fail with ENOSYS.  Some functions are actually named
++    something starting with __ and the normal name is an alias.  */
++#if defined (__stub_$ac_func) || defined (__stub___$ac_func)
++choke me
++#else
++$ac_func();
++#endif
++
++; return 0; }
++EOF
++if eval $ac_link; then
++  rm -rf conftest*
++  eval "ac_cv_func_$ac_func=yes"
++else
++  rm -rf conftest*
++  eval "ac_cv_func_$ac_func=no"
++fi
++rm -f conftest*
++
++fi
++if eval "test \"`echo '$ac_cv_func_'$ac_func`\" = yes"; then
++  echo "$ac_t""yes" 1>&4
++    ac_tr_func=HAVE_`echo $ac_func | tr '[a-z]' '[A-Z]'`
++  cat >> confdefs.h <<EOF
++#define $ac_tr_func 1
++EOF
++ 
++else
++  echo "$ac_t""no" 1>&4
++fi
++done
+ 
+ 
+ echo $ac_n "checking if cbars is wanted""... $ac_c" 1>&4

@@ -1,0 +1,14 @@
+$NetBSD: patch-ac,v 1.1 2003/01/24 14:12:04 itohy Exp $
+
+--- config.h.in.orig	Wed Nov  2 02:23:02 1994
++++ config.h.in	Fri Jan 24 22:30:16 2003
+@@ -79,6 +79,9 @@
+ /* Define if you have the tputs function.  */
+ #undef HAVE_TPUTS
+ 
++/* Define if you have the mkstemp function.  */
++#undef HAVE_MKSTEMP
++
+ /* Define if you have the <string.h> header file.  */
+ #undef HAVE_STRING_H
+ 
