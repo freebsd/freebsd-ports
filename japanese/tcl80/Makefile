@@ -3,13 +3,13 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1998/05/10 08:09:17 itojun Exp $
 #
 
 DISTNAME=	tcl8.0p2
 PKGNAME=	ja-tcl-8.0.2
 CATEGORIES=	japanese lang tcl80
-MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
+MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	tcl8.0p2jp_beta3-patch.gz
