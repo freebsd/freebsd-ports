@@ -17,7 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		common.tar.gz:lofi\
 		jnlib.tar.gz:lofi
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	A collection of simple PIN or passphrase entry dialogs
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
@@ -35,6 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS+=--with-included-gettext=no
+INFO=		pinentry
 
 .include <bsd.port.pre.mk>
 
