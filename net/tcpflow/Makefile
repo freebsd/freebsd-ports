@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.circlemud.org/pub/jelson/tcpflow/
 MAINTAINER=	jose@we.lc.ehu.es
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
 
 MAN1=		tcpflow.1
 
