@@ -1,7 +1,13 @@
 etc/mathopd.conf.sample
-etc/rc.d/mathopd.sh
+etc/rc.d/mathopd.sh-dist
 sbin/mathopd
-share/doc/mathopd/CHANGES
-share/doc/mathopd/COPYING
-share/doc/mathopd/README
-@dirrm share/doc/mathopd
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/cgi.txt
+%%PORTDOCS%%%%DOCSDIR%%/config.txt
+%%PORTDOCS%%%%DOCSDIR%%/processing.txt
+%%PORTDOCS%%%%DOCSDIR%%/running.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample.cfg
+%%PORTDOCS%%%%DOCSDIR%%/syntax.txt
+%%PORTDOCS%%@dirrm share/doc/mathopd
