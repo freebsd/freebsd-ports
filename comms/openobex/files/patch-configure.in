@@ -1,6 +1,6 @@
---- configure.in.orig	Sun Mar  7 17:07:07 2004
-+++ configure.in	Sun Mar  7 17:07:20 2004
-@@ -39,6 +39,7 @@
+--- configure.in.orig	Wed Oct  1 13:17:13 2003
++++ configure.in	Sat Nov 20 03:25:29 2004
+@@ -39,12 +39,12 @@
  
  IRDA_CHECK
  BLUETOOTH_CHECK
@@ -8,3 +8,9 @@
  
  dnl Configure debug facilities
  AC_ARG_WITH(debug,[  --with-debug=level      Debug level],
+ 	debug_level="$withval", debug_level="")
+ 
+-CFLAGS="-O2"
+ if test "$debug_level" != ""; then
+ 	AC_DEFINE_UNQUOTED([OBEX_DEBUG],$debug_level, [debug level])
+ 	CFLAGS="-g -O1"
