@@ -52,12 +52,3 @@
  #CFLAGS = -O2 -Wall -pedantic -ansi $(DEFINES)
  LFLAGS = $(LIBS)  -s
  
-@@ -96,7 +95,7 @@
- 	$(INSTALL) -m 0644 hanwin.tcl fonts.unix fonts.windows \
- 			   zidianf.gb zidianfl.b5 bushou.gb \
- 		           cidianf.gb sanzicidianf.gb parts.gb $(LIBDIR)
--	$(BINDIR)/hanzim -buildDB
-+	$(BINDIR)/hanzim -port-install
- 
-      uninstall : 
- 	$(RM) $(BINDIR)/hanzim

@@ -4,10 +4,11 @@ lib/hanzim/cidianf.gb
 lib/hanzim/fonts.unix
 lib/hanzim/fonts.windows
 lib/hanzim/hanwin.tcl
+lib/hanzim/hcompound.dat
 lib/hanzim/parts.gb
 lib/hanzim/sanzicidianf.gb
 lib/hanzim/zidianf.gb
 lib/hanzim/zidianfl.b5
-share/doc/hanzim/hanzim.doc
+%%PORTDOCS%%%%DOCSDIR%%/hanzim.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/hanzim
-@dirrm share/doc/hanzim
