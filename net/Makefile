@@ -434,6 +434,7 @@
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-devel
+    SUBDIR += samba-tng
     SUBDIR += sambasentinel
     SUBDIR += samplicator
     SUBDIR += satellite
