@@ -3,7 +3,7 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.15 1998/09/09 08:39:05 max Exp $
+# $Id: Makefile,v 1.16 1998/09/21 08:41:44 asami Exp $
 #
 
 DISTNAME=	VFlib-2.23-PL1
@@ -14,6 +14,7 @@ DISTFILES=	TypeHack-19980625.tar.gz watanabe-vf.tar.Z
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
+BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
 
 EXTRACT_ONLY=	TypeHack-19980625.tar.gz
@@ -33,6 +34,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/fonts/watanabe_font
 	tar -C ${PREFIX}/share/fonts/watanabe_font \
 	  -xzf ${DISTDIR}/watanabe-vf.tar.Z
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
