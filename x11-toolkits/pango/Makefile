@@ -18,7 +18,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An open-source framework for the layout and rendering of i18n text
 
-BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
 		Xft.2:${PORTSDIR}/x11-fonts/Xft \
 		intl.4:${PORTSDIR}/devel/gettext
@@ -46,21 +46,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION="1.2.0"
 
-.include <bsd.port.pre.mk>
-
-.if ${XFREE86_VERSION} == 3
-PLIST_SUB+=	XFREE4:="@comment "
-.else
-PLIST_SUB+=	XFREE4:=""
-.endif
-
 post-patch:
-	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
-		's|internal/tterrors\.h|fterrors.h| ; s|TT_Err_|FT_Err_|g'
-	
-post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | ${XARGS} \
+		${REINPLACE_CMD} -e 's|internal/tterrors\.h|fterrors.h| ; \
+		s|TT_Err_|FT_Err_|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
