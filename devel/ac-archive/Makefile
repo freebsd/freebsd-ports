@@ -18,4 +18,6 @@ RUN_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+MAN1=		acinclude.1
+
 .include <bsd.port.mk>
