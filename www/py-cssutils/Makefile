@@ -20,6 +20,10 @@ RUN_DEPENDS=	${PYXML}
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e "s#.*data_files.*##" ${WRKSRC}/setup.py
 
 post-install:
 	@${FIND} ${PYTHON_SITELIBDIR}/${PORTNAME} ! -type d | \
