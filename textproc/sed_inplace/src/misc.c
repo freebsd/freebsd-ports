@@ -36,6 +36,7 @@
  */
 
 #include <sys/cdefs.h>
+__FBSDID("$FreeBSD: /tmp/pcvs/ports/textproc/sed_inplace/src/Attic/misc.c,v 1.3 2002-10-19 10:32:36 sobomax Exp $");
 
 #ifndef lint
 static const char sccsid[] = "@(#)misc.c	8.1 (Berkeley) 6/6/93";
@@ -67,7 +68,7 @@ strregerror(errcode, preg)
 
 	if (oe != NULL)
 		free(oe);
-	s = regerror(errcode, preg, "", 0);
+	s = regerror(errcode, preg, NULL, 0);
 	if ((oe = malloc(s)) == NULL)
 		err(1, "malloc");
 	(void)regerror(errcode, preg, oe, s);
