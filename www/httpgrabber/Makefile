@@ -7,7 +7,7 @@
 
 PORTNAME=	httpgrabber
 PORTVERSION=	1.0
-CATEGORIES=	net
+CATEGORIES=	www
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
