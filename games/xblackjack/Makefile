@@ -1,6 +1,6 @@
 # New ports collection makefile for:    xblackjack
 # Version required:     2.2
-# Date created:         
+# Date created:         8/16/1996
 # Whom:                 erich@FreeBSD.org
 #
 # $FreeBSD$
