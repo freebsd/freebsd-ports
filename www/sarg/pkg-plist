@@ -2,28 +2,55 @@ bin/sarg
 @unexec if cmp -s %D/etc/sarg/sarg.conf %D/etc/sarg/sarg.conf.default; then rm -f %D/etc/sarg/sarg.conf; fi
 @exec [ ! -f %B/sarg.conf ] || cp -p %B/sarg/sarg.conf.default %B/sarg/sarg.conf
 etc/sarg/sarg.conf.default
+etc/sarg/css.tpl
 etc/sarg/exclude_codes
+etc/sarg/fonts/Verdana.TTF
+etc/sarg/images/datetime.png
+etc/sarg/images/graph.png
+etc/sarg/images/sarg-squidguard-block.png
+etc/sarg/images/sarg.png
+etc/sarg/languages/.new
+etc/sarg/languages/Bulgarian_windows1251
 etc/sarg/languages/Catalan
-etc/sarg/languages/Russian_koi8
-etc/sarg/languages/German
-etc/sarg/languages/French
 etc/sarg/languages/Czech
 etc/sarg/languages/Dutch
-etc/sarg/languages/Bulgarian_windows1251
-etc/sarg/languages/Romanian
-etc/sarg/languages/Polish
-etc/sarg/languages/Italian
-etc/sarg/languages/Portuguese
-etc/sarg/languages/Japanese
+etc/sarg/languages/English
+etc/sarg/languages/French
+etc/sarg/languages/German
 etc/sarg/languages/Hungarian
+etc/sarg/languages/Indonesian
+etc/sarg/languages/Italian
+etc/sarg/languages/Japanese
 etc/sarg/languages/Latvian
+etc/sarg/languages/Polish
+etc/sarg/languages/Portuguese
+etc/sarg/languages/Romanian
+etc/sarg/languages/Russian_koi8
 etc/sarg/languages/Russian_windows1251
 etc/sarg/languages/Serbian
-etc/sarg/languages/Indonesian
-etc/sarg/languages/English
 etc/sarg/languages/Spanish
 etc/sarg/languages/Turkish
 etc/sarg/languages/Ukrainian_windows1251
-etc/sarg/languages/.new
+etc/sarg/sarg-php/COPYING
+etc/sarg/sarg-php/INSTALL
+etc/sarg/sarg-php/LANGUAGES
+etc/sarg/sarg-php/language.php
+etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.mo
+etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES/messages.po
+etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.mo
+etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES/messages.po
+etc/sarg/sarg-php/sarg-block-it.php
+etc/sarg/sarg-php/sarg-squidguard-block.php
+etc/sarg/sarg-php/sarg-squidguard-block2.php
+etc/sarg/sarg-php/style.php
+etc/sarg/sarg-php/translate.this
+@dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES
+@dirrm etc/sarg/sarg-php/locale/pt_BR
+@dirrm etc/sarg/sarg-php/locale/en_EN/LC_MESSAGES
+@dirrm etc/sarg/sarg-php/locale/en_EN
+@dirrm etc/sarg/sarg-php/locale
+@dirrm etc/sarg/sarg-php
 @dirrm etc/sarg/languages
+@dirrm etc/sarg/images
+@dirrm etc/sarg/fonts
 @dirrm etc/sarg

@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	sarg
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 PATCH_SITES=	http://sarg.sourceforge.net/
-PATCHFILES=	sarg-1.4.1-index.sort.patch.gz
+PATCHFILES=	sarg-2.0.1-largeurl.patch.gz
 
 MAINTAINER=	mt@primats.org.ua
 COMMENT=	Squid log analyzer and HTML report generator
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --enable-bindir="${PREFIX}/bin" --enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" --with-gcc
+CONFIGURE_ARGS=	CC=gcc --enable-bindir="${PREFIX}/bin" --enable-sysconfdir="${PREFIX}/etc/${PORTNAME}" --enable-htmldir=${PREFIX}/www/${PORTNAME}
 
 MAN1=		sarg.1
 
 post-extract:
-	@${CHMOD} +x ${WRKSRC}/cfgaux ${WRKSRC}/include ${WRKSRC}/languages
+	@${CHMOD} +x ${WRKSRC}/sarg-php/locale
 
 .include <bsd.port.mk>
