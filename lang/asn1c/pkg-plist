@@ -1,6 +1,8 @@
 bin/asn1c
 bin/clyx2asn1.pl
 bin/crfc2asn1.pl
+bin/enber
+bin/unber
 %%DATADIR%%/ANY.c
 %%DATADIR%%/ANY.h
 %%DATADIR%%/BIT_STRING.c
@@ -29,6 +31,8 @@ bin/crfc2asn1.pl
 %%DATADIR%%/NativeEnumerated.h
 %%DATADIR%%/NativeInteger.c
 %%DATADIR%%/NativeInteger.h
+%%DATADIR%%/NativeReal.c
+%%DATADIR%%/NativeReal.h
 %%DATADIR%%/NumericString.c
 %%DATADIR%%/NumericString.h
 %%DATADIR%%/OBJECT_IDENTIFIER.c
@@ -39,6 +43,8 @@ bin/crfc2asn1.pl
 %%DATADIR%%/ObjectDescriptor.h
 %%DATADIR%%/PrintableString.c
 %%DATADIR%%/PrintableString.h
+%%DATADIR%%/REAL.c
+%%DATADIR%%/REAL.h
 %%DATADIR%%/RELATIVE-OID.c
 %%DATADIR%%/RELATIVE-OID.h
 %%DATADIR%%/T61String.c
@@ -59,7 +65,11 @@ bin/crfc2asn1.pl
 %%DATADIR%%/asn_SEQUENCE_OF.h
 %%DATADIR%%/asn_SET_OF.c
 %%DATADIR%%/asn_SET_OF.h
+%%DATADIR%%/asn_application.h
+%%DATADIR%%/asn_internal.h
 %%DATADIR%%/asn_types.h
+%%DATADIR%%/ber_codec_prim.c
+%%DATADIR%%/ber_codec_prim.h
 %%DATADIR%%/ber_decoder.c
 %%DATADIR%%/ber_decoder.h
 %%DATADIR%%/ber_tlv_length.c
@@ -83,6 +93,14 @@ bin/crfc2asn1.pl
 %%DATADIR%%/der_encoder.c
 %%DATADIR%%/der_encoder.h
 %%DATADIR%%/file-dependencies
+%%DATADIR%%/xer_encoder.c
+%%DATADIR%%/xer_encoder.h
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/asn1c-usage.html
 %%PORTDOCS%%%%DOCSDIR%%/asn1c-usage.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
