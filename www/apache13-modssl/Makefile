@@ -3,7 +3,7 @@
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.22 1999/03/04 20:21:42 rse Exp $
+# $Id: Makefile,v 1.23 1999/03/13 17:11:03 billf Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -31,7 +31,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
 		ftp://ftp.raver.net/pub/ftp.apache.org/ \
 		ftp://www3.service.digital.com/apache/dist/ \
-		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
+		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/ \
 		ftp://galileo.galilei.com/pub/apache/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \

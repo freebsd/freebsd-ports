@@ -3,7 +3,7 @@
 # Date created:         Sat Oct 31 16:30:00 CDT 1997
 # Whom:                 hetzels@westbend.net
 #
-# $Id: Makefile,v 1.8 1999/02/03 11:11:58 asami Exp $
+# $Id: Makefile,v 1.9 1999/03/13 17:11:03 billf Exp $
 #
 
 DISTNAME=       apache_${AP_VERS}
@@ -11,7 +11,7 @@ PKGNAME=        apache_fp-${AP_VERS}
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.microsoft.com/products/frontpage/ \
-		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/
+		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.microsoft.com/Products/frontpage/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
 		ftp://ftp.rge.com/pub/infosystems/apache/dist/ \
 		ftp://apache.compuex.com/pub/apache/dist/ \
