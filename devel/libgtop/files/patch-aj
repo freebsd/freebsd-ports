@@ -214,7 +214,7 @@
 +#define	XXX_P_SIGLIST	kp_proc.p_siglist
 +#define	XXX_P_SIGMASK	kp_proc.p_sigmask
 +#define	XXX_P_SIGIGNORE	kp_proc.p_sigignore
-+#define	XXX_P_SIGCATCH	kp_proc.p.sigcatch
++#define	XXX_P_SIGCATCH	kp_proc.p_sigcatch
 +
 +#endif
 +
