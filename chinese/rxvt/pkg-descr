@@ -6,7 +6,6 @@ Since 2.6PRE2, rxvt supports XIM. This port no longer patches for XCIN,
 a Chinese input server. Instead, the user must install an input server which
 support the XIM protocol. The user has to either patch XCIN (2.1, 2.3) or use
 XCIN 2.5, which support XIM and only XIM protocol. 
-The info on rxvt could be found on 
-http://www.rxvt.org/
-The info regarding Chinese XIM server could be found at 
-http://xcin.linux.org.tw/
+
+WWW: http://www.rxvt.org/
+http://xcin.linux.org.tw/ (Chinese XIM server)
