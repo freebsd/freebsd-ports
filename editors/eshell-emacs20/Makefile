@@ -23,6 +23,7 @@ MAKE_ARGS+=	lispdir=${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} \
 		CP="${INSTALL_DATA}"
 
 ALL_TARGET=	default
+INFO=		eshell
 
 post-extract:
 	@(cd ${WRKSRC}; ${TAR} zxf ${PORTNAME}.tar.gz; \
