@@ -6432,6 +6432,7 @@ tidy		ports/www/tidy
 tiff		ports/graphics/tiff
 tiff2png	ports/graphics/tiff2png
 tifmerge	ports/graphics/tifmerge
+tightvnc	ports/net/tightvnc
 tik		ports/net/tik
 time		src/usr.bin/time
 timed		src/usr.sbin/timed
@@ -6748,7 +6749,6 @@ vmware2		ports/emulators/vmware2
 vmware_xf4mod	ports/emulators/vmware_xf4mod
 vn		src/sys/dev/vn
 vnc		ports/net/vnc
-vnc-tight	ports/net/vnc-tight
 vnconfig	src/usr.sbin/vnconfig
 vomit		ports/net/vomit
 vorbis		ports/audio/vorbis
