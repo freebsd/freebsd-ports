@@ -1,3 +1,6 @@
+This is the legacy 1.4 version of automake.  It is explictly for use with
+older software packages that are not buildable with the current automake.
+
 Automake is an experimental Makefile generator.  It was inspired by
 the 4.4BSD make and include files, but aims to be portable and to
 conform to the GNU standards for Makefile variables and targets.
