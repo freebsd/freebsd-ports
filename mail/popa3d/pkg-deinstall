@@ -1,0 +1,20 @@
+#!/bin/sh
+
+USER=popa3d
+GROUP=popa3d
+
+case $2 in
+    DEINSTALL)
+	
+	;;
+    POST-DEINSTALL)
+	    pw groupdel $GROUP
+	    pw userdel $USER 
+	;;
+    *)
+	echo "usage: $0 <pkg-name> 
+{DEINSTALL|POST-DEINSTALL}"
+	exit 64
+esac
+
+exit 0
