@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.webdav.org/mod_dav/
 
 MAINTAINER=	patrick@mindstep.com
 
-BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
-RUN_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
 # This port will work with the following version of Apache and anything newer.
 APACHE_VERSION=	1.3.6
