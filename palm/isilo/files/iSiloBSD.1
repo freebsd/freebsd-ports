@@ -1,0 +1,135 @@
+.\" Copyright (c) 1999
+.\"	Nik Clayton <nik@FreeBSD.org>
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice, this list of conditions and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY NIK CLAYTON ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.\" $FreeBSD: /tmp/pcvs/ports/palm/isilo/files/Attic/iSiloBSD.1,v 1.1 2000-02-03 20:53:29 nik Exp $
+.\"
+.Dd December 20, 1999
+.Os FreeBSD 3.3
+.Dt iSiloBSD 1
+.Sh NAME
+.Nm iSiloBSD
+.Nd Convert text and HTML to iSilo Palm Pilot format
+.Sh SYNOPSIS
+.Nm iSiloBSD
+.Op Ar -h | -?
+.Nm iSiloBSD
+.Op Fl cy
+.Op Fl d Ns Ar max_depth
+.Op Fl i Ns Ar title
+.Op Fl I
+.Op Fl Ialt
+.Op Fl \&Ic
+.Op Fl Id
+.Op Fl Is Ns Ar max_width
+.Op Fl Idef
+.Op Fl rCR
+.Op Fl rLF
+.Op Fl sLB Ns Ar num_spaces
+.Op Fl tLB Ns Ar num_breaks
+.Op Fl tS Ns Ar num_spaces
+source_file
+.Op Ar target_file
+.Sh DESCRIPTION
+In the first synopsis form,
+.Nm
+displays a brief help message, and exits.  In the second synopsis form,
+.Nm
+converts
+.Ar source_file
+to
+.Pa source_file.pdb
+or
+.Ar target_file
+if that option is provided.
+.Pp
+.Ar source_file
+can be either plain text or HTML.  If it is HTML then a good facsimile of
+the formatting and links are retained in
+.Ar target_file ,
+as are (optionally) images.
+.Pp
+The following options are provided:
+.Bl -tag -width XXXXXXXXXXXXXX
+.It Fl c
+Convert CR to LF.
+.It Fl y
+Overwrite the destination file if it exists.
+.It Fl d Ns Ar max_depth
+Maximum depth to follow links.  0 means only convert the first page.
+.It Fl i Ns Ar title
+The document title.  Defaults to the name of the source file.  Remember
+to quote as necessary.  E.g.,
+.Qq Fl i Ns Ar The FreeBSD Handbook .
+.It Fl I
+Include images.
+.It Fl Ialt
+Include the alternative text for each image.
+.It Fl \&Ic
+Improve image contrast.
+.It Fl Id
+Dither images
+.It Fl Is Ns Ar max_width
+Scale images to at most
+.Ar max_width
+pixels wide.  Defaults to 156 if not specified.
+.It Fl Idef
+Include images, and use these default options:
+.Bl -tag -width XXXXXX
+.It Fl Ialt
+Include alternate text
+.It Fl \&Ic
+Improve image contrast
+.It Fl Id
+Dither images
+.It Fl Is Ns Ar 156
+Scale images to maximum 156 pixels
+.El
+.It Fl rCR
+Remove CR characters.
+.It Fl rLF
+Remove LF characters.
+.It Fl sLB Ns Ar num_spaces
+Replace single line breaks with
+.Ar num_spaces
+spaces.  If not specified, the default is 1.
+.It Fl tLB Ns Ar num_breaks
+Replace TAB characters with
+.Ar num_breaks
+line breaks.  If not specified, the default is 2.
+.It Fl tS Ns Ar num_spaces
+Replace TAB characters with
+.Ar num_spaces
+spaces.  If not specified, the default is 4.
+.El
+.Sh AUTHORS
+ISilo, and
+.Nm
+are copyright DC & Co.  For more information about iSilo, and to download
+the Palm Pilot reader for iSilo format documents, go to
+http://www.iSilo.com/.
+.Pp
+This manual page was written by
+.An Nik Clayton Aq nik@FreeBSD.org .
+
+
