@@ -24,6 +24,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 MAKE_ENV=	WRKSRC="${WRKSRC}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 INSTALLS_SHLIB=	yes
+SCRIPTDIR=	${FILESDIR}
 
 .include <bsd.port.pre.mk>
 

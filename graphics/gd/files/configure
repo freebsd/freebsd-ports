@@ -1,0 +1,44 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/graphics/gd/files/configure,v 1.1 2004-01-14 06:14:42 dinoex Exp $
+
+# The GD_FONTS environment variable can be set to specify the gzipped
+# tar-ball containing the fonts in bdf format and the bdf file names.
+#
+# For example:
+# GD_FONTS="/usr/ports/distfiles/x-koi8u.tgz koi6x10.bdf koi8x13.bdf \
+#	koi9x15.bdf koi12x24.bdf koi10x20.bdf"
+#
+# This can be usefull for slave ports, like ukrainian/gd, which may
+# now provide alternative fonts easily.
+
+#	TODO: . handle multiple archiving formats: tgz, tar.bz2, zip
+#	      . allow for passing already extracted font-files
+
+if [ -z "$GD_FONTS" ]
+then
+	echo "GD_FONTS can be set to specify an alternative list of .bdf files"
+	echo "See $0 for details..."
+	exit 0
+fi
+
+set $GD_FONTS
+#
+# The  tarball is  the  first argument,  the  tiny, small,  medium-bold,
+# large, and giant fonts follow.
+#
+
+tarball=$1
+shift
+tar -xvzpf $tarball -C $WRKSRC $@
+
+rm -f $WRKSRC/Makefile.fonts
+
+for font in Tiny Small MediumBold Large Giant
+do
+	f=`echo $font | tr -d [[:lower:]] | tr [[:upper:]] [[:lower:]]`
+	rm -f $WRKSRC/gdfont$f.[ch]
+	printf 'gdfont%s.c gdfont%s.h: %s\
+		perl ${.CURDIR}/bdftogd gdFont%s font%s < %s\n' \
+		$f $f $1 $font $f $1 >> $WRKSRC/Makefile.fonts
+	shift
+done
