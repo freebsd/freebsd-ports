@@ -69,6 +69,7 @@
     SUBDIR += tuxcards
     SUBDIR += wmpinboard
     SUBDIR += xcalendar
+    SUBDIR += xchm
     SUBDIR += xinvest
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
