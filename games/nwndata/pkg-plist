@@ -1,5 +1,5 @@
-%%DATADIR%%/eula.txt
-%%DATADIR%%/nwnv129.txt
+%%DATADIR%%/EULA.txt
+%%DATADIR%%/NWNv129.txt
 %%DATADIR%%/ambient/al_an_bughouse1.wav
 %%DATADIR%%/ambient/al_an_bughouse2.wav
 %%DATADIR%%/ambient/al_an_bugscave1.wav
@@ -119,7 +119,7 @@
 %%DATADIR%%/data/voicesets.bif
 %%DATADIR%%/dialog.tlk
 %%DATADIR%%/dmvault/dungeonmaster.bic
-%%DATADIR%%/docs/nwn_onlinemanual.pdf
+%%DATADIR%%/docs/NWN_OnlineManual.pdf
 %%DATADIR%%/docs/readme.txt
 %%DATADIR%%/localvault/aluviandarkstar.bic
 %%DATADIR%%/localvault/claymanorin.bic
@@ -143,14 +143,14 @@
 %%DATADIR%%/localvault/xandraloxdeteste.bic
 %%DATADIR%%/localvault/xavierwoo.bic
 %%DATADIR%%/localvault/zanzinabru.bic
-%%DATADIR%%/modules/contest of champions 0492.mod
-%%DATADIR%%/modules/demo - a bucket of gnolls.mod
-%%DATADIR%%/modules/demo - goblins vs kobolds.mod
-%%DATADIR%%/modules/demo - house of doors.mod
-%%DATADIR%%/modules/demo - thar be rats! yarrr!.mod
-%%DATADIR%%/modules/demo - the cat lady.mod
-%%DATADIR%%/modules/ww1-the fields of battle.mod
-%%DATADIR%%/modules/ww2-the witch hunters.mod
+%%DATADIR%%/modules/Contest Of Champions 0492.mod
+%%DATADIR%%/modules/DEMO - A Bucket of Gnolls.mod
+%%DATADIR%%/modules/DEMO - Goblins vs Kobolds.mod
+%%DATADIR%%/modules/DEMO - House of Doors.mod
+%%DATADIR%%/modules/DEMO - Thar be Rats! Yarrr!.mod
+%%DATADIR%%/modules/DEMO - The Cat Lady.mod
+%%DATADIR%%/modules/WW1-The Fields of Battle.mod
+%%DATADIR%%/modules/WW2-The Witch Hunters.mod
 %%DATADIR%%/music/mus_autorun.wav
 %%DATADIR%%/music/mus_bat_aribeth.bmu
 %%DATADIR%%/music/mus_bat_citboss.bmu
@@ -209,13 +209,13 @@
 %%DATADIR%%/music/mus_theme_maugrm.bmu
 %%DATADIR%%/music/mus_theme_morag.bmu
 %%DATADIR%%/music/mus_theme_nwn.bmu
-%%DATADIR%%/nwm/chapter1.nwm
-%%DATADIR%%/nwm/chapter1e.nwm
-%%DATADIR%%/nwm/chapter2.nwm
-%%DATADIR%%/nwm/chapter2e.nwm
-%%DATADIR%%/nwm/chapter3.nwm
-%%DATADIR%%/nwm/chapter4.nwm
-%%DATADIR%%/nwm/prelude.nwm
+%%DATADIR%%/nwm/Chapter1.nwm
+%%DATADIR%%/nwm/Chapter1E.nwm
+%%DATADIR%%/nwm/Chapter2.nwm
+%%DATADIR%%/nwm/Chapter2E.nwm
+%%DATADIR%%/nwm/Chapter3.nwm
+%%DATADIR%%/nwm/Chapter4.nwm
+%%DATADIR%%/nwm/Prelude.nwm
 %%DATADIR%%/override/iit_medkit_001.tga
 %%DATADIR%%/override/m1q6f06pedistal.dlg
 %%DATADIR%%/override/nw_s2_wholeness.ncs
@@ -223,12 +223,12 @@
 %%DATADIR%%/override/options_sound.gui
 %%DATADIR%%/override/serverlist_page1.gui
 %%DATADIR%%/patch.key
-%%DATADIR%%/texturepacks/gui_32bit.erf
-%%DATADIR%%/texturepacks/textures_tpa.erf
-%%DATADIR%%/texturepacks/textures_tpc.erf
-%%DATADIR%%/texturepacks/tiles_tpa.erf
-%%DATADIR%%/texturepacks/tiles_tpb.erf
-%%DATADIR%%/texturepacks/tiles_tpc.erf
+%%DATADIR%%/texturepacks/GUI_32bit.erf
+%%DATADIR%%/texturepacks/Textures_Tpa.erf
+%%DATADIR%%/texturepacks/Textures_Tpc.erf
+%%DATADIR%%/texturepacks/Tiles_Tpa.erf
+%%DATADIR%%/texturepacks/Tiles_Tpb.erf
+%%DATADIR%%/texturepacks/Tiles_Tpc.erf
 @dirrm %%DATADIR%%/texturepacks
 @dirrm %%DATADIR%%/servervault
 @dirrm %%DATADIR%%/saves
