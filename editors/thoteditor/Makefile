@@ -27,8 +27,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
 USE_GMAKE=	yes
 ALL_TARGET=	all schemas
+MAN1=		cextract.1
+MAN5=		cextrc.5
 
 do-configure:
+	$(CP) $(WRKSRC)/../thot/Makefile.in $(WRKSRC)/../thot/Makefile.in.patched
+	$(SED) -e "s&%%MOTIFLIB%%&$(MOTIFLIB)&" <$(WRKSRC)/../thot/Makefile.in.patched >$(WRKSRC)/../thot/Makefile.in
 	(cd $(WRKSRC);../configure $(CONFIGURE_ARGS))
 
 post-configure:
@@ -42,5 +46,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/thot/doc
 	$(SED) -e "s&%%PREFIX%%&$(PREFIX)&" < $(FILESDIR)/thoteditor > $(WRKDIR)/thoteditor
 	$(INSTALL_SCRIPT) $(WRKDIR)/thoteditor $(PREFIX)/bin
+	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextrc.5 $(PREFIX)/man/man5
+	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextract.1 $(PREFIX)/man/man1/cextract.1
 
 .include <bsd.port.mk>
