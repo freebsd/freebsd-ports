@@ -31,7 +31,7 @@ MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 SENDMAIL=	${PREFIX}/sbin/sendmail
 BASEMAIL=	/usr/libexec/sendmail/sendmail
 PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
-LDAP_PORT?=	net/openldap20-client
+LDAP_PORT?=	net/openldap21-client
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
