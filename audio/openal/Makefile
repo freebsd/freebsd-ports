@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openal
-PORTVERSION=	20040215
+PORTVERSION=	20040816
 CATEGORIES=	audio
 MASTER_SITES=	http://math.smsu.edu/~erik/files/fbsd/\
 		http://www.smluc.org/~erik/files/fbsd/
