@@ -15,12 +15,10 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-.if !defined(APACHE_PORT)
-APACHE_PORT=apache13
-.endif
 BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT} \
 		${PREFIX}/bin/lwp-download:${PORTSDIR}/www/p5-libwww
 
+APACHE_PORT?=	apache13
 USE_PERL5=	yes
 MAN3=		Apache.3 \
 		Apache::Constants.3 \
