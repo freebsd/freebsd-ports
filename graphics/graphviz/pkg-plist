@@ -40,6 +40,7 @@ include/graphviz/circo.h
 include/graphviz/circpos.h
 include/graphviz/circular.h
 include/graphviz/closest.h
+include/graphviz/clusteredges.h
 include/graphviz/colortbl.h
 include/graphviz/comp.h
 include/graphviz/conjgrad.h
@@ -153,7 +154,7 @@ lib/graphviz/libgraph.so
 lib/graphviz/libgraph.so.0
 lib/graphviz/libgvgd.la
 lib/graphviz/libgvgd.so
-lib/graphviz/libgvgd.so.0
+lib/graphviz/libgvgd.so.2
 lib/graphviz/libgvrender.la
 lib/graphviz/libgvrender.so
 lib/graphviz/libgvrender.so.0
@@ -175,6 +176,9 @@ lib/graphviz/libtclplan.so.0
 lib/graphviz/libtwopigen.la
 lib/graphviz/libtwopigen.so
 lib/graphviz/libtwopigen.so.0
+lib/graphviz/libtkspline.so.0
+lib/graphviz/libtkspline.so
+lib/graphviz/libtkspline.la
 lib/graphviz/pkgIndex.tcl
 %%PORTDOCS%%%%DOCSDIR%%/Dot.ref
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.html
@@ -216,18 +220,18 @@ lib/graphviz/pkgconfig/libtwopigen.pc
 %%DATADIR%%/demo/pathplan_data/rotor.dat
 %%DATADIR%%/demo/pathplan_data/u.dat
 %%DATADIR%%/demo/pathplan_data/unknown.dat
+%%DATADIR%%/demo/spline.README
+%%DATADIR%%/demo/spline
 %%DATADIR%%/doc/AUTHORS
 %%DATADIR%%/doc/COPYING
 %%DATADIR%%/doc/ChangeLog
 %%DATADIR%%/doc/Dot.ref
-%%DATADIR%%/doc/FAQ.txt
-%%DATADIR%%/doc/MINTERMS.txt
 %%DATADIR%%/doc/NEWS
+%%DATADIR%%/doc/cpl1.0.txt
 %%DATADIR%%/doc/html/FAQ.html
-%%DATADIR%%/doc/html/LICENSE.html
-%%DATADIR%%/doc/html/binlicense.htm
 %%DATADIR%%/doc/html/build.html
 %%DATADIR%%/doc/html/gd.html
+%%DATADIR%%/doc/html/index.html
 %%DATADIR%%/doc/html/info/Mcircle.gif
 %%DATADIR%%/doc/html/info/Mdiamond.gif
 %%DATADIR%%/doc/html/info/Msquare.gif
@@ -366,6 +370,7 @@ lib/graphviz/pkgconfig/libtwopigen.pc
 %%DATADIR%%/doc/pdf/prune.pdf
 %%DATADIR%%/doc/pdf/sccmap.pdf
 %%DATADIR%%/doc/pdf/tcldot.pdf
+%%DATADIR%%/doc/pdf/tkspline.pdf
 %%DATADIR%%/doc/pdf/tred.pdf
 %%DATADIR%%/doc/pdf/twopi.pdf
 %%DATADIR%%/doc/pdf/unflatten.pdf
