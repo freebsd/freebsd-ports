@@ -25,6 +25,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/locals.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mixer_music.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/mouse.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/movie.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rect.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rwobject.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surface.so
@@ -38,10 +39,16 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/fullinstall.txt
 %%PORTDOCS%%share/doc/py-game/index.html
 %%PORTDOCS%%share/doc/py-game/init.txt
+%%PORTDOCS%%share/doc/py-game/logos.html
+%%PORTDOCS%%share/doc/py-game/pygame_logo.gif
+%%PORTDOCS%%share/doc/py-game/pygame_powered.gif
+%%PORTDOCS%%share/doc/py-game/pygame_small.gif
+%%PORTDOCS%%share/doc/py-game/pygame_tiny.gif
 %%PORTDOCS%%share/doc/py-game/ref/CD.html
 %%PORTDOCS%%share/doc/py-game/ref/Channel.html
 %%PORTDOCS%%share/doc/py-game/ref/Font.html
 %%PORTDOCS%%share/doc/py-game/ref/Joystick.html
+%%PORTDOCS%%share/doc/py-game/ref/Movie.html
 %%PORTDOCS%%share/doc/py-game/ref/Rect.html
 %%PORTDOCS%%share/doc/py-game/ref/Sound.html
 %%PORTDOCS%%share/doc/py-game/ref/Surface.html
@@ -60,6 +67,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mixer.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mixer_music.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_mouse.html
+%%PORTDOCS%%share/doc/py-game/ref/pygame_movie.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_surfarray.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_time.html
 %%PORTDOCS%%share/doc/py-game/ref/pygame_transform.html
