@@ -66,6 +66,7 @@ INCLUDES=	adodb-csvlib.inc.php \
 		adodb.inc.php \
 		adodb-lib.inc.php \
 		adodb-pear.inc.php \
+		adodb-time.inc.php \
 		crypt.inc.php \
 		tohtml.inc.php
 
