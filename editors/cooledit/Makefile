@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cooledit
-PORTVERSION=	3.14.1
+PORTVERSION=	3.15.3
 CATEGORIES=	editors
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
