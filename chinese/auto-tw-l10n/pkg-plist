@@ -11,4 +11,3 @@ share/skel/zh_TW.Big5/dot.vimrc
 share/skel/zh_TW.Big5/dot.xinitrc
 share/skel/zh_TW.Big5/dot.xftconfig
 @unexec rmdir %D/share/skel/zh_TW.Big5 2>/dev/null || true
-@unexec rmdir %D/share/skel 2>/dev/null || true
