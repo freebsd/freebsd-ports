@@ -1,3 +1,5 @@
+include/pygtk/pygdkimlib.h
+include/pygtk/pygtk.h
 lib/python1.5/site-packages/GDK.py
 lib/python1.5/site-packages/GDK.pyc
 lib/python1.5/site-packages/GDK.pyo
@@ -13,68 +15,8 @@ lib/python1.5/site-packages/GtkExtra.pyo
 lib/python1.5/site-packages/Gtkinter.py
 lib/python1.5/site-packages/Gtkinter.pyc
 lib/python1.5/site-packages/Gtkinter.pyo
-lib/python1.5/site-packages/_appletmodule.so
-lib/python1.5/site-packages/_cappletmodule.so
 lib/python1.5/site-packages/_gdkimlibmodule.so
-lib/python1.5/site-packages/_gnomemodule.so
-lib/python1.5/site-packages/_gnomeuimodule.so
 lib/python1.5/site-packages/_gtkmodule.so
-lib/python1.5/site-packages/_gtkxmhtmlmodule.so
-lib/python1.5/site-packages/_zvtmodule.so
-lib/python1.5/site-packages/gettext.py
-lib/python1.5/site-packages/gettext.pyc
-lib/python1.5/site-packages/gettext.pyo
-lib/python1.5/site-packages/gnome/__init__.py
-lib/python1.5/site-packages/gnome/__init__.pyc
-lib/python1.5/site-packages/gnome/__init__.pyo
-lib/python1.5/site-packages/gnome/affine.py
-lib/python1.5/site-packages/gnome/affine.pyc
-lib/python1.5/site-packages/gnome/affine.pyo
-lib/python1.5/site-packages/gnome/applet.py
-lib/python1.5/site-packages/gnome/applet.pyc
-lib/python1.5/site-packages/gnome/applet.pyo
-lib/python1.5/site-packages/gnome/capplet.py
-lib/python1.5/site-packages/gnome/capplet.pyc
-lib/python1.5/site-packages/gnome/capplet.pyo
-lib/python1.5/site-packages/gnome/config.py
-lib/python1.5/site-packages/gnome/config.pyc
-lib/python1.5/site-packages/gnome/config.pyo
-lib/python1.5/site-packages/gnome/file.py
-lib/python1.5/site-packages/gnome/file.pyc
-lib/python1.5/site-packages/gnome/file.pyo
-lib/python1.5/site-packages/gnome/help.py
-lib/python1.5/site-packages/gnome/help.pyc
-lib/python1.5/site-packages/gnome/help.pyo
-lib/python1.5/site-packages/gnome/history.py
-lib/python1.5/site-packages/gnome/history.pyc
-lib/python1.5/site-packages/gnome/history.pyo
-lib/python1.5/site-packages/gnome/metadata.py
-lib/python1.5/site-packages/gnome/metadata.pyc
-lib/python1.5/site-packages/gnome/metadata.pyo
-lib/python1.5/site-packages/gnome/mime.py
-lib/python1.5/site-packages/gnome/mime.pyc
-lib/python1.5/site-packages/gnome/mime.pyo
-lib/python1.5/site-packages/gnome/score.py
-lib/python1.5/site-packages/gnome/score.pyc
-lib/python1.5/site-packages/gnome/score.pyo
-lib/python1.5/site-packages/gnome/triggers.py
-lib/python1.5/site-packages/gnome/triggers.pyc
-lib/python1.5/site-packages/gnome/triggers.pyo
-lib/python1.5/site-packages/gnome/ui.py
-lib/python1.5/site-packages/gnome/ui.pyc
-lib/python1.5/site-packages/gnome/ui.pyo
-lib/python1.5/site-packages/gnome/uiconsts.py
-lib/python1.5/site-packages/gnome/uiconsts.pyc
-lib/python1.5/site-packages/gnome/uiconsts.pyo
-lib/python1.5/site-packages/gnome/url.py
-lib/python1.5/site-packages/gnome/url.pyc
-lib/python1.5/site-packages/gnome/url.pyo
-lib/python1.5/site-packages/gnome/xmhtml.py
-lib/python1.5/site-packages/gnome/xmhtml.pyc
-lib/python1.5/site-packages/gnome/xmhtml.pyo
-lib/python1.5/site-packages/gnome/zvt.py
-lib/python1.5/site-packages/gnome/zvt.pyc
-lib/python1.5/site-packages/gnome/zvt.pyo
 lib/python1.5/site-packages/gtk.py
 lib/python1.5/site-packages/gtk.pyc
 lib/python1.5/site-packages/gtk.pyo
@@ -90,5 +32,63 @@ lib/python1.5/site-packages/pyglade/style.pyo
 lib/python1.5/site-packages/pyglade/xmlparse.py
 lib/python1.5/site-packages/pyglade/xmlparse.pyc
 lib/python1.5/site-packages/pyglade/xmlparse.pyo
-@dirrm lib/python1.5/site-packages/gnome
+share/doc/py-gtk/MAPPING
+share/examples/py-gtk/gl/README
+share/examples/py-gtk/gl/cone.py
+share/examples/py-gtk/gl/dots.py
+share/examples/py-gtk/gl/gears.py
+share/examples/py-gtk/glade/README
+share/examples/py-gtk/glade/glade.py
+share/examples/py-gtk/glade/test.glade
+share/examples/py-gtk/glade/test2.glade
+share/examples/py-gtk/ide/README
+share/examples/py-gtk/ide/break.xpm
+share/examples/py-gtk/ide/browse.py
+share/examples/py-gtk/ide/continue.xpm
+share/examples/py-gtk/ide/edit.py
+share/examples/py-gtk/ide/edit.xpm
+share/examples/py-gtk/ide/gtkcons.py
+share/examples/py-gtk/ide/gtkdb.py
+share/examples/py-gtk/ide/gtkprof.py
+share/examples/py-gtk/ide/minibreak.xpm
+share/examples/py-gtk/ide/next.xpm
+share/examples/py-gtk/ide/pyide.py
+share/examples/py-gtk/ide/quit.xpm
+share/examples/py-gtk/ide/return.xpm
+share/examples/py-gtk/ide/run.xpm
+share/examples/py-gtk/ide/step.xpm
+share/examples/py-gtk/imlib/view.py
+share/examples/py-gtk/neil/README
+share/examples/py-gtk/neil/TAppli.py
+share/examples/py-gtk/neil/TAppli2.py
+share/examples/py-gtk/neil/TAppli3.py
+share/examples/py-gtk/neil/TAppli4.py
+share/examples/py-gtk/neil/TAppli5.py
+share/examples/py-gtk/neil/bomb.xpm
+share/examples/py-gtk/neil/gtk-logo.xpm
+share/examples/py-gtk/neil/notebook.py
+share/examples/py-gtk/neil/question.xpm
+share/examples/py-gtk/simple/README
+share/examples/py-gtk/simple/dnd.py
+share/examples/py-gtk/simple/dndpixmap.py
+share/examples/py-gtk/simple/hello1.py
+share/examples/py-gtk/simple/hello2.py
+share/examples/py-gtk/simple/scribble.py
+share/examples/py-gtk/simple/simple1.py
+share/examples/py-gtk/simple/simple2.py
+share/examples/py-gtk/simple/tooltip1.py
+share/examples/py-gtk/simple/tooltip2.py
+share/examples/py-gtk/testgtk/README
+share/examples/py-gtk/testgtk/test.xpm
+share/examples/py-gtk/testgtk/testgtk.py
+share/examples/py-gtk/testgtk/testgtkrc
 @dirrm lib/python1.5/site-packages/pyglade
+@dirrm share/doc/py-gtk
+@dirrm share/examples/py-gtk/gl
+@dirrm share/examples/py-gtk/glade
+@dirrm share/examples/py-gtk/ide
+@dirrm share/examples/py-gtk/imlib
+@dirrm share/examples/py-gtk/neil
+@dirrm share/examples/py-gtk/simple
+@dirrm share/examples/py-gtk/testgtk
+@dirrm share/examples/py-gtk

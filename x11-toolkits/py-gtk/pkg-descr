@@ -1,9 +1,4 @@
-Excerpts from the READMEs:
- PyGNOME -- Python bindings for GNOME
- ====================================
- Author: James Henstridge <james@daa.com.au>
-
- This is a set of bindings for the GNOME libraries for use with python.
+Excerpt from the README:
 
  PyGTK
  =====
