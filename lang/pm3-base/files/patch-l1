@@ -1,0 +1,26 @@
+--- libs/m3core/src/runtime/FreeBSD4/RTHeapDepC.c.old  Thu Jun  1 02:54:33 2000
++++ libs/m3core/src/runtime/FreeBSD4/RTHeapDepC.c      Tue Jun 12 14:07:31 2001
+@@ -693,7 +693,9 @@
+   void *data;
+ { int result;
+   struct ufs_args *u_data;
++#if __FreeBSD_version < 500019
+   struct mfs_args *m_data;
++#endif
+   struct nfs_args *n_data;
+ 
+   ENTER_CRITICAL;
+@@ -704,11 +706,13 @@
+     MAKE_READABLE(u_data);
+     MAKE_READABLE(u_data->fspec);
+     result = syscall(SYS_mount, type, dir, flags, data);
++#if __FreeBSD_version < 500019
+   } else if (strcmp(type, "mfs") == 0) {
+     m_data = (struct mfs_args*) data;
+     MAKE_READABLE(m_data);
+     MAKE_READABLE(m_data->fspec);
+     result = syscall(SYS_mount, type, dir, flags, data);
++#endif
+   } else if (strcmp(type, "nfs") == 0) {
+     n_data = (struct nfs_args*) data;
+     MAKE_READABLE(n_data);
