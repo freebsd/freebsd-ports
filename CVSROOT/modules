@@ -78,6 +78,7 @@ EZWGL		ports/graphics/EZWGL
 ElectricFence	ports/devel/ElectricFence
 FAQ		doc/en_US.ISO8859-1/books/faq
 FWF		ports/x11-toolkits/FWF
+GeoIP		ports/misc/GeoIP
 GiNaC		ports/math/GiNaC
 Gofer		ports/lang/Gofer
 Hermes		ports/graphics/Hermes
