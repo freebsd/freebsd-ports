@@ -304,7 +304,7 @@ CONFIGURE_ARGS+=--with-gd \
 		--with-png-dir=${LOCALBASE}
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/x11/XFree86-4-libraries
-CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--with-xpm-dir=${X11BASE}
 .endif
 .if defined(WITH_LZW)
 CONFIGURE_ARGS+=--enable-gd-lzw-gif
