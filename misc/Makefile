@@ -56,6 +56,7 @@
     SUBDIR += dejagnu
     SUBDIR += delay
     SUBDIR += demoniac
+    SUBDIR += detachtty
     SUBDIR += diction
     SUBDIR += dirtree
     SUBDIR += display

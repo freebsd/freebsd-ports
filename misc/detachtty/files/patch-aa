@@ -1,0 +1,32 @@
+--- Makefile.orig	Wed Sep 18 00:41:36 2002
++++ Makefile	Tue Mar 25 23:20:18 2003
+@@ -3,9 +3,9 @@
+ # for details
+ 
+ # Linux 2.4
+-OS_CFLAGS=-DNEED_PTY_H                       
++#OS_CFLAGS=-DNEED_PTY_H                       
+ # FreeBSD, version unknown
+-#OS_CFLAGS=-DNEED_LIBUTIL_H                  
++OS_CFLAGS=-DNEED_LIBUTIL_H                  
+ # Solaris, some version of
+ #OS_CFLAGS=-DNEED_STRINGS_H -DNEED_LOCAL_FORKPTY_H
+ 
+@@ -19,7 +19,7 @@
+ # no forkpty in Solaris
+ # OS_OBJECTS=forkpty.o
+ 
+-INSTALL_DIR=/usr/local/bin
++INSTALL_DIR=${PREFIX}/bin
+ 
+ # You probably don't need to edit anything below this line
+ 
+@@ -31,7 +31,7 @@
+ 	-rm *.o *~ attachtty detachtty
+ 
+ install: all
+-	install detachtty attachtty $(DESTDIR)$(INSTALL_DIR)
++	install detachtty attachtty $(INSTALL_DIR)
+ 
+ deb:
+ 	rm -rf /usr/local/src/Packages/detachtty/ 
