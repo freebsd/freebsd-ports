@@ -3,6 +3,7 @@
 
     SUBDIR += aspell
     SUBDIR += gd
+    SUBDIR += iceb
     SUBDIR += kde3-i18n
     SUBDIR += koffice-i18n
     SUBDIR += monacofonts

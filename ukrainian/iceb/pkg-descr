@@ -1,0 +1,16 @@
+Ukrainian accounting system with curses GUI.
+Hardware support: 
+	- many cache registers
+	- bar-code scanners
+Includes:
+	- main book
+	- matheriasl accounting
+	- service accounting
+	- salary calculation
+	- payment documents
+	- cachier orders accounting
+
+WWW: http://www.iceb.vinnitsa.com/
+
+- Vadim Chekan
+vchekan@softline.kiev.ua
