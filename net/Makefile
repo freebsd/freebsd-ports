@@ -163,7 +163,7 @@
     SUBDIR += gnome-mud
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu2
-    SUBDIR += gnomemeeting2
+    SUBDIR += gnomemeeting
     SUBDIR += gnometelnet
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
