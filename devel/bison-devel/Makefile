@@ -17,6 +17,7 @@ MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_BZIP2=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-included-gettext
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
