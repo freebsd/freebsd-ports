@@ -2,7 +2,7 @@
 $FreeBSD$
 
 --- configure.in.orig	Sun Sep 21 20:31:30 2003
-+++ configure.in	Mon Oct  6 15:02:13 2003
++++ configure.in	Sun Nov  2 16:18:58 2003
 @@ -1751,7 +1751,7 @@
          dnl Apple did fix the security problem in it and not using the system
          dnl library results in a whole bunch of warnings when linking with
@@ -51,26 +51,24 @@ $FreeBSD$
  
          dnl now test for all possibilities
          THREADS_OK=no
-@@ -3649,6 +3647,9 @@
+@@ -3649,6 +3647,8 @@
                THREADS_CFLAGS=""
        done
  
 +      THREADS_OK=yes
-+      THREADS_LINK="$PTHREAD_LIBS"
 +
        if test "x$THREADS_OK" != "xyes"; then
            wxUSE_THREADS=no
            AC_MSG_WARN([No thread support on this system... disabled])
-@@ -3672,7 +3673,7 @@
+@@ -3672,7 +3672,6 @@
                  flag="-D_THREAD_SAFE"
                  ;;
              *-freebsd*)
 -                flag="-D_THREAD_SAFE"
-+                flag="${PTHREAD_CFLAGS}"
                  ;;
              *-hp-hpux* )
                  flag="-D_REENTRANT"
-@@ -3954,21 +3955,6 @@
+@@ -3954,21 +3953,6 @@
      esac
  fi
  
@@ -92,7 +90,7 @@ $FreeBSD$
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      AC_DEFINE(WXWIN_COMPATIBILITY_2)
  
-@@ -5439,7 +5425,6 @@
+@@ -5439,7 +5423,6 @@
  AC_SUBST(WX_LIBRARY_IMPORTLIB)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -100,7 +98,7 @@ $FreeBSD$
  AC_SUBST(PROGRAM_EXT)
  
  dnl global gl options
-@@ -5447,7 +5432,6 @@
+@@ -5447,7 +5430,6 @@
  AC_SUBST(WX_LIBRARY_NAME_SHARED_GL)
  AC_SUBST(WX_TARGET_LIBRARY_GL)
  AC_SUBST(WX_LIBRARY_LINK1_GL)

@@ -1,5 +1,5 @@
---- configure.orig	Mon Oct  6 15:01:07 2003
-+++ configure	Mon Oct  6 15:04:11 2003
+--- configure.orig	Sun Nov  2 16:08:40 2003
++++ configure	Sun Nov  2 16:17:32 2003
 @@ -11731,7 +11731,7 @@
  
  
@@ -47,26 +47,24 @@
  
                  THREADS_OK=no
          for flag in $THREAD_OPTS; do
-@@ -18736,6 +18734,9 @@
+@@ -18736,6 +18734,8 @@
                THREADS_CFLAGS=""
        done
  
 +      THREADS_OK=yes
-+      THREADS_LINK="$PTHREAD_LIBS"
 +
        if test "x$THREADS_OK" != "xyes"; then
            wxUSE_THREADS=no
            echo "configure: warning: No thread support on this system... disabled" 1>&2
-@@ -18752,7 +18753,7 @@
+@@ -18752,7 +18752,6 @@
                  flag="-D_THREAD_SAFE"
                  ;;
              *-freebsd*)
 -                flag="-D_THREAD_SAFE"
-+                flag="${PTHREAD_CFLAGS}"
                  ;;
              *-hp-hpux* )
                  flag="-D_REENTRANT"
-@@ -19531,21 +19532,6 @@
+@@ -19531,21 +19530,6 @@
      esac
  fi
  
@@ -88,7 +86,7 @@
  if test "$WXWIN_COMPATIBILITY_2" = "yes"; then
      cat >> confdefs.h <<\EOF
  #define WXWIN_COMPATIBILITY_2 1
-@@ -22780,13 +22766,11 @@
+@@ -22780,13 +22764,11 @@
  s%@WX_LIBRARY_IMPORTLIB@%$WX_LIBRARY_IMPORTLIB%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
