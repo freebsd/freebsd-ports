@@ -25,10 +25,6 @@ MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-extract:
 	@${CP} ${FILESDIR}/main.xpm ${WRKSRC}/x11amp/defskin
 
