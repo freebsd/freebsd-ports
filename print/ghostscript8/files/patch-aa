@@ -1,5 +1,5 @@
---- src/unix-gcc.mak.orig	Fri Mar 17 20:13:40 2000
-+++ src/unix-gcc.mak	Tue Mar 21 01:03:57 2000
+--- src/unix-gcc.mak.orig	Sat Mar 18 05:13:40 2000
++++ src/unix-gcc.mak	Sat Mar 25 15:43:57 2000
 @@ -52,11 +52,10 @@
  # the directories also define the default search path for the
  # initialization files (gs_*.ps) and the fonts.
@@ -94,6 +94,15 @@
  
  # Define whether this platform has floating point hardware:
  #	FPU_TYPE=2 means floating point is faster than fixed point.
+@@ -327,7 +326,7 @@
+ # Choose the device(s) to include.  See devs.mak for details,
+ # devs.mak and contrib.mak for the list of available devices.
+ 
+-DEVICE_DEVS=$(DD)x11.dev $(DD)x11alpha.dev $(DD)x11cmyk.dev $(DD)x11gray2.dev $(DD)x11gray4.dev $(DD)x11mono.dev
++#DEVICE_DEVS=$(DD)x11.dev $(DD)x11alpha.dev $(DD)x11cmyk.dev $(DD)x11gray2.dev $(DD)x11gray4.dev $(DD)x11mono.dev
+ 
+ #DEVICE_DEVS1=
+ #DEVICE_DEVS2=
 @@ -345,27 +344,27 @@
  #DEVICE_DEVS14=
  #DEVICE_DEVS15=
