@@ -1,7 +1,5 @@
 apps/ROX-Filer/%%BINARIES%%/ROX-Filer
 apps/ROX-Filer/.DirIcon
-apps/ROX-Filer/Action-it.png
-apps/ROX-Filer/Action.png
 apps/ROX-Filer/AppInfo.xml
 apps/ROX-Filer/AppRun
 apps/ROX-Filer/Help/COPYING
@@ -24,6 +22,7 @@ apps/ROX-Filer/Messages/ja.gmo
 apps/ROX-Filer/Messages/nl.gmo
 apps/ROX-Filer/Messages/no.gmo
 apps/ROX-Filer/Messages/pl.gmo
+apps/ROX-Filer/Messages/ro.gmo
 apps/ROX-Filer/Messages/ru.gmo
 apps/ROX-Filer/Messages/sv.gmo
 apps/ROX-Filer/Messages/zh_CN.gmo
