@@ -2076,6 +2076,7 @@ gngb		ports/emulators/gngb
 gniffel		ports/games/gniffel
 gno3dtet	ports/games/gno3dtet
 gnocatan	ports/games/gnocatan
+gnocl		ports/x11-toolkits/gnocl
 gnofin		ports/deskutils/gnofin
 gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
