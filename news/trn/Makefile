@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $id: Makefile,v 1.0 1994/10/21 00:00:00 smace Exp $
+# $Id$
 #
 
 DISTNAME=	trn-3.6
