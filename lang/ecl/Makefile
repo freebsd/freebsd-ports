@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecl
-PORTVERSION=	0.9d.041019
+PORTVERSION=	0.9d.041103
 CATEGORIES=	lang
 MASTER_SITES=	http://www.inf.tu-dresden.de/~s1054849/
 EXTRACT_SUFX=	.tbz
@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/ecls
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/ecl
 
-# does not build on 64-bit archs
+# It should build and run on 64-bit architectures,
+# but it is completely untested.
 ONLY_FOR_ARCHS=	i386
 
 MAN1=		ecl.1
@@ -31,6 +32,9 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--with-tcp --enable-threads --with-clos-streams --enable-local-gmp --with-cmuformat
+
+# We need to tell ECL where to find the GMP includes
+# and libraries.
 CONFIGURE_ENV=	LDFLAGS=-L${PREFIX}/lib CFLAGS=-I${PREFIX}/include
 
 .include <bsd.port.mk>
