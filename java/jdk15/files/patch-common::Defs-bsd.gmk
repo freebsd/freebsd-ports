@@ -1,27 +1,11 @@
-
-$FreeBSD$
-
---- common/Defs-bsd.gmk.orig	Mon Sep 10 17:02:16 2001
-+++ common/Defs-bsd.gmk	Mon Sep 10 17:02:42 2001
-@@ -128,7 +128,7 @@
- ifeq ($(TRUE_PLATFORM), NetBSD)
- DEVTOOLS_PATH = /usr/pkg/bin/
- else
+--- ../../j2se/make/common/Defs-bsd.gmk.orig	Fri Mar  7 01:38:41 2003
++++ ../../j2se/make/common/Defs-bsd.gmk	Fri Mar  7 01:38:01 2003
+@@ -155,7 +155,7 @@
+ 
+ # DEVTOOLS_PATH is for other tools required for building (such as
+ # zip, etc.)
 -DEVTOOLS_PATH = /usr/local/bin/
-+DEVTOOLS_PATH = $(LOCALBASE)/bin/
- endif
++DEVTOOLS_PATH = ${LOCALBASE}/bin/
  # Allow the user to override the default value...
  ifdef ALT_DEVTOOLS_PATH
-@@ -221,10 +221,10 @@
- else # ARCH
- CFLAGS_COMMON   = $(GCC_WARNINGS)
- endif # ARCH
--CFLAGS_OPT      = $(POPT)
-+CFLAGS_OPT      = $(POPT) $(SYS_CFLAGS)
- CFLAGS_DBG      = -g3
- CXXFLAGS_COMMON = $(GCC_WARNINGS)
--CXXFLAGS_OPT	= $(POPT)
-+CXXFLAGS_OPT	= $(POPT) $(SYS_CFLAGS)
- CXXFLAGS_DBG	= -g3
- 
- CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -DSOLARIS2 $(VERSION_DEFINES) \
+ DEVTOOLS_PATH = $(subst //,/,$(ALT_DEVTOOLS_PATH)/)
