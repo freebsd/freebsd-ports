@@ -1,0 +1,11 @@
+--- configure.orig	Thu Feb 19 01:11:18 2004
++++ configure	Sat Apr 17 13:54:24 2004
+@@ -901,7 +901,7 @@
+     ;;
+ freebsd*)
+     if test "x$enable_thread" = "xyes"; then
+-       threadlib="-pthread"
++       threadlib="$PTHREAD_LIBS"
+        threadlibdir=
+     fi
+     ;;

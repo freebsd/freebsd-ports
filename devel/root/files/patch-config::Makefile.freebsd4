@@ -1,0 +1,55 @@
+--- config/Makefile.freebsd4.orig	Mon Feb 16 11:12:43 2004
++++ config/Makefile.freebsd4	Sat Apr 17 00:35:00 2004
+@@ -5,7 +5,7 @@
+ PLATFORM      = fbsd
+ 
+ DEBUGFLAGS    = -g
+-OPTFLAGS      = -O
++#OPTFLAGS     = -O
+ ifeq (debug,$(findstring debug,$(ROOTBUILD)))
+ OPT           = $(DEBUGFLAGS)
+ NOOPT         =
+@@ -15,10 +15,10 @@
+ endif
+ 
+ # Compiler:
+-CXX           = g++
+-CC            = gcc
+-CXXFLAGS      = -pipe -W -Wall -fPIC -I/usr/X11R6/include $(EXTRA_CXXFLAGS)
+-CFLAGS        = -pipe -W -Wall -fPIC -I/usr/X11R6/include $(EXTRA_CFLAGS)
++#CXX          = g++
++#CC           = gcc
++CXXFLAGS     += -W -Wall -fPIC -I$(X11BASE)/include $(EXTRA_CXXFLAGS)
++CFLAGS       += -W -Wall -fPIC -I$(X11BASE)/include $(EXTRA_CFLAGS)
+ CINTCXXFLAGS  = -pipe -W -Wall -fPIC -DG__REGEXP $(EXTRA_CXXFLAGS) \
+                 -DG__UNIX -DG__SHAREDLIB -DG__ROOT -DG__REDIRECTIO -DG__OSFDLL
+ CINTCFLAGS    = -pipe -W -Wall -fPIC -DG__REGEXP -DG__UNIX -DG__SHAREDLIB \
+@@ -26,13 +26,13 @@
+ COMPILER      = gnu
+ 
+ ifeq ($(ENABLETHREAD),yes)
+-CXXFLAGS     += -pthread
+-CINTCXXFLAGS += -pthread
++CXXFLAGS     += $(PTHREAD_CFLAGS)
++CINTCXXFLAGS += $(PTHREAD_CFLAGS)
+ endif
+ 
+ # Linker:
+-LD            = g++
+-LDFLAGS       = $(OPT) $(EXTRA_LDFLAGS)
++LD            = $(CXX)
++LDFLAGS      += $(OPT) $(EXTRA_LDFLAGS)
+ SOFLAGS       = -shared -Wl,-x -Wl,-soname,
+ SOEXT         = so
+ 
+@@ -43,8 +43,8 @@
+ CRYPTLIBS     = -lcrypt
+ 
+ # Fortran:
+-F77           = f77
+-F77FLAGS      = $(OPT)
++#F77          = f77
++F77FLAGS     += $(OPT)
+ F77LIBS       = -lg2c
+ 
+ # Extras

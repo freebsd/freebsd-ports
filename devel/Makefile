@@ -1073,6 +1073,7 @@
     SUBDIR += rinfo
     SUBDIR += rlwrap
     SUBDIR += robodoc
+    SUBDIR += root
     SUBDIR += rpc2
     SUBDIR += rtplib
     SUBDIR += ruby-amstd
