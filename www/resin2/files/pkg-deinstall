@@ -8,24 +8,33 @@
 # * Checks if the 'www' user exists. If it does, then it displays
 #   a message.
 #
+# $FreeBSD: /tmp/pcvs/ports/www/resin2/files/Attic/pkg-deinstall,v 1.1 2003-11-20 21:25:09 glewis Exp $
+#
+# Borrowed from the jakarta-tomcat port
+#
+
+set -e
+
+PID_FILE=%%PID_FILE%%
+RUNASUSER=%%RUNASUSER%%
 
 # Make sure we're in the right stage of the process
 if [ "$2" = "DEINSTALL" ]; then
 
     # Kill the process if it is still running
-    PID_FILE=/var/run/resin.pid
     if [ -s ${PID_FILE} ]; then
         PID=`cat ${PID_FILE}`
-        echo -n ">> Killing Resin process (${PID})..."
-        /bin/kill ${PID} > /dev/null 2> /dev/null
-        if [ $? -eq 0 ]; then
+        echo -n ">> Killing %%APP_NAME%% process (${PID})..."
+
+        if /bin/kill ${PID} > /dev/null 2> /dev/null ; then
             echo " [ DONE ]"
         else
             echo " [ FAILED ]"
         fi
+
         echo -n ">> Removing PID file (${PID_FILE})..."
-        rm ${PID_FILE} > /dev/null 2> /dev/null
-        if [ $? -eq 0 ]; then
+
+        if rm ${PID_FILE} > /dev/null 2> /dev/null ; then
             echo " [ DONE ]"
         else
             echo " [ FAILED ]"
@@ -35,8 +44,8 @@ fi
 
 if [ "$2" = "POST-DEINSTALL" ]; then
     # If the user exists, then display a message
-    if pw usershow "www" 2>/dev/null 1>&2; then
-        echo "To delete the www user permanently, use 'pw userdel www'"
+    if pw usershow "$RUNASUSER" 2>/dev/null 1>&2; then
+        echo "To delete the $RUNASUSER user permanently, use 'pw userdel $RUNASUSER'"
     fi
 fi
 

@@ -1,468 +1,457 @@
-resin/doc/beta.xtp
-resin/doc/changes-1.xtp
-resin/doc/changes.xtp
-resin/doc/errata.xtp
-resin/doc/features.xtp
-resin/doc/future.xtp
-resin/doc/index.xtp
-resin/doc/toc.xml
-resin/doc/examples/basic/WEB-INF/classes/Env.java
-resin/doc/examples/basic/WEB-INF/classes/HelloServlet.java
-resin/doc/examples/basic/counter.jsp
-resin/doc/examples/basic/dir.jsp
-resin/doc/examples/basic/dummy.jsp
-resin/doc/examples/basic/env.jsp
-resin/doc/examples/basic/file.jsp
-resin/doc/examples/basic/form.html
-resin/doc/examples/basic/form.jsp
-resin/doc/examples/basic/hello.jsp
-resin/doc/examples/basic/quote.jsp
-resin/doc/examples/basic/quote_error.jsp
-resin/doc/examples/basic/session.jsp
-resin/doc/examples/basic/stats.jsp
-resin/doc/examples/basic/com/caucho/fortune/1.html
-resin/doc/examples/basic/com/caucho/fortune/2.html
-resin/doc/examples/basic/com/caucho/fortune/3.html
-resin/doc/examples/basic/com/caucho/fortune/4.html
-resin/doc/examples/basic/com/caucho/fortune/5.html
-resin/doc/examples/basic/data/fortune/1.html
-resin/doc/examples/basic/data/fortune/2.html
-resin/doc/examples/basic/data/fortune/3.html
-resin/doc/examples/basic/data/fortune/4.html
-resin/doc/examples/basic/data/fortune/5.html
-resin/doc/examples/index.xtp
-resin/doc/examples/toc.xml
-resin/doc/examples/view_source.jsp
-resin/doc/examples/login/WEB-INF/classes/test/TestAuthenticator.java
-resin/doc/examples/login/WEB-INF/web.xml
-resin/doc/examples/login/error.html
-resin/doc/examples/login/index.jsp
-resin/doc/examples/login/login.html
-resin/doc/examples/login/login.jsp
-resin/doc/examples/login/protected.jsp
-resin/doc/examples/navigation/WEB-INF/scripts/Navigation.js
-resin/doc/examples/navigation/WEB-INF/scripts/fancy_header.js
-resin/doc/examples/navigation/WEB-INF/scripts/header.js
-resin/doc/examples/navigation/article1.jsp
-resin/doc/examples/navigation/article2.jsp
-resin/doc/examples/navigation/child1.jsp
-resin/doc/examples/navigation/child2.jsp
-resin/doc/examples/navigation/conclusion.jsp
-resin/doc/examples/navigation/navigation.jsp
-resin/doc/examples/navigation/toc.xml
-resin/doc/examples/templates/admin.jsp
-resin/doc/examples/templates/add.jsp
-resin/doc/examples/templates/add.xtp
-resin/doc/examples/templates/WEB-INF/classes/jsp/Guest.java
-resin/doc/examples/templates/WEB-INF/classes/jsp/GuestBook.java
-resin/doc/examples/templates/WEB-INF/classes/jsp/GuestJsp.java
-resin/doc/examples/templates/WEB-INF/classes/jsp/GuestXtp.java
-resin/doc/examples/templates/WEB-INF/classes/jsp/RSS.java
-resin/doc/examples/templates/WEB-INF/xsl/caucho_form.xsl
-resin/doc/examples/templates/WEB-INF/xsl/default.xsl
-resin/doc/examples/templates/WEB-INF/xsl/defaultcopy.xsl
-resin/doc/examples/templates/WEB-INF/xsl/form.xsl
-resin/doc/examples/templates/WEB-INF/xsl/formatting.xsl
-resin/doc/examples/templates/WEB-INF/xsl/guestbook.xsl
-resin/doc/examples/templates/WEB-INF/xsl/header.xsl
-resin/doc/examples/templates/WEB-INF/xsl/rss.xsl
-resin/doc/examples/templates/admin.xtp
-resin/doc/examples/templates/guestbook.jsp
-resin/doc/examples/templates/guestbook.xtp
-resin/doc/examples/templates/guestbook_bean.jsp
-resin/doc/examples/templates/guestbook_inc.jsp
-resin/doc/examples/templates/list.jsp
-resin/doc/examples/templates/login.jsp
-resin/doc/examples/templates/login.xtp
-resin/doc/examples/templates/loginold.jsp
-resin/doc/examples/templates/rss.xtp
-resin/doc/examples/templates/simple-format.xsl
-resin/doc/examples/tictactoe/WEB-INF/scripts/score.js
-resin/doc/examples/tictactoe/error.jsp
-resin/doc/examples/tictactoe/tictactoe.jsp
-resin/doc/examples/tutorial/WEB-INF/classes/servlet/trivial/HelloServlet.java
-resin/doc/examples/tutorial/WEB-INF/web.xml
-resin/doc/examples/xsl/WEB-INF/classes/xsl/Dispatch.java
-resin/doc/examples/xsl/WEB-INF/web.xml
-resin/doc/examples/xsl/WEB-INF/scripts/Navigation.js
-resin/doc/examples/xsl/WEB-INF/xsl/basic.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/content.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/copy.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/counter.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/default.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/header.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/plain.xsl
-resin/doc/examples/xsl/WEB-INF/xsl/verify.xsl
-resin/doc/examples/xsl/basic.xtp
-resin/doc/examples/xsl/counter.xtp
-resin/doc/examples/xsl/good-doc.xtp
-resin/doc/examples/xsl/index.xml
-resin/doc/examples/xsl/navigation.xtp
-resin/doc/examples/xsl/toc.xml
-resin/doc/examples/xsl/vary.xml
-resin/doc/examples/xsl/vary.xtp
-resin/doc/examples/xsl/verify-bad.xtp
-resin/doc/examples/xsl/verify-ok.xtp
-resin/doc/examples/xsl/data/fortune/1.html
-resin/doc/examples/xsl/data/fortune/2.html
-resin/doc/examples/xsl/data/fortune/3.html
-resin/doc/examples/xsl/data/fortune/4.html
-resin/doc/examples/xsl/data/fortune/5.html
-resin/doc/images/apache_srun.gif
-resin/doc/images/appserver.gif
-resin/doc/images/background.gif
-resin/doc/images/backup.gif
-resin/doc/images/ball8.gif
-resin/doc/images/bean.gif
-resin/doc/images/bean1.gif
-resin/doc/images/caucho.gif
-resin/doc/images/compiler.gif
-resin/doc/images/file.gif
-resin/doc/images/folder.gif
-resin/doc/images/hbleed.gif
-resin/doc/images/httpd.gif
-resin/doc/images/iis_srun.gif
-resin/doc/images/jndi_tree.gif
-resin/doc/images/jsp.gif
-resin/doc/images/logo.gif
-resin/doc/images/pixel.gif
-resin/doc/images/resin_powered.gif
-resin/doc/images/same_srun.gif
-resin/doc/images/script.gif
-resin/doc/images/srunc.gif
-resin/doc/images/sticky-sessions.gif
-resin/doc/images/style.gif
-resin/doc/images/webserver.gif
-resin/doc/images/website_srun.gif
-resin/doc/images/caucho-blue.gif
-resin/doc/images/left_background.gif
-resin/doc/java_tut/WEB-INF/classes/example/servlet/basic/HelloServlet.java
-resin/doc/java_tut/WEB-INF/classes/example/servlet/basic/InitServlet.java
-resin/doc/java_tut/WEB-INF/classes/example/servlet/basic/MappingServlet.java
-resin/doc/java_tut/WEB-INF/classes/example/servlet/basic/URLServlet.java
-resin/doc/java_tut/WEB-INF/classes/example/servlet/database/InitDatabaseServlet.java
-resin/doc/java_tut/WEB-INF/classes/example/servlet/database/QueryServlet.java
-resin/doc/java_tut/WEB-INF/web.xml
-resin/doc/java_tut/WEB-INF/sql/default.sql
-resin/doc/java_tut/add_page.xtp
-resin/doc/java_tut/bean.xtp
-resin/doc/java_tut/cache.xtp
-resin/doc/java_tut/conf-basic.xtp
-resin/doc/java_tut/conf-dir.xtp
-resin/doc/java_tut/conf-servlet.xtp
-resin/doc/java_tut/conf.xtp
-resin/doc/java_tut/db-config.xtp
-resin/doc/java_tut/db_form.xtp
-resin/doc/java_tut/debug.xtp
-resin/doc/java_tut/filter-vary.xtp
-resin/doc/java_tut/form.xtp
-resin/doc/java_tut/hardcore.xtp
-resin/doc/java_tut/index.xtp
-resin/doc/java_tut/isp.xtp
-resin/doc/java_tut/linux-boot.xtp
-resin/doc/java_tut/linux-init.xtp
-resin/doc/java_tut/mail_form.xtp
-resin/doc/java_tut/multipart.xtp
-resin/doc/java_tut/parse_error.xtp
-resin/doc/java_tut/req_headers.xtp
-resin/doc/java_tut/plugin-dispatch.xtp
-resin/doc/java_tut/req_url.xtp
-resin/doc/java_tut/run-at.xtp
-resin/doc/java_tut/run_error.xtp
-resin/doc/java_tut/servlets.xtp
-resin/doc/java_tut/tag-attribute.xtp
-resin/doc/java_tut/tag-connection.xtp
-resin/doc/java_tut/tag-hello.xtp
-resin/doc/java_tut/tag-mail.xtp
-resin/doc/java_tut/tag-xsl.xtp
-resin/doc/java_tut/tcp-sessions.xtp
-resin/doc/java_tut/toc.xml
-resin/doc/java_tut/tuning.xtp
-resin/doc/java_tut/war-dir.xtp
-resin/doc/java_tut/xsl-filter.xtp
-resin/doc/java_tut/xtp-copy.xtp
-resin/doc/java_tut/xtp-format.xtp
-resin/doc/java_tut/xtp-jsp-stylescript.xtp
-resin/doc/java_tut/xtp-jsp.xtp
-resin/doc/java_tut/xtp-page.xtp
-resin/doc/java_tut/xtp-strict.xtp
-resin/doc/java_tut/javadoc/constant-values.html
-resin/doc/java_tut/javadoc/resources/inherit.gif
-resin/doc/java_tut/javadoc/overview-tree.html
-resin/doc/java_tut/javadoc/index-all.html
-resin/doc/java_tut/javadoc/deprecated-list.html
-resin/doc/java_tut/javadoc/allclasses-frame.html
-resin/doc/java_tut/javadoc/allclasses-noframe.html
-resin/doc/java_tut/javadoc/index.html
-resin/doc/java_tut/javadoc/packages.html
-resin/doc/java_tut/javadoc/overview-summary.html
-resin/doc/java_tut/javadoc/overview-frame.html
-resin/doc/java_tut/javadoc/example/servlet/basic/package-frame.html
-resin/doc/java_tut/javadoc/example/servlet/basic/package-summary.html
-resin/doc/java_tut/javadoc/example/servlet/basic/package-tree.html
-resin/doc/java_tut/javadoc/example/servlet/basic/HelloServlet.html
-resin/doc/java_tut/javadoc/example/servlet/basic/InitServlet.html
-resin/doc/java_tut/javadoc/example/servlet/basic/MappingServlet.html
-resin/doc/java_tut/javadoc/example/servlet/basic/URLServlet.html
-resin/doc/java_tut/javadoc/example/servlet/database/package-frame.html
-resin/doc/java_tut/javadoc/example/servlet/database/package-summary.html
-resin/doc/java_tut/javadoc/example/servlet/database/package-tree.html
-resin/doc/java_tut/javadoc/example/servlet/database/InitDatabaseServlet.html
-resin/doc/java_tut/javadoc/example/servlet/database/QueryServlet.html
-resin/doc/java_tut/javadoc/serialized-form.html
-resin/doc/java_tut/javadoc/package-list
-resin/doc/java_tut/javadoc/help-doc.html
-resin/doc/java_tut/javadoc/stylesheet.css
-resin/doc/java_tut/images/same_srun.gif
-resin/doc/java_tut/images/srunc.gif
-resin/doc/ref/jsp/jsp-el.xtp
-resin/doc/ref/admin.xtp
-resin/doc/ref/app-config.xtp
-resin/doc/ref/atp.xtp
-resin/doc/ref/auth-config.xtp
-resin/doc/ref/balance.xtp
-resin/doc/ref/basic-config.xtp
-resin/doc/ref/bnf.xtp
-resin/doc/ref/burlap.xtp
-resin/doc/ref/caching.xtp
-resin/doc/ref/changes.xtp
-resin/doc/ref/config-index.xtp
-resin/doc/ref/config-sum.xtp
-resin/doc/ref/config.xtp
-resin/doc/ref/contents.xtp
-resin/doc/ref/cse-apache-unix.xtp
-resin/doc/ref/cse-apache-win.xtp
-resin/doc/ref/cse-iis.xtp
-resin/doc/ref/cse-netscape.xtp
-resin/doc/ref/cse-oreilly-website.xtp
-resin/doc/ref/db-config.xtp
-resin/doc/ref/xml/attributes.xtp
-resin/doc/ref/xml/elements.xtp
-resin/doc/ref/xml/get_elements.xtp
-resin/doc/ref/xml/html.xtp
-resin/doc/ref/xml/index.xtp
-resin/doc/ref/xml/intro.xtp
-resin/doc/ref/xml/parsing.xtp
-resin/doc/ref/xml/sax.xtp
-resin/doc/ref/xml/text.xtp
-resin/doc/ref/xml/vfs.xtp
-resin/doc/ref/ejb-ias.xtp
-resin/doc/ref/ejb-jboss.xtp
-resin/doc/ref/ejb-jonas.xtp
-resin/doc/ref/ejb-orion.xtp
-resin/doc/ref/ejb-weblogic.xtp
-resin/doc/ref/ejb.xtp
-resin/doc/ref/errata.xtp
-resin/doc/ref/faq.xtp
-resin/doc/ref/file-config.xtp
-resin/doc/ref/filesystems.xtp
-resin/doc/ref/filter-config.xtp
-resin/doc/ref/filter-library.xtp
-resin/doc/ref/filter.xtp
-resin/doc/ref/glossary.xtp
-resin/doc/ref/hessian.xtp
-resin/doc/ref/http-config.xtp
-resin/doc/ref/httpd.xtp
-resin/doc/ref/ide-jbuilder.xtp
-resin/doc/ref/ide-kawa.xtp
-resin/doc/ref/ide.xtp
-resin/doc/ref/index.xtp
-resin/doc/ref/javascript.xtp
-resin/doc/ref/jms.xtp
-resin/doc/ref/jmx.xtp
-resin/doc/ref/jndi.xtp
-resin/doc/ref/jsp-actions.xtp
-resin/doc/ref/jsp-applications.xtp
-resin/doc/ref/jsp-directives.xtp
-resin/doc/ref/jsp-variables.xtp
-resin/doc/ref/jsp.xtp
-resin/doc/ref/jspapp.xtp
-resin/doc/ref/jtp.xtp
-resin/doc/ref/log-config.xtp
-resin/doc/ref/macos-x.xtp
-resin/doc/ref/page_context.xtp
-resin/doc/ref/port-config.xtp
-resin/doc/ref/raw-socket.xtp
-resin/doc/ref/resin-config.xtp
-resin/doc/ref/security.xtp
-resin/doc/ref/servlet-config.xtp
-resin/doc/ref/servlet-library.xtp
-resin/doc/ref/servlet.xtp
-resin/doc/ref/servletcontext.xtp
-resin/doc/ref/sessions.xtp
-resin/doc/ref/xsl/apply-templates.xtp
-resin/doc/ref/xsl/attribute.xtp
-resin/doc/ref/xsl/boxes.xtp
-resin/doc/ref/xsl/command-line.xtp
-resin/doc/ref/xsl/copy.xtp
-resin/doc/ref/xsl/filter-attribute.xtp
-resin/doc/ref/xsl/filter.xtp
-resin/doc/ref/xsl/hello.xtp
-resin/doc/ref/xsl/if-attribute.xtp
-resin/doc/ref/xsl/if-xpath-attribute.xtp
-resin/doc/ref/xsl/if.xtp
-resin/doc/ref/xsl/index.xtp
-resin/doc/ref/xsl/modes.xtp
-resin/doc/ref/xsl/ref.xtp
-resin/doc/ref/xsl/short-attribute.xtp
-resin/doc/ref/xsl/value-of.xtp
-resin/doc/ref/xsl/xpath-find.xtp
-resin/doc/ref/xsl/xpath-select.xtp
-resin/doc/ref/xsl/xpath.xtp
-resin/doc/ref/xsl/xsl-api.xtp
-resin/doc/ref/xsl/xsl.xtp
-resin/doc/ref/xsl/xsl-boxes.xtp
-resin/doc/ref/srun-other.xtp
-resin/doc/ref/ssl-quick.xml
-resin/doc/ref/ssl-quick.xtp
-resin/doc/ref/ssl.xml
-resin/doc/ref/ssl.xtp
-resin/doc/ref/starting.xtp
-resin/doc/ref/static.xtp
-resin/doc/ref/stylescript.xtp
-resin/doc/ref/taglib.xtp
-resin/doc/ref/toc.xml
-resin/doc/ref/topics.xtp
-resin/doc/ref/trouble.xtp
-resin/doc/ref/velocity.xtp
-resin/doc/ref/virtual-host.xtp
-resin/doc/ref/visual-age.xtp
-resin/doc/ref/war-dir.xtp
-resin/doc/ref/webdav.xtp
-resin/doc/ref/xml.xtp
-resin/doc/ref/xpath-fun.xtp
-resin/doc/ref/xpath.xtp
-resin/doc/ref/xsl.xtp
-resin/doc/ref/xslt-lite-eg.xtp
-resin/doc/ref/xslt-lite.xtp
-resin/doc/ref/xtp-jsp.xtp
-resin/doc/ref/xtp-index.xtp
-resin/doc/ref/xtp-intro.xtp
-resin/doc/ref/xtp.xtp
-resin/doc/faq/classloader.xtp
-resin/doc/faq/config.xtp
-resin/doc/faq/debug.xtp
-resin/doc/faq/index.xtp
-resin/doc/faq/install.xtp
-resin/doc/faq/misc.xtp
-resin/doc/faq/servlet.xtp
-resin/doc/faq/ssl.xtp
-resin/doc/faq/toc.xml
-resin/doc/css/default.css
-resin/lib/resin.jar
-resin/lib/jsdk23.jar
-resin/lib/jdbc2_0-stdext.jar
-resin/lib/jta_101.jar
-resin/lib/jndi.jar
-resin/lib/dom.jar
-resin/lib/sax.jar
-resin/lib/jaxp.jar
-resin/lib/jmx.jar
-resin/lib/webutil.jar
-resin/lib/jdbc-mysql.jar
-resin/xsl/caucho/comment.xsl
-resin/xsl/caucho/contents.xsl
-resin/xsl/caucho/control.xsl
-resin/xsl/caucho/debug.xsl
-resin/xsl/caucho/defaultcopy.xsl
-resin/xsl/caucho/format.xsl
-resin/xsl/caucho/newstyle.xsl
-resin/xsl/caucho/weblog.xsl
-resin/xsl/caucho_default.xsl
-resin/xsl/caucho_header.xsl
-resin/xsl/caucho_subpage.xsl
-resin/xsl/default.xsl
-resin/xsl/doc_header.xsl
-resin/xsl/header.xsl
-resin/xsl/js_header.xsl
-resin/xsl/new_doc_header.xsl
-resin/xsl/search.xsl
-resin/xsl/subpage.xsl
-resin/xsl/js/caucho/defaultcopy.xsl
-resin/xsl/js/caucho/format.xsl
-resin/xsl/js/caucho/weblog.xsl
-etc/rc.d/resin.sh
-sbin/resinctl
+%%APP_NAME%%/doc/beta.xtp
+%%APP_NAME%%/doc/changes-1.xtp
+%%APP_NAME%%/doc/changes.xtp
+%%APP_NAME%%/doc/errata.xtp
+%%APP_NAME%%/doc/features.xtp
+%%APP_NAME%%/doc/future.xtp
+%%APP_NAME%%/doc/index.xtp
+%%APP_NAME%%/doc/toc.xml
+%%APP_NAME%%/doc/examples/basic/WEB-INF/classes/Env.java
+%%APP_NAME%%/doc/examples/basic/WEB-INF/classes/HelloServlet.java
+%%APP_NAME%%/doc/examples/basic/counter.jsp
+%%APP_NAME%%/doc/examples/basic/dir.jsp
+%%APP_NAME%%/doc/examples/basic/dummy.jsp
+%%APP_NAME%%/doc/examples/basic/env.jsp
+%%APP_NAME%%/doc/examples/basic/file.jsp
+%%APP_NAME%%/doc/examples/basic/form.html
+%%APP_NAME%%/doc/examples/basic/form.jsp
+%%APP_NAME%%/doc/examples/basic/hello.jsp
+%%APP_NAME%%/doc/examples/basic/quote.jsp
+%%APP_NAME%%/doc/examples/basic/quote_error.jsp
+%%APP_NAME%%/doc/examples/basic/session.jsp
+%%APP_NAME%%/doc/examples/basic/stats.jsp
+%%APP_NAME%%/doc/examples/basic/com/caucho/fortune/1.html
+%%APP_NAME%%/doc/examples/basic/com/caucho/fortune/2.html
+%%APP_NAME%%/doc/examples/basic/com/caucho/fortune/3.html
+%%APP_NAME%%/doc/examples/basic/com/caucho/fortune/4.html
+%%APP_NAME%%/doc/examples/basic/com/caucho/fortune/5.html
+%%APP_NAME%%/doc/examples/basic/data/fortune/1.html
+%%APP_NAME%%/doc/examples/basic/data/fortune/2.html
+%%APP_NAME%%/doc/examples/basic/data/fortune/3.html
+%%APP_NAME%%/doc/examples/basic/data/fortune/4.html
+%%APP_NAME%%/doc/examples/basic/data/fortune/5.html
+%%APP_NAME%%/doc/examples/index.xtp
+%%APP_NAME%%/doc/examples/toc.xml
+%%APP_NAME%%/doc/examples/view_source.jsp
+%%APP_NAME%%/doc/examples/login/WEB-INF/classes/test/TestAuthenticator.java
+%%APP_NAME%%/doc/examples/login/WEB-INF/web.xml
+%%APP_NAME%%/doc/examples/login/error.html
+%%APP_NAME%%/doc/examples/login/index.jsp
+%%APP_NAME%%/doc/examples/login/login.html
+%%APP_NAME%%/doc/examples/login/login.jsp
+%%APP_NAME%%/doc/examples/login/protected.jsp
+%%APP_NAME%%/doc/examples/navigation/WEB-INF/scripts/Navigation.js
+%%APP_NAME%%/doc/examples/navigation/WEB-INF/scripts/fancy_header.js
+%%APP_NAME%%/doc/examples/navigation/WEB-INF/scripts/header.js
+%%APP_NAME%%/doc/examples/navigation/article1.jsp
+%%APP_NAME%%/doc/examples/navigation/article2.jsp
+%%APP_NAME%%/doc/examples/navigation/child1.jsp
+%%APP_NAME%%/doc/examples/navigation/child2.jsp
+%%APP_NAME%%/doc/examples/navigation/conclusion.jsp
+%%APP_NAME%%/doc/examples/navigation/navigation.jsp
+%%APP_NAME%%/doc/examples/navigation/toc.xml
+%%APP_NAME%%/doc/examples/templates/admin.jsp
+%%APP_NAME%%/doc/examples/templates/add.jsp
+%%APP_NAME%%/doc/examples/templates/add.xtp
+%%APP_NAME%%/doc/examples/templates/WEB-INF/classes/jsp/Guest.java
+%%APP_NAME%%/doc/examples/templates/WEB-INF/classes/jsp/GuestBook.java
+%%APP_NAME%%/doc/examples/templates/WEB-INF/classes/jsp/GuestJsp.java
+%%APP_NAME%%/doc/examples/templates/WEB-INF/classes/jsp/GuestXtp.java
+%%APP_NAME%%/doc/examples/templates/WEB-INF/classes/jsp/RSS.java
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/caucho_form.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/default.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/defaultcopy.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/form.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/formatting.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/guestbook.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/header.xsl
+%%APP_NAME%%/doc/examples/templates/WEB-INF/xsl/rss.xsl
+%%APP_NAME%%/doc/examples/templates/admin.xtp
+%%APP_NAME%%/doc/examples/templates/guestbook.jsp
+%%APP_NAME%%/doc/examples/templates/guestbook.xtp
+%%APP_NAME%%/doc/examples/templates/guestbook_bean.jsp
+%%APP_NAME%%/doc/examples/templates/guestbook_inc.jsp
+%%APP_NAME%%/doc/examples/templates/list.jsp
+%%APP_NAME%%/doc/examples/templates/login.jsp
+%%APP_NAME%%/doc/examples/templates/login.xtp
+%%APP_NAME%%/doc/examples/templates/loginold.jsp
+%%APP_NAME%%/doc/examples/templates/rss.xtp
+%%APP_NAME%%/doc/examples/templates/simple-format.xsl
+%%APP_NAME%%/doc/examples/tictactoe/WEB-INF/scripts/score.js
+%%APP_NAME%%/doc/examples/tictactoe/error.jsp
+%%APP_NAME%%/doc/examples/tictactoe/tictactoe.jsp
+%%APP_NAME%%/doc/examples/tutorial/WEB-INF/classes/servlet/trivial/HelloServlet.java
+%%APP_NAME%%/doc/examples/tutorial/WEB-INF/web.xml
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/classes/xsl/Dispatch.java
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/web.xml
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/scripts/Navigation.js
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/basic.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/content.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/copy.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/counter.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/default.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/header.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/plain.xsl
+%%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl/verify.xsl
+%%APP_NAME%%/doc/examples/xsl/basic.xtp
+%%APP_NAME%%/doc/examples/xsl/counter.xtp
+%%APP_NAME%%/doc/examples/xsl/good-doc.xtp
+%%APP_NAME%%/doc/examples/xsl/index.xml
+%%APP_NAME%%/doc/examples/xsl/navigation.xtp
+%%APP_NAME%%/doc/examples/xsl/toc.xml
+%%APP_NAME%%/doc/examples/xsl/vary.xml
+%%APP_NAME%%/doc/examples/xsl/vary.xtp
+%%APP_NAME%%/doc/examples/xsl/verify-bad.xtp
+%%APP_NAME%%/doc/examples/xsl/verify-ok.xtp
+%%APP_NAME%%/doc/examples/xsl/data/fortune/1.html
+%%APP_NAME%%/doc/examples/xsl/data/fortune/2.html
+%%APP_NAME%%/doc/examples/xsl/data/fortune/3.html
+%%APP_NAME%%/doc/examples/xsl/data/fortune/4.html
+%%APP_NAME%%/doc/examples/xsl/data/fortune/5.html
+%%APP_NAME%%/doc/images/apache_srun.gif
+%%APP_NAME%%/doc/images/appserver.gif
+%%APP_NAME%%/doc/images/background.gif
+%%APP_NAME%%/doc/images/backup.gif
+%%APP_NAME%%/doc/images/ball8.gif
+%%APP_NAME%%/doc/images/bean.gif
+%%APP_NAME%%/doc/images/bean1.gif
+%%APP_NAME%%/doc/images/caucho.gif
+%%APP_NAME%%/doc/images/compiler.gif
+%%APP_NAME%%/doc/images/file.gif
+%%APP_NAME%%/doc/images/folder.gif
+%%APP_NAME%%/doc/images/hbleed.gif
+%%APP_NAME%%/doc/images/httpd.gif
+%%APP_NAME%%/doc/images/iis_srun.gif
+%%APP_NAME%%/doc/images/jndi_tree.gif
+%%APP_NAME%%/doc/images/jsp.gif
+%%APP_NAME%%/doc/images/logo.gif
+%%APP_NAME%%/doc/images/pixel.gif
+%%APP_NAME%%/doc/images/resin_powered.gif
+%%APP_NAME%%/doc/images/same_srun.gif
+%%APP_NAME%%/doc/images/script.gif
+%%APP_NAME%%/doc/images/srunc.gif
+%%APP_NAME%%/doc/images/sticky-sessions.gif
+%%APP_NAME%%/doc/images/style.gif
+%%APP_NAME%%/doc/images/webserver.gif
+%%APP_NAME%%/doc/images/website_srun.gif
+%%APP_NAME%%/doc/images/caucho-blue.gif
+%%APP_NAME%%/doc/images/left_background.gif
+%%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/basic/HelloServlet.java
+%%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/basic/InitServlet.java
+%%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/basic/MappingServlet.java
+%%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/basic/URLServlet.java
+%%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/database/InitDatabaseServlet.java
+%%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/database/QueryServlet.java
+%%APP_NAME%%/doc/java_tut/WEB-INF/web.xml
+%%APP_NAME%%/doc/java_tut/WEB-INF/sql/default.sql
+%%APP_NAME%%/doc/java_tut/add_page.xtp
+%%APP_NAME%%/doc/java_tut/bean.xtp
+%%APP_NAME%%/doc/java_tut/cache.xtp
+%%APP_NAME%%/doc/java_tut/conf-basic.xtp
+%%APP_NAME%%/doc/java_tut/conf-dir.xtp
+%%APP_NAME%%/doc/java_tut/conf-servlet.xtp
+%%APP_NAME%%/doc/java_tut/conf.xtp
+%%APP_NAME%%/doc/java_tut/db-config.xtp
+%%APP_NAME%%/doc/java_tut/db_form.xtp
+%%APP_NAME%%/doc/java_tut/debug.xtp
+%%APP_NAME%%/doc/java_tut/filter-vary.xtp
+%%APP_NAME%%/doc/java_tut/form.xtp
+%%APP_NAME%%/doc/java_tut/hardcore.xtp
+%%APP_NAME%%/doc/java_tut/index.xtp
+%%APP_NAME%%/doc/java_tut/isp.xtp
+%%APP_NAME%%/doc/java_tut/linux-boot.xtp
+%%APP_NAME%%/doc/java_tut/linux-init.xtp
+%%APP_NAME%%/doc/java_tut/mail_form.xtp
+%%APP_NAME%%/doc/java_tut/multipart.xtp
+%%APP_NAME%%/doc/java_tut/parse_error.xtp
+%%APP_NAME%%/doc/java_tut/req_headers.xtp
+%%APP_NAME%%/doc/java_tut/plugin-dispatch.xtp
+%%APP_NAME%%/doc/java_tut/req_url.xtp
+%%APP_NAME%%/doc/java_tut/run-at.xtp
+%%APP_NAME%%/doc/java_tut/run_error.xtp
+%%APP_NAME%%/doc/java_tut/servlets.xtp
+%%APP_NAME%%/doc/java_tut/tag-attribute.xtp
+%%APP_NAME%%/doc/java_tut/tag-connection.xtp
+%%APP_NAME%%/doc/java_tut/tag-hello.xtp
+%%APP_NAME%%/doc/java_tut/tag-mail.xtp
+%%APP_NAME%%/doc/java_tut/tag-xsl.xtp
+%%APP_NAME%%/doc/java_tut/tcp-sessions.xtp
+%%APP_NAME%%/doc/java_tut/toc.xml
+%%APP_NAME%%/doc/java_tut/tuning.xtp
+%%APP_NAME%%/doc/java_tut/war-dir.xtp
+%%APP_NAME%%/doc/java_tut/xsl-filter.xtp
+%%APP_NAME%%/doc/java_tut/xtp-copy.xtp
+%%APP_NAME%%/doc/java_tut/xtp-format.xtp
+%%APP_NAME%%/doc/java_tut/xtp-jsp-stylescript.xtp
+%%APP_NAME%%/doc/java_tut/xtp-jsp.xtp
+%%APP_NAME%%/doc/java_tut/xtp-page.xtp
+%%APP_NAME%%/doc/java_tut/xtp-strict.xtp
+%%APP_NAME%%/doc/java_tut/javadoc/constant-values.html
+%%APP_NAME%%/doc/java_tut/javadoc/resources/inherit.gif
+%%APP_NAME%%/doc/java_tut/javadoc/overview-tree.html
+%%APP_NAME%%/doc/java_tut/javadoc/index-all.html
+%%APP_NAME%%/doc/java_tut/javadoc/deprecated-list.html
+%%APP_NAME%%/doc/java_tut/javadoc/allclasses-frame.html
+%%APP_NAME%%/doc/java_tut/javadoc/allclasses-noframe.html
+%%APP_NAME%%/doc/java_tut/javadoc/index.html
+%%APP_NAME%%/doc/java_tut/javadoc/packages.html
+%%APP_NAME%%/doc/java_tut/javadoc/overview-summary.html
+%%APP_NAME%%/doc/java_tut/javadoc/overview-frame.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/package-frame.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/package-summary.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/package-tree.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/HelloServlet.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/InitServlet.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/MappingServlet.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic/URLServlet.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/database/package-frame.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/database/package-summary.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/database/package-tree.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/database/InitDatabaseServlet.html
+%%APP_NAME%%/doc/java_tut/javadoc/example/servlet/database/QueryServlet.html
+%%APP_NAME%%/doc/java_tut/javadoc/serialized-form.html
+%%APP_NAME%%/doc/java_tut/javadoc/package-list
+%%APP_NAME%%/doc/java_tut/javadoc/help-doc.html
+%%APP_NAME%%/doc/java_tut/javadoc/stylesheet.css
+%%APP_NAME%%/doc/java_tut/images/same_srun.gif
+%%APP_NAME%%/doc/java_tut/images/srunc.gif
+%%APP_NAME%%/doc/ref/jsp/jsp-el.xtp
+%%APP_NAME%%/doc/ref/admin.xtp
+%%APP_NAME%%/doc/ref/app-config.xtp
+%%APP_NAME%%/doc/ref/atp.xtp
+%%APP_NAME%%/doc/ref/auth-config.xtp
+%%APP_NAME%%/doc/ref/balance.xtp
+%%APP_NAME%%/doc/ref/basic-config.xtp
+%%APP_NAME%%/doc/ref/bnf.xtp
+%%APP_NAME%%/doc/ref/burlap.xtp
+%%APP_NAME%%/doc/ref/caching.xtp
+%%APP_NAME%%/doc/ref/changes.xtp
+%%APP_NAME%%/doc/ref/config-index.xtp
+%%APP_NAME%%/doc/ref/config-sum.xtp
+%%APP_NAME%%/doc/ref/config.xtp
+%%APP_NAME%%/doc/ref/contents.xtp
+%%APP_NAME%%/doc/ref/cse-apache-unix.xtp
+%%APP_NAME%%/doc/ref/cse-apache-win.xtp
+%%APP_NAME%%/doc/ref/cse-iis.xtp
+%%APP_NAME%%/doc/ref/cse-netscape.xtp
+%%APP_NAME%%/doc/ref/cse-oreilly-website.xtp
+%%APP_NAME%%/doc/ref/db-config.xtp
+%%APP_NAME%%/doc/ref/xml/attributes.xtp
+%%APP_NAME%%/doc/ref/xml/elements.xtp
+%%APP_NAME%%/doc/ref/xml/get_elements.xtp
+%%APP_NAME%%/doc/ref/xml/html.xtp
+%%APP_NAME%%/doc/ref/xml/index.xtp
+%%APP_NAME%%/doc/ref/xml/intro.xtp
+%%APP_NAME%%/doc/ref/xml/parsing.xtp
+%%APP_NAME%%/doc/ref/xml/sax.xtp
+%%APP_NAME%%/doc/ref/xml/text.xtp
+%%APP_NAME%%/doc/ref/xml/vfs.xtp
+%%APP_NAME%%/doc/ref/ejb-ias.xtp
+%%APP_NAME%%/doc/ref/ejb-jboss.xtp
+%%APP_NAME%%/doc/ref/ejb-jonas.xtp
+%%APP_NAME%%/doc/ref/ejb-orion.xtp
+%%APP_NAME%%/doc/ref/ejb-weblogic.xtp
+%%APP_NAME%%/doc/ref/ejb.xtp
+%%APP_NAME%%/doc/ref/errata.xtp
+%%APP_NAME%%/doc/ref/faq.xtp
+%%APP_NAME%%/doc/ref/file-config.xtp
+%%APP_NAME%%/doc/ref/filesystems.xtp
+%%APP_NAME%%/doc/ref/filter-config.xtp
+%%APP_NAME%%/doc/ref/filter-library.xtp
+%%APP_NAME%%/doc/ref/filter.xtp
+%%APP_NAME%%/doc/ref/glossary.xtp
+%%APP_NAME%%/doc/ref/hessian.xtp
+%%APP_NAME%%/doc/ref/http-config.xtp
+%%APP_NAME%%/doc/ref/httpd.xtp
+%%APP_NAME%%/doc/ref/ide-jbuilder.xtp
+%%APP_NAME%%/doc/ref/ide-kawa.xtp
+%%APP_NAME%%/doc/ref/ide.xtp
+%%APP_NAME%%/doc/ref/index.xtp
+%%APP_NAME%%/doc/ref/javascript.xtp
+%%APP_NAME%%/doc/ref/jms.xtp
+%%APP_NAME%%/doc/ref/jmx.xtp
+%%APP_NAME%%/doc/ref/jndi.xtp
+%%APP_NAME%%/doc/ref/jsp-actions.xtp
+%%APP_NAME%%/doc/ref/jsp-applications.xtp
+%%APP_NAME%%/doc/ref/jsp-directives.xtp
+%%APP_NAME%%/doc/ref/jsp-variables.xtp
+%%APP_NAME%%/doc/ref/jsp.xtp
+%%APP_NAME%%/doc/ref/jspapp.xtp
+%%APP_NAME%%/doc/ref/jtp.xtp
+%%APP_NAME%%/doc/ref/log-config.xtp
+%%APP_NAME%%/doc/ref/macos-x.xtp
+%%APP_NAME%%/doc/ref/page_context.xtp
+%%APP_NAME%%/doc/ref/port-config.xtp
+%%APP_NAME%%/doc/ref/raw-socket.xtp
+%%APP_NAME%%/doc/ref/resin-config.xtp
+%%APP_NAME%%/doc/ref/security.xtp
+%%APP_NAME%%/doc/ref/servlet-config.xtp
+%%APP_NAME%%/doc/ref/servlet-library.xtp
+%%APP_NAME%%/doc/ref/servlet.xtp
+%%APP_NAME%%/doc/ref/servletcontext.xtp
+%%APP_NAME%%/doc/ref/sessions.xtp
+%%APP_NAME%%/doc/ref/xsl/apply-templates.xtp
+%%APP_NAME%%/doc/ref/xsl/attribute.xtp
+%%APP_NAME%%/doc/ref/xsl/boxes.xtp
+%%APP_NAME%%/doc/ref/xsl/command-line.xtp
+%%APP_NAME%%/doc/ref/xsl/copy.xtp
+%%APP_NAME%%/doc/ref/xsl/filter-attribute.xtp
+%%APP_NAME%%/doc/ref/xsl/filter.xtp
+%%APP_NAME%%/doc/ref/xsl/hello.xtp
+%%APP_NAME%%/doc/ref/xsl/if-attribute.xtp
+%%APP_NAME%%/doc/ref/xsl/if-xpath-attribute.xtp
+%%APP_NAME%%/doc/ref/xsl/if.xtp
+%%APP_NAME%%/doc/ref/xsl/index.xtp
+%%APP_NAME%%/doc/ref/xsl/modes.xtp
+%%APP_NAME%%/doc/ref/xsl/ref.xtp
+%%APP_NAME%%/doc/ref/xsl/short-attribute.xtp
+%%APP_NAME%%/doc/ref/xsl/value-of.xtp
+%%APP_NAME%%/doc/ref/xsl/xpath-find.xtp
+%%APP_NAME%%/doc/ref/xsl/xpath-select.xtp
+%%APP_NAME%%/doc/ref/xsl/xpath.xtp
+%%APP_NAME%%/doc/ref/xsl/xsl-api.xtp
+%%APP_NAME%%/doc/ref/xsl/xsl.xtp
+%%APP_NAME%%/doc/ref/xsl/xsl-boxes.xtp
+%%APP_NAME%%/doc/ref/srun-other.xtp
+%%APP_NAME%%/doc/ref/ssl-quick.xml
+%%APP_NAME%%/doc/ref/ssl-quick.xtp
+%%APP_NAME%%/doc/ref/ssl.xml
+%%APP_NAME%%/doc/ref/ssl.xtp
+%%APP_NAME%%/doc/ref/starting.xtp
+%%APP_NAME%%/doc/ref/static.xtp
+%%APP_NAME%%/doc/ref/stylescript.xtp
+%%APP_NAME%%/doc/ref/taglib.xtp
+%%APP_NAME%%/doc/ref/toc.xml
+%%APP_NAME%%/doc/ref/topics.xtp
+%%APP_NAME%%/doc/ref/trouble.xtp
+%%APP_NAME%%/doc/ref/velocity.xtp
+%%APP_NAME%%/doc/ref/virtual-host.xtp
+%%APP_NAME%%/doc/ref/visual-age.xtp
+%%APP_NAME%%/doc/ref/war-dir.xtp
+%%APP_NAME%%/doc/ref/webdav.xtp
+%%APP_NAME%%/doc/ref/xml.xtp
+%%APP_NAME%%/doc/ref/xpath-fun.xtp
+%%APP_NAME%%/doc/ref/xpath.xtp
+%%APP_NAME%%/doc/ref/xsl.xtp
+%%APP_NAME%%/doc/ref/xslt-lite-eg.xtp
+%%APP_NAME%%/doc/ref/xslt-lite.xtp
+%%APP_NAME%%/doc/ref/xtp-jsp.xtp
+%%APP_NAME%%/doc/ref/xtp-index.xtp
+%%APP_NAME%%/doc/ref/xtp-intro.xtp
+%%APP_NAME%%/doc/ref/xtp.xtp
+%%APP_NAME%%/doc/faq/classloader.xtp
+%%APP_NAME%%/doc/faq/config.xtp
+%%APP_NAME%%/doc/faq/debug.xtp
+%%APP_NAME%%/doc/faq/index.xtp
+%%APP_NAME%%/doc/faq/install.xtp
+%%APP_NAME%%/doc/faq/misc.xtp
+%%APP_NAME%%/doc/faq/servlet.xtp
+%%APP_NAME%%/doc/faq/ssl.xtp
+%%APP_NAME%%/doc/faq/toc.xml
+%%APP_NAME%%/doc/css/default.css
+%%APP_NAME%%/lib/resin.jar
+%%APP_NAME%%/lib/jsdk23.jar
+%%APP_NAME%%/lib/jdbc2_0-stdext.jar
+%%APP_NAME%%/lib/jta_101.jar
+%%APP_NAME%%/lib/jndi.jar
+%%APP_NAME%%/lib/dom.jar
+%%APP_NAME%%/lib/sax.jar
+%%APP_NAME%%/lib/jaxp.jar
+%%APP_NAME%%/lib/jmx.jar
+%%APP_NAME%%/lib/webutil.jar
+%%APP_NAME%%/lib/jdbc-mysql.jar
+%%APP_NAME%%/xsl/caucho/comment.xsl
+%%APP_NAME%%/xsl/caucho/contents.xsl
+%%APP_NAME%%/xsl/caucho/control.xsl
+%%APP_NAME%%/xsl/caucho/debug.xsl
+%%APP_NAME%%/xsl/caucho/defaultcopy.xsl
+%%APP_NAME%%/xsl/caucho/format.xsl
+%%APP_NAME%%/xsl/caucho/newstyle.xsl
+%%APP_NAME%%/xsl/caucho/weblog.xsl
+%%APP_NAME%%/xsl/caucho_default.xsl
+%%APP_NAME%%/xsl/caucho_header.xsl
+%%APP_NAME%%/xsl/caucho_subpage.xsl
+%%APP_NAME%%/xsl/default.xsl
+%%APP_NAME%%/xsl/doc_header.xsl
+%%APP_NAME%%/xsl/header.xsl
+%%APP_NAME%%/xsl/js_header.xsl
+%%APP_NAME%%/xsl/new_doc_header.xsl
+%%APP_NAME%%/xsl/search.xsl
+%%APP_NAME%%/xsl/subpage.xsl
+%%APP_NAME%%/xsl/js/caucho/defaultcopy.xsl
+%%APP_NAME%%/xsl/js/caucho/format.xsl
+%%APP_NAME%%/xsl/js/caucho/weblog.xsl
+etc/rc.d/%%APP_NAME%%.sh
+sbin/%%APP_NAME%%ctl
 %%MOD_DIR%%/mod_caucho.so
-@dirrm resin/doc/examples/basic/WEB-INF/classes
-@dirrm resin/doc/examples/basic/WEB-INF/tmp
-@dirrm resin/doc/examples/basic/WEB-INF
-@dirrm resin/doc/examples/basic/com/caucho/fortune
-@dirrm resin/doc/examples/basic/com/caucho
-@dirrm resin/doc/examples/basic/com
-@dirrm resin/doc/examples/basic/data/fortune
-@dirrm resin/doc/examples/basic/data
-@dirrm resin/doc/examples/basic
-@dirrm resin/doc/examples/login/WEB-INF/classes/test
-@dirrm resin/doc/examples/login/WEB-INF/classes
-@dirrm resin/doc/examples/login/WEB-INF/tmp
-@dirrm resin/doc/examples/login/WEB-INF
-@dirrm resin/doc/examples/login
-@dirrm resin/doc/examples/navigation/WEB-INF/scripts
-@dirrm resin/doc/examples/navigation/WEB-INF/tmp
-@dirrm resin/doc/examples/navigation/WEB-INF
-@dirrm resin/doc/examples/navigation
-@dirrm resin/doc/examples/templates/WEB-INF/classes/jsp
-@dirrm resin/doc/examples/templates/WEB-INF/classes
-@dirrm resin/doc/examples/templates/WEB-INF/xsl
-@dirrm resin/doc/examples/templates/WEB-INF/tmp
-@dirrm resin/doc/examples/templates/WEB-INF
-@dirrm resin/doc/examples/templates
-@dirrm resin/doc/examples/tictactoe/WEB-INF/scripts
-@dirrm resin/doc/examples/tictactoe/WEB-INF/tmp
-@dirrm resin/doc/examples/tictactoe/WEB-INF
-@dirrm resin/doc/examples/tictactoe
-@dirrm resin/doc/examples/tutorial/WEB-INF/classes/servlet/trivial
-@dirrm resin/doc/examples/tutorial/WEB-INF/classes/servlet
-@dirrm resin/doc/examples/tutorial/WEB-INF/classes
-@dirrm resin/doc/examples/tutorial/WEB-INF
-@dirrm resin/doc/examples/tutorial
-@dirrm resin/doc/examples/xsl/WEB-INF/classes/xsl
-@dirrm resin/doc/examples/xsl/WEB-INF/classes
-@dirrm resin/doc/examples/xsl/WEB-INF/scripts
-@dirrm resin/doc/examples/xsl/WEB-INF/xsl
-@dirrm resin/doc/examples/xsl/WEB-INF/tmp
-@dirrm resin/doc/examples/xsl/WEB-INF
-@dirrm resin/doc/examples/xsl/data/fortune
-@dirrm resin/doc/examples/xsl/data
-@dirrm resin/doc/examples/xsl
-@dirrm resin/doc/examples/tags/WEB-INF/tmp
-@dirrm resin/doc/examples/tags/WEB-INF
-@dirrm resin/doc/examples/tags
-@dirrm resin/doc/examples
-@dirrm resin/doc/images
-@dirrm resin/doc/java_tut/WEB-INF/classes/example/servlet/basic
-@dirrm resin/doc/java_tut/WEB-INF/classes/example/servlet/database
-@dirrm resin/doc/java_tut/WEB-INF/classes/example/servlet
-@dirrm resin/doc/java_tut/WEB-INF/classes/example
-@dirrm resin/doc/java_tut/WEB-INF/classes
-@dirrm resin/doc/java_tut/WEB-INF/sql
-@dirrm resin/doc/java_tut/WEB-INF/tmp
-@dirrm resin/doc/java_tut/WEB-INF
-@dirrm resin/doc/java_tut/javadoc/resources
-@dirrm resin/doc/java_tut/javadoc/example/servlet/basic
-@dirrm resin/doc/java_tut/javadoc/example/servlet/database
-@dirrm resin/doc/java_tut/javadoc/example/servlet
-@dirrm resin/doc/java_tut/javadoc/example
-@dirrm resin/doc/java_tut/javadoc
-@dirrm resin/doc/java_tut/images
-@dirrm resin/doc/java_tut
-@dirrm resin/doc/ref/jsp
-@dirrm resin/doc/ref/xml
-@dirrm resin/doc/ref/xsl
-@dirrm resin/doc/ref
-@dirrm resin/doc/faq
-@dirrm resin/doc/css
-@dirrm resin/doc/WEB-INF/classes
-@dirrm resin/doc/WEB-INF/lib
-@dirrm resin/doc/WEB-INF
-@dirrm resin/doc
-@dirrm resin/lib
-@dirrm resin/webapps
-@dirrm resin/xsl/caucho
-@dirrm resin/xsl/js/caucho
-@dirrm resin/xsl/js
-@dirrm resin/xsl
-@dirrm resin
-@unexec if cmp -s %D/etc/resin.xml %D/etc/resin.xml-dist; then rm -f %D/etc/resin.xml; else echo If permanently deleting this package, %%PREFIX%%/etc/resin.xml must be removed manually; fi
-etc/resin.xml-dist
+%%APACHE%%@exec %%APXS%% -e -a -n caucho %f
+%%APACHE%%@unexec %%APXS%% -e -A -n caucho %f
+@dirrm %%APP_NAME%%/doc/examples/basic/WEB-INF/classes
+@dirrm %%APP_NAME%%/doc/examples/basic/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/basic/com/caucho/fortune
+@dirrm %%APP_NAME%%/doc/examples/basic/com/caucho
+@dirrm %%APP_NAME%%/doc/examples/basic/com
+@dirrm %%APP_NAME%%/doc/examples/basic/data/fortune
+@dirrm %%APP_NAME%%/doc/examples/basic/data
+@dirrm %%APP_NAME%%/doc/examples/basic
+@dirrm %%APP_NAME%%/doc/examples/login/WEB-INF/classes/test
+@dirrm %%APP_NAME%%/doc/examples/login/WEB-INF/classes
+@dirrm %%APP_NAME%%/doc/examples/login/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/login
+@dirrm %%APP_NAME%%/doc/examples/navigation/WEB-INF/scripts
+@dirrm %%APP_NAME%%/doc/examples/navigation/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/navigation
+@dirrm %%APP_NAME%%/doc/examples/templates/WEB-INF/classes/jsp
+@dirrm %%APP_NAME%%/doc/examples/templates/WEB-INF/classes
+@dirrm %%APP_NAME%%/doc/examples/templates/WEB-INF/xsl
+@dirrm %%APP_NAME%%/doc/examples/templates/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/templates
+@dirrm %%APP_NAME%%/doc/examples/tictactoe/WEB-INF/scripts
+@dirrm %%APP_NAME%%/doc/examples/tictactoe/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/tictactoe
+@dirrm %%APP_NAME%%/doc/examples/tutorial/WEB-INF/classes/servlet/trivial
+@dirrm %%APP_NAME%%/doc/examples/tutorial/WEB-INF/classes/servlet
+@dirrm %%APP_NAME%%/doc/examples/tutorial/WEB-INF/classes
+@dirrm %%APP_NAME%%/doc/examples/tutorial/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/tutorial
+@dirrm %%APP_NAME%%/doc/examples/xsl/WEB-INF/classes/xsl
+@dirrm %%APP_NAME%%/doc/examples/xsl/WEB-INF/classes
+@dirrm %%APP_NAME%%/doc/examples/xsl/WEB-INF/scripts
+@dirrm %%APP_NAME%%/doc/examples/xsl/WEB-INF/xsl
+@dirrm %%APP_NAME%%/doc/examples/xsl/WEB-INF
+@dirrm %%APP_NAME%%/doc/examples/xsl/data/fortune
+@dirrm %%APP_NAME%%/doc/examples/xsl/data
+@dirrm %%APP_NAME%%/doc/examples/xsl
+@dirrm %%APP_NAME%%/doc/examples
+@dirrm %%APP_NAME%%/doc/images
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/basic
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet/database
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF/classes/example/servlet
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF/classes/example
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF/classes
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF/sql
+@dirrm %%APP_NAME%%/doc/java_tut/WEB-INF
+@dirrm %%APP_NAME%%/doc/java_tut/javadoc/resources
+@dirrm %%APP_NAME%%/doc/java_tut/javadoc/example/servlet/basic
+@dirrm %%APP_NAME%%/doc/java_tut/javadoc/example/servlet/database
+@dirrm %%APP_NAME%%/doc/java_tut/javadoc/example/servlet
+@dirrm %%APP_NAME%%/doc/java_tut/javadoc/example
+@dirrm %%APP_NAME%%/doc/java_tut/javadoc
+@dirrm %%APP_NAME%%/doc/java_tut/images
+@dirrm %%APP_NAME%%/doc/java_tut
+@dirrm %%APP_NAME%%/doc/ref/jsp
+@dirrm %%APP_NAME%%/doc/ref/xml
+@dirrm %%APP_NAME%%/doc/ref/xsl
+@dirrm %%APP_NAME%%/doc/ref
+@dirrm %%APP_NAME%%/doc/faq
+@dirrm %%APP_NAME%%/doc/css
+@dirrm %%APP_NAME%%/doc
+@dirrm %%APP_NAME%%/lib
+@dirrm %%APP_NAME%%/xsl/caucho
+@dirrm %%APP_NAME%%/xsl/js/caucho
+@dirrm %%APP_NAME%%/xsl/js
+@dirrm %%APP_NAME%%/xsl
+@dirrm %%APP_NAME%%
+@unexec if cmp -s %D/etc/%%APP_NAME%%.xml %D/etc/%%APP_NAME%%.xml-dist; then rm -f %D/etc/%%APP_NAME%%.xml; else echo If permanently deleting this package, %D/etc/%%APP_NAME%%.xml must be removed manually; fi
+etc/%%APP_NAME%%.xml-dist
+@exec if test -f %B/%%APP_NAME%%.xml ; then echo Keeping %B/%%APP_NAME%%.xml intact from previous installation; else cp %F %B/%%APP_NAME%%.xml; fi
