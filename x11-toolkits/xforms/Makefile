@@ -35,5 +35,6 @@ DISTNAME=	bxform-${PORTVERSION:S/.//}-elf
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/libforms.so.0.88 ${PREFIX}/lib/libforms.so.0
+	@${LN} -sf ${PREFIX}/lib/libforms.so.0.88 ${PREFIX}/lib/libxforms.so.0
 
 .include <bsd.port.post.mk>
