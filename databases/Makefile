@@ -42,6 +42,7 @@
     SUBDIR += tcl-Mysql
     SUBDIR += tkgnats
     SUBDIR += typhoon
+    SUBDIR += unixODBC
     SUBDIR += xmbase-grok
     SUBDIR += xmysql
     SUBDIR += xmysqladmin
