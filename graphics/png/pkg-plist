@@ -2,5 +2,5 @@ include/png.h
 include/pngconf.h
 lib/libpng.a
 @exec ranlib %D/%F
-lib/libpng.so.0.89
+lib/libpng.so.0.96
 @exec /sbin/ldconfig -m %B
