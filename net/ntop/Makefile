@@ -7,7 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	2.0.99.r2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://luca.ntop.org/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -19,8 +19,8 @@ MAINTAINER=	wjv@FreeBSD.org
 
 # Besides the required dependencies listed here, this port can optionally
 # make use of sysutils/lsof and security/nmap if installed.
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgdchart.a:${PORTSDIR}/graphics/gdchart
-RUN_DEPENDS=	${LOCALBASE}/lib/libgdchart.a:${PORTSDIR}/graphics/gdchart
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
+RUN_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
 # ntop will store its runtime database files in ${DBDIR}/ntop/

@@ -7,7 +7,7 @@ setup(
     ext_modules = [
 	Extension("gdchart", ["gdc_py.c"],
 		include_dirs=["%%GD_INCLUDE%%", "%%GDCHART_INCLUDE%%"],
-		libraries=["gdchart", "gd", "png", "z", "jpeg"],
+		libraries=["gdc", "gd", "png", "z", "jpeg"],
 		library_dirs=["%%LOCALLIB%%"]
 	)
     ]

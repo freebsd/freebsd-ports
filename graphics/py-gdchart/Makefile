@@ -6,6 +6,7 @@
 
 PORTNAME=	gdchart
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://www.nullcube.com/software/pygdchart/source/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ DISTNAME=	pygdchart-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgdchart.a:${PORTSDIR}/graphics/gdchart
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
