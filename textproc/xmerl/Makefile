@@ -7,6 +7,7 @@
 
 PORTNAME=	xmerl
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sowap
@@ -21,16 +22,28 @@ USE_GMAKE=	yes
 
 XMERL_DOCS=	README.html changes.txt xpath-grammar.txt xslt-example.dtd xslt-example.xls
 
+post-extract:
+	@${MV} ${WRKSRC}/inc ${WRKSRC}/include
+
+post-patch:
+	@${RM} ${WRKSRC}/src/*.orig
+
 do-install:
 	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${XMERL_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
 	done
+
 	@${MKDIR} ${PREFIX}/lib/erlang/lib/xmerl
-	@${CP} -r ${WRKSRC}/ebin ${PREFIX}/lib/erlang/lib/xmerl
-	@${CP} -r ${WRKSRC}/inc ${PREFIX}/lib/erlang/lib/xmerl
-	@${CP} -r ${WRKSRC}/priv ${PREFIX}/lib/erlang/lib/xmerl
-	@${CP} -r ${WRKSRC}/src ${PREFIX}/lib/erlang/lib/xmerl
+
+	@for FILE in ebin include priv src; do \
+		${MKDIR} ${PREFIX}/lib/erlang/lib/xmerl/$${FILE}; \
+		${CP} -r ${WRKSRC}/$${FILE}/* \
+			${PREFIX}/lib/erlang/lib/xmerl/$${FILE}; \
+		${CHMOD} ${SHAREMODE} \
+			${PREFIX}/lib/erlang/lib/xmerl/$${FILE}/*; \
+	done
+
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/erlang/lib/xmerl
 
 .include <bsd.port.mk>
