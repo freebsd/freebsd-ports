@@ -11,7 +11,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 DISTNAME=	${PORTNAME}-1.2.5-1
 
-MAINTAINER=	k5@cheerful.com
+MAINTAINER=	sf@FreeBSD.org
 
 USE_IMAKE=	yes
 USE_GTK=	yes
