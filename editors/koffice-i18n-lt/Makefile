@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	lt-
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Localized messages and documentation for koffice
+COMMENT=	Lithuanian messages and documentation for koffice
 
 IGNORE=		Needs update from vendor.
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	koffice-i18n
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -29,7 +29,7 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/uk/LC_MESSAGES/kword.mo:${PORTSDIR}/ukrainian/koffice-i18n\
 	${LOCALBASE}/share/locale/zh_TW/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_TW
 
-.for LANG in af bg bs ca cs da el en_GB eo es et fa fi hsb it \
+.for LANG in af bg br bs ca cs cy da el en_GB eo es et fa fi hsb it \
 	lo lt lv mt nb nl nn se sk sl sr sv tg th tr ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/misc/koffice-i18n-${LANG}
