@@ -29,6 +29,7 @@
     SUBDIR += tkhylafax
     SUBDIR += viewfax
     SUBDIR += vpb2
+    SUBDIR += vrflash
     SUBDIR += xcept
     SUBDIR += yaps
     SUBDIR += yawmppp
