@@ -41,9 +41,9 @@ CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
 .endif
 .if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
 CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
+.endif
 .if defined(WITH_XCHARSET) && ${WITH_XCHARSET} != ""
 CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
-.endif
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=--static
