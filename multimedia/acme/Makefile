@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acme
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -14,8 +14,6 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tool to make multimedia keys work on laptops
-
-BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
