@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	plambert@plambert.net
 COMMENT=	Control a CM11A interface from the command line
 
+BROKEN=		"Checksum fails"
+
 IS_INTERACTIVE=	yes
 ALL_TARGET=	heyu
 WRKSRC=		${WRKDIR}/heyu.dir
