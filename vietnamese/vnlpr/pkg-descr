@@ -1,0 +1,45 @@
+	vnlpr is a shell script that utilizes the vnpstext and vn7to8
+utilities to print vietnames text on PostScript printer on Unix machines
+using various Type-1 fonts supplied by TriChlor and the Courier fonts 
+from the vnpstext package.
+
+	The Type-1 font files are converted from the pfb files.
+
+	am_11.gsf	A'nh Minh font      (Optima)
+	hm_11.gsf	Heo May font        (Helvetica)
+	hy_11.gsf	Hoa`ng Ye^'n font   (Present Script)
+	mq_11.gsf	Minh Qua^n font     (Courier)
+	pt_11.gsf	Phu+o+ng Tha?o font (Brush Script)
+	th_11.gsf	Tha Hu+o+ng font    (Chancery)
+	uh_11.gsf	U Hoa`i font        (Utopia)
+
+	These fonts can also be used with the ghostscript package for
+conversion of PostScript file into other printer formats.
+
+	The .gsf files should be placed at the same place as the initialization
+files for the vnpstext package.
+
+        pr_am.ps, pr_hm.ps, pr_hy.ps, pr_mq.ps, pr_pt.ps, pr_th.ps and
+pr_uh.ps are PostScript files that show the above font types.
+
+	Instruction for using the vnlpr script is in the begining of the
+script, and also by typing 'vnlpr -h' will show a description of the
+usage also.
+You'll need to edit the VNLIB environment variable in vnlpr so it point
+to this directory that contains the .gsf files. You must also install 
+vnpstext first.
+
+        For example:
+
+   vnlpr -mq -s 8 emtoi
+                      This print emtoi using MinhQua^n size 8
+
+   vnlpr -uh -s 10 -i emtoi
+                      This print emtoi using U Hoa`i Italic size 10
+
+
+	Read the INSTALL file for installation procedure.
+
+- Happy printing -
+
+Written by Phu`ng Gia Cu+ (phung@spin.chem.utah.edu)

@@ -1,0 +1,17 @@
+bin/vnlpr
+share/vn-fonts/initcour.ps
+share/vn-fonts/initcourb.ps
+share/vn-fonts/pr-am.ps
+share/vn-fonts/pr-hm.ps
+share/vn-fonts/pr-hy.ps
+share/vn-fonts/pr-mq.ps
+share/vn-fonts/pr-pt.ps
+share/vn-fonts/pr-th.ps
+share/vn-fonts/pr-uh.ps
+share/vn-fonts/am_11.gsf
+share/vn-fonts/hm_11.gsf
+share/vn-fonts/hy_11.gsf
+share/vn-fonts/mq_11.gsf
+share/vn-fonts/pt_11.gsf
+share/vn-fonts/th_11.gsf
+share/vn-fonts/uh_11.gsf
