@@ -231,6 +231,7 @@
     SUBDIR += mppdec
     SUBDIR += mpt
     SUBDIR += mt-daapd
+    SUBDIR += muine
     SUBDIR += muse
     SUBDIR += musepack
     SUBDIR += musicbox
