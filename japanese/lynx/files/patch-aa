@@ -1,23 +1,37 @@
---- makefile.in.orig	Sun Sep 13 23:35:55 1998
-+++ makefile.in	Tue Sep 15 08:08:01 1998
-@@ -41,10 +41,10 @@
- libdir= @libdir@
+--- makefile.in.orig	Fri May 28 23:04:01 1999
++++ makefile.in	Sun Jul  4 17:13:39 1999
+@@ -50,11 +50,11 @@
+ LIBDIR= $(DESTDIR)$(libdir)
  
  ## Where you want the doc-files installed
 -docdir= @libdir@/lynx_doc
-+docdir= $(prefix)/share/doc/lynx
++docdir= @datadir@/doc/lynx
+ DOCDIR= $(DESTDIR)$(docdir)
  
  ## Where you want the help-files installed
 -helpdir= @libdir@/lynx_help
-+helpdir= $(prefix)/lib/lynx_help
++helpdir= $(prefix)/share/lynx_help
+ HELPDIR= $(DESTDIR)$(helpdir)
  
  ##set the relative location of the WWW library Implementation directory,
- ##from this directory
-@@ -260,6 +260,7 @@
- 	@echo Copying sample files
- 	(cd $(srcdir) && tar cf - C[HO]* PROBLEMS README samples test ) | \
- 			       ( cd $(docdir) && tar xf - )
-+	cp $(srcdir)/lynx.cfg $(docdir)/samples/lynx.cfg
- 	-rm -f $(libdir)/lynx.tmp
- 
- install-help : $(helpdir)
+@@ -358,10 +358,9 @@
+ 	-rm -f $(HELPDIR)/help_files.sed
+ 	@echo Updating $(libdir)/lynx.cfg
+ 	$(SHELL) -c 'if test -f $(LIBDIR)/lynx.cfg ; then \
+-		mv $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
+-	else \
+-		cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp ; \
++		mv -f $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.oldcfg ; \
+ 	fi'
++	cp $(srcdir)/lynx.cfg $(LIBDIR)/lynx.tmp
+ 	@echo Updating $(libdir)/lynx.cfg to point to installed help-files
+ 	@ECHO_CC@sed	-e '/^HELPFILE:http/s@^@#@' \
+ 		-e '/^#HELPFILE:file/s@#@@' \
+@@ -371,6 +370,7 @@
+ 		-e '/^HELPFILE:file/s@$(COMPRESS_EXT)$(COMPRESS_EXT)$$@$(COMPRESS_EXT)@' \
+ 		$(LIBDIR)/lynx.tmp >$(LIBDIR)/lynx.cfg
+ 	chmod 644 $(LIBDIR)/lynx.cfg
++	cp -p $(LIBDIR)/lynx.cfg $(LIBDIR)/lynx.cfg.sample
+ 	-rm -f $(LIBDIR)/lynx.tmp
+ 	$(INSTALL_DATA) $(srcdir)/COPYHEADER $(DOCDIR)/COPYHEADER
+ 	$(INSTALL_DATA) $(srcdir)/COPYING    $(DOCDIR)/COPYING

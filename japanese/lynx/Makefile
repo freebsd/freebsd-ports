@@ -1,30 +1,46 @@
 # New ports collection makefile for:	ja-lynx
-# Version required:     2.8.1
+# Version required:     2.8.2 release 1
 # Date created:         10 August 1998
-# Whom:                 Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
+# Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/11/02 04:01:50 steve Exp $
+# $Id: Makefile,v 1.3 1999/02/28 08:22:24 shige Exp $
 #
 
-DISTNAME=       lynx2-8-1
-PKGNAME=        ja-lynx-2.8.1
+DISTNAME=       lynx2.8.2rel.1
+PKGNAME=        ja-lynx-2.8.2.rel1
 CATEGORIES=	japanese www
-MASTER_SITES=   http://sol.slcc.edu/lynx/release2-8-1/
+MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	shige@FreeBSD.ORG
 
-NO_LATEST_LINK=	YES
+WRKSRC=		${WRKDIR}/lynx2-8-2
+
+USE_BZIP2?=	YES
 GNU_CONFIGURE=  YES
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc"
+CONFIGURE_ARGS= --with-screen=ncurses --with-zlib \
+		--libdir="${PREFIX}/${L_ETCDIR}" \
+		--enable-nsl-fork --enable-defaults-colors --enable-prettysrc \
+		--enable-persistent-cookies --enable-gzip-help
 MAKEFILE=       makefile
+MAKE_ARGS=	DOCDIR=${PREFIX}/${L_DOCDIR} HELPDIR=${PREFIX}/${L_HELPDIR}
+PLIST_SUB=	DOCDIR=${L_DOCDIR} HELPDIR=${L_HELPDIR} \
+		HELPFILE_SUFFIX=${HELPFILE_SUFFIX}
 INSTALL_TARGET= install install-help
 MAN1=		lynx.1
+
+RUN_DEPENDS=	unzip:${PORTSDIR}/arhivers/unzip \
+		zip:${PORTSDIR}/arhivers/zip
+
+L_ETCDIR=	etc
+L_DOCDIR=	share/doc/lynx
+L_HELPDIR=	share/lynx_help
+HELPFILE_SUFFIX= .gz
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@(cd ${WRKSRC} ; make install-doc)
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/lynx
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${L_DOCDIR}
 .endif
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/lynx_help
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${L_HELPDIR}
 
 .include <bsd.port.mk>
