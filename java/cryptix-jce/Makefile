@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cryptix-jce
-PORTVESION=	20000211
+PORTVERSION=	20000211
 CATEGORIES=	java security
 MASTER_SITES=	http://cvs.cryptix.org/~gelderen/
 
