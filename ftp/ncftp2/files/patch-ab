@@ -1,0 +1,42 @@
+*** Complete.c.bak	Fri Oct 18 09:10:31 1996
+--- Complete.c	Thu Jan  9 15:17:48 1997
+***************
+*** 241,247 ****
+--- 241,251 ----
+  static int
+  CompareStrings(char **a, char **b)
+  {
++ #ifdef __FreeBSD__
++ 	return strcoll(*a, *b);
++ #else
+  	return strcmp(*a, *b);
++ #endif
+  }
+  
+  static void
+*** Main.c.bak	Fri Oct 18 09:01:58 1996
+--- Main.c	Thu Jan  9 15:24:22 1997
+***************
+*** 22,27 ****
+--- 22,30 ----
+  #include <pwd.h>
+  #include <errno.h>
+  #include <ctype.h>
++ #ifdef __FreeBSD__
++ #include <locale.h>
++ #endif
+  #include <signal.h>
+  #include <setjmp.h>
+  #include <stdlib.h>
+***************
+*** 866,871 ****
+--- 869,877 ----
+  	int opt, result;
+  	OpenOptions openopt;
+  
++ #ifdef __FreeBSD__
++ 	setlocale(LC_ALL, "");
++ #endif
+  	Init();
+  	RunStartupScript();
+  
