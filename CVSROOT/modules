@@ -328,6 +328,7 @@ apinger		ports/net/apinger
 apotheke	ports/x11-fm/apotheke
 apr		ports/devel/apr
 apsfilter	ports/print/apsfilter
+aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
 ar-openoffice	ports/editors/openoffice-ar
 arc		ports/archivers/arc
