@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freebsd-uucp
-PORTVERSION=	1.06.1.4
+PORTVERSION=	1.06.1.5
 CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
@@ -21,13 +21,18 @@ MAN8=	uuchk.8 uucico.8 uusched.8 uuxqt.8 uucpd.8
 MANCOMPRESSED=	maybe
 VARLOG=	uucp/common_sources/policy.h uucp/uucico/uucico.8 \
 	uucp/uucp/uucp.1 uucp/uux/uux.1 uucp/uuxqt/uuxqt.8
+FIXME=	etc/periodic/daily/340.uucp etc/periodic/daily/410.status-uucp \
+	etc/periodic/weekly/300.uucp
 
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
 
-.if defined(UUCP_WITH_VAR_LOG)
 do-configure:
+.for i in ${FIXME}
+	@${PERL} -pi -e "s=/usr/local/=${PREFIX}/=" ${WRKSRC}/${i}
+.endfor
+.if defined(UUCP_WITH_VAR_LOG)
 .for i in ${VARLOG}
 	@${PERL} -pi -e "s=/var/spool/uucp/Log=/var/log/uucp/Log=" \
 		${WRKSRC}/${i}
