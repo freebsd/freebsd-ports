@@ -15,8 +15,8 @@ share/doc/HTML/en/kexchange/common
 share/doc/HTML/en/kexchange/conversion.png
 share/doc/HTML/en/kexchange/convert.png
 share/doc/HTML/en/kexchange/crossconversion.png
-share/doc/HTML/en/kexchange/index.docbook
 share/doc/HTML/en/kexchange/index.cache.bz2
+share/doc/HTML/en/kexchange/index.docbook
 share/doc/HTML/en/kexchange/preferences.png
 share/doc/HTML/en/kexchange/reliable.png
 share/doc/HTML/en/kexchange/reload.png
@@ -28,9 +28,30 @@ share/icons/locolor/16x16/apps/kexchange.png
 share/icons/locolor/32x32/apps/kexchange.png
 share/locale/de/LC_MESSAGES/kexchange.mo
 share/locale/fi/LC_MESSAGES/kexchange.mo
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/en/kexchange
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/kexchange/icons/hicolor/16x16/actions
 @dirrm share/apps/kexchange/icons/hicolor/16x16
 @dirrm share/apps/kexchange/icons/hicolor
 @dirrm share/apps/kexchange/icons
 @dirrm share/apps/kexchange
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
