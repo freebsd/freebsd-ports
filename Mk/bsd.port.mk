@@ -702,7 +702,7 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 .include "${PORTSDIR}/Mk/bsd.emacs.mk"
 .endif
 
-.if defined(USE_PYTHON) || defined(PYTHON_VERSION)
+.if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
 

@@ -79,20 +79,21 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 _PYTHON_VERSION!=	(python -c 'import sys; print sys.version[:3]') 2> /dev/null \
 					|| echo 2.1
 PYTHON_VERSION?=	python${_PYTHON_VERSION}
+_PYTHON_PORTVERSION=	2.1.1
 PYTHON_PORTVERSION!=	(${PYTHON_VERSION} -c 'import string, sys; \
 								print string.split(sys.version)[0]') 2> /dev/null \
-					|| echo 2.1
+					|| echo ${_PYTHON_PORTVERSION}
 
 # Python-2.1
 .if ${PYTHON_VERSION} == "python2.1"
 PYDISTUTILS=	${PYTHON_LIBDIR}/distutils/core.py:${PYTHON_PORTSDIR}
 PYXML=			${PYTHON_SITELIBDIR}/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml
 
-PYTHON_DISTFILE=	Python-2.1.1.tgz
+PYTHON_DISTFILE=	Python-${_PYTHON_PORTVERSION}.tgz
 PYTHON_PORTSDIR=	${PORTSDIR}/lang/python
 PYTHON_REL=			211
 PYTHON_SUFFIX=		# empty, default version
-PYTHON_WRKSRC=		${WRKDIR}/Python-2.1.1
+PYTHON_WRKSRC=		${WRKDIR}/Python-${_PYTHON_PORTVERSION}
 
 # Python-2.0
 .elif ${PYTHON_VERSION} == "python2.0"
