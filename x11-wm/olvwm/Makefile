@@ -24,16 +24,17 @@ COMMENT=	OpenLook Virtual Window manager
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
+USE_REINPLACE=  yes
+REINPLACE_ARGS= -i ""
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no
 
-.include <bsd.port.pre.mk>
+pre-configure:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
+	's|^#endif.*$$|#endif|;s|^#else.*$$|#else|;\
+	s|^/\*\*/#*|XCOMM |'
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
