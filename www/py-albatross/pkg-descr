@@ -1,0 +1,10 @@
+Albatross is a small and flexible Python toolkit for developing
+highly stateful web applications. The toolkit has been designed to
+take a lot of the pain out of constructing intranet applications
+although you can also use Albatross for deploying publicly accessed
+web applications.
+
+Author: Dave Cole <djc@object-craft.com.au>
+WWW:    http://object-craft.com.au/projects/albatross/
+
+-- Gregory Bond <gnb@itga.com.au>

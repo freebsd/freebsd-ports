@@ -1,0 +1,301 @@
+bin/al-session-daemon
+%%PYTHON_SITELIBDIR%%/albatross/__init__.py
+%%PYTHON_SITELIBDIR%%/albatross/__init__.pyc
+%%PYTHON_SITELIBDIR%%/albatross/__init__.pyo
+%%PYTHON_SITELIBDIR%%/albatross/apacheapp.py
+%%PYTHON_SITELIBDIR%%/albatross/apacheapp.pyc
+%%PYTHON_SITELIBDIR%%/albatross/apacheapp.pyo
+%%PYTHON_SITELIBDIR%%/albatross/app.py
+%%PYTHON_SITELIBDIR%%/albatross/app.pyc
+%%PYTHON_SITELIBDIR%%/albatross/app.pyo
+%%PYTHON_SITELIBDIR%%/albatross/cgiapp.py
+%%PYTHON_SITELIBDIR%%/albatross/cgiapp.pyc
+%%PYTHON_SITELIBDIR%%/albatross/cgiapp.pyo
+%%PYTHON_SITELIBDIR%%/albatross/context.py
+%%PYTHON_SITELIBDIR%%/albatross/context.pyc
+%%PYTHON_SITELIBDIR%%/albatross/context.pyo
+%%PYTHON_SITELIBDIR%%/albatross/pidfile.py
+%%PYTHON_SITELIBDIR%%/albatross/pidfile.pyc
+%%PYTHON_SITELIBDIR%%/albatross/pidfile.pyo
+%%PYTHON_SITELIBDIR%%/albatross/randompage.py
+%%PYTHON_SITELIBDIR%%/albatross/randompage.pyc
+%%PYTHON_SITELIBDIR%%/albatross/randompage.pyo
+%%PYTHON_SITELIBDIR%%/albatross/session.py
+%%PYTHON_SITELIBDIR%%/albatross/session.pyc
+%%PYTHON_SITELIBDIR%%/albatross/session.pyo
+%%PYTHON_SITELIBDIR%%/albatross/sessionfile.py
+%%PYTHON_SITELIBDIR%%/albatross/sessionfile.pyc
+%%PYTHON_SITELIBDIR%%/albatross/sessionfile.pyo
+%%PYTHON_SITELIBDIR%%/albatross/simpleserver.py
+%%PYTHON_SITELIBDIR%%/albatross/simpleserver.pyc
+%%PYTHON_SITELIBDIR%%/albatross/simpleserver.pyo
+%%PYTHON_SITELIBDIR%%/albatross/tags.py
+%%PYTHON_SITELIBDIR%%/albatross/tags.pyc
+%%PYTHON_SITELIBDIR%%/albatross/tags.pyo
+%%PYTHON_SITELIBDIR%%/albatross/template.py
+%%PYTHON_SITELIBDIR%%/albatross/template.pyc
+%%PYTHON_SITELIBDIR%%/albatross/template.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/albatross
+%%PORTDOCS%%share/doc/albatross/.cvsignore
+%%PORTDOCS%%share/doc/albatross/AlbatrossObjects.dia
+%%PORTDOCS%%share/doc/albatross/Makefile
+%%PORTDOCS%%share/doc/albatross/albatross.tex
+%%PORTDOCS%%share/doc/albatross/albmvc.dia
+%%PORTDOCS%%share/doc/albatross/appcontext.dia
+%%PORTDOCS%%share/doc/albatross/application.dia
+%%PORTDOCS%%share/doc/albatross/appuser.tex
+%%PORTDOCS%%share/doc/albatross/copyright.tex
+%%PORTDOCS%%share/doc/albatross/customtags.tex
+%%PORTDOCS%%share/doc/albatross/dataflow.dia
+%%PORTDOCS%%share/doc/albatross/doctest/tags-a1
+%%PORTDOCS%%share/doc/albatross/doctest/tags-a2
+%%PORTDOCS%%share/doc/albatross/doctest/tags-a3
+%%PORTDOCS%%share/doc/albatross/doctest/tags-comment
+%%PORTDOCS%%share/doc/albatross/doctest/tags-exec
+%%PORTDOCS%%share/doc/albatross/doctest/tags-flush
+%%PORTDOCS%%share/doc/albatross/doctest/tags-for1
+%%PORTDOCS%%share/doc/albatross/doctest/tags-for2
+%%PORTDOCS%%share/doc/albatross/doctest/tags-for3
+%%PORTDOCS%%share/doc/albatross/doctest/tags-for4
+%%PORTDOCS%%share/doc/albatross/doctest/tags-for5
+%%PORTDOCS%%share/doc/albatross/doctest/tags-if
+%%PORTDOCS%%share/doc/albatross/doctest/tags-img
+%%PORTDOCS%%share/doc/albatross/doctest/tags-include
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-checkbox
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-file
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-hidden
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-image
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-nameexpr
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-password
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-radio1
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-radio2
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-radio3
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-select1
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-select2
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-select3
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-select4
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-submit
+%%PORTDOCS%%share/doc/albatross/doctest/tags-input-text
+%%PORTDOCS%%share/doc/albatross/doctest/tags-lookup
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro1
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro2
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro3
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro4
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro5
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro6
+%%PORTDOCS%%share/doc/albatross/doctest/tags-macro7
+%%PORTDOCS%%share/doc/albatross/doctest/tags-textarea
+%%PORTDOCS%%share/doc/albatross/doctest/tags-value1
+%%PORTDOCS%%share/doc/albatross/doctest/tags-value2
+%%PORTDOCS%%share/doc/albatross/doctest/tags-value3
+%%PORTDOCS%%share/doc/albatross/doctest/tags-value4
+%%PORTDOCS%%share/doc/albatross/doctest/templ-white1
+%%PORTDOCS%%share/doc/albatross/doctest/templ-white2
+%%PORTDOCS%%share/doc/albatross/doctest/templ-white3
+%%PORTDOCS%%share/doc/albatross/doctest/templ-white4
+%%PORTDOCS%%share/doc/albatross/doctest/templ-white5
+%%PORTDOCS%%share/doc/albatross/installation.tex
+%%PORTDOCS%%share/doc/albatross/introduction.tex
+%%PORTDOCS%%share/doc/albatross/mixins.tex
+%%PORTDOCS%%share/doc/albatross/modularapp.dia
+%%PORTDOCS%%share/doc/albatross/modularsessapp.dia
+%%PORTDOCS%%share/doc/albatross/modularsessfileapp.dia
+%%PORTDOCS%%share/doc/albatross/mvc.dia
+%%PORTDOCS%%share/doc/albatross/packaged.tex
+%%PORTDOCS%%share/doc/albatross/pagemap.dia
+%%PORTDOCS%%share/doc/albatross/pstumble
+%%PORTDOCS%%share/doc/albatross/randmodapp.dia
+%%PORTDOCS%%share/doc/albatross/randmodsessapp.dia
+%%PORTDOCS%%share/doc/albatross/randmodsessfileapp.dia
+%%PORTDOCS%%share/doc/albatross/sessionappcontext.dia
+%%PORTDOCS%%share/doc/albatross/sessionfileappcontext.dia
+%%PORTDOCS%%share/doc/albatross/simpleapp.dia
+%%PORTDOCS%%share/doc/albatross/simpleappcontext.dia
+%%PORTDOCS%%share/doc/albatross/simplecontext.dia
+%%PORTDOCS%%share/doc/albatross/simplesessapp.dia
+%%PORTDOCS%%share/doc/albatross/simplesessfileapp.dia
+%%PORTDOCS%%share/doc/albatross/tags.tex
+%%PORTDOCS%%share/doc/albatross/tempuser.tex
+%%PORTDOCS%%share/doc/albatross/test_examples.py
+%%PORTDOCS%%share/doc/albatross/thanks.tex
+%%PORTDOCS%%share/doc/albatross/toolkit.dia
+%%PORTDOCS%%share/doc/albatross/twolayer.dia
+%%PORTDOCS%%share/doc/albatross/twolayerctx.dia
+%%PORTDOCS%%share/examples/albatross/.cvsignore
+%%PORTDOCS%%share/examples/albatross/extension/.cvsignore
+%%PORTDOCS%%share/examples/albatross/extension/cal.html
+%%PORTDOCS%%share/examples/albatross/extension/cal.py
+%%PORTDOCS%%share/examples/albatross/extension/install.py
+%%PORTDOCS%%share/examples/albatross/form4/form.html
+%%PORTDOCS%%share/examples/albatross/form4/form.py
+%%PORTDOCS%%share/examples/albatross/form4/install.py
+%%PORTDOCS%%share/examples/albatross/images/.cvsignore
+%%PORTDOCS%%share/examples/albatross/images/close.png
+%%PORTDOCS%%share/examples/albatross/images/ellipsis.png
+%%PORTDOCS%%share/examples/albatross/images/install.py
+%%PORTDOCS%%share/examples/albatross/images/open.png
+%%PORTDOCS%%share/examples/albatross/install.py
+%%PORTDOCS%%share/examples/albatross/mpperf/.cvsignore
+%%PORTDOCS%%share/examples/albatross/mpperf/htaccess
+%%PORTDOCS%%share/examples/albatross/mpperf/install.py
+%%PORTDOCS%%share/examples/albatross/mpperf/main.html
+%%PORTDOCS%%share/examples/albatross/mpperf/main.py
+%%PORTDOCS%%share/examples/albatross/mpperf/mpperf.py
+%%PORTDOCS%%share/examples/albatross/paginate/.cvsignore
+%%PORTDOCS%%share/examples/albatross/paginate/install.py
+%%PORTDOCS%%share/examples/albatross/paginate/paginate.html
+%%PORTDOCS%%share/examples/albatross/paginate/paginate.py
+%%PORTDOCS%%share/examples/albatross/popview1/.cvsignore
+%%PORTDOCS%%share/examples/albatross/popview1/detail.html
+%%PORTDOCS%%share/examples/albatross/popview1/install.py
+%%PORTDOCS%%share/examples/albatross/popview1/list.html
+%%PORTDOCS%%share/examples/albatross/popview1/login.html
+%%PORTDOCS%%share/examples/albatross/popview1/popview.py
+%%PORTDOCS%%share/examples/albatross/popview1/popviewlib.py
+%%PORTDOCS%%share/examples/albatross/popview2/.cvsignore
+%%PORTDOCS%%share/examples/albatross/popview2/detail.html
+%%PORTDOCS%%share/examples/albatross/popview2/install.py
+%%PORTDOCS%%share/examples/albatross/popview2/list.html
+%%PORTDOCS%%share/examples/albatross/popview2/login.html
+%%PORTDOCS%%share/examples/albatross/popview2/popview.py
+%%PORTDOCS%%share/examples/albatross/popview2/popviewlib.py
+%%PORTDOCS%%share/examples/albatross/popview3/.cvsignore
+%%PORTDOCS%%share/examples/albatross/popview3/detail.html
+%%PORTDOCS%%share/examples/albatross/popview3/install.py
+%%PORTDOCS%%share/examples/albatross/popview3/list.html
+%%PORTDOCS%%share/examples/albatross/popview3/login.html
+%%PORTDOCS%%share/examples/albatross/popview3/popview.py
+%%PORTDOCS%%share/examples/albatross/popview3/popviewlib.py
+%%PORTDOCS%%share/examples/albatross/popview4/.cvsignore
+%%PORTDOCS%%share/examples/albatross/popview4/detail.html
+%%PORTDOCS%%share/examples/albatross/popview4/detail.py
+%%PORTDOCS%%share/examples/albatross/popview4/install.py
+%%PORTDOCS%%share/examples/albatross/popview4/list.html
+%%PORTDOCS%%share/examples/albatross/popview4/list.py
+%%PORTDOCS%%share/examples/albatross/popview4/login.html
+%%PORTDOCS%%share/examples/albatross/popview4/login.py
+%%PORTDOCS%%share/examples/albatross/popview4/popview.py
+%%PORTDOCS%%share/examples/albatross/popview4/popviewlib.py
+%%PORTDOCS%%share/examples/albatross/popview5/.cvsignore
+%%PORTDOCS%%share/examples/albatross/popview5/detail.html
+%%PORTDOCS%%share/examples/albatross/popview5/detail.py
+%%PORTDOCS%%share/examples/albatross/popview5/htaccess
+%%PORTDOCS%%share/examples/albatross/popview5/install.py
+%%PORTDOCS%%share/examples/albatross/popview5/list.html
+%%PORTDOCS%%share/examples/albatross/popview5/list.py
+%%PORTDOCS%%share/examples/albatross/popview5/login.html
+%%PORTDOCS%%share/examples/albatross/popview5/login.py
+%%PORTDOCS%%share/examples/albatross/popview5/popview.py
+%%PORTDOCS%%share/examples/albatross/popview5/popviewlib.py
+%%PORTDOCS%%share/examples/albatross/random/.cvsignore
+%%PORTDOCS%%share/examples/albatross/random/install.py
+%%PORTDOCS%%share/examples/albatross/random/paginate.html
+%%PORTDOCS%%share/examples/albatross/random/paginate.py
+%%PORTDOCS%%share/examples/albatross/random/random.py
+%%PORTDOCS%%share/examples/albatross/random/tree.html
+%%PORTDOCS%%share/examples/albatross/random/tree.py
+%%PORTDOCS%%share/examples/albatross/sybase/.cvsignore
+%%PORTDOCS%%share/examples/albatross/sybase/htaccess
+%%PORTDOCS%%share/examples/albatross/sybase/install.py
+%%PORTDOCS%%share/examples/albatross/sybase/macros.html
+%%PORTDOCS%%share/examples/albatross/sybase/sybase.py
+%%PORTDOCS%%share/examples/albatross/sybase/table-desc.html
+%%PORTDOCS%%share/examples/albatross/sybase/table-list.html
+%%PORTDOCS%%share/examples/albatross/sybase/table-view.html
+%%PORTDOCS%%share/examples/albatross/sybase/traceback.html
+%%PORTDOCS%%share/examples/albatross/templates/content1/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/content1/content.py
+%%PORTDOCS%%share/examples/albatross/templates/content1/install.py
+%%PORTDOCS%%share/examples/albatross/templates/content1/main.html
+%%PORTDOCS%%share/examples/albatross/templates/content1/oops.html
+%%PORTDOCS%%share/examples/albatross/templates/content1/other.html
+%%PORTDOCS%%share/examples/albatross/templates/content2/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/content2/content.py
+%%PORTDOCS%%share/examples/albatross/templates/content2/install.py
+%%PORTDOCS%%share/examples/albatross/templates/content2/macros.html
+%%PORTDOCS%%share/examples/albatross/templates/content2/main.html
+%%PORTDOCS%%share/examples/albatross/templates/content2/oops.html
+%%PORTDOCS%%share/examples/albatross/templates/content2/other.html
+%%PORTDOCS%%share/examples/albatross/templates/form1/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/form1/form-display.html
+%%PORTDOCS%%share/examples/albatross/templates/form1/form.html
+%%PORTDOCS%%share/examples/albatross/templates/form1/form.py
+%%PORTDOCS%%share/examples/albatross/templates/form1/install.py
+%%PORTDOCS%%share/examples/albatross/templates/form2/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/form2/form-display.html
+%%PORTDOCS%%share/examples/albatross/templates/form2/form.html
+%%PORTDOCS%%share/examples/albatross/templates/form2/form.py
+%%PORTDOCS%%share/examples/albatross/templates/form2/install.py
+%%PORTDOCS%%share/examples/albatross/templates/form3/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/form3/form-display.html
+%%PORTDOCS%%share/examples/albatross/templates/form3/form.html
+%%PORTDOCS%%share/examples/albatross/templates/form3/form.py
+%%PORTDOCS%%share/examples/albatross/templates/form3/install.py
+%%PORTDOCS%%share/examples/albatross/templates/simple1/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/simple1/install.py
+%%PORTDOCS%%share/examples/albatross/templates/simple1/simple.py
+%%PORTDOCS%%share/examples/albatross/templates/simple2/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/simple2/install.py
+%%PORTDOCS%%share/examples/albatross/templates/simple2/simple.html
+%%PORTDOCS%%share/examples/albatross/templates/simple2/simple.py
+%%PORTDOCS%%share/examples/albatross/templates/simple3/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/simple3/install.py
+%%PORTDOCS%%share/examples/albatross/templates/simple3/simple.html
+%%PORTDOCS%%share/examples/albatross/templates/simple3/simple.py
+%%PORTDOCS%%share/examples/albatross/templates/simple4/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/simple4/install.py
+%%PORTDOCS%%share/examples/albatross/templates/simple4/simple.html
+%%PORTDOCS%%share/examples/albatross/templates/simple4/simple.py
+%%PORTDOCS%%share/examples/albatross/templates/simple5/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/simple5/install.py
+%%PORTDOCS%%share/examples/albatross/templates/simple5/simple.html
+%%PORTDOCS%%share/examples/albatross/templates/simple5/simple.py
+%%PORTDOCS%%share/examples/albatross/templates/stream/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/stream/install.py
+%%PORTDOCS%%share/examples/albatross/templates/stream/stream.html
+%%PORTDOCS%%share/examples/albatross/templates/stream/stream.py
+%%PORTDOCS%%share/examples/albatross/templates/tree/.cvsignore
+%%PORTDOCS%%share/examples/albatross/templates/tree/tree.html
+%%PORTDOCS%%share/examples/albatross/templates/tree/tree.py
+%%PORTDOCS%%share/examples/albatross/tree1/.cvsignore
+%%PORTDOCS%%share/examples/albatross/tree1/install.py
+%%PORTDOCS%%share/examples/albatross/tree1/tree.html
+%%PORTDOCS%%share/examples/albatross/tree1/tree.py
+%%PORTDOCS%%share/examples/albatross/tree2/.cvsignore
+%%PORTDOCS%%share/examples/albatross/tree2/install.py
+%%PORTDOCS%%share/examples/albatross/tree2/tree.html
+%%PORTDOCS%%share/examples/albatross/tree2/tree.py
+%%PORTDOCS%%share/examples/albatross/tree3/install.py
+%%PORTDOCS%%share/examples/albatross/tree3/tree.html
+%%PORTDOCS%%share/examples/albatross/tree3/tree.py
+%%PORTDOCS%%@dirrm share/examples/albatross/tree3
+%%PORTDOCS%%@dirrm share/examples/albatross/tree2
+%%PORTDOCS%%@dirrm share/examples/albatross/tree1
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/tree
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/stream
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/simple5
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/simple4
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/simple3
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/simple2
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/simple1
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/form3
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/form2
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/form1
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/content2
+%%PORTDOCS%%@dirrm share/examples/albatross/templates/content1
+%%PORTDOCS%%@dirrm share/examples/albatross/templates
+%%PORTDOCS%%@dirrm share/examples/albatross/sybase
+%%PORTDOCS%%@dirrm share/examples/albatross/random
+%%PORTDOCS%%@dirrm share/examples/albatross/popview5
+%%PORTDOCS%%@dirrm share/examples/albatross/popview4
+%%PORTDOCS%%@dirrm share/examples/albatross/popview3
+%%PORTDOCS%%@dirrm share/examples/albatross/popview2
+%%PORTDOCS%%@dirrm share/examples/albatross/popview1
+%%PORTDOCS%%@dirrm share/examples/albatross/paginate
+%%PORTDOCS%%@dirrm share/examples/albatross/mpperf
+%%PORTDOCS%%@dirrm share/examples/albatross/images
+%%PORTDOCS%%@dirrm share/examples/albatross/form4
+%%PORTDOCS%%@dirrm share/examples/albatross/extension
+%%PORTDOCS%%@dirrm share/examples/albatross
+%%PORTDOCS%%@dirrm share/doc/albatross/doctest
+%%PORTDOCS%%@dirrm share/doc/albatross
