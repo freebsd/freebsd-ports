@@ -86,6 +86,8 @@ lib/TkDesk/doc/guide-6.html
 lib/TkDesk/doc/guide-7.html
 lib/TkDesk/doc/guide-8.html
 lib/TkDesk/doc/guide-9.html
+lib/TkDesk/doc/guide-10.html
+lib/TkDesk/doc/guide-11.html
 lib/TkDesk/doc/guide.html
 lib/TkDesk/dsk_Listbox.tcl
 lib/TkDesk/file_ops.tcl
@@ -354,6 +356,9 @@ lib/TkDesk/images/next/lettercase.xpm
 lib/TkDesk/images/next/magnify.xpm
 lib/TkDesk/images/next/mail_env.xpm
 lib/TkDesk/images/next/mail_letter.xpm
+lib/TkDesk/images/next/mailbox_empty.xpm
+lib/TkDesk/images/next/mailbox_full.xpm
+lib/TkDesk/images/next/mailbox_old.xpm
 lib/TkDesk/images/next/mask_clouds.xpm
 lib/TkDesk/images/next/microphone.xpm
 lib/TkDesk/images/next/monalisa.xpm
@@ -413,6 +418,7 @@ lib/TkDesk/images/up.xpm
 lib/TkDesk/images/xbm/apple_draft.xbm
 lib/TkDesk/images/xbm/apple_write.xbm
 lib/TkDesk/images/xbm/audio.xbm
+lib/TkDesk/images/xbm/barhandle.xbm
 lib/TkDesk/images/xbm/bigfiling.xbm
 lib/TkDesk/images/xbm/bomb.xbm
 lib/TkDesk/images/xbm/book.xbm
