@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucl
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 

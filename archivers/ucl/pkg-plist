@@ -1,10 +1,10 @@
 bin/uclpack
 include/ucl/ucl.h
+include/ucl/ucl_asm.h
 include/ucl/uclconf.h
-include/ucl/uclutil.h
 lib/libucl.a
 lib/libucl.so
-lib/libucl.so.0
+lib/libucl.so.1
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
