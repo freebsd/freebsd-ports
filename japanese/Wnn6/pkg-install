@@ -164,6 +164,8 @@ POST-INSTALL)
     fi
     cd ${PKG_PREFIX}/OMRONWnn6/wnn6fbsd/ja_JP; rm -f dic; ln -s ../../wnn6dic dic
     chown -R wnn ${PKG_PREFIX}/OMRONWnn6
+    chmod 4555 ${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd/jserver
+    chmod 4555 ${PKG_PREFIX}/OMRONWnn6/Wnn6fbsd/wnnds
 
     ## create a startup script ##
     wnnserver=/usr/local/bin/Wnn6/jserver

@@ -18,11 +18,10 @@ NO_WRKSUBDIR=	yes
 LIBDIR=		${PREFIX}/OMRONWnn6
 DISTDIR=	${MOUNT_PT}/fbsd
 MOUNT_PT?=	/cdrom
-MOUNT_DEV?=	/dev/wcd0c
+MOUNT_DEV?=	/dev/acd0c
 
 RESTRICTED=	"You should buy from Omron Software Co., Ltd."
 NO_CDROM=	"You should buy from Omron Software Co., Ltd."
-NO_PACKAGE=	"You should buy from Omron Software Co., Ltd."
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 
@@ -35,7 +34,8 @@ fetch-list:
 # we do nothing in a 'do-fetch' stage.
 .if !exists(${.CURDIR}/work/.build_done)
 pre-extract::
-	@${ECHO} "Please set the CD-ROM 'Wnn6 for Linux/FreeBSD' (which is an old version !!)";
+	@${ECHO} "Please set the CD-ROM 'Wnn6 for Linux/FreeBSD -- 97.6.6'";
+	@${ECHO} "  It is an early version !!";
 	@${ECHO} -n "into your cdrom-drive. (Press Return)"; \
 	read dummy; \
 	${ECHO} "By default, a mount point and a device file"; \
