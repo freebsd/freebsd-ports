@@ -1,8 +1,8 @@
---- Makefile.orig	Tue Jan 21 23:53:05 1997
-+++ Makefile	Sat Dec 20 05:12:51 1997
+--- Makefile.orig	Tue Jan 21 07:53:05 1997
++++ Makefile	Fri Jun 25 12:17:39 1999
 @@ -1,6 +1,6 @@
 -CFLAGS        = -O 
-+DEST          = /usr/local/share/babel
++DEST          = ${PREFIX}/share/babel
  
 -LIBFLAGS      = -O -DLIBRARY 
 +LIBFLAGS      = -DLIBRARY 
@@ -14,7 +14,7 @@
  
  install:	$(PROGRAM)
 -		install -s $(PROGRAM) $(DEST)
-+		install -s $(PROGRAM) /usr/local/bin/$(PROGRAM)
++		install -s $(PROGRAM) ${PREFIX}/bin/$(PROGRAM)
 +		install -d -o bin -g bin $(DEST)
 +		install -c -o bin -g bin README.1ST $(DEST)
 +		install -c -o bin -g bin element.lis new.lis $(DEST)
