@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.13 1996/12/03 04:07:29 asami Exp $
+# $Id: Makefile,v 1.14 1996/12/08 11:55:03 max Exp $
 #
 
 DISTNAME=	mmv
@@ -43,6 +43,6 @@ do-install:
 	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mad ; \
 	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mcp ; \
 	 ln -fs ${PREFIX}/bin/mmv ${PREFIX}/bin/mln ; \
-	 ${INSTALL_MAN} mmv.1 ${PREFIX}/man/man1 ; )
+	 ${INSTALL_MAN} ${WRKSRC}/mmv.1 ${PREFIX}/man/man1 ; )
 
 .include <bsd.port.mk>
