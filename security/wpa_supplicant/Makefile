@@ -6,24 +6,26 @@
 #
 
 PORTNAME=	wpa_supplicant
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.8
 CATEGORIES=	security net
 MASTER_SITES=	http://hostap.epitest.fi/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supplicant (client) for WPA/802.1x protocols
 
+USE_REINPLACE=	yes
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
 
-PLIST_FILES=	bin/wpa_supplicant \
-		bin/wpa_passphrase \
-		bin/wpa_cli
+PLIST_FILES=	sbin/wpa_supplicant \
+		sbin/wpa_passphrase \
+		sbin/wpa_cli
+
+PLIST_FILES+=	etc/${PORTNAME}.conf.sample
 
 .if !defined(NOPORTDOCS)
 DOCFILES=	README \
-		ChangeLog \
-		wpa_supplicant.conf
+		ChangeLog
 PLIST_FILES+=	${DOCFILES:S,^,%%DOCSDIR%%/,}
 PLIST_DIRS+=	%%DOCSDIR%%
 .endif
@@ -31,14 +33,17 @@ PLIST_DIRS+=	%%DOCSDIR%%
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
 
-post-extract:
+post-patch:
 	@${CP} ${FILESDIR}/config.bsd ${WRKSRC}/.config
+	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/.config
+	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
+	@${INSTALL_DATA} ${WRKSRC}/wpa_supplicant.conf ${PREFIX}/etc/wpa_supplicant.conf.sample
 
 .include <bsd.port.pre.mk>
 
