@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav.pm
+lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav/Write.pm
+lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav/Write/Header.pm
+lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav/Read.pm
+lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav/Tools.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Audio/Wav/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav/Write
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Audio/Wav
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Audio/Wav
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Audio 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Audio 2>/dev/null || true

@@ -1,0 +1,4 @@
+These Perl modules provide a method of reading and writing uncompressed
+Microsoft WAV files.
+
+WWW: http://search.cpan.org/search?dist=Audio-Wav
