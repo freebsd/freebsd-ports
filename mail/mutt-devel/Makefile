@@ -19,9 +19,9 @@
 #
 # The two most important knobs are:
 #
-# In general you can choose between using the SLANG port (WITH_MUTT_SLANG)
-# and ncurses (WITH_MUTT_NCURSES) which is the default. Note that you may
-# have to set the variables COLORTERM=yes and COLORFGBG=color,color in your
+# In general you can choose between using ncurses (WITH_MUTT_NCURSES)
+# and SLANG (WITH_MUTT_SLANG) which is the default. Note that you may
+# have to set the variables COLORTERM=yes and COLORFGBG="color1;color2" in your
 # environment to get slang function properly.
 #
 # If you want to install the mutt documentation in html and ps format define:
@@ -81,7 +81,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -171,14 +171,14 @@ RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell \
 .if defined(WITH_MUTT_NCURSES_PORT)
 WITH_MUTT_NCURSES=	yes
 .endif
-.if defined(WITH_MUTT_NCURSES)
-MUTT_USES_NCURSES=	yes
-.endif
-.if defined(WITH_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
+.if defined(WITH_MUTT_SLANG)
 MUTT_USES_SLANG=	yes
 .endif
-.if !defined(MUTT_USES_NCURSES) && !defined(WITHOUT_MUTT_NCURSES) && !defined(MUTT_USES_SLANG)
+.if defined(WITH_MUTT_NCURSES) && !defined(MUTT_USES_SLANG)
 MUTT_USES_NCURSES=	yes
+.endif
+.if !defined(MUTT_USES_SLANG) && !defined(WITHOUT_MUTT_SLANG) && !defined(MUTT_USES_NCURSES)
+MUTT_USES_SLANG=	yes
 .endif
 .if defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	no
@@ -399,7 +399,7 @@ post-install:
 	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
 	@${ECHO} "You have installed ${PORTNAME} with SLANG support." >> ${PKGMESSAGE}
 	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
-	@${ECHO} "COLORTERM=yes and COLORFGBG=color,color in your" >> ${PKGMESSAGE}
+	@${ECHO} "COLORTERM=yes and COLORFGBG=\"color1;color2\" in your" >> ${PKGMESSAGE}
 	@${ECHO} "environment." >> ${PKGMESSAGE}
 	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
 .endif
