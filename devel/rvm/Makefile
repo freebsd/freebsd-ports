@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/
 
@@ -15,7 +15,7 @@ MAINTAINER=	coda@cs.cmu.edu
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

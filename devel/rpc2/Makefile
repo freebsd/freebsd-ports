@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rpc2
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/
 
@@ -15,7 +15,7 @@ MAINTAINER=	coda@cs.cmu.edu
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

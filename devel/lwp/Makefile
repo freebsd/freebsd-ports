@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	lwp
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/lwp/src/
 
 
 
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
