@@ -1,9 +1,9 @@
-@cwd /usr/local
 bin/s86
 bin/thelp
 bin/tx
 bin/txcm
 bin/txdump
+bin/txmake
 bin/txpc
 bin/txprint
 bin/txsum
@@ -22,6 +22,7 @@ t3x/r6/bin/txcm
 t3x/r6/bin/txdpf
 t3x/r6/bin/txdump
 t3x/r6/bin/txld
+t3x/r6/bin/txmake
 t3x/r6/bin/txopt
 t3x/r6/bin/txpc
 t3x/r6/bin/txprint
@@ -76,6 +77,8 @@ t3x/r6/lib/xmem.so
 t3x/r6/system.txrc
 t3x/r6/txprint.rules
 @unexec rm -f %D/t3x/r6/classes/CLASSND-
+@unexec rm -f %D/t3x/r6/classes/CLASSNDX
+@unexec rm -f %D/t3x/r6/doc/sdv-config
 @dirrm t3x/r6/bin
 @dirrm t3x/r6/classes
 @dirrm t3x/r6/lib
