@@ -17,6 +17,7 @@
     SUBDIR += gfe
     SUBDIR += intlfonts
     SUBDIR += jmk-x11-fonts
+    SUBDIR += lfpfonts-fix
     SUBDIR += mkfontalias
     SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel

@@ -1,0 +1,13 @@
+Fixed width fonts from the Linux Font Project.
+
+You'll have to add /usr/X11R6/lib/X11/fonts/lfpfonts-fix
+to your X font path by either:
+
+$ xset fp+ /usr/X11R6/lib/X11/fonts/lfpfonts-fix
+$ xset fp rehash
+
+or by adding it to your X-server configuration file (usually
+/etc/XF86Config, /etc/X11/XF86Config or /etc/Xaccel.ini) and
+restarting the X-server.
+
+WWW: http://dreamer.nitro.dk/linux/lfp/lfpfonts-fix.html
