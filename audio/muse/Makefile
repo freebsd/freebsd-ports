@@ -7,18 +7,16 @@
 #
 
 PORTNAME=	MuSE
-PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTVERSION=	0.9
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
-		http://muse.dyne.org/releases/
-MASTER_SITE_SUBDIR=	muse
-DISTNAME=	MuSE-${PORTVERSION}
+MASTER_SITES=	ftp://ftp.dyne.org/muse/releases/ \
+		http://www.ljudmila.org/~jaromil/muse/releases/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple Streaming Engine
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
+		sndfile.1:${PORTSDIR}/audio/libsndfile \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_GETOPT_LONG=	yes
@@ -27,33 +25,31 @@ USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--disable-debug
+CONFIGURE_ARGS=	--disable-debug --disable-lubrify
 
 MAN1=		muse.1
+PORTDOCS=	${DOCSFILES:S,doc/,,g}
+PLIT_FILES=	bin/muse
 
-CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT -DHAVE_SYS_UIO_H \
+		${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+DOCFILES=	AUTHORS ChangeLog KNOWN-BUGS NEWS README TODO doc/USAGE
 
 .if defined(WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 CONFIGURE_ARGS+=	--without-x --with-rubik
 .else
-USE_GNOME+=	gtk12
+USE_GNOME+=	gtk20
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^CFLAGS=.*$$|CFLAGS="\$$CFLAGS"|g ; \
-		 s|[$$]GTK_LIBS -lgthread|\$$GTK_LIBS \$$GLIB_LIBS|g ; \
-		 s|[$$]GTK_FLAGS|\$$GTK_CFLAGS \$$GLIB_CFLAGS|g' \
-			${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lpthread||g' ${WRKSRC}/Makefile.in
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/muse ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/muse.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/muse ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/muse.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog KNOWN-BUGS NEWS README TODO USAGE
+.for file in ${DOCFILES}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

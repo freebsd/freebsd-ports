@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Sun Apr 18 00:33:24 2004
++++ src/Makefile.in	Mon Apr 19 22:28:56 2004
+@@ -207,7 +207,6 @@
+ muse_LDADD = \
+ 	$(top_srcdir)/src/resample/libresample.a \
+ 	$(top_srcdir)/src/libmpeg/libmpeg.a \
+-	-lpthread \
+ 	@LIBSHOUT_LIB@ \
+ 	@M_LIBS@ \
+ 	@LAME_LIBS@ \
