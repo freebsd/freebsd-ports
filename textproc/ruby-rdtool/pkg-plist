@@ -4,6 +4,7 @@ bin/rdswap.rb
 %%RUBY_SITELIBDIR%%/rd/complex-list-item.rb
 %%RUBY_SITELIBDIR%%/rd/desclist.rb
 %%RUBY_SITELIBDIR%%/rd/document-struct.rb
+%%RUBY_SITELIBDIR%%/rd/dot.rd2rc
 %%RUBY_SITELIBDIR%%/rd/element.rb
 %%RUBY_SITELIBDIR%%/rd/filter.rb
 %%RUBY_SITELIBDIR%%/rd/inline-element.rb
