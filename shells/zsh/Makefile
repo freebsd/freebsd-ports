@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=       zsh-3.0.6
-PKGNAME=	zsh-3.0.6
+DISTNAME=       zsh-3.0.7
+PKGNAME=	zsh-3.0.7
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.sterling.com/zsh/ \
 		ftp://ftp.rge.com/pub/shells/zsh/ \
