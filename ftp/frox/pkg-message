@@ -5,8 +5,7 @@ from %%PREFIX%%/etc/frox.conf.sample and then run frox by
 %%PREFIX%%/etc/rc.d/frox.sh start
 
 Or you can run frox with inetd this way:
-* uncomment 'FromInetd yes' in your %%PREFIX%%/etc/frox.conf (so frox
-would not run on startup by %%PREFIX%%/etc/rc.d/frox.sh)
+* uncomment 'FromInetd yes' in your %%PREFIX%%/etc/frox.conf
 * add this line in /etc/inetd.conf:
 frox     stream  tcp     nowait  nobody    %%PREFIX%%/sbin/frox    frox
 * and assign port number for frox you want in /etc/services (e.g. 2121):

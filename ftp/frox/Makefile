@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	frox
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.7
 CATEGORIES=	ftp
 MASTER_SITES= 	http://www.hollo.org/frox/download/ \
 		http://frox.sourceforge.net/download/ \
@@ -29,13 +29,19 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ARGS= --enable-configfile=${PREFIX}/etc/frox.conf
 
-.if defined(WITH_HTTP_CACHE)
-CONFIGURE_ARGS+= --enable-http-cache
-.endif
 .if defined(WITH_IPFILTER)
 CONFIGURE_ARGS+= --enable-ipfilter
 .endif
-.if defined(WITH_CCP)
+.if defined(WITH_VIRUS_SCAN)
+CONFIGURE_ARGS+= --enable-virus-scan
+.endif
+.if !defined(WITHOUT_HTTP_CACHE)
+CONFIGURE_ARGS+= --enable-http-cache
+.endif
+.if !defined(WITHOUT_LOCAL_CACHE)
+CONFIGURE_ARGS+= --enable-local-cache
+.endif
+.if !defined(WITHOUT_CCP)
 CONFIGURE_ARGS+= --enable-ccp
 .endif
 .if defined(RUN_AS_ROOT)
@@ -46,11 +52,14 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "You can use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "	WITH_HTTP_CACHE=yes	enable http-cache (like squid) using;"
-	@${ECHO} "	WITH_IPFILTER=yes	force use ipfilter instead of ipfw;"
-	@${ECHO} "	WITH_CCP=yes		enable ftp-proxy style command control programs;"
-	@${ECHO} "	RUN_AS_ROOT=yes		allow frox running as root (not recomended)"
-	@${ECHO} "				for using port number <1024."
+	@${ECHO} "	WITH_IPFILTER=yes	use ipfilter instead of ipfw;"
+	@${ECHO} "	WITH_VIRUS_SCAN=yes	enable to run external virus scaner on each"
+	@${ECHO} "				download (experimental);"
+	@${ECHO} "	WITHOUT_HTTP_CACHE=yes	disable use of external cache;"
+	@${ECHO} "	WITHOUT_LOCAL_CACHE=yes	disable use of local cache;"
+	@${ECHO} "	WITHOUT_CCP=yes		disable ftp-proxy style command control programs;"
+	@${ECHO} "	RUN_AS_ROOT=yes		allow frox running as root for using"
+	@${ECHO} "				port number <1024 (not recomended)."
 	@${ECHO} ""
 
 pre-patch:

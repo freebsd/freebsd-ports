@@ -8,12 +8,12 @@ fi
 case "$1" in
 start)
 	[ -x ${PREFIX}/sbin/frox -a -f ${PREFIX}/etc/frox.conf ]
-	        grep -q '^ *# *FromInetd *yes' ${PREFIX}/etc/frox.conf && \
+	        ! grep -iq '^[[:space:]]*frominetd[[:space:]]*yes' ${PREFIX}/etc/frox.conf && \
 		${PREFIX}/sbin/frox && \
 		echo -n ' frox'
 	;;
 stop)
-	kill `cat /var/run/frox.pid` && echo -n ' frox'
+	[ -f /var/run/frox.pid ] && kill `cat /var/run/frox.pid` && echo -n ' frox'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
