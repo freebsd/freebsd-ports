@@ -3,11 +3,11 @@ bin/procmail
 bin/formail
 bin/lockfile
 bin/mailstat
-%%PORTDOCS%%share/doc/procmail/FAQ
-%%PORTDOCS%%share/doc/procmail/FEATURES
-%%PORTDOCS%%share/doc/procmail/HISTORY
-%%PORTDOCS%%share/doc/procmail/KNOWN_BUGS
-%%PORTDOCS%%share/doc/procmail/README
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FEATURES
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN_BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/examples/procmail/1procmailrc
 share/examples/procmail/1rmail
 share/examples/procmail/2procmailrc
@@ -20,4 +20,4 @@ share/examples/procmail/forward
 share/examples/procmail/local_procmail_lmtp.m4
 share/examples/procmail/mailstat
 @dirrm share/examples/procmail
-%%PORTDOCS%%@dirrm share/doc/procmail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
