@@ -3930,6 +3930,7 @@ javanns		ports/math/javanns
 javavmwrapper	ports/java/javavmwrapper
 javel		ports/java/javel
 jaxen		ports/java/jaxen
+jbidwatcher	ports/misc/jbidwatcher
 jbigkit		ports/graphics/jbigkit
 jboss2		ports/java/jboss2
 jboss3		ports/java/jboss3
