@@ -1,16 +1,16 @@
 # New ports collection makefile for:    arena
-# Version required:     beta-1e
+# Version required:     beta-2b
 # Date created:         Dec 1 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/02/20 03:54:23 ache Exp $
+# $Id: Makefile,v 1.3 1996/02/20 05:33:45 asami Exp $
 #
 
-DISTNAME=       arena-beta-1e
-PKGNAME=	arena-b1e
+DISTNAME=       arena-beta-2b
+PKGNAME=        arena-b2b
 CATEGORIES+=    www
-MASTER_SITES=   ftp://ftp.w3.org/pub/arena/beta-1/
-EXTRACT_SUFX=   -src.tgz
+MASTER_SITES=   ftp://ftp.w3.org/pub/arena/beta-2/
+EXTRACT_SUFX=   -src.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
