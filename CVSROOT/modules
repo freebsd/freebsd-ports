@@ -253,6 +253,8 @@ align		ports/textproc/align
 allegro		ports/devel/allegro
 altivore	ports/security/altivore
 amanda		ports/misc/amanda
+amanda-client	ports/misc/amanda-client
+amanda-server	ports/misc/amanda-server
 amanda24-client	ports/misc/amanda24-client
 amanda24-server	ports/misc/amanda24-server
 amaterus	ports/x11-wm/amaterus
