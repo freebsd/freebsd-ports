@@ -17,7 +17,7 @@ DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README
 PLIST=		${WRKDIR}/pkg-plist
 USE_AUTOCONF=		yes
 USE_X_PREFIX=		yes
-WANT_AUTOCONF_VER=	253
+WANT_AUTOCONF_VER=	257
 
 post-extract:
 # Avoid having to read this lengthy file.
