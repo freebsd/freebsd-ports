@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	vsftpd
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 ALL_TARGET=	vsftpd
 
@@ -25,9 +25,9 @@ BROKEN=		"Does not compile on 5.0"
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's@/etc/vsftpd.conf@${PREFIX}/etc/vsftpd.conf@' \
-		${WRKSRC}/defs.h
-	@${PERL} -pi -e 's@ -ldl@@; s@^CFLAGS.*$$@CFLAGS+= -D"atoll(x)=strtoll(x, (char **)NULL, 10)"@' ${WRKSRC}/Makefile
+	@${MV} ${WRKSRC}/defs.h ${WRKSRC}/defs.h.sed
+	${SED} -e "s=/etc/vsftpd.conf=${PREFIX}/etc/vsftpd.conf=" \
+                ${WRKSRC}/defs.h.sed > ${WRKSRC}/defs.h
 	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
 		${WRKSRC}/vsftpd.conf
 
