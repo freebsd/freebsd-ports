@@ -166,6 +166,7 @@
     SUBDIR += gnet-glib2
     SUBDIR += gnewtellium
     SUBDIR += gnomba
+    SUBDIR += gnome-mud
     SUBDIR += gnome-vnc
     SUBDIR += gnomeicu
     SUBDIR += gnomeicu2
