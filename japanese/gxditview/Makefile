@@ -22,7 +22,11 @@ MAINTAINER=	okazaki@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 
-USE_AUTOCONF=	yes
+# declare USE_AUTOCONF_VER as 213 until bsd.port.mk supports 252 (or later)
+USE_AUTOCONF_VER=	213
+.if ${USE_AUTOCONF_VER} == 213
+USE_REINPLACE=	yes
+.endif
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 
@@ -35,6 +39,8 @@ INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/src/xditview
 
 MAN1=		gxditview.1
 
+.include <bsd.port.pre.mk>
+
 # workaround for autoconf-2.13
 
 CONFIGUREIN_FILTER=	\
@@ -43,15 +49,18 @@ CONFIGUREIN_FILTER=	\
 		-e 's|AC_OUTPUT|dnl|g;' \
 		-e 's|AC_CONFIG_FILES|AC_OUTPUT|g;'
 
-ACLOCAL_FILTER=	-e 's/AC_LANG_POP\(C\+\+\)/AC_LANG_RESTORE/g;' \
-		-e 's/AC_LANG_PUSH\(C\+\+\)/AC_LANG_SAVE\nAC_LANG_CPLUSPLUS/g;'
+ACLOCAL_FILTER=	\
+	-e 's/AC_LANG_POP[(]C[+][+][)]/AC_LANG_RESTORE/g;' \
+	-e 's/AC_LANG_PUSH[(]C[+][+][)]/AC_LANG_SAVE[]AC_LANG_CPLUSPLUS/g;'
 
 post-extract:
-	${LN} -sf configure.ac ${WRKSRC}/configure.in
 	${CP} ${FILESDIR}/Imakefile ${WRKSRC}
 
 post-patch:
-	${PERL} -pi ${CONFIGUREIN_FILTER} ${WRKSRC}/configure.in
-	${PERL} -pi ${ACLOCAL_FILTER} ${WRKSRC}/aclocal.m4
+.if ${USE_AUTOCONF_VER} == 213
+	${CP} -p ${WRKSRC}/configure.ac ${WRKSRC}/configure.in
+	${REINPLACE_CMD} ${CONFIGUREIN_FILTER} ${WRKSRC}/configure.in
+	${REINPLACE_CMD} ${ACLOCAL_FILTER} ${WRKSRC}/aclocal.m4
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
