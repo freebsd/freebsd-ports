@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
 MAINTAINER?=	kiesel@schlund.de
 COMMENT=	Sybase/Microsoft TDS protocol library
 
+TDS_VER?=	5.0
+
 USE_ICONV=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -21,7 +23,7 @@ USE_INC_LIBTOOL_VER=	13
 WANT_AUTOCONF_VER=	259
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-tdsver=5.0
+CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 INSTALLS_SHLIB=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
