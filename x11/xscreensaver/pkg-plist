@@ -118,6 +118,9 @@ bin/xrayswarm
 bin/xscreensaver
 bin/xscreensaver-command
 bin/xscreensaver-demo
+bin/xscreensaver-getimage
+bin/xscreensaver-getimage-file
+bin/xscreensaver-getimage-video
 bin/xscreensaver-gl-helper
 bin/xspirograph
 bin/xsublim
