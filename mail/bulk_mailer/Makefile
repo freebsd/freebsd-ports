@@ -3,7 +3,7 @@
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
-# $Id: Makefile,v 1.3 1998/08/10 00:05:45 steve Exp $
+# $Id: Makefile,v 1.4 1998/10/08 05:06:16 jkoshy Exp $
 #
 
 DISTNAME=	bulk_mailer-1.11
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 MAINTAINER=	dlowe@saturn5.com
 
 MAN1=		bulk_mailer.1
+
+BROKEN_ELF=	-s: not found
 
 WRKSRC=	${WRKDIR}/bulk_mailer
 #EXTRACT_BEFORE_ARGS=	-C ${WRKDIR} -xf
