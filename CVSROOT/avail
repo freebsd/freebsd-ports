@@ -1,5 +1,5 @@
 #
-# $Id: avail,v 1.62 1999/01/15 19:36:21 msmith Exp $
+# $Id: avail,v 1.63 1999/01/20 03:32:48 msmith Exp $
 #
 # cvs-committers mail is sent to all members of the /etc/group group 'ncvs'
 # When adding a new committer, please add them to /etc/group first, before
