@@ -1,0 +1,20 @@
+Webcpp converts source code to syntax highlighted HTML, and supports multiple 
+languages and also colour schemes.
+Features:
+ - Specific support for over 30 programming, scripting, and shading languages
+ - An 11-element syntax highlighting engine
+ - Dynamic colour schemes using embedded Stylesheets, or external Stylesheets
+ - Batch conversions
+ - Automatic filetype detection for higlighting
+ - Filetype forcing for syntax highlighting
+ - Automatic #include file hyperlinking and file generation
+ - Piping the input or output to or from STDIN/STDOUT to collaborate with 
+other programs
+ - The ability of allowing custom HTML tags to be added
+ - Generic support for unknown text based files
+ - Available on various operating systems
+
+WWW: http://webcpp.sourceforge.net/
+
+- ChiP
+chip-set@mail.ru

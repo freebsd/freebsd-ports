@@ -516,6 +516,7 @@
     SUBDIR += webalizer
     SUBDIR += webcheck
     SUBDIR += webcopy
+    SUBDIR += webcpp
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webglimpse
