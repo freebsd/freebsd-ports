@@ -8,10 +8,12 @@
 %%ELISPDIR%%/egg/egg-mlh.elc
 %%ELISPDIR%%/egg/egg-sim.el
 %%ELISPDIR%%/egg/egg-sim.elc
-%%ELISPDIR%%/egg/egg-util.el
-%%ELISPDIR%%/egg/egg-util.elc
 %%ELISPDIR%%/egg/egg.el
 %%ELISPDIR%%/egg/egg.elc
+%%ELISPDIR%%/egg/egg/anthy.el
+%%ELISPDIR%%/egg/egg/anthy.elc
+%%ELISPDIR%%/egg/egg/anthyipc.el
+%%ELISPDIR%%/egg/egg/anthyipc.elc
 %%ELISPDIR%%/egg/egg/canna.el
 %%ELISPDIR%%/egg/egg/canna.elc
 %%ELISPDIR%%/egg/egg/cannarpc.el
@@ -37,6 +39,8 @@
 %%ELISPDIR%%/egg/its/bixing.elc
 %%ELISPDIR%%/egg/its/erpin.el
 %%ELISPDIR%%/egg/its/erpin.elc
+%%ELISPDIR%%/egg/its/greek.el
+%%ELISPDIR%%/egg/its/greek.elc
 %%ELISPDIR%%/egg/its/hangul.el
 %%ELISPDIR%%/egg/its/hangul.elc
 %%ELISPDIR%%/egg/its/hankata.el
@@ -58,6 +62,7 @@
 %%ELISPDIR%%/egg/its/zhuyin.el
 %%ELISPDIR%%/egg/its/zhuyin.elc
 %%ELISPDIR%%/egg/leim-list.el
+%%ELISPDIR%%/egg/leim-list.elc
 %%ELISPDIR%%/egg/menudiag.el
 %%ELISPDIR%%/egg/menudiag.elc
 @dirrm %%ELISPDIR%%/egg/egg
