@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	gnomeicu
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS+=	gnet-config:${PORTSDIR}/net/gnet
+LIB_DEPENDS+=	gnet.1:${PORTSDIR}/net/gnet
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
