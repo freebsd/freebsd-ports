@@ -32,7 +32,7 @@ etc/rc.d/gdm.sh.sample
 sbin/gdm-restart
 sbin/gdm-safe-restart
 sbin/gdm-stop
-sbin/gdmaskpass
+%%PAM_MISC%%sbin/gdmaskpass
 sbin/gdmconfig
 share/gnome/applications/gdmflexiserver-xnest.desktop
 share/gnome/applications/gdmflexiserver.desktop
