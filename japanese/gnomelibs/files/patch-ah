@@ -1,5 +1,5 @@
---- ./zvt/zterm.c.jp2	Sat Mar 18 16:57:13 2000
-+++ ./zvt/zterm.c	Sun Oct 29 18:32:20 2000
+--- zvt/zterm.c.zvtmb	Sat Mar 18 16:57:13 2000
++++ zvt/zterm.c	Sun Jun 24 07:35:48 2001
 @@ -41,7 +41,12 @@
  
  #include "zvtterm.h"

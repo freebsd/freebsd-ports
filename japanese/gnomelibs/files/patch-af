@@ -1,5 +1,5 @@
---- ./zvt/vt.c.jp2	Sat Mar 18 16:57:13 2000
-+++ ./zvt/vt.c	Sun Oct 29 18:32:20 2000
+--- zvt/vt.c.zvtmb	Sun Nov 26 03:49:08 2000
++++ zvt/vt.c	Sun Jun 24 07:35:48 2001
 @@ -109,6 +109,62 @@
  
  #endif
@@ -74,7 +74,7 @@
  
    /* states:
     *   0: normal escape mode
-@@ -1516,7 +1576,26 @@
+@@ -1521,7 +1581,26 @@
      
      switch (state) {
        
@@ -101,7 +101,7 @@
        if (mode & VT_LIT) {
  	/* remap character? */
  	if (vt->remaptable && c<=0xff)
-@@ -1526,17 +1605,43 @@
+@@ -1531,17 +1610,43 @@
  	if (vt->mode & VTMODE_INSERT)
  	  vt_insert_chars(vt, 1);
  	
@@ -145,7 +145,7 @@
  	vt->this_line->data[vt->cursorx] = ((vt->attr) & VTATTR_MASK) | c;
  	vt->this_line->modcount++;
  	/* d(printf("literal %c\n", c)); */
-@@ -1566,6 +1671,12 @@
+@@ -1571,6 +1676,12 @@
        } else if (c==']') {	/* set text parameters, read parameters */
  	state = 4;
  	vt->arg.txt.outptr = vt->arg.txt.args_mem;

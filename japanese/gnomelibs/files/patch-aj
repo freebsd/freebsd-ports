@@ -1,5 +1,5 @@
---- ./zvt/zvtterm.h.jp2	Sat Mar 18 16:57:13 2000
-+++ ./zvt/zvtterm.h	Sun Oct 29 18:32:20 2000
+--- zvt/zvtterm.h.zvtmb	Sun Jun 24 07:35:48 2001
++++ zvt/zvtterm.h	Sun Jun 24 07:35:48 2001
 @@ -33,6 +33,7 @@
  
  /* if one doesn't want to compile in transparency one would define this */
