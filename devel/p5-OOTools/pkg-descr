@@ -1,0 +1,12 @@
+OOTools is a collection of pragmas to easily create constructors methods and
+lvalue accessor methods at compile time. OOTools distribution includes:
+
+Class::constr	Pragma to implement constructor methods
+Class::props	Pragma to implement lvalue accessors with options
+Class::group	Pragma to implement group of properties accessors with options
+Object::props	Pragma to implement lvalue accessors with options
+Object::group	Pragma to implement group of properties accessors with options
+
+WWW: http://search.cpan.org/~domizio/OOTools/
+
+Author: Domizio Demichelis <dd@4pro.net>

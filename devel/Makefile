@@ -853,6 +853,7 @@
     SUBDIR += p5-NEXT
     SUBDIR += p5-Net-LibIDN
     SUBDIR += p5-OLE-Storage_Lite
+    SUBDIR += p5-OOTools
     SUBDIR += p5-ORBit
     SUBDIR += p5-Object-MultiType
     SUBDIR += p5-Object-Realize-Later
