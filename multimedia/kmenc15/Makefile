@@ -10,7 +10,7 @@ PORTVERSION=	0.02
 CATEGORIES=	multimedia kde
 MASTER_SITES=	http://dividedsky.net/~ods15/kmenc15/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE advanced MEncoder frontend, ala, VirtualDub
 
 BUILD_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mplayer \

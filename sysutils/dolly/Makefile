@@ -11,7 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to clone harddisks/partitions over a fast switched network
 
 USE_REINPLACE=	yes

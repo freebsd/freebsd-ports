@@ -11,7 +11,7 @@ CATEGORIES=	sysutils net
 MASTER_SITES=	http://corvus.kek.jp/~manabe/pcf/dolly/
 DISTNAME=	dolly${PORTVERSION:S/./_/}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of dolly harddisk/partition network clone utility
 
 USE_REINPLACE=	yes

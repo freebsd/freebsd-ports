@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}er/
 DISTNAME=	${PORTNAME}er-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to test for faulty memory subsystem
 
 USE_REINPLACE=	yes
