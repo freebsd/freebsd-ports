@@ -1,0 +1,5 @@
+A mpeg video plugin for XMMS using SDL/smpeg as backend. Supports hardware
+acceleration in Xfree 4.x if available, fullscreen, resizeable window, VCD
+support, aspected ratio when resizing the window, etc.
+
+WWW: http://www.xmms.org/plugins_input.html#93
