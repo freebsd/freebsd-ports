@@ -1274,7 +1274,6 @@ share/config/imsmaprc
 share/config/interferencerc
 share/config/kdesktop_custom_menu1
 share/config/kdesktop_custom_menu2
-share/config/kdm/README
 share/config/kdm/kdmrc
 share/config/klipperrc
 share/config/konqsidebartng.rc
