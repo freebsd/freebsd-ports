@@ -8,8 +8,7 @@
 PORTNAME=		tcb
 PORTVERSION=		1.4a
 CATEGORIES=		misc
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://www.osk.3web.ne.jp/~moody/tcbj/
+MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file
 
 MAINTAINER=		ports@FreeBSD.org
