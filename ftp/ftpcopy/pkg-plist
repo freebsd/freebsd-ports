@@ -1,3 +1,4 @@
+bin/ftpcp
 bin/ftpcopy
 bin/ftpls
 share/ftpcopy/NEWS
