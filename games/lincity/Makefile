@@ -7,6 +7,7 @@
 
 PORTNAME=	lincity
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/
 
