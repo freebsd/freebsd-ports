@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rudiments
-PORTVERSION=	0.24
-PORTREVISION=	2
+PORTVERSION=	0.26
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,25 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=213
-CONFIGURE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-MAKE_ARGS=	VERSION="${PORTVERSION:R}"
-
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500000
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-*
-
-PLIST_SUB+=	PROFILE="@comment "
-.else
-PLIST_SUB+=	PROFILE=""
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${MAKE} doc-install
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Wed Oct  1 01:54:50 2003
++++ src/Makefile	Wed May 26 15:21:35 2004
+@@ -175,7 +175,7 @@
+ rebuild: clean all
+ 
+ librudiments.la: $(SRCS) $(LOBJS)
+-	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) -rpath $(libdir) -release $(RUDIMENTS_VERSION) -version-info $(SONAME_VERSION_INFO)
++	$(LIBTOOL) --mode=link $(CXX) -o $@ $(LOBJS) -rpath $(libdir) -version-info $(SONAME_VERSION_INFO)
+ 
+ install:
+ 	$(top_builddir)/mkinstalldirs $(libdir)
