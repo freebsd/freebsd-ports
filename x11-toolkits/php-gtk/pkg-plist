@@ -1,17 +1,19 @@
 etc/php.gtk/php.ini-dist
-lib/php/extensions/php_gtk.so
-%%PORTDOCS%%%%EXAMPLESDIR%%/combobutton.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/fileselection.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/gtk.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/hello.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/list.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/piemenu.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/scribble.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/scrollpane.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/spaned.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/sqpane.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/testgtkrc
-%%PORTDOCS%%%%EXAMPLESDIR%%/testgtkrc2
-%%PORTDOCS%%%%EXAMPLESDIR%%/window.xpm
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%GDKPIXBUF%%lib/php/20020429/gdkpixbuf.so
+%%GTKHTML%%lib/php/20020429/gtkhtml.so
+lib/php/20020429/php_gtk.so
+share/examples/php-gtk/combobutton.php
+share/examples/php-gtk/fileselection.php
+share/examples/php-gtk/gtk.php
+share/examples/php-gtk/hello.php
+share/examples/php-gtk/list.php
+share/examples/php-gtk/piemenu.php
+share/examples/php-gtk/scribble.php
+share/examples/php-gtk/scrollpane.php
+share/examples/php-gtk/spaned.php
+share/examples/php-gtk/sqpane.php
+share/examples/php-gtk/testgtkrc
+share/examples/php-gtk/testgtkrc2
+share/examples/php-gtk/window.xpm
+@dirrm share/examples/php-gtk
 @dirrm etc/php.gtk
