@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.13a
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -90,18 +90,16 @@ DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 CONTRIB=	xml_python_processors.txt pure-vpopauth.pl
 
 pre-fetch:
-	@${ECHO} "You can use the following additional options:"
-	@${ECHO} "WITH_LDAP=1           - Support for users in LDAP \
-		directories;"
-	@${ECHO} "WITH_MYSQL=1          - Support for users in MySQL databases;"
-	@${ECHO} "WITH_PGSQL=1          - Support for users in PostgreSQL databases;"	
-	@${ECHO} "WITH_LANG=lang        - enable compilation of language \
-		support, lang is one of"
-	@${ECHO} "  english, german, romanian, french, french-funny, polish, spanish,"
-	@${ECHO} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
-	@${ECHO} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
-	@${ECHO} "  and czech."
-	@${ECHO}	
+	@${ECHO_CMD} "You can use the following additional options:"
+	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories"
+	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL databases"
+	@${ECHO_CMD} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
+	@${ECHO_CMD} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
+	@${ECHO_CMD} "  english, german, romanian, french, french-funny, polish, spanish,"
+	@${ECHO_CMD} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
+	@${ECHO_CMD} "  norwegian, swedish, russian, traditional-chinese, simplified-chinese"
+	@${ECHO_CMD} "  and czech."
+	@${ECHO_CMD} ""
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
@@ -119,8 +117,8 @@ post-install:
 .if defined(PAM_TEMPL)
 	${MKDIR} ${PAM_DIR}
 	${INSTALL_DATA} ${PAM_TEMPL} ${PAM_DIR}/${PAM_TARGET}
-	@${ECHO} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
-	@${ECHO} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
+	@${ECHO_CMD} "Now you need to examine ${PAM_DIR}/${PAM_TARGET}"
+	@${ECHO_CMD} "and add the relevant PAM configuration lines to your /etc/pam.conf file."
 .endif
 
 .include <bsd.port.post.mk>
