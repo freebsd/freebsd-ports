@@ -26,7 +26,9 @@ PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-prc-files install-data install-pyplucker
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
+CONFIGURE_ARGS+=--with-docdir=${DOCSDIR} \
+		--disable-docbuild \
+		--disable-palmosbuild
 MAN1=		pluck-comics.1 plucker-build.1 plucker-decode.1 \
 		plucker-dump.1 plucker-setup.1
 FIND?=		find
