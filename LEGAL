@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.48 1996/11/11 06:24:02 obrien Exp $
+# $Id: LEGAL,v 1.49 1996/11/20 07:37:19 tg Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -16,7 +16,6 @@ Such ports are listed below:
 Dist			Port			Why
 ------------------------------------------------------------------------------
 JDK-*			ports/www/jdk		Put copyright on packaging!
-acroread-*		ports/print/acroread	Commercial software
 bzip-*			ports/archivers/bzip	Some algorithms used may
 						infringe certain US patents.
 						Opinions differ. Commercial 
