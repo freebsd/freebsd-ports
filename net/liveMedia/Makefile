@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2002.11.04
+PORTVERSION=	2002.11.14
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -52,9 +52,11 @@ liveMedia= \
 		liveMedia/include/FramedFilter.hh \
 		liveMedia/include/FramedSource.hh \
 		liveMedia/include/GSMAudioRTPSink.hh \
+		liveMedia/include/GroupsockHelper.hh \
 		liveMedia/include/H263plusVideoRTPSink.hh \
 		liveMedia/include/H263plusVideoRTPSource.hh \
 		liveMedia/include/HTTPSink.hh \
+		liveMedia/include/JPEGVideoRTPSource.hh \
 		liveMedia/include/MP3ADU.hh \
 		liveMedia/include/MP3ADURTPSink.hh \
 		liveMedia/include/MP3ADURTPSource.hh \
