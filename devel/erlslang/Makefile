@@ -15,10 +15,10 @@ MASTER_SITES=	http://www.erlang.org/contrib/ \
 DISTNAME=	slang-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	cpressey@catseye.mb.ca
+MAINTAINER=	chris_pressey@yahoo.ca
 COMMENT=	SLang binding for Erlang/OTP
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
