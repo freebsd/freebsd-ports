@@ -6,15 +6,10 @@ and Macromedia Flash plugins are included.  AOL Instant Messenger
 is omitted (see ports/net/aim).  The Canadian and United States
 region packs, spell-checker, and talkback are available.
 
-The Java plugin does not work.
+The Java plugin requires linux_base-6.  It does not work with
+linux_base 7.1.
 
-This port installs a preview release of the Netscape browser.
-Historically, such versions have contained a "time bomb" which will
-cause the program to stop working after a predetermined date, usually
-a few months after Netscape first offers the program.  If this is
-unsuitable for you, use a regular release instead.
-
-WWW:  http://channels.netscape.com/ns/browsers/7/default.jsp
+WWW:  http://channels.netscape.com/ns/browsers/default.jsp/
 
 Trevor Johnson
 trevor@FreeBSD.org
