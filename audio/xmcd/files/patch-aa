@@ -1,29 +1,19 @@
-*** xmcd_d/Imakefile.orig	Mon Jul 16 13:52:06 2001
---- xmcd_d/Imakefile	Tue Jul 17 03:04:47 2001
-***************
-*** 54,60 ****
-  SYS_LIBRARIES= $(LIBCDDB)
-  #endif
-  
-! LOCAL_LIBRARIES= XmClientLibs
-  
-  #if defined(FreeBSDArchitecture)
-  .if exists(/usr/include/camlib.h)
---- 54,60 ----
-  SYS_LIBRARIES= $(LIBCDDB)
-  #endif
-  
-! LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
-  
-  #if defined(FreeBSDArchitecture)
-  .if exists(/usr/include/camlib.h)
-***************
-*** 98,103 ****
---- 98,104 ----
-  #endif	/* Linux Sun AIX Ultrix USL SVR4 */
-  #endif	/* BSD Osf sony_news Sun4 */
-  
-+ MANSUFFIX=1
-  
-  /*
-   * Add local include path
+--- xmcd_d/Imakefile.orig	Mon Nov  4 06:44:44 2002
++++ xmcd_d/Imakefile	Mon Nov  4 04:44:28 2002
+@@ -82,7 +82,7 @@
+ #endif	/* OSF1 */
+ #endif	/* Linux */
+ 
+-LOCAL_LIBRARIES= XmClientLibs
++LOCAL_LIBRARIES= ${MOTIFLIB} XawClientLibs
+ 
+ #if defined(FreeBSDArchitecture)
+ .if exists(/usr/include/camlib.h)
+@@ -137,6 +137,7 @@
+ #endif	/* Linux Sun AIX Ultrix USL SVR4 */
+ #endif	/* BSD OSF1 sony_news Sun4 */
+ 
++MANSUFFIX=1
+ 
+ /*
+  * Add local include path

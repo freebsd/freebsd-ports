@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	xmcd
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.1.1/src/
-DISTNAME=	xmcd-3.1.1
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.2.0/src/
+DISTNAME=	xmcd-3.2.0
 
 MAINTAINER=	eischen@vigrid.com
 
+LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xmcd-3.1
+WRKSRC=		${WRKDIR}/xmcd-3.2.0
 PLIST_SUB+=	RELEASE=${OSREL:R} ARCH=${ARCH}
 
 MAN1=		cda.1 xmcd.1
