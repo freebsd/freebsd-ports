@@ -2323,6 +2323,7 @@ hmmer		ports/biology/hmmer
 hnb		ports/editors/hnb
 hobbes-icons-xpm	ports/graphics/hobbes-icons-xpm
 holyshout	ports/audio/holyshout
+honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde		ports/www/horde
 horde2		ports/www/horde2
