@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.python.org/idle/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@altavista.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
