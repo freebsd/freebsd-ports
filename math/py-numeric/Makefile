@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	20.2.1
+PORTVERSION=	20.3
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -18,10 +18,18 @@ MAINTAINER=	tg@FreeBSD.org
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
-PYTHON_VERSION=	python2.1
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 200
+.BEGIN:
+	@${ECHO} "Py-numeric doesn't work with Python versions < 2.0."
+	@${ECHO} "Please use the py-numeric17 port for these."
+	@${FALSE}
+.endif
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py build
@@ -40,4 +48,4 @@ post-install:
 #	${INSTALL_DATA} ${WRKSRC}/Doc/numpy.pdf ${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
