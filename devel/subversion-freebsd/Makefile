@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r1537
+PORTVERSION=	r1587
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tigris.org/files/15/38/
 
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
 
 MAN1=		svn.1
 
-WRKSRC=	${WRKDIR}/subversion-r1537
+WRKSRC=	${WRKDIR}/subversion-r1587
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-ssl \
 		--with-neon=${LOCALBASE} \
