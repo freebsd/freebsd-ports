@@ -18,4 +18,4 @@ from the specified file instead of from stdin.
 Unzipsfx may be used to create self-extracting ZIP archives from previously
 created ZIP archives.
 
-WWW: http://www.mirror.ac.uk/sites/ftp.info-zip.org/pub/infozip/UnZip.html
+WWW: http://www.info-zip.org/pub/infozip/UnZip.html
