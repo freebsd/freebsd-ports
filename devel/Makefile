@@ -397,6 +397,7 @@
     SUBDIR += p5-ORBit
     SUBDIR += p5-POE
     SUBDIR += p5-POE-Component-Client-DNS
+    SUBDIR += p5-POE-Component-Client-HTTP
     SUBDIR += p5-POE-Component-JobQueue
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
