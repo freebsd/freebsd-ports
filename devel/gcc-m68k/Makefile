@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	m68k
 
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 
-BUILD_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/m68kbinutils \
-		m68k-coff-ld:${PORTSDIR}/devel/m68kbinutils
-RUN_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/m68kbinutils \
-		m68k-coff-ld:${PORTSDIR}/devel/m68kbinutils
+BUILD_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/binutils-m68k \
+		m68k-coff-ld:${PORTSDIR}/devel/binutils-m68k
+RUN_DEPENDS=	m68k-coff-as:${PORTSDIR}/devel/binutils-m68k \
+		m68k-coff-ld:${PORTSDIR}/devel/binutils-m68k
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

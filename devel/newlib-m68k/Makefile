@@ -13,7 +13,7 @@ PKGNAMEPREFIX=	m68k
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	m68k-coff-gcc:${PORTSDIR}/devel/m68kgcc
+BUILD_DEPENDS=	m68k-coff-gcc:${PORTSDIR}/devel/gcc-m68k
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

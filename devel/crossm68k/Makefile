@@ -13,8 +13,8 @@ DISTFILES=	# empty
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 
 # this dependency will cause m68kbinutils and m68kgcc to be built as well
-BUILD_DEPENDS=	${LOCALBASE}/m68k-coff/lib/crt0.o:${PORTSDIR}/devel/m68knewlib
-RUN_DEPENDS=	m68k-coff-gdb:${PORTSDIR}/devel/m68kgdb
+BUILD_DEPENDS=	${LOCALBASE}/m68k-coff/lib/crt0.o:${PORTSDIR}/devel/newlib-m68k
+RUN_DEPENDS=	m68k-coff-gdb:${PORTSDIR}/devel/gdb-m68k
 
 NO_BUILD=	yes
 
