@@ -10,7 +10,7 @@ PORTVERSION=	3.0.1
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ 		\
-		ftp://ftp.fftw.org/pub/fftw/old/ 	\
+		http://www.fftw.org/ 			\
 		ftp://theory.lcs.mit.edu/pub/fftw/	\
 		ftp://pm.cse.rmit.edu.au/pub/dsp/fftw/
 DISTNAME=	fftw-${PORTVERSION}
@@ -54,6 +54,9 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O3 -fomit-frame-pointer -fno-schedul
 .endif
 
 .if defined(WITH_SSE)
+.if ${OSVERSION} < 500000
+USE_GCC=	3.3
+.endif
 CONFIGURE_ARGS+=--enable-sse2
 CONFIGURE_ARGS_FFTW3F+=--enable-sse
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS:N-O:N-O*} -O2"
