@@ -1,4 +1,4 @@
 bin/gtksql
-share/doc/gtksql/Changelog
-share/doc/gtksql/README
-@dirrm share/doc/gtksql
+%%PORTDOCS%%share/doc/gtksql/Changelog
+%%PORTDOCS%%share/doc/gtksql/README
+%%PORTDOCS%%@dirrm share/doc/gtksql
