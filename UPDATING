@@ -56,7 +56,7 @@ upgrades.
       above will automatically replace quanta with kdewebdev, if you have
       quanta installed.
 
-  4.) Reinstall any KDE ports you deleted in step 1. Note that the kdeaddons-
+  4.) Reinstall any KDE ports you deleted in step 2. Note that the kdeaddons-
       kontact-plugins (net/kontact-plugins), kdepim-kpilot (palm/kpilot) and 
       quanta (www/quanta) ports/packages do not exist anymore and cannot be
       reinstalled.
