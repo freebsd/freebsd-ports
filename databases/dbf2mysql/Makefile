@@ -8,7 +8,8 @@
 PORTNAME=	dbf2mysql
 PORTVERSION=	1.14
 CATEGORIES=	databases
-MASTER_SITES=	http://download.sourceforge.net/pub/mirrors/mysql/Downloads/Contrib/
+MASTER_SITES=	ftp://mysql.nixc.net/pub/mysql/Downloads/Contrib/ \
+		ftp://ftp.plig.org/pub/mysql/Downloads/Contrib/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
