@@ -26,6 +26,7 @@ lib/mysql/libnisam.a
 libexec/mysqld
 share/doc/mysql/Img/australia.gif
 share/doc/mysql/Img/austria.gif
+share/doc/mysql/Img/brazil.gif
 share/doc/mysql/Img/bulgaria.gif
 share/doc/mysql/Img/canada.gif
 share/doc/mysql/Img/chile.gif
@@ -41,10 +42,14 @@ share/doc/mysql/Img/great-britain.gif
 share/doc/mysql/Img/greece.gif
 share/doc/mysql/Img/html-fs.gif
 share/doc/mysql/Img/hungary.gif
+share/doc/mysql/Img/iceland.gif
+share/doc/mysql/Img/ireland.gif
+share/doc/mysql/Img/island.gif
 share/doc/mysql/Img/israel.gif
 share/doc/mysql/Img/italy.gif
 share/doc/mysql/Img/japan.gif
 share/doc/mysql/Img/kroatia.gif
+share/doc/mysql/Img/mysql-logo.gif
 share/doc/mysql/Img/mysql5.gif
 share/doc/mysql/Img/netherlands.gif
 share/doc/mysql/Img/poland.gif
@@ -55,6 +60,7 @@ share/doc/mysql/Img/singapore.gif
 share/doc/mysql/Img/south-africa.gif
 share/doc/mysql/Img/south-africa1.gif
 share/doc/mysql/Img/south-korea.gif
+share/doc/mysql/Img/spain.gif
 share/doc/mysql/Img/sweden.gif
 share/doc/mysql/Img/switzerland.gif
 share/doc/mysql/Img/taiwan.gif
@@ -94,7 +100,7 @@ share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
 share/mysql/make_binary_distribution
 share/mysql/my-example.cnf
-share/mysql/mysql-3.22.27.spec
+share/mysql/mysql-3.22.29.spec
 share/mysql/mysql-log-rotate
 share/mysql/mysql.server
 share/mysql/norwegian-ny/errmsg.sys

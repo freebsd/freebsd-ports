@@ -1,0 +1,14 @@
+--- include/Makefile.in.orig	Sat Jan  1 17:59:41 2000
++++ include/Makefile.in	Wed Jan  5 21:04:23 2000
+@@ -259,7 +259,11 @@
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++.if defined(CLIENT_ONLY)
+ install: install-am
++.else
++install:
++.endif
+ uninstall-am: uninstall-pkgincludeHEADERS
+ uninstall: uninstall-am
+ all-am: Makefile $(HEADERS) all-local

@@ -1,0 +1,13 @@
+--- sql/Makefile.in.orig	Sat Jan  1 18:01:13 2000
++++ sql/Makefile.in	Wed Jan  5 20:28:17 2000
+@@ -317,6 +317,10 @@
+ 	else :; fi
+ sql_yacc.hh: sql_yacc.cc
+ 
++# gcc takes a lot of memory and cpu time if it compiles sql_yacc.cc with -O
++sql_yacc.o: sql_yacc.cc
++	$(CXXCOMPILE) -O0 -c $<
++
+ 
+ # This directory's subdirectories are mostly independent; you can cd
+ # into them and run `make' without going through this Makefile.
