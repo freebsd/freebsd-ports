@@ -1,9 +1,9 @@
 # New ports collection makefile for: nwrite
-# Version required:     1.0
-# Date created:                29 July 1997
-# Whom:                        daveh
+# Version required:     	1.9.2
+# Date created:                	29 July 1997
+# Whom:                        	daveh
 #
-# $Id: Makefile,v 1.2 1998/08/23 07:34:46 hoek Exp $
+# $Id: Makefile,v 1.3 1999/03/15 02:11:36 steve Exp $
 #
 
 DISTNAME=	nwrite-1.9.2
@@ -16,5 +16,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-clear-procs
 
 MAN1=		nwrite.1
+
+BINGRP=		tty
+BINMODE=	2755
+
+do-install:
+
+		${INSTALL_PROGRAM} ${WRKSRC}/nwrite ${PREFIX}/bin
+		${INSTALL_MAN} ${WRKSRC}/nwrite.1.in ${PREFIX}/man/man1/nwrite.1
 
 .include <bsd.port.mk>
