@@ -121,6 +121,7 @@ share/doc/MHonArc/resources/idxpgend.html
 share/doc/MHonArc/resources/idxprefix.html
 share/doc/MHonArc/resources/idxsize.html
 share/doc/MHonArc/resources/include.html
+share/doc/MHonArc/resources/keeponrmm.html
 share/doc/MHonArc/resources/labelbeg.html
 share/doc/MHonArc/resources/labelend.html
 share/doc/MHonArc/resources/labelstyles.html
@@ -136,6 +137,7 @@ share/doc/MHonArc/resources/main.html
 share/doc/MHonArc/resources/maxsize.html
 share/doc/MHonArc/resources/mhpattern.html
 share/doc/MHonArc/resources/mimeargs.html
+share/doc/MHonArc/resources/mimeexcs.html
 share/doc/MHonArc/resources/modtime.html
 share/doc/MHonArc/resources/months.html
 share/doc/MHonArc/resources/monthsabr.html
