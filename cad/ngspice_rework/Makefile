@@ -21,6 +21,12 @@ GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER?=15
 USE_GMAKE=	yes
 
+.ifndef PACKAGE_BUILDING
+CONFIGURE_ARGS+=	--with-readline=yes
+.else
+CONFIGURE_ARGS+=	--disable-debug
+.endif
+
 INFO=		ngspice
 MAN1=		ngspice.1 ngnutmeg.1 ngsconvert.1
 
