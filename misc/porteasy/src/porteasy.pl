@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.6.1";
+my $VERSION	= "2.6.2";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -237,7 +237,11 @@ sub cmd($@) {
 	}
 	return undef;
     }
-    return $output || "\n";
+    if ($capture) {
+	$output =~ s/\n*$//s;
+	return $output;
+    }
+    return 1;
 }
 
 #
@@ -502,7 +506,8 @@ sub find_library($) {
 
     my $ldconfig;		# Output from ldconfig(8)
 
-    $ldconfig = capture(\&cmd, (&PATH_LDCONFIG, "-r"))
+    $ldconfig = capture(\&cmd, (&PATH_LDCONFIG, "-r"));
+    defined($ldconfig)
 	or errx(1, "unable to run ldconfig");
     if ($ldconfig =~ m/^\s*\d+:-l$library => (.*)$/m) {
 	info("The $library library is installed as $1");
@@ -548,10 +553,13 @@ sub find_dependencies($) {
 				   "-VBUILD_DEPENDS",
 				   "-VRUN_DEPENDS",
 				   "-VLIB_DEPENDS",
-				   "-VDEPENDS"))
+				   "-VDEPENDS"));
+    defined($dependvars)
 	or bsd::errx(1, "failed to obtain dependency list");
     %depends = ();
-    foreach $item (split(' ', $dependvars)) {
+    while ($dependvars =~ m/\G\s*((?:[^\s\`]|\`[^\`]+\`)+)/g) {
+	$item = $1;
+	$item =~ s|\`([^\`]+)\`|capture(\&cmd, "sh", "-c", $1)|eg;
 	if ($item !~ m|^(?:([^:]+):)?$portsdir/([^/:]+/[^/:]+)/?(:[^:]+)?$|) {
 	    bsd::warnx("invalid dependency: %s", $item);
 	    next;
@@ -659,7 +667,7 @@ sub update_ports_tree(@) {
 		    $portname{$port} = $1.$2;
 		    $pkgname{$port} = $3;
 		} else {
-		    warnx("failed to obtain package name for $port");
+		    bsd::warnx("failed to obtain package name for $port");
 		}
 	    }
 
