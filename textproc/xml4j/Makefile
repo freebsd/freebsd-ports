@@ -3,13 +3,13 @@
 # Date created:		16 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/21 15:35:53 kuriyama Exp $
 #
 
 DISTNAME=	xml4j_2_0_9
 PKGNAME=	xml4j-2.0.9
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.alphaworks.ibm.com/technologies/xml4j/
+MASTER_SITES=	http://www.alphaworks.ibm.com/tech/xml4j/
 EXTRACT_SUFX=	_tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
