@@ -26,6 +26,12 @@ ALL_TARGET=	rascal grascal
 MANCOMPRESSED=	yes
 MAN1=	rascal.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,g\+\+,${CXX},g ; \
@@ -33,4 +39,4 @@ post-patch:
 		s,gnome-config,${GNOME_CONFIG},g ; \
 		s,CC,CXX,g" ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

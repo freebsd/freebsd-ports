@@ -12,8 +12,6 @@ MASTER_SITES=	http://gmail.linuxpower.org/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
-BROKEN=		"Does not build"
-
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
 		gmime.6:${PORTSDIR}/mail/gmime
 
@@ -22,4 +20,10 @@ USE_GMAKE=	YES
 USE_GNOME=	YES
 USE_LIBTOOL=	YES
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
