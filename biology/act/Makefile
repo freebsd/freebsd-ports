@@ -1,15 +1,15 @@
 # New ports collection makefile for:	artemis
-# Date created:				11 Mar 2002
-# Whom:					chuynh@bilateral.com.au
+# Date created:		10 Mar 2003
+# Whom:			fernan@iib.unsam.edu.ar
 #
 # $FreeBSD$
 #
 
 PORTNAME=	act
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	biology
-MASTER_SITES=	http://www.sanger.ac.uk/Software/ACT/v1/
-DISTNAME=	act_compiled_v1
+MASTER_SITES=	http://www.sanger.ac.uk/Software/ACT/v2/
+DISTNAME=	act_compiled_v2
 
 MAINTAINER=	chuynh@biolateral.com.au
 COMMENT=	A DNA sequence comparison viewer based on Artemis
