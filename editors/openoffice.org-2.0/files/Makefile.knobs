@@ -18,7 +18,8 @@ CONFIGURE_ARGS+=	--enable-cups
 .endif
 
 .if defined(ALL_LOCALIZED_LANGS)
-CONFIGURE_ARGS+=	--with-lang="en-US ar ca cs da de el es et fi fr he hi-IN hu it ja ko pl pt pt-BR ru sk sl sv th tr zh-CN zh-TW"
+CONFIGURE_ARGS+=	--with-lang=ALL
+#"en-US ar ca cs da de el es et fi fr he hi-IN hu it ja ko pl pt pt-BR ru sk sl sv th tr zh-CN zh-TW"
 #following langs still seem to be under development 
 #af bg cy eo eu gl kn-IN lt nb nl nn ns tn zu
 .else
