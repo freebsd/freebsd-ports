@@ -1,0 +1,15 @@
+A paginator similar to "more" or "pg", but much more powerful and
+speaks Chinese.
+
+Cless is a port of GNU's less version 290 that suports the display of files
+written in the Chinese language using the GB (simple) or Big5 (complex)
+encodings.  You can switch to reading of normal ASCII text by setting the
+environment LESSCHARSET to 'ascii'.
+
+Also, the help can be displayed in either Simple Chinese, Complex Chinese,
+or English by setting the LESSHELP environmental variable to the correct
+helpfile.  Cless should be run w/in a CXterm or simular terminal emulator
+supporting Chinese language encodings.
+
+David O'Brien
+obrien@cs.ucdavis.edu

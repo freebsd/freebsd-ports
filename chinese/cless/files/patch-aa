@@ -1,0 +1,38 @@
+--- Makefile.in.orig	Mon Apr 24 19:41:39 1995
++++ Makefile.in	Sun Sep 15 22:55:52 1996
+@@ -73,24 +73,24 @@
+ ${OBJ}: less.h defines.h funcs.h
+ 
+ filename.${O}: filename.c
+-	${CC} -c -DHELPFILE=\"${datadir}/less.hlp\" -I. ${CPPFLAGS} ${CFLAGS} ${srcdir}/filename.c
++	${CC} -c -DHELPFILE=\"${datadir}/cless.gb\" -I. ${CPPFLAGS} ${CFLAGS} ${srcdir}/filename.c
+ 
+ install: all less.hlp less.bg5 less.gb less.nro installdirs
+-	${INSTALL_PROGRAM} less ${bindir}/${binprefix}less
+-	${INSTALL_PROGRAM} lesskey ${bindir}/${binprefix}lesskey
+-	${INSTALL_DATA} ${srcdir}/less.hlp ${datadir}/less.hlp
+-	${INSTALL_DATA} ${srcdir}/less.bg5 ${datadir}/less.bg5
+-	${INSTALL_DATA} ${srcdir}/less.gb ${datadir}/less.gb
+-	${INSTALL_DATA} ${srcdir}/less.nro ${mandir}/${manprefix}less.${manext}
+-	${INSTALL_DATA} ${srcdir}/lesskey.nro ${mandir}/${manprefix}lesskey.${manext}
++	${INSTALL_PROGRAM} less ${bindir}/${binprefix}cless
++	${INSTALL_PROGRAM} lesskey ${bindir}/${binprefix}clesskey
++	${INSTALL_DATA} ${srcdir}/less.hlp ${datadir}/cless.hlp
++	${INSTALL_DATA} ${srcdir}/less.bg5 ${datadir}/cless.bg5
++	${INSTALL_DATA} ${srcdir}/less.gb ${datadir}/cless.gb
++	${INSTALL_DATA} ${srcdir}/less.nro ${mandir}/${manprefix}cless.${manext}
++	${INSTALL_DATA} ${srcdir}/lesskey.nro ${mandir}/${manprefix}clesskey.${manext}
+ 
+ installdirs: mkinstalldirs
+ 	${srcdir}/mkinstalldirs ${bindir} ${datadir} ${mandir}
+ 
+ uninstall:
+-	rm -f ${bindir}/${binprefix}less ${bindir}/${binprefix}lesskey
+-	rm -f ${datadir}/less.hlp ${datadir}/less.bg5 ${datadir}/less.gb
+-	rm -f ${mandir}/less.${manext} ${mandir}/lesskey.${manext}
++	rm -f ${bindir}/${binprefix}cless ${bindir}/${binprefix}clesskey
++	rm -f ${datadir}/cless.hlp ${datadir}/cless.bg5 ${datadir}/cless.gb
++	rm -f ${mandir}/cless.${manext} ${mandir}/clesskey.${manext}
+ 
+ info:
+ install-info:
