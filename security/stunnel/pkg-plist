@@ -1,4 +1,4 @@
-etc/rc.d/stunnel.sh.sample
+etc/rc.d/stunnel.sh
 etc/stunnel/stunnel.conf-sample
 lib/libstunnel.so
 lib/libstunnel.a
