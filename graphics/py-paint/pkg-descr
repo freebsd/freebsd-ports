@@ -1,0 +1,5 @@
+The paint module provides a simple and flexible facility for
+painting PNG images files. The paint module depends upon
+three free libraries: freetype, libart, libpng.
+
+WWW: http://object-craft.com.au/projects/paint/
