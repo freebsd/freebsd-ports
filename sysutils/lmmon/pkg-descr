@@ -7,14 +7,14 @@ voltages.  By default it cycles once per second using a curses-
 based display.
 
 Currently, the /dev/smb0 interface is only supported in FreeBSD
-4.0 and 3.3-STABLE (after 01 November 1999); however, the
+3.3-STABLE (after 01 November 1999), 4.x, and 5.x; however, the
 /dev/io interface may work with many motherboards in FreeBSD
 3.x and some non-LM78/79 motherboards.
 
-In addition, lmmon support simple text output that can be easily
+In addition, lmmon supports simple text output that can be easily
 used by external programs (e.g. UCD SNMP Daemon) for monitoring.
 
-WWW: http://www.fxp.org/~jedgar/
+WWW: http://www.fxp.org/~jedgar/lmmon/
 
 - Chris D. Faulhaber
  <jedgar@FreeBSD.org>

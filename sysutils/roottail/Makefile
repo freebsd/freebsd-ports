@@ -9,7 +9,7 @@ PORTNAME=	roottail
 PORTVERSION=	0.0.4b
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.hypertek.net/misc/ \
-		http://www.fxp.org/~jedgar/
+		http://www.fxp.org/~jedgar/distfiles/
 DISTNAME=	rt-0.0.4B
 EXTRACT_SUFX=	.tgz
 

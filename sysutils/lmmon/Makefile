@@ -8,7 +8,7 @@
 PORTNAME=	lmmon
 PORTVERSION=	0.65
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.fxp.org/~jedgar/
+MASTER_SITES=	http://www.fxp.org/~jedgar/lmmon/
 
 MAINTAINER=	jedgar@FreeBSD.org
 

@@ -6,11 +6,11 @@ WindowMaker dock app.  Displayed values include fan speeds,
 motherboard temperature, and various voltages. 
 
 Currently, the /dev/smb0 interface is only supported in FreeBSD
-4.0 and 3.3-STABLE (after 01 November 1999); however, the
+3.3-STABLE (after 01 November 1999), 4.x, and 5.x; however, the
 /dev/io interface may work with many motherboards in FreeBSD
 3.x and some non-LM78/79 motherboards.
 
-WWW: http://www.fxp.org/~jedgar/
+WWW: http://www.fxp.org/~jedgar/wmlmmon/
 
 - Chris D. Faulhaber
-jedgar@fxp.org
+ <jedgar@FreeBSD.org>
