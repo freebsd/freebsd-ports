@@ -1,5 +1,6 @@
 ================================================================================
-The default config is installed in ${PREFIX}/etc/gnokiirc, and is configured
-for Nokia 6110 phones connected on COM1. Have a look at the
-documentation/manpages for more information.
+The default config is installed in ${PREFIX}/etc/gnokiirc.sample, and is
+configured for Nokia 6110 phones connected on COM1. Have a look at the
+documentation/manpages for more information. You'll need to copy
+gnokiirc.sample to gnokiirc for gnokii/xgnokii to use it.
 ================================================================================
