@@ -24,6 +24,16 @@ yesno () {
     esac
   done
 }
+# workaround for compilation problems if XFree-4.0.x is installed
+if [ -e ${PREFIX}/lib/libXft.so.1 ]; then
+  r=`nm  ${PREFIX}/lib/libXft.so.1 | grep XftDirSave`
+  if [ "X$r" = X ]; then 
+    echo "you seem to have an installed XFree-4.0.x port"
+    echo "please rename or remove ${PREFIX}/lib/libXft.so.1"
+    echo "in order to avoid compilation problems"
+    exit 1
+  fi
+fi
 F=$WRKDIR/.config
 configure () {
 rm -f $F
