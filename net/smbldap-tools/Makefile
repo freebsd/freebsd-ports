@@ -7,6 +7,7 @@
 
 PORTNAME=	smbldap-tools
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.idealx.org/prj/samba/dist/
 EXTRACT_SUFX=	.tgz
@@ -27,6 +28,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's#/etc/smb#${PREFIX}/etc/smb#' ${WRKSRC}/configure.pl \
 							${WRKSRC}/smbldap.conf \
 							${WRKSRC}/smbldap_tools.pm
+	${REINPLACE_CMD} -e 's#/usr/sbin#${LOCALBASE}/sbin#' ${WRKSRC}/smbldap-passwd
 
 do-install:
 	${MKDIR} ${EXAMPLESDIR}
