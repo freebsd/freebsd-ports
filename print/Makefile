@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1998/07/20 02:31:50 steve Exp $
+# $Id: Makefile,v 1.64 1998/08/14 00:16:29 kuriyama Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -21,6 +21,7 @@
     SUBDIR += enscript
     SUBDIR += enscriptfonts
     SUBDIR += freetype
+    SUBDIR += ggv
     SUBDIR += ghostscript
     SUBDIR += ghostscript3
     SUBDIR += ghostscript4
