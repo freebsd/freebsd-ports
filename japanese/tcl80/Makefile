@@ -3,21 +3,21 @@
 # Date created:		23 Jan 1998
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.3 1998/07/04 19:11:58 steve Exp $
+# $Id: Makefile,v 1.4 1998/07/27 00:14:52 steve Exp $
 #
 
-DISTNAME=	tcl8.0p2
-PKGNAME=	ja-tcl-8.0.2
+DISTNAME=	tcl8.0.3
+PKGNAME=	ja-tcl-8.0.3
 CATEGORIES=	japanese lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tcl8.0p2jp1.1b0.patch.gz
+PATCHFILES=	tcl8.0.3jp1.1.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 VERSION=	8.0
-TOPDIR=		${WRKDIR}/tcl${VERSION}
+TOPDIR=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${TOPDIR}/unix
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
@@ -46,13 +46,13 @@ post-install:
 		Incompat80jp ${PREFIX}/share/doc/tcl${VERSION}jp; \
 	 )
 .endif
-	@${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT}	${PKGDIR}/MESSAGE
 
 test:
-	cd ${WRKSRC} && ${MAKE} test
+	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test
 
 install-man:
-	cd ${WRKSRC} && ${MAKE} install-man
+	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} install-man
 
 .include <bsd.port.mk>
