@@ -9,6 +9,7 @@ bin/ssh-keyscan
 etc/rc.d/sshd.sh
 etc/ssh_config
 etc/sshd_config
+etc/moduli
 sbin/sshd
 libexec/sftp-server
 libdata/ssh/Ssh.bin
