@@ -9,10 +9,12 @@
 
 COMMENT=	Hungarian (Hungary) Myspell dictionary for OpenOffice.org
 
+CATEGORIES=	hungarian
+
 LANGPREFIX=	hu
 LANGSUFFIX=	HU
 LANGDIST+=	hu_HU.zip
-MASTERDIR=	${.CURDIR}/../ooodict-all
+MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"
