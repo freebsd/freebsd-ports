@@ -19,13 +19,10 @@ COMMENT=	Perl5 modules for accessing MySQL databases
 BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.pre.mk>
+CONFLICTS=      p5-DBD-mysql-* p5-DBD-mysql4[0-9]-* p5-DBD-mysql5[0-9]-*
 
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)
-LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.else
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.endif
+USE_MYSQL=	yes
+DEFAULT_MYSQL_VER=	323
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	PREFIX=${PREFIX} CC="${CC}" CCFLAGS="${CFLAGS}" \
@@ -40,6 +37,8 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
 		@${PERL} -p -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm
+
+.include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
