@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.7
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://hadess.net/files/
 
@@ -16,12 +16,20 @@ BUILD_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${X11BASE}
-CONFIGURE_ENV=	PATH_GTKCONFIG=${X11BASE}/bin/gtk12-config
+CONFIGURE_ENV=	PATH_GTKCONFIG=${PREFIX}/bin/gtk12-config
 
 USE_GMAKE=	yes
 USE_GLIB=	yes
 USE_GTK=	yes
 USE_X_PREFIX=	yes
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmusic ${PREFIX}/bin
+.ifndef(NOPORTDOCS)
+	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
+		${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/${PORTNAME}
+.endif
 
 .include <bsd.port.mk>
