@@ -84,7 +84,7 @@ USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
 .endif
 .else	# WITHOUT_X11
-MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x ${I18N}"
+MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x" ${I18N}
 .endif	# WITHOUT_X11
 
 .if defined(PACKAGE_BUILDING)
