@@ -323,6 +323,7 @@
     SUBDIR += php4-openssl
     SUBDIR += php5-mcrypt
     SUBDIR += php5-mhash
+    SUBDIR += php5-openssl
     SUBDIR += pidentd
     SUBDIR += pinentry
     SUBDIR += pinentry-curses
