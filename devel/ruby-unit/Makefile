@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	runit
+PORTNAME=	unit
 PORTVERSION=	0.3.3a
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/markey/ruby/rubyunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:S/^r/ruby/}-${PORTVERSION}
+DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
