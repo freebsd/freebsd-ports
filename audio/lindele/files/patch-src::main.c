@@ -1,19 +1,20 @@
---- src/main.c.orig	Mon Jul 26 22:14:22 2004
-+++ src/main.c	Mon Jul 26 22:14:39 2004
+--- src/main.c.orig	Tue Jan 18 02:24:29 2005
++++ src/main.c	Tue Jan 18 02:24:53 2005
 @@ -21,6 +21,8 @@
  int
  main (int argc, char *argv[])
  {
-+    Lindele lindele;
++    Lindele *lindele;
 +
      gst_init(&argc, &argv);
      glade_init();
      gnome_program_init ("lindele", VERSION,
-@@ -28,7 +30,6 @@
+@@ -28,7 +30,7 @@
  		    argc, argv,
  		    GNOME_PARAM_APP_DATADIR, DATADIR, NULL);
      
--    Lindele lindele;
-     init_lindele(&lindele);
+-    Lindele *lindele = lindele_new();
++    lindele = lindele_new();
      
      gtk_main();
+     
