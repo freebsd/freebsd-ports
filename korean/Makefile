@@ -54,6 +54,7 @@
     SUBDIR += mizifont
     SUBDIR += mkisofs
     SUBDIR += mozilla-klp
+    SUBDIR += mplayer-fonts
     SUBDIR += msdosfs
     SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid

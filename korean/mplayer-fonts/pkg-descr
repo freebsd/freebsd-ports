@@ -1,0 +1,7 @@
+This is the port which contains a korean set of the fonts for
+the mplayer on-screen display and the sub title.
+
+In this stage it contains the following fonts:
+
+Baekmuk : gulim, batang, dotum
+Yonsei  : YonseiTitle, YonseiText
