@@ -44,6 +44,9 @@ pre-extract:
 	@${ECHO} "You can add hooks for GNOME by defining USE_GNOME"
 .endif
 
+pre-patch:
+	@${PERL} -pi -e "s!#undef WANT_CHAN_NICK_SERV!#define WANT_CHAN_NICK_SERV!" ${WRKSRC}/include/config.h
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/bx/help
