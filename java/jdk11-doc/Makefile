@@ -10,7 +10,7 @@ PORTVERSION=	1.1.8
 CATEGORIES=	java
 DISTNAME=	jdk-1_1_8_003-doc
 
-MAINTAINER=	martti.kuparinen@iki.fi
+MAINTAINER=	ports@freebsd.org
 
 RESTRICTED=	"This software is under license and export control."
 IS_INTERACTIVE=	"Requires manual fetch"

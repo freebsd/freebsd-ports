@@ -12,7 +12,7 @@ CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.javasoft.com/docs/
 DISTNAME=	tutorial
 
-MAINTAINER=	martti.kuparinen@iki.fi
+MAINTAINER=	ports@freebsd.org
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	"This software is under license and export control."
