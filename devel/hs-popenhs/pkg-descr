@@ -4,7 +4,7 @@ popenhs is a popen-like library for Haskell. It provides a convenient way of
 sending string input to a subprocess and reading output from it lazily. It
 requires the Posix module and has been tested under ghc5 so far.
 
-WWW: http://www.01.246.ne.jp/~juhp/haskell/popenhs/
+WWW: http://www.haskell.org/~petersen/haskell/popenhs/
 
 - Oliver Braun
 obraun@informatik.unibw-muenchen.de
