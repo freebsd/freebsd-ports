@@ -3,7 +3,7 @@
 # Date created:		22 September 1998
 # Whom:			Kenjiro Cho <kjc@csl.sony.co.jp>
 #
-# $Id: Makefile,v 1.20 1998/09/22 09:23:55 kjc Exp $
+# $Id: Makefile,v 1.21 1998/09/25 10:05:13 asami Exp $
 #
 
 DISTNAME=	BLT2.4f
@@ -12,6 +12,8 @@ CATEGORIES=	x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/blt/
 
 MAINTAINER=	kjc@csl.sony.co.jp
+
+BROKEN_ELF=	library version numbers
 
 LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
