@@ -1,160 +1,87 @@
 bin/qtez
-share/doc/qtez/INSTALL
-share/doc/qtez/KDE.README
-share/doc/qtez/README
-share/doc/qtez/TODO
-share/doc/qtez/index.htm
-share/doc/qtez/dnload/index.htm
-share/doc/qtez/faq/compcret.htm
-share/doc/qtez/faq/index.htm
-share/doc/qtez/features/index.htm
-share/doc/qtez/help/index.htm
-share/doc/qtez/help/attribs/atdlgcap.gif
-share/doc/qtez/help/attribs/index.htm
-share/doc/qtez/help/compons/index.htm
-share/doc/qtez/help/compons/savesrc.gif
-share/doc/qtez/help/compons/toolbar.gif
-share/doc/qtez/help/glbedit/gldlgcap.gif
-share/doc/qtez/help/glbedit/index.htm
-share/doc/qtez/help/menubar/cfdlgcap.gif
-share/doc/qtez/help/menubar/index.htm
-share/doc/qtez/help/menubar/mndlgcap.gif
-share/doc/qtez/help/mnuedit/index.htm
-share/doc/qtez/help/mnuedit/mndlgcap.gif
-share/doc/qtez/help/projects/index.htm
-share/doc/qtez/help/projects/sample.txt
-share/doc/qtez/help/projview/index.htm
-share/doc/qtez/help/projview/pvdlgcap.gif
-share/doc/qtez/help/sigslo/index.htm
-share/doc/qtez/help/sigslo/sgdlgcap.gif
-share/doc/qtez/help/sigslo/ssdlgcap.gif
-share/doc/qtez/help/srcedit/fndlgcap.gif
-share/doc/qtez/help/srcedit/index.htm
-share/doc/qtez/help/srcedit/scdlgcap.gif
-share/doc/qtez/listserv/index.htm
-share/doc/qtez/pics/background.gif
-share/doc/qtez/pics/e.gif
-share/doc/qtez/pics/q.gif
-share/doc/qtez/pics/qtez.gif
-share/doc/qtez/pics/separator.gif
-share/doc/qtez/pics/t.gif
-share/doc/qtez/pics/z.gif
-share/doc/qtez/tutorial/index.htm
-share/doc/qtez/tutorial/chap1/index.htm
-share/doc/qtez/tutorial/chap1/tut1cap.gif
-share/doc/qtez/tutorial/chap2/index.htm
-share/doc/qtez/tutorial/chap2/tut2cap.gif
-share/doc/qtez/tutorial/chap3/index.htm
-share/doc/qtez/tutorial/chap3/tut3cap.gif
-share/doc/qtez/tutorial/chap4/index.htm
-share/doc/qtez/tutorial/chap4/tut4cap.gif
-share/doc/qtez/tutorial/chap5/index.htm
-share/doc/qtez/tutorial/chap5/tut5cap.gif
-share/examples/qtez/a.qtz
-share/examples/qtez/krash.qtz
-share/examples/qtez/arnt/arnt.qtz
-share/examples/qtez/arnt/arnt2.qtz
-share/examples/qtez/bnacho/demo.qtz
-share/examples/qtez/bnacho/qtez.bmp
-share/examples/qtez/bnacho/qtezicon.bmp
-share/examples/qtez/bnacho/quitButt.xpm
-share/examples/qtez/calculator/calc.qtz
-share/examples/qtez/calendar/calend.qtz
-share/examples/qtez/custom/custom.qtz
-share/examples/qtez/custom/qfiledlg.qtz
-share/examples/qtez/d.qtz
-share/examples/qtez/dblclick.qtz
-share/examples/qtez/dynamic/dynamic.qtz
-share/examples/qtez/dynamic/dyn2.qtz
-share/examples/qtez/echo/client.qtz.debunct
-share/examples/qtez/echo/server.qtz.debunct
-share/examples/qtez/finger/finger.qtz
-share/examples/qtez/include/include.qtz
-share/examples/qtez/kde/kde.qtz
-share/examples/qtez/menubar/highlight.qtz
-share/examples/qtez/menubar/menubar.qtz
-share/examples/qtez/multdlg/2dialog.qtz
-share/examples/qtez/multdlg/3dialog.qtz
-share/examples/qtez/notepad/notepad.qtz
-share/examples/qtez/painter/painter.qtz
-share/examples/qtez/painter/painter_new.qtz
-share/examples/qtez/parent/bttngrp.qtz
-share/examples/qtez/parent/mult_par.qtz
-share/examples/qtez/piano.qtz
-share/examples/qtez/resize.qtz
-share/examples/qtez/stress/30buttons.qtz
-share/examples/qtez/stress/all.qtz
-share/examples/qtez/swatch/time.qtz
-share/examples/qtez/tablevw/table.qtz
-share/examples/qtez/troll.tut/t1.qtz
-share/examples/qtez/troll.tut/t2.qtz
-share/examples/qtez/troll.tut/t3.qtz
-share/examples/qtez/troll.tut/t5.qtz
-share/examples/qtez/troll.tut/t6.qtz
-share/examples/qtez/troll.tut/t7.qtz
-share/examples/qtez/troll.tut/t8.qtz
-share/examples/qtez/tutorial/chap1.qtz
-share/examples/qtez/tutorial/chap2.qtz
-share/examples/qtez/tutorial/chap3.qtz
-share/examples/qtez/tutorial/chap4.qtz
-share/examples/qtez/tutorial/chap5.qtz
-share/examples/qtez/tutorial/frame1.bmp
-share/examples/qtez/tutorial/frame2.bmp
-share/examples/qtez/tutorial/frame3.bmp
-share/examples/qtez/tutorial/frame4.bmp
-share/examples/qtez/tutorial/frame5.bmp
-share/examples/qtez/tutorial/frame6.bmp
-share/examples/qtez/tutorial/frame7.bmp
-share/examples/qtez/tutorial/frame8.bmp
-share/examples/qtez/xalarm.qtz
-@dirrm share/doc/qtez/dnload
-@dirrm share/doc/qtez/faq
-@dirrm share/doc/qtez/features
-@dirrm share/doc/qtez/help/attribs
-@dirrm share/doc/qtez/help/bk
-@dirrm share/doc/qtez/help/compons
-@dirrm share/doc/qtez/help/demos/chap1
-@dirrm share/doc/qtez/help/demos/chap2
-@dirrm share/doc/qtez/help/demos/chap3
-@dirrm share/doc/qtez/help/demos/chap4
-@dirrm share/doc/qtez/help/demos/chap5
-@dirrm share/doc/qtez/help/demos
-@dirrm share/doc/qtez/help/glbedit
-@dirrm share/doc/qtez/help/menubar
-@dirrm share/doc/qtez/help/mnuedit
-@dirrm share/doc/qtez/help/projects
-@dirrm share/doc/qtez/help/projview
-@dirrm share/doc/qtez/help/sigslo
-@dirrm share/doc/qtez/help/srcedit
-@dirrm share/doc/qtez/help
-@dirrm share/doc/qtez/listserv
-@dirrm share/doc/qtez/pics
-@dirrm share/doc/qtez/tech
-@dirrm share/doc/qtez/tutorial/chap1
-@dirrm share/doc/qtez/tutorial/chap2
-@dirrm share/doc/qtez/tutorial/chap3
-@dirrm share/doc/qtez/tutorial/chap4
-@dirrm share/doc/qtez/tutorial/chap5
-@dirrm share/doc/qtez/tutorial
-@dirrm share/doc/qtez
-@dirrm share/examples/qtez/arnt
-@dirrm share/examples/qtez/bnacho
-@dirrm share/examples/qtez/calculator
-@dirrm share/examples/qtez/calendar
-@dirrm share/examples/qtez/custom
-@dirrm share/examples/qtez/dynamic
-@dirrm share/examples/qtez/echo
-@dirrm share/examples/qtez/finger
-@dirrm share/examples/qtez/include
-@dirrm share/examples/qtez/kde
-@dirrm share/examples/qtez/menubar
-@dirrm share/examples/qtez/multdlg
-@dirrm share/examples/qtez/notepad
-@dirrm share/examples/qtez/painter
-@dirrm share/examples/qtez/parent
-@dirrm share/examples/qtez/stress
-@dirrm share/examples/qtez/swatch
-@dirrm share/examples/qtez/tablevw
-@dirrm share/examples/qtez/troll.tut
-@dirrm share/examples/qtez/tutorial
-@dirrm share/examples/qtez
+lib/libPluginManager.a
+lib/libQt2Dialogs.a
+lib/libQt2Geometry.a
+lib/libQt2Misc.a
+lib/libQt2Network.a
+lib/libQt2Widgets.a
+share/QtEZ/.configs
+share/QtEZ/acinclude.m4
+share/QtEZ/am_edit
+share/QtEZ/autogen.sh
+share/QtEZ/automoc
+share/QtEZ/doc/compcret.html
+share/QtEZ/doc/index-1.html
+share/QtEZ/doc/index-2.html
+share/QtEZ/doc/index-3.html
+share/QtEZ/doc/index-4.html
+share/QtEZ/doc/index-5.html
+share/QtEZ/doc/index-6.html
+share/QtEZ/doc/index.html
+share/QtEZ/doc/qtezlogo.png
+share/QtEZ/doc/tutorial/attribs.html
+share/QtEZ/doc/tutorial/compons.html
+share/QtEZ/doc/tutorial/faq.html
+share/QtEZ/doc/tutorial/images/AttributesEditor.png
+share/QtEZ/doc/tutorial/images/FormsView.png
+share/QtEZ/doc/tutorial/images/MainMenu.png
+share/QtEZ/doc/tutorial/images/MenuEditor.png
+share/QtEZ/doc/tutorial/images/Options.png
+share/QtEZ/doc/tutorial/images/SigSlotEditor.png
+share/QtEZ/doc/tutorial/images/SourceEditor.png
+share/QtEZ/doc/tutorial/images/fndlgcap.png
+share/QtEZ/doc/tutorial/menubar.html
+share/QtEZ/doc/tutorial/mnuedit.html
+share/QtEZ/doc/tutorial/projects.html
+share/QtEZ/doc/tutorial/projview.html
+share/QtEZ/doc/tutorial/sigslot.html
+share/QtEZ/doc/tutorial/srcedit.html
+share/QtEZ/doc_Makefile.am
+share/QtEZ/fine/.editor
+share/QtEZ/fine/C++.template
+share/QtEZ/fine/C++.template.blue
+share/QtEZ/fine/C++.template.white
+share/QtEZ/fine/LaTeX.template
+share/QtEZ/fine/am.template
+share/QtEZ/fine/blue/C++.template
+share/QtEZ/fine/blue/am.template
+share/QtEZ/fine/blue/h.template
+share/QtEZ/fine/blue/html.template
+share/QtEZ/fine/blue/lsm.template
+share/QtEZ/fine/blue/po.template
+share/QtEZ/fine/blue/qtz.template
+share/QtEZ/fine/html.template
+share/QtEZ/fine/lsm.template
+share/QtEZ/fine/po.template
+share/QtEZ/fine/qtz.template
+share/QtEZ/fine/white/C++.template
+share/QtEZ/fine/white/am.template
+share/QtEZ/fine/white/h.template
+share/QtEZ/fine/white/html.template
+share/QtEZ/fine/white/lsm.template
+share/QtEZ/fine/white/po.template
+share/QtEZ/fine/white/qtz.template
+share/QtEZ/icons/qtez-project.png
+share/QtEZ/icons/qtez.png
+share/QtEZ/icons/qtez48x48.png
+share/QtEZ/img/about.gif
+share/QtEZ/img/bwiz.png
+share/QtEZ/img/tm.png
+share/QtEZ/img/unstable.gif
+share/QtEZ/locale/it.qm
+share/QtEZ/locale/sk.qm
+share/QtEZ/po_KDE_Makefile.am
+share/QtEZ/po_Makefile.am
+share/QtEZ/prepare.sh
+@exec mkdir -p %D/share/QtEZ/plugins
+@unexec rmdir %D/share/QtEZ/plugins
+@dirrm share/QtEZ/locale
+@dirrm share/QtEZ/img
+@dirrm share/QtEZ/icons
+@dirrm share/QtEZ/fine/white
+@dirrm share/QtEZ/fine/blue
+@dirrm share/QtEZ/fine
+@dirrm share/QtEZ/doc/tutorial/images
+@dirrm share/QtEZ/doc/tutorial
+@dirrm share/QtEZ/doc
+@dirrm share/QtEZ
