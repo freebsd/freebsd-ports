@@ -1,13 +1,13 @@
 bin/yapp
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Options.pm
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Driver.pm
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Grammar.pm
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Output.pm
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Lalr.pm
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Parse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/Yapp/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/Yapp
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parse 2>/dev/null || true
+%%SITE_PERL%%/Parse/Yapp/Options.pm
+%%SITE_PERL%%/Parse/Yapp/Driver.pm
+%%SITE_PERL%%/Parse/Yapp/Grammar.pm
+%%SITE_PERL%%/Parse/Yapp/Output.pm
+%%SITE_PERL%%/Parse/Yapp/Lalr.pm
+%%SITE_PERL%%/Parse/Yapp/Parse.pm
+%%SITE_PERL%%/Parse/Yapp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Yapp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse/Yapp
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Parse/Yapp 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Parse 2>/dev/null || true
