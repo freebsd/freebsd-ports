@@ -1,0 +1,107 @@
+reportmagic/README
+reportmagic/rmlogo.gif
+reportmagic/analogo.gif
+reportmagic/samples/corpimg.ini
+reportmagic/samples/fineprint.html
+reportmagic/samples/images/back.jpg
+reportmagic/samples/images/bullet.gif
+reportmagic/samples/images/bullet2.gif
+reportmagic/samples/images/layout.gif
+reportmagic/samples/manyfile.ini
+reportmagic/samples/noframes.ini
+reportmagic/samples/onefile.ini
+reportmagic/samples/report.dat
+reportmagic/rmagic.sample
+reportmagic/sample.dat
+reportmagic/lang/ca/cdata.ini
+reportmagic/lang/ca/lang.ini
+reportmagic/lang/ca/rdata.ini
+reportmagic/lang/ca/rmagic.ini
+reportmagic/lang/de/cdata.ini
+reportmagic/lang/de/lang.ini
+reportmagic/lang/de/rdata.ini
+reportmagic/lang/de/rmagic.ini
+reportmagic/lang/en/cdata.ini
+reportmagic/lang/en/lang.ini
+reportmagic/lang/en/rdata.ini
+reportmagic/lang/en/rmagic.ini
+reportmagic/lang/es/cdata.ini
+reportmagic/lang/es/lang.ini
+reportmagic/lang/es/rdata.ini
+reportmagic/lang/es/rmagic.ini
+reportmagic/lang/fr/cdata.ini
+reportmagic/lang/fr/lang.ini
+reportmagic/lang/fr/rdata.ini
+reportmagic/lang/fr/rmagic.ini
+reportmagic/lang/hu/cdata.ini
+reportmagic/lang/hu/lang.ini
+reportmagic/lang/hu/rdata.ini
+reportmagic/lang/hu/rmagic.ini
+reportmagic/lang/INDEX.txt
+reportmagic/lang/it/cdata.ini
+reportmagic/lang/it/lang.ini
+reportmagic/lang/it/rdata.ini
+reportmagic/lang/it/rmagic.ini
+reportmagic/lang/sv/cdata.ini
+reportmagic/lang/sv/lang.ini
+reportmagic/lang/sv/rdata.ini
+reportmagic/lang/sv/rmagic.ini
+reportmagic/lang/zh/lang.ini
+reportmagic/lang/zh/rdata.ini
+reportmagic/rmagic.pl
+reportmagic/wadg/Errors.pm
+reportmagic/wadg/Formatter.pm
+reportmagic/wadg/HTMLWriter.pm
+reportmagic/wadg/rm/CROParser.pm
+reportmagic/wadg/rm/Graphs.pm
+reportmagic/wadg/rm/Report/GeneralSummary.pm
+reportmagic/wadg/rm/Report/HierarchicalReport.pm
+reportmagic/wadg/rm/Report/QuickSummary.pm
+reportmagic/wadg/rm/Report/RangeReport.pm
+reportmagic/wadg/rm/Report/TimeReport.pm
+reportmagic/wadg/rm/Report/TimeSummary.pm
+reportmagic/wadg/rm/Report.pm
+reportmagic/wadg/rm/Settings.pm
+share/doc/reportmagic/advanced.html
+share/doc/reportmagic/changes.html
+share/doc/reportmagic/changes0.html
+share/doc/reportmagic/changes1.html
+share/doc/reportmagic/columns.html
+share/doc/reportmagic/commands.html
+share/doc/reportmagic/config.html
+share/doc/reportmagic/datefmts.html
+share/doc/reportmagic/faq.html
+share/doc/reportmagic/filefmts.html
+share/doc/reportmagic/images/logo.gif
+share/doc/reportmagic/images/title.gif
+share/doc/reportmagic/index.html
+share/doc/reportmagic/inst_src.html
+share/doc/reportmagic/inst_xm.html
+share/doc/reportmagic/inst_xw.html
+share/doc/reportmagic/license.html
+share/doc/reportmagic/map.html
+share/doc/reportmagic/overview.html
+share/doc/reportmagic/repconf.html
+share/doc/reportmagic/reports.html
+share/doc/reportmagic/samples.html
+share/doc/reportmagic/siteindex.html
+share/doc/reportmagic/thanks.html
+share/doc/reportmagic/whatsnew.html
+@dirrm reportmagic/samples/images
+@dirrm reportmagic/samples
+@dirrm reportmagic/lang/ca
+@dirrm reportmagic/lang/de
+@dirrm reportmagic/lang/en
+@dirrm reportmagic/lang/es
+@dirrm reportmagic/lang/fr
+@dirrm reportmagic/lang/hu
+@dirrm reportmagic/lang/it
+@dirrm reportmagic/lang/sv
+@dirrm reportmagic/lang/zh
+@dirrm reportmagic/lang
+@dirrm reportmagic/wadg/rm/Report
+@dirrm reportmagic/wadg/rm
+@dirrm reportmagic/wadg
+@dirrm reportmagic
+@dirrm share/doc/reportmagic/images
+@dirrm share/doc/reportmagic

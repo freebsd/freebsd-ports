@@ -1,0 +1,32 @@
+--- Install.PL.orig	Sun Dec  3 17:30:27 2000
++++ Install.PL	Sun Dec  3 17:30:54 2000
+@@ -50,13 +50,13 @@
+ # example to use the version number in your path. 
+ # Make sure this remains in single quotes.
+ #
+-$DEST = '/usr/local/bin/rmagic-$(VERSION)/';
++$DEST = "$ENV{'PREFIX'}/reportmagic/";
+  
+ #
+ # Where do you want documentation to be installed?
+ # You can use string concatenation, as in this example, 
+ # to install the docs below the program.
+-$DOC = $DEST . 'docs/';
++$DOC = "$ENV{'PREFIX'}/share/doc/reportmagic/";
+ 
+ 
+ #
+@@ -257,7 +257,6 @@
+ } else {
+ 	print "\nInstallation complete.\n";
+ 	print "For help on using Report Magic see $DOC"."index.html.\n";
+-	print "You must agree to the license agreement at $DOC"."license.html before using Report Magic.\n";
+ } # end if
+ 
+ 
+@@ -299,4 +298,4 @@
+ 	return $rc;
+ } # end install
+ 
+-
++
