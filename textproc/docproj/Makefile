@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1998/12/18 04:55:26 jkh Exp $
+# $Id: Makefile,v 1.5 1998/12/18 10:55:54 jkh Exp $
 #
 
 DISTNAME=	docproj
@@ -14,9 +14,10 @@ DISTFILES=	# empty
 
 MAINTAINER=	nik@freebsd.org
 
-# sgmlformat brings in almost everything except for the modular stylesheets
 RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
-		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular
+		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
+		tidy:${PORTSDIR}/www/tidy \
+		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
