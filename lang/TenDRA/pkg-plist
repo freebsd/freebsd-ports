@@ -1455,6 +1455,7 @@ lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tcc_diag
 lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tcc_pp
 lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tcc_prof
 lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tcc_time
+lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tcc_time.orig
 lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tdf_ext
 lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tdp
 lib/TenDRA/machines/freebsd/%%OSRELEASE%%/80x86/env/tnc
