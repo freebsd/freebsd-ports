@@ -1,0 +1,29 @@
+@cwd /usr/local
+@exec mkdir -p %D/lib/mule/site-lisp
+@exec mkdir -p %D/lib/mule/lock
+@exec chmod 777 %D/lib/mule/lock
+bin/mule
+bin/m2ps
+lib/mule/19.27
+man/man1/mule.1
+man/man1/m2ps.1
+info/CCL
+info/ISO2022
+info/R2L
+info/XFONT
+info/antenews-jp
+info/canna-jp
+info/egg
+info/egg-jp
+info/egg-jp-1
+info/egg-jp-2
+info/kbd-trans
+info/languages
+info/m2ps
+info/mule
+info/mule-jp
+info/mule-jp-1
+info/mule-jp-2
+info/mule-jp-3
+info/quail
+info/terminology
