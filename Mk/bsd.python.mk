@@ -119,6 +119,10 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 _PYTHON_PORTBRANCH=		2.4
 _PYTHON_ALLBRANCHES=	2.4 2.3 2.2 2.1 # preferred first
 
+.if defined(USE_ZOPE)
+PYTHON_VERSION=		python2.3
+.endif
+
 .if defined(PYTHON_VERSION)
 _PYTHON_VERSION!=	${ECHO_CMD} "${PYTHON_VERSION}" | ${SED} 's/^python//'
 _PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
