@@ -1,0 +1,8 @@
+The md5 unit is part of the base packages for Free Pascal,
+a 32-bit Turbo Pascal/Delphi compatible compiler.  This unit
+provides MD5 hash routines.
+
+WWW: http://www.freepascal.org/
+
+--
+John Merryweather Cooper <coop9211@uidaho.edu>

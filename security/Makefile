@@ -80,6 +80,7 @@
     SUBDIR += finger_mysql
     SUBDIR += firewalk
     SUBDIR += flawfinder
+    SUBDIR += fpc-md5
     SUBDIR += fpm
     SUBDIR += fragroute
     SUBDIR += fragrouter
