@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1998/08/07 23:56:11 asami Exp $
+# $Id: Makefile,v 1.8 1998/08/12 06:29:24 asami Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -32,6 +32,11 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 		KDEDIR="${KDEDIR}"
 
 MAKE_ENV=	KDEDIR="${KDEDIR}"
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN= "Fails build"
+.endif
 
 pre-configure:
 		${CP} ${FILESDIR}/libtool ${FILESDIR}/ltmain.sh $(WRKSRC)/kpilot/libpilot
