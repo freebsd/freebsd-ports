@@ -7,7 +7,7 @@
 # Also update	ports/japanese/plan/ (ja-plan) when this port is updated
 
 PORTNAME=	plan
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES+=	deskutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}  \
 		ftp://plan.ftp.fu-berlin.de/
@@ -23,7 +23,7 @@ MAN1=		netplan.1 plan.1
 MAN4=		plan.4
 
 post-patch:
-	cd ${WRKSRC} && ${MV} config.h config.h.orig && ${SED} -e 's,%%PREFIX%%,$(PREFIX),' \
+	cd ${WRKSRC} && ${MV} config.h config.h.orig && ${SED} -e 's,%%PREFIX%%,${PREFIX},' \
 		< config.h.orig > config.h
 do-install:
 	@${MKDIR} ${PREFIX}/share/doc/plan/examples ;\
