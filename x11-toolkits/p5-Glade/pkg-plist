@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Types.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Install/Files.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Install/GtkGladeXMLTypemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Install/GtkGladeXMLDefs.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Install/PerlGtkGladeXMLInt.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Install/pkg.typemap
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/GladeXML/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/GladeXML/GladeXML.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/GladeXML/GladeXML.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/GladeXML/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML/Install
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Gtk/GladeXML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Gtk/GladeXML
