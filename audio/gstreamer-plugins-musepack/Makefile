@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	audio
+PORTREVISION=	1
 
 GST_PLUGIN=	musepack
 

@@ -202,7 +202,7 @@ LIB_DEPENDS+=	visual.0:${PORTSDIR}/graphics/libvisual
 
 # musepack
 .if ${GST_PLUGIN}=="musepack"
-LIB_DEPENDS+=	musepack.1:${PORTSDIR}/audio/libmusepack
+LIB_DEPENDS+=	musepack.2:${PORTSDIR}/audio/libmusepack
 .endif
 
 # hermes
@@ -275,7 +275,7 @@ LIB_DEPENDS+=	fame-0.9.1:${PORTSDIR}/multimedia/libfame
 
 # libmms
 .if ${GST_PLUGIN}=="libmms"
-LIB_DEPENDS+=   mms.0:${PORTSDIR}/multimedia/libmms
+LIB_DEPENDS+=   mms.0:${PORTSDIR}/net/libmms
 PLIST_FILES=	${GST_LIB_DIR}/libgstmms.so
 .endif
 
