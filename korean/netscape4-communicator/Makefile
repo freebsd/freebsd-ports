@@ -17,8 +17,7 @@ MAINTAINER?=	cjh@FreeBSD.org
 
 # ?= for ports that include this Makefile
 RUN_DEPENDS?=	${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
-RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf \
-		${X11BASE}/lib/X11/fonts/local/mzgt16h1.pcf.gz:${PORTSDIR}/korean/mizifont
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/INSTALL
