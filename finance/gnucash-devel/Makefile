@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -24,14 +24,12 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		db4.0:${PORTSDIR}/databases/db4 \
 		gw-standard.0:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
-		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
-		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${site_perl}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${site_perl}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote \
-		${site_perl}/Finance/QuoteHist.pm:${PORTSDIR}/misc/p5-Finance-QuoteHist \
+		${SITE_PERL}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
+		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote \
+		${SITE_PERL}/Finance/QuoteHist.pm:${PORTSDIR}/misc/p5-Finance-QuoteHist \
 		${X11BASE}/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
-
-site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
