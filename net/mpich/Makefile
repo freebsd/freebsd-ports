@@ -16,6 +16,8 @@ PATCHFILES=	6589
 
 MAINTAINER=	dbader@eece.unm.edu
 
+BROKEN=		"Does not package correctly"
+
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 

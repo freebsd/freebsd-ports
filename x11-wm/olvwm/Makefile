@@ -21,6 +21,8 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	green@FreeBSD.org
 
+BROKEN=		"Does not package correctly"
+
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 NO_WRKSUBDIR=	yes

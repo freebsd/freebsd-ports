@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	tiny-cobol
 
 MAINTAINER=	patrick@freebsd.org
 
+BROKEN=		"Does not package correctly"
+
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
