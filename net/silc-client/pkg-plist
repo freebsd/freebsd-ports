@@ -1,8 +1,25 @@
 bin/silc
 etc/silc/silc.conf.sample
+lib/libsilc-1.0.so.1
+lib/libsilc.la
+lib/libsilc.so
+lib/libsilcclient-1.0.so.1
+lib/libsilcclient.la
+lib/libsilcclient.so
+lib/silcsim/client/aes.sim.so
+lib/silcsim/client/blowfish.sim.so
+lib/silcsim/client/cast.sim.so
+lib/silcsim/client/md5.sim.so
+lib/silcsim/client/none.sim.so
+lib/silcsim/client/rc5.sim.so
+lib/silcsim/client/rc6.sim.so
+lib/silcsim/client/rsa.sim.so
+lib/silcsim/client/sha1.sim.so
+lib/silcsim/client/twofish.sim.so
 share/silc/help/action
 share/silc/help/admin
 share/silc/help/alias
+share/silc/help/attr
 share/silc/help/away
 share/silc/help/ban
 share/silc/help/beep
@@ -49,7 +66,6 @@ share/silc/help/motd
 share/silc/help/msg
 share/silc/help/names
 share/silc/help/nick
-share/silc/help/note
 share/silc/help/notice
 share/silc/help/oper
 share/silc/help/part
@@ -69,6 +85,8 @@ share/silc/help/server
 share/silc/help/set
 share/silc/help/shutdown
 share/silc/help/silcoper
+share/silc/help/smsg
+share/silc/help/stats
 share/silc/help/statusbar
 share/silc/help/toggle
 share/silc/help/topic
@@ -77,7 +95,6 @@ share/silc/help/unalias
 share/silc/help/unignore
 share/silc/help/unload
 share/silc/help/unquery
-share/silc/help/upgrade
 share/silc/help/users
 share/silc/help/version
 share/silc/help/watch
@@ -96,4 +113,6 @@ share/silc/themes/default.theme
 @dirrm share/silc/scripts
 @dirrm share/silc/help
 @dirrm share/silc
+@dirrm lib/silcsim/client
+@unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true

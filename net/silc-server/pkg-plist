@@ -1,4 +1,23 @@
 etc/silc/silcalgs.conf.sample
 etc/silc/silcd.conf.sample
+lib/libsilc-1.0.so.1
+lib/libsilc.la
+lib/libsilc.so
+lib/silcsim/server/aes.sim.so
+lib/silcsim/server/blowfish.sim.so
+lib/silcsim/server/cast.sim.so
+lib/silcsim/server/md5.sim.so
+lib/silcsim/server/none.sim.so
+lib/silcsim/server/rc5.sim.so
+lib/silcsim/server/rc6.sim.so
+lib/silcsim/server/rsa.sim.so
+lib/silcsim/server/sha1.sim.so
+lib/silcsim/server/twofish.sim.so
 sbin/silcd
+%%PORTDOCS%%share/examples/silc/README
+%%PORTDOCS%%share/examples/silc/silcd.prv
+%%PORTDOCS%%share/examples/silc/silcd.pub
+%%PORTDOCS%%@dirrm share/examples/silc
+@dirrm lib/silcsim/server
+@unexec rmdir %D/lib/silcsim 2>/dev/null || true
 @unexec rmdir %D/etc/silc 2>/dev/null || true

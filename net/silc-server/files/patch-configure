@@ -1,15 +1,6 @@
---- configure.orig	Thu Sep 19 18:57:28 2002
-+++ configure	Thu Sep 19 18:58:28 2002
-@@ -2626,7 +2626,7 @@
- # value. Do not edit!
- #
- silc_dist=silc-server
--SILC_DIST_SUBDIRS="lib silcd doc includes"
-+SILC_DIST_SUBDIRS="lib silcd includes"
- cat >>confdefs.h <<\EOF
- #define SILC_DIST_SERVER 1
- EOF
-@@ -11978,7 +11978,7 @@
+--- configure.orig	Tue Dec 31 17:49:16 2002
++++ configure	Tue Dec 31 17:49:55 2002
+@@ -14526,7 +14526,7 @@
        fi
        ;;
      *-*-freebsd*)
