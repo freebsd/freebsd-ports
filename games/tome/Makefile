@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tome
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	games
 MASTER_SITES=	http://t-o-m-e.net/dl/src/
-DISTNAME=	tome-230-src
+DISTNAME=	tome-231-src
 
 MAINTAINER=	eol1@yahoo.com
 COMMENT=	Roguelike dungeon exploration game based on JRR Tolkien's works
@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .if exists(${X11BASE}/lib/libX11.a) && !defined(WITHOUT_X11)
-USE_XLIB=      yes
+USE_XLIB=	yes
 .endif
 
 post-patch:
