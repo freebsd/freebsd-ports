@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jun 26 12:18:06 2002
++++ Makefile	Wed Jun 26 12:18:32 2002
+@@ -1,6 +1,5 @@
+-CC=gcc
+-CFLAGS= -I/usr/local/include -s -O2
+-LIBS= -L/usr/local/lib
++CFLAGS+=	-I${LOCALBASE}/include -s
++LIBS=	-L${LOCALBASE}/lib
+ 
+ all:
+ 	$(CC) $(CFLAGS) -o rc5pipe rc5pipe.c $(LIBS)

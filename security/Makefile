@@ -215,6 +215,7 @@
     SUBDIR += radiusniff
     SUBDIR += rain
     SUBDIR += rats
+    SUBDIR += rc5pipe
     SUBDIR += rid
     SUBDIR += rsaref
     SUBDIR += ruby-acl
