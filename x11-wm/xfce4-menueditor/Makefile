@@ -9,7 +9,8 @@ PORTNAME=	xfce4-menueditor
 PORTVERSION=	1.05
 PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	http://users.skynet.be/p0llux/files/
+MASTER_SITES=	http://users.skynet.be/p0llux/files/ \
+		http://www.bsd-blax.org/ports/mirrors/
 
 MAINTAINER=	matt@rimasec.net
 COMMENT=	Menu Editor for the XFce desktop environment
