@@ -7,8 +7,11 @@
 
 PORTNAME=	liedentd
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	ftp://softweyr.com/pub/softweyr/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= wes
+
 
 MAINTAINER=	wes@freebsd.org
 

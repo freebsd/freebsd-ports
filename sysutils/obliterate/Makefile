@@ -7,9 +7,11 @@
 
 PORTNAME=	obliterate
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.softweyr.com/pub/softweyr/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= wes
+
 
 MAINTAINER=	wes@softweyr.com
 
