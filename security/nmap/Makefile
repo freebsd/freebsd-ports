@@ -7,23 +7,31 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	3.00
-CATEGORIES=	security
-MASTER_SITES=	http://download.insecure.org/nmap/dist/  \
-		http://www.mobis.com/ajax/projects/
+PORTVERSION=	3.20
+CATEGORIES=	security ipv6
+MASTER_SITES=	http://download.insecure.org/nmap/dist/
 DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 COMMENT?=	Port scanning utility for large networks
 
+GNU_CONFIGURE=	yes
+USE_BZIP2=	yes
+
+MAN1?=		nmap.1
+
 .include <bsd.port.pre.mk>
 
-GNU_CONFIGURE=	yes
 .if ${OSVERSION} < 300004
 CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif
-MAN1?=		nmap.1
+
+CONFIGURE_TARGET=	-build=${ARCH}-portbld-freebsd${OSREL}
+.if ${PORTNAME} == "nmap"
+CONFIGURE_ARGS+=	--without-nmapfe
+.endif
+ALL_TARGET?=		nmap
+INSTALL_TARGET?=	install-nmap
 
 .if !target(post-install) && (${PORTNAME} == "nmap")
 post-install:
