@@ -1,0 +1,17 @@
+Libdict is a compact, ANSI C library which provides access to a set of
+generic and flexible ``dictionary'' data structures. All algorithms
+used in libdict have been optimized, and, with one very small exception,
+are not recursive but iterative. It was written by Farooq Mela, and is
+released under a BSD style licence.
+
+Libdict implements the following data structures: AVL Tree, Red-Black
+Tree, Splay Tree, Treap, Weight-balanced tree, Path-reduction tree,
+Hashtable (Chained).
+
+These structures can be used to efficiently store and retrieve key-data
+pairs. Each of these structures can be accessed using its direct API, or
+it can be accessed using a dictionary abstraction.  Despite it's name,
+libdict can be used to store any kind of data and any kind of key (provided
+it fits into a 'void' pointer on your system).
+
+WWW: http://home.earthlink.net/~smela1/libdict.html
