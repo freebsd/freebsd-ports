@@ -1,0 +1,4 @@
+       Logsurfer is a program that works on single textlines from
+       a logfile (or from standard input). It compares each  line
+       against  regular  expressions of a set of "rules" and per-
+       forms certain actions that are defined for this match.
