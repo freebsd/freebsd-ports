@@ -1,0 +1,14 @@
+lib/giFT/libOpenFT.la
+lib/giFT/libOpenFT.so
+%%PORTDOCS%%share/doc/giFT-OpenFT/AUTHORS
+%%PORTDOCS%%share/doc/giFT-OpenFT/COPYING
+%%PORTDOCS%%share/doc/giFT-OpenFT/ChangeLog
+%%PORTDOCS%%share/doc/giFT-OpenFT/INSTALL
+%%PORTDOCS%%share/doc/giFT-OpenFT/NEWS
+%%PORTDOCS%%share/doc/giFT-OpenFT/README
+%%PORTDOCS%%share/doc/giFT-OpenFT/TODO
+%%PORTDOCS%%share/giFT/OpenFT/OpenFT.conf.template
+%%PORTDOCS%%share/giFT/OpenFT/nodes
+@dirrm lib/giFT
+@dirrm %%PORTDOCS%%share/doc/giFT-OpenFT
+@dirrm %%PORTDOCS%%share/giFT/OpenFT

@@ -154,6 +154,7 @@
     SUBDIR += geta
     SUBDIR += ggsd
     SUBDIR += gicq
+    SUBDIR += gift-openft
     SUBDIR += giftcurs
     SUBDIR += gini
     SUBDIR += gift
