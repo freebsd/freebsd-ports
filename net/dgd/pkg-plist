@@ -1,0 +1,11 @@
+@srcdir /usr/ports/net/dgd/work
+@owner mud
+@group mudadmin
+@cwd /usr/local
+dgd/Copyright
+dgd/Credits
+dgd/README
+dgd/README.FreeBSD
+dgd/README.sites
+dgd/bin
+dgd/doc
