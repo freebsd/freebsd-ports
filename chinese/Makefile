@@ -57,6 +57,7 @@
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale
     SUBDIR += lunar
+    SUBDIR += metalist
     SUBDIR += mkisofs
     SUBDIR += moefonts-cid
     SUBDIR += moettf

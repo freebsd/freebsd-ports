@@ -1,0 +1,18 @@
+##############################################################################
+
+===> Metalist post-port installation instructions:
+
+  To complete the installation of this port, please perform following actions
+  as root (the "virtual user" should be the same as p5-DBIx-Password):
+  
+  mysqladmin -u root create slash           # "slash" is your database name
+  echo "Include %%LOCALBASE%%/slash/httpd/slash.conf" \
+    >> %%LOCALBASE%%/etc/apache/httpd.conf     # or manually insert this line
+  cd %%LOCALBASE%%/slash                       # change to the slash directory
+  bin/install-slashsite -u slash       	    # "slash" is virtual user's name
+  apachectl restart                         # restarts the apache server
+  
+  Note that the "install-slashsite" script will ask you of a "theme"; if you
+  are going to run a Traditional Chinese site, please answer "metalist".
+
+##############################################################################
