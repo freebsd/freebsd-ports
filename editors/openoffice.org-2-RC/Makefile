@@ -90,6 +90,7 @@ LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
 .if ${OSVERSION} < 500000
 # OOo requires gcc 3.3 (not systems's gcc)
+BUILD_DEPENDS+= gcc33:${PORTSDIR}/lang/gcc33
 USE_GCC=3.3 # make no sense yet
 CC=  gcc33
 CXX= g++33
