@@ -18,7 +18,7 @@ LIB_DEPENDS=	aspell.9:${PORTSDIR}/textproc/aspell
 
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
-USE_GNOMELIBS=	yes
+USE_GNOME=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gaspell ${PREFIX}/bin
