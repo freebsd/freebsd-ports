@@ -17,6 +17,6 @@ etc/ppp/firewall-masq.sample
 etc/ppp/firewall-standalone.sample
 etc/ppp/pap-secrets.sample
 etc/ppp/pppoe-server-options.sample
+@unexec cmp -s %D/etc/ppp/pppoe.conf.sample %D/etc/ppp/pppoe.conf && rm %D/etc/ppp/pppoe.conf
 etc/ppp/pppoe.conf.sample
-@unexec rmdir %D/etc/ppp 2>/dev/null || true
-@unexec echo "If you are permanently removing pppoe, you should also ``rm -Rf ${PKG_PREFIX}/etc/ppp'' removing any configuration and password files left." | /usr/bin/fmt
+@unexec rmdir %D/etc/ppp 2>/dev/null || echo "If you are permanently removing pppoe, you should also ``rm -Rf ${PKG_PREFIX}/etc/ppp'' removing any configuration and password files left." | /usr/bin/fmt
