@@ -15,13 +15,12 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	Diagram creation program, similar to Visio
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-gnome --enable-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
