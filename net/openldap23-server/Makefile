@@ -62,7 +62,7 @@ CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[013-9].*
 
 USE_OPENSSL=		yes
 USE_REINPLACE=		yes
-USE_LIBTOOL_VER=	15
+GNU_CONFIGURE=		yes
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
@@ -121,13 +121,13 @@ CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-null \
 			--enable-monitor
 
-WITH_BDB_VER?=		42
-
 .if defined(WITHOUT_BDB)
 CONFIGURE_ARGS+=	--with-ldbm-api=bcompat \
 			--disable-bdb
 .else
 CONFIGURE_ARGS+=	--with-ldbm-api=berkeley
+
+WITH_BDB_VER?=		42
 
 .if ${WITH_BDB_VER} == 42
 LIB_DEPENDS+=		db-4.2.2:${PORTSDIR}/databases/db42
@@ -182,7 +182,8 @@ CONFIGURE_ARGS+=	--enable-sql
 
 .if defined(WITH_SLAPI)
 LIB_DEPENDS+=		ltdl.4:${PORTSDIR}/devel/libltdl
-CONFIGURE_ARGS+=	--enable-slapi
+CONFIGURE_ARGS+=	--enable-slapi \
+			--enable-modules
 PLIST_SUB+=		SLAPI=""
 INSTALLS_SHLIB=		yes
 .else
@@ -261,8 +262,6 @@ pre-configure:
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
-	@${REINPLACE_CMD} -e '/^LIBTOOL=/s,\$$(top_builddir)/libtool,${LIBTOOL},g' \
-		${WRKSRC}/configure
 
 post-build:
 .for script in slapd slurpd

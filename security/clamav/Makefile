@@ -29,7 +29,6 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -89,10 +88,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
-
-pre-configure:
-	@${REINPLACE_CMD} -e '/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf
