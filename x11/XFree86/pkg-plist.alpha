@@ -498,6 +498,8 @@ lib/X11/config/Motif.tmpl
 lib/X11/config/NetBSD.cf
 lib/X11/config/Oki.cf
 lib/X11/config/OpenBSD.cf
+lib/X11/config/QNX.cf
+lib/X11/config/QNX.rules
 lib/X11/config/Server.tmpl
 lib/X11/config/ServerLib.tmpl
 lib/X11/config/Threads.tmpl
@@ -544,6 +546,8 @@ lib/X11/config/nec.cf
 lib/X11/config/necLib.rules
 lib/X11/config/necLib.tmpl
 lib/X11/config/noop.rules
+lib/X11/config/nto.cf
+lib/X11/config/nto.rules
 lib/X11/config/oldlib.rules
 lib/X11/config/os2.cf
 lib/X11/config/os2.rules
@@ -1293,6 +1297,7 @@ lib/X11/xkb/compat/accessx
 lib/X11/xkb/compat/basic
 lib/X11/xkb/compat/complete
 lib/X11/xkb/compat/default
+lib/X11/xkb/compat/group_led
 lib/X11/xkb/compat/iso9995
 lib/X11/xkb/compat/japan
 lib/X11/xkb/compat/keypad
@@ -1395,6 +1400,7 @@ lib/X11/xkb/symbols/ca
 lib/X11/xkb/symbols/ca_enhanced
 lib/X11/xkb/symbols/cs
 lib/X11/xkb/symbols/ctrl
+lib/X11/xkb/symbols/czsk
 lib/X11/xkb/symbols/de
 lib/X11/xkb/symbols/de_CH
 lib/X11/xkb/symbols/digital/lk
@@ -1413,6 +1419,7 @@ lib/X11/xkb/symbols/fujitsu/us
 lib/X11/xkb/symbols/gb
 lib/X11/xkb/symbols/group
 lib/X11/xkb/symbols/hu
+lib/X11/xkb/symbols/is
 lib/X11/xkb/symbols/iso9995-3
 lib/X11/xkb/symbols/it
 lib/X11/xkb/symbols/jp

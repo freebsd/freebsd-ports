@@ -505,6 +505,8 @@ lib/X11/config/Motif.tmpl
 lib/X11/config/NetBSD.cf
 lib/X11/config/Oki.cf
 lib/X11/config/OpenBSD.cf
+lib/X11/config/QNX.cf
+lib/X11/config/QNX.rules
 lib/X11/config/Server.tmpl
 lib/X11/config/ServerLib.tmpl
 lib/X11/config/Threads.tmpl
@@ -551,6 +553,8 @@ lib/X11/config/nec.cf
 lib/X11/config/necLib.rules
 lib/X11/config/necLib.tmpl
 lib/X11/config/noop.rules
+lib/X11/config/nto.cf
+lib/X11/config/nto.rules
 lib/X11/config/oldlib.rules
 lib/X11/config/os2.cf
 lib/X11/config/os2.rules
@@ -1302,6 +1306,7 @@ lib/X11/xkb/compat/accessx
 lib/X11/xkb/compat/basic
 lib/X11/xkb/compat/complete
 lib/X11/xkb/compat/default
+lib/X11/xkb/compat/group_led
 lib/X11/xkb/compat/iso9995
 lib/X11/xkb/compat/japan
 lib/X11/xkb/compat/keypad
@@ -1323,6 +1328,7 @@ lib/X11/xkb/geometry/everex
 lib/X11/xkb/geometry/fujitsu
 lib/X11/xkb/geometry/keytronic
 lib/X11/xkb/geometry/kinesis
+lib/X11/xkb/geometry/macintosh
 lib/X11/xkb/geometry/microsoft
 lib/X11/xkb/geometry/nec
 lib/X11/xkb/geometry/northgate
@@ -1341,6 +1347,7 @@ lib/X11/xkb/keycodes/digital/pc
 lib/X11/xkb/keycodes/fujitsu
 lib/X11/xkb/keycodes/hp
 lib/X11/xkb/keycodes/ibm
+lib/X11/xkb/keycodes/macintosh
 lib/X11/xkb/keycodes/sgi/indigo
 lib/X11/xkb/keycodes/sgi/indy
 lib/X11/xkb/keycodes/sgi/iris
@@ -1352,6 +1359,7 @@ lib/X11/xkb/keymap.dir
 lib/X11/xkb/keymap/amiga
 lib/X11/xkb/keymap/ataritt
 lib/X11/xkb/keymap/digital/us
+lib/X11/xkb/keymap/macintosh
 lib/X11/xkb/keymap/sgi/be
 lib/X11/xkb/keymap/sgi/bg
 lib/X11/xkb/keymap/sgi/ca
@@ -1401,6 +1409,7 @@ lib/X11/xkb/symbols/ca
 lib/X11/xkb/symbols/ca_enhanced
 lib/X11/xkb/symbols/cs
 lib/X11/xkb/symbols/ctrl
+lib/X11/xkb/symbols/czsk
 lib/X11/xkb/symbols/de
 lib/X11/xkb/symbols/de_CH
 lib/X11/xkb/symbols/digital/lk
@@ -1419,6 +1428,7 @@ lib/X11/xkb/symbols/fujitsu/us
 lib/X11/xkb/symbols/gb
 lib/X11/xkb/symbols/group
 lib/X11/xkb/symbols/hu
+lib/X11/xkb/symbols/is
 lib/X11/xkb/symbols/iso9995-3
 lib/X11/xkb/symbols/it
 lib/X11/xkb/symbols/jp
@@ -2595,6 +2605,7 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/xkb/symbols/sony
 @dirrm lib/X11/xkb/symbols/sgi
 @dirrm lib/X11/xkb/symbols/nec
+@dirrm lib/X11/xkb/symbols/macintosh
 @dirrm lib/X11/xkb/symbols/fujitsu
 @dirrm lib/X11/xkb/symbols/digital
 @dirrm lib/X11/xkb/symbols
@@ -2622,6 +2633,7 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/rstart/commands
 @dirrm lib/X11/rstart
 @dirrm lib/X11/proxymngr
+@dirrm lib/X11/locale/zh_TW.Big5
 @dirrm lib/X11/locale/zh_TW
 @dirrm lib/X11/locale/zh
 @dirrm lib/X11/locale/th_TH.TACTIS
