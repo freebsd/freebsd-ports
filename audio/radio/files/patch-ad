@@ -1,0 +1,36 @@
+*** socklib.c.orig	Mon May 17 01:46:25 1993
+--- socklib.c	Sat Jun 19 02:36:48 1999
+***************
+*** 76,82 ****
+  	}
+  #endif
+  
+! 	if (bind(s, &sin, sizeof sin) < 0) {
+  		sprintf(desc,"bind(%s)", sockdesc);
+  		perror(desc);
+  		close(s);
+--- 76,82 ----
+  	}
+  #endif
+  
+! 	if (bind(s, (struct sockaddr *)&sin, sizeof sin) < 0) {
+  		sprintf(desc,"bind(%s)", sockdesc);
+  		perror(desc);
+  		close(s);
+***************
+*** 88,94 ****
+  		setipaddr(remotename, &sin);
+  		sin.sin_port = htons(remoteport);
+  
+! 		if (connect(s, &sin, sizeof sin) < 0) {
+  			sprintf(desc, "connect(%s)", sockdesc);
+  			perror(desc);
+  			close(s);
+--- 88,94 ----
+  		setipaddr(remotename, &sin);
+  		sin.sin_port = htons(remoteport);
+  
+! 		if (connect(s, (struct sockaddr *)&sin, sizeof sin) < 0) {
+  			sprintf(desc, "connect(%s)", sockdesc);
+  			perror(desc);
+  			close(s);

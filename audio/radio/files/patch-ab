@@ -1,0 +1,36 @@
+*** broadcast.c.orig	Mon May 17 01:46:22 1993
+--- broadcast.c	Sat Jun 19 02:36:48 1999
+***************
+*** 490,496 ****
+  			for (i = 0; i < nbcaddr; i++) {
+  				/* Send data packets to all bcast ports */
+  				if (sendto(s, real_buf, HEADERSIZE+n, 0,
+! 					   &bcaddr[i], sizeof bcaddr[i]) !=
+  				                                HEADERSIZE+n) {
+  					perror("sendto");
+  				}
+--- 490,496 ----
+  			for (i = 0; i < nbcaddr; i++) {
+  				/* Send data packets to all bcast ports */
+  				if (sendto(s, real_buf, HEADERSIZE+n, 0,
+! 					   (struct sockaddr *)&bcaddr[i], sizeof bcaddr[i]) !=
+  				                                HEADERSIZE+n) {
+  					perror("sendto");
+  				}
+***************
+*** 522,528 ****
+  			if (select(ctls+1, &inputav, 0, 0, &zerotime) == 1) {
+  				ctlsinsize = sizeof(ctlsin);
+  				n = recvfrom(ctls, buf, BUFFERSIZE, 0,
+! 					     &ctlsin, &ctlsinsize);
+  				if (n < 0) {
+  					perror("recvfrom");
+  					exit(1);
+--- 522,528 ----
+  			if (select(ctls+1, &inputav, 0, 0, &zerotime) == 1) {
+  				ctlsinsize = sizeof(ctlsin);
+  				n = recvfrom(ctls, buf, BUFFERSIZE, 0,
+! 					     (struct sockaddr *)&ctlsin, &ctlsinsize);
+  				if (n < 0) {
+  					perror("recvfrom");
+  					exit(1);

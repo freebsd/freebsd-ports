@@ -1,0 +1,182 @@
+*** radio.c.orig	Mon May 17 01:46:23 1993
+--- radio.c	Sat Jun 19 02:36:48 1999
+***************
+*** 102,107 ****
+--- 102,121 ----
+  void sigpoll_handler();
+  #endif /* USE_SUN */
+  
++ #ifdef __FreeBSD__
++ #include <string.h>
++ #include <machine/soundcard.h>
++ 
++ #define AUDIO_IODEV     "/dev/audio"
++ #define AUDIO_CTLDEV    "/dev/audioctl"
++ 
++ int interruptable = 1;
++ int actlfd = -1;
++ int afd = -1;
++ 
++ void sigpoll_handler();
++ #endif /* __FreeBSD__ */
++ 
+  #ifdef USE_HP
+  #include <netinet/tcp.h>
+  #include <sys/audio.h>
+***************
+*** 380,386 ****
+  		fromlen = sizeof(from);
+  		buf = real_buf;
+  		n = recvfrom(curs, buf, HEADERSIZE + BUFFERSIZE, 0,
+! 			     (struct stockaddr *)&from, &fromlen);
+  		if (n <= 0) {
+  			if (n == 0)
+  				continue; /* Ignore empty packets */
+--- 394,400 ----
+  		fromlen = sizeof(from);
+  		buf = real_buf;
+  		n = recvfrom(curs, buf, HEADERSIZE + BUFFERSIZE, 0,
+! 			     (struct sockaddr *)&from, &fromlen);
+  		if (n <= 0) {
+  			if (n == 0)
+  				continue; /* Ignore empty packets */
+***************
+*** 408,414 ****
+  				case 'e':		/* Echo */
+  					buf[6] = 'E';
+  					sendto(curs, buf, n, 0,
+! 					       &from, fromlen);
+  					break;
+  				case 'S':	/* Status from broadcast */
+  					break;
+--- 422,428 ----
+  				case 'e':		/* Echo */
+  					buf[6] = 'E';
+  					sendto(curs, buf, n, 0,
+! 					       (struct sockaddr *)&from, fromlen);
+  					break;
+  				case 'S':	/* Status from broadcast */
+  					break;
+***************
+*** 452,458 ****
+  							"sending info '%s'\n",
+  							buf);
+  					sendto(curs, buf, strlen(buf), 0,
+! 					       &from, fromlen);
+  					break;
+  #ifndef USE_NX /* XXX I don't know how to close_speaker() on the NeXT */
+  				case 'p':		/* Pause */
+--- 466,472 ----
+  							"sending info '%s'\n",
+  							buf);
+  					sendto(curs, buf, strlen(buf), 0,
+! 					       (struct sockaddr *)&from, fromlen);
+  					break;
+  #ifndef USE_NX /* XXX I don't know how to close_speaker() on the NeXT */
+  				case 'p':		/* Pause */
+***************
+*** 585,590 ****
+--- 599,612 ----
+  				akt_buf = (akt_buf + 1) % NUM_BUFFER;
+  			}
+  #endif /* USE_NX */
++ #ifdef __FreeBSD__
++ 			if (!filter) {
++ 				if (write(afd, buf, n) != n) {
++ 					perror("write afd");
++ 					break;
++ 				}
++ 			}
++ #endif /* __FreeBSD__ */
+  #ifdef USE_SUN
+  			if (!filter) {
+  				if (write(afd, buf, n) != n) {
+***************
+*** 716,721 ****
+--- 738,806 ----
+  
+  #endif /* USE_AL */
+  
++ #ifdef __FreeBSD__
++ 
++ void open_speaker()
++ {	
++ 	char name[30] = "/dev/mixer";
++ 	int foo, bar, baz, dev;
++ 	int devmask = 0, recmask = 0, recsrc = 0;
++ 	char *names[SOUND_MIXER_NRDEVICES] = SOUND_DEVICE_NAMES;
++ 
++ 	/* Write to AUDIO_IODEV */
++ 	if ((afd = open(AUDIO_IODEV, O_WRONLY)) < 0) {
++ 		perror(AUDIO_IODEV);
++ 		exit(1);
++ 	}
++ 
++ 	/* Set the volume */
++ 	if (volume >= 0) {
++ 		if ((baz = open(name, O_RDWR)) < 0) {
++ 			perror(name);
++ 			exit(1);
++ 		}
++ 		if (ioctl(baz, SOUND_MIXER_READ_DEVMASK, &devmask) == -1) {
++ 			perror("SOUND_MIXER_READ_DEVMASK");
++ 			exit(-1);
++ 		}
++ 		if (ioctl(baz, SOUND_MIXER_READ_RECMASK, &recmask) == -1) {
++ 			perror("SOUND_MIXER_READ_RECMASK");
++ 			exit(-1);
++ 		}
++ 		if (ioctl(baz, SOUND_MIXER_READ_RECSRC, &recsrc) == -1) {
++ 			perror("SOUND_MIXER_READ_RECSRC");
++ 			exit(-1);
++ 		}
++ 
++ 		for (foo = 0; foo < SOUND_MIXER_NRDEVICES &&
++ 					strcmp(names[foo],"vol"); foo++);
++ 
++ 		if (foo >= SOUND_MIXER_NRDEVICES) {
++ 			close(baz);
++ 			perror("VOLUME_ERROR");
++ 		} else {
++ 			if (volume < 0) volume = 0;
++ 			if (volume > 100) volume = 100;
++ 			bar = volume | (volume << 8);
++ 			if (pdebug)
++ 				printf("Setting the mixer %s to %d.\n",
++ 						names[foo], volume);
++ 			if (ioctl(baz, MIXER_WRITE(foo), &bar) == -1)
++ 				perror("WRITE_MIXER");
++ 			close(baz);
++ 		}
++ 
++ 	}
++ }
++ 
++ void close_speaker()
++ {
++ 	close(afd);
++ 	afd = actlfd = -1;
++ }
++ 
++ #endif /* __FreeBSD__ */
++ 
+  #ifdef USE_SUN
+  
+  void open_speaker()
+***************
+*** 1000,1006 ****
+  	else
+  	    grpaddr.s_addr = inet_addr(group);
+  
+! 	if (!IN_MULTICAST(grpaddr.s_addr)) {
+  		fprintf(stderr, "Bad multicast group: %s\n", group);
+  		exit(1);
+  	}
+--- 1085,1091 ----
+  	else
+  	    grpaddr.s_addr = inet_addr(group);
+  
+! 	if (!IN_MULTICAST(ntohl(grpaddr.s_addr))) {
+  		fprintf(stderr, "Bad multicast group: %s\n", group);
+  		exit(1);
+  	}
