@@ -1,0 +1,13 @@
+--- mime-en.texi.orig	Wed Jan 27 23:12:41 1999
++++ mime-en.texi	Tue Mar  9 06:10:11 1999
+@@ -2,6 +2,10 @@
+ @c Generated automatically from mime-en.sgml by sinfo 3.7.
+ @setfilename mime-en.info
+ @settitle{FLIM 1.12 Reference Manual about MIME Features}
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* mime-en: (mime-en).		MIME features for GNU Emacs. (English)
++@end direntry 
+ @titlepage
+ @title FLIM 1.12 Reference Manual about MIME Features
+ @author MORIOKA Tomohiko <morioka@@jaist.ac.jp>

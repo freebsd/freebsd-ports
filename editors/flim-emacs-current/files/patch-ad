@@ -1,0 +1,13 @@
+--- mime-ja.texi.orig	Wed Jan 27 23:12:42 1999
++++ mime-ja.texi	Tue Mar  9 06:11:05 1999
+@@ -2,6 +2,10 @@
+ @c Generated automatically from mime-ja.sgml by sinfo 3.7.
+ @setfilename mime-ja.info
+ @settitle{FLIM 1.12 MIME 機能説明書}
++@dircategory The Emacs editor and associated tools 
++@direntry 
++* mime-ja: (mime-ja).		MIME features for GNU Emacs. (Japanese)
++@end direntry 
+ @titlepage
+ @title FLIM 1.12 MIME 機能説明書
+ @author 守岡 知彦 <morioka@@jaist.ac.jp>
