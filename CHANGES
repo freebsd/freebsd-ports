@@ -10,6 +10,12 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20041109:
+AUTHOR: gnome@FreeBSD.org
+  The way GConf schema files are handled has been changed to use the new
+  GCONF_SCHEMAS macro (similar to MAN).  Details about the new macro can be
+  found at http://www.FreeBSD.org/gnome/docs/porting.html and bsd.gnome.mk.
+
 20040803:
 AUTHOR:	ade@FreeBSD.org
   As part of the ongoing autotools cleanup, devel/autoconf has been
