@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	linuxthreads
-PORTVERSION=	2.1.3
-PORTREVISION=	2
+PORTVERSION=	2.2.3
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
 DISTNAME=	glibc-linuxthreads-${PORTVERSION}
+
+NO_FILTER_SHLIBS = true
 
 MAINTAINER=	tegge@freebsd.org
 
@@ -27,7 +29,7 @@ BROKEN="Requires FreeBSD 4.0 or newer"
 threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
 	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
 	lclone.c libc_calls.c libc_thread.c sched.c uthread_file.c \
-	wraputhread.c
+	wraputhread.c localtime.c
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 SRC_BASE=	/usr/src
