@@ -1,0 +1,8 @@
+--- sys-types.h.orig	Wed Oct  9 04:26:35 1996
++++ sys-types.h	Sun Mar 24 03:35:27 2002
+@@ -83,4 +83,5 @@
+ union wait;
+ 
++#define __NO_GNUC_VA_LIST	/* <machine/ansi.h> defines __gnuc_va_list */
+ /* Get size_t and wchar_t.  */
+ #include <stddef.h>
