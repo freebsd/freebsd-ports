@@ -1,19 +1,19 @@
 # Ports collection Makefile for:	MIT Kerberos V
 # Version required:			1.0.5
 # Date created:				6/5/1998
-# Whom:					n@nectar.com
+# Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.7 1998/11/07 02:33:44 nectar Exp $
+# $Id: Makefile,v 1.8 1998/11/14 09:43:28 asami Exp $
 #
 
-DISTNAME=		krb5-1.0.5
+DISTNAME=		krb5-1.0.6
 CATEGORIES=		security
 MASTER_SITES=		# empty here.  See below for real setting.
-DISTFILES=		krb5-1.0.5.src.tar.gz       \
-			krb5-1.0.5.doc.tar.gz       \
-			krb5-1.0.5.crypto.tar.gz
+DISTFILES=		krb5-1.0.6.src.tar.gz       \
+			krb5-1.0.6.doc.tar.gz       \
+			krb5-1.0.6.crypto.tar.gz
 
-MAINTAINER=		n@nectar.com
+MAINTAINER=		nectar@FreeBSD.ORG
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
@@ -28,7 +28,7 @@ DIST_SUBDIR=		krb5
 #	we fetch from a MASTER_SITE outside the USA,
 #	and we don't need to deal with any "secret" subdirectory,
 #	so we use an empty awk script.
-README_KRB5=		README.KRB5-1.0.5
+README_KRB5=		README.KRB5-1.0.6
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES"
 MASTER_SITES=		ftp://athena-dist.mit.edu/pub/kerberos/
 AWK_SCRIPT=		'(/1\) Change into the directory/) { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
@@ -202,3 +202,6 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
+
+# XXX deal with these patches:
+# patch-aw
