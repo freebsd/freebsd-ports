@@ -49,6 +49,11 @@ NO_LATEST_LINK=	yes
 
 WXGTK_FLAVOR?=	gtk2
 
+.if ${WXGTK_FLAVOR} == "gtk2"
+PORTREVISION=	1
+CONFLICTS=	wxgtk2-contrib-devel-2.5.2
+.endif
+
 .if ${WXGTK_FLAVOR} != "gtk2-common"
 RUN_DEPENDS=	${X11BASE}/include/wx-2.5/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk2-common-devel
 .endif
