@@ -10,7 +10,7 @@ sendmail	%%PREFIX%%/libexec/nullmailer/sendmail
 send-mail	%%PREFIX%%/libexec/nullmailer/sendmail
 mailq		%%PREFIX%%/libexec/nullmailer/mailq
 
-WARNING! It will couse problem in case delivering to local recipients.
+WARNING! It will cause problem in case delivering to local recipients.
 Also man nullmailer-send(8) for more details
 
 ==================================================================
