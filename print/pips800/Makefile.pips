@@ -288,8 +288,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's;/dev/\(usb/\)\{0,1\}lp0;/dev/ulpt0;' \
 		-e 's,^SUBDIRS = rc$$,#&,' \
 		${WRKSRC}/ekpd/Makefile.in
+.if ${PRTYPE} == g900
 	${REINPLACE_CMD} -e 's,^\(enum Ink\)set\(_Id inkbox_get_inkid\),\1box\2,' \
 		${WRKSRC}/ekpstm/inkbox.h
+.endif
 .if ${DIST_TYPE} != cups
 	${REINPLACE_CMD} -e 's,/etc/ekpdrc,${PREFIX}&,' ${WRKSRC}/src/setup.c
 .endif
