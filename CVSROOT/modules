@@ -2847,6 +2847,7 @@ imapproxy	ports/net/imapproxy
 imaze		ports/games/imaze
 imc		ports/graphics/imc
 imcom		ports/net/imcom
+imgseek		ports/graphics/imgseek
 imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
