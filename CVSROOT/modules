@@ -1341,6 +1341,7 @@ detachtty	ports/misc/detachtty
 detex		ports/print/detex
 devel-replay	ports/devel/replay
 devhelp		ports/devel/devhelp
+devilspie	ports/x11-wm/devilspie
 devtodo		ports/devel/devtodo
 dfm		ports/x11-fm/dfm
 dft++		ports/science/dft++
