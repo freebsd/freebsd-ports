@@ -15,6 +15,7 @@ include/xmedcon/m-debug.h
 include/xmedcon/m-defs.h
 include/xmedcon/m-dicm.h
 include/xmedcon/m-ecat64.h
+include/xmedcon/m-ecat72.h
 include/xmedcon/m-error.h
 include/xmedcon/m-fancy.h
 include/xmedcon/m-files.h
