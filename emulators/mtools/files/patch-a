@@ -1,6 +1,15 @@
---- Makefile.in.orig	Thu May  7 02:49:14 1998
-+++ Makefile.in	Thu May  7 02:49:48 1998
-@@ -102,7 +102,7 @@
+--- Makefile.in.orig	Wed Jul  1 17:35:25 1998
++++ Makefile.in	Wed Jul  1 17:41:26 1998
+@@ -55,7 +55,7 @@
+ .SUFFIXES: .o .c
+ .SUFFIXES: .o .c .cpp
+ 
+-MAN1 = floppyd.1 mattrib.1 mbadblocks.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 mdir.1 \
++MAN1 = mattrib.1 mbadblocks.1 mcd.1 mcopy.1 mdel.1 mdeltree.1 mdir.1 \
+ mdu.1 mformat.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 mmove.1 mpartition.1 \
+ mrd.1 mread.1 mren.1 mshowfat.1 mtoolstest.1 mtools.1 mtype.1 mzip.1
+ MAN1EXT	= 1
+@@ -108,7 +108,7 @@
  xdf_io.c mkmanifest.c
  
  
@@ -9,7 +18,7 @@
  
  LINKS=mattrib mcd mcopy mdel mdeltree mdir mdu mformat minfo mlabel \
  mmd mmount mmove mpartition mrd mread mren mtype mtoolstest mshowfat \
-@@ -200,11 +200,11 @@
+@@ -218,11 +218,11 @@
  install-scripts: $(bindir)/mtools
  	@$(top_srcdir)/mkinstalldirs $(bindir)
  	@for j in $(SCRIPTS) ; do \
