@@ -9,20 +9,21 @@ DISTFILES=	${DISTNAME}.tar.gz
 PATCHFILES=	1.0.9-1.0.9.1.gz
 MASTER_SITES=	epsilon.me.chalmers.se:
 PATCH_SITES=	epsilon.me.chalmers.se:patches/
-NCFTP=		env DOTDIR=${.CURDIR} ncftp
-NCFTPFLAGS=	-V2
+NCFTP=		env DOTDIR=${WRKDIR} ncftp
+NCFTPFLAGS=
 CATEGORIES=	networking languages
 
 MAINTAINER=	adam@veda.is
 
 .if ${PATCHFILES} != ""
+PATCH_PRFX=	${DISTNAME}/
 PATCHLEVEL!=	echo ${PATCHFILES} | sed 's/^.*\.\(.*\)\.gz$$/\1/'
 PKGNAME=	${DISTNAME}.${PATCHLEVEL}
 .endif
 WRKSRC=		${WRKDIR}/dgd/src
 
 pre-fetch:
-	@ln -f ncftprc .ncftprc
+	@ln -fs ${.CURDIR}/ncftprc ${WRKDIR}/.ncftprc
 
 pre-patch:
 	@ln -fs .. ${WRKSRC}/dgd
