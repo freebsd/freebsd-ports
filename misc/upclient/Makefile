@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upclient
-PORTVERSION=	5.0.b5
+PORTVERSION=	5.0.b6
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.wonko.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
@@ -16,7 +16,10 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
+
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 ALL_TARGET=	bsd
 BUILD_WRKSRC=	${WRKSRC}/src
 
@@ -29,9 +32,18 @@ MAN8=		upclient.8
 #
 
 DOC_FILES=	AUTHORS COPYING FAQ HISTORY INSTALL README TODO
+DOC_FILES+=	doc/UptimesProtocol5
 DOC_FILES+=	HISTORY-BETA
 
 .include <bsd.port.pre.mk>
+
+# Post-extract
+#
+
+post-extract: rename-doc
+
+rename-doc:
+	@${MV} ${WRKSRC}/doc/"Uptimes Protocol 5" ${WRKSRC}/doc/UptimesProtocol5
 
 # Post-patch
 #
@@ -40,7 +52,9 @@ post-patch: patch-prefix patch-pkgmessage
 
 patch-prefix:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/scripts/upchk ${WRKSRC}/src/Makefile
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
+		${WRKSRC}/src/Makefile
 
 patch-pkgmessage:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
@@ -48,11 +62,12 @@ patch-pkgmessage:
 # Install
 #
 
-do-install: install-program install-man install-sample install-script
+do-install: install-program install-man install-sample install-script \
+	install-locale
 
 install-program:
 	@${INSTALL_PROGRAM} -g kmem -m 2555 ${WRKSRC}/src/products/upclient \
-		${PREFIX}/sbin/upclient
+		${PREFIX}/sbin
 
 install-man:
 	@${INSTALL_MAN} ${WRKSRC}/src/products/upclient.8 \
@@ -63,7 +78,11 @@ install-sample:
 		${PREFIX}/etc/upclient.conf.sample
 
 install-script:
-	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${PREFIX}/sbin/upchk
+	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
+		${PREFIX}/sbin
+
+install-locale:
+	@cd ${WRKSRC}/src; ${GMAKE} install-locales
 
 # Post-install
 #

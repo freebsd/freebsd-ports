@@ -1,0 +1,20 @@
+--- scripts/clientchk.orig	Thu Oct 24 18:48:35 2002
++++ scripts/clientchk	Wed Dec 18 02:41:57 2002
+@@ -31,7 +31,7 @@
+ # variables:
+ 
+ # client: This is the path to the client program.
+-client="/usr/sbin/upclient"
++client="%%PREFIX%%/sbin/upclient"
+ 
+ # clientpid: This is the path to the client PID file.
+ clientpid="/var/run/upclient.pid"
+@@ -43,7 +43,7 @@
+ 
+ # chdirectroy: If we need to change directory before running the client,
+ #  enter it here.
+-chdirectory=""
++chdirectory="/"
+ 
+ # You can leave deletefiles or chdirector empty if you don't need them.
+ # However, you NEED client and clientpid.
