@@ -1,3 +1,4 @@
+bin/nspr-config
 include/nspr/md/_aix.h
 include/nspr/md/_aix32.cfg
 include/nspr/md/_aix64.cfg
