@@ -203,6 +203,7 @@
     SUBDIR += knights
     SUBDIR += kobodeluxe
     SUBDIR += kpacman
+    SUBDIR += ktritoc
     SUBDIR += kwappen
     SUBDIR += kxl
     SUBDIR += ladder
