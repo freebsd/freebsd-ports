@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xlhtml
-PORTVERSION=	0.2.7.2
+PORTVERSION=	0.2.8
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.xlhtml.org/
 DISTNAME=	xlHtml-${PORTVERSION}
@@ -17,6 +17,8 @@ LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cole"
+
+MAN1=		pptHtml.1 xlHtml.1
 
 pre-build:
 	@${RM} -f ${WRKSRC}/cole.h
