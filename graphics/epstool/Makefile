@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	3.05
+PORTVERSION=	3.06
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/old/
 MASTER_SITE_SUBDIR=	nonfree/support/ghostscript/ghostgum
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,7 +18,6 @@ COMMENT=	Create or extract preview bitmaps in EPS files
 
 USE_GHOSTSCRIPT_RUN=	yes
 
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	MAKE="${GMAKE}" CC="${CC}" CCAUX="${CC}" CDEBUG="${CFLAGS}" \
@@ -36,9 +36,6 @@ pre-everything::
 	@${ECHO_MSG} "      AFPL Postscript interpreter instead of GNU one"
 	@${ECHO_MSG} ""
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|make -f|$$(MAKE) -f|g' ${WRKSRC}/src/unix.mak
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/epstool ${PREFIX}/bin
