@@ -4,7 +4,7 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1997/08/10 22:31:27 fenner Exp $
+# $Id: Makefile,v 1.8 1997/11/26 01:41:36 jseger Exp $
 #
 
 DISTNAME=       rarbsd
@@ -47,3 +47,7 @@ do-install:
 			${PREFIX}/share/rar/dos.sfx
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+STRIP=
+.endif
