@@ -6,20 +6,16 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.1
 CATEGORIES=	net security
-MASTER_SITES=	http://www.silcnet.org/download/ \
-		ftp://ftp.silcnet.org/pub/silc/ \
-		http://ftp.silcnet.org/ \
+MASTER_SITES=	http://www.silcnet.org/download/client/sources/ \
+		ftp://ftp.silcnet.org/silc/client/sources/ \
+		http://www.planetmirror.com/pub/silcnet/client/sources/ \
+		ftp://ftp.au.silcnet.org/pub/silcnet/client/sources/ \
+		http://the.wiretapped.net/security/network-security/silc/client/sources/ \
+		ftp://ftp.wiretapped.net/pub/security/network-security/silc/client/sources/ \
 		http://munitions.vipul.net/software/mirrors/silc/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/ \
-		http://www.au.silcnet.org/download/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/ \
-		http://www.planetmirror.com/pub/silcnet/ \
-		http://the.wiretapped.net/security/network-security/silc/ \
-		ftp://ftp.wiretapped.net/pub/security/network-security/silc/ \
-		http://www.no.silcnet.org/download/ \
-		ftp://ftp.no.silcnet.org/pub/silc/
+		ftp://ftp.no.silcnet.org/pub/silc/client/sources/
 PKGNAMESUFFIX=	-client
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
