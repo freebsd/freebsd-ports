@@ -36,7 +36,7 @@ VERSION_SOUND_C!=	ident < ${SRCPREFIX}/sys/dev/sound/pcm/sound.c | \
 VERSION_SOUND_C=
 .endif
 
-VERSION_SOUND_C_MINOR:=	${VERSION_SOUND_C:S/^1.//:S/^17.2.//}
+VERSION_SOUND_C_MINOR:=	${VERSION_SOUND_C:S/^1.//:C/\.[0-9\.]+$//}
 
 .if ${OSVERSION} < 410000
 IGNORE=		"FreeBSD 3.*, 4.0 are not supported"
