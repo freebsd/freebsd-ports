@@ -23,8 +23,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/SWIG
 USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 
 PINSTALL_PLIST=	${WRKDIR}/pinstall-plist
+
+post-patch:
+	${REINPLACE_CMD} "s/PYTHON_VERSION/${PYTHON_VERSION}/" ${WRKSRC}/Makefile
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/../M2Crypto
