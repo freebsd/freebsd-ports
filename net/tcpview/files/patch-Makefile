@@ -115,19 +115,19 @@
 -	    install -m 755 -g $(GROUP) BGP $(FILTER_DIR); \
 -	    install -m 755 -g $(GROUP) telnet $(FILTER_DIR); \
 -	    install -m 755 -g $(GROUP) generic $(FILTER_DIR); \
-+	    ${INSTALL_PROGRAM} -c tcpview $(DESTDIR)$(BINDEST); \
-+	    ${INSTALL_PROGRAM} -c BGP $(FILTER_DIR); \
-+	    ${INSTALL_PROGRAM} -c telnet $(FILTER_DIR); \
-+	    ${INSTALL_PROGRAM} -c generic $(FILTER_DIR); \
++	    ${BSD_INSTALL_PROGRAM} -c tcpview $(DESTDIR)$(BINDEST); \
++	    ${BSD_INSTALL_PROGRAM} -c BGP $(FILTER_DIR); \
++	    ${BSD_INSTALL_PROGRAM} -c telnet $(FILTER_DIR); \
++	    ${BSD_INSTALL_PROGRAM} -c generic $(FILTER_DIR); \
  	cd ../DOC ; \
 -	install -m 666 -c hosts $(TCPVIEW_DIR); \
 -	install -m 666 -c manuf $(TCPVIEW_DIR); \
 -	install -c tcpdump.1 $(DESTDIR)$(TCPDUMP_MANDEST); \
 -	install -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
 -	install -c tcpslice.1 $(DESTDIR)$(TCPSLICE_MANDEST)
-+	${INSTALL_DATA} -c hosts $(TCPVIEW_DIR); \
-+	${INSTALL_DATA} -c manuf $(TCPVIEW_DIR); \
-+	${INSTALL_MAN} -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
++	${BSD_INSTALL_DATA} -c hosts $(TCPVIEW_DIR); \
++	${BSD_INSTALL_DATA} -c manuf $(TCPVIEW_DIR); \
++	${BSD_INSTALL_MAN} -c tcpview.1 $(DESTDIR)$(TCPVIEW_MANDEST); \
 +#	install -m 444 -c tcpdump.1 $(DESTDIR)$(TCPDUMP_MANDEST); \
 +#	install -m 444 -c tcpslice.1 $(DESTDIR)$(TCPSLICE_MANDEST)
  
