@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	wmbattery
-PORTVERSION=	1.19
+PORTVERSION=	1.20
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/
+MASTER_SITES=	http://kitenet.net/programs/code/wmbattery/ \
+		http://kitenet.net/programs/code/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org

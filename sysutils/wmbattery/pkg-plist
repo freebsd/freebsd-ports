@@ -1,19 +1,20 @@
-share/wmbattery/icons/face.xpm
+bin/wmbattery
+%%PORTDOCS%%share/doc/wmbattery/README
+%%PORTDOCS%%share/doc/wmbattery/TODO
+share/wmbattery/icons/battery_blink.xpm
 share/wmbattery/icons/battery_high.xpm
 share/wmbattery/icons/battery_low.xpm
 share/wmbattery/icons/battery_medium.xpm
 share/wmbattery/icons/battery_none.xpm
+share/wmbattery/icons/bigfont.xpm
 share/wmbattery/icons/charging.xpm
 share/wmbattery/icons/dial_bright.xpm
 share/wmbattery/icons/dial_dim.xpm
+share/wmbattery/icons/face.xpm
 share/wmbattery/icons/nocharging.xpm
+share/wmbattery/icons/plugged.xpm
 share/wmbattery/icons/smallfont.xpm
 share/wmbattery/icons/unplugged.xpm
-share/wmbattery/icons/plugged.xpm
-share/wmbattery/icons/bigfont.xpm
-%%PORTDOCS%%share/doc/wmbattery/README
-%%PORTDOCS%%share/doc/wmbattery/TODO
 @dirrm share/wmbattery/icons
 @dirrm share/wmbattery
 %%PORTDOCS%%@dirrm share/doc/wmbattery
-bin/wmbattery
