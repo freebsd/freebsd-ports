@@ -1,0 +1,12 @@
+--- src/bin/iclass/direct.c.orig	Thu May 27 21:46:51 1999
++++ src/bin/iclass/direct.c	Thu May 27 21:47:19 1999
+@@ -30,7 +30,9 @@
+ #include <OS/string.h>
+ #include <OS/types.h>
+ #include <stddef.h>
++#if __FreeBSD_cc_version < 400002
+ #include <osfcn.h>
++#endif
+ #include <pwd.h>
+ #include <string.h>
+ #include <stdlib.h>

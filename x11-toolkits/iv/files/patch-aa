@@ -1,6 +1,16 @@
---- src/bin/ibuild/ibcmds.c.orig	Sat Dec 12 13:33:25 1992
-+++ src/bin/ibuild/ibcmds.c	Sun Jan 17 17:48:19 1999
-@@ -2407,9 +2407,9 @@
+--- src/bin/ibuild/ibcmds.c.orig	Fri Dec 11 22:33:25 1992
++++ src/bin/ibuild/ibcmds.c	Thu May 27 21:36:47 1999
+@@ -86,7 +86,9 @@
+ #undef FileChooser
+ #define FileChooser _lib_iv(FileChooser)
+ 
++#if __FreeBSD_cc_version < 400002
+ #include <osfcn.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stream.h>
+@@ -2407,9 +2409,9 @@
  	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
          EditorInfo* removed = (EditorInfo*) toolsdialog.Removed();
  

@@ -1,0 +1,12 @@
+--- src/bin/ibuild/ibdialogs.c.orig	Thu May 27 21:41:29 1999
++++ src/bin/ibuild/ibdialogs.c	Thu May 27 21:41:59 1999
+@@ -60,7 +60,9 @@
+ #include <InterViews/tray.h>
+ #include <OS/types.h>
+ 
++#if __FreeBSD_cc_version < 400002
+ #include <osfcn.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

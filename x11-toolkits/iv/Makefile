@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.18 1998/12/18 09:40:52 asami Exp $
+# $Id: Makefile,v 1.19 1999/01/26 02:40:21 steve Exp $
 #
 
 DISTNAME=	3.1
@@ -63,6 +63,12 @@ MANN=		Adjuster.n Banner.n BasicDialog.n Border.n Box2_6.n \
 IV_LIB_VER=     3
 .else
 IV_LIB_VER=     3.1
+.endif
+
+.if ${OSVERSION} >= 400002
+post-patch:
+	@(cd ${WRKSRC}/src/config/InterViews; ${MV} -f iv-freebsd.cf \
+	iv-freebsd.cf~; ${SED} -e 's/\-lg\+\+//' iv-freebsd.cf~ > iv-freebsd.cf)
 .endif
 
 post-install:
