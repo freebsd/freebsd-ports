@@ -22,6 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR=${QT_PREFIX}
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
