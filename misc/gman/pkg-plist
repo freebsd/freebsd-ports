@@ -1,3 +1,4 @@
 bin/gman
 bin/gman.cgi
-www/cgi-bin/gman
+www/cgi-bin/gman/gman.pl
+@dirrm www/cgi-bin/gman
