@@ -14,15 +14,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	trevor@FreeBSD.org
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i'' -E
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 post-extract:
 
 post-patch:
-	${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/data.inst
-.for i in data/menu/default configure data.inst src/sapphire.hh
-	${PERL} -pi -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${i}
+	${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/data.inst
+.for ii in data/menu/default configure data.inst src/sapphire.hh
+	${REINPLACE_CMD} "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${ii}
 .endfor
 	${CP} ${WRKSRC}/data.inst ${WRKSRC}/sapphire.inst
 
