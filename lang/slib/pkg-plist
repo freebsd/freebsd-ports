@@ -1,5 +1,3 @@
-bin/slib48
-lib/scheme48/slib.image
 lib/scheme48/slibcat
 share/slib/Bev2slib.scm
 share/slib/Template.scm
