@@ -5433,6 +5433,7 @@ metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
 metamail	ports/mail/metamail
 metapixel	ports/graphics/metapixel
+metasploit	ports/security/metasploit
 metis		ports/math/metis
 metis-edf	ports/math/metis-edf
 mew		ports/mail/mew
