@@ -16,7 +16,7 @@ MAINTAINER=	jim@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		everybuddy.1
