@@ -8,6 +8,7 @@
 PORTNAME=	samba
 PORTVERSION=	3.0.0
 PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://us3.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. rc
@@ -18,10 +19,12 @@ COMMENT=	A free SMB and CIFS client and server for UNIX
 
 CONFLICTS=	ja-samba-2.* samba-3.* samba-libsmbclient-3.* sharity-light-1.*
 
-USE_BZIP2="YES"
+USE_BZIP2=	yes
 
 .if !defined(WITHOUT_CUPS)
 WITH_CUPS=	yes
+.else
+CONFIGURE_ARGS+=	--enable-cups=no
 .endif
 
 .if defined(WITH_CUPS)
@@ -90,6 +93,12 @@ CONFIGURE_ARGS+=	--with-acl-support
 .if defined(WITH_LIBICONV)
 LIB_DEPENDS+=		iconv.3:${PORTSDIR}/converters/libiconv
 CONFIGURE_ARGS+=	--with-libiconv
+.endif
+
+.if defined(WITHOUT_POPT)
+CONFIGURE_ARGS+=	--with-included-popt
+.else
+LIB_DEPENDS+=		popt.0:${PORTSDIR}/devel/popt
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
