@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# This script copied from /etc/periodic/daily/110.clean-tmps,v 1.6.2.4 2002/10/13 19:59:01
+#
+# Perform attachment directory cleaning so that long-lived systems
+# don't end up with excessively old files there.
+#
+
+# Define these variables in either /etc/periodic.conf or
+# /etc/periodic.conf.local to override the default values.
+#
+# 111.clean-squirrelmail
+clean_squirrelmail_enable="NO"					# Delete squirrelmail attachments
+clean_squirrelmail_dirs="/var/spool/squirrelmail/attach"	# Delete under here
+clean_squirrelmail_days="10"					# If not accessed for
+clean_squirrelmail_ignore="quota.user quota.group"		# Don't delete these
+clean_squirrelmail_verbose="YES"				# Mention files deleted
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$clean_squirrelmail_enable" in
+    [Yy][Ee][Ss])
+	if [ -z "$clean_squirrelmail_days" ]
+	then
+	    echo '$clean_squirrelmail_enable is set but' \
+		'$clean_squirrelmail_days is not'
+	    rc=2
+	else
+	    echo ""
+	    echo "Removing old SquirrelMail Attachment files:"
+
+	    set -f noglob
+	    args="-atime +$clean_squirrelmail_days -mtime +$clean_squirrelmail_days"
+	    args="${args} -ctime +$clean_squirrelmail_days"
+	    [ -n "$clean_squirrelmail_ignore" ] &&
+		args="$args "`echo " ${clean_squirrelmail_ignore% }" |
+		    sed 's/[ 	][ 	]*/ ! -name /g'`
+	    case "$clean_squirrelmail_verbose" in
+		[Yy][Ee][Ss])
+		    print=-print;;
+		*)
+		    print=;;
+	    esac
+
+	    rc=$(for dir in $clean_squirrelmail_dirs
+		do
+		    [ ."${dir#/}" != ."$dir" -a -d $dir ] && cd $dir && {
+			find -d . -type f $args -delete $print
+			find -d . ! -name . -type d -empty -mtime \
+			    +$clean_squirrelmail_days -delete $print
+		    } | sed "s,^\\.,  $dir,"
+		done | tee /dev/stderr | wc -l)
+	    [ -z "$print" ] && rc=0
+	    [ $rc -gt 1 ] && rc=1
+	    set -f glob
+	fi;;
+
+    *)  rc=0;;
+esac
+
+exit $rc
