@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- guile-gnome/gtkhtml/Makefile.in	2001/11/12 12:07:17	1.1
-+++ guile-gnome/gtkhtml/Makefile.in	2001/11/12 12:07:44
-@@ -98,7 +98,7 @@
+--- guile-gnome/gtkhtml/Makefile.in.orig	Fri Mar  9 12:07:49 2001
++++ guile-gnome/gtkhtml/Makefile.in	Mon Nov 11 22:52:47 2002
+@@ -98,10 +98,10 @@
  VERSION = @VERSION@
  ZVT_LIBS = @ZVT_LIBS@
  
@@ -11,4 +8,8 @@ $FreeBSD$
 +INCLUDES = -I.. -I$(srcdir)/.. -I../../guile-gtk -I$(srcdir)/../../guile-gtk 	-I$(includedir) $(GUILE_INCS) $(GNOME_INCLUDEDIR) `$(GNOME_CONFIG) --cflags gtkhtml`
  
  
- GTKHTML_LIBS = -lgtkhtml -lgdk_pixbuf
+-GTKHTML_LIBS = -lgtkhtml -lgdk_pixbuf
++GTKHTML_LIBS = -lgtkhtml-1.1 -lgdk_pixbuf
+ 
+ lib_LTLIBRARIES = libguilegtkhtml.la
+ libguilegtkhtml_la_SOURCES = gtkhtml-glue.c gtkhtml-support.c
