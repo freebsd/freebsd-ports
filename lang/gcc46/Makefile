@@ -115,7 +115,7 @@ do-extract:
 .endif	# CVS_DATE
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(experimental)|(experimental) [FreeBSD]|g' \
+	@${REINPLACE_CMD} -e 's#\(const char version_string.*\)";#\1 [FreeBSD]";#' \
 	    ${SRCDIR}/gcc/version.c
 
 pre-configure:
