@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	jed
-PORTVERSION=	0.99.15
+PORTVERSION=	0.99.16
 CATEGORIES=	editors
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/jed/v${PORTVERSION:R}/
-DISTNAME=	${PORTNAME}-B${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	s_bschmi@ira.uka.de
 COMMENT=	A SLang-based text editor
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-XJED=	xjed
+XJED=		xjed
 PLIST_SUB+=  	NOXJED=""
 .else
-PLIST_SUB+=		NOXJED="@comment "
+PLIST_SUB+=	NOXJED="@comment "
 .endif
 
 DIST_SUBDIR=	jed
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed
+CONFIGURE_ENV+=	JED_ROOT=${PREFIX}/lib/jed \
+		CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	all getmail ${XJED}
 MAN1=		jed.1 rgrep.1
 
@@ -41,10 +42,13 @@ post-install:
 .for f in ${XJED}
 	strip ${PREFIX}/bin/$f
 .endfor
-	${CP} -R ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib
-	-${RM} ${PREFIX}/lib/jed/info/*
+#	${CP} -R ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/vms_shell.com ${PREFIX}/lib/jed/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/README ${PREFIX}/lib/jed/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/jed.conf ${PREFIX}/lib/jed/lib
+	-${RM} -f ${PREFIX}/lib/jed/info/*
 	-${RMDIR} ${PREFIX}/lib/jed/info
-	-${RM} ${PREFIX}/lib/jed/doc/txt/*
+	-${RM} -f ${PREFIX}/lib/jed/doc/txt/*
 	-${RMDIR} ${PREFIX}/lib/jed/doc/txt
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/jed
