@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 DISTFILES=	Ftptool${PORTVERSION}.tar.gz
 
-MAINTAINER=	janek@gaja.ipan.lublin.pl
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
