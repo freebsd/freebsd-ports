@@ -3,11 +3,13 @@
 # Date created:		25 Oct 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.9 1998/12/13 21:59:48 kuriyama Exp $
+# $Id: Makefile,v 1.10 1999/02/12 14:44:56 kuriyama Exp $
 #
 # based on japanese/netscape4-*
 
 MAINTAINER=	junker@jazz.snu.ac.kr
+
+BROKEN=		"Just repo.copied"
 
 FILESDIR=	${MASTER_DIR}/files
 PATCHDIR=	${MASTER_DIR}/patches
