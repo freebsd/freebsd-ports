@@ -21,11 +21,13 @@ LIBTOOLFILES=	configure glib-1.2.8/configure
 LIBTOOLFLAGS=	--disable-ltlibs \
 		--disable-shared
 
+PLIST_SUB=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+
 MAN1=		pkg-config.1
 
 post-extract:
 	@${RM} -rf ${WRKSRC}/glib-1.2.8
-	@${LN} -sf ${WRKDIRPREFIX}${.CURDIR}/../../devel/glib12/work/glib-1.2* \
+	@${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../devel/glib12/work/glib-1.2* \
 		${WRKSRC}/glib-1.2.8
 
 post-install:
