@@ -16,8 +16,12 @@ lib/glib-sharp.dll
 lib/gnome-sharp.dll
 lib/gnomedb-sharp.dll
 lib/gtk-sharp.dll
+lib/libgtksharpglue.a
 lib/libgtksharpglue.so
 lib/pango-sharp.dll
+lib/rsvg-sharp.dll
+libdata/pkgconfig/gapi.pc
+libdata/pkgconfig/gtk-sharp.pc
 share/gapi/art-api.xml
 share/gapi/atk-api.xml
 share/gapi/gda-api.xml
@@ -30,6 +34,7 @@ share/gapi/gst-api.xml
 share/gapi/gtk-api.xml
 share/gapi/gtk-symbols.xml
 share/gapi/pango-api.xml
+share/gapi/rsvg-api.xml
 share/perl5/GAPI/Metadata.pm
 @dirrm share/perl5/GAPI
 @dirrm share/gapi
