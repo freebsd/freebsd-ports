@@ -7,8 +7,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	lsof_4.45_W
-PKGNAME=	lsof-4.45
+DISTNAME=	lsof_4.46_W
+PKGNAME=	lsof-4.46
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
