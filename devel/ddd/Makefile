@@ -4,10 +4,10 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1996/12/01 01:23:12 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/05/22 21:41:25 obrien Exp $
 #
 
-DISTNAME=	ddd-2.0
+DISTNAME=	ddd-2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/  \
 		ftp://richb-pc.acc.qc.edu/pub/ddd/  \
@@ -28,6 +28,8 @@ post-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/ddd
+	${INSTALL_DATA} ${WRKSRC}/PROBLEMS ${PREFIX}/share/doc/ddd
 	${INSTALL_DATA} ${WRKSRC}/doc/ddd-paper.ps ${PREFIX}/share/doc/ddd
 	${INSTALL_DATA} ${WRKSRC}/doc/ddd.man.ps ${PREFIX}/share/doc/ddd
 	${GZIP_CMD} ${PREFIX}/share/doc/ddd/ddd-paper.ps
