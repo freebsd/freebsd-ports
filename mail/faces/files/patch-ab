@@ -1,322 +1,161 @@
-*** compface/Makefile.orig	Thu Oct 24 11:28:06 1991
---- compface/Makefile	Sat May 17 23:23:52 1997
-***************
-*** 19,80 ****
-  #
-  #SYSV           = -DSYSV32
-  #--------------------------------------------------------------------------
-! # BINDIR, LIBDIR, and MANDIR are expected to be overridden by the
-  # calling Makefile
-  
-  BINDIR		= /usr/local/bin
-  LIBDIR		= /usr/local/lib
-! MANDIR		= /usr/manl
-  
-  NAME		= compface
-  UNNAME		= uncompface
-  EXECUTABLE	= $(BINDIR)/$(NAME)
-  UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
-  LIBNAME		= lib$(NAME).a
-! LIBRARY		= $(LIBDIR)/$(LIBNAME)
-  MAN1DIR		= $(MANDIR)/man1
-  MAN3DIR		= $(MANDIR)/man3
-  OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
-  SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
-  		  cmain.c uncmain.c
-  HDRS		= compface.h data.h
-  OTHERS		= README $(NAME).1 $(NAME).3 Makefile
-  
-  CC		= cc
-  CDEFS		= $(SYSV)
-! CCOMP		= -g
-  CFLAGS		= $(CDEFS) $(CCOMP)
-  
-! all:		$(NAME) $(UNNAME)
-  
-! $(NAME) :	cmain.o compface.o $(LIBNAME)
-! 		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o $(LIBNAME)
-  
-  $(UNNAME) :	uncmain.o $(LIBNAME)
-! 		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o $(LIBNAME)
-! 
-! $(LIBNAME) :	$(OBJECTS)
-! 		ar rc $(LIBNAME) $(OBJECTS)
-! 		-ranlib $(LIBNAME)
-  
-  lint :
-  		lint -abchx $(SOURCES)
-  
-  clean :
-! 		rm -f *.o *.a *.sh core a.out $(NAME) $(UNNAME)
-  
-  install :	$(NAME) $(UNNAME) $(LIBNAME)
-! 		-cp $(NAME) $(EXECUTABLE)
-! 		strip $(EXECUTABLE)
-! 		-cp $(UNNAME) $(UNEXECUTABLE)
-! 		strip $(UNEXECUTABLE)
-! 		-cp $(NAME).1 $(MAN1DIR)
-! 		rm -f $(MAN1DIR)/$(UNNAME).1
-! 		-ln $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
-! 		-cp $(LIBNAME) $(LIBRARY)
-! 		-cp $(NAME).3 $(MAN3DIR)
-! 		rm -f $(MAN3DIR)/$(UNNAME).3
-! 		-ln $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
-  
-  shar :
-  		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
---- 19,82 ----
-  #
-  #SYSV           = -DSYSV32
-  #--------------------------------------------------------------------------
-! # BINDIR, LIBDIR, INCDIR and MANDIR are expected to be overridden by the
-  # calling Makefile
-  
-  BINDIR		= /usr/local/bin
-  LIBDIR		= /usr/local/lib
-! INCDIR		= /usr/local/include
-! MANDIR		= /usr/local/man
-  
-  NAME		= compface
-  UNNAME		= uncompface
-  EXECUTABLE	= $(BINDIR)/$(NAME)
-  UNEXECUTABLE	= $(BINDIR)/$(UNNAME)
-  LIBNAME		= lib$(NAME).a
-! SHLIB_MAJOR	= 1
-! SHLIB_MINOR	= 0
-! LIB		= $(NAME)
-! NOPROFILE	= ''
-! LIBRARY		= $(LIBDIR)
-  MAN1DIR		= $(MANDIR)/man1
-  MAN3DIR		= $(MANDIR)/man3
-  OBJECTS		= arith.o file.o compress.o gen.o uncompface.o
-  SOURCES		= compface.c uncompface.o arith.c file.c compress.c gen.c \
-  		  cmain.c uncmain.c
-+ SRCS		= arith.c file.c compress.c gen.c uncompface.c
-  HDRS		= compface.h data.h
-  OTHERS		= README $(NAME).1 $(NAME).3 Makefile
-  
-  CC		= cc
-  CDEFS		= $(SYSV)
-! CCOMP		= -pipe -O2
-  CFLAGS		= $(CDEFS) $(CCOMP)
-  
-! all:		lib$(NAME).a lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR) $(NAME) $(UNNAME) 
-  
-! $(NAME) :	cmain.o compface.o
-! 		$(CC) $(CFLAGS) -o $(NAME) cmain.o compface.o -L./ -lcompface
-  
-  $(UNNAME) :	uncmain.o $(LIBNAME)
-! 		$(CC) $(CFLAGS) -o $(UNNAME) uncmain.o -L./ -lcompface
-  
-  lint :
-  		lint -abchx $(SOURCES)
-  
-  clean :
-! 		rm -f *.o *po *so *.a *.so.* *.sh core a.out $(NAME) $(UNNAME)
-  
-  install :	$(NAME) $(UNNAME) $(LIBNAME)
-! 		install -c -s -o bin -m 755 $(NAME) $(EXECUTABLE)
-! 		install -c -s -o bin -m 755 $(UNNAME) $(UNEXECUTABLE)
-! 		install -c -g bin -o bin -m 444 $(NAME).1 $(MAN1DIR)
-! 		-rm -f $(MAN1DIR)/$(UNNAME).1*
-! 		ln -fs $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
-! 		install -c -o bin -m 444 $(LIBNAME) $(LIBRARY)
-! 		install -c -o bin -m 444 lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR) $(LIBRARY)
-! 		install -c -g bin -o bin -m 444 $(NAME).3 $(MAN3DIR)
-! 		rm -f $(MAN3DIR)/$(UNNAME).3*
-! 		ln -fs $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
-! 		install -m 444 -o bin -g bin -c compface.h $(INCDIR)
-  
-  shar :
-  		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
-***************
-*** 88,90 ****
---- 90,94 ----
-  gen.o:		gen.c compface.h data.h
-  uncmain.o:	uncmain.c compface.h data.h
-  uncompface.o:	uncompface.c compface.h data.h
-+ 
-+ .include <bsd.lib.mk>
-diff -c -N ../faces/compface/compface.1 ./compface/compface.1
-*** ../faces/compface/compface.1	Fri Mar 15 06:10:29 1991
---- ./compface/compface.1	Tue Dec 10 17:28:10 1996
-***************
-*** 12,17 ****
---- 12,19 ----
-  .LP
-  .B uncompface
-  [
-+ .B \-X
-+ ] [
-  .I infile
-  [
-  .I outfile
-***************
-*** 25,31 ****
-  face image files.
-  .I uncompface
-  is an inverse filter which performs an inverse transformation with no
-! loss of data.
-  The algorithm used is highly tuned for its purpose and achieves better
-  than a five to one compression ratio on average.
-  Arguments operate identically for both programmes.
---- 27,33 ----
-  face image files.
-  .I uncompface
-  is an inverse filter which performs an inverse transformation with no
-! loss of data. 
-  The algorithm used is highly tuned for its purpose and achieves better
-  than a five to one compression ratio on average.
-  Arguments operate identically for both programmes.
-***************
-*** 56,61 ****
---- 58,69 ----
-  .I compface
-  averages less than 200 characters.
-  The average number of output lines is three.
-+ .SH OPTIONS
-+ .TP 12
-+ .B \-X
-+ The same as
-+ .I uncompface
-+ | ikon2xbm. Usefull for exmh!
-  .SH DIAGNOSTICS
-  Exit status is normally 0.
-  Possible errors include IO errors when opening, reading or writing
-diff -c -N ../faces/compface/file.c ./compface/file.c
-*** ../faces/compface/file.c	Wed Jun 19 08:29:13 1991
---- ./compface/file.c	Wed Dec 11 09:25:17 1996
-***************
-*** 15,20 ****
---- 15,22 ----
-  
-  #include "compface.h"
-  
-+ int xbitmap=0;
-+ 
-  void
-  BigRead(fbuf)
-  register char *fbuf;
-***************
-*** 127,136 ****
---- 129,147 ----
-  {
-  	register char *s, *t;
-  	register int i, bits, digits, words;
-+ 	extern int xbitmap;
-+ 	int digsperword = DIGSPERWORD;
-+ 	int wordsperline = WORDSPERLINE;
-  
-  	s = F;
-  	t = fbuf;
-  	bits = digits = words = i = 0;
-+ 	if (xbitmap) {
-+ 		sprintf(t,"#define noname_width 48\n#define noname_height 48\nstatic char noname_bits[] = {\n ");
-+ 		while (*t) t++;
-+ 		digsperword = 2;
-+ 		wordsperline = 15;
-+ 	}
-  	while (s < F + PIXELS)
-  	{
-  		if ((bits == 0) && (digits == 0))
-***************
-*** 138,162 ****
-  			*(t++) = '0';
-  			*(t++) = 'x';
-  		}
-! 		if (*(s++))
-! 			i = i * 2 + 1;
-! 		else
-! 			i *= 2;
-  		if (++bits == BITSPERDIG)
-  		{
-! 			*(t++) = *(i + HexDigits);
-  			bits = i = 0;
-! 			if (++digits == DIGSPERWORD)
-  			{
-  				*(t++) = ',';
-  				digits = 0;
-! 				if (++words == WORDSPERLINE)
-  				{
-  					*(t++) = '\n';
-  					words = 0;
-  				}
-  			}
-  		}
-  	}
-  	*(t++) = '\0';
-  }
---- 149,191 ----
-  			*(t++) = '0';
-  			*(t++) = 'x';
-  		}
-! 		if (xbitmap) {
-! 			if (*(s++))
-! 				i = (i >> 1) | 0x8;
-! 			else
-! 				i >>= 1;
-! 		}
-! 		else {
-! 			if (*(s++))
-! 				i = i * 2 + 1;
-! 			else
-! 				i *= 2;
-! 		}
-  		if (++bits == BITSPERDIG)
-  		{
-! 			if (xbitmap) {
-! 				t++;
-! 				t[-(digits & 1) * 2] = *(i + HexDigits);
-! 			}
-! 			else *(t++) = *(i + HexDigits);
-  			bits = i = 0;
-! 			if (++digits == digsperword)
-  			{
-+ 				if (xbitmap && (s >= F + PIXELS)) break;
-  				*(t++) = ',';
-  				digits = 0;
-! 				if (++words == wordsperline)
-  				{
-  					*(t++) = '\n';
-+ 					if (xbitmap) *(t++) = ' ';
-  					words = 0;
-  				}
-  			}
-  		}
-+ 	}
-+ 	if (xbitmap) {
-+ 		sprintf(t, "}\n");
-+ 		while (*t) t++;
-  	}
-  	*(t++) = '\0';
-  }
-diff -c -N ../faces/compface/uncmain.c ./compface/uncmain.c
-*** ../faces/compface/uncmain.c	Thu Oct 24 03:28:07 1991
---- ./compface/uncmain.c	Wed Dec 11 09:27:47 1996
-***************
-*** 18,23 ****
---- 18,25 ----
-  #include <fcntl.h>
-  #include "compface.h"
-  
-+ extern int xbitmap;
-+ 
-  /* the buffer is longer than needed to handle sparse input formats */
-  #define FACEBUFLEN 2048
-  char fbuf[FACEBUFLEN];
-***************
-*** 59,64 ****
---- 61,73 ----
-    while (**argv)
-      if (*((*argv)++) == '/')
-        cmdname = *argv;               /* find the command's basename */
-+ 
-+   if (argc > 1 && !strcmp(argv[1], "-X"))
-+     {
-+       xbitmap++;
-+       argc--;
-+       argv++;
-+     }
-  
-    if (argc > 3)
-      {
+--- Makefile.dist	Sun Nov 24 17:55:28 1991
++++ Makefile	Fri Sep 18 18:40:51 1998
+@@ -22,15 +22,18 @@
+ #  uncommented and set accordingly, if needed.
+ #
+ #========================================================================
++# Installation prefix.
++PREFIX           ?=/usr/local
++#------------------------------------------------------------------------
+ #  If you want audio support, then the following line should be uncommented.
+ #
+-#AUDIO_SUPPORT     = -DAUDIO_SUPPORT
++AUDIO_SUPPORT     = -DAUDIO_SUPPORT
+ #========================================================================
+ #  There is a default command (/usr/demo/SOUND/play), which is used to
+ #  play audio files. Alternatively you can specify your own custom
+ #  command here. Uncomment the following line and set appropriately.
+ #
+-#AUDIO_CMD         = -DAUDIO_CMD=\"/usr/local/bin/play\"
++AUDIO_CMD         = -DAUDIO_CMD=\"/usr/local/bin/rplay\"
+ #========================================================================
+ #  Faces displays a background pattern in its' window. When the window
+ #  is not completely full, this gives the appearance of trying to blend
+@@ -54,8 +57,8 @@
+ #  NOTE that for this to work you must have at least a minimal
+ #  /etc/resolv.conf file containing a valid nameserver entry.
+ #
+-#DNSLOOKUP	= -DDNSLOOKUP
+-#DNSLIB		= -lresolv
++DNSLOOKUP	= -DDNSLOOKUP
++DNSLIB		=
+ #------------------------------------------------------------------------
+ #  If you do not want to show the number of messages on the face icon,
+ #  then uncomment the next line.
+@@ -77,7 +80,7 @@
+ #  be uncommented and set appropriately. Note that the value must be
+ #  a single directory name, not a colon separated list of paths.
+ #               
+-FACEDIR           = /usr/local/faces
++FACEDIR           = $(PREFIX)/share/faces
+ CFACEDIR	= -DFACEDIR=\"$(FACEDIR)\"
+ #------------------------------------------------------------------------
+ #  It is possible to determine what type of monitoring faces does at
+@@ -123,7 +126,7 @@
+ #  Note that the domain name will be converted to lower case before
+ #  attempting to match in the machines file, or create an icon filename.
+ #
+-#NISLOOKUP	= -DNISLOOKUP
++NISLOOKUP	= -DNISLOOKUP
+ #------------------------------------------------------------------------
+ #  If you don't want faces to use full domain names for extracting face
+ #  icons, then you should uncomment the NODOMAINS definition below.
+@@ -188,7 +191,7 @@
+ #  to the select call are different, and this definition should be
+ #  uncommented. You need to uncomment this for SunOS v3.x.
+ #
+-#SELTYPE        = -DNO_43SELECT
++SELTYPE        = -DNO_43SELECT
+ #------------------------------------------------------------------------
+ #  If you are building faces on a Silicon Graphics machine, then you will
+ #  need to uncomment the following two definitions.
+@@ -199,7 +202,7 @@
+ #  If the pending mail for users is in a different directory than
+ #  /usr/spool/mail, uncomment the following and set appropriately.
+ #
+-#SPOOLDIR	= -DSPOOLDIR=\"/usr/mail\"
++SPOOLDIR	= -DSPOOLDIR=\"/var/mail\"
+ #------------------------------------------------------------------------
+ #  If faces is setup to monitor mail, then the name of the default
+ #  spoolfile is /usr/spool/mail/username. An alternative spoolfile name
+@@ -258,8 +261,8 @@
+ #  library files are not in a standard place, then the following
+ #  two lines should be uncommented, and set appropriately.
+ #
+-#X11INCDIR         = -I$(OPENWINHOME)/include
+-#X11LIBDIR         = -L$(OPENWINHOME)/lib
++X11INCDIR         = -I$(X11BASE)/include
++X11LIBDIR         = -L$(X11BASE)/lib
+ #------------------------------------------------------------------------
+ #  If you are compiling the XView version, then the following two lines
+ #  should be uncommented, and set appropriately.
+@@ -272,16 +275,17 @@
+ #  Default locations where faces files will be installed.
+ #  You might wish to alter these values.
+ #
+-BINDIR		= /usr/local/bin
+-LIBDIR		= /usr/local/lib
+-MANDIR		= /usr/man
+-MANSECT		= l
++BINDIR		= $(PREFIX)/bin
++LIBDIR		= $(PREFIX)/lib
++INCDIR		= $(PREFIX)/include
++MANDIR		= $(PREFIX)/man
++MANSECT		= 1
+ 
+ #
+ #  Options for submakes
+ #
+ MAKEOPTS	= $(MFLAGS) BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) \
+-			    MANDIR=$(MANDIR) CC=$(CC) \
++			    INCDIR=$(INCDIR) MANDIR=$(MANDIR) CC=$(CC) \
+ 			    NOINDEX=$(NOINDEX) SYSV=$(SYSV)
+ 
+ #
+@@ -302,7 +306,7 @@
+ 		  $(SELTYPE) $(SGIDEF) $(SPOOLDIR) $(SPOOLFILE) $(SYSV) \
+ 		  $(TTEXT) $(TOPIX) $(UPDATE) $(USE_BZERO) $(USE_GETWD) \
+ 		  $(X11R3) $(X11INCDIR) $(XVIEWINCDIR) $(DEBUG)
+-CCOMP		= -O
++CCOMP		= -pipe -O2
+ CFLAGS		= $(CCOMP) $(CDEFS)
+ #
+ #=======================================================================
+@@ -316,7 +320,7 @@
+ 
+ STDSRCS		= address.c get.c main.c mon.c parsefrom.c rec.c
+ STDOBJS		= address.o get.o main.o mon.o parsefrom.o rec.o
+-STDLIBS		= compface/libcompface.a $(DNSLIB) $(SGILIBS)
++STDLIBS		= -L./compface -lcompface $(DNSLIB) $(SGILIBS)
+ 
+ COMPFACE	= compface
+ FACES		= facedir
+@@ -357,7 +361,7 @@
+ #  Dell Unix (Interactive 386/ix): $(X11LIBDIR) -lX11 -linet
+ #  AT&T's XWIN:                    $(X11LIBDIR) -lX11_s -lc_s -lnsl_s -lpt
+ #
+-X11LIBS		= $(X11LIBDIR) -lX11
++X11LIBS		= -L/usr/X11R6/lib -lX11
+ XVIEWLIBS	= $(XVIEWLIBDIR) -lxview -lolgx -lX11
+ 
+ help:
+@@ -375,7 +379,7 @@
+ 		@echo "  make clean"
+ 		@echo
+ 
+-all:		$(BINARIES)
++all:		x11
+ 
+ news:		$(STDOBJS) news.o faces_cps.h
+ 		(cd compface; $(MAKE) $(MAKEOPTS))
+@@ -411,16 +415,18 @@
+ 		-install -c -m 644 people.tab $(FACEDIR)
+ 
+ install:
++		make tables
+ 		(cd compface; $(MAKE) $(MAKEOPTS) install)
+ 		(cd filters; $(MAKE) $(MAKEOPTS) install)
+ 		(cd scripts; $(MAKE) $(MAKEOPTS) install)
+-		install -s -m 751 faces $(BINDIR)
++		install -c -s -m 751 faces $(BINDIR)
+ 		install -c -m 755 face_update $(BINDIR)
+ 		install -c -m 755 faces.sendmail $(BINDIR)
+ 		install -c -m 644 faces.man \
+ 				$(MANDIR)/man$(MANSECT)/faces.$(MANSECT)
+-		install -c -m 644 face_update.1 \
++		install -c -m 444 face_update.1 \
+ 				$(MANDIR)/man$(MANSECT)/face_update.$(MANSECT)
++		install -c -m 444 -o bin Faces.ad /usr/X11R6/lib/X11/app-defaults/Faces
+ 
+ clean:
+ 		(cd compface; $(MAKE) $(MAKEOPTS) clean)

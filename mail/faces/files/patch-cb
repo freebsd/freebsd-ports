@@ -1,0 +1,20 @@
+diff -c -N ../faces/filters/ikon2xbm ./filters/ikon2xbm
+*** ../faces/filters/ikon2xbm	Tue May  7 00:51:50 1991
+--- ./filters/ikon2xbm	Tue Dec 10 19:45:55 1996
+***************
+*** 26,32 ****
+  \2\
+  \3/' > $tmp
+  
+! dim=`wc -l < $tmp | awk '{ print 4 * sqrt }'`
+  
+  pr -l1 -t -8 -s, < $tmp |
+  (cat << EOF
+--- 26,32 ----
+  \2\
+  \3/' > $tmp
+  
+! dim=`wc -l < $tmp | awk '{ print 4 * sqrt(144) }'`
+  
+  pr -l1 -t -8 -s, < $tmp |
+  (cat << EOF

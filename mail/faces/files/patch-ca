@@ -1,0 +1,47 @@
+diff -c -N ../faces/filters/Makefile ./filters/Makefile
+*** ../faces/filters/Makefile	Thu Oct 24 03:26:14 1991
+--- ./filters/Makefile	Tue Dec 10 17:17:50 1996
+***************
+*** 34,40 ****
+  
+  CC		= cc
+  CDEFS		= $(NOINDEX) $(SYSV)
+! CCOMP		= -g
+  CFLAGS		= $(CCOMP) $(CDEFS)
+  
+  all:		$(BINARIES)
+--- 34,40 ----
+  
+  CC		= cc
+  CDEFS		= $(NOINDEX) $(SYSV)
+! CCOMP		= -pipe -O2
+  CFLAGS		= $(CCOMP) $(CDEFS)
+  
+  all:		$(BINARIES)
+***************
+*** 55,66 ****
+  		rm -f *.o $(BINARIES)
+  
+  install:	$(BINARIES)
+! 		install -s -m 751 icon2ikon $(BINDIR)
+! 		install -s -m 751 ikon2icon $(BINDIR)
+! 		install -s -m 751 rs2icon $(BINDIR)
+! 		install -c -m 755 fs2ikon $(BINDIR)
+! 		install -c -m 755 fs2xbm $(BINDIR)
+! 		install -c -m 755 ikon2xbm $(BINDIR)
+! 		install -c -m 755 xbm2ikon $(BINDIR)
+! 		install -c -m 755 xbmcut48 $(BINDIR)
+! 		install -c -m 755 xbmsize48 $(BINDIR)
+--- 55,66 ----
+  		rm -f *.o $(BINARIES)
+  
+  install:	$(BINARIES)
+! 		install -s -o bin -m 751 icon2ikon $(BINDIR)
+! 		install -s -o bin -m 751 ikon2icon $(BINDIR)
+! 		install -s -o bin -m 751 rs2icon $(BINDIR)
+! 		install -c -o bin -m 755 fs2ikon $(BINDIR)
+! 		install -c -o bin -m 755 fs2xbm $(BINDIR)
+! 		install -c -o bin -m 755 ikon2xbm $(BINDIR)
+! 		install -c -o bin -m 755 xbm2ikon $(BINDIR)
+! 		install -c -o bin -m 755 xbmcut48 $(BINDIR)
+! 		install -c -o bin -m 755 xbmsize48 $(BINDIR)
