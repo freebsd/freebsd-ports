@@ -1,0 +1,13 @@
+bin/traymp
+share/pixmaps/traymp/tray.png
+share/pixmaps/traymp/tray-play.png
+share/pixmaps/traymp/media-play.png
+share/pixmaps/traymp/media-pause.png
+share/pixmaps/traymp/media-next.png
+share/pixmaps/traymp/media-prev.png
+share/pixmaps/traymp/media-stop.png
+share/pixmaps/traymp/tray-pause.png
+share/traymp/playlist.glade
+@dirrm share/pixmaps/traymp
+@dirrm share/pixmaps
+@dirrm share/traymp

@@ -1,0 +1,10 @@
+************************************************************
+
+The traymp package has been successfully installed.
+
+In order to connect to the MPD server, you need to set
+MPD_HOST and MPD_PORT in your environment according to
+where musicpd runs.
+
+************************************************************
+
