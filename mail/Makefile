@@ -210,6 +210,7 @@
     SUBDIR += ssmtp
     SUBDIR += stuphead
     SUBDIR += sylpheed
+    SUBDIR += sylpheed-claws
     SUBDIR += teapop
     SUBDIR += tkrat2
     SUBDIR += tlb

@@ -1,0 +1,68 @@
+bin/sylpheed-claws
+lib/charset.alias
+%%PORTDOCS%%share/doc/sylpheed-claws/NEWS
+%%PORTDOCS%%share/doc/sylpheed-claws/README
+%%PORTDOCS%%share/doc/sylpheed-claws/README.claws
+%%PORTDOCS%%share/doc/sylpheed-claws/README.jp
+%%PORTDOCS%%share/doc/sylpheed-claws/RELEASE_NOTES.claws
+%%PORTDOCS%%share/doc/sylpheed-claws/TODO
+%%PORTDOCS%%share/doc/sylpheed-claws/TODO.jp
+share/locale/cs/LC_MESSAGES/sylpheed-claws.mo
+share/locale/de/LC_MESSAGES/sylpheed-claws.mo
+share/locale/el/LC_MESSAGES/sylpheed-claws.mo
+share/locale/es/LC_MESSAGES/sylpheed-claws.mo
+share/locale/fr/LC_MESSAGES/sylpheed-claws.mo
+share/locale/hr/LC_MESSAGES/sylpheed-claws.mo
+share/locale/it/LC_MESSAGES/sylpheed-claws.mo
+share/locale/ja/LC_MESSAGES/sylpheed-claws.mo
+share/locale/ko/LC_MESSAGES/sylpheed-claws.mo
+share/locale/locale.alias
+share/locale/nl/LC_MESSAGES/sylpheed-claws.mo
+share/locale/pl/LC_MESSAGES/sylpheed-claws.mo
+share/locale/pt_BR/LC_MESSAGES/sylpheed-claws.mo
+share/locale/ru/LC_MESSAGES/sylpheed-claws.mo
+share/locale/sv/LC_MESSAGES/sylpheed-claws.mo
+share/pixmaps/sylpheed-claws.png
+share/sylpheed-claws/manual/en/sylpheed-1.html
+share/sylpheed-claws/manual/en/sylpheed-10.html
+share/sylpheed-claws/manual/en/sylpheed-11.html
+share/sylpheed-claws/manual/en/sylpheed-12.html
+share/sylpheed-claws/manual/en/sylpheed-13.html
+share/sylpheed-claws/manual/en/sylpheed-14.html
+share/sylpheed-claws/manual/en/sylpheed-15.html
+share/sylpheed-claws/manual/en/sylpheed-16.html
+share/sylpheed-claws/manual/en/sylpheed-17.html
+share/sylpheed-claws/manual/en/sylpheed-2.html
+share/sylpheed-claws/manual/en/sylpheed-3.html
+share/sylpheed-claws/manual/en/sylpheed-4.html
+share/sylpheed-claws/manual/en/sylpheed-5.html
+share/sylpheed-claws/manual/en/sylpheed-6.html
+share/sylpheed-claws/manual/en/sylpheed-7.html
+share/sylpheed-claws/manual/en/sylpheed-8.html
+share/sylpheed-claws/manual/en/sylpheed-9.html
+share/sylpheed-claws/manual/en/sylpheed.html
+share/sylpheed-claws/manual/ja/sylpheed-1.html
+share/sylpheed-claws/manual/ja/sylpheed-10.html
+share/sylpheed-claws/manual/ja/sylpheed-11.html
+share/sylpheed-claws/manual/ja/sylpheed-12.html
+share/sylpheed-claws/manual/ja/sylpheed-13.html
+share/sylpheed-claws/manual/ja/sylpheed-14.html
+share/sylpheed-claws/manual/ja/sylpheed-15.html
+share/sylpheed-claws/manual/ja/sylpheed-16.html
+share/sylpheed-claws/manual/ja/sylpheed-17.html
+share/sylpheed-claws/manual/ja/sylpheed-2.html
+share/sylpheed-claws/manual/ja/sylpheed-3.html
+share/sylpheed-claws/manual/ja/sylpheed-4.html
+share/sylpheed-claws/manual/ja/sylpheed-5.html
+share/sylpheed-claws/manual/ja/sylpheed-6.html
+share/sylpheed-claws/manual/ja/sylpheed-7.html
+share/sylpheed-claws/manual/ja/sylpheed-8.html
+share/sylpheed-claws/manual/ja/sylpheed-9.html
+share/sylpheed-claws/manual/ja/sylpheed.html
+share/sylpheed-claws/manual/ja/sylpheed.sgml
+@dirrm share/sylpheed-claws/manual/ja
+@dirrm share/sylpheed-claws/manual/en
+@dirrm share/sylpheed-claws/manual
+@dirrm share/sylpheed-claws
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+%%PORTDOCS%%@dirrm share/doc/sylpheed-claws
