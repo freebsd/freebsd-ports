@@ -16,7 +16,7 @@ PATCH_SITES=	http://ucd-snmp.ucdavis.edu/patches/
 PATCHFILES=	012.patch
 PATCH_DIST_STRIP=	-p0 -d ${WRKSRC}/agent
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	billf@FreeBSD.org
 
 CONFIGURE_ARGS=	--enable-shared
 
