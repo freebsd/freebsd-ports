@@ -1,3 +1,7 @@
-sbin/conserver
-etc/rc.d/conserver.sh
 bin/console
+etc/rc.d/conserver.sh
+%%EXAMPLESDIR%%/conserver.cf
+%%EXAMPLESDIR%%/conserver.passwd
+%%EXAMPLESDIR%%/conserver.rc
+sbin/conserver
+@dirrm %%EXAMPLESDIR%%
