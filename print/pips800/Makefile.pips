@@ -294,7 +294,7 @@ post-patch:
 .if ${PIPS_MAJOR} >= 2
 	${REINPLACE_CMD} -e 's,/etc/ekpdrc,${PREFIX}&,' \
 		${WRKSRC}/ekpd/cbtd_setup.c
-	${REINPLACE_CMD} -e 's,/dev/lp0,/dev/ulpt0,' \
+	${REINPLACE_CMD} -e 's;/dev/\(usb/\)\{0,1\}lp0;/dev/ulpt0;' \
 		-e 's,^SUBDIRS = rc$$,#&,' \
 		${WRKSRC}/ekpd/Makefile.in
 .if ${DIST_TYPE} != cups
