@@ -1,0 +1,41 @@
+#
+# SAMPLE CONFIG FILE FOR SQUIDGUARD
+# (for further configuration options see the
+# documentation and http://www.squidguard.org/)
+#
+dbhome DATADIR
+logdir LOGDIR
+
+#
+# TIME RULES:
+# abbrev for weekdays:
+# s = sun, m = mon, t =tue, w = wed, h = thu, f = fri, a = sat
+time workhours {
+     weekly mtwhf 08:00 - 16:30
+     date *-*-01  08:00 - 16:30
+}
+
+#
+# SOURCE ADDRESSES
+#
+source sample-clients {
+     ip 10.0.0.0/24
+}
+
+#
+# DESTINATION CLASSES
+#
+DEST_CLASSES
+
+acl {
+     sample-clients within workhours {
+         pass     BLACKLIST_DIRS !in-addr any
+     } else {
+         pass     any
+     }
+
+     default {
+         pass     none
+         redirect http://admin.foo.bar.no/cgi/blocked?clientaddr=%a+clientname=%n+clientident=%i+srcclass=%s+targetclass=%t+url=%u
+     }
+}
