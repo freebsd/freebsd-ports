@@ -8879,6 +8879,7 @@ py-bsddb	ports/databases/py-bsddb
 py-bsddb3	ports/databases/py-bsddb3
 py-bulksms	ports/comms/py-bulksms
 py-bzip2	ports/archivers/py-bzip2
+py-cairo	ports/graphics/py-cairo
 py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
 py-cgkit	ports/graphics/py-cgkit
