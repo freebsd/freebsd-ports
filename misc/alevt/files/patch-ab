@@ -1,34 +1,16 @@
---- exp-html.c.orig	Tue May 30 02:09:15 2000
-+++ exp-html.c	Wed Oct 18 08:50:59 2000
-@@ -214,7 +214,7 @@
- 	      {
- 		if (last_space)
- 		  {
--		    fprintf(fp,"&nbsp;");
-+		    fprintf(fp,"&nbsp");
- 		    last_space=0;
- 		    nbsp=1;
- 		  }
-@@ -251,7 +251,7 @@
- 		      {
- 			if (last_space)
- 			  {
--			    fprintf(fp,"&nbsp;");
-+			    fprintf(fp,"&nbsp");
- 			    last_space=0;
- 			    nbsp=1;
- 			  }
+--- exp-html.c.orig	Tue Oct 17 21:28:30 2000
++++ exp-html.c	Tue Aug 17 16:31:33 2004
 @@ -268,7 +268,12 @@
  		  {
  		    //if previous nbsp --> put semicolon!!!
  		    if (nbsp) fputc(';',fp);
 -		    fputc(pg->data[y][z].ch,fp);
 +
-+		    // Handle ascii characters which have HTML meanings
-+		    if (pg->data[y][z].ch == '<') fprintf(fp,"&lt;");
-+		    else if (pg->data[y][z].ch == '>') fprintf(fp,"&gt;");
-+		    else if (pg->data[y][z].ch == '&') fprintf(fp,"&amp;");
-+		    else fputc(pg->data[y][z].ch,fp);
++                    // Handle ascii characters which have HTML meanings
++                    if (pg->data[y][z].ch == '<') fprintf(fp,"&lt;");
++                    else if (pg->data[y][z].ch == '>') fprintf(fp,"&gt;");
++                    else if (pg->data[y][z].ch == '&') fprintf(fp,"&amp;");
++                    else fputc(pg->data[y][z].ch,fp);
  		    last_space=0;
  		    nbsp=0;
  		  }

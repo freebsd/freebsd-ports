@@ -1,5 +1,4 @@
 bin/alevt
 bin/alevt-date
 bin/alevt-cap
-
 include/X11/pixmaps/mini-alevt.xpm

@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	alevt
-PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTVERSION=	1.6.1
+PORTREVISION=	0
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://user.exit.mytoday.de/froese/alevt/
-MASTER_SITE_SUBDIR=	apps/video
+MASTER_SITES=	http://www.goron.de/~froese/alevt/
 
 MAINTAINER=	roger@freebsd.org
 COMMENT=	X11 Teletext decoding and display program. (reads from /dev/vbi)

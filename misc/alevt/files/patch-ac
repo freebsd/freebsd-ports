@@ -1,0 +1,8 @@
+--- lang.h.orig	Tue Aug 17 16:34:24 2004
++++ lang.h	Tue Aug 17 16:34:36 2004
+@@ -19,4 +19,4 @@
+ void add_enhance(struct enhance *eh, int dcode, u32 *data);
+ void enhance(struct enhance *eh, struct vt_page *vtp);
+ 
+-#endif LANG_H
++#endif /* LANG_H */
