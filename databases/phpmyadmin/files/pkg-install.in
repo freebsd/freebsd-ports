@@ -34,7 +34,7 @@ create_group() {
 	    pw groupadd -n $group
 	    pw useradd -n $user -g $group -c "$gcos" \\
 	        -d $home -s $shell -h -
-	    
+
 	and retry installing this package.
 	EOERRORMSG
 	exit 1
