@@ -7,6 +7,7 @@
 
 PORTNAME=	gupsc
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://www.stud.ifi.uio.no/~hennikul/gupsc/download/
 
