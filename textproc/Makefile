@@ -64,6 +64,7 @@
     SUBDIR += fdp-tools
     SUBDIR += filepp
     SUBDIR += fist
+    SUBDIR += fo-aspell
     SUBDIR += fop
     SUBDIR += freegrep
     SUBDIR += gdict
