@@ -1687,7 +1687,7 @@ PTHREAD_CFLAGS?=	-D_THREAD_SAFE
 PTHREAD_LIBS?=		-lc_r
 .else
 PTHREAD_CFLAGS?=
-PTHREAD_LIBS?=		-lpthread
+PTHREAD_LIBS?=		-pthread
 .endif
 
 .if exists(/usr/bin/fetch)
