@@ -1,0 +1,20 @@
+--- libgksu/Makefile.in.orig	Tue Sep  7 21:51:54 2004
++++ libgksu/Makefile.in	Fri Nov  5 00:43:20 2004
+@@ -168,7 +168,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -g -O2 -Wall
++AM_CFLAGS = $(CFLAGS)
+ INCLUDES = `pkg-config --cflags glib-2.0`
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" -DDATA_DIR=\"$(datadir)\" -DPREFIX=\"$(prefix)\"
+ LTPACKAGE = $(shell echo ${PACKAGE} | sed s,.,_,g)
+@@ -185,7 +185,7 @@
+ 
+ include_HEADERS = gksu.h gksu-context.h
+ 
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = ${prefix}/libdata/pkgconfig
+ pkgconfig_DATA = ${PACKAGE}.pc
+ pkglib_PROGRAMS = gksu-run-helper
+ gksu_run_helper_LDFLAGS = `pkg-config --libs glib-2.0`

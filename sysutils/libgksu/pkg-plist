@@ -1,0 +1,16 @@
+include/libgksu1.2/gksu-context.h
+include/libgksu1.2/gksu.h
+lib/libgksu1.2.a
+lib/libgksu1.2.so
+lib/libgksu1.2.so.0
+lib/libgksu1.2/gksu-run-helper
+libdata/pkgconfig/libgksu1.2.pc
+share/locale/ca/LC_MESSAGES/libgksu1.2.mo
+share/locale/da/LC_MESSAGES/libgksu1.2.mo
+share/locale/de/LC_MESSAGES/libgksu1.2.mo
+share/locale/es/LC_MESSAGES/libgksu1.2.mo
+share/locale/no_NB/LC_MESSAGES/libgksu1.2.mo
+share/locale/pt_BR/LC_MESSAGES/libgksu1.2.mo
+share/locale/ru/LC_MESSAGES/libgksu1.2.mo
+@dirrm lib/libgksu1.2
+@dirrm include/libgksu1.2

@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Sep 30 20:39:24 2004
++++ Makefile.in	Fri Oct  1 16:00:27 2004
+@@ -171,7 +171,7 @@
+ 
+ DISTCLEANFILES = *~
+ 
+-SUBDIRS = m4 intl po libgksu docs
++SUBDIRS = m4 intl po libgksu
+ DIST_SUBDIRS = $(SUBDIRS)
+ 
+ ACLOCAL_AMFLAGS = -I m4
