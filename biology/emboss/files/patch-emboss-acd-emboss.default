@@ -1,0 +1,32 @@
+--- emboss/acd/emboss.default.orig	Mon Jan 22 23:26:54 2001
++++ emboss/acd/emboss.default	Mon Jan 29 16:23:15 2001
+@@ -1,9 +1,26 @@
+-SET emboss_tempdata /nfs/WWW/data/EMBOSS/test
++#####################################################
++### Configuration options for FreeBSD EMBOSS port ###
++#####################################################
+ 
+-# Logfile - set this to a file that any user can append to
+-# and EMBOSS applications will automatically write log information
++# This is the compiled-in default.  Change only if
++# you know what you're doing!
++#
++#SET emboss_data /usr/local/share/EMBOSS/data
+ 
++# This is where your local databases reside
++# (this will differ from site to site):
++#
++SET emboss_tempdata /var/db/bio
++
++# Logfile - set this to a file that any user can append to and EMBOSS
++# applications will automatically write log information
++#
+ #SET emboss_logfile /packages/emboss/emboss/log
++
++
++###########################################
++### Configuration options for databases ###
++###########################################
+ 
+ # swissprot (Puffer fish entries)
+ # =========

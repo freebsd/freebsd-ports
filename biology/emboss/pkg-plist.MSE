@@ -1,6 +1,0 @@
-bin/mse
-lib/libckit.a
-lib/libckit.la
-lib/libckit.so
-lib/libckit.so.1
-share/EMBOSS/acd/mse.acd

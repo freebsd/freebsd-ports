@@ -1,0 +1,11 @@
+--- configure.orig	Mon Jan 22 23:28:17 2001
++++ configure	Thu Jan 25 19:07:33 2001
+@@ -1473,7 +1473,7 @@
+ 
+ 
+ 
+-AJAX_FIXED_ROOT="\\\"`pwd`/emboss\\\""
++AJAX_FIXED_ROOT="\\\"${datadir}/${PACKAGE}\\\""
+ 
+ #AC_PROG_CXX
+ for ac_prog in mawk gawk nawk awk

@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	emboss
-PORTVERSION=	1.9.0
+PORTVERSION=	1.9.1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.uk.embnet.org/pub/EMBOSS/ \
 		ftp://ftp.no.embnet.org/pub/EMBOSS/ \
+		ftp://ftp.es.embnet.org/pub/software/emboss/EMBOSS/ \
 		ftp://ftp.ebi.ac.uk/pub/software/unix/EMBOSS/
 DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
@@ -24,7 +25,6 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_XLIB=	yes
 USE_MOTIF=	yes
-PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
@@ -33,29 +33,30 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/gd" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-
 SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		MKDIR="${MKDIR}" \
-		RM="${RM}"
+		MKDIR="${MKDIR}" RM="${RM}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}-${PORTVERSION}
 EMBASSY_WRKDIR=	${WRKSRC}/EMBASSY
-EMNU_VERSION=	1.0.2
+EMNU_VERSION=	1.0.3
 MSE_VERSION=	0.0.4
 TOPO_VERSION=	0.1
 PHYLIP_VERSION=	3.573c
+DOC_DIRS=	doc/manuals doc/tutorials doc/programs/text doc/programs/html
+
 .for app in EMNU MSE PHYLIP TOPO
 SCRIPTS_ENV+=	${app}_VERSION="${${app}_VERSION}"
 .if defined(WITH_${app})
 APPLIST+=	${app}
-PLISTS+=	${PKGDIR}/pkg-plist.${app}
 ${app}_WRKSRC=	${EMBASSY_WRKDIR}/${app}-${${app}_VERSION}
 ${app}_DISTFILE=${app}-${${app}_VERSION}${EXTRACT_SUFX}
 DISTFILES+=	${${app}_DISTFILE}
+PLIST_${app}=	""
+.else
+PLIST_${app}=	"@comment "
 .endif
+PLIST_SUB+=	PLIST_${app}=${PLIST_${app}}
 .endfor
-PLISTS+=	${PKGDIR}/pkg-plist
-DOC_DIRS=	doc/manuals doc/tutorials doc/programs/text doc/programs/html
 
 pre-fetch:
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.${PORTNAME}
@@ -74,7 +75,7 @@ post-extract:
 post-patch:
 .for DIR in ${DOC_DIRS}
 	@ ${PERL} -pi.orig -e \
-	  "s#share/\\$$\(PACKAGE\)/doc#share/doc/\\$$\(PACKAGE\)#" \
+	  's#\$$\(prefix\)/share/\$$\(PACKAGE\)/doc#\$$\(datadir\)/doc/\$$\(PACKAGE\)#' \
 	  ${WRKSRC}/${DIR}/Makefile.in
 .endfor
 
@@ -96,9 +97,6 @@ post-build:
 	  ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 	  ${MAKE_ARGS})
 .endfor
-
-pre-install:
-	@ ${CAT} ${PLISTS} > ${PLIST}
 
 post-install:
 .for app in ${APPLIST}
