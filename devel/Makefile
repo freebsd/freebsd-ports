@@ -137,6 +137,7 @@
     SUBDIR += p5-Errno
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Lock
+    SUBDIR += p5-File-MMagic
     SUBDIR += p5-File-Slurp
     SUBDIR += p5-File-Sync
     SUBDIR += p5-File-Tools
