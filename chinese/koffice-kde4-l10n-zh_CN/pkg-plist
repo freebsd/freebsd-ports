@@ -48,6 +48,3 @@ share/locale/zh_CN/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/zh_CN/LC_MESSAGES/thesaurus_tool.mo
 share/locale/zh_CN/LC_MESSAGES/xsltexportfilter.mo
 share/locale/zh_CN/LC_MESSAGES/xsltimportfilter.mo
-@dirrm share/locale/zh_CN/LC_MESSAGES
-@dirrm share/locale/zh_CN
-@dirrm share/locale

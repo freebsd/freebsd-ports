@@ -28,6 +28,7 @@ share/locale/pl/LC_MESSAGES/example.mo
 share/locale/pl/LC_MESSAGES/karbon.mo
 share/locale/pl/LC_MESSAGES/karbonepsfilter.mo
 share/locale/pl/LC_MESSAGES/kchart.mo
+share/locale/pl/LC_MESSAGES/kdgantt.mo
 share/locale/pl/LC_MESSAGES/kexi.mo
 share/locale/pl/LC_MESSAGES/kfile_koffice.mo
 share/locale/pl/LC_MESSAGES/kfile_ooo.mo
@@ -66,6 +67,7 @@ share/locale/pl/LC_MESSAGES/kwordlatexfilter.mo
 share/locale/pl/LC_MESSAGES/kwordlateximportfilter.mo
 share/locale/pl/LC_MESSAGES/kwordmswordfilter.mo
 share/locale/pl/LC_MESSAGES/kwordmswritefilter.mo
+share/locale/pl/LC_MESSAGES/kwordoowriterfilter.mo
 share/locale/pl/LC_MESSAGES/kwordpdfimport.mo
 share/locale/pl/LC_MESSAGES/olefilterswinword97filter.mo
 share/locale/pl/LC_MESSAGES/thesaurus_tool.mo
