@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ebview
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,8 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
-		'/GTK_DISABLE_DEPRECATED/d' ${WRKSRC}/src/defs.h
 
 post-install:
 .if !defined(NOPORTDOCS)
