@@ -1,0 +1,19 @@
+*** scores.c~	Thu Dec 14 20:40:34 1989
+--- scores.c	Sun Nov 20 01:51:07 1994
+***************
+*** 9,15 ****
+  #include <X11/keysym.h>
+  #include "golddig.h"
+  
+! char *getenv(),*sprintf();
+  
+  #define NUMHIGH 15  /* Number of high scores that will be remembered */
+  
+--- 9,15 ----
+  #include <X11/keysym.h>
+  #include "golddig.h"
+  
+! char *getenv()/*,*sprintf()*/;
+  
+  #define NUMHIGH 15  /* Number of high scores that will be remembered */
+  
