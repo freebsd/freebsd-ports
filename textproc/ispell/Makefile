@@ -12,14 +12,15 @@ PKGNAME=	ispell-3.1.20c
 CATEGORIES=	textproc elisp
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-PATCH_SITES=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-ISPELL_FILES=	ispell-3.1.20.tar.gz
-HTML_PATCH=	ispell-html-mode.patch
-
-DISTFILES=	${ISPELL_FILES}
-PATCHFILES=	${HTML_PATCH}
 
 MAINTAINER=	jmz@FreeBSD.org
+
+PATCH_SITES=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
+
+ISPELL_FILES=	ispell-3.1.20.tar.gz
+HTML_PATCH=	ispell-html-mode.patch
+DISTFILES=	${ISPELL_FILES}
+PATCHFILES=	${HTML_PATCH}
 
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
 MAN1=		ispell.1 sq.1
@@ -27,7 +28,8 @@ MAN4=		ispell.4 english.4
 MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 munchlist.1\
 		ispell.1 tryaffix.1 sq.1 unsq.1
 EXTRACT_ONLY=	${ISPELL_FILES}
-EXTRA_DICT=	
+EXTRA_DICT=
+ALL_TARGET=
 
 .if (!defined(ISPELL_FR) && !defined (ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_LANG))
 .if (make(patch) || make(configure) || make(build) || make (install))
@@ -51,35 +53,40 @@ EXTRA_DICT=
 FRDISTFILE=	francais-IREQ-1.4.tar.gz
 EXTRA_DICT+=	${FRDISTFILE}
 MASTER_SITES+=	ftp://ftp.robot.ireq.ca/pub/ispell/
+ALL_TARGET+=	ISPELL_FR=yes
 .endif
 .if defined(ISPELL_SE)
 SEDISTFILE=	iswedish-1.2.1.tar.gz
-MASTER_SITES+=	http://www.sslug.dk/locale/ispell/iswedish/	
+MASTER_SITES+=	http://www.sslug.dk/locale/ispell/iswedish/
 EXTRA_DICT+=	${SEDISTFILE}
 EXTRACT_ONLY+=	${SEDISTFILE}
+ALL_TARGET+=	ISPELL_SE=yes
 .endif
 .if defined(ISPELL_BR)
-BRDISTFILE=	br.ispell-2.3.tar.gz
+BRDISTFILE=	br.ispell-2.4.tar.gz
 EXTRA_DICT+=	${BRDISTFILE}
 EXTRACT_ONLY+=	${BRDISTFILE}
 MASTER_SITES+=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/
+ALL_TARGET+=	ISPELL_BR=yes
 .endif
 .if defined(ISPELL_DENEU)
 DENEUDISTFILE=	igerman98-19991219.tar.gz
 EXTRA_DICT+=	${DENEUDISTFILE}
 EXTRACT_ONLY+=	${DENEUDISTFILE}
 MASTER_SITES+=	http://members.xoom.com/maccy/ispell/dict/ \
-		ftp://student.physik.uni-dortmund.de/pub/users/jacke/ispell/ 
+		ftp://student.physik.uni-dortmund.de/pub/users/jacke/ispell/
 FETCH_BEFORE_ARGS+=	-b		# HTTP Workaround at Xoom
+ALL_TARGET+=	ISPELL_DENEU=yes
 .endif
 .if defined(ISPELL_DEALT)
 DEALTDISTFILE=	hk-deutsch.tar.gz
 EXTRA_DICT+=	${DEALTDISTFILE}
 MASTER_SITES+=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
+ALL_TARGET+=	ISPELL_DEALT=yes
 .endif
 DISTFILES+=	${EXTRA_DICT}
 .endif
-ALL_TARGET=	WRKDIR=${WRKDIR} SEDISTFILE=${SEDISTFILE} BRDISTFILE=${BRDISTFILE} all
+ALL_TARGET+=	WRKDIR=${WRKDIR} SEDISTFILE=${SEDISTFILE} BRDISTFILE=${BRDISTFILE} all
 
 british:
 	@${ECHO_MSG} "Okay, making a british version of ispell...."
@@ -88,7 +95,7 @@ british:
 
 post-extract:
 .if defined(ISPELL_FR)
-	@${MKDIR} -p ${WRKDIR}/francais-IREQ
+	@${MKDIR} ${WRKDIR}/francais-IREQ
 	@${TAR} -C ${WRKDIR}/francais-IREQ -zxf ${PORTSDIR}/distfiles/${FRDISTFILE}
 .endif
 .if defined(ISPELL_DEALT)
@@ -103,8 +110,7 @@ post-patch:
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/FR.patch 2>/dev/null
 .endif
 .if defined(ISPELL_BR)
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/BR.patch 2>/dev/null
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/BR2.patch 2>/dev/null
+	@cd ${WRKDIR}/${BRDISTFILE:S/.tar.gz$//} && ${PATCH} < ${FILESDIR}/BR.patch 2>/dev/null
 .endif
 .if defined(ISPELL_DENEU)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/DENEU.patch 2>/dev/null
@@ -124,23 +130,23 @@ do-install:
 
 post-install:
 	@[ -e ${WRKDIR}/.british-build ] && \
-		cat ${.CURDIR}/pkg/PLIST.BRITISH >> ${TMPPLIST} || \
-		cat ${.CURDIR}/pkg/PLIST.AM >> ${TMPPLIST}
+		${CAT} ${MASTERDIR}/pkg/PLIST.BRITISH >> ${TMPPLIST} || \
+		${CAT} ${MASTERDIR}/pkg/PLIST.AM >> ${TMPPLIST}
 .if defined(ISPELL_FR)
-	@cat ${.CURDIR}/pkg/PLIST.FR >> ${TMPPLIST}
+	@cat ${MASTERDIR}/pkg/PLIST.FR >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_DEALT)
-	@cat ${.CURDIR}/pkg/PLIST.DEALT >> ${TMPPLIST}
+	@cat ${MASTERDIR}/pkg/PLIST.DEALT >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_DENEU)
-	@cat ${.CURDIR}/pkg/PLIST.DENEU >> ${TMPPLIST}
+	@cat ${MASTERDIR}/pkg/PLIST.DENEU >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BR)
-	@cat ${.CURDIR}/pkg/PLIST.BR >> ${TMPPLIST}
+	@cat ${MASTERDIR}/pkg/PLIST.BR >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_SE)
-	@cat ${.CURDIR}/pkg/PLIST.SE >> ${TMPPLIST}
+	@cat ${MASTERDIR}/pkg/PLIST.SE >> ${TMPPLIST}
 .endif
 	@echo "@dirrm share/ispell" >> ${TMPPLIST}
-	
+
 .include <bsd.port.mk>
