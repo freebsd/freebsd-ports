@@ -1,0 +1,9 @@
+****************************************************************************
+
+Please change the name of your mailserver in the pop3proxyd.conf and setup
+the correct ports.
+
+To run the pop3proxyd from startup, add pop3proxyd_enable="YES" in your
+/etc/rc.conf.
+
+****************************************************************************
