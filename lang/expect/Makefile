@@ -1,9 +1,9 @@
 # New ports collection makefile for:	expect
-# Version required:	5.21
+# Version required:	5.21.6
 # Date created:		20 November 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.13 1996/11/18 14:02:23 asami Exp $
+# $Id: Makefile,v 1.14 1996/12/07 19:58:09 max Exp $
 #
 
 DISTNAME=	expect-5.21
