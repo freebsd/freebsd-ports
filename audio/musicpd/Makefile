@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,19 +18,17 @@ COMMENT=	A remote-controllable music-daemon
 LIB_DEPENDS+=	ao.3:${PORTSDIR}/audio/libao \
 		mad.1:${PORTSDIR}/audio/mad
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500038
-RC_SUBR?=       ${DESTDIR}/etc/rc.subr
-RC_DIR=         ${DESTDIR}/etc/rc.d
+RC_SUBR?=	${DESTDIR}/etc/rc.subr
 RC_SUFX=
 .else
-USE_RC_SUBR=    yes
-RC_DIR=         ${PREFIX}/etc/rc.d
-RC_SUFX=        .sh
+USE_RC_SUBR=	yes
+RC_SUFX=	.sh
 .endif
 
 .ifdef(WITHOUT_FLAC)
@@ -45,34 +43,44 @@ CONFIGURE_ARGS+=--disable-ogg
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
 .endif
 
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS+=	-I${PREFIX}/include
 
 MAN1=		mpd.1
 
+DOCS=		README \
+		UPGRADING \
+		doc/COMMANDS
+
 SED_SCRIPT+=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
 		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
-PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX}
+PLIST_SUB+=	RC_SUFX=${RC_SUFX}
 
 pre-everything::
-	@${ECHO} "You can build ${PKGNAME} with the following options:"
-	@${ECHO}
-	@${ECHO} "WITHOUT_OGG             Disable OGG-Vorbis-support"
-	@${ECHO} "WITHOUT_FLAC            Disable FLAC-support"
-	@${ECHO}
+	@${ECHO_CMD} "You can build ${PKGNAME} with the following options:"
+	@${ECHO_CMD}
+	@${ECHO_CMD} "WITHOUT_OGG             Disable OGG-Vorbis-support"
+	@${ECHO_CMD} "WITHOUT_FLAC            Disable FLAC-support"
+	@${ECHO_CMD}
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/musicpd.sh >${WRKDIR}/musicpd.sh
 	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-message >${PKGMESSAGE}
 
-post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/mpd.conf.sample ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${WRKDIR}/musicpd.sh ${RC_DIR}/musicpd${RC_SUFX}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mpd ${PREFIX}/bin/
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/mpd.conf.sample ${EXAMPLESDIR}/mpd.conf
+	${INSTALL_SCRIPT} ${WRKDIR}/musicpd.sh ${PREFIX}/etc/rc.d/musicpd${RC_SUFX}
+	${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
