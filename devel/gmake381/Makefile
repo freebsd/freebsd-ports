@@ -15,10 +15,9 @@ DISTNAME=	make-${PORTVERSION}
 
 MAINTAINER=	portmgr@FreeBSD.org
 
-LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-prefix=g
+CONFIGURE_ARGS=	--program-prefix=g \
+		--with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LOCALE_H" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
