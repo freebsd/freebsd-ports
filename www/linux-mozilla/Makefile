@@ -7,18 +7,17 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
+MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}b/linux-xpi
 
 PKGNAMEPREFIX=	linux-
-DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
+DIST_SUBDIR=	linux-mozilla/${PORTVERSION}b
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.gz
+PATCHFILES=	linux-mozilla-${PORTVERSION}b-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
@@ -58,7 +57,7 @@ DISTFILES=	browser.xpi \
 		venkman.xpi \
 		xpcom.xpi
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf)
-DISTFILES!= ${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf
+DISTFILES!=	${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf
 .endif
 
 checksum:
@@ -127,6 +126,8 @@ do-configure:
 	${ECHO_CMD} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../linux-netscape*/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-beonex/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
