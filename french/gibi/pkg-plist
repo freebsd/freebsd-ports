@@ -2154,6 +2154,8 @@ bin/gibi2000
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/postscript
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec ln -sf %D/gibi2000 %%ASTER_TOOLS%%/gibi
+@exec ln -sf %D/bin/gibi2000 %%ASTER_TOOLS%%
+@exec ln -sf %D/bin/gibi2000 %%ASTER_TOOLS%%/gibi
 @unexec rm -f %%ASTER_TOOLS%%/gibi
+@unexec rm -f %%ASTER_TOOLS%%/gibi2000
 @unexec rmdir %D/apps 2>/dev/null || true
