@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$2" != "INSTALL" ] 
+	then exit
+fi
+echo "Consider ${PKG_PREFIX}/lib/dserver/setup.sh for startup configuration."
+echo "Documents are put in ${PKG_PREFIX}/lib/dserver/doc/."
