@@ -1,5 +1,5 @@
---- client/dhclient.c.orig	Thu Feb 15 23:17:05 2001
-+++ client/dhclient.c	Fri Mar  2 05:51:43 2001
+--- client/dhclient.c.orig	Fri Mar 16 00:12:03 2001
++++ client/dhclient.c	Thu Mar 22 02:49:59 2001
 @@ -78,6 +78,7 @@
  u_int16_t remote_port;
  int no_daemon;
@@ -45,7 +45,7 @@
  	log_info (url);
  
 -	log_error ("Usage: dhclient [-d] [-D] [-q] [-p <port>] %s",
-+	log_error ("Usage: dhclient [-1] [-d] [-D] [-q] [-p <port>] %s",
++	log_error ("Usage: dhclient [-1dDqr] [-p <port>] %s",
  		   "[-s server]");
 -	log_fatal ("                [-lf lease-file] [-pf pid-file]%s",
 -		   "[-cf config-file] [interface] [-e VAR=val]");

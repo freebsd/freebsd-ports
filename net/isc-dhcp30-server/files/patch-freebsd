@@ -1,5 +1,5 @@
---- client/scripts/freebsd.orig	Wed Sep 20 11:38:03 2000
-+++ client/scripts/freebsd	Sat Jan 27 02:17:01 2001
+--- client/scripts/freebsd.orig	Fri Mar 16 00:16:49 2001
++++ client/scripts/freebsd	Thu Mar 22 02:42:13 2001
 @@ -1,5 +1,11 @@
  #!/bin/sh
  
@@ -71,8 +71,8 @@
    fi
    if [ x$old_ip_address = x ] || [ x$old_ip_address != x$new_ip_address ] || \
       [ x$reason = xBOUND ] || [ x$reason = xREBOOT ]; then
-     ifconfig $interface inet $new_ip_address $new_netmask_arg \
- 					$new_broadcast_arg $medium
+     eval "ifconfig $interface inet $new_ip_address $new_netmask_arg \
+ 					$new_broadcast_arg $medium"
 +    $LOGGER "New IP Address($interface): $new_ip_address"
 +    $LOGGER "New Subnet Mask($interface): $new_subnet_mask"
 +    $LOGGER "New Broadcast Address($interface): $new_broadcast_address"
@@ -108,8 +108,8 @@
    if [ x$alias_ip_address != x ]; then
 @@ -161,9 +174,13 @@
    fi
-   ifconfig $interface inet $new_ip_address $new_netmask_arg \
- 					$new_broadcast_arg $medium
+   eval "ifconfig $interface inet $new_ip_address $new_netmask_arg \
+ 					$new_broadcast_arg $medium"
 +  $LOGGER "New IP Address($interface): $new_ip_address"
 +  $LOGGER "New Subnet Mask($interface): $new_subnet_mask"
 +  $LOGGER "New Broadcast Address($interface): $new_broadcast_address"
