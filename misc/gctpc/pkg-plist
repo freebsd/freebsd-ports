@@ -10,17 +10,17 @@ include/gctpc/untfz.h
 lib/libgctpc.a
 lib/libgctpc.so
 lib/libgctpc.so.1
-share/doc/gctpc/README
-share/doc/gctpc/README.main
-share/doc/gctpc/appendixA.txt
-share/doc/gctpc/appendixB.txt
-share/doc/gctpc/appendixC.txt
-share/doc/gctpc/for_init.ps
-share/doc/gctpc/gctp.ps
-share/doc/gctpc/inv_init.ps
-share/doc/gctpc/overview.ps
-share/doc/gctpc/reference.txt
-share/doc/gctpc/xxxfor.ps
-share/doc/gctpc/xxxinv.ps
-@dirrm share/doc/gctpc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.main
+%%PORTDOCS%%%%DOCSDIR%%/appendixA.txt
+%%PORTDOCS%%%%DOCSDIR%%/appendixB.txt
+%%PORTDOCS%%%%DOCSDIR%%/appendixC.txt
+%%PORTDOCS%%%%DOCSDIR%%/for_init.ps
+%%PORTDOCS%%%%DOCSDIR%%/gctp.ps
+%%PORTDOCS%%%%DOCSDIR%%/inv_init.ps
+%%PORTDOCS%%%%DOCSDIR%%/overview.ps
+%%PORTDOCS%%%%DOCSDIR%%/reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/xxxfor.ps
+%%PORTDOCS%%%%DOCSDIR%%/xxxinv.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/gctpc
