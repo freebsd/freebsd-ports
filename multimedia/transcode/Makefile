@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	transcode
-PORTVERSION=	0.6.0.4
+PORTVERSION=	0.6.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pre/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.4$//g}pre4
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.5$//g}pre5
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	hendrik@scholz.net
