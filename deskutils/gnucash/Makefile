@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gnucash-1.3.3
+DISTNAME=	gnucash-1.3.4
 CATEGORIES=	deskutils
 MASTER_SITES=	ftp://www.gnucash.org/pub/gnucash/gnucash/sources/unstable/1.3.x/
 
