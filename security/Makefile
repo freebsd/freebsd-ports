@@ -299,6 +299,7 @@
     SUBDIR += p5-OpenCA-REQ
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
+    SUBDIR += p5-POE-Component-SSLify
     SUBDIR += p5-SHA
     SUBDIR += p5-Safe-Hole
     SUBDIR += p5-Tie-EncryptedHash
