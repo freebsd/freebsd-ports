@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.92
 PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
@@ -21,7 +21,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
 LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup \
-		gtkhtml-3.0.1:${PORTSDIR}/www/gtkhtml3
+		gtkhtml-3.0.2:${PORTSDIR}/www/gtkhtml3
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
 		--enable-nss=no \
 		--enable-openssl=yes
+CONFLICTS=	evolution-1.2*
 
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
@@ -64,7 +65,7 @@ PLIST_SUB+=	VERSION="1.3"
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | xargs ${GREP} -l '<db.h>' | \
+	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | ${XARGS} ${GREP} -l '<db.h>' | \
 		${XARGS} ${REINPLACE_CMD} -e 's|<db.h>|<db3/db.h>|g'
 
 # DB3 stuff. Ugly, I know, but that's life.
@@ -91,9 +92,5 @@ pre-configure:
 	@${RM} -f ${DB3_WRKSRC}/db3
 	@${LN} -s . ${DB3_WRKSRC}/db3
 # End of the DB3 stuff
-
-post-install:
-	@${FIND} ${PREFIX}/share/gnome/evolution/default_user -type f | \
-		${XARGS} ${CHMOD} 644
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+bin/evolution
 bin/evolution-%%VERSION%%
 bin/evolution-addressbook-export
 etc/gconf/gconf.xml.defaults/apps/evolution/%gconf.xml
@@ -12,6 +13,16 @@ etc/gconf/gconf.xml.defaults/apps/evolution/calendar/other/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/evolution/calendar/prompts/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks/colors/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer/view/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/display/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/display/fonts/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/filters/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/format/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/notify/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/prompts/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/evolution/mail/trash/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/evolution/shell/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/evolution/shell/default_folders/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/evolution/shell/offline/%gconf.xml
@@ -36,6 +47,16 @@ etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/other/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/prompts/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks/colors/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer/view/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display/fonts/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/filters/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/format/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/notify/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/prompts/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/trash/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/default_folders/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/offline/%gconf.xml
@@ -409,6 +430,8 @@ libexec/evolution/%%VERSION%%/evolution-ldif-importer
 libexec/evolution/%%VERSION%%/evolution-vcard-importer
 libexec/evolution/%%VERSION%%/evolution-wombat
 libexec/evolution/%%VERSION%%/killev
+libexec/evolution/%%VERSION%%/load-gnomecard-addressbook
+libexec/evolution/%%VERSION%%/load-pine-addressbook
 share/gnome/applications/evolution.desktop
 share/gnome/evolution/%%VERSION%%/Locations
 share/gnome/evolution/%%VERSION%%/addresstypes.xml
@@ -680,6 +703,8 @@ share/gnome/evolution/%%VERSION%%/images/settings-16.png
 share/gnome/evolution/%%VERSION%%/images/settings.png
 share/gnome/evolution/%%VERSION%%/images/show_all_messages.xpm
 share/gnome/evolution/%%VERSION%%/images/splash.png
+share/gnome/evolution/%%VERSION%%/images/stock-edit-16.png
+share/gnome/evolution/%%VERSION%%/images/stock-edit-24.png
 share/gnome/evolution/%%VERSION%%/images/summary-settings.png
 share/gnome/evolution/%%VERSION%%/images/summary_preferences-16.png
 share/gnome/evolution/%%VERSION%%/images/talking-heads.png
@@ -695,8 +720,6 @@ share/gnome/evolution/%%VERSION%%/images/work_offline.xpm
 share/gnome/evolution/%%VERSION%%/images/work_online-16.png
 share/gnome/evolution/%%VERSION%%/images/working-16.png
 share/gnome/evolution/%%VERSION%%/images/world_map-960.png
-share/gnome/evolution/%%VERSION%%/tools/load-gnomecard-addressbook
-share/gnome/evolution/%%VERSION%%/tools/load-pine-addressbook
 share/gnome/evolution/%%VERSION%%/ui/evolution-addressbook.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-calendar.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-comp-editor.xml
@@ -1194,6 +1217,7 @@ share/gnome/omf/evolution/evolution-1.4-C.omf
 share/gnome/pixmaps/evolution-%%VERSION%%.png
 share/locale/am/LC_MESSAGES/evolution-1.4.mo
 share/locale/az/LC_MESSAGES/evolution-1.4.mo
+share/locale/be/LC_MESSAGES/evolution-1.4.mo
 share/locale/bg/LC_MESSAGES/evolution-1.4.mo
 share/locale/ca/LC_MESSAGES/evolution-1.4.mo
 share/locale/cs/LC_MESSAGES/evolution-1.4.mo
@@ -1256,7 +1280,6 @@ share/locale/zh_TW/LC_MESSAGES/evolution-1.4.mo
 @dirrm share/gnome/evolution/%%VERSION%%/views/addressbook
 @dirrm share/gnome/evolution/%%VERSION%%/views
 @dirrm share/gnome/evolution/%%VERSION%%/ui
-@dirrm share/gnome/evolution/%%VERSION%%/tools
 @dirrm share/gnome/evolution/%%VERSION%%/images/conduits
 @dirrm share/gnome/evolution/%%VERSION%%/images/buttons
 @dirrm share/gnome/evolution/%%VERSION%%/images
@@ -1311,6 +1334,16 @@ share/locale/zh_TW/LC_MESSAGES/evolution-1.4.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/view_defaults
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/offline
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell/default_folders
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/trash
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/prompts
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/notify
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/format
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/filters
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display/fonts
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/display
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer/view
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail/composer
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/mail
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/shell
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks/colors
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/evolution/calendar/tasks
@@ -1336,6 +1369,16 @@ share/locale/zh_TW/LC_MESSAGES/evolution-1.4.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/offline
 @dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell/default_folders
 @dirrm etc/gconf/gconf.xml.defaults/apps/evolution/shell
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/trash
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/prompts
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/notify
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/format
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/filters
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/display/fonts
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/display
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer/view
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail/composer
+@dirrm etc/gconf/gconf.xml.defaults/apps/evolution/mail
 @dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks/colors
 @dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/tasks
 @dirrm etc/gconf/gconf.xml.defaults/apps/evolution/calendar/prompts
