@@ -36,11 +36,11 @@ lib/gtkglextmm-1.0/proc/m4/convert_gtkglext.m4
 lib/libgdkglextmm-x11-1.0.a
 lib/libgdkglextmm-x11-1.0.la
 lib/libgdkglextmm-x11-1.0.so
-lib/libgdkglextmm-x11-1.0.so.1
+lib/libgdkglextmm-x11-1.0.so.0
 lib/libgtkglextmm-x11-1.0.a
 lib/libgtkglextmm-x11-1.0.la
 lib/libgtkglextmm-x11-1.0.so
-lib/libgtkglextmm-x11-1.0.so.1
+lib/libgtkglextmm-x11-1.0.so.0
 @dirrm lib/gtkglextmm-1.0/proc/m4
 @dirrm lib/gtkglextmm-1.0/proc
 @dirrm lib/gtkglextmm-1.0/include
