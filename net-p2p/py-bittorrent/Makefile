@@ -7,6 +7,7 @@
 
 PORTNAME=	BitTorrent
 PORTVERSION=	4.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES?=	net python
 MASTER_SITES=	http://www.bittorrent.com/dl/
@@ -14,8 +15,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT?=	A peer-to-peer tool for distributing files written in Python
-
-BROKEN=		Incomplete pkg-plist
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -57,11 +56,11 @@ PLIST_FILES+=	\
 		share/pixmaps/BitTorrent/remove.png \
 		share/pixmaps/BitTorrent/running.png
 
-PLIST_DIRS+=	share/pixmaps/BitTorrent/logo \
-		share/pixmaps/BitTorrent
-
+PLIST_SUB+=	GUI=""
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
+
+PLIST_SUB+=	GUI="@comment "
 .endif
 # required for PSYCO
 .ifndef(WITHOUT_PSYCO)
