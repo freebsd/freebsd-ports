@@ -12,6 +12,7 @@ include/qhacctablerows.h
 include/qhaccutils.h
 include/resultset.h
 include/sqldbplugin.h
+include/tableops.h
 lib/libcliimpio.a
 lib/libcliimpio.so
 lib/libcliimpio.so.1
