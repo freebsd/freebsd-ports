@@ -7,6 +7,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	1.7.7
+PORTREVISION=	1
 CATEGORIES=	graphics tk83
 MASTER_SITES=	http://www.research.att.com/sw/tools/graphviz/dist/
 EXTRACT_SUFX=	.tgz
@@ -38,6 +39,13 @@ MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
 		neatoguide.pdf tcldot.html Dot.ref FAQ.html
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/include/iconv.h) || defined(WITH_ICONV)
+LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
+CONFIGURE_ENV+=	LIBS="-liconv"
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/cdt/ast_common.h
 
@@ -52,4 +60,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
