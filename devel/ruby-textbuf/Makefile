@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Ruby-
+# New ports collection makefile for:	Ruby-textbuf
 # Date created:		19 Jan 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
