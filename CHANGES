@@ -10,6 +10,14 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040707:
+AUTHOR: gnome@FreeBSD.org
+  The way GConf schema files are installed has changed to support the upcoming
+  GNOME 2.8 GConf.  Details about the change can be found at
+  http://www.FreeBSD.org/gnome/docs/porting.html.  All existing ports have
+  been converted to the new style, and portlint has been updated to flag
+  old-style GConf schema installation.
+
 20040610:
 AUTHOR:	portmgr@FreeBSD.org
   The following behavioural or feature changes were committed:
