@@ -1641,6 +1641,7 @@ edonkey-gui-java	ports/net/edonkey-gui-java
 edonkey-tool-hash	ports/misc/edonkey-tool-hash
 edonkey-tool-slist	ports/misc/edonkey-tool-slist
 eel2		ports/x11-toolkits/eel2
+eet		ports/devel/eet
 efancylauncher	ports/x11/efancylauncher
 efax		ports/comms/efax
 efax-gtk	ports/comms/efax-gtk
@@ -1693,6 +1694,7 @@ emacs20		ports/editors/emacs20
 emacs20-dl	ports/editors/emacs20-dl
 emacs20-mule-devel	ports/editors/emacs20-mule-devel
 emboss		ports/biology/emboss
+embryo		ports/lang/embryo
 emc2		ports/math/emc2
 emelfm2		ports/x11-fm/emelfm2
 emh		ports/mail/emh
