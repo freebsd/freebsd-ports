@@ -1,0 +1,18 @@
+--- README.en.orig	Mon Nov 27 00:47:58 2000
++++ README.en	Mon Jul 16 17:24:47 2001
+@@ -18,6 +18,7 @@
+ numsets = 1
+ xsize = 200
+ ysize = 200
++GDChart.image_type = GDChart::PNG;
+ GDChart.out_graph(xsize, ysize, $stdout, GDChart::LINE, numpoints, \
+                   labels, numsets, data)
+ --
+@@ -54,6 +55,7 @@
+ variable indicates its use.  Basically, use a number when integer or
+ float, and a string when string (obviously).
+ 
++GDC_image_type          integer
+ GDC_ytitle              string
+ GDC_xtitle              string
+ GDC_ytitle2             string
