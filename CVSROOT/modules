@@ -8881,6 +8881,7 @@ untar		ports/archivers/untar
 unzip		ports/archivers/unzip
 uox3		ports/games/uox3
 upclient	ports/misc/upclient
+updatedd	ports/dns/updatedd
 uplog		ports/net/uplog
 upnp		ports/devel/upnp
 ups-debug	ports/devel/ups-debug
