@@ -14,7 +14,7 @@ DISTNAME=	MarathonEvil-3
 
 MAINTAINER=	bmah@freebsd.org
 
-#RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
+RUN_DEPENDS=	alephone:${PORTSDIR}/games/alephone
 
 USE_X_PREFIX=	yes
 NO_CDROM=	Bungie/Microsoft do not allow charging for Marathon data files.
