@@ -12,7 +12,6 @@ lib/libospgrove.so
 lib/libospgrove.so.0
 lib/libostyle.so
 lib/libostyle.so.0
-share/builtins.dsl
 share/sgml/openjade/ChangeLog
 share/sgml/openjade/Makefile.jadetex
 share/sgml/openjade/builtins.dsl
