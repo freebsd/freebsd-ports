@@ -47,8 +47,8 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 
 .include <bsd.port.pre.mk>
 
-SHLIB_VERSION=4
-PLIST_SUB= shlib=${SHLIB_VERSION}
+SHLIB_VERSION=	4
+PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 post-patch:
 	@${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
