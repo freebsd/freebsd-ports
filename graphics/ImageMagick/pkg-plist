@@ -43,11 +43,13 @@ include/magick/magick.h
 include/magick/magick_config.h
 include/magick/module.h
 include/magick/monitor.h
+include/magick/paint.h
 include/magick/quantize.h
 include/magick/registry.h
 include/magick/render.h
 include/magick/resource.h
 include/magick/semaphore.h
+include/magick/signature.h
 include/magick/timer.h
 include/magick/utility.h
 include/magick/version.h
@@ -93,8 +95,6 @@ lib/ImageMagick/magic.mgk
 %%MODULES%%lib/ImageMagick/modules/coders/gradient.so
 %%MODULES%%lib/ImageMagick/modules/coders/gray.la
 %%MODULES%%lib/ImageMagick/modules/coders/gray.so
-%%MODULES%%lib/ImageMagick/modules/coders/hdf.la
-%%MODULES%%lib/ImageMagick/modules/coders/hdf.so
 %%MODULES%%lib/ImageMagick/modules/coders/histogram.la
 %%MODULES%%lib/ImageMagick/modules/coders/histogram.so
 %%MODULES%%lib/ImageMagick/modules/coders/html.la
@@ -259,9 +259,10 @@ share/ImageMagick/Copyright.txt
 share/ImageMagick/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/ImageMagick.html
 %%PORTDOCS%%share/doc/ImageMagick/images/authentica.jpg
-%%PORTDOCS%%share/doc/ImageMagick/images/ball.png
-%%PORTDOCS%%share/doc/ImageMagick/images/corbis.png
+%%PORTDOCS%%share/doc/ImageMagick/images/background.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/convert.png
 %%PORTDOCS%%share/doc/ImageMagick/images/examples.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/fade.png
 %%PORTDOCS%%share/doc/ImageMagick/images/home.png
 %%PORTDOCS%%share/doc/ImageMagick/images/logo.png
 %%PORTDOCS%%share/doc/ImageMagick/images/magick.png
@@ -272,11 +273,17 @@ share/ImageMagick/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/magick_icons.ico
 %%PORTDOCS%%share/doc/ImageMagick/images/magick_small.png
 %%PORTDOCS%%share/doc/ImageMagick/images/mail.png
+%%PORTDOCS%%share/doc/ImageMagick/images/networkeleven.png
 %%PORTDOCS%%share/doc/ImageMagick/images/pair.png
 %%PORTDOCS%%share/doc/ImageMagick/images/promote.png
+%%PORTDOCS%%share/doc/ImageMagick/images/right_triangle.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle.png
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle_option.png
 %%PORTDOCS%%share/doc/ImageMagick/images/screen.png
+%%PORTDOCS%%share/doc/ImageMagick/images/script.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/star.png
+%%PORTDOCS%%share/doc/ImageMagick/images/top.jpg
+%%PORTDOCS%%share/doc/ImageMagick/images/twi.png
 %%PORTDOCS%%share/doc/ImageMagick/www/Changelog.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Copyright.html
 %%PORTDOCS%%share/doc/ImageMagick/www/FAQ.html
@@ -332,6 +339,7 @@ share/ImageMagick/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/constitute.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/decorate.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/deprecate.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/display.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/draw.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/effect.html
@@ -344,6 +352,7 @@ share/ImageMagick/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/www/api/memory.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/monitor.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/montage.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/paint.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/quantize.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/registry.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/render.html
@@ -403,8 +412,8 @@ share/ImageMagick/QuickStart.txt
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image
-%%MODULES%%@dirrm lib/ImageMagick/modules/coders
-%%MODULES%%@dirrm lib/ImageMagick/modules
+@dirrm lib/ImageMagick/modules/coders
+@dirrm lib/ImageMagick/modules
 @dirrm lib/ImageMagick
 @dirrm include/magick
 @dirrm include/Magick++
