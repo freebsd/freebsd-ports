@@ -23,12 +23,14 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		msmtp.1
 PLIST_FILES=	bin/msmtp
 
+CONFLICTS=	msmtp-devel-*
+
 .if !defined(WITH_OPENSSL)
 WITH_GNUTLS=	yes
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_OPENSSL)
@@ -37,7 +39,7 @@ CONFIGURE_ARGS+=	--with-ssl=openssl
 .endif
 
 .if defined(WITH_GNU_SASL)
-LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	gsasl.9:${PORTSDIR}/security/gsasl
 .else
 CONFIGURE_ARGS+=	--disable-gsasl
 .endif
