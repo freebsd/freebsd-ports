@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	eXtace
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BROKEN=		"Configure fails"
+
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_X_PREFIX=	yes
